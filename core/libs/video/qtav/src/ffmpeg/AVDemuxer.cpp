@@ -60,16 +60,13 @@ public:
 
     // default network timeout: 30000
 
-    explicit InterruptHandler(AVDemuxer* demuxer, int timeout = 30000)
-      : mStatus(0)
-      , mTimeout(timeout)
-      , mTimeoutAbort(true)
-      , mEmitError(true)
-
-      //, mLastTime(0)
-
-      , mAction(Unknown)
-      , mpDemuxer(demuxer)
+    explicit InterruptHandler(AVDemuxer* const demuxer, int timeout = 30000)
+      : mStatus      (0),
+        mTimeout     (timeout),
+        mTimeoutAbort(true),
+        mEmitError   (true),
+        mAction      (Unknown),
+        mpDemuxer    (demuxer)
     {
         callback = handleTimeout;
         opaque   = this;
@@ -97,13 +94,16 @@ public:
         switch (mAction)
         {
             case Read:
-
+            {
                 //mpDemuxer->setMediaStatus(BufferedMedia);
 
                 break;
+            }
 
             default:
+            {
                 break;
+            }
         }
 
         mAction = Unknown;
@@ -157,7 +157,7 @@ public:
     */
     static int handleTimeout(void* obj)
     {
-        InterruptHandler* handler = static_cast<InterruptHandler*>(obj);
+        InterruptHandler* const handler = static_cast<InterruptHandler*>(obj);
 
         if (!handler)
         {
@@ -189,27 +189,32 @@ public:
         switch (handler->mAction)
         {
             case Unknown: // callback is not called between begin()/end()
-
+            {
                 //qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Unknown timeout action");
 
                 break;
+            }
 
             case Open:
             case FindStreamInfo:
-
+            {
                 //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("set loading media for %d from: %d", handler->mAction, handler->mpDemuxer->mediaStatus());
 
                 handler->mpDemuxer->setMediaStatus(LoadingMedia);
                 break;
+            }
 
             case Read:
-
+            {
                 //handler->mpDemuxer->setMediaStatus(BufferingMedia);
 
                 break;
+            }
 
             default:
+            {
                 break;
+            }
         }
 
         if (handler->mTimeout < 0)
@@ -231,7 +236,10 @@ public:
         if (!handler->mTimer.hasExpired(handler->mTimeout))
             return 0;
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("status: %d, Timeout expired: %lld/%lld -> quit!", (int)handler->mStatus, handler->mTimer.elapsed(), handler->mTimeout);
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("status: %d, Timeout expired: %lld/%lld -> quit!",
+                (int)handler->mStatus, handler->mTimer.elapsed(), handler->mTimeout);
+
         handler->mTimer.invalidate();
 
         if (handler->mStatus == 0)
@@ -280,11 +288,8 @@ private:
     qint64        mTimeout;
     bool          mTimeoutAbort;
     bool          mEmitError;
-/*
-    qint64        mLastTime;
-*/
     Action        mAction;
-    AVDemuxer*    mpDemuxer;
+    AVDemuxer*    mpDemuxer = nullptr;
     QElapsedTimer mTimer;
 };
 
@@ -293,23 +298,23 @@ class Q_DECL_HIDDEN AVDemuxer::Private
 public:
 
     Private()
-        : media_status(NoMedia)
-        , seekable(false)
-        , network(false)
-        , has_attached_pic(false)
-        , started(false)
-        , max_pts(0.0)
-        , eof(false)
-        , media_changed(true)
-        , buf_pos(0)
-        , stream(-1)
-        , format_ctx(nullptr)
-        , input_format(nullptr)
-        , input(nullptr)
-        , seek_unit(SeekByTime)
-        , seek_type(AccurateSeek)
-        , dict(nullptr)
-        , interrupt_hanlder(nullptr)
+        : media_status      (NoMedia),
+          seekable          (false),
+          network           (false),
+          has_attached_pic  (false),
+          started           (false),
+          max_pts           (0.0),
+          eof               (false),
+          media_changed     (true),
+          buf_pos           (0),
+          stream            (-1),
+          format_ctx        (nullptr),
+          input_format      (nullptr),
+          input             (nullptr),
+          seek_unit         (SeekByTime),
+          seek_type         (AccurateSeek),
+          dict              (nullptr),
+          interrupt_hanlder (nullptr)
     {
     }
 
@@ -338,7 +343,7 @@ public:
         stream = -1;
 
         if (media_changed)
-            astream = vstream = sstream = StreamInfo();
+            astream       = vstream = sstream = StreamInfo();
         else
             astream.avctx = vstream.avctx = sstream.avctx = nullptr;
 
@@ -352,20 +357,20 @@ public:
         // FIXME: is there a good way to check network? now use URLContext.flags == URL_PROTOCOL_FLAG_NETWORK
         // not network: concat cache pipe avdevice crypto?
 
-        if (   !file.isEmpty()
-            && file.contains(QLatin1String(":"))
-            && (   file.startsWith(QLatin1String("http"))  // http, https, httpproxy
-                || file.startsWith(QLatin1String("rtmp"))   // rtmp{,e,s,te,ts}
-                || file.startsWith(QLatin1String("mms"))    // mms{,h,t}
-                || file.startsWith(QLatin1String("ffrtmp")) // ffrtmpcrypt, ffrtmphttp
-                || file.startsWith(QLatin1String("rtp:"))
-                || file.startsWith(QLatin1String("rtsp:"))
-                || file.startsWith(QLatin1String("sctp:"))
-                || file.startsWith(QLatin1String("tcp:"))
-                || file.startsWith(QLatin1String("tls:"))
-                || file.startsWith(QLatin1String("udp:"))
-                || file.startsWith(QLatin1String("gopher:"))
-               )
+        if (!file.isEmpty()                         &&
+            file.contains(QLatin1String(":"))       &&
+            (file.startsWith(QLatin1String("http"))    || // http, https, httpproxy
+             file.startsWith(QLatin1String("rtmp"))    || // rtmp{,e,s,te,ts}
+             file.startsWith(QLatin1String("mms"))     || // mms{,h,t}
+             file.startsWith(QLatin1String("ffrtmp"))  || // ffrtmpcrypt, ffrtmphttp
+             file.startsWith(QLatin1String("rtp:"))    ||
+             file.startsWith(QLatin1String("rtsp:"))   ||
+             file.startsWith(QLatin1String("sctp:"))   ||
+             file.startsWith(QLatin1String("tcp:"))    ||
+             file.startsWith(QLatin1String("tls:"))    ||
+             file.startsWith(QLatin1String("udp:"))    ||
+             file.startsWith(QLatin1String("gopher:"))
+            )
            )
         {
             network = true;
@@ -389,7 +394,7 @@ public:
 
         // format.read_seek: time seeking. For example, seeking on hls stream steps: find segment, read packet in segment and drop until desired pts got
 
-        s |= format_ctx->iformat->read_seek || format_ctx->iformat->read_seek2;
+        s |= (format_ctx->iformat->read_seek || format_ctx->iformat->read_seek2);
 
         return s;
     }
@@ -417,20 +422,20 @@ public:
     Packet                          pkt;
     int                             stream;
     QList<int>                      audio_streams, video_streams, subtitle_streams;
-    AVFormatContext*                format_ctx;
+    AVFormatContext*                format_ctx      = nullptr;
 
     // copy the info, not parse the file when constructed, then need member vars
 
     QString                         file;
     QString                         file_orig;
-    AVInputFormat*                  input_format;
+    AVInputFormat*                  input_format    = nullptr;
     QString                         format_forced;
-    MediaIO*                        input;
+    MediaIO*                        input           = nullptr;
 
     SeekUnit                        seek_unit;
     SeekType                        seek_type;
 
-    AVDictionary*                   dict;
+    AVDictionary*                   dict            = nullptr;
     QVariantHash                    options;
 
     typedef struct StreamInfo
@@ -448,12 +453,12 @@ public:
 
         int             stream, wanted_stream; ///< -1 default, selected by ff
         int             index, wanted_index;   ///< index in a kind of streams
-        AVCodecContext* avctx;
+        AVCodecContext* avctx = nullptr;
     } StreamInfo;
 
     StreamInfo                      astream, vstream, sstream;
 
-    AVDemuxer::InterruptHandler*    interrupt_hanlder;
+    AVDemuxer::InterruptHandler*    interrupt_hanlder = nullptr;
     QMutex                          mutex;              // TODO: remove if load, read, seek is called in 1 thread
 };
 
@@ -879,7 +884,7 @@ bool AVDemuxer::seek(qint64 pos)
 
     // TODO: d->pkt.pts may be 0, compute manually.
 
-    bool backward = ((d->seek_type == AccurateSeek) || (upos <= (int64_t)(d->pkt.pts*AV_TIME_BASE)));
+    bool backward = ((d->seek_type == AccurateSeek) || (upos <= (int64_t)(d->pkt.pts * AV_TIME_BASE)));
 
     //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("[AVDemuxer] seek to %f %f %lld / %lld backward=%d", double(upos)/double(durationUs()), d->pkt.pts, upos, durationUs(), backward);
 
@@ -1008,7 +1013,7 @@ bool AVDemuxer::setMedia(const QString &fileName)
     else if (d->file.startsWith(QLatin1String(kFileScheme)))
         d->file = Internal::Path::toLocal(d->file);
 
-    int colon = d->file.indexOf(QLatin1Char(':'));
+    int colon    = d->file.indexOf(QLatin1Char(':'));
 
     if (colon == 1)
     {
@@ -1021,7 +1026,7 @@ bool AVDemuxer::setMedia(const QString &fileName)
 
     }
 
-    d->media_changed = url_old != d->file;
+    d->media_changed = (url_old != d->file);
 
     if (d->media_changed)
     {
@@ -1378,7 +1383,7 @@ bool AVDemuxer::hasAttacedPicture() const
 
 bool AVDemuxer::setStreamIndex(StreamType st, int index)
 {
-    QList<int> *streams     = nullptr;
+    QList<int>* streams     = nullptr;
     Private::StreamInfo* si = nullptr;
 
     if      (st == AudioStream)
@@ -1670,7 +1675,7 @@ void AVDemuxer::setInterruptStatus(int interrupt)
     d->interrupt_hanlder->setStatus(interrupt);
 }
 
-void AVDemuxer::setOptions(const QVariantHash &dict)
+void AVDemuxer::setOptions(const QVariantHash& dict)
 {
     d->options = dict;
     d->applyOptionsForContext(); // apply even if avformat context is open

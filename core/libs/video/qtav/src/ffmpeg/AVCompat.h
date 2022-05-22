@@ -447,7 +447,7 @@ typedef enum CodecID AVCodecID;
 #endif
 
 #if QTAV_USE_LIBAV(LIBAVCODEC)
-const char *avcodec_get_name(enum AVCodecID id);
+const char* avcodec_get_name(enum AVCodecID id);
 #endif
 
 #if !AV_MODULE_CHECK(LIBAVCODEC, 55, 55, 0, 68, 100)
@@ -490,7 +490,7 @@ void avcodec_free_context(AVCodecContext** pavctx);
 // ffmpeg1.0 2012-06-12 - c7b9eab / 84b9fbe - lavfi 2.79.100 / 2.22.0 - avfilter.h
 
 #   if !AV_MODULE_CHECK(LIBAVFILTER, 2, 22, 0, 79, 100) //FF_API_AVFILTERPAD_PUBLIC
-const char *avfilter_pad_get_name(const AVFilterPad* pads, int pad_idx);
+const char* avfilter_pad_get_name(const AVFilterPad* pads, int pad_idx);
 enum AVMediaType avfilter_pad_get_type(const AVFilterPad* pads, int pad_idx);
 #   endif
 

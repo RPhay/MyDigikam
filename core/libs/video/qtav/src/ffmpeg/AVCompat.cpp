@@ -129,9 +129,9 @@ error:
 
 static const struct
 {
-    const char* name;
-    int         nb_channels;
-    uint64_t    layout;
+    const char* name        = nullptr;
+    int         nb_channels = 0;
+    uint64_t    layout      = 0;
 } channel_layout_map[] =
 {
     { "mono",        1,  AV_CH_LAYOUT_MONO                                  },
@@ -151,9 +151,7 @@ static const struct
 
 int64_t av_get_default_channel_layout(int nb_channels)      // krazy:exclude=typedefs
 {
-    int i;
-
-    for (i = 0 ; i < FF_ARRAY_ELEMS(channel_layout_map) ; ++i)
+    for (int i = 0 ; i < FF_ARRAY_ELEMS(channel_layout_map) ; ++i)
     {
         if (nb_channels == channel_layout_map[i].nb_channels)
         {
@@ -183,6 +181,7 @@ AVAudioResampleContext* swr_alloc_set_opts(AVAudioResampleContext* s,
                                            int log_offset, void* log_ctx)
 {
     // DO NOT use swr_alloc() because it's not defined as a macro in QtAV_Compat.h
+
     if (!s)
         s = avresample_alloc_context();
 
@@ -284,17 +283,16 @@ enum AVColorRange av_frame_get_color_range(const AVFrame* frame)
 int av_pix_fmt_count_planes(AVPixelFormat pix_fmt)
 {
     const AVPixFmtDescriptor* desc = av_pix_fmt_desc_get(pix_fmt);
-    int i;
     int planes[4]                  = { 0 };
     int ret                        = 0;
 
     if (!desc)
         return AVERROR(EINVAL);
 
-    for (i = 0 ; i < desc->nb_components ; ++i)
+    for (int i = 0 ; i < desc->nb_components ; ++i)
         planes[desc->comp[i].plane] = 1;
 
-    for (i = 0 ; i < (int)FF_ARRAY_ELEMS(planes) ; ++i)
+    for (int i = 0 ; i < (int)FF_ARRAY_ELEMS(planes) ; ++i)
         ret += planes[i];
 
     return ret;
@@ -309,22 +307,20 @@ int av_samples_copy(uint8_t** dst, uint8_t* const* src, int dst_offset,
                     enum AVSampleFormat sample_fmt)
 {
     int planar      = av_sample_fmt_is_planar(sample_fmt);
-    int planes      = planar ? nb_channels : 1;
+    int planes      = (planar ? nb_channels : 1);
     int block_align = av_get_bytes_per_sample(sample_fmt) * (planar ? 1 : nb_channels);
     int data_size   = nb_samples * block_align;
-    int i;
-
     dst_offset     *= block_align;
     src_offset     *= block_align;
 
     if (((dst[0] < src[0]) ? (src[0] - dst[0]) : (dst[0] - src[0])) >= data_size)
     {
-        for (i = 0 ; i < planes ; ++i)
+        for (int i = 0 ; i < planes ; ++i)
             memcpy(dst[i] + dst_offset, src[i] + src_offset, data_size);
     }
     else
     {
-        for (i = 0 ; i < planes ; ++i)
+        for (int i = 0 ; i < planes ; ++i)
             memmove(dst[i] + dst_offset, src[i] + src_offset, data_size);
     }
 
@@ -337,8 +333,8 @@ int av_samples_copy(uint8_t** dst, uint8_t* const* src, int dst_offset,
 
 const char* avcodec_get_name(enum AVCodecID id)
 {
-    const AVCodecDescriptor* cd;
-    AVCodec* codec = nullptr;
+    const AVCodecDescriptor* cd = nullptr;
+    AVCodec* codec              = nullptr;
 
     if (id == AV_CODEC_ID_NONE)
         return "none";
@@ -473,15 +469,13 @@ int av_packet_ref(AVPacket* dst, const AVPacket* src)
 
     if (dst->side_data_elems)
     {
-        int i;
-
         DUP_DATA(dst->side_data, src->side_data,
                 dst->side_data_elems * sizeof(*dst->side_data), 0);
 
         memset(dst->side_data, 0,
                 dst->side_data_elems * sizeof(*dst->side_data));
 
-        for (i = 0 ; i < dst->side_data_elems ; ++i)
+        for (int i = 0 ; i < dst->side_data_elems ; ++i)
         {
             DUP_DATA(dst->side_data[i].data, src->side_data[i].data, src->side_data[i].size, 1);
             dst->side_data[i].size = src->side_data[i].size;

@@ -60,8 +60,8 @@ public:
         VideoClock     ///< sync to video timestamp
     } ClockType;
 
-    explicit AVClock(ClockType c, QObject* parent = nullptr);
-    explicit AVClock(QObject* parent = nullptr);
+    explicit AVClock(ClockType c, QObject* const parent = nullptr);
+    explicit AVClock(QObject* const parent = nullptr);
 
     void setClockType(ClockType ct);
     ClockType clockType() const;
@@ -164,7 +164,7 @@ public Q_SLOTS:
 
 protected:
 
-    virtual void timerEvent(QTimerEvent *event);
+    virtual void timerEvent(QTimerEvent* event);
 
 private Q_SLOTS:
 
@@ -206,19 +206,19 @@ private:
 
 double AVClock::value() const
 {
-    if (clock_type == AudioClock)
+    if      (clock_type == AudioClock)
     {
         // TODO: audio clock need a timer too
         // timestamp from media stream is >= value0
 
-        return pts_ == 0 ? value0 : pts_ + delay_;
+        return ((pts_ == 0) ? value0 : pts_ + delay_);
     }
     else if (clock_type == ExternalClock)
     {
         if (timer.isValid())
         {
             ++nb_restarted;
-            pts_ += (double(timer.restart()) * kThousandth + avg_err)* speed();
+            pts_ += (double(timer.restart()) * kThousandth + avg_err) * speed();
         }
         else
         {
@@ -226,7 +226,7 @@ double AVClock::value() const
             //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("clock is paused. return the last value %f", pts_);
         }
 
-        return pts_ + value0;
+        return (pts_ + value0);
     }
     else
     {

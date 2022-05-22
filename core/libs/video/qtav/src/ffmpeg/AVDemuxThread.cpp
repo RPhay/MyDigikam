@@ -122,7 +122,7 @@ public:
 
     stepBackwardTask(AVDemuxThread* const dt, qreal t)
         : demux_thread(dt),
-          pts(t)
+          pts         (t)
     {
     }
 
@@ -131,7 +131,7 @@ public:
         demux_thread->stepping              = true;
         demux_thread->stepping_timeout_time = QDateTime::currentMSecsSinceEpoch() + 200;
 
-        AVThread* avt                       = demux_thread->videoThread();
+        AVThread* const avt                 = demux_thread->videoThread();
         avt->packetQueue()->clear();                                        // clear here
 
         connect(avt, SIGNAL(frameDelivered()),
@@ -172,7 +172,7 @@ public:
             << QString::asprintf("step backward: %lld, %f", qint64(pts*1000.0), pts);
 
         demux_thread->video_thread->setDropFrameOnSeek(false);
-        demux_thread->seekInternal(qint64(pts*1000.0), AccurateSeek);
+        demux_thread->seekInternal(qint64(pts * 1000.0), AccurateSeek);
     }
 
 private:
@@ -184,48 +184,48 @@ private:
 // ------------------------------------------------------------------------------------------
 
 AVDemuxThread::AVDemuxThread(QObject* const parent)
-    : QThread(parent)
-    , paused(false)
-    , user_paused(false)
-    , end(false)
-    , end_action(MediaEndAction_Default)
-    , m_buffering(false)
-    , m_buffer(nullptr)
-    , demuxer(nullptr)
-    , ademuxer(nullptr)
-    , audio_thread(nullptr)
-    , video_thread(nullptr)
-    , clock_type(-1)
-    , last_seek_pos(0)
-    , current_seek_task(nullptr)
-    , stepping(false)
-    , stepping_timeout_time(0)
-    , audio_stream(0)
-    , video_stream(0)
+    : QThread(parent),
+      paused                (false),
+      user_paused           (false),
+      end                   (false),
+      end_action            (MediaEndAction_Default),
+      m_buffering           (false),
+      m_buffer              (nullptr),
+      demuxer               (nullptr),
+      ademuxer              (nullptr),
+      audio_thread          (nullptr),
+      video_thread          (nullptr),
+      clock_type            (-1),
+      last_seek_pos         (0),
+      current_seek_task     (nullptr),
+      stepping              (false),
+      stepping_timeout_time (0),
+      audio_stream          (0),
+      video_stream          (0)
 {
     seek_tasks.setCapacity(1);
     seek_tasks.blockFull(false);
 }
 
 AVDemuxThread::AVDemuxThread(AVDemuxer* const dmx, QObject* const parent)
-    : QThread(parent)
-    , paused(false)
-    , user_paused(false)
-    , end(false)
-    , end_action(MediaEndAction_Default)
-    , m_buffering(false)
-    , m_buffer(nullptr)
-    , demuxer(nullptr)
-    , ademuxer(nullptr)
-    , audio_thread(nullptr)
-    , video_thread(nullptr)
-    , clock_type(-1)
-    , last_seek_pos(0)
-    , current_seek_task(nullptr)
-    , stepping(false)
-    , stepping_timeout_time(0)
-    , audio_stream(0)
-    , video_stream(0)
+    : QThread(parent),
+      paused                (false),
+      user_paused           (false),
+      end                   (false),
+      end_action            (MediaEndAction_Default),
+      m_buffering           (false),
+      m_buffer              (nullptr),
+      demuxer               (nullptr),
+      ademuxer              (nullptr),
+      audio_thread          (nullptr),
+      video_thread          (nullptr),
+      clock_type            (-1),
+      last_seek_pos         (0),
+      current_seek_task     (nullptr),
+      stepping              (false),
+      stepping_timeout_time (0),
+      audio_stream          (0),
+      video_stream          (0)
 {
     setDemuxer(dmx);
     seek_tasks.setCapacity(1);
@@ -349,8 +349,8 @@ void AVDemuxThread::seek(qint64 external_pos, qint64 pos, SeekType type)
 
         SeekTask(AVDemuxThread* const dt, qint64 external_pos, qint64 t, SeekType st)
             : demux_thread(dt),
-              type(st),
-              position(t),
+              type        (st),
+              position    (t),
               external_pos(external_pos)
         {
         }
@@ -624,7 +624,8 @@ void AVDemuxThread::stop()
     pause(false);
     cond.wakeAll();
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("all avthread finished. try to exit demux thread<<<<<<");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("all avthread finished. try to exit demux thread");
 
     end = true;
 }
@@ -691,7 +692,7 @@ void AVDemuxThread::stepForward()
         // set clock first
 
         if (clock_type < 0)
-            clock_type = (int)t->clock()->isClockAuto() + 2*(int)t->clock()->clockType();
+            clock_type = (int)t->clock()->isClockAuto() + 2 * (int)t->clock()->clockType();
 
         t->clock()->setClockType(AVClock::VideoClock);
         t->scheduleFrameDrop(false);
@@ -717,7 +718,7 @@ void AVDemuxThread::stepForward()
 
 void AVDemuxThread::seekOnPauseFinished()
 {
-    AVThread* const thread = video_thread ? video_thread : audio_thread;
+    AVThread* const thread = (video_thread ? video_thread : audio_thread);
     Q_ASSERT(thread);
 
     disconnect(thread, SIGNAL(seekFinished(qint64)),
@@ -741,7 +742,7 @@ void AVDemuxThread::seekOnPauseFinished()
 
 void AVDemuxThread::frameDeliveredOnStepForward()
 {
-    AVThread* const thread = video_thread ? video_thread : audio_thread;
+    AVThread* const thread = (video_thread ? video_thread : audio_thread);
     Q_ASSERT(thread);
 
     QMutexLocker locker(&next_frame_mutex);
@@ -787,7 +788,7 @@ void AVDemuxThread::frameDeliveredOnStepForward()
 
 void AVDemuxThread::eofDecodedOnStepForward()
 {
-    AVThread* const thread = video_thread ? video_thread : audio_thread;
+    AVThread* const thread = (video_thread ? video_thread : audio_thread);
     Q_ASSERT(thread);
 
     QMutexLocker locker(&next_frame_mutex);
@@ -867,12 +868,12 @@ void AVDemuxThread::run()
         << QString::asprintf("get av queue a/v thread = %p %p",
             audio_thread, video_thread);
 
-    PacketBuffer* aqueue = audio_thread ? audio_thread->packetQueue() : nullptr;
-    PacketBuffer* vqueue = video_thread ? video_thread->packetQueue() : nullptr;
+    PacketBuffer* aqueue   = (audio_thread ? audio_thread->packetQueue() : nullptr);
+    PacketBuffer* vqueue   = (video_thread ? video_thread->packetQueue() : nullptr);
 
     // aqueue as a primary buffer: music with/without cover
 
-    AVThread* const thread     = !video_thread || (audio_thread && demuxer->hasAttacedPicture()) ? audio_thread : video_thread;
+    AVThread* const thread = (!video_thread || (audio_thread && demuxer->hasAttacedPicture()) ? audio_thread : video_thread);
 
     if (!thread)
     {
@@ -882,7 +883,7 @@ void AVDemuxThread::run()
     }
 
     m_buffer          = thread->packetQueue();
-    const qint64 buf2 = aqueue ? aqueue->bufferValue() : 1; // TODO: may be changed by user. Deal with audio track change
+    const qint64 buf2 = (aqueue ? aqueue->bufferValue() : 1); // TODO: may be changed by user. Deal with audio track change
 
     if (aqueue)
     {
@@ -919,7 +920,7 @@ void AVDemuxThread::run()
 
         // vthread maybe changed by AVPlayerCore.setPriority() from no dec case
 
-        vqueue = video_thread ? video_thread->packetQueue() : nullptr;
+        vqueue = (video_thread ? video_thread->packetQueue() : nullptr);
 
         if (demuxer->atEnd())
         {
@@ -997,7 +998,8 @@ void AVDemuxThread::run()
 
         if (demuxer->mediaStatus() == StalledMedia)
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("stalled media. exiting demuxing thread");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("stalled media. exiting demuxing thread");
 
             break;
         }
@@ -1074,7 +1076,7 @@ void AVDemuxThread::run()
 
         const bool a_internal = (stream == demuxer->audioStream());
 
-        if (a_internal || a_ext > 0)
+        if (a_internal || (a_ext > 0))
         {
             //apkt.isValid()) {
 
@@ -1148,7 +1150,7 @@ void AVDemuxThread::run()
 
     while (audio_thread && audio_thread->isRunning())
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("waiting audio thread.......");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("waiting audio thread...");
         Packet quit_pkt(Packet::createEOF());
         quit_pkt.position = 0;
 
@@ -1164,7 +1166,7 @@ void AVDemuxThread::run()
 
     while (video_thread && video_thread->isRunning())
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("waiting video thread.......");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("waiting video thread...");
         Packet quit_pkt(Packet::createEOF());
         quit_pkt.position = 0;
 
@@ -1179,7 +1181,8 @@ void AVDemuxThread::run()
     }
 
     thread->disconnect(this, SIGNAL(seekFinished(qint64)));
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Demux thread stops running....");
+
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Demux thread stops running...");
 
     if (demuxer->atEnd())
         Q_EMIT mediaStatusChanged(QtAV::EndOfMedia);

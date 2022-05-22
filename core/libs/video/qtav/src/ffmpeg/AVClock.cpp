@@ -43,34 +43,34 @@ enum
     kStopped
 };
 
-AVClock::AVClock(AVClock::ClockType c, QObject* parent)
+AVClock::AVClock(AVClock::ClockType c, QObject* const parent)
     : QObject(parent),
-      auto_clock(true),
-      m_state(kStopped),
-      clock_type(c),
-      mSpeed(1.0),
-      value0(0),
-      t(0),
-      avg_err(0),
+      auto_clock  (true),
+      m_state     (kStopped),
+      clock_type  (c),
+      mSpeed      (1.0),
+      value0      (0),
+      t           (0),
+      avg_err     (0),
       nb_restarted(0),
-      nb_sync(0),
-      sync_id(0)
+      nb_sync     (0),
+      sync_id     (0)
 {
     last_pts = pts_ = pts_v = delay_ = 0;
 }
 
-AVClock::AVClock(QObject* parent)
+AVClock::AVClock(QObject* const parent)
     : QObject(parent),
-      auto_clock(true),
-      m_state(kStopped),
-      clock_type(AudioClock),
-      mSpeed(1.0),
-      value0(0),
-      t(0),
-      avg_err(0),
-      nb_restarted(0),
-      nb_sync(0),
-      sync_id(0)
+      auto_clock    (true),
+      m_state       (kStopped),
+      clock_type    (AudioClock),
+      mSpeed        (1.0),
+      value0        (0),
+      t             (0),
+      avg_err       (0),
+      nb_restarted  (0),
+      nb_sync       (0),
+      sync_id       (0)
 {
     last_pts = pts_ = pts_v = delay_ = 0;
 }
@@ -92,14 +92,15 @@ AVClock::ClockType AVClock::clockType() const
 
 bool AVClock::isActive() const
 {
-    return clock_type == AudioClock || timer.isValid();
+    return ((clock_type == AudioClock) || timer.isValid());
 }
 
 void AVClock::setInitialValue(double v)
 {
     value0 = v;
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Clock initial value: %f", v);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("Clock initial value: %f", v);
 }
 
 double AVClock::initialValue() const
@@ -122,7 +123,9 @@ void AVClock::updateExternalClock(qint64 msecs)
     if (clock_type == AudioClock)
         return;
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("External clock change: %f ==> %f", value(), double(msecs) * kThousandth);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("External clock change: %f ==> %f",
+            value(), double(msecs) * kThousandth);
 
     pts_ = double(msecs) * kThousandth; // can not use msec/1000.
 
@@ -136,12 +139,14 @@ void AVClock::updateExternalClock(qint64 msecs)
         pts_v = pts_;
 }
 
-void AVClock::updateExternalClock(const AVClock &clock)
+void AVClock::updateExternalClock(const AVClock& clock)
 {
     if (clock_type != ExternalClock)
         return;
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("External clock change: %f ==> %f", value(), clock.value());
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("External clock change: %f ==> %f",
+            value(), clock.value());
 
     pts_ = clock.value();
 
@@ -179,7 +184,8 @@ bool AVClock::syncEndOnce(int id)
 {
     if (id != sync_id)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("bad sync id: %d, current: %d", id, sync_id);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("bad sync id: %d, current: %d", id, sync_id);
 
         return true;
     }
@@ -262,7 +268,7 @@ void AVClock::timerEvent(QTimerEvent *event)
     if (isPaused())
         return;
 
-    const double delta_pts = (value() - last_pts)/speed();
+    const double delta_pts = (value() - last_pts) / speed();
 
     //const double err = double(correction_timer.restart()) * kThousandth - delta_pts;
 
@@ -272,9 +278,9 @@ void AVClock::timerEvent(QTimerEvent *event)
 
     // FIXME: avfoundation camera error is large (about -0.6s)
 
-    if (qAbs(err*10.0) < kCorrectionInterval || clock_type == VideoClock)
+    if ((qAbs(err * 10.0) < kCorrectionInterval) || (clock_type == VideoClock))
     {
-        avg_err += err/(nb_restarted+1);
+        avg_err += err / (nb_restarted+1);
     }
 
     //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("correction timer event. error = %f, avg_err=%f, nb_restarted=%d", err, avg_err, nb_restarted);
@@ -303,7 +309,7 @@ void AVClock::restartCorrectionTimer()
         return;
 
     t = QDateTime::currentMSecsSinceEpoch();
-    correction_schedule_timer.start(kCorrectionInterval*1000, this);
+    correction_schedule_timer.start(kCorrectionInterval * 1000, this);
 }
 
 void AVClock::stopCorrectionTimer()
