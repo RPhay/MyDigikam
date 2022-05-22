@@ -531,23 +531,6 @@ QString VideoDecoderFFmpeg::hwaccel() const
     return d_func().hwa;
 }
 
-// namespace {
-/*
-void QtAV_i18n()
-{
-    i18n("codecName");
-    i18n("skip_loop_filter");
-    i18n("skip_idct");
-    i18n("strict");
-    i18n("skip_frame");
-    i18n("threads");
-    i18n("thread_type");
-    i18n("vismv");
-    i18n("bug");
-}
-*/
-// } namespace
-
 } // namespace QtAV
 
 #include "VideoDecoderFFmpeg.moc"

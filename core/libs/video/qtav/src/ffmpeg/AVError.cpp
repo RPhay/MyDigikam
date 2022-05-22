@@ -247,7 +247,7 @@ QString AVError::string() const
 
     if (mFFmpegError != 0)
     {
-        errStr += QStringLiteral("\n(FFmpeg %1: %2)").arg(mFFmpegError, 0, 16).arg(ffmpegErrorString());
+        errStr += QString::fromUtf8("\n(FFmpeg %1: %2)").arg(mFFmpegError, 0, 16).arg(ffmpegErrorString());
     }
 
     return errStr;

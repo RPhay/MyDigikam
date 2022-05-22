@@ -564,7 +564,6 @@ public Q_SLOTS:
      */
     void setTimeRange(qint64 start, qint64 stop = std::numeric_limits<qint64>::max());
 
-
     /*!
      * \brief setPosition equals to seek(qreal)
      *  position < 0: 0
@@ -645,8 +644,8 @@ Q_SIGNALS:
     void asyncLoadChanged();
     void muteChanged();
     void sourceChanged();
-    void loaded();                  // == mediaStatusChanged(QtAV::LoadedMedia)
-    void mediaStatusChanged(QtAV::MediaStatus status); // explictly use QtAV::MediaStatus
+    void loaded();                                      // == mediaStatusChanged(QtAV::LoadedMedia)
+    void mediaStatusChanged(QtAV::MediaStatus status);  // explictly use QtAV::MediaStatus
     void mediaEndActionChanged(QtAV::MediaEndAction action);
 
     /*!

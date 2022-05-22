@@ -58,17 +58,17 @@ namespace Internal
 
 int computeNotifyPrecision(qint64 duration, qreal fps)
 {
-    if ((duration <= 0) || (duration > 60*1000)) // no duration or 10min
+    if ((duration <= 0) || (duration > (60 * 1000))) // no duration or 10min
         return 500;
 
-    if (duration > 20*1000)
+    if (duration > (20 * 1000))
         return 250;
 
     int dt = 500;
 
     if (fps > 1)
     {
-        dt = qMin(250, int(qreal(dt*2) / fps));
+        dt = qMin(250, int(qreal(dt * 2) / fps));
     }
     else
     {
@@ -80,7 +80,7 @@ int computeNotifyPrecision(qint64 duration, qreal fps)
 
 } // namespace Internal
 
-static bool correct_audio_channels(AVCodecContext *ctx)
+static bool correct_audio_channels(AVCodecContext* ctx)
 {
     if (ctx->channels <= 0)
     {
@@ -101,50 +101,50 @@ static bool correct_audio_channels(AVCodecContext *ctx)
 }
 
 AVPlayerCore::Private::Private()
-    : auto_load(false)
-    , async_load(true)
-    , loaded(false)
-    , relative_time_mode(true)
-    , media_start_pts(0)
-    , media_end(kInvalidPosition)
-    , reset_state(true)
-    , start_position(0)
-    , stop_position(kInvalidPosition)
-    , start_position_norm(0)
-    , stop_position_norm(kInvalidPosition)
-    , last_known_good_pts(0)
-    , was_stepping(false)
-    , repeat_max(0)
-    , repeat_current(-1)
-    , timer_id(-1)
-    , audio_track(0)
-    , video_track(0)
-    , subtitle_track(0)
-    , buffer_mode(BufferPackets)
-    , buffer_value(-1)
-    , read_thread(nullptr)
-    , clock(new AVClock(AVClock::AudioClock))
-    , vo(nullptr)
-    , ao(new AudioOutput())
-    , adec(nullptr)
-    , vdec(nullptr)
-    , athread(nullptr)
-    , vthread(nullptr)
-    , vcapture(nullptr)
-    , speed(1.0)
-    , vos(nullptr)
-    , aos(nullptr)
-    , brightness(0)
-    , contrast(0)
-    , saturation(0)
-    , seeking(false)
-    , seek_type(AccurateSeek)
-    , interrupt_timeout(30000)
-    , force_fps(0)
-    , notify_interval(-500)
-    , status(NoMedia)
-    , state(AVPlayerCore::StoppedState)
-    , end_action(MediaEndAction_Default)
+    : auto_load             (false),
+      async_load            (true),
+      loaded                (false),
+      relative_time_mode    (true),
+      media_start_pts       (0),
+      media_end             (kInvalidPosition),
+      reset_state           (true),
+      start_position        (0),
+      stop_position         (kInvalidPosition),
+      start_position_norm   (0),
+      stop_position_norm    (kInvalidPosition),
+      last_known_good_pts   (0),
+      was_stepping          (false),
+      repeat_max            (0),
+      repeat_current        (-1),
+      timer_id              (-1),
+      audio_track           (0),
+      video_track           (0),
+      subtitle_track        (0),
+      buffer_mode           (BufferPackets),
+      buffer_value          (-1),
+      read_thread           (nullptr),
+      clock                 (new AVClock(AVClock::AudioClock)),
+      vo                    (nullptr),
+      ao                    (new AudioOutput()),
+      adec                  (nullptr),
+      vdec                  (nullptr),
+      athread               (nullptr),
+      vthread               (nullptr),
+      vcapture              (nullptr),
+      speed                 (1.0),
+      vos                   (nullptr),
+      aos                   (nullptr),
+      brightness            (0),
+      contrast              (0),
+      saturation            (0),
+      seeking               (false),
+      seek_type             (AccurateSeek),
+      interrupt_timeout     (30000),
+      force_fps             (0),
+      notify_interval       (-500),
+      status                (NoMedia),
+      state                 (AVPlayerCore::StoppedState),
+      end_action            (MediaEndAction_Default)
 {
     demuxer.setInterruptTimeout(interrupt_timeout);
 
@@ -326,7 +326,9 @@ void AVPlayerCore::Private::initBaseStatistics()
 
     if (!fmt_ctx)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("demuxer.formatContext()==null. internal error");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("demuxer.formatContext()==null. internal error");
+
         updateNotifyInterval();
 
         return;
@@ -349,7 +351,7 @@ void AVPlayerCore::Private::initBaseStatistics()
     updateNotifyInterval();
 }
 
-void AVPlayerCore::Private::initCommonStatistics(int s, Statistics::Common *st, AVCodecContext *avctx)
+void AVPlayerCore::Private::initCommonStatistics(int s, Statistics::Common* st, AVCodecContext* avctx)
 {
     AVFormatContext* fmt_ctx = demuxer.formatContext();
 
@@ -369,7 +371,7 @@ void AVPlayerCore::Private::initCommonStatistics(int s, Statistics::Common *st, 
         << "duration="
         << stream->duration
         << "("
-        << qint64(qreal(stream->duration)*av_q2d(stream->time_base)*1000.0)
+        << qint64(qreal(stream->duration) * av_q2d(stream->time_base) * 1000.0)
         << "ms), time_base="
         << av_q2d(stream->time_base);
 
@@ -420,14 +422,14 @@ void AVPlayerCore::Private::initCommonStatistics(int s, Statistics::Common *st, 
 
 void AVPlayerCore::Private::initAudioStatistics(int s)
 {
-    AVCodecContext* avctx = demuxer.audioCodecContext();
-    statistics.audio      = Statistics::Common();
-    statistics.audio_only = Statistics::AudioOnly();
+    AVCodecContext* const avctx = demuxer.audioCodecContext();
+    statistics.audio            = Statistics::Common();
+    statistics.audio_only       = Statistics::AudioOnly();
 
     if (!avctx)
         return;
 
-    statistics.audio.available = (s == demuxer.audioStream());
+    statistics.audio.available  = (s == demuxer.audioStream());
     initCommonStatistics(s, &statistics.audio, avctx);
 
     if (adec)
@@ -439,7 +441,7 @@ void AVPlayerCore::Private::initAudioStatistics(int s)
     correct_audio_channels(avctx);
     statistics.audio_only.block_align = avctx->block_align;
     statistics.audio_only.channels    = avctx->channels;
-    char cl[128];
+    char cl[128]                      = { 0 };
 
     // nb_channels -1: will use av_get_channel_layout_nb_channels
 
@@ -452,9 +454,9 @@ void AVPlayerCore::Private::initAudioStatistics(int s)
 
 void AVPlayerCore::Private::initVideoStatistics(int s)
 {
-    AVCodecContext* avctx = demuxer.videoCodecContext();
-    statistics.video      = Statistics::Common();
-    statistics.video_only = Statistics::VideoOnly();
+    AVCodecContext* const avctx = demuxer.videoCodecContext();
+    statistics.video            = Statistics::Common();
+    statistics.video_only       = Statistics::VideoOnly();
 
     if (!avctx)
         return;
@@ -478,9 +480,9 @@ void AVPlayerCore::Private::initVideoStatistics(int s)
 
 #if AV_MODULE_CHECK(LIBAVFORMAT, 55, 18, 0, 39, 100)
 
-    quint8* sd = reinterpret_cast<quint8*>(av_stream_get_side_data(demuxer.formatContext()->streams[s],
-                                                                   AV_PKT_DATA_DISPLAYMATRIX,
-                                                                   nullptr));
+    quint8* const sd = reinterpret_cast<quint8*>(av_stream_get_side_data(demuxer.formatContext()->streams[s],
+                                                                         AV_PKT_DATA_DISPLAYMATRIX,
+                                                                         nullptr));
 
     if (sd)
     {
@@ -496,7 +498,7 @@ void AVPlayerCore::Private::initVideoStatistics(int s)
 
 // notify statistics change after audio/video thread is set
 
-bool AVPlayerCore::Private::setupAudioThread(AVPlayerCore *player)
+bool AVPlayerCore::Private::setupAudioThread(AVPlayerCore* player)
 {
     AVDemuxer* ademuxer = &demuxer;
 
@@ -515,7 +517,7 @@ bool AVPlayerCore::Private::setupAudioThread(AVPlayerCore *player)
         athread->setOutput(nullptr);
     }
 
-    AVCodecContext* avctx = ademuxer->audioCodecContext();
+    AVCodecContext* const avctx = ademuxer->audioCodecContext();
 
     if (!avctx)
     {
@@ -568,7 +570,8 @@ bool AVPlayerCore::Private::setupAudioThread(AVPlayerCore *player)
 
     if (!af.isValid())
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("invalid audio format. audio stream will be disabled");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("invalid audio format. audio stream will be disabled");
 
         return false;
     }
@@ -662,19 +665,27 @@ QVariantList AVPlayerCore::Private::getTracksInfo(AVDemuxer *demuxer, AVDemuxer:
     switch (st)
     {
         case AVDemuxer::AudioStream:
+        {
             streams = demuxer->audioStreams();
             break;
+        }
 
         case AVDemuxer::SubtitleStream:
+        {
             streams = demuxer->subtitleStreams();
             break;
+        }
 
         case AVDemuxer::VideoStream:
+        {
             streams = demuxer->videoStreams();
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     if (streams.isEmpty())
@@ -683,24 +694,24 @@ QVariantList AVPlayerCore::Private::getTracksInfo(AVDemuxer *demuxer, AVDemuxer:
     Q_FOREACH (int s, streams)
     {
         QVariantMap t;
-        t[QStringLiteral("id")]           = info.size();
-        t[QStringLiteral("file")]         = demuxer->fileName();
-        t[QStringLiteral("stream_index")] = QVariant(s);
+        t[QLatin1String("id")]           = info.size();
+        t[QLatin1String("file")]         = demuxer->fileName();
+        t[QLatin1String("stream_index")] = QVariant(s);
 
-        AVStream* stream                  = demuxer->formatContext()->streams[s];
-        AVCodecContext* ctx               = stream->codec;
+        AVStream* const stream           = demuxer->formatContext()->streams[s];
+        AVCodecContext* const ctx        = stream->codec;
 
         if (ctx)
         {
             const AVCodecDescriptor* codec_desc = avcodec_descriptor_get(ctx->codec_id);
 
             if (codec_desc)
-                t[QStringLiteral("codec")] = QByteArray(codec_desc->name);
+                t[QLatin1String("codec")] = QByteArray(codec_desc->name);
             else
                 continue;
 
             if (ctx->extradata)
-                t[QStringLiteral("extra")] = QByteArray((const char*)ctx->extradata, ctx->extradata_size);
+                t[QLatin1String("extra")] = QByteArray((const char*)ctx->extradata, ctx->extradata_size);
         }
 
         AVDictionaryEntry* tag = av_dict_get(stream->metadata, "language", nullptr, 0);
@@ -710,32 +721,32 @@ QVariantList AVPlayerCore::Private::getTracksInfo(AVDemuxer *demuxer, AVDemuxer:
 
         if (tag)
         {
-            t[QStringLiteral("language")] = QString::fromUtf8(tag->value);
+            t[QLatin1String("language")] = QString::fromUtf8(tag->value);
         }
 
         tag = av_dict_get(stream->metadata, "title", nullptr, 0);
 
         if (tag)
         {
-            t[QStringLiteral("title")] = QString::fromUtf8(tag->value);
+            t[QLatin1String("title")] = QString::fromUtf8(tag->value);
         }
 
         info.push_back(t);
     }
 /*
     QVariantMap t;
-    t[QStringLiteral("id")] = -1;
+    t[QLatin1String("id")] = -1;
     info.prepend(t);
 */
     return info;
 }
 
-bool AVPlayerCore::Private::applySubtitleStream(int n, AVPlayerCore *player)
+bool AVPlayerCore::Private::applySubtitleStream(int n, AVPlayerCore* player)
 {
     if (!demuxer.setStreamIndex(AVDemuxer::SubtitleStream, n))
         return false;
 
-    AVCodecContext* ctx = demuxer.subtitleCodecContext();
+    AVCodecContext* const ctx = demuxer.subtitleCodecContext();
 
     if (!ctx)
         return false;
@@ -768,7 +779,7 @@ bool AVPlayerCore::Private::tryApplyDecoderPriority(AVPlayerCore *player)
     Q_FOREACH (VideoDecoderId vid, vc_ids)
     {
         qCDebug(DIGIKAM_QTAV_LOG).noquote()
-            << QString::asprintf("**********trying video decoder: %s...",
+            << QString::asprintf("Trying video decoder: %s",
                 VideoDecoder::name(vid));
 
         vd = VideoDecoder::create(vid);
@@ -782,7 +793,7 @@ bool AVPlayerCore::Private::tryApplyDecoderPriority(AVPlayerCore *player)
         if (vd->open())
         {
             qCDebug(DIGIKAM_QTAV_LOG).noquote()
-                << QString::asprintf("**************Video decoder found:%p", vd);
+                << QString::asprintf("Video decoder found:%p", vd);
 
             break;
         }
@@ -792,7 +803,7 @@ bool AVPlayerCore::Private::tryApplyDecoderPriority(AVPlayerCore *player)
     }
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
-        << QString::asprintf("**************set new decoder:%p -> %p", vdec, vd);
+        << QString::asprintf("Set new decoder:%p -> %p", vdec, vd);
 
     if (!vd)
     {
@@ -844,7 +855,7 @@ bool AVPlayerCore::Private::setupVideoThread(AVPlayerCore* player)
         vthread->setDecoder(nullptr);
     }
 
-    AVCodecContext* avctx = demuxer.videoCodecContext();
+    AVCodecContext* const avctx = demuxer.videoCodecContext();
 
     if (!avctx)
     {
@@ -861,9 +872,9 @@ bool AVPlayerCore::Private::setupVideoThread(AVPlayerCore* player)
     Q_FOREACH (VideoDecoderId vid, vc_ids)
     {
         qCDebug(DIGIKAM_QTAV_LOG).noquote()
-            << QString::asprintf("**********trying video decoder: %s...", VideoDecoder::name(vid));
+            << QString::asprintf("Trying video decoder: %s", VideoDecoder::name(vid));
 
-        VideoDecoder* vd = VideoDecoder::create(vid);
+        VideoDecoder* const vd = VideoDecoder::create(vid);
 
         if (!vd)
         {
@@ -880,7 +891,7 @@ bool AVPlayerCore::Private::setupVideoThread(AVPlayerCore* player)
             vdec = vd;
 
             qCDebug(DIGIKAM_QTAV_LOG).noquote()
-                << QString::asprintf("**************Video decoder found:%p", vdec);
+                << QString::asprintf("Video decoder found: %p", vdec);
 
             break;
         }
@@ -948,7 +959,7 @@ void AVPlayerCore::Private::updateBufferValue(PacketBuffer* buf)
 {
     const bool video = vthread && (buf == vthread->packetQueue());
     const qreal fps  = qMax<qreal>(24.0, statistics.video.frame_rate);
-    qint64 bv        = 0.5*fps;
+    qint64 bv        = 0.5 * fps;
 
     if (!video)
     {

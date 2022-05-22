@@ -80,13 +80,15 @@ public:
 
         if (pOut == pNew)
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("output not changed: %p", pOut);
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("output not changed: %p", pOut);
 
-            if (thread && thread->output() == pNew)
+            if (thread && (thread->output() == pNew))
             {
                 // avthread already set that output
 
-                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("avthread already set that output");
+                qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                    << QString::asprintf("avthread already set that output");
 
                 return;
             }
@@ -99,7 +101,8 @@ public:
 
         if (!thread)
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("avthread not ready. can not set output.");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("avthread not ready. can not set output.");
 
             // no avthread, we can delete it safely
             // AVOutput must be allocated in heap. Just like QObject's children.
@@ -209,7 +212,7 @@ public:
     int                     notify_interval;
 
     MediaStatus             status;                       ///< status changes can be from demuxer or demux thread
-    AVPlayerCore::State         state;
+    AVPlayerCore::State     state;
     MediaEndAction          end_action;
     QMutex                  load_mutex;
 };
