@@ -129,6 +129,11 @@ QString ExifToolParser::Private::actionString(int cmdAction) const
             return QLatin1String("Tags Database");
         }
 
+        case ExifToolProcess::VERSION_STRING:
+        {
+            return QLatin1String("Version String");
+        }
+
         case ExifToolProcess::COPY_TAGS:
         {
             return QLatin1String("Copy Tags");
@@ -137,11 +142,6 @@ QString ExifToolParser::Private::actionString(int cmdAction) const
         case ExifToolProcess::TRANS_TAGS:
         {
             return QLatin1String("Translate Tags");
-        }
-
-        case ExifToolProcess::VERSION_STRING:
-        {
-            return QLatin1String("Version String");
         }
 
         default: // ExifToolProcess::NO_ACTION

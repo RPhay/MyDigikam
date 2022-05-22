@@ -30,7 +30,7 @@ ExifToolParser::ExifToolParser(QObject* const parent)
     : QObject(parent),
       d      (new Private())
 {
-    // Create ExifTool parser instance.
+    // Get or create ExifTool process instance.
 
     d->proc = ExifToolProcess::instance();
 
