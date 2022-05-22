@@ -498,9 +498,9 @@ SafeTemporaryFile::SafeTemporaryFile()
 }
 
 SafeTemporaryFile::SafeTemporaryFile(const QString& templ)
-    : QTemporaryFile(nullptr)
+    : QTemporaryFile(nullptr),
+      m_templ       (templ)
 {
-    m_templ        = templ;
     QString random = QUuid::createUuid().toString().mid(1, 8);
     m_templ.replace(QLatin1String("XXXXXX"),
                     QLatin1String("XXXXXX-") + random);
