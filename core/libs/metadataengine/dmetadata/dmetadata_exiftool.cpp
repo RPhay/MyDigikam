@@ -77,15 +77,19 @@ bool DMetadata::loadUsingExifTool(const QString& filePath, bool fromVideo)
     QVariantList varLst = it.value();
     QByteArray exv      = varLst[0].toByteArray();
 
-    if (!exv.isEmpty())
+    if (exv.isEmpty())
     {
-        loadFromData(exv);
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "Metadata chunk loaded with ExifTool has no data";
 
-        // Restore file path.
-
-        setFilePath(filePath);
-        loadFromSidecarAndMerge(filePath);
+        return false;
     }
+
+    loadFromData(exv);
+
+    // Restore file path.
+
+    setFilePath(filePath);
+    loadFromSidecarAndMerge(filePath);
 
     return true;
 }
