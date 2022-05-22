@@ -51,7 +51,7 @@ class QTAV_EXPORT VideoFrameExtractor : public QObject
 
 public:
 
-    explicit VideoFrameExtractor(QObject* parent = nullptr);
+    explicit VideoFrameExtractor(QObject* const parent = nullptr);
 
     /*!
      * \brief setSource
@@ -68,6 +68,7 @@ public:
      */
     void setAsync(bool value);
     bool async() const;
+
     void setAutoExtract(bool value);
     bool autoExtract() const;
 
@@ -80,6 +81,7 @@ public:
      */
     void setPrecision(int value);
     int precision() const;
+
     void setPosition(qint64 value);
     qint64 position() const;
 
