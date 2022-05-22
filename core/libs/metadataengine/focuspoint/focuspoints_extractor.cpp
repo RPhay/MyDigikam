@@ -60,7 +60,10 @@ FocusPointsExtractor::FocusPointsExtractor(QObject* const parent,const QString& 
 {
     QScopedPointer<ExifToolParser> const parser(new ExifToolParser(this));
 
-    parser->load(image_path);
+    if (parser->exifToolAvailable())
+    {
+        parser->load(image_path);
+    }
 
     d->exifToolAvailable = parser->exifToolAvailable();
     d->metadata          = parser->currentData();

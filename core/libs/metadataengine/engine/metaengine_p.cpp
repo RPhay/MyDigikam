@@ -534,7 +534,7 @@ bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo) const
 
     if (!parser->exifToolAvailable())
     {
-       qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool is not available to save metadata...";
+        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool is not available to save metadata...";
 
         return false;
     }
