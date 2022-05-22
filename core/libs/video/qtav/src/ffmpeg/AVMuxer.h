@@ -57,7 +57,7 @@ public:
 
     static const QStringList& supportedProtocols();
 
-    explicit AVMuxer(QObject* parent = nullptr);
+    explicit AVMuxer(QObject* const parent = nullptr);
     ~AVMuxer();
 
     QString fileName()      const;
@@ -93,7 +93,7 @@ public:
     void copyProperties(VideoEncoder* enc); // rename to setEncoder
     void copyProperties(AudioEncoder* enc);
 
-    void setOptions(const QVariantHash &dict);
+    void setOptions(const QVariantHash& dict);
     QVariantHash options()  const;
 
 public Q_SLOTS:

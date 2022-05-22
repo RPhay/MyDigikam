@@ -52,18 +52,18 @@ class Q_DECL_HIDDEN AVMuxer::Private
 public:
 
     Private()
-        : seekable(false)
-        , network(false)
-        , started(false)
-        , eof(false)
-        , media_changed(true)
-        , open(false)
-        , format_ctx(nullptr)
-        , format(nullptr)
-        , io(nullptr)
-        , dict(nullptr)
-        , aenc(nullptr)
-        , venc(nullptr)
+        : seekable      (false),
+          network       (false),
+          started       (false),
+          eof           (false),
+          media_changed (true),
+          open          (false),
+          format_ctx    (nullptr),
+          format        (nullptr),
+          io            (nullptr),
+          dict          (nullptr),
+          aenc          (nullptr),
+          venc          (nullptr)
     {
 
 #if !AVFORMAT_STATIC_REGISTER
@@ -92,6 +92,7 @@ public:
     }
 
     AVStream* addStream(AVFormatContext* ctx, const QString& codecName, AVCodecID codecId);
+
     bool prepareStreams();
     void applyOptionsForDict();
     void applyOptionsForContext();
@@ -104,24 +105,24 @@ public:
     bool                eof;
     bool                media_changed;
     bool                open;
-    AVFormatContext*    format_ctx;
+    AVFormatContext*    format_ctx = nullptr;
 
     // copy the info, not parse the file when constructed, then need member vars
 
     QString             file;
     QString             file_orig;
-    AVOutputFormat*     format;
+    AVOutputFormat*     format = nullptr;
     QString             format_forced;
     MediaIO*            io;
 
-    AVDictionary*       dict;
+    AVDictionary*       dict = nullptr;
     QVariantHash        options;
     QList<int>          audio_streams, video_streams, subtitle_streams;
-    AudioEncoder*       aenc;       // not owner
-    VideoEncoder*       venc;       // not owner
+    AudioEncoder*       aenc = nullptr;       // not owner
+    VideoEncoder*       venc = nullptr;       // not owner
 };
 
-AVStream* AVMuxer::Private::addStream(AVFormatContext* ctx, const QString &codecName, AVCodecID codecId)
+AVStream* AVMuxer::Private::addStream(AVFormatContext* ctx, const QString& codecName, AVCodecID codecId)
 {
     AVCodec* codec = nullptr;
 
@@ -140,7 +141,11 @@ AVStream* AVMuxer::Private::addStream(AVFormatContext* ctx, const QString &codec
         }
 
         if (!codec)
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Can not find encoder for %s", codecName.toUtf8().constData());
+        {
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("Can not find encoder for %s",
+                    codecName.toUtf8().constData());
+        }
     }
     else if (codecId != QTAV_CODEC_ID(NONE))
     {
@@ -153,7 +158,7 @@ AVStream* AVMuxer::Private::addStream(AVFormatContext* ctx, const QString &codec
     if (!codec)
         return nullptr;
 
-    AVStream* s = avformat_new_stream(ctx, codec);
+    AVStream* const s = avformat_new_stream(ctx, codec);
 
     if (!s)
     {
@@ -164,14 +169,14 @@ AVStream* AVMuxer::Private::addStream(AVFormatContext* ctx, const QString &codec
 
     // set by avformat if unset
 
-    s->id               = ctx->nb_streams - 1;
-    s->time_base        = kTB;
-    AVCodecContext *c   = s->codec;
-    c->codec_id         = codec->id;
+    s->id                   = ctx->nb_streams - 1;
+    s->time_base            = kTB;
+    AVCodecContext* const c = s->codec;
+    c->codec_id             = codec->id;
 
     // Using codec->time_base is deprecated, but needed for older lavf.
 
-    c->time_base        = s->time_base;
+    c->time_base            = s->time_base;
 
     /* Some formats want stream headers to be separate. */
 
@@ -189,26 +194,26 @@ bool AVMuxer::Private::prepareStreams()
     audio_streams.clear();
     video_streams.clear();
     subtitle_streams.clear();
-    AVOutputFormat* fmt = format_ctx->oformat;
+    AVOutputFormat* const fmt = format_ctx->oformat;
 
     if (venc)
     {
-        AVStream* s = addStream(format_ctx, venc->codecName(), fmt->video_codec);
+        AVStream* const s = addStream(format_ctx, venc->codecName(), fmt->video_codec);
 
         if (s)
         {
-            AVCodecContext* c = s->codec;
-            c->bit_rate       = venc->bitRate();
-            c->width          = venc->width();
-            c->height         = venc->height();
+            AVCodecContext* const c = s->codec;
+            c->bit_rate             = venc->bitRate();
+            c->width                = venc->width();
+            c->height               = venc->height();
 
             // MUST set after encoder is open to ensure format is valid and the same
 
-            c->pix_fmt        = (AVPixelFormat)VideoFormat::pixelFormatToFFmpeg(venc->pixelFormat());
+            c->pix_fmt              = (AVPixelFormat)VideoFormat::pixelFormatToFFmpeg(venc->pixelFormat());
 
             // Set avg_frame_rate based on encoder frame_rate
 
-            s->avg_frame_rate = av_d2q(venc->frameRate(), venc->frameRate()*1001.0+2);
+            s->avg_frame_rate       = av_d2q(venc->frameRate(), venc->frameRate() * 1001.0 + 2);
 
             video_streams.push_back(s->id);
         }
@@ -216,30 +221,30 @@ bool AVMuxer::Private::prepareStreams()
 
     if (aenc)
     {
-        AVStream* s = addStream(format_ctx, aenc->codecName(), fmt->audio_codec);
+        AVStream* const s = addStream(format_ctx, aenc->codecName(), fmt->audio_codec);
 
         if (s)
         {
-            AVCodecContext* c      = s->codec;
-            c->bit_rate            = aenc->bitRate();
+            AVCodecContext* const c     = s->codec;
+            c->bit_rate                 = aenc->bitRate();
 
             /// MUST set after encoder is open to ensure format is valid and the same
 
-            c->sample_rate         = aenc->audioFormat().sampleRate();
-            c->sample_fmt          = (AVSampleFormat)aenc->audioFormat().sampleFormatFFmpeg();
-            c->channel_layout      = aenc->audioFormat().channelLayoutFFmpeg();
-            c->channels            = aenc->audioFormat().channels();
-            c->bits_per_raw_sample = aenc->audioFormat().bytesPerSample()*8; // need??
+            c->sample_rate              = aenc->audioFormat().sampleRate();
+            c->sample_fmt               = (AVSampleFormat)aenc->audioFormat().sampleFormatFFmpeg();
+            c->channel_layout           = aenc->audioFormat().channelLayoutFFmpeg();
+            c->channels                 = aenc->audioFormat().channels();
+            c->bits_per_raw_sample      = aenc->audioFormat().bytesPerSample()*8; // need??
 
-            AVCodecContext* avctx  = (AVCodecContext*)aenc->codecContext();
+            AVCodecContext* const avctx = (AVCodecContext*)aenc->codecContext();
 
 #if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(56,5,100)
 
-            c->initial_padding     = avctx->initial_padding;
+            c->initial_padding          = avctx->initial_padding;
 
 #else
 
-            c->delay               = avctx->delay;
+            c->delay                    = avctx->delay;
 
 #endif
 
@@ -346,7 +351,7 @@ const QStringList& AVMuxer::supportedExtensions()
 
 // TODO: move to QtAV::supportedFormats(bool out). custom protols?
 
-const QStringList &AVMuxer::supportedProtocols()
+const QStringList& AVMuxer::supportedProtocols()
 {
     static bool called = false;
     static QStringList protocols;
@@ -361,7 +366,7 @@ const QStringList &AVMuxer::supportedProtocols()
 
 #if QTAV_HAVE(AVDEVICE)
 
-    protocols << QStringLiteral("avdevice");
+    protocols << QLatin1String("avdevice");
 
 #endif
 
@@ -385,9 +390,9 @@ const QStringList &AVMuxer::supportedProtocols()
     return protocols;
 }
 
-AVMuxer::AVMuxer(QObject* parent)
+AVMuxer::AVMuxer(QObject* const parent)
     : QObject(parent),
-      d(new Private())
+      d      (new Private())
 {
 }
 
@@ -441,13 +446,13 @@ bool AVMuxer::setMedia(const QString &fileName)
 
 #ifdef Q_OS_WINRT
 
-        d->file.prepend(QStringLiteral("qfile:"));
+        d->file.prepend(QLatin1String("qfile:"));
 
 #endif
 
     }
 
-    d->media_changed = url_old != d->file;
+    d->media_changed = (url_old != d->file);
 
     if (d->media_changed)
     {
@@ -468,12 +473,12 @@ bool AVMuxer::setMedia(const QString &fileName)
 
 #ifdef Q_OS_WIN
 
-        if (colon == 1 && d->file.at(0).isLetter())
+        if ((colon == 1) && d->file.at(0).isLetter())
             return d->media_changed;
 
 #endif
 
-        const QString scheme = colon == 0 ? QStringLiteral("qrc") : d->file.left(colon);
+        const QString scheme = ((colon == 0) ? QLatin1String("qrc") : d->file.left(colon));
 
         // supportedProtocols() is not complete. so try MediaIO 1st, if not found, fallback to libavformat
 
@@ -505,8 +510,8 @@ bool AVMuxer::setMedia(QIODevice* device)
     if (!d->io)
         d->io = MediaIO::create("QIODevice");
 
-    QIODevice* old_dev = d->io->property("device").value<QIODevice*>();
-    d->media_changed   = old_dev != device;
+    QIODevice* const old_dev = d->io->property("device").value<QIODevice*>();
+    d->media_changed         = (old_dev != device);
 
     if (d->media_changed)
     {
@@ -523,16 +528,16 @@ bool AVMuxer::setMedia(QIODevice* device)
     return d->media_changed;
 }
 
-bool AVMuxer::setMedia(MediaIO *in)
+bool AVMuxer::setMedia(MediaIO* in)
 {
-    d->media_changed = in != d->io;
+    d->media_changed = (in != d->io);
 
     if (d->media_changed)
     {
         d->format_forced.clear();
     }
 
-    d->file = QString();
+    d->file      = QString();
     d->file_orig = QString();
 
     if (!d->io)
@@ -547,7 +552,7 @@ bool AVMuxer::setMedia(MediaIO *in)
     return d->media_changed;
 }
 
-void AVMuxer::setFormat(const QString &fmt)
+void AVMuxer::setFormat(const QString& fmt)
 {
     d->format_forced = fmt;
 }
@@ -660,9 +665,9 @@ bool AVMuxer::isOpen() const
 
 bool AVMuxer::writeAudio(const QtAV::Packet& packet)
 {
-    AVPacket* pkt     = const_cast<AVPacket*>(packet.asAVPacket());   // FIXME
-    pkt->stream_index = d->audio_streams[0];                          // FIXME
-    AVStream* s       = d->format_ctx->streams[pkt->stream_index];
+    AVPacket* const pkt = const_cast<AVPacket*>(packet.asAVPacket());   // FIXME
+    pkt->stream_index   = d->audio_streams[0];                          // FIXME
+    AVStream* const s   = d->format_ctx->streams[pkt->stream_index];
 
     // stream.time_base is set in avformat_write_header
 
@@ -676,9 +681,9 @@ bool AVMuxer::writeAudio(const QtAV::Packet& packet)
 
 bool AVMuxer::writeVideo(const QtAV::Packet& packet)
 {
-    AVPacket* pkt     = const_cast<AVPacket*>(packet.asAVPacket());
-    pkt->stream_index = d->video_streams[0];
-    AVStream* s       = d->format_ctx->streams[pkt->stream_index];
+    AVPacket* const pkt = const_cast<AVPacket*>(packet.asAVPacket());
+    pkt->stream_index   = d->video_streams[0];
+    AVStream* const s   = d->format_ctx->streams[pkt->stream_index];
 
     // stream.time_base is set in avformat_write_header
 
@@ -690,14 +695,16 @@ bool AVMuxer::writeVideo(const QtAV::Packet& packet)
 
 #if 0
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("mux packet.pts: %.3f dts:%.3f duration: %.3f, avpkt.pts: %lld,dts:%lld,duration:%lld"
-           , packet.pts, packet.dts, packet.duration
-           , pkt->pts, pkt->dts, pkt->duration);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("mux packet.pts: %.3f dts:%.3f duration: %.3f, avpkt.pts: %lld,dts:%lld,duration:%lld",
+                packet.pts, packet.dts, packet.duration,
+                pkt->pts, pkt->dts, pkt->duration);
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("stream: %d duration: %lld, end: %lld. tb:{%d/%d}"
-           , pkt->stream_index, s->duration
-           , av_stream_get_end_pts(s)
-           , s->time_base.num, s->time_base.den);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("stream: %d duration: %lld, end: %lld. tb:{%d/%d}",
+                pkt->stream_index, s->duration,
+                av_stream_get_end_pts(s),
+                s->time_base.num, s->time_base.den);
 
 #endif
 
@@ -706,17 +713,17 @@ bool AVMuxer::writeVideo(const QtAV::Packet& packet)
     return true;
 }
 
-void AVMuxer::copyProperties(VideoEncoder *enc)
+void AVMuxer::copyProperties(VideoEncoder* enc)
 {
     d->venc = enc;
 }
 
-void AVMuxer::copyProperties(AudioEncoder *enc)
+void AVMuxer::copyProperties(AudioEncoder* enc)
 {
     d->aenc = enc;
 }
 
-void AVMuxer::setOptions(const QVariantHash &dict)
+void AVMuxer::setOptions(const QVariantHash& dict)
 {
     d->options = dict;
     d->applyOptionsForContext(); // apply even if avformat context is open
@@ -740,19 +747,19 @@ void AVMuxer::Private::applyOptionsForDict()
 
     QVariant opt(options);
 
-    if (options.contains(QStringLiteral("avformat")))
-        opt = options.value(QStringLiteral("avformat"));
+    if (options.contains(QLatin1String("avformat")))
+        opt = options.value(QLatin1String("avformat"));
 
     Internal::setOptionsToDict(opt, &dict);
     const auto type = opt.type();
 
-    if (type == QVariant::Map)
+    if      (type == QVariant::Map)
     {
         QVariantMap avformat_dict(opt.toMap());
 
-        if (avformat_dict.contains(QStringLiteral("format_whitelist")))
+        if (avformat_dict.contains(QLatin1String("format_whitelist")))
         {
-            const QString fmts(avformat_dict[QStringLiteral("format_whitelist")].toString());
+            const QString fmts(avformat_dict[QLatin1String("format_whitelist")].toString());
 
             if (!fmts.contains(QLatin1Char(',')) && !fmts.isEmpty())
                 format_forced = fmts; // reset when media changed
@@ -762,9 +769,9 @@ void AVMuxer::Private::applyOptionsForDict()
     {
         QVariantHash avformat_dict(opt.toHash());
 
-        if (avformat_dict.contains(QStringLiteral("format_whitelist")))
+        if (avformat_dict.contains(QLatin1String("format_whitelist")))
         {
-            const QString fmts(avformat_dict[QStringLiteral("format_whitelist")].toString());
+            const QString fmts(avformat_dict[QLatin1String("format_whitelist")].toString());
 
             if (!fmts.contains(QLatin1Char(',')) && !fmts.isEmpty())
                 format_forced = fmts; // reset when media changed
@@ -779,15 +786,15 @@ void AVMuxer::Private::applyOptionsForContext()
 
     if (options.isEmpty())
     {
-        //av_opt_set_defaults(format_ctx);  //can't set default values! result maybe unexpected
+        //av_opt_set_defaults(format_ctx);  // can't set default values! result maybe unexpected
 
         return;
     }
 
     QVariant opt(options);
 
-    if (options.contains(QStringLiteral("avformat")))
-        opt = options.value(QStringLiteral("avformat"));
+    if (options.contains(QLatin1String("avformat")))
+        opt = options.value(QLatin1String("avformat"));
 
     Internal::setOptionsToFFmpegObj(opt, format_ctx);
 }
