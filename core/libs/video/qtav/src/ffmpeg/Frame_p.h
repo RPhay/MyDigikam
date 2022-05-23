@@ -46,14 +46,16 @@ class FramePrivate : public QSharedData
 public:
 
     FramePrivate()
-        : timestamp(0)
-        , data_align(1)
+        : timestamp (0),
+          data_align(1)
     {
     }
 
     virtual ~FramePrivate()
     {
     }
+
+public:
 
     QVector<uchar*> planes;     // slice
     QVector<int>    line_sizes; // stride

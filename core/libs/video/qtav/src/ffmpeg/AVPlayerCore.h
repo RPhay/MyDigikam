@@ -152,7 +152,7 @@ public:
     void setInput(MediaIO* in);
     MediaIO* input() const;
 
-    bool isLoaded() const;
+    bool isLoaded()  const;
 
     /*!
      * \brief setAsyncLoad
@@ -198,33 +198,33 @@ public:
 
     /// mediaStartPosition() + duration().
 
-    qint64 mediaStopPosition() const;
-    qreal mediaStartPositionF() const; // unit: s
-    qreal mediaStopPositionF() const;  // unit: s
+    qint64 mediaStopPosition()  const;
+    qreal mediaStartPositionF() const;  // unit: s
+    qreal mediaStopPositionF()  const;  // unit: s
 
     // can set by user. may be not the real media start position.
 
-    qint64 startPosition() const;
+    qint64 startPosition()   const;
 
     /*!
      * \brief stopPosition: the position at which player should stop playing
      * \return
      * If media stream is not a local file, stopPosition()==max value of qint64
      */
-    qint64 stopPosition() const; // unit: ms
-    qint64 position() const;     // unit: ms
+    qint64 stopPosition()    const;     // unit: ms
+    qint64 position()        const;     // unit: ms
     qint64 displayPosition() const;
 
     /**
      * 0: play once. N: play N+1 times. <0: infinity
      */
-    int repeat() const; // or repeatMax()?
+    int repeat()             const;     // or repeatMax()?
 
     /*!
      * \brief currentRepeat
      * \return -1 if not playback is stopped, otherwise (Playback times - 1)
      */
-    int currentRepeat() const;
+    int currentRepeat()                       const;
 
     /*!
      * \brief setExternalAudio
@@ -237,7 +237,7 @@ public:
      * \return true if no error happens
      */
     bool setExternalAudio(const QString& file);
-    QString externalAudio() const;
+    QString externalAudio()                   const;
 
     /*!
      * \brief externalAudioTracks
@@ -308,12 +308,12 @@ public:
      */
     const QVariantList& internalSubtitleTracks() const;
     bool setSubtitleStream(int n);
-    int currentAudioStream() const;
-    int currentVideoStream() const;
-    int currentSubtitleStream() const;
-    int audioStreamCount() const;
-    int videoStreamCount() const;
-    int subtitleStreamCount() const;
+    int currentAudioStream()                     const;
+    int currentVideoStream()                     const;
+    int currentSubtitleStream()                  const;
+    int audioStreamCount()                       const;
+    int videoStreamCount()                       const;
+    int subtitleStreamCount()                    const;
 
     /*!
      * \brief videoCapture
@@ -330,7 +330,7 @@ public:
      */
     void play(const QString& path);
     bool isPlaying() const;
-    bool isPaused() const;
+    bool isPaused()  const;
 
     /*!
      * \brief state
@@ -439,10 +439,10 @@ public:
      * enum OptionKey { Brightness, ... VideoCodec, FilterOptions...}
      * or use QString as keys?
      */
-    int brightness() const;
-    int contrast() const;
-    int hue() const;    // not implemented
-    int saturation() const;
+    int brightness()        const;
+    int contrast()          const;
+    int hue()               const;    // not implemented
+    int saturation()        const;
     unsigned int chapters() const;
 
     /*!
@@ -455,7 +455,7 @@ public:
 
     // avformat_open_input
 
-    void setOptionsForFormat(const QVariantHash &dict);
+    void setOptionsForFormat(const QVariantHash& dict);
     QVariantHash optionsForFormat() const;
 
     // avcodec_open2. TODO: the same for audio/video codec?

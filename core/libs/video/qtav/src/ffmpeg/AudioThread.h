@@ -42,7 +42,7 @@ class AudioThread : public AVThread
 
 public:
 
-    explicit AudioThread(QObject *parent = nullptr);
+    explicit AudioThread(QObject* const parent = nullptr);
 
 protected:
 

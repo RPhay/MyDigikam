@@ -54,7 +54,7 @@ class AVThread : public QThread
 
 public:
 
-    explicit AVThread(QObject *parent = nullptr);
+    explicit AVThread(QObject* const parent = nullptr);
     virtual ~AVThread();
 
     // used for changing some components when running
@@ -67,13 +67,13 @@ public:
 
     PacketBuffer* packetQueue() const;
 
-    void setDecoder(AVDecoder *decoder);
-    AVDecoder *decoder() const;
+    void setDecoder(AVDecoder* decoder);
+    AVDecoder* decoder() const;
 
-    void setOutput(AVOutput *out);
+    void setOutput(AVOutput* out);
     AVOutput* output() const;
 
-    void setOutputSet(OutputSet *set);
+    void setOutputSet(OutputSet* set);
     OutputSet* outputSet() const;
 
     void setDemuxEnded(bool ended);
@@ -82,13 +82,13 @@ public:
 
     bool waitForStarted(int msec = -1);
 
-    bool installFilter(Filter *filter, int index = 0x7FFFFFFF, bool lock = true);
-    bool uninstallFilter(Filter *filter, bool lock = true);
-    const QList<Filter *> &filters() const;
+    bool installFilter(Filter* filter, int index = 0x7FFFFFFF, bool lock = true);
+    bool uninstallFilter(Filter* filter, bool lock = true);
+    const QList<Filter*> &filters() const;
 
     // TODO: resample, resize task etc.
 
-    void scheduleTask(QRunnable *task);
+    void scheduleTask(QRunnable* task);
     void requestSeek();
     void scheduleFrameDrop(bool value = true);
     qreal previousHistoryPts() const;           // move to statistics?
@@ -125,7 +125,7 @@ private Q_SLOTS:
 
 protected:
 
-    AVThread(AVThreadPrivate& d, QObject *parent = nullptr);
+    AVThread(AVThreadPrivate& d, QObject* const parent = nullptr);
 
     /*
      * If the pause state is true set by pause(true), then block the thread and wait for pause

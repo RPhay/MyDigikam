@@ -193,7 +193,8 @@ public:
     VideoCapture*           vcapture;
     Statistics              statistics;
     qreal                   speed;
-    OutputSet*              vos, *aos;
+    OutputSet*              vos;
+    OutputSet*              aos;
     QVector<VideoDecoderId> vc_ids;
     int                     brightness, contrast, saturation;
 

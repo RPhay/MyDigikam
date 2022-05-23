@@ -40,13 +40,13 @@ class Q_DECL_HIDDEN AVTranscoder::Private
 public:
 
     Private()
-        : started(false)
-        , async(false)
-        , encoded_frames(0)
-        , start_time(0)
-        , source_player(nullptr)
-        , afilter(nullptr)
-        , vfilter(nullptr)
+        : started       (false),
+          async         (false),
+          encoded_frames(0),
+          start_time    (0),
+          source_player (nullptr),
+          afilter       (nullptr),
+          vfilter       (nullptr)
     {
     }
 
@@ -71,7 +71,7 @@ public:
     bool                  async;
     int                   encoded_frames;
     qint64                start_time;
-    AVPlayerCore*             source_player;
+    AVPlayerCore*         source_player;
     AudioEncodeFilter*    afilter;
     VideoEncodeFilter*    vfilter;
 /*
@@ -82,9 +82,9 @@ public:
     QVector<Filter*>      filters;
 };
 
-AVTranscoder::AVTranscoder(QObject *parent)
-    : QObject(parent)
-    , d(new Private())
+AVTranscoder::AVTranscoder(QObject* const parent)
+    : QObject(parent),
+      d      (new Private())
 {
 }
 
@@ -164,22 +164,22 @@ MediaIO* AVTranscoder::outputMediaIO() const
     return d->muxer.mediaIO();
 }
 
-void AVTranscoder::setOutputMedia(const QString &fileName)
+void AVTranscoder::setOutputMedia(const QString& fileName)
 {
     d->muxer.setMedia(fileName);
 }
 
-void AVTranscoder::setOutputMedia(QIODevice *dev)
+void AVTranscoder::setOutputMedia(QIODevice* dev)
 {
     d->muxer.setMedia(dev);
 }
 
-void AVTranscoder::setOutputMedia(MediaIO *io)
+void AVTranscoder::setOutputMedia(MediaIO* io)
 {
     d->muxer.setMedia(io);
 }
 
-void AVTranscoder::setOutputFormat(const QString &fmt)
+void AVTranscoder::setOutputFormat(const QString& fmt)
 {
     d->format = fmt;
     d->muxer.setFormat(fmt);
@@ -190,7 +190,7 @@ QString AVTranscoder::outputFormatForced() const
     return d->format;
 }
 
-void AVTranscoder::setOutputOptions(const QVariantHash &dict)
+void AVTranscoder::setOutputOptions(const QVariantHash& dict)
 {
     d->muxer.setOptions(dict);
 }
@@ -200,7 +200,7 @@ QVariantHash AVTranscoder::outputOptions() const
     return d->muxer.options();
 }
 
-bool AVTranscoder::createVideoEncoder(const QString &name)
+bool AVTranscoder::createVideoEncoder(const QString& name)
 {
     if (!d->vfilter)
     {
@@ -234,7 +234,7 @@ VideoEncoder* AVTranscoder::videoEncoder() const
     return d->vfilter->encoder();
 }
 
-bool AVTranscoder::createAudioEncoder(const QString &name)
+bool AVTranscoder::createAudioEncoder(const QString& name)
 {
     if (!d->afilter)
     {
@@ -346,7 +346,10 @@ void AVTranscoder::start()
         {
             d->filters.append(d->vfilter);
             d->vfilter->setStartTime(startTime());
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("framerate: %.3f/%.3f", videoEncoder()->frameRate(), sourcePlayer()->statistics().video.frame_rate);
+
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("framerate: %.3f/%.3f",
+                    videoEncoder()->frameRate(), sourcePlayer()->statistics().video.frame_rate);
 
             if (videoEncoder()->frameRate() <= 0)
             {
@@ -425,7 +428,7 @@ void AVTranscoder::onSourceStarted()
     {
         qCDebug(DIGIKAM_QTAV_LOG).noquote()
             << QString::asprintf("onSourceStarted framerate: %.3f/%.3f",
-                                 videoEncoder()->frameRate(), sourcePlayer()->statistics().video.frame_rate);
+                videoEncoder()->frameRate(), sourcePlayer()->statistics().video.frame_rate);
 
         if (videoEncoder()->frameRate() <= 0)
         {
@@ -445,7 +448,9 @@ void AVTranscoder::prepareMuxer()
     {
         if (!audioEncoder()->isOpen() || !videoEncoder()->isOpen())
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("encoders are not readly a:%d v:%d", audioEncoder()->isOpen(), videoEncoder()->isOpen());
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("encoders are not readly a:%d v:%d",
+                    audioEncoder()->isOpen(), videoEncoder()->isOpen());
 
             return;
         }
@@ -507,14 +512,15 @@ void AVTranscoder::writeVideo(const QtAV::Packet &packet)
     // TODO: startpts, duration, encoded size
 
     d->encoded_frames++;
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("encoded frames: %d, @%.3f pos: %lld",
-                                                             d->encoded_frames, packet.pts,
-                                                             packet.position);
+
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("encoded frames: %d, @%.3f pos: %lld",
+            d->encoded_frames, packet.pts, packet.position);
 }
 
 void AVTranscoder::tryFinish()
 {
-    Filter* f = qobject_cast<Filter*>(sender());
+    Filter* const f = qobject_cast<Filter*>(sender());
     d->filters.remove(d->filters.indexOf(f));
 
     if (d->filters.isEmpty())

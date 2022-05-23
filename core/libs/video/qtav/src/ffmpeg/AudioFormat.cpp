@@ -46,7 +46,7 @@ typedef struct
 {
     AVSampleFormat            avfmt;
     AudioFormat::SampleFormat fmt;
-    const char*               name;
+    const char*               name = nullptr;
 } sample_fmt_entry;
 
 static const sample_fmt_entry samplefmts[] =
@@ -129,12 +129,12 @@ class Q_DECL_HIDDEN AudioFormatPrivate : public QSharedData
 public:
 
     AudioFormatPrivate()
-      : sample_fmt(AudioFormat::SampleFormat_Input)
-      , av_sample_fmt(AV_SAMPLE_FMT_NONE)
-      , channels(0)
-      , sample_rate(0)
-      , channel_layout(AudioFormat::ChannelLayout_Unsupported)
-      , channel_layout_ff(0)
+      : sample_fmt       (AudioFormat::SampleFormat_Input),
+        av_sample_fmt    (AV_SAMPLE_FMT_NONE),
+        channels         (0),
+        sample_rate      (0),
+        channel_layout   (AudioFormat::ChannelLayout_Unsupported),
+        channel_layout_ff(0)
     {
     }
 
@@ -215,14 +215,16 @@ AudioFormat& AudioFormat::operator=(const AudioFormat& other)
 */
 bool AudioFormat::operator==(const AudioFormat& other) const
 {
-    return d->sample_rate == other.d->sample_rate               &&
+    return (
+            (d->sample_rate == other.d->sample_rate)              &&
 
             // compare channel layout first because it determines channel count
 
-            d->channel_layout_ff == other.d->channel_layout_ff  &&
-            d->channel_layout == other.d->channel_layout        &&
-            d->channels == other.d->channels                    &&
-            d->sample_fmt == other.d->sample_fmt;
+            (d->channel_layout_ff == other.d->channel_layout_ff)  &&
+            (d->channel_layout == other.d->channel_layout)        &&
+            (d->channels == other.d->channels)                    &&
+            (d->sample_fmt == other.d->sample_fmt)
+           );
 }
 
 /*!
@@ -241,13 +243,15 @@ bool AudioFormat::operator!=(const AudioFormat& other) const
 */
 bool AudioFormat::isValid() const
 {
-    return d->sample_rate > 0 && (d->channels > 0 || d->channel_layout > 0) &&
-           d->sample_fmt != AudioFormat::SampleFormat_Unknown;
+    return (
+            (d->sample_rate > 0) && ((d->channels > 0) || (d->channel_layout > 0)) &&
+            (d->sample_fmt != AudioFormat::SampleFormat_Unknown)
+           );
 }
 
 bool AudioFormat::isFloat() const
 {
-    return d->sample_fmt & kFloat;
+    return (d->sample_fmt & kFloat);
 }
 
 bool AudioFormat::isUnsigned() const
@@ -262,7 +266,7 @@ bool AudioFormat::isPlanar() const
 
 int AudioFormat::planeCount() const
 {
-    return isPlanar() ? channels() : 1;
+    return (isPlanar() ? channels() : 1);
 }
 
 /*!
@@ -301,7 +305,7 @@ qint64 AudioFormat::channelLayoutFFmpeg() const
 
 void AudioFormat::setChannelLayout(ChannelLayout layout)
 {
-    qint64 clff = channelLayoutToFFmpeg(layout);
+    qint64 clff       = channelLayoutToFFmpeg(layout);
     d->channel_layout = layout;
 
     // TODO: shall we set ffmpeg channel layout to 0(not valid value)?
@@ -410,7 +414,7 @@ qint32 AudioFormat::bytesForDuration(qint64 duration) const
 */
 qint64 AudioFormat::durationForBytes(qint32 bytes) const
 {
-    if (!isValid() || bytes <= 0)
+    if (!isValid() || (bytes <= 0))
         return 0;
 
     // We round the byte count to ensure whole frames
@@ -426,7 +430,7 @@ qint64 AudioFormat::durationForBytes(qint32 bytes) const
 */
 qint32 AudioFormat::bytesForFrames(qint32 frameCount) const
 {
-    return frameCount * bytesPerFrame();
+    return (frameCount * bytesPerFrame());
 }
 
 /*!
@@ -444,7 +448,7 @@ qint32 AudioFormat::framesForBytes(qint32 byteCount) const
     int size = bytesPerFrame();
 
     if (size > 0)
-        return byteCount / size;
+        return (byteCount / size);
 
     return 0;
 }
@@ -468,7 +472,7 @@ qint32 AudioFormat::framesForDuration(qint64 duration) const
 */
 qint64 AudioFormat::durationForFrames(qint32 frameCount) const
 {
-    if (!isValid() || frameCount <= 0)
+    if (!isValid() || (frameCount <= 0))
         return 0;
 
     return (frameCount * kHz) / sampleRate();
@@ -479,14 +483,14 @@ int AudioFormat::bytesPerFrame() const
     if (!isValid())
         return 0;
 
-    return bytesPerSample() * channels();
+    return (bytesPerSample() * channels());
 }
 
 // kSize: assume 12 bytes(long double) at most
 
 int AudioFormat::bytesPerSample() const
 {
-    return d->sample_fmt & ((1<<(kSize+1)) - 1);
+    return (d->sample_fmt & ((1<<(kSize+1)) - 1));
 }
 
 int AudioFormat::sampleSize() const
@@ -496,12 +500,12 @@ int AudioFormat::sampleSize() const
 
 int AudioFormat::bitRate() const
 {
-    return bytesPerSecond() << 3;
+    return (bytesPerSecond() << 3);
 }
 
 int AudioFormat::bytesPerSecond() const
 {
-    return channels() * bytesPerSample() * sampleRate();
+    return (channels() * bytesPerSample() * sampleRate());
 }
 
 #ifndef QT_NO_DEBUG_STREAM
@@ -527,7 +531,7 @@ QDebug operator<<(QDebug dbg, QtAV::AudioFormat::SampleFormat sampleFormat)
 
 QDebug operator<<(QDebug dbg, QtAV::AudioFormat::ChannelLayout channelLayout)
 {
-    char cl[128];
+    char cl[128] = { 0 };
     av_get_channel_layout_string(cl, sizeof(cl), -1, AudioFormat::channelLayoutToFFmpeg(channelLayout)); // TODO: ff version
     dbg.nospace() << cl;
 

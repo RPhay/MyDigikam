@@ -100,7 +100,7 @@ public:
     QByteArray data(int plane = 0) const;
     uchar* bits(int plane = 0);
 
-    const uchar *bits(int plane = 0) const
+    const uchar* bits(int plane = 0) const
     {
         return constBits(plane);
     }

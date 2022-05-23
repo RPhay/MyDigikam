@@ -97,12 +97,12 @@ public:
 
     // TODO: constexpr
 
-    friend int RawSampleSize(SampleFormat fmt)      { return fmt & ((1<<(kSize+1)) - 1);                            }
-    friend bool IsFloat(SampleFormat fmt)           { return !!(fmt & kFloat);                                      }
-    friend bool IsPlanar(SampleFormat format)       { return !!(format & kPlanar);                                  }
-    friend bool IsUnsigned(SampleFormat format)     { return !!(format & kUnsigned);                                }
-    friend SampleFormat ToPlanar(SampleFormat fmt)  { return IsPlanar(fmt) ? fmt : SampleFormat((int)fmt|kPlanar);  }
-    friend SampleFormat ToPacked(SampleFormat fmt)  { return IsPlanar(fmt) ? SampleFormat((int)fmt^kPlanar) : fmt;  }
+    friend int RawSampleSize(SampleFormat fmt)      { return (fmt & ((1 << (kSize + 1)) - 1));                         }
+    friend bool IsFloat(SampleFormat fmt)           { return !!(fmt & kFloat);                                         }
+    friend bool IsPlanar(SampleFormat format)       { return !!(format & kPlanar);                                     }
+    friend bool IsUnsigned(SampleFormat format)     { return !!(format & kUnsigned);                                   }
+    friend SampleFormat ToPlanar(SampleFormat fmt)  { return (IsPlanar(fmt) ? fmt : SampleFormat((int)fmt | kPlanar)); }
+    friend SampleFormat ToPacked(SampleFormat fmt)  { return (IsPlanar(fmt) ? SampleFormat((int)fmt ^ kPlanar) : fmt); }
 
     static ChannelLayout channelLayoutFromFFmpeg(qint64 clff);
     static qint64 channelLayoutToFFmpeg(ChannelLayout cl);
@@ -111,12 +111,12 @@ public:
     static SampleFormat make(int bytesPerSample, bool isFloat, bool isUnsigned, bool isPlanar);
 
     AudioFormat();
-    AudioFormat(const AudioFormat &other);
+    AudioFormat(const AudioFormat& other);
     ~AudioFormat();
 
-    AudioFormat& operator=(const AudioFormat &other);
-    bool operator==(const AudioFormat &other)   const;
-    bool operator!=(const AudioFormat &other)   const;
+    AudioFormat& operator=(const AudioFormat& other);
+    bool operator==(const AudioFormat& other)   const;
+    bool operator!=(const AudioFormat& other)   const;
 
     bool isValid()                              const;
     bool isFloat()                              const;
@@ -195,7 +195,7 @@ private:
 
 #ifndef QT_NO_DEBUG_STREAM
 
-QTAV_EXPORT QDebug operator<<(QDebug debug, const AudioFormat &fmt);
+QTAV_EXPORT QDebug operator<<(QDebug debug, const AudioFormat& fmt);
 QTAV_EXPORT QDebug operator<<(QDebug debug, AudioFormat::SampleFormat sampleFormat);
 QTAV_EXPORT QDebug operator<<(QDebug debug, AudioFormat::ChannelLayout channelLayout);
 

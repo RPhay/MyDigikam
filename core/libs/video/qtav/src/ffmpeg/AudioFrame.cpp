@@ -52,9 +52,9 @@ public:
 
     explicit AudioFramePrivate(const AudioFormat& fmt)
         : FramePrivate(),
-          format(fmt),
+          format        (fmt),
           samples_per_ch(0),
-          conv(nullptr)
+          conv          (nullptr)
     {
         if (!format.isValid())
             return;
@@ -197,7 +197,7 @@ AudioFrame AudioFrame::mid(int pos, int len) const
 
     int lenBytes = len * d->format.bytesPerSample();
 
-    if (len > 0 && (lenBytes < bufSize))
+    if ((len > 0) && (lenBytes < bufSize))
     {
         bufSize = lenBytes;
     }
@@ -207,7 +207,7 @@ AudioFrame AudioFrame::mid(int pos, int len) const
     }
 
     QByteArray buf(bufSize * planeCount(), 0);
-    char* dst = buf.data(); // must before buf is shared, otherwise data will be detached.
+    char* dst = buf.data();                     // must before buf is shared, otherwise data will be detached.
 
     for (int i = 0 ; i < planeCount() ; ++i)
     {
@@ -265,8 +265,8 @@ void AudioFrame::setSamplesPerChannel(int samples)
     const int nb_planes = d->format.planeCount();
 
     const int bpl(d->line_sizes[0] > 0 ? d->line_sizes[0]
-                                       : d->samples_per_ch*d->format.bytesPerSample() * (d->format.isPlanar() ? 1
-                                                                                                              : d->format.channels()));
+                                       : d->samples_per_ch * d->format.bytesPerSample() * (d->format.isPlanar() ? 1
+                                                                                                                : d->format.channels()));
 
     for (int i = 0 ; i < nb_planes ; ++i)
     {
@@ -307,7 +307,7 @@ qint64 AudioFrame::duration() const
     return d->format.durationForBytes(d->data.size());
 }
 
-AudioFrame AudioFrame::to(const AudioFormat &fmt) const
+AudioFrame AudioFrame::to(const AudioFormat& fmt) const
 {
     if (!isValid() || !constBits(0))
         return AudioFrame();
@@ -331,7 +331,8 @@ AudioFrame AudioFrame::to(const AudioFormat &fmt) const
 
         if (!conv)
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("no audio resampler is available");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("no audio resampler is available");
 
             return AudioFrame();
         }

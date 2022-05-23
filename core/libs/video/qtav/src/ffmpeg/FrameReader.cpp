@@ -94,7 +94,7 @@ public:
 
 bool FrameReader::Private::tryLoad()
 {
-    const bool loaded = demuxer.fileName() == url && demuxer.isLoaded();
+    const bool loaded = ((demuxer.fileName() == url) && demuxer.isLoaded());
 
     if (loaded && decoder)
         return true;
@@ -118,7 +118,7 @@ bool FrameReader::Private::tryLoad()
         }
     }
 
-    const bool has_video = demuxer.videoStreams().size() > 0;
+    const bool has_video = (demuxer.videoStreams().size() > 0);
 
     if (!has_video)
     {
@@ -129,7 +129,7 @@ bool FrameReader::Private::tryLoad()
 
     if (vdecs.isEmpty())
     {
-        VideoDecoder* vd = VideoDecoder::create("FFmpeg");
+        VideoDecoder* const vd = VideoDecoder::create("FFmpeg");
 
         if (vd)
         {
@@ -144,7 +144,7 @@ bool FrameReader::Private::tryLoad()
     {
         Q_FOREACH (const QString& c, vdecs)
         {
-            VideoDecoder* vd = VideoDecoder::create(c.toLatin1().constData());
+            VideoDecoder* const vd = VideoDecoder::create(c.toLatin1().constData());
 
             if (!vd)
                 continue;
@@ -179,7 +179,7 @@ qint64 FrameReader::Private::seekInternal(qint64 value)
     {
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("load error");
 
-        return -1;
+        return (-1);
     }
 
     VideoFrame frame;
@@ -202,9 +202,9 @@ qint64 FrameReader::Private::seekInternal(qint64 value)
         pkt = demuxer.packet();
 
         if (pts0 < 0LL)
-            pts0 = (qint64)(pkt.pts*1000.0);
+            pts0 = (qint64)(pkt.pts * 1000.0);
 
-        if ((qint64)(pkt.pts*1000.0) - value > (qint64)range)
+        if ((qint64)(pkt.pts * 1000.0) - value > (qint64)range)
         {
             if (warn_out_of_range)
                 qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("read packet out of range");
@@ -231,8 +231,8 @@ qint64 FrameReader::Private::seekInternal(qint64 value)
 
     // enlarge range if seek to key-frame failed
 
-    const qint64 key_pts     = (qint64)(pkt.pts*1000.0);
-    const bool enlarge_range = pts0 >= 0LL && key_pts - pts0 > 0LL;
+    const qint64 key_pts     = (qint64)(pkt.pts * 1000.0);
+    const bool enlarge_range = ((pts0 >= 0LL) && ((key_pts - pts0) > 0LL));
 
     if (enlarge_range)
     {
@@ -255,7 +255,7 @@ qint64 FrameReader::Private::seekInternal(qint64 value)
 
     int k = 0;
 
-    while (k < 2 && !frame.isValid())
+    while ((k < 2) && !frame.isValid())
     {
         //qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("invalid key frame!!!!! undecoded: %d", decoder->undecodedSize());
 
@@ -271,7 +271,7 @@ qint64 FrameReader::Private::seekInternal(qint64 value)
     // but sometimes seek to no-key frame(and range is enlarged), diff0 >= 0
     // decode key frame
 
-    const int diff0 = qint64(frame.timestamp()*1000.0) - value;
+    const int diff0 = qint64(frame.timestamp() * 1000.0) - value;
 
     if (qAbs(diff0) <= range)
     {
@@ -283,7 +283,7 @@ qint64 FrameReader::Private::seekInternal(qint64 value)
                 << "VideoFrameExtractor: key frame found @"
                 << frame.timestamp() <<" diff=" << diff0 << ". format: " <<  frame.format();
 
-            return qint64(frame.timestamp()*1000.0);
+            return qint64(frame.timestamp() * 1000.0);
         }
     }
 
@@ -306,7 +306,8 @@ qint64 FrameReader::Private::seekInternal(qint64 value)
 
         if (!pkt.isValid())
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("invalid packet. no decode");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("invalid packet. no decode");
 
             continue;
         }
@@ -320,10 +321,10 @@ qint64 FrameReader::Private::seekInternal(qint64 value)
             //return false; //??
         }
 
-        qint64 diff = qint64(t*1000.0) - value;
-        QVariantHash *dec_opt_old = dec_opt;
+        qint64 diff                     = qint64(t * 1000.0) - value;
+        QVariantHash* const dec_opt_old = dec_opt;
 
-        if (nb_seek == 0 || diff >= 0)
+        if ((nb_seek == 0) || (diff >= 0))
             dec_opt = &dec_opt_normal;
         else
             dec_opt = &dec_opt_framedrop;
@@ -335,7 +336,8 @@ qint64 FrameReader::Private::seekInternal(qint64 value)
 
         if (!decoder->decode(pkt))
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("!!!!!!!!!decode failed!!!!");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("decode failed!");
 
             frame = VideoFrame();
 
@@ -353,9 +355,9 @@ qint64 FrameReader::Private::seekInternal(qint64 value)
             continue;
         }
 
-        frame = f;
-        const qreal pts = frame.timestamp();
-        const qint64 pts_ms = pts*1000.0;
+        frame               = f;
+        const qreal pts     = frame.timestamp();
+        const qint64 pts_ms = pts * 1000.0;
 
         if (pts_ms < value)
             continue;
@@ -364,16 +366,19 @@ qint64 FrameReader::Private::seekInternal(qint64 value)
 
         if (qAbs(diff) <= (qint64)range)
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("got frame at %fs, diff=%lld", pts, diff);
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("got frame at %fs, diff=%lld", pts, diff);
 
             break;
         }
 
         // if decoder was not flushed, we may get old frame which is acceptable
 
-        if (diff > range && t > pts)
+        if ((diff > range) && (t > pts))
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("out pts out of range. diff=%lld, range=%d", diff, range);
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("out pts out of range. diff=%lld, range=%d", diff, range);
+
             frame = VideoFrame();
 
             return -1;
@@ -382,12 +387,12 @@ qint64 FrameReader::Private::seekInternal(qint64 value)
 
     ++nb_seek;
 
-    return qint64(frame.timestamp()*1000.0);
+    return qint64(frame.timestamp() * 1000.0);
 }
 
-FrameReader::FrameReader(QObject *parent)
-    : QObject(parent)
-    , d(new Private())
+FrameReader::FrameReader(QObject* const parent)
+    : QObject(parent),
+      d      (new Private())
 {
     moveToThread(&d->read_thread);
 
@@ -405,7 +410,7 @@ FrameReader::~FrameReader()
 {
 }
 
-void FrameReader::setMedia(const QString &url)
+void FrameReader::setMedia(const QString& url)
 {
     if (url == d->url)
         return;
@@ -418,7 +423,7 @@ QString FrameReader::mediaUrl() const
     return d->url;
 }
 
-void FrameReader::setVideoDecoders(const QStringList &names)
+void FrameReader::setVideoDecoders(const QStringList& names)
 {
     if (names == d->vdecs)
         return;
@@ -483,6 +488,7 @@ void FrameReader::readMoreInternal()
     if (!d->tryLoad())
     {
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("load error");
+
         return;
     }
 
@@ -518,7 +524,8 @@ void FrameReader::readMoreInternal()
 
             if (!frame)
             {
-                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("no frame got, continue to decoder");
+                qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                    << QString::asprintf("no frame got, continue to decoder");
 
                 continue;
             }

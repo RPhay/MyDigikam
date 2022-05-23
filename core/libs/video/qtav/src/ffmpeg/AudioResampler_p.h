@@ -45,13 +45,15 @@ class QTAV_PRIVATE_EXPORT AudioResamplerPrivate : public DPtrPrivate<AudioResamp
 public:
 
     AudioResamplerPrivate()
-      : in_samples_per_channel(0),
+      : in_samples_per_channel (0),
         out_samples_per_channel(0),
-        speed(1.0)
+        speed                  (1.0)
     {
         in_format.setSampleFormat(AudioFormat::SampleFormat_Unknown);
         out_format.setSampleFormat(AudioFormat::SampleFormat_Float);
     }
+
+public:
 
     int         in_samples_per_channel;
     int         out_samples_per_channel;

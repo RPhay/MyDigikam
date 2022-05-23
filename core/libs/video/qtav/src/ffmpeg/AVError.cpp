@@ -57,7 +57,7 @@ static AVError::ErrorCode errorFromFFmpeg(int fe)
 {
     typedef struct
     {
-        int ff;
+        int                ff;
         AVError::ErrorCode e;
     } err_entry;
 
@@ -105,22 +105,22 @@ static void correct_error_by_ffmpeg(AVError::ErrorCode* e, int fe)
 }
 
 AVError::AVError()
-    : mError(NoError)
-    , mFFmpegError(0)
+    : mError(NoError),
+      mFFmpegError(0)
 {
 }
 
 AVError::AVError(ErrorCode code, int ffmpegError)
-    : mError(code)
-    , mFFmpegError(ffmpegError)
+    : mError(code),
+      mFFmpegError(ffmpegError)
 {
     correct_error_by_ffmpeg(&mError, mFFmpegError);
 }
 
-AVError::AVError(ErrorCode code, const QString &detail, int ffmpegError)
-    : mError(code)
-    , mFFmpegError(ffmpegError)
-    , mDetail(detail)
+AVError::AVError(ErrorCode code, const QString& detail, int ffmpegError)
+    : mError(code),
+      mFFmpegError(ffmpegError),
+      mDetail(detail)
 {
     correct_error_by_ffmpeg(&mError, mFFmpegError);
 }
@@ -142,7 +142,7 @@ AVError& AVError::operator=(const AVError& other)
 
 bool AVError::operator==(const AVError& other) const
 {
-    return (mError == other.mError && mFFmpegError == other.mFFmpegError);
+    return ((mError == other.mError) && (mFFmpegError == other.mFFmpegError));
 }
 
 void AVError::setError(ErrorCode ec)
@@ -164,90 +164,132 @@ QString AVError::string() const
         switch (mError)
         {
             case NoError:
+            {
                 errStr = i18n("No error");
                 break;
+            }
 
             case OpenError:
+            {
                 errStr = i18n("Open error");
                 break;
+            }
 
             case OpenTimedout:
+            {
                 errStr = i18n("Open timed out");
                 break;
+            }
 
             case ParseStreamTimedOut:
+            {
                 errStr = i18n("Parse stream timed out");
                 break;
+            }
 
             case ParseStreamError:
+            {
                 errStr = i18n("Parse stream error");
                 break;
+            }
 
             case StreamNotFound:
+            {
                 errStr = i18n("Stream not found");
                 break;
+            }
 
             case ReadTimedout:
+            {
                 errStr = i18n("Read packet timed out");
                 break;
+            }
 
             case ReadError:
+            {
                 errStr = i18n("Read error");
                 break;
+            }
 
             case SeekError:
+            {
                 errStr = i18n("Seek error");
                 break;
+            }
 
             case ResourceError:
+            {
                 errStr = i18n("Resource error");
                 break;
+            }
 
             case OpenCodecError:
+            {
                 errStr = i18n("Open codec error");
                 break;
+            }
 
             case CloseCodecError:
+            {
                 errStr = i18n("Close codec error");
                 break;
+            }
 
             case VideoCodecNotFound:
+            {
                 errStr = i18n("Video codec not found");
                 break;
+            }
 
             case AudioCodecNotFound:
+            {
                 errStr = i18n("Audio codec not found");
                 break;
+            }
 
             case SubtitleCodecNotFound:
+            {
                 errStr = i18n("Subtitle codec not found");
                 break;
+            }
 
             case CodecError:
+            {
                 errStr = i18n("Codec error");
                 break;
+            }
 
             case FormatError:
+            {
                 errStr = i18n("Format error");
                 break;
+            }
 
             case NetworkError:
+            {
                 errStr = i18n("Network error");
                 break;
+            }
 
             case AccessDenied:
+            {
                 errStr = i18n("Access denied");
                 break;
+            }
 
             default:
+            {
                 errStr = i18n("Unknown error");
                 break;
+            }
         }
     }
 
     if (mFFmpegError != 0)
     {
-        errStr += QString::fromUtf8("\n(FFmpeg %1: %2)").arg(mFFmpegError, 0, 16).arg(ffmpegErrorString());
+        errStr += QString::fromUtf8("\n(FFmpeg %1: %2)")
+                    .arg(mFFmpegError, 0, 16)
+                    .arg(ffmpegErrorString());
     }
 
     return errStr;

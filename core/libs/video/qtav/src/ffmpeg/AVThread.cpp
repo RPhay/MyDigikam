@@ -48,7 +48,9 @@ AVThreadPrivate::~AVThreadPrivate()
 
     if (!paused)
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("~AVThreadPrivate wake up paused thread");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("~AVThreadPrivate wake up paused thread");
+
         paused     = false;
         next_pause = false;
         cond.wakeAll();
@@ -211,7 +213,7 @@ void AVThread::scheduleFrameDrop(bool value)
 
         FrameDropTask(AVDecoder* const dec, bool value)
             : decoder(dec),
-              drop(value)
+              drop   (value)
         {
         }
 
@@ -241,6 +243,7 @@ qreal AVThread::previousHistoryPts() const
     if (d.pts_history.empty())
     {
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("pts history is EMPTY");
+
         return 0;
     }
 
@@ -435,7 +438,7 @@ bool AVThread::tryPause(unsigned long timeout)
 
     return d.cond.wait(&d.mutex, timeout);
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("paused thread waked up!!!");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("paused thread waked up!");
 
     return true;
 }
@@ -488,7 +491,7 @@ void AVThread::waitAndCheck(ulong value, qreal pts)
 
     ulong us                      = value * 1000UL;
     const ulong ms                = value;
-    static const ulong kWaitSlice = 20 * 1000UL; //20ms
+    static const ulong kWaitSlice = 20 * 1000UL; // 20ms
 
     while (us > kWaitSlice)
     {

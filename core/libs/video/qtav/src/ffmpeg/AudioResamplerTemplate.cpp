@@ -101,7 +101,7 @@ AudioResamplerFF::AudioResamplerFF():
 {
 }
 
-bool AudioResamplerFF::convert(const quint8 **data)
+bool AudioResamplerFF::convert(const quint8** data)
 {
     DPTR_D(AudioResamplerFF);
 
@@ -119,28 +119,30 @@ bool AudioResamplerFF::convert(const quint8 **data)
 
 #   if HAVE_SWR_GET_DELAY
 
-                swr_get_delay(d.context, qMax(d.in_format.sampleRate(), d.out_format.sampleRate())) +
+        swr_get_delay(d.context, qMax(d.in_format.sampleRate(), d.out_format.sampleRate())) +
 
 #   else
 
-                128 + // TODO: QtAV_Compat
+                      128 +                       // TODO: QtAV_Compat
 
 #   endif
 
-                d.in_samples_per_channel // TODO: wanted_samples(ffplay mplayer2)
-                , osr, d.in_format.sampleRate(), AV_ROUND_UP);
+                      d.in_samples_per_channel,   // TODO: wanted_samples(ffplay mplayer2)
+
+                      osr, d.in_format.sampleRate(), AV_ROUND_UP
+    );
 
     // TODO: why crash for swr 0.5?
 
     //int out_size = av_samples_get_buffer_size(nullptr/*out linesize*/, d.out_channels, d.out_samples_per_channel, (AVSampleFormat)d.out_sample_format, 0/*alignment default*/);
 
     int size_per_sample_with_channels = d.out_format.channels()*d.out_format.bytesPerSample();
-    int out_size = d.out_samples_per_channel*size_per_sample_with_channels;
+    int out_size                      = d.out_samples_per_channel*size_per_sample_with_channels;
 
     if (out_size > d.data_out.size())
         d.data_out.resize(out_size);
 
-    uint8_t *out[] = {(uint8_t*)d.data_out.data()}; // detach if implicitly shared by others
+    uint8_t* out[] = { (uint8_t*)d.data_out.data() }; // detach if implicitly shared by others
 
     // number of input/output samples available in one channel
 
@@ -149,7 +151,9 @@ bool AudioResamplerFF::convert(const quint8 **data)
 
     if (converted_samplers_per_channel < 0)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("[AudioResamplerFF] %s", av_err2str(converted_samplers_per_channel));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("[AudioResamplerFF] %s",
+                av_err2str(converted_samplers_per_channel));
 
         return false;
     }
@@ -173,7 +177,9 @@ bool AudioResamplerFF::prepare()
 
     if (!d.in_format.isValid())
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("src audio parameters 'channel layout(or channels), sample rate and sample format must be set before initialize resampler");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("src audio parameters 'channel layout(or channels),"
+                                 "sample rate and sample format must be set before initialize resampler");
 
         return false;
     }
@@ -188,7 +194,10 @@ bool AudioResamplerFF::prepare()
 
             d.in_format.setChannels(2);
             d.in_format.setChannelLayoutFFmpeg(av_get_default_channel_layout(d.in_format.channels())); // from mplayer2
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("both channels and channel layout are not available, assume channels=%d, channel layout=%lld", d.in_format.channels(), d.in_format.channelLayoutFFmpeg());
+
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("both channels and channel layout are not available, assume channels=%d, "
+                                     "channel layout=%lld", d.in_format.channels(), d.in_format.channelLayoutFFmpeg());
         }
         else
         {
@@ -201,7 +210,9 @@ bool AudioResamplerFF::prepare()
 
     if (!d.in_format.channelLayoutFFmpeg())
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("channel layout not available, use default layout");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("channel layout not available, use default layout");
+
         d.in_format.setChannelLayoutFFmpeg(av_get_default_channel_layout(d.in_format.channels()));
     }
 
@@ -250,14 +261,14 @@ bool AudioResamplerFF::prepare()
 
     // If use swr_alloc() need to set the parameters (av_opt_set_xxx() manually or with swr_alloc_set_opts()) before calling swr_init()
 
-    d.context = swr_alloc_set_opts(d.context
-                                   , d.out_format.channelLayoutFFmpeg()
-                                   , (enum AVSampleFormat)outAudioFormat().sampleFormatFFmpeg()
-                                   , qreal(outAudioFormat().sampleRate())/d.speed
-                                   , d.in_format.channelLayoutFFmpeg()
-                                   , (enum AVSampleFormat)inAudioFormat().sampleFormatFFmpeg()
-                                   , inAudioFormat().sampleRate()
-                                   , 0 /*log_offset*/, nullptr /*log_ctx*/);
+    d.context = swr_alloc_set_opts(d.context,
+                                   d.out_format.channelLayoutFFmpeg(),
+                                   (enum AVSampleFormat)outAudioFormat().sampleFormatFFmpeg(),
+                                   qreal(outAudioFormat().sampleRate())/d.speed,
+                                   d.in_format.channelLayoutFFmpeg(),
+                                   (enum AVSampleFormat)inAudioFormat().sampleFormatFFmpeg(),
+                                   inAudioFormat().sampleRate(),
+                                   0 /*log_offset*/, nullptr /*log_ctx*/);
 /*
     av_opt_set_int(d.context, "in_channel_layout",    d.in_channel_layout, 0);
     av_opt_set_int(d.context, "in_sample_rate",       d.in_format.sampleRate(), 0);
@@ -267,19 +278,20 @@ bool AudioResamplerFF::prepare()
     av_opt_set_sample_fmt(d.context, "out_sample_fmt", (enum AVSampleFormat)out_format.sampleFormatFFmpeg(), 0);
 */
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("out: {cl: %lld, fmt: %s, freq: %d}"
-           , d.out_format.channelLayoutFFmpeg()
-           , qPrintable(d.out_format.sampleFormatName())
-           , d.out_format.sampleRate());
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("out: {cl: %lld, fmt: %s, freq: %d}",
+           d.out_format.channelLayoutFFmpeg(),
+           qPrintable(d.out_format.sampleFormatName()),
+           d.out_format.sampleRate());
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("in {cl: %lld, fmt: %s, freq: %d}"
-           , d.in_format.channelLayoutFFmpeg()
-           , qPrintable(d.in_format.sampleFormatName())
-           , d.in_format.sampleRate());
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("in {cl: %lld, fmt: %s, freq: %d}",
+           d.in_format.channelLayoutFFmpeg(),
+           qPrintable(d.in_format.sampleFormatName()),
+           d.in_format.sampleRate());
 
     if (!d.context)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Allocat swr context failed!");
+
         return false;
     }
 
@@ -288,9 +300,9 @@ bool AudioResamplerFF::prepare()
 
 #   if QTAV_HAVE(SWR_AVR_MAP) //LIBAVRESAMPLE_VERSION_INT < AV_VERSION_INT(1, 1, 0)
 
-    bool remix = false;
-    int in_c   = d.in_format.channels();
-    int out_c  = d.out_format.channels();
+    bool remix     = false;
+    int in_c       = d.in_format.channels();
+    int out_c      = d.out_format.channels();
 
     /*
      * matrix[i + stride * o] is the weight of input channel i in output channel o.
@@ -301,7 +313,7 @@ bool AudioResamplerFF::prepare()
     if (d.out_format.channelLayout() == AudioFormat::ChannelLayout_Left)
     {
         remix  = true;
-        matrix = (double*)calloc(in_c*out_c, sizeof(double));
+        matrix = (double*)calloc(in_c * out_c, sizeof(double));
 
         for (int o = 0 ; o < out_c ; ++o)
         {
@@ -326,12 +338,12 @@ bool AudioResamplerFF::prepare()
 
         //double matrix[in_c*out_c]; // C99, VLA
 
-        matrix = (double*)calloc(in_c*out_c, sizeof(double));
+        matrix = (double*)calloc(in_c * out_c, sizeof(double));
 
-        for (int i = 0, o = 0; o < out_c; ++o)
+        for (int i = 0, o = 0 ; o < out_c ; ++o)
         {
             matrix[i + in_c * o] = 1;
-            i = (i + i)%in_c;
+            i                    = (i + i)%in_c;
         }
     }
 
@@ -350,7 +362,7 @@ bool AudioResamplerFF::prepare()
         use_channel_map = true;
         memset(d.channel_map, 0, sizeof(d.channel_map));
 
-        for (int i = 0; i < d.out_format.channels(); ++i)
+        for (int i = 0 ; i < d.out_format.channels() ; ++i)
         {
             d.channel_map[i] = 0;
         }
@@ -361,7 +373,7 @@ bool AudioResamplerFF::prepare()
         use_channel_map = true;
         memset(d.channel_map, 0, sizeof(d.channel_map));
 
-        for (int i = 0; i < d.out_format.channels(); ++i)
+        for (int i = 0 ; i < d.out_format.channels() ; ++i)
         {
             d.channel_map[i] = 1;
         }
@@ -372,7 +384,7 @@ bool AudioResamplerFF::prepare()
         use_channel_map = true;
         memset(d.channel_map, 0, sizeof(d.channel_map));
 
-        for (int i = 0; i < d.out_format.channels(); ++i)
+        for (int i = 0 ; i < d.out_format.channels() ; ++i)
         {
             d.channel_map[i] = i % d.in_format.channels();
         }
@@ -394,7 +406,9 @@ bool AudioResamplerFF::prepare()
 
     if (ret < 0)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("swr_init failed: %s", av_err2str(ret));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("swr_init failed: %s", av_err2str(ret));
+
         swr_free(&d.context);
 
         return false;

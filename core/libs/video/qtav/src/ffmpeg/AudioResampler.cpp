@@ -64,7 +64,8 @@ void AudioResampler::registerAll()
 
 }
 
-AudioResampler::AudioResampler(AudioResamplerPrivate& d):DPTR_INIT(&d)
+AudioResampler::AudioResampler(AudioResamplerPrivate& d)
+    : DPTR_INIT(&d)
 {
 }
 

@@ -105,21 +105,21 @@ public:
     bool                eof;
     bool                media_changed;
     bool                open;
-    AVFormatContext*    format_ctx = nullptr;
+    AVFormatContext*    format_ctx  = nullptr;
 
     // copy the info, not parse the file when constructed, then need member vars
 
     QString             file;
     QString             file_orig;
-    AVOutputFormat*     format = nullptr;
+    AVOutputFormat*     format      = nullptr;
     QString             format_forced;
     MediaIO*            io;
 
-    AVDictionary*       dict = nullptr;
+    AVDictionary*       dict        = nullptr;
     QVariantHash        options;
     QList<int>          audio_streams, video_streams, subtitle_streams;
-    AudioEncoder*       aenc = nullptr;       // not owner
-    VideoEncoder*       venc = nullptr;       // not owner
+    AudioEncoder*       aenc        = nullptr;       // not owner
+    VideoEncoder*       venc        = nullptr;       // not owner
 };
 
 AVStream* AVMuxer::Private::addStream(AVFormatContext* ctx, const QString& codecName, AVCodecID codecId)
@@ -152,7 +152,11 @@ AVStream* AVMuxer::Private::addStream(AVFormatContext* ctx, const QString& codec
         codec = avcodec_find_encoder(codecId);
 
         if (!codec)
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Can not find encoder for %s", avcodec_get_name(codecId));
+        {
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("Can not find encoder for %s",
+                    avcodec_get_name(codecId));
+        }
     }
 
     if (!codec)
@@ -162,7 +166,8 @@ AVStream* AVMuxer::Private::addStream(AVFormatContext* ctx, const QString& codec
 
     if (!s)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Can not allocate stream");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Can not allocate stream");
 
         return nullptr;
     }
@@ -585,10 +590,12 @@ bool AVMuxer::open()
     {
         if (d->io->accessMode() == MediaIO::Read)
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("wrong MediaIO accessMode. MUST be Write");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("wrong MediaIO accessMode. MUST be Write");
         }
 
-        AV_ENSURE_OK(avformat_alloc_output_context2(&d->format_ctx, d->format, d->format_forced.isEmpty() ? nullptr : d->format_forced.toUtf8().constData(), ""), false);
+        AV_ENSURE_OK(avformat_alloc_output_context2(&d->format_ctx, d->format,
+                     d->format_forced.isEmpty() ? nullptr : d->format_forced.toUtf8().constData(), ""), false);
 
         d->format_ctx->pb     = (AVIOContext*)d->io->avioContext();
         d->format_ctx->flags |= AVFMT_FLAG_CUSTOM_IO;
@@ -598,7 +605,9 @@ bool AVMuxer::open()
     }
     else
     {
-        AV_ENSURE_OK(avformat_alloc_output_context2(&d->format_ctx, d->format, d->format_forced.isEmpty() ? nullptr : d->format_forced.toUtf8().constData(), fileName().toUtf8().constData()), false);
+        AV_ENSURE_OK(avformat_alloc_output_context2(&d->format_ctx, d->format,
+                     d->format_forced.isEmpty() ? nullptr : d->format_forced.toUtf8().constData(),
+                     fileName().toUtf8().constData()), false);
     }
 
     //d->interrupt_hanlder->end();

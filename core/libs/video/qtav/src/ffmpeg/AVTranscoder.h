@@ -41,7 +41,7 @@ class QTAV_EXPORT AVTranscoder : public QObject
 
 public:
 
-    explicit AVTranscoder(QObject* parent = nullptr);
+    explicit AVTranscoder(QObject* const parent = nullptr);
     ~AVTranscoder();
 
     // TODO: other source (more operations needed, e.g. seek)?
@@ -67,7 +67,7 @@ public:
     void setOutputFormat(const QString& fmt);
     QString outputFormatForced() const;
 
-    void setOutputOptions(const QVariantHash &dict);
+    void setOutputOptions(const QVariantHash& dict);
     QVariantHash outputOptions() const;
 
     /*!

@@ -148,7 +148,7 @@ void Frame::setBits(const QVector<uchar*>& b)
 
 void Frame::setBits(quint8* slice[])
 {
-    for (int i = 0 ; i < planeCount() ; ++i )
+    for (int i = 0 ; i < planeCount() ; ++i)
     {
         setBits(slice[i], i);
     }
@@ -185,7 +185,7 @@ void Frame::setBytesPerLine(const QVector<int>& lineSize)
 
 void Frame::setBytesPerLine(int stride[])
 {
-    for (int i = 0 ; i < planeCount() ; ++i )
+    for (int i = 0 ; i < planeCount() ; ++i)
     {
         setBytesPerLine(stride[i], i);
     }

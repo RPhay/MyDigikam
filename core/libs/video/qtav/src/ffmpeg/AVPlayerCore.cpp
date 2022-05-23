@@ -532,7 +532,7 @@ void AVPlayerCore::setPriority(const QVector<VideoDecoderId>& ids)
 
                 ApplyNewDecoderTask(AVPlayerCore* const p, VideoDecoder* const d)
                     : player(p),
-                      dec(d)
+                      dec   (d)
                 {
                 }
 
@@ -704,8 +704,9 @@ void AVPlayerCore::setFile(const QString& path)
         d->audio_track = d->video_track = d->subtitle_track = 0;
 
         Q_EMIT sourceChanged();
-
-        //Q_EMIT error(AVError(AVError::NoError));
+/*
+        Q_EMIT error(AVError(AVError::NoError));
+*/
     }
 
     // TODO: use absoluteFilePath?
@@ -856,7 +857,7 @@ void AVPlayerCore::pause(bool p)
 
     d->clock->pause(p);
 
-    d->state = p ? PausedState : PlayingState;
+    d->state = (p ? PausedState : PlayingState);
 
     Q_EMIT stateChanged(d->state);
 
@@ -1188,7 +1189,7 @@ qint64 AVPlayerCore::position() const
     const qint64 pts = d->clock->value() * 1000.0;
 
     if (relativeTimeMode())
-        return pts - absoluteMediaStartPosition();
+        return (pts - absoluteMediaStartPosition());
 
     return pts;
 }
@@ -1491,21 +1492,29 @@ bool AVPlayerCore::setVideoStream(int n)
 
     d->video_track = n;
     d->demuxer.setStreamIndex(AVDemuxer::VideoStream, n);
+/*
+    if (!isPlaying())
+        return true;
 
-//    if (!isPlaying())
-//        return true;
-//    // pause demuxer, clear queues, set demuxer stream, set decoder, set ao, resume
-//    bool p = isPaused();
-//    //int bv = bufferValue();
-//    setBufferMode(BufferTime);
-//    pause(true);
-//    if (!d->setupVideoThread(this)) {
-//        stop();
-//        return false;
-//    }
-//    if (!p) pause(false);
-//    //QTimer::singleShot(10000, this, SLOT(setBufferValue(bv)));
+    // pause demuxer, clear queues, set demuxer stream, set decoder, set ao, resume
 
+    bool p = isPaused();
+
+    //int bv = bufferValue();
+
+    setBufferMode(BufferTime);
+    pause(true);
+
+    if (!d->setupVideoThread(this))
+    {
+        stop();
+        return false;
+    }
+
+    if (!p) pause(false);
+
+    //QTimer::singleShot(10000, this, SLOT(setBufferValue(bv)));
+*/
     return true;
 }
 
@@ -2023,14 +2032,14 @@ void AVPlayerCore::seekChapter(int incr)
     if (!chapters())
         return;
 
-    qint64 pos          = masterClock()->value() * AV_TIME_BASE;
-    int i               = 0;
+    qint64 pos                = masterClock()->value() * AV_TIME_BASE;
+    int i                     = 0;
 
-    AVFormatContext* ic = d->demuxer.formatContext();
+    AVFormatContext* const ic = d->demuxer.formatContext();
 
     AVRational av_time_base_q;
-    av_time_base_q.num  = 1;
-    av_time_base_q.den  = AV_TIME_BASE;
+    av_time_base_q.num        = 1;
+    av_time_base_q.den        = AV_TIME_BASE;
 
     /* find the current chapter */
 

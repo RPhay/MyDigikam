@@ -59,12 +59,12 @@ public:
     qreal last_pts; ///< used when audio output is not available, to calculate the aproximate sleeping time
 };
 
-AudioThread::AudioThread(QObject* parent)
+AudioThread::AudioThread(QObject* const parent)
     :AVThread(*new AudioThreadPrivate(), parent)
 {
 }
 
-void AudioThread::applyFilters(AudioFrame &frame)
+void AudioThread::applyFilters(AudioFrame& frame)
 {
     DPTR_D(AudioThread);
 /*
@@ -75,9 +75,9 @@ void AudioThread::applyFilters(AudioFrame &frame)
     {
         // sort filters by format. vo->defaultFormat() is the last
 
-        Q_FOREACH (Filter* filter, d.filters)
+        Q_FOREACH (Filter* const filter, d.filters)
         {
-            AudioFilter* af = static_cast<AudioFilter*>(filter);
+            AudioFilter* const af = static_cast<AudioFilter*>(filter);
 
             if (!af->isEnabled())
                 continue;
@@ -151,7 +151,7 @@ void AudioThread::run()
                 qCDebug(DIGIKAM_QTAV_LOG).noquote()
                     << QString::asprintf("audio thread wait to sync end for sync id: %d", d.clock->syncId());
 
-                if (d.render_pts0 < 0 && sync_id > 0)
+                if ((d.render_pts0 < 0) && (sync_id > 0))
                 {
                     msleep(10);
 
@@ -172,7 +172,7 @@ void AudioThread::run()
 
             // If seek requested but last decode failed
 
-            if (!pkt.isEOF() && (fake_duration <= 0 || !d.packets.isEmpty()))
+            if (!pkt.isEOF() && ((fake_duration <= 0) || !d.packets.isEmpty()))
             {
                 pkt = d.packets.take(); // wait to dequeue
             }
@@ -215,7 +215,7 @@ void AudioThread::run()
                         //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("fake_duration update on seek: %ul + %ul - %.3f", fake_duration, fake_pts, d.render_pts0);
 
                         fake_duration = fake_duration + fake_pts - d.render_pts0*1000.0;
-                        fake_pts      = d.render_pts0*1000.0;
+                        fake_pts      = d.render_pts0 * 1000.0;
                     }
 
                     d.clock->updateValue(d.render_pts0);
@@ -227,7 +227,7 @@ void AudioThread::run()
                 if (pkt.duration > 0)
                 {
                     fake_duration = pkt.duration * 1000.0;
-                    fake_pts      = d.last_pts*1000.0;
+                    fake_pts      = d.last_pts * 1000.0;
                     pkt           = Packet(); // mark invalid to avoid run here in the next loop
 
                     //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("get fake apkt: %.3f+%ul", pkt.pts, fake_duration);
@@ -245,7 +245,7 @@ void AudioThread::run()
 
                 //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("fake_wait: %ul, fake_duration: %lld, delay: %.3f", ms, fake_duration, d.clock->delay());
 
-                d.clock->updateDelay(d.clock->delay() + qreal(ms)/1000.0);
+                d.clock->updateDelay(d.clock->delay() + qreal(ms) / 1000.0);
                 msleep(ms);
 
                 continue;
@@ -259,7 +259,7 @@ void AudioThread::run()
 
         // no key frame for audio. so if pts reaches, try decode and skip render if got frame pts does not reach
 
-        bool skip_render = pkt.pts >= 0 && pkt.pts < d.render_pts0; // if audio stream is too short, seeking will fail and d.render_pts0 keeps >0
+        bool skip_render = (pkt.pts >= 0) && (pkt.pts < d.render_pts0); // if audio stream is too short, seeking will fail and d.render_pts0 keeps >0
 
         // audio has no key frame, skip rendering equals to skip decoding
 
@@ -280,7 +280,7 @@ void AudioThread::run()
 
             if (a_v > 0)
             {
-                msleep(qMin((ulong)20, ulong(a_v*1000.0)));
+                msleep(qMin((ulong)20, ulong(a_v * 1000.0)));
             }
             else
             {
@@ -356,15 +356,16 @@ void AudioThread::run()
 
         QMutexLocker locker(&d.mutex);
         Q_UNUSED(locker);
-        AudioDecoder *dec = static_cast<AudioDecoder*>(d.dec);
+        AudioDecoder* const dec = static_cast<AudioDecoder*>(d.dec);
 
         if (!dec)
         {
             pkt = Packet(); //mark invalid to take next
+
             continue;
         }
 
-        AudioOutput *ao = nullptr;
+        AudioOutput* ao = nullptr;
 
         // first() is not null even if list empty
 
@@ -373,7 +374,7 @@ void AudioThread::run()
 
         // DO NOT decode and convert if ao is not available or mute!
 
-        bool has_ao = ao && ao->isAvailable();
+        bool has_ao = (ao && ao->isAvailable());
 
         //if (!has_ao) {//do not decode?
 
@@ -381,8 +382,8 @@ void AudioThread::run()
 
         if (has_ao && dec->resampler())
         {
-            if (   dec->resampler()->speed() != ao->speed()
-                || dec->resampler()->outAudioFormat() != ao->audioFormat())
+            if ((dec->resampler()->speed() != ao->speed()) ||
+                (dec->resampler()->outAudioFormat() != ao->audioFormat()))
             {
                 // resample later to ensure thread safe. TODO: test
 
@@ -405,7 +406,7 @@ void AudioThread::run()
         }
         else
         {
-            if (dec->resampler() && dec->resampler()->speed() != d.clock->speed())
+            if (dec->resampler() && (dec->resampler()->speed() != d.clock->speed()))
             {
                 if (d.resample)
                 {
@@ -459,17 +460,17 @@ void AudioThread::run()
 
             qreal dt = dts - d.last_pts;
 
-            if (dt > 0.5 || dt < 0)
+            if ((dt > 0.5) || (dt < 0))
             {
                 dt = 0;
             }
 
             if (!qFuzzyIsNull(dt))
             {
-                msleep((unsigned long)(dt*1000.0));
+                msleep((unsigned long)(dt * 1000.0));
             }
 
-            pkt = Packet();
+            pkt        = Packet();
             d.last_pts = d.clock->value(); //not pkt.pts! the delay is updated!
 
             continue;
@@ -498,7 +499,9 @@ void AudioThread::run()
 
             if (frame.timestamp() < d.render_pts0)
             {
-                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("skip audio rendering: %f-%f", frame.timestamp(), d.render_pts0);
+                qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                    << QString::asprintf("skip audio rendering: %f-%f",
+                        frame.timestamp(), d.render_pts0);
 
                 continue; // pkt data is updated after decode, no reset here
             }
@@ -521,7 +524,7 @@ void AudioThread::run()
         if (has_ao)
         {
             applyFilters(frame);
-            frame.setAudioResampler(dec->resampler()); //!!!
+            frame.setAudioResampler(dec->resampler()); // !!!
 
             // FIXME: resample ONCE is required for audio frames from ffmpeg
 
@@ -554,11 +557,11 @@ void AudioThread::run()
                 break;
             }
 
-            const int chunk = qMin(decodedSize, has_ao ? ao->bufferSize() : 512*frame.format().bytesPerFrame());//int(max_len*byte_rate));
+            const int chunk = qMin(decodedSize, has_ao ? ao->bufferSize() : 512 * frame.format().bytesPerFrame()); // int(max_len*byte_rate));
 
             //AudioFormat.bytesForDuration
 
-            const qreal chunk_delay = (qreal)chunk/(qreal)byte_rate;
+            const qreal chunk_delay = (qreal)chunk / (qreal)byte_rate;
 
             if (has_ao && ao->isOpen())
             {
@@ -568,7 +571,7 @@ void AudioThread::run()
 
                 ao->play(decodedChunk, pts);
 
-                if (!is_external_clock && ao->timestamp() > 0)
+                if (!is_external_clock && (ao->timestamp() > 0))
                 {
                     // TODO: clear ao buffer
 
