@@ -356,6 +356,7 @@ if(ENABLE_MEDIAPLAYER)
         set(MEDIAPLAYER_DEFINITIONS -D__STDC_CONSTANT_MACROS
                                     -DQTAV_HAVE_CAPI=1           # To load libass, vaapi, EGL, and more dynamically
                                     -DQTAV_HAVE_VDA=0            # Hardware acceleration video decoder removed with ffmpeg  4.0
+                                    -DAUTO_REGISTER=0            # Only used in QtAVWidgets_Global.h => ???
         )
 
         if(SSE4_1_FOUND)
