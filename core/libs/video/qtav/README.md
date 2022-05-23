@@ -94,12 +94,14 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
 
     - Fix includes rules/order from Qt and local.
 
-    - Fix coding style (brackets, tabs to spaces, indents, etc.).
+    - Fix coding style (brackets, tabs to spaces, indents, if logics, init pointers, etc.).
 
-    - Port GLWidgetRenderer class to QOpenGLWidget for Qt5 and Qt6 
+    - Port GLWidgetRenderer class to QOpenGLWidget for Qt5 and Qt6
       GLWidgetRenderer2 still based on Qt5::QGLWidget and is disabled for Qt6.
 
     - Apply fixes for Coverity-Scan static analyzer.
+
+    - Fix all undefined warnings at compilation time.
 
 * Under Progress:
 
