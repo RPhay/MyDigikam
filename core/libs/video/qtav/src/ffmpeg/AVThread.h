@@ -59,8 +59,8 @@ public:
 
     // used for changing some components when running
 
-    Q_DECL_DEPRECATED void lock();
-    Q_DECL_DEPRECATED void unlock();
+    void lock();
+    void unlock();
 
     void setClock(AVClock *clock);
     AVClock* clock() const;

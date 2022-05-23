@@ -73,14 +73,14 @@ namespace OpenGLHelper
 
 int depth16BitTexture()
 {
-    static int depth = qEnvironmentVariableIntValue("QTAV_TEXTURE16_DEPTH") == 8 ? 8 : 16; // 8 ? 8 : 16;
+    static int depth = (qEnvironmentVariableIntValue("QTAV_TEXTURE16_DEPTH") == 8 ? 8 : 16); // 8 ? 8 : 16;
 
     return depth;
 }
 
 bool useDeprecatedFormats()
 {
-    static bool v = qEnvironmentVariableIntValue("QTAV_GL_DEPRECATED") == 1;
+    static bool v = (qEnvironmentVariableIntValue("QTAV_GL_DEPRECATED") == 1);
 
     return v;
 }
@@ -283,7 +283,7 @@ bool isEGL()
 
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("xcb_egl=%d", is_egl);
 
-        return !!is_egl;
+        return (!!is_egl);
     }
 
 #   endif // 5.5.0
@@ -303,7 +303,7 @@ bool isOpenGLES()
 
 #ifdef QT_OPENGL_DYNAMIC
 
-    QOpenGLContext *ctx = QOpenGLContext::currentContext();
+    QOpenGLContext* const ctx = QOpenGLContext::currentContext();
 
     if (ctx)
         return ctx->isOpenGLES();
@@ -471,41 +471,41 @@ static const gl_param_t gl_param_compat[] =
     { GL_LUMINANCE_ALPHA, GL_LUMINANCE_ALPHA, GL_UNSIGNED_BYTE  },
     { GL_RGB,             GL_RGB,             GL_UNSIGNED_BYTE  },
     { GL_RGBA,            GL_RGBA,            GL_UNSIGNED_BYTE  },
-    { GL_LUMINANCE_ALPHA, GL_LUMINANCE_ALPHA, GL_UNSIGNED_BYTE  }, // 2 x 8 fallback to ra
+    { GL_LUMINANCE_ALPHA, GL_LUMINANCE_ALPHA, GL_UNSIGNED_BYTE  },      // 2 x 8 fallback to ra
     { 0,                  0,                  0                 },
 };
 
 static const gl_param_t gl_param_3r16[] =
 {
-    { GL_R8,      GL_RED,     GL_UNSIGNED_BYTE  },     // 1 x 8
-    { GL_RG8,     GL_RG,      GL_UNSIGNED_BYTE  },     // 2 x 8
-    { GL_RGB8,    GL_RGB,     GL_UNSIGNED_BYTE  },     // 3 x 8
-    { GL_RGBA8,   GL_RGBA,    GL_UNSIGNED_BYTE  },     // 4 x 8
-    { GL_R16,     GL_RED,     GL_UNSIGNED_SHORT },     // 1 x 16
-    { GL_RG16,    GL_RG,      GL_UNSIGNED_SHORT },     // 2 x 16
-    { GL_RGB16,   GL_RGB,     GL_UNSIGNED_SHORT },     // 3 x 16
-    { GL_RGBA16,  GL_RGBA,    GL_UNSIGNED_SHORT },     // 4 x 16
-    { 0,          0,          0                 },
+    { GL_R8,              GL_RED,             GL_UNSIGNED_BYTE  },      // 1 x 8
+    { GL_RG8,             GL_RG,              GL_UNSIGNED_BYTE  },      // 2 x 8
+    { GL_RGB8,            GL_RGB,             GL_UNSIGNED_BYTE  },      // 3 x 8
+    { GL_RGBA8,           GL_RGBA,            GL_UNSIGNED_BYTE  },      // 4 x 8
+    { GL_R16,             GL_RED,             GL_UNSIGNED_SHORT },      // 1 x 16
+    { GL_RG16,            GL_RG,              GL_UNSIGNED_SHORT },      // 2 x 16
+    { GL_RGB16,           GL_RGB,             GL_UNSIGNED_SHORT },      // 3 x 16
+    { GL_RGBA16,          GL_RGBA,            GL_UNSIGNED_SHORT },      // 4 x 16
+    { 0,                  0,                  0                 },
 };
 
 static const gl_param_t gl_param_desktop_fallback[] =
 {
-    { GL_RED,     GL_RED,     GL_UNSIGNED_BYTE  },      // 1 x 8
-    { GL_RG,      GL_RG,      GL_UNSIGNED_BYTE  },      // 2 x 8
-    { GL_RGB,     GL_RGB,     GL_UNSIGNED_BYTE  },      // 3 x 8
-    { GL_RGBA,    GL_RGBA,    GL_UNSIGNED_BYTE  },      // 4 x 8
-    { GL_RG,      GL_RG,      GL_UNSIGNED_BYTE  },      // 2 x 8
-    { 0,          0,          0                 },
+    { GL_RED,             GL_RED,             GL_UNSIGNED_BYTE  },      // 1 x 8
+    { GL_RG,              GL_RG,              GL_UNSIGNED_BYTE  },      // 2 x 8
+    { GL_RGB,             GL_RGB,             GL_UNSIGNED_BYTE  },      // 3 x 8
+    { GL_RGBA,            GL_RGBA,            GL_UNSIGNED_BYTE  },      // 4 x 8
+    { GL_RG,              GL_RG,              GL_UNSIGNED_BYTE  },      // 2 x 8
+    { 0,                  0,                  0                 },
 };
 
 static const gl_param_t gl_param_es3rg8[] =
 {
-    { GL_R8,      GL_RED,     GL_UNSIGNED_BYTE  },      // 1 x 8
-    { GL_RG8,     GL_RG,      GL_UNSIGNED_BYTE  },      // 2 x 8
-    { GL_RGB8,    GL_RGB,     GL_UNSIGNED_BYTE  },      // 3 x 8
-    { GL_RGBA8,   GL_RGBA,    GL_UNSIGNED_BYTE  },      // 4 x 8
-    { GL_RG8,     GL_RG,      GL_UNSIGNED_BYTE  },      // 2 x 8 fallback to rg
-    { 0,          0,          0                 },
+    { GL_R8,              GL_RED,             GL_UNSIGNED_BYTE  },      // 1 x 8
+    { GL_RG8,             GL_RG,              GL_UNSIGNED_BYTE  },      // 2 x 8
+    { GL_RGB8,            GL_RGB,             GL_UNSIGNED_BYTE  },      // 3 x 8
+    { GL_RGBA8,           GL_RGBA,            GL_UNSIGNED_BYTE  },      // 4 x 8
+    { GL_RG8,             GL_RG,              GL_UNSIGNED_BYTE  },      // 2 x 8 fallback to rg
+    { 0,                  0,                  0                 },
 };
 
 // https://www.khronos.org/registry/gles/extensions/EXT/EXT_texture_rg.txt
@@ -513,12 +513,12 @@ static const gl_param_t gl_param_es3rg8[] =
 
 static const gl_param_t gl_param_es2rg[] =
 {
-    { GL_RED,     GL_RED,     GL_UNSIGNED_BYTE  },      // 1 x 8 // es2: GL_EXT_texture_rg. R8, RG8 are for render buffer
-    { GL_RG,      GL_RG,      GL_UNSIGNED_BYTE  },      // 2 x 8
-    { GL_RGB,     GL_RGB,     GL_UNSIGNED_BYTE  },      // 3 x 8
-    { GL_RGBA,    GL_RGBA,    GL_UNSIGNED_BYTE  },      // 4 x 8
-    { GL_RG,      GL_RG,      GL_UNSIGNED_BYTE  },      // 2 x 8 fallback to rg
-    { 0,          0,          0                 },
+    { GL_RED,             GL_RED,             GL_UNSIGNED_BYTE  },      // 1 x 8 // es2: GL_EXT_texture_rg. R8, RG8 are for render buffer
+    { GL_RG,              GL_RG,              GL_UNSIGNED_BYTE  },      // 2 x 8
+    { GL_RGB,             GL_RGB,             GL_UNSIGNED_BYTE  },      // 3 x 8
+    { GL_RGBA,            GL_RGBA,            GL_UNSIGNED_BYTE  },      // 4 x 8
+    { GL_RG,              GL_RG,              GL_UNSIGNED_BYTE  },      // 2 x 8 fallback to rg
+    { 0,                  0,                  0                 },
 };
 
 bool test_gl_param(const gl_param_t& gp, bool* has_16 = nullptr)
@@ -635,7 +635,7 @@ bool hasRG()
     static int has_rg = -1;
 
     if (has_rg >= 0)
-        return !!has_rg;
+        return (!!has_rg);
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
         << QString::asprintf("check gl3 rg: %#X", gl_param_3r16[1].internal_format);
@@ -711,7 +711,7 @@ static const gl_param_t* get_gl_param()
 
     if      (test_gl_param(gl_param_3r16[4], &has_16))
     {
-        if (has_16 && depth16BitTexture() == 16)
+        if (has_16 && (depth16BitTexture() == 16))
             gp = (gl_param_t*)gl_param_3r16;
         else
             gp = (gl_param_t*)gl_param_desktop_fallback;
@@ -1050,7 +1050,8 @@ bool videoFormatToGL(const VideoFormat& fmt, GLint* internal_format, GLenum* dat
     if ((gp == gl_param_3r16) &&
         (
          // nb_planes == 2 || // nv12 UV plane is 16bit, but we use rg
-         ((OpenGLHelper::depth16BitTexture() == 16 && OpenGLHelper::has16BitTexture()) && fmt.isBigEndian() && fmt.bitsPerComponent() > 8) // 16bit texture does not support be channel now
+         (((OpenGLHelper::depth16BitTexture() == 16) && OpenGLHelper::has16BitTexture()) &&
+          fmt.isBigEndian() && (fmt.bitsPerComponent() > 8)) // 16bit texture does not support be channel now
         )
        )
     {
@@ -1058,14 +1059,14 @@ bool videoFormatToGL(const VideoFormat& fmt, GLint* internal_format, GLenum* dat
 
         qCDebug(DIGIKAM_QTAV_LOG).noquote()
             << QString::asprintf("desktop_fallback for %s",
-                 nb_planes == 2 ? "bi-plane format" : "16bit big endian channel");
+                 (nb_planes == 2) ? "bi-plane format" : "16bit big endian channel");
     }
 
     for (int p = 0 ; p < nb_planes ; ++p)
     {
         // for packed rgb(swizzle required) and planar formats
 
-        const int c = (fmt.channels(p)-1) + 4*((fmt.bitsPerComponent() + 7)/8 - 1);
+        const int c = (fmt.channels(p) - 1) + 4 * ((fmt.bitsPerComponent() + 7) / 8 - 1);
 
         if (gp[c].format == 0)
             return false;
@@ -1107,21 +1108,27 @@ int bytesOfGLFormat(GLenum format, GLenum dataType) // TODO: rename bytesOfTexel
 #ifdef GL_UNSIGNED_INT_8_8_8_8_REV
 
         case GL_UNSIGNED_INT_8_8_8_8_REV:
+        {
             return 4;
+        }
 
 #endif
 
 #ifdef GL_UNSIGNED_BYTE_3_3_2
 
         case GL_UNSIGNED_BYTE_3_3_2:
+        {
             return 1;
+        }
 
 #endif
 
 #ifdef GL_UNSIGNED_BYTE_2_3_3_REV
 
         case GL_UNSIGNED_BYTE_2_3_3_REV:
+        {
             return 1;
+        }
 
 #endif
 
@@ -1148,24 +1155,34 @@ int bytesOfGLFormat(GLenum format, GLenum dataType) // TODO: rename bytesOfTexel
 #endif
 
         case GL_UNSIGNED_SHORT_4_4_4_4:
+        {
             return 2;
+        }
 
         case GL_UNSIGNED_BYTE:
+        {
+            // NOTE: mpv returns 2
             component_size = 1;
+
             break;
-            // mpv returns 2
+        }
 
 #ifdef GL_UNSIGNED_SHORT_8_8_APPLE
 
         case GL_UNSIGNED_SHORT_8_8_APPLE:
         case GL_UNSIGNED_SHORT_8_8_REV_APPLE:
+        {
             return 2;
+        }
 
 #endif
 
         case GL_UNSIGNED_SHORT:
+        {
             component_size = 2;
+
             break;
+        }
     }
 
     switch (format)
@@ -1173,23 +1190,31 @@ int bytesOfGLFormat(GLenum format, GLenum dataType) // TODO: rename bytesOfTexel
         case GL_RED:
         case GL_LUMINANCE:
         case GL_ALPHA:
+        {
             return component_size;
+        }
 
         case GL_RG:
         case GL_LUMINANCE_ALPHA:
-            return 2 * component_size;
+        {
+            return (2 * component_size);
+        }
 
 #ifdef GL_YCBCR_422_APPLE
 
         case GL_YCBCR_422_APPLE:
+        {
             return 2;
+        }
 
 #endif
 
 #ifdef GL_RGB_422_APPLE
 
         case GL_RGB_422_APPLE:
+        {
             return 2;
+        }
 
 #endif
 
@@ -1200,7 +1225,9 @@ int bytesOfGLFormat(GLenum format, GLenum dataType) // TODO: rename bytesOfTexel
 #endif
 
         case GL_RGB:
-            return 3 * component_size;
+        {
+            return (3 * component_size);
+        }
 
 #ifdef GL_BGRA // ifndef GL_ES
 
@@ -1209,14 +1236,18 @@ int bytesOfGLFormat(GLenum format, GLenum dataType) // TODO: rename bytesOfTexel
 #endif
 
         case GL_RGBA:
-            return 4 * component_size;
+        {
+            return (4 * component_size);
+        }
 
         default:
+        {
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
                 << QString::asprintf("bytesOfGLFormat - Unknown format %u", format);
 
             return 1;
-      }
+        }
+    }
 }
 
 } // namespace OpenGLHelper

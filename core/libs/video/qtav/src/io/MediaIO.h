@@ -235,7 +235,7 @@ protected:
     MediaIO(QObject* const parent = nullptr);
 };
 
-Q_DECL_DEPRECATED typedef MediaIO AVInput; // for source compatibility
+typedef MediaIO AVInput; // for source compatibility
 
 } // namespace QtAV
 
