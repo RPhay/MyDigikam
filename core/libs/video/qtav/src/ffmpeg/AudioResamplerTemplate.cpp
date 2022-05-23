@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#if defined(BUILD_AVR) || defined(BUILD_SWR) // no this macro is fine too for qmake
+#if defined(BUILD_AVR) || defined(BUILD_SWR)
 
 #   include "AudioResampler_p.h"
 
@@ -96,8 +96,8 @@ public:
     int channel_map[SWR_CH_MAX] = { 0 };
 };
 
-AudioResamplerFF::AudioResamplerFF():
-    AudioResampler(*new AudioResamplerFFPrivate())
+AudioResamplerFF::AudioResamplerFF()
+    : AudioResampler(*new AudioResamplerFFPrivate())
 {
 }
 

@@ -436,7 +436,7 @@ if(ENABLE_MEDIAPLAYER)
         # Use libavresample if libswresample is not available.
         # https://github.com/xbmc/xbmc/commit/274679d
 
-        if(${AVRESAMPLE_FOUND} AND NOT ${SWRESAMPLE_FOUND})
+        if(AVRESAMPLE_FOUND AND NOT SWRESAMPLE_FOUND)
 
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_SWR_AVR_MAP=1)
 

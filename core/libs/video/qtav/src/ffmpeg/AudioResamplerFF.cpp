@@ -21,6 +21,8 @@
  *
  * ============================================================ */
 
+#define QTAV_HAVE_SWR_AVR_MAP 0
+
 #define BUILD_SWR
 
 #include "AudioResamplerTemplate.cpp"
