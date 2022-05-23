@@ -358,7 +358,7 @@ if(ENABLE_MEDIAPLAYER)
                                     -DQTAV_HAVE_VDA=0            # Hardware acceleration video decoder removed with ffmpeg  4.0
                                     -DAUTO_REGISTER=0            # Only used in QtAVWidgets_Global.h => ???
                                     -DFF_API_OLD_MSMPEG4=0       # Used with commented code from VideoDecoderFFmpeg.cpp
-                                    -D=FF_API_AC_VLC=0           # Used with commented code from VideoDecoderFFmpeg.cpp
+                                    -DFF_API_AC_VLC=0            # Used with commented code from VideoDecoderFFmpeg.cpp
         )
 
         if(SSE4_1_FOUND)

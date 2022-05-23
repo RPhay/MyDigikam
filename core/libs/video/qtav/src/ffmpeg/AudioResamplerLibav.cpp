@@ -21,7 +21,9 @@
  *
  * ============================================================ */
 
-#define QTAV_HAVE_SWR_AVR_MAP 1
+#ifndef QTAV_HAVE_SWR_AVR_MAP
+#   define QTAV_HAVE_SWR_AVR_MAP 1
+#endif
 
 #define BUILD_AVR
 

@@ -45,9 +45,13 @@
 #               include <d3d9.h>
 #           endif
 #       endif
+#   else
+#       define QTAV_HAVE_CUDA_EGL 0
 #   endif
 #   if defined(QT_OPENGL_DYNAMIC) || !defined(QT_OPENGL_ES_2)
 #       define QTAV_HAVE_CUDA_GL 1
+#   else
+#       define QTAV_HAVE_CUDA_GL 0
 #   endif
 #endif
 
