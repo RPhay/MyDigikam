@@ -55,19 +55,17 @@ namespace cuda
 #ifdef HAVE_CUDA_H
 #   include "cuda.h"
 #   include "nvcuvid.h"
+// NOTE: __CUDA_API_VERSION is undefined in cuda.h
 #else
+#   ifdef CUDA_FORCE_API_VERSION
+#       define __CUDA_API_VERSION CUDA_FORCE_API_VERSION
+#   else
+#       ifndef __CUDA_API_VERSION
+#           define __CUDA_API_VERSION 4000
+#       endif
+#   endif
 #   include "dynlink_cuda.h"
 #   include "dynlink_nvcuvid.h"
-#endif
-
-// __CUDA_API_VERSION is undefined in cuda.h
-
-#ifdef CUDA_FORCE_API_VERSION
-#   define __CUDA_API_VERSION CUDA_FORCE_API_VERSION
-#else
-#   ifndef __CUDA_API_VERSION
-#       define __CUDA_API_VERSION 4000
-#   endif
 #endif
 
 #if defined(__cplusplus)
