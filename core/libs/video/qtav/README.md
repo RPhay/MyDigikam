@@ -111,6 +111,8 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
 
     - Port to FFMPEG 5 API with backward compatibility with FFMPEG 4.
 
+        - See the patch from https://github.com/wang-bin/QtAV/issues/1377#issuecomment-1014959481
+
     - Add config widgets to setup video and audio backends.
 
 * Unmaintained Features:
