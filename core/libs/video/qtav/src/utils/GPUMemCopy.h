@@ -55,8 +55,8 @@ private:
 
     typedef struct
     {
-        unsigned char* buffer = nullptr;
-        size_t         size   = 0;
+        unsigned char* buffer;
+        size_t         size;
     } cache_t;
 
     cache_t mCache;

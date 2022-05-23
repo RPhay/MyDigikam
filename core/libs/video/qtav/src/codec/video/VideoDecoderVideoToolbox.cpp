@@ -170,8 +170,8 @@ public:
 
 typedef struct
 {
-    int         code = 0;
-    const char* str  = nullptr;
+    int         code;
+    const char* str;
 } cv_error;
 
 static const cv_error cv_errors[] =
