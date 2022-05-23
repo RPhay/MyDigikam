@@ -14,9 +14,9 @@ DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-deprecated-declarations")
 DISABLE_CLANG_COMPILER_WARNINGS("3.99.99" "-Wno-deprecated-declarations")
 
 # For undefined pre-processor values.
-REMOVE_COMPILER_WARNINGS("-Wundef")
-DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-undef")
-DISABLE_CLANG_COMPILER_WARNINGS("3.99.99" "-Wno-undef")
+#REMOVE_COMPILER_WARNINGS("-Wundef")
+#DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-undef")
+#DISABLE_CLANG_COMPILER_WARNINGS("3.99.99" "-Wno-undef")
 
 # For not portable pre-processor defined operator uses.
 REMOVE_COMPILER_WARNINGS("-Wexpansion-to-defined")
