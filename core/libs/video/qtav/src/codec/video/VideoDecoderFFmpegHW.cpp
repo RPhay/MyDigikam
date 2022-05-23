@@ -357,11 +357,6 @@ VideoDecoderFFmpegHW::VideoDecoderFFmpegHW(VideoDecoderFFmpegHWPrivate& d):
                 .arg(i18n("Multithread decoding may crash"))
                 .arg(i18n("0: auto"))
                 .arg(i18n("1: single thread decoding")));
-
-    Q_UNUSED(i18n("ZeroCopy"));
-    Q_UNUSED(i18n("OptimizedCopy"));
-    Q_UNUSED(i18n("GenericCopy"));
-    Q_UNUSED(i18n("copyMode"));
 }
 
 void VideoDecoderFFmpegHW::setThreads(int value)

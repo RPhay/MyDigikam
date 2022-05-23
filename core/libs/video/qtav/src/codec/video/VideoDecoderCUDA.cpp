@@ -474,11 +474,6 @@ VideoDecoderCUDA::VideoDecoderCUDA()
                 .arg(i18n("DirectCopy: copy back to host memory but video frames and map to GL texture"))
                 .arg(i18n("GenericCopy: copy back to host memory and each video frame"))
     );
-
-    Q_UNUSED(i18n("ZeroCopy"));
-    Q_UNUSED(i18n("DirectCopy"));
-    Q_UNUSED(i18n("GenericCopy"));
-    Q_UNUSED(i18n("copyMode"));
 }
 
 VideoDecoderCUDA::~VideoDecoderCUDA()
