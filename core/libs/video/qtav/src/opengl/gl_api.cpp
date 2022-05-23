@@ -115,15 +115,15 @@ static void* GetProcAddressDefault(const char *name)
 #   define GL_RESOLVE_ES_3_0(name) GL_RESOLVE(name)
 #   define GL_RESOLVE_ES_3_1(name) GL_RESOLVE(name)
 #else
-#   ifdef GL_ES_VERSION_2_0
+#   if defined GL_ES_VERSION_2_0
 #       define GL_RESOLVE_ES_2_0(name) GL_RESOLVE(name)
 #       define GL_RESOLVE_ES_3_0(name) GL_RESOLVE_EXT(name)
 #       define GL_RESOLVE_ES_3_1(name) GL_RESOLVE_EXT(name)
-#   elif GL_ES_VERSION_3_0
+#   elif defined GL_ES_VERSION_3_0
 #       define GL_RESOLVE_ES_2_0(name) GL_RESOLVE(name)
 #       define GL_RESOLVE_ES_3_0(name) GL_RESOLVE(name)
 #       define GL_RESOLVE_ES_3_1(name) GL_RESOLVE_NONE(name) // gl3ext is empty
-#   elif GL_ES_VERSION_3_1
+#   elif defined GL_ES_VERSION_3_1
 #       define GL_RESOLVE_ES_2_0(name) GL_RESOLVE(name)
 #       define GL_RESOLVE_ES_3_0(name) GL_RESOLVE(name)
 #       define GL_RESOLVE_ES_3_1(name) GL_RESOLVE(name)
