@@ -59,15 +59,15 @@ bool ImageConverter::check() const
 {
     DPTR_D(const ImageConverter); // cppcheck-suppress constVariable
 
-    return    d.w_in > 0 && d.w_out > 0 && d.h_in > 0 && d.h_out > 0
-           && d.fmt_in != QTAV_PIX_FMT_C(NONE) && d.fmt_out != QTAV_PIX_FMT_C(NONE);
+    return ((d.w_in > 0) && (d.w_out > 0) && (d.h_in > 0) && (d.h_out > 0) &&
+            (d.fmt_in != QTAV_PIX_FMT_C(NONE)) && (d.fmt_out != QTAV_PIX_FMT_C(NONE)));
 }
 
 void ImageConverter::setInSize(int width, int height)
 {
     DPTR_D(ImageConverter);
 
-    if (d.w_in == width && d.h_in == height)
+    if ((d.w_in == width) && (d.h_in == height))
         return;
 
     d.w_in = width;
@@ -80,7 +80,7 @@ void ImageConverter::setOutSize(int width, int height)
 {
     DPTR_D(ImageConverter);
 
-    if (d.w_out == width && d.h_out == height)
+    if ((d.w_out == width) && (d.h_out == height))
         return;
 
     d.w_out       = width;
@@ -221,7 +221,7 @@ QVector<int> ImageConverter::outLineSizes() const
     return d_func().pitchs;
 }
 
-bool ImageConverter::convert(const quint8 * const src[], const int srcStride[])
+bool ImageConverter::convert(const quint8* const src[], const int srcStride[])
 {
     DPTR_D(ImageConverter);
 
@@ -243,7 +243,7 @@ bool ImageConverter::prepareData()
 {
     DPTR_D(ImageConverter);
 
-    if (d.fmt_out == QTAV_PIX_FMT_C(NONE) || d.w_out <=0 || d.h_out <= 0)
+    if ((d.fmt_out == QTAV_PIX_FMT_C(NONE)) || (d.w_out <= 0) || (d.h_out <= 0))
         return false;
 
     AV_ENSURE(av_image_check_size(d.w_out, d.h_out, 0, nullptr), false);
@@ -277,8 +277,8 @@ bool ImageConverter::prepareData()
 */
     for (int i = 0 ; i < d.pitchs.size() ; ++i)
     {
-        Q_ASSERT(d.pitchs[i]%kAlign == 0);
-        Q_ASSERT(qptrdiff(d.bits[i])%kAlign == 0);
+        Q_ASSERT(d.pitchs[i] % kAlign == 0);
+        Q_ASSERT(qptrdiff(d.bits[i]) % kAlign == 0);
     }
 
     return true;

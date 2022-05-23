@@ -37,13 +37,13 @@ namespace QtAV
 static const int kAvgSize = 16;
 
 PacketBuffer::PacketBuffer()
-    : m_mode(BufferTime),
-      m_buffering(true), // in buffering state at the beginning
-      m_max(1.5),
-      m_buffer(0),
-      m_value0(0),
-      m_value1(0),
-      m_history(kAvgSize)
+    : m_mode     (BufferTime),
+      m_buffering(true),            // in buffering state at the beginning
+      m_max      (1.5),
+      m_buffer   (0),
+      m_value0   (0),
+      m_value1   (0),
+      m_history  (kAvgSize)
 {
 }
 
@@ -64,7 +64,7 @@ void PacketBuffer::setBufferMode(BufferMode mode)
 
     if (m_mode == BufferTime)
     {
-        m_value0 = qint64(queue[0].pts*1000.0);
+        m_value0 = qint64(queue[0].pts * 1000.0);
     }
     else
     {
@@ -108,7 +108,7 @@ qint64 PacketBuffer::buffered() const
 {
     Q_ASSERT(m_value1 >= m_value0);
 
-    return m_value1 - m_value0;
+    return (m_value1 - m_value0);
 }
 
 bool PacketBuffer::isBuffering() const
@@ -135,20 +135,20 @@ qreal PacketBuffer::bufferSpeedInBytes() const
 
 bool PacketBuffer::checkEnough() const
 {
-    return buffered() >= bufferValue();
+    return (buffered() >= bufferValue());
 }
 
 bool PacketBuffer::checkFull() const
 {
-    return buffered() >= qint64(qreal(bufferValue())*bufferMax());
+    return (buffered() >= qint64(qreal(bufferValue()) * bufferMax()));
 }
 
 void PacketBuffer::onPut(const Packet& p)
 {
     if      (m_mode == BufferTime)
     {
-        m_value1 = qint64(p.pts*1000.0); // FIXME: what if no pts
-        m_value0 = qint64(queue[0].pts*1000.0); // must compute here because it is reset to 0 if take from empty
+        m_value1 = qint64(p.pts * 1000.0); // FIXME: what if no pts
+        m_value0 = qint64(queue[0].pts * 1000.0); // must compute here because it is reset to 0 if take from empty
 /*
         if (isBuffering())
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("+buffering progress: %.1f%%=%.1f/%.1f~%.1fs %d-%d", bufferProgress()*100.0, (qreal)buffered()/1000.0, (qreal)bufferValue()/1000.0, qreal(bufferValue())*bufferMax()/1000.0, m_value1, m_value0);
@@ -191,7 +191,7 @@ void PacketBuffer::onPut(const Packet& p)
     m_history.push_back(bi);
 }
 
-void PacketBuffer::onTake(const Packet &p)
+void PacketBuffer::onTake(const Packet& p)
 {
     if (checkEmpty())
     {
@@ -208,7 +208,7 @@ void PacketBuffer::onTake(const Packet &p)
 
     if      (m_mode == BufferTime)
     {
-        m_value0 = qint64(queue[0].pts*1000.0);
+        m_value0 = qint64(queue[0].pts * 1000.0);
 /*
         if (isBuffering())
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("-buffering progress: %.1f=%.1f/%.1fs", bufferProgress(), (qreal)buffered()/1000.0, (qreal)bufferValue()/1000.0);
@@ -249,7 +249,7 @@ qreal PacketBuffer::calc_speed(bool use_bytes) const
         return 0;
     }
 
-    return (qreal)delta / dt;
+    return ((qreal)delta / dt);
 }
 
 } // namespace QtAV

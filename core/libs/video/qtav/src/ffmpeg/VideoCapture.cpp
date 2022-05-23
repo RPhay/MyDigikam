@@ -370,7 +370,7 @@ QString VideoCapture::captureDir() const
  * TODO: map frame from texture etc.
  */
 
-void VideoCapture::setVideoFrame(const VideoFrame &frame)
+void VideoCapture::setVideoFrame(const VideoFrame& frame)
 {
     // parameter in ready(QtAV::VideoFrame) ensure we can access the frame without lock
 

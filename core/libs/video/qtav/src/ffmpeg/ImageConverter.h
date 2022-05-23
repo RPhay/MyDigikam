@@ -52,6 +52,8 @@ public:
         DataAlignment = 16
     };
 
+public:
+
     ImageConverter();
     virtual ~ImageConverter();
 
@@ -95,11 +97,11 @@ public:
     int saturation() const;
     QVector<quint8*> outPlanes() const;
     QVector<int> outLineSizes() const;
-    virtual bool convert(const quint8 *const src[], const int srcStride[]);
+    virtual bool convert(const quint8* const src[], const int srcStride[]);
 
-    virtual bool convert(const quint8 *const src[],
+    virtual bool convert(const quint8* const src[],
                          const int srcStride[],
-                         quint8 *const dst[],
+                         quint8* const dst[],
                          const int dstStride[]) = 0;
 
 public:
@@ -150,7 +152,7 @@ class ImageConverterFFPrivate;
  * \brief The ImageConverterFF class
  * based on libswscale
  */
-class ImageConverterFF final : public ImageConverter // QTAV_EXPORT is not needed
+class ImageConverterFF final : public ImageConverter
 {
     DPTR_DECLARE_PRIVATE(ImageConverterFF)           // cppcheck-suppress unusedPrivateFunction
 
@@ -161,14 +163,14 @@ public:
 
     // FIXME: why match to the pure virtual one if not declare here?
 
-    bool convert(const quint8 *const src[], const int srcStride[]) override
+    bool convert(const quint8* const src[], const int srcStride[]) override
     {
         return ImageConverter::convert(src, srcStride);
     }
 
-    bool convert(const quint8 *const src[],
+    bool convert(const quint8* const src[],
                  const int srcStride[],
-                 quint8 *const dst[],
+                 quint8* const dst[],
                  const int dstStride[])                            override;
 };
 

@@ -44,7 +44,7 @@ class QTAV_EXPORT Packet
 public:
 
     static Packet fromAVPacket(const AVPacket* avpkt, double time_base);
-    static bool fromAVPacket(Packet *pkt, const AVPacket *avpkt, double time_base);
+    static bool fromAVPacket(Packet* pkt, const AVPacket* avpkt, double time_base);
     static Packet createEOF();
 
     Packet();
@@ -73,6 +73,8 @@ public:
      */
     void skip(int bytes);
 
+public:
+
     bool        hasKeyFrame;
     bool        isCorrupt;
     QByteArray  data;
@@ -81,7 +83,7 @@ public:
 
     qreal       pts, duration;
     qreal       dts;
-    qint64      position; // position in source file byte stream
+    qint64      position; ///< position in source file byte stream
 
 private:
 

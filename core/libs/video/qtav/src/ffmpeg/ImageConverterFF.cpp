@@ -42,7 +42,7 @@ class Q_DECL_HIDDEN ImageConverterFFPrivate final : public ImageConverterPrivate
 public:
 
     ImageConverterFFPrivate()
-        : sws_ctx(nullptr),
+        : sws_ctx  (nullptr),
           update_eq(true)
     {
     }
@@ -80,16 +80,18 @@ bool ImageConverterFF::check() const
 
     if (sws_isSupportedInput((AVPixelFormat)d.fmt_in) <= 0)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Input pixel format not supported (%s)",
-                                                         av_get_pix_fmt_name((AVPixelFormat)d.fmt_in));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Input pixel format not supported (%s)",
+                av_get_pix_fmt_name((AVPixelFormat)d.fmt_in));
 
         return false;
     }
 
     if (sws_isSupportedOutput((AVPixelFormat)d.fmt_out) <= 0)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Output pixel format not supported (%s)",
-                                                         av_get_pix_fmt_name((AVPixelFormat)d.fmt_out));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Output pixel format not supported (%s)",
+                av_get_pix_fmt_name((AVPixelFormat)d.fmt_out));
 
         return false;
     }
@@ -97,7 +99,8 @@ bool ImageConverterFF::check() const
     return true;
 }
 
-bool ImageConverterFF::convert(const quint8 *const src[], const int srcStride[], quint8 *const dst[], const int dstStride[])
+bool ImageConverterFF::convert(const quint8* const src[], const int srcStride[],
+                               quint8* const dst[], const int dstStride[])
 {
     DPTR_D(ImageConverterFF);
 
@@ -113,11 +116,11 @@ bool ImageConverterFF::convert(const quint8 *const src[], const int srcStride[],
 
     // TODO: move those code to prepare()
 
-    d.sws_ctx = sws_getCachedContext(d.sws_ctx
-            , d.w_in, d.h_in, (AVPixelFormat)d.fmt_in
-            , d.w_out, d.h_out, (AVPixelFormat)d.fmt_out
-            , ((d.w_in == d.w_out) && (d.h_in == d.h_out)) ? SWS_POINT : SWS_FAST_BILINEAR // SWS_BICUBIC
-            , nullptr, nullptr, nullptr
+    d.sws_ctx = sws_getCachedContext(d.sws_ctx,
+                                     d.w_in, d.h_in, (AVPixelFormat)d.fmt_in,
+                                     d.w_out, d.h_out, (AVPixelFormat)d.fmt_out,
+                                     ((d.w_in == d.w_out) && (d.h_in == d.h_out)) ? SWS_POINT : SWS_FAST_BILINEAR, // SWS_BICUBIC
+                                     nullptr, nullptr, nullptr
     );
 
     //int64_t flags = SWS_CPU_CAPS_SSE2 | SWS_CPU_CAPS_MMX | SWS_CPU_CAPS_MMX2;
@@ -132,7 +135,8 @@ bool ImageConverterFF::convert(const quint8 *const src[], const int srcStride[],
 
     if (result_h != d.h_out)
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("convert failed: %d, %d", result_h, d.h_out);
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("convert failed: %d, %d", result_h, d.h_out);
 
         return false;
     }
@@ -165,18 +169,18 @@ bool ImageConverterFFPrivate::setupColorspaceDetails(bool force)
         return true;
     }
 
-    const int srcRange = range_in  == ColorRange_Limited ? 0 : 1;
-    int dstRange       = range_out == ColorRange_Limited ? 0 : 1;
+    const int srcRange = (range_in  == ColorRange_Limited ? 0 : 1);
+    int dstRange       = (range_out == ColorRange_Limited ? 0 : 1);
 
     // TODO: color space
 
-    bool supported = sws_setColorspaceDetails(sws_ctx, sws_getCoefficients(SWS_CS_DEFAULT)
-                                              , srcRange, sws_getCoefficients(SWS_CS_DEFAULT)
-                                              , dstRange
-                                              , ((brightness << 16) + 50) / 100
-                                              , (((contrast + 100) << 16) + 50) / 100
-                                              , (((saturation + 100) << 16) + 50) / 100
-                                             ) >= 0;
+    bool supported = (sws_setColorspaceDetails(sws_ctx, sws_getCoefficients(SWS_CS_DEFAULT),
+                                               srcRange, sws_getCoefficients(SWS_CS_DEFAULT),
+                                               dstRange,
+                                               ((brightness << 16) + 50) / 100,
+                                               (((contrast + 100) << 16) + 50) / 100,
+                                               (((saturation + 100) << 16) + 50) / 100
+                                              ) >= 0);
 
     // sws_init_context(d.sws_ctx, nullptr, nullptr);
 

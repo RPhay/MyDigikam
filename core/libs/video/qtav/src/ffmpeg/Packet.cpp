@@ -84,10 +84,10 @@ Packet Packet::createEOF()
 
 bool Packet::isEOF() const
 {
-    return data == "eof" && pts < 0.0 && dts < 0.0;
+    return ((data == "eof") && (pts < 0.0) && (dts < 0.0));
 }
 
-Packet Packet::fromAVPacket(const AVPacket *avpkt, double time_base)
+Packet Packet::fromAVPacket(const AVPacket* avpkt, double time_base)
 {
     Packet pkt;
 
@@ -104,7 +104,7 @@ bool Packet::fromAVPacket(Packet* pkt, const AVPacket *avpkt, double time_base)
     if (!pkt || !avpkt)
         return false;
 
-    pkt->position = avpkt->pos;
+    pkt->position    = avpkt->pos;
     pkt->hasKeyFrame = !!(avpkt->flags & AV_PKT_FLAG_KEY);
 
     // what about marking avpkt as invalid and do not use isCorrupt?
@@ -145,18 +145,18 @@ bool Packet::fromAVPacket(Packet* pkt, const AVPacket *avpkt, double time_base)
 
     // subtitle always has a key frame? convergence_duration may be 0
 
-    if (avpkt->convergence_duration > 0
-            && pkt->hasKeyFrame
+    if ((avpkt->convergence_duration > 0) && pkt->hasKeyFrame
 
 #if 0
 
-            && codec->codec_type == AVMEDIA_TYPE_SUBTITLE
+            && (codec->codec_type == AVMEDIA_TYPE_SUBTITLE)
 
 #endif
 
-            )
-
+       )
+    {
         pkt->duration = avpkt->convergence_duration * time_base;
+    }
 
 #endif
 
@@ -169,42 +169,42 @@ bool Packet::fromAVPacket(Packet* pkt, const AVPacket *avpkt, double time_base)
 
     pkt->d              = QSharedDataPointer<PacketPrivate>(new PacketPrivate());
     pkt->d->initialized = true;
-    AVPacket *p         = &pkt->d->avpkt;
+    AVPacket* const p   = &pkt->d->avpkt;
 
     av_packet_ref(p, const_cast<AVPacket*>(avpkt));  // properties are copied internally
 
     // add ref without copy, bytearray does not copy either. bytearray options linke remove() is safe. omit FF_INPUT_BUFFER_PADDING_SIZE
 
-    pkt->data = QByteArray::fromRawData((const char*)p->data, p->size);
+    pkt->data           = QByteArray::fromRawData((const char*)p->data, p->size);
 
     // QtAV always use ms (1/1000s) and s. As a result no time_base is required in Packet
 
-    p->pts      = pkt->pts * 1000.0;
-    p->dts      = pkt->dts * 1000.0;
-    p->duration = pkt->duration * 1000.0;
+    p->pts              = pkt->pts      * 1000.0;
+    p->dts              = pkt->dts      * 1000.0;
+    p->duration         = pkt->duration * 1000.0;
 
     return true;
 }
 
 Packet::Packet()
-    : hasKeyFrame(false)
-    , isCorrupt(false)
-    , pts(-1)
-    , duration(-1)
-    , dts(-1)
-    , position(-1)
+    : hasKeyFrame(false),
+      isCorrupt  (false),
+      pts        (-1),
+      duration   (-1),
+      dts        (-1),
+      position   (-1)
 {
 }
 
-Packet::Packet(const Packet &other)
-    : hasKeyFrame(other.hasKeyFrame)
-    , isCorrupt(other.isCorrupt)
-    , data(other.data)
-    , pts(other.pts)
-    , duration(other.duration)
-    , dts(other.dts)
-    , position(other.position)
-    , d(other.d)
+Packet::Packet(const Packet& other)
+    : hasKeyFrame(other.hasKeyFrame),
+      isCorrupt  (other.isCorrupt),
+      data       (other.data),
+      pts        (other.pts),
+      duration   (other.duration),
+      dts        (other.dts),
+      position   (other.position),
+      d          (other.d)
 {
 }
 
@@ -229,7 +229,7 @@ Packet::~Packet()
 {
 }
 
-const AVPacket *Packet::asAVPacket() const
+const AVPacket* Packet::asAVPacket() const
 {
     if (d.constData())
     {
@@ -250,12 +250,12 @@ const AVPacket *Packet::asAVPacket() const
         d = QSharedDataPointer<PacketPrivate>(new PacketPrivate());
     }
 
-    d->initialized = true;
-    AVPacket *p    = &d->avpkt;
-    p->pts         = pts * 1000.0;
-    p->dts         = dts * 1000.0;
-    p->duration    = duration * 1000.0;
-    p->pos         = position;
+    d->initialized    = true;
+    AVPacket* const p = &d->avpkt;
+    p->pts            = pts * 1000.0;
+    p->dts            = dts * 1000.0;
+    p->duration       = duration * 1000.0;
+    p->pos            = position;
 
     if (isCorrupt)
         p->flags |= AV_PKT_FLAG_CORRUPT;
@@ -292,7 +292,7 @@ void Packet::skip(int bytes)
 
 #ifndef QT_NO_DEBUG_STREAM
 
-QDebug operator<<(QDebug dbg, const Packet &pkt)
+QDebug operator<<(QDebug dbg, const Packet& pkt)
 {
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
@@ -309,6 +309,7 @@ QDebug operator<<(QDebug dbg, const Packet &pkt)
     dbg.nospace() << ", hasKeyFrame: " << pkt.hasKeyFrame;
     dbg.nospace() << ", isCorrupt: " << pkt.isCorrupt;
     dbg.nospace() << ", eof: " << pkt.isEOF();
+
     return dbg.space();
 }
 

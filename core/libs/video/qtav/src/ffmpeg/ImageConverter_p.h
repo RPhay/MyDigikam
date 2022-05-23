@@ -44,19 +44,19 @@ class ImageConverterPrivate : public DPtrPrivate<ImageConverter>
 public:
 
     ImageConverterPrivate()
-        : w_in(0),
-          h_in(0),
-          w_out(0),
-          h_out(0),
-          fmt_in(QTAV_PIX_FMT_C(YUV420P)),
-          fmt_out(QTAV_PIX_FMT_C(RGB32)),
-          range_in(ColorRange_Unknown),
-          range_out(ColorRange_Unknown),
-          brightness(0),
-          contrast(0),
-          saturation(0),
+        : w_in       (0),
+          h_in       (0),
+          w_out      (0),
+          h_out      (0),
+          fmt_in     (QTAV_PIX_FMT_C(YUV420P)),
+          fmt_out    (QTAV_PIX_FMT_C(RGB32)),
+          range_in   (ColorRange_Unknown),
+          range_out  (ColorRange_Unknown),
+          brightness (0),
+          contrast   (0),
+          saturation (0),
           update_data(true),
-          out_offset(0)
+          out_offset (0)
     {
         bits.reserve(8);
         pitchs.reserve(8);

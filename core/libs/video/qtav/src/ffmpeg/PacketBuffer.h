@@ -121,13 +121,14 @@ private:
     // bytes or count
 
     qint64              m_buffer;
-    qint64              m_value0, m_value1;
+    qint64              m_value0;
+    qint64              m_value1;
 
     typedef struct
     {
-        qint64 v;       ///< pts, total packes or total bytes
-        qint64 bytes;   ///< total bytes
-        qint64 t;
+        qint64 v     = 0;   ///< pts, total packes or total bytes
+        qint64 bytes = 0;   ///< total bytes
+        qint64 t     = 0;
     } BufferInfo;
 
     ring<BufferInfo>    m_history;

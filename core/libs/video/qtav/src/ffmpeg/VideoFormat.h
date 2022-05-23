@@ -172,17 +172,17 @@ public:
     VideoFormat(const VideoFormat& other);
     ~VideoFormat();
 
-    VideoFormat& operator=(const VideoFormat &other);
+    VideoFormat& operator=(const VideoFormat& other);
     VideoFormat& operator=(VideoFormat::PixelFormat pixfmt);
     VideoFormat& operator=(QImage::Format qpixfmt);
     VideoFormat& operator=(int ffpixfmt);
 
-    bool operator==(const VideoFormat &other) const;
+    bool operator==(const VideoFormat& other) const;
     bool operator==(VideoFormat::PixelFormat pixfmt) const;
     bool operator==(QImage::Format qpixfmt) const;
     bool operator==(int ffpixfmt) const;
 
-    bool operator!=(const VideoFormat &other) const;
+    bool operator!=(const VideoFormat& other) const;
     bool operator!=(VideoFormat::PixelFormat pixfmt) const;
     bool operator!=(QImage::Format qpixfmt) const;
     bool operator!=(int ffpixfmt) const;
@@ -314,7 +314,7 @@ private:
 
 #ifndef QT_NO_DEBUG_STREAM
 
-QTAV_EXPORT QDebug operator<<(QDebug debug, const VideoFormat &fmt);
+QTAV_EXPORT QDebug operator<<(QDebug debug, const VideoFormat& fmt);
 QTAV_EXPORT QDebug operator<<(QDebug debug, VideoFormat::PixelFormat pixFmt);
 
 #endif
