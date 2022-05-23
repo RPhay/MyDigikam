@@ -46,7 +46,7 @@ typedef struct
 {
     AVSampleFormat            avfmt;
     AudioFormat::SampleFormat fmt;
-    const char*               name = nullptr;
+    const char*               name;
 } sample_fmt_entry;
 
 static const sample_fmt_entry samplefmts[] =
