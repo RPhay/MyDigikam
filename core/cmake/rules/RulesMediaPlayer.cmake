@@ -56,8 +56,6 @@ if(ENABLE_MEDIAPLAYER)
        AND ${AVFORMAT_FOUND}
        AND ${AVUTIL_FOUND}
        AND ${SWSCALE_FOUND}
-#       AND ${AVRESAMPLE_FOUND} # optional
-#       AND ${SWRESAMPLE_FOUND} # optional
       )
 
         include_directories(${FFMPEG_INCLUDE_DIRS})
@@ -431,6 +429,19 @@ if(ENABLE_MEDIAPLAYER)
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_DSOUND=${HAVE_LIBDIRECTSOUND})      # DirectX Sound for MSVC only (replaced by XAudio2)
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_GDIPLUS=${HAVE_LIBGDIPLUS})         # Graphics Device Interface Plus for MSVC only (replaced by DirectX)
         set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_DIRECT2D=${HAVE_LIBDIRECT2D})       # DirectX 2D for MSVC only (replaced by DirectX 3D)
+
+        # Use libavresample if libswresample is not available.
+        # https://github.com/xbmc/xbmc/commit/274679d
+
+        if(${AVRESAMPLE_FOUND} AND NOT ${SWRESAMPLE_FOUND})
+
+            set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_SWR_AVR_MAP=1)
+
+        else()
+
+            set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_SWR_AVR_MAP=0)
+
+        endif()
 
         if(APPLE)
 
