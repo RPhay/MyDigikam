@@ -41,6 +41,10 @@
 #include "QtAV_internal.h"
 #include "digikam_debug.h"
 
+// Turn to 1 to debug libav filter graph.
+
+#define DBG_GRAPH 0
+
 /*
  * libav10.x, ffmpeg2.x: av_buffersink_read deprecated
  * libav9.x: only av_buffersink_read can be used
