@@ -30,6 +30,13 @@
 #include <QObject>
 #include <QScopedPointer>
 
+// FFmpeg includes
+
+extern "C"
+{
+#include <libavcodec/avcodec.h>
+}
+
 // Local includes
 
 #include "AVError.h"
@@ -198,9 +205,19 @@ public:
 
     // codec. stream < 0: the stream going to play (or the stream set by setStreamIndex())
 
-    AVCodecContext* audioCodecContext(int stream = -1)    const;
-    AVCodecContext* videoCodecContext(int stream = -1)    const;
-    AVCodecContext* subtitleCodecContext(int stream = -1) const;
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
+    AVCodecContext*    audioCodecContext(int stream = -1)    const;
+    AVCodecContext*    videoCodecContext(int stream = -1)    const;
+    AVCodecContext*    subtitleCodecContext(int stream = -1) const;
+
+#else // ffmpeg >= 5
+
+    AVCodecParameters* audioCodecContext(int stream = -1)    const;
+    AVCodecParameters* videoCodecContext(int stream = -1)    const;
+    AVCodecParameters* subtitleCodecContext(int stream = -1) const;
+
+#endif
 
     /**
      * @brief getInterruptTimeout return the interrupt timeout

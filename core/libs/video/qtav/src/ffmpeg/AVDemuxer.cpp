@@ -428,7 +428,17 @@ public:
 
     QString                         file;
     QString                         file_orig;
+
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
     AVInputFormat*                  input_format    = nullptr;
+
+#else // ffmpeg >= 5
+
+    const AVInputFormat*            input_format    = nullptr;
+
+#endif
+
     QString                         format_forced;
     MediaIO*                        input           = nullptr;
 
@@ -451,9 +461,18 @@ public:
 
         // wanted_stream is REQUIRED. e.g. always set -1 to indicate the default stream, -2 to disable
 
-        int             stream, wanted_stream; ///< -1 default, selected by ff
-        int             index, wanted_index;   ///< index in a kind of streams
-        AVCodecContext* avctx = nullptr;
+        int                stream, wanted_stream; ///< -1 default, selected by ff
+        int                index, wanted_index;   ///< index in a kind of streams
+
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
+        AVCodecContext*    avctx = nullptr;
+
+#else // ffmpeg >= 5
+
+        AVCodecParameters* avctx = nullptr;
+#endif
+
     } StreamInfo;
 
     StreamInfo                      astream, vstream, sstream;
@@ -949,6 +968,8 @@ bool AVDemuxer::seek(qint64 pos)
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("*** seek to beginning. started = false");
         d->started = false; // ???
 
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
         if (d->astream.avctx)
             d->astream.avctx->frame_number = 0;
 
@@ -957,6 +978,13 @@ bool AVDemuxer::seek(qint64 pos)
 
         if (d->sstream.avctx)
             d->sstream.avctx->frame_number = 0;
+
+#else // ffmpeg >= 5
+
+        // TODO
+
+#endif
+
     }
 
     return true;
@@ -1588,7 +1616,16 @@ QList<int> AVDemuxer::subtitleStreams() const
     return d->subtitle_streams;
 }
 
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
 AVCodecContext* AVDemuxer::audioCodecContext(int stream) const
+
+#else // ffmpeg >= 5
+
+AVCodecParameters* AVDemuxer::audioCodecContext(int stream) const
+
+#endif
+
 {
     if (stream < 0)
         return d->astream.avctx;
@@ -1596,7 +1633,15 @@ AVCodecContext* AVDemuxer::audioCodecContext(int stream) const
     if (stream > (int)d->format_ctx->nb_streams)
         return nullptr;
 
-    AVCodecContext* const avctx = d->format_ctx->streams[stream]->codec;
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
+    AVCodecContext* const avctx     = d->format_ctx->streams[stream]->codec;
+
+#else // ffmpeg >= 5
+
+     AVCodecParameters* const avctx = d->format_ctx->streams[stream]->codecpar;
+
+#endif
 
     if (avctx->codec_type == AVMEDIA_TYPE_AUDIO)
         return avctx;
@@ -1604,7 +1649,16 @@ AVCodecContext* AVDemuxer::audioCodecContext(int stream) const
     return nullptr;
 }
 
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
 AVCodecContext* AVDemuxer::videoCodecContext(int stream) const
+
+#else // ffmpeg >= 5
+
+AVCodecParameters* AVDemuxer::videoCodecContext(int stream) const
+
+#endif
+
 {
     if (stream < 0)
         return d->vstream.avctx;
@@ -1612,7 +1666,15 @@ AVCodecContext* AVDemuxer::videoCodecContext(int stream) const
     if (stream > (int)d->format_ctx->nb_streams)
         return nullptr;
 
-    AVCodecContext* const avctx = d->format_ctx->streams[stream]->codec;
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
+    AVCodecContext* const avctx    = d->format_ctx->streams[stream]->codec;
+
+#else // ffmpeg >= 5
+
+    AVCodecParameters* const avctx = d->format_ctx->streams[stream]->codecpar;
+
+#endif
 
     if (avctx->codec_type == AVMEDIA_TYPE_VIDEO)
         return avctx;
@@ -1620,7 +1682,16 @@ AVCodecContext* AVDemuxer::videoCodecContext(int stream) const
     return nullptr;
 }
 
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
 AVCodecContext* AVDemuxer::subtitleCodecContext(int stream) const
+
+#else // ffmpeg >= 5
+
+AVCodecParameters* AVDemuxer::subtitleCodecContext(int stream) const
+
+#endif
+
 {
     if (stream < 0)
         return d->sstream.avctx;
@@ -1628,7 +1699,15 @@ AVCodecContext* AVDemuxer::subtitleCodecContext(int stream) const
     if (stream > (int)d->format_ctx->nb_streams)
         return nullptr;
 
-    AVCodecContext* const avctx = d->format_ctx->streams[stream]->codec;
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
+    AVCodecContext* const avctx    = d->format_ctx->streams[stream]->codec;
+
+#else // ffmpeg >= 5
+
+    AVCodecParameters* const avctx = d->format_ctx->streams[stream]->codecpar;
+
+#endif
 
     if (avctx->codec_type == AVMEDIA_TYPE_SUBTITLE)
         return avctx;
@@ -1905,7 +1984,17 @@ bool AVDemuxer::Private::setStream(AVDemuxer::StreamType st, int streamValue)
 
     si->stream        = s;
     si->wanted_stream = streamValue;
+
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
     si->avctx         = format_ctx->streams[s]->codec;
+
+#else // ffmpeg >= 5
+
+    si->avctx         = format_ctx->streams[s]->codecpar;
+
+#endif
+
     has_attached_pic  = !!(format_ctx->streams[s]->disposition & AV_DISPOSITION_ATTACHED_PIC);
 
     return true;
@@ -1923,7 +2012,17 @@ bool AVDemuxer::Private::prepareStreams()
 
     for (unsigned int i = 0 ; i < format_ctx->nb_streams ; ++i)
     {
+
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
         type = format_ctx->streams[i]->codec->codec_type;
+
+#else // ffmpeg >= 5
+
+
+        type = format_ctx->streams[i]->codecpar->codec_type;
+
+#endif
 
         if      (type == AVMEDIA_TYPE_VIDEO)
         {
