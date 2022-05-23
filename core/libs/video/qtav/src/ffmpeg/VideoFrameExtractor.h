@@ -90,8 +90,8 @@ Q_SIGNALS:
     void frameExtracted(const QtAV::VideoFrame& frame); // parameter: VideoFrame, bool changed?
     void sourceChanged();
     void asyncChanged();
-    void error(const QString &errorMessage);    ///< emitted with a helpful error message -- connect to this to show empty image in preview widget
-    void aborted(const QString &abortMessage);  ///< emitted when aborting the current preview -- if user requested a new preview this usually gets emitted.  connect to this to show empty preview
+    void error(const QString& errorMessage);    ///< emitted with a helpful error message -- connect to this to show empty image in preview widget
+    void aborted(const QString& abortMessage);  ///< emitted when aborting the current preview -- if user requested a new preview this usually gets emitted.  connect to this to show empty preview
     void autoExtractChanged();
 
     /*!

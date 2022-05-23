@@ -61,7 +61,7 @@ VideoFrame VideoFrame::fromGPU(const VideoFormat& fmt, int width, int height, in
     Q_ASSERT(src[0] && (pitch[0] > 0) && "VideoFrame::fromGPU: src[0] and pitch[0] must be set");
 
     const int nb_planes    = fmt.planeCount();
-    const int chroma_pitch = nb_planes > 1 ? fmt.bytesPerLine(pitch[0], 1) : 0;
+    const int chroma_pitch = (nb_planes > 1 ? fmt.bytesPerLine(pitch[0], 1) : 0);
     const int chroma_h     = fmt.chromaHeight(surface_h);
 
     int h[] = { surface_h, 0, 0 };
@@ -93,7 +93,7 @@ VideoFrame VideoFrame::fromGPU(const VideoFormat& fmt, int width, int height, in
 
         for (int i = 0 ; i < nb_planes ; ++i)
         {
-            yuv_size += pitch[i]*h[i];
+            yuv_size += pitch[i] * h[i];
         }
 
         // additional 15 bytes to ensure 16 bytes aligned
@@ -304,7 +304,7 @@ VideoFrame VideoFrame::clone() const
     {
         f.setBits((quint8*)dst, i);
         f.setBytesPerLine(bytesPerLine(i), i);
-        const int plane_size = bytesPerLine(i)*planeHeight(i);
+        const int plane_size = bytesPerLine(i) * planeHeight(i);
         memcpy(dst, constBits(i), plane_size);
         dst                 += plane_size;
     }

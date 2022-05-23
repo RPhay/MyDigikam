@@ -178,15 +178,15 @@ class Q_DECL_HIDDEN VideoFrameExtractorPrivate : public DPtrPrivate<VideoFrameEx
 public:
 
     VideoFrameExtractorPrivate()
-        : abort_seek(false),
-          async(true),
-          has_video(true),
-          auto_extract(true),
+        : abort_seek    (false),
+          async         (true),
+          has_video     (true),
+          auto_extract  (true),
           auto_precision(true),
-          seek_count(0),
-          position(-2 * kDefaultPrecision),
-          precision(kDefaultPrecision),
-          decoder(nullptr)
+          seek_count    (0),
+          position      (-2 * kDefaultPrecision),
+          precision     (kDefaultPrecision),
+          decoder       (nullptr)
     {
         QVariantHash opt;
         opt[QString::fromLatin1("skip_frame")]            = 8;      // 8 for "avcodec", "NoRef" for "FFmpeg". see AVDiscard
@@ -312,7 +312,7 @@ public:
 
     // return the key frame position
 
-    bool extractInPrecision(qint64 value, int range, QString & err, bool & aborted)
+    bool extractInPrecision(qint64 value, int range, QString& err, bool& aborted)
     {
         abort_seek = false;
         err        = QString();
@@ -487,12 +487,14 @@ public:
             if (pkt.hasKeyFrame)
             {
                 // FIXME:
+
                 //qCCritical(DIGIKAM_QTAV_LOG_CRITICAL) << QString::asprintf("Internal error. Can not be a key frame!!!!");
-                //return false; //??
+
+                //return false; // ??
             }
 
-            qint64 diff               = qint64(t * 1000.0) - value;
-            QVariantHash* dec_opt_old = dec_opt;
+            qint64 diff                     = qint64(t * 1000.0) - value;
+            QVariantHash* const dec_opt_old = dec_opt;
 
             if ((seek_count == 0) || (diff >= 0))
                 dec_opt = &dec_opt_normal;

@@ -212,9 +212,9 @@ void VideoThread::setEQ(int b, int c, int s)
 
         EQTask(VideoFrameConverter* const c)
             : brightness(0),
-              contrast(0),
+              contrast  (0),
               saturation(0),
-              conv(c)
+              conv      (c)
         {
             //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("EQTask tid=%p", QThread::currentThread());
         }
@@ -536,7 +536,7 @@ void VideoThread::run()
         // TODO: delta ref time
         // if dts is invalid, diff can be very small (<0) and video will be decoded and rendered(display_wait is disabled for now) immediately
 
-        qreal diff = (dts > 0) ? dts - d.clock->value() + v_a : v_a;
+        qreal diff = ((dts > 0) ? dts - d.clock->value() + v_a : v_a);
 
         if (pkt.isEOF())
             diff = qMin<qreal>(1.0, qMax<qreal>(d.delay, 1.0 / d.statistics->video_only.currentDisplayFPS()));
@@ -661,7 +661,8 @@ void VideoThread::run()
                     << QString::asprintf("video too fast!!! sleep %.2f s, nb fast: %d, v_a: %.4f",
                         s, nb_dec_fast, v_a);
 
-                waitAndCheck(s*1000UL, dts);
+                waitAndCheck(s * 1000UL, dts);
+
                 diff           = 0;
                 skip_render    = false;
             }
@@ -693,7 +694,7 @@ void VideoThread::run()
             wait_key_frame = false;
         }
 
-        QVariantHash* dec_opt_old = dec_opt;
+        QVariantHash* const dec_opt_old = dec_opt;
 
         if (!seeking || ((pkt.pts - d.render_pts0) >= -0.05))
         {
@@ -904,7 +905,7 @@ void VideoThread::run()
                 // TODO: what if seek happens during playback?
 
                 const int msecs_started(now + qMax(0LL, delta) - start_time);
-                frame.setTimestamp(qreal(msecs_started)/1000.0);
+                frame.setTimestamp(qreal(msecs_started) / 1000.0);
                 clock()->updateValue(frame.timestamp()); // external clock?
             }
 
@@ -957,7 +958,7 @@ void VideoThread::run()
                     if (v_a <= v_a_)
                         v_a += -0.01;
                     else
-                        v_a = (v_a_ +v_a)*0.5;
+                        v_a = (v_a_ + v_a) * 0.5;
                 }
                 else if (v_a_ < -0.002)
                 {
@@ -975,7 +976,7 @@ void VideoThread::run()
                     if (v_a >= v_a_)
                         v_a += 0.01;
                     else
-                        v_a = (v_a_ +v_a)*0.5;
+                        v_a = (v_a_ + v_a) * 0.5;
                 }
 
                 if ((v_a < -2) || (v_a > 2))
