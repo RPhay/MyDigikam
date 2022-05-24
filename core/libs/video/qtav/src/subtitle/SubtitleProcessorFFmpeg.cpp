@@ -384,7 +384,15 @@ bool SubtitleProcessorFFmpeg::processHeader(const QByteArray& codec, const QByte
         avcodec_free_context(&codec_ctx);
     }
 
-    AVCodec* c = avcodec_find_decoder_by_name(codec.constData());
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
+    AVCodec* c       = avcodec_find_decoder_by_name(codec.constData());
+
+#else // ffmpeg >= 5
+
+    const AVCodec* c = avcodec_find_decoder_by_name(codec.constData());
+
+#endif
 
     if (!c)
     {
@@ -578,8 +586,21 @@ bool SubtitleProcessorFFmpeg::processSubtitle()
         return false;
     }
 
+
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
     codec_ctx                         = m_reader.subtitleCodecContext();
     AVCodec* dec                      = avcodec_find_decoder(codec_ctx->codec_id);
+
+#else // ffmpeg >= 5
+
+    AVCodecParameters* const par      = m_reader.subtitleCodecContext();
+    const AVCodec* dec                = avcodec_find_decoder(par->codec_id);
+    codec_ctx                         = avcodec_alloc_context3(dec);
+    avcodec_parameters_to_context(codec_ctx, par);
+
+#endif
+
     const AVCodecDescriptor* dec_desc = avcodec_descriptor_get(codec_ctx->codec_id);
 
     if (!dec)
