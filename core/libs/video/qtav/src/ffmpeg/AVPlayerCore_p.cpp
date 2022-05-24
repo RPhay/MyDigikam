@@ -80,7 +80,16 @@ int computeNotifyPrecision(qint64 duration, qreal fps)
 
 } // namespace Internal
 
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
 static bool correct_audio_channels(AVCodecContext* ctx)
+
+#else // ffmpeg >= 5
+
+static bool correct_audio_channels(AVCodecParameters* ctx)
+
+#endif
+
 {
     if (ctx->channels <= 0)
     {
@@ -322,10 +331,10 @@ void AVPlayerCore::Private::initStatistics()
 void AVPlayerCore::Private::initBaseStatistics()
 {
     statistics.reset();
-    statistics.url           = ((current_source.type() == QVariant::String) ? current_source.toString() : QString());
-    statistics.start_time    = QTime(0, 0, 0).addMSecs(int(demuxer.startTime()));
-    statistics.duration      = QTime(0, 0, 0).addMSecs((int)demuxer.duration());
-    AVFormatContext *fmt_ctx = demuxer.formatContext();
+    statistics.url                 = ((current_source.type() == QVariant::String) ? current_source.toString() : QString());
+    statistics.start_time          = QTime(0, 0, 0).addMSecs(int(demuxer.startTime()));
+    statistics.duration            = QTime(0, 0, 0).addMSecs((int)demuxer.duration());
+    AVFormatContext* const fmt_ctx = demuxer.formatContext();
 
     if (!fmt_ctx)
     {
@@ -354,9 +363,18 @@ void AVPlayerCore::Private::initBaseStatistics()
     updateNotifyInterval();
 }
 
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
 void AVPlayerCore::Private::initCommonStatistics(int s, Statistics::Common* st, AVCodecContext* avctx)
+
+#else // ffmpeg >= 5
+
+void AVPlayerCore::Private::initCommonStatistics(int s, Statistics::Common* st, AVCodecParameters* avctx)
+
+#endif
+
 {
-    AVFormatContext* fmt_ctx = demuxer.formatContext();
+    AVFormatContext* const fmt_ctx = demuxer.formatContext();
 
     if (!fmt_ctx)
     {
@@ -366,7 +384,7 @@ void AVPlayerCore::Private::initCommonStatistics(int s, Statistics::Common* st, 
         return;
     }
 
-    AVStream* stream = fmt_ctx->streams[s];
+    AVStream* const stream = fmt_ctx->streams[s];
 
     qCDebug(DIGIKAM_QTAV_LOG)
         << "stream:"
@@ -425,14 +443,24 @@ void AVPlayerCore::Private::initCommonStatistics(int s, Statistics::Common* st, 
 
 void AVPlayerCore::Private::initAudioStatistics(int s)
 {
+
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
     AVCodecContext* const avctx = demuxer.audioCodecContext();
-    statistics.audio            = Statistics::Common();
-    statistics.audio_only       = Statistics::AudioOnly();
+
+#else // ffmpeg >= 5
+
+    AVCodecParameters* const avctx = demuxer.audioCodecContext();
+
+#endif
+
+    statistics.audio               = Statistics::Common();
+    statistics.audio_only          = Statistics::AudioOnly();
 
     if (!avctx)
         return;
 
-    statistics.audio.available  = (s == demuxer.audioStream());
+    statistics.audio.available     = (s == demuxer.audioStream());
     initCommonStatistics(s, &statistics.audio, avctx);
 
     if (adec)
@@ -450,16 +478,36 @@ void AVPlayerCore::Private::initAudioStatistics(int s)
 
     av_get_channel_layout_string(cl, sizeof(cl), avctx->channels, avctx->channel_layout);
     statistics.audio_only.channel_layout = QLatin1String(cl);
+
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
     statistics.audio_only.sample_fmt     = QLatin1String(av_get_sample_fmt_name(avctx->sample_fmt));
+
+#else // ffmpeg >= 5
+
+    statistics.audio_only.sample_fmt     = QLatin1String(av_get_sample_fmt_name(static_cast<AVSampleFormat>(avctx->format)));
+
+#endif
+
     statistics.audio_only.frame_size     = avctx->frame_size;
     statistics.audio_only.sample_rate    = avctx->sample_rate;
 }
 
 void AVPlayerCore::Private::initVideoStatistics(int s)
 {
-    AVCodecContext* const avctx = demuxer.videoCodecContext();
-    statistics.video            = Statistics::Common();
-    statistics.video_only       = Statistics::VideoOnly();
+
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
+    AVCodecContext* const avctx    = demuxer.videoCodecContext();
+
+#else // ffmpeg >= 5
+
+    AVCodecParameters* const avctx = demuxer.videoCodecContext();
+
+#endif
+
+    statistics.video               = Statistics::Common();
+    statistics.video_only          = Statistics::VideoOnly();
 
     if (!avctx)
         return;
@@ -473,10 +521,26 @@ void AVPlayerCore::Private::initVideoStatistics(int s)
         statistics.video.decoder_detail = vdec->description();
     }
 
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
     statistics.video_only.coded_height = avctx->coded_height;
     statistics.video_only.coded_width  = avctx->coded_width;
     statistics.video_only.gop_size     = avctx->gop_size;
     statistics.video_only.pix_fmt      = QLatin1String(av_get_pix_fmt_name(avctx->pix_fmt));
+
+#else // ffmpeg >= 5
+
+    // FIXME: we can't really get coded_height, coded_width and gop_size from Parameters
+    // At some point we should make an effort to get the real codec context; in the mean
+    // time, this should be close enough.
+
+    statistics.video_only.coded_height = avctx->height;
+    statistics.video_only.coded_width  = avctx->width;
+    statistics.video_only.gop_size     = 0;
+    statistics.video_only.pix_fmt      = QLatin1String(av_get_pix_fmt_name(static_cast<AVPixelFormat>(avctx->format)));
+
+#endif
+
     statistics.video_only.height       = avctx->height;
     statistics.video_only.width        = avctx->width;
     statistics.video_only.rotate       = 0;
@@ -520,7 +584,15 @@ bool AVPlayerCore::Private::setupAudioThread(AVPlayerCore* player)
         athread->setOutput(nullptr);
     }
 
-    AVCodecContext* const avctx = ademuxer->audioCodecContext();
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
+    AVCodecContext* const avctx    = ademuxer->audioCodecContext();
+
+#else // ffmpeg >= 5
+
+    AVCodecParameters* const avctx = ademuxer->audioCodecContext();
+
+#endif
 
     if (!avctx)
     {
@@ -569,7 +641,17 @@ bool AVPlayerCore::Private::setupAudioThread(AVPlayerCore* player)
     correct_audio_channels(avctx);
     AudioFormat af;
     af.setSampleRate(avctx->sample_rate);
+
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
     af.setSampleFormatFFmpeg(avctx->sample_fmt);
+
+#else // ffmpeg >= 5
+
+    af.setSampleFormatFFmpeg(avctx->format);
+
+#endif
+
     af.setChannelLayoutFFmpeg(avctx->channel_layout);
 
     if (!af.isValid())
@@ -703,7 +785,16 @@ QVariantList AVPlayerCore::Private::getTracksInfo(AVDemuxer* demuxer, AVDemuxer:
         t[QLatin1String("stream_index")] = QVariant(s);
 
         AVStream* const stream           = demuxer->formatContext()->streams[s];
+
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
         AVCodecContext* const ctx        = stream->codec;
+
+#else // ffmpeg >= 5
+
+        AVCodecContext* const ctx        = stream->codecpar;
+
+#endif
 
         if (ctx)
         {
@@ -750,7 +841,15 @@ bool AVPlayerCore::Private::applySubtitleStream(int n, AVPlayerCore* player)
     if (!demuxer.setStreamIndex(AVDemuxer::SubtitleStream, n))
         return false;
 
-    AVCodecContext* const ctx = demuxer.subtitleCodecContext();
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
+    AVCodecContext* const ctx    = demuxer.subtitleCodecContext();
+
+#else // ffmpeg >= 5
+
+    AVCodecParameters* const ctx = demuxer.subtitleCodecContext();
+
+#endif
 
     if (!ctx)
         return false;
@@ -776,9 +875,18 @@ bool AVPlayerCore::Private::tryApplyDecoderPriority(AVPlayerCore *player)
 {
     // TODO: add an option to apply the new decoder even if not available
 
-    qint64 pos            = player->position();
-    VideoDecoder* vd      = nullptr;
-    AVCodecContext* avctx = demuxer.videoCodecContext();
+    qint64 pos                     = player->position();
+    VideoDecoder* vd               = nullptr;
+
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
+    AVCodecContext* const avctx    = demuxer.videoCodecContext();
+
+#else // ffmpeg >= 5
+
+    AVCodecParameters* const avctx = demuxer.videoCodecContext();
+
+#endif
 
     Q_FOREACH (VideoDecoderId vid, vc_ids)
     {
@@ -861,7 +969,15 @@ bool AVPlayerCore::Private::setupVideoThread(AVPlayerCore* player)
         vthread->setDecoder(nullptr);
     }
 
-    AVCodecContext* const avctx = demuxer.videoCodecContext();
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
+    AVCodecContext* const avctx    = demuxer.videoCodecContext();
+
+#else // ffmpeg >= 5
+
+    AVCodecParameters* const avctx = demuxer.videoCodecContext();
+
+#endif
 
     if (!avctx)
     {

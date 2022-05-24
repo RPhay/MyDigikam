@@ -26,6 +26,13 @@
 
 #include "AVPlayerCore.h"
 
+// FFMpeg includes
+
+extern "C"
+{
+#include <libavcodec/avcodec.h>
+}
+
 // Local includes
 
 #include "AVDemuxer.h"
@@ -53,7 +60,18 @@ public:
     void applyFrameRate();
     void initStatistics();
     void initBaseStatistics();
+
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
     void initCommonStatistics(int s, Statistics::Common* st, AVCodecContext* avctx);
+
+#else // ffmpeg >= 5
+
+
+    void initCommonStatistics(int s, Statistics::Common* st, AVCodecParameters* avctx);
+
+#endif
+
     void initAudioStatistics(int s);
     void initVideoStatistics(int s);
     void initSubtitleStatistics(int s);
