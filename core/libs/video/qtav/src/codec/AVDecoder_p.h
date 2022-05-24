@@ -132,7 +132,16 @@ public:
 
     static const char* getProfileName(AVCodecID id, int profile)
     {
+
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
         AVCodec* const c = avcodec_find_decoder(id);
+
+#else // ffmpeg >= 5
+
+        const AVCodec* const c = avcodec_find_decoder(id);
+
+#endif
 
         if (!c)
         {

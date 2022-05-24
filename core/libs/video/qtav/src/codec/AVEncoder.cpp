@@ -32,7 +32,7 @@
 namespace QtAV
 {
 
-AVEncoder::AVEncoder(AVEncoderPrivate &d)
+AVEncoder::AVEncoder(AVEncoderPrivate& d)
     : DPTR_INIT(&d)
 {
 }
@@ -181,7 +181,18 @@ void AVEncoder::copyAVCodecContext(void* ctx)
     {
         // dest should be avcodec_alloc_context3(nullptr)
 
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
         AV_ENSURE_OK(avcodec_copy_context(d.avctx, c));
+
+#else // ffmpeg >= 5
+
+        AVCodecParameters* par = nulllptr;
+        avcodec_parameters_from_context(par, c);
+        AV_ENSURE_OK(avcodec_parameters_to_context(d.avctx, par));
+
+#endif
+
         d.is_open = false;
 
         return;

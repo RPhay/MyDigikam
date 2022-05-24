@@ -36,7 +36,15 @@
 namespace QtAV
 {
 
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
 static AVCodec* get_codec(const QString& name, const QString& hwa, AVCodecID cid)
+
+#else // ffmpeg >= 5
+
+static const AVCodec* get_codec(const QString& name, const QString& hwa, AVCodecID cid)
+
+#endif
 {
     QString fullname(name);
 
@@ -48,7 +56,15 @@ static AVCodec* get_codec(const QString& name, const QString& hwa, AVCodecID cid
         fullname = QString::fromUtf8("%1_%2").arg(QString::fromLatin1(avcodec_get_name(cid))).arg(hwa);
     }
 
-    AVCodec* const codec = avcodec_find_decoder_by_name(fullname.toUtf8().constData());
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
+    AVCodec* const codec       = avcodec_find_decoder_by_name(fullname.toUtf8().constData());
+
+#else // ffmpeg >= 5
+
+    const AVCodec* const codec = avcodec_find_decoder_by_name(fullname.toUtf8().constData());
+
+#endif
 
     if (codec)
         return codec;
@@ -97,13 +113,23 @@ bool AVDecoder::open()
 
     if (!d.codec_ctx)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("FFmpeg codec context not ready");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("FFmpeg codec context not ready");
 
         return false;
     }
 
     const QString hwa = property("hwaccel").toString();
-    AVCodec* const codec    = get_codec(codecName(), hwa, d.codec_ctx->codec_id);
+
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
+    AVCodec* const codec       = get_codec(codecName(), hwa, d.codec_ctx->codec_id);
+
+#else // ffmpeg >= 5
+
+    const AVCodec* const codec = get_codec(codecName(), hwa, d.codec_ctx->codec_id);
+
+#endif
 
     if (!codec)
     {
@@ -129,19 +155,27 @@ bool AVDecoder::open()
         switch (d.codec_ctx->codec_type)
         {
             case AVMEDIA_TYPE_VIDEO:
+            {
                 ec = AVError::VideoCodecNotFound;
                 break;
+            }
 
             case AVMEDIA_TYPE_AUDIO:
+            {
                 ec = AVError::AudioCodecNotFound;
                 break;
+            }
 
             case AVMEDIA_TYPE_SUBTITLE:
+            {
                 ec = AVError::SubtitleCodecNotFound;
                 break;
+            }
 
             default:
+            {
                 break;
+            }
         }
 
         Q_EMIT error(AVError(ec, es));
@@ -224,6 +258,12 @@ void AVDecoder::flush()
     avcodec_flush_buffers(d_func().codec_ctx);
 }
 
+#if LIBAVCODEC_VERSION_MAJOR >= 59  // ffmpeg >= 5
+
+static QMap<AVCodecParameters*, AVCodecContext*> ccs;
+
+#endif
+
 /*
  * do nothing if equal
  * close the old one. the codec context can not be shared in more than 1 decoder.
@@ -231,10 +271,27 @@ void AVDecoder::flush()
 void AVDecoder::setCodecContext(void* codecCtx)
 {
     DPTR_D(AVDecoder);
+
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
     AVCodecContext* const ctx = (AVCodecContext*)codecCtx;
 
     if (d.codec_ctx == ctx)
+    {
         return;
+    }
+
+#else // ffmpeg >= 5
+
+    AVCodecParameters* const ctx = (AVCodecParameters*)codecCtx;
+
+    if (ccs.contains(ctx))
+    {
+        d.codec_ctx = ccs.value(ctx);
+        return;
+    }
+
+#endif
 
     if (isOpen())
     {
@@ -261,11 +318,23 @@ void AVDecoder::setCodecContext(void* codecCtx)
 
     if (!d.codec_ctx)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("avcodec_alloc_context3 failed");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("avcodec_alloc_context3 failed");
+
         return;
     }
 
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
     AV_ENSURE_OK(avcodec_copy_context(d.codec_ctx, ctx));
+
+#else // ffmpeg >= 5
+
+    ccs.insert(ctx, d.codec_ctx);
+    AV_ENSURE_OK(avcodec_parameters_to_context(d.codec_ctx, ctx));
+
+#endif
+
 }
 
 // TODO: reset other parameters?
@@ -360,7 +429,8 @@ void AVDecoderPrivate::applyOptionsForDict()
     if (!options.contains(QLatin1String("avcodec")))
         return;
 
-     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("set AVCodecContext dict:");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("set AVCodecContext dict:");
 
     // workaround for VideoDecoderFFmpeg. now it does not call av_opt_set_xxx, so set here in dict
     // TODO: wrong if opt is empty
