@@ -243,6 +243,9 @@ void DImgFilterManager::Private::setupFilterIcons()
     filterIcons.insert(QLatin1String("digikam:UnsharpMaskFilter"),      QLatin1String("sharpenimage"));
     filterIcons.insert(QLatin1String("digikam:WhiteBalanceFilter"),     QLatin1String("bordertool"));
     filterIcons.insert(QLatin1String("digikam:RawConverter"),           QLatin1String("image-x-adobe-dng"));
+    filterIcons.insert(QLatin1String("darktable:RawConverter"),         QLatin1String("image-x-adobe-dng"));
+    filterIcons.insert(QLatin1String("rawtherapee:RawConverter"),       QLatin1String("image-x-adobe-dng"));
+    filterIcons.insert(QLatin1String("ufraw:RawConverter"),             QLatin1String("image-x-adobe-dng"));
 }
 
 void DImgFilterManager::Private::setupI18nStrings()
@@ -436,8 +439,8 @@ QString DImgFilterManager::i18nDisplayableName(const FilterAction& action)
     }
     else
     {
-        QString i18nDispName     = i18nDisplayableName(action.identifier());
-        QString metadataDispName = action.displayableName();
+        QString i18nDispName     = i18nDisplayableName(action.displayableName());
+        QString metadataDispName = action.identifier();
 
         if      (!i18nDispName.isEmpty())
         {

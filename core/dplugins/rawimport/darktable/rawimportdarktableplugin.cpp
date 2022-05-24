@@ -45,6 +45,7 @@
 #include "digikam_config.h"
 #include "digikam_globals.h"
 #include "dimg.h"
+#include "filteraction.h"
 #include "loadingdescription.h"
 
 namespace DigikamRawImportDarkTablePlugin
@@ -292,8 +293,15 @@ void DarkTableRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatu
         qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;
         d->props = LoadingDescription(d->tempName, LoadingDescription::ConvertForEditor);
 
+        FilterAction action(QLatin1String("darktable:RawConverter"), 1, FilterAction::DocumentedHistory);
+        action.setDisplayableName(QString::fromUtf8(I18N_NOOP("DarkTable Raw Conversion")));
+        d->decoded.addFilterAction(action);
+
         Q_EMIT signalDecodedImage(d->props, d->decoded);
     }
+
+    delete d->darktable;
+    d->darktable = nullptr;
 
     QFile::remove(d->tempName);
 }

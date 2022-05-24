@@ -42,6 +42,7 @@
 #include "digikam_config.h"
 #include "digikam_globals.h"
 #include "dimg.h"
+#include "filteraction.h"
 #include "loadingdescription.h"
 
 namespace DigikamRawImportRawTherapeePlugin
@@ -231,8 +232,15 @@ void RawTherapeeRawImportPlugin::slotProcessFinished(int code, QProcess::ExitSta
         qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;
         d->props = LoadingDescription(d->tempName, LoadingDescription::ConvertForEditor);
 
+        FilterAction action(QLatin1String("rawtherapee:RawConverter"), 1, FilterAction::DocumentedHistory);
+        action.setDisplayableName(QString::fromUtf8(I18N_NOOP("RawTherapee Raw Conversion")));
+        d->decoded.addFilterAction(action);
+
         Q_EMIT signalDecodedImage(d->props, d->decoded);
     }
+
+    delete d->rawtherapee;
+    d->rawtherapee = nullptr;
 
     QFile::remove(d->tempName);
 }
