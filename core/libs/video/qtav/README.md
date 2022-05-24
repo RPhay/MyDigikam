@@ -107,11 +107,20 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
 
     - Apply fixes for Clazy static analyzer.
 
-* TODO:
-
     - Port to FFMPEG 5 API with backward compatibility with FFMPEG 4.
 
         - See the patch from https://github.com/wang-bin/QtAV/issues/1377#issuecomment-1014959481
+        - All FFMPEG 5 API are wrapped with pre-processor rules like this:
+
+        #if LIBAVCODEC_VERSION_MAJOR < 59
+            // FFMpeg version 4 codes.
+        #else // ffmpeg >= 5
+            // FFMpeg version 5 codes.
+        #endif
+
+        - FFMPEG 4 API codes still unchanged.
+
+* TODO:
 
     - Add config widgets to setup video and audio backends.
 
