@@ -103,10 +103,6 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
 
     - Fix all undefined warnings at compilation time.
 
-* Under Progress:
-
-    - Apply fixes for Clazy static analyzer.
-
     - Port to FFMPEG 5 API with backward compatibility with FFMPEG 4.
 
         - See the patch from https://github.com/wang-bin/QtAV/issues/1377#issuecomment-1014959481
@@ -120,8 +116,13 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
 
         - FFMPEG 4 API codes still unchanged.
 
+* Under Progress:
+
+    - Apply fixes for Clazy static analyzer.
+
 * TODO:
 
+    - Perform regression tests with FFMPEG 5.
     - Add config widgets to setup video and audio backends.
 
 * Unmaintained Features:
