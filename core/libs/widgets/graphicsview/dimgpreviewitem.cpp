@@ -208,9 +208,13 @@ QString DImgPreviewItem::userLoadingHint() const
         {
             if (d->image.detectedFormat() == DImg::RAW)
             {
-                if (d->image.attribute(QLatin1String("fromRawEmbeddedPreview")).toBool())
+                if      (d->image.attribute(QLatin1String("fromRawEmbeddedPreview")).toBool())
                 {
                     return i18n("Embedded JPEG Preview");
+                }
+                else if (approximates(d->image.originalSize(), d->image.size()))
+                {
+                    return QString();
                 }
                 else
                 {

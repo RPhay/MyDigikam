@@ -61,7 +61,8 @@ public:
     {
         RawPreviewAutomatic,
         RawPreviewFromEmbeddedPreview,
-        RawPreviewFromRawHalfSize
+        RawPreviewFromRawHalfSize,
+        RawPreviewFromRawFullSize
     };
 
 public:

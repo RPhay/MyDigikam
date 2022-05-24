@@ -315,6 +315,8 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
                                      "Embedded preview"), PreviewSettings::RawPreviewFromEmbeddedPreview);
     d->previewRawMode->addItem(i18nc("@item Original, half-size data as RAW image preview source",
                                      "Raw data in half size"), PreviewSettings::RawPreviewFromRawHalfSize);
+    d->previewRawMode->addItem(i18nc("@item Original, full-size data as RAW image preview source",
+                                     "Raw data in full size (high quality)"), PreviewSettings::RawPreviewFromRawFullSize);
 
     d->previewConvertToEightBit   = new QCheckBox(i18n("Preview image is converted to 8 bits for a faster viewing"), pwpanel);
     d->previewConvertToEightBit->setWhatsThis(i18n("Uncheck this if you do not want to convert a 16 bits preview image to 8 bits."));

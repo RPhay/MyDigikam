@@ -52,6 +52,7 @@ private:
     bool loadExiv2Preview(MetaEnginePreviews& previews, int sizeLimit = -1);
     bool loadLibRawPreview(int sizeLimit = -1);
     bool loadHalfSizeRaw();
+    bool loadFullSizeRaw();
     bool needToScale();
     bool loadImagePreview(int sizeLimit = -1);
     void convertQImageToDImg();

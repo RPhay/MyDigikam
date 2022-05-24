@@ -272,6 +272,12 @@ void PreviewLoadingTask::execute()
                             loadHalfSizeRaw();
                             break;
                         }
+
+                        case PreviewSettings::RawPreviewFromRawFullSize:
+                        {
+                            loadFullSizeRaw();
+                            break;
+                        }
                     }
                 }
             }
@@ -514,6 +520,18 @@ bool PreviewLoadingTask::loadHalfSizeRaw()
     }
 
     DRawDecoder::loadHalfPreview(m_qimage, m_loadingDescription.filePath);
+
+    return (!m_qimage.isNull());
+}
+
+bool PreviewLoadingTask::loadFullSizeRaw()
+{
+    if (!continueQuery())
+    {
+        return false;
+    }
+
+    DRawDecoder::loadFullImage(m_qimage, m_loadingDescription.filePath);
 
     return (!m_qimage.isNull());
 }
