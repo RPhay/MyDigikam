@@ -61,7 +61,7 @@ public:
     void initStatistics();
     void initBaseStatistics();
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
     void initCommonStatistics(int s, Statistics::Common* st, AVCodecContext* avctx);
 

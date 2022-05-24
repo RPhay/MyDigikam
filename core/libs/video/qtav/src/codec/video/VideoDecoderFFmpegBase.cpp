@@ -37,7 +37,7 @@ extern ColorRange colorRangeFromFFmpeg(AVColorRange cr);
 static void SetColorDetailsByFFmpeg(VideoFrame* f, AVFrame* frame, AVCodecContext* codec_ctx)
 {
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
     ColorSpace cs = colorSpaceFromFFmpeg(av_frame_get_colorspace(frame));
 
@@ -52,7 +52,7 @@ static void SetColorDetailsByFFmpeg(VideoFrame* f, AVFrame* frame, AVCodecContex
 
     f->setColorSpace(cs);
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
     ColorRange cr = colorRangeFromFFmpeg(av_frame_get_color_range(frame));
 
@@ -200,7 +200,7 @@ bool VideoDecoderFFmpegBase::decode(const Packet &packet)
         eofpkt.data = nullptr;
         eofpkt.size = 0;
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
         ret         = avcodec_decode_video2(d.codec_ctx,
                                             d.frame,
@@ -219,7 +219,7 @@ bool VideoDecoderFFmpegBase::decode(const Packet &packet)
     else
     {
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
         ret = avcodec_decode_video2(d.codec_ctx,
                                     d.frame,
@@ -285,7 +285,7 @@ VideoFrame VideoDecoderFFmpegBase::frame()
 
     // in s. TODO: what about AVFrame.pts? av_frame_get_best_effort_timestamp? move to VideoFrame::from(AVFrame*)
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
     frame.setTimestamp((double)d.frame->pkt_pts / 1000.0);
 

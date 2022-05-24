@@ -160,7 +160,7 @@ bool VideoEncoderFFmpegPrivate::open()
     {
         // copy ctx from muxer by copyAVCodecContext
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
         AVCodec* const codec       = avcodec_find_encoder(avctx->codec_id);
 
@@ -175,7 +175,7 @@ bool VideoEncoderFFmpegPrivate::open()
         return true;
     }
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
     AVCodec* codec       = avcodec_find_encoder_by_name(codec_name.toUtf8().constData());
 
@@ -412,7 +412,7 @@ bool VideoEncoderFFmpegPrivate::open()
 
     // from mpv ao_lavc
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
     const int buffer_size = qMax<int>(qMax<int>(width * height * 6 + 200,
                                                 AV_INPUT_BUFFER_MIN_SIZE),
@@ -608,7 +608,7 @@ bool VideoEncoderFFmpeg::encode(const VideoFrame &frame)
     pkt.size       = d.buffer.size();
     int got_packet = 0;
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
     int ret        = avcodec_encode_video2(d.avctx, &pkt, f.data(), &got_packet);
 

@@ -133,7 +133,7 @@ public:
     static const char* getProfileName(AVCodecID id, int profile)
     {
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
         AVCodec* const c = avcodec_find_decoder(id);
 

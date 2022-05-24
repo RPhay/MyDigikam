@@ -112,7 +112,7 @@ public:
     QString               file;
     QString               file_orig;
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
     AVOutputFormat*       format      = nullptr;
 
@@ -137,7 +137,7 @@ public:
 AVStream* AVMuxer::Private::addStream(AVFormatContext* ctx, const QString& codecName, AVCodecID codecId)
 {
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
     AVCodec* codec = nullptr;
 
@@ -199,7 +199,7 @@ AVStream* AVMuxer::Private::addStream(AVFormatContext* ctx, const QString& codec
     s->id                   = ctx->nb_streams - 1;
     s->time_base            = kTB;
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
     AVCodecContext* const c = s->codec;
 
@@ -233,7 +233,7 @@ bool AVMuxer::Private::prepareStreams()
     video_streams.clear();
     subtitle_streams.clear();
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
     AVOutputFormat* const fmt       = format_ctx->oformat;
 
@@ -251,7 +251,7 @@ bool AVMuxer::Private::prepareStreams()
         if (s)
         {
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
             AVCodecContext* const c    = s->codec;
 
@@ -267,7 +267,7 @@ bool AVMuxer::Private::prepareStreams()
 
             // MUST set after encoder is open to ensure format is valid and the same
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
             c->pix_fmt                 = (AVPixelFormat)VideoFormat::pixelFormatToFFmpeg(venc->pixelFormat());
 
@@ -292,7 +292,7 @@ bool AVMuxer::Private::prepareStreams()
         if (s)
         {
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
             AVCodecContext* const c     = s->codec;
 
@@ -309,7 +309,7 @@ bool AVMuxer::Private::prepareStreams()
 
             c->sample_rate              = aenc->audioFormat().sampleRate();
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
             c->sample_fmt               = (AVSampleFormat)aenc->audioFormat().sampleFormatFFmpeg();
 

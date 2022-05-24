@@ -287,7 +287,7 @@ public:
 
             decoder.reset(vd);
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
             AVCodecContext* const cctx    = demuxer.videoCodecContext();
 

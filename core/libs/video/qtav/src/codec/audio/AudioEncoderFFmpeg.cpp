@@ -73,7 +73,7 @@ public:
         : AudioEncoderPrivate()
     {
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
         avcodec_register_all();
 
@@ -102,7 +102,7 @@ bool AudioEncoderFFmpegPrivate::open()
     {
         // copy ctx from muxer by copyAVCodecContext
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
         AVCodec* const codec = avcodec_find_encoder(avctx->codec_id);
 
@@ -318,7 +318,7 @@ bool AudioEncoderFFmpeg::encode(const AudioFrame& frame)
     pkt.size       = d.buffer.size(); // 0
     int got_packet = 0;
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
     int ret        = avcodec_encode_audio2(d.avctx, &pkt, f, &got_packet);
 

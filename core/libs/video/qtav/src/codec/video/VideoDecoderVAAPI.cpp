@@ -37,7 +37,7 @@
 
 // FFMpeg includes
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
 extern "C"
 {
@@ -137,7 +137,7 @@ FACTORY_REGISTER(VideoDecoder, VAAPI, "VAAPI")
 const char* getProfileName(AVCodecID id, int profile)
 {
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
     AVCodec* const c       = avcodec_find_decoder(id);
 

@@ -205,7 +205,7 @@ public:
 
     // codec. stream < 0: the stream going to play (or the stream set by setStreamIndex())
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
     AVCodecContext*    audioCodecContext(int stream = -1)    const;
     AVCodecContext*    videoCodecContext(int stream = -1)    const;

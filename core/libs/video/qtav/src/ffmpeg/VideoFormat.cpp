@@ -850,7 +850,7 @@ bool VideoFormat::hasPalette() const
 bool VideoFormat::isPseudoPaletted() const
 {
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
     return ((d->flags() & AV_PIX_FMT_FLAG_PSEUDOPAL) == AV_PIX_FMT_FLAG_PSEUDOPAL);
 

@@ -80,7 +80,7 @@ int computeNotifyPrecision(qint64 duration, qreal fps)
 
 } // namespace Internal
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
 static bool correct_audio_channels(AVCodecContext* ctx)
 
@@ -363,7 +363,7 @@ void AVPlayerCore::Private::initBaseStatistics()
     updateNotifyInterval();
 }
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
 void AVPlayerCore::Private::initCommonStatistics(int s, Statistics::Common* st, AVCodecContext* avctx)
 
@@ -444,7 +444,7 @@ void AVPlayerCore::Private::initCommonStatistics(int s, Statistics::Common* st, 
 void AVPlayerCore::Private::initAudioStatistics(int s)
 {
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
     AVCodecContext* const avctx = demuxer.audioCodecContext();
 
@@ -479,7 +479,7 @@ void AVPlayerCore::Private::initAudioStatistics(int s)
     av_get_channel_layout_string(cl, sizeof(cl), avctx->channels, avctx->channel_layout);
     statistics.audio_only.channel_layout = QLatin1String(cl);
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
     statistics.audio_only.sample_fmt     = QLatin1String(av_get_sample_fmt_name(avctx->sample_fmt));
 
@@ -496,7 +496,7 @@ void AVPlayerCore::Private::initAudioStatistics(int s)
 void AVPlayerCore::Private::initVideoStatistics(int s)
 {
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
     AVCodecContext* const avctx    = demuxer.videoCodecContext();
 
@@ -521,7 +521,7 @@ void AVPlayerCore::Private::initVideoStatistics(int s)
         statistics.video.decoder_detail = vdec->description();
     }
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
     statistics.video_only.coded_height = avctx->coded_height;
     statistics.video_only.coded_width  = avctx->coded_width;
@@ -584,7 +584,7 @@ bool AVPlayerCore::Private::setupAudioThread(AVPlayerCore* player)
         athread->setOutput(nullptr);
     }
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
     AVCodecContext* const avctx    = ademuxer->audioCodecContext();
 
@@ -642,7 +642,7 @@ bool AVPlayerCore::Private::setupAudioThread(AVPlayerCore* player)
     AudioFormat af;
     af.setSampleRate(avctx->sample_rate);
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
     af.setSampleFormatFFmpeg(avctx->sample_fmt);
 
@@ -786,7 +786,7 @@ QVariantList AVPlayerCore::Private::getTracksInfo(AVDemuxer* demuxer, AVDemuxer:
 
         AVStream* const stream           = demuxer->formatContext()->streams[s];
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
         AVCodecContext* const ctx        = stream->codec;
 
@@ -841,7 +841,7 @@ bool AVPlayerCore::Private::applySubtitleStream(int n, AVPlayerCore* player)
     if (!demuxer.setStreamIndex(AVDemuxer::SubtitleStream, n))
         return false;
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
     AVCodecContext* const ctx    = demuxer.subtitleCodecContext();
 
@@ -878,7 +878,7 @@ bool AVPlayerCore::Private::tryApplyDecoderPriority(AVPlayerCore *player)
     qint64 pos                     = player->position();
     VideoDecoder* vd               = nullptr;
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
     AVCodecContext* const avctx    = demuxer.videoCodecContext();
 
@@ -969,7 +969,7 @@ bool AVPlayerCore::Private::setupVideoThread(AVPlayerCore* player)
         vthread->setDecoder(nullptr);
     }
 
-#if LIBAVCODEC_VERSION_MAJOR < 59
+#ifndef QTAV_HAVE_FFMPEG5
 
     AVCodecContext* const avctx    = demuxer.videoCodecContext();
 

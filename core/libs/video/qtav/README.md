@@ -106,9 +106,10 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
     - Port to FFMPEG 5 API with backward compatibility with FFMPEG 4.
 
         - See the patch from https://github.com/wang-bin/QtAV/issues/1377#issuecomment-1014959481
+        - Use Cmake to check if the libavcodec version >=59 (FFMPEG 5 API).
         - All FFMPEG 5 API are wrapped with pre-processor rules like this:
 
-        #if LIBAVCODEC_VERSION_MAJOR < 59
+        #ifndef QTAV_HAVEFFMPEG5
             // FFMpeg version 4 codes.
         #else // ffmpeg >= 5
             // FFMpeg version 5 codes.

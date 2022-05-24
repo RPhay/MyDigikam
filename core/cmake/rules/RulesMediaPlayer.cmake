@@ -41,14 +41,14 @@ if(ENABLE_MEDIAPLAYER)
     include(MacroSSE)
     CheckSSESupport()
 
-    message(STATUS "FFMpeg AVCodec    : ${AVCODEC_FOUND}")
-    message(STATUS "FFMpeg AVDevice   : ${AVDEVICE_FOUND}")
-    message(STATUS "FFMpeg AVFilter   : ${AVFILTER_FOUND}")
-    message(STATUS "FFMpeg AVFormat   : ${AVFORMAT_FOUND}")
-    message(STATUS "FFMpeg AVUtil     : ${AVUTIL_FOUND}")
-    message(STATUS "FFMpeg SWScale    : ${SWSCALE_FOUND}")
-    message(STATUS "FFMpeg AVResample : ${AVRESAMPLE_FOUND}")
-    message(STATUS "FFMpeg SWResample : ${SWRESAMPLE_FOUND}")
+    message(STATUS "FFMpeg AVCodec    : ${AVCODEC_FOUND} (${AVCODEC_VERSION})")
+    message(STATUS "FFMpeg AVDevice   : ${AVDEVICE_FOUND} (${AVDEVICE_VERSION})")
+    message(STATUS "FFMpeg AVFilter   : ${AVFILTER_FOUND} (${AVFILTER_VERSION})")
+    message(STATUS "FFMpeg AVFormat   : ${AVFORMAT_FOUND} (${AVFORMAT_VERSION})")
+    message(STATUS "FFMpeg AVUtil     : ${AVUTIL_FOUND} (${AVUTIL_VERSION})")
+    message(STATUS "FFMpeg SWScale    : ${SWSCALE_FOUND} (${SWSCALE_VERSION})")
+    message(STATUS "FFMpeg AVResample : ${AVRESAMPLE_FOUND} (${AVRESAMPLE_VERSION})")
+    message(STATUS "FFMpeg SWResample : ${SWRESAMPLE_FOUND} (${SWRESAMPLE_VERSION})")
 
     if(    ${AVCODEC_FOUND}
        AND ${AVDEVICE_FOUND}
@@ -71,6 +71,19 @@ if(ENABLE_MEDIAPLAYER)
     endif()
 
     if (${FFMPEG_FOUND})
+
+        # Check if FFMPEG 5 API is available
+
+        string(REPLACE "." ";" VERSION_LIST ${AVCODEC_VERSION})
+        list(GET VERSION_LIST 0 AVCODEC_VERSION_MAJOR)
+        list(GET VERSION_LIST 1 AVCODEC_VERSION_MINOR)
+        list(GET VERSION_LIST 2 AVCODEC_VERSION_PATCH)
+
+        if (${AVCODEC_VERSION_MAJOR} GREATER_EQUAL 59)
+
+            set(FFMPEG5_FOUND 1)
+
+        endif()
 
         MACRO_BOOL_TO_01(ASS_FOUND             HAVE_LIBASS)
         MACRO_BOOL_TO_01(uchardet_FOUND        HAVE_LIBUCHARDET)
@@ -360,6 +373,12 @@ if(ENABLE_MEDIAPLAYER)
                                     -DFF_API_OLD_MSMPEG4=0       # Used with commented code from VideoDecoderFFmpeg.cpp
                                     -DFF_API_AC_VLC=0            # Used with commented code from VideoDecoderFFmpeg.cpp
         )
+
+        if(FFMPEG5_FOUND)
+
+            set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_FFMPEG5)
+
+        endif()
 
         if(SSE4_1_FOUND)
 
