@@ -666,7 +666,7 @@ bool VideoFormat::operator==(VideoFormat::PixelFormat fmt) const
 
 bool VideoFormat::operator==(QImage::Format qpixfmt) const
 {
-    return d->qpixfmt == qpixfmt;
+    return (d->qpixfmt == qpixfmt);
 }
 
 bool VideoFormat::operator==(int fffmt) const
@@ -686,7 +686,7 @@ bool VideoFormat::operator!=(VideoFormat::PixelFormat fmt) const
 
 bool VideoFormat::operator!=(QImage::Format qpixfmt) const
 {
-    return d->qpixfmt != qpixfmt;
+    return (d->qpixfmt != qpixfmt);
 }
 
 bool VideoFormat::operator!=(int fffmt) const
@@ -849,7 +849,17 @@ bool VideoFormat::hasPalette() const
 
 bool VideoFormat::isPseudoPaletted() const
 {
+
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
     return ((d->flags() & AV_PIX_FMT_FLAG_PSEUDOPAL) == AV_PIX_FMT_FLAG_PSEUDOPAL);
+
+#else // ffmpeg >= 5
+
+    return hasPalette()
+
+#endif
+
 }
 
 bool VideoFormat::isBitStream() const

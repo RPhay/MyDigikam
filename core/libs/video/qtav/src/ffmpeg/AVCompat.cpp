@@ -129,9 +129,9 @@ error:
 
 static const struct
 {
-    const char* name        = nullptr;
-    int         nb_channels = 0;
-    uint64_t    layout      = 0;
+    const char* name;
+    int         nb_channels;
+    uint64_t    layout;
 } channel_layout_map[] =
 {
     { "mono",        1,  AV_CH_LAYOUT_MONO                                  },
@@ -395,10 +395,10 @@ int av_packet_copy_props(AVPacket* dst, const AVPacket* src)
 
     for (int i = 0 ; i < src->side_data_elems ; ++i)
     {
-         enum AVPacketSideDataType type = src->side_data[i].type;
-         int size                       = src->side_data[i].size;
-         uint8_t* src_data              = src->side_data[i].data;
-         uint8_t* dst_data              = av_packet_new_side_data(dst, type, size);
+        enum AVPacketSideDataType type = src->side_data[i].type;
+        int size                       = src->side_data[i].size;
+        uint8_t* src_data              = src->side_data[i].data;
+        uint8_t* dst_data              = av_packet_new_side_data(dst, type, size);
 
         if (!dst_data)
         {
@@ -443,7 +443,7 @@ int av_packet_ref(AVPacket* dst, const AVPacket* src)
 
 #   define DUP_DATA(dst, src, size, padding)                            \
     do {                                                                \
-        void *data;                                                     \
+        void* data = nullptr;                                           \
         if (padding) {                                                  \
             if ((unsigned)(size) >                                      \
                 (unsigned)(size) + FF_INPUT_BUFFER_PADDING_SIZE)        \
@@ -518,7 +518,7 @@ void avcodec_free_context(AVCodecContext** pavctx)
 
 #endif
 
-const char *get_codec_long_name(enum AVCodecID id)
+const char* get_codec_long_name(enum AVCodecID id)
 {
     if (id == AV_CODEC_ID_NONE)
         return "none";
@@ -529,7 +529,16 @@ const char *get_codec_long_name(enum AVCodecID id)
         return cd->long_name;
 
     av_log(nullptr, AV_LOG_WARNING, "Codec 0x%x is not in the full list.\n", id);
-    AVCodec* codec = avcodec_find_decoder(id);
+
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
+    AVCodec* codec       = avcodec_find_decoder(id);
+
+#else // ffmpeg >= 5
+
+    const AVCodec* codec = avcodec_find_decoder(id);
+
+#endif
 
     if (codec)
         return codec->long_name;

@@ -286,7 +286,17 @@ public:
                 continue;
 
             decoder.reset(vd);
-            AVCodecContext* const cctx = demuxer.videoCodecContext();
+
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
+            AVCodecContext* const cctx    = demuxer.videoCodecContext();
+
+#else // ffmpeg >= 5
+
+
+            AVCodecParameters* const cctx = demuxer.videoCodecContext();
+
+#endif
 
             if (cctx)
                 decoder->setCodecContext(demuxer.videoCodecContext());
