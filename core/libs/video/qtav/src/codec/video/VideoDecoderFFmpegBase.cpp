@@ -36,15 +36,34 @@ extern ColorRange colorRangeFromFFmpeg(AVColorRange cr);
 
 static void SetColorDetailsByFFmpeg(VideoFrame* f, AVFrame* frame, AVCodecContext* codec_ctx)
 {
+
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
     ColorSpace cs = colorSpaceFromFFmpeg(av_frame_get_colorspace(frame));
 
     if (cs == ColorSpace_Unknown)
         cs = colorSpaceFromFFmpeg(codec_ctx->colorspace);
 
+#else // ffmpeg >= 5
+
+     ColorSpace cs = colorSpaceFromFFmpeg(codec_ctx->colorspace);
+
+#endif
+
     f->setColorSpace(cs);
+
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
     ColorRange cr = colorRangeFromFFmpeg(av_frame_get_color_range(frame));
 
     if (cr == ColorRange_Unknown)
+
+#else // ffmpeg >= 5
+
+    ColorRange cr;
+
+#endif
+
     {
         // check yuvj format. TODO: deprecated, check only for old ffmpeg?
 
@@ -180,17 +199,41 @@ bool VideoDecoderFFmpegBase::decode(const Packet &packet)
         av_init_packet(&eofpkt);
         eofpkt.data = nullptr;
         eofpkt.size = 0;
+
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
         ret         = avcodec_decode_video2(d.codec_ctx,
                                             d.frame,
                                             &got_frame_ptr,
                                             &eofpkt);
+
+#else // ffmpeg >= 5
+
+        ret           = avcodec_receive_frame(d.codec_ctx, d.frame);
+        got_frame_ptr = (ret == 0);
+        ret           = avcodec_send_packet(d.codec_ctx, &eofpkt);
+
+#endif
+
     }
     else
     {
+
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
         ret = avcodec_decode_video2(d.codec_ctx,
                                     d.frame,
                                     &got_frame_ptr,
                                     const_cast<AVPacket*>(packet.asAVPacket()));
+
+#else // ffmpeg >= 5
+
+        ret           = avcodec_receive_frame(d.codec_ctx, d.frame);
+        got_frame_ptr = (ret == 0);
+        ret           = avcodec_send_packet(d.codec_ctx, (AVPacket*)packet.asAVPacket());
+
+#endif
+
     }
 
     //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("pic_type=%c", av_get_picture_type_char(d.frame->pict_type));
@@ -242,7 +285,16 @@ VideoFrame VideoDecoderFFmpegBase::frame()
 
     // in s. TODO: what about AVFrame.pts? av_frame_get_best_effort_timestamp? move to VideoFrame::from(AVFrame*)
 
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
     frame.setTimestamp((double)d.frame->pkt_pts / 1000.0);
+
+#else // ffmpeg >= 5
+
+    frame.setTimestamp((double)d.frame->pts / 1000.0);
+
+#endif
+
     frame.setMetaData(QLatin1String("avbuf"), QVariant::fromValue(AVFrameBuffersRef(new AVFrameBuffers(d.frame))));
     d.updateColorDetails(&frame);
 

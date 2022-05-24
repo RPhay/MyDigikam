@@ -69,7 +69,7 @@ struct
 
 AVHWDeviceType fromHWAName(const char* name)
 {
-    for (size_t i = 0 ; i < sizeof(hwdevs)/sizeof(hwdevs[0]) ; ++i)
+    for (size_t i = 0 ; (i < sizeof(hwdevs) / sizeof(hwdevs[0])) ; ++i)
     {
         if (qstrcmp(name, hwdevs[i].name) == 0)
             return hwdevs[i].type;
@@ -160,13 +160,30 @@ bool VideoEncoderFFmpegPrivate::open()
     {
         // copy ctx from muxer by copyAVCodecContext
 
-        AVCodec* const codec = avcodec_find_encoder(avctx->codec_id);
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
+        AVCodec* const codec       = avcodec_find_encoder(avctx->codec_id);
+
+#else // ffmpeg >= 5
+
+        const AVCodec* const codec = avcodec_find_encoder(avctx->codec_id);
+
+#endif
+
         AV_ENSURE_OK(avcodec_open2(avctx, codec, &dict), false);
 
         return true;
     }
 
-    AVCodec* codec = avcodec_find_encoder_by_name(codec_name.toUtf8().constData());
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
+    AVCodec* codec       = avcodec_find_encoder_by_name(codec_name.toUtf8().constData());
+
+#else // ffmpeg >= 5
+
+    const AVCodec* codec = avcodec_find_encoder_by_name(codec_name.toUtf8().constData());
+
+#endif
 
     if (!codec)
     {
@@ -395,9 +412,19 @@ bool VideoEncoderFFmpegPrivate::open()
 
     // from mpv ao_lavc
 
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
     const int buffer_size = qMax<int>(qMax<int>(width * height * 6 + 200,
                                                 AV_INPUT_BUFFER_MIN_SIZE),
                                       sizeof(AVPicture)); // ??
+
+#else // ffmpeg >= 5
+
+    const int buffer_size = qMax<int>(qMax<int>(width * height * 6 + 200,
+                                                AV_INPUT_BUFFER_MIN_SIZE),
+                                      av_image_get_buffer_size(avctx->pix_fmt, avctx->width, avctx->height, 1)); // ??
+#endif
+
     buffer.resize(buffer_size);
 
     return true;
@@ -580,7 +607,18 @@ bool VideoEncoderFFmpeg::encode(const VideoFrame &frame)
     pkt.data       = (uint8_t*)d.buffer.constData();
     pkt.size       = d.buffer.size();
     int got_packet = 0;
+
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
     int ret        = avcodec_encode_video2(d.avctx, &pkt, f.data(), &got_packet);
+
+#else // ffmpeg >= 5
+
+    int ret    = avcodec_send_frame(d.avctx, f.data());
+    got_packet = (ret == 0);
+    ret        = avcodec_receive_packet(d.avctx, &pkt);
+
+#endif
 
     if (ret < 0)
     {

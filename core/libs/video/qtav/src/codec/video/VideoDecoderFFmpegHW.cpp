@@ -483,7 +483,16 @@ VideoFrame VideoDecoderFFmpegHW::copyToFrame(const VideoFormat& fmt, int surface
         frame = frame.clone();
     }
 
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
     frame.setTimestamp(double(d.frame->pkt_pts) / 1000.0);
+
+#else // ffmpeg >= 5
+
+    frame.setTimestamp(double(d.frame->pts) / 1000.0);
+
+#endif
+
     frame.setDisplayAspectRatio(d.getDAR(d.frame));
     d.updateColorDetails(&frame);
 
