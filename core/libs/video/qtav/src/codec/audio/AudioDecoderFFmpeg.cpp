@@ -132,19 +132,69 @@ bool AudioDecoderFFmpeg::decode(const Packet& packet)
         av_init_packet(&eofpkt);
         eofpkt.data = nullptr;
         eofpkt.size = 0;
+
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
         ret         = avcodec_decode_audio4(d.codec_ctx,
                                             d.frame,
                                             &got_frame_ptr,
                                             &eofpkt);
+
+#else // ffmpeg >= 5
+
+        ret = avcodec_receive_frame(d.codec_ctx, d.frame);
+
+        if      (ret == AVERROR(EAGAIN))
+        {
+            return false;
+        }
+        else if (ret < 0)
+        {
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("[AudioDecoder] %s", av_err2str(ret));
+
+            return false;
+        }
+
+        got_frame_ptr = (ret == 0);
+        ret           = avcodec_send_packet(d.codec_ctx, &eofpkt);
+
+#endif
+
     }
     else
     {
+
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
         // const AVPacket*: ffmpeg >= 1.0. not libav
 
         ret = avcodec_decode_audio4(d.codec_ctx,
                                     d.frame,
                                     &got_frame_ptr,
                                     const_cast<AVPacket*>(packet.asAVPacket()));
+
+#else // ffmpeg >= 5
+
+    ret = avcodec_receive_frame(d.codec_ctx, d.frame);
+
+    if      (ret == AVERROR(EAGAIN))
+    {
+        return false;
+    }
+    else if (ret < 0)
+    {
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("[AudioDecoder] %s", av_err2str(ret));
+
+        return false;
+    }
+
+    got_frame_ptr = (ret == 0);
+    ret           = avcodec_send_packet(d.codec_ctx, (AVPacket*)packet.asAVPacket());
+
+#endif
+
     }
 
     d.undecoded_size = qMin(packet.data.size() - ret, packet.data.size());
@@ -216,7 +266,16 @@ AudioFrame AudioDecoderFFmpeg::frame()
 
     // TODO: ffplay check AVFrame.pts, pkt_pts, last_pts+nb_samples. move to AudioFrame::from(AVFrame*)
 
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
     f.setTimestamp((double)d.frame->pkt_pts / 1000.0);
+
+#else // ffmpeg >= 5
+
+    f.setTimestamp((double)d.frame->pts / 1000.0);
+
+#endif
+
     f.setAudioResampler(d.resampler);               // TODO: remove. it's not safe if frame is shared. use a pool or detach if ref >1
 
     return f;

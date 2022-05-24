@@ -57,6 +57,7 @@ public:
 
 private:
 
+    // Disable
     AudioEncoderFFmpeg(QObject*);
 };
 
@@ -71,7 +72,12 @@ public:
     AudioEncoderFFmpegPrivate()
         : AudioEncoderPrivate()
     {
+
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
         avcodec_register_all();
+
+#endif
 
         // nullptr: codec-specific defaults won't be initialized, which may result in suboptimal default settings (this is important mainly for encoders, e.g. libx264).
 
@@ -96,7 +102,16 @@ bool AudioEncoderFFmpegPrivate::open()
     {
         // copy ctx from muxer by copyAVCodecContext
 
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
         AVCodec* const codec = avcodec_find_encoder(avctx->codec_id);
+
+#else // ffmpeg >= 5
+
+        const AVCodec* const codec = avcodec_find_encoder(avctx->codec_id);
+
+#endif
+
         AV_ENSURE_OK(avcodec_open2(avctx, codec, &dict), false);
 
         return true;
@@ -302,7 +317,19 @@ bool AudioEncoderFFmpeg::encode(const AudioFrame& frame)
     pkt.data       = (uint8_t*)d.buffer.constData(); // nullptr
     pkt.size       = d.buffer.size(); // 0
     int got_packet = 0;
+
+#if LIBAVCODEC_VERSION_MAJOR < 59
+
     int ret        = avcodec_encode_audio2(d.avctx, &pkt, f, &got_packet);
+
+#else // ffmpeg >= 5
+
+    int ret        = avcodec_send_frame(d.avctx, f);
+    got_packet     = (ret == 0);
+    ret            = avcodec_receive_packet(d.avctx, &pkt);
+
+#endif
+
     av_frame_free(&f);
 
     if (ret < 0)
