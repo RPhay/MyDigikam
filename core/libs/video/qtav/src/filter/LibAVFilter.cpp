@@ -146,9 +146,14 @@ public:
         filter_graph   = nullptr;
         in_filter_ctx  = nullptr;
         out_filter_ctx = nullptr;
+
+#   if LIBAVCODEC_VERSION_MAJOR < 59
+
         avfilter_register_all();
 
-#endif //QTAV_HAVE(AVFILTER)
+#   endif
+
+#endif // QTAV_HAVE(AVFILTER)
 
     }
 
@@ -234,8 +239,8 @@ public:
 
         Q_ASSERT(buffersink);
         AV_ENSURE_OK(avfilter_graph_create_filter(&out_filter_ctx, buffersink, "out",
-                                                  nullptr, nullptr, filter_graph)
-                     , false);
+                                                  nullptr, nullptr, filter_graph),
+                     false);
 
         /* Endpoints for the filter graph. */
 
@@ -336,7 +341,12 @@ QString LibAVFilter::filterDescription(const QString &filterName)
 
 #if QTAV_HAVE(AVFILTER)
 
+#   if LIBAVCODEC_VERSION_MAJOR < 59
+
     avfilter_register_all();
+
+#   endif
+
     const AVFilter* f = avfilter_get_by_name(filterName.toUtf8().constData());
 
     if (!f)
@@ -444,16 +454,32 @@ QStringList LibAVFilter::registeredFilters(int type)
 
 #if QTAV_HAVE(AVFILTER)
 
+#   if LIBAVCODEC_VERSION_MAJOR < 59
+
     avfilter_register_all();
+
+#   endif
+
     const AVFilter* f = nullptr;
     AVFilterPad* fp   = nullptr; // no const in avfilter_pad_get_name() for ffmpeg<=1.2 libav<=9
 
-#if AV_MODULE_CHECK(LIBAVFILTER, 3, 8, 0, 53, 100)
+#   if AV_MODULE_CHECK(LIBAVFILTER, 3, 8, 0, 53, 100)
+
+#       if LIBAVCODEC_VERSION_MAJOR < 59
 
     while ((f = avfilter_next(f)))
     {
 
-#else
+#       else // ffmpeg >= 5
+
+    void** ff         = nullptr;
+
+    while (f = av_filter_iterate(ff))
+    {
+
+#       endif
+
+#   else
 
     AVFilter** ff = nullptr;
 
@@ -461,7 +487,7 @@ QStringList LibAVFilter::registeredFilters(int type)
     {
         f = (*ff);
 
-#endif
+#   endif
 
         fp = (AVFilterPad*)f->inputs;
 
@@ -480,7 +506,7 @@ QStringList LibAVFilter::registeredFilters(int type)
         filters.append(QLatin1String(f->name));
     }
 
-#endif //QTAV_HAVE(AVFILTER)
+#endif // QTAV_HAVE(AVFILTER)
 
     return filters;
 }
