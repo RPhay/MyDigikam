@@ -106,7 +106,7 @@ public:
             env->DeleteLocalRef(obj);
     }
     JObject(const JObject &other) { reset(other.id()).setError(other.error()); }
-    JObject &operator=(const JObject &other) {
+    JObject &operator=(const JObject &other) {  // cppcheck-suppress operatorEqRetRefThis
         if (this == &other)
             return *this;
         return reset(other.id()).setError(other.error());
@@ -205,7 +205,7 @@ public:
         static jfieldID cachedId(jclass cid); // usually cid is used only once
         // oid nullptr: static field
         // it's protected so we can sure cacheable ctor will not be called for uncacheable Field
-        Field(jclass cid, jobject oid = nullptr);
+        explicit Field(jclass cid, jobject oid = nullptr);
         Field(jclass cid, const char* name, jobject oid = nullptr);
 
         union {
@@ -238,7 +238,7 @@ private:
         error_ = std::move(s);
         return *const_cast<JObject*>(this);
     }
-    static std::string normalizeClassName(std::string name) {
+    static std::string normalizeClassName(const std::string& name) {
         std::string s = name;
         if (s[0] == 'L' && s.back() == ';')
             s = s.substr(1, s.size()-2);
@@ -339,7 +339,7 @@ using namespace std;
         F f_;
         bool invoke_;
     public:
-        scope_exit_handler(F f) noexcept : f_(move(f)), invoke_(true) {}
+        explicit scope_exit_handler(F f) noexcept : f_(move(f)), invoke_(true) {}
         scope_exit_handler(scope_exit_handler&& other) noexcept : f_(move(other.f_)), invoke_(other.invoke_) {
             other.invoke_ = false;
         }
@@ -426,7 +426,7 @@ using namespace std;
     // env can be null for base types
     template<typename T> void from_jvalue(JNIEnv* env, const jvalue& v, T &t);
     template<typename T> void from_jvalue(JNIEnv* env, const jvalue& v, T *t, size_t n = 0) { // T* and T(&)[N] is the same
-        if (n <= 0)
+        if (n == 0)
             from_jvalue(env, v, (jlong&)t);
         else
             from_jarray(env, v, t, n);
@@ -696,7 +696,8 @@ bool JObject<CTag>::create(Args&&... args) {
     using namespace std;
     using namespace detail;
     JNIEnv* env = nullptr; // FIXME: why build error if let env be the last parameter of create()?
-    if (!env) {
+    //if (!env)
+    {
         env = getEnv();
         if (!env) {
             setError("No JNIEnv when creating class '" + className() + "'");
@@ -728,7 +729,7 @@ template<class CTag>
 template<typename T, class MTag, typename... Args,  detail::if_MethodTag<MTag>>
 T JObject<CTag>::call(Args&&... args) const {
     using namespace detail;
-    static const auto s = args_signature(std::forward<Args>(args)...).append(signature_of(T()));
+    static const auto s = args_signature(std::forward<Args>(args)...).append(signature_of(T())); // cppcheck-suppress accessForwarded
     static jmethodID mid = nullptr;
     return call_with_methodID<T>(oid_, classId(), &mid, [this](std::string&& err){ setError(std::move(err));}, s, MTag::name(), std::forward<Args>(args)...);
 }
@@ -736,7 +737,7 @@ template<class CTag>
 template<class MTag, typename... Args,  detail::if_MethodTag<MTag>>
 void JObject<CTag>::call(Args&&... args) const {
     using namespace detail;
-    static const auto s = args_signature(std::forward<Args>(args)...).append(signature_of());
+    static const auto s = args_signature(std::forward<Args>(args)...).append(signature_of()); // cppcheck-suppress accessForwarded
     static jmethodID mid = nullptr;
     call_with_methodID<void>(oid_, classId(), &mid, [this](std::string&& err){ setError(std::move(err));}, s, MTag::name(), std::forward<Args>(args)...);
 }
@@ -744,7 +745,7 @@ template<class CTag>
 template<typename T, class MTag, typename... Args,  detail::if_MethodTag<MTag>>
 T JObject<CTag>::callStatic(Args&&... args) {
     using namespace detail;
-    static const auto s = args_signature(std::forward<Args>(args)...).append(signature_of(T()));
+    static const auto s = args_signature(std::forward<Args>(args)...).append(signature_of(T())); // cppcheck-suppress accessForwarded
     static jmethodID mid = nullptr;
     return call_static_with_methodID<T>(classId(), &mid, nullptr, s, MTag::name(), std::forward<Args>(args)...);
 }
@@ -752,7 +753,7 @@ template<class CTag>
 template<class MTag, typename... Args,  detail::if_MethodTag<MTag>>
 void JObject<CTag>::callStatic(Args&&... args) {
     using namespace detail;
-    static const auto s = args_signature(std::forward<Args>(args)...).append(signature_of());
+    static const auto s = args_signature(std::forward<Args>(args)...).append(signature_of()); // cppcheck-suppress accessForwarded
     static jmethodID mid = nullptr;
     return call_static_with_methodID<void>(classId(), &mid, nullptr, s, MTag::name(), std::forward<Args>(args)...);
 }
@@ -797,28 +798,28 @@ template<class CTag>
 template<typename T, typename... Args>
 T JObject<CTag>::call(const std::string &methodName, Args&&... args) const {
     using namespace detail;
-    static const auto s = args_signature(std::forward<Args>(args)...).append(signature_of(T()));
+    static const auto s = args_signature(std::forward<Args>(args)...).append(signature_of(T())); // cppcheck-suppress accessForwarded
     return call_with_methodID<T>(oid_, classId(), nullptr, [this](std::string&& err){ setError(std::move(err));}, s, methodName.c_str(), std::forward<Args>(args)...);
 }
 template<class CTag>
 template<typename... Args>
 void JObject<CTag>::call(const std::string &methodName, Args&&... args) const {
     using namespace detail;
-    static const auto s = args_signature(std::forward<Args>(args)...).append(signature_of());
+    static const auto s = args_signature(std::forward<Args>(args)...).append(signature_of()); // cppcheck-suppress accessForwarded
     call_with_methodID<void>(oid_, classId(), nullptr, [this](std::string&& err){ setError(std::move(err));}, s, methodName.c_str(), std::forward<Args>(args)...);
 }
 template<class CTag>
 template<typename T, typename... Args>
 T JObject<CTag>::callStatic(const std::string &name, Args&&... args) {
     using namespace detail;
-    static const auto s = args_signature(std::forward<Args>(args)...).append(signature_of(T()));
+    static const auto s = args_signature(std::forward<Args>(args)...).append(signature_of(T())); // cppcheck-suppress accessForwarded
     return call_static_with_methodID<T>(classId(), nullptr, nullptr, s, name.c_str(), std::forward<Args>(args)...);
 }
 template<class CTag>
 template<typename... Args>
 void JObject<CTag>::callStatic(const std::string &name, Args&&... args) {
     using namespace detail;
-    static const auto s = args_signature(std::forward<Args>(args)...).append(signature_of());
+    static const auto s = args_signature(std::forward<Args>(args)...).append(signature_of()); // cppcheck-suppress accessForwarded
     call_static_with_methodID<void>(classId(), nullptr, nullptr, s, name.c_str(), std::forward<Args>(args)...);
 }
 
@@ -899,8 +900,7 @@ jfieldID JObject<CTag>::Field<F, MayBeFTag, isStaticField>::cachedId(jclass cid)
 template<class CTag>
 template<typename F, class MayBeFTag, bool isStaticField>
 JObject<CTag>::Field<F, MayBeFTag, isStaticField>::Field(jclass cid, jobject oid)
- : oid_(oid) {
-    fid_ = cachedId(cid);
+ : oid_(oid):fid(cachedId(cid)) {
     if (isStaticField)
         cid_ = cid;
 }

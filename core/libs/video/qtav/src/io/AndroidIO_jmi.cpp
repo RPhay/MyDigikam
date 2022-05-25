@@ -51,7 +51,7 @@ JavaVM* javaVM(JavaVM *vm, jint v) {
 }
 
 JNIEnv *getEnv() {
-    assert(javaVM() && "javaVM() is null");
+    assert(javaVM() && "javaVM() is null"); // cppcheck-suppress assertWithSideEffect
     if (!javaVM()) {
         cerr << "java vm is null" << endl;
         return nullptr;
