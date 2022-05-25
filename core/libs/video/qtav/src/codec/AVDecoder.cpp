@@ -36,7 +36,7 @@
 namespace QtAV
 {
 
-#ifndef QTAV_HAVE_FFMPEG5
+#ifndef HAVE_FFMPEG_VERSION5
 
 static AVCodec* get_codec(const QString& name, const QString& hwa, AVCodecID cid)
 
@@ -56,7 +56,7 @@ static const AVCodec* get_codec(const QString& name, const QString& hwa, AVCodec
         fullname = QString::fromUtf8("%1_%2").arg(QString::fromLatin1(avcodec_get_name(cid))).arg(hwa);
     }
 
-#ifndef QTAV_HAVE_FFMPEG5
+#ifndef HAVE_FFMPEG_VERSION5
 
     AVCodec* const codec       = avcodec_find_decoder_by_name(fullname.toUtf8().constData());
 
@@ -121,7 +121,7 @@ bool AVDecoder::open()
 
     const QString hwa = property("hwaccel").toString();
 
-#ifndef QTAV_HAVE_FFMPEG5
+#ifndef HAVE_FFMPEG_VERSION5
 
     AVCodec* const codec       = get_codec(codecName(), hwa, d.codec_ctx->codec_id);
 
@@ -272,7 +272,7 @@ void AVDecoder::setCodecContext(void* codecCtx)
 {
     DPTR_D(AVDecoder);
 
-#ifndef QTAV_HAVE_FFMPEG5
+#ifndef HAVE_FFMPEG_VERSION5
 
     AVCodecContext* const ctx = (AVCodecContext*)codecCtx;
 
@@ -324,7 +324,7 @@ void AVDecoder::setCodecContext(void* codecCtx)
         return;
     }
 
-#ifndef QTAV_HAVE_FFMPEG5
+#ifndef HAVE_FFMPEG_VERSION5
 
     AV_ENSURE_OK(avcodec_copy_context(d.codec_ctx, ctx));
 

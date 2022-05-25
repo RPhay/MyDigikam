@@ -483,7 +483,7 @@ VideoFrame VideoDecoderFFmpegHW::copyToFrame(const VideoFormat& fmt, int surface
         frame = frame.clone();
     }
 
-#ifndef QTAV_HAVE_FFMPEG5
+#ifndef HAVE_FFMPEG_VERSION5
 
     frame.setTimestamp(double(d.frame->pkt_pts) / 1000.0);
 

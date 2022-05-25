@@ -133,7 +133,7 @@ bool AudioDecoderFFmpeg::decode(const Packet& packet)
         eofpkt.data = nullptr;
         eofpkt.size = 0;
 
-#ifndef QTAV_HAVE_FFMPEG5
+#ifndef HAVE_FFMPEG_VERSION5
 
         ret         = avcodec_decode_audio4(d.codec_ctx,
                                             d.frame,
@@ -165,7 +165,7 @@ bool AudioDecoderFFmpeg::decode(const Packet& packet)
     else
     {
 
-#ifndef QTAV_HAVE_FFMPEG5
+#ifndef HAVE_FFMPEG_VERSION5
 
         // const AVPacket*: ffmpeg >= 1.0. not libav
 
@@ -266,7 +266,7 @@ AudioFrame AudioDecoderFFmpeg::frame()
 
     // TODO: ffplay check AVFrame.pts, pkt_pts, last_pts+nb_samples. move to AudioFrame::from(AVFrame*)
 
-#ifndef QTAV_HAVE_FFMPEG5
+#ifndef HAVE_FFMPEG_VERSION5
 
     f.setTimestamp((double)d.frame->pkt_pts / 1000.0);
 

@@ -384,7 +384,7 @@ bool SubtitleProcessorFFmpeg::processHeader(const QByteArray& codec, const QByte
         avcodec_free_context(&codec_ctx);
     }
 
-#ifndef QTAV_HAVE_FFMPEG5
+#ifndef HAVE_FFMPEG_VERSION5
 
     AVCodec* c       = avcodec_find_decoder_by_name(codec.constData());
 
@@ -587,7 +587,7 @@ bool SubtitleProcessorFFmpeg::processSubtitle()
     }
 
 
-#ifndef QTAV_HAVE_FFMPEG5
+#ifndef HAVE_FFMPEG_VERSION5
 
     codec_ctx                         = m_reader.subtitleCodecContext();
     AVCodec* dec                      = avcodec_find_decoder(codec_ctx->codec_id);

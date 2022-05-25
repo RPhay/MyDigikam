@@ -406,7 +406,9 @@ if(ENABLE_MEDIAPLAYER)
 
         if(FFMPEG_VER5_FOUND)
 
-            set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_FFMPEG5)
+            # This definition is also used outside QtAV code.
+
+            add_definitions(-DHAVE_FFMPEG_VERSION5)
 
         endif()
 

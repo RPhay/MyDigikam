@@ -181,7 +181,7 @@ void AVEncoder::copyAVCodecContext(void* ctx)
     {
         // dest should be avcodec_alloc_context3(nullptr)
 
-#ifndef QTAV_HAVE_FFMPEG5
+#ifndef HAVE_FFMPEG_VERSION5
 
         AV_ENSURE_OK(avcodec_copy_context(d.avctx, c));
 

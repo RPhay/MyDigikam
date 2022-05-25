@@ -112,7 +112,7 @@ public:
     QString               file;
     QString               file_orig;
 
-#ifndef QTAV_HAVE_FFMPEG5
+#ifndef HAVE_FFMPEG_VERSION5
 
     AVOutputFormat*       format      = nullptr;
 
@@ -137,7 +137,7 @@ public:
 AVStream* AVMuxer::Private::addStream(AVFormatContext* ctx, const QString& codecName, AVCodecID codecId)
 {
 
-#ifndef QTAV_HAVE_FFMPEG5
+#ifndef HAVE_FFMPEG_VERSION5
 
     AVCodec* codec = nullptr;
 
@@ -199,7 +199,7 @@ AVStream* AVMuxer::Private::addStream(AVFormatContext* ctx, const QString& codec
     s->id                   = ctx->nb_streams - 1;
     s->time_base            = kTB;
 
-#ifndef QTAV_HAVE_FFMPEG5
+#ifndef HAVE_FFMPEG_VERSION5
 
     AVCodecContext* const c = s->codec;
 
@@ -233,7 +233,7 @@ bool AVMuxer::Private::prepareStreams()
     video_streams.clear();
     subtitle_streams.clear();
 
-#ifndef QTAV_HAVE_FFMPEG5
+#ifndef HAVE_FFMPEG_VERSION5
 
     AVOutputFormat* const fmt       = format_ctx->oformat;
 
@@ -251,7 +251,7 @@ bool AVMuxer::Private::prepareStreams()
         if (s)
         {
 
-#ifndef QTAV_HAVE_FFMPEG5
+#ifndef HAVE_FFMPEG_VERSION5
 
             AVCodecContext* const c    = s->codec;
 
@@ -267,7 +267,7 @@ bool AVMuxer::Private::prepareStreams()
 
             // MUST set after encoder is open to ensure format is valid and the same
 
-#ifndef QTAV_HAVE_FFMPEG5
+#ifndef HAVE_FFMPEG_VERSION5
 
             c->pix_fmt                 = (AVPixelFormat)VideoFormat::pixelFormatToFFmpeg(venc->pixelFormat());
 
@@ -292,7 +292,7 @@ bool AVMuxer::Private::prepareStreams()
         if (s)
         {
 
-#ifndef QTAV_HAVE_FFMPEG5
+#ifndef HAVE_FFMPEG_VERSION5
 
             AVCodecContext* const c     = s->codec;
 
@@ -309,7 +309,7 @@ bool AVMuxer::Private::prepareStreams()
 
             c->sample_rate              = aenc->audioFormat().sampleRate();
 
-#ifndef QTAV_HAVE_FFMPEG5
+#ifndef HAVE_FFMPEG_VERSION5
 
             c->sample_fmt               = (AVSampleFormat)aenc->audioFormat().sampleFormatFFmpeg();
 

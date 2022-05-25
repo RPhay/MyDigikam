@@ -244,9 +244,9 @@ av_always_inline char* av_err2str(int errnum)
 
 // Special case if Cmake is not able to detect FFMpeg version, especially under Windows.
 
-#ifndef QTAV_HAVE_FFMPEG5
+#ifndef HAVE_FFMPEG_VERSION5
 #   if (LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(59,0,0))
-#       define QTAV_HAVE_FFMPEG5 1
+#       define HAVE_FFMPEG_VERSION5 1
 #   endif
 #endif
 

@@ -287,7 +287,7 @@ public:
 
             decoder.reset(vd);
 
-#ifndef QTAV_HAVE_FFMPEG5
+#ifndef HAVE_FFMPEG_VERSION5
 
             AVCodecContext* const cctx    = demuxer.videoCodecContext();
 

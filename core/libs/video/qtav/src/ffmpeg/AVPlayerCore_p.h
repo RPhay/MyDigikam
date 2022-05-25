@@ -55,7 +55,7 @@ public:
     void initStatistics();
     void initBaseStatistics();
 
-#ifndef QTAV_HAVE_FFMPEG5
+#ifndef HAVE_FFMPEG_VERSION5
 
     void initCommonStatistics(int s, Statistics::Common* st, AVCodecContext* avctx);
 

@@ -530,7 +530,7 @@ const char* get_codec_long_name(enum AVCodecID id)
 
     av_log(nullptr, AV_LOG_WARNING, "Codec 0x%x is not in the full list.\n", id);
 
-#ifndef QTAV_HAVE_FFMPEG5
+#ifndef HAVE_FFMPEG_VERSION5
 
     AVCodec* codec       = avcodec_find_decoder(id);
 
