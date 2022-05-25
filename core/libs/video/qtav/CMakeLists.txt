@@ -391,6 +391,14 @@ if(ANDROID)
 
 endif()
 
+if(WIN32)
+
+    set(libqtav_SRCS ${libqtav_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/io/WinRTIO.cpp
+    )
+
+endif()
+
 if(AVRESAMPLE_FOUND)
 
     set(libqtav_SRCS ${libqtav_SRCS}
