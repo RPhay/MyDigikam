@@ -47,15 +47,15 @@ namespace QtAV
 
 X11FilterContext::X11FilterContext()
     : VideoFilterContext(),
-      doc(nullptr),
-      cvt(nullptr),
-      display(nullptr),
-      gc(nullptr),
-      drawable(0),
-      text_img(nullptr),
-      mask_img(nullptr),
-      mask_pix(0),
-      plain(0)
+      doc       (nullptr),
+      cvt       (nullptr),
+      display   (nullptr),
+      gc        (nullptr),
+      drawable  (0),
+      text_img  (nullptr),
+      mask_img  (nullptr),
+      mask_pix  (0),
+      plain     (0)
 {
     painter = new QPainter();
 }
@@ -262,7 +262,7 @@ void X11FilterContext::drawPlainText(const QPointF& pos, const QString& text)
     this->plain = true;
 
     QFontMetrics fm(font);
-    text_q = QImage(fm.horizontalAdvance(text), fm.height(), QImage::Format_ARGB32);
+    text_q      = QImage(fm.horizontalAdvance(text), fm.height(), QImage::Format_ARGB32);
     text_q.fill(0);
     painter->begin(&text_q);
     painter->translate(0, 0);
@@ -333,9 +333,9 @@ void X11FilterContext::drawRichText(const QRectF& rect, const QString& text, boo
         doc = new QTextDocument();
 
     doc->setHtml(text);
-
-    //painter->translate(rect.topLeft()); //drawContent() can not set target rect, so move here
-
+/*
+    painter->translate(rect.topLeft()); //drawContent() can not set target rect, so move here
+*/
     if (wordWrap)
         doc->setTextWidth(rect.width());
 

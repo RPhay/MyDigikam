@@ -381,6 +381,16 @@ else()
 
 endif()
 
+if(ANDROID)
+
+    set(libqtav_SRCS ${libqtav_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderMediaCodec.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/io/AndroidIO.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/io/AndroidIO_jni.cpp
+    )
+
+endif()
+
 if(AVRESAMPLE_FOUND)
 
     set(libqtav_SRCS ${libqtav_SRCS}

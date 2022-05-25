@@ -80,7 +80,7 @@ public:
 
     bool isSupported(VideoFilterContext::Type ct) const override
     {
-        return (ct == VideoFilterContext::QtPainter || ct == VideoFilterContext::X11);
+        return ((ct == VideoFilterContext::QtPainter) || (ct == VideoFilterContext::X11));
     }
 
     /*!

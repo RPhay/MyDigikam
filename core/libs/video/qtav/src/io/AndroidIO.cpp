@@ -33,7 +33,7 @@
 
 #include "QtAV_mkid.h"
 #include "QtAV_factory.h"
-#include "jmi/jmi.h"
+#include "AndroidIO_jmi.h"
 #include "digikam_debug.h"
 
 // TODO: how to get filename and find subtitles?

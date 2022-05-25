@@ -45,19 +45,25 @@ VideoFilterContext* VideoFilterContext::create(Type t)
     switch (t)
     {
         case QtPainter:
+        {
             ctx = new QPainterFilterContext();
             break;
+        }
 
 #if QTAV_HAVE(X11)
 
         case X11:
+        {
             ctx = new X11FilterContext();
             break;
+        }
 
 #endif
 
         default:
+        {
             break;
+        }
     }
 
     return ctx;
@@ -69,12 +75,12 @@ void VideoFilterContext::initializeOnFrame(VideoFrame* frame)
 }
 
 VideoFilterContext::VideoFilterContext()
-    : painter(nullptr),
-      opacity(1),
-      paint_device(nullptr),
-      video_width(0),
-      video_height(0),
-      own_painter(false),
+    : painter         (nullptr),
+      opacity         (1),
+      paint_device    (nullptr),
+      video_width     (0),
+      video_height    (0),
+      own_painter     (false),
       own_paint_device(false)
 {
     font.setBold(true);
@@ -271,7 +277,7 @@ void QPainterFilterContext::drawRichText(const QRectF& rect, const QString& text
 
 bool QPainterFilterContext::isReady() const
 {
-    return !!painter && painter->isActive();
+    return (!!painter && painter->isActive());
 }
 
 bool QPainterFilterContext::prepare()
@@ -330,6 +336,7 @@ void QPainterFilterContext::initializeOnFrame(VideoFrame* vframe)
     if (!format.isValid())
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Not a valid format");
+
         return;
     }
 
