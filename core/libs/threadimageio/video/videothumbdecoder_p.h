@@ -56,7 +56,17 @@ public:
     AVFormatContext*   pFormatContext;
     AVCodecContext*    pVideoCodecContext;
     AVCodecParameters* pVideoCodecParameters;
+
+#ifndef HAVE_FFMPEG_VERSION5
+
     AVCodec*           pVideoCodec;
+
+#else // ffmpeg >= 5
+
+    const AVCodec*     pVideoCodec;
+
+#endif
+
     AVStream*          pVideoStream;
     AVFrame*           pFrame;
     quint8*            pFrameBuffer;
