@@ -74,15 +74,25 @@ if(ENABLE_MEDIAPLAYER)
 
         # Check if FFMPEG 5 API is available
 
-        string(REPLACE "." ";" VERSION_LIST ${AVCODEC_VERSION})
-        list(GET VERSION_LIST 0 AVCODEC_VERSION_MAJOR)
-        list(GET VERSION_LIST 1 AVCODEC_VERSION_MINOR)
-        list(GET VERSION_LIST 2 AVCODEC_VERSION_PATCH)
+        if (${AVCODEC_VERSION})
 
-        if (${AVCODEC_VERSION_MAJOR} GREATER_EQUAL 59)
+            string(REPLACE "." ";" VERSION_LIST ${AVCODEC_VERSION})
+            list(GET VERSION_LIST 0 AVCODEC_VERSION_MAJOR)
+            list(GET VERSION_LIST 1 AVCODEC_VERSION_MINOR)
+            list(GET VERSION_LIST 2 AVCODEC_VERSION_PATCH)
 
-            set(FFMPEG5_FOUND 1)
+            if (${AVCODEC_VERSION_MAJOR} GREATER_EQUAL 59)
 
+                set(FFMPEG_VER5_FOUND 1)
+
+            endif()
+
+        endif()
+
+        if (${FFMPEG_VER5_FOUND})
+            message(STATUS "MediaPlayer will use FFMpeg 5 API                    : yes")
+        else()
+            message(STATUS "MediaPlayer will use FFMpeg 5 API                    : no")
         endif()
 
         MACRO_BOOL_TO_01(ASS_FOUND             HAVE_LIBASS)
@@ -243,7 +253,7 @@ if(ENABLE_MEDIAPLAYER)
 
             message(STATUS "MediaPlayer will be compiled with OpenGL support     : yes")
 
-            if (OpenGL_EGL_FOUND)
+            if(OpenGL_EGL_FOUND)
 
                 set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} ${OPENGL_egl_LIBRARY})
                 message(STATUS "MediaPlayer will be compiled with OpenGL-EGL support : yes")
@@ -374,7 +384,7 @@ if(ENABLE_MEDIAPLAYER)
                                     -DFF_API_AC_VLC=0            # Used with commented code from VideoDecoderFFmpeg.cpp
         )
 
-        if(FFMPEG5_FOUND)
+        if(FFMPEG_VER5_FOUND)
 
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_FFMPEG5)
 
