@@ -187,7 +187,7 @@ void AVEncoder::copyAVCodecContext(void* ctx)
 
 #else // ffmpeg >= 5
 
-        AVCodecParameters* par = nulllptr;
+        AVCodecParameters* par = nullptr;
         avcodec_parameters_from_context(par, c);
         AV_ENSURE_OK(avcodec_parameters_to_context(d.avctx, par));
 

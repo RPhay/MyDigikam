@@ -347,7 +347,9 @@ endif()
 
 # ---
 
-if(VAAPI_FOUND)
+# TODO: FFMPEG4::vaapi struct is removed and code must be ported to FFMPEG5::AVCodecContext.hw_frames_ctx instead.
+
+if(VAAPI_FOUND AND NOT FFMPEG_VER5_FOUND)
 
     include_directories(${VAAPI_INCLUDE_DIRS})
 
@@ -373,11 +375,17 @@ if(APPLE)
 
 else()
 
-    set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/cuda/cuda_api.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/SurfaceInteropCUDA.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderCUDA.cpp
-    )
+    # TODO: FFMPEG4::AVBitStreamFilterContext struct is removed (aka FFMPEG4::FF_API_OLD_BSF define). Port to new API.
+
+    if(NOT FFMPEG_VER5_FOUND)
+
+        set(libqtav_SRCS ${libqtav_SRCS}
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/cuda/cuda_api.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/SurfaceInteropCUDA.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderCUDA.cpp
+        )
+
+    endif()
 
 endif()
 

@@ -108,7 +108,7 @@ bool AudioEncoderFFmpegPrivate::open()
 
 #else // ffmpeg >= 5
 
-        const AVCodec* const codec = avcodec_find_encoder(avctx->codec_id);
+        const AVCodec* codec = avcodec_find_encoder(avctx->codec_id);
 
 #endif
 
@@ -117,7 +117,15 @@ bool AudioEncoderFFmpegPrivate::open()
         return true;
     }
 
-    AVCodec* codec = avcodec_find_encoder_by_name(codec_name.toUtf8().constData());
+#ifndef HAVE_FFMPEG_VERSION5
+
+    AVCodec* codec       = avcodec_find_encoder_by_name(codec_name.toUtf8().constData());
+
+#else // ffmpeg >= 5
+
+    const AVCodec* codec = avcodec_find_encoder_by_name(codec_name.toUtf8().constData());
+
+#endif
 
     if (!codec)
     {

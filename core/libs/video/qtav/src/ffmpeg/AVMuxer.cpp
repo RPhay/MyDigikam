@@ -196,30 +196,35 @@ AVStream* AVMuxer::Private::addStream(AVFormatContext* ctx, const QString& codec
 
     // set by avformat if unset
 
-    s->id                   = ctx->nb_streams - 1;
-    s->time_base            = kTB;
+    s->id                      = ctx->nb_streams - 1;
+    s->time_base               = kTB;
 
 #ifndef HAVE_FFMPEG_VERSION5
 
-    AVCodecContext* const c = s->codec;
+    AVCodecContext* const c    = s->codec;
 
 #else // ffmpeg >= 5
 
 
-    AVCodec* const c        = s->codec;
+    AVCodecParameters* const c = s->codecpar;
 
 #endif
 
-    c->codec_id             = codec->id;
+    c->codec_id                = codec->id;
+
+#ifndef HAVE_FFMPEG_VERSION5
 
     // Using codec->time_base is deprecated, but needed for older lavf.
 
-    c->time_base            = s->time_base;
+    c->time_base               = s->time_base;
+
 
     /* Some formats want stream headers to be separate. */
 
     if (ctx->oformat->flags & AVFMT_GLOBALHEADER)
         c->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
+
+#endif
 
     // expose avctx to encoder and set properties in encoder?
     // list codecs for a given format in ui

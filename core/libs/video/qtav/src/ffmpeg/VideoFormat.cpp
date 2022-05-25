@@ -856,7 +856,7 @@ bool VideoFormat::isPseudoPaletted() const
 
 #else // ffmpeg >= 5
 
-    return hasPalette()
+    return hasPalette();
 
 #endif
 

@@ -123,6 +123,12 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
 
 * TODO:
 
+    - FFMPEG 5 API and VAAPI support: FFMPEG4::vaapi struct is removed and code must be ported to
+                                      AVCodecContext.hw_frames_ctx instead. Code is currently disabled.
+
+    - FFMPEG 5 API and CUDA support : FFMPEG4::AVBitStreamFilterContext struct is removed
+                                      (aka FFMPEG4::FF_API_OLD_BSF define). Port to new API.
+
     - Perform regression tests with FFMPEG 5.
     - Add config widgets to setup video and audio backends.
 

@@ -792,7 +792,7 @@ QVariantList AVPlayerCore::Private::getTracksInfo(AVDemuxer* demuxer, AVDemuxer:
 
 #else // ffmpeg >= 5
 
-        AVCodecContext* const ctx        = stream->codecpar;
+        AVCodecParameters* const ctx     = stream->codecpar;
 
 #endif
 
