@@ -63,9 +63,13 @@ ENDMACRO()
 #
 MACRO(find_component _component _pkgconfig _library _header)
 
+    # FIXME: Under Windows, FFMpeg module version is always empty. Add an alternative way to get version string properly.
+
     IF(NOT WIN32)
+
         # use pkg-config to get the directories and then use these values
         # in the FIND_PATH() and FIND_LIBRARY() calls
+
         FIND_PACKAGE(PkgConfig)
 
         IF(PKG_CONFIG_FOUND)
