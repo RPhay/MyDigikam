@@ -109,7 +109,7 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
         - Use Cmake to check if the libavcodec version >=59 (FFMPEG 5 API).
         - All FFMPEG 5 API are wrapped with pre-processor rules like this:
 
-        #ifndef QTAV_HAVEFFMPEG5
+        #ifndef QTAV_HAVE_FFMPEG5
             // FFMpeg version 4 codes.
         #else // ffmpeg >= 5
             // FFMpeg version 5 codes.

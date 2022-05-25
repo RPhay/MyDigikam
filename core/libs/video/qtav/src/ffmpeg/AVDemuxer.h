@@ -30,16 +30,10 @@
 #include <QObject>
 #include <QScopedPointer>
 
-// FFmpeg includes
-
-extern "C"
-{
-#include <libavcodec/avcodec.h>
-}
-
 // Local includes
 
 #include "AVError.h"
+#include "AVCompat.h"
 #include "Packet.h"
 
 struct AVFormatContext;

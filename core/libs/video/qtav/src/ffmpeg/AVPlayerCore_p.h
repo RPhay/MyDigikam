@@ -26,16 +26,10 @@
 
 #include "AVPlayerCore.h"
 
-// FFMpeg includes
-
-extern "C"
-{
-#include <libavcodec/avcodec.h>
-}
-
 // Local includes
 
 #include "AVDemuxer.h"
+#include "AVCompat.h"
 #include "AudioThread.h"
 #include "VideoThread.h"
 #include "AVDemuxThread.h"

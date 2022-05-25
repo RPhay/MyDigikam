@@ -122,7 +122,7 @@ extern "C"
 
 /*!
  * Guide to uniform the api for different FFmpeg version(or other libraries)
- * We use the existing old api to simulater .
+ * We use the existing old api to simulate.
  * 1. The old version does not have this api: Just add it.
  * 2. The old version has similar api: Try using macro.
  * e.g. the old is bool my_play(char* data, size_t size)
@@ -242,8 +242,16 @@ av_always_inline char* av_err2str(int errnum)
 #   define av_dump_format(...) dump_format(__VA_ARGS__)
 #endif
 
+// Special case if Cmake is not able to detect FFMpeg version, especially under Windows.
+
+#ifndef QTAV_HAVE_FFMPEG5
+#   if (LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(59,0,0))
+#       define QTAV_HAVE_FFMPEG5 1
+#   endif
+#endif
+
 #if QTAV_HAVE(SWRESAMPLE) && (LIBSWRESAMPLE_VERSION_INT <= AV_VERSION_INT(0, 5, 0))
-#   define swresample_version() LIBSWRESAMPLE_VERSION_INT //we can not know the runtime version, so just use build time version
+#   define swresample_version() LIBSWRESAMPLE_VERSION_INT   // we can not know the runtime version, so just use build time version
 #   define swresample_configuration() "Not available."
 #   define swresample_license() "Not available."
 #endif
