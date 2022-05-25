@@ -5,7 +5,7 @@
 #  OPENSLES_INCLUDE_DIR - The OpenSLES include directory.
 #  OPENSLES_LIBRARIES   - The OpenSLES libraries.
 #
-# Copyright (c) 2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2021-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the New BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -14,20 +14,21 @@
 get_property(_FIND_LIBRARY_USE_LIB64_PATHS GLOBAL PROPERTY FIND_LIBRARY_USE_LIB64_PATHS)
 set_property(GLOBAL PROPERTY FIND_LIBRARY_USE_LIB64_PATHS 1)
 
-find_path(OPENSLES_INCLUDE_DIR SLES/OpenSLES.h)
+find_path(OpenSLES_INCLUDE_DIR SLES/OpenSLES.h)
 
-find_library(OPENSLES_LIBRARY NAMES OpenSLES)
+find_library(OpenSLES_LIBRARY NAMES OpenSLES)
 
 include(FindPackageHandleStandardArgs)
 
-find_package_handle_standard_args(OPENSLES DEFAULT_MSG
-                                  OPENSLES_INCLUDE_DIR
-                                  OPENSLES_LIBRARY)
+find_package_handle_standard_args(OpenSLES DEFAULT_MSG
+                                  OpenSLES_INCLUDE_DIR
+                                  OpenSLES_LIBRARY)
 
-if(OPENSLES_FOUND)
+if(OpenSLES_FOUND)
 
-    set(OPENSLES_INCLUDE_DIRS ${OPENSLES_INCLUDE_DIR})
-    set(OPENSLES_LIBRARIES    ${OPENSLES_LIBRARY})
+    set(OPENSLES_FOUND        ${OpenSLES_FOUND})
+    set(OPENSLES_INCLUDE_DIRS ${OpenSLES_INCLUDE_DIR})
+    set(OPENSLES_LIBRARIES    ${OpenSLES_LIBRARY})
 
 else()
 
