@@ -265,7 +265,7 @@ void Edit::start()
     Q_D(Edit);
     QueryInfo* const info = new QueryInfo(d->MediaWiki,this);
     info->setPageName(d->requestParameter[QStringLiteral("title")]);
-    info->setToken(QStringLiteral("edit"));
+    info->setToken(QStringLiteral("tokens"));
 
     connect(info, SIGNAL(page(Page)),
             this, SLOT(doWorkSendRequest(Page)));

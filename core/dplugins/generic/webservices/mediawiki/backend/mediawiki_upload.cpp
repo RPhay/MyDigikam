@@ -130,7 +130,7 @@ void Upload::start()
 
     QueryInfo* const info = new QueryInfo(d->MediaWiki, this);
     info->setPageName(QStringLiteral("File:") + d->filename);
-    info->setToken(QStringLiteral("edit"));
+    info->setToken(QStringLiteral("tokens"));
 
     connect(info, SIGNAL(page(Page)),
             this, SLOT(doWorkSendRequest(Page)));

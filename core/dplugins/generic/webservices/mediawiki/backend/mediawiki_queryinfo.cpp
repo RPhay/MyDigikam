@@ -76,7 +76,7 @@ void QueryInfo::setPageName(const QString& title)
 void QueryInfo::setToken(const QString& token)
 {
     Q_D(QueryInfo);
-    d->requestParameter[QStringLiteral("intoken")] = token;
+    d->requestParameter[QStringLiteral("meta")] = token;
 }
 
 void QueryInfo::setPageId(unsigned int id)
@@ -177,7 +177,6 @@ void QueryInfo::doWorkProcessReply()
                     d->page.setCounter(attrs.value(QStringLiteral("counter")).toString().toUInt());
                     d->page.setLength(attrs.value(QStringLiteral("length")).toString().toUInt());
                     d->page.setStarttimestamp(QDateTime::fromString(attrs.value(QStringLiteral("starttimestamp")).toString(), QStringLiteral("yyyy'-'MM'-'dd'T'hh':'mm':'ss'Z'")));
-                    d->page.setEditToken(attrs.value(QStringLiteral("edittoken")).toString());
                     d->page.setTalkid(attrs.value(QStringLiteral("talkid")).toString().toUInt());
                     d->page.setFullurl(QUrl(attrs.value(QStringLiteral("fullurl")).toString()));
                     d->page.setEditurl(QUrl(attrs.value(QStringLiteral("editurl")).toString()));
@@ -187,6 +186,10 @@ void QueryInfo::doWorkProcessReply()
                 else if (reader.name() == QLatin1String("protection"))
                 {
                     protect.clear();
+                }
+                else if (reader.name() == QLatin1String("tokens"))
+                {
+                    d->page.setEditToken(attrs.value(QStringLiteral("csrftoken")).toString());
                 }
                 else if (reader.name() == QLatin1String("pr"))
                 {
