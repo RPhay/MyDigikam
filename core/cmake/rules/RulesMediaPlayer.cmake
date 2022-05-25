@@ -11,15 +11,17 @@ if(ENABLE_MEDIAPLAYER)
     message(STATUS "digiKam MediaPlayer dependencies checks:")
     message(STATUS "")
 
-    find_package(FFmpeg COMPONENTS AVCODEC
-                                   AVDEVICE
-                                   AVFILTER
-                                   AVFORMAT
-                                   AVUTIL
-                                   SWSCALE
-                                   AVRESAMPLE
-                                   SWRESAMPLE
+    find_package(FFmpeg REQUIRED COMPONENTS AVCODEC
+                                            AVDEVICE
+                                            AVFILTER
+                                            AVFORMAT
+                                            AVUTIL
+                                            SWSCALE
+                                            SWRESAMPLE
     )
+
+    find_package(FFmpeg OPTIONAL_COMPONENTS AVRESAMPLE)     # removed with ffmpeg 5
+
 
     find_package(ASS        QUIET)
     find_package(OpenAL     QUIET)
@@ -47,15 +49,16 @@ if(ENABLE_MEDIAPLAYER)
     message(STATUS "FFMpeg AVFormat   : ${AVFORMAT_FOUND} (${AVFORMAT_VERSION})")
     message(STATUS "FFMpeg AVUtil     : ${AVUTIL_FOUND} (${AVUTIL_VERSION})")
     message(STATUS "FFMpeg SWScale    : ${SWSCALE_FOUND} (${SWSCALE_VERSION})")
-    message(STATUS "FFMpeg AVResample : ${AVRESAMPLE_FOUND} (${AVRESAMPLE_VERSION})")
     message(STATUS "FFMpeg SWResample : ${SWRESAMPLE_FOUND} (${SWRESAMPLE_VERSION})")
+    message(STATUS "FFMpeg AVResample : ${AVRESAMPLE_FOUND} (${AVRESAMPLE_VERSION})")
 
-    if(    ${AVCODEC_FOUND}
-       AND ${AVDEVICE_FOUND}
-       AND ${AVFILTER_FOUND}
-       AND ${AVFORMAT_FOUND}
-       AND ${AVUTIL_FOUND}
-       AND ${SWSCALE_FOUND}
+    if(${AVCODEC_FOUND}     AND
+       ${AVDEVICE_FOUND}    AND
+       ${AVFILTER_FOUND}    AND
+       ${AVFORMAT_FOUND}    AND
+       ${AVUTIL_FOUND}      AND
+       ${SWSCALE_FOUND}     AND
+       ${SWRESAMPLE_FOUND}
       )
 
         include_directories(${FFMPEG_INCLUDE_DIRS})
@@ -74,12 +77,14 @@ if(ENABLE_MEDIAPLAYER)
 
         # Check if FFMPEG 5 API is available
 
-        if (${AVCODEC_VERSION})
+        if (AVCODEC_VERSION)
 
             string(REPLACE "." ";" VERSION_LIST ${AVCODEC_VERSION})
             list(GET VERSION_LIST 0 AVCODEC_VERSION_MAJOR)
             list(GET VERSION_LIST 1 AVCODEC_VERSION_MINOR)
             list(GET VERSION_LIST 2 AVCODEC_VERSION_PATCH)
+
+            #message("AVCodec version major: ${AVCODEC_VERSION_MAJOR}")
 
             if (${AVCODEC_VERSION_MAJOR} GREATER_EQUAL 59)
 
