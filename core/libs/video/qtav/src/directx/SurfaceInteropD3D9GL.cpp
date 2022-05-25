@@ -65,8 +65,8 @@ InteropResource* CreateInteropGL(IDirect3DDevice9* dev)
 
 GLInteropResource::GLInteropResource(IDirect3DDevice9* d3device)
     : InteropResource(d3device),
-      interop_dev(nullptr),
-      interop_obj(nullptr)
+      interop_dev    (nullptr),
+      interop_obj    (nullptr)
 {
 }
 
@@ -154,7 +154,7 @@ bool GLInteropResource::ensureResource(int w, int h, GLuint tex)
 
     DX_ENSURE_OK(d3ddev->CreateTexture(w, h, 1,
                                        D3DUSAGE_RENDERTARGET,
-                                       has_alpha ? D3DFMT_A8R8G8B8 : D3DFMT_X8R8G8B8,
+                                       (has_alpha ? D3DFMT_A8R8G8B8 : D3DFMT_X8R8G8B8),
                                        D3DPOOL_DEFAULT,
                                        &dx_texture,
                                        &share_handle) , false);

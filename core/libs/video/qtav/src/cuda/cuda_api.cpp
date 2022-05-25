@@ -1080,7 +1080,7 @@ int cuda_api::GetMaxGflopsGraphicsDeviceId()
         {
             if (!bTCC)
             {
-                if (major > 0 && major < 9999)
+                if ((major > 0) && (major < 9999))
                 {
                     best_SM_arch = std::max(best_SM_arch, major);
                 }
@@ -1129,7 +1129,7 @@ int cuda_api::GetMaxGflopsGraphicsDeviceId()
 
         if (computeMode != CU_COMPUTEMODE_PROHIBITED)
         {
-            if (major == 9999 && minor == 9999)
+            if ((major == 9999) && (minor == 9999))
             {
                 sm_per_multiproc = 1;
             }

@@ -59,7 +59,7 @@ class Q_DECL_HIDDEN EGL
 public:
 
     EGL()
-        : dpy(EGL_NO_DISPLAY),
+        : dpy    (EGL_NO_DISPLAY),
           surface(EGL_NO_SURFACE)
     {
     }

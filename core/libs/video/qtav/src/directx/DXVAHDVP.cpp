@@ -37,12 +37,12 @@ namespace dx
 {
 
 DXVAHDVP::DXVAHDVP(ComPtr<IDirect3DDevice9> dev)
-    : m_dev(nullptr),
-      m_w(0),
-      m_h(0),
-      m_cs(ColorSpace_BT709),
-      m_range(ColorRange_Limited),
-      fDXVAHD_CreateDevice(nullptr)
+    : m_dev                 (nullptr),
+      m_w                   (0),
+      m_h                   (0),
+      m_cs                  (ColorSpace_BT709),
+      m_range               (ColorRange_Limited),
+      fDXVAHD_CreateDevice  (nullptr)
 {
     DX_ENSURE(dev.As(&m_dev));
     fDXVAHD_CreateDevice = (PDXVAHD_CreateDevice)GetProcAddress(GetModuleHandle(TEXT("dxva2.dll")), "DXVAHD_CreateDevice");
@@ -122,10 +122,10 @@ bool DXVAHDVP::process(IDirect3DSurface9* surface)
 
     DXVAHD_STREAM_STATE_INPUT_COLOR_SPACE_DATA ics;
     ZeroMemory(&ics, sizeof(ics));
-    ics.Type         = 0; // 0: video, 1: graphics
-    ics.RGB_Range    = 0; // full
-    ics.YCbCr_Matrix = (m_cs    == ColorSpace_BT601) ? 0 : 1; // 0: bt601, 1: bt709
-    ics.YCbCr_xvYCC  = (m_range == ColorRange_Full)  ? 1 : 0;
+    ics.Type         = 0;                                       // 0: video, 1: graphics
+    ics.RGB_Range    = 0;                                       // full
+    ics.YCbCr_Matrix = ((m_cs    == ColorSpace_BT601) ? 0 : 1); // 0: bt601, 1: bt709
+    ics.YCbCr_xvYCC  = ((m_range == ColorRange_Full)  ? 1 : 0);
     DX_ENSURE(m_vp->SetVideoProcessStreamState(0/*stream index*/, DXVAHD_STREAM_STATE_INPUT_COLOR_SPACE, sizeof(ics), &ics), false);
 
     DXVAHD_BLT_STATE_OUTPUT_COLOR_SPACE_DATA cs;

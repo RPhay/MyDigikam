@@ -46,7 +46,7 @@
 #endif
 
 #define MS_GUID(name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8) \
-    static const GUID name = { l, w1, w2, {b1, b2, b3, b4, b5, b6, b7, b8} }
+    static const GUID name = { l, w1, w2, { b1, b2, b3, b4, b5, b6, b7, b8 } }
 
 namespace QtAV
 {
@@ -208,7 +208,7 @@ void* SurfaceInterop::mapToHost(const VideoFormat& format, void* handle, int pla
             if (FAILED(mpD3D->LockRect(rect, nullptr, D3DLOCK_READONLY)))
             {
                 qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to lock surface");
-                mpD3D = 0;
+                mpD3D = nullptr;
             }
         }
 

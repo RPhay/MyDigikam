@@ -44,8 +44,8 @@ class Q_DECL_HIDDEN QIODeviceIOPrivate : public MediaIOPrivate
 public:
 
     QIODeviceIOPrivate()
-        : MediaIOPrivate()
-        , dev(nullptr)
+        : MediaIOPrivate(),
+          dev           (nullptr)
     {
     }
 
@@ -60,7 +60,7 @@ QIODeviceIO::QIODeviceIO() : MediaIO(*new QIODeviceIOPrivate()) {               
 QIODeviceIO::QIODeviceIO(QIODeviceIOPrivate &d) : MediaIO(d)    {                                    }
 QString QIODeviceIO::name() const                               { return QLatin1String(kQIODevName); }
 
-void QIODeviceIO::setDevice(QIODevice *dev)
+void QIODeviceIO::setDevice(QIODevice* dev)
 {
     DPTR_D(QIODeviceIO);
 
@@ -81,7 +81,7 @@ bool QIODeviceIO::isSeekable() const
 {
     DPTR_D(const QIODeviceIO);
 
-    return d.dev && !d.dev->isSequential();
+    return (d.dev && !d.dev->isSequential());
 }
 
 bool QIODeviceIO::isWritable() const
@@ -233,7 +233,8 @@ void QFileIO::onUrlChanged()
 
         if (p < 1)
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("invalid path. ':' wrong position");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("invalid path. ':' wrong position");
 
             return;
         }
@@ -241,9 +242,10 @@ void QFileIO::onUrlChanged()
         p       -= 1;
         QChar c  = path.at(p).toUpper();
 
-        if (c < QLatin1Char('A') || c > QLatin1Char('Z'))
+        if ((c < QLatin1Char('A')) || (c > QLatin1Char('Z')))
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("invalid path. wrong driver");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("invalid path. wrong driver");
 
             return;
         }
@@ -256,9 +258,10 @@ void QFileIO::onUrlChanged()
         {
             c = path.at(p);
 
-            if (c != QLatin1Char('\\') && c != QLatin1Char('/'))
+            if ((c != QLatin1Char('\\')) && (c != QLatin1Char('/')))
             {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("invalid path. wrong dir separator ");
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                    << QString::asprintf("invalid path. wrong dir separator ");
 
                 return;
             }
@@ -278,7 +281,10 @@ void QFileIO::onUrlChanged()
         return;
 
     if (!d.file.open(QIODevice::ReadOnly))
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "Failed to open [" << d.file.fileName() << "]: " << d.file.errorString();
+    {
+        qCWarning(DIGIKAM_QTAV_LOG_WARN)
+            << "Failed to open [" << d.file.fileName() << "]: " << d.file.errorString();
+    }
 }
 
 } // namespace QtAV

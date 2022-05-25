@@ -56,7 +56,7 @@ class Q_DECL_HIDDEN EGL
 public:
 
     EGL()
-        : dpy(EGL_NO_DISPLAY),
+        : dpy    (EGL_NO_DISPLAY),
           surface(EGL_NO_SURFACE)
     {
     }
@@ -89,7 +89,6 @@ private:
     // Disable
     EGLInteropResource(const EGLInteropResource&)            = delete;
     EGLInteropResource& operator=(const EGLInteropResource&) = delete;
-
 };
 
 InteropResource* CreateInteropEGL(IDirect3DDevice9* dev)
@@ -99,8 +98,8 @@ InteropResource* CreateInteropEGL(IDirect3DDevice9* dev)
 
 EGLInteropResource::EGLInteropResource(IDirect3DDevice9* d3device)
     : InteropResource(d3device)
-    , egl(new EGL())
-    , dx_query(nullptr)
+    , egl            (new EGL())
+    , dx_query       (nullptr)
 {
     DX_ENSURE_OK(d3device->CreateQuery(D3DQUERYTYPE_EVENT, &dx_query));
     dx_query->Issue(D3DISSUE_END);
@@ -190,7 +189,7 @@ bool EGLInteropResource::ensureSurface(int w, int h)
     {
         EGL_WIDTH,          w,
         EGL_HEIGHT,         h,
-        EGL_TEXTURE_FORMAT, has_alpha ? EGL_TEXTURE_RGBA : EGL_TEXTURE_RGB,
+        EGL_TEXTURE_FORMAT, (has_alpha ? EGL_TEXTURE_RGBA : EGL_TEXTURE_RGB),
         EGL_TEXTURE_TARGET, EGL_TEXTURE_2D,
         EGL_NONE
     };
@@ -228,7 +227,7 @@ bool EGLInteropResource::ensureSurface(int w, int h)
      */
     DX_ENSURE_OK(d3ddev->CreateTexture(w, h, 1,
                                        D3DUSAGE_RENDERTARGET,
-                                       has_alpha ? D3DFMT_A8R8G8B8 : D3DFMT_X8R8G8B8,
+                                       (has_alpha ? D3DFMT_A8R8G8B8 : D3DFMT_X8R8G8B8),
                                        D3DPOOL_DEFAULT,
                                        &dx_texture,
                                        &share_handle) , false);

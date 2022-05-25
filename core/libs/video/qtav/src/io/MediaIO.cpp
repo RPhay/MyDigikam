@@ -137,7 +137,9 @@ static int64_t av_seek(void* opaque, int64_t offset, int whence)    // krazy:exc
 
     if (!io->isSeekable())
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Can not seek. MediaIO[%s] is not a seekable IO", MediaIO::staticMetaObject.className());
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Can not seek. MediaIO[%s] is not a seekable IO",
+                MediaIO::staticMetaObject.className());
 
         return -1;
     }
@@ -274,7 +276,7 @@ void* MediaIO::avioContext()
     // but it's still seekable if call seek outside(e.g. from demuxer)
     // TODO: isVariableSize: size = -real_size
 
-    d.ctx->seekable      = isSeekable() && !isVariableSize() ? AVIO_SEEKABLE_NORMAL : 0;
+    d.ctx->seekable      = (isSeekable() && (!isVariableSize() ? AVIO_SEEKABLE_NORMAL : 0));
 
     return d.ctx;
 }

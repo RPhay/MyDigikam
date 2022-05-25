@@ -86,7 +86,7 @@ static void InitParameters(D3DPRESENT_PARAMETERS* d3dpp)
 */
 }
 
-IDirect3DDevice9* CreateDevice9Ex(HINSTANCE dll, IDirect3D9Ex** d3d9ex, D3DADAPTER_IDENTIFIER9 *d3dai)
+IDirect3DDevice9* CreateDevice9Ex(HINSTANCE dll, IDirect3D9Ex** d3d9ex, D3DADAPTER_IDENTIFIER9* d3dai)
 {
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("creating d3d9 device ex... dll: %p", dll);
 
@@ -137,7 +137,7 @@ IDirect3DDevice9* CreateDevice9Ex(HINSTANCE dll, IDirect3D9Ex** d3d9ex, D3DADAPT
     return d3d9dev;
 }
 
-IDirect3DDevice9* CreateDevice9(HINSTANCE dll, IDirect3D9** d3d9, D3DADAPTER_IDENTIFIER9 *d3dai)
+IDirect3DDevice9* CreateDevice9(HINSTANCE dll, IDirect3D9** d3d9, D3DADAPTER_IDENTIFIER9* d3dai)
 {
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("creating d3d9 device...");
 

@@ -91,8 +91,8 @@ public:
 
     virtual bool isSeekable()                               const override;
     virtual bool isWritable()                               const override;
-    virtual qint64 read(char *data, qint64 maxSize)               override;
-    virtual qint64 write(const char *data, qint64 maxSize)        override;
+    virtual qint64 read(char* data, qint64 maxSize)               override;
+    virtual qint64 write(const char* data, qint64 maxSize)        override;
     virtual bool seek(qint64 offset, int from)                    override;
     virtual qint64 position()                               const override;
 
@@ -104,7 +104,7 @@ public:
 
 protected:
 
-    explicit WinRTIO(WinRTIOPrivate &d);
+    explicit WinRTIO(WinRTIOPrivate& d);
     void onUrlChanged()                                           override;
 
 private:
@@ -129,8 +129,8 @@ class Q_DECL_HIDDEN WinRTIOPrivate : public MediaIOPrivate
 public:
 
     WinRTIOPrivate()
-        : MediaIOPrivate()
-        , pos(0)
+        : MediaIOPrivate(),
+          pos(0)
     {
     }
 
@@ -165,7 +165,7 @@ bool WinRTIO::isWritable() const
 
 //http://www.codeproject.com/Tips/489450/Creating-Custom-FFmpeg-IO-Context      // krazy:exclude=insecurenet
 
-qint64 WinRTIO::read(char *data, qint64 maxSize)
+qint64 WinRTIO::read(char* data, qint64 maxSize)
 {
     DPTR_D(WinRTIO);
 
@@ -182,7 +182,7 @@ qint64 WinRTIO::read(char *data, qint64 maxSize)
     return bytesRead;
 }
 
-qint64 WinRTIO::write(const char *data, qint64 maxSize)
+qint64 WinRTIO::write(const char* data, qint64 maxSize)
 {
     DPTR_D(WinRTIO);
 
@@ -286,7 +286,8 @@ void WinRTIO::openFromStorage(IStorageItem *item)
 void WinRTIO::openFromPath(const QString &path)
 {
     ComPtr<IStorageFileStatics> fileFactory;
-    COM_ENSURE(RoGetActivationFactory(HString::MakeReference(RuntimeClass_Windows_Storage_StorageFile).Get(), IID_PPV_ARGS(&fileFactory)));
+    COM_ENSURE(RoGetActivationFactory(HString::MakeReference(RuntimeClass_Windows_Storage_StorageFile).Get(),
+                                                             IID_PPV_ARGS(&fileFactory)));
 
     // 2 bytes for utf-16, 4 bytes for ucs-4(unix)
 

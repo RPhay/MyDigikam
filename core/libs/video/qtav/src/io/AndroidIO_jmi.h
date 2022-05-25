@@ -26,6 +26,8 @@
 
 #pragma once
 
+// C++ includes
+
 #include <algorithm>
 #include <array>
 #include <functional> // std::ref
@@ -33,6 +35,7 @@
 #include <type_traits>
 #include <valarray>
 #include <vector>
+
 #include <jni.h>
 
 namespace jmi

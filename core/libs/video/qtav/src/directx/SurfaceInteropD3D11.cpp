@@ -152,12 +152,12 @@ void* SurfaceInterop::map(SurfaceType type, const VideoFormat &fmt, void *handle
     return nullptr;
 }
 
-void SurfaceInterop::unmap(void *handle)
+void SurfaceInterop::unmap(void* handle)
 {
     m_resource->unmap(*((GLuint*)handle));
 }
 
-void* SurfaceInterop::mapToHost(const VideoFormat &format, void *handle, int plane)
+void* SurfaceInterop::mapToHost(const VideoFormat& format, void* handle, int plane)
 {
     Q_UNUSED(plane);
     ComPtr<ID3D11Device> dev;
@@ -195,15 +195,15 @@ void* SurfaceInterop::mapToHost(const VideoFormat &format, void *handle, int pla
         }
 
         ComPtr<ID3D11DeviceContext> c;
-        ComPtr<ID3D11Texture2D> r;
+        ComPtr<ID3D11Texture2D>     r;
     };
 
     D3D11_MAPPED_SUBRESOURCE mapped;
     ScopedMap sm(ctx, tex, &mapped); // mingw error if ComPtr<T> constructs from ComPtr<U> [T=ID3D11Resource, U=ID3D11Texture2D]
     Q_UNUSED(sm);
 
-    int pitch[3]   = { (int)mapped.RowPitch,   0, 0 }; // compute chroma later
-    uint8_t* src[] = { (uint8_t*)mapped.pData, 0, 0 }; // compute chroma later
+    int pitch[3]          = { (int)mapped.RowPitch,   0, 0 }; // compute chroma later
+    uint8_t* src[]        = { (uint8_t*)mapped.pData, 0, 0 }; // compute chroma later
 
     const VideoFormat fmt = VideoDecoderD3D::pixelFormatFromFourcc(fourccFromDXGI(desc.Format));
     VideoFrame frame      = VideoFrame::fromGPU(fmt, frame_width, frame_height, desc.Height, src, pitch);
@@ -211,9 +211,9 @@ void* SurfaceInterop::mapToHost(const VideoFormat &format, void *handle, int pla
     if (fmt != format)
         frame = frame.to(format);
 
-    VideoFrame* f = reinterpret_cast<VideoFrame*>(handle);
+    VideoFrame* f         = reinterpret_cast<VideoFrame*>(handle);
     frame.setTimestamp(f->timestamp());
-    *f            = frame;
+    *f                    = frame;
 
     return f;
 }
