@@ -38,7 +38,7 @@ static const int kMaxTexWidth = 4096; // FIXME: glGetIntegerv(GL_MAX_TEXTURE_SIZ
 
 typedef struct
 {
-    float x, y;             // depends on target rect
+    float x,  y;            // depends on target rect
     float tx, ty;           // depends on texture size and rects layout
 
 #if U8COLOR
@@ -57,14 +57,15 @@ typedef struct
 
 } VertexData;
 
-static VertexData* SetUnnormalizedVertexData(VertexData* v, int tx, int ty, int tw, int th, quint32 color, bool useIndecies)
+static VertexData* SetUnnormalizedVertexData(VertexData* v, int tx, int ty, int tw, int th,
+                                             quint32 color, bool useIndecies)
 {
 
 #if U8COLOR
 
     union
     {
-        quint8 r, g, b, a;
+        quint8  r, g, b, a;
         quint32 rgba;
     };
 
@@ -117,13 +118,14 @@ static VertexData* SetUnnormalizedVertexData(VertexData* v, int tx, int ty, int 
         v[4] = v[1];
         v[5] = v[2];
 
-        return v + 6;
+        return (v + 6);
     }
 
-    return v + 4;
+    return (v + 4);
 }
 
-static VertexData* SetVertexPositionAndNormalize(VertexData* v, float x, float y, float w, float h, float texW, float texH, bool useIndecies)
+static VertexData* SetVertexPositionAndNormalize(VertexData* v, float x, float y, float w, float h,
+                                                 float texW, float texH, bool useIndecies)
 {
     v[0].x   = x;
     v[0].y   = y;
@@ -149,29 +151,29 @@ static VertexData* SetVertexPositionAndNormalize(VertexData* v, float x, float y
         v[4] = v[1];
         v[5] = v[2];
 
-        return v + 6;
+        return (v + 6);
     }
 
-    return v + 4;
+    return (v + 4);
 }
 
 SubImagesGeometry::SubImagesGeometry()
-    : Geometry(),
+    : Geometry    (),
       m_normalized(false),
-      m_w(0),
-      m_h(0)
+      m_w         (0),
+      m_h         (0)
 {
     setPrimitive(Geometry::Triangles);
     m_attributes << Attribute(TypeF32, 2)
-                 << Attribute(TypeF32, 2, 2*sizeof(float))
+                 << Attribute(TypeF32, 2, 2 * sizeof(float))
 
 #if U8COLOR
 
-                 << Attribute(TypeU8, 4, 4*sizeof(float), true);
+                 << Attribute(TypeU8, 4, 4 * sizeof(float), true);
 
 #else
 
-                 << Attribute(TypeF32, 4, 4*sizeof(float));
+                 << Attribute(TypeF32, 4, 4 * sizeof(float));
 
 #endif
 
@@ -235,8 +237,8 @@ bool SubImagesGeometry::generateVertexData(const QRect& rect, bool useIndecies, 
             // TODO: set only once because it never changes, use IBO
 
             const int v0 = index * 4 / 6;
-            setIndexValue(index,   v0,   v0+1, v0+2);
-            setIndexValue(index+3, v0+1, v0+2, v0+3);
+            setIndexValue(index,   v0,     v0 + 1, v0 + 2);
+            setIndexValue(index+3, v0 + 1, v0 + 2, v0 + 3);
             index       += 6;
         }
 

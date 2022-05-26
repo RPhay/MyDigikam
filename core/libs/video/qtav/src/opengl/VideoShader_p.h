@@ -72,19 +72,19 @@ class QTAV_PRIVATE_EXPORT VideoShaderPrivate : public DPtrPrivate<VideoShader>
 public:
 
     VideoShaderPrivate()
-        : owns_program(false),
-          rebuild_program(false),
-          update_builtin_uniforms(true),
-          program(nullptr),
-          u_Matrix(-1),
-          u_colorMatrix(-1),
-          u_to8(-1),
-          u_opacity(-1),
-          u_c(-1),
-          u_texelSize(0),
-          u_textureSize(0),
-          material_type(0),
-          texture_target(GL_TEXTURE_2D)
+        : owns_program              (false),
+          rebuild_program           (false),
+          update_builtin_uniforms   (true),
+          program                   (nullptr),
+          u_Matrix                  (-1),
+          u_colorMatrix             (-1),
+          u_to8                     (-1),
+          u_opacity                 (-1),
+          u_c                       (-1),
+          u_texelSize               (0),
+          u_textureSize             (0),
+          material_type             (0),
+          texture_target            (GL_TEXTURE_2D)
     {
     }
 
@@ -141,17 +141,17 @@ class VideoMaterialPrivate : public DPtrPrivate<VideoMaterial>
 public:
 
     VideoMaterialPrivate()
-        : update_texure(true),
-          init_textures_required(true),
-          bpc(0),
-          width(0),
-          height(0),
-          video_format(VideoFormat::Format_Invalid),
-          plane1_linesize(0),
-          effective_tex_width_ratio(1.0),
-          target(GL_TEXTURE_2D),
-          dirty(true),
-          try_pbo(true)
+        : update_texure             (true),
+          init_textures_required    (true),
+          bpc                       (0),
+          width                     (0),
+          height                    (0),
+          video_format              (VideoFormat::Format_Invalid),
+          plane1_linesize           (0),
+          effective_tex_width_ratio (1.0),
+          target                    (GL_TEXTURE_2D),
+          dirty                     (true),
+          try_pbo                   (true)
     {
         v_texel_size.reserve(4);
         textures.reserve(4);

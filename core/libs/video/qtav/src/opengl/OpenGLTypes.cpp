@@ -44,41 +44,42 @@ namespace QtAV
 
 struct uniform_type_name
 {
-    QByteArray name;
+    QByteArray    name;
     Uniform::Type type;
 } uniform_type_names[] =
 {
-    {"sample2D", Uniform::Sampler},
-    {"bool", Uniform::Bool},
-    {"int", Uniform::Int},
-    {"uint", Uniform::Int},
-    {"float", Uniform::Float},
-    {"vec2", Uniform::Vec2},
-    {"vec3", Uniform::Vec3},
-    {"vec4", Uniform::Vec4},
-    {"mat2", Uniform::Mat2},
-    {"mat3", Uniform::Mat3},
-    {"mat4", Uniform::Mat4},
-    {"bvec2", Uniform::BVec2},
-    {"bvec3", Uniform::BVec3},
-    {"bvec4", Uniform::BVec4},
-    {"ivec2", Uniform::IVec2},
-    {"ivec3", Uniform::IVec3},
-    {"ivec4", Uniform::IVec4},
-    {"uvec2", Uniform::UVec2},
-    {"uvec3", Uniform::UVec3},
-    {"uvec4", Uniform::UVec4},
-    {"mat2x2", Uniform::Mat2},
-    {"mat3x3", Uniform::Mat3},
-    {"mat4x4", Uniform::Mat4},
-    {"dmat2", Uniform::DMat2},
-    {"dmat3", Uniform::DMat3},
-    {"dmat4", Uniform::DMat4},
+    { "sample2D", Uniform::Sampler  },
+    { "bool",     Uniform::Bool     },
+    { "int",      Uniform::Int      },
+    { "uint",     Uniform::Int      },
+    { "float",    Uniform::Float    },
+    { "vec2",     Uniform::Vec2     },
+    { "vec3",     Uniform::Vec3     },
+    { "vec4",     Uniform::Vec4     },
+    { "mat2",     Uniform::Mat2     },
+    { "mat3",     Uniform::Mat3     },
+    { "mat4",     Uniform::Mat4     },
+    { "bvec2",    Uniform::BVec2    },
+    { "bvec3",    Uniform::BVec3    },
+    { "bvec4",    Uniform::BVec4    },
+    { "ivec2",    Uniform::IVec2    },
+    { "ivec3",    Uniform::IVec3    },
+    { "ivec4",    Uniform::IVec4    },
+    { "uvec2",    Uniform::UVec2    },
+    { "uvec3",    Uniform::UVec3    },
+    { "uvec4",    Uniform::UVec4    },
+    { "mat2x2",   Uniform::Mat2     },
+    { "mat3x3",   Uniform::Mat3     },
+    { "mat4x4",   Uniform::Mat4     },
+    { "dmat2",    Uniform::DMat2    },
+    { "dmat3",    Uniform::DMat3    },
+    { "dmat4",    Uniform::DMat4    }
 };
 
 static Uniform::Type UniformTypeFromName(const QByteArray& name)
 {
-    for (const uniform_type_name* un = uniform_type_names; un < uniform_type_names + sizeof(uniform_type_names)/sizeof(uniform_type_names[0]); ++un)
+    for (const uniform_type_name* un = uniform_type_names ;
+         (un < uniform_type_names + sizeof(uniform_type_names) / sizeof(uniform_type_names[0])) ; ++un)
     {
         if (un->name == name)
             return un->type;
@@ -89,7 +90,8 @@ static Uniform::Type UniformTypeFromName(const QByteArray& name)
 
 static QByteArray UniformTypeToName(Uniform::Type ut)
 {
-    for (const uniform_type_name* un = uniform_type_names; un < uniform_type_names + sizeof(uniform_type_names)/sizeof(uniform_type_names[0]); ++un)
+    for (const uniform_type_name* un = uniform_type_names ;
+         (un < uniform_type_names + sizeof(uniform_type_names) / sizeof(uniform_type_names[0])) ; ++un)
     {
         if (un->type == ut)
             return un->name;
@@ -99,11 +101,11 @@ static QByteArray UniformTypeToName(Uniform::Type ut)
 }
 
 Uniform::Uniform(Type tp, int count)
-    : dirty(true)
-    , location(-1)
-    , tuple_size(1)
-    , array_size(1)
-    , t(tp)
+    : dirty     (true),
+      location  (-1),
+      tuple_size(1),
+      array_size(1),
+      t         (tp)
 {
     setType(tp, count);
 }
@@ -115,11 +117,11 @@ Uniform& Uniform::setType(Type tp, int count)
 
     if (isVec())
     {
-        tuple_size = (t >> (V+1)) & ((1<<3) - 1);
+        tuple_size = (t >> (V+1)) & ((1 << 3) - 1);
     }
     else if (isMat())
     {
-        tuple_size = (t >> (M+1)) & ((1<<3) - 1);
+        tuple_size  = (t >> (M+1)) & ((1 << 3) - 1);
         tuple_size *= tuple_size;
     }
 
@@ -130,19 +132,19 @@ Uniform& Uniform::setType(Type tp, int count)
         element_size = sizeof(int);
     }
 
-    data = QVector<int>(element_size/sizeof(int)*tupleSize()*arraySize());
+    data = QVector<int>(element_size / sizeof(int) * tupleSize() * arraySize());
 
     return *this;
 }
 
 template<typename T> bool set_uniform_value(QVector<int>& dst, const T* v, int count)
 {
-    Q_ASSERT(sizeof(T)*count <= sizeof(int)*dst.size() && "set_uniform_value: Bad type or array size");
+    Q_ASSERT(sizeof(T) * count <= sizeof(int) * dst.size() && "set_uniform_value: Bad type or array size");
 
     // why not dst.constData()?
 
     const QVector<int> old(dst);
-    memcpy((char*)dst.data(), (const char*)v, count*sizeof(T));
+    memcpy((char*)dst.data(), (const char*)v, count * sizeof(T));
 
     return old != dst;
 }
@@ -151,66 +153,67 @@ template<> bool set_uniform_value<bool>(QVector<int>& dst, const bool* v, int co
 {
     const QVector<int> old(dst);
 
-    for (int i = 0; i < count; ++i)
+    for (int i = 0 ; i < count ; ++i)
     {
         dst[i] = *(v + i);
     }
 
-    return old != dst;
+    return (old != dst);
 }
 
-void Uniform::set(const float &v, int count)
+void Uniform::set(const float& v, int count)
 {
     if (count <= 0)
-        count = tupleSize()*arraySize();
+        count = tupleSize() * arraySize();
 
     dirty = set_uniform_value(data, &v, count);
 }
 
-void Uniform::set(const int &v, int count)
+void Uniform::set(const int& v, int count)
 {
     if (count <= 0)
-        count = tupleSize()*arraySize();
+        count = tupleSize() * arraySize();
 
     dirty = set_uniform_value(data, &v, count);
 }
 
-void Uniform::set(const unsigned &v, int count)
+void Uniform::set(const unsigned& v, int count)
 {
     if (count <= 0)
-        count = tupleSize()*arraySize();
+        count = tupleSize() * arraySize();
+
     dirty = set_uniform_value(data, &v, count);
 }
 
-void Uniform::set(const float *v, int count)
+void Uniform::set(const float* v, int count)
 {
     if (count <= 0)
-        count = tupleSize()*arraySize();
+        count = tupleSize() * arraySize();
 
     dirty = set_uniform_value(data, v, count);
 }
 
-void Uniform::set(const int *v, int count)
+void Uniform::set(const int* v, int count)
 {
     if (count <= 0)
-        count = tupleSize()*arraySize();
+        count = tupleSize() * arraySize();
 
     dirty = set_uniform_value(data, v, count);
 }
 
-void Uniform::set(const unsigned *v, int count)
+void Uniform::set(const unsigned* v, int count)
 {
     if (count <= 0)
-        count = tupleSize()*arraySize();
+        count = tupleSize() * arraySize();
 
     dirty = set_uniform_value(data, v, count);
 }
 
-void Uniform::set(const QVariant &v)
+void Uniform::set(const QVariant& v)
 {
-    if (tupleSize() > 1 || arraySize() > 1)
+    if ((tupleSize() > 1) || (arraySize() > 1))
     {
-        if (isFloat())
+        if      (isFloat())
         {
             // TODO: what if QVector<qreal> but uniform is float?
 
@@ -231,7 +234,7 @@ void Uniform::set(const QVariant &v)
     }
     else
     {
-        if (isFloat())
+        if      (isFloat())
         {
             set(v.toFloat());
         }
@@ -261,54 +264,89 @@ bool Uniform::setGL()
     {
         case Uniform::Bool:
         case Uniform::Int:
+        {
             gl().Uniform1iv(location, arraySize(), address<int>());
+
             break;
+        }
 
         case Uniform::Float:
+        {
             gl().Uniform1fv(location, arraySize(), address<float>());
+
             break;
+        }
 
         case Uniform::Vec2:
+        {
             gl().Uniform2fv(location, arraySize(), address<float>());
+
             break;
+        }
 
         case Uniform::Vec3:
+        {
             gl().Uniform3fv(location, arraySize(), address<float>());
+
             break;
+        }
 
         case Uniform::Vec4:
+        {
             gl().Uniform4fv(location, arraySize(), address<float>());
+
             break;
+        }
 
         case Uniform::Mat2:
+        {
             gl().UniformMatrix2fv(location, arraySize(), GL_FALSE, address<float>());
+
             break;
+        }
 
         case Uniform::Mat3:
+        {
             gl().UniformMatrix3fv(location, arraySize(), GL_FALSE, address<float>());
+
             break;
+        }
 
         case Uniform::Mat4:
+        {
             gl().UniformMatrix4fv(location, arraySize(), GL_FALSE, address<float>());
+
             break;
+        }
 
         case Uniform::IVec2:
+        {
             gl().Uniform2iv(location, arraySize(), address<int>());
+
             break;
+        }
 
         case Uniform::IVec3:
+        {
             gl().Uniform3iv(location, arraySize(), address<int>());
+
             break;
+        }
 
         case Uniform::IVec4:
+        {
             gl().Uniform4iv(location, arraySize(), address<int>());
+
             break;
+        }
 
         default:
+        {
             qCDebug(DIGIKAM_QTAV_LOG) << *this;
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Unsupported uniform type in Qt. You should use 'VideoShader::setUserUniformValues()' to call glUniformXXX or directly call glUniformXXX instead");
 
             return false;
+        }
     }
 
     dirty = false;
@@ -330,7 +368,7 @@ QTAV_EXPORT QDebug operator<<(QDebug dbg, const Uniform &u)
     dbg.nospace() << ", dirty: " << u.dirty;
     dbg.nospace() << ", location: " << u.location << ", " << "tupleSize: " << u.tupleSize() << ", ";
 
-    if (u.isBool() || u.isInt())
+    if      (u.isBool() || u.isInt())
     {
         dbg.nospace() << "value: " << u.value<int>();
     }
@@ -403,8 +441,8 @@ QVector<Uniform> ParseUniforms(const QByteArray &text, GLuint programId = 0)
 
         //qCDebug(DIGIKAM_QTAV_LOG) << x;
 
-        u.name = x.at(2).toUtf8();
-        int array_size = 1;
+        u.name              = x.at(2).toUtf8();
+        int array_size      = 1;
 
         if (x.size() > 3)
             array_size = x[3].toInt();

@@ -44,47 +44,47 @@ public:
     enum
     {
         V   = 16,
-        Vec = 1<<V,
+        Vec = 1 << V,
         M   = 20,
-        Mat = 1<<M
+        Mat = 1 << M
     };
 
     enum Type
     {
         Unknown = 0,
-        Bool    = 1<<0,
-        Int     = 1<<1,
-        UInt    = 1<<2,
-        Float   = 1<<3,
-        Double  = 1<<4,
-        Sampler = 1<<5,                 // TODO: i,u sampler2D, i,u image etc
-        BVec2   = Bool|Vec|(2<<(V+1)),
-        BVec3   = Bool|Vec|(3<<(V+1)),
-        BVec4   = Bool|Vec|(4<<(V+1)),
-        IVec2   = Int|Vec|(2<<(V+1)),
-        IVec3   = Int|Vec|(3<<(V+1)),
-        IVec4   = Int|Vec|(4<<(V+1)),
-        UVec2   = UInt|Vec|(2<<(V+1)),
-        UVec3   = UInt|Vec|(3<<(V+1)),
-        UVec4   = UInt|Vec|(4<<(V+1)),
-        Vec2    = Float|Vec|(2<<(V+1)),
-        Vec3    = Float|Vec|(3<<(V+1)),
-        Vec4    = Float|Vec|(4<<(V+1)),
-        Mat2    = Float|Mat|(2<<(M+1)), // TODO: mat2x3 2x4 3x2 3x4 4x3
-        Mat3    = Float|Mat|(3<<(M+1)),
-        Mat4    = Float|Mat|(4<<(M+1)),
-        DMat2   = Double|Mat|(2<<(M+1)),
-        DMat3   = Double|Mat|(3<<(M+1)),
-        DMat4   = Double|Mat|(4<<(M+1)),
+        Bool    = 1 << 0,
+        Int     = 1 << 1,
+        UInt    = 1 << 2,
+        Float   = 1 << 3,
+        Double  = 1 << 4,
+        Sampler = 1 << 5,                         // TODO: i,u sampler2D, i,u image etc
+        BVec2   = Bool   | Vec | (2 << (V + 1)),
+        BVec3   = Bool   | Vec | (3 << (V + 1)),
+        BVec4   = Bool   | Vec | (4 << (V + 1)),
+        IVec2   = Int    | Vec | (2 << (V + 1)),
+        IVec3   = Int    | Vec | (3 << (V + 1)),
+        IVec4   = Int    | Vec | (4 << (V + 1)),
+        UVec2   = UInt   | Vec | (2 << (V + 1)),
+        UVec3   = UInt   | Vec | (3 << (V + 1)),
+        UVec4   = UInt   | Vec | (4 << (V + 1)),
+        Vec2    = Float  | Vec | (2 << (V + 1)),
+        Vec3    = Float  | Vec | (3 << (V + 1)),
+        Vec4    = Float  | Vec | (4 << (V + 1)),
+        Mat2    = Float  | Mat | (2 << (M + 1)), // TODO: mat2x3 2x4 3x2 3x4 4x3
+        Mat3    = Float  | Mat | (3 << (M + 1)),
+        Mat4    = Float  | Mat | (4 << (M + 1)),
+        DMat2   = Double | Mat | (2 << (M + 1)),
+        DMat3   = Double | Mat | (3 << (M + 1)),
+        DMat4   = Double | Mat | (4 << (M + 1))
     };
 
-    bool isBool() const     { return type()&Bool;   }
-    bool isInt() const      { return type()&Int;    }
-    bool isUInt() const     { return type()&UInt;   }
-    bool isFloat() const    { return type()&Float;  }
-    bool isDouble() const   { return type()&Double; }
-    bool isVec() const      { return type()&Vec;    }
-    bool isMat() const      { return type()&Mat;    }
+    bool isBool()   const   { return type() & Bool;   }
+    bool isInt()    const   { return type() & Int;    }
+    bool isUInt()   const   { return type() & UInt;   }
+    bool isFloat()  const   { return type() & Float;  }
+    bool isDouble() const   { return type() & Double; }
+    bool isVec()    const   { return type() & Vec;    }
+    bool isMat()    const   { return type() & Mat;    }
 
     bool       dirty;
     int        location; // TODO: auto resolve location?
@@ -126,7 +126,7 @@ public:
      */
     bool setGL();
 
-    bool operator == (const Uniform &other) const
+    bool operator == (const Uniform& other) const
     {
         if (type() != other.type())
             return false;
@@ -159,8 +159,9 @@ public:
      */
     template<typename T> QVector<T> value() const
     {
-        Q_ASSERT(sizeof(T)*tupleSize()*arraySize() <= data.size()*sizeof(int) && "Bad type or array size");
-        QVector<T> v(tupleSize()*arraySize());
+        Q_ASSERT(sizeof(T) * tupleSize() * arraySize() <= data.size() * sizeof(int) && "Bad type or array size");
+
+        QVector<T> v(tupleSize() * arraySize());
         memcpy((char*)v.data(), (const char*)data.constData(), v.size()*sizeof(T));
 
         return v;
@@ -168,7 +169,7 @@ public:
 
     template<typename T> const T* address() const
     {
-        Q_ASSERT(sizeof(T)*tupleSize()*arraySize() <= data.size()*sizeof(int) && "Bad type or array size");
+        Q_ASSERT(sizeof(T) * tupleSize() * arraySize() <= data.size() * sizeof(int) && "Bad type or array size");
 
         return reinterpret_cast<const T*>(data.constData());
     }
@@ -183,7 +184,7 @@ private:
 
 #ifndef QT_NO_DEBUG_STREAM
 
-QTAV_EXPORT QDebug operator<<(QDebug debug, const Uniform &u);
+QTAV_EXPORT QDebug operator<<(QDebug debug, const Uniform& u);
 QTAV_EXPORT QDebug operator<<(QDebug debug, Uniform::Type ut);
 
 #endif

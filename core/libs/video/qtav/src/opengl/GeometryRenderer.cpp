@@ -38,12 +38,12 @@ namespace QtAV
 {
 
 GeometryRenderer::GeometryRenderer()
-    : g(nullptr)
-    , features_(kVBO | kIBO | kVAO | kMapBuffer)
-    , vbo_size(0)
-    , ibo_size(0)
-    , ibo(QOpenGLBuffer::IndexBuffer)
-    , stride(0)
+    : g         (nullptr),
+      features_ (kVBO | kIBO | kVAO | kMapBuffer),
+      vbo_size  (0),
+      ibo_size  (0),
+      ibo       (QOpenGLBuffer::IndexBuffer),
+      stride    (0)
 {
     static bool disable_ibo = qEnvironmentVariableIntValue("QTAV_NO_IBO") > 0;
     setFeature(kIBO, !disable_ibo);
@@ -152,7 +152,7 @@ void GeometryRenderer::updateGeometry(Geometry *geo)
 
         if (bs == ibo_size)
         {
-            void * p = nullptr;
+            void* p = nullptr;
 
             if (support_map && testFeatures(kMapBuffer))
                 p = ibo.map(QOpenGLBuffer::WriteOnly);
@@ -223,7 +223,7 @@ void GeometryRenderer::updateGeometry(Geometry *geo)
 
 #if QT_VAO
 
-    if (stride == g->stride() && attrib == g->attributes())
+    if ((stride == g->stride()) && (attrib == g->attributes()))
         return;
 
     stride = g->stride();
@@ -237,7 +237,8 @@ void GeometryRenderer::updateGeometry(Geometry *geo)
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("VAO create error");
     }
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("vao updated");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("vao updated");
 
     if (vao.isCreated()) // can not use vao binder because it will create a vao if necessary
         vao.bind();
@@ -247,7 +248,8 @@ void GeometryRenderer::updateGeometry(Geometry *geo)
     if (!vao.isCreated())
         return;
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("geometry attributes changed, rebind vao...");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("geometry attributes changed, rebind vao...");
 
     // call once is enough if no feature and no geometry attribute is changed
 
@@ -295,8 +297,8 @@ void GeometryRenderer::bindBuffers()
     {
         vao.bind(); // vbo, ibo is ok now
         setv_skip = bind_vbo;
-        bind_vbo = false;
-        bind_ibo = false;
+        bind_vbo  = false;
+        bind_ibo  = false;
     }
 
 #endif
@@ -344,8 +346,8 @@ void GeometryRenderer::unbindBuffers()
     {
         vao.release();
         unsetv_skip = unbind_vbo;
-        unbind_vbo = false;
-        unbind_ibo = false;
+        unbind_vbo  = false;
+        unbind_ibo  = false;
     }
 
 #endif //QT_VAO
@@ -385,7 +387,8 @@ void GeometryRenderer::render()
 
     if (g->indexCount() > 0)
     {
-        DYGL(glDrawElements(g->primitive(), g->indexCount(), g->indexType(), ibo.isCreated() ? nullptr : g->indexData())); // null: data in vao or ibo. not null: data in memory
+        DYGL(glDrawElements(g->primitive(), g->indexCount(), g->indexType(),
+             ibo.isCreated() ? nullptr : g->indexData())); // null: data in vao or ibo. not null: data in memory
     }
     else
     {

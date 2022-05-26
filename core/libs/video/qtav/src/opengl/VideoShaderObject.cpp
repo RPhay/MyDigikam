@@ -144,7 +144,7 @@ void VideoShaderObject::programReady()
 
             QMetaMethod mm              = mp.notifySignal();
             QSignalMapper* const mapper = new QSignalMapper();
-            mapper->setMapping(this, i|(st << 16));
+            mapper->setMapping(this, i | (st << 16));
 
             connect(this, mm,
                     mapper, mapper->metaObject()->method(mapper->metaObject()->indexOfSlot("map()")));

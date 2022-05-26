@@ -265,7 +265,7 @@ bool OpenGLVideo::isSupported(VideoFormat::PixelFormat pixfmt)
     return ((pixfmt != VideoFormat::Format_RGB48BE) && (pixfmt != VideoFormat::Format_Invalid));
 }
 
-void OpenGLVideo::setOpenGLContext(QOpenGLContext *ctx)
+void OpenGLVideo::setOpenGLContext(QOpenGLContext* ctx)
 {
     DPTR_D(OpenGLVideo);
 
@@ -458,7 +458,7 @@ void OpenGLVideo::setSaturation(qreal value)
     d_func().material->setSaturation(value);
 }
 
-void OpenGLVideo::setUserShader(VideoShader *shader)
+void OpenGLVideo::setUserShader(VideoShader* shader)
 {
     d_func().user_shader = shader;
 }

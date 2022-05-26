@@ -61,7 +61,7 @@ public:
     static const int kVBO       = 0x01;
     static const int kIBO       = 0x02;
     static const int kVAO       = 0x04;
-    static const int kMapBuffer = 1<<16;
+    static const int kMapBuffer = 1 << 16;
 
     // TODO: VAB, VBUM etc.
 

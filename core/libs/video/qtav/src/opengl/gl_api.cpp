@@ -31,7 +31,7 @@
 namespace QtAV
 {
 
-typedef void *(*GetProcAddress_t)(const char *);
+typedef void* (*GetProcAddress_t)(const char *);
 
 static GetProcAddress_t sGetProcAddress;
 
@@ -68,7 +68,7 @@ static void* GetProcAddressWithExt(GetProcAddress_t get, const char *name)
     if (fp)
         return fp;
 
-    static const char *ext[] =
+    static const char* ext[] =
     {
         "ARB", "OES", "EXT", "ANGLE", "NV" // TODO: MESA, INTEL?
 
@@ -81,7 +81,7 @@ static void* GetProcAddressWithExt(GetProcAddress_t get, const char *name)
         , nullptr
     };
 
-    char f[512];
+    char f[512] = { 0 };
     memcpy(f, name, strlen(name));
     char* const p = f + strlen(name);
 
@@ -101,7 +101,7 @@ static void* GetProcAddressWithExt(GetProcAddress_t get, const char *name)
     return nullptr;
 }
 
-static void* GetProcAddressDefault(const char *name)
+static void* GetProcAddressDefault(const char* name)
 {
     return GetProcAddressWithExt(GetProcAddress_Qt, name);
 }
@@ -141,7 +141,7 @@ static void* GetProcAddressDefault(const char *name)
 #define GL_RESOLVE_NONE(name) do { name = nullptr;}while(0)
 #define GL_RESOLVE_EXT(name) do {\
     void** fp = (void**)(&name); \
-    *fp = GetProcAddressDefault("gl" # name); \
+    *fp       = GetProcAddressDefault("gl" # name); \
 } while(0)
 
 #ifdef GETPROCADDRESS_RESOLVE
@@ -154,7 +154,7 @@ static void* GetProcAddressDefault(const char *name)
 
 #define WGL_RESOLVE(name) do {\
     void** fp = (void**)(&name); \
-    *fp = sGetProcAddress("wgl" # name); \
+    *fp       = sGetProcAddress("wgl" # name); \
 } while(0)
 
 void api::resolve()

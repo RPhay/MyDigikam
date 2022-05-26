@@ -65,9 +65,9 @@ static const char kFrag[] = GLSL
 );
 
 SubImagesRenderer::SubImagesRenderer()
-    : m_geometry(new SubImagesGeometry())
-    , m_renderer(new GeometryRenderer())
-    , m_tex(0)
+    : m_geometry(new SubImagesGeometry()),
+      m_renderer(new GeometryRenderer()),
+      m_tex     (0)
 {
 }
 
@@ -77,9 +77,9 @@ SubImagesRenderer::~SubImagesRenderer()
     delete m_renderer;
 }
 
-void SubImagesRenderer::render(const SubImageSet &ass, const QRect &target, const QMatrix4x4 &transform)
+void SubImagesRenderer::render(const SubImageSet& ass, const QRect& target, const QMatrix4x4& transform)
 {
-    if (m_geometry->setSubImages(ass) || m_rect != target)
+    if (m_geometry->setSubImages(ass) || (m_rect != target))
     {
         m_rect = target;
 

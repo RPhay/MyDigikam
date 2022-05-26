@@ -66,7 +66,7 @@ class Q_DECL_HIDDEN EGLLib : public ::capi::dso
 {
 public:
 
-    virtual void* resolve(const char *symbol) override
+    virtual void* resolve(const char* symbol) override
     {
 
 #ifndef __MINGW32__ // krazy:exclude=cpp
@@ -79,9 +79,9 @@ public:
         // The def file does not provide any aliases in libEGL and libGLESv2 in these builds which results in exporting function names like eglInitialize@12.
         // This cannot be fixed without breaking binary compatibility. So be flexible here instead.
 
-        void *proc = 0;
+        void* proc = nullptr;
 
-        for (int n = -4 ; !proc && n <= 64 ; n += 4)
+        for (int n = -4 ; (!proc && (n <= 64)) ; n += 4)
         {
             if (n < 0)
             {

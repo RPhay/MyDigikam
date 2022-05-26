@@ -73,7 +73,7 @@ namespace OpenGLHelper
 
 int depth16BitTexture()
 {
-    static int depth = (qEnvironmentVariableIntValue("QTAV_TEXTURE16_DEPTH") == 8 ? 8 : 16); // 8 ? 8 : 16;
+    static int depth = ((qEnvironmentVariableIntValue("QTAV_TEXTURE16_DEPTH") == 8) ? 8 : 16); // 8 ? 8 : 16;
 
     return depth;
 }
@@ -335,7 +335,7 @@ bool isOpenGLES()
     return false;
 }
 
-bool hasExtensionEGL(const char *exts[])
+bool hasExtensionEGL(const char* exts[])
 {
     if (!isEGL())
         return false;
@@ -407,7 +407,9 @@ bool hasExtension(const char* exts[])
 
 #endif
 
+        {
             return true;
+        }
     }
 
     return false;
@@ -1162,6 +1164,7 @@ int bytesOfGLFormat(GLenum format, GLenum dataType) // TODO: rename bytesOfTexel
         case GL_UNSIGNED_BYTE:
         {
             // NOTE: mpv returns 2
+
             component_size = 1;
 
             break;

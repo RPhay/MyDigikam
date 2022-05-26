@@ -135,32 +135,32 @@ struct api
 
     // TODO: static, so gl::GetString
 
-    const  GLubyte *(GL_APIENTRY *GetString)(GLenum);
-    GLenum (GL_APIENTRY *GetError)(void);
-    void   (GL_APIENTRY *ActiveTexture)(GLenum);
-    void   (GL_APIENTRY *BindFramebuffer)(GLenum target, GLuint framebuffer);
-    GLint  (GL_APIENTRY *GetUniformLocation)(GLuint, const GLchar *);
-    void   (GL_APIENTRY *Uniform1f)(GLint, GLfloat);
-    void   (GL_APIENTRY *Uniform2f)(GLint, GLfloat, GLfloat);
-    void   (GL_APIENTRY *Uniform3f)(GLint, GLfloat, GLfloat, GLfloat);
-    void   (GL_APIENTRY *Uniform4f)(GLint, GLfloat, GLfloat, GLfloat, GLfloat);
-    void   (GL_APIENTRY *Uniform1fv)(GLint location, GLsizei count, const GLfloat *value);
-    void   (GL_APIENTRY *Uniform2fv)(GLint location, GLsizei count, const GLfloat *value);
-    void   (GL_APIENTRY *Uniform3fv)(GLint location, GLsizei count, const GLfloat *value);
-    void   (GL_APIENTRY *Uniform4fv)(GLint location, GLsizei count, const GLfloat *value);
-    void   (GL_APIENTRY *Uniform1iv)(GLint location, GLsizei count, const GLint *value);
-    void   (GL_APIENTRY *Uniform2iv)(GLint location, GLsizei count, const GLint *value);
-    void   (GL_APIENTRY *Uniform3iv)(GLint location, GLsizei count, const GLint *value);
-    void   (GL_APIENTRY *Uniform4iv)(GLint location, GLsizei count, const GLint *value);
-    void   (GL_APIENTRY *UniformMatrix2fv)(GLint, GLsizei, GLboolean, const GLfloat *);
-    void   (GL_APIENTRY *UniformMatrix3fv)(GLint, GLsizei, GLboolean, const GLfloat *);
-    void   (GL_APIENTRY *UniformMatrix4fv)(GLint location, GLsizei count, GLboolean transpose, const GLfloat *value);
-    void   (GL_APIENTRY *BlendFuncSeparate)(GLenum srcRGB, GLenum dstRGB, GLenum srcAlpha, GLenum dstAlpha);
+    const  GLubyte* (GL_APIENTRY* GetString)(GLenum);
+    GLenum (GL_APIENTRY* GetError)(void);
+    void   (GL_APIENTRY* ActiveTexture)(GLenum);
+    void   (GL_APIENTRY* BindFramebuffer)(GLenum target, GLuint framebuffer);
+    GLint  (GL_APIENTRY* GetUniformLocation)(GLuint, const GLchar*);
+    void   (GL_APIENTRY* Uniform1f)(GLint, GLfloat);
+    void   (GL_APIENTRY* Uniform2f)(GLint, GLfloat, GLfloat);
+    void   (GL_APIENTRY* Uniform3f)(GLint, GLfloat, GLfloat, GLfloat);
+    void   (GL_APIENTRY* Uniform4f)(GLint, GLfloat, GLfloat, GLfloat, GLfloat);
+    void   (GL_APIENTRY* Uniform1fv)(GLint location, GLsizei count, const GLfloat* value);
+    void   (GL_APIENTRY* Uniform2fv)(GLint location, GLsizei count, const GLfloat* value);
+    void   (GL_APIENTRY* Uniform3fv)(GLint location, GLsizei count, const GLfloat* value);
+    void   (GL_APIENTRY* Uniform4fv)(GLint location, GLsizei count, const GLfloat* value);
+    void   (GL_APIENTRY* Uniform1iv)(GLint location, GLsizei count, const GLint* value);
+    void   (GL_APIENTRY* Uniform2iv)(GLint location, GLsizei count, const GLint* value);
+    void   (GL_APIENTRY* Uniform3iv)(GLint location, GLsizei count, const GLint* value);
+    void   (GL_APIENTRY* Uniform4iv)(GLint location, GLsizei count, const GLint* value);
+    void   (GL_APIENTRY* UniformMatrix2fv)(GLint, GLsizei, GLboolean, const GLfloat*);
+    void   (GL_APIENTRY* UniformMatrix3fv)(GLint, GLsizei, GLboolean, const GLfloat*);
+    void   (GL_APIENTRY* UniformMatrix4fv)(GLint location, GLsizei count, GLboolean transpose, const GLfloat* value);
+    void   (GL_APIENTRY* BlendFuncSeparate)(GLenum srcRGB, GLenum dstRGB, GLenum srcAlpha, GLenum dstAlpha);
 
     // Before using the following members, check null ptr first because they are not valid everywhere
     // ES3.1
 
-    void   (GL_APIENTRY *GetTexLevelParameteriv)(GLenum, GLint, GLenum, GLint *);
+    void   (GL_APIENTRY *GetTexLevelParameteriv)(GLenum, GLint, GLenum, GLint*);
 
 #   if defined(Q_OS_WIN32)
 //      #include <GL/wglext.h> //not found in vs2013
@@ -171,14 +171,14 @@ struct api
 #           define WGL_ACCESS_WRITE_DISCARD_NV       0x00000002
 #       endif
 
-    BOOL   (WINAPI* DXSetResourceShareHandleNV)(void *dxObject, HANDLE shareHandle);
-    HANDLE (WINAPI* DXOpenDeviceNV)(void *dxDevice);
+    BOOL   (WINAPI* DXSetResourceShareHandleNV)(void* dxObject, HANDLE shareHandle);
+    HANDLE (WINAPI* DXOpenDeviceNV)(void* dxDevice);
     BOOL   (WINAPI* DXCloseDeviceNV)(HANDLE hDevice);
     HANDLE (WINAPI* DXRegisterObjectNV)(HANDLE hDevice, void *dxObject, GLuint name, GLenum type, GLenum access);
     BOOL   (WINAPI* DXUnregisterObjectNV)(HANDLE hDevice, HANDLE hObject);
     BOOL   (WINAPI* DXObjectAccessNV)(HANDLE hObject, GLenum access);
-    BOOL   (WINAPI* DXLockObjectsNV)(HANDLE hDevice, GLint count, HANDLE *hObjects);
-    BOOL   (WINAPI* DXUnlockObjectsNV)(HANDLE hDevice, GLint count, HANDLE *hObjects);
+    BOOL   (WINAPI* DXLockObjectsNV)(HANDLE hDevice, GLint count, HANDLE* hObjects);
+    BOOL   (WINAPI* DXUnlockObjectsNV)(HANDLE hDevice, GLint count, HANDLE* hObjects);
 
 #   endif
 

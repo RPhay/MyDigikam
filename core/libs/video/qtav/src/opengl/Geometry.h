@@ -53,21 +53,18 @@ enum DataType
 
 class QTAV_EXPORT Attribute
 {
-    bool        m_normalize;
-    DataType    m_type;
-    int         m_tupleSize, m_offset;
-    QByteArray  m_name;
-
 public:
 
-    explicit Attribute(DataType type = TypeF32, int tupleSize = 0, int offset = 0, bool normalize = false);
-    explicit Attribute(const QByteArray& name, DataType type = TypeF32, int tupleSize = 0, int offset = 0, bool normalize = false);
+    explicit Attribute(DataType type = TypeF32, int tupleSize = 0,
+                       int offset = 0, bool normalize = false);
+    explicit Attribute(const QByteArray& name, DataType type = TypeF32,
+                       int tupleSize = 0, int offset = 0, bool normalize = false);
 
     QByteArray name() const { return m_name;      }
-    DataType type() const   { return m_type;      }
-    int tupleSize() const   { return m_tupleSize; }
-    int offset() const      { return m_offset;    }
-    bool normalize() const  { return m_normalize; }
+    DataType type()   const { return m_type;      }
+    int tupleSize()   const { return m_tupleSize; }
+    int offset()      const { return m_offset;    }
+    bool normalize()  const { return m_normalize; }
 
     bool operator==(const Attribute& other) const
     {
@@ -76,6 +73,13 @@ public:
                 (type()      == other.type())      &&
                 (normalize() == other.normalize()));
     }
+
+private:
+
+    bool        m_normalize;
+    DataType    m_type;
+    int         m_tupleSize, m_offset;
+    QByteArray  m_name;
 };
 
 #ifndef QT_NO_DEBUG_STREAM
@@ -102,7 +106,7 @@ public:
     {
         Triangles     = 0x0004,
         TriangleStrip = 0x0005, ///< default
-        TriangleFan   = 0x0006, ///< Not recommended
+        TriangleFan   = 0x0006  ///< Not recommended
     };
 
     explicit Geometry(int vertexCount = 0, int indexCount = 0, DataType indexType = TypeU16);
@@ -123,23 +127,23 @@ public:
 
     virtual const QVector<Attribute>& attributes() const = 0;
 
-    void* vertexData()                  { return m_vdata.data();                                }
-    const void* vertexData() const      { return m_vdata.constData();                           }
-    const void* constVertexData() const { return m_vdata.constData();                           }
+    void* vertexData()                  { return m_vdata.data();                                  }
+    const void* vertexData() const      { return m_vdata.constData();                             }
+    const void* constVertexData() const { return m_vdata.constData();                             }
 
     void dumpVertexData();
 
-    void* indexData()                   { return m_icount > 0 ? m_idata.data()      : nullptr;  }
-    const void* indexData() const       { return m_icount > 0 ? m_idata.constData() : nullptr;  }
-    const void* constIndexData() const  { return m_icount > 0 ? m_idata.constData() : nullptr;  }
-    int indexCount() const              { return m_icount;                                      }
+    void* indexData()                   { return (m_icount > 0) ? m_idata.data()      : nullptr;  }
+    const void* indexData() const       { return (m_icount > 0) ? m_idata.constData() : nullptr;  }
+    const void* constIndexData() const  { return (m_icount > 0) ? m_idata.constData() : nullptr;  }
+    int indexCount() const              { return m_icount;                                        }
 
     int indexDataSize() const;
 
     // GL_UNSIGNED_BYTE/SHORT/INT
 
-    DataType indexType() const          { return m_itype;                                       }
-    void setIndexType(DataType value)   { m_itype = value;                                      }
+    DataType indexType() const          { return m_itype;                                         }
+    void setIndexType(DataType value)   { m_itype = value;                                        }
 
     void setIndexValue(int index, int value);
     void setIndexValue(int index, int v1, int v2, int v3); // a triangle
@@ -226,7 +230,7 @@ public:
     void setResolution(int w, int h); // >= 2x2
     void setRadius(float value);
     float radius() const;
-    void create()      override;
+    void create()        override;
 
     int stride()   const override
     {

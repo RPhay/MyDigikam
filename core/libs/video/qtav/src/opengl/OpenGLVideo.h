@@ -86,6 +86,7 @@ public:
      */
     void setOpenGLContext(QOpenGLContext* ctx);
     QOpenGLContext* openGLContext();
+
     void setCurrentFrame(const VideoFrame& frame);
     void fill(const QColor& color);
 

@@ -69,7 +69,7 @@ VideoShader::~VideoShader()
  */
 char const *const* VideoShader::attributeNames() const
 {
-    static const char *names[] =
+    static const char* names[] =
     {
         "a_Position",
         "a_TexCoords0",
@@ -81,7 +81,7 @@ char const *const* VideoShader::attributeNames() const
 
     DPTR_D(const VideoShader);
 
-    static const char *names_multicoord[] =
+    static const char* names_multicoord[] =
     {
         "a_Position",
         "a_TexCoords0",
@@ -92,7 +92,7 @@ char const *const* VideoShader::attributeNames() const
 
 #if YUVA_DONE
 
-    static const char *names_multicoord_4[] =
+    static const char* names_multicoord_4[] =
     {
         "a_Position",
         "a_TexCoords0",
@@ -317,7 +317,9 @@ void VideoShader::initialize(QOpenGLShaderProgram* shaderProgram)
     {
         const QString tex_var = QString::fromUtf8("u_Texture%1").arg(i);
         d.u_Texture[i]        = shaderProgram->uniformLocation(tex_var);
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%s: %d", tex_var.toUtf8().constData(), d.u_Texture[i]);
+
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("%s: %d", tex_var.toUtf8().constData(), d.u_Texture[i]);
     }
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("u_Matrix: %d", d.u_Matrix);
@@ -670,7 +672,7 @@ void VideoMaterial::setCurrentFrame(const VideoFrame& frame)
 
         // FIXME: not thread safe (in qml)
 
-        d.target = new_target;
+        d.target                 = new_target;
         d.init_textures_required = true;
     }
 
@@ -746,7 +748,7 @@ void VideoMaterial::setCurrentFrame(const VideoFrame& frame)
 
     static const ColorRange kRgbDispRange = qgetenv("QTAV_DISPLAY_RGB_RANGE") == "limited" ? ColorRange_Limited : ColorRange_Full;
     d.colorTransform.setOutputColorRange(kRgbDispRange);
-    d.frame = frame;
+    d.frame                               = frame;
 
     if (fmt != d.video_format)
     {
@@ -784,11 +786,11 @@ QString VideoMaterial::typeName(qint32 value)
 {
     return QString::fromUtf8("gl material 16to8bit: %1, planar: %2, has alpha: %3, 2d texture: %4, 2nd plane rg: %5, xyz: %6")
             .arg(!!(value&1))
-            .arg(!!(value&(1<<1)))
-            .arg(!!(value&(1<<2)))
-            .arg(!!(value&(1<<3)))
-            .arg(!!(value&(1<<4)))
-            .arg(!!(value&(1<<5)))
+            .arg(!!(value&(1 << 1)))
+            .arg(!!(value&(1 << 2)))
+            .arg(!!(value&(1 << 3)))
+            .arg(!!(value&(1 << 4)))
+            .arg(!!(value&(1 << 5)))
     ;
 }
 
@@ -1255,7 +1257,7 @@ bool VideoMaterialPrivate::initPBO(int plane, int size)
     if (!pb.bind())
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-            << QString::asprintf("Failed to bind PBO for plane %d!!!!!!", plane);
+            << QString::asprintf("Failed to bind PBO for plane %d!", plane);
 
         try_pbo = false;
 
@@ -1356,7 +1358,7 @@ bool VideoMaterialPrivate::updateTextureParameters(const VideoFormat& fmt)
     qCDebug(DIGIKAM_QTAV_LOG) << "texture data type: " << data_type;
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
-        << QString::asprintf("///////////bpp %d, bpc: %d",
+        << QString::asprintf("bpp %d, bpc: %d",
             fmt.bytesPerPixel(), fmt.bitsPerComponent());
 
     for (int i = 0 ; i < nb_planes ; ++i)
@@ -1591,7 +1593,8 @@ bool VideoMaterialPrivate::ensureTextures()
             {
                 DYGL(glGenTextures(1, &tex));
                 owns_texture[tex] = true;
-                initTexture(tex, internal_format[p], data_format[p], data_type[p], texture_size[p].width(), texture_size[p].height());
+                initTexture(tex, internal_format[p], data_format[p], data_type[p],
+                            texture_size[p].width(), texture_size[p].height());
             }
 
             qCDebug(DIGIKAM_QTAV_LOG).noquote()

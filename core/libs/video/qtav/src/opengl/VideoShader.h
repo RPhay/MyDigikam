@@ -244,33 +244,33 @@ public:
     }
 
     void setCurrentFrame(const VideoFrame& frame);
-    VideoFormat currentFormat() const;
-    VideoShader* createShader() const;
-    virtual qint32 type() const;
+    VideoFormat currentFormat()             const;
+    VideoShader* createShader()             const;
+    virtual qint32 type()                   const;
     static QString typeName(qint32 value);
 
     bool bind(); // TODO: roi
     void unbind();
     int compare(const VideoMaterial* other) const;
 
-    int textureTarget() const;
+    int textureTarget()                     const;
 
     /*!
      * \brief isDirty
      * \return true if material type changed, or other properties changed, e.g. 8bit=>10bit (the same material type) and eq
      */
-    bool isDirty() const;
+    bool isDirty()                          const;
 
     /*!
      * \brief setDirty
      * Call it after frame is rendered, i.e. after VideoShader::update(VideoMaterial*)
      */
     void setDirty(bool value);
-    const QMatrix4x4& colorMatrix() const;
-    const QMatrix4x4& channelMap() const;
-    int bitsPerComponent() const; // 0 if the value of components are different
-    QVector2D vectorTo8bit() const;
-    int planeCount() const;
+    const QMatrix4x4& colorMatrix()         const;
+    const QMatrix4x4& channelMap()          const;
+    int bitsPerComponent()                  const; // 0 if the value of components are different
+    QVector2D vectorTo8bit()                const;
+    int planeCount()                        const;
 
     /*!
      * \brief validTextureWidth
@@ -285,33 +285,33 @@ public:
      * | <- aligned width ->|
      * \return valid width ratio
      */
-    qreal validTextureWidth() const;
-    QSize frameSize() const;
+    qreal validTextureWidth()               const;
+    QSize frameSize()                       const;
 
     /*!
      * \brief texelSize
      * The size of texture unit
      * \return (1.0/textureWidth, 1.0/textureHeight)
      */
-    QSizeF texelSize(int plane) const; //vec2?
+    QSizeF texelSize(int plane)             const; // vec2?
 
     /*!
      * \brief texelSize
      * For GLSL. 1 for rectangle texture, 1/(width, height) for 2d texture
      */
-    QVector<QVector2D> texelSize() const;
+    QVector<QVector2D> texelSize()          const;
 
     /*!
      * \brief textureSize
      * It can be used with a uniform to emulate GLSL textureSize() which exists in new versions.
      */
-    QSize textureSize(int plane) const;
+    QSize textureSize(int plane)            const;
 
     /*!
      * \brief textureSize
      * For GLSL. Not normalized
      */
-    QVector<QVector2D> textureSize() const;
+    QVector<QVector2D> textureSize()        const;
 
     /*!
      * \brief normalizedROI
@@ -328,15 +328,15 @@ public:
      * \return
      * point or rect in current texture valid coordinates. \sa validTextureWidth()
      */
-    QPointF mapToTexture(int plane, const QPointF& p, int normalize = -1) const;
-    QRectF mapToTexture(int plane, const QRectF& r, int normalize = -1) const;
-    qreal brightness() const;
+    QPointF mapToTexture(int plane, const QPointF& p, int normalize = -1)   const;
+    QRectF mapToTexture(int plane, const QRectF& r, int normalize = -1)     const;
+    qreal brightness()                                                      const;
     void setBrightness(qreal value);
-    qreal contrast() const;
+    qreal contrast()                                                        const;
     void setContrast(qreal value);
-    qreal hue() const;
+    qreal hue()                                                             const;
     void setHue(qreal value);
-    qreal saturation() const;
+    qreal saturation()                                                      const;
     void setSaturation(qreal value);
 
 protected:
