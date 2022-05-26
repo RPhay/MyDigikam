@@ -68,7 +68,7 @@ protected:
 private:
 
     static void MakeInstance();
-    static void  DestroySingleton();
+    static void DestroySingleton();
 
     static T* pInstance_;
     static bool destroyed_;
@@ -82,10 +82,10 @@ private:
 // TODO: use static Singleton<T> inst; return inst;
 
 template<typename T>
-T* Singleton<T>::pInstance_ = nullptr; // Why it will be initialized twice? The order?
+T* Singleton<T>::pInstance_; // Why it will be initialized twice? The order?
 
 template<typename T>
-bool Singleton<T>::destroyed_ = false;
+bool Singleton<T>::destroyed_;
 
 template<typename T>
 T &Singleton<T>::Instance()

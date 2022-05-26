@@ -179,7 +179,7 @@ namespace Internal
 namespace Path
 {
 
-QString toLocal(const QString &fullPath)
+QString toLocal(const QString& fullPath)
 {
     return getLocalPath(fullPath);
 }
@@ -304,7 +304,7 @@ void setOptionsToFFmpegObj(const QVariant& opt, void* obj)
     if (!opt.isValid())
         return;
 
-    AVClass* c = obj ? *(AVClass**)obj : nullptr;
+    AVClass* const c = (obj ? *(AVClass**)obj : nullptr);
 
     if (c)
     {

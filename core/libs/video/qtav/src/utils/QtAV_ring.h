@@ -80,7 +80,7 @@ public:
 
     bool empty() const
     {
-        return size() == 0;
+        return (size() == 0);
     }
 
     // need at() []?

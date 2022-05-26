@@ -33,7 +33,7 @@
 #define QTAV_VERSION_PATCH(V) (V & 0xff)
 
 #define QTAV_VERSION_CHK(major, minor, patch) \
-    (((major&0xff)<<16) | ((minor&0xff)<<8) | (patch&0xff))
+    (((major & 0xff) << 16) | ((minor & 0xff) << 8) | (patch & 0xff))
 
 #define QTAV_VERSION QTAV_VERSION_CHK(QTAV_MAJOR, QTAV_MINOR, QTAV_PATCH)
 

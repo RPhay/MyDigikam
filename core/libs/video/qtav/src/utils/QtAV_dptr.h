@@ -146,7 +146,7 @@ protected:
 
 private:
 
-    PUB* dptr_p_ptr;
+    PUB* dptr_p_ptr = nullptr;
 };
 
 // interface
@@ -194,7 +194,7 @@ private:
     DPtrInterface(const DPtrInterface&);
     DPtrInterface& operator=(const DPtrInterface&);
 
-    DPtrPrivate<PUB>* pvt;
+    DPtrPrivate<PUB>* pvt = nullptr;
 };
 
 #endif // QTAV_DPTR_H

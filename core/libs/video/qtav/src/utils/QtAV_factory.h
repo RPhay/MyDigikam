@@ -226,7 +226,7 @@ typename Factory<Id, T, Class>::ID Factory<Id, T, Class>::id(const char* name, b
 
     // need 'typename'  because 'Factory<Id, T, Class>::NameMap' is a dependent scope
 
-    for (typename NameMap::const_iterator it = name_map.begin() ; it!=name_map.end() ; ++it)
+    for (typename NameMap::const_iterator it = name_map.begin() ; it != name_map.end() ; ++it)
     {
         if (caseSensitive)
         {
