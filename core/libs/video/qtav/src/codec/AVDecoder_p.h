@@ -135,7 +135,7 @@ public:
 
 #ifndef HAVE_FFMPEG_VERSION5
 
-        AVCodec* const c = avcodec_find_decoder(id);
+        AVCodec* const c       = avcodec_find_decoder(id);
 
 #else // ffmpeg >= 5
 

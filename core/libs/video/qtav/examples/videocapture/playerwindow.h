@@ -32,12 +32,12 @@
 
 #include "QtAV.h"
 
-QT_BEGIN_NAMESPACE
+
 class QSlider;
 class QPushButton;
 class QLabel;
 class QCheckBox;
-QT_END_NAMESPACE
+
 
 class PlayerWindow : public QWidget
 {

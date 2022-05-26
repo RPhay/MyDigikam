@@ -39,11 +39,11 @@
  * QPainterFilterContext, D2DFilterContext, ...
  */
 
-QT_BEGIN_NAMESPACE
+
 class QPainter;
 class QPaintDevice;
 class QTextDocument;
-QT_END_NAMESPACE
+
 
 namespace QtAV
 {

@@ -33,9 +33,9 @@
 #include "AVPlayerCore.h"
 #include "WidgetRenderer.h"
 
-QT_BEGIN_NAMESPACE
+
 class QMenu;
-QT_END_NAMESPACE
+
 
 class VideoWall : public QObject
 {

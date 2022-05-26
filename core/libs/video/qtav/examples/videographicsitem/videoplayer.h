@@ -33,9 +33,9 @@
 #include "AVPlayerCore.h"
 #include "GraphicsItemRenderer.h"
 
-QT_BEGIN_NAMESPACE
+
 class QGraphicsView;
-QT_END_NAMESPACE
+
 
 class VideoPlayer : public QWidget
 {

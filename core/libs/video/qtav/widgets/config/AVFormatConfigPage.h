@@ -33,11 +33,11 @@
 #include "QtAVWidgets_Global.h"
 #include "ConfigPageBase.h"
 
-QT_BEGIN_NAMESPACE
+
 class QCheckBox;
 class QSpinBox;
 class QLineEdit;
-QT_END_NAMESPACE
+
 
 namespace QtAV
 {

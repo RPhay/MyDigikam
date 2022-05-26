@@ -40,9 +40,9 @@
 #include "PacketBuffer.h"
 #include "QtAV_ring.h"
 
-QT_BEGIN_NAMESPACE
+
 class QRunnable;
-QT_END_NAMESPACE
+
 
 namespace QtAV
 {

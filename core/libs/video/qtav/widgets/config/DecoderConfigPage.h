@@ -35,12 +35,12 @@
 #include "ConfigPageBase.h"
 #include "VideoDecoder.h"
 
-QT_BEGIN_NAMESPACE
+
 class QListWidget;
 class QToolButton;
 class QSpinBox;
 class QVBoxLayout;
-QT_END_NAMESPACE
+
 
 namespace QtAV
 {

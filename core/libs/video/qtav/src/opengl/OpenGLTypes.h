@@ -193,12 +193,12 @@ QTAV_EXPORT QDebug operator<<(QDebug debug, Uniform::Type ut);
 
 #if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 
-QT_BEGIN_NAMESPACE
+
 Q_DECLARE_METATYPE(QVector<double>)
 Q_DECLARE_METATYPE(QVector<float>)
 Q_DECLARE_METATYPE(QVector<int>)
 Q_DECLARE_METATYPE(QVector<unsigned>)
-QT_END_NAMESPACE
+
 
 #endif
 

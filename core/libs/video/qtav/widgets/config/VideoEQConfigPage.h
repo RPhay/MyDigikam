@@ -32,12 +32,12 @@
 
 #include "QtAVWidgets_Global.h"
 
-QT_BEGIN_NAMESPACE
+
 class QCheckBox;
 class QComboBox;
 class QPushButton;
 class QSlider;
-QT_END_NAMESPACE
+
 
 namespace QtAV
 {

@@ -43,10 +43,10 @@
  * use matrix to compute out rect, mapped point etc
  */
 
-QT_BEGIN_NAMESPACE
+
 class QObject;
 class QWidget;
-QT_END_NAMESPACE
+
 
 namespace QtAV
 {

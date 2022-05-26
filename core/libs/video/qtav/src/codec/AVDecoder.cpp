@@ -78,7 +78,7 @@ static const AVCodec* get_codec(const QString& name, const QString& hwa, AVCodec
     return nullptr;
 }
 
-AVDecoder::AVDecoder(AVDecoderPrivate &d)
+AVDecoder::AVDecoder(AVDecoderPrivate& d)
     : DPTR_INIT(&d)
 {
 
@@ -344,7 +344,7 @@ void* AVDecoder::codecContext() const
     return d_func().codec_ctx;
 }
 
-void AVDecoder::setCodecName(const QString &name)
+void AVDecoder::setCodecName(const QString& name)
 {
     DPTR_D(AVDecoder);
 
@@ -373,7 +373,7 @@ int AVDecoder::undecodedSize() const
     return d_func().undecoded_size;
 }
 
-void AVDecoder::setOptions(const QVariantHash &dict)
+void AVDecoder::setOptions(const QVariantHash& dict)
 {
     DPTR_D(AVDecoder);
 

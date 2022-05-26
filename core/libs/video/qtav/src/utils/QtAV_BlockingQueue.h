@@ -36,9 +36,9 @@
 
 // TODO: block full and empty condition separately
 
-QT_BEGIN_NAMESPACE
+
 template<typename T> class QQueue;
-QT_END_NAMESPACE
+
 
 namespace QtAV
 {

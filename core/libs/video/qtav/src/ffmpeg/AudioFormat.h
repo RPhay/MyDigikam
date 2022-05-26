@@ -33,9 +33,9 @@
 
 #include "QtAV_Global.h"
 
-QT_BEGIN_NAMESPACE
+
 class QDebug;
-QT_END_NAMESPACE
+
 
 namespace QtAV
 {

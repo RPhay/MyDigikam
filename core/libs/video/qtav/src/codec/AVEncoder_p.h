@@ -45,11 +45,11 @@ class QTAV_PRIVATE_EXPORT AVEncoderPrivate : public DPtrPrivate<AVEncoder>
 public:
 
     AVEncoderPrivate()
-      : avctx         (nullptr)
-      , is_open       (false)
-      , bit_rate      (0)
-      , timestamp_mode(0)
-      , dict          (nullptr)
+      : avctx         (nullptr),
+        is_open       (false),
+        bit_rate      (0),
+        timestamp_mode(0),
+        dict          (nullptr)
     {
     }
 
@@ -105,8 +105,8 @@ public:
 
     AudioEncoderPrivate()
         : AVEncoderPrivate(),
-          resampler (nullptr),
-          frame_size(0)
+          resampler       (nullptr),
+          frame_size      (0)
     {
         bit_rate = 64000;
     }
@@ -131,12 +131,12 @@ class QTAV_PRIVATE_EXPORT VideoEncoderPrivate : public AVEncoderPrivate
 public:
 
     VideoEncoderPrivate()
-      : AVEncoderPrivate()
-      , width      (0)
-      , height     (0)
-      , frame_rate (-1)
-      , format_used(VideoFormat::Format_Invalid)
-      , format     (format_used)
+      : AVEncoderPrivate(),
+        width      (0),
+        height     (0),
+        frame_rate (-1),
+        format_used(VideoFormat::Format_Invalid),
+        format     (format_used)
     {
         bit_rate = 400000;
     }

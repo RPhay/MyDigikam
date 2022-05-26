@@ -34,9 +34,9 @@
 #   define QOpenGLFramebufferObject QGLFramebufferObject
 #endif
 
-QT_BEGIN_NAMESPACE
+
 class QOpenGLFramebufferObject;
-QT_END_NAMESPACE
+
 
 namespace QtAV
 {

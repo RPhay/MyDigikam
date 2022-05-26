@@ -34,10 +34,10 @@
 
 #include "QtAVWidgets_Global.h"
 
-QT_BEGIN_NAMESPACE
+
 class QAction;
 class QWidget;
-QT_END_NAMESPACE
+
 
 namespace QtAV
 {

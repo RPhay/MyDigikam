@@ -29,12 +29,12 @@
 #include "QtAVWidgets_Global.h"
 #include "ConfigPageBase.h"
 
-QT_BEGIN_NAMESPACE
+
 class QCheckBox;
 class QComboBox;
 class QLabel;
 class QTextEdit;
-QT_END_NAMESPACE
+
 
 namespace QtAV
 {
