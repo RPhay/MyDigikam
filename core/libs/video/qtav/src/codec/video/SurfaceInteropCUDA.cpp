@@ -40,7 +40,7 @@ namespace cuda
 {
 
 InteropResource::InteropResource()
-    : cuda_api(),
+    : cuda_api (),
       share_ctx(false),
       dev      (0),
       ctx      (nullptr),
@@ -158,7 +158,8 @@ HostInteropResource::~HostInteropResource()
     }
 }
 
-bool HostInteropResource::map(int picIndex, const CUVIDPROCPARAMS& param, GLuint tex, int w, int h, int H, int plane)
+bool HostInteropResource::map(int picIndex, const CUVIDPROCPARAMS& param,
+                              GLuint tex, int w, int h, int H, int plane)
 {
     Q_UNUSED(w);
 
@@ -198,7 +199,7 @@ bool HostInteropResource::map(int picIndex, const CUVIDPROCPARAMS& param, GLuint
     // chroma pitch for gl is 1/2 (gl_rg)
     // texture height is not coded height!
 
-    DYGL(glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, host_mem.pitch>>chroma,
+    DYGL(glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, host_mem.pitch >> chroma,
                          h >> chroma, format[plane], dtype[plane],
                          host_mem.data + chroma * host_mem.pitch * host_mem.height));
 
@@ -242,7 +243,7 @@ bool HostInteropResource::ensureResource(int pitch, int height)
 
     // NV12
 
-    CUDA_ENSURE(cuMemAllocHost((void**)&host_mem.data, pitch*height*3/2), false);
+    CUDA_ENSURE(cuMemAllocHost((void**)&host_mem.data, pitch * height * 3 / 2), false);
 
     if (!share_ctx)
         CUDA_WARN(cuCtxPopCurrent(nullptr)); // can be null or &ctx
@@ -342,7 +343,7 @@ class Q_DECL_HIDDEN EGL
 public:
 
     EGL()
-        : dpy(EGL_NO_DISPLAY),
+        : dpy    (EGL_NO_DISPLAY),
           surface(EGL_NO_SURFACE)
     {
     }
@@ -363,15 +364,15 @@ public:
 
 EGLInteropResource::EGLInteropResource()
     : InteropResource(),
-      egl           (new EGL()),
-      dll9          (nullptr),
-      d3d9          (nullptr),
-      device9       (nullptr),
-      texture9      (nullptr),
-      surface9      (nullptr),
-      texture9_nv12 (nullptr),
-      surface9_nv12 (nullptr),
-      query9        (nullptr)
+      egl            (new EGL()),
+      dll9           (nullptr),
+      d3d9           (nullptr),
+      device9        (nullptr),
+      texture9       (nullptr),
+      surface9       (nullptr),
+      texture9_nv12  (nullptr),
+      surface9_nv12  (nullptr),
+      query9         (nullptr)
 {
     ctx       = nullptr; // need a context created with d3d (TODO: check it?)
     share_ctx = false;
@@ -430,9 +431,10 @@ bool EGLInteropResource::ensureD3DDevice()
     if (!device9)
         return false;
 
-    qCDebug(DIGIKAM_QTAV_LOG) << QString().sprintf("CUDA.D3D9 (%.*s, vendor %lu, device %lu, revision %lu)",
-                                    sizeof(ai9.Description), ai9.Description,
-                                    ai9.VendorId, ai9.DeviceId, ai9.Revision);
+    qCDebug(DIGIKAM_QTAV_LOG)
+        << QString().sprintf("CUDA.D3D9 (%.*s, vendor %lu, device %lu, revision %lu)",
+            sizeof(ai9.Description), ai9.Description,
+            ai9.VendorId, ai9.DeviceId, ai9.Revision);
 
     // move to ensureResouce
 
@@ -529,25 +531,26 @@ bool EGLInteropResource::ensureD3D9CUDA(int w, int h, int W, int H)
     {
         // TODO: need pitch from cuvid to ensure cuMemcpy2D can copy the whole pitch
 
-        DX_ENSURE(device9->CreateTexture(W
-                                         //, H
+        DX_ENSURE(device9->CreateTexture(W,
+                                         // H,
 
-                                         , H * 3 / 2
-                                         , 1
-                                         , D3DUSAGE_DYNAMIC // D3DUSAGE_DYNAMIC is lockable // 0 is from NV example. cudaD3D9.h says The primary rendertarget may not be registered with CUDA. So can not be D3DUSAGE_RENDERTARGET?
+                                         H * 3 / 2,
+                                         1,
+                                         D3DUSAGE_DYNAMIC, // D3DUSAGE_DYNAMIC is lockable // 0 is from NV example. cudaD3D9.h says The primary rendertarget may not be registered with CUDA. So can not be D3DUSAGE_RENDERTARGET?
 
-                                         //, D3DUSAGE_RENDERTARGET
+                                         // D3DUSAGE_RENDERTARGET,
 
-                                         , D3DFMT_L8
+                                         D3DFMT_L8,
 
-                                         //, (D3DFORMAT)MAKEFOURCC('N','V','1','2') // can not create nv12. use 2 textures L8+A8L8?
+                                         // (D3DFORMAT)MAKEFOURCC('N','V','1','2'), // can not create nv12. use 2 textures L8+A8L8?
 
-                                         , D3DPOOL_DEFAULT // must be D3DPOOL_DEFAULT for cuda?
-                                         , &texture9_nv12
-                                         , nullptr) // - Resources allocated as shared may not be registered with CUDA.
-                  , false);
+                                         D3DPOOL_DEFAULT,  // must be D3DPOOL_DEFAULT for cuda?
+                                         &texture9_nv12,
+                                         nullptr),         // Resources allocated as shared may not be registered with CUDA.
+                  false);
 
-        DX_ENSURE(device9->CreateOffscreenPlainSurface(W, H, (D3DFORMAT)MAKEFOURCC('N','V','1','2'), D3DPOOL_DEFAULT, &surface9_nv12, nullptr), false); //TODO: createrendertarget
+        DX_ENSURE(device9->CreateOffscreenPlainSurface(W, H, (D3DFORMAT)MAKEFOURCC('N','V','1','2'),
+                                                       D3DPOOL_DEFAULT, &surface9_nv12, nullptr), false); // TODO: createrendertarget
     }
 
     // TODO: cudaD3D9.h says NV12 is not supported
@@ -607,7 +610,8 @@ bool EGLInteropResource::ensureD3D9EGL(int w, int h)
     if (!kEGL_ANGLE_d3d_share_handle_client_buffer && !kEGL_ANGLE_query_surface_pointer)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-            << QString::asprintf("EGL extension 'kEGL_ANGLE_query_surface_pointer' or 'ANGLE_d3d_share_handle_client_buffer' is required!");
+            << QString::asprintf("EGL extension 'kEGL_ANGLE_query_surface_pointer' or "
+                                 "'ANGLE_d3d_share_handle_client_buffer' is required!");
 
         return false;
     }
@@ -676,7 +680,8 @@ bool EGLInteropResource::ensureD3D9EGL(int w, int h)
         // egl surface size must match d3d texture's
         // d3d9ex or d3d10 is required
 
-        EGL_ENSURE((egl->surface = eglCreatePbufferFromClientBuffer(egl->dpy, EGL_D3D_TEXTURE_2D_SHARE_HANDLE_ANGLE, share_handle, egl_cfg, attribs)), false);
+        EGL_ENSURE((egl->surface = eglCreatePbufferFromClientBuffer(egl->dpy, EGL_D3D_TEXTURE_2D_SHARE_HANDLE_ANGLE,
+                                                                    share_handle, egl_cfg, attribs)), false);
 
         qCDebug(DIGIKAM_QTAV_LOG).noquote()
             << QString::asprintf("pbuffer surface from client buffer: %p", egl->surface);
@@ -685,7 +690,8 @@ bool EGLInteropResource::ensureD3D9EGL(int w, int h)
     return true;
 }
 
-bool EGLInteropResource::map(int picIndex, const CUVIDPROCPARAMS &param, GLuint tex, int w, int h, int H, int plane)
+bool EGLInteropResource::map(int picIndex, const CUVIDPROCPARAMS &param, GLuint tex,
+                             int w, int h, int H, int plane)
 {
     // plane is always 0 because frame is rgb
 
@@ -771,7 +777,7 @@ bool EGLInteropResource::map(int picIndex, const CUVIDPROCPARAMS &param, GLuint 
     //IDirect3DSurface9 *raw_surface = nullptr;
     //DX_ENSURE(texture9_nv12->GetSurfaceLevel(0, &raw_surface), false);
 
-    const RECT src = { 0, 0, (~0-1)&w, (~0-1)&(h * 3 / 2) };
+    const RECT src = { 0, 0, (~0-1) & w, (~0 - 1) & (h * 3 / 2) };
     DX_ENSURE(device9->StretchRect(raw_surface, &src, surface9_nv12, nullptr, D3DTEXF_NONE), false);
 
 #endif
@@ -787,7 +793,7 @@ bool EGLInteropResource::map(IDirect3DSurface9* surface, GLuint tex, int w, int 
     Q_UNUSED(H);
     D3DSURFACE_DESC dxvaDesc;
     surface->GetDesc(&dxvaDesc);
-    const RECT src = { 0, 0, (~0-1)&w, (~0-1)&h }; // StretchRect does not supports odd values
+    const RECT src = { 0, 0, (~0 - 1) & w, (~0 - 1) & h }; // StretchRect does not supports odd values
 
     DX_ENSURE(device9->StretchRect(surface, &src, surface9, nullptr, D3DTEXF_NONE), false);
 
@@ -842,7 +848,8 @@ namespace cuda
 
 // TODO: cuGLMapBufferObject: get cudeviceptr from pbo, then memcpy2d
 
-bool GLInteropResource::map(int picIndex, const CUVIDPROCPARAMS& param, GLuint tex, int w, int h, int H, int plane)
+bool GLInteropResource::map(int picIndex, const CUVIDPROCPARAMS& param, GLuint tex,
+                            int w, int h, int H, int plane)
 {
     AutoCtxLock locker(reinterpret_cast<cuda_api*>(this), lock);
     Q_UNUSED(locker);

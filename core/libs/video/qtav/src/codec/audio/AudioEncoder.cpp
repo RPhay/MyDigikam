@@ -86,7 +86,7 @@ QStringList AudioEncoder::supportedCodecs()
     return codecs;
 }
 
-AudioEncoder::AudioEncoder(AudioEncoderPrivate &d)
+AudioEncoder::AudioEncoder(AudioEncoderPrivate& d)
     : AVEncoder(d)
 {
 }

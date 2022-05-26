@@ -172,7 +172,7 @@ public:
     /// GLTextureSurface only supports rgb32
 
     void* map(SurfaceType type, const VideoFormat& fmt, void* handle, int plane) override;
-    void unmap(void *handle)                                                     override;
+    void unmap(void* handle)                                                     override;
 
 private:
 /*
@@ -201,7 +201,7 @@ public:
     ~HostInteropResource();
 
     bool map(int picIndex, const CUVIDPROCPARAMS& param, GLuint tex, int w, int h, int H, int plane) override;
-    bool unmap(GLuint) override;
+    bool unmap(GLuint)                                                                               override;
 
 private:
 

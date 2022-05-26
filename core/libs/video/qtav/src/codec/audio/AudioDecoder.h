@@ -105,7 +105,7 @@ private:
 
     typedef AudioDecoder* (*AudioDecoderCreator)();
 
-    static bool Register(AudioDecoderId id, AudioDecoderCreator, const char *name);
+    static bool Register(AudioDecoderId id, AudioDecoderCreator, const char* name);
 
 protected:
 

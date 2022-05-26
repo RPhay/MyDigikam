@@ -143,7 +143,7 @@ public:
     void* map(SurfaceType type,
               const VideoFormat& fmt,
               void* handle, int plane)                              override;
-    void unmap(void *handle)                                        override;
+    void unmap(void* handle)                                        override;
     virtual void* createHandle(void* handle, SurfaceType type,
                                const VideoFormat& fmt, int plane,
                                int planeWidth, int planeHeight)     override;

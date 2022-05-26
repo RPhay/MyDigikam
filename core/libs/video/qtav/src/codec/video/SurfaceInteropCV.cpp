@@ -33,7 +33,7 @@ namespace QtAV
 
 typedef struct
 {
-    int cv_pixfmt;
+    int                      cv_pixfmt;
     VideoFormat::PixelFormat pixfmt;
 } cv_format;
 
@@ -44,14 +44,14 @@ typedef struct
  */
 static const cv_format cv_formats[] =
 {
-    { 'y420', VideoFormat::Format_YUV420P                   }, ///< kCVPixelFormatType_420YpCbCr8Planar
-    { '2vuy', VideoFormat::Format_UYVY                      }, ///< kCVPixelFormatType_422YpCbCr8
-    { '420f' , VideoFormat::Format_NV12                     }, ///< kCVPixelFormatType_420YpCbCr8BiPlanarFullRange
-    { '420v', VideoFormat::Format_NV12                      }, ///< kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange
-    { 'yuvs', VideoFormat::Format_YUYV                      }, ///< kCVPixelFormatType_422YpCbCr8_yuvs
-    { 'BGRA', VideoFormat::Format_BGRA32                    },
+    { 'y420',                   VideoFormat::Format_YUV420P }, ///< kCVPixelFormatType_420YpCbCr8Planar
+    { '2vuy',                   VideoFormat::Format_UYVY    }, ///< kCVPixelFormatType_422YpCbCr8
+    { '420f',                   VideoFormat::Format_NV12    }, ///< kCVPixelFormatType_420YpCbCr8BiPlanarFullRange
+    { '420v',                   VideoFormat::Format_NV12    }, ///< kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange
+    { 'yuvs',                   VideoFormat::Format_YUYV    }, ///< kCVPixelFormatType_422YpCbCr8_yuvs
+    { 'BGRA',                   VideoFormat::Format_BGRA32  },
     { kCVPixelFormatType_24RGB, VideoFormat::Format_RGB24   },
-    { 0, VideoFormat::Format_Invalid                        }
+    { 0,                        VideoFormat::Format_Invalid }
 };
 
 namespace cv
@@ -100,16 +100,17 @@ InteropResource* InteropResource::create(InteropType type)
 
 #if defined(Q_OS_MACX) || defined(__IPHONE_11_0)
 
-        case InteropIOSurface: return CreateInteropIOSurface();
-        //case InteropCVOpenGL: return CreateInteropCVOpenGL();
-
+        case InteropIOSurface:     return CreateInteropIOSurface();
+/*
+        case InteropCVOpenGL:      return CreateInteropCVOpenGL();
+*/
 #else
 
-        case InteropCVOpenGLES: return CreateInteropCVOpenGLES();
+        case InteropCVOpenGLES:    return CreateInteropCVOpenGLES();
 
 #endif
 
-        default: return nullptr;
+        default:                   return nullptr;
     }
 
     return nullptr;
@@ -133,7 +134,7 @@ bool InteropResource::stridesForWidth(int cvfmt, int width, int *strides, VideoF
         case 'yuvs':
         {
             if (strides[0] <= 0)
-                strides[0] = 2*width;
+                strides[0] = 2 * width;
 
             break;
         }
@@ -150,7 +151,7 @@ bool InteropResource::stridesForWidth(int cvfmt, int width, int *strides, VideoF
         case 'y420':
         {
             if (strides[1] <= 0)
-                strides[1] = strides[2] = width/2;
+                strides[1] = strides[2] = width / 2;
 
             break;
         }
@@ -167,7 +168,8 @@ bool InteropResource::stridesForWidth(int cvfmt, int width, int *strides, VideoF
     return true;
 }
 
-void InteropResource::getParametersGL(OSType cvpixfmt, GLint* internalFormat, GLenum* format, GLenum* dataType, int plane)
+void InteropResource::getParametersGL(OSType cvpixfmt, GLint* internalFormat,
+                                      GLenum* format, GLenum* dataType, int plane)
 {
     if (cvpixfmt != m_cvfmt)
     {
@@ -195,13 +197,13 @@ SurfaceInteropCV::~SurfaceInteropCV()
         CVPixelBufferRelease(m_surface);
 }
 
-void* SurfaceInteropCV::map(SurfaceType type, const VideoFormat &fmt, void *handle, int plane)
+void* SurfaceInteropCV::map(SurfaceType type, const VideoFormat& fmt, void* handle, int plane)
 {
     if (!handle)
         return nullptr;
 
     if (!m_surface)
-        return 0;
+        return nullptr;
 
     if      (type == GLTextureSurface)
     {
@@ -230,7 +232,8 @@ void SurfaceInteropCV::unmap(void* handle)
     m_resource->unmap(m_surface, *((GLuint*)handle));
 }
 
-void* SurfaceInteropCV::createHandle(void* handle, SurfaceType type, const VideoFormat& fmt, int plane, int planeWidth, int planeHeight)
+void* SurfaceInteropCV::createHandle(void* handle, SurfaceType type, const VideoFormat& fmt,
+                                     int plane, int planeWidth, int planeHeight)
 {
     if (type != GLTextureSurface)
         return nullptr;
@@ -245,7 +248,7 @@ void* SurfaceInteropCV::createHandle(void* handle, SurfaceType type, const Video
     return handle;
 }
 
-void* SurfaceInteropCV::mapToHost(const VideoFormat &format, void *handle, int plane)
+void* SurfaceInteropCV::mapToHost(const VideoFormat& format, void* handle, int plane)
 {
     Q_UNUSED(plane);
 
@@ -314,7 +317,7 @@ bool InteropResourceCVPixelBuffer::map(CVPixelBufferRef buf, GLuint* tex, int w,
     GLint iformat;
     GLenum format, dtype;
     getParametersGL(CVPixelBufferGetPixelFormatType(buf), &iformat, &format, &dtype, plane); // TODO: call once when format changed
-    const int texture_w = CVPixelBufferGetBytesPerRowOfPlane(buf, plane)/OpenGLHelper::bytesOfGLFormat(format, dtype);
+    const int texture_w = CVPixelBufferGetBytesPerRowOfPlane(buf, plane) / OpenGLHelper::bytesOfGLFormat(format, dtype);
 
     //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("cv plane%d width: %d, stride: %d, tex width: %d", plane, CVPixelBufferGetWidthOfPlane(buf, plane), CVPixelBufferGetBytesPerRowOfPlane(buf, plane), texture_w);
 

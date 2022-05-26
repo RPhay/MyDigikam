@@ -82,7 +82,7 @@ public:
 
     AudioDecoderFFmpegPrivate()
         : AudioDecoderPrivate(),
-          frame(av_frame_alloc())
+          frame              (av_frame_alloc())
     {
 
 #if !AVCODEC_STATIC_REGISTER

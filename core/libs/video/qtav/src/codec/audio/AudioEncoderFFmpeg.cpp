@@ -129,7 +129,7 @@ bool AudioEncoderFFmpegPrivate::open()
 
     if (!codec)
     {
-        const AVCodecDescriptor* cd = avcodec_descriptor_get_by_name(codec_name.toUtf8().constData());
+        const AVCodecDescriptor* const cd = avcodec_descriptor_get_by_name(codec_name.toUtf8().constData());
 
         if (cd)
         {
