@@ -114,28 +114,32 @@ private Q_SLOTS:
         j1->setPageName(QStringLiteral("API"));
 
         QTest::newRow("Name pages")
-                << QStringLiteral("/?format=xml&action=query&prop=info&inprop=protection%7Ctalkid%7Cwatched%7Csubjectid%7Curl%7Creadable%7Cpreload&titles=API")
+                << QStringLiteral("/?format=xml&action=query&prop=info&inprop=protection%7Ctalkid%7"
+                                  "Cwatched%7Csubjectid%7Curl%7Cpreload&intestactions=read&titles=API")
                 << j1;
 
         QueryInfo* const j2 = new QueryInfo(*m_mediaWiki);
         j2->setToken( QStringLiteral("cecded1f35005d22904a35cc7b736e18+\\") );
 
         QTest::newRow("Token")
-                << QStringLiteral("/?format=xml&action=query&prop=info&inprop=protection%7Ctalkid%7Cwatched%7Csubjectid%7Curl%7Creadable%7Cpreload&intoken=cecded1f35005d22904a35cc7b736e18+%5C")
+                << QStringLiteral("/?format=xml&action=query&prop=info&inprop=protection%7Ctalkid%7Cwatched%7"
+                                  "Csubjectid%7Curl%7Cpreload&intestactions=read&meta=cecded1f35005d22904a35cc7b736e18+%5C")
                 << j2;
 
         QueryInfo* const j3 = new QueryInfo(*m_mediaWiki);
         j3->setPageId(25255);
 
         QTest::newRow("Page Id")
-                << QStringLiteral("/?format=xml&action=query&prop=info&inprop=protection%7Ctalkid%7Cwatched%7Csubjectid%7Curl%7Creadable%7Cpreload&pageids=25255")
+                << QStringLiteral("/?format=xml&action=query&prop=info&inprop=protection%7Ctalkid%7"
+                                  "Cwatched%7Csubjectid%7Curl%7Cpreload&intestactions=read&pageids=25255")
                 << j3;
 
         QueryInfo* const j4 = new QueryInfo(*m_mediaWiki);
         j4->setRevisionId(44545);
 
         QTest::newRow("Revision Id")
-                << QStringLiteral("/?format=xml&action=query&prop=info&inprop=protection%7Ctalkid%7Cwatched%7Csubjectid%7Curl%7Creadable%7Cpreload&revids=44545")
+                << QStringLiteral("/?format=xml&action=query&prop=info&inprop=protection%7Ctalkid%7"
+                                  "Cwatched%7Csubjectid%7Curl%7Cpreload&intestactions=read&revids=44545")
                 << j4;
     }
 
@@ -190,11 +194,13 @@ private Q_SLOTS:
         page.setPageId(27697087);
         page.setTitle(QStringLiteral("API"));
         page.setNs(0);
-        page.setTouched( QDateTime::fromString(QStringLiteral("2010-11-25T13:59:03Z"), QStringLiteral("yyyy'-'MM'-'dd'T'hh':'mm':'ss'Z'")) );
+        page.setTouched( QDateTime::fromString(QStringLiteral("2010-11-25T13:59:03Z"),
+                                               QStringLiteral("yyyy'-'MM'-'dd'T'hh':'mm':'ss'Z'")) );
         page.setLastRevId(367741756);
         page.setCounter(0);
         page.setLength(70);
-        page.setStarttimestamp(QDateTime::fromString(QStringLiteral("2010-11-25T16:14:51Z"), QStringLiteral("yyyy'-'MM'-'dd'T'hh':'mm':'ss'Z'")));
+        page.setStarttimestamp(QDateTime::fromString(QStringLiteral("2010-11-25T16:14:51Z"),
+                                                     QStringLiteral("yyyy'-'MM'-'dd'T'hh':'mm':'ss'Z'")));
         page.setEditToken(QStringLiteral("+\\"));
         page.setTalkid(5477418);
         page.setFullurl(QUrl(QStringLiteral("https://en.wikipedia.org/wiki/API")));
@@ -203,17 +209,35 @@ private Q_SLOTS:
         page.setPreload(QString());
 
         QTest::newRow("No protection")
-                << QStringLiteral("<api><query><pages><page pageid=\"27697087\" ns=\"0\" title=\"API\" touched=\"2010-11-25T13:59:03Z\" lastrevid=\"367741756\" counter=\"0\" length=\"70\" redirect=\"\" starttimestamp=\"2010-11-25T16:14:51Z\" edittoken=\"+\\\" talkid=\"5477418\" fullurl=\"https://en.wikipedia.org/wiki/API\" editurl=\"https://en.wikipedia.org/w/index.php?title=API&action=edit\" ><protection /></page></pages></query></api>")
+                << QStringLiteral("<api><query><pages><page pageid=\"27697087\" ns=\"0\" title=\"API\" "
+                                  "touched=\"2010-11-25T13:59:03Z\" lastrevid=\"367741756\" counter=\"0\" "
+                                  "length=\"70\" redirect=\"\" starttimestamp=\"2010-11-25T16:14:51Z\" "
+                                  "talkid=\"5477418\" fullurl=\"https://en.wikipedia.org/wiki/API\" "
+                                  "editurl=\"https://en.wikipedia.org/w/index.php?title=API&action=edit\" >"
+                                  "<protection /></page></pages><tokens csrftoken=\"+\\\" /></query></api>")
                 << page
                 << QVector<Protection>();
 
         QTest::newRow("One pages and one protection")
-                << QStringLiteral("<api><query><pages><page pageid=\"27697087\" ns=\"0\" title=\"API\" touched=\"2010-11-25T13:59:03Z\" lastrevid=\"367741756\" counter=\"0\" length=\"70\" redirect=\"\" starttimestamp=\"2010-11-25T16:14:51Z\" edittoken=\"+\\\" talkid=\"5477418\" fullurl=\"https://en.wikipedia.org/wiki/API\" editurl=\"https://en.wikipedia.org/w/index.php?title=API&action=edit\" ><protection><pr type=\"edit\" level=\"sysop\" expiry=\"infinity\"/></protection></page></pages></query></api>")
+                << QStringLiteral("<api><query><pages><page pageid=\"27697087\" ns=\"0\" title=\"API\" "
+                                  "touched=\"2010-11-25T13:59:03Z\" lastrevid=\"367741756\" counter=\"0\" "
+                                  "length=\"70\" redirect=\"\" starttimestamp=\"2010-11-25T16:14:51Z\" "
+                                  "talkid=\"5477418\" fullurl=\"https://en.wikipedia.org/wiki/API\" "
+                                  "editurl=\"https://en.wikipedia.org/w/index.php?title=API&action=edit\" >"
+                                  "<protection><pr type=\"edit\" level=\"sysop\" expiry=\"infinity\" />"
+                                  "</protection></page></pages><tokens csrftoken=\"+\\\" /></query></api>")
                 << page
                 << (QVector<Protection>() << pr1);
 
         QTest::newRow("One pages and two protection")
-                << QStringLiteral("<api><query><pages><page pageid=\"27697087\" ns=\"0\" title=\"API\" touched=\"2010-11-25T13:59:03Z\" lastrevid=\"367741756\" counter=\"0\" length=\"70\" redirect=\"\" starttimestamp=\"2010-11-25T16:14:51Z\" edittoken=\"+\\\" talkid=\"5477418\" fullurl=\"https://en.wikipedia.org/wiki/API\" editurl=\"https://en.wikipedia.org/w/index.php?title=API&action=edit\" ><protection><pr type=\"edit\" level=\"sysop\" expiry=\"infinity\"/><pr type=\"move\" level=\"sysop\" expiry=\"infinity\"/></protection></page></pages></query></api>")
+                << QStringLiteral("<api><query><pages><page pageid=\"27697087\" ns=\"0\" title=\"API\" "
+                                  "touched=\"2010-11-25T13:59:03Z\" lastrevid=\"367741756\" counter=\"0\" "
+                                  "length=\"70\" redirect=\"\" starttimestamp=\"2010-11-25T16:14:51Z\" "
+                                  "talkid=\"5477418\" fullurl=\"https://en.wikipedia.org/wiki/API\" "
+                                  "editurl=\"https://en.wikipedia.org/w/index.php?title=API&action=edit\" >"
+                                  "<protection><pr type=\"edit\" level=\"sysop\" expiry=\"infinity\" />"
+                                  "<pr type=\"move\" level=\"sysop\" expiry=\"infinity\" /></protection>"
+                                  "</page></pages><tokens csrftoken=\"+\\\" /></query></api>")
                 << page
                 << (QVector<Protection>() << pr1 << pr2);
     }
