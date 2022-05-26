@@ -47,13 +47,13 @@ struct QTAV_EXPORT SubImage
 
     bool operator ==(const SubImage& o) const
     {
-        return (x      == o.x &&
-                y      == o.y &&
-                w      == o.w &&
-                h      == o.h &&
-                stride == o.stride &&
-                color  == o.color &&
-                data   == o.data);
+        return ((x      == o.x)       &&
+                (y      == o.y)       &&
+                (w      == o.w)       &&
+                (h      == o.h)       &&
+                (stride == o.stride)  &&
+                (color  == o.color)   &&
+                (data   == o.data));
     }
 
     int         x, y;
@@ -91,7 +91,7 @@ struct QTAV_EXPORT SubImageSet
 
     bool isValid() const
     {
-        return !images.isEmpty() && w > 0 && h > 0 && fmt != Unknown;
+        return (!images.isEmpty() && (w > 0) && (h > 0) && (fmt != Unknown));
     }
 
     void reset(int width = 0, int height = 0, Format format = Unknown)
@@ -107,11 +107,11 @@ struct QTAV_EXPORT SubImageSet
     {
         // TODO: image data
 
-        return (id     == other.id  &&
-                w      == other.w   &&
-                h      == other.h   &&
-                fmt    == other.fmt &&
-                images == other.images);
+        return ((id     == other.id)    &&
+                (w      == other.w)     &&
+                (h      == other.h)     &&
+                (fmt    == other.fmt)   &&
+                (images == other.images));
     }
 
     QVector<SubImage> images;
@@ -119,7 +119,8 @@ struct QTAV_EXPORT SubImageSet
 private:
 
     Format            fmt;
-    int               w, h;
+    int               w;
+    int               h;
     int               id;
 };
 

@@ -137,12 +137,20 @@ QString fromAss(const char* ass)
 {
     char text[512] = { 0 };
     struct buf b;
-    b.start = text;
-    b.size  = sizeof(text) - 1;
-    b.len   = 0;
+    b.start        = text;
+    b.size         = sizeof(text) - 1;
+    b.len          = 0;
     ass_to_plaintext(&b, ass);
-    int hour1, min1, sec1, hunsec1, hour2, min2, sec2, hunsec2;
-    char line[512] = { 0 }, *ret = nullptr;
+    int hour1;
+    int min1;
+    int sec1;
+    int hunsec1;
+    int hour2;
+    int min2;
+    int sec2;
+    int hunsec2;
+    char line[512] = { 0 };
+    char* ret      = nullptr;
 
     // fixme: "\0" maybe not allowed
 

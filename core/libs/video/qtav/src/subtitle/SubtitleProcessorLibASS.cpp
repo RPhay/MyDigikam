@@ -79,8 +79,8 @@ public:
     }
 
     QString getText(qreal pts) const                                                        override;
-    QImage getImage(qreal pts, QRect *boundingRect = nullptr)                               override;
-    SubImageSet getSubImages(qreal pts, QRect *boundingRect)                                override;
+    QImage getImage(qreal pts, QRect* boundingRect = nullptr)                               override;
+    SubImageSet getSubImages(qreal pts, QRect* boundingRect)                                override;
     bool processHeader(const QByteArray& codec, const QByteArray& data)                     override;
     SubtitleFrame processLine(const QByteArray& data, qreal pts = -1, qreal duration = 0)   override;
     void setFontFile(const QString& file)                                                   override;
@@ -95,8 +95,8 @@ private:
 
     bool initRenderer();
     void updateFontCacheAsync();          // cppcheck-suppress unusedPrivateFunction
-    SubImageSet getSubImages(qreal pts, QRect *boundingRect, QImage* qimg, bool copy);
-    void processTrack(ASS_Track *track);
+    SubImageSet getSubImages(qreal pts, QRect* boundingRect, QImage* qimg, bool copy);
+    void processTrack(ASS_Track* track);
 
 private:
 
@@ -182,7 +182,8 @@ SubtitleProcessorLibASS::SubtitleProcessorLibASS()
 
     if (!m_ass)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("ass_library_init failed!");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("ass_library_init failed!");
 
         return;
     }
@@ -259,7 +260,8 @@ bool SubtitleProcessorLibASS::process(QIODevice* dev)
     {
         if (!dev->open(QIODevice::ReadOnly))
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN) << "open qiodevice error: " << dev->errorString();
+            qCWarning(DIGIKAM_QTAV_LOG_WARN)
+                << "open qiodevice error: " << dev->errorString();
 
             return false;
         }
@@ -270,7 +272,8 @@ bool SubtitleProcessorLibASS::process(QIODevice* dev)
 
     if (!m_track)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("ass_read_memory error, ass track init failed!");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("ass_read_memory error, ass track init failed!");
 
         return false;
     }
@@ -298,7 +301,8 @@ bool SubtitleProcessorLibASS::process(const QString &path)
 
     if (!m_track)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("ass_read_file error, ass track init failed!");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("ass_read_file error, ass track init failed!");
 
         return false;
     }
@@ -329,7 +333,8 @@ bool SubtitleProcessorLibASS::processHeader(const QByteArray& codec, const QByte
 
     if (!m_track)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("failed to create an ass track");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("failed to create an ass track");
 
         return false;
     }
@@ -373,7 +378,7 @@ SubtitleFrame SubtitleProcessorLibASS::processLine(const QByteArray &data, qreal
 
     //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("events: %d", m_track->n_events);
 
-    for (int i = m_track->n_events-1 ; i >= 0 ; --i)
+    for (int i = m_track->n_events - 1 ; i >= 0 ; --i)
     {
         const ASS_Event& ae = m_track->events[i];
 
@@ -448,14 +453,16 @@ SubImageSet SubtitleProcessorLibASS::getSubImages(qreal pts, QRect* boundingRect
 
         if (!m_ass)
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("ass library not available");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("ass library not available");
 
             return SubImageSet();
         }
 
         if (!m_track)
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("ass track not available");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("ass track not available");
 
             return SubImageSet();
         }
@@ -466,7 +473,8 @@ SubImageSet SubtitleProcessorLibASS::getSubImages(qreal pts, QRect* boundingRect
 
             if (!m_renderer)
             {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("ass renderer not available");
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                    << QString::asprintf("ass renderer not available");
 
                 return SubImageSet();
             }
@@ -635,14 +643,16 @@ void SubtitleProcessorLibASS::setFontsDir(const QString& dir)
 
 bool SubtitleProcessorLibASS::initRenderer()
 {
-    //ass_set_extract_fonts(m_ass, 1);
-    //ass_set_style_overrides(m_ass, 0);
-
+/*
+    ass_set_extract_fonts(m_ass, 1);
+    ass_set_style_overrides(m_ass, 0);
+*/
     m_renderer = ass_renderer_init(m_ass);
 
     if (!m_renderer)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("ass_renderer_init failed!");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("ass_renderer_init failed!");
 
         return false;
     }
@@ -713,7 +723,7 @@ void SubtitleProcessorLibASS::updateFontCache()
 
                 qCDebug(DIGIKAM_QTAV_LOG)
                     << "Fonts dir (for config) is not supported by libass. Copy fonts to app fonts dir: "
-                        << fdir;
+                    << fdir;
 
                 if (!QDir(Internal::Path::appFontsDir()).exists())
                 {
@@ -795,7 +805,9 @@ void SubtitleProcessorLibASS::updateFontCache()
 
                 if (ff.exists() && (ff.size() == 0))
                 {
-                    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("invalid default font");
+                    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                        << QString::asprintf("invalid default font");
+
                     fonts.clear();
 
                     continue;
@@ -813,7 +825,8 @@ void SubtitleProcessorLibASS::updateFontCache()
         }
         else
         {
-            qCDebug(DIGIKAM_QTAV_LOG) << "fonts dir: " << sFontsDir << "  font files: " << fonts;
+            qCDebug(DIGIKAM_QTAV_LOG)
+                << "fonts dir: " << sFontsDir << "  font files: " << fonts;
 
             if (sFontsDir.isEmpty()                                                 ||
                 sFontsDir.startsWith(QLatin1String("assets:"), Qt::CaseInsensitive) ||
@@ -824,13 +837,17 @@ void SubtitleProcessorLibASS::updateFontCache()
                 const QString fontsdir_in(sFontsDir);
                 sFontsDir = Internal::Path::appFontsDir();
 
-                qCDebug(DIGIKAM_QTAV_LOG) << "Fonts dir is not supported by libass. Copy fonts to app fonts dir if not exist: " << sFontsDir;
+                qCDebug(DIGIKAM_QTAV_LOG)
+                    << "Fonts dir is not supported by libass. Copy fonts to app fonts dir if not exist: "
+                    << sFontsDir;
 
                 if (!QDir(Internal::Path::appFontsDir()).exists())
                 {
                     if (!QDir().mkpath(Internal::Path::appFontsDir()))
                     {
-                        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to create fonts dir: %s", Internal::Path::appFontsDir().toUtf8().constData());
+                        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                            << QString::asprintf("Failed to create fonts dir: %s",
+                                Internal::Path::appFontsDir().toUtf8().constData());
                     }
                 }
 
@@ -844,7 +861,10 @@ void SubtitleProcessorLibASS::updateFontCache()
                     {
                         // TODO:
 
-                        qCDebug(DIGIKAM_QTAV_LOG) << "new font with the same name. remove old: " << ffout.fileName();
+                        qCDebug(DIGIKAM_QTAV_LOG)
+                            << "new font with the same name. remove old: "
+                            << ffout.fileName();
+
                         ffout.remove();
                     }
 
@@ -881,8 +901,8 @@ void SubtitleProcessorLibASS::updateFontCache()
 
     // prefer user settings
 
-    const QString kFont     = font_file.isEmpty() ? sFont     : Internal::Path::toLocal(font_file);
-    const QString kFontsDir = fonts_dir.isEmpty() ? sFontsDir : Internal::Path::toLocal(fonts_dir);
+    const QString kFont     = (font_file.isEmpty() ? sFont     : Internal::Path::toLocal(font_file));
+    const QString kFontsDir = (fonts_dir.isEmpty() ? sFontsDir : Internal::Path::toLocal(fonts_dir));
 
     qCDebug(DIGIKAM_QTAV_LOG) << "font file: " << kFont << "; fonts dir: " << kFontsDir;
 

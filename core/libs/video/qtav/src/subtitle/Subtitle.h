@@ -239,6 +239,7 @@ Q_SIGNALS:
     // TODO: also add to AVPlayerCore?
 
     /// empty path if load from raw data
+
     void loaded(const QString& path = QString());
     void canRenderChanged();
     void codecChanged();
@@ -264,6 +265,8 @@ Q_SIGNALS:
 private:
 
     void checkCapability();
+
+private:
 
     class Private;
     Private* priv;

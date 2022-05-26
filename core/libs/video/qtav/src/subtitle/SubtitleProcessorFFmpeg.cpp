@@ -260,8 +260,8 @@ QStringList SubtitleProcessorFFmpeg::supportedTypes() const
 
     typedef struct
     {
-        const char* ext  = nullptr;
-        const char* name = nullptr;
+        const char* ext;
+        const char* name;
     } sub_ext_t;
 
     static const sub_ext_t sub_ext[] =
@@ -305,8 +305,9 @@ bool SubtitleProcessorFFmpeg::process(QIODevice* dev)
     if (m_reader.subtitleStreams().isEmpty())
         goto error;
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("subtitle format: %s",
-                                             m_reader.formatContext()->iformat->name);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("subtitle format: %s",
+            m_reader.formatContext()->iformat->name);
 
     if (!processSubtitle())
         goto error;
@@ -606,9 +607,11 @@ bool SubtitleProcessorFFmpeg::processSubtitle()
     if (!dec)
     {
         if (dec_desc)
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to find subtitle codec %s", dec_desc->name);
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("Failed to find subtitle codec %s", dec_desc->name);
         else
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to find subtitle codec %d", codec_ctx->codec_id);
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("Failed to find subtitle codec %d", codec_ctx->codec_id);
 
         return false;
     }
@@ -621,7 +624,8 @@ bool SubtitleProcessorFFmpeg::processSubtitle()
 
     if (dec_desc && !(dec_desc->props & AV_CODEC_PROP_TEXT_SUB))
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Only text based subtitles are currently supported");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Only text based subtitles are currently supported");
 
         return false;
     }
@@ -633,7 +637,9 @@ bool SubtitleProcessorFFmpeg::processSubtitle()
 
     if (ret < 0)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("open subtitle codec error: %s", av_err2str(ret));
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("open subtitle codec error: %s", av_err2str(ret));
+
         av_dict_free(&codec_opts);
 
         return false;

@@ -31,20 +31,20 @@ namespace QtAV
 {
 
 SubImage::SubImage(int x, int y, int w, int h, int stride)
-    : x(x),
-      y(y),
-      w(w),
-      h(h),
+    : x     (x),
+      y     (y),
+      w     (w),
+      h     (h),
       stride(stride),
-      color(0)
+      color (0)
 {
 }
 
 SubImageSet::SubImageSet(int width, int height, Format format)
-    : fmt(format),
-      w(width),
-      h(height),
-      id(0)
+    : fmt   (format),
+      w     (width),
+      h     (height),
+      id    (0)
 {
 }
 
@@ -135,7 +135,7 @@ void RenderASS(QImage* image, const SubImage& img, int dstX, int dstY)
 
 #endif
 
-            if (A == 0)
+            if      (A == 0)
             {
                 // dst color can be ignored
 
@@ -187,10 +187,10 @@ void RenderASS(QImage* image, const SubImage& img, int dstX, int dstY)
                 const unsigned G = ARGB32_G(c);
                 const unsigned B = ARGB32_B(c);
 
-                ARGB32_ADD(c, r == R ? 0 : k*(r-R) / 255,
-                              g == G ? 0 : k*(g-G) / 255,
-                              b == B ? 0 : k*(b-B) / 255,
-                              a == A ? 0 : k*(a-A) / 255);
+                ARGB32_ADD(c, r == R ? 0 : k * (r - R) / 255,
+                              g == G ? 0 : k * (g - G) / 255,
+                              b == B ? 0 : k * (b - B) / 255,
+                              a == A ? 0 : k * (a - A) / 255);
 
 #endif
 

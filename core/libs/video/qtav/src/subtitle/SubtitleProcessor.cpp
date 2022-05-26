@@ -66,7 +66,7 @@ SubtitleProcessor::SubtitleProcessor()
 {
 }
 
-bool SubtitleProcessor::process(const QString &path)
+bool SubtitleProcessor::process(const QString& path)
 {
     QFile f(path);
 
@@ -83,7 +83,7 @@ bool SubtitleProcessor::process(const QString &path)
     return ok;
 }
 
-QImage SubtitleProcessor::getImage(qreal pts, QRect *boundingRect)
+QImage SubtitleProcessor::getImage(qreal pts, QRect* boundingRect)
 {
     Q_UNUSED(pts)
     Q_UNUSED(boundingRect)
@@ -91,7 +91,7 @@ QImage SubtitleProcessor::getImage(qreal pts, QRect *boundingRect)
     return QImage();
 }
 
-SubImageSet SubtitleProcessor::getSubImages(qreal pts, QRect *boundingRect)
+SubImageSet SubtitleProcessor::getSubImages(qreal pts, QRect* boundingRect)
 {
     Q_UNUSED(pts);
     Q_UNUSED(boundingRect);

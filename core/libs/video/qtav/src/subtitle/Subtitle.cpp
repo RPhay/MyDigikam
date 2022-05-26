@@ -253,7 +253,7 @@ void Subtitle::setEngines(const QStringList& value)
 
         if (it == priv->processors.end())
         {
-            SubtitleProcessor* sp = SubtitleProcessor::create(e.toLatin1().constData());
+            SubtitleProcessor* const sp = SubtitleProcessor::create(e.toLatin1().constData());
 
             if (sp)
                 sps.append(sp);
@@ -499,7 +499,7 @@ void Subtitle::setFontFileForced(bool value)
 
 void Subtitle::load()
 {
-    SubtitleProcessor* old_processor = priv->processor;
+    SubtitleProcessor* const old_processor = priv->processor;
     priv->reset();
 
     Q_EMIT contentChanged(); // notify user to update subtitle
@@ -1323,7 +1323,7 @@ void SubtitleAPIProxy::setFuzzyMatch(bool value)
 
 bool SubtitleAPIProxy::fuzzyMatch() const
 {
-    return m_s && m_s->fuzzyMatch();
+    return (m_s && m_s->fuzzyMatch());
 }
 
 #if 0
