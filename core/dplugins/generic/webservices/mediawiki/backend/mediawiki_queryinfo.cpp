@@ -104,10 +104,11 @@ void QueryInfo::doWorkSendRequest()
 
     QUrl url = d->MediaWiki.url();
     QUrlQuery query;
-    query.addQueryItem(QStringLiteral("format"), QStringLiteral("xml"));
-    query.addQueryItem(QStringLiteral("action"), QStringLiteral("query"));
-    query.addQueryItem(QStringLiteral("prop"),   QStringLiteral("info"));
-    query.addQueryItem(QStringLiteral("inprop"), QStringLiteral("protection|talkid|watched|subjectid|url|readable|preload"));
+    query.addQueryItem(QStringLiteral("format"),        QStringLiteral("xml"));
+    query.addQueryItem(QStringLiteral("action"),        QStringLiteral("query"));
+    query.addQueryItem(QStringLiteral("prop"),          QStringLiteral("info"));
+    query.addQueryItem(QStringLiteral("inprop"),        QStringLiteral("protection|talkid|watched|subjectid|url|preload"));
+    query.addQueryItem(QStringLiteral("intestactions"), QStringLiteral("read"));
 
     QMapIterator<QString, QString> it(d->requestParameter);
 
@@ -180,7 +181,6 @@ void QueryInfo::doWorkProcessReply()
                     d->page.setTalkid(attrs.value(QStringLiteral("talkid")).toString().toUInt());
                     d->page.setFullurl(QUrl(attrs.value(QStringLiteral("fullurl")).toString()));
                     d->page.setEditurl(QUrl(attrs.value(QStringLiteral("editurl")).toString()));
-                    d->page.setReadable(attrs.value(QStringLiteral("readable")).toString());
                     d->page.setPreload(attrs.value(QStringLiteral("preload")).toString());
                 }
                 else if (reader.name() == QLatin1String("protection"))
@@ -190,6 +190,10 @@ void QueryInfo::doWorkProcessReply()
                 else if (reader.name() == QLatin1String("tokens"))
                 {
                     d->page.setEditToken(attrs.value(QStringLiteral("csrftoken")).toString());
+                }
+                else if (reader.name() == QLatin1String("actions"))
+                {
+                    d->page.setReadable(attrs.value(QStringLiteral("read")).toString());
                 }
                 else if (reader.name() == QLatin1String("pr"))
                 {
