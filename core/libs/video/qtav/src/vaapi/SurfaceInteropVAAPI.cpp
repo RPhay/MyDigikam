@@ -154,14 +154,19 @@ void* SurfaceInteropVAAPI::mapToHost(const VideoFormat& format, void* handle, in
         return nullptr;
 
     void* p_base = nullptr;
-    VA_ENSURE(vaGetImage(m_surface->vadisplay(), m_surface->get(), 0, 0, m_surface->width(), m_surface->height(), image.image_id), nullptr);
+    VA_ENSURE(vaGetImage(m_surface->vadisplay(), m_surface->get(), 0, 0, 
+              m_surface->width(), m_surface->height(), image.image_id), nullptr);
+
     VA_ENSURE(vaMapBuffer(m_surface->vadisplay(), image.buf, &p_base), nullptr); // TODO: destroy image before return
+
     VideoFormat::PixelFormat pixfmt = pixelFormatFromVA(image.format.fourcc);
     bool swap_uv = (image.format.fourcc != VA_FOURCC_NV12);
 
     if (pixfmt == VideoFormat::Format_Invalid)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("unsupported vaapi pixel format: %#x", image.format.fourcc);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("unsupported vaapi pixel format: %#x", image.format.fourcc);
+
         VA_ENSURE(vaDestroyImage(m_surface->vadisplay(), image.image_id), nullptr);
 
         return nullptr;
@@ -177,7 +182,8 @@ void* SurfaceInteropVAAPI::mapToHost(const VideoFormat& format, void* handle, in
         pitch[i] = image.pitches[i];
     }
 
-    VideoFrame frame = VideoFrame::fromGPU(fmt, frame_width, frame_height, m_surface->height(), src, pitch, true, swap_uv);
+    VideoFrame frame = VideoFrame::fromGPU(fmt, frame_width, frame_height,
+                                           m_surface->height(), src, pitch, true, swap_uv);
 
     if (format != fmt)
         frame = frame.to(format);
@@ -219,7 +225,8 @@ bool GLXInteropResource::map(const surface_ptr& surface, GLuint tex, int w, int 
 
     if (!glx)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Fail to create vaapi glx surface");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Fail to create vaapi glx surface");
 
         return false;
     }
@@ -283,11 +290,14 @@ protected:
 
         // mpv always use 24 bpp
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("XCreatePixmap %lu: %dx%d, depth: %d", pixmap, w, h, xwa.depth);
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("XCreatePixmap %lu: %dx%d, depth: %d",
+                pixmap, w, h, xwa.depth);
 
         if (!pixmap)
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("X11InteropResource could not create pixmap");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("X11InteropResource could not create pixmap");
 
             return 0;
         }
@@ -303,13 +313,13 @@ private:
 #   define RESOLVE_FUNC(func, resolver, st) do {\
     if (!func) { \
         typedef void (*ft)(void); \
-        ft f = resolver((st)#func); \
+        ft f   = resolver((st)#func); \
         if (!f) { \
             qWarning(#func " is not available"); \
             return 0; \
         } \
         ft *fp = (ft*)(&func); \
-        *fp = f; \
+        *fp    = f; \
     }} while(0)
 
 #   define RESOLVE_EGL(func) RESOLVE_FUNC(func, eglGetProcAddress, const char*)
@@ -320,13 +330,13 @@ private:
 
 //static PFNEGLQUERYNATIVEDISPLAYNVPROC eglQueryNativeDisplayNV = nullptr;
 
-static PFNEGLCREATEIMAGEKHRPROC eglCreateImageKHR = nullptr;
-static PFNEGLDESTROYIMAGEKHRPROC eglDestroyImageKHR = nullptr;
+static PFNEGLCREATEIMAGEKHRPROC eglCreateImageKHR                       = nullptr;
+static PFNEGLDESTROYIMAGEKHRPROC eglDestroyImageKHR                     = nullptr;
 
 #   ifndef GL_OES_EGL_image
 
-typedef void *GLeglImageOES;
-typedef void (EGLAPIENTRYP PFNGLEGLIMAGETARGETTEXTURE2DOESPROC) (GLenum target, GLeglImageOES image);
+typedef void* GLeglImageOES;
+typedef void (EGLAPIENTRYP PFNGLEGLIMAGETARGETTEXTURE2DOESPROC)(GLenum target, GLeglImageOES image);
 
 #   endif
 
@@ -339,13 +349,13 @@ public:
     X11_EGL()
         : dpy(EGL_NO_DISPLAY)
     {
-        for (unsigned i = 0 ; i < sizeof(image)/sizeof(image[0]) ; ++i)
+        for (unsigned i = 0 ; i < sizeof(image) / sizeof(image[0]) ; ++i)
             image[i] = EGL_NO_IMAGE_KHR;
     }
 
     ~X11_EGL()
     {
-        for (unsigned i = 0 ; i < sizeof(image)/sizeof(image[0]) ; ++i)
+        for (unsigned i = 0 ; i < sizeof(image) / sizeof(image[0]) ; ++i)
         {
             if (image[i] != EGL_NO_IMAGE_KHR)
             {
@@ -387,7 +397,8 @@ public:
             dpy = eglGetCurrentDisplay();
         }
 
-        EGL_ENSURE(image[0] = eglCreateImageKHR(dpy, EGL_NO_CONTEXT, EGL_NATIVE_PIXMAP_KHR, (EGLClientBuffer)pixmap, nullptr), false);
+        EGL_ENSURE(image[0] = eglCreateImageKHR(dpy, EGL_NO_CONTEXT, EGL_NATIVE_PIXMAP_KHR,
+                                                (EGLClientBuffer)pixmap, nullptr), false);
 
         return true;
     }
@@ -411,7 +422,7 @@ private:
 
 #   if !defined(QT_OPENGL_ES_2)
 
-typedef void (*glXBindTexImageEXT_t)(Display* dpy, GLXDrawable draw, int buffer, int *a);
+typedef void (*glXBindTexImageEXT_t)(Display* dpy, GLXDrawable draw, int buffer, int* a);
 typedef void (*glXReleaseTexImageEXT_t)(Display* dpy, GLXDrawable draw, int buffer);
 
 static glXReleaseTexImageEXT_t glXReleaseTexImageEXT = nullptr;
@@ -526,7 +537,7 @@ public:
 public:
 
     GLXFBConfig fbc;
-    GLXPixmap    glxpixmap;
+    GLXPixmap   glxpixmap;
 
 private:
 
@@ -537,11 +548,11 @@ private:
 
 X11InteropResource::X11InteropResource()
     : InteropResource(),
-      VAAPI_X11(),
-      xdisplay(nullptr),
-      width(0),
-      height(0),
-      x11(nullptr)
+      VAAPI_X11      (),
+      xdisplay       (nullptr),
+      width          (0),
+      height         (0),
+      x11            (nullptr)
 {
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("X11InteropResource");
 }
@@ -620,10 +631,10 @@ bool X11InteropResource::map(const surface_ptr& surface, GLuint tex, int w, int 
 
     // FIXME: invalid surface at the first time vaPutSurface is called. If return false, vaPutSurface will always fail, why?
 
-    VAWARN(vaPutSurface(surface->vadisplay(), surface->get(), x11->pixmap
-                        , 0, 0, w, h
-                        , 0, 0, w, h
-                        , nullptr, 0, VA_FRAME_PICTURE | surface->colorSpace())
+    VAWARN(vaPutSurface(surface->vadisplay(), surface->get(), x11->pixmap,
+                        0, 0, w, h,
+                        0, 0, w, h,
+                        nullptr, 0, VA_FRAME_PICTURE | surface->colorSpace())
     );
 
     XSync((::Display*)xdisplay, False);
@@ -664,13 +675,13 @@ public:
     EGL()
         : dpy(EGL_NO_DISPLAY)
     {
-        for (unsigned i = 0 ; i < sizeof(image)/sizeof(image[0]) ; ++i)
+        for (unsigned i = 0 ; i < sizeof(image) / sizeof(image[0]) ; ++i)
             image[i] = EGL_NO_IMAGE_KHR;
     }
 
     ~EGL()
     {
-        for (unsigned i = 0 ; i < sizeof(image)/sizeof(image[0]) ; ++i)
+        for (unsigned i = 0 ; i < sizeof(image) / sizeof(image[0]) ; ++i)
         {
             destroyImages(i);
         }
@@ -707,7 +718,8 @@ public:
             dpy = eglGetCurrentDisplay();
         }
 
-        EGL_ENSURE(image[plane] = eglCreateImageKHR(eglGetCurrentDisplay(), EGL_NO_CONTEXT, EGL_LINUX_DMA_BUF_EXT, nullptr, attrib_list), false);
+        EGL_ENSURE(image[plane] = eglCreateImageKHR(eglGetCurrentDisplay(), EGL_NO_CONTEXT, EGL_LINUX_DMA_BUF_EXT,
+                                                    nullptr, attrib_list), false);
 
         return true;
     }
@@ -717,14 +729,16 @@ public:
         glEGLImageTargetTexture2DOES(GL_TEXTURE_2D, image[plane]);
     }
 
-    EGLDisplay dpy;
+public:
+
+    EGLDisplay  dpy;
     EGLImageKHR image[4];
 };
 
 EGLInteropResource::EGLInteropResource()
     : InteropResource(),
-      vabuf_handle(0),
-      egl(nullptr)
+      vabuf_handle   (0),
+      egl            (nullptr)
 {
     va_image.buf = va_image.image_id = VA_INVALID_ID;
 }
@@ -741,7 +755,8 @@ bool EGLInteropResource::map(const surface_ptr& surface, GLuint tex, int w, int 
 
     if (va_image.image_id == VA_INVALID_ID)
     {
-        // TODO: try vaGetImage. it's yuv420p. RG texture is not supported by gles2, so let's use yuv420p, or change the shader
+        // TODO: try vaGetImage. it's yuv420p. RG texture is not supported by gles2, so let's use yuv420p,
+        // or change the shader
 
         VA_ENSURE(vaDeriveImage(surface->vadisplay(), surface->get(), &va_image), false);
     }
@@ -859,7 +874,8 @@ bool EGLInteropResource::ensure()
 
 #   else
 
-    qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("build QtAV with capi is required");
+    qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+        << QString::asprintf("build QtAV with capi is required");
 
     return false;
 
@@ -876,7 +892,8 @@ bool EGLInteropResource::ensure()
 
         if (!OpenGLHelper::hasExtension(glexts))
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("missing extension: GL_OES_EGL_image");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("missing extension: GL_OES_EGL_image");
 
             return false;
         }

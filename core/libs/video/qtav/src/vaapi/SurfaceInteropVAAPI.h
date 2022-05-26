@@ -87,9 +87,9 @@ class SurfaceInteropVAAPI final : public VideoSurfaceInterop
 public:
 
     explicit SurfaceInteropVAAPI(const InteropResourcePtr& res)
-        : frame_width(0),
+        : frame_width (0),
           frame_height(0),
-          m_resource(res)
+          m_resource  (res)
     {
     }
 
@@ -146,8 +146,8 @@ public:
     X11InteropResource();
     ~X11InteropResource();
 
-    bool map(const surface_ptr &surface, GLuint tex, int w, int h, int) override;
-    bool unmap(const surface_ptr &surface, GLuint tex)                  override;
+    bool map(const surface_ptr& surface, GLuint tex, int w, int h, int) override;
+    bool unmap(const surface_ptr& surface, GLuint tex)                  override;
 
 private:
 
@@ -174,8 +174,8 @@ public:
     EGLInteropResource();
     ~EGLInteropResource();
 
-    bool map(const surface_ptr &surface, GLuint tex, int w, int h, int plane) override;
-    bool unmap(const surface_ptr &surface, GLuint tex)                        override;
+    bool map(const surface_ptr& surface, GLuint tex, int w, int h, int plane) override;
+    bool unmap(const surface_ptr& surface, GLuint tex)                        override;
 
 private:
 

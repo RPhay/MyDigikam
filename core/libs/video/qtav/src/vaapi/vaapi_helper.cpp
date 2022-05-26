@@ -84,7 +84,7 @@ va_0_38::vaReleaseBufferHandle_t va_0_38::f_vaReleaseBufferHandle = nullptr;
 
 /* Return a string representation of a VAProfile */
 
-const char *profileName(VAProfile profile)
+const char* profileName(VAProfile profile)
 {
     switch (profile)
     {
@@ -134,8 +134,8 @@ VAImageFormat va_new_image(VADisplay display, const unsigned int *fourccs, VAIma
 {
     VAImageFormat fmt;
     memset(&fmt, 0, sizeof(fmt));
-    int nb_fmts          = vaMaxNumImageFormats(display);
-    VAImageFormat* p_fmt = (VAImageFormat*)calloc(nb_fmts, sizeof(*p_fmt));
+    int nb_fmts                = vaMaxNumImageFormats(display);
+    VAImageFormat* const p_fmt = (VAImageFormat*)calloc(nb_fmts, sizeof(*p_fmt));
 
     if (!p_fmt)
         return fmt;
@@ -170,7 +170,7 @@ VAImageFormat va_new_image(VADisplay display, const unsigned int *fourccs, VAIma
         {
             qCDebug(DIGIKAM_QTAV_LOG).noquote()
                 << QString::asprintf("vaCreateImage: %c%c%c%c",
-                                     fcc << 24 >> 24, fcc << 16 >> 24, fcc << 8 >> 24, fcc >> 24);
+                    fcc << 24 >> 24, fcc << 16 >> 24, fcc << 8 >> 24, fcc >> 24);
 
             if (vaCreateImage(display, &fmt, w, h, img) != VA_STATUS_SUCCESS)
             {
@@ -179,7 +179,7 @@ VAImageFormat va_new_image(VADisplay display, const unsigned int *fourccs, VAIma
 
                 qCDebug(DIGIKAM_QTAV_LOG).noquote()
                     << QString::asprintf("vaCreateImage error: %c%c%c%c",
-                                         fcc << 24 >> 24, fcc << 16 >> 24, fcc << 8 >> 24, fcc >> 24);
+                        fcc << 24 >> 24, fcc << 16 >> 24, fcc << 8 >> 24, fcc >> 24);
 
                 continue;
             }
@@ -196,7 +196,7 @@ VAImageFormat va_new_image(VADisplay display, const unsigned int *fourccs, VAIma
 
                     qCDebug(DIGIKAM_QTAV_LOG).noquote()
                         << QString::asprintf("vaGetImage error: %c%c%c%c  (%#x) %s",
-                                             fcc << 24 >> 24, fcc << 16 >> 24, fcc << 8 >> 24, fcc >> 24, st, vaErrorStr(st));
+                            fcc << 24 >> 24, fcc << 16 >> 24, fcc << 8 >> 24, fcc >> 24, st, vaErrorStr(st));
 
                     img->image_id = VA_INVALID_ID;
                     memset(&fmt, 0, sizeof(fmt));
@@ -224,7 +224,8 @@ public:
     typedef int XCloseDisplay_t(Display* dpy);
     typedef int XInitThreads_t();
 
-    X11_API(): dll_helper(QString::fromLatin1("X11"),6)
+    X11_API()
+        : dll_helper(QString::fromLatin1("X11"), 6)
     {
         fp_XOpenDisplay  = (XOpenDisplay_t*)resolve("XOpenDisplay");
         fp_XCloseDisplay = (XCloseDisplay_t*)resolve("XCloseDisplay");
@@ -254,9 +255,9 @@ public:
 
 private:
 
-    XOpenDisplay_t*  fp_XOpenDisplay;
-    XCloseDisplay_t* fp_XCloseDisplay;
-    XInitThreads_t*  fp_XInitThreads;
+    XOpenDisplay_t*  fp_XOpenDisplay  = nullptr;
+    XCloseDisplay_t* fp_XCloseDisplay = nullptr;
+    XInitThreads_t*  fp_XInitThreads  = nullptr;
 };
 
 class Q_DECL_HIDDEN NativeDisplayBase
@@ -266,7 +267,7 @@ class Q_DECL_HIDDEN NativeDisplayBase
 public:
 
     NativeDisplayBase()
-        : m_handle(0),
+        : m_handle     (0),
           m_selfCreated(false)
     {
     }
@@ -276,20 +277,20 @@ public:
     }
 
     virtual bool initialize(const NativeDisplay& display) = 0;
-    virtual VADisplay getVADisplay() = 0;
+    virtual VADisplay getVADisplay()                      = 0;
 
     uintptr_t handle()
     {
         return m_handle;
     }
 
-    virtual NativeDisplay::Type type() const = 0;
+    virtual NativeDisplay::Type type()              const = 0;
 
 protected:
 
     virtual bool acceptValidExternalHandle(const NativeDisplay& display)
     {
-        if (display.handle && display.handle != -1)
+        if (display.handle && (display.handle != -1))
         {
             // drm can be 0?
 
@@ -324,12 +325,12 @@ public:
 
     bool initialize (const NativeDisplay& display) override
     {
-        assert(display.type == NativeDisplay::X11 || display.type == NativeDisplay::Auto);
+        assert((display.type == NativeDisplay::X11) || (display.type == NativeDisplay::Auto));
 
         if (acceptValidExternalHandle(display))
             return true;
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("NativeDisplayX11...............");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("NativeDisplayX11.");
 
         if (!XInitThreads())
         {
@@ -381,12 +382,12 @@ public:
 
     bool initialize (const NativeDisplay& display) override
     {
-        assert(display.type == NativeDisplay::GLX || display.type == NativeDisplay::Auto);
+        assert((display.type == NativeDisplay::GLX) || (display.type == NativeDisplay::Auto));
 
         if (acceptValidExternalHandle(display))
             return true;
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("NativeDisplayGLX..............");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("NativeDisplayGLX.");
 
         if (!XInitThreads())
         {
@@ -432,18 +433,18 @@ public:
 
     ~NativeDisplayDrm()
     {
-        if (m_selfCreated && m_handle && m_handle != -1)
+        if (m_selfCreated && m_handle && (m_handle != -1))
             ::close(m_handle);
     }
 
     bool initialize(const NativeDisplay& display) override
     {
-        assert(display.type == NativeDisplay::DRM || display.type == NativeDisplay::Auto);
+        assert((display.type == NativeDisplay::DRM) || (display.type == NativeDisplay::Auto));
 
         if (acceptValidExternalHandle(display))
             return true;
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("NativeDisplayDrm..............");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("NativeDisplayDrm.");
 
         // try drmOpen()?
 
@@ -461,15 +462,16 @@ public:
             if (m_handle < 0)
                 continue;
 
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("using drm device: %s, handle: %p",
-                                                   drm_dev[i], (void*)m_handle); // drmGetDeviceNameFromFd
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("using drm device: %s, handle: %p",
+                    drm_dev[i], (void*)m_handle); // drmGetDeviceNameFromFd
 
             break;
         }
 
         m_selfCreated = true;
 
-        return m_handle != -1;
+        return (m_handle != -1);
     }
 
     VADisplay getVADisplay() override
@@ -525,33 +527,46 @@ display_ptr display_t::create(const NativeDisplay &display)
     switch (display.type)
     {
         case NativeDisplay::X11:
+        {
             native = NativeDisplayPtr(new NativeDisplayX11());
+
             break;
+        }
 
         case NativeDisplay::DRM:
+        {
             native = NativeDisplayPtr(new NativeDisplayDrm());
+
             break;
+        }
 
         case NativeDisplay::VA:
+        {
             native = NativeDisplayPtr(new NativeDisplayVADisplay());
+
             break;
+        }
 
         case NativeDisplay::GLX:
+        {
 
 #ifndef QT_NO_OPENGL
 
-        native = NativeDisplayPtr(new NativeDisplayGLX());
+            native = NativeDisplayPtr(new NativeDisplayGLX());
 
 #else
 
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("No OpenGL support in Qt");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("No OpenGL support in Qt");
 
 #endif
 
-        break;
+            break;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     if (!native)
@@ -583,7 +598,7 @@ display_t::~display_t()
 
     // TODO: if drm+egl works, init_va should be true for DRM
 
-    init_va = OpenGLHelper::isEGL() && nativeDisplayType() == NativeDisplay::X11;
+    init_va = (OpenGLHelper::isEGL() && (nativeDisplayType() == NativeDisplay::X11));
 
 #endif
 

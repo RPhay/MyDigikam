@@ -93,7 +93,7 @@ do { \
 namespace vaapi
 {
 
-const char *profileName(VAProfile profile);
+const char* profileName(VAProfile profile);
 
 /*!
  * \brief va_new_image
@@ -101,7 +101,8 @@ const char *profileName(VAProfile profile);
  * if s is not null, also test vaGetImage for the fourcc
  */
 
-VAImageFormat va_new_image(VADisplay display, const unsigned int* fourccs, VAImage* img = nullptr, int w = 0, int h = 0, VASurfaceID s = VA_INVALID_SURFACE);
+VAImageFormat va_new_image(VADisplay display, const unsigned int* fourccs, VAImage* img = nullptr,
+                           int w = 0, int h = 0, VASurfaceID s = VA_INVALID_SURFACE);
 
 class dll_helper
 {
@@ -119,7 +120,7 @@ public:
         return m_lib.isLoaded();
     }
 
-    void* resolve(const char *symbol)
+    void* resolve(const char* symbol)
     {
         return (void*)m_lib.resolve(symbol);
     }
@@ -149,10 +150,10 @@ public:
 
     static bool isValid()
     {
-        return instance().f_vaAcquireBufferHandle && instance().f_vaReleaseBufferHandle;
+        return (instance().f_vaAcquireBufferHandle && instance().f_vaReleaseBufferHandle);
     }
 
-    static VAStatus vaAcquireBufferHandle(VADisplay dpy, VABufferID buf_id, VABufferInfo *buf_info)
+    static VAStatus vaAcquireBufferHandle(VADisplay dpy, VABufferID buf_id, VABufferInfo* buf_info)
     {
         if (!instance().f_vaAcquireBufferHandle)
             return VA_STATUS_ERROR_UNIMPLEMENTED;
@@ -179,8 +180,9 @@ protected:
 
 private:
 
-    typedef VAStatus (*vaAcquireBufferHandle_t)(VADisplay dpy, VABufferID buf_id, VABufferInfo *buf_info);
+    typedef VAStatus (*vaAcquireBufferHandle_t)(VADisplay dpy, VABufferID buf_id, VABufferInfo* buf_info);
     typedef VAStatus (*vaReleaseBufferHandle_t)(VADisplay dpy, VABufferID buf_id);
+
     static vaAcquireBufferHandle_t f_vaAcquireBufferHandle;
     static vaReleaseBufferHandle_t f_vaReleaseBufferHandle;
 };
@@ -206,7 +208,7 @@ public:
 
 private:
 
-    vaGetDisplayDRM_t* fp_vaGetDisplayDRM;
+    vaGetDisplayDRM_t* fp_vaGetDisplayDRM = nullptr;
 };
 
 typedef struct _XDisplay Display;
@@ -216,7 +218,7 @@ class VAAPI_X11 : protected dll_helper
 public:
 
     typedef unsigned long Drawable;
-    typedef VADisplay vaGetDisplay_t(Display *);
+    typedef VADisplay vaGetDisplay_t(Display*);
     typedef VAStatus vaPutSurface_t(VADisplay, VASurfaceID, Drawable,
                                     short, short, unsigned short,  unsigned short,
                                     short, short, unsigned short, unsigned short,
@@ -250,8 +252,8 @@ public:
 
 private:
 
-    vaGetDisplay_t* fp_vaGetDisplay;
-    vaPutSurface_t* fp_vaPutSurface;
+    vaGetDisplay_t* fp_vaGetDisplay = nullptr;
+    vaPutSurface_t* fp_vaPutSurface = nullptr;
 };
 
 typedef void* EGLClientBuffer;
@@ -260,8 +262,9 @@ class VAAPI_EGL : protected dll_helper
 {
     // not implemented
 
-    typedef VAStatus vaGetEGLClientBufferFromSurface_t(VADisplay dpy, VASurfaceID surface, EGLClientBuffer *buffer/* out*/);
-    vaGetEGLClientBufferFromSurface_t* fp_vaGetEGLClientBufferFromSurface;
+    typedef VAStatus vaGetEGLClientBufferFromSurface_t(VADisplay dpy, VASurfaceID surface, EGLClientBuffer* buffer/* out*/);
+
+    vaGetEGLClientBufferFromSurface_t* fp_vaGetEGLClientBufferFromSurface = nullptr;
 
 public:
 
@@ -271,7 +274,7 @@ public:
         fp_vaGetEGLClientBufferFromSurface = (vaGetEGLClientBufferFromSurface_t*)resolve("vaGetEGLClientBufferFromSurface");
     }
 
-    VAStatus vaGetEGLClientBufferFromSurface(VADisplay dpy, VASurfaceID surface, EGLClientBuffer *buffer/* out*/)
+    VAStatus vaGetEGLClientBufferFromSurface(VADisplay dpy, VASurfaceID surface, EGLClientBuffer* buffer/* out*/)
     {
         assert(fp_vaGetEGLClientBufferFromSurface);
 
@@ -285,10 +288,10 @@ class VAAPI_GLX : protected dll_helper
 {
 public:
 
-    typedef VADisplay vaGetDisplayGLX_t(Display *);
-    typedef VAStatus  vaCreateSurfaceGLX_t(VADisplay, GLenum, GLuint, void **);
-    typedef VAStatus  vaDestroySurfaceGLX_t(VADisplay, void *);
-    typedef VAStatus  vaCopySurfaceGLX_t(VADisplay, void *, VASurfaceID, unsigned int);
+    typedef VADisplay vaGetDisplayGLX_t(Display*);
+    typedef VAStatus  vaCreateSurfaceGLX_t(VADisplay, GLenum, GLuint, void**);
+    typedef VAStatus  vaDestroySurfaceGLX_t(VADisplay, void*);
+    typedef VAStatus  vaCopySurfaceGLX_t(VADisplay, void*, VASurfaceID, unsigned int);
 
     VAAPI_GLX()
         : dll_helper(QString::fromLatin1("va-glx"), 1)
@@ -299,21 +302,21 @@ public:
         fp_vaCopySurfaceGLX    = (vaCopySurfaceGLX_t*)resolve("vaCopySurfaceGLX");
     }
 
-    VADisplay vaGetDisplayGLX(Display *dpy)
+    VADisplay vaGetDisplayGLX(Display* dpy)
     {
         assert(fp_vaGetDisplayGLX);
 
         return fp_vaGetDisplayGLX(dpy);
     }
 
-    VAStatus vaCreateSurfaceGLX(VADisplay dpy, GLenum target, GLuint texture, void **gl_surface)
+    VAStatus vaCreateSurfaceGLX(VADisplay dpy, GLenum target, GLuint texture, void** gl_surface)
     {
         assert(fp_vaCreateSurfaceGLX);
 
         return fp_vaCreateSurfaceGLX(dpy, target, texture, gl_surface);
     }
 
-    VAStatus vaDestroySurfaceGLX(VADisplay dpy, void *gl_surface)
+    VAStatus vaDestroySurfaceGLX(VADisplay dpy, void* gl_surface)
     {
         assert(fp_vaDestroySurfaceGLX);
 
@@ -337,7 +340,7 @@ public:
      * @param[in]  flags      the PutSurface flags
      * @return VA_STATUS_SUCCESS if successful
      */
-    VAStatus vaCopySurfaceGLX(VADisplay dpy, void *gl_surface, VASurfaceID surface, unsigned int flags)
+    VAStatus vaCopySurfaceGLX(VADisplay dpy, void* gl_surface, VASurfaceID surface, unsigned int flags)
     {
         assert(fp_vaCopySurfaceGLX);
 
@@ -346,13 +349,13 @@ public:
 
 private:
 
-    vaGetDisplayGLX_t*      fp_vaGetDisplayGLX;
-    vaCreateSurfaceGLX_t*   fp_vaCreateSurfaceGLX;
-    vaDestroySurfaceGLX_t*  fp_vaDestroySurfaceGLX;
-    vaCopySurfaceGLX_t*     fp_vaCopySurfaceGLX;
+    vaGetDisplayGLX_t*      fp_vaGetDisplayGLX      = nullptr;
+    vaCreateSurfaceGLX_t*   fp_vaCreateSurfaceGLX   = nullptr;
+    vaDestroySurfaceGLX_t*  fp_vaDestroySurfaceGLX  = nullptr;
+    vaCopySurfaceGLX_t*     fp_vaCopySurfaceGLX     = nullptr;
 };
 
-#endif //QT_NO_OPENGL
+#endif // QT_NO_OPENGL
 
 class NativeDisplayBase;
 
@@ -375,7 +378,7 @@ struct NativeDisplay
 
     NativeDisplay()
         : handle(-1),
-          type(Auto)
+          type  (Auto)
     {
     }
 };
@@ -410,7 +413,7 @@ public:
     }
 
     NativeDisplay::Type nativeDisplayType() const;
-    intptr_t nativeHandle() const;
+    intptr_t nativeHandle()                 const;
 
 private:
 
@@ -424,11 +427,11 @@ class surface_t
 public:
 
     surface_t(int w, int h, VASurfaceID id, const display_ptr& display)
-        : m_id(id)
-        , m_display(display)
-        , m_width(w)
-        , m_height(h)
-        , color_space(VA_SRC_BT709)
+        : m_id       (id),
+          m_display  (display),
+          m_width    (w),
+          m_height   (h),
+          color_space(VA_SRC_BT709)
     {
     }
 
