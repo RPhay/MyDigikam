@@ -163,7 +163,7 @@ QList<Filter*>& AVOutput::filters()
     return d_func().filters;
 }
 
-void AVOutput::setStatistics(Statistics *statistics)
+void AVOutput::setStatistics(Statistics* statistics)
 {
     DPTR_D(AVOutput);
 

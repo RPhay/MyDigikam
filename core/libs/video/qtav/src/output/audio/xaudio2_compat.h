@@ -121,7 +121,7 @@ typedef struct XAUDIO2_DEVICE_DETAILS
 
 interface IXAudio2MasteringVoice : public IXAudio2Voice
 {
-    virtual void STDMETHODCALLTYPE GetChannelMask(DWORD *pChannelMask) = 0;
+    virtual void STDMETHODCALLTYPE GetChannelMask(DWORD* pChannelMask) = 0;
 };
 
 DEFINE_GUID(IID_IXAudio27, 0x8bcf1f58, 0x9fe7, 0x4583, 0x8a,0xc6, 0xe2,0xad,0xc4,0x65,0xc8,0xbb);
@@ -130,40 +130,40 @@ MIDL_INTERFACE("8bcf1f58-9fe7-4583-8ac6-e2adc465c8bb")
 
 IXAudio2 : public IUnknown
 {
-    virtual HRESULT STDMETHODCALLTYPE GetDeviceCount(UINT32 *pCount)                                             = 0;
+    virtual HRESULT STDMETHODCALLTYPE GetDeviceCount(UINT32* pCount)                                             = 0;
 
     virtual HRESULT STDMETHODCALLTYPE GetDeviceDetails(UINT32 Index,
-                                                       XAUDIO2_DEVICE_DETAILS *pDeviceDetails)                   = 0;
+                                                       XAUDIO2_DEVICE_DETAILS* pDeviceDetails)                   = 0;
 
     virtual HRESULT STDMETHODCALLTYPE Initialize(UINT32 Flags = 0,
                                                  XAUDIO2_PROCESSOR XAudio2Processor = XAUDIO2_DEFAULT_PROCESSOR) = 0;
 
-    virtual HRESULT STDMETHODCALLTYPE RegisterForCallbacks(IXAudio2EngineCallback *pCallback)                    = 0;
+    virtual HRESULT STDMETHODCALLTYPE RegisterForCallbacks(IXAudio2EngineCallback* pCallback)                    = 0;
 
-    virtual void STDMETHODCALLTYPE UnregisterForCallbacks(IXAudio2EngineCallback *pCallback)                     = 0;
+    virtual void STDMETHODCALLTYPE UnregisterForCallbacks(IXAudio2EngineCallback* pCallback)                     = 0;
 
-    virtual HRESULT STDMETHODCALLTYPE CreateSourceVoice(IXAudio2SourceVoice **ppSourceVoice,
-                                                        const WAVEFORMATEX *pSourceFormat,
+    virtual HRESULT STDMETHODCALLTYPE CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice,
+                                                        const WAVEFORMATEX* pSourceFormat,
                                                         UINT32 Flags = 0,
                                                         float MaxFrequencyRatio = XAUDIO2_DEFAULT_FREQ_RATIO,
-                                                        IXAudio2VoiceCallback *pCallback = 0,
-                                                        const XAUDIO2_VOICE_SENDS *pSendList = 0,
-                                                        const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0)            = 0;
+                                                        IXAudio2VoiceCallback* pCallback = 0,
+                                                        const XAUDIO2_VOICE_SENDS* pSendList = 0,
+                                                        const XAUDIO2_EFFECT_CHAIN* pEffectChain = 0)            = 0;
 
-    virtual HRESULT STDMETHODCALLTYPE CreateSubmixVoice(IXAudio2SubmixVoice **ppSubmixVoice,
+    virtual HRESULT STDMETHODCALLTYPE CreateSubmixVoice(IXAudio2SubmixVoice** ppSubmixVoice,
                                                         UINT32 InputChannels,
                                                         UINT32 InputSampleRate,
                                                         UINT32 Flags = 0,
                                                         UINT32 ProcessingStage = 0,
-                                                        const XAUDIO2_VOICE_SENDS *pSendList = 0,
-                                                        const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0)            = 0;
+                                                        const XAUDIO2_VOICE_SENDS* pSendList = 0,
+                                                        const XAUDIO2_EFFECT_CHAIN* pEffectChain = 0)            = 0;
 
-    virtual HRESULT STDMETHODCALLTYPE CreateMasteringVoice(IXAudio2MasteringVoice **ppMasteringVoice,
+    virtual HRESULT STDMETHODCALLTYPE CreateMasteringVoice(IXAudio2MasteringVoice** ppMasteringVoice,
                                                            UINT32 InputChannels = XAUDIO2_DEFAULT_CHANNELS,
                                                            UINT32 InputSampleRate = XAUDIO2_DEFAULT_SAMPLERATE,
                                                            UINT32 Flags = 0,
                                                            UINT32 DeviceIndex = 0,
-                                                           const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0)         = 0;
+                                                           const XAUDIO2_EFFECT_CHAIN* pEffectChain = 0)         = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StartEngine()                                                              = 0;
 
@@ -171,10 +171,10 @@ IXAudio2 : public IUnknown
 
     virtual HRESULT STDMETHODCALLTYPE CommitChanges(UINT32 OperationSet)                                         = 0;
 
-    virtual void STDMETHODCALLTYPE GetPerformanceData(XAUDIO2_PERFORMANCE_DATA *pPerfData)                       = 0;
+    virtual void STDMETHODCALLTYPE GetPerformanceData(XAUDIO2_PERFORMANCE_DATA* pPerfData)                       = 0;
 
-    virtual void STDMETHODCALLTYPE SetDebugConfiguration(const XAUDIO2_DEBUG_CONFIGURATION *pDebugConfiguration,
-                                                         void *pReserved = 0)                                    = 0;
+    virtual void STDMETHODCALLTYPE SetDebugConfiguration(const XAUDIO2_DEBUG_CONFIGURATION* pDebugConfiguration,
+                                                         void* pReserved = 0)                                    = 0;
 };
 
 #ifndef GUID_SECT
@@ -209,12 +209,12 @@ HRESULT __stdcall XAudio2Create(__deref_out IXAudio2** ppXAudio2,
 {
     // Instantiate the appropriate XAudio2 engine
 
-    IXAudio2* pXAudio2;
-    HRESULT hr = CoCreateInstance((Flags & XAUDIO2_DEBUG_ENGINE) ? CLSID_XAudio2_Debug : CLSID_XAudio2,
-                                  nullptr,
-                                  CLSCTX_INPROC_SERVER,
-                                  IID_IXAudio2,
-                                  (void**)&pXAudio2);
+    IXAudio2* pXAudio2 = nullptr;
+    HRESULT hr         = CoCreateInstance((Flags & XAUDIO2_DEBUG_ENGINE) ? CLSID_XAudio2_Debug : CLSID_XAudio2,
+                                          nullptr,
+                                          CLSCTX_INPROC_SERVER,
+                                          IID_IXAudio2,
+                                          (void**)&pXAudio2);
     if (SUCCEEDED(hr))
     {
         hr = pXAudio2->Initialize(Flags, XAudio2Processor);
@@ -277,7 +277,7 @@ typedef enum _AUDIO_STREAM_CATEGORY
     AudioCategory_Alerts,
     AudioCategory_SoundEffects,
     AudioCategory_GameEffects,
-    AudioCategory_GameMedia,
+    AudioCategory_GameMedia
 } AUDIO_STREAM_CATEGORY;
 
 // from wine idl. If use code from dx header. TODO: why crash if use code from dx header?
@@ -293,32 +293,32 @@ MIDL_INTERFACE("60d8dac8-5aa1-4e8e-b597-2f5e2883d484")
 
 IXAudio2 : public IUnknown
 {
-    virtual HRESULT STDMETHODCALLTYPE RegisterForCallbacks(IXAudio2EngineCallback *pCallback)                                = 0;
+    virtual HRESULT STDMETHODCALLTYPE RegisterForCallbacks(IXAudio2EngineCallback* pCallback)                                = 0;
 
-    virtual void STDMETHODCALLTYPE UnregisterForCallbacks(IXAudio2EngineCallback *pCallback)                                 = 0;
+    virtual void STDMETHODCALLTYPE UnregisterForCallbacks(IXAudio2EngineCallback* pCallback)                                 = 0;
 
-    virtual HRESULT STDMETHODCALLTYPE CreateSourceVoice(IXAudio2SourceVoice **ppSourceVoice,
-                                                        const WAVEFORMATEX *pSourceFormat,
+    virtual HRESULT STDMETHODCALLTYPE CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice,
+                                                        const WAVEFORMATEX* pSourceFormat,
                                                         UINT32 Flags = 0,
                                                         float MaxFrequencyRatio = XAUDIO2_DEFAULT_FREQ_RATIO,
-                                                        IXAudio2VoiceCallback *pCallback = 0,
-                                                        const XAUDIO2_VOICE_SENDS *pSendList = 0,
-                                                        const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0)                        = 0;
+                                                        IXAudio2VoiceCallback* pCallback = 0,
+                                                        const XAUDIO2_VOICE_SENDS* pSendList = 0,
+                                                        const XAUDIO2_EFFECT_CHAIN* pEffectChain = 0)                        = 0;
 
-    virtual HRESULT STDMETHODCALLTYPE CreateSubmixVoice(IXAudio2SubmixVoice **ppSubmixVoice,
+    virtual HRESULT STDMETHODCALLTYPE CreateSubmixVoice(IXAudio2SubmixVoice** ppSubmixVoice,
                                                         UINT32 InputChannels,
                                                         UINT32 InputSampleRate,
                                                         UINT32 Flags = 0,
                                                         UINT32 ProcessingStage = 0,
-                                                        const XAUDIO2_VOICE_SENDS *pSendList = 0,
-                                                        const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0)                        = 0;
+                                                        const XAUDIO2_VOICE_SENDS* pSendList = 0,
+                                                        const XAUDIO2_EFFECT_CHAIN* pEffectChain = 0)                        = 0;
 
-    virtual HRESULT STDMETHODCALLTYPE CreateMasteringVoice(IXAudio2MasteringVoice **ppMasteringVoice,
+    virtual HRESULT STDMETHODCALLTYPE CreateMasteringVoice(IXAudio2MasteringVoice** ppMasteringVoice,
                                                            UINT32 InputChannels = XAUDIO2_DEFAULT_CHANNELS,
                                                            UINT32 InputSampleRate = XAUDIO2_DEFAULT_SAMPLERATE,
                                                            UINT32 Flags = 0,
                                                            LPCWSTR DeviceId = 0,
-                                                           const XAUDIO2_EFFECT_CHAIN *pEffectChain = 0,
+                                                           const XAUDIO2_EFFECT_CHAIN* pEffectChain = 0,
                                                            AUDIO_STREAM_CATEGORY StreamCategory = AudioCategory_GameEffects) = 0;
 
     virtual HRESULT STDMETHODCALLTYPE StartEngine()                                                                          = 0;
@@ -327,10 +327,10 @@ IXAudio2 : public IUnknown
 
     virtual HRESULT STDMETHODCALLTYPE CommitChanges(UINT32 OperationSet)                                                     = 0;
 
-    virtual void STDMETHODCALLTYPE GetPerformanceData(XAUDIO2_PERFORMANCE_DATA *pPerfData)                                   = 0;
+    virtual void STDMETHODCALLTYPE GetPerformanceData(XAUDIO2_PERFORMANCE_DATA* pPerfData)                                   = 0;
 
-    virtual void STDMETHODCALLTYPE SetDebugConfiguration(const XAUDIO2_DEBUG_CONFIGURATION *pDebugConfiguration,
-                                                         void *pReserved = 0)                                                = 0;
+    virtual void STDMETHODCALLTYPE SetDebugConfiguration(const XAUDIO2_DEBUG_CONFIGURATION* pDebugConfiguration,
+                                                         void* pReserved = 0)                                                = 0;
 
 };
 

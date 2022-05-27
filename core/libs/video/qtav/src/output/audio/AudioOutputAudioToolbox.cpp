@@ -76,6 +76,8 @@ private:
     static void outCallback(void* inUserData, AudioQueueRef inAQ, AudioQueueBufferRef inBuffer);
     void tryPauseTimeline();
 
+private:
+
     QVector<AudioQueueBufferRef> m_buffer;
     QVector<AudioQueueBufferRef> m_buffer_fill;
     AudioQueueRef                m_queue;
@@ -261,7 +263,9 @@ bool AudioOutputAudioToolbox::write(const QByteArray& data)
 
         if (m_buffer_fill.isEmpty())
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("buffer queue to fill is empty, wait a valid buffer to fill");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("buffer queue to fill is empty, wait a valid buffer to fill");
+
             m_waiting = true;
             m_cond.wait(&m_mutex);
         }
@@ -271,10 +275,11 @@ bool AudioOutputAudioToolbox::write(const QByteArray& data)
     }
 
     assert(buf->mAudioDataBytesCapacity >= (UInt32)data.size() && "too many data to write to audio queue buffer");
+
     memcpy(buf->mAudioData, data.constData(), data.size());
     buf->mAudioDataByteSize = data.size();
 
-    //buf->mUserData
+    // buf->mUserData
 
     AT_ENSURE(AudioQueueEnqueueBuffer(m_queue, buf, 0, nullptr), false);
 
@@ -290,7 +295,9 @@ bool AudioOutputAudioToolbox::play()
         // AVAudioSessionErrorCodeCannotStartPlaying
 
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-            << QString::asprintf("AudioQueueStart error: AVAudioSessionErrorCodeCannotStartPlaying. May play in background");
+            << QString::asprintf("AudioQueueStart error: AVAudioSessionErrorCodeCannotStartPlaying. "
+                                 "May play in background");
+
         close();
         open();
 

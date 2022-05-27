@@ -337,7 +337,7 @@ bool AudioOutputXAudio2::open()
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("source_voice:%p", source_voice);
 
-    queue_data.resize(buffer_size*buffer_count);
+    queue_data.resize(buffer_size * buffer_count);
     sem.release(buffer_count - sem.available());
 
     return true;
@@ -363,6 +363,7 @@ bool AudioOutputXAudio2::close()
             winsdk.master->DestroyVoice();
             winsdk.master = nullptr;
         }
+
         if (winsdk.xaudio)
             winsdk.xaudio->StopEngine();
     }
@@ -412,7 +413,7 @@ void AudioOutputXAudio2::onCallback()
         sem.release();
 }
 
-bool AudioOutputXAudio2::write(const QByteArray &data)
+bool AudioOutputXAudio2::write(const QByteArray& data)
 {
     //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("sem: %d, write: %d/%d", sem.available(), queue_data_write, queue_data.size());
 

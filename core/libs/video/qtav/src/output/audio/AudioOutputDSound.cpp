@@ -110,7 +110,7 @@ private:
 
     class Q_DECL_HIDDEN PositionWatcher : public QThread
     {
-        AudioOutputDSound* ao;
+        AudioOutputDSound* ao = nullptr;
 
     public:
 
@@ -232,7 +232,7 @@ static int channelLayoutToMS(qint64 av)
 }
 
 AudioOutputDSound::AudioOutputDSound(QObject* const parent)
-    : AudioOutputBackend(AudioOutput::DeviceFeatures()|AudioOutput::SetVolume, parent)
+    : AudioOutputBackend(AudioOutput::DeviceFeatures() | AudioOutput::SetVolume, parent)
       dll               (nullptr),
       dsound            (nullptr),
       prim_buf          (nullptr),
@@ -281,7 +281,7 @@ AudioOutputBackend::BufferControl AudioOutputDSound::bufferControl() const
 {
     // Both works. I prefer CountCallback
 
-    return CountCallback;// OffsetBytes;
+    return CountCallback; // OffsetBytes;
 }
 
 void AudioOutputDSound::onCallback()
@@ -338,16 +338,7 @@ bool AudioOutputDSound::write(const QByteArray& data)
     }
     else
     {
-
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0) || QT_VERSION >= QT_VERSION_CHECK(5, 3, 0)
-
         if (buffers_free <= buffer_count)
-
-#else
-
-        if (buffers_free.load() <= buffer_count)
-
-#endif
             buffers_free.ref();
     }
 
@@ -374,7 +365,7 @@ bool AudioOutputDSound::write(const QByteArray& data)
 
     write_offset += size1 + size2;
 
-    if (write_offset >= buffer_size*buffer_count)
+    if (write_offset >= (buffer_size * buffer_count))
         write_offset = size2;
 
     DX_ENSURE_OK(stream_buf->Unlock(dst1, size1, dst2, size2), false);
@@ -453,7 +444,7 @@ bool AudioOutputDSound::init()
     if (!loadDll())
         return false;
 
-    typedef HRESULT (WINAPI *DirectSoundCreateFunc)(LPGUID, LPDIRECTSOUND *, LPUNKNOWN);
+    typedef HRESULT (WINAPI* DirectSoundCreateFunc)(LPGUID, LPDIRECTSOUND*, LPUNKNOWN);
 
     //typedef HRESULT (WINAPI *DirectSoundEnumerateFunc)(LPDSENUMCALLBACKA, LPVOID);
 
@@ -554,7 +545,7 @@ bool AudioOutputDSound::createDSoundBuffers()
         // create primary buffer and set its format
 
         DX_ENSURE(dsound->CreateSoundBuffer(&dsbpridesc, &prim_buf, nullptr), (destroy() && false));
-        DX_ENSURE(prim_buf->SetFormat((WAVEFORMATEX *)&wformat), false);
+        DX_ENSURE(prim_buf->SetFormat((WAVEFORMATEX*)&wformat), false);
     }
 
     // fill in the secondary sound buffer (=stream buffer) descriptor
@@ -569,7 +560,7 @@ bool AudioOutputDSound::createDSoundBuffers()
                             DSBCAPS_CTRLPOSITIONNOTIFY;
 
     dsbdesc.dwBufferBytes = buffer_size * buffer_count;
-    dsbdesc.lpwfxFormat   = (WAVEFORMATEX *)&wformat;
+    dsbdesc.lpwfxFormat   = (WAVEFORMATEX*)&wformat;
 
     // Needed for 5.1 on emu101k - shit soundblaster
 
@@ -602,7 +593,7 @@ bool AudioOutputDSound::createDSoundBuffers()
 
     for (int i = 0 ; i < buffer_count ; ++i)
     {
-        notification[i].dwOffset     = buffer_size*(i+1)-1;
+        notification[i].dwOffset     = buffer_size * (i + 1) - 1;
         notification[i].hEventNotify = notify_event;
     }
 

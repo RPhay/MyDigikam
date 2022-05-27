@@ -64,7 +64,7 @@ static inline void scale_samples_u8_small(quint8* dst, const quint8* src, int nb
 static inline void scale_samples_s16(quint8* dst, const quint8* src, int nb_samples, int volume, float)
 {
     int16_t* smp_dst       = reinterpret_cast<int16_t*>(dst);            // krazy:exclude=typedefs
-    const int16_t *smp_src = reinterpret_cast<const int16_t*>(src);      // krazy:exclude=typedefs
+    const int16_t* smp_src = reinterpret_cast<const int16_t*>(src);      // krazy:exclude=typedefs
 
     for (int i = 0 ; i < nb_samples ; ++i)
         smp_dst[i] = av_clip_int16(((qint64)smp_src[i] * volume + 128) >> 8);
@@ -276,9 +276,9 @@ AudioOutputPrivate::~AudioOutputPrivate()
 
 void AudioOutputPrivate::playInitialData()
 {
-    const char c = (format.sampleFormat() == AudioFormat::SampleFormat_Unsigned8 ||
-                    format.sampleFormat() == AudioFormat::SampleFormat_Unsigned8Planar)
-            ? 0x80 : 0;
+    const char c = ((format.sampleFormat() == AudioFormat::SampleFormat_Unsigned8) ||
+                    (format.sampleFormat() == AudioFormat::SampleFormat_Unsigned8Planar))
+                   ? 0x80 : 0;
 
     for (quint32 i = 0 ; i < nb_buffers ; ++i)
     {
@@ -545,7 +545,7 @@ bool AudioOutput::isPaused() const
     return d_func().paused;
 }
 
-bool AudioOutput::receiveData(const QByteArray &data, qreal pts)
+bool AudioOutput::receiveData(const QByteArray& data, qreal pts)
 {
     DPTR_D(AudioOutput);
 
@@ -559,7 +559,7 @@ bool AudioOutput::receiveData(const QByteArray &data, qreal pts)
         char s = 0;
 
         if (d.format.isUnsigned() && !d.format.isFloat())
-            s = 1<<((d.format.bytesPerSample() << 3)-1);
+            s = 1 << ((d.format.bytesPerSample() << 3) - 1);
 
         queue_data.fill(s);
     }
@@ -573,7 +573,7 @@ bool AudioOutput::receiveData(const QByteArray &data, qreal pts)
         {
             // TODO: af_volume needs samples_align to get nb_samples
 
-            const int nb_samples = queue_data.size()/d.format.bytesPerSample();
+            const int nb_samples = queue_data.size() / d.format.bytesPerSample();
             quint8* const dst    = (quint8*)queue_data.constData();
             d.scale_samples(dst, dst, nb_samples, d.volume_i, volume());
         }
@@ -859,6 +859,7 @@ bool AudioOutput::waitForNextBuffer()
         while (((d.processed_remain - processed) < next) || (d.processed_remain < fi.data.size()))
         {
             // implies next > 0
+
             const qint64 us = d.format.durationForBytes(next - (d.processed_remain - processed));
             d.uwait(us);
             d.processed_remain = d.backend->getWritableBytes();
@@ -1039,7 +1040,7 @@ bool AudioOutput::waitForNextBuffer()
     if (remove < 0)
     {
         int next       = fi.data.size();
-        int free_bytes = -remove;//d.processed_remain;
+        int free_bytes = -remove; // d.processed_remain;
 
         while ((free_bytes >= next) && (next > 0))
         {

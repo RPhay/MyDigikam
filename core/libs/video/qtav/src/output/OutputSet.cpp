@@ -138,7 +138,7 @@ void OutputSet::notifyPauseChange(AVOutput* output)
         mPauseCount--;
         mCanPauseThread = false;
 
-        if (mPauseCount == mOutputs.size() - 1)
+        if (mPauseCount == (mOutputs.size() - 1))
         {
             resumeThread();
         }

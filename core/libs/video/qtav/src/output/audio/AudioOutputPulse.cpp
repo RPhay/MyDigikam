@@ -197,11 +197,16 @@ void AudioOutputPulse::contextStateCallback(pa_context* c, void* userdata)
         case PA_CONTEXT_FAILED:
         case PA_CONTEXT_TERMINATED:
         case PA_CONTEXT_READY:
+        {
             pa_threaded_mainloop_signal(p->loop, 0);
+
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 }
 
@@ -222,16 +227,21 @@ static void sink_input_event(pa_context* c, pa_subscription_event_type_t t, uint
     switch (t)
     {
         case PA_SUBSCRIPTION_EVENT_REMOVE:
+        {
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("PulseAudio sink killed");
+
             break;
+        }
 
         default:
+        {
             pa_operation* const op = pa_context_get_sink_input_info(c, idx, sink_input_info_cb, ao);
 
             if (Q_LIKELY(!!op))
                 pa_operation_unref(op);
 
             break;
+        }
     }
 }
 
@@ -247,21 +257,29 @@ void AudioOutputPulse::contextSubscribeCallback(pa_context* c,
     switch (facility)
     {
         case PA_SUBSCRIPTION_EVENT_SINK:
+        {
             break;
+        }
 
         case PA_SUBSCRIPTION_EVENT_SINK_INPUT:
-
-            if (p->stream && idx == pa_stream_get_index(p->stream))
+        {
+            if (p->stream && (idx == pa_stream_get_index(p->stream)))
                 sink_input_event(c, t, idx, p);
 
             break;
+        }
 
         case PA_SUBSCRIPTION_EVENT_CARD:
+        {
             qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("PA_SUBSCRIPTION_EVENT_CARD");
+
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 }
 
@@ -272,17 +290,25 @@ void AudioOutputPulse::stateCallback(pa_stream* s, void* userdata)
     switch (pa_stream_get_state(s))
     {
         case PA_STREAM_FAILED:
+        {
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("PA_STREAM_FAILED");
             pa_threaded_mainloop_signal(p->loop, 0);
+
             break;
+        }
 
         case PA_STREAM_READY:
         case PA_STREAM_TERMINATED:
+        {
             pa_threaded_mainloop_signal(p->loop, 0);
+
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 }
 
@@ -439,7 +465,9 @@ bool AudioOutputPulse::init(const AudioFormat& format)
     {
         pa_format_info_free(fi);
         pa_proplist_free(pl);
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("PulseAudio: failed to create a stream");
+
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("PulseAudio: failed to create a stream");
 
         return false;
     }
@@ -530,8 +558,10 @@ bool AudioOutputPulse::open()
     if (!init(format))
     {
         if (ctx)
+        {
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
                 << QString::asprintf("%s", pa_strerror(pa_context_errno(ctx)));
+        }
 
         close();
 
@@ -591,7 +621,8 @@ int AudioOutputPulse::getWritableBytes()
 
     if (!loop || !stream)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("pulseaudio is not open");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("pulseaudio is not open");
 
         return 0;
     }

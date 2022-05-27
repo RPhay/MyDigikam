@@ -189,12 +189,12 @@ static ALenum audioFormatToAL(const AudioFormat& fmt)
 
         if      (c < 3)
         {
-            format = u8fmt[c-1].fmt;
+            format = u8fmt[c - 1].fmt;
         }
         else if ((c > 3) && (c <= 8) && ctx)
         {
             if (alIsExtensionPresent("AL_EXT_MCFORMATS"))
-                format = alGetEnumValue(u8fmt[c-1].ext);
+                format = alGetEnumValue(u8fmt[c - 1].ext);
         }
     }
     else if (AudioFormat::SampleFormat_Signed16 == spfmt)
@@ -213,12 +213,12 @@ static ALenum audioFormatToAL(const AudioFormat& fmt)
 
         if (c < 3)
         {
-            format = s16fmt[c-1].fmt;
+            format = s16fmt[c - 1].fmt;
         }
         else if ((c > 3) && (c <= 8) && ctx)
         {
             if (alIsExtensionPresent("AL_EXT_MCFORMATS"))
-                format = alGetEnumValue(s16fmt[c-1].ext);
+                format = alGetEnumValue(s16fmt[c - 1].ext);
         }
     }
     else if (ctx)
@@ -240,9 +240,9 @@ static ALenum audioFormatToAL(const AudioFormat& fmt)
                 { "AL_FORMAT_71CHN32"           }
             };
 
-            if ((c <= 8) && f32fmt[c-1].ext)
+            if ((c <= 8) && f32fmt[c - 1].ext)
             {
-                format = alGetEnumValue(f32fmt[c-1].ext);
+                format = alGetEnumValue(f32fmt[c - 1].ext);
             }
         }
         else if (AudioFormat::SampleFormat_Double == spfmt)
@@ -257,7 +257,7 @@ static ALenum audioFormatToAL(const AudioFormat& fmt)
                         { "AL_FORMAT_STEREO_DOUBLE_EXT" }
                     };
 
-                    format = alGetEnumValue(d64fmt[c-1].ext);
+                    format = alGetEnumValue(d64fmt[c - 1].ext);
                 }
             }
         }
@@ -392,7 +392,7 @@ bool AudioOutputOpenAL::open()
         }
 
         alGenSources(1, &source);
-        err = alGetError();
+        err       = alGetError();
 
         if (err != AL_NO_ERROR)
         {
@@ -460,7 +460,7 @@ bool AudioOutputOpenAL::close()
     alcMakeContextCurrent(nullptr);
     qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("alcDestroyContext(%p)", context);
     alcDestroyContext(context);
-    ALCenum err = alcGetError(device);
+    ALCenum err     = alcGetError(device);
 
     if (err != ALC_NO_ERROR)
     {
@@ -477,7 +477,9 @@ bool AudioOutputOpenAL::close()
 
     if (device)
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("alcCloseDevice(%p)", device);
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("alcCloseDevice(%p)", device);
+
         alcCloseDevice(device);
 
         // ALC_INVALID_DEVICE now
@@ -554,7 +556,7 @@ bool AudioOutputOpenAL::write(const QByteArray& data)
     {
         // state used for filling initial data
 
-        buf = buffer[(-state)%buffer_count];
+        buf = buffer[(-state) % buffer_count];
         --state;
     }
     else

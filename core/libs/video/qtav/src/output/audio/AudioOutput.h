@@ -204,7 +204,7 @@ public:
      */
     int bufferSamples() const;
     void setBufferSamples(int value);
-    int bufferSize() const; /// bufferSamples()*bytesPerSample
+    int bufferSize() const; // bufferSamples()*bytesPerSample
 
     /*!
      * \brief bufferCount
@@ -217,7 +217,7 @@ public:
 
     int bufferSizeTotal() const
     {
-        return bufferCount() * bufferSize();
+        return (bufferCount() * bufferSize());
     }
 
     /*!

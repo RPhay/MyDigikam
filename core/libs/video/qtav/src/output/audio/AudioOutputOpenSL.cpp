@@ -151,7 +151,7 @@ FACTORY_REGISTER(AudioOutputBackend, OpenSL, kName)
         } \
     } while(0)
 
-SLDataFormat_PCM_EX AudioOutputOpenSL::audioFormatToSL(const AudioFormat &format)
+SLDataFormat_PCM_EX AudioOutputOpenSL::audioFormatToSL(const AudioFormat& format)
 {
     SLDataFormat_PCM_EX format_pcm;
 
@@ -197,18 +197,21 @@ SLDataFormat_PCM_EX AudioOutputOpenSL::audioFormatToSL(const AudioFormat &format
 
 #ifdef Q_OS_ANDROID
 
-void AudioOutputOpenSL::bufferQueueCallbackAndroid(SLAndroidSimpleBufferQueueItf bufferQueue, void *context)
+void AudioOutputOpenSL::bufferQueueCallbackAndroid(SLAndroidSimpleBufferQueueItf bufferQueue, void* context)
 {
 
 #if 0
 
     SLAndroidSimpleBufferQueueState state;
     (*bufferQueue)->GetState(bufferQueue, &state);
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf(">>>>>>>>>>>>>>bufferQueueCallback state.count=%lu .playIndex=%lu", state.count, state.playIndex);
+
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("bufferQueueCallback state.count=%lu .playIndex=%lu",
+            state.count, state.playIndex);
 
 #endif
 
-    AudioOutputOpenSL* ao = reinterpret_cast<AudioOutputOpenSL*>(context);
+    AudioOutputOpenSL* const ao = reinterpret_cast<AudioOutputOpenSL*>(context);
 
     if (ao->bufferControl() & AudioOutputBackend::CountCallback)
     {
@@ -218,7 +221,7 @@ void AudioOutputOpenSL::bufferQueueCallbackAndroid(SLAndroidSimpleBufferQueueItf
 
 #endif
 
-void AudioOutputOpenSL::bufferQueueCallback(SLBufferQueueItf bufferQueue, void *context)
+void AudioOutputOpenSL::bufferQueueCallback(SLBufferQueueItf bufferQueue, void* context)
 {
 
 #if 0
@@ -226,11 +229,13 @@ void AudioOutputOpenSL::bufferQueueCallback(SLBufferQueueItf bufferQueue, void *
     SLBufferQueueState state;
     (*bufferQueue)->GetState(bufferQueue, &state);
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf(">>>>>>>>>>>>>>bufferQueueCallback state.count=%lu .playIndex=%lu", state.count, state.playIndex);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("bufferQueueCallback state.count=%lu .playIndex=%lu",
+            state.count, state.playIndex);
 
 #endif
 
-    AudioOutputOpenSL* ao = reinterpret_cast<AudioOutputOpenSL*>(context);
+    AudioOutputOpenSL* const ao = reinterpret_cast<AudioOutputOpenSL*>(context);
 
     if (ao->bufferControl() & AudioOutputBackend::CountCallback)
     {
@@ -238,7 +243,7 @@ void AudioOutputOpenSL::bufferQueueCallback(SLBufferQueueItf bufferQueue, void *
     }
 }
 
-void AudioOutputOpenSL::playCallback(SLPlayItf player, void *ctx, SLuint32 event)
+void AudioOutputOpenSL::playCallback(SLPlayItf player, void* ctx, SLuint32 event)
 {
     Q_UNUSED(player);
     Q_UNUSED(ctx);
@@ -251,36 +256,36 @@ AudioOutputOpenSL::AudioOutputOpenSL(QObject* const parent)
     : AudioOutputBackend(AudioOutput::DeviceFeatures() |
                          AudioOutput::SetVolume        |
                          AudioOutput::SetMute, parent),
-      m_outputMixObject(0),
-      m_playerObject(0),
-      m_playItf(0),
-      m_volumeItf(0),
-      m_bufferQueueItf(0),
-      m_bufferQueueItf_android(0),
-      m_android(false),
-      m_android_api_level(0),
-      m_sl_major(0),
-      m_sl_minor(0),
-      m_sl_step(0),
-      m_streamType(-1),
-      buffers_queued(0),
-      queue_data_write(0)
+      m_outputMixObject         (0),
+      m_playerObject            (0),
+      m_playItf                 (0),
+      m_volumeItf               (0),
+      m_bufferQueueItf          (0),
+      m_bufferQueueItf_android  (0),
+      m_android                 (false),
+      m_android_api_level       (0),
+      m_sl_major                (0),
+      m_sl_minor                (0),
+      m_sl_step                 (0),
+      m_streamType              (-1),
+      buffers_queued            (0),
+      queue_data_write          (0)
 {
 
 #ifdef Q_OS_ANDROID
 
-    char v[PROP_VALUE_MAX+1];
+    char v[PROP_VALUE_MAX + 1] = { 0 };
     __system_property_get("ro.build.version.sdk", v);
-    m_android_api_level = atoi(v);
+    m_android_api_level  = atoi(v);
 
 #endif
 
-    available = false;
+    available            = false;
     SLEngineOption opt[] = {(SLuint32) SL_ENGINEOPTION_THREADSAFE, (SLuint32) SL_BOOLEAN_TRUE};
     SL_ENSURE(slCreateEngine(&engineObject, 1, opt, 0, nullptr, nullptr)); // SLEngineOption is ignored by android
     SL_ENSURE((*engineObject)->Realize(engineObject, SL_BOOLEAN_FALSE));
     SL_ENSURE((*engineObject)->GetInterface(engineObject, SL_IID_ENGINE, &engine));
-    available = true;
+    available            = true;
 
     if ((*engineObject)->GetInterface(engineObject, SL_IID_ENGINECAPABILITIES, &m_cap) == SL_RESULT_SUCCESS)
     {
@@ -288,8 +293,9 @@ AudioOutputOpenSL::AudioOutputOpenSL(QObject* const parent)
 
         if ((*m_cap)->QueryAPIVersion(m_cap, &m_sl_major, &m_sl_minor, &m_sl_step) == SL_RESULT_SUCCESS)
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("OpenSL version: %d.%d.%d\n",
-                                                        m_sl_major, m_sl_minor, m_sl_step);
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("OpenSL version: %d.%d.%d\n",
+                    m_sl_major, m_sl_minor, m_sl_step);
         }
     }
 }
@@ -350,7 +356,10 @@ bool AudioOutputOpenSL::open()
 
 #ifdef Q_OS_ANDROID
 
-    SLDataLocator_AndroidSimpleBufferQueue bufferQueueLocator_android = { SL_DATALOCATOR_ANDROIDSIMPLEBUFFERQUEUE, (SLuint32)buffer_count };
+    SLDataLocator_AndroidSimpleBufferQueue bufferQueueLocator_android =
+    {
+        SL_DATALOCATOR_ANDROIDSIMPLEBUFFERQUEUE, (SLuint32)buffer_count
+    };
 
     if (m_android)
         audioSrc.pLocator = &bufferQueueLocator_android;
@@ -386,7 +395,8 @@ bool AudioOutputOpenSL::open()
 
     // AudioPlayer
 
-    SL_ENSURE((*engine)->CreateAudioPlayer(engine, &m_playerObject, &audioSrc, &audioSink, sizeof(ids)/sizeof(ids[0]), ids, req), false);
+    SL_ENSURE((*engine)->CreateAudioPlayer(engine, &m_playerObject, &audioSrc,
+                                           &audioSink, sizeof(ids) / sizeof(ids[0]), ids, req), false);
 
 #ifdef Q_OS_ANDROID
 

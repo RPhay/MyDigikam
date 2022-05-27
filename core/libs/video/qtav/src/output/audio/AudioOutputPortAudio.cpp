@@ -78,10 +78,10 @@ FACTORY_REGISTER(AudioOutputBackend, PortAudio, kName)
 
 AudioOutputPortAudio::AudioOutputPortAudio(QObject* parent)
     : AudioOutputBackend(AudioOutput::NoFeature, parent),
-      initialized(false),
-      outputParameters(new PaStreamParameters),
-      stream(nullptr),
-      outputLatency(0.0)
+      initialized       (false),
+      outputParameters  (new PaStreamParameters),
+      stream            (nullptr),
+      outputLatency     (0.0)
 {
     PaError err = paNoError;
 
@@ -181,19 +181,29 @@ static int toPaSampleFormat(AudioFormat::SampleFormat format)
     switch (format)
     {
         case AudioFormat::SampleFormat_Unsigned8:
+        {
             return paUInt8;
+        }
 
         case AudioFormat::SampleFormat_Signed16:
+        {
             return paInt16;
+        }
 
         case AudioFormat::SampleFormat_Signed32:
+        {
             return paInt32;
+        }
 
         case AudioFormat::SampleFormat_Float:
+        {
             return paFloat32;
+        }
 
         default:
+        {
             return paCustomFormat;
+        }
     }
 }
 
@@ -203,7 +213,8 @@ bool AudioOutputPortAudio::open()
 {
     outputParameters->sampleFormat = toPaSampleFormat(format.sampleFormat());
     outputParameters->channelCount = format.channels();
-    PaError err                    = Pa_OpenStream(&stream, nullptr, outputParameters, format.sampleRate(), 0, paNoFlag, nullptr, nullptr);
+    PaError err                    = Pa_OpenStream(&stream, nullptr, outputParameters, format.sampleRate(),
+                                                   0, paNoFlag, nullptr, nullptr);
 
     if (err != paNoError)
     {

@@ -100,7 +100,6 @@ void AudioOutputBackend::onCallback()
     audio->onCallback();
 }
 
-
 FACTORY_DEFINE(AudioOutputBackend)
 
 void AudioOutput_RegisterAll()

@@ -45,7 +45,7 @@ class QTAV_PRIVATE_EXPORT AudioOutputBackend : public QObject
 public:
 
     AudioOutput*    audio;
-    bool            available;         // default is true. set to false when failed to create backend
+    bool            available;         ///< default is true. set to false when failed to create backend
     int             buffer_size;
     int             buffer_count;
     AudioFormat     format;
@@ -92,14 +92,14 @@ public:
      */
     enum BufferControl
     {
-        User            = 0,      // You have to reimplement waitForNextBuffer()
+        User            = 0,      ///< You have to reimplement waitForNextBuffer()
         Blocking        = 1,
         BytesCallback   = 1 << 1,
         CountCallback   = 1 << 2,
-        PlayedCount     = 1 << 3, // number of buffers played since last buffer dequeued
+        PlayedCount     = 1 << 3, ///< number of buffers played since last buffer dequeued
         PlayedBytes     = 1 << 4,
-        OffsetIndex     = 1 << 5, // current playing offset
-        OffsetBytes     = 1 << 6, // current playing offset by bytes
+        OffsetIndex     = 1 << 5, ///< current playing offset
+        OffsetBytes     = 1 << 6, ///< current playing offset by bytes
         WritableBytes   = 1 << 7,
     };
 
