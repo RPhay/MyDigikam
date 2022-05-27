@@ -24,6 +24,8 @@
 #ifndef QTAV_OPENGL_RENDERER_BASE_P_H
 #define QTAV_OPENGL_RENDERER_BASE_P_H
 
+#include "OpenGLRendererBase.h"
+
 // Local includes
 
 #include "VideoRenderer_p.h"

@@ -21,11 +21,16 @@
  *
  * ============================================================ */
 
-#include "OpenGLRendererBase.h"
 #include "OpenGLRendererBase_p.h"
+
+// Qt includes
+
+#include <QResizeEvent>
+
+// Local includes
+
 #include "OpenGLVideo.h"
 #include "FilterContext.h"
-#include <QResizeEvent>
 #include "OpenGLHelper.h"
 #include "digikam_debug.h"
 
@@ -60,7 +65,7 @@ void OpenGLRendererBasePrivate::setupAspectRatio()
         matrix.rotate(rotation(), 0, 0, 1); // Z axis
 }
 
-OpenGLRendererBase::OpenGLRendererBase(OpenGLRendererBasePrivate &d)
+OpenGLRendererBase::OpenGLRendererBase(OpenGLRendererBasePrivate& d)
     : VideoRenderer(d)
 {
     setPreferredPixelFormat(VideoFormat::Format_YUV420P);
@@ -124,7 +129,7 @@ void OpenGLRendererBase::onInitializeGL()
 
     initializeOpenGLFunctions();
 
-    QOpenGLContext* ctx = const_cast<QOpenGLContext*>(QOpenGLContext::currentContext()); //qt4 returns const
+    QOpenGLContext* const ctx = const_cast<QOpenGLContext*>(QOpenGLContext::currentContext()); //qt4 returns const
     d.glv.setOpenGLContext(ctx);
 }
 

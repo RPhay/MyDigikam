@@ -150,12 +150,14 @@ public:
         }
     }
 
+public:
+
     VideoRenderer* impl = nullptr;
     QLibrary       avwidgets;
 };
 
 VideoOutput::VideoOutput(QObject* const parent)
-    : QObject(parent),
+    : QObject      (parent),
       VideoRenderer(*new VideoOutputPrivate(0, false))
 {
     if (d_func().impl && d_func().impl->widget())
@@ -165,7 +167,7 @@ VideoOutput::VideoOutput(QObject* const parent)
 }
 
 VideoOutput::VideoOutput(VideoRendererId rendererId, QObject* const parent)
-    : QObject(parent),
+    : QObject      (parent),
       VideoRenderer(*new VideoOutputPrivate(rendererId, true))
 {
     if (d_func().impl && d_func().impl->widget())
@@ -199,7 +201,7 @@ bool VideoOutput::onSetPreferredPixelFormat(VideoFormat::PixelFormat pixfmt)
 
     d.impl->setPreferredPixelFormat(pixfmt);
 
-    return pixfmt == d.impl->preferredPixelFormat();
+    return (pixfmt == d.impl->preferredPixelFormat());
 
 }
 

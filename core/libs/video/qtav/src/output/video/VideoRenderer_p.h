@@ -43,10 +43,8 @@
  * use matrix to compute out rect, mapped point etc
  */
 
-
 class QObject;
 class QWidget;
-
 
 namespace QtAV
 {
@@ -58,25 +56,25 @@ class QTAV_PRIVATE_EXPORT VideoRendererPrivate : public AVOutputPrivate
 public:
 
     VideoRendererPrivate()
-      : AVOutputPrivate(),
-        update_background(true),
-        renderer_width(480),
-        renderer_height(320),
-        source_aspect_ratio(0),
-        src_width(0),
-        src_height(0),
-        aspect_ratio_changed(true), // to set the initial parameters
-        out_aspect_ratio_mode(VideoAspectRatio),
-        out_aspect_ratio(0),
-        quality(QualityBest),
-        preferred_format(VideoFormat::Format_RGB32),
-        force_preferred(false),
-        brightness(0),
-        contrast(0),
-        hue(0),
-        saturation(0),
-        bg_color(0, 0, 0),
-        orientation(0)
+      : AVOutputPrivate         (),
+        update_background       (true),
+        renderer_width          (480),
+        renderer_height         (320),
+        source_aspect_ratio     (0),
+        src_width               (0),
+        src_height              (0),
+        aspect_ratio_changed    (true), // to set the initial parameters
+        out_aspect_ratio_mode   (VideoAspectRatio),
+        out_aspect_ratio        (0),
+        quality                 (QualityBest),
+        preferred_format        (VideoFormat::Format_RGB32),
+        force_preferred         (false),
+        brightness              (0),
+        contrast                (0),
+        hue                     (0),
+        saturation              (0),
+        bg_color                (0, 0, 0),
+        orientation             (0)
     {
         // conv.setInFormat(PIX_FMT_YUV420P);
         // conv.setOutFormat(PIX_FMT_BGR32); // TODO: why not RGB32?
@@ -149,7 +147,7 @@ public:
         if (!statistics)
             return orientation;
 
-        return statistics->video_only.rotate + orientation;
+        return (statistics->video_only.rotate + orientation);
     }
 
 public:

@@ -49,7 +49,7 @@ public:
 };
 
 OpenGLWindowRenderer::OpenGLWindowRenderer(UpdateBehavior updateBehavior, QWindow* const parent)
-    : QOpenGLWindow(updateBehavior, parent)
+    : QOpenGLWindow     (updateBehavior, parent)
     , OpenGLRendererBase(*new OpenGLWindowRendererPrivate(this))
 {
 }

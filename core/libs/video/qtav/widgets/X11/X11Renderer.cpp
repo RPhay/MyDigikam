@@ -31,18 +31,22 @@
  */
 
 #include "VideoRenderer_p.h"
-#include "FilterContext.h"
-#include "digikam_debug.h"
+
+// C++ includes
+
+#include <unistd.h> // usleep
 
 // Qt includes
 
 #include <QWidget>
 #include <QResizeEvent>
 #include <qmath.h>
+#include <QTextStream>
 
-// QTextStream must be included before any header file that defines Status. Xlib.h defines Status
+// Local includes
 
-#include <QTextStream> // build error
+#include "FilterContext.h"
+#include "digikam_debug.h"
 
 // X11 includes
 
@@ -50,10 +54,6 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include <X11/extensions/XShm.h>
-
-// C++ includes
-
-#include <unistd.h> // usleep
 
 // scale: http://www.opensource.apple.com/source/X11apps/X11apps-14/xmag/xmag-X11R7.0-1.0.1/Scale.c     // krazy:exclude=insecurenet
 
@@ -74,7 +74,7 @@ class Q_DECL_HIDDEN X11Renderer : public QWidget,
 
 public:
 
-    X11Renderer(QWidget* parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
+    X11Renderer(QWidget* const parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
 
     VideoRendererId id()                              const override;
     bool isSupported(VideoFormat::PixelFormat pixfmt) const override;
@@ -183,7 +183,7 @@ static const struct fmt2Xfmtentry
 
 VideoFormat::PixelFormat pixelFormat(XImage* xi)
 {
-    const struct fmt2Xfmtentry *fmte = fmt2Xfmt;
+    const struct fmt2Xfmtentry* fmte = fmt2Xfmt;
 
     while (fmte->fmt != VideoFormat::Format_Invalid)
     {
@@ -252,12 +252,12 @@ public:
             return;
         }
 
-        XImage *ximg = nullptr;
+        XImage* ximg = nullptr;
 
         if ((depth != 15) && (depth != 16) && (depth != 24) && (depth != 32))
         {
 /*
-            Visual *vs;
+            Visual* vs;
 
             //depth = // find_depth_from_visuals
 */
@@ -277,7 +277,7 @@ public:
             if ((ximage_depth + 7) / 8 != (bpp + 7) / 8) // 24bpp use 32 depth
                 ximage_depth = bpp;
 
-            mask = ximg->red_mask | ximg->green_mask | ximg->blue_mask;
+            mask = (ximg->red_mask | ximg->green_mask | ximg->blue_mask);
 
             qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::fromLatin1("color mask: %1 %2 %3 %4")
                 .arg(mask)
@@ -356,7 +356,9 @@ public:
         XSetBackground(display, gc, BlackPixel(display, DefaultScreen(display)));
 
         if (filter_context)
-            ((X11FilterContext*)filter_context)->resetX11((X11FilterContext::Display*)display, (X11FilterContext::GC)gc, (X11FilterContext::Drawable)q_func().winId());
+            ((X11FilterContext*)filter_context)->resetX11((X11FilterContext::Display*)display,
+                                                          (X11FilterContext::GC)gc,
+                                                          (X11FilterContext::Drawable)q_func().winId());
 
         return true;
     }
@@ -374,7 +376,7 @@ public:
 
     bool ensureImage(int index, int w, int h)
     {
-        XImage* &ximage = ximage_pool[index];
+        XImage*& ximage = ximage_pool[index];
 
         if (ximage && (ximage->width == w) && (ximage->height == h))
             return true;
@@ -437,7 +439,7 @@ public:
 
         XSync(display, False);
         shmctl(shm.shmid, IPC_RMID, nullptr);
-        pixfmt = pixelFormat(ximage);
+        pixfmt       = pixelFormat(ximage);
 
         return true;
 
@@ -455,7 +457,7 @@ no_shm:
 
         // TODO: align 16 or?
 
-        ximage_data[index].resize(ximage->bytes_per_line*ximage->height + 32);
+        ximage_data[index].resize(ximage->bytes_per_line * ximage->height + 32);
 
         return true;
     }
@@ -487,7 +489,7 @@ public:
     bool                        frame_changed           = false;
 };
 
-X11Renderer::X11Renderer(QWidget* parent, Qt::WindowFlags f)
+X11Renderer::X11Renderer(QWidget* const parent, Qt::WindowFlags f)
     : QWidget      (parent, f),
       VideoRenderer(*new X11RendererPrivate())
 {
@@ -511,7 +513,8 @@ X11Renderer::X11Renderer(QWidget* parent, Qt::WindowFlags f)
 
     if (!d_func().filter_context)
     {
-        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("No filter context for X11");
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+            << QString::asprintf("No filter context for X11");
     }
     else
     {
@@ -564,7 +567,7 @@ int X11RendererPrivate::resizeXImage(int index)
         return false;
 
     frame_changed   = false;
-    XImage* &ximage = ximage_pool[index];
+    XImage*& ximage = ximage_pool[index];
     video_frame     = frame_orig; // set before map!
     VideoFrame interopFrame;
 
@@ -575,12 +578,14 @@ int X11RendererPrivate::resizeXImage(int index)
         interopFrame.setBytesPerLine(ximage->bytes_per_line);
     }
 
-    if (   frame_orig.constBits(0)
-        || !video_frame.map(UserSurface, &interopFrame, VideoFormat(VideoFormat::Format_RGB32)) //check pixel format and scale to ximage size&line_size
+    if (frame_orig.constBits(0) ||
+        !video_frame.map(UserSurface, &interopFrame, VideoFormat(VideoFormat::Format_RGB32)) // check pixel format and scale to ximage size&line_size
        )
     {
-        if (   !frame_orig.constBits(0) // always convert hw frames
-            || (frame_orig.pixelFormat() != pixfmt) || (frame_orig.width() != ximage->width) || (frame_orig.height() != ximage->height)
+        if (!frame_orig.constBits(0)               || // always convert hw frames
+            (frame_orig.pixelFormat() != pixfmt)   ||
+            (frame_orig.width() != ximage->width)  ||
+            (frame_orig.height() != ximage->height)
            )
             video_frame = frame_orig.to(pixfmt, QSize(ximage->width, ximage->height));
         else
@@ -716,25 +721,26 @@ void X11Renderer::drawFrame()
         // next ximage is ready
 
         idx          = d.next_index;
-        d.next_index = (d.next_index+1)%kPoolSize;
+        d.next_index = (d.next_index + 1) % kPoolSize;
     }
 
     XImage* ximage = d.ximage_pool[idx];
 
     if (d.use_shm)
     {
-        XShmPutImage(d.display, winId(), d.gc, ximage
-                      , roi.x(), roi.y() //, roi.width(), roi.height()
-                      , d.out_rect.x(), d.out_rect.y(), d.out_rect.width(), d.out_rect.height()
-                      , True /*true: send event*/);
+        XShmPutImage(d.display, winId(), d.gc, ximage,
+                     roi.x(), roi.y(),  //, roi.width(), roi.height()
+                     d.out_rect.x(), d.out_rect.y(), d.out_rect.width(), d.out_rect.height(),
+                     True               // true: send event
+                    );
         d.ShmCompletionWaitCount++;
     }
     else
     {
-        XPutImage(d.display, winId(), d.gc, ximage
-                   , roi.x(), roi.y() //, roi.width(), roi.height()
-                   , d.out_rect.x(), d.out_rect.y(), d.out_rect.width(), d.out_rect.height());
-        XSync(d.display, False); // update immediately
+        XPutImage(d.display, winId(), d.gc, ximage,
+                  roi.x(), roi.y(), // roi.width(), roi.height(),
+                  d.out_rect.x(), d.out_rect.y(), d.out_rect.width(), d.out_rect.height());
+        XSync(d.display, False);    // update immediately
     }
 }
 

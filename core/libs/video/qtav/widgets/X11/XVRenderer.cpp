@@ -27,28 +27,25 @@
  */
 
 #include "VideoRenderer_p.h"
-#include "FilterContext.h"
 
 // Qt includes
 
 #include <QWidget>
 #include <QResizeEvent>
 #include <qmath.h>
-
-// qtextstream.h must be included before any header file that defines Status. Xlib.h defines Status
-
 #include <QTextStream>
+
+// Local includes
+
+#include "QtAV_factory.h"
+#include "FilterContext.h"
+#include "digikam_debug.h"
 
 // X11 includes
 
 #include <sys/shm.h>
 #include <X11/Xlib.h>
 #include <X11/extensions/Xvlib.h>
-
-// Local includes
-
-#include "QtAV_factory.h"
-#include "digikam_debug.h"
 
 // http://huangbster.i.sohu.com/blog/view/256490057.htm     // krazy:exclude=insecurenet
 
@@ -59,7 +56,7 @@ inline int scaleEQValue(int val, int min, int max)
 {
     // max-min?
 
-    return (val + 100)*((qAbs(min) + qAbs(max)))/200 - qAbs(min);
+    return ((val + 100) * ((qAbs(min) + qAbs(max))) / 200 - qAbs(min));
 }
 
 class XVRendererPrivate;
@@ -72,7 +69,7 @@ class Q_DECL_HIDDEN XVRenderer : public QWidget,
 
 public:
 
-    XVRenderer(QWidget* parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
+    XVRenderer(QWidget* const parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
 
     virtual VideoRendererId id()                              const override;
     virtual bool isSupported(VideoFormat::PixelFormat pixfmt) const override;
@@ -185,7 +182,7 @@ int xvFormatInPort(Display* disp, XvPortID port, VideoFormat::PixelFormat fmt)
     int count                    = 0;
     XvImageFormatValues* xvifmts = XvListImageFormats(disp, port, &count);
 
-    for (const XvImageFormatValues* xvifmt = xvifmts; xvifmt <  xvifmts+count; ++xvifmt)
+    for (const XvImageFormatValues* xvifmt = xvifmts ; xvifmt < xvifmts+count ; ++xvifmt)
     {
         qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("XvImageFormatValues: %s", xvifmt->guid);
 
@@ -324,7 +321,8 @@ public:
 
         if (filter_context)
             ((X11FilterContext*)filter_context)->resetX11((X11FilterContext::Display*)display,
-                                                          (X11FilterContext::GC)gc, (X11FilterContext::Drawable)q_func().winId());
+                                                          (X11FilterContext::GC)gc,
+                                                          (X11FilterContext::Drawable)q_func().winId());
 
         return true;
     }
@@ -341,7 +339,8 @@ public:
         {
             if ((xv_adaptor_info[i].type & (XvInputMask | XvImageMask)) == (XvInputMask | XvImageMask))
             {
-                for (XvPortID p = xv_adaptor_info[i].base_id ; p < xv_adaptor_info[i].base_id + xv_adaptor_info[i].num_ports ; ++p)
+                for (XvPortID p = xv_adaptor_info[i].base_id ;
+                     p < xv_adaptor_info[i].base_id + xv_adaptor_info[i].num_ports ; ++p)
                 {
                     qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << "XvAdaptorInfo:" << xv_adaptor_info[i].name;
 
@@ -471,7 +470,7 @@ public:
 bool XVRendererPrivate::XvSetPortAttributeIfExists(const char* key, int value)
 {
     int nb_attributes;
-    XvAttribute* attributes = XvQueryPortAttributes(display, xv_port, &nb_attributes);
+    XvAttribute* const attributes = XvQueryPortAttributes(display, xv_port, &nb_attributes);
 
     if (!attributes)
     {
@@ -482,7 +481,7 @@ bool XVRendererPrivate::XvSetPortAttributeIfExists(const char* key, int value)
 
     for (int i = 0 ; i < nb_attributes ; ++i)
     {
-        const XvAttribute &attribute = ((XvAttribute*)attributes)[i];
+        const XvAttribute& attribute = ((XvAttribute*)attributes)[i];
 
         if (!qstrcmp(attribute.name, key) && (attribute.flags & XvSettable))
         {
@@ -498,8 +497,8 @@ bool XVRendererPrivate::XvSetPortAttributeIfExists(const char* key, int value)
     return false;
 }
 
-XVRenderer::XVRenderer(QWidget* parent, Qt::WindowFlags f)
-    : QWidget(parent, f),
+XVRenderer::XVRenderer(QWidget* const parent, Qt::WindowFlags f)
+    : QWidget      (parent, f),
       VideoRenderer(*new XVRendererPrivate())
 {
     setPreferredPixelFormat(VideoFormat::Format_YUV420P);
@@ -662,29 +661,45 @@ bool XVRenderer::receiveFrame(const VideoFrame& frame)
     {
         case VideoFormat::Format_YUV420P:
         case VideoFormat::Format_YV12:
+        {
             CopyFromYv12_2(dst, dst_linesize, src.data(), src_linesize.data(), dst_linesize[0], d.xv_image->height);
+
             break;
+        }
 
         case VideoFormat::Format_NV12:
+        {
             std::swap(dst[1], dst[2]);
             std::swap(dst_linesize[1], dst_linesize[2]);
             CopyFromNv12(dst, dst_linesize, src.data(), src_linesize.data(), dst_linesize[0], d.xv_image->height);
+
             break;
+        }
 
         case VideoFormat::Format_NV21:
+        {
             CopyFromNv12(dst, dst_linesize, src.data(), src_linesize.data(), dst_linesize[0], d.xv_image->height);
+
             break;
+        }
 
         case VideoFormat::Format_UYVY:
         case VideoFormat::Format_YUYV:
+        {
             VideoFrame::copyPlane(dst[0], dst_linesize[0], src[0], src_linesize[0], dst_linesize[0], d.xv_image->height);
+
             break;
+        }
 
         case VideoFormat::Format_BGR24:
+        {
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     update();
@@ -726,10 +741,10 @@ void XVRenderer::drawFrame()
 
         if (d.use_shm)
         {
-            XvShmPutImage(d.display, d.xv_port, winId(), d.gc, d.xv_image
-                          , roi.x(), roi.y(), roi.width(), roi.height()
-                          , d.out_rect.x(), d.out_rect.y(), d.out_rect.width(), d.out_rect.height()
-                          , false /*true: send event*/);
+            XvShmPutImage(d.display, d.xv_port, winId(), d.gc, d.xv_image,
+                          roi.x(), roi.y(), roi.width(), roi.height(),
+                          d.out_rect.x(), d.out_rect.y(), d.out_rect.width(), d.out_rect.height(),
+                          false /*true: send event*/);
 
             XSync(d.display, False); // update immediately
 
@@ -738,18 +753,18 @@ void XVRenderer::drawFrame()
 
 #endif
 
-        XvPutImage(d.display, d.xv_port, winId(), d.gc, d.xv_image
-                   , roi.x(), roi.y(), roi.width(), roi.height()
-                   , d.out_rect.x(), d.out_rect.y(), d.out_rect.width(), d.out_rect.height());
+        XvPutImage(d.display, d.xv_port, winId(), d.gc, d.xv_image,
+                   roi.x(), roi.y(), roi.width(), roi.height(),
+                   d.out_rect.x(), d.out_rect.y(), d.out_rect.width(), d.out_rect.height());
         XSync(d.display, False);
 }
 
-void XVRenderer::paintEvent(QPaintEvent *)
+void XVRenderer::paintEvent(QPaintEvent*)
 {
     handlePaintEvent();
 }
 
-void XVRenderer::resizeEvent(QResizeEvent *e)
+void XVRenderer::resizeEvent(QResizeEvent* e)
 {
     DPTR_D(XVRenderer);
     d.update_background = true;
@@ -758,7 +773,7 @@ void XVRenderer::resizeEvent(QResizeEvent *e)
     update(); // update background
 }
 
-void XVRenderer::showEvent(QShowEvent *event)
+void XVRenderer::showEvent(QShowEvent* event)
 {
     Q_UNUSED(event);
     DPTR_D(XVRenderer);
@@ -776,28 +791,28 @@ bool XVRenderer::onSetBrightness(qreal b)
 {
     DPTR_D(XVRenderer);
 
-    return d.XvSetPortAttributeIfExists("XV_BRIGHTNESS", b*100);
+    return d.XvSetPortAttributeIfExists("XV_BRIGHTNESS", b * 100);
 }
 
 bool XVRenderer::onSetContrast(qreal c)
 {
     DPTR_D(XVRenderer);
 
-    return d.XvSetPortAttributeIfExists("XV_CONTRAST",c*100);
+    return d.XvSetPortAttributeIfExists("XV_CONTRAST",c * 100);
 }
 
 bool XVRenderer::onSetHue(qreal h)
 {
     DPTR_D(XVRenderer);
 
-    return d.XvSetPortAttributeIfExists("XV_HUE", h*100);
+    return d.XvSetPortAttributeIfExists("XV_HUE", h * 100);
 }
 
 bool XVRenderer::onSetSaturation(qreal s)
 {
     DPTR_D(XVRenderer);
 
-    return d.XvSetPortAttributeIfExists("XV_SATURATION", s*100);
+    return d.XvSetPortAttributeIfExists("XV_SATURATION", s * 100);
 }
 
 IMPLEMENT_VIDEO_RENDERER_EMIT_METHODS(XVRenderer)

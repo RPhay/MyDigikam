@@ -307,7 +307,7 @@ void VideoRenderer::setInSize(int width, int height)
         emitVideoFrameSizeChanged();
     }
 
-    if (!d.aspect_ratio_changed)// && (d.src_width == width && d.src_height == height))
+    if (!d.aspect_ratio_changed) // && (d.src_width == width && d.src_height == height))
         return;
 
     //d.source_aspect_ratio = qreal(d.src_width)/qreal(d.src_height);
@@ -452,7 +452,7 @@ void VideoRenderer::setRegionOfInterest(qreal x, qreal y, qreal width, qreal hei
     setRegionOfInterest(QRectF(x, y, width, height));
 }
 
-void VideoRenderer::setRegionOfInterest(const QRectF &roi)
+void VideoRenderer::setRegionOfInterest(const QRectF& roi)
 {
     DPTR_D(VideoRenderer);
 
@@ -476,7 +476,7 @@ void VideoRenderer::setRegionOfInterest(const QRectF &roi)
     // TODO: how to fill video? what's out_rect now?
 }
 
-bool VideoRenderer::onSetRegionOfInterest(const QRectF &roi)
+bool VideoRenderer::onSetRegionOfInterest(const QRectF& roi)
 {
     Q_UNUSED(roi);
 
@@ -577,14 +577,14 @@ QRectF VideoRenderer::normalizedROI() const
     return r;
 }
 
-QPointF VideoRenderer::mapToFrame(const QPointF &p) const
+QPointF VideoRenderer::mapToFrame(const QPointF& p) const
 {
     return onMapToFrame(p);
 }
 
 // TODO: orientation
 
-QPointF VideoRenderer::onMapToFrame(const QPointF &p) const
+QPointF VideoRenderer::onMapToFrame(const QPointF& p) const
 {
     QRectF roi    = realROI();
 
@@ -873,12 +873,12 @@ QColor VideoRenderer::backgroundColor() const
     return d_func().bg_color;
 }
 
-void VideoRenderer::onSetBackgroundColor(const QColor &color)
+void VideoRenderer::onSetBackgroundColor(const QColor& color)
 {
     Q_UNUSED(color);
 }
 
-void VideoRenderer::setBackgroundColor(const QColor &c)
+void VideoRenderer::setBackgroundColor(const QColor& c)
 {
     DPTR_D(VideoRenderer);
 
