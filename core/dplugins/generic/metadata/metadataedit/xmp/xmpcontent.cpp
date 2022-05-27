@@ -58,7 +58,8 @@ public:
         headlineEdit          (nullptr),
         writerEdit            (nullptr),
         captionEdit           (nullptr),
-        copyrightEdit         (nullptr)
+        copyrightEdit         (nullptr),
+        usageTermsEdit        (nullptr)
     {
     }
 
@@ -73,6 +74,7 @@ public:
 
     AltLangStringsEdit* captionEdit;
     AltLangStringsEdit* copyrightEdit;
+    AltLangStringsEdit* usageTermsEdit;
 };
 
 XMPContent::XMPContent(QWidget* const parent)
@@ -117,8 +119,13 @@ XMPContent::XMPContent(QWidget* const parent)
     // --------------------------------------------------------
 
     d->copyrightEdit          = new AltLangStringsEdit(this, i18n("Copyright:"),
-                                              i18n("Enter the necessary copyright notice."));
+                                                       i18n("Enter the necessary copyright notice."));
+
     d->syncEXIFCopyrightCheck = new QCheckBox(i18n("Sync Exif Copyright"), this);
+
+    d->usageTermsEdit         = new AltLangStringsEdit(this, i18n("Right Usage Terms:"),
+                                                       i18n("Enter the instructions on how a "
+                                                            "resource can be legally used here."));
 
     // --------------------------------------------------------
 
@@ -131,7 +138,8 @@ XMPContent::XMPContent(QWidget* const parent)
     grid->addWidget(d->writerEdit,                         4, 1, 1, 2);
     grid->addWidget(d->copyrightEdit,                      5, 0, 1, 3);
     grid->addWidget(d->syncEXIFCopyrightCheck,             6, 0, 1, 3);
-    grid->setRowStretch(7, 10);
+    grid->addWidget(d->usageTermsEdit,                     7, 0, 1, 3);
+    grid->setRowStretch(8, 10);
     grid->setColumnStretch(2, 10);
     grid->setContentsMargins(QMargins());
     grid->setSpacing(spacing);
@@ -155,6 +163,9 @@ XMPContent::XMPContent(QWidget* const parent)
     connect(d->copyrightEdit, SIGNAL(signalToggled(bool)),
             this, SIGNAL(signalModified()));
 
+    connect(d->usageTermsEdit, SIGNAL(signalToggled(bool)),
+            this, SIGNAL(signalModified()));
+
     connect(d->copyrightEdit, SIGNAL(signalDefaultLanguageEnabled(bool)),
             this, SLOT(slotSyncCopyrightOptionsEnabled(bool)));
 
@@ -170,6 +181,9 @@ XMPContent::XMPContent(QWidget* const parent)
             this, SIGNAL(signalModified()));
 
     connect(d->copyrightEdit, SIGNAL(signalModified()),
+            this, SIGNAL(signalModified()));
+
+    connect(d->usageTermsEdit, SIGNAL(signalModified()),
             this, SIGNAL(signalModified()));
 
     connect(d->headlineEdit, SIGNAL(textChanged(QString)),
@@ -276,6 +290,17 @@ void XMPContent::readMetadata(const DMetadata& meta)
         d->copyrightEdit->setValid(true);
     }
 
+    map.clear();
+    d->usageTermsEdit->setValues(map);
+    d->usageTermsEdit->setValid(false);
+    map = meta.getXmpTagStringListLangAlt("Xmp.xmpRights.UsageTerms", false);
+
+    if (!map.isEmpty())
+    {
+        d->usageTermsEdit->setValues(map);
+        d->usageTermsEdit->setValid(true);
+    }
+
     blockSignals(false);
 }
 
@@ -333,6 +358,15 @@ void XMPContent::applyMetadata(const DMetadata& meta)
     else if (d->copyrightEdit->isValid())
     {
         meta.removeXmpTag("Xmp.dc.rights");
+    }
+
+    if (d->usageTermsEdit->getValues(oldAltLangMap, newAltLangMap))
+    {
+        meta.setXmpTagStringListLangAlt("Xmp.xmpRights.UsageTerms", newAltLangMap);
+    }
+    else if (d->usageTermsEdit->isValid())
+    {
+        meta.removeXmpTag("Xmp.xmpRights.UsageTerms");
     }
 }
 
