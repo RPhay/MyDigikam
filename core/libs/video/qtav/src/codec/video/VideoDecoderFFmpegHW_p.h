@@ -43,16 +43,16 @@ public:
 
     VideoDecoderFFmpegHWPrivate()
         : VideoDecoderFFmpegBasePrivate(),
-          get_format(nullptr),
-          get_buffer(nullptr),
-          release_buffer(nullptr),
-          reget_buffer(nullptr),
-          get_buffer2(nullptr),
-          threads(0),
-          copy_mode(VideoDecoderFFmpegHW::OptimizedCopy),
-          hw_w(0),
-          hw_h(0),
-          hw_profile(0)
+          get_format                   (nullptr),
+          get_buffer                   (nullptr),
+          release_buffer               (nullptr),
+          reget_buffer                 (nullptr),
+          get_buffer2                  (nullptr),
+          threads                      (0),
+          copy_mode                    (VideoDecoderFFmpegHW::OptimizedCopy),
+          hw_w                         (0),
+          hw_h                         (0),
+          hw_profile                   (0)
     {
     }
 

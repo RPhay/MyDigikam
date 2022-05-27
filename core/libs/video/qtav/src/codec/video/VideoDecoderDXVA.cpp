@@ -405,7 +405,7 @@ bool VideoDecoderDXVAPrivate::createDevice()
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
         << QString::asprintf("DXVA2 description:  %s",
-                             description.toUtf8().constData());
+            description.toUtf8().constData());
 
     if (!d3ddev)
         return false;
@@ -540,8 +540,8 @@ bool VideoDecoderDXVAPrivate::createDecoder(AVCodecID codec_id, int w, int h, QV
                                    0,
                                    DXVA2_VideoDecoderRenderTarget,
                                    surface_list,
-                                   nullptr)
-               , false);
+                                   nullptr),
+                 false);
 
     for (int i = 0 ; i < nb_surfaces ; ++i)
     {
@@ -558,27 +558,27 @@ bool VideoDecoderDXVAPrivate::createDecoder(AVCodecID codec_id, int w, int h, QV
 
     DXVA2_VideoDesc dsc;
     ZeroMemory(&dsc, sizeof(dsc));
-    dsc.SampleWidth                 = w;            // coded_width
-    dsc.SampleHeight                = h;            // coded_height
-    dsc.Format                      = fourccToD3D(format_fcc);
-    dsc.InputSampleFreq.Numerator   = 0;
-    dsc.InputSampleFreq.Denominator = 0;
-    dsc.OutputFrameFreq             = dsc.InputSampleFreq;
-    dsc.UABProtectionLevel          = FALSE;
-    dsc.Reserved                    = 0;
+    dsc.SampleWidth                     = w;                // coded_width
+    dsc.SampleHeight                    = h;                // coded_height
+    dsc.Format                          = fourccToD3D(format_fcc);
+    dsc.InputSampleFreq.Numerator       = 0;
+    dsc.InputSampleFreq.Denominator     = 0;
+    dsc.OutputFrameFreq                 = dsc.InputSampleFreq;
+    dsc.UABProtectionLevel              = FALSE;
+    dsc.Reserved                        = 0;
 
     // see xbmc
 
     /* FIXME I am unsure we can let unknown everywhere */
 
-    DXVA2_ExtendedFormat* const ext = &dsc.SampleFormat;
-    ext->SampleFormat               = 0;                // DXVA2_SampleProgressiveFrame;//xbmc. DXVA2_SampleUnknown;
-    ext->VideoChromaSubsampling     = 0;                // DXVA2_VideoChromaSubsampling_Unknown;
-    ext->NominalRange               = 0;                // DXVA2_NominalRange_Unknown;
-    ext->VideoTransferMatrix        = 0;                // DXVA2_VideoTransferMatrix_Unknown;
-    ext->VideoLighting              = 0;                // DXVA2_VideoLighting_dim;//xbmc. DXVA2_VideoLighting_Unknown;
-    ext->VideoPrimaries             = 0;                // DXVA2_VideoPrimaries_Unknown;
-    ext->VideoTransferFunction      = 0;                // DXVA2_VideoTransFunc_Unknown;
+    DXVA2_ExtendedFormat* const ext     = &dsc.SampleFormat;
+    ext->SampleFormat                   = 0;                // DXVA2_SampleProgressiveFrame;//xbmc. DXVA2_SampleUnknown;
+    ext->VideoChromaSubsampling         = 0;                // DXVA2_VideoChromaSubsampling_Unknown;
+    ext->NominalRange                   = 0;                // DXVA2_NominalRange_Unknown;
+    ext->VideoTransferMatrix            = 0;                // DXVA2_VideoTransferMatrix_Unknown;
+    ext->VideoLighting                  = 0;                // DXVA2_VideoLighting_dim;//xbmc. DXVA2_VideoLighting_Unknown;
+    ext->VideoPrimaries                 = 0;                // DXVA2_VideoPrimaries_Unknown;
+    ext->VideoTransferFunction          = 0;                // DXVA2_VideoTransFunc_Unknown;
 
     /* List all configurations available for the decoder */
 
@@ -589,8 +589,8 @@ bool VideoDecoderDXVAPrivate::createDecoder(AVCodecID codec_id, int w, int h, QV
                                               &dsc,
                                               nullptr,
                                               &cfg_count,
-                                              &cfg_list)
-                 , false);
+                                              &cfg_list),
+                 false);
 
     const int score = SelectConfig(codec_id, cfg_list, cfg_count, &cfg);
     CoTaskMemFree(cfg_list);

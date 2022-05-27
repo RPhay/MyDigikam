@@ -53,8 +53,8 @@ static AVPixelFormat ffmpeg_get_va_format(struct AVCodecContext* c, const AVPixe
 
 typedef struct ffmpeg_va_ref_t
 {
-    VideoDecoderFFmpegHWPrivate* va     = nullptr;
-    void*                        opaque = nullptr;           // va surface from AVFrame.opaque
+    VideoDecoderFFmpegHWPrivate* va;
+    void*                        opaque;           // va surface from AVFrame.opaque
 } ffmpeg_va_ref_t;
 
 static void ffmpeg_release_va_buffer2(void* opaque, uint8_t* data)
@@ -122,7 +122,7 @@ static int ffmpeg_get_va_buffer(struct AVCodecContext* c, AVFrame* ff) // vlc_va
 
 #   if !AV_MODULE_CHECK(LIBAVCODEC, 54, 34, 0, 79, 101)
 
-    ff->pkt_pts = c->pkt ? c->pkt->pts : AV_NOPTS_VALUE;
+    ff->pkt_pts = (c->pkt ? c->pkt->pts : AV_NOPTS_VALUE);
 
 #   endif
 

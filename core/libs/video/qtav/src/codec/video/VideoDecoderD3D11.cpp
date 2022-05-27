@@ -69,7 +69,7 @@ static QString sD3D11Description;
 
 struct dxgi_fcc
 {
-    int fourcc;
+    int         fourcc;
     DXGI_FORMAT dxgi;
 } dxgi_formats[] =
 {
@@ -131,10 +131,9 @@ QString VideoDecoderD3D11::description() const
     return QLatin1String("D3D11 Video Acceleration");
 }
 
-struct Q_DECL_HIDDEN d3d11_surface_t
-    : public va_surface_t
+struct Q_DECL_HIDDEN d3d11_surface_t : public va_surface_t
 {
-    d3d11_surface_t()
+    d3d11_surface_t   ()
         : va_surface_t(),
           view        (0)
     {
@@ -389,7 +388,7 @@ int VideoDecoderD3D11Private::fourccFor(const GUID* guid) const
 {
     BOOL is_supported = FALSE;
 
-    for (size_t i = 0 ; i < sizeof(dxgi_formats) / sizeof(dxgi_formats[i]) ; ++i)
+    for (size_t i = 0 ; (i < (sizeof(dxgi_formats) / sizeof(dxgi_formats[i]))) ; ++i)
     {
         const dxgi_fcc& f = dxgi_formats[i];
         DX_ENSURE(d3dviddev->CheckVideoDecoderFormat(guid, f.dxgi, &is_supported), 0);
@@ -414,7 +413,7 @@ QVector<GUID> VideoDecoderD3D11Private::getSupportedCodecs() const
     return guids;
 }
 
-bool VideoDecoderD3D11Private::createDecoder(AVCodecID codec_id, int w, int h, QVector<va_surface_t*> &surf)
+bool VideoDecoderD3D11Private::createDecoder(AVCodecID codec_id, int w, int h, QVector<va_surface_t*>& surf)
 {
     const int nb_surfaces    = surf.size();
     D3D11_TEXTURE2D_DESC texDesc;

@@ -127,6 +127,8 @@ public:
 
 private:
 
+    // Disable
+
     VideoDecoderVAAPI(QObject*);
 };
 
@@ -544,7 +546,7 @@ VideoFrame VideoDecoderVAAPI::frame()
             {
                 // img.pitchs[] are 16 aligned
 
-                f.setBytesPerLine(f.bytesPerLine(0) / (img.pitches[i-1] / (img.pitches[i] - 15)), i);
+                f.setBytesPerLine(f.bytesPerLine(0) / (img.pitches[i - 1] / (img.pitches[i] - 15)), i);
             }
 
             // if  not destroyed, error 'surface is in use'
@@ -624,7 +626,8 @@ VideoFrame VideoDecoderVAAPI::frame()
     if (pixfmt == VideoFormat::Format_Invalid)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-            << QString::asprintf("unsupported vaapi pixel format: %#x", d.image.format.fourcc);
+            << QString::asprintf("unsupported vaapi pixel format: %#x",
+                d.image.format.fourcc);
 
         return VideoFrame();
     }
@@ -651,7 +654,7 @@ VideoFrame VideoDecoderVAAPI::frame()
     return frame;
 }
 
-void VideoDecoderVAAPI::setDisplayPriority(const QStringList &priority)
+void VideoDecoderVAAPI::setDisplayPriority(const QStringList& priority)
 {
     DPTR_D(VideoDecoderVAAPI);
     d.display_priority.clear();

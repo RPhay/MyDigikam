@@ -41,8 +41,8 @@ namespace QtAV
 
 struct d3d_format_t
 {
-    const char*              name   = nullptr;
-    int                      fourcc = 0;
+    const char*              name;
+    int                      fourcc;
     VideoFormat::PixelFormat pixfmt;
 };
 
@@ -78,8 +78,8 @@ protected:
 struct va_surface_t
 {
     va_surface_t()
-        : ref  (0),
-          order(0)
+        : ref   (0),
+          order (0)
     {
     }
 
@@ -167,7 +167,8 @@ int SelectConfig(AVCodecID codec_id, const T* cfgs, int nb_cfgs, T* cfg)
         const T& c = cfgs[i];
 
         qCDebug(DIGIKAM_QTAV_LOG).noquote()
-            << QString::asprintf("configuration[%d] ConfigBitstreamRaw %d", i, c.ConfigBitstreamRaw);
+            << QString::asprintf("configuration[%d] ConfigBitstreamRaw %d",
+                i, c.ConfigBitstreamRaw);
 
         /* */
 
@@ -202,7 +203,7 @@ int SelectConfig(AVCodecID codec_id, const T* cfgs, int nb_cfgs, T* cfg)
 #ifndef MAKEFOURCC // winrt
 
 #   define MAKEFOURCC(ch0, ch1, ch2, ch3) \
-  ((DWORD)(BYTE)(ch0)|((DWORD)(BYTE)(ch1)<<8)|((DWORD)(BYTE)(ch2)<<16)|((DWORD)(BYTE)(ch3)<<24))
+  ((DWORD)(BYTE)(ch0)|((DWORD)(BYTE)(ch1) << 8) | ((DWORD)(BYTE)(ch2) << 16) | ((DWORD)(BYTE)(ch3) << 24))
 
 #endif
 

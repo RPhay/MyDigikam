@@ -280,7 +280,7 @@ VideoFrame VideoDecoderVideoToolbox::frame()
         return VideoFrame();
     }
 
-    uint8_t* src[3]      = { 0 };
+    uint8_t* src[3]      = { nullptr };
     int pitch[3]; // must get the value from cvbuffer to compute opengl text size in VideoShader
     VideoFormat fmt(pixfmt);
     const bool zero_copy = (copyMode() == ZeroCopy);

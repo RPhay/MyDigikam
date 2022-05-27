@@ -124,6 +124,8 @@ protected:
 
 private:
 
+    // Disable
+
     VideoDecoder();
     VideoDecoder(QObject*);
 };

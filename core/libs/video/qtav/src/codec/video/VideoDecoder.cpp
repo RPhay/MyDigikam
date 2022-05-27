@@ -69,42 +69,42 @@ static void VideoDecoder_RegisterAll()
     extern bool RegisterVideoDecoderDXVA_Man();
     RegisterVideoDecoderDXVA_Man();
 
-#endif //QTAV_HAVE(DXVA)
+#endif // QTAV_HAVE(DXVA)
 
 #if QTAV_HAVE(D3D11VA)
 
     extern bool RegisterVideoDecoderD3D11_Man();
     RegisterVideoDecoderD3D11_Man();
 
-#endif //QTAV_HAVE(DXVA)
+#endif // QTAV_HAVE(DXVA)
 
 #if QTAV_HAVE(CUDA)
 
     extern bool RegisterVideoDecoderCUDA_Man();
     RegisterVideoDecoderCUDA_Man();
 
-#endif //QTAV_HAVE(CUDA)
+#endif // QTAV_HAVE(CUDA)
 
 #if QTAV_HAVE(VAAPI)
 
     extern bool RegisterVideoDecoderVAAPI_Man();
     RegisterVideoDecoderVAAPI_Man();
 
-#endif //QTAV_HAVE(VAAPI)
+#endif // QTAV_HAVE(VAAPI)
 
 #if QTAV_HAVE(VIDEOTOOLBOX)
 
     extern bool RegisterVideoDecoderVideoToolbox_Man();
     RegisterVideoDecoderVideoToolbox_Man();
 
-#endif //QTAV_HAVE(VIDEOTOOLBOX)
+#endif // QTAV_HAVE(VIDEOTOOLBOX)
 
 #if QTAV_HAVE(VDA)
 
     extern bool RegisterVideoDecoderVDA_Man();
     RegisterVideoDecoderVDA_Man();
 
-#endif //QTAV_HAVE(VDA)
+#endif // QTAV_HAVE(VDA)
 
 }
 
@@ -139,7 +139,7 @@ QStringList VideoDecoder::supportedCodecs()
 
 #if AVCODEC_STATIC_REGISTER
 
-    void* it = nullptr;
+    void* it         = nullptr;
 
     while ((c = av_codec_iterate(&it)))
     {
@@ -161,7 +161,7 @@ QStringList VideoDecoder::supportedCodecs()
     return codecs;
 }
 
-VideoDecoder::VideoDecoder(VideoDecoderPrivate &d):
+VideoDecoder::VideoDecoder(VideoDecoderPrivate& d):
     AVDecoder(d)
 {
 }

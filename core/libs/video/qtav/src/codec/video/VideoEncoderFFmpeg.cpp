@@ -103,6 +103,8 @@ Q_SIGNALS:
 
 private:
 
+    // Disable
+
     VideoEncoderFFmpeg(QObject*);
 };
 
@@ -116,7 +118,7 @@ public:
 
     VideoEncoderFFmpegPrivate()
         : VideoEncoderPrivate(),
-          nb_encoded(0)
+          nb_encoded         (0)
     {
 
 #if !AVCODEC_STATIC_REGISTER
@@ -259,7 +261,9 @@ bool VideoEncoderFFmpegPrivate::open()
 
             if (!avctx->hw_frames_ctx)
             {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to create hw frame context for '%s'", codec_name.toLatin1().constData());
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                    << QString::asprintf("Failed to create hw frame context for '%s'",
+                        codec_name.toLatin1().constData());
 
                 return false;
             }
@@ -355,7 +359,7 @@ bool VideoEncoderFFmpegPrivate::open()
                     << QString::asprintf("use first supported sw pixel format '%d' for hw encoder",
                         codec->pix_fmts[1]);
 
-                if (codec->pix_fmts && codec->pix_fmts[1] != AVPixelFormat(-1))
+                if (codec->pix_fmts && (codec->pix_fmts[1] != AVPixelFormat(-1)))
                     format_used = VideoFormat::pixelFormatFromFFmpeg(codec->pix_fmts[1]);
             }
         }
@@ -541,7 +545,8 @@ bool VideoEncoderFFmpeg::encode(const VideoFrame &frame)
 
             if (!d.hwframes_ref)
             {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("no hw frame context for uploading");
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                    << QString::asprintf("no hw frame context for uploading");
 
                 return false;
             }
@@ -614,9 +619,9 @@ bool VideoEncoderFFmpeg::encode(const VideoFrame &frame)
 
 #else // ffmpeg >= 5
 
-    int ret    = avcodec_send_frame(d.avctx, f.data());
-    got_packet = (ret == 0);
-    ret        = avcodec_receive_packet(d.avctx, &pkt);
+    int ret        = avcodec_send_frame(d.avctx, f.data());
+    got_packet     = (ret == 0);
+    ret            = avcodec_receive_packet(d.avctx, &pkt);
 
 #endif
 

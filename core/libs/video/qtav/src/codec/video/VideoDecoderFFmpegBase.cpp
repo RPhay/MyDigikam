@@ -71,8 +71,9 @@ static void SetColorDetailsByFFmpeg(VideoFrame* f, AVFrame* frame, AVCodecContex
 
         switch (pixfmt)
         {
-            //case QTAV_PIX_FMT_C(YUVJ411P): // not in ffmpeg<2 and libav
-
+/*
+            case QTAV_PIX_FMT_C(YUVJ411P): // not in ffmpeg<2 and libav
+*/
             case QTAV_PIX_FMT_C(YUVJ420P):
             case QTAV_PIX_FMT_C(YUVJ422P):
             case QTAV_PIX_FMT_C(YUVJ440P):
@@ -180,7 +181,7 @@ VideoDecoderFFmpegBase::VideoDecoderFFmpegBase(VideoDecoderFFmpegBasePrivate& d)
 {
 }
 
-bool VideoDecoderFFmpegBase::decode(const Packet &packet)
+bool VideoDecoderFFmpegBase::decode(const Packet& packet)
 {
     if (!isAvailable())
         return false;

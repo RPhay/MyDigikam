@@ -169,10 +169,10 @@ static const int PROF_HEVC_MAIN10[]  = { FF_PROFILE_HEVC_MAIN, FF_PROFILE_HEVC_M
 
 struct Q_DECL_HIDDEN dxva2_mode_t
 {
-    const char* name     = nullptr;
-    const GUID* guid     = nullptr;
-    int         codec    = 0;
-    const int*  profiles = nullptr;
+    const char* name;
+    const GUID* guid;
+    int         codec;
+    const int*  profiles;
 };
 
 /* XXX Preferred modes must come first */
@@ -371,7 +371,7 @@ int VideoDecoderD3D::getSupportedFourcc(int* formats, UINT nb_formats)
     {
         bool is_supported = false;
 
-        for (unsigned k = 0 ; !is_supported && k < nb_formats ; ++k)         // cppcheck-suppress knownConditionTrueFalse
+        for (unsigned k = 0 ; (!is_supported && (k < nb_formats)) ; ++k)         // cppcheck-suppress knownConditionTrueFalse
         {
             if (format->fourcc == formats[k])
                 return format->fourcc;
@@ -549,7 +549,7 @@ void* VideoDecoderD3DPrivate::setup(AVCodecContext* avctx)
 
 /* FIXME it is nearly common with VAAPI */
 
-bool VideoDecoderD3DPrivate::getBuffer(void **opaque, uint8_t **data) // vlc_va_t *external, AVFrame *ff)
+bool VideoDecoderD3DPrivate::getBuffer(void** opaque, uint8_t** data) // vlc_va_t *external, AVFrame *ff)
 {
     if (!checkDevice())
         return false;
@@ -573,11 +573,11 @@ bool VideoDecoderD3DPrivate::getBuffer(void **opaque, uint8_t **data) // vlc_va_
     if (i >= surfaces.size())
         i = old;
 
-    va_surface_t* s = surfaces[i];
-    s->ref          = 1;
-    s->order        = surface_order++;
-    *data           = (uint8_t*)s->getSurface();
-    *opaque         = s;
+    va_surface_t* const s = surfaces[i];
+    s->ref                = 1;
+    s->order              = surface_order++;
+    *data                 = (uint8_t*)s->getSurface();
+    *opaque               = s;
 
     return true;
 }
@@ -586,7 +586,7 @@ void VideoDecoderD3DPrivate::releaseBuffer(void* opaque, uint8_t* data)
 {
     Q_UNUSED(data);
 
-    va_surface_t* surface = reinterpret_cast<va_surface_t*>(opaque);
+    va_surface_t* const surface = reinterpret_cast<va_surface_t*>(opaque);
     surface->ref--;
 }
 
@@ -607,7 +607,7 @@ int VideoDecoderD3DPrivate::aligned(int x)
 }
 
 const d3d_format_t* VideoDecoderD3DPrivate::getFormat(const AVCodecContext* avctx,
-                                                      const QVector<GUID> &guids,
+                                                      const QVector<GUID>& guids,
                                                       GUID* selected) const
 {
     Q_FOREACH (const GUID& g, guids)

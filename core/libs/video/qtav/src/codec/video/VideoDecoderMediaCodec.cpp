@@ -136,7 +136,7 @@ public:
         return avctx->hwaccel_context; // set in av_mediacodec_default_init
     }
 
-    bool getBuffer(void**, uint8_t**data)
+    bool getBuffer(void**, uint8_t** data)
     {
         return true;
     }

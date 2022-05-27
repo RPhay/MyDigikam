@@ -136,6 +136,8 @@ Q_SIGNALS:
 
 private:
 
+    // Disable
+
     VideoDecoderCUDA(QObject*);
 
 };

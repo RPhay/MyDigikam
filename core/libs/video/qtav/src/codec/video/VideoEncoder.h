@@ -81,6 +81,7 @@ public:
      */
     void setWidth(int value);
     int width() const;
+
     void setHeight(int value);
     int height() const;
 
@@ -144,13 +145,15 @@ private:
     }
 
     typedef VideoEncoder* (*VideoEncoderCreator)();
-    static bool Register(VideoEncoderId id, VideoEncoderCreator, const char *name);
+    static bool Register(VideoEncoderId id, VideoEncoderCreator, const char* name);
 
 protected:
 
     VideoEncoder(VideoEncoderPrivate& d);
 
 private:
+
+    // Disable
 
     VideoEncoder();
     VideoEncoder(QObject*);

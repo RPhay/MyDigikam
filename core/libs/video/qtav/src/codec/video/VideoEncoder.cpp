@@ -66,7 +66,7 @@ QStringList VideoEncoder::supportedCodecs()
 
 #if AVCODEC_STATIC_REGISTER
 
-    void* it = nullptr;
+    void* it         = nullptr;
 
     while ((c = av_codec_iterate(&it)))
     {
@@ -79,7 +79,8 @@ QStringList VideoEncoder::supportedCodecs()
     {
 
 #endif
-        if (!av_codec_is_encoder(c) || c->type != AVMEDIA_TYPE_VIDEO)
+
+        if (!av_codec_is_encoder(c) || (c->type != AVMEDIA_TYPE_VIDEO))
             continue;
 
         codecs.append(QString::fromLatin1(c->name));
@@ -88,8 +89,8 @@ QStringList VideoEncoder::supportedCodecs()
     return codecs;
 }
 
-VideoEncoder::VideoEncoder(VideoEncoderPrivate &d):
-    AVEncoder(d)
+VideoEncoder::VideoEncoder(VideoEncoderPrivate& d)
+    : AVEncoder(d)
 {
 }
 

@@ -35,7 +35,8 @@
 #   endif // __IPHONE_11_0
 #   if COREVIDEO_SUPPORTS_IOSURFACE && IOS_USE_PRIVATE
 
-// declare the private API if IOSurface is supported in SDK. Thus we can use IOSurface on any iOS version even with old SDK and compiler
+// Declare the private API if IOSurface is supported in SDK.
+// Thus we can use IOSurface on any iOS version even with old SDK and compiler
 
 @interface EAGLContext()
 - (BOOL)texImageIOSurface:(IOSurfaceRef)ioSurface target:(NSUInteger)target internalFormat:(NSUInteger)internalFormat width:(uint32_t)width height:(uint32_t)height format:(NSUInteger)format type:(NSUInteger)type plane:(uint32_t)plane invert:(BOOL)invert NS_AVAILABLE_IOS(4_0); // confirmed in iOS5.1
@@ -59,25 +60,26 @@ namespace cv
 VideoFormat::PixelFormat format_from_cv(int cv);
 
 // https://www.opengl.org/registry/specs/APPLE/rgb_422.txt
-// https://www.opengl.org/registry/specs/APPLE/ycbcr_422.txt  uyvy: UNSIGNED_SHORT_8_8_REV_APPLE, yuy2: GL_UNSIGNED_SHORT_8_8_APPLE
+// https://www.opengl.org/registry/specs/APPLE/ycbcr_422.txt
+// uyvy: UNSIGNED_SHORT_8_8_REV_APPLE, yuy2: GL_UNSIGNED_SHORT_8_8_APPLE
 // check extension GL_APPLE_rgb_422 and rectangle?
 
 class InteropResourceIOSurface Q_DECL_FINAL : public InteropResource
 {
 public:
 
-    bool stridesForWidth(int cvfmt, int width, int* strides, VideoFormat::PixelFormat* outFmt) Q_DECL_OVERRIDE;
+    bool stridesForWidth(int cvfmt, int width, int* strides, VideoFormat::PixelFormat* outFmt) override;
 
-    bool mapToTexture2D() const                                                                Q_DECL_OVERRIDE
+    bool mapToTexture2D() const                                                                override
     {
         return false;
     }
 
-    bool map(CVPixelBufferRef buf, GLuint* tex, int w, int h, int plane)                       Q_DECL_OVERRIDE;
+    bool map(CVPixelBufferRef buf, GLuint* tex, int w, int h, int plane)                       override;
 
-    GLuint createTexture(CVPixelBufferRef, const VideoFormat &fmt,
+    GLuint createTexture(CVPixelBufferRef, const VideoFormat& fmt,
                          int plane, int planeWidth,
-                         int planeHeight)                                                      Q_DECL_OVERRIDE
+                         int planeHeight)                                                      override
     {
         Q_UNUSED(fmt);
         Q_UNUSED(plane);
@@ -137,7 +139,7 @@ bool InteropResourceIOSurface::map(CVPixelBufferRef buf, GLuint* tex, int w, int
     {
         case '2vuy':
         case 'yuvs':
-
+        {
             // ES2 requires internal format and format are the same. desktop can use internal format GL_RGB or sized GL_RGB8
 
 #ifdef Q_OS_IOS
@@ -152,13 +154,16 @@ bool InteropResourceIOSurface::map(CVPixelBufferRef buf, GLuint* tex, int w, int
 
             format = GL_RGB_422_APPLE;
             dtype  = (pixfmt == '2vuy' ? GL_UNSIGNED_SHORT_8_8_APPLE : GL_UNSIGNED_SHORT_8_8_REV_APPLE);
+
             break;
+        }
 
         // macOS: GL_RGBA8, GL_BGRA, GL_UNSIGNED_INT_8_8_8_8_REV
         // GL_YCBCR_422_APPLE: convert to rgb texture internally (bt601). only supports OSX
         // GL_RGB_422_APPLE: raw yuv422 texture
 
         case 'BGRA':
+        {
 
 #ifdef Q_OS_IOS
 
@@ -174,9 +179,12 @@ bool InteropResourceIOSurface::map(CVPixelBufferRef buf, GLuint* tex, int w, int
 #endif
 
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     const GLenum target = GL_TEXTURE_RECTANGLE;
@@ -185,7 +193,8 @@ bool InteropResourceIOSurface::map(CVPixelBufferRef buf, GLuint* tex, int w, int
     const int planeH    = CVPixelBufferGetHeightOfPlane(buf, plane);
 /*
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
-        << QString::asprintf("map plane%d. %dx%d, gl %d %d %d", plane, planeW, planeH, iformat, format, dtype);
+        << QString::asprintf("map plane%d. %dx%d, gl %d %d %d",
+            plane, planeW, planeH, iformat, format, dtype);
 */
     const IOSurfaceRef surface  = CVPixelBufferGetIOSurface(buf);             // available in ios11 sdk, ios4 runtime
 
