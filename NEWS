@@ -3,14 +3,15 @@ digiKam 8.0.0 - Release date: 2022-xx-xx
 *****************************************************************************************************
 NEW FEATURES:
 
-General   : Port code to Qt6 and KF6 framework.
-General   : Add JPEG-XL, WEBP, and AVIF export settings everywhere.
-            Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera.
-            Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager.
-Versioning: Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store versionned images in editor.
-Usability : Add hamburger menu to tool-bar if main menu is hidden.
-Metadata  : Add new option to write metadata to files with ExifTool backend.
-Metadata  : Optional write metadata operations to DNG and RAW files are now always delegated to ExifTool Backend.
+General        : Port code to Qt6 and KF6 framework.
+General        : Add JPEG-XL, WEBP, and AVIF export settings everywhere.
+                 Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera.
+                 Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager.
+Versioning     : Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store versionned images in editor.
+Usability      : Add hamburger menu to tool-bar if main menu is hidden.
+Metadata       : Add new option to write metadata to files with ExifTool backend.
+Metadata       : Optional write metadata operations to DNG and RAW files are now always delegated to ExifTool Backend.
+Advanced Rename: Add increment file counter to sequence numbering with option [c] or [c,step].
 
 *****************************************************************************************************
 BUGFIXES:
