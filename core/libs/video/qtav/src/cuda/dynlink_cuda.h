@@ -35,8 +35,8 @@
 #endif
 
 typedef int CUdevice;
-typedef struct CUarray_st *CUarray;                       /**< CUDA array */
-typedef struct CUctx_st *CUcontext;                       /**< CUDA context */
+typedef struct CUarray_st* CUarray;                       /**< CUDA array */
+typedef struct CUctx_st* CUcontext;                       /**< CUDA context */
 #if defined(__x86_64) || defined(AMD64) || defined(_M_AMD64)
 typedef unsigned long long CUdeviceptr;
 #else

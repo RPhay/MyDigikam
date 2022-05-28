@@ -74,7 +74,7 @@ void PlayListDelegate::paint(QPainter* painter, const QStyleOptionViewItem& opti
     // http://stackoverflow.com/questions/18568594/correct-highlighting-with-qt-custom-delegates     // krazy:exclude=insecurenet
 /*
     const QWidget* widget = option.widget;
-    QStyle *style         = widget ? widget->style() : QApplication::style();
+    QStyle* const style   = widget ? widget->style() : QApplication::style();
 */
     if (option.state & QStyle::State_Selected)
     {

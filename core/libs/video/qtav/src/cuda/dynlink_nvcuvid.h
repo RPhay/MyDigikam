@@ -79,6 +79,7 @@ typedef enum
 typedef struct
 {
     cudaVideoCodec codec;                   /**< Compression format  */
+
    /**
     * frame rate = numerator / denominator (for example: 30000/1001)
     */
@@ -87,12 +88,14 @@ typedef struct
         unsigned int numerator;             /**< frame rate numerator   (0 = unspecified or variable frame rate) */
         unsigned int denominator;           /**< frame rate denominator (0 = unspecified or variable frame rate) */
     } frame_rate;
+
     unsigned char progressive_sequence;     /**< 0=interlaced, 1=progressive */
     unsigned char bit_depth_luma_minus8;    /**< high bit depth Luma */
     unsigned char bit_depth_chroma_minus8;  /**< high bit depth Chroma */
     unsigned char reserved1;                /**< Reserved for future use */
     unsigned int coded_width;               /**< coded frame width */
     unsigned int coded_height;              /**< coded frame height  */
+
    /**
     *   area of the frame that should be displayed
     * typical example:
@@ -106,8 +109,10 @@ typedef struct
         int right;                          /**< right position of display rect  */
         int bottom;                         /**< bottom position of display rect  */
     } display_area;
+
     cudaVideoChromaFormat chroma_format;    /**<  Chroma format */
     unsigned int bitrate;                   /**< video bitrate (bps, 0=unknown) */
+
    /**
     * Display Aspect Ratio = x:y (4:3, 16:9, etc)
     */
@@ -116,6 +121,7 @@ typedef struct
         int x;
         int y;
     } display_aspect_ratio;
+
     /**
     * Video Signal Description
     */
@@ -154,7 +160,6 @@ typedef struct
     unsigned int reserved1;     /**< Reserved for future use */
     unsigned int reserved2;     /**< Reserved for future use */
 } CUAUDIOFORMAT;
-
 
 /*!
  * \enum CUvideopacketflags
@@ -210,11 +215,11 @@ typedef enum
  */
 typedef struct _CUVIDPARSERDISPINFO
 {
-    int picture_index;         /**<                 */
-    int progressive_frame;     /**<                 */
-    int top_field_first;       /**<                 */
+    int picture_index;
+    int progressive_frame;
+    int top_field_first;
     int repeat_first_field;    /**< Number of additional fields (1=ivtc, 2=frame doubling, 4=frame tripling, -1=unpaired field)  */
-    CUvideotimestamp timestamp; /**<     */
+    CUvideotimestamp timestamp;
 } CUVIDPARSERDISPINFO;
 
 //
@@ -231,13 +236,13 @@ typedef int (CUDAAPI *PFNVIDDISPLAYCALLBACK)(void *, CUVIDPARSERDISPINFO *);
  */
 typedef struct _CUVIDPARSERPARAMS
 {
-    cudaVideoCodec CodecType;               /**< cudaVideoCodec_XXX  */
-    unsigned int ulMaxNumDecodeSurfaces;    /**< Max # of decode surfaces (parser will cycle through these) */
-    unsigned int ulClockRate;               /**< Timestamp units in Hz (0=default=10000000Hz) */
-    unsigned int ulErrorThreshold;          /**< % Error threshold (0-100) for calling pfnDecodePicture (100=always call pfnDecodePicture even if picture bitstream is fully corrupted) */
-    unsigned int ulMaxDisplayDelay;         /**< Max display queue delay (improves pipelining of decode with display) - 0=no delay (recommended values: 2..4) */
-    unsigned int uReserved1[5];             /**< Reserved for future use - set to 0 */
-    void *pUserData;                        /**< User data for callbacks */
+    cudaVideoCodec CodecType;                   /**< cudaVideoCodec_XXX  */
+    unsigned int ulMaxNumDecodeSurfaces;        /**< Max # of decode surfaces (parser will cycle through these) */
+    unsigned int ulClockRate;                   /**< Timestamp units in Hz (0=default=10000000Hz) */
+    unsigned int ulErrorThreshold;              /**< % Error threshold (0-100) for calling pfnDecodePicture (100=always call pfnDecodePicture even if picture bitstream is fully corrupted) */
+    unsigned int ulMaxDisplayDelay;             /**< Max display queue delay (improves pipelining of decode with display) - 0=no delay (recommended values: 2..4) */
+    unsigned int uReserved1[5];                 /**< Reserved for future use - set to 0 */
+    void *pUserData;                            /**< User data for callbacks */
     PFNVIDSEQUENCECALLBACK pfnSequenceCallback; /**< Called before decoding frames and/or whenever there is a format change */
     PFNVIDDECODECALLBACK pfnDecodePicture;      /**< Called when a picture is ready to be decoded (decode order) */
     PFNVIDDISPLAYCALLBACK pfnDisplayPicture;    /**< Called whenever a picture is ready to be displayed (display order)  */

@@ -44,11 +44,11 @@ public:
 
     explicit PlayListModel(QObject* const parent = nullptr);
 
-    QList<PlayListItem> items() const;
+    QList<PlayListItem> items()                             const;
 
-    virtual Qt::ItemFlags flags(const QModelIndex& index) const;
+    virtual Qt::ItemFlags flags(const QModelIndex& index)   const;
     int rowCount(const QModelIndex& parent = QModelIndex()) const;
-    QVariant data(const QModelIndex& index, int role) const;
+    QVariant data(const QModelIndex& index, int role)       const;
     virtual bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::EditRole);
 
     bool insertRows(int row, int count, const QModelIndex& parent = QModelIndex());

@@ -54,13 +54,13 @@ QDataStream& operator<< (QDataStream& s, const PlayListItem& p)
 }
 
 PlayListItem::PlayListItem()
-    : mStars(0),
+    : mStars   (0),
       mLastTime(0),
       mDuration(0)
 {
 }
 
-void PlayListItem::setTitle(const QString &title)
+void PlayListItem::setTitle(const QString& title)
 {
     mTitle = title;
 }
@@ -70,7 +70,7 @@ QString PlayListItem::title() const
     return mTitle;
 }
 
-void PlayListItem::setUrl(const QString &url)
+void PlayListItem::setUrl(const QString& url)
 {
     mUrl = url;
 }

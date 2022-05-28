@@ -102,11 +102,10 @@ PlayList::PlayList(QWidget* const parent)
 
 PlayList::~PlayList()
 {
-    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("~PlayList()");
     save();
 }
 
-void PlayList::setSaveFile(const QString &file)
+void PlayList::setSaveFile(const QString& file)
 {
     mFile = file;
 }
@@ -156,7 +155,8 @@ PlayListItem PlayList::itemAt(int row)
 {
     if (mpModel->rowCount() < 0)
     {
-        qCWarning(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("Invalid rowCount");
+        qCWarning(DIGIKAM_AVPLAYER_LOG).noquote()
+            << QString::asprintf("Invalid rowCount");
 
         return PlayListItem();
     }
@@ -218,7 +218,7 @@ void PlayList::insert(const QString& url, int row)
 
 void PlayList::remove(const QString& url)
 {
-    for (int i = mpModel->rowCount() - 1 ; i >= 0 ; --i)
+    for (int i = (mpModel->rowCount() - 1) ; i >= 0 ; --i)
     {
         PlayListItem item = mpModel->data(mpModel->index(i), Qt::DisplayRole).value<PlayListItem>();
 
@@ -241,7 +241,7 @@ int PlayList::maxRows() const
 
 void PlayList::removeSelectedItems()
 {
-    QItemSelectionModel *selection = mpListView->selectionModel();
+    QItemSelectionModel* const selection = mpListView->selectionModel();
 
     if (!selection->hasSelection())
         return;
@@ -261,7 +261,7 @@ void PlayList::clearItems()
 
 void PlayList::addItems()
 {
-    // TODO: add url;
+    // TODO: add url
 
     QStringList files = QFileDialog::getOpenFileNames(nullptr, i18nc("@title", "Select files"));
 
