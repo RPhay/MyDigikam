@@ -27,7 +27,7 @@ namespace AVPlayer
 {
 
 OSD::OSD()
-    : mShowType(ShowNone),
+    : mShowType (ShowNone),
       mSecsTotal(-1)
 {
 }

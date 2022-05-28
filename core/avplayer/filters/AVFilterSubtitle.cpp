@@ -39,8 +39,8 @@ namespace AVPlayer
 
 AVFilterSubtitle::AVFilterSubtitle(QObject* const parent)
     : LibAVFilterVideo(parent),
-      m_auto(true),
-      m_player(0)
+      m_auto          (true),
+      m_player        (nullptr)
 {
 /*
     connect(this, SIGNAL(statusChanged()),
@@ -195,7 +195,8 @@ void AVFilterSubtitle::findAndSetFile(const QString& path)
     QFileInfo fi(path);
     QDir dir(fi.dir());
     QString name     = fi.completeBaseName(); // video suffix has only 1 dot
-    QStringList list = dir.entryList(QStringList() << name + QString::fromLatin1("*.ass") << name + QString::fromLatin1("*.ssa"), QDir::Files);
+    QStringList list = dir.entryList(QStringList() << name + QString::fromLatin1("*.ass")
+                                                   << name + QString::fromLatin1("*.ssa"), QDir::Files);
     list.append(dir.entryList(QStringList() << QString::fromLatin1("*.srt"), QDir::Files));
 
     Q_FOREACH (const QString& f, list)

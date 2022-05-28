@@ -37,7 +37,7 @@ namespace AVPlayer
 
 OSDFilter::OSDFilter(QObject* const parent)
     : VideoFilter(parent),
-      OSD()
+      OSD        ()
 {
 }
 
