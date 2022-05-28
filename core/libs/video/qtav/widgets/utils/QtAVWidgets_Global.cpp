@@ -46,10 +46,8 @@
 #   include "GLWidgetRenderer2.h"       // Qt5
 #endif
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#   ifndef QT_NO_OPENGL
-#       include "OpenGLWidgetRenderer.h"
-#   endif
+#ifndef QT_NO_OPENGL
+#   include "OpenGLWidgetRenderer.h"
 #endif
 
 #include "QtAV_factory.h"
@@ -83,12 +81,10 @@ FACTORY_REGISTER(VideoRenderer, GLWidget2,      "QGLWidegt2")
 
 #   endif
 
-#   if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#       ifndef QT_NO_OPENGL
+#   ifndef QT_NO_OPENGL
 
 FACTORY_REGISTER(VideoRenderer, OpenGLWidget,   "OpenGLWidget")
 
-#       endif
 #   endif
 #endif
 
@@ -105,7 +101,7 @@ void registerRenderers()
 
 #if !defined(QT_NO_DEBUG)
 
-    qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("registerRenderers...........");
+    qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("Register QtAV Renderers");
 
 #endif
 
@@ -123,12 +119,10 @@ void registerRenderers()
     if (VideoRenderer::name(VideoRendererId_Widget))
         return;
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 4, 0)
-#   ifndef QT_NO_OPENGL
+#ifndef QT_NO_OPENGL
 
     VideoRenderer::Register<OpenGLWidgetRenderer>(VideoRendererId_OpenGLWidget, "OpenGLWidget");
 
-#   endif
 #endif
 
 #if QTAV_HAVE(GL)

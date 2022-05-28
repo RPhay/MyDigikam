@@ -78,7 +78,8 @@ class Q_DECL_HIDDEN GDIRenderer : public QWidget,
 
 public:
 
-    GDIRenderer(QWidget* const parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget)); // offscreen?
+    GDIRenderer(QWidget* const parent = nullptr,
+                Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget)); // offscreen?
 
     VideoRendererId id()                              const override;
     bool isSupported(VideoFormat::PixelFormat pixfmt) const override;
@@ -153,13 +154,13 @@ public:
 
     GDIRendererPrivate()
       : VideoRendererPrivate(),
-        support_bitblt(true),
-        gdiplus_token (0),
-        device_context(0)
+        support_bitblt      (true),
+        gdiplus_token       (0),
+        device_context      (0)
 
 #if USE_GRAPHICS
 
-        graphics(nullptr)
+        graphics            (nullptr)
 
 #endif
 
@@ -206,8 +207,10 @@ public:
 
         // TODO: check bitblt support
 
-        int ret = GetDeviceCaps(device_context, RC_BITBLT);
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("bitblt=%d", ret);
+        int ret  = GetDeviceCaps(device_context, RC_BITBLT);
+
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote()
+            << QString::asprintf("bitblt=%d", ret);
 
         // TODO: wingapi? vlc
 
@@ -307,7 +310,7 @@ public:
 };
 
 GDIRenderer::GDIRenderer(QWidget* const parent, Qt::WindowFlags f)
-    : QWidget(parent, f),
+    : QWidget      (parent, f),
       VideoRenderer(*new GDIRendererPrivate())
 {
     DPTR_INIT_PRIVATE(GDIRenderer);

@@ -202,6 +202,7 @@ public:
         if (FAILED(hr))
         {
             available = false;
+
             qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
                 << QString::asprintf("Direct2D is disabled. Create d2d factory failed");
 
@@ -319,9 +320,12 @@ public:
 
     void recreateDeviceResource()
     {
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("D2DERR_RECREATE_TARGET");
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote()
+            << QString::asprintf("D2DERR_RECREATE_TARGET");
+
         QMutexLocker locker(&img_mutex);
         Q_UNUSED(locker);
+
         update_background = true;
         destroyDeviceResource();
         createDeviceResource();
@@ -362,7 +366,7 @@ public:
         if (FAILED(hr))
         {
             qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
-                    << QString::asprintf("Failed to create ID2D1Bitmap (%ld)", hr);
+                << QString::asprintf("Failed to create ID2D1Bitmap (%ld)", hr);
 
             SafeRelease(&bitmap);
             SafeRelease(&render_target);
@@ -422,7 +426,7 @@ public:
 };
 
 Direct2DRenderer::Direct2DRenderer(QWidget* const parent, Qt::WindowFlags f)
-    : QWidget(parent, f),
+    : QWidget      (parent, f),
       VideoRenderer(*new Direct2DRendererPrivate())
 {
     DPTR_INIT_PRIVATE(Direct2DRenderer);
@@ -481,6 +485,7 @@ bool Direct2DRenderer::receiveFrame(const VideoFrame& frame)
     hr = d.bitmap->CopyFromMemory(nullptr,             // &D2D1::RectU(0, 0, image.width(), image.height()) /*&dstRect, nullptr?*/,
                                   frame.constBits(0),  // data.constData() //msdn: const void*
                                   frame.bytesPerLine(0));
+
     if (hr != S_OK)
     {
         qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
@@ -567,7 +572,7 @@ void Direct2DRenderer::paintEvent(QPaintEvent*)
     if (!d.render_target)
     {
         qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
-            << QString::asprintf("No render target!!!");
+            << QString::asprintf("No render target!");
 
         return;
     }
