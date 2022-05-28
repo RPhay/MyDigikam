@@ -24,13 +24,13 @@
 #ifndef QTAV_WIDGETS_VIDEO_PREVIEW_WIDGET_H
 #define QTAV_WIDGETS_VIDEO_PREVIEW_WIDGET_H
 
-#include "QtAVWidgets_Global.h"
+// Qt includes
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#   include <QWidget>
-#else
-#   include <QWidget>
-#endif
+#include <QWidget>
+
+// Local includes
+
+#include "QtAVWidgets_Global.h"
 
 namespace QtAV
 {

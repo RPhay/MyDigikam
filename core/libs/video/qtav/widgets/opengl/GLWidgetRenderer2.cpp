@@ -38,7 +38,7 @@ class Q_DECL_HIDDEN GLWidgetRenderer2Private : public OpenGLRendererBasePrivate
 {
 public:
 
-    explicit GLWidgetRenderer2Private(QPaintDevice* pd)
+    explicit GLWidgetRenderer2Private(QPaintDevice* const pd)
         : OpenGLRendererBasePrivate(pd)
     {
     }
@@ -49,9 +49,9 @@ VideoRendererId GLWidgetRenderer2::id() const
     return VideoRendererId_GLWidget2;
 }
 
-GLWidgetRenderer2::GLWidgetRenderer2(QWidget *parent, const QGLWidget* shareWidget, Qt::WindowFlags f)
-    : QGLWidget(parent, shareWidget, f)
-    , OpenGLRendererBase(*new GLWidgetRenderer2Private(this))
+GLWidgetRenderer2::GLWidgetRenderer2(QWidget* const parent, const QGLWidget* const shareWidget, Qt::WindowFlags f)
+    : QGLWidget         (parent, shareWidget, f),
+      OpenGLRendererBase(*new GLWidgetRenderer2Private(this))
 {
     setAcceptDrops(true);
     setFocusPolicy(Qt::StrongFocus);
@@ -100,13 +100,13 @@ void GLWidgetRenderer2::resizeGL(int w, int h)
     onResizeGL(w, h);
 }
 
-void GLWidgetRenderer2::resizeEvent(QResizeEvent *e)
+void GLWidgetRenderer2::resizeEvent(QResizeEvent* e)
 {
     onResizeEvent(e->size().width(), e->size().height());
     QGLWidget::resizeEvent(e);                              // will call resizeGL(). TODO: will call paintEvent()?
 }
 
-void GLWidgetRenderer2::showEvent(QShowEvent *)
+void GLWidgetRenderer2::showEvent(QShowEvent*)
 {
     onShowEvent();
     resizeGL(width(), height());

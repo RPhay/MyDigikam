@@ -24,12 +24,13 @@
 #ifndef QTAV_WIDGETS_OPENGL_WIDGET_RENDERER_H
 #define QTAV_WIDGETS_OPENGL_WIDGET_RENDERER_H
 
+// Qt includes
+
+#include <QOpenGLWidget>
+
+// Local includes
+
 #include "QtAVWidgets_Global.h"
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 4, 0)
-#   include <QOpenGLWidget>
-#endif
-
 #include "OpenGLRendererBase.h"
 
 namespace QtAV
@@ -63,7 +64,7 @@ class QTAV_WIDGETS_EXPORT OpenGLWidgetRenderer : public QOpenGLWidget,
 
 public:
 
-    explicit OpenGLWidgetRenderer(QWidget* parent = nullptr,
+    explicit OpenGLWidgetRenderer(QWidget* const parent = nullptr,
                                   Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
 
     virtual VideoRendererId id()          const override;
@@ -80,8 +81,8 @@ protected:
     virtual void initializeGL()                 override;
     virtual void paintGL()                      override;
     virtual void resizeGL(int w, int h)         override;
-    virtual void resizeEvent(QResizeEvent *e)   override;
-    virtual void showEvent(QShowEvent *)        override;
+    virtual void resizeEvent(QResizeEvent* e)   override;
+    virtual void showEvent(QShowEvent*)         override;
 
     DECLARE_VIDEO_RENDERER_EMIT_METHODS
 };

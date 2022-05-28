@@ -40,7 +40,7 @@ class Q_DECL_HIDDEN GLWidgetRendererPrivate : public OpenGLRendererBasePrivate
 {
 public:
 
-    explicit GLWidgetRendererPrivate(QPaintDevice* pd)
+    explicit GLWidgetRendererPrivate(QPaintDevice* const pd)
         : OpenGLRendererBasePrivate(pd)
     {
     }
@@ -52,7 +52,7 @@ VideoRendererId GLWidgetRenderer::id() const
 }
 
 GLWidgetRenderer::GLWidgetRenderer(QWidget* const parent, Qt::WindowFlags f)
-    : QOpenGLWidget(parent, f),
+    : QOpenGLWidget     (parent, f),
       OpenGLRendererBase(*new GLWidgetRendererPrivate(this))
 {
     setAcceptDrops(true);
