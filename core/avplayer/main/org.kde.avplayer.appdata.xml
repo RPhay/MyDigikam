@@ -7,6 +7,7 @@
   <name xml:lang="ca">AVPlayer</name>
   <name xml:lang="ca-valencia">AVPlayer</name>
   <name xml:lang="es">AVPlayer</name>
+  <name xml:lang="fi">AVPlayer</name>
   <name xml:lang="fr">AVPlayer</name>
   <name xml:lang="it">AVPlayer</name>
   <name xml:lang="nl">AVPlayer</name>
@@ -22,6 +23,7 @@
   <summary xml:lang="ca">Reproductor d'àudio i vídeo</summary>
   <summary xml:lang="ca-valencia">Reproductor d'àudio i vídeo</summary>
   <summary xml:lang="es">Reproductor de sonido y vídeo</summary>
+  <summary xml:lang="fi">Ääni- ja videosoitin</summary>
   <summary xml:lang="fr">Lecteur audio et vidéo</summary>
   <summary xml:lang="it">Riproduttore audio e video</summary>
   <summary xml:lang="nl">Audio- en videospeler</summary>
@@ -38,6 +40,7 @@
     <p xml:lang="ca">L'AVPlayer és el reproductor d'àudio i vídeo autònom i potent del projecte digiKam.</p>
     <p xml:lang="ca-valencia">AVPlayer és el reproductor d'àudio i vídeo autònom i potent del projecte digiKam.</p>
     <p xml:lang="es">AVPlayer es el potente e independiente reproductor de sonido y vídeo del proyecto digiKam.</p>
+    <p xml:lang="fi">AVPlayer on digiKam-projektin tehokas itsenäinen ääni- ja videosoitin.</p>
     <p xml:lang="fr">AVplayer est un puissant et autonome lecteur audio et vidéo du projet digikam.</p>
     <p xml:lang="it">AVPlayer è il riproduttore audio e video autonomo e ricco di funzionalità del progetto digiKam.</p>
     <p xml:lang="nl">AVPlayer is de alleenstaande en krachtige audio- en videospeler van het project digiKam.</p>
@@ -136,6 +139,7 @@
   <developer_name xml:lang="ca">Projecte digiKam</developer_name>
   <developer_name xml:lang="ca-valencia">Projecte digiKam</developer_name>
   <developer_name xml:lang="es">Proyecto digiKam</developer_name>
+  <developer_name xml:lang="fi">digiKam-projekti</developer_name>
   <developer_name xml:lang="fr">Le projet digikam</developer_name>
   <developer_name xml:lang="it">Progetto digiKam</developer_name>
   <developer_name xml:lang="nl">digiKam-project</developer_name>
