@@ -26,7 +26,7 @@ Name[x-test]=xxHTML5 Responsivexx
 Name[zh_CN]=响应式 HTML5
 Comment=Generates a gallery using responsive HTML5 and CSS3 and UTF-8 encoding. Optionally uses PhotoSwipe by Dmitry Semenov to display the images.
 Comment[ca]=Genera una galeria usant HTML5 responsiu i CSS3 i codificació UTF-8. Opcionalment usa el PhotoSwipe del Dmitry Semenov per mostrar les imatges.
-Comment[ca@valencia]=Genera una galeria utilitzant HTML5 responsiu i CSS3 i codificació UTF-8. De manera opcional utilitza PhotoSwipe del Dmitry Semenov per a mostrar les imatges.
+Comment[ca@valencia]=Genera una galeria utilisant HTML5 responsiu i CSS3 i codificació UTF-8. De manera opcional utilisa PhotoSwipe del Dmitry Semenov per a mostrar les imatges.
 Comment[de]=Erzeugt eine Responsive Galerie auf Basis HTML5 und CSS3. Sie verwendet optional PhotoSwipe von Dmitry Semenov zur Anzeige der Bilder.
 Comment[en_GB]=Generates a gallery using responsive HTML5 and CSS3 and UTF-8 encoding. Optionally uses PhotoSwipe by Dmitry Semenov to display the images.
 Comment[es]=Genera una galería usando HTML5 adaptable con CSS3 y codificación UTF-8. Opcionalmente usa PhotoSwipe, por Dmitry Semenov, para mostrar las imágenes.
@@ -264,7 +264,7 @@ Caption-2=Both
 [X-HTMLGallery Parameter paginationModeTop]
 Name=Top pagination mode
 Name[ca]=Mode de paginació de la part superior
-Name[ca@valencia]=Mode de paginació de la part superior
+Name[ca@valencia]=Modo de paginació de la part superior
 Name[de]=Oberer Blättermodus
 Name[en_GB]=Top pagination mode
 Name[es]=Modo de paginación superior
@@ -293,7 +293,7 @@ Caption-1=List all
 [X-HTMLGallery Parameter paginationModeBottom]
 Name=Bottom pagination mode
 Name[ca]=Mode de paginació de la part inferior
-Name[ca@valencia]=Mode de paginació de la part inferior
+Name[ca@valencia]=Modo de paginació de la part inferior
 Name[de]=Unterer Blättermodus
 Name[en_GB]=Bottom pagination mode
 Name[es]=Modo de paginación inferior
@@ -322,7 +322,7 @@ Caption-1=List all
 [X-HTMLGallery Parameter usePhotoSwipe]
 Name=Use PhotoSwipe
 Name[ca]=Usa el PhotoSwipe
-Name[ca@valencia]=Utilitza PhotoSwipe
+Name[ca@valencia]=Utilisa PhotoSwipe
 Name[de]=PhotoSwipe verwenden
 Name[en_GB]=Use PhotoSwipe
 Name[es]=Usar PhotoSwipe
