@@ -32,10 +32,7 @@
 #include <QKeyEvent>
 #include <QGraphicsSceneEvent>
 #include <QCoreApplication>
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#   include <QSurface>
-#endif
+#include <QSurface>
 
 // Local includes
 
@@ -138,7 +135,7 @@ VideoRendererId GraphicsItemRenderer::id() const
 }
 
 GraphicsItemRenderer::GraphicsItemRenderer(QGraphicsItem* const parent)
-    : GraphicsWidget(parent),
+    : GraphicsWidget  (parent),
       QPainterRenderer(*new GraphicsItemRendererPrivate())
 {
     setFlag(ItemIsFocusable); // receive key events
@@ -153,8 +150,8 @@ GraphicsItemRenderer::GraphicsItemRenderer(QGraphicsItem* const parent)
 
 }
 
-GraphicsItemRenderer::GraphicsItemRenderer(GraphicsItemRendererPrivate& d, QGraphicsItem* parent)
-    : GraphicsWidget(parent),
+GraphicsItemRenderer::GraphicsItemRenderer(GraphicsItemRendererPrivate& d, QGraphicsItem* const parent)
+    : GraphicsWidget  (parent),
       QPainterRenderer(d)
 {
     setFlag(ItemIsFocusable); // receive key events

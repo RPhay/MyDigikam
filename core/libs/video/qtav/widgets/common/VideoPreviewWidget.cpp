@@ -35,12 +35,12 @@
 namespace QtAV
 {
 
-VideoPreviewWidget::VideoPreviewWidget(QWidget* parent)
-    : QWidget(parent)
-    , m_keep_ar(false)
-    , m_auto_display(false) // set to false initially to trigger connections in setAutoDisplayFrame() below -- will default to true
-    , m_extractor(new VideoFrameExtractor(this))
-    , m_out(new VideoOutput(VideoRendererId_Widget, this))
+VideoPreviewWidget::VideoPreviewWidget(QWidget* const parent)
+    : QWidget       (parent),
+      m_keep_ar     (false),
+      m_auto_display(false), // set to false initially to trigger connections in setAutoDisplayFrame() below -- will default to true
+      m_extractor   (new VideoFrameExtractor(this)),
+      m_out         (new VideoOutput(VideoRendererId_Widget, this))
 {
     // FIXME: opengl may crash, so use software renderer here
 
@@ -98,7 +98,7 @@ void VideoPreviewWidget::setAutoDisplayFrame(bool b)
     }
 }
 
-void VideoPreviewWidget::resizeEvent(QResizeEvent *e)
+void VideoPreviewWidget::resizeEvent(QResizeEvent* e)
 {
     m_out->widget()->resize(e->size());
 }
@@ -118,7 +118,7 @@ void VideoPreviewWidget::preview()
     m_extractor->extract();
 }
 
-void VideoPreviewWidget::setFile(const QString &value)
+void VideoPreviewWidget::setFile(const QString& value)
 {
     if (m_file == value)
         return;
@@ -134,9 +134,9 @@ QString VideoPreviewWidget::file() const
     return m_file;
 }
 
-void VideoPreviewWidget::displayFrame(const QtAV::VideoFrame &frame)
+void VideoPreviewWidget::displayFrame(const QtAV::VideoFrame& frame)
 {
-    int diff = qAbs(qint64(frame.timestamp()*1000.0) - m_extractor->position());
+    int diff = qAbs(qint64(frame.timestamp() * 1000.0) - m_extractor->position());
 
     if (diff > m_extractor->precision())
     {
@@ -162,10 +162,10 @@ void VideoPreviewWidget::displayFrame(const QtAV::VideoFrame &frame)
     // make sure frame is the same size as the output widget size, and of the desired format
     // if not, convert & scale
 
-    VideoFrame f(frame.pixelFormat() == m_out->preferredPixelFormat() && frame.size() == s
-                 ? frame
-                 : frame.to(m_out->preferredPixelFormat(), s)
-    );
+    VideoFrame f(
+                 ((frame.pixelFormat() == m_out->preferredPixelFormat()) && (frame.size() == s)) ? frame
+                     : frame.to(m_out->preferredPixelFormat(), s)
+                );
 
     if (!f.isValid())
     {

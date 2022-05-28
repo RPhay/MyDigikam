@@ -53,8 +53,8 @@ VideoRendererId WidgetRenderer::id() const
     return VideoRendererId_Widget;
 }
 
-WidgetRenderer::WidgetRenderer(QWidget* parent, Qt::WindowFlags f)
-    : QWidget(parent, f),
+WidgetRenderer::WidgetRenderer(QWidget* const parent, Qt::WindowFlags f)
+    : QWidget         (parent, f),
       QPainterRenderer(*new WidgetRendererPrivate())
 {
     DPTR_D(WidgetRenderer);
@@ -78,19 +78,20 @@ WidgetRenderer::WidgetRenderer(QWidget* parent, Qt::WindowFlags f)
     }
     else
     {
-        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("FilterContext not available!");
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+            << QString::asprintf("FilterContext not available!");
     }
 }
 
-WidgetRenderer::WidgetRenderer(WidgetRendererPrivate &d, QWidget *parent, Qt::WindowFlags f)
-    : QWidget(parent, f),
+WidgetRenderer::WidgetRenderer(WidgetRendererPrivate& d, QWidget* const parent, Qt::WindowFlags f)
+    : QWidget         (parent, f),
       QPainterRenderer(d)
 {
     d.painter = new QPainter();
     setAcceptDrops(true);
     setFocusPolicy(Qt::StrongFocus);
     setAutoFillBackground(false);
-    QPainterFilterContext *ctx = static_cast<QPainterFilterContext*>(d.filter_context);
+    QPainterFilterContext* const ctx = static_cast<QPainterFilterContext*>(d.filter_context);
 
     if (ctx)
     {
@@ -98,7 +99,8 @@ WidgetRenderer::WidgetRenderer(WidgetRendererPrivate &d, QWidget *parent, Qt::Wi
     }
     else
     {
-        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("FilterContext not available!");
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+            << QString::asprintf("FilterContext not available!");
     }
 }
 
@@ -117,7 +119,7 @@ bool WidgetRenderer::receiveFrame(const VideoFrame& frame)
     return true;
 }
 
-void WidgetRenderer::resizeEvent(QResizeEvent *e)
+void WidgetRenderer::resizeEvent(QResizeEvent* e)
 {
     DPTR_D(WidgetRenderer);
 
@@ -126,7 +128,7 @@ void WidgetRenderer::resizeEvent(QResizeEvent *e)
     update();
 }
 
-void WidgetRenderer::paintEvent(QPaintEvent *)
+void WidgetRenderer::paintEvent(QPaintEvent*)
 {
     DPTR_D(WidgetRenderer);
 

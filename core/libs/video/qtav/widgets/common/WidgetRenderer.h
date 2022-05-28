@@ -24,14 +24,14 @@
 #ifndef QTAV_WIDGETS_WIDGET_RENDERER_H
 #define QTAV_WIDGETS_WIDGET_RENDERER_H
 
+// Qt includes
+
+#include <QWidget>
+
 // Local includes
 
 #include "QtAVWidgets_Global.h"
 #include "QPainterRenderer.h"
-
-// Qt includes
-
-#include <QWidget>
 
 namespace QtAV
 {
@@ -59,7 +59,7 @@ class QTAV_WIDGETS_EXPORT WidgetRenderer : public QWidget,
 
 public:
 
-    explicit WidgetRenderer(QWidget* parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
+    explicit WidgetRenderer(QWidget* const parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
 
     virtual VideoRendererId id()          const override;
 
@@ -89,7 +89,7 @@ protected:
 
 protected:
 
-    WidgetRenderer(WidgetRendererPrivate& d, QWidget* parent, Qt::WindowFlags f);
+    WidgetRenderer(WidgetRendererPrivate& d, QWidget* const parent, Qt::WindowFlags f);
 
     DECLARE_VIDEO_RENDERER_EMIT_METHODS
 };

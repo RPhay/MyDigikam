@@ -24,14 +24,14 @@
 #ifndef QTAV_WIDGETS_GRAPHICS_ITEM_RENDERER_H
 #define QTAV_WIDGETS_GRAPHICS_ITEM_RENDERER_H
 
+// Qt includes
+
+#include <QGraphicsWidget>
+
+// Local includes
+
 #include "QtAVWidgets_Global.h"
 #include "QPainterRenderer.h"
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#   include <QGraphicsWidget>
-#else
-#   include <QGraphicsWidget>
-#endif
 
 // QGraphicsWidget will lose focus forever if TextItem inserted text. Why?
 
@@ -107,7 +107,7 @@ Q_SIGNALS:
 
 protected:
 
-    GraphicsItemRenderer(GraphicsItemRendererPrivate& d, QGraphicsItem* parent);
+    GraphicsItemRenderer(GraphicsItemRendererPrivate& d, QGraphicsItem* const parent);
 
     bool receiveFrame(const VideoFrame& frame)              override;
     void drawBackground()                                   override;
@@ -139,6 +139,8 @@ private:
     bool onSetSaturation(qreal s)                           override;
 
     DECLARE_VIDEO_RENDERER_EMIT_METHODS
+
+    // Disable
 
     GraphicsItemRenderer(QObject*);
 };

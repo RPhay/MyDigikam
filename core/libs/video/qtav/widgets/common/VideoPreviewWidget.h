@@ -45,7 +45,7 @@ class QTAV_WIDGETS_EXPORT VideoPreviewWidget : public QWidget
 
 public:
 
-    explicit VideoPreviewWidget(QWidget* parent = nullptr);
+    explicit VideoPreviewWidget(QWidget* const parent = nullptr);
     void setTimestamp(qint64 msec);
     qint64 timestamp() const;
     void preview();
@@ -99,7 +99,8 @@ protected:
 
 private:
 
-    bool                 m_keep_ar, m_auto_display;
+    bool                 m_keep_ar;
+    bool                 m_auto_display;
     QString              m_file;
     VideoFrameExtractor* m_extractor;
     VideoOutput*         m_out;
