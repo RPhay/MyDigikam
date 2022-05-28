@@ -78,8 +78,8 @@ typedef enum cudaVideoCodec_enum
  */
 typedef enum cudaVideoSurfaceFormat_enum
 {
-    cudaVideoSurfaceFormat_NV12=0,      /**< NV12  */
-    cudaVideoSurfaceFormat_P016=1       /**< P016  */
+    cudaVideoSurfaceFormat_NV12 = 0,    /**< NV12  */
+    cudaVideoSurfaceFormat_P016 = 1     /**< P016  */
 } cudaVideoSurfaceFormat;
 
 /*!
@@ -88,7 +88,7 @@ typedef enum cudaVideoSurfaceFormat_enum
  */
 typedef enum cudaVideoDeinterlaceMode_enum
 {
-    cudaVideoDeinterlaceMode_Weave=0,   /**< Weave both fields (no deinterlacing)   */
+    cudaVideoDeinterlaceMode_Weave = 0, /**< Weave both fields (no deinterlacing)   */
     cudaVideoDeinterlaceMode_Bob,       /**< Drop one field                         */
     cudaVideoDeinterlaceMode_Adaptive   /**< Adaptive deinterlacing                 */
 } cudaVideoDeinterlaceMode;
@@ -123,14 +123,14 @@ typedef enum cudaVideoCreateFlags_enum
  */
 typedef struct _CUVIDDECODECREATEINFO
 {
-    unsigned long ulWidth;              /**< Coded Sequence Width                                           */
-    unsigned long ulHeight;             /**< Coded Sequence Height                                          */
-    unsigned long ulNumDecodeSurfaces;  /**< Maximum number of internal decode surfaces                     */
-    cudaVideoCodec CodecType;           /**< cudaVideoCodec_XXX                                             */
-    cudaVideoChromaFormat ChromaFormat; /**< cudaVideoChromaFormat_XXX (only 4:2:0 is currently supported)  */
-    unsigned long ulCreationFlags;      /**< Decoder creation flags (cudaVideoCreateFlags_XXX)              */
-    unsigned long bitDepthMinus8;
-    unsigned long Reserved1[4];         /**< Reserved for future use - set to zero                          */
+    unsigned long         ulWidth;              /**< Coded Sequence Width                                           */
+    unsigned long         ulHeight;             /**< Coded Sequence Height                                          */
+    unsigned long         ulNumDecodeSurfaces;  /**< Maximum number of internal decode surfaces                     */
+    cudaVideoCodec        CodecType;            /**< cudaVideoCodec_XXX                                             */
+    cudaVideoChromaFormat ChromaFormat;         /**< cudaVideoChromaFormat_XXX (only 4:2:0 is currently supported)  */
+    unsigned long         ulCreationFlags;      /**< Decoder creation flags (cudaVideoCreateFlags_XXX)              */
+    unsigned long         bitDepthMinus8;
+    unsigned long         Reserved1[4];         /**< Reserved for future use - set to zero                          */
 
     /**
      * area of the frame that should be displayed
@@ -143,12 +143,12 @@ typedef struct _CUVIDDECODECREATEINFO
         short bottom;
     } display_area;
 
-    cudaVideoSurfaceFormat OutputFormat;       /**< cudaVideoSurfaceFormat_XXX                                                          */
-    cudaVideoDeinterlaceMode DeinterlaceMode;  /**< cudaVideoDeinterlaceMode_XXX                                                        */
-    unsigned long ulTargetWidth;               /**< Post-processed Output Width (Should be aligned to 2)                                */
-    unsigned long ulTargetHeight;              /**< Post-processed Output Height (Should be aligbed to 2)                               */
-    unsigned long ulNumOutputSurfaces;         /**< Maximum number of output surfaces simultaneously mapped                             */
-    CUvideoctxlock vidLock;                    /**< If non-nullptr, context lock used for synchronizing ownership of the cuda context   */
+    cudaVideoSurfaceFormat   OutputFormat;                /**< cudaVideoSurfaceFormat_XXX                                                          */
+    cudaVideoDeinterlaceMode DeinterlaceMode;             /**< cudaVideoDeinterlaceMode_XXX                                                        */
+    unsigned long            ulTargetWidth;               /**< Post-processed Output Width (Should be aligned to 2)                                */
+    unsigned long            ulTargetHeight;              /**< Post-processed Output Height (Should be aligbed to 2)                               */
+    unsigned long            ulNumOutputSurfaces;         /**< Maximum number of output surfaces simultaneously mapped                             */
+    CUvideoctxlock           vidLock;                     /**< If non-nullptr, context lock used for synchronizing ownership of the cuda context   */
 
     /**
      * target rectangle in the output frame (for aspect ratio conversion)
@@ -161,6 +161,7 @@ typedef struct _CUVIDDECODECREATEINFO
         short right;
         short bottom;
     } target_rect;
+
     unsigned long Reserved2[5];                /**< Reserved for future use - set to zero */
 } CUVIDDECODECREATEINFO;
 
@@ -184,14 +185,14 @@ typedef struct _CUVIDH264DPBENTRY
  */
 typedef struct _CUVIDH264MVCEXT
 {
-    int num_views_minus1;
-    int view_id;
+    int           num_views_minus1;
+    int           view_id;
     unsigned char inter_view_flag;
     unsigned char num_inter_view_refs_l0;
     unsigned char num_inter_view_refs_l1;
     unsigned char MVCReserved8Bits;
-    int InterViewRefsL0[16];
-    int InterViewRefsL1[16];
+    int           InterViewRefsL0[16];
+    int           InterViewRefsL1[16];
 } CUVIDH264MVCEXT;
 
 /*!
@@ -200,41 +201,41 @@ typedef struct _CUVIDH264MVCEXT
  */
 typedef struct _CUVIDH264SVCEXT
 {
-    unsigned char profile_idc;
-    unsigned char level_idc;
-    unsigned char DQId;
-    unsigned char DQIdMax;
-    unsigned char disable_inter_layer_deblocking_filter_idc;
-    unsigned char ref_layer_chroma_phase_y_plus1;
-    signed char   inter_layer_slice_alpha_c0_offset_div2;
-    signed char   inter_layer_slice_beta_offset_div2;
+    unsigned char           profile_idc;
+    unsigned char           level_idc;
+    unsigned char           DQId;
+    unsigned char           DQIdMax;
+    unsigned char           disable_inter_layer_deblocking_filter_idc;
+    unsigned char           ref_layer_chroma_phase_y_plus1;
+    signed char             inter_layer_slice_alpha_c0_offset_div2;
+    signed char             inter_layer_slice_beta_offset_div2;
 
-    unsigned short DPBEntryValidFlag;
-    unsigned char inter_layer_deblocking_filter_control_present_flag;
-    unsigned char extended_spatial_scalability_idc;
-    unsigned char adaptive_tcoeff_level_prediction_flag;
-    unsigned char slice_header_restriction_flag;
-    unsigned char chroma_phase_x_plus1_flag;
-    unsigned char chroma_phase_y_plus1;
+    unsigned short          DPBEntryValidFlag;
+    unsigned char           inter_layer_deblocking_filter_control_present_flag;
+    unsigned char           extended_spatial_scalability_idc;
+    unsigned char           adaptive_tcoeff_level_prediction_flag;
+    unsigned char           slice_header_restriction_flag;
+    unsigned char           chroma_phase_x_plus1_flag;
+    unsigned char           chroma_phase_y_plus1;
 
-    unsigned char tcoeff_level_prediction_flag;
-    unsigned char constrained_intra_resampling_flag;
-    unsigned char ref_layer_chroma_phase_x_plus1_flag;
-    unsigned char store_ref_base_pic_flag;
-    unsigned char Reserved8BitsA;
-    unsigned char Reserved8BitsB;
+    unsigned char           tcoeff_level_prediction_flag;
+    unsigned char           constrained_intra_resampling_flag;
+    unsigned char           ref_layer_chroma_phase_x_plus1_flag;
+    unsigned char           store_ref_base_pic_flag;
+    unsigned char           Reserved8BitsA;
+    unsigned char           Reserved8BitsB;
 
     // For the 4 scaled_ref_layer_XX fields below,
     // if (extended_spatial_scalability_idc == 1), SPS field, G.7.3.2.1.4, add prefix "seq_"
     // if (extended_spatial_scalability_idc == 2), SLH field, G.7.3.3.4,
 
-    short scaled_ref_layer_left_offset;
-    short scaled_ref_layer_top_offset;
-    short scaled_ref_layer_right_offset;
-    short scaled_ref_layer_bottom_offset;
-    unsigned short Reserved16Bits;
-    struct _CUVIDPICPARAMS *pNextLayer; /**< Points to the picparams for the next layer to be decoded. Linked list ends at the target layer. */
-    int bRefBaseLayer;                  /**< whether to store ref base pic                                                                   */
+    short                   scaled_ref_layer_left_offset;
+    short                   scaled_ref_layer_top_offset;
+    short                   scaled_ref_layer_right_offset;
+    short                   scaled_ref_layer_bottom_offset;
+    unsigned short          Reserved16Bits;
+    struct _CUVIDPICPARAMS* pNextLayer;         /**< Points to the picparams for the next layer to be decoded. Linked list ends at the target layer. */
+    int                     bRefBaseLayer;      /**< whether to store ref base pic                                                                   */
 } CUVIDH264SVCEXT;
 
 /*!
@@ -245,17 +246,17 @@ typedef struct _CUVIDH264PICPARAMS
 {
     // SPS
 
-    int log2_max_frame_num_minus4;
-    int pic_order_cnt_type;
-    int log2_max_pic_order_cnt_lsb_minus4;
-    int delta_pic_order_always_zero_flag;
-    int frame_mbs_only_flag;
-    int direct_8x8_inference_flag;
-    int num_ref_frames;                     // NOTE: shall meet level 4.1 restrictions
-    unsigned char residual_colour_transform_flag;
-    unsigned char bit_depth_luma_minus8;    // Must be 0 (only 8-bit supported)
-    unsigned char bit_depth_chroma_minus8;  // Must be 0 (only 8-bit supported)
-    unsigned char qpprime_y_zero_transform_bypass_flag;
+    int             log2_max_frame_num_minus4;
+    int             pic_order_cnt_type;
+    int             log2_max_pic_order_cnt_lsb_minus4;
+    int             delta_pic_order_always_zero_flag;
+    int             frame_mbs_only_flag;
+    int             direct_8x8_inference_flag;
+    int             num_ref_frames;                     // NOTE: shall meet level 4.1 restrictions
+    unsigned char   residual_colour_transform_flag;
+    unsigned char   bit_depth_luma_minus8;              // Must be 0 (only 8-bit supported)
+    unsigned char   bit_depth_chroma_minus8;            // Must be 0 (only 8-bit supported)
+    unsigned char   qpprime_y_zero_transform_bypass_flag;
 
     // PPS
 
@@ -291,13 +292,13 @@ typedef struct _CUVIDH264PICPARAMS
     unsigned char fmo_aso_enable;
     unsigned char num_slice_groups_minus1;
     unsigned char slice_group_map_type;
-    signed char pic_init_qs_minus26;
-    unsigned int slice_group_change_rate_minus1;
+    signed char   pic_init_qs_minus26;
+    unsigned int  slice_group_change_rate_minus1;
 
     union
     {
-        unsigned long long slice_group_map_addr;
-        const unsigned char *pMb2SliceGroupMap;
+        unsigned long long   slice_group_map_addr;
+        const unsigned char* pMb2SliceGroupMap;
     } fmo;
 
     unsigned int  Reserved[12];
@@ -386,7 +387,7 @@ typedef struct _CUVIDMPEG4PICPARAMS
 
     unsigned char QuantMatrixIntra[64];
     unsigned char QuantMatrixInter[64];
-    int gmc_enabled;
+    int           gmc_enabled;
 } CUVIDMPEG4PICPARAMS;
 
 /*!
@@ -456,108 +457,108 @@ typedef struct _CUVIDHEVCPICPARAMS
 {
     // sps
 
-    int pic_width_in_luma_samples;
-    int pic_height_in_luma_samples;
-    unsigned char log2_min_luma_coding_block_size_minus3;
-    unsigned char log2_diff_max_min_luma_coding_block_size;
-    unsigned char log2_min_transform_block_size_minus2;
-    unsigned char log2_diff_max_min_transform_block_size;
-    unsigned char pcm_enabled_flag;
-    unsigned char log2_min_pcm_luma_coding_block_size_minus3;
-    unsigned char log2_diff_max_min_pcm_luma_coding_block_size;
-    unsigned char pcm_sample_bit_depth_luma_minus1;
+    int            pic_width_in_luma_samples;
+    int            pic_height_in_luma_samples;
+    unsigned char  log2_min_luma_coding_block_size_minus3;
+    unsigned char  log2_diff_max_min_luma_coding_block_size;
+    unsigned char  log2_min_transform_block_size_minus2;
+    unsigned char  log2_diff_max_min_transform_block_size;
+    unsigned char  pcm_enabled_flag;
+    unsigned char  log2_min_pcm_luma_coding_block_size_minus3;
+    unsigned char  log2_diff_max_min_pcm_luma_coding_block_size;
+    unsigned char  pcm_sample_bit_depth_luma_minus1;
 
-    unsigned char pcm_sample_bit_depth_chroma_minus1;
-    unsigned char pcm_loop_filter_disabled_flag;
-    unsigned char strong_intra_smoothing_enabled_flag;
-    unsigned char max_transform_hierarchy_depth_intra;
-    unsigned char max_transform_hierarchy_depth_inter;
-    unsigned char amp_enabled_flag;
-    unsigned char separate_colour_plane_flag;
-    unsigned char log2_max_pic_order_cnt_lsb_minus4;
+    unsigned char  pcm_sample_bit_depth_chroma_minus1;
+    unsigned char  pcm_loop_filter_disabled_flag;
+    unsigned char  strong_intra_smoothing_enabled_flag;
+    unsigned char  max_transform_hierarchy_depth_intra;
+    unsigned char  max_transform_hierarchy_depth_inter;
+    unsigned char  amp_enabled_flag;
+    unsigned char  separate_colour_plane_flag;
+    unsigned char  log2_max_pic_order_cnt_lsb_minus4;
 
-    unsigned char num_short_term_ref_pic_sets;
-    unsigned char long_term_ref_pics_present_flag;
-    unsigned char num_long_term_ref_pics_sps;
-    unsigned char sps_temporal_mvp_enabled_flag;
-    unsigned char sample_adaptive_offset_enabled_flag;
-    unsigned char scaling_list_enable_flag;
-    unsigned char IrapPicFlag;
-    unsigned char IdrPicFlag;
+    unsigned char  num_short_term_ref_pic_sets;
+    unsigned char  long_term_ref_pics_present_flag;
+    unsigned char  num_long_term_ref_pics_sps;
+    unsigned char  sps_temporal_mvp_enabled_flag;
+    unsigned char  sample_adaptive_offset_enabled_flag;
+    unsigned char  scaling_list_enable_flag;
+    unsigned char  IrapPicFlag;
+    unsigned char  IdrPicFlag;
 
-    unsigned char bit_depth_luma_minus8;
-    unsigned char bit_depth_chroma_minus8;
-    unsigned char reserved1[14];
+    unsigned char  bit_depth_luma_minus8;
+    unsigned char  bit_depth_chroma_minus8;
+    unsigned char  reserved1[14];
 
     // pps
 
-    unsigned char dependent_slice_segments_enabled_flag;
-    unsigned char slice_segment_header_extension_present_flag;
-    unsigned char sign_data_hiding_enabled_flag;
-    unsigned char cu_qp_delta_enabled_flag;
-    unsigned char diff_cu_qp_delta_depth;
-    signed char init_qp_minus26;
-    signed char pps_cb_qp_offset;
-    signed char pps_cr_qp_offset;
+    unsigned char  dependent_slice_segments_enabled_flag;
+    unsigned char  slice_segment_header_extension_present_flag;
+    unsigned char  sign_data_hiding_enabled_flag;
+    unsigned char  cu_qp_delta_enabled_flag;
+    unsigned char  diff_cu_qp_delta_depth;
+    signed char    init_qp_minus26;
+    signed char    pps_cb_qp_offset;
+    signed char    pps_cr_qp_offset;
 
-    unsigned char constrained_intra_pred_flag;
-    unsigned char weighted_pred_flag;
-    unsigned char weighted_bipred_flag;
-    unsigned char transform_skip_enabled_flag;
-    unsigned char transquant_bypass_enabled_flag;
-    unsigned char entropy_coding_sync_enabled_flag;
-    unsigned char log2_parallel_merge_level_minus2;
-    unsigned char num_extra_slice_header_bits;
+    unsigned char  constrained_intra_pred_flag;
+    unsigned char  weighted_pred_flag;
+    unsigned char  weighted_bipred_flag;
+    unsigned char  transform_skip_enabled_flag;
+    unsigned char  transquant_bypass_enabled_flag;
+    unsigned char  entropy_coding_sync_enabled_flag;
+    unsigned char  log2_parallel_merge_level_minus2;
+    unsigned char  num_extra_slice_header_bits;
 
-    unsigned char loop_filter_across_tiles_enabled_flag;
-    unsigned char loop_filter_across_slices_enabled_flag;
-    unsigned char output_flag_present_flag;
-    unsigned char num_ref_idx_l0_default_active_minus1;
-    unsigned char num_ref_idx_l1_default_active_minus1;
-    unsigned char lists_modification_present_flag;
-    unsigned char cabac_init_present_flag;
-    unsigned char pps_slice_chroma_qp_offsets_present_flag;
+    unsigned char  loop_filter_across_tiles_enabled_flag;
+    unsigned char  loop_filter_across_slices_enabled_flag;
+    unsigned char  output_flag_present_flag;
+    unsigned char  num_ref_idx_l0_default_active_minus1;
+    unsigned char  num_ref_idx_l1_default_active_minus1;
+    unsigned char  lists_modification_present_flag;
+    unsigned char  cabac_init_present_flag;
+    unsigned char  pps_slice_chroma_qp_offsets_present_flag;
 
-    unsigned char deblocking_filter_override_enabled_flag;
-    unsigned char pps_deblocking_filter_disabled_flag;
-    signed char pps_beta_offset_div2;
-    signed char pps_tc_offset_div2;
-    unsigned char tiles_enabled_flag;
-    unsigned char uniform_spacing_flag;
-    unsigned char num_tile_columns_minus1;
-    unsigned char num_tile_rows_minus1;
+    unsigned char  deblocking_filter_override_enabled_flag;
+    unsigned char  pps_deblocking_filter_disabled_flag;
+    signed char    pps_beta_offset_div2;
+    signed char    pps_tc_offset_div2;
+    unsigned char  tiles_enabled_flag;
+    unsigned char  uniform_spacing_flag;
+    unsigned char  num_tile_columns_minus1;
+    unsigned char  num_tile_rows_minus1;
 
     unsigned short column_width_minus1[21];
     unsigned short row_height_minus1[21];
-    unsigned int reserved3[15];
+    unsigned int   reserved3[15];
 
     // RefPicSets
 
-    int NumBitsForShortTermRPSInSlice;
-    int NumDeltaPocsOfRefRpsIdx;
-    int NumPocTotalCurr;
-    int NumPocStCurrBefore;
-    int NumPocStCurrAfter;
-    int NumPocLtCurr;
-    int CurrPicOrderCntVal;
-    int RefPicIdx[16];                         // [refpic] Indices of valid reference pictures (-1 if unused for reference)
-    int PicOrderCntVal[16];                    // [refpic]
-    unsigned char IsLongTerm[16];              // [refpic] 0=not a long-term reference, 1=long-term reference
-    unsigned char RefPicSetStCurrBefore[8];    // [0..NumPocStCurrBefore-1] -> refpic (0..15)
-    unsigned char RefPicSetStCurrAfter[8];     // [0..NumPocStCurrAfter-1] -> refpic (0..15)
-    unsigned char RefPicSetLtCurr[8];          // [0..NumPocLtCurr-1] -> refpic (0..15)
-    unsigned char RefPicSetInterLayer0[8];
-    unsigned char RefPicSetInterLayer1[8];
-    unsigned int reserved4[12];
+    int            NumBitsForShortTermRPSInSlice;
+    int            NumDeltaPocsOfRefRpsIdx;
+    int            NumPocTotalCurr;
+    int            NumPocStCurrBefore;
+    int            NumPocStCurrAfter;
+    int            NumPocLtCurr;
+    int            CurrPicOrderCntVal;
+    int            RefPicIdx[16];               // [refpic] Indices of valid reference pictures (-1 if unused for reference)
+    int            PicOrderCntVal[16];          // [refpic]
+    unsigned char  IsLongTerm[16];              // [refpic] 0=not a long-term reference, 1=long-term reference
+    unsigned char  RefPicSetStCurrBefore[8];    // [0..NumPocStCurrBefore-1] -> refpic (0..15)
+    unsigned char  RefPicSetStCurrAfter[8];     // [0..NumPocStCurrAfter-1] -> refpic (0..15)
+    unsigned char  RefPicSetLtCurr[8];          // [0..NumPocLtCurr-1] -> refpic (0..15)
+    unsigned char  RefPicSetInterLayer0[8];
+    unsigned char  RefPicSetInterLayer1[8];
+    unsigned int   reserved4[12];
 
     // scaling lists (diag order)
 
-    unsigned char ScalingList4x4[6][16];       // [matrixId][i]
-    unsigned char ScalingList8x8[6][64];       // [matrixId][i]
-    unsigned char ScalingList16x16[6][64];     // [matrixId][i]
-    unsigned char ScalingList32x32[2][64];     // [matrixId][i]
-    unsigned char ScalingListDCCoeff16x16[6];  // [matrixId]
-    unsigned char ScalingListDCCoeff32x32[2];  // [matrixId]
+    unsigned char  ScalingList4x4[6][16];       // [matrixId][i]
+    unsigned char  ScalingList8x8[6][64];       // [matrixId][i]
+    unsigned char  ScalingList16x16[6][64];     // [matrixId][i]
+    unsigned char  ScalingList32x32[2][64];     // [matrixId][i]
+    unsigned char  ScalingListDCCoeff16x16[6];  // [matrixId]
+    unsigned char  ScalingListDCCoeff32x32[2];  // [matrixId]
 } CUVIDHEVCPICPARAMS;
 
 /*!
@@ -566,9 +567,9 @@ typedef struct _CUVIDHEVCPICPARAMS
  */
 typedef struct _CUVIDVP8PICPARAMS
 {
-    int width;
-    int height;
-    unsigned int first_partition_size;
+    int           width;
+    int           height;
+    unsigned int  first_partition_size;
 
     // Frame Indexes
 
@@ -585,8 +586,10 @@ typedef struct _CUVIDVP8PICPARAMS
             unsigned char update_mb_segmentation_data : 1;  /**< Must be 0 if segmentation is not enabled */
             unsigned char Reserved2Bits : 2;
         };
+
         unsigned char wFrameTagFlags;
     } tagflags;
+
     unsigned char Reserved1[4];
     unsigned int  Reserved2[3];
 } CUVIDVP8PICPARAMS;
@@ -597,15 +600,15 @@ typedef struct _CUVIDVP8PICPARAMS
  */
 typedef struct _CUVIDVP9PICPARAMS
 {
-    unsigned int width;
-    unsigned int height;
+    unsigned int   width;
+    unsigned int   height;
 
     // Frame Indices
 
-    unsigned char LastRefIdx;
-    unsigned char GoldenRefIdx;
-    unsigned char AltRefIdx;
-    unsigned char colorSpace;
+    unsigned char  LastRefIdx;
+    unsigned char  GoldenRefIdx;
+    unsigned char  AltRefIdx;
+    unsigned char  colorSpace;
 
     unsigned short profile : 3;
     unsigned short frameContextIdx : 2;
@@ -624,41 +627,41 @@ typedef struct _CUVIDVP9PICPARAMS
 
     unsigned char  refFrameSignBias[4];
 
-    unsigned char bitDepthMinus8Luma;
-    unsigned char bitDepthMinus8Chroma;
-    unsigned char loopFilterLevel;
-    unsigned char loopFilterSharpness;
+    unsigned char  bitDepthMinus8Luma;
+    unsigned char  bitDepthMinus8Chroma;
+    unsigned char  loopFilterLevel;
+    unsigned char  loopFilterSharpness;
 
-    unsigned char modeRefLfEnabled;
-    unsigned char log2_tile_columns;
-    unsigned char log2_tile_rows;
+    unsigned char  modeRefLfEnabled;
+    unsigned char  log2_tile_columns;
+    unsigned char  log2_tile_rows;
 
-    unsigned char segmentEnabled : 1;
-    unsigned char segmentMapUpdate : 1;
-    unsigned char segmentMapTemporalUpdate : 1;
-    unsigned char segmentFeatureMode : 1;
-    unsigned char reserved4Bits : 4;
+    unsigned char  segmentEnabled : 1;
+    unsigned char  segmentMapUpdate : 1;
+    unsigned char  segmentMapTemporalUpdate : 1;
+    unsigned char  segmentFeatureMode : 1;
+    unsigned char  reserved4Bits : 4;
 
 
-    unsigned char segmentFeatureEnable[8][4];
-    short segmentFeatureData[8][4];
-    unsigned char mb_segment_tree_probs[7];
-    unsigned char segment_pred_probs[3];
-    unsigned char reservedSegment16Bits[2];
+    unsigned char  segmentFeatureEnable[8][4];
+    short          segmentFeatureData[8][4];
+    unsigned char  mb_segment_tree_probs[7];
+    unsigned char  segment_pred_probs[3];
+    unsigned char  reservedSegment16Bits[2];
 
-    int qpYAc;
-    int qpYDc;
-    int qpChDc;
-    int qpChAc;
+    int            qpYAc;
+    int            qpYDc;
+    int            qpChDc;
+    int            qpChAc;
 
-    unsigned int activeRefIdx[3];
-    unsigned int resetFrameContext;
-    unsigned int mcomp_filter_type;
-    unsigned int mbRefLfDelta[4];
-    unsigned int mbModeLfDelta[2];
-    unsigned int frameTagSize;
-    unsigned int offsetToDctParts;
-    unsigned int reserved128Bits[4];
+    unsigned int   activeRefIdx[3];
+    unsigned int   resetFrameContext;
+    unsigned int   mcomp_filter_type;
+    unsigned int   mbRefLfDelta[4];
+    unsigned int   mbModeLfDelta[2];
+    unsigned int   frameTagSize;
+    unsigned int   offsetToDctParts;
+    unsigned int   reserved128Bits[4];
 
 } CUVIDVP9PICPARAMS;
 
@@ -668,36 +671,36 @@ typedef struct _CUVIDVP9PICPARAMS
  */
 typedef struct _CUVIDPICPARAMS
 {
-    int PicWidthInMbs;                     /**< Coded Frame Size */
-    int FrameHeightInMbs;                  /**< Coded Frame Height */
-    int CurrPicIdx;                        /**< Output index of the current picture */
-    int field_pic_flag;                    /**< 0=frame picture, 1=field picture */
-    int bottom_field_flag;                 /**< 0=top field, 1=bottom field (ignored if field_pic_flag=0) */
-    int second_field;                      /**< Second field of a complementary field pair */
+    int PicWidthInMbs;                      /**< Coded Frame Size */
+    int FrameHeightInMbs;                   /**< Coded Frame Height */
+    int CurrPicIdx;                         /**< Output index of the current picture */
+    int field_pic_flag;                     /**< 0=frame picture, 1=field picture */
+    int bottom_field_flag;                  /**< 0=top field, 1=bottom field (ignored if field_pic_flag=0) */
+    int second_field;                       /**< Second field of a complementary field pair */
 
     // Bitstream data
 
-    unsigned int nBitstreamDataLen;        /**< Number of bytes in bitstream data buffer */
-    const unsigned char *pBitstreamData;   /**< Ptr to bitstream data for this picture (slice-layer) */
-    unsigned int nNumSlices;               /**< Number of slices in this picture */
-    const unsigned int *pSliceDataOffsets; /**< nNumSlices entries, contains offset of each slice within the bitstream data buffer */
-    int ref_pic_flag;                      /**< This picture is a reference picture */
-    int intra_pic_flag;                    /**< This picture is entirely intra coded */
-    unsigned int Reserved[30];             /**< Reserved for future use */
+    unsigned int         nBitstreamDataLen; /**< Number of bytes in bitstream data buffer */
+    const unsigned char* pBitstreamData;    /**< Ptr to bitstream data for this picture (slice-layer) */
+    unsigned int         nNumSlices;        /**< Number of slices in this picture */
+    const unsigned int*  pSliceDataOffsets; /**< nNumSlices entries, contains offset of each slice within the bitstream data buffer */
+    int                  ref_pic_flag;      /**< This picture is a reference picture */
+    int                  intra_pic_flag;    /**< This picture is entirely intra coded */
+    unsigned int         Reserved[30];      /**< Reserved for future use */
 
     // Codec-specific data
 
     union
     {
-        CUVIDMPEG2PICPARAMS mpeg2;         /**< Also used for MPEG-1 */
-        CUVIDH264PICPARAMS h264;
-        CUVIDVC1PICPARAMS vc1;
+        CUVIDMPEG2PICPARAMS mpeg2;          /**< Also used for MPEG-1 */
+        CUVIDH264PICPARAMS  h264;
+        CUVIDVC1PICPARAMS   vc1;
         CUVIDMPEG4PICPARAMS mpeg4;
-        CUVIDJPEGPICPARAMS jpeg;
-        CUVIDHEVCPICPARAMS hevc;
-        CUVIDVP8PICPARAMS vp8;
-        CUVIDVP9PICPARAMS vp9;
-        unsigned int CodecReserved[1024];
+        CUVIDJPEGPICPARAMS  jpeg;
+        CUVIDHEVCPICPARAMS  hevc;
+        CUVIDVP8PICPARAMS   vp8;
+        CUVIDVP9PICPARAMS   vp9;
+        unsigned int        CodecReserved[1024];
     } CodecSpecific;
 } CUVIDPICPARAMS;
 
@@ -715,15 +718,15 @@ typedef struct _CUVIDPROCPARAMS
 
     // The fields below are used for raw YUV input
 
-    unsigned int reserved_flags;        /**< Reserved for future use (set to zero) */
-    unsigned int reserved_zero;         /**< Reserved (set to zero) */
-    unsigned long long raw_input_dptr;  /**< Input CUdeviceptr for raw YUV extensions */
-    unsigned int raw_input_pitch;       /**< pitch in bytes of raw YUV input (should be aligned appropriately) */
-    unsigned int raw_input_format;      /**< Reserved for future use (set to zero) */
-    unsigned long long raw_output_dptr; /**< Reserved for future use (set to zero) */
-    unsigned int raw_output_pitch;      /**< Reserved for future use (set to zero) */
-    unsigned int Reserved[48];
-    void *Reserved3[3];
+    unsigned int       reserved_flags;        /**< Reserved for future use (set to zero) */
+    unsigned int       reserved_zero;         /**< Reserved (set to zero) */
+    unsigned long long raw_input_dptr;        /**< Input CUdeviceptr for raw YUV extensions */
+    unsigned int       raw_input_pitch;       /**< pitch in bytes of raw YUV input (should be aligned appropriately) */
+    unsigned int       raw_input_format;      /**< Reserved for future use (set to zero) */
+    unsigned long long raw_output_dptr;       /**< Reserved for future use (set to zero) */
+    unsigned int       raw_output_pitch;      /**< Reserved for future use (set to zero) */
+    unsigned int       Reserved[48];
+    void*              Reserved3[3];
 } CUVIDPROCPARAMS;
 
 /**

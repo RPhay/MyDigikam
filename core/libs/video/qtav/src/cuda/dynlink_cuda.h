@@ -34,35 +34,41 @@
 #   define CUDAAPI
 #endif
 
-typedef int CUdevice;
-typedef struct CUarray_st* CUarray;                       /**< CUDA array */
-typedef struct CUctx_st* CUcontext;                       /**< CUDA context */
+typedef int                           CUdevice;
+typedef struct CUarray_st*            CUarray;                      /**< CUDA array                     */
+typedef struct CUctx_st*              CUcontext;                    /**< CUDA context                   */
+
 #if defined(__x86_64) || defined(AMD64) || defined(_M_AMD64)
-typedef unsigned long long CUdeviceptr;
+
+typedef unsigned long long            CUdeviceptr;
+
 #else
-typedef unsigned int CUdeviceptr;
+
+typedef unsigned int                  CUdeviceptr;
+
 #endif
-typedef struct CUstream_st *CUstream;                     /**< CUDA stream */
-typedef struct CUgraphicsResource_st *CUgraphicsResource; /**< CUDA graphics interop resource */
+
+typedef struct CUstream_st*           CUstream;                     /**< CUDA stream                    */
+typedef struct CUgraphicsResource_st* CUgraphicsResource;           /**< CUDA graphics interop resource */
 
 /**
  * Context creation flags
  */
 typedef enum CUctx_flags_enum
 {
-    CU_CTX_SCHED_AUTO          = 0x00, /**< Automatic scheduling */
-    CU_CTX_SCHED_SPIN          = 0x01, /**< Set spin as default scheduling */
-    CU_CTX_SCHED_YIELD         = 0x02, /**< Set yield as default scheduling */
-    CU_CTX_SCHED_BLOCKING_SYNC = 0x04, /**< Set blocking synchronization as default scheduling */
+    CU_CTX_SCHED_AUTO          = 0x00, /**< Automatic scheduling                                           */
+    CU_CTX_SCHED_SPIN          = 0x01, /**< Set spin as default scheduling                                 */
+    CU_CTX_SCHED_YIELD         = 0x02, /**< Set yield as default scheduling                                */
+    CU_CTX_SCHED_BLOCKING_SYNC = 0x04, /**< Set blocking synchronization as default scheduling             */
     CU_CTX_BLOCKING_SYNC       = 0x04, /**< Set blocking synchronization as default scheduling \deprecated */
-    CU_CTX_MAP_HOST            = 0x08, /**< Support mapped pinned allocations */
-    CU_CTX_LMEM_RESIZE_TO_MAX  = 0x10, /**< Keep local memory allocation after launch */
+    CU_CTX_MAP_HOST            = 0x08, /**< Support mapped pinned allocations                              */
+    CU_CTX_LMEM_RESIZE_TO_MAX  = 0x10, /**< Keep local memory allocation after launch                      */
 #if __CUDA_API_VERSION < 4000
     CU_CTX_SCHED_MASK          = 0x03,
     CU_CTX_FLAGS_MASK          = 0x1f
 #else
     CU_CTX_SCHED_MASK          = 0x07,
-    CU_CTX_PRIMARY             = 0x20, /**< Initialize and return the primary context */
+    CU_CTX_PRIMARY             = 0x20, /**< Initialize and return the primary context                      */
     CU_CTX_FLAGS_MASK          = 0x3f
 #endif
 } CUctx_flags;
@@ -72,7 +78,7 @@ typedef enum CUctx_flags_enum
  */
 typedef enum CUstream_flags_enum
 {
-    CU_STREAM_DEFAULT      = 0x0, /**< Default stream flag */
+    CU_STREAM_DEFAULT      = 0x0, /**< Default stream flag                                            */
     CU_STREAM_NON_BLOCKING = 0x1  /**< Stream does not synchronize with stream 0 (the nullptr stream) */
 } CUstream_flags;
 
@@ -170,7 +176,7 @@ typedef enum cudaError_enum
      * This indicates profiling APIs are called while application is running
      * in visual profiler mode.
     */
-    CUDA_ERROR_PROFILER_DISABLED           = 5,
+    CUDA_ERROR_PROFILER_DISABLED              = 5,
     /**
      * This indicates profiling has not been initialized for this context.
      * Call cuProfilerInitialize() to resolve this.
@@ -386,7 +392,7 @@ typedef enum cudaError_enum
      * trying to re-enable peer access to a context which has already
      * had peer access to it enabled.
      */
-    CUDA_ERROR_PEER_ACCESS_ALREADY_ENABLED = 704,
+    CUDA_ERROR_PEER_ACCESS_ALREADY_ENABLED    = 704,
 
     /**
      * This error indicates that a call to ::cuMemPeerRegister is trying to
@@ -434,9 +440,9 @@ typedef enum cudaError_enum
  */
 typedef enum CUmemorytype_enum
 {
-    CU_MEMORYTYPE_HOST    = 0x01,    /**< Host memory */
-    CU_MEMORYTYPE_DEVICE  = 0x02,    /**< Device memory */
-    CU_MEMORYTYPE_ARRAY   = 0x03     /**< Array memory */
+    CU_MEMORYTYPE_HOST    = 0x01,    /**< Host memory                   */
+    CU_MEMORYTYPE_DEVICE  = 0x02,    /**< Device memory                 */
+    CU_MEMORYTYPE_ARRAY   = 0x03     /**< Array memory                  */
 #if __CUDA_API_VERSION >= 4000
   , CU_MEMORYTYPE_UNIFIED = 0x04     /**< Unified device or host memory */
 #endif
@@ -447,9 +453,9 @@ typedef enum CUmemorytype_enum
  */
 typedef enum CUcomputemode_enum
 {
-    CU_COMPUTEMODE_DEFAULT           = 0,  /**< Default compute mode (Multiple contexts allowed per device) */
-    CU_COMPUTEMODE_EXCLUSIVE         = 1, /**< Compute-exclusive-thread mode (Only one context used by a single thread can be present on this device at a time) */
-    CU_COMPUTEMODE_PROHIBITED        = 2  /**< Compute-prohibited mode (No contexts can be created on this device at this time) */
+    CU_COMPUTEMODE_DEFAULT           = 0, /**< Default compute mode (Multiple contexts allowed per device)                                                        */
+    CU_COMPUTEMODE_EXCLUSIVE         = 1, /**< Compute-exclusive-thread mode (Only one context used by a single thread can be present on this device at a time)   */
+    CU_COMPUTEMODE_PROHIBITED        = 2  /**< Compute-prohibited mode (No contexts can be created on this device at this time)                                   */
 #if __CUDA_API_VERSION >= 4000
   , CU_COMPUTEMODE_EXCLUSIVE_PROCESS = 3  /**< Compute-exclusive-process mode (Only one context used by a single process can be present on this device at a time) */
 #endif
@@ -478,24 +484,24 @@ typedef enum CUgraphicsMapResourceFlags_enum
 
 typedef struct CUDA_MEMCPY2D_st
 {
-    size_t srcXInBytes;
-    size_t srcY;
-    CUmemorytype srcMemoryType;
-    const void *srcHost;
-    CUdeviceptr srcDevice;
-    CUarray srcArray;
-    size_t srcPitch;
+    size_t          srcXInBytes;
+    size_t          srcY;
+    CUmemorytype    srcMemoryType;
+    const void*     srcHost;
+    CUdeviceptr     srcDevice;
+    CUarray         srcArray;
+    size_t          srcPitch;
 
-    size_t dstXInBytes;
-    size_t dstY;
-    CUmemorytype dstMemoryType;
-    void *dstHost;
-    CUdeviceptr dstDevice;
-    CUarray dstArray;
-    size_t dstPitch;
+    size_t          dstXInBytes;
+    size_t          dstY;
+    CUmemorytype    dstMemoryType;
+    void*           dstHost;
+    CUdeviceptr     dstDevice;
+    CUarray         dstArray;
+    size_t          dstPitch;
 
-    size_t WidthInBytes;
-    size_t Height;
+    size_t          WidthInBytes;
+    size_t          Height;
 } CUDA_MEMCPY2D;
 
 #endif // QTAV_DYNLINK_CUDA_H
