@@ -164,15 +164,16 @@ QString SequenceNumberOption::parseOperation(ParseSettings& settings, const QReg
         counterAware   = !match.captured(3).isEmpty() && match.captured(3).contains(QLatin1Char('c'));
         folderAware    = !match.captured(3).isEmpty() && match.captured(3).contains(QLatin1Char('f'));
 
-        index       = settings.manager->indexOfFile(settings.fileUrl.toLocalFile());
+        index          = settings.manager->indexOfFile(settings.fileUrl.toLocalFile());
 
-         if (extensionAware)
+        if (extensionAware)
         {
             index = settings.manager->indexOfFileGroup(settings.fileUrl.toLocalFile());
         }
 
         if (counterAware)
         {
+            index = settings.manager->indexOfFolder(settings.fileUrl.toLocalFile());
             start = settings.manager->indexOfFileCounter(settings.fileUrl.toLocalFile());
         }
 
