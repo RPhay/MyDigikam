@@ -27,7 +27,7 @@ namespace QtAV
 {
 
 ConfigPageBase::ConfigPageBase(QWidget* const parent)
-    : QWidget(parent),
+    : QWidget         (parent),
       mApplyOnUiChange(true)
 {
 }

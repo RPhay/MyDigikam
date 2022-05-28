@@ -32,12 +32,10 @@
 
 #include "QtAVWidgets_Global.h"
 
-
 class QCheckBox;
 class QComboBox;
 class QPushButton;
 class QSlider;
-
 
 namespace QtAV
 {
@@ -52,7 +50,7 @@ public:
     {
         SWScale,
         GLSL,
-        XV,
+        XV
     };
 
 public:

@@ -33,11 +33,9 @@
 #include "QtAVWidgets_Global.h"
 #include "ConfigPageBase.h"
 
-
 class QCheckBox;
 class QSpinBox;
 class QLineEdit;
-
 
 namespace QtAV
 {

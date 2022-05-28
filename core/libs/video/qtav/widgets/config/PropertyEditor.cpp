@@ -131,7 +131,7 @@ QString PropertyEditor::buildOptions()
                 result += QString::fromLatin1("=");
                 result += QString::number(me.value(i));
 
-                if (i < me.keyCount() - 1)
+                if (i < (me.keyCount() - 1))
                     result += QString::fromLatin1(",");
             }
         }
@@ -168,11 +168,11 @@ QWidget* PropertyEditor::buildUi(QObject* const obj)
     if (mMetaProperties.isEmpty())
         return 0;
 
-    QWidget* w      = new QWidget();
-    QGridLayout* gl = new QGridLayout();
+    QWidget* const w      = new QWidget();
+    QGridLayout* const gl = new QGridLayout();
 
     w->setLayout(gl);
-    int row = 0;
+    int row               = 0;
     QVariant value;
 
     Q_FOREACH (const QMetaProperty& mp, mMetaProperties)

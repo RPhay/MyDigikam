@@ -34,10 +34,8 @@
 
 #include "QtAVWidgets_Global.h"
 
-
 class QAction;
 class QWidget;
-
 
 namespace QtAV
 {
