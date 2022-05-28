@@ -96,6 +96,7 @@ public:
     QMap<QString, int>                   fileIndexMap;
     QMap<QString, int>                   folderIndexMap;
     QMap<QString, int>                   fileGroupIndexMap;
+    QMap<QString, int>                   fileCounterIndexMap;
     QMap<QString, QDateTime>             fileDatesMap;
     QMap<QString, QString>               renamedFiles;
 
@@ -306,6 +307,7 @@ void AdvancedRenameManager::clearMappings()
     d->fileIndexMap.clear();
     d->folderIndexMap.clear();
     d->fileGroupIndexMap.clear();
+    d->fileCounterIndexMap.clear();
     d->renamedFiles.clear();
 }
 
@@ -428,9 +430,9 @@ bool AdvancedRenameManager::initialize()
 
     // fill folder group index map
 
-    {
-        QMap<QString, QList<QString> > dirMap;
+    QMap<QString, QList<QString> > dirMap;
 
+    {
         Q_FOREACH (const QString& file, d->files)
         {
             QFileInfo fi(file);
@@ -461,6 +463,34 @@ bool AdvancedRenameManager::initialize()
         }
     }
 
+    // fill file counter index map
+
+    {
+        QString regExp(QLatin1String("(.*?)(\\d+)((_v\\d+[.])|[.])(.*)?"));
+        QRegularExpression counterRegExp(QRegularExpression::anchoredPattern(regExp));
+
+        Q_FOREACH (const QString& path, dirMap.keys())
+        {
+            QDir dir(path);
+            d->fileCounterIndexMap[path] = 0;
+
+            Q_FOREACH (const QString& file, dir.entryList(QDir::Files))
+            {
+                QRegularExpressionMatch match = counterRegExp.match(file);
+
+                if (match.hasMatch())
+                {
+                    int count = match.captured(2).toInt();
+
+                    if (d->fileCounterIndexMap[path] < count)
+                    {
+                        d->fileCounterIndexMap[path] = count;
+                    }
+                }
+            }
+        }
+    }
+
     return true;
 }
 
@@ -485,6 +515,13 @@ int AdvancedRenameManager::indexOfFolder(const QString& filename)
 int AdvancedRenameManager::indexOfFileGroup(const QString& filename)
 {
     return d->fileGroupIndexMap.value(fileGroupKey(filename), -1);
+}
+
+int AdvancedRenameManager::indexOfFileCounter(const QString& filename)
+{
+    QFileInfo fi(filename);
+
+    return d->fileCounterIndexMap.value(fi.absolutePath(), -1);
 }
 
 QString AdvancedRenameManager::newName(const QString& filename) const

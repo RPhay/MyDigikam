@@ -65,11 +65,13 @@ SequenceNumberOption::SequenceNumberOption()
              QLatin1String("accessories-calculator"))
 {
     addToken(QLatin1String("#"),                                 i18n("Sequence number"));
-    addToken(QLatin1String("#[||options||]"),                    i18n("Sequence number (||options||: ||e|| = extension aware, ||f|| = folder aware)"));
+    addToken(QLatin1String("#[||options||]"),                    i18n("Sequence number (||options||: ||c|| = file counter aware, "
+                                                                      "||e|| = extension aware, ||f|| = folder aware)"));
     addToken(QLatin1String("#[||options||,||start||]"),          i18n("Sequence number (custom start)"));
+    addToken(QLatin1String("#[||options||,||step||]"),           i18n("Sequence number (custom step)"));
     addToken(QLatin1String("#[||options||,||start||,||step||]"), i18n("Sequence number (custom start + step)"));
 
-    QRegularExpression reg(QLatin1String("(#+)(\\[(e?f?,?)?((-?\\d+)(,(-?\\d+))?)?\\])?"));
+    QRegularExpression reg(QLatin1String("(#+)(\\[(c?e?f?,?)?((-?\\d+)(,(-?\\d+))?)?\\])?"));
     setRegExp(reg);
 }
 
@@ -91,17 +93,24 @@ void SequenceNumberOption::slotTokenTriggered(const QString& token)
         int start           = dlg->ui->start->value();
         int step            = dlg->ui->step->value();
         bool extensionAware = dlg->ui->extensionAware->isChecked();
+        bool counterAware   = dlg->ui->counterAware->isChecked();
         bool folderAware    = dlg->ui->folderAware->isChecked();
+
 
         result = QString::fromUtf8("%1").arg(QLatin1String("#"), digits, QLatin1Char('#'));
 
-        if ((start > 1) || (step > 1) || extensionAware || folderAware)
+        if ((start > 1) || (step > 1) || extensionAware || folderAware || counterAware)
         {
             result.append(QLatin1Char('['));
 
             if (extensionAware)
             {
                 result.append(QLatin1Char('e'));
+            }
+
+            if (counterAware)
+            {
+                result.append(QLatin1Char('c'));
             }
 
             if (folderAware)
@@ -116,7 +125,10 @@ void SequenceNumberOption::slotTokenTriggered(const QString& token)
                     result.append(QLatin1Char(','));
                 }
 
-                result.append(QString::number(start));
+                if (!counterAware)
+                {
+                    result.append(QString::number(start));
+                }
             }
 
             if (step > 1)
@@ -136,22 +148,32 @@ void SequenceNumberOption::slotTokenTriggered(const QString& token)
 QString SequenceNumberOption::parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match)
 {
     QString result;
-    int slength = 0;
-    int start   = 0;
-    int step    = 0;
-    int number  = 0;
-    int index   = 0;
+    int slength         = 0;
+    int start           = 0;
+    int step            = 0;
+    int number          = 0;
+    int index           = 0;
+
+    bool extensionAware = false;
+    bool counterAware   = false;
+    bool folderAware    = false;
 
     if (settings.manager)
     {
-        bool extAware    = !match.captured(3).isEmpty() && match.captured(3).contains(QLatin1Char('e'));
-        bool folderAware = !match.captured(3).isEmpty() && match.captured(3).contains(QLatin1Char('f'));
+        extensionAware = !match.captured(3).isEmpty() && match.captured(3).contains(QLatin1Char('e'));
+        counterAware   = !match.captured(3).isEmpty() && match.captured(3).contains(QLatin1Char('c'));
+        folderAware    = !match.captured(3).isEmpty() && match.captured(3).contains(QLatin1Char('f'));
 
-        index = settings.manager->indexOfFile(settings.fileUrl.toLocalFile());
+        index       = settings.manager->indexOfFile(settings.fileUrl.toLocalFile());
 
-        if (extAware)
+         if (extensionAware)
         {
             index = settings.manager->indexOfFileGroup(settings.fileUrl.toLocalFile());
+        }
+
+        if (counterAware)
+        {
+            start = settings.manager->indexOfFileCounter(settings.fileUrl.toLocalFile());
         }
 
         if (folderAware)
@@ -163,17 +185,29 @@ QString SequenceNumberOption::parseOperation(ParseSettings& settings, const QReg
     // --------------------------------------------------------
 
     slength = match.captured(1).length();
-    start   = match.captured(5).isEmpty() ? settings.startIndex : match.captured(5).toInt();
-    step    = match.captured(7).isEmpty() ? 1 : match.captured(7).toInt();
 
-    if (start < 1)
+    if (!counterAware)
     {
-        start = settings.startIndex;
+        start = match.captured(5).isEmpty() ? settings.startIndex : match.captured(5).toInt();
+        step  = match.captured(7).isEmpty() ? 1 : match.captured(7).toInt();
+    }
+    else
+    {
+        step  = match.captured(5).isEmpty() ? 1 : match.captured(5).toInt();
     }
 
     if (step < 1)
     {
         step = 1;
+    }
+
+    if      (start < 1)
+    {
+        start = settings.startIndex;
+    }
+    else if (counterAware)
+    {
+        start += step;
     }
 
     number  = start + ((index - 1) * step);
