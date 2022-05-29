@@ -52,19 +52,21 @@ typedef struct _CUcontextlock_st* CUvideoctxlock;
  */
 typedef enum cudaVideoCodec_enum
 {
-    cudaVideoCodec_MPEG1 = 0,               /**<  MPEG1         */
-    cudaVideoCodec_MPEG2,                   /**<  MPEG2         */
-    cudaVideoCodec_MPEG4,                   /**<  MPEG4         */
-    cudaVideoCodec_VC1,                     /**<  VC1           */
-    cudaVideoCodec_H264,                    /**<  H264          */
-    cudaVideoCodec_JPEG,                    /**<  JPEG          */
-    cudaVideoCodec_H264_SVC,                /**<  H264-SVC      */
-    cudaVideoCodec_H264_MVC,                /**<  H264-MVC      */
-    cudaVideoCodec_HEVC,                    /**<  HEVC          */
-    cudaVideoCodec_VP8,                     /**<  VP8           */
-    cudaVideoCodec_VP9,                     /**<  VP9           */
-    cudaVideoCodec_NumCodecs,               /**<  Max COdecs    */
+    cudaVideoCodec_MPEG1 = 0,                                       /**<  MPEG1             */
+    cudaVideoCodec_MPEG2,                                           /**<  MPEG2             */
+    cudaVideoCodec_MPEG4,                                           /**<  MPEG4             */
+    cudaVideoCodec_VC1,                                             /**<  VC1               */
+    cudaVideoCodec_H264,                                            /**<  H264              */
+    cudaVideoCodec_JPEG,                                            /**<  JPEG              */
+    cudaVideoCodec_H264_SVC,                                        /**<  H264-SVC          */
+    cudaVideoCodec_H264_MVC,                                        /**<  H264-MVC          */
+    cudaVideoCodec_HEVC,                                            /**<  HEVC              */
+    cudaVideoCodec_VP8,                                             /**<  VP8               */
+    cudaVideoCodec_VP9,                                             /**<  VP9               */
+    cudaVideoCodec_NumCodecs,                                       /**<  Max COdecs        */
+
     // Uncompressed YUV
+
     cudaVideoCodec_YUV420 = (('I'<<24)|('Y'<<16)|('U'<<8)|('V')),   /**< Y,U,V (4:2:0)      */
     cudaVideoCodec_YV12   = (('Y'<<24)|('V'<<16)|('1'<<8)|('2')),   /**< Y,V,U (4:2:0)      */
     cudaVideoCodec_NV12   = (('N'<<24)|('V'<<16)|('1'<<8)|('2')),   /**< Y,UV  (4:2:0)      */
@@ -162,7 +164,7 @@ typedef struct _CUVIDDECODECREATEINFO
         short bottom;
     } target_rect;
 
-    unsigned long Reserved2[5];                /**< Reserved for future use - set to zero */
+    unsigned long Reserved2[5];                          /**< Reserved for future use - set to zero                                                 */
 } CUVIDDECODECREATEINFO;
 
 /*!
@@ -252,10 +254,10 @@ typedef struct _CUVIDH264PICPARAMS
     int             delta_pic_order_always_zero_flag;
     int             frame_mbs_only_flag;
     int             direct_8x8_inference_flag;
-    int             num_ref_frames;                     // NOTE: shall meet level 4.1 restrictions
+    int             num_ref_frames;                     ///< NOTE: shall meet level 4.1 restrictions
     unsigned char   residual_colour_transform_flag;
-    unsigned char   bit_depth_luma_minus8;              // Must be 0 (only 8-bit supported)
-    unsigned char   bit_depth_chroma_minus8;            // Must be 0 (only 8-bit supported)
+    unsigned char   bit_depth_luma_minus8;              ///< Must be 0 (only 8-bit supported)
+    unsigned char   bit_depth_chroma_minus8;            ///< Must be 0 (only 8-bit supported)
     unsigned char   qpprime_y_zero_transform_bypass_flag;
 
     // PPS
@@ -280,9 +282,9 @@ typedef struct _CUVIDH264PICPARAMS
 
     // DPB
 
-    CUVIDH264DPBENTRY dpb[16];          // List of reference frames within the DPB
+    CUVIDH264DPBENTRY dpb[16];          ///< List of reference frames within the DPB
 
-    // Quantization Matrices (raster-order)
+    /// Quantization Matrices (raster-order)
 
     unsigned char WeightScale4x4[6][16];
     unsigned char WeightScale8x8[2][64];
@@ -318,8 +320,8 @@ typedef struct _CUVIDH264PICPARAMS
  */
 typedef struct _CUVIDMPEG2PICPARAMS
 {
-    int ForwardRefIdx;          // Picture index of forward reference (P/B-frames)
-    int BackwardRefIdx;         // Picture index of backward reference (B-frames)
+    int ForwardRefIdx;          ///< Picture index of forward reference (P/B-frames)
+    int BackwardRefIdx;         ///< Picture index of backward reference (B-frames)
     int picture_coding_type;
     int full_pel_forward_vector;
     int full_pel_backward_vector;
@@ -332,7 +334,7 @@ typedef struct _CUVIDMPEG2PICPARAMS
     int alternate_scan;
     int top_field_first;
 
-    // Quantization matrices (raster order)
+    /// Quantization matrices (raster order)
 
     unsigned char QuantMatrixIntra[64];
     unsigned char QuantMatrixInter[64];
@@ -356,8 +358,8 @@ typedef struct _CUVIDMPEG2PICPARAMS
  */
 typedef struct _CUVIDMPEG4PICPARAMS
 {
-    int ForwardRefIdx;          // Picture index of forward reference (P/B-frames)
-    int BackwardRefIdx;         // Picture index of backward reference (B-frames)
+    int ForwardRefIdx;          ///< Picture index of forward reference (P/B-frames)
+    int BackwardRefIdx;         ///< Picture index of backward reference (B-frames)
 
     // VOL
 
@@ -383,7 +385,7 @@ typedef struct _CUVIDMPEG4PICPARAMS
     int trd[2];
     int trb[2];
 
-    // Quantization matrices (raster order)
+    /// Quantization matrices (raster order)
 
     unsigned char QuantMatrixIntra[64];
     unsigned char QuantMatrixInter[64];
@@ -437,7 +439,7 @@ typedef struct _CUVIDVC1PICPARAMS
     int range_mapy;
     int range_mapuv_flag;
     int range_mapuv;
-    int rangeredfrm;    // range reduction state
+    int rangeredfrm;    ///< range reduction state
 } CUVIDVC1PICPARAMS;
 
 /*!
@@ -541,24 +543,24 @@ typedef struct _CUVIDHEVCPICPARAMS
     int            NumPocStCurrAfter;
     int            NumPocLtCurr;
     int            CurrPicOrderCntVal;
-    int            RefPicIdx[16];               // [refpic] Indices of valid reference pictures (-1 if unused for reference)
-    int            PicOrderCntVal[16];          // [refpic]
-    unsigned char  IsLongTerm[16];              // [refpic] 0=not a long-term reference, 1=long-term reference
-    unsigned char  RefPicSetStCurrBefore[8];    // [0..NumPocStCurrBefore-1] -> refpic (0..15)
-    unsigned char  RefPicSetStCurrAfter[8];     // [0..NumPocStCurrAfter-1] -> refpic (0..15)
-    unsigned char  RefPicSetLtCurr[8];          // [0..NumPocLtCurr-1] -> refpic (0..15)
+    int            RefPicIdx[16];               ///< [refpic] Indices of valid reference pictures (-1 if unused for reference)
+    int            PicOrderCntVal[16];          ///< [refpic]
+    unsigned char  IsLongTerm[16];              ///< [refpic] 0=not a long-term reference, 1=long-term reference
+    unsigned char  RefPicSetStCurrBefore[8];    ///< [0..NumPocStCurrBefore-1] -> refpic (0..15)
+    unsigned char  RefPicSetStCurrAfter[8];     ///< [0..NumPocStCurrAfter-1] -> refpic (0..15)
+    unsigned char  RefPicSetLtCurr[8];          ///< [0..NumPocLtCurr-1] -> refpic (0..15)
     unsigned char  RefPicSetInterLayer0[8];
     unsigned char  RefPicSetInterLayer1[8];
     unsigned int   reserved4[12];
 
     // scaling lists (diag order)
 
-    unsigned char  ScalingList4x4[6][16];       // [matrixId][i]
-    unsigned char  ScalingList8x8[6][64];       // [matrixId][i]
-    unsigned char  ScalingList16x16[6][64];     // [matrixId][i]
-    unsigned char  ScalingList32x32[2][64];     // [matrixId][i]
-    unsigned char  ScalingListDCCoeff16x16[6];  // [matrixId]
-    unsigned char  ScalingListDCCoeff32x32[2];  // [matrixId]
+    unsigned char  ScalingList4x4[6][16];       ///< [matrixId][i]
+    unsigned char  ScalingList8x8[6][64];       ///< [matrixId][i]
+    unsigned char  ScalingList16x16[6][64];     ///< [matrixId][i]
+    unsigned char  ScalingList32x32[2][64];     ///< [matrixId][i]
+    unsigned char  ScalingListDCCoeff16x16[6];  ///< [matrixId]
+    unsigned char  ScalingListDCCoeff32x32[2];  ///< [matrixId]
 } CUVIDHEVCPICPARAMS;
 
 /*!
@@ -580,11 +582,11 @@ typedef struct _CUVIDVP8PICPARAMS
     {
         struct
         {
-            unsigned char frame_type : 1;                   /**< 0 = KEYFRAME, 1 = INTERFRAME             */
-            unsigned char version : 3;
-            unsigned char show_frame : 1;
+            unsigned char frame_type                  : 1;  /**< 0 = KEYFRAME, 1 = INTERFRAME             */
+            unsigned char version                     : 3;
+            unsigned char show_frame                  : 1;
             unsigned char update_mb_segmentation_data : 1;  /**< Must be 0 if segmentation is not enabled */
-            unsigned char Reserved2Bits : 2;
+            unsigned char Reserved2Bits               : 2;
         };
 
         unsigned char wFrameTagFlags;
@@ -610,18 +612,18 @@ typedef struct _CUVIDVP9PICPARAMS
     unsigned char  AltRefIdx;
     unsigned char  colorSpace;
 
-    unsigned short profile : 3;
-    unsigned short frameContextIdx : 2;
-    unsigned short frameType : 1;
-    unsigned short showFrame : 1;
-    unsigned short errorResilient : 1;
-    unsigned short frameParallelDecoding : 1;
-    unsigned short subSamplingX : 1;
-    unsigned short subSamplingY : 1;
-    unsigned short intraOnly : 1;
-    unsigned short allow_high_precision_mv : 1;
-    unsigned short refreshEntropyProbs : 1;
-    unsigned short reserved2Bits : 2;
+    unsigned short profile                  : 3;
+    unsigned short frameContextIdx          : 2;
+    unsigned short frameType                : 1;
+    unsigned short showFrame                : 1;
+    unsigned short errorResilient           : 1;
+    unsigned short frameParallelDecoding    : 1;
+    unsigned short subSamplingX             : 1;
+    unsigned short subSamplingY             : 1;
+    unsigned short intraOnly                : 1;
+    unsigned short allow_high_precision_mv  : 1;
+    unsigned short refreshEntropyProbs      : 1;
+    unsigned short reserved2Bits            : 2;
 
     unsigned short reserved16Bits;
 
@@ -636,11 +638,11 @@ typedef struct _CUVIDVP9PICPARAMS
     unsigned char  log2_tile_columns;
     unsigned char  log2_tile_rows;
 
-    unsigned char  segmentEnabled : 1;
-    unsigned char  segmentMapUpdate : 1;
+    unsigned char  segmentEnabled           : 1;
+    unsigned char  segmentMapUpdate         : 1;
     unsigned char  segmentMapTemporalUpdate : 1;
-    unsigned char  segmentFeatureMode : 1;
-    unsigned char  reserved4Bits : 4;
+    unsigned char  segmentFeatureMode       : 1;
+    unsigned char  reserved4Bits            : 4;
 
 
     unsigned char  segmentFeatureEnable[8][4];
@@ -711,20 +713,20 @@ typedef struct _CUVIDPICPARAMS
  */
 typedef struct _CUVIDPROCPARAMS
 {
-    int progressive_frame;              /**< Input is progressive (deinterlace_mode will be ignored)  */
-    int second_field;                   /**< Output the second field (ignored if deinterlace mode is Weave) */
-    int top_field_first;                /**< Input frame is top field first (1st field is top, 2nd field is bottom) */
-    int unpaired_field;                 /**< Input only contains one field (2nd field is invalid) */
+    int progressive_frame;                  /**< Input is progressive (deinterlace_mode will be ignored)                */
+    int second_field;                       /**< Output the second field (ignored if deinterlace mode is Weave)         */
+    int top_field_first;                    /**< Input frame is top field first (1st field is top, 2nd field is bottom) */
+    int unpaired_field;                     /**< Input only contains one field (2nd field is invalid)                   */
 
     // The fields below are used for raw YUV input
 
-    unsigned int       reserved_flags;        /**< Reserved for future use (set to zero) */
-    unsigned int       reserved_zero;         /**< Reserved (set to zero) */
-    unsigned long long raw_input_dptr;        /**< Input CUdeviceptr for raw YUV extensions */
-    unsigned int       raw_input_pitch;       /**< pitch in bytes of raw YUV input (should be aligned appropriately) */
-    unsigned int       raw_input_format;      /**< Reserved for future use (set to zero) */
-    unsigned long long raw_output_dptr;       /**< Reserved for future use (set to zero) */
-    unsigned int       raw_output_pitch;      /**< Reserved for future use (set to zero) */
+    unsigned int       reserved_flags;      /**< Reserved for future use (set to zero)                                  */
+    unsigned int       reserved_zero;       /**< Reserved (set to zero)                                                 */
+    unsigned long long raw_input_dptr;      /**< Input CUdeviceptr for raw YUV extensions                               */
+    unsigned int       raw_input_pitch;     /**< pitch in bytes of raw YUV input (should be aligned appropriately)      */
+    unsigned int       raw_input_format;    /**< Reserved for future use (set to zero)                                  */
+    unsigned long long raw_output_dptr;     /**< Reserved for future use (set to zero)                                  */
+    unsigned int       raw_output_pitch;    /**< Reserved for future use (set to zero)                                  */
     unsigned int       Reserved[48];
     void*              Reserved3[3];
 } CUVIDPROCPARAMS;

@@ -46,11 +46,7 @@ namespace dllapi
 namespace cuda
 {
 
-#endif /*NV_CONFIG(DLLAPI_CUDA)*/
-
-#if defined(__cplusplus)
-//extern "C" {
-#endif /* __cplusplus */
+#endif // NV_CONFIG(DLLAPI_CUDA)
 
 #ifdef HAVE_CUDA_H
 #   include "cuda.h"
@@ -68,16 +64,12 @@ namespace cuda
 #   include "dynlink_nvcuvid.h"
 #endif
 
-#if defined(__cplusplus)
-//}
-#endif /* __cplusplus */
-
 #if NV_CONFIG(DLLAPI_CUDA)
 
 } // namespace cuda
 
 } // namespace dllapi
 
-#endif /*NV_CONFIG(DLLAPI_CUDA)*/
+#endif // NV_CONFIG(DLLAPI_CUDA)
 
-#endif /* QTAV_NV_INC_H*/
+#endif // QTAV_NV_INC_H

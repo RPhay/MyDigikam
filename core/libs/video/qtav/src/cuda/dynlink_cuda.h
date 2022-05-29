@@ -63,14 +63,20 @@ typedef enum CUctx_flags_enum
     CU_CTX_BLOCKING_SYNC       = 0x04, /**< Set blocking synchronization as default scheduling \deprecated */
     CU_CTX_MAP_HOST            = 0x08, /**< Support mapped pinned allocations                              */
     CU_CTX_LMEM_RESIZE_TO_MAX  = 0x10, /**< Keep local memory allocation after launch                      */
+
 #if __CUDA_API_VERSION < 4000
+
     CU_CTX_SCHED_MASK          = 0x03,
     CU_CTX_FLAGS_MASK          = 0x1f
+
 #else
+
     CU_CTX_SCHED_MASK          = 0x07,
     CU_CTX_PRIMARY             = 0x20, /**< Initialize and return the primary context                      */
     CU_CTX_FLAGS_MASK          = 0x3f
+
 #endif
+
 } CUctx_flags;
 
 /**
@@ -137,6 +143,7 @@ typedef enum CUdevice_attribute_enum
     CU_DEVICE_ATTRIBUTE_MAXIMUM_TEXTURE1D_LAYERED_LAYERS  = 43  /**< Maximum layers in a 1D layered texture                                             */
 
 #endif
+
 } CUdevice_attribute;
 
 /**
@@ -445,9 +452,13 @@ typedef enum CUmemorytype_enum
     CU_MEMORYTYPE_HOST    = 0x01,    /**< Host memory                   */
     CU_MEMORYTYPE_DEVICE  = 0x02,    /**< Device memory                 */
     CU_MEMORYTYPE_ARRAY   = 0x03     /**< Array memory                  */
+
 #if __CUDA_API_VERSION >= 4000
+
   , CU_MEMORYTYPE_UNIFIED = 0x04     /**< Unified device or host memory */
+
 #endif
+
 } CUmemorytype;
 
 /**
@@ -458,9 +469,13 @@ typedef enum CUcomputemode_enum
     CU_COMPUTEMODE_DEFAULT           = 0, /**< Default compute mode (Multiple contexts allowed per device)                                                        */
     CU_COMPUTEMODE_EXCLUSIVE         = 1, /**< Compute-exclusive-thread mode (Only one context used by a single thread can be present on this device at a time)   */
     CU_COMPUTEMODE_PROHIBITED        = 2  /**< Compute-prohibited mode (No contexts can be created on this device at this time)                                   */
+
 #if __CUDA_API_VERSION >= 4000
+
   , CU_COMPUTEMODE_EXCLUSIVE_PROCESS = 3  /**< Compute-exclusive-process mode (Only one context used by a single process can be present on this device at a time) */
+
 #endif
+
 } CUcomputemode;
 
 /**
