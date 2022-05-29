@@ -71,8 +71,6 @@ public:
     explicit QOption(const char* name, const QVariant& defaultValue, Type type, const QString& description);
     explicit QOption(const char* name, Type type, const QString& description);
 
-    //explicit QOption(const char* name, const QVariant& value, Type type, const QString& description);
-
     QString shortName()                 const;
     QString longName()                  const;
     QString formatName()                const;
@@ -113,15 +111,10 @@ class QOptions
 {
 public:
 
-    //e.g. application information, copyright etc.
+    // e.g. application information, copyright etc.
 
     QOptions();
-
-    //QOptions(const QOptions& o);
-
     ~QOptions();
-
-    //QOptions& operator=(const QOptions& o);
 
     /*!
      * \brief parse
@@ -138,8 +131,6 @@ public:
     QOptions& operator()(const char* name, const QVariant& defaultValue, const QString& description);
     QOptions& operator()(const char* name, const QVariant& defaultValue,
                          QOption::Type type, const QString& description = QString());
-
-    //QOptions& operator ()(const char* name, QVariant* value, QOption::Type type, const QString& description = QString());
 
     QOption option(const QString& name)         const;
     QVariant value(const QString& name)         const;

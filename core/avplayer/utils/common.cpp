@@ -96,7 +96,7 @@ QString UrlFromFileArgs(IInspectable* args)
 
     item->AddRef(); // ensure we can access it later. TODO: how to release?
 
-    return (QString::fromLatin1("winrt:@%1:%2").arg((qint64)(qptrdiff)item.Get()).arg(filePath));
+    return (QString::fromUtf8("winrt:@%1:%2").arg((qint64)(qptrdiff)item.Get()).arg(filePath));
 }
 
 #endif // Q_OS_WINRT
@@ -311,7 +311,7 @@ bool AppEventFilter::eventFilter(QObject* obj, QEvent* ev)
 
 #ifdef Q_OS_WINRT
 
-        class QActivationEvent : public QEvent
+        class Q_DECL_HIDDEN QActivationEvent : public QEvent
         {
         public:
 

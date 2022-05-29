@@ -66,8 +66,8 @@ ConfigDialog::ConfigDialog(QWidget* const parent)
     mpContent->setTabPosition(QTabWidget::North);
 
     mpButtonBox            = new QDialogButtonBox(Qt::Horizontal);
-    mpButtonBox->addButton(i18n("Reset"),  QDialogButtonBox::ResetRole);      // QDialogButtonBox::Reset;
-    mpButtonBox->addButton(i18n("Ok"),     QDialogButtonBox::AcceptRole);     // QDialogButtonBox::Ok
+    mpButtonBox->addButton(i18n("Reset"),  QDialogButtonBox::ResetRole);
+    mpButtonBox->addButton(i18n("Ok"),     QDialogButtonBox::AcceptRole);
     mpButtonBox->addButton(i18n("Cancel"), QDialogButtonBox::RejectRole);
     mpButtonBox->addButton(i18n("Apply"),  QDialogButtonBox::ApplyRole);
 
@@ -109,7 +109,9 @@ void ConfigDialog::onButtonClicked(QAbstractButton* btn)
     {
         case QDialogButtonBox::ResetRole:
         {
-            qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("QDialogButtonBox ResetRole clicked");
+            qCDebug(DIGIKAM_AVPLAYER_LOG).noquote()
+                << QString::asprintf("QDialogButtonBox ResetRole clicked");
+
             onReset();
 
             break;
@@ -118,7 +120,9 @@ void ConfigDialog::onButtonClicked(QAbstractButton* btn)
         case QDialogButtonBox::AcceptRole:
         case QDialogButtonBox::ApplyRole:
         {
-            qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("QDialogButtonBox ApplyRole clicked");
+            qCDebug(DIGIKAM_AVPLAYER_LOG).noquote()
+                << QString::asprintf("QDialogButtonBox ApplyRole clicked");
+
             onApply();
 
             break;

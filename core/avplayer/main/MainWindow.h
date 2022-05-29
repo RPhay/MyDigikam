@@ -29,7 +29,6 @@
 #include <QWidget>
 #include <QUrl>
 
-QT_BEGIN_NAMESPACE
 class QWidgetAction;
 class QToolButton;
 class QMenu;
@@ -39,7 +38,6 @@ class QLabel;
 class QPushButton;
 class QSpinBox;
 class QTimeEdit;
-QT_END_NAMESPACE
 
 namespace QtAV
 {

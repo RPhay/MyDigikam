@@ -31,10 +31,8 @@
 #include <QObject>
 #include <QPoint>
 
-QT_BEGIN_NAMESPACE
 class QMenu;
 class QPoint;
-QT_END_NAMESPACE
 
 namespace QtAV
 {

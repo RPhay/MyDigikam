@@ -34,10 +34,8 @@
 
 using namespace QtAV;
 
-QT_BEGIN_NAMESPACE
 class QTreeWidget;
 class QTreeWidgetItem;
-QT_END_NAMESPACE
 
 namespace AVPlayer
 {

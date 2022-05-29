@@ -66,6 +66,8 @@ private:
     bool retrieveState();
     bool restoreState();
 
+    // Disable
+
     ScreenSaver(QObject*);
 
 private:

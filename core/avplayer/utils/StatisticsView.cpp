@@ -61,7 +61,7 @@ QStringList getCommonInfoKeys()
             << i18nc("@option: common", "Start time")
             << i18nc("@option: common", "Bit rate")
             << i18nc("@option: common", "Frames")
-            << i18nc("@option: common", "FPS")           // avg_frame_rate. guessed by FFmpeg
+            << i18nc("@option: common", "FPS")          // avg_frame_rate. guessed by FFmpeg
     ;
 }
 
@@ -107,7 +107,7 @@ QList<QVariant> getVideoInfoValues(const Statistics& s)
             << s.video.decoder_detail
             << s.video.total_time.toString(QString::fromLatin1("HH:mm:ss"))
             << s.video.start_time.toString(QString::fromLatin1("HH:mm:ss"))
-            << QString::number(s.video.bit_rate/1000).append(QString::fromLatin1(" Kb/s"))
+            << QString::number(s.video.bit_rate / 1000).append(QString::fromLatin1(" Kb/s"))
             << s.video.frames
             << s.video.frame_rate
             << s.video.frame_rate
@@ -127,7 +127,7 @@ QList<QVariant> getAudioInfoValues(const Statistics& s)
             << s.audio.decoder_detail
             << s.audio.total_time.toString(QString::fromLatin1("HH:mm:ss"))
             << s.audio.start_time.toString(QString::fromLatin1("HH:mm:ss"))
-            << QString::number(s.audio.bit_rate/1000).append(QString::fromLatin1(" Kb/s"))
+            << QString::number(s.audio.bit_rate / 1000).append(QString::fromLatin1(" Kb/s"))
             << s.audio.frames
             << s.audio.frame_rate
             << s.audio_only.sample_fmt
@@ -139,11 +139,11 @@ QList<QVariant> getAudioInfoValues(const Statistics& s)
 }
 
 StatisticsView::StatisticsView(QWidget* const parent)
-    : QDialog(parent),
-      mTimer(0),
-      mpFPS(0),
-      mpAudioBitRate(0),
-      mpVideoBitRate(0)
+    : QDialog       (parent),
+      mTimer        (0),
+      mpFPS         (nullptr),
+      mpAudioBitRate(nullptr),
+      mpVideoBitRate(nullptr)
 {
     setWindowTitle(i18nc("@title", "Media info"));
     setModal(false);
@@ -162,16 +162,16 @@ StatisticsView::StatisticsView(QWidget* const parent)
     QTreeWidgetItem* item = createNodeWithItems(mpView, i18nc("@item: video stats", "Video"), getVideoInfoKeys(), &mVideoItems);
     mpFPS                 = item->child(9);
 
-    //mpVideoBitRate =
+    // mpVideoBitRate =
 
     mpVideoMetadata = new QTreeWidgetItem(item);
     mpVideoMetadata->setText(0, i18nc("@option", "Metadata"));
     mpView->addTopLevelItem(item);
-    item = createNodeWithItems(mpView, i18nc("@option", "Audio"), getAudioInfoKeys(), &mAudioItems);
+    item            = createNodeWithItems(mpView, i18nc("@option", "Audio"), getAudioInfoKeys(), &mAudioItems);
 
-    //mpAudioBitRate =
+    // mpAudioBitRate =
 
-    mpAudioMetadata = new QTreeWidgetItem(item);
+    mpAudioMetadata              = new QTreeWidgetItem(item);
     mpAudioMetadata->setText(0, i18nc("@option", "Metadata"));
     mpView->addTopLevelItem(item);
     mpView->resizeColumnToContents(0); // call this after content is done
@@ -184,7 +184,7 @@ StatisticsView::StatisticsView(QWidget* const parent)
     QObject::connect(btn, SIGNAL(clicked()),
                      this, SLOT(accept()));
 
-    QVBoxLayout* const vl = new QVBoxLayout();
+    QVBoxLayout* const vl        = new QVBoxLayout();
     vl->addWidget(mpView);
     vl->addLayout(btnLayout);
     setLayout(vl);
@@ -298,7 +298,7 @@ void StatisticsView::setMetadataItem(QTreeWidgetItem* parent, const QHash<QStrin
 {
     if (parent->childCount() > 0)
     {
-        QList<QTreeWidgetItem *> children(parent->takeChildren());
+        QList<QTreeWidgetItem*> children(parent->takeChildren());
         qDeleteAll(children);
     }
 

@@ -123,23 +123,23 @@ void QLabelSetElideText(QLabel* const label, const QString& text, int W = 0)
 }
 
 MainWindow::MainWindow(QWidget* const parent)
-    : QWidget(parent),
-      mIsReady(false),
-      mHasPendingPlay(false),
-      mControlOn(false),
-      mShowControl(2),
-      mRepeateMax(0),
-      mpVOAction(0),
-      mpPlayer(0),
-      mpRenderer(0),
-      mpVideoFilter(0),
-      mpAudioFilter(0),
-      mpStatisticsView(0),
-      mpOSD(0),
-      mpSubtitle(0),
-      m_preview(0),
-      m_shader(nullptr),
-      m_glsl(nullptr)
+    : QWidget           (parent),
+      mIsReady          (false),
+      mHasPendingPlay   (false),
+      mControlOn        (false),
+      mShowControl      (2),
+      mRepeateMax       (0),
+      mpVOAction        (0),
+      mpPlayer          (0),
+      mpRenderer        (0),
+      mpVideoFilter     (0),
+      mpAudioFilter     (0),
+      mpStatisticsView  (0),
+      mpOSD             (0),
+      mpSubtitle        (0),
+      m_preview         (0),
+      m_shader          (nullptr),
+      m_glsl            (nullptr)
 {
 
 #if defined(Q_OS_MACX) && QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
@@ -608,9 +608,9 @@ void MainWindow::setupUi()
 
     initAudioTrackMenu();
 
-    subMenu = new ClickableMenu(i18nc("@option", "Channel"));
+    subMenu                         = new ClickableMenu(i18nc("@option", "Channel"));
     mpMenu->addMenu(subMenu);
-    mpChannelMenu = subMenu;
+    mpChannelMenu                   = subMenu;
 
     connect(subMenu, SIGNAL(triggered(QAction*)),
             this, SLOT(changeChannel(QAction*)));
@@ -1291,11 +1291,11 @@ void MainWindow::showHideVolumeBar()
 void MainWindow::setVolume()
 {
     AudioOutput* const ao = mpPlayer ? mpPlayer->audio() : nullptr;
-    qreal v               = qreal(mpVolumeSlider->value())*kVolumeInterval;
+    qreal v               = qreal(mpVolumeSlider->value()) * kVolumeInterval;
 
     if (ao)
     {
-        if (qAbs(int(ao->volume()/kVolumeInterval) - mpVolumeSlider->value()) >= int(0.1 / kVolumeInterval))
+        if (qAbs(int(ao->volume() / kVolumeInterval) - mpVolumeSlider->value()) >= int(0.1 / kVolumeInterval))
         {
             ao->setVolume(v);
         }
@@ -1325,7 +1325,7 @@ void MainWindow::resizeEvent(QResizeEvent* e)
 */
 }
 
-void MainWindow::timerEvent(QTimerEvent *e)
+void MainWindow::timerEvent(QTimerEvent* e)
 {
     if (e->timerId() == mCursorTimer)
     {
@@ -1386,7 +1386,7 @@ void MainWindow::mousePressEvent(QMouseEvent* e)
     mGlobalMouse = e->globalPos();
 }
 
-void MainWindow::mouseMoveEvent(QMouseEvent *e)
+void MainWindow::mouseMoveEvent(QMouseEvent* e)
 {
     unsetCursor();
 
@@ -1485,7 +1485,7 @@ void MainWindow::wheelEvent(QWheelEvent* e)
 
     //qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("vo: (%.1f, %.1f)=> frame: (%.1f, %.1f)", p.x(), p.y(), fp.x(), fp.y());
 
-    qreal zoom = 1.0 + deg*3.14 / 180.0;
+    qreal zoom = 1.0 + deg * M_PI / 180.0;
 
     if (!dp.isNull())
     {
@@ -1539,7 +1539,7 @@ void MainWindow::updateChannelMenu()
     if (mpChannelAction)
         mpChannelAction->setChecked(false);
 
-    AudioOutput* const ao = mpPlayer ? mpPlayer->audio() : nullptr; // getAO() ?
+    AudioOutput* const ao = (mpPlayer ? mpPlayer->audio() : nullptr); // getAO() ?
 
     if (!ao)
     {
@@ -1604,7 +1604,7 @@ void MainWindow::initAudioTrackMenu()
         mpAudioTrackAction = 0;
     }
 
-    while (tracks + 1 > as.size())
+    while ((tracks + 1) > as.size())
     {
         a = mpAudioTrackMenu->addAction(QString::number(as.size()-1));
         a->setData(as.size()-1);
@@ -1827,37 +1827,53 @@ void MainWindow::onMediaStatusChanged()
     switch (player->mediaStatus())
     {
         case NoMedia:
+        {
             status = i18nc("@info: media loading", "No media");
             break;
+        }
 
         case InvalidMedia:
+        {
             status = i18nc("@info: media loading", "Invalid media");
             break;
+        }
 
         case BufferingMedia:
+        {
             status = i18nc("@info: media loading", "Buffering...");
             break;
+        }
 
         case BufferedMedia:
+        {
             status = i18nc("@info: media loading", "Buffered");
             break;
+        }
 
         case LoadingMedia:
+        {
             status = i18nc("@info: media loading", "Loading...");
             break;
+        }
 
         case LoadedMedia:
+        {
             status = i18nc("@info: media loading", "Loaded");
             break;
+        }
 
         case StalledMedia:
+        {
             status = i18nc("@info: media loading", "Stalled");
             break;
+        }
 
         default:
+        {
             status = QString();
             onStopPlay();
             break;
+        }
     }
 
     qCDebug(DIGIKAM_AVPLAYER_LOG) << "status changed " << status;
@@ -1900,10 +1916,10 @@ void MainWindow::onVideoEQEngineChanged()
         vo->forcePreferredPixelFormat(false);
     }
 
-    onBrightnessChanged(mpVideoEQ->brightness()*100.0);
-    onContrastChanged(mpVideoEQ->contrast()*100.0);
-    onHueChanged(mpVideoEQ->hue()*100.0);
-    onSaturationChanged(mpVideoEQ->saturation()*100.0);
+    onBrightnessChanged(mpVideoEQ->brightness() * 100.0);
+    onContrastChanged(mpVideoEQ->contrast() * 100.0);
+    onHueChanged(mpVideoEQ->hue() * 100.0);
+    onSaturationChanged(mpVideoEQ->saturation() * 100.0);
 }
 
 void MainWindow::onBrightnessChanged(int b)
@@ -2173,7 +2189,7 @@ void MainWindow::workaroundRendererSize()
     resize(QSize(s.width()-1, s.height()-1));
     resize(s); //window resize to fullscreen size will create another fullScreenChange event
 */
-    mpRenderer->widget()->resize(QSize(s.width()+1, s.height()+1));
+    mpRenderer->widget()->resize(QSize(s.width() + 1, s.height() + 1));
     mpRenderer->widget()->resize(s);
 }
 

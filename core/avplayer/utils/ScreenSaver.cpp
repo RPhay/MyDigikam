@@ -40,7 +40,7 @@
 #       define Success 0
 #   endif
 
-struct _XDisplay;
+struct         _XDisplay;
 typedef struct _XDisplay Display;
 
 typedef Display*(*fXOpenDisplay) (const char*    /* display_name */);
@@ -332,7 +332,7 @@ bool ScreenSaver::enable(bool yes)
     else
     {
         if (sLastState)
-            sLastState = SetThreadExecutionState(sLastState|ES_CONTINUOUS);
+            sLastState = SetThreadExecutionState(sLastState | ES_CONTINUOUS);
     }
 
     rv       = (sLastState != 0);

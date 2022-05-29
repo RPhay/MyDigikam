@@ -133,8 +133,11 @@ int main(int argc, char* argv[])
             VideoDecoder* const vd = VideoDecoder::create(*vid);
             pe.getProperties(vd);
 
-            qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("- %s:", vd->name().toUtf8().constData());
-            qCDebug(DIGIKAM_AVPLAYER_LOG) << pe.buildOptions().toUtf8().constData();
+            qCDebug(DIGIKAM_AVPLAYER_LOG).noquote()
+                << QString::asprintf("- %s:", vd->name().toUtf8().constData());
+
+            qCDebug(DIGIKAM_AVPLAYER_LOG)
+                << pe.buildOptions().toUtf8().constData();
         }
 
         exit(0);
@@ -185,7 +188,7 @@ int main(int argc, char* argv[])
 
         if (i > 0)
         {
-            vo = exe.mid(i+1, exe.indexOf(QLatin1Char('.')) - i - 1);
+            vo = exe.mid(i + 1, exe.indexOf(QLatin1Char('.')) - i - 1);
         }
     }
 

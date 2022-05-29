@@ -62,68 +62,68 @@ public:
     /// CUDA functions
     ////////////////////////////////////////////////////
 
-    CUresult cuGetErrorName(CUresult error, const char **pStr);   // since 6.0. fallback to _cudaGetErrorEnum defined in helper_cuda.h if symbol not found
-    CUresult cuGetErrorString(CUresult error, const char **pStr); // since 6.0. fallback to a empty string if symbol not found
+    CUresult cuGetErrorName(CUresult error, const char** pStr);   // since 6.0. fallback to _cudaGetErrorEnum defined in helper_cuda.h if symbol not found
+    CUresult cuGetErrorString(CUresult error, const char** pStr); // since 6.0. fallback to a empty string if symbol not found
     CUresult cuInit(unsigned int Flags);
-    CUresult cuCtxGetApiVersion(CUcontext pctx, unsigned int *version);
-    CUresult cuCtxCreate(CUcontext *pctx, unsigned int flags, CUdevice dev);
+    CUresult cuCtxGetApiVersion(CUcontext pctx, unsigned int* version);
+    CUresult cuCtxCreate(CUcontext* pctx, unsigned int flags, CUdevice dev);
     CUresult cuCtxDestroy(CUcontext cuctx);
     CUresult cuCtxPushCurrent(CUcontext cuctx);
-    CUresult cuCtxPopCurrent( CUcontext *pctx);
-    CUresult cuCtxGetCurrent(CUcontext *pctx);
+    CUresult cuCtxPopCurrent( CUcontext* pctx);
+    CUresult cuCtxGetCurrent(CUcontext* pctx);
     CUresult cuCtxSynchronize();
-    CUresult cuMemAllocHost(void **pp, size_t bytesize);
-    CUresult cuMemFreeHost(void *p);
-    CUresult cuMemcpyDtoH(void *dstHost, CUdeviceptr srcDevice, size_t ByteCount); // TODO: size_t in new version
-    CUresult cuMemcpyDtoHAsync(void *dstHost, CUdeviceptr srcDevice, size_t ByteCount, CUstream hStream); // TODO: size_t in new version
-    CUresult cuMemcpy2D(const CUDA_MEMCPY2D *pCopy);
-    CUresult cuMemcpy2DAsync(const CUDA_MEMCPY2D *pCopy, CUstream hStream);
-    CUresult cuStreamCreate(CUstream *phStream, unsigned int Flags); // TODO: size_t in new version
+    CUresult cuMemAllocHost(void** pp, size_t bytesize);
+    CUresult cuMemFreeHost(void* p);
+    CUresult cuMemcpyDtoH(void* dstHost, CUdeviceptr srcDevice, size_t ByteCount); // TODO: size_t in new version
+    CUresult cuMemcpyDtoHAsync(void* dstHost, CUdeviceptr srcDevice, size_t ByteCount, CUstream hStream); // TODO: size_t in new version
+    CUresult cuMemcpy2D(const CUDA_MEMCPY2D* pCopy);
+    CUresult cuMemcpy2DAsync(const CUDA_MEMCPY2D* pCopy, CUstream hStream);
+    CUresult cuStreamCreate(CUstream* phStream, unsigned int Flags); // TODO: size_t in new version
     CUresult cuStreamDestroy(CUstream hStream);
     CUresult cuStreamQuery(CUstream hStream);
     CUresult cuStreamSynchronize(CUstream hStream);
-    CUresult cuDeviceGetCount(int *count);
-    CUresult cuDriverGetVersion(int *driverVersion);
-    CUresult cuDeviceGetName(char *name, int len, CUdevice dev);
-    CUresult cuDeviceComputeCapability(int *major, int *minor, CUdevice dev);
-    CUresult cuDeviceGetAttribute(int *pi, CUdevice_attribute attrib, CUdevice dev);
+    CUresult cuDeviceGetCount(int* count);
+    CUresult cuDriverGetVersion(int* driverVersion);
+    CUresult cuDeviceGetName(char* name, int len, CUdevice dev);
+    CUresult cuDeviceComputeCapability(int* major, int* minor, CUdevice dev);
+    CUresult cuDeviceGetAttribute(int* pi, CUdevice_attribute attrib, CUdevice dev);
 
-    CUresult cuGLCtxCreate(CUcontext *pCtx, unsigned int Flags, CUdevice device);
-    CUresult cuGraphicsGLRegisterImage(CUgraphicsResource *pCudaResource, GLuint image, GLenum target, unsigned int Flags);
+    CUresult cuGLCtxCreate(CUcontext* pCtx, unsigned int Flags, CUdevice device);
+    CUresult cuGraphicsGLRegisterImage(CUgraphicsResource* pCudaResource, GLuint image, GLenum target, unsigned int Flags);
     CUresult cuGraphicsUnregisterResource(CUgraphicsResource resource);
-    CUresult cuGraphicsMapResources(unsigned int count, CUgraphicsResource *resources, CUstream hStream);
-    CUresult cuGraphicsSubResourceGetMappedArray(CUarray *pArray, CUgraphicsResource resource, unsigned int arrayIndex, unsigned int mipLevel);
-    CUresult cuGraphicsUnmapResources(unsigned int count, CUgraphicsResource *resources, CUstream hStream);
+    CUresult cuGraphicsMapResources(unsigned int count, CUgraphicsResource* resources, CUstream hStream);
+    CUresult cuGraphicsSubResourceGetMappedArray(CUarray* pArray, CUgraphicsResource resource, unsigned int arrayIndex, unsigned int mipLevel);
+    CUresult cuGraphicsUnmapResources(unsigned int count, CUgraphicsResource* resources, CUstream hStream);
 
-    CUresult cuD3D9CtxCreate(CUcontext *pCtx, CUdevice *pCudaDevice, unsigned int Flags, IDirect3DDevice9 *pD3DDevice);
-    CUresult cuGraphicsD3D9RegisterResource(CUgraphicsResource *pCudaResource, IDirect3DResource9 *pD3DResource, unsigned int Flags);
+    CUresult cuD3D9CtxCreate(CUcontext* pCtx, CUdevice* pCudaDevice, unsigned int Flags, IDirect3DDevice9* pD3DDevice);
+    CUresult cuGraphicsD3D9RegisterResource(CUgraphicsResource* pCudaResource, IDirect3DResource9* pD3DResource, unsigned int Flags);
 
     ////////////////////////////////////////////////////
     /// CUVID functions
     ////////////////////////////////////////////////////
 
-    CUresult cuvidCtxLockCreate(CUvideoctxlock *pLock, CUcontext cuctx);
+    CUresult cuvidCtxLockCreate(CUvideoctxlock* pLock, CUcontext cuctx);
     CUresult cuvidCtxLockDestroy(CUvideoctxlock lck);
     CUresult cuvidCtxLock(CUvideoctxlock lck, unsigned int reserved_flags);
     CUresult cuvidCtxUnlock(CUvideoctxlock lck, unsigned int reserved_flags);
 
-    CUresult cuvidCreateVideoParser(CUvideoparser *pObj, CUVIDPARSERPARAMS *pParams);
-    CUresult cuvidParseVideoData(CUvideoparser obj, CUVIDSOURCEDATAPACKET *pPacket);
+    CUresult cuvidCreateVideoParser(CUvideoparser* pObj, CUVIDPARSERPARAMS* pParams);
+    CUresult cuvidParseVideoData(CUvideoparser obj, CUVIDSOURCEDATAPACKET* pPacket);
     CUresult cuvidDestroyVideoParser(CUvideoparser obj);
 
     // Create/Destroy the decoder object
 
-    CUresult cuvidCreateDecoder(CUvideodecoder *phDecoder, CUVIDDECODECREATEINFO *pdci);
+    CUresult cuvidCreateDecoder(CUvideodecoder* phDecoder, CUVIDDECODECREATEINFO* pdci);
     CUresult cuvidDestroyDecoder(CUvideodecoder hDecoder);
 
     // Decode a single picture (field or frame)
 
-    CUresult cuvidDecodePicture(CUvideodecoder hDecoder, CUVIDPICPARAMS *pPicParams);
+    CUresult cuvidDecodePicture(CUvideodecoder hDecoder, CUVIDPICPARAMS* pPicParams);
 
     // Post-process and map a video frame for use in cuda.
     // unsigned long long* (CUdevicePtr 64) for x64+cuda3.2, otherwise unsigned int* (CUdevicePtr 32)
 
-    CUresult cuvidMapVideoFrame(CUvideodecoder hDecoder, int nPicIdx, CUdeviceptr *pDevPtr, unsigned int *pPitch, CUVIDPROCPARAMS *pVPP);
+    CUresult cuvidMapVideoFrame(CUvideodecoder hDecoder, int nPicIdx, CUdeviceptr* pDevPtr, unsigned int* pPitch, CUVIDPROCPARAMS *pVPP);
 
     // Unmap a previously mapped video frame
 
@@ -179,8 +179,8 @@ class AutoCtxLock
 
 public:
 
-    AutoCtxLock(cuda_api *api, CUvideoctxlock lck)
-        : m_api(api),
+    AutoCtxLock(cuda_api* api, CUvideoctxlock lck)
+        : m_api (api),
           m_lock(lck)
     {
         m_api->cuvidCtxLock(m_lock, 0);
@@ -200,9 +200,9 @@ class CUVIDAutoUnmapper
 
 public:
 
-    CUVIDAutoUnmapper(cuda_api *a, CUvideodecoder d, CUdeviceptr p)
-        : api(a),
-          dec(d),
+    CUVIDAutoUnmapper(cuda_api* a, CUvideodecoder d, CUdeviceptr p)
+        : api   (a),
+          dec   (d),
           devptr(p)
     {
     }

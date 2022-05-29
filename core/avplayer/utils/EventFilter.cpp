@@ -272,7 +272,7 @@ bool EventFilter::eventFilter(QObject* watched, QEvent* event)
                         else
                             s += 0.05;
 
-                        if (qAbs<qreal>(s-1.0) <= 0.01)
+                        if (qAbs<qreal>(s - 1.0) <= 0.01)
                             s = 1.0;
 
                         player->setSpeed(s);
@@ -313,7 +313,7 @@ bool EventFilter::eventFilter(QObject* watched, QEvent* event)
                         else
                             s -= 0.05;
 
-                        if (qAbs<qreal>(s-1.0) <= 0.01)
+                        if (qAbs<qreal>(s - 1.0) <= 0.01)
                             s = 1.0;
 
                         s = qMax<qreal>(s, 0.0);
@@ -480,7 +480,7 @@ bool EventFilter::eventFilter(QObject* watched, QEvent* event)
 
             if (mbt == Qt::LeftButton)
             {
-                if (Qt::WindowFullScreen ==mpWindow->windowState())
+                if (Qt::WindowFullScreen == mpWindow->windowState())
                 {
                     mpWindow->setWindowState(mpWindow->windowState() ^ Qt::WindowFullScreen);
                 }
@@ -537,7 +537,7 @@ void EventFilter::showMenu(const QPoint& p)
 // -----------------------------------------------------------------------------
 
 WindowEventFilter::WindowEventFilter(QWidget* const window)
-    : QObject(window),
+    : QObject (window),
       mpWindow(window)
 {
 }

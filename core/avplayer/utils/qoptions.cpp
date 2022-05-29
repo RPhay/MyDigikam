@@ -39,16 +39,16 @@ QOption::QOption()
 }
 
 QOption::QOption(const char* name, const QVariant& defaultValue, Type type, const QString& description)
-    : mType(type),
-      mDescription(description),
+    : mType        (type),
+      mDescription (description),
       mDefaultValue(defaultValue)
 {
     setName(QLatin1String(name));
 }
 
 QOption::QOption(const char* name, Type type, const QString& description)
-    : mType(type),
-      mDescription(description),
+    : mType        (type),
+      mDescription (description),
       mDefaultValue(QVariant())
 {
 /*
@@ -57,18 +57,6 @@ QOption::QOption(const char* name, Type type, const QString& description)
 */
     setName(QLatin1String(name));
 }
-
-/*
-QOption::QOption(const char *name, const QVariant& value, Type type, const QString &description)
-    : mType(type),
-      mDescription(description),
-      mDefaultValue(*value),
-      mValue(value)
-{
-    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("%s %s %d", __FILE__, __FUNCTION__, __LINE__);
-    setName(name);
-}
-*/
 
 QString QOption::shortName() const
 {
@@ -271,7 +259,7 @@ bool QOptions::parse(int argc, const char* const* argv)
 
             for (it_list = mOptions.begin() ; it_list != mOptions.end() ; ++it_list)
             {
-                if (it_list->longName() == it->mid(2,e-2))
+                if (it_list->longName() == it->mid(2, e - 2))
                 {
                     if (it_list->type() == QOption::NoToken)
                     {
@@ -286,7 +274,7 @@ bool QOptions::parse(int argc, const char* const* argv)
 
                     if (e > 0)
                     {
-                        it_list->setValue(it->mid(e+1));
+                        it_list->setValue(it->mid(e + 1));
 
                         //qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("%d %s", __LINE__, qPrintable(it_list->value().toString()));
                     }
@@ -437,16 +425,6 @@ QOptions& QOptions::operator()(const char* name, const QVariant& defaultValue,
     return *this;
 }
 
-/*
-QOptions& QOptions::operator ()(const char* name, const QVariant& value, QOption::Type type, const QString& description)
-{
-    QOption op(name, value, type, description);
-    mOptions.append(op);
-    mOptionGroupMap.insert(op, mCurrentDescription);
-    return *this;
-}
-*/
-
 QOption QOptions::option(const QString& name) const
 {
     if (mOptions.isEmpty())
@@ -480,16 +458,16 @@ QString QOptions::help() const
     QString message    = mDescription;
     QStringList groups = mOptionGroupMap.values();
     groups.removeDuplicates();
-    QList<QString>::ConstIterator it;
 
+    QList<QString>::ConstIterator it;
     QList<QOption>::ConstIterator it_op;
 
-    for (it=groups.constBegin() ; it!=groups.constEnd() ; ++it)
+    for (it = groups.constBegin() ; it!=groups.constEnd() ; ++it)
     {
         message.append(QLatin1String("\n")).append(*it);
         QList<QOption> options = mOptionGroupMap.keys(*it);
 
-        for (it_op=options.constBegin() ; it_op!=options.constEnd() ; ++it_op)
+        for (it_op = options.constBegin() ; it_op != options.constEnd() ; ++it_op)
             message.append(QLatin1String("\n  ")).append(it_op->help());
     }
 
