@@ -476,6 +476,12 @@ bool AdvancedRenameManager::initialize()
 
             Q_FOREACH (const QString& file, dir.entryList(QDir::Files))
             {
+                if (d->files.contains(dir.filePath(file)) ||
+                    file.endsWith(QLatin1String(".xmp")))
+                {
+                    continue;
+                }
+
                 QRegularExpressionMatch match = counterRegExp.match(file);
 
                 if (match.hasMatch())
