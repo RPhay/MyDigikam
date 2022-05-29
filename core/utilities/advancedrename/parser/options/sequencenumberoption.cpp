@@ -103,7 +103,7 @@ void SequenceNumberOption::slotTokenTriggered(const QString& token)
 
         result = QString::fromUtf8("%1").arg(QLatin1String("#"), digits, QLatin1Char('#'));
 
-        if ((start > 1) || (step > 1) || extensionAware || folderAware || counterAware)
+        if ((start > 1) || (step > 1) || extensionAware || folderAware || counterAware || randomAware)
         {
             result.append(QLatin1Char('['));
 
