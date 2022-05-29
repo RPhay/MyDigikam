@@ -25,10 +25,10 @@
 
 // Qt includes
 
-#include <QGridLayout>
-#include <QGroupBox>
 #include <QLabel>
 #include <QPointer>
+#include <QGroupBox>
+#include <QGridLayout>
 #include <QRegularExpression>
 
 // KDE includes
@@ -37,6 +37,7 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "ui_sequencenumberoptiondialogwidget.h"
 
 namespace Digikam
@@ -65,13 +66,16 @@ SequenceNumberOption::SequenceNumberOption()
              QLatin1String("accessories-calculator"))
 {
     addToken(QLatin1String("#"),                                 i18n("Sequence number"));
-    addToken(QLatin1String("#[||options||]"),                    i18n("Sequence number (||options||: ||c|| = file counter aware, "
-                                                                      "||e|| = extension aware, ||f|| = folder aware)"));
+    addToken(QLatin1String("#[||options||]"),                    i18n("Sequence number (||options||: "
+                                                                      "||c|| = file counter aware, "
+                                                                      "||e|| = extension aware, "
+                                                                      "||f|| = folder aware, "
+                                                                      "||r|| = random aware"));
     addToken(QLatin1String("#[||options||,||start||]"),          i18n("Sequence number (custom start)"));
     addToken(QLatin1String("#[||options||,||step||]"),           i18n("Sequence number (custom step)"));
     addToken(QLatin1String("#[||options||,||start||,||step||]"), i18n("Sequence number (custom start + step)"));
 
-    QRegularExpression reg(QLatin1String("(#+)(\\[(c?e?f?,?)?((-?\\d+)(,(-?\\d+))?)?\\])?"));
+    QRegularExpression reg(QLatin1String("(#+)(\\[(c?e?f?r?,?)?((-?\\d+)(,(-?\\d+))?)?\\])?"));
     setRegExp(reg);
 }
 
@@ -95,7 +99,7 @@ void SequenceNumberOption::slotTokenTriggered(const QString& token)
         bool extensionAware = dlg->ui->extensionAware->isChecked();
         bool counterAware   = dlg->ui->counterAware->isChecked();
         bool folderAware    = dlg->ui->folderAware->isChecked();
-
+        bool randomAware    = dlg->ui->randomAware->isChecked();
 
         result = QString::fromUtf8("%1").arg(QLatin1String("#"), digits, QLatin1Char('#'));
 
@@ -118,20 +122,25 @@ void SequenceNumberOption::slotTokenTriggered(const QString& token)
                 result.append(QLatin1Char('f'));
             }
 
+            if (randomAware)
+            {
+                result.append(QLatin1Char('r'));
+            }
+
             if ((start > 1) || (step > 1))
             {
-                if (extensionAware)
+                if (extensionAware && !randomAware)
                 {
                     result.append(QLatin1Char(','));
                 }
 
-                if (!counterAware)
+                if (!counterAware && !randomAware)
                 {
                     result.append(QString::number(start));
                 }
             }
 
-            if (step > 1)
+            if (step > 1 && !randomAware)
             {
                 result.append(QString::fromUtf8(",%1").arg(QString::number(step)));
             }
@@ -148,6 +157,7 @@ void SequenceNumberOption::slotTokenTriggered(const QString& token)
 QString SequenceNumberOption::parseOperation(ParseSettings& settings, const QRegularExpressionMatch& match)
 {
     QString result;
+    QString random;
     int slength         = 0;
     int start           = 0;
     int step            = 0;
@@ -157,12 +167,14 @@ QString SequenceNumberOption::parseOperation(ParseSettings& settings, const QReg
     bool extensionAware = false;
     bool counterAware   = false;
     bool folderAware    = false;
+    bool randomAware    = false;
 
     if (settings.manager)
     {
         extensionAware = !match.captured(3).isEmpty() && match.captured(3).contains(QLatin1Char('e'));
         counterAware   = !match.captured(3).isEmpty() && match.captured(3).contains(QLatin1Char('c'));
         folderAware    = !match.captured(3).isEmpty() && match.captured(3).contains(QLatin1Char('f'));
+        randomAware    = !match.captured(3).isEmpty() && match.captured(3).contains(QLatin1Char('r'));
 
         index          = settings.manager->indexOfFile(settings.fileUrl.toLocalFile());
 
@@ -180,6 +192,11 @@ QString SequenceNumberOption::parseOperation(ParseSettings& settings, const QReg
         if (folderAware)
         {
             index = settings.manager->indexOfFolder(settings.fileUrl.toLocalFile());
+        }
+
+        if (randomAware)
+        {
+            random = settings.manager->randomStringOfFile(settings.fileUrl.toLocalFile());
         }
     }
 
@@ -211,8 +228,15 @@ QString SequenceNumberOption::parseOperation(ParseSettings& settings, const QReg
         start += step;
     }
 
-    number  = start + ((index - 1) * step);
-    result  = QString::fromUtf8("%1").arg(number, slength, 10, QLatin1Char('0'));
+    if (randomAware && !random.isEmpty())
+    {
+         result = random.left(slength);
+    }
+    else
+    {
+        number  = start + ((index - 1) * step);
+        result  = QString::fromUtf8("%1").arg(number, slength, 10, QLatin1Char('0'));
+    }
 
     return result;
 }

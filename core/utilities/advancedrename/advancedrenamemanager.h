@@ -99,6 +99,7 @@ public:
     int indexOfFolder(const QString& filename);
     int indexOfFileGroup(const QString& filename);
     int indexOfFileCounter(const QString& filename);
+    QString randomStringOfFile(const QString& filename);
     QString newName(const QString& filename)                            const;
 
     QStringList            fileList()                                   const;

@@ -29,8 +29,9 @@
 
 // Qt includes
 
-#include <QList>
 #include <QMap>
+#include <QList>
+#include <QUuid>
 #include <QFileInfo>
 #include <QStorageInfo>
 #include <QRegularExpression>
@@ -97,6 +98,7 @@ public:
     QMap<QString, int>                   folderIndexMap;
     QMap<QString, int>                   fileGroupIndexMap;
     QMap<QString, int>                   fileCounterIndexMap;
+    QMap<QString, QString>               fileRandomStringMap;
     QMap<QString, QDateTime>             fileDatesMap;
     QMap<QString, QString>               renamedFiles;
 
@@ -403,14 +405,18 @@ bool AdvancedRenameManager::initialize()
 
     initializeFileList();
 
-    // fill normal index map
+    // fill normal index map and file random string map
 
     {
         int counter = 1;
 
         Q_FOREACH (const QString& file, d->files)
         {
-            d->fileIndexMap[file] = counter++;
+            QString random = QUuid::createUuid().toString();
+            random.remove(QLatin1Char('-'));
+
+            d->fileIndexMap[file]        = counter++;
+            d->fileRandomStringMap[file] = random.mid(1, 32);
         }
     }
 
@@ -528,6 +534,11 @@ int AdvancedRenameManager::indexOfFileCounter(const QString& filename)
     QFileInfo fi(filename);
 
     return d->fileCounterIndexMap.value(fi.absolutePath(), -1);
+}
+
+QString AdvancedRenameManager::randomStringOfFile(const QString& filename)
+{
+    return d->fileRandomStringMap.value(filename, QString());
 }
 
 QString AdvancedRenameManager::newName(const QString& filename) const
