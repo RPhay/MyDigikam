@@ -184,7 +184,7 @@ private:
 // ------------------------------------------------------------------------------------------
 
 AVDemuxThread::AVDemuxThread(QObject* const parent)
-    : QThread(parent),
+    : QThread               (parent),
       paused                (false),
       user_paused           (false),
       end                   (false),
@@ -208,7 +208,7 @@ AVDemuxThread::AVDemuxThread(QObject* const parent)
 }
 
 AVDemuxThread::AVDemuxThread(AVDemuxer* const dmx, QObject* const parent)
-    : QThread(parent),
+    : QThread               (parent),
       paused                (false),
       user_paused           (false),
       end                   (false),
@@ -441,7 +441,10 @@ void AVDemuxThread::seekInternal(qint64 pos, SeekType type, qint64 external_pos)
 
         Q_ASSERT(sync_id != 0);
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("demuxer sync id: %d/%d", sync_id, t->clock()->syncId());
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("demuxer sync id: %d/%d",
+                sync_id, t->clock()->syncId());
+
         t->packetQueue()->clear();
 
         if (external_pos != std::numeric_limits<qint64>::min())
@@ -603,7 +606,7 @@ void AVDemuxThread::stop()
         video_thread
     };
 
-    for (size_t i = 0 ; i < sizeof(av) / sizeof(av[0]) ; ++i)
+    for (size_t i = 0 ; (i < sizeof(av) / sizeof(av[0])) ; ++i)
     {
         AVThread* const t = av[i];
 
@@ -682,9 +685,9 @@ void AVDemuxThread::stepForward()
     AVThread* const av[] = { video_thread, audio_thread };
     bool connected       = false;
 
-    for (size_t i = 0 ; i < sizeof(av) / sizeof(av[0]) ; ++i)
+    for (size_t i = 0 ; (i < sizeof(av) / sizeof(av[0])) ; ++i)
     {
-        AVThread* t = av[i];
+        AVThread* const t = av[i];
 
         if (!t)
             continue;
@@ -806,7 +809,7 @@ void AVDemuxThread::eofDecodedOnStepForward()
     if (clock_type >= 0)
     {
         thread->clock()->setClockAuto(clock_type & 1);
-        thread->clock()->setClockType(AVClock::ClockType(clock_type/2));
+        thread->clock()->setClockType(AVClock::ClockType(clock_type / 2));
         clock_type = -1;
     }
 
@@ -827,7 +830,7 @@ void AVDemuxThread::onAVThreadQuit()
         video_thread
     };
 
-    for (size_t i = 0 ; i < sizeof(av)/sizeof(av[0]) ; ++i)
+    for (size_t i = 0 ; (i < sizeof(av) / sizeof(av[0])) ; ++i)
     {
         if (!av[i])
             continue;

@@ -44,7 +44,7 @@ enum
 };
 
 AVClock::AVClock(AVClock::ClockType c, QObject* const parent)
-    : QObject(parent),
+    : QObject     (parent),
       auto_clock  (true),
       m_state     (kStopped),
       clock_type  (c),
@@ -56,11 +56,14 @@ AVClock::AVClock(AVClock::ClockType c, QObject* const parent)
       nb_sync     (0),
       sync_id     (0)
 {
-    last_pts = pts_ = pts_v = delay_ = 0;
+    last_pts = 0;
+    pts_     = 0;
+    pts_v    = 0;
+    delay_   = 0;
 }
 
 AVClock::AVClock(QObject* const parent)
-    : QObject(parent),
+    : QObject       (parent),
       auto_clock    (true),
       m_state       (kStopped),
       clock_type    (AudioClock),
@@ -72,7 +75,10 @@ AVClock::AVClock(QObject* const parent)
       nb_sync       (0),
       sync_id       (0)
 {
-    last_pts = pts_ = pts_v = delay_ = 0;
+    last_pts = 0;
+    pts_     = 0;
+    pts_v    = 0;
+    delay_   = 0;
 }
 
 void AVClock::setClockType(ClockType ct)
@@ -199,7 +205,7 @@ bool AVClock::syncEndOnce(int id)
 void AVClock::start()
 {
     m_state = kRunning;
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("AVClock started!!!!!!!!");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("AVClock started...");
     timer.start();
 
     QTimer::singleShot(0, this, SLOT(restartCorrectionTimer()));

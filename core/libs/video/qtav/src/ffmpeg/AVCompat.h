@@ -146,7 +146,7 @@ extern "C"
  */
 
 #ifndef AV_VERSION_INT
-#   define AV_VERSION_INT(a, b, c) (a<<16 | b<<8 | c)
+#   define AV_VERSION_INT(a, b, c) (a << 16 | b << 8 | c)
 #endif
 
 void ffmpeg_version_print();
@@ -156,7 +156,8 @@ int avio_feof(AVIOContext* const s);
 #endif
 
 #if QTAV_USE_LIBAV(LIBAVFORMAT)
-int avformat_alloc_output_context2(AVFormatContext** avctx, AVOutputFormat* oformat, const char* format, const char* filename);
+int avformat_alloc_output_context2(AVFormatContext** avctx, AVOutputFormat* oformat,
+                                   const char* format, const char* filename);
 #endif
 
 // TODO: always inline
