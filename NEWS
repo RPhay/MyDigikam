@@ -12,6 +12,7 @@ Usability      : Add hamburger menu to tool-bar if main menu is hidden.
 Metadata       : Add new option to write metadata to files with ExifTool backend.
 Metadata       : Optional write metadata operations to DNG and RAW files are now always delegated to ExifTool Backend.
 Advanced Rename: Add increment file counter to sequence numbering with option [c] or [c,step].
+Advanced Rename: Add random text sequence numbering with option [r].
 
 *****************************************************************************************************
 BUGFIXES:
