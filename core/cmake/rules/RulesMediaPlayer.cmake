@@ -84,11 +84,12 @@ if(ENABLE_MEDIAPLAYER)
             list(GET VERSION_LIST 1 AVCODEC_VERSION_MINOR)
             list(GET VERSION_LIST 2 AVCODEC_VERSION_PATCH)
 
-            #message("AVCodec version major: ${AVCODEC_VERSION_MAJOR}")
 
             if (${AVCODEC_VERSION_MAJOR} GREATER_EQUAL 59)
 
                 set(FFMPEG_VER5_FOUND 1)
+                message(WARNING "FFMPEG API version 5 detected: support is under developement and not yet finalized! "
+                                "Please install lasted FFMPEG API version 4 LTS instead...")
 
             endif()
 
@@ -538,7 +539,7 @@ if(ENABLE_MEDIAPLAYER)
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_VAAPI=0)
 
         else()
-        
+
             set(MEDIAPLAYER_DEFINITIONS ${MEDIAPLAYER_DEFINITIONS} -DQTAV_HAVE_VAAPI=${HAVE_LIBVAAPI})
 
         endif()
