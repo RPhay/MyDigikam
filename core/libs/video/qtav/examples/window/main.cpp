@@ -78,7 +78,7 @@ private:
     AVPlayerCore player;
 };
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     QGuiApplication a(argc, argv);
 

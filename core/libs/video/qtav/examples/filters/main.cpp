@@ -78,7 +78,7 @@ int main(int argc, char* argv[])
     }
 
     qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("vo: %s", vo.toUtf8().constData());
-    bool opt_has_file = (argc > idx + 2);
+    bool opt_has_file = (argc > (idx + 2));
     vo                = vo.toLower();
 
     if ((vo != QLatin1String("gl"))  &&

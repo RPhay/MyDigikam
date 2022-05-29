@@ -81,7 +81,7 @@ VideoWall::~VideoWall()
         Q_FOREACH (AVPlayerCore* const player, players)
         {
             player->stop();
-            VideoRenderer* renderer = player->renderer();
+            VideoRenderer* const renderer = player->renderer();
 
             if (renderer->widget())
             {
@@ -132,7 +132,7 @@ void VideoWall::show()
         Q_FOREACH (AVPlayerCore* const player, players)
         {
             player->stop();
-            VideoRenderer* renderer = player->renderer();
+            VideoRenderer* const renderer = player->renderer();
 
             if (renderer->widget())
             {
@@ -150,8 +150,8 @@ void VideoWall::show()
 
     qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("show wall: %d x %d", r, c);
 
-    int w = view ? view->frameGeometry().width()  / c : qApp->desktop()->width()  / c;
-    int h = view ? view->frameGeometry().height() / r : qApp->desktop()->height() / r;
+    int w = (view ? view->frameGeometry().width()  / c : qApp->desktop()->width()  / c);
+    int h = (view ? view->frameGeometry().height() / r : qApp->desktop()->height() / r);
 
     if (view)
     {
@@ -185,8 +185,8 @@ void VideoWall::show()
             renderer->widget()->setWindowFlags(renderer->widget()->windowFlags()| Qt::FramelessWindowHint);
             renderer->widget()->setAttribute(Qt::WA_DeleteOnClose);
             renderer->widget()->resize(w, h);
-            renderer->widget()->move(j*w, i*h);
-            AVPlayerCore *player = new AVPlayerCore;
+            renderer->widget()->move(j * w, i * h);
+            AVPlayerCore* const player = new AVPlayerCore;
             player->setRenderer(renderer);
 
             connect(player, SIGNAL(started()),
@@ -437,7 +437,7 @@ bool VideoWall::eventFilter(QObject *watched, QEvent *event)
                 {
                     qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("<-");
 
-                    const qint64 newPos = clock->value()*1000.0 - 2000.0;
+                    const qint64 newPos = clock->value() * 1000.0 - 2000.0;
                     clock->updateExternalClock(newPos);
 
                     Q_FOREACH (AVPlayerCore* const player, players)
@@ -452,7 +452,7 @@ bool VideoWall::eventFilter(QObject *watched, QEvent *event)
                 {
                     qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("->");
 
-                    const qint64 newPos = clock->value()*1000.0 + 2000.0;
+                    const qint64 newPos = clock->value() * 1000.0 + 2000.0;
                     clock->updateExternalClock(newPos);
 
                     Q_FOREACH (AVPlayerCore* const player, players)
@@ -536,7 +536,7 @@ bool VideoWall::eventFilter(QObject *watched, QEvent *event)
     return true; // false: for text input
 }
 
-void VideoWall::timerEvent(QTimerEvent *e)
+void VideoWall::timerEvent(QTimerEvent* e)
 {
     if (e->timerId() != timer_id)
     {

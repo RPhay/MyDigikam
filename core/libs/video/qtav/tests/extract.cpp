@@ -42,11 +42,11 @@ class Q_DECL_HIDDEN VideoFrameObserver : public QObject
 
 public:
 
-    VideoFrameObserver(QObject *parent = nullptr)
-      : QObject(parent)
-      , pos(0)
-      , nb(1)
-      , extracted(0)
+    VideoFrameObserver(QObject* const parent = nullptr)
+      : QObject  (parent),
+        pos      (0),
+        nb       (1),
+        extracted(0)
     {
         view = VideoRenderer::create(VideoRendererId_GLWidget2);
         view->widget()->resize(400, 300);
@@ -57,7 +57,7 @@ public:
     void setParameters(qint64 msec, int count)
     {
         pos = msec;
-        nb = count;
+        nb  = count;
     }
 
     void start(const QString& file)
@@ -85,7 +85,10 @@ public Q_SLOTS:
         view->receive(frame);
         qApp->processEvents();
         frame.toImage().save(QString::fromLatin1("%1.png").arg(frame.timestamp()));
-        qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("frame %dx%d @%f", frame.width(), frame.height(), frame.timestamp());
+
+        qCDebug(DIGIKAM_TESTS_LOG).noquote()
+            << QString::asprintf("frame %dx%d @%f",
+                frame.width(), frame.height(), frame.timestamp());
 
         if (++extracted >= nb)
         {
@@ -93,24 +96,24 @@ public Q_SLOTS:
             return;
         }
 
-        extractor.setPosition(pos + extracted*1000);
+        extractor.setPosition(pos + extracted * 1000);
     }
 
 protected:
 
-    void timerEvent(QTimerEvent *)
+    void timerEvent(QTimerEvent*)
     {
         qApp->processEvents(); // avoid ui blocking if async is not used
     }
 
 private:
 
-    VideoRenderer *view;
-    qint64 pos;
-    int nb;
-    int extracted;
+    VideoRenderer*      view;
+    qint64              pos;
+    int                 nb;
+    int                 extracted;
     VideoFrameExtractor extractor;
-    QElapsedTimer timer;
+    QElapsedTimer       timer;
 };
 
 int main(int argc, char** argv)
@@ -120,27 +123,29 @@ int main(int argc, char** argv)
 
     if (idx < 0)
     {
-        qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("-f file -t sec -n count -asyc");
+        qCDebug(DIGIKAM_TESTS_LOG).noquote()
+            << QString::asprintf("-f file -t sec -n count -asyc");
+
         return -1;
     }
 
-    QString file = a.arguments().at(idx+1);
-    idx = a.arguments().indexOf(QLatin1String("-t"));
-    int t = 0;
+    QString file = a.arguments().at(idx + 1);
+    idx          = a.arguments().indexOf(QLatin1String("-t"));
+    int t        = 0;
 
     if (idx > 0)
-        t = a.arguments().at(idx+1).toInt();
+        t = a.arguments().at(idx + 1).toInt();
 
     int n = 1;
-    idx = a.arguments().indexOf(QLatin1String("-n"));
+    idx   = a.arguments().indexOf(QLatin1String("-n"));
 
     if (idx > 0)
-        n = a.arguments().at(idx+1).toInt();
+        n = a.arguments().at(idx + 1).toInt();
 
     bool async = a.arguments().contains(QString::fromLatin1("-async"));
 
     VideoFrameObserver obs;
-    obs.setParameters(t*1000, n);
+    obs.setParameters(t * 1000, n);
 
     if (async)
         obs.startAsync(file);

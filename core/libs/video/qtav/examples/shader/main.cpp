@@ -56,8 +56,8 @@ protected:
     void timerEvent(QTimerEvent*)
     {
         static int t  = 0;
-        const float b = float(50 - t%100)   / 50.0;
-        const float c = float(50 - 4*t%100) / 50.0;
+        const float b = float(50 -     t % 100) / 50.0;
+        const float c = float(50 - 4 * t % 100) / 50.0;
         ++t;
         setProperty("bs", QVariant::fromValue(QVector<float>() << b << c));
     }
@@ -97,6 +97,8 @@ private:
     }
 
 private:
+
+    // Disable
 
     MyShader(QObject*);
 };
@@ -166,7 +168,7 @@ private:
                     vec4 sample2d(sampler2D tex, vec2 pos, int p)
                     {
                         vec2 pulse = sin(u_t - u_omega * pos);
-                        vec2 coord = pos + u_A*vec2(pulse.x, -pulse.x);
+                        vec2 coord = pos + u_A * vec2(pulse.x, -pulse.x);
 
                         return texture(tex, coord);
                     }

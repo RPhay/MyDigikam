@@ -45,17 +45,26 @@ class WaveShader : public DynamicShaderObject
     qreal A;
 
     Q_OBJECT
-    Q_PROPERTY(qreal u_A READ u_A WRITE setU_A NOTIFY u_AChanged) //you can use meta property
+    Q_PROPERTY(qreal u_A READ u_A WRITE setU_A NOTIFY u_AChanged) // you can use meta property
 
 public:
 
-    qreal u_A() const    { return A;                   }
-    void setU_A(qreal v) { A = v; Q_EMIT u_AChanged(); }
+    qreal u_A() const
+    {
+        return A;
+    }
+
+    void setU_A(qreal v)
+    {
+        A = v;
+
+        Q_EMIT u_AChanged();
+    }
 
     WaveShader(QObject* const parent = nullptr)
         : DynamicShaderObject(parent),
-          t(0),
-          A(0.06)
+          t                  (0),
+          A                  (0.06)
     {
         setProperty("u_t", 0); // you can use dynamic property
 
@@ -74,7 +83,7 @@ public:
                                      vec4 sample2d(sampler2D tex, vec2 pos, int p)
                                      {
                                          vec2 pulse = sin(u_t - u_omega * pos);
-                                         vec2 coord = pos + u_A*vec2(pulse.x, -pulse.x);
+                                         vec2 coord = pos + u_A * vec2(pulse.x, -pulse.x);
 
                                          return texture(tex, coord);
                                      }
@@ -92,7 +101,7 @@ protected:
 
     void timerEvent(QTimerEvent*)
     {
-        t += 2.0*M_PI / 25.0;
+        t += 2.0 * M_PI / 25.0;
         setProperty("u_t", t);
     }
 };

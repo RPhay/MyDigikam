@@ -37,7 +37,7 @@
 
 using namespace QtAV;
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     QCoreApplication a(argc, argv);
     QString file = QString::fromLatin1("test.avi");
@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
         file = a.arguments().at(idx + 1);
 
     QString decName = QString::fromLatin1("FFmpeg");
-    idx = a.arguments().indexOf(QLatin1String("-vc"));
+    idx             = a.arguments().indexOf(QLatin1String("-vc"));
 
     if (idx < 0)
         idx = a.arguments().indexOf(QLatin1String("-vd"));
@@ -62,14 +62,14 @@ int main(int argc, char *argv[])
 
     if (idx > 0)
     {
-        opt = decName.right(decName.size() - idx -1);
+        opt     = decName.right(decName.size() - idx -1);
         decName = decName.left(idx);
         QStringList opts(opt.split(QString::fromLatin1(";")));
         QVariantHash subopt;
 
         Q_FOREACH (QString o, opts)
         {
-            idx = o.indexOf(QLatin1String(":"));
+            idx                 = o.indexOf(QLatin1String(":"));
             subopt[o.left(idx)] = o.right(o.size() - idx - 1);
         }
 
@@ -78,7 +78,7 @@ int main(int argc, char *argv[])
 
     qCDebug(DIGIKAM_TESTS_LOG) << decopt;
 
-    VideoDecoder *dec = VideoDecoder::create(decName.toLatin1().constData());
+    VideoDecoder* const dec = VideoDecoder::create(decName.toLatin1().constData());
 
     if (!dec)
     {
@@ -94,16 +94,19 @@ int main(int argc, char *argv[])
 
     if (!demux.load())
     {
-        qCCritical(DIGIKAM_TESTS_LOG) << QString::asprintf("Failed to load file: %s", file.toUtf8().constData());
+        qCCritical(DIGIKAM_TESTS_LOG)
+            << QString::asprintf("Failed to load file: %s",
+                file.toUtf8().constData());
+
         return 1;
     }
 
     dec->setCodecContext(demux.videoCodecContext());
     dec->open();
-    int count = 0;
+    int count   = 0;
     int vstream = demux.videoStream();
     QQueue<qint64> t;
-    qint64 t0 = QDateTime::currentMSecsSinceEpoch();
+    qint64 t0   = QDateTime::currentMSecsSinceEpoch();
 
     while (!demux.atEnd())
     {
@@ -122,7 +125,7 @@ int main(int argc, char *argv[])
 
             count++;
             const qint64 now = QDateTime::currentMSecsSinceEpoch();
-            const qint64 dt = now - t0;
+            const qint64 dt  = now - t0;
             t.enqueue(now);
 
             qCDebug(DIGIKAM_TESTS_LOG) << "decode count:"
@@ -130,9 +133,9 @@ int main(int argc, char *argv[])
                 << "elapsed:"
                 << dt
                 << ", fps:"
-                << count*1000.0/dt
+                << count * 1000.0 / dt
                 << "/"
-                << t.size()*1000.0/(now - t.first());
+                << t.size() * 1000.0 / (now - t.first());
 
             if (t.size() > 10)
                 t.dequeue();

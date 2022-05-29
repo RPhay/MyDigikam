@@ -37,7 +37,8 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    qCDebug(DIGIKAM_TESTS_LOG) << QLatin1String("usage: ") << a.applicationFilePath().split(QLatin1String("/")).last().append(QLatin1String(" url"));
+    qCDebug(DIGIKAM_TESTS_LOG) << QLatin1String("usage: ")
+        << a.applicationFilePath().split(QLatin1String("/")).last().append(QLatin1String(" url"));
 
     if (a.arguments().size() < 2)
         return 0;
@@ -69,7 +70,7 @@ int main(int argc, char *argv[])
         {
             // continue to decode previous undecoded data
 
-            if (!demuxer.readFrame() || demuxer.stream() != astream)
+            if (!demuxer.readFrame() || (demuxer.stream() != astream))
                 continue;
 
             pkt = demuxer.packet();
@@ -83,7 +84,9 @@ int main(int argc, char *argv[])
 
         // decode the rest data in the next loop. read from demuxer if no data remains
 
-        pkt.data = QByteArray::fromRawData(pkt.data.constData() + pkt.data.size() - dec->undecodedSize(), dec->undecodedSize());
+        pkt.data = QByteArray::fromRawData(pkt.data.constData() + pkt.data.size() - dec->undecodedSize(),
+                                           dec->undecodedSize());
+
         AudioFrame frame(dec->frame()); // why is faster to call frame() for hwdec? no frame() is very slow for VDA
 
         if (!frame)
@@ -125,8 +128,7 @@ int main(int argc, char *argv[])
             qCDebug(DIGIKAM_TESTS_LOG) << "Output: " << af;
         }
 
-       qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("playing: %.3f...\r", frame.timestamp());
-        fflush(0);
+        qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("playing: %.3f...\r", frame.timestamp());
 
         // always resample ONCE. otherwise data are all 0x0. QtAV bug
 

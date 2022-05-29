@@ -110,15 +110,15 @@ int main(int argc, char** argv)
     {
         qint16* d = reinterpret_cast<qint16*>(data.data());
 
-        for (int k = 0 ; k < kFrames ; k++)
+        for (int k = 0 ; k < kFrames ; ++k)
         {
             *d++  = sin_table[left];
             *d++  = sin_table[right];
-            left  = (left+1) % kTableSize;
-            right = (right+3)% kTableSize;
+            left  = (left + 1)  % kTableSize;
+            right = (right + 3) % kTableSize;
         }
 
-        ao.setVolume(2*sin(2.0 * M_PI / 1000.0 * timer.elapsed()));
+        ao.setVolume(2 * sin(2.0 * M_PI / 1000.0 * timer.elapsed()));
         ao.play(data);
     }
 

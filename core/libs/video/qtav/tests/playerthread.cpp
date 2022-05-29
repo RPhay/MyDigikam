@@ -41,7 +41,7 @@ class Q_DECL_HIDDEN Thread : public QThread
 public:
 
     explicit Thread(AVPlayerCore* const player)
-      : QThread(nullptr),
+      : QThread (nullptr),
         mpPlayer(player)
     {
     }

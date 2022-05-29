@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
     player[0].addVideoRenderer(&renderer[0]);
     player[1].addVideoRenderer(&renderer[1]);
 
-    QByteArray data = vidfile.read(1024*1024);
+    QByteArray data = vidfile.read(1024 * 1024);
     vidfile.seek(0);
     QBuffer buf(&data);
 

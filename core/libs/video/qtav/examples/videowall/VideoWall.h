@@ -33,9 +33,7 @@
 #include "AVPlayerCore.h"
 #include "WidgetRenderer.h"
 
-
 class QMenu;
-
 
 class VideoWall : public QObject
 {

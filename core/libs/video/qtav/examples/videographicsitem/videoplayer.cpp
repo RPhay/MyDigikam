@@ -45,7 +45,7 @@
 using namespace QtAV;
 
 VideoPlayer::VideoPlayer(QWidget* const parent)
-    : QWidget(parent),
+    : QWidget  (parent),
       videoItem(nullptr)
 {
     videoItem                   = new GraphicsItemRenderer;
@@ -58,7 +58,7 @@ VideoPlayer::VideoPlayer(QWidget* const parent)
     view                        = new QGraphicsView(scene);
 
     QSlider* const rotateSlider = new QSlider(Qt::Horizontal);
-    rotateSlider->setRange(-180,  180);
+    rotateSlider->setRange(-180, 180);
     rotateSlider->setValue(0);
 
     QSlider* const scaleSlider  = new QSlider(Qt::Horizontal);
@@ -127,7 +127,7 @@ void VideoPlayer::setOpenGL(bool o)
 
 #ifndef QT_NO_OPENGL
 
-    QGLWidget* glw = new QGLWidget();   // QGLFormat(QGL::SampleBuffers));
+    QGLWidget* const glw = new QGLWidget();   // QGLFormat(QGL::SampleBuffers));
     glw->setAutoFillBackground(false);
     view->setViewport(glw);
     view->setCacheMode(QGraphicsView::CacheNone);

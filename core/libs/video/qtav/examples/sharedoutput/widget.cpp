@@ -50,12 +50,12 @@ Widget::Widget(QWidget* const parent)
 
     for (int i = 0 ; i < 2 ; ++i)
     {
-        player[i]       = new AVPlayerCore(this);
+        player[i]             = new AVPlayerCore(this);
         player[i]->setRenderer(renderer);
-        QVBoxLayout* vb = new QVBoxLayout;
-        play_btn[i]     = new QPushButton(this);
+        QVBoxLayout* const vb = new QVBoxLayout;
+        play_btn[i]           = new QPushButton(this);
         play_btn[i]->setText(QString::fromLatin1("Play-%1").arg(i));
-        file_btn[i]     = new QPushButton(this);
+        file_btn[i]           = new QPushButton(this);
         file_btn[i]->setText(QString::fromLatin1("Choose video-%1").arg(i));
 
         connect(play_btn[i], SIGNAL(clicked()),
@@ -69,7 +69,7 @@ Widget::Widget(QWidget* const parent)
         btn_layout->addLayout(vb);
     }
 
-    QPushButton* net_btn = new QPushButton(QLatin1String("Test online video(rtsp)"));
+    QPushButton* const net_btn = new QPushButton(QLatin1String("Test online video(rtsp)"));
 
     connect(net_btn, SIGNAL(clicked()),
             this, SLOT(testRTSP()));
@@ -90,8 +90,8 @@ void Widget::playVideo()
     for (int i = 0 ; i < 2 ; ++i)
         player[i]->pause(true);
 
-    QPushButton* btn = qobject_cast<QPushButton*>(sender());
-    int idx          = btn->text().section(QLatin1Char('-'), 1).toInt();
+    QPushButton* const btn = qobject_cast<QPushButton*>(sender());
+    int idx                = btn->text().section(QLatin1Char('-'), 1).toInt();
     player[idx]->pause(false);
 }
 
@@ -102,9 +102,9 @@ void Widget::setVideo()
     if (v.isEmpty())
         return;
 
-    QPushButton* btn = qobject_cast<QPushButton*>(sender());
-    int idx          = btn->text().section(QLatin1Char('-'), 1).toInt();
-    QString oldv     = player[idx]->file();
+    QPushButton* const btn = qobject_cast<QPushButton*>(sender());
+    int idx                = btn->text().section(QLatin1Char('-'), 1).toInt();
+    QString oldv           = player[idx]->file();
 
     if (v == oldv)
         return;

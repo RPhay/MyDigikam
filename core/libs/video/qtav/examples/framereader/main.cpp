@@ -74,9 +74,9 @@ int main(int argc, char *argv[])
                                        << ", elapsed:"
                                        << dt
                                        << ", fps:"
-                                       << count*1000.0/dt
+                                       << count * 1000.0 / dt
                                        << "/"
-                                       << t.size()*1000.0/(now - t.first());
+                                       << t.size() * 1000.0 / (now - t.first());
 
             if (t.size() > 10)
                 t.dequeue();

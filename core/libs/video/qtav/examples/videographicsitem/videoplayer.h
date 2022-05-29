@@ -66,7 +66,7 @@ private Q_SLOTS:
 
 private:
 
-    QtAV::AVPlayerCore              mediaPlayer;
+    QtAV::AVPlayerCore          mediaPlayer;
     QtAV::GraphicsItemRenderer* videoItem;
     QGraphicsView*              view;
 };

@@ -41,7 +41,7 @@ class Q_DECL_HIDDEN SubtitleObserver : public QObject
 
 public:
 
-    SubtitleObserver(QObject* parent = nullptr)
+    SubtitleObserver(QObject* const parent = nullptr)
       : QObject(parent)
     {
     }
@@ -56,12 +56,14 @@ private Q_SLOTS:
 
     void onSubtitleChanged()
     {
-        Subtitle *sub = qobject_cast<Subtitle*>(sender());
-        qCDebug(DIGIKAM_TESTS_LOG) << "subtitle changed at " << sub->timestamp() << "s\n" << sub->getText();
+        Subtitle* const sub = qobject_cast<Subtitle*>(sender());
+        qCDebug(DIGIKAM_TESTS_LOG) << "subtitle changed at "
+                                   << sub->timestamp() << "s\n"
+                                   << sub->getText();
     }
 };
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     QCoreApplication a(argc, argv);
     qCDebug(DIGIKAM_TESTS_LOG) << "help: ./subtitle [-engine engine] [-f file] [-fuzzy] [-t sec] [-t1 sec] [-count n]";
@@ -74,8 +76,8 @@ int main(int argc, char *argv[])
 
     QString file;
     bool fuzzy = false;
-    int t = -1, t1 = -1, count = 1;
-    int i = a.arguments().indexOf(QLatin1String("-f"));
+    int t      = -1, t1 = -1, count = 1;
+    int i      = a.arguments().indexOf(QLatin1String("-f"));
 
     if (i > 0)
     {
@@ -142,9 +144,9 @@ int main(int argc, char *argv[])
     qCDebug(DIGIKAM_TESTS_LOG) << "process subtitle file elapsed: " << timer.elapsed() << "ms";
     timer.restart();
 
-    if (t < 0 && t1 >= 0)
+    if ((t < 0) && (t1 >= 0))
     {
-        t = 0;
+        t     = 0;
         count = 1;
     }
 
@@ -162,11 +164,11 @@ int main(int argc, char *argv[])
             if (count < 2)
                 count = 2;
 
-            const qreal kInterval = (t1-t)/qreal(count-1);
+            const qreal kInterval = (t1 - t) / qreal(count - 1);
 
-            for (int n = 0; n < count; ++n)
+            for (int n = 0 ; n < count ; ++n)
             {
-                sub.setTimestamp(qreal(t) + qreal(n)*kInterval);
+                sub.setTimestamp(qreal(t) + qreal(n) * kInterval);
                 qCDebug(DIGIKAM_TESTS_LOG) << sub.timestamp() << "s: " << sub.getText();
                 QImage img(sub.getImage(720, 400));
                 img.save(QString::fromLatin1("sub-%1.png").arg(sub.timestamp(), 0, 'f', 2));

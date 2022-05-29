@@ -101,7 +101,7 @@ int main(int argc, char* argv[])
     QVariantHash muxopt, avfopt;
     avfopt[QString::fromLatin1("segment_time")]      = 4;
     avfopt[QString::fromLatin1("segment_list_size")] = 0;
-    avfopt[QString::fromLatin1("segment_list")]      = outFile.left(outFile.lastIndexOf(QLatin1Char('/'))+1).arg(QString::fromLatin1("index.m3u8"));
+    avfopt[QString::fromLatin1("segment_list")]      = outFile.left(outFile.lastIndexOf(QLatin1Char('/')) + 1).arg(QString::fromLatin1("index.m3u8"));
     avfopt[QString::fromLatin1("segment_format")]    = QString::fromLatin1("mpegts");
     muxopt[QString::fromLatin1("avformat")]          = avfopt;
 
@@ -127,9 +127,9 @@ int main(int argc, char* argv[])
         return 1;
     }
 
-    VideoEncoder *venc = avt.videoEncoder();
+    VideoEncoder* const venc = avt.videoEncoder();
     venc->setCodecName(cv); // "png"
-    venc->setBitRate(1024*1024);
+    venc->setBitRate(1024 * 1024);
 
     if (!hwdev.isEmpty())
         venc->setProperty("hwdevice", hwdev);
@@ -150,7 +150,7 @@ int main(int argc, char* argv[])
             return 1;
         }
 
-        AudioEncoder* aenc = avt.audioEncoder();
+        AudioEncoder* const aenc = avt.audioEncoder();
         aenc->setCodecName(ca);
     }
 

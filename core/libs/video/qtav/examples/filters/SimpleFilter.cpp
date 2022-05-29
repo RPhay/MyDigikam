@@ -35,8 +35,8 @@
 
 SimpleFilter::SimpleFilter(QObject* const parent)
     : VideoFilter(parent),
-      mCanRot(true),
-      mWave(true)
+      mCanRot    (true),
+      mWave      (true)
 {
     srand(QTime::currentTime().msec());                      // krazy:exclude=syscalls
     mStartValue = (qreal)(rand() % 1000) / qreal(1000.0);    // krazy:exclude=syscalls
@@ -97,7 +97,7 @@ void SimpleFilter::prepare()
 
     if (mCanRot)
     {
-        mMat.rotate(mStartValue*360, 0, 1, -0.1);
+        mMat.rotate(mStartValue * 360, 0, 1, -0.1);
     }
 }
 
@@ -115,7 +115,7 @@ void SimpleFilter::process(Statistics* statistics, VideoFrame* frame)
     if (!isEnabled())
         return;
 
-    int t                         = mTime.elapsed()/100;
+    int t                         = mTime.elapsed() / 100;
     VideoFilterContext* const ctx = static_cast<VideoFilterContext*>(context());
 
     if (mCanRot)
@@ -130,7 +130,7 @@ void SimpleFilter::process(Statistics* statistics, VideoFrame* frame)
             return;
 
         if (mCanRot)
-            ctx->drawImage(QPointF(-mImage.width()/2, ctx->rect.y()), mImage, QRectF(0, 0, mImage.width(), mImage.height()));
+            ctx->drawImage(QPointF(-mImage.width() / 2, ctx->rect.y()), mImage, QRectF(0, 0, mImage.width(), mImage.height()));
         else
             ctx->drawImage(ctx->rect.topLeft(), mImage, QRectF(0, 0, mImage.width(), mImage.height()));
 
@@ -151,13 +151,14 @@ void SimpleFilter::process(Statistics* statistics, VideoFrame* frame)
 
         for (int i = 0 ; i < mText.size() ; ++i)
         {
-            int i16 = (t+i) & 15;
+            int i16 = (t + i) & 15;
             ctx->pen.setColor(QColor::fromHsv((15-i16)*16, 255, 255));
 
             if (mCanRot)
-                ctx->drawPlainText(QPointF(x-fm.boundingRect(mText).width()/2-ctx->rect.x(), y-sin_tbl[i16]*h/400), mText.mid(i, 1));
+                ctx->drawPlainText(QPointF(x - fm.boundingRect(mText).width() / 2 - ctx->rect.x(),
+                                           y - sin_tbl[i16] * h / 400), mText.mid(i, 1));
             else
-                ctx->drawPlainText(QPointF(x, y-sin_tbl[i16]*h/400), mText.mid(i, 1));
+                ctx->drawPlainText(QPointF(x, y - sin_tbl[i16] * h / 400), mText.mid(i, 1));
 
             x += fm.boundingRect(mText[i]).width();
         }

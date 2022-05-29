@@ -212,7 +212,7 @@ void VideoGroup::toggleFrameless(bool f)
     }
 }
 
-void VideoGroup::setVideoRendererTypeString(const QString &vt)
+void VideoGroup::setVideoRendererTypeString(const QString& vt)
 {
     vid = vt.toLower();
 }
@@ -293,8 +293,8 @@ void VideoGroup::addRenderer()
     }
 
     renderer->widget()->setWindowFlags(wf);
-    int w = view ? view->frameGeometry().width()  / c : DESKTOP_RECT().width()  / c;
-    int h = view ? view->frameGeometry().height() / r : DESKTOP_RECT().height() / r;
+    int w = (view ? view->frameGeometry().width()  / c : DESKTOP_RECT().width()  / c);
+    int h = (view ? view->frameGeometry().height() / r : DESKTOP_RECT().height() / r);
     renderer->widget()->resize(w, h);
     mpPlayer->addVideoRenderer(renderer);
     int i = (mRenderers.size()-1) / cols();
@@ -308,7 +308,7 @@ void VideoGroup::addRenderer()
     }
     else
     {
-        renderer->widget()->move(j*w, i*h);
+        renderer->widget()->move(j * w, i * h);
         renderer->widget()->show();
     }
 
@@ -349,14 +349,15 @@ void VideoGroup::updateROI()
         return;
     }
 
-    int W = view ? view->frameGeometry().width() : DESKTOP_RECT().width();
-    int H = view ? view->frameGeometry().height() : DESKTOP_RECT().height();
+    int W = (view ? view->frameGeometry().width()  : DESKTOP_RECT().width());
+    int H = (view ? view->frameGeometry().height() : DESKTOP_RECT().height());
     int w = W / c;
     int h = H / r;
 
     for (int i = 0 ; i < mRenderers.size() ; ++i)
     {
         VideoRenderer* const renderer = mRenderers.at(i);
-        renderer->setRegionOfInterest(qreal((i%c)*w)/qreal(W), qreal((i/c)*h)/qreal(H), qreal(w)/qreal(W), qreal(h)/qreal(H));
+        renderer->setRegionOfInterest(qreal((i % c) * w) / qreal(W), qreal((i / c ) * h) / qreal(H),
+                                      qreal(w) / qreal(W), qreal(h) / qreal(H));
     }
 }

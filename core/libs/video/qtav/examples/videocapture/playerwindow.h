@@ -32,12 +32,10 @@
 
 #include "QtAV.h"
 
-
 class QSlider;
 class QPushButton;
 class QLabel;
 class QCheckBox;
-
 
 class PlayerWindow : public QWidget
 {
