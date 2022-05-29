@@ -64,12 +64,16 @@ public:
         SubtitleStream
     };
 
+public:
+
     static const QStringList& supportedFormats();
     static const QStringList& supportedExtensions();
 
     /// Supported ffmpeg/libav input protocols(not complete). A static string list
 
     static const QStringList& supportedProtocols();
+
+public:
 
     explicit AVDemuxer(QObject* const parent = nullptr);
     ~AVDemuxer();
@@ -260,7 +264,7 @@ Q_SIGNALS:
      */
     void started();
     void finished();                    // end of file
-    void error(const QtAV::AVError& e); // explictly use QtAV::AVError in connection for Qt4 syntax
+    void error(const QtAV::AVError& e); // explictly use QtAV::AVError in connection.
     void mediaStatusChanged(QtAV::MediaStatus status);
     void seekableChanged();
 
@@ -271,6 +275,8 @@ private:
     // error code (errorCode) and message (msg) may be modified internally
 
     void handleError(int averr, AVError::ErrorCode* errorCode, QString& msg);
+
+private:
 
     class Private;
     QScopedPointer<Private> d;

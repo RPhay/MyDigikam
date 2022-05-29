@@ -161,7 +161,8 @@ public:
 
         if (!handler)
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("InterruptHandler is null");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("InterruptHandler is null");
 
             return -1;
         }
@@ -170,7 +171,8 @@ public:
 
         if (handler->getStatus() < 0)
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("User Interrupt: -> quit!");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("User Interrupt: -> quit!");
 
             // DO NOT call setMediaStatus() here.
 
@@ -404,7 +406,7 @@ public:
 
     bool setStream(AVDemuxer::StreamType st, int streamValue);
 
-    //called by loadFile(). if change to a new stream, call it(e.g. in AVPlayerCore)
+    // called by loadFile(). if change to a new stream, call it(e.g. in AVPlayerCore)
 
     bool prepareStreams();
 
@@ -617,7 +619,7 @@ const QStringList& AVDemuxer::supportedExtensions()
     return exts;
 }
 
-const QStringList &AVDemuxer::supportedProtocols()
+const QStringList& AVDemuxer::supportedProtocols()
 {
     static QStringList protocols;
 
@@ -707,7 +709,7 @@ bool AVDemuxer::readFrame()
 
                     qCDebug(DIGIKAM_QTAV_LOG).noquote()
                         << QString::asprintf("End of file. erreof=%d feof=%d",
-                            ret == AVERROR_EOF,
+                            (ret == AVERROR_EOF),
                             avio_feof(d->format_ctx->pb));
                 }
             }
@@ -890,13 +892,14 @@ bool AVDemuxer::seek(qint64 pos)
     // t: unit is s
 
     qreal t = q;    // * (double)d->format_ctx->duration;
-    int ret = av_seek_frame(d->format_ctx, -1, (int64_t)(t*AV_TIME_BASE), t > d->pkt.pts ? 0 : AVSEEK_FLAG_BACKWARD);
+    int ret = av_seek_frame(d->format_ctx, -1, (int64_t)(t * AV_TIME_BASE),
+                            (t > d->pkt.pts) ? 0 : AVSEEK_FLAG_BACKWARD);
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
         << QString::asprintf("[AVDemuxer] seek to %f %f %lld / %lld",
             q,
             d->pkt.pts,
-            (int64_t)(t*AV_TIME_BASE),
+            (int64_t)(t * AV_TIME_BASE),
             durationUs());
 
 #else
@@ -965,7 +968,9 @@ bool AVDemuxer::seek(qint64 pos)
 
     if (upos <= startTime())
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("*** seek to beginning. started = false");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("Seek to beginning. started = false");
+
         d->started = false; // ???
 
 #ifndef HAVE_FFMPEG_VERSION5
@@ -1162,7 +1167,9 @@ QString AVDemuxer::formatForced() const
 bool AVDemuxer::load()
 {
     unload();
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("all closed and reseted");
+
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("all closed and reseted");
 
     if (d->file.isEmpty() && !d->input)
     {
@@ -1188,7 +1195,9 @@ bool AVDemuxer::load()
 
         if (s1 < 0)
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("invalid avdevice specification");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("invalid avdevice specification");
+
             setMediaStatus(InvalidMedia);
 
             return false;
@@ -1346,8 +1355,12 @@ bool AVDemuxer::load()
     if (getInterruptStatus() < 0)
     {
         QString msg;
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("AVERROR_EXIT: %d", AVERROR_EXIT);
+
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("AVERROR_EXIT: %d", AVERROR_EXIT);
+
         handleError(AVERROR_EXIT, nullptr, msg);
+
         qCWarning(DIGIKAM_QTAV_LOG_WARN) << "User interrupted: " << msg;
 
         return false;
@@ -1459,7 +1472,8 @@ bool AVDemuxer::setStreamIndex(StreamType st, int index)
 
     if (index < 0)
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("disable %d stream", st);
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("disable %d stream", st);
 
         si->stream        = -1;
         si->wanted_index  = -1;
