@@ -104,7 +104,7 @@ static const ChannelLayoutMap kChannelLayoutMap[] =
 
 AudioFormat::ChannelLayout AudioFormat::channelLayoutFromFFmpeg(qint64 clff)
 {
-    for (unsigned int i = 0 ; i < sizeof(kChannelLayoutMap)/sizeof(ChannelLayoutMap) ; ++i)
+    for (unsigned int i = 0 ; (i < sizeof(kChannelLayoutMap) / sizeof(ChannelLayoutMap)) ; ++i)
     {
         if (kChannelLayoutMap[i].ff == clff)
             return kChannelLayoutMap[i].cl;
@@ -115,7 +115,7 @@ AudioFormat::ChannelLayout AudioFormat::channelLayoutFromFFmpeg(qint64 clff)
 
 qint64 AudioFormat::channelLayoutToFFmpeg(AudioFormat::ChannelLayout cl)
 {
-    for (unsigned int i = 0 ; i < sizeof(kChannelLayoutMap)/sizeof(ChannelLayoutMap) ; ++i)
+    for (unsigned int i = 0 ; (i < sizeof(kChannelLayoutMap) / sizeof(ChannelLayoutMap)) ; ++i)
     {
         if (kChannelLayoutMap[i].cl == cl)
             return kChannelLayoutMap[i].ff;
@@ -188,7 +188,7 @@ AudioFormat::AudioFormat():
 {
 }
 
-AudioFormat::AudioFormat(const AudioFormat &other):
+AudioFormat::AudioFormat(const AudioFormat& other):
     d(other.d)
 {
 }
@@ -216,7 +216,7 @@ AudioFormat& AudioFormat::operator=(const AudioFormat& other)
 bool AudioFormat::operator==(const AudioFormat& other) const
 {
     return (
-            (d->sample_rate == other.d->sample_rate)              &&
+            (d->sample_rate       == other.d->sample_rate)        &&
 
             // compare channel layout first because it determines channel count
 
@@ -270,8 +270,7 @@ int AudioFormat::planeCount() const
 }
 
 /*!
-   Sets the sample rate to \a samplerate Hertz.
-
+ * Sets the sample rate to \a samplerate Hertz.
  */
 void AudioFormat::setSampleRate(int sampleRate)
 {
@@ -279,8 +278,7 @@ void AudioFormat::setSampleRate(int sampleRate)
 }
 
 /*!
-    Returns the current sample rate in Hertz.
-
+ * Returns the current sample rate in Hertz.
  */
 int AudioFormat::sampleRate() const
 {
@@ -288,7 +286,7 @@ int AudioFormat::sampleRate() const
 }
 
 /*!
-   Sets the channel layout to \a layout. Currently use FFmpeg's. see avutil/channel_layout.h
+ * Sets the channel layout to \a layout. Currently use FFmpeg's. see avutil/channel_layout.h
  */
 void AudioFormat::setChannelLayoutFFmpeg(qint64 layout)
 {
@@ -323,31 +321,31 @@ AudioFormat::ChannelLayout AudioFormat::channelLayout() const
 
 QString AudioFormat::channelLayoutName() const
 {
-    char cl[128];
+    char cl[128] = { 0 };
     av_get_channel_layout_string(cl, sizeof(cl), -1, channelLayoutFFmpeg()); // TODO: ff version
 
     return QLatin1String(cl);
 }
 
 /*!
-   Sets the channel count to \a channels.
-*/
+ * Sets the channel count to \a channels.
+ */
 void AudioFormat::setChannels(int channels)
 {
     d->setChannels(channels);
 }
 
 /*!
-    Returns the current channel count value.
-*/
+ * Returns the current channel count value.
+ */
 int AudioFormat::channels() const
 {
     return d->channels;
 }
 
 /*!
-   Sets the sampleFormat to \a sampleFormat.
-*/
+ * Sets the sampleFormat to \a sampleFormat.
+ */
 void AudioFormat::setSampleFormat(AudioFormat::SampleFormat sampleFormat)
 {
     d->sample_fmt    = sampleFormat;
@@ -355,8 +353,8 @@ void AudioFormat::setSampleFormat(AudioFormat::SampleFormat sampleFormat)
 }
 
 /*!
-    Returns the current SampleFormat value.
-*/
+ *  Returns the current SampleFormat value.
+ */
 AudioFormat::SampleFormat AudioFormat::sampleFormat() const
 {
     return d->sample_fmt;
@@ -418,6 +416,7 @@ qint64 AudioFormat::durationForBytes(qint32 bytes) const
         return 0;
 
     // We round the byte count to ensure whole frames
+
     return qint64(kHz * (bytes / bytesPerFrame())) / sampleRate();
 }
 
@@ -468,8 +467,8 @@ qint32 AudioFormat::framesForDuration(qint64 duration) const
 }
 
 /*!
-    Return the number of microseconds represented by \a frameCount frames in this format.
-*/
+ * Return the number of microseconds represented by \a frameCount frames in this format.
+ */
 qint64 AudioFormat::durationForFrames(qint32 frameCount) const
 {
     if (!isValid() || (frameCount <= 0))
@@ -532,7 +531,8 @@ QDebug operator<<(QDebug dbg, QtAV::AudioFormat::SampleFormat sampleFormat)
 QDebug operator<<(QDebug dbg, QtAV::AudioFormat::ChannelLayout channelLayout)
 {
     char cl[128] = { 0 };
-    av_get_channel_layout_string(cl, sizeof(cl), -1, AudioFormat::channelLayoutToFFmpeg(channelLayout)); // TODO: ff version
+    av_get_channel_layout_string(cl, sizeof(cl),
+                                 -1, AudioFormat::channelLayoutToFFmpeg(channelLayout)); // TODO: ff version
     dbg.nospace() << cl;
 
     return dbg.space();

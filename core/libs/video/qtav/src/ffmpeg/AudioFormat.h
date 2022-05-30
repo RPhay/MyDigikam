@@ -90,9 +90,9 @@ public:
     };
 
     static const qint64 kHz = 1000000LL;
-
-    //typedef qint64 ChannelLayout; //currently use latest FFmpeg's
-
+/*
+    typedef qint64 ChannelLayout; //currently use latest FFmpeg's
+*/
     // TODO: constexpr
 
     friend int RawSampleSize(SampleFormat fmt)      { return (fmt & ((1 << (kSize + 1)) - 1));                         }
@@ -131,8 +131,9 @@ public:
     void setChannelLayoutFFmpeg(qint64 layout);
     qint64 channelLayoutFFmpeg()                const;
 
-    // currently a limitted set of channel layout is supported. call setChannelLayoutFFmpeg is recommended
-
+    /**
+     * currently a limitted set of channel layout is supported. call setChannelLayoutFFmpeg is recommended
+     */
     void setChannelLayout(ChannelLayout layout);
     ChannelLayout channelLayout()               const;
     QString channelLayoutName()                 const;
@@ -144,7 +145,7 @@ public:
 
     /*!
      * \brief channels
-     *   For planar format, channel count == plane count. For packed format, plane count is 1
+     *  For planar format, channel count == plane count. For packed format, plane count is 1
      * \return
      */
     int channels()                              const;
@@ -155,8 +156,7 @@ public:
     int sampleFormatFFmpeg()                    const;
     QString sampleFormatName()                  const;
 
-    // Helper functions
-    // in microseconds
+    // Helper functions in microseconds
 
     qint32 bytesForDuration(qint64 duration)    const;
     qint64 durationForBytes(qint32 byteCount)   const;
@@ -172,18 +172,18 @@ public:
     // 1 frame = 1 sample with channels
 
     /*!
-        Returns the number of bytes required to represent one frame (a sample in each channel) in this format.
-        Returns 0 if this format is invalid.
-    */
+     * Returns the number of bytes required to represent one frame (a sample in each channel) in this format.
+     * Returns 0 if this format is invalid.
+     */
     int bytesPerFrame()                         const;
 
     /*!
-        Returns the current sample size value, in bytes.
-        \sa bytesPerFrame()
-    */
+     * Returns the current sample size value, in bytes.
+     * \sa bytesPerFrame()
+     */
     int bytesPerSample()                        const;
-    int sampleSize()                            const; // the same as bytesPerSample()
-    int bitRate()                               const; // bits per second
+    int sampleSize()                            const; ///< the same as bytesPerSample()
+    int bitRate()                               const; ///< bits per second
     int bytesPerSecond()                        const;
 
 private:

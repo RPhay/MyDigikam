@@ -136,7 +136,7 @@ private:
 
     typedef AudioResampler* (*AudioResamplerCreator)();
 
-    static bool Register(AudioResamplerId id, AudioResamplerCreator, const char *name);
+    static bool Register(AudioResamplerId id, AudioResamplerCreator, const char* name);
 
 protected:
 

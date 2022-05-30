@@ -85,7 +85,7 @@ public:
         }
     }
 
-    SwrContext *context;
+    SwrContext* context         = nullptr;
 
     // defined in swr<1
 
@@ -146,7 +146,9 @@ bool AudioResamplerFF::convert(const quint8** data)
 
     // number of input/output samples available in one channel
 
-    int converted_samplers_per_channel = swr_convert(d.context, out, d.out_samples_per_channel, data, d.in_samples_per_channel);
+    int converted_samplers_per_channel = swr_convert(d.context, out, d.out_samples_per_channel,
+                                                     data, d.in_samples_per_channel);
+
     d.out_samples_per_channel          = converted_samplers_per_channel;
 
     if (converted_samplers_per_channel < 0)
@@ -251,7 +253,8 @@ bool AudioResamplerFF::prepare()
     //if (d.speed != 1.0)
     //    d.out_format.setSampleRate(int(qreal(d.out_format.sampleFormat())/d.speed));
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("swr speed=%.2f", d.speed);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("swr speed=%.2f", d.speed);
 
     //d.in_planes = av_sample_fmt_is_planar((enum AVSampleFormat)d.in_sample_format) ? d.in_channels : 1;
     //d.out_planes = av_sample_fmt_is_planar((enum AVSampleFormat)d.out_sample_format) ? d.out_channels : 1;
@@ -290,7 +293,8 @@ bool AudioResamplerFF::prepare()
 
     if (!d.context)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Allocat swr context failed!");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Allocat swr context failed!");
 
         return false;
     }
@@ -324,7 +328,7 @@ bool AudioResamplerFF::prepare()
     if (d.out_format.channelLayout() == AudioFormat::ChannelLayout_Right)
     {
         remix  = true;
-        matrix = (double*)calloc(in_c*out_c, sizeof(double));
+        matrix = (double*)calloc(in_c * out_c, sizeof(double));
 
         for (int o = 0 ; o < out_c ; ++o)
         {
@@ -332,7 +336,7 @@ bool AudioResamplerFF::prepare()
         }
     }
 
-    if (!remix && in_c < out_c)
+    if (!remix && (in_c < out_c))
     {
         remix = true;
 
