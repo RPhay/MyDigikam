@@ -47,11 +47,11 @@ public:
     // TODO: other source (more operations needed, e.g. seek)?
 
     void setMediaSource(AVPlayerCore* player);
-    AVPlayerCore* sourcePlayer() const;
+    AVPlayerCore* sourcePlayer()    const;
 
-    QString outputFile() const;
-    QIODevice* outputDevice() const;
-    MediaIO* outputMediaIO() const;
+    QString outputFile()            const;
+    QIODevice* outputDevice()       const;
+    MediaIO* outputMediaIO()        const;
 
     /*!
      * \brief setOutputMedia
@@ -75,7 +75,7 @@ public:
      * Enable async encoding. Default is disabled.
      */
     void setAsync(bool value = true);
-    bool isAsync() const;
+    bool isAsync()               const;
 
     /*!
      * \brief createEncoder
@@ -114,17 +114,17 @@ public:
      * \brief isRunning
      * \return true if encoding started
      */
-    bool isRunning() const;
-    bool isPaused() const;
-    qint64 encodedSize() const;
-    qreal startTimestamp() const;
-    qreal encodedDuration() const;
+    bool isRunning()             const;
+    bool isPaused()              const;
+    qint64 encodedSize()         const;
+    qreal startTimestamp()       const;
+    qreal encodedDuration()      const;
 
     /*!
      * \brief startTime
      * Start to encode after startTime(). To decode from a given time, call sourcePlayer()->setPosition()
      */
-    qint64 startTime() const;
+    qint64 startTime()           const;
     void setStartTime(qint64 ms);
 
 Q_SIGNALS:

@@ -120,7 +120,7 @@ bool AVTranscoder::isAsync() const
     return d->async;
 }
 
-void AVTranscoder::setMediaSource(AVPlayerCore *player)
+void AVTranscoder::setMediaSource(AVPlayerCore* player)
 {
     if (d->source_player)
     {
@@ -408,7 +408,8 @@ void AVTranscoder::stopInternal()
 
     Q_EMIT stopped();
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("AVTranscoder stopped");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("AVTranscoder stopped");
 }
 
 void AVTranscoder::pause(bool value)
@@ -467,13 +468,14 @@ void AVTranscoder::prepareMuxer()
 
     if (!d->muxer.open())
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to open muxer");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Failed to open muxer");
 
         return;
     }
 }
 
-void AVTranscoder::writeAudio(const QtAV::Packet &packet)
+void AVTranscoder::writeAudio(const QtAV::Packet& packet)
 {
     // TODO: muxer maybe is not open. queue the packet
 
@@ -498,7 +500,7 @@ void AVTranscoder::writeAudio(const QtAV::Packet &packet)
     //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("encoded frames: %d, pos: %lld", d->encoded_frames, packet.position);
 }
 
-void AVTranscoder::writeVideo(const QtAV::Packet &packet)
+void AVTranscoder::writeVideo(const QtAV::Packet& packet)
 {
     // TODO: muxer maybe is not open. queue the packet
 
