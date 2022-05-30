@@ -407,12 +407,16 @@ void AVDemuxThread::seek(qint64 external_pos, qint64 pos, SeekType type)
 
 void AVDemuxThread::seekInternal(qint64 pos, SeekType type, qint64 external_pos)
 {
-    AVThread* const av[] = { audio_thread, video_thread };
+    AVThread* const av[] =
+    {
+        audio_thread,
+        video_thread
+    };
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
         << QString::asprintf("seek to %s %lld ms (%f%%)",
             QTime(0, 0, 0).addMSecs(pos).toString().toUtf8().constData(),
-            pos, double(pos - demuxer->startTime()) / double(demuxer->duration())*100.0);
+            pos, double(pos - demuxer->startTime()) / double(demuxer->duration()) * 100.0);
 
     demuxer->setSeekType(type);
     demuxer->seek(pos);
@@ -429,7 +433,7 @@ void AVDemuxThread::seekInternal(qint64 pos, SeekType type, qint64 external_pos)
 
     int sync_id = 0;
 
-    for (size_t i = 0 ; i < sizeof(av)/sizeof(av[0]) ; ++i)
+    for (size_t i = 0 ; (i < sizeof(av) / sizeof(av[0])) ; ++i)
     {
         AVThread* const t = av[i];
 
@@ -682,7 +686,13 @@ void AVDemuxThread::stepForward()
 
     Q_UNUSED(locker);
     pause(true);                                    // must pause AVDemuxThread (set user_paused true)
-    AVThread* const av[] = { video_thread, audio_thread };
+
+    AVThread* const av[] =
+    {
+        video_thread,
+        audio_thread
+    };
+
     bool connected       = false;
 
     for (size_t i = 0 ; (i < sizeof(av) / sizeof(av[0])) ; ++i)
@@ -942,7 +952,11 @@ void AVDemuxThread::run()
                 {
                     Packet fake_apkt;
                     fake_apkt.duration = last_vpts - qMin(thread->clock()->videoTime(), thread->clock()->value()); // FIXME: when clock value < 0?
-                    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("audio is too short than video: %.3f, fake_apkt.duration: %.3f", dpts, fake_apkt.duration);
+
+                    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                        << QString::asprintf("audio is too short than video: %.3f, fake_apkt.duration: %.3f",
+                            dpts, fake_apkt.duration);
+
                     last_apts          = last_vpts = 0; // if not reset to 0, for example real eof pts, then no fake apkt after seek because dpts < 0
                     aqueue->put(fake_apkt);
                 }

@@ -62,7 +62,7 @@ public:
     void lock();
     void unlock();
 
-    void setClock(AVClock *clock);
+    void setClock(AVClock* clock);
     AVClock* clock() const;
 
     PacketBuffer* packetQueue() const;

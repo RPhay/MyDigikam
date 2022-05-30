@@ -84,7 +84,7 @@ AVThread::AVThread(QObject* const parent)
 }
 
 AVThread::AVThread(AVThreadPrivate& d, QObject* const parent)
-    : QThread(parent),
+    : QThread  (parent),
       DPTR_INIT(&d)
 {
     connect(this, SIGNAL(started()),
@@ -114,7 +114,7 @@ bool AVThread::installFilter(Filter* filter, int index, bool lock)
 {
     DPTR_D(AVThread);
 
-    int p = index;
+    int p         = index;
 
     if (p < 0)
         p += d.filters.size();
@@ -252,7 +252,7 @@ qreal AVThread::previousHistoryPts() const
 
     const qreal current_pts = d.pts_history.back();
 
-    for (int i = d.pts_history.size() - 2 ; i > 0 ; --i)
+    for (int i = (d.pts_history.size() - 2) ; i > 0 ; --i)
     {
         if (d.pts_history.at(i) < current_pts)
             return d.pts_history.at(i);
@@ -415,6 +415,7 @@ void AVThread::onFinished()
 void AVThread::resetState()
 {
     DPTR_D(AVThread);
+
     pause(false);
     d.pts_history = ring<qreal>(d.pts_history.capacity());
     d.tasks.clear();
@@ -529,7 +530,7 @@ void AVThread::waitAndCheck(ulong value, qreal pts)
     if ((de > -3) && (de < 3))
         d.wait_err += de;
     else
-        d.wait_err += (de > 0 ? 1 : -1);
+        d.wait_err += ((de > 0) ? 1 : -1);
 
     //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("err: %lld", d.wait_err);
 }

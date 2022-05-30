@@ -129,7 +129,9 @@ public:
 
     AVDictionary*         dict        = nullptr;
     QVariantHash          options;
-    QList<int>            audio_streams, video_streams, subtitle_streams;
+    QList<int>            audio_streams;
+    QList<int>            video_streams;
+    QList<int>            subtitle_streams;
     AudioEncoder*         aenc        = nullptr;       // not owner
     VideoEncoder*         venc        = nullptr;       // not owner
 };
@@ -514,7 +516,7 @@ MediaIO* AVMuxer::mediaIO() const
     return d->io;
 }
 
-bool AVMuxer::setMedia(const QString &fileName)
+bool AVMuxer::setMedia(const QString& fileName)
 {
     if (d->io)
     {

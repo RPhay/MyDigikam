@@ -60,9 +60,6 @@ public:
     void stepForward();                         ///< show next video frame and pause
     void stepBackward();
     void seek(qint64 external_pos, qint64 pos, SeekType type); // ms
-
-    //AVDemuxer* demuxer
-
     bool isPaused() const;
     bool isEnd() const;
     bool atEndOfMedia() const;
@@ -101,8 +98,9 @@ protected:
     virtual void run();
 
     /**
-     * If the pause state is true set by pause(true), then block the thread and wait for pause state changed, i.e. pause(false)
-     * and return true. Otherwise, return false immediately.
+     * If the pause state is true set by pause(true), then block the thread and wait
+     * for pause state changed, i.e. pause(false) and return true.
+     * Otherwise, return false immediately.
      */
     bool tryPause(unsigned long timeout = 100);
 
@@ -111,8 +109,9 @@ private:
     void setAVThread(AVThread*& pOld, AVThread* const pNew);
     void newSeekRequest(QRunnable* const r);
     void processNextSeekTask();
-    void seekInternal(qint64 pos, SeekType type, qint64 external_pos = std::numeric_limits<qint64>::min()); // must call in AVDemuxThread
     void pauseInternal(bool value);
+    void seekInternal(qint64 pos, SeekType type,
+                      qint64 external_pos = std::numeric_limits<qint64>::min()); // must call in AVDemuxThread
 
 private:
 

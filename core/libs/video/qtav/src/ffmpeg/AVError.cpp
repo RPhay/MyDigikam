@@ -105,30 +105,30 @@ static void correct_error_by_ffmpeg(AVError::ErrorCode* e, int fe)
 }
 
 AVError::AVError()
-    : mError(NoError),
+    : mError      (NoError),
       mFFmpegError(0)
 {
 }
 
 AVError::AVError(ErrorCode code, int ffmpegError)
-    : mError(code),
+    : mError      (code),
       mFFmpegError(ffmpegError)
 {
     correct_error_by_ffmpeg(&mError, mFFmpegError);
 }
 
 AVError::AVError(ErrorCode code, const QString& detail, int ffmpegError)
-    : mError(code),
+    : mError      (code),
       mFFmpegError(ffmpegError),
-      mDetail(detail)
+      mDetail     (detail)
 {
     correct_error_by_ffmpeg(&mError, mFFmpegError);
 }
 
 AVError::AVError(const AVError& other)
-    : mError(other.mError)
-    , mFFmpegError(other.mFFmpegError)
-    , mDetail(other.mDetail)
+    : mError      (other.mError),
+      mFFmpegError(other.mFFmpegError),
+      mDetail     (other.mDetail)
 {
 }
 

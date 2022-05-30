@@ -40,9 +40,7 @@
 #include "PacketBuffer.h"
 #include "QtAV_ring.h"
 
-
 class QRunnable;
-
 
 namespace QtAV
 {
@@ -88,7 +86,8 @@ public:
 
 public:
 
-    bool                        paused, next_pause;
+    bool                        paused;
+    bool                        next_pause;
     volatile bool               stop;       // true when packets is empty and demux is end.
     AVClock*                    clock;
     PacketBuffer                packets;
@@ -107,7 +106,8 @@ public:
 
     qreal                       render_pts0;
 
-    static QVariantHash         dec_opt_framedrop, dec_opt_normal;
+    static QVariantHash         dec_opt_framedrop;
+    static QVariantHash         dec_opt_normal;
     bool                        drop_frame_seek;
     ring<qreal>                 pts_history;
 

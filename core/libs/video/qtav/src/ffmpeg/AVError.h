@@ -88,7 +88,7 @@ public:
     AVError(ErrorCode code, const QString& detail, int ffmpegError = 0);
     AVError(const AVError& other);
 
-    AVError &operator=(const AVError& other);
+    AVError& operator=(const AVError& other);
     bool operator==(const AVError& other)        const;
 
     inline bool operator!=(const AVError& other) const
