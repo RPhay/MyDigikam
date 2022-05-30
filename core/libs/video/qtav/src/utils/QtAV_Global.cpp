@@ -83,18 +83,20 @@ QString aboutFFmpeg_PlainText()
 namespace Internal
 {
 
-typedef struct depend_component
+typedef struct Q_DECL_HIDDEN depend_component
 {
-    const char* lib;
-    unsigned    build_version;
-    unsigned    rt_version;
-    const char* config;
-    const char* license;
+    const char* lib           = nullptr;
+    unsigned    build_version = 0;
+    unsigned    rt_version    = 0;
+    const char* config        = nullptr;
+    const char* license       = nullptr;
 } depend_component;
 
 static unsigned get_qt_version()
 {
-    int major = 0, minor = 0, patch = 0;
+    int major = 0;
+    int minor = 0;
+    int patch = 0;
 
     if (sscanf(qVersion(), "%d.%d.%d", &major, &minor, &patch) != 3)
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Can not recognize Qt runtime version");
@@ -584,7 +586,7 @@ ColorRange colorRangeFromFFmpeg(AVColorRange cr)
 namespace
 {
 
-static const struct RegisterMetaTypes
+static const struct Q_DECL_HIDDEN RegisterMetaTypes
 {
     RegisterMetaTypes()
     {

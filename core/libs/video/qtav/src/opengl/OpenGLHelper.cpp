@@ -903,7 +903,7 @@ static QMatrix4x4 channelMap(const VideoFormat& fmt)
 bool videoFormatToGL(const VideoFormat& fmt, GLint* internal_format, GLenum* data_format,
                      GLenum* data_type, QMatrix4x4* mat)
 {
-    typedef struct fmt_entry
+    typedef struct Q_DECL_HIDDEN fmt_entry
     {
         VideoFormat::PixelFormat pixfmt;
         GLint                    internal_format;
