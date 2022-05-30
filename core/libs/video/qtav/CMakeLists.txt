@@ -9,9 +9,15 @@ APPLY_COMMON_POLICIES()
 # TODO: re-enable warnings step by step to fix code
 
 # For FFMPEG 4 to 5 deprecrated declarations => Fix code to support FFMPEG 5 API.
-#REMOVE_COMPILER_WARNINGS("-Wdeprecated-declarations")
-#DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-deprecated-declarations")
-#DISABLE_CLANG_COMPILER_WARNINGS("3.99.99" "-Wno-deprecated-declarations")
+
+if (NOT FFMPEG_VER5_FOUND)
+
+    # For FFMPEG 4 to 5 deprecrated declarations => Fix code to support FFMPEG 5 API.
+    REMOVE_COMPILER_WARNINGS("-Wdeprecated-declarations")
+    DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-deprecated-declarations")
+    DISABLE_CLANG_COMPILER_WARNINGS("3.99.99" "-Wno-deprecated-declarations")
+
+endif()
 
 # For not portable pre-processor defined operator uses.
 REMOVE_COMPILER_WARNINGS("-Wexpansion-to-defined")

@@ -96,7 +96,7 @@ if(ENABLE_MEDIAPLAYER)
 
         endif()
 
-        if (${FFMPEG_VER5_FOUND})
+        if (FFMPEG_VER5_FOUND)
             message(STATUS "MediaPlayer will use FFMpeg 5 API                    : yes")
         else()
             message(STATUS "MediaPlayer will use FFMpeg 5 API                    : no")
