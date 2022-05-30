@@ -70,7 +70,7 @@ SequenceNumberOption::SequenceNumberOption()
                                                                       "||c|| = file counter aware, "
                                                                       "||e|| = extension aware, "
                                                                       "||f|| = folder aware, "
-                                                                      "||r|| = random aware"));
+                                                                      "||r|| = random aware)"));
     addToken(QLatin1String("#[||options||,||start||]"),          i18n("Sequence number (custom start)"));
     addToken(QLatin1String("#[||options||,||step||]"),           i18n("Sequence number (custom step)"));
     addToken(QLatin1String("#[||options||,||start||,||step||]"), i18n("Sequence number (custom start + step)"));
