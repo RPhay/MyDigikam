@@ -149,14 +149,15 @@ VideoRendererId X11Renderer::id() const
 #   define BO_NONNATIVE LSBFirst
 #endif
 
-static const struct fmt2Xfmtentry
+static const struct Q_DECL_HIDDEN fmt2Xfmtentry
 {
     VideoFormat::PixelFormat fmt;
     int                      byte_order;
     unsigned                 red_mask;
     unsigned                 green_mask;
     unsigned                 blue_mask;
-} fmt2Xfmt[] =
+}
+fmt2Xfmt[] =
 {
     { VideoFormat::Format_BGR555,  BO_NATIVE,    0x0000001F, 0x000003E0, 0x00007C00 },
     { VideoFormat::Format_BGR555,  BO_NATIVE,    0x00007C00, 0x000003E0, 0x0000001F },

@@ -140,11 +140,12 @@ VideoRendererId XVRenderer::id() const
 
 #define FOURCC(a,b,c,d) ((a) | ((b)<<8) | ((c)<<16) | ((unsigned)(d)<<24))
 
-static const struct xv_format_entry_t
+static const struct Q_DECL_HIDDEN xv_format_entry_t
 {
     VideoFormat::PixelFormat format;
     int                      fourcc;
-} xv_fmt[] =
+}
+xv_fmt[] =
 {
     { VideoFormat::Format_YUV420P, FOURCC('Y', 'V', '1', '2')},
     { VideoFormat::Format_YUV420P, FOURCC('I', '4', '2', '0')},
@@ -161,7 +162,7 @@ static const struct xv_format_entry_t
 
 int pixelFormatToXv(VideoFormat::PixelFormat fmt)
 {
-    for (size_t i = 0 ; i < sizeof(xv_fmt) / sizeof(xv_fmt[0]) ; ++i)
+    for (size_t i = 0 ; (i < sizeof(xv_fmt) / sizeof(xv_fmt[0])) ; ++i)
     {
         if (xv_fmt[i].format == fmt)
             return xv_fmt[i].fourcc;

@@ -165,7 +165,7 @@ void registerRenderers()
 
 namespace
 {
-    static const struct register_renderers
+    static const struct Q_DECL_HIDDEN register_renderers
     {
         inline register_renderers()
         {
