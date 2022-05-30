@@ -129,9 +129,9 @@ error:
 
 static const struct
 {
-    const char* name;
-    int         nb_channels;
-    uint64_t    layout;
+    const char* name        = nullptr;
+    int         nb_channels = 0;
+    uint64_t    layout      = 0;
 } channel_layout_map[] =
 {
     { "mono",        1,  AV_CH_LAYOUT_MONO                                  },
