@@ -42,11 +42,11 @@
 namespace QtAV
 {
 
-typedef struct
+typedef struct Q_DECL_HIDDEN
 {
     AVSampleFormat            avfmt;
     AudioFormat::SampleFormat fmt;
-    const char*               name;
+    const char*               name = nullptr;
 } sample_fmt_entry;
 
 static const sample_fmt_entry samplefmts[] =
@@ -86,7 +86,7 @@ int AudioFormat::sampleFormatToFFmpeg(AudioFormat::SampleFormat fmt)
     return (int)AV_SAMPLE_FMT_NONE;
 }
 
-typedef struct
+typedef struct Q_DECL_HIDDEN
 {
     qint64                     ff;
     AudioFormat::ChannelLayout cl;
@@ -221,9 +221,9 @@ bool AudioFormat::operator==(const AudioFormat& other) const
             // compare channel layout first because it determines channel count
 
             (d->channel_layout_ff == other.d->channel_layout_ff)  &&
-            (d->channel_layout == other.d->channel_layout)        &&
-            (d->channels == other.d->channels)                    &&
-            (d->sample_fmt == other.d->sample_fmt)
+            (d->channel_layout    == other.d->channel_layout)     &&
+            (d->channels          == other.d->channels)           &&
+            (d->sample_fmt        == other.d->sample_fmt)
            );
 }
 
@@ -399,7 +399,7 @@ QString AudioFormat::sampleFormatName() const
  */
 qint32 AudioFormat::bytesForDuration(qint64 duration) const
 {
-    return bytesPerFrame() * framesForDuration(duration);
+    return (bytesPerFrame() * framesForDuration(duration));
 }
 
 /*!
@@ -475,7 +475,7 @@ qint64 AudioFormat::durationForFrames(qint32 frameCount) const
     if (!isValid() || (frameCount <= 0))
         return 0;
 
-    return (frameCount * kHz) / sampleRate();
+    return ((frameCount * kHz) / sampleRate());
 }
 
 int AudioFormat::bytesPerFrame() const
@@ -490,7 +490,7 @@ int AudioFormat::bytesPerFrame() const
 
 int AudioFormat::bytesPerSample() const
 {
-    return (d->sample_fmt & ((1<<(kSize+1)) - 1));
+    return (d->sample_fmt & ((1 << (kSize + 1)) - 1));
 }
 
 int AudioFormat::sampleSize() const

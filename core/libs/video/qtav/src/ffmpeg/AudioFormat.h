@@ -33,9 +33,7 @@
 
 #include "QtAV_Global.h"
 
-
 class QDebug;
-
 
 namespace QtAV
 {
@@ -47,10 +45,10 @@ class QTAV_EXPORT AudioFormat
     enum
     {
         kSize      = 12,
-        kFloat     = 1 << (kSize+1),
-        kUnsigned  = 1 << (kSize+2),
-        kPlanar    = 1 << (kSize+3),
-        kByteOrder = 1 << (kSize+4)
+        kFloat     = 1 << (kSize + 1),
+        kUnsigned  = 1 << (kSize + 2),
+        kPlanar    = 1 << (kSize + 3),
+        kByteOrder = 1 << (kSize + 4)
     };
 
 public:
@@ -64,21 +62,21 @@ public:
     {
         SampleFormat_Unknown            = 0,
         SampleFormat_Input              = SampleFormat_Unknown,
-        SampleFormat_Unsigned8          = 1 | kUnsigned,
+        SampleFormat_Unsigned8          = 1                      | kUnsigned,
         SampleFormat_Signed8            = 1,
-        SampleFormat_Unigned16          = 2 | kUnsigned,
+        SampleFormat_Unigned16          = 2                      | kUnsigned,
         SampleFormat_Signed16           = 2,
-        SampleFormat_Unsigned24         = 3 | kUnsigned,
+        SampleFormat_Unsigned24         = 3                      | kUnsigned,
         SampleFormat_Signed24           = 3,
-        SampleFormat_Unsigned32         = 4 | kUnsigned,
+        SampleFormat_Unsigned32         = 4                      | kUnsigned,
         SampleFormat_Signed32           = 4,
-        SampleFormat_Float              = 4 | kFloat,
-        SampleFormat_Double             = 8 | kFloat,
+        SampleFormat_Float              = 4                      | kFloat,
+        SampleFormat_Double             = 8                      | kFloat,
         SampleFormat_Unsigned8Planar    = SampleFormat_Unsigned8 | kPlanar,
-        SampleFormat_Signed16Planar     = SampleFormat_Signed16 | kPlanar,
-        SampleFormat_Signed32Planar     = SampleFormat_Signed32 | kPlanar,
-        SampleFormat_FloatPlanar        = SampleFormat_Float | kPlanar,
-        SampleFormat_DoublePlanar       = SampleFormat_Double | kPlanar
+        SampleFormat_Signed16Planar     = SampleFormat_Signed16  | kPlanar,
+        SampleFormat_Signed32Planar     = SampleFormat_Signed32  | kPlanar,
+        SampleFormat_FloatPlanar        = SampleFormat_Float     | kPlanar,
+        SampleFormat_DoublePlanar       = SampleFormat_Double    | kPlanar
     };
 
     enum ChannelLayout
