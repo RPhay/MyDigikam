@@ -45,7 +45,7 @@ namespace QtAV
 namespace
 {
 
-static const struct RegisterMetaTypes
+static const struct Q_DECL_HIDDEN RegisterMetaTypes
 {
     inline RegisterMetaTypes()
     {

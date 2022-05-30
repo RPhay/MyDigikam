@@ -450,7 +450,7 @@ public:
     AVDictionary*                   dict            = nullptr;
     QVariantHash                    options;
 
-    typedef struct StreamInfo
+    typedef struct Q_DECL_HIDDEN StreamInfo
     {
         StreamInfo()
             : stream       (-1),

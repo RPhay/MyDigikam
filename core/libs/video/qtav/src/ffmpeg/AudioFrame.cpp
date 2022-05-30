@@ -36,7 +36,7 @@ namespace QtAV
 namespace
 {
 
-static const struct RegisterMetaTypes
+static const struct Q_DECL_HIDDEN RegisterMetaTypes
 {
     inline RegisterMetaTypes()
     {
@@ -51,7 +51,7 @@ class Q_DECL_HIDDEN AudioFramePrivate : public FramePrivate
 public:
 
     explicit AudioFramePrivate(const AudioFormat& fmt)
-        : FramePrivate(),
+        : FramePrivate  (),
           format        (fmt),
           samples_per_ch(0),
           conv          (nullptr)
