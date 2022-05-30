@@ -31,11 +31,12 @@ namespace DXHelper
 
 const char* vendorName(unsigned id)
 {
-    static const struct
+    static const struct Q_DECL_HIDDEN
     {
-        unsigned id;
-        char     name[32];
-    } vendors [] =
+        unsigned id       = 0;
+        char     name[32] = { 0 };
+    }
+    vendors [] =
     {
         { 0x1002,     "ATI"         },
         { 0x10DE,     "NVIDIA"      },

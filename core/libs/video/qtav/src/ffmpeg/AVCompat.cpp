@@ -127,12 +127,13 @@ error:
 
 #if LIBAVUTIL_VERSION_INT < AV_VERSION_INT(51, 32, 0)
 
-static const struct
+static const struct Q_DECL_HIDDEN
 {
     const char* name        = nullptr;
     int         nb_channels = 0;
     uint64_t    layout      = 0;
-} channel_layout_map[] =
+}
+channel_layout_map[] =
 {
     { "mono",        1,  AV_CH_LAYOUT_MONO                                  },
     { "stereo",      2,  AV_CH_LAYOUT_STEREO                                },

@@ -145,11 +145,12 @@ private:
 extern VideoDecoderId VideoDecoderId_CUDA;
 FACTORY_REGISTER(VideoDecoder, CUDA, "CUDA")
 
-static struct
+static struct Q_DECL_HIDDEN
 {
     AVCodecID      ffCodec;
     cudaVideoCodec cudaCodec;
-} const ff_cuda_codecs[] =
+}
+const ff_cuda_codecs[] =
 {
     { QTAV_CODEC_ID(MPEG1VIDEO), cudaVideoCodec_MPEG1       },
     { QTAV_CODEC_ID(MPEG2VIDEO), cudaVideoCodec_MPEG2       },

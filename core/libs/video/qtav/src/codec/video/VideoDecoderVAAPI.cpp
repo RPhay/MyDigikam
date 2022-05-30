@@ -155,7 +155,7 @@ const char* getProfileName(AVCodecID id, int profile)
     return av_get_profile_name(c, profile);
 }
 
-typedef struct
+typedef struct Q_DECL_HIDDEN
 {
     AVCodecID codec;
     int       profile;

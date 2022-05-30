@@ -55,7 +55,7 @@ public:
 
 static AVError::ErrorCode errorFromFFmpeg(int fe)
 {
-    typedef struct
+    typedef struct Q_DECL_HIDDEN
     {
         int                ff;
         AVError::ErrorCode e;

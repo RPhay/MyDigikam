@@ -129,16 +129,16 @@ private:
 
     union
     {
-        struct
+        struct Q_DECL_HIDDEN
         {
-            DXSDK::IXAudio2*                xaudio;
-            DXSDK::IXAudio2MasteringVoice*  master;
+            DXSDK::IXAudio2*                xaudio = nullptr;
+            DXSDK::IXAudio2MasteringVoice*  master = nullptr;
         } dxsdk;
 
-        struct
+        struct Q_DECL_HIDDEN
         {
-            WinSDK::IXAudio2*               xaudio;
-            WinSDK::IXAudio2MasteringVoice* master;
+            WinSDK::IXAudio2*               xaudio = nullptr;
+            WinSDK::IXAudio2MasteringVoice* master = nullptr;
         } winsdk;
     };
 
@@ -155,7 +155,7 @@ static const AudioOutputBackendId AudioOutputBackendId_XAudio2 = mkid::id32base3
 FACTORY_REGISTER(AudioOutputBackend, XAudio2, kName)
 
 AudioOutputXAudio2::AudioOutputXAudio2(QObject* const parent)
-    : AudioOutputBackend(AudioOutput::DeviceFeatures()|AudioOutput::SetVolume, parent),
+    : AudioOutputBackend(AudioOutput::DeviceFeatures() | AudioOutput::SetVolume, parent),
       xaudio2_winsdk    (true),
       uninit_com        (false),
       source_voice      (nullptr),

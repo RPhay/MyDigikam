@@ -176,7 +176,7 @@ bool GLInteropResource::unmap(GLuint tex)
     return true;
 }
 
-static const struct
+static const struct Q_DECL_HIDDEN
 {
     DXGI_FORMAT fmt;
     DXGI_FORMAT plane_fmt[2];

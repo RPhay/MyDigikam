@@ -36,7 +36,7 @@ static const int kMaxTexWidth = 4096; // FIXME: glGetIntegerv(GL_MAX_TEXTURE_SIZ
 
 // if texture1d, we can directly copy ASS_Image.bitmap without line by line copy, i.e. tiled, and upload only once
 
-typedef struct
+typedef struct Q_DECL_HIDDEN
 {
     float x,  y;            // depends on target rect
     float tx, ty;           // depends on texture size and rects layout

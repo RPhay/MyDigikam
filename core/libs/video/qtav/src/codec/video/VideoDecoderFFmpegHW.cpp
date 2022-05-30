@@ -51,10 +51,10 @@ static AVPixelFormat ffmpeg_get_va_format(struct AVCodecContext* c, const AVPixe
 
 #if QTAV_HAVE(AVBUFREF)
 
-typedef struct  Q_DECL_HIDDEN ffmpeg_va_ref_t
+typedef struct Q_DECL_HIDDEN ffmpeg_va_ref_t
 {
-    VideoDecoderFFmpegHWPrivate* va;
-    void*                        opaque;           // va surface from AVFrame.opaque
+    VideoDecoderFFmpegHWPrivate* va     = nullptr;
+    void*                        opaque = nullptr;           // va surface from AVFrame.opaque
 } ffmpeg_va_ref_t;
 
 static void ffmpeg_release_va_buffer2(void* opaque, uint8_t* data)

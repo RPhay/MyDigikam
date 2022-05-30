@@ -31,7 +31,7 @@
 namespace QtAV
 {
 
-typedef struct
+typedef struct Q_DECL_HIDDEN
 {
     int                      cv_pixfmt;
     VideoFormat::PixelFormat pixfmt;

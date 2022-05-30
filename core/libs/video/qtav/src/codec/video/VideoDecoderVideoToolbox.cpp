@@ -168,10 +168,10 @@ public:
     cv::InteropResourcePtr                interop_res;
 };
 
-typedef struct
+typedef struct Q_DECL_HIDDEN
 {
-    int         code;
-    const char* str;
+    int         code = 0;
+    const char* str  = nullptr;
 } cv_error;
 
 static const cv_error cv_errors[] =

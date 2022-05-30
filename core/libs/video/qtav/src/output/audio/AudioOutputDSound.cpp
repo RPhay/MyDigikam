@@ -177,9 +177,10 @@ DEFINE_GUID(_KSDATAFORMAT_SUBTYPE_UNKNOWN,         0x00000000,                  
 
 #ifndef _WAVEFORMATEXTENSIBLE_
 
-typedef struct
+typedef struct Q_DECL_HIDDEN
 {
    WAVEFORMATEX    Format;
+
    union
    {
       WORD wValidBitsPerSample;       /* bits of precision  */

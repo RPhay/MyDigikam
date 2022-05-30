@@ -450,7 +450,7 @@ bool isPBOSupported()
     return support;
 }
 
-typedef struct
+typedef struct Q_DECL_HIDDEN
 {
     GLint  internal_format;
     GLenum format;
@@ -788,10 +788,10 @@ bool has16BitTexture()
     return !!has_16_tex;
 }
 
-typedef struct
+typedef struct Q_DECL_HIDDEN
 {
     VideoFormat::PixelFormat pixfmt;
-    quint8                   channels[4];
+    quint8                   channels[4] = { 0 };
 } reorder_t;
 
 // use with gl_param_compat

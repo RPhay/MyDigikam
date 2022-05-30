@@ -258,10 +258,10 @@ QStringList SubtitleProcessorFFmpeg::supportedTypes() const
 
 #if 0
 
-    typedef struct
+    typedef struct Q_DECL_HIDDEN
     {
-        const char* ext;
-        const char* name;
+        const char* ext  = nullptr;
+        const char* name = nullptr;
     } sub_ext_t;
 
     static const sub_ext_t sub_ext[] =

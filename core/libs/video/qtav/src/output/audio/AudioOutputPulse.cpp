@@ -134,7 +134,7 @@ FACTORY_REGISTER(AudioOutputBackend, Pulse, kName)
         } \
     } while(0)
 
-static const struct  Q_DECL_HIDDEN format_entry
+static const struct Q_DECL_HIDDEN format_entry
 {
     AudioFormat::SampleFormat spformat;
     pa_sample_format_t        pa;

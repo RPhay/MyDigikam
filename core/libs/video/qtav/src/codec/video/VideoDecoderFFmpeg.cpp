@@ -256,7 +256,7 @@ void RegisterFFmpegHWA_Man()
 
 namespace
 {
-    static const struct  Q_DECL_HIDDEN factory_register_FFmpegHWA
+    static const struct Q_DECL_HIDDEN factory_register_FFmpegHWA
     {
         inline factory_register_FFmpegHWA()
         {

@@ -249,7 +249,8 @@ static const struct Q_DECL_HIDDEN
 {
     VideoFormat::PixelFormat fmt;
     AVPixelFormat            ff; // int
-} pixfmt_map[] =
+}
+pixfmt_map[] =
 {
     { VideoFormat::Format_YUV420P, QTAV_PIX_FMT_C(YUV420P)  },        ///< planar YUV 4:2:0, 12bpp, (1 Cr & Cb sample per 2x2 Y samples)
     { VideoFormat::Format_YV12,    QTAV_PIX_FMT_C(YUV420P)  },        ///< planar YUV 4:2:0, 12bpp, (1 Cr & Cb sample per 2x2 Y samples)
