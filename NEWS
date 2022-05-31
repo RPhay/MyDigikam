@@ -74,4 +74,5 @@ BUGFIXES:
 055 ==> 454318 - Save as Version in Imageeditor not accessible when using external raw editor (rawtherapee).
 056 ==> 324967 - Add support of specific increase numbering offset with advance rename tool.
 057 ==> 453275 - Renaming files is not folder aware, even with folder aware option.
-058 ==> 
+058 ==> 454656 - When locales not set, crash occurs when opening "Settings -> Configure digiKam".
+059 ==> 
