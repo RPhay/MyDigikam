@@ -91,7 +91,8 @@ void PacketBuffer::setBufferMax(qreal max)
 {
     if (max < 1.0)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("max (%f) must >= 1.0", max);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("max (%f) must >= 1.0", max);
 
         return;
     }
@@ -147,7 +148,7 @@ void PacketBuffer::onPut(const Packet& p)
 {
     if      (m_mode == BufferTime)
     {
-        m_value1 = qint64(p.pts * 1000.0); // FIXME: what if no pts
+        m_value1 = qint64(p.pts        * 1000.0); // FIXME: what if no pts
         m_value0 = qint64(queue[0].pts * 1000.0); // must compute here because it is reset to 0 if take from empty
 /*
         if (isBuffering())

@@ -87,7 +87,8 @@ public:
 
 private:
 
-    // we must define  default/copy ctor, dtor and operator= so that we can provide only forward declaration of PacketPrivate
+    // we must define  default/copy ctor, dtor and operator= so that we can provide
+    // only forward declaration of PacketPrivate
 
     mutable QSharedDataPointer<PacketPrivate> d;
 };

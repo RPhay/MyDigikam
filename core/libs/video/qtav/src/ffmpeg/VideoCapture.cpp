@@ -29,12 +29,7 @@
 #include <QDir>
 #include <QRunnable>
 #include <QThreadPool>
-
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-#   include <QDesktopServices>
-#else
-#   include <QStandardPaths>
-#endif
+#include <QStandardPaths>
 
 // Local includes
 
@@ -102,7 +97,8 @@ public:
             if (!QDir().mkpath(dir))
             {
                 qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-                    << QString::asprintf("Failed to create capture dir [%s]", qPrintable(dir));
+                    << QString::asprintf("Failed to create capture dir [%s]",
+                        qPrintable(dir));
 
                 QMetaObject::invokeMethod(cap, "failed");
 
@@ -123,14 +119,16 @@ public:
             path.append(frame.format().name());
 
             qCDebug(DIGIKAM_QTAV_LOG).noquote()
-                << QString::asprintf("Saving capture to %s", qPrintable(path));
+                << QString::asprintf("Saving capture to %s",
+                    qPrintable(path));
 
             QFile file(path);
 
             if (!file.open(QIODevice::WriteOnly))
             {
                 qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-                    << QString::asprintf("VideoCapture is failed to open file %s", qPrintable(path));
+                    << QString::asprintf("VideoCapture is failed to open file %s",
+                        qPrintable(path));
 
                 QMetaObject::invokeMethod(cap, "failed");
 
@@ -161,12 +159,17 @@ public:
             return;
 
         path.append(format.toLower());
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Saving capture to %s", qPrintable(path));
+
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("Saving capture to %s",
+                qPrintable(path));
+
         bool ok = image.save(path, format.toLatin1().constData(), quality);
 
         if (!ok)
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to save capture");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("Failed to save capture");
             QMetaObject::invokeMethod(cap, "failed");
         }
 
@@ -177,7 +180,9 @@ public:
     bool            save;
     bool            original_fmt;
     int             quality;
-    QString         format, dir, name;
+    QString         format;
+    QString         dir;
+    QString         name;
     QImage::Format  qfmt;
     VideoFrame      frame;
 
@@ -285,14 +290,14 @@ void VideoCapture::start()
 
     // copy properties so the task will not be affect even if VideoCapture properties changed
 
-    task->save         = autoSave();
-    task->original_fmt = original_fmt;
-    task->quality      = qual;
-    task->dir          = dir;
-    task->name         = name;
-    task->format       = fmt;
-    task->qfmt         = qfmt;
-    task->frame        = frame; // copy here and it's safe in capture thread because start() is called imediatly after setVideoFrame
+    task->save              = autoSave();
+    task->original_fmt      = original_fmt;
+    task->quality           = qual;
+    task->dir               = dir;
+    task->name              = name;
+    task->format            = fmt;
+    task->qfmt              = qfmt;
+    task->frame             = frame; // copy here and it's safe in capture thread because start() is called imediatly after setVideoFrame
 
     if (isAsync())
     {

@@ -87,12 +87,12 @@ public:
     {
         const int a      = dataAlignment();
         uchar* const p   = (uchar*)frameData().constData();
-        const int offset = (a - ((quintptr)p & (a-1))) & (a-1);
+        const int offset = (a - ((quintptr)p & (a - 1))) & (a - 1);
 
         if (size)
             *size = frameData().size() - offset;
 
-        return p + offset;
+        return (p + offset);
     }
 
     // deep copy 1 plane data

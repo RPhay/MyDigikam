@@ -150,7 +150,8 @@ public:
 
         if (pixfmt_ff == QTAV_PIX_FMT_C(NONE))
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Invalid pixel format");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("Invalid pixel format");
 
             return;
         }
@@ -506,7 +507,7 @@ pixfmt_map[] =
 
 VideoFormat::PixelFormat VideoFormat::pixelFormatFromFFmpeg(int ff)
 {
-    for (unsigned int i = 0 ; i < sizeof(pixfmt_map) / sizeof(pixfmt_map[0]) ; ++i)
+    for (unsigned int i = 0 ; (i < sizeof(pixfmt_map) / sizeof(pixfmt_map[0])) ; ++i)
     {
         if (pixfmt_map[i].ff == ff)
             return pixfmt_map[i].fmt;
@@ -517,7 +518,7 @@ VideoFormat::PixelFormat VideoFormat::pixelFormatFromFFmpeg(int ff)
 
 int VideoFormat::pixelFormatToFFmpeg(VideoFormat::PixelFormat fmt)
 {
-    for (unsigned int i = 0 ; i < sizeof(pixfmt_map) / sizeof(pixfmt_map[0]) ; ++i)
+    for (unsigned int i = 0 ; (i < sizeof(pixfmt_map) / sizeof(pixfmt_map[0])) ; ++i)
     {
         if (pixfmt_map[i].fmt == fmt)
             return pixfmt_map[i].ff;
@@ -555,7 +556,8 @@ static const struct Q_DECL_HIDDEN
 {
     VideoFormat::PixelFormat fmt;
     QImage::Format           qfmt;
-} qpixfmt_map[] =
+}
+qpixfmt_map[] =
 {
     // QImage::Format_ARGB32: 0xAARRGGBB, VideoFormat::Format_BGRA32: layout is BBGGRRAA
 

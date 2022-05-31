@@ -136,7 +136,8 @@ bool ImageConverterFF::convert(const quint8* const src[], const int srcStride[],
     if (result_h != d.h_out)
     {
         qCDebug(DIGIKAM_QTAV_LOG).noquote()
-            << QString::asprintf("convert failed: %d, %d", result_h, d.h_out);
+            << QString::asprintf("convert failed: %d, %d",
+                result_h, d.h_out);
 
         return false;
     }
@@ -169,16 +170,16 @@ bool ImageConverterFFPrivate::setupColorspaceDetails(bool force)
         return true;
     }
 
-    const int srcRange = (range_in  == ColorRange_Limited ? 0 : 1);
-    int dstRange       = (range_out == ColorRange_Limited ? 0 : 1);
+    const int srcRange = ((range_in  == ColorRange_Limited) ? 0 : 1);
+    int dstRange       = ((range_out == ColorRange_Limited) ? 0 : 1);
 
     // TODO: color space
 
     bool supported = (sws_setColorspaceDetails(sws_ctx, sws_getCoefficients(SWS_CS_DEFAULT),
                                                srcRange, sws_getCoefficients(SWS_CS_DEFAULT),
                                                dstRange,
-                                               ((brightness << 16) + 50) / 100,
-                                               (((contrast + 100) << 16) + 50) / 100,
+                                               ((brightness << 16        ) + 50) / 100,
+                                               (((contrast   + 100) << 16) + 50) / 100,
                                                (((saturation + 100) << 16) + 50) / 100
                                               ) >= 0);
 

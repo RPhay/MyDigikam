@@ -99,7 +99,7 @@ Packet Packet::fromAVPacket(const AVPacket* avpkt, double time_base)
 
 // time_base: av_q2d(format_context->streams[stream_idx]->time_base)
 
-bool Packet::fromAVPacket(Packet* pkt, const AVPacket *avpkt, double time_base)
+bool Packet::fromAVPacket(Packet* pkt, const AVPacket* avpkt, double time_base)
 {
     if (!pkt || !avpkt)
         return false;
@@ -112,7 +112,11 @@ bool Packet::fromAVPacket(Packet* pkt, const AVPacket *avpkt, double time_base)
     pkt->isCorrupt = !!(avpkt->flags & AV_PKT_FLAG_CORRUPT);
 
     if (pkt->isCorrupt)
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("currupt packet. pts: %f", pkt->pts);
+    {
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("currupt packet. pts: %f",
+                pkt->pts);
+    }
 
     // from av_read_frame: pkt->pts can be AV_NOPTS_VALUE if the video format has B-frames, so it is better to rely on pkt->dts if you do not decompress the payload.
     // old code set pts as dts is valid
@@ -141,15 +145,16 @@ bool Packet::fromAVPacket(Packet* pkt, const AVPacket *avpkt, double time_base)
     else
         pkt->duration = 0;
 
-#if (LIBAVCODEC_VERSION_MAJOR < 57) //FF_API_CONVERGENCE_DURATION since 57
+#if (LIBAVCODEC_VERSION_MAJOR < 57) // FF_API_CONVERGENCE_DURATION since 57
 
     // subtitle always has a key frame? convergence_duration may be 0
 
-    if ((avpkt->convergence_duration > 0) && pkt->hasKeyFrame
+    if (
+        (avpkt->convergence_duration > 0) && pkt->hasKeyFrame
 
 #if 0
 
-            && (codec->codec_type == AVMEDIA_TYPE_SUBTITLE)
+        && (codec->codec_type == AVMEDIA_TYPE_SUBTITLE)
 
 #endif
 

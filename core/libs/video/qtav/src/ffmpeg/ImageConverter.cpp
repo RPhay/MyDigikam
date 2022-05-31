@@ -227,7 +227,8 @@ bool ImageConverter::convert(const quint8* const src[], const int srcStride[])
 
     if (d.update_data && !prepareData())
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("prepair output data error");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("prepair output data error");
 
         return false;
     }
@@ -256,7 +257,8 @@ bool ImageConverter::prepareData()
 
     const int kAlign = DataAlignment;
 
-    AV_ENSURE(av_image_fill_linesizes((int*)d.pitchs.constData(), d.fmt_out, kAlign > 7 ? FFALIGN(d.w_out, 8) : d.w_out), false);
+    AV_ENSURE(av_image_fill_linesizes((int*)d.pitchs.constData(),
+                                      d.fmt_out, kAlign > 7 ? FFALIGN(d.w_out, 8) : d.w_out), false);
 
     for (int i = 0 ; i < d.pitchs.size() ; ++i)
         d.pitchs[i] = FFALIGN(d.pitchs[i], kAlign);
@@ -266,9 +268,12 @@ bool ImageConverter::prepareData()
     if (s < 0)
         return false;
 
-    d.data_out.resize(s + kAlign-1);
-    d.out_offset = (kAlign - ((uintptr_t)d.data_out.constData() & (kAlign-1))) & (kAlign-1);
-    AV_ENSURE(av_image_fill_pointers((uint8_t**)d.bits.constData(), d.fmt_out, d.h_out, (uint8_t*)d.data_out.constData()+d.out_offset, d.pitchs.constData()), false);
+    d.data_out.resize(s + kAlign - 1);
+    d.out_offset = (kAlign - ((uintptr_t)d.data_out.constData() & (kAlign - 1))) & (kAlign - 1);
+
+    AV_ENSURE(av_image_fill_pointers((uint8_t**)d.bits.constData(),
+                                     d.fmt_out, d.h_out, (uint8_t*)d.data_out.constData() + d.out_offset,
+                                     d.pitchs.constData()), false);
 
     // TODO: special formats
 /*
@@ -277,8 +282,8 @@ bool ImageConverter::prepareData()
 */
     for (int i = 0 ; i < d.pitchs.size() ; ++i)
     {
-        Q_ASSERT(d.pitchs[i] % kAlign == 0);
-        Q_ASSERT(qptrdiff(d.bits[i]) % kAlign == 0);
+        Q_ASSERT((d.pitchs[i] % kAlign)         == 0);
+        Q_ASSERT((qptrdiff(d.bits[i]) % kAlign) == 0);
     }
 
     return true;

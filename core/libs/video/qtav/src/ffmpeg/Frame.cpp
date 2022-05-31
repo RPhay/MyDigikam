@@ -60,7 +60,8 @@ int Frame::bytesPerLine(int plane) const
     if ((plane < 0) || (plane >= planeCount()))
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-            << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
+            << QString::asprintf("Invalid plane! Valid range is [0, %d)",
+                planeCount());
 
         return 0;
     }
@@ -83,7 +84,8 @@ QByteArray Frame::data(int plane) const
     if ((plane < 0) || (plane >= planeCount()))
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-            << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
+            << QString::asprintf("Invalid plane! Valid range is [0, %d)",
+                planeCount());
 
         return QByteArray();
     }
@@ -96,7 +98,8 @@ uchar* Frame::bits(int plane)
     if ((plane < 0) || (plane >= planeCount()))
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-            << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
+            << QString::asprintf("Invalid plane! Valid range is [0, %d)",
+                planeCount());
 
         return nullptr;
     }
@@ -109,7 +112,8 @@ const uchar* Frame::constBits(int plane) const
     if ((plane < 0) || (plane >= planeCount()))
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-            << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
+            << QString::asprintf("Invalid plane! Valid range is [0, %d)",
+                planeCount());
 
         return nullptr;
     }
@@ -122,7 +126,8 @@ void Frame::setBits(uchar* b, int plane)
     if ((plane < 0) || (plane >= planeCount()))
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-            << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
+            << QString::asprintf("Invalid plane! Valid range is [0, %d)",
+                planeCount());
 
         return;
     }
@@ -159,7 +164,8 @@ void Frame::setBytesPerLine(int lineSize, int plane)
     if ((plane < 0) || (plane >= planeCount()))
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-            << QString::asprintf("Invalid plane! Valid range is [0, %d)", planeCount());
+            << QString::asprintf("Invalid plane! Valid range is [0, %d)",
+                planeCount());
 
         return;
     }

@@ -165,7 +165,11 @@ bool FrameReader::Private::tryLoad()
     }
 
     nb_seek = 0;
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("decoder: %p", decoder.data());
+
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("decoder: %p",
+            decoder.data());
+
     vframes.setThreshold(kQueueMin);
 
     return !!decoder;
@@ -177,7 +181,8 @@ qint64 FrameReader::Private::seekInternal(qint64 value)
 {
     if (!tryLoad())
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("load error");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("load error");
 
         return (-1);
     }
@@ -207,7 +212,10 @@ qint64 FrameReader::Private::seekInternal(qint64 value)
         if ((qint64)(pkt.pts * 1000.0) - value > (qint64)range)
         {
             if (warn_out_of_range)
-                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("read packet out of range");
+            {
+                qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                    << QString::asprintf("read packet out of range");
+            }
 
             warn_out_of_range = false;
 
@@ -224,7 +232,10 @@ qint64 FrameReader::Private::seekInternal(qint64 value)
             break;
 
         if (warn_bad_seek)
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Not seek to key frame!!!");
+        {
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("Not seek to key frame!!!");
+        }
 
         warn_bad_seek = false;
     }
@@ -367,7 +378,8 @@ qint64 FrameReader::Private::seekInternal(qint64 value)
         if (qAbs(diff) <= (qint64)range)
         {
             qCDebug(DIGIKAM_QTAV_LOG).noquote()
-                << QString::asprintf("got frame at %fs, diff=%lld", pts, diff);
+                << QString::asprintf("got frame at %fs, diff=%lld",
+                    pts, diff);
 
             break;
         }
@@ -377,7 +389,8 @@ qint64 FrameReader::Private::seekInternal(qint64 value)
         if ((diff > range) && (t > pts))
         {
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-                << QString::asprintf("out pts out of range. diff=%lld, range=%d", diff, range);
+                << QString::asprintf("out pts out of range. diff=%lld, range=%d",
+                    diff, range);
 
             frame = VideoFrame();
 
@@ -458,7 +471,9 @@ bool FrameReader::readMore()
         if (!d->read_thread.isRunning())
             return false;
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("wait for read thread quit");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("wait for read thread quit");
+
         d->read_thread.quit();
         d->read_thread.wait(); // sync
 
@@ -487,7 +502,8 @@ void FrameReader::readMoreInternal()
 {
     if (!d->tryLoad())
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("load error");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("load error");
 
         return;
     }
@@ -541,7 +557,8 @@ void FrameReader::readMoreInternal()
         }
         else
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("dec error, continue to decoder");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("dec error, continue to decoder");
         }
     }
 
@@ -552,14 +569,17 @@ void FrameReader::readMoreInternal()
 
         while (d->decoder->decode(Packet::createEOF()))
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("decoded buffered packets");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("decoded buffered packets");
 
             const VideoFrame frame(d->decoder->frame());
             d->vframes.put(frame);
 
             Q_EMIT frameRead(frame);
 
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("put decoded buffered packets @%.3f", frame.timestamp());
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("put decoded buffered packets @%.3f",
+                    frame.timestamp());
         }
 
         d->vframes.put(VideoFrame()); // make sure take() will not be blocked
