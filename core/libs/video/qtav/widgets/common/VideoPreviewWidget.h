@@ -46,20 +46,21 @@ class QTAV_WIDGETS_EXPORT VideoPreviewWidget : public QWidget
 public:
 
     explicit VideoPreviewWidget(QWidget* const parent = nullptr);
+
     void setTimestamp(qint64 msec);
-    qint64 timestamp() const;
+    qint64 timestamp()          const;
     void preview();
     void setFile(const QString& file);
-    QString file() const;
+    QString file()              const;
 
     // default is false
 
     void setKeepAspectRatio(bool value = true)  { m_keep_ar = value;     }
-    bool isKeepAspectRatio() const              { return m_keep_ar;      }
+    bool isKeepAspectRatio()    const           { return m_keep_ar;      }
 
     /// AutoDisplayFrame -- default is true. if true, new frames from underlying extractor will update display widget automatically.
 
-    bool isAutoDisplayFrame() const             { return m_auto_display; }
+    bool isAutoDisplayFrame()   const           { return m_auto_display; }
 
     /// If false, new frames (or frame errors) won't automatically update widget
     /// (caller must ensure to call displayFrame()/displayFrame(frame) for this if false).
@@ -99,11 +100,11 @@ protected:
 
 private:
 
-    bool                 m_keep_ar;
-    bool                 m_auto_display;
+    bool                 m_keep_ar      = false;
+    bool                 m_auto_display = false;
     QString              m_file;
-    VideoFrameExtractor* m_extractor;
-    VideoOutput*         m_out;
+    VideoFrameExtractor* m_extractor    = nullptr;
+    VideoOutput*         m_out          = nullptr;
 };
 
 } // namespace QtAV

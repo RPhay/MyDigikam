@@ -70,7 +70,7 @@ WidgetRenderer::WidgetRenderer(QWidget* const parent, Qt::WindowFlags f)
      */
     setAttribute(Qt::WA_OpaquePaintEvent);
     setAutoFillBackground(false);
-    QPainterFilterContext* ctx = static_cast<QPainterFilterContext*>(d.filter_context);
+    QPainterFilterContext* const ctx = static_cast<QPainterFilterContext*>(d.filter_context);
 
     if (ctx)
     {

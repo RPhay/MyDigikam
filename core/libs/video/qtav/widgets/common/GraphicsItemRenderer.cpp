@@ -260,7 +260,8 @@ void GraphicsItemRenderer::paint(QPainter* painter, const QStyleOptionGraphicsIt
     }
     else
     {
-        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("FilterContext not available!");
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+            << QString::asprintf("FilterContext not available!");
     }
 
     // save painter state, switch to native opengl painting
@@ -462,7 +463,7 @@ bool GraphicsItemRenderer::event(QEvent* event)
 
 #else
 
-bool GraphicsItemRenderer::event(QEvent *event)
+bool GraphicsItemRenderer::event(QEvent* event)
 {
     if (event->type() != QEvent::User)
         return GraphicsWidget::event(event);
@@ -478,14 +479,18 @@ bool GraphicsItemRenderer::event(QEvent *event)
 
 /*
 
-bool GraphicsItemRenderer::sceneEvent(QEvent *event)
+bool GraphicsItemRenderer::sceneEvent(QEvent* event)
 {
     QEvent::Type type = event->type();
-    qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("sceneEvent type = %d", type);
+
+    qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote()
+        << QString::asprintf("sceneEvent type = %d", type);
 
     if (type == QEvent::KeyPress)
     {
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("KeyPress Event. key=%d", static_cast<QKeyEvent*>(event)->key());
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote()
+            << QString::asprintf("KeyPress Event. key=%d",
+                static_cast<QKeyEvent*>(event)->key());
     }
 
     return true;

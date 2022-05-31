@@ -94,7 +94,7 @@ public:
      * true: user set to enabling opengl renderering. if viewport is not GLWidget, nothing will be rendered
      * false: otherwise. opengl resources in QtAV (e.g. shader manager) will be released later
      */
-    bool isOpenGL() const;
+    bool isOpenGL()                                   const;
     void setOpenGL(bool o);
 
     OpenGLVideo* opengl() const                             override;
