@@ -32,7 +32,8 @@
 // Local includes
 
 #include "QtAV.h"
-#include "QtAVWidgets.h"
+#include "WidgetRenderer.h"
+#include "AVPlayerCore.h"
 
 using namespace QtAV;
 

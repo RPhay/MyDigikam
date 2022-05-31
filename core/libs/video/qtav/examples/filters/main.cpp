@@ -38,8 +38,11 @@
 
 #include "digikam_debug.h"
 #include "QtAV.h"
-#include "QtAVWidgets.h"
 #include "SimpleFilter.h"
+#include "GraphicsItemRenderer.h"
+#include "WidgetRenderer.h"
+#include "GLWidgetRenderer2.h"
+#include "VideoPreviewWidget.h"
 
 int main(int argc, char* argv[])
 {

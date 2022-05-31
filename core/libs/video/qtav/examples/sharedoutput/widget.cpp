@@ -33,7 +33,7 @@
 // Local includes
 
 #include "QtAV.h"
-#include "QtAVWidgets.h"
+#include "QtAVWidgets_Global.h"
 
 using namespace QtAV;
 

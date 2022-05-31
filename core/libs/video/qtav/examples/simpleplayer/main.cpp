@@ -28,7 +28,7 @@
 // Local includes
 
 #include "playerwindow.h"
-#include "QtAVWidgets.h"
+#include "QtAVWidgets_Global.h"
 
 int main(int argc, char* argv[])
 {

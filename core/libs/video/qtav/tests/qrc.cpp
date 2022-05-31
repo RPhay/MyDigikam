@@ -24,11 +24,12 @@
 // Qt includes
 
 #include <QApplication>
+#include <QWidget>
 
 // Local includes
 
 #include "QtAV.h"
-#include "QtAVWidgets.h"
+#include "QtAVWidgets_Global.h"
 
 int main(int argc, char *argv[])
 {

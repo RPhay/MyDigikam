@@ -32,7 +32,7 @@
 // Local includes
 
 #include "QtAV.h"
-#include "QtAVWidgets.h"
+#include "VideoRenderer.h"
 
 class VideoGroup : public QObject
 {

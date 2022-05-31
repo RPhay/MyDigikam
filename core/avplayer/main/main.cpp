@@ -36,7 +36,6 @@
 
 #include "AVPlayerCore.h"
 #include "VideoOutput.h"
-#include "QtAVWidgets.h"
 #include "PropertyEditor.h"
 #include "MainWindow.h"
 #include "common.h"

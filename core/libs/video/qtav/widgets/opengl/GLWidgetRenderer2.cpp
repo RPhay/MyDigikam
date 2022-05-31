@@ -49,7 +49,9 @@ VideoRendererId GLWidgetRenderer2::id() const
     return VideoRendererId_GLWidget2;
 }
 
-GLWidgetRenderer2::GLWidgetRenderer2(QWidget* const parent, const QGLWidget* const shareWidget, Qt::WindowFlags f)
+GLWidgetRenderer2::GLWidgetRenderer2(QWidget* const parent, 
+                                     const QGLWidget* const shareWidget,
+                                     Qt::WindowFlags f)
     : QGLWidget         (parent, shareWidget, f),
       OpenGLRendererBase(*new GLWidgetRenderer2Private(this))
 {

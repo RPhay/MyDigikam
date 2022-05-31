@@ -45,7 +45,7 @@
 
 // Local includes
 
-#include "QtAVWidgets.h"
+#include "QtAVWidgets_Global.h"
 #include "AVPlayerCore.h"
 #include "AudioOutput.h"
 #include "VideoCapture.h"

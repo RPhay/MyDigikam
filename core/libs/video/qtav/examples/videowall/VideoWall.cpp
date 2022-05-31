@@ -40,7 +40,6 @@
 // Local includes
 
 #include "AudioOutput.h"
-#include "QtAVWidgets.h"
 #include "digikam_debug.h"
 
 using namespace QtAV;

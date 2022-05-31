@@ -35,7 +35,11 @@
 // Local includes
 
 #include "AudioOutput.h"
-#include "QtAVWidgets.h"
+#include "AVPlayerCore.h"
+#include "GraphicsItemRenderer.h"
+#include "WidgetRenderer.h"
+#include "GLWidgetRenderer2.h"
+#include "VideoPreviewWidget.h"
 
 #if QT_VERSION < QT_VERSION_CHECK(6,0,0)
 #   define DESKTOP_RECT() qApp->desktop()->rect()

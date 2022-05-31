@@ -31,7 +31,10 @@
 // Local includes
 
 #include "VideoFrameExtractor.h"
-#include "QtAVWidgets.h"
+#include "GraphicsItemRenderer.h"
+#include "WidgetRenderer.h"
+#include "GLWidgetRenderer2.h"
+#include "VideoPreviewWidget.h"
 #include "digikam_debug.h"
 
 using namespace QtAV;

@@ -52,7 +52,7 @@ VideoRendererId OpenGLWidgetRenderer::id() const
 }
 
 OpenGLWidgetRenderer::OpenGLWidgetRenderer(QWidget* const parent, Qt::WindowFlags f)
-    : QOpenGLWidget(parent, f),
+    : QOpenGLWidget     (parent, f),
       OpenGLRendererBase(*new OpenGLWidgetRendererPrivate(this))
 {
     setAcceptDrops(true);

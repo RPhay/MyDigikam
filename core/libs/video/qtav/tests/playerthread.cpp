@@ -30,7 +30,10 @@
 // Local includes
 
 #include "QtAV.h"
-#include "QtAVWidgets.h"
+#include "GraphicsItemRenderer.h"
+#include "WidgetRenderer.h"
+#include "GLWidgetRenderer2.h"
+#include "VideoPreviewWidget.h"
 
 using namespace QtAV;
 

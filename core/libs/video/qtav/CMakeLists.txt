@@ -112,7 +112,7 @@ set(libqtav_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/common/GraphicsItemRenderer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/common/VideoPreviewWidget.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/common/WidgetRenderer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/utils/QtAVWidgets_Global.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/common/QtAVWidgets_Global.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/opengl/OpenGLWidgetRenderer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/config/VideoEQConfigPage.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/config/ClickableMenu.cpp
@@ -173,10 +173,10 @@ if(DirectX_D3D11_FOUND)
     set(libqtav_SRCS ${libqtav_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderD3D.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderD3D11.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D11.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D9.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/D3D11VP.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/DirectXHelper.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/windows/SurfaceInteropD3D11.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/windows/SurfaceInteropD3D9.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/windows/D3D11VP.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/windows/DirectXHelper.cpp
     )
 
 endif()
@@ -240,8 +240,8 @@ if(HAVE_OPENGL)
     if(DirectX_D3D11_FOUND)
 
         set(libqtav_SRCS ${libqtav_SRCS}
-            ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D11GL.cpp
-            ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D9GL.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/windows/SurfaceInteropD3D11GL.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/src/windows/SurfaceInteropD3D9GL.cpp
         )
 
         if(AVCODEC_FOUND)
@@ -263,8 +263,8 @@ if(HAVE_OPENGL)
         if (DirectX_D3D11_FOUND)
 
             set(libqtav_SRCS ${libqtav_SRCS}
-                ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D11EGL.cpp
-                ${CMAKE_CURRENT_SOURCE_DIR}/src/directx/SurfaceInteropD3D9EGL.cpp
+                ${CMAKE_CURRENT_SOURCE_DIR}/src/windows/SurfaceInteropD3D11EGL.cpp
+                ${CMAKE_CURRENT_SOURCE_DIR}/src/windows/SurfaceInteropD3D9EGL.cpp
             )
 
         endif()
