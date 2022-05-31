@@ -126,10 +126,8 @@ bool DBinaryIface::versionIsRight() const
 
     float floatVersion = 0.0f;
 
-    QRegularExpression reg(QLatin1String("^(\\d*[.]\\d*)"));
-
-    // cppcheck-suppress ignoredReturnValue ; dead code?
-    QStringList versionList = reg.match(version()).capturedTexts();
+    QRegularExpression verRegExp(QLatin1String("^(\\d*[.]\\d*)"));
+    QStringList versionList = verRegExp.match(version()).capturedTexts();
 
     if (!versionList.isEmpty())
     {
@@ -150,10 +148,8 @@ bool DBinaryIface::versionIsRight(const float customVersion) const
 
     float floatVersion = 0.0f;
 
-    QRegularExpression reg(QLatin1String("^(\\d*[.]\\d*)"));
-
-    // cppcheck-suppress ignoredReturnValue ; dead code?
-    QStringList versionList = reg.match(version()).capturedTexts();
+    QRegularExpression verRegExp(QLatin1String("^(\\d*[.]\\d*)"));
+    QStringList versionList = verRegExp.match(version()).capturedTexts();
 
     if (!versionList.isEmpty())
     {
@@ -207,8 +203,8 @@ bool DBinaryIface::parseHeader(const QString& output)
 
 void DBinaryIface::setVersion(QString& version)
 {
-    QRegularExpression versionRegExp(QLatin1String("\\d*(\\.\\d+)*"));
-    QStringList versionList = versionRegExp.match(version).capturedTexts();
+    QRegularExpression verRegExp(QLatin1String("\\d*(\\.\\d+)*"));
+    QStringList versionList = verRegExp.match(version).capturedTexts();
 
     if (!versionList.isEmpty())
     {
