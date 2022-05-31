@@ -49,11 +49,10 @@ namespace QtAV
 
 class Q_DECL_HIDDEN AutoSem
 {
-    QSemaphore* s = nullptr;
 
 public:
 
-    AutoSem(QSemaphore* const sem)
+    explicit AutoSem(QSemaphore* const sem)
         : s(sem)
     {
         s->release();
@@ -64,13 +63,17 @@ public:
         if (s->available() > 0)
             s->acquire(s->available());
     }
+
+private:
+
+    QSemaphore* s = nullptr;
 };
 
 class Q_DECL_HIDDEN QueueEmptyCall : public PacketBuffer::StateChangeCallback
 {
 public:
 
-    QueueEmptyCall(AVDemuxThread* const thread)
+    explicit QueueEmptyCall(AVDemuxThread* const thread)
         : mDemuxThread(thread)
     {
     }
@@ -117,8 +120,6 @@ class Q_DECL_HIDDEN stepBackwardTask : public QObject,
     Q_OBJECT
 
 public:
-
-    QTimer timeout_timer;
 
     stepBackwardTask(AVDemuxThread* const dt, qreal t)
         : demux_thread(dt),
@@ -168,12 +169,15 @@ public:
             pts            -= dt / 2.0;
         }
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote()
-            << QString::asprintf("step backward: %lld, %f", qint64(pts*1000.0), pts);
+        qCDebug(DIGIKAM_QTAV_LOG) << "step backward:" << qint64(pts * 1000.0) << "," << pts;
 
         demux_thread->video_thread->setDropFrameOnSeek(false);
         demux_thread->seekInternal(qint64(pts * 1000.0), AccurateSeek);
     }
+
+public:
+
+    QTimer         timeout_timer;
 
 private:
 
@@ -303,7 +307,8 @@ void AVDemuxThread::stepBackward()
 
     if (pre_pts == 0.0)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("can not get previous pts");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("can not get previous pts");
 
         return;
     }
@@ -413,10 +418,11 @@ void AVDemuxThread::seekInternal(qint64 pos, SeekType type, qint64 external_pos)
         video_thread
     };
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote()
-        << QString::asprintf("seek to %s %lld ms (%f%%)",
-            QTime(0, 0, 0).addMSecs(pos).toString().toUtf8().constData(),
-            pos, double(pos - demuxer->startTime()) / double(demuxer->duration()) * 100.0);
+    qCDebug(DIGIKAM_QTAV_LOG) << "seek to"
+                              << QTime(0, 0, 0).addMSecs(pos).toString().toUtf8().constData()
+                              << pos << "ms"
+                              << double(pos - demuxer->startTime()) / double(demuxer->duration()) * 100.0
+                              << "%";
 
     demuxer->setSeekType(type);
     demuxer->seek(pos);
@@ -886,11 +892,13 @@ void AVDemuxThread::run()
 
     // aqueue as a primary buffer: music with/without cover
 
-    AVThread* const thread = (!video_thread || (audio_thread && demuxer->hasAttacedPicture()) ? audio_thread : video_thread);
+    AVThread* const thread = (!video_thread || (audio_thread && demuxer->hasAttacedPicture()) ? audio_thread
+                                                                                              : video_thread);
 
     if (!thread)
     {
-        qCCritical(DIGIKAM_QTAV_LOG_CRITICAL) << "No audio or video thread to process!";
+        qCCritical(DIGIKAM_QTAV_LOG_CRITICAL)
+            << "No audio or video thread to process!";
 
         return;
     }
@@ -1167,7 +1175,9 @@ void AVDemuxThread::run()
 
     while (audio_thread && audio_thread->isRunning())
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("waiting audio thread...");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("waiting audio thread...");
+
         Packet quit_pkt(Packet::createEOF());
         quit_pkt.position = 0;
 
@@ -1183,7 +1193,9 @@ void AVDemuxThread::run()
 
     while (video_thread && video_thread->isRunning())
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("waiting video thread...");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("waiting video thread...");
+
         Packet quit_pkt(Packet::createEOF());
         quit_pkt.position = 0;
 
@@ -1199,7 +1211,8 @@ void AVDemuxThread::run()
 
     thread->disconnect(this, SIGNAL(seekFinished(qint64)));
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Demux thread stops running...");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("Demux thread stops running...");
 
     if (demuxer->atEnd())
         Q_EMIT mediaStatusChanged(QtAV::EndOfMedia);

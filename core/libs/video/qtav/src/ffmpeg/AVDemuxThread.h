@@ -60,9 +60,9 @@ public:
     void stepForward();                         ///< show next video frame and pause
     void stepBackward();
     void seek(qint64 external_pos, qint64 pos, SeekType type); // ms
-    bool isPaused() const;
-    bool isEnd() const;
-    bool atEndOfMedia() const;
+    bool isPaused()                 const;
+    bool isEnd()                    const;
+    bool atEndOfMedia()             const;
     PacketBuffer* buffer();
     void updateBufferState();
     void stop();                                ///< TODO: remove it?
