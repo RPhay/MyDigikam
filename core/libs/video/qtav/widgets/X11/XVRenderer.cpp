@@ -138,7 +138,7 @@ VideoRendererId XVRenderer::id() const
     return VideoRendererId_XV;
 }
 
-#define FOURCC(a,b,c,d) ((a) | ((b)<<8) | ((c)<<16) | ((unsigned)(d)<<24))
+#define FOURCC(a,b,c,d) ((a) | ((b) << 8) | ((c) << 16) | ((unsigned)(d) << 24))
 
 static const struct Q_DECL_HIDDEN xv_format_entry_t
 {
@@ -185,7 +185,9 @@ int xvFormatInPort(Display* disp, XvPortID port, VideoFormat::PixelFormat fmt)
 
     for (const XvImageFormatValues* xvifmt = xvifmts ; xvifmt < xvifmts+count ; ++xvifmt)
     {
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("XvImageFormatValues: %s", xvifmt->guid);
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote()
+            << QString::asprintf("XvImageFormatValues: %s",
+                xvifmt->guid);
 
         if (
                (xvifmt->type   == xv_type)  &&
@@ -230,7 +232,9 @@ public:
         if (XvQueryAdaptors(display, DefaultRootWindow(display), &num_adaptors, &xv_adaptor_info) != Success)
         {
             available = false;
-            qCCritical(DIGIKAM_QTAVWIDGETS_LOG_CRITICAL) << QString::asprintf("Query adaptors failed!");
+
+            qCCritical(DIGIKAM_QTAVWIDGETS_LOG_CRITICAL)
+                << QString::asprintf("Query adaptors failed!");
 
             return;
         }
@@ -238,7 +242,9 @@ public:
         if (num_adaptors < 1)
         {
             available = false;
-            qCCritical(DIGIKAM_QTAVWIDGETS_LOG_CRITICAL) << QString::asprintf("No adaptor found!");
+
+            qCCritical(DIGIKAM_QTAVWIDGETS_LOG_CRITICAL)
+                << QString::asprintf("No adaptor found!");
 
             return;
         }
@@ -313,7 +319,9 @@ public:
         if (!gc)
         {
             available = false;
-            qCCritical(DIGIKAM_QTAVWIDGETS_LOG_CRITICAL) << QString::asprintf("Create GC failed!");
+
+            qCCritical(DIGIKAM_QTAVWIDGETS_LOG_CRITICAL)
+                << QString::asprintf("Create GC failed!");
 
             return false;
         }
@@ -341,9 +349,10 @@ public:
             if ((xv_adaptor_info[i].type & (XvInputMask | XvImageMask)) == (XvInputMask | XvImageMask))
             {
                 for (XvPortID p = xv_adaptor_info[i].base_id ;
-                     p < xv_adaptor_info[i].base_id + xv_adaptor_info[i].num_ports ; ++p)
+                     (p < (xv_adaptor_info[i].base_id + xv_adaptor_info[i].num_ports)) ; ++p)
                 {
-                    qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << "XvAdaptorInfo:" << xv_adaptor_info[i].name;
+                    qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << "XvAdaptorInfo:"
+                                                     << xv_adaptor_info[i].name;
 
                     format_id = xvFormatInPort(display, p, pixfmt);
 
@@ -362,7 +371,8 @@ public:
 
         if (!xv_port)
         {
-            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("xv port not found!");
+            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+                << QString::asprintf("xv port not found!");
         }
 
         format          = pixfmt;
@@ -372,7 +382,9 @@ public:
 #ifdef _XSHM_H_
 
         use_shm = XShmQueryExtension(display);
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("use xv shm: %d", use_shm);
+
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote()
+            << QString::asprintf("use xv shm: %d", use_shm);
 
         if (!use_shm)
             goto no_shm;
@@ -475,7 +487,8 @@ bool XVRendererPrivate::XvSetPortAttributeIfExists(const char* key, int value)
 
     if (!attributes)
     {
-        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("XvQueryPortAttributes error");
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+            << QString::asprintf("XvQueryPortAttributes error");
 
         return false;
     }
@@ -509,11 +522,12 @@ XVRenderer::XVRenderer(QWidget* const parent, Qt::WindowFlags f)
     setAcceptDrops(true);
     setFocusPolicy(Qt::StrongFocus);
 
-    /* To rapidly update custom widgets that constantly paint over their entire areas with
+    /* To quickly update custom widgets that constantly paint over their entire areas with
      * opaque content, e.g., video streaming widgets, it is better to set the widget's
      * Qt::WA_OpaquePaintEvent, avoiding any unnecessary overhead associated with repainting the
      * widget's background
      */
+
     setAttribute(Qt::WA_OpaquePaintEvent);
 /*
     setAttribute(Qt::WA_NoSystemBackground);
@@ -555,8 +569,8 @@ static void SplitPlanes(quint8* dstu, size_t dstu_pitch,
     {
         for (unsigned x = 0 ; x < width ; ++x)
         {
-            dstu[x] = src[2*x+0];
-            dstv[x] = src[2*x+1];
+            dstu[x] = src[2 * x + 0];
+            dstv[x] = src[2 * x + 1];
         }
 
         src  += src_pitch;
@@ -663,7 +677,8 @@ bool XVRenderer::receiveFrame(const VideoFrame& frame)
         case VideoFormat::Format_YUV420P:
         case VideoFormat::Format_YV12:
         {
-            CopyFromYv12_2(dst, dst_linesize, src.data(), src_linesize.data(), dst_linesize[0], d.xv_image->height);
+            CopyFromYv12_2(dst, dst_linesize, src.data(), src_linesize.data(),
+                           dst_linesize[0], d.xv_image->height);
 
             break;
         }
@@ -672,14 +687,16 @@ bool XVRenderer::receiveFrame(const VideoFrame& frame)
         {
             std::swap(dst[1], dst[2]);
             std::swap(dst_linesize[1], dst_linesize[2]);
-            CopyFromNv12(dst, dst_linesize, src.data(), src_linesize.data(), dst_linesize[0], d.xv_image->height);
+            CopyFromNv12(dst, dst_linesize, src.data(), src_linesize.data(),
+                         dst_linesize[0], d.xv_image->height);
 
             break;
         }
 
         case VideoFormat::Format_NV21:
         {
-            CopyFromNv12(dst, dst_linesize, src.data(), src_linesize.data(), dst_linesize[0], d.xv_image->height);
+            CopyFromNv12(dst, dst_linesize, src.data(), src_linesize.data(),
+                         dst_linesize[0], d.xv_image->height);
 
             break;
         }
@@ -687,7 +704,8 @@ bool XVRenderer::receiveFrame(const VideoFrame& frame)
         case VideoFormat::Format_UYVY:
         case VideoFormat::Format_YUYV:
         {
-            VideoFrame::copyPlane(dst[0], dst_linesize[0], src[0], src_linesize[0], dst_linesize[0], d.xv_image->height);
+            VideoFrame::copyPlane(dst[0], dst_linesize[0], src[0], src_linesize[0],
+                                  dst_linesize[0], d.xv_image->height);
 
             break;
         }
@@ -785,6 +803,7 @@ void XVRenderer::showEvent(QShowEvent* event)
      * When Qt::WindowStaysOnTopHint changed, window will hide first then show. If you
      * don't do anything here, the widget content will never be updated.
      */
+
     d.prepareDeviceResource();
 }
 
@@ -799,7 +818,7 @@ bool XVRenderer::onSetContrast(qreal c)
 {
     DPTR_D(XVRenderer);
 
-    return d.XvSetPortAttributeIfExists("XV_CONTRAST",c * 100);
+    return d.XvSetPortAttributeIfExists("XV_CONTRAST", c * 100);
 }
 
 bool XVRenderer::onSetHue(qreal h)

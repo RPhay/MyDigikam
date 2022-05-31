@@ -53,7 +53,7 @@ class Q_DECL_HIDDEN ExtractThread : public QThread
 public:
 
     ExtractThread(QObject* const parent = nullptr)
-        : QThread(parent),
+        : QThread   (parent),
           timeout_ms(50UL),
           stop      (false)
     {
@@ -157,7 +157,8 @@ protected:
             }
         }
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("ExtractThread exiting...");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("ExtractThread exiting...");
     }
 
 public:
@@ -344,7 +345,10 @@ public:
             if (abort_seek)
             {
                 err     = QLatin1String("abort seek before read");
-                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("VideoFrameExtractor abort seek before read");
+
+                qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                    << QString::asprintf("VideoFrameExtractor abort seek before read");
+
                 aborted = true;
 
                 return false;
@@ -364,7 +368,10 @@ public:
             if (((qint64)(pkt.pts * 1000.0) - value) > (qint64)range)
             {
                 if (warn_out_of_range)
-                    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("read packet out of range");
+                {
+                    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                        << QString::asprintf("read packet out of range");
+                }
 
                 warn_out_of_range = false;
 
@@ -381,7 +388,10 @@ public:
                 break;
 
             if (warn_bad_seek)
-                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Not seek to key frame!!!");
+            {
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                    << QString::asprintf("Not seek to key frame!!!");
+            }
 
             warn_bad_seek = false;
         }
@@ -402,7 +412,7 @@ public:
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
                 << QString::asprintf("VideoFrameExtractor failed to get a packet at %lld", value);
 
-            err = QString().asprintf("failed to get a packet at %lld",value);
+            err = QString().asprintf("failed to get a packet at %lld", value);
 
             return false;
         }
@@ -518,7 +528,9 @@ public:
 
             if (!decoder->decode(pkt))
             {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("decode failed!");
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                    << QString::asprintf("decode failed!");
+
                 frame = VideoFrame();
                 err   = QLatin1String("decode failed");
 
@@ -819,18 +831,23 @@ void VideoFrameExtractor::extractInternal(qint64 pos)
         Q_EMIT precisionChanged();
     }
 
-    bool extractOk = false, isAborted = true;
+    bool extractOk = false;
+    bool isAborted = true;
     QString err;
     extractOk      = d.extractInPrecision(pos, precision(), err, isAborted);
 
     if (!extractOk)
     {
         if (isAborted)
+        {
             Q_EMIT aborted(QString().asprintf("Abort at position %lld: %s",
-                                               pos, err.toLatin1().constData()));
+                                              pos, err.toLatin1().constData()));
+        }
         else
+        {
             Q_EMIT error(QString().asprintf("Cannot extract frame at position %lld: %s",
                                             pos, err.toLatin1().constData()));
+        }
 
         return;
     }

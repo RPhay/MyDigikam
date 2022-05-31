@@ -74,7 +74,8 @@ class Q_DECL_HIDDEN X11Renderer : public QWidget,
 
 public:
 
-    X11Renderer(QWidget* const parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
+    X11Renderer(QWidget* const parent = nullptr,
+                Qt::WindowFlags f = Qt::WindowFlags(Qt::Widget));
 
     VideoRendererId id()                              const override;
     bool isSupported(VideoFormat::PixelFormat pixfmt) const override;
@@ -109,12 +110,12 @@ protected:
     // draw the current frame using the current paint engine. called by paintEvent()
 
     void drawFrame()                                        override;
-    void paintEvent(QPaintEvent *)                          override;
-    void resizeEvent(QResizeEvent *)                        override;
+    void paintEvent(QPaintEvent*)                           override;
+    void resizeEvent(QResizeEvent*)                         override;
 
     // stay on top will change parent, hide then show(windows)
 
-    void showEvent(QShowEvent *)                            override;
+    void showEvent(QShowEvent*)                             override;
 
     DECLARE_VIDEO_RENDERER_EMIT_METHODS
 };
@@ -230,13 +231,18 @@ public:
         //XvQueryExtension()
 
         char* dispName = XDisplayName(nullptr);
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("X11 open display: %s", dispName);
+
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote()
+            << QString::asprintf("X11 open display: %s", dispName);
+
         display        = XOpenDisplay(dispName);
 
         if (!display)
         {
             available = false;
-            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Open X11 display error");
+
+            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+                << QString::asprintf("Open X11 display error");
 
             return;
         }
@@ -247,7 +253,9 @@ public:
 
         if (!XMatchVisualInfo(display, DefaultScreen(display), depth, TrueColor, &vinfo))
         {
-            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("XMatchVisualInfo error");
+            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+                << QString::asprintf("XMatchVisualInfo error");
+
             available = false;
 
             return;
@@ -280,11 +288,12 @@ public:
 
             mask = (ximg->red_mask | ximg->green_mask | ximg->blue_mask);
 
-            qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << QString::fromLatin1("color mask: %1 %2 %3 %4")
-                .arg(mask)
-                .arg(ximg->red_mask)
-                .arg(ximg->green_mask)
-                .arg(ximg->blue_mask);
+            qCDebug(DIGIKAM_QTAVWIDGETS_LOG)
+                << QString::fromLatin1("color mask: %1 %2 %3 %4")
+                    .arg(mask)
+                    .arg(ximg->red_mask)
+                    .arg(ximg->green_mask)
+                    .arg(ximg->blue_mask);
 
             XDestroyImage(ximg);
         }
@@ -349,7 +358,9 @@ public:
         if (!gc)
         {
             available = false;
-            qCCritical(DIGIKAM_QTAVWIDGETS_LOG_CRITICAL) << QString::asprintf("Create GC failed!");
+
+            qCCritical(DIGIKAM_QTAVWIDGETS_LOG_CRITICAL)
+                << QString::asprintf("Create GC failed!");
 
             return false;
         }
@@ -386,7 +397,9 @@ public:
         destroyX11Image(index);
         use_shm              = XShmQueryExtension(display);
         XShmSegmentInfo &shm = shm_pool[index];
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("use x11 shm: %d", use_shm);
+
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote()
+            << QString::asprintf("use x11 shm: %d", use_shm);
 
         if (!use_shm)
             goto no_shm;
@@ -399,7 +412,8 @@ public:
 
         if (!ximage)
         {
-            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("XShmCreateImage error");
+            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+                << QString::asprintf("XShmCreateImage error");
 
             goto no_shm;
         }
@@ -408,7 +422,8 @@ public:
 
         if (shm.shmid < 0)
         {
-            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("shmget error");
+            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+                << QString::asprintf("shmget error");
 
             goto no_shm;
         }
@@ -423,7 +438,9 @@ public:
             XDestroyImage(ximage);
             ximage = nullptr;
             ximage_data[index].clear();
-            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Shared memory error,disabling ( seg id error )");
+
+            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+                << QString::asprintf("Shared memory error,disabling ( seg id error )");
 
             goto no_shm;
         }
@@ -433,7 +450,8 @@ public:
 
         if (!XShmAttach(display, &shm))
         {
-            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("Attach to shm failed! try to use none shm");
+            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+                << QString::asprintf("Attach to shm failed! try to use none shm");
 
             goto no_shm;
         }
@@ -583,10 +601,10 @@ int X11RendererPrivate::resizeXImage(int index)
         !video_frame.map(UserSurface, &interopFrame, VideoFormat(VideoFormat::Format_RGB32)) // check pixel format and scale to ximage size&line_size
        )
     {
-        if (!frame_orig.constBits(0)               || // always convert hw frames
-            (frame_orig.pixelFormat() != pixfmt)   ||
-            (frame_orig.width() != ximage->width)  ||
-            (frame_orig.height() != ximage->height)
+        if (!frame_orig.constBits(0)                     || // always convert hw frames
+            (frame_orig.pixelFormat() != pixfmt)         ||
+            (frame_orig.width()       != ximage->width)  ||
+            (frame_orig.height()      != ximage->height)
            )
             video_frame = frame_orig.to(pixfmt, QSize(ximage->width, ximage->height));
         else
@@ -693,7 +711,9 @@ void X11Renderer::drawFrame()
         {
             if (wait_count++ > 100)
             {
-                qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("reset ShmCompletionWaitCount");
+                qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote()
+                    << QString::asprintf("reset ShmCompletionWaitCount");
+
                 d.ShmCompletionWaitCount = 0;
 
                 break;
@@ -734,6 +754,7 @@ void X11Renderer::drawFrame()
                      d.out_rect.x(), d.out_rect.y(), d.out_rect.width(), d.out_rect.height(),
                      True               // true: send event
                     );
+
         d.ShmCompletionWaitCount++;
     }
     else
@@ -741,6 +762,7 @@ void X11Renderer::drawFrame()
         XPutImage(d.display, winId(), d.gc, ximage,
                   roi.x(), roi.y(), // roi.width(), roi.height(),
                   d.out_rect.x(), d.out_rect.y(), d.out_rect.width(), d.out_rect.height());
+
         XSync(d.display, False);    // update immediately
     }
 }

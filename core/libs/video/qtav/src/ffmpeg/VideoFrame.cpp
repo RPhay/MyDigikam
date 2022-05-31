@@ -61,10 +61,15 @@ VideoFrame VideoFrame::fromGPU(const VideoFormat& fmt, int width, int height, in
     Q_ASSERT(src[0] && (pitch[0] > 0) && "VideoFrame::fromGPU: src[0] and pitch[0] must be set");
 
     const int nb_planes    = fmt.planeCount();
-    const int chroma_pitch = (nb_planes > 1 ? fmt.bytesPerLine(pitch[0], 1) : 0);
+    const int chroma_pitch = ((nb_planes > 1) ? fmt.bytesPerLine(pitch[0], 1) : 0);
     const int chroma_h     = fmt.chromaHeight(surface_h);
 
-    int h[] = { surface_h, 0, 0 };
+    int h[] =
+    {
+        surface_h,
+        0,
+        0
+    };
 
     for (int i = 1 ; i < nb_planes ; ++i)
     {
@@ -76,12 +81,12 @@ VideoFrame VideoFrame::fromGPU(const VideoFormat& fmt, int width, int height, in
             pitch[i] = chroma_pitch;
 
         if (!src[i])
-            src[i] = src[i-1] + pitch[i-1]*h[i-1];
+            src[i] = src[i - 1] + pitch[i - 1] * h[i - 1];
     }
 
     if (swapUV)
     {
-        std::swap(src[1], src[2]);
+        std::swap(src[1],   src[2]);
         std::swap(pitch[1], pitch[2]);
     }
 
@@ -163,7 +168,7 @@ class Q_DECL_HIDDEN VideoFramePrivate : public FramePrivate
 public:
 
     VideoFramePrivate()
-        : FramePrivate(),
+        : FramePrivate      (),
           width             (0),
           height            (0),
           color_space       (ColorSpace_Unknown),
@@ -174,7 +179,7 @@ public:
     }
 
     VideoFramePrivate(int w, int h, const VideoFormat& fmt)
-        : FramePrivate(),
+        : FramePrivate      (),
           width             (w),
           height            (h),
           color_space       (ColorSpace_Unknown),
@@ -229,8 +234,8 @@ VideoFrame::VideoFrame(const QImage& image)
 }
 
 /*!
-    Constructs a shallow copy of \a other.  Since VideoFrame is
-    explicitly shared, these two instances will reflect the same frame.
+ * Constructs a shallow copy of \a other.  Since VideoFrame is
+ * explicitly shared, these two instances will reflect the same frame.
  */
 VideoFrame::VideoFrame(const VideoFrame& other)
     : Frame(other)
@@ -238,8 +243,8 @@ VideoFrame::VideoFrame(const VideoFrame& other)
 }
 
 /*!
-    Assigns the contents of \a other to this video frame.  Since VideoFrame is
-    explicitly shared, these two instances will reflect the same frame.
+ * Assigns the contents of \a other to this video frame.  Since VideoFrame is
+ * explicitly shared, these two instances will reflect the same frame.
  */
 VideoFrame &VideoFrame::operator =(const VideoFrame& other)
 {
@@ -278,7 +283,8 @@ VideoFrame VideoFrame::clone() const
         // maybe in gpu memory, then bits() is not set
 
         qCDebug(DIGIKAM_QTAV_LOG).noquote()
-            << QString::asprintf("frame data not valid. size: %d", d->data.size());
+            << QString::asprintf("frame data not valid. size: %d",
+                d->data.size());
 
         VideoFrame f(width(), height(), d->format);
         f.d_ptr->metadata = d->metadata; // need metadata?
@@ -429,7 +435,7 @@ QImage VideoFrame::toImage(QImage::Format fmt, const QSize& dstSize, const QRect
     Q_D(const VideoFrame);
 
     if (!d->qt_image.isNull()               &&
-        (fmt == d->qt_image->format())      &&
+        (fmt     == d->qt_image->format())  &&
         (dstSize == d->qt_image->size())    &&
         (!roi.isValid() || (roi == d->qt_image->rect())))
     {
@@ -487,8 +493,8 @@ VideoFrame VideoFrame::to(const VideoFormat &fmt, const QSize& dstSize, const QR
 
     if (
         (fmt.pixelFormatFFmpeg() == pixelFormatFFmpeg()) &&
-        (w == width())                                   &&
-        (h == height())
+        (w                       == width())             &&
+        (h                       == height())
         // TODO: roi check.
        )
     {
@@ -506,7 +512,8 @@ VideoFrame VideoFrame::to(const VideoFormat &fmt, const QSize& dstSize, const QR
 
     if (!conv.convert(d->planes.constData(), d->line_sizes.constData()))
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "VideoFrame::to error: " << format() << "=>" << fmt;
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "VideoFrame::to error:"
+                                         << format() << "=>" << fmt;
 
         return VideoFrame();
     }
