@@ -731,7 +731,7 @@ T JObject<CTag>::call(Args&&... args) const {
     using namespace detail;
     static const auto s = args_signature(std::forward<Args>(args)...).append(signature_of(T())); // cppcheck-suppress accessForwarded
     static jmethodID mid = nullptr;
-    return call_with_methodID<T>(oid_, classId(), &mid, [this](std::string&& err){ setError(std::move(err));}, s, MTag::name(), std::forward<Args>(args)...);
+    return call_with_methodID<T>(oid_, classId(), &mid, [this](std::string&& err){ setError(std::move(err));}, s, MTag::name(), std::forward<Args>(args)...); // cppcheck-suppress accessForwarded
 }
 template<class CTag>
 template<class MTag, typename... Args,  detail::if_MethodTag<MTag>>
@@ -739,7 +739,7 @@ void JObject<CTag>::call(Args&&... args) const {
     using namespace detail;
     static const auto s = args_signature(std::forward<Args>(args)...).append(signature_of()); // cppcheck-suppress accessForwarded
     static jmethodID mid = nullptr;
-    call_with_methodID<void>(oid_, classId(), &mid, [this](std::string&& err){ setError(std::move(err));}, s, MTag::name(), std::forward<Args>(args)...);
+    call_with_methodID<void>(oid_, classId(), &mid, [this](std::string&& err){ setError(std::move(err));}, s, MTag::name(), std::forward<Args>(args)...); // cppcheck-suppress accessForwarded
 }
 template<class CTag>
 template<typename T, class MTag, typename... Args,  detail::if_MethodTag<MTag>>
@@ -747,7 +747,7 @@ T JObject<CTag>::callStatic(Args&&... args) {
     using namespace detail;
     static const auto s = args_signature(std::forward<Args>(args)...).append(signature_of(T())); // cppcheck-suppress accessForwarded
     static jmethodID mid = nullptr;
-    return call_static_with_methodID<T>(classId(), &mid, nullptr, s, MTag::name(), std::forward<Args>(args)...);
+    return call_static_with_methodID<T>(classId(), &mid, nullptr, s, MTag::name(), std::forward<Args>(args)...); // cppcheck-suppress accessForwarded
 }
 template<class CTag>
 template<class MTag, typename... Args,  detail::if_MethodTag<MTag>>
@@ -755,7 +755,7 @@ void JObject<CTag>::callStatic(Args&&... args) {
     using namespace detail;
     static const auto s = args_signature(std::forward<Args>(args)...).append(signature_of()); // cppcheck-suppress accessForwarded
     static jmethodID mid = nullptr;
-    return call_static_with_methodID<void>(classId(), &mid, nullptr, s, MTag::name(), std::forward<Args>(args)...);
+    return call_static_with_methodID<void>(classId(), &mid, nullptr, s, MTag::name(), std::forward<Args>(args)...); // cppcheck-suppress accessForwarded
 }
 
 template<class CTag>
@@ -799,28 +799,28 @@ template<typename T, typename... Args>
 T JObject<CTag>::call(const std::string &methodName, Args&&... args) const {
     using namespace detail;
     static const auto s = args_signature(std::forward<Args>(args)...).append(signature_of(T())); // cppcheck-suppress accessForwarded
-    return call_with_methodID<T>(oid_, classId(), nullptr, [this](std::string&& err){ setError(std::move(err));}, s, methodName.c_str(), std::forward<Args>(args)...);
+    return call_with_methodID<T>(oid_, classId(), nullptr, [this](std::string&& err){ setError(std::move(err));}, s, methodName.c_str(), std::forward<Args>(args)...); // cppcheck-suppress accessForwarded
 }
 template<class CTag>
 template<typename... Args>
 void JObject<CTag>::call(const std::string &methodName, Args&&... args) const {
     using namespace detail;
     static const auto s = args_signature(std::forward<Args>(args)...).append(signature_of()); // cppcheck-suppress accessForwarded
-    call_with_methodID<void>(oid_, classId(), nullptr, [this](std::string&& err){ setError(std::move(err));}, s, methodName.c_str(), std::forward<Args>(args)...);
+    call_with_methodID<void>(oid_, classId(), nullptr, [this](std::string&& err){ setError(std::move(err));}, s, methodName.c_str(), std::forward<Args>(args)...); // cppcheck-suppress accessForwarded
 }
 template<class CTag>
 template<typename T, typename... Args>
 T JObject<CTag>::callStatic(const std::string &name, Args&&... args) {
     using namespace detail;
     static const auto s = args_signature(std::forward<Args>(args)...).append(signature_of(T())); // cppcheck-suppress accessForwarded
-    return call_static_with_methodID<T>(classId(), nullptr, nullptr, s, name.c_str(), std::forward<Args>(args)...);
+    return call_static_with_methodID<T>(classId(), nullptr, nullptr, s, name.c_str(), std::forward<Args>(args)...); // cppcheck-suppress accessForwarded
 }
 template<class CTag>
 template<typename... Args>
 void JObject<CTag>::callStatic(const std::string &name, Args&&... args) {
     using namespace detail;
     static const auto s = args_signature(std::forward<Args>(args)...).append(signature_of()); // cppcheck-suppress accessForwarded
-    call_static_with_methodID<void>(classId(), nullptr, nullptr, s, name.c_str(), std::forward<Args>(args)...);
+    call_static_with_methodID<void>(classId(), nullptr, nullptr, s, name.c_str(), std::forward<Args>(args)...); // cppcheck-suppress accessForwarded
 }
 
 template<class CTag>
