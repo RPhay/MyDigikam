@@ -180,11 +180,9 @@ void AVThread::requestSeek()
 {
     class Q_DECL_HIDDEN SeekPTS : public QRunnable
     {
-        AVThread* self = nullptr;
-
     public:
 
-        SeekPTS(AVThread* const thread)
+        explicit SeekPTS(AVThread* const thread)
             : self(thread)
         {
         }
@@ -195,6 +193,8 @@ void AVThread::requestSeek()
         }
 
     private:
+
+        AVThread* self = nullptr;
 
         Q_DISABLE_COPY(SeekPTS);
     };
@@ -351,7 +351,9 @@ PacketBuffer* AVThread::packetQueue() const
 void AVThread::setDecoder(AVDecoder *decoder)
 {
     DPTR_D(AVThread);
+
     QMutexLocker lock(&d.mutex);
+
     Q_UNUSED(lock);
     d.dec = decoder;
 }
@@ -364,7 +366,9 @@ AVDecoder* AVThread::decoder() const
 void AVThread::setOutput(AVOutput* out)
 {
     DPTR_D(AVThread);
+
     QMutexLocker lock(&d.mutex);
+
     Q_UNUSED(lock);
 
     if (!d.outputSet)
@@ -482,7 +486,7 @@ void AVThread::waitAndCheck(ulong value, qreal pts)
 {
     DPTR_D(AVThread);
 
-    if ((value <= 0) || (pts < 0))
+    if ((value == 0) || (pts < 0))
         return;
 
     value += d.wait_err;

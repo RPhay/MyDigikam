@@ -63,36 +63,36 @@ public:
     void unlock();
 
     void setClock(AVClock* clock);
-    AVClock* clock() const;
+    AVClock* clock()                    const;
 
-    PacketBuffer* packetQueue() const;
+    PacketBuffer* packetQueue()         const;
 
     void setDecoder(AVDecoder* decoder);
-    AVDecoder* decoder() const;
+    AVDecoder* decoder()                const;
 
     void setOutput(AVOutput* out);
-    AVOutput* output() const;
+    AVOutput* output()                  const;
 
     void setOutputSet(OutputSet* set);
-    OutputSet* outputSet() const;
+    OutputSet* outputSet()              const;
 
     void setDemuxEnded(bool ended);
 
-    bool isPaused() const;
+    bool isPaused()                     const;
 
     bool waitForStarted(int msec = -1);
 
     bool installFilter(Filter* filter, int index = 0x7FFFFFFF, bool lock = true);
     bool uninstallFilter(Filter* filter, bool lock = true);
-    const QList<Filter*> &filters() const;
+    const QList<Filter*> &filters()     const;
 
     // TODO: resample, resize task etc.
 
     void scheduleTask(QRunnable* task);
     void requestSeek();
     void scheduleFrameDrop(bool value = true);
-    qreal previousHistoryPts() const;           // move to statistics?
-    qreal decodeFrameRate() const;              // move to statistics?
+    qreal previousHistoryPts()          const;           // move to statistics?
+    qreal decodeFrameRate()             const;           // move to statistics?
     void setDropFrameOnSeek(bool value);
 
     void resetState();
@@ -125,7 +125,7 @@ private Q_SLOTS:
 
 protected:
 
-    AVThread(AVThreadPrivate& d, QObject* const parent = nullptr);
+    explicit AVThread(AVThreadPrivate& d, QObject* const parent = nullptr);
 
     /*
      * If the pause state is true set by pause(true), then block the thread and wait for pause
