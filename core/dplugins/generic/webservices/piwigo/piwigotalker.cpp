@@ -518,8 +518,9 @@ void PiwigoTalker::parseResponseGetVersion(const QByteArray& data)
             if ((ts.name() == QLatin1String("rsp")) &&
                 (ts.attributes().value(QLatin1String("stat")) == QLatin1String("ok")))
             {
-                QString v = ts.readElementText();
+                QString v                     = ts.readElementText();
                 QRegularExpressionMatch match = verrx.match(v);
+
                 if (match.hasMatch())
                 {
                     QStringList qsl = match.capturedTexts();

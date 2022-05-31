@@ -347,6 +347,7 @@ void ItemScanner::scanTags()
 
             // _Digikam_root_tag_ is present in some photos tagged with older
             // version of digiKam, must be removed
+
             if (keyword.contains(QRegularExpression(QLatin1String("(_Digikam_root_tag_/|/_Digikam_root_tag_|_Digikam_root_tag_)"))))
             {
                 keyword = keyword.replace(QRegularExpression(QLatin1String("(_Digikam_root_tag_/|/_Digikam_root_tag_|_Digikam_root_tag_)")),

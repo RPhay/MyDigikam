@@ -27,7 +27,6 @@
 
 // Qt includes
 
-#include <QRegularExpression>
 #include <QStandardPaths>
 #include <QApplication>
 #include <QMessageBox>

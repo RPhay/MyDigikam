@@ -33,7 +33,6 @@
 
 #include <QList>
 #include <QColor>
-#include <QRegularExpression>
 #include <QStringList>
 
 // Local includes

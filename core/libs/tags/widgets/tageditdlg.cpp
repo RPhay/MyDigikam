@@ -368,7 +368,7 @@ void TagEditDlg::slotTitleChanged(const QString& newtitle)
     }
 
     QRegularExpression emptyTitle(QRegularExpression::anchoredPattern(QLatin1String("^\\s*$")));
-    bool enable        = (!emptyTitle.match(newtitle).hasMatch() && !newtitle.isEmpty());
+    bool enable = (!emptyTitle.match(newtitle).hasMatch() && !newtitle.isEmpty());
     d->buttons->button(QDialogButtonBox::Ok)->setEnabled(enable);
 }
 
