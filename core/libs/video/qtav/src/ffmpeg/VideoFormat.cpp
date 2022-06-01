@@ -248,8 +248,8 @@ private:
 
 static const struct Q_DECL_HIDDEN
 {
-    VideoFormat::PixelFormat fmt;
-    AVPixelFormat            ff; // int
+    VideoFormat::PixelFormat fmt = VideoFormat::Format_Invalid;
+    AVPixelFormat            ff  = QTAV_PIX_FMT_C(NONE); // int
 }
 pixfmt_map[] =
 {
@@ -554,8 +554,8 @@ QVector<int> VideoFormat::pixelFormatsFFmpeg()
 */
 static const struct Q_DECL_HIDDEN
 {
-    VideoFormat::PixelFormat fmt;
-    QImage::Format           qfmt;
+    VideoFormat::PixelFormat fmt  = VideoFormat::Format_Invalid;
+    QImage::Format           qfmt = QImage::Format_Invalid;
 }
 qpixfmt_map[] =
 {

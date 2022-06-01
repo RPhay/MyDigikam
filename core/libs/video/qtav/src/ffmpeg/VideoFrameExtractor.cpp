@@ -241,7 +241,9 @@ public:
     {
         const bool loaded = ((demuxer.fileName() == source) && demuxer.isLoaded());
 
-        if (loaded && decoder) // && !demuxer.atEnd()) // we may seek back later when eof got. TODO: remove demuxer.atEnd()
+        // we may seek back later when eof got. TODO: remove demuxer.atEnd()
+
+        if (loaded && decoder) // && !demuxer.atEnd())
             return true;
 
         seek_count = 0;
@@ -419,7 +421,10 @@ public:
             return false;
         }
 
-        decoder->flush(); // must flush otherwise old frames will be decoded at the beginning
+        // must flush otherwise old frames will be decoded at the beginning
+
+        decoder->flush();
+
         decoder->setOptions(dec_opt_normal);
 
         // must decode key frame

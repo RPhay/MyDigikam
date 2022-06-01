@@ -371,7 +371,8 @@ void VideoThread::run()
 
     // TODO: kNbSlowSkip depends on video fps, ensure slow time <= 2s
 
-    /* kNbSlowSkip: if video frame slow count >= kNbSlowSkip, skip decoding all frames until next keyframe reaches.
+    /*
+     * kNbSlowSkip: if video frame slow count >= kNbSlowSkip, skip decoding all frames until next keyframe reaches.
      * if slow count > kNbSlowSkip/2, skip rendering every 3 or 6 frames
      */
 
@@ -666,6 +667,7 @@ void VideoThread::run()
             if (diff < -kSyncThreshold)
             {
                 // Speed up. drop frame?
+
                 //continue;
             }
         }
@@ -870,7 +872,7 @@ void VideoThread::run()
         pkt_data = pkt.data.constData();
 
         if (frame.timestamp() < 0)
-            frame.setTimestamp(pkt.pts); // pkt.pts is wrong. >= real timestamp
+            frame.setTimestamp(pkt.pts);          // pkt.pts is wrong. >= real timestamp
 
         const qreal pts = frame.timestamp();
         d.pts_history.push_back(pts);

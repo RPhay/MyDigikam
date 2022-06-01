@@ -302,7 +302,11 @@ VideoFrame VideoFrame::clone() const
     }
 
     QByteArray buf(bytes, 0);
-    char* dst           = buf.data();                         // must before buf is shared, otherwise data will be detached.
+
+    // must before buf is shared, otherwise data will be detached.
+
+    char* dst           = buf.data();
+
     VideoFrame f(width(), height(), d->format, buf);
     const int nb_planes = d->format.planeCount();
 
@@ -430,7 +434,7 @@ int VideoFrame::effectiveBytesPerLine(int plane) const
     return d->format.bytesPerLine(width(), plane);
 }
 
-QImage VideoFrame::toImage(QImage::Format fmt, const QSize& dstSize, const QRectF &roi) const
+QImage VideoFrame::toImage(QImage::Format fmt, const QSize& dstSize, const QRectF& roi) const
 {
     Q_D(const VideoFrame);
 
