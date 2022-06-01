@@ -210,7 +210,7 @@ int Frame::channelCount() const
 }
 
 /*!
-    Returns any extra metadata associated with this frame.
+ * Returns any extra metadata associated with this frame.
  */
 QVariantMap Frame::availableMetaData() const
 {
@@ -220,13 +220,13 @@ QVariantMap Frame::availableMetaData() const
 }
 
 /*!
-    Returns any metadata for this frame for the given \a key.
-
-    This might include frame specific information from
-    a camera, or subtitles from a decoded video stream.
-
-    See the documentation for the relevant video frame
-    producer for further information about available metadata.
+ * Returns any metadata for this frame for the given \a key.
+ *
+ * This might include frame specific information from
+ * a camera, or subtitles from a decoded video stream.
+ *
+ * See the documentation for the relevant video frame
+ * producer for further information about available metadata.
  */
 QVariant Frame::metaData(const QString& key) const
 {
@@ -236,13 +236,13 @@ QVariant Frame::metaData(const QString& key) const
 }
 
 /*!
-    Sets the metadata for the given \a key to \a value.
-
-    If \a value is a null variant, any metadata for this key will be removed->
-
-    The producer of the video frame might use this to associate
-    certain data with this frame, or for an intermediate processor
-    to add information for a consumer of this frame.
+ * Sets the metadata for the given \a key to \a value.
+ *
+ * If \a value is a null variant, any metadata for this key will be removed->
+ *
+ * The producer of the video frame might use this to associate
+ * certain data with this frame, or for an intermediate processor
+ * to add information for a consumer of this frame.
  */
 void Frame::setMetaData(const QString& key, const QVariant& value)
 {

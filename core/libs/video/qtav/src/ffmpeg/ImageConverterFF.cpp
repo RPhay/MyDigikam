@@ -104,7 +104,8 @@ bool ImageConverterFF::convert(const quint8* const src[], const int srcStride[],
 {
     DPTR_D(ImageConverterFF);
 
-    // Check out dimension. equals to in dimension if not set. TODO: move to another common function
+    // Check out dimension. equals to in dimension if not set.
+    // TODO: move to another common function
 
     if ((d.w_out == 0) || (d.h_out == 0))
     {
@@ -122,11 +123,10 @@ bool ImageConverterFF::convert(const quint8* const src[], const int srcStride[],
                                      ((d.w_in == d.w_out) && (d.h_in == d.h_out)) ? SWS_POINT : SWS_FAST_BILINEAR, // SWS_BICUBIC
                                      nullptr, nullptr, nullptr
     );
-
-    //int64_t flags = SWS_CPU_CAPS_SSE2 | SWS_CPU_CAPS_MMX | SWS_CPU_CAPS_MMX2;
-
-    //av_opt_set_int(d.sws_ctx, "sws_flags", flags, 0);
-
+/*
+    int64_t flags = SWS_CPU_CAPS_SSE2 | SWS_CPU_CAPS_MMX | SWS_CPU_CAPS_MMX2;
+    av_opt_set_int(d.sws_ctx, "sws_flags", flags, 0);
+*/
     if (!d.sws_ctx)
         return false;
 
@@ -182,9 +182,9 @@ bool ImageConverterFFPrivate::setupColorspaceDetails(bool force)
                                                (((contrast   + 100) << 16) + 50) / 100,
                                                (((saturation + 100) << 16) + 50) / 100
                                               ) >= 0);
-
-    // sws_init_context(d.sws_ctx, nullptr, nullptr);
-
+/*
+    sws_init_context(d.sws_ctx, nullptr, nullptr);
+*/
     update_eq = false;
 
     return supported;

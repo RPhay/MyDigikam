@@ -109,7 +109,7 @@ bool Packet::fromAVPacket(Packet* pkt, const AVPacket* avpkt, double time_base)
 
     // what about marking avpkt as invalid and do not use isCorrupt?
 
-    pkt->isCorrupt = !!(avpkt->flags & AV_PKT_FLAG_CORRUPT);
+    pkt->isCorrupt   = !!(avpkt->flags & AV_PKT_FLAG_CORRUPT);
 
     if (pkt->isCorrupt)
     {
@@ -118,7 +118,8 @@ bool Packet::fromAVPacket(Packet* pkt, const AVPacket* avpkt, double time_base)
                 pkt->pts);
     }
 
-    // from av_read_frame: pkt->pts can be AV_NOPTS_VALUE if the video format has B-frames, so it is better to rely on pkt->dts if you do not decompress the payload.
+    // from av_read_frame: pkt->pts can be AV_NOPTS_VALUE if the video format has B-frames,
+    // so it is better to rely on pkt->dts if you do not decompress the payload.
     // old code set pts as dts is valid
 
     if      (avpkt->pts != (qint64)AV_NOPTS_VALUE)
@@ -132,9 +133,11 @@ bool Packet::fromAVPacket(Packet* pkt, const AVPacket* avpkt, double time_base)
         pkt->dts = avpkt->dts * time_base;
     else
         pkt->dts = pkt->pts;
-
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("avpacket pts %lld, dts: %lld ", avpkt->pts, avpkt->dts);
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("avpacket pts %lld, dts: %lld ",
+            avpkt->pts, avpkt->dts);
+*/
     // TODO: pts must >= 0? look at ffplay
 
     pkt->pts = qMax<qreal>(0, pkt->pts);
@@ -164,9 +167,11 @@ bool Packet::fromAVPacket(Packet* pkt, const AVPacket* avpkt, double time_base)
     }
 
 #endif
-
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("AVPacket.pts=%f, duration=%f, dts=%lld", pkt->pts, pkt->duration, packet.dts);
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("AVPacket.pts=%f, duration=%f, dts=%lld",
+            pkt->pts, pkt->duration, packet.dts);
+*/
     pkt->data.clear();
 
     // TODO: pkt->avpkt. data is not necessary now. see mpv new_demux_packet_from_avpacket
@@ -178,7 +183,8 @@ bool Packet::fromAVPacket(Packet* pkt, const AVPacket* avpkt, double time_base)
 
     av_packet_ref(p, const_cast<AVPacket*>(avpkt));  // properties are copied internally
 
-    // add ref without copy, bytearray does not copy either. bytearray options linke remove() is safe. omit FF_INPUT_BUFFER_PADDING_SIZE
+    // add ref without copy, bytearray does not copy either. bytearray options linke remove() is safe.
+    // omit FF_INPUT_BUFFER_PADDING_SIZE
 
     pkt->data           = QByteArray::fromRawData((const char*)p->data, p->size);
 
@@ -242,7 +248,8 @@ const AVPacket* Packet::asAVPacket() const
 
         if (d.constData()->initialized)
         {
-            // d.data() was 0 if d has not been accessed. now only contains avpkt, check d.constData() is engough
+            // d.data() was 0 if d has not been accessed. now only contains avpkt,
+            // check d.constData() is engough
 
             d->avpkt.data = (uint8_t*)data.constData();
             d->avpkt.size = data.size();
@@ -257,8 +264,8 @@ const AVPacket* Packet::asAVPacket() const
 
     d->initialized    = true;
     AVPacket* const p = &d->avpkt;
-    p->pts            = pts * 1000.0;
-    p->dts            = dts * 1000.0;
+    p->pts            = pts      * 1000.0;
+    p->dts            = dts      * 1000.0;
     p->duration       = duration * 1000.0;
     p->pos            = position;
 
