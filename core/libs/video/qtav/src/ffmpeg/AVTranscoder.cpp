@@ -207,7 +207,8 @@ bool AVTranscoder::createVideoEncoder(const QString& name)
         d->vfilter = new VideoEncodeFilter();
         d->vfilter->setAsync(isAsync());
 
-        // BlockingQueuedConnection: ensure muxer open()/close() in the same thread, and is open when packet is encoded
+        // BlockingQueuedConnection: ensure muxer open()/close() in the same thread,
+        // and is open when packet is encoded
 
         connect(d->vfilter, SIGNAL(readyToEncode()),
                 this, SLOT(prepareMuxer()),
@@ -241,7 +242,8 @@ bool AVTranscoder::createAudioEncoder(const QString& name)
         d->afilter = new AudioEncodeFilter();
         d->afilter->setAsync(isAsync());
 
-        // BlockingQueuedConnection: ensure muxer open()/close() in the same thread, and is open when packet is encoded
+        // BlockingQueuedConnection: ensure muxer open()/close() in the same thread,
+        // and is open when packet is encoded
 
         connect(d->afilter, SIGNAL(readyToEncode()),
                 this, SLOT(prepareMuxer()),
@@ -481,8 +483,9 @@ void AVTranscoder::writeAudio(const QtAV::Packet& packet)
 
     if (!d->muxer.isOpen())
     {
-        //d->aqueue.put(packet);
-
+/*
+        d->aqueue.put(packet);
+*/
         return;
     }
 
@@ -496,8 +499,11 @@ void AVTranscoder::writeAudio(const QtAV::Packet& packet)
     // TODO: startpts, duration, encoded size
 
     d->encoded_frames++;
-
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("encoded frames: %d, pos: %lld", d->encoded_frames, packet.position);
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("encoded frames: %d, pos: %lld",
+            d->encoded_frames, packet.position);
+*/
 }
 
 void AVTranscoder::writeVideo(const QtAV::Packet& packet)
@@ -515,9 +521,10 @@ void AVTranscoder::writeVideo(const QtAV::Packet& packet)
 
     d->encoded_frames++;
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote()
-        << QString::asprintf("encoded frames: %d, @%.3f pos: %lld",
-            d->encoded_frames, packet.pts, packet.position);
+    qCDebug(DIGIKAM_QTAV_LOG) << "encoded frames:"
+                              << d->encoded_frames << ", @"
+                              << packet.pts << "pos:"
+                              << packet.position;
 }
 
 void AVTranscoder::tryFinish()

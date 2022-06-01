@@ -152,7 +152,11 @@ void PacketBuffer::onPut(const Packet& p)
         m_value0 = qint64(queue[0].pts * 1000.0); // must compute here because it is reset to 0 if take from empty
 /*
         if (isBuffering())
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("+buffering progress: %.1f%%=%.1f/%.1f~%.1fs %d-%d", bufferProgress()*100.0, (qreal)buffered()/1000.0, (qreal)bufferValue()/1000.0, qreal(bufferValue())*bufferMax()/1000.0, m_value1, m_value0);
+        {
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("+buffering progress: %.1f%%=%.1f/%.1f~%.1fs %d-%d",
+                    bufferProgress()*100.0, (qreal)buffered()/1000.0, (qreal)bufferValue()/1000.0, qreal(bufferValue())*bufferMax()/1000.0, m_value1, m_value0);
+        }
 */
     }
     else if (m_mode == BufferBytes)
@@ -212,7 +216,11 @@ void PacketBuffer::onTake(const Packet& p)
         m_value0 = qint64(queue[0].pts * 1000.0);
 /*
         if (isBuffering())
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("-buffering progress: %.1f=%.1f/%.1fs", bufferProgress(), (qreal)buffered()/1000.0, (qreal)bufferValue()/1000.0);
+        {
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("-buffering progress: %.1f=%.1f/%.1fs",
+                    bufferProgress(), (qreal)buffered()/1000.0, (qreal)bufferValue()/1000.0);
+        }
 */
     }
     else if (m_mode == BufferBytes)
@@ -243,9 +251,8 @@ qreal PacketBuffer::calc_speed(bool use_bytes) const
 
     if (delta < 0)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-            << QString::asprintf("PacketBuffer internal error. delta(bytes %d): %lld",
-                use_bytes, delta);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "PacketBuffer internal error. delta (bytes"
+                                         << use_bytes << "):" << delta;
 
         return 0;
     }

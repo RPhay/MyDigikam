@@ -117,7 +117,7 @@ private Q_SLOTS:
 
 protected:
 
-    //VideoFrameExtractor(VideoFrameExtractorPrivate &d, QObject* parent = 0);
+    //VideoFrameExtractor(VideoFrameExtractorPrivate& d, QObject* parent = nullptr);
 
     DPTR_DECLARE(VideoFrameExtractor)
 };

@@ -118,7 +118,7 @@ public:
         {
         public:
 
-            StopTask(ExtractThread* const t)
+            explicit StopTask(ExtractThread* const t)
                 : thread(t)
             {
             }
@@ -182,6 +182,7 @@ public:
         : abort_seek    (false),
           async         (true),
           has_video     (true),
+          loading       (false),
           auto_extract  (true),
           auto_precision(true),
           seek_count    (0),
@@ -379,9 +380,10 @@ public:
 
                 //return false;
             }
-
-            //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("video packet: %f", pkt.pts);
-
+/*
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("video packet: %f", pkt.pts);
+*/
             // TODO: always key frame?
 
             if (pkt.hasKeyFrame)
@@ -409,8 +411,8 @@ public:
 
         if (!pkt.isValid())
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-                << QString::asprintf("VideoFrameExtractor failed to get a packet at %lld", value);
+            qCWarning(DIGIKAM_QTAV_LOG_WARN)
+                << "VideoFrameExtractor failed to get a packet at" << value;
 
             err = QString().asprintf("failed to get a packet at %lld", value);
 
@@ -436,9 +438,11 @@ public:
 
                 return false;
             }
-
-            //qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("invalid key frame!!!!! undecoded: %d", decoder->undecodedSize());
-
+/*
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("invalid key frame! undecoded: %d",
+                    decoder->undecodedSize());
+*/
             if (decoder->decode(pkt))
             {
                 frame = decoder->frame();
@@ -493,9 +497,11 @@ public:
 
             pkt           = demuxer.packet();
             const qreal t = pkt.pts;
-
-            //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("video packet: %f, delta=%lld", t, value - qint64(t*1000.0));
-
+/*
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("video packet: %f, delta=%lld",
+                    t, value - qint64(t*1000.0));
+*/
             if (!pkt.isValid())
             {
                 qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
@@ -507,9 +513,10 @@ public:
             if (pkt.hasKeyFrame)
             {
                 // FIXME:
-
-                //qCCritical(DIGIKAM_QTAV_LOG_CRITICAL) << QString::asprintf("Internal error. Can not be a key frame!!!!");
-
+/*
+                qCCritical(DIGIKAM_QTAV_LOG_CRITICAL)
+                    << QString::asprintf("Internal error. Can not be a key frame!");
+*/
                 //return false; // ??
             }
 
@@ -543,8 +550,10 @@ public:
 
             if (!f.isValid())
             {
-                //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("VideoFrameExtractor: invalid frame!!!");
-
+/*
+                qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                    << QString::asprintf("VideoFrameExtractor: invalid frame!");
+*/
                 continue;
             }
 
@@ -559,8 +568,8 @@ public:
 
             if (qAbs(diff) <= (qint64)range)
             {
-                qCDebug(DIGIKAM_QTAV_LOG).noquote()
-                    << QString::asprintf("got frame at %fs, diff=%lld", pts, diff);
+                qCDebug(DIGIKAM_QTAV_LOG) << "got frame at" << pts
+                                          << "s, diff=" << diff;
 
                 break;
             }
@@ -569,8 +578,8 @@ public:
 
             if ((diff > range) && (t > pts))
             {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-                    << QString::asprintf("out pts out of range. diff=%lld, range=%d", diff, range);
+                qCWarning(DIGIKAM_QTAV_LOG_WARN) << "out pts out of range. diff="
+                                                 << diff << ", range=" << range;
 
                 frame = VideoFrame();
                 err   = QString().asprintf("out pts out of range. diff=%lld, range=%d", diff, range);
@@ -606,11 +615,9 @@ public:
     {
         class Q_DECL_HIDDEN Cleaner : public QRunnable
         {
-            VideoFrameExtractorPrivate* p = nullptr;
-
         public:
 
-            Cleaner(VideoFrameExtractorPrivate* const pri)
+            explicit Cleaner(VideoFrameExtractorPrivate* const pri)
                 : p(pri)
             {
             }
@@ -619,6 +626,10 @@ public:
             {
                 p->releaseResourceInternal();
             }
+
+        private:
+
+            VideoFrameExtractorPrivate* p = nullptr;
 
         private:
 
@@ -644,7 +655,8 @@ public:
     QStringList                  codecs;
     ExtractThread                thread;
 
-    static QVariantHash          dec_opt_framedrop, dec_opt_normal;
+    static QVariantHash          dec_opt_framedrop;
+    static QVariantHash          dec_opt_normal;
 };
 
 QVariantHash VideoFrameExtractorPrivate::dec_opt_framedrop;
@@ -820,9 +832,10 @@ void VideoFrameExtractor::extractInternal(qint64 pos)
     if (!d.checkAndOpen())
     {
         Q_EMIT error(QLatin1String("Cannot open file"));
-
-        //qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("can not open decoder....");
-
+/*
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("can not open decoder...");
+*/
         return;
     }
 

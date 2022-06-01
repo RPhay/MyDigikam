@@ -223,9 +223,10 @@ qint64 FrameReader::Private::seekInternal(qint64 value)
 
             //return false;
         }
-
-        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("video packet: %f", pkt.pts);
-
+/*
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("video packet: %f", pkt.pts);
+*/
         // TODO: always key frame?
 
         if (pkt.hasKeyFrame)
@@ -268,8 +269,11 @@ qint64 FrameReader::Private::seekInternal(qint64 value)
 
     while ((k < 2) && !frame.isValid())
     {
-        //qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("invalid key frame!!!!! undecoded: %d", decoder->undecodedSize());
-
+/*
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("invalid key frame! undecoded: %d",
+                decoder->undecodedSize());
+*/
         if (decoder->decode(pkt))
         {
             frame = decoder->frame();
@@ -286,7 +290,7 @@ qint64 FrameReader::Private::seekInternal(qint64 value)
 
     if (qAbs(diff0) <= range)
     {
-        //TODO: flag forward: result pts must >= value
+        // TODO: flag forward: result pts must >= value
 
         if (frame.isValid())
         {
@@ -312,9 +316,11 @@ qint64 FrameReader::Private::seekInternal(qint64 value)
 
         pkt           = demuxer.packet();
         const qreal t = pkt.pts;
-
-        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("video packet: %f, delta=%lld", t, value - qint64(t*1000.0));
-
+/*
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("video packet: %f, delta=%lld",
+                t, value - qint64(t*1000.0));
+*/
         if (!pkt.isValid())
         {
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
@@ -326,10 +332,11 @@ qint64 FrameReader::Private::seekInternal(qint64 value)
         if (pkt.hasKeyFrame)
         {
             // FIXME:
-
-            //qCCritical(DIGIKAM_QTAV_LOG_CRITICAL) << QString::asprintf("Internal error. Can not be a key frame!!!!");
-
-            //return false; //??
+/*
+            qCCritical(DIGIKAM_QTAV_LOG_CRITICAL)
+                << QString::asprintf("Internal error. Can not be a key frame!");
+*/
+            //,return false; //??
         }
 
         qint64 diff                     = qint64(t * 1000.0) - value;
@@ -361,8 +368,10 @@ qint64 FrameReader::Private::seekInternal(qint64 value)
 
         if (!f.isValid())
         {
-            //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("VideoFrameExtractor: invalid frame!!!");
-
+/*
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("VideoFrameExtractor: invalid frame!");
+*/
             continue;
         }
 
@@ -377,9 +386,8 @@ qint64 FrameReader::Private::seekInternal(qint64 value)
 
         if (qAbs(diff) <= (qint64)range)
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote()
-                << QString::asprintf("got frame at %fs, diff=%lld",
-                    pts, diff);
+            qCDebug(DIGIKAM_QTAV_LOG) << "got frame at"
+                                      << pts << "s, diff=" << diff;
 
             break;
         }
@@ -388,13 +396,12 @@ qint64 FrameReader::Private::seekInternal(qint64 value)
 
         if ((diff > range) && (t > pts))
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-                << QString::asprintf("out pts out of range. diff=%lld, range=%d",
-                    diff, range);
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << "out pts out of range. diff="
+                                             << diff << ", range=" << range;
 
             frame = VideoFrame();
 
-            return -1;
+            return (-1);
         }
     }
 
@@ -520,15 +527,19 @@ void FrameReader::readMoreInternal()
     {
         if (!d->demuxer.readFrame())
         {
-            // qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("demuxer read error");
-
+/*
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("demuxer read error");
+*/
             continue;
         }
 
         if (d->demuxer.stream() != vstream)
         {
-            // qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("not video stream");
-
+/*
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("not video stream");
+*/
             continue;
         }
 
@@ -549,9 +560,11 @@ void FrameReader::readMoreInternal()
             d->vframes.put(frame);
 
             Q_EMIT frameRead(frame);
-
-            //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("frame got @%.3f, queue enough: %d", frame.timestamp(), vframes.isEnough());
-
+/*
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("frame got @%.3f, queue enough: %d",
+                    frame.timestamp(), vframes.isEnough());
+*/
             if (d->vframes.isFull())
                 break;
         }
