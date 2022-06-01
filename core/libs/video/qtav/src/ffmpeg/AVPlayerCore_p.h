@@ -135,7 +135,8 @@ public:
         if (need_lock)
             thread->lock();
 */
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("set AVThread output");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("set AVThread output");
 
         thread->setOutput(pOut);
 
@@ -166,21 +167,27 @@ public:
 
     // can be QString, QIODevice*
 
-    QVariant                current_source, pendding_source;
+    QVariant                current_source;
+    QVariant                pendding_source;
 
     bool                    loaded;                                     ///< for current source
     bool                    relative_time_mode;
     qint64                  media_start_pts;                            ///< read from media stream
     qint64                  media_end;
     bool                    reset_state;
-    qint64                  start_position, stop_position;
-    qint64                  start_position_norm, stop_position_norm;    ///< real position
+    qint64                  start_position;
+    qint64                  stop_position;
+    qint64                  start_position_norm;                        ///< real position
+    qint64                  stop_position_norm;                         ///< real position
     qint64                  last_known_good_pts;
     bool                    was_stepping;
-    int                     repeat_max, repeat_current;
+    int                     repeat_max;
+    int                     repeat_current;
     int                     timer_id;                                   ///< notify position change and check AB repeat range. active when playing
 
-    int                     audio_track, video_track, subtitle_track;
+    int                     audio_track;
+    int                     video_track;
+    int                     subtitle_track;
     QVariantList            subtitle_tracks;
     QVariantList            video_tracks;
     QString                 external_audio;
@@ -208,9 +215,12 @@ public:
     OutputSet*              vos;
     OutputSet*              aos;
     QVector<VideoDecoderId> vc_ids;
-    int                     brightness, contrast, saturation;
+    int                     brightness;
+    int                     contrast;
+    int                     saturation;
 
-    QVariantHash            ac_opt, vc_opt;
+    QVariantHash            ac_opt;
+    QVariantHash            vc_opt;
 
     bool                    seeking;
     SeekType                seek_type;
@@ -224,10 +234,14 @@ public:
      */
     int                     notify_interval;
 
-    MediaStatus             status;                       ///< status changes can be from demuxer or demux thread
+    MediaStatus             status;                                     ///< status changes can be from demuxer or demux thread
     AVPlayerCore::State     state;
     MediaEndAction          end_action;
     QMutex                  load_mutex;
+
+private:
+
+    Q_DISABLE_COPY(Private);
 };
 
 } // namespace QtAV

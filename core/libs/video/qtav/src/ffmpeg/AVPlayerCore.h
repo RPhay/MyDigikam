@@ -41,9 +41,7 @@
 #include "VideoDecoder.h"
 #include "AVError.h"
 
-
 class QIODevice;
-
 
 namespace QtAV
 {

@@ -106,9 +106,9 @@ AVPlayerCore::AVPlayerCore(QObject* const parent)
      */
     connect(qApp, SIGNAL(aboutToQuit()),
             this, SLOT(aboutToQuitApp()));
-
-    //d->clock->setClockType(AVClock::ExternalClock);
-
+/*
+    d->clock->setClockType(AVClock::ExternalClock);
+*/
     connect(&d->demuxer, SIGNAL(started()),
             masterClock(), SLOT(start()));
 
@@ -128,7 +128,7 @@ AVPlayerCore::AVPlayerCore(QObject* const parent)
     d->read_thread = new AVDemuxThread(this);
     d->read_thread->setDemuxer(&d->demuxer);
 
-    //direct connection can not sure slot order?
+    // direct connection can not sure slot order?
 
     connect(d->read_thread, SIGNAL(finished()),
             this, SLOT(stopFromDemuxerThread()), Qt::DirectConnection);
@@ -167,7 +167,8 @@ AVPlayerCore::~AVPlayerCore()
     QMutexLocker lock(&d->load_mutex);
     Q_UNUSED(lock);
 
-    // if not uninstall here, player's qobject children filters will call uninstallFilter too late that player is almost be destroyed
+    // if not uninstall here, player's qobject children filters will call uninstallFilter
+    // too late that player is almost be destroyed
 
     QList<Filter*> filters(FilterManager::instance().videoFilters(this));
 
@@ -193,7 +194,8 @@ void AVPlayerCore::addVideoRenderer(VideoRenderer* renderer)
 {
     if (!renderer)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("add a null renderer!");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("add a null renderer!");
 
         return;
     }
@@ -283,7 +285,9 @@ void AVPlayerCore::setSpeed(qreal speed)
 
     if (d->ao && d->ao->isAvailable())
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("set speed %.2f", d->speed);
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("set speed %.2f", d->speed);
+
         d->ao->setSpeed(d->speed);
     }
 
@@ -357,24 +361,24 @@ const Statistics& AVPlayerCore::statistics() const
 
 bool AVPlayerCore::installFilter(AudioFilter* filter, int index)
 {
-    if (!FilterManager::instance().registerAudioFilter((Filter*)filter, this, index))
+    if (!FilterManager::instance().registerAudioFilter(dynamic_cast<Filter*>(filter), this, index))
         return false;
 
     if (!d->athread)
         return false; // install later when avthread created
 
-    return d->athread->installFilter((Filter*)filter, index);
+    return d->athread->installFilter(dynamic_cast<Filter*>(filter), index);
 }
 
 bool AVPlayerCore::installFilter(VideoFilter* filter, int index)
 {
-    if (!FilterManager::instance().registerVideoFilter((Filter*)filter, this, index))
+    if (!FilterManager::instance().registerVideoFilter(dynamic_cast<Filter*>(filter), this, index))
         return false;
 
     if (!d->vthread)
         return false; // install later when avthread created
 
-    return d->vthread->installFilter((Filter*)filter, index);
+    return d->vthread->installFilter(dynamic_cast<Filter*>(filter), index);
 }
 
 bool AVPlayerCore::uninstallFilter(AudioFilter* filter)
@@ -407,12 +411,12 @@ bool AVPlayerCore::uninstallFilter(VideoFilter* filter)
 
 QList<Filter*> AVPlayerCore::audioFilters() const
 {
-    return FilterManager::instance().audioFilters((AVPlayerCore*)this);
+    return FilterManager::instance().audioFilters(const_cast<AVPlayerCore*>(this));
 }
 
 QList<Filter*> AVPlayerCore::videoFilters() const
 {
-    return FilterManager::instance().videoFilters((AVPlayerCore*)this);
+    return FilterManager::instance().videoFilters(const_cast<AVPlayerCore*>(this));
 }
 
 void AVPlayerCore::setPriority(const QVector<VideoDecoderId>& ids)
@@ -442,11 +446,9 @@ void AVPlayerCore::setPriority(const QVector<VideoDecoderId>& ids)
 
     class Q_DECL_HIDDEN ChangeDecoderTask : public QRunnable
     {
-        AVPlayerCore* player = nullptr;
-
     public:
 
-        ChangeDecoderTask(AVPlayerCore* const p)
+        explicit ChangeDecoderTask(AVPlayerCore* const p)
             : player(p)
         {
         }
@@ -455,6 +457,10 @@ void AVPlayerCore::setPriority(const QVector<VideoDecoderId>& ids)
         {
             player->d->tryApplyDecoderPriority(player);
         }
+
+    private:
+
+        AVPlayerCore* player = nullptr;
 
     private:
 
@@ -469,7 +475,6 @@ void AVPlayerCore::setPriority(const QVector<VideoDecoderId>& ids)
 
     class Q_DECL_HIDDEN NewDecoderTask : public QRunnable
     {
-        AVPlayerCore* player = nullptr;
 
     public:
 
@@ -499,7 +504,8 @@ void AVPlayerCore::setPriority(const QVector<VideoDecoderId>& ids)
 
                 if (vd->open())
                 {
-                    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Video decoder found:%p", vd);
+                    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                        << QString::asprintf("Video decoder found:%p", vd);
 
                     break;
                 }
@@ -517,7 +523,9 @@ void AVPlayerCore::setPriority(const QVector<VideoDecoderId>& ids)
 
             if (vd->id() == player->d->vdec->id())
             {
-                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Video decoder does not change");
+                qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                    << QString::asprintf("Video decoder does not change");
+
                 delete vd;
 
                 return;
@@ -525,8 +533,6 @@ void AVPlayerCore::setPriority(const QVector<VideoDecoderId>& ids)
 
             class Q_DECL_HIDDEN ApplyNewDecoderTask : public QRunnable
             {
-                AVPlayerCore* player = nullptr;
-                VideoDecoder* dec    = nullptr;
 
             public:
 
@@ -559,15 +565,25 @@ void AVPlayerCore::setPriority(const QVector<VideoDecoderId>& ids)
 
                     player->setPosition(pos);
                 }
+
+            private:
+
+                AVPlayerCore* player = nullptr;
+                VideoDecoder* dec    = nullptr;
             };
 
             player->d->vthread->scheduleTask(new ApplyNewDecoderTask(player, vd));
         }
+
+    private:
+
+        AVPlayerCore* player = nullptr;
     };
 
     QThreadPool::globalInstance()->start(new NewDecoderTask(this));
 
 #endif
+
 }
 
 template<typename ID, typename T>
@@ -701,7 +717,9 @@ void AVPlayerCore::setFile(const QString& path)
 
     if (d->reset_state)
     {
-        d->audio_track = d->video_track = d->subtitle_track = 0;
+        d->audio_track    = 0;
+        d->video_track    = 0;
+        d->subtitle_track = 0;
 
         Q_EMIT sourceChanged();
 /*
@@ -749,13 +767,15 @@ void AVPlayerCore::setIODevice(QIODevice* device)
 
     if (d->reset_state)
     {
-        d->audio_track = d->video_track = d->subtitle_track = 0;
+        d->audio_track    = 0;
+        d->video_track    = 0;
+        d->subtitle_track = 0;
 
         Q_EMIT sourceChanged();
     }
 }
 
-void AVPlayerCore::setInput(MediaIO *in)
+void AVPlayerCore::setInput(MediaIO* in)
 {
     // TODO: d->reset_state = d->demuxer2.setMedia(in);
 
@@ -782,7 +802,9 @@ void AVPlayerCore::setInput(MediaIO *in)
 
     if (d->reset_state)
     {
-        d->audio_track = d->video_track = d->subtitle_track = 0;
+        d->audio_track    = 0;
+        d->video_track    = 0;
+        d->subtitle_track = 0;
 
         Q_EMIT sourceChanged();
     }
@@ -812,9 +834,11 @@ void AVPlayerCore::play(const QString& path)
 
 bool AVPlayerCore::isPlaying() const
 {
-    return (d->read_thread && d->read_thread->isRunning()) ||
+    return (
+            d->read_thread && d->read_thread->isRunning()) ||
             (d->athread && d->athread->isRunning())        ||
-            (d->vthread && d->vthread->isRunning());
+            (d->vthread && d->vthread->isRunning()
+           );
 }
 
 void AVPlayerCore::togglePause()
@@ -866,9 +890,11 @@ void AVPlayerCore::pause(bool p)
 
 bool AVPlayerCore::isPaused() const
 {
-    return (d->read_thread && d->read_thread->isPaused()) ||
+    return (
+            d->read_thread && d->read_thread->isPaused()) ||
             (d->athread && d->athread->isPaused())        ||
-            (d->vthread && d->vthread->isPaused());
+            (d->vthread && d->vthread->isPaused()
+           );
 }
 
 MediaStatus AVPlayerCore::mediaStatus() const
@@ -929,7 +955,7 @@ void AVPlayerCore::loadInternal()
             d->vdec->setCodecContext(nullptr);
     }
 
-    qCDebug(DIGIKAM_QTAV_LOG) << "Loading " << d->current_source << " ...";
+    qCDebug(DIGIKAM_QTAV_LOG) << "Loading " << d->current_source << "...";
 
     if (d->current_source.type() == QVariant::String)
     {
@@ -955,7 +981,9 @@ void AVPlayerCore::loadInternal()
     if (!d->loaded)
     {
         d->statistics.reset();
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Load failed!");
+
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Load failed!");
 
         d->audio_tracks    = d->getTracksInfo(&d->demuxer, AVDemuxer::AudioStream);
 
@@ -1075,7 +1103,7 @@ qint64 AVPlayerCore::absoluteMediaStartPosition() const
 
 qreal AVPlayerCore::durationF() const
 {
-    return double(d->demuxer.durationUs()) / double(AV_TIME_BASE); //AVFrameContext.duration time base: AV_TIME_BASE
+    return (double(d->demuxer.durationUs()) / double(AV_TIME_BASE)); // AVFrameContext.duration time base: AV_TIME_BASE
 }
 
 qint64 AVPlayerCore::duration() const
@@ -1097,7 +1125,7 @@ qint64 AVPlayerCore::mediaStopPosition() const
     {
         // called in stop()
 
-        return mediaStartPosition() + duration();
+        return (mediaStartPosition() + duration());
     }
 
     return d->media_end;
@@ -1108,7 +1136,7 @@ qreal AVPlayerCore::mediaStartPositionF() const
     if (relativeTimeMode())
         return 0.0;
 
-    return double(d->demuxer.startTimeUs()) / double(AV_TIME_BASE);
+    return (double(d->demuxer.startTimeUs()) / double(AV_TIME_BASE));
 }
 
 qint64 AVPlayerCore::normalizedPosition(qint64 pos)
@@ -1168,7 +1196,8 @@ void AVPlayerCore::setTimeRange(qint64 start, qint64 stop)
 {
     if (start > stop)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Invalid time range");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Invalid time range");
 
         return;
     }
@@ -1393,7 +1422,8 @@ bool AVPlayerCore::setAudioStream(const QString& file, int n)
 
     if (!isPlaying())
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("set audio track when not playing");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("set audio track when not playing");
 
         goto update_demuxer;
     }
@@ -1511,7 +1541,8 @@ bool AVPlayerCore::setVideoStream(int n)
         return false;
     }
 
-    if (!p) pause(false);
+    if (!p)
+        pause(false);
 
     //QTimer::singleShot(10000, this, SLOT(setBufferValue(bv)));
 */
@@ -1647,7 +1678,7 @@ bool AVPlayerCore::load()
     {
     public:
 
-        LoadWorker(AVPlayerCore* const player)
+        explicit LoadWorker(AVPlayerCore* const player)
             : m_player(player)
         {
         }
@@ -1732,7 +1763,9 @@ void AVPlayerCore::playInternal()
 
             if (d->athread)
             {
-                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("release audio thread.");
+                qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                    << QString::asprintf("release audio thread.");
+
                 delete d->athread;
                 d->athread = nullptr; // shared ptr?
             }
@@ -1766,7 +1799,8 @@ void AVPlayerCore::playInternal()
 
         if (masterClock()->isClockAuto())
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("auto select clock: audio > external");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("auto select clock: audio > external");
 
             if (!d->demuxer.audioCodecContext() || !d->ao || !d->ao->isOpen() || !d->athread)
             {
@@ -1777,7 +1811,9 @@ void AVPlayerCore::playInternal()
             }
             else
             {
-                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Using AudioClock");
+                qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                    << QString::asprintf("Using AudioClock");
+
                 masterClock()->setClockType(AVClock::AudioClock);
             }
         }
@@ -1788,13 +1824,17 @@ void AVPlayerCore::playInternal()
 
         if (d->demuxer.audioCodecContext() && d->athread)
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Starting audio thread...");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("Starting audio thread...");
+
             d->athread->start();
         }
 
         if (d->demuxer.videoCodecContext() && d->vthread)
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Starting video thread...");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("Starting video thread...");
+
             d->vthread->start();
         }
 
@@ -1865,7 +1905,8 @@ void AVPlayerCore::stopFromDemuxerThread()
         d->stop_position_norm  = kInvalidPosition; // already stopped. so not 0 but invalid. 0 can stop the playback in timerEvent
         d->media_end           = kInvalidPosition;
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("avplayer emit stopped()");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("avplayer emit stopped()");
 
         d->state               = StoppedState;
 
@@ -1899,7 +1940,8 @@ void AVPlayerCore::aboutToQuitApp()
     {
         qApp->processEvents();
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("about to quit...");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("about to quit...");
 
         pause(false); // may be paused. then aboutToQuitApp will not finish
         stop();
@@ -2016,7 +2058,8 @@ void AVPlayerCore::tryClearVideoRenderers()
 {
     if (!d->vthread)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("internal error");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("internal error");
 
         return;
     }
@@ -2065,9 +2108,11 @@ void AVPlayerCore::seekChapter(int incr)
     if (i >= (int)chapters())
         return;
 
-    //av_log(nullptr, AV_LOG_VERBOSE, "Seeking to chapter %d.\n", i);
+    // av_log(nullptr, AV_LOG_VERBOSE, "Seeking to chapter %d.\n", i);
 
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::fromLatin1("Seeking to chapter : ") << QString::number(i);
+    qCDebug(DIGIKAM_QTAV_LOG) << QString::fromLatin1("Seeking to chapter : ")
+                              << QString::number(i);
+
     setPosition(av_rescale_q(ic->chapters[i]->start, ic->chapters[i]->time_base,
                              av_time_base_q) / 1000);
 }
@@ -2125,7 +2170,8 @@ void AVPlayerCore::stop()
 
     if (!isPlaying())
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Not playing~");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("Not playing~");
 
         if ((mediaStatus() == LoadingMedia) || (mediaStatus() == LoadedMedia))
         {
@@ -2141,7 +2187,9 @@ void AVPlayerCore::stop()
 
     while (d->read_thread->isRunning())
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("stopping demuxer thread...");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("stopping demuxer thread...");
+
         d->read_thread->stop();
         d->read_thread->wait(500);
 
@@ -2183,7 +2231,11 @@ void AVPlayerCore::timerEvent(QTimerEvent* te)
 
         if (t < d->start_position_norm)
         {
-            // qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("position %lld < startPosition %lld", t, d->start_position_norm);
+/*
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("position %lld < startPosition %lld",
+                    t, d->start_position_norm);
+*/
             // or set clock initial value to get correct t
 
             if (d->start_position_norm != mediaStartPosition())
@@ -2204,7 +2256,8 @@ void AVPlayerCore::timerEvent(QTimerEvent* te)
             return;
         }
 
-        // atEnd() supports dynamic changed duration. but we can not break A-B repeat mode, so check stoppos and mediastoppos
+        // atEnd() supports dynamic changed duration. but we can not break A-B repeat mode,
+        // so check stoppos and mediastoppos
 
         if ((!d->demuxer.atEnd() || d->read_thread->isRunning()) && (stopPosition() >= mediaStopPosition()))
         {
@@ -2223,7 +2276,10 @@ void AVPlayerCore::timerEvent(QTimerEvent* te)
             // stop() by user in other thread, state is already reset
 
             d->reset_state = false;
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("stopPosition() == 0, stop");
+
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("stopPosition() == 0, stop");
+
             stop();
         }
 
@@ -2233,9 +2289,10 @@ void AVPlayerCore::timerEvent(QTimerEvent* te)
         {
             d->reset_state = true; // true is default, can remove here
 
-            qCDebug(DIGIKAM_QTAV_LOG).noquote()
-                << QString::asprintf("stopPosition() %lld/%lld reached and no repeat: %d",
-                    t, stopPosition(), repeat());
+            qCDebug(DIGIKAM_QTAV_LOG) << "stopPosition()"
+                                      << t << "/" << stopPosition()
+                                      << ", reached and no repeat:"
+                                      << repeat();
 
             stop();
 

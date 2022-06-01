@@ -498,21 +498,21 @@ void AVPlayerCore::Private::initVideoStatistics(int s)
 
 #ifndef HAVE_FFMPEG_VERSION5
 
-    AVCodecContext* const avctx    = demuxer.videoCodecContext();
+    AVCodecContext* const avctx        = demuxer.videoCodecContext();
 
 #else // ffmpeg >= 5
 
-    AVCodecParameters* const avctx = demuxer.videoCodecContext();
+    AVCodecParameters* const avctx     = demuxer.videoCodecContext();
 
 #endif
 
-    statistics.video               = Statistics::Common();
-    statistics.video_only          = Statistics::VideoOnly();
+    statistics.video                   = Statistics::Common();
+    statistics.video_only              = Statistics::VideoOnly();
 
     if (!avctx)
         return;
 
-    statistics.video.available = (s == demuxer.videoStream());
+    statistics.video.available         = (s == demuxer.videoStream());
     initCommonStatistics(s, &statistics.video, avctx);
 
     if (vdec)
@@ -601,7 +601,8 @@ bool AVPlayerCore::Private::setupAudioThread(AVPlayerCore* player)
         return false;
     }
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("has audio");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("has audio");
 
     // TODO: no delete, just reset avctx and reopen
 
@@ -704,12 +705,17 @@ bool AVPlayerCore::Private::setupAudioThread(AVPlayerCore* player)
 
     if (!athread)
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("new audio thread");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("new audio thread");
+
         athread = new AudioThread(player);
         athread->setClock(clock);
         athread->setStatistics(&statistics);
         athread->setOutputSet(aos);
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("demux thread setAudioThread");
+
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("demux thread setAudioThread");
+
         read_thread->setAudioThread(athread);
 
         // reconnect if disconnected

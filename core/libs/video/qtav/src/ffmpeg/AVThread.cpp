@@ -105,7 +105,7 @@ bool AVThread::isPaused() const
 {
     DPTR_D(const AVThread);
 
-    //if d.next_pause is true, the thread will pause soon, may happens before you can handle the result
+    // if d.next_pause is true, the thread will pause soon, may happens before you can handle the result
 
     return (d.paused || d.next_pause);
 }
@@ -196,6 +196,8 @@ void AVThread::requestSeek()
 
         AVThread* self = nullptr;
 
+    private:
+
         Q_DISABLE_COPY(SeekPTS);
     };
 
@@ -206,9 +208,6 @@ void AVThread::scheduleFrameDrop(bool value)
 {
     class Q_DECL_HIDDEN FrameDropTask : public QRunnable
     {
-        AVDecoder* decoder = nullptr;
-        bool       drop    = false;
-
     public:
 
         FrameDropTask(AVDecoder* const dec, bool value)
@@ -230,6 +229,11 @@ void AVThread::scheduleFrameDrop(bool value)
 
     private:
 
+        AVDecoder* decoder = nullptr;
+        bool       drop    = false;
+
+    private:
+
         Q_DISABLE_COPY(FrameDropTask);
     };
 
@@ -242,7 +246,8 @@ qreal AVThread::previousHistoryPts() const
 
     if (d.pts_history.empty())
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("pts history is EMPTY");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("pts history is empty");
 
         return 0;
     }
@@ -258,7 +263,7 @@ qreal AVThread::previousHistoryPts() const
             return d.pts_history.at(i);
     }
 
-    return -d.pts_history.front();
+    return (-d.pts_history.front());
 }
 
 qreal AVThread::decodeFrameRate() const
@@ -266,14 +271,14 @@ qreal AVThread::decodeFrameRate() const
     DPTR_D(const AVThread);
 
     if (d.pts_history.size() <= 1)
-        return 0;
+        return 0.0;
 
     const qreal dt = d.pts_history.back() - d.pts_history.front();
 
-    if (dt <= 0)
-        return 0;
+    if (dt <= 0.0)
+        return 0.0;
 
-    return d.pts_history.size()/dt;
+    return (d.pts_history.size() / dt);
 }
 
 void AVThread::setDropFrameOnSeek(bool value)
@@ -286,14 +291,15 @@ void AVThread::setDropFrameOnSeek(bool value)
 void AVThread::stop()
 {
     DPTR_D(AVThread);
-    d.stop = true; // stop as soon as possible
+    d.stop = true;                  // stop as soon as possible
     QMutexLocker locker(&d.mutex);
     Q_UNUSED(locker);
-    d.packets.setBlocking(false); // stop blocking take()
+    d.packets.setBlocking(false);   // stop blocking take()
     d.packets.clear();
     pause(false);
-
-    //terminate();
+/*
+    terminate();
+*/
 }
 
 // TODO: output set
@@ -309,7 +315,9 @@ void AVThread::pause(bool p)
 
     if (!d.paused)
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("wake up paused thread");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("wake up paused thread");
+
         d.next_pause = false;
         d.cond.wakeAll();
     }
@@ -348,7 +356,7 @@ PacketBuffer* AVThread::packetQueue() const
     return const_cast<PacketBuffer*>(&d_func().packets);
 }
 
-void AVThread::setDecoder(AVDecoder *decoder)
+void AVThread::setDecoder(AVDecoder* decoder)
 {
     DPTR_D(AVThread);
 
@@ -443,7 +451,8 @@ bool AVThread::tryPause(unsigned long timeout)
 
     return d.cond.wait(&d.mutex, timeout);
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("paused thread waked up!");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("paused thread waked up!");
 
     return true;
 }
@@ -486,14 +495,15 @@ void AVThread::waitAndCheck(ulong value, qreal pts)
 {
     DPTR_D(AVThread);
 
-    if ((value == 0) || (pts < 0))
+    if ((value == 0) || (pts < 0.0))
         return;
 
     value += d.wait_err;
     d.wait_timer.restart();
-
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("wating for %lu msecs", value);
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("wating for %lu msecs", value);
+*/
     ulong us                      = value * 1000UL;
     const ulong ms                = value;
     static const ulong kWaitSlice = 20 * 1000UL; // 20ms
@@ -507,11 +517,13 @@ void AVThread::waitAndCheck(ulong value, qreal pts)
         else
             us -= kWaitSlice;
 
-        if (pts > 0)
+        if (pts > 0.0)
             us = qMin(us, ulong((double)(qMax<qreal>(0, pts - d.clock->value())) * 1000000.0));
-
-        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("us: %lu/%lu, pts: %f, clock: %f", us, ms-et.elapsed(), pts, d.clock->value());
-
+/*
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("us: %lu/%lu, pts: %f, clock: %f",
+                us, ms-et.elapsed(), pts, d.clock->value());
+*/
         processNextTask();
         const qint64 left = qint64(ms) - d.wait_timer.elapsed();
 
@@ -526,17 +538,20 @@ void AVThread::waitAndCheck(ulong value, qreal pts)
 
     if (us > 0)
         usleep(us);
-
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("wait elapsed: %lu %d/%lld", us, ms, et.elapsed());
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("wait elapsed: %lu %d/%lld", us, ms, et.elapsed());
+*/
     const int de = ((ms-d.wait_timer.elapsed()) - d.wait_err);
 
     if ((de > -3) && (de < 3))
         d.wait_err += de;
     else
         d.wait_err += ((de > 0) ? 1 : -1);
-
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("err: %lld", d.wait_err);
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("err: %lld", d.wait_err);
+*/
 }
 
 } // namespace QtAV

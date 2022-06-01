@@ -102,7 +102,7 @@ public:
     QSemaphore                  sem;
     bool                        seek_requested;
 
-    //only decode video without display or skip decode audio until pts reaches
+    // only decode video without display or skip decode audio until pts reaches
 
     qreal                       render_pts0;
 

@@ -84,7 +84,7 @@ public:
 
     bool installFilter(Filter* filter, int index = 0x7FFFFFFF, bool lock = true);
     bool uninstallFilter(Filter* filter, bool lock = true);
-    const QList<Filter*> &filters()     const;
+    const QList<Filter*>& filters()     const;
 
     // TODO: resample, resize task etc.
 
@@ -101,8 +101,9 @@ public Q_SLOTS:
 
     virtual void stop();
 
-    /*change pause state. the pause/continue action will do in the next loop*/
-
+    /**
+     * Change pause state. The pause / continue action will do in the next loop
+     */
     void pause(bool p);     // processEvents when waiting?
 
     void nextAndPause();    // process 1 frame and pause
