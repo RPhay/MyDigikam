@@ -192,28 +192,13 @@ void ApplicationSettings::readSettings()
 
     if (group.readEntry(d->configPreviewLoadFullItemSizeEntry, true))
     {
-        d->previewSettings.quality = PreviewSettings::HighQualityPreview;
-
-        if      (group.readEntry(d->configPreviewRawUseEmbeddedPreview, false))
-        {
-            d->previewSettings.rawLoading = PreviewSettings::RawPreviewFromEmbeddedPreview;
-        }
-        else if (group.readEntry(d->configPreviewRawUseHalfSizeData, false))
-        {
-            d->previewSettings.rawLoading = PreviewSettings::RawPreviewFromRawHalfSize;
-        }
-        else if (group.readEntry(d->configPreviewRawUseFullSizeData, false))
-        {
-            d->previewSettings.rawLoading = PreviewSettings::RawPreviewFromRawFullSize;
-        }
-        else
-        {
-            d->previewSettings.rawLoading = PreviewSettings::RawPreviewAutomatic;
-        }
+        d->previewSettings.quality       = PreviewSettings::HighQualityPreview;
+        d->previewSettings.rawLoading    = (PreviewSettings::RawLoading)
+                                               group.readEntry(d->configPreviewRawUseLoadingDataEntry, (int)PreviewSettings::RawPreviewAutomatic);
     }
     else
     {
-        d->previewSettings.quality = PreviewSettings::FastPreview;
+        d->previewSettings.quality       = PreviewSettings::FastPreview;
     }
 
     d->previewSettings.convertToEightBit = group.readEntry(d->configPreviewConvertToEightBitEntry,     true);
@@ -413,38 +398,12 @@ void ApplicationSettings::saveSettings()
 
     if (d->previewSettings.quality == PreviewSettings::HighQualityPreview)
     {
-        group.writeEntry(d->configPreviewLoadFullItemSizeEntry, true);
-
-        switch (d->previewSettings.rawLoading)
-        {
-            case PreviewSettings::RawPreviewAutomatic:
-                group.writeEntry(d->configPreviewRawUseEmbeddedPreview, false);
-                group.writeEntry(d->configPreviewRawUseHalfSizeData,    false);
-                group.writeEntry(d->configPreviewRawUseFullSizeData,    false);
-                break;
-
-            case PreviewSettings::RawPreviewFromEmbeddedPreview:
-                group.writeEntry(d->configPreviewRawUseEmbeddedPreview, true);
-                group.writeEntry(d->configPreviewRawUseHalfSizeData,    false);
-                group.writeEntry(d->configPreviewRawUseFullSizeData,    false);
-                break;
-
-            case PreviewSettings::RawPreviewFromRawHalfSize:
-                group.writeEntry(d->configPreviewRawUseEmbeddedPreview, false);
-                group.writeEntry(d->configPreviewRawUseHalfSizeData,    true);
-                group.writeEntry(d->configPreviewRawUseFullSizeData,    false);
-                break;
-
-            case PreviewSettings::RawPreviewFromRawFullSize:
-                group.writeEntry(d->configPreviewRawUseEmbeddedPreview, false);
-                group.writeEntry(d->configPreviewRawUseHalfSizeData,    false);
-                group.writeEntry(d->configPreviewRawUseFullSizeData,    true);
-                break;
-        }
+        group.writeEntry(d->configPreviewLoadFullItemSizeEntry,        true);
+        group.writeEntry(d->configPreviewRawUseLoadingDataEntry,       (int)d->previewSettings.rawLoading);
     }
     else
     {
-        group.writeEntry(d->configPreviewLoadFullItemSizeEntry, false);
+        group.writeEntry(d->configPreviewLoadFullItemSizeEntry,        false);
     }
 
     group.writeEntry(d->configPreviewConvertToEightBitEntry,           d->previewSettings.convertToEightBit);

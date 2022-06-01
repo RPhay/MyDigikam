@@ -170,9 +170,7 @@ public:
     static const QString configToolTipsShowAlbumCaptionEntry;
     static const QString configToolTipsShowAlbumPreviewEntry;
     static const QString configPreviewLoadFullItemSizeEntry;
-    static const QString configPreviewRawUseEmbeddedPreview;
-    static const QString configPreviewRawUseHalfSizeData;
-    static const QString configPreviewRawUseFullSizeData;
+    static const QString configPreviewRawUseLoadingDataEntry;
     static const QString configPreviewConvertToEightBitEntry;
     static const QString configPreviewShowIconsEntry;
     static const QString configShowThumbbarEntry;
