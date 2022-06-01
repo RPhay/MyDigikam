@@ -107,16 +107,16 @@ void ApplicationSettings::readSettings()
         d->albumCategoryNames = collectionList;
     }
 
-    d->albumSortRole                     = ApplicationSettings::AlbumSortRole(group.readEntry(d->configAlbumSortRoleEntry,
-                                                                                                       (int)ApplicationSettings::ByFolder));
+    d->albumSortRole                     = (ApplicationSettings::AlbumSortRole)
+                                               (group.readEntry(d->configAlbumSortRoleEntry,           (int)ApplicationSettings::ByFolder));
 
     d->imageSortOrder                    = group.readEntry(d->configImageSortOrderEntry,               (int)ItemSortSettings::SortByFileName);
     d->imageSorting                      = group.readEntry(d->configImageSortingEntry,                 (int)ItemSortSettings::AscendingOrder);
     d->imageSeparationMode               = group.readEntry(d->configImageSeparationModeEntry,          (int)ItemSortSettings::CategoryByAlbum);
     d->imageSeparationSortOrder          = group.readEntry(d->configImageSeparationSortOrderEntry,     (int)ItemSortSettings::AscendingOrder);
 
-    d->itemLeftClickAction               = ApplicationSettings::ItemLeftClickAction(group.readEntry(d->configItemLeftClickActionEntry,
-                                                                                                       (int)ApplicationSettings::ShowPreview));
+    d->itemLeftClickAction               = (ApplicationSettings::ItemLeftClickAction)
+                                               (group.readEntry(d->configItemLeftClickActionEntry,     (int)ApplicationSettings::ShowPreview));
 
     d->thumbnailSize                     = group.readEntry(d->configDefaultIconSizeEntry,              (int)ThumbnailSize::Medium);
     d->treeThumbnailSize                 = group.readEntry(d->configDefaultTreeIconSizeEntry,          22);
@@ -125,11 +125,10 @@ void ApplicationSettings::readSettings()
     d->currentTheme                      = group.readEntry(d->configThemeEntry,                        ThemeManager::instance()->defaultThemeName());
 
     d->updateType                        = group.readEntry(d->configUpdateType,                        0);
-    d->sidebarTitleStyle                 = (DMultiTabBar::TextStyle)group.readEntry(d->configSidebarTitleStyleEntry,
-                                                                                                       (int)DMultiTabBar::AllIconsText);
+    d->sidebarTitleStyle                 = (DMultiTabBar::TextStyle)
+                                               group.readEntry(d->configSidebarTitleStyleEntry,        (int)DMultiTabBar::AllIconsText);
 
-    d->ratingFilterCond                  = group.readEntry(d->configRatingFilterConditionEntry,
-                                                                                                       (int)ItemFilterSettings::GreaterEqualCondition);
+    d->ratingFilterCond                  = group.readEntry(d->configRatingFilterConditionEntry,        (int)ItemFilterSettings::GreaterEqualCondition);
 
     d->albumMonitoring                   = group.readEntry(d->configAlbumMonitoringEntry,              false);
     d->recursiveAlbums                   = group.readEntry(d->configRecursiveAlbumsEntry,              false);
@@ -232,7 +231,8 @@ void ApplicationSettings::readSettings()
     d->scrollItemToCenter                = group.readEntry(d->configScrollItemToCenterEntry,                          false);
     d->showOnlyPersonTagsInPeopleSidebar = group.readEntry(d->configShowOnlyPersonTagsInPeopleSidebarEntry,           true);
     d->detectFacesInNewImages            = group.readEntry(d->configDetectFacesInNewImagesEntry,                      false);
-    d->stringComparisonType              = (StringComparisonType) group.readEntry(d->configStringComparisonTypeEntry, (int) Natural);
+    d->stringComparisonType              = (StringComparisonType)
+                                               group.readEntry(d->configStringComparisonTypeEntry,                    (int) Natural);
 
 #ifdef Q_OS_WIN
 
@@ -304,8 +304,9 @@ void ApplicationSettings::readSettings()
     for (ApplicationSettings::OperationModes::key_iterator it = d->groupingOperateOnAll.keyBegin() ;
          it != d->groupingOperateOnAll.keyEnd() ; ++it)
     {
-        d->groupingOperateOnAll.insert(*it, (ApplicationSettings::ApplyToEntireGroup)group.readEntry(
-                                             d->configGroupingOperateOnAll.value(*it), (int)ApplicationSettings::Ask));
+        d->groupingOperateOnAll.insert(*it, (ApplicationSettings::ApplyToEntireGroup)
+                                                group.readEntry(d->configGroupingOperateOnAll.value(*it),
+                                                                (int)ApplicationSettings::Ask));
     }
 
     Q_EMIT setupChanged();
