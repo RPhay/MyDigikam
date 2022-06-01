@@ -110,6 +110,7 @@ const QString ApplicationSettings::Private::configToolTipsShowAlbumPreviewEntry(
 const QString ApplicationSettings::Private::configPreviewLoadFullItemSizeEntry(QLatin1String("Preview Load Full Image Size"));
 const QString ApplicationSettings::Private::configPreviewRawUseEmbeddedPreview(QLatin1String("Preview Raw Use Embedded Preview"));
 const QString ApplicationSettings::Private::configPreviewRawUseHalfSizeData(QLatin1String("Preview Raw Use Half Size Data"));
+const QString ApplicationSettings::Private::configPreviewRawUseFullSizeData(QLatin1String("Preview Raw Use Full Size Data"));
 const QString ApplicationSettings::Private::configPreviewConvertToEightBitEntry(QLatin1String("Preview Convert To Eight Bit"));
 const QString ApplicationSettings::Private::configPreviewShowIconsEntry(QLatin1String("Preview Show Icons"));
 const QString ApplicationSettings::Private::configShowThumbbarEntry(QLatin1String("Show Thumbbar"));

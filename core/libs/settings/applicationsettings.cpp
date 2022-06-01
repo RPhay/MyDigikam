@@ -202,6 +202,10 @@ void ApplicationSettings::readSettings()
         {
             d->previewSettings.rawLoading = PreviewSettings::RawPreviewFromRawHalfSize;
         }
+        else if (group.readEntry(d->configPreviewRawUseFullSizeData, false))
+        {
+            d->previewSettings.rawLoading = PreviewSettings::RawPreviewFromRawFullSize;
+        }
         else
         {
             d->previewSettings.rawLoading = PreviewSettings::RawPreviewAutomatic;
@@ -416,16 +420,25 @@ void ApplicationSettings::saveSettings()
             case PreviewSettings::RawPreviewAutomatic:
                 group.writeEntry(d->configPreviewRawUseEmbeddedPreview, false);
                 group.writeEntry(d->configPreviewRawUseHalfSizeData,    false);
+                group.writeEntry(d->configPreviewRawUseFullSizeData,    false);
                 break;
 
             case PreviewSettings::RawPreviewFromEmbeddedPreview:
                 group.writeEntry(d->configPreviewRawUseEmbeddedPreview, true);
                 group.writeEntry(d->configPreviewRawUseHalfSizeData,    false);
+                group.writeEntry(d->configPreviewRawUseFullSizeData,    false);
                 break;
 
             case PreviewSettings::RawPreviewFromRawHalfSize:
                 group.writeEntry(d->configPreviewRawUseEmbeddedPreview, false);
                 group.writeEntry(d->configPreviewRawUseHalfSizeData,    true);
+                group.writeEntry(d->configPreviewRawUseFullSizeData,    false);
+                break;
+
+            case PreviewSettings::RawPreviewFromRawFullSize:
+                group.writeEntry(d->configPreviewRawUseEmbeddedPreview, false);
+                group.writeEntry(d->configPreviewRawUseHalfSizeData,    false);
+                group.writeEntry(d->configPreviewRawUseFullSizeData,    true);
                 break;
         }
     }

@@ -172,6 +172,7 @@ public:
     static const QString configPreviewLoadFullItemSizeEntry;
     static const QString configPreviewRawUseEmbeddedPreview;
     static const QString configPreviewRawUseHalfSizeData;
+    static const QString configPreviewRawUseFullSizeData;
     static const QString configPreviewConvertToEightBitEntry;
     static const QString configPreviewShowIconsEntry;
     static const QString configShowThumbbarEntry;
