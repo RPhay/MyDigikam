@@ -221,7 +221,7 @@ AVStream* AVMuxer::Private::addStream(AVFormatContext* ctx, const QString& codec
     c->time_base               = s->time_base;
 
 
-    /* Some formats want stream headers to be separate. */
+    // Some formats want stream headers to be separate.
 
     if (ctx->oformat->flags & AVFMT_GLOBALHEADER)
         c->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
@@ -475,7 +475,8 @@ const QStringList& AVMuxer::supportedProtocols()
 
     while (protocol)
     {
-        // static string, no deep copy needed. but QByteArray::fromRawData(data,size) assumes data is not null terminated and we must give a size
+        // static string, no deep copy needed. but QByteArray::fromRawData(data,size)
+        // assumes data is not null terminated and we must give a size
 
         protocols.append(QString::fromUtf8(protocol));
         protocol = avio_enum_protocols(&opq, 1);
@@ -690,7 +691,6 @@ bool AVMuxer::open()
         d->format_ctx->flags |= AVFMT_FLAG_CUSTOM_IO;
 
         //d->format_ctx->flags |= AVFMT_FLAG_GENPTS;
-
     }
     else
     {

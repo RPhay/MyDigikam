@@ -149,12 +149,13 @@ public:
         mStatus = status;
     }
 
-    /*
+    /**
      * metodo per interruzione loop ffmpeg
      * @param void*obj: classe attuale
-      * @return
+     * @return
      *  >0 Interruzione loop di ffmpeg!
-    */
+     */
+
     static int handleTimeout(void* obj)
     {
         InterruptHandler* const handler = static_cast<InterruptHandler*>(obj);
@@ -176,7 +177,8 @@ public:
 
             // DO NOT call setMediaStatus() here.
 
-            /* MUST make sure blocking functions (open, read) return before we change the status
+            /**
+             * MUST make sure blocking functions (open, read) return before we change the status
              * because demuxer may be closed in another thread at the same time if status is not LoadingMedia
              * use handleError() after blocking functions return is good
              */
@@ -186,22 +188,27 @@ public:
             return 1; // interrupt
         }
 
-        // qApp->processEvents(); //FIXME: qml crash
+        // qApp->processEvents(); // FIXME: qml crash
 
         switch (handler->mAction)
         {
             case Unknown: // callback is not called between begin()/end()
             {
-                //qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Unknown timeout action");
-
+/*
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                    << QString::asprintf("Unknown timeout action");
+*/
                 break;
             }
 
             case Open:
             case FindStreamInfo:
             {
-                //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("set loading media for %d from: %d", handler->mAction, handler->mpDemuxer->mediaStatus());
-
+/*
+                qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                    << QString::asprintf("set loading media for %d from: %d",
+                        handler->mAction, handler->mpDemuxer->mediaStatus());
+*/
                 handler->mpDemuxer->setMediaStatus(LoadingMedia);
                 break;
             }
@@ -224,8 +231,10 @@ public:
 
         if (!handler->mTimer.isValid())
         {
-            //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("timer is not valid, start it");
-
+/*
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("timer is not valid, start it");
+*/
             handler->mTimer.start();
 
             //handler->mLastTime = handler->mTimer.elapsed();
@@ -271,7 +280,7 @@ public:
         if (handler->mTimeoutAbort)
             return 1;
 
-        // Q_EMIT demuxer error, handleerror
+        //Q_EMIT demuxer error, handleerror
 
         if (handler->mEmitError)
         {
@@ -394,7 +403,8 @@ public:
         if (format_ctx->pb)
             s |= !!format_ctx->pb->seekable;
 
-        // format.read_seek: time seeking. For example, seeking on hls stream steps: find segment, read packet in segment and drop until desired pts got
+        // format.read_seek: time seeking. For example, seeking on hls stream steps:
+        // find segment, read packet in segment and drop until desired pts got
 
         s |= (format_ctx->iformat->read_seek || format_ctx->iformat->read_seek2);
 
@@ -477,7 +487,9 @@ public:
 
     } StreamInfo;
 
-    StreamInfo                      astream, vstream, sstream;
+    StreamInfo                      astream;
+    StreamInfo                      vstream;
+    StreamInfo                      sstream;
 
     AVDemuxer::InterruptHandler*    interrupt_hanlder = nullptr;
     QMutex                          mutex;              // TODO: remove if load, read, seek is called in 1 thread
@@ -643,7 +655,8 @@ const QStringList& AVDemuxer::supportedProtocols()
 
     while (protocol)
     {
-        // static string, no deep copy needed. but QByteArray::fromRawData(data,size) assumes data is not null terminated and we must give a size
+        // static string, no deep copy needed. but QByteArray::fromRawData(data,size)
+        // assumes data is not null terminated and we must give a size
 
         protocols.append(QString::fromUtf8(protocol));
         protocol = avio_enum_protocols(&opq, 0);
@@ -672,7 +685,7 @@ bool AVDemuxer::readFrame()
     AVPacket packet;
     av_init_packet(&packet);
     d->interrupt_hanlder->begin(InterruptHandler::Read);
-    int ret = av_read_frame(d->format_ctx, &packet); // 0: ok, <0: error/end
+    int ret = av_read_frame(d->format_ctx, &packet); // 0: ok, < 0: error/end
     d->interrupt_hanlder->end();
 
     // TODO: why return 0 if interrupted by user?
@@ -736,7 +749,7 @@ bool AVDemuxer::readFrame()
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
             << QString::asprintf("[AVDemuxer] error: %s", av_err2str(ret));
 
-        av_packet_unref(&packet); // important!
+        av_packet_unref(&packet);     // important!
 
         return false;
     }
@@ -754,9 +767,11 @@ bool AVDemuxer::readFrame()
 
     if ((d->stream != videoStream()) && (d->stream != audioStream()) && (d->stream != subtitleStream()))
     {
-        //qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("[AVDemuxer] unknown stream index: %d", stream);
-
-        av_packet_unref(&packet); // important!
+/*
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("[AVDemuxer] unknown stream index: %d", stream);
+*/
+        av_packet_unref(&packet);     // important!
 
         return false;
     }
@@ -764,7 +779,7 @@ bool AVDemuxer::readFrame()
     // TODO: v4l2 copy
 
     d->pkt = Packet::fromAVPacket(&packet, av_q2d(d->format_ctx->streams[d->stream]->time_base));
-    av_packet_unref(&packet); // important!
+    av_packet_unref(&packet);         // important!
     d->eof = false;
 
     if (d->pkt.pts > (qreal(duration()) / 1000.0))
@@ -793,9 +808,11 @@ bool AVDemuxer::atEnd() const
     if (d->format_ctx->pb)
     {
         AVIOContext* const pb = d->format_ctx->pb;
-
-        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("pb->error: %#x, eof: %d, pos: %lld, bufptr: %p", pb->error, pb->eof_reached, pb->pos, pb->buf_ptr);
-
+/*
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("pb->error: %#x, eof: %d, pos: %lld, bufptr: %p",
+                pb->error, pb->eof_reached, pb->pos, pb->buf_ptr);
+*/
         if (d->eof && ((qptrdiff)pb->buf_ptr == d->buf_pos))
             return true;
 
@@ -907,13 +924,16 @@ bool AVDemuxer::seek(qint64 pos)
     // TODO: d->pkt.pts may be 0, compute manually.
 
     bool backward = ((d->seek_type == AccurateSeek) || (upos <= (int64_t)(d->pkt.pts * AV_TIME_BASE)));
-
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("[AVDemuxer] seek to %f %f %lld / %lld backward=%d", double(upos)/double(durationUs()), d->pkt.pts, upos, durationUs(), backward);
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("[AVDemuxer] seek to %f %f %lld / %lld backward=%d",
+            double(upos)/double(durationUs()), d->pkt.pts, upos, durationUs(), backward);
+*/
     // AVSEEK_FLAG_BACKWARD has no effect? because we know the timestamp
     // FIXME: back flag is opposite? otherwise seek is bad and may crash?
 
-    /* If stread->inputdex is (-1), a default
+    /**
+     * If stread->inputdex is (-1), a default
      * stream is selected, and timestamp is automatically converted
      * from AV_TIME_BASE units to the stream specific time_base.
      */
@@ -929,16 +949,17 @@ bool AVDemuxer::seek(qint64 pos)
     {
         seek_flag |= AVSEEK_FLAG_ANY;
     }
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("seek flag: %d", seek_flag);
 
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("seek flag: %d", seek_flag);
-
-    //bool seek_bytes = !!(d->format_ctx->iformat->flags & AVFMT_TS_DISCONT) && strcmp("ogg", d->format_ctx->iformat->name);
-
+    bool seek_bytes = !!(d->format_ctx->iformat->flags & AVFMT_TS_DISCONT) && strcmp("ogg", d->format_ctx->iformat->name);
+*/
     int ret = av_seek_frame(d->format_ctx, -1, upos, seek_flag);
-
-    //int ret = avformat_seek_file(d->format_ctx, -1, INT64_MIN, upos, upos, seek_flag);
-    //avformat_seek_file()
-
+/*
+    int ret = avformat_seek_file(d->format_ctx, -1, INT64_MIN, upos, upos, seek_flag);
+    avformat_seek_file()
+*/
     if ((ret < 0) && (seek_flag & AVSEEK_FLAG_BACKWARD))
     {
         // seek to 0?
@@ -1391,7 +1412,7 @@ bool AVDemuxer::unload()
     d->resetStreams();
     d->interrupt_hanlder->setStatus(0);
 
-    //av_close_input_file(d->format_ctx); //deprecated
+    //av_close_input_file(d->format_ctx); // deprecated
 
     if (d->format_ctx)
     {
@@ -1520,7 +1541,7 @@ qint64 AVDemuxer::startTime() const
 
 qint64 AVDemuxer::duration() const
 {
-    return durationUs() / 1000LL; // time base: AV_TIME_BASE TODO: av_rescale
+    return durationUs() / 1000LL;  // time base: AV_TIME_BASE TODO: av_rescale
 }
 
 // AVFrameContext use AV_TIME_BASE as time base. AVStream use their own timebase
@@ -1843,7 +1864,7 @@ void AVDemuxer::Private::applyOptionsForContext()
 
     if (options.isEmpty())
     {
-        //av_opt_set_defaults(format_ctx);  //can't set default values! result maybe unexpected
+        //av_opt_set_defaults(format_ctx);  // can't set default values! result maybe unexpected
 
         return;
     }

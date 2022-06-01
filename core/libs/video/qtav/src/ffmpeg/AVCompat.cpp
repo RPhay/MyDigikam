@@ -277,7 +277,7 @@ enum AVColorRange av_frame_get_color_range(const AVFrame* frame)
     return AVCOL_RANGE_UNSPECIFIED;
 }
 
-#endif //!FFMPEG_MODULE_CHECK(LIBAVUTIL, 52, 28, 101)
+#endif // !FFMPEG_MODULE_CHECK(LIBAVUTIL, 52, 28, 101)
 
 #if LIBAVUTIL_VERSION_INT < AV_VERSION_INT(52, 38, 100)
 
@@ -328,7 +328,7 @@ int av_samples_copy(uint8_t** dst, uint8_t* const* src, int dst_offset,
     return 0;
 }
 
-#endif //AV_VERSION_INT(51, 73, 101)
+#endif // AV_VERSION_INT(51, 73, 101)
 
 #if QTAV_USE_LIBAV(LIBAVCODEC)
 
@@ -554,7 +554,7 @@ const char* get_codec_long_name(enum AVCodecID id)
 
 #if QTAV_HAVE(AVFILTER)
 
-#   if !AV_MODULE_CHECK(LIBAVFILTER, 2, 22, 0, 79, 100) //FF_API_AVFILTERPAD_PUBLIC
+#   if !AV_MODULE_CHECK(LIBAVFILTER, 2, 22, 0, 79, 100) // FF_API_AVFILTERPAD_PUBLIC
 
 const char* avfilter_pad_get_name(const AVFilterPad* pads, int pad_idx)
 {

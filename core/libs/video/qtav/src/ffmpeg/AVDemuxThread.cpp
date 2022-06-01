@@ -91,14 +91,16 @@ public:
 
         mDemuxThread->updateBufferState();                  // ensure detect buffering immediately
         AVThread* thread = mDemuxThread->videoThread();
-
-        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("try wake up video queue");
-
+/*
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("try wake up video queue");
+*/
         if (thread)
             thread->packetQueue()->blockFull(false);
-
-        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("try wake up audio queue");
-
+/*
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("try wake up audio queue");
+*/
         thread = mDemuxThread->audioThread();
 
         if (thread)
@@ -164,7 +166,7 @@ public:
             pts            = ts.back();
 
             // FIXME: sometimes can not seek to the previous pts,
-            //  the result pts is always current pts, so let the target pts a little earlier
+            // the result pts is always current pts, so let the target pts a little earlier
 
             pts            -= dt / 2.0;
         }
@@ -325,7 +327,7 @@ void AVDemuxThread::stepBackward()
 
     pause(true);
 
-    t->packetQueue()->clear(); // will put new packets before task run
+    t->packetQueue()->clear();  // will put new packets before task run
     t->packetQueue();
     Packet pkt;
     pkt.pts = pre_pts;
@@ -465,16 +467,19 @@ void AVDemuxThread::seekInternal(qint64 pos, SeekType type, qint64 external_pos)
         t->requestSeek();
 
         // TODO: the first frame (key frame) will not be decoded correctly if flush() is called.
+/*
+        PacketBuffer* pb = t->packetQueue();
 
-        //PacketBuffer *pb = t->packetQueue();
-        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%s put seek packet. %d/%d-%.3f, progress: %.3f", t->metaObject()->className(), pb->buffered(), pb->bufferValue(), pb->bufferMax(), pb->bufferProgress());
-
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("%s put seek packet. %d/%d-%.3f, progress: %.3f",
+                t->metaObject()->className(), pb->buffered(), pb->bufferValue(), pb->bufferMax(), pb->bufferProgress());
+*/
         t->packetQueue()->setBlocking(false); // aqueue bufferValue can be small (1), we can not put and take
         Packet pkt;
         pkt.pts      = qreal(pos) / 1000.0;
         pkt.position = sync_id;
         t->packetQueue()->put(pkt);
-        t->packetQueue()->setBlocking(true); // blockEmpty was false when eof is read.
+        t->packetQueue()->setBlocking(true);  // blockEmpty was false when eof is read.
 
         if (isPaused())
         {
@@ -855,7 +860,7 @@ void AVDemuxThread::onAVThreadQuit()
             return;
     }
 
-    end = true; //(!audio_thread || !audio_thread->isRunning()) &&
+    end = true; // (!audio_thread || !audio_thread->isRunning()) &&
 }
 
 bool AVDemuxThread::waitForStarted(int msec)
@@ -904,7 +909,10 @@ void AVDemuxThread::run()
     }
 
     m_buffer          = thread->packetQueue();
-    const qint64 buf2 = (aqueue ? aqueue->bufferValue() : 1); // TODO: may be changed by user. Deal with audio track change
+
+    // TODO: may be changed by user. Deal with audio track change
+
+    const qint64 buf2 = (aqueue ? aqueue->bufferValue() : 1); 
 
     if (aqueue)
     {
@@ -947,7 +955,10 @@ void AVDemuxThread::run()
         {
             // if avthread may skip 1st eof packet because of a/v sync
 
-            const int kMaxEof = 1; //if buffer packet, we can use qMax(aqueue->bufferValue(), vqueue->bufferValue()) and not call blockEmpty(false);
+            // if buffer packet, we can use qMax(aqueue->bufferValue(), vqueue->bufferValue())
+            // and not call blockEmpty(false);
+
+            const int kMaxEof = 1; 
 
             if (aqueue && (!was_end || aqueue->isEmpty()))
             {
@@ -959,17 +970,25 @@ void AVDemuxThread::run()
                 if (dpts > 0.1)
                 {
                     Packet fake_apkt;
-                    fake_apkt.duration = last_vpts - qMin(thread->clock()->videoTime(), thread->clock()->value()); // FIXME: when clock value < 0?
+
+                    // FIXME: when clock value < 0?
+
+                    fake_apkt.duration = last_vpts - qMin(thread->clock()->videoTime(), thread->clock()->value());
 
                     qCDebug(DIGIKAM_QTAV_LOG).noquote()
                         << QString::asprintf("audio is too short than video: %.3f, fake_apkt.duration: %.3f",
                             dpts, fake_apkt.duration);
 
-                    last_apts          = last_vpts = 0; // if not reset to 0, for example real eof pts, then no fake apkt after seek because dpts < 0
+                    // if not reset to 0, for example real eof pts, then no fake apkt after seek because dpts < 0
+
+                    last_apts          = 0;
+                    last_vpts          = 0;
                     aqueue->put(fake_apkt);
                 }
 
-                aqueue->blockEmpty(was_end >= kMaxEof); // do not block if buffer is not enough. block again on seek
+                // do not block if buffer is not enough. block again on seek
+
+                aqueue->blockEmpty(was_end >= kMaxEof);
             }
 
             if (vqueue && (!was_end || vqueue->isEmpty()))
@@ -1078,18 +1097,23 @@ void AVDemuxThread::run()
                 }
             }
         }
+/*
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("vqueue: %d, aqueue: %d/isbuffering %d isfull: %d, buffer: %d/%d",
+                vqueue->size(), aqueue->size(), aqueue->isBuffering(), aqueue->isFull(),
+                aqueue->buffered(), aqueue->bufferValue());
 
-        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("vqueue: %d, aqueue: %d/isbuffering %d isfull: %d, buffer: %d/%d", vqueue->size(), aqueue->size(), aqueue->isBuffering(), aqueue->isFull(), aqueue->buffered(), aqueue->bufferValue());
+        QMutexLocker locker(&buffer_mutex); // TODO: seems we do not need to lock
+        Q_UNUSED(locker);
+*/
+        /**
+         * 1 is empty but another is enough, then do not block to
+         * ensure the empty one can put packets imediatly.
+         * But usually it will not happen, why?
+         */
 
-        //QMutexLocker locker(&buffer_mutex); // TODO: seems we do not need to lock
-        //Q_UNUSED(locker);
-
-        /* 1 is empty but another is enough, then do not block to
-           ensure the empty one can put packets imediatly.
-           But usually it will not happen, why?
-        */
-
-        /* demux thread will be blocked only when 1 queue is full and still put
+        /**
+         * demux thread will be blocked only when 1 queue is full and still put
          * if vqueue is full and aqueue becomes empty, then demux thread
          * will be blocked. so we should wake up another queue when empty(or threshold?).
          * TODO: the video stream and audio stream may be group by group. provide it
@@ -1105,7 +1129,9 @@ void AVDemuxThread::run()
         {
             //apkt.isValid()) {
 
-            if (a_internal && !a_ext) // internal is always read even if external audio used
+            // internal is always read even if external audio used
+
+            if (a_internal && !a_ext)
                 apkt = demuxer->packet();
 
             last_apts = apkt.pts;
@@ -1136,7 +1162,7 @@ void AVDemuxThread::run()
                 // external audio: a_ext < 0, stream = audio_idx=>put invalid packet
 
                 if (a_ext >= 0)
-                    aqueue->put(apkt); //affect video_thread
+                    aqueue->put(apkt); // affect video_thread
             }
         }
 

@@ -89,7 +89,7 @@ static AVError::ErrorCode errorFromFFmpeg(int fe)
     return AVError::UnknowError;
 }
 
-/*
+/**
  *  correct wrong AVError to a right category by ffmpeg error code
  *  does nothing if ffmpeg error code is 0
  */

@@ -170,7 +170,7 @@ void AVClock::setSpeed(qreal speed)
 
 bool AVClock::isPaused() const
 {
-    return m_state == kPaused;
+    return (m_state == kPaused);
 }
 
 int AVClock::syncStart(int count)
@@ -205,7 +205,10 @@ bool AVClock::syncEndOnce(int id)
 void AVClock::start()
 {
     m_state = kRunning;
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("AVClock started...");
+
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("AVClock started...");
+
     timer.start();
 
     QTimer::singleShot(0, this, SLOT(restartCorrectionTimer()));
@@ -223,7 +226,7 @@ void AVClock::pause(bool p)
     if (clock_type == AudioClock)
         return;
 
-    m_state = p ? kPaused : kRunning;
+    m_state = (p ? kPaused : kRunning);
 
     if (p)
     {
@@ -254,7 +257,9 @@ void AVClock::reset()
 
     m_state = kStopped;
     value0  = 0;
-    pts_    = pts_v = delay_ = 0;
+    pts_    = 0;
+    pts_v   = 0;
+    delay_  = 0;
 
     QTimer::singleShot(0, this, SLOT(stopCorrectionTimer()));
     timer.invalidate();
@@ -275,9 +280,9 @@ void AVClock::timerEvent(QTimerEvent *event)
         return;
 
     const double delta_pts = (value() - last_pts) / speed();
-
-    //const double err = double(correction_timer.restart()) * kThousandth - delta_pts;
-
+/*
+    const double err       = double(correction_timer.restart()) * kThousandth - delta_pts;
+*/
     const qint64 now       = QDateTime::currentMSecsSinceEpoch();
     const double err       = double(now - t) * kThousandth - delta_pts;
     t                      = now;
@@ -288,9 +293,11 @@ void AVClock::timerEvent(QTimerEvent *event)
     {
         avg_err += err / (nb_restarted+1);
     }
-
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("correction timer event. error = %f, avg_err=%f, nb_restarted=%d", err, avg_err, nb_restarted);
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("correction timer event. error = %f,
+            avg_err=%f, nb_restarted=%d", err, avg_err, nb_restarted);
+*/
     last_pts     = value();
     nb_restarted = 0;
 }
