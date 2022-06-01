@@ -57,8 +57,8 @@ static AVError::ErrorCode errorFromFFmpeg(int fe)
 {
     typedef struct Q_DECL_HIDDEN
     {
-        int                ff;
-        AVError::ErrorCode e;
+        int                ff = 0;
+        AVError::ErrorCode e  = AVError::UnknowError;
     } err_entry;
 
     static const err_entry err_map[] =
@@ -166,120 +166,140 @@ QString AVError::string() const
             case NoError:
             {
                 errStr = i18n("No error");
+
                 break;
             }
 
             case OpenError:
             {
                 errStr = i18n("Open error");
+
                 break;
             }
 
             case OpenTimedout:
             {
                 errStr = i18n("Open timed out");
+
                 break;
             }
 
             case ParseStreamTimedOut:
             {
                 errStr = i18n("Parse stream timed out");
+
                 break;
             }
 
             case ParseStreamError:
             {
                 errStr = i18n("Parse stream error");
+
                 break;
             }
 
             case StreamNotFound:
             {
                 errStr = i18n("Stream not found");
+
                 break;
             }
 
             case ReadTimedout:
             {
                 errStr = i18n("Read packet timed out");
+
                 break;
             }
 
             case ReadError:
             {
                 errStr = i18n("Read error");
+
                 break;
             }
 
             case SeekError:
             {
                 errStr = i18n("Seek error");
+
                 break;
             }
 
             case ResourceError:
             {
                 errStr = i18n("Resource error");
+
                 break;
             }
 
             case OpenCodecError:
             {
                 errStr = i18n("Open codec error");
+
                 break;
             }
 
             case CloseCodecError:
             {
                 errStr = i18n("Close codec error");
+
                 break;
             }
 
             case VideoCodecNotFound:
             {
                 errStr = i18n("Video codec not found");
+
                 break;
             }
 
             case AudioCodecNotFound:
             {
                 errStr = i18n("Audio codec not found");
+
                 break;
             }
 
             case SubtitleCodecNotFound:
             {
                 errStr = i18n("Subtitle codec not found");
+
                 break;
             }
 
             case CodecError:
             {
                 errStr = i18n("Codec error");
+
                 break;
             }
 
             case FormatError:
             {
                 errStr = i18n("Format error");
+
                 break;
             }
 
             case NetworkError:
             {
                 errStr = i18n("Network error");
+
                 break;
             }
 
             case AccessDenied:
             {
                 errStr = i18n("Access denied");
+
                 break;
             }
 
             default:
             {
                 errStr = i18n("Unknown error");
+
                 break;
             }
         }

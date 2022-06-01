@@ -116,9 +116,7 @@ Q_DECLARE_METATYPE(QtAV::AVError)
 
 #ifndef QT_NO_DEBUG_STREAM
 
-
 class QDebug;
-
 
 QTAV_EXPORT QDebug operator<<(QDebug debug, const QtAV::AVError& error);
 

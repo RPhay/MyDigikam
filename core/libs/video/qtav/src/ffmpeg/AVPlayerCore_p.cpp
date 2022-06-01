@@ -331,7 +331,8 @@ void AVPlayerCore::Private::initStatistics()
 void AVPlayerCore::Private::initBaseStatistics()
 {
     statistics.reset();
-    statistics.url                 = ((current_source.type() == QVariant::String) ? current_source.toString() : QString());
+    statistics.url                 = ((current_source.type() == QVariant::String) ? current_source.toString()
+                                                                                  : QString());
     statistics.start_time          = QTime(0, 0, 0).addMSecs(int(demuxer.startTime()));
     statistics.duration            = QTime(0, 0, 0).addMSecs((int)demuxer.duration());
     AVFormatContext* const fmt_ctx = demuxer.formatContext();
@@ -400,8 +401,10 @@ void AVPlayerCore::Private::initCommonStatistics(int s, Statistics::Common* st, 
 
     st->codec      = QLatin1String(avcodec_get_name(avctx->codec_id));
     st->codec_long = QLatin1String(get_codec_long_name(avctx->codec_id));
-    st->total_time = QTime(0, 0, 0).addMSecs((stream->duration   == (qint64)AV_NOPTS_VALUE) ? 0 : int(qreal(stream->duration)*av_q2d(stream->time_base)*1000.0));
-    st->start_time = QTime(0, 0, 0).addMSecs((stream->start_time == (qint64)AV_NOPTS_VALUE) ? 0 : int(qreal(stream->start_time)*av_q2d(stream->time_base)*1000.0));
+    st->total_time = QTime(0, 0, 0).addMSecs((stream->duration   == (qint64)AV_NOPTS_VALUE) ? 0
+                                             : int(qreal(stream->duration)   * av_q2d(stream->time_base) * 1000.0));
+    st->start_time = QTime(0, 0, 0).addMSecs((stream->start_time == (qint64)AV_NOPTS_VALUE) ? 0
+                                             : int(qreal(stream->start_time) * av_q2d(stream->time_base) * 1000.0));
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
         << QString::asprintf("codec: %s(%s)",
@@ -759,18 +762,21 @@ QVariantList AVPlayerCore::Private::getTracksInfo(AVDemuxer* demuxer, AVDemuxer:
         case AVDemuxer::AudioStream:
         {
             streams = demuxer->audioStreams();
+
             break;
         }
 
         case AVDemuxer::SubtitleStream:
         {
             streams = demuxer->subtitleStreams();
+
             break;
         }
 
         case AVDemuxer::VideoStream:
         {
             streams = demuxer->videoStreams();
+
             break;
         }
 

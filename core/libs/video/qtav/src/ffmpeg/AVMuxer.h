@@ -90,6 +90,7 @@ public:
     bool isOpen()           const;
 
     // TODO: copyAudioContext(void* avctx) for copy encoding without decoding
+
     void copyProperties(VideoEncoder* enc); // rename to setEncoder
     void copyProperties(AudioEncoder* enc);
 
@@ -102,10 +103,10 @@ public Q_SLOTS:
 
     bool writeAudio(const QtAV::Packet& packet);
     bool writeVideo(const QtAV::Packet& packet);
-
-    //void writeHeader();
-    //void writeTrailer();
-
+/*
+    void writeHeader();
+    void writeTrailer();
+*/
 private:
 
     class Private;

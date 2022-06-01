@@ -141,7 +141,7 @@ AVStream* AVMuxer::Private::addStream(AVFormatContext* ctx, const QString& codec
 
 #ifndef HAVE_FFMPEG_VERSION5
 
-    AVCodec* codec = nullptr;
+    AVCodec* codec       = nullptr;
 
 #else // ffmpeg >= 5
 
@@ -671,7 +671,9 @@ bool AVMuxer::open()
     if (!d->format_forced.isEmpty())
     {
         d->format = av_guess_format(d->format_forced.toUtf8().constData(), nullptr, nullptr);
-        qCDebug(DIGIKAM_QTAV_LOG) << "force format: " << d->format_forced;
+
+        qCDebug(DIGIKAM_QTAV_LOG)
+            << "force format: " << d->format_forced;
     }
 
     //d->interrupt_hanlder->begin(InterruptHandler::Open);
@@ -884,8 +886,9 @@ void AVMuxer::Private::applyOptionsForContext()
 
     if (options.isEmpty())
     {
-        //av_opt_set_defaults(format_ctx);  // can't set default values! result maybe unexpected
-
+/*
+        av_opt_set_defaults(format_ctx);  // can't set default values! result maybe unexpected
+*/
         return;
     }
 

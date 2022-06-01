@@ -202,8 +202,8 @@ public:
     AVDemuxer               demuxer;
     AVDemuxThread*          read_thread;
     AVClock*                clock;
-    VideoRenderer*          vo;             // list? TODO: remove
-    AudioOutput*            ao;             // TODO: remove
+    VideoRenderer*          vo;                                         // list? TODO: remove
+    AudioOutput*            ao;                                         // TODO: remove
     AudioDecoder*           adec;
     VideoDecoder*           vdec;
     AudioThread*            athread;

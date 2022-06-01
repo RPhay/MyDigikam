@@ -1655,7 +1655,8 @@ bool AVPlayerCore::load()
 
     if (isLoaded())
     {
-        // release codec ctx. if not loaded, they are released by avformat. TODO: always let avformat release them?
+        // release codec ctx. if not loaded, they are released by avformat.
+        // TODO: always let avformat release them?
 
         if (d->adec)
             d->adec->setCodecContext(nullptr);
@@ -1791,7 +1792,8 @@ void AVPlayerCore::playInternal()
             return;
         }
 
-        // setup clock before avthread.start() because avthreads use clock. after avthreads setup because of ao check
+        // setup clock before avthread.start() because avthreads use clock.
+        // after avthreads setup because of ao check
 
         masterClock()->reset();
 
@@ -1863,7 +1865,7 @@ void AVPlayerCore::playInternal()
         if (d->repeat_current < 0)
             d->repeat_current = 0;
 
-    } //end lock scoped here to avoid dead lock if connect started() to a slot that call unload()/play()
+    } // end lock scoped here to avoid dead lock if connect started() to a slot that call unload()/play()
 
     if (d->start_position_norm > 0)
     {
@@ -2084,7 +2086,7 @@ void AVPlayerCore::seekChapter(int incr)
     av_time_base_q.num        = 1;
     av_time_base_q.den        = AV_TIME_BASE;
 
-    /* find the current chapter */
+    // find the current chapter
 
     for (i = 0 ; i < (int)chapters() ; ++i)
     {
@@ -2199,7 +2201,8 @@ void AVPlayerCore::stop()
     }
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
-        << QString::asprintf("all audio/video threads stopped... state: %d", d->state);
+        << QString::asprintf("all audio/video threads stopped... state: %d",
+            d->state);
 }
 
 void AVPlayerCore::timerEvent(QTimerEvent* te)
@@ -2393,14 +2396,14 @@ qreal AVPlayerCore::bufferProgress() const
 {
     const PacketBuffer* buf = d->read_thread->buffer();
 
-    return (buf ? buf->bufferProgress() : 0);
+    return (buf ? buf->bufferProgress() : 0.0);
 }
 
 qreal AVPlayerCore::bufferSpeed() const
 {
     const PacketBuffer* buf = d->read_thread->buffer();
 
-    return (buf ? buf->bufferSpeedInBytes() : 0);
+    return (buf ? buf->bufferSpeedInBytes() : 0.0);
 }
 
 qint64 AVPlayerCore::buffered() const
