@@ -24,13 +24,12 @@
 
 // Qt includes
 
+#include <QIcon>
+#include <QStyle>
 #include <QCheckBox>
-#include <QLabel>
 #include <QValidator>
 #include <QGridLayout>
 #include <QApplication>
-#include <QStyle>
-#include <QLineEdit>
 #include <QPlainTextEdit>
 
 // KDE includes
@@ -45,20 +44,24 @@ class Q_DECL_HIDDEN EXIFCaption::Private
 public:
 
     explicit Private()
+      : documentNameCheck    (nullptr),
+        imageDescCheck       (nullptr),
+        artistCheck          (nullptr),
+        copyrightCheck       (nullptr),
+        userCommentCheck     (nullptr),
+        syncJFIFCommentCheck (nullptr),
+        syncXMPCaptionCheck  (nullptr),
+        syncIPTCCaptionCheck (nullptr),
+        userCommentEdit      (nullptr),
+        documentNameEdit     (nullptr),
+        imageDescEdit        (nullptr),
+        artistEdit           (nullptr),
+        copyrightEdit        (nullptr),
+        documentNameIcon     (nullptr),
+        imageDescIcon        (nullptr),
+        artistIcon           (nullptr),
+        copyrightIcon        (nullptr)
     {
-        documentNameEdit     = nullptr;
-        imageDescEdit        = nullptr;
-        artistEdit           = nullptr;
-        copyrightEdit        = nullptr;
-        userCommentEdit      = nullptr;
-        userCommentCheck     = nullptr;
-        documentNameCheck    = nullptr;
-        imageDescCheck       = nullptr;
-        artistCheck          = nullptr;
-        copyrightCheck       = nullptr;
-        syncJFIFCommentCheck = nullptr;
-        syncXMPCaptionCheck  = nullptr;
-        syncIPTCCaptionCheck = nullptr;
     }
 
     QCheckBox*      documentNameCheck;
@@ -76,6 +79,11 @@ public:
     QLineEdit*      imageDescEdit;
     QLineEdit*      artistEdit;
     QLineEdit*      copyrightEdit;
+
+    QLabel*         documentNameIcon;
+    QLabel*         imageDescIcon;
+    QLabel*         artistIcon;
+    QLabel*         copyrightIcon;
 };
 
 EXIFCaption::EXIFCaption(QWidget* const parent)
@@ -84,46 +92,42 @@ EXIFCaption::EXIFCaption(QWidget* const parent)
 {
     QGridLayout* const grid = new QGridLayout(this);
 
-    // EXIF only accept printable Ascii char.
-    QRegularExpression asciiRx(QLatin1String("[\x20-\x7F]+$"));
-    QValidator* const asciiValidator = new QRegularExpressionValidator(asciiRx, this);
-
     // --------------------------------------------------------
 
     d->documentNameCheck = new QCheckBox(i18nc("name of the document this image has been scanned from", "Name (*):"), this);
     d->documentNameEdit  = new QLineEdit(this);
     d->documentNameEdit->setClearButtonEnabled(true);
-    d->documentNameEdit->setValidator(asciiValidator);
     d->documentNameEdit->setWhatsThis(i18n("Enter the name of the document from which "
                                            "this image was been scanned. This field is limited "
                                            "to ASCII characters."));
+    d->documentNameIcon  = new QLabel(this);
 
     // --------------------------------------------------------
 
     d->imageDescCheck = new QCheckBox(i18nc("image description", "Description (*):"), this);
     d->imageDescEdit  = new QLineEdit(this);
     d->imageDescEdit->setClearButtonEnabled(true);
-    d->imageDescEdit->setValidator(asciiValidator);
     d->imageDescEdit->setWhatsThis(i18n("Enter the image description. This field is limited "
                                         "to ASCII characters."));
+    d->imageDescIcon  = new QLabel(this);
 
     // --------------------------------------------------------
 
     d->artistCheck = new QCheckBox(i18n("Artist (*):"), this);
     d->artistEdit  = new QLineEdit(this);
     d->artistEdit->setClearButtonEnabled(true);
-    d->artistEdit->setValidator(asciiValidator);
     d->artistEdit->setWhatsThis(i18n("Enter the image author's name separated by semi-colons. "
                                      "This field is limited to ASCII characters."));
+    d->artistIcon  = new QLabel(this);
 
     // --------------------------------------------------------
 
     d->copyrightCheck = new QCheckBox(i18n("Copyright (*):"), this);
     d->copyrightEdit  = new QLineEdit(this);
     d->copyrightEdit->setClearButtonEnabled(true);
-    d->copyrightEdit->setValidator(asciiValidator);
     d->copyrightEdit->setWhatsThis(i18n("Enter the copyright owner of the image. "
                                         "This field is limited to ASCII characters."));
+    d->copyrightIcon  = new QLabel(this);
 
     // --------------------------------------------------------
 
@@ -155,18 +159,22 @@ EXIFCaption::EXIFCaption(QWidget* const parent)
 
     grid->addWidget(d->documentNameCheck,       0, 0, 1, 1);
     grid->addWidget(d->documentNameEdit,        0, 1, 1, 2);
+    grid->addWidget(d->documentNameIcon,        0, 3, 1, 1);
     grid->addWidget(d->imageDescCheck,          1, 0, 1, 1);
     grid->addWidget(d->imageDescEdit,           1, 1, 1, 2);
+    grid->addWidget(d->imageDescIcon,           1, 3, 1, 1);
     grid->addWidget(d->artistCheck,             2, 0, 1, 1);
     grid->addWidget(d->artistEdit,              2, 1, 1, 2);
+    grid->addWidget(d->artistIcon,              2, 3, 1, 1);
     grid->addWidget(d->copyrightCheck,          3, 0, 1, 1);
     grid->addWidget(d->copyrightEdit,           3, 1, 1, 2);
-    grid->addWidget(d->userCommentCheck,        4, 0, 1, 3);
-    grid->addWidget(d->userCommentEdit,         5, 0, 1, 3);
-    grid->addWidget(d->syncJFIFCommentCheck,    6, 0, 1, 3);
-    grid->addWidget(d->syncXMPCaptionCheck,     7, 0, 1, 3);
-    grid->addWidget(d->syncIPTCCaptionCheck,    8, 0, 1, 3);
-    grid->addWidget(note,                       9, 0, 1, 3);
+    grid->addWidget(d->copyrightIcon,           3, 3, 1, 1);
+    grid->addWidget(d->userCommentCheck,        4, 0, 1, 4);
+    grid->addWidget(d->userCommentEdit,         5, 0, 1, 4);
+    grid->addWidget(d->syncJFIFCommentCheck,    6, 0, 1, 4);
+    grid->addWidget(d->syncXMPCaptionCheck,     7, 0, 1, 4);
+    grid->addWidget(d->syncIPTCCaptionCheck,    8, 0, 1, 4);
+    grid->addWidget(note,                       9, 0, 1, 4);
     grid->setRowStretch(10, 10);
     grid->setColumnStretch(2, 10);
     grid->setContentsMargins(QMargins());
@@ -232,6 +240,12 @@ EXIFCaption::EXIFCaption(QWidget* const parent)
 
     connect(d->copyrightEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
+    // --------------------------------------------------------
+
+    connect(this, SIGNAL(signalModified()),
+            this, SLOT(slotUpdateIcons()));
+
+    slotUpdateIcons();
 }
 
 EXIFCaption::~EXIFCaption()
@@ -343,6 +357,8 @@ void EXIFCaption::readMetadata(const DMetadata& meta)
     d->syncXMPCaptionCheck->setEnabled(d->userCommentCheck->isChecked());
     d->syncIPTCCaptionCheck->setEnabled(d->userCommentCheck->isChecked());
 
+    slotUpdateIcons();
+
     blockSignals(false);
 }
 
@@ -391,6 +407,41 @@ void EXIFCaption::applyMetadata(const DMetadata& meta)
     }
     else
         meta.removeExifTag("Exif.Photo.UserComment");
+}
+
+void EXIFCaption::slotUpdateIcons()
+{
+    updateIcon(d->documentNameEdit, d->documentNameIcon);
+    updateIcon(d->imageDescEdit,    d->imageDescIcon);
+    updateIcon(d->artistEdit,       d->artistIcon);
+    updateIcon(d->copyrightEdit,    d->copyrightIcon);
+}
+
+void EXIFCaption::updateIcon(QLineEdit* const edit, QLabel* const label)
+{
+    bool valid    = true;
+    int  iconSize = edit->sizeHint().height() / 2;
+
+    for (int i = 0 ; i < edit->text().length() ; ++i)
+    {
+        if ((edit->text()[i] < 32) ||
+            (edit->text()[i] > 127))
+        {
+            valid = false;
+            break;
+        }
+    }
+
+    if (valid)
+    {
+        label->setPixmap(QIcon::fromTheme(QLatin1String("dialog-ok")).pixmap(iconSize));
+        label->setToolTip(i18n("The field contains valid ASCII characters."));
+    }
+    else
+    {
+        label->setPixmap(QIcon::fromTheme(QLatin1String("dialog-cancel")).pixmap(iconSize));
+        label->setToolTip(i18n("The field contains non ASCII characters."));
+    }
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
