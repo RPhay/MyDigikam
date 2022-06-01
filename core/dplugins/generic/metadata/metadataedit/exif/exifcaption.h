@@ -25,7 +25,9 @@
 
 // Qt includes
 
+#include <QLabel>
 #include <QWidget>
+#include <QLineEdit>
 
 // Local includes
 
@@ -61,6 +63,15 @@ public:
 Q_SIGNALS:
 
     void signalModified();
+
+private:
+
+    void updateIcon(QLineEdit* const edit,
+                    QLabel* const label);
+
+private Q_SLOTS:
+
+    void slotUpdateIcons();
 
 private:
 
