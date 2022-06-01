@@ -34,7 +34,6 @@
 #include <QCheckBox>
 #include <QHBoxLayout>
 #include <QLabel>
-#include <QRegularExpression>
 #include <QTextStream>
 #include <QToolButton>
 #include <QVBoxLayout>

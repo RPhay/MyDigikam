@@ -1229,7 +1229,7 @@ DbEngineSqlQuery BdEngineBackend::execQuery(const QString& sql, const QMap<QStri
         while ((pos = preparedString.indexOf(identifierRegExp, pos)) != -1)
         {
             QRegularExpressionMatch regMatch = identifierRegExp.match(preparedString);
-            QString namedPlaceholder = regMatch.captured(0);
+            QString namedPlaceholder         = regMatch.captured(0);
 
             if (!bindingMap.contains(namedPlaceholder))
             {

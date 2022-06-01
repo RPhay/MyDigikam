@@ -530,6 +530,7 @@ static QColor stringToColor(const QString& s)
 {
     QRegularExpression regexp(QRegularExpression::anchoredPattern(QLatin1String("(rgb|rgba)\\s*\\((.+)\\)\\s*")));
     QRegularExpressionMatch match = regexp.match(s);
+
     if (match.hasMatch())
     {
         QStringList colors = match.captured(1).split(QLatin1Char(','), QT_SKIP_EMPTY_PARTS);

@@ -66,6 +66,7 @@ QString DefaultVersionNamingScheme::baseName(const QString& currentPath, const Q
 
     QRegularExpression versionIntermediate(QRegularExpression::anchoredPattern(QLatin1String("(.+)_v(\\d+)-(\\d+)")));
     QRegularExpressionMatch match = versionIntermediate.match(completeBaseName);
+
     if (match.hasMatch())
     {
         if (counter)

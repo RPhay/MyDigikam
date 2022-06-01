@@ -124,17 +124,8 @@ bool DBinaryIface::versionIsRight() const
         return true;
     }
 
-    float floatVersion = 0.0f;
-
-    QRegularExpression reg(QLatin1String("^(\\d*[.]\\d*)"));
-
-    // cppcheck-suppress ignoredReturnValue ; dead code?
-    QStringList versionList = reg.match(version()).capturedTexts();
-
-    if (!versionList.isEmpty())
-    {
-        floatVersion = versionList.first().toFloat();
-    }
+    QRegularExpression verRegExp(QLatin1String("^(\\d*[.]\\d*)"));
+    float floatVersion = verRegExp.match(version()).captured(0).toFloat();
 
     return (!version().isNull() &&
             isFound()           &&
@@ -148,17 +139,8 @@ bool DBinaryIface::versionIsRight(const float customVersion) const
         return true;
     }
 
-    float floatVersion = 0.0f;
-
-    QRegularExpression reg(QLatin1String("^(\\d*[.]\\d*)"));
-
-    // cppcheck-suppress ignoredReturnValue ; dead code?
-    QStringList versionList = reg.match(version()).capturedTexts();
-
-    if (!versionList.isEmpty())
-    {
-        floatVersion = versionList.first().toFloat();
-    }
+    QRegularExpression verRegExp(QLatin1String("^(\\d*[.]\\d*)"));
+    float floatVersion = verRegExp.match(version()).captured(0).toFloat();
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Found (" << isFound()
                                  << ") :: Version : " << version()
@@ -207,13 +189,8 @@ bool DBinaryIface::parseHeader(const QString& output)
 
 void DBinaryIface::setVersion(QString& version)
 {
-    QRegularExpression versionRegExp(QLatin1String("\\d*(\\.\\d+)*"));
-    QStringList versionList = versionRegExp.match(version).capturedTexts();
-
-    if (!versionList.isEmpty())
-    {
-        m_version = versionList.first();
-    }
+    QRegularExpression verRegExp(QLatin1String("\\d*(\\.\\d+)*"));
+    m_version = verRegExp.match(version).captured(0);
 }
 
 void DBinaryIface::slotNavigateAndCheck()
