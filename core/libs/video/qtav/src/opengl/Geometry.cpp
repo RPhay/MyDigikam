@@ -81,12 +81,12 @@ int Geometry::indexDataSize() const
     {
         case TypeU16:
         {
-            return indexCount() * 2;
+            return (indexCount() * 2);
         }
 
         case TypeU32:
         {
-            return indexCount() * 4;
+            return (indexCount() * 4);
         }
 
         default:
@@ -176,7 +176,8 @@ void Geometry::setIndexValue(int index, int v1, int v2, int v3)
 
 void Geometry::dumpVertexData()
 {
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("vertex %p: ", m_vdata.constData());
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("vertex %p: ", m_vdata.constData());
 
     const int n = stride() / sizeof(float);
 
@@ -204,7 +205,10 @@ void Geometry::dumpIndexData()
             quint8* d  = (quint8*)m_idata.constData();
 
             for (int i = 0 ; i < m_icount ; ++i)
-                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%u, ", *(d+i));
+            {
+                qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                    << QString::asprintf("%u, ", *(d + i));
+            }
 
             break;
         }
@@ -214,7 +218,10 @@ void Geometry::dumpIndexData()
             quint16* d = reinterpret_cast<quint16*>(m_idata.data());
 
             for (int i = 0 ; i < m_icount ; ++i)
-                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%u, ", *(d+i));
+            {
+                qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                    << QString::asprintf("%u, ", *(d + i));
+            }
 
             break;
         }
@@ -224,7 +231,10 @@ void Geometry::dumpIndexData()
             quint32* d = reinterpret_cast<quint32*>(m_idata.data());
 
             for (int i = 0 ; i < m_icount ; ++i)
-                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%u, ", *(d+i));
+            {
+                qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                    << QString::asprintf("%u, ", *(d + i));
+            }
 
             break;
         }
@@ -255,21 +265,21 @@ void Geometry::allocate(int nbVertex, int nbIndex)
     {
         case TypeU8:
         {
-            m_idata.resize(nbIndex*sizeof(quint8));
+            m_idata.resize(nbIndex * sizeof(quint8));
 
             break;
         }
 
         case TypeU16:
         {
-            m_idata.resize(nbIndex*sizeof(quint16));
+            m_idata.resize(nbIndex * sizeof(quint16));
 
             break;
         }
 
         case TypeU32:
         {
-            m_idata.resize(nbIndex*sizeof(quint32));
+            m_idata.resize(nbIndex * sizeof(quint32));
 
             break;
         }
@@ -333,16 +343,16 @@ void TexturedGeometry::setPoint(int index, const QPointF& p, const QPointF& tp, 
 
 void TexturedGeometry::setGeometryPoint(int index, const QPointF& p)
 {
-    float* v = reinterpret_cast<float*>(m_vdata.data() + index*stride());
-    *v       = p.x();
-    *(v + 1) = p.y();
+    float* const v = reinterpret_cast<float*>(m_vdata.data() + index * stride());
+    *v             = p.x();
+    *(v + 1)       = p.y();
 }
 
 void TexturedGeometry::setTexturePoint(int index, const QPointF& tp, int texIndex)
 {
-    float* v = reinterpret_cast<float*>(m_vdata.data() + index*stride() + (texIndex+1)*2*sizeof(float));
-    *v       = tp.x();
-    *(v + 1) = tp.y();
+    float* const v = reinterpret_cast<float*>(m_vdata.data() + index * stride() + (texIndex + 1) * 2 * sizeof(float));
+    *v             = tp.x();
+    *(v + 1)       = tp.y();
 }
 
 void TexturedGeometry::setRect(const QRectF& r, const QRectF& tr, int texIndex)
@@ -388,7 +398,7 @@ void TexturedGeometry::setGeometryRect(const QRectF& r)
 void TexturedGeometry::setTextureRect(const QRectF& tr, int texIndex)
 {
     if (texRect.size() <= texIndex)
-        texRect.resize(texIndex+1);
+        texRect.resize(texIndex + 1);
 
     texRect[texIndex] = tr;
 }
@@ -407,7 +417,7 @@ void TexturedGeometry::create()
         // the first is position
 
         for (int i = (a.size() - 1) ; i < textureCount() ; ++i)
-            a << Attribute(TypeF32, 2, int((i+1)* 2*sizeof(float)));
+            a << Attribute(TypeF32, 2, int((i + 1) * 2 * sizeof(float)));
     }
     else
     {
@@ -493,7 +503,7 @@ Sphere::Sphere()
 
     a = QVector<Attribute>()
             << Attribute(TypeF32, 3, 0)
-            << Attribute(TypeF32, 2, 3*sizeof(float))
+            << Attribute(TypeF32, 2, 3 * sizeof(float))
     ;
 }
 
@@ -523,7 +533,7 @@ void Sphere::create()
         // the first is position
 
         for (int i = (a.size() - 1) ; i < nb_tex ; ++i)
-            a << Attribute(TypeF32, 2, 3 * sizeof(float) + int(i* 2 * sizeof(float)));
+            a << Attribute(TypeF32, 2, 3 * sizeof(float) + int(i * 2 * sizeof(float)));
     }
     else
     {
@@ -533,8 +543,8 @@ void Sphere::create()
     // TODO: use geo_rect?
 
     float* vd          = reinterpret_cast<float*>(m_vdata.data());
-    const float dTheta = M_PI*2.0 / float(ru);
-    const float dPhi   = M_PI     / float(rv);
+    const float dTheta = M_PI * 2.0 / float(ru);
+    const float dPhi   = M_PI       / float(rv);
 
     //const float du = 1.0f/float(ru);
     //const float dv = 1.0f/float(rv);
@@ -555,8 +565,8 @@ void Sphere::create()
 
             // const float u = float(lon) * du;
 
-            *vd++ = r * cosPhi * cosTheta;  // 2.0*float(lon)/float(ru) -1.0;//
-            *vd++ = r * sinPhi;             // 2.0*float(lat)/float(rv)-1.0;//
+            *vd++ = r * cosPhi * cosTheta;  // 2.0 * float(lon) / float(ru) - 1.0;
+            *vd++ = r * sinPhi;             // 2.0 * float(lat) / float(rv) - 1.0;
             *vd++ = r * cosPhi * sinTheta;
 
             for (int i = 0 ; i < nb_tex ; ++i)
@@ -577,10 +587,10 @@ void Sphere::create()
         {
             for (int lon = 0 ; lon < ru ; ++lon)
             {
-                const int ring     = lat*(ru + 1) + lon;
+                const int ring     = lat * (ru + 1) + lon;
                 const int ringNext = ring + ru + 1;
                 setIndexValue(idx, ring, ringNext, ring + 1);
-                setIndexValue(idx+3, ringNext, ringNext + 1, ring + 1);
+                setIndexValue(idx + 3, ringNext, ringNext + 1, ring + 1);
                 idx               += 6;
             }
         }

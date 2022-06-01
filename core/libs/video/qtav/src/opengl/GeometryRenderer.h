@@ -93,10 +93,11 @@ protected:
 
 private:
 
-    Geometry*       g;
-    int             features_;
-    int             vbo_size, ibo_size; // QOpenGLBuffer.size() may get error 0x501
-    QOpenGLBuffer   vbo;                // VertexBuffer
+    Geometry*                g = nullptr;
+    int                      features_;
+    int                      vbo_size;           // QOpenGLBuffer.size() may get error 0x501
+    int                      ibo_size;           // QOpenGLBuffer.size() may get error 0x501
+    QOpenGLBuffer            vbo;                // VertexBuffer
 
 #if QT_VAO
 
@@ -104,12 +105,12 @@ private:
 
 #endif
 
-    QOpenGLBuffer ibo;
+    QOpenGLBuffer            ibo;
 
     // geometry characteristic
 
-    int                stride;
-    QVector<Attribute> attrib;
+    int                      stride;
+    QVector<Attribute>       attrib;
 };
 
 } // namespace QtAV

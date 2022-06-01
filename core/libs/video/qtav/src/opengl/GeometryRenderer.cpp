@@ -45,11 +45,11 @@ GeometryRenderer::GeometryRenderer()
       ibo       (QOpenGLBuffer::IndexBuffer),
       stride    (0)
 {
-    static bool disable_ibo = qEnvironmentVariableIntValue("QTAV_NO_IBO") > 0;
+    static bool disable_ibo = (qEnvironmentVariableIntValue("QTAV_NO_IBO") > 0);
     setFeature(kIBO, !disable_ibo);
-    static bool disable_vbo = qEnvironmentVariableIntValue("QTAV_NO_VBO") > 0;
+    static bool disable_vbo = (qEnvironmentVariableIntValue("QTAV_NO_VBO") > 0);
     setFeature(kVBO, !disable_vbo);
-    static bool disable_vao = qEnvironmentVariableIntValue("QTAV_NO_VAO") > 0;
+    static bool disable_vao = (qEnvironmentVariableIntValue("QTAV_NO_VAO") > 0);
     setFeature(kVAO, !disable_vao);
 }
 
@@ -96,7 +96,7 @@ bool GeometryRenderer::testFeatures(int value) const
     return !!(features() & value);
 }
 
-void GeometryRenderer::updateGeometry(Geometry *geo)
+void GeometryRenderer::updateGeometry(Geometry* geo)
 {
     g = geo;
 
@@ -121,12 +121,16 @@ void GeometryRenderer::updateGeometry(Geometry *geo)
 
     if (support_map < 0)
     {
-        static const char* ext[] = { "GL_OES_mapbuffer", nullptr };
+        static const char* ext[] =
+        {
+            "GL_OES_mapbuffer",
+            nullptr
+        };
 
         if (OpenGLHelper::isOpenGLES())
         {
-            support_map = QOpenGLContext::currentContext()->format().majorVersion() > 2 ||
-                          OpenGLHelper::hasExtension(ext);
+            support_map = ((QOpenGLContext::currentContext()->format().majorVersion() > 2) ||
+                           OpenGLHelper::hasExtension(ext));
         }
         else
         {
@@ -138,10 +142,14 @@ void GeometryRenderer::updateGeometry(Geometry *geo)
     {
         if (g->indexCount() > 0)
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("creating IBO...");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("creating IBO...");
 
             if (!ibo.create())
-                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("IBO create error");
+            {
+                qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                    << QString::asprintf("IBO create error");
+            }
         }
     }
 
@@ -178,10 +186,14 @@ void GeometryRenderer::updateGeometry(Geometry *geo)
 
     if (testFeatures(kVBO) && !vbo.isCreated())
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("creating VBO...");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("creating VBO...");
 
         if (!vbo.create())
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("VBO create error");
+        {
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("VBO create error");
+        }
     }
 
     if (vbo.isCreated())
@@ -189,8 +201,9 @@ void GeometryRenderer::updateGeometry(Geometry *geo)
         vbo.bind();
         const int bs = g->vertexCount()*g->stride();
 
-        /* Notes from https://www.opengl.org/sdk/docs/man/html/glBufferSubData.xhtml
-           When replacing the entire data store, consider using glBufferSubData rather than completely recreating the data store with glBufferData. This avoids the cost of reallocating the data store.
+        /*
+         * Notes from https://www.opengl.org/sdk/docs/man/html/glBufferSubData.xhtml
+         * When replacing the entire data store, consider using glBufferSubData rather than completely recreating the data store with glBufferData. This avoids the cost of reallocating the data store.
          */
 
         if (bs == vbo_size)
@@ -231,10 +244,14 @@ void GeometryRenderer::updateGeometry(Geometry *geo)
 
     if (testFeatures(kVAO) && !vao.isCreated())
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("creating VAO...");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("creating VAO...");
 
         if (!vao.create())
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("VAO create error");
+        {
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("VAO create error");
+        }
     }
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
@@ -262,17 +279,23 @@ void GeometryRenderer::updateGeometry(Geometry *geo)
             // FIXME: assume bind order is 0,1,2...
 
             const Attribute& a = g->attributes().at(an);
-            QGLF(glVertexAttribPointer(an, a.tupleSize(), a.type(), a.normalize(), g->stride(), reinterpret_cast<const void *>(qptrdiff(a.offset())))); //TODO: in setActiveShader
+            QGLF(glVertexAttribPointer(an, a.tupleSize(), a.type(), a.normalize(), g->stride(),
+                                       reinterpret_cast<const void *>(qptrdiff(a.offset())))); // TODO: in setActiveShader
             QGLF(glEnableVertexAttribArray(an));
         }
 
-        vbo.release(); // unbind after vao unbind? http://www.zwqxin.com/archives/opengl/vao-and-vbo-stuff.html     // krazy:exclude=insecurenet
+        // unbind after vao unbind?
+        // http://www.zwqxin.com/archives/opengl/vao-and-vbo-stuff.html     // krazy:exclude=insecurenet
+
+        vbo.release();
     }
 
     // TODO: bind pointers if vbo is disabled
     // bind ibo to vao thus no bind is required later
 
-    if (ibo.isCreated())    // if not bind here, glDrawElements(...,nullptr) crashes and must use ibo data ptr, why?
+    // if not bind here, glDrawElements(...,nullptr) crashes and must use ibo data ptr, why?
+
+    if (ibo.isCreated())
         ibo.bind();
 
     vao.release();
@@ -282,7 +305,8 @@ void GeometryRenderer::updateGeometry(Geometry *geo)
 
 #endif
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("geometry updated");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("geometry updated");
 }
 
 void GeometryRenderer::bindBuffers()
@@ -295,16 +319,18 @@ void GeometryRenderer::bindBuffers()
 
     if (vao.isCreated())
     {
-        vao.bind(); // vbo, ibo is ok now
+        vao.bind();             // vbo, ibo is ok now
         setv_skip = bind_vbo;
         bind_vbo  = false;
         bind_ibo  = false;
     }
 
 #endif
-
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("bind ibo: %d vbo: %d; set v: %d", bind_ibo, bind_vbo, !setv_skip);
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("bind ibo: %d vbo: %d; set v: %d",
+            bind_ibo, bind_vbo, !setv_skip);
+*/
     if (bind_ibo)
         ibo.bind();
 
@@ -351,9 +377,11 @@ void GeometryRenderer::unbindBuffers()
     }
 
 #endif //QT_VAO
-
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("unbind ibo: %d vbo: %d; unset v: %d", unbind_ibo, unbind_vbo, !unsetv_skip);
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("unbind ibo: %d vbo: %d; unset v: %d",
+            unbind_ibo, unbind_vbo, !unsetv_skip);
+*/
     if (unbind_ibo)
         ibo.release();
 

@@ -61,9 +61,9 @@ public:
 protected:
 
     virtual const float* kernel()           const = 0;
-    const QByteArray& kernelUniformHeader() const;  // can be used in your userFragmentShaderHeader();
-    const QByteArray& kernelSample()        const;  // can be  in your userSample();
-    void setKernelUniformValue();                   // can be used in your setUserUniformValues()
+    const QByteArray& kernelUniformHeader() const;  ///< can be used in your userFragmentShaderHeader();
+    const QByteArray& kernelSample()        const;  ///< can be  in your userSample();
+    void setKernelUniformValue();                   ///< can be used in your setUserUniformValues()
 
 private:
 

@@ -196,7 +196,7 @@ public:
     void setGeometryRect(const QRectF& r);
     void setTextureRect(const QRectF& tr, int texIndex = 0);
 
-    int stride() const override { return 2 * sizeof(float) * (textureCount() + 1); }
+    int stride() const override { return (2 * sizeof(float) * (textureCount() + 1)); }
 
     const QVector<Attribute>& attributes() const override;
     virtual void create();
