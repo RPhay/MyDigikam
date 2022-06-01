@@ -72,10 +72,10 @@ public:
 };
 
 /*!
-    Constructs a shallow copy of \a other.  Since AudioFrame is
-    explicitly shared, these two instances will reflect the same frame.
-
-*/
+ * Constructs a shallow copy of \a other. Since AudioFrame is
+ * explicitly shared, these two instances will reflect the same frame.
+ *
+ */
 AudioFrame::AudioFrame(const AudioFrame& other)
     : Frame(other)
 {
@@ -107,15 +107,15 @@ AudioFrame::AudioFrame(const AudioFormat& format, const QByteArray& data)
         setBytesPerLine(bpl, i);
         setBits((uchar*)d->data.constData() + i * bpl, i);
     }
-
-    //init();
+/*
+    init();
+*/
 }
 
 /*!
-    Assigns the contents of \a other to this video frame.  Since AudioFrame is
-    explicitly shared, these two instances will reflect the same frame.
-*/
-
+ * Assigns the contents of \a other to this video frame.  Since AudioFrame is
+ * explicitly shared, these two instances will reflect the same frame.
+ */
 AudioFrame &AudioFrame::operator =(const AudioFrame &other)
 {
     d_ptr = other.d_ptr;
@@ -230,7 +230,8 @@ void AudioFrame::prepend(AudioFrame &other)
 
     if (d->format != other.format())
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "To prepend a frame it must have the same audio format";
+        qCWarning(DIGIKAM_QTAV_LOG_WARN)
+            << "To prepend a frame it must have the same audio format";
 
         return;
     }
@@ -256,7 +257,8 @@ void AudioFrame::setSamplesPerChannel(int samples)
 
     if (!d->format.isValid())
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "can not set spc for an invalid format: " << d->format;
+        qCWarning(DIGIKAM_QTAV_LOG_WARN)
+            << "can not set spc for an invalid format: " << d->format;
 
         return;
     }
@@ -311,10 +313,10 @@ AudioFrame AudioFrame::to(const AudioFormat& fmt) const
 {
     if (!isValid() || !constBits(0))
         return AudioFrame();
-
-    //if (fmt == format())
-      //  return clone(); //FIXME: clone a frame from ffmpeg is not enough?
-
+/*
+    if (fmt == format())
+        return clone(); //FIXME: clone a frame from ffmpeg is not enough?
+*/
     Q_D(const AudioFrame);
 
     // TODO: use a pool
@@ -349,7 +351,8 @@ AudioFrame AudioFrame::to(const AudioFormat& fmt) const
 
     if (!conv->convert((const quint8**)d->planes.constData()))
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "AudioFrame::to error: " << format() << "=>" << fmt;
+        qCWarning(DIGIKAM_QTAV_LOG_WARN)
+            << "AudioFrame::to error: " << format() << "=>" << fmt;
 
         return AudioFrame();
     }

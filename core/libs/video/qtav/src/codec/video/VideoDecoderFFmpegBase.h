@@ -92,9 +92,9 @@ public:
 
 public:
 
-    AVFrame* frame  = nullptr;          // set once and not change
-    int      width  = 0;
-    int      height = 0;  // The current decoded frame size
+    AVFrame* frame  = nullptr;          ///< set once and not change
+    int      width  = 0;                ///< The current decoded frame size
+    int      height = 0;                ///< The current decoded frame size
 
 private:
 

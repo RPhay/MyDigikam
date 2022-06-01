@@ -165,7 +165,7 @@ bool AudioResamplerFF::convert(const quint8** data)
     // av_samples_get_buffer_size(0, d.out_channels, converted_samplers_per_channel, d.out_sample_format, 0)
     // if (converted_samplers_per_channel != out_size)
 
-    d.data_out.resize(converted_samplers_per_channel*size_per_sample_with_channels);
+    d.data_out.resize(converted_samplers_per_channel * size_per_sample_with_channels);
 
     return true;
 }
@@ -347,7 +347,7 @@ bool AudioResamplerFF::prepare()
         for (int i = 0, o = 0 ; o < out_c ; ++o)
         {
             matrix[i + in_c * o] = 1;
-            i                    = (i + i)%in_c;
+            i                    = (i + i) % in_c;
         }
     }
 

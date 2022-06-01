@@ -88,8 +88,8 @@ int AudioFormat::sampleFormatToFFmpeg(AudioFormat::SampleFormat fmt)
 
 typedef struct Q_DECL_HIDDEN
 {
-    qint64                     ff;
-    AudioFormat::ChannelLayout cl;
+    qint64                     ff = 0;
+    AudioFormat::ChannelLayout cl = AudioFormat::ChannelLayout_Unsupported;
 } ChannelLayoutMap;
 
 static const ChannelLayoutMap kChannelLayoutMap[] =
@@ -183,13 +183,13 @@ AudioFormat::SampleFormat AudioFormat::make(int bytesPerSample, bool isFloat, bo
     return SampleFormat(f);
 }
 
-AudioFormat::AudioFormat():
-    d(new AudioFormatPrivate())
+AudioFormat::AudioFormat()
+    : d(new AudioFormatPrivate())
 {
 }
 
-AudioFormat::AudioFormat(const AudioFormat& other):
-    d(other.d)
+AudioFormat::AudioFormat(const AudioFormat& other)
+    : d(other.d)
 {
 }
 
@@ -198,8 +198,8 @@ AudioFormat::~AudioFormat()
 }
 
 /*!
-    Assigns \a other to this AudioFormat implementation.
-*/
+ * Assigns \a other to this AudioFormat implementation.
+ */
 AudioFormat& AudioFormat::operator=(const AudioFormat& other)
 {
     d = other.d;
@@ -208,11 +208,11 @@ AudioFormat& AudioFormat::operator=(const AudioFormat& other)
 }
 
 /*!
-  Returns true if this AudioFormat is equal to the \a other
-  AudioFormat; otherwise returns false.
-
-  All elements of AudioFormat are used for the comparison.
-*/
+ * Returns true if this AudioFormat is equal to the \a other
+ * AudioFormat; otherwise returns false.
+ *
+ * All elements of AudioFormat are used for the comparison.
+ */
 bool AudioFormat::operator==(const AudioFormat& other) const
 {
     return (
@@ -228,19 +228,19 @@ bool AudioFormat::operator==(const AudioFormat& other) const
 }
 
 /*!
-  Returns true if this AudioFormat is not equal to the \a other
-  AudioFormat; otherwise returns false.
-
-  All elements of AudioFormat are used for the comparison.
-*/
+ * Returns true if this AudioFormat is not equal to the \a other
+ * AudioFormat; otherwise returns false.
+ *
+ * All elements of AudioFormat are used for the comparison.
+ */
 bool AudioFormat::operator!=(const AudioFormat& other) const
 {
     return !(*this == other);
 }
 
 /*!
-    Returns true if all of the parameters are valid->
-*/
+ * Returns true if all of the parameters are valid->
+ */
 bool AudioFormat::isValid() const
 {
     return (
@@ -386,14 +386,14 @@ QString AudioFormat::sampleFormatName() const
 }
 
 /*!
-    Returns the number of bytes required for this audio format for \a duration microseconds.
-
-    Returns 0 if this format is not valid->
-
-    Note that some rounding may occur if \a duration is not an exact fraction of the
-    sampleRate().
-
-    \sa durationForBytes()
+ * Returns the number of bytes required for this audio format for \a duration microseconds.
+ *
+ * Returns 0 if this format is not valid->
+ *
+ * Note that some rounding may occur if \a duration is not an exact fraction of the
+ * sampleRate().
+ *
+ * \sa durationForBytes()
  */
 qint32 AudioFormat::bytesForDuration(qint64 duration) const
 {
@@ -401,15 +401,15 @@ qint32 AudioFormat::bytesForDuration(qint64 duration) const
 }
 
 /*!
-    Returns the number of microseconds represented by \a bytes in this format.
-
-    Returns 0 if this format is not valid->
-
-    Note that some rounding may occur if \a bytes is not an exact multiple
-    of the number of bytes per frame.
-
-    \sa bytesForDuration()
-*/
+ * Returns the number of microseconds represented by \a bytes in this format.
+ *
+ * Returns 0 if this format is not valid->
+ *
+ * Note that some rounding may occur if \a bytes is not an exact multiple
+ * of the number of bytes per frame.
+ *
+ * \sa bytesForDuration()
+ */
 qint64 AudioFormat::durationForBytes(qint32 bytes) const
 {
     if (!isValid() || (bytes <= 0))
@@ -421,27 +421,27 @@ qint64 AudioFormat::durationForBytes(qint32 bytes) const
 }
 
 /*!
-    Returns the number of bytes required for \a frameCount frames of this format.
-
-    Returns 0 if this format is not valid->
-
-    \sa bytesForDuration()
-*/
+ * Returns the number of bytes required for \a frameCount frames of this format.
+ *
+ * Returns 0 if this format is not valid->
+ *
+ * \sa bytesForDuration()
+ */
 qint32 AudioFormat::bytesForFrames(qint32 frameCount) const
 {
     return (frameCount * bytesPerFrame());
 }
 
 /*!
-    Returns the number of frames represented by \a byteCount in this format.
-
-    Note that some rounding may occur if \a byteCount is not an exact multiple
-    of the number of bytes per frame.
-
-    Each frame has one sample per channel.
-
-    \sa framesForDuration()
-*/
+ * Returns the number of frames represented by \a byteCount in this format.
+ *
+ * Note that some rounding may occur if \a byteCount is not an exact multiple
+ * of the number of bytes per frame.
+ *
+ * Each frame has one sample per channel.
+ *
+ * \sa framesForDuration()
+ */
 qint32 AudioFormat::framesForBytes(qint32 byteCount) const
 {
     int size = bytesPerFrame();
@@ -453,11 +453,11 @@ qint32 AudioFormat::framesForBytes(qint32 byteCount) const
 }
 
 /*!
-    Returns the number of frames required to represent \a duration microseconds in this format.
-
-    Note that some rounding may occur if \a duration is not an exact fraction of the
-    \l sampleRate().
-*/
+ * Returns the number of frames required to represent \a duration microseconds in this format.
+ *
+ *  Note that some rounding may occur if \a duration is not an exact fraction of the
+ * \l sampleRate().
+ */
 qint32 AudioFormat::framesForDuration(qint64 duration) const
 {
     if (!isValid())
