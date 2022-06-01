@@ -300,7 +300,7 @@ inline std::string signature_of(const T(&)[N]) {
 template<template<typename, class...> class C, typename T, class... Args> struct is_jarray;
 template<typename T, class... Args> struct is_jarray<std::vector, T, Args...> : public std::true_type {};
 template<typename T, class... Args> struct is_jarray<std::valarray, T, Args...> : public std::true_type {};
-// exclude std::string but not all basic_string becase no corresponding java type for wstring
+// exclude std::string but not all basic_string because no corresponding java type for wstring
 template<class... Args> struct is_jarray<std::basic_string, char, Args...> : public std::false_type {};
 template<template<typename, class...> class C, typename T, class... Args> using if_jarray = typename std::enable_if<is_jarray<C, T, Args...>::value, bool>::type;
 template<template<typename, class...> class C, typename T, class... Args, if_jarray<C, T, Args...> = true>

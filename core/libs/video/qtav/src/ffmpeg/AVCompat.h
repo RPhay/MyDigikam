@@ -54,7 +54,7 @@
 extern "C"
 {
 
-/*UINT64_C: C99 math features, need -D__STDC_CONSTANT_MACROS in CXXFLAGS*/
+// UINT64_C: C99 math features, need -D__STDC_CONSTANT_MACROS in CXXFLAGS
 
 #endif /*__cplusplus*/
 
@@ -81,7 +81,7 @@ extern "C"
 #   include <libavutil/channel_layout.h>
 #endif
 
-/* TODO: how to check whether we have swresample or not? how to check avresample? */
+// TODO: how to check whether we have swresample or not? how to check avresample?
 
 #include <libavutil/samplefmt.h>
 
@@ -102,7 +102,7 @@ extern "C"
 
 #if QTAV_HAVE(AVFILTER)
 #   if LIBAVFILTER_VERSION_INT < AV_VERSION_INT(3,8,0)
-#       include <libavfilter/avfiltergraph.h> /* code is here for old version */
+#       include <libavfilter/avfiltergraph.h> // code is here for old version
 #   else
 #       include <libavfilter/avfilter.h>
 #   endif
@@ -296,14 +296,18 @@ int64_t av_get_default_channel_layout(int nb_channels);     // krazy:exclude=typ
 #   define swr_get_class() avresample_get_class()
 #   define swr_alloc() avresample_alloc_context()
 
-//# define swr_next_pts()
+/*
+#   define swr_next_pts()
+*/
 
 #   define swr_set_compensation() avresample_set_compensation()
 #   define swr_set_channel_mapping(ctx, map) avresample_set_channel_mapping(ctx, map)
 #   define swr_set_matrix(ctx, matrix, stride) avresample_set_matrix(ctx, matrix, stride)
 
-//# define swr_drop_output(ctx, count)
-//# define swr_inject_silence(ctx, count)
+/*
+#   define swr_drop_output(ctx, count)
+#   define swr_inject_silence(ctx, count)
+*/
 
 #   define swr_get_delay(ctx, ...) avresample_get_delay(ctx)
 #   if LIBAVRESAMPLE_VERSION_INT >= AV_VERSION_INT(1, 0, 0)     // ffmpeg >= 1.1
@@ -320,23 +324,24 @@ int64_t av_get_default_channel_layout(int nb_channels);     // krazy:exclude=typ
 #       define swr_get_delay(ctx, ...) avresample_get_delay(ctx)
 #   endif
 
-struct SwrContext* swr_alloc_set_opts(struct SwrContext* s, int64_t out_ch_layout,
+struct SwrContext* swr_alloc_set_opts(struct SwrContext* s, int64_t out_ch_layout,             // krazy:exclude=typedefs
                                       enum AVSampleFormat out_sample_fmt, int out_sample_rate,
-                                      int64_t in_ch_layout, enum AVSampleFormat in_sample_fmt,
-                                      int in_sample_rate, int log_offset, void* log_ctx);    // krazy:exclude=typedefs
+                                      int64_t in_ch_layout, enum AVSampleFormat in_sample_fmt, // krazy:exclude=typedefs
+                                      int in_sample_rate, int log_offset, void* log_ctx);
 
 #   define swresample_version() avresample_version()
 #   define swresample_configuration() avresample_configuration()
 #   define swresample_license() avresample_license()
 #endif
 
-/* For FFmpeg < 2.0
+/**
+ * For FFmpeg < 2.0
  * FF_API_PIX_FMT macro?
  * 51.42.0: PIX_FMT_* -> AV_PIX_FMT_*, PixelFormat -> AVPixelFormat
  * so I introduce QTAV_PIX_FMT_C(X) for internal use
  * FFmpeg n1.1 AVPixelFormat
  */
-#if LIBAVUTIL_VERSION_INT < AV_VERSION_INT(52, 13, 100) //(51, 42, 0)
+#if LIBAVUTIL_VERSION_INT < AV_VERSION_INT(52, 13, 100) // (51, 42, 0)
 
 typedef enum PixelFormat AVPixelFormat; // so we must avoid using  enum AVPixelFormat
 
@@ -475,7 +480,8 @@ typedef enum CodecID AVCodecID;
 #   define QTAV_CODEC_ID(X) CODEC_ID_##X
 #endif
 
-/* av_frame_alloc
+/**
+ * av_frame_alloc
  * since FFmpeg2.0: 2.0.4 avcodec-55.18.102, avutil-52.38.100 (1.2.7 avcodec-54.92.100,avutil-52.18.100)
  * since libav10.0: 10.2 avcodec55.34.1, avutil-53.3.0
  * the same as avcodec_alloc_frame() (deprecated since 2.2). AVFrame was in avcodec.h, now in avutil/frame.h
@@ -573,7 +579,7 @@ int avfilter_copy_buf_props(AVFrame* dst, const AVFilterBufferRef* src);
 
 #endif // QTAV_HAVE(AVFILTER)
 
-/* helper functions */
+// helper functions
 
 const char* get_codec_long_name(AVCodecID id);
 

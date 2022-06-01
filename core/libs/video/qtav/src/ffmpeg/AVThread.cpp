@@ -105,7 +105,8 @@ bool AVThread::isPaused() const
 {
     DPTR_D(const AVThread);     // cppcheck-suppress constVariable
 
-    // if d.next_pause is true, the thread will pause soon, may happens before you can handle the result
+    // if d.next_pause is true, the thread will pause soon,
+    // may happens before you can handle the result
 
     return (d.paused || d.next_pause);
 }
