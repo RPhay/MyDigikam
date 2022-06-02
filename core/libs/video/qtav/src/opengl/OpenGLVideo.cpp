@@ -27,12 +27,9 @@
 
 #include <QThreadStorage>
 #include <QColor>
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#   include <QGuiApplication>
-#   include <QScreen>
-#   include <QSurface>
-#endif
+#include <QGuiApplication>
+#include <QScreen>
+#include <QSurface>
 
 // Local includes
 
@@ -79,7 +76,7 @@ public:
 
         delete geometry;
 
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0) || !defined(Q_COMPILER_LAMBDA)
+#if !defined(Q_COMPILER_LAMBDA)
 
         delete gr;
 
@@ -164,7 +161,7 @@ void OpenGLVideoPrivate::updateGeometry(VideoShader* shader, const QRectF& t, co
     if (!new_thread.hasLocalData())
         new_thread.setLocalData(true);
 
-    update_gr = new_thread.localData();
+    update_gr      = new_thread.localData();
 
     if (!gr || update_gr)
     {
@@ -175,7 +172,7 @@ void OpenGLVideoPrivate::updateGeometry(VideoShader* shader, const QRectF& t, co
         GeometryRenderer* const geordr = new GeometryRenderer(); // local var is captured by lambda
         gr                             = geordr;
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0) && defined(Q_COMPILER_LAMBDA)
+#if defined(Q_COMPILER_LAMBDA)
 
         QObject::connect(QOpenGLContext::currentContext(), &QOpenGLContext::aboutToBeDestroyed,
                          [geordr]
@@ -221,9 +218,9 @@ void OpenGLVideoPrivate::updateGeometry(VideoShader* shader, const QRectF& t, co
         geometry = new Sphere();
     else
         geometry = new TexturedGeometry();
-
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("updating geometry...");
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("updating geometry...");
+*/
     // setTextureCount may change the vertex data. Call it before setRect()
 
     qCDebug(DIGIKAM_QTAV_LOG) << "target rect: " << target_rect ;
@@ -248,16 +245,10 @@ void OpenGLVideoPrivate::updateGeometry(VideoShader* shader, const QRectF& t, co
 
 OpenGLVideo::OpenGLVideo()
 {
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
-
     // TODO: system resolution change
 
     connect(QGuiApplication::instance(), SIGNAL(primaryScreenChanged(QScreen*)),
             this, SLOT(updateViewport()));
-
-#endif
-
 }
 
 bool OpenGLVideo::isSupported(VideoFormat::PixelFormat pixfmt)
@@ -272,7 +263,10 @@ void OpenGLVideo::setOpenGLContext(QOpenGLContext* ctx)
     if (d.ctx == ctx)
         return;
 
-    qreal b = 0.0, c = 0.0, h = 0.0, s = 0.0;
+    qreal b = 0.0;
+    qreal c = 0.0;
+    qreal h = 0.0;
+    qreal s = 0.0;
 
     if (d.material)
     {
@@ -285,7 +279,7 @@ void OpenGLVideo::setOpenGLContext(QOpenGLContext* ctx)
     }
 
     d.resetGL(); // TODO: is it ok to destroygl resources in another context?
-    d.ctx = ctx; // Qt4: set to null in resetGL()
+    d.ctx = ctx;
 
     if (!ctx)
     {
@@ -297,12 +291,7 @@ void OpenGLVideo::setOpenGLContext(QOpenGLContext* ctx)
     d.material->setContrast(c);
     d.material->setHue(h);
     d.material->setSaturation(s);
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-
-    d.manager = ctx->findChild<ShaderManager*>(QLatin1String("__qtav_shader_manager"));
-
-#endif
+    d.manager  = ctx->findChild<ShaderManager*>(QLatin1String("__qtav_shader_manager"));
 
     updateViewport();
 
@@ -311,8 +300,6 @@ void OpenGLVideo::setOpenGLContext(QOpenGLContext* ctx)
 
     // TODO: what if ctx is delete?
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-
     d.manager = new ShaderManager(ctx);
 
     // NOTE: direct connection to make sure there is a valid context. makeCurrent in window.aboutToBeDestroyed()?
@@ -320,12 +307,6 @@ void OpenGLVideo::setOpenGLContext(QOpenGLContext* ctx)
     QObject::connect(ctx, SIGNAL(aboutToBeDestroyed()),
                      this, SLOT(resetGL()),
                      Qt::DirectConnection);
-
-#else
-
-    d.manager = new ShaderManager(this);
-
-#endif
 
     d.manager->setObjectName(QLatin1String("__qtav_shader_manager"));
 
@@ -367,27 +348,33 @@ void OpenGLVideo::setOpenGLContext(QOpenGLContext* ctx)
 
         bool v = OpenGLHelper::isOpenGLES();
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Is OpenGLES: %d", v);
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("Is OpenGLES: %d", v);
 
         v      = OpenGLHelper::isEGL();
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Is EGL: %d", v);
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("Is EGL: %d", v);
 
         const int glsl_ver = OpenGLHelper::GLSLVersion();
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("GLSL version: %d", glsl_ver);
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("GLSL version: %d", glsl_ver);
 
         v      = OpenGLHelper::isPBOSupported();
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Has PBO: %d", v);
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("Has PBO: %d", v);
 
         v      = OpenGLHelper::has16BitTexture();
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Has 16bit texture: %d", v);
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("Has 16bit texture: %d", v);
 
         v      = OpenGLHelper::hasRG();
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Has RG texture: %d", v);
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("Has RG texture: %d", v);
 
         qCDebug(DIGIKAM_QTAV_LOG) << ctx->format();
     }
@@ -398,18 +385,18 @@ QOpenGLContext* OpenGLVideo::openGLContext()
     return d_func().ctx;
 }
 
-void OpenGLVideo::setCurrentFrame(const VideoFrame &frame)
+void OpenGLVideo::setCurrentFrame(const VideoFrame& frame)
 {
     d_func().material->setCurrentFrame(frame);
     d_func().has_a = frame.format().hasAlpha();
 }
 
-void OpenGLVideo::setProjectionMatrixToRect(const QRectF &v)
+void OpenGLVideo::setProjectionMatrixToRect(const QRectF& v)
 {
     setViewport(v);
 }
 
-void OpenGLVideo::setViewport(const QRectF &r)
+void OpenGLVideo::setViewport(const QRectF& r)
 {
     DPTR_D(OpenGLVideo);
     d.rect = r;
@@ -508,21 +495,32 @@ void OpenGLVideo::render(const QRectF &target, const QRectF& roi, const QMatrix4
 
     if (d.material_type != mt)
     {
-        qCDebug(DIGIKAM_QTAV_LOG) << "material changed: " << VideoMaterial::typeName(d.material_type) << " => " << VideoMaterial::typeName(mt);
+        qCDebug(DIGIKAM_QTAV_LOG) << "material changed: "
+                                  << VideoMaterial::typeName(d.material_type)
+                                  << " => " << VideoMaterial::typeName(mt);
         d.material_type = mt;
     }
 
-    if (!d.material->bind()) // bind first because texture parameters(target) mapped from native buffer is unknown before it
+    // bind first because texture parameters(target) mapped from native buffer is unknown before it
+
+    if (!d.material->bind()) 
         return;
 
     VideoShader* shader = d.user_shader;
 
     if (!shader)
-        shader = d.manager->prepareMaterial(d.material, mt); // TODO: print shader type name if changed. prepareMaterial(,sample_code, pp_code)
+    {
+        // TODO: print shader type name if changed. prepareMaterial(,sample_code, pp_code)
 
-    DYGL(glViewport(d.rect.x(), d.rect.y(), d.rect.width(), d.rect.height())); // viewport was used in gpu filters is wrong, qt quick fbo item's is right(so must ensure setProjectionMatrixToRect was called correctly)
+        shader = d.manager->prepareMaterial(d.material, mt);
+    }
+
+    // viewport was used in gpu filters is wrong, qt quick fbo item's is right
+    // (so must ensure setProjectionMatrixToRect was called correctly)
+
+    DYGL(glViewport(d.rect.x(), d.rect.y(), d.rect.width(), d.rect.height()));
     shader->update(d.material);
-    shader->program()->setUniformValue(shader->matrixLocation(), transform*d.matrix);
+    shader->program()->setUniformValue(shader->matrixLocation(), transform * d.matrix);
 
     // uniform end. attribute begin
 
@@ -535,7 +533,7 @@ void OpenGLVideo::render(const QRectF &target, const QRectF& roi, const QMatrix4
     if (blending)
     {
         DYGL(glEnable(GL_BLEND));
-        gl().BlendFuncSeparate(GL_SRC_ALPHA , GL_ONE_MINUS_SRC_ALPHA, GL_SRC_ALPHA , GL_ONE_MINUS_SRC_ALPHA); //
+        gl().BlendFuncSeparate(GL_SRC_ALPHA , GL_ONE_MINUS_SRC_ALPHA, GL_SRC_ALPHA , GL_ONE_MINUS_SRC_ALPHA);
     }
 /*
     if (d.mesh_type == OpenGLVideo::SphereMesh)
@@ -555,7 +553,10 @@ void OpenGLVideo::render(const QRectF &target, const QRectF& roi, const QMatrix4
 
 void OpenGLVideo::resetGL()
 {
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("~~~~~~~~~resetGL %p. from sender %p", d_func().manager, sender());
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("resetGL %p. from sender %p",
+            d_func().manager, sender());
+
     d_func().resetGL();
 }
 
@@ -566,11 +567,7 @@ void OpenGLVideo::updateViewport()
     if (!d.ctx)
         return;
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-
     QSizeF surfaceSize = d.ctx->surface()->size();
-
-#   if QT_VERSION >= QT_VERSION_CHECK(5, 5, 0)
 
     // When changing monitors (plugging and unplugging), the screen might sometimes be nullptr!
 
@@ -579,17 +576,7 @@ void OpenGLVideo::updateViewport()
         surfaceSize *= d.ctx->screen()->devicePixelRatio();
     }
 
-#   else
-
-    surfaceSize       *= qApp->devicePixelRatio(); // TODO: window()->devicePixelRatio() is the window screen's
-
-#   endif
-
-#else
-
-    QSizeF surfaceSize = QSizeF(d.ctx->device()->width(), d.ctx->device()->height());
-
-#endif
+    surfaceSize *= qApp->devicePixelRatio(); // TODO: window()->devicePixelRatio() is the window screen's
 
     setProjectionMatrixToRect(QRectF(QPointF(), surfaceSize));
 }

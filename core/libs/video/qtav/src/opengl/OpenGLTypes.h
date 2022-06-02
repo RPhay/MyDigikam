@@ -191,15 +191,4 @@ QTAV_EXPORT QDebug operator<<(QDebug debug, Uniform::Type ut);
 
 } // namespace QtAV
 
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-
-
-Q_DECLARE_METATYPE(QVector<double>)
-Q_DECLARE_METATYPE(QVector<float>)
-Q_DECLARE_METATYPE(QVector<int>)
-Q_DECLARE_METATYPE(QVector<unsigned>)
-
-
-#endif
-
 #endif // QTAV_OPENGL_TYPES_H

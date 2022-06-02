@@ -81,12 +81,8 @@ int GeometryRenderer::actualFeatures() const
     if (ibo.isCreated())
         f |= kIBO;
 
-#if QT_VAO
-
     if (vao.isCreated())
         f |= kVAO;
-
-#endif
 
     return f;
 }
@@ -104,13 +100,7 @@ void GeometryRenderer::updateGeometry(Geometry* geo)
     {
         ibo.destroy();
         vbo.destroy();
-
-#if QT_VAO
-
         vao.destroy();
-
-#endif
-
         vbo_size = 0;
         ibo_size = 0;
 
@@ -234,8 +224,6 @@ void GeometryRenderer::updateGeometry(Geometry* geo)
         vbo.release();
     }
 
-#if QT_VAO
-
     if ((stride == g->stride()) && (attrib == g->attributes()))
         return;
 
@@ -303,8 +291,6 @@ void GeometryRenderer::updateGeometry(Geometry* geo)
     if (ibo.isCreated())
         ibo.release();
 
-#endif
-
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
         << QString::asprintf("geometry updated");
 }
@@ -315,8 +301,6 @@ void GeometryRenderer::bindBuffers()
     bool bind_ibo  = ibo.isCreated();
     bool setv_skip = false;
 
-#if QT_VAO
-
     if (vao.isCreated())
     {
         vao.bind();             // vbo, ibo is ok now
@@ -325,7 +309,6 @@ void GeometryRenderer::bindBuffers()
         bind_ibo  = false;
     }
 
-#endif
 /*
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
         << QString::asprintf("bind ibo: %d vbo: %d; set v: %d",
@@ -366,8 +349,6 @@ void GeometryRenderer::unbindBuffers()
     bool unbind_ibo  = ibo.isCreated();
     bool unsetv_skip = false;
 
-#if QT_VAO
-
     if (vao.isCreated())
     {
         vao.release();
@@ -376,7 +357,6 @@ void GeometryRenderer::unbindBuffers()
         unbind_ibo  = false;
     }
 
-#endif //QT_VAO
 /*
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
         << QString::asprintf("unbind ibo: %d vbo: %d; unset v: %d",

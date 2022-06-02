@@ -114,10 +114,10 @@ public:
     {
     }
 
-    Primitive primitive() const         { return m_primitive;   }
-    void setPrimitive(Primitive value)  { m_primitive = value;  }
-    int vertexCount() const             { return m_vcount;      }
-    void setVertexCount(int value)      { m_vcount = value;     } // TODO: remove, or allocate data here
+    Primitive primitive() const         { return m_primitive;                                     }
+    void setPrimitive(Primitive value)  { m_primitive = value;                                    }
+    int vertexCount() const             { return m_vcount;                                        }
+    void setVertexCount(int value)      { m_vcount = value;                                       } // TODO: remove, or allocate data here
 
     // TODO: setStride and no virtual
 

@@ -32,16 +32,9 @@
 #   include <QObject>
 #   include "QtAV_Global.h"
 #   include "VideoFormat.h"
-#   if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#       include <QOpenGLContext>
-#   else
-#       include <QGLContext>
-#       define QOpenGLContext QGLContext
-#   endif
-
+#   include <QOpenGLContext>
 
 class QColor;
-
 
 namespace QtAV
 {

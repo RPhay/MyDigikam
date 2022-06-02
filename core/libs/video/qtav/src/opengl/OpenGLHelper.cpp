@@ -39,13 +39,7 @@ using QRegExp = QRegularExpression;
 #   include <QRegExp>
 #endif
 
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-#   if QT_VERSION >= QT_VERSION_CHECK(4, 8, 0)
-#       include <QGLFunctions>
-#   endif
-#else
-#   include <QGuiApplication>
-#endif
+#include <QGuiApplication>
 
 #ifdef QT_OPENGL_DYNAMIC
 #   include <QOpenGLFunctions_1_0>
@@ -212,7 +206,7 @@ int GLSLVersion()
         v = 110;
 
         if (isOpenGLES())
-            v = QOpenGLContext::currentContext()->format().majorVersion() >= 3 ? 300 : 100;
+            v = (QOpenGLContext::currentContext()->format().majorVersion() >= 3 ? 300 : 100);
     }
 
     return v;
@@ -266,16 +260,12 @@ bool isEGL()
 
 #endif
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-
     if (QGuiApplication::platformName().contains(QLatin1String("egl")))
     {
         is_egl = 1;
 
         return true;
     }
-
-#   if QT_VERSION >= QT_VERSION_CHECK(5, 5, 0)
 
     if (QGuiApplication::platformName().contains(QLatin1String("xcb")))
     {
@@ -286,11 +276,8 @@ bool isEGL()
         return (!!is_egl);
     }
 
-#   endif // 5.5.0
-
-#endif
-
-    // we can use QOpenGLContext::currentContext()->nativeHandle().value<QEGLNativeContext>(). but gl context is required
+    // we can use QOpenGLContext::currentContext()->nativeHandle().value<QEGLNativeContext>().
+    // but gl context is required
 
     if (QOpenGLContext::currentContext())
         is_egl = 0;
@@ -380,7 +367,8 @@ bool hasExtension(const char* exts[])
 
     if (!ctx)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("no gl context for hasExtension");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("no gl context for hasExtension");
 
         return false;
     }
@@ -396,17 +384,7 @@ bool hasExtension(const char* exts[])
 
     for (int i = 0 ; exts[i] ; ++i)
     {
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-
         if (ctx->hasExtension(exts[i]))
-
-#else
-
-        if (strstr(ext, exts[i]))
-
-#endif
-
         {
             return true;
         }
@@ -452,19 +430,19 @@ bool isPBOSupported()
 
 typedef struct Q_DECL_HIDDEN
 {
-    GLint  internal_format;
-    GLenum format;
-    GLenum type;
+    GLint  internal_format = 0;
+    GLenum format          = 0;
+    GLenum type            = 0;
 } gl_param_t;
 
 // es formats:  ALPHA, RGB, RGBA, LUMINANCE, LUMINANCE_ALPHA
 // es types:  UNSIGNED_BYTE, UNSIGNED_SHORT_5_6_5, UNSIGNED_SHORT_4_4_4_4, GL_UNSIGNED_SHORT_5_5_5_1 (NO UNSIGNED_SHORT)
 
 /*!
-  c: number of channels(components) in the plane
-  b: componet size
-    result is gl_param_compat[(c-1)+4*(b-1)]
-*/
+ * c: number of channels(components) in the plane
+ * b: componet size
+ * result is gl_param_compat[(c - 1) + 4 * (b - 1)]
+ */
 static const gl_param_t gl_param_compat[] =
 {
     // it's legacy
@@ -604,12 +582,14 @@ bool test_gl_param(const gl_param_t& gp, bool* has_16 = nullptr)
         case GL_RED:
         {
             pname = GL_TEXTURE_RED_SIZE;
+
             break;
         }
 
         case GL_LUMINANCE:
         {
             pname = GL_TEXTURE_LUMINANCE_SIZE;
+
             break;
         }
     }
@@ -723,7 +703,8 @@ static const gl_param_t* get_gl_param()
         if (!useDeprecatedFormats())
         {
             qCDebug(DIGIKAM_QTAV_LOG).noquote()
-                << QString::asprintf("using gl_param_%s", (gp == gl_param_3r16) ? "3r16" : "desktop_fallback");
+                << QString::asprintf("using gl_param_%s",
+                    (gp == gl_param_3r16) ? "3r16" : "desktop_fallback");
 
             return gp;
         }
@@ -755,7 +736,8 @@ static const gl_param_t* get_gl_param()
         if (gp && !useDeprecatedFormats())
         {
             qCDebug(DIGIKAM_QTAV_LOG).noquote()
-                << QString::asprintf("using gl_param_%s", (gp == gl_param_es3rg8) ? "es3rg8" : "es2rg");
+                << QString::asprintf("using gl_param_%s",
+                    (gp == gl_param_es3rg8) ? "es3rg8" : "es2rg");
 
             return gp;
         }
@@ -790,7 +772,7 @@ bool has16BitTexture()
 
 typedef struct Q_DECL_HIDDEN
 {
-    VideoFormat::PixelFormat pixfmt;
+    VideoFormat::PixelFormat pixfmt      = VideoFormat::Format_Invalid;
     quint8                   channels[4] = { 0 };
 } reorder_t;
 
@@ -896,19 +878,27 @@ static QMatrix4x4 channelMap(const VideoFormat& fmt)
     return m;
 }
 
-//template<typename T, size_t N> Q_CONSTEXPR size_t array_size(const T (&)[N]) { return N;} //does not support local type if no c++11
+/*
+// does not support local type if no c++11
 
-#define ARRAY_SIZE(a) (sizeof(a)/sizeof((a)[0]))
+template<typename T, size_t N>
+Q_CONSTEXPR size_t array_size(const T (&)[N])
+{
+    return N;
+}
+*/
+
+#define ARRAY_SIZE(a) (sizeof(a) / sizeof((a)[0]))
 
 bool videoFormatToGL(const VideoFormat& fmt, GLint* internal_format, GLenum* data_format,
                      GLenum* data_type, QMatrix4x4* mat)
 {
     typedef struct Q_DECL_HIDDEN fmt_entry
     {
-        VideoFormat::PixelFormat pixfmt;
-        GLint                    internal_format;
-        GLenum                   format;
-        GLenum                   type;
+        VideoFormat::PixelFormat pixfmt          = VideoFormat::Format_Invalid;
+        GLint                    internal_format = 0;
+        GLenum                   format          = 0;
+        GLenum                   type            = 0;
     } fmt_entry;
 
     static const fmt_entry pixfmt_to_gles[] =
@@ -972,10 +962,10 @@ bool videoFormatToGL(const VideoFormat& fmt, GLint* internal_format, GLenum* dat
 
     static const fmt_entry pixfmt_gl_base[] =
     {
-        { VideoFormat::Format_RGBA32, GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE        }, // only tested for macOS, win, angle
-        { VideoFormat::Format_RGB24,  GL_RGB,  GL_RGB,  GL_UNSIGNED_BYTE        },
-        { VideoFormat::Format_RGB565, GL_RGB,  GL_RGB,  GL_UNSIGNED_SHORT_5_6_5 },
-        { VideoFormat::Format_BGR32,  GL_BGRA, GL_BGRA, GL_UNSIGNED_BYTE        }, // rgba(tested) or abgr, depending on endian
+        { VideoFormat::Format_RGBA32,   GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE                }, // only tested for macOS, win, angle
+        { VideoFormat::Format_RGB24,    GL_RGB,  GL_RGB,  GL_UNSIGNED_BYTE                },
+        { VideoFormat::Format_RGB565,   GL_RGB,  GL_RGB,  GL_UNSIGNED_SHORT_5_6_5         },
+        { VideoFormat::Format_BGR32,    GL_BGRA, GL_BGRA, GL_UNSIGNED_BYTE                }, // rgba(tested) or abgr, depending on endian
     };
 
     const VideoFormat::PixelFormat pixfmt = fmt.pixelFormat();
@@ -1016,14 +1006,14 @@ bool videoFormatToGL(const VideoFormat& fmt, GLint* internal_format, GLenum* dat
 
     static const fmt_entry pixfmt_to_gl_swizzele[] =
     {
-        {VideoFormat::Format_VYU,    GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE             },
-        {VideoFormat::Format_UYVY,   GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE             },
-        {VideoFormat::Format_YUYV,   GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE             },
-        {VideoFormat::Format_VYUY,   GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE             },
-        {VideoFormat::Format_YVYU,   GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE             },
-        {VideoFormat::Format_BGR565, GL_RGB,  GL_RGB,  GL_UNSIGNED_SHORT_5_6_5      }, // swizzle
-        {VideoFormat::Format_RGB555, GL_RGBA, GL_RGBA, GL_UNSIGNED_SHORT_5_5_5_1    }, // not working
-        {VideoFormat::Format_BGR555, GL_RGBA, GL_RGBA, GL_UNSIGNED_SHORT_5_5_5_1    }, // not working
+        {VideoFormat::Format_VYU,       GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE                },
+        {VideoFormat::Format_UYVY,      GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE                },
+        {VideoFormat::Format_YUYV,      GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE                },
+        {VideoFormat::Format_VYUY,      GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE                },
+        {VideoFormat::Format_YVYU,      GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE                },
+        {VideoFormat::Format_BGR565,    GL_RGB,  GL_RGB,  GL_UNSIGNED_SHORT_5_6_5         }, // swizzle
+        {VideoFormat::Format_RGB555,    GL_RGBA, GL_RGBA, GL_UNSIGNED_SHORT_5_5_5_1       }, // not working
+        {VideoFormat::Format_BGR555,    GL_RGBA, GL_RGBA, GL_UNSIGNED_SHORT_5_5_5_1       }, // not working
     };
 
     for (size_t i = 0 ; i < ARRAY_SIZE(pixfmt_to_gl_swizzele) ; ++i)
@@ -1075,9 +1065,9 @@ bool videoFormatToGL(const VideoFormat& fmt, GLint* internal_format, GLenum* dat
 
         const gl_param_t& f = gp[c];
 
-        *(i_f++) = f.internal_format;
-        *(d_f++) = f.format;
-        *(d_t++) = f.type;
+        *(i_f++)            = f.internal_format;
+        *(d_f++)            = f.format;
+        *(d_t++)            = f.type;
     }
 
     if ((nb_planes > 2) && (data_format[2] == GL_LUMINANCE) && (fmt.bytesPerPixel(1) == 1))

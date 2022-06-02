@@ -46,7 +46,8 @@ struct uniform_type_name
 {
     QByteArray    name;
     Uniform::Type type;
-} uniform_type_names[] =
+}
+uniform_type_names[] =
 {
     { "sample2D", Uniform::Sampler  },
     { "bool",     Uniform::Bool     },
@@ -115,7 +116,7 @@ Uniform& Uniform::setType(Type tp, int count)
     t = tp;
     array_size = count;
 
-    if (isVec())
+    if      (isVec())
     {
         tuple_size = (t >> (V+1)) & ((1 << 3) - 1);
     }
@@ -343,7 +344,8 @@ bool Uniform::setGL()
         default:
         {
             qCDebug(DIGIKAM_QTAV_LOG) << *this;
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Unsupported uniform type in Qt. You should use 'VideoShader::setUserUniformValues()' to call glUniformXXX or directly call glUniformXXX instead");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("Unsupported uniform type in Qt. You should use 'VideoShader::setUserUniformValues()' to call glUniformXXX or directly call glUniformXXX instead");
 
             return false;
         }
@@ -358,31 +360,46 @@ bool Uniform::setGL()
 
 QTAV_EXPORT QDebug operator<<(QDebug dbg, const Uniform &u)
 {
-    dbg.nospace() << "uniform " << UniformTypeToName(u.type()) << " " << u.name.constData();
+    dbg.nospace() << "uniform " 
+                  << UniformTypeToName(u.type()) 
+                  << " " 
+                  << u.name.constData();
 
     if (u.arraySize() > 1)
     {
-        dbg.nospace() << "[" << u.arraySize() << "]";
+        dbg.nospace() << "[" 
+                      << u.arraySize() 
+                      << "]";
     }
 
-    dbg.nospace() << ", dirty: " << u.dirty;
-    dbg.nospace() << ", location: " << u.location << ", " << "tupleSize: " << u.tupleSize() << ", ";
+    dbg.nospace() << ", dirty: "
+                  << u.dirty;
+    dbg.nospace() << ", location: "
+                  << u.location
+                  << ", "
+                  << "tupleSize: "
+                  << u.tupleSize()
+                  << ", ";
 
     if      (u.isBool() || u.isInt())
     {
-        dbg.nospace() << "value: " << u.value<int>();
+        dbg.nospace() << "value: "
+                      << u.value<int>();
     }
     else if (u.isUInt())
     {
-        dbg.nospace() << "value: " << u.value<unsigned>();
+        dbg.nospace() << "value: "
+                      << u.value<unsigned>();
     }
     else if (u.isDouble())
     {
-        dbg.nospace() << "value: " << u.value<double>();
+        dbg.nospace() << "value: "
+                      << u.value<double>();
     }
     else
     {
-        dbg.nospace() << "value: " << u.value<float>();
+        dbg.nospace() << "value: "
+                      << u.value<float>();
     }
 
     return dbg.space();
@@ -392,7 +409,7 @@ QTAV_EXPORT QDebug operator<<(QDebug dbg, Uniform::Type ut);
 
 #endif
 
-QVector<Uniform> ParseUniforms(const QByteArray &text, GLuint programId = 0)
+QVector<Uniform> ParseUniforms(const QByteArray& text, GLuint programId = 0)
 {
     QVector<Uniform> uniforms;
     const QString code      = OpenGLHelper::removeComments(QString::fromLatin1(text));

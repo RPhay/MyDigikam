@@ -28,22 +28,10 @@
 
 // Qt includes
 
-#define QT_VAO (QT_VERSION >= QT_VERSION_CHECK(5, 1, 0))
-
-#if QT_VAO
-#   include <QOpenGLVertexArrayObject>
-#endif
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#   include <QOpenGLBuffer>
-#else
-#   include <QGLBuffer>
-typedef QGLBuffer QOpenGLBuffer;
-#endif
-
+#include <QOpenGLVertexArrayObject>
+#include <QOpenGLBuffer>
 
 class QOpenGLShaderProgram;
-
 
 namespace QtAV
 {
@@ -99,11 +87,7 @@ private:
     int                      ibo_size;           // QOpenGLBuffer.size() may get error 0x501
     QOpenGLBuffer            vbo;                // VertexBuffer
 
-#if QT_VAO
-
     QOpenGLVertexArrayObject vao;
-
-#endif
 
     QOpenGLBuffer            ibo;
 
