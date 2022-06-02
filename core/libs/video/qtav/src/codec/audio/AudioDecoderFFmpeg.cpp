@@ -57,8 +57,8 @@ public:
         const int patch = QTAV_VERSION_PATCH(avcodec_version());
 
         return QString::fromUtf8("%1 avcodec %2.%3.%4")
-                .arg(patch >= 100 ? QLatin1String("FFmpeg")
-                                  : QLatin1String("Libav"))
+                .arg((patch >= 100) ? QLatin1String("FFmpeg")
+                                    : QLatin1String("Libav"))
                 .arg(QTAV_VERSION_MAJOR(avcodec_version()))
                 .arg(QTAV_VERSION_MINOR(avcodec_version()))
                 .arg(patch);

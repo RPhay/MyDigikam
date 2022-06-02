@@ -33,8 +33,8 @@ namespace QtAV
 
 typedef struct Q_DECL_HIDDEN
 {
-    int                      cv_pixfmt;
-    VideoFormat::PixelFormat pixfmt;
+    int                      cv_pixfmt = 0;
+    VideoFormat::PixelFormat pixfmt    = VideoFormat::Format_Invalid;
 } cv_format;
 
 // https://developer.apple.com/library/Mac/releasenotes/General/MacOSXLionAPIDiffs/CoreVideo.html
@@ -96,21 +96,36 @@ InteropResource* InteropResource::create(InteropType type)
 
     switch (type)
     {
-        case InteropCVPixelBuffer: return CreateInteropCVPixelbuffer();
+        case InteropCVPixelBuffer:
+        {
+            return CreateInteropCVPixelbuffer();
+        }
 
 #if defined(Q_OS_MACX) || defined(__IPHONE_11_0)
 
-        case InteropIOSurface:     return CreateInteropIOSurface();
+        case InteropIOSurface:
+        {
+            return CreateInteropIOSurface();
+        }
 /*
-        case InteropCVOpenGL:      return CreateInteropCVOpenGL();
+        case InteropCVOpenGL:
+        {
+            return CreateInteropCVOpenGL();
+        }
 */
 #else
 
-        case InteropCVOpenGLES:    return CreateInteropCVOpenGLES();
+        case InteropCVOpenGLES:
+        {
+            return CreateInteropCVOpenGLES();
+        }
 
 #endif
 
-        default:                   return nullptr;
+        default:
+        {
+            return nullptr;
+        }
     }
 
     return nullptr;
@@ -124,7 +139,7 @@ InteropResource::InteropResource()
     memset(m_dtype,   0, sizeof(m_dtype));
 }
 
-bool InteropResource::stridesForWidth(int cvfmt, int width, int *strides, VideoFormat::PixelFormat* outFmt)
+bool InteropResource::stridesForWidth(int cvfmt, int width, int* strides, VideoFormat::PixelFormat* outFmt)
 {
     *outFmt = format_from_cv(cvfmt);
 
@@ -276,9 +291,9 @@ void* SurfaceInteropCV::mapToHost(const VideoFormat& format, void* handle, int p
     }
 
     CVPixelBufferUnlockBaseAddress(m_surface, kCVPixelBufferLock_ReadOnly);
-
-    //CVPixelBufferRelease(cv_buffer); // release when video frame is destroyed
-
+/*
+    CVPixelBufferRelease(cv_buffer); // release when video frame is destroyed
+*/
     VideoFrame frame(VideoFrame::fromGPU(fmt, w, h, h, src, pitch));
 
     if (fmt != format)
@@ -318,9 +333,11 @@ bool InteropResourceCVPixelBuffer::map(CVPixelBufferRef buf, GLuint* tex, int w,
     GLenum format, dtype;
     getParametersGL(CVPixelBufferGetPixelFormatType(buf), &iformat, &format, &dtype, plane); // TODO: call once when format changed
     const int texture_w = CVPixelBufferGetBytesPerRowOfPlane(buf, plane) / OpenGLHelper::bytesOfGLFormat(format, dtype);
-
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("cv plane%d width: %d, stride: %d, tex width: %d", plane, CVPixelBufferGetWidthOfPlane(buf, plane), CVPixelBufferGetBytesPerRowOfPlane(buf, plane), texture_w);
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("cv plane%d width: %d, stride: %d, tex width: %d",
+            plane, CVPixelBufferGetWidthOfPlane(buf, plane), CVPixelBufferGetBytesPerRowOfPlane(buf, plane), texture_w);
+*/
     // get address results in internal copy
 
     DYGL(glBindTexture(GL_TEXTURE_2D, *tex));

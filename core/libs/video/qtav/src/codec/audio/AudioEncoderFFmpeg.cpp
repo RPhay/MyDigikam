@@ -302,7 +302,7 @@ bool AudioEncoderFFmpeg::encode(const AudioFrame& frame)
         // f->quality = d.avctx->global_quality; // TODO
         // TODO: record last pts. mpv compute pts internally and also use playback time
 
-        f->pts                  = int64_t(frame.timestamp()*fmt.sampleRate()); // TODO
+        f->pts                  = int64_t(frame.timestamp() * fmt.sampleRate()); // TODO
 
         // pts is set in muxer
 

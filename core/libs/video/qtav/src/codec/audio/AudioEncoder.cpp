@@ -64,7 +64,7 @@ QStringList AudioEncoder::supportedCodecs()
 
 #if AVCODEC_STATIC_REGISTER
 
-    void* it = nullptr;
+    void* it         = nullptr;
 
     while ((c = av_codec_iterate(&it)))
     {

@@ -154,7 +154,8 @@ protected:
 
 private:
 
-    int                frame_width, frame_height;
+    int                frame_width;
+    int                frame_height;
     InteropResourcePtr m_resource;
     CVPixelBufferRef   m_surface;
 };

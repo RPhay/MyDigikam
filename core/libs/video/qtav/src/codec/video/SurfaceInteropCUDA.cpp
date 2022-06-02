@@ -964,7 +964,7 @@ bool GLInteropResource::unmap(GLuint tex)
 
 bool GLInteropResource::ensureResource(int w, int h, int H, GLuint tex, int plane)
 {
-    Q_ASSERT(plane < 2 && "plane number must be 0 or 1 for NV12");
+    Q_ASSERT((plane < 2) && "plane number must be 0 or 1 for NV12");
 
     TexRes& r = res[plane];
 
