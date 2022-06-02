@@ -448,7 +448,7 @@ void EXIFCaption::updateIcon(QLineEdit* const edit, QLabel* const label)
     else
     {
         label->setPixmap(QIcon::fromTheme(QLatin1String("dialog-cancel")).pixmap(iconSize));
-        label->setToolTip(i18n("The field contains non ASCII characters."));
+        label->setToolTip(i18n("The field contains not only ASCII characters."));
         label->setProperty("valid", false);
     }
 }
