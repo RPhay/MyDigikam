@@ -25,6 +25,8 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
 
     - Port code to pure Qt5/Qt6.
 
+    - Remove Qt4 rules.
+
     - Use qCDebug()/qCWarning categories with digiKam debug spaces.
 
     - Drop Logger class.
