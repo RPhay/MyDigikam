@@ -44,8 +44,6 @@ class QTAV_EXPORT AVDecoder : public QObject
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(AVDecoder)
 
-    //Q_PROPERTY(QString description READ description NOTIFY descriptionChanged)
-
 public:
 
     virtual ~AVDecoder();
@@ -92,7 +90,7 @@ public:
 
 Q_SIGNALS:
 
-    void error(const QtAV::AVError& e); // explictly use QtAV::AVError in connection for Qt4 syntax
+    void error(const QtAV::AVError& e); // explictly use QtAV::AVError in connection
     void descriptionChanged();
     void codecNameChanged();
 

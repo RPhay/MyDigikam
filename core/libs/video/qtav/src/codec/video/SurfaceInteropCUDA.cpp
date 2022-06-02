@@ -299,7 +299,7 @@ void* SurfaceInteropCUDA::map(SurfaceType type, const VideoFormat& fmt, void* ha
     return nullptr;
 }
 
-void SurfaceInteropCUDA::unmap(void *handle)
+void SurfaceInteropCUDA::unmap(void* handle)
 {
     if (m_resource.isNull())
         return;

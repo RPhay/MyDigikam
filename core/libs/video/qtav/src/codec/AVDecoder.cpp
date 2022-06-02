@@ -109,7 +109,8 @@ bool AVDecoder::open()
 {
     DPTR_D(AVDecoder);
 
-    // codec_ctx can't be null for none-ffmpeg based decoders because we may use it's properties in those decoders
+    // codec_ctx can't be null for none-ffmpeg based decoders because
+    // we may use it's properties in those decoders
 
     if (!d.codec_ctx)
     {
@@ -119,7 +120,7 @@ bool AVDecoder::open()
         return false;
     }
 
-    const QString hwa = property("hwaccel").toString();
+    const QString hwa          = property("hwaccel").toString();
 
 #ifndef HAVE_FFMPEG_VERSION5
 
@@ -157,18 +158,21 @@ bool AVDecoder::open()
             case AVMEDIA_TYPE_VIDEO:
             {
                 ec = AVError::VideoCodecNotFound;
+
                 break;
             }
 
             case AVMEDIA_TYPE_AUDIO:
             {
                 ec = AVError::AudioCodecNotFound;
+
                 break;
             }
 
             case AVMEDIA_TYPE_SUBTITLE:
             {
                 ec = AVError::SubtitleCodecNotFound;
+
                 break;
             }
 
@@ -203,7 +207,8 @@ bool AVDecoder::open()
 
     //av_dict_set(&d.dict, "lowres", "1", 0);
 
-    // dict is used for a specified AVCodec options (priv_class), av_opt_set_xxx(avctx) is only for avctx
+    // dict is used for a specified AVCodec options (priv_class),
+    // av_opt_set_xxx(avctx) is only for avctx
 
     AV_ENSURE_OK(avcodec_open2(d.codec_ctx, codec, d.options.isEmpty() ? nullptr : &d.dict), false);
 
@@ -260,7 +265,7 @@ void AVDecoder::flush()
 
 #if LIBAVCODEC_VERSION_MAJOR >= 59  // ffmpeg >= 5
 
-static QMap<AVCodecParameters*, AVCodecContext*> ccs;
+static QHash<AVCodecParameters*, AVCodecContext*> ccs;
 
 #endif
 
@@ -384,7 +389,8 @@ void AVDecoder::setOptions(const QVariantHash& dict)
 
     d.applyOptionsForContext();
 
-    /* set AVDecoder meta properties.
+    /*
+     * set AVDecoder meta properties.
      * we do not check whether the property exists thus we can set dynamic properties.
      */
 
