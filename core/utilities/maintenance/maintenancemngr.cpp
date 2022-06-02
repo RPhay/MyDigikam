@@ -39,6 +39,7 @@
 #include "digikam_debug.h"
 #include "digikam_config.h"
 #include "albummanager.h"
+#include "applicationsettings.h"
 #include "maintenancesettings.h"
 #include "newitemsfinder.h"
 #include "thumbsgenerator.h"
@@ -317,8 +318,9 @@ void MaintenanceMngr::stage6()
     if (d->settings.faceManagement)
     {
         // NOTE : Use multi-core CPU option is passed through FaceScanSettings
-        d->settings.faceSettings.useFullCpu  = d->settings.useMutiCoreCPU;
         d->settings.faceSettings.wholeAlbums = d->settings.wholeAlbums;
+        d->settings.faceSettings.useFullCpu  = d->settings.useMutiCoreCPU;
+        d->settings.faceSettings.accuracy    = ApplicationSettings::instance()->getFaceDetectionAccuracy();
         d->facesDetector                     = new FacesDetector(d->settings.faceSettings);
         d->facesDetector->setNotificationEnabled(false);
         d->facesDetector->start();

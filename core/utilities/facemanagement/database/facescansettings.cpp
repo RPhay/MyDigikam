@@ -31,7 +31,7 @@ FaceScanSettings::FaceScanSettings()
     : wholeAlbums           (false),
       useFullCpu            (false),
       useYoloV3             (false),
-      accuracy              (70),
+      accuracy              (0.7),
       task                  (Detect),
       alreadyScannedHandling(Skip)
 {
