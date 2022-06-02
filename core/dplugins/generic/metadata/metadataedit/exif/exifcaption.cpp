@@ -439,17 +439,17 @@ void EXIFCaption::updateIcon(QLineEdit* const edit, QLabel* const label)
         return;
     }
 
+    label->setProperty("valid", valid);
+
     if (valid)
     {
         label->setPixmap(QIcon::fromTheme(QLatin1String("dialog-ok")).pixmap(iconSize));
         label->setToolTip(i18n("The field contains valid ASCII characters."));
-        label->setProperty("valid", true);
     }
     else
     {
         label->setPixmap(QIcon::fromTheme(QLatin1String("dialog-cancel")).pixmap(iconSize));
         label->setToolTip(i18n("The field contains not only ASCII characters."));
-        label->setProperty("valid", false);
     }
 }
 
