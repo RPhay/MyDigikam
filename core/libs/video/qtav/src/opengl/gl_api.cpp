@@ -31,7 +31,7 @@
 namespace QtAV
 {
 
-typedef void* (*GetProcAddress_t)(const char *);
+typedef void* (*GetProcAddress_t)(const char*);
 
 static GetProcAddress_t sGetProcAddress;
 
@@ -61,7 +61,7 @@ void* GetProcAddress_Qt(const char *name)
     return p;
 }
 
-static void* GetProcAddressWithExt(GetProcAddress_t get, const char *name)
+static void* GetProcAddressWithExt(GetProcAddress_t get, const char* name)
 {
     void* fp = get(name);
 
@@ -81,7 +81,7 @@ static void* GetProcAddressWithExt(GetProcAddress_t get, const char *name)
         , nullptr
     };
 
-    char f[512] = { 0 };
+    char f[512]   = { 0 };
     memcpy(f, name, strlen(name));
     char* const p = f + strlen(name);
 

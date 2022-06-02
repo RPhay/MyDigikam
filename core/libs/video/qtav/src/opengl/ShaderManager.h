@@ -40,7 +40,6 @@ class VideoMaterial;
  * TODO: ShaderManager does not change for a given vo, so we can expose VideoRenderer.shaderManager() to set custom shader.
  * It's better than VideoRenderer.opengl() because OpenGLVideo exposes too many apis that may confuse user.
  */
-
 class ShaderManager : public QObject
 {
     Q_OBJECT
@@ -51,8 +50,6 @@ public:
     ~ShaderManager();
 
     VideoShader* prepareMaterial(VideoMaterial* material, qint32 materialType = -1) const;
-
-//    void setCacheSize(int value);
 
 private:
 

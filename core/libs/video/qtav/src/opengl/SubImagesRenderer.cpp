@@ -114,7 +114,7 @@ void SubImagesRenderer::render(const SubImageSet& ass, const QRect& target, cons
     gl().ActiveTexture(GL_TEXTURE0);
     DYGL(glBindTexture(GL_TEXTURE_2D, m_tex));
     m_program.setUniformValue("u_Texture", 0);
-    m_program.setUniformValue("u_Matrix", transform*m_mat);
+    m_program.setUniformValue("u_Matrix", transform * m_mat);
     DYGL(glEnable(GL_BLEND));
 
     if (m_geometry->images().format() == SubImageSet::ASS)

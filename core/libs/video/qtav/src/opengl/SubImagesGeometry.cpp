@@ -38,8 +38,10 @@ static const int kMaxTexWidth = 4096; // FIXME: glGetIntegerv(GL_MAX_TEXTURE_SIZ
 
 typedef struct Q_DECL_HIDDEN
 {
-    float x,  y;            // depends on target rect
-    float tx, ty;           // depends on texture size and rects layout
+    float x;            // depends on target rect
+    float y;            // depends on target rect
+    float tx;           // depends on texture size and rects layout
+    float ty;           // depends on texture size and rects layout
 
 #if U8COLOR
 
@@ -65,7 +67,10 @@ static VertexData* SetUnnormalizedVertexData(VertexData* v, int tx, int ty, int 
 
     union
     {
-        quint8  r, g, b, a;
+        quint8  r;
+        quint8  g;
+        quint8  b;
+        quint8  a;
         quint32 rgba;
     };
 
@@ -76,8 +81,11 @@ static VertexData* SetUnnormalizedVertexData(VertexData* v, int tx, int ty, int 
 
 #else
 
-    float r, g, b, a;
-    r = (float)(color  >> 24) / 255.0;
+    float r;
+    float g;
+    float b;
+    float a;
+    r = (float)(color  >> 24)         / 255.0;
     g = (float)((color >> 16) & 0xff) / 255.0;
     b = (float)((color >> 8)  & 0xff) / 255.0;
     a = (float)(255 - (color & 0xff)) / 255.0;
@@ -206,20 +214,23 @@ bool SubImagesGeometry::generateVertexData(const QRect& rect, bool useIndecies, 
             m_images.isValid(), m_images.images.size(), m_images.width(), m_images.height());
 
     m_rects_upload.clear();
-    m_w          = m_h = 0;
+    m_w          = 0;
+    m_h          = 0;
     m_normalized = false;
 
     if (!m_images.isValid())
         return false;
 
-    int W          = 0, H = 0;
-    int x          = 0, h = 0;
+    int W          = 0;
+    int H          = 0;
+    int x          = 0;
+    int h          = 0;
     VertexData* vd = (VertexData*)vertexData();
     int index      = 0;
 
     Q_FOREACH (const SubImage& i, m_images.images)
     {
-        if (x + i.stride > maxWidth && maxWidth > 0)
+        if (((x + i.stride) > maxWidth) && (maxWidth > 0))
         {
             W  = qMax(W, x);
             H += h;
@@ -237,8 +248,8 @@ bool SubImagesGeometry::generateVertexData(const QRect& rect, bool useIndecies, 
             // TODO: set only once because it never changes, use IBO
 
             const int v0 = index * 4 / 6;
-            setIndexValue(index,   v0,     v0 + 1, v0 + 2);
-            setIndexValue(index+3, v0 + 1, v0 + 2, v0 + 3);
+            setIndexValue(index,     v0,     v0 + 1, v0 + 2);
+            setIndexValue(index + 3, v0 + 1, v0 + 2, v0 + 3);
             index       += 6;
         }
 
@@ -250,9 +261,10 @@ bool SubImagesGeometry::generateVertexData(const QRect& rect, bool useIndecies, 
     H  += h;
     m_w = W;
     m_h = H;
-
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("sub texture %dx%d", m_w, m_h);
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("sub texture %dx%d", m_w, m_h);
+*/
     const float dx0 = rect.x();
     const float dy0 = rect.y();
     const float sx  = float(rect.width())  / float(m_images.width());
@@ -261,10 +273,19 @@ bool SubImagesGeometry::generateVertexData(const QRect& rect, bool useIndecies, 
 
     Q_FOREACH (const SubImage& i, m_images.images)
     {
-        //qCDebug(DIGIKAM_QTAV_LOG) << rect;
-        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("i: %d,%d", i.x, i.y);
-
-        vd           = SetVertexPositionAndNormalize(vd, dx0 + float(i.x)*sx, dy0 + float(i.y)*sy, i.w*sx, i.h*sy, m_w, m_h, useIndecies);
+/*
+        qCDebug(DIGIKAM_QTAV_LOG) << rect;
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("i: %d,%d", i.x, i.y);
+*/
+        vd           = SetVertexPositionAndNormalize(vd,
+                                                     dx0 + float(i.x) * sx,
+                                                     dy0 + float(i.y) * sy,
+                                                     i.w * sx,
+                                                     i.h * sy,
+                                                     m_w,
+                                                     m_h,
+                                                     useIndecies);
         m_normalized = true;
     }
 

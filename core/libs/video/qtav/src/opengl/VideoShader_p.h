@@ -29,23 +29,9 @@
 // Qt includes
 
 #include <QVector4D>
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#   include <QOpenGLBuffer>
-#   include <QOpenGLShaderProgram>
-#   include <QOpenGLFunctions>
-#else
-#   if QT_VERSION >= QT_VERSION_CHECK(4, 8, 0)
-#       include <QtOpenGL/QGLFunctions>
-#   endif
-#   include <QtOpenGL/QGLBuffer>
-#   include <QtOpenGL/QGLShaderProgram>
-typedef QGLBuffer QOpenGLBuffer;
-#   define QOpenGLShaderProgram QGLShaderProgram
-#   define QOpenGLShader QGLShader
-#   define QOpenGLFunctions QGLFunctions
-#   define QOpenGLContext QGLContext
-#endif
+#include <QOpenGLBuffer>
+#include <QOpenGLShaderProgram>
+#include <QOpenGLFunctions>
 
 // Local includes
 

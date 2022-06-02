@@ -160,7 +160,7 @@ struct api
     // Before using the following members, check null ptr first because they are not valid everywhere
     // ES3.1
 
-    void   (GL_APIENTRY *GetTexLevelParameteriv)(GLenum, GLint, GLenum, GLint*);
+    void   (GL_APIENTRY* GetTexLevelParameteriv)(GLenum, GLint, GLenum, GLint*);
 
 #   if defined(Q_OS_WIN32)
 //      #include <GL/wglext.h> //not found in vs2013
@@ -174,7 +174,7 @@ struct api
     BOOL   (WINAPI* DXSetResourceShareHandleNV)(void* dxObject, HANDLE shareHandle);
     HANDLE (WINAPI* DXOpenDeviceNV)(void* dxDevice);
     BOOL   (WINAPI* DXCloseDeviceNV)(HANDLE hDevice);
-    HANDLE (WINAPI* DXRegisterObjectNV)(HANDLE hDevice, void *dxObject, GLuint name, GLenum type, GLenum access);
+    HANDLE (WINAPI* DXRegisterObjectNV)(HANDLE hDevice, void* dxObject, GLuint name, GLenum type, GLenum access);
     BOOL   (WINAPI* DXUnregisterObjectNV)(HANDLE hDevice, HANDLE hObject);
     BOOL   (WINAPI* DXObjectAccessNV)(HANDLE hObject, GLenum access);
     BOOL   (WINAPI* DXLockObjectsNV)(HANDLE hDevice, GLint count, HANDLE* hObjects);

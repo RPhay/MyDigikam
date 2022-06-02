@@ -60,7 +60,7 @@ ShaderManager::~ShaderManager()
 
 VideoShader* ShaderManager::prepareMaterial(VideoMaterial* material, qint32 materialType) const
 {
-    const qint32 type   = (materialType != -1) ? materialType : material->type();
+    const qint32 type   = ((materialType != -1) ? materialType : material->type());
     VideoShader* shader = d->shader_cache.value(type, 0);
 
     if (shader)

@@ -95,7 +95,7 @@ void VideoShaderObject::propertyChanged(int id)
 
     const int st     = id >> 16;
     const int idx    = id & 0xffff;
-    Uniform &u       = d.user_uniforms[st][idx];
+    Uniform& u       = d.user_uniforms[st][idx];
     const QVariant v = property(u.name.constData());
     u.set(v);
 
@@ -202,7 +202,6 @@ void DynamicShaderObject::setHeader(const QString& text)
 
     rebuildLater();
 }
-
 
 QString DynamicShaderObject::sample() const
 {
