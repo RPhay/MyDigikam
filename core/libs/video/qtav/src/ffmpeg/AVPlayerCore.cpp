@@ -1885,7 +1885,7 @@ void AVPlayerCore::playInternal()
 void AVPlayerCore::stopFromDemuxerThread()
 {
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
-        << QString::asprintf("demuxer thread Q_EMIT finished. repeat: %d/%d",
+        << QString::asprintf("demuxer thread emit finished. repeat: %d/%d",
              currentRepeat(), repeat());
 
     d->seeking = false;

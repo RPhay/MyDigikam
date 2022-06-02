@@ -118,7 +118,7 @@ QVector<VideoDecoderId> VideoDecoder::registered()
 
     const auto ids = VideoDecoderFactory::Instance().registeredIds();
 
-    return {ids.begin(), ids.end()};
+    return { ids.begin(), ids.end() };
 
 #else
 
