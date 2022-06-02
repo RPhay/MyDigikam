@@ -39,7 +39,7 @@
 namespace QtAV
 {
 
-class FramePrivate : public QSharedData
+class Q_DECL_HIDDEN FramePrivate : public QSharedData
 {
     Q_DISABLE_COPY(FramePrivate)
 

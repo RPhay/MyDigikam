@@ -43,7 +43,7 @@ namespace QtAV
 
 // always define the class to avoid macro check when using it
 
-class AVFrameBuffers
+class Q_DECL_HIDDEN AVFrameBuffers
 {
 
 #if QTAV_HAVE(AVBUFREF)
@@ -209,7 +209,7 @@ private:
 
 class AudioResampler;
 
-class AudioDecoderPrivate : public AVDecoderPrivate
+class Q_DECL_HIDDEN AudioDecoderPrivate : public AVDecoderPrivate
 {
 public:
 

@@ -122,7 +122,7 @@ private:
 
 class VideoMaterial;
 
-class VideoMaterialPrivate : public DPtrPrivate<VideoMaterial>
+class Q_DECL_HIDDEN VideoMaterialPrivate : public DPtrPrivate<VideoMaterial>
 {
 public:
 

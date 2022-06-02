@@ -54,7 +54,7 @@ class Filter;
 class Statistics;
 class OutputSet;
 
-class AVThreadPrivate : public DPtrPrivate<AVThread>
+class Q_DECL_HIDDEN AVThreadPrivate : public DPtrPrivate<AVThread>
 {
 public:
 

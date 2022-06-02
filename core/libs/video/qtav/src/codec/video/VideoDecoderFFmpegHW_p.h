@@ -37,7 +37,7 @@
 namespace QtAV
 {
 
-class VideoDecoderFFmpegHWPrivate : public VideoDecoderFFmpegBasePrivate
+class Q_DECL_HIDDEN VideoDecoderFFmpegHWPrivate : public VideoDecoderFFmpegBasePrivate
 {
 public:
 

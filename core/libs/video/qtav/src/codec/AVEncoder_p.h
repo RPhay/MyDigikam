@@ -99,7 +99,7 @@ private:
 
 class AudioResampler;
 
-class AudioEncoderPrivate : public AVEncoderPrivate
+class Q_DECL_HIDDEN AudioEncoderPrivate : public AVEncoderPrivate
 {
 public:
 

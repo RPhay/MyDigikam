@@ -40,7 +40,7 @@ namespace QtAV
 
 static const qint64 kInvalidPosition = std::numeric_limits<qint64>::max();
 
-class AVPlayerCore::Private
+class Q_DECL_HIDDEN AVPlayerCore::Private
 {
 public:
 

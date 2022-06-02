@@ -39,7 +39,7 @@ namespace QtAV
 
 class ImageConverter;
 
-class ImageConverterPrivate : public DPtrPrivate<ImageConverter>
+class Q_DECL_HIDDEN ImageConverterPrivate : public DPtrPrivate<ImageConverter>
 {
 public:
 
