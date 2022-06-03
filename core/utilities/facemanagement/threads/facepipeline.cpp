@@ -117,7 +117,8 @@ void FacePipeline::plugFaceDetector()
     d->detectionWorker = new DetectionWorker(d);
 
     connect(d, SIGNAL(accuracyAndModel(double,bool)),
-            d->detectionWorker, SLOT(setAccuracyAndModel(double,bool)));
+            d->detectionWorker, SLOT(setAccuracyAndModel(double,bool)),
+            Qt::QueuedConnection);
 }
 
 void FacePipeline::plugParallelFaceDetectors()
@@ -138,7 +139,8 @@ void FacePipeline::plugParallelFaceDetectors()
         DetectionWorker* const worker = new DetectionWorker(d);
 
         connect(d, SIGNAL(accuracyAndModel(double,bool)),
-                worker, SLOT(setAccuracyAndModel(double,bool)));
+                worker, SLOT(setAccuracyAndModel(double,bool)),
+                Qt::QueuedConnection);
 
         d->parallelDetectors->add(worker);
     }
@@ -149,7 +151,8 @@ void FacePipeline::plugFaceRecognizer()
     d->recognitionWorker = new RecognitionWorker(d);
 
     connect(d, SIGNAL(accuracyAndModel(double,bool)),
-            d->recognitionWorker, SLOT(setThreshold(double,bool)));
+            d->recognitionWorker, SLOT(setThreshold(double,bool)),
+            Qt::QueuedConnection);
 }
 
 void FacePipeline::plugDatabaseWriter(WriteMode mode)

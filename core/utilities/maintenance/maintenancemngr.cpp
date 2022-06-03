@@ -320,6 +320,7 @@ void MaintenanceMngr::stage6()
         // NOTE : Use multi-core CPU option is passed through FaceScanSettings
         d->settings.faceSettings.wholeAlbums = d->settings.wholeAlbums;
         d->settings.faceSettings.useFullCpu  = d->settings.useMutiCoreCPU;
+        d->settings.faceSettings.useYoloV3   = ApplicationSettings::instance()->getFaceDetectionYoloV3();
         d->settings.faceSettings.accuracy    = ApplicationSettings::instance()->getFaceDetectionAccuracy();
         d->facesDetector                     = new FacesDetector(d->settings.faceSettings);
         d->facesDetector->setNotificationEnabled(false);
