@@ -41,9 +41,9 @@ namespace QtAV
 
 struct d3d_format_t
 {
-    const char*              name;
-    int                      fourcc;
-    VideoFormat::PixelFormat pixfmt;
+    const char*              name   = nullptr;
+    int                      fourcc = 0;
+    VideoFormat::PixelFormat pixfmt = VideoFormat::Format_Invalid;
 };
 
 class VideoDecoderD3DPrivate;
@@ -156,7 +156,8 @@ private:
 template<typename T>
 int SelectConfig(AVCodecID codec_id, const T* cfgs, int nb_cfgs, T* cfg)
 {
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Decoder configurations: %d", nb_cfgs);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("Decoder configurations: %d", nb_cfgs);
 
     /* Select the best decoder configuration */
 

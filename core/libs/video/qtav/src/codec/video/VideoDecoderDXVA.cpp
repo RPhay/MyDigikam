@@ -340,7 +340,8 @@ bool VideoDecoderDXVAPrivate::loadDll()
 
     if (!hd3d9_dll)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("cannot load d3d9.dll");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("cannot load d3d9.dll");
 
         return false;
     }
@@ -349,7 +350,9 @@ bool VideoDecoderDXVAPrivate::loadDll()
 
     if (!hdxva2_dll)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("cannot load dxva2.dll");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("cannot load dxva2.dll");
+
         FreeLibrary(hd3d9_dll);
 
         return false;
@@ -379,13 +382,16 @@ bool VideoDecoderDXVAPrivate::createDevice()
 
     if (!d3ddev)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "Failed to create d3d9 device ex, fallback to d3d9 device";
+        qCWarning(DIGIKAM_QTAV_LOG_WARN)
+            << "Failed to create d3d9 device ex, fallback to d3d9 device";
+
         d3ddev = DXHelper::CreateDevice9(hd3d9_dll, &d3dobj, &d3dai);
     }
 
     if (!d3ddev)        // cppcheck-suppress duplicateCondition
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "Failed to create d3d9 device";
+        qCWarning(DIGIKAM_QTAV_LOG_WARN)
+            << "Failed to create d3d9 device";
 
         return false;
     }
@@ -416,16 +422,19 @@ bool VideoDecoderDXVAPrivate::createDevice()
 
     if (!CreateDeviceManager9)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "cannot load function DXVA2CreateDirect3DDeviceManager9";
+        qCWarning(DIGIKAM_QTAV_LOG_WARN)
+            << "cannot load function DXVA2CreateDirect3DDeviceManager9";
 
         return false;
     }
 
-    qCDebug(DIGIKAM_QTAV_LOG) << "OurDirect3DCreateDeviceManager9 Success!";
+    qCDebug(DIGIKAM_QTAV_LOG)
+        << "OurDirect3DCreateDeviceManager9 Success!";
 
     DX_ENSURE_OK(CreateDeviceManager9(&token, &devmng), false);
 
-    qCDebug(DIGIKAM_QTAV_LOG) << "obtained IDirect3DDeviceManager9";
+    qCDebug(DIGIKAM_QTAV_LOG)
+        << "obtained IDirect3DDeviceManager9";
 
     // http://msdn.microsoft.com/en-us/library/windows/desktop/ms693525%28v=vs.85%29.aspx   // krazy:exclude=insecurenet
 
@@ -466,7 +475,7 @@ QVector<GUID> VideoDecoderDXVAPrivate::getSupportedCodecs() const
     return guids;
 }
 
-int VideoDecoderDXVAPrivate::fourccFor(const GUID *guid) const
+int VideoDecoderDXVAPrivate::fourccFor(const GUID* guid) const
 {
     UINT output_count      = 0;
     D3DFORMAT* output_list = nullptr;
@@ -534,7 +543,7 @@ bool VideoDecoderDXVAPrivate::createDecoder(AVCodecID codec_id, int w, int h, QV
 
     DX_ENSURE_OK(vs->CreateSurface(aligned(w),
                                    aligned(h),
-                                   nb_surfaces - 1, //The number of back buffers. The method creates BackBuffers + 1 surfaces.
+                                   nb_surfaces - 1, // The number of back buffers. The method creates BackBuffers + 1 surfaces.
                                    fourccToD3D(format_fcc),
                                    D3DPOOL_DEFAULT,
                                    0,

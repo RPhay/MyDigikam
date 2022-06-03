@@ -169,10 +169,10 @@ static const int PROF_HEVC_MAIN10[]  = { FF_PROFILE_HEVC_MAIN, FF_PROFILE_HEVC_M
 
 struct Q_DECL_HIDDEN dxva2_mode_t
 {
-    const char* name;
-    const GUID* guid;
-    int         codec;
-    const int*  profiles;
+    const char* name     = nullptr;
+    const GUID* guid     = nullptr;
+    int         codec    = 0;
+    const int*  profiles = nullptr;
 };
 
 /* XXX Preferred modes must come first */
@@ -318,7 +318,7 @@ static const d3d_format_t d3d_formats[] =
     { nullptr,  0,                              VideoFormat::Format_Invalid     }
 };
 
-static const d3d_format_t *D3dFindFormat(int fourcc)
+static const d3d_format_t* D3dFindFormat(int fourcc)
 {
     for (unsigned i = 0 ; d3d_formats[i].name ; ++i)
     {
@@ -488,6 +488,7 @@ void* VideoDecoderD3DPrivate::setup(AVCodecContext* avctx)
             case QTAV_CODEC_ID(H264):
             {
                 surface_count = 16 + 4;
+
                 break;
             }
 
@@ -495,12 +496,14 @@ void* VideoDecoderD3DPrivate::setup(AVCodecContext* avctx)
             case QTAV_CODEC_ID(MPEG2VIDEO):
             {
                 surface_count = 2 + 4;
+
                 break;
             }
 
             default:
             {
                 surface_count = 2 + 4;
+
                 break;
             }
         }
@@ -665,7 +668,8 @@ const d3d_format_t* VideoDecoderD3DPrivate::getFormat(const AVCodecContext* avct
         if (is_supported)
         {
             qCDebug(DIGIKAM_QTAV_LOG).noquote()
-                << QString::asprintf("Check profile support: %s", AVDecoderPrivate::getProfileName(avctx));
+                << QString::asprintf("Check profile support: %s",
+                    AVDecoderPrivate::getProfileName(avctx));
 
             is_supported = checkProfile(mode, avctx->profile);
         }

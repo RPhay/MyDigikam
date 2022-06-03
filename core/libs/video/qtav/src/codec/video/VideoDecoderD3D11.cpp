@@ -71,7 +71,8 @@ struct dxgi_fcc
 {
     int         fourcc;
     DXGI_FORMAT dxgi;
-} dxgi_formats[] =
+}
+dxgi_formats[] =
 {
     { MAKEFOURCC('N','V','1','2'), DXGI_FORMAT_NV12 },
     { MAKEFOURCC('P','0','1','0'), DXGI_FORMAT_P010 },
@@ -161,8 +162,9 @@ public:
     VideoDecoderD3D11Private()
         : dll(0)
     {
-        //GetModuleHandle()
-
+/*
+        GetModuleHandle()
+*/
 #ifndef Q_OS_WINRT
 
         dll       = LoadLibrary(TEXT("d3d11.dll")); // cppcheck-suppress useInitializationList
@@ -188,7 +190,7 @@ public:
 
     }
 
-    AVPixelFormat vaPixelFormat() const override
+    AVPixelFormat vaPixelFormat() const             override
     {
         return QTAV_PIX_FMT_C(D3D11VA_VLD);
     }
@@ -241,7 +243,8 @@ VideoFrame VideoDecoderD3D11::frame()
 
     if (!surface)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Get D3D11 surface error");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Get D3D11 surface error");
 
         return VideoFrame();
     }
@@ -251,7 +254,8 @@ VideoFrame VideoDecoderD3D11::frame()
 
     if (!texture)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Get D3D11 texture error");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Get D3D11 texture error");
 
         return VideoFrame();
     }
