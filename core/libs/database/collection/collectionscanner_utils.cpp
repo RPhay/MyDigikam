@@ -215,7 +215,7 @@ int CollectionScanner::countItemsInFolder(const QString& path)
 
     CollectionLocation location = CollectionManager::instance()->locationForPath(path);
 
-    if (!location.isNull())
+    if (!location.isNull() && databaseInitialScanDone())
     {
         QString album = CollectionManager::instance()->album(path);
         int albumID   = CoreDbAccess().db()->getAlbumForPath(location.id(), album, false);
