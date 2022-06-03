@@ -320,7 +320,16 @@ VideoFrame VideoDecoderVideoToolbox::frame()
 
         // TODO: move to updateFrameInfo
 
-        f.setTimestamp(double(d.frame->pkt_pts) / 1000.0);
+#ifndef HAVE_FFMPEG_VERSION5
+
+        f.setTimestamp((double)d.frame->pkt_pts / 1000.0);
+
+#else // ffmpeg >= 5
+
+         f.setTimestamp((double)d.frame->pts / 1000.0);
+
+#endif
+
         f.setDisplayAspectRatio(d.getDAR(d.frame));
         d.updateColorDetails(&f);
 
