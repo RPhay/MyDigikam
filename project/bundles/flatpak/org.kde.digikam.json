@@ -212,19 +212,6 @@
             "sources": [ { "type": "git", "url": "https://invent.kde.org/education/marble.git", "tag": "v20.12.1" } ]
         },
         {
-            "name": "qtav",
-            "buildsystem": "cmake-ninja",
-            "config-opts": [
-                "-DBUILD_TESTS=OFF",
-                "-DBUILD_EXAMPLES=OFF",
-                "-DBUILD_PLAYERS=OFF",
-                "-DBUILD_QT5OPENGL=ON",
-                "-DBUILD_QML=OFF"
-            ],
-            "builddir": true,
-            "sources": [ { "type": "git", "url": "https://github.com/wang-bin/QtAV.git", "disable-submodules": false } ]
-        },
-        {
             "name": "lensfun",
             "buildsystem": "cmake-ninja",
             "config-opts": [
