@@ -198,6 +198,22 @@ bool MetaEngine::load(const QString& filePath, Backend* backend)
             return false;
         }
 
+        if (
+            d->itemComments().empty() &&
+            d->exifMetadata().empty() &&
+            d->iptcMetadata().empty()
+
+#ifdef _XMP_SUPPORT_
+
+            && d->xmpMetadata().empty()
+
+#endif // _XMP_SUPPORT_
+
+           )
+        {
+            return false;
+        }
+
         if (backend)
         {
             *backend = Exiv2Backend;
