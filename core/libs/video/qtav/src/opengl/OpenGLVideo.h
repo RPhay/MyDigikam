@@ -86,7 +86,8 @@ public:
     /*!
      * \brief render
      * all are in Qt's coordinate
-     * \param target: the rect renderering to. in Qt's coordinate. not normalized here but in shader. // TODO: normalized check?
+     * \param target: the rect renderering to. in Qt's coordinate.
+     * not normalized here but in shader. // TODO: normalized check?
      * invalid value (default) means renderering to the whole viewport
      * \param roi: normalized rect of texture to renderer.
      * \param transform: additinal transformation.
@@ -119,7 +120,8 @@ Q_SIGNALS:
     /*!
      * \brief afterRendering
      * Emitted when video frame is rendered.
-     * With DirectConnection, it can be used to draw GL on top of video, or to do screen scraping of the current frame buffer.
+     * With DirectConnection, it can be used to draw GL on top of video,
+     * or to do screen scraping of the current frame buffer.
      */
     void afterRendering();
 
@@ -130,7 +132,8 @@ protected:
 private Q_SLOTS:
 
     /**
-     * used by Qt5 whose QOpenGLContext is QObject and we can call this when context is about to destroy.
+     * used by Qt5 whose QOpenGLContext is QObject and we can call
+     * this when context is about to destroy.
      * shader manager and material will be reset
      */
     void resetGL();

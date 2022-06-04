@@ -395,8 +395,10 @@ void GeometryRenderer::render()
 
     if (g->indexCount() > 0)
     {
+        // NOTE: null: data in vao or ibo. not null: data in memory
+
         DYGL(glDrawElements(g->primitive(), g->indexCount(), g->indexType(),
-             ibo.isCreated() ? nullptr : g->indexData())); // null: data in vao or ibo. not null: data in memory
+             ibo.isCreated() ? nullptr : g->indexData()));
     }
     else
     {

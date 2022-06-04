@@ -137,7 +137,8 @@ QByteArray compatibleShaderHeader(QOpenGLShader::ShaderType type)
 
     QByteArray h;
 
-    // #version directive must occur in a compilation unit before anything else, except for comments and white spaces. Default is 100 if not set
+    // #version directive must occur in a compilation unit before anything else,
+    // except for comments and white spaces. Default is 100 if not set
 
     h.append("#version ").append(QByteArray::number(GLSLVersion()));
 
@@ -301,7 +302,8 @@ bool isOpenGLES()
         return false;
 
     // Desktop openGLModuleType() can create es compatible context, so prefer QOpenGLContext::isOpenGLES().
-    // qApp->testAttribute(Qt::AA_UseOpenGLES) is what user requested, but not  the result can be different. reproduce: dygl set AA_ShareOpenGLContexts|AA_UseOpenGLES, fallback to desktop (why?)
+    // qApp->testAttribute(Qt::AA_UseOpenGLES) is what user requested, but not the result
+    // can be different. reproduce: dygl set AA_ShareOpenGLContexts|AA_UseOpenGLES, fallback to desktop (why?)
 
     return (QOpenGLContext::openGLModuleType() != QOpenGLContext::LibGL);
 
@@ -436,7 +438,8 @@ typedef struct Q_DECL_HIDDEN
 } gl_param_t;
 
 // es formats:  ALPHA, RGB, RGBA, LUMINANCE, LUMINANCE_ALPHA
-// es types:  UNSIGNED_BYTE, UNSIGNED_SHORT_5_6_5, UNSIGNED_SHORT_4_4_4_4, GL_UNSIGNED_SHORT_5_5_5_1 (NO UNSIGNED_SHORT)
+// es types:  UNSIGNED_BYTE, UNSIGNED_SHORT_5_6_5, UNSIGNED_SHORT_4_4_4_4,
+// GL_UNSIGNED_SHORT_5_5_5_1 (NO UNSIGNED_SHORT)
 
 /*!
  * c: number of channels(components) in the plane

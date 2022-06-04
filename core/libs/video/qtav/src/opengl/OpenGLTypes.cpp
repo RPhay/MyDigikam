@@ -118,11 +118,11 @@ Uniform& Uniform::setType(Type tp, int count)
 
     if      (isVec())
     {
-        tuple_size = (t >> (V+1)) & ((1 << 3) - 1);
+        tuple_size  = (t >> (V + 1)) & ((1 << 3) - 1);
     }
     else if (isMat())
     {
-        tuple_size  = (t >> (M+1)) & ((1 << 3) - 1);
+        tuple_size  = (t >> (M + 1)) & ((1 << 3) - 1);
         tuple_size *= tuple_size;
     }
 
@@ -140,7 +140,7 @@ Uniform& Uniform::setType(Type tp, int count)
 
 template<typename T> bool set_uniform_value(QVector<int>& dst, const T* v, int count)
 {
-    Q_ASSERT(sizeof(T) * count <= sizeof(int) * dst.size() && "set_uniform_value: Bad type or array size");
+    Q_ASSERT(((sizeof(T) * count) <= (sizeof(int) * dst.size())) && "set_uniform_value: Bad type or array size");
 
     // why not dst.constData()?
 
@@ -344,8 +344,10 @@ bool Uniform::setGL()
         default:
         {
             qCDebug(DIGIKAM_QTAV_LOG) << *this;
+
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-                << QString::asprintf("Unsupported uniform type in Qt. You should use 'VideoShader::setUserUniformValues()' to call glUniformXXX or directly call glUniformXXX instead");
+                << QString::asprintf("Unsupported uniform type in Qt. You should use 'VideoShader::setUserUniformValues()' "
+                                     "to call glUniformXXX or directly call glUniformXXX instead");
 
             return false;
         }
@@ -455,9 +457,9 @@ QVector<Uniform> ParseUniforms(const QByteArray& text, GLuint programId = 0)
 
         Uniform u;
         const QStringList x = rx.capturedTexts();
-
-        //qCDebug(DIGIKAM_QTAV_LOG) << x;
-
+/*
+        qCDebug(DIGIKAM_QTAV_LOG) << x;
+*/
         u.name              = x.at(2).toUtf8();
         int array_size      = 1;
 

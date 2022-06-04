@@ -495,8 +495,8 @@ void TexturedGeometry::create()
 
 
 Sphere::Sphere()
-    : TexturedGeometry()
-    , r               (1)
+    : TexturedGeometry(),
+      r               (1)
 {
     setPrimitive(Triangles);
     setResolution(128, 128);
@@ -545,10 +545,10 @@ void Sphere::create()
     float* vd          = reinterpret_cast<float*>(m_vdata.data());
     const float dTheta = M_PI * 2.0 / float(ru);
     const float dPhi   = M_PI       / float(rv);
-
-    //const float du = 1.0f/float(ru);
-    //const float dv = 1.0f/float(rv);
-
+/*
+    const float du = 1.0f / float(ru);
+    const float dv = 1.0f / float(rv);
+*/
     for (int lat = 0 ; lat <= rv ; ++lat)
     {
         const float phi    = M_PI_2 - float(lat) * dPhi;

@@ -100,8 +100,9 @@ class QTAV_EXPORT Geometry
 {
 public:
 
-    /// Strip or Triangles is preferred by ANGLE. The values are equal to opengl
-
+    /**
+     * Strip or Triangles is preferred by ANGLE. The values are equal to opengl
+     */
     enum Primitive
     {
         Triangles     = 0x0004,

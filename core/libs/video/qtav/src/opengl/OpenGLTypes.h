@@ -101,7 +101,8 @@ public:
      * \brief set
      * Set uniform value in host memory. This will mark dirty if value is changed
      * \param v the value
-     * \param count number of element T to set. 0: depending on type and array size, the number is arrySize()*tupleSize();
+     * \param count number of element T to set. 0: depending on type and array size,
+     * the number is arrySize()*tupleSize();
      * TODO: Sampler
      */
     void set(const float& v, int count = 0);
@@ -120,7 +121,8 @@ public:
 
     /*!
      * \brief setGL
-     * Call glUniformXXX to update uniform values that set by set(const T&, int) and mark dirty false. Currently only use OpenGL ES2 supported functions, i.e. uint, double types are not supported.
+     * Call glUniformXXX to update uniform values that set by set(const T&, int) and mark dirty false.
+     * Currently only use OpenGL ES2 supported functions, i.e. uint, double types are not supported.
      * \return false if location is invalid, or if uniform type is not supported by QOpenGLFunctions
      * TODO: Sampler
      */
@@ -155,7 +157,8 @@ public:
     int arraySize() const { return array_size; }
 
     /*!
-     * Return an array of given type. the type T must match type(), for example T is float for Float, VecN, MatN and array of them
+     * Return an array of given type. the type T must match type(),
+     * for example T is float for Float, VecN, MatN and array of them
      */
     template<typename T> QVector<T> value() const
     {

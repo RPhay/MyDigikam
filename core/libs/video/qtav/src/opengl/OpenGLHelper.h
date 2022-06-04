@@ -69,7 +69,6 @@
         } \
     } while(0)
 
-
 class QMatrix4x4;
 
 namespace QtAV

@@ -139,7 +139,8 @@ void OpenGLVideoPrivate::updateGeometry(VideoShader* shader, const QRectF& t, co
 {
     // also check size change for normalizedROI computation if roi is not normalized
 
-    const bool roi_changed = ((valiad_tex_width != material->validTextureWidth()) || (roi != r) || (video_size != material->frameSize()));
+    const bool roi_changed = ((valiad_tex_width != material->validTextureWidth()) ||
+                              (roi != r) || (video_size != material->frameSize()));
     const int tc           = shader->textureLocationCount();
 
     if (roi_changed)
@@ -177,7 +178,9 @@ void OpenGLVideoPrivate::updateGeometry(VideoShader* shader, const QRectF& t, co
         QObject::connect(QOpenGLContext::currentContext(), &QOpenGLContext::aboutToBeDestroyed,
                          [geordr]
             {
-                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("destroy GeometryRenderer %p", geordr);
+                qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                    << QString::asprintf("destroy GeometryRenderer %p", geordr);
+
                 delete geordr;
             }
         );
@@ -196,8 +199,9 @@ void OpenGLVideoPrivate::updateGeometry(VideoShader* shader, const QRectF& t, co
         {
             target     = t;
             update_geo = true;
-
-            //target_rect = target (if valid). // relate to gvf bug?
+/*
+            target_rect = target (if valid). // relate to gvf bug?
+*/
         }
     }
     else
@@ -224,6 +228,7 @@ void OpenGLVideoPrivate::updateGeometry(VideoShader* shader, const QRectF& t, co
     // setTextureCount may change the vertex data. Call it before setRect()
 
     qCDebug(DIGIKAM_QTAV_LOG) << "target rect: " << target_rect ;
+
     geometry->setTextureCount((shader->textureTarget() == GL_TEXTURE_RECTANGLE) ? tc : 1);
     geometry->setGeometryRect(target_rect);
     geometry->setTextureRect(material->mapToTexture(0, roi));
@@ -302,7 +307,8 @@ void OpenGLVideo::setOpenGLContext(QOpenGLContext* ctx)
 
     d.manager = new ShaderManager(ctx);
 
-    // NOTE: direct connection to make sure there is a valid context. makeCurrent in window.aboutToBeDestroyed()?
+    // NOTE: direct connection to make sure there is a valid context.
+    // makeCurrent in window.aboutToBeDestroyed()?
 
     QObject::connect(ctx, SIGNAL(aboutToBeDestroyed()),
                      this, SLOT(resetGL()),
@@ -416,9 +422,9 @@ void OpenGLVideo::setViewport(const QRectF& r)
     }
 
     // Mirrored relative to the usual Qt coordinate system with origin in the top left corner.
-
-    //mirrored = mat(0, 0) * mat(1, 1) - mat(0, 1) * mat(1, 0) > 0;
-
+/*
+    mirrored = mat(0, 0) * mat(1, 1) - mat(0, 1) * mat(1, 0) > 0;
+*/
     if (d.ctx && (d.ctx == QOpenGLContext::currentContext()))
     {
         DYGL(glViewport(d.rect.x(), d.rect.y(), d.rect.width(), d.rect.height()));
@@ -543,9 +549,9 @@ void OpenGLVideo::render(const QRectF &target, const QRectF& roi, const QMatrix4
 
     if (blending)
         DYGL(glDisable(GL_BLEND));
-
-    // d.shader->program()->release(); //glUseProgram(0)
-
+/*
+    d.shader->program()->release(); // glUseProgram(0)
+*/
     d.material->unbind();
 
     Q_EMIT afterRendering();
