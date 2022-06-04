@@ -60,7 +60,7 @@ static const char kFrag[] = GLSL
     void main()
     {
         gl_FragColor.rgb = v_Color.rgb;
-        gl_FragColor.a   = v_Color.a*texture2D(u_Texture, v_TexCoords).r;
+        gl_FragColor.a   = v_Color.a * texture2D(u_Texture, v_TexCoords).r;
     }
 );
 
@@ -102,9 +102,9 @@ void SubImagesRenderer::render(const SubImageSet& ass, const QRect& target, cons
 
         // TODO: foreach geometry.attributes
 
-        m_program.bindAttributeLocation("a_Position", 0);
+        m_program.bindAttributeLocation("a_Position",  0);
         m_program.bindAttributeLocation("a_TexCoords", 1);
-        m_program.bindAttributeLocation("a_Color", 2);
+        m_program.bindAttributeLocation("a_Color",     2);
 
         if (!m_program.link())
             qCWarning(DIGIKAM_QTAV_LOG_WARN) << m_program.log();
@@ -114,7 +114,7 @@ void SubImagesRenderer::render(const SubImageSet& ass, const QRect& target, cons
     gl().ActiveTexture(GL_TEXTURE0);
     DYGL(glBindTexture(GL_TEXTURE_2D, m_tex));
     m_program.setUniformValue("u_Texture", 0);
-    m_program.setUniformValue("u_Matrix", transform * m_mat);
+    m_program.setUniformValue("u_Matrix",  transform * m_mat);
     DYGL(glEnable(GL_BLEND));
 
     if (m_geometry->images().format() == SubImageSet::ASS)
@@ -152,21 +152,22 @@ void SubImagesRenderer::uploadTexture(SubImagesGeometry* g)
     DYGL(glBindTexture(GL_TEXTURE_2D, m_tex));
     DYGL(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR));
     DYGL(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR));
-    DYGL(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE));
-    DYGL(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE));
+    DYGL(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S,     GL_CLAMP_TO_EDGE));
+    DYGL(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T,     GL_CLAMP_TO_EDGE));
     DYGL(glTexImage2D(GL_TEXTURE_2D, 0, internal_fmt, g->width(), g->height(), 0, fmt, data_type, nullptr));
-
-    //glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
-
+/*
+    glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+*/
     for (int i = 0 ; i < g->uploadRects().size() ; ++i)
     {
         const QRect& r      = g->uploadRects().at(i);
         const SubImage& sub = g->images().images.at(i);
-        DYGL(glTexSubImage2D(GL_TEXTURE_2D, 0, r.x(), r.y(), r.width(), r.height(), fmt, data_type, sub.data.constData()));
+        DYGL(glTexSubImage2D(GL_TEXTURE_2D, 0, r.x(), r.y(), r.width(), r.height(),
+                             fmt, data_type, sub.data.constData()));
     }
-
-    //glPixelStorei(GL_UNPACK_ALIGNMENT, 4);
-
+/*
+    glPixelStorei(GL_UNPACK_ALIGNMENT, 4);
+*/
     DYGL(glBindTexture(GL_TEXTURE_2D, 0));
 }
 

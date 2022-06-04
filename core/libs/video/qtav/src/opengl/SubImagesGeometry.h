@@ -61,19 +61,19 @@ public:
         return m_h;
     }
 
-    int stride() const override;
+    int stride()                           const override;
 
     const QVector<Attribute>& attributes() const override
     {
         return m_attributes;
     }
 
-    const SubImageSet& images() const
+    const SubImageSet& images()            const
     {
         return m_images;
     }
 
-    const QVector<QRect>& uploadRects() const
+    const QVector<QRect>& uploadRects()    const
     {
         return m_rects_upload;
     }

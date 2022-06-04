@@ -27,18 +27,8 @@
 // Qt includes
 
 #include <QMatrix4x4>
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#   include <QOpenGLShaderProgram>
-#   include <QOpenGLShader>
-#else
-#   include <QGLShaderProgram>
-#   include <QGLShader>
-#   undef QOpenGLShaderProgram
-#   undef QOpenGLShader
-#   define QOpenGLShaderProgram QGLShaderProgram
-#   define QOpenGLShader QGLShader
-#endif
+#include <QOpenGLShaderProgram>
+#include <QOpenGLShader>
 
 // Local includes
 
@@ -65,7 +55,8 @@ public:
      * \param target
      * \param transform additional transform, e.g. aspect ratio
      */
-    void render(const SubImageSet& ass, const QRect& target, const QMatrix4x4& transform = QMatrix4x4());
+    void render(const SubImageSet& ass, const QRect& target,
+                const QMatrix4x4& transform = QMatrix4x4());
 
     /*!
      * \brief setProjectionMatrixToRect
@@ -90,6 +81,7 @@ private:
 private:
 
     // Disable
+
     SubImagesRenderer(const SubImagesRenderer&)            = delete;
     SubImagesRenderer& operator=(const SubImagesRenderer&) = delete;
 };

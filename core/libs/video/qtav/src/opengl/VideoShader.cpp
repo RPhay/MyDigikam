@@ -125,7 +125,8 @@ const char* VideoShader::vertexShader() const
 
     if (vert.isEmpty())
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Empty vertex shader!");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Empty vertex shader!");
 
         return nullptr;
     }
@@ -205,7 +206,9 @@ const char* VideoShader::fragmentShader() const
 
         if (bpc > 8)
         {
-            // has and use 16 bit texture (r16 for example): If channel depth is 16 bit, no range convertion required. Otherwise, must convert to color.r*(2^16-1)/(2^bpc-1)
+            // has and use 16 bit texture (r16 for example):
+            // If channel depth is 16 bit, no range convertion required.
+            // Otherwise, must convert to color.r*(2^16-1)/(2^bpc-1)
 
             if ((OpenGLHelper::depth16BitTexture() < 16 ) ||
                 !OpenGLHelper::has16BitTexture()          ||
@@ -318,7 +321,9 @@ void VideoShader::initialize(QOpenGLShaderProgram* shaderProgram)
     d.u_texelSize   = shaderProgram->uniformLocation("u_texelSize");
     d.u_textureSize = shaderProgram->uniformLocation("u_textureSize");
     d.u_Texture.resize(textureLocationCount());
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("uniform locations:");
+
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("uniform locations:");
 
     for (int i = 0 ; i < d.u_Texture.size() ; ++i)
     {
@@ -329,35 +334,58 @@ void VideoShader::initialize(QOpenGLShaderProgram* shaderProgram)
             << QString::asprintf("%s: %d", tex_var.toUtf8().constData(), d.u_Texture[i]);
     }
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("u_Matrix: %d", d.u_Matrix);
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("u_colorMatrix: %d", d.u_colorMatrix);
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("u_opacity: %d", d.u_opacity);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("u_Matrix: %d",      d.u_Matrix);
+
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("u_colorMatrix: %d", d.u_colorMatrix);
+
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("u_opacity: %d",     d.u_opacity);
 
     if (d.u_c >= 0)
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("u_c: %d", d.u_c);
+    {
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("u_c: %d", d.u_c);
+    }
 
     if (d.u_to8 >= 0)
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("u_to8: %d", d.u_to8);
+    {
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("u_to8: %d", d.u_to8);
+    }
 
     if (d.u_texelSize >= 0)
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("u_texelSize: %d", d.u_texelSize);
+    {
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("u_texelSize: %d", d.u_texelSize);
+    }
 
     if (d.u_textureSize >= 0)
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("u_textureSize: %d", d.u_textureSize);
+    {
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("u_textureSize: %d", d.u_textureSize);
+    }
 
     d.user_uniforms[VertexShader].clear();
     d.user_uniforms[FragmentShader].clear();
 
     if (userShaderHeader(QOpenGLShader::Vertex))
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("user uniform locations in vertex shader:");
-        d.user_uniforms[VertexShader] = ParseUniforms(QByteArray(userShaderHeader(QOpenGLShader::Vertex)), shaderProgram->programId());
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("user uniform locations in vertex shader:");
+
+        d.user_uniforms[VertexShader] = ParseUniforms(QByteArray(userShaderHeader(QOpenGLShader::Vertex)),
+                                                                 shaderProgram->programId());
     }
 
     if (userShaderHeader(QOpenGLShader::Fragment))
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("user uniform locations in fragment shader:");
-        d.user_uniforms[FragmentShader] = ParseUniforms(QByteArray(userShaderHeader(QOpenGLShader::Fragment)), shaderProgram->programId());
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("user uniform locations in fragment shader:");
+
+        d.user_uniforms[FragmentShader] = ParseUniforms(QByteArray(userShaderHeader(QOpenGLShader::Fragment)),
+                                                                   shaderProgram->programId());
     }
 
     d.rebuild_program         = false;
@@ -564,9 +592,9 @@ bool VideoShader::update(VideoMaterial* const material)
 
     if (channelMapLocation() >= 0)
         program()->setUniformValue(channelMapLocation(), material->channelMap());
-
-    //program()->setUniformValue(matrixLocation(), ); // what about sgnode? state.combindMatrix()?
-
+/*
+    program()->setUniformValue(matrixLocation(), ); // what about sgnode? state.combindMatrix()?
+*/
     if (texelSizeLocation() >= 0)
         program()->setUniformValueArray(texelSizeLocation(), material->texelSize().constData(), nb_planes);
 
@@ -611,7 +639,7 @@ bool VideoShader::build(QOpenGLShaderProgram* const shaderProgram)
     }
 
     shaderProgram->removeAllShaders();
-    shaderProgram->addShaderFromSourceCode(QOpenGLShader::Vertex, vertexShader());
+    shaderProgram->addShaderFromSourceCode(QOpenGLShader::Vertex,   vertexShader());
     shaderProgram->addShaderFromSourceCode(QOpenGLShader::Fragment, fragmentShader());
     int maxVertexAttribs    = 0;
     DYGL(glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &maxVertexAttribs));
@@ -717,10 +745,10 @@ void VideoMaterial::setCurrentFrame(const VideoFrame& frame)
             /// 16bit (R16 e.g.) texture does not support >8bit be channels
             /// 10p be: R2 R1(Host) = R1*2^8+R2 = 000000rr rrrrrrrr ->(GL) R=R2*2^8+R1
             /// 10p le: R1 R2(Host) = rrrrrrrr rr000000
+/*
+            d.vec_to8 = QVector2D(1.0, 0.0) * 65535.0 / (float)range;
 
-            //d.vec_to8 = QVector2D(1.0, 0.0)*65535.0/(float)range;
-
-            d.colorTransform.setChannelDepthScale(65535.0 / (qreal)range, YUVA_DONE && fmt.hasAlpha());
+*/          d.colorTransform.setChannelDepthScale(65535.0 / (qreal)range, YUVA_DONE && fmt.hasAlpha());
         }
     }
     else
@@ -803,7 +831,8 @@ VideoShader* VideoMaterial::createShader() const
 
 QString VideoMaterial::typeName(qint32 value)
 {
-    return QString::fromUtf8("gl material 16to8bit: %1, planar: %2, has alpha: %3, 2d texture: %4, 2nd plane rg: %5, xyz: %6")
+    return QString::fromUtf8("gl material 16to8bit: %1, planar: %2, has alpha: %3, "
+                             "2d texture: %4, 2nd plane rg: %5, xyz: %6")
             .arg(!!(value & 1))
             .arg(!!(value & (1 << 1)))
             .arg(!!(value & (1 << 2)))
@@ -921,14 +950,17 @@ void VideoMaterialPrivate::uploadPlane(int p, bool updateTexture)
     if (try_pbo)
     {
 /*
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("bind PBO %d", p);
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("bind PBO %d", p);
 */
         QOpenGLBuffer& pb = pbo[p];
         pb.bind();
 
         // glMapBuffer() causes sync issue.
-        // Call glBufferData() with nullptr pointer before glMapBuffer(), the previous data in PBO will be discarded and
-        // glMapBuffer() returns a new allocated pointer or an unused block immediately even if GPU is still working with the previous data.
+        // Call glBufferData() with nullptr pointer before glMapBuffer(),
+        // the previous data in PBO will be discarded and
+        // glMapBuffer() returns a new allocated pointer or
+        // an unused block immediately even if GPU is still working with the previous data.
         // https://www.opengl.org/wiki/Buffer_Object_Streaming#Buffer_re-specification
 
         pb.allocate(pb.size());
@@ -961,17 +993,18 @@ void VideoMaterialPrivate::uploadPlane(int p, bool updateTexture)
 
     if (false)
     {
-        //texture_size[].width()*gl_bpp != bytesPerLine[]
-
+/*
+        texture_size[].width()*gl_bpp != bytesPerLine[]
+*/
         for (int y = 0 ; y < plane0Size.height() ; ++y)
         {
             DYGL(glTexSubImage2D(target, 0, 0, y, texture_size[p].width(), 1,
                  data_format[p], data_type[p], try_pbo ? nullptr : frame.constBits(p) + y * plane0Size.width()));
         }
     }
-
-    //DYGL(glBindTexture(target, 0)); // no bind 0 because glActiveTexture was called
-
+/*
+    DYGL(glBindTexture(target, 0)); // no bind 0 because glActiveTexture was called
+*/
     if (try_pbo)
     {
         pbo[p].release();
@@ -1114,7 +1147,8 @@ QSizeF VideoMaterial::texelSize(int plane) const
 {
     DPTR_D(const VideoMaterial);
 
-    return QSizeF(1.0 / (qreal)d.texture_size[plane].width(), 1.0 / (qreal)d.texture_size[plane].height());
+    return QSizeF(1.0 / (qreal)d.texture_size[plane].width(),
+                  1.0 / (qreal)d.texture_size[plane].height());
 }
 
 QVector<QVector2D> VideoMaterial::texelSize() const
@@ -1300,9 +1334,9 @@ bool VideoMaterialPrivate::initPBO(int plane, int size)
 
         return false;
     }
-
-    //pb.setUsagePattern(QOpenGLBuffer::DynamicCopy);
-
+/*
+    pb.setUsagePattern(QOpenGLBuffer::DynamicCopy);
+*/
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
         << QString::asprintf("Allocate PBO size %d", size);
 
@@ -1322,7 +1356,8 @@ bool VideoMaterialPrivate::initTexture(GLuint tex, GLint internal_format, GLenum
 
     DYGL(glTexParameteri(target, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE));
     DYGL(glTexParameteri(target, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE));
-    DYGL(glTexImage2D(target, 0, internal_format, width, height, 0 /*border, ES not support*/, format, dataType, nullptr));
+    DYGL(glTexImage2D(target, 0, internal_format, width, height, 0 /*border, ES not support*/,
+                      format, dataType, nullptr));
     DYGL(glBindTexture(target, 0));
 
     return true;
@@ -1349,8 +1384,9 @@ VideoMaterialPrivate::~VideoMaterialPrivate()
             if (owns_texture[tex])
                 DYGL(glDeleteTextures(1, &tex));
         }
-
-        //DYGL(glDeleteTextures(textures.size(), textures.data()));
+/*
+        DYGL(glDeleteTextures(textures.size(), textures.data()));
+*/
     }
 
     owns_texture.clear();
@@ -1544,9 +1580,9 @@ bool VideoMaterialPrivate::ensureResources()
         }
 
         /*
-          let wr[i] = valid_bpl[i]/bpl[i], frame from avfilter maybe wr[1] < wr[0]
-          e.g. original frame plane 0: 720/768; plane 1,2: 360/384,
-          filtered frame plane 0: 720/736, ... (16 aligned?)
+         * let wr[i] = valid_bpl[i]/bpl[i], frame from avfilter maybe wr[1] < wr[0]
+         * e.g. original frame plane 0: 720/768; plane 1,2: 360/384,
+         * filtered frame plane 0: 720/736, ... (16 aligned?)
          */
 
         qCDebug(DIGIKAM_QTAV_LOG).noquote()
