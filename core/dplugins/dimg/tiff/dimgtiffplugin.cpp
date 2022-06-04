@@ -138,7 +138,7 @@ int DImgTIFFPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
     if (!magic)
     {
-        return typeMimes().contains(format) ? 10 : 0;
+        return (!format.isEmpty() && typeMimes().contains(format)) ? 10 : 0;
     }
 
     // In second, we trying to parse file header.

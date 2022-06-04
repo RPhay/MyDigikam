@@ -135,7 +135,7 @@ int DImgRAWPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
         QString rawFilesExt = DRawDecoder::rawFiles();
         QString format      = fileInfo.suffix().toUpper();
 
-        return (rawFilesExt.toUpper().contains(format)) ? 10 : 0;
+        return (!format.isEmpty() && rawFilesExt.toUpper().contains(format)) ? 10 : 0;
     }
 
     return 0;
