@@ -19,6 +19,16 @@ if (NOT FFMPEG_VER5_FOUND)
 
 endif()
 
+# For C++ noisy warnings with Qt5 API (fixed in Qt6).
+
+if (NOT Qt6_FOUND)
+
+    REMOVE_COMPILER_WARNINGS("-Wdeprecated-copy")
+    DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-deprecated-copy")
+    DISABLE_CLANG_COMPILER_WARNINGS("3.99.99" "-Wno-deprecated-copy")
+
+endif()
+
 # For not portable pre-processor defined operator uses.
 REMOVE_COMPILER_WARNINGS("-Wexpansion-to-defined")
 DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-expansion-to-defined")
