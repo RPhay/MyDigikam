@@ -195,7 +195,7 @@ bool FilterManager::unregisterFilter(Filter* filter, AVOutput* output)
     DPTR_D(FilterManager);
 
     QList<Filter*>& fs = d.filter_out_map[output];
-    bool ret           = fs.removeAll(filter) > 0;
+    bool ret           = (fs.removeAll(filter) > 0);
 
     if (fs.isEmpty())
         d.filter_out_map.remove(output);

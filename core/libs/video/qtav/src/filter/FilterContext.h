@@ -39,11 +39,9 @@
  * QPainterFilterContext, D2DFilterContext, ...
  */
 
-
 class QPainter;
 class QPaintDevice;
 class QTextDocument;
-
 
 namespace QtAV
 {
@@ -218,12 +216,12 @@ protected:
 
     bool isReady() const override;
     bool prepare() override;
-    void initializeOnFrame(VideoFrame *vframe) override;
-    void shareFrom(VideoFilterContext *vctx) override;
+    void initializeOnFrame(VideoFrame* vframe) override;
+    void shareFrom(VideoFilterContext* vctx) override;
 
     // null image: use the old x11 image/pixmap
 
-    void renderTextImageX11(QImage* img, const QPointF &pos);
+    void renderTextImageX11(QImage* img, const QPointF& pos);
     void destroyX11Resources();
 
 protected:

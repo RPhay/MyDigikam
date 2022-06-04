@@ -124,7 +124,8 @@ void X11FilterContext::renderTextImageX11(QImage* img, const QPointF& pos)
 
         if (mask_q.isNull())
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("mask image is null");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("mask image is null");
 
             return;
         }
@@ -348,9 +349,9 @@ void X11FilterContext::drawRichText(const QRectF& rect, const QString& text, boo
     const QPointF tl = m.map(rect.topLeft());
     m.setColumn(3, QVector4D(0, 0, 0, 1));      // reset O to let painter draw from 0
     const QPointF dp =  tl - r.topLeft();       // painter should start from the mapped top left relative to mapped rect's top left
-
-    //qCDebug(DIGIKAM_QTAV_LOG) << dp << r.;
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG) << dp << r.;
+*/
     painter->setTransform(m.toTransform());
     painter->translate(dp);
 

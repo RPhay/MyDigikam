@@ -90,6 +90,7 @@ protected:
 private:
 
     // Disable
+
     LibAVFilter(const LibAVFilter&)            = delete;
     LibAVFilter& operator=(const LibAVFilter&) = delete;
 };

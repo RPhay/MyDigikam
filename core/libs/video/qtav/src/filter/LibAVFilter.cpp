@@ -227,7 +227,7 @@ public:
                                                   filter_graph)
                      , false);
 
-        /* buffer video sink: to terminate the filter chain. */
+        // buffer video sink: to terminate the filter chain.
 
 #if LIBAVFILTER_VERSION_INT >= AV_VERSION_INT(7,0,0)
 
@@ -242,7 +242,7 @@ public:
                                                   nullptr, nullptr, filter_graph),
                      false);
 
-        /* Endpoints for the filter graph. */
+        // Endpoints for the filter graph.
 
         AVFilterInOut* outputs = avfilter_inout_alloc();
         AVFilterInOut* inputs  = avfilter_inout_alloc();
@@ -280,7 +280,8 @@ public:
 
         // avfilter_graph_parse, avfilter_graph_parse2?
 
-        AV_ENSURE_OK(avfilter_graph_parse_ptr(filter_graph, options.toUtf8().constData(), &inputs, &outputs, nullptr), false);
+        AV_ENSURE_OK(avfilter_graph_parse_ptr(filter_graph, options.toUtf8().constData(),
+                                              &inputs, &outputs, nullptr), false);
         AV_ENSURE_OK(avfilter_graph_config(filter_graph, nullptr), false);
         avframe = av_frame_alloc();
         status  = LibAVFilter::ConfigureOk;
@@ -428,7 +429,8 @@ void* LibAVFilter::pullFrameHolder()
     if (ret < 0)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-            << QString::asprintf("av_buffersink_get_frame error: %s", av_err2str(ret));
+            << QString::asprintf("av_buffersink_get_frame error: %s",
+                av_err2str(ret));
 
         delete holder;
 
@@ -481,7 +483,7 @@ QStringList LibAVFilter::registeredFilters(int type)
 
 #   else
 
-    AVFilter** ff = nullptr;
+    AVFilter** ff     = nullptr;
 
     while ((ff = av_filter_next(ff)) && *ff)
     {
@@ -555,9 +557,9 @@ void LibAVFilterVideo::process(Statistics* statistics, VideoFrame* frame)
         return;
 
     DPTR_D(LibAVFilterVideo);
-
-    //Status old = status();
-
+/*
+    Status old = status();
+*/
     bool changed = false;
 
     if ((d.width != frame->width()) || (d.height != frame->height()) || (d.pixfmt != frame->pixelFormatFFmpeg()))
@@ -703,10 +705,10 @@ void LibAVFilterAudio::process(Statistics* statistics, AudioFrame* frame)
     }
 
     bool ok      = pushAudioFrame(frame, changed);
-
-    //if (old != status())
-      //  Q_EMIT statusChanged();
-
+/*
+    if (old != status())
+        Q_EMIT statusChanged();
+*/
     if (!ok)
         return;
 
@@ -729,18 +731,18 @@ void LibAVFilterAudio::process(Statistics* statistics, AudioFrame* frame)
     }
 
     AudioFrame af(fmt);
-
-    //af.setBits((quint8**)f->extended_data);
-    //af.setBytesPerLine((int*)f->linesize);
-
+/*
+    af.setBits((quint8**)f->extended_data);
+    af.setBytesPerLine((int*)f->linesize);
+*/
     af.setBits(f->extended_data);                     // TODO: ref
     af.setBytesPerLine(f->linesize[0], 0);            // for correct alignment
     af.setSamplesPerChannel(f->nb_samples);
     af.setMetaData(QLatin1String("avframe_hoder_ref"), QVariant::fromValue(ref));
     af.setTimestamp(ref->frame()->pts / 1000000.0);   // pkt_pts?
-
-    //af.setMetaData(frame->availableMetaData());
-
+/*
+    af.setMetaData(frame->availableMetaData());
+*/
     *frame = af;
 
 #else
@@ -771,9 +773,9 @@ bool LibAVFilter::Private::pushVideoFrame(Frame* frame, bool changed, const QStr
         {
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
                 << QString::asprintf("setup video filter graph error");
-
-            //enabled = false; // skip this filter and avoid crash
-
+/*
+            enabled = false; // skip this filter and avoid crash
+*/
             return false;
         }
     }
@@ -825,10 +827,11 @@ bool LibAVFilter::Private::pushAudioFrame(Frame* frame, bool changed, const QStr
     {
         if (!setup(args, false))
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("setup audio filter graph error");
-
-            //enabled = false; // skip this filter and avoid crash
-
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("setup audio filter graph error");
+/*
+            enabled = false; // skip this filter and avoid crash
+*/
             return false;
         }
     }
@@ -850,8 +853,9 @@ bool LibAVFilter::Private::pushAudioFrame(Frame* frame, bool changed, const QStr
 
     for (int i = 0 ; i < af->planeCount() ; ++i)
     {
-        //avframe->data[i] = (uint8_t*)af->constBits(i);
-
+/*
+        avframe->data[i] = (uint8_t*)af->constBits(i);
+*/
         avframe->extended_data[i] = (uint8_t*)af->constBits(i);
         avframe->linesize[i]      = af->bytesPerLine(i);
     }

@@ -40,7 +40,8 @@ class SubtitleFilterPrivate;
 /*!
  * \brief The SubtitleFilter class
  * draw text and image subtitles
- * Subtitle load priority: user specified file (setFile(...)) > auto load external (autoLoad() must be true) > embedded subtitle
+ * Subtitle load priority: user specified file (setFile(...)) > auto load external (autoLoad()
+ * must be true) > embedded subtitle
  */
 class QTAV_EXPORT SubtitleFilter : public VideoFilter,
                                    public SubtitleAPIProxy
@@ -51,8 +52,6 @@ class QTAV_EXPORT SubtitleFilter : public VideoFilter,
     Q_PROPERTY(QStringList engines READ engines WRITE setEngines NOTIFY enginesChanged)
     Q_PROPERTY(QString engine READ engine NOTIFY engineChanged)
     Q_PROPERTY(bool fuzzyMatch READ fuzzyMatch WRITE setFuzzyMatch NOTIFY fuzzyMatchChanged)
-
-    //Q_PROPERTY(QString fileName READ fileName WRITE setFileName NOTIFY fileNameChanged)
 
     Q_PROPERTY(QStringList dirs READ dirs WRITE setDirs NOTIFY dirsChanged)
     Q_PROPERTY(QStringList suffixes READ suffixes WRITE setSuffixes NOTIFY suffixesChanged)

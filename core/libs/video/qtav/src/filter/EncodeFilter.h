@@ -135,7 +135,7 @@ public:
 
     bool isSupported(VideoFilterContext::Type t) const override
     {
-        return t == VideoFilterContext::None;
+        return (t == VideoFilterContext::None);
     }
 
     /*!

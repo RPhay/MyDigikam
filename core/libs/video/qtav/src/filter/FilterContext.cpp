@@ -96,10 +96,10 @@ VideoFilterContext::~VideoFilterContext()
         // painter is shared, so may be end() multiple times.
 
         // TODO: use shared ptr
-
-        //if (painter->isActive())
-        //    painter->end();
-
+/*
+        if (painter->isActive())
+            painter->end();
+*/
         if (own_painter)
         {
             qCDebug(DIGIKAM_QTAV_LOG).noquote()
@@ -166,7 +166,8 @@ void VideoFilterContext::shareFrom(VideoFilterContext* vctx)
 {
     if (!vctx)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("shared filter context is null!");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("shared filter context is null!");
 
         return;
     }
@@ -181,8 +182,8 @@ void VideoFilterContext::shareFrom(VideoFilterContext* vctx)
 
 QPainterFilterContext::QPainterFilterContext()
     : VideoFilterContext(),
-      doc(nullptr),
-      cvt(nullptr)
+      doc               (nullptr),
+      cvt               (nullptr)
 {
 }
 
@@ -335,7 +336,8 @@ void QPainterFilterContext::initializeOnFrame(VideoFrame* vframe)
 
     if (!format.isValid())
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Not a valid format");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Not a valid format");
 
         return;
     }

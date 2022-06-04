@@ -44,8 +44,8 @@
 namespace QtAV
 {
 
-Filter::Filter(FilterPrivate &d, QObject* const parent)
-    : QObject(parent),
+Filter::Filter(FilterPrivate& d, QObject* const parent)
+    : QObject  (parent),
       DPTR_INIT(&d)
 {
     if (parent)

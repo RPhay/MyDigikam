@@ -48,7 +48,7 @@ public:
 
     GLSLFilterPrivate()
         : VideoFilterPrivate(),
-          fbo(nullptr)
+          fbo               (nullptr)
     {
     }
 
@@ -105,7 +105,8 @@ void GLSLFilter::process(Statistics* statistics, VideoFrame* frame)
 
     if (!QOpenGLContext::currentContext())
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "No current gl context for glsl filter: " << this;
+        qCWarning(DIGIKAM_QTAV_LOG_WARN)
+            << "No current gl context for glsl filter: " << this;
 
         return;
     }
@@ -167,8 +168,6 @@ void GLSLFilter::process(Statistics* statistics, VideoFrame* frame)
 
     class Q_DECL_HIDDEN GLTextureInterop : public VideoSurfaceInterop
     {
-        GLuint tex;
-
     public:
 
         explicit GLTextureInterop(GLuint id)
@@ -185,6 +184,10 @@ void GLSLFilter::process(Statistics* statistics, VideoFrame* frame)
 
             return t;
         }
+
+    private:
+
+        GLuint tex;
 
     private:
 

@@ -150,7 +150,9 @@ void AudioEncodeFilter::finish()
     if (!d.finishing.testAndSetRelaxed(0, 1))
         return;
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("About finish audio encoding");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("About finish audio encoding");
+
     AudioFrame f;
     f.setTimestamp(std::numeric_limits<qreal>::max());
 
@@ -199,10 +201,10 @@ void AudioEncodeFilter::encode(const AudioFrame& frame)
         if (!d.enc->audioFormat().isValid())
         {
             AudioFormat af(frame.format());
-
-            //if (af.isPlanar())
-              //  af.setSampleFormat(AudioFormat::packedSampleFormat(af.sampleFormat()));
-
+/*
+            if (af.isPlanar())
+                af.setSampleFormat(AudioFormat::packedSampleFormat(af.sampleFormat()));
+*/
             af.setSampleFormat(AudioFormat::SampleFormat_Unknown);
             d.enc->setAudioFormat(af);
         }
@@ -213,7 +215,8 @@ void AudioEncodeFilter::encode(const AudioFrame& frame)
         {
             // TODO: error()
 
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to open audio encoder");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("Failed to open audio encoder");
 
             return;
         }
@@ -225,7 +228,8 @@ void AudioEncodeFilter::encode(const AudioFrame& frame)
     {
         while (d.enc->encode())
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("encode delayed audio frames...");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("encode delayed audio frames...");
 
             Q_EMIT frameEncoded(d.enc->encoded());
         }
@@ -239,7 +243,7 @@ void AudioEncodeFilter::encode(const AudioFrame& frame)
         return;
     }
 
-    if ((frame.timestamp()*1000.0) < startTime())
+    if ((frame.timestamp() * 1000.0) < startTime())
         return;
 
     AudioFrame f(frame);
@@ -396,7 +400,9 @@ void VideoEncodeFilter::finish()
     if (!d.finishing.testAndSetRelaxed(0, 1))
         return;
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("About finish video encoding");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("About finish video encoding");
+
     VideoFrame f;
     f.setTimestamp(std::numeric_limits<qreal>::max());
 
@@ -454,7 +460,8 @@ void VideoEncodeFilter::encode(const VideoFrame& frame)
         {
             // TODO: error()
 
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to open video encoder");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("Failed to open video encoder");
 
             return;
         }
@@ -466,7 +473,8 @@ void VideoEncodeFilter::encode(const VideoFrame& frame)
     {
         while (d.enc->encode())
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("encode delayed video frames...");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("encode delayed video frames...");
 
             Q_EMIT frameEncoded(d.enc->encoded());
         }
@@ -492,7 +500,9 @@ void VideoEncodeFilter::encode(const VideoFrame& frame)
         (d.enc->width()  != f.width())            ||
         (d.enc->height() != f.height())
        )
+    {
         f = f.to(d.enc->pixelFormat(), QSize(d.enc->width(), d.enc->height()));
+    }
 
     if (!d.enc->encode(f))
     {

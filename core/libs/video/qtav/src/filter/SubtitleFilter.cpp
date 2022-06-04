@@ -223,7 +223,8 @@ void SubtitleFilter::process(Statistics* statistics, VideoFrame* frame)
 
     if (!context()->paint_device)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("no paint device!");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("no paint device!");
 
         return;
     }
@@ -240,9 +241,11 @@ void SubtitleFilter::process(Statistics* statistics, VideoFrame* frame)
          * The difference is small if use paint_device size and video frame aspect ratio ~ renderer aspect ratio
          * if use renderer's resolution, we have to map bounding rect from video frame coordinate to renderer's
          */
-
-        //QImage img = d.player_sub->subtitle()->getImage(statistics->video_only.width, statistics->video_only.height, &rect);
-
+/*
+        QImage img = d.player_sub->subtitle()->getImage(statistics->video_only.width,
+                                                        statistics->video_only.height,
+                                                        &rect);
+*/
         QImage img = d.player_sub->subtitle()->getImage(context()->paint_device->width(),
                                                         context()->paint_device->height(),
                                                         &rect);
