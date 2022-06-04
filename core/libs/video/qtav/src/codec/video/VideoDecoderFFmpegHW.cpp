@@ -35,10 +35,6 @@
 
 #include "digikam_debug.h"
 
-#ifndef Q_UNLIKELY
-#   define Q_UNLIKELY(x) (!!(x))
-#endif
-
 namespace QtAV
 {
 
@@ -75,9 +71,9 @@ static int ffmpeg_get_va_buffer2(struct AVCodecContext* ctx, AVFrame* frame, int
         frame->linesize[i] = 0;
         frame->buf[i]      = nullptr;
     }
-
-    //frame->reordered_opaque = ctx->reordered_opaque; //?? xbmc
-
+/*
+    frame->reordered_opaque = ctx->reordered_opaque; //?? xbmc
+*/
     // va must be available here
 
     VideoDecoderFFmpegHWPrivate* const va = (VideoDecoderFFmpegHWPrivate*)ctx->opaque;
@@ -93,7 +89,8 @@ static int ffmpeg_get_va_buffer2(struct AVCodecContext* ctx, AVFrame* frame, int
     ref->va                    = va;
     ref->opaque                = frame->opaque;
 
-    /* data[0] must be non-nullptr for libavcodec internal checks. data[3] actually contains the format-specific surface handle. */
+    // data[0] must be non-nullptr for libavcodec internal checks. data[3] actually contains
+    // the format-specific surface handle.
 
     frame->data[3]             = frame->data[0];
     frame->buf[0]              = av_buffer_create(frame->data[0], 0, ffmpeg_release_va_buffer2, ref, 0);
@@ -115,9 +112,9 @@ static int ffmpeg_get_va_buffer2(struct AVCodecContext* ctx, AVFrame* frame, int
 static int ffmpeg_get_va_buffer(struct AVCodecContext* c, AVFrame* ff) // vlc_va_t *external, AVFrame *ff)
 {
     VideoDecoderFFmpegHWPrivate* const va = reinterpret_cast<VideoDecoderFFmpegHWPrivate*>(c->opaque);
-
-    //ff->reordered_opaque = c->reordered_opaque; // TODO: dxva?
-
+/*
+    ff->reordered_opaque = c->reordered_opaque; // TODO: dxva?
+*/
     ff->opaque = 0;
 
 #   if !AV_MODULE_CHECK(LIBAVCODEC, 54, 34, 0, 79, 101)
@@ -132,8 +129,7 @@ static int ffmpeg_get_va_buffer(struct AVCodecContext* c, AVFrame* ff) // vlc_va
 
 #   endif
 
-    /* hwaccel_context is not present in old ffmpeg version */
-
+    // hwaccel_context is not present in old ffmpeg version
     // va must be available here
 
     if (!va->getBuffer(&ff->opaque, &ff->data[0]))
@@ -151,7 +147,7 @@ static void ffmpeg_release_va_buffer(struct AVCodecContext* c, AVFrame* ff)
 {
     VideoDecoderFFmpegHWPrivate* const va = reinterpret_cast<VideoDecoderFFmpegHWPrivate*>(c->opaque);
     va->releaseBuffer(ff->opaque, ff->data[0]);
-    memset(ff->data, 0, sizeof(ff->data));
+    memset(ff->data,     0, sizeof(ff->data));
     memset(ff->linesize, 0, sizeof(ff->linesize));
 }
 
@@ -173,13 +169,15 @@ bool VideoDecoderFFmpegHWPrivate::prepare()
 
 # if (LIBAVCODEC_VERSION_INT < AV_VERSION_INT(55, 1, 0))
 
-        /// tested libav-9.x + va-api. If remove this code:  Bug detected, please report the issue. Context scratch buffers could not be allocated due to unknown size
+        // tested libav-9.x + va-api. If remove this code: bug detected, please report the issue.
+        // Context scratch buffers could not be allocated due to unknown size
 
         case QTAV_CODEC_ID(H264):
         case QTAV_CODEC_ID(VC1):
         case QTAV_CODEC_ID(WMV3):
         {
             codec_ctx->thread_type &= ~FF_THREAD_FRAME;
+
             break;
         }
 # endif
@@ -278,7 +276,8 @@ AVPixelFormat VideoDecoderFFmpegHWPrivate::getFormat(struct AVCodecContext* avct
 
         if (!avctx->hwaccel_context)
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("acceleration setup failure");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("acceleration setup failure");
 
             break;
         }
@@ -342,8 +341,8 @@ void VideoDecoderFFmpegHWPrivate::releaseUSWC()
         gpu_mem.cleanCache();
 }
 
-VideoDecoderFFmpegHW::VideoDecoderFFmpegHW(VideoDecoderFFmpegHWPrivate& d):
-    VideoDecoderFFmpegBase(d)
+VideoDecoderFFmpegHW::VideoDecoderFFmpegHW(VideoDecoderFFmpegHWPrivate& d)
+    : VideoDecoderFFmpegBase(d)
 {
     setProperty("detail_copyMode", QString::fromUtf8("%1. %2\n%3. %4\n%5\n%6")
                 .arg(i18n("ZeroCopy: fastest. Direct rendering without data copy between CPU and GPU"))
@@ -477,7 +476,6 @@ VideoFrame VideoDecoderFFmpegHW::copyToFrame(const VideoFormat& fmt, int surface
         frame.setBytesPerLine(pitch);
 
         // TODO: why clone is faster()?
-
         // TODO: buffer pool and create VideoFrame when needed to avoid copy? also for other va
 
         frame = frame.clone();

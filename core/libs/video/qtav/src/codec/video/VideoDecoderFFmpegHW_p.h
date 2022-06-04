@@ -30,8 +30,9 @@
 #include "GPUMemCopy.h"
 
 /*!
-   QTAV_HAVE(AVBUFREF): use AVCodecContext.get_buffer2 instead of old callbacks. In order to avoid compile warnings, now disable old
-   callbacks if possible. maybe we can also do a runtime check and enable old callbacks
+ * QTAV_HAVE(AVBUFREF): use AVCodecContext.get_buffer2 instead of old callbacks.
+ * In order to avoid compile warnings, now disable old callbacks if possible.
+ * maybe we can also do a runtime check and enable old callbacks
  */
 
 namespace QtAV
@@ -129,7 +130,8 @@ public:
     QString                         description;
     int                             threads; ///< multithread decoding may crash for some decoders (dxva, videotoolbox)
 
-    // false for not intel gpu. my test result is intel gpu is supper fast and lower cpu usage if use optimized uswc copy. but nv is worse.
+    // false for not intel gpu. my test result is intel gpu is supper
+    // fast and lower cpu usage if use optimized uswc copy. but nv is worse.
     // TODO: flag enable, disable, auto
 
     VideoDecoderFFmpegHW::CopyMode  copy_mode;

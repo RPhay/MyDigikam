@@ -58,13 +58,14 @@ namespace QtAV
 struct
 {
     AVHWDeviceType type;
-    const char*    name;
-} hwdevs[] =
+    const char*    name  = nullptr;
+}
+hwdevs[] =
 {
     { AV_HWDEVICE_TYPE_VDPAU, "vdpau" },
     { AV_HWDEVICE_TYPE_CUDA,  "cuda"  },
     { AV_HWDEVICE_TYPE_VAAPI, "vaapi" },
-    { AV_HWDEVICE_TYPE_DXVA2, "dxva2" },
+    { AV_HWDEVICE_TYPE_DXVA2, "dxva2" }
 };
 
 AVHWDeviceType fromHWAName(const char* name)
@@ -199,7 +200,8 @@ bool VideoEncoderFFmpegPrivate::open()
 
     if (!codec)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "Can not find encoder for codec " << codec_name;
+        qCWarning(DIGIKAM_QTAV_LOG_WARN)
+            << "Can not find encoder for codec " << codec_name;
 
         return false;
     }
@@ -366,7 +368,9 @@ bool VideoEncoderFFmpegPrivate::open()
 
         if (format_used == VideoFormat::Format_Invalid)
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("fallback to yuv420p");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("fallback to yuv420p");
+
             format_used = VideoFormat::Format_YUV420P;
         }
 
@@ -476,7 +480,7 @@ struct Q_DECL_HIDDEN ScopedAVFrameDeleter
     }
 };
 
-bool VideoEncoderFFmpeg::encode(const VideoFrame &frame)
+bool VideoEncoderFFmpeg::encode(const VideoFrame& frame)
 {
     DPTR_D(VideoEncoderFFmpeg);
 
@@ -499,13 +503,17 @@ bool VideoEncoderFFmpeg::encode(const VideoFrame &frame)
         {
             case TimestampCopy:
             {
-                f->pts = int64_t(frame.timestamp() * frameRate()); // TODO: check monotically increase and fix if not. or another mode?
+                // TODO: check monotically increase and fix if not. or another mode?
+
+                f->pts = int64_t(frame.timestamp() * frameRate());
+
                 break;
             }
 
             case TimestampMonotonic:
             {
                 f->pts = d.nb_encoded + 1;
+
                 break;
             }
 
@@ -540,8 +548,7 @@ bool VideoEncoderFFmpeg::encode(const VideoFrame &frame)
         if (d.avctx->hw_frames_ctx)
         {
             // TODO: try to map to SourceSurface
-
-            // checl valid sw_formats
+            // check valid sw_formats
 
             if (!d.hwframes_ref)
             {
@@ -553,10 +560,10 @@ bool VideoEncoderFFmpeg::encode(const VideoFrame &frame)
 
             if (pixfmt != d.hwframes->sw_format)
             {
-                // reinit or got an unsupported format. assume parameters will not change, so it's  the 1st init
-                // check constraints
+                // reinit or got an unsupported format. assume parameters will not change,
+                // so it's the 1st init check constraints
 
-                bool init_frames_ctx = d.hwframes->sw_format == AVPixelFormat(-1);
+                bool init_frames_ctx = (d.hwframes->sw_format == AVPixelFormat(-1));
 
                 if (d.sw_fmts.contains(pixfmt))
                 {
@@ -638,20 +645,26 @@ bool VideoEncoderFFmpeg::encode(const VideoFrame &frame)
 
     if (!got_packet)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("no packet got");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("no packet got");
+
         d.packet = Packet();
 
         // invalid frame means eof
 
         return frame.isValid();
     }
-
-    // qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("enc avpkt.pts: %lld, dts: %lld.", pkt.pts, pkt.dts);
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("enc avpkt.pts: %lld, dts: %lld.",
+            pkt.pts, pkt.dts);
+*/
     d.packet = Packet::fromAVPacket(&pkt, av_q2d(d.avctx->time_base));
-
-    // qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("enc packet.pts: %.3f, dts: %.3f.", d.packet.pts, d.packet.dts);
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("enc packet.pts: %.3f, dts: %.3f.",
+            d.packet.pts, d.packet.dts);
+*/
     return true;
 }
 

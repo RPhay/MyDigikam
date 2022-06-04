@@ -72,7 +72,7 @@ static void SetColorDetailsByFFmpeg(VideoFrame* f, AVFrame* frame, AVCodecContex
         switch (pixfmt)
         {
 /*
-            case QTAV_PIX_FMT_C(YUVJ411P): // not in ffmpeg<2 and libav
+            case QTAV_PIX_FMT_C(YUVJ411P): // not in ffmpeg < 2 and libav
 */
             case QTAV_PIX_FMT_C(YUVJ420P):
             case QTAV_PIX_FMT_C(YUVJ422P):
@@ -80,6 +80,7 @@ static void SetColorDetailsByFFmpeg(VideoFrame* f, AVFrame* frame, AVCodecContex
             case QTAV_PIX_FMT_C(YUVJ444P):
             {
                 cr = ColorRange_Full;
+
                 break;
             }
 
@@ -126,7 +127,8 @@ void VideoDecoderFFmpegBasePrivate::updateColorDetails(VideoFrame* f)
         return;
     }
 
-    // hw decoder output frame may have a different format, e.g. gl interop frame may have rgb format for rendering(stored as yuv)
+    // hw decoder output frame may have a different format, e.g. gl interop frame
+    // may have rgb format for rendering(stored as yuv)
 
     const bool rgb_frame = f->format().isRGB();
 

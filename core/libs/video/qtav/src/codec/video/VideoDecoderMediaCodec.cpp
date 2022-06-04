@@ -29,9 +29,9 @@
 
 #if QTAV_HAVE(MEDIACODEC)
 
-#   include "private/factory.h"
-#   include "private/mkid.h"
 #   include <QtAndroidExtras>
+#   include "QtAV_factory.h"
+#   include "QtAV_mkid.h"
 
 extern "C"
 {
@@ -41,7 +41,9 @@ extern "C"
 
 }
 
-// QtAV's fastest mediacodec decoding/rendering code is private because all other projects I know require java code or is opengl incompatible(chrome, firefox, xbmc, vlc etc.). Maybe my code is the best implementation.
+// QtAV's fastest mediacodec decoding/rendering code is private because all
+// other projects I know require java code or is opengl incompatible(chrome, firefox, xbmc, vlc etc.).
+// Maybe my code is the best implementation.
 
 #   ifdef MEDIACODEC_TEXTURE
 #       include "SurfaceInterop.h"
@@ -232,9 +234,6 @@ VideoFrame VideoDecoderMediaCodec::frame()
 
     class Q_DECL_HIDDEN MediaCodecTextureInterop : public VideoSurfaceInterop
     {
-        const MdkMediaCodecTextureAPI* api_    = nullptr;
-        MdkMediaCodecTextureAPI::Texture* tex_ = nullptr;
-
     public:
 
         MediaCodecTextureInterop(const MdkMediaCodecTextureAPI* api, MdkMediaCodecTextureAPI::Texture* mt)
@@ -256,13 +255,24 @@ VideoFrame VideoDecoderMediaCodec::frame()
 
             return t;
         }
+
+    private:
+
+        const MdkMediaCodecTextureAPI* api_    = nullptr;
+        MdkMediaCodecTextureAPI::Texture* tex_ = nullptr;
     };
 
     assert(d.frame->buf[0] && d.frame->data[3] && "No AVMediaCodecBuffer or ref in AVFrame");
 
     AVBufferRef* const bufref                  = av_buffer_ref(d.frame->buf[0]);
     AVMediaCodecBuffer* const mcbuf            = (AVMediaCodecBuffer*)d.frame->data[3];
-    MdkMediaCodecTextureAPI::Texture* const mt = d.api_->texture_pool_feed_avbuffer(d.pool_, d.frame->width, d.frame->height, av_mediacodec_buffer_unref, bufref, av_mediacodec_render_buffer, mcbuf);
+    MdkMediaCodecTextureAPI::Texture* const mt = d.api_->texture_pool_feed_avbuffer(d.pool_,
+                                                                                    d.frame->width,
+                                                                                    d.frame->height,
+                                                                                    av_mediacodec_buffer_unref,
+                                                                                    bufref,
+                                                                                    av_mediacodec_render_buffer,
+                                                                                    mcbuf);
 
     MediaCodecTextureInterop* const interop    = new MediaCodecTextureInterop(d.api_, mt);
     frame.setMetaData(QLatin1String("surface_interop"), QVariant::fromValue(VideoSurfaceInteropPtr((interop))));

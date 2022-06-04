@@ -242,6 +242,8 @@ Q_SIGNALS:
 
 private:
 
+    // Disable
+
     VideoDecoderFFmpeg(QObject*);
 };
 
@@ -303,14 +305,16 @@ public:
         }
         else
         {
-            //codec_ctx->flags2 &= ~CODEC_FLAG2_FAST; //ffplay has no this
+/*
+            codec_ctx->flags2 &= ~CODEC_FLAG2_FAST; // ffplay has no this
+*/
         }
 
         // lavfilter
-
-        //codec_ctx->slice_flags |= SLICE_FLAG_ALLOW_FIELD; //lavfilter
-        //codec_ctx->strict_std_compliance = FF_COMPLIANCE_STRICT;
-
+/*
+        codec_ctx->slice_flags |= SLICE_FLAG_ALLOW_FIELD; //lavfilter
+        codec_ctx->strict_std_compliance = FF_COMPLIANCE_STRICT;
+*/
         codec_ctx->thread_safe_callbacks = true;
 
         switch (codec_ctx->codec_id)
@@ -319,6 +323,7 @@ public:
             case QTAV_CODEC_ID(H263):
             {
                 codec_ctx->thread_type = 0;
+
                 break;
             }
 
@@ -326,6 +331,7 @@ public:
             case QTAV_CODEC_ID(MPEG2VIDEO):
             {
                 codec_ctx->thread_type &= ~FF_THREAD_SLICE;
+
                 break;
             }
 
@@ -338,6 +344,7 @@ public:
             case QTAV_CODEC_ID(WMV3):
             {
                 codec_ctx->thread_type &= ~FF_THREAD_FRAME;
+
                 break;
             }
 
@@ -373,7 +380,9 @@ VideoDecoderFFmpeg::VideoDecoderFFmpeg()
     // dynamic properties about static property details. used by UI
     // format: detail_property
 
-    setProperty("detail_skip_loop_filter", i18n("Skipping the loop filter (aka deblocking) usually has determinal effect on quality. However it provides a big speedup for hi definition streams"));
+    setProperty("detail_skip_loop_filter", i18n("Skipping the loop filter (aka deblocking) usually "
+                                                "has determinal effect on quality. However it provides "
+                                                "a big speedup for hi definition streams"));
 
     // like skip_frame
 

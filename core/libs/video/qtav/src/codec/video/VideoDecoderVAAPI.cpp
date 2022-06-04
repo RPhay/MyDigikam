@@ -58,7 +58,7 @@ extern "C"
 #include "digikam_debug.h"
 
 #define VERSION_CHK(major, minor, patch) \
-    (((major&0xff)<<16) | ((minor&0xff)<<8) | (patch&0xff))
+    (((major&0xff) << 16) | ((minor&0xff) << 8) | (patch&0xff))
 
 // ffmpeg_vaapi patch: http://lists.libav.org/pipermail/libav-devel/2013-November/053515.html   // krazy:exclude=insecurenet
 
@@ -91,8 +91,6 @@ class Q_DECL_HIDDEN VideoDecoderVAAPI : public VideoDecoderFFmpegHW
     DPTR_DECLARE_PRIVATE(VideoDecoderVAAPI)
     Q_PROPERTY(bool derive READ derive WRITE setDerive)
     Q_PROPERTY(int surfaces READ surfaces WRITE setSurfaces)
-
-    //Q_PROPERTY(QStringList displayPriority READ displayPriority WRITE setDisplayPriority)
 
     Q_PROPERTY(DisplayType display READ display WRITE setDisplay)
 
@@ -157,12 +155,12 @@ const char* getProfileName(AVCodecID id, int profile)
 
 typedef struct Q_DECL_HIDDEN
 {
-    AVCodecID codec;
-    int       profile;
-    VAProfile va_profile; // TODO: use an array like dxva does
+    AVCodecID codec      = QTAV_CODEC_ID(NONE);
+    int       profile    = FF_PROFILE_UNKNOWN;
+    VAProfile va_profile = VAProfileNone;       // TODO: use an array like dxva does
 } codec_profile_t;
 
-#define VAProfileNone ((VAProfile)-1) // maybe not defined for old va
+#define VAProfileNone ((VAProfile) - 1)         // maybe not defined for old va
 
 static const  codec_profile_t va_profiles[] =
 {
@@ -238,12 +236,6 @@ const codec_profile_t* findProfileEntry(AVCodecID codec, int profile, const code
 
     return nullptr;
 }
-
-struct Q_DECL_HIDDEN fmtentry
-{
-    uint32_t                 va;
-    VideoFormat::PixelFormat fmt;
-};
 
 VideoFormat::PixelFormat pixelFormatFromVA(uint32_t fourcc)
 {
@@ -437,6 +429,7 @@ bool VideoDecoderVAAPI::derive() const
 void VideoDecoderVAAPI::setSurfaces(int num)
 {
     DPTR_D(VideoDecoderVAAPI);
+
     d.nb_surfaces          = num;
     const int kMaxSurfaces = 32;
 
@@ -461,6 +454,7 @@ VideoDecoderVAAPI::DisplayType VideoDecoderVAAPI::display() const
 void VideoDecoderVAAPI::setDisplay(DisplayType disp)
 {
     DPTR_D(VideoDecoderVAAPI);
+
     d.display_priority.clear();
     d.display_priority.append(disp);
     d.display_type = disp;
@@ -567,7 +561,7 @@ VideoFrame VideoDecoderVAAPI::frame()
         return f;
     }
 
-#endif //QT_NO_OPENGL
+#endif // QT_NO_OPENGL
 
 #if VA_CHECK_VERSION(0,31,0)
 
@@ -732,7 +726,8 @@ bool VideoDecoderVAAPIPrivate::open()
 
     if (!display/* || vaDisplayIsValid(display->get()) != 0*/)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Could not get a VAAPI device");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Could not get a VAAPI device");
 
         return false;
     }
@@ -794,7 +789,8 @@ bool VideoDecoderVAAPIPrivate::open()
 
     if (nb_profiles <= 0)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("No profile supported");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("No profile supported");
 
         return false;
     }
@@ -813,7 +809,8 @@ bool VideoDecoderVAAPIPrivate::open()
 
     if (!pe)
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Codec or profile is not supported by the hardware.");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("Codec or profile is not supported by the hardware.");
 
         return false;
     }
@@ -842,7 +839,9 @@ bool VideoDecoderVAAPIPrivate::open()
     surface_width   = codedWidth(codec_ctx);
     surface_height  = codedHeight(codec_ctx);
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("checking surface resolution support");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("checking surface resolution support");
+
     VASurfaceID test_surface = VA_INVALID_ID;
     VA_ENSURE_TRUE(vaCreateSurfaces(display->get(), VA_RT_FORMAT_YUV420, surface_width, surface_height,  &test_surface, 1, nullptr, 0), false);
 
@@ -907,8 +906,10 @@ bool VideoDecoderVAAPIPrivate::ensureSurfaces(int count, int w, int h, bool disc
 
     for (int i = old_size ; i < surfaces.size() ; ++i)
     {
-        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("surface id: %p %dx%d", surfaces.at(i), w, height);
-
+/*
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("surface id: %p %dx%d", surfaces.at(i), w, height);
+*/
         surfaces_free.push_back(surface_ptr(new surface_t(w, h, surfaces[i], display)));
     }
 
@@ -935,7 +936,7 @@ bool VideoDecoderVAAPIPrivate::prepareVAImage(int w, int h)
             supports_derive = true;
             image_fmt       = pixelFormatFromVA(image.format.fourcc);
 
-            /* from vlc: Use vaDerive() iif it supports the best selected format */
+            // from vlc: Use vaDerive() iif it supports the best selected format
 
             if (image.format.fourcc == test_image.format.fourcc)
             {
@@ -976,7 +977,9 @@ void* VideoDecoderVAAPIPrivate::setup(AVCodecContext* avctx)
     if (surface_count <= 0)
     {
         surface_count = 2 + 1;
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("guess surface count");
+
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("guess surface count");
 
         if (codec_ctx->codec_id == QTAV_CODEC_ID(H264))
             surface_count = 16 + 2;
@@ -1016,7 +1019,6 @@ void* VideoDecoderVAAPIPrivate::setup(AVCodecContext* avctx)
     if ((copy_mode != VideoDecoderFFmpegHW::ZeroCopy) || OpenGLHelper::isEGL())
     {
         // egl_dma && va_0_38
-
         // egl needs VAImage too
 
         if (!prepareVAImage(surface_width, surface_height))
@@ -1026,7 +1028,7 @@ void* VideoDecoderVAAPIPrivate::setup(AVCodecContext* avctx)
     initUSWC(surface_width);
     VA_ENSURE_TRUE(vaCreateContext(display->get(), config_id, surface_width, surface_height, VA_PROGRESSIVE, surfaces.data(), surfaces.size(), &context_id), nullptr);
 
-    /* Setup the ffmpeg hardware context */
+    // Setup the ffmpeg hardware context
 
     memset(&hw_ctx, 0, sizeof(hw_ctx));
     hw_ctx.display    = display->get();
@@ -1094,7 +1096,8 @@ bool VideoDecoderVAAPIPrivate::getBuffer(void** opaque, uint8_t** data)
 
         if (!found)
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("surface not found!");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("surface not found!");
 
             return false;
         }
