@@ -93,9 +93,9 @@ public:
 
 public:
 
-    bool                    owns_program; // shader program is not created by this. e.g. scene graph create it's own program and we store it here
+    bool                    owns_program;            ///< shader program is not created by this. e.g. scene graph create it's own program and we store it here
     bool                    rebuild_program;
-    bool                    update_builtin_uniforms; // builtin uniforms are static, set the values once is enough if no change
+    bool                    update_builtin_uniforms; ///< builtin uniforms are static, set the values once is enough if no change
     QOpenGLShaderProgram*   program = nullptr;
     int                     u_Matrix;
     int                     u_colorMatrix;
@@ -167,33 +167,33 @@ public:
 
 public:
 
-    bool                    update_texure;          // reduce upload/map times. true: new frame not bound. false: current frame is bound
-    bool                    init_textures_required; // e.g. target changed
+    bool                    update_texure;          ///< reduce upload/map times. true: new frame not bound. false: current frame is bound
+    bool                    init_textures_required; ///< e.g. target changed
     int                     bpc;
-    int                     width;                  // avoid accessing frame(need lock)
-    int                     height;                 // avoid accessing frame(need lock)
+    int                     width;                  ///< avoid accessing frame(need lock)
+    int                     height;                 ///< avoid accessing frame(need lock)
     VideoFrame              frame;
 
-    /*
+    /**
      * old format. used to check whether we have to update textures. set to current frame's format after textures are updated.
      * TODO: only VideoMaterial.type() is enough to check and update shader. so remove it
      */
-
     VideoFormat             video_format;
     QSize                   plane0Size;
 
-    // width is in bytes. different alignments may result in different plane 1 linesize even if plane 0 are the same
-
+    /**
+     * width is in bytes. different alignments may result in different plane 1 linesize even if plane 0 are the same
+     */
     int                     plane1_linesize;
 
     // textures.d in updateTextureParameters() changed. happens in qml. why?
 
     quint8                  workaround_vector_crash_on_linux[8] = { 0 }; // TODO: remove
-    QVector<GLuint>         textures;                                    // texture ids. size is plane count
+    QVector<GLuint>         textures;                                    ///< texture ids. size is plane count
     QHash<GLuint, bool>     owns_texture;
     QVector<QSize>          texture_size;
 
-    QVector<int>            effective_tex_width;                         // without additional width for alignment
+    QVector<int>            effective_tex_width;                         ///< without additional width for alignment
     qreal                   effective_tex_width_ratio;
     GLenum                  target;
     QVector<GLint>          internal_format;

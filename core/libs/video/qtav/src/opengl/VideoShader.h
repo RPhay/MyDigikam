@@ -27,18 +27,8 @@
 // Qt includes
 
 #include <QByteArray>
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#   include <QOpenGLShaderProgram>
-#   include <QOpenGLShader>
-#else
-#   include <QGLShaderProgram>
-#   include <QGLShader>
-#   undef QOpenGLShaderProgram
-#   undef QOpenGLShader
-#   define QOpenGLShaderProgram QGLShaderProgram
-#   define QOpenGLShader QGLShader
-#endif
+#include <QOpenGLShaderProgram>
+#include <QOpenGLShader>
 
 // Local includes
 

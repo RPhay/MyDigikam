@@ -71,7 +71,7 @@ bool VideoShaderObject::event(QEvent* event)
     if (event->type() != QEvent::DynamicPropertyChange)
         return QObject::event(event);
 
-    QDynamicPropertyChangeEvent* e = static_cast<QDynamicPropertyChangeEvent*>(event);
+    QDynamicPropertyChangeEvent* const e = static_cast<QDynamicPropertyChangeEvent*>(event);
 
     for (int shaderType = VertexShader ; shaderType < ShaderTypeCount ; ++shaderType)
     {
@@ -81,7 +81,7 @@ bool VideoShaderObject::event(QEvent* event)
         {
             if (uniforms.at(i).name == e->propertyName())
             {
-                propertyChanged(i|(shaderType << 16));
+                propertyChanged(i | (shaderType << 16));
             }
         }
     }
@@ -98,8 +98,10 @@ void VideoShaderObject::propertyChanged(int id)
     Uniform& u       = d.user_uniforms[st][idx];
     const QVariant v = property(u.name.constData());
     u.set(v);
-
-    //if (u.dirty) update();
+/*
+    if (u.dirty)
+        update();
+*/
 }
 
 void VideoShaderObject::programReady()
@@ -124,7 +126,7 @@ void VideoShaderObject::programReady()
                 qCDebug(DIGIKAM_QTAV_LOG).noquote()
                     << QString::asprintf("VideoShaderObject has no meta property '%s'. "
                                          "Setting initial value from dynamic property",
-                                         u.name.constData());
+                        u.name.constData());
 
                 const_cast<Uniform&>(u).set(property(u.name.constData()));
 
@@ -154,8 +156,8 @@ void VideoShaderObject::programReady()
 
             d.sigMap[st].append(mapper);
 
-            qCDebug(DIGIKAM_QTAV_LOG)
-                << "set uniform property: " << u.name << property(u.name.constData());
+            qCDebug(DIGIKAM_QTAV_LOG) << "set uniform property: "
+                                      << u.name << property(u.name.constData());
 
             propertyChanged(i | (st << 16)); // set the initial value
         }

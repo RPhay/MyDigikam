@@ -35,7 +35,7 @@ typedef void* (*GetProcAddress_t)(const char*);
 
 static GetProcAddress_t sGetProcAddress;
 
-void* GetProcAddress_Qt(const char *name)
+void* GetProcAddress_Qt(const char* name)
 {
     if (!QOpenGLContext::currentContext())
         return nullptr;
@@ -194,14 +194,16 @@ void api::resolve()
         {
             "WGL_NV_DX_interop2",
             "WGL_NV_DX_interop",
-            nullptr,
+            nullptr
         };
 
         if (OpenGLHelper::hasExtension(ext))
         {
             // TODO: use wgl getprocaddress function (for qt4)
 
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("resolving WGL_NV_DX_interop...");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("resolving WGL_NV_DX_interop...");
+
             WGL_RESOLVE(DXSetResourceShareHandleNV);
             WGL_RESOLVE(DXOpenDeviceNV);
             WGL_RESOLVE(DXCloseDeviceNV);
