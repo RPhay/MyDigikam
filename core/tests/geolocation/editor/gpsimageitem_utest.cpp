@@ -40,8 +40,9 @@ using namespace Digikam;
 
 void TestGPSItemContainer::initTestCase()
 {
-    // initialize exiv2 before doing any multitasking
-    DMetadata::initializeExiv2();
+    // initialize Exiv2 before doing any multitasking
+
+    MetaEngine::initializeExiv2();
 }
 
 void TestGPSItemContainer::cleanupTestCase()
@@ -79,14 +80,14 @@ void TestGPSItemContainer::testBasicLoading()
 {
     {
         // test failure on not-existing file
-        QUrl testDataDir = QUrl::fromLocalFile(GetTestDataDirectory() + QLatin1Char('/') + QLatin1String("not-existing"));
+        QUrl testDataDir = QUrl::fromLocalFile(GetTestDataDirectory() + QLatin1String("not-existing"));
         QScopedPointer<GPSItemContainer> imageItem(ItemFromFile(testDataDir));
         QVERIFY(!imageItem);
     }
 
     {
         // load a file without GPS info
-        QUrl testDataDir = QUrl::fromLocalFile(GetTestDataDirectory() + QLatin1Char('/') + QLatin1String("exiftest-nogps.png"));
+        QUrl testDataDir = QUrl::fromLocalFile(GetTestDataDirectory() + QLatin1String("exiftest-nogps.png"));
         QScopedPointer<GPSItemContainer> imageItem(ItemFromFile(testDataDir));
         QVERIFY(imageItem);
 
@@ -100,7 +101,7 @@ void TestGPSItemContainer::testBasicLoading()
 
     {
         // load a file with geo:5,15,25
-        QUrl testDataDir = QUrl::fromLocalFile(GetTestDataDirectory() + QLatin1Char('/') + QLatin1String("exiftest-5_15_25.jpg"));
+        QUrl testDataDir = QUrl::fromLocalFile(GetTestDataDirectory() + QLatin1String("exiftest-5_15_25.jpg"));
         QScopedPointer<GPSItemContainer> imageItem(ItemFromFile(testDataDir));
         QVERIFY(imageItem);
 
