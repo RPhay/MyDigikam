@@ -169,7 +169,7 @@ void LensAutoFix::slotAssignSettings2Widget()
     d->settingsView->setEnabledCCA(d->cameraSelector->useMetadata()  ? true : d->cameraSelector->iface()->supportsCCA());
     d->settingsView->setEnabledVig(d->cameraSelector->useMetadata()  ? true : d->cameraSelector->iface()->supportsVig());
     d->settingsView->setEnabledDist(d->cameraSelector->useMetadata() ? true : d->cameraSelector->iface()->supportsDistortion());
-    d->settingsView->setEnabledGeom(d->cameraSelector->useMetadata() ? true : d->cameraSelector->iface()->supportsDistortion());
+    d->settingsView->setEnabledGeom(d->cameraSelector->useMetadata() ? true : d->cameraSelector->iface()->supportsGeometry());
 
     d->changeSettings = true;
 }
@@ -225,6 +225,11 @@ bool LensAutoFix::toolOperations()
             setErrorDescription(i18n("Cannot find all lens information to process lens auto-corrections"));
             return false;
         }
+
+        prm.filterCCA       = settings()[QLatin1String("filterCCA")].toBool();
+        prm.filterVIG       = settings()[QLatin1String("filterVIG")].toBool();
+        prm.filterDST       = settings()[QLatin1String("filterDST")].toBool();
+        prm.filterGEO       = settings()[QLatin1String("filterGEO")].toBool();
     }
     else
     {
