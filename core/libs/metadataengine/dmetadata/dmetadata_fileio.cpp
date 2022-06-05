@@ -106,7 +106,17 @@ bool DMetadata::load(const QString& filePath, Backend* backend)
         }
         else
         {
-            usedBackend = Exiv2Backend;
+            // Special case when Exiv2 has empty metadata container
+            // but no loading error, give ExifTool a chance.
+
+            if (isEmpty() && loadUsingExifTool(filePath))
+            {
+                usedBackend = ExifToolBackend;
+            }
+            else
+            {
+                usedBackend = Exiv2Backend;
+            }
         }
     }
     else
