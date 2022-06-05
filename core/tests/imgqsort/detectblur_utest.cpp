@@ -95,6 +95,17 @@ void ImgQSortTestDetectBlur::testParseTestImagesForBlurDetection_DefocusImage()
 
 void ImgQSortTestDetectBlur::testParseTestImagesForBlurDetection_BlurBackGroundImage()
 {
+    if (!m_hasExifTool)
+    {
+        m_dataTestCases.remove(QLatin1String("blurBackGroundImage"));
+        m_dataTestCases.insert(QLatin1String("blurBackGroundImage"),
+                               PairImageQuality(QLatin1String("blur_blurbackground_1.jpg"), 2));
+        m_dataTestCases.insert(QLatin1String("blurBackGroundImage"),
+                               PairImageQuality(QLatin1String("blur_blurbackground_2.jpg"), 2));
+        m_dataTestCases.insert(QLatin1String("blurBackGroundImage"),
+                               PairImageQuality(QLatin1String("blur_blurbackground_3.jpg"), 2));
+    }
+
     QHash<QString, bool> results = testParseTestImages(QLatin1String("blurBackGroundImage"),
                                                        ImgQSortTest_ParseTestImagesDefautDetection, DETECTBLUR);
 

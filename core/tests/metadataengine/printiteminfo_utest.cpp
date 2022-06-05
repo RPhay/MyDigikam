@@ -60,7 +60,7 @@ void PrintItemInfoTest::testPrintItemInfo()
 
     bool ok = true;
 
-    if ((MetaEngine::Exiv2Version().section(QLatin1Char('.'), 0, 1).toDouble(&ok) > 0.26) && ok)
+    if ((MetaEngine::Exiv2Version().section(QLatin1Char('.'), 0, 1).toDouble(&ok) > 0.26) && ok && m_hasExifTool)
     {
         printItemInfo(m_originalImageFolder + QLatin1String("20160821035715.jpg"), false,       false,
                                                                                    false,       false,        false,

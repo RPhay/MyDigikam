@@ -37,6 +37,7 @@
 #include "digikam_debug.h"
 #include "dmetadata.h"
 #include "wstoolutils.h"
+#include "exiftoolparser.h"
 
 #ifdef HAVE_IMAGE_MAGICK
 #   include <Magick++.h>
@@ -53,6 +54,7 @@ public:
 
     AbstractUnitTest(QObject* const parent = nullptr)
         : QObject              (parent),
+          m_hasExifTool        (false),
           m_originalImageFolder(QFINDTESTDATA("data/")) ///< Original files come with source code.
     {
     }
@@ -75,6 +77,9 @@ protected Q_SLOTS:
         qCDebug(DIGIKAM_TESTS_LOG) << "Using Exiv2 Version:" << MetaEngine::Exiv2Version();
         m_tempPath = QString::fromLatin1(QTest::currentAppName());
         m_tempPath.replace(QLatin1String("./"), QString());
+
+        QScopedPointer<ExifToolParser> const parser(new ExifToolParser(nullptr));
+        m_hasExifTool = parser->exifToolAvailable();
     }
 
     /// Re-implemented from QTest framework
@@ -111,6 +116,7 @@ protected:
 
     QString       m_tempPath;               ///< The temporary path to store file to process un unit test.
     QDir          m_tempDir;                ///< Same that previous as QDir object.
+    bool          m_hasExifTool;            ///< ExifTool is available in unit test.
     const QString m_originalImageFolder;    ///< The path to original files to process by unit test, and copied to the temporary directory. Original files still in read only.
 };
 

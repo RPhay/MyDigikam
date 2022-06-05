@@ -106,6 +106,14 @@ void ImgQSortTestGeneral::testParseTestImagesForSunImage()
 {
     CustomDetection customSettings {true,true,true,false};
 
+    if (!m_hasExifTool)
+    {
+        m_dataTestCases.remove(QLatin1String("sunImage"),
+                               PairImageQuality(QLatin1String("exposure_sun_1.jpg"), 1));
+        m_dataTestCases.insert(QLatin1String("sunImage"),
+                               PairImageQuality(QLatin1String("exposure_sun_1.jpg"), 2));
+    }
+
     QHash<QString, bool> results = testParseTestImages(QLatin1String("sunImage"),
                                                        ImgQSortTest_ParseTestImagesCustomDetection, customSettings);
 

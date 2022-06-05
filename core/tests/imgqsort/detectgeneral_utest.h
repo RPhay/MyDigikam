@@ -89,7 +89,7 @@ DataTestCases const dataTestCases =
     {QLatin1String("goodImage"),        PairImageQuality(QLatin1String("general_good_image_5.jpg"), 3)},
     {QLatin1String("goodImage"),        PairImageQuality(QLatin1String("general_good_image_6.jpg"), 3)},
 
-    {QLatin1String("sunImage"),         PairImageQuality(QLatin1String("exposure_sun_1.jpg"), 1)},
+    {QLatin1String("sunImage"),         PairImageQuality(QLatin1String("exposure_sun_1.jpg"), 1)}, // other result without ExifTool
     {QLatin1String("sunImage"),         PairImageQuality(QLatin1String("exposure_sun_2.jpg"), 2)},
     {QLatin1String("sunImage"),         PairImageQuality(QLatin1String("exposure_sun_3.jpg"), 2)},
 

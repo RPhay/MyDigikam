@@ -37,6 +37,7 @@
 #include "imgqsorttest_shared.h"
 #include "digikam_globals.h"
 #include "imagequalitycontainer.h"
+#include "exiftoolparser.h"
 #include "dpluginloader.h"
 
 // Shared class for utest
@@ -53,7 +54,8 @@ class ImgQSortTest : public QObject
 public:
 
     explicit ImgQSortTest(QObject* const parent = nullptr)
-        : QObject(parent)
+        : QObject      (parent),
+          m_hasExifTool(false)
     {
     }
 
@@ -78,7 +80,7 @@ protected:
             imageNames << image_refQuality.first;
         }
 
-        QFileInfoList list                    = imageDir().entryInfoList(imageNames,QDir::Files, QDir::Name);
+        QFileInfoList list                    = imageDir().entryInfoList(imageNames, QDir::Files, QDir::Name);
         QHash<QString, int> results_detection = ParseTestFunc(parameter, list);
         QHash<QString, bool> results_test;
 
@@ -102,6 +104,9 @@ protected Q_SLOTS:
         QDir dir(qApp->applicationDirPath());
         qputenv("DK_PLUGIN_PATH", dir.canonicalPath().toUtf8());
         DPluginLoader::instance()->init();
+
+        QScopedPointer<ExifToolParser> const parser(new ExifToolParser(nullptr));
+        m_hasExifTool = parser->exifToolAvailable();
     }
 
     void cleanupTestCase()
@@ -112,6 +117,7 @@ protected Q_SLOTS:
 protected:
 
     DataTestCases m_dataTestCases;
+    bool          m_hasExifTool;
 };
 
 #endif // DIGIKAM_IMGQSORT_TEST_H
