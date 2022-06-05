@@ -323,9 +323,18 @@ void PreviewLoadingTask::execute()
             }
         }
 
-        if (!m_img.isNull() && MetaEngineSettings::instance()->settings().exifRotate)
+        if (!m_img.isNull() &&
+            MetaEngineSettings::instance()->settings().exifRotate)
         {
             m_img.exifRotate(m_loadingDescription.filePath);
+        }
+
+        if (!m_img.isNull()       &&
+            needsPostProcessing() &&
+            (m_loadingDescription.previewParameters.type == LoadingDescription::PreviewParameters::PreviewType::PreviewImage))
+        {
+            postProcess();
+            m_img.setAttribute(QLatin1String("postProcessed"), m_loadingDescription.postProcessingParameters.colorManagement);
         }
 
         {
@@ -387,10 +396,11 @@ void PreviewLoadingTask::execute()
         // exifRotate() and postProcess() will detect if work is needed.
         // We check before to find out if we need to provide a deep copy
 
-        const bool needExifRotate        = MetaEngineSettings::instance()->settings().exifRotate &&
-                                           !m_img.wasExifRotated();
+        const bool needExifRotate        = (MetaEngineSettings::instance()->settings().exifRotate &&
+                                           !m_img.wasExifRotated());
         const bool needImageScale        = needToScale();
-        const bool needPostProcess       = needsPostProcessing();
+        const bool needPostProcess       = (needsPostProcessing() &&
+                                           !m_img.hasAttribute(QLatin1String("postProcessed")));
         const bool needConvertToEightBit = m_loadingDescription.previewParameters.previewSettings.convertToEightBit;
 
         if ((accessMode() == LoadSaveThread::AccessModeReadWrite)   ||
