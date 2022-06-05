@@ -55,12 +55,13 @@ public:
     virtual ~AVOutput();
 
     bool isAvailable() const;
-
-    //void addSource(AVPlayerCore* player); //call player.addVideoRenderer(this)
-    //void removeSource(AVPlayerCore* player);
-
+/*
+    void addSource(AVPlayerCore* player); //call player.addVideoRenderer(this)
+    void removeSource(AVPlayerCore* player);
+*/
     // Demuxer thread automatically paused because packets will be full
-    // only pause the renderering, the thread going on. If all outputs are paused, then pause the thread(OutputSet.tryPause)
+    // only pause the renderering, the thread going on.
+    // If all outputs are paused, then pause the thread(OutputSet.tryPause)
     // TODO: what about audio's pause api?
 
     void pause(bool p); // processEvents when waiting?

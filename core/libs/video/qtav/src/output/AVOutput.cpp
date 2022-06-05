@@ -70,8 +70,9 @@ AVOutput::~AVOutput()
     while (it != d.filters.end())
     {
         // if not uninstall here, if AVOutput is also an QObject (for example, widget based renderers)
-        // then qobject children filters will be deleted when parent is destroying and call FilterManager::uninstallFilter()
-        // and FilterManager::instance().unregisterFilter(filter, this) too late that AVOutput is almost be destroyed
+        // then qobject children filters will be deleted when parent is destroying
+        // and call FilterManager::uninstallFilter() and FilterManager::instance().unregisterFilter(filter, this)
+        // too late that AVOutput is almost be destroyed
 
         uninstallFilter(*it);
 

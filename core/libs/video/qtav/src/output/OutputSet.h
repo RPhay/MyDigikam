@@ -60,9 +60,9 @@ public:
     void unlock();
 
     // implicity shared
-
-    //QList<AVOutput*> outputs();
-
+/*
+    QList<AVOutput*> outputs();
+*/
     QList<AVOutput*> outputs();
 
     // each(OutputOperation(data))
@@ -76,9 +76,11 @@ public:
     void notifyPauseChange(AVOutput* output);
     bool canPauseThread() const;
 
-    // in AVThread
-
-    bool pauseThread(unsigned long timeout = ULONG_MAX); // There are 2 ways to pause AVThread: 1. pause thread directly. 2. pause all outputs
+    /**
+     * in AVThread
+     * There are 2 ways to pause AVThread: 1. pause thread directly. 2. pause all outputs
+     */
+    bool pauseThread(unsigned long timeout = ULONG_MAX);
 
     /*
      * in user thread when pause count < set size.
