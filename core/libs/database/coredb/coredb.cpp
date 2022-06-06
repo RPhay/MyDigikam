@@ -1002,7 +1002,7 @@ QString CoreDB::getDatabaseEncoding() const
 {
     QList<QVariant> values;
 
-    d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("getDatabaseEncoding")), &values);
+    d->db->execDBAction(d->db->getDBAction(QLatin1String("getDatabaseEncoding")), &values);
 
     if (values.isEmpty())
     {
@@ -3798,7 +3798,7 @@ QStringList CoreDB::getItemURLsInAlbum(int albumID, ItemSortOrder sortOrder) con
     {
         case ByItemName:
         {
-            d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("getItemURLsInAlbumByItemName")),
+            d->db->execDBAction(d->db->getDBAction(QLatin1String("getItemURLsInAlbumByItemName")),
                                 bindingMap, &values);
             break;
         }
@@ -3808,21 +3808,21 @@ QStringList CoreDB::getItemURLsInAlbum(int albumID, ItemSortOrder sortOrder) con
             // Don't collate on the path - this is to maintain the same behavior
             // that happens when sort order is "By Path"
 
-            d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("getItemURLsInAlbumByItemPath")),
+            d->db->execDBAction(d->db->getDBAction(QLatin1String("getItemURLsInAlbumByItemPath")),
                                 bindingMap, &values);
             break;
         }
 
         case ByItemDate:
         {
-            d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("getItemURLsInAlbumByItemDate")),
+            d->db->execDBAction(d->db->getDBAction(QLatin1String("getItemURLsInAlbumByItemDate")),
                                 bindingMap, &values);
             break;
         }
 
         case ByItemRating:
         {
-            d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("getItemURLsInAlbumByItemRating")),
+            d->db->execDBAction(d->db->getDBAction(QLatin1String("getItemURLsInAlbumByItemRating")),
                                 bindingMap, &values);
             break;
         }
@@ -3830,7 +3830,7 @@ QStringList CoreDB::getItemURLsInAlbum(int albumID, ItemSortOrder sortOrder) con
         case NoItemSorting:
         default:
         {
-            d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("getItemURLsInAlbumNoItemSorting")),
+            d->db->execDBAction(d->db->getDBAction(QLatin1String("getItemURLsInAlbumNoItemSorting")),
                                 bindingMap, &values);
             break;
         }
@@ -4048,11 +4048,11 @@ QStringList CoreDB::getItemURLsInTag(int tagID, bool recursive) const
 
     if (recursive)
     {
-        d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("GetItemURLsInTagRecursive")), bindingMap, &values);
+        d->db->execDBAction(d->db->getDBAction(QLatin1String("GetItemURLsInTagRecursive")), bindingMap, &values);
     }
     else
     {
-        d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("GetItemURLsInTag")), bindingMap, &values);
+        d->db->execDBAction(d->db->getDBAction(QLatin1String("GetItemURLsInTag")), bindingMap, &values);
     }
 
     QStringList urls;
@@ -4091,11 +4091,11 @@ QList<qlonglong> CoreDB::getItemIDsInTag(int tagID, bool recursive) const
 
     if (recursive)
     {
-        d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("getItemIDsInTagRecursive")), parameters, &values);
+        d->db->execDBAction(d->db->getDBAction(QLatin1String("getItemIDsInTagRecursive")), parameters, &values);
     }
     else
     {
-        d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("getItemIDsInTag")), parameters, &values);
+        d->db->execDBAction(d->db->getDBAction(QLatin1String("getItemIDsInTag")), parameters, &values);
     }
 
     for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; ++it)
@@ -4301,7 +4301,7 @@ void CoreDB::renameAlbum(int albumID, int newAlbumRoot, const QString& newRelati
     parameters.insert(QString::fromUtf8(":albumRoot"),    newAlbumRoot);
     parameters.insert(QString::fromUtf8(":relativePath"), newRelativePath);
 
-    if (BdEngineBackend::NoErrors != d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("deleteAlbumRootPath")), parameters))
+    if (BdEngineBackend::NoErrors != d->db->execDBAction(d->db->getDBAction(QLatin1String("deleteAlbumRootPath")), parameters))
     {
         return;
     }
@@ -4616,7 +4616,7 @@ void CoreDB::clearMetadataFromImage(qlonglong imageID)
 bool CoreDB::integrityCheck() const
 {
     QList<QVariant> values;
-    d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("checkCoreDbIntegrity")), &values);
+    d->db->execDBAction(d->db->getDBAction(QLatin1String("checkCoreDbIntegrity")), &values);
 
     switch (d->db->databaseType())
     {
@@ -4728,7 +4728,7 @@ void CoreDB::vacuum()
 
     d->db->recordChangeset(ImageTagChangeset(0, QList<int>(), ImageTagChangeset::PropertiesChanged));
 
-    d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("vacuumCoreDB")));
+    d->db->execDBAction(d->db->getDBAction(QLatin1String("vacuumCoreDB")));
 }
 
 void CoreDB::readSettings()
