@@ -412,7 +412,8 @@ bool AudioOutputOpenAL::open()
         alListener3f(AL_POSITION, 0.0, 0.0, 0.0);
         state = 0;
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("AudioOutputOpenAL open ok...");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("AudioOutputOpenAL open ok...");
     }
 
     return true;
@@ -458,7 +459,10 @@ bool AudioOutputOpenAL::close()
     alDeleteBuffers(buffer.size(), buffer.constData());
 
     alcMakeContextCurrent(nullptr);
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("alcDestroyContext(%p)", context);
+
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("alcDestroyContext(%p)", context);
+
     alcDestroyContext(context);
     ALCenum err     = alcGetError(device);
 
@@ -503,8 +507,13 @@ bool AudioOutputOpenAL::isSupported(const AudioFormat& format) const
 
 bool AudioOutputOpenAL::isSupported(AudioFormat::SampleFormat sampleFormat) const
 {
-    if ((sampleFormat == AudioFormat::SampleFormat_Unsigned8) || (sampleFormat == AudioFormat::SampleFormat_Signed16))
+    if (
+        (sampleFormat == AudioFormat::SampleFormat_Unsigned8) ||
+        (sampleFormat == AudioFormat::SampleFormat_Signed16)
+       )
+    {
         return true;
+    }
 
     if (IsPlanar(sampleFormat))
         return false;
@@ -524,7 +533,10 @@ bool AudioOutputOpenAL::isSupported(AudioFormat::SampleFormat sampleFormat) cons
 
 bool AudioOutputOpenAL::isSupported(AudioFormat::ChannelLayout channelLayout) const // FIXME: check
 {
-    return ((channelLayout == AudioFormat::ChannelLayout_Mono) || (channelLayout == AudioFormat::ChannelLayout_Stereo));
+    return (
+            (channelLayout == AudioFormat::ChannelLayout_Mono) ||
+            (channelLayout == AudioFormat::ChannelLayout_Stereo)
+           );
 }
 
 QString AudioOutputOpenAL::deviceName() const
@@ -577,7 +589,9 @@ bool AudioOutputOpenAL::play()
 
     if (state != AL_PLAYING)
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("AudioOutputOpenAL: !AL_PLAYING alSourcePlay");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("AudioOutputOpenAL: !AL_PLAYING alSourcePlay");
+
         alSourcePlay(source);
     }
 

@@ -168,7 +168,8 @@ AudioOutputXAudio2::AudioOutputXAudio2(QObject* const parent)
 
 #ifdef Q_OS_WINRT
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("XAudio2 for WinRT");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("XAudio2 for WinRT");
 
     // winrt can only load package dlls
 
@@ -202,11 +203,13 @@ AudioOutputXAudio2::AudioOutputXAudio2(QObject* const parent)
 
         // defined as an inline function
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Build with XAudio2 from DXSDK");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("Build with XAudio2 from DXSDK");
 
 #else
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Build with XAudio2 from Win8 or later SDK");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("Build with XAudio2 from Win8 or later SDK");
 
 #endif
 

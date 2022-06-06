@@ -244,8 +244,9 @@ bool AudioOutputPortAudio::close()
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
             << QString::asprintf("Stop portaudio stream error: %s",
                 Pa_GetErrorText(err));
-
-        //return err == paStreamIsStopped;
+/*
+        return err == paStreamIsStopped;
+*/
     }
 
     err = Pa_CloseStream(stream);

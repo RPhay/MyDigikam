@@ -114,7 +114,7 @@ private:
 
     public:
 
-        explicit PositionWatcher(AudioOutputDSound* dsound)
+        explicit PositionWatcher(AudioOutputDSound* const dsound)
             : ao(dsound)
         {
         }
@@ -183,14 +183,14 @@ typedef struct Q_DECL_HIDDEN
 
    union
    {
-      WORD wValidBitsPerSample;       /* bits of precision  */
-      WORD wSamplesPerBlock;          /* valid if wBitsPerSample==0 */
-      WORD wReserved;                 /* If neither applies, set to zero. */
+      WORD wValidBitsPerSample;       ///< bits of precision
+      WORD wSamplesPerBlock;          ///< valid if wBitsPerSample == 0
+      WORD wReserved;                 ///< If neither applies, set to zero.
    } Samples;
 
-   DWORD           dwChannelMask;     /* which channels are */
+   DWORD           dwChannelMask;     ///< which channels are
 
-   /* present in stream  */
+   // present in stream
 
    GUID            SubFormat;
 } WAVEFORMATEXTENSIBLE, *PWAVEFORMATEXTENSIBLE;
@@ -243,7 +243,9 @@ AudioOutputDSound::AudioOutputDSound(QObject* const parent)
       write_offset      (0),
       watcher           (this)
 {
-    //setDeviceFeatures(AudioOutput::DeviceFeatures()|AudioOutput::SetVolume);
+/*
+    setDeviceFeatures(AudioOutput::DeviceFeatures()|AudioOutput::SetVolume);
+*/
 }
 
 bool AudioOutputDSound::open()
@@ -289,8 +291,10 @@ void AudioOutputDSound::onCallback()
 {
     if (bufferControl() & CountCallback)
     {
-        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("callback: %d", sem.available());
-
+/*
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("callback: %d", sem.available());
+*/
         if (sem.available() < buffer_count)
         {
             sem.release();
@@ -331,8 +335,10 @@ void AudioOutputDSound::onCallback()
 
 bool AudioOutputDSound::write(const QByteArray& data)
 {
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("sem %d %d", sem.available(), buffers_free.load());
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("sem %d %d", sem.available(), buffers_free.load());
+*/
     if (bufferControl() & CountCallback)
     {
         sem.acquire();
@@ -424,7 +430,8 @@ bool AudioOutputDSound::loadDll()
 
     if (!dll)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Can not load dsound.dll");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Can not load dsound.dll");
 
         return false;
     }
@@ -450,9 +457,9 @@ bool AudioOutputDSound::init()
     //typedef HRESULT (WINAPI *DirectSoundEnumerateFunc)(LPDSENUMCALLBACKA, LPVOID);
 
     DirectSoundCreateFunc dsound_create = (DirectSoundCreateFunc)GetProcAddress(dll, "DirectSoundCreate");
-
-    //DirectSoundEnumerateFunc dsound_enumerate = (DirectSoundEnumerateFunc)GetProcAddress(dll, "DirectSoundEnumerateA");
-
+/*
+    DirectSoundEnumerateFunc dsound_enumerate = (DirectSoundEnumerateFunc)GetProcAddress(dll, "DirectSoundEnumerateA");
+*/
     if (!dsound_create)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to resolve 'DirectSoundCreate'");
@@ -555,9 +562,9 @@ bool AudioOutputDSound::createDSoundBuffers()
     memset(&dsbdesc, 0, sizeof(DSBUFFERDESC));
     dsbdesc.dwSize        = sizeof(DSBUFFERDESC);
 
-    dsbdesc.dwFlags       = DSBCAPS_GETCURRENTPOSITION2 | /** Better position accuracy */
+    dsbdesc.dwFlags       = DSBCAPS_GETCURRENTPOSITION2 | /** Better position accuracy  */
                             DSBCAPS_GLOBALFOCUS         | /** Allows background playing */
-                            DSBCAPS_CTRLVOLUME          | /** volume control enabled */
+                            DSBCAPS_CTRLVOLUME          | /** volume control enabled    */
                             DSBCAPS_CTRLPOSITIONNOTIFY;
 
     dsbdesc.dwBufferBytes = buffer_size * buffer_count;
@@ -597,10 +604,10 @@ bool AudioOutputDSound::createDSoundBuffers()
         notification[i].dwOffset     = buffer_size * (i + 1) - 1;
         notification[i].hEventNotify = notify_event;
     }
-
-    //notification[buffer_count].dwOffset = DSBPN_OFFSETSTOP;
-    //notification[buffer_count].hEventNotify = stop_notify_event;
-
+/*
+    notification[buffer_count].dwOffset = DSBPN_OFFSETSTOP;
+    notification[buffer_count].hEventNotify = stop_notify_event;
+*/
     DX_ENSURE(notify->SetNotificationPositions(notification.size(), notification.constData()), false);
     available = true;
 

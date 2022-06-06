@@ -62,9 +62,9 @@ public:
     bool isSupported(AudioFormat::SampleFormat smpfmt) const override;
     bool open()                                              override;
     bool close()                                             override;
-
-    //bool flush()                                             override;
-
+/*
+    bool flush()                                             override;
+*/
     BufferControl bufferControl()                      const override;
     void onCallback()                                        override;
     bool write(const QByteArray& data)                       override;
@@ -112,9 +112,9 @@ static AudioStreamBasicDescription audioFormatToAT(const AudioFormat &format)
     // AudioQueue only supports interleave
 
     AudioStreamBasicDescription desc;
-    desc.mSampleRate  = format.sampleRate();
-    desc.mFormatID    = kAudioFormatLinearPCM;
-    desc.mFormatFlags = kAudioFormatFlagIsPacked; // TODO: kAudioFormatFlagIsPacked?
+    desc.mSampleRate       = format.sampleRate();
+    desc.mFormatID         = kAudioFormatLinearPCM;
+    desc.mFormatFlags      = kAudioFormatFlagIsPacked; // TODO: kAudioFormatFlagIsPacked?
 
     if      (format.isFloat())
         desc.mFormatFlags |= kAudioFormatFlagIsFloat;
@@ -133,7 +133,7 @@ static AudioStreamBasicDescription audioFormatToAT(const AudioFormat &format)
 void AudioOutputAudioToolbox::outCallback(void* inUserData, AudioQueueRef inAQ, AudioQueueBufferRef inBuffer)
 {
     Q_UNUSED(inAQ);
-    AudioOutputAudioToolbox* ao = reinterpret_cast<AudioOutputAudioToolbox*>(inUserData);
+    AudioOutputAudioToolbox* const ao = reinterpret_cast<AudioOutputAudioToolbox*>(inUserData);
 
     if (ao->bufferControl() & AudioOutputBackend::CountCallback)
     {
@@ -149,7 +149,10 @@ void AudioOutputAudioToolbox::outCallback(void* inUserData, AudioQueueRef inAQ, 
     if (ao->m_waiting)
     {
         ao->m_waiting = false;
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("wake up to fill buffer");
+
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("wake up to fill buffer");
+
         ao->m_cond.wakeOne();
     }
 
@@ -226,18 +229,22 @@ bool AudioOutputAudioToolbox::close()
 {
     if (!m_queue)
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("AudioQueue is not created. skip close");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("AudioQueue is not created. skip close");
 
         return true;
     }
 
-    UInt32 running = 0, s = 0;
+    UInt32 running = 0;
+    UInt32 s       = 0;
     AT_ENSURE(AudioQueueGetProperty(m_queue, kAudioQueueProperty_IsRunning, &running, &s), false);
 
     if (running)
         AT_ENSURE(AudioQueueStop(m_queue, true), false);
 
-    AT_ENSURE(AudioQueueDispose(m_queue, true), false); // dispose all resouces including buffers, so we can remove AudioQueueFreeBuffer
+    // dispose all resouces including buffers, so we can remove AudioQueueFreeBuffer
+
+    AT_ENSURE(AudioQueueDispose(m_queue, true), false);
     m_queue = nullptr;
     m_buffer.clear();
 
@@ -248,9 +255,10 @@ bool AudioOutputAudioToolbox::write(const QByteArray& data)
 {
     // blocking queue.
     // if queue not full, fill buffer and enqueue buffer
-
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("write. sem: %d", sem.available());
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("write. sem: %d", sem.available());
+*/
     if (bufferControl() & CountCallback)
         sem.acquire();
 

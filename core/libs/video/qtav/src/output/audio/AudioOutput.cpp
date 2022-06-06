@@ -226,8 +226,11 @@ public:
     void tryVolume(qreal value);
     void tryMute(bool value);
 
+public:
+
     bool                mute;
-    bool                sw_volume, sw_mute;
+    bool                sw_volume;
+    bool                sw_mute;
     int                 volume_i;
     qreal               vol;
     qreal               speed;
@@ -256,7 +259,8 @@ public:
 
     // the index of current enqueue/dequeue
 
-    int                 index_enqueue, index_deuqueue;
+    int                 index_enqueue;
+    int                 index_deuqueue;
     ring<FrameInfo>     frame_infos;
 };
 
@@ -276,9 +280,13 @@ AudioOutputPrivate::~AudioOutputPrivate()
 
 void AudioOutputPrivate::playInitialData()
 {
-    const char c = ((format.sampleFormat() == AudioFormat::SampleFormat_Unsigned8) ||
-                    (format.sampleFormat() == AudioFormat::SampleFormat_Unsigned8Planar))
-                   ? 0x80 : 0;
+    const char c = (
+                    (
+                     (format.sampleFormat() == AudioFormat::SampleFormat_Unsigned8) ||
+                     (format.sampleFormat() == AudioFormat::SampleFormat_Unsigned8Planar)
+                    )
+                    ? 0x80 : 0
+                   );
 
     for (quint32 i = 0 ; i < nb_buffers ; ++i)
     {
@@ -327,7 +335,7 @@ void AudioOutputPrivate::tryMute(bool value)
 }
 
 AudioOutput::AudioOutput(QObject* const parent)
-    : QObject(parent),
+    : QObject (parent),
       AVOutput(*new AudioOutputPrivate())
 {
     qCDebug(DIGIKAM_QTAV_LOG)
@@ -486,7 +494,7 @@ bool AudioOutput::open()
     if (!d.backend->open())
         return false;
 
-    d.available = true;
+    d.available             = true;
     d.tryVolume(volume());
     d.tryMute(isMute());
     d.playInitialData();
@@ -500,8 +508,8 @@ bool AudioOutput::close()
 
     QMutexLocker lock(&d.mutex);
     Q_UNUSED(lock);
-    d.available = false;
-    d.paused    = false;
+    d.available      = false;
+    d.paused         = false;
     d.resetStatus();
 
     if (!d.backend)
@@ -860,7 +868,7 @@ bool AudioOutput::waitForNextBuffer()
         {
             // implies next > 0
 
-            const qint64 us = d.format.durationForBytes(next - (d.processed_remain - processed));
+            const qint64 us    = d.format.durationForBytes(next - (d.processed_remain - processed));
             d.uwait(us);
             d.processed_remain = d.backend->getWritableBytes();
 
@@ -884,7 +892,7 @@ bool AudioOutput::waitForNextBuffer()
 
 #if AO_USE_TIMER
 
-                    && (d.timer.elapsed() > 1000)
+                 && (d.timer.elapsed() > 1000)
 
 #endif // AO_USE_TIMER
 
@@ -954,7 +962,7 @@ bool AudioOutput::waitForNextBuffer()
             elapsed = d.timer.restart();
 
             if ((elapsed > 0) && (us > elapsed * 1000LL))
-                us -= elapsed*1000LL;
+                us -= elapsed * 1000LL;
 
             if (us < 1000LL)
                 us = 1000LL; // opensl crash if 1ms

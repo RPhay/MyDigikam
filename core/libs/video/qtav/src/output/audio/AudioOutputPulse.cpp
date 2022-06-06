@@ -59,25 +59,25 @@ public:
 
     AudioOutputPulse(QObject* const parent = nullptr);
 
-    QString name()                const final
+    QString name()                                                       const final
     {
         return QString::fromLatin1(kName);
     }
 
     bool isSampleFormatSupported(AudioFormat::SampleFormat sampleFormat) const;
-    bool open()                         final;
-    bool close()                        final;
+    bool open()                                                                final;
+    bool close()                                                               final;
 
 protected:
 
-    bool write(const QByteArray& data)  final;
-    bool play()                         final;
-    BufferControl bufferControl() const final;
-    int getWritableBytes()              final;
+    bool write(const QByteArray& data)                                         final;
+    bool play()                                                                final;
+    BufferControl bufferControl()                                        const final;
+    int getWritableBytes()                                                     final;
 
-    bool setVolume(qreal value)         final;
-    qreal getVolume()             const final;
-    bool setMute(bool value = true)     final;
+    bool setVolume(qreal value)                                                final;
+    qreal getVolume()                                                    const final;
+    bool setMute(bool value = true)                                            final;
 
 private:
 
@@ -176,7 +176,7 @@ class Q_DECL_HIDDEN ScopedPALocker
 
 public:
 
-    explicit ScopedPALocker(pa_threaded_mainloop* loop)
+    explicit ScopedPALocker(pa_threaded_mainloop* const loop)
         : ml(loop)
     {
         pa_threaded_mainloop_lock(ml);
@@ -271,7 +271,8 @@ void AudioOutputPulse::contextSubscribeCallback(pa_context* c,
 
         case PA_SUBSCRIPTION_EVENT_CARD:
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("PA_SUBSCRIPTION_EVENT_CARD");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("PA_SUBSCRIPTION_EVENT_CARD");
 
             break;
         }
@@ -291,7 +292,9 @@ void AudioOutputPulse::stateCallback(pa_stream* s, void* userdata)
     {
         case PA_STREAM_FAILED:
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("PA_STREAM_FAILED");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("PA_STREAM_FAILED");
+
             pa_threaded_mainloop_signal(p->loop, 0);
 
             break;
@@ -326,9 +329,9 @@ void AudioOutputPulse::writeCallback(pa_stream* s, size_t length, void* userdata
     // length: writable bytes. callback is called pirioddically
 
     AudioOutputPulse* const p = reinterpret_cast<AudioOutputPulse*>(userdata);
-
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("write callback: %d + %d", p->writable_size, length);
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("write callback: %d + %d", p->writable_size, length);
+*/
     p->writable_size          = length;
     p->onCallback();
 }
@@ -348,7 +351,7 @@ void AudioOutputPulse::sinkInfoCallback(pa_context* c,
                                         void* userdata)
 {
     Q_UNUSED(c);
-    AudioOutputPulse* const  p = reinterpret_cast<AudioOutputPulse*>(userdata);
+    AudioOutputPulse* const p = reinterpret_cast<AudioOutputPulse*>(userdata);
 
     if (is_last < 0)
     {
@@ -396,10 +399,11 @@ bool AudioOutputPulse::init(const AudioFormat& format)
         return false;
     }
 
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::fromUtf8("PulseAudio %1, protocol: %2, server protocol: %3")
-                                                   .arg(QString::fromLatin1(pa_get_library_version()))
-                                                   .arg(pa_context_get_protocol_version(ctx))
-                                                   .arg(pa_context_get_server_protocol_version(ctx));
+    qCDebug(DIGIKAM_QTAV_LOG)
+        << QString::fromUtf8("PulseAudio %1, protocol: %2, server protocol: %3")
+            .arg(QString::fromLatin1(pa_get_library_version()))
+            .arg(pa_context_get_protocol_version(ctx))
+            .arg(pa_context_get_server_protocol_version(ctx));
 
     // TODO: host property
 
@@ -483,9 +487,9 @@ bool AudioOutputPulse::init(const AudioFormat& format)
     ba.tlength   = PA_STREAM_ADJUST_LATENCY; // (uint32_t)-1; // ?
     ba.prebuf    = 1;                        // (uint32_t)-1; // play as soon as possible
     ba.minreq    = (uint32_t)-1;
-
-    //ba.fragsize = (uint32_t)-1; // latency
-
+/*
+    ba.fragsize  = (uint32_t)-1;             // latency
+*/
     // PA_STREAM_NOT_MONOTONIC?
 
     pa_stream_flags_t flags = pa_stream_flags_t(PA_STREAM_NOT_MONOTONIC      |
@@ -534,12 +538,14 @@ AudioOutputPulse::AudioOutputPulse(QObject* const parent)
                          AudioOutput::SetVolume        |
                          AudioOutput::SetMute          |
                          AudioOutput::SetSampleRate, parent),
-      loop(nullptr),
-      ctx(nullptr),
-      stream(nullptr),
-      writable_size(0)
+      loop              (nullptr),
+      ctx               (nullptr),
+      stream            (nullptr),
+      writable_size     (0)
 {
-    //setDeviceFeatures(DeviceFeatures()|SetVolume|SetMute);
+/*
+    setDeviceFeatures(DeviceFeatures()|SetVolume|SetMute);
+*/
 }
 
 bool AudioOutputPulse::isSampleFormatSupported(AudioFormat::SampleFormat spformat) const

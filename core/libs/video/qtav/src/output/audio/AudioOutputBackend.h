@@ -88,7 +88,8 @@ public:
 
     /*!
      * \brief The BufferControl enum
-     * Used to adapt to different audio playback backend. Usually you don't need this in application level development.
+     * Used to adapt to different audio playback backend.
+     * Usually you don't need this in application level development.
      */
     enum BufferControl
     {
@@ -133,7 +134,8 @@ public:
 
     /*!
      * \brief setVolume
-     * Set volume by backend api. If backend can not set the given volume, or SetVolume feature is not set, software implemention will be used.
+     * Set volume by backend api. If backend can not set the given volume, or SetVolume feature is not set,
+     * software implemention will be used.
      * \param value >=0
      * \return true if success
      */
@@ -165,7 +167,8 @@ Q_SIGNALS:
 
     /*
      * \brief reportVolume
-     * Volume can be changed by per-app volume control from system outside this library. Useful for synchronizing ui to system.
+     * Volume can be changed by per-app volume control from system outside this library.
+     * Useful for synchronizing ui to system.
      * Volume control from QtAV may invoke it too. And it may be invoked even if volume is not changed.
      * If volume changed, signal volumeChanged() will be emitted and volume() will be updated.
      * Only supported by some backends, e.g. pulseaudio

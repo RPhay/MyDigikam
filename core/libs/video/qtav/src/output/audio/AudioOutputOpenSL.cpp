@@ -185,7 +185,11 @@ SLDataFormat_PCM_EX AudioOutputOpenSL::audioFormatToSL(const AudioFormat& format
 
 #else
 
-    union { unsigned short num; char buf[sizeof(unsigned short)]; } endianness;
+    union
+    {
+        unsigned short num;
+        char           buf[sizeof(unsigned short)];
+    } endianness;
 
     endianness.num        = 1;
     format_pcm.endianness = (endianness.buf[0] ? SL_BYTEORDER_LITTLEENDIAN : SL_BYTEORDER_BIGENDIAN);
@@ -248,8 +252,10 @@ void AudioOutputOpenSL::playCallback(SLPlayItf player, void* ctx, SLuint32 event
     Q_UNUSED(player);
     Q_UNUSED(ctx);
     Q_UNUSED(event);
-
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("---------%s  event=%lu", __FUNCTION__, event);
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("---------%s  event=%lu", __FUNCTION__, event);
+*/
 }
 
 AudioOutputOpenSL::AudioOutputOpenSL(QObject* const parent)
@@ -373,25 +379,30 @@ bool AudioOutputOpenSL::open()
     SLDataLocator_OutputMix outputMixLocator = { SL_DATALOCATOR_OUTPUTMIX, m_outputMixObject };
     SLDataSink audioSink                     = { &outputMixLocator, nullptr                  };
 
-    const SLInterfaceID ids[] = { SL_IID_BUFFERQUEUE, SL_IID_VOLUME
+    const SLInterfaceID ids[] =
+    {
+        SL_IID_BUFFERQUEUE, SL_IID_VOLUME
 
 #ifdef Q_OS_ANDROID
 
-                                  , SL_IID_ANDROIDCONFIGURATION
+        , SL_IID_ANDROIDCONFIGURATION
 
 #endif
 
-                                };
+    };
 
-    const SLboolean req[] = { SL_BOOLEAN_TRUE, SL_BOOLEAN_TRUE
+    const SLboolean req[] =
+    {
+        SL_BOOLEAN_TRUE,
+        SL_BOOLEAN_TRUE
 
 #ifdef Q_OS_ANDROID
 
-                              , SL_BOOLEAN_TRUE
+        , SL_BOOLEAN_TRUE
 
 #endif
 
-                            };
+    };
 
     // AudioPlayer
 
@@ -519,9 +530,11 @@ bool AudioOutputOpenSL::write(const QByteArray& data)
         queue_data_write = 0;
 
     memcpy((char*)queue_data.constData() + queue_data_write, data.constData(), data.size());
-
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("enqueue %p, queue_data_write: %d/%d available:%d", data.constData(), queue_data_write, queue_data.size(), sem.available());
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("enqueue %p, queue_data_write: %d/%d available:%d",
+            data.constData(), queue_data_write, queue_data.size(), sem.available());
+*/
 #ifdef Q_OS_ANDROID
 
     if (m_android)
