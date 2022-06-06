@@ -63,7 +63,7 @@ public:
         source_aspect_ratio     (0),
         src_width               (0),
         src_height              (0),
-        aspect_ratio_changed    (true), // to set the initial parameters
+        aspect_ratio_changed    (true),     ///< to set the initial parameters
         out_aspect_ratio_mode   (VideoAspectRatio),
         out_aspect_ratio        (0),
         quality                 (QualityBest),
@@ -76,8 +76,10 @@ public:
         bg_color                (0, 0, 0),
         orientation             (0)
     {
-        // conv.setInFormat(PIX_FMT_YUV420P);
-        // conv.setOutFormat(PIX_FMT_BGR32); // TODO: why not RGB32?
+/*
+        conv.setInFormat(PIX_FMT_YUV420P);
+        conv.setOutFormat(PIX_FMT_BGR32); // TODO: why not RGB32?
+*/
     }
 
     virtual ~VideoRendererPrivate()
@@ -110,9 +112,9 @@ public:
 
         const qreal dar = (rotate % 180) ? 1.0 / outAspectRatio
                                          : outAspectRatio;
-
-        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("out rect: %f %dx%d ==>", out_aspect_ratio, out_rect.width(), out_rect.height());
-
+/*
+        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("out rect: %f %dx%d ==>", out_aspect_ratio, out_rect.width(), out_rect.height());
+*/
         if      (rendererAspectRatio >= dar)
         {
             // equals to original video aspect ratio here, also equals to out ratio
@@ -132,9 +134,11 @@ public:
         }
 
         out_aspect_ratio = outAspectRatio;
-
-        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%f %dx%d <<<<<<<<", out_aspect_ratio, out_rect.width(), out_rect.height());
-
+/*
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("%f %dx%d <<<<<<<<",
+            out_aspect_ratio, out_rect.width(), out_rect.height());
+*/
         return (out_rect0 != out_rect);
     }
 
@@ -152,7 +156,7 @@ public:
 
 public:
 
-    //draw background when necessary, for example, renderer is resized. Then set to false
+    // draw background when necessary, for example, renderer is resized. Then set to false
 
     bool                                update_background;
 

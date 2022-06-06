@@ -157,8 +157,9 @@ void QPainterRenderer::drawFrame()
             d.painter->drawPixmap(d.out_rect, d.pixmap, roi);
 
             // what's the difference?
-
-            //d.painter->drawPixmap(QPoint(), d.pixmap.scaled(d.renderer_width, d.renderer_height));
+/*
+            d.painter->drawPixmap(QPoint(), d.pixmap.scaled(d.renderer_width, d.renderer_height));
+*/
         }
 
         return;
@@ -173,9 +174,15 @@ void QPainterRenderer::drawFrame()
     // TODO: why rotate then scale gives wrong result?
 
     if (d.rotation() % 180)
-        d.painter->scale((qreal)d.out_rect.width() / (qreal)rendererHeight(), (qreal)d.out_rect.height() / (qreal)rendererWidth());
+    {
+        d.painter->scale((qreal)d.out_rect.width()  / (qreal)rendererHeight(),
+                         (qreal)d.out_rect.height() / (qreal)rendererWidth());
+    }
     else
-        d.painter->scale((qreal)d.out_rect.width() / (qreal)rendererWidth(),  (qreal)d.out_rect.height() / (qreal)rendererHeight());
+    {
+        d.painter->scale((qreal)d.out_rect.width()  / (qreal)rendererWidth(),
+                         (qreal)d.out_rect.height() / (qreal)rendererHeight());
+    }
 
     d.painter->rotate(d.rotation());
     d.painter->translate(-rendererWidth() / 2, -rendererHeight() / 2);

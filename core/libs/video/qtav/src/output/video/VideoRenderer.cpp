@@ -99,7 +99,9 @@ bool VideoRenderer::setPreferredPixelFormat(VideoFormat::PixelFormat pixfmt)
 
     if (!onSetPreferredPixelFormat(pixfmt))
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("onSetPreferredPixelFormat failed");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("onSetPreferredPixelFormat failed");
+
         d.preferred_format = old;
 
         return false;
@@ -307,11 +309,11 @@ void VideoRenderer::setInSize(int width, int height)
         emitVideoFrameSizeChanged();
     }
 
-    if (!d.aspect_ratio_changed) // && (d.src_width == width && d.src_height == height))
+    if (!d.aspect_ratio_changed) // && ((d.src_width == width) && (d.src_height == height)))
         return;
-
-    //d.source_aspect_ratio = qreal(d.src_width)/qreal(d.src_height);
-
+/*
+    d.source_aspect_ratio = qreal(d.src_width)/qreal(d.src_height);
+*/
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
         << QString::asprintf("%s => calculating aspect ratio from converted input data(%f)",
              __FUNCTION__, d.source_aspect_ratio);
@@ -564,12 +566,12 @@ QRectF VideoRenderer::normalizedROI() const
         normalized = true;
     }
 
-    if ((r.width() > 1) || (!normalized && r.width() == 1))
+    if ((r.width() > 1) || (!normalized && (r.width() == 1)))
     {
         r.setWidth(r.width() / qreal(d.src_width));
     }
 
-    if ((r.height() > 1) || (!normalized && r.height() == 1))
+    if ((r.height() > 1) || (!normalized && (r.height() == 1)))
     {
         r.setHeight(r.height() / qreal(d.src_height));
     }
@@ -651,9 +653,11 @@ void VideoRenderer::handlePaintEvent()
 
                 if (!vf)
                 {
-                    qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("a null filter!");
-                    //d.filters.removeOne(filter);
-
+                    qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                        << QString::asprintf("a null filter!");
+/*
+                    d.filters.removeOne(filter);
+*/
                     continue;
                 }
 
@@ -716,7 +720,8 @@ void VideoRenderer::handlePaintEvent()
 
             if (!vf)
             {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("a null filter!");
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                    << QString::asprintf("a null filter!");
 
                 //d.filters.removeOne(filter);
 

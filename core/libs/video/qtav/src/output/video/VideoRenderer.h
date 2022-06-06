@@ -237,12 +237,14 @@ public:
     /*!
      * \brief orientation
      * 0, 90, 180, 270. other values are ignored
-     * outAspectRatio() corresponds with orientation == 0. displayed aspect ratio may change if orientation is not 0
+     * outAspectRatio() corresponds with orientation == 0.
+     * displayed aspect ratio may change if orientation is not 0
      */
     int orientation() const;
     void setOrientation(int value);
 
-    // The video frame rect in renderer youshouldpaint to. e.g. in RendererAspectRatio mode, the rect equals to renderer's
+    // The video frame rect in renderer youshouldpaint to. e.g.
+    // in RendererAspectRatio mode, the rect equals to renderer's
 
     QRect videoRect() const;
 
@@ -336,7 +338,7 @@ protected:
 
     VideoRenderer(VideoRendererPrivate& d);
 
-    //TODO: batch drawBackground(color, region)=>loop drawBackground(color,rect)
+    // TODO: batch drawBackground(color, region)=>loop drawBackground(color,rect)
 
     virtual bool receiveFrame(const VideoFrame& frame) = 0;
     QRegion backgroundRegion() const;

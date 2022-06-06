@@ -38,7 +38,7 @@ namespace QtAV
 {
 
 OpenGLRendererBasePrivate::OpenGLRendererBasePrivate(QPaintDevice* const pd)
-    : painter(new QPainter()),
+    : painter      (new QPainter()),
       frame_changed(false)
 {
     filter_context               = VideoFilterContext::create(VideoFilterContext::QtPainter);
@@ -92,7 +92,10 @@ bool OpenGLRendererBase::receiveFrame(const VideoFrame& frame)
 
     d.video_frame   = frame;
     d.frame_changed = true;
-    updateUi(); // can not call updateGL() directly because no event and paintGL() will in video thread
+
+    // can not call updateGL() directly because no event and paintGL() will in video thread
+
+    updateUi();
 
     return true;
 }
@@ -107,9 +110,9 @@ void OpenGLRendererBase::drawFrame()
     DPTR_D(OpenGLRendererBase);
 
     QRect roi = realROI();
-
-    //d.glv.render(QRectF(-1, 1, 2, -2), roi, d.matrix);
-
+/*
+    d.glv.render(QRectF(-1, 1, 2, -2), roi, d.matrix);
+*/
     // QRectF() means the whole viewport
 
     if (d.frame_changed)
@@ -124,12 +127,12 @@ void OpenGLRendererBase::drawFrame()
 void OpenGLRendererBase::onInitializeGL()
 {
     DPTR_D(OpenGLRendererBase);
-
-    //makeCurrent();
-
+/*
+    makeCurrent();
+*/
     initializeOpenGLFunctions();
 
-    QOpenGLContext* const ctx = const_cast<QOpenGLContext*>(QOpenGLContext::currentContext()); //qt4 returns const
+    QOpenGLContext* const ctx = const_cast<QOpenGLContext*>(QOpenGLContext::currentContext());
     d.glv.setOpenGLContext(ctx);
 }
 
@@ -146,9 +149,9 @@ void OpenGLRendererBase::onPaintGL()
      */
 
     handlePaintEvent();
-
-    //context()->swapBuffers(this);
-
+/*
+    context()->swapBuffers(this);
+*/
     if (d.painter && d.painter->isActive())
         d.painter->end();
 }
@@ -171,8 +174,9 @@ void OpenGLRendererBase::onResizeEvent(int w, int h)
     d.update_background = true;
     resizeRenderer(w, h);
     d.setupAspectRatio();
-
-    //QOpenGLWindow::resizeEvent(e); //will call resizeGL(). TODO:will call paintEvent()?
+/*
+    QOpenGLWindow::resizeEvent(e); // will call resizeGL(). TODO:will call paintEvent()?
+*/
 }
 
 // TODO: out_rect not correct when top level changed

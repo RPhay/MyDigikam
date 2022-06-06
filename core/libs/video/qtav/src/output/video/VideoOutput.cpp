@@ -141,7 +141,7 @@ public:
     {
         if (impl)
         {
-            QObject* obj = reinterpret_cast<QObject*>(impl->widget());
+            QObject* const obj = reinterpret_cast<QObject*>(impl->widget());
 
             if (obj && !obj->parent())
                 obj->deleteLater();
@@ -513,8 +513,7 @@ void VideoOutput::setStatistics(Statistics* statistics)
     d.impl->setStatistics(statistics);
 
     // only used internally for AVOutput
-
-    //d.statistics =
+    // d.statistics =
 }
 
 bool VideoOutput::onInstallFilter(Filter* filter, int index)
@@ -540,7 +539,7 @@ bool VideoOutput::onUninstallFilter(Filter* filter)
     bool ret = d.impl->onUninstallFilter(filter);
 
     // only used internally for AVOutput
-    //d.pending_uninstall_filters =
+    // d.pending_uninstall_filters =
 
     return ret;
 }
