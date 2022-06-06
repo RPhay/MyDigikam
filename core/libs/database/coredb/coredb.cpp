@@ -1002,16 +1002,7 @@ QString CoreDB::getDatabaseEncoding() const
 {
     QList<QVariant> values;
 
-    if (d->db->databaseType() == BdEngineBackend::DbType::SQLite)
-    {
-        d->db->execSql(QString::fromUtf8("PRAGMA encoding;"),
-                       &values);
-    }
-    else
-    {
-        d->db->execSql(QString::fromUtf8("SELECT @@character_set_database;"),
-                       &values);
-    }
+    d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("getDatabaseEncoding")), &values);
 
     if (values.isEmpty())
     {

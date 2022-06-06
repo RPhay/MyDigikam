@@ -481,6 +481,10 @@
                 </statement>
             </dbaction>
 
+            <dbaction name="getDatabaseEncoding">
+                <statement mode="query">PRAGMA encoding;</statement>
+            </dbaction>
+
             <!-- SQlite Thumbnails Schema Database -->
 
             <dbaction name="CreateThumbnailsDB" mode="transaction">
@@ -1556,6 +1560,10 @@
                         (SELECT imageid FROM ImageTags
                         WHERE tagid=:tagID );
                 </statement>
+            </dbaction>
+
+            <dbaction name="getDatabaseEncoding">
+                <statement mode="query">SELECT @@character_set_database;</statement>
             </dbaction>
 
             <!-- Mysql Thumbnails Schema Database -->
