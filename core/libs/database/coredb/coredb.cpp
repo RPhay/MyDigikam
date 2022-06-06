@@ -998,6 +998,29 @@ QUuid CoreDB::databaseUuid()
     return uuid;
 }
 
+QString CoreDB::getDatabaseEncoding() const
+{
+    QList<QVariant> values;
+
+    if (d->db->databaseType() == BdEngineBackend::DbType::SQLite)
+    {
+        d->db->execSql(QString::fromUtf8("PRAGMA encoding;"),
+                       &values);
+    }
+    else
+    {
+        d->db->execSql(QString::fromUtf8("SELECT @@character_set_database;"),
+                       &values);
+    }
+
+    if (values.isEmpty())
+    {
+        return QString();
+    }
+
+    return (values.first().toString().toUpper());
+}
+
 int CoreDB::getUniqueHashVersion() const
 {
     if (d->uniqueHashVersion == -1)

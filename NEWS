@@ -76,4 +76,5 @@ BUGFIXES:
 057 ==> 453275 - Renaming files is not folder aware, even with folder aware option.
 058 ==> 454656 - When locales not set, crash occurs when opening "Settings -> Configure digiKam".
 059 ==> 435377 - Speed up image preview.
-060 ==> 
+060 ==> 382362 - Locale database mismatch between Windows and Linux.
+061 ==> 
