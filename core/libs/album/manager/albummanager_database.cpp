@@ -252,79 +252,32 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 
     // -- Locale Checking ---------------------------------------------------------
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    QString currLocale = QString::fromUtf8((QTextCodec::codecForLocale()->name()));
-#else
-    QString currLocale = QString::fromUtf8(QStringConverter::nameForEncoding(QStringConverter::System));
-#endif
+    QString currLocale = CoreDbAccess().db()->getDatabaseEncoding();
     QString dbLocale   = CoreDbAccess().db()->getSetting(QLatin1String("Locale"));
 
-    // guilty until proven innocent
-
-    bool localeChanged = true;
-
-    if (dbLocale.isNull())
+    if      (dbLocale.isEmpty())
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "No locale found in database";
-
-        // Copy an existing locale from the settings file (used < 0.8)
-        // to the database.
-
-        KSharedConfig::Ptr config = KSharedConfig::openConfig();
-        KConfigGroup group        = config->group(QLatin1String("General Settings"));
-
-        if (group.hasKey(QLatin1String("Locale")))
-        {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Locale found in configfile";
-            dbLocale = group.readEntry(QLatin1String("Locale"), QString());
-
-            // this hack is necessary, as we used to store the entire
-            // locale info LC_ALL (for eg: en_US.UTF-8) earlier,
-            // we now save only the encoding (UTF-8)
-
-            QString oldConfigLocale = QString::fromUtf8(::setlocale(0, nullptr));
-
-            if (oldConfigLocale == dbLocale)
-            {
-                dbLocale      = currLocale;
-                localeChanged = false;
-                CoreDbAccess().db()->setSetting(QLatin1String("Locale"), dbLocale);
-            }
-        }
-        else
-        {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "No locale found in config file";
-            dbLocale      = currLocale;
-
-            localeChanged = false;
-            CoreDbAccess().db()->setSetting(QLatin1String("Locale"), dbLocale);
-        }
+        CoreDbAccess().db()->setSetting(QLatin1String("Locale"), currLocale);
     }
-    else
-    {
-        if (dbLocale == currLocale)
-        {
-            localeChanged = false;
-        }
-    }
-
-    if (localeChanged)
+    else if (dbLocale != currLocale)
     {
         // TODO it would be better to replace all yes/no confirmation dialogs with ones that has custom
         // buttons that denote the actions directly, i.e.:  ["Ignore and Continue"]  ["Adjust locale"]
 
         int result = QMessageBox::warning(qApp->activeWindow(), qApp->applicationName(),
-                                 i18n("Your locale has changed since this "
+                                 i18n("Your database character set has changed since this "
                                       "album was last opened.\n"
-                                      "Old locale: %1, new locale: %2\n"
-                                      "If you have recently changed your locale, you need not be concerned.\n"
-                                      "Please note that if you switched to a locale "
+                                      "Old character set: %1, new character set: %2\n"
+                                      "If you have recently changed your database character set, "
+                                      "you need not be concerned.\n"
+                                      "Please note that if you switched to a database character set "
                                       "that does not support some of the filenames in your collection, "
                                       "these files may no longer be found in the collection. "
                                       "If you are sure that you want to "
                                       "continue, click 'Yes'. "
                                       "Otherwise, click 'No' and correct your "
-                                      "locale setting before restarting digiKam.",
+                                      "database character set setting before restarting digiKam.",
                                       dbLocale, currLocale),
                                   QMessageBox::Yes | QMessageBox::No);
 

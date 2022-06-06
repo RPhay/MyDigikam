@@ -116,6 +116,13 @@ public:
     QUuid databaseUuid();
 
     /**
+     * Returns database encoding.
+     * For SQLite should UTF-8.
+     * For MySQL like UTF8MB4.
+     */
+    QString getDatabaseEncoding()                                                                                   const;
+
+    /**
      * Returns the version used for the unique hash in this database.
      * The value is cached.
      */
