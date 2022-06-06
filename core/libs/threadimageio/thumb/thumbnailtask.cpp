@@ -179,6 +179,11 @@ void ThumbnailLoadingTask::execute()
                 break;
         }
 
+        if (continueQuery() && !m_qimage.isNull())
+        {
+            postProcess();
+        }
+
         {
             LoadingCache::CacheLock lock(cache);
 
@@ -188,7 +193,7 @@ void ThumbnailLoadingTask::execute()
 
             // put valid image into cache of loaded images
 
-            if (!m_qimage.isNull())
+            if (continueQuery() && !m_qimage.isNull())
             {
                 cache->putThumbnail(m_loadingDescription.cacheKey(), m_qimage,
                                     m_loadingDescription.filePath);
@@ -223,13 +228,7 @@ void ThumbnailLoadingTask::execute()
         }
     }
 
-    // following the golden rule to avoid deadlocks, do this when CacheLock is not held
-
-    if (continueQuery() && !m_qimage.isNull())
-    {
-        postProcess();
-    }
-    else
+    if (!continueQuery())
     {
         m_qimage = QImage();
     }
@@ -247,7 +246,7 @@ void ThumbnailLoadingTask::setupCreator()
 
 void ThumbnailLoadingTask::setThumbResult(const LoadingDescription& loadingDescription, const QImage& qimage)
 {
-    // this is called from another process's execute while this task is waiting on usedProcess.
+    // This is called from another process's execute while this task is waiting on usedProcess.
     // Note that loadingDescription need not equal m_loadingDescription (may be superior)
 
     LoadingDescription tempDescription       = loadingDescription;

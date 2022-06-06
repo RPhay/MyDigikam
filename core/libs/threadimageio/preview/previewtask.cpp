@@ -323,18 +323,26 @@ void PreviewLoadingTask::execute()
             }
         }
 
-        if (!m_img.isNull() &&
-            MetaEngineSettings::instance()->settings().exifRotate)
+        if (continueQuery() && !m_img.isNull())
         {
-            m_img.exifRotate(m_loadingDescription.filePath);
-        }
+            if (needToScale())
+            {
+                QSize scaledSize = m_img.size();
+                scaledSize.scale(m_loadingDescription.previewParameters.size,
+                                 m_loadingDescription.previewParameters.size,
+                                 Qt::KeepAspectRatio);
+                m_img = m_img.smoothScale(scaledSize.width(), scaledSize.height());
+            }
 
-        if (!m_img.isNull()       &&
-            needsPostProcessing() &&
-            (m_loadingDescription.previewParameters.type == LoadingDescription::PreviewParameters::PreviewType::PreviewImage))
-        {
-            postProcess();
-            m_img.setAttribute(QLatin1String("postProcessed"), m_loadingDescription.postProcessingParameters.colorManagement);
+            if (MetaEngineSettings::instance()->settings().exifRotate)
+            {
+                m_img.exifRotate(m_loadingDescription.filePath);
+            }
+
+            if (needsPostProcessing())
+            {
+                postProcess();
+            }
         }
 
         {
@@ -346,7 +354,7 @@ void PreviewLoadingTask::execute()
 
             // put valid image into cache of loaded images
 
-            if (!m_img.isNull())
+            if (continueQuery() && !m_img.isNull())
             {
                 cache->putImage(m_loadingDescription.cacheKey(), m_img,
                                 m_loadingDescription.filePath);
@@ -392,48 +400,18 @@ void PreviewLoadingTask::execute()
 
     if (continueQuery() && !m_img.isNull())
     {
-        // The image from the cache may or may not be rotated and post processed.
-        // exifRotate() and postProcess() will detect if work is needed.
         // We check before to find out if we need to provide a deep copy
 
-        const bool needExifRotate        = (MetaEngineSettings::instance()->settings().exifRotate &&
-                                           !m_img.wasExifRotated());
-        const bool needImageScale        = needToScale();
-        const bool needPostProcess       = (needsPostProcessing() &&
-                                           !m_img.hasAttribute(QLatin1String("postProcessed")));
         const bool needConvertToEightBit = m_loadingDescription.previewParameters.previewSettings.convertToEightBit;
 
-        if ((accessMode() == LoadSaveThread::AccessModeReadWrite)   ||
-            needExifRotate                                          ||
-            needImageScale                                          ||
-            needPostProcess                                         ||
-            needConvertToEightBit)
+        if ((accessMode() == LoadSaveThread::AccessModeReadWrite) || needConvertToEightBit)
         {
             m_img.detach();
-        }
-
-        if (needImageScale)
-        {
-            QSize scaledSize = m_img.size();
-            scaledSize.scale(m_loadingDescription.previewParameters.size,
-                             m_loadingDescription.previewParameters.size,
-                             Qt::KeepAspectRatio);
-            m_img = m_img.smoothScale(scaledSize.width(), scaledSize.height());
         }
 
         if (needConvertToEightBit)
         {
             m_img.convertToEightBit();
-        }
-
-        if (needExifRotate)
-        {
-           m_img.exifRotate(m_loadingDescription.filePath);
-        }
-
-        if (needPostProcess)
-        {
-            postProcess();
         }
     }
     else if (continueQuery())

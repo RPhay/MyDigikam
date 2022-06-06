@@ -244,6 +244,11 @@ void SharedLoadingTask::execute()
 
         m_img = DImg(m_loadingDescription.filePath, this, m_loadingDescription.rawDecodingSettings);
 
+        if (continueQuery() && !m_img.isNull())
+        {
+            postProcess();
+        }
+
         {
             LoadingCache::CacheLock lock(cache);
 
@@ -253,7 +258,7 @@ void SharedLoadingTask::execute()
 
             // put valid image into cache of loaded images
 
-            if (!m_img.isNull())
+            if (continueQuery() && !m_img.isNull())
             {
                 cache->putImage(m_loadingDescription.cacheKey(), m_img,
                                 m_loadingDescription.filePath);
@@ -303,8 +308,6 @@ void SharedLoadingTask::execute()
         {
             m_img.detach();
         }
-
-        postProcess();
     }
     else if (continueQuery())
     {
@@ -321,7 +324,7 @@ void SharedLoadingTask::execute()
 
 void SharedLoadingTask::setResult(const LoadingDescription& loadingDescription, const DImg& img)
 {
-    // this is called from another process's execute while this task is waiting on usedProcess.
+    // This is called from another process's execute while this task is waiting on usedProcess.
     // Note that loadingDescription need not equal m_loadingDescription (may be superior)
 
     LoadingDescription tempDescription       = loadingDescription;
