@@ -141,14 +141,14 @@ QString fromAss(const char* ass)
     b.size         = sizeof(text) - 1;
     b.len          = 0;
     ass_to_plaintext(&b, ass);
-    int hour1;
-    int min1;
-    int sec1;
-    int hunsec1;
-    int hour2;
-    int min2;
-    int sec2;
-    int hunsec2;
+    int hour1      = 0;
+    int min1       = 0;
+    int sec1       = 0;
+    int hunsec1    = 0;
+    int hour2      = 0;
+    int min2       = 0;
+    int sec2       = 0;
+    int hunsec2    = 0;
     char line[512] = { 0 };
     char* ret      = nullptr;
 
@@ -214,7 +214,7 @@ QString fromAss(const char* ass)
     if (line2.isEmpty())
         return QString::fromUtf8(ret);
 
-    return QString::fromUtf8(ret) + QLatin1Char('\n') + line2;
+    return (QString::fromUtf8(ret) + QLatin1Char('\n') + line2);
 }
 
 } // namespace PlainText

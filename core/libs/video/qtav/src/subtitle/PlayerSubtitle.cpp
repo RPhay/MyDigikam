@@ -48,10 +48,10 @@ namespace QtAV
 static QString getSubtitleBasePath(const QString& fullPath)
 {
     QString path(QDir::fromNativeSeparators(fullPath));
-
-    //path.remove(p->source().scheme() + "://");
-
-    // QString name = QFileInfo(path).completeBaseName();
+/*
+    path.remove(p->source().scheme() + "://");
+    QString name = QFileInfo(path).completeBaseName();
+*/
     // why QFileInfo(path).dir() starts with qml app dir?
 
     QString name(path);
@@ -213,8 +213,6 @@ void PlayerSubtitle::onPlayerStart()
     QByteArray codec(track.value(QLatin1String("codec")).toByteArray());
     QByteArray data(track.value(QLatin1String("extra")).toByteArray());
     m_sub->processHeader(codec, data);
-
-    return;
 }
 
 void PlayerSubtitle::onEnabledChanged(bool value)
@@ -251,8 +249,6 @@ void PlayerSubtitle::onEnabledChanged(bool value)
     m_sub->setFileName(getSubtitleBasePath(m_player->file()));
     m_sub->setFuzzyMatch(true);
     m_sub->loadAsync();
-
-    return;
 }
 
 void PlayerSubtitle::tryReload()
@@ -290,7 +286,7 @@ void PlayerSubtitle::tryReload(int flag)
 
     const int n = m_player->currentSubtitleStream();
 
-    if (n < 0 || m_tracks.isEmpty() || (m_tracks.size() <= n))
+    if ((n < 0) || m_tracks.isEmpty() || (m_tracks.size() <= n))
     {
         m_sub->processHeader(QByteArray(), QByteArray()); // reset, null processor
         m_sub->loadAsync();

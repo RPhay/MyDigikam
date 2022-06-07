@@ -44,7 +44,8 @@ class Subtitle;
 /*!
  * \brief The PlayerSubtitle class
  * Bind Subtitle to AVPlayerCore. Used by SubtitleFilter and QuickSubtitle.
- * Subtitle load priority: user specified file (setFile(...)) > auto load external (autoLoad() must be true) > embedded subtitle
+ * Subtitle load priority: user specified file (setFile(...)) > auto load
+ * external (autoLoad() must be true) > embedded subtitle
  */
 class QTAV_PRIVATE_EXPORT PlayerSubtitle : public QObject
 {
@@ -59,7 +60,8 @@ public:
 
     /*!
      * \brief setFile
-     * Load user selected subtitle. The subtitle will not change unless you manually setFile(QString()).
+     * Load user selected subtitle. The subtitle will not change unless
+     * you manually setFile(QString()).
      */
     void setFile(const QString& file);
     QString file() const;

@@ -113,7 +113,7 @@ QStringList ffmpeg_supported_sub_extensions_by_codec()
 
 #if AVCODEC_STATIC_REGISTER
 
-    void* it = nullptr;
+    void* it         = nullptr;
 
     while ((c = av_codec_iterate(&it)))
     {
@@ -150,7 +150,8 @@ QStringList ffmpeg_supported_sub_extensions_by_codec()
 #endif
             if (!strcmp(i->name, c->name))
             {
-                qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("found iformat");
+                qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                    << QString::asprintf("found iformat");
 
                 if (i->extensions)
                 {
@@ -158,7 +159,9 @@ QStringList ffmpeg_supported_sub_extensions_by_codec()
                 }
                 else
                 {
-                    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("has no exts");
+                    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                        << QString::asprintf("has no exts");
+
                     exts.append(QString::fromLatin1(i->name));
                 }
 
@@ -168,9 +171,13 @@ QStringList ffmpeg_supported_sub_extensions_by_codec()
 
         if (!i)
         {
-            //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("codec name '%s' is not found in AVInputFormat, just append codec name", c->name);
+/*
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("codec name '%s' is not found in AVInputFormat,
+                    just append codec name", c->name);
 
-            //exts.append(c->name);
+            exts.append(c->name);
+*/
         }
     }
 
@@ -291,7 +298,8 @@ bool SubtitleProcessorFFmpeg::process(QIODevice* dev)
     {
         if (!dev->open(QIODevice::ReadOnly))
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN) << "open qiodevice error: " << dev->errorString();
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << "open qiodevice error: "
+                                             << dev->errorString();
 
             return false;
         }

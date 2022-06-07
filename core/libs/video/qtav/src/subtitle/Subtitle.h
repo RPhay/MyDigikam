@@ -47,8 +47,8 @@ class QTAV_EXPORT SubtitleFrame
 public:
 
     SubtitleFrame()
-      : begin(0),
-        end  (0)
+      : begin(0.0),
+        end  (0.0)
     {
     }
 
@@ -269,7 +269,7 @@ private:
 private:
 
     class Private;
-    Private* priv;
+    Private* d;
 };
 
 // internal use

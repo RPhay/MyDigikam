@@ -28,11 +28,6 @@
 #ifdef LINK_UCHARDET
 #   include <uchardet/uchardet.h>
 #   define HAVE_UCHARDET
-#else
-#   ifdef BUILD_UCHARDET
-#       include "uchardet.h"
-#       define HAVE_UCHARDET
-#   endif
 #endif
 
 #ifndef HAVE_UCHARDET
@@ -105,27 +100,27 @@ public:
 };
 
 CharsetDetector::CharsetDetector()
-    : priv(new Private())
+    : d(new Private())
 {
 }
 
 CharsetDetector::~CharsetDetector()
 {
-    if (priv)
+    if (d)
     {
-        delete priv;
-        priv = nullptr;
+        delete d;
+        d = nullptr;
     }
 }
 
 bool CharsetDetector::isAvailable() const
 {
-    return !!priv->m_det;
+    return !!d->m_det;
 }
 
 QByteArray CharsetDetector::detect(const QByteArray& data)
 {
-    return priv->detect(data);
+    return d->detect(data);
 }
 
 } // namespace QtAV

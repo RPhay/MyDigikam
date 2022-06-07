@@ -50,7 +50,7 @@ public:
 private:
 
     class Private;
-    Private* priv;
+    Private* d;
 
 private:
 

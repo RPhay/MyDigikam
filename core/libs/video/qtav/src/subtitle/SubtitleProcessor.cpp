@@ -72,7 +72,8 @@ bool SubtitleProcessor::process(const QString& path)
 
     if (!f.open(QIODevice::ReadOnly))
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "open subtitle file error: " << f.errorString();
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "open subtitle file error: "
+                                         << f.errorString();
 
         return false;
     }

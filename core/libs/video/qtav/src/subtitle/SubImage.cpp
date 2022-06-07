@@ -59,7 +59,7 @@ SubImageSet::SubImageSet(int width, int height, Format format)
  * ASS_Image: 1bit alpha per pixel + 1 rgb per image. less memory usage
  */
 
-//0xAARRGGBB
+// 0xAARRGGBB
 
 #if (Q_BYTE_ORDER == Q_BIG_ENDIAN)
 #   define ARGB32_SET(C, R, G, B, A) \
@@ -95,7 +95,8 @@ SubImageSet::SubImageSet(int width, int height, Format format)
 
 #define USE_QRGBA 0
 
-// C[i] = C'[i] = (k*c[i]+(255-k)*C[i])/255 = C[i] + k*(c[i]-C[i])/255, min(c[i],C[i]) <= C'[i] <= max(c[i],C[i])
+// C[i] = C'[i] = (k * c[i] + (255 - k) * C[i]) / 255 = C[i] + k * (c[i] - C[i]) / 255
+// min(c[i],C[i]) <= C'[i] <= max(c[i],C[i])
 
 // render 1 ass image into a 32bit QImage with alpha channel.
 // use dstX, dstY instead of img->dst_x/y because image size is small then ass renderer size
@@ -170,7 +171,7 @@ void RenderASS(QImage* image, const SubImage& img, int dstX, int dstY)
             }
             else
             {
-                // c=k*dc/255=k*dc/256 * (1-1/256), -1<err(c) = k*dc/256^2<1, -1 is bad!
+                // c = k * dc / 255 = k * dc / 256 * (1 - 1 / 256), -1 < err(c) = k * dc / 256 ^ 2 < 1, -1 is bad!
 
 #if USE_QRGBA
 
