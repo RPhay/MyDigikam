@@ -405,6 +405,9 @@ if(DIGIKAM_CAN_BE_COMPILED)
     # Includes rules
 
     # Recursively get all directories which contain header files
+    # NOTE: Do not parse more than expected root directories to prevent broken
+    # compilation under Windows as include path lenght is limited in opposite of POSIX systems.
+
     set(DK_INCLUDES_ALL "")
 
     HEADER_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/app       DK_LOCAL_INCLUDES_APP)
