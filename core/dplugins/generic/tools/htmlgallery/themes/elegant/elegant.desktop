@@ -32,7 +32,7 @@ Name[x-test]=xxElegantxx
 Name[zh_CN]=优雅
 Comment=Based on the "Simple" theme. Uses Lytebox by Markus F. Hay to display the images in a slideshow.
 Comment[ca]=Basat en el tema «Senzill». Usa el Lytebox del Markus F. Hay per a mostrar les imatges en un passi de diapositives.
-Comment[ca@valencia]=Basat en el tema «Senzill». Utilisa el Lytebox del Markus F. Hay per a mostrar les imatges en un passe de diapositives.
+Comment[ca@valencia]=Basat en el tema «Senzill». Utilisa el Lytebox del Markus F. Hay per a mostrar les imàgens en un passe de diapositives.
 Comment[da]=Baseret på "Simple"-temaet. Bruger Lytebox af Markus F. Hay til at vise billeder i et diasshow.
 Comment[de]=Basiert auf dem Design „Simple“ und verwendet Lytebox von Markus F. Hay, um die Bilder als Diaschau anzuzeigen.
 Comment[el]=Based on the "Simple" theme. Uses Lytebox by Markus F. Hay to display the images in a slideshow.
@@ -166,7 +166,7 @@ Default=
 [X-HTMLGallery Parameter pageSize]
 Name=Images per page
 Name[ca]=Imatges per pàgina
-Name[ca@valencia]=Imatges per pàgina
+Name[ca@valencia]=Imàgens per pàgina
 Name[cs]=Obrázků na stránku
 Name[da]=Billeder pr. side
 Name[de]=Bilder pro Seite
