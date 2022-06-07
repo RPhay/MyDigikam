@@ -230,9 +230,11 @@ public:
 VideoFrame VideoDecoderD3D11::frame()
 {
     DPTR_D(VideoDecoderD3D11);
-
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("frame size: %dx%d", d.frame->width, d.frame->height);
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("frame size: %dx%d",
+            d.frame->width, d.frame->height);
+*/
     if (!d.frame->opaque || !d.frame->data[0])
         return VideoFrame();
 
@@ -274,18 +276,30 @@ VideoFrame VideoDecoderD3D11::frame()
 
         for (int i = 0 ; i < fmt.planeCount() ; ++i)
         {
-            f.setBytesPerLine(fmt.bytesPerLine(d.width, i), i); //used by gl to compute texture size
+            f.setBytesPerLine(fmt.bytesPerLine(d.width, i), i); // used by gl to compute texture size
         }
 
         f.setMetaData(QLatin1String("surface_interop"), QVariant::fromValue(VideoSurfaceInteropPtr(interop)));
-        f.setTimestamp(d.frame->pkt_pts/1000.0);
+
+#ifndef HAVE_FFMPEG_VERSION5
+
+        f.setTimestamp(d.frame->pkt_pts / 1000.0);
+
+#else // ffmpeg >= 5
+
+        f.setTimestamp(d.frame->pts / 1000.0);
+
+#endif
+
         f.setDisplayAspectRatio(d.getDAR(d.frame));
 
         return f;
     }
-
-//    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("process for view: %p, texture: %p", surface, texture.Get());
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("process for view: %p, texture: %p",
+            surface, texture.Get());
+*/
     d.d3dctx->CopySubresourceRegion(d.texture_cpu.Get(), 0, 0, 0, 0,
                                     texture.Get(),
                                     view_desc.Texture2D.ArraySlice,
@@ -297,7 +311,7 @@ VideoFrame VideoDecoderD3D11::frame()
             : c(ctx),
               r(res)
         {
-            DX_ENSURE(c->Map(r.Get(), 0, D3D11_MAP_READ, 0, mapped)); //TODO: check error
+            DX_ENSURE(c->Map(r.Get(), 0, D3D11_MAP_READ, 0, mapped)); // TODO: check error
         }
 
         ~ScopedMap()
@@ -326,8 +340,10 @@ VideoDecoderD3D11::VideoDecoderD3D11()
 
 bool VideoDecoderD3D11Private::createDevice()
 {
-    // if (d3dviddev) return true;
-
+/*
+    if (d3dviddev)
+        return true;
+*/
     PFN_D3D11_CREATE_DEVICE fCreateDevice = nullptr;
 
 #if defined(Q_OS_WINRT)
@@ -479,7 +495,7 @@ bool VideoDecoderD3D11Private::createDecoder(AVCodecID codec_id, int w, int h, Q
     UINT cfg_count;
     DX_ENSURE(d3dviddev->GetVideoDecoderConfigCount(&decoderDesc, &cfg_count), false);
 
-    /* List all configurations available for the decoder */
+    // List all configurations available for the decoder
 
     QVector<D3D11_VIDEO_DECODER_CONFIG> cfg_list(cfg_count);
 
