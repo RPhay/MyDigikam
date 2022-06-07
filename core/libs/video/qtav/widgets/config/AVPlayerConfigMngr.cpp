@@ -38,7 +38,6 @@
 
 // Local includes
 
-#include "common.h"
 #include "digikam_debug.h"
 
 namespace QtAV
