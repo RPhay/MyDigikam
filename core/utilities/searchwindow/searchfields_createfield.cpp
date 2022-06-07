@@ -341,7 +341,6 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         for (int i = 0 ; i < make.count() ; ++i)
         {
             QString shortName = make[i];
-            ItemPropertiesTab::shortenedMakeInfo(shortName);
             shortName         = shortName.trimmed();
             makeMap.insert(shortName, make[i]);
         }
