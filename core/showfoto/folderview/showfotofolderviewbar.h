@@ -32,7 +32,6 @@
 
 // Local includes
 
-#include "slideshowsettings.h"
 #include "dlayoutbox.h"
 #include "dpluginaction.h"
 

@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2010-2021, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2022, Gilles Caulier, <caulier dot gilles at gmail dot com>
 # Copyright (C) 2020     , Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
 
 # Redistribution and use is allowed according to the terms of the BSD license.
@@ -18,7 +18,6 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_I
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/dialogs)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/common)
-
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/widgets)
 
 set(slideshowplugin_SRCS

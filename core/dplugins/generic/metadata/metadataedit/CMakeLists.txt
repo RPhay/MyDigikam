@@ -13,6 +13,11 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_I
 
                     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
+
+                    ${CMAKE_CURRENT_SOURCE_DIR}/dialog
+                    ${CMAKE_CURRENT_SOURCE_DIR}/exif
+                    ${CMAKE_CURRENT_SOURCE_DIR}/iptc
+                    ${CMAKE_CURRENT_SOURCE_DIR}/xmp
 )
 
 set(metadataeditplugin_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/exif/exifeditwidget.cpp

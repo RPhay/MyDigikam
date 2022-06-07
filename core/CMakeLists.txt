@@ -407,7 +407,14 @@ if(DIGIKAM_CAN_BE_COMPILED)
     # Recursively get all directories which contain header files
     set(DK_INCLUDES_ALL "")
 
-    HEADER_DIRECTORIES(DK_LOCAL_INCLUDES_RAW)
+    HEADER_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/app       DK_LOCAL_INCLUDES_APP)
+    HEADER_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/libs      DK_LOCAL_INCLUDES_LIBS)
+    HEADER_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/utilities DK_LOCAL_INCLUDES_UTILITIES)
+
+    set(DK_LOCAL_INCLUDES_RAW ${DK_LOCAL_INCLUDES_APP}
+                              ${DK_LOCAL_INCLUDES_LIBS}
+                              ${DK_LOCAL_INCLUDES_UTILITIES}
+    )
 
     # This macro will set all paths which do not contain libjpeg-
     # We will add later the directory we need

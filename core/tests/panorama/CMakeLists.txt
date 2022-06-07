@@ -7,6 +7,10 @@
 
 APPLY_COMMON_POLICIES()
 
+include_directories(${CMAKE_SOURCE_DIR}/core/dplugins/generic/tools/panorama/panoparser/ptoparser
+                    ${CMAKE_SOURCE_DIR}/core/dplugins/generic/tools/panorama/panoparser/ptotype
+)
+
 add_executable(panotestparser_cli ${CMAKE_CURRENT_SOURCE_DIR}/panotestparser_cli.cpp)
 
 target_link_libraries(panotestparser_cli

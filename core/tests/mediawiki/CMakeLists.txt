@@ -6,6 +6,8 @@
 
 APPLY_COMMON_POLICIES()
 
+include_directories(${CMAKE_SOURCE_DIR}/core/dplugins/generic/webservices/mediawiki/backend)
+
 add_subdirectory(examples)
 
 add_library(libfakeserver STATIC ${CMAKE_CURRENT_SOURCE_DIR}/fakeserver/fakeserver.cpp)

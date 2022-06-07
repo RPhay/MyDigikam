@@ -55,7 +55,6 @@
 #include "geoifacetypes.h"
 #include "dlayoutbox.h"
 #include "gpsundocommand.h"
-#include "geolocationedit.h"
 #include "gpsitemmodel.h"
 #include "gpsitemcontainer.h"
 #include "backend-geonames-rg.h"

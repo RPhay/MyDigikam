@@ -9,6 +9,8 @@ APPLY_COMMON_POLICIES()
 
 include(MacroDPlugins)
 
+HEADER_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk DK_LOCAL_INCLUDES_UPNPSDK)
+
 include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Xml,INTERFACE_INCLUDE_DIRECTORIES>
@@ -16,6 +18,9 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_I
 
                     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
+
+                    ${CMAKE_CURRENT_SOURCE_DIR}/server
+                    ${DK_LOCAL_INCLUDES_UPNPSDK}
 )
 
 # ---------------------------------------------------------------------------------------------------

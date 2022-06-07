@@ -16,6 +16,14 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_I
                     $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::ThreadWeaver,INTERFACE_INCLUDE_DIRECTORIES>
+
+                    ${CMAKE_CURRENT_SOURCE_DIR}/manager
+                    ${CMAKE_CURRENT_SOURCE_DIR}/panoparser/ptoparser
+                    ${CMAKE_CURRENT_SOURCE_DIR}/panoparser/ptotype
+                    ${CMAKE_CURRENT_SOURCE_DIR}/tasks
+                    ${CMAKE_CURRENT_SOURCE_DIR}/tools
+                    ${CMAKE_CURRENT_SOURCE_DIR}/wizard
+
 )
 
 # =======================================================

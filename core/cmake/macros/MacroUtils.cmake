@@ -162,9 +162,9 @@ endmacro()
 
 # -------------------------------------------------------------------------
 
-macro(HEADER_DIRECTORIES return_list)
+macro(HEADER_DIRECTORIES root_path return_list)
 
-    file(GLOB_RECURSE new_list *.h)
+    file(GLOB_RECURSE new_list ${root_path}/*.h)
     set(dir_list "")
 
     foreach(file_path ${new_list})

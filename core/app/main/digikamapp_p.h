@@ -146,16 +146,11 @@
 #include "tagsmanager.h"
 #include "itemsortsettings.h"
 #include "metadatahubmngr.h"
-#include "metadataedit.h"
 #include "dfiledialog.h"
 #include "dpluginloader.h"
 #include "exiftoolparser.h"
 #include "exiftoolthread.h"
 #include "facesdetector.h"
-
-#ifdef HAVE_MARBLE
-#   include "geolocationedit.h"
-#endif
 
 #ifdef HAVE_DBUS
 #   include "digikamadaptor.h"

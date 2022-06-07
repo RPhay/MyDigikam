@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2010-2021, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2022, Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -18,6 +18,13 @@ target_link_libraries(dmediaserver_cli
 
 ########################################################################
 # CLI test tool from Platinum SDK
+
+include_directories(${CMAKE_SOURCE_DIR}/core/dplugins/generic/tools/mediaserver/upnpsdk/Platinum/Source/Core
+                    ${CMAKE_SOURCE_DIR}/core/dplugins/generic/tools/mediaserver/upnpsdk/Platinum/Source/Platinum
+                    ${CMAKE_SOURCE_DIR}/core/dplugins/generic/tools/mediaserver/upnpsdk/Platinum/Source/Devices/MediaServer
+                    ${CMAKE_SOURCE_DIR}/core/dplugins/generic/tools/mediaserver/upnpsdk/Neptune/Source/Core
+                    ${CMAKE_SOURCE_DIR}/core/dplugins/generic/tools/mediaserver/server
+)
 
 add_executable(filemediaserver_cli
                ${CMAKE_SOURCE_DIR}/core/dplugins/generic/tools/mediaserver/upnpsdk/Platinum/Source/Tests/FileMediaServer/FileMediaServerTest.cpp
