@@ -336,13 +336,15 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         field->setText(i18n("Camera"), i18n("The make of the camera"));
 
         QStringList make = CoreDbAccess().db()->getListFromImageMetadata(DatabaseFields::Make);
+        QString wildcard = QLatin1String("*%1*");
         QMap<QString, QString> makeMap;
 
         for (int i = 0 ; i < make.count() ; ++i)
         {
             QString shortName = make[i];
+            ItemPropertiesTab::shortenedMakeInfo(shortName);
             shortName         = shortName.trimmed();
-            makeMap.insert(shortName, make[i]);
+            makeMap.insert(shortName, wildcard.arg(shortName));
         }
 
         make.clear();
