@@ -40,8 +40,11 @@
 INCLUDE(FindPackageHandleStandardArgs)
 
 # The default components were taken from a survey over other FindFFMPEG.cmake files
+
 IF(NOT FFmpeg_FIND_COMPONENTS)
+
     SET(FFmpeg_FIND_COMPONENTS AVCODEC AVFILTER AVFORMAT AVUTIL SWSCALE)
+
 ENDIF()
 
 # Macro to marks the given component as found if both *_LIBRARIES AND *_INCLUDE_DIRS is present.
@@ -49,34 +52,36 @@ ENDIF()
 MACRO(set_component_found _component)
 
     IF(${_component}_LIBRARIES AND ${_component}_INCLUDE_DIRS)
+
         # message(STATUS "  - ${_component} found.")
+
         SET(${_component}_FOUND TRUE)
+
     ELSE()
+
         # message(STATUS "  - ${_component} not found.")
+
         SET(${_component}_FOUND FALSE)
+
     ENDIF()
 
 ENDMACRO()
 
 # Macro to checks for the given component by invoking pkgconfig and then looking up the libraries and
 # include directories.
-#
+
 MACRO(find_component _component _pkgconfig _library _header)
 
-    # FIXME: Under Windows, FFMpeg module version is always empty. Add an alternative way to get version string properly.
+    # use pkg-config to get the directories and then use these values
+    # in the FIND_PATH() and FIND_LIBRARY() calls
 
- #   IF(NOT WIN32)
+    FIND_PACKAGE(PkgConfig)
 
-        # use pkg-config to get the directories and then use these values
-        # in the FIND_PATH() and FIND_LIBRARY() calls
+    IF(PKG_CONFIG_FOUND)
 
-        FIND_PACKAGE(PkgConfig)
+        pkg_check_modules(PC_${_component} ${_pkgconfig})
 
-        IF(PKG_CONFIG_FOUND)
-            pkg_check_modules(PC_${_component} ${_pkgconfig})
-        ENDIF()
-
-#    ENDIF()
+    ENDIF()
 
     FIND_PATH(${_component}_INCLUDE_DIRS ${_header}
               HINTS
@@ -110,9 +115,11 @@ MACRO(find_component _component _pkgconfig _library _header)
 ENDMACRO()
 
 # Check for cached results. If there are skip the costly part.
+
 if(NOT FFMPEG_LIBRARIES)
 
     # Check for all possible component.
+
     FIND_COMPONENT(AVCODEC    libavcodec    avcodec    libavcodec/avcodec.h)
     FIND_COMPONENT(AVFILTER   libavfilter   avfilter   libavfilter/avfilter.h)
     FIND_COMPONENT(AVFORMAT   libavformat   avformat   libavformat/avformat.h)
@@ -124,25 +131,35 @@ if(NOT FFMPEG_LIBRARIES)
     FIND_COMPONENT(SWRESAMPLE libswresample swresample libswresample/swresample.h)
 
     # Check if the required components were found and add their stuff to the FFMPEG_* vars.
+
     FOREACH(_component ${FFmpeg_FIND_COMPONENTS})
 
         IF(${_component}_FOUND)
+
             # message(STATUS "Required component ${_component} present.")
+
             SET(FFMPEG_LIBRARIES   ${FFMPEG_LIBRARIES}   ${${_component}_LIBRARIES})
             SET(FFMPEG_DEFINITIONS ${FFMPEG_DEFINITIONS} ${${_component}_DEFINITIONS})
             LIST(APPEND FFMPEG_INCLUDE_DIRS ${${_component}_INCLUDE_DIRS})
+
         ELSE()
+
             # message(STATUS "Required component ${_component} missing.")
+
         ENDIF()
 
     ENDFOREACH()
 
     # Build the include path with duplicates removed.
+
     IF(FFMPEG_INCLUDE_DIRS)
+
         LIST(REMOVE_DUPLICATES FFMPEG_INCLUDE_DIRS)
+
     ENDIF()
 
     # cache the vars.
+
     SET(FFMPEG_INCLUDE_DIRS ${FFMPEG_INCLUDE_DIRS} CACHE STRING "The FFmpeg include directories." FORCE)
     SET(FFMPEG_LIBRARIES    ${FFMPEG_LIBRARIES}    CACHE STRING "The FFmpeg libraries."           FORCE)
     SET(FFMPEG_DEFINITIONS  ${FFMPEG_DEFINITIONS}  CACHE STRING "The FFmpeg cflags."              FORCE)
@@ -154,9 +171,12 @@ if(NOT FFMPEG_LIBRARIES)
 
 ENDIF()
 
-# Now set the noncached _FOUND vars for the components.
+# Now set the non-cached _FOUND vars for the components.
+
 FOREACH(_component AVCODEC AVDEVICE AVFILTER AVFORMAT AVUTIL POSTPROCESS SWSCALE AVRESAMPLE SWRESAMPLE)
+
     SET_COMPONENT_FOUND(${_component})
+
 ENDFOREACH()
 
 # Compile the list of required vars
