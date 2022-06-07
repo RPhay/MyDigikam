@@ -26,7 +26,7 @@ Name[x-test]=xxHTML5 Responsivexx
 Name[zh_CN]=响应式 HTML5
 Comment=Generates a gallery using responsive HTML5 and CSS3 and UTF-8 encoding. Optionally uses PhotoSwipe by Dmitry Semenov to display the images.
 Comment[ca]=Genera una galeria usant HTML5 responsiu i CSS3 i codificació UTF-8. Opcionalment usa el PhotoSwipe del Dmitry Semenov per mostrar les imatges.
-Comment[ca@valencia]=Genera una galeria utilisant HTML5 responsiu i CSS3 i codificació UTF-8. De manera opcional utilisa PhotoSwipe del Dmitry Semenov per a mostrar les imatges.
+Comment[ca@valencia]=Genera una galeria utilisant HTML5 responsiu i CSS3 i codificació UTF-8. De manera opcional utilisa PhotoSwipe del Dmitry Semenov per a mostrar les imàgens.
 Comment[de]=Erzeugt eine Responsive Galerie auf Basis HTML5 und CSS3. Sie verwendet optional PhotoSwipe von Dmitry Semenov zur Anzeige der Bilder.
 Comment[en_GB]=Generates a gallery using responsive HTML5 and CSS3 and UTF-8 encoding. Optionally uses PhotoSwipe by Dmitry Semenov to display the images.
 Comment[es]=Genera una galería usando HTML5 adaptable con CSS3 y codificación UTF-8. Opcionalmente usa PhotoSwipe, por Dmitry Semenov, para mostrar las imágenes.
@@ -192,7 +192,7 @@ Caption-3=Brown Card
 [X-HTMLGallery Parameter pageSize]
 Name=Images per page
 Name[ca]=Imatges per pàgina
-Name[ca@valencia]=Imatges per pàgina
+Name[ca@valencia]=Imàgens per pàgina
 Name[cs]=Obrázků na stránku
 Name[da]=Billeder pr. side
 Name[de]=Bilder pro Seite
