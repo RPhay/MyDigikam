@@ -65,7 +65,7 @@ MACRO(find_component _component _pkgconfig _library _header)
 
     # FIXME: Under Windows, FFMpeg module version is always empty. Add an alternative way to get version string properly.
 
-    IF(NOT WIN32)
+ #   IF(NOT WIN32)
 
         # use pkg-config to get the directories and then use these values
         # in the FIND_PATH() and FIND_LIBRARY() calls
@@ -76,7 +76,7 @@ MACRO(find_component _component _pkgconfig _library _header)
             pkg_check_modules(PC_${_component} ${_pkgconfig})
         ENDIF()
 
-    ENDIF()
+#    ENDIF()
 
     FIND_PATH(${_component}_INCLUDE_DIRS ${_header}
               HINTS
