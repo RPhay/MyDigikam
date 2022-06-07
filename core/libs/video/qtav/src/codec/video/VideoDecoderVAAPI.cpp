@@ -549,7 +549,18 @@ VideoFrame VideoDecoderVAAPI::frame()
         }
 
         f.setMetaData(QLatin1String("surface_interop"), QVariant::fromValue(VideoSurfaceInteropPtr(interop)));
+
+
+#   ifndef HAVE_FFMPEG_VERSION5
+
         f.setTimestamp(double(d.frame->pkt_pts) / 1000.0);
+
+#   else // ffmpeg >= 5
+
+        f.setTimestamp(double(d.frame->pts) / 1000.0);
+
+#   endif
+
         f.setDisplayAspectRatio(d.getDAR(d.frame));
         d.updateColorDetails(&f);
         const ColorSpace cs = f.colorSpace();

@@ -54,11 +54,13 @@ namespace QtAV
 static bool check_ffmpeg_hevc_dxva2()
 {
 
-#if !AVCODEC_STATIC_REGISTER
+#ifndef HAVE_FFMPEG_VERSION5
+
+#   if !AVCODEC_STATIC_REGISTER
 
     avcodec_register_all();
 
-#endif
+#   endif
 
     AVHWAccel* hwa = av_hwaccel_next(0);
 
@@ -73,7 +75,17 @@ static bool check_ffmpeg_hevc_dxva2()
         hwa = av_hwaccel_next(hwa);
     }
 
+
     return false;
+
+#else // ffmpeg >= 5
+
+    // FIXME: port to new ffmpeg5 API
+
+    return false;
+
+#endif
+
 }
 
 bool isHEVCSupported()
@@ -358,12 +370,14 @@ int VideoDecoderD3D::getSupportedFourcc(int* formats, UINT nb_formats)
         if (format)
         {
             qCDebug(DIGIKAM_QTAV_LOG).noquote()
-                << QString::asprintf("%s is supported for output", format->name);
+                << QString::asprintf("%s is supported for output",
+                    format->name);
         }
         else
         {
             qCDebug(DIGIKAM_QTAV_LOG).noquote()
-                << QString::asprintf("%d is supported for output (%4.4s)", *f, (const char*)f);
+                << QString::asprintf("%d is supported for output (%4.4s)",
+                    *f, (const char*)f);
         }
     }
 
@@ -478,7 +492,7 @@ void* VideoDecoderD3DPrivate::setup(AVCodecContext* avctx)
     releaseUSWC();
     destroyDecoder();
 
-    /* Allocates all surfaces needed for the decoder */
+    // Allocates all surfaces needed for the decoder
 
     if (surface_auto)
     {

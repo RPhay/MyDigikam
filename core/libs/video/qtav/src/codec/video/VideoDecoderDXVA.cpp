@@ -271,7 +271,17 @@ VideoFrame VideoDecoderDXVA::frame()
 
         f.setBytesPerLine(d.width * 4);             // used by gl to compute texture size
         f.setMetaData(QLatin1String("surface_interop"), QVariant::fromValue(VideoSurfaceInteropPtr(interop)));
+
+#ifndef HAVE_FFMPEG_VERSION5
+
         f.setTimestamp(d.frame->pkt_pts / 1000.0);
+
+#else // ffmpeg >= 5
+
+        f.setTimestamp(d.frame->pts / 1000.0);
+
+#endif
+
         f.setDisplayAspectRatio(d.getDAR(d.frame));
 
         return f;

@@ -216,7 +216,16 @@ VideoFrame VideoDecoderMediaCodec::frame()
 
         // in s. TODO: what about AVFrame.pts? av_frame_get_best_effort_timestamp? move to VideoFrame::from(AVFrame*)
 
+#   ifndef HAVE_FFMPEG_VERSION5
+
         frame.setTimestamp((double)d.frame->pkt_pts / 1000.0);
+
+#   else // ffmpeg >= 5
+
+        frame.setTimestamp((double)d.frame->pts / 1000.0);
+
+#   endif
+
         frame.setMetaData(QLatin1String("avbuf"), QVariant::fromValue(AVFrameBuffersRef(new AVFrameBuffers(d.frame))));
         d.updateColorDetails(&frame);
 
@@ -228,7 +237,17 @@ VideoFrame VideoDecoderMediaCodec::frame()
     VideoFrame frame(d.frame->width, d.frame->height, VideoFormat::Format_RGB32);
     frame.setBytesPerLine(d.frame->width * 4);
     frame.setDisplayAspectRatio(d.getDAR(d.frame));
+
+#   ifndef HAVE_FFMPEG_VERSION5
+
     frame.setTimestamp(d.frame->pkt_pts / 1000.0);
+
+#   else // ffmpeg >= 5
+
+    frame.setTimestamp(d.frame->pts / 1000.0);
+
+#   endif
+
 
 #   ifdef MEDIACODEC_TEXTURE
 
