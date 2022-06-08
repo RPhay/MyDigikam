@@ -76,9 +76,10 @@
 
 #include <xaudio2.h>
 
-/* sdk check
+/**
+ * sdk check
  * winsdk: defines XAUDIO2_DLL
- * dxsdk: defines XAUDIO2_DEBUG_ENGINE
+ * dxsdk:  defines XAUDIO2_DEBUG_ENGINE
  */
 
 #define XA2_WINSDK (_WIN32_WINNT >= _WIN32_WINNT_WIN8)
@@ -111,10 +112,10 @@ typedef enum XAUDIO2_DEVICE_ROLE
 
 typedef struct XAUDIO2_DEVICE_DETAILS
 {
-    WCHAR DeviceID[256];                // String identifier for the audio device.
-    WCHAR DisplayName[256];             // Friendly name suitable for display to a human.
-    XAUDIO2_DEVICE_ROLE Role;           // Roles that the device should be used for.
-    WAVEFORMATEXTENSIBLE OutputFormat;  // The device's native PCM audio output format.
+    WCHAR                DeviceID[256];     ///< String identifier for the audio device.
+    WCHAR                DisplayName[256];  ///< Friendly name suitable for display to a human.
+    XAUDIO2_DEVICE_ROLE  Role;              ///< Roles that the device should be used for.
+    WAVEFORMATEXTENSIBLE OutputFormat;      ///< The device's native PCM audio output format.
 } XAUDIO2_DEVICE_DETAILS;
 
 // from wine idl. If use code from dx header. TODO: why crash if use code from dx header?
@@ -124,7 +125,7 @@ interface IXAudio2MasteringVoice : public IXAudio2Voice
     virtual void STDMETHODCALLTYPE GetChannelMask(DWORD* pChannelMask) = 0;
 };
 
-DEFINE_GUID(IID_IXAudio27, 0x8bcf1f58, 0x9fe7, 0x4583, 0x8a,0xc6, 0xe2,0xad,0xc4,0x65,0xc8,0xbb);
+DEFINE_GUID(IID_IXAudio27, 0x8bcf1f58, 0x9fe7, 0x4583, 0x8a,0xc6, 0xe2, 0xad, 0xc4, 0x65, 0xc8, 0xbb);
 
 MIDL_INTERFACE("8bcf1f58-9fe7-4583-8ac6-e2adc465c8bb")
 
@@ -177,18 +178,18 @@ IXAudio2 : public IUnknown
                                                          void* pReserved = 0)                                    = 0;
 };
 
-#ifndef GUID_SECT
-#   define GUID_SECT
-#endif
+#   ifndef GUID_SECT
+#       define GUID_SECT
+#   endif
 
-#define __DEFINE_CLSID(n,l,w1,w2,b1,b2,b3,b4,b5,b6,b7,b8) static const CLSID n GUID_SECT = {l,w1,w2,{b1,b2,b3,b4,b5,b6,b7,b8}}
+#   define __DEFINE_CLSID(n,l,w1,w2,b1,b2,b3,b4,b5,b6,b7,b8) static const CLSID n GUID_SECT = {l,w1,w2,{b1,b2,b3,b4,b5,b6,b7,b8}}
 
-#define __DEFINE_IID(n,l,w1,w2,b1,b2,b3,b4,b5,b6,b7,b8) static const IID n GUID_SECT = {l,w1,w2,{b1,b2,b3,b4,b5,b6,b7,b8}}
+#   define __DEFINE_IID(n,l,w1,w2,b1,b2,b3,b4,b5,b6,b7,b8) static const IID n GUID_SECT = {l,w1,w2,{b1,b2,b3,b4,b5,b6,b7,b8}}
 
-#define DEFINE_CLSID(className, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8) \
+#   define DEFINE_CLSID(className, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8) \
     __DEFINE_CLSID(CLSID_##className, 0x##l, 0x##w1, 0x##w2, 0x##b1, 0x##b2, 0x##b3, 0x##b4, 0x##b5, 0x##b6, 0x##b7, 0x##b8)
 
-#define DEFINE_IID(interfaceName, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8) \
+#   define DEFINE_IID(interfaceName, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8) \
     __DEFINE_IID(IID_##interfaceName, 0x##l, 0x##w1, 0x##w2, 0x##b1, 0x##b2, 0x##b3, 0x##b4, 0x##b5, 0x##b6, 0x##b7, 0x##b8)
 
 // XAudio 2.7 (June 2010 SDK)
@@ -201,7 +202,7 @@ DEFINE_IID(IXAudio2,        8bcf1f58, 9fe7, 4583, 8a, c6, e2, ad, c4, 65, c8, bb
 
 // NOTE: XAUDIO2_DEBUG_ENGINE is NOT defined in winsdk!!!
 
-#define XAUDIO2_DEBUG_ENGINE            0x0001        // Used in XAudio2Create on Windows only
+#   define XAUDIO2_DEBUG_ENGINE            0x0001        // Used in XAudio2Create on Windows only
 
 HRESULT __stdcall XAudio2Create(__deref_out IXAudio2** ppXAudio2,
                                 UINT32 Flags X2DEFAULT(0),
@@ -241,7 +242,7 @@ HRESULT __stdcall XAudio2Create(__deref_out IXAudio2** ppXAudio2,
     return ::XAudio2Create(ppXAudio2, Flags, XAudio2Processor);
 }
 
-#endif //_XBOX
+#   endif //_XBOX
 
 typedef ::IXAudio2 IXAudio2;
 typedef ::IXAudio2MasteringVoice IXAudio2MasteringVoice;
@@ -250,8 +251,11 @@ typedef ::IXAudio2MasteringVoice IXAudio2MasteringVoice;
 
 // At last, define the same types. MUST BE AT LAST to avoid ambigous, for example IXAudio2MasteringVoice is a ::IXAudio2Voice but we can use IXAudio2Voice
 
-//typedef ::IXAudio2Voice IXAudio2Voice;
-//typedef ::IXAudio2SourceVoice IXAudio2SourceVoice;
+/*
+typedef ::IXAudio2Voice IXAudio2Voice;
+typedef ::IXAudio2SourceVoice IXAudio2SourceVoice;
+*/
+
 }
 
 namespace WinSDK
@@ -284,10 +288,10 @@ typedef enum _AUDIO_STREAM_CATEGORY
 
 interface IXAudio2MasteringVoice : public IXAudio2Voice
 {
-    virtual void STDMETHODCALLTYPE GetChannelMask(DWORD *pChannelMask) = 0;
+    virtual void STDMETHODCALLTYPE GetChannelMask(DWORD* pChannelMask) = 0;
 };
 
-DEFINE_GUID(IID_IXAudio2, 0x60d8dac8, 0x5aa1, 0x4e8e, 0xb5,0x97, 0x2f,0x5e,0x28,0x83,0xd4,0x84);
+DEFINE_GUID(IID_IXAudio2, 0x60d8dac8, 0x5aa1, 0x4e8e, 0xb5, 0x97, 0x2f, 0x5e, 0x28, 0x83, 0xd4, 0x84);
 
 MIDL_INTERFACE("60d8dac8-5aa1-4e8e-b597-2f5e2883d484")
 
@@ -338,8 +342,11 @@ IXAudio2 : public IUnknown
 
 // At last, define the same types. MUST BE AT LAST to avoid ambigous, for example IXAudio2MasteringVoice is a ::IXAudio2Voice but we can use IXAudio2Voice
 
-//typedef ::IXAudio2Voice IXAudio2Voice;
-//typedef ::IXAudio2SourceVoice IXAudio2SourceVoice;
+/*
+typedef ::IXAudio2Voice IXAudio2Voice;
+typedef ::IXAudio2SourceVoice IXAudio2SourceVoice;
+*/
+
 }
 
 #endif // QTAV_XAUDIO2_COMPAT_H
