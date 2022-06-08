@@ -333,7 +333,6 @@ if(ENABLE_MEDIAPLAYER)
 
             if(DirectX_XAudio2_FOUND)
 
-                set(MEDIAPLAYER_LIBRARIES ${MEDIAPLAYER_LIBRARIES} xaudio2)
                 message(STATUS "MediaPlayer will be compiled with XAudio2 support    : yes")
 
             else()

@@ -25,7 +25,8 @@
 #ifndef QTAV_PREPOST_H
 #define QTAV_PREPOST_H
 
-/* Avoid a compiler warning when the arguments is empty,
+/*
+ * Avoid a compiler warning when the arguments is empty,
  * e.g. PRE_FUNC_ADD(foo). The right one is PRE_FUNC_ADD(f,)
  */
 
@@ -38,25 +39,26 @@
 
 #ifdef __cplusplus
 
-/* for C++, we use non-local static object to call the functions automatically before main().
+/*
+ * for C++, we use non-local static object to call the functions automatically before main().
  * anonymous namespace: avoid name confliction('static' keyword is not necessary)
  */
 
-#define PRE_FUNC_ADD(f, .../*args*/) \
-    namespace { \
-        static const struct initializer_for_##f { \
-            inline initializer_for_##f() { \
-                f(__VA_ARGS__); \
-            } \
-        }  __sInit_##f; \
+#define PRE_FUNC_ADD(f, .../*args*/)                \
+    namespace {                                     \
+        static const struct initializer_for_##f {   \
+            inline initializer_for_##f() {          \
+                f(__VA_ARGS__);                     \
+            }                                       \
+        }  __sInit_##f;                             \
     }
 
-#define POST_FUNC_ADD(f, .../*args*/) \
-    namespace { \
-        static const struct deinitializer_for_##f { \
-            inline deinitializer_for_##f() {} \
+#define POST_FUNC_ADD(f, .../*args*/)                           \
+    namespace {                                                 \
+        static const struct deinitializer_for_##f {             \
+            inline deinitializer_for_##f() {}                   \
             inline ~deinitializer_for_##f() { f(__VA_ARGS__); } \
-        } __sDeinit_##f; \
+        } __sDeinit_##f;                                        \
     }
 
 #else /*for C. ! defined __cplusplus*/
@@ -77,12 +79,12 @@ typedef int (__cdecl *_PF)();   /* why not void? */
 
 /* static to avoid multiple defination */
 
-#   define PRE_FUNC_ADD(f, .../*args*/) \
-    static int init_##f() { f(__VA_ARGS__); return 0;} \
+#   define PRE_FUNC_ADD(f, .../*args*/)                 \
+    static int init_##f() { f(__VA_ARGS__); return 0;}  \
     _CRTALLOC(".CRT$XIU") static _PF pinit_##f [] = { init_##f }; /*static void (*pinit_##f)() = init_##f //__cdecl */
 
-#   define POST_FUNC_ADD(f, .../*args*/) \
-    static int deinit_##f() { f(__VA_ARGS__); return 0;} \
+#   define POST_FUNC_ADD(f, .../*args*/)                    \
+    static int deinit_##f() { f(__VA_ARGS__); return 0;}    \
     _CRTALLOC(".CRT$XPU") static _PF pdeinit_##f [] = { deinit_##f };
 
 #elif defined(__GNUC__)
@@ -100,7 +102,7 @@ typedef int (__cdecl *_PF)();   /* why not void? */
 
 /* static var init, atexit */
 
-#   define PRE_FUNC_ADD(f, ...) \
+#   define PRE_FUNC_ADD(f, ...)                         \
     static int init_##f() { f(__VA_ARGS__); return 0; } \
     static int v_init_##f = init_##f();
 
@@ -109,9 +111,9 @@ typedef int (__cdecl *_PF)();   /* why not void? */
  * initializer element is not constant
  */
 
-/* atexit do not support arguments */
+// atexit do not support arguments
 
-#   define POST_FUNC_ADD(f, ...) \
+#   define POST_FUNC_ADD(f, ...)            \
     static void atexit_##f() { atexit(f); } \
     PRE_FUNC_ADD(atexit_##f)
 #endif

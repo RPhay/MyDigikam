@@ -91,9 +91,9 @@
  */
 #define FACTORY_REGISTER(BASE, _ID, NAME) FACTORY_REGISTER_ID_TYPE(BASE, BASE##Id_##_ID, BASE##_ID, NAME)
 
-#define FACTORY_REGISTER_ID_TYPE(BASE, ID, TYPE, NAME) \
-    FACTORY_REGISTER_ID_TYPE_AUTO(BASE, ID, TYPE, NAME) \
-    void Register##TYPE##_Man() { \
+#define FACTORY_REGISTER_ID_TYPE(BASE, ID, TYPE, NAME)      \
+    FACTORY_REGISTER_ID_TYPE_AUTO(BASE, ID, TYPE, NAME)     \
+    void Register##TYPE##_Man() {                           \
         FACTORY_REGISTER_ID_TYPE_MAN(BASE, ID, TYPE, NAME); \
     }
 
@@ -103,8 +103,8 @@
 #define FACTORY_REGISTER_ID_MAN(BASE, _ID, NAME) \
     FACTORY_REGISTER_ID_TYPE_MAN(BASE, BASE##Id_##_ID, BASE##_ID, NAME)
 
-#define FACTORY_REGISTER_ID_TYPE_MAN(BASE, ID, TYPE, NAME) \
-    BASE##Factory::register_<TYPE>(ID); \
+#define FACTORY_REGISTER_ID_TYPE_MAN(BASE, ID, TYPE, NAME)  \
+    BASE##Factory::register_<TYPE>(ID);                     \
     BASE##Factory::registerIdName(ID, NAME);
 
 /*
@@ -113,52 +113,54 @@
  * Remove xxx_Man() is also a workaround
  */
 #define FACTORY_REGISTER_ID_TYPE_AUTO(BASE, ID, TYPE, NAME) \
-    static int __init_##TYPE() { \
-        FACTORY_REGISTER_ID_TYPE_MAN(BASE, ID, TYPE, NAME) \
-        return 0; \
-    } \
+    static int __init_##TYPE() {                            \
+        FACTORY_REGISTER_ID_TYPE_MAN(BASE, ID, TYPE, NAME)  \
+        return 0;                                           \
+    }                                                       \
     PRE_FUNC_ADD(__init_##TYPE)
 
 /**
  * This should be in header
  */
 #define FACTORY_DECLARE(T) FACTORY_DECLARE_ID(T, T##Id)
-#define FACTORY_DECLARE_ID(T, ID) \
-    class QTAV_EXPORT T##Factory \
-    { \
-    public: \
-        typedef T* (*T##Creator)(); \
-        static T* create(const ID& id); \
-        template<class C> \
-        static bool register_(const ID& id) { return registerCreator(id, create<C>); } \
-        static bool registerCreator(const ID&, const T##Creator&); \
-        static bool registerIdName(const ID& id, const std::string& name); \
-        static bool unregisterCreator(const ID& id); \
-        static ID id(const std::string& name, bool caseSensitive = true); \
-        static std::string name(const ID &id); \
-        static std::vector<ID> registeredIds(); \
-        static std::vector<std::string> registeredNames(); \
-        static size_t count(); \
-        static T* getRandom(); \
-    private: \
-        template<class C> static T* create() { return new C(); } \
+
+#define FACTORY_DECLARE_ID(T, ID)                                                       \
+    class QTAV_EXPORT T##Factory                                                        \
+    {                                                                                   \
+    public:                                                                             \
+        typedef T* (*T##Creator)();                                                     \
+        static T* create(const ID& id);                                                 \
+        template<class C>                                                               \
+        static bool register_(const ID& id) { return registerCreator(id, create<C>); }  \
+        static bool registerCreator(const ID&, const T##Creator&);                      \
+        static bool registerIdName(const ID& id, const std::string& name);              \
+        static bool unregisterCreator(const ID& id);                                    \
+        static ID id(const std::string& name, bool caseSensitive = true);               \
+        static std::string name(const ID &id);                                          \
+        static std::vector<ID> registeredIds();                                         \
+        static std::vector<std::string> registeredNames();                              \
+        static size_t count();                                                          \
+        static T* getRandom();                                                          \
+    private:                                                                            \
+        template<class C> static T* create() { return new C(); }                        \
     };
 
 /**
  * This should be in cpp
  */
 #define FACTORY_DEFINE(T) FACTORY_DEFINE_ID(T, T##Id)
-#define FACTORY_DEFINE_ID(T, ID) \
-    class T##FactoryBridge : public Factory<ID, T, T##FactoryBridge> {}; \
-    T* T##Factory::create(const ID& id) { return T##FactoryBridge::Instance().create(id); } \
+
+#define FACTORY_DEFINE_ID(T, ID)                                                                                                                      \
+    class T##FactoryBridge : public Factory<ID, T, T##FactoryBridge> {};                                                                              \
+    T* T##Factory::create(const ID& id) { return T##FactoryBridge::Instance().create(id); }                                                           \
     bool T##Factory::registerCreator(const ID& id, const T##Creator& callback) { return T##FactoryBridge::Instance().registerCreator(id, callback); } \
-    bool T##Factory::registerIdName(const ID& id, const std::string& name) { return T##FactoryBridge::Instance().registerIdName(id, name); } \
-    bool T##Factory::unregisterCreator(const ID& id) { return T##FactoryBridge::Instance().unregisterCreator(id); } \
-    ID T##Factory::id(const std::string& name, bool caseSensitive) { return T##FactoryBridge::Instance().id(name, caseSensitive); } \
-    std::string T##Factory::name(const ID &id) { return T##FactoryBridge::Instance().name(id); } \
-    std::vector<ID> T##Factory::registeredIds() { return T##FactoryBridge::Instance().registeredIds(); } \
-    std::vector<std::string> T##Factory::registeredNames() { return T##FactoryBridge::Instance().registeredNames(); } \
-    size_t T##Factory::count() { return T##FactoryBridge::Instance().count(); } \
+    bool T##Factory::registerIdName(const ID& id, const std::string& name) { return T##FactoryBridge::Instance().registerIdName(id, name); }          \
+    bool T##Factory::unregisterCreator(const ID& id) { return T##FactoryBridge::Instance().unregisterCreator(id); }                                   \
+    ID T##Factory::id(const std::string& name, bool caseSensitive) { return T##FactoryBridge::Instance().id(name, caseSensitive); }                   \
+    std::string T##Factory::name(const ID &id) { return T##FactoryBridge::Instance().name(id); }                                                      \
+    std::vector<ID> T##Factory::registeredIds() { return T##FactoryBridge::Instance().registeredIds(); }                                              \
+    std::vector<std::string> T##Factory::registeredNames() { return T##FactoryBridge::Instance().registeredNames(); }                                 \
+    size_t T##Factory::count() { return T##FactoryBridge::Instance().count(); }                                                                       \
     T* T##Factory::getRandom() { fflush(0);return T##FactoryBridge::Instance().getRandom(); }
 
 #endif // QTAV_FACTORY_DEFINE_H

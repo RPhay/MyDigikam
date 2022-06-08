@@ -56,39 +56,39 @@ Class& Loki::Singleton<Class>::Instance()
 #endif // 0
 
 #define FACTORY_REGISTER(BASE, _ID, NAME) FACTORY_REGISTER_ID_TYPE(BASE, BASE##Id_##_ID, BASE##_ID, NAME)
-#define FACTORY_REGISTER_ID_TYPE(BASE, ID, TYPE, NAME) \
+#define FACTORY_REGISTER_ID_TYPE(BASE, ID, TYPE, NAME)  \
     FACTORY_REGISTER_ID_TYPE_AUTO(BASE, ID, TYPE, NAME) \
-    bool Register##TYPE##_Man() { \
-        return BASE::Register<TYPE>(ID, NAME); \
+    bool Register##TYPE##_Man() {                       \
+        return BASE::Register<TYPE>(ID, NAME);          \
     }
 
 #define FACTORY_REGISTER_ID_TYPE_AUTO(BASE, ID, TYPE, NAME) \
-    namespace { \
-        static const struct factory_register_##TYPE { \
-            inline factory_register_##TYPE() { \
-                BASE::Register<TYPE>(ID, NAME); \
-            } \
-        } sInit_##TYPE; \
+    namespace {                                             \
+        static const struct factory_register_##TYPE {       \
+            inline factory_register_##TYPE() {              \
+                BASE::Register<TYPE>(ID, NAME);             \
+            }                                               \
+        } sInit_##TYPE;                                     \
     }
 
-#define FACTORY_DEFINE(T) \
-    class T##Factory : public Factory<T##Id, T, T##Factory> {}; \
-    bool T::Register(T##Id id, T##Creator c, const char *name) { \
-        DBG(#T "::Register(..., %s)\n", name); \
-        return T##Factory::Instance().registerCreator(id, c) && T##Factory::Instance().registerIdName(id, name); \
-    } \
-    T* T::create(T##Id id) {return T##Factory::Instance().create(id);} \
-    T* T::create(const char* name) { return T::create(T::id(name));} \
-    T##Id* T::next(T##Id *id) { \
-        const std::vector<T##Id>& ids = T##Factory::Instance().registeredIds(); \
-        if (!id) return (T##Id*)&ids[0]; \
-        T##Id *id0 = (T##Id*)&ids[0], *id1 = (T##Id*)&ids[ids.size() - 1]; \
-        if (id >= id0 && id < id1) return id + 1; \
-        if (id == id1) return nullptr; \
-        std::vector<T##Id>::const_iterator it = std::find(ids.begin(), ids.end(), *id); \
-        if (it == ids.end()) return nullptr; \
-        return (T##Id*)&*(it++); \
-    } \
+#define FACTORY_DEFINE(T)                                                                                           \
+    class T##Factory : public Factory<T##Id, T, T##Factory> {};                                                     \
+    bool T::Register(T##Id id, T##Creator c, const char *name) {                                                    \
+        DBG(#T "::Register(..., %s)\n", name);                                                                      \
+        return T##Factory::Instance().registerCreator(id, c) && T##Factory::Instance().registerIdName(id, name);    \
+    }                                                                                                               \
+    T* T::create(T##Id id) {return T##Factory::Instance().create(id);}                                              \
+    T* T::create(const char* name) { return T::create(T::id(name));}                                                \
+    T##Id* T::next(T##Id *id) {                                                                                     \
+        const std::vector<T##Id>& ids = T##Factory::Instance().registeredIds();                                     \
+        if (!id) return (T##Id*)&ids[0];                                                                            \
+        T##Id *id0 = (T##Id*)&ids[0], *id1 = (T##Id*)&ids[ids.size() - 1];                                          \
+        if (id >= id0 && id < id1) return id + 1;                                                                   \
+        if (id == id1) return nullptr;                                                                              \
+        std::vector<T##Id>::const_iterator it = std::find(ids.begin(), ids.end(), *id);                             \
+        if (it == ids.end()) return nullptr;                                                                        \
+        return (T##Id*)&*(it++);                                                                                    \
+    }                                                                                                               \
     T##Id T::id(const char* name) { DBG(#T "::id(\"%s\")\n", name); return T##Factory::Instance().id(name, false);} \
     const char* T::name(T##Id id) {return T##Factory::Instance().name(id);}
 
@@ -182,8 +182,9 @@ typename Factory<Id, T, Class>::Type *Factory<Id, T, Class>::create(const ID& id
         DBG("Unknown id ");
 
         return nullptr;
-
-        //throw std::runtime_error(err_msg.arg(id).toStdString());
+/*
+        throw std::runtime_error(err_msg.arg(id).toStdString());
+*/
     }
 
     return (it->second)();
@@ -192,8 +193,9 @@ typename Factory<Id, T, Class>::Type *Factory<Id, T, Class>::create(const ID& id
 template<typename Id, typename T, class Class>
 bool Factory<Id, T, Class>::registerCreator(const ID& id, const Creator& callback)
 {
-    //DBG("%p id [%d] registered. size=%d\n", &Factory<Id, T, Class>::Instance(), id, ids.size());
-
+/*
+    DBG("%p id [%d] registered. size=%d\n", &Factory<Id, T, Class>::Instance(), id, ids.size());
+*/
     ids.insert(ids.end(), id);
 
     return creators.insert(typename CreatorMap::value_type(id, callback)).second;
@@ -208,8 +210,9 @@ bool Factory<Id, T, Class>::registerIdName(const ID& id, const char* name)
 template<typename Id, typename T, class Class>
 bool Factory<Id, T, Class>::unregisterCreator(const ID& id)
 {
-    //DBG("Id [%d] unregistered\n", id);
-
+/*
+    DBG("Id [%d] unregistered\n", id);
+*/
     ids.erase(std::remove(ids.begin(), ids.end(), id), ids.end());
     name_map.erase(id);
 
@@ -280,8 +283,9 @@ std::vector<const char*> Factory<Id, T, Class>::registeredNames() const
 template<typename Id, typename T, class Class>
 size_t Factory<Id, T, Class>::count() const
 {
-    //DBG("%p size = %d", &Factory<Id, T, Class>::Instance(), ids.size());
-
+/*
+    DBG("%p size = %d", &Factory<Id, T, Class>::Instance(), ids.size());
+*/
     return ids.size();
 }
 
@@ -290,13 +294,13 @@ typename Factory<Id, T, Class>::Type* Factory<Id, T, Class>::getRandom()
 {
     srand(time(nullptr));
     int index = rand() % ids.size();
-
-    //DBG("random %d/%d", index, ids.size());
-
+/*
+    DBG("random %d/%d", index, ids.size());
+*/
     ID new_eid = ids.at(index);
-
-    //DBG("id %d", new_eid);
-
+/*
+    DBG("id %d", new_eid);
+*/
     return create(new_eid);
 }
 

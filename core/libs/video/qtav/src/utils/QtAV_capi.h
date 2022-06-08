@@ -194,7 +194,9 @@ namespace version
 {
     enum
     {
-        Major = 0, Minor = 6, Patch = 0,
+        Major = 0,
+        Minor = 6,
+        Patch = 0,
         Value = ((Major&0xff) << 16) | ((Minor&0xff) << 8) | (Patch&0xff)
     };
 
@@ -231,6 +233,8 @@ enum
   */
 class dso
 {
+private:
+
     void* handle         = nullptr;
     char  full_name[256] = { 0 };
 
@@ -323,12 +327,12 @@ protected:
  *    CAPI_DEFINE(const char*, zError, CAPI_ARG1(int))
  */
 #if CAPI_IS(LAZY_RESOLVE)
-#   define CAPI_DEFINE(R, name, ...) EXPAND(CAPI_DEFINE2_X(R, name, name, __VA_ARGS__)) /* not ##__VA_ARGS__ !*/
-#   define CAPI_DEFINE_ENTRY(R, name, ...) EXPAND(CAPI_DEFINE_ENTRY_X(R, name, name, __VA_ARGS__))
+#   define CAPI_DEFINE(R, name, ...)            EXPAND(CAPI_DEFINE2_X(R, name, name, __VA_ARGS__)) /* not ##__VA_ARGS__ !*/
+#   define CAPI_DEFINE_ENTRY(R, name, ...)      EXPAND(CAPI_DEFINE_ENTRY_X(R, name, name, __VA_ARGS__))
 #   define CAPI_DEFINE_M_ENTRY(R, M, name, ...) EXPAND(CAPI_DEFINE_M_ENTRY_X(R, M, name, name, __VA_ARGS__))
 #else
-#   define CAPI_DEFINE(R, name, ...) EXPAND(CAPI_DEFINE_X(R, name, __VA_ARGS__)) /* not ##__VA_ARGS__ !*/
-#   define CAPI_DEFINE_ENTRY(R, name, ...) EXPAND(CAPI_DEFINE_RESOLVER_X(R, name, name, __VA_ARGS__))
+#   define CAPI_DEFINE(R, name, ...)            EXPAND(CAPI_DEFINE_X(R, name, __VA_ARGS__)) /* not ##__VA_ARGS__ !*/
+#   define CAPI_DEFINE_ENTRY(R, name, ...)      EXPAND(CAPI_DEFINE_RESOLVER_X(R, name, name, __VA_ARGS__))
 #   define CAPI_DEFINE_M_ENTRY(R, M, name, ...) EXPAND(CAPI_DEFINE_M_RESOLVER_X(R, M, name, name, __VA_ARGS__))
 #endif
 
@@ -442,7 +446,7 @@ protected:
 #endif
 
 #ifdef DEBUG_LOAD
-#   define CAPI_DBG_LOAD(...) EXPAND(CAPI_LOG(stdout, ##__VA_ARGS__))
+#   define CAPI_DBG_LOAD(...)  EXPAND(CAPI_LOG(stdout, ##__VA_ARGS__))
 #   define CAPI_WARN_LOAD(...) EXPAND(CAPI_LOG(stderr, ##__VA_ARGS__))
 #else
 #   define CAPI_DBG_LOAD(...)
@@ -450,7 +454,7 @@ protected:
 #endif
 
 #ifdef DEBUG_RESOLVE
-#   define CAPI_DBG_RESOLVE(...) EXPAND(CAPI_LOG(stdout, ##__VA_ARGS__))
+#   define CAPI_DBG_RESOLVE(...)  EXPAND(CAPI_LOG(stdout, ##__VA_ARGS__))
 #   define CAPI_WARN_RESOLVE(...) EXPAND(CAPI_LOG(stderr, ##__VA_ARGS__))
 #else
 #   define CAPI_DBG_RESOLVE(...)
@@ -458,7 +462,7 @@ protected:
 #endif
 
 #ifdef DEBUG_CALL
-#   define CAPI_DBG_CALL(...) EXPAND(CAPI_LOG(stdout, ##__VA_ARGS__))
+#   define CAPI_DBG_CALL(...)  EXPAND(CAPI_LOG(stdout, ##__VA_ARGS__))
 #   define CAPI_WARN_CALL(...) EXPAND(CAPI_LOG(stderr, ##__VA_ARGS__))
 #else
 #   define CAPI_DBG_CALL(...)
@@ -601,15 +605,16 @@ public:
     static const char kExt[] = ".so";
 
 #   endif
+
 #endif
 
 } // namespace internal
 
 #ifdef CAPI_TARGET_OS_WIN
-#   define CAPI_SNPRINTF _snprintf
+#   define CAPI_SNPRINTF  _snprintf
 #   define CAPI_SNWPRINTF _snwprintf
 #else
-#   define CAPI_SNPRINTF snprintf
+#   define CAPI_SNPRINTF  snprintf
 #   define CAPI_SNWPRINTF snwprintf
 #endif
 
@@ -632,7 +637,7 @@ void dso::setFileNameAndVersion(const char* name, int ver)
 
 #if defined(CAPI_TARGET_OS_WIN) // ignore version on win. xxx-V.dll?
 
-        CAPI_SNPRINTF(full_name, sizeof(full_name), "%s%s%s", internal::kPre, name, internal::kExt);
+        CAPI_SNPRINTF(full_name, sizeof(full_name), "%s%s%s",    internal::kPre, name, internal::kExt);
 
 #elif defined(CAPI_TARGET_OS_MAC)
 
@@ -683,17 +688,17 @@ bool dso::unload()
 
 #ifdef CAPI_TARGET_OS_WIN
 
-    if (!::FreeLibrary(static_cast<HMODULE>(handle))) //return 0 if error. ref counted
+    if (!::FreeLibrary(static_cast<HMODULE>(handle))) // return 0 if error. ref counted
         return false;
 
 #else
 
-    if (::dlclose(handle) != 0) // ref counted
+    if (::dlclose(handle) != 0)                       // ref counted
         return false;
 
 #endif
 
-    handle = nullptr;  // TODO: check ref?
+    handle = nullptr;                                 // TODO: check ref?
 
     return true;
 }
@@ -701,7 +706,7 @@ bool dso::unload()
 void* dso::resolve(const char* sym, bool try_)
 {
     const char* s = sym;
-    char _s[512];   // old a.out systems add an underscore in front of symbols
+    char _s[512] = { 0 };                             // old a.out systems add an underscore in front of symbols
 
     if (!try_)
     {
@@ -715,11 +720,11 @@ void* dso::resolve(const char* sym, bool try_)
 
 #ifdef CAPI_TARGET_OS_WIN
 
-    void *ptr = (void*)::GetProcAddress((HMODULE)handle, s);
+    void* ptr = (void*)::GetProcAddress((HMODULE)handle, s);
 
 #else
 
-    void *ptr = ::dlsym(handle, s);
+    void* ptr = ::dlsym(handle, s);
 
 #endif
 
@@ -732,7 +737,7 @@ void* dso::resolve(const char* sym, bool try_)
 } // namespace capi
 
 #if defined(_MSC_VER)                                   // krazy:exclude=cpp
-#   pragma warning(disable:4098) // vc return void
+#   pragma warning(disable:4098)                        // vc return void
 #endif
 
 #ifdef __GNUC__
@@ -748,9 +753,9 @@ void* dso::resolve(const char* sym, bool try_)
  * Defines both namespace style and class style. User can choose which one to use at runtime by adding a macro before including the header or not: #define SOMELIB_CAPI_NS
  * See test/zlib/zlib_api.h
  */
-#define CAPI_DEFINE_X(R, name, ARG_T, ARG_T_V, ARG_V) \
-    CAPI_DEFINE_T_V(R, name, ARG_T, ARG_T_V, ARG_V) \
-    CAPI_NS_DEFINE_T_V(R, name, ARG_T, ARG_T_V, ARG_V)
+#define CAPI_DEFINE_X(R, name, ARG_T, ARG_T_V, ARG_V)   \
+        CAPI_DEFINE_T_V(R, name, ARG_T, ARG_T_V, ARG_V) \
+        CAPI_NS_DEFINE_T_V(R, name, ARG_T, ARG_T_V, ARG_V)
 
 /* declare and define the symbol resolvers*/
 
@@ -761,9 +766,9 @@ void* dso::resolve(const char* sym, bool try_)
 
 #define CAPI_DEFINE_M_RESOLVER_X(R, M, name, sym, ARG_T, ARG_T_V, ARG_V) CAPI_DEFINE_M_RESOLVER_T_V(R, M, name, sym, ARG_T, ARG_T_V, ARG_V)
 
-#define CAPI_DEFINE2_X(R, name, sym, ARG_T, ARG_T_V, ARG_V) \
-    CAPI_DEFINE2_T_V(R, name, sym, ARG_T, ARG_T_V, ARG_V) \
-    CAPI_NS_DEFINE2_T_V(R, name, sym, ARG_T, ARG_T_V, ARG_V)
+#define CAPI_DEFINE2_X(R, name, sym, ARG_T, ARG_T_V, ARG_V)   \
+        CAPI_DEFINE2_T_V(R, name, sym, ARG_T, ARG_T_V, ARG_V) \
+        CAPI_NS_DEFINE2_T_V(R, name, sym, ARG_T, ARG_T_V, ARG_V)
 
 #define CAPI_DEFINE_ENTRY_X(R, name, sym, ARG_T, ARG_T_V, ARG_V) CAPI_DEFINE_M_ENTRY_X(R, EMPTY_LINKAGE, name, sym, ARG_T, ARG_T_V, ARG_V)
 

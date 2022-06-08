@@ -113,7 +113,8 @@ protected:
         return ((i < capacity()) ? i : i - capacity());
     }
 
-    size_t m_0, m_1;
+    size_t m_0;
+    size_t m_1;
     size_t m_s;
     C      m_data;
 };
@@ -168,7 +169,8 @@ void ring_api<T,C>::push_back(const T& t)
     else if (empty())
     {
         m_s         = 1;
-        m_0         = m_1 = 0;
+        m_0         = 0;
+        m_1         = 0;
         m_data[m_0] = t;
     }
     else

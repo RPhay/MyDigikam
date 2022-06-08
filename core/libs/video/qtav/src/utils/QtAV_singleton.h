@@ -35,7 +35,7 @@
 #endif
 
 #ifdef DEBUG
-#   define DBG(fmt, ...) \
+#   define DBG(fmt, ...)                 \
     fprintf(stderr, fmt, ##__VA_ARGS__); \
     fflush(0);
 #else
@@ -43,7 +43,7 @@
 #endif
 
 #define DISABLE_COPY(Class) \
-    Class(const Class &); \
+    Class(const Class &);   \
     Class &operator=(const Class &);
 
 /*
@@ -90,8 +90,9 @@ bool Singleton<T>::destroyed_;
 template<typename T>
 T &Singleton<T>::Instance()
 {
-    //DBG("instance = %p\n", pInstance_);
-
+/*
+    DBG("instance = %p\n", pInstance_);
+*/
     if (!pInstance_)
     {
         MakeInstance();

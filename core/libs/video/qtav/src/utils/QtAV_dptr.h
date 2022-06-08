@@ -113,13 +113,13 @@
 
 // put in private
 
-#define DPTR_DECLARE_PRIVATE(Class) \
-    inline Class##Private& d_func() { return dptr.pri<Class##Private>(); } \
+#define DPTR_DECLARE_PRIVATE(Class)                                                    \
+    inline Class##Private& d_func() { return dptr.pri<Class##Private>(); }             \
     inline const Class##Private& d_func() const { return dptr.pri<Class##Private>(); } \
     friend class Class##Private;
 
-#define DPTR_DECLARE_PUBLIC(Class) \
-    inline Class& q_func() { return *static_cast<Class*>(dptr_ptr()); } \
+#define DPTR_DECLARE_PUBLIC(Class)                                                        \
+    inline Class& q_func() { return *static_cast<Class*>(dptr_ptr()); }                   \
     inline const Class& q_func() const { return *static_cast<const Class*>(dptr_ptr()); } \
     friend class Class;
 

@@ -64,8 +64,9 @@ QString appDataDir();
  */
 QString appFontsDir();
 
-// usually not writable. Maybe empty for some platforms, for example winrt
-
+/**
+ * usually not writable. Maybe empty for some platforms, for example winrt
+ */
 QString fontsDir();
 
 } // namespace Path
@@ -76,12 +77,13 @@ QString optionsToString(void* obj);
 void setOptionsToFFmpegObj(const QVariant& opt, void* obj);
 void setOptionsToDict(const QVariant& opt, AVDictionary** dict);
 
-// set qobject meta properties
-
+/**
+ * set qobject meta properties
+ */
 void setOptionsForQObject(const QVariant& opt, QObject* obj);
 
 } // namespace Internal
 
 } // namespace QtAV
 
-#endif //QTAV_INTERNAL_H
+#endif // QTAV_INTERNAL_H

@@ -47,32 +47,7 @@ static const char kFileScheme[] = "file:";
 
 static QString fromCFString(CFStringRef string)
 {
-
-#   if QT_VERSION >= QT_VERSION_CHECK(5, 2, 0)
-
     return QString().fromCFString(string);
-
-#   else
-
-    if (!string)
-        return QString();
-
-    CFIndex length       = CFStringGetLength(string);
-
-    // Fast path: CFStringGetCharactersPtr does not copy but may return null for any and no reason.
-
-    const UniChar* chars = CFStringGetCharactersPtr(string);
-
-    if (chars)
-        return QString(reinterpret_cast<const QChar*>(chars), length);
-
-    QString ret(length, Qt::Uninitialized);
-    CFStringGetCharacters(string, CFRangeMake(0, length), reinterpret_cast<UniChar*>(ret.data()));
-
-    return ret;
-
-#   endif
-
 }
 
 QString absolutePathFromOSX(const QString& s)
@@ -206,24 +181,15 @@ QString appFontsDir()
 
 QString fontsDir()
 {
-
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-
-    return QDesktopServices::storageLocation(QDesktopServices::FontsLocation);
-
-#else
-
     return QStandardPaths::standardLocations(QStandardPaths::FontsLocation).first();
-
-#endif
-
 }
 
-} //namespace Path
+} // namespace Path
 
 QString options2StringHelper(void* obj, const char* unit)
 {
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("obj: %p", obj);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("obj: %p", obj);
 
     QString s;
     const AVOption* opt = nullptr;
@@ -255,6 +221,7 @@ QString options2StringHelper(void* obj, const char* unit)
             case AV_OPT_TYPE_INT64:
             {
                 s.append(QString::fromUtf8("(%1)").arg(opt->default_val.i64));
+
                 break;
             }
 
@@ -262,6 +229,7 @@ QString options2StringHelper(void* obj, const char* unit)
             case AV_OPT_TYPE_FLOAT:
             {
                 s.append(QString::fromUtf8("(%1)").arg(opt->default_val.dbl, 0, 'f'));
+
                 break;
             }
 
@@ -269,12 +237,14 @@ QString options2StringHelper(void* obj, const char* unit)
             {
                 if (opt->default_val.str)
                     s.append(QString::fromUtf8("(%1)").arg(QString::fromUtf8(opt->default_val.str)));
+
                 break;
             }
 
             case AV_OPT_TYPE_RATIONAL:
             {
                 s.append(QString::fromUtf8("(%1/%2)").arg(opt->default_val.q.num).arg(opt->default_val.q.den));
+
                 break;
             }
 
@@ -338,7 +308,8 @@ void setOptionsToFFmpegObj(const QVariant& opt, void* obj)
             const QByteArray key(i.key().toUtf8());
 
             qCDebug(DIGIKAM_QTAV_LOG).noquote()
-                << QString::asprintf("%s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
+                << QString::asprintf("%s=>%s",
+                    i.key().toUtf8().constData(), i.value().toByteArray().constData());
 
             if      ((vt == QVariant::Int) || (vt == QVariant::UInt) || (vt == QVariant::Bool))
             {
@@ -377,7 +348,8 @@ void setOptionsToFFmpegObj(const QVariant& opt, void* obj)
         const QByteArray key(i.key().toUtf8());
 
         qCDebug(DIGIKAM_QTAV_LOG).noquote()
-            << QString::asprintf("%s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
+            << QString::asprintf("%s=>%s",
+                i.key().toUtf8().constData(), i.value().toByteArray().constData());
 
         if      ((vt == QVariant::Int) || (vt == QVariant::UInt) || (vt == QVariant::Bool))
         {
@@ -423,6 +395,7 @@ void setOptionsToDict(const QVariant& opt, AVDictionary** dict)
                     // QVariant.toByteArray(): "true" or "false", can not recognized by avcodec
 
                     av_dict_set(dict, key.constData(), QByteArray::number(i.value().toInt()).constData(), 0);
+
                     break;
                 }
 
@@ -431,12 +404,14 @@ void setOptionsToDict(const QVariant& opt, AVDictionary** dict)
                     // key and value are in lower case
 
                     av_dict_set(dict, i.key().toUtf8().constData(), i.value().toByteArray().constData(), 0);
+
                     break;
                 }
             }
 
             qCDebug(DIGIKAM_QTAV_LOG).noquote()
-                << QString::asprintf("dict: %s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
+                << QString::asprintf("dict: %s=>%s",
+                    i.key().toUtf8().constData(), i.value().toByteArray().constData());
         }
 
         return;
@@ -466,6 +441,7 @@ void setOptionsToDict(const QVariant& opt, AVDictionary** dict)
                 // QVariant.toByteArray(): "true" or "false", can not recognized by avcodec
 
                 av_dict_set(dict, key.constData(), QByteArray::number(i.value().toInt()).constData(), 0);
+
                 break;
             }
 
@@ -474,12 +450,14 @@ void setOptionsToDict(const QVariant& opt, AVDictionary** dict)
                 // key and value are in lower case
 
                 av_dict_set(dict, i.key().toUtf8().constData(), i.value().toByteArray().constData(), 0);
+
                 break;
             }
         }
 
         qCDebug(DIGIKAM_QTAV_LOG).noquote()
-            << QString::asprintf("dict: %s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
+            << QString::asprintf("dict: %s=>%s",
+                i.key().toUtf8().constData(), i.value().toByteArray().constData());
     }
 }
 
@@ -488,9 +466,10 @@ void setOptionsForQObject(const QVariant& opt, QObject *obj)
     if (!opt.isValid())
         return;
 
-    qCDebug(DIGIKAM_QTAV_LOG) << QString::fromUtf8("set %1(%2) meta properties:")
-                                    .arg(QLatin1String(obj->metaObject()->className()))
-                                    .arg(obj->objectName());
+    qCDebug(DIGIKAM_QTAV_LOG)
+        << QString::fromUtf8("set %1(%2) meta properties:")
+            .arg(QLatin1String(obj->metaObject()->className()))
+            .arg(obj->objectName());
 
     if (opt.type() == QVariant::Hash)
     {
@@ -511,7 +490,8 @@ void setOptionsForQObject(const QVariant& opt, QObject *obj)
             obj->setProperty(i.key().toUtf8().constData(), i.value());
 
             qCDebug(DIGIKAM_QTAV_LOG).noquote()
-                << QString::asprintf("%s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
+                << QString::asprintf("%s=>%s",
+                    i.key().toUtf8().constData(), i.value().toByteArray().constData());
         }
     }
 
@@ -535,7 +515,8 @@ void setOptionsForQObject(const QVariant& opt, QObject *obj)
         obj->setProperty(i.key().toUtf8().constData(), i.value());
 
         qCDebug(DIGIKAM_QTAV_LOG).noquote()
-            << QString::asprintf("%s=>%s", i.key().toUtf8().constData(), i.value().toByteArray().constData());
+            << QString::asprintf("%s=>%s",
+                i.key().toUtf8().constData(), i.value().toByteArray().constData());
     }
 }
 
