@@ -2,6 +2,7 @@
 Name=AVPlayer
 Name[ca]=AVPlayer
 Name[ca@valencia]=AVPlayer
+Name[de]=AVPlayer
 Name[es]=AVPlayer
 Name[fr]=AVPlayer
 Name[it]=AVPlayer
@@ -15,6 +16,7 @@ Name[zh_CN]=AVPlayer
 GenericName=Audio and Video Player
 GenericName[ca]=Reproductor d'àudio i vídeo
 GenericName[ca@valencia]=Reproductor d'àudio i vídeo
+GenericName[de]=Audio- und Videoabspieler
 GenericName[es]=Reproductor de sonido y vídeo
 GenericName[fr]=Lecteur audio et vidéo
 GenericName[it]=Riproduttore audio e video
