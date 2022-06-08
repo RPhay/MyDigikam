@@ -86,17 +86,7 @@ public:
 
     int count() const
     {
-
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0) || QT_VERSION >= QT_VERSION_CHECK(5, 3, 0)
-
         return m_counter;
-
-#else
-
-        return m_counter.load();
-
-#endif
-
     }
 
     bool isNull() const

@@ -106,16 +106,7 @@ static unsigned get_qt_version()
 
 static const depend_component* get_depend_component(const depend_component* info = nullptr)
 {
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 3, 0)
-
     static const char* qt_build_info = (get_qt_version() >= QT_VERSION_CHECK(5, 3, 0)) ? QLibraryInfo::build() : "";
-
-#else
-
-    static const char* qt_build_info = "";
-
-#endif
 
     static const depend_component components[] =
     {
@@ -323,9 +314,9 @@ static void qtav_ffmpeg_log_callback(void* ctx, int level,const char* fmt, va_li
     if (level > Internal::gAVLogLevel)
         return;
 
-    AVClass* c   = ctx ? *(AVClass**)ctx : nullptr;
-    QString qmsg = QString().asprintf("[FFmpeg:%s] ", c ? c->item_name(ctx) : "?") + QString().vasprintf(fmt, vl);
-    qmsg         = qmsg.trimmed();
+    AVClass* const c = ctx ? *(AVClass**)ctx : nullptr;
+    QString qmsg     = QString().asprintf("[FFmpeg:%s] ", c ? c->item_name(ctx) : "?") + QString().vasprintf(fmt, vl);
+    qmsg             = qmsg.trimmed();
 
     if      (level > AV_LOG_WARNING)
         qCDebug(DIGIKAM_QTAV_LOG) << qPrintable(qmsg);
@@ -340,13 +331,13 @@ QString avformatOptions()
     if (!opts.isEmpty())
         return opts;
 
-    void* obj = const_cast<void*>(reinterpret_cast<const void*>(avformat_get_class()));
-    opts      = Internal::optionsToString((void*)&obj);
+    void* const obj = const_cast<void*>(reinterpret_cast<const void*>(avformat_get_class()));
+    opts            = Internal::optionsToString((void*)&obj);
     opts.append(ushort('\n'));
 
 #if AVFORMAT_STATIC_REGISTER
 
-    const AVInputFormat *i = nullptr;
+    const AVInputFormat* i = nullptr;
     void* it               = nullptr;
 
     while ((i = av_demuxer_iterate(&it)))
@@ -354,8 +345,8 @@ QString avformatOptions()
 
 #else
 
-    AVInputFormat* i = nullptr;
-    av_register_all();          // MUST register all input/output formats
+    AVInputFormat* i       = nullptr;
+    av_register_all();                 // MUST register all input/output formats
 
     while ((i = av_iformat_next(i)))
     {
@@ -383,7 +374,7 @@ QString avformatOptions()
 #else
 
     av_register_all();                  // MUST register all input/output formats
-    AVOutputFormat* o = nullptr;
+    AVOutputFormat* o       = nullptr;
 
     while ((o = av_oformat_next(o)))
     {
@@ -410,7 +401,7 @@ QString avcodecOptions()
     if (!opts.isEmpty())
         return opts;
 
-    void* obj        = const_cast<void*>(reinterpret_cast<const void*>(avcodec_get_class()));
+    void* const obj  = const_cast<void*>(reinterpret_cast<const void*>(avcodec_get_class()));
     opts             = Internal::optionsToString((void*)&obj);
     opts.append(ushort('\n'));
     const AVCodec* c = nullptr;
@@ -496,18 +487,21 @@ static void init_supported_codec_info()
             case AVMEDIA_TYPE_AUDIO:
             {
                 s_audio_mimes << list;
+
                 break;
             }
 
             case AVMEDIA_TYPE_VIDEO:
             {
                 s_video_mimes << list;
+
                 break;
             }
 
             case AVMEDIA_TYPE_SUBTITLE:
             {
                 s_subtitle_mimes << list;
+
                 break;
             }
 
@@ -565,11 +559,30 @@ ColorSpace colorSpaceFromFFmpeg(AVColorSpace cs)
     {
         // from ffmpeg: order of coefficients is actually GBR
 
-        case AVCOL_SPC_RGB:       return ColorSpace_GBR;
-        case AVCOL_SPC_BT709:     return ColorSpace_BT709;
-        case AVCOL_SPC_BT470BG:   return ColorSpace_BT601;
-        case AVCOL_SPC_SMPTE170M: return ColorSpace_BT601;
-        default:                  return ColorSpace_Unknown;
+        case AVCOL_SPC_RGB:
+        {
+            return ColorSpace_GBR;
+        }
+
+        case AVCOL_SPC_BT709:
+        {
+            return ColorSpace_BT709;
+        }
+
+        case AVCOL_SPC_BT470BG:
+        {
+            return ColorSpace_BT601;
+        }
+
+        case AVCOL_SPC_SMPTE170M:
+        {
+            return ColorSpace_BT601;
+        }
+
+        default:
+        {
+            return ColorSpace_Unknown;
+        }
     }
 }
 
@@ -577,9 +590,20 @@ ColorRange colorRangeFromFFmpeg(AVColorRange cr)
 {
     switch (cr)
     {
-        case AVCOL_RANGE_MPEG: return ColorRange_Limited;
-        case AVCOL_RANGE_JPEG: return ColorRange_Full;
-        default:               return ColorRange_Unknown;
+        case AVCOL_RANGE_MPEG:
+        {
+            return ColorRange_Limited;
+        }
+
+        case AVCOL_RANGE_JPEG:
+        {
+            return ColorRange_Full;
+        }
+
+        default:
+        {
+            return ColorRange_Unknown;
+        }
     }
 }
 

@@ -104,9 +104,12 @@ const QMatrix4x4& ColorTransform::YUV2RGB(ColorSpace cs)
     return yuv2rgb_bt601;
 }
 
-// For yuv->rgb, assume yuv is full range before convertion, rgb is full range after convertion. so if input yuv is limited range, transform to full range first. If display rgb is limited range, transform to limited range at last.
-// *ColorRangeYUV(...)
-
+/**
+ * For yuv->rgb, assume yuv is full range before convertion, rgb is full range after convertion.
+ * so if input yuv is limited range, transform to full range first.
+ * If display rgb is limited range, transform to limited range at last.
+ * *ColorRangeYUV(...)
+ */
 static QMatrix4x4 ColorRangeYUV(ColorRange from, ColorRange to)
 {
     if (from == to)
@@ -119,7 +122,8 @@ static QMatrix4x4 ColorRangeYUV(ColorRange from, ColorRange to)
     {
         // TODO: Unknown. But what if really want unknown?
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("input yuv limited range");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("input yuv limited range");
 
         // [Y1, Y2] => [0, s]
 
@@ -158,7 +162,9 @@ static QMatrix4x4 ColorRangeRGB(ColorRange from, ColorRange to)
 
     if (to == ColorRange_Limited)
     {
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("output rgb limited range");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("output rgb limited range");
+
         QMatrix4x4 m;
         m.translate(R1 / s, R1 / s, R1 / s);
         m.scale((R2 - R1) / s, (R2 - R1) / s, (R2 - R1) / s);
@@ -270,10 +276,10 @@ public:
         float s        = saturation + 1.0f;
 
         QMatrix4x4 S(
-            (1.0f - s)*wr + s, (1.0f - s)*wg    , (1.0f - s)*wb    , 0.0f,
-            (1.0f - s)*wr    , (1.0f - s)*wg + s, (1.0f - s)*wb    , 0.0f,
-            (1.0f - s)*wr    , (1.0f - s)*wg    , (1.0f - s)*wb + s, 0.0f,
-                         0.0f,              0.0f,              0.0f, 1.0f
+            (1.0f - s) * wr + s, (1.0f - s) * wg    , (1.0f - s) * wb    , 0.0f,
+            (1.0f - s) * wr    , (1.0f - s) * wg + s, (1.0f - s) * wb    , 0.0f,
+            (1.0f - s) * wr    , (1.0f - s) * wg    , (1.0f - s) * wb + s, 0.0f,
+                           0.0f,                0.0f,                0.0f, 1.0f
         );
 
         // Hue
@@ -286,10 +292,10 @@ public:
         // conversion of angle/axis representation to matrix representation
 
         QMatrix4x4 H(
-            n*n*(1.0f - hc) + hc  , n*n*(1.0f - hc) - n*hs, n*n*(1.0f - hc) + n*hs, 0.0f,
-            n*n*(1.0f - hc) + n*hs, n*n*(1.0f - hc) + hc  , n*n*(1.0f - hc) - n*hs, 0.0f,
-            n*n*(1.0f - hc) - n*hs, n*n*(1.0f - hc) + n*hs, n*n*(1.0f - hc) + hc  , 0.0f,
-                              0.0f,                   0.0f,                   0.0f, 1.0f
+            n * n * (1.0f - hc) + hc    , n * n * (1.0f - hc) - n * hs, n * n * (1.0f - hc) + n * hs, 0.0f,
+            n * n * (1.0f - hc) + n * hs, n * n * (1.0f - hc) + hc    , n * n * (1.0f - hc) - n * hs, 0.0f,
+            n * n * (1.0f - hc) - n * hs, n * n * (1.0f - hc) + n * hs, n * n * (1.0f - hc) + hc    , 0.0f,
+                                    0.0f,                         0.0f,                         0.0f, 1.0f
         );
 
         // B*C*S*H*rgb_range_mat(*yuv2rgb*yuv_range_mat)*bpc_scale
@@ -304,25 +310,29 @@ public:
             case ColorSpace_XYZ:
             {
                 M = kXYZ2sRGB.inverted() * M;
+
                 break;
             }
 
             case ColorSpace_RGB:
             {
                 M *= ColorRangeRGB(ColorRange_Full, range_out);
+
                 break;
             }
 
             case ColorSpace_GBR:
             {
                 M *= ColorRangeRGB(ColorRange_Full, range_out);
-                M = kGBR2RGB.inverted() * M;
+                M  = kGBR2RGB.inverted() * M;
+
                 break;
             }
 
             default:
             {
                 M = YUV2RGB(cs_out).inverted() * M;
+
                 break;
             }
         }
@@ -332,6 +342,7 @@ public:
             case ColorSpace_XYZ:
             {
                 M *= kXYZ2sRGB;
+
                 break;
             }
 
@@ -343,12 +354,14 @@ public:
             case ColorSpace_GBR:
             {
                 M *= kGBR2RGB;
+
                 break;
             }
 
             default:
             {
                 M *= YUV2RGB(cs_in) * ColorRangeYUV(range_in, ColorRange_Full);
+
                 break;
             }
         }
@@ -356,16 +369,18 @@ public:
         if ((bpc_scale != 1.0) && (cs_in != ColorSpace_XYZ))
         {
             // why no range correction for xyz?
-
-            //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("bpc scale: %f", bpc_scale);
-
+/*
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("bpc scale: %f", bpc_scale);
+*/
             M *= QMatrix4x4(bpc_scale, 0, 0, 0,
                             0, bpc_scale, 0, 0,
                             0, 0, bpc_scale, 0,
                             0, 0, 0, a_bpc_scale ? bpc_scale : 1); // scale alpha channel too
         }
-
-        //qCDebug(DIGIKAM_QTAV_LOG) << "color mat: " << M;
+/*
+        qCDebug(DIGIKAM_QTAV_LOG) << "color mat: " << M;
+*/
     }
 
     mutable bool        recompute;
@@ -460,7 +475,7 @@ const QMatrix4x4& ColorTransform::matrixRef() const
 
 /*!
  * \brief reset
- *   set to identity
+ * set to identity
  */
 void ColorTransform::reset()
 {

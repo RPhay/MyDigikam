@@ -36,9 +36,7 @@
 
 // TODO: block full and empty condition separately
 
-
 template<typename T> class QQueue;
-
 
 namespace QtAV
 {
@@ -143,7 +141,8 @@ private:
     QScopedPointer<StateChangeCallback> empty_callback, threshold_callback, full_callback;
 };
 
-/* cap - thres = 24, about 1s
+/**
+ * cap - thres = 24, about 1s
  * if fps is large, then larger capacity and threshold is preferred
  */
 template <typename T, template <typename> class Container>
@@ -161,8 +160,10 @@ BlockingQueue<T, Container>::BlockingQueue()
 template <typename T, template <typename> class Container>
 void BlockingQueue<T, Container>::setCapacity(int max)
 {
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("queue capacity==>>%d", max);
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("queue capacity==>>%d", max);
+*/
     QWriteLocker locker(&lock);
     Q_UNUSED(locker);
     cap = max;
@@ -174,8 +175,10 @@ void BlockingQueue<T, Container>::setCapacity(int max)
 template <typename T, template <typename> class Container>
 void BlockingQueue<T, Container>::setThreshold(int min)
 {
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("queue threshold==>>%d", min);
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("queue threshold==>>%d", min);
+*/
     QWriteLocker locker(&lock);
     Q_UNUSED(locker);
 
@@ -207,21 +210,29 @@ bool BlockingQueue<T, Container>::put(const T& t, unsigned long timeout_ms)
             ret = cond_full.wait(&lock, timeout_ms);
 
         // uncomment here to reject placing items into a full queue -- update API docs if you do this.
-        // if (!ret) return false;
+/*
+        if (!ret)
+            return false;
+*/
     }
 
     queue.enqueue(t);
-    onPut(t);               // emit bufferProgressChanged here if buffering
+    onPut(t);                   // emit bufferProgressChanged here if buffering
 
     if (checkEnough())
     {
-        cond_empty.wakeOne(); //emit buffering finished here
-
-        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("queue is enough: %d/%d~%d", queue.size(), thres, cap);
+        cond_empty.wakeOne();   // emit buffering finished here
+/*
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("queue is enough: %d/%d~%d", queue.size(), thres, cap);
+*/
     }
     else
     {
-        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("buffering: %d/%d~%d", queue.size(), thres, cap);
+/*
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("buffering: %d/%d~%d", queue.size(), thres, cap);
+*/
     }
 
     return ret;
@@ -239,9 +250,10 @@ T BlockingQueue<T, Container>::take(unsigned long timeout_ms, bool* isValid)
     if (checkEmpty())
     {
         // TODO : always block?
-
-        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("queue empty!!");
-
+/*
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("queue empty!!");
+*/
         if (empty_callback)
         {
             empty_callback->call();
@@ -253,8 +265,10 @@ T BlockingQueue<T, Container>::take(unsigned long timeout_ms, bool* isValid)
 
     if (checkEmpty())
     {
-        //qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Queue is still empty");
-
+/*
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Queue is still empty");
+*/
         if (empty_callback)
         {
             empty_callback->call();
@@ -322,9 +336,9 @@ void BlockingQueue<T, Container>::clear()
 {
     QWriteLocker locker(&lock);
     Q_UNUSED(locker);
-
-    //cond_empty.wakeAll();
-
+/*
+    cond_empty.wakeAll();
+*/
     cond_full.wakeAll();
     queue.clear();
 

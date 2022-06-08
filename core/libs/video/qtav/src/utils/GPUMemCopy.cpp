@@ -39,12 +39,6 @@ extern "C"
 
 #include "QtAV_Global.h"
 
-#ifndef Q_PROCESSOR_X86 // qt4
-#   if defined(__SSE__) || defined(_M_IX86) || defined(_M_X64)
-#       define Q_PROCESSOR_X86
-#   endif
-#endif
-
 // read qsimd_p.h
 
 #define UINT unsigned int
@@ -110,7 +104,7 @@ GPUMemCopy::~GPUMemCopy()
 
 bool GPUMemCopy::isReady() const
 {
-    return mInitialized && GPUMemCopy::isAvailable();
+    return (mInitialized && GPUMemCopy::isAvailable());
 }
 
 #define CACHED_BUFFER_SIZE 4096
@@ -135,7 +129,6 @@ bool GPUMemCopy::initCache(unsigned width)
 
     return false;
 }
-
 
 void GPUMemCopy::cleanCache()
 {

@@ -42,10 +42,9 @@ namespace QtAV
 
 /*!
  * \brief The ColorTransform class
- *  A convenience class to get color transformation matrix.
- *  Implicitly shared.
+ * A convenience class to get color transformation matrix.
+ * Implicitly shared.
  */
-
 class ColorTransform
 {
 public:
@@ -72,8 +71,9 @@ public:
     ColorSpace outputColorSpace()               const;
     void setOutputColorSpace(ColorSpace cs);
 
-    /// Currently assume input is yuv, output is rgb
-
+    /**
+     * Currently assume input is yuv, output is rgb
+     */
     void setInputColorRange(ColorRange value);
     ColorRange inputColorRange()                const;
 
@@ -102,7 +102,7 @@ public:
 
     /*!
      * \brief reset
-     *   only set in-space transform to identity. other parameters such as in/out color space does not change
+     * only set in-space transform to identity. other parameters such as in/out color space does not change
      */
     void reset();
 

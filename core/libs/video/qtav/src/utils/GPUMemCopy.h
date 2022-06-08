@@ -55,8 +55,8 @@ private:
 
     typedef struct
     {
-        unsigned char* buffer;
-        size_t         size;
+        unsigned char* buffer = nullptr;
+        size_t         size   = 0;
     } cache_t;
 
     cache_t mCache;
@@ -66,4 +66,4 @@ void* gpu_memcpy(void* dst, const void* src, size_t size);
 
 } // namespace QtAV
 
-#endif //  QTAV_GPU_MEM_COPY_H
+#endif // QTAV_GPU_MEM_COPY_H

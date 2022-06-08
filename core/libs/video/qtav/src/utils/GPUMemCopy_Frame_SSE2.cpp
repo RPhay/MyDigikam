@@ -61,8 +61,9 @@
 
 void CopyFrame_SSE2(void* pSrc, void* pDest, void* pCacheBlock, UINT width, UINT height, UINT pitch)
 {
-    //assert(((intptr_t)pCacheBlock & 0x0f) == 0 && (dst_pitch & 0x0f) == 0);
-
+/*
+    assert(((intptr_t)pCacheBlock & 0x0f) == 0 && (dst_pitch & 0x0f) == 0);
+*/
     __m128i     x0, x1, x2, x3;
     __m128i*    pCache = nullptr;
     UINT        x, y, yLoad, yStore;
@@ -80,11 +81,11 @@ void CopyFrame_SSE2(void* pSrc, void* pDest, void* pCacheBlock, UINT width, UINT
     if (src_unaligned || dst_unaligned)
         qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("===========unaligned: src %d, dst: %d,  extraPitch: %d", src_unaligned, dst_unaligned, extraPitch);
 */
-    //  COPY THROUGH 4KB CACHED BUFFER
+    // COPY THROUGH 4KB CACHED BUFFER
 
     for (y = 0 ; y < height ; y += rowsPerBlock)
     {
-        //  ROWS LEFT TO COPY AT END
+        // ROWS LEFT TO COPY AT END
 
         if (y + rowsPerBlock > height)
             rowsPerBlock = height - y;

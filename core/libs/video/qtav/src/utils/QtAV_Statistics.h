@@ -146,8 +146,9 @@ public:
         QString pix_fmt;
         int     rotate;
 
-        /// return current absolute time (seconds since epcho
-
+        /**
+         * return current absolute time (seconds since epcho
+         */
         qint64 frameDisplayed(qreal pts); ///< used to compute currentDisplayFPS()
 
     private:
