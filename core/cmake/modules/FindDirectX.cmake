@@ -179,7 +179,7 @@ if(NOT MSVC_VERSION GREATER 1600 OR MINGW)
 
             if(DirectX_FIND_REQUIRED_D3D11)
 
-                set(DIRECT3D_LIB_NAMES d3d11 dxgi dxguid X3DAudio)
+                set(DIRECT3D_LIB_NAMES d3d11 dxgi dxguid Xaudio2)
 
             else()
 
