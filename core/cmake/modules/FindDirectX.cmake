@@ -325,7 +325,7 @@ if(MSVC_VERSION GREATER 1600 OR MINGW)
               PATHS ${DIRECT3D_DLL_REDIST_SEARCH_PATHS}
               DOC "Direct3D DLL"
               NO_DEFAULT_PATH
-    ) 
+    )
 
     if(DIRECT3D_DLL AND NOT MINGW)
 
@@ -410,7 +410,7 @@ foreach(COMPONENT DInput DSound XAudio2 XInput)
 
     string(TOUPPER ${COMPONENT} UPCASE_NAME)
 
-    if(HAVE_${UPCASE_NAME}_H)
+    if(HAVE_${UPCASE_NAME}_H AND DIRECTX_${UPCASE_NAME})
 
         set(DirectX_${COMPONENT}_FOUND TRUE)
         set(HAVE_DIRECTX TRUE)
