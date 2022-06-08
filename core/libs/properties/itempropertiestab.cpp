@@ -845,12 +845,12 @@ void ItemPropertiesTab::shortenedMakeInfo(QString& make)
     make.remove(QLatin1String(" OPTICAL CO.,LTD"),   Qt::CaseInsensitive);        // from Olympus
     make.remove(QLatin1String(" IMAGING CORP."),     Qt::CaseInsensitive);        // from Olympus
     make.remove(QLatin1String(" Techwin co.,Ltd."),  Qt::CaseInsensitive);        // from Samsung
-    make.remove(QLatin1String("  Co.,Ltd."),         Qt::CaseInsensitive);        // from Minolta
-    make.remove(QLatin1String(" Co., Ltd."),         Qt::CaseInsensitive);        // from Minolta
     make.remove(QLatin1String(" Electric Co.,Ltd."), Qt::CaseInsensitive);        // from Sanyo
     make.remove(QLatin1String(" Electric Co.,Ltd"),  Qt::CaseInsensitive);        // from Sanyo
     make.remove(QLatin1String(" COMPUTER CO.,LTD."), Qt::CaseInsensitive);        // from Casio
     make.remove(QLatin1String(" COMPUTER CO.,LTD"),  Qt::CaseInsensitive);        // from Casio
+    make.remove(QLatin1String(" Co., Ltd."),         Qt::CaseInsensitive);        // from Minolta
+    make.remove(QLatin1String("  Co.,Ltd."),         Qt::CaseInsensitive);        // from Minolta
     make = make.trimmed();
 }
 
