@@ -118,8 +118,11 @@ private:
     Q_DISABLE_COPY(SurfaceInteropVAAPI);
 };
 
-// load/resolve symbols only once in decoder and pass a VAAPI_XXX ptr or use pool
+// ----------------------------------------------------------------------------------
 
+/**
+ * load/resolve symbols only once in decoder and pass a VAAPI_XXX ptr or use pool
+ */
 class GLXInteropResource final: public InteropResource,
                                 protected VAAPI_GLX
 {
@@ -135,6 +138,8 @@ private:
 
     QMap<GLuint, surface_glx_ptr> glx_surfaces; // render to different texture. surface_glx_ptr is created with texture
 };
+
+// ----------------------------------------------------------------------------------
 
 class X11;
 

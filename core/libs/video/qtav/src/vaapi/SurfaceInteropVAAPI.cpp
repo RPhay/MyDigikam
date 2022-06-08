@@ -154,18 +154,19 @@ void* SurfaceInteropVAAPI::mapToHost(const VideoFormat& format, void* handle, in
         return nullptr;
 
     void* p_base = nullptr;
-    VA_ENSURE(vaGetImage(m_surface->vadisplay(), m_surface->get(), 0, 0, 
+    VA_ENSURE(vaGetImage(m_surface->vadisplay(), m_surface->get(), 0, 0,
               m_surface->width(), m_surface->height(), image.image_id), nullptr);
 
     VA_ENSURE(vaMapBuffer(m_surface->vadisplay(), image.buf, &p_base), nullptr); // TODO: destroy image before return
 
     VideoFormat::PixelFormat pixfmt = pixelFormatFromVA(image.format.fourcc);
-    bool swap_uv = (image.format.fourcc != VA_FOURCC_NV12);
+    bool swap_uv                    = (image.format.fourcc != VA_FOURCC_NV12);
 
     if (pixfmt == VideoFormat::Format_Invalid)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-            << QString::asprintf("unsupported vaapi pixel format: %#x", image.format.fourcc);
+            << QString::asprintf("unsupported vaapi pixel format: %#x",
+                image.format.fourcc);
 
         VA_ENSURE(vaDestroyImage(m_surface->vadisplay(), image.image_id), nullptr);
 
@@ -173,8 +174,8 @@ void* SurfaceInteropVAAPI::mapToHost(const VideoFormat& format, void* handle, in
     }
 
     const VideoFormat fmt(pixfmt);
-    uint8_t* src[3];
-    int pitch[3];
+    uint8_t* src[3] = { nullptr };
+    int pitch[3]    = { 0 };
 
     for (int i = 0 ; i < fmt.planeCount() ; ++i)
     {
@@ -190,10 +191,10 @@ void* SurfaceInteropVAAPI::mapToHost(const VideoFormat& format, void* handle, in
 
     VAWARN(vaUnmapBuffer(m_surface->vadisplay(), image.buf));
     VAWARN(vaDestroyImage(m_surface->vadisplay(), image.image_id));
-    image.image_id = VA_INVALID_ID;
-    VideoFrame* f  = reinterpret_cast<VideoFrame*>(handle);
+    image.image_id       = VA_INVALID_ID;
+    VideoFrame* const f  = reinterpret_cast<VideoFrame*>(handle);
     frame.setTimestamp(f->timestamp());
-    *f             = frame;
+    *f                   = frame;
 
     return f;
 }
@@ -310,16 +311,16 @@ private:
     Q_DISABLE_COPY(X11);
 };
 
-#   define RESOLVE_FUNC(func, resolver, st) do {\
-    if (!func) { \
-        typedef void (*ft)(void); \
-        ft f   = resolver((st)#func); \
-        if (!f) { \
-            qWarning(#func " is not available"); \
-            return 0; \
-        } \
-        ft *fp = (ft*)(&func); \
-        *fp    = f; \
+#   define RESOLVE_FUNC(func, resolver, st) do {    \
+    if (!func) {                                    \
+        typedef void (*ft)(void);                   \
+        ft f   = resolver((st)#func);               \
+        if (!f) {                                   \
+            qWarning(#func " is not available");    \
+            return 0;                               \
+        }                                           \
+        ft* fp = (ft*)(&func);                      \
+        *fp    = f;                                 \
     }} while(0)
 
 #   define RESOLVE_EGL(func) RESOLVE_FUNC(func, eglGetProcAddress, const char*)
@@ -330,7 +331,7 @@ private:
 
 //static PFNEGLQUERYNATIVEDISPLAYNVPROC eglQueryNativeDisplayNV = nullptr;
 
-static PFNEGLCREATEIMAGEKHRPROC eglCreateImageKHR                       = nullptr;
+static PFNEGLCREATEIMAGEKHRPROC  eglCreateImageKHR                      = nullptr;
 static PFNEGLDESTROYIMAGEKHRPROC eglDestroyImageKHR                     = nullptr;
 
 #   ifndef GL_OES_EGL_image
@@ -376,9 +377,9 @@ public:
         display = (Display*)QX11Info::display();
 
 #   endif
-
-        //RESOLVE_EGL(eglQueryNativeDisplayNV);
-
+/*
+        RESOLVE_EGL(eglQueryNativeDisplayNV);
+*/
         RESOLVE_EGL(glEGLImageTargetTexture2DOES);
         RESOLVE_EGL(eglCreateImageKHR);
         RESOLVE_EGL(eglDestroyImageKHR);
@@ -393,7 +394,9 @@ public:
 
         if (dpy == EGL_NO_DISPLAY)
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("eglGetCurrentDisplay");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("eglGetCurrentDisplay");
+
             dpy = eglGetCurrentDisplay();
         }
 
@@ -459,7 +462,9 @@ public:
 
         if (!display)
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("glXGetCurrentDisplay");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("glXGetCurrentDisplay");
+
             display = (Display*)glXGetCurrentDisplay(); // use for all and not x11info
 
             if (!display)
@@ -496,7 +501,8 @@ public:
 
         if (!fbcount)
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("No texture-from-pixmap support");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("No texture-from-pixmap support");
 
             return nullptr;
         }
@@ -619,7 +625,8 @@ bool X11InteropResource::map(const surface_ptr& surface, GLuint tex, int w, int 
 {
     if ((surface->width() <= 0) || (surface->height() <= 0))
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("invalid surface size");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("invalid surface size");
 
         return false;
     }
@@ -675,13 +682,13 @@ public:
     EGL()
         : dpy(EGL_NO_DISPLAY)
     {
-        for (unsigned i = 0 ; i < sizeof(image) / sizeof(image[0]) ; ++i)
+        for (unsigned i = 0 ; (i < sizeof(image) / sizeof(image[0])) ; ++i)
             image[i] = EGL_NO_IMAGE_KHR;
     }
 
     ~EGL()
     {
-        for (unsigned i = 0 ; i < sizeof(image) / sizeof(image[0]) ; ++i)
+        for (unsigned i = 0 ; (i < sizeof(image) / sizeof(image[0])) ; ++i)
         {
             destroyImages(i);
         }
@@ -689,8 +696,11 @@ public:
 
     void destroyImages(int plane)
     {
-        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("destroyImage %d image:%p, this: %p", plane, image,this);
-
+/*
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("destroyImage %d image:%p,
+                this: %p", plane, image,this);
+*/
         if (image[plane] != EGL_NO_IMAGE_KHR)
         {
             EGL_WARN(eglDestroyImageKHR(dpy, image[plane]));
@@ -714,11 +724,14 @@ public:
     {
         if (dpy == EGL_NO_DISPLAY)
         {
-            qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("eglGetCurrentDisplay");
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("eglGetCurrentDisplay");
+
             dpy = eglGetCurrentDisplay();
         }
 
-        EGL_ENSURE(image[plane] = eglCreateImageKHR(eglGetCurrentDisplay(), EGL_NO_CONTEXT, EGL_LINUX_DMA_BUF_EXT,
+        EGL_ENSURE(image[plane] = eglCreateImageKHR(eglGetCurrentDisplay(),
+                                                    EGL_NO_CONTEXT, EGL_LINUX_DMA_BUF_EXT,
                                                     nullptr, attrib_list), false);
 
         return true;
@@ -847,8 +860,11 @@ void EGLInteropResource::destroy(VADisplay va_dpy)
         VAWARN(va_0_38::vaReleaseBufferHandle(va_dpy, va_image.buf));
         va_image.buf = VA_INVALID_ID;
         vabuf_handle = 0;
-
-        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("vabuf_handle: %#x", vabuf_handle);
+/*
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("vabuf_handle: %#x",
+                vabuf_handle);
+*/
     }
 
     if (va_image.image_id != VA_INVALID_ID)
@@ -867,7 +883,8 @@ bool EGLInteropResource::ensure()
 
     if (!OpenGLHelper::isEGL())
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Not using EGL");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Not using EGL");
 
         return false;
     }
