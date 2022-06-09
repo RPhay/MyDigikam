@@ -36,12 +36,7 @@
 
 #include <QLibrary>
 #include <QSharedPointer>
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#   include <qopengl.h>
-#elif defined(QT_OPENGL_LIB)
-#   include <qgl.h>
-#endif
+#include <qopengl.h>
 
 // Local includes
 
@@ -63,31 +58,36 @@ namespace QtAV
 
 struct VASurfaceAttrib;
 
-inline VAStatus vaCreateSurfaces(VADisplay dpy, unsigned int format, unsigned int width, unsigned int height,
-                                 VASurfaceID *surfaces, unsigned int num_surfaces,
-                                 VASurfaceAttrib *attrib_list, unsigned int num_attribs)
+inline VAStatus vaCreateSurfaces(VADisplay dpy, unsigned int format,
+                                 unsigned int width, unsigned int height,
+                                 VASurfaceID* surfaces, unsigned int num_surfaces,
+                                 VASurfaceAttrib* attrib_list, unsigned int num_attribs)
 {
     return ::vaCreateSurfaces(dpy, width, height, format, num_surfaces, surfaces);
 }
 
 #endif
 
-#define VA_ENSURE_TRUE(x, ...) \
-    do { \
-        VAStatus ret = x; \
-        if (ret != VA_STATUS_SUCCESS) { \
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("VA-API error@%d. " #x ": %#x %s", __LINE__, ret, vaErrorStr(ret)); \
-            return __VA_ARGS__; \
-        } \
+#define VA_ENSURE_TRUE(x, ...)                                          \
+    do {                                                                \
+        VAStatus ret = x;                                               \
+        if (ret != VA_STATUS_SUCCESS) {                                 \
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()                  \
+                << QString::asprintf("VA-API error@%d. " #x ": %#x %s", \
+                    __LINE__, ret, vaErrorStr(ret));                    \
+            return __VA_ARGS__;                                         \
+        }                                                               \
     } while(0)
 
 #define VA_ENSURE(...) VA_ENSURE_TRUE(__VA_ARGS__)
 
-#define VAWARN(a) \
-do { \
-  VAStatus res = a; \
-  if(res != VA_STATUS_SUCCESS) \
-    qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("VA-API error %s@%d. " #a ": %#x %s", __FILE__, __LINE__, res, vaErrorStr(res)); \
+#define VAWARN(a)                                                       \
+do {                                                                    \
+    VAStatus res = a;                                                   \
+    if(res != VA_STATUS_SUCCESS)                                        \
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()                      \
+            << QString::asprintf("VA-API error %s@%d. " #a ": %#x %s",  \
+                __FILE__, __LINE__, res, vaErrorStr(res));              \
 } while(0);
 
 namespace vaapi
@@ -100,9 +100,10 @@ const char* profileName(VAProfile profile);
  * create image (if img is not null)/find format for the first supported fourcc from given fourcc list.
  * if s is not null, also test vaGetImage for the fourcc
  */
-
-VAImageFormat va_new_image(VADisplay display, const unsigned int* fourccs, VAImage* img = nullptr,
-                           int w = 0, int h = 0, VASurfaceID s = VA_INVALID_SURFACE);
+VAImageFormat va_new_image(VADisplay display, const unsigned int* fourccs,
+                           VAImage* img = nullptr,
+                           int w = 0, int h = 0,
+                           VASurfaceID s = VA_INVALID_SURFACE);
 
 class dll_helper
 {
@@ -145,6 +146,7 @@ public:
     static va_0_38& instance()
     {
         static va_0_38 self;
+
         return self;
     }
 
@@ -231,23 +233,26 @@ public:
         fp_vaPutSurface = (vaPutSurface_t*)resolve("vaPutSurface");
     }
 
-    VADisplay vaGetDisplay(Display *dpy)
+    VADisplay vaGetDisplay(Display* dpy)
     {
         assert(fp_vaGetDisplay);
 
         return fp_vaGetDisplay(dpy);
     }
 
-    VAStatus vaPutSurface(VADisplay dpy, VASurfaceID surface, Drawable draw,   /* X Drawable */
+    VAStatus vaPutSurface(VADisplay dpy, VASurfaceID surface, Drawable draw,   ///< X Drawable
         short srcx, short srcy, unsigned short srcw,  unsigned short srch,
         short destx, short desty, unsigned short destw, unsigned short desth,
-        VARectangle *cliprects,                                                /* client supplied destination clip list */
-        unsigned int number_cliprects,                                         /* number of clip rects in the clip list */
-        unsigned int flags)                                                    /* PutSurface flags */
+        VARectangle* cliprects,                                                ///< client supplied destination clip list
+        unsigned int number_cliprects,                                         ///< number of clip rects in the clip list
+        unsigned int flags)                                                    ///< PutSurface flags
     {
         assert(fp_vaPutSurface);
 
-        return fp_vaPutSurface(dpy, surface, draw, srcx, srcy, srcw, srch, destx, desty, destw, desth, cliprects, number_cliprects, flags);
+        return fp_vaPutSurface(dpy, surface, draw,
+                               srcx, srcy, srcw, srch,
+                               destx, desty, destw, desth,
+                               cliprects, number_cliprects, flags);
     }
 
 private:
@@ -419,7 +424,8 @@ private:
 
     VADisplay        m_display;
     NativeDisplayPtr m_native;
-    int              m_major, m_minor;
+    int              m_major;
+    int              m_minor;
 };
 
 class surface_t
@@ -487,7 +493,8 @@ private:
 
     VASurfaceID m_id;
     display_ptr m_display;
-    int         m_width, m_height;
+    int         m_width;
+    int         m_height;
     int         color_space;
 };
 

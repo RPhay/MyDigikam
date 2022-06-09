@@ -55,7 +55,8 @@ dll_helper::dll_helper(const QString& soname, int version)
     if (m_lib.load())
     {
         qCDebug(DIGIKAM_QTAV_LOG).noquote()
-            << QString::asprintf("%s loaded", m_lib.fileName().toUtf8().constData());
+            << QString::asprintf("%s loaded",
+                m_lib.fileName().toUtf8().constData());
     }
     else
     {
@@ -69,7 +70,8 @@ dll_helper::dll_helper(const QString& soname, int version)
     if (!m_lib.isLoaded())
         qCDebug(DIGIKAM_QTAV_LOG).noquote()
             << QString::asprintf("can not load %s: %s",
-               m_lib.fileName().toUtf8().constData(), m_lib.errorString().toUtf8().constData());
+               m_lib.fileName().toUtf8().constData(),
+               m_lib.errorString().toUtf8().constData());
 }
 
 va_0_38::vaAcquireBufferHandle_t va_0_38::f_vaAcquireBufferHandle = nullptr;
@@ -82,8 +84,9 @@ va_0_38::vaReleaseBufferHandle_t va_0_38::f_vaReleaseBufferHandle = nullptr;
 #define STRCASEP(p, x)  STRCASE(CONCAT(p, x))
 #define STRCASE(x)      case x: return STRINGIFY(x)
 
-/* Return a string representation of a VAProfile */
-
+/**
+ * Return a string representation of a VAProfile
+ */
 const char* profileName(VAProfile profile)
 {
     switch (profile)
@@ -130,7 +133,8 @@ const char* profileName(VAProfile profile)
     return "";
 }
 
-VAImageFormat va_new_image(VADisplay display, const unsigned int *fourccs, VAImage *img, int w, int h, VASurfaceID s)
+VAImageFormat va_new_image(VADisplay display, const unsigned int* fourccs,
+                           VAImage* img, int w, int h, VASurfaceID s)
 {
     VAImageFormat fmt;
     memset(&fmt, 0, sizeof(fmt));
@@ -166,11 +170,14 @@ VAImageFormat va_new_image(VADisplay display, const unsigned int *fourccs, VAIma
         if (!fcc)
             continue;
 
-        if (img && w > 0 && h > 0)
+        if (img && (w > 0) && (h > 0))
         {
             qCDebug(DIGIKAM_QTAV_LOG).noquote()
                 << QString::asprintf("vaCreateImage: %c%c%c%c",
-                    fcc << 24 >> 24, fcc << 16 >> 24, fcc << 8 >> 24, fcc >> 24);
+                    fcc << 24 >> 24,
+                    fcc << 16 >> 24,
+                    fcc <<  8 >> 24,
+                    fcc >> 24);
 
             if (vaCreateImage(display, &fmt, w, h, img) != VA_STATUS_SUCCESS)
             {
@@ -179,7 +186,10 @@ VAImageFormat va_new_image(VADisplay display, const unsigned int *fourccs, VAIma
 
                 qCDebug(DIGIKAM_QTAV_LOG).noquote()
                     << QString::asprintf("vaCreateImage error: %c%c%c%c",
-                        fcc << 24 >> 24, fcc << 16 >> 24, fcc << 8 >> 24, fcc >> 24);
+                        fcc << 24 >> 24,
+                        fcc << 16 >> 24,
+                        fcc <<  8 >> 24,
+                        fcc >> 24);
 
                 continue;
             }
@@ -196,7 +206,11 @@ VAImageFormat va_new_image(VADisplay display, const unsigned int *fourccs, VAIma
 
                     qCDebug(DIGIKAM_QTAV_LOG).noquote()
                         << QString::asprintf("vaGetImage error: %c%c%c%c  (%#x) %s",
-                            fcc << 24 >> 24, fcc << 16 >> 24, fcc << 8 >> 24, fcc >> 24, st, vaErrorStr(st));
+                            fcc << 24 >> 24,
+                            fcc << 16 >> 24,
+                            fcc <<  8 >> 24,
+                            fcc >> 24,
+                            st, vaErrorStr(st));
 
                     img->image_id = VA_INVALID_ID;
                     memset(&fmt, 0, sizeof(fmt));
@@ -223,6 +237,8 @@ public:
     typedef Display* XOpenDisplay_t(const char* name);
     typedef int XCloseDisplay_t(Display* dpy);
     typedef int XInitThreads_t();
+
+public:
 
     X11_API()
         : dll_helper(QString::fromLatin1("X11"), 6)
@@ -303,6 +319,8 @@ protected:
         return false;
     }
 
+public:
+
     intptr_t m_handle;
     bool     m_selfCreated;
 };
@@ -313,7 +331,8 @@ class Q_DECL_HIDDEN NativeDisplayX11 final : public NativeDisplayBase,
 {
 public:
 
-    NativeDisplayX11() :NativeDisplayBase()
+    NativeDisplayX11()
+        : NativeDisplayBase()
     {
     }
 
@@ -330,11 +349,13 @@ public:
         if (acceptValidExternalHandle(display))
             return true;
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("NativeDisplayX11.");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("NativeDisplayX11.");
 
         if (!XInitThreads())
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("XInitThreads failed!");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("XInitThreads failed!");
 
             return false;
         }
@@ -387,11 +408,13 @@ public:
         if (acceptValidExternalHandle(display))
             return true;
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("NativeDisplayGLX.");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("NativeDisplayGLX.");
 
         if (!XInitThreads())
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("XInitThreads failed!");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("XInitThreads failed!");
 
             return false;
         }
@@ -444,7 +467,8 @@ public:
         if (acceptValidExternalHandle(display))
             return true;
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("NativeDisplayDrm.");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("NativeDisplayDrm.");
 
         // try drmOpen()?
 
@@ -556,7 +580,8 @@ display_ptr display_t::create(const NativeDisplay &display)
 
 #else
 
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("No OpenGL support in Qt");
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("No OpenGL support in Qt");
 
 #endif
 
@@ -612,13 +637,18 @@ display_t::~display_t()
     {
         int mj, mn;
 
-        // FIXME: for libva-xxx we can unload after vaTerminate to avoid crash. But does not work for egl+dma/drm. I really don't know the reason
+        // FIXME: for libva-xxx we can unload after vaTerminate to avoid crash.
+        // But does not work for egl+dma/drm. I really don't know the reason
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("vaInitialize before terminate. (work around for vaTerminate() crash)");
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("vaInitialize before terminate. (work around for vaTerminate() crash)");
+
         VAWARN(vaInitialize(m_display, &mj, &mn));
     }
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("vaapi: destroy display %p", m_display);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("vaapi: destroy display %p", m_display);
+
     VAWARN(vaTerminate(m_display));     // FIXME: what about thread?
     m_display = nullptr;
 }
