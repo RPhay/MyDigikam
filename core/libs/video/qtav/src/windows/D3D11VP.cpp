@@ -93,7 +93,12 @@ bool D3D11VP::process(ID3D11Texture2D* texture, int index)
 
     D3D11_VIDEO_PROCESSOR_INPUT_VIEW_DESC inviewDesc =
     {
-        0, D3D11_VPIV_DIMENSION_TEXTURE2D, { 0, (UINT)index }
+        0,
+        D3D11_VPIV_DIMENSION_TEXTURE2D,
+        {
+            0,
+            (UINT)index
+        }
     };
 
     ComPtr<ID3D11VideoProcessorInputView> inview;
@@ -118,7 +123,8 @@ bool D3D11VP::process(ID3D11Texture2D* texture, int index)
         videoctx->VideoProcessorSetStreamSourceRect(m_vp.Get(), 0, TRUE, &r);
     }
 
-    // disable additional processing. this can fix the output frame is too dark, also make in/out color space parameters work
+    // disable additional processing. this can fix the output frame is too dark,
+    // also make in/out color space parameters work
 
     videoctx->VideoProcessorSetStreamAutoProcessingMode(m_vp.Get(), 0, FALSE);
     D3D11_VIDEO_PROCESSOR_COLOR_SPACE cs;
@@ -127,7 +133,9 @@ bool D3D11VP::process(ID3D11Texture2D* texture, int index)
 
     // D3D11_VIDEO_PROCESSOR_NOMINAL_RANGE_xxx is desktop only?
 
-    cs.Nominal_Range = ((m_range == ColorRange_Full) ? D3D11_VIDEO_PROCESSOR_NOMINAL_RANGE_0_255 : D3D11_VIDEO_PROCESSOR_NOMINAL_RANGE_16_235);
+    cs.Nominal_Range = ((m_range == ColorRange_Full) ? D3D11_VIDEO_PROCESSOR_NOMINAL_RANGE_0_255
+                                                     : D3D11_VIDEO_PROCESSOR_NOMINAL_RANGE_16_235);
+
     videoctx->VideoProcessorSetStreamColorSpace(m_vp.Get(), 0, &cs);
 
 #if 0
@@ -155,8 +163,18 @@ bool D3D11VP::ensureResource(UINT width, UINT height, DXGI_FORMAT format)
         D3D11_VIDEO_PROCESSOR_CONTENT_DESC vpdesc =
         {
             D3D11_VIDEO_FRAME_FORMAT_PROGRESSIVE,
-            { 0, 0 }, width, height,
-            { 0, 0 }, width, height,
+            {
+                0,
+                0
+            },
+            width,
+            height,
+            {
+                0,
+                0
+            },
+            width,
+            height,
             D3D11_VIDEO_USAGE_PLAYBACK_NORMAL // D3D11_VIDEO_USAGE_OPTIMAL_SPEED
         };
 

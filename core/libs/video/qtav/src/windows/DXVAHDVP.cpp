@@ -45,7 +45,8 @@ DXVAHDVP::DXVAHDVP(ComPtr<IDirect3DDevice9> dev)
       fDXVAHD_CreateDevice  (nullptr)
 {
     DX_ENSURE(dev.As(&m_dev));
-    fDXVAHD_CreateDevice = (PDXVAHD_CreateDevice)GetProcAddress(GetModuleHandle(TEXT("dxva2.dll")), "DXVAHD_CreateDevice");
+    fDXVAHD_CreateDevice = (PDXVAHD_CreateDevice)GetProcAddress(GetModuleHandle(TEXT("dxva2.dll")),
+                                                                "DXVAHD_CreateDevice");
 }
 
 void DXVAHDVP::setOutput(IDirect3DSurface9* surface)
@@ -92,23 +93,43 @@ bool DXVAHDVP::process(IDirect3DSurface9* surface)
         DXVAHD_STREAM_STATE_SOURCE_RECT_DATA r;
         r.Enable      = 1;
         r.SourceRect  = sr;
-        DX_ENSURE(m_vp->SetVideoProcessStreamState(0/*stream index*/, DXVAHD_STREAM_STATE_SOURCE_RECT, sizeof(r), &r), false);
+        DX_ENSURE(m_vp->SetVideoProcessStreamState(0/*stream index*/,
+                  DXVAHD_STREAM_STATE_SOURCE_RECT, sizeof(r), &r), false);
     }
 
 #if 0
 
     DXVAHD_STREAM_STATE_D3DFORMAT_DATA d3df        = { m_fmt };
-    DX_ENSURE(m_vp->SetVideoProcessStreamState(0/*stream index*/, DXVAHD_STREAM_STATE_D3DFORMAT, sizeof(d3df), &d3df), false);
+
+    DX_ENSURE(m_vp->SetVideoProcessStreamState(0/*stream index*/,
+                                               DXVAHD_STREAM_STATE_D3DFORMAT,
+                                               sizeof(d3df), &d3df), false);
+
     DXVAHD_STREAM_STATE_FRAME_FORMAT_DATA ff       = { DXVAHD_FRAME_FORMAT_PROGRESSIVE };
-    DX_ENSURE(m_vp->SetVideoProcessStreamState(0/*stream index*/, DXVAHD_STREAM_STATE_FRAME_FORMAT, sizeof(ff), &ff), false);
+
+    DX_ENSURE(m_vp->SetVideoProcessStreamState(0/*stream index*/,
+                                               DXVAHD_STREAM_STATE_FRAME_FORMAT,
+                                               sizeof(ff), &ff), false);
+
     DXVAHD_STREAM_STATE_DESTINATION_RECT_DATA dstr = { true, { 0, 0, desc.Width, desc.Height } };
-    DX_ENSURE(m_vp->SetVideoProcessStreamState(0/*stream index*/, DXVAHD_STREAM_STATE_DESTINATION_RECT, sizeof(dstr), &dstr), false);
+
+    DX_ENSURE(m_vp->SetVideoProcessStreamState(0/*stream index*/,
+                                               DXVAHD_STREAM_STATE_DESTINATION_RECT,
+                                               sizeof(dstr), &dstr), false);
+
     DXVAHD_BLT_STATE_TARGET_RECT_DATA tgtr         = { true, { 0, 0, desc.Width, desc.Height } };
-    DX_ENSURE(m_vp->SetVideoProcessBltState(DXVAHD_BLT_STATE_TARGET_RECT, sizeof(tgtr), &tgtr), false);
+
+    DX_ENSURE(m_vp->SetVideoProcessBltState(DXVAHD_BLT_STATE_TARGET_RECT,
+                                            sizeof(tgtr), &tgtr), false);
 
     for (int i = 0 ; i < 7 ; ++i)
     {
-        DXVAHD_STREAM_STATE_FILTER_DATA flt = { false, DXVAHD_FILTER(i) };
+        DXVAHD_STREAM_STATE_FILTER_DATA flt =
+        {
+            false,
+            DXVAHD_FILTER(i)
+        };
+
         DXVAHD_STREAM_STATE state           = static_cast<DXVAHD_STREAM_STATE>(DXVAHD_STREAM_STATE_FILTER_BRIGHTNESS + i);
         DX_ENSURE(m_vp->SetVideoProcessStreamState(0/*stream index*/, state, sizeof(flt), &flt), false);
     }
@@ -118,7 +139,9 @@ bool DXVAHDVP::process(IDirect3DSurface9* surface)
     DXVAHD_STREAM_STATE_OUTPUT_RATE_DATA rate;
     ZeroMemory(&rate, sizeof(rate));
     rate.OutputRate = DXVAHD_OUTPUT_RATE_NORMAL;
-    DX_ENSURE(m_vp->SetVideoProcessStreamState(0/*stream index*/, DXVAHD_STREAM_STATE_OUTPUT_RATE, sizeof(rate), &rate), false);
+    DX_ENSURE(m_vp->SetVideoProcessStreamState(0/*stream index*/,
+                                               DXVAHD_STREAM_STATE_OUTPUT_RATE,
+                                               sizeof(rate), &rate), false);
 
     DXVAHD_STREAM_STATE_INPUT_COLOR_SPACE_DATA ics;
     ZeroMemory(&ics, sizeof(ics));
@@ -126,7 +149,9 @@ bool DXVAHDVP::process(IDirect3DSurface9* surface)
     ics.RGB_Range    = 0;                                       // full
     ics.YCbCr_Matrix = ((m_cs    == ColorSpace_BT601) ? 0 : 1); // 0: bt601, 1: bt709
     ics.YCbCr_xvYCC  = ((m_range == ColorRange_Full)  ? 1 : 0);
-    DX_ENSURE(m_vp->SetVideoProcessStreamState(0/*stream index*/, DXVAHD_STREAM_STATE_INPUT_COLOR_SPACE, sizeof(ics), &ics), false);
+    DX_ENSURE(m_vp->SetVideoProcessStreamState(0/*stream index*/,
+                                               DXVAHD_STREAM_STATE_INPUT_COLOR_SPACE,
+                                               sizeof(ics), &ics), false);
 
     DXVAHD_BLT_STATE_OUTPUT_COLOR_SPACE_DATA cs;
     ZeroMemory(&cs, sizeof(cs));
@@ -134,7 +159,8 @@ bool DXVAHDVP::process(IDirect3DSurface9* surface)
     cs.RGB_Range    = 1;
     cs.YCbCr_Matrix = 1; // 0: bt601, 1: bt709
     cs.YCbCr_xvYCC  = 1;
-    DX_ENSURE(m_vp->SetVideoProcessBltState(DXVAHD_BLT_STATE_OUTPUT_COLOR_SPACE, sizeof(cs), &cs), false);
+    DX_ENSURE(m_vp->SetVideoProcessBltState(DXVAHD_BLT_STATE_OUTPUT_COLOR_SPACE,
+                                            sizeof(cs), &cs), false);
 
     DXVAHD_STREAM_DATA stream;
     ZeroMemory(&stream, sizeof(stream));
@@ -165,16 +191,24 @@ bool DXVAHDVP::ensureResource(UINT width, UINT height, D3DFORMAT format)
         desc.OutputFrameRate  = fps;
         desc.OutputWidth      = width;
         desc.OutputHeight     = height;
-        DX_ENSURE(fDXVAHD_CreateDevice(m_dev.Get(), &desc, DXVAHD_DEVICE_USAGE_PLAYBACK_NORMAL, nullptr, &m_viddev), false);
+        DX_ENSURE(fDXVAHD_CreateDevice(m_dev.Get(), &desc,
+                                       DXVAHD_DEVICE_USAGE_PLAYBACK_NORMAL,
+                                       nullptr, &m_viddev), false);
     }
 
     // TODO: check when format is changed, or record supported formats
 
     DXVAHD_VPDEVCAPS caps;
     DX_ENSURE(m_viddev->GetVideoProcessorDeviceCaps(&caps), false);
-    QScopedPointer<DXVAHD_VPCAPS, QScopedPointerArrayDeleter<DXVAHD_VPCAPS>> pVPCaps(new (std::nothrow) DXVAHD_VPCAPS[caps.VideoProcessorCount]);
+
+    QScopedPointer<DXVAHD_VPCAPS, QScopedPointerArrayDeleter<DXVAHD_VPCAPS>>
+        pVPCaps(new (std::nothrow) DXVAHD_VPCAPS[caps.VideoProcessorCount]);
+
     DX_ENSURE(m_viddev->GetVideoProcessorCaps(caps.VideoProcessorCount, pVPCaps.data()), false);
-    QScopedPointer<D3DFORMAT, QScopedPointerArrayDeleter<D3DFORMAT>> fmts(new (std::nothrow) D3DFORMAT[caps.InputFormatCount]);
+
+    QScopedPointer<D3DFORMAT, QScopedPointerArrayDeleter<D3DFORMAT>>
+        fmts(new (std::nothrow) D3DFORMAT[caps.InputFormatCount]);
+
     DX_ENSURE(m_viddev->GetVideoProcessorInputFormats(caps.InputFormatCount, fmts.data()), false);
     bool fmt_found = false;
 
