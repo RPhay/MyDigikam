@@ -763,25 +763,24 @@ bool ExpoBlendingThread::convertRaw(const QUrl& inUrl, QUrl& outUrl)
 
     if (img.load(inUrl.toLocalFile(), d->rawObserver, settings))
     {
-        if (d->meta.load(inUrl.toLocalFile()))
+        QFileInfo fi(inUrl.toLocalFile());
+        outUrl = QUrl::fromLocalFile(d->preprocessingTmpDir->path()                                    +
+                                     QLatin1Char('/')                                                  +
+                                     QLatin1Char('.')                                                  +
+                                     fi.completeBaseName().replace(QLatin1Char('.'), QLatin1Char('_')) +
+                                     QLatin1String(".tif"));
+
+        if (!img.save(outUrl.toLocalFile(), QLatin1String("TIF")))
         {
-            d->meta.setItemDimensions(img.size());
+            return false;
+        }
+
+        if (d->meta.load(outUrl.toLocalFile()))
+        {
             d->meta.setExifTagString("Exif.Image.DocumentName", inUrl.fileName());
             d->meta.setXmpTagString("Xmp.tiff.Make",  d->meta.getExifTagString("Exif.Image.Make"));
             d->meta.setXmpTagString("Xmp.tiff.Model", d->meta.getExifTagString("Exif.Image.Model"));
             d->meta.setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
-
-            QFileInfo fi(inUrl.toLocalFile());
-            outUrl = QUrl::fromLocalFile(d->preprocessingTmpDir->path()                                    +
-                                         QLatin1Char('/')                                                  +
-                                         QLatin1Char('.')                                                  +
-                                         fi.completeBaseName().replace(QLatin1Char('.'), QLatin1Char('_')) +
-                                         QLatin1String(".tif"));
-
-            if (!img.save(outUrl.toLocalFile(), QLatin1String("TIF")))
-            {
-                return false;
-            }
 
             d->meta.save(outUrl.toLocalFile(), true);
         }
