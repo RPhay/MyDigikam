@@ -1,10 +1,12 @@
 Craft CI/CD Repository
 ----------------------
 
-KDE uses a common framework named craft to process applications Continuous Integration (CI - Build Factory) and
-Continuous Deployement (CD - Binary Factory) workflow on different platforms.
+KDE uses a common framework named craft to process applications workflow on different platforms:
 
-The workflow supports notarization of application bundles (signing) for Linux (AppImage), Windows and MacOS stores.
+- Continuous Integration (CI - Build Factory).
+- Continuous Deployement (CD - Binary Factory).
+
+The workflow supports notarization of application bundles (signing) for Windows and MacOS stores.
 
 - Front page                    : https://community.kde.org/Craft
 - Configuration                 : https://invent.kde.org/packaging/craft-blueprints-kde/-/tree/master/extragear/digikam
