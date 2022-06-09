@@ -199,29 +199,10 @@ bool PreProcessTask::convertRaw()
 
     if (img.load(inUrl.toLocalFile(), d->observer, settings))
     {
-        QScopedPointer<DMetadata> meta(new DMetadata);
-        meta->load(inUrl.toLocalFile());
-
-        DMetadata::MetaDataMap m = meta->getExifTagsDataList(QStringList() << QLatin1String("Photo"));
-
-        if (!m.isEmpty())
-        {
-            for (DMetadata::MetaDataMap::iterator it = m.begin() ; it != m.end() ; ++it)
-            {
-                meta->removeExifTag(it.key().toLatin1().constData());
-            }
-        }
-
-        QByteArray exif = meta->getExifEncoded();
-        QByteArray iptc = meta->getIptc();
-        QByteArray xmp  = meta->getXmp();
-        QString make    = meta->getExifTagString("Exif.Image.Make");
-        QString model   = meta->getExifTagString("Exif.Image.Model");
-
         QFileInfo fi(inUrl.toLocalFile());
         QDir outDir(outUrl.toLocalFile());
         outDir.cdUp();
-        QString path    = outDir.path() + QLatin1Char('/');
+        QString path = outDir.path() + QLatin1Char('/');
         outUrl.setPath(path + fi.completeBaseName().replace(QLatin1Char('.'), QLatin1String("_"))
                             + QLatin1String(".tif"));
 
@@ -232,16 +213,27 @@ bool PreProcessTask::convertRaw()
             return false;
         }
 
-        meta->load(outUrl.toLocalFile());
-        meta->setExif(exif);
-        meta->setIptc(iptc);
-        meta->setXmp(xmp);
-        meta->setItemDimensions(QSize(img.width(), img.height()));
-        meta->setExifTagString("Exif.Image.DocumentName", inUrl.fileName());
-        meta->setXmpTagString("Xmp.tiff.Make",  make);
-        meta->setXmpTagString("Xmp.tiff.Model", model);
-        meta->setItemOrientation(DMetadata::ORIENTATION_NORMAL);
-        meta->applyChanges(true);
+        QScopedPointer<DMetadata> meta(new DMetadata);
+
+        if (meta->load(outUrl.toLocalFile()))
+        {
+            DMetadata::MetaDataMap m = meta->getExifTagsDataList(QStringList() << QLatin1String("Photo"));
+
+            if (!m.isEmpty())
+            {
+                for (DMetadata::MetaDataMap::iterator it = m.begin() ; it != m.end() ; ++it)
+                {
+                    meta->removeExifTag(it.key().toLatin1().constData());
+                }
+            }
+
+            meta->setItemDimensions(img.size());
+            meta->setExifTagString("Exif.Image.DocumentName", inUrl.fileName());
+            meta->setXmpTagString("Xmp.tiff.Make",  meta->getExifTagString("Exif.Image.Make"));
+            meta->setXmpTagString("Xmp.tiff.Model", meta->getExifTagString("Exif.Image.Model"));
+            meta->setItemOrientation(DMetadata::ORIENTATION_NORMAL);
+            meta->applyChanges(true);
+        }
     }
     else
     {

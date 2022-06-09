@@ -777,12 +777,12 @@ bool ExpoBlendingThread::convertRaw(const QUrl& inUrl, QUrl& outUrl)
 
         if (d->meta.load(outUrl.toLocalFile()))
         {
+            d->meta.setItemDimensions(img.size());
             d->meta.setExifTagString("Exif.Image.DocumentName", inUrl.fileName());
             d->meta.setXmpTagString("Xmp.tiff.Make",  d->meta.getExifTagString("Exif.Image.Make"));
             d->meta.setXmpTagString("Xmp.tiff.Model", d->meta.getExifTagString("Exif.Image.Model"));
             d->meta.setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
-
-            d->meta.save(outUrl.toLocalFile(), true);
+            d->meta.applyChanges(true);
         }
     }
     else
