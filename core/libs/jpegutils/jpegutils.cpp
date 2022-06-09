@@ -460,7 +460,13 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
 
             if (!srcImg.load(src))
             {
-                QFile::remove(tempFile);
+                removeLater << tempFile;
+
+                Q_FOREACH (const QString& temp, removeLater)
+                {
+                    QFile::remove(temp);
+                }
+
                 return false;
             }
 
@@ -475,7 +481,13 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
             {
                 qCDebug(DIGIKAM_GENERAL_LOG) << "Lossy transform failed for" << src;
 
-                QFile::remove(tempFile);
+                removeLater << tempFile;
+
+                Q_FOREACH (const QString& temp, removeLater)
+                {
+                    QFile::remove(temp);
+                }
+
                 return false;
             }
 
@@ -532,9 +544,9 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
         }
     }
 
-    Q_FOREACH (const QString& tempFile, removeLater)
+    Q_FOREACH (const QString& temp, removeLater)
     {
-        QFile::remove(tempFile);
+        QFile::remove(temp);
     }
 
     return true;
@@ -584,12 +596,12 @@ void JpegRotator::updateMetadata(const QString& fileName, const MetaEngineRotati
     if (!MetaEngineSettings::instance()->settings().updateFileTimeStamp)
     {
         DFileOperations::copyModificationTime(m_file, fileName);
-
-        // Restore permissions in all cases
-
-        QFile::Permissions permissions = QFile::permissions(m_file);
-        QFile::setPermissions(fileName, permissions);
     }
+
+    // Restore permissions in all cases
+
+    QFile::Permissions permissions = QFile::permissions(m_file);
+    QFile::setPermissions(fileName, permissions);
 }
 
 bool JpegRotator::performJpegTransform(TransformAction action, const QString& src, const QString& dest)
