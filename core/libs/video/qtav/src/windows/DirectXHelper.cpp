@@ -89,7 +89,8 @@ static void InitParameters(D3DPRESENT_PARAMETERS* d3dpp)
 
 IDirect3DDevice9* CreateDevice9Ex(HINSTANCE dll, IDirect3D9Ex** d3d9ex, D3DADAPTER_IDENTIFIER9* d3dai)
 {
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("creating d3d9 device ex... dll: %p", dll);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("creating d3d9 device ex... dll: %p", dll);
 
     // http://msdn.microsoft.com/en-us/library/windows/desktop/bb219676(v=vs.85).aspx   // krazy:exclude=insecurenet
 
@@ -99,7 +100,8 @@ IDirect3DDevice9* CreateDevice9Ex(HINSTANCE dll, IDirect3D9Ex** d3d9ex, D3DADAPT
 
     if (!Create9Ex)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Symbol not found: Direct3DCreate9Ex");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Symbol not found: Direct3DCreate9Ex");
 
         return nullptr;
     }
@@ -120,10 +122,11 @@ IDirect3DDevice9* CreateDevice9Ex(HINSTANCE dll, IDirect3D9Ex** d3d9ex, D3DADAPT
 
     // mpv:
 
-    /* Direct3D needs a HWND to create a device, even without using ::Present
-       this HWND is used to alert Direct3D when there's a change of focus window.
-       For now, use GetDesktopWindow, as it looks harmless
-    */
+    /**
+     * Direct3D needs a HWND to create a device, even without using ::Present
+     * this HWND is used to alert Direct3D when there's a change of focus window.
+     * For now, use GetDesktopWindow, as it looks harmless
+     */
 
     DX_ENSURE((*d3d9ex)->CreateDeviceEx(D3DADAPTER_DEFAULT,
                                         D3DDEVTYPE_HAL, GetShellWindow(), // GetDesktopWindow(), //GetShellWindow()?
@@ -133,14 +136,16 @@ IDirect3DDevice9* CreateDevice9Ex(HINSTANCE dll, IDirect3D9Ex** d3d9ex, D3DADAPT
                                         (IDirect3DDevice9Ex**)(&d3d9dev)),
                                         nullptr);
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("IDirect3DDevice9Ex created");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("IDirect3DDevice9Ex created");
 
     return d3d9dev;
 }
 
 IDirect3DDevice9* CreateDevice9(HINSTANCE dll, IDirect3D9** d3d9, D3DADAPTER_IDENTIFIER9* d3dai)
 {
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("creating d3d9 device...");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("creating d3d9 device...");
 
     typedef IDirect3D9* (WINAPI* Create9Func)(UINT SDKVersion);
 
@@ -148,7 +153,8 @@ IDirect3DDevice9* CreateDevice9(HINSTANCE dll, IDirect3D9** d3d9, D3DADAPTER_IDE
 
     if (!Create9)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Symbol not found: Direct3DCreate9");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Symbol not found: Direct3DCreate9");
 
         return nullptr;
     }
@@ -157,7 +163,9 @@ IDirect3DDevice9* CreateDevice9(HINSTANCE dll, IDirect3D9** d3d9, D3DADAPTER_IDE
 
     if (!(*d3d9))
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Direct3DCreate9 failed");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Direct3DCreate9 failed");
+
         return nullptr;
     }
 
@@ -175,7 +183,8 @@ IDirect3DDevice9* CreateDevice9(HINSTANCE dll, IDirect3D9** d3d9, D3DADAPTER_IDE
                                      &d3dpp, &d3d9dev)),
                                      nullptr);
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("IDirect3DDevice9 created");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("IDirect3DDevice9 created");
 
     return d3d9dev;
 }
