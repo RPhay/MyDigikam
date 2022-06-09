@@ -31,7 +31,59 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::PrintSupport,INTERF
                     $<TARGET_PROPERTY:KF5::Solid,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::WindowSystem,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:KF5::Service,INTERFACE_INCLUDE_DIRECTORIES>)
+                    $<TARGET_PROPERTY:KF5::Service,INTERFACE_INCLUDE_DIRECTORIES>
+
+                    ${CMAKE_SOURCE_DIR}/core/app/main
+                    ${CMAKE_SOURCE_DIR}/core/app/date
+                    ${CMAKE_SOURCE_DIR}/core/app/filters
+                    ${CMAKE_SOURCE_DIR}/core/app/dragdrop
+                    ${CMAKE_SOURCE_DIR}/core/app/views/stack
+                    ${CMAKE_SOURCE_DIR}/core/app/views/utils
+                    ${CMAKE_SOURCE_DIR}/core/app/views/sidebar
+                    ${CMAKE_SOURCE_DIR}/core/app/views/tableview
+                    ${CMAKE_SOURCE_DIR}/core/app/items/utils
+                    ${CMAKE_SOURCE_DIR}/core/app/items/thumbbar
+                    ${CMAKE_SOURCE_DIR}/core/app/items/delegate
+                    ${CMAKE_SOURCE_DIR}/core/app/items/views
+                    ${CMAKE_SOURCE_DIR}/core/app/items/overlays
+                    ${CMAKE_SOURCE_DIR}/core/app/views/preview
+
+                    ${CMAKE_SOURCE_DIR}/core/utilities/advancedrename
+                    ${CMAKE_SOURCE_DIR}/core/utilities/firstrun
+                    ${CMAKE_SOURCE_DIR}/core/utilities/setup
+                    ${CMAKE_SOURCE_DIR}/core/utilities/setup/camera
+                    ${CMAKE_SOURCE_DIR}/core/utilities/setup/editor
+                    ${CMAKE_SOURCE_DIR}/core/utilities/setup/system
+                    ${CMAKE_SOURCE_DIR}/core/utilities/setup/downloader
+                    ${CMAKE_SOURCE_DIR}/core/utilities/searchwindow
+                    ${CMAKE_SOURCE_DIR}/core/utilities/maintenance
+                    ${CMAKE_SOURCE_DIR}/core/utilities/extrasupport/filesindexer
+                    ${CMAKE_SOURCE_DIR}/core/utilities/import/main
+                    ${CMAKE_SOURCE_DIR}/core/utilities/import/models
+                    ${CMAKE_SOURCE_DIR}/core/utilities/import/views
+                    ${CMAKE_SOURCE_DIR}/core/utilities/import/backend
+                    ${CMAKE_SOURCE_DIR}/core/utilities/imageeditor/editor
+                    ${CMAKE_SOURCE_DIR}/core/utilities/imageeditor/main
+                    ${CMAKE_SOURCE_DIR}/core/utilities/imageeditor/core
+                    ${CMAKE_SOURCE_DIR}/core/utilities/imageeditor/widgets
+                    ${CMAKE_SOURCE_DIR}/core/utilities/facemanagement/threads
+                    ${CMAKE_SOURCE_DIR}/core/utilities/facemanagement/database
+                    ${CMAKE_SOURCE_DIR}/core/utilities/facemanagement/widgets
+                    ${CMAKE_SOURCE_DIR}/core/utilities/facemanagement/items
+                    ${CMAKE_SOURCE_DIR}/core/utilities/lighttable
+                    ${CMAKE_SOURCE_DIR}/core/utilities/fuzzysearch
+                    ${CMAKE_SOURCE_DIR}/core/utilities/focuspointmanagement
+                    ${CMAKE_SOURCE_DIR}/core/utilities/queuemanager/main
+                    ${CMAKE_SOURCE_DIR}/core/utilities/geolocation/mapsearches
+                    ${CMAKE_SOURCE_DIR}/core/utilities/geolocation/geoiface/core
+                    ${CMAKE_SOURCE_DIR}/core/utilities/geolocation/geoiface/tiles
+                    ${CMAKE_SOURCE_DIR}/core/utilities/geolocation/geoiface/tracks
+                    ${CMAKE_SOURCE_DIR}/core/utilities/geolocation/geoiface/correlator
+                    ${CMAKE_SOURCE_DIR}/core/utilities/geolocation/geoiface/reversegeocoding
+                    ${CMAKE_SOURCE_DIR}/core/utilities/geolocation/geoiface/items
+                    ${CMAKE_SOURCE_DIR}/core/utilities/geolocation/geoiface/widgets
+                    ${CMAKE_SOURCE_DIR}/core/utilities/geolocation/geomapwrapper
+)
 
 if(ENABLE_QWEBENGINE)
     include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::WebEngineWidgets,INTERFACE_INCLUDE_DIRECTORIES>)

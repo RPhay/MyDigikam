@@ -4,6 +4,23 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
+HEADER_DIRECTORIES(${CMAKE_SOURCE_DIR}/core/utilities DK_LOCAL_INCLUDES_UTILS)
+
+include_directories(${DK_LOCAL_INCLUDES_UTILS}
+
+    ${CMAKE_SOURCE_DIR}/core/app/main
+    ${CMAKE_SOURCE_DIR}/core/app/date
+    ${CMAKE_SOURCE_DIR}/core/app/dragdrop
+    ${CMAKE_SOURCE_DIR}/core/app/views/stack
+    ${CMAKE_SOURCE_DIR}/core/app/views/utils
+    ${CMAKE_SOURCE_DIR}/core/app/views/sidebar
+    ${CMAKE_SOURCE_DIR}/core/app/items/utils
+    ${CMAKE_SOURCE_DIR}/core/app/items/overlays
+    ${CMAKE_SOURCE_DIR}/core/app/items/views
+    ${CMAKE_SOURCE_DIR}/core/app/items/thumbbar
+    ${CMAKE_SOURCE_DIR}/core/app/views/preview
+)
+
 add_subdirectory(advancedrename)
 add_subdirectory(queuemanager)
 add_subdirectory(imageeditor)

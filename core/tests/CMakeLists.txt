@@ -9,6 +9,10 @@ APPLY_COMMON_POLICIES()
 # enabling for everything although only required by DImg.
 kde_enable_exceptions()
 
+HEADER_DIRECTORIES(${CMAKE_SOURCE_DIR}/core/utilities DK_LOCAL_INCLUDES_UTILS)
+
+include_directories(${DK_LOCAL_INCLUDES_UTILS})
+
 # -------------------------------------------------------------------------------
 # Unit-tests common dependencies
 

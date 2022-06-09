@@ -410,14 +410,7 @@ if(DIGIKAM_CAN_BE_COMPILED)
 
     set(DK_INCLUDES_ALL "")
 
-    HEADER_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/app       DK_LOCAL_INCLUDES_APP)
-    HEADER_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/libs      DK_LOCAL_INCLUDES_LIBS)
-    HEADER_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/utilities DK_LOCAL_INCLUDES_UTILITIES)
-
-    set(DK_LOCAL_INCLUDES_RAW ${DK_LOCAL_INCLUDES_APP}
-                              ${DK_LOCAL_INCLUDES_LIBS}
-                              ${DK_LOCAL_INCLUDES_UTILITIES}
-    )
+    HEADER_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/libs DK_LOCAL_INCLUDES_RAW)
 
     # This macro will set all paths which do not contain libjpeg-
     # We will add later the directory we need
@@ -440,8 +433,10 @@ if(DIGIKAM_CAN_BE_COMPILED)
     include_directories(${DK_LOCAL_INCLUDES})
 
     # for config headers digikam_version.h digikam_gitversion.h digikam_config.h
-    # digikam_dbconfig.h digikam_opencv.h
-    include_directories(${CMAKE_CURRENT_BINARY_DIR}/app/utils)
+    # digikam_dbconfig.h digikam_opencv.h digikam_export.h
+
+    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/app/utils
+                        ${CMAKE_CURRENT_BINARY_DIR}/app/utils)
 
     # ==========================================================================
     # Common targets parts
