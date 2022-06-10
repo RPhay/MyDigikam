@@ -78,7 +78,7 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
 
     - Use cmake to find CUDA Toolkit dependencies ==> no needs, CUDA is always loaded dynamically.
 
-    - Remove support of Qt version < 5.
+    - Remove support of Qt version < 5.9
 
     - Fix API docs.
 
@@ -150,4 +150,4 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
 
     - Stand alone media player originaly located from examples/player are move and compiled to core/avplayer.
 
-    - Codes from tests sub-directory are compiled into core/tests/video/qtav.
+    - Original codes from tests and examples sub-directories are moved and compiled into core/tests/video/qtav.
