@@ -46,7 +46,7 @@
 
 // LibRaw includes
 
-#include <libraw.h>
+#include "libraw.h"
 
 // Restore warnings
 #if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)

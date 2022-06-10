@@ -16,6 +16,8 @@ remove_definitions(
     -DQT_NO_KEYWORDS
 )
 
+include_directories(${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/o2/src)
+
 if(NOT APPLE)
 
     add_subdirectory(fbdemo)

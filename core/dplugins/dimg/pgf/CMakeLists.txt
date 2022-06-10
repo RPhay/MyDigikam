@@ -14,6 +14,8 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Gui,INTERFACE_INCLU
 
                     $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
+
+                    ${CMAKE_SOURCE_DIR}/core/libs/pgfutils/libpgf
 )
 
 set(dimgpgfplugin_SRCS

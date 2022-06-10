@@ -6,6 +6,8 @@
 
 include(${CMAKE_SOURCE_DIR}/core/cmake/rules/RulesDNGSdk.cmake)
 
+include_directories(${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk)
+
 # =======================================================
 # dng validate command line tool from DNG SDK
 

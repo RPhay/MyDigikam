@@ -23,6 +23,8 @@ include_directories(
     $<TARGET_PROPERTY:KF5::WidgetsAddons,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
 
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/o2/src
+
     ${Boost_INCLUDE_DIRS}
 )
 

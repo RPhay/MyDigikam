@@ -76,7 +76,9 @@ if(WIN32)
 endif()
 
 include_directories(${CMAKE_BINARY_DIR}/core/libs/rawengine/libraw/
-                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/libraw
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/internal
                     ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk
 )
 

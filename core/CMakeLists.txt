@@ -417,9 +417,25 @@ if(DIGIKAM_CAN_BE_COMPILED)
 
     foreach(var ${DK_LOCAL_INCLUDES_RAW})
 
-        string(REGEX MATCH "libjpeg/" item ${var})
+        # Filter internal 3rd party library paths to not share with the rest of codes
 
-        if(item STREQUAL "")
+        string(REGEX MATCH "libjpeg/"          _item_libjpeg ${var})
+        string(REGEX MATCH "webservices/o2/"   _item_libo2   ${var})
+        string(REGEX MATCH "extra/dng_sdk"     _item_libdng  ${var})
+        string(REGEX MATCH "extra/md5"         _item_libmd5  ${var})
+        string(REGEX MATCH "extra/xmp_sdk"     _item_libxmp  ${var})
+        string(REGEX MATCH "pgfutils/libpgf"   _item_libpgf  ${var})
+        string(REGEX MATCH "rawengine/libraw/" _item_libraw  ${var})
+
+        if(
+           _item_libjpeg STREQUAL "" AND
+           _item_libo2   STREQUAL "" AND
+           _item_libdng  STREQUAL "" AND
+           _item_libmd5  STREQUAL "" AND
+           _item_libxmp  STREQUAL "" AND
+           _item_libpgf  STREQUAL "" AND
+           _item_libraw  STREQUAL ""
+          )
 
             list(APPEND DK_LOCAL_INCLUDES ${var})
 
@@ -428,7 +444,7 @@ if(DIGIKAM_CAN_BE_COMPILED)
     endforeach()
 
     set(DK_LOCAL_INCLUDES ${DK_LOCAL_INCLUDES}
-                          libs/jpegutils/${DIGIKAM_LIBJPEG_DIR})
+                          ${CMAKE_CURRENT_SOURCE_DIR}/libs/jpegutils/${DIGIKAM_LIBJPEG_DIR})
 
     include_directories(${DK_LOCAL_INCLUDES})
 
