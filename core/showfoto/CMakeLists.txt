@@ -7,41 +7,6 @@
 
 APPLY_COMMON_POLICIES()
 
-# We need to include the setup dir for showfoto BEFORE the other include dirs,
-# otherwise the one from the "utilities" dir will be used
-include_directories(BEFORE
-
-                    ${CMAKE_CURRENT_SOURCE_DIR}/folderview
-                    ${CMAKE_CURRENT_SOURCE_DIR}/stackview
-                    ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar
-                    ${CMAKE_CURRENT_SOURCE_DIR}/setup
-                    ${CMAKE_CURRENT_SOURCE_DIR}/main
-)
-
-include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Network,INTERFACE_INCLUDE_DIRECTORIES>
-
-                    ${CMAKE_SOURCE_DIR}/core/app/dragdrop
-                    ${CMAKE_SOURCE_DIR}/core/app/items/overlays
-                    ${CMAKE_SOURCE_DIR}/core/app/views/sidebar
-
-                    ${CMAKE_SOURCE_DIR}/core/utilities/geolocation/geoiface/core
-                    ${CMAKE_SOURCE_DIR}/core/utilities/geolocation/geoiface/items
-                    ${CMAKE_SOURCE_DIR}/core/utilities/geolocation/geoiface/correlator
-                    ${CMAKE_SOURCE_DIR}/core/utilities/geolocation/geoiface/reversegeocoding
-                    ${CMAKE_SOURCE_DIR}/core/utilities/setup
-                    ${CMAKE_SOURCE_DIR}/core/utilities/setup/editor
-                    ${CMAKE_SOURCE_DIR}/core/utilities/setup/system
-                    ${CMAKE_SOURCE_DIR}/core/utilities/setup/camera
-                    ${CMAKE_SOURCE_DIR}/core/utilities/setup/downloader
-                    ${CMAKE_SOURCE_DIR}/core/utilities/imageeditor/core
-                    ${CMAKE_SOURCE_DIR}/core/utilities/imageeditor/editor
-                    ${CMAKE_SOURCE_DIR}/core/utilities/imageeditor/widgets
-)
-
-if(KF5IconThemes_FOUND)
-    include_directories($<TARGET_PROPERTY:KF5::IconThemes,INTERFACE_INCLUDE_DIRECTORIES>)
-endif()
-
 # To fill MacOS and Windows bundles metadata
 
 set(BUNDLE_APP_NAME_STRING          "showfoto")
@@ -127,6 +92,52 @@ elseif (APPLE)
 else()
 
     add_executable(showfoto ${showfoto_SRCS})
+
+endif()
+
+target_include_directories(showfoto
+                           PRIVATE
+
+                           # We need to include the setup dir for showfoto BEFORE the other include dirs,
+                           # otherwise the one from the "utilities" dir will be used
+
+                           BEFORE
+
+                           ${CMAKE_CURRENT_SOURCE_DIR}/folderview
+                           ${CMAKE_CURRENT_SOURCE_DIR}/stackview
+                           ${CMAKE_CURRENT_SOURCE_DIR}/thumbbar
+                           ${CMAKE_CURRENT_SOURCE_DIR}/setup
+                           ${CMAKE_CURRENT_SOURCE_DIR}/main
+
+                           AFTER
+
+                           $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Network,INTERFACE_INCLUDE_DIRECTORIES>
+
+                           ${CMAKE_SOURCE_DIR}/core/app/dragdrop
+                           ${CMAKE_SOURCE_DIR}/core/app/items/overlays
+                           ${CMAKE_SOURCE_DIR}/core/app/views/sidebar
+
+                           ${CMAKE_SOURCE_DIR}/core/utilities/geolocation/geoiface/core
+                           ${CMAKE_SOURCE_DIR}/core/utilities/geolocation/geoiface/items
+                           ${CMAKE_SOURCE_DIR}/core/utilities/geolocation/geoiface/correlator
+                           ${CMAKE_SOURCE_DIR}/core/utilities/geolocation/geoiface/reversegeocoding
+                           ${CMAKE_SOURCE_DIR}/core/utilities/setup
+                           ${CMAKE_SOURCE_DIR}/core/utilities/setup/editor
+                           ${CMAKE_SOURCE_DIR}/core/utilities/setup/system
+                           ${CMAKE_SOURCE_DIR}/core/utilities/setup/camera
+                           ${CMAKE_SOURCE_DIR}/core/utilities/setup/downloader
+                           ${CMAKE_SOURCE_DIR}/core/utilities/imageeditor/core
+                           ${CMAKE_SOURCE_DIR}/core/utilities/imageeditor/editor
+                           ${CMAKE_SOURCE_DIR}/core/utilities/imageeditor/widgets
+)
+
+if(KF5IconThemes_FOUND)
+
+    target_include_directories(showfoto
+                               PRIVATE
+                               AFTER
+                               $<TARGET_PROPERTY:KF5::IconThemes,INTERFACE_INCLUDE_DIRECTORIES>
+    )
 
 endif()
 
