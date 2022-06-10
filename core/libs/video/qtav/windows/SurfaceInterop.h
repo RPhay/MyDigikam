@@ -49,7 +49,8 @@ public:
      * \param type currently only support GLTextureSurface and HostMemorySurface for some decoders
      * \param fmt
      *   HostMemorySurface: must be a packed rgb format
-     * \param handle address of real handle. handle value can be modified in map() and the caller (VideoShader for example) should manage the changes.
+     * \param handle address of real handle. handle value can be modified in map()
+     *   and the caller (VideoShader for example) should manage the changes.
      *   GLTextureSurface: usually opengl texture. maybe other objects for some decoders in the feature
      *   HostMemorySurface: a VideoFrame ptr
      * \param plane
@@ -71,9 +72,9 @@ public:
     {
         Q_UNUSED(handle);
     }
-
-    //virtual void unmap(void* handle, SurfaceType type) { Q_UNUSED(handle); } //for SourceSurfaceType
-
+/*
+    virtual void unmap(void* handle, SurfaceType type) { Q_UNUSED(handle); } //for SourceSurfaceType
+*/
     /*!
      * \brief createHandle
      * It is used by opengl renderer to create a texture when rendering frame from VDA/VideoToolbox decoder

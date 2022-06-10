@@ -92,7 +92,12 @@ public:
 protected:
 
     ComPtr<ID3D11Device> d3ddev;
-    int                  width, height; // video frame width and dx_surface width without alignment, not dxva decoded surface width
+
+    /**
+     * video frame width and dx_surface width without alignment, not dxva decoded surface width
+     */
+    int                  width;
+    int                  height;
 };
 
 typedef QSharedPointer<InteropResource> InteropResourcePtr;
@@ -136,7 +141,8 @@ private:
     ComPtr<ID3D11Texture2D> m_surface;
     int                     m_index;
     InteropResourcePtr      m_resource;
-    int                     frame_width, frame_height;
+    int                     frame_width;
+    int                     frame_height;
 };
 
 } // namespace d3d11

@@ -72,7 +72,8 @@ GLInteropResource::GLInteropResource(IDirect3DDevice9* d3device)
 
 GLInteropResource::~GLInteropResource()
 {
-    // FIXME: why unregister/close interop obj/dev here will crash(tested on intel driver)? must be in current opengl context?
+    // FIXME: why unregister/close interop obj/dev here will crash(tested on intel driver)?
+    // must be in current opengl context?
 }
 
 bool GLInteropResource::map(IDirect3DSurface9* surface, GLuint tex, int w, int h, int)
@@ -84,14 +85,19 @@ bool GLInteropResource::map(IDirect3DSurface9* surface, GLuint tex, int w, int h
         return false;
     }
 
-    // open/close and register/unregster in every map/unmap to ensure called in current context and avoid crash (tested on intel driver)
+    // open/close and register/unregster in every map/unmap to ensure called in
+    // current context and avoid crash (tested on intel driver)
     // interop operations begin
 
     WGL_ENSURE((interop_dev = gl().DXOpenDeviceNV(d3ddev)) != nullptr, false);
 
     // call in ensureResource or in map?
 
-    WGL_ENSURE((interop_obj = gl().DXRegisterObjectNV(interop_dev, dx_surface, tex, GL_TEXTURE_2D, WGL_ACCESS_READ_ONLY_NV)) != nullptr, false);
+    WGL_ENSURE((interop_obj = gl().DXRegisterObjectNV(interop_dev,
+                                                      dx_surface,
+                                                      tex,
+                                                      GL_TEXTURE_2D,
+                                                      WGL_ACCESS_READ_ONLY_NV)) != nullptr, false);
 
     // prepare dx resources for gl
 

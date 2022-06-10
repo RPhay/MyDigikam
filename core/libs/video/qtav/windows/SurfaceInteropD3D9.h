@@ -83,8 +83,12 @@ protected:
     IDirect3DDevice9*   d3ddev;
     IDirect3DTexture9*  dx_texture;
     IDirect3DSurface9*  dx_surface;     ///< size is frame size(visual size) for display
+
+    /**
+     * video frame width and dx_surface width without alignment, not dxva decoded surface width
+     */
     int                 width;
-    int                 height;         ///< video frame width and dx_surface width without alignment, not dxva decoded surface width
+    int                 height;
 };
 
 typedef QSharedPointer<InteropResource> InteropResourcePtr;

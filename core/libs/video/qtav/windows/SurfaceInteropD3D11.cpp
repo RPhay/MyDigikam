@@ -199,7 +199,11 @@ void* SurfaceInterop::mapToHost(const VideoFormat& format, void* handle, int pla
     };
 
     D3D11_MAPPED_SUBRESOURCE mapped;
-    ScopedMap sm(ctx, tex, &mapped); // mingw error if ComPtr<T> constructs from ComPtr<U> [T=ID3D11Resource, U=ID3D11Texture2D]
+
+    // mingw error if ComPtr<T> constructs from ComPtr<U> [T=ID3D11Resource, U=ID3D11Texture2D]
+
+    ScopedMap sm(ctx, tex, &mapped);
+
     Q_UNUSED(sm);
 
     int pitch[3]          = { (int)mapped.RowPitch,   0, 0 }; // compute chroma later

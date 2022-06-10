@@ -99,7 +99,8 @@ InteropResource* InteropResource::create(IDirect3DDevice9* dev, InteropType type
         if (!devEx)
         {
             qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-                << QString::asprintf("IDirect3DDevice9Ex is required to share d3d resource. It's available in vista and later. d3d9 can not CreateTexture with shared handle");
+                << QString::asprintf("IDirect3DDevice9Ex is required to share d3d resource. "
+                                     "It's available in vista and later. d3d9 can not CreateTexture with shared handle");
         }
 
         SafeRelease(&devEx);
@@ -207,7 +208,9 @@ void* SurfaceInterop::mapToHost(const VideoFormat& format, void* handle, int pla
         {
             if (FAILED(mpD3D->LockRect(rect, nullptr, D3DLOCK_READONLY)))
             {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to lock surface");
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                    << QString::asprintf("Failed to lock surface");
+
                 mpD3D = nullptr;
             }
         }
@@ -235,7 +238,8 @@ void* SurfaceInterop::mapToHost(const VideoFormat& format, void* handle, int pla
     if (!fmt.isValid())
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-            << QString::asprintf("unsupported D3D9 pixel format: %#x", desc.Format);
+            << QString::asprintf("unsupported D3D9 pixel format: %#x",
+                desc.Format);
 
         return nullptr;
     }
@@ -261,9 +265,9 @@ void* SurfaceInterop::mapToHost(const VideoFormat& format, void* handle, int pla
     if (format != fmt)
         frame = frame.to(format);
 
-    VideoFrame* f = reinterpret_cast<VideoFrame*>(handle);
+    VideoFrame* const f = reinterpret_cast<VideoFrame*>(handle);
     frame.setTimestamp(f->timestamp());
-    *f            = frame;
+    *f                  = frame;
 
     return f;
 }

@@ -145,7 +145,9 @@ bool EGLInteropResource::ensureSurface(int w, int h)
     if (egl->surface && (width == w) && (height == h))
         return true;
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("update egl and dx");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("update egl and dx");
+
     egl->dpy = eglGetCurrentDisplay();
 
     if (!egl->dpy)
@@ -158,7 +160,8 @@ bool EGLInteropResource::ensureSurface(int w, int h)
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
         << QString::asprintf("EGL version: %s, client api: %s",
-            eglQueryString(egl->dpy, EGL_VERSION), eglQueryString(egl->dpy, EGL_CLIENT_APIS));
+            eglQueryString(egl->dpy, EGL_VERSION),
+            eglQueryString(egl->dpy, EGL_CLIENT_APIS));
 
     // TODO: check runtime egl>=1.4 for eglGetCurrentContext()
     // check extensions
@@ -233,7 +236,11 @@ bool EGLInteropResource::ensureSurface(int w, int h)
 
     // egl surface size must match d3d texture's
 
-    EGL_ENSURE((egl->surface = eglCreatePbufferFromClientBuffer(egl->dpy, EGL_D3D_TEXTURE_2D_SHARE_HANDLE_ANGLE, share_handle, egl_cfg, attribs)), false);
+    EGL_ENSURE((egl->surface = eglCreatePbufferFromClientBuffer(egl->dpy,
+                                                                EGL_D3D_TEXTURE_2D_SHARE_HANDLE_ANGLE,
+                                                                share_handle,
+                                                                egl_cfg,
+                                                                attribs)), false);
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
         << QString::asprintf("pbuffer surface from client buffer: %p",

@@ -263,18 +263,21 @@ public:
             case QtAV::QualityBest:
             {
                 graphics->SetInterpolationMode(InterpolationModeHighQualityBicubic);
+
                 break;
             }
 
             case QtAV::QualityFastest:
             {
                 graphics->SetInterpolationMode(InterpolationModeNearestNeighbor);
+
                 break;
             }
 
             default:
             {
                 graphics->SetInterpolationMode(InterpolationModeDefault);
+
                 break;
             }
         }
@@ -416,11 +419,15 @@ void GDIRenderer::drawFrame()
     // assume that the image data is already scaled to out_size(NOT renderer size!)
 
     StretchBlt(hdc,
-               d.out_rect.left(), d.out_rect.top(),
-               d.out_rect.width(), d.out_rect.height(),
+               d.out_rect.left(),
+               d.out_rect.top(),
+               d.out_rect.width(),
+               d.out_rect.height(),
                d.off_dc,
-               roi.x(), roi.y(),
-               roi.width(), roi.height(),
+               roi.x(),
+               roi.y(),
+               roi.width(),
+               roi.height(),
                SRCCOPY);
 
     SelectObject(d.off_dc, hbmp_old);

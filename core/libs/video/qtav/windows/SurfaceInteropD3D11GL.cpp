@@ -101,7 +101,8 @@ GLInteropResource::GLInteropResource()
 
 GLInteropResource::~GLInteropResource()
 {
-    // FIXME: why unregister/close interop obj/dev here will crash(tested on intel driver)? must be in current opengl context?
+    // FIXME: why unregister/close interop obj/dev here will
+    // crash (tested on intel driver)? must be in current opengl context?
 }
 
 bool GLInteropResource::map(ComPtr<ID3D11Texture2D> surface, int index, GLuint tex, int w, int h, int plane)
@@ -113,14 +114,19 @@ bool GLInteropResource::map(ComPtr<ID3D11Texture2D> surface, int index, GLuint t
     if (!ensureResource(desc.Format, w, h, tex, plane))
         return false;
 
-    // open/close and register/unregster in every map/unmap to ensure called in current context and avoid crash (tested on intel driver)
+    // open/close and register/unregster in every map/unmap to ensure called in current
+    // context and avoid crash (tested on intel driver)
     // interop operations begin
 
     WGL_ENSURE((interop_dev = gl().DXOpenDeviceNV(d3ddev.Get())) != nullptr, false);
 
     // call in ensureResource or in map?
 
-    WGL_ENSURE((interop_obj[plane] = gl().DXRegisterObjectNV(interop_dev, d3dtex[plane].Get(), tex, GL_TEXTURE_2D, WGL_ACCESS_READ_ONLY_NV)) != nullptr, false);
+    WGL_ENSURE((interop_obj[plane] = gl().DXRegisterObjectNV(interop_dev,
+                                                             d3dtex[plane].Get(),
+                                                             tex,
+                                                             GL_TEXTURE_2D,
+                                                             WGL_ACCESS_READ_ONLY_NV)) != nullptr, false);
 
     // prepare dx resources for gl
 
@@ -180,7 +186,8 @@ static const struct Q_DECL_HIDDEN
 {
     DXGI_FORMAT fmt;
     DXGI_FORMAT plane_fmt[2];
-} plane_formats[] =
+}
+plane_formats[] =
 {
     { DXGI_FORMAT_R8G8B8A8_UNORM, { DXGI_FORMAT_R8G8B8A8_UNORM, DXGI_FORMAT_UNKNOWN      } },
     { DXGI_FORMAT_NV12,           { DXGI_FORMAT_R8_UNORM,       DXGI_FORMAT_R8G8_UNORM   } },

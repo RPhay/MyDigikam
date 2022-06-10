@@ -97,9 +97,9 @@ InteropResource* CreateInteropEGL(IDirect3DDevice9* dev)
 }
 
 EGLInteropResource::EGLInteropResource(IDirect3DDevice9* d3device)
-    : InteropResource(d3device)
-    , egl            (new EGL())
-    , dx_query       (nullptr)
+    : InteropResource(d3device),
+      egl            (new EGL()),
+      dx_query       (nullptr)
 {
     DX_ENSURE_OK(d3device->CreateQuery(D3DQUERYTYPE_EVENT, &dx_query));
     dx_query->Issue(D3DISSUE_END);
@@ -156,7 +156,8 @@ bool EGLInteropResource::ensureSurface(int w, int h)
 
     if (!eglChooseConfig(egl->dpy, cfg_attribs, &egl_cfg, 1, &nb_cfgs))
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to create EGL configuration");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Failed to create EGL configuration");
 
         return false;
     }
@@ -173,13 +174,15 @@ bool EGLInteropResource::ensureSurface(int w, int h)
 
     if (!kEGL_ANGLE_d3d_share_handle_client_buffer && !kEGL_ANGLE_query_surface_pointer)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("EGL extension 'kEGL_ANGLE_query_surface_pointer' or 'ANGLE_d3d_share_handle_client_buffer' is required!");
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("EGL extension 'kEGL_ANGLE_query_surface_pointer' or "
+                                 "'ANGLE_d3d_share_handle_client_buffer' is required!");
 
         return false;
     }
 
     GLint has_alpha = 1; // QOpenGLContext::currentContext()->format().hasAlpha()
-    eglGetConfigAttrib(egl->dpy, egl_cfg, EGL_BIND_TO_TEXTURE_RGBA, &has_alpha); //EGL_ALPHA_SIZE
+    eglGetConfigAttrib(egl->dpy, egl_cfg, EGL_BIND_TO_TEXTURE_RGBA, &has_alpha); // EGL_ALPHA_SIZE
 
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
         << QString::asprintf("choose egl display:%p config: %p/%d, has alpha: %d",
@@ -200,9 +203,11 @@ bool EGLInteropResource::ensureSurface(int w, int h)
     {
         EGL_ENSURE((egl->surface = eglCreatePbufferSurface(egl->dpy, egl_cfg, attribs)) != EGL_NO_SURFACE, false);
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("pbuffer surface: %p", egl->surface);
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("pbuffer surface: %p", egl->surface);
 
-        PFNEGLQUERYSURFACEPOINTERANGLEPROC eglQuerySurfacePointerANGLE = reinterpret_cast<PFNEGLQUERYSURFACEPOINTERANGLEPROC>(eglGetProcAddress("eglQuerySurfacePointerANGLE"));
+        PFNEGLQUERYSURFACEPOINTERANGLEPROC eglQuerySurfacePointerANGLE
+            = reinterpret_cast<PFNEGLQUERYSURFACEPOINTERANGLEPROC>(eglGetProcAddress("eglQuerySurfacePointerANGLE"));
 
         if (!eglQuerySurfacePointerANGLE)
         {
@@ -212,7 +217,10 @@ bool EGLInteropResource::ensureSurface(int w, int h)
             return false;
         }
 
-        EGL_ENSURE(eglQuerySurfacePointerANGLE(egl->dpy, egl->surface, EGL_D3D_TEXTURE_2D_SHARE_HANDLE_ANGLE, &share_handle), false);
+        EGL_ENSURE(eglQuerySurfacePointerANGLE(egl->dpy,
+                                               egl->surface,
+                                               EGL_D3D_TEXTURE_2D_SHARE_HANDLE_ANGLE,
+                                               &share_handle), false);
     }
 
     releaseDX();
@@ -220,7 +228,8 @@ bool EGLInteropResource::ensureSurface(int w, int h)
     // _A8 for a yuv plane
 
     /*
-     * d3d resource share requires windows >= vista: https://msdn.microsoft.com/en-us/library/windows/desktop/bb219800(v=vs.85).aspx
+     * d3d resource share requires windows >= vista
+     * https://msdn.microsoft.com/en-us/library/windows/desktop/bb219800(v=vs.85).aspx
      * from extension files:
      * d3d9: level must be 1, dimensions must match EGL surface's
      * d3d9ex or d3d10:
@@ -239,8 +248,14 @@ bool EGLInteropResource::ensureSurface(int w, int h)
         // egl surface size must match d3d texture's
         // d3d9ex or d3d10 is required
 
-        EGL_ENSURE((egl->surface = eglCreatePbufferFromClientBuffer(egl->dpy, EGL_D3D_TEXTURE_2D_SHARE_HANDLE_ANGLE, share_handle, egl_cfg, attribs)), false);
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("pbuffer surface from client buffer: %p", egl->surface);
+        EGL_ENSURE((egl->surface = eglCreatePbufferFromClientBuffer(egl->dpy,
+                                                                    EGL_D3D_TEXTURE_2D_SHARE_HANDLE_ANGLE,
+                                                                    share_handle,
+                                                                    egl_cfg,
+                                                                    attribs)), false);
+
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("pbuffer surface from client buffer: %p", egl->surface);
     }
 
     width  = w;
@@ -271,18 +286,24 @@ bool EGLInteropResource::map(IDirect3DSurface9* surface, GLuint tex, int w, int 
 
     if (dx_query)
     {
-        // Flush the draw command now. Ideally, this should be done immediately before the draw call that uses the texture. Flush it once here though.
+        // Flush the draw command now. Ideally, this should be done immediately
+        // before the draw call that uses the texture. Flush it once here though.
 
         dx_query->Issue(D3DISSUE_END); // StretchRect does not supports odd values
 
         // ensure data is copied to egl surface. Solution and comment is from chromium
-        // The DXVA decoder has its own device which it uses for decoding. ANGLE has its own device which we don't have access to.
+        // The DXVA decoder has its own device which it uses for decoding.
+        // ANGLE has its own device which we don't have access to.
         // The above code attempts to copy the decoded picture into a surface which is owned by ANGLE.
-        // As there are multiple devices involved in this, the StretchRect call above is not synchronous.
-        // We attempt to flush the batched operations to ensure that the picture is copied to the surface owned by ANGLE.
+        // As there are multiple devices involved in this,
+        // the StretchRect call above is not synchronous.
+        // We attempt to flush the batched operations to ensure that
+        // the picture is copied to the surface owned by ANGLE.
         // We need to do this in a loop and call flush multiple times.
-        // We have seen the GetData call for flushing the command buffer fail to return success occassionally on multi core machines, leading to an infinite loop.
-        // Workaround is to have an upper limit of 10 on the number of iterations to wait for the Flush to finish.
+        // We have seen the GetData call for flushing the command buffer
+        // fail to return success occassionally on multi core machines, leading to an infinite loop.
+        // Workaround is to have an upper limit of 10 on the number of iterations
+        // to wait for the Flush to finish.
 
         int k = 0;
 
