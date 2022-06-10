@@ -16,33 +16,6 @@ set(BUNDLE_LONG_VERSION_STRING      ${DIGIKAM_VERSION_STRING})
 set(BUNDLE_SHORT_VERSION_STRING     ${DIGIKAM_VERSION_SHORT})
 set(BUNDLE_VERSION_STRING           ${DIGIKAM_VERSION_STRING})
 
-include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Gui,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Sql,INTERFACE_INCLUDE_DIRECTORIES>
-
-                    $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:KF5::Service,INTERFACE_INCLUDE_DIRECTORIES>
-
-                    ${CMAKE_CURRENT_SOURCE_DIR}/filters
-                    ${CMAKE_CURRENT_SOURCE_DIR}/playlist
-                    ${CMAKE_CURRENT_SOURCE_DIR}/utils
-                    ${CMAKE_CURRENT_SOURCE_DIR}/main
-)
-
-if(HAVE_OPENGL)
-
-    include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::OpenGL,INTERFACE_INCLUDE_DIRECTORIES>)
-
-    if(Qt6_FOUND)
-
-        include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::OpenGLWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
-
-    endif()
-
-endif()
-
 set(avplayer_SRCS ${CMAKE_SOURCE_DIR}/core/avplayer/utils/EventFilter.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/utils/ConfigDialog.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/utils/StatisticsView.cpp
@@ -79,6 +52,42 @@ elseif (APPLE)
 else()
 
     add_executable(avplayer ${avplayer_SRCS})
+
+endif()
+
+target_include_directories(avplayer
+                           PRIVATE
+
+                           $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
+                           $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Gui,INTERFACE_INCLUDE_DIRECTORIES>
+                           $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
+                           $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Sql,INTERFACE_INCLUDE_DIRECTORIES>
+
+                           $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
+                           $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
+                           $<TARGET_PROPERTY:KF5::Service,INTERFACE_INCLUDE_DIRECTORIES>
+
+                           ${CMAKE_CURRENT_SOURCE_DIR}/filters
+                           ${CMAKE_CURRENT_SOURCE_DIR}/playlist
+                           ${CMAKE_CURRENT_SOURCE_DIR}/utils
+                           ${CMAKE_CURRENT_SOURCE_DIR}/main
+)
+
+if(HAVE_OPENGL)
+
+    target_include_directories(avplayer
+                               PRIVATE
+                               $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::OpenGL,INTERFACE_INCLUDE_DIRECTORIES>
+    )
+
+    if(Qt6_FOUND)
+
+        target_include_directories(avplayer
+                                   PRIVATE
+                                   $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::OpenGLWidgets,INTERFACE_INCLUDE_DIRECTORIES>
+        )
+
+    endif()
 
 endif()
 
