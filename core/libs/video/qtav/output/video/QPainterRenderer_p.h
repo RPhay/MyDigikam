@@ -38,7 +38,7 @@
 namespace QtAV
 {
 
-class QTAV_PRIVATE_EXPORT QPainterRendererPrivate : public VideoRendererPrivate
+class DIGIKAM_EXPORT QPainterRendererPrivate : public VideoRendererPrivate
 {
 public:
 

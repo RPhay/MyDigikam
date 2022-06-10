@@ -47,7 +47,7 @@ namespace QtAV
  * apply() will change the value in AVPlayerConfigMngr
  */
 
-class QTAV_WIDGETS_EXPORT AVPlayerConfigMngr : public QObject
+class DIGIKAM_EXPORT AVPlayerConfigMngr : public QObject
 {
     Q_OBJECT
 

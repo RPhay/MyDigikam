@@ -35,7 +35,7 @@
 namespace QtAV
 {
 
-class QTAV_EXPORT AVError
+class DIGIKAM_EXPORT AVError
 {
 public:
 
@@ -118,7 +118,7 @@ Q_DECLARE_METATYPE(QtAV::AVError)
 
 class QDebug;
 
-QTAV_EXPORT QDebug operator<<(QDebug debug, const QtAV::AVError& error);
+DIGIKAM_EXPORT QDebug operator<<(QDebug debug, const QtAV::AVError& error);
 
 #endif
 

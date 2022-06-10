@@ -48,7 +48,7 @@ namespace QtAV
 
 class VideoFrame;
 
-class QTAV_EXPORT VideoFilterContext
+class DIGIKAM_EXPORT VideoFilterContext
 {
 public:
 
@@ -140,7 +140,7 @@ class VideoFrameConverter;
 
 // TODO: font, pen, brush etc?
 
-class QTAV_EXPORT QPainterFilterContext final : public VideoFilterContext
+class DIGIKAM_EXPORT QPainterFilterContext final : public VideoFilterContext
 {
 public:
 
@@ -181,7 +181,7 @@ private:
 
 #if QTAV_HAVE(X11)
 
-class QTAV_EXPORT X11FilterContext final : public VideoFilterContext
+class DIGIKAM_EXPORT X11FilterContext final : public VideoFilterContext
 {
 public:
 

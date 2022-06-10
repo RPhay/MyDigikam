@@ -360,7 +360,7 @@ bool Uniform::setGL()
 
 #ifndef QT_NO_DEBUG_STREAM
 
-QTAV_EXPORT QDebug operator<<(QDebug dbg, const Uniform &u)
+DIGIKAM_EXPORT QDebug operator<<(QDebug dbg, const Uniform &u)
 {
     dbg.nospace() << "uniform " 
                   << UniformTypeToName(u.type()) 
@@ -407,7 +407,7 @@ QTAV_EXPORT QDebug operator<<(QDebug dbg, const Uniform &u)
     return dbg.space();
 }
 
-QTAV_EXPORT QDebug operator<<(QDebug dbg, Uniform::Type ut);
+DIGIKAM_EXPORT QDebug operator<<(QDebug dbg, Uniform::Type ut);
 
 #endif
 

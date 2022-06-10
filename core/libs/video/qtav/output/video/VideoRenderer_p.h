@@ -51,7 +51,7 @@ namespace QtAV
 
 class Filter;
 
-class QTAV_PRIVATE_EXPORT VideoRendererPrivate : public AVOutputPrivate
+class DIGIKAM_EXPORT VideoRendererPrivate : public AVOutputPrivate
 {
 public:
 

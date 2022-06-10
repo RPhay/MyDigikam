@@ -38,7 +38,7 @@
 namespace QtAV
 {
 
-class QTAV_WIDGETS_EXPORT AVPlayerSlider : public QSlider
+class DIGIKAM_EXPORT AVPlayerSlider : public QSlider
 {
     Q_OBJECT
 

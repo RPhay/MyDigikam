@@ -76,7 +76,7 @@ void SafeRelease(T** ppT)
 namespace DXHelper
 {
 
-QTAV_EXPORT const char* vendorName(unsigned id);
+DIGIKAM_EXPORT const char* vendorName(unsigned id);
 
 #ifndef Q_OS_WINRT
 

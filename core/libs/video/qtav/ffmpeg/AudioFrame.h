@@ -35,7 +35,7 @@ namespace QtAV
 class AudioResampler;
 class AudioFramePrivate;
 
-class QTAV_EXPORT AudioFrame : public Frame             // clazy:exclude=copyable-polymorphic
+class DIGIKAM_EXPORT AudioFrame : public Frame             // clazy:exclude=copyable-polymorphic
 {
     Q_DECLARE_PRIVATE(AudioFrame)
 

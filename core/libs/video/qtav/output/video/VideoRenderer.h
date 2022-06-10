@@ -113,7 +113,7 @@ namespace QtAV
 
 typedef int VideoRendererId;
 
-extern QTAV_EXPORT VideoRendererId VideoRendererId_OpenGLWindow;
+extern DIGIKAM_EXPORT VideoRendererId VideoRendererId_OpenGLWindow;
 
 class Filter;
 class OpenGLVideo;
@@ -144,7 +144,7 @@ enum Quality
 };
 Q_ENUM_NS(Quality)
 
-class QTAV_EXPORT VideoRenderer : public AVOutput
+class DIGIKAM_EXPORT VideoRenderer : public AVOutput
 {
     DPTR_DECLARE_PRIVATE(VideoRenderer)
 

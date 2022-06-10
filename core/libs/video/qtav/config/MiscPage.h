@@ -39,7 +39,7 @@
 namespace QtAV
 {
 
-class QTAV_WIDGETS_EXPORT MiscPage : public ConfigPageBase
+class DIGIKAM_EXPORT MiscPage : public ConfigPageBase
 {
     Q_OBJECT
 

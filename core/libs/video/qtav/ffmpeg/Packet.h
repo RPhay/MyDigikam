@@ -39,7 +39,7 @@ namespace QtAV
 
 class PacketPrivate;
 
-class QTAV_EXPORT Packet
+class DIGIKAM_EXPORT Packet
 {
 public:
 
@@ -100,7 +100,7 @@ bool Packet::isValid() const
 
 #ifndef QT_NO_DEBUG_STREAM
 
-QTAV_EXPORT QDebug operator<<(QDebug debug, const Packet &pkt);
+DIGIKAM_EXPORT QDebug operator<<(QDebug debug, const Packet &pkt);
 
 #endif
 

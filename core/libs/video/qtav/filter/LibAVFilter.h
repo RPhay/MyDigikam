@@ -35,7 +35,7 @@
 namespace QtAV
 {
 
-class QTAV_EXPORT LibAVFilter
+class DIGIKAM_EXPORT LibAVFilter
 {
 public:
 
@@ -97,7 +97,7 @@ private:
 
 // ---------------------------------------------------------------------------------
 
-class QTAV_EXPORT LibAVFilterVideo : public VideoFilter,
+class DIGIKAM_EXPORT LibAVFilterVideo : public VideoFilter,
                                      public LibAVFilter
 {
     Q_OBJECT
@@ -131,7 +131,7 @@ private:
 
 // ---------------------------------------------------------------------------------
 
-class QTAV_EXPORT LibAVFilterAudio : public AudioFilter,
+class DIGIKAM_EXPORT LibAVFilterAudio : public AudioFilter,
                                      public LibAVFilter
 {
     Q_OBJECT

@@ -42,7 +42,7 @@
 namespace QtAV
 {
 
-class QTAV_EXPORT SubtitleFrame
+class DIGIKAM_EXPORT SubtitleFrame
 {
 public:
 
@@ -65,7 +65,7 @@ public:
     QString text; ///< plain text. always valid
 };
 
-class QTAV_EXPORT Subtitle : public QObject
+class DIGIKAM_EXPORT Subtitle : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QByteArray codec READ codec WRITE setCodec NOTIFY codecChanged)
@@ -274,7 +274,7 @@ private:
 
 // internal use
 
-class QTAV_EXPORT SubtitleAPIProxy
+class DIGIKAM_EXPORT SubtitleAPIProxy
 {
 public:
 

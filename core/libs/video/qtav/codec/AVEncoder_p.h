@@ -40,7 +40,7 @@
 namespace QtAV
 {
 
-class QTAV_PRIVATE_EXPORT AVEncoderPrivate : public DPtrPrivate<AVEncoder>
+class DIGIKAM_EXPORT AVEncoderPrivate : public DPtrPrivate<AVEncoder>
 {
 public:
 
@@ -126,7 +126,7 @@ private:
     Q_DISABLE_COPY(AudioEncoderPrivate);
 };
 
-class QTAV_PRIVATE_EXPORT VideoEncoderPrivate : public AVEncoderPrivate
+class DIGIKAM_EXPORT VideoEncoderPrivate : public AVEncoderPrivate
 {
 public:
 

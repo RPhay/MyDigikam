@@ -35,7 +35,7 @@
 namespace QtAV
 {
 
-class QTAV_WIDGETS_EXPORT ClickableMenu : public QMenu
+class DIGIKAM_EXPORT ClickableMenu : public QMenu
 {
     Q_OBJECT
 

@@ -39,15 +39,12 @@
 #include "QtAV_dptr.h"
 #include "digikam_export.h"
 
-#define QTAV_EXPORT         DIGIKAM_EXPORT
-#define QTAV_PRIVATE_EXPORT DIGIKAM_EXPORT
-
 /**
  * runtime version. used to compare with compile time version.
  */
-QTAV_EXPORT unsigned QtAV_Version();
-QTAV_EXPORT QString  QtAV_Version_String();
-QTAV_EXPORT QString  QtAV_Version_String_Long();
+DIGIKAM_EXPORT unsigned QtAV_Version();
+DIGIKAM_EXPORT QString  QtAV_Version_String();
+DIGIKAM_EXPORT QString  QtAV_Version_String_Long();
 
 namespace QtAV
 {
@@ -56,25 +53,25 @@ namespace QtAV
  * Default handler is qt message logger. Set environment QTAV_FFMPEG_LOG=0
  * or setFFmpegLogHandler(0) to disable.
  */
-QTAV_EXPORT void setFFmpegLogHandler(void(*)(void *, int, const char *, va_list));
+DIGIKAM_EXPORT void setFFmpegLogHandler(void(*)(void *, int, const char *, va_list));
 
 /*!
  * \brief setFFmpegLogLevel
  * \param level can be: quiet, panic, fatal, error, warn, info, verbose, debug, trace
  */
-QTAV_EXPORT void setFFmpegLogLevel(const QByteArray& level);
+DIGIKAM_EXPORT void setFFmpegLogLevel(const QByteArray& level);
 
 /**
  * query the common options of avformat/avcodec that can be used by AVPlayerCore::setOptionsForXXX.
  * Format/codec specified options are also included
  */
-QTAV_EXPORT QString avformatOptions();
-QTAV_EXPORT QString avcodecOptions();
+DIGIKAM_EXPORT QString avformatOptions();
+DIGIKAM_EXPORT QString avcodecOptions();
 
-QTAV_EXPORT QString aboutFFmpeg_PlainText();
-QTAV_EXPORT QString aboutFFmpeg_HTML();
-QTAV_EXPORT QString aboutQtAV_PlainText();
-QTAV_EXPORT QString aboutQtAV_HTML();
+DIGIKAM_EXPORT QString aboutFFmpeg_PlainText();
+DIGIKAM_EXPORT QString aboutFFmpeg_HTML();
+DIGIKAM_EXPORT QString aboutQtAV_PlainText();
+DIGIKAM_EXPORT QString aboutQtAV_HTML();
 
 ////////////Types/////////////
 

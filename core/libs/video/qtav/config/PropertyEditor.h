@@ -40,7 +40,7 @@ class QWidget;
 namespace QtAV
 {
 
-class QTAV_WIDGETS_EXPORT PropertyEditor : public QObject
+class DIGIKAM_EXPORT PropertyEditor : public QObject
 {
     Q_OBJECT
 

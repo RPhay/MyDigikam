@@ -38,7 +38,7 @@ namespace QtAV
 
 class WidgetRendererPrivate;
 
-class QTAV_WIDGETS_EXPORT WidgetRenderer : public QWidget,
+class DIGIKAM_EXPORT WidgetRenderer : public QWidget,
                                            public QPainterRenderer
 {
     Q_OBJECT

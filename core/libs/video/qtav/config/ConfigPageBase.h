@@ -35,7 +35,7 @@
 namespace QtAV
 {
 
-class QTAV_WIDGETS_EXPORT ConfigPageBase : public QWidget
+class DIGIKAM_EXPORT ConfigPageBase : public QWidget
 {
     Q_OBJECT
 

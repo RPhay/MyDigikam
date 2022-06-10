@@ -42,7 +42,7 @@ namespace QtAV
 
 class VideoFramePrivate;
 
-class QTAV_EXPORT VideoFrame : public Frame             // clazy:exclude=copyable-polymorphic
+class DIGIKAM_EXPORT VideoFrame : public Frame             // clazy:exclude=copyable-polymorphic
 {
     Q_DECLARE_PRIVATE(VideoFrame)
 
@@ -189,7 +189,7 @@ public:
 
 class ImageConverter;
 
-class QTAV_EXPORT VideoFrameConverter
+class DIGIKAM_EXPORT VideoFrameConverter
 {
 public:
 

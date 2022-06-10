@@ -43,7 +43,7 @@ class SubtitleFilterPrivate;
  * Subtitle load priority: user specified file (setFile(...)) > auto load external (autoLoad()
  * must be true) > embedded subtitle
  */
-class QTAV_EXPORT SubtitleFilter : public VideoFilter,
+class DIGIKAM_EXPORT SubtitleFilter : public VideoFilter,
                                    public SubtitleAPIProxy
 {
     Q_OBJECT

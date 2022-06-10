@@ -40,7 +40,7 @@ class QSlider;
 namespace QtAV
 {
 
-class QTAV_WIDGETS_EXPORT VideoEQConfigPage : public QWidget
+class DIGIKAM_EXPORT VideoEQConfigPage : public QWidget
 {
     Q_OBJECT
 

@@ -45,7 +45,7 @@ class Filter;
 class Statistics;
 class OutputSet;
 
-class QTAV_EXPORT AVOutput
+class DIGIKAM_EXPORT AVOutput
 {
     DPTR_DECLARE_PRIVATE(AVOutput)
 

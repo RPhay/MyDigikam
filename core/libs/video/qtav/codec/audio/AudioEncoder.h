@@ -40,7 +40,7 @@ typedef int AudioEncoderId;
 
 class AudioEncoderPrivate;
 
-class QTAV_EXPORT AudioEncoder : public AVEncoder
+class DIGIKAM_EXPORT AudioEncoder : public AVEncoder
 {
     Q_OBJECT
     Q_PROPERTY(QtAV::AudioFormat audioFormat READ audioFormat WRITE setAudioFormat NOTIFY audioFormatChanged)

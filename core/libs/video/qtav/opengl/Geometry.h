@@ -51,7 +51,7 @@ enum DataType
     TypeF32 = 0x1406  ///< F32
 };
 
-class QTAV_EXPORT Attribute
+class DIGIKAM_EXPORT Attribute
 {
 public:
 
@@ -84,7 +84,7 @@ private:
 
 #ifndef QT_NO_DEBUG_STREAM
 
-QTAV_EXPORT QDebug operator<<(QDebug debug, const Attribute& a);
+DIGIKAM_EXPORT QDebug operator<<(QDebug debug, const Attribute& a);
 
 #endif
 
@@ -96,7 +96,7 @@ QTAV_EXPORT QDebug operator<<(QDebug debug, const Attribute& a);
  * }
  * \endcode
  */
-class QTAV_EXPORT Geometry
+class DIGIKAM_EXPORT Geometry
 {
 public:
 
@@ -179,7 +179,7 @@ private:
 
 // ----------------------------------------------------------------------
 
-class QTAV_EXPORT TexturedGeometry : public Geometry
+class DIGIKAM_EXPORT TexturedGeometry : public Geometry
 {
 public:
 
@@ -222,7 +222,7 @@ private:
 
 // -----------------------------------------------------------------------------------
 
-class QTAV_EXPORT Sphere : public TexturedGeometry
+class DIGIKAM_EXPORT Sphere : public TexturedGeometry
 {
 public:
 

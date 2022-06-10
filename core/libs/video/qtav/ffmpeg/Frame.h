@@ -40,7 +40,7 @@ namespace QtAV
 
 class FramePrivate;
 
-class QTAV_EXPORT Frame                 // clazy:exclude=copyable-polymorphic
+class DIGIKAM_EXPORT Frame                 // clazy:exclude=copyable-polymorphic
 {
     Q_DECLARE_PRIVATE(Frame)
 

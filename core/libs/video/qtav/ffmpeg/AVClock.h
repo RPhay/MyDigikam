@@ -47,7 +47,7 @@ namespace QtAV
 
 static const double kThousandth = 0.001;
 
-class QTAV_EXPORT AVClock : public QObject
+class DIGIKAM_EXPORT AVClock : public QObject
 {
     Q_OBJECT
 

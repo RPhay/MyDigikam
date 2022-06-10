@@ -37,7 +37,7 @@ namespace QtAV
 class AudioEncoder;
 class AudioEncodeFilterPrivate;
 
-class QTAV_EXPORT AudioEncodeFilter : public AudioFilter
+class DIGIKAM_EXPORT AudioEncodeFilter : public AudioFilter
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(AudioEncodeFilter)
@@ -117,7 +117,7 @@ protected:
 class VideoEncoder;
 class VideoEncodeFilterPrivate;
 
-class QTAV_EXPORT VideoEncodeFilter : public VideoFilter
+class DIGIKAM_EXPORT VideoEncodeFilter : public VideoFilter
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(VideoEncodeFilter)

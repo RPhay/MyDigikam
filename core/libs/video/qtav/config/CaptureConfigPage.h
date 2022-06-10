@@ -45,7 +45,7 @@ namespace QtAV
 
 class AVPlayerSlider;
 
-class QTAV_WIDGETS_EXPORT CaptureConfigPage : public ConfigPageBase
+class DIGIKAM_EXPORT CaptureConfigPage : public ConfigPageBase
 {
     Q_OBJECT
 

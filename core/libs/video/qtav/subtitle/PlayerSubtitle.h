@@ -47,7 +47,7 @@ class Subtitle;
  * Subtitle load priority: user specified file (setFile(...)) > auto load
  * external (autoLoad() must be true) > embedded subtitle
  */
-class QTAV_PRIVATE_EXPORT PlayerSubtitle : public QObject
+class DIGIKAM_EXPORT PlayerSubtitle : public QObject
 {
     Q_OBJECT
 

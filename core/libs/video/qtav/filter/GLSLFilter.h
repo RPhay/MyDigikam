@@ -42,7 +42,7 @@ namespace QtAV
 class OpenGLVideo;
 class GLSLFilterPrivate;
 
-class QTAV_EXPORT GLSLFilter : public VideoFilter
+class DIGIKAM_EXPORT GLSLFilter : public VideoFilter
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(GLSLFilter)

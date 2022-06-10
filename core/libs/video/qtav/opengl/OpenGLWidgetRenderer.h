@@ -40,7 +40,7 @@ namespace QtAV
 
 class OpenGLWidgetRendererPrivate;
 
-class QTAV_WIDGETS_EXPORT OpenGLWidgetRenderer : public QOpenGLWidget,
+class DIGIKAM_EXPORT OpenGLWidgetRenderer : public QOpenGLWidget,
                                                  public OpenGLRendererBase
 {
     Q_OBJECT

@@ -37,7 +37,7 @@ class QTextEdit;
 namespace QtAV
 {
 
-class QTAV_WIDGETS_EXPORT AVFilterConfigPage : public ConfigPageBase
+class DIGIKAM_EXPORT AVFilterConfigPage : public ConfigPageBase
 {
     Q_OBJECT
 

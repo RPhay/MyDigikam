@@ -38,7 +38,7 @@ namespace QtAV
 
 typedef int AudioOutputBackendId;
 
-class QTAV_PRIVATE_EXPORT AudioOutputBackend : public QObject
+class DIGIKAM_EXPORT AudioOutputBackend : public QObject
 {
     Q_OBJECT
 

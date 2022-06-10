@@ -40,7 +40,7 @@ namespace QtAV
 
 class AudioResampler;
 
-class QTAV_PRIVATE_EXPORT AudioResamplerPrivate : public DPtrPrivate<AudioResampler>
+class DIGIKAM_EXPORT AudioResamplerPrivate : public DPtrPrivate<AudioResampler>
 {
 public:
 

@@ -70,7 +70,7 @@ class VideoCapture;
  * \endcode
  */
 
-class QTAV_EXPORT AVPlayerCore : public QObject
+class DIGIKAM_EXPORT AVPlayerCore : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(bool relativeTimeMode READ relativeTimeMode WRITE setRelativeTimeMode NOTIFY relativeTimeModeChanged)

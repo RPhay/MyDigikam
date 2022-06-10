@@ -39,7 +39,7 @@ namespace QtAV
 
 typedef QString SubtitleProcessorId;
 
-class QTAV_PRIVATE_EXPORT SubtitleProcessor
+class DIGIKAM_EXPORT SubtitleProcessor
 {
 public:
 

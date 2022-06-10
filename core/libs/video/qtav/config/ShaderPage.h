@@ -37,7 +37,7 @@
 namespace QtAV
 {
 
-class QTAV_WIDGETS_EXPORT ShaderPage : public ConfigPageBase
+class DIGIKAM_EXPORT ShaderPage : public ConfigPageBase
 {
     Q_OBJECT
 

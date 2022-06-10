@@ -51,7 +51,7 @@ class VideoShaderPrivate;
  * Transforming color to rgb is done internally.
  * TODO: vertex shader (fully controlled by user?). Mesh
  */
-class QTAV_EXPORT VideoShader
+class DIGIKAM_EXPORT VideoShader
 {
     DPTR_DECLARE_PRIVATE(VideoShader)
 
@@ -220,7 +220,7 @@ class VideoMaterialPrivate;
  * Encapsulates rendering state for a video shader program.
  * Low-level api. Used by OpenGLVideo and Scene Graph
  */
-class QTAV_EXPORT VideoMaterial
+class DIGIKAM_EXPORT VideoMaterial
 {
     DPTR_DECLARE_PRIVATE(VideoMaterial)
 

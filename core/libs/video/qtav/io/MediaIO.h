@@ -55,7 +55,7 @@ typedef int MediaIOId;
 
 class MediaIOPrivate;
 
-class QTAV_EXPORT MediaIO : public QObject
+class DIGIKAM_EXPORT MediaIO : public QObject
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(MediaIO)

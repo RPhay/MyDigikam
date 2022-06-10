@@ -44,7 +44,7 @@ class MediaIO;
 class VideoEncoder;
 class AudioEncoder;
 
-class QTAV_EXPORT AVMuxer : public QObject
+class DIGIKAM_EXPORT AVMuxer : public QObject
 {
     Q_OBJECT
 

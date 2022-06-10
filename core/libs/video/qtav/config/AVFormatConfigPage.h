@@ -40,7 +40,7 @@ class QLineEdit;
 namespace QtAV
 {
 
-class QTAV_WIDGETS_EXPORT AVFormatConfigPage : public ConfigPageBase
+class DIGIKAM_EXPORT AVFormatConfigPage : public ConfigPageBase
 {
     Q_OBJECT
 

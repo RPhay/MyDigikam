@@ -43,7 +43,7 @@ class QVBoxLayout;
 namespace QtAV
 {
 
-class QTAV_WIDGETS_EXPORT DecoderConfigPage : public ConfigPageBase
+class DIGIKAM_EXPORT DecoderConfigPage : public ConfigPageBase
 {
     Q_OBJECT
 

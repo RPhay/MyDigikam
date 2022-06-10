@@ -37,7 +37,7 @@ class Filter;
 class VideoFilterContext;
 class Statistics;
 
-class QTAV_PRIVATE_EXPORT FilterPrivate : public DPtrPrivate<Filter>
+class DIGIKAM_EXPORT FilterPrivate : public DPtrPrivate<Filter>
 {
 public:
 
@@ -59,7 +59,7 @@ private:
     Q_DISABLE_COPY(FilterPrivate);
 };
 
-class QTAV_PRIVATE_EXPORT VideoFilterPrivate : public FilterPrivate
+class DIGIKAM_EXPORT VideoFilterPrivate : public FilterPrivate
 {
 public:
 
@@ -79,7 +79,7 @@ private:
     Q_DISABLE_COPY(VideoFilterPrivate);
 };
 
-class QTAV_PRIVATE_EXPORT AudioFilterPrivate : public FilterPrivate
+class DIGIKAM_EXPORT AudioFilterPrivate : public FilterPrivate
 {
 public:
 

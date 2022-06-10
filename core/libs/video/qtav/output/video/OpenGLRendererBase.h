@@ -45,7 +45,7 @@ namespace QtAV
  */
 class OpenGLRendererBasePrivate;
 
-class QTAV_EXPORT OpenGLRendererBase : public VideoRenderer,
+class DIGIKAM_EXPORT OpenGLRendererBase : public VideoRenderer,
                                        public QOpenGLFunctions
 {
     DPTR_DECLARE_PRIVATE(OpenGLRendererBase)

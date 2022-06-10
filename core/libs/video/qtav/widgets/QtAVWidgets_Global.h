@@ -29,9 +29,6 @@
 #include "VideoRenderer.h"
 #include "digikam_export.h"
 
-#define QTAV_WIDGETS_EXPORT         DIGIKAM_EXPORT
-#define QTAV_WIDGETS_PRIVATE_EXPORT DIGIKAM_EXPORT
-
 namespace QtAV
 {
 
@@ -45,25 +42,25 @@ namespace Widgets
  * QtAVWidgets module maybe not linked to your program and renderers will not be available.
  * Then you have to call registerRenderers() to ensure QtAVWidgets module is linked.
  */
-QTAV_WIDGETS_EXPORT void registerRenderers();
+DIGIKAM_EXPORT void registerRenderers();
 
 } // namespace Widgets
 
-extern QTAV_WIDGETS_EXPORT VideoRendererId VideoRendererId_Widget;
-extern QTAV_WIDGETS_EXPORT VideoRendererId VideoRendererId_GraphicsItem;
-extern QTAV_WIDGETS_EXPORT VideoRendererId VideoRendererId_GLWidget;
-extern QTAV_WIDGETS_EXPORT VideoRendererId VideoRendererId_GDI;
-extern QTAV_WIDGETS_EXPORT VideoRendererId VideoRendererId_Direct2D;
-extern QTAV_WIDGETS_EXPORT VideoRendererId VideoRendererId_XV;
-extern QTAV_WIDGETS_EXPORT VideoRendererId VideoRendererId_X11;
-extern QTAV_WIDGETS_EXPORT VideoRendererId VideoRendererId_GLWidget2;
-extern QTAV_WIDGETS_EXPORT VideoRendererId VideoRendererId_OpenGLWidget;
+extern DIGIKAM_EXPORT VideoRendererId VideoRendererId_Widget;
+extern DIGIKAM_EXPORT VideoRendererId VideoRendererId_GraphicsItem;
+extern DIGIKAM_EXPORT VideoRendererId VideoRendererId_GLWidget;
+extern DIGIKAM_EXPORT VideoRendererId VideoRendererId_GDI;
+extern DIGIKAM_EXPORT VideoRendererId VideoRendererId_Direct2D;
+extern DIGIKAM_EXPORT VideoRendererId VideoRendererId_XV;
+extern DIGIKAM_EXPORT VideoRendererId VideoRendererId_X11;
+extern DIGIKAM_EXPORT VideoRendererId VideoRendererId_GLWidget2;
+extern DIGIKAM_EXPORT VideoRendererId VideoRendererId_OpenGLWidget;
 
 // popup a dialog
 
-QTAV_WIDGETS_EXPORT void about();
-QTAV_WIDGETS_EXPORT void aboutFFmpeg();
-QTAV_WIDGETS_EXPORT void aboutQtAV();
+DIGIKAM_EXPORT void about();
+DIGIKAM_EXPORT void aboutFFmpeg();
+DIGIKAM_EXPORT void aboutQtAV();
 
 } // namespace QtAV
 

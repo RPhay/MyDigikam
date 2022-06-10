@@ -126,7 +126,7 @@ public:
 
 typedef QSharedPointer<AVFrameBuffers> AVFrameBuffersRef;
 
-class QTAV_PRIVATE_EXPORT AVDecoderPrivate : public DPtrPrivate<AVDecoder>
+class DIGIKAM_EXPORT AVDecoderPrivate : public DPtrPrivate<AVDecoder>
 {
 public:
 
@@ -228,7 +228,7 @@ private:
 
 // ------------------------------------------------------------------------
 
-class QTAV_PRIVATE_EXPORT VideoDecoderPrivate : public AVDecoderPrivate
+class DIGIKAM_EXPORT VideoDecoderPrivate : public AVDecoderPrivate
 {
 public:
 

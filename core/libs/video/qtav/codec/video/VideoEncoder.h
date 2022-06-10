@@ -40,7 +40,7 @@ typedef int VideoEncoderId;
 
 class VideoEncoderPrivate;
 
-class QTAV_EXPORT VideoEncoder : public AVEncoder
+class DIGIKAM_EXPORT VideoEncoder : public AVEncoder
 {
     Q_OBJECT
     Q_PROPERTY(int width READ width WRITE setWidth NOTIFY widthChanged)

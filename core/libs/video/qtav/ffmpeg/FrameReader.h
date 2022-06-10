@@ -52,7 +52,7 @@ namespace QtAV
  * }
  * TODO: multiple tracks
  */
-class QTAV_EXPORT FrameReader : public QObject
+class DIGIKAM_EXPORT FrameReader : public QObject
 {
     Q_OBJECT
 

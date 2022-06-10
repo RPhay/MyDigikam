@@ -35,7 +35,7 @@ namespace QtAV
 
 class AVPlayerCore;
 
-class QTAV_EXPORT AVTranscoder : public QObject
+class DIGIKAM_EXPORT AVTranscoder : public QObject
 {
     Q_OBJECT
 

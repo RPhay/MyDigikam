@@ -72,6 +72,7 @@ set(libqtav_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/AVClock.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/Frame.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/FrameReader.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/ffmpegconfighelper.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/subtitle/CharsetDetector.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/subtitle/PlainText.cpp
