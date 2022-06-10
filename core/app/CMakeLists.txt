@@ -58,6 +58,7 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::PrintSupport,INTERF
                     ${CMAKE_SOURCE_DIR}/core/utilities/searchwindow
                     ${CMAKE_SOURCE_DIR}/core/utilities/maintenance
                     ${CMAKE_SOURCE_DIR}/core/utilities/extrasupport/filesindexer
+                    ${CMAKE_SOURCE_DIR}/core/utilities/extrasupport/addressbook
                     ${CMAKE_SOURCE_DIR}/core/utilities/import/main
                     ${CMAKE_SOURCE_DIR}/core/utilities/import/models
                     ${CMAKE_SOURCE_DIR}/core/utilities/import/views
