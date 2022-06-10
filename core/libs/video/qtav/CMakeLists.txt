@@ -46,126 +46,126 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_I
 
 set(libqtav_SRCS
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVCompat.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVMuxer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVDemuxer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVError.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVPlayerCore.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVPlayerCore_p.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AudioFormat.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AudioFrame.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AudioResampler.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AudioResamplerTemplate.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AudioThread.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/ImageConverter.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/ImageConverterFF.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/VideoCapture.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/VideoFrame.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/VideoFrameExtractor.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/VideoFormat.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/VideoThread.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/Packet.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/PacketBuffer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVDemuxThread.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVThread.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVTranscoder.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AVClock.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/Frame.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/FrameReader.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/AVCompat.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/AVMuxer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/AVDemuxer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/AVError.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/AVPlayerCore.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/AVPlayerCore_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/AudioFormat.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/AudioFrame.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/AudioResampler.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/AudioResamplerTemplate.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/AudioThread.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/ImageConverter.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/ImageConverterFF.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/VideoCapture.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/VideoFrame.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/VideoFrameExtractor.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/VideoFormat.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/VideoThread.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/Packet.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/PacketBuffer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/AVDemuxThread.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/AVThread.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/AVTranscoder.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/AVClock.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/Frame.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/FrameReader.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/subtitle/CharsetDetector.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/subtitle/PlainText.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/subtitle/PlayerSubtitle.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/subtitle/Subtitle.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/subtitle/SubtitleProcessor.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/subtitle/SubtitleProcessorFFmpeg.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/subtitle/SubImage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/subtitle/CharsetDetector.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/subtitle/PlainText.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/subtitle/PlayerSubtitle.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/subtitle/Subtitle.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/subtitle/SubtitleProcessor.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/subtitle/SubtitleProcessorFFmpeg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/subtitle/SubImage.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/GPUMemCopy.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/ColorTransform.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/QtAV_Statistics.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/QtAV_Global.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/QtAV_internal.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/utils/GPUMemCopy.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/utils/ColorTransform.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/utils/QtAV_Statistics.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/utils/QtAV_Global.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/utils/QtAV_internal.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/filter/Filter.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/filter/FilterContext.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/filter/FilterManager.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/filter/LibAVFilter.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/filter/SubtitleFilter.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/filter/EncodeFilter.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filter/Filter.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filter/FilterContext.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filter/FilterManager.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filter/LibAVFilter.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filter/SubtitleFilter.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/filter/EncodeFilter.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/io/MediaIO.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/io/QIODeviceIO.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/io/MediaIO.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/io/QIODeviceIO.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/AudioOutput.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/AudioOutputBackend.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/AudioOutputNull.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/output/video/VideoRenderer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/output/video/VideoOutput.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/output/video/QPainterRenderer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/output/AVOutput.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/output/OutputSet.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/output/audio/AudioOutput.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/output/audio/AudioOutputBackend.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/output/audio/AudioOutputNull.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/output/video/VideoRenderer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/output/video/VideoOutput.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/output/video/QPainterRenderer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/output/AVOutput.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/output/OutputSet.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/audio/AudioDecoder.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/audio/AudioDecoderFFmpeg.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/audio/AudioEncoder.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/audio/AudioEncoderFFmpeg.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/AVDecoder.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/AVEncoder.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoder.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderFFmpegBase.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderFFmpeg.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderFFmpegHW.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoEncoder.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoEncoderFFmpeg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/codec/audio/AudioDecoder.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/codec/audio/AudioDecoderFFmpeg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/codec/audio/AudioEncoder.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/codec/audio/AudioEncoderFFmpeg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/codec/AVDecoder.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/codec/AVEncoder.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/codec/video/VideoDecoder.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/codec/video/VideoDecoderFFmpegBase.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/codec/video/VideoDecoderFFmpeg.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/codec/video/VideoDecoderFFmpegHW.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/codec/video/VideoEncoder.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/codec/video/VideoEncoderFFmpeg.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/common/GraphicsItemRenderer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/common/VideoPreviewWidget.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/common/WidgetRenderer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/common/QtAVWidgets_Global.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/opengl/OpenGLWidgetRenderer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/config/VideoEQConfigPage.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/config/ClickableMenu.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/config/PropertyEditor.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/config/DecoderConfigPage.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/config/AVPlayerSlider.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/config/AVFormatConfigPage.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/config/AVPlayerConfigMngr.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/config/AVFilterConfigPage.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/config/ShaderPage.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/config/MiscPage.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/config/ConfigPageBase.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/config/CaptureConfigPage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/GraphicsItemRenderer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/VideoPreviewWidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/WidgetRenderer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets_Global.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/opengl/OpenGLWidgetRenderer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/config/VideoEQConfigPage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/config/ClickableMenu.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/config/PropertyEditor.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/config/DecoderConfigPage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/config/AVPlayerSlider.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/config/AVFormatConfigPage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/config/AVPlayerConfigMngr.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/config/AVFilterConfigPage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/config/ShaderPage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/config/MiscPage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/config/ConfigPageBase.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/config/CaptureConfigPage.cpp
 )
 
 if(SSE4_1_FOUND)
 
     set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/GPUMemCopy_Frame_SSE4.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/utils/GPUMemCopy_Frame_SSE4.cpp
     )
 
 elseif(SSE2_FOUND)
 
     set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/GPUMemCopy_Frame_SSE2.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/utils/GPUMemCopy_Frame_SSE2.cpp
     )
 
 endif()
 
 if(Qt6_FOUND)
 
-    qt6_add_resources(libqtav_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/shaders/shaders.qrc)
+    qt6_add_resources(libqtav_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/shaders/shaders.qrc)
 
 else()
 
-    qt5_add_resources(libqtav_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src/shaders/shaders.qrc)
+    qt5_add_resources(libqtav_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/shaders/shaders.qrc)
 
 endif()
 
 if(DirectX_DSound_FOUND)
 
     set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/AudioOutputDSound.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/output/audio/AudioOutputDSound.cpp
     )
 
 endif()
@@ -173,7 +173,7 @@ endif()
 if(DirectX_XAudio2_FOUND)
 
     set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/AudioOutputXAudio2.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/output/audio/AudioOutputXAudio2.cpp
     )
 
 endif()
@@ -181,12 +181,12 @@ endif()
 if(DirectX_D3D11_FOUND)
 
     set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderD3D.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderD3D11.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/windows/SurfaceInteropD3D11.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/windows/SurfaceInteropD3D9.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/windows/D3D11VP.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/windows/DirectXHelper.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/codec/video/VideoDecoderD3D.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/codec/video/VideoDecoderD3D11.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/windows/SurfaceInteropD3D11.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/windows/SurfaceInteropD3D9.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/windows/D3D11VP.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/windows/DirectXHelper.cpp
     )
 
 endif()
@@ -194,9 +194,9 @@ endif()
 if(X11_FOUND)
 
     set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/filter/X11FilterContext.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/filter/X11FilterContext.cpp
 
-        ${CMAKE_CURRENT_SOURCE_DIR}/widgets/X11/X11Renderer.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/X11/X11Renderer.cpp
     )
 
 endif()
@@ -204,7 +204,7 @@ endif()
 if(X11_Xv_FOUND)
 
     set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/widgets/X11/XVRenderer.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/X11/XVRenderer.cpp
     )
 
 endif()
@@ -220,29 +220,29 @@ if(HAVE_OPENGL)
     endif()
 
     set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/gl_api.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/ConvolutionShader.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/OpenGLVideo.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/SubImagesRenderer.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/Geometry.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/OpenGLHelper.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/ShaderManager.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/VideoShader.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/GeometryRenderer.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/OpenGLTypes.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/SubImagesGeometry.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/VideoShaderObject.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/opengl/gl_api.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/opengl/ConvolutionShader.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/opengl/OpenGLVideo.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/opengl/SubImagesRenderer.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/opengl/Geometry.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/opengl/OpenGLHelper.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/opengl/ShaderManager.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/opengl/VideoShader.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/opengl/GeometryRenderer.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/opengl/OpenGLTypes.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/opengl/SubImagesGeometry.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/opengl/VideoShaderObject.cpp
 
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/filter/GLSLFilter.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/output/video/OpenGLRendererBase.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/output/video/OpenGLWindowRenderer.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/filter/GLSLFilter.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/output/video/OpenGLRendererBase.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/output/video/OpenGLWindowRenderer.cpp
     )
 
     if(NOT Qt6_FOUND)
 
         set(libqtav_SRCS ${libqtav_SRCS}
-            ${CMAKE_CURRENT_SOURCE_DIR}/widgets/opengl/GLWidgetRenderer.cpp
-            ${CMAKE_CURRENT_SOURCE_DIR}/widgets/opengl/GLWidgetRenderer2.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/opengl/GLWidgetRenderer.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/opengl/GLWidgetRenderer2.cpp
         )
 
     endif()
@@ -250,14 +250,14 @@ if(HAVE_OPENGL)
     if(DirectX_D3D11_FOUND)
 
         set(libqtav_SRCS ${libqtav_SRCS}
-            ${CMAKE_CURRENT_SOURCE_DIR}/src/windows/SurfaceInteropD3D11GL.cpp
-            ${CMAKE_CURRENT_SOURCE_DIR}/src/windows/SurfaceInteropD3D9GL.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/windows/SurfaceInteropD3D11GL.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/windows/SurfaceInteropD3D9GL.cpp
         )
 
         if(AVCODEC_FOUND)
 
             set(libqtav_SRCS ${libqtav_SRCS}
-                ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderDXVA.cpp
+                ${CMAKE_CURRENT_SOURCE_DIR}/codec/video/VideoDecoderDXVA.cpp
             )
 
         endif()
@@ -267,14 +267,14 @@ if(HAVE_OPENGL)
     if(OpenGL_EGL_FOUND)
 
         set(libqtav_SRCS ${libqtav_SRCS}
-            ${CMAKE_CURRENT_SOURCE_DIR}/src/opengl/egl_api.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/opengl/egl_api.cpp
         )
 
         if (DirectX_D3D11_FOUND)
 
             set(libqtav_SRCS ${libqtav_SRCS}
-                ${CMAKE_CURRENT_SOURCE_DIR}/src/windows/SurfaceInteropD3D11EGL.cpp
-                ${CMAKE_CURRENT_SOURCE_DIR}/src/windows/SurfaceInteropD3D9EGL.cpp
+                ${CMAKE_CURRENT_SOURCE_DIR}/windows/SurfaceInteropD3D11EGL.cpp
+                ${CMAKE_CURRENT_SOURCE_DIR}/windows/SurfaceInteropD3D9EGL.cpp
             )
 
         endif()
@@ -287,7 +287,7 @@ endif()
 if(GDIPLUS_FOUND)
 
     set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/widgets/windows/GDIRenderer.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/windows/GDIRenderer.cpp
     )
 
 endif()
@@ -295,7 +295,7 @@ endif()
 if(Direct2D_FOUND)
 
     set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/widgets/windows/Direct2DRenderer.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/windows/Direct2DRenderer.cpp
     )
 
 endif()
@@ -305,8 +305,8 @@ if(ASS_FOUND)
     include_directories(${ASS_INCLUDE_DIRS})
 
     set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/subtitle/ass_api.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/subtitle/SubtitleProcessorLibASS.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/subtitle/ass_api.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/subtitle/SubtitleProcessorLibASS.cpp
     )
 
 endif()
@@ -318,8 +318,8 @@ if(OPENAL_FOUND)
     include_directories(${OPENAL_INCLUDE_DIR})
 
     set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/openal_api.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/AudioOutputOpenAL.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/output/audio/openal_api.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/output/audio/AudioOutputOpenAL.cpp
     )
 
 endif()
@@ -331,7 +331,7 @@ if(OPENSLES_FOUND)
     include_directories(${OPENSLES_INCLUDE_DIR})
 
     set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/AudioOutputOpenSL.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/output/audio/AudioOutputOpenSL.cpp
     )
 
 endif()
@@ -343,7 +343,7 @@ if(PORTAUDIO_FOUND)
     include_directories(${PORTAUDIO_INCLUDE_DIRS})
 
     set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/AudioOutputPortAudio.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/output/audio/AudioOutputPortAudio.cpp
     )
 
 endif()
@@ -356,7 +356,7 @@ if(PULSEAUDIO_FOUND)
     include_directories(${PULSEAUDIO_INCLUDE_DIRS})
 
     set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/AudioOutputPulse.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/output/audio/AudioOutputPulse.cpp
     )
 
 endif()
@@ -370,9 +370,9 @@ if(VAAPI_FOUND AND NOT FFMPEG_VER5_FOUND)
     include_directories(${VAAPI_INCLUDE_DIRS})
 
     set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/vaapi/vaapi_helper.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/vaapi/SurfaceInteropVAAPI.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderVAAPI.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/vaapi/vaapi_helper.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/vaapi/SurfaceInteropVAAPI.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/codec/video/VideoDecoderVAAPI.cpp
     )
 
 endif()
@@ -382,11 +382,11 @@ endif()
 if(APPLE)
 
     set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderVideoToolbox.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/SurfaceInteropCV.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/SurfaceInteropCV_IOSurface.mm
+        ${CMAKE_CURRENT_SOURCE_DIR}/codec/video/VideoDecoderVideoToolbox.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/codec/video/SurfaceInteropCV.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/codec/video/SurfaceInteropCV_IOSurface.mm
 
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/output/audio/AudioOutputAudioToolbox.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/output/audio/AudioOutputAudioToolbox.cpp
     )
 
 else()
@@ -396,9 +396,9 @@ else()
     if(NOT FFMPEG_VER5_FOUND)
 
         set(libqtav_SRCS ${libqtav_SRCS}
-            ${CMAKE_CURRENT_SOURCE_DIR}/src/cuda/cuda_api.cpp
-            ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/SurfaceInteropCUDA.cpp
-            ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderCUDA.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/cuda/cuda_api.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/codec/video/SurfaceInteropCUDA.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/codec/video/VideoDecoderCUDA.cpp
         )
 
     endif()
@@ -408,9 +408,9 @@ endif()
 if(ANDROID)
 
     set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/codec/video/VideoDecoderMediaCodec.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/io/AndroidIO.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/io/AndroidIO_jni.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/codec/video/VideoDecoderMediaCodec.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/io/AndroidIO.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/io/AndroidIO_jni.cpp
     )
 
 endif()
@@ -420,7 +420,7 @@ endif()
 #if(WIN32)
 #
 #    set(libqtav_SRCS ${libqtav_SRCS}
-#        ${CMAKE_CURRENT_SOURCE_DIR}/src/io/WinRTIO.cpp
+#        ${CMAKE_CURRENT_SOURCE_DIR}/io/WinRTIO.cpp
 #    )
 #
 #endif()
@@ -428,7 +428,7 @@ endif()
 if(AVRESAMPLE_FOUND)
 
     set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AudioResamplerLibav.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/AudioResamplerLibav.cpp
     )
 
 endif()
@@ -436,7 +436,7 @@ endif()
 if(SWRESAMPLE_FOUND)
 
     set(libqtav_SRCS ${libqtav_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/ffmpeg/AudioResamplerFF.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/AudioResamplerFF.cpp
     )
 
 endif()

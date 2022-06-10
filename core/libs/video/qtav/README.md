@@ -78,7 +78,9 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
 
     - Use cmake to find CUDA Toolkit dependencies ==> no needs, CUDA is always loaded dynamically.
 
-    - Remove support of Qt version < 5.9
+    - Remove support of Qt version < 5.9.
+
+    - Merge QtAV/src/ and QtAV/widgets/ together.
 
     - Fix API docs.
 
