@@ -43,6 +43,11 @@ else()
 
 endif()
 
+target_include_directories(digikam
+                           PRIVATE
+                           ${DIGIKAM_TARGET_INCLUDES}
+)
+
 add_dependencies(digikam digikam-gitversion)
 add_dependencies(digikam digikam-builddate)
 

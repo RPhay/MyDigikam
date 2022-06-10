@@ -21,6 +21,11 @@ target_compile_definitions(digikamdatabase
                            digikamdatabase_EXPORTS
 )
 
+target_include_directories(digikamdatabase
+                           PRIVATE
+                           ${DIGIKAM_TARGET_INCLUDES}
+)
+
 add_dependencies(digikamdatabase digikamcore)
 
 # All codes from this target are exported with digikam_database_export.h header and DIGIKAM_DATABASE_EXPORT macro.

@@ -104,6 +104,11 @@ target_compile_definitions(digikamcore
                            digikamcore_EXPORTS
 )
 
+target_include_directories(digikamcore
+                           PRIVATE
+                           ${DIGIKAM_TARGET_INCLUDES}
+)
+
 add_dependencies(digikamcore digikam-gitversion)
 add_dependencies(digikamcore digikam-builddate)
 
@@ -113,7 +118,8 @@ generate_export_header(digikamcore
                        EXPORT_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/utils/digikam_core_export.h"
 )
 
-# NOTE: all this target dependencies must be private and not exported to prevent inherited dependencies on external plugins.
+# NOTE: all this target dependencies must be private and not exported
+# to prevent inherited dependencies on external plugins.
 
 target_link_libraries(digikamcore
 

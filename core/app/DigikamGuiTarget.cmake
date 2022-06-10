@@ -151,6 +151,11 @@ target_compile_definitions(gui_digikam_obj
                            digikamgui_EXPORTS
 )
 
+target_include_directories(gui_digikam_obj
+                           PRIVATE
+                           ${DIGIKAM_TARGET_INCLUDES}
+)
+
 ### digiKam GUI shared library objects declaration ##############################################################################
 
 set(DIGIKAMGUI_OBJECTS
