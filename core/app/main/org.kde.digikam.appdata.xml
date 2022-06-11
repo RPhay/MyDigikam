@@ -22,6 +22,7 @@
   <name xml:lang="id">digiKam</name>
   <name xml:lang="is">digiKam</name>
   <name xml:lang="it">digiKam</name>
+  <name xml:lang="ka">digiKam</name>
   <name xml:lang="ko">digiKam</name>
   <name xml:lang="nl">digiKam</name>
   <name xml:lang="nn">digiKam</name>
@@ -55,6 +56,7 @@
   <summary xml:lang="id">Program Pengelolaan Foto</summary>
   <summary xml:lang="is">Ljósmyndaumsýsluforrit</summary>
   <summary xml:lang="it">Programma di gestione delle foto</summary>
+  <summary xml:lang="ka">ფოტოების მართვის პროგრამა</summary>
   <summary xml:lang="ko">사진 관리 프로그램</summary>
   <summary xml:lang="nl">Fotobeheerprogramma</summary>
   <summary xml:lang="nn">Fotohandsamingsprogram</summary>
@@ -244,6 +246,7 @@
     <p xml:lang="id">Fitur:</p>
     <p xml:lang="is">Eiginleikar:</p>
     <p xml:lang="it">Caratteristiche:</p>
+    <p xml:lang="ka">თვისებები:</p>
     <p xml:lang="ko">기능:</p>
     <p xml:lang="nl">Mogelijkheden:</p>
     <p xml:lang="nn">Funksjonar:</p>
@@ -309,6 +312,7 @@
       <li xml:lang="id">Mendukung Exif. Iptc, Xmp, Makernotes</li>
       <li xml:lang="is">Stuðningur við EXIF, IPTC, XMP, Makernotes</li>
       <li xml:lang="it">Supporto per Exif, IPTC, XMP, Makernotes</li>
+      <li xml:lang="ka">Exif, Iptc, Xmp, Makernotes-ის მხარდაჭერა</li>
       <li xml:lang="ko">EXIF, IPTC, XMP, 메이커 노트 지원</li>
       <li xml:lang="nl">Ondersteuning voor Exif, Iptc, Xmp, Makernotes</li>
       <li xml:lang="nn">Støtte for Exif, Iptc, Xmp og Makernotes</li>
@@ -371,6 +375,7 @@
       <li xml:lang="id">Mendukung pemfilteran dan pengurutan album</li>
       <li xml:lang="is">Stuðningur við síun og röðun albúma</li>
       <li xml:lang="it">Supporto per il filtraggio e l'ordinamento degli album</li>
+      <li xml:lang="ka">ალბომების ფილტრაციისა და დალაგების მხარდაჭერა</li>
       <li xml:lang="ko">앨범 필터링 및 정렬</li>
       <li xml:lang="nl">Ondersteuning voor filtering en sorteren van albums</li>
       <li xml:lang="nn">Støtte for filtrering og sortering av album</li>
@@ -404,6 +409,7 @@
       <li xml:lang="id">Impor dari lebih dari 110 perangkat kamera digital</li>
       <li xml:lang="is">Innflutningur frá meira en 1100 gerðum stafrænna myndavéla</li>
       <li xml:lang="it">Importazione da più di 1.100 dispositivi fotografici digitali</li>
+      <li xml:lang="ka">სემოტანა 1100-ზე მეტი ციფრული კამერიდან</li>
       <li xml:lang="ko">1100종 이상의 디지털 카메라에서 사진 가져오기</li>
       <li xml:lang="nl">Importeren uit meer dan 1100 digitale camera's</li>
       <li xml:lang="nn">Støtte for importering av bilete frå meir enn 1 100 ulike kameramodellar</li>
@@ -436,6 +442,7 @@
       <li xml:lang="id">Mendukung lebih dari 900 gambar format RAW</li>
       <li xml:lang="is">Stuðningur við meira en 900 RAW-myndasnið</li>
       <li xml:lang="it">Supporto per più di 900 immagini in formato RAW</li>
+      <li xml:lang="ka">900-ზე მეტი RAW ფორმატის სურათის მხარდაჭერა</li>
       <li xml:lang="ko">900종 이상의 RAW 사진 형식 지원</li>
       <li xml:lang="nl">Ondersteuning voor 900 RAW-format afbeeldingen</li>
       <li xml:lang="nn">Støtte for meir enn 900 ulike råbiletformat</li>
@@ -497,6 +504,7 @@
       <li xml:lang="id">Fitur yang diperluas menggunakan peralatan extra</li>
       <li xml:lang="is">Viðbótareiginleikar með fleiri verkfærum</li>
       <li xml:lang="it">Funzionalità estese tramite strumenti aggiuntivi</li>
+      <li xml:lang="ka">დამატებითი ფუნქციები დამატებითი ხელსაწყოებით</li>
       <li xml:lang="ko">추가 도구로 기능 확장</li>
       <li xml:lang="nl">Uitgebreide mogelijkheden met extra hulpmiddelen</li>
       <li xml:lang="nn">Programtillegg som gjev ekstrafunksjonar</li>
@@ -528,6 +536,7 @@
       <li xml:lang="id">Bagikan fotomu menggunakan HTML atau mempublikasikannya ke layanan web jarak jauh</li>
       <li xml:lang="is">Deildu myndunum þínum með HTML eða sendu þær beint á fjartengdar vefþjónustur</li>
       <li xml:lang="it">Condivisione delle foto tramite HTML o loro pubblicazione nei servizi web remoti</li>
+      <li xml:lang="ka">გააზიარეთ სურათები HTML-ით ან გამოაქვეყნეთ ისინი დაშორებულ ვებ სერვისებზე</li>
       <li xml:lang="ko">HTML로 사진 공유 및 웹 서비스에 올리기</li>
       <li xml:lang="nl">Uw foto's delen met HTML of ze publiceren op websites op afstand</li>
       <li xml:lang="nn">Kan dela bileta med HTML eller publisera dei på ulike nett-tenester</li>
@@ -559,6 +568,7 @@
       <li xml:lang="id">Tersemat editor citra dengan alat tingkat-lanjut untuk memperbaiki foto secara cepat</li>
       <li xml:lang="is">Innifalið öflugt myndvinnsluforrit með þróuðum verkfærum til að laga myndir fljótt og vel</li>
       <li xml:lang="it">Editor delle immagini con strumenti avanzati inclusi per la correzione rapida delle foto</li>
+      <li xml:lang="ka">ასევე მოჰყვება გაუმჯობესებული რედაქტორი, რომელიც სურათების სწრაფად მორგების საშუალებას გაძლევთ</li>
       <li xml:lang="ko">사진을 빠르게 편집할 수 있는 고급 기능이 있는 그림 편집기</li>
       <li xml:lang="nl">Bewerker van afbeeldingen met geavanceerde hulpmiddelen om foto's snel te repareren</li>
       <li xml:lang="nn">Innebygd biletredigering med avanserte verktøy for å forbetra bileta</li>
@@ -595,6 +605,7 @@
       <caption xml:lang="id">Pengelola Antrean Seabrek digiKam</caption>
       <caption xml:lang="is">digiKam Magnvinnslustjóri</caption>
       <caption xml:lang="it">Gestore elaborazione in serie di digiKam</caption>
+      <caption xml:lang="ka">digiKam-ის სერიული დამუშავების მმართველი</caption>
       <caption xml:lang="nl">Takenwachtrijbeheer van digiKam</caption>
       <caption xml:lang="nn">Køhandsamar i digiKam</caption>
       <caption xml:lang="pl">Zarządzanie kolejką w digiKam</caption>
@@ -623,6 +634,7 @@
       <caption xml:lang="id">Pengedit Citra digiKam</caption>
       <caption xml:lang="is">digiKam Myndvinnsluforrit</caption>
       <caption xml:lang="it">Editor delle immagini di digiKam</caption>
+      <caption xml:lang="ka">digiKam გამოსახულებების რედაქტორი</caption>
       <caption xml:lang="nl">Afbeeldingsbewerker van digiKam</caption>
       <caption xml:lang="nn">Biletredigering i digiKam</caption>
       <caption xml:lang="pl">Edytor obrazów digiKam</caption>
@@ -650,6 +662,7 @@
       <caption xml:lang="id">Impor Dari Kamera digiKam</caption>
       <caption xml:lang="is">digiKam Innflutningur úr myndavél</caption>
       <caption xml:lang="it">Importa da fotocamera di digiKam</caption>
+      <caption xml:lang="ka">digiKam კამერიდან შემოტანა</caption>
       <caption xml:lang="nl">Importeren uit camera van digiKam</caption>
       <caption xml:lang="nn">Import frå kamera i digiKam</caption>
       <caption xml:lang="pl">Importowanie z kamery w digiKam</caption>
@@ -678,6 +691,7 @@
       <caption xml:lang="id">Tabel Light digiKam</caption>
       <caption xml:lang="is">digiKam Ljósaborð</caption>
       <caption xml:lang="it">Tavolo luminoso di digiKam</caption>
+      <caption xml:lang="ka">digiKam ღია ცხრილი</caption>
       <caption xml:lang="nl">Lichttafel van digiKam</caption>
       <caption xml:lang="nn">Lysbord i digiKam</caption>
       <caption xml:lang="pl">Podświetlarka digiKam</caption>
@@ -706,6 +720,7 @@
       <caption xml:lang="id">Tampilan Tag digiKam</caption>
       <caption xml:lang="is">digiKam Merkjaskoðun</caption>
       <caption xml:lang="it">Vista tag di digiKam</caption>
+      <caption xml:lang="ka">digiKam ჭდეების ნახვა</caption>
       <caption xml:lang="nl">Weergave van tags van digiKam</caption>
       <caption xml:lang="nn">Merkelappvising i digiKam</caption>
       <caption xml:lang="pl">Widok znaczników digiKam</caption>
@@ -814,6 +829,7 @@
   <developer_name xml:lang="id">Tim digiKam</developer_name>
   <developer_name xml:lang="is">digiKam þróunarteymið</developer_name>
   <developer_name xml:lang="it">La squadra di digiKam</developer_name>
+  <developer_name xml:lang="ka">digiKam-ის გუნდი</developer_name>
   <developer_name xml:lang="nl">Team van digiKam</developer_name>
   <developer_name xml:lang="nn">digiKam-laget</developer_name>
   <developer_name xml:lang="pl">Zespół digiKam</developer_name>
