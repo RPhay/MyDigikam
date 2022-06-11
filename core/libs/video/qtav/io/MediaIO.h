@@ -95,7 +95,8 @@ public:
 
     /*!
      * \brief setUrl
-     * onUrlChange() will be called if url is different. onUrlChange() will close the old url and open the new url if it's not empty
+     * onUrlChange() will be called if url is different.
+     * onUrlChange() will close the old url and open the new url if it's not empty
      * \param url
      */
     void setUrl(const QString& url = QString());
@@ -103,7 +104,8 @@ public:
 
     /*!
      * \brief setAccessMode
-     * A MediaIO instance can be 1 mode, Read (default) or Write. If !isWritable(), then set to Write will fail and mode does not change
+     * A MediaIO instance can be 1 mode, Read (default) or Write.
+     * If !isWritable(), then set to Write will fail and mode does not change
      * Call it before any function!
      * \return false if set failed
      */
@@ -161,7 +163,8 @@ public:
     /*!
      * \brief isVariableSize
      * Experiment: A hack for size() changes during playback.
-     * If true, containers that estimate duration from pts(or bit rate) will get an invalid duration. Thus no eof get
+     * If true, containers that estimate duration from pts(or bit rate)
+     * will get an invalid duration. Thus no eof get
      * when the size of playback start reaches. So playback will not stop.
      * Demuxer seeking should work for this case.
      */

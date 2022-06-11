@@ -134,7 +134,8 @@ public:
 
     /*!
      * \brief setVolume
-     * Set volume by backend api. If backend can not set the given volume, or SetVolume feature is not set,
+     * Set volume by backend api. If backend can not set the
+     * given volume, or SetVolume feature is not set,
      * software implemention will be used.
      * \param value >=0
      * \return true if success

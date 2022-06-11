@@ -84,7 +84,8 @@ protected:
     explicit AVOutput(AVOutputPrivate& d);
 
     /**
-     * If the pause state is true set by pause(true), then block the thread and wait for pause state changed, i.e. pause(false)
+     * If the pause state is true set by pause(true),
+     * then block the thread and wait for pause state changed, i.e. pause(false)
      * and return true. Otherwise, return false immediately.
      */
     bool tryPause();                            // move to OutputSet
@@ -110,7 +111,8 @@ private:
     virtual bool onInstallFilter(Filter* filter, int index);
     virtual bool onUninstallFilter(Filter* filter);
 
-    // only called in handlePaintEvent. But filters may change. so required by proxy to update it's filters
+    // only called in handlePaintEvent. But filters may change.
+    // so required by proxy to update it's filters
 
     virtual bool onHanlePendingTasks(); // return true: proxy update filters
 

@@ -42,7 +42,8 @@ public:
 
     /*!
      * \brief generateVertexData
-     * \param rect render to. If it's viewport rect, and fit video aspect ratio, ass images created from video frame size needs a scale transform is required when rendering
+     * \param rect render to. If it's viewport rect, and fit video aspect ratio,
+     * ass images created from video frame size needs a scale transform is required when rendering
      * \param useIndecies
      * \param maxWidth
      * \return false if current SubImageSet is invalid

@@ -62,7 +62,8 @@ public:
      * \brief process
      * process subtitle from QIODevice.
      * \param dev is open and you don't have to close it
-     * \return false if failed or does not supports iodevice, e.g. does not support sequential device
+     * \return false if failed or does not supports iodevice,
+     * e.g. does not support sequential device
      */
     virtual bool process(QIODevice* dev)          = 0;
 
@@ -96,7 +97,8 @@ public:
         return false;
     }
 
-    // return timestamp, insert it to Subtitle's internal linkedlist. can be invalid if only support renderering
+    // return timestamp, insert it to Subtitle's internal linkedlist.
+    // can be invalid if only support renderering
 
     virtual SubtitleFrame processLine(const QByteArray& data, qreal pts = -1, qreal duration = 0) = 0;
     virtual QString getText(qreal pts) const                                                      = 0;

@@ -73,11 +73,13 @@ public:
     // map to Qt types
     // drawSurface?
 
-    virtual void drawImage(const QPointF& pos, const QImage& image, const QRectF& source = QRectF(), Qt::ImageConversionFlags flags = Qt::AutoColor);
+    virtual void drawImage(const QPointF& pos, const QImage& image,
+                           const QRectF& source = QRectF(), Qt::ImageConversionFlags flags = Qt::AutoColor);
 
     // if target is null, draw image at target.topLeft(). if source is null, draw the whole image
 
-    virtual void drawImage(const QRectF& target, const QImage& image, const QRectF& source = QRectF(), Qt::ImageConversionFlags flags = Qt::AutoColor);
+    virtual void drawImage(const QRectF& target, const QImage& image,
+                           const QRectF& source = QRectF(), Qt::ImageConversionFlags flags = Qt::AutoColor);
     virtual void drawPlainText(const QPointF& pos, const QString& text);
 
     // if rect is null, draw single line text at rect.topLeft(), ignoring flags
@@ -154,8 +156,10 @@ public:
 
     // empty source rect equals to the whole source rect
 
-    void drawImage(const QPointF& pos, const QImage& image, const QRectF& source = QRectF(), Qt::ImageConversionFlags flags = Qt::AutoColor)   override;
-    void drawImage(const QRectF& target, const QImage& image, const QRectF& source = QRectF(), Qt::ImageConversionFlags flags = Qt::AutoColor) override;
+    void drawImage(const QPointF& pos, const QImage& image,
+                   const QRectF& source = QRectF(), Qt::ImageConversionFlags flags = Qt::AutoColor) override;
+    void drawImage(const QRectF& target, const QImage& image,
+                   const QRectF& source = QRectF(), Qt::ImageConversionFlags flags = Qt::AutoColor) override;
     void drawPlainText(const QPointF& pos, const QString& text)                                                                                override;
 
     // if rect is null, draw single line text at rect.topLeft(), ignoring flags
@@ -203,13 +207,15 @@ public:
 
     // empty source rect equals to the whole source rect
 
-    void drawImage(const QPointF& pos, const QImage& image, const QRectF& source = QRectF(), Qt::ImageConversionFlags flags = Qt::AutoColor) override;
-    void drawImage(const QRectF& target, const QImage& image, const QRectF& source = QRectF(), Qt::ImageConversionFlags flags = Qt::AutoColor) override;
-    void drawPlainText(const QPointF& pos, const QString& text) override;
+    void drawImage(const QPointF& pos, const QImage& image,
+                   const QRectF& source = QRectF(), Qt::ImageConversionFlags flags = Qt::AutoColor) override;
+    void drawImage(const QRectF& target, const QImage& image,
+                   const QRectF& source = QRectF(), Qt::ImageConversionFlags flags = Qt::AutoColor) override;
+    void drawPlainText(const QPointF& pos, const QString& text)                                     override;
 
     // if rect is null, draw single line text at rect.topLeft(), ignoring flags
 
-    void drawPlainText(const QRectF& rect, int flags, const QString& text) override;
+    void drawPlainText(const QRectF& rect, int flags, const QString& text)           override;
     void drawRichText(const QRectF& rect, const QString& text, bool wordWrap = true) override;
 
 protected:

@@ -49,7 +49,7 @@ namespace QtAV
 class GraphicsItemRendererPrivate;
 
 class DIGIKAM_EXPORT GraphicsItemRenderer : public GraphicsWidget,
-                                                 public QPainterRenderer
+                                            public QPainterRenderer
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(GraphicsItemRenderer)

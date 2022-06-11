@@ -97,7 +97,8 @@ const char* profileName(VAProfile profile);
 
 /*!
  * \brief va_new_image
- * create image (if img is not null)/find format for the first supported fourcc from given fourcc list.
+ * create image (if img is not null)/find format for the first
+ * supported fourcc from given fourcc list.
  * if s is not null, also test vaGetImage for the fourcc
  */
 VAImageFormat va_new_image(VADisplay display, const unsigned int* fourccs,
@@ -396,7 +397,8 @@ class display_t         // cppcheck-suppress noConstructor
 {
 public:
 
-    // display can have a valid handle (!=-1, 0), then it's an external display. you have to manager the external display handle yourself
+    // display can have a valid handle (!=-1, 0), then it's an external display.
+    // you have to manager the external display handle yourself
 
     static display_ptr create(const NativeDisplay& display);
     ~display_t();
@@ -443,8 +445,10 @@ public:
 
     ~surface_t()
     {
-        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("VAAPI - destroying surface 0x%x", (int)m_id);
-
+/*
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("VAAPI - destroying surface 0x%x", (int)m_id);
+*/
         if (m_id != VA_INVALID_SURFACE)
             VAWARN(vaDestroySurfaces(m_display->get(), &m_id, 1))
     }

@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_CONVOLUTIONSHADER_H
-#define QTAV_CONVOLUTIONSHADER_H
+#ifndef QTAV_CONVOLUTION_SHADER_H
+#define QTAV_CONVOLUTION_SHADER_H
 
 // Local includes
 
@@ -80,4 +80,4 @@ protected:
 
 } // namespace QtAV
 
-#endif // QTAV_CONVOLUTIONSHADER_H
+#endif // QTAV_CONVOLUTION_SHADER_H

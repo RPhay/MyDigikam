@@ -187,7 +187,8 @@ public:
 
     /*!
      * \brief setTextureCount
-     * sometimes we needs more than 1 texture coordinates, for example we have to set rectangle texture
+     * sometimes we needs more than 1 texture coordinates,
+     * for example we have to set rectangle texture
      * coordinates for each plane.
      */
     void setTextureCount(int value);

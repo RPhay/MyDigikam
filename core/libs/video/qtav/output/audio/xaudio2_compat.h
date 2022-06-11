@@ -70,7 +70,8 @@
 #endif
 
 // TODO: winrt test
-// do not add dxsdk xaudio2.h dir to INCLUDE for other file build with winsdk to avoid runtime crash
+// do not add dxsdk xaudio2.h dir to INCLUDE for other
+// file build with winsdk to avoid runtime crash
 // currently you can use dxsdk 2010 header for mingw
 // MinGW64 cross: XAudio2.h
 
@@ -249,7 +250,8 @@ typedef ::IXAudio2MasteringVoice IXAudio2MasteringVoice;
 
 #endif
 
-// At last, define the same types. MUST BE AT LAST to avoid ambigous, for example IXAudio2MasteringVoice is a ::IXAudio2Voice but we can use IXAudio2Voice
+// At last, define the same types. MUST BE AT LAST to avoid ambigous,
+// for example IXAudio2MasteringVoice is a ::IXAudio2Voice but we can use IXAudio2Voice
 
 /*
 typedef ::IXAudio2Voice IXAudio2Voice;
@@ -340,7 +342,8 @@ IXAudio2 : public IUnknown
 
 #endif
 
-// At last, define the same types. MUST BE AT LAST to avoid ambigous, for example IXAudio2MasteringVoice is a ::IXAudio2Voice but we can use IXAudio2Voice
+// At last, define the same types. MUST BE AT LAST to avoid ambigous,
+// for example IXAudio2MasteringVoice is a ::IXAudio2Voice but we can use IXAudio2Voice
 
 /*
 typedef ::IXAudio2Voice IXAudio2Voice;

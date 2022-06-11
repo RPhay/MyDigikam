@@ -41,7 +41,7 @@ class GLWidgetRendererPrivate;
  * Renderering video frames using GLSL. A more generic high level class OpenGLVideo is used internally.
  */
 class DIGIKAM_EXPORT GLWidgetRenderer : public QOpenGLWidget,
-                                             public OpenGLRendererBase
+                                        public OpenGLRendererBase
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(GLWidgetRenderer)

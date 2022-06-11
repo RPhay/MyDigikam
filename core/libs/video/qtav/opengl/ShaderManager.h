@@ -37,8 +37,10 @@ class VideoMaterial;
 /*!
  * \brief The ShaderManager class
  * Cache VideoShader and shader programes for different video material type.
- * TODO: ShaderManager does not change for a given vo, so we can expose VideoRenderer.shaderManager() to set custom shader.
- * It's better than VideoRenderer.opengl() because OpenGLVideo exposes too many apis that may confuse user.
+ * TODO: ShaderManager does not change for a given vo, so we can expose
+ * VideoRenderer.shaderManager() to set custom shader.
+ * It's better than VideoRenderer.opengl() because OpenGLVideo
+ * exposes too many apis that may confuse user.
  */
 class ShaderManager : public QObject
 {

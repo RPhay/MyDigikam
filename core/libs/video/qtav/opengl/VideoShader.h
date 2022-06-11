@@ -47,7 +47,8 @@ class VideoShaderPrivate;
  * \brief The VideoShader class
  * Represents a shader for rendering a video frame.
  * Low-level api. Used by OpenGLVideo and Scene Graph.
- * You can also create your own shader. Usually only sampling function and rgb post processing are enough.
+ * You can also create your own shader. Usually only sampling
+ * function and rgb post processing are enough.
  * Transforming color to rgb is done internally.
  * TODO: vertex shader (fully controlled by user?). Mesh
  */
@@ -78,7 +79,8 @@ public:
 
     /*!
      * \brief initialize
-     * \param shaderProgram: 0 means create a shader program internally. if not linked, vertex/fragment shader will be added and linked
+     * \param shaderProgram: 0 means create a shader program internally.
+     * if not linked, vertex/fragment shader will be added and linked
      */
     virtual void initialize(QOpenGLShaderProgram* shaderProgram = nullptr);
     int uniformLocation(const char* name)       const;
@@ -134,7 +136,9 @@ private:
      * %planes% => plane count
      * Uniforms can be used: (N: 0 ~ planes-1)
      * u_Matrix (vertex shader),
-     * u_TextureN, v_TexCoordsN, u_texelSize(array of vec2, normalized), u_textureSize(array of vec2), u_opacity, u_c(channel map), u_colorMatrix, u_to8(vec2, computing 16bit value with 8bit components)
+     * u_TextureN, v_TexCoordsN, u_texelSize(array of vec2, normalized),
+     * u_textureSize(array of vec2), u_opacity, u_c(channel map), u_colorMatrix,
+     * u_to8(vec2, computing 16bit value with 8bit components)
      * Vertex shader in: a_Position, a_TexCoordsN (see attributeNames())
      * Vertex shader out: v_TexCoordsN
      */
@@ -153,7 +157,8 @@ private:
      * Call program()->setUniformValue(...) here
      * You can upload a texture for blending in userPostProcess(),
      * or LUT texture used by userSample() or userPostProcess() etc.
-     * \return false if use setUserUniformValue(Uniform& u), true if call program()->setUniformValue() here
+     * \return false if use setUserUniformValue(Uniform& u),
+     * true if call program()->setUniformValue() here
      */
     virtual bool setUserUniformValues()
     {
@@ -162,7 +167,8 @@ private:
 
     /*!
      * \brief setUserUniformValue
-     * Update value of uniform u. Call Uniform.set(const T& value, int count); VideoShader will call Uniform.setGL() later if value is changed
+     * Update value of uniform u. Call Uniform.set(const T& value, int count);
+     * VideoShader will call Uniform.setGL() later if value is changed
      */
     virtual void setUserUniformValue(Uniform&)
     {
@@ -174,10 +180,13 @@ private:
      * \code
      *     vec4 sample2d(sampler2D tex, vec2 pos, int plane) { .... }
      * \endcode
-     * The 3rd parameter can be used to get texel/texture size of a given plane u_texelSize[plane]/textureSize[plane];
-     * Convolution of result rgb and kernel has the same effect as convolution of input yuv and kernel, ensured by
+     * The 3rd parameter can be used to get texel/texture size of a given
+     * plane u_texelSize[plane]/textureSize[plane];
+     * Convolution of result rgb and kernel has the same effect
+     * as convolution of input yuv and kernel, ensured by
      * Σ_i c_i* Σ_j k_j*x_j=Σ_i k_i* Σ_j c_j*x_j
-     * Because because the input yuv is from a real rgb color, so no clamp() is required for the transformed color.
+     * Because because the input yuv is from a real rgb color,
+     * so no clamp() is required for the transformed color.
      */
     virtual const char* userSample() const
     {
@@ -245,7 +254,8 @@ public:
 
     /*!
      * \brief isDirty
-     * \return true if material type changed, or other properties changed, e.g. 8bit=>10bit (the same material type) and eq
+     * \return true if material type changed, or other properties changed, e.g.
+     * 8bit=>10bit (the same material type) and eq
      */
     bool isDirty()                          const;
 

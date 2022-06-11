@@ -38,11 +38,12 @@ class GLWidgetRenderer2Private;
 
 /*!
  * \brief The GLWidgetRenderer2 class
- * Renderering video frames using GLSL. A more generic high level class OpenGLVideo is used internally.
+ * Renderering video frames using GLSL.
+ * A more generic high level class OpenGLVideo is used internally.
  * TODO: for Qt5, no QtOpenGL, use QWindow instead.
  */
 class DIGIKAM_EXPORT GLWidgetRenderer2 : public QGLWidget,
-                                              public OpenGLRendererBase
+                                         public OpenGLRendererBase
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(GLWidgetRenderer2)

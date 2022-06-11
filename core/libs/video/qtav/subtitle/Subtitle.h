@@ -99,8 +99,10 @@ public:
 
     /*!
      * \brief setCodec
-     * set subtitle encoding that supported by QTextCodec. You have to call load() to manually reload the subtitle with given codec
-     * \param value codec name. see QTextCodec.availableCodecs(). Empty value means using the default codec in QTextCodec
+     * set subtitle encoding that supported by QTextCodec.
+     * You have to call load() to manually reload the subtitle with given codec
+     * \param value codec name. see QTextCodec.availableCodecs().
+     * Empty value means using the default codec in QTextCodec
      * If linked with libchardet(https://github.com/cnangel/libchardet) or can dynamically load it,
      * set value of "AutoDetect" to detect the charset of subtitle
      */
@@ -117,7 +119,8 @@ public:
 
     /*!
      * \brief setEngines
-     * Set subtitle processor engine names, in priority order. When loading a subtitle, use the engines
+     * Set subtitle processor engine names, in priority order.
+     * When loading a subtitle, use the engines
      * one by one until a usable engine is found.
      * \param value
      */
@@ -137,7 +140,8 @@ public:
 
     /*!
      * \brief setFileName
-     * the given name will be in the 1st place to try to open(if using fuzzy match). then files in suffixes() order
+     * the given name will be in the 1st place to try to open(if using fuzzy match).
+     * then files in suffixes() order
      * or in processor's supported suffixes order
      * \param name
      */
@@ -160,7 +164,8 @@ public:
 
     /*!
      * \brief setSuffixes
-     * default is using SubtitleProcessor. Empty equals default value. But suffixes() will return empty.
+     * default is using SubtitleProcessor. Empty equals default value.
+     * But suffixes() will return empty.
      */
     void setSuffixes(const QStringList& value);
     QStringList suffixes() const;
@@ -208,7 +213,8 @@ public:
      */
     bool processHeader(const QByteArray& codec, const QByteArray& data);
 
-    // ffmpeg decodes subtitle lines and call processLine. if AVPacket contains plain text, no decoding is ok
+    // ffmpeg decodes subtitle lines and call processLine.
+    // if AVPacket contains plain text, no decoding is ok
 
     bool processLine(const QByteArray& data, qreal pts = -1, qreal duration = 0);
 
@@ -287,7 +293,8 @@ public:
     /*!
      * \brief setCodec
      * set subtitle encoding that supported by QTextCodec. subtitle will be reloaded
-     * \param value codec name. see QTextCodec.availableCodecs(). Empty value means using the default codec in QTextCodec
+     * \param value codec name. see QTextCodec.availableCodecs().
+     * Empty value means using the default codec in QTextCodec
      */
     void setCodec(const QByteArray& value);
     QByteArray codec()              const;
@@ -299,10 +306,10 @@ public:
     bool fuzzyMatch()               const;
 
     // always use exact file path by setFile(). file name is used internally
-
-    //void setFileName(const QString& name);
-    //QString fileName() const;
-
+/*
+    void setFileName(const QString& name);
+    QString fileName() const;
+*/
     void setDirs(const QStringList& value);
     QStringList dirs()              const;
 

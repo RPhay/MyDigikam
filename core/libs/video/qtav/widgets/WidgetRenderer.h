@@ -39,7 +39,7 @@ namespace QtAV
 class WidgetRendererPrivate;
 
 class DIGIKAM_EXPORT WidgetRenderer : public QWidget,
-                                           public QPainterRenderer
+                                      public QPainterRenderer
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(WidgetRenderer)
@@ -80,7 +80,8 @@ protected:
     bool receiveFrame(const VideoFrame& frame)  override;
     void resizeEvent(QResizeEvent*)             override;
 
-    /* usually you don't need to reimplement paintEvent, just drawXXX() is ok. unless you want do all
+    /**
+     * usually you don't need to reimplement paintEvent, just drawXXX() is ok. unless you want do all
      * things yourself totally
      */
 

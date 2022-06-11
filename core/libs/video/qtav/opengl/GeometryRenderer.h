@@ -38,7 +38,8 @@ namespace QtAV
 
 /*!
  * \brief The GeometryRenderer class
- * TODO: support multiple geometry with same primitive (glPrimitiveRestartIndex, glDrawArraysInstanced, glDrawArraysInstanced, glMultiDrawArrays...)
+ * TODO: support multiple geometry with same primitive
+ * (glPrimitiveRestartIndex, glDrawArraysInstanced, glDrawArraysInstanced, glMultiDrawArrays...)
  */
 class DIGIKAM_EXPORT GeometryRenderer
 {
@@ -68,7 +69,8 @@ public:
      * \brief updateGeometry
      * Update geometry buffer. Rebind VBO, IBO to VAO if geometry attributes is changed.
      * Assume attributes are bound in the order 0, 1, 2,....
-     * Make sure the old geometry is not destroyed before this call because it will be used to compare with the new \l geo
+     * Make sure the old geometry is not destroyed before this call
+     * because it will be used to compare with the new \l geo
      * \param geo null: release vao/vbo
      */
     void updateGeometry(Geometry* geo = nullptr);

@@ -66,9 +66,10 @@ public:
     bool isOwnedByTarget() const;
 
     // setInput/Output: no need to call installTo
-    // bool setInput(Filter*);
-    // bool setOutput(Filter*);
-
+/*
+    bool setInput(Filter*);
+    bool setOutput(Filter*);
+*/
     /*!
      * \brief installTo
      * Install filter to player can process every frame before rendering.

@@ -36,37 +36,45 @@
 #       define DYGL(glFunc) glFunc
 #   endif
 
-#   define EGL_ENSURE(x, ...) \
-    do { \
-        if (!(x)) { \
-            EGLint err = eglGetError(); \
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("EGL error@%d<<%s. " #x ": %#x %s", __LINE__, __FILE__, err, eglQueryString(eglGetCurrentDisplay(), err)); \
-            return __VA_ARGS__; \
-        } \
+#   define EGL_ENSURE(x, ...)                                                               \
+    do {                                                                                    \
+        if (!(x)) {                                                                         \
+            EGLint err = eglGetError();                                                     \
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()                                      \
+                << QString::asprintf("EGL error@%d<<%s. " #x ": %#x %s",                    \
+                    __LINE__, __FILE__, err, eglQueryString(eglGetCurrentDisplay(), err));  \
+            return __VA_ARGS__;                                                             \
+        }                                                                                   \
     } while(0)
 
-#   define EGL_WARN(x, ...) \
-    do { \
-        if (!(x)) { \
-            EGLint err = eglGetError(); \
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("EGL error@%d<<%s. " #x ": %#x %s", __LINE__, __FILE__, err, eglQueryString(eglGetCurrentDisplay(), err)); \
-        } \
+#   define EGL_WARN(x, ...)                                                                 \
+    do {                                                                                    \
+        if (!(x)) {                                                                         \
+            EGLint err = eglGetError();                                                     \
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()                                      \
+                << QString::asprintf("EGL error@%d<<%s. " #x ": %#x %s",                    \
+                    __LINE__, __FILE__, err, eglQueryString(eglGetCurrentDisplay(), err));  \
+        }                                                                                   \
     } while(0)
 
 
-#   define WGL_ENSURE(x, ...) \
-    do { \
-        if (!(x)) { \
-            qCWarning(DIGIKAM_QTAV_LOG_WARN) << "WGL error " << __FILE__ << "@" << __LINE__ << " " << #x << ": " << qt_error_string(GetLastError()); \
-            return __VA_ARGS__; \
-        } \
+#   define WGL_ENSURE(x, ...)                                                               \
+    do {                                                                                    \
+        if (!(x)) {                                                                         \
+            qCWarning(DIGIKAM_QTAV_LOG_WARN)                                                \
+                << "WGL error " << __FILE__ << "@" << __LINE__                              \
+                << " " << #x << ": " << qt_error_string(GetLastError());                    \
+            return __VA_ARGS__;                                                             \
+        }                                                                                   \
     } while(0)
 
-#   define WGL_WARN(x, ...) \
-    do { \
-        if (!(x)) { \
-    qCWarning(DIGIKAM_QTAV_LOG_WARN) << "WGL error " << __FILE__ << "@" << __LINE__ << " " << #x << ": " << qt_error_string(GetLastError()); \
-        } \
+#   define WGL_WARN(x, ...)                                                                 \
+    do {                                                                                    \
+        if (!(x)) {                                                                         \
+            qCWarning(DIGIKAM_QTAV_LOG_WARN)                                                \
+                << "WGL error " << __FILE__ << "@" << __LINE__                              \
+                << " " << #x << ": " << qt_error_string(GetLastError());                    \
+        }                                                                                   \
     } while(0)
 
 class QMatrix4x4;

@@ -66,7 +66,8 @@ public:
 
     /*!
      * \brief outputSize
-     * Output frame size. FBO uses the same size to render. An empty size means using the input frame size
+     * Output frame size. FBO uses the same size to render.
+     * An empty size means using the input frame size
      * \return
      */
     QSize outputSize()                              const;
@@ -84,8 +85,10 @@ protected:
     /*!
      * \brief process
      * Draw video frame into fbo and apply the user shader from opengl()->userShader();
-     * \param frame input frame can be a frame holding host memory data, or any other GPU frame can interop with OpenGL texture (including frames from HW decoders in QtAV).
-     * Output frame holds an RGB texture, which can be processed in the next GPU filter, or rendered by OpenGL renderers.
+     * \param frame input frame can be a frame holding host memory data,
+     * or any other GPU frame can interop with OpenGL texture (including frames from HW decoders in QtAV).
+     * Output frame holds an RGB texture, which can be processed in the
+     * next GPU filter, or rendered by OpenGL renderers.
      * When process() is done, FBO before process() is bounded.
      */
     void process(Statistics* statistics, VideoFrame* frame = nullptr) override;

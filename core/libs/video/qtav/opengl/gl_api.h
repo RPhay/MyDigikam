@@ -163,8 +163,10 @@ struct api
     void   (GL_APIENTRY* GetTexLevelParameteriv)(GLenum, GLint, GLenum, GLint*);
 
 #   if defined(Q_OS_WIN32)
-//      #include <GL/wglext.h> //not found in vs2013
-//https://www.opengl.org/registry/specs/NV/DX_interop.txt
+/*
+#       include <GL/wglext.h> // not found in vs2013
+        // https://www.opengl.org/registry/specs/NV/DX_interop.txt
+*/
 #       ifndef WGL_ACCESS_READ_ONLY_NV
 #           define WGL_ACCESS_READ_ONLY_NV           0x00000000
 #           define WGL_ACCESS_READ_WRITE_NV          0x00000001

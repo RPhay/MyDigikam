@@ -44,7 +44,7 @@ class SubtitleFilterPrivate;
  * must be true) > embedded subtitle
  */
 class DIGIKAM_EXPORT SubtitleFilter : public VideoFilter,
-                                   public SubtitleAPIProxy
+                                      public SubtitleAPIProxy
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(SubtitleFilter)
@@ -84,7 +84,8 @@ public:
 
     /*!
      * \brief setFile
-     * Load user selected subtitle. The subtitle will not change unless you manually setFile(QString()).
+     * Load user selected subtitle.
+     * The subtitle will not change unless you manually setFile(QString()).
      */
     void setFile(const QString& file);
     QString file()                  const;
@@ -95,7 +96,8 @@ public:
      */
     bool autoLoad()                 const;
 
-    // <1 means normalized. not valid means the whole target rect. default is (0, 0, 1, 0.9) and align bottom
+    // < 1 means normalized. not valid means the whole target rect.
+    // default is (0, 0, 1, 0.9) and align bottom
 
     void setRect(const QRectF& r);
     QRectF rect()                   const;

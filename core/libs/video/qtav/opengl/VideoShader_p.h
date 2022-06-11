@@ -175,14 +175,16 @@ public:
     VideoFrame              frame;
 
     /**
-     * old format. used to check whether we have to update textures. set to current frame's format after textures are updated.
+     * old format. used to check whether we have to update textures.
+     * set to current frame's format after textures are updated.
      * TODO: only VideoMaterial.type() is enough to check and update shader. so remove it
      */
     VideoFormat             video_format;
     QSize                   plane0Size;
 
     /**
-     * width is in bytes. different alignments may result in different plane 1 linesize even if plane 0 are the same
+     * width is in bytes. different alignments may result in different
+     * plane 1 linesize even if plane 0 are the same
      */
     int                     plane1_linesize;
 

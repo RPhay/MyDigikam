@@ -82,7 +82,8 @@ public Q_SLOTS:
 
     /*!
      * \brief finish
-     * Tell the encoder no more frames to encode. Signal finished() will be emitted when all frames are encoded
+     * Tell the encoder no more frames to encode.
+     * Signal finished() will be emitted when all frames are encoded
      */
     void finish();
 
@@ -92,7 +93,8 @@ Q_SIGNALS:
 
     /*!
      * \brief readyToEncode
-     * Emitted when encoder is open. All parameters are set and muxer can set codec properties now.
+     * Emitted when encoder is open.
+     * All parameters are set and muxer can set codec properties now.
      * close the encoder() to reset and reopen.
      */
     void readyToEncode();
@@ -167,7 +169,8 @@ public Q_SLOTS:
 
     /*!
      * \brief finish
-     * Tell the encoder no more frames to encode. Signal finished() will be emitted when all frames are encoded
+     * Tell the encoder no more frames to encode.
+     * Signal finished() will be emitted when all frames are encoded
      */
     void finish();
 
@@ -177,7 +180,8 @@ Q_SIGNALS:
 
     /*!
      * \brief readyToEncode
-     * Emitted when encoder is open. All parameters are set and muxer can set codec properties now.
+     * Emitted when encoder is open.
+     * All parameters are set and muxer can set codec properties now.
      * close the encoder() to reset and reopen.
      */
     void readyToEncode();

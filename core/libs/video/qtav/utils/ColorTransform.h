@@ -82,7 +82,8 @@ public:
 
     /*!
      * \brief matrix
-     * \return result matrix to transform from inputColorSpace to outputColorSpace with given brightness,
+     * \return result matrix to transform from inputColorSpace
+     * to outputColorSpace with given brightness,
      * contrast, saturation and hue
      */
     QMatrix4x4 matrix()                         const;
@@ -102,7 +103,8 @@ public:
 
     /*!
      * \brief reset
-     * only set in-space transform to identity. other parameters such as in/out color space does not change
+     * only set in-space transform to identity.
+     * other parameters such as in/out color space does not change
      */
     void reset();
 

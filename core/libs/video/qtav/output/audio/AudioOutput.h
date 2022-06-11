@@ -52,7 +52,7 @@ class AudioFormat;
 class AudioOutputPrivate;
 
 class DIGIKAM_EXPORT AudioOutput : public QObject,
-                                public AVOutput
+                                   public AVOutput
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(AudioOutput)
@@ -177,7 +177,8 @@ public:
 
     /*!
      * \brief setSpeed  set audio playing speed
-     * Currently only store the value and does nothing else in audio output. You may change sample rate to get the same effect.
+     * Currently only store the value and does nothing else in audio output.
+     * You may change sample rate to get the same effect.
      * The speed affects the playing only if audio is available and clock type is
      * audio clock. For example, play a video contains audio without special configurations.
      * To change the playing speed in other cases, use AVPlayerCore::setSpeed(qreal)
@@ -198,8 +199,11 @@ public:
 
     /*!
      * \brief bufferSamples
-     * Number of samples that audio output accept in 1 buffer. Feed the audio output this size of data every time.
-     * Smaller buffer samples gives more buffers for a given data to avoid stutter. But if it's too small, the duration of 1 buffer will be too small to play, for example 1ms. Currently the default value is 512.
+     * Number of samples that audio output accept in 1 buffer.
+     * Feed the audio output this size of data every time.
+     * Smaller buffer samples gives more buffers for a given data
+     * to avoid stutter. But if it's too small, the duration of 1 buffer
+     * will be too small to play, for example 1ms. Currently the default value is 512.
      * Some backends(OpenAL) are affected significantly by this property
      */
     int bufferSamples() const;
@@ -235,7 +239,8 @@ public:
 
     /*!
      * \brief supportedDeviceFeatures
-     * Supported features of the backend, defined by AudioOutput(DeviceFeatures,AudioOutput&,QObject*) in a backend ctor
+     * Supported features of the backend, defined by
+     * AudioOutput(DeviceFeatures,AudioOutput&,QObject*) in a backend ctor
      */
     DeviceFeatures supportedDeviceFeatures() const;
     qreal timestamp() const;

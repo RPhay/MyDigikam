@@ -113,7 +113,9 @@ public:
         const qreal dar = (rotate % 180) ? 1.0 / outAspectRatio
                                          : outAspectRatio;
 /*
-        qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("out rect: %f %dx%d ==>", out_aspect_ratio, out_rect.width(), out_rect.height());
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("out rect: %f %dx%d ==>",
+                out_aspect_ratio, out_rect.width(), out_rect.height());
 */
         if      (rendererAspectRatio >= dar)
         {
@@ -168,7 +170,8 @@ public:
     int                                 src_width, src_height; // TODO: in_xxx
     QMutex                              img_mutex;
 
-    // for both source, out aspect ratio. because source change may result in out change if mode is VideoAspectRatio
+    // for both source, out aspect ratio. because source change
+    // may result in out change if mode is VideoAspectRatio
 
     bool                                aspect_ratio_changed;
     OutAspectRatioMode                  out_aspect_ratio_mode;

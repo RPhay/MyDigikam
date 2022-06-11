@@ -98,7 +98,7 @@ private:
 // ---------------------------------------------------------------------------------
 
 class DIGIKAM_EXPORT LibAVFilterVideo : public VideoFilter,
-                                     public LibAVFilter
+                                        public LibAVFilter
 {
     Q_OBJECT
     Q_PROPERTY(QString options READ options WRITE setOptions NOTIFY optionsChanged)
@@ -132,7 +132,7 @@ private:
 // ---------------------------------------------------------------------------------
 
 class DIGIKAM_EXPORT LibAVFilterAudio : public AudioFilter,
-                                     public LibAVFilter
+                                        public LibAVFilter
 {
     Q_OBJECT
     Q_PROPERTY(QString options READ options WRITE setOptions NOTIFY optionsChanged)

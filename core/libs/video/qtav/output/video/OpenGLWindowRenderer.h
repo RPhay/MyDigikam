@@ -34,7 +34,7 @@ namespace QtAV
 class OpenGLWindowRendererPrivate;
 
 class DIGIKAM_EXPORT OpenGLWindowRenderer : public QOpenGLWindow,
-                                         public OpenGLRendererBase
+                                            public OpenGLRendererBase
 {
     Q_OBJECT
     DPTR_DECLARE_PRIVATE(OpenGLWindowRenderer)

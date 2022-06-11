@@ -47,7 +47,7 @@ class VideoShaderObjectPrivate;
  * Property value type T is limited to float, int, unsigned(ES3.0) and QVector<T>
  */
 class DIGIKAM_EXPORT VideoShaderObject : public QObject,
-                                      public VideoShader
+                                         public VideoShader
 {
     DPTR_DECLARE_PRIVATE(VideoShaderObject)
     Q_OBJECT

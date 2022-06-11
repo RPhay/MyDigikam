@@ -106,8 +106,10 @@ private:
     int                frame_width  = 0;
     int                frame_height = 0;
 
-    // NOTE: must ensure va-x11/va-glx is unloaded after all va calls(don't know why, but it's true), for example vaTerminate(), to avoid crash
-    // so declare InteropResourcePtr first then surface_ptr. InteropResource (va-xxx.so) will be destroyed later than surface_t (vaTerminate())
+    // NOTE: must ensure va-x11/va-glx is unloaded after all va calls(don't know why,
+    // but it's true), for example vaTerminate(), to avoid crash
+    // so declare InteropResourcePtr first then surface_ptr.
+    // InteropResource (va-xxx.so) will be destroyed later than surface_t (vaTerminate())
     // also call vaInitialize() before vaTerminate() can avoid such crashes. Don't know why.
 
     InteropResourcePtr m_resource;

@@ -58,7 +58,8 @@ public:
     void setKeepAspectRatio(bool value = true)  { m_keep_ar = value;     }
     bool isKeepAspectRatio()    const           { return m_keep_ar;      }
 
-    /// AutoDisplayFrame -- default is true. if true, new frames from underlying extractor will update display widget automatically.
+    /// AutoDisplayFrame -- default is true. if true, new frames from underlying extractor
+    /// will update display widget automatically.
 
     bool isAutoDisplayFrame()   const           { return m_auto_display; }
 
@@ -68,7 +69,10 @@ public:
 
     void setAutoDisplayFrame(bool b = true);
 
-public Q_SLOTS: // these were previously private but made public to allow calling code to cache some preview frames and directly display frames to this class
+    /// these were previously private but made public to allow calling code to cache
+    /// some preview frames and directly display frames to this class
+
+public Q_SLOTS:
 
     void displayFrame(const QtAV::VideoFrame& frame); // parameter VideoFrame
     void displayNoFrame();
@@ -82,7 +86,8 @@ Q_SIGNALS:
 
     void gotError(const QString&);
 
-    /// usually emitted when a new request for a frame came in and current request was aborted. displayNoFrame() will be automatically called
+    /// usually emitted when a new request for a frame came in and current
+    /// request was aborted. displayNoFrame() will be automatically called
 
     void gotAbort(const QString&);
 
