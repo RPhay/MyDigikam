@@ -205,7 +205,7 @@ private:
     QToolButton*                    mpSetupBtn;
     QToolButton*                    mpCaptureBtn;
     QMenu*                          mpMenu;
-    QAction*                        mpVOAction; // remove mpVOAction if vo.id() is supported
+    QAction*                        mpVOAction;             // remove mpVOAction if vo.id() is supported
     QAction*                        mpARAction;
     QAction*                        mpRepeatEnableAction;
     QWidgetAction*                  mpRepeatAction;

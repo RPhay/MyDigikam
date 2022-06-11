@@ -131,7 +131,8 @@ bool AVFilterSubtitle::setFile(const QString& filePath)
     if (u.isEmpty())
         u = filePath;
 
-    // filter_name=argument. use ' to quote the argument, use \ to escaping chars within quoted text. on windows, path can be C:/a/b/c, ":" must be escaped
+    // filter_name=argument. use ' to quote the argument, use \ to escaping chars within quoted text.
+    // on windows, path can be C:/a/b/c, ":" must be escaped
 
     u.replace(QLatin1String(":"), QLatin1String("\\:"));
     setOptions(QString::fromLatin1("subtitles='%1'").arg(u));

@@ -54,9 +54,10 @@ using namespace Digikam;
 
 static const struct
 {
-    const char*     name;
-    VideoRendererId id;
-} vid_map[] =
+    const char*     name = nullptr;
+    VideoRendererId id   = 0;
+}
+    vid_map[] =
 {
     { "opengl", VideoRendererId_OpenGLWidget },
     { "gl",     VideoRendererId_GLWidget2    },
@@ -65,7 +66,7 @@ static const struct
     { "xv",     VideoRendererId_XV           },
     { "x11",    VideoRendererId_X11          },
     { "qt",     VideoRendererId_Widget       },
-    { 0,        0                            }
+    { nullptr,  0                            }
 };
 
 VideoRendererId rendererId_from_opt_name(const QString& name)
@@ -96,7 +97,9 @@ int main(int argc, char* argv[])
 
     QOptions options = get_common_options();
     options.add(QString::fromLatin1("player options"))
-            ("ffmpeg-log",  QString(), QString::fromLatin1("ffmpeg log level. can be: quiet, panic, fatal, error, warn, info, verbose, debug. this can override env 'QTAV_FFMPEG_LOG'"))
+            ("ffmpeg-log",  QString(), QString::fromLatin1("ffmpeg log level. can be: quiet, panic, fatal,"
+                                                           "error, warn, info, verbose, debug. This can "
+                                                           "override env 'QTAV_FFMPEG_LOG'"))
             ("vd-list",                QString::fromLatin1("List video decoders and their properties"))
             ("-vo",
 

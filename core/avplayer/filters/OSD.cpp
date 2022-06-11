@@ -85,12 +85,12 @@ QString OSD::text(Statistics* statistics)
 
     // how to compute mSecsTotal only once?
 
-    if (hasShowType(ShowCurrentAndTotalTime) || hasShowType(ShowPercent) /*mSecsTotal < 0*/)
+    if (hasShowType(ShowCurrentAndTotalTime) || hasShowType(ShowPercent) /*(mSecsTotal < 0)*/)
     {
         if (statistics->duration.isNull())
             return text;
 
-        mSecsTotal = QTime(0, 0, 0).secsTo(statistics->duration); //why video.total_time may be wrong(mkv)
+        mSecsTotal = QTime(0, 0, 0).secsTo(statistics->duration); // why video.total_time may be wrong(mkv)
     }
 
     if (hasShowType(ShowCurrentAndTotalTime))
@@ -104,7 +104,8 @@ QString OSD::text(Statistics* statistics)
     if (hasShowType(ShowRemainTime))
     {
         if (mSecsTotal > 0)
-            text += QString::fromLatin1("-").append(QTime(0, 0, 0).addSecs(av->current_time.secsTo(statistics->duration)).toString(QString::fromLatin1("HH:mm:ss")));
+            text += QString::fromLatin1("-").append(QTime(0, 0, 0)
+                    .addSecs(av->current_time.secsTo(statistics->duration)).toString(QString::fromLatin1("HH:mm:ss")));
         else
             text += QString::fromLatin1("--:--:--");
     }

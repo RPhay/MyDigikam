@@ -64,7 +64,7 @@ Q_SIGNALS:
 
 public Q_SLOTS:
 
-    // TODO: enable changed & autoload=> load
+    // TODO: enable changed & autoload => load
 
     void setAutoLoad(bool value);
     void findAndSetFile(const QString& path);

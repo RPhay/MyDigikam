@@ -88,8 +88,10 @@
  * use action's value to set player's parameters when start to play a new file
  */
 
-#define AVDEBUG() \
-    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("%s %s @%d", __FILE__, __FUNCTION__, __LINE__);
+#define AVDEBUG()                               \
+    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote()     \
+        << QString::asprintf("%s %s @%d",       \
+            __FILE__, __FUNCTION__, __LINE__);
 
 using namespace QtAV;
 
@@ -157,13 +159,13 @@ MainWindow::MainWindow(QWidget* const parent)
 
     connect(this, SIGNAL(ready()),
             this, SLOT(processPendingActions()));
-
-    //QTimer::singleShot(10, this, SLOT(setupUi()));
-
+/*
+    QTimer::singleShot(10, this, SLOT(setupUi()));
+*/
     setupUi();
-
-    //setToolTip(i18n("Click black area to use shortcut(see right click menu)"));
-
+/*
+    setToolTip(i18n("Click black area to use shortcut(see right click menu)"));
+*/
     WindowEventFilter* const we = new WindowEventFilter(this);
     installEventFilter(we);
 
@@ -209,13 +211,13 @@ void MainWindow::initPlayer()
     }
 
     setRenderer(vo);
-
-    //mpSubtitle->installTo(mpPlayer); //filter on frame
-
+/*
+    mpSubtitle->installTo(mpPlayer); //filter on frame
+*/
     mpSubtitle->setPlayer(mpPlayer);
-
-    //mpPlayer->setAudioOutput(AudioOutputFactory::create(AudioOutputId_OpenAL));
-
+/*
+    mpPlayer->setAudioOutput(AudioOutputFactory::create(AudioOutputId_OpenAL));
+*/
     EventFilter* const ef = new EventFilter(mpPlayer);
     qApp->installEventFilter(ef);
 
@@ -313,7 +315,9 @@ void MainWindow::initPlayer()
     connect(mpCaptureBtn, SIGNAL(clicked()),
             mpPlayer->videoCapture(), SLOT(capture()));
 
-    Q_EMIT ready(); // Q_EMIT this signal after connection. otherwise the Q_SLOTS may not be called for the first time
+    // Emit this signal after connection. otherwise the Q_SLOTS may not be called for the first time
+
+    Q_EMIT ready();
 }
 
 void MainWindow::onSeekFinished(qint64 pos)
@@ -339,9 +343,9 @@ void MainWindow::setupUi()
     mpPlayerLayout                  = new QVBoxLayout();
     mpControl                       = new QWidget(this);
     mpControl->setMaximumHeight(30);
-
-    //mpPreview = new QLable(this);
-
+/*
+    //mpPreview = new QLabel(this);
+*/
     mpTimeSlider                    = new AVPlayerSlider(mpControl);
     mpTimeSlider->setDisabled(true);
     mpTimeSlider->setTracking(true);
@@ -391,9 +395,9 @@ void MainWindow::setupUi()
     mpVolumeSlider->setMinimum(0);
     const int kVolumeSliderMax      = 100;
     mpVolumeSlider->setMaximum(kVolumeSliderMax);
-
-    //mpVolumeSlider->setMaximumHeight(12);
-
+/*
+    mpVolumeSlider->setMaximumHeight(12);
+*/
     mpVolumeSlider->setMaximumWidth(88);
     mpVolumeSlider->setValue(int(1.0 / kVolumeInterval * qreal(kVolumeSliderMax) / 100.0));
     setVolume();
@@ -439,9 +443,9 @@ void MainWindow::setupUi()
     subMenu->addAction(pWA); // must add action after the widget action is ready. is it a Qt bug?
 
     mpMenu->addSeparator();
-
-    //mpMenu->addAction(i18n("Report"))->setEnabled(false); //report bug, suggestions etc. using maillist?
-
+/*
+    mpMenu->addAction(i18n("Report"))->setEnabled(false); // report bug, suggestions etc. using maillist?
+*/
     mpMenu->addAction(i18nc("@action", "About"), this, SLOT(about()));
     mpMenu->addAction(i18nc("@action", "Setup"), this, SLOT(setup()));
     mpMenu->addSeparator();
@@ -461,9 +465,9 @@ void MainWindow::setupUi()
 
     subMenu                         = new ClickableMenu(i18nc("@option", "Repeat"));
     mpMenu->addMenu(subMenu);
-
-    //subMenu->setEnabled(false);
-
+/*
+    subMenu->setEnabled(false);
+*/
     mpRepeatEnableAction            = subMenu->addAction(i18nc("@action", "Enable"));
     mpRepeatEnableAction->setCheckable(true);
 
@@ -574,7 +578,8 @@ void MainWindow::setupUi()
             this, SLOT(setSubtitleEngine(QString)));
 
     mpSubtitle->setEngines(QStringList() << box->itemData(box->currentIndex()).toString());
-    box->setToolTip(i18nc("@info", "FFmpeg supports more subtitles but only render plain text\nLibASS supports 'ass' styles"));
+    box->setToolTip(i18nc("@info", "FFmpeg supports more subtitles but only render plain text\n"
+                                   "LibASS supports 'ass' styles"));
 
     wgt                             = new QWidget();
     hb                              = new QHBoxLayout();
@@ -705,7 +710,10 @@ void MainWindow::setupUi()
     mpControl->setLayout(controlLayout);
     controlLayout->addWidget(mpCurrent);
     controlLayout->addWidget(mpTitle);
-    QSpacerItem* const space         = new QSpacerItem(mpPlayPauseBtn->width(), mpPlayPauseBtn->height(), QSizePolicy::MinimumExpanding);
+
+    QSpacerItem* const space         = new QSpacerItem(mpPlayPauseBtn->width(),
+                                                       mpPlayPauseBtn->height(),
+                                                       QSizePolicy::MinimumExpanding);
     controlLayout->addSpacerItem(space);
     controlLayout->addWidget(mpVolumeSlider);
     controlLayout->addWidget(mpVolumeBtn);
@@ -717,9 +725,9 @@ void MainWindow::setupUi()
     controlLayout->addWidget(mpOpenBtn);
     controlLayout->addWidget(mpInfoBtn);
     controlLayout->addWidget(mpSpeed);
-
-    //controlLayout->addWidget(mpSetupBtn);
-
+/*
+    controlLayout->addWidget(mpSetupBtn);
+*/
     controlLayout->addWidget(mpMenuBtn);
     controlLayout->addWidget(mpEnd);
 
@@ -781,7 +789,8 @@ void MainWindow::changeChannel(QAction* action)
 
     if (!ao)
     {
-        qCWarning(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("No audio output!");
+        qCWarning(DIGIKAM_AVPLAYER_LOG).noquote()
+            << QString::asprintf("No audio output!");
 
         return;
     }
@@ -792,7 +801,8 @@ void MainWindow::changeChannel(QAction* action)
 
     if (!ao->close())
     {
-        qCWarning(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("close audio failed");
+        qCWarning(DIGIKAM_AVPLAYER_LOG).noquote()
+            << QString::asprintf("close audio failed");
 
         return;
     }
@@ -803,7 +813,8 @@ void MainWindow::changeChannel(QAction* action)
 
     if (!ao->open())
     {
-        qCWarning(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("open audio failed");
+        qCWarning(DIGIKAM_AVPLAYER_LOG).noquote()
+            << QString::asprintf("open audio failed");
 
         return;
     }
@@ -824,7 +835,9 @@ void MainWindow::changeAudioTrack(QAction* action)
 
     if (track < 0)
     {
-        QString f = QFileDialog::getOpenFileName(nullptr, i18nc("@title", "Open an external audio track"));
+        QString f = QFileDialog::getOpenFileName(nullptr,
+                                                 i18nc("@title",
+                                                       "Open an external audio track"));
 
         if (f.isEmpty())
         {
@@ -997,6 +1010,7 @@ bool MainWindow::setRenderer(QtAV::VideoRenderer* const renderer)
     onUserShaderChanged();
 
 #define GL_ASS 0
+
 #if GL_ASS
 
     GLSLFilter* const glsl = new GLSLFilter(this);
@@ -1233,9 +1247,9 @@ void MainWindow::onStopPlay()
     tryShowControlBar();
     ScreenSaver::instance().enable();
     toggleRepeat(false);
-
-    //mRepeateMax = 0;
-
+/*
+    mRepeateMax = 0;
+*/
     killTimer(mCursorTimer);
     unsetCursor();
 
@@ -1342,8 +1356,10 @@ void MainWindow::onPositionChange(qint64 pos)
         mpTimeSlider->setValue(pos);
 
     mpCurrent->setText(QTime(0, 0, 0).addMSecs(pos).toString(QString::fromLatin1("HH:mm:ss")));
-
-    //setWindowTitle(QString::number(mpPlayer->statistics().video_only.currentDisplayFPS(), 'f', 2).append(" ").append(mTitle));
+/*
+    setWindowTitle(QString::number(mpPlayer->statistics().video_only.currentDisplayFPS(),
+                                   'f', 2).append(" ").append(mTitle));
+*/
 }
 
 void MainWindow::repeatAChanged(const QTime& t)
@@ -1429,16 +1445,8 @@ void MainWindow::wheelEvent(QWheelEvent* e)
 
     QPoint dp;
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-
     qreal deg = e->angleDelta().y() / 8.0;
     dp        = e->pixelDelta();
-
-#else
-
-    qreal deg = e->delta() / 8.0;
-
-#endif // QT_VERSION
 
 #ifdef WHEEL_SPEED
 
@@ -1454,9 +1462,9 @@ void MainWindow::wheelEvent(QWheelEvent* e)
 
     QPointF p  = mpRenderer->widget()->mapFrom(this, e->position().toPoint());
     QPointF fp = mpRenderer->mapToFrame(p);
-
-    //qCDebug(DIGIKAM_AVPLAYER_LOG) <<  p << fp;
-
+/*
+    qCDebug(DIGIKAM_AVPLAYER_LOG) <<  p << fp;
+*/
     if (fp.x() < 0)
     {
         fp.setX(0);
@@ -1482,9 +1490,11 @@ void MainWindow::wheelEvent(QWheelEvent* e)
                              mpRenderer->rendererHeight())));
 
     Q_UNUSED(viewport);
-
-    //qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("vo: (%.1f, %.1f)=> frame: (%.1f, %.1f)", p.x(), p.y(), fp.x(), fp.y());
-
+/*
+    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote()
+        << QString::asprintf("vo: (%.1f, %.1f)=> frame: (%.1f, %.1f)",
+            p.x(), p.y(), fp.x(), fp.y());
+*/
     qreal zoom = 1.0 + deg * M_PI / 180.0;
 
     if (!dp.isNull())
@@ -1502,9 +1512,12 @@ void MainWindow::wheelEvent(QWheelEvent* e)
 
     qreal x0 = fp.x() - fp.x() / z;
     qreal y0 = fp.y() - fp.y() / z;
-
-    //qCDebug(DIGIKAM_AVPLAYER_LOG) << "fr: " << QRectF(x0, y0, qreal(mpRenderer->videoFrameSize().width())/z, qreal(mpRenderer->videoFrameSize().height())/z) << fp << z;
-
+/*
+    qCDebug(DIGIKAM_AVPLAYER_LOG) << "fr: "
+                                  << QRectF(x0, y0, qreal(mpRenderer->videoFrameSize().width()) / z,
+                                                          qreal(mpRenderer->videoFrameSize().height()) / z)
+                                  << fp << z;
+*/
     mpRenderer->setRegionOfInterest(QRectF(x0, y0,
                                            qreal(mpRenderer->videoFrameSize().width())  / z,
                                            qreal(mpRenderer->videoFrameSize().height()) / z));
@@ -1526,7 +1539,8 @@ void MainWindow::about()
 
 void MainWindow::openUrl()
 {
-    QString url = QInputDialog::getText(nullptr, i18nc("@title", "Open an url"), i18nc("@info", "Url"));
+    QString url = QInputDialog::getText(nullptr, i18nc("@title", "Open an url"),
+                                        i18nc("@info", "Url"));
 
     if (url.isEmpty())
         return;
@@ -1621,7 +1635,9 @@ end:
         {
             if (mpPlayer && mpPlayer->externalAudio().isEmpty())
             {
-                qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("track found!");
+                qCDebug(DIGIKAM_AVPLAYER_LOG).noquote()
+                    << QString::asprintf("track found!");
+
                 mpAudioTrackAction = ac;
                 ac->setChecked(true);
             }
@@ -1819,7 +1835,8 @@ void MainWindow::onMediaStatusChanged()
     {
         // why it happens? reinterpret_cast  works.
 
-        qCWarning(DIGIKAM_AVPLAYER_LOG) << "invalid sender() " << sender() << player;
+        qCWarning(DIGIKAM_AVPLAYER_LOG) << "invalid sender() "
+                                        << sender() << player;
 
         return;
     }
@@ -1829,42 +1846,49 @@ void MainWindow::onMediaStatusChanged()
         case NoMedia:
         {
             status = i18nc("@info: media loading", "No media");
+
             break;
         }
 
         case InvalidMedia:
         {
             status = i18nc("@info: media loading", "Invalid media");
+
             break;
         }
 
         case BufferingMedia:
         {
             status = i18nc("@info: media loading", "Buffering...");
+
             break;
         }
 
         case BufferedMedia:
         {
             status = i18nc("@info: media loading", "Buffered");
+
             break;
         }
 
         case LoadingMedia:
         {
             status = i18nc("@info: media loading", "Loading...");
+
             break;
         }
 
         case LoadedMedia:
         {
             status = i18nc("@info: media loading", "Loaded");
+
             break;
         }
 
         case StalledMedia:
         {
             status = i18nc("@info: media loading", "Stalled");
+
             break;
         }
 
@@ -1872,6 +1896,7 @@ void MainWindow::onMediaStatusChanged()
         {
             status = QString();
             onStopPlay();
+
             break;
         }
     }

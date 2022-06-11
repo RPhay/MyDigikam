@@ -58,7 +58,7 @@ public:
     virtual ~OSD();
 
     void setShowType(ShowType type);
-    ShowType showType() const;
+    ShowType showType()          const;
     void useNextShowType();
     bool hasShowType(ShowType t) const;
     QString text(Statistics* statistics);
