@@ -6,7 +6,7 @@ KDE uses a common framework named craft to process applications workflow on diff
 - Continuous Integration (CI - Build Factory).
 - Continuous Deployement (CD - Binary Factory).
 
-The workflow supports notarization of application bundles (signing) for Windows and MacOS stores.
+The workflow supports notarization of application bundles (signing) for Linux (AppImage), Windows, and MacOS stores.
 
 - Front page                    : https://community.kde.org/Craft
 - Configuration                 : https://invent.kde.org/packaging/craft-blueprints-kde/-/tree/master/extragear/digikam
