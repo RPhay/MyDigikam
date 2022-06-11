@@ -138,7 +138,7 @@ public:
 private:
 
     class context;
-    context *ctx;
+    context* ctx;
 
 private:
 
@@ -147,26 +147,30 @@ private:
     cuda_api& operator=(const cuda_api&) = delete;
 };
 
-#define CUDA_CHECK(f, ...) \
-    do { \
-        CUresult cuR = f; \
-        if (cuR != CUDA_SUCCESS) { \
-            const char* errName = nullptr; \
-            const char* errDetail = nullptr; \
-            cuGetErrorName(cuR, &errName); \
-            cuGetErrorString(cuR, &errDetail); \
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("CUDA error %s@%d. " #f ": %d %s - %s", __FILE__, __LINE__, cuR, errName, errDetail); \
-            __VA_ARGS__ \
-        } \
+#define CUDA_CHECK(f, ...)                                                      \
+    do {                                                                        \
+        CUresult cuR = f;                                                       \
+        if (cuR != CUDA_SUCCESS) {                                              \
+            const char* errName = nullptr;                                      \
+            const char* errDetail = nullptr;                                    \
+            cuGetErrorName(cuR, &errName);                                      \
+            cuGetErrorString(cuR, &errDetail);                                  \
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()                          \
+                << QString::asprintf("CUDA error %s@%d. " #f ": %d %s - %s",    \
+                    __FILE__, __LINE__, cuR, errName, errDetail);               \
+            __VA_ARGS__                                                         \
+        }                                                                       \
     } while (0)
 
-#define CUDA_CHECK2(f, ...) \
-    do { \
-        CUresult cuR = f; \
-        if (cuR != CUDA_SUCCESS) { \
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("CUDA error %s@%d. " #f ": %d %s", __FILE__, __LINE__, cuR, _cudaGetErrorEnum(cuR)); \
-            __VA_ARGS__ \
-        } \
+#define CUDA_CHECK2(f, ...)                                             \
+    do {                                                                \
+        CUresult cuR = f;                                               \
+        if (cuR != CUDA_SUCCESS) {                                      \
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()                  \
+                << QString::asprintf("CUDA error %s@%d. " #f ": %d %s", \
+                    __FILE__, __LINE__, cuR, _cudaGetErrorEnum(cuR));   \
+            __VA_ARGS__                                                 \
+        }                                                               \
     } while (0)
 
 

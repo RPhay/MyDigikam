@@ -76,7 +76,8 @@ public:
 
     /*!
      * \brief audioFormat
-     * If not set or set to an invalid format, a supported format will be used and audioFormat() will be that format after open()
+     * If not set or set to an invalid format, a supported format will be used
+     * and audioFormat() will be that format after open()
      * \return
      * TODO: check supported formats
      */

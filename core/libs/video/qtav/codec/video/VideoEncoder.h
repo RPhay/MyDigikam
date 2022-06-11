@@ -102,7 +102,8 @@ public:
 
     /*!
      * \brief setPixelFormat
-     * If not set or set to an unsupported format, a supported format will be used and pixelFormat() will be that format after open()
+     * If not set or set to an unsupported format, a supported format will be used
+     * and pixelFormat() will be that format after open()
      */
     void setPixelFormat(const VideoFormat::PixelFormat format);
 

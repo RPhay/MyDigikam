@@ -28,12 +28,7 @@
 
 // Qt includes
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#   include <QOpenGLFunctions>
-#elif QT_VERSION >= QT_VERSION_CHECK(4, 8, 0)
-#   include <QtOpenGL/QGLFunctions>
-#   define QOpenGLFunctions QGLFunctions
-#endif
+#include <QOpenGLFunctions>
 
 namespace QtAV
 {
@@ -46,7 +41,7 @@ namespace QtAV
 class OpenGLRendererBasePrivate;
 
 class DIGIKAM_EXPORT OpenGLRendererBase : public VideoRenderer,
-                                       public QOpenGLFunctions
+                                          public QOpenGLFunctions
 {
     DPTR_DECLARE_PRIVATE(OpenGLRendererBase)
 

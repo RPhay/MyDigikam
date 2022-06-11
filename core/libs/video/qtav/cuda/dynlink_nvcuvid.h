@@ -65,7 +65,7 @@ typedef enum
  */
 typedef enum
 {
-    cudaAudioCodec_MPEG1=0,         /**< MPEG-1 Audio               */
+    cudaAudioCodec_MPEG1 = 0,       /**< MPEG-1 Audio               */
     cudaAudioCodec_MPEG2,           /**< MPEG-2 Audio               */
     cudaAudioCodec_MP3,             /**< MPEG-1 Layer III Audio     */
     cudaAudioCodec_AC3,             /**< Dolby Digital (AC3) Audio  */

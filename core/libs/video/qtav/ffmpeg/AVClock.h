@@ -223,7 +223,10 @@ double AVClock::value() const
         else
         {
             // timer is paused
-            //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("clock is paused. return the last value %f", pts_);
+/*
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("clock is paused. return the last value %f", pts_);
+*/
         }
 
         return (pts_ + value0);

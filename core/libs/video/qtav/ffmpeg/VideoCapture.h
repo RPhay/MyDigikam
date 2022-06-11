@@ -54,7 +54,8 @@ public:
 
     explicit VideoCapture(QObject* const parent = nullptr);
 
-    // TODO: if async is true, the cloned hw frame shares the same interop object with original frame, so interop obj may do 2 map() at the same time. It's not safe
+    // TODO: if async is true, the cloned hw frame shares the same interop object with original frame,
+    // so interop obj may do 2 map() at the same time. It's not safe
 
     void setAsync(bool value = true);
     bool isAsync() const;

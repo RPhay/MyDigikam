@@ -14,7 +14,7 @@ if(POLICY CMP0072)
 
 endif()
 
-find_package(OpenGL)                               # For Presentation tool.
+find_package(OpenGL)                               # For Presentation tool and MediaPlayer.
 
 message(STATUS "OpenGL found:                                 ${OPENGL_FOUND}")
 message(STATUS "OpenGL GLU extension found:                   ${OPENGL_GLU_FOUND}")
@@ -50,5 +50,5 @@ endif()
 
 # For MediaPlayer compilation
 
-MACRO_BOOL_TO_01(HAVE_OPENGL      HAVE_LIBOPENGL)
+MACRO_BOOL_TO_01(OPENGL_FOUND     HAVE_LIBOPENGL)
 MACRO_BOOL_TO_01(OpenGL_EGL_FOUND HAVE_LIBOPENGL_EGL)

@@ -102,11 +102,9 @@ void ClassName::emitBackgroundColorChanged()          { Q_EMIT backgroundColorCh
  * While VideoOutput.onSetXXX(...) simply calls backend's setXXX(...) and return whether the result is desired.
  */
 
-
 class QWidget;
 class QWindow;
 class QGraphicsItem;
-
 
 namespace QtAV
 {
@@ -209,7 +207,8 @@ public:
     /*!
      * \brief sourceAspectRatio
      * The display aspect ratio of received video frame. 0 for an invalid frame.
-     * sourceAspectRatioChanged() (a signal for QObject renderers) will be called if the new frame has a different DAR.
+     * sourceAspectRatioChanged() (a signal for QObject renderers) will be called
+     * if the new frame has a different DAR.
      */
     qreal sourceAspectRatio() const;
 
@@ -386,7 +385,8 @@ private: // mainly used by VideoOutput class
 
     /*!
      * \brief onSetXX
-     *  It's called when user call setXXX() with a new value. You should implement how to actually change the value, e.g. change brightness with shader.
+     *  It's called when user call setXXX() with a new value. You should implement how
+     * to actually change the value, e.g. change brightness with shader.
      * \return
      *  false: It's default. means not implemented. \a brightness() does not change.
      *  true: Implement this and return true. \a brightness() will change to new value

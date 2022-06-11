@@ -55,8 +55,10 @@ public:
      * \param width frame width
      * \param height frame height
      * \param surface_h surface height. Can be greater than visual frame height because of alignment
-     * \param src CPU accessible address of frame planes on GPU. src[0] must be valid. src[i>0] will be filled depending on pixel format, pitch and surface_h if it's nullptr.
-     * \param pitch plane pitch on GPU. pitch[0] must be valid. pitch[i>0] will be filled depending on pixel format, pitch[0] and surface_h if it's nullptr.
+     * \param src CPU accessible address of frame planes on GPU. src[0] must be valid.
+     * src[i>0] will be filled depending on pixel format, pitch and surface_h if it's nullptr.
+     * \param pitch plane pitch on GPU. pitch[0] must be valid. pitch[i > 0]
+     * will be filled depending on pixel format, pitch[0] and surface_h if it's nullptr.
      * \param optimized try to use SIMD to copy from GPU. otherwise use memcpy
      * \param swapUV it's required if u/v src are null
      */
@@ -143,7 +145,8 @@ public:
 
     /*!
      * \brief to
-     * The result frame data is always on host memory. If video frame data is already in host memory, and the target parameters are the same, then return the current frame.
+     * The result frame data is always on host memory. If video frame data is already in host memory,
+     * and the target parameters are the same, then return the current frame.
      * \param pixfmt target pixel format
      * \param dstSize target frame size
      * \param roi interested region of source frame
@@ -202,7 +205,8 @@ public:
 
     /*!
      * \brief convert
-     * return a frame with a given format from a given source frame. The result frame data is always on host memory.
+     * return a frame with a given format from a given source frame.
+     * The result frame data is always on host memory.
      */
     VideoFrame convert(const VideoFrame& frame, const VideoFormat& fmt)         const;
     VideoFrame convert(const VideoFrame& frame, VideoFormat::PixelFormat fmt)   const;

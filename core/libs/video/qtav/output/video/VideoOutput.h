@@ -42,7 +42,7 @@ class VideoOutputPrivate;
  * A VideoRenderer wrapper with QObject features. If create VideoOutput without a given renderer id, QtAV will try to create a widget based renderer, and dynamically load QtAVWidgets module if it's not loaded.
  */
 class DIGIKAM_EXPORT VideoOutput : public QObject,
-                                public VideoRenderer
+                                   public VideoRenderer
 {
     DPTR_DECLARE_PRIVATE(VideoOutput)
     Q_OBJECT

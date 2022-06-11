@@ -138,7 +138,8 @@ protected:
 
 typedef QSharedPointer<InteropResource> InteropResourcePtr;
 
-// avoid inheriting cuda_api because SurfaceInteropCUDA is frequently created and cuda functions are only used in mapToHost()
+// avoid inheriting cuda_api because SurfaceInteropCUDA is frequently
+// created and cuda functions are only used in mapToHost()
 
 class SurfaceInteropCUDA final : public VideoSurfaceInterop
 {
@@ -225,7 +226,8 @@ class EGL;
 /*!
  * \brief The EGLInteropResource class
  * Interop with NV12 texture, then convert NV12 to RGB texture like DXVA+EGL does.
- * TODO: use pixel shader to convert L8+A8L8 textures to a NV12 texture, or an rgb texture directly on pbuffer surface
+ * TODO: use pixel shader to convert L8+A8L8 textures to a NV12 texture,
+ * or an rgb texture directly on pbuffer surface
  * The VideoFrame from CUDA decoder is RGB format
  */
 class EGLInteropResource final : public InteropResource
@@ -277,9 +279,11 @@ public:
 private:
 
     /*
-     * TODO: do we need to check h, H etc? interop is created by decoder and frame size does not change in the playback.
+     * TODO: do we need to check h, H etc? interop is created by decoder
+     * and frame size does not change in the playback.
      * playing a new stream will recreate the decoder and interop
-     * All we need to ensure is register when texture changed. But there's no way to check the texture change.
+     * All we need to ensure is register when texture changed.
+     * But there's no way to check the texture change.
      */
     bool ensureResource(int w, int h, int H, GLuint tex, int plane);
 };

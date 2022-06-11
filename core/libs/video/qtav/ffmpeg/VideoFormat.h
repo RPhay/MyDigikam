@@ -45,7 +45,8 @@ class VideoFormatPrivate;
 
 /*!
  * \brief The VideoFormat class
- * Describes the layout of video data. Some properties like display aspect ratio, color space and color range, which describes how to display the video frame, should be in VideoFrame class.
+ * Describes the layout of video data. Some properties like display aspect ratio,
+ * color space and color range, which describes how to display the video frame, should be in VideoFrame class.
  */
 class DIGIKAM_EXPORT VideoFormat
 {
@@ -158,7 +159,8 @@ public:
 
     /*!
      * \brief imageFormatFromPixelFormat
-     * If returns a negative value, the QImage format is the positive one but R/G components are swapped because no direct support by QImage. QImage can swap R/G very fast.
+     * If returns a negative value, the QImage format is the positive one but
+     * R/G components are swapped because no direct support by QImage. QImage can swap R/G very fast.
      */
     static QImage::Format imageFormatFromPixelFormat(PixelFormat format);
     static PixelFormat pixelFormatFromFFmpeg(int ff);                       // AVPixelFormat
@@ -223,7 +225,7 @@ public:
     /*!
      * https://wiki.videolan.org/YUV
      * bytesPerPixel()
-     *  YUV420P: 1pix = 4Y+U+V, (4*8+8+8)/4 = 12
+     * YUV420P: 1pix = 4Y+U+V, (4*8+8+8)/4 = 12
      * bytesPerPixel(plane) is different, for example
      * uyvy422 bytesPerPixel(0) = 8+8+8 = 24, while bytesPerPixel() = (2*8+8+8)/2 = 16
      */
@@ -293,7 +295,8 @@ public:
      * \brief isPlanar
      * \return true if is planar or semi planar
      *
-     * Semi-planar: 2 planes instead of 3, one plane for luminance, and one plane for both chrominance components.
+     * Semi-planar: 2 planes instead of 3, one plane for luminance,
+     * and one plane for both chrominance components.
      * They are also sometimes referred to as biplanar formats also
      * Packed: 1 plane
      * Planar: 1 plane for each component (channel)

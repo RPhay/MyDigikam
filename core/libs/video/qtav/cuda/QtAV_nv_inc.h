@@ -32,10 +32,10 @@
 // high version will define cuXXX macro, so functions here will be not they look like
 
 #if !NV_CONFIG(DLLAPI_CUDA) && !defined(CUDA_LINK)
-
-//#define CUDA_FORCE_API_VERSION 3010 //enable this line to build with old cuda APIs
-//#define __CUDA_API_VERSION_INTERNAL
-
+/*
+#define CUDA_FORCE_API_VERSION 3010 // enable this line to build with old cuda APIs
+#define __CUDA_API_VERSION_INTERNAL
+*/
 #endif
 
 #if NV_CONFIG(DLLAPI_CUDA)

@@ -111,10 +111,12 @@ public:
 
     /*!
      * \brief readFrame
-     * Read a packet from 1 of the streams. use packet() to get the result packet. packet() returns last valid packet.
+     * Read a packet from 1 of the streams. use packet() to get the result packet.
+     * packet() returns last valid packet.
      * So do not use packet() if readFrame() failed.
      * Call readFrame() and seek() in the same thread.
-     * \return true if no error. false if error occurs, eof reaches, interrupted by user or time out(getInterruptTimeout())
+     * \return true if no error. false if error occurs, eof reaches,
+     * interrupted by user or time out(getInterruptTimeout())
      */
     bool readFrame(); // TODO: rename int readPacket(), return stream number
 
@@ -139,7 +141,8 @@ public:
     /*!
      * \brief seek
      * seek to a given position. Only support timestamp seek now.
-     * Experiment: if pos is out of range (>duration()), do nothing unless a seekable and variableSize MediaIO is used.
+     * Experiment: if pos is out of range (>duration()), do nothing
+     * unless a seekable and variableSize MediaIO is used.
      * \return false if fail
      */
     bool seek(qint64 pos); // pos: ms
@@ -246,7 +249,8 @@ public:
     /*!
      * \brief setOptions
      * libav's AVDictionary. we can ignore the flags used in av_dict_xxx because we can use hash api.
-     * empty value does nothing to current context if it is open, but will change AVDictionary options to null in next open.
+     * empty value does nothing to current context if it is open, but will change
+     * AVDictionary options to null in next open.
      * AVDictionary is used in avformat_open_input() and will not change unless user call setOptions()
      * If an option is not found
      */

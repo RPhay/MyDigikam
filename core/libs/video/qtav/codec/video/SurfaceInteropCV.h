@@ -72,8 +72,11 @@ public:
 
     /*!
      * \brief stridesForWidth
-     * The stride used by opengl can be different in some interop because frame display format can change (outFmt), for example we can use rgb for uyvy422. The default value use the origial pixel format to comupte the strides.
-     * If the input strides has a valid value, use this value to compute the output strides. Otherwise, use width to compute the output strides without taking care of padded data size.
+     * The stride used by opengl can be different in some interop because
+     * frame display format can change (outFmt), for example we can use rgb for uyvy422.
+     * The default value use the origial pixel format to comupte the strides.
+     * If the input strides has a valid value, use this value to compute the output strides.
+     * Otherwise, use width to compute the output strides without taking care of padded data size.
      */
     virtual bool stridesForWidth(int cvfmt, int width, int* strides/*in_out*/, VideoFormat::PixelFormat* outFmt);
 

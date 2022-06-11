@@ -145,7 +145,7 @@ public:
             pOut->setStatistics(&statistics);
 /*
             if (need_lock)
-                thread->unlock(); //??why here?
+                thread->unlock(); // why here?
 */
         }
 

@@ -71,7 +71,8 @@ void OpenGLWidgetRenderer::paintGL()
 
 void OpenGLWidgetRenderer::resizeGL(int w, int h)
 {
-    // QGLWidget uses window()->windowHandle()->devicePixelRatio() for resizeGL(), while QOpenGLWidget does not, so scale here
+    // QGLWidget uses window()->windowHandle()->devicePixelRatio() for resizeGL(),
+    // while QOpenGLWidget does not, so scale here
 
     if (!context())
         return;

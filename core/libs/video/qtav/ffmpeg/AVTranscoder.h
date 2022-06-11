@@ -79,7 +79,9 @@ public:
 
     /*!
      * \brief createEncoder
-     * Destroy old encoder and create a new one in filter chain. Filter has the ownership. You shall not manually open it. Transcoder will set the missing parameters open it.
+     * Destroy old encoder and create a new one in filter chain.
+     * Filter has the ownership. You shall not manually open it.
+     * Transcoder will set the missing parameters open it.
      * \param name registered encoder name, for example "FFmpeg"
      * \return false if failed
      */
@@ -88,7 +90,8 @@ public:
     /*!
      * \brief encoder
      * Use this to set encoder properties and options.
-     * If frameRate is not set, source frame rate will be set if it's valid, otherwise VideoEncoder::defaultFrameRate() will be used internally
+     * If frameRate is not set, source frame rate will be set if it's valid,
+     * otherwise VideoEncoder::defaultFrameRate() will be used internally
      * Do not call open()/close() manually
      * \return Encoder instance or null if createVideoEncoder failed
      */
@@ -96,7 +99,9 @@ public:
 
     /*!
      * \brief createEncoder
-     * Destroy old encoder and create a new one in filter chain. Filter has the ownership. You shall not manually open it. Transcoder will set the missing parameters open it.
+     * Destroy old encoder and create a new one in filter chain.
+     * Filter has the ownership. You shall not manually open it.
+     * Transcoder will set the missing parameters open it.
      * \param name registered encoder name, for example "FFmpeg"
      * \return false if failed
      */

@@ -10,7 +10,7 @@ APPLY_COMMON_POLICIES()
 
 # For FFMPEG 4 to 5 deprecrated declarations => Fix code to support FFMPEG 5 API.
 
-if (NOT FFMPEG_VER5_FOUND)
+if(NOT FFMPEG_VER5_FOUND)
 
     # For FFMPEG 4 to 5 deprecrated declarations => Fix code to support FFMPEG 5 API.
     REMOVE_COMPILER_WARNINGS("-Wdeprecated-declarations")
@@ -21,7 +21,7 @@ endif()
 
 # For C++ noisy warnings with Qt5 API (fixed in Qt6).
 
-if (NOT Qt6_FOUND)
+if(NOT Qt6_FOUND)
 
     REMOVE_COMPILER_WARNINGS("-Wdeprecated-copy")
     DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-deprecated-copy")
@@ -124,7 +124,9 @@ set(libqtav_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/VideoPreviewWidget.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/WidgetRenderer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/QtAVWidgets_Global.cpp
+
     ${CMAKE_CURRENT_SOURCE_DIR}/opengl/OpenGLWidgetRenderer.cpp
+
     ${CMAKE_CURRENT_SOURCE_DIR}/config/VideoEQConfigPage.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/config/ClickableMenu.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/config/PropertyEditor.cpp
@@ -210,7 +212,7 @@ if(X11_Xv_FOUND)
 
 endif()
 
-if(HAVE_OPENGL)
+if(OPENGL_FOUND)
 
     include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::OpenGL,INTERFACE_INCLUDE_DIRECTORIES>)
 

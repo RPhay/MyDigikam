@@ -109,7 +109,8 @@ public:
 
     /*!
      * \brief setBits
-     * does nothing if plane is invalid. if given array size is greater than planeCount(), only planeCount() elements is used
+     * does nothing if plane is invalid. if given array size is greater than planeCount(),
+     * only planeCount() elements is used
      * \param b slice
      * \param plane color/audio channel
      */
@@ -122,7 +123,8 @@ public:
 
     /*!
      * \brief setBytesPerLine
-     * does nothing if plane is invalid. if given array size is greater than planeCount(), only planeCount() elements is used
+     * does nothing if plane is invalid. if given array size is greater than planeCount(),
+     * only planeCount() elements is used
      */
     void setBytesPerLine(int lineSize, int plane = 0);
     void setBytesPerLine(const QVector<int>& lineSize);

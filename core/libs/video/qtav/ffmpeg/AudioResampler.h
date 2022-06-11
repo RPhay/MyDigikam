@@ -44,7 +44,8 @@ public:
 
     virtual ~AudioResampler();
 
-    // if QtAV is static linked (ios for example), components may be not automatically registered. Add registerAll() to workaround
+    // if QtAV is static linked (ios for example), components may be not
+    // automatically registered. Add registerAll() to workaround
 
     static void registerAll();
 

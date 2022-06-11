@@ -175,10 +175,12 @@ public:
 
     /*!
      * \brief relativeTimeMode
-     * true (default): mediaStartPosition() is always 0. All time related API, for example setPosition(), position() and positionChanged()
+     * true (default): mediaStartPosition() is always 0. All time related API,
+     * for example setPosition(), position() and positionChanged()
      * use relative time instead of real pts
      * false: mediaStartPosition() is from media stream itself, same as absoluteMediaStartPosition()
-     * To get real start time, use statistics().start_time. Or setRelativeTimeMode(false) first but may affect playback when playing.
+     * To get real start time, use statistics().start_time.
+     * Or setRelativeTimeMode(false) first but may affect playback when playing.
      */
     bool relativeTimeMode() const;
 
@@ -231,7 +233,8 @@ public:
      * current audio track.
      * If external audio stream <0 before play, stream is auto selected
      * You have to manually empty value to unload the external audio!
-     * \param file external audio file path. Set empty to use internal audio tracks. TODO: reset stream number if switch to internal
+     * \param file external audio file path. Set empty to use internal audio tracks.
+     * TODO: reset stream number if switch to internal
      * \return true if no error happens
      */
     bool setExternalAudio(const QString& file);
@@ -270,7 +273,8 @@ public:
 
     /*!
      * \brief setAudioStream
-     * set an external audio file and stream number as audio track. It will be reset if setFile()/setIODevice()/setInput() is called
+     * set an external audio file and stream number as audio track.
+     * It will be reset if setFile()/setIODevice()/setInput() is called
      * \param file external audio file. set empty to use internal audio tracks
      * \param n audio stream number n=0, 1, .... n<0: disable audio thread
      * \return false if fail
@@ -320,11 +324,13 @@ public:
      */
     VideoCapture* videoCapture() const;
 
-    // TODO: no replay, replay without parsing the stream if it's already loaded. (not implemented). to force reload the stream, unload() then play()
+    // TODO: no replay, replay without parsing the stream if it's already loaded. (not implemented).
+    // to force reload the stream, unload() then play()
 
     /*!
      * \brief play
-     * If isAsyncLoad() is true (default), play() will return immediately. Signals started() and stateChanged() will be emitted if media is loaded and playback starts.
+     * If isAsyncLoad() is true (default), play() will return immediately.
+     * Signals started() and stateChanged() will be emitted if media is loaded and playback starts.
      */
     void play(const QString& path);
     bool isPlaying() const;
@@ -350,7 +356,8 @@ public:
 
     /*!
      * \brief audio
-     * AVPlayerCore always has an AudioOutput instance. You can access or control audio output properties through audio().
+     * AVPlayerCore always has an AudioOutput instance. You can access or control
+     * audio output properties through audio().
      * To disable audio output, set audio()->setBackends(QStringList() << "null") before starting playback
      * \return
      */
@@ -415,7 +422,8 @@ public:
 
     /*!
      * \brief setPriority
-     * A suitable decoder will be applied when video is playing. The decoder does not change in current playback if no decoder is found.
+     * A suitable decoder will be applied when video is playing.
+     * The decoder does not change in current playback if no decoder is found.
      * If not playing or no decoder found, the decoder will be changed at the next playback
      * \param ids
      */
@@ -424,7 +432,9 @@ public:
     /*!
      * \brief setVideoDecoderPriority
      * also can set in opt.priority
-     * \param names the video decoder name list in priority order. Name can be "FFmpeg", "CUDA", "DXVA", "D3D11", "VAAPI", "VDA", "VideoToolbox", "MediaCodec", "MMAL", "QSV", "CrystalHD", case insensitive
+     * \param names the video decoder name list in priority order.
+     * Name can be "FFmpeg", "CUDA", "DXVA", "D3D11", "VAAPI", "VDA",
+     * "VideoToolbox", "MediaCodec", "MMAL", "QSV", "CrystalHD", case insensitive
      */
     void setVideoDecoderPriority(const QStringList& names);
     QStringList videoDecoderPriority() const;
@@ -489,7 +499,8 @@ public Q_SLOTS:
 
     /*!
      * \brief load
-     * Load the current media set by setFile(); Can be used to reload a media and call play() later. If already loaded, does nothing and return true.
+     * Load the current media set by setFile(); Can be used to reload
+     * a media and call play() later. If already loaded, does nothing and return true.
      * If async load, mediaStatus() becomes LoadingMedia and user should connect signal loaded()
      * or mediaStatusChanged(QtAV::LoadedMedia) to a slot
      * \return true if success or already loaded.
@@ -501,13 +512,17 @@ public Q_SLOTS:
 
     /*!
      * \brief play
-     * Load media and start playback. If current media is playing and media source is not changed, nothing to do. If media source is not changed, try to load (not in LoadingStatus or LoadedStatus) and start playback. If media source changed, reload and start playback.
+     * Load media and start playback. If current media is playing and media
+     * source is not changed, nothing to do. If media source is not changed,
+     * try to load (not in LoadingStatus or LoadedStatus) and start playback.
+     * If media source changed, reload and start playback.
      */
     void play();
 
     /*!
      * \brief stop
-     * Stop playback. It blocks current thread until the playback is stopped. Will emit signal stopped(). startPosition(), stopPosition(), repeat() are reset
+     * Stop playback. It blocks current thread until the playback is stopped.
+     * Will emit signal stopped(). startPosition(), stopPosition(), repeat() are reset
      */
     void stop();
 
@@ -552,7 +567,8 @@ public Q_SLOTS:
      * \brief stopPosition
      *  pos > mediaStopPosition(): mediaStopPosition()
      *  pos < 0: duration() + pos
-     * With the default value, the playback will not stop until the end of media (including dynamically changed media duration, e.g. recording video)
+     * With the default value, the playback will not stop until the end of media
+     * (including dynamically changed media duration, e.g. recording video)
      */
     void setStopPosition(qint64 pos = std::numeric_limits<qint64>::max());
 
@@ -655,7 +671,9 @@ Q_SIGNALS:
 
     /*!
      * \brief started
-     * Emitted when playback is started. Some functions that control playback should be called after playback is started, otherwise they won't work, e.g. setPosition(), pause(). stop() can be called at any time.
+     * Emitted when playback is started. Some functions that control playback
+     * should be called after playback is started, otherwise they won't work,
+     * e.g. setPosition(), pause(). stop() can be called at any time.
      */
     void started();
     void stopped();
@@ -670,7 +688,9 @@ Q_SIGNALS:
 
     /*!
      * \brief seekFinished
-     * If there is a video stream currently playing, emitted when video seek is finished. If only an audio stream is playing, emitted when audio seek is finished. The position() is the master clock value, It can be very different from video timestamp at this time.
+     * If there is a video stream currently playing, emitted when video seek is finished.
+     * If only an audio stream is playing, emitted when audio seek is finished.
+     * The position() is the master clock value, It can be very different from video timestamp at this time.
      * \param position The video or audio timestamp when seek is finished
      */
     void seekFinished(qint64 position);
@@ -738,8 +758,9 @@ private:
     /*!
      * \brief unload
      * If the media is loading or loaded but not playing, unload it. Internall use only.
+     * TODO: private. call in stop() if not load() by user? or always unload() in stop()?
      */
-    void unload(); // TODO: private. call in stop() if not load() by user? or always unload() in stop()?
+    void unload(); 
     qint64 normalizedPosition(qint64 pos);
 
 private:

@@ -39,7 +39,10 @@
 #define AV_MODULE_CHECK(MODULE, MAJOR, MINOR, MICRO, MINOR2, MICRO2) \
     (LIBAV_MODULE_CHECK(MODULE, MAJOR, MINOR, MICRO) || FFMPEG_MODULE_CHECK(MODULE, MAJOR, MINOR2, MICRO2))
 
-/// example: AV_ENSURE(avcodec_close(avctx), false) will print error and return false if failed. AV_WARN just prints error.
+/**
+ * example: AV_ENSURE(avcodec_close(avctx), false) will print error and return false if failed.
+ * AV_WARN just prints error.
+ */
 
 #define AV_ENSURE_OK(FUNC, ...) AV_RUN_CHECK(FUNC, return, __VA_ARGS__)
 #define AV_ENSURE(FUNC, ...)    AV_RUN_CHECK(FUNC, return, __VA_ARGS__)
@@ -389,7 +392,7 @@ typedef enum AVPixelFormat AVPixelFormat;
 #   define PIX_FMT_ALPHA 128
 #endif
 
-/*
+/**
  * rename PIX_FMT_* flags to AV_PIX_FMT_FLAG_*. git e6c4ac7b5f038be56dfbb0171f5dd0cb850d9b28
  */
 

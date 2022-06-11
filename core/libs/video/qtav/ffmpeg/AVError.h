@@ -43,7 +43,8 @@ public:
     {
         NoError,
 
-        // open/read/seek network stream error. value must be less then ResourceError because of correct_error_by_ffmpeg
+        // open/read/seek network stream error. value must be less then ResourceError
+        // because of correct_error_by_ffmpeg
 
         NetworkError,                                   ///< all above and before NoError are NetworkError
 
