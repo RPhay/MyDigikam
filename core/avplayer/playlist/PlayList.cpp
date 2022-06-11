@@ -54,9 +54,9 @@ PlayList::PlayList(QWidget* const parent)
     mpModel                = new PlayListModel(this);
     mpDelegate             = new PlayListDelegate(this);
     mpListView             = new QListView;
-
-    //mpListView->setResizeMode(QListView::Adjust);
-
+/*
+    mpListView->setResizeMode(QListView::Adjust);
+*/
     mpListView->setModel(mpModel);
     mpListView->setItemDelegate(mpDelegate);
     mpListView->setSelectionMode(QAbstractItemView::ExtendedSelection); // ctrl,shift
@@ -142,7 +142,8 @@ void PlayList::save()
     if (!f.open(QIODevice::WriteOnly))
     {
         qCWarning(DIGIKAM_AVPLAYER_LOG).noquote()
-            << QString::asprintf("File open error: %s", qPrintable(f.errorString()));
+            << QString::asprintf("File open error: %s",
+                qPrintable(f.errorString()));
 
         return;
     }
@@ -161,7 +162,7 @@ PlayListItem PlayList::itemAt(int row)
         return PlayListItem();
     }
 
-    return mpModel->data(mpModel->index(row), Qt::DisplayRole).value<PlayListItem>();
+    return (mpModel->data(mpModel->index(row), Qt::DisplayRole).value<PlayListItem>());
 }
 
 void PlayList::insertItemAt(const PlayListItem& item, int row)
@@ -248,7 +249,7 @@ void PlayList::removeSelectedItems()
 
     QModelIndexList s = selection->selectedIndexes();
 
-    for (int i = s.size()-1 ; i >= 0 ; --i)
+    for (int i = (s.size() - 1) ; i >= 0 ; --i)
     {
         mpModel->removeRow(s.at(i).row());
     }

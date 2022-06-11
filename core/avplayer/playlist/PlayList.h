@@ -62,7 +62,7 @@ public:
     void remove(const QString& url);
     void insert(const QString& url, int row = 0);
     void setMaxRows(int r);
-    int maxRows() const;
+    int maxRows()      const;
 
 Q_SIGNALS:
 
@@ -76,9 +76,9 @@ private Q_SLOTS:
     void addItems();
 
     void onAboutToPlay(const QModelIndex& index);
-
-    //void highlight(const QModelIndex& index);
-
+/*
+    void highlight(const QModelIndex& index);
+*/
 private:
 
     QListView*          mpListView;

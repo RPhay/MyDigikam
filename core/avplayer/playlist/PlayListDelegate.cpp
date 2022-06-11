@@ -49,7 +49,8 @@ PlayListDelegate::PlayListDelegate(QObject* const parent)
     mHighlightRow = -1;
 }
 
-// dynamic height: http://www.qtcentre.org/threads/18879-solved-QListView-dynamic-item-height     // krazy:exclude=insecurenet
+// dynamic height:
+// http://www.qtcentre.org/threads/18879-solved-QListView-dynamic-item-height     // krazy:exclude=insecurenet
 
 void PlayListDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
 {
@@ -108,17 +109,17 @@ void PlayListDelegate::paint(QPainter* painter, const QStyleOptionViewItem& opti
 
     QFont ft;
     ft.setBold(detail);
-    ft.setPixelSize(12);        // kHeightMin - 2*kMarginTop);
+    ft.setPixelSize(12);        // (kHeightMin - 2*kMarginTop);
     painter->setFont(ft);
     painter->translate(kMarginLeft, kMarginTop);
-    painter->drawText(QRect(0, 0, kWidth - 2*kMarginLeft, kHeightMin - 2*kMarginTop), pli.title());
+    painter->drawText(QRect(0, 0, kWidth - 2 * kMarginLeft, kHeightMin - 2 * kMarginTop), pli.title());
     painter->translate(0, kHeightMin + kMarginTop);
 
     if (detail)
     {
         painter->save();
         ft.setBold(false);
-        ft.setPixelSize(8);     // (kHeightMax - kHeightMin - 2*kMarginTop));
+        ft.setPixelSize(8);     // ((kHeightMax - kHeightMin - 2*kMarginTop));
         painter->setFont(ft);
         painter->drawText(0, 0, pli.lastTimeString() + QString::fromLatin1("/") + pli.durationString());
         painter->restore();
