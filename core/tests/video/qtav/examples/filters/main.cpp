@@ -48,7 +48,8 @@ int main(int argc, char* argv[])
 {
     QApplication a(argc, argv);
 
-    if (a.arguments().contains(QString::fromLatin1("-h")) || a.arguments().contains(QString::fromLatin1("--help")))
+    if (a.arguments().contains(QString::fromLatin1("-h")) ||
+        a.arguments().contains(QString::fromLatin1("--help")))
     {
         qCDebug(DIGIKAM_TESTS_LOG).noquote()
             << QString::asprintf("Usage: %s [-vo qt/gl/d2d/gdi] [url/path]filename",
@@ -71,7 +72,11 @@ int main(int argc, char* argv[])
     else
     {
         QString exe(a.arguments().at(0));
-        qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("exe: %s", exe.toUtf8().constData());
+
+        qCDebug(DIGIKAM_TESTS_LOG).noquote()
+            << QString::asprintf("exe: %s",
+                exe.toUtf8().constData());
+
         int i = exe.lastIndexOf(QLatin1Char('-'));
 
         if (i > 0)
@@ -80,7 +85,10 @@ int main(int argc, char* argv[])
         }
     }
 
-    qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("vo: %s", vo.toUtf8().constData());
+    qCDebug(DIGIKAM_TESTS_LOG).noquote()
+        << QString::asprintf("vo: %s",
+            vo.toUtf8().constData());
+
     bool opt_has_file = (argc > (idx + 2));
     vo                = vo.toLower();
 
@@ -93,7 +101,8 @@ int main(int argc, char* argv[])
         vo = QString::fromLatin1("qpainter");
     }
 
-    QString title           = QString::fromLatin1("QtAV %1 wbsecg1@gmail.com").arg(QtAV_Version_String_Long());
+    QString title           = QString::fromLatin1("QtAV %1 wbsecg1@gmail.com")
+                              .arg(QtAV_Version_String_Long());
     VideoRenderer* renderer = nullptr;
     bool textfilter         = false;
 
@@ -128,7 +137,8 @@ int main(int argc, char* argv[])
 
     if (!renderer)
     {
-        QMessageBox::critical(0, QString::fromLatin1("QtAV"), QString::fromLatin1("vo '%1' not supported").arg(vo));
+        QMessageBox::critical(nullptr, QString::fromLatin1("QtAV"),
+                              QString::fromLatin1("vo '%1' not supported").arg(vo));
 
         return 1;
     }
@@ -165,7 +175,8 @@ int main(int argc, char* argv[])
         renderer->installFilter(filter);
 
         filter                  = new SimpleFilter(&player);
-        filter->setText(QString::fromLatin1("<h1 style='color:#ffff00'>HTML Filter on<span style='color:#ff0000'>Video Frame</span></h2>"));
+        filter->setText(QString::fromLatin1("<h1 style='color:#ffff00'>HTML Filter on"
+                                            "<span style='color:#ff0000'>Video Frame</span></h2>"));
         filter->enableWaveEffect(false);
         filter->enableRotate(true);
         ctx                     = static_cast<VideoFilterContext*>(filter->context());

@@ -87,10 +87,13 @@ int main(int argc, char *argv[])
     {
         const VideoFrame f = r.getVideoFrame();
 
-        qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("pts: %.3f", f.timestamp());
+        qCDebug(DIGIKAM_TESTS_LOG).noquote()
+            << QString::asprintf("pts: %.3f",
+                f.timestamp());
     }
 
-    qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("read done");
+    qCDebug(DIGIKAM_TESTS_LOG).noquote()
+        << QString::asprintf("read done");
 
     return 0;
 }

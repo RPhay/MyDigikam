@@ -37,7 +37,8 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    qCDebug(DIGIKAM_TESTS_LOG) << QLatin1String("usage: ")
+    qCDebug(DIGIKAM_TESTS_LOG)
+        << QLatin1String("usage: ")
         << a.applicationFilePath().split(QLatin1String("/")).last().append(QLatin1String(" url"));
 
     if (a.arguments().size() < 2)
@@ -50,14 +51,15 @@ int main(int argc, char *argv[])
     if (!demuxer.load())
     {
         qWarning() << "Failed to load file " << demuxer.fileName();
+
         return 1;
     }
 
     QScopedPointer<AudioDecoder> dec(AudioDecoder::create()); // delete by user
     dec->setCodecContext(demuxer.audioCodecContext());
-
-    //dec->prepare();
-
+/*
+    dec->prepare();
+*/
     if (!dec->open())
         qFatal("open decoder error");
 
@@ -79,6 +81,7 @@ int main(int argc, char *argv[])
         if (!dec->decode(pkt))
         {
             pkt = Packet(); // set invalid to read from demuxer
+
             continue;
         }
 
@@ -91,9 +94,9 @@ int main(int argc, char *argv[])
 
         if (!frame)
             continue;
-
-        //frame.setAudioResampler(dec->resampler()); // if not set, always create a resampler in AudioFrame.to()
-
+/*
+        frame.setAudioResampler(dec->resampler()); // if not set, always create a resampler in AudioFrame.to()
+*/
         AudioFormat af(frame.format());
 
         if (ao->isOpen())
@@ -128,7 +131,9 @@ int main(int argc, char *argv[])
             qCDebug(DIGIKAM_TESTS_LOG) << "Output: " << af;
         }
 
-        qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("playing: %.3f...\r", frame.timestamp());
+        qCDebug(DIGIKAM_TESTS_LOG).noquote()
+            << QString::asprintf("playing: %.3f...\r",
+                frame.timestamp());
 
         // always resample ONCE. otherwise data are all 0x0. QtAV bug
 

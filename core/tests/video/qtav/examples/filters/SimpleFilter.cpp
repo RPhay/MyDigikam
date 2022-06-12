@@ -130,9 +130,17 @@ void SimpleFilter::process(Statistics* statistics, VideoFrame* frame)
             return;
 
         if (mCanRot)
-            ctx->drawImage(QPointF(-mImage.width() / 2, ctx->rect.y()), mImage, QRectF(0, 0, mImage.width(), mImage.height()));
+        {
+            ctx->drawImage(QPointF(-mImage.width() / 2, ctx->rect.y()),
+                           mImage,
+                           QRectF(0, 0, mImage.width(), mImage.height()));
+        }
         else
-            ctx->drawImage(ctx->rect.topLeft(), mImage, QRectF(0, 0, mImage.width(), mImage.height()));
+        {
+            ctx->drawImage(ctx->rect.topLeft(),
+                           mImage,
+                           QRectF(0, 0, mImage.width(), mImage.height()));
+        }
 
         return;
     }
@@ -171,7 +179,7 @@ void SimpleFilter::process(Statistics* statistics, VideoFrame* frame)
         QLinearGradient g(0, 0, 100, 32);
         g.setSpread(QGradient::ReflectSpread);
         g.setColorAt(0, QColor::fromHsvF(c, 1, 1, 1));
-        g.setColorAt(1, QColor::fromHsvF((c > 0.5) ? c-0.5 : c + 0.5, 1, 1, 1));
+        g.setColorAt(1, QColor::fromHsvF((c > 0.5) ? c - 0.5 : c + 0.5, 1, 1, 1));
         ctx->pen.setBrush(QBrush(g));
         ctx->drawRichText(ctx->rect, mText);
 
@@ -180,7 +188,9 @@ void SimpleFilter::process(Statistics* statistics, VideoFrame* frame)
         if (mCanRot)
         {
             QFontMetrics fm(ctx->font);
-            ctx->drawPlainText(QRectF(-fm.boundingRect(mText).width()/2, ctx->rect.y(), ctx->rect.width(), ctx->rect.height()), Qt::TextWordWrap, mText);
+            ctx->drawPlainText(QRectF(-fm.boundingRect(mText).width() / 2,
+                                      ctx->rect.y(), ctx->rect.width(), ctx->rect.height()),
+                               Qt::TextWordWrap, mText);
         }
         else
         {

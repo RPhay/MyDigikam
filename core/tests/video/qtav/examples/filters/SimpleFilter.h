@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_EXAMPLE_SIMPLEFILTER_H
-#define QTAV_EXAMPLE_SIMPLEFILTER_H
+#ifndef QTAV_EXAMPLE_SIMPLE_FILTER_H
+#define QTAV_EXAMPLE_SIMPLE_FILTER_H
 
 // Qt includes
 
@@ -53,7 +53,8 @@ public:
 
     bool isSupported(VideoFilterContext::Type ct) const override
     {
-        return ((ct == VideoFilterContext::QtPainter) || (ct == VideoFilterContext::X11));
+        return ((ct == VideoFilterContext::QtPainter) ||
+                (ct == VideoFilterContext::X11));
     }
 
     void setText(const QString& text);
@@ -81,4 +82,4 @@ private:
     QImage          mImage;
 };
 
-#endif // QTAV_EXAMPLE_SIMPLEFILTER_H
+#endif // QTAV_EXAMPLE_SIMPLE_FILTER_H

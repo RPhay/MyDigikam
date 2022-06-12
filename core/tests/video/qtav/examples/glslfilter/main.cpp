@@ -41,35 +41,20 @@ using namespace QtAV;
 
 class WaveShader : public DynamicShaderObject
 {
-    float t;
-    qreal A;
-
     Q_OBJECT
     Q_PROPERTY(qreal u_A READ u_A WRITE setU_A NOTIFY u_AChanged) // you can use meta property
 
 public:
 
-    qreal u_A() const
-    {
-        return A;
-    }
-
-    void setU_A(qreal v)
-    {
-        A = v;
-
-        Q_EMIT u_AChanged();
-    }
-
     WaveShader(QObject* const parent = nullptr)
         : DynamicShaderObject(parent),
-          t                  (0),
+          t                  (0.0),
           A                  (0.06)
     {
         setProperty("u_t", 0); // you can use dynamic property
-
-        //setProperty("u_A", 0.06);
-
+/*
+        setProperty("u_A", 0.06);
+*/
         setProperty("u_omega", 5);
 
         setHeader(QLatin1String(GLSL(
@@ -93,6 +78,18 @@ public:
         startTimer(40);
     }
 
+    qreal u_A() const
+    {
+        return A;
+    }
+
+    void setU_A(qreal v)
+    {
+        A = v;
+
+        Q_EMIT u_AChanged();
+    }
+
 Q_SIGNALS:
 
     void u_AChanged();
@@ -104,6 +101,11 @@ protected:
         t += 2.0 * M_PI / 25.0;
         setProperty("u_t", t);
     }
+
+private:
+
+    float t = 0.0;
+    qreal A = 0.06;
 };
 
 int main(int argc, char** argv)
