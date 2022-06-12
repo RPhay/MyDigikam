@@ -15,3 +15,8 @@ The workflow supports notarization of application bundles (signing) for Linux (A
 - Introduction to binary factory: https://kfunk.org/2017/11/17/kde-binary-factory/
 - Build Factory Jenkins page    : https://build.kde.org/
 - Binary Factory Jenkins page   : https://binary-factory.kde.org/
+
+Notes:
+
+- All changes performed to Binary Factory customizations files needs a DSL Job to be triggered by KDE sysadmin team.
+This job will synchronize the settings to the Binary Factory environnements.
