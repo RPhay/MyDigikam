@@ -24,9 +24,6 @@
 #ifndef AV_PLAYER_EVENT_FILTER_H
 #define AV_PLAYER_EVENT_FILTER_H
 
-/*
- * This class is used interally as QtAV's default event filter. It is suite for single player object
- */
 
 #include <QObject>
 #include <QPoint>
@@ -39,10 +36,12 @@ namespace QtAV
 class AVPlayerCore;
 }
 
+/**
+ * These classes are used interally as QtAV's default event filter. It is suite for single player object
+ */
+
 namespace AVPlayer
 {
-
-// for internal use
 
 class EventFilter : public QObject
 {

@@ -67,7 +67,8 @@ private:
                                          const QStringList& itemNames,
                                          QList<QTreeWidgetItem*>* items = 0);
 
-    void setMetadataItem(QTreeWidgetItem* parent, const QHash<QString, QString>& metadata);
+    void setMetadataItem(QTreeWidgetItem* parent,
+                         const QHash<QString, QString>& metadata);
 
 private:
 

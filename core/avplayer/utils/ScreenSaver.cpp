@@ -83,9 +83,7 @@ static QLibrary xlib;
 
 #ifdef Q_OS_WIN
 #   include <QAbstractEventDispatcher>
-#   if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#       include <QAbstractNativeEventFilter>
-#   endif
+#   include <QAbstractNativeEventFilter>
 
 // mingw gcc4.4 EXECUTION_STATE
 
@@ -145,7 +143,8 @@ public:
 */
         if (WM_DEVICECHANGE == msg->message)
         {
-            qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("device event");
+            qCDebug(DIGIKAM_AVPLAYER_LOG).noquote()
+                << QString::asprintf("device event");
 /*
             if (msg->wParam == DBT_DEVICEREMOVECOMPLETE)
             {
@@ -245,7 +244,11 @@ ScreenSaver::ScreenSaver()
             XResetScreenSaver = (fXResetScreenSaver)xlib.resolve("XResetScreenSaver");
         }
 
-        isX11 = (XOpenDisplay && XCloseDisplay && XSetScreenSaver && XGetScreenSaver && XResetScreenSaver);
+        isX11 = (XOpenDisplay    &&
+                 XCloseDisplay   &&
+                 XSetScreenSaver &&
+                 XGetScreenSaver &&
+                 XResetScreenSaver);
     }
 
 #endif // Q_OS_LINUX
@@ -285,7 +288,8 @@ ScreenSaver::~ScreenSaver()
 // http://msdn.microsoft.com/en-us/library/windows/desktop/ms724947%28v=vs.85%29.aspx       // krazy:exclude=insecurenet
 // http://msdn.microsoft.com/en-us/library/windows/desktop/aa373208%28v=vs.85%29.aspx       // krazy:exclude=insecurenet
 
-/* TODO:
+/**
+ * TODO:
  * SystemParametersInfo will change system wild settings. An application level solution is better. Use native event
  * SPI_SETSCREENSAVETIMEOUT?
  * SPI_SETLOWPOWERTIMEOUT, SPI_SETPOWEROFFTIMEOUT for 32bit
@@ -327,7 +331,9 @@ bool ScreenSaver::enable(bool yes)
         // ES_CONTINUOUS: Informs the system that the state being set should remain in effect until the next call
         // that uses ES_CONTINUOUS and one of the other state flags is cleared.
 
-        sLastState = SetThreadExecutionState(ES_DISPLAY_REQUIRED | ES_SYSTEM_REQUIRED | ES_CONTINUOUS);
+        sLastState = SetThreadExecutionState(ES_DISPLAY_REQUIRED |
+                                             ES_SYSTEM_REQUIRED  |
+                                             ES_CONTINUOUS);
     }
     else
     {
@@ -444,7 +450,9 @@ void ScreenSaver::disable()
 bool ScreenSaver::retrieveState()
 {
     bool rv = false;
-    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("ScreenSaver::retrieveState");
+
+    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote()
+        << QString::asprintf("ScreenSaver::retrieveState");
 
     if (!state_saved)
     {
@@ -458,7 +466,8 @@ bool ScreenSaver::retrieveState()
             XCloseDisplay(display);
 
             qCDebug(DIGIKAM_AVPLAYER_LOG).noquote()
-                << QString::asprintf("ScreenSaver::retrieveState timeout: %d, interval: %d, preferBlanking:%d, allowExposures:%d",
+                << QString::asprintf("ScreenSaver::retrieveState timeout: %d, "
+                                     "interval: %d, preferBlanking:%d, allowExposures:%d",
                     timeout, interval, preferBlanking, allowExposures);
 
             state_saved = true;
@@ -471,7 +480,8 @@ bool ScreenSaver::retrieveState()
     else
     {
         qCDebug(DIGIKAM_AVPLAYER_LOG).noquote()
-            << QString::asprintf("ScreenSaver::retrieveState: state already saved previously, doing nothing");
+            << QString::asprintf("ScreenSaver::retrieveState: state already "
+                                 "saved previously, doing nothing");
     }
 
     return rv;
@@ -484,7 +494,8 @@ bool ScreenSaver::restoreState()
     if (!modified)
     {
         qCDebug(DIGIKAM_AVPLAYER_LOG).noquote()
-            << QString::asprintf("ScreenSaver::restoreState: state did not change, doing nothing");
+            << QString::asprintf("ScreenSaver::restoreState: state did "
+                                 "not change, doing nothing");
 
         return true;
     }

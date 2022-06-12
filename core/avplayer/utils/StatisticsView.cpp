@@ -159,7 +159,8 @@ StatisticsView::StatisticsView(QWidget* const parent)
     mpMetadata            = new QTreeWidgetItem();
     mpMetadata->setText(0, i18nc("@item: video info", "Metadata"));
     mpView->addTopLevelItem(mpMetadata);
-    QTreeWidgetItem* item = createNodeWithItems(mpView, i18nc("@item: video stats", "Video"), getVideoInfoKeys(), &mVideoItems);
+    QTreeWidgetItem* item = createNodeWithItems(mpView, i18nc("@item: video stats", "Video"),
+                                                getVideoInfoKeys(), &mVideoItems);
     mpFPS                 = item->child(9);
 
     // mpVideoBitRate =
@@ -167,7 +168,8 @@ StatisticsView::StatisticsView(QWidget* const parent)
     mpVideoMetadata = new QTreeWidgetItem(item);
     mpVideoMetadata->setText(0, i18nc("@option", "Metadata"));
     mpView->addTopLevelItem(item);
-    item            = createNodeWithItems(mpView, i18nc("@option", "Audio"), getAudioInfoKeys(), &mAudioItems);
+    item            = createNodeWithItems(mpView, i18nc("@option", "Audio"),
+                                          getAudioInfoKeys(), &mAudioItems);
 
     // mpAudioBitRate =
 
@@ -256,7 +258,8 @@ void StatisticsView::timerEvent(QTimerEvent* e)
 
     if (mpFPS)
     {
-        mpFPS->setData(1, Qt::DisplayRole, QString::number(mStatistics.video_only.currentDisplayFPS(), 'f', 2));
+        mpFPS->setData(1, Qt::DisplayRole,
+                       QString::number(mStatistics.video_only.currentDisplayFPS(), 'f', 2));
     }
 }
 
@@ -272,8 +275,10 @@ void StatisticsView::initBaseItems(QList<QTreeWidgetItem*>* items)
     }
 }
 
-QTreeWidgetItem* StatisticsView::createNodeWithItems(QTreeWidget* view, const QString& name,
-                                                     const QStringList& itemNames, QList<QTreeWidgetItem*>* items)
+QTreeWidgetItem* StatisticsView::createNodeWithItems(QTreeWidget* view,
+                                                     const QString& name,
+                                                     const QStringList& itemNames,
+                                                     QList<QTreeWidgetItem*>* items)
 {
     QTreeWidgetItem* const nodeItem = new QTreeWidgetItem(view);
     nodeItem->setData(0, Qt::DisplayRole, name);
@@ -294,7 +299,8 @@ QTreeWidgetItem* StatisticsView::createNodeWithItems(QTreeWidget* view, const QS
     return nodeItem;
 }
 
-void StatisticsView::setMetadataItem(QTreeWidgetItem* parent, const QHash<QString, QString>& metadata)
+void StatisticsView::setMetadataItem(QTreeWidgetItem* parent,
+                                     const QHash<QString, QString>& metadata)
 {
     if (parent->childCount() > 0)
     {

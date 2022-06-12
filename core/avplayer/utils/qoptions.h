@@ -68,7 +68,8 @@ public:
 public:
 
     QOption();
-    explicit QOption(const char* name, const QVariant& defaultValue, Type type, const QString& description);
+    explicit QOption(const char* name, const QVariant& defaultValue,
+                     Type type, const QString& description);
     explicit QOption(const char* name, Type type, const QString& description);
 
     QString shortName()                 const;
@@ -126,9 +127,12 @@ public:
     QOptions& add(const QString& group_description);
     QOptions& addDescription(const QString& description);
 
-    QOptions& operator()(const char* name, const QString& description = QString());
-    QOptions& operator()(const char* name, QOption::Type type, const QString& description = QString());
-    QOptions& operator()(const char* name, const QVariant& defaultValue, const QString& description);
+    QOptions& operator()(const char* name,
+                         const QString& description = QString());
+    QOptions& operator()(const char* name, QOption::Type type,
+                         const QString& description = QString());
+    QOptions& operator()(const char* name, const QVariant& defaultValue,
+                         const QString& description);
     QOptions& operator()(const char* name, const QVariant& defaultValue,
                          QOption::Type type, const QString& description = QString());
 

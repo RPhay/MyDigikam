@@ -62,7 +62,8 @@ class AppEventFilter : public QObject
 
 public:
 
-    explicit AppEventFilter(QObject* const player = nullptr, QObject* const parent = nullptr);
+    explicit AppEventFilter(QObject* const player = nullptr,
+                            QObject* const parent = nullptr);
 
     QUrl url() const;
     virtual bool eventFilter(QObject* obj, QEvent* ev);

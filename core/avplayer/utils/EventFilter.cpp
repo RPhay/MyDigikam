@@ -87,7 +87,9 @@ void EventFilter::openLocalFile()
 
 void EventFilter::openUrl()
 {
-    QString url = QInputDialog::getText(nullptr, i18nc("@title", "Open an url"), i18nc("@info", "Url"));
+    QString url = QInputDialog::getText(nullptr,
+                                        i18nc("@title", "Open an url"),
+                                        i18nc("@info", "Url"));
 
     if (url.isEmpty())
         return;
@@ -108,27 +110,27 @@ void EventFilter::aboutFFmpeg()
 
 void EventFilter::help()
 {
-    static QString help = QString::fromLatin1("<qt><h4>")                                                                                    +
-                          i18nc("@info", "Drag and drop a file to player\n")                               + QString::fromLatin1("</h4><p>") +
-                          i18nc("@info", "A: switch aspect ratio")                                         + QString::fromLatin1("</p><p>")  +
-                          i18nc("@info", "Double click to switch fullscreen")                              + QString::fromLatin1("</p><p>")  +
-                          i18nc("@info", "Shortcut:\n")                                                    + QString::fromLatin1("</p><p>")  +
-                          i18nc("@info", "Space: pause/continue\n")                                        + QString::fromLatin1("</p><p>")  +
-                          i18nc("@info", "F: fullscreen on/off\n")                                         + QString::fromLatin1("</p><p>")  +
-                          i18nc("@info", "T: stays on top on/off\n")                                       + QString::fromLatin1("</p><p>")  +
-                          i18nc("@info", "N: show next frame. Continue the playing by pressing 'Space'\n") + QString::fromLatin1("</p><p>")  +
-                          i18nc("@info", "Ctrl+O: open a file\n")                                          + QString::fromLatin1("</p><p>")  +
-                          i18nc("@info", "O: On Screen Display\n")                                         + QString::fromLatin1("</p><p>")  +
-                          i18nc("@info", "P: replay\n")                                                    + QString::fromLatin1("</p><p>")  +
-                          i18nc("@info", "Q/ESC: quit\n")                                                  + QString::fromLatin1("</p><p>")  +
-                          i18nc("@info", "S: stop\n")                                                      + QString::fromLatin1("</p><p>")  +
-                          i18nc("@info", "R: rotate 90 degrees")                                           + QString::fromLatin1("</p><p>")  +
-                          i18nc("@info", "M: mute on/off\n")                                               + QString::fromLatin1("</p><p>")  +
-                          i18nc("@info", "C: capture video")                                               + QString::fromLatin1("</p><p>")  +
-                          i18nc("@info", "Up/Down: volume +/-\n")                                          + QString::fromLatin1("</p><p>")  +
-                          i18nc("@info", "Ctrl+Up/Down: speed +/-\n")                                      + QString::fromLatin1("</p><p>")  +
-                          i18nc("@info", "-&gt;/&lt;-: seek forward/backward\n")                                                             +
-                          QString::fromLatin1("</qt>");
+    static QString help = QLatin1String("<qt><h4>")                                                                                    +
+        i18nc("@info", "Drag and drop a file to player\n")                               + QLatin1String("</h4><p>") +
+        i18nc("@info", "A: switch aspect ratio")                                         + QLatin1String("</p><p>")  +
+        i18nc("@info", "Double click to switch fullscreen")                              + QLatin1String("</p><p>")  +
+        i18nc("@info", "Shortcut:\n")                                                    + QLatin1String("</p><p>")  +
+        i18nc("@info", "Space: pause/continue\n")                                        + QLatin1String("</p><p>")  +
+        i18nc("@info", "F: fullscreen on/off\n")                                         + QLatin1String("</p><p>")  +
+        i18nc("@info", "T: stays on top on/off\n")                                       + QLatin1String("</p><p>")  +
+        i18nc("@info", "N: show next frame. Continue the playing by pressing 'Space'\n") + QLatin1String("</p><p>")  +
+        i18nc("@info", "Ctrl+O: open a file\n")                                          + QLatin1String("</p><p>")  +
+        i18nc("@info", "O: On Screen Display\n")                                         + QLatin1String("</p><p>")  +
+        i18nc("@info", "P: replay\n")                                                    + QLatin1String("</p><p>")  +
+        i18nc("@info", "Q/ESC: quit\n")                                                  + QLatin1String("</p><p>")  +
+        i18nc("@info", "S: stop\n")                                                      + QLatin1String("</p><p>")  +
+        i18nc("@info", "R: rotate 90 degrees")                                           + QLatin1String("</p><p>")  +
+        i18nc("@info", "M: mute on/off\n")                                               + QLatin1String("</p><p>")  +
+        i18nc("@info", "C: capture video")                                               + QLatin1String("</p><p>")  +
+        i18nc("@info", "Up/Down: volume +/-\n")                                          + QLatin1String("</p><p>")  +
+        i18nc("@info", "Ctrl+Up/Down: speed +/-\n")                                      + QLatin1String("</p><p>")  +
+        i18nc("@info", "-&gt;/&lt;-: seek forward/backward\n")                                                             +
+        QLatin1String("</qt>");
 
     QMessageBox::about(nullptr, i18nc("@title", "Help"), help);
 }
@@ -151,7 +153,9 @@ bool EventFilter::eventFilter(QObject* watched, QEvent* event)
 
     if (player->renderer() != dynamic_cast<VideoRenderer*>(watched))
     {
-       // return false;
+/*
+       return false;
+*/
     }
 
 #endif
@@ -224,7 +228,8 @@ bool EventFilter::eventFilter(QObject* watched, QEvent* event)
                     // check playing?
 
                     qCDebug(DIGIKAM_AVPLAYER_LOG).noquote()
-                        << QString::asprintf("isPaused = %d", player->isPaused());
+                        << QString::asprintf("isPaused = %d",
+                            player->isPaused());
 
                     player->pause(!player->isPaused());
 
@@ -294,7 +299,8 @@ bool EventFilter::eventFilter(QObject* watched, QEvent* event)
                         player->audio()->setVolume(v);
 
                         qCDebug(DIGIKAM_AVPLAYER_LOG).noquote()
-                            << QString::asprintf("vol = %.3f", player->audio()->volume());
+                            << QString::asprintf("vol = %.3f",
+                                player->audio()->volume());
                     }
 
                     break;
@@ -336,7 +342,8 @@ bool EventFilter::eventFilter(QObject* watched, QEvent* event)
                         player->audio()->setVolume(v);
 
                         qCDebug(DIGIKAM_AVPLAYER_LOG).noquote()
-                            << QString::asprintf("vol = %.3f", player->audio()->volume());
+                            << QString::asprintf("vol = %.3f",
+                                player->audio()->volume());
                     }
 
                     break;
@@ -360,7 +367,8 @@ bool EventFilter::eventFilter(QObject* watched, QEvent* event)
 
                 case Qt::Key_Left:
                 {
-                    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("<-");
+                    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote()
+                        << QString::asprintf("<-");
 
                     player->setSeekType(key_event->isAutoRepeat() ? KeyFrameSeek : AccurateSeek);
                     player->seekBackward();
@@ -370,7 +378,8 @@ bool EventFilter::eventFilter(QObject* watched, QEvent* event)
 
                 case Qt::Key_Right:
                 {
-                    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote() << QString::asprintf("->");
+                    qCDebug(DIGIKAM_AVPLAYER_LOG).noquote()
+                        << QString::asprintf("->");
 
                     player->setSeekType(key_event->isAutoRepeat() ? KeyFrameSeek : AccurateSeek);
                     player->seekForward();
@@ -403,7 +412,8 @@ bool EventFilter::eventFilter(QObject* watched, QEvent* event)
                     renderer->setOrientation(renderer->orientation() + 90);
 
                     qCDebug(DIGIKAM_AVPLAYER_LOG).noquote()
-                        << QString::asprintf("orientation: %d", renderer->orientation());
+                        << QString::asprintf("orientation: %d",
+                            renderer->orientation());
 
                     break;
                 }
@@ -552,7 +562,8 @@ bool WindowEventFilter::eventFilter(QObject* watched, QEvent* event)
         QWindowStateChangeEvent* const e = static_cast<QWindowStateChangeEvent*>(event);
         mpWindow->updateGeometry();
 
-        if (mpWindow->windowState().testFlag(Qt::WindowFullScreen) || e->oldState().testFlag(Qt::WindowFullScreen))
+        if (mpWindow->windowState().testFlag(Qt::WindowFullScreen) ||
+            e->oldState().testFlag(Qt::WindowFullScreen))
         {
             Q_EMIT fullscreenChanged();
         }
