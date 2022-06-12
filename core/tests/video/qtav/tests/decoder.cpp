@@ -62,12 +62,12 @@ int main(int argc, char* argv[])
 
     if (idx > 0)
     {
-        opt     = decName.right(decName.size() - idx -1);
+        opt     = decName.right(decName.size() - idx - 1);
         decName = decName.left(idx);
         QStringList opts(opt.split(QString::fromLatin1(";")));
         QVariantHash subopt;
 
-        Q_FOREACH (QString o, opts)
+        Q_FOREACH (const QString& o, opts)
         {
             idx                 = o.indexOf(QLatin1String(":"));
             subopt[o.left(idx)] = o.right(o.size() - idx - 1);
@@ -82,7 +82,10 @@ int main(int argc, char* argv[])
 
     if (!dec)
     {
-        fprintf(stderr, "Can not find decoder: %s\n", decName.toUtf8().constData());
+        qCWarning(DIGIKAM_TESTS_LOG)
+            << "Can not find decoder:"
+                << decName.toUtf8().constData();
+
         return 1;
     }
 
@@ -120,7 +123,9 @@ int main(int argc, char* argv[])
 
         if (dec->decode(pkt))
         {
-            VideoFrame frame = dec->frame(); // why is faster to call frame() for hwdec? no frame() is very slow for VDA
+            // why is faster to call frame() for hwdec? no frame() is very slow for VDA
+
+            VideoFrame frame = dec->frame();
             Q_UNUSED(frame);
 
             count++;

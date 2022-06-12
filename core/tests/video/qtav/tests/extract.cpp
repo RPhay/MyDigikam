@@ -54,7 +54,9 @@ public:
         view = VideoRenderer::create(VideoRendererId_GLWidget2);
         view->widget()->resize(400, 300);
         view->widget()->show();
-        connect(&extractor, SIGNAL(frameExtracted(QtAV::VideoFrame)), this, SLOT(onVideoFrameExtracted(QtAV::VideoFrame)));
+
+        connect(&extractor, SIGNAL(frameExtracted(QtAV::VideoFrame)),
+                this, SLOT(onVideoFrameExtracted(QtAV::VideoFrame)));
     }
 
     void setParameters(qint64 msec, int count)
@@ -95,7 +97,10 @@ public Q_SLOTS:
 
         if (++extracted >= nb)
         {
-            qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("elapsed: %lld.", timer.elapsed());
+            qCDebug(DIGIKAM_TESTS_LOG).noquote()
+                << QString::asprintf("elapsed: %lld.",
+                    timer.elapsed());
+
             return;
         }
 

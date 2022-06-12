@@ -39,22 +39,23 @@
 
 using namespace QtAV;
 
-const int kTableSize = 200;
-const int kFrames    = 512;
-qint16 sin_table[kTableSize];
+const int kTableSize         = 200;
+const int kFrames            = 512;
+qint16 sin_table[kTableSize] = { 0 };
 
 void help()
 {
-    qCDebug(DIGIKAM_TESTS_LOG) << QLatin1String("parameters: [-ao ")
-             << AudioOutput::backendsAvailable().join(QLatin1String("|"))
-             << QLatin1String("]");
+    qCDebug(DIGIKAM_TESTS_LOG)
+        << QLatin1String("parameters: [-ao ")
+        << AudioOutput::backendsAvailable().join(QLatin1String("|"))
+        << QLatin1String("]");
 }
 
 int main(int argc, char** argv)
 {
     help();
 
-    /* initialise sinusoidal wavetable */
+    // initialise sinusoidal wavetable
 
     for (int i = 0 ; i < kTableSize ; ++i)
     {
@@ -62,7 +63,7 @@ int main(int argc, char** argv)
                         sin(((double)i / (double)kTableSize) * M_PI * 2.0));
     }
 
-    QCoreApplication app(argc, argv); //only used qapp to get parameter easily
+    QCoreApplication app(argc, argv); // only used qapp to get parameter easily
     AudioOutput ao;
     int idx = app.arguments().indexOf(QLatin1String("-ao"));
 
@@ -73,7 +74,8 @@ int main(int argc, char** argv)
 
     if (ao.backend().isEmpty())
     {
-        qCCritical(DIGIKAM_TESTS_LOG) << QString::asprintf("unknow backend");
+        qCCritical(DIGIKAM_TESTS_LOG)
+            << QString::asprintf("unknow backend");
 
         return -1;
     }
@@ -85,18 +87,20 @@ int main(int argc, char** argv)
 
     if (!ao.isSupported(af))
     {
-        qCDebug(DIGIKAM_TESTS_LOG) << "does not support format: " << af;
+        qCDebug(DIGIKAM_TESTS_LOG)
+            << "does not support format: " << af;
 
         return -1;
     }
 
     ao.setAudioFormat(af);
-    QByteArray data(af.bytesPerFrame()*kFrames, 0); //bytesPerSample*channels*1024
+    QByteArray data(af.bytesPerFrame()*kFrames, 0); // bytesPerSample*channels*1024
     ao.setBufferSamples(kFrames);
 
     if (!ao.open())
     {
-        qCCritical(DIGIKAM_TESTS_LOG) << QString::asprintf("open audio error");
+        qCCritical(DIGIKAM_TESTS_LOG)
+            << QString::asprintf("open audio error");
 
         return -1;
     }
@@ -114,7 +118,7 @@ int main(int argc, char** argv)
         {
             *d++  = sin_table[left];
             *d++  = sin_table[right];
-            left  = (left + 1)  % kTableSize;
+            left  = (left  + 1) % kTableSize;
             right = (right + 3) % kTableSize;
         }
 

@@ -46,7 +46,7 @@ public:
     {
     }
 
-    void observe(Subtitle* sub)
+    void observe(Subtitle* const sub)
     {
         connect(sub, SIGNAL(contentChanged()),
                 this, SLOT(onSubtitleChanged()));
@@ -76,7 +76,9 @@ int main(int argc, char* argv[])
 
     QString file;
     bool fuzzy = false;
-    int t      = -1, t1 = -1, count = 1;
+    int t      = -1;
+    int t1     = -1;
+    int count  = 1;
     int i      = a.arguments().indexOf(QLatin1String("-f"));
 
     if (i > 0)
@@ -124,7 +126,8 @@ int main(int argc, char* argv[])
     if (!engine.isEmpty())
         sub.setEngines(QStringList() << engine);
 
-    qCDebug(DIGIKAM_TESTS_LOG) << "supported extensions: " << sub.supportedSuffixes();
+    qCDebug(DIGIKAM_TESTS_LOG) << "supported extensions: "
+                               << sub.supportedSuffixes();
 
     if (file.isEmpty())
         return 0;
@@ -141,7 +144,9 @@ int main(int argc, char* argv[])
     if (!sub.isLoaded())
         return -1;
 
-    qCDebug(DIGIKAM_TESTS_LOG) << "process subtitle file elapsed: " << timer.elapsed() << "ms";
+    qCDebug(DIGIKAM_TESTS_LOG) << "process subtitle file elapsed:"
+                               << timer.elapsed() << "ms";
+
     timer.restart();
 
     if ((t < 0) && (t1 >= 0))
@@ -155,9 +160,14 @@ int main(int argc, char* argv[])
         if (t1 <= t)
         {
             sub.setTimestamp(qreal(t));
-            qCDebug(DIGIKAM_TESTS_LOG) << sub.timestamp() << "s: " << sub.getText();
+
+            qCDebug(DIGIKAM_TESTS_LOG) << sub.timestamp()
+                                       << "s:" << sub.getText();
+
             QImage img(sub.getImage(720, 400));
-            img.save(QString::fromLatin1("sub-%1.png").arg(sub.timestamp(), 0, 'f', 2));
+
+            img.save(QString::fromLatin1("sub-%1.png")
+                     .arg(sub.timestamp(), 0, 'f', 2));
         }
         else
         {
@@ -169,14 +179,20 @@ int main(int argc, char* argv[])
             for (int n = 0 ; n < count ; ++n)
             {
                 sub.setTimestamp(qreal(t) + qreal(n) * kInterval);
-                qCDebug(DIGIKAM_TESTS_LOG) << sub.timestamp() << "s: " << sub.getText();
+
+                qCDebug(DIGIKAM_TESTS_LOG) << sub.timestamp()
+                                           << "s:" << sub.getText();
+
                 QImage img(sub.getImage(720, 400));
-                img.save(QString::fromLatin1("sub-%1.png").arg(sub.timestamp(), 0, 'f', 2));
+
+                img.save(QString::fromLatin1("sub-%1.png")
+                         .arg(sub.timestamp(), 0, 'f', 2));
             }
         }
     }
 
-    qCDebug(DIGIKAM_TESTS_LOG) << "find subtitle content elapsed: " << timer.elapsed() << "ms";
+    qCDebug(DIGIKAM_TESTS_LOG) << "find subtitle content elapsed:"
+                               << timer.elapsed() << "ms";
 
     return 0;
 }

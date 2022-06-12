@@ -31,7 +31,7 @@
 #include "QtAV.h"
 #include "QtAVWidgets_Global.h"
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     QtAV::Widgets::registerRenderers();
     QApplication a(argc, argv);

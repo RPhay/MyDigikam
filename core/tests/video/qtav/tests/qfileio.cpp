@@ -46,7 +46,9 @@ int main(int argc, char** argv)
     }
 
     QtAV::QFileIO fi;
+
     qCDebug(DIGIKAM_QTAV_LOG) << "protocols: " << fi.protocols();
+
     fi.setUrl(QString::fromUtf8(argv[1]));
     QByteArray data(1024, 0);
     fi.read(data.data(), data.size());

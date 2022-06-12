@@ -37,7 +37,7 @@
 
 using namespace QtAV;
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     QApplication a(argc, argv);
 
@@ -46,12 +46,13 @@ int main(int argc, char *argv[])
     if (!vidfile.open(QIODevice::ReadOnly))
         return 1;
 
-    AVPlayerCore player[2];
     WidgetRenderer renderer[2];
     renderer[0].show();
     renderer[0].widget()->setWindowTitle(QString::fromLatin1("Test QFile"));
     renderer[1].show();
-    renderer[1].widget()->setWindowTitle(QString::fromLatin1("Test QBuffer. Play <=1M video from memory"));
+    renderer[1].widget()->setWindowTitle(QString::fromLatin1("Test QBuffer. Play <= 1M video from memory"));
+
+    AVPlayerCore player[2];
     player[0].addVideoRenderer(&renderer[0]);
     player[1].addVideoRenderer(&renderer[1]);
 
