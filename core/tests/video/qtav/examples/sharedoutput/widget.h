@@ -53,10 +53,10 @@ public Q_SLOTS:
 
 private:
 
-    QtAV::VideoOutput*  renderer;
-    QtAV::AVPlayerCore* player[2];
-    QPushButton*        play_btn[2];
-    QPushButton*        file_btn[2];
+    QtAV::VideoOutput*  renderer    = nullptr;
+    QtAV::AVPlayerCore* player[2]   = { nullptr };
+    QPushButton*        play_btn[2] = { nullptr };
+    QPushButton*        file_btn[2] = { nullptr };
 };
 
 #endif // QTAV_EXAMPLE_WIDGET_H

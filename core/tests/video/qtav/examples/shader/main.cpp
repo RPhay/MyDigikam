@@ -67,9 +67,9 @@ private:
     const char* userShaderHeader(QOpenGLShader::ShaderType type) const override
     {
         if (type == QOpenGLShader::Vertex)
-            return 0;
+            return nullptr;
 
-        return GLSL(uniform vec2 bs;);
+        return GLSL( uniform vec2 bs; );
     }
 
     const char* userPostProcess()                                const override
@@ -86,10 +86,10 @@ private:
 
                     mat4 m       = mat4
                     (
-                        ilr+s, ilg  , ilb  , 0.0,
-                        ilr  , ilg+s, ilb  , 0.0,
-                        ilr  , ilg  , ilb+s, 0.0,
-                        0.0  , 0.0  , 0.0  , 1.0
+                        ilr + s, ilg,     ilb,     0.0,
+                        ilr,     ilg + s, ilb,     0.0,
+                        ilr,     ilg,     ilb + s, 0.0,
+                        0.0,     0.0,     0.0,     1.0
                     );
 
                     gl_FragColor = m * gl_FragColor + bs.r;
@@ -217,7 +217,8 @@ int main(int argc, char* argv[])
 
     if (a.arguments().size() < 2)
     {
-        qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("./shader file");
+        qCDebug(DIGIKAM_TESTS_LOG).noquote()
+            << QString::asprintf("./shader file");
 
         return 0;
     }
@@ -229,8 +230,9 @@ int main(int argc, char* argv[])
     struct
     {
         QByteArray   title;
-        VideoShader* shader;
-    } shader_list[] =
+        VideoShader* shader = nullptr;
+    }
+    shader_list[] =
     {
         {"No shader",                                                     nullptr                 },
         {"Wave effect shader",                                            new WaveShader()        },
