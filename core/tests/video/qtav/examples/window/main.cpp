@@ -84,7 +84,8 @@ int main(int argc, char* argv[])
 
     if (a.arguments().size() < 2)
     {
-        qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("./window file");
+        qCDebug(DIGIKAM_TESTS_LOG).noquote()
+            << QString::asprintf("./window file");
 
         return 0;
     }

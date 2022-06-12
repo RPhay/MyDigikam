@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_EXAMPLE_PLAYERWINDOW_H
-#define QTAV_EXAMPLE_PLAYERWINDOW_H
+#ifndef QTAV_EXAMPLE_PLAYER_WINDOW_H
+#define QTAV_EXAMPLE_PLAYER_WINDOW_H
 
 // Qt includes
 
@@ -68,4 +68,4 @@ private:
     QLabel*             m_preview;
 };
 
-#endif // QTAV_EXAMPLE_PLAYERWINDOW_H
+#endif // QTAV_EXAMPLE_PLAYER_WINDOW_H

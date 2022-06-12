@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_EXAMPLE_PLAYERWINDOW_H
-#define QTAV_EXAMPLE_PLAYERWINDOW_H
+#ifndef QTAV_EXAMPLE_PLAYER_WINDOW_H
+#define QTAV_EXAMPLE_PLAYER_WINDOW_H
 
 // Qt includes
 
@@ -32,10 +32,8 @@
 
 #include "QtAV.h"
 
-
 class QSlider;
 class QPushButton;
-
 
 class PlayerWindow : public QWidget
 {
@@ -69,4 +67,4 @@ private:
     int                 m_unit;
 };
 
-#endif // QTAV_EXAMPLE_PLAYERWINDOW_H
+#endif // QTAV_EXAMPLE_PLAYER_WINDOW_H

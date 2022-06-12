@@ -57,7 +57,8 @@ VideoWall::VideoWall(QObject* const parent)
     if (view)
     {
         qCDebug(DIGIKAM_TESTS_LOG).noquote()
-            << QString::asprintf("WA_OpaquePaintEvent=%d", view->testAttribute(Qt::WA_OpaquePaintEvent));
+            << QString::asprintf("WA_OpaquePaintEvent=%d",
+                view->testAttribute(Qt::WA_OpaquePaintEvent));
 
         view->resize(qApp->desktop()->size());
         view->move(QPoint(0, 0));
@@ -86,8 +87,11 @@ VideoWall::~VideoWall()
             {
                 renderer->widget()->close(); // TODO: rename
 
-                if (!renderer->widget()->testAttribute(Qt::WA_DeleteOnClose) && !renderer->widget()->parent())
+                if (!renderer->widget()->testAttribute(Qt::WA_DeleteOnClose) &&
+                    !renderer->widget()->parent())
+                {
                     delete renderer;
+                }
 
                 delete player;
             }
@@ -137,8 +141,11 @@ void VideoWall::show()
             {
                 renderer->widget()->close();
 
-                if (!renderer->widget()->testAttribute(Qt::WA_DeleteOnClose) && !renderer->widget()->parent())
+                if (!renderer->widget()->testAttribute(Qt::WA_DeleteOnClose) &&
+                    !renderer->widget()->parent())
+                {
                     delete renderer;
+                }
 
                 delete player;
             }
@@ -147,7 +154,8 @@ void VideoWall::show()
         players.clear();
     }
 
-    qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("show wall: %d x %d", r, c);
+    qCDebug(DIGIKAM_TESTS_LOG).noquote()
+        << QString::asprintf("show wall: %d x %d", r, c);
 
     int w = (view ? view->frameGeometry().width()  / c : qApp->desktop()->width()  / c);
     int h = (view ? view->frameGeometry().height() / r : qApp->desktop()->height() / r);
@@ -228,7 +236,7 @@ void VideoWall::stop()
 
 void VideoWall::openLocalFile()
 {
-    QString file = QFileDialog::getOpenFileName(0, QLatin1String("Open a video"));
+    QString file = QFileDialog::getOpenFileName(nullptr, QLatin1String("Open a video"));
 
     if (file.isEmpty())
         return;
@@ -247,7 +255,7 @@ void VideoWall::openLocalFile()
 
 void VideoWall::openUrl()
 {
-    QString url = QInputDialog::getText(0, QLatin1String("Open an url"), QLatin1String("Url"));
+    QString url = QInputDialog::getText(nullptr, QLatin1String("Open an url"), QLatin1String("Url"));
 
     if (url.isEmpty())
         return;
@@ -288,10 +296,12 @@ void VideoWall::help()
                        + QLatin1String("->/<-: seek forward/backward\n"));
 }
 
-bool VideoWall::eventFilter(QObject *watched, QEvent *event)
+bool VideoWall::eventFilter(QObject* watched, QEvent* event)
 {
-    //qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("EventFilter::eventFilter to %p", watched);
-
+/*
+    qCDebug(DIGIKAM_TESTS_LOG).noquote()
+        << QString::asprintf("EventFilter::eventFilter to %p", watched);
+*/
     Q_UNUSED(watched);
 
     if (players.isEmpty())
@@ -303,8 +313,11 @@ bool VideoWall::eventFilter(QObject *watched, QEvent *event)
     {
         case QEvent::KeyPress:
         {
-            //qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("Event target = %p %p", watched, player->renderer);
-
+/*
+            qCDebug(DIGIKAM_TESTS_LOG).noquote()
+                << QString::asprintf("Event target = %p %p",
+                    watched, player->renderer);
+*/
             // avoid receive an event multiple times
 
             QKeyEvent* const key_event      = static_cast<QKeyEvent*>(event);
@@ -328,7 +341,7 @@ bool VideoWall::eventFilter(QObject *watched, QEvent *event)
                     break;
                 }
 
-                case Qt::Key_N: //check playing?
+                case Qt::Key_N: // check playing?
                 {
                     Q_FOREACH (AVPlayerCore* const player, players)
                     {
@@ -434,7 +447,8 @@ bool VideoWall::eventFilter(QObject *watched, QEvent *event)
 
                 case Qt::Key_Left:
                 {
-                    qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("<-");
+                    qCDebug(DIGIKAM_TESTS_LOG).noquote()
+                        << QString::asprintf("<-");
 
                     const qint64 newPos = clock->value() * 1000.0 - 2000.0;
                     clock->updateExternalClock(newPos);
@@ -449,7 +463,8 @@ bool VideoWall::eventFilter(QObject *watched, QEvent *event)
 
                 case Qt::Key_Right:
                 {
-                    qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("->");
+                    qCDebug(DIGIKAM_TESTS_LOG).noquote()
+                        << QString::asprintf("->");
 
                     const qint64 newPos = clock->value() * 1000.0 + 2000.0;
                     clock->updateExternalClock(newPos);
@@ -539,14 +554,16 @@ void VideoWall::timerEvent(QTimerEvent* e)
 {
     if (e->timerId() != timer_id)
     {
-        qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("Not clock id");
+        qCDebug(DIGIKAM_TESTS_LOG).noquote()
+            << QString::asprintf("Not clock id");
 
         return;
     }
 
     if (!clock->isActive())
     {
-        qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("clock not running");
+        qCDebug(DIGIKAM_TESTS_LOG).noquote()
+            << QString::asprintf("clock not running");
 
         return;
     }

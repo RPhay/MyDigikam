@@ -105,7 +105,8 @@ PlayerWindow::PlayerWindow(QWidget* const parent)
 
 void PlayerWindow::openMedia()
 {
-    QString file = QFileDialog::getOpenFileName(nullptr, QLatin1String("Open a video"));
+    QString file = QFileDialog::getOpenFileName(nullptr,
+                                                QLatin1String("Open a video"));
 
     if (file.isEmpty())
         return;
@@ -134,8 +135,9 @@ void PlayerWindow::updatePreview(const QImage &image)
 
 void PlayerWindow::capture()
 {
-    //m_player->captureVideo();
-
+/*
+    m_player->captureVideo();
+*/
     m_player->videoCapture()->capture();
 }
 

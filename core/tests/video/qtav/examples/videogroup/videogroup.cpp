@@ -53,9 +53,9 @@ VideoGroup::VideoGroup(QObject* const parent)
     : QObject(parent)
 {
     mpPlayer    = new AVPlayerCore(this);
-
-    //mpPlayer->setPlayerEventFilter(0);
-
+/*
+    mpPlayer->setPlayerEventFilter(0);
+*/
     mpBar       = new QWidget(0, Qt::WindowStaysOnTopHint);
     mpBar->setMaximumSize(400, 60);
     mpBar->show();
@@ -110,9 +110,9 @@ VideoGroup::VideoGroup(QObject* const parent)
     mpBar->layout()->addWidget(mpRemove);
     mpBar->layout()->addWidget(mp1Window);
     mpBar->layout()->addWidget(mp1Frame);
-
-    //mpBar->layout()->addWidget(mpFrameless);
-
+/*
+    mpBar->layout()->addWidget(mpFrameless);
+*/
     mpBar->resize(200, 25);
 }
 
@@ -259,7 +259,8 @@ void VideoGroup::play(const QString &file)
 
 void VideoGroup::openLocalFile()
 {
-    QString file = QFileDialog::getOpenFileName(0, QLatin1String("Open a video"));
+    QString file = QFileDialog::getOpenFileName(nullptr,
+                                                QLatin1String("Open a video"));
 
     if (file.isEmpty())
         return;

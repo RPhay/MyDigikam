@@ -93,7 +93,8 @@ PlayerWindow::PlayerWindow(QWidget* const parent)
 
 void PlayerWindow::openMedia()
 {
-    QString file = QFileDialog::getOpenFileName(nullptr, QLatin1String("Open a video"));
+    QString file = QFileDialog::getOpenFileName(nullptr,
+                                                QLatin1String("Open a video"));
 
     if (file.isEmpty())
         return;

@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_EXAMPLE_VIDEOPLAYER_H
-#define QTAV_EXAMPLE_VIDEOPLAYER_H
+#ifndef QTAV_EXAMPLE_VIDEO_PLAYER_H
+#define QTAV_EXAMPLE_VIDEO_PLAYER_H
 
 // Qt includes
 
@@ -71,4 +71,4 @@ private:
     QGraphicsView*              view;
 };
 
-#endif // QTAV_EXAMPLE_VIDEOPLAYER_H
+#endif // QTAV_EXAMPLE_VIDEO_PLAYER_H

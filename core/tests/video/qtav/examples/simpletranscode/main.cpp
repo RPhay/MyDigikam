@@ -38,9 +38,17 @@ int main(int argc, char* argv[])
 {
     QCoreApplication a(argc, argv);
 
-    qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("QtAV simpletranscode");
-    qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("./simpletranscode -i infile -o outfile [-async] [-c:v video_codec (default: libx264)] [-hwdev dev] [-f format] [-an] [-ss HH:mm:ss.z]");
-    qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("-an: disable audio");
+    qCDebug(DIGIKAM_TESTS_LOG).noquote()
+        << QString::asprintf("QtAV simpletranscode");
+
+    qCDebug(DIGIKAM_TESTS_LOG).noquote()
+        << QString::asprintf("./simpletranscode -i infile -o outfile [-async] "
+                             "[-c:v video_codec (default: libx264)] [-hwdev dev] "
+                             "[-f format] [-an] [-ss HH:mm:ss.z]");
+
+    qCDebug(DIGIKAM_TESTS_LOG).noquote()
+        << QString::asprintf("-an: disable audio");
+
     qCDebug(DIGIKAM_TESTS_LOG) << "examples:\n"
              << "./simpletranscode -i test.mp4 -o /tmp/test-%05d.png -f image2 -c:v png\n"
              << "./simpletranscode -i test.mp4 -o /tmp/bbb%04d.ts -f segment\n"
@@ -96,12 +104,14 @@ int main(int argc, char* argv[])
     idx              = a.arguments().indexOf(QLatin1String("-ss"));
 
     if (idx > 0)
-        ss = QTime(0, 0, 0).msecsTo(QTime::fromString(a.arguments().at(idx + 1), QLatin1String("HH:mm:ss.z")));
+        ss = QTime(0, 0, 0).msecsTo(QTime::fromString(a.arguments().at(idx + 1),
+                                    QLatin1String("HH:mm:ss.z")));
 
     QVariantHash muxopt, avfopt;
     avfopt[QString::fromLatin1("segment_time")]      = 4;
     avfopt[QString::fromLatin1("segment_list_size")] = 0;
-    avfopt[QString::fromLatin1("segment_list")]      = outFile.left(outFile.lastIndexOf(QLatin1Char('/')) + 1).arg(QString::fromLatin1("index.m3u8"));
+    avfopt[QString::fromLatin1("segment_list")]      = outFile.left(outFile.lastIndexOf(QLatin1Char('/')) + 1)
+                                                                    .arg(QString::fromLatin1("index.m3u8"));
     avfopt[QString::fromLatin1("segment_format")]    = QString::fromLatin1("mpegts");
     muxopt[QString::fromLatin1("avformat")]          = avfopt;
 
@@ -123,7 +133,8 @@ int main(int argc, char* argv[])
 
     if (!avt.createVideoEncoder())
     {
-        qWarning("Failed to create video encoder");
+        qCWarning(DIGIKAM_TESTS_LOG) << "Failed to create video encoder";
+
         return 1;
     }
 
@@ -145,7 +156,8 @@ int main(int argc, char* argv[])
     {
         if (!avt.createAudioEncoder())
         {
-            qWarning("Failed to create audio encoder");
+            qCWarning(DIGIKAM_TESTS_LOG)
+                << "Failed to create audio encoder";
 
             return 1;
         }

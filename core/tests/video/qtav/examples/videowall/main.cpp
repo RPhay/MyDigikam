@@ -59,7 +59,11 @@ int main(int argc, char* argv[])
     else
     {
         QString exe(a.arguments().at(0));
-        qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("exe: %s", exe.toUtf8().constData());
+
+        qCDebug(DIGIKAM_TESTS_LOG).noquote()
+            << QString::asprintf("exe: %s",
+                exe.toUtf8().constData());
+
         int i = exe.lastIndexOf(QLatin1Char('-'));
 
         if (i > 0)
@@ -68,7 +72,9 @@ int main(int argc, char* argv[])
         }
     }
 
-    qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("vo: %s", vo.toUtf8().constData());
+    qCDebug(DIGIKAM_TESTS_LOG).noquote()
+        << QString::asprintf("vo: %s",
+            vo.toUtf8().constData());
 
     VideoWall wall;
     wall.setVideoRendererTypeString(vo.toLower());

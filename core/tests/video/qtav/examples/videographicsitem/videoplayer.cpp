@@ -158,7 +158,8 @@ void VideoPlayer::scaleVideo(int value)
 
 void VideoPlayer::open()
 {
-    QString f = QFileDialog::getOpenFileName(0, QLatin1String("Open a video"));
+    QString f = QFileDialog::getOpenFileName(nullptr,
+                                             QLatin1String("Open a video"));
 
     if (f.isEmpty())
         return;

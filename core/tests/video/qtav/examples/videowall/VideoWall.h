@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_EXAMPLE_VIDEOWALL_H
-#define QTAV_EXAMPLE_VIDEOWALL_H
+#ifndef QTAV_EXAMPLE_VIDEO_WALL_H
+#define QTAV_EXAMPLE_VIDEO_WALL_H
 
 // Qt includes
 
@@ -81,4 +81,4 @@ private:
     QString                     vid         = QString::fromLatin1("qpainter");
 };
 
-#endif // QTAV_EXAMPLE_VIDEOWALL_H
+#endif // QTAV_EXAMPLE_VIDEO_WALL_H

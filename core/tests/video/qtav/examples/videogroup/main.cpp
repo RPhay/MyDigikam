@@ -40,7 +40,8 @@
 int main(int argc, char* argv[])
 {
     QApplication a(argc, argv);
-    int r   = 3, c = 3;
+    int r   = 3;
+    int c   = 3;
     int idx = 0;
 
     if ((idx = a.arguments().indexOf(QLatin1String("-r"))) > 0)
@@ -60,7 +61,9 @@ int main(int argc, char* argv[])
     {
         QString exe(a.arguments().at(0));
 
-        qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("exe: %s", exe.toUtf8().constData());
+        qCDebug(DIGIKAM_TESTS_LOG).noquote()
+            << QString::asprintf("exe: %s",
+                exe.toUtf8().constData());
 
         int i = exe.lastIndexOf(QLatin1Char('-'));
 
@@ -70,7 +73,9 @@ int main(int argc, char* argv[])
         }
     }
 
-    qCDebug(DIGIKAM_TESTS_LOG).noquote() << QString::asprintf("vo: %s", vo.toUtf8().constData());
+    qCDebug(DIGIKAM_TESTS_LOG).noquote()
+        << QString::asprintf("vo: %s",
+            vo.toUtf8().constData());
 
     vo = vo.toLower();
 

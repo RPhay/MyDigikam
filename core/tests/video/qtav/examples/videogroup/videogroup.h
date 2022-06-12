@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QTAV_EXAMPLE_VIDEOGROUP_H
-#define QTAV_EXAMPLE_VIDEOGROUP_H
+#ifndef QTAV_EXAMPLE_VIDEO_GROUP_H
+#define QTAV_EXAMPLE_VIDEO_GROUP_H
 
 // Qt includes
 
@@ -85,4 +85,4 @@ private:
     QList<QtAV::VideoRenderer*> mRenderers;
 };
 
-#endif // QTAV_EXAMPLE_VIDEOGROUP_H
+#endif // QTAV_EXAMPLE_VIDEO_GROUP_H

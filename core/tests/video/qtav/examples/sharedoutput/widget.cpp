@@ -124,8 +124,8 @@ void Widget::testRTSP()
     for (int i = 0 ; i < 2 ; ++i)
         player[i]->stop();
 
-    player[0]->play(QString::fromLatin1("rtsp://122.192.35.80:554/live/tv11"));
+    player[0]->play(QString::fromLatin1("rtsp://rtsp.stream/pattern"));
     player[0]->pause(true);
 
-    player[1]->play(QString::fromLatin1("rtsp://122.192.35.80:554/live/tv10"));
+    player[1]->play(QString::fromLatin1("rtsp://rtsp.stream/movie"));
 }
