@@ -19,4 +19,6 @@ The workflow supports notarization of application bundles (signing) for Linux (A
 Notes:
 
 - All changes performed to Binary Factory customizations files needs a DSL Job to be triggered by KDE sysadmin team.
-This job will synchronize the settings to the Binary Factory environnements.
+  This job will synchronize the settings to the Binary Factory environnements.
+- Changes from Binary Factory customizations allow to specify which version of dependencies must by installed to compile digiKam.
+  For each dependency versions installed, the same release must be specified in build factory configuration.
