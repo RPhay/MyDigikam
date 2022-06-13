@@ -33,7 +33,7 @@ Name[x-test]=xxElegantxx
 Name[zh_CN]=优雅
 Comment=Based on the "Simple" theme. Uses Lytebox by Markus F. Hay to display the images in a slideshow.
 Comment[ca]=Basat en el tema «Senzill». Usa el Lytebox del Markus F. Hay per a mostrar les imatges en un passi de diapositives.
-Comment[ca@valencia]=Basat en el tema «Senzill». Utilisa el Lytebox del Markus F. Hay per a mostrar les imàgens en un passe de diapositives.
+Comment[ca@valencia]=Basat en el tema «Senzill». Utilitza el Lytebox del Markus F. Hay per a mostrar les imatges en un passe de diapositives.
 Comment[da]=Baseret på "Simple"-temaet. Bruger Lytebox af Markus F. Hay til at vise billeder i et diasshow.
 Comment[de]=Basiert auf dem Design „Simple“ und verwendet Lytebox von Markus F. Hay, um die Bilder als Diaschau anzuzeigen.
 Comment[el]=Based on the "Simple" theme. Uses Lytebox by Markus F. Hay to display the images in a slideshow.
@@ -171,7 +171,7 @@ Default=
 [X-HTMLGallery Parameter pageSize]
 Name=Images per page
 Name[ca]=Imatges per pàgina
-Name[ca@valencia]=Imàgens per pàgina
+Name[ca@valencia]=Imatges per pàgina
 Name[cs]=Obrázků na stránku
 Name[da]=Billeder pr. side
 Name[de]=Bilder pro Seite
@@ -245,7 +245,7 @@ Caption-2=Both
 [X-HTMLGallery Parameter useLyteBox]
 Name=Use LyteBox
 Name[ca]=Usa el LyteBox
-Name[ca@valencia]=Utilisa el LyteBox
+Name[ca@valencia]=Utilitza el LyteBox
 Name[cs]=Použít LyteBox
 Name[da]=Brug LyteBox
 Name[de]=LyteBox verwenden
@@ -373,7 +373,7 @@ Caption-2=Custom
 [X-HTMLGallery Parameter bgColor]
 Name=Custom Background Color
 Name[ca]=Color personalitzat pel fons
-Name[ca@valencia]=Color personalisat pel fons
+Name[ca@valencia]=Color personalitzat pel fons
 Name[cs]=Vlastní barva pozadí
 Name[da]=Brugertilpasset baggrundsfarve
 Name[de]=Hintergrundfarbe
@@ -408,7 +408,7 @@ Default=#000000
 [X-HTMLGallery Parameter fgColor]
 Name=Custom Foreground Color
 Name[ca]=Color personalitzat pel primer pla
-Name[ca@valencia]=Color personalisat pel primer pla
+Name[ca@valencia]=Color personalitzat pel primer pla
 Name[da]=Brugertilpasset forgrundsfarve
 Name[de]=Schriftfarbe
 Name[el]=Προσαρμοσμένο χρώμα προσκηνίου
@@ -442,7 +442,7 @@ Default=#888888
 [X-HTMLGallery Parameter linkColor]
 Name=Custom Link Color
 Name[ca]=Color personalitzat per a l'enllaç
-Name[ca@valencia]=Color personalisat per a l'enllaç
+Name[ca@valencia]=Color personalitzat per a l'enllaç
 Name[cs]=Barva odkazu
 Name[da]=Brugertilpasset linkfarve
 Name[de]=Farbe einer Verknüpfung
@@ -477,7 +477,7 @@ Default=#aaaaaa
 [X-HTMLGallery Parameter hoverLinkColor]
 Name=Custom Hover Link Color
 Name[ca]=Color personalitzat per a l'enllaç en passar-hi per sobre
-Name[ca@valencia]=Color personalisat per a l'enllaç en passar-hi per damunt
+Name[ca@valencia]=Color personalitzat per a l'enllaç en passar-hi per damunt
 Name[cs]=Vlastní odkazu, nad kterým je myš
 Name[da]=Brugertilpasset farve på link under mus
 Name[de]=Farbe einer Verknüpfung beim Überstreichen
@@ -510,7 +510,7 @@ Default=#ffffff
 [X-HTMLGallery Parameter visitedLinkColor]
 Name=Custom Visited Link Color
 Name[ca]=Color personalitzat per a l'enllaç visitat
-Name[ca@valencia]=Color personalisat per a l'enllaç visitat
+Name[ca@valencia]=Color personalitzat per a l'enllaç visitat
 Name[cs]=Vlastní barva navštíveného odkazu
 Name[da]=Brugertilpasset farve på besøgt link
 Name[de]=Farbe einer besuchten Verknüpfung
@@ -543,7 +543,7 @@ Default=#aaaaaa
 [X-HTMLGallery Parameter frameColor]
 Name=Custom Frame Color
 Name[ca]=Color personalitzat pel marc
-Name[ca@valencia]=Color personalisat pel marc
+Name[ca@valencia]=Color personalitzat pel marc
 Name[cs]=Vlastní barva rámečku obrázku
 Name[de]=Farbe des Rahmens
 Name[el]=Προσαρμοσμένο χρώμα πλαισίου
@@ -575,7 +575,7 @@ Default=#222222
 [X-HTMLGallery Parameter frameBorderColor]
 Name=Custom Frame Border Color
 Name[ca]=Color personalitzat per a la vora del marc
-Name[ca@valencia]=Color personalisat per a la vora del marc
+Name[ca@valencia]=Color personalitzat per a la vora del marc
 Name[cs]=Vlastní barva okraje rámečku obrázku
 Name[de]=Farbe des Randes
 Name[el]=Προσαρμοσμένο χρώμα περιγράμματος πλαισίου
@@ -607,7 +607,7 @@ Default=#444444
 [X-HTMLGallery Parameter selectedFrameColor]
 Name=Custom Selected Frame Color
 Name[ca]=Color personalitzat pel marc seleccionat
-Name[ca@valencia]=Color personalisat pel marc seleccionat
+Name[ca@valencia]=Color personalitzat pel marc seleccionat
 Name[cs]=Vlastní barva rámečku vybraného obrázku
 Name[de]=Farbe des ausgewählten Rahmens
 Name[el]=Προσαρμοσμένα επιλεγμένο χρώμα πλαισίου
@@ -639,7 +639,7 @@ Default=#555555
 [X-HTMLGallery Parameter selectedFrameBorderColor]
 Name=Custom Selected Frame Border Color
 Name[ca]=Color personalitzat per a la vora del marc seleccionat
-Name[ca@valencia]=Color personalisat per a la vora del marc seleccionat
+Name[ca@valencia]=Color personalitzat per a la vora del marc seleccionat
 Name[cs]=Vlastní barva okraje rámečku vybraného obrázku
 Name[de]=Farbe des Randes des ausgewählten Rahmens
 Name[el]=Προσαρμοσμένα επιλεγμένο χρώμα περιγράμματος πλαισίου
