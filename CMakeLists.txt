@@ -60,6 +60,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+# See bug #454941 and the OpenCV detection in RelWithDebInfo target
+
 if(MSVC)
     set(CMAKE_BUILD_TYPE
         "Release"
