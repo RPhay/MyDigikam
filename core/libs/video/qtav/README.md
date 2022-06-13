@@ -127,6 +127,8 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
 
 * TODO:
 
+    - Fix all MSVC warnings under Windows.
+
     - FFMPEG 5 API and VAAPI support: FFMPEG4::vaapi struct is removed and code must be ported to
                                       AVCodecContext.hw_frames_ctx instead. Code is currently disabled.
 
