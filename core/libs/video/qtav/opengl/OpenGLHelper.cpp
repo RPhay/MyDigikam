@@ -430,7 +430,7 @@ bool isPBOSupported()
     return support;
 }
 
-typedef struct Q_DECL_HIDDEN
+typedef struct Q_DECL_HIDDEN Gl_Param_T_
 {
     GLint  internal_format = 0;
     GLenum format          = 0;
@@ -773,7 +773,7 @@ bool has16BitTexture()
     return !!has_16_tex;
 }
 
-typedef struct Q_DECL_HIDDEN
+typedef struct Q_DECL_HIDDEN Reorder_T
 {
     VideoFormat::PixelFormat pixfmt      = VideoFormat::Format_Invalid;
     quint8                   channels[4] = { 0 };
