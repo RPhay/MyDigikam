@@ -21,6 +21,8 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
 
     - Fix all Clang warnings under MacOS.
 
+    - Fix all MSVC warnings under Windows.
+
     - Fixes Qt Signal/Slots connexions syntax.
 
     - Port code to pure Qt5/Qt6.
@@ -126,8 +128,6 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
     - Apply fixes for Clazy static analyzer.
 
 * TODO:
-
-    - Fix all MSVC warnings under Windows.
 
     - FFMPEG 5 API and VAAPI support: FFMPEG4::vaapi struct is removed and code must be ported to
                                       AVCodecContext.hw_frames_ctx instead. Code is currently disabled.
