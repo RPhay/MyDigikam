@@ -86,7 +86,7 @@ int AudioFormat::sampleFormatToFFmpeg(AudioFormat::SampleFormat fmt)
     return (int)AV_SAMPLE_FMT_NONE;
 }
 
-typedef struct Q_DECL_HIDDEN
+typedef struct Q_DECL_HIDDEN ChannelLayoutMap_
 {
     qint64                     ff = 0;
     AudioFormat::ChannelLayout cl = AudioFormat::ChannelLayout_Unsupported;
