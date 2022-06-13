@@ -406,7 +406,7 @@ if(DIGIKAM_CAN_BE_COMPILED)
 
     # Recursively get all directories which contain header files
     # NOTE: Do not parse more than expected root directories to prevent broken
-    # compilation under Windows as include path lenght is limited in opposite of POSIX systems.
+    # compilation under Windows as include path length is limited in opposite of POSIX systems.
 
     set(DK_INCLUDES_ALL "")
 
