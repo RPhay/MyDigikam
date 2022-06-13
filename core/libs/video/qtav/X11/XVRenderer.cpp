@@ -74,7 +74,8 @@ public:
     virtual VideoRendererId id()                              const override;
     virtual bool isSupported(VideoFormat::PixelFormat pixfmt) const override;
 
-    /* WA_PaintOnScreen: To render outside of Qt's paint system, e.g. If you require
+    /**
+     * WA_PaintOnScreen: To render outside of Qt's paint system, e.g. If you require
      * native painting primitives, you need to reimplement QWidget::paintEngine() to
      * return 0 and set this flag
      * If paintEngine != 0, the window will flicker when drawing without QPainter.
@@ -82,7 +83,8 @@ public:
      */
     virtual QPaintEngine* paintEngine()                       const override;
 
-    /* http://lists.trolltech.com/qt4-preview-feedback/2005-04/thread00609-0.html           // krazy:exclude=insecurenet
+    /**
+     * http://lists.trolltech.com/qt4-preview-feedback/2005-04/thread00609-0.html           // krazy:exclude=insecurenet
      * true: paintEngine is QPainter. Painting with QPainter support double buffer
      * false: no double buffer, should reimplement paintEngine() to return 0 to avoid flicker
      */
@@ -142,8 +144,8 @@ VideoRendererId XVRenderer::id() const
 
 static const struct Q_DECL_HIDDEN xv_format_entry_t
 {
-    VideoFormat::PixelFormat format;
-    int                      fourcc;
+    VideoFormat::PixelFormat format = VideoFormat::Format_Invalid;
+    int                      fourcc = 0;
 }
 xv_fmt[] =
 {
@@ -408,7 +410,7 @@ public:
             goto no_shm;
         }
 
-        shm.shmaddr = (char *)shmat(shm.shmid, nullptr, 0);
+        shm.shmaddr = (char*)shmat(shm.shmid, nullptr, 0);
 
         if (shm.shmaddr == (char*)-1)
         {
@@ -499,7 +501,8 @@ bool XVRendererPrivate::XvSetPortAttributeIfExists(const char* key, int value)
 
         if (!qstrcmp(attribute.name, key) && (attribute.flags & XvSettable))
         {
-            XvSetPortAttribute(display, xv_port, XInternAtom(display, key, false), scaleEQValue(value, attribute.min_value, attribute.max_value));
+            XvSetPortAttribute(display, xv_port, XInternAtom(display, key, false),
+                               scaleEQValue(value, attribute.min_value, attribute.max_value));
 
             return true;
         }
@@ -522,7 +525,8 @@ XVRenderer::XVRenderer(QWidget* const parent, Qt::WindowFlags f)
     setAcceptDrops(true);
     setFocusPolicy(Qt::StrongFocus);
 
-    /* To quickly update custom widgets that constantly paint over their entire areas with
+    /*
+     * To quickly update custom widgets that constantly paint over their entire areas with
      * opaque content, e.g., video streaming widgets, it is better to set the widget's
      * Qt::WA_OpaquePaintEvent, avoiding any unnecessary overhead associated with repainting the
      * widget's background
@@ -538,7 +542,8 @@ XVRenderer::XVRenderer(QWidget* const parent, Qt::WindowFlags f)
 
     if (!d_func().filter_context)
     {
-        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("No filter context for X11");
+        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+            << QString::asprintf("No filter context for X11");
     }
     else
     {
@@ -584,7 +589,7 @@ void CopyFromNv12(quint8* dst[], size_t dst_pitch[],
                   unsigned width, unsigned height)
 {
     VideoFrame::copyPlane(dst[0], dst_pitch[0], src[0], src_pitch[0], width, height);
-    SplitPlanes(dst[2], dst_pitch[2], dst[1], dst_pitch[1], src[1], src_pitch[1], width/2, height/2);
+    SplitPlanes(dst[2], dst_pitch[2], dst[1], dst_pitch[1], src[1], src_pitch[1], width / 2, height / 2);
 }
 
 void CopyFromYv12(quint8* dst[], size_t dst_pitch[],
@@ -592,8 +597,8 @@ void CopyFromYv12(quint8* dst[], size_t dst_pitch[],
                   unsigned width, unsigned height)
 {
      VideoFrame::copyPlane(dst[0], dst_pitch[0], src[0], src_pitch[0], width, height);
-     VideoFrame::copyPlane(dst[1], dst_pitch[1], src[1], src_pitch[1], width/2, height/2);
-     VideoFrame::copyPlane(dst[2], dst_pitch[2], src[2], src_pitch[2], width/2, height/2);
+     VideoFrame::copyPlane(dst[1], dst_pitch[1], src[1], src_pitch[1], width / 2, height / 2);
+     VideoFrame::copyPlane(dst[2], dst_pitch[2], src[2], src_pitch[2], width / 2, height / 2);
 }
 
 void CopyFromYv12_2(quint8* dst[], size_t dst_pitch[],
@@ -711,10 +716,6 @@ bool XVRenderer::receiveFrame(const VideoFrame& frame)
         }
 
         case VideoFormat::Format_BGR24:
-        {
-            break;
-        }
-
         default:
         {
             break;
@@ -762,7 +763,8 @@ void XVRenderer::drawFrame()
         {
             XvShmPutImage(d.display, d.xv_port, winId(), d.gc, d.xv_image,
                           roi.x(), roi.y(), roi.width(), roi.height(),
-                          d.out_rect.x(), d.out_rect.y(), d.out_rect.width(), d.out_rect.height(),
+                          d.out_rect.x(), d.out_rect.y(),
+                          d.out_rect.width(), d.out_rect.height(),
                           false /*true: send event*/);
 
             XSync(d.display, False); // update immediately
@@ -774,7 +776,8 @@ void XVRenderer::drawFrame()
 
         XvPutImage(d.display, d.xv_port, winId(), d.gc, d.xv_image,
                    roi.x(), roi.y(), roi.width(), roi.height(),
-                   d.out_rect.x(), d.out_rect.y(), d.out_rect.width(), d.out_rect.height());
+                   d.out_rect.x(), d.out_rect.y(),
+                   d.out_rect.width(), d.out_rect.height());
         XSync(d.display, False);
 }
 

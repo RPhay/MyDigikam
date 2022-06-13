@@ -152,11 +152,11 @@ VideoRendererId X11Renderer::id() const
 
 static const struct Q_DECL_HIDDEN fmt2Xfmtentry
 {
-    VideoFormat::PixelFormat fmt;
-    int                      byte_order;
-    unsigned                 red_mask;
-    unsigned                 green_mask;
-    unsigned                 blue_mask;
+    VideoFormat::PixelFormat fmt        = VideoFormat::Format_Invalid;
+    int                      byte_order = BO_NATIVE;
+    unsigned                 red_mask   = 0;
+    unsigned                 green_mask = 0;
+    unsigned                 blue_mask  = 0;
 }
 fmt2Xfmt[] =
 {
@@ -227,13 +227,14 @@ public:
         use_shm = false;
 
 #endif
-
-        //XvQueryExtension()
-
-        char* dispName = XDisplayName(nullptr);
+/*
+        XvQueryExtension()
+*/
+        char* const dispName = XDisplayName(nullptr);
 
         qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote()
-            << QString::asprintf("X11 open display: %s", dispName);
+            << QString::asprintf("X11 open display: %s",
+                dispName);
 
         display        = XOpenDisplay(dispName);
 
@@ -331,7 +332,7 @@ public:
             }
         }
 
-        XImage* ximage = ximage_pool[index];
+        XImage* const ximage = ximage_pool[index];
 
         if (ximage)
         {
@@ -399,7 +400,8 @@ public:
         XShmSegmentInfo &shm = shm_pool[index];
 
         qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote()
-            << QString::asprintf("use x11 shm: %d", use_shm);
+            << QString::asprintf("use x11 shm: %d",
+                use_shm);
 
         if (!use_shm)
             goto no_shm;
@@ -440,7 +442,7 @@ public:
             ximage_data[index].clear();
 
             qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
-                << QString::asprintf("Shared memory error,disabling ( seg id error )");
+                << QString::asprintf("Shared memory error, disabling (seg id error)");
 
             goto no_shm;
         }
@@ -465,7 +467,8 @@ public:
 no_shm:
 
         ShmCompletionEvent = 0;
-        ximage             = XCreateImage(display, vinfo.visual, depth, ZPixmap, 0, nullptr, w, h, 8, 0);
+        ximage             = XCreateImage(display, vinfo.visual, depth,
+                                          ZPixmap, 0, nullptr, w, h, 8, 0);
 
         if (!ximage)
             return false;
@@ -517,16 +520,17 @@ X11Renderer::X11Renderer(QWidget* const parent, Qt::WindowFlags f)
     setAcceptDrops(true);
     setFocusPolicy(Qt::StrongFocus);
 
-    /* To rapidly update custom widgets that constantly paint over their entire areas with
+    /*
+     * To rapidly update custom widgets that constantly paint over their entire areas with
      * opaque content, e.g., video streaming widgets, it is better to set the widget's
      * Qt::WA_OpaquePaintEvent, avoiding any unnecessary overhead associated with repainting the
      * widget's background
      */
     setAttribute(Qt::WA_OpaquePaintEvent);
-
-    //setAttribute(Qt::WA_NoSystemBackground);
-    //setAutoFillBackground(false);
-
+/*
+    setAttribute(Qt::WA_NoSystemBackground);
+    setAutoFillBackground(false);
+*/
     setAttribute(Qt::WA_PaintOnScreen, true);
     d_func().filter_context = VideoFilterContext::create(VideoFilterContext::X11);
 
@@ -545,9 +549,10 @@ bool X11Renderer::isSupported(VideoFormat::PixelFormat pixfmt) const
 {
     Q_UNUSED(pixfmt);
 
-    // if always return true, then convert to x11 format and scale in receiveFrame() only once. no need to convert format first then scale
+    // if always return true, then convert to x11 format and scale in
+    // receiveFrame() only once. no need to convert format first then scale
 
-    return true; // pixfmt == d_func().pixfmt && d_func().pixfmt != VideoFormat::Format_Invalid;
+    return true; // ((pixfmt == d_func().pixfmt) && (d_func().pixfmt != VideoFormat::Format_Invalid));
 }
 
 bool X11Renderer::receiveFrame(const VideoFrame& frame)
@@ -582,7 +587,9 @@ int X11RendererPrivate::resizeXImage(int index)
     // force align to 8(16?) because xcreateimage will not do alignment
     // GAL vmem is 16 aligned
 
-    if (!ensureImage(index, FFALIGN(out_rect.width(), 16), FFALIGN(out_rect.height(), 16))) // we can also call it in onResizeRenderer, onSetOutAspectXXX
+    // we can also call it in onResizeRenderer, onSetOutAspectXXX
+
+    if (!ensureImage(index, FFALIGN(out_rect.width(), 16), FFALIGN(out_rect.height(), 16)))
         return false;
 
     frame_changed   = false;
@@ -597,18 +604,25 @@ int X11RendererPrivate::resizeXImage(int index)
         interopFrame.setBytesPerLine(ximage->bytes_per_line);
     }
 
-    if (frame_orig.constBits(0) ||
-        !video_frame.map(UserSurface, &interopFrame, VideoFormat(VideoFormat::Format_RGB32)) // check pixel format and scale to ximage size&line_size
+    if (
+        frame_orig.constBits(0) ||
+        // check pixel format and scale to ximage size&line_size
+        !video_frame.map(UserSurface, &interopFrame, VideoFormat(VideoFormat::Format_RGB32))
        )
     {
-        if (!frame_orig.constBits(0)                     || // always convert hw frames
+        if (
+            !frame_orig.constBits(0)                     || // always convert hw frames
             (frame_orig.pixelFormat() != pixfmt)         ||
             (frame_orig.width()       != ximage->width)  ||
             (frame_orig.height()      != ximage->height)
            )
+        {
             video_frame = frame_orig.to(pixfmt, QSize(ximage->width, ximage->height));
+        }
         else
+        {
             video_frame = frame_orig;
+        }
 
         if (video_frame.bytesPerLine(0) == ximage->bytes_per_line)
         {
@@ -646,7 +660,8 @@ int X11RendererPrivate::resizeXImage(int index)
             }
 
             VideoFrame::copyPlane(dst, ximage->bytes_per_line,
-                                  (const quint8*)video_frame.constBits(0), video_frame.bytesPerLine(0),
+                                  (const quint8*)video_frame.constBits(0),
+                                  video_frame.bytesPerLine(0),
                                   ximage->bytes_per_line, ximage->height);
         }
     }
@@ -675,9 +690,9 @@ void X11Renderer::drawBackground()
 
     // TODO: fill once each resize? mpv
     // TODO: set color
-
-    //XSetBackground(d.display, d.gc, BlackPixel(d.display, DefaultScreen(d.display)));
-
+/*
+    XSetBackground(d.display, d.gc, BlackPixel(d.display, DefaultScreen(d.display)));
+*/
     for (const QRect& r : bgRegion)
     {
         XFillRectangle(d.display, winId(), d.gc, r.x(), r.y(), r.width(), r.height());
@@ -699,7 +714,9 @@ void X11Renderer::drawFrame()
 
     if (preferredPixelFormat() != d.pixfmt)
     {
-        qDebug() << "x11 preferred pixel format: " << d.pixfmt;
+        qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << "x11 preferred pixel format:"
+                                         << d.pixfmt;
+
         setPreferredPixelFormat(d.pixfmt);
     }
 
@@ -745,12 +762,12 @@ void X11Renderer::drawFrame()
         d.next_index = (d.next_index + 1) % kPoolSize;
     }
 
-    XImage* ximage = d.ximage_pool[idx];
+    XImage* const ximage = d.ximage_pool[idx];
 
     if (d.use_shm)
     {
         XShmPutImage(d.display, winId(), d.gc, ximage,
-                     roi.x(), roi.y(),  //, roi.width(), roi.height()
+                     roi.x(), roi.y(),  // , roi.width(), roi.height()
                      d.out_rect.x(), d.out_rect.y(), d.out_rect.width(), d.out_rect.height(),
                      True               // true: send event
                     );
