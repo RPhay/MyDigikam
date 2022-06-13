@@ -23,9 +23,11 @@
 
 #define OPENAL_CAPI_BUILD
 
-//#define DEBUG_RESOLVE
-//#define DEBUG_LOAD                // why affects other xxx_api.cpp?
-//#define CAPI_IS_LAZY_RESOLVE 0
+/*
+#define DEBUG_RESOLVE
+#define DEBUG_LOAD                // why affects other xxx_api.cpp?
+#define CAPI_IS_LAZY_RESOLVE 0
+*/
 
 #ifndef CAPI_LINK_OPENAL
 #   include "QtAV_capi.h"
@@ -54,13 +56,13 @@ static const char* names[] =
 
 #endif
 
-#ifdef __APPLE__    // krazy:exclude=cpp
+#ifdef __APPLE__                                          // krazy:exclude=cpp
 
     "/System/Library/Frameworks/OpenAL.framework/OpenAL", // iOS and macOS
 
 #endif
 
-    "OpenAL", // blackberry
+    "OpenAL",                                             // blackberry
     nullptr
 };
 
