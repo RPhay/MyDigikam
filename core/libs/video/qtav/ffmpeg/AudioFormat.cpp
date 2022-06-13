@@ -42,7 +42,7 @@
 namespace QtAV
 {
 
-typedef struct Q_DECL_HIDDEN
+typedef struct Q_DECL_HIDDEN Sample_Fmt_Entry_
 {
     AVSampleFormat            avfmt;
     AudioFormat::SampleFormat fmt;
