@@ -124,7 +124,7 @@ private:
     qint64              m_value0;
     qint64              m_value1;
 
-    typedef struct
+    typedef struct BufferInfo_
     {
         qint64 v     = 0;       ///< pts, total packes or total bytes
         qint64 bytes = 0;       ///< total bytes
