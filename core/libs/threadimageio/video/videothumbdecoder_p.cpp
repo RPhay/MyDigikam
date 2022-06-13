@@ -257,7 +257,7 @@ bool VideoThumbDecoder::Private::initFilterGraph(enum AVPixelFormat pixfmt,
 
     if (inputs || outputs)
     {
-        return (-1);
+        return false;
     }
 
     ret = avfilter_graph_config(filterGraph, nullptr);
