@@ -53,7 +53,7 @@ private:
 
     bool mInitialized = false;
 
-    typedef struct
+    typedef struct Cache_T
     {
         unsigned char* buffer = nullptr;
         size_t         size   = 0;
