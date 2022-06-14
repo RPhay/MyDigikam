@@ -28,9 +28,13 @@
 #define CAPI_IS_LAZY_RESOLVE 0
 */
 
+// Local includes
+
 #ifndef CAPI_LINK_EGL
 #   include "QtAV_capi.h"
 #endif
+
+#include "digikam_debug.h"
 
 #include "egl_api.h" // include last to avoid covering types later
 
@@ -52,15 +56,22 @@ static const char* names[] =
 
 #   ifdef CAPI_TARGET_OS_WIN
 #       if defined(QT_CORE_LIB) && !defined(QT_NO_DEBUG)
+
     "libEGLd",
     "libEGL",
+
 #       else
+
     "libEGL",
     "libEGLd",
+
 #       endif
 #   else
+
     "EGL",
+
 #   endif
+
     nullptr
 };
 
@@ -97,7 +108,10 @@ public:
             proc = (void*)dso::resolve(name);
 
             if (proc)
-                fprintf(stderr, "%s=>%s\n", symbol, name);
+            {
+                qCWarning(DIGIKAM_QTAV_LOG).noquote()
+                    << QString::asprintf("%s=>%s\n", symbol, name);
+            }
         }
 
         return proc;
@@ -264,7 +278,7 @@ CAPI_DEFINE(EGLint,                                   eglClientWaitSync,        
 CAPI_DEFINE(EGLBoolean,                               eglGetSyncAttrib,                 CAPI_ARG4(EGLDisplay, EGLSync, EGLint, EGLAttrib*))
 CAPI_DEFINE(EGLImage,                                 eglCreateImage,                   CAPI_ARG5(EGLDisplay, EGLContext, EGLenum, EGLClientBuffer, const EGLAttrib*))
 CAPI_DEFINE(EGLBoolean,                               eglDestroyImage,                  CAPI_ARG2(EGLDisplay, EGLImage))
-CAPI_DEFINE(EGLDisplay,                               eglGetPlatformDisplay,            CAPI_ARG3(EGLenum, void*, const EGLAttrib*))
+CAPI_DEFINE(EGLDisplay,                               eglGetPlatformDisplay,            CAPI_ARG3(EGLenum,    void*, const EGLAttrib*))
 CAPI_DEFINE(EGLSurface,                               eglCreatePlatformWindowSurface,   CAPI_ARG4(EGLDisplay, EGLConfig, void*, const EGLAttrib*))
 CAPI_DEFINE(EGLSurface,                               eglCreatePlatformPixmapSurface,   CAPI_ARG4(EGLDisplay, EGLConfig, void*, const EGLAttrib*))
 CAPI_DEFINE(EGLBoolean,                               eglWaitSync,                      CAPI_ARG3(EGLDisplay, EGLSync, EGLint))
