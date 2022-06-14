@@ -99,56 +99,61 @@ static unsigned get_qt_version()
     int patch = 0;
 
     if (sscanf(qVersion(), "%d.%d.%d", &major, &minor, &patch) != 3)
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Can not recognize Qt runtime version");
+    {
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("Can not recognize Qt runtime version");
+    }
 
     return QT_VERSION_CHECK(major, minor, patch);
 }
 
 static const depend_component* get_depend_component(const depend_component* info = nullptr)
 {
-    static const char* qt_build_info = (get_qt_version() >= QT_VERSION_CHECK(5, 3, 0)) ? QLibraryInfo::build() : "";
-
     static const depend_component components[] =
     {
-        {  "Qt", QT_VERSION, get_qt_version(), qt_build_info, ""    },
+        {  "Qt", QT_VERSION, get_qt_version(), QLibraryInfo::build(), ""    },
 
         // TODO: auto check loaded libraries
 
-#define FF_COMPONENT(name, NAME) #name, LIB##NAME##_VERSION_INT, name##_version(), name##_configuration(), name##_license()
+#define FF_COMPONENT(name, NAME) #name,                   \
+                                 LIB##NAME##_VERSION_INT, \
+                                 name##_version(),        \
+                                 name##_configuration(),  \
+                                 name##_license()
 
-        { FF_COMPONENT(avutil, AVUTIL)                              },
-        { FF_COMPONENT(avcodec, AVCODEC)                            },
-        { FF_COMPONENT(avformat, AVFORMAT)                          },
+        { FF_COMPONENT(avutil,     AVUTIL)                                  },
+        { FF_COMPONENT(avcodec,    AVCODEC)                                 },
+        { FF_COMPONENT(avformat,   AVFORMAT)                                },
 
 #if QTAV_HAVE(AVFILTER)
 
-        { FF_COMPONENT(avfilter, AVFILTER)                          },
+        { FF_COMPONENT(avfilter,   AVFILTER)                                },
 
 #endif
 
 #if QTAV_HAVE(AVDEVICE)
 
-        { FF_COMPONENT(avdevice, AVDEVICE)                          },
+        { FF_COMPONENT(avdevice,   AVDEVICE)                                },
 
 #endif
 
 #if QTAV_HAVE(AVRESAMPLE)
 
-        { FF_COMPONENT(avresample, AVRESAMPLE)                      },
+        { FF_COMPONENT(avresample, AVRESAMPLE)                              },
 
 #endif
 
 #if QTAV_HAVE(SWRESAMPLE)
 
-        { FF_COMPONENT(swresample, SWRESAMPLE)                      },
+        { FF_COMPONENT(swresample, SWRESAMPLE)                              },
 
 #endif
 
-        { FF_COMPONENT(swscale, SWSCALE)                            },
+        { FF_COMPONENT(swscale,    SWSCALE)                                 },
 
 #undef FF_COMPONENT
 
-        { nullptr, 0, 0, nullptr, nullptr                           }
+        { nullptr, 0, 0, nullptr, nullptr                                   }
     };
 
     if (!info)

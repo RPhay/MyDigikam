@@ -47,20 +47,13 @@ QString toLocal(const QString& fullPath);
 
 /// It may be variant from Qt version
 
-/*!
- * \brief appDataDir
- * use QStandardPath::AppDataLocation for Qt>=5.4, or QStarnardPath::DataLocation for Qt<5.4
- * \return
- */
-QString appDataDir();
-
 // writable font dir. it's fontsDir() if writable or appFontsDir()/fonts
 
 /*!
  * \brief appFontsDir
- * It's "appDataDir()/fonts". writable fonts dir from Qt may be not writable (OSX)
- * TODO: It's a writable fonts dir for QtAV apps. Equals to fontsDir() if it's writable, for example "~/.fonts" for linux and "<APPROOT>/Documents/.fonts" for iOS.
- *       If fontsDir() is not writable, it's equals to "appDataDir()/fonts".
+ * Writable fonts dir from Qt may be not writable (OSX)
+ * TODO: It's a writable fonts dir for QtAV apps. Equals to fontsDir() if it's writable,
+ * for example "~/.fonts" for linux and "<APPROOT>/Documents/.fonts" for iOS.
  */
 QString appFontsDir();
 
@@ -80,7 +73,7 @@ void setOptionsToDict(const QVariant& opt, AVDictionary** dict);
 /**
  * set qobject meta properties
  */
-void setOptionsForQObject(const QVariant& opt, QObject* obj);
+void setOptionsForQObject(const QVariant& opt, QObject* const obj);
 
 } // namespace Internal
 

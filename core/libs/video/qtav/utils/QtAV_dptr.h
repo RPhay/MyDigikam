@@ -194,6 +194,8 @@ private:
     DPtrInterface(const DPtrInterface&);
     DPtrInterface& operator=(const DPtrInterface&);
 
+private:
+
     DPtrPrivate<PUB>* pvt = nullptr;
 };
 

@@ -53,7 +53,7 @@ namespace QtAV
  * Default handler is qt message logger. Set environment QTAV_FFMPEG_LOG=0
  * or setFFmpegLogHandler(0) to disable.
  */
-DIGIKAM_EXPORT void setFFmpegLogHandler(void(*)(void *, int, const char *, va_list));
+DIGIKAM_EXPORT void setFFmpegLogHandler(void(*)(void*, int, const char*, va_list));
 
 /*!
  * \brief setFFmpegLogLevel
@@ -126,7 +126,7 @@ enum ColorSpace
 {
     ColorSpace_Unknown,
     ColorSpace_RGB,
-    ColorSpace_GBR, ///< for planar gbr format(e.g. video from x264) used in glsl
+    ColorSpace_GBR, ///< for planar gbr format (e.g. video from x264) used in glsl
     ColorSpace_BT601,
     ColorSpace_BT709,
     ColorSpace_XYZ
@@ -150,7 +150,8 @@ enum ColorRange
  * GLTextureSurface:
  * Map the decoded frame as an OpenGL texture
  * SourceSurface:
- * get the original surface from decoder, for example VASurfaceID for va-api, CUdeviceptr for CUDA and IDirect3DSurface9* for DXVA.
+ * get the original surface from decoder, for example VASurfaceID for va-api,
+ * CUdeviceptr for CUDA and IDirect3DSurface9* for DXVA.
  * Zero copy mode is required.
  * UserSurface:
  * Do your own magic mapping with it

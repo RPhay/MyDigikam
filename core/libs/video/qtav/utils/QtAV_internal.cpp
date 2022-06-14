@@ -45,11 +45,6 @@ static const char kFileScheme[] = "file:";
 
 #ifdef Q_OS_MAC
 
-static QString fromCFString(CFStringRef string)
-{
-    return QString().fromCFString(string);
-}
-
 QString absolutePathFromOSX(const QString& s)
 {
     QString result;
@@ -70,7 +65,7 @@ QString absolutePathFromOSX(const QString& s)
             if (cfUrlAbs)
             {
                 CFStringRef cfStrAbsUrl = CFURLGetString(cfUrlAbs);
-                result                  = fromCFString(cfStrAbsUrl);
+                result                  = QString().fromCFString(cfStrAbsUrl);
                 CFRelease(cfUrlAbs);
             }
 
@@ -159,15 +154,10 @@ QString toLocal(const QString& fullPath)
     return getLocalPath(fullPath);
 }
 
-QString appDataDir()
-{
-    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
-}
-
 QString appFontsDir()
 {
 
-#if 0 // qt may return an read only path, for example OSX /System/Library/Fonts
+#if 0 // qt may return an read only path, for example MacOS /System/Library/Fonts
 
     const QString dir(QStandardPaths::writableLocation(QStandardPaths::FontsLocation));
 
@@ -176,7 +166,7 @@ QString appFontsDir()
 
 #endif
 
-    return appDataDir() + QLatin1String("/fonts");
+    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/fonts");
 }
 
 QString fontsDir()
@@ -362,7 +352,7 @@ void setOptionsToFFmpegObj(const QVariant& opt, void* obj)
     }
 }
 
-//FIXME: why to lower case?
+// FIXME: why to lower case?
 
 void setOptionsToDict(const QVariant& opt, AVDictionary** dict)
 {
@@ -461,7 +451,7 @@ void setOptionsToDict(const QVariant& opt, AVDictionary** dict)
     }
 }
 
-void setOptionsForQObject(const QVariant& opt, QObject *obj)
+void setOptionsForQObject(const QVariant& opt, QObject* const obj)
 {
     if (!opt.isValid())
         return;
