@@ -343,7 +343,7 @@ protected:
 /************The followings are used internally**********/
 
 #if CAPI_IS(LAZY_RESOLVE)
-#   define CAPI_DLL_BODY_DEFINE { memset(&api, 0, sizeof(api));} typedef struct {
+#   define CAPI_DLL_BODY_DEFINE { memset(&api, 0, sizeof(api));} typedef struct capi_internal_struct_ {
 #else
 #   define CAPI_DLL_BODY_DEFINE { CAPI_DBG_RESOLVE("capi resolved dll symbols...");}
 #endif
