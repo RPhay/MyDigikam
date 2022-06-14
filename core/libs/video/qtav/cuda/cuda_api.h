@@ -138,7 +138,7 @@ public:
 private:
 
     class context;
-    context* ctx;
+    context* ctx = nullptr;
 
 private:
 
@@ -178,12 +178,9 @@ private:
 
 class AutoCtxLock
 {
-    cuda_api*       m_api;
-    CUvideoctxlock  m_lock;
-
 public:
 
-    AutoCtxLock(cuda_api* api, CUvideoctxlock lck)
+    AutoCtxLock(cuda_api* const api, CUvideoctxlock lck)
         : m_api (api),
           m_lock(lck)
     {
@@ -194,17 +191,18 @@ public:
     {
         m_api->cuvidCtxUnlock(m_lock, 0);
     }
+
+private:
+
+    cuda_api*       m_api = nullptr;
+    CUvideoctxlock  m_lock;
 };
 
 class CUVIDAutoUnmapper
 {
-    cuda_api*       api;
-    CUvideodecoder  dec;
-    CUdeviceptr     devptr;
-
 public:
 
-    CUVIDAutoUnmapper(cuda_api* a, CUvideodecoder d, CUdeviceptr p)
+    CUVIDAutoUnmapper(cuda_api* const a, CUvideodecoder d, CUdeviceptr p)
         : api   (a),
           dec   (d),
           devptr(p)
@@ -215,6 +213,13 @@ public:
     {
         api->cuvidUnmapVideoFrame(dec, devptr);
     }
+
+private:
+
+    cuda_api*       api = nullptr;
+    CUvideodecoder  dec;
+    CUdeviceptr     devptr;
+
 };
 
 #endif // QTAV_CUDA_API_H

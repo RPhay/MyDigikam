@@ -47,9 +47,9 @@
 */
 
 #if 0
-#   define DECLARE_API_CONTEXT(API, ..) \
-    typedef API##_t (...); \
-    API##_t* API##_fp; \
+#   define DECLARE_API_CONTEXT(API, ..)      \
+    typedef API##_t (...);                   \
+    API##_t* API##_fp;                       \
     void resolve_##API () { API##_fp = ... } \
     resolve_t *resolve_##API##_fp = resolve_##API;
 
@@ -864,9 +864,10 @@ CUresult cuda_api::cuGraphicsUnmapResources(unsigned int count, CUgraphicsResour
 ////////////////////////////////////////////////////
 /// D3D Interop
 ////////////////////////////////////////////////////
-
-// CUresult cuda_api::cuD3D9CtxCreate( CUcontext *pCtx, CUdevice *pCudaDevice, unsigned int Flags, IDirect3DDevice9 *pD3DDevice);
-
+/*
+CUresult cuda_api::cuD3D9CtxCreate(CUcontext* pCtx, CUdevice* pCudaDevice,
+                                   unsigned int Flags, IDirect3DDevice9* pD3DDevice);
+*/
 ////////////////////////////////////////////////////
 /// CUVID functions
 ////////////////////////////////////////////////////
@@ -1056,13 +1057,20 @@ CUresult cuda_api::cuvidUnmapVideoFrame(CUvideodecoder hDecoder, CUdeviceptr Dev
 
 int cuda_api::GetMaxGflopsGraphicsDeviceId()
 {
-    CUdevice current_device = 0, max_perf_device  = 0;
-    int device_count        = 0, sm_per_multiproc = 0;
-    int max_compute_perf    = 0, best_SM_arch     = 0;
-    int major               = 0, minor            = 0, multiProcessorCount, clockRate;
-    int bTCC                = 0, version;
-    int devices_prohibited  = 0;
-    char deviceName[256];
+    CUdevice current_device  = 0;
+    CUdevice max_perf_device = 0;
+    int device_count         = 0;
+    int sm_per_multiproc     = 0;
+    int max_compute_perf     = 0;
+    int best_SM_arch         = 0;
+    int major                = 0;
+    int minor                = 0;
+    int multiProcessorCount  = 0;
+    int clockRate            = 0;
+    int bTCC                 = 0;
+    int version              = 0;
+    int devices_prohibited   = 0;
+    char deviceName[256]     = { 0 };
 
     cuDeviceGetCount(&device_count);
 
@@ -1118,7 +1126,8 @@ int cuda_api::GetMaxGflopsGraphicsDeviceId()
     if (devices_prohibited == device_count)
     {
         qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-             << QString::asprintf("GetMaxGflopsGraphicsDeviceId error: all devices have compute mode prohibited.");
+             << QString::asprintf("GetMaxGflopsGraphicsDeviceId error: "
+                                  "all devices have compute mode prohibited.");
 
         return -1;
     }
@@ -1199,8 +1208,11 @@ int cuda_api::GetMaxGflopsGraphicsDeviceId()
                 cuDeviceGetName(deviceName, 256, current_device);
 
                 qCDebug(DIGIKAM_QTAV_LOG).noquote()
-                    << QString::asprintf("CUDA Device: %s, Compute: %d.%d, CUDA Cores: %d, Clock: %d MHz",
-                        deviceName, major, minor, multiProcessorCount * sm_per_multiproc, clockRate / 1000);
+                    << QString::asprintf("CUDA Device: %s, Compute: "
+                                         "%d.%d, CUDA Cores: %d, Clock: %d MHz",
+                        deviceName, major, minor,
+                        multiProcessorCount * sm_per_multiproc,
+                        clockRate / 1000);
             }
         }
 
