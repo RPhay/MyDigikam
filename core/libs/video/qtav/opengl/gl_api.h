@@ -28,46 +28,27 @@
 
 #ifndef QT_NO_OPENGL
 #   include <qglobal.h>
-#   if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-#       include <QOpenGLBuffer>
-#       include <QOpenGLContext>
-#       include <QOpenGLFunctions>
-#       include <QOpenGLShaderProgram>
-#   elif defined(QT_OPENGL_LIB)
-#       if QT_VERSION >= QT_VERSION_CHECK(4, 8, 0)
-#           include <QtOpenGL/QGLFunctions>
+#   include <QOpenGLBuffer>
+#   include <QOpenGLContext>
+#   include <QOpenGLFunctions>
+#   include <QOpenGLShaderProgram>
+// used by vaapi even qtopengl module is disabled
+#   if defined(QT_OPENGL_ES_2)
+#       if defined(Q_OS_MAC) // iOS
+#           include <OpenGLES/ES2/gl.h>
+#           include <OpenGLES/ES2/glext.h>
+#       else // "uncontrolled" ES2 platforms
+#           include <GLES2/gl2.h>
 #       endif
-#       include <QtOpenGL/QGLBuffer>
-#       include <QtOpenGL/QGLContext>
-#       include <QtOpenGL/QGLShaderProgram>
-#       define QOpenGLShaderProgram QGLShaderProgram
-
-typedef QGLBuffer QOpenGLBuffer;
-
-#       define QOpenGLContext QGLContext
-#       define QOpenGLShaderProgram QGLShaderProgram
-#       define QOpenGLShader QGLShader
-#       define QOpenGLFunctions QGLFunctions
-#       define initializeOpenGLFunctions() initializeGLFunctions()
-#       include <qgl.h>
-#   else //used by vaapi even qtopengl module is disabled
-#       if defined(QT_OPENGL_ES_2)
-#           if defined(Q_OS_MAC) // iOS
-#               include <OpenGLES/ES2/gl.h>
-#               include <OpenGLES/ES2/glext.h>
-#           else // "uncontrolled" ES2 platforms
-#               include <GLES2/gl2.h>
+#   else // non-ES2 platforms
+#       if defined(Q_OS_MAC)
+#           include <OpenGL/gl.h>
+#           if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_7
+#               include <OpenGL/gl3.h>
 #           endif
-#       else // non-ES2 platforms
-#           if defined(Q_OS_MAC)
-#               include <OpenGL/gl.h>
-#               if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_7
-#                   include <OpenGL/gl3.h>
-#               endif
-#               include <OpenGL/glext.h>
-#           else
-#               include <GL/gl.h>
-#           endif
+#           include <OpenGL/glext.h>
+#       else
+#           include <GL/gl.h>
 #       endif
 #   endif
 #   ifndef GL_APIENTRY

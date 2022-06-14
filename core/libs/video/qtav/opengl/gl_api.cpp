@@ -70,15 +70,19 @@ static void* GetProcAddressWithExt(GetProcAddress_t get, const char* name)
 
     static const char* ext[] =
     {
-        "ARB", "OES", "EXT", "ANGLE", "NV" // TODO: MESA, INTEL?
+        "ARB",
+        "OES",
+        "EXT",
+        "ANGLE",
+        "NV" // TODO: MESA, INTEL?
 
 #ifdef __APPLE__         // krazy:exclude=cpp
 
-        , "APPLE"
+      , "APPLE"
 
 #endif
 
-        , nullptr
+      , nullptr
     };
 
     char f[512]   = { 0 };
@@ -139,28 +143,29 @@ static void* GetProcAddressDefault(const char* name)
 #endif
 
 #define GL_RESOLVE_NONE(name) do { name = nullptr;}while(0)
-#define GL_RESOLVE_EXT(name) do {\
-    void** fp = (void**)(&name); \
+#define GL_RESOLVE_EXT(name) do {                   \
+    void** fp = (void**)(&name);                    \
     *fp       = GetProcAddressDefault("gl" # name); \
 } while(0)
 
 #ifdef GETPROCADDRESS_RESOLVE
 #   define GL_RESOLVE(name) GL_RESOLVE_EXT(name)
 #else
-#   define GL_RESOLVE(name)  do {\
-    name = ::gl##name; \
+#   define GL_RESOLVE(name)  do {   \
+    name = ::gl##name;              \
 } while(0)
 #endif
 
-#define WGL_RESOLVE(name) do {\
-    void** fp = (void**)(&name); \
-    *fp       = sGetProcAddress("wgl" # name); \
+#define WGL_RESOLVE(name) do {                  \
+    void** fp = (void**)(&name);                \
+    *fp       = sGetProcAddress("wgl" # name);  \
 } while(0)
 
 void api::resolve()
 {
-    //memset(g, 0, sizeof(g));
-
+/*
+    memset(g, 0, sizeof(g));
+*/
     sGetProcAddress = GetProcAddressDefault;
     GL_RESOLVE(GetString);
     GL_RESOLVE(GetError);
@@ -199,8 +204,6 @@ void api::resolve()
 
         if (OpenGLHelper::hasExtension(ext))
         {
-            // TODO: use wgl getprocaddress function (for qt4)
-
             qCDebug(DIGIKAM_QTAV_LOG).noquote()
                 << QString::asprintf("resolving WGL_NV_DX_interop...");
 
