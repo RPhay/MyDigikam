@@ -177,6 +177,10 @@
 #include <cassert>
 #include <string.h>
 
+// Local includes
+
+#include "digikam_debug.h"
+
 #define CAPI_IS(X) (defined CAPI_IS_##X && CAPI_IS_##X)
 
 /*!
@@ -440,7 +444,7 @@ protected:
 #endif
 
 #if defined(DEBUG) || defined(DEBUG_LOAD) || defined(DEBUG_RESOLVE) || defined(DEBUG_CALL)
-#   define CAPI_LOG(STDWHERE, fmt, ...) do {fprintf(STDWHERE, "[%s] %s@%d: " fmt "\n", __FILE__, CAPI_FUNC_INFO, __LINE__, ##__VA_ARGS__); fflush(0);} while(0);
+#   define CAPI_LOG(STDWHERE, fmt, ...) do {qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("[%s] %s@%d: " fmt "\n", __FILE__, CAPI_FUNC_INFO, __LINE__, ##__VA_ARGS__);} while(0);
 #else
 #   define CAPI_LOG(...)
 #endif
