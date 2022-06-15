@@ -424,6 +424,7 @@ bool UMSCamera::downloadItem(const QString& folder, const QString& itemName, con
     // Set the file modification time of the downloaded file to the original file.
     // NOTE: this behavior don't need to be managed through Setup/Metadata settings.
 
+    dFile.setPermissions(sFile.permissions());
     DFileOperations::copyModificationTime(src, dest);
 
     return true;
