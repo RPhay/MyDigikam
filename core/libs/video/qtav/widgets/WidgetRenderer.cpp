@@ -63,7 +63,8 @@ WidgetRenderer::WidgetRenderer(QWidget* const parent, Qt::WindowFlags f)
     setAcceptDrops(true);
     setFocusPolicy(Qt::StrongFocus);
 
-    /* To rapidly update custom widgets that constantly paint over their entire areas with
+    /*
+     * To rapidly update custom widgets that constantly paint over their entire areas with
      * opaque content, e.g., video streaming widgets, it is better to set the widget's
      * Qt::WA_OpaquePaintEvent, avoiding any unnecessary overhead associated with repainting the
      * widget's background
@@ -78,7 +79,7 @@ WidgetRenderer::WidgetRenderer(QWidget* const parent, Qt::WindowFlags f)
     }
     else
     {
-        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
             << QString::asprintf("FilterContext not available!");
     }
 }
@@ -99,7 +100,7 @@ WidgetRenderer::WidgetRenderer(WidgetRendererPrivate& d, QWidget* const parent, 
     }
     else
     {
-        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
             << QString::asprintf("FilterContext not available!");
     }
 }

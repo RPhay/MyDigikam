@@ -157,7 +157,7 @@ public:
         {
             available = false;
 
-            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
                 << QString::asprintf("Direct2D is disabled. Failed to load 'd2d1.dll': %s",
                     dll.errorString().toUtf8().constData());
 
@@ -175,7 +175,7 @@ public:
         {
             available = false;
 
-            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
                 << QString::asprintf("Direct2D is disabled. Failed to resolve symble 'D2D1CreateFactory': %s",
                     dll.errorString().toUtf8().constData());
 
@@ -203,7 +203,7 @@ public:
         {
             available = false;
 
-            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
                 << QString::asprintf("Direct2D is disabled. Create d2d factory failed");
 
             return;
@@ -297,7 +297,7 @@ public:
                                                          &render_target);
         if (FAILED(hr))
         {
-            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
                 << QString::asprintf("Direct2D is disabled. CreateHwndRenderTarget() failed: %d",
                     (int)GetLastError());
 
@@ -320,7 +320,7 @@ public:
 
     void recreateDeviceResource()
     {
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote()
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
             << QString::asprintf("D2DERR_RECREATE_TARGET");
 
         QMutexLocker locker(&img_mutex);
@@ -340,7 +340,7 @@ public:
 
         if (!render_target)
         {
-            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
                 << QString::asprintf("No render target, bitmap will not be created!!!");
 
             return false;
@@ -349,7 +349,7 @@ public:
         bitmap_width  = w;
         bitmap_height = h;
 
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote()
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
             << QString::asprintf("Resize bitmap to %d x %d", w, h);
 
         SafeRelease(&bitmap);
@@ -365,7 +365,7 @@ public:
                                                     &bitmap);
         if (FAILED(hr))
         {
-            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
                 << QString::asprintf("Failed to create ID2D1Bitmap (%ld)", hr);
 
             SafeRelease(&bitmap);
@@ -488,7 +488,7 @@ bool Direct2DRenderer::receiveFrame(const VideoFrame& frame)
 
     if (hr != S_OK)
     {
-        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
             << QString::asprintf("Failed to copy from memory to bitmap (%ld)", hr);
     }
 
@@ -571,7 +571,7 @@ void Direct2DRenderer::paintEvent(QPaintEvent*)
 
     if (!d.render_target)
     {
-        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
             << QString::asprintf("No render target!");
 
         return;

@@ -96,8 +96,10 @@ public:
 
         if (!glv.openGLContext())
         {
-            //qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote() << QString::asprintf("no opengl context! set current");
-
+/*
+            //qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("no opengl context! set current");
+*/
             // null if not called from renderering thread;
 
             QOpenGLContext* const ctx = const_cast<QOpenGLContext*>(QOpenGLContext::currentContext());
@@ -260,7 +262,7 @@ void GraphicsItemRenderer::paint(QPainter* painter, const QStyleOptionGraphicsIt
     }
     else
     {
-        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
             << QString::asprintf("FilterContext not available!");
     }
 
@@ -447,12 +449,12 @@ bool GraphicsItemRenderer::event(QEvent* event)
         setFocus(); // WHY: Force focus
         QEvent::Type type = event->type();
 
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote()
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
             << QString::asprintf("GraphicsItemRenderer event type = %d", type);
 
         if (type == QEvent::KeyPress)
         {
-            qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote()
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
                 << QString::asprintf("KeyPress Event. key=%d",
                     static_cast<QKeyEvent*>(event)->key());
         }
@@ -483,12 +485,12 @@ bool GraphicsItemRenderer::sceneEvent(QEvent* event)
 {
     QEvent::Type type = event->type();
 
-    qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote()
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
         << QString::asprintf("sceneEvent type = %d", type);
 
     if (type == QEvent::KeyPress)
     {
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote()
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
             << QString::asprintf("KeyPress Event. key=%d",
                 static_cast<QKeyEvent*>(event)->key());
     }

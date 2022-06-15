@@ -101,7 +101,7 @@ void registerRenderers()
 
 #if !defined(QT_NO_DEBUG)
 
-    qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote() << QString::asprintf("Register QtAV Renderers");
+    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Register QtAV Renderers");
 
 #endif
 

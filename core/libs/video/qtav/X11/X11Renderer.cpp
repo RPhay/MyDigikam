@@ -232,7 +232,7 @@ public:
 */
         char* const dispName = XDisplayName(nullptr);
 
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote()
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
             << QString::asprintf("X11 open display: %s",
                 dispName);
 
@@ -242,7 +242,7 @@ public:
         {
             available = false;
 
-            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
                 << QString::asprintf("Open X11 display error");
 
             return;
@@ -254,7 +254,7 @@ public:
 
         if (!XMatchVisualInfo(display, DefaultScreen(display), depth, TrueColor, &vinfo))
         {
-            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
                 << QString::asprintf("XMatchVisualInfo error");
 
             available = false;
@@ -289,7 +289,7 @@ public:
 
             mask = (ximg->red_mask | ximg->green_mask | ximg->blue_mask);
 
-            qCDebug(DIGIKAM_QTAVWIDGETS_LOG)
+            qCDebug(DIGIKAM_QTAV_LOG)
                 << QString::fromLatin1("color mask: %1 %2 %3 %4")
                     .arg(mask)
                     .arg(ximg->red_mask)
@@ -360,7 +360,7 @@ public:
         {
             available = false;
 
-            qCCritical(DIGIKAM_QTAVWIDGETS_LOG_CRITICAL)
+            qCCritical(DIGIKAM_QTAV_LOG_CRITICAL)
                 << QString::asprintf("Create GC failed!");
 
             return false;
@@ -399,7 +399,7 @@ public:
         use_shm              = XShmQueryExtension(display);
         XShmSegmentInfo &shm = shm_pool[index];
 
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote()
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
             << QString::asprintf("use x11 shm: %d",
                 use_shm);
 
@@ -414,7 +414,7 @@ public:
 
         if (!ximage)
         {
-            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
                 << QString::asprintf("XShmCreateImage error");
 
             goto no_shm;
@@ -424,7 +424,7 @@ public:
 
         if (shm.shmid < 0)
         {
-            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
                 << QString::asprintf("shmget error");
 
             goto no_shm;
@@ -441,7 +441,7 @@ public:
             ximage = nullptr;
             ximage_data[index].clear();
 
-            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
                 << QString::asprintf("Shared memory error, disabling (seg id error)");
 
             goto no_shm;
@@ -452,7 +452,7 @@ public:
 
         if (!XShmAttach(display, &shm))
         {
-            qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
                 << QString::asprintf("Attach to shm failed! try to use none shm");
 
             goto no_shm;
@@ -536,7 +536,7 @@ X11Renderer::X11Renderer(QWidget* const parent, Qt::WindowFlags f)
 
     if (!d_func().filter_context)
     {
-        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
             << QString::asprintf("No filter context for X11");
     }
     else
@@ -643,7 +643,7 @@ int X11RendererPrivate::resizeXImage(int index)
             {
                 warn_bad_pitch = false;
 
-                qCDebug(DIGIKAM_QTAVWIDGETS_LOG)
+                qCDebug(DIGIKAM_QTAV_LOG)
                     << QString::fromLatin1("bad pitch: %1 - %2 image_data[%3].size: %4")
                         .arg(ximage->bytes_per_line)
                         .arg(video_frame.bytesPerLine(0))
@@ -714,7 +714,7 @@ void X11Renderer::drawFrame()
 
     if (preferredPixelFormat() != d.pixfmt)
     {
-        qCDebug(DIGIKAM_QTAVWIDGETS_LOG) << "x11 preferred pixel format:"
+        qCDebug(DIGIKAM_QTAV_LOG) << "x11 preferred pixel format:"
                                          << d.pixfmt;
 
         setPreferredPixelFormat(d.pixfmt);
@@ -728,7 +728,7 @@ void X11Renderer::drawFrame()
         {
             if (wait_count++ > 100)
             {
-                qCDebug(DIGIKAM_QTAVWIDGETS_LOG).noquote()
+                qCDebug(DIGIKAM_QTAV_LOG).noquote()
                     << QString::asprintf("reset ShmCompletionWaitCount");
 
                 d.ShmCompletionWaitCount = 0;

@@ -141,7 +141,7 @@ void VideoPreviewWidget::displayFrame(const QtAV::VideoFrame& frame)
     if (diff > m_extractor->precision())
     {
 /*
-        qCWarning(DIGIKAM_QTAVWIDGETS_LOG_WARN).noquote()
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
             << QString::asprintf("timestamp difference (%d/%lld) is too large! ignore", diff);
 */
     }
