@@ -144,14 +144,15 @@ private:
                             CamItemInfoList& deleteList, CamItemInfoList& lockedList);
 
     QString identifyCategoryforMime(const QString& mime);
-    void autoRotateItems();
 
     bool checkDiskSpace(PAlbum* pAlbum);
     bool downloadCameraItems(PAlbum* pAlbum, bool onlySelected, bool deleteAfter);
-    bool createSubAlbums(QUrl& downloadUrl, const CamItemInfo& info);
+    bool createSubAlbums(QUrl& downloadUrl, const QString& suffix, const QDateTime& dateTime);
     bool createSubAlbum(QUrl& downloadUrl, const QString& subalbum, const QDate& date);
-    bool createDateBasedSubAlbum(QUrl& downloadUrl, const CamItemInfo& info);
-    bool createExtBasedSubAlbum(QUrl& downloadUrl, const CamItemInfo& info);
+    bool createDateBasedSubAlbum(QUrl& downloadUrl, const QDateTime& dateTime);
+    bool createExtBasedSubAlbum(QUrl& downloadUrl, const QString& suffix, const QDate& date);
+    void postProcessAfterDownload();
+
 
     void showThumbBar(bool visible)         override;
     void showSideBars(bool visible)         override;
@@ -170,7 +171,8 @@ private Q_SLOTS:
     void slotShowLog();
     void slotConnected(bool val);
     void slotBusy(bool val);
-    void slotLogMsg(const QString& msg, DHistoryView::EntryType type, const QString& folder, const QString& file);
+    void slotLogMsg(const QString& msg, DHistoryView::EntryType type,
+                    const QString& folder = QString(), const QString& file = QString());
     void slotInformation();
     void slotCapture();
     void slotCameraInformation(const QString&, const QString&, const QString&);
@@ -203,14 +205,11 @@ private Q_SLOTS:
     void slotMarkAsDownloaded();
 
     void slotUploaded(const CamItemInfo&);
-    void slotDownloaded(const QString&, const QString&, int);
-    void slotDownloadComplete(const QString& sourceFolder, const QString& sourceFile,
-                              const QString& destFolder, const QString& destFile);
-    void slotSkipped(const QString&, const QString&);
+    void slotDownloaded(const QString&, const QString&, const QString&, int);
     void slotDeleted(const QString&, const QString&, bool);
     void slotLocked(const QString&, const QString&, bool);
 
-    void slotUpdateDownloadName();
+    void slotUpdateRenamePreview();
     void slotSelectNew();
     void slotSelectLocked();
     void slotProgressTimerDone();

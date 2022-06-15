@@ -70,6 +70,8 @@ public:
     void    setStartIndex(int startIndex);
     void    reset();
 
+    void    setPreviewText(const QString& txt);
+
     AdvancedRenameManager* renameManager() const;
 
 Q_SIGNALS:
@@ -86,7 +88,6 @@ private Q_SLOTS:
     void slotRadioButtonClicked(int);
     void slotRenameOptionsChanged();
     void slotCustomRenameChanged();
-    void slotFileMetadataLinkUsed();
 
 private:
 

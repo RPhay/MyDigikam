@@ -86,6 +86,7 @@ public:
     ParseResults::ResultsKey currentResultsKey;
 
     int                      startIndex;
+    int                      cutFileName;
     bool                     useOriginalFileExtension;
     AdvancedRenameManager*   manager;
 
@@ -94,6 +95,7 @@ private:
     void init()
     {
         startIndex               = 1;
+        cutFileName              = 0;
         useOriginalFileExtension = true;
         manager                  = nullptr;
         str2Modify.clear();

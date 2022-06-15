@@ -591,10 +591,10 @@ void ImportUI::setupConnections()
 {
     //TODO: Needs testing.
     connect(d->advancedSettings, SIGNAL(signalDownloadNameChanged()),
-            this, SLOT(slotUpdateDownloadName()));
+            this, SLOT(slotUpdateRenamePreview()));
 
     connect(d->dngConvertSettings, SIGNAL(signalDownloadNameChanged()),
-            this, SLOT(slotUpdateDownloadName()));
+            this, SLOT(slotUpdateRenamePreview()));
 
     connect(d->historyView, SIGNAL(signalEntryClicked(QVariant)),
             this, SLOT(slotHistoryEntryClicked(QVariant)));
@@ -645,7 +645,7 @@ void ImportUI::setupConnections()
             this, SLOT(slotSetupChanged()));
 
     connect(d->renameCustomizer, SIGNAL(signalChanged()),
-            this, SLOT(slotUpdateDownloadName()));
+            this, SLOT(slotUpdateRenamePreview()));
 }
 
 void ImportUI::setupStatusBar()
@@ -707,40 +707,44 @@ void ImportUI::setupCameraController(const QString& model, const QString& port, 
     d->controller = new CameraController(this, d->cameraTitle, model, port, path);
 
     connect(d->controller, SIGNAL(signalConnected(bool)),
-            this, SLOT(slotConnected(bool)));
+            this, SLOT(slotConnected(bool)),
+            Qt::QueuedConnection);
 
     connect(d->controller, SIGNAL(signalLogMsg(QString,DHistoryView::EntryType,QString,QString)),
-            this, SLOT(slotLogMsg(QString,DHistoryView::EntryType,QString,QString)));
+            this, SLOT(slotLogMsg(QString,DHistoryView::EntryType,QString,QString)),
+            Qt::QueuedConnection);
 
     connect(d->controller, SIGNAL(signalCameraInformation(QString,QString,QString)),
-            this, SLOT(slotCameraInformation(QString,QString,QString)));
+            this, SLOT(slotCameraInformation(QString,QString,QString)),
+            Qt::QueuedConnection);
 
     connect(d->controller, SIGNAL(signalBusy(bool)),
-            this, SLOT(slotBusy(bool)));
+            this, SLOT(slotBusy(bool)),
+            Qt::QueuedConnection);
 
     connect(d->controller, SIGNAL(signalFolderList(QStringList)),
-            this, SLOT(slotFolderList(QStringList)));
+            this, SLOT(slotFolderList(QStringList)),
+            Qt::QueuedConnection);
 
-    connect(d->controller, SIGNAL(signalDownloaded(QString,QString,int)),
-            this, SLOT(slotDownloaded(QString,QString,int)));
-
-    connect(d->controller, SIGNAL(signalDownloadComplete(QString,QString,QString,QString)),
-            this, SLOT(slotDownloadComplete(QString,QString,QString,QString)));
-
-    connect(d->controller, SIGNAL(signalSkipped(QString,QString)),
-            this, SLOT(slotSkipped(QString,QString)));
+    connect(d->controller, SIGNAL(signalDownloaded(QString,QString,QString,int)),
+            this, SLOT(slotDownloaded(QString,QString,QString,int)),
+            Qt::BlockingQueuedConnection);
 
     connect(d->controller, SIGNAL(signalDeleted(QString,QString,bool)),
-            this, SLOT(slotDeleted(QString,QString,bool)));
+            this, SLOT(slotDeleted(QString,QString,bool)),
+            Qt::QueuedConnection);
 
     connect(d->controller, SIGNAL(signalLocked(QString,QString,bool)),
-            this, SLOT(slotLocked(QString,QString,bool)));
+            this, SLOT(slotLocked(QString,QString,bool)),
+            Qt::QueuedConnection);
 
     connect(d->controller, SIGNAL(signalMetadata(QString,QString,MetaEngineData)),
-            this, SLOT(slotMetadata(QString,QString,MetaEngineData)));
+            this, SLOT(slotMetadata(QString,QString,MetaEngineData)),
+            Qt::QueuedConnection);
 
     connect(d->controller, SIGNAL(signalUploaded(CamItemInfo)),
-            this, SLOT(slotUploaded(CamItemInfo)));
+            this, SLOT(slotUploaded(CamItemInfo)),
+            Qt::QueuedConnection);
 
     d->controller->start();
 
@@ -865,9 +869,10 @@ void ImportUI::slotCancelButton()
                                              i18nc("@info:status", "Canceling current operation, please wait..."));
     d->controller->slotCancel();
 
-    //d->historyUpdater->slotCancel();
-
     d->currentlyDeleting.clear();
+
+    postProcessAfterDownload();
+
     refreshFreeSpace();
 }
 
@@ -1309,9 +1314,7 @@ void ImportUI::slotDownload(bool onlySelected, bool deleteAfter, Album* album)
         return;
     }
 
-    // See bug #143934: force to select all items to prevent problem
-    // when !renameCustomizer->useDefault() ==> iconItem->getDownloadName()
-    // can return an empty string in this case because it depends on selection.
+    // See bug #143934: force to select all items to prevent problem.
 
     if (!onlySelected)
     {
@@ -1420,18 +1423,55 @@ void ImportUI::slotDownload(bool onlySelected, bool deleteAfter, Album* album)
     downloadCameraItems(pAlbum, onlySelected, deleteAfter);
 }
 
-void ImportUI::slotDownloaded(const QString& folder, const QString& file, int status)
+void ImportUI::slotDownloaded(const QString& folder, const QString& file, const QString& temp, int status)
 {
-    // Is auto-rotate option checked?
+    if (status == CamItemInfo::DownloadedYes)
+    {
+        QFileInfo tempInfo(temp);
+        QUrl downloadUrl       = QUrl::fromLocalFile(tempInfo.path());
+        QScopedPointer<DMetadata> metadata(new DMetadata(temp));
+        QDateTime creationDate = metadata->getItemDateTime();
 
-    bool autoRotate = downloadSettings().autoRotate;
-    bool previewItems = ImportSettings::instance()->getPreviewItemsWhileDownload();
+        if (!createSubAlbums(downloadUrl, tempInfo.suffix(), creationDate))
+        {
+            downloadUrl = QUrl::fromLocalFile(tempInfo.path());
+        }
+
+        QString dest = downloadUrl.toLocalFile() + QLatin1Char('/') + tempInfo.fileName();
+
+        if (DMetadata::hasSidecar(temp))
+        {
+            QString sctemp = DMetadata::sidecarPath(temp);
+            QString scdest = DMetadata::sidecarPath(dest);
+
+            DFileOperations::renameFile(sctemp, scdest);
+        }
+
+        DFileOperations::renameFile(temp, dest);
+
+        d->downloadedItemList << dest;
+        d->downloadedDateList << creationDate;
+
+        if (!d->foldersToScan.contains(tempInfo.path()))
+        {
+            d->foldersToScan << tempInfo.path();
+        }
+    }
+
+    if ((status == CamItemInfo::DownloadedYes) ||
+        (status == CamItemInfo::DownloadFailed))
+    {
+        int curr = d->statusProgressBar->progressValue();
+        d->statusProgressBar->setProgressValue(curr + 1);
+    }
 
     CamItemInfo& info = d->view->camItemInfoRef(folder, file);
 
     if (!info.isNull())
     {
         setDownloaded(info, status);
+
+        bool previewItems = ImportSettings::instance()->getPreviewItemsWhileDownload();
 
         if (status == CamItemInfo::DownloadStarted && previewItems)
         {
@@ -1445,11 +1485,6 @@ void ImportUI::slotDownloaded(const QString& folder, const QString& file, int st
 
         if (info.downloaded == CamItemInfo::DownloadedYes)
         {
-            int curr = d->statusProgressBar->progressValue();
-            d->statusProgressBar->setProgressValue(curr + 1);
-
-            d->renameCustomizer->setStartIndex(d->renameCustomizer->startIndex() + 1);
-
             CoreDbDownloadHistory::setDownloaded(QString::fromUtf8(d->controller->cameraMD5ID()),
                                                  info.name,
                                                  info.size,
@@ -1467,48 +1502,9 @@ void ImportUI::slotDownloaded(const QString& folder, const QString& file, int st
 
             QTimer::singleShot(0, this, SLOT(slotDeleteAfterDownload()));
         }
-        else
-        {
-            // Pop-up a notification to inform user when all is done,
-            // and inform if auto-rotation will take place.
 
-            if (autoRotate)
-            {
-                DNotificationWrapper(QLatin1String("cameradownloaded"),
-                                     i18nc("@info Popup notification",
-                                           "Images download finished, you can now detach "
-                                           "your camera while the images are auto-rotated"),
-                                     this, windowTitle());
-            }
-            else
-            {
-                DNotificationWrapper(QLatin1String("cameradownloaded"),
-                                     i18nc("@info Popup notification",
-                                           "Images download finished"),
-                                     this, windowTitle());
-            }
-        }
+        postProcessAfterDownload();
     }
-}
-
-void ImportUI::slotDownloadComplete(const QString&, const QString&,
-                                    const QString& destFolder, const QString& destFile)
-{
-    ScanController::instance()->scannedInfo(destFolder + QLatin1Char('/') + destFile);
-    autoRotateItems();
-}
-
-void ImportUI::slotSkipped(const QString& folder, const QString& file)
-{
-    CamItemInfo info = d->view->camItemInfo(folder, file);
-
-    if (!info.isNull())
-    {
-        setDownloaded(info, CamItemInfo::DownloadedNo);
-    }
-
-    int curr = d->statusProgressBar->progressValue();
-    d->statusProgressBar->setProgressValue(curr + 1);
 }
 
 void ImportUI::slotMarkAsDownloaded()
@@ -1575,106 +1571,101 @@ void ImportUI::slotLocked(const QString& folder, const QString& file, bool statu
     d->statusProgressBar->setProgressValue(curr + 1);
 }
 
-void ImportUI::slotUpdateDownloadName()
+void ImportUI::slotUpdateRenamePreview()
 {
-    const QList<QUrl>& selected = d->view->selectedUrls();
-    const bool hasNoSelection   = selected.isEmpty();
-    DownloadSettings settings   = downloadSettings();
+    const CamItemInfoList& list = d->view->selectedCamItemInfos();
 
-    Q_FOREACH (const CamItemInfo& info, d->view->allItems())
+    if (list.isEmpty())
     {
-        CamItemInfo& refInfo = d->view->camItemInfoRef(info.folder, info.name);
+       d->renameCustomizer->setPreviewText(QString());
 
-        // qCDebug(DIGIKAM_IMPORTUI_LOG) << "slotDownloadNameChanged, old: " << refInfo.downloadName;
-
-        if (refInfo.isNull())
-        {
-            continue;
-        }
-
-        QString newName = info.name;
-
-        if (hasNoSelection || selected.contains(info.url()))
-        {
-            if (d->renameCustomizer->useDefault())
-            {
-                newName = d->renameCustomizer->newName(info.name);
-            }
-            else if (d->renameCustomizer->isEnabled())
-            {
-                newName = d->renameCustomizer->newName(info.url().toLocalFile());
-            }
-            else if (!refInfo.downloadName.isEmpty())
-            {
-                newName = refInfo.downloadName;
-            }
-
-            // Renaming files for the converting jpg to a lossless format
-            // is from cameracontroller.cpp moved here.
-
-            if (settings.convertJpeg && info.mime == QLatin1String("image/jpeg"))
-            {
-                QFileInfo     fi(newName);
-                QString ext = fi.suffix();
-
-                if (!ext.isEmpty())
-                {
-                    if (ext[0].isUpper() && ext[ext.length()-1].isUpper())
-                    {
-                        ext = settings.losslessFormat.toUpper();
-                    }
-                    else if (ext[0].isUpper())
-                    {
-                        ext    = settings.losslessFormat.toLower();
-                        ext[0] = ext[0].toUpper();
-                    }
-                    else
-                    {
-                        ext = settings.losslessFormat.toLower();
-                    }
-
-                    newName = fi.completeBaseName() + QLatin1Char('.') + ext;
-                }
-                else
-                {
-                    newName = newName + QLatin1Char('.') + settings.losslessFormat.toLower();
-                }
-            }
-            else if (settings.convertDng && info.mime == QLatin1String("image/x-raw"))
-            {
-                QFileInfo     fi(newName);
-                QString ext = fi.suffix();
-
-                if (!ext.isEmpty())
-                {
-                    if (ext[0].isUpper() && (ext[ext.length()-1].isUpper() || ext[ext.length()-1].isDigit()))
-                    {
-                        ext = QLatin1String("DNG");
-                    }
-                    else if (ext[0].isUpper())
-                    {
-                        ext = QLatin1String("Dng");
-                    }
-                    else
-                    {
-                        ext = QLatin1String("dng");
-                    }
-
-                    newName = fi.completeBaseName() + QLatin1Char('.') + ext;
-                }
-                else
-                {
-                    newName = newName + QLatin1Char('.') + QLatin1String("dng");
-                }
-            }
-        }
-
-        refInfo.downloadName = newName;
-
-        // qCDebug(DIGIKAM_IMPORTUI_LOG) << "slotDownloadNameChanged, new: " << refInfo.downloadName;
+       return;
     }
 
-    d->view->updateIconView();
+    const CamItemInfo& info   = list.constFirst();
+    DownloadSettings settings = downloadSettings();
+
+    if (info.isNull())
+    {
+        d->renameCustomizer->setPreviewText(QString());
+
+        return;
+    }
+
+    QString newName = info.name;
+
+    if (d->renameCustomizer->useDefault())
+    {
+        newName = d->renameCustomizer->newName(info.name);
+    }
+    else if (d->renameCustomizer->isEnabled())
+    {
+        newName = d->renameCustomizer->newName(info.url().toLocalFile());
+    }
+
+    if (settings.convertJpeg && info.mime == QLatin1String("image/jpeg"))
+    {
+        QFileInfo     fi(newName);
+        QString ext = fi.suffix();
+
+        if (!ext.isEmpty())
+        {
+            if (ext[0].isUpper() && ext[ext.length()-1].isUpper())
+            {
+                ext = settings.losslessFormat.toUpper();
+            }
+            else if (ext[0].isUpper())
+            {
+                ext    = settings.losslessFormat.toLower();
+                ext[0] = ext[0].toUpper();
+            }
+            else
+            {
+                ext = settings.losslessFormat.toLower();
+            }
+
+            newName = fi.completeBaseName() + QLatin1Char('.') + ext;
+        }
+        else
+        {
+            newName = newName + QLatin1Char('.') + settings.losslessFormat.toLower();
+        }
+    }
+    else if (settings.convertDng && info.mime == QLatin1String("image/x-raw"))
+    {
+        QFileInfo     fi(newName);
+        QString ext = fi.suffix();
+
+        if (!ext.isEmpty())
+        {
+            if (ext[0].isUpper() && (ext[ext.length()-1].isUpper() || ext[ext.length()-1].isDigit()))
+            {
+                ext = QLatin1String("DNG");
+            }
+            else if (ext[0].isUpper())
+            {
+                ext = QLatin1String("Dng");
+            }
+            else
+            {
+                ext = QLatin1String("dng");
+            }
+
+            newName = fi.completeBaseName() + QLatin1Char('.') + ext;
+        }
+        else
+        {
+            newName = newName + QLatin1Char('.') + QLatin1String("dng");
+        }
+    }
+
+    CamItemInfo& refInfo = d->view->camItemInfoRef(info.folder, info.name);
+
+    if (!refInfo.isNull())
+    {
+        d->renameCustomizer->setPreviewText(newName);
+        refInfo.downloadName = newName;
+    }
 }
 
 // FIXME: the new pictures are marked by CameraHistoryUpdater which is not working yet.
@@ -1966,27 +1957,16 @@ bool ImportUI::checkDiskSpace(PAlbum *pAlbum)
 
 bool ImportUI::downloadCameraItems(PAlbum* pAlbum, bool onlySelected, bool deleteAfter)
 {
-    KSharedConfig::Ptr config      = KSharedConfig::openConfig();
-    KConfigGroup group             = config->group(d->configGroupName);
-    SetupCamera::ConflictRule rule = (SetupCamera::ConflictRule)group.readEntry(d->configFileSaveConflictRule,
-                                                                                (int)SetupCamera::DIFFNAME);
-
-    d->controller->downloadPrep(rule);
-
-    QString              downloadName;
+    const QList<QUrl>& selected   = d->view->selectedUrls();
+    DownloadSettings settings     = downloadSettings();
+    QUrl url                      = pAlbum->fileUrl();
     DownloadSettingsList allItems;
-    DownloadSettings     settings = downloadSettings();
-    QUrl url = pAlbum->fileUrl();
-    int downloadedItems           = 0;
 
     // -- Download camera items -------------------------------
 
-    const QList<QUrl>& selected = d->view->selectedUrls();
-    QSet<QString> usedDownloadPaths;
-
     Q_FOREACH (const CamItemInfo& info, d->view->allItems())
     {
-        if (onlySelected && !(selected.contains(info.url())))
+        if (onlySelected && !selected.contains(info.url()))
         {
             continue;
         }
@@ -1997,69 +1977,12 @@ bool ImportUI::downloadCameraItems(PAlbum* pAlbum, bool onlySelected, bool delet
         settings.pickLabel  = info.pickLabel;
         settings.colorLabel = info.colorLabel;
         settings.rating     = info.rating;
+        settings.dest       = url.toLocalFile();
 
-        // downloadName should already be set by now
-
-        downloadName = info.downloadName;
-
-        QUrl downloadUrl(url);
-
-        if (!createSubAlbums(downloadUrl, info))
-        {
-            return false;
-        }
-
-        if (downloadName.isEmpty())
-        {
-            downloadUrl = downloadUrl.adjusted(QUrl::StripTrailingSlash);
-            downloadUrl.setPath(downloadUrl.path() + QLatin1Char('/') + settings.file);
-        }
-        else
-        {
-            // when using custom renaming (e.g. by date, see bug 179902)
-            // make sure that we create unique names
-
-            downloadUrl = downloadUrl.adjusted(QUrl::StripTrailingSlash);
-            downloadUrl.setPath(downloadUrl.path() + QLatin1Char('/') + downloadName);
-            QString suggestedPath = downloadUrl.toLocalFile();
-
-            if (usedDownloadPaths.contains(suggestedPath))
-            {
-                QFileInfo fi(downloadName);
-                QString suffix = QLatin1Char('.') + fi.suffix();
-                QString pathWithoutSuffix(suggestedPath);
-                pathWithoutSuffix.chop(suffix.length());
-                QString currentVariant;
-                int counter = 1;
-
-                do
-                {
-                    currentVariant = pathWithoutSuffix + QLatin1Char('-') + QString::number(counter++) + suffix;
-                }
-                while (usedDownloadPaths.contains(currentVariant));
-
-                usedDownloadPaths << currentVariant;
-                downloadUrl = QUrl::fromLocalFile(currentVariant);
-            }
-            else
-            {
-                usedDownloadPaths << suggestedPath;
-            }
-        }
-
-        settings.dest = downloadUrl.toLocalFile();
         allItems.append(settings);
-
-        if (settings.autoRotate && settings.mime == QLatin1String("image/jpeg"))
-        {
-            d->autoRotateItemsList << downloadUrl.toLocalFile();
-            qCDebug(DIGIKAM_IMPORTUI_LOG) << "autorotating for " << downloadUrl;
-        }
-
-        ++downloadedItems;
     }
 
-    if (downloadedItems <= 0)
+    if (allItems.isEmpty())
     {
         return false;
     }
@@ -2067,7 +1990,7 @@ bool ImportUI::downloadCameraItems(PAlbum* pAlbum, bool onlySelected, bool delet
     d->lastDestURL = url;
     d->statusProgressBar->setNotify(true);
     d->statusProgressBar->setProgressValue(0);
-    d->statusProgressBar->setProgressTotalSteps(downloadedItems);
+    d->statusProgressBar->setProgressTotalSteps(allItems.count());
     d->statusProgressBar->setProgressBarMode(StatusProgressBar::ProgressBarMode);
 
     // enable cancel action.
@@ -2082,23 +2005,27 @@ bool ImportUI::downloadCameraItems(PAlbum* pAlbum, bool onlySelected, bool delet
 
     d->deleteAfter = deleteAfter;
 
+    d->downloadedItemList.clear();
+    d->downloadedDateList.clear();
+    d->foldersToScan.clear();
+
     d->controller->download(allItems);
 
     return true;
 }
 
-bool ImportUI::createSubAlbums(QUrl& downloadUrl, const CamItemInfo& info)
+bool ImportUI::createSubAlbums(QUrl& downloadUrl, const QString& suffix, const QDateTime& dateTime)
 {
     bool success = true;
 
     if (d->albumCustomizer->autoAlbumDateEnabled())
     {
-        success &= createDateBasedSubAlbum(downloadUrl, info);
+        success &= createDateBasedSubAlbum(downloadUrl, dateTime);
     }
 
     if (d->albumCustomizer->autoAlbumExtEnabled())
     {
-        success &= createExtBasedSubAlbum(downloadUrl, info);
+        success &= createExtBasedSubAlbum(downloadUrl, suffix, dateTime.date());
     }
 
     return success;
@@ -2110,7 +2037,7 @@ bool ImportUI::createSubAlbum(QUrl& downloadUrl, const QString& subalbum, const 
 
     if (!createAutoAlbum(downloadUrl, subalbum, date, errMsg))
     {
-        QMessageBox::critical(this, qApp->applicationName(), errMsg);
+        // QMessageBox::critical(this, qApp->applicationName(), errMsg);
 
         return false;
     }
@@ -2121,10 +2048,9 @@ bool ImportUI::createSubAlbum(QUrl& downloadUrl, const QString& subalbum, const 
     return true;
 }
 
-bool ImportUI::createDateBasedSubAlbum(QUrl& downloadUrl, const CamItemInfo& info)
+bool ImportUI::createDateBasedSubAlbum(QUrl& downloadUrl, const QDateTime& dateTime)
 {
     QString dirName;
-    QDateTime dateTime = info.ctime;
 
     switch (d->albumCustomizer->folderDateFormat())
     {
@@ -2148,40 +2074,35 @@ bool ImportUI::createDateBasedSubAlbum(QUrl& downloadUrl, const CamItemInfo& inf
     return createSubAlbum(downloadUrl, dirName, dateTime.date());
 }
 
-bool ImportUI::createExtBasedSubAlbum(QUrl& downloadUrl, const CamItemInfo& info)
+bool ImportUI::createExtBasedSubAlbum(QUrl& downloadUrl, const QString& suffix, const QDate& date)
 {
-    // We use the target file name to compute sub-albums name to take a care about
+    // We use the target file suffix to compute sub-albums name to take a care about
     // conversion on the fly option.
 
-    QFileInfo fi(info.downloadName.isEmpty()
-                 ? info.name
-                 : info.downloadName);
+    QString subAlbum = suffix.toUpper();
 
-    QString subAlbum = fi.suffix().toUpper();
-
-    if (
-        (fi.suffix().toUpper() == QLatin1String("JPEG")) ||
-        (fi.suffix().toUpper() == QLatin1String("JPE"))
-       )
+    if      (
+             (subAlbum == QLatin1String("JPEG")) ||
+             (subAlbum == QLatin1String("JPE"))
+            )
     {
         subAlbum = QLatin1String("JPG");
     }
-
-    if (fi.suffix().toUpper() == QLatin1String("TIFF"))
+    else if (subAlbum == QLatin1String("TIFF"))
     {
         subAlbum = QLatin1String("TIF");
     }
 
-    if (
-        (fi.suffix().toUpper() == QLatin1String("MPEG")) ||
-        (fi.suffix().toUpper() == QLatin1String("MPE"))  ||
-        (fi.suffix().toUpper() == QLatin1String("MTS"))
-       )
+    else if (
+             (subAlbum == QLatin1String("MPEG")) ||
+             (subAlbum == QLatin1String("MPE"))  ||
+             (subAlbum == QLatin1String("MTS"))
+            )
     {
         subAlbum = QLatin1String("MPG");
     }
 
-    return createSubAlbum(downloadUrl, subAlbum, info.ctime.date());
+    return createSubAlbum(downloadUrl, subAlbum, date);
 }
 
 void ImportUI::slotDeleteAfterDownload()
@@ -2235,23 +2156,30 @@ void ImportUI::slotNewSelection(bool hasSelection)
 {
     updateActions();
 
-    QList<ParseSettings> renameFiles;
-    const CamItemInfoList& list = hasSelection ? d->view->selectedCamItemInfos() : d->view->allItems();
+    const CamItemInfoList& list = d->view->selectedCamItemInfos();
 
-    Q_FOREACH (const CamItemInfo& info, list)
+    if (hasSelection && !list.isEmpty())
     {
+        QList<ParseSettings> renameFiles;
+        const CamItemInfo& info = list.constFirst();
+
         ParseSettings parseSettings;
 
         parseSettings.fileUrl      = info.url();
         parseSettings.creationTime = info.ctime;
         renameFiles.append(parseSettings);
+
+        d->renameCustomizer->renameManager()->reset();
+        d->renameCustomizer->renameManager()->addFiles(renameFiles);
+        d->renameCustomizer->renameManager()->parseFiles();
+
+        slotUpdateRenamePreview();
     }
-
-    d->renameCustomizer->renameManager()->reset();
-    d->renameCustomizer->renameManager()->addFiles(renameFiles);
-    d->renameCustomizer->renameManager()->parseFiles();
-
-    slotUpdateDownloadName();
+    else
+    {
+        d->renameCustomizer->renameManager()->reset();
+        d->renameCustomizer->setPreviewText(QString());
+    }
 
     unsigned long fSize = 0;
     unsigned long dSize = 0;
@@ -2336,28 +2264,172 @@ QString ImportUI::identifyCategoryforMime(const QString& mime)
     return mime.split(QLatin1Char('/')).at(0);
 }
 
-void ImportUI::autoRotateItems()
+void ImportUI::postProcessAfterDownload()
 {
-    if (d->statusProgressBar->progressValue() != d->statusProgressBar->progressTotalSteps())
+    if (d->downloadedItemList.isEmpty())
     {
         return;
     }
 
-    if (d->autoRotateItemsList.isEmpty())
+    KSharedConfig::Ptr config              = KSharedConfig::openConfig();
+    KConfigGroup group                     = config->group(d->configGroupName);
+    SetupCamera::ConflictRule conflictRule = (SetupCamera::ConflictRule)group.readEntry(d->configFileSaveConflictRule,
+                                                                                        (int)SetupCamera::DIFFNAME);
+
+    // Is auto-rotate option checked?
+
+    bool autoRotate = downloadSettings().autoRotate;
+    QList<ParseSettings> renameFiles;
+    QStringList renamedItemsList;
+
+    for (int i = 0 ; i < d->downloadedItemList.size() ; ++i)
     {
-        return;
+        ParseSettings parseSettings;
+
+        parseSettings.fileUrl      = QUrl::fromLocalFile(d->downloadedItemList.at(i));
+        parseSettings.creationTime = d->downloadedDateList.at(i);
+        renameFiles.append(parseSettings);
     }
 
-    ItemInfoList list;
+    d->renameCustomizer->renameManager()->reset();
+    d->renameCustomizer->renameManager()->setCutFileName(39);
+    d->renameCustomizer->renameManager()->addFiles(renameFiles);
+    d->renameCustomizer->renameManager()->parseFiles();
 
-    Q_FOREACH (const QString& downloadPath, d->autoRotateItemsList)
+    Q_FOREACH (const QString& srcFile, d->downloadedItemList)
     {
-        list << ItemInfo::fromLocalFile(downloadPath);
+        QFileInfo srcInfo(srcFile);
+
+        QString newName;
+        QString orgName = srcInfo.fileName().mid(39);
+
+        if (d->renameCustomizer->useDefault())
+        {
+            newName = d->renameCustomizer->newName(orgName);
+        }
+        else
+        {
+            newName = d->renameCustomizer->newName(srcFile);
+        }
+
+        QString dstFile = srcInfo.path() + QLatin1Char('/') + newName;
+        QFileInfo dstInfo(dstFile);
+
+        if      (dstInfo.exists() && (conflictRule == SetupCamera::SKIPFILE))
+        {
+            QFile::remove(srcFile);
+
+            slotLogMsg(xi18n("Skipped file <filename>%1</filename>", dstInfo.fileName()),
+                       DHistoryView::WarningEntry);
+
+            // setDownloaded(info, CamItemInfo::DownloadedNo);
+
+            continue;
+        }
+        else if (conflictRule != SetupCamera::OVERWRITE)
+        {
+            bool newurl = false;
+            dstFile     = DFileOperations::getUniqueFileUrl(QUrl::fromLocalFile(dstFile), &newurl).toLocalFile();
+            dstInfo     = QFileInfo(dstFile);
+
+            if (newurl)
+            {
+                slotLogMsg(xi18n("Rename file to <filename>%1</filename>", dstInfo.fileName()),
+                                 DHistoryView::WarningEntry);
+            }
+        }
+
+        // move the file to the destination file
+
+        if (DMetadata::hasSidecar(srcFile))
+        {
+            QString sctemp = DMetadata::sidecarPath(srcFile);
+            QString scdest = DMetadata::sidecarPath(dstFile);
+
+            qCDebug(DIGIKAM_IMPORTUI_LOG) << "File" << sctemp << " has a sidecar, renaming it to " << scdest;
+
+            // remove scdest file if it exist
+
+            if ((sctemp != scdest) && QFile::exists(sctemp) && QFile::exists(scdest))
+            {
+                QFile::remove(scdest);
+            }
+
+            if (!DFileOperations::renameFile(sctemp, scdest))
+            {
+                slotLogMsg(xi18n("Failed to save sidecar file for <filename>%1</filename>", dstInfo.fileName()),
+                           DHistoryView::ErrorEntry);
+            }
+        }
+
+        // remove dest file if it exist
+
+        if ((srcFile != dstFile) && QFile::exists(srcFile) && QFile::exists(dstFile))
+        {
+            QFile::remove(dstFile);
+        }
+
+        if (!DFileOperations::renameFile(srcFile, dstFile))
+        {
+            qCDebug(DIGIKAM_IMPORTUI_LOG) << "Renaming " << srcFile << " to " << dstFile << " failed";
+
+            // rename failed. delete the temp file
+
+            QFile::remove(srcFile);
+
+            slotLogMsg(xi18n("Failed to download <filename>%1</filename>", dstInfo.fileName()),
+                       DHistoryView::ErrorEntry);
+        }
+        else
+        {
+            renamedItemsList << dstFile;
+        }
     }
 
-    FileActionMngr::instance()->transform(list, MetaEngineRotation::NoTransformation);
+    NewItemsFinder* const tool = new NewItemsFinder(NewItemsFinder::ScheduleCollectionScan, d->foldersToScan);
+    tool->start();
 
-    d->autoRotateItemsList.clear();
+    d->foldersToScan.clear();
+    d->downloadedItemList.clear();
+    d->downloadedDateList.clear();
+
+    // Pop-up a notification to inform user when all is done,
+    // and inform if auto-rotation will take place.
+
+    if (autoRotate)
+    {
+        DNotificationWrapper(QLatin1String("cameradownloaded"),
+                             i18nc("@info Popup notification",
+                                   "Images download finished, you can now detach "
+                                   "your camera while the images are auto-rotated"),
+                             this, windowTitle());
+
+        connect(tool, &NewItemsFinder::signalComplete,
+                this, [=]()
+            {
+                ItemInfoList infoList;
+
+                Q_FOREACH (const QString& dstFile, renamedItemsList)
+                {
+                    ItemInfo itemInfo = ItemInfo::fromLocalFile(dstFile);
+
+                    if (itemInfo.format() == QLatin1String("JPG"))
+                    {
+                        infoList << itemInfo;
+                    }
+                }
+
+                FileActionMngr::instance()->transform(infoList, MetaEngineRotation::NoTransformation);
+            }
+        );
+    }
+    else
+    {
+        DNotificationWrapper(QLatin1String("cameradownloaded"),
+                             i18nc("@info Popup notification",
+                                   "Images download finished"),
+                             this, windowTitle());
+    }
 }
 
 bool ImportUI::createAutoAlbum(const QUrl& parentURL, const QString& sub,

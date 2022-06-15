@@ -104,7 +104,7 @@ public:
 
     /// Variable values depending of user actions.
     int                downloaded;           ///< Download status of camera file. See DownloadStatus enum for details
-    QString            downloadName;         ///< New file-name to use during download from camera
+    QString            downloadName;         ///< Preview of the file-name to use during download from camera
 
     /// Unique image id
     qlonglong          id;

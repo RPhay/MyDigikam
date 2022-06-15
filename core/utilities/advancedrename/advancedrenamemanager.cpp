@@ -89,7 +89,8 @@ public:
         parserType   (AdvancedRenameManager::DefaultParser),
         sortAction   (AdvancedRenameManager::SortCustom),
         sortDirection(AdvancedRenameManager::SortAscending),
-        startIndex   (1)
+        startIndex   (1),
+        cutFileName  (0)
     {
     }
 
@@ -109,6 +110,7 @@ public:
     AdvancedRenameManager::SortDirection sortDirection;
 
     int                                  startIndex;
+    int                                  cutFileName;
 };
 
 AdvancedRenameManager::AdvancedRenameManager()
@@ -176,6 +178,11 @@ void AdvancedRenameManager::setStartIndex(int index)
 {
     d->startIndex = (index < 1) ? 1 : index;
     initialize();
+}
+
+void AdvancedRenameManager::setCutFileName(int index)
+{
+    d->cutFileName = index;
 }
 
 void AdvancedRenameManager::setWidget(AdvancedRenameWidget* widget)
@@ -266,6 +273,7 @@ void AdvancedRenameManager::parseFiles(const QString& parseString)
         settings.fileUrl      = url;
         settings.parseString  = parseString;
         settings.startIndex   = d->startIndex;
+        settings.cutFileName  = d->cutFileName;
         settings.creationTime = d->fileDatesMap[file];
         settings.manager      = this;
         d->renamedFiles[file] = d->parser->parse(settings);

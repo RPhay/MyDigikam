@@ -92,6 +92,7 @@ public:
     SortDirection sortDirection()                                       const;
 
     void setStartIndex(int index);
+    void setCutFileName(int index);
 
     void setWidget(AdvancedRenameWidget* widget);
 

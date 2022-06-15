@@ -77,4 +77,8 @@ BUGFIXES:
 058 ==> 454656 - When locales not set, crash occurs when opening "Settings -> Configure digiKam".
 059 ==> 435377 - Speed up image preview.
 060 ==> 382362 - Locale database mismatch between Windows and Linux.
-061 ==> 
+061 ==> 452088 - Mixed up creation time and time of import.
+062 ==> 444928 - Include rename functionality (F2) also to image import tool.
+063 ==> 386072 - Can't access EXIF data on some (very few!) pictures from import camera window - works fine after that.
+064 ==> 381214 - Import may mix up picture content and metadata of different pictures.
+065 ==> 

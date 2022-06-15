@@ -84,7 +84,10 @@ QString FilePropertiesOption::parseOperation(ParseSettings& settings, const QReg
 
     if      (token == KEY_FILE)
     {
-        result = fi.completeBaseName();
+        QString fileName = fi.completeBaseName();
+        int index        = settings.cutFileName;
+
+        result = fileName.mid(index);
     }
     else if (token == KEY_USER)
     {

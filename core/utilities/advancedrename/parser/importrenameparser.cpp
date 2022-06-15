@@ -42,9 +42,7 @@ ImportRenameParser::ImportRenameParser()
 
     Q_FOREACH (Rule* const option, oplist)
     {
-        if (dynamic_cast<DatabaseOption*>(option) ||
-            dynamic_cast<MetadataOption*>(option) ||
-            dynamic_cast<CameraNameOption*>(option))
+        if (dynamic_cast<DatabaseOption*>(option))
         {
             unregisterOption(option);
         }

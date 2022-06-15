@@ -35,7 +35,6 @@
 // Local includes
 
 #include "downloadsettings.h"
-#include "setupcamera.h"
 #include "camiteminfo.h"
 #include "dmetadata.h"
 #include "dkcamera.h"
@@ -90,7 +89,6 @@ public:
     CameraCommand* getThumbsInfo(const CamItemInfoList& infoList, int thumbSize);
     void moveThumbsInfo(CameraCommand* const cmd);
 
-    void downloadPrep(const SetupCamera::ConflictRule& rule);
     void download(const DownloadSettings& downloadSettings);
     void download(const DownloadSettingsList& list);
     void upload(const QFileInfo& srcFileInfo,
@@ -122,13 +120,8 @@ Q_SIGNALS:
     void signalUploaded(const CamItemInfo& itemInfo);
     void signalDownloaded(const QString& folder,
                           const QString& file,
+                          const QString& temp,
                           int status);
-    void signalDownloadComplete(const QString& sourceFolder,
-                                const QString& sourceFile,
-                                const QString& destFolder,
-                                const QString& destFile);
-    void signalSkipped(const QString& folder,
-                       const QString& file);
     void signalDeleted(const QString& folder,
                        const QString& file,
                        bool status);
@@ -146,11 +139,6 @@ Q_SIGNALS:
                         const QString& file,
                         const MetaEngineData& exifData);
 
-    void signalInternalCheckRename(const QString& folder,
-                                   const QString& file,
-                                   const QString& destination,
-                                   const QString& temp,
-                                   const QString& script);
     void signalInternalDownloadFailed(const QString& folder,
                                       const QString& file);
     void signalInternalUploadFailed(const QString& folder,
@@ -173,11 +161,6 @@ protected:
 
 private Q_SLOTS:
 
-    void slotCheckRename(const QString& folder,
-                         const QString& file,
-                         const QString& destination,
-                         const QString& temp,
-                         const QString& script);
     void slotDownloadFailed(const QString& folder,
                             const QString& file);
     void slotUploadFailed(const QString& folder,

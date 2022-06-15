@@ -117,6 +117,7 @@
 #include "capturedlg.h"
 #include "collectionlocation.h"
 #include "collectionmanager.h"
+#include "collectionscanner.h"
 #include "componentsinfodlg.h"
 #include "dlogoaction.h"
 #include "coredbdownloadhistory.h"
@@ -129,6 +130,7 @@
 #include "importview.h"
 #include "imagedialog.h"
 #include "dnotificationwrapper.h"
+#include "newitemsfinder.h"
 #include "parsesettings.h"
 #include "renamecustomizer.h"
 #include "scancontroller.h"
@@ -147,6 +149,8 @@
 #include "scriptingsettings.h"
 #include "filterstatusbar.h"
 #include "dnotificationwidget.h"
+#include "dfileoperations.h"
+#include "setupcamera.h"
 
 namespace Digikam
 {
@@ -250,8 +254,10 @@ public:
 
     QString                            cameraTitle;
 
-    QStringList                        autoRotateItemsList;
+    QList<QDateTime>                   downloadedDateList;
+    QStringList                        downloadedItemList;
     QStringList                        currentlyDeleting;
+    QStringList                        foldersToScan;
 
     QMenu*                             downloadMenu;
     QMenu*                             deleteMenu;
