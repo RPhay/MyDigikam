@@ -418,8 +418,11 @@ void AudioOutputXAudio2::onCallback()
 
 bool AudioOutputXAudio2::write(const QByteArray& data)
 {
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("sem: %d, write: %d/%d", sem.available(), queue_data_write, queue_data.size());
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("sem: %d, write: %d/%d",
+            sem.available(), queue_data_write, queue_data.size());
+*/
     if (bufferControl() & CountCallback)
         sem.acquire();
 
@@ -436,9 +439,9 @@ bool AudioOutputXAudio2::write(const QByteArray& data)
 
     memset(&xb, 0, sizeof(XAUDIO2_BUFFER));
     xb.AudioBytes     = data.size();
-
-    //xb.Flags = XAUDIO2_END_OF_STREAM;
-
+/*
+    xb.Flags = XAUDIO2_END_OF_STREAM;
+*/
     xb.pContext       = this;
     xb.pAudioData     = (const BYTE*)(queue_data.constData() + queue_data_write);
     queue_data_write += data.size();

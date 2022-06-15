@@ -598,7 +598,7 @@ bool VideoDecoderCUDA::decode(const Packet& packet)
 
     // callbacks are in the same thread as this. so no queue is required?
 /*
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote()
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
         << QString::asprintf("frame queue size on decode: %d",
             d.frame_queue.size());
 */

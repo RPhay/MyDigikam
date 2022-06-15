@@ -151,9 +151,11 @@ static VertexData* SetVertexPositionAndNormalize(VertexData* v, float x, float y
     v[2].ty /= texH;
     v[3].tx /= texW;
     v[3].ty /= texH;
-
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("%f,%f<=%f,%f; %u,%u,%u,%u", v[3].x, v[3].y, v[3].tx, v[3].ty, v[3].r, v[3].g, v[3].b, v[3].a);
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("%f,%f<=%f,%f; %u,%u,%u,%u",
+            v[3].x, v[3].y, v[3].tx, v[3].ty, v[3].r, v[3].g, v[3].b, v[3].a);
+*/
     if (!useIndecies)
     {
         v[4] = v[1];

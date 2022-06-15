@@ -170,9 +170,11 @@ bool HostInteropResource::map(int picIndex, const CUVIDPROCPARAMS& param,
 
         CUdeviceptr devptr;
         unsigned int pitch;
-
-        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("index: %d=>%d, plane: %d", host_mem.index, picIndex, plane);
-
+/*
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("index: %d=>%d, plane: %d",
+                host_mem.index, picIndex, plane);
+*/
         CUDA_ENSURE(cuvidMapVideoFrame(dec, picIndex, &devptr, &pitch, const_cast<CUVIDPROCPARAMS*>(&param)), false);
         CUVIDAutoUnmapper unmapper(this, dec, devptr);
         Q_UNUSED(unmapper);
@@ -187,9 +189,11 @@ bool HostInteropResource::map(int picIndex, const CUVIDPROCPARAMS& param,
     }
 
     // map to texture
-
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("map plane %d @%d", plane, picIndex);
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("map plane %d @%d",
+            plane, picIndex);
+*/
     GLint iformat[2];
     GLenum format[2], dtype[2];
     OpenGLHelper::videoFormatToGL(VideoFormat::Format_NV12, iformat, format, dtype);
@@ -202,9 +206,11 @@ bool HostInteropResource::map(int picIndex, const CUVIDPROCPARAMS& param,
     DYGL(glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, host_mem.pitch >> chroma,
                          h >> chroma, format[plane], dtype[plane],
                          host_mem.data + chroma * host_mem.pitch * host_mem.height));
-
-    //DYGL(glTexImage2D(GL_TEXTURE_2D, 0, iformat[plane], host_mem.pitch>>chroma, h>>chroma, 0, format[plane], dtype[plane], host_mem.data + chroma*host_mem.pitch*host_mem.height));
-
+/*
+    DYGL(glTexImage2D(GL_TEXTURE_2D, 0, iformat[plane], host_mem.pitch>>chroma,
+                      h>>chroma, 0, format[plane], dtype[plane],
+                      host_mem.data + chroma*host_mem.pitch*host_mem.height));
+*/
     return true;
 }
 

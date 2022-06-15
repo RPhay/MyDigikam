@@ -971,9 +971,10 @@ bool AVDemuxer::seek(qint64 pos)
         seek_flag &= ~AVSEEK_FLAG_BACKWARD;
         ret        = av_seek_frame(d->format_ctx, -1, upos, seek_flag);
     }
-
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("av_seek_frame ret: %d", ret);
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("av_seek_frame ret: %d", ret);
+*/
 #endif
 
     if (ret < 0)

@@ -524,8 +524,9 @@ VideoFrame VideoDecoderVAAPI::frame()
         {
             vaDeriveImage(d.display->get(), p->get(), &img);
             fmt = pixelFormatFromVA(img.format.fourcc);
-
-            //qCDebug(DIGIKAM_QTAV_LOG) << fmt;//pixelFormatFromVA(img.format.fourcc);
+/*
+            qCDebug(DIGIKAM_QTAV_LOG) << fmt; // pixelFormatFromVA(img.format.fourcc);
+*/
         }
 
         VideoFrame f(d.width, d.height, fmt);

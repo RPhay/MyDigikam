@@ -253,8 +253,11 @@ VideoFrame VideoDecoderDXVA::frame()
 {
     DPTR_D(VideoDecoderDXVA);
 
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("frame size: %dx%d", d.frame->width, d.frame->height);
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("frame size: %dx%d",
+            d.frame->width, d.frame->height);
+*/
     if (!d.frame->opaque || !d.frame->data[0])
         return VideoFrame();
 

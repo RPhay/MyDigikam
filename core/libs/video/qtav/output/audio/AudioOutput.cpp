@@ -860,8 +860,11 @@ bool AudioOutput::waitForNextBuffer()
 
         const int next     = fi.data.size();
 
-        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("remain: %d-%d, size: %d, next: %d", processed, d.processed_remain, d.data.size(), next);
-
+/*
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("remain: %d-%d, size: %d, next: %d",
+                processed, d.processed_remain, d.data.size(), next);
+*/
         qint64 last_wait   = 0LL;
 
         while (((d.processed_remain - processed) < next) || (d.processed_remain < fi.data.size()))
@@ -983,9 +986,11 @@ bool AudioOutput::waitForNextBuffer()
 
         int s         = d.backend->getOffsetByBytes();
         int processed = s - d.play_pos;
-
-        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("s: %d, play_pos: %d, processed: %d, bufferSizeTotal: %d", s, d.play_pos, processed, bufferSizeTotal());
-
+/*
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("s: %d, play_pos: %d, processed: %d, bufferSizeTotal: %d",
+                s, d.play_pos, processed, bufferSizeTotal());
+*/
         if (processed < 0)
             processed += bufferSizeTotal();
 
@@ -1064,20 +1069,25 @@ bool AudioOutput::waitForNextBuffer()
             d.frame_infos.pop_front();
             next = d.frame_infos.front().data.size();
         }
-
-        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("remove: %d, unremoved bytes < %d, writable_bytes: %d", remove, free_bytes, d.processed_remain);
-
+/*
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("remove: %d, unremoved bytes < %d, writable_bytes: %d",
+                remove, free_bytes, d.processed_remain);
+*/
         return true;
     }
-
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("remove count: %d", remove);
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("remove count: %d", remove);
+*/
     while (remove-- > 0)
     {
         if (d.frame_infos.empty())
         {
-            //qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("empty. can not pop!");
-
+/*
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                << QString::asprintf("empty. can not pop!");
+*/
             break;
         }
 

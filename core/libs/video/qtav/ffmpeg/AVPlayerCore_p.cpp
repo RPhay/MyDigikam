@@ -433,9 +433,11 @@ void AVPlayerCore::Private::initCommonStatistics(int s, Statistics::Common* st, 
 
     // http://ffmpeg.org/faq.html#AVStream_002er_005fframe_005frate-is-wrong_002c-it-is-much-larger-than-the-frame-rate_002e        // krazy:exclude=insecurenet
     // http://libav-users.943685.n4.nabble.com/Libav-user-Reading-correct-frame-rate-fps-of-input-video-td4657666.html              // krazy:exclude=insecurenet
-
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("time: %f~%f, nb_frames=%lld", st->start_time, st->total_time, stream->nb_frames); //why crash on mac? av_q2d({0,0})?
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("time: %f~%f, nb_frames=%lld",
+            st->start_time, st->total_time, stream->nb_frames); // why crash on mac? av_q2d({0,0})?
+*/
     AVDictionaryEntry* tag = nullptr;
 
     while ((tag = av_dict_get(stream->metadata, "", tag, AV_DICT_IGNORE_SUFFIX)))

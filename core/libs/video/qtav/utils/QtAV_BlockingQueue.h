@@ -198,9 +198,10 @@ bool BlockingQueue<T, Container>::put(const T& t, unsigned long timeout_ms)
     if (checkFull())
     {
         ret = false;
-
-        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("queue full"); //too frequent
-
+/*
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("queue full"); // too frequent
+*/
         if (full_callback)
         {
             full_callback->call();

@@ -155,9 +155,11 @@ void AudioOutputAudioToolbox::outCallback(void* inUserData, AudioQueueRef inAQ, 
 
         ao->m_cond.wakeOne();
     }
-
-    //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("callback. sem: %d, fill queue: %d", ao->sem.available(), ao->m_buffer_fill.size());
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()
+        << QString::asprintf("callback. sem: %d, fill queue: %d",
+            ao->sem.available(), ao->m_buffer_fill.size());
+*/
     ao->tryPauseTimeline();
 }
 

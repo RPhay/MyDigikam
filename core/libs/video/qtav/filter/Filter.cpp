@@ -171,14 +171,19 @@ bool VideoFilter::prepareContext(VideoFilterContext*& ctx, Statistics* statistic
 
     if (!ctx || !isSupported(ctx->type()))
     {
-        //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("no context: %p, or context type %d is not supported", ctx, ctx? ctx->type() : 0);
-
+/*
+        qCDebug(DIGIKAM_QTAV_LOG).noquote()
+            << QString::asprintf("no context: %p, or context type %d is not supported",
+                ctx, ctx? ctx->type() : 0);
+*/
         return isSupported(VideoFilterContext::None);
     }
 
     if (!d.context || d.context->type() != ctx->type())
     {
-        VideoFilterContext* const c = VideoFilterContext::create(ctx->type());//each filter has it's own context instance, but share the common parameters
+        // each filter has it's own context instance, but share the common parameters
+
+        VideoFilterContext* const c = VideoFilterContext::create(ctx->type());
 
         if (d.context)
         {

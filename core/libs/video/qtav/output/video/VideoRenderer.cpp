@@ -679,7 +679,8 @@ void VideoRenderer::handlePaintEvent()
             }
         }
 
-        /* begin paint. how about QPainter::beginNativePainting()?
+        /**
+         * begin paint. how about QPainter::beginNativePainting()?
          * fill background color when necessary, e.g. renderer is resized, image is null
          * if we access d.data which will be modified in AVThread, the following must be
          * protected by mutex. otherwise, e.g. QPainterRenderer, it's not required if drawing
@@ -696,8 +697,11 @@ void VideoRenderer::handlePaintEvent()
         {
             drawFrame();
 
-            //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("render elapsed: %lld", et.elapsed());
-
+/*
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("render elapsed: %lld",
+                    et.elapsed());
+*/
             if (d.statistics)
             {
                 d.statistics->video_only.frameDisplayed(d.video_frame.timestamp());

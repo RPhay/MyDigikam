@@ -466,8 +466,9 @@ bool SubtitleProcessorFFmpeg::processHeader(const QByteArray& codec, const QByte
 
 SubtitleFrame SubtitleProcessorFFmpeg::processLine(const QByteArray& data, qreal pts, qreal duration)
 {
-    //qCDebug(DIGIKAM_QTAV_LOG) << "line: " << data;
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG) << "line: " << data;
+*/
     if (!codec_ctx)                                 // cppcheck-suppress identicalConditionAfterEarlyExit
     {
         return SubtitleFrame();
@@ -507,15 +508,17 @@ SubtitleFrame SubtitleProcessorFFmpeg::processLine(const QByteArray& data, qreal
     packet.data = (uint8_t*)data.constData();
 
     /*
-     * ffmpeg <2.5: AVPakcet.data has original text including time info, decoder use that info to get correct time
+     * ffmpeg < 2.5: AVPacket.data has original text including time info, decoder use that info to get correct time
      * "Dialogue: 0,0:00:20.21,0:00:22.96,*Default,NTP,0000,0000,0000,blablabla
-     * ffmpeg >=2.5: AVPakcet.data changed, we have to set correct pts & duration for packet to be decoded
+     * ffmpeg >= 2.5: AVPacket.data changed, we have to set correct pts & duration for packet to be decoded
      * 16,0,*Default,NTP,0000,0000,0000,,blablabla
      */
 
     // no codec_ctx for internal sub
 
-    const double unit = 1.0 / av_q2d(codec_ctx->time_base); // time_base is deprecated, use framerate since 17085a0, check FF_API_AVCTX_TIMEBASE
+    // time_base is deprecated, use framerate since 17085a0, check FF_API_AVCTX_TIMEBASE
+
+    const double unit = 1.0 / av_q2d(codec_ctx->time_base);
     packet.pts        = pts * unit;
     packet.duration   = duration * unit;
     AVSubtitle sub;
@@ -538,34 +541,45 @@ SubtitleFrame SubtitleProcessorFFmpeg::processLine(const QByteArray& data, qreal
     frame.begin = pts + qreal(sub.start_display_time) / 1000.0;
     frame.end   = pts + qreal(sub.end_display_time)   / 1000.0;
 
-    //qCDebug(DIGIKAM_QTAV_LOG) << QTime(0, 0, 0).addMSecs(frame.begin*1000.0) << "-" << QTime(0, 0, 0).addMSecs(frame.end*1000.0) << " fmt: " << sub.format << " pts: " << m_reader.packet().pts //sub.pts
-    //       << " rects: " << sub.num_rects << " end: " << sub.end_display_time;
-
+/*
+    qCDebug(DIGIKAM_QTAV_LOG) << QTime(0, 0, 0).addMSecs(frame.begin*1000.0)
+                              << "-" << QTime(0, 0, 0).addMSecs(frame.end*1000.0)
+                              << " fmt: " << sub.format << " pts: " << m_reader.packet().pts //sub.pts
+                              << " rects: " << sub.num_rects << " end: " << sub.end_display_time;
+*/
     for (unsigned i = 0 ; i < sub.num_rects ; ++i)
     {
         switch (sub.rects[i]->type)
         {
             case SUBTITLE_ASS:
             {
-                //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("ass frame: %s", sub.rects[i]->ass);
-
+/*
+                qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                    << QString::asprintf("ass frame: %s",
+                        sub.rects[i]->ass);
+*/
                 frame.text.append(PlainText::fromAss(sub.rects[i]->ass)).append(ushort('\n'));
                 break;
             }
 
             case SUBTITLE_TEXT:
             {
-                //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("txt frame: %s", sub.rects[i]->text);
-
+/*
+                qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                    << QString::asprintf("txt frame: %s",
+                        sub.rects[i]->text);
+*/
                 frame.text.append(QString::fromUtf8(sub.rects[i]->text)).append(ushort('\n'));
                 break;
             }
 
             case SUBTITLE_BITMAP:
             {
-                //sub.rects[i]->w > 0 && sub.rects[i]->h > 0
-                //qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("bmp sub");
-
+                // sub.rects[i]->w > 0 && sub.rects[i]->h > 0
+/*
+                qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                    << QString::asprintf("bmp sub");
+*/
                 frame = SubtitleFrame(); // not support bmp subtitle now
                 break;
             }
