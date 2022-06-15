@@ -95,6 +95,8 @@ else()
 
 endif()
 
+HEADER_DIRECTORIES(${CMAKE_SOURCE_DIR}/core/utilities DK_LOCAL_INCLUDES_UTILS)
+
 target_include_directories(showfoto
                            PRIVATE
 
@@ -117,18 +119,7 @@ target_include_directories(showfoto
                            ${CMAKE_SOURCE_DIR}/core/app/items/overlays
                            ${CMAKE_SOURCE_DIR}/core/app/views/sidebar
 
-                           ${CMAKE_SOURCE_DIR}/core/utilities/geolocation/geoiface/core
-                           ${CMAKE_SOURCE_DIR}/core/utilities/geolocation/geoiface/items
-                           ${CMAKE_SOURCE_DIR}/core/utilities/geolocation/geoiface/correlator
-                           ${CMAKE_SOURCE_DIR}/core/utilities/geolocation/geoiface/reversegeocoding
-                           ${CMAKE_SOURCE_DIR}/core/utilities/setup
-                           ${CMAKE_SOURCE_DIR}/core/utilities/setup/editor
-                           ${CMAKE_SOURCE_DIR}/core/utilities/setup/system
-                           ${CMAKE_SOURCE_DIR}/core/utilities/setup/camera
-                           ${CMAKE_SOURCE_DIR}/core/utilities/setup/downloader
-                           ${CMAKE_SOURCE_DIR}/core/utilities/imageeditor/core
-                           ${CMAKE_SOURCE_DIR}/core/utilities/imageeditor/editor
-                           ${CMAKE_SOURCE_DIR}/core/utilities/imageeditor/widgets
+                           ${DK_LOCAL_INCLUDES_UTILS}
 )
 
 if(KF5IconThemes_FOUND)
