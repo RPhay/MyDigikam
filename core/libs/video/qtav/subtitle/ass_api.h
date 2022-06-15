@@ -57,23 +57,31 @@ namespace ass
 
 #ifndef CAPI_LINK_ASS
 
-using namespace capi; // original header is in namespace capi, types are changed
+// original header is in namespace capi, types are changed
+
+using namespace capi; 
 
 #endif
 
-namespace capi { bool loaded(); } // For link or NS style. Or load test for class style. api.loaded for class style.
+// For link or NS style. Or load test for class style. api.loaded for class style.
+
+namespace capi
+{
+    bool loaded();
+}
 
 class api_dll;
 
 class api
 {
-    api_dll* dll = nullptr;
-
 public:
 
     api();
     virtual ~api();
-    virtual bool loaded() const; // user may inherits multiple api classes: final::loaded() { return base1::loaded() && base2::loaded();}
+
+    // user may inherits multiple api classes: final::loaded() { return base1::loaded() && base2::loaded();}
+
+    virtual bool loaded() const;
 
 #if !defined(CAPI_LINK_ASS) && !defined(ASS_CAPI_NS)
 
@@ -85,7 +93,7 @@ public:
     void ass_set_style_overrides(ASS_Library* priv, char** list);
     void ass_process_force_style(ASS_Track* track);
     void ass_set_message_cb(ASS_Library* priv, void (*msg_cb)
-                        (int level, const char* fmt, va_list args, void* data), void* data);
+                            (int level, const char* fmt, va_list args, void* data), void* data);
     ASS_Renderer* ass_renderer_init(ASS_Library*);
     void ass_renderer_done(ASS_Renderer* priv);
     void ass_set_frame_size(ASS_Renderer* priv, int w, int h);
@@ -99,7 +107,8 @@ public:
     void ass_set_hinting(ASS_Renderer* priv, ASS_Hinting ht);
     void ass_set_line_spacing(ASS_Renderer* priv, double line_spacing);
     void ass_set_line_position(ASS_Renderer* priv, double line_position);
-    void ass_set_fonts(ASS_Renderer* priv, const char* default_font, const char* default_family, int dfp, const char* config, int update);
+    void ass_set_fonts(ASS_Renderer* priv, const char* default_font, const char* default_family,
+                       int dfp, const char* config, int update);
     void ass_set_selective_style_override_enabled(ASS_Renderer* priv, int bits);
     void ass_set_selective_style_override(ASS_Renderer* priv, ASS_Style* style);
     int ass_fonts_update(ASS_Renderer* priv);
@@ -124,6 +133,10 @@ public:
     long long ass_step_sub(ASS_Track* track, long long now, int movement);
 
 #endif
+
+private:
+
+    api_dll* dll = nullptr;
 
 private:
 
