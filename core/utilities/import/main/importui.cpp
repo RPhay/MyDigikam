@@ -1444,17 +1444,25 @@ void ImportUI::slotDownloaded(const QString& folder, const QString& file, const 
             QString sctemp = DMetadata::sidecarPath(temp);
             QString scdest = DMetadata::sidecarPath(dest);
 
-            DFileOperations::renameFile(sctemp, scdest);
+            if (!DFileOperations::renameFile(sctemp, scdest))
+            {
+                slotLogMsg(xi18n("Failed to move sidecar file for <filename>%1</filename>", tempInfo.fileName()),
+                                 DHistoryView::ErrorEntry);
+            }
         }
 
-        DFileOperations::renameFile(temp, dest);
+        if (!DFileOperations::renameFile(temp, dest))
+        {
+            slotLogMsg(xi18n("Failed to move file for <filename>%1</filename>", tempInfo.fileName()),
+                             DHistoryView::ErrorEntry);
+        }
 
         d->downloadedItemList << dest;
         d->downloadedDateList << creationDate;
 
-        if (!d->foldersToScan.contains(tempInfo.path()))
+        if (!d->foldersToScan.contains(downloadUrl.toLocalFile()))
         {
-            d->foldersToScan << tempInfo.path();
+            d->foldersToScan << downloadUrl.toLocalFile();
         }
     }
 
@@ -2037,7 +2045,7 @@ bool ImportUI::createSubAlbum(QUrl& downloadUrl, const QString& subalbum, const 
 
     if (!createAutoAlbum(downloadUrl, subalbum, date, errMsg))
     {
-        // QMessageBox::critical(this, qApp->applicationName(), errMsg);
+        slotLogMsg(errMsg, DHistoryView::ErrorEntry);
 
         return false;
     }
@@ -2466,7 +2474,8 @@ bool ImportUI::createAutoAlbum(const QUrl& parentURL, const QString& sub,
 
     if (!parent)
     {
-        errMsg = i18nc("@info", "Failed to find Album for path \"%1\".", QDir::toNativeSeparators(parentURL.toLocalFile()));
+        errMsg = i18nc("@info", "Failed to find Album for path \"%1\".",
+                       QDir::toNativeSeparators(parentURL.toLocalFile()));
         return false;
     }
 
