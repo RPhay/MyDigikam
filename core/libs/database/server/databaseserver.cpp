@@ -484,8 +484,8 @@ bool DatabaseServer::checkAndRemoveMysqlLogs() const
 
     // Clear mysql ib_logfile's in case innodb_log_file_size option changed in last confUpdate
 
-    QFile(QDir(d->dataDir).absoluteFilePath(QLatin1String("ib_logfile0"))).remove();
-    QFile(QDir(d->dataDir).absoluteFilePath(QLatin1String("ib_logfile1"))).remove();
+    //QFile(QDir(d->dataDir).absoluteFilePath(QLatin1String("ib_logfile0"))).remove();
+    //QFile(QDir(d->dataDir).absoluteFilePath(QLatin1String("ib_logfile1"))).remove();
 
     return needUpgrade;
 }
