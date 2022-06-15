@@ -129,8 +129,11 @@ private:
 
                if (dwResult != WAIT_OBJECT_0)
                {
-                    //qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("WaitForSingleObjectEx for ao->notify_event error: %#lx", dwResult);
-
+/*
+                    qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                        << QString::asprintf("WaitForSingleObjectEx for ao->notify_event error: %#lx",
+                            dwResult);
+*/
                     continue;
                }
 

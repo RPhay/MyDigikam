@@ -34,9 +34,7 @@
 
 #include "QtAV_Global.h"
 
-
 class QDebug;
-
 
 namespace QtAV
 {

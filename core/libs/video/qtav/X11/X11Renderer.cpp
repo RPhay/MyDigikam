@@ -203,9 +203,9 @@ VideoFormat::PixelFormat pixelFormat(XImage* xi)
         {
             break;
         }
-
-        //qDebug() << fmte->fmt;
-
+/*
+        qCDebug(DIGIKAM_QTAV_LOG) << fmte->fmt;
+*/
         fmte++;
     }
 

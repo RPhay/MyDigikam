@@ -97,7 +97,7 @@ public:
         if (!glv.openGLContext())
         {
 /*
-            //qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
                 << QString::asprintf("no opengl context! set current");
 */
             // null if not called from renderering thread;

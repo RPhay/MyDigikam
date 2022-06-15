@@ -24,7 +24,7 @@
 #include "AVError.h"
 
 #ifndef QT_NO_DEBUG_STREAM
-#   include <qdebug.h>
+#   include <QDebug>
 #endif
 
 // KDE includes

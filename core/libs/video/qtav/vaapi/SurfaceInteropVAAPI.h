@@ -138,7 +138,10 @@ private:
 
 private:
 
-    QMap<GLuint, surface_glx_ptr> glx_surfaces; // render to different texture. surface_glx_ptr is created with texture
+    /**
+     * Used to render to different texture. surface_glx_ptr is created with texture
+     */
+    QMap<GLuint, surface_glx_ptr> glx_surfaces;
 };
 
 // ----------------------------------------------------------------------------------

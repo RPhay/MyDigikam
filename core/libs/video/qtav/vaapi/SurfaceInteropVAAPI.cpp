@@ -72,7 +72,11 @@ bool checkEGL_DMA()
 
 #   ifndef QT_NO_OPENGL
 
-    static const char* eglexts[] = { "EGL_EXT_image_dma_buf_import", nullptr };
+    static const char* eglexts[] =
+    {
+        "EGL_EXT_image_dma_buf_import",
+        nullptr
+    };
 
     return OpenGLHelper::hasExtensionEGL(eglexts);
 
@@ -88,7 +92,11 @@ bool checkEGL_Pixmap()
 
 #   ifndef QT_NO_OPENGL
 
-    static const char* eglexts[] = { "EGL_KHR_image_pixmap", nullptr };
+    static const char* eglexts[] =
+    {
+        "EGL_KHR_image_pixmap",
+        nullptr
+    };
 
     return OpenGLHelper::hasExtensionEGL(eglexts);
 
@@ -157,7 +165,9 @@ void* SurfaceInteropVAAPI::mapToHost(const VideoFormat& format, void* handle, in
     VA_ENSURE(vaGetImage(m_surface->vadisplay(), m_surface->get(), 0, 0,
               m_surface->width(), m_surface->height(), image.image_id), nullptr);
 
-    VA_ENSURE(vaMapBuffer(m_surface->vadisplay(), image.buf, &p_base), nullptr); // TODO: destroy image before return
+    // TODO: destroy image before return
+
+    VA_ENSURE(vaMapBuffer(m_surface->vadisplay(), image.buf, &p_base), nullptr);
 
     VideoFormat::PixelFormat pixfmt = pixelFormatFromVA(image.format.fourcc);
     bool swap_uv                    = (image.format.fourcc != VA_FOURCC_NV12);
@@ -311,16 +321,16 @@ private:
     Q_DISABLE_COPY(X11);
 };
 
-#   define RESOLVE_FUNC(func, resolver, st) do {    \
-    if (!func) {                                    \
-        typedef void (*ft)(void);                   \
-        ft f   = resolver((st)#func);               \
-        if (!f) {                                   \
-            qWarning(#func " is not available");    \
-            return 0;                               \
-        }                                           \
-        ft* fp = (ft*)(&func);                      \
-        *fp    = f;                                 \
+#   define RESOLVE_FUNC(func, resolver, st) do {                        \
+    if (!func) {                                                        \
+        typedef void (*ft)(void);                                       \
+        ft f   = resolver((st)#func);                                   \
+        if (!f) {                                                       \
+            qCWarning(DIGIKAM_QTAV_LOG) << #func " is not available";   \
+            return 0;                                                   \
+        }                                                               \
+        ft* fp = (ft*)(&func);                                          \
+        *fp    = f;                                                     \
     }} while(0)
 
 #   define RESOLVE_EGL(func) RESOLVE_FUNC(func, eglGetProcAddress, const char*)
@@ -636,7 +646,8 @@ bool X11InteropResource::map(const surface_ptr& surface, GLuint tex, int w, int 
 
     VAWARN(vaSyncSurface(surface->vadisplay(), surface->get()));
 
-    // FIXME: invalid surface at the first time vaPutSurface is called. If return false, vaPutSurface will always fail, why?
+    // FIXME: invalid surface at the first time vaPutSurface is called.
+    // If return false, vaPutSurface will always fail, why?
 
     VAWARN(vaPutSurface(surface->vadisplay(), surface->get(), x11->pixmap,
                         0, 0, w, h,
@@ -657,7 +668,8 @@ bool X11InteropResource::unmap(const surface_ptr& surface, GLuint tex)
     Q_UNUSED(surface);
     Q_UNUSED(tex);
 
-    // can not call glXReleaseTexImageEXT otherwise the texture will containts no image data
+    // can not call glXReleaseTexImageEXT otherwise the
+    // texture will containts no image data
 
     return true;
 }
@@ -673,7 +685,8 @@ bool X11InteropResource::unmap(const surface_ptr& surface, GLuint tex)
 #           define EGL_DMA_BUF_PLANE0_PITCH_EXT      0x3274
 #       endif
 
-// 2010 https://www.khronos.org/registry/egl/extensions/MESA/EGL_MESA_drm_image.txt: only support EGL_DRM_BUFFER_FORMAT_ARGB32_MESA
+// 2010 https://www.khronos.org/registry/egl/extensions/MESA/EGL_MESA_drm_image.txt:
+// only support EGL_DRM_BUFFER_FORMAT_ARGB32_MESA
 
 class Q_DECL_HIDDEN EGL
 {
@@ -768,8 +781,8 @@ bool EGLInteropResource::map(const surface_ptr& surface, GLuint tex, int w, int 
 
     if (va_image.image_id == VA_INVALID_ID)
     {
-        // TODO: try vaGetImage. it's yuv420p. RG texture is not supported by gles2, so let's use yuv420p,
-        // or change the shader
+        // TODO: try vaGetImage. it's yuv420p. RG texture is not supported by gles2,
+        // so let's use yuv420p, or change the shader
 
         VA_ENSURE(vaDeriveImage(surface->vadisplay(), surface->get(), &va_image), false);
     }
@@ -785,7 +798,7 @@ bool EGLInteropResource::map(const surface_ptr& surface, GLuint tex, int w, int 
 
     // (it would be nice if we could use EGL_IMAGE_INTERNAL_FORMAT_EXT)
 
-#   define FOURCC(a,b,c,d) ((a) | ((b)<<8) | ((c)<<16) | ((unsigned)(d)<<24))
+#   define FOURCC(a,b,c,d) ((a) | ((b) << 8) | ((c) << 16) | ((unsigned)(d) << 24))
 
     static const int drm_fmts[] =
     {
@@ -905,7 +918,11 @@ bool EGLInteropResource::ensure()
         if (!vaapi::checkEGL_DMA())
             return false;
 
-        static const char* glexts[] = { "GL_OES_EGL_image", nullptr };
+        static const char* glexts[] =
+        {
+            "GL_OES_EGL_image",
+            nullptr
+        };
 
         if (!OpenGLHelper::hasExtension(glexts))
         {

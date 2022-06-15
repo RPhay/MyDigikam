@@ -1061,8 +1061,10 @@ bool AudioOutput::waitForNextBuffer()
 
             if (d.frame_infos.empty())
             {
-                //qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("buffer queue empty");
-
+/*
+                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                    << QString::asprintf("buffer queue empty");
+*/
                 break;
             }
 
