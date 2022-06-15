@@ -24,6 +24,8 @@
 #ifndef QTAV_SINGLETON_H
 #define QTAV_SINGLETON_H
 
+// C++ includes
+
 #include <cstdio>
 #include <cstdlib>          // harmattan: atexit
 #include <cassert>
@@ -34,10 +36,14 @@
 #   include <stdexcept>     // std::string breaks abi
 #endif
 
+// Local includes
+
+#include "digikam_debug.h"
+
 #ifdef DEBUG
 #   define DBG(fmt, ...)                 \
-    fprintf(stderr, fmt, ##__VA_ARGS__); \
-    fflush(0);
+    qCDebug(DIGIKAM_QTAV_LOG).noquote()  \
+        << QString::asprintf(fmt, ##__VA_ARGS__);
 #else
 #   define DBG(...)
 #endif
