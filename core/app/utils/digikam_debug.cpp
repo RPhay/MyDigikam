@@ -78,18 +78,10 @@ Q_LOGGING_CATEGORY(DIGIKAM_MEDIASRV_LOG_FATAL,          "digikam.mediaserver.fat
 
 Q_LOGGING_CATEGORY(DIGIKAM_QTAV_LOG,                    "digikam.qtav",                     QtInfoMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_QTAV_LOG_INFO,               "digikam.qtav.info",                QtInfoMsg)
-Q_LOGGING_CATEGORY(DIGIKAM_QTAV_LOG_DEBUG,              "digikam.qtav.debug",               QtInfoMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_QTAV_LOG_WARN,               "digikam.qtav.warn",                QtWarningMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_QTAV_LOG_CRITICAL,           "digikam.qtav.critical",            QtWarningMsg)
-Q_LOGGING_CATEGORY(DIGIKAM_QTAV_LOG_FATAL,              "digikam.qtav.fatal",               QtCriticalMsg)
-Q_LOGGING_CATEGORY(DIGIKAM_QTAVWIDGETS_LOG,             "digikam.qtavwidgets",              QtInfoMsg)
-Q_LOGGING_CATEGORY(DIGIKAM_QTAVWIDGETS_LOG_INFO,        "digikam.qtavwidgets.info",         QtInfoMsg)
-Q_LOGGING_CATEGORY(DIGIKAM_QTAVWIDGETS_LOG_DEBUG,       "digikam.qtavwidgets.debug",        QtInfoMsg)
-Q_LOGGING_CATEGORY(DIGIKAM_QTAVWIDGETS_LOG_WARN,        "digikam.qtavwidgets.warn",         QtWarningMsg)
-Q_LOGGING_CATEGORY(DIGIKAM_QTAVWIDGETS_LOG_CRITICAL,    "digikam.qtavwidgets.critical",     QtWarningMsg)
-Q_LOGGING_CATEGORY(DIGIKAM_QTAVWIDGETS_LOG_FATAL,       "digikam.qtavwidgets.fatal",        QtCriticalMsg)
 
-Q_LOGGING_CATEGORY(DIGIKAM_AVPLAYER_LOG,              "digikam.avplayer",                 QtInfoMsg)
+Q_LOGGING_CATEGORY(DIGIKAM_AVPLAYER_LOG,                "digikam.avplayer",                 QtInfoMsg)
 
 void digikamSetDebugFilterRules(bool on)
 {
