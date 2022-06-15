@@ -491,6 +491,10 @@ protected:
 #   include <dlfcn.h>
 #endif
 
+// Local includes
+
+#include "digikam_debug.h"
+
 namespace capi
 {
 
@@ -546,8 +550,9 @@ public:
         if (is_1st)
         {
             is_1st = false;
-            fprintf(stderr, "digikam.qtav: capi::version: %s\n", ::capi::version::name);
-            fflush(nullptr);
+
+            qCDebug(DIGIKAM_QTAV_LOG).noquote()
+                << QString::asprintf("capi::version: %s", ::capi::version::name);
         }
 
         for (int i = 0 ; names[i] ; ++i)
