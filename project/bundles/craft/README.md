@@ -9,6 +9,7 @@ KDE uses a common framework named craft to process applications workflow on diff
 The workflow supports notarization of application bundles (signing) for Linux (AppImage), Windows, and MacOS stores.
 
 - Front page                    : https://community.kde.org/Craft
+- KF dependencies used by Craft : https://invent.kde.org/sysadmin/repo-metadata/-/tree/master/dependencies
 - Configuration                 : https://invent.kde.org/packaging/craft-blueprints-kde/-/tree/master/extragear/digikam
 - Settings details              : https://community.kde.org/Craft/Blueprints
 - Binary factory customizations : https://invent.kde.org/sysadmin/binary-factory-tooling/-/blob/master/craft/enabled-projects.yaml
