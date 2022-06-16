@@ -117,7 +117,7 @@ void QLabelSetElideText(QLabel* const label, const QString& text, int W = 0)
                 w = p->width();
         }
 
-        width = qMax(w - label->indent() - label->margin() - 13*(30), 0); // TODO: why 30?
+        width = qMax(w - label->indent() - label->margin() - 13 * (30), 0); // TODO: why 30?
     }
 
     QString clippedText = metrix.elidedText(text, Qt::ElideRight, width);
@@ -164,7 +164,7 @@ MainWindow::MainWindow(QWidget* const parent)
 */
     setupUi();
 /*
-    setToolTip(i18n("Click black area to use shortcut(see right click menu)"));
+    setToolTip(i18n("Click black area to use shortcut (see right click menu)"));
 */
     WindowEventFilter* const we = new WindowEventFilter(this);
     installEventFilter(we);
@@ -315,7 +315,8 @@ void MainWindow::initPlayer()
     connect(mpCaptureBtn, SIGNAL(clicked()),
             mpPlayer->videoCapture(), SLOT(capture()));
 
-    // Emit this signal after connection. otherwise the Q_SLOTS may not be called for the first time
+    // Emit this signal after connection.
+    // otherwise the Q_SLOTS may not be called for the first time
 
     Q_EMIT ready();
 }
@@ -344,7 +345,7 @@ void MainWindow::setupUi()
     mpControl                       = new QWidget(this);
     mpControl->setMaximumHeight(30);
 /*
-    //mpPreview = new QLabel(this);
+    mpPreview = new QLabel(this);
 */
     mpTimeSlider                    = new AVPlayerSlider(mpControl);
     mpTimeSlider->setDisabled(true);
@@ -620,7 +621,9 @@ void MainWindow::setupUi()
     connect(subMenu, SIGNAL(triggered(QAction*)),
             this, SLOT(changeChannel(QAction*)));
 
-    subMenu->addAction(i18nc("@action: channel option", "As input"))->setData(AudioFormat::ChannelLayout_Unsupported); // will set to input in resampler if not supported.
+    // will set to input in resampler if not supported.
+
+    subMenu->addAction(i18nc("@action: channel option", "As input"))->setData(AudioFormat::ChannelLayout_Unsupported);
     subMenu->addAction(i18nc("@action: channel option", "Stereo"))->setData(AudioFormat::ChannelLayout_Stereo);
     subMenu->addAction(i18nc("@action: channel option", "Mono (center)"))->setData(AudioFormat::ChannelLayout_Center);
     subMenu->addAction(i18nc("@action: channel option", "Left"))->setData(AudioFormat::ChannelLayout_Left);
@@ -1015,9 +1018,9 @@ bool MainWindow::setRenderer(QtAV::VideoRenderer* const renderer)
 
     GLSLFilter* const glsl = new GLSLFilter(this);
     glsl->setOutputSize(QSize(4096, 2160));
-
-    //mpRenderer->installFilter(glsl);
-
+/*
+    mpRenderer->installFilter(glsl);
+*/
     if (mpRenderer->opengl())
     {
         connect(mpRenderer->opengl(), &OpenGLVideo::beforeRendering,
@@ -2212,7 +2215,7 @@ void MainWindow::workaroundRendererSize()
     QSize s = rect().size();
 /*
     resize(QSize(s.width()-1, s.height()-1));
-    resize(s); //window resize to fullscreen size will create another fullScreenChange event
+    resize(s); // window resize to fullscreen size will create another fullScreenChange event
 */
     mpRenderer->widget()->resize(QSize(s.width() + 1, s.height() + 1));
     mpRenderer->widget()->resize(s);
