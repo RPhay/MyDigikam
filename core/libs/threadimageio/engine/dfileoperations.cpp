@@ -441,6 +441,10 @@ bool DFileOperations::copyFiles(const QStringList& srcPaths,
 bool DFileOperations::renameFile(const QString& srcFile,
                                  const QString& dstFile)
 {
+    if (srcFile == dstFile)
+    {
+        return true;
+    }
 
 #ifdef Q_OS_WIN64
 
