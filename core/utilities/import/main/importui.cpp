@@ -918,14 +918,6 @@ bool ImportUI::dialogClosed()
         return true;
     }
 
-    if (d->waitAutoRotate)
-    {
-        hide();
-        d->waitAutoRotate = false;
-
-        return false;
-    }
-
     if (isBusy())
     {
         if (QMessageBox::question(this, qApp->applicationName(),
@@ -940,6 +932,14 @@ bool ImportUI::dialogClosed()
 
     d->statusProgressBar->setProgressBarMode(StatusProgressBar::TextMode,
                                              i18nc("@info:status", "Disconnecting from camera, please wait..."));
+
+    if (d->waitAutoRotate)
+    {
+        hide();
+        d->waitAutoRotate = false;
+
+        return false;
+    }
 
     if (isBusy())
     {
