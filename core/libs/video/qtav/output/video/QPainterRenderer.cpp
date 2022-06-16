@@ -81,7 +81,8 @@ bool QPainterRenderer::preparePixmap(const VideoFrame& frame)
         imgfmt = (QImage::Format)(-imgfmt);
     }
 
-    // DO NOT use frameData().data() because it's temp ptr while d.image does not deep copy the data
+    // DO NOT use frameData().data() because it's temp ptr while
+    // d.image does not deep copy the data
 
     QImage image = QImage((uchar*)d.video_frame.constBits(),
                           d.video_frame.width(),
@@ -146,7 +147,7 @@ void QPainterRenderer::drawFrame()
 
     if (d.rotation() == 0)
     {
-        // assume that the image data is already scaled to out_size(NOT renderer size!)
+        // assume that the image data is already scaled to out_size (NOT renderer size!)
 
         if (roi.size() == d.out_rect.size())
         {

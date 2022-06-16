@@ -72,13 +72,15 @@ public:
     /*!
      * \brief VideoOutput
      * Create a QWidget based renderer. Result can be a QOpenGLWidget
-     * or QGLWidget based renderer if possible. Otherwise fallback to a software renderer
+     * or QGLWidget based renderer if possible.
+     * Otherwise fallback to a software renderer
      */
     explicit VideoOutput(QObject* const parent = nullptr);
 
     /*!
      * \brief VideoOutput
-     * Create a renderer with given rendererId. MUST check VideoOutput::isAvailable() later!
+     * Create a renderer with given rendererId.
+     * MUST check VideoOutput::isAvailable() later!
      */
     explicit VideoOutput(VideoRendererId rendererId, QObject* const parent = nullptr);
     ~VideoOutput();
@@ -123,7 +125,9 @@ private:
 
     // from AVOutput
 
-    virtual void setStatistics(Statistics* statistics)                      override; // called by friend AVPlayerCore
+    // called by friend AVPlayerCore
+    virtual void setStatistics(Statistics* statistics)                      override;
+
     virtual bool onInstallFilter(Filter* filter, int index)                 override;
     virtual bool onUninstallFilter(Filter* filter)                          override;
     virtual bool onHanlePendingTasks()                                      override;

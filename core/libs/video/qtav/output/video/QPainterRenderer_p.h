@@ -67,6 +67,7 @@ public:
                 painter->setRenderHint(QPainter::TextAntialiasing,      false);
                 painter->setRenderHint(QPainter::SmoothPixmapTransform, false);
                 painter->setRenderHint(QPainter::Antialiasing,          false);
+
                 break;
             }
 
@@ -77,6 +78,7 @@ public:
                 painter->setRenderHint(QPainter::TextAntialiasing,      true);
                 painter->setRenderHint(QPainter::SmoothPixmapTransform, true);
                 painter->setRenderHint(QPainter::Antialiasing,          true);
+
                 break;
             }
         }

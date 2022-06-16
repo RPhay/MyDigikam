@@ -93,7 +93,8 @@ bool OpenGLRendererBase::receiveFrame(const VideoFrame& frame)
     d.video_frame   = frame;
     d.frame_changed = true;
 
-    // can not call updateGL() directly because no event and paintGL() will in video thread
+    // can not call updateGL() directly because no event
+    // and paintGL() will in video thread
 
     updateUi();
 
