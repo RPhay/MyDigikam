@@ -66,7 +66,7 @@ if(MSVC)
 
     message(STATUS "Target Build Type: ${CMAKE_BUILD_TYPE}")
 
-    if("${CMAKE_BUILD_TYPE EQUAL}" STREGUAL "RelWithDebInfo")
+    if("${CMAKE_BUILD_TYPE}" STREGUAL "RelWithDebInfo")
 
         message(STATUS "Switch Target Build Type to Release to prevent linking failure with OpenCV...")
 
