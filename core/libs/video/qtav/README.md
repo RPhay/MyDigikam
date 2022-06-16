@@ -150,7 +150,7 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
 
     - Compilation are processed with Continuous Integration : MSVC, FreeBSD, Suse Linux.
 
-    - Compilation are processed with Continuous deployement : MacOS CLang, Windows MinGW (MXE), Linux GCC.
+    - Compilation are processed with Continuous deployement : Clang, MSVC, MinGW, and GCC.
 
     - Stand alone media player originaly located from examples/player are move and compiled to core/avplayer.
 
