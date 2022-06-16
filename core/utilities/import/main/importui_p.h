@@ -160,7 +160,8 @@ class Q_DECL_HIDDEN ImportUI::Private
 public:
 
     Private()
-      : deleteAfter                     (false),
+      : waitAutoRotate                  (false),
+        deleteAfter                     (false),
         busy                            (false),
         closed                          (false),
         downloadMenu                    (nullptr),
@@ -248,6 +249,7 @@ public:
     static const QString               configFileSaveConflictRule;
     static const QString               importFiltersConfigGroupName;
 
+    bool                               waitAutoRotate;
     bool                               deleteAfter;
     bool                               busy;
     bool                               closed;
