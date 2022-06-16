@@ -918,14 +918,6 @@ bool ImportUI::dialogClosed()
         return true;
     }
 
-    if (d->waitAutoRotate)
-    {
-        hide();
-        d->waitAutoRotate = false;
-
-        return false;
-    }
-
     if (isBusy())
     {
         if (QMessageBox::question(this, qApp->applicationName(),
@@ -940,6 +932,14 @@ bool ImportUI::dialogClosed()
 
     d->statusProgressBar->setProgressBarMode(StatusProgressBar::TextMode,
                                              i18nc("@info:status", "Disconnecting from camera, please wait..."));
+
+    if (d->waitAutoRotate)
+    {
+        hide();
+        d->waitAutoRotate = false;
+
+        return false;
+    }
 
     if (isBusy())
     {
@@ -994,10 +994,10 @@ void ImportUI::slotBusy(bool val)
         }
 
         d->busy = false;
-        d->cameraCancelAction->setEnabled(false);
-        d->cameraActions->setEnabled(true);
-        d->advBox->setEnabled(true);
         d->view->setEnabled(true);
+        d->advBox->setEnabled(true);
+        d->cameraActions->setEnabled(true);
+        d->cameraCancelAction->setEnabled(false);
 
         // selection-dependent update of lockAction, markAsDownloadedAction,
         // downloadSelectedAction, downloadDelSelectedAction, deleteSelectedAction
@@ -1116,7 +1116,7 @@ void ImportUI::slotFolderList(const QStringList& folderList)
     }
 }
 
-void ImportUI::setFilter(Filter *filter)
+void ImportUI::setFilter(Filter* filter)
 {
     d->view->importFilterModel()->setFilter(filter);
 }
