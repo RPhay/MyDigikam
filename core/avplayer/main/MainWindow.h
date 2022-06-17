@@ -166,6 +166,8 @@ protected:
     void mouseMoveEvent(QMouseEvent* e);
     void wheelEvent(QWheelEvent* e);
 
+protected:
+
     virtual void closeEvent(QCloseEvent* e);
     virtual void resizeEvent(QResizeEvent* e);
     virtual void timerEvent(QTimerEvent* e);
@@ -178,67 +180,67 @@ private:
 
 private:
 
-    bool                            mIsReady;
-    bool                            mHasPendingPlay;
-    bool                            mControlOn;
-    int                             mCursorTimer;
-    int                             mShowControl;           ///< 0: can hide, 1: show and playing, 2: always show(not playing)
-    int                             mRepeateMax;
-    QStringList                     mAudioBackends;
-    QVBoxLayout*                    mpPlayerLayout;
+    bool                            m_IsReady;
+    bool                            m_HasPendingPlay;
+    bool                            m_ControlOn;
+    int                             m_CursorTimer;
+    int                             m_ShowControl;           ///< 0: can hide, 1: show and playing, 2: always show(not playing)
+    int                             m_RepeateMax;
+    QStringList                     m_AudioBackends;
+    QVBoxLayout*                    m_pPlayerLayout;
 
-    QWidget*                        mpControl;
-    QLabel*                         mpCurrent;
-    QLabel*                         mpEnd;
-    QLabel*                         mpTitle;
-    QLabel*                         mpSpeed;
-    QtAV::AVPlayerSlider*           mpTimeSlider;
-    QtAV::AVPlayerSlider*           mpVolumeSlider;
-    QToolButton*                    mpVolumeBtn;
-    QToolButton*                    mpPlayPauseBtn;
-    QToolButton*                    mpStopBtn;
-    QToolButton*                    mpForwardBtn;
-    QToolButton*                    mpBackwardBtn;
-    QToolButton*                    mpOpenBtn;
-    QToolButton*                    mpInfoBtn;
-    QToolButton*                    mpMenuBtn;
-    QToolButton*                    mpSetupBtn;
-    QToolButton*                    mpCaptureBtn;
-    QMenu*                          mpMenu;
-    QAction*                        mpVOAction;             // remove mpVOAction if vo.id() is supported
-    QAction*                        mpARAction;
-    QAction*                        mpRepeatEnableAction;
-    QWidgetAction*                  mpRepeatAction;
-    QSpinBox*                       mpRepeatBox;
-    QTimeEdit*                      mpRepeatA;
-    QTimeEdit*                      mpRepeatB;
-    QAction*                        mpAudioTrackAction;
-    QMenu*                          mpAudioTrackMenu;
-    QMenu*                          mpChannelMenu;
-    QAction*                        mpChannelAction;
-    QList<QAction*>                 mVOActions;
+    QWidget*                        m_pControl;
+    QLabel*                         m_pCurrent;
+    QLabel*                         m_pEnd;
+    QLabel*                         m_pTitle;
+    QLabel*                         m_pSpeed;
+    QtAV::AVPlayerSlider*           m_pTimeSlider;
+    QtAV::AVPlayerSlider*           m_pVolumeSlider;
+    QToolButton*                    m_pVolumeBtn;
+    QToolButton*                    m_pPlayPauseBtn;
+    QToolButton*                    m_pStopBtn;
+    QToolButton*                    m_pForwardBtn;
+    QToolButton*                    m_pBackwardBtn;
+    QToolButton*                    m_pOpenBtn;
+    QToolButton*                    m_pInfoBtn;
+    QToolButton*                    m_pMenuBtn;
+    QToolButton*                    m_pSetupBtn;
+    QToolButton*                    m_pCaptureBtn;
+    QMenu*                          m_pMenu;
+    QAction*                        m_pVOAction;             // remove mpVOAction if vo.id() is supported
+    QAction*                        m_pARAction;
+    QAction*                        m_pRepeatEnableAction;
+    QWidgetAction*                  m_pRepeatAction;
+    QSpinBox*                       m_pRepeatBox;
+    QTimeEdit*                      m_pRepeatA;
+    QTimeEdit*                      m_pRepeatB;
+    QAction*                        m_pAudioTrackAction;
+    QMenu*                          m_pAudioTrackMenu;
+    QMenu*                          m_pChannelMenu;
+    QAction*                        m_pChannelAction;
+    QList<QAction*>                 m_VOActions;
 
-    QtAV::AVClock*                  mpClock;
-    QtAV::AVPlayerCore*             mpPlayer;
-    QtAV::VideoRenderer*            mpRenderer;
-    QtAV::LibAVFilterVideo*         mpVideoFilter;
-    QtAV::LibAVFilterAudio*         mpAudioFilter;
-    QString                         mFile;
-    QString                         mTitle;
+    QtAV::AVClock*                  m_pClock;
+    QtAV::AVPlayerCore*             m_pPlayer;
+    QtAV::VideoRenderer*            m_pRenderer;
+    QtAV::LibAVFilterVideo*         m_pVideoFilter;
+    QtAV::LibAVFilterAudio*         m_pAudioFilter;
+    QString                         m_File;
+    QString                         m_Title;
 
-    QLabel*                         mpPreview;
+    QLabel*                         m_pPreview;
 
-    QtAV::DecoderConfigPage*        mpDecoderConfigPage;
-    QtAV::VideoEQConfigPage*        mpVideoEQ;
+    QtAV::DecoderConfigPage*        m_pDecoderConfigPage;
+    QtAV::VideoEQConfigPage*        m_pVideoEQ;
 
-    PlayList*                       mpPlayList;
-    PlayList*                       mpHistory;
+    PlayList*                       m_pPlayList;
+    PlayList*                       m_pHistory;
 
-    QPointF                         mGlobalMouse;
-    StatisticsView*                 mpStatisticsView;
+    QPointF                         m_GlobalMouse;
+    StatisticsView*                 m_pStatisticsView;
 
-    OSDFilter*                      mpOSD;
-    QtAV::SubtitleFilter*           mpSubtitle;
+    OSDFilter*                      m_pOSD;
+    QtAV::SubtitleFilter*           m_pSubtitle;
     QtAV::VideoPreviewWidget*       m_preview;
     QtAV::DynamicShaderObject*      m_shader;
     QtAV::GLSLFilter*               m_glsl;
