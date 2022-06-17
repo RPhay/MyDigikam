@@ -29,43 +29,14 @@
 #include <QWidget>
 #include <QUrl>
 
-class QWidgetAction;
-class QToolButton;
-class QMenu;
-class QTimeEdit;
-class QVBoxLayout;
-class QLabel;
-class QPushButton;
-class QSpinBox;
-class QTimeEdit;
-
 namespace QtAV
 {
-class AVPlayerSlider;
-class AudioOutput;
-class AVError;
-class AVPlayerCore;
-class AVClock;
-class VideoRenderer;
-class LibAVFilterAudio;
-class LibAVFilterVideo;
-class SubtitleFilter;
-class VideoPreviewWidget;
-class DynamicShaderObject;
-class GLSLFilter;
-class DecoderConfigPage;
-class VideoEQConfigPage;
+    class VideoRenderer;
+    class AVError;
 }
 
 namespace AVPlayer
 {
-
-class Button;
-class PlayList;
-class StatisticsView;
-class OSDFilter;
-class AVFilterSubtitle;
-class Preview;
 
 class MainWindow : public QWidget
 {
@@ -176,74 +147,8 @@ protected:
 
 private:
 
-    void workaroundRendererSize();
-
-private:
-
-    bool                            m_IsReady;
-    bool                            m_HasPendingPlay;
-    bool                            m_ControlOn;
-    int                             m_CursorTimer;
-    int                             m_ShowControl;           ///< 0: can hide, 1: show and playing, 2: always show(not playing)
-    int                             m_RepeateMax;
-    QStringList                     m_AudioBackends;
-    QVBoxLayout*                    m_pPlayerLayout;
-
-    QWidget*                        m_pControl;
-    QLabel*                         m_pCurrent;
-    QLabel*                         m_pEnd;
-    QLabel*                         m_pTitle;
-    QLabel*                         m_pSpeed;
-    QtAV::AVPlayerSlider*           m_pTimeSlider;
-    QtAV::AVPlayerSlider*           m_pVolumeSlider;
-    QToolButton*                    m_pVolumeBtn;
-    QToolButton*                    m_pPlayPauseBtn;
-    QToolButton*                    m_pStopBtn;
-    QToolButton*                    m_pForwardBtn;
-    QToolButton*                    m_pBackwardBtn;
-    QToolButton*                    m_pOpenBtn;
-    QToolButton*                    m_pInfoBtn;
-    QToolButton*                    m_pMenuBtn;
-    QToolButton*                    m_pSetupBtn;
-    QToolButton*                    m_pCaptureBtn;
-    QMenu*                          m_pMenu;
-    QAction*                        m_pVOAction;             // remove mpVOAction if vo.id() is supported
-    QAction*                        m_pARAction;
-    QAction*                        m_pRepeatEnableAction;
-    QWidgetAction*                  m_pRepeatAction;
-    QSpinBox*                       m_pRepeatBox;
-    QTimeEdit*                      m_pRepeatA;
-    QTimeEdit*                      m_pRepeatB;
-    QAction*                        m_pAudioTrackAction;
-    QMenu*                          m_pAudioTrackMenu;
-    QMenu*                          m_pChannelMenu;
-    QAction*                        m_pChannelAction;
-    QList<QAction*>                 m_VOActions;
-
-    QtAV::AVClock*                  m_pClock;
-    QtAV::AVPlayerCore*             m_pPlayer;
-    QtAV::VideoRenderer*            m_pRenderer;
-    QtAV::LibAVFilterVideo*         m_pVideoFilter;
-    QtAV::LibAVFilterAudio*         m_pAudioFilter;
-    QString                         m_File;
-    QString                         m_Title;
-
-    QLabel*                         m_pPreview;
-
-    QtAV::DecoderConfigPage*        m_pDecoderConfigPage;
-    QtAV::VideoEQConfigPage*        m_pVideoEQ;
-
-    PlayList*                       m_pPlayList;
-    PlayList*                       m_pHistory;
-
-    QPointF                         m_GlobalMouse;
-    StatisticsView*                 m_pStatisticsView;
-
-    OSDFilter*                      m_pOSD;
-    QtAV::SubtitleFilter*           m_pSubtitle;
-    QtAV::VideoPreviewWidget*       m_preview;
-    QtAV::DynamicShaderObject*      m_shader;
-    QtAV::GLSLFilter*               m_glsl;
+    class Private;
+    Private* const d;
 };
 
 } // namespace AVPlayer
