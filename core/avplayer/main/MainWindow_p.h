@@ -97,7 +97,6 @@
 
 using namespace QtAV;
 
-
 namespace AVPlayer
 {
 
@@ -105,51 +104,11 @@ class Q_DECL_HIDDEN MainWindow::Private
 {
 public:
 
-    Private()
-    {
-    }
+    Private();
+    ~Private();
 
-    ~Private()
-    {
-    }
-
-    void workaroundRendererSize(MainWindow* const parent)
-    {
-        if (!pRenderer)
-            return;
-
-        QSize s = parent->rect().size();
-/*
-        resize(QSize(s.width() - 1, s.height() - 1));
-        resize(s); // window resize to fullscreen size will create another fullScreenChange event
-*/
-        pRenderer->widget()->resize(QSize(s.width() + 1, s.height() + 1));
-        pRenderer->widget()->resize(s);
-    }
-
-    void QLabelSetElideText(QLabel* const label, const QString& text, int W = 0)
-    {
-        QFontMetrics metrix(label->font());
-        int width = label->width() - label->indent() - label->margin();
-
-        if (W || label->parent())
-        {
-            int w = W;
-
-            if (!w)
-            {
-                QWidget* const p = dynamic_cast<QWidget*>(label->parent());
-
-                if (p)
-                    w = p->width();
-            }
-
-            width = qMax(w - label->indent() - label->margin() - 13 * (30), 0); // TODO: why 30?
-        }
-
-        QString clippedText = metrix.elidedText(text, Qt::ElideRight, width);
-        label->setText(clippedText);
-    }
+    void workaroundRendererSize(MainWindow* const parent);
+    void QLabelSetElideText(QLabel* const label, const QString& text, int W = 0);
 
 public:
 

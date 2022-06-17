@@ -47,15 +47,42 @@ public:
     explicit MainWindow(QWidget* const parent = nullptr);
     ~MainWindow();
 
+public:
+
+//@{
+/// Setup methods
+
     void setAudioBackends(const QStringList& backends);
     bool setRenderer(QtAV::VideoRenderer* const renderer);
     void setVideoDecoderNames(const QStringList& vd);
+
+private Q_SLOTS:
+
+    void initPlayer();
+    void setupUi();
+    void setFrameRate();
+    void setVolume();
+    void setup();
+    void changeClockType(QAction* action);
+
+//@{
+/// IO operations methods
 
 public Q_SLOTS:
 
     void play(const QString& name);
     void play(const QUrl& url);
     void openFile();
+
+private Q_SLOTS:
+
+    void stopUnload();
+    void openUrl();
+
+//@}
+
+public Q_SLOTS:
+
     void togglePlayPause();
     void showNextOSD();
 
@@ -65,9 +92,7 @@ Q_SIGNALS:
 
 private Q_SLOTS:
 
-    void stopUnload();
     void about();
-    void openUrl();
     void initAudioTrackMenu();
     void updateChannelMenu();
     void switchAspectRatio(QAction* action);
@@ -79,18 +104,14 @@ private Q_SLOTS:
     void playOnlineVideo(QAction* action);
     void onPlayListClick(const QString& key, const QString& value);
     void processPendingActions();
-    void initPlayer();
-    void setupUi();
     void onSpinBoxChanged(double v);
     void onStartPlay();
     void onStopPlay();
     void onPaused(bool p);
     void onSpeedChange(qreal speed);
-    void setFrameRate();
     void seek();
     void seek(int);
     void showHideVolumeBar();
-    void setVolume();
     void tryHideControlBar();
     void tryShowControlBar();
     void showInfo();
@@ -119,8 +140,6 @@ private Q_SLOTS:
 
     void onUserShaderChanged();
 
-    void setup();
-
     void handleFullscreenChange();
     void toggoleSubtitleEnabled(bool value);
     void toggleSubtitleAutoLoad(bool value);
@@ -128,7 +147,6 @@ private Q_SLOTS:
     void setSubtitleCharset(const QString& charSet);
     void setSubtitleEngine(const QString& value);
 
-    void changeClockType(QAction* action);
     void syncVolumeUi(qreal value);
 
 protected:

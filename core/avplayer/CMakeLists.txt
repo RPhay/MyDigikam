@@ -31,6 +31,7 @@ set(avplayer_SRCS ${CMAKE_SOURCE_DIR}/core/avplayer/utils/EventFilter.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/playlist/PlayList.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/main/main.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/main/MainWindow.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/main/MainWindow_p.cpp
 )
 
 # Set the application icon on the application

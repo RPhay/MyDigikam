@@ -39,9 +39,6 @@ MainWindow::MainWindow(QWidget* const parent)
 
     d->pOSD              = new OSDFilter(this);
     d->pSubtitle         = new SubtitleFilter(this);
-    d->pChannelAction    = nullptr;
-    d->pChannelMenu      = nullptr;
-    d->pAudioTrackAction = nullptr;
 
     setMouseTracking(true); // mouseMoveEvent without press.
 
