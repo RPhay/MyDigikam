@@ -198,7 +198,7 @@ void AdvancedSettings::readSettings(KConfigGroup& group)
     d->autoRotateCheck->setChecked(group.readEntry(QLatin1String("AutoRotate"),         true));
     d->fixDateTimeCheck->setChecked(group.readEntry(QLatin1String("FixDateTime"),       false));
     d->documentNameCheck->setChecked(group.readEntry(QLatin1String("DocumentName"),     false));
-    d->templateSelector->setTemplateIndex(group.readEntry(QLatin1String("Template"),    0));
+    d->templateSelector->setTemplateIndex(group.readEntry(QLatin1String("Template"),    1));      // do not change
     d->convertJpegCheck->setChecked(group.readEntry(QLatin1String("ConvertJpeg"),       false));
     d->losslessFormat->setCurrentIndex(group.readEntry(QLatin1String("LossLessFormat"), 0));      // PNG by default
 

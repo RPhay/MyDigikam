@@ -35,7 +35,8 @@ namespace QtAV
 
 /*!
  * \brief The OpenGLRendererBase class
- * Renderering video frames using GLSL. A more generic high level class OpenGLVideo is used internally.
+ * Renderering video frames using GLSL.
+ * A more generic high level class OpenGLVideo is used internally.
  * TODO: for Qt5, no QtOpenGL, use QWindow instead.
  */
 class OpenGLRendererBasePrivate;
@@ -60,7 +61,8 @@ protected:
 
     virtual void drawBackground()                           override;
 
-    // draw the current frame using the current paint engine. called by paintEvent()
+    // draw the current frame using the current paint engine.
+    // called by paintEvent()
 
     virtual void drawFrame()                                override;
     void onInitializeGL();

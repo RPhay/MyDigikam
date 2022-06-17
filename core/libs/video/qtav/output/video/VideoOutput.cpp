@@ -55,7 +55,9 @@ public:
 
 #if defined(Q_OS_DARWIN)
 
-            avwidgets.setFileName(QString::fromLatin1("QtAVWidgets.framework/QtAVWidgets")); // no dylib check
+            // no dylib check
+
+            avwidgets.setFileName(QString::fromLatin1("QtAVWidgets.framework/QtAVWidgets"));
 
 #elif defined(Q_OS_WIN)
 
@@ -71,7 +73,8 @@ public:
 
 #else
 
-            avwidgets.setFileNameAndVersion(QLatin1String("QtAVWidgets"), QTAV_VERSION_MAJOR(QtAV_Version()));
+            avwidgets.setFileNameAndVersion(QLatin1String("QtAVWidgets"),
+                                            QTAV_VERSION_MAJOR(QtAV_Version()));
 
 #endif
 

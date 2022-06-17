@@ -63,10 +63,18 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 # See bug #454941 and the OpenCV detection in RelWithDebInfo target
 
 if(MSVC)
-    set(CMAKE_BUILD_TYPE
-        "Release"
-        CACHE STRING "Build type: Debug, Release, RelWithDebInfo or MinSizeRel"
-              FORCE)
+
+    message(STATUS "Target Build Type: ${CMAKE_BUILD_TYPE}")
+
+    if("${CMAKE_BUILD_TYPE}" STREQUAL "RelWithDebInfo")
+
+        message(STATUS "Switch Target Build Type to Release to prevent linking failure with OpenCV...")
+
+        set(CMAKE_BUILD_TYPE "Release"
+            CACHE STRING "Build type: Debug, Release, RelWithDebInfo or MinSizeRel" FORCE)
+
+    endif()
+
 endif()
 
 message(STATUS "----------------------------------------------------------------------------------")

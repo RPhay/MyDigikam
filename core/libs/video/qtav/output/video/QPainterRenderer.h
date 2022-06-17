@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef QAV_QPAINTER_RENDERER_H
-#define QAV_QPAINTER_RENDERER_H
+#ifndef QTAV_QPAINTER_RENDERER_H
+#define QTAV_QPAINTER_RENDERER_H
 
 // Qt includes
 
@@ -54,7 +54,8 @@ protected:
     bool preparePixmap(const VideoFrame& frame);
     void drawBackground()                                   override;
 
-    // draw the current frame using the current paint engine. called by paintEvent()
+    // draw the current frame using the current paint engine.
+    // called by paintEvent()
 
     void drawFrame()                                        override;
 

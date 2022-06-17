@@ -73,7 +73,9 @@ bool VideoRenderer::receive(const VideoFrame& frame)
     setInSize(frame.width(), frame.height());
     QMutexLocker locker(&d.img_mutex);
 
-    Q_UNUSED(locker); // TODO: double buffer for display/dec frame to avoid mutex
+    // TODO: double buffer for display/dec frame to avoid mutex
+
+    Q_UNUSED(locker);
 
     return receiveFrame(frame);
 }
@@ -174,7 +176,9 @@ void VideoRenderer::setOutAspectRatioMode(OutAspectRatioMode mode)
 
         // compute out_rect
 
-        d.out_rect = QRect(0, 0, d.renderer_width, d.renderer_height);          // remove? already in computeOutParameters()
+        // remove? already in computeOutParameters()
+
+        d.out_rect = QRect(0, 0, d.renderer_width, d.renderer_height);
         setOutAspectRatio(qreal(d.renderer_width) / qreal(d.renderer_height));
 
         if (out_rect0 != d.out_rect)
@@ -212,7 +216,8 @@ void VideoRenderer::setOutAspectRatio(qreal ratio)
     bool ratio_changed = (d.out_aspect_ratio != ratio);
     d.out_aspect_ratio = ratio;
 
-    // indicate that this function is called by user. otherwise, called in VideoRenderer
+    // indicate that this function is called by user.
+    // otherwise, called in VideoRenderer
 
     if (!d.aspect_ratio_changed)
     {
@@ -228,7 +233,9 @@ void VideoRenderer::setOutAspectRatio(qreal ratio)
 
     if (d.out_aspect_ratio_mode != RendererAspectRatio)
     {
-        d.update_background = true; // can not fill the whole renderer with video
+        // can not fill the whole renderer with video
+
+        d.update_background = true;
     }
 
     // compute the out out_rect
@@ -327,7 +334,9 @@ void VideoRenderer::setInSize(int width, int height)
         setOutAspectRatio(d.source_aspect_ratio);
     }
 
-    d.aspect_ratio_changed = false; // TODO: why graphicsitemrenderer need this? otherwise aspect_ratio_changed is always true?
+    // TODO: why graphicsitemrenderer need this? otherwise aspect_ratio_changed is always true?
+
+    d.aspect_ratio_changed = false;
 }
 
 void VideoRenderer::resizeRenderer(const QSize &size)
@@ -503,23 +512,26 @@ QRect VideoRenderer::realROI() const
     if (qAbs(d.roi.x()) < 1)
     {
         normalized = true;
-        r.setX(d.roi.x()*qreal(d.src_width)); // TODO: why not video_frame.size()? roi not correct
+
+        // TODO: why not video_frame.size()? roi not correct
+
+        r.setX(d.roi.x() * qreal(d.src_width));
     }
 
     if (qAbs(d.roi.y()) < 1)
     {
         normalized = true;
-        r.setY(d.roi.y()*qreal(d.src_height));
+        r.setY(d.roi.y() * qreal(d.src_height));
     }
 
     // whole size use width or height = 0, i.e. null size
     // nomalized width, height <= 1. If 1 is normalized value iff |x|<1 || |y| < 1
 
     if (qAbs(d.roi.width()) < 1)
-        r.setWidth(d.roi.width()*qreal(d.src_width));
+        r.setWidth(d.roi.width() * qreal(d.src_width));
 
     if (qAbs(d.roi.height()) < 1)
-        r.setHeight(d.roi.height()*qreal(d.src_height));
+        r.setHeight(d.roi.height() * qreal(d.src_height));
 
     if ((d.roi.width() == 1.0) && normalized)
     {
@@ -641,7 +653,8 @@ void VideoRenderer::handlePaintEvent()
         QMutexLocker locker(&d.img_mutex);
         Q_UNUSED(locker);
 
-        // do not apply filters if d.video_frame is already filtered. e.g. rendering an image and resize window to repaint
+        // do not apply filters if d.video_frame is already filtered.
+        // e.g. rendering an image and resize window to repaint
 
         if (!d.video_frame.metaData(QLatin1String("gpu_filtered")).toBool() && !d.filters.isEmpty() && d.statistics)
         {
@@ -664,7 +677,8 @@ void VideoRenderer::handlePaintEvent()
                 if (!vf->isEnabled())
                     continue;
 
-                // qpainter on video frame always runs on video thread. qpainter on renderer's paint device can work on rendering thread
+                // qpainter on video frame always runs on video thread.
+                // qpainter on renderer's paint device can work on rendering thread
                 // Here apply filters on frame on video thread, for example, GPU filters
 /*
                 vf->prepareContext(d.filter_context, d.statistics, 0);
@@ -674,7 +688,9 @@ void VideoRenderer::handlePaintEvent()
                 if (!vf->isSupported(VideoFilterContext::OpenGL))
                     continue;
 
-                vf->apply(d.statistics, &d.video_frame); // painter and paint device are ready, pass video frame is ok.
+                // painter and paint device are ready, pass video frame is ok.
+
+                vf->apply(d.statistics, &d.video_frame);
                 d.video_frame.setMetaData(QLatin1String("gpu_filtered"), true);
             }
         }
@@ -735,7 +751,8 @@ void VideoRenderer::handlePaintEvent()
             if (!vf->isEnabled())
                 continue;
 
-            // qpainter rendering on renderer's paint device. only supported by none-null paint engine
+            // qpainter rendering on renderer's paint device.
+            // only supported by none-null paint engine
 
             if (!vf->context() || (vf->context()->type() == VideoFilterContext::OpenGL))
                 continue;
@@ -745,7 +762,9 @@ void VideoRenderer::handlePaintEvent()
                 if (!vf->isSupported(d.filter_context->type()))
                     continue;
 
-                vf->apply(d.statistics, &d.video_frame); // painter and paint device are ready, pass video frame is ok.
+                // painter and paint device are ready, pass video frame is ok.
+
+                vf->apply(d.statistics, &d.video_frame);
             }
         }
     }
@@ -909,7 +928,8 @@ void VideoRenderer::updateUi()
     if (obj)
     {
         // UpdateRequest only sync backing store but do not shedule repainting. UpdateLater does
-        // Copy from qwidget_p.h. QWidget::event() will convert UpdateLater to QUpdateLaterEvent and get it's region()
+        // Copy from qwidget_p.h. QWidget::event() will convert
+        // UpdateLater to QUpdateLaterEvent and get it's region()
 
         class Q_DECL_HIDDEN QUpdateLaterEvent : public QEvent
         {

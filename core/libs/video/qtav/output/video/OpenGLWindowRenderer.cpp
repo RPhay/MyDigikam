@@ -59,7 +59,8 @@ VideoRendererId OpenGLWindowRenderer::id() const
     return VideoRendererId_OpenGLWindow;
 }
 
-// MUST call update() on gui(main) thread that the window belongs to because update() will finally call startTimer
+// MUST call update() on gui(main) thread that the window belongs
+// to because update() will finally call startTimer
 
 void OpenGLWindowRenderer::initializeGL()
 {
@@ -79,7 +80,10 @@ void OpenGLWindowRenderer::resizeGL(int w, int h)
 void OpenGLWindowRenderer::resizeEvent(QResizeEvent* e)
 {
     onResizeEvent(e->size().width(), e->size().height());
-    QOpenGLWindow::resizeEvent(e);                          // will call resizeGL(). TODO: will call paintEvent()?
+
+    // will call resizeGL(). TODO: will call paintEvent()?
+
+    QOpenGLWindow::resizeEvent(e);
 }
 
 void OpenGLWindowRenderer::showEvent(QShowEvent*)
