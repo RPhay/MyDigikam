@@ -76,7 +76,7 @@ i18nlangs.each_line do |lang|
         list.each do |part|
 
             if isWindows
-                `svn cat svn://anonsvn.kde.org/home/kde/#{branch}/l10n-kf5/#{lang}/docs/digikam-doc/digikam/#{part}.docbook > digikam/#{part}.docbook`
+                `svn cat svn://anonsvn.kde.org/home/kde/#{branch}/l10n-kf5/#{lang}/docs/digikam-doc/digikam/#{part}.docbook 2> nul | Tee-Object -FilePath digikam/#{part}.docbook`
             else
                 `svn cat svn://anonsvn.kde.org/home/kde/#{branch}/l10n-kf5/#{lang}/docs/digikam-doc/digikam/#{part}.docbook 2> /dev/null | tee digikam/#{part}.docbook`
             end
@@ -138,7 +138,7 @@ i18nlangs.each_line do |lang|
             list.each do |part|
 
                 if isWindows
-                    `svn cat svn://anonsvn.kde.org/home/kde/#{branch}/l10n-kf5/#{lang}/docs/digikam-doc/showfoto/#{part}.docbook > showfoto/#{part}.docbook`
+                    `svn cat svn://anonsvn.kde.org/home/kde/#{branch}/l10n-kf5/#{lang}/docs/digikam-doc/showfoto/#{part}.docbook 2> nul | Tee-Object -FilePath showfoto/#{part}.docbook`
                 else
                     `svn cat svn://anonsvn.kde.org/home/kde/#{branch}/l10n-kf5/#{lang}/docs/digikam-doc/showfoto/#{part}.docbook 2> /dev/null | tee showfoto/#{part}.docbook`
                 end
