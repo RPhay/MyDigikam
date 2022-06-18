@@ -58,6 +58,10 @@ public:
                             ProgressItem* const parent = nullptr);
     ~NewItemsFinder() override;
 
+private:
+
+    void connectToScanController();
+
 private Q_SLOTS:
 
     void slotStart() override;

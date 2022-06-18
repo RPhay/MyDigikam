@@ -81,4 +81,5 @@ BUGFIXES:
 062 ==> 444928 - Include rename functionality (F2) also to image import tool.
 063 ==> 386072 - Can't access EXIF data on some (very few!) pictures from import camera window - works fine after that.
 064 ==> 381214 - Import may mix up picture content and metadata of different pictures.
-065 ==> 
+065 ==> 454739 - Find New Items is stuck at 0%.
+066 ==> 

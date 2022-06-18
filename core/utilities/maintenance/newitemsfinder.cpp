@@ -69,24 +69,7 @@ NewItemsFinder::NewItemsFinder(const FinderMode mode, const QStringList& folders
     setShowAtStart(true);
     ProgressManager::addProgressItem(this);
 
-    d->mode = mode;
-
-    // Common connections to ScanController
-
-    connect(ScanController::instance(), SIGNAL(collectionScanStarted(QString)),
-            this, SLOT(slotScanStarted(QString)));
-
-    connect(ScanController::instance(), SIGNAL(totalFilesToScan(int)),
-            this, SLOT(slotTotalFilesToScan(int)));
-
-    connect(ScanController::instance(), SIGNAL(filesScanned(int)),
-            this, SLOT(slotFilesScanned(int)));
-
-    // Connection and rules for ScheduleCollectionScan mode.
-
-    connect(ScanController::instance(), SIGNAL(partialScanDone(QString)),
-            this, SLOT(slotPartialScanDone(QString)));
-
+    d->mode          = mode;
     d->foldersToScan = foldersToScan;
     d->foldersToScan.sort();
 }
@@ -104,10 +87,9 @@ void NewItemsFinder::slotStart()
     {
         case ScanDeferredFiles:
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "scan mode: ScanDeferredFiles";
+            connectToScanController();
 
-            connect(ScanController::instance(), SIGNAL(completeScanDone()),
-                    this, SLOT(slotDone()));
+            qCDebug(DIGIKAM_GENERAL_LOG) << "scan mode: ScanDeferredFiles";
 
             ScanController::instance()->completeCollectionScanInBackground(false);
             ScanController::instance()->allowToScanDeferredFiles();
@@ -116,6 +98,8 @@ void NewItemsFinder::slotStart()
 
         case CompleteCollectionScan:
         {
+            connectToScanController();
+
             qCDebug(DIGIKAM_GENERAL_LOG) << "scan mode: CompleteCollectionScan";
 
             ScanController::instance()->completeCollectionScanInBackground(false);
@@ -124,9 +108,6 @@ void NewItemsFinder::slotStart()
             {
                 break;
             }
-
-            connect(ScanController::instance(), SIGNAL(completeScanDone()),
-                    this, SLOT(slotDone()));
 
             ScanController::instance()->allowToScanDeferredFiles();
             ScanController::instance()->completeCollectionScanInBackground(true);
@@ -150,6 +131,11 @@ void NewItemsFinder::slotStart()
 
             qCDebug(DIGIKAM_GENERAL_LOG) << "scan mode: ScheduleCollectionScan :: " << d->foldersToScan;
 
+            connect(ScanController::instance(), SIGNAL(partialScanDone(QString)),
+                    this, SLOT(slotPartialScanDone(QString)));
+
+            setTotalItems(d->foldersToScan.count());
+
             Q_FOREACH (const QString& folder, d->foldersToScan)
             {
                 if (d->cancel)
@@ -163,6 +149,23 @@ void NewItemsFinder::slotStart()
             break;
         }
     }
+}
+
+void NewItemsFinder::connectToScanController()
+{
+    // Common connections to ScanController
+
+    connect(ScanController::instance(), SIGNAL(collectionScanStarted(QString)),
+            this, SLOT(slotScanStarted(QString)));
+
+    connect(ScanController::instance(), SIGNAL(totalFilesToScan(int)),
+            this, SLOT(slotTotalFilesToScan(int)));
+
+    connect(ScanController::instance(), SIGNAL(filesScanned(int)),
+            this, SLOT(slotFilesScanned(int)));
+
+    connect(ScanController::instance(), SIGNAL(completeScanDone()),
+            this, SLOT(slotDone()));
 }
 
 void NewItemsFinder::slotScanStarted(const QString& info)
@@ -199,6 +202,8 @@ void NewItemsFinder::slotPartialScanDone(const QString& path)
     {
         d->foldersScanned.append(path);
         d->foldersScanned.sort();
+
+        advance(1);
 
         // Check if all planned scanning is done
 
