@@ -142,7 +142,7 @@ bool ExifToolProcess::startExifTool()
 
     start(program, args, QProcess::ReadWrite);
 
-    return waitForStarted(1000);
+    return waitForStarted(5000);
 }
 
 void ExifToolProcess::restartExifTool()
