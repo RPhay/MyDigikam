@@ -28,14 +28,9 @@
 #include <QStringList>
 #include <QVariant>
 
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#   include <QRegularExpression>
-#else
-#   include <QRegExp>
-#endif
-
 // Local includes
 
+#include "QtAV_Global.h"
 #include "OpenGLHelper.h"
 #include "digikam_debug.h"
 

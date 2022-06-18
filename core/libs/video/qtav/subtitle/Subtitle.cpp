@@ -45,15 +45,9 @@
 #include <QTextStream>
 #include <QMutexLocker>
 
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#   include <QRegularExpression>
-using QRegExp = QRegularExpression;
-#else
-#   include <QRegExp>
-#endif
-
 // Local includes
 
+#include "QtAV_Global.h"
 #include "SubtitleProcessor.h"
 #include "CharsetDetector.h"
 #include "digikam_debug.h"

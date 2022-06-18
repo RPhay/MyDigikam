@@ -39,6 +39,13 @@
 #include "QtAV_dptr.h"
 #include "digikam_export.h"
 
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+#   include <QRegularExpression>
+using QRegExp = QRegularExpression;
+#else
+#   include <QRegExp>
+#endif
+
 /**
  * runtime version. used to compare with compile time version.
  */

@@ -31,14 +31,6 @@
 
 #include <QCoreApplication>
 #include <QMatrix4x4>
-
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#   include <QRegularExpression>
-using QRegExp = QRegularExpression;
-#else
-#   include <QRegExp>
-#endif
-
 #include <QGuiApplication>
 
 #ifdef QT_OPENGL_DYNAMIC
@@ -52,6 +44,7 @@ using QRegExp = QRegularExpression;
 
 // Local includes
 
+#include "QtAV_Global.h"
 #include "digikam_debug.h"
 
 #define BUG_GLES3_ANDROID 1 // FIXME: N7 android6 gles3 displays red images, only rgb32 is correct
@@ -79,7 +72,7 @@ bool useDeprecatedFormats()
     return v;
 }
 
-QString removeComments(const QString &code)
+QString removeComments(const QString& code)
 {
     QString c(code);
     c.remove(QRegExp(QString::fromUtf8("(/\\*([^*]|(\\*+[^*/]))*\\*+/)|(//[^\r^\n]*)")));
