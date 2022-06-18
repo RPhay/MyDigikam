@@ -75,7 +75,7 @@ DK_KF5_VERSION="5.92"
 DK_QTVERSION="5.15"
 
 # ExifTool Windows version to embed in the bundle.
-DK_EXIFTOOL_VERSION="12.41"
+DK_EXIFTOOL_VERSION="12.42"
 
 # digiKam tag version from git. Official tarball do not include extra shared libraries.
 # The list of tags can be listed with this url: https://invent.kde.org/graphics/digikam/-/tags
