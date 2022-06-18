@@ -87,6 +87,7 @@ void digikamSetDebugFilterRules(bool on)
 {
     if (on)
     {
-        QLoggingCategory::setFilterRules(QLatin1String("digikam.*=true"));
+        QLoggingCategory::setFilterRules(QLatin1String("digikam.*=true\n"
+                                                       "digikam.dimg.jpeg=false"));
     }
 }
