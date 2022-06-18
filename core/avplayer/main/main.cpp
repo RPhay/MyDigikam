@@ -146,7 +146,11 @@ int main(int argc, char* argv[])
     }
 
     QApplication app(argc, argv);
+
+    digikamSetDebugFilterRules(true);
+
     app.setAttribute(Qt::AA_DontCreateNativeWidgetSiblings);
+
     qCDebug(DIGIKAM_AVPLAYER_LOG) << app.arguments();
 
     // See bug #438701
