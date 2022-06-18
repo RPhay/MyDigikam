@@ -59,7 +59,7 @@ i18nlangs.each_line do |lang|
         for part in ['digikam']
 
             if isWindows
-                `svn cat svn://anonsvn.kde.org/home/kde/#{branch}/l10n-kf5/#{lang}/messages/digikam/#{part}.po 2> nul | Tee-Object -FilePath #{part}.po`
+                `svn cat svn://anonsvn.kde.org/home/kde/#{branch}/l10n-kf5/#{lang}/messages/digikam/#{part}.po > #{part}.po 2> nul`
             else
                 `svn cat svn://anonsvn.kde.org/home/kde/#{branch}/l10n-kf5/#{lang}/messages/digikam/#{part}.po 2> /dev/null | tee #{part}.po `
             end
