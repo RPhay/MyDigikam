@@ -201,7 +201,7 @@ QUrl DFileOperations::getUniqueFileUrl(const QUrl& orgUrl,
                 fileFound = true;
                 destUrl   = destUrl.adjusted(QUrl::RemoveFilename);
                 destUrl.setPath(destUrl.path() + completeBaseName +
-                                QString::fromUtf8("_v%1.").arg(++counter) + fi.completeSuffix());
+                                QString::fromUtf8("_v%1.").arg(++counter) + fi.suffix());
             }
         }
         while (fileFound);
