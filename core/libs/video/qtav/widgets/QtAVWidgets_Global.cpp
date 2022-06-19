@@ -119,6 +119,8 @@ void registerRenderers()
 
 #ifndef QT_NO_OPENGL
 
+    qCDebug(DIGIKAM_QTAV_LOG) << "   Qt have no OpenGL support.";
+
     qCDebug(DIGIKAM_QTAV_LOG)
         << "   register QtAV::OpenGLWidget Renderer:"
         << VideoRenderer::Register<OpenGLWidgetRenderer>(VideoRendererId_OpenGLWidget, "OpenGLWidget");
@@ -126,6 +128,8 @@ void registerRenderers()
 #endif
 
 #if QTAV_HAVE(GL)
+
+    qCDebug(DIGIKAM_QTAV_LOG) << "   QtAV have OpenGL support.";
 
     qCDebug(DIGIKAM_QTAV_LOG)
         << "   register QtAV::QGLWidget Renderer:"
@@ -143,12 +147,16 @@ void registerRenderers()
 
 #if QTAV_HAVE(GDIPLUS)
 
+    qCDebug(DIGIKAM_QTAV_LOG) << "   QtAV have GDI support.";
+
     qCDebug(DIGIKAM_QTAV_LOG) << "   register QtAV::GDI Renderer:"
                               << RegisterVideoRendererGDI_Man();
 
 #endif
 
 #if QTAV_HAVE(DIRECT2D)
+
+    qCDebug(DIGIKAM_QTAV_LOG) << "   QtAV have Direct2D support.";
 
     qCDebug(DIGIKAM_QTAV_LOG) << "   register QtAV::Direct2D Renderer:"
                               << RegisterVideoRendererDirect2D_Man();
@@ -157,12 +165,16 @@ void registerRenderers()
 
 #if QTAV_HAVE(XV)
 
+    qCDebug(DIGIKAM_QTAV_LOG) << "   QtAV have XVideo support.";
+
     qCDebug(DIGIKAM_QTAV_LOG) << "   register QtAV::XV Renderer:"
                               << RegisterVideoRendererXV_Man();
 
 #endif
 
 #if QTAV_HAVE(X11)
+
+    qCDebug(DIGIKAM_QTAV_LOG) << "   QtAV have X11 support.";
 
     qCDebug(DIGIKAM_QTAV_LOG) << "   register QtAV::X11 Renderer:"
                               << RegisterVideoRendererX11_Man();
