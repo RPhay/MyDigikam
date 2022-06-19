@@ -128,9 +128,9 @@ FACTORY_REGISTER_ID_AUTO(VideoRenderer, XV, "XVideo")
 
 #else
 
-void RegisterVideoRendererXV_Man()
+bool RegisterVideoRendererXV_Man()
 {
-    VideoRenderer::Register<XVRenderer>(VideoRendererId_XV, "XVideo");
+    return VideoRenderer::Register<XVRenderer>(VideoRendererId_XV, "XVideo");
 }
 
 #endif

@@ -192,7 +192,7 @@ QString options2StringHelper(void* obj, const char* unit)
                 continue;
 
             if (!qstrcmp(unit, opt->unit))
-                s.append(QString::fromUtf8(" %1=%2").arg(QLatin1String(opt->name)).arg(opt->default_val.i64));
+                s.append(QString::fromUtf8(" %1 = %2").arg(QLatin1String(opt->name)).arg(opt->default_val.i64));
 
             continue;
         }
@@ -233,7 +233,7 @@ QString options2StringHelper(void* obj, const char* unit)
 
             case AV_OPT_TYPE_RATIONAL:
             {
-                s.append(QString::fromUtf8("(%1/%2)").arg(opt->default_val.q.num).arg(opt->default_val.q.den));
+                s.append(QString::fromUtf8("(%1 / %2)").arg(opt->default_val.q.num).arg(opt->default_val.q.den));
 
                 break;
             }
@@ -298,8 +298,9 @@ void setOptionsToFFmpegObj(const QVariant& opt, void* obj)
             const QByteArray key(i.key().toUtf8());
 
             qCDebug(DIGIKAM_QTAV_LOG).noquote()
-                << QString::asprintf("%s=>%s",
-                    i.key().toUtf8().constData(), i.value().toByteArray().constData());
+                << QString::asprintf("%s => %s",
+                    i.key().toUtf8().constData(),
+                    i.value().toByteArray().constData());
 
             if      ((vt == QVariant::Int) || (vt == QVariant::UInt) || (vt == QVariant::Bool))
             {
@@ -338,8 +339,9 @@ void setOptionsToFFmpegObj(const QVariant& opt, void* obj)
         const QByteArray key(i.key().toUtf8());
 
         qCDebug(DIGIKAM_QTAV_LOG).noquote()
-            << QString::asprintf("%s=>%s",
-                i.key().toUtf8().constData(), i.value().toByteArray().constData());
+            << QString::asprintf("%s => %s",
+                i.key().toUtf8().constData(),
+                i.value().toByteArray().constData());
 
         if      ((vt == QVariant::Int) || (vt == QVariant::UInt) || (vt == QVariant::Bool))
         {
@@ -400,8 +402,9 @@ void setOptionsToDict(const QVariant& opt, AVDictionary** dict)
             }
 
             qCDebug(DIGIKAM_QTAV_LOG).noquote()
-                << QString::asprintf("dict: %s=>%s",
-                    i.key().toUtf8().constData(), i.value().toByteArray().constData());
+                << QString::asprintf("dict: %s => %s",
+                    i.key().toUtf8().constData(),
+                    i.value().toByteArray().constData());
         }
 
         return;
@@ -446,8 +449,9 @@ void setOptionsToDict(const QVariant& opt, AVDictionary** dict)
         }
 
         qCDebug(DIGIKAM_QTAV_LOG).noquote()
-            << QString::asprintf("dict: %s=>%s",
-                i.key().toUtf8().constData(), i.value().toByteArray().constData());
+            << QString::asprintf("dict: %s => %s",
+                i.key().toUtf8().constData(),
+                i.value().toByteArray().constData());
     }
 }
 
@@ -457,7 +461,7 @@ void setOptionsForQObject(const QVariant& opt, QObject* const obj)
         return;
 
     qCDebug(DIGIKAM_QTAV_LOG)
-        << QString::fromUtf8("set %1(%2) meta properties:")
+        << QString::fromUtf8("set %1 (%2) meta properties:")
             .arg(QLatin1String(obj->metaObject()->className()))
             .arg(obj->objectName());
 
@@ -480,8 +484,9 @@ void setOptionsForQObject(const QVariant& opt, QObject* const obj)
             obj->setProperty(i.key().toUtf8().constData(), i.value());
 
             qCDebug(DIGIKAM_QTAV_LOG).noquote()
-                << QString::asprintf("%s=>%s",
-                    i.key().toUtf8().constData(), i.value().toByteArray().constData());
+                << QString::asprintf("%s => %s",
+                    i.key().toUtf8().constData(),
+                    i.value().toByteArray().constData());
         }
     }
 
@@ -505,8 +510,9 @@ void setOptionsForQObject(const QVariant& opt, QObject* const obj)
         obj->setProperty(i.key().toUtf8().constData(), i.value());
 
         qCDebug(DIGIKAM_QTAV_LOG).noquote()
-            << QString::asprintf("%s=>%s",
-                i.key().toUtf8().constData(), i.value().toByteArray().constData());
+            << QString::asprintf("%s => %s",
+                i.key().toUtf8().constData(),
+                i.value().toByteArray().constData());
     }
 }
 

@@ -64,7 +64,7 @@ WidgetRenderer::WidgetRenderer(QWidget* const parent, Qt::WindowFlags f)
     setFocusPolicy(Qt::StrongFocus);
 
     /*
-     * To rapidly update custom widgets that constantly paint over their entire areas with
+     * To quickly update custom widgets that constantly paint over their entire areas with
      * opaque content, e.g., video streaming widgets, it is better to set the widget's
      * Qt::WA_OpaquePaintEvent, avoiding any unnecessary overhead associated with repainting the
      * widget's background

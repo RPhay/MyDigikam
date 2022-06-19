@@ -130,9 +130,9 @@ FACTORY_REGISTER_ID_AUTO(VideoRenderer, X11, "X11")
 
 #else
 
-void RegisterVideoRendererX11_Man()
+bool RegisterVideoRendererX11_Man()
 {
-    VideoRenderer::Register<X11Renderer>(VideoRendererId_X11, "X11");
+    return VideoRenderer::Register<X11Renderer>(VideoRendererId_X11, "X11");
 }
 
 #endif

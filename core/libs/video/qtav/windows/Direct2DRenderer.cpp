@@ -124,9 +124,9 @@ FACTORY_REGISTER_ID_AUTO(VideoRenderer, Direct2D, "Direct2D")
 
 #else
 
-void RegisterVideoRendererDirect2D_Man()
+bool RegisterVideoRendererDirect2D_Man()
 {
-    VideoRenderer::Register<Direct2DRenderer>(VideoRendererId_Direct2D, "Direct2D");
+    return VideoRenderer::Register<Direct2DRenderer>(VideoRendererId_Direct2D, "Direct2D");
 }
 
 #endif

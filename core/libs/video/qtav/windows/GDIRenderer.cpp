@@ -134,9 +134,9 @@ FACTORY_REGISTER_ID_AUTO(VideoRenderer, GDI, "GDI")
 
 #else
 
-void RegisterVideoRendererGDI_Man()
+bool RegisterVideoRendererGDI_Man()
 {
-    VideoRenderer::Register<GDIRenderer>(VideoRendererId_GDI, "GDI");
+    return VideoRenderer::Register<GDIRenderer>(VideoRendererId_GDI, "GDI");
 }
 
 #endif

@@ -88,10 +88,10 @@ FACTORY_REGISTER(VideoRenderer, OpenGLWidget,   "OpenGLWidget")
 #   endif
 #endif
 
-extern void RegisterVideoRendererGDI_Man();
-extern void RegisterVideoRendererDirect2D_Man();
-extern void RegisterVideoRendererXV_Man();
-extern void RegisterVideoRendererX11_Man();
+extern bool RegisterVideoRendererGDI_Man();
+extern bool RegisterVideoRendererDirect2D_Man();
+extern bool RegisterVideoRendererXV_Man();
+extern bool RegisterVideoRendererX11_Man();
 
 namespace Widgets
 {
@@ -99,11 +99,7 @@ namespace Widgets
 void registerRenderers()
 {
 
-#if !defined(QT_NO_DEBUG)
-
-    qCDebug(DIGIKAM_QTAV_LOG).noquote() << QString::asprintf("Register QtAV Renderers");
-
-#endif
+    qCDebug(DIGIKAM_QTAV_LOG) << "Register QtAV Renderers:";
 
     // check whether it is called
 
@@ -117,48 +113,65 @@ void registerRenderers()
     // factory.h does not check whether an id is registered
 
     if (VideoRenderer::name(VideoRendererId_Widget))
+    {
         return;
+    }
 
 #ifndef QT_NO_OPENGL
 
-    VideoRenderer::Register<OpenGLWidgetRenderer>(VideoRendererId_OpenGLWidget, "OpenGLWidget");
+    qCDebug(DIGIKAM_QTAV_LOG)
+        << "   register QtAV::OpenGLWidget Renderer:"
+        << VideoRenderer::Register<OpenGLWidgetRenderer>(VideoRendererId_OpenGLWidget, "OpenGLWidget");
 
 #endif
 
 #if QTAV_HAVE(GL)
 
-    VideoRenderer::Register<GLWidgetRenderer>(VideoRendererId_GLWidget,         "QGLWidget");
-    VideoRenderer::Register<GLWidgetRenderer2>(VideoRendererId_GLWidget2,       "QGLWidget2");
+    qCDebug(DIGIKAM_QTAV_LOG)
+        << "   register QtAV::QGLWidget Renderer:"
+        << VideoRenderer::Register<GLWidgetRenderer>(VideoRendererId_GLWidget,         "QGLWidget");
+
+    qCDebug(DIGIKAM_QTAV_LOG)
+        << "   register QtAV::QGLWidget2 Renderer:"
+        << VideoRenderer::Register<GLWidgetRenderer2>(VideoRendererId_GLWidget2,       "QGLWidget2");
 
 #endif
 
-    VideoRenderer::Register<WidgetRenderer>(VideoRendererId_Widget,             "Widget");
+    qCDebug(DIGIKAM_QTAV_LOG)
+        << "   register QtAV::Widget Renderer:"
+        << VideoRenderer::Register<WidgetRenderer>(VideoRendererId_Widget,             "Widget");
 
 #if QTAV_HAVE(GDIPLUS)
 
-    RegisterVideoRendererGDI_Man();
+    qCDebug(DIGIKAM_QTAV_LOG) << "   register QtAV::GDI Renderer:"
+                              << RegisterVideoRendererGDI_Man();
 
 #endif
 
 #if QTAV_HAVE(DIRECT2D)
 
-    RegisterVideoRendererDirect2D_Man();
+    qCDebug(DIGIKAM_QTAV_LOG) << "   register QtAV::Direct2D Renderer:"
+                              << RegisterVideoRendererDirect2D_Man();
 
 #endif
 
 #if QTAV_HAVE(XV)
 
-    RegisterVideoRendererXV_Man();
+    qCDebug(DIGIKAM_QTAV_LOG) << "   register QtAV::XV Renderer:"
+                              << RegisterVideoRendererXV_Man();
 
 #endif
 
 #if QTAV_HAVE(X11)
 
-    RegisterVideoRendererX11_Man();
+    qCDebug(DIGIKAM_QTAV_LOG) << "   register QtAV::X11 Renderer:"
+                              << RegisterVideoRendererX11_Man();
 
 #endif
 
-    VideoRenderer::Register<GraphicsItemRenderer>(VideoRendererId_GraphicsItem, "GraphicsItem");
+    qCDebug(DIGIKAM_QTAV_LOG)
+        << "   register QtAV::GraphicsItem Renderer:"
+        << VideoRenderer::Register<GraphicsItemRenderer>(VideoRendererId_GraphicsItem, "GraphicsItem");
 }
 
 } // namespace Widgets
