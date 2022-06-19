@@ -1466,7 +1466,8 @@ void ImportUI::slotDownloaded(const QString& folder, const QString& file, const 
         }
 
         d->downloadedItemList << dest;
-        d->downloadedDateList << creationDate;
+        d->downloadedDateHash.insert(dest, creationDate);
+        d->downloadedInfoHash.insert(dest, qMakePair(folder, file));
 
         if (!d->foldersToScan.contains(downloadUrl.toLocalFile()))
         {
@@ -2022,7 +2023,8 @@ bool ImportUI::downloadCameraItems(PAlbum* pAlbum, bool onlySelected, bool delet
     d->deleteAfter = deleteAfter;
 
     d->downloadedItemList.clear();
-    d->downloadedDateList.clear();
+    d->downloadedDateHash.clear();
+    d->downloadedInfoHash.clear();
     d->foldersToScan.clear();
 
     d->controller->download(allItems);
@@ -2108,7 +2110,6 @@ bool ImportUI::createExtBasedSubAlbum(QUrl& downloadUrl, const QString& suffix, 
     {
         subAlbum = QLatin1String("TIF");
     }
-
     else if (
              (subAlbum == QLatin1String("MPEG")) ||
              (subAlbum == QLatin1String("MPE"))  ||
@@ -2298,12 +2299,12 @@ void ImportUI::postProcessAfterDownload()
     QList<ParseSettings> renameFiles;
     QStringList renamedItemsList;
 
-    for (int i = 0 ; i < d->downloadedItemList.size() ; ++i)
+    Q_FOREACH (const QString& srcFile, d->downloadedItemList)
     {
         ParseSettings parseSettings;
 
-        parseSettings.fileUrl      = QUrl::fromLocalFile(d->downloadedItemList.at(i));
-        parseSettings.creationTime = d->downloadedDateList.at(i);
+        parseSettings.fileUrl      = QUrl::fromLocalFile(srcFile);
+        parseSettings.creationTime = d->downloadedDateHash.value(srcFile);
         renameFiles.append(parseSettings);
     }
 
@@ -2338,7 +2339,14 @@ void ImportUI::postProcessAfterDownload()
             slotLogMsg(xi18n("Skipped file <filename>%1</filename>", dstInfo.fileName()),
                        DHistoryView::WarningEntry);
 
-            // setDownloaded(info, CamItemInfo::DownloadedNo);
+            QPair<QString, QString> fPair = d->downloadedInfoHash.value(srcFile);
+            CamItemInfo& info             = d->view->camItemInfoRef(fPair.first,
+                                                                    fPair.second);
+
+            if (!info.isNull())
+            {
+                setDownloaded(info, CamItemInfo::DownloadedNo);
+            }
 
             continue;
         }
@@ -2407,7 +2415,8 @@ void ImportUI::postProcessAfterDownload()
 
     d->foldersToScan.clear();
     d->downloadedItemList.clear();
-    d->downloadedDateList.clear();
+    d->downloadedDateHash.clear();
+    d->downloadedInfoHash.clear();
 
     // Pop-up a notification to inform user when all is done,
     // and inform if auto-rotation will take place.
