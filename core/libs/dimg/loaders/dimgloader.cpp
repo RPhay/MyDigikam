@@ -40,7 +40,7 @@
 #include "dimg_p.h"
 #include "dmetadata.h"
 #include "dimgloaderobserver.h"
-#include "kmemoryinfo.h"
+#include "dmemoryinfo.h"
 
 namespace Digikam
 {
@@ -178,27 +178,30 @@ qint64 DImgLoader::checkAllocation(qint64 fullSize)
 
     if (fullSize > (qint64)(100 * 1024 * 1024))
     {
-        KMemoryInfo memory = KMemoryInfo::currentInfo();
+        DMemoryInfo memory;
 
-        int res = memory.isValid();
-
-        if      (res == -1)
+        if (memory.isNull())
         {
             qCWarning(DIGIKAM_DIMG_LOG) << "Not a recognized platform to get memory information";
+
             return -1;
         }
-        else if (res == 0)
+
+        qint64 available = memory.availablePhysical();
+
+        if (available == 0)
         {
             qCWarning(DIGIKAM_DIMG_LOG) << "Error to get physical memory information form a recognized platform";
+
             return 0;
         }
 
-        qint64 available = memory.bytes(KMemoryInfo::AvailableMemory);
 
         if (fullSize > available)
         {
             qCWarning(DIGIKAM_DIMG_LOG) << "Not enough memory to allocate buffer of size " << fullSize;
             qCWarning(DIGIKAM_DIMG_LOG) << "Available memory size is " << available;
+
             return 0;
         }
     }

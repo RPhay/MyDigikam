@@ -22,7 +22,6 @@ set(DIGIKAMCORE_OBJECTS
             $<TARGET_OBJECTS:core_pgfutils_obj>
             $<TARGET_OBJECTS:core_dthread_obj>
             $<TARGET_OBJECTS:core_versionmanager_obj>
-            $<TARGET_OBJECTS:core_kmemoryinfo_obj>
             $<TARGET_OBJECTS:core_libraw_obj>
             $<TARGET_OBJECTS:core_rawengine_obj>
             $<TARGET_OBJECTS:core_dpluginsinterface_obj>

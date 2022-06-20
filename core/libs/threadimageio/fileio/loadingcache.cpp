@@ -32,7 +32,7 @@
 
 #include "digikam_debug.h"
 #include "iccsettings.h"
-#include "kmemoryinfo.h"
+#include "dmemoryinfo.h"
 #include "metaengine.h"
 #include "thumbnailsize.h"
 
@@ -188,8 +188,8 @@ void LoadingCache::cleanUp()
 LoadingCache::LoadingCache()
     : d(new Private(this))
 {
-    KMemoryInfo memory = KMemoryInfo::currentInfo();
-    setCacheSize(qBound(60, int(memory.megabytes(KMemoryInfo::TotalRam)*0.05), 400));
+    DMemoryInfo memory;
+    setCacheSize(qBound(60, int(memory.totalPhysical() * 0.05), 400));
     setThumbnailCacheSize(5, 100); // the pixmap number should not be based on system memory, it's graphics memory
 
     // good place to call it here as LoadingCache is a singleton

@@ -28,6 +28,7 @@ set(libthreadimageio_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/fileio/loadingcacheinterface.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/fileio/loadsavetask.cpp
 
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/dmemoryinfo.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/dfileoperations.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/filereadwritelock.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/engine/managedloadsavethread.cpp

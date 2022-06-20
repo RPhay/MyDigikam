@@ -56,7 +56,7 @@
 #include "metaengine.h"
 #include "dngwriter.h"
 #include "exiftoolparser.h"
-#include "kmemoryinfo.h"
+#include "dmemoryinfo.h"
 #include "itempropertiestab.h"
 
 #ifdef HAVE_LENSFUN
@@ -331,19 +331,22 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18ncp(CONTEXT, "CPU core", "CPU cores", nbcore) << QString::fromLatin1("%1").arg(nbcore));
 
-    KMemoryInfo memory = KMemoryInfo::currentInfo();
-    int res            = memory.isValid();
-    qint64 available   = memory.bytes(KMemoryInfo::TotalRam);
+    DMemoryInfo memory;
 
-    if ((res > 0) && (available > 0))
+    if (!memory.isNull())
     {
-        new QTreeWidgetItem(m_features, QStringList() <<
-                            i18nc(CONTEXT, "Memory available") << ItemPropertiesTab::humanReadableBytesCount(available));
-    }
-    else
-    {
-        new QTreeWidgetItem(m_features, QStringList() <<
-                            i18nc(CONTEXT, "Memory available") << i18nc("@item: information about memory", "Unknown"));
+        qint64 available = memory.totalPhysical();
+
+        if (available > 0)
+        {
+            new QTreeWidgetItem(m_features, QStringList() <<
+                                i18nc(CONTEXT, "Memory available") << ItemPropertiesTab::humanReadableBytesCount(available));
+        }
+        else
+        {
+            new QTreeWidgetItem(m_features, QStringList() <<
+                                i18nc(CONTEXT, "Memory available") << i18nc("@item: information about memory", "Unknown"));
+        }
     }
 
     // NOTE: MANIFEST.txt is a text file generated with the bundles and listing all git revisions of rolling release components.
