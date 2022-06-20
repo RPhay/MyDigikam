@@ -196,7 +196,6 @@ qint64 DImgLoader::checkAllocation(qint64 fullSize)
             return 0;
         }
 
-
         if (fullSize > available)
         {
             qCWarning(DIGIKAM_DIMG_LOG) << "Not enough memory to allocate buffer of size " << fullSize;
