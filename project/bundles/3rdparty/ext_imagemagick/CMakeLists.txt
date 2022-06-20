@@ -53,16 +53,20 @@ if(MINGW)
 
 endif()
 
+set(Jbig_Conf -DBUILD_PROGRAMS=OFF
+              -DEXIV2_TOOLS=OFF
+)
+
+JoinListAsString("${Jbig_Conf}" " " BASH_OPTIONS)
+
 ExternalProject_Add(ext_jbig
 
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
     GIT_REPOSITORY https://github.com/zdenop/jbigkit.git
 
-    PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/jbig-libonly-mxe.patch
-
     CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
-                      <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo
+                      <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo ${BASH_OPTIONS}
 
     BUILD_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE) -j
 
