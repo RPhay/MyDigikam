@@ -1,5 +1,5 @@
-Craft CI/CD Repository
-----------------------
+Craft CI/CD Repositories
+------------------------
 
 KDE uses a common framework named Craft based on Python to process applications
 continuous workflow on different platforms:
@@ -9,7 +9,7 @@ continuous workflow on different platforms:
 
 The workflow supports notarization of application bundles (signing) for Linux (AppImage and Snap), Windows, and MacOS stores.
 
-* Ducumentations and tutorials:
+* Documentations and tutorials:
 
 - Front page                    : https://community.kde.org/Craft
 - Settings details              : https://community.kde.org/Craft/Blueprints
