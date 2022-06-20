@@ -57,7 +57,6 @@ LoadingProcess::~LoadingProcess()
 {
 }
 
-
 // -----------------------------------------------------------------------------------
 
 class Q_DECL_HIDDEN LoadingCache::Private
