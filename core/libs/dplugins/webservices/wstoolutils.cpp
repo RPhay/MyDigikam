@@ -83,10 +83,53 @@ QString WSToolUtils::randomString(const int& length)
 
 QSettings* WSToolUtils::getOauthSettings(QObject* const parent)
 {
+    QString dkoauth = oauthConfigFile();
+
+    return (new QSettings(dkoauth, QSettings::IniFormat, parent));
+}
+
+void WSToolUtils::saveToken(const QString& name, const QString& token)
+{
+    QString dkoauth = oauthConfigFile();
+
+    QSettings settings(dkoauth, QSettings::IniFormat);
+    QByteArray code = token.toLatin1().toBase64();
+
+    settings.beginGroup(name);
+    settings.setValue(QLatin1String("refreshToken"), code);
+    settings.endGroup();
+}
+
+QString WSToolUtils::readToken(const QString& name)
+{
+    QString dkoauth = oauthConfigFile();
+
+    QSettings settings(dkoauth, QSettings::IniFormat);
+
+    settings.beginGroup(name);
+    QByteArray code = settings.value(QLatin1String("refreshToken")).toByteArray();
+    settings.endGroup();
+
+    return QString::fromLatin1(QByteArray::fromBase64(code));
+}
+
+void WSToolUtils::clearToken(const QString& name)
+{
+    QString dkoauth = oauthConfigFile();
+
+    QSettings settings(dkoauth, QSettings::IniFormat);
+
+    settings.beginGroup(name);
+    settings.remove(QString());
+    settings.endGroup();
+}
+
+QString WSToolUtils::oauthConfigFile()
+{
     QString dkoauth = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) +
                       QLatin1String("/digikam_oauthrc");
 
-    return (new QSettings(dkoauth, QSettings::IniFormat, parent));
+    return dkoauth;
 }
 
 } // namespace Digikam
