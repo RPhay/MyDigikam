@@ -82,4 +82,6 @@ BUGFIXES:
 063 ==> 386072 - Can't access EXIF data on some (very few!) pictures from import camera window - works fine after that.
 064 ==> 381214 - Import may mix up picture content and metadata of different pictures.
 065 ==> 454739 - Find New Items is stuck at 0%.
-066 ==> 
+066 ==> 440156 - Cant get Google Import/export to authenticate with Google on Mint 20.2 Cinnamon.
+067 ==> 435384 - Export crash to google photos.
+068 ==> 

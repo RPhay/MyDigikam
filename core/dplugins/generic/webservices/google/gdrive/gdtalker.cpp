@@ -33,18 +33,9 @@
 #include <QJsonValue>
 #include <QJsonArray>
 #include <QByteArray>
-#include <QtAlgorithms>
-#include <QVBoxLayout>
-#include <QLineEdit>
-#include <QPlainTextEdit>
 #include <QList>
-#include <QVariant>
-#include <QVariantList>
-#include <QVariantMap>
-#include <QPair>
 #include <QFileInfo>
 #include <QMessageBox>
-#include <QStandardPaths>
 #include <QUrlQuery>
 
 // KDE includes
@@ -92,8 +83,7 @@ public:
         rootid(QLatin1String("root")),
         rootfoldername(QLatin1String("GoogleDrive Root")),
         state(GD_LOGOUT),
-        listPhotoId(QStringList()),
-        netMngr(nullptr)
+        listPhotoId(QStringList())
     {
     }
 
@@ -106,17 +96,13 @@ public:
     QString                username;
     State                  state;
     QStringList            listPhotoId;
-
-    QNetworkAccessManager* netMngr;
 };
 
 GDTalker::GDTalker(QWidget* const parent)
     : GSTalkerBase(parent, QStringList(QLatin1String("https://www.googleapis.com/auth/drive")), QLatin1String("GoogleDrive")),
       d(new Private)
 {
-    d->netMngr = new QNetworkAccessManager(this);
-
-    connect(d->netMngr, SIGNAL(finished(QNetworkReply*)),
+    connect(m_service->networkAccessManager(), SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotFinished(QNetworkReply*)));
 
     connect(this, SIGNAL(signalReadyToUpload()),
@@ -144,12 +130,10 @@ void GDTalker::getUserName()
 
     QUrl url(d->apiUrl.arg(QLatin1String("about")));
 
-    QNetworkRequest netRequest(url);
-    netRequest.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/json"));
-    netRequest.setRawHeader("Authorization", m_bearerAccessToken.toLatin1());
+    m_reply  = m_service->get(url);
 
-    m_reply  = d->netMngr->get(netRequest);
     d->state = Private::GD_USERNAME;
+
     Q_EMIT signalBusy(true);
 }
 
@@ -165,12 +149,10 @@ void GDTalker::listFolders()
 
     url.setQuery(q);
 
-    QNetworkRequest netRequest(url);
-    netRequest.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/json"));
-    netRequest.setRawHeader("Authorization", m_bearerAccessToken.toLatin1());
+    m_reply  = m_service->get(url);
 
-    m_reply  = d->netMngr->get(netRequest);
     d->state = Private::GD_LISTFOLDERS;
+
     Q_EMIT signalBusy(true);
 }
 
@@ -199,14 +181,12 @@ void GDTalker::createFolder(const QString& title, const QString& id)
     data += "\"application/vnd.google-apps.folder\"";
     data += "}\r\n";
 
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "data:" << data;
+    // qCDebug(DIGIKAM_WEBSERVICES_LOG) << "data:" << data;
 
-    QNetworkRequest netRequest(url);
-    netRequest.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/json"));
-    netRequest.setRawHeader("Authorization", m_bearerAccessToken.toLatin1());
+    m_reply  = m_service->post(url, data);
 
-    m_reply  = d->netMngr->post(netRequest, data);
     d->state = Private::GD_CREATEFOLDER;
+
     Q_EMIT signalBusy(true);
 }
 
@@ -284,10 +264,10 @@ bool GDTalker::addPhoto(const QString& imgPath, const GSPhoto& info,
     netRequest.setRawHeader("Authorization", m_bearerAccessToken.toLatin1());
     netRequest.setRawHeader("Host", "www.googleapis.com");
 
-    m_reply = d->netMngr->post(netRequest, form.formData());
+    m_reply  = m_service->networkAccessManager()->post(netRequest, form.formData());
 
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In add photo";
     d->state = Private::GD_ADDPHOTO;
+
     return true;
 }
 

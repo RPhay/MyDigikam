@@ -33,10 +33,7 @@
 #include <QStringList>
 #include <QNetworkReply>
 #include <QNetworkAccessManager>
-
-// O2 includes
-
-#include "o2.h"
+#include <QOAuth2AuthorizationCodeFlow>
 
 namespace DigikamGenericGoogleServicesPlugin
 {
@@ -69,6 +66,7 @@ private Q_SLOTS:
     void slotLinkingFailed();
     void slotLinkingSucceeded();
     void slotOpenBrowser(const QUrl& url);
+    void slotTokenChanged(const QString& token);
 
 private:
 
@@ -76,13 +74,14 @@ private:
 
 protected:
 
-    QStringList    m_scope;
-    QString        m_accessToken;
+    QStringList                   m_scope;
+    QString                       m_accessToken;
+    QString                       m_bearerAccessToken;
 
-    QString        m_bearerAccessToken;
+    QString                       m_serviceName;
 
-    QNetworkReply* m_reply;
-    QString        m_serviceName;
+    QNetworkReply*                m_reply;
+    QOAuth2AuthorizationCodeFlow* m_service;
 
 private:
 

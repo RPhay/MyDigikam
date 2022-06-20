@@ -52,6 +52,16 @@ public:
     static void removeTemporaryDir(const char* prefix);
 
     static QSettings* getOauthSettings(QObject* const parent);
+
+    static void saveToken(const QString& name, const QString& token);
+
+    static QString readToken(const QString& name);
+
+    static void clearToken(const QString& name);
+
+private:
+
+    static QString oauthConfigFile();
 };
 
 } // namespace Digikam

@@ -14,6 +14,7 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED
              Xml
              PrintSupport
              Network
+             NetworkAuth
 )
 
 if(ENABLE_QWEBENGINE)

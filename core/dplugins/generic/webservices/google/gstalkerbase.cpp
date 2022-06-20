@@ -28,16 +28,13 @@
 
 #include <QMap>
 #include <QDateTime>
-#include <QSettings>
 #include <QDesktopServices>
+#include <QOAuthHttpServerReplyHandler>
 
 // Local includes
 
 #include "digikam_debug.h"
-#include "webbrowserdlg.h"
 #include "wstoolutils.h"
-#include "o0globals.h"
-#include "o0settingsstore.h"
 
 using namespace Digikam;
 
@@ -49,76 +46,74 @@ class Q_DECL_HIDDEN GSTalkerBase::Private
 public:
 
     explicit Private()
-      : parent      (nullptr),
-        authUrl     (QLatin1String("https://accounts.google.com/o/oauth2/auth")),
-        tokenUrl    (QLatin1String("https://accounts.google.com/o/oauth2/token")),
-        refreshUrl  (QLatin1String("https://accounts.google.com/o/oauth2/token")),
-        apikey      (QLatin1String("258540448336-hgdegpohibcjasvk1p595fpvjor15pbc.apps.googleusercontent.com")),
-        clientSecret(QLatin1String("iiIKTNM4ggBXiTdquAzbs2xw")),
-        o2          (nullptr),
-        settings    (nullptr)
+      : parent    (nullptr),
+        linked    (false),
+        authUrl   (QLatin1String("https://accounts.google.com/o/oauth2/auth")),
+        tokenUrl  (QLatin1String("https://accounts.google.com/o/oauth2/token")),
+        identity  (QLatin1String("258540448336-hgdegpohibcjasvk1p595fpvjor15pbc.apps.googleusercontent.com")),
+        sharedKey (QLatin1String("iiIKTNM4ggBXiTdquAzbs2xw")),
+        netMngr   (nullptr)
     {
     }
 
-    QWidget*       parent;
+    QWidget*               parent;
 
-    QString        authUrl;
-    QString        tokenUrl;
-    QString        refreshUrl;
+    bool                   linked;
 
-    QString        apikey;
-    QString        clientSecret;
+    QString                authUrl;
+    QString                tokenUrl;
+    QString                identity;
+    QString                sharedKey;
 
-    O2*            o2;
-    QSettings*     settings;
+    QNetworkAccessManager* netMngr;
 };
 
 GSTalkerBase::GSTalkerBase(QWidget* const parent, const QStringList& scope, const QString& serviceName)
     : m_scope      (scope),
-      m_reply      (nullptr),
       m_serviceName(serviceName),
+      m_reply      (nullptr),
+      m_service    (nullptr),
       d            (new Private)
 {
-    d->parent = parent;
+    d->parent  = parent;
+    d->netMngr = new QNetworkAccessManager(this);
+    m_service  = new QOAuth2AuthorizationCodeFlow(d->netMngr, this);
 
-    // Ported to O2
-    d->o2     = new O2(this);
-    d->o2->setClientId(d->apikey);
-    d->o2->setClientSecret(d->clientSecret);
+    m_service->setContentType(QAbstractOAuth::ContentType::Json);
+    m_service->setClientIdentifierSharedKey(d->sharedKey);
+    m_service->setScope(m_scope.join(QLatin1String(" ")));
+    m_service->setAuthorizationUrl(QUrl(d->authUrl));
+    m_service->setAccessTokenUrl(QUrl(d->tokenUrl));
+    m_service->setClientIdentifier(d->identity);
 
-    // OAuth2 flow control
+    m_service->setModifyParametersFunction([](QAbstractOAuth::Stage stage, QVariantMap* parameters)
+        {
+            if (stage == QAbstractOAuth::Stage::RequestingAccessToken)
+            {
+                QByteArray code = parameters->value(QLatin1String("code")).toByteArray();
+                (*parameters)[QLatin1String("code")] = QUrl::fromPercentEncoding(code);
+            }
+        }
+    );
 
-    d->o2->setLocalPort(8000);
-    d->o2->setTokenUrl(d->tokenUrl);
-    d->o2->setRequestUrl(d->authUrl);
-    d->o2->setRefreshTokenUrl(d->refreshUrl);
-    d->o2->setScope(m_scope.join(QLatin1String(" ")));
-    d->o2->setGrantFlow(O2::GrantFlow::GrantFlowAuthorizationCode);
+    QOAuthHttpServerReplyHandler* const replyHandler = new QOAuthHttpServerReplyHandler(8000, this);
+    m_service->setReplyHandler(replyHandler);
 
     // OAuth configuration saved to between dk sessions
 
-    d->settings                  = WSToolUtils::getOauthSettings(this);
-    O0SettingsStore* const store = new O0SettingsStore(d->settings, QLatin1String(O2_ENCRYPTION_KEY), this);
-    store->setGroupKey(m_serviceName);
-    d->o2->setStore(store);
+    m_service->setRefreshToken(WSToolUtils::readToken(m_serviceName));
 
-    // Refresh token permission when offline
+    connect(m_service, &QOAuth2AuthorizationCodeFlow::authorizeWithBrowser,
+            this, &GSTalkerBase::slotOpenBrowser);
 
-    QMap<QString, QVariant> extraParams;
-    extraParams.insert(QLatin1String("access_type"), QLatin1String("offline"));
-    d->o2->setExtraRequestParams(extraParams);
+    connect(m_service, &QOAuth2AuthorizationCodeFlow::tokenChanged,
+            this, &GSTalkerBase::slotTokenChanged);
 
-    connect(d->o2, SIGNAL(linkingSucceeded()),
-            this, SLOT(slotLinkingSucceeded()));
+    connect(m_service, &QOAuth2AuthorizationCodeFlow::granted,
+            this, &GSTalkerBase::slotLinkingSucceeded);
 
-    connect(this, SIGNAL(signalLinkingSucceeded()),
-            this, SLOT(slotLinkingSucceeded()));
-
-    connect(d->o2, SIGNAL(linkingFailed()),
-            this, SLOT(slotLinkingFailed()));
-
-    connect(d->o2, SIGNAL(openBrowser(QUrl)),
-            this, SLOT(slotOpenBrowser(QUrl)));
+    connect(m_service, &QOAuth2AuthorizationCodeFlow::error,
+            this, &GSTalkerBase::slotLinkingFailed);
 }
 
 GSTalkerBase::~GSTalkerBase()
@@ -134,18 +129,19 @@ GSTalkerBase::~GSTalkerBase()
 void GSTalkerBase::link()
 {
     Q_EMIT signalBusy(true);
-    d->o2->link();
+    m_service->grant();
 }
 
 void GSTalkerBase::unlink()
 {
     Q_EMIT signalBusy(true);
 
-    d->o2->unlink();
+    d->linked = false;
 
-    d->settings->beginGroup(m_serviceName);
-    d->settings->remove(QString());
-    d->settings->endGroup();
+    m_service->setToken(QString());
+    m_service->setRefreshToken(QString());
+
+    WSToolUtils::clearToken(m_serviceName);
 
     m_bearerAccessToken.clear();
     m_accessToken.clear();
@@ -153,7 +149,9 @@ void GSTalkerBase::unlink()
 
 void GSTalkerBase::slotLinkingFailed()
 {
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to " << m_serviceName << " fail";
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to" << m_serviceName << "fail";
+
+    d->linked = false;
 
     Q_EMIT signalBusy(false);
     Q_EMIT signalAuthenticationRefused();
@@ -161,19 +159,14 @@ void GSTalkerBase::slotLinkingFailed()
 
 void GSTalkerBase::slotLinkingSucceeded()
 {
-    if (!d->o2->linked())
+    if (m_service->status() == QAbstractOAuth::Status::Granted)
     {
-        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "UNLINK to " << m_serviceName << " ok";
-        Q_EMIT signalBusy(false);
-        return;
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to" << m_serviceName << "ok";
+
+        d->linked = true;
+
+        Q_EMIT signalAccessTokenObtained();
     }
-
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to " << m_serviceName << " ok";
-
-    m_accessToken       = d->o2->token();
-    m_bearerAccessToken = QLatin1String("Bearer ") + m_accessToken;
-
-    Q_EMIT signalAccessTokenObtained();
 }
 
 void GSTalkerBase::slotOpenBrowser(const QUrl& url)
@@ -185,28 +178,29 @@ void GSTalkerBase::slotOpenBrowser(const QUrl& url)
 
 bool GSTalkerBase::authenticated() const
 {
-    return d->o2->linked();
+    return d->linked;
+}
+
+void GSTalkerBase::slotTokenChanged(const QString& token)
+{
+    m_accessToken       = token;
+    m_bearerAccessToken = QLatin1String("Bearer ") + m_accessToken;
+
+    WSToolUtils::saveToken(m_serviceName, m_service->refreshToken());
 }
 
 void GSTalkerBase::doOAuth()
 {
-    int sessionExpires = d->o2->expires();
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "current time " << QDateTime::currentMSecsSinceEpoch() / 1000;
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "expires at : " << sessionExpires;
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "current time" << QDateTime::currentDateTime();
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "expires at: " << m_service->expirationAt();
 
-    /**
-     * If user has not logined yet (sessionExpires == 0), link
-     * If access token has expired yet, refresh
-     * TODO: Otherwise, provoke slotLinkingSucceeded
-     */
-
-    if (sessionExpires == 0)
+    if (!m_service->refreshToken().isEmpty())
     {
-        link();
+        m_service->refreshAccessToken();
     }
     else
     {
-        d->o2->refresh();
+        link();
     }
 }
 
