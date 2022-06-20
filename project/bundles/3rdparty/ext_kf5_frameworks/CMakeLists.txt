@@ -187,7 +187,7 @@ InstallKF5Component(extra-cmake-modules ${KF5_VERSION} ""                       
 InstallKF5Component(kconfig             ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(breeze-icons        ${KF5_VERSION} "${BreezeIconsOptions}"                                              "breeze-dropsvg-rccprefix.patch")
 InstallKF5Component(solid               ${KF5_VERSION} ""                                                                   "")
-InstallKF5Component(kcoreaddons         ${KF5_VERSION} ""                                                                   "")
+InstallKF5Component(kcoreaddons         ${KF5_VERSION} ""                                                                   "kcoreaddons-mingw.patch")
 InstallKF5Component(threadweaver        ${KF5_VERSION} ""                                                                   "${MacosThreadWeaverPatch}")
 InstallKF5Component(kwindowsystem       ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(karchive            ${KF5_VERSION} ""                                                                   "")

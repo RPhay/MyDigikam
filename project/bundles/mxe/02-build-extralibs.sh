@@ -93,7 +93,6 @@ ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kdbusa
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_ki18n               -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kcrash              -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kcodecs             -- -j$CPU_CORES
-${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kauth               -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kguiaddons          -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kwidgetsaddons      -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kitemviews          -- -j$CPU_CORES
@@ -101,15 +100,11 @@ ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kcompl
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kconfigwidgets      -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kiconthemes         -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kservice            -- -j$CPU_CORES
-${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kglobalaccel        -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kxmlgui             -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kbookmarks          -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kimageformats       -- -j$CPU_CORES
 
 # Extra support for digiKam
-
-# libksane support
-${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_libksane            -- -j$CPU_CORES
 
 # Geolocation support
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_marble              -- -j$CPU_CORES
