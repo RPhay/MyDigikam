@@ -57,3 +57,18 @@ target_link_libraries(solidhardware_gui
 
                       ${COMMON_TEST_LINK}
 )
+
+#------------------------------------------------------------------------
+
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/dmemoryinfo_utest.cpp
+
+        NAME_PREFIX
+
+        "digikam-"
+
+        LINK_LIBRARIES
+
+        digikamcore
+
+        ${COMMON_TEST_LINK}
+)
