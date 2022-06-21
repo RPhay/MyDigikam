@@ -275,8 +275,17 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 #endif
 
 #ifdef HAVE_X265
-    new QTreeWidgetItem(m_libraries, QStringList() <<
-                        i18nc(CONTEXT, "Libx265") <<                        QLatin1String(x265_version_str));
+    if (x265_version_str)
+    {
+        new QTreeWidgetItem(m_libraries, QStringList() <<
+                            i18nc(CONTEXT, "Libx265") <<                    QLatin1String(x265_version_str));
+    }
+    else
+    {
+        new QTreeWidgetItem(m_libraries, QStringList() <<
+                            i18nc(CONTEXT, "Libx265") <<                    i18nc("@info: version", "Unknown"));
+    }
+
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "HEIF writing support") <<           SUPPORTED_YES);
 #else
