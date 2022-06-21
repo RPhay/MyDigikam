@@ -43,7 +43,9 @@ namespace Digikam
  * To use the class, simply create an instance.
  * \code
  * DMemoryInfo memInfo;
- * if (!memInfo.isNull()) {
+ *
+ * if (!memInfo.isNull())
+ * {
  *     ...
  * }
  * \endcode

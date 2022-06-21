@@ -54,7 +54,7 @@
 namespace Digikam
 {
 
-class DMemoryInfo::Private : public QSharedData
+class Q_DECL_HIDDEN DMemoryInfo::Private : public QSharedData
 {
 public:
 
@@ -89,6 +89,7 @@ DMemoryInfo::DMemoryInfo(const DMemoryInfo& other)
 DMemoryInfo& DMemoryInfo::operator=(const DMemoryInfo& other)
 {
     d = other.d;
+
     return *this;
 }
 
@@ -155,7 +156,7 @@ quint64 DMemoryInfo::freeSwapFile() const
 
 #if defined(Q_OS_WINDOWS)
 
-struct SwapInfo
+struct Q_DECL_HIDDEN SwapInfo
 {
     quint64 totalPageFilePages = 0;
     quint64 freePageFilePages  = 0;
@@ -214,11 +215,11 @@ bool DMemoryInfo::update()
 
 #elif defined(Q_OS_LINUX) || defined(Q_OS_ANDROID)
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+#   if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 using ByteArrayView = QByteArray;
-#else
+#   else
 using ByteArrayView = QByteArrayView;
-#endif
+#   endif
 
 bool extractBytes(quint64& value, const QByteArray& buffer, const ByteArrayView& beginPattern, qsizetype& from)
 {
@@ -245,7 +246,10 @@ bool extractBytes(quint64& value, const QByteArray& buffer, const ByteArrayView&
     {
         // Wrong order? Restart from the beginning
 
-        qCWarning(DIGIKAM_GENERAL_LOG) << "DMemoryInfo: extractBytes: wrong order when extracting" << beginPattern;
+        qCWarning(DIGIKAM_GENERAL_LOG)
+            << "DMemoryInfo: extractBytes: wrong order when extracting"
+            << beginPattern;
+
         from = 0;
 
         return extractBytes(value, buffer, beginPattern, from);
@@ -263,67 +267,67 @@ bool DMemoryInfo::update()
         return false;
     }
 
-    auto meminfo      = file.readAll();
+    auto meminfo           = file.readAll();
     file.close();
 
-    qsizetype miFrom  = 0;
-    quint64 totalPhys = 0;
+    qsizetype miFrom       = 0;
+    quint64 totalPhys      = 0;
 
     if (!extractBytes(totalPhys, meminfo, "MemTotal:", miFrom))
     {
         return false;
     }
 
-    quint64 freePhys  = 0;
+    quint64 freePhys       = 0;
 
     if (!extractBytes(freePhys, meminfo, "MemFree:", miFrom))
     {
         return false;
     }
 
-    quint64 availPhys = 0;
+    quint64 availPhys      = 0;
 
     if (!extractBytes(availPhys, meminfo, "MemAvailable:", miFrom))
     {
         return false;
     }
 
-    quint64 buffers   = 0;
+    quint64 buffers        = 0;
 
     if (!extractBytes(buffers, meminfo, "Buffers:", miFrom))
     {
         return false;
     }
 
-    quint64 cached    = 0;
+    quint64 cached         = 0;
 
     if (!extractBytes(cached, meminfo, "Cached:", miFrom))
     {
         return false;
     }
 
-    quint64 swapTotal = 0;
+    quint64 swapTotal      = 0;
 
     if (!extractBytes(swapTotal, meminfo, "SwapTotal:", miFrom))
     {
         return false;
     }
 
-    quint64 swapFree = 0;
+    quint64 swapFree       = 0;
 
     if (!extractBytes(swapFree, meminfo, "SwapFree:", miFrom))
     {
         return false;
     }
 
-    quint64 sharedMem = 0;
+    quint64 sharedMem      = 0;
 
     if (!extractBytes(sharedMem, meminfo, "Shmem:", miFrom))
     {
         return false;
     }
 
-    quint64 sReclaimable = 0;
+    quint64 sReclaimable   = 0;
 
     if (!extractBytes(sReclaimable, meminfo, "SReclaimable:", miFrom))
     {
@@ -392,7 +396,7 @@ bool DMemoryInfo::update()
         return false;
     }
 
-    quint64 zfs_arcstats_size = 0;
+    quint64 zfs_arcstats_size    = 0;
 
     if (!sysctlread("kstat.zfs.misc.arcstats.size", zfs_arcstats_size))
     {
@@ -408,7 +412,8 @@ bool DMemoryInfo::update()
     }
 
     d->m_totalPhysical     = memSize;
-    d->m_availablePhysical = memSize - (vmstat.internal_page_count + vmstat.compressor_page_count + vmstat.wire_count) *
+    d->m_availablePhysical = memSize -
+                             (vmstat.internal_page_count + vmstat.compressor_page_count + vmstat.wire_count) *
                              pageSize;
     d->m_freePhysical      = vmstat.free_count * pageSize;
     d->m_totalSwapFile     = swapUsage.xsu_total;
@@ -431,24 +436,24 @@ bool sysctlread(const char* name, T& var)
 
 bool DMemoryInfo::update()
 {
-    quint64 memSize  = 0;
-    quint64 pageSize = 0;
+    quint64 memSize           = 0;
+    quint64 pageSize          = 0;
 
-    int mib[4]       = { 0 };
-    size_t sz        = 0;
+    int mib[4]                = { 0 };
+    size_t sz                 = 0;
 
-    mib[0]           = CTL_HW;
-    mib[1]           = HW_PHYSMEM;
-    sz               = sizeof(memSize);
+    mib[0]                    = CTL_HW;
+    mib[1]                    = HW_PHYSMEM;
+    sz                        = sizeof(memSize);
 
     if (sysctl(mib, 2, &memSize, &sz, nullptr, 0) != 0)
     {
         return false;
     }
 
-    mib[0]           = CTL_HW;
-    mib[1]           = HW_PAGESIZE;
-    sz               = sizeof(pageSize);
+    mib[0]                    = CTL_HW;
+    mib[1]                    = HW_PAGESIZE;
+    sz                        = sizeof(pageSize);
 
     if (sysctl(mib, 2, &pageSize, &sz, nullptr, 0) != 0)
     {
@@ -469,36 +474,36 @@ bool DMemoryInfo::update()
         zfs_arcstats_size = 0; // no ZFS used
     }
 
-    quint32 v_cache_count = 0;
+    quint32 v_cache_count     = 0;
 
     if (!sysctlread("vm.stats.vm.v_cache_count", v_cache_count))
     {
         return false;
     }
 
-    quint32 v_inactive_count = 0;
+    quint32 v_inactive_count  = 0;
 
     if (!sysctlread("vm.stats.vm.v_inactive_count", v_inactive_count))
     {
         return false;
     }
 
-    quint32 v_free_count = 0;
+    quint32 v_free_count      = 0;
 
     if (!sysctlread("vm.stats.vm.v_free_count", v_free_count))
     {
         return false;
     }
 
-    quint64 vfs_bufspace = 0;
+    quint64 vfs_bufspace      = 0;
 
     if (!sysctlread("vfs.bufspace", vfs_bufspace))
     {
         return false;
     }
 
-    quint64 swap_tot  = 0;
-    quint64 swap_free = 0;
+    quint64 swap_tot          = 0;
+    quint64 swap_free         = 0;
 
     if (auto kd = kvm_open("/dev/null", "/dev/null", "/dev/null", O_RDONLY, "kvm_open"))
     {
@@ -515,14 +520,15 @@ bool DMemoryInfo::update()
             swap_free = swap.ksw_used;
         }
 
-        swap_free = (swap_tot - swap_free) * pageSize;
-        swap_tot *= pageSize;
+        swap_free  = (swap_tot - swap_free) * pageSize;
+        swap_tot  *= pageSize;
     }
 
     // Source HTOP: https://github.com/htop-dev/htop/blob/main/freebsd/FreeBSDProcessList.c
 
     d->m_totalPhysical     = memSize;
-    d->m_availablePhysical = pageSize * (v_cache_count + v_free_count + v_inactive_count) +
+    d->m_availablePhysical = pageSize *
+                             (v_cache_count + v_free_count + v_inactive_count) +
                              vfs_bufspace + zfs_arcstats_size;
     d->m_freePhysical      = pageSize * v_free_count;
     d->m_totalSwapFile     = swap_tot;
