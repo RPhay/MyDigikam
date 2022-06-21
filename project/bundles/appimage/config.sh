@@ -34,11 +34,11 @@ DK_BUILDTEMP=$BUILDING_DIR/dktemp
 
 # KDE Application version.
 # See official release here: https://download.kde.org/stable/release-service/
-DK_KA_VERSION="21.12.3"
+DK_KA_VERSION="22.04.2"
 
 # KDE KF5 frameworks version.
 # See official release here: https://download.kde.org/stable/frameworks/
-DK_KF5_VERSION="5.92"
+DK_KF5_VERSION="5.95"
 
 # digiKam tag version from git. Official tarball do not include extra shared libraries.
 # The list of tags can be listed with this url: https://invent.kde.org/graphics/digikam/-/tags

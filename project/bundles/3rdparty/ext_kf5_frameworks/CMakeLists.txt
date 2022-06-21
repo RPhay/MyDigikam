@@ -196,7 +196,7 @@ InstallKF5Component(ki18n               ${KF5_VERSION} ""                       
 InstallKF5Component(kcrash              ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kcodecs             ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kauth               ${KF5_VERSION} "${MacosKauthBackend}"                                               "")
-InstallKF5Component(kguiaddons          ${KF5_VERSION} ""                                                                   "kguiaddons-mingw.patch")
+InstallKF5Component(kguiaddons          ${KF5_VERSION} "-DWITH_WAYLAND=OFF"                                                 "kguiaddons-mingw.patch")
 InstallKF5Component(kwidgetsaddons      ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kitemviews          ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kcompletion         ${KF5_VERSION} ""                                                                   "")
