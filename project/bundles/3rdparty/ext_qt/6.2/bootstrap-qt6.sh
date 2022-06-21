@@ -65,7 +65,6 @@ OPENSSL_LIBS='-L$EXT_PREFIX/local/include/openssl/ -l$EXT_PREFIX/local/lib/libss
                   -skip qtlottie                        `#  No need Adobe QtQuick After Effect animations integration.` \
                   -skip qtmqtt                          `#  No need Mqtt support.` \
                   -skip qtmultimedia                    `#  No need multimedia support (replaced by QtAV+ffmpeg).` \
-                  -skip qtnetworkauth                   `#  No need network authentication support.` \
                   -skip qtopcua                         `#  New to Qt6.` \
                   -skip qtpim                           `#  New to Qt6.` \
                   -skip qtpositioning                   `#  New to Qt6.` \

@@ -73,7 +73,6 @@ ExternalProject_Add(ext_qt
                   -skip qtlottie                    # No need Adobe QtQuick After Effect animations integration
                   -skip qtmacextras                 # For MacOS devices only
                   -skip qtmultimedia                # No need multimedia support (replaced by QtAV+ffmpeg)
-                  -skip qtnetworkauth               # No need network authentication support.
                   -skip qtpurchasing                # No need in-app purchase of products support
                   -skip qtquickcontrols2            # QtQuick support for QML
                   -skip qtremoteobjects             # No need sharing QObject properties between processes support

@@ -142,6 +142,7 @@ make MXE_TARGETS=$MXE_BUILD_TARGETS \
      qtbase qtbase_CONFIGURE_OPTS=-icu \
      qttranslations \
      qtimageformats \
+     qtnetworkauth \
      qttools \
      qtwinextras \
      qtscript \
