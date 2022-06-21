@@ -50,7 +50,7 @@ public:
 public:
 
 //@{
-/// Setup methods
+/// Setup methods: MainWindow_setup.cpp
 
     void setAudioBackends(const QStringList& backends);
     bool setRenderer(QtAV::VideoRenderer* const renderer);
@@ -59,11 +59,16 @@ public:
 private Q_SLOTS:
 
     void initPlayer();
+    void initAudioTrackMenu();
     void setupUi();
     void setFrameRate();
     void setVolume();
     void setup();
     void changeClockType(QAction* action);
+    void setRepeateMax(int);
+    void changeVO(QAction* action);
+    void changeChannel(QAction* action);
+    void changeAudioTrack(QAction* action);
 
 //@{
 /// IO operations methods
@@ -93,14 +98,9 @@ Q_SIGNALS:
 private Q_SLOTS:
 
     void about();
-    void initAudioTrackMenu();
     void updateChannelMenu();
     void switchAspectRatio(QAction* action);
     void toggleRepeat(bool);
-    void setRepeateMax(int);
-    void changeVO(QAction* action);
-    void changeChannel(QAction* action);
-    void changeAudioTrack(QAction* action);
     void playOnlineVideo(QAction* action);
     void onPlayListClick(const QString& key, const QString& value);
     void processPendingActions();
