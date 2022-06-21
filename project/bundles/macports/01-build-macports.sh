@@ -284,6 +284,7 @@ port install \
              expat \
              libxml2 \
              libxslt \
+             libical \
              lensfun \
              bison \
              py38-lxml \
@@ -315,8 +316,7 @@ else
 
 fi
 
-# Ports broken since a while. check later
-#             libical \
+# port broken since a while. check later
 #             sane-backends \
 
 echo -e "\n"
