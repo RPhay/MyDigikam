@@ -136,6 +136,7 @@ urpmi --auto \
       lib64qt5webengine-devel \
       lib64qt5sql-devel \
       lib64qt5svg-devel \
+      lib64qt5networkauth-devel \
       lib64kf5sane-devel \
       lib64kf5xmlgui-devel \
       lib64kf5threadweaver-devel \
