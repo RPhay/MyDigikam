@@ -125,16 +125,6 @@
             "sources": [ { "type": "git", "url": "https://github.com/Itseez/opencv.git", "tag": "4.5.1" } ]
         },
         {
-            "name": "sane",
-            "buildsystem": "autotools",
-            "sources": [ { "type": "git", "url": "https://gitlab.com/sane-project/backends", "tag": "1.0.31"} ]
-        },
-        {
-            "name": "libksane",
-            "buildsystem": "cmake-ninja",
-            "sources": [ { "type": "git", "url": "https://invent.kde.org/graphics/libksane.git", "tag": "v21.12.3" } ]
-        },
-        {
             "name": "gphoto2",
             "sources": [
                 { "type": "git", "url": "https://github.com/gphoto/libgphoto2.git", "tag": "v2.5.26"},
@@ -269,7 +259,7 @@
             "name": "heif",
             "buildsystem": "cmake-ninja",
             "builddir": true,
-            "sources": [ { "type": "git", "url": "https://github.com/strukturag/libheif.git" } ]
+            "sources": [ { "type": "git", "url": "https://github.com/strukturag/libheif.git", "tag": "v1.12.0" } ]
         },
         {
             "name": "digikam",
