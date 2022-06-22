@@ -269,7 +269,6 @@
             "name": "heif",
             "buildsystem": "cmake-ninja",
             "builddir": true,
-            "subdir" : "source",
             "sources": [ { "type": "git", "url": "https://github.com/strukturag/libheif.git" } ]
         },
         {
