@@ -47,10 +47,10 @@ public:
     explicit MainWindow(QWidget* const parent = nullptr);
     ~MainWindow();
 
-public:
-
 //@{
 /// Setup methods: MainWindow_setup.cpp
+
+public:
 
     void setAudioBackends(const QStringList& backends);
     bool setRenderer(QtAV::VideoRenderer* const renderer);
@@ -71,7 +71,7 @@ private Q_SLOTS:
     void changeAudioTrack(QAction* action);
 
 //@{
-/// IO operations methods
+/// IO operations methods: MainWindow_io.cpp
 
 public Q_SLOTS:
 
