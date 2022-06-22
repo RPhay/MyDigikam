@@ -144,6 +144,8 @@ DigikamApp::DigikamApp()
     setupActions();
     setupStatusBar();
 
+    qApp->processEvents();
+
     initGui();
 
     setupViewConnections();
