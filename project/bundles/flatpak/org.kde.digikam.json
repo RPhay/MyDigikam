@@ -132,7 +132,7 @@
         {
             "name": "libksane",
             "buildsystem": "cmake-ninja",
-            "sources": [ { "type": "git", "url": "https://invent.kde.org/graphics/libksane.git" } ]
+            "sources": [ { "type": "git", "url": "https://invent.kde.org/graphics/libksane.git", "tag": "v21.12.3" } ]
         },
         {
             "name": "gphoto2",
