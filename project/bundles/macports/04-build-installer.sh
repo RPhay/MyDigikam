@@ -611,7 +611,7 @@ else
 
     # with official release version, disable upload to KDE server, as this break check for new version function.
     echo -e "Official release version detected, upload is disabled.\n"
-    DK_UPLOAD = 0
+    DK_UPLOAD=0
 
 fi
 
