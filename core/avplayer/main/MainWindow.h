@@ -47,6 +47,10 @@ public:
     explicit MainWindow(QWidget* const parent = nullptr);
     ~MainWindow();
 
+Q_SIGNALS:
+
+    void ready();
+
 //@{
 /// Setup methods: MainWindow_setup.cpp
 
@@ -71,7 +75,7 @@ private Q_SLOTS:
     void changeAudioTrack(QAction* action);
 
 //@{
-/// IO operations methods: MainWindow_io.cpp
+/// File IO methods: MainWindow_io.cpp
 
 public Q_SLOTS:
 
@@ -83,71 +87,39 @@ private Q_SLOTS:
 
     void stopUnload();
     void openUrl();
+    void playOnlineVideo(QAction* action);
+    void seek();
+    void seek(int);
+    void onSeekFinished(qint64 pos);
+    void openSubtitle();
 
 //@}
+
+//@{
+/// Control methods: MainWindow_control.cpp
 
 public Q_SLOTS:
 
     void togglePlayPause();
-    void showNextOSD();
-
-Q_SIGNALS:
-
-    void ready();
 
 private Q_SLOTS:
 
-    void about();
-    void updateChannelMenu();
-    void switchAspectRatio(QAction* action);
     void toggleRepeat(bool);
-    void playOnlineVideo(QAction* action);
     void onPlayListClick(const QString& key, const QString& value);
-    void processPendingActions();
-    void onSpinBoxChanged(double v);
     void onStartPlay();
     void onStopPlay();
     void onPaused(bool p);
     void onSpeedChange(qreal speed);
-    void seek();
-    void seek(int);
-    void showHideVolumeBar();
-    void tryHideControlBar();
-    void tryShowControlBar();
-    void showInfo();
-    void onPositionChange(qint64 pos);
     void repeatAChanged(const QTime& t);
     void repeatBChanged(const QTime& t);
-
-    void onTimeSliderHover(int pos, int value);
-    void onTimeSliderLeave();
-    void handleError(const QtAV::AVError& e);
-    void onMediaStatusChanged();
-    void onBufferProgress(qreal percent);
-
-    void onVideoEQEngineChanged();
-    void onBrightnessChanged(int b);
-    void onContrastChanged(int c);
-    void onHueChanged(int h);
-    void onSaturationChanged(int s);
-
-    void onSeekFinished(qint64 pos);
-    void onCaptureConfigChanged();
-    void onAVFilterVideoConfigChanged();
-    void onAVFilterAudioConfigChanged();
-    void onBufferValueChanged();
-    void onAbortOnTimeoutChanged();
-
-    void onUserShaderChanged();
-
     void handleFullscreenChange();
     void toggoleSubtitleEnabled(bool value);
     void toggleSubtitleAutoLoad(bool value);
-    void openSubtitle();
-    void setSubtitleCharset(const QString& charSet);
-    void setSubtitleEngine(const QString& value);
 
-    void syncVolumeUi(qreal value);
+//@}
+
+//@{
+/// Event methods: MainWindow_events.cpp
 
 protected:
 
@@ -162,6 +134,65 @@ protected:
     virtual void timerEvent(QTimerEvent* e);
     virtual void keyPressEvent(QKeyEvent* e);
     virtual void keyReleaseEvent(QKeyEvent* e);
+
+//@}
+
+//@{
+/// Render methods: MainWindow_render.cpp
+
+public Q_SLOTS:
+
+    void showNextOSD();
+
+private Q_SLOTS:
+
+    void switchAspectRatio(QAction* action);
+
+//@}
+
+//@{
+/// Configuration methods: MainWindow_config.cpp
+
+//@}
+
+
+private Q_SLOTS:
+
+    void about();
+    void updateChannelMenu();
+    void processPendingActions();
+    void onSpinBoxChanged(double v);
+    void showHideVolumeBar();
+    void tryHideControlBar();
+    void tryShowControlBar();
+    void showInfo();
+    void onPositionChange(qint64 pos);
+
+    void onTimeSliderHover(int pos, int value);
+    void onTimeSliderLeave();
+    void handleError(const QtAV::AVError& e);
+    void onMediaStatusChanged();
+    void onBufferProgress(qreal percent);
+
+    void onVideoEQEngineChanged();
+    void onBrightnessChanged(int b);
+    void onContrastChanged(int c);
+    void onHueChanged(int h);
+    void onSaturationChanged(int s);
+
+    void onCaptureConfigChanged();
+    void onAVFilterVideoConfigChanged();
+    void onAVFilterAudioConfigChanged();
+    void onBufferValueChanged();
+    void onAbortOnTimeoutChanged();
+
+    void onUserShaderChanged();
+
+    void setSubtitleCharset(const QString& charSet);
+    void setSubtitleEngine(const QString& value);
+
+    void syncVolumeUi(qreal value);
+
 
 private:
 
