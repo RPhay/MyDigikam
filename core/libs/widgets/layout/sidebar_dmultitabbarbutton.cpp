@@ -29,9 +29,9 @@
 namespace Digikam
 {
 
-DMultiTabBarButton::DMultiTabBarButton(const QPixmap& pic, const QString& text,
+DMultiTabBarButton::DMultiTabBarButton(const QIcon& pic, const QString& text,
                                        int id, QWidget* const parent)
-    : QPushButton(QIcon(pic), text, parent),
+    : QPushButton(pic, text, parent),
       m_id       (id)
 {
     // --- NOTE: use dynamic binding as slotClicked() is a virtual method which can be re-implemented in derived classes.

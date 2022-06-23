@@ -29,6 +29,7 @@
 
 // Qt includes
 
+#include <QIcon>
 #include <QPixmap>
 #include <QSplitter>
 #include <QPushButton>
@@ -76,13 +77,13 @@ public:
     /**
      * append  a new button to the button area. The button can later on be accessed with button(ID)
      * eg for connecting signals to it
-     * @param pic a pixmap for the button
+     * @param pic a icon for the button
      * @param id an arbitrary ID value. It will be emitted in the clicked signal for identifying the button
      *  if more than one button is connected to a signals.
      * @param popup A popup menu which should be displayed if the button is clicked
      * @param not_used_yet will be used for a popup text in the future
      */
-    void appendButton(const QPixmap& pic,
+    void appendButton(const QIcon& pic,
                       int id = -1,
                       QMenu* const popup = nullptr,
                       const QString& not_used_yet = QString());
@@ -94,11 +95,11 @@ public:
 
     /**
      * append a new tab to the tab area. It can be accessed later on with tabb(id);
-     * @param pic a bitmap for the tab
+     * @param pic a icon for the tab
      * @param id an arbitrary ID which can be used later on to identify the tab
      * @param text if a mode with text is used it will be the tab text, otherwise a mouse over hint
      */
-    void appendTab(const QPixmap& pic,
+    void appendTab(const QIcon& pic,
                    int id = -1,
                    const QString& text = QString());
 
@@ -196,7 +197,7 @@ protected Q_SLOTS:
 
 protected:
 
-    DMultiTabBarButton(const QPixmap& pic,
+    DMultiTabBarButton(const QIcon& pic,
                        const QString&,
                        int id,
                        QWidget* const parent);
@@ -246,7 +247,7 @@ public Q_SLOTS:
     void setState(bool state);
 
     void setIcon(const QString&);
-    void setIcon(const QPixmap&);
+    void setIcon(const QIcon&);
 
 protected:
 
@@ -262,7 +263,7 @@ protected:
     /**
      * This class should never be created except with the appendTab call of DMultiTabBar
      */
-    DMultiTabBarTab(const QPixmap& pic,
+    DMultiTabBarTab(const QIcon& pic,
                     const QString&,
                     int id,
                     QWidget* const parent,
@@ -288,7 +289,7 @@ public:
     explicit DMultiTabBarFrame(QWidget* const parent, Qt::Edge pos);
     ~DMultiTabBarFrame()                override;
 
-    void appendTab(const QPixmap&, int = -1, const QString& = QString());
+    void appendTab(const QIcon&, int = -1, const QString& = QString());
     DMultiTabBarTab* tab(int) const;
     void removeTab(int);
     void setPosition(Qt::Edge pos);

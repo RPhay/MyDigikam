@@ -29,7 +29,7 @@
 namespace Digikam
 {
 
-DMultiTabBarTab::DMultiTabBarTab(const QPixmap& pic, const QString& text,
+DMultiTabBarTab::DMultiTabBarTab(const QIcon& pic, const QString& text,
                                        int id, QWidget* const parent,
                                        Qt::Edge pos,
                                        DMultiTabBar::TextStyle style)
@@ -188,12 +188,10 @@ void DMultiTabBarTab::setState(bool newState)
 
 void DMultiTabBarTab::setIcon(const QString& icon)
 {
-    const QIcon i      = QIcon::fromTheme(icon);
-    const int iconSize = style()->pixelMetric(QStyle::PM_SmallIconSize, nullptr, this);
-    setIcon(i.pixmap(iconSize));
+    setIcon(QIcon::fromTheme(icon));
 }
 
-void DMultiTabBarTab::setIcon(const QPixmap& icon)
+void DMultiTabBarTab::setIcon(const QIcon& icon)
 {
     QPushButton::setIcon(icon);
 }

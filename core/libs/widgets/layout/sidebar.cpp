@@ -163,7 +163,7 @@ void Sidebar::appendTab(QWidget* const w, const QIcon& pic, const QString& title
     // Add tab
 
     w->setParent(d->stack);
-    DMultiTabBar::appendTab(pic.pixmap(style()->pixelMetric(QStyle::PM_SmallIconSize)), d->tabs, title);
+    DMultiTabBar::appendTab(pic, d->tabs, title);
     d->stack->insertWidget(d->tabs, w);
 
     tab(d->tabs)->setAcceptDrops(true);

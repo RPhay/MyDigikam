@@ -97,7 +97,7 @@ DMultiTabBarTab* DMultiTabBarFrame::tab(int id) const
     return nullptr;
 }
 
-void DMultiTabBarFrame::appendTab(const QPixmap& pic, int id, const QString& text)
+void DMultiTabBarFrame::appendTab(const QIcon& pic, int id, const QString& text)
 {
     DMultiTabBarTab* const tab = new DMultiTabBarTab(pic, text, id, this, d->position, d->style);
     d->tabs.append(tab);

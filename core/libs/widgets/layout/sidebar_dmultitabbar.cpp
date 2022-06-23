@@ -67,7 +67,7 @@ DMultiTabBar::~DMultiTabBar()
     delete d;
 }
 
-void DMultiTabBar::appendButton(const QPixmap &pic, int id, QMenu *popup, const QString&)
+void DMultiTabBar::appendButton(const QIcon& pic, int id, QMenu* popup, const QString&)
 {
     DMultiTabBarButton* const btn = new DMultiTabBarButton(pic, QString(), id, this);
 
@@ -105,7 +105,7 @@ void DMultiTabBar::updateSeparator()
     }
 }
 
-void DMultiTabBar::appendTab(const QPixmap& pic, int id, const QString& text)
+void DMultiTabBar::appendTab(const QIcon& pic, int id, const QString& text)
 {
     d->internal->appendTab(pic, id, text);
 }
