@@ -45,7 +45,7 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
     d->searchModificationHelper = new SearchModificationHelper(this, this);
 
     const int spacing           = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     d->splitter    = new SidebarSplitter;
     d->splitter->setFrameStyle(QFrame::NoFrame | QFrame::Plain);

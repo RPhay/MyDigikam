@@ -140,11 +140,9 @@ DigikamApp::DigikamApp()
     // to access items which were not created yet.
 
     setupView();
-    setupAccelerators();
     setupActions();
     setupStatusBar();
-
-    qApp->processEvents();
+    setupAccelerators();
 
     initGui();
 
