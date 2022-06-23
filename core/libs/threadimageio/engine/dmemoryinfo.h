@@ -30,6 +30,9 @@
 
 #include <QSharedDataPointer>
 
+// typedef introduced in Qt 5.10
+using qsizetype = QIntegerForSizeof<std::size_t>::Signed;
+
 // Local includes
 
 #include "digikam_export.h"
