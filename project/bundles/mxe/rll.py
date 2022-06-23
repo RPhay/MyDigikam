@@ -92,6 +92,7 @@ blacklist = [
     "ncrypt.dll",
     "dbghelp.dll",      # blacklisted dll from DrMinGW as it use MSVC dll to show debug dialog.
     "dbgcore.dll",      # blacklisted dll from DrMinGW.
+    "gdiplus.dll",
 ]
 
 # -----------------------------------------------
