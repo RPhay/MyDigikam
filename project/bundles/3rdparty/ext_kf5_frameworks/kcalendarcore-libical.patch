@@ -1,5 +1,5 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 406925e2b..7ba86dc11 100644
+index 1d4734e3a..ce91fc3e8 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -49,7 +49,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KCALENDARCORE
@@ -12,10 +12,10 @@ index 406925e2b..7ba86dc11 100644
  # https://github.com/libical/libical/pull/510
  # https://bugs.launchpad.net/ubuntu/+source/libical3/+bug/1946963
 diff --git a/src/icalformat_p.cpp b/src/icalformat_p.cpp
-index 478196455..e0ef2ac07 100644
+index a21a2544b..f6888e54d 100644
 --- a/src/icalformat_p.cpp
 +++ b/src/icalformat_p.cpp
-@@ -498,12 +498,12 @@ void ICalFormatImpl::writeIncidence(icalcomponent *parent, const Incidence::Ptr
+@@ -471,12 +471,12 @@ void ICalFormatImpl::writeIncidence(icalcomponent *parent, const Incidence::Ptr
      if (secClass != ICAL_CLASS_PUBLIC) {
          icalcomponent_add_property(parent, icalproperty_new_class(secClass));
      }
@@ -30,7 +30,7 @@ index 478196455..e0ef2ac07 100644
      // geo
      if (incidence->hasGeo()) {
          icalgeotype geo;
-@@ -591,13 +591,13 @@ void ICalFormatImpl::writeIncidence(icalcomponent *parent, const Incidence::Ptr
+@@ -564,13 +564,13 @@ void ICalFormatImpl::writeIncidence(icalcomponent *parent, const Incidence::Ptr
      for (auto it = alarms.cbegin(), end = alarms.cend(); it != end; ++it) {
          icalcomponent_add_component(parent, writeAlarm(*it));
      }
@@ -46,7 +46,7 @@ index 478196455..e0ef2ac07 100644
      // duration
      if (incidence->hasDuration()) {
          icaldurationtype duration;
-@@ -1097,7 +1097,7 @@ icalcomponent *ICalFormatImpl::writeAlarm(const Alarm::Ptr &alarm)
+@@ -1070,7 +1070,7 @@ icalcomponent *ICalFormatImpl::writeAlarm(const Alarm::Ptr &alarm)
  
      return a;
  }
@@ -55,7 +55,7 @@ index 478196455..e0ef2ac07 100644
  icalproperty *ICalFormatImpl::writeConference(const Conference &conference)
  {
      icalproperty *p = icalproperty_new_conference(conference.uri().toString().toUtf8().constData());
-@@ -1107,7 +1107,7 @@ icalproperty *ICalFormatImpl::writeConference(const Conference &conference)
+@@ -1080,7 +1080,7 @@ icalproperty *ICalFormatImpl::writeConference(const Conference &conference)
  
      return p;
  }
@@ -64,7 +64,7 @@ index 478196455..e0ef2ac07 100644
  Todo::Ptr ICalFormatImpl::readTodo(icalcomponent *vtodo, const ICalTimeZoneCache *tzlist)
  {
      Todo::Ptr todo(new Todo);
-@@ -1828,11 +1828,11 @@ void ICalFormatImpl::readIncidence(icalcomponent *parent, const Incidence::Ptr &
+@@ -1801,11 +1801,11 @@ void ICalFormatImpl::readIncidence(icalcomponent *parent, const Incidence::Ptr &
          case ICAL_ATTACH_PROPERTY: // attachments
              incidence->addAttachment(readAttachment(p));
              break;
@@ -78,7 +78,7 @@ index 478196455..e0ef2ac07 100644
          default:
              // TODO: do something about unknown properties?
              break;
-@@ -1864,7 +1864,7 @@ void ICalFormatImpl::readIncidence(icalcomponent *parent, const Incidence::Ptr &
+@@ -1837,7 +1837,7 @@ void ICalFormatImpl::readIncidence(icalcomponent *parent, const Incidence::Ptr &
           alarm = icalcomponent_get_next_component(parent, ICAL_VALARM_COMPONENT)) {
          readAlarm(alarm, incidence);
      }
@@ -87,16 +87,16 @@ index 478196455..e0ef2ac07 100644
      // iterate through all conferences
      Conference::List conferences;
      for (auto *conf = icalcomponent_get_first_property(parent, ICAL_CONFERENCE_PROPERTY); conf;
-@@ -1872,7 +1872,7 @@ void ICalFormatImpl::readIncidence(icalcomponent *parent, const Incidence::Ptr &
+@@ -1845,7 +1845,7 @@ void ICalFormatImpl::readIncidence(icalcomponent *parent, const Incidence::Ptr &
          conferences.push_back(readConference(conf));
      }
      incidence->setConferences(conferences);
 -
 +*/
-     if (d->mCompat) {
+     if (mCompat) {
          // Fix incorrect alarm settings by other applications (like outloook 9)
-         d->mCompat->fixAlarms(incidence);
-@@ -2269,7 +2269,7 @@ icaldatetimeperiodtype ICalFormatImpl::writeICalDatePeriod(const QDate &date)
+         mCompat->fixAlarms(incidence);
+@@ -2255,7 +2255,7 @@ icaldatetimeperiodtype ICalFormatImpl::writeICalDatePeriod(const QDate &date)
      t.period = icalperiodtype_null_period();
      return t;
  }
@@ -105,7 +105,7 @@ index 478196455..e0ef2ac07 100644
  Conference ICalFormatImpl::readConference(icalproperty *prop)
  {
      Conference conf;
-@@ -2279,7 +2279,7 @@ Conference ICalFormatImpl::readConference(icalproperty *prop)
+@@ -2265,7 +2265,7 @@ Conference ICalFormatImpl::readConference(icalproperty *prop)
      conf.setLanguage(QString::fromUtf8(icalproperty_get_parameter_as_string(prop, "LANGUAGE")));
      return conf;
  }
@@ -115,10 +115,10 @@ index 478196455..e0ef2ac07 100644
  {
      icaltimetype t = icaltime_null_time();
 diff --git a/src/icalformat_p.h b/src/icalformat_p.h
-index 0c9c7f582..bed0e5016 100644
+index 7388756a7..426ea785c 100644
 --- a/src/icalformat_p.h
 +++ b/src/icalformat_p.h
-@@ -118,7 +118,7 @@ public:
+@@ -121,7 +121,7 @@ public:
      icalproperty *writeRecurrenceRule(Recurrence *);
      icalrecurrencetype writeRecurrenceRule(RecurrenceRule *recur);
      icalcomponent *writeAlarm(const Alarm::Ptr &alarm);
@@ -127,7 +127,7 @@ index 0c9c7f582..bed0e5016 100644
  
      QString extractErrorProperty(icalcomponent *);
      Todo::Ptr readTodo(icalcomponent *vtodo, const ICalTimeZoneCache *tzList);
-@@ -133,7 +133,7 @@ public:
+@@ -136,7 +136,7 @@ public:
      void readExceptionRule(icalproperty *rrule, const Incidence::Ptr &incidence);
      void readRecurrence(const struct icalrecurrencetype &r, RecurrenceRule *recur);
      void readAlarm(icalcomponent *alarm, const Incidence::Ptr &incidence);
