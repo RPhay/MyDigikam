@@ -19,7 +19,6 @@ find_package(KF5 ${KF5_MIN_VERSION} QUIET
                                     OPTIONAL_COMPONENTS
                                     KIO                         # For Desktop integration (Widgets only).
                                     IconThemes                  # For Desktop integration.
-                                    FileMetaData                # For Plasma destop file indexer support.
                                     ThreadWeaver                # For Panorama tool.
                                     NotifyConfig                # Plasma desktop application notify configuration.
                                     Notifications               # Plasma desktop notifications integration.
