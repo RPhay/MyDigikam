@@ -25,11 +25,25 @@ find_package(KF5 ${KF5_MIN_VERSION} QUIET
                                     Notifications               # Plasma desktop notifications integration.
 )
 
-find_package(KF5 ${AKONADI_MIN_VERSION} QUIET
+if(ENABLE_KFILEMETADATASUPPORT)
+
+    find_package(KF5 ${KF5_MIN_VERSION} QUIET
                                         OPTIONAL_COMPONENTS
-                                        AkonadiContact          # For KDE Mail Contacts support.
-                                        Contacts                # API for contacts/address book data.
-)
+                                        FileMetaData            # For Plasma destop file indexer support.
+    )
+
+endif()
+
+
+if(ENABLE_AKONADICONTACTSUPPORT)
+
+    find_package(KF5 ${AKONADI_MIN_VERSION} QUIET
+                                            OPTIONAL_COMPONENTS
+                                            AkonadiContact      # For KDE Mail Contacts support.
+                                            Contacts            # API for contacts/address book data.
+    )
+
+endif()
 
 find_package(KF5 ${KSANE_MIN_VERSION} QUIET
                                       OPTIONAL_COMPONENTS

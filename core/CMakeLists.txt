@@ -254,7 +254,7 @@ PRINT_LIBRARY_STATUS("libtiff"       "https://gitlab.com/libtiff/libtiff/"      
 
 # ==============================================================================
 
-PRINT_OPTIONAL_LIBRARY_STATUS("bison"             "https://www.gnu.org/software/bison/bison.html"                             "(version >= 2.5.0)"                    "digiKam will be compiled without Panorama support."                          BISON_FOUND)
+PRINT_OPTIONAL_LIBRARY_STATUS("bison"             "https://www.gnu.org/software/bison/bison.html"                   "(version >= 2.5.0)"                    "digiKam will be compiled without Panorama support."                          BISON_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("doxygen"           "https://github.com/doxygen/doxygen"                              "(version >= 1.8.0)"                    "digiKam will be compiled without API documentation building support."        Doxygen_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("ccache"            "https://ccache.dev"                                              "(version >= 3.0.0)"                    "digiKam will be compiled without CCACHE build support."                      HAVE_CCACHE)
 PRINT_OPTIONAL_LIBRARY_STATUS("flex"              "https://github.com/westes/flex"                                  "(version >= 2.5.0)"                    "digiKam will be compiled without Panorama support."                          FLEX_FOUND)
