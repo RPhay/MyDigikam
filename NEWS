@@ -84,4 +84,5 @@ BUGFIXES:
 065 ==> 454739 - Find New Items is stuck at 0%.
 066 ==> 440156 - Cant get Google Import/export to authenticate with Google on Mint 20.2 Cinnamon.
 067 ==> 435384 - Export crash to google photos.
-068 ==> 
+068 ==> 455893 - Build error with Qt5.
+069 ==> 
