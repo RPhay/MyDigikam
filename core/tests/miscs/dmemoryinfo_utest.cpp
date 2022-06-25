@@ -54,5 +54,5 @@ void DMemoryInfoTest::operators()
 
     QVERIFY(m == m1);
     QVERIFY(m.totalPhysical() != 0);
-    QCOMPARE(m.totalPhysical(), m1.totalPhysical());
+    QCOMPARE(m.totalPhysical(), m1.totalPhysical());     // cppcheck-suppress knownConditionTrueFalse
 }
