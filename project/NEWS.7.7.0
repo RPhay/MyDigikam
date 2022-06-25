@@ -4,13 +4,14 @@ digiKam 7.7.0 - Release date: 2022-06-26
 NEW FEATURES:
 
 General: Remove internal libheif and libde265 from core in favor to system libraries.
-General: Update internal Libraw snashot to 2022-06-17 with Olympus OM-1 support.
+General: Update internal Libraw snapshot to 2022-06-17 with Olympus OM-1 support.
 Bundles: Add JpegXL support (read/write) in all bundles (AppImage, MacOS, and Windows).
          More info about this file format: https://en.wikipedia.org/wiki/JPEG_XL
 Bundles: Add AVIF/AOM support (read/write) in all bundles (AppImage, MacOS, and Windows).
          More info about this file format: https://en.wikipedia.org/wiki/AVIF
 Bundles: All bundles uses KF5 frameworks version 5.95.
 Bundles: MacOS package uses Qt framework version 5.15.3.
+Bundles: Windows installer uses Qt framework version 5.15.5.
 
 *****************************************************************************************************
 BUGFIXES:
