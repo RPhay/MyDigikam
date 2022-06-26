@@ -167,9 +167,11 @@
 #ifndef QTAV_CAPI_H
 #define QTAV_CAPI_H
 
+// C++ includes
+
 /*!
-    How To Use: (see test/zlib)
-    use the header and source from code gerenrated from: https://github.com/wang-bin/mkapi
+ * How To Use: (see test/zlib)
+ * use the header and source from code gerenrated from: https://github.com/wang-bin/mkapi
  */
 
 #include <cstddef>  // ptrdiff_t
@@ -184,9 +186,11 @@
 #define CAPI_IS(X) (defined CAPI_IS_##X && CAPI_IS_##X)
 
 /*!
- * you can define CAPI_IS_LAZY_RESOLVE 0 before including capi.h. then all symbols will be resolved in constructor.
+ * you can define CAPI_IS_LAZY_RESOLVE 0 before including capi.h.
+ * then all symbols will be resolved in constructor.
  * default resolving a symbol at it's first call
  */
+
 #ifndef CAPI_IS_LAZY_RESOLVE
 #   define CAPI_IS_LAZY_RESOLVE 1
 #endif
@@ -217,24 +221,27 @@ enum
 };
 
 /********************************** The following code is only used in .cpp **************************************************/
+
 /*!
-  * -Library names:
-    static const char* zlib[] = {
-    #ifdef CAPI_TARGET_OS_WIN
-      "zlib",
-    #else
-      "z",
-    #endif
-      /usr/local/lib/libmyz.so, // absolute path is ok
-      nullptr};
-    CAPI_BEGIN_DLL(zlib, ::capi::dso) // the 2nd parameter is a dynamic shared object loader class. \sa dll_helper class
-    ...
-  * -Multiple library versions
-    An example to open libz.so, libz.so.1, libz.so.0 on unix
-    static const int ver[] = { ::capi::NoVersion, 1, 0, ::capi::EndVersion };
-    CAPI_BEGIN_DLL_VER(zlib, ver, ::capi::dso)
-    ...
+  * - Library names:
+  *  static const char* zlib[] = {
+  *  #ifdef CAPI_TARGET_OS_WIN
+  *    "zlib",
+  *  #else
+  *    "z",
+  *  #endif
+  *    /usr/local/lib/libmyz.so, // absolute path is ok
+  *    nullptr};
+  *  CAPI_BEGIN_DLL(zlib, ::capi::dso) // the 2nd parameter is a dynamic shared object loader class. \sa dll_helper class
+  *  ...
+  *
+  * - Multiple library versions
+  *  An example to open libz.so, libz.so.1, libz.so.0 on unix
+  *  static const int ver[] = { ::capi::NoVersion, 1, 0, ::capi::EndVersion };
+  *  CAPI_BEGIN_DLL_VER(zlib, ver, ::capi::dso)
+  *  ...
   */
+
 class dso
 {
 private:
@@ -330,6 +337,7 @@ protected:
  * 2. const char* zError(int) // get error string from zlib error code
  *    CAPI_DEFINE(const char*, zError, CAPI_ARG1(int))
  */
+
 #if CAPI_IS(LAZY_RESOLVE)
 #   define CAPI_DEFINE(R, name, ...)            EXPAND(CAPI_DEFINE2_X(R, name, name, __VA_ARGS__)) /* not ##__VA_ARGS__ !*/
 #   define CAPI_DEFINE_ENTRY(R, name, ...)      EXPAND(CAPI_DEFINE_ENTRY_X(R, name, name, __VA_ARGS__))
@@ -376,6 +384,7 @@ protected:
  * - use CAPI_LINKAGE and remove CAPI_DEFINE_M_ENTRY_X & CAPI_DEFINE_M_RESOLVER_X
  * - also pass a linkage parameter to CAPI_NS_DEFINE_T_V & CAPI_NS_DEFINE2_T_V
  */
+
 #ifndef CAPI_LINKAGE
 #   define CAPI_LINKAGE
 #endif
@@ -494,10 +503,6 @@ protected:
 #ifndef CAPI_TARGET_OS_WIN
 #   include <dlfcn.h>
 #endif
-
-// Local includes
-
-#include "digikam_debug.h"
 
 namespace capi
 {

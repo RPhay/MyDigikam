@@ -36,7 +36,9 @@
 
 #include "digikam_debug.h"
 
-#include "egl_api.h" // include last to avoid covering types later
+// include last to avoid covering types later
+
+#include "egl_api.h"  // krazy:exclude=includes
 
 // TODO: winrt resolver use GetModuleHandle first?
 
