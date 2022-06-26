@@ -47,7 +47,6 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
     // progress info are only pseudo values
 
     QImageReader reader(filePath);
-    reader.setAutoTransform(false);
     reader.setDecideFormatFromContent(true);
 
     QByteArray readFormat = reader.format();
@@ -207,10 +206,17 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
     imageHeight() = h;
     imageData()   = data;
 
-    imageSetAttribute(QLatin1String("format"),             QString::fromLatin1(readFormat).toUpper());
+    QStringList noRotate({QLatin1String("JXL"),
+                          QLatin1String("AVIF"),
+                          QLatin1String("HEIF")});
+
+    QString format(QString::fromLatin1(readFormat).toUpper());
+
+    imageSetAttribute(QLatin1String("format"),             format);
     imageSetAttribute(QLatin1String("originalColorModel"), colorModel);
-    imageSetAttribute(QLatin1String("originalBitDepth"),   originalDepth);
     imageSetAttribute(QLatin1String("originalSize"),       QSize(w, h));
+    imageSetAttribute(QLatin1String("originalBitDepth"),   originalDepth);
+    imageSetAttribute(QLatin1String("exifRotated"),        noRotate.contains(format));
 
     return true;
 }
