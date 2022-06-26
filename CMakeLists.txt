@@ -77,6 +77,18 @@ if(MSVC)
 
 endif()
 
+if(MINGW)
+
+    set(CMAKE_C_USE_RESPONSE_FILE_FOR_OBJECTS   1)
+    set(CMAKE_CXX_USE_RESPONSE_FILE_FOR_OBJECTS 1)
+    set(CMAKE_C_RESPONSE_FILE_LINK_FLAG         "@")
+    set(CMAKE_CXX_RESPONSE_FILE_LINK_FLAG       "@")
+    set(CMAKE_NINJA_FORCE_RESPONSE_FILE         1 CACHE INTERNAL "")
+
+    message(STATUS "Use reponse files to compile and link objects...")
+
+endif()
+
 message(STATUS "----------------------------------------------------------------------------------")
 message(STATUS "Starting CMake configuration for ${PROJECT_NAME}")
 message(STATUS "")
