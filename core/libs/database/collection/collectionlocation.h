@@ -100,64 +100,33 @@ public:
 
 public:
 
-    enum CaseSensitivity
-    {
-        /**
-         * The location has an unknown case sensitivity.
-         */
-        UnknownCaseSensitivity,
-
-        /**
-         * The location is case insensitive.
-         */
-        CaseInsensitive,
-
-        /**
-         * The location is case sensitive.
-         */
-        CaseSensitive
-    };
-
-public:
-
     CollectionLocation();
 
     /**
      * The id uniquely identifying this collection
      */
-    int                 id() const;
-
-    /**
-     * Return as Qt case sensitivity enum of location.
-     * For unknown, it is assumed to be Qt::CaseSensitive.
-     */
-    Qt::CaseSensitivity asQtCaseSensitivity();
-
-    /**
-     * The case sensitivity of location. See above for possible values.
-     */
-    CaseSensitivity     caseSensitivity();
+    int     id() const;
 
     /**
      * The current status. See above for possible values.
      */
-    Status              status() const;
+    Status  status() const;
 
     /**
      * The type of location. See above for possible values.
      */
-    Type                type() const;
+    Type    type() const;
 
     /**
      * The current file system path leading to this album root.
      * Only guaranteed to be valid for location with status Available.
      */
-    QString             albumRootPath() const;
+    QString albumRootPath() const;
 
     /**
      * A user-visible, optional label.
      */
-    QString             label() const;
+    QString label() const;
 
     bool isAvailable() const
     {
@@ -176,14 +145,11 @@ public:
 
 protected:
 
-    int             m_id;
-
-    QString         m_path;
-    QString         m_label;
-
-    CaseSensitivity m_caseSensitivity;
-    Status          m_status;
-    Type            m_type;
+    int     m_id;
+    QString m_path;
+    Status  m_status;
+    Type    m_type;
+    QString m_label;
 };
 
 inline uint qHash(const CollectionLocation& loc)

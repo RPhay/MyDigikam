@@ -182,11 +182,6 @@ public:
      */
     void changeAlbumRootType(int rootId, AlbumRoot::Type newType);
 
-    /**
-     * Sets the case sensitivity of the specified album root to a new value.
-     */
-    void changeAlbumRootCaseSensitivity(int rootId, int caseSensitivity);
-
     // ----------- Album Listing operations -----------
     /**
      * Returns all albums and their attributes in the database

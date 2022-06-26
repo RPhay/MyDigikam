@@ -866,40 +866,7 @@ void CollectionManager::updateLocations()
 
         location->available = available;
         location->setAbsolutePath(absolutePath);
-
-        if (available && (location->caseSensitivity() == CollectionLocation::UnknownCaseSensitivity))
-        {
-            QFileInfo writeInfo(absolutePath);
-
-            if (writeInfo.isWritable())
-            {
-                SafeTemporaryFile* const temp = new SafeTemporaryFile(absolutePath +
-                                                                      QLatin1String("/CaseSensitivity-XXXXXX-Test"));
-                temp->setAutoRemove(false);
-                temp->open();
-                QFileInfo tempInfo(temp->safeFilePath());
-                QFileInfo testInfo(tempInfo.path() + QLatin1Char('/') + tempInfo.fileName().toLower());
-                bool testCaseSensitivity      = testInfo.exists();
-                delete temp;
-
-                if (testCaseSensitivity)
-                {
-                    location->setCaseSensitivity(CollectionLocation::CaseInsensitive);
-                }
-                else
-                {
-                    location->setCaseSensitivity(CollectionLocation::CaseSensitive);
-                }
-
-                CoreDbAccess().db()->changeAlbumRootCaseSensitivity(location->id(),
-                                                                    (int)location->caseSensitivity());
-            }
-        }
-
-        qCDebug(DIGIKAM_DATABASE_LOG) << "location for" << absolutePath
-                                      << "is available:" << available
-                                      << "::" << "case sensitivity:"
-                                      << location->caseSensitivity();
+        qCDebug(DIGIKAM_DATABASE_LOG) << "location for " << absolutePath << " is available " << available;
 
         // set the status depending on "hidden" and "available"
 
