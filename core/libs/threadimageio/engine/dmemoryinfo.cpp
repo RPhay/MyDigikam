@@ -33,8 +33,8 @@
 
 #include "digikam_debug.h"
 
-#if defined(Q_OS_WINDOWS)
-#   include <windows.h>    // windows.h must stay above pspapi.h
+#if defined(Q_OS_WINDOWS)   // krazy:exclude=cpp
+#   include <windows.h>     // windows.h must stay above pspapi.h
 #   include <psapi.h>
 #elif defined(Q_OS_LINUX) || defined(Q_OS_ANDROID)
 #   include <QByteArray>
@@ -154,7 +154,7 @@ quint64 DMemoryInfo::freeSwapFile() const
     return d->m_freeSwapFile;
 }
 
-#if defined(Q_OS_WINDOWS)
+#if defined(Q_OS_WINDOWS)   // krazy:exclude=cpp
 
 struct Q_DECL_HIDDEN SwapInfo
 {
