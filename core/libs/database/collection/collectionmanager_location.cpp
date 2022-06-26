@@ -881,6 +881,7 @@ void CollectionManager::updateLocations()
                 QFileInfo testInfo(tempInfo.path() + QLatin1Char('/') + tempInfo.fileName().toLower());
                 bool testCaseSensitivity      = testInfo.exists();
                 delete temp;
+                QFile::remove(tempInfo.filePath());
 
                 if (testCaseSensitivity)
                 {
