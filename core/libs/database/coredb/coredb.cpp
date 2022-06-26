@@ -235,7 +235,8 @@ void CoreDB::setAlbumRootCaseSensitivity(int rootId, int caseSensitivity)
 {
     d->db->execSql(QString::fromUtf8("UPDATE AlbumRoots SET status=? WHERE id=?;"),
                    caseSensitivity, rootId);
-    d->db->recordChangeset(AlbumRootChangeset(rootId, AlbumRootChangeset::PropertiesChanged));
+
+    // record that the album root was changed is not necessary here
 }
 
 void CoreDB::setAlbumRootPath(int rootId, const QString& newPath)
