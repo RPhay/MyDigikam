@@ -164,17 +164,17 @@ QList<AlbumRootInfo> CoreDB::getAlbumRoots() const
     for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
     {
         AlbumRootInfo info;
-        info.id           = (*it).toInt();
+        info.id              = (*it).toInt();
         ++it;
-        info.label        = (*it).toString();
+        info.label           = (*it).toString();
         ++it;
-        info.status       = (*it).toInt();
+        info.caseSensitivity = (*it).toInt();
         ++it;
-        info.type         = (AlbumRoot::Type)(*it).toInt();
+        info.type            = (AlbumRoot::Type)(*it).toInt();
         ++it;
-        info.identifier   = (*it).toString();
+        info.identifier      = (*it).toString();
         ++it;
-        info.specificPath = (*it).toString();
+        info.specificPath    = (*it).toString();
         ++it;
 
         list << info;
@@ -224,10 +224,17 @@ void CoreDB::setAlbumRootLabel(int rootId, const QString& newLabel)
     d->db->recordChangeset(AlbumRootChangeset(rootId, AlbumRootChangeset::PropertiesChanged));
 }
 
-void CoreDB::changeAlbumRootType(int rootId, AlbumRoot::Type newType)
+void CoreDB::setAlbumRootType(int rootId, AlbumRoot::Type newType)
 {
     d->db->execSql(QString::fromUtf8("UPDATE AlbumRoots SET type=? WHERE id=?;"),
                    (int)newType, rootId);
+    d->db->recordChangeset(AlbumRootChangeset(rootId, AlbumRootChangeset::PropertiesChanged));
+}
+
+void CoreDB::setAlbumRootCaseSensitivity(int rootId, int caseSensitivity)
+{
+    d->db->execSql(QString::fromUtf8("UPDATE AlbumRoots SET status=? WHERE id=?;"),
+                   caseSensitivity, rootId);
     d->db->recordChangeset(AlbumRootChangeset(rootId, AlbumRootChangeset::PropertiesChanged));
 }
 

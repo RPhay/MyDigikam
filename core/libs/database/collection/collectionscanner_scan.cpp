@@ -560,17 +560,16 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
             QFileInfo fileInfo(location.albumRootPath() + (*it3).relativePath);
             bool dirExist = (fileInfo.exists() && fileInfo.isDir());
 
-#ifdef Q_OS_WIN
-
-            if (dirExist && !(*it3).relativePath.endsWith(QLatin1Char('/')))
+            if (location.asQtCaseSensitivity() == Qt::CaseInsensitive)
             {
-                QDir dir(fileInfo.dir());
-                dirExist = dir.entryList(QDir::Dirs |
-                                         QDir::NoDotAndDotDot)
-                                         .contains(fileInfo.fileName());
+                if (dirExist && !(*it3).relativePath.endsWith(QLatin1Char('/')))
+                {
+                    QDir dir(fileInfo.dir());
+                    dirExist = dir.entryList(QDir::Dirs |
+                                             QDir::NoDotAndDotDot)
+                                             .contains(fileInfo.fileName());
+                }
             }
-
-#endif
 
             // let digikam think that ignored directories got deleted
             // (if they already exist in the database, this will delete them)
@@ -642,17 +641,16 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
                     QFileInfo fileInfo(location.albumRootPath() + it.key().relativePath);
                     bool dirExist = (fileInfo.exists() && fileInfo.isDir());
 
-#ifdef Q_OS_WIN
-
-                    if (dirExist && !it.key().relativePath.endsWith(QLatin1Char('/')))
+                    if (location.asQtCaseSensitivity() == Qt::CaseInsensitive)
                     {
-                        QDir dir(fileInfo.dir());
-                        dirExist = dir.entryList(QDir::Dirs |
-                                                 QDir::NoDotAndDotDot)
-                                                 .contains(fileInfo.fileName());
+                        if (dirExist && !it.key().relativePath.endsWith(QLatin1Char('/')))
+                        {
+                            QDir dir(fileInfo.dir());
+                            dirExist = dir.entryList(QDir::Dirs |
+                                                     QDir::NoDotAndDotDot)
+                                                     .contains(fileInfo.fileName());
+                        }
                     }
-
-#endif
 
                     if (dirExist)
                     {

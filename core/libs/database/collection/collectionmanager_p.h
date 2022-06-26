@@ -69,6 +69,7 @@
 #include "coredb.h"
 #include "collectionscanner.h"
 #include "collectionlocation.h"
+#include "filereadwritelock.h"
 
 namespace Digikam
 {
@@ -87,9 +88,10 @@ public:
     explicit AlbumRootLocation(const AlbumRootInfo& info)
     {
         qCDebug(DIGIKAM_DATABASE_LOG) << "Creating new Location " << info.specificPath << " uuid " << info.identifier;
-        m_id         = info.id;
-        m_type       = (Type)info.type;
-        QString path = info.specificPath;
+        m_id              = info.id;
+        m_caseSensitivity = (CaseSensitivity)info.caseSensitivity;
+        m_type            = (Type)info.type;
+        QString path      = info.specificPath;
 
         if ((path != QLatin1String("/")) &&
             path.endsWith(QLatin1Char('/')))
@@ -103,7 +105,7 @@ public:
 
         m_path.clear();
 
-        setStatus((CollectionLocation::Status)info.status);
+        setStatus(CollectionLocation::LocationNull);
     }
 
     void setStatusFromFlags()
@@ -123,6 +125,11 @@ public:
                 m_status = CollectionLocation::LocationUnavailable;
             }
         }
+    }
+
+    void setCaseSensitivity(CollectionLocation::CaseSensitivity c)
+    {
+        m_caseSensitivity = c;
     }
 
     void setStatus(CollectionLocation::Status s)

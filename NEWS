@@ -85,4 +85,5 @@ BUGFIXES:
 066 ==> 440156 - Cant get Google Import/export to authenticate with Google on Mint 20.2 Cinnamon.
 067 ==> 435384 - Export crash to google photos.
 068 ==> 455893 - Build error with Qt5.
-069 ==> 
+069 ==> 455876 - Handling of image orientation in modern image formats using ExifTool.
+070 ==> 

@@ -27,15 +27,31 @@ namespace Digikam
 {
 
 CollectionLocation::CollectionLocation()
-    : m_id    (-1),
-      m_status(LocationNull),
-      m_type  (TypeVolumeHardWired)
+    : m_id             (-1),
+      m_caseSensitivity(UnknownCaseSensitivity),
+      m_status         (LocationNull),
+      m_type           (TypeVolumeHardWired)
 {
 }
 
 int CollectionLocation::id() const
 {
     return m_id;
+}
+
+Qt::CaseSensitivity CollectionLocation::asQtCaseSensitivity() const
+{
+    if (m_caseSensitivity == CaseInsensitive)
+    {
+        return Qt::CaseInsensitive;
+    }
+
+    return Qt::CaseSensitive;
+}
+
+CollectionLocation::CaseSensitivity CollectionLocation::caseSensitivity() const
+{
+    return m_caseSensitivity;
 }
 
 CollectionLocation::Status CollectionLocation::status() const
