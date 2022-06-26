@@ -40,11 +40,12 @@
 
 // Local includes
 
+#include "digikam_export.h"
+#include "collectionlocation.h"
 #include "coredbalbuminfo.h"
 #include "coredbfields.h"
 #include "coredbaccess.h"
 #include "coredbconstants.h"
-#include "digikam_export.h"
 #include "dbenginesqlquery.h"
 #include "album.h"
 
@@ -185,7 +186,7 @@ public:
     /**
      * Sets the case sensitivity of the specified album root to a new value.
      */
-    void setAlbumRootCaseSensitivity(int rootId, int caseSensitivity);
+    void setAlbumRootCaseSensitivity(int rootId, CollectionLocation::CaseSensitivity caseSensitivity);
 
     // ----------- Album Listing operations -----------
     /**
