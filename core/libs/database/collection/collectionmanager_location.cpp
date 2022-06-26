@@ -162,15 +162,17 @@ CollectionLocation CollectionManager::refreshLocation(const CollectionLocation& 
 
         CoreDbAccess access;
         ChangingDB changing(d);
-        access.db()->setAlbumRootLabel(location.id(), label);
-        access.db()->setAlbumRootType(location.id(),  type);
-        access.db()->migrateAlbumRoot(location.id(),  identifier);
-        access.db()->setAlbumRootPath(location.id(),  specificPath);
+        access.db()->setAlbumRootLabel(location.id(),           label);
+        access.db()->setAlbumRootType(location.id(),            type);
+        access.db()->migrateAlbumRoot(location.id(),            identifier);
+        access.db()->setAlbumRootPath(location.id(),            specificPath);
+        access.db()->setAlbumRootCaseSensitivity(location.id(), (int)CollectionLocation::UnknownCaseSensitivity);
 
         albumLoc->setLabel(label);
         albumLoc->identifier   = identifier;
         albumLoc->specificPath = specificPath;
         albumLoc->setType((CollectionLocation::Type)type);
+        albumLoc->setCaseSensitivity(CollectionLocation::UnknownCaseSensitivity);
 
         locker.unlock();
         Q_EMIT locationPropertiesChanged(*albumLoc);
@@ -197,15 +199,17 @@ CollectionLocation CollectionManager::refreshLocation(const CollectionLocation& 
         CoreDbAccess access;
         ChangingDB changing(d);
         AlbumRoot::Type type = AlbumRoot::VolumeHardWired;
-        access.db()->setAlbumRootLabel(location.id(), label);
-        access.db()->setAlbumRootType(location.id(),  type);
-        access.db()->setAlbumRootPath(location.id(),  QLatin1String("/"));
-        access.db()->migrateAlbumRoot(location.id(),  d->volumeIdentifier(path));
+        access.db()->setAlbumRootLabel(location.id(),           label);
+        access.db()->setAlbumRootType(location.id(),            type);
+        access.db()->setAlbumRootPath(location.id(),            QLatin1String("/"));
+        access.db()->migrateAlbumRoot(location.id(),            d->volumeIdentifier(path));
+        access.db()->setAlbumRootCaseSensitivity(location.id(), (int)CollectionLocation::UnknownCaseSensitivity);
 
         albumLoc->setLabel(label);
         albumLoc->specificPath = QLatin1String("/");
         albumLoc->setType((CollectionLocation::Type)type);
         albumLoc->identifier   = d->volumeIdentifier(path);
+        albumLoc->setCaseSensitivity(CollectionLocation::UnknownCaseSensitivity);
 
         locker.unlock();
         Q_EMIT locationPropertiesChanged(*albumLoc);
