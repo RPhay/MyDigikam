@@ -180,12 +180,12 @@ public:
     /**
      * Sets the type of the specified album root to a new value.
      */
-    void changeAlbumRootType(int rootId, AlbumRoot::Type newType);
+    void setAlbumRootType(int rootId, AlbumRoot::Type newType);
 
     /**
      * Sets the case sensitivity of the specified album root to a new value.
      */
-    void changeAlbumRootCaseSensitivity(int rootId, int caseSensitivity);
+    void setAlbumRootCaseSensitivity(int rootId, int caseSensitivity);
 
     // ----------- Album Listing operations -----------
     /**

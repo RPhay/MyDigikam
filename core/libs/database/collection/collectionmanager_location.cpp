@@ -162,10 +162,10 @@ CollectionLocation CollectionManager::refreshLocation(const CollectionLocation& 
 
         CoreDbAccess access;
         ChangingDB changing(d);
-        access.db()->setAlbumRootLabel(location.id(),   label);
-        access.db()->changeAlbumRootType(location.id(), type);
-        access.db()->migrateAlbumRoot(location.id(),    identifier);
-        access.db()->setAlbumRootPath(location.id(),    specificPath);
+        access.db()->setAlbumRootLabel(location.id(), label);
+        access.db()->setAlbumRootType(location.id(),  type);
+        access.db()->migrateAlbumRoot(location.id(),  identifier);
+        access.db()->setAlbumRootPath(location.id(),  specificPath);
 
         albumLoc->setLabel(label);
         albumLoc->identifier   = identifier;
@@ -197,10 +197,10 @@ CollectionLocation CollectionManager::refreshLocation(const CollectionLocation& 
         CoreDbAccess access;
         ChangingDB changing(d);
         AlbumRoot::Type type = AlbumRoot::VolumeHardWired;
-        access.db()->setAlbumRootLabel(location.id(),   label);
-        access.db()->changeAlbumRootType(location.id(), type);
-        access.db()->setAlbumRootPath(location.id(),    QLatin1String("/"));
-        access.db()->migrateAlbumRoot(location.id(),    d->volumeIdentifier(path));
+        access.db()->setAlbumRootLabel(location.id(), label);
+        access.db()->setAlbumRootType(location.id(),  type);
+        access.db()->setAlbumRootPath(location.id(),  QLatin1String("/"));
+        access.db()->migrateAlbumRoot(location.id(),  d->volumeIdentifier(path));
 
         albumLoc->setLabel(label);
         albumLoc->specificPath = QLatin1String("/");
@@ -640,7 +640,7 @@ void CollectionManager::changeType(const CollectionLocation& location, int type)
     // update db
 
     ChangingDB db(d);
-    CoreDbAccess().db()->changeAlbumRootType(albumLoc->id(), (AlbumRoot::Type)type);
+    CoreDbAccess().db()->setAlbumRootType(albumLoc->id(), (AlbumRoot::Type)type);
 
     // update local structure
 
@@ -891,8 +891,8 @@ void CollectionManager::updateLocations()
                     location->setCaseSensitivity(CollectionLocation::CaseSensitive);
                 }
 
-                CoreDbAccess().db()->changeAlbumRootCaseSensitivity(location->id(),
-                                                                    (int)location->caseSensitivity());
+                CoreDbAccess().db()->setAlbumRootCaseSensitivity(location->id(),
+                                                                 (int)location->caseSensitivity());
             }
         }
 
