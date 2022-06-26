@@ -339,14 +339,17 @@ void DIO::createJob(IOJobData* const data)
         (operation == IOJobData::MoveImage) || (operation == IOJobData::MoveAlbum) ||
         (operation == IOJobData::MoveFiles))
     {
+        CollectionLocation location         = CollectionManager::instance()->locationForUrl(data->destUrl());
+        Qt::CaseSensitivity caseSensitivity = location.asQtCaseSensitivity();
         QDir dir(data->destUrl().toLocalFile());
-        const QStringList& dirList = dir.entryList(QDir::Dirs    |
-                                                   QDir::Files   |
-                                                   QDir::NoDotAndDotDot);
+
+        const QStringList& dirList          = dir.entryList(QDir::Dirs    |
+                                                            QDir::Files   |
+                                                            QDir::NoDotAndDotDot);
 
         Q_FOREACH (const QUrl& url, data->sourceUrls())
         {
-            if (dirList.contains(url.adjusted(QUrl::StripTrailingSlash).fileName()))
+            if (dirList.contains(url.adjusted(QUrl::StripTrailingSlash).fileName(), caseSensitivity))
             {
                 QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Warning,
                         i18n("File conflict"),
