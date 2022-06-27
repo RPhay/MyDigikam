@@ -44,7 +44,7 @@ if (WIN32)
 
     target_link_libraries(digikam_windows_stub_exe PRIVATE digikam Qt5::WinMain)
     set_target_properties(digikam_windows_stub_exe PROPERTIES OUTPUT_NAME "digikam")
-    target_include_directories(digikam_windows_stub_exe PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/main)
+    set_property(DIRECTORY digikam_windows_stub_exe PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/main)
 
     install(TARGETS digikam_windows_stub_exe ${INSTALL_TARGETS_DEFAULT_ARGS})
 
