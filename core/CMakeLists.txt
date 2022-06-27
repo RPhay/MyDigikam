@@ -369,6 +369,11 @@ if(DIGIKAM_CAN_BE_COMPILED)
     # Remove inconsistent-missing-override Clang warnings which generate a lots of compilation warnings
     DISABLE_CLANG_COMPILER_WARNINGS("7.99.99" "-Wno-inconsistent-missing-override")
 
+    if(MINGW)
+        # Remove ATTRIBUTES GCC flag which generate a lots of compilation warnings with KF5 frameworks
+        REMOVE_GCC_COMPILER_WARNINGS("-Wattributes")
+    endif()
+
     include(MacroSanitizers)
     ENABLE_COMPILER_SANITIZERS()
 
