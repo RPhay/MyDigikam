@@ -177,13 +177,12 @@ public:
 protected:
 
     int             m_id;
-
-    QString         m_path;
     QString         m_label;
-
-    CaseSensitivity m_caseSensitivity;
     Status          m_status;
     Type            m_type;
+    QString         m_path;
+    CaseSensitivity m_caseSensitivity;
+
 };
 
 inline uint qHash(const CollectionLocation& loc)

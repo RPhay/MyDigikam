@@ -158,7 +158,8 @@ QList<AlbumRootInfo> CoreDB::getAlbumRoots() const
     QList<AlbumRootInfo> list;
     QList<QVariant>      values;
 
-    d->db->execSql(QString::fromUtf8("SELECT id, label, status, type, identifier, specificPath FROM AlbumRoots;"), &values);
+    d->db->execSql(QString::fromUtf8("SELECT id, label, status, type, identifier, specificPath, caseSensitivity "
+                                     " FROM AlbumRoots;"), &values);
 
     for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
     {
@@ -167,13 +168,15 @@ QList<AlbumRootInfo> CoreDB::getAlbumRoots() const
         ++it;
         info.label           = (*it).toString();
         ++it;
-        info.caseSensitivity = (*it).toInt();
+        info.status          = (*it).toInt();
         ++it;
         info.type            = (AlbumRoot::Type)(*it).toInt();
         ++it;
         info.identifier      = (*it).toString();
         ++it;
         info.specificPath    = (*it).toString();
+        ++it;
+        info.caseSensitivity = (*it).toInt();
         ++it;
 
         list << info;
@@ -185,8 +188,8 @@ QList<AlbumRootInfo> CoreDB::getAlbumRoots() const
 int CoreDB::addAlbumRoot(AlbumRoot::Type type, const QString& identifier, const QString& specificPath, const QString& label) const
 {
     QVariant id;
-    d->db->execSql(QString::fromUtf8("REPLACE INTO AlbumRoots (type, label, status, identifier, specificPath) "
-                                     "VALUES(?, ?, 0, ?, ?);"),
+    d->db->execSql(QString::fromUtf8("REPLACE INTO AlbumRoots (type, label, status, identifier, specificPath, caseSensitivity) "
+                                     "VALUES(?, ?, 0, ?, ?, 0);"),
                    (int)type, label, identifier, specificPath, nullptr, &id);
 
     d->db->recordChangeset(AlbumRootChangeset(id.toInt(), AlbumRootChangeset::Added));
@@ -232,7 +235,7 @@ void CoreDB::setAlbumRootType(int rootId, AlbumRoot::Type newType)
 
 void CoreDB::setAlbumRootCaseSensitivity(int rootId, CollectionLocation::CaseSensitivity caseSensitivity)
 {
-    d->db->execSql(QString::fromUtf8("UPDATE AlbumRoots SET status=? WHERE id=?;"),
+    d->db->execSql(QString::fromUtf8("UPDATE AlbumRoots SET caseSensitivity=? WHERE id=?;"),
                    (int)caseSensitivity, rootId);
 
     // record that the album root was changed is not necessary here
