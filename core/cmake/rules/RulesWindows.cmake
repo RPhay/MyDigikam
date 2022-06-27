@@ -8,8 +8,14 @@ if(WIN32)
 
     # For LibRaw
 
-    find_library(WSOCK32_LIBRARY wsock32)
-    find_library(WS2_32_LIBRARY ws2_32)
+    find_library(WSOCK32_LIBRARY  wsock32)
+    find_library(WS2_32_LIBRARY   ws2_32)
+
+    # For MediaPlayer
+
+#    find_library(NETAPI32_LIBRARY netapi32)
+#    find_library(USEENV_LIBRARY   userenv)
+#    find_library(PSAPI_LIBRARY    psapi)
 
 endif()
 
