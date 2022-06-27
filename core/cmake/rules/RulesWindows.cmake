@@ -1,4 +1,4 @@
-#
+n#
 # Copyright (c) 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
@@ -13,9 +13,9 @@ if(WIN32)
 
     # For MediaPlayer
 
-#    find_library(NETAPI32_LIBRARY netapi32)
-#    find_library(USEENV_LIBRARY   userenv)
-#    find_library(PSAPI_LIBRARY    psapi)
+    find_library(NETAPI32_LIBRARY netapi32)
+    find_library(USEENV_LIBRARY   userenv)
+    find_library(PSAPI_LIBRARY    psapi)
 
 endif()
 
