@@ -1,8 +1,8 @@
 diff --git a/src/corelib/CMakeLists.txt b/src/corelib/CMakeLists.txt
-index f89aaae573..5f7d20e33e 100644
+index 403654d0fc..996e53ee09 100644
 --- a/src/corelib/CMakeLists.txt
 +++ b/src/corelib/CMakeLists.txt
-@@ -783,7 +783,9 @@ qt_internal_extend_target(Core CONDITION QT_FEATURE_icu
+@@ -758,7 +758,9 @@ qt_internal_extend_target(Core CONDITION QT_FEATURE_icu
          text/qcollator_icu.cpp
          text/qlocale_icu.cpp
      LIBRARIES
