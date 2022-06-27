@@ -77,24 +77,6 @@ if(MSVC)
 
 endif()
 
-# Work around command line length issue on Windows
-
-if(CMAKE_GENERATOR MATCHES "Ninja" AND CMAKE_HOST_WIN32)
-
-    # see https://stackoverflow.com/questions/43184251/cmake-command-line-too-long-windows
-
-    set(CMAKE_C_USE_RESPONSE_FILE_FOR_OBJECTS    TRUE)
-    set(CMAKE_CXX_USE_RESPONSE_FILE_FOR_OBJECTS  TRUE)
-    set(CMAKE_C_USE_RESPONSE_FILE_FOR_INCLUDES   TRUE)
-    set(CMAKE_CXX_USE_RESPONSE_FILE_FOR_INCLUDES TRUE)
-    set(CMAKE_C_RESPONSE_FILE_LINK_FLAG          "@")
-    set(CMAKE_CXX_RESPONSE_FILE_LINK_FLAG        "@")
-    set(CMAKE_NINJA_FORCE_RESPONSE_FILE          TRUE CACHE INTERNAL "")
-
-    message(STATUS "Use reponse files to compile and link objects...")
-
-endif()
-
 message(STATUS "----------------------------------------------------------------------------------")
 message(STATUS "Starting CMake configuration for ${PROJECT_NAME}")
 message(STATUS "")

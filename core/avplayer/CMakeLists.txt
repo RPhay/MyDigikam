@@ -41,12 +41,29 @@ set(avplayer_SRCS ${CMAKE_SOURCE_DIR}/core/avplayer/utils/EventFilter.cpp
 file(GLOB ICONS_SRCS "${CMAKE_SOURCE_DIR}/core/data/icons/apps/*-apps-avplayer.png")
 ecm_add_app_icon(avplayer_SRCS ICONS ${ICONS_SRCS})
 
-if (WIN32)
+if(WIN32)
 
+    # Build the main implementation into a DLL to be called by a stub EXE.
+    # This is a work around "command line is too long" issue on Windows.
+    # see https://stackoverflow.com/questions/43184251/cmake-command-line-too-long-windows
+
+    add_library(avplayer SHARED ${avplayer_SRCS})
+    set_target_properties(avplayer PROPERTIES PREFIX "")
     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/versioninfo.rc.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
-    add_executable(avplayer ${showfoto_SRCS} ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
 
-elseif (APPLE)
+    add_executable(avplayer_windows_stub_exe
+        ${CMAKE_CURRENT_SOURCE_DIR}/main/windows_stub_main.cpp
+        ${avplayer_SRCS_ICONS}
+        ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc
+    )
+
+    target_link_libraries(avplayer_windows_stub_exe PRIVATE avplayer Qt5::WinMain)
+    set_target_properties(avplayer_windows_stub_exe PROPERTIES OUTPUT_NAME "digikam")
+    target_include_directories(avplayer_windows_stub_exe PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/main)
+
+    install(TARGETS avplayer_windows_stub_exe ${INSTALL_TARGETS_DEFAULT_ARGS})
+
+elseif(APPLE)
 
     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/AVPlayerInfo.plist.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
     add_executable(avplayer ${avplayer_SRCS})
@@ -113,7 +130,7 @@ target_link_libraries(avplayer
                       ${MEDIAPLAYER_LIBRARIES}
 )
 
-if (APPLE)
+if(APPLE)
 
     target_link_libraries(avplayer
                           "-framework CoreServices"

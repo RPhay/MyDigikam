@@ -78,12 +78,29 @@ set(showfoto_SRCS
 file(GLOB ICONS_SRCS "${CMAKE_SOURCE_DIR}/core/data/icons/apps/*-apps-showfoto.png")
 ecm_add_app_icon(showfoto_SRCS ICONS ${ICONS_SRCS})
 
-if (WIN32)
+if(WIN32)
 
+    # Build the main implementation into a DLL to be called by a stub EXE.
+    # This is a work around "command line is too long" issue on Windows.
+    # see https://stackoverflow.com/questions/43184251/cmake-command-line-too-long-windows
+
+    add_library(showfoto SHARED ${showfoto_SRCS})
+    set_target_properties(showfoto PROPERTIES PREFIX "")
     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/versioninfo.rc.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
-    add_executable(showfoto ${showfoto_SRCS} ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
 
-elseif (APPLE)
+    add_executable(showfoto_windows_stub_exe
+        ${CMAKE_CURRENT_SOURCE_DIR}/main/windows_stub_main.cpp
+        ${showfoto_SRCS_ICONS}
+        ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc
+    )
+
+    target_link_libraries(showfoto_windows_stub_exe PRIVATE showfoto Qt5::WinMain)
+    set_target_properties(showfoto_windows_stub_exe PROPERTIES OUTPUT_NAME "showfoto")
+    target_include_directories(showfoto_windows_stub_exe PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/main)
+
+    install(TARGETS showfoto_windows_stub_exe ${INSTALL_TARGETS_DEFAULT_ARGS})
+
+elseif(APPLE)
 
     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/ShowfotoInfo.plist.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
     add_executable(showfoto ${showfoto_SRCS})

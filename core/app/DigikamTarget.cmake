@@ -29,6 +29,8 @@ ecm_add_app_icon(digikam_SRCS ICONS ${ICONS_SRCS})
 if (WIN32)
 
     # Build the main implementation into a DLL to be called by a stub EXE.
+    # This is a work around "command line is too long" issue on Windows.
+    # see https://stackoverflow.com/questions/43184251/cmake-command-line-too-long-windows
 
     add_library(digikam SHARED ${digikam_SRCS})
     set_target_properties(digikam PROPERTIES PREFIX "")
