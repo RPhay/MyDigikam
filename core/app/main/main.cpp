@@ -93,9 +93,17 @@ using namespace Magick;
 #   include <objbase.h>
 #endif
 
+#if defined Q_OS_WIN
+#   define MAIN_EXPORT __declspec(dllexport)
+#   define MAIN_FN digikam_main
+#else
+#   define MAIN_EXPORT
+#   define MAIN_FN main
+#endif
+
 using namespace Digikam;
 
-int main(int argc, char* argv[])
+extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 {
     SystemSettings system(QLatin1String("digikam"));
 

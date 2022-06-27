@@ -28,8 +28,23 @@ ecm_add_app_icon(digikam_SRCS ICONS ${ICONS_SRCS})
 
 if (WIN32)
 
+    # Build the main implementation into a DLL to be called by a stub EXE.
+
+    add_library(digikam SHARED ${digikam_SRCS})
+    set_target_properties(digikam PROPERTIES PREFIX "")
     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/versioninfo.rc.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
-    add_executable(digikam ${digikam_SRCS} ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
+
+    add_executable(digikam_windows_stub_exe
+        main/windows_stub_main.cpp
+        ${digikam_SRCS_ICONS}
+        ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc
+    )
+
+    target_link_libraries(digikam_windows_stub_exe PRIVATE digikam Qt5::WinMain)
+    set_target_properties(digikam_windows_stub_exe PROPERTIES OUTPUT_NAME "digikam")
+    set_property(DIRECTORY digikam_windows_stub_exe PROPERTY INCLUDE_DIRECTORIES "")
+
+    install(TARGETS digikam_windows_stub_exe ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 elseif (APPLE)
 
