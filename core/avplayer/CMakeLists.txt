@@ -49,19 +49,6 @@ if(WIN32)
 
     add_library(avplayer SHARED ${avplayer_SRCS})
     set_target_properties(avplayer PROPERTIES PREFIX "")
-    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/versioninfo.rc.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
-
-    add_executable(avplayer_windows_stub_exe
-        ${CMAKE_CURRENT_SOURCE_DIR}/main/windows_stub_main.cpp
-        ${avplayer_SRCS_ICONS}
-        ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc
-    )
-
-    target_link_libraries(avplayer_windows_stub_exe PRIVATE avplayer Qt5::WinMain)
-    set_target_properties(avplayer_windows_stub_exe PROPERTIES OUTPUT_NAME "avplayer")
-    target_include_directories(avplayer_windows_stub_exe PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/main)
-
-    install(TARGETS avplayer_windows_stub_exe ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 elseif(APPLE)
 
@@ -148,3 +135,21 @@ target_compile_definitions(avplayer
 install(TARGETS  avplayer                                                      ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/main/org.kde.avplayer.desktop     DESTINATION ${KDE_INSTALL_FULL_APPDIR})
 install(FILES    ${CMAKE_CURRENT_SOURCE_DIR}/main/org.kde.avplayer.appdata.xml DESTINATION ${KDE_INSTALL_FULL_METAINFODIR})
+
+if(WIN32)
+
+    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/versioninfo.rc.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
+
+    add_executable(avplayer_windows_stub_exe
+        ${CMAKE_CURRENT_SOURCE_DIR}/main/windows_stub_main.cpp
+        ${avplayer_SRCS_ICONS}
+        ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc
+    )
+
+    target_link_libraries(avplayer_windows_stub_exe PRIVATE avplayer Qt5::WinMain)
+    set_target_properties(avplayer_windows_stub_exe PROPERTIES OUTPUT_NAME "avplayer")
+    target_include_directories(avplayer_windows_stub_exe PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/main)
+
+    install(TARGETS avplayer_windows_stub_exe ${INSTALL_TARGETS_DEFAULT_ARGS})
+
+endif()
