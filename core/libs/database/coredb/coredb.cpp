@@ -37,7 +37,6 @@
 #include "digikam_globals.h"
 #include "coredbbackend.h"
 #include "collectionmanager.h"
-#include "collectionlocation.h"
 #include "dbengineactiontype.h"
 #include "tagscache.h"
 #include "album.h"
@@ -231,11 +230,12 @@ void CoreDB::setAlbumRootType(int rootId, AlbumRoot::Type newType)
     d->db->recordChangeset(AlbumRootChangeset(rootId, AlbumRootChangeset::PropertiesChanged));
 }
 
-void CoreDB::setAlbumRootCaseSensitivity(int rootId, int caseSensitivity)
+void CoreDB::setAlbumRootCaseSensitivity(int rootId, CollectionLocation::CaseSensitivity caseSensitivity)
 {
     d->db->execSql(QString::fromUtf8("UPDATE AlbumRoots SET status=? WHERE id=?;"),
-                   caseSensitivity, rootId);
-    d->db->recordChangeset(AlbumRootChangeset(rootId, AlbumRootChangeset::PropertiesChanged));
+                   (int)caseSensitivity, rootId);
+
+    // record that the album root was changed is not necessary here
 }
 
 void CoreDB::setAlbumRootPath(int rootId, const QString& newPath)

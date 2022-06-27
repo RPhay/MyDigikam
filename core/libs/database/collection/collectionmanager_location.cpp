@@ -166,7 +166,7 @@ CollectionLocation CollectionManager::refreshLocation(const CollectionLocation& 
         access.db()->setAlbumRootType(location.id(),            type);
         access.db()->migrateAlbumRoot(location.id(),            identifier);
         access.db()->setAlbumRootPath(location.id(),            specificPath);
-        access.db()->setAlbumRootCaseSensitivity(location.id(), (int)CollectionLocation::UnknownCaseSensitivity);
+        access.db()->setAlbumRootCaseSensitivity(location.id(), CollectionLocation::UnknownCaseSensitivity);
 
         albumLoc->setLabel(label);
         albumLoc->identifier   = identifier;
@@ -203,7 +203,7 @@ CollectionLocation CollectionManager::refreshLocation(const CollectionLocation& 
         access.db()->setAlbumRootType(location.id(),            type);
         access.db()->setAlbumRootPath(location.id(),            QLatin1String("/"));
         access.db()->migrateAlbumRoot(location.id(),            d->volumeIdentifier(path));
-        access.db()->setAlbumRootCaseSensitivity(location.id(), (int)CollectionLocation::UnknownCaseSensitivity);
+        access.db()->setAlbumRootCaseSensitivity(location.id(), CollectionLocation::UnknownCaseSensitivity);
 
         albumLoc->setLabel(label);
         albumLoc->specificPath = QLatin1String("/");
@@ -882,7 +882,9 @@ void CollectionManager::updateLocations()
                 temp->setAutoRemove(false);
                 temp->open();
                 QFileInfo tempInfo(temp->safeFilePath());
-                QFileInfo testInfo(tempInfo.path() + QLatin1Char('/') + tempInfo.fileName().toLower());
+                QFileInfo testInfo(tempInfo.path()  +
+                                   QLatin1Char('/') +
+                                   tempInfo.fileName().toLower());
                 bool testCaseSensitivity      = testInfo.exists();
                 delete temp;
                 QFile::remove(tempInfo.filePath());
@@ -897,13 +899,13 @@ void CollectionManager::updateLocations()
                 }
 
                 CoreDbAccess().db()->setAlbumRootCaseSensitivity(location->id(),
-                                                                 (int)location->caseSensitivity());
+                                                                 location->caseSensitivity());
             }
         }
 
         qCDebug(DIGIKAM_DATABASE_LOG) << "location for" << absolutePath
                                       << "is available:" << available
-                                      << "::" << "case sensitivity:"
+                                      << "=>" << "case sensitivity:"
                                       << location->caseSensitivity();
 
         // set the status depending on "hidden" and "available"
