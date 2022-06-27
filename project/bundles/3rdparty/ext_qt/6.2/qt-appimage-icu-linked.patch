@@ -1,0 +1,15 @@
+diff --git a/src/corelib/CMakeLists.txt b/src/corelib/CMakeLists.txt
+index f89aaae573..5f7d20e33e 100644
+--- a/src/corelib/CMakeLists.txt
++++ b/src/corelib/CMakeLists.txt
+@@ -783,7 +783,9 @@ qt_internal_extend_target(Core CONDITION QT_FEATURE_icu
+         text/qcollator_icu.cpp
+         text/qlocale_icu.cpp
+     LIBRARIES
+-        ICU::i18n ICU::uc ICU::data
++        /usr/local/lib/libicui18n.so
++        /usr/local/lib/libicuuc.so
++        /usr/local/lib/libicudata.so
+ )
+ 
+ qt_internal_extend_target(Core CONDITION WIN32 AND NOT QT_FEATURE_icu
