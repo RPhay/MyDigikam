@@ -44,15 +44,15 @@ CollectionLocation CollectionManager::addLocation(const QUrl& fileUrl, const QSt
         // volume.path has a trailing slash. We want to split in front of this.
 
         QString specificPath = path.mid(volume.path.length() - 1);
-        AlbumRoot::Type type;
+        CollectionLocation::Type type;
 
         if (volume.isRemovable)
         {
-            type = AlbumRoot::VolumeRemovable;
+            type = CollectionLocation::VolumeRemovable;
         }
         else
         {
-            type = AlbumRoot::VolumeHardWired;
+            type = CollectionLocation::VolumeHardWired;
         }
 
         ChangingDB changing(d);
@@ -78,7 +78,7 @@ CollectionLocation CollectionManager::addLocation(const QUrl& fileUrl, const QSt
         qCWarning(DIGIKAM_DATABASE_LOG) << "Unable to identify a path with Solid. Adding the location with path only.";
 
         ChangingDB changing(d);
-        CoreDbAccess().db()->addAlbumRoot(AlbumRoot::VolumeHardWired,
+        CoreDbAccess().db()->addAlbumRoot(CollectionLocation::VolumeHardWired,
                                           d->volumeIdentifier(path), QLatin1String("/"), label);
     }
 
@@ -100,7 +100,7 @@ CollectionLocation CollectionManager::addNetworkLocation(const QUrl& fileUrl, co
     }
 
     ChangingDB changing(d);
-    CoreDbAccess().db()->addAlbumRoot(AlbumRoot::Network,
+    CoreDbAccess().db()->addAlbumRoot(CollectionLocation::Network,
                                       d->networkShareIdentifier(path), QLatin1String("/"), label);
 
     // Do not Q_EMIT the locationAdded signal here, it is done in updateLocations()
@@ -133,29 +133,29 @@ CollectionLocation CollectionManager::refreshLocation(const CollectionLocation& 
     QList<SolidVolumeInfo> volumes = d->listVolumes();
     SolidVolumeInfo volume         = d->findVolumeForUrl(fileUrl, volumes);
 
-    if (!volume.isNull() || (newType == CollectionLocation::TypeNetwork))
+    if (!volume.isNull() || (newType == CollectionLocation::Network))
     {
-        AlbumRoot::Type type;
+        CollectionLocation::Type type;
         QString specificPath;
         QString identifier;
 
-        if      (newType == CollectionLocation::TypeVolumeRemovable)
+        if      (newType == CollectionLocation::VolumeRemovable)
         {
             // volume.path has a trailing slash. We want to split in front of this.
 
-            type         = AlbumRoot::VolumeRemovable;
+            type         = CollectionLocation::VolumeRemovable;
             identifier   = d->volumeIdentifier(volume);
             specificPath = path.mid(volume.path.length() - 1);
         }
-        else if (newType == CollectionLocation::TypeNetwork)
+        else if (newType == CollectionLocation::Network)
         {
-            type         = AlbumRoot::Network;
+            type         = CollectionLocation::Network;
             specificPath = QLatin1String("/");
             identifier   = d->networkShareIdentifier(path);
         }
         else
         {
-            type         = AlbumRoot::VolumeHardWired;
+            type         = CollectionLocation::VolumeHardWired;
             identifier   = d->volumeIdentifier(volume);
             specificPath = path.mid(volume.path.length() - 1);
         }
@@ -198,7 +198,7 @@ CollectionLocation CollectionManager::refreshLocation(const CollectionLocation& 
 
         CoreDbAccess access;
         ChangingDB changing(d);
-        AlbumRoot::Type type = AlbumRoot::VolumeHardWired;
+        CollectionLocation::Type type = CollectionLocation::VolumeHardWired;
         access.db()->setAlbumRootLabel(location.id(),           label);
         access.db()->setAlbumRootType(location.id(),            type);
         access.db()->setAlbumRootPath(location.id(),            QLatin1String("/"));
@@ -532,7 +532,7 @@ QList<CollectionLocation> CollectionManager::checkHardWiredLocations()
     {
         // Hardwired and unavailable?
 
-        if ((location->type()   == CollectionLocation::TypeVolumeHardWired) &&
+        if ((location->type()   == CollectionLocation::VolumeHardWired) &&
             (location->status() == CollectionLocation::LocationUnavailable))
         {
             disappearedLocations << *location;
@@ -644,7 +644,7 @@ void CollectionManager::changeType(const CollectionLocation& location, int type)
     // update db
 
     ChangingDB db(d);
-    CoreDbAccess().db()->setAlbumRootType(albumLoc->id(), (AlbumRoot::Type)type);
+    CoreDbAccess().db()->setAlbumRootType(albumLoc->id(), (CollectionLocation::Type)type);
 
     // update local structure
 
@@ -814,7 +814,7 @@ void CollectionManager::updateLocations()
         bool available = false;
         QString absolutePath;
 
-        if (location->type() == CollectionLocation::TypeNetwork)
+        if (location->type() == CollectionLocation::Network)
         {
             Q_FOREACH (const QString& path, d->networkShareMountPathsFromIdentifier(location))
             {

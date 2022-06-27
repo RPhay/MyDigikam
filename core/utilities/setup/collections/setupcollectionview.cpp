@@ -506,15 +506,15 @@ void SetupCollectionModel::apply()
         Item& item  = m_collections[i];
         CollectionLocation location;
 
-        int newType = CollectionLocation::TypeVolumeHardWired;
+        int newType = CollectionLocation::VolumeHardWired;
 
         if      (item.parentId == CategoryRemovable)
         {
-            newType = CollectionLocation::TypeVolumeRemovable;
+            newType = CollectionLocation::VolumeRemovable;
         }
         else if (item.parentId == CategoryRemote)
         {
-            newType = CollectionLocation::TypeNetwork;
+            newType = CollectionLocation::Network;
         }
 
         location    = CollectionManager::instance()->refreshLocation(item.location, newType,
@@ -1204,17 +1204,17 @@ SetupCollectionModel::Category SetupCollectionModel::typeToCategory(CollectionLo
     switch (type)
     {
         default:
-        case CollectionLocation::TypeVolumeHardWired:
+        case CollectionLocation::VolumeHardWired:
         {
             return CategoryLocal;
         }
 
-        case CollectionLocation::TypeVolumeRemovable:
+        case CollectionLocation::VolumeRemovable:
         {
             return CategoryRemovable;
         }
 
-        case CollectionLocation::TypeNetwork:
+        case CollectionLocation::Network:
         {
             return CategoryRemote;
         }

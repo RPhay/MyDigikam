@@ -79,23 +79,29 @@ public:
     enum Type
     {
         /**
-         * The location is located on a storage device that is built-in
-         * without frequent removal: Hard-disk inside the machine
+         * The location is undefined.
+         * Keep values constant.
          */
-        TypeVolumeHardWired = AlbumRoot::VolumeHardWired,
+        Undefined       = 0,
+
+        /**
+         * The location is located on a storage device that is built-in
+         * without frequent removal: Hard-disk inside the machine.
+         */
+        VolumeHardWired = 1,
 
         /**
          * The location is located on a storage device that can be removed
          * from the local machine, and is expected to be removed.
          * USB stick, USB hard-disk, CD, DVD
          */
-        TypeVolumeRemovable = AlbumRoot::VolumeRemovable,
+        VolumeRemovable = 2,
 
         /**
          * The location is available via a network file system.
          * The availability depends on the network connection.
          */
-        TypeNetwork         = AlbumRoot::Network
+        Network         = 3
     };
 
 public:

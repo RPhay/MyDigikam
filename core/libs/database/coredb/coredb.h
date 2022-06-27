@@ -148,7 +148,7 @@ public:
      * @param label        An (optional) user-visible label
      * @returns the album root id of the newly created root
      */
-    int addAlbumRoot(AlbumRoot::Type type, const QString& identifier,
+    int addAlbumRoot(CollectionLocation::Type type, const QString& identifier,
                      const QString& specificPath, const QString& label)                                             const;
 
     /**
@@ -181,7 +181,7 @@ public:
     /**
      * Sets the type of the specified album root to a new value.
      */
-    void setAlbumRootType(int rootId, AlbumRoot::Type newType);
+    void setAlbumRootType(int rootId, CollectionLocation::Type newType);
 
     /**
      * Sets the case sensitivity of the specified album root to a new value.
