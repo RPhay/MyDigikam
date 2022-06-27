@@ -79,11 +79,15 @@ endif()
 
 if(MINGW)
 
-    set(CMAKE_C_USE_RESPONSE_FILE_FOR_OBJECTS   1)
-    set(CMAKE_CXX_USE_RESPONSE_FILE_FOR_OBJECTS 1)
-    set(CMAKE_C_RESPONSE_FILE_LINK_FLAG         "@")
-    set(CMAKE_CXX_RESPONSE_FILE_LINK_FLAG       "@")
-    set(CMAKE_NINJA_FORCE_RESPONSE_FILE         1 CACHE INTERNAL "")
+    # see https://stackoverflow.com/questions/43184251/cmake-command-line-too-long-windows
+
+    set(CMAKE_C_USE_RESPONSE_FILE_FOR_OBJECTS    1)
+    set(CMAKE_CXX_USE_RESPONSE_FILE_FOR_OBJECTS  1)
+    set(CMAKE_C_USE_RESPONSE_FILE_FOR_INCLUDES   1)
+    set(CMAKE_CXX_USE_RESPONSE_FILE_FOR_INCLUDES 1)
+    set(CMAKE_C_RESPONSE_FILE_LINK_FLAG          "@")
+    set(CMAKE_CXX_RESPONSE_FILE_LINK_FLAG        "@")
+    set(CMAKE_NINJA_FORCE_RESPONSE_FILE          1 CACHE INTERNAL "")
 
     message(STATUS "Use reponse files to compile and link objects...")
 
