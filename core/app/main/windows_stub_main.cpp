@@ -23,7 +23,7 @@
 
 extern "C"
 {
-    __declspec(dllimport) int krita_main(int argc, char** argv);
+    __declspec(dllimport) int digikam_main(int argc, char** argv);
 }
 
 int main(int argc, char** argv)
