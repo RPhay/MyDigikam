@@ -104,6 +104,7 @@
                     type INTEGER NOT NULL,
                     identifier TEXT,
                     specificPath TEXT,
+                    caseSensitivity INTEGER,
                     UNIQUE(identifier, specificPath));
                 </statement>
                 <statement mode="plain">CREATE TABLE Albums
@@ -695,10 +696,10 @@
             </dbaction>
 
             <dbaction name="Migrate_Read_AlbumRoots"><statement mode="query">
-                SELECT id, label, status, type, identifier, specificPath FROM AlbumRoots;
+                SELECT id, label, status, type, identifier, specificPath, caseSensitivity FROM AlbumRoots;
             </statement></dbaction>
             <dbaction name="Migrate_Write_AlbumRoots"><statement mode="query">
-                INSERT OR IGNORE INTO AlbumRoots (id, label, status, type, identifier, specificPath) VALUES (:id, :label, :status, :type, :identifier, :specificPath);
+                INSERT OR IGNORE INTO AlbumRoots (id, label, status, type, identifier, specificPath, caseSensitivity) VALUES (:id, :label, :status, :type, :identifier, :specificPath, :caseSensitivity);
             </statement></dbaction>
 
             <!-- Note Albums with an icon set are setup after population of the Images table. -->
@@ -1019,6 +1020,11 @@
                 <!-- Nothing to do for SQLite -->
             </dbaction>
 
+            <dbaction name="UpdateSchemaFromV15ToV16" mode="transaction">
+                <statement mode="plain">ALTER TABLE AlbumRoots ADD caseSensitivity INTEGER;</statement>
+                <statement mode="plain">UPDATE AlbumRoots SET status=0, caseSensitivity=0;</statement>
+            </dbaction>
+
             <dbaction name="UpdateThumbnailsDBSchemaFromV1ToV2" mode="transaction">
                 <statement mode="plain">CREATE TABLE CustomIdentifiers
                     (identifier TEXT,
@@ -1146,6 +1152,7 @@
                     type INTEGER NOT NULL,
                     identifier LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci,
                     specificPath LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci,
+                    caseSensitivity INTEGER,
                     UNIQUE(identifier(127), specificPath(128)))
                     ENGINE InnoDB;
                 </statement>
@@ -1884,10 +1891,10 @@
             </dbaction>
 
             <dbaction name="Migrate_Read_AlbumRoots"><statement mode="query">
-                SELECT id, label, status, type, identifier, specificPath FROM AlbumRoots;
+                SELECT id, label, status, type, identifier, specificPath, caseSensitivity FROM AlbumRoots;
             </statement></dbaction>
             <dbaction name="Migrate_Write_AlbumRoots" mode="transaction"><statement mode="query">
-                INSERT IGNORE INTO AlbumRoots (id, label, status, type, identifier, specificPath) VALUES (:id, :label, :status, :type, :identifier, :specificPath);
+                INSERT IGNORE INTO AlbumRoots (id, label, status, type, identifier, specificPath, caseSensitivity) VALUES (:id, :label, :status, :type, :identifier, :specificPath, :caseSensitivity);
             </statement></dbaction>
 
             <!-- Note Albums with an icon set are setup after population of the Images table. -->
@@ -2699,6 +2706,11 @@
             <dbaction name="UpdateSchemaFromV14ToV15" mode="transaction">
                 <statement mode="plain">ALTER TABLE Albums MODIFY COLUMN relativePath LONGTEXT CHARACTER SET utf8 COLLATE utf8_bin NOT NULL;</statement>
                 <statement mode="plain">ALTER TABLE Images MODIFY COLUMN name LONGTEXT CHARACTER SET utf8 COLLATE utf8_bin NOT NULL;</statement>
+            </dbaction>
+
+            <dbaction name="UpdateSchemaFromV15ToV16" mode="transaction">
+                <statement mode="plain">ALTER TABLE AlbumRoots ADD caseSensitivity INTEGER;</statement>
+                <statement mode="plain">UPDATE AlbumRoots SET status=0, caseSensitivity=0;</statement>
             </dbaction>
 
             <dbaction name="UpdateThumbnailsDBSchemaFromV1ToV2" mode="transaction">

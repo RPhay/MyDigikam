@@ -89,9 +89,9 @@ public:
     {
         qCDebug(DIGIKAM_DATABASE_LOG) << "Creating new Location " << info.specificPath << " uuid " << info.identifier;
         m_id              = info.id;
-        m_caseSensitivity = (CaseSensitivity)info.caseSensitivity;
         m_type            = (Type)info.type;
         QString path      = info.specificPath;
+        m_caseSensitivity = (CaseSensitivity)info.caseSensitivity;
 
         if ((path != QLatin1String("/")) &&
             path.endsWith(QLatin1Char('/')))
@@ -105,7 +105,7 @@ public:
 
         m_path.clear();
 
-        setStatus(CollectionLocation::LocationNull);
+        setStatus((CollectionLocation::Status)info.status);
     }
 
     void setStatusFromFlags()
