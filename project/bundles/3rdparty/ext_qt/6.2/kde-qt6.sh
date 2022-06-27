@@ -19,7 +19,7 @@ else
     DOWNLOAD_DIR=$1
 fi
 
-QT6_VERSION="v6.2.3"
+QT6_VERSION="v6.3.1"
 
 echo "Download directory: $DOWNLOAD_DIR"
 echo "Qt6 version: $QT6_VERSION"

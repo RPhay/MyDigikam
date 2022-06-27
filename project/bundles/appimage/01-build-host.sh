@@ -206,11 +206,16 @@ echo -e "---------- Clean-up Old Packages\n"
 # Remove system based devel package to prevent conflict with new one.
 urpme --auto --force ${LIBSUFFIX}qt5core5 || true
 
-# Clean up previous openssl install
+# Clean up previous openssl and libicu install
 
-rm -fr /usr/local/lib/libssl.a    || true
-rm -fr /usr/local/lib/libcrypto.a || true
-rm -fr /usr/local/include/openssl || true
+rm -fr /usr/local/lib/libssl.a       || true
+rm -fr /usr/local/lib/libcrypto.a    || true
+rm -fr /usr/local/include/openssl    || true
+
+rm -fr /usr/local/lib/libicu*.a      || true
+rm -fr /usr/local/lib/icu            || true
+rm -fr /usr/local/lib/pkgconfig/icu* || true
+rm -fr /usr/local/include/unicode    || true
 
 #################################################################################################
 
@@ -256,7 +261,7 @@ cmake $ORIG_WD/../3rdparty \
 
 # Install new cmake recent version to /opt
 
-cmake --build . --config RelWithDebInfo --target ext_cmake        -- -j$CPU_CORES
+#cmake --build . --config RelWithDebInfo --target ext_cmake        -- -j$CPU_CORES
 
 #################################################################################################
 
@@ -277,8 +282,8 @@ rm -rf $BUILDING_DIR/* || true
 # Low level libraries and Qt5 dependencies
 # NOTE: The order to compile each component here is very important.
 
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libicu        -- -j$CPU_CORES
-/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_openssl       -- -j$CPU_CORES
+#/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libicu        -- -j$CPU_CORES
+#/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_openssl       -- -j$CPU_CORES
 
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_qt            -- -j$CPU_CORES    # depend of tiff, png, jpeg
 

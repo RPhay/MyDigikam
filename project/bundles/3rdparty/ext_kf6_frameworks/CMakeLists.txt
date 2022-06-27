@@ -35,7 +35,7 @@ ExternalProject_Add(ext_kf6_frameworks
                   cd <DOWNLOAD_DIR>/kf6/knotifyconfig  && git reset --hard && ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/knotifyconfig-drop-phonon.patch  &&
                   cd <DOWNLOAD_DIR>/kf6/breeze-icons   && git reset --hard && ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/breeze-dropsvg-rccprefix.patch   &&
                   cd <SOURCE_DIR>                                                                                                                                  &&
-                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure extra-cmake-modules                       &&
+                  <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --refresh-build --stop-on-failure extra-cmake-modules       &&
                   <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure kconfig                                   &&
                   <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure breeze-icons                              &&
                   <SOURCE_DIR>/kdesrc-build --rc-file=<SOURCE_DIR>/kdesrc-buildrc --delete-my-settings --stop-on-failure kcoreaddons                               &&
