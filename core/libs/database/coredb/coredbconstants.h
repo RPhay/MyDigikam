@@ -37,22 +37,6 @@
 namespace Digikam
 {
 
-namespace AlbumRoot
-{
-
-enum Type
-{
-    // Keep values constant
-    UndefinedType   = 0,
-    VolumeHardWired = 1,
-    VolumeRemovable = 2,
-    Network         = 3
-};
-
-} // namespace AlbumRoot
-
-// ----------------------------------------------------------------------------------
-
 namespace DatabaseSearch
 {
 

@@ -393,7 +393,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
             }
             else if (isRemovableButton->isChecked())
             {
-                CollectionManager::instance()->changeType(loc, CollectionLocation::TypeVolumeRemovable);
+                CollectionManager::instance()->changeType(loc, CollectionLocation::VolumeRemovable);
             }
         }
 

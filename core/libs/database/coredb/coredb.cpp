@@ -170,7 +170,7 @@ QList<AlbumRootInfo> CoreDB::getAlbumRoots() const
         ++it;
         info.status          = (*it).toInt();
         ++it;
-        info.type            = (AlbumRoot::Type)(*it).toInt();
+        info.type            = (*it).toInt();
         ++it;
         info.identifier      = (*it).toString();
         ++it;
@@ -185,7 +185,7 @@ QList<AlbumRootInfo> CoreDB::getAlbumRoots() const
     return list;
 }
 
-int CoreDB::addAlbumRoot(AlbumRoot::Type type, const QString& identifier, const QString& specificPath, const QString& label) const
+int CoreDB::addAlbumRoot(CollectionLocation::Type type, const QString& identifier, const QString& specificPath, const QString& label) const
 {
     QVariant id;
     d->db->execSql(QString::fromUtf8("REPLACE INTO AlbumRoots (type, label, status, identifier, specificPath, caseSensitivity) "
@@ -226,7 +226,7 @@ void CoreDB::setAlbumRootLabel(int rootId, const QString& newLabel)
     d->db->recordChangeset(AlbumRootChangeset(rootId, AlbumRootChangeset::PropertiesChanged));
 }
 
-void CoreDB::setAlbumRootType(int rootId, AlbumRoot::Type newType)
+void CoreDB::setAlbumRootType(int rootId, CollectionLocation::Type newType)
 {
     d->db->execSql(QString::fromUtf8("UPDATE AlbumRoots SET type=? WHERE id=?;"),
                    (int)newType, rootId);

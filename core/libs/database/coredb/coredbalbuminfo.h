@@ -51,20 +51,20 @@ public:
     explicit AlbumRootInfo()
       : id             (0),
         status         (0),
-        type           (AlbumRoot::UndefinedType),
+        type           (0),
         caseSensitivity(0)
     {
     };
 
 public:
 
-    int             id;
-    QString         label;
-    int             status;
-    AlbumRoot::Type type;
-    QString         identifier;
-    QString         specificPath;
-    int             caseSensitivity;
+    int     id;
+    QString label;
+    int     status;
+    int     type;
+    QString identifier;
+    QString specificPath;
+    int     caseSensitivity;
 };
 
 // --------------------------------------------------------------------------
