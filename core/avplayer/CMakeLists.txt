@@ -58,7 +58,7 @@ if(WIN32)
     )
 
     target_link_libraries(avplayer_windows_stub_exe PRIVATE avplayer Qt5::WinMain)
-    set_target_properties(avplayer_windows_stub_exe PROPERTIES OUTPUT_NAME "digikam")
+    set_target_properties(avplayer_windows_stub_exe PROPERTIES OUTPUT_NAME "avplayer")
     target_include_directories(avplayer_windows_stub_exe PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/main)
 
     install(TARGETS avplayer_windows_stub_exe ${INSTALL_TARGETS_DEFAULT_ARGS})
