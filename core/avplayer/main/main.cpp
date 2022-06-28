@@ -48,6 +48,14 @@
 #   include <objbase.h>
 #endif
 
+#if defined Q_OS_WIN
+#   define MAIN_EXPORT __declspec(dllexport)
+#   define MAIN_FN avplayer_main
+#else
+#   define MAIN_EXPORT
+#   define MAIN_FN main
+#endif
+
 using namespace QtAV;
 using namespace AVPlayer;
 using namespace Digikam;
@@ -91,7 +99,7 @@ VideoRendererId rendererId_from_opt_name(const QString& name)
     return VideoRendererId_Widget;
 }
 
-int main(int argc, char* argv[])
+extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
 {
     KLocalizedString::setApplicationDomain("digikam");
 
