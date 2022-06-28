@@ -191,7 +191,12 @@ target_link_libraries(mediaserverbackend
 )
 
 if(WIN32)
-    target_link_libraries(mediaserverbackend PRIVATE wsock32 ws2_32)
+    target_link_libraries(mediaserverbackend
+                          PRIVATE
+                          # Defined in RulesWindows.cmake
+                          ${WSOCK32_LIBRARY}
+                          ${WS2_32_LIBRARY}
+    )
 endif()
 
 # ---------------------------------------------------------------------------------------------------

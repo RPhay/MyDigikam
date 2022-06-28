@@ -361,11 +361,12 @@ if(WIN32)
 
     target_link_libraries(digikamcore
                           PRIVATE
-                          wsock32
-                          ws2_32
-                          netapi32
-                          userenv
-                          psapi
+                          # Defined in RulesWindows.cmake
+                          ${WSOCK32_LIBRARY}
+                          ${WS2_32_LIBRARY}
+                          ${NETAPI32_LIBRARY}
+                          ${USEENV_LIBRARY}
+                          ${PSAPI_LIBRARY}
     )
 
 endif()

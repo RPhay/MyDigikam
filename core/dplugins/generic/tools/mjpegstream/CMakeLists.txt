@@ -55,8 +55,9 @@ if(WIN32)
 
     target_link_libraries(mjpegstreambackend
                           PRIVATE
-                          wsock32
-                          ws2_32
+                          # Defined in RulesWindows.cmake
+                          ${WSOCK32_LIBRARY}
+                          ${WS2_32_LIBRARY}
     )
 
 endif()
