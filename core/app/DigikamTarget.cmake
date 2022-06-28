@@ -117,13 +117,13 @@ if(WIN32)
 
     if(CMAKE_GENERATOR MATCHES "Ninja" AND NOT MINGW)
 
-        message(STATUS "Generating digiKam Version Info Resources file...")
+        message(STATUS "digiKam Version Info Resources file will be processed...")
         configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/versioninfo.rc.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
         set(WINRESINFO ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
 
     else()
 
-        message(STATUS "Ninija used under MinGW: digiKam Version Info Resources file disabled...")
+        message(STATUS "Ninja used under MinGW: digiKam Version Info Resources file disabled...")
 
     endif()
 
