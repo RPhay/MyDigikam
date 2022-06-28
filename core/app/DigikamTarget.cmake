@@ -115,10 +115,12 @@ install(TARGETS digikam ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 if(WIN32)
 
-    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/versioninfo.rc.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
-
     if(CMAKE_GENERATOR MATCHES "Ninja" AND NOT MINGW)
+
+        message(STATUS "Generating digiKam Version Info Resource file...")
+        configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/versioninfo.rc.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
         set(WINRESINFO ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
+
     endif()
 
     add_executable(digikam_windows_stub_exe
