@@ -6,19 +6,20 @@
 
 HEADER_DIRECTORIES(${CMAKE_SOURCE_DIR}/core/utilities DK_LOCAL_INCLUDES_UTILS)
 
-include_directories(${DK_LOCAL_INCLUDES_UTILS}
+include_directories(${DK_LOCAL_INCLUDES}
+                    ${DK_LOCAL_INCLUDES_UTILS}
 
-    ${CMAKE_SOURCE_DIR}/core/app/main
-    ${CMAKE_SOURCE_DIR}/core/app/date
-    ${CMAKE_SOURCE_DIR}/core/app/dragdrop
-    ${CMAKE_SOURCE_DIR}/core/app/views/stack
-    ${CMAKE_SOURCE_DIR}/core/app/views/utils
-    ${CMAKE_SOURCE_DIR}/core/app/views/sidebar
-    ${CMAKE_SOURCE_DIR}/core/app/items/utils
-    ${CMAKE_SOURCE_DIR}/core/app/items/overlays
-    ${CMAKE_SOURCE_DIR}/core/app/items/views
-    ${CMAKE_SOURCE_DIR}/core/app/items/thumbbar
-    ${CMAKE_SOURCE_DIR}/core/app/views/preview
+                    ${CMAKE_SOURCE_DIR}/core/app/main
+                    ${CMAKE_SOURCE_DIR}/core/app/date
+                    ${CMAKE_SOURCE_DIR}/core/app/dragdrop
+                    ${CMAKE_SOURCE_DIR}/core/app/views/stack
+                    ${CMAKE_SOURCE_DIR}/core/app/views/utils
+                    ${CMAKE_SOURCE_DIR}/core/app/views/sidebar
+                    ${CMAKE_SOURCE_DIR}/core/app/items/utils
+                    ${CMAKE_SOURCE_DIR}/core/app/items/overlays
+                    ${CMAKE_SOURCE_DIR}/core/app/items/views
+                    ${CMAKE_SOURCE_DIR}/core/app/items/thumbbar
+                    ${CMAKE_SOURCE_DIR}/core/app/views/preview
 )
 
 add_subdirectory(advancedrename)

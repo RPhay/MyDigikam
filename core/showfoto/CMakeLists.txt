@@ -123,6 +123,7 @@ target_include_directories(showfoto
                            ${CMAKE_SOURCE_DIR}/core/app/items/overlays
                            ${CMAKE_SOURCE_DIR}/core/app/views/sidebar
 
+                           ${DK_LOCAL_INCLUDES}
                            ${DK_LOCAL_INCLUDES_UTILS}
 )
 
@@ -230,9 +231,9 @@ if(WIN32)
     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/versioninfo.rc.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
 
     add_executable(showfoto_windows_stub_exe
-        ${CMAKE_CURRENT_SOURCE_DIR}/main/windows_stub_main.cpp
-        ${showfoto_SRCS_ICONS}
-        ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc
+                   ${CMAKE_CURRENT_SOURCE_DIR}/main/windows_stub_main.cpp
+                   ${showfoto_SRCS_ICONS}
+                   ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc
     )
 
     target_link_libraries(showfoto_windows_stub_exe PRIVATE showfoto Qt5::WinMain)

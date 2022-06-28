@@ -50,6 +50,7 @@ set(DIGIKAM_TARGET_INCLUDES $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::PrintSuppor
                             ${CMAKE_SOURCE_DIR}/core/app/items/overlays
                             ${CMAKE_SOURCE_DIR}/core/app/views/preview
 
+                            ${DK_LOCAL_INCLUDES}
                             ${DK_LOCAL_INCLUDES_UTILS}
 )
 

@@ -449,15 +449,16 @@ if(DIGIKAM_CAN_BE_COMPILED)
     endforeach()
 
     set(DK_LOCAL_INCLUDES ${DK_LOCAL_INCLUDES}
-                          ${CMAKE_CURRENT_SOURCE_DIR}/libs/jpegutils/${DIGIKAM_LIBJPEG_DIR})
-
-    include_directories(${DK_LOCAL_INCLUDES})
+                          ${CMAKE_CURRENT_SOURCE_DIR}/libs/jpegutils/${DIGIKAM_LIBJPEG_DIR}
+    )
 
     # for config headers digikam_version.h digikam_gitversion.h digikam_config.h
     # digikam_dbconfig.h digikam_opencv.h digikam_export.h
 
-    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/app/utils
-                        ${CMAKE_CURRENT_BINARY_DIR}/app/utils)
+    set(DK_LOCAL_INCLUDES ${DK_LOCAL_INCLUDES}
+                          ${CMAKE_CURRENT_SOURCE_DIR}/app/utils
+                          ${CMAKE_CURRENT_BINARY_DIR}/app/utils
+    )
 
     # ==========================================================================
     # Common targets parts

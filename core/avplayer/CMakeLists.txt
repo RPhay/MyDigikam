@@ -78,6 +78,8 @@ target_include_directories(avplayer
                            ${CMAKE_CURRENT_SOURCE_DIR}/playlist
                            ${CMAKE_CURRENT_SOURCE_DIR}/utils
                            ${CMAKE_CURRENT_SOURCE_DIR}/main
+
+                           ${DK_LOCAL_INCLUDES}
 )
 
 if(HAVE_OPENGL)
@@ -141,9 +143,9 @@ if(WIN32)
     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/versioninfo.rc.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
 
     add_executable(avplayer_windows_stub_exe
-        ${CMAKE_CURRENT_SOURCE_DIR}/main/windows_stub_main.cpp
-        ${avplayer_SRCS_ICONS}
-        ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc
+                   ${CMAKE_CURRENT_SOURCE_DIR}/main/windows_stub_main.cpp
+                   ${avplayer_SRCS_ICONS}
+                   ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc
     )
 
     target_link_libraries(avplayer_windows_stub_exe PRIVATE avplayer Qt5::WinMain)
