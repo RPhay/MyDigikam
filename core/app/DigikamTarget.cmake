@@ -116,17 +116,7 @@ install(TARGETS digikam ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 if(WIN32)
 
-    if(CMAKE_GENERATOR MATCHES "Ninja" AND NOT MINGW)
-
-        message(STATUS "digiKam Version Info Resources file will be processed...")
-        configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/versioninfo.rc.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
-        set(WINRESINFO ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
-
-    else()
-
-        message(STATUS "Ninja used under MinGW: digiKam Version Info Resources file disabled...")
-
-    endif()
+    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/versioninfo.rc.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
 
     set(digikam_windows_stub_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/main/windows_stub_main.cpp)
 
@@ -134,7 +124,7 @@ if(WIN32)
 
     add_executable(digikam_windows_stub_exe
                    ${digikam_windows_stub_SRCS}
-                   ${WINRESINFO}
+                   ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc
     )
 
     target_link_libraries(digikam_windows_stub_exe PRIVATE digikam Qt5::WinMain)

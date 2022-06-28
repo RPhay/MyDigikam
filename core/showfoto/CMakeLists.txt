@@ -76,7 +76,6 @@ set(showfoto_SRCS
 # Set the application icon on the application
 
 file(GLOB ICONS_SRCS "${CMAKE_SOURCE_DIR}/core/data/icons/apps/*-apps-showfoto.png")
-ecm_add_app_icon(showfoto_SRCS ICONS ${ICONS_SRCS})
 
 if(WIN32)
 
@@ -89,12 +88,14 @@ if(WIN32)
 
 elseif(APPLE)
 
+    ecm_add_app_icon(showfoto_SRCS ICONS ${ICONS_SRCS})
     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/ShowfotoInfo.plist.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
     add_executable(showfoto ${showfoto_SRCS})
     set_target_properties(showfoto PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
 
 else()
 
+    ecm_add_app_icon(showfoto_SRCS ICONS ${ICONS_SRCS})
     add_executable(showfoto ${showfoto_SRCS})
 
 endif()
@@ -230,9 +231,12 @@ if(WIN32)
 
     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/versioninfo.rc.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
 
+    set(showfoto_windows_stub_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/main/windows_stub_main.cpp)
+
+    ecm_add_app_icon(showfoto_windows_stub_SRCS ICONS ${ICONS_SRCS})
+
     add_executable(showfoto_windows_stub_exe
-                   ${CMAKE_CURRENT_SOURCE_DIR}/main/windows_stub_main.cpp
-                   ${showfoto_SRCS_ICONS}
+                   ${showfoto_windows_stub_SRCS}
                    ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc
     )
 
