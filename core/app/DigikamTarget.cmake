@@ -117,10 +117,14 @@ if(WIN32)
 
     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/versioninfo.rc.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
 
+    if(CMAKE_GENERATOR MATCHES "Ninja" AND NOT MINGW)
+        set(WINRESINFO ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc)
+    endif()
+
     add_executable(digikam_windows_stub_exe
         ${CMAKE_CURRENT_SOURCE_DIR}/main/windows_stub_main.cpp
         ${digikam_SRCS_ICONS}
-        ${CMAKE_CURRENT_BINARY_DIR}/versioninfo.rc
+        ${WINRESINFO}
     )
 
     target_link_libraries(digikam_windows_stub_exe PRIVATE digikam Qt5::WinMain)
