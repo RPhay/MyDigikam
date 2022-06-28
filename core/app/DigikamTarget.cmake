@@ -24,7 +24,6 @@ set(digikam_SRCS
 # Set the application icon on the application
 
 file(GLOB ICONS_SRCS "${CMAKE_SOURCE_DIR}/core/data/icons/apps/*-apps-digikam.png")
-ecm_add_app_icon(digikam_SRCS ICONS ${ICONS_SRCS})
 
 if(WIN32)
 
@@ -37,12 +36,14 @@ if(WIN32)
 
 elseif(APPLE)
 
+    ecm_add_app_icon(digikam_SRCS ICONS ${ICONS_SRCS})
     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/DigikamInfo.plist.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
     add_executable(digikam ${digikam_SRCS})
     set_target_properties(digikam PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
 
 else()
 
+    ecm_add_app_icon(digikam_SRCS ICONS ${ICONS_SRCS})
     add_executable(digikam ${digikam_SRCS})
 
 endif()
@@ -127,10 +128,13 @@ if(WIN32)
 
     endif()
 
+    set(digikam_windows_stub_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/main/windows_stub_main.cpp)
+
+    ecm_add_app_icon(digikam_windows_stub_SRCS ICONS ${ICONS_SRCS})
+
     add_executable(digikam_windows_stub_exe
-        ${CMAKE_CURRENT_SOURCE_DIR}/main/windows_stub_main.cpp
-        ${digikam_SRCS_ICONS}
-        ${WINRESINFO}
+                   ${digikam_windows_stub_SRCS}
+                   ${WINRESINFO}
     )
 
     target_link_libraries(digikam_windows_stub_exe PRIVATE digikam Qt5::WinMain)
