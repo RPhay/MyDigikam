@@ -856,7 +856,8 @@ bool jpegConvert(const QString& src, const QString& dest, const QString& documen
             image.setAttribute(QLatin1String("quality"), 0);      // LossLess
         }
 
-        if ((format.toUpper() == QLatin1String("HEIF")) || (format.toUpper() == QLatin1String("HEIC")))
+        if ((format.toUpper() == QLatin1String("HEIF")) || (format.toUpper() == QLatin1String("HEIC")) ||
+            (format.toUpper() == QLatin1String("HIF")))
         {
             image.setAttribute(QLatin1String("quality"), 0);      // LossLess
         }

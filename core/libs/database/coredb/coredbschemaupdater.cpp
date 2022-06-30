@@ -63,7 +63,7 @@ int CoreDbSchemaUpdater::schemaVersion()
 
 int CoreDbSchemaUpdater::filterSettingsVersion()
 {
-    return 16;
+    return 17;
 }
 
 int CoreDbSchemaUpdater::uniqueHashVersion()
@@ -517,7 +517,7 @@ void CoreDbSchemaUpdater::defaultFilterSettings(QStringList& defaultItemFilter, 
                       << QLatin1String("tga")                                                     // Truevision Graphics Adapter
                       << QLatin1String("sgi")  << QLatin1String("rgb")  << QLatin1String("rgba")  // Silicon Graphics Image
                       << QLatin1String("bw")
-                      << QLatin1String("heic") << QLatin1String("heif")                           // High Efficiency Image File Format
+                      << QLatin1String("heic") << QLatin1String("heif") << QLatin1String("hif")   // High Efficiency Image File Format
                       << QLatin1String("jxl")                                                     // JPEG-XL
                       << QLatin1String("avif")                                                    // AV1 Image File Format
                       << QLatin1String("wbmp")                                                    // Wireless Application Protocol Bitmap Format

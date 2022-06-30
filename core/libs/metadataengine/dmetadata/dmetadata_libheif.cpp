@@ -180,7 +180,8 @@ bool DMetadata::loadUsingLibheif(const QString& filePath)
     if (
         !fileInfo.exists() || ext.isEmpty() ||
         (ext != QLatin1String("HEIF"))      ||
-        (ext != QLatin1String("HEIC"))
+        (ext != QLatin1String("HEIC"))      ||
+        (ext != QLatin1String("HIF"))
        )
     {
         return false;

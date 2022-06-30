@@ -317,7 +317,8 @@ QMap<QString, QVariant> EditorCore::Private::ioAttributes(IOFileSettings* const 
 #ifdef HAVE_X265
 
     if ((mimeType.toUpper() == QLatin1String("HEIC")) ||
-        (mimeType.toUpper() == QLatin1String("HEIF")))
+        (mimeType.toUpper() == QLatin1String("HEIF")) ||
+        (mimeType.toUpper() == QLatin1String("HIF")))
     {
         if (iofileSettings->HEIFLossLess)
         {

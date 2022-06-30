@@ -98,7 +98,8 @@ QStringList supportedImageMimeTypes(QIODevice::OpenModeFlag mode, QString& allTy
 #ifdef HAVE_X265
 
         if (QString::fromLatin1(frm).contains(QLatin1String("heic"), Qt::CaseInsensitive) ||
-            QString::fromLatin1(frm).contains(QLatin1String("heif"), Qt::CaseInsensitive))
+            QString::fromLatin1(frm).contains(QLatin1String("heif"), Qt::CaseInsensitive) ||
+            QString::fromLatin1(frm).contains(QLatin1String("hif"),  Qt::CaseInsensitive))
         {
             continue;
         }
@@ -176,6 +177,7 @@ bool isReadableImageFile(const QString& filePath)
             (suffix == QLatin1String("PGF"))                 ||
             (suffix == QLatin1String("KRA"))                 ||
             (suffix == QLatin1String("CR3"))                 ||
+            (suffix == QLatin1String("HIF"))                 ||
             (suffix == QLatin1String("HEIC"))                ||
             (suffix == QLatin1String("HEIF"))                ||
             DRawDecoder::rawFiles().contains(suffix))

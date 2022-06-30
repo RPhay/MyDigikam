@@ -160,7 +160,7 @@ QString DImgHEIFPlugin::loaderName() const
 
 QString DImgHEIFPlugin::typeMimes() const
 {
-    return QLatin1String("HEIC HEIF");
+    return QLatin1String("HEIC HEIF HIF");
 }
 
 int DImgHEIFPlugin::canRead(const QFileInfo& fileInfo, bool magic) const

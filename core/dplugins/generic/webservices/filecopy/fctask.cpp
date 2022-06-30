@@ -118,6 +118,7 @@ void FCTask::run()
              (suffix == QLatin1String("JXL"))             ||
              (suffix == QLatin1String("AVIF"))            ||
              (suffix == QLatin1String("KRA"))             ||
+             (suffix == QLatin1String("HIF"))             ||
              (suffix == QLatin1String("HEIC"))            ||
              (suffix == QLatin1String("HEIF"))
             )
