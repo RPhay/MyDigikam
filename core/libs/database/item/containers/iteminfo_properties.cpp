@@ -413,11 +413,13 @@ void ItemInfo::setName(const QString& newName)
         return;
     }
 
-    CoreDbAccess().db()->renameItem(m_data->id, newName);
+    {
+        ItemInfoWriteLocker lock;
+        m_data->name = newName;
+        ItemInfoStatic::cache()->cacheByName(m_data);
+    }
 
-    ItemInfoWriteLocker lock;
-    m_data->name = newName;
-    ItemInfoStatic::cache()->cacheByName(m_data);
+    CoreDbAccess().db()->renameItem(m_data->id, newName);
 }
 
 void ItemInfo::setDateTime(const QDateTime& dateTime)

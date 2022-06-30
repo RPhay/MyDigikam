@@ -3751,6 +3751,8 @@ void CoreDB::renameItem(qlonglong imageID, const QString& newName)
 {
     d->db->execSql(QString::fromUtf8("UPDATE Images SET name=? WHERE id=?;"),
                    newName, imageID);
+
+    d->db->recordChangeset(ImageChangeset(imageID, DatabaseFields::Set(DatabaseFields::Name)));
 }
 
 int CoreDB::getItemAlbum(qlonglong imageID) const

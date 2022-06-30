@@ -1407,6 +1407,24 @@ void ItemModel::slotImageChange(const ImageChangeset& changeset)
 
     if (d->watchFlags & changeset.changes())
     {
+        if (changeset.changes() & DatabaseFields::Name)
+        {
+            if (d->keepFilePathCache)
+            {
+                Q_FOREACH (const qlonglong& id, changeset.ids())
+                {
+                    d->filePathHash.remove(d->filePathHash.key(id));
+                    int index = d->idHash.value(id, -1);
+
+                    if (index != -1)
+                    {
+                        const ItemInfo& info = d->infos.at(index);
+                        d->filePathHash[info.filePath()] = id;
+                    }
+                }
+            }
+        }
+
         QItemSelection items;
 
         Q_FOREACH (const qlonglong& id, changeset.ids())
