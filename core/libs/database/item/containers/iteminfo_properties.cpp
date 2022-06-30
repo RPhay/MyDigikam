@@ -385,11 +385,13 @@ void ItemInfo::setManualOrder(qlonglong value)
         return;
     }
 
-    CoreDbAccess().db()->setItemManualOrder(m_data->id, value);
+    {
+        ItemInfoWriteLocker lock;
+        m_data->manualOrder       = value;
+        m_data->manualOrderCached = true;
+    }
 
-    ItemInfoWriteLocker lock;
-    m_data->manualOrder       = value;
-    m_data->manualOrderCached = true;
+    CoreDbAccess().db()->setItemManualOrder(m_data->id, value);
 }
 
 void ItemInfo::setOrientation(int value)
@@ -399,11 +401,13 @@ void ItemInfo::setOrientation(int value)
         return;
     }
 
-    CoreDbAccess().db()->changeItemInformation(m_data->id, QVariantList() << value, DatabaseFields::Orientation);
+    {
+        ItemInfoWriteLocker lock;
+        m_data->orientation       = value;
+        m_data->orientationCached = true;
+    }
 
-    ItemInfoWriteLocker lock;
-    m_data->orientation       = value;
-    m_data->orientationCached = true;
+    CoreDbAccess().db()->changeItemInformation(m_data->id, QVariantList() << value, DatabaseFields::Orientation);
 }
 
 void ItemInfo::setName(const QString& newName)
@@ -429,11 +433,13 @@ void ItemInfo::setDateTime(const QDateTime& dateTime)
         return;
     }
 
-    CoreDbAccess().db()->changeItemInformation(m_data->id, QVariantList() << dateTime, DatabaseFields::CreationDate);
+    {
+        ItemInfoWriteLocker lock;
+        m_data->creationDate       = dateTime;
+        m_data->creationDateCached = true;
+    }
 
-    ItemInfoWriteLocker lock;
-    m_data->creationDate       = dateTime;
-    m_data->creationDateCached = true;
+    CoreDbAccess().db()->changeItemInformation(m_data->id, QVariantList() << dateTime, DatabaseFields::CreationDate);
 }
 
 void ItemInfo::setModDateTime(const QDateTime& dateTime)
@@ -443,11 +449,13 @@ void ItemInfo::setModDateTime(const QDateTime& dateTime)
         return;
     }
 
-    CoreDbAccess().db()->setItemModificationDate(m_data->id, dateTime);
+    {
+        ItemInfoWriteLocker lock;
+        m_data->modificationDate       = dateTime;
+        m_data->modificationDateCached = true;
+    }
 
-    ItemInfoWriteLocker lock;
-    m_data->modificationDate       = dateTime;
-    m_data->modificationDateCached = true;
+    CoreDbAccess().db()->setItemModificationDate(m_data->id, dateTime);
 }
 
 ItemInfo::DatabaseFieldsHashRaw ItemInfo::getDatabaseFieldsRaw(const DatabaseFields::Set& requestedSet) const

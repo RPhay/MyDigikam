@@ -89,6 +89,12 @@ void ItemInfo::setPickLabel(int pickId)
     QList<int> currentTagIds   = tagIds();
     QVector<int> pickLabelTags = TagsCache::instance()->pickLabelTags();
 
+    {
+        ItemInfoWriteLocker lock;
+        m_data->pickLabel       = pickId;
+        m_data->pickLabelCached = true;
+    }
+
     // Pick Label is an exclusive tag.
     // Perform "switch" operation atomic
 
@@ -105,10 +111,6 @@ void ItemInfo::setPickLabel(int pickId)
 
         setTag(pickLabelTags[pickId]);
     }
-
-    ItemInfoWriteLocker lock;
-    m_data->pickLabel       = pickId;
-    m_data->pickLabelCached = true;
 }
 
 void ItemInfo::setColorLabel(int colorId)
@@ -120,6 +122,12 @@ void ItemInfo::setColorLabel(int colorId)
 
     QList<int> currentTagIds    = tagIds();
     QVector<int> colorLabelTags = TagsCache::instance()->colorLabelTags();
+
+    {
+        ItemInfoWriteLocker lock;
+        m_data->colorLabel       = colorId;
+        m_data->colorLabelCached = true;
+    }
 
     // Color Label is an exclusive tag.
     // Perform "switch" operation atomic
@@ -137,10 +145,6 @@ void ItemInfo::setColorLabel(int colorId)
 
         setTag(colorLabelTags[colorId]);
     }
-
-    ItemInfoWriteLocker lock;
-    m_data->colorLabel       = colorId;
-    m_data->colorLabelCached = true;
 }
 
 void ItemInfo::setRating(int value)
@@ -150,11 +154,13 @@ void ItemInfo::setRating(int value)
         return;
     }
 
-    CoreDbAccess().db()->changeItemInformation(m_data->id, QVariantList() << value, DatabaseFields::Rating);
+    {
+        ItemInfoWriteLocker lock;
+        m_data->rating       = value;
+        m_data->ratingCached = true;
+    }
 
-    ItemInfoWriteLocker lock;
-    m_data->rating       = value;
-    m_data->ratingCached = true;
+    CoreDbAccess().db()->changeItemInformation(m_data->id, QVariantList() << value, DatabaseFields::Rating);
 }
 
 } // namespace Digikam
