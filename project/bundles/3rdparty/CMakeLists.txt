@@ -138,21 +138,17 @@ add_subdirectory(ext_drmingw)
 add_subdirectory(ext_imagemagick)
 add_subdirectory(ext_uchardet)
 
-if (${ENABLE_QTVERSION} MATCHES "5.*")
+add_subdirectory(ext_kf5_frameworks)
+add_subdirectory(ext_libksane)
 
-    add_subdirectory(ext_kf5_frameworks)
+if (${ENABLE_QTVERSION} MATCHES "5.*")
 
     # Not yet ported to Qt6.
     add_subdirectory(ext_marble)
-    add_subdirectory(ext_libksane)
 
     # Not yet ported to Qt6.
     add_subdirectory(ext_gmicqt)
     add_subdirectory(ext_mosaicwall)
     add_subdirectory(ext_flowview)
-
-else()
-
-    add_subdirectory(ext_kf6_frameworks)
 
 endif()

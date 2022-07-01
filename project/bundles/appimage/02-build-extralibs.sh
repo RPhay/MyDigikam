@@ -54,60 +54,56 @@ rm -rf $BUILDING_DIR/* || true
       -DENABLE_QTVERSION=$DK_QTVERSION \
       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
 
+# NOTE: The order to compile each component here is very important.
+
+# core KF5 frameworks dependencies
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_extra-cmake-modules -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kconfig             -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_breeze-icons        -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kcoreaddons         -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kwindowsystem       -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_solid               -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_threadweaver        -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_karchive            -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kdbusaddons         -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_ki18n               -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kcrash              -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kcodecs             -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kauth               -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kguiaddons          -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kwidgetsaddons      -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kitemviews          -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kcompletion         -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kconfigwidgets      -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kiconthemes         -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kservice            -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kglobalaccel        -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kxmlgui             -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kbookmarks          -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kimageformats       -- -j$CPU_CORES
+
+# Extra support for digiKam
+
+# libksane support
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libksane            -- -j$CPU_CORES
+
+# Desktop integration support
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kjobwidgets         -- -j$CPU_CORES
+
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kio                 -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_knotifyconfig       -- -j$CPU_CORES
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_knotifications      -- -j$CPU_CORES
+
 if [[ $DK_QTVERSION == 5.* ]] ; then
-
-    # NOTE: The order to compile each component here is very important.
-
-    # core KF5 frameworks dependencies
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_extra-cmake-modules -- -j$CPU_CORES
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kconfig             -- -j$CPU_CORES
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_breeze-icons        -- -j$CPU_CORES
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kcoreaddons         -- -j$CPU_CORES
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kwindowsystem       -- -j$CPU_CORES
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_solid               -- -j$CPU_CORES
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_threadweaver        -- -j$CPU_CORES
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_karchive            -- -j$CPU_CORES
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kdbusaddons         -- -j$CPU_CORES
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_ki18n               -- -j$CPU_CORES
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kcrash              -- -j$CPU_CORES
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kcodecs             -- -j$CPU_CORES
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kauth               -- -j$CPU_CORES
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kguiaddons          -- -j$CPU_CORES
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kwidgetsaddons      -- -j$CPU_CORES
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kitemviews          -- -j$CPU_CORES
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kcompletion         -- -j$CPU_CORES
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kconfigwidgets      -- -j$CPU_CORES
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kiconthemes         -- -j$CPU_CORES
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kservice            -- -j$CPU_CORES
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kglobalaccel        -- -j$CPU_CORES
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kxmlgui             -- -j$CPU_CORES
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kbookmarks          -- -j$CPU_CORES
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kimageformats       -- -j$CPU_CORES
-
-    # Extra support for digiKam
-
-    # libksane support
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_libksane            -- -j$CPU_CORES
-
-    # Desktop integration support
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kjobwidgets         -- -j$CPU_CORES
-
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kio                 -- -j$CPU_CORES
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_knotifyconfig       -- -j$CPU_CORES
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_knotifications      -- -j$CPU_CORES
 
     # Geolocation support
     /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_marble              -- -j$CPU_CORES
 
-    # Calendar support
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kcalendarcore       -- -j$CPU_CORES
-
-else
-
-    /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kf6_frameworks      -- -j$CPU_CORES
-    cp $DOWNLOAD_DIR/kf6_manifest.txt $ORIG_WD/data/
-
 fi
+
+# Calendar support
+/opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_kcalendarcore       -- -j$CPU_CORES
+
 
 # Platform Input Context Qt plugin
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_fcitx-qt            -- -j$CPU_CORES
