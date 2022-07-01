@@ -33,7 +33,7 @@
 #include <QLabel>
 #include <QApplication>
 #include <QStandardPaths>
-#include <QDesktopWidget>
+#include <QActionGroup>
 #include <QDesktopServices>
 #include <QFileInfo>
 #include <QTextCodec>
