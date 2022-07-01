@@ -40,7 +40,7 @@
 
 #include "digikam_debug.h"
 #include "digikam_config.h"
-#include "digikam_globals.h"
+#include "digikam_globals_p.h"      // For KF6::Ki18n deprecated
 #include "dimg.h"
 #include "filteraction.h"
 #include "loadingdescription.h"
@@ -106,7 +106,7 @@ QList<DPluginAuthor> RawTherapeeRawImportPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2019"))
+                             QString::fromUtf8("(C) 2019-2022"))
             ;
 }
 
