@@ -125,7 +125,7 @@ void VideoPlayer::setOpenGL(bool o)
         return;
     }
 
-#ifndef QT_NO_OPENGL
+#if !defined(QT_NO_OPENGL) && QT_VERSION < QT_VERSION_CHECK(6,0,0)
 
     QGLWidget* const glw = new QGLWidget();   // QGLFormat(QGL::SampleBuffers));
     glw->setAutoFillBackground(false);

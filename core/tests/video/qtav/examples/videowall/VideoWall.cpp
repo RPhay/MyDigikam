@@ -26,7 +26,6 @@
 // Qt includes
 
 #include <QApplication>
-#include <QDesktopWidget>
 #include <QEvent>
 #include <QFileDialog>
 #include <QGridLayout>
@@ -41,6 +40,13 @@
 
 #include "AudioOutput.h"
 #include "digikam_debug.h"
+
+#if QT_VERSION < QT_VERSION_CHECK(6,0,0)
+#   include <QDesktopWidget>
+#   define DESKTOP_RECT() qApp->desktop()->rect()
+#else
+#   define DESKTOP_RECT() qApp->primaryScreen()->availableGeometry()
+#endif
 
 using namespace QtAV;
 
@@ -60,7 +66,7 @@ VideoWall::VideoWall(QObject* const parent)
             << QString::asprintf("WA_OpaquePaintEvent=%d",
                 view->testAttribute(Qt::WA_OpaquePaintEvent));
 
-        view->resize(qApp->desktop()->size());
+        view->resize(DESKTOP_RECT().size());
         view->move(QPoint(0, 0));
         view->show();
     }
@@ -157,8 +163,8 @@ void VideoWall::show()
     qCDebug(DIGIKAM_TESTS_LOG).noquote()
         << QString::asprintf("show wall: %d x %d", r, c);
 
-    int w = (view ? view->frameGeometry().width()  / c : qApp->desktop()->width()  / c);
-    int h = (view ? view->frameGeometry().height() / r : qApp->desktop()->height() / r);
+    int w = (view ? view->frameGeometry().width()  / c : DESKTOP_RECT().width()  / c);
+    int h = (view ? view->frameGeometry().height() / r : DESKTOP_RECT().height() / r);
 
     if (view)
     {
@@ -189,11 +195,11 @@ void VideoWall::show()
         for (int j = 0 ; j < c ; ++j)
         {
             VideoRenderer* const renderer = VideoRenderer::create(v);
-            renderer->widget()->setWindowFlags(renderer->widget()->windowFlags()| Qt::FramelessWindowHint);
+            renderer->widget()->setWindowFlags(renderer->widget()->windowFlags() | Qt::FramelessWindowHint);
             renderer->widget()->setAttribute(Qt::WA_DeleteOnClose);
             renderer->widget()->resize(w, h);
             renderer->widget()->move(j * w, i * h);
-            AVPlayerCore* const player = new AVPlayerCore;
+            AVPlayerCore* const player    = new AVPlayerCore;
             player->setRenderer(renderer);
 
             connect(player, SIGNAL(started()),

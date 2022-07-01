@@ -26,7 +26,6 @@
 // Qt includes
 
 #include <QApplication>
-#include <QDesktopWidget>
 #include <QEvent>
 #include <QFileDialog>
 #include <QGridLayout>
@@ -42,6 +41,7 @@
 #include "VideoPreviewWidget.h"
 
 #if QT_VERSION < QT_VERSION_CHECK(6,0,0)
+#   include <QDesktopWidget>
 #   define DESKTOP_RECT() qApp->desktop()->rect()
 #else
 #   define DESKTOP_RECT() qApp->primaryScreen()->availableGeometry()
