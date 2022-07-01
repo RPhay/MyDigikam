@@ -1,5 +1,5 @@
 diff --git a/autotests/jobtest.h b/autotests/jobtest.h
-index 325ce88f1..3f2b75927 100644
+index 5afafceed..3f048a6dc 100644
 --- a/autotests/jobtest.h
 +++ b/autotests/jobtest.h
 @@ -12,6 +12,8 @@
@@ -12,7 +12,7 @@ index 325ce88f1..3f2b75927 100644
  {
      Q_OBJECT
 diff --git a/src/core/slaveinterface.h b/src/core/slaveinterface.h
-index 7b5c89732..e7b4e797e 100644
+index aa7b7d0ca..58c64570f 100644
 --- a/src/core/slaveinterface.h
 +++ b/src/core/slaveinterface.h
 @@ -19,6 +19,8 @@
@@ -25,32 +25,29 @@ index 7b5c89732..e7b4e797e 100644
  {
  class Connection;
 diff --git a/src/filewidgets/kfilewidget.cpp b/src/filewidgets/kfilewidget.cpp
-index 943c0cd93..2349cd648 100644
+index 984a6ea30..06f58a389 100644
 --- a/src/filewidgets/kfilewidget.cpp
 +++ b/src/filewidgets/kfilewidget.cpp
-@@ -280,7 +280,7 @@ public:
+@@ -263,12 +263,12 @@ public:
      bool m_confirmOverwrite = false;
      bool m_differentHierarchyLevelItemsEntered = false;
  
--    const std::array<short, 8> m_stdIconSizes = {
-+    const std::array<short, 8> m_stdIconSizes = {{
-         KIconLoader::SizeSmall,
-         KIconLoader::SizeSmallMedium,
-         KIconLoader::SizeMedium,
-@@ -289,7 +289,7 @@ public:
-         KIconLoader::SizeEnormous,
-         256,
-         512,
--    };
-+    }};
+-    const std::array<KIconLoader::StdSizes, 6> m_stdIconSizes = {KIconLoader::SizeSmall,
++    const std::array<KIconLoader::StdSizes, 6> m_stdIconSizes = {{KIconLoader::SizeSmall,
+                                                                  KIconLoader::SizeSmallMedium,
+                                                                  KIconLoader::SizeMedium,
+                                                                  KIconLoader::SizeLarge,
+                                                                  KIconLoader::SizeHuge,
+-                                                                 KIconLoader::SizeEnormous};
++                                                                 KIconLoader::SizeEnormous}};
  
      QSlider *m_iconSizeSlider = nullptr;
      QAction *m_zoomOutAction = nullptr;
 diff --git a/src/filewidgets/kurlnavigator.cpp b/src/filewidgets/kurlnavigator.cpp
-index 6818b5238..80e215dfa 100644
+index fc65ef4d9..1cb4b8362 100644
 --- a/src/filewidgets/kurlnavigator.cpp
 +++ b/src/filewidgets/kurlnavigator.cpp
-@@ -736,7 +736,10 @@ void KUrlNavigatorPrivate::updateButtonVisibility()
+@@ -721,7 +721,10 @@ void KUrlNavigatorPrivate::updateButtonVisibility()
          return button->minimumWidth();
      };
      // Check whether buttons must be hidden at all...
@@ -63,7 +60,7 @@ index 6818b5238..80e215dfa 100644
      if (requiredButtonWidth > availableWidth) {
          // At least one button must be hidden. This implies that the
 diff --git a/src/kcms/netpref/CMakeLists.txt b/src/kcms/netpref/CMakeLists.txt
-index 869647e03..d4935cde2 100644
+index 3a1fa11ef..a74bbe976 100644
 --- a/src/kcms/netpref/CMakeLists.txt
 +++ b/src/kcms/netpref/CMakeLists.txt
 @@ -1,4 +1,4 @@
@@ -72,7 +69,7 @@ index 869647e03..d4935cde2 100644
  
  add_library(kcm_netpref MODULE)
  
-@@ -14,7 +14,7 @@ target_link_libraries(kcm_netpref
+@@ -13,7 +13,7 @@ target_link_libraries(kcm_netpref
      KF5::ConfigCore
      KF5::ConfigWidgets
      KF5::KIOCore
@@ -82,7 +79,7 @@ index 869647e03..d4935cde2 100644
      KF5::I18n
      KF5::CoreAddons
 diff --git a/src/kcms/netpref/netpref.cpp b/src/kcms/netpref/netpref.cpp
-index 4a07ff13c..e5116f698 100644
+index 02c94893f..791d72164 100644
 --- a/src/kcms/netpref/netpref.cpp
 +++ b/src/kcms/netpref/netpref.cpp
 @@ -12,7 +12,7 @@
@@ -174,10 +171,10 @@ index f260e52db..d7c955878 100644
  
  #endif // NETPREF_H
 diff --git a/src/widgets/previewjob.cpp b/src/widgets/previewjob.cpp
-index c53bcc88a..adf612bcc 100644
+index ed5daeb0e..dd478e3e1 100644
 --- a/src/widgets/previewjob.cpp
 +++ b/src/widgets/previewjob.cpp
-@@ -218,7 +218,7 @@ void PreviewJob::setDefaultDevicePixelRatio(int defaultDevicePixelRatio)
+@@ -217,7 +217,7 @@ void PreviewJob::setDefaultDevicePixelRatio(int defaultDevicePixelRatio)
  
  void PreviewJob::setDefaultDevicePixelRatio(qreal defaultDevicePixelRatio)
  {
@@ -186,7 +183,7 @@ index c53bcc88a..adf612bcc 100644
  }
  
  #if KIOWIDGETS_BUILD_DEPRECATED_SINCE(4, 7)
-@@ -512,7 +512,7 @@ void KIO::PreviewJob::setDevicePixelRatio(int dpr)
+@@ -509,7 +509,7 @@ void KIO::PreviewJob::setDevicePixelRatio(int dpr)
  
  void KIO::PreviewJob::setDevicePixelRatio(qreal dpr)
  {
@@ -196,7 +193,7 @@ index c53bcc88a..adf612bcc 100644
  
  void PreviewJob::setIgnoreMaximumSize(bool ignoreSize)
 diff --git a/src/widgets/renamedialog.cpp b/src/widgets/renamedialog.cpp
-index 4cc6f3fe3..ff5d6b8a6 100644
+index 9324edc56..3fbfddf8e 100644
 --- a/src/widgets/renamedialog.cpp
 +++ b/src/widgets/renamedialog.cpp
 @@ -427,10 +427,10 @@ RenameDialog::RenameDialog(QWidget *parent,
