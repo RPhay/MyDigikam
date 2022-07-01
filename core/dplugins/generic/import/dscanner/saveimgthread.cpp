@@ -52,7 +52,11 @@ public:
     {
     }
 
-#if KSANE_VERSION < QT_VERSION_CHECK(21,8,0)
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+    QImage     imageData;
+
+#elif KSANE_VERSION < QT_VERSION_CHECK(21,8,0)
 
     int        width        = 0;
     int        height       = 0;
@@ -89,7 +93,14 @@ SaveImgThread::~SaveImgThread()
     delete d;
 }
 
-#if KSANE_VERSION < QT_VERSION_CHECK(21,8,0)
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+void SaveImgThread::setImageData(const QImage& imageData)
+{
+    d->imageData = imageData;
+}
+
+#elif KSANE_VERSION < QT_VERSION_CHECK(21,8,0)
 
 void SaveImgThread::setImageData(const QByteArray& ksaneData, int width, int height,
                                  int bytesPerLine, int ksaneFormat)
@@ -126,7 +137,114 @@ void SaveImgThread::run()
 {
     Q_EMIT signalProgress(d->newUrl, 10);
 
-#if KSANE_VERSION < QT_VERSION_CHECK(21,8,0)
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+    bool sixteenBit   = ((d->imageData.format() == QImage::Format_RGBX64) ||
+                         (d->imageData.format() == QImage::Format_Grayscale16));
+    DImg img((uint)d->imageData.width(), (uint)d->imageData.height(), sixteenBit, false);
+    int progress;
+
+    if (!sixteenBit)
+    {
+        uchar* dst = img.bits();
+
+        for (int h = 0 ; h < d->imageData.height() ; ++h)
+        {
+            for (int w = 0 ; w < d->imageData.width() ; ++w)
+            {
+                if      (d->imageData.format() == QImage::Format_RGB32)         // Color 8 bits
+                {
+                    const QRgb* rgbData = reinterpret_cast<QRgb*>(d->imageData.scanLine(h));
+                    dst[0] = qBlue(rgbData[w]);     // Blue
+                    dst[1] = qGreen(rgbData[w]);    // Green
+                    dst[2] = qRed(rgbData[w]);      // Red
+                    dst[3] = 0x00;                  // Alpha
+
+                    dst   += 4;
+                }
+                else if (d->imageData.format() == QImage::Format_Grayscale8)    // Gray
+                {
+                    const uchar* grayScale = d->imageData.scanLine(h);
+                    dst[0] = grayScale[w];          // Blue
+                    dst[1] = grayScale[w];          // Green
+                    dst[2] = grayScale[w];          // Red
+                    dst[3] = 0x00;                  // Alpha
+
+                    dst   += 4;
+                }
+                else if (d->imageData.format() == QImage::Format_Mono)          // Lineart
+                {
+                    const uchar* mono = d->imageData.scanLine(h);
+                    const int index   = w / 8;
+                    const int mod     = w % 8;
+
+                    if (mono[index] & (1 << mod))
+                    {
+                        dst[0] = 0x00;              // Blue
+                        dst[1] = 0x00;              // Green
+                        dst[2] = 0x00;              // Red
+                        dst[3] = 0x00;              // Alpha
+                    }
+                    else
+                    {
+                        dst[0] = 0xFF;              // Blue
+                        dst[1] = 0xFF;              // Green
+                        dst[2] = 0xFF;              // Red
+                        dst[3] = 0x00;              // Alpha
+                    }
+
+                    dst       += 4;
+                }
+            }
+
+            progress = 10 + (int)(((double)h * 50.0) / d->imageData.height());
+
+            if (progress % 5 == 0)
+            {
+                Q_EMIT signalProgress(d->newUrl, progress);
+            }
+        }
+    }
+    else
+    {
+        unsigned short* dst = reinterpret_cast<unsigned short*>(img.bits());
+
+        for (int h = 0 ; h < d->imageData.height() ; ++h)
+        {
+            for (int w = 0 ; w < d->imageData.width() ; ++w)
+            {
+                if      (d->imageData.format() == QImage::Format_RGBX64)        // Color 16 bits
+                {
+                    const QRgba64* rgbData = reinterpret_cast<QRgba64*>(d->imageData.scanLine(h));
+                    dst[0] = rgbData[w].blue();     // Blue
+                    dst[1] = rgbData[w].green();    // Green
+                    dst[2] = rgbData[w].red();      // Red
+                    dst[3] = 0x0000;                // Alpha
+
+                    dst    += 4;
+                }
+                else if (d->imageData.format() == QImage::Format_Grayscale16)   // Gray16
+                {
+                    const unsigned short* grayScale = reinterpret_cast<unsigned short*>(d->imageData.scanLine(h));
+                    dst[0] = grayScale[w];          // Blue
+                    dst[1] = grayScale[w];          // Green
+                    dst[2] = grayScale[w];          // Red
+                    dst[3] = 0x0000;                // Alpha
+
+                    dst   += 4;
+                }
+            }
+
+            progress = 10 + (int)(((double)h * 50.0) / d->imageData.height());
+
+            if ((progress % 5) == 0)
+            {
+                Q_EMIT signalProgress(d->newUrl, progress);
+            }
+        }
+    }
+
+#elif KSANE_VERSION < QT_VERSION_CHECK(21,8,0)
 
     bool sixteenBit   = ((d->frmt == KSaneWidget::FormatRGB_16_C) ||
                          (d->frmt == KSaneWidget::FormatGrayScale16));

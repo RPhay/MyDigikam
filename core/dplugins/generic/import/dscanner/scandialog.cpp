@@ -38,7 +38,6 @@
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <ksanewidget.h>
 
 // Local includes
 
@@ -88,7 +87,12 @@ ScanDialog::ScanDialog(KSaneWidget* const saneWdg, QWidget* const parent)
 
     // ------------------------------------------------------------------------
 
-#if KSANE_VERSION < QT_VERSION_CHECK(21,8,0)
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+    connect(d->saneWidget, &KSaneWidget::scannedImageReady,
+            this, &ScanDialog::slotSaveImage);
+
+#elif KSANE_VERSION < QT_VERSION_CHECK(21,8,0)
 
     connect(d->saneWidget, &KSaneWidget::imageReady,
             this, &ScanDialog::slotSaveImage);
@@ -130,7 +134,11 @@ void ScanDialog::slotDialogFinished()
     d->saneWidget->closeDevice();
 }
 
-#if KSANE_VERSION < QT_VERSION_CHECK(21,8,0)
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+void ScanDialog::slotSaveImage(const QImage& image_data)
+
+#elif KSANE_VERSION < QT_VERSION_CHECK(21,8,0)
 
 // cppcheck-suppress constParameter
 void ScanDialog::slotSaveImage(QByteArray& ksane_data, int width, int height, int bytes_per_line, int ksaneformat)
@@ -270,7 +278,12 @@ void ScanDialog::slotSaveImage(const QImage& image_data)
     connect(thread, &SaveImgThread::signalComplete,
             this, &ScanDialog::slotThreadDone);
 
-#if KSANE_VERSION < QT_VERSION_CHECK(21,8,0)
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+    thread->setImageData(image_data);
+    thread->setScannerModel(d->saneWidget->deviceVendor(), d->saneWidget->deviceModel());
+
+#elif KSANE_VERSION < QT_VERSION_CHECK(21,8,0)
 
     thread->setImageData(ksane_data, width, height, bytes_per_line, ksaneformat);
     thread->setScannerModel(d->saneWidget->make(), d->saneWidget->model());

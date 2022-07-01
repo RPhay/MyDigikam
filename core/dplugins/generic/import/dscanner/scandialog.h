@@ -31,19 +31,17 @@
 
 // KDE include
 
-#include <ksane_version.h>
+#include <ksanewidget.h>
+
+#if (QT_VERSION < QT_VERSION_CHECK(5, 99, 0))
+#   include <ksane_version.h>
+#endif
 
 // Local includes
 
 #include "dplugindialog.h"
 
 using namespace Digikam;
-
-namespace KSaneIface
-{
-    class KSaneWidget;
-}
-
 using namespace KSaneIface;
 
 namespace DigikamGenericDScannerPlugin
@@ -70,7 +68,11 @@ Q_SIGNALS:
 
 private Q_SLOTS:
 
-#if KSANE_VERSION < QT_VERSION_CHECK(21,8,0)
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+    void slotSaveImage(const QImage&);
+
+#elif KSANE_VERSION < QT_VERSION_CHECK(21,8,0)
 
     void slotSaveImage(QByteArray&, int, int, int, int);
 

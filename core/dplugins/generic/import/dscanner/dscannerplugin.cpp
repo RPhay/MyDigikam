@@ -32,7 +32,6 @@
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <ksanewidget.h>
 
 // Local includes
 

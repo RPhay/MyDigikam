@@ -27,12 +27,11 @@
 
 #include "dplugingeneric.h"
 
-#define DPLUGIN_IID "org.kde.digikam.plugin.generic.DigitalScanner"
+// KDE includes
 
-namespace KSaneIface
-{
-    class KSaneWidget;
-}
+#include <ksanewidget.h>
+
+#define DPLUGIN_IID "org.kde.digikam.plugin.generic.DigitalScanner"
 
 using namespace Digikam;
 
