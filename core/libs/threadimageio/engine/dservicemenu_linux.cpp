@@ -30,6 +30,7 @@
 #include <QMimeType>
 #include <QMimeDatabase>
 #include <QStandardPaths>
+#include <QRegularExpression>
 
 // KDE includes
 
