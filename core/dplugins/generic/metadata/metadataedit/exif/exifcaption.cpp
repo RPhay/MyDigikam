@@ -424,8 +424,8 @@ void EXIFCaption::updateIcon(QLineEdit* const edit, QLabel* const label)
 
     for (int i = 0 ; i < edit->text().length() ; ++i)
     {
-        if ((edit->text()[i] < 32) ||
-            (edit->text()[i] > 127))
+        if ((edit->text()[i] < QChar(32)) ||
+            (edit->text()[i] > QChar(127)))
         {
             valid = false;
             break;
