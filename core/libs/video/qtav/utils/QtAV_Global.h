@@ -41,7 +41,6 @@
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 #   include <QRegularExpression>
-using QRegExp = QRegularExpression;
 #else
 #   include <QRegExp>
 #endif

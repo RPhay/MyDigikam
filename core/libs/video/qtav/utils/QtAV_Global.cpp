@@ -28,13 +28,6 @@
 #include <QLibraryInfo>
 #include <QObject>
 
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#   include <QtCore/QRegularExpression>
-using QRegExp = QRegularExpression;
-#else
-#   include <QtCore/QRegExp>
-#endif
-
 // KDE includes
 
 #include <klocalizedstring.h>
@@ -77,7 +70,17 @@ static int gAVLogLevel = AV_LOG_INFO;
 
 QString aboutFFmpeg_PlainText()
 {
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+
+    return aboutFFmpeg_HTML().remove(QRegularExpression(QString::fromUtf8("<[^>]*>")));
+
+#else
+
     return aboutFFmpeg_HTML().remove(QRegExp(QString::fromUtf8("<[^>]*>")));
+
+#endif
+
 }
 
 namespace Internal
@@ -253,7 +256,17 @@ QString aboutFFmpeg_HTML()
 
 QString aboutQtAV_PlainText()
 {
+
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+
+    return aboutQtAV_HTML().remove(QRegularExpression(QString::fromUtf8("<[^>]*>")));
+
+#else
+
     return aboutQtAV_HTML().remove(QRegExp(QString::fromUtf8("<[^>]*>")));
+
+#endif
+
 }
 
 QString aboutQtAV_HTML()

@@ -75,7 +75,11 @@ bool useDeprecatedFormats()
 QString removeComments(const QString& code)
 {
     QString c(code);
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    c.remove(QRegularExpression(QString::fromUtf8("(/\\*([^*]|(\\*+[^*/]))*\\*+/)|(//[^\r^\n]*)")));
+#else
     c.remove(QRegExp(QString::fromUtf8("(/\\*([^*]|(\\*+[^*/]))*\\*+/)|(//[^\r^\n]*)")));
+#endif
 
     return c;
 }
