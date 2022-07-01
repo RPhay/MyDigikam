@@ -27,6 +27,7 @@
 // Qt includes
 
 #include <QMap>
+#include <QMultiMap>
 #include <QDateTime>
 #include <QDesktopServices>
 #include <QOAuthHttpServerReplyHandler>
@@ -86,6 +87,8 @@ GSTalkerBase::GSTalkerBase(QWidget* const parent, const QStringList& scope, cons
     m_service->setAccessTokenUrl(QUrl(d->tokenUrl));
     m_service->setClientIdentifier(d->identity);
 
+#if QT_VERSION < QT_VERSION_CHECK(6,0,0)
+
     m_service->setModifyParametersFunction([](QAbstractOAuth::Stage stage, QVariantMap* parameters)
         {
             if (stage == QAbstractOAuth::Stage::RequestingAccessToken)
@@ -95,6 +98,20 @@ GSTalkerBase::GSTalkerBase(QWidget* const parent, const QStringList& scope, cons
             }
         }
     );
+
+#else
+
+    m_service->setModifyParametersFunction([](QAbstractOAuth::Stage stage, QMultiMap<QString, QVariant>* parameters)
+        {
+            if (stage == QAbstractOAuth::Stage::RequestingAccessToken)
+            {
+                QByteArray code = parameters->value(QLatin1String("code")).toByteArray();
+                (*parameters).replace(QLatin1String("code"), QUrl::fromPercentEncoding(code));
+            }
+        }
+    );
+
+#endif
 
     QOAuthHttpServerReplyHandler* const replyHandler = new QOAuthHttpServerReplyHandler(8000, this);
     m_service->setReplyHandler(replyHandler);
