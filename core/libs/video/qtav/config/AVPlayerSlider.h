@@ -55,13 +55,18 @@ Q_SIGNALS:
 
 protected:
 
-    virtual void enterEvent(QEvent* e);
-    virtual void leaveEvent(QEvent* e);
-    virtual void mouseMoveEvent(QMouseEvent* e);
-    virtual void mousePressEvent(QMouseEvent* e);
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+    void enterEvent(QEnterEvent*)                     override;
+#else
+    void enterEvent(QEvent*)                          override;
+#endif
 
-    inline int pick(const QPoint& pt)                       const;
-    int pixelPosToRangeValue(int pos)                       const;
+    virtual void leaveEvent(QEvent* e)                override;
+    virtual void mouseMoveEvent(QMouseEvent* e)       override;
+    virtual void mousePressEvent(QMouseEvent* e)      override;
+
+    inline int pick(const QPoint& pt)           const;
+    int pixelPosToRangeValue(int pos)           const;
 };
 
 } // namespace QtAV
