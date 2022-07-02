@@ -19,11 +19,13 @@ Dependencies:
     'applications/marble':              '@stable'
 
 - 'on': ['Linux']
+  'require':
     'frameworks/kcontacts':             '@stable'
     'pim/akonadi-contacts':             '@stable'
     'frameworks/kfilemetadata':         '@stable'
 
 - 'on': ['Linux', 'FreeBSD']
+  'require':
     'graphics/libksane':                '@stable'
 
 Options:
