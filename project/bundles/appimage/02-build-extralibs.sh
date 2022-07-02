@@ -94,6 +94,8 @@ rm -rf $BUILDING_DIR/* || true
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_knotifyconfig       -- -j$CPU_CORES
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_knotifications      -- -j$CPU_CORES
 
+# TODO: not yet ported to Qt6
+
 if [[ $DK_QTVERSION == 5.* ]] ; then
 
     # Geolocation support
