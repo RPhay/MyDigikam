@@ -28,13 +28,14 @@
 
 // Qt includes
 
-#include <QMetaType>
-#include <QList>
-#include <QString>
 #include <QMap>
 #include <QUrl>
+#include <QList>
+#include <QString>
 #include <QVector>
 #include <QObject>
+#include <QMetaType>
+#include <QReadWriteLock>
 
 // Local includes
 
@@ -339,7 +340,9 @@ private:
     QString                  m_title;
 
     QMap<const void*, void*> m_extraMap;
+
     QVector<Album*>          m_childCache;
+    mutable QReadWriteLock   m_cacheLock;
 
     Type                     m_type;
 

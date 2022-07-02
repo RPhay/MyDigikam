@@ -86,4 +86,5 @@ BUGFIXES:
 067 ==> 435384 - Export crash to google photos.
 068 ==> 455893 - Build error with Qt5.
 069 ==> 455876 - Handling of image orientation in modern image formats using ExifTool.
-070 ==> 
+070 ==> 456237 - Crash after changing the collection
+071 ==> 

@@ -33,10 +33,10 @@
 
 #include "digikam_debug.h"
 #include "coredb.h"
+#include "coredburl.h"
+#include "coredbaccess.h"
 #include "albummanager.h"
 #include "collectionmanager.h"
-#include "coredbaccess.h"
-#include "coredburl.h"
 #include "tagscache.h"
 
 namespace Digikam
@@ -78,6 +78,8 @@ Album* Album::parent() const
 
 Album* Album::firstChild() const
 {
+    QReadLocker locker(&m_cacheLock);
+
     if (m_childCache.isEmpty())
     {
         return nullptr;
@@ -88,6 +90,8 @@ Album* Album::firstChild() const
 
 Album* Album::lastChild() const
 {
+    QReadLocker locker(&m_cacheLock);
+
     if (m_childCache.isEmpty())
     {
         return nullptr;
@@ -102,6 +106,8 @@ Album* Album::next() const
     {
         return nullptr;
     }
+
+    QReadLocker locker(&m_cacheLock);
 
     int row = m_parent->m_childCache.indexOf(const_cast<Album*>(this));
 
@@ -120,6 +126,8 @@ Album* Album::prev() const
         return nullptr;
     }
 
+    QReadLocker locker(&m_cacheLock);
+
     int row = m_parent->m_childCache.indexOf(const_cast<Album*>(this));
 
     if (row < 1)
@@ -132,12 +140,16 @@ Album* Album::prev() const
 
 Album* Album::childAtRow(int row) const
 {
+    QReadLocker locker(&m_cacheLock);
+
     return m_childCache.value(row, nullptr);
 }
 
 AlbumList Album::childAlbums(bool recursive)
 {
     AlbumList childList;
+
+    QReadLocker locker(&m_cacheLock);
 
     QVector<Album*>::const_iterator it = m_childCache.constBegin();
 
@@ -179,6 +191,8 @@ void Album::insertChild(Album* const child)
         return;
     }
 
+    QWriteLocker locker(&m_cacheLock);
+
     m_childCache.append(child);
 }
 
@@ -189,15 +203,25 @@ void Album::removeChild(Album* const child)
         return;
     }
 
+    QWriteLocker locker(&m_cacheLock);
+
     m_childCache.removeOne(child);
 }
 
 void Album::clear()
 {
+    m_cacheLock.lockForWrite();
+
     while (!m_childCache.isEmpty())
     {
-        delete m_childCache.takeFirst();
+        Album* const album = m_childCache.takeFirst();
+        m_cacheLock.unlock();
+
+        delete album;
+        m_cacheLock.lockForWrite();
     }
+
+    m_cacheLock.unlock();
 }
 
 int Album::globalID() const
@@ -238,6 +262,8 @@ int Album::id() const
 
 int Album::childCount() const
 {
+    QReadLocker locker(&m_cacheLock);
+
     return m_childCache.count();
 }
 
@@ -247,6 +273,8 @@ int Album::rowFromAlbum() const
     {
         return 0;
     }
+
+    QReadLocker locker(&m_cacheLock);
 
     int row = m_parent->m_childCache.indexOf(const_cast<Album*>(this));
 
