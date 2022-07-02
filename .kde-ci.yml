@@ -17,7 +17,7 @@ Dependencies:
     'frameworks/threadweaver':          '@stable'
     'frameworks/knotifications':        '@stable'
     'frameworks/kcalendarcore':         '@stable'
-    'frameworks//kimageformats':        '@stable'
+    'frameworks/kimageformats':         '@stable'
 
 - 'on': ['Linux', 'FreeBSD', 'Windows', 'macOS']
   'require':
@@ -33,6 +33,10 @@ Dependencies:
 - 'on': ['Linux', 'FreeBSD']
   'require':
     'graphics/libksane':                '@stable'
+
+- 'on': ['Android']
+  'require':
+    'libraries/qtwebengine':            '@stable'
 
 Options:
     run-cppcheck: False
