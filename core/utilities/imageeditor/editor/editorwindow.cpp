@@ -565,7 +565,7 @@ void EditorWindow::setupStandardActions()
 
     QAction* const altBackwardAction = new QAction(i18nc("@action", "Previous Image"), this);
     ac->addAction(QLatin1String("editorwindow_backward_shift_space"), altBackwardAction);
-    ac->setDefaultShortcuts(altBackwardAction, QList<QKeySequence>() << Qt::SHIFT << Qt::Key_Space);
+    ac->setDefaultShortcuts(altBackwardAction, QList<QKeySequence>() << (Qt::SHIFT | Qt::Key_Space));
     connect(altBackwardAction, SIGNAL(triggered()), this, SLOT(slotBackward()));
 
     // -- Tool control actions ---------------------------------------------------------
