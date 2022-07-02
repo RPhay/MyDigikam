@@ -1483,11 +1483,12 @@ bool AVDemuxer::setStreamIndex(StreamType st, int index)
 
         //si->wanted_stream = -1;
 
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-            << QString::asprintf("invalid index %d (valid is 0~%d) for stream type %d.",
-                index,
-                streams->size(),
-                st);
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "invalid index"
+                                         << index
+                                         << "( valid is 0 ~"
+                                         << streams->size()
+                                         << ") for stream type"
+                                         << st;
 
         return false;
     }
