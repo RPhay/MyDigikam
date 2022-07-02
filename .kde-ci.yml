@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2020-2022 Gilles Cauliere <caulier dot gilles at gmail dot com>
+# SPDX-License-Identifier: CC0-1.0
+
 Dependencies:
 - 'on': ['Linux', 'FreeBSD', 'Windows', 'macOS']
   'require':
