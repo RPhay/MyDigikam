@@ -901,9 +901,11 @@ bool VideoDecoderVAAPIPrivate::ensureSurfaces(int count, int w, int h, bool disc
         return false;
     }
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote()
-        << QString::asprintf("ensureSurfaces %d->%d %dx%d. discard old surfaces: %d",
-            surfaces.size(), count, w, h, discard_old);
+    qCDebug(DIGIKAM_QTAV_LOG) << "ensureSurfaces"
+                              << surfaces.size() << "->" << count
+                              << w << "x" << h
+                              << "discard old surfaces:"
+                              << discard_old;
 
     Q_ASSERT((w > 0) && (h > 0));
 
@@ -1133,9 +1135,10 @@ bool VideoDecoderVAAPIPrivate::getBuffer(void** opaque, uint8_t** data)
 
             if ((surfaces.size() + 1) > kMaxSurfaces)
             {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-                    << QString::asprintf("VAAPI- Too many surfaces. requested: %d, maximun: %d",
-                        surfaces.size() + 1, kMaxSurfaces);
+                qCWarning(DIGIKAM_QTAV_LOG_WARN) << "VAAPI- Too many surfaces. requested:"
+                                                 << surfaces.size() + 1
+                                                 << "maximun:"
+                                                 << kMaxSurfaces;
             }
 
             // Set itarator position to the newly allocated surface (end-1)

@@ -211,9 +211,9 @@ bool SubImagesGeometry::generateVertexData(const QRect& rect, bool useIndecies, 
     else
         allocate(6 * m_images.images.size());
 
-    qCDebug(DIGIKAM_QTAV_LOG).noquote()
-        << QString::asprintf("images: %d/%d, %dx%d",
-            m_images.isValid(), m_images.images.size(), m_images.width(), m_images.height());
+    qCDebug(DIGIKAM_QTAV_LOG) << "images:"
+                              << m_images.isValid() << "/" << m_images.images.size() << ","
+                              << m_images.width()   << "/" << m_images.height();
 
     m_rects_upload.clear();
     m_w          = 0;

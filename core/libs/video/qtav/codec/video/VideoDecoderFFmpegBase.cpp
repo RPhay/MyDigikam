@@ -259,9 +259,10 @@ bool VideoDecoderFFmpegBase::decode(const Packet& packet)
 
     if (!got_frame_ptr)
     {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-            << QString::asprintf("no frame could be decompressed: %s %d/%d",
-                av_err2str(ret), d.undecoded_size, packet.data.size());
+        qCWarning(DIGIKAM_QTAV_LOG_WARN) << "no frame could be decompressed:"
+                                         << av_err2str(ret)
+                                         << d.undecoded_size
+                                         << "/" << packet.data.size();
 
         return !packet.isEOF();
     }
