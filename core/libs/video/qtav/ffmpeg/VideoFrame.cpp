@@ -282,9 +282,7 @@ VideoFrame VideoFrame::clone() const
 
         // maybe in gpu memory, then bits() is not set
 
-        qCDebug(DIGIKAM_QTAV_LOG).noquote()
-            << QString::asprintf("frame data not valid. size: %d",
-                d->data.size());
+        qCDebug(DIGIKAM_QTAV_LOG) << "frame data not valid. size:" << d->data.size();
 
         VideoFrame f(width(), height(), d->format);
         f.d_ptr->metadata = d->metadata; // need metadata?

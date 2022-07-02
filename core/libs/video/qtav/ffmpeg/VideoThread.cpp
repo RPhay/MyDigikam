@@ -714,9 +714,9 @@ void VideoThread::run()
         {
             if (!pkt.hasKeyFrame)
             {
-                qCDebug(DIGIKAM_QTAV_LOG).noquote()
-                    << QString::asprintf("waiting for key frame. queue size: %d. pkt.size: %d",
-                        d.packets.size(), pkt.data.size());
+                qCDebug(DIGIKAM_QTAV_LOG) << "waiting for key frame. queue size:"
+                                          << d.packets.size() << "pkt.size:"
+                                          << pkt.data.size();
 
                 pkt = Packet();
                 v_a = 0;
@@ -857,9 +857,8 @@ void VideoThread::run()
 
         if (!frame.isValid())
         {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-                << QString::asprintf("invalid video frame from decoder. undecoded data size: %d",
-                    pkt.data.size());
+            qCWarning(DIGIKAM_QTAV_LOG_WARN) << "invalid video frame from decoder. undecoded data size:"
+                                             << pkt.data.size();
 
             if (pkt_data == pkt.data.constData()) // FIXME: for libav9. what about other versions?
                 pkt = Packet();

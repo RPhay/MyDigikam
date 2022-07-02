@@ -1355,9 +1355,8 @@ bool AVPlayerCore::setAudioStream(const QString& file, int n)
         {
             if (n >= d->demuxer.audioStreams().size())
             {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-                    << QString::asprintf("Invalid audio stream number %d/%d",
-                        n, d->demuxer.audioStreams().size()-1);
+                qCWarning(DIGIKAM_QTAV_LOG_WARN) << "Invalid audio stream number"
+                                                 << n << "/" << d->demuxer.audioStreams().size() - 1;
 
                 return false;
             }
@@ -1376,9 +1375,8 @@ bool AVPlayerCore::setAudioStream(const QString& file, int n)
         {
             if (n >= d->audio_demuxer.audioStreams().size())
             {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-                    << QString::asprintf("Invalid external audio stream number %d/%d",
-                        n, d->audio_demuxer.audioStreams().size()-1);
+                qCWarning(DIGIKAM_QTAV_LOG_WARN) << "Invalid external audio stream number"
+                                                 << n << "/" << d->audio_demuxer.audioStreams().size() - 1;
 
                 return false;
             }
