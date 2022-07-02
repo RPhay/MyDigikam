@@ -15,13 +15,13 @@ Dependencies:
     'frameworks/kio':                   '@stable'
     'frameworks/kiconthemes':           '@stable'
     'frameworks/threadweaver':          '@stable'
-    'frameworks/knotifyconfig':         '@stable'
     'frameworks/knotifications':        '@stable'
     'frameworks/kcalendarcore':         '@stable'
     'frameworks//kimageformats':        '@stable'
 
 - 'on': ['Linux', 'FreeBSD', 'Windows', 'macOS']
   'require':
+    'frameworks/knotifyconfig':         '@stable'
     'applications/marble':              '@stable'
 
 - 'on': ['Linux']
