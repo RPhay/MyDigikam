@@ -113,7 +113,9 @@ int main(int argc, char *argv[])
 
     if (!demux.load())
     {
-        qCCritical(DIGIKAM_TESTS_LOG) << QString::asprintf("Failed to load file: %s", file.toUtf8().constData());
+        qCCritical(DIGIKAM_TESTS_LOG)
+            << QString::asprintf("Failed to load file: %s",
+                file.toUtf8().constData());
 
         return 1;
     }
@@ -142,7 +144,8 @@ int main(int argc, char *argv[])
     QVariantHash muxopt, avfopt;
     avfopt[QString::fromLatin1("segment_time")]      = 4;
     avfopt[QString::fromLatin1("segment_list_size")] = 0;
-    avfopt[QString::fromLatin1("segment_list")]      = outFile.left(outFile.lastIndexOf(QLatin1Char('/'))+1).append(QString::fromLatin1("index.m3u8"));
+    avfopt[QString::fromLatin1("segment_list")]      = outFile.left(outFile.lastIndexOf(QLatin1Char('/')) + 1)
+                                                       .append(QString::fromLatin1("index.m3u8"));
     avfopt[QString::fromLatin1("segment_format")]    = QString::fromLatin1("mpegts");
     muxopt[QString::fromLatin1("avformat")]          = avfopt;
     qreal fps                                        = 0;
@@ -159,7 +162,9 @@ int main(int argc, char *argv[])
 
         if (dec->decode(pkt))
         {
-            VideoFrame frame = dec->frame(); // why is faster to call frame() for hwdec? no frame() is very slow for VDA
+            // why is faster to call frame() for hwdec? no frame() is very slow for VDA
+
+            VideoFrame frame = dec->frame();
 
             if (!frame)
                 continue;
@@ -212,9 +217,13 @@ int main(int argc, char *argv[])
                     fps = qreal(count * 1000) / qreal(timer.elapsed());
                 }
 
-                qCDebug(DIGIKAM_TESTS_LOG).noquote()
-                    << QString::asprintf("decode count: %d, fps: %.2f frame size: %dx%d %d\r",
-                        count, fps, frame.width(), frame.height(), frame.data().size());
+                qCDebug(DIGIKAM_TESTS_LOG) << "decode count:"
+                                           << count
+                                           << "fps:"
+                                           << fps
+                                           << "frame size:"
+                                           << frame.width() << "x" << frame.height()
+                                           << "==>" << frame.data().size();
             }
         }
     }
