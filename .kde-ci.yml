@@ -23,8 +23,6 @@ Dependencies:
 - 'on': ['Linux', 'FreeBSD', 'Windows', 'macOS']
   'require':
     'frameworks/knotifyconfig':         '@stable'
-#    Marble do not compile yet with Qt6
-#    'applications/marble':              '@stable'
 
 - 'on': ['FreeBSD']
   'require':
@@ -36,6 +34,4 @@ Dependencies:
 Options:
     run-cppcheck: False
     use-ccache:   True
-
-Options:
     require-passing-tests-on: [ 'Linux' ]
