@@ -22,7 +22,8 @@ Dependencies:
 - 'on': ['Linux', 'FreeBSD', 'Windows', 'macOS']
   'require':
     'frameworks/knotifyconfig':         '@stable'
-    'applications/marble':              '@stable'
+#    Marble do not compile yet with Qt6
+#    'applications/marble':              '@stable'
 
 - 'on': ['Linux']
   'require':
