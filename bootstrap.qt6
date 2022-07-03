@@ -46,4 +46,4 @@ if [ $? -ne 0 ]; then
     exit;
 fi
 
-ninja -j4
+make -j4

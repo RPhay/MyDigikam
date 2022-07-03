@@ -367,10 +367,15 @@ void MainWindow::mousePressEvent(QMouseEvent* e)
         return;
 
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
     d->GlobalMouse = e->globalPosition();
+
 #else
+
     d->GlobalMouse = e->globalPos();
+
 #endif
+
 }
 
 void MainWindow::mouseMoveEvent(QMouseEvent* e)

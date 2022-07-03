@@ -16,12 +16,12 @@ set(BUNDLE_LONG_VERSION_STRING      ${DIGIKAM_VERSION_STRING})
 set(BUNDLE_SHORT_VERSION_STRING     ${DIGIKAM_VERSION_SHORT})
 set(BUNDLE_VERSION_STRING           ${DIGIKAM_VERSION_STRING})
 
-set(avplayer_SRCS ${CMAKE_SOURCE_DIR}/core/avplayer/utils/EventFilter.cpp
-                  ${CMAKE_SOURCE_DIR}/core/avplayer/utils/ConfigDialog.cpp
+set(avplayer_SRCS ${CMAKE_SOURCE_DIR}/core/avplayer/utils/ConfigDialog.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/utils/StatisticsView.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/utils/ScreenSaver.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/utils/qoptions.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/utils/common.cpp
+                  ${CMAKE_SOURCE_DIR}/core/avplayer/filters/EventFilter.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/filters/OSDFilter.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/filters/OSD.cpp
                   ${CMAKE_SOURCE_DIR}/core/avplayer/filters/AVFilterSubtitle.cpp
