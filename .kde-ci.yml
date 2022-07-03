@@ -18,6 +18,7 @@ Dependencies:
     'frameworks/knotifications':        '@stable'
     'frameworks/kcalendarcore':         '@stable'
     'frameworks/kimageformats':         '@stable'
+    'libraries/opencv':                 '@stable'
 
 - 'on': ['Linux', 'FreeBSD', 'Windows', 'macOS']
   'require':
