@@ -51,7 +51,7 @@ DK_VERSION=master
 #DK_SUBVER="-01"
 
 # Installer will include or not digiKam debug symbols
-DK_DEBUG=0
+DK_DEBUG=1
 
 # Qt version to use in bundle. Possible values: 5.15, 5.15-LTS, 6.2
 #DK_QTVERSION="5.15-LTS"
