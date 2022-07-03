@@ -31,7 +31,7 @@ Dependencies:
     'pim/akonadi-contacts':             '@stable'
     'frameworks/kfilemetadata':         '@stable'
 
-- 'on': ['Linux', 'FreeBSD']
+- 'on': ['FreeBSD']
   'require':
     'graphics/libksane':                '@stable'
 
