@@ -366,7 +366,7 @@ void MainWindow::mousePressEvent(QMouseEvent* e)
     if (!d->ControlOn)
         return;
 
-    d->GlobalMouse = e->globalPos();
+    d->GlobalMouse = e->globalPosition();
 }
 
 void MainWindow::mouseMoveEvent(QMouseEvent* e)
