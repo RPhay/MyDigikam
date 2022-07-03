@@ -1,6 +1,6 @@
 /** \mainpage digiKam API reference page.
     \author (c) 2001-2022 digiKam team.
-    \brief digiKam is an advanced open-source digital photo management application that runs on Linux, Windows, and MacOS.
+    \brief digiKam is an advanced open-source digital photo management application that runs on Linux, Windows, and macOS.
     \image html logo-digikam.png
 
 \section sourcedirs Source Code Directories
@@ -15,7 +15,7 @@
 |├── AUTHORS                                                  | List of developers and contributors to the project                      |
 |├── bootstrap.linux                                          | Configuration script to compile under Linux                             |
 |├── bootstrap.local                                          | Configuration script to compile a local version under Linux             |
-|├── bootstrap.macports                                       | Configuration script to compile under MacOS with Macports               |
+|├── bootstrap.macports                                       | Configuration script to compile under macOS with Macports               |
 |├── bootstrap.mxe                                            | Configuration script to cross-compile for Windows under Linux with MXE  |
 |├── build                                                    | Temporary directory created by bootstrap script to host compiled files  |
 |├── ChangeLog                                                | Complete list of source code changes since the project origin           |
@@ -31,7 +31,7 @@
 |├── NEWS                                                     | Notice to resume all project changes done at release time               |
 |├── README.DEVEL                                             | Read me file for developers                                             |
 |├── README.md                                                | First start helper documentation                                        |
-|├── README.BUNDLES                                           | Read me for Linux, MacOs, and Windows bundles support                   |
+|├── README.BUNDLES                                           | Read me for Linux, macOS, and Windows bundles support                   |
 |├── build                                                    | Directory to store compiled files and binary targets                    |
 |├── core                                                     | All source code are hosted in this directory                            |
 |│   ├── app                                                  | Lead application component                                              |
@@ -252,7 +252,7 @@
 |    │   ├── CD                                               | Continuous deployment configurations                                    |
 |    │   ├── appimage                                         | Linux AppImage                                                          |
 |    │   ├── flatpak                                          | Linux Flatpak                                                           |
-|    │   ├── macports                                         | MacOs package                                                           |
+|    │   ├── macports                                         | macOS package                                                           |
 |    │   └── mxe                                              | Windows installer                                                       |
 |    ├── documents                                            | Project documentations                                                  |
 |    ├── release                                              | Release scripts                                                         |
@@ -551,7 +551,7 @@ All logging categories are listed in \ref digikam_debug.cpp source code.
 
 \subsection cmakeintro Introduction
 
-The whole project is written mostly in C++/Qt and the Cmake framework is used to compile under Linux, MacOs, and Windows.
+The whole project is written mostly in C++/Qt and the Cmake framework is used to compile under Linux, macOS, and Windows.
 The Cmake rules have been configured to reduce the linking overhead and improve CPU utilization with modular design.
 
 Independent Cmake configuration is presents in following folders:
