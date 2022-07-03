@@ -133,7 +133,15 @@ QFileInfoList DPluginLoader::Private::pluginEntriesList() const
                 !dupFiles.contains(it.fileInfo().baseName()))
             {
                 dupFiles << it.fileInfo().baseName();
-                allFiles << it.fileInfo();
+
+                if (it.fileInfo().baseName().startsWith(QLatin1String("DImg_")))
+                {
+                    allFiles.prepend(it.fileInfo());
+                }
+                else
+                {
+                    allFiles.append(it.fileInfo());
+                }
             }
         }
     }
