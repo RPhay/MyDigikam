@@ -4,13 +4,11 @@
 # See targets available at https://invent.kde.org/sysadmin/ci-utilities/-/tree/master/gitlab-templates
 
 include:
+- https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/linux.yml
+- https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/freebsd.yml
+- https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/windows.yml
+
 # FIXME: opencv is missing on Linux Qt6
 #  - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/linux-qt6.yml
-# FreeBSD is already supported by KDE build factory
-#  - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/freebsd.yml
-# Windows is already supported by KDE build factory
-#  - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/windows.yml
 # QtWebEngine is not avaialble under Androis -> port digiKam to QtWebView (https://doc.qt.io/qt-5/qtwebview-index.html)
 #  - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/android.yml
-# Enable Linux Qt6 in favor of Linux Qt5 (this last one is already supported in KDE build factory)
-  - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/linux.yml
