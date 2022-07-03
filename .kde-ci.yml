@@ -25,15 +25,12 @@ Dependencies:
 #    Marble do not compile yet with Qt6
 #    'applications/marble':              '@stable'
 
-- 'on': ['Linux']
-  'require':
-    'frameworks/kcontacts':             '@stable'
-    'pim/akonadi-contacts':             '@stable'
-    'frameworks/kfilemetadata':         '@stable'
-
 - 'on': ['FreeBSD']
   'require':
     'graphics/libksane':                '@stable'
+    'frameworks/kcontacts':             '@stable'
+    'pim/akonadi-contacts':             '@stable'
+    'frameworks/kfilemetadata':         '@stable'
 
 Options:
     run-cppcheck: False
