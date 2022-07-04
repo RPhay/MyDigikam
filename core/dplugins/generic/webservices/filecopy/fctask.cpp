@@ -103,6 +103,13 @@ void FCTask::run()
                  QLatin1Char('/') +
                  d->srcUrl.fileName());
 
+    if (d->srcUrl == dest)
+    {
+        Q_EMIT signalDone();
+
+        return;
+    }
+
     if      (ok && (d->settings.behavior == FCContainer::CopyFile))
     {
         QFileInfo srcInfo(d->srcUrl.toLocalFile());
