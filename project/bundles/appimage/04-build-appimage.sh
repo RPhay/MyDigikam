@@ -114,7 +114,7 @@ cp -r /usr/share/kxmlgui5                                 ./usr/share
 cp -r /usr/share/kf5                                      ./usr/share
 cp -r /usr/share/solid                                    ./usr/share
 cp -r /usr/share/mime                                     ./usr/share
-cp -r /usr/share/X11/xkb                                  ./usr/share/X11
+cp -r /usr/share/X11                                      ./usr/share
 ln -s ./usr/share                                         ./
 
 # NOTE : we use a customized libicu with data files hosted in libraries as resources.
@@ -162,8 +162,9 @@ if [[ -e /usr/translations ]]; then
 
     echo -e "------------- Copy Qt translations files\n"
 
-    cp -r /usr/translations ./usr/share/digikam
-    ln -s ../digikam/translations ./usr/share/showfoto/translations
+    cp -r /usr/translations ./usr
+    ln -s ../../translations ./usr/share/digikam/translations
+    ln -s ../../translations ./usr/share/showfoto/translations
 
     # optimizations
 
