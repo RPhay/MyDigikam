@@ -412,14 +412,27 @@ QueueSettingsView::QueueSettingsView(QWidget* const parent)
     connect(d->albumSel, SIGNAL(itemSelectionChanged()),
             this, SLOT(slotSettingsChanged()));
 
-    connect(d->renamingButtonGroup, SIGNAL(buttonClicked(int)),
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+    connect(d->renamingButtonGroup, SIGNAL(idClicked(int)),
             this, SLOT(slotSettingsChanged()));
 
-    connect(d->conflictBox, SIGNAL(signalConflictButtonChanged(int)),
+    connect(d->rawLoadingButtonGroup, SIGNAL(idClicked(int)),
+            this, SLOT(slotSettingsChanged()));
+
+#else
+
+    connect(d->renamingButtonGroup, SIGNAL(buttonClicked(int)),
             this, SLOT(slotSettingsChanged()));
 
     connect(d->rawLoadingButtonGroup, SIGNAL(buttonClicked(int)),
             this, SLOT(slotSettingsChanged()));
+
+#endif
+
+    connect(d->conflictBox, SIGNAL(signalConflictButtonChanged(int)),
+            this, SLOT(slotSettingsChanged()));
+
 
     connect(d->advancedRenameWidget, SIGNAL(signalTextChanged(QString)),
             this, SLOT(slotSettingsChanged()));

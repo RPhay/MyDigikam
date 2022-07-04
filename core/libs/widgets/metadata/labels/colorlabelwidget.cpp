@@ -215,8 +215,18 @@ ColorLabelWidget::ColorLabelWidget(QWidget* const parent)
 
     // -------------------------------------------------------------
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+    connect(d->colorBtns, SIGNAL(idReleased(int)),
+            this, SIGNAL(signalColorLabelChanged(int)));
+
+#else
+
     connect(d->colorBtns, SIGNAL(buttonReleased(int)),
             this, SIGNAL(signalColorLabelChanged(int)));
+
+#endif
+
 }
 
 ColorLabelWidget::~ColorLabelWidget()

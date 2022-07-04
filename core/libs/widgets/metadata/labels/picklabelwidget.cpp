@@ -160,8 +160,18 @@ PickLabelWidget::PickLabelWidget(QWidget* const parent)
 
     // -------------------------------------------------------------
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+    connect(d->pickBtns, SIGNAL(idReleased(int)),
+            this, SIGNAL(signalPickLabelChanged(int)));
+
+#else
+
     connect(d->pickBtns, SIGNAL(buttonReleased(int)),
             this, SIGNAL(signalPickLabelChanged(int)));
+
+#endif
+
 }
 
 PickLabelWidget::~PickLabelWidget()

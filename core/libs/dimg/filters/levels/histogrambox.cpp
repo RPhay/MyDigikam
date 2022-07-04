@@ -153,8 +153,17 @@ HistogramBox::HistogramBox(QWidget* const parent, HistogramBoxType type, bool se
     connect(d->channelCB, SIGNAL(activated(int)),
             this, SLOT(slotChannelChanged()));
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+    connect(d->scaleBG, SIGNAL(idReleased(int)),
+            this, SLOT(slotScaleChanged()));
+
+#else
+
     connect(d->scaleBG, SIGNAL(buttonReleased(int)),
             this, SLOT(slotScaleChanged()));
+
+#endif
 
     connect(this, SIGNAL(signalChannelChanged(ChannelType)),
             d->histogramWidget, SLOT(setChannelType(ChannelType)));
