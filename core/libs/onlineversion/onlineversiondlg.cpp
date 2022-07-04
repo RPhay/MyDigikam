@@ -84,9 +84,7 @@ public:
         remain         (nullptr),
         logo           (nullptr),
         buttons        (nullptr),
-        releaseNotes   (nullptr),
         speedTimer     (nullptr),
-        notesBox       (nullptr),
         checker        (nullptr),
         dwnloader      (nullptr)
     {
@@ -108,11 +106,9 @@ public:
     QLabel*                remain;
     QLabel*                logo;
     QDialogButtonBox*      buttons;
-    QTextBrowser*          releaseNotes;
     QTimer*                speedTimer;
     QDateTime              dwnlStart;
 
-    QGroupBox*             notesBox;
     OnlineVersionChecker*  checker;
     OnlineVersionDwnl*     dwnloader;
 };
@@ -141,9 +137,6 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
 
     connect(d->checker, SIGNAL(signalNewVersionCheckError(QString)),
             this, SLOT(slotNewVersionCheckError(QString)));
-
-    connect(d->checker, SIGNAL(signalReleaseNotesData(QString)),
-            this, SLOT(slotReleaseNotesData(QString)));
 
     connect(d->dwnloader, SIGNAL(signalDownloadError(QString)),
             this, SLOT(slotDownloadError(QString)));
@@ -196,23 +189,6 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
     grid2->setSpacing(0);
     grid2->setColumnMinimumWidth(2, fontRect.width());
 
-    d->notesBox              = new QGroupBox(i18n("Release Notes"), page);
-    QVBoxLayout* const vlay  = new QVBoxLayout(d->notesBox);
-    d->releaseNotes          = new QTextBrowser(d->notesBox);
-    d->releaseNotes->setLineWrapMode(QTextEdit::NoWrap);
-    QFont fnt(QLatin1String("Monospace"));
-    fnt.setStyleHint(QFont::Monospace);
-    d->releaseNotes->setFont(fnt);
-    d->releaseNotes->document()->setDefaultFont(fnt);
-    QMargins m = d->releaseNotes->contentsMargins();
-    int lines  = 10;
-    d->releaseNotes->setMinimumHeight(m.top()                       +
-                                      m.bottom()                    +
-                                      d->releaseNotes->frameWidth() +
-                                      d->releaseNotes->fontMetrics().lineSpacing()*lines);
-    vlay->addWidget(d->releaseNotes);
-    d->notesBox->setVisible(false);
-
     if (d->preRelease)
     {
         setWindowTitle(i18n("Online Version Checker - Pre-Release"));
@@ -250,13 +226,12 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
     grid->addWidget(d->logo,     0, 0, 1, 1);
     grid->addWidget(d->label,    0, 1, 1, 2);
     grid->addWidget(d->stats,    0, 3, 1, 1);
-    grid->addWidget(d->notesBox, 1, 0, 1, 4);
-    grid->addWidget(d->bar,      2, 0, 1, 4);
+    grid->addWidget(d->bar,      1, 0, 1, 4);
     grid->setSpacing(qMin(style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                           style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     grid->setContentsMargins(QMargins());
     grid->setColumnStretch(2, 10);
-    grid->setRowStretch(1, 10);
+    grid->setRowStretch(2, 10);
 
     QVBoxLayout* const vbx = new QVBoxLayout(this);
     vbx->addWidget(page);
@@ -344,8 +319,6 @@ void OnlineVersionDlg::slotNewVersionAvailable(const QString& version)
                                version,
                                d->dwnloader->downloadUrl()));
     }
-
-    d->checker->downloadReleaseNotes(d->preRelease ? QString() : version);
 }
 
 void OnlineVersionDlg::slotNewVersionCheckError(const QString& error)
@@ -380,12 +353,6 @@ void OnlineVersionDlg::slotNewVersionCheckError(const QString& error)
                                qApp->applicationName(),
                                error));
     }
-}
-
-void OnlineVersionDlg::slotReleaseNotesData(const QString& notes)
-{
-    d->releaseNotes->setText(notes);
-    d->notesBox->setVisible(true);
 }
 
 void OnlineVersionDlg::slotDownloadInstaller()
