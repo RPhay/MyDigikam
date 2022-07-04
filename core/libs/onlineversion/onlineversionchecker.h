@@ -53,8 +53,6 @@ public:
     void checkForNewVersion();
     void cancelCheck();
 
-    void downloadReleaseNotes(const QString& version);
-
     QString preReleaseFileName() const;
 
     /**
@@ -73,7 +71,6 @@ Q_SIGNALS:
 
     void signalNewVersionAvailable(const QString& version);
     void signalNewVersionCheckError(const QString& error);
-    void signalReleaseNotesData(const QString& notes);
 
 private Q_SLOTS:
 
