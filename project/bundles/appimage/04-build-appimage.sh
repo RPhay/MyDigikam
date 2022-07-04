@@ -66,6 +66,7 @@ rm -rf $APP_IMG_DIR/ || true
 mkdir -p $APP_IMG_DIR/usr/bin
 mkdir -p $APP_IMG_DIR/usr/etc
 mkdir -p $APP_IMG_DIR/usr/share
+mkdir -p $APP_IMG_DIR/usr/qml
 mkdir -p $APP_IMG_DIR/usr/share/icons
 mkdir -p $APP_IMG_DIR/usr/share/X11
 mkdir -p $APP_IMG_DIR/usr/share/metainfo
@@ -116,6 +117,9 @@ cp -r /usr/share/solid                                    ./usr/share
 cp -r /usr/share/mime                                     ./usr/share
 cp -r /usr/share/X11                                      ./usr/share
 ln -s ./usr/share                                         ./
+ln -s ../share                                            ./usr/bin
+
+cp -r /usr/qml                                            ./usr
 
 # NOTE : we use a customized libicu with data files hosted in libraries as resources.
 #cp -r /usr/share/icu                                      ./usr/share
