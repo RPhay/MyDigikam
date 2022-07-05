@@ -50,6 +50,6 @@ ExternalProject_Add(ext_qt
 ExternalProject_Add_step(ext_qt before_download
 
     # Script to checkout Qt6 code from KDE repository https://invent.kde.org/qt/qt/qt5 using qt6 tag.
-    COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/kde-qt6.sh ${EXTERNALS_DOWNLOAD_DIR}
+    COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/kde-qt6.sh ${EXTERNALS_DOWNLOAD_DIR} ${ENABLE_QTVERSION}
     DEPENDERS download
 )

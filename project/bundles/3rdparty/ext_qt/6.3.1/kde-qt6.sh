@@ -3,6 +3,7 @@
 # Script to build a Qt 6 from KDE repository.
 #
 # Arguments : $1 : download directory.
+#             $2 : Qt6 version
 #
 # Copyright (c) 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
@@ -19,7 +20,7 @@ else
     DOWNLOAD_DIR=$1
 fi
 
-QT6_VERSION="v6.3.1"
+QT6_VERSION="v$2"
 
 echo "Download directory: $DOWNLOAD_DIR"
 echo "Qt6 version: $QT6_VERSION"
