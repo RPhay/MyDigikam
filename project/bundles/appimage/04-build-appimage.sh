@@ -480,11 +480,11 @@ sed -i -e 's|././/share/X11/|/usr/share/X11/|g' ./usr/lib/libQt6XcbQpa.so.6
 
 cd $DOWNLOAD_DIR
 
-if [ ! -f $DOWNLOAD_DIR/exiftool-$DK_EXIFTOOL_VERSION.zip ] ; then
+if [ ! -f $DOWNLOAD_DIR/Image-ExifTool-$DK_EXIFTOOL_VERSION.tar.gz ] ; then
     wget https://files.kde.org/digikam/exiftool/Image-ExifTool-$DK_EXIFTOOL_VERSION.tar.gz -O Image-ExifTool-$DK_EXIFTOOL_VERSION.tar.gz
 fi
 
-tar -xvf -o $DOWNLOAD_DIR/Image-ExifTool-$DK_EXIFTOOL_VERSION.tar.gz -C $APP_IMG_DIR/usr/bin
+tar -xvf $DOWNLOAD_DIR/Image-ExifTool-$DK_EXIFTOOL_VERSION.tar.gz -C $APP_IMG_DIR/usr/bin
 
 #################################################################################################
 
