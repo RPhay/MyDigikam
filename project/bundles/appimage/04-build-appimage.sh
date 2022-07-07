@@ -476,6 +476,17 @@ sed -i -e 's|././/share/X11/|/usr/share/X11/|g' ./usr/plugins/platforminputconte
 sed -i -e 's|././/share/X11/|/usr/share/X11/|g' ./usr/lib/libQt6XcbQpa.so.6
 
 #################################################################################################
+# Install ExifTool binary.
+
+cd $DOWNLOAD_DIR
+
+if [ ! -f $DOWNLOAD_DIR/exiftool-$DK_EXIFTOOL_VERSION.zip ] ; then
+    wget https://files.kde.org/digikam/exiftool/Image-ExifTool-$DK_EXIFTOOL_VERSION.tar.gz -O Image-ExifTool-$DK_EXIFTOOL_VERSION.tar.gz
+fi
+
+tar -xvf -o $DOWNLOAD_DIR/Image-ExifTool-$DK_EXIFTOOL_VERSION.tar.gz -C $APP_IMG_DIR/usr/bin
+
+#################################################################################################
 
 cd /
 

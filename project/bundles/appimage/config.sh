@@ -40,6 +40,9 @@ DK_KA_VERSION="22.04.2"
 # See official release here: https://download.kde.org/stable/frameworks/
 DK_KF5_VERSION="5.95"
 
+# ExifTool Linux version to embed in the bundle.
+DK_EXIFTOOL_VERSION="12.43"
+
 # digiKam tag version from git. Official tarball do not include extra shared libraries.
 # The list of tags can be listed with this url: https://invent.kde.org/graphics/digikam/-/tags
 # If you want to package current implementation from git, use "master" as tag.
