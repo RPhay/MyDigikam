@@ -122,17 +122,17 @@ TagViewSideBarWidget::TagViewSideBarWidget(QWidget* const parent, TagModel* cons
     d->tagFolderView = new TagFolderView(this, model);
     d->tagFolderView->setConfigGroup(getConfigGroup());
     d->tagFolderView->setAlbumManagerCurrentAlbum(true);
-
-    //d->tagFolderView->filteredModel()->doNotListTagsWithProperty(TagPropertyName::person());
-    //d->tagFolderView->filteredModel()->setFilterBehavior(AlbumFilterModel::StrictFiltering);
-
+/*
+    d->tagFolderView->filteredModel()->doNotListTagsWithProperty(TagPropertyName::person());
+    d->tagFolderView->filteredModel()->setFilterBehavior(AlbumFilterModel::StrictFiltering);
+*/
     d->tagSearchBar  = new SearchTextBarDb(this, QLatin1String("ItemIconViewTagSearchBar"));
     d->tagSearchBar->setHighlightOnResult(true);
     d->tagSearchBar->setModel(model, AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
-
-    //d->tagSearchBar->setModel(d->tagFolderView->filteredModel(),
-    //                          AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
-
+/*
+    d->tagSearchBar->setModel(d->tagFolderView->filteredModel(),
+                              AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
+*/
     d->tagSearchBar->setFilterModel(d->tagFolderView->albumFilterModel());
 
     layout->addWidget(d->openTagMngr);
@@ -148,8 +148,18 @@ TagViewSideBarWidget::TagViewSideBarWidget(QWidget* const parent, TagModel* cons
     connect(d->tagFolderView, SIGNAL(signalFindDuplicates(QList<TAlbum*>)),
             this, SIGNAL(signalFindDuplicates(QList<TAlbum*>)));
 
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+    connect(d->btnGroup, SIGNAL(idClicked(int)),
+            this, SLOT(slotToggleTagsSelection(int)));
+
+#else
+
     connect(d->btnGroup, SIGNAL(buttonClicked(int)),
             this, SLOT(slotToggleTagsSelection(int)));
+
+#endif
+
 }
 
 TagViewSideBarWidget::~TagViewSideBarWidget()
