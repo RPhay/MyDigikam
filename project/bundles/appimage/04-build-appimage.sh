@@ -116,6 +116,7 @@ cp -r /usr/share/kf6                                      ./usr/share
 cp -r /usr/share/solid                                    ./usr/share
 cp -r /usr/share/mime                                     ./usr/share
 cp -r /usr/share/X11                                      ./usr/share
+ln -s ./usr/share/kxmlgui6                                ./usr/share/kxmlgui5
 ln -s ./usr/share                                         ./
 ln -s ../share                                            ./usr/bin
 
