@@ -480,7 +480,19 @@ void DigikamApp::setupActions()
 
     d->albumSortAction = new KSelectAction(i18nc("@action: setup", "&Sort Albums"), this);
     d->albumSortAction->setWhatsThis(i18nc("@info: setup", "Sort Albums in tree-view."));
-    connect(d->albumSortAction, SIGNAL(triggered(int)), d->view, SLOT(slotSortAlbums(int)));
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+    connect(d->albumSortAction, SIGNAL(indexTriggered(int)),
+            d->view, SLOT(slotSortAlbums(int)));
+
+#else
+
+    connect(d->albumSortAction, SIGNAL(triggered(int)),
+            d->view, SLOT(slotSortAlbums(int)));
+
+#endif
+
     ac->addAction(QLatin1String("album_sort"), d->albumSortAction);
 
     // Use same list order as in applicationsettings enum
