@@ -63,7 +63,7 @@ public:
     /**
      * destructor
      */
-    ~SqueezedComboBox()                                   override;
+    ~SqueezedComboBox()                                                    override;
 
     /**
      *
@@ -138,6 +138,14 @@ public:
      * Sets the sizeHint() of this widget.
      */
     QSize sizeHint()                                                 const override;
+
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+Q_SIGNALS:
+
+    void activated(const QString&);
+
+#endif
 
 private Q_SLOTS:
 

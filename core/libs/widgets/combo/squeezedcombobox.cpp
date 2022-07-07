@@ -193,7 +193,7 @@ QString SqueezedComboBox::squeezeText(const QString& original) const
 
     if (fm.horizontalAdvance(original) < widgetSize)
     {
-        return(original);
+        return (original);
     }
 
     // We need to squeeze.
@@ -216,11 +216,19 @@ QString SqueezedComboBox::squeezeText(const QString& original) const
 void SqueezedComboBox::slotUpdateToolTip(int index)
 {
      setToolTip(d->originalItems[index]);
+     
+#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
+     Q_EMIT activated(item(index));
+
+#endif
+
 }
 
 QString SqueezedComboBox::itemHighlighted() const
 {
     int curItem = currentIndex();
+
     return d->originalItems[curItem];
 }
 
