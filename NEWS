@@ -13,6 +13,8 @@ Metadata       : Add new option to write metadata to files with ExifTool backend
 Metadata       : Optional write metadata operations to DNG and RAW files are now always delegated to ExifTool Backend.
 Advanced Rename: Add increment file counter to sequence numbering with option [c] or [c,step].
 Advanced Rename: Add random text sequence numbering with option [r].
+Advanced Search: Add search for items by number of face regions.
+Advanced Search: Add search for items without face regions.
 
 *****************************************************************************************************
 BUGFIXES:
