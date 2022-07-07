@@ -89,7 +89,7 @@ cd $APP_IMG_DIR
 
 # FIXME: How to find out which subset of plugins is really needed? I used strace when running the binary
 cp -r /usr/plugins ./usr/
-cp -r /usr/${LIBSUFFIX}/plugins ./usr/
+#cp -r /usr/${LIBSUFFIX}/plugins ./usr/
 rm -fr ./usr/plugins/ktexteditor
 rm -fr ./usr/plugins/kf5/parts
 rm -fr ./usr/plugins/konsolepart.so
@@ -108,11 +108,11 @@ ln -s ../digikam/breeze-dark.rcc                          breeze-dark.rcc
 cd $APP_IMG_DIR
 cp $ORIG_WD/data/qt.conf                                  ./usr/bin
 cp -r /usr/share/lensfun                                  ./usr/share
-cp -r /usr/share/knotifications5                          ./usr/share
-cp -r /usr/share/kservices5                               ./usr/share
-cp -r /usr/share/kservicetypes5                           ./usr/share
-cp -r /usr/share/kxmlgui5                                 ./usr/share
-cp -r /usr/share/kf5                                      ./usr/share
+cp -r /usr/share/knotifications6                          ./usr/share
+cp -r /usr/share/kservices6                               ./usr/share
+cp -r /usr/share/kservicetypes6                           ./usr/share
+cp -r /usr/share/kxmlgui6                                 ./usr/share
+cp -r /usr/share/kf6                                      ./usr/share
 cp -r /usr/share/solid                                    ./usr/share
 cp -r /usr/share/mime                                     ./usr/share
 cp -r /usr/share/X11                                      ./usr/share
