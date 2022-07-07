@@ -386,7 +386,7 @@ void AdvancedRenameInput::setupConnections()
             this, SIGNAL(signalReturnPressed()));
 
     connect(this, SIGNAL(currentIndexChanged(int)),
-            d->lineEdit, SLOT(slotIndexChanged(int)));
+            this, SLOT(slotIndexChanged(int)));
 }
 
 void AdvancedRenameInput::slotIndexChanged(int index)
