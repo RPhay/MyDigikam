@@ -216,13 +216,8 @@ QString SqueezedComboBox::squeezeText(const QString& original) const
 void SqueezedComboBox::slotUpdateToolTip(int index)
 {
      setToolTip(d->originalItems[index]);
-     
-#if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
 
-     Q_EMIT activated(item(index));
-
-#endif
-
+     Q_EMIT signalItemActivated(item(index));
 }
 
 QString SqueezedComboBox::itemHighlighted() const

@@ -472,8 +472,8 @@ void MainWindow::setupUi()
     box->addItem(QString::fromLatin1("FFmpeg"), QString::fromLatin1("FFmpeg"));
     box->addItem(QString::fromLatin1("LibASS"), QString::fromLatin1("LibASS"));
 
-    connect(box, SIGNAL(activated(QString)),
-            this, SLOT(setSubtitleEngine(QString)));
+    connect(box, SIGNAL(activated(int)),
+            this, SLOT(setSubtitleEngine(int)));
 
     d->pSubtitle->setEngines(QStringList() << box->itemData(box->currentIndex()).toString());
     box->setToolTip(i18nc("@info", "FFmpeg supports more subtitles but only render plain text\n"
@@ -496,15 +496,15 @@ void MainWindow::setupUi()
         box->addItem(QString::fromLatin1(cs), QString::fromLatin1(cs));
     }
 
-    connect(box, SIGNAL(activated(QString)),
-            this, SLOT(setSubtitleCharset(QString)));
+    connect(box, SIGNAL(activated(int)),
+            this, SLOT(setSubtitleCharset(int)));
 
     d->pSubtitle->setCodec(box->itemData(box->currentIndex()).toByteArray());
     box->setToolTip(i18nc("@info","Auto detect requires libchardet"));
 
     subMenu                         = new ClickableMenu(i18nc("@option", "Audio track"));
     d->pMenu->addMenu(subMenu);
-    d->pAudioTrackMenu                = subMenu;
+    d->pAudioTrackMenu              = subMenu;
 
     connect(subMenu, SIGNAL(triggered(QAction*)),
             this, SLOT(changeAudioTrack(QAction*)));
@@ -513,7 +513,7 @@ void MainWindow::setupUi()
 
     subMenu                         = new ClickableMenu(i18nc("@option", "Channel"));
     d->pMenu->addMenu(subMenu);
-    d->pChannelMenu                   = subMenu;
+    d->pChannelMenu                 = subMenu;
 
     connect(subMenu, SIGNAL(triggered(QAction*)),
             this, SLOT(changeChannel(QAction*)));

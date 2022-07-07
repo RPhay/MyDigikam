@@ -49,7 +49,7 @@ ORIG_WD="`pwd`"
 
 #################################################################################################
 # Install out-dated dependencies
-
+if [ ] ; then
 cd $BUILDING_DIR
 
 /opt/cmake/bin/cmake $ORIG_WD/../3rdparty \
@@ -67,7 +67,7 @@ cp $DOWNLOAD_DIR/heif_manifest.txt $ORIG_WD/data/
 cp $DOWNLOAD_DIR/exiv2_manifest.txt $ORIG_WD/data/
 /opt/cmake/bin/cmake --build . --config RelWithDebInfo --target ext_lensfun       -- -j$CPU_CORES
 cp $DOWNLOAD_DIR/lensfun_manifest.txt $ORIG_WD/data/
-
+fi
 #################################################################################################
 # Build digiKam in temporary directory and installation
 

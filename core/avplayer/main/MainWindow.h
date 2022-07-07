@@ -155,7 +155,6 @@ private Q_SLOTS:
 
 //@}
 
-
 private Q_SLOTS:
 
     void about();
@@ -188,8 +187,8 @@ private Q_SLOTS:
 
     void onUserShaderChanged();
 
-    void setSubtitleCharset(const QString& charSet);
-    void setSubtitleEngine(const QString& value);
+    void setSubtitleCharset(int);
+    void setSubtitleEngine(int);
 
     void syncVolumeUi(qreal value);
 

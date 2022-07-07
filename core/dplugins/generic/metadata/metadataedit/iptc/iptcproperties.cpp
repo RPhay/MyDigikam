@@ -396,7 +396,7 @@ IPTCProperties::IPTCProperties(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    connect(d->languageBtn, SIGNAL(activated(QString)),
+    connect(d->languageBtn, SIGNAL(activated(int)),
             this, SIGNAL(signalModified()));
 
     connect(d->priorityCB, SIGNAL(activated(int)),
