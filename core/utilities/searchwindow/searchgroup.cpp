@@ -200,13 +200,27 @@ void SearchGroup::setup(Type type)
     group->addField(SearchField::createField("longitude", group));
 */
     group->addField(SearchField::createField(QLatin1String("altitude"), group));
-    group->addField(SearchField::createField(QLatin1String("nogps"), group));
+    group->addField(SearchField::createField(QLatin1String("nogps"),    group));
 
     m_fieldLabels << label;
     m_fieldGroups << group;
     m_layout->addWidget(label);
     m_layout->addWidget(group);
 
+    // ----- //
+
+    label = new SearchFieldGroupLabel(this);
+    label->setTitle(i18n("Face regions"));
+    group = new SearchFieldGroup(this);
+    group->setLabel(label);
+
+    group->addField(SearchField::createField(QLatin1String("faceregionscount"), group));
+    group->addField(SearchField::createField(QLatin1String("nofaceregions"),    group));
+
+    m_fieldLabels << label;
+    m_fieldGroups << group;
+    m_layout->addWidget(label);
+    m_layout->addWidget(group);
 
     // ----- //
 

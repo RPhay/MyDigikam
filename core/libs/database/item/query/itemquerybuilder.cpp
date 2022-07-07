@@ -1111,6 +1111,45 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
 
         sql += QLatin1String(" ) ");
     }
+    else if (name == QLatin1String("faceregionscount"))
+    {
+        sql += QString::fromUtf8(" (Images.id IN (SELECT imageid FROM ImageTagProperties WHERE property = ? "
+                                     " GROUP BY imageid HAVING COUNT(*) ");
+
+        if ((relation == SearchXml::Interval) || (relation == SearchXml::IntervalOpen))
+        {
+            QList<int> values = reader.valueToIntList();
+
+            if (values.size() != 2)
+            {
+                qCWarning(DIGIKAM_DATABASE_LOG) << "Relation Interval requires a list of two values";
+                return false;
+            }
+
+            ItemQueryBuilder::addSqlRelation(sql,
+                                             relation == SearchXml::Interval ? SearchXml::GreaterThanOrEqual
+                                                                             : SearchXml::GreaterThan);
+            sql += QString::fromUtf8(" ? AND COUNT(*) ");
+            ItemQueryBuilder::addSqlRelation(sql,
+                                             relation == SearchXml::Interval ? SearchXml::LessThanOrEqual
+                                                                             : SearchXml::LessThan);
+            sql += QString::fromUtf8(" ?) ) ");
+            *boundValues << ImageTagPropertyName::tagRegion() << values.first() << values.last();
+        }
+        else
+        {
+            ItemQueryBuilder::addSqlRelation(sql, relation);
+            sql += QString::fromUtf8(" ?) ) ");
+            *boundValues << ImageTagPropertyName::tagRegion() << reader.valueToInt();
+        }
+    }
+    else if (name == QLatin1String("nofaceregions"))
+    {
+            reader.readToEndOfElement();
+            sql += QString::fromUtf8(" (Images.id NOT IN (SELECT imageid FROM ImageTagProperties "
+                                     " WHERE property = ?) ) ");
+            *boundValues << ImageTagPropertyName::tagRegion();
+    }
     else if (name == QLatin1String("similarity"))
     {
         qCWarning(DIGIKAM_DATABASE_LOG) << "Search field \"similarity\" is not supported by ItemQueryBuilder";

@@ -87,4 +87,6 @@ BUGFIXES:
 068 ==> 455893 - Build error with Qt5.
 069 ==> 455876 - Handling of image orientation in modern image formats using ExifTool.
 070 ==> 456237 - Crash after changing the collection
-071 ==> 
+071 ==> 456263 - Missing feature for searching pictures containing actual detected faces.
+072 ==> 439643 - Add count()-like condition to search.
+073 ==> 
