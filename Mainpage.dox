@@ -449,6 +449,7 @@ There are two configuration sections : the top level and the core.
  - Developers only options:
 
   - \b BUILD_TESTING=ON                      : Build tests code (default=ON).
+  - \b BUILD_WITH_QT6=ON                     : Build with Qt6 framework, else Qt5 (default=OFF).
 
 \subsection coreoptions Core Configuration
 
