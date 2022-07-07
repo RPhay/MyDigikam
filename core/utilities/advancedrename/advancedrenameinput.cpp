@@ -385,8 +385,13 @@ void AdvancedRenameInput::setupConnections()
     connect(d->lineEdit, SIGNAL(signalReturnPressed()),
             this, SIGNAL(signalReturnPressed()));
 
-    connect(this, SIGNAL(currentIndexChanged(QString)),
-            d->lineEdit, SLOT(slotSetText(QString)));
+    connect(this, SIGNAL(currentIndexChanged(int)),
+            d->lineEdit, SLOT(slotIndexChanged(int)));
+}
+
+void AdvancedRenameInput::slotIndexChanged(int index)
+{
+    setText(itemText(index));
 }
 
 void AdvancedRenameInput::changeEvent(QEvent* e)
@@ -408,6 +413,7 @@ void AdvancedRenameInput::slotClearButtonPressed()
 void AdvancedRenameInput::slotTextChanged(const QString& text)
 {
     d->proxy->setText(text);
+
     Q_EMIT signalTextChanged(text);
 }
 
