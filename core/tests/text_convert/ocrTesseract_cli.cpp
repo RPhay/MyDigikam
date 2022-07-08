@@ -12,8 +12,7 @@
 
 int main(int argc, char* argv[])
 {
-    
-    QProcess *ocrProcess = new QProcess();
+    QProcess* const ocrProcess = new QProcess();
 //    ocrProcess->setProcessChannelMode(QProcess::MergedChannels);
 
     
@@ -117,5 +116,6 @@ int main(int argc, char* argv[])
 
     qDebug() << mess;
 
+    delete ocrProcess;
     return 0;
 }
