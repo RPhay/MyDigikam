@@ -6,6 +6,7 @@
 
 if(BUILD_WITH_QT6)
 
+    set(QT_DEFAULT_MAJOR_VERSION 6)
     find_package(Qt6 ${QT6_MIN_VERSION} REQUIRED COMPONENTS Core)
 
     set(QT_VERSION       ${Qt6Core_VERSION})
@@ -14,6 +15,7 @@ if(BUILD_WITH_QT6)
 
 else()
 
+    set(QT_DEFAULT_MAJOR_VERSION 5)
     find_package(Qt5 ${QT5_MIN_VERSION} REQUIRED COMPONENTS Core)
 
     set(QT_VERSION       ${Qt5Core_VERSION})
