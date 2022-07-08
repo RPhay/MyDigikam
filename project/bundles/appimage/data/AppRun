@@ -137,9 +137,14 @@ if   [[ $1 == "showfoto" ]] ; then
     # Run Showfoto as well.
     showfoto ${@:2}
 
+elif [[ $1 == "avplayer" ]] ; then
+
+    # Run AVPlayer as well.
+    avplayer ${@:2}
+
 elif [[ $1 == "debug" ]] ; then
 
-    if [[ $2 == "showfoto" ]] ; then
+    if   [[ $2 == "showfoto" ]] ; then
 
         # Showfoto in debug mode.
 
@@ -147,6 +152,15 @@ elif [[ $1 == "debug" ]] ; then
         echo "Use 'bt' command on debugger prompt to get a crash backtrace."
         echo "Use 'q' command to quit debugger session."
         gdb -ex=r --args showfoto ${@:3}
+
+    elif [[ $2 == "avplayer" ]] ; then
+
+        # AVPlayer in debug mode.
+
+        echo "Starting AVPlayer into GDB..."
+        echo "Use 'bt' command on debugger prompt to get a crash backtrace."
+        echo "Use 'q' command to quit debugger session."
+        gdb -ex=r --args avplayer ${@:3}
 
     else
 
@@ -161,11 +175,12 @@ elif [[ $1 == "debug" ]] ; then
 
 elif [[ $1 == "help" ]] ; then
 
-    # digiKam/Showfoto CLI help.
+    # digiKam/Showfoto/AVplayer CLI help.
 
     echo "digiKam AppImage bundle CLI options:"
     echo " without option       : run digiKam."
     echo " <showfoto>           : run Showfoto instead digiKam."
+    echo " <avplayer>           : run AVPlayer instead digiKam."
     echo " <debug>              : run digiKam into GDB."
     echo " <debug> <showfoto>   : run Showfoto into GDB."
     echo " <help>               : show these information."
