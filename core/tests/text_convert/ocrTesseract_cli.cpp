@@ -1,12 +1,12 @@
 
-#include <qfile.h>
+// Qt includes 
+
 #include <QString>
 #include <QStringList>
 #include <QProcess>
 #include <QFile>
 #include <QUrl>
 #include <QDebug>
-#include <qlogging.h>
 #include <QApplication>
 #include <QDir>
 
