@@ -134,10 +134,11 @@ cp -r /usr/share/dbus-1/interfaces/kf5*                   ./usr/share/dbus-1/int
 cp -r /usr/share/dbus-1/services/*kde*                    ./usr/share/dbus-1/services/
 cp -r /usr/${LIBSUFFIX}/libexec/kf6                       ./usr/lib/libexec/
 
-echo -e "------------- Copy AppImage stream data filess\n"
+echo -e "------------- Copy AppImage stream data files\n"
 
 cp -r /usr/share/metainfo/org.kde.digikam.appdata.xml     ./usr/share/metainfo
 cp -r /usr/share/metainfo/org.kde.showfoto.appdata.xml    ./usr/share/metainfo
+cp -r /usr/share/metainfo/org.kde.avplayer.appdata.xml    ./usr/share/metainfo
 
 # NOTE: no resources data are provided with QtWebKit
 
@@ -271,6 +272,7 @@ echo -e "---------- Copy target binaries\n"
 
 cp /usr/bin/digikam                 ./usr/bin
 cp /usr/bin/showfoto                ./usr/bin
+cp /usr/bin/avplayer                ./usr/bin
 cp /usr/bin/kbuildsycoca5           ./usr/bin
 cp /usr/bin/solid-hardware5         ./usr/bin
 
@@ -303,6 +305,7 @@ echo -e "---------- Scan dependencies recurssively\n"
 
 CopyReccursiveDependencies /usr/bin/digikam                  ./usr/lib
 CopyReccursiveDependencies /usr/bin/showfoto                 ./usr/lib
+CopyReccursiveDependencies /usr/bin/avplayer                 ./usr/lib
 CopyReccursiveDependencies /usr/plugins/platforms/libqxcb.so ./usr/lib
 
 FILES=$(ls /usr/${LIBSUFFIX}/libdigikam*.so)
@@ -447,7 +450,7 @@ rm -rf usr/share/pkgconfig || true
 echo -e "---------- Strip Symbols in Binaries Files\n"
 
 if [[ $DK_DEBUG = 1 ]] ; then
-    FILES=$(find . -type f -executable | grep -Ev '(digikam|showfoto)')
+    FILES=$(find . -type f -executable | grep -Ev '(digikam|showfoto|avplayer)')
 else
     FILES=$(find . -type f -executable)
 fi
