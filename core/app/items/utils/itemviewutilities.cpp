@@ -60,6 +60,7 @@
 #include "dfileoperations.h"
 #include "coredb.h"
 #include "coredbaccess.h"
+#include "dservicemenu.h"
 
 namespace Digikam
 {
@@ -399,6 +400,20 @@ void ItemViewUtilities::openInfosWithDefaultApplication(const QList<ItemInfo>& i
     {
         urls << inf.fileUrl();
     }
+
+#ifdef Q_OS_LINUX
+
+    KService::List offers = DServiceMenu::servicesForOpenWith(urls);
+
+    if (!offers.isEmpty())
+    {
+        KService::Ptr service = offers.first();
+        DServiceMenu::runFiles(service.data(), urls);
+
+        return;
+    }
+
+#endif
 
     DFileOperations::openFilesWithDefaultApplication(urls);
 }
