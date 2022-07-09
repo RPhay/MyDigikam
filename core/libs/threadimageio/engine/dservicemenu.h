@@ -73,14 +73,14 @@ public:
     /**
      * Linux only: open file urls with the service.
      */
-    static bool runFiles(const KService::Ptr service, const QList<QUrl>& urls);
+    static bool runFiles(const KService::Ptr& service, const QList<QUrl>& urls);
 
     /**
      * Linux only: open file urls with the application command.
      */
     static bool runFiles(const QString& appCmd,
                          const QList<QUrl>& urls,
-                         const KService::Ptr service = KService::Ptr());
+                         const KService::Ptr& service = KService::Ptr());
 
     /**
      * Linux only: return list of service available on desktop to open files.
