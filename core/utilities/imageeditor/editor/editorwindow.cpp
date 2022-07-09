@@ -2841,7 +2841,7 @@ void EditorWindow::openWith(const QUrl& url, QAction* action)
         service = d->servicesMap[name];
     }
 
-    DServiceMenu::runFiles(service.data(), QList<QUrl>() << url);
+    DServiceMenu::runFiles(service, QList<QUrl>() << url);
 }
 
 void EditorWindow::loadTool(EditorTool* const tool)

@@ -196,7 +196,7 @@ void ContextMenuHelper::slotOpenWith(QAction* action)
         service = d->servicesMap[name];
     }
 
-    DServiceMenu::runFiles(service.data(), list);
+    DServiceMenu::runFiles(service, list);
 
 #endif // Q_OS_WIN
 

@@ -408,7 +408,7 @@ void ItemViewUtilities::openInfosWithDefaultApplication(const QList<ItemInfo>& i
     if (!offers.isEmpty())
     {
         KService::Ptr service = offers.first();
-        DServiceMenu::runFiles(service.data(), urls);
+        DServiceMenu::runFiles(service, urls);
 
         return;
     }
