@@ -39,7 +39,6 @@
 #include "metaenginesettings.h"
 #include "itemattributeswatch.h"
 #include "iteminfotasksplitter.h"
-#include "collectionscanner.h"
 #include "filereadwritelock.h"
 #include "scancontroller.h"
 #include "faceutils.h"
@@ -344,9 +343,6 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
                 metadata->applyChanges();
             }
         }
-
-        CollectionScanner scanner;
-        scanner.scanFile(info, CollectionScanner::NormalScan);
 
         if (!failedItems.contains(info.name()))
         {
