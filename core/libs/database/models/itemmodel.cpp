@@ -1423,6 +1423,8 @@ void ItemModel::slotImageChange(const ImageChangeset& changeset)
                     }
                 }
             }
+
+            return;
         }
 
         QItemSelection items;
