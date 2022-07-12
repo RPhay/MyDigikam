@@ -121,11 +121,21 @@ echo "---------- Configure digiKam $DK_VERSION"
 #export CC=/usr/bin/clang
 #export CXX=/usr/bin/clang++
 
+if [[ $DK_QTVERSION == 5.* ]] ; then
+
+    BUILD_WITH_QT6=OFF
+
+else
+
+    BUILD_WITH_QT6=ON
+
+fi
+
 /opt/cmake/bin/cmake -G "Unix Makefiles" .. \
       -DCMAKE_BUILD_TYPE=RelWithDebInfo \
       -DCMAKE_INSTALL_PREFIX=/usr \
       -DBUILD_TESTING=OFF \
-      -DBUILD_WITH_QT6=ON \
+      -DBUILD_WITH_QT6=$BUILD_WITH_QT6 \
       -DBUILD_WITH_CCACHE=ON \
       -DDIGIKAMSC_CHECKOUT_PO=ON \
       -DDIGIKAMSC_CHECKOUT_DOC=OFF \
