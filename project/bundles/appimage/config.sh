@@ -65,16 +65,7 @@ DK_QTWEBENGINEVERSION="5.15.9"
 DK_QTWEBENGINE=1
 
 # Installer sub version to differentiates newer updates of the installer itself, even if the underlying application hasn’t changed.
-
-if [[ $DK_QTVERSION == 5.* ]] ; then
-
-    DK_SUBVER="-Qt5"
-
-else
-
-    DK_SUBVER="-Qt6"
-
-fi
+#DK_SUBVER="-01"
 
 # Sign bundles with GPG. Passphrase must be hosted in ~/.gnupg/dkorg-gpg-pwd.txt
 DK_SIGN=0
