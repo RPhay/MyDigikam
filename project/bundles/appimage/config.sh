@@ -50,8 +50,6 @@ DK_KF5_VERSION="5.95"
 # ExifTool Linux version to embed in the bundle.
 DK_EXIFTOOL_VERSION="12.43"
 
-# Installer sub version to differentiates newer updates of the installer itself, even if the underlying application hasn’t changed.
-#DK_SUBVER="-01"
 
 # Installer will include or not digiKam debug symbols
 DK_DEBUG=1
@@ -65,6 +63,18 @@ DK_QTWEBENGINEVERSION="5.15.9"
 
 # Option to use QtWebEngine instead QtWebkit
 DK_QTWEBENGINE=1
+
+# Installer sub version to differentiates newer updates of the installer itself, even if the underlying application hasn’t changed.
+
+if [[ $DK_QTVERSION == 5.* ]] ; then
+
+    DK_SUBVER="-Qt5"
+
+else
+
+    DK_SUBVER="-Qt6"
+
+fi
 
 # Sign bundles with GPG. Passphrase must be hosted in ~/.gnupg/dkorg-gpg-pwd.txt
 DK_SIGN=0
