@@ -55,8 +55,9 @@ DK_EXIFTOOL_VERSION="12.43"
 DK_DEBUG=1
 
 # Qt version to use in bundle. Possible values: 5.15, 5.15-LTS, 6.3.1
+DK_QTVERSION="5.15"
 #DK_QTVERSION="5.15-LTS"
-DK_QTVERSION="6.3.1"
+#DK_QTVERSION="6.3.1"
 
 # QtWebEngine version to use in bundle when 5.15-LTS is used.
 DK_QTWEBENGINEVERSION="5.15.9"
