@@ -1,8 +1,8 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index bcd3f7b..0005250 100644
+index 29cc06f..6036953 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -37,10 +37,10 @@ set_package_properties(Canberra PROPERTIES
+@@ -48,10 +48,10 @@ set_package_properties(Canberra PROPERTIES
      TYPE OPTIONAL)
  if (NOT Canberra_FOUND)
      # This is REQUIRED since you cannot tell CMake "either one of those two optional ones are required"
@@ -16,16 +16,40 @@ index bcd3f7b..0005250 100644
 +#        PURPOSE "Needed to preview notification sounds when Canberra isn't available")
  endif()
  
- # Includes
+ # ECM setup
 diff --git a/src/knotify-config.h.cmake b/src/knotify-config.h.cmake
-index e42fc49..241a0d6 100644
+index 8b04828..e12a380 100644
 --- a/src/knotify-config.h.cmake
 +++ b/src/knotify-config.h.cmake
 @@ -2,7 +2,6 @@
  #define KNOTIFY_CONFIG_H
  
- #cmakedefine HAVE_CANBERRA
--#cmakedefine HAVE_PHONON
+ #cmakedefine01 HAVE_CANBERRA
+-#cmakedefine01 HAVE_PHONON
  
  #endif /* KNOTIFY_CONFIG_H */
+ 
+diff --git a/src/knotifyconfigactionswidget.cpp b/src/knotifyconfigactionswidget.cpp
+index 4032217..5e517ea 100644
+--- a/src/knotifyconfigactionswidget.cpp
++++ b/src/knotifyconfigactionswidget.cpp
+@@ -16,8 +16,6 @@
+ 
+ #if HAVE_CANBERRA
+ #include <canberra.h>
+-#elif HAVE_PHONON
+-#include <phonon/mediaobject.h>
+ #endif
+ 
+ KNotifyConfigActionsWidget::KNotifyConfigActionsWidget(QWidget *parent)
+@@ -196,10 +194,6 @@ void KNotifyConfigActionsWidget::slotPlay()
+         qCWarning(KNOTIFYCONFIG_LOG) << "Failed to play sound with canberra:" << ca_strerror(ret);
+         return;
+     }
+-#elif HAVE_PHONON
+-    Phonon::MediaObject *media = Phonon::createPlayer(Phonon::NotificationCategory, soundURL);
+-    media->play();
+-    connect(media, SIGNAL(finished()), media, SLOT(deleteLater()));
+ #endif
+ }
  

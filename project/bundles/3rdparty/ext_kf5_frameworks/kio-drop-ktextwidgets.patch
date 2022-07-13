@@ -25,7 +25,7 @@ index 7b5c89732..e7b4e797e 100644
  {
  class Connection;
 diff --git a/src/filewidgets/kfilewidget.cpp b/src/filewidgets/kfilewidget.cpp
-index 943c0cd93..2349cd648 100644
+index ae8088a00..5c20ccce5 100644
 --- a/src/filewidgets/kfilewidget.cpp
 +++ b/src/filewidgets/kfilewidget.cpp
 @@ -280,7 +280,7 @@ public:
@@ -82,19 +82,20 @@ index 869647e03..d4935cde2 100644
      KF5::I18n
      KF5::CoreAddons
 diff --git a/src/kcms/netpref/netpref.cpp b/src/kcms/netpref/netpref.cpp
-index 4a07ff13c..e5116f698 100644
+index f5c239eba..952eb62ad 100644
 --- a/src/kcms/netpref/netpref.cpp
 +++ b/src/kcms/netpref/netpref.cpp
-@@ -12,7 +12,7 @@
+@@ -12,7 +12,8 @@
  #include <KConfigGroup>
  #include <KLocalizedString>
  #include <KPluginFactory>
 -#include <KPluralHandlingSpinBox>
 +#include <QSpinBox>
- #include <ioslave_defaults.h>
++//#include <KPluralHandlingSpinBox>
+ #include <ioworker_defaults.h>
  
  // Local
-@@ -41,26 +41,26 @@ KIOPreferences::KIOPreferences(QWidget *parent, const QVariantList &)
+@@ -41,26 +42,26 @@ KIOPreferences::KIOPreferences(QWidget *parent, const QVariantList &)
      mainLayout->addWidget(gb_Timeout);
  
      QFormLayout *timeoutLayout = new QFormLayout(gb_Timeout);
@@ -129,7 +130,7 @@ index 4a07ff13c..e5116f698 100644
      connect(sb_serverResponse, qOverload<int>(&QSpinBox::valueChanged), this, &KIOPreferences::configChanged);
      timeoutLayout->addRow(i18n("&Server response:"), sb_serverResponse);
  
-@@ -86,8 +86,8 @@ KIOPreferences::KIOPreferences(QWidget *parent, const QVariantList &)
+@@ -86,8 +87,8 @@ KIOPreferences::KIOPreferences(QWidget *parent, const QVariantList &)
      auto partialLayout = new QFormLayout(partialWidget);
      partialLayout->setContentsMargins(20, 0, 0, 0); // indent below mark partial
  
