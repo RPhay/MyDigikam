@@ -9,6 +9,9 @@
 
 ########################################################################
 
+. ./common.sh
+CheckSystemReleaseID
+
 # digiKam tag version from git. Official tarball do not include extra shared libraries.
 # The list of tags can be listed with this url: https://invent.kde.org/graphics/digikam/-/tags
 # If you want to package current implementation from git, use "master" as tag.
@@ -54,10 +57,21 @@ DK_EXIFTOOL_VERSION="12.43"
 # Installer will include or not digiKam debug symbols
 DK_DEBUG=1
 
-# Qt version to use in bundle. Possible values: 5.15, 5.15-LTS, 6.3.1
-DK_QTVERSION="5.15"
-#DK_QTVERSION="5.15-LTS"
-#DK_QTVERSION="6.3.1"
+# Qt version to use in bundle. Possible values:
+# - 5.15:     stable Qt5 release.
+# - 5.15-LTS: rolling release version 5 (can be not stbilized)
+# - 6.3.1:    stable Qt6 release.
+
+if [ "$OS_VERSION" == "8" ] ; then
+
+    DK_QTVERSION="6.3.1"
+
+else
+
+    DK_QTVERSION="5.15"
+    #DK_QTVERSION="5.15-LTS"
+
+fi
 
 # QtWebEngine version to use in bundle when 5.15-LTS is used.
 DK_QTWEBENGINEVERSION="5.15.9"
