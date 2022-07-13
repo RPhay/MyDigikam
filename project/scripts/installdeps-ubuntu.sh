@@ -55,6 +55,7 @@ echo "-------------------------------------------------------------------"
 required_packages=("cmake"                   # To Compile   Source Code
                    "extra-cmake-modules"     # To Compile   Source Code
                    "build-essential"         # To Compile   Source Code
+                   "qttools5-dev-tools"	     # To handle Qt5 configuration.
 
                    "libqt5core5a"            # Qt 5 core module
                    "libqt5gui5"              # Qt 5 Gui module
@@ -66,7 +67,7 @@ required_packages=("cmake"                   # To Compile   Source Code
                    "libqt5printsupport5"     # Qt 5 PrintSupport module
                    "libqt5svg5"              # Qt 5 Svg module
                    "libqt5webengine5"        # Qt 5 webengine module
-                   "libqt5networkauth"       # Qt 5 network authentification.
+                   "libqt5networkauth-dev"   # Qt 5 network authentification.
 
                    "libkf5config-dev"        # Configuration settings framework for Qt
                    "libkf5xmlgui-dev"        # User configurable main windows
@@ -193,10 +194,16 @@ optional_packages=("ruby"
                    "libgomp1"
                    "llvm"
                    "libclang-dev"
-                   "ffmpeg"                             # >= 3.3.x
+                   "libavdevice-dev"                    # >= 3.3.x
+                   "libavfilter-dev"                    # >= 3.3.x
+                   "libavformat-dev"                    # >= 3.3.x
+                   "libavcodec-dev"                     # >= 3.3.x
+                   "libavutils-dev"                     # >= 3.3.x
+                   "libpostproc-dev"                     # >= 3.3.x
                    "libgphoto2-dev"                     # >= 2.5
                    "libsane-dev"                        # >= 5.0.0
                    "libjasper-dev"                      # >= 1.900.1
+                   "libheif-dev"
                    "libxslt-dev"                        # >= 1.1.0
                    "libxml2-dev"                        # >= 2.7.0
                    "libtiff-dev"                        # >= 4.0
