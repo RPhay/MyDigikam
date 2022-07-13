@@ -203,6 +203,7 @@ optional_packages=("ruby"
                    "libgphoto2-dev"                     # >= 2.5
                    "libsane-dev"                        # >= 5.0.0
                    "libjasper-dev"                      # >= 1.900.1
+                   "libheif-dev"
                    "libxslt-dev"                        # >= 1.1.0
                    "libxml2-dev"                        # >= 2.7.0
                    "libtiff-dev"                        # >= 4.0
