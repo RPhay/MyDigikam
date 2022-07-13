@@ -29,7 +29,6 @@ echo "--------------------------------------------------------------------------
 # Pre-processing checks
 
 . ./config.sh
-. ./common.sh
 ChecksRunAsRoot
 StartScript
 ChecksCPUCores
