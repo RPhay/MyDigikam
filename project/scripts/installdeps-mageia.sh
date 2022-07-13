@@ -68,8 +68,6 @@ urpmi --auto \
       scons                         `#  For MXE build.` \
       icoutils                      `#  For MXE build.` \
       mingw32-nsis                  `#  For MXE build.` \
-      textinfo                      `#  For MXE build.` \
-      python2-mako                  `#  For MXE build.` \
       python3-mako                  `#  For MXE build.` \
       python3-lxml                  `#  For MXE build.` \
       python3-pygments              `#  For Continuous integration.` \
