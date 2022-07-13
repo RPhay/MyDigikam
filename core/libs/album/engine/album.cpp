@@ -356,9 +356,9 @@ bool Album::isTrashAlbum() const
 
 int Album::countTrashAlbum() const
 {
-    if (isTrashAlbum() && parent())
+    if (isTrashAlbum())
     {
-        PAlbum* const palbum = AlbumManager::instance()->findPAlbum(parent()->id());
+        PAlbum* const palbum = static_cast<PAlbum*>(parent());
 
         if (palbum)
         {
