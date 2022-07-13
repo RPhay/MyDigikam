@@ -197,6 +197,11 @@ QPixmap AlbumThumbnailLoader::getStandardAlbumTrashIcon(RelativeSize relativeSiz
     return loadIcon(QLatin1String("user-trash"), computeIconSize(relativeSize));
 }
 
+QPixmap AlbumThumbnailLoader::getStandardFullTrashIcon(RelativeSize relativeSize)
+{
+    return loadIcon(QLatin1String("user-trash-full"), computeIconSize(relativeSize));
+}
+
 QPixmap AlbumThumbnailLoader::getStandardAlbumRootIcon(RelativeSize relativeSize)
 {
     return loadIcon(QLatin1String("folder-pictures"), computeIconSize(relativeSize));
@@ -210,7 +215,14 @@ QPixmap AlbumThumbnailLoader::getStandardAlbumIcon(PAlbum* const album, Relative
     }
     else if (album->isTrashAlbum())
     {
-        return getStandardAlbumTrashIcon();
+        if (album->countTrashAlbum() > 0)
+        {
+            return getStandardFullTrashIcon(relativeSize);
+        }
+        else
+        {
+            return getStandardAlbumTrashIcon(relativeSize);
+        }
     }
     else
     {
@@ -342,7 +354,7 @@ bool AlbumThumbnailLoader::getAlbumThumbnail(PAlbum* const album)
 
 QPixmap AlbumThumbnailLoader::getAlbumThumbnailDirectly(PAlbum* const album)
 {
-    if (album->iconId() && (d->iconSize > d->minBlendSize))
+    if (album->iconId() && !album->isTrashAlbum() && (d->iconSize > d->minBlendSize))
     {
         // icon cached?
 

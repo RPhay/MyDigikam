@@ -25,6 +25,10 @@
 
 #include "album.h"
 
+// Qt includes
+
+#include <QDir>
+
 // KDE includes
 
 #include <klocalizedstring.h>
@@ -348,6 +352,24 @@ bool Album::isTrashAlbum() const
     }
 
     return false;
+}
+
+int Album::countTrashAlbum() const
+{
+    if (isTrashAlbum() && parent())
+    {
+        PAlbum* const palbum = AlbumManager::instance()->findPAlbum(parent()->id());
+
+        if (palbum)
+        {
+            QString path = palbum->folderPath() + QLatin1String(".dtrash/files");
+            QDir dir(path, QLatin1String(""), QDir::Unsorted, QDir::Files);
+
+            return dir.count();
+        }
+    }
+
+    return 0;
 }
 
 void Album::setUsedByLabelsTree(bool isUsed)

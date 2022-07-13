@@ -148,6 +148,7 @@ public:
 
     QPixmap getStandardAlbumIcon(RelativeSize size = NormalSize);
     QPixmap getStandardAlbumTrashIcon(RelativeSize size = NormalSize);
+    QPixmap getStandardFullTrashIcon(RelativeSize size = NormalSize);
     QPixmap getStandardAlbumRootIcon(RelativeSize size = NormalSize);
     QPixmap getStandardAlbumIcon(PAlbum* const album, RelativeSize size = NormalSize);
 

@@ -91,4 +91,5 @@ BUGFIXES:
 070 ==> 456237 - Crash after changing the collection
 071 ==> 456263 - Missing feature for searching pictures containing actual detected faces.
 072 ==> 439643 - Add count()-like condition to search.
-073 ==> 
+073 ==> 425047 - Trash icon should reflect if trash is full or empty.
+074 ==> 
