@@ -146,11 +146,11 @@ public:
     QPixmap getStandardFaceIcon(TAlbum* const album, RelativeSize size = NormalSize);
     QPixmap getNewTagIcon(RelativeSize size = NormalSize);
 
-    QPixmap getStandardAlbumIcon(RelativeSize size = NormalSize);
-    QPixmap getStandardAlbumTrashIcon(RelativeSize size = NormalSize);
+    QPixmap getStandardAlbumIcon(PAlbum* const album, RelativeSize size = NormalSize);
+    QPixmap getStandardEmptyTrashIcon(RelativeSize size = NormalSize);
     QPixmap getStandardFullTrashIcon(RelativeSize size = NormalSize);
     QPixmap getStandardAlbumRootIcon(RelativeSize size = NormalSize);
-    QPixmap getStandardAlbumIcon(PAlbum* const album, RelativeSize size = NormalSize);
+    QPixmap getStandardAlbumIcon(RelativeSize size = NormalSize);
 
     /**
      * Return a preview of physical album directly without to use cache.
