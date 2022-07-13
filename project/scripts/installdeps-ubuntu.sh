@@ -4,7 +4,7 @@
 # This script must be run as sudo
 # Ubuntu compatible version >= 18.04
 #
-# Copyright (c) 2021 by TRAN Quoc Hung <quochungtran1999 at gmail dot com         > 
+# Copyright (c) 2021 by TRAN Quoc Hung <quochungtran1999 at gmail dot com>
 # Copyright (c) 2021 by Surya K M      <suryakm_is20 dot rvitm@rvei dot edu dot in>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
@@ -33,7 +33,7 @@ echo "-------------------------------------------------------------------"
 # for downloading package information from all configured sources.'
 
 sudo apt-get update
-sudo apt-get upgrade 
+sudo apt-get upgrade
 
 # benefit from a higher version of certain software , update the key
 
@@ -42,11 +42,12 @@ sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security m
 
 # Install dependencies to Checkout Source Code
 
-sudo apt-get install -y git                          
+sudo apt-get install -y git
+
 echo "-------------------------------------------------------------------"
 
-                                   
-sudo apt-get install -y perl                       
+sudo apt-get install -y perl
+
 echo "-------------------------------------------------------------------"
 
 # Install required dependencies to Compile And Link Source Code
@@ -65,6 +66,7 @@ required_packages=("cmake"                   # To Compile   Source Code
                    "libqt5printsupport5"     # Qt 5 PrintSupport module
                    "libqt5svg5"              # Qt 5 Svg module
                    "libqt5webengine5"        # Qt 5 webengine module
+                   "libqt5networkauth"       # Qt 5 network authentification.
 
                    "libkf5config-dev"        # Configuration settings framework for Qt
                    "libkf5xmlgui-dev"        # User configurable main windows
@@ -136,17 +138,18 @@ for pkg in ${required_packages[@]}; do
         required_version=0.27.0
         ;;
     esac
-    
+
     echo $current_version
 
-    if $(dpkg --compare-versions "$current_version" "lt" "$required_version"); then 
+    if $(dpkg --compare-versions "$current_version" "lt" "$required_version"); then
             echo "less than $required_version";
             echo "please upgrade newer version or another packages";
-    else 
+    else
             echo "greater than $required_version ............. accepted";
-    fi  
+    fi
 
     echo "-------------------------------------------------------------------"
+
 done
 
 
@@ -164,7 +167,7 @@ optional_packages=("ruby"
                    "unrar"
                    "scons"
                    "icoutils"
-                   "gcc-mingw-w64"                   
+                   "gcc-mingw-w64"
                    "python3-mako"
                    "python3-pygments"
                    "python3-bs4"
@@ -178,7 +181,7 @@ optional_packages=("ruby"
                    "hugin"
                    "bison"                              # >= 2.5.0
                    "flex"                               # >= 2.5.0
-                   "wget"                              
+                   "wget"
                    "coreutils"
                    "dmg2img"
                    "tesseract-ocr"
@@ -187,10 +190,10 @@ optional_packages=("ruby"
                    "libmarble-dev"                      # >= 0.22
                    "marble-data"                        # >= 5.0
                    "libasan4"
-                   "libgomp1" 
+                   "libgomp1"
                    "llvm"
-                   "libclang-dev"                      
-                   "ffmpeg"                             # >= 3.3.x    
+                   "libclang-dev"
+                   "ffmpeg"                             # >= 3.3.x
                    "libgphoto2-dev"                     # >= 2.5
                    "libsane-dev"                        # >= 5.0.0
                    "libjasper-dev"                      # >= 1.900.1
@@ -198,18 +201,18 @@ optional_packages=("ruby"
                    "libxml2-dev"                        # >= 2.7.0
                    "libtiff-dev"                        # >= 4.0
                    "liblqr-dev"                         # >= 0.4.2
-                   "fftw-dev" 
-                   "curl" 
-                   "libx265-dev"                        # >= 2.2 
-                   "libmagick++-dev"                    # >= 6.7.0    
+                   "fftw-dev"
+                   "curl"
+                   "libx265-dev"                        # >= 2.2
+                   "libmagick++-dev"                    # >= 6.7.0
                    "libqt5x11extras5-dev"               # >= 5.9
                    "libqt5test5"                        # >= 5.9
-                   "libqt5xml5"                         # >= 5.9    
+                   "libqt5xml5"                         # >= 5.9
                    "libqt5xmlpatterns5-dev"             # >= 5.9
                    "libqt5opengl5-dev"                  # >= 5.9
-                   "libkf5sane-dev"                     # >= 5.5.0    
+                   "libkf5sane-dev"                     # >= 5.5.0
                    "libkf5threadweaver-dev"             # >= 5.5.0
-                   "libkf5kio-dev"                      # >= 5.5.0              
+                   "libkf5kio-dev"                      # >= 5.5.0
                    "libkf5notifications-dev"            # >= 5.5.0
                    "libkf5notifyconfig-dev"             # >= 5.5.0
                    "libkf5filemetadata-dev"             # >= 5.5.0
@@ -220,7 +223,7 @@ optional_packages=("ruby"
                     )
 
 
-# for pkg in ${optional_packages[@]}; do
-#     sudo apt-get install -y ${pkg}
-#     echo "-------------------------------------------------------------------"
-# done
+for pkg in ${optional_packages[@]}; do
+    sudo apt-get install -y ${pkg}
+    echo "-------------------------------------------------------------------"
+done
