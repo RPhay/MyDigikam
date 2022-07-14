@@ -187,7 +187,7 @@ if (${ENABLE_QTVERSION} MATCHES "6.*")
     set(Qt6CommonOptions -DQT_MAJOR_VERSION=6 -DBUILD_WITH_QT6=ON -DEXCLUDE_DEPRECATED_BEFORE_AND_AT=5.94.0)
 endif()
 
-InstallKF5Component(extra-cmake-modules ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF5Component(extra-cmake-modules ${KF5_VERSION} "${Qt6CommonOptions}"                       "extracmakemodules-compiler-options.patch")
 InstallKF5Component(kconfig             ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
 InstallKF5Component(breeze-icons        ${KF5_VERSION} "${Qt6CommonOptions};${BreezeIconsOptions}" "breeze-dropsvg-rccprefix.patch")
 InstallKF5Component(solid               ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
