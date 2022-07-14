@@ -119,8 +119,8 @@ void CopyOrMoveJob::run()
                     {
                         Q_EMIT signalError(i18n("Could not move image %1 to collection trash.\n"
                                               "Check the file permission on the trash folder "
-                                              "\".dtrash\" in the image collection.",
-                                              srcName));
+                                              "\"%2\" in the image collection.",
+                                              srcName, DTrash::TRASH_FOLDER));
 
                         continue;
                     }
