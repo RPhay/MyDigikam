@@ -1023,6 +1023,7 @@
             <dbaction name="UpdateSchemaFromV15ToV16" mode="transaction">
                 <statement mode="plain">ALTER TABLE AlbumRoots ADD caseSensitivity INTEGER;</statement>
                 <statement mode="plain">UPDATE AlbumRoots SET status=0, caseSensitivity=0;</statement>
+                <statement mode="plain">DELETE FROM Settings WHERE keyword='Locale';</statement>
             </dbaction>
 
             <dbaction name="UpdateThumbnailsDBSchemaFromV1ToV2" mode="transaction">
@@ -2711,6 +2712,7 @@
             <dbaction name="UpdateSchemaFromV15ToV16" mode="transaction">
                 <statement mode="plain">ALTER TABLE AlbumRoots ADD caseSensitivity INTEGER;</statement>
                 <statement mode="plain">UPDATE AlbumRoots SET status=0, caseSensitivity=0;</statement>
+                <statement mode="plain">DELETE FROM Settings WHERE keyword='Locale';</statement>
             </dbaction>
 
             <dbaction name="UpdateThumbnailsDBSchemaFromV1ToV2" mode="transaction">
