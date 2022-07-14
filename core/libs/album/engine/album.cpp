@@ -36,6 +36,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "dtrash.h"
 #include "coredb.h"
 #include "coredburl.h"
 #include "coredbaccess.h"
@@ -362,7 +363,8 @@ int Album::countTrashAlbum() const
 
         if (palbum)
         {
-            QString path = palbum->folderPath() + QLatin1String(".dtrash/files");
+            QString path = palbum->folderPath() + DTrash::TRASH_FOLDER +
+                           QLatin1Char('/')     + DTrash::FILES_FOLDER;
             QDir dir(path, QLatin1String(""), QDir::Unsorted, QDir::Files);
 
             return dir.count();
