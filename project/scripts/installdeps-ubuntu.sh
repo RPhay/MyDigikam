@@ -160,6 +160,8 @@ done
 optional_packages=("ruby"
                    "subversion"
                    "valgrind"
+                   "keychain"
+                   "ssh-askpass"
                    "lzip"
                    "gzip"
                    "unzip"
