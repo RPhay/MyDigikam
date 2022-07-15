@@ -67,7 +67,7 @@ required_packages=("cmake"                   # To Compile   Source Code
                    "libqt5printsupport5"     # Qt 5 PrintSupport module
                    "libqt5svg5"              # Qt 5 Svg module
                    "libqt5webengine5"        # Qt 5 webengine module
-                   "libqt5networkauth-dev"   # Qt 5 network authentification.
+                   "libqt5networkauth5-dev"  # Qt 5 network authentification.
 
                    "libkf5config-dev"        # Configuration settings framework for Qt
                    "libkf5xmlgui-dev"        # User configurable main windows
@@ -226,6 +226,7 @@ optional_packages=("ruby"
                    "libkf5calendarcore-dev"             # >= 5.5.0
                    "libkf5akonadicontact-dev"           # >= 4.89.0
                    "libkf5doctools-dev"
+                   "libkf5filemetadata-dev"             # Files indexer engine for Plasma desktop
                     #TODO add new optional packages
                     )
 
