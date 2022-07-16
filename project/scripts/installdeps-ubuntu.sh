@@ -175,8 +175,8 @@ optional_packages=("ruby"
                    "python3-pygments"
                    "python3-bs4"
                    "python3-soupsieve"
-                   "cppcheck"
-                   "clang"
+                   "cppcheck"                           # For static analysis
+                   "clang"                              # For static analysis
                    "doxygen"
                    "kate"
                    "ktexteditor-katepart"
@@ -194,14 +194,15 @@ optional_packages=("ruby"
                    "marble-data"                        # >= 5.0
                    "libasan4"
                    "libgomp1"
-                   "llvm"
+                   "llvm"                               # For static analysis
+                   "clazy"                              # For static analysis
                    "libclang-dev"
                    "libavdevice-dev"                    # >= 3.3.x
                    "libavfilter-dev"                    # >= 3.3.x
                    "libavformat-dev"                    # >= 3.3.x
                    "libavcodec-dev"                     # >= 3.3.x
                    "libavutils-dev"                     # >= 3.3.x
-                   "libpostproc-dev"                     # >= 3.3.x
+                   "libpostproc-dev"                    # >= 3.3.x
                    "libgphoto2-dev"                     # >= 2.5
                    "libsane-dev"                        # >= 5.0.0
                    "libjasper-dev"                      # >= 1.900.1
