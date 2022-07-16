@@ -179,6 +179,11 @@ optional_packages=("ruby"
                    "clang"                              # For static analysis
                    "clang-tidy"                         # For static analysis
                    "clang-tools"                        # For static analysis
+                   "libsaxonhe-java"                    # For static analysis
+                   "libxml-perl"                        # For static analysis
+                   "libxml-libxml-perl"                 # For static analysis
+                   "libyaml-libyaml-perl"               # For static analysis
+                   "libjson-perl"                       # For static analysis
                    "doxygen"                            # For API doc
                    "graphviz"                           # For API doc
                    "kate"
