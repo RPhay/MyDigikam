@@ -178,6 +178,7 @@ optional_packages=("ruby"
                    "cppcheck"                           # For static analysis
                    "clang"                              # For static analysis
                    "clang-tidy"                         # For static analysis
+                   "clang-tools"                        # For static analysis
                    "doxygen"
                    "kate"
                    "ktexteditor-katepart"
