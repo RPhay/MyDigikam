@@ -92,4 +92,6 @@ BUGFIXES:
 071 ==> 456263 - Missing feature for searching pictures containing actual detected faces.
 072 ==> 439643 - Add count()-like condition to search.
 073 ==> 425047 - Trash icon should reflect if trash is full or empty.
-074 ==> 
+074 ==> 384820 - Allow matching library paths across different operating systems?
+075 ==> 456749 - Cross-platform filename support.
+076 ==> 

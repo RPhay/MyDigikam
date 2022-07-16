@@ -180,6 +180,10 @@ public:
         return ::qHash(m_id);
     }
 
+public:
+
+    QString         identifier;
+
 protected:
 
     int             m_id;

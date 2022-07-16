@@ -179,7 +179,6 @@ public:
 
 public:
 
-    QString identifier;
     QString specificPath;
     bool    available;
     bool    hidden;
@@ -251,8 +250,8 @@ public:
     /// Create a volume identifier based on the path only
     QString volumeIdentifier(const QString& path);
 
-    /// Create a network share identifier based on the mountpath
-    QString networkShareIdentifier(const QString& path);
+    /// Create a network share identifier based on the mountpaths
+    QString networkShareIdentifier(const QStringList& paths);
 
     /// Return the path, if location has a path-only identifier. Else returns a null string.
     QString pathFromIdentifier(const AlbumRootLocation* location);
