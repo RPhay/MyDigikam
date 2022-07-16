@@ -60,6 +60,7 @@ cppcheck -j$CPU_CORES \
          --xml-version=2 \
          --platform=unix64 \
          --enable=all \
+         --max-ctu-depth=4 \
          --report-progress \
          --suppress=*:*cimg*.h \
          --suppress=*:*libraw*.h \

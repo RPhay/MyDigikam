@@ -177,6 +177,7 @@ optional_packages=("ruby"
                    "python3-soupsieve"
                    "cppcheck"                           # For static analysis
                    "clang"                              # For static analysis
+                   "clang-tidy"                         # For static analysis
                    "doxygen"
                    "kate"
                    "ktexteditor-katepart"
