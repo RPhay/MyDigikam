@@ -52,9 +52,10 @@ echo "-------------------------------------------------------------------"
 
 # Install required dependencies to Compile And Link Source Code
 
-required_packages=("cmake"                   # To Compile   Source Code
-                   "extra-cmake-modules"     # To Compile   Source Code
-                   "build-essential"         # To Compile   Source Code
+required_packages=("cmake"                   # To Compile Source Code
+                   "generate-ninja"          # To Compile Source Code
+                   "extra-cmake-modules"     # To Compile Source Code
+                   "build-essential"         # To Compile Source Code
                    "qttools5-dev-tools"	     # To handle Qt5 configuration.
 
                    "libqt5core5a"            # Qt 5 core module
