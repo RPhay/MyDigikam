@@ -848,6 +848,23 @@ void SetupCollectionModel::deleteCollection(int internalId)
             orgItem.childs.removeAll(item.path);
             orgItem.updated = true;
         }
+        else if (!item.childs.isEmpty())
+        {
+            for (int i = 0 ; i < m_collections.count() ; ++i)
+            {
+                Item& remItem = m_collections[i];
+
+                if (remItem.orgIndex == (int)index.internalId())
+                {
+                    QModelIndex remIndex       = indexForId(i, (int)ColumnStatus);
+                    QModelIndex remParentIndex = parent(remIndex);
+
+                    beginRemoveRows(remParentIndex, remIndex.row(), remIndex.row());
+                    remItem.deleted = true;
+                    endRemoveRows();
+                }
+            }
+        }
 
         // only workaround for bug 182753
 
