@@ -179,7 +179,8 @@ optional_packages=("ruby"
                    "clang"                              # For static analysis
                    "clang-tidy"                         # For static analysis
                    "clang-tools"                        # For static analysis
-                   "doxygen"
+                   "doxygen"                            # For API doc
+                   "graphviz"                           # For API doc
                    "kate"
                    "ktexteditor-katepart"
                    "ccache"
