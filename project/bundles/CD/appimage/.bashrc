@@ -4,7 +4,7 @@
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+    . /etc/bashrc
 fi
 
 alias n='ninja -j4'
@@ -38,7 +38,7 @@ echo "$OS_NAME - $OS_ARCH - $OS_VERSION"
 if   [[ "$OS_NAME" == "ubuntu" ]] ; then
 
     # See https://askubuntu.com/questions/1209994/ssh-key-registration-not-preventing-prompting-of-password
-    ssh-add /home/$USER/.ssh/id_rsa
+    eval `ssh-add /home/$USER/.ssh/id_rsa`
 
 elif [[ "$OS_NAME" != "mageia" ]] ; then
 
