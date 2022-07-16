@@ -179,6 +179,7 @@ optional_packages=("ruby"
                    "clang"                              # For static analysis
                    "clang-tidy"                         # For static analysis
                    "clang-tools"                        # For static analysis
+                   "openjdk-18-jre"                     # For static analysis
                    "libsaxonhe-java"                    # For static analysis
                    "libxml-perl"                        # For static analysis
                    "libxml-libxml-perl"                 # For static analysis
