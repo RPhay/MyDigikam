@@ -25,6 +25,8 @@ set -eE
 trap 'PREVIOUS_COMMAND=$THIS_COMMAND; THIS_COMMAND=$BASH_COMMAND' DEBUG
 trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 
+ORIG_WD="`pwd`"
+
 # Check run-time dependencies
 
 if ! which cov-build ; then
@@ -46,7 +48,7 @@ fi
 
 echo "Check Coverity SCAN Toolkit passed..."
 
-cd ../..
+cd $ORIG_WD/../..
 
 # Manage build sub-dir
 
@@ -75,13 +77,15 @@ fi
 ./gits branch | sed -e "s/*/#/g" | sed -e "s/On:/#On:/g" | grep "#" | sed -e "s/#On:/On:/g" | sed -e "s/#/BRANCH:/g" > ./build/git_branches.txt
 desc=$(<build/git_branches.txt)
 
-cd ./build
+cd $ORIG_WD/../../build
 
 CPU_CORES=$(grep -c ^processor /proc/cpuinfo 2>/dev/null || sysctl -n hw.ncpu)
 echo "CPU cores detected to compile : $CPU_CORES."
 
 cov-build --dir cov-int --tmpdir ~/tmp make -j$CPU_CORES
 tar czvf myproject.tgz cov-int
+
+cd $ORIG_WD/../../build
 
 echo "-- SCAN Import description --"
 echo $desc
@@ -93,13 +97,12 @@ echo "-----------------------------"
 echo "Coverity Scan tarball 'myproject.tgz' uploading in progress..."
 
 # To be sure that resolve domain is in cache
-nslookup scan5.coverity.com
+nslookup scan.coverity.com
 
 # To measure uploading time
 SECONDS=0
 
 curl https://scan.coverity.com/builds?project=digiKam \
-     --insecure \
      --progress-bar \
      --verbose \
      --form token=$DKCoverityToken \
