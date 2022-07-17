@@ -1285,16 +1285,25 @@ Qt::ItemFlags SetupCollectionModel::flags(const QModelIndex& index) const
     }
     else
     {
+        Qt::ItemFlags flags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
+
         switch (index.column())
         {
             case ColumnName:
             {
-                return (Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsEditable);
+                const Item& item = m_collections.at(index.internalId());
+
+                if (item.orgIndex == -1)
+                {
+                    return (flags | Qt::ItemIsEditable);
+                }
+
+                return flags;
             }
 
             default:
             {
-                return (Qt::ItemIsEnabled | Qt::ItemIsSelectable);
+                return flags;
             }
         }
     }
