@@ -406,7 +406,8 @@ void SetupCollectionTreeView::modelLoadedCollections()
 
 SetupCollectionModel::Item::Item()
     : parentId(INTERNALID),
-      orgIndex(-1),
+      orgIndex(0),
+      appended(false),
       updated (false),
       deleted (false)
 {
@@ -414,7 +415,8 @@ SetupCollectionModel::Item::Item()
 
 SetupCollectionModel::Item::Item(const CollectionLocation& location)
     : location(location),
-      orgIndex(-1),
+      orgIndex(0),
+      appended(false),
       updated (false),
       deleted (false)
 {
@@ -425,7 +427,8 @@ SetupCollectionModel::Item::Item(const QString& path, const QString& label, Setu
     : label   (label),
       path    (path),
       parentId(category),
-      orgIndex(-1),
+      orgIndex(0),
+      appended(false),
       updated (false),
       deleted (false)
 {
@@ -481,6 +484,7 @@ void SetupCollectionModel::loadCollections()
                     {
                         Item item(location);
                         item.orgIndex = idx;
+                        item.appended = true;
                         item.path     = path;
                         m_collections << item;
                         m_collections[idx].childs << path;
@@ -502,7 +506,7 @@ void SetupCollectionModel::apply()
     {
         const Item& item = m_collections.at(i);
 
-        if      (item.orgIndex != -1)
+        if      (item.appended)
         {
             continue;
         }
@@ -683,6 +687,8 @@ void SetupCollectionModel::slotAppendPressed(int mappedId)
 
     item.orgIndex   = index.internalId();
     item.location   = orgItem.location;
+    item.appended   = true;
+
     int row         = rowCount(index);
 
     beginInsertRows(index, row, row);
@@ -813,22 +819,20 @@ void SetupCollectionModel::deleteCollection(int internalId)
 
     // Ask for confirmation
 
-    if (item.orgIndex == -1)
-    {
-
-
-        result = QMessageBox::warning(m_dialogParentWidget,
-                                      i18n("Remove Collection?"),
-                                      i18n("Do you want to remove the collection \"%1\" from your list of collections?",
-                                            label),
-                                      QMessageBox::Yes | QMessageBox::No);
-    }
-    else
+    if (item.appended)
     {
         result = QMessageBox::warning(m_dialogParentWidget,
                                       i18n("Remove Path from the Collection?"),
                                       i18n("Do you want to remove the appended path \"%1\" from the collection \"%2\"?",
                                            item.path, label),
+                                      QMessageBox::Yes | QMessageBox::No);
+    }
+    else
+    {
+        result = QMessageBox::warning(m_dialogParentWidget,
+                                      i18n("Remove Collection?"),
+                                      i18n("Do you want to remove the collection \"%1\" from your list of collections?",
+                                            label),
                                       QMessageBox::Yes | QMessageBox::No);
     }
 
@@ -840,7 +844,7 @@ void SetupCollectionModel::deleteCollection(int internalId)
         item.deleted = true;
         endRemoveRows();
 
-        if (item.orgIndex != -1)
+        if (item.appended)
         {
             Item& orgItem   = m_collections[item.orgIndex];
 
@@ -964,7 +968,7 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
             {
                 if ((role == Qt::DisplayRole) || (role == Qt::EditRole))
                 {
-                    if (item.orgIndex != -1)
+                    if (item.appended)
                     {
                         const Item& orgItem = m_collections.at(item.orgIndex);
 
@@ -1027,7 +1031,7 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
                         return QIcon::fromTheme(QLatin1String("folder-new"));
                     }
 
-                    if (item.orgIndex != -1)
+                    if (item.appended)
                     {
                         return QIcon::fromTheme(QLatin1String("mail-attachment"));
                     }
@@ -1114,8 +1118,7 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
 
                     case IsAppendRole:
                     {
-                        return ((item.location.type() == CollectionLocation::Network) &&
-                                (item.orgIndex == -1));
+                        return ((item.location.type() == CollectionLocation::Network) && !item.appended);
                     }
 
                     case AppendDecorationRole:
@@ -1143,7 +1146,7 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
 
                     case IsUpdateRole:
                     {
-                        return (item.orgIndex == -1);
+                        return (!item.appended);
                     }
 
                     case UpdateDecorationRole:
@@ -1293,12 +1296,12 @@ Qt::ItemFlags SetupCollectionModel::flags(const QModelIndex& index) const
             {
                 const Item& item = m_collections.at(index.internalId());
 
-                if (item.orgIndex == -1)
+                if (item.appended)
                 {
-                    return (flags | Qt::ItemIsEditable);
+                    return flags;
                 }
 
-                return flags;
+                return (flags | Qt::ItemIsEditable);
             }
 
             default:

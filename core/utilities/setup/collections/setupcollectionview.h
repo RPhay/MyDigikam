@@ -200,6 +200,7 @@ protected:
         QString            path;
         int                parentId;
         int                orgIndex;
+        bool               appended;
         bool               updated;
         bool               deleted;
     };
