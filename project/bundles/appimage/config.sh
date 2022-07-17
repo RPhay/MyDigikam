@@ -50,10 +50,6 @@ DK_KA_VERSION="22.04.3"
 # See official release here: https://download.kde.org/stable/frameworks/
 DK_KF5_VERSION="5.96"
 
-# ExifTool Linux version to embed in the bundle.
-DK_EXIFTOOL_VERSION="12.43"
-
-
 # Installer will include or not digiKam debug symbols
 DK_DEBUG=1
 
