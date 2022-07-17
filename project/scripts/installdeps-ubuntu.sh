@@ -249,5 +249,5 @@ done
 
 # Add symbolic links for Krazy static analyzer
 
-sudo ln -s /opt/saxon /usr/share/java
-sudo ln -s /usr/share/java/saxon9he.jar /usr/share/java/Saxon-HE.jar
+sudo ln -sf /usr/share/java              /opt/saxon
+sudo ln -sf /usr/share/java/Saxon-HE.jar /usr/share/java/saxon9he.jar
