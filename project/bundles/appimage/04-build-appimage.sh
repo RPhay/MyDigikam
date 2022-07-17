@@ -523,11 +523,11 @@ fi
 
 cd $DOWNLOAD_DIR
 
-if [ ! -f $DOWNLOAD_DIR/Image-ExifTool-$DK_EXIFTOOL_VERSION.tar.gz ] ; then
-    wget https://files.kde.org/digikam/exiftool/Image-ExifTool-$DK_EXIFTOOL_VERSION.tar.gz -O Image-ExifTool-$DK_EXIFTOOL_VERSION.tar.gz
-fi
+#if [ ! -f $DOWNLOAD_DIR/Image-ExifTool.tar.gz ] ; then
+    wget https://files.kde.org/digikam/exiftool/Image-ExifTool.tar.gz -O Image-ExifTool.tar.gz
+#fi
 
-tar -xvf $DOWNLOAD_DIR/Image-ExifTool-$DK_EXIFTOOL_VERSION.tar.gz -C $APP_IMG_DIR/usr/bin
+tar -xvf $DOWNLOAD_DIR/Image-ExifTool.tar.gz -C $APP_IMG_DIR/usr/bin
 
 #################################################################################################
 

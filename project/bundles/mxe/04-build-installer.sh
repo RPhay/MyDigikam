@@ -241,13 +241,13 @@ fi
 #################################################################################################
 # Install ExifTool binary.
 
-    cd $DOWNLOAD_DIR
+cd $DOWNLOAD_DIR
 
-if [ ! -f $DOWNLOAD_DIR/exiftool-$DK_EXIFTOOL_VERSION.zip ] ; then
-    wget https://sourceforge.net/projects/exiftool/files/exiftool-$DK_EXIFTOOL_VERSION.zip/download -O exiftool-$DK_EXIFTOOL_VERSION.zip
-fi
+#if [ ! -f $DOWNLOAD_DIR/exiftool.zip ] ; then
+    wget https://files.kde.org/digikam/exiftool/exiftool.zip -O exiftool.zip
+#fi
 
-unzip -o $DOWNLOAD_DIR/exiftool-$DK_EXIFTOOL_VERSION.zip -d $BUNDLEDIR
+unzip -o $DOWNLOAD_DIR/exiftool.zip -d $BUNDLEDIR
 mv "$BUNDLEDIR/exiftool(-k).exe" "$BUNDLEDIR/exiftool.exe"
 
 #################################################################################################
