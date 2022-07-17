@@ -7,6 +7,7 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
+alias ll='ls -al'
 alias n='ninja -j4'
 alias m='make -j4'
 alias v='valgrind --tool=memcheck --leak-check=full --error-limit=no '
@@ -38,7 +39,7 @@ echo "$OS_NAME - $OS_ARCH - $OS_VERSION"
 if   [[ "$OS_NAME" == "ubuntu" ]] ; then
 
     # See https://askubuntu.com/questions/1209994/ssh-key-registration-not-preventing-prompting-of-password
-    eval `ssh-add /home/$USER/.ssh/id_rsa`
+    ssh-add /home/$USER/.ssh/id_rsa
 
 elif [[ "$OS_NAME" != "mageia" ]] ; then
 
@@ -52,7 +53,7 @@ export QT_LOGGING_RULES="digikam*=true"
 export DKCoverityToken=ZDkme4CZ
 export DKCoverityEmail=caulier.gilles@gmail.com
 
-PATH=$PATH:~/Documents/scripts:/opt/cov-analysis-linux64-2020.09/bin:/opt/krazy/bin
+PATH=$PATH:~/Documents/scripts:/opt/cov-analysis-linux64-2021.12.1/bin:/opt/krazy/bin
 export PATH
 
 dkfrmcode()
