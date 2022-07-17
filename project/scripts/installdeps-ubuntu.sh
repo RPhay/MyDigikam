@@ -2,10 +2,11 @@
 
 # Script to install dependencies under Ubuntu Linux to compile digiKam.
 # This script must be run as sudo
-# Ubuntu compatible version >= 18.04
+# *Ubuntu* compatible version >= 18.04
 #
-# Copyright (c) 2021 by TRAN Quoc Hung <quochungtran1999 at gmail dot com>
-# Copyright (c) 2021 by Surya K M      <suryakm_is20 dot rvitm@rvei dot edu dot in>
+# Copyright (c) 2021      by TRAN Quoc Hung <quochungtran1999 at gmail dot com>
+# Copyright (c) 2021      by Surya K M      <suryakm_is20 dot rvitm@rvei dot edu dot in>
+# Copyright (c) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
@@ -55,7 +56,7 @@ required_packages=("cmake"                   # To Compile Source Code
                    "ninja-build"             # To Compile Source Code
                    "extra-cmake-modules"     # To Compile Source Code
                    "build-essential"         # To Compile Source Code
-                   "qttools5-dev-tools"	     # To handle Qt5 configuration.
+                   "qttools5-dev-tools"      # To handle Qt5 configuration.
 
                    "libqt5core5a"            # Qt 5 core module
                    "libqt5gui5"              # Qt 5 Gui module
@@ -153,59 +154,58 @@ for pkg in ${required_packages[@]}; do
 
 done
 
-
-
 # Install optional dependencies to Compile And Link Source Code
 
-optional_packages=("ruby"
-                   "subversion"
-                   "valgrind"
-                   "keychain"
-                   "ssh-askpass"
-                   "lzip"
-                   "gzip"
-                   "unzip"
-                   "gperf"
-                   "intltool"
-                   "unrar"
-                   "scons"
-                   "icoutils"
-                   "gcc-mingw-w64"
-                   "python3-mako"
-                   "python3-pygments"
-                   "python3-bs4"
-                   "python3-soupsieve"
+optional_packages=("ruby"                               # For i18n extraction
+                   "subversion"                         # For i18n extraction
+                   "valgrind"                           # For debuging
+                   "keychain"                           # For git-ssh
+                   "ssh-askpass"                        # For git-ssh
+                   "lzip"                               # For CI/CD
+                   "gzip"                               # For CI/CD
+                   "unzip"                              # For CI/CD
+                   "unrar"                              # For CI/CD
+                   "gperf"                              # For MXE build
+                   "intltool"                           # For MXE build
+                   "scons"                              # For MXE build
+                   "icoutils"                           # For MXE build
+                   "gcc-mingw-w64"                      # For MXE build
+                   "python3-mako"                       # For MXE build
+                   "python3-pygments"                   # For Cppcheck static analysis
+                   "python3-bs4"                        # For Clazy static analysis
+                   "python3-soupsieve"                  # For Clazy static analisys
                    "cppcheck"                           # For static analysis
                    "clang"                              # For static analysis
                    "clang-tidy"                         # For static analysis
                    "clang-tools"                        # For static analysis
+                   "libasan4"                           # For static analysis
                    "openjdk-18-jre"                     # For static analysis
                    "libsaxonhe-java"                    # For static analysis
                    "libxml-perl"                        # For static analysis
                    "libxml-libxml-perl"                 # For static analysis
                    "libyaml-libyaml-perl"               # For static analysis
                    "libjson-perl"                       # For static analysis
+                   "llvm"                               # For static analysis
+                   "clazy"                              # For static analysis
+                   "libclang-dev"                       # For static analysis
                    "doxygen"                            # For API doc
                    "graphviz"                           # For API doc
-                   "kate"
-                   "ktexteditor-katepart"
-                   "ccache"
-                   "hugin"
-                   "bison"                              # >= 2.5.0
-                   "flex"                               # >= 2.5.0
-                   "wget"
-                   "coreutils"
-                   "dmg2img"
-                   "tesseract-ocr"
+                   "kate"                               # For debuging
+                   "ktexteditor-katepart"               # For debuging
+                   "ccache"                             # For compiling
+                   "hugin"                              # For run-time processing
+                   "bison"                              # For Qt build (>= 2.5.0)
+                   "flex"                               # For compiling (>= 2.5.0)
+                   "curl"                               # For CI/CD
+                   "wget"                               # For CI/CD
+                   "coreutils"                          # For CI/CD
+                   "dmg2img"                            # For CI/CD (MacOS)
+                   "tesseract-ocr"                      # For CI/CD (MacOS)
                    "libeigen3-dev"                      # >= 3.2
                    "liblensfun-dev"                     # >= 0.2.8
                    "libmarble-dev"                      # >= 0.22
                    "marble-data"                        # >= 5.0
-                   "libasan4"
-                   "libgomp1"
-                   "llvm"                               # For static analysis
-                   "clazy"                              # For static analysis
-                   "libclang-dev"
+                   "libgomp1"                           # For Libraw compilation
                    "libavdevice-dev"                    # >= 3.3.x
                    "libavfilter-dev"                    # >= 3.3.x
                    "libavformat-dev"                    # >= 3.3.x
@@ -220,8 +220,7 @@ optional_packages=("ruby"
                    "libxml2-dev"                        # >= 2.7.0
                    "libtiff-dev"                        # >= 4.0
                    "liblqr-dev"                         # >= 0.4.2
-                   "fftw-dev"
-                   "curl"
+                   "fftw-dev"                           # For GMic-Qt compilation
                    "libx265-dev"                        # >= 2.2
                    "libmagick++-dev"                    # >= 6.7.0
                    "libqt5x11extras5-dev"               # >= 5.9
@@ -247,3 +246,8 @@ for pkg in ${optional_packages[@]}; do
     sudo apt-get install -y ${pkg}
     echo "-------------------------------------------------------------------"
 done
+
+# Add symbolic links for Krazy static analyzer
+
+ln -s /opt/saxon /usr/share/java
+ln -s /usr/share/java/saxon9he.jar /usr/share/java/Saxon-HE.jar
