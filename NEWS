@@ -95,4 +95,5 @@ BUGFIXES:
 073 ==> 425047 - Trash icon should reflect if trash is full or empty.
 074 ==> 384820 - Allow matching library paths across different operating systems?
 075 ==> 456749 - Cross-platform filename support.
-076 ==> 
+076 ==> 424965 - Provide UI for Database Network Share for multiple mountpaths.
+077 ==> 
