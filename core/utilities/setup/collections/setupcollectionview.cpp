@@ -962,6 +962,11 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
     {
         const Item& item = m_collections.at(index.internalId());
 
+        if ((role == Qt::BackgroundRole) && item.appended)
+        {
+             return QPalette().alternateBase().color();
+        }
+
         switch (index.column())
         {
             case ColumnName:
