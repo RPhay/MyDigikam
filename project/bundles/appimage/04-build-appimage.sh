@@ -620,7 +620,7 @@ fi
 
 chmod a+x ./$APPIMGBIN
 
-ARCH=x86_64 ./$APPIMGBIN $APP_IMG_DIR/ $ORIG_WD/bundle/$APPIMAGE
+ARCH=x86_64 ./$APPIMGBIN --comp xz $APP_IMG_DIR/ $ORIG_WD/bundle/$APPIMAGE
 chmod a+rwx $ORIG_WD/bundle/$APPIMAGE
 
 #################################################################################################
