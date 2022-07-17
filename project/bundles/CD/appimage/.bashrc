@@ -39,7 +39,13 @@ echo "$OS_NAME - $OS_ARCH - $OS_VERSION"
 if   [[ "$OS_NAME" == "ubuntu" ]] ; then
 
     # See https://askubuntu.com/questions/1209994/ssh-key-registration-not-preventing-prompting-of-password
-    ssh-add /home/$USER/.ssh/id_rsa
+    #     https://stackoverflow.com/questions/3466626/how-to-permanently-add-a-private-key-with-ssh-add-on-ubuntu
+
+    added_keys=`ssh-add -l`
+
+    if [ ! $(echo $added_keys | grep -o -e "$HOME/.ssh/id_rsa") ] ; then
+        ssh-add "$HOME/.ssh/id_rsa" &
+    fi
 
 elif [[ "$OS_NAME" != "mageia" ]] ; then
 
