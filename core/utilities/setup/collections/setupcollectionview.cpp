@@ -465,7 +465,7 @@ void SetupCollectionModel::loadCollections()
     Q_FOREACH (const CollectionLocation& location, locations)
     {
         m_collections << Item(location);
-        int oidx = m_collections.size() - 1;
+        int idx = m_collections.size() - 1;
 
         if (location.type() == CollectionLocation::Network)
         {
@@ -473,17 +473,17 @@ void SetupCollectionModel::loadCollections()
 
             if (url.scheme() == QLatin1String("networkshareid"))
             {
-                QStringList anotherPaths(QUrlQuery(url).allQueryItemValues(QLatin1String("mountpath")));
+               QUrlQuery q(url);
 
-                Q_FOREACH (const QString& path, anotherPaths)
+                Q_FOREACH (const QString& path, q.allQueryItemValues(QLatin1String("mountpath")))
                 {
                     if (location.albumRootPath() != path)
                     {
                         Item item(location);
-                        item.orgIndex = oidx;
+                        item.orgIndex = idx;
                         item.path     = path;
                         m_collections << item;
-                        m_collections[oidx].childs << path;
+                        m_collections[idx].childs << path;
                     }
                 }
             }
@@ -590,9 +590,10 @@ void SetupCollectionModel::apply()
             newType = CollectionLocation::Network;
         }
 
+        QStringList pathList;
+        pathList << item.path << item.childs;
         location    = CollectionManager::instance()->refreshLocation(item.location, newType,
-                                                                     QStringList() << item.path
-                                                                                   << item.childs, item.label);
+                                                                     pathList, item.label);
 
         if (location.isNull())
         {
