@@ -223,28 +223,45 @@ void AlbumModificationHelper::slotAlbumDelete(PAlbum* album)
 
         CoreDbAccess().db()->getFilterSettings(&imageTypes, &videoTypes, &audioTypes);
         allTypes << imageTypes << audioTypes << videoTypes;
+        bool notEmpty = false;
 
         while (it.hasNext())
         {
             it.next();
             QString ext = it.fileInfo().suffix().toLower();
 
-            if (!allTypes.contains(ext) && !foundTypes.contains(ext))
+            if      (!allTypes.contains(ext) && !foundTypes.contains(ext))
             {
                 foundTypes << ext;
             }
+            else if (allTypes.contains(ext) && !notEmpty)
+            {
+                notEmpty = true;
+            }
         }
 
-        if (!foundTypes.isEmpty())
+        if      (!foundTypes.isEmpty())
         {
             foundTypes.sort();
 
             QString found = foundTypes.join(QLatin1String(", "));
 
             int result    = QMessageBox::warning(qApp->activeWindow(), qApp->applicationName(),
-                                                 i18n("<p>The folder you want to delete contains files "
+                                                 i18n("<p>The album you want to delete contains files "
                                                       "(%1) which are not displayed in digiKam.</p>"
                                                       "<p>Do you want to continue?</p>", found),
+                                                 QMessageBox::Yes | QMessageBox::No);
+
+            if (result != QMessageBox::Yes)
+            {
+                return;
+            }
+        }
+        else if (notEmpty)
+        {
+            int result    = QMessageBox::warning(qApp->activeWindow(), qApp->applicationName(),
+                                                 i18n("<p>The album you want to delete is not empty.</p>"
+                                                      "<p>Do you want to continue?</p>"),
                                                  QMessageBox::Yes | QMessageBox::No);
 
             if (result != QMessageBox::Yes)
