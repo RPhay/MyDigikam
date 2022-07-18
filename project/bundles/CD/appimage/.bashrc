@@ -10,6 +10,7 @@ fi
 alias ll='ls -al'
 alias n='ninja -j4'
 alias m='make -j4'
+alias f='sudo make install/fast'
 alias v='valgrind --tool=memcheck --leak-check=full --error-limit=no '
 alias g='gdb --ex=r --args '
 alias i='krazy2 --check i18ncheckarg '
