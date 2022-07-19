@@ -40,6 +40,13 @@ sudo apt-get upgrade
 sudo apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
 sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
 
+# To fix GPP key error with some reporsitories
+# See: https://www.skyminds.net/linux-resoudre-les-erreurs-communes-de-cle-gpg-dans-apt/
+
+sudo apt-get update 2>&1 | \
+    sed -ne 's?^.*NO_PUBKEY ??p' | \
+    xargs -r -- sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys
+
 # Install dependencies to Checkout Source Code
 
 sudo apt-get install -y git
