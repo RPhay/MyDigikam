@@ -201,6 +201,7 @@ optional_packages=("ruby"                               # For i18n extraction
                    "ktexteditor-katepart"               # For debuging
                    "ccache"                             # For compiling
                    "hugin"                              # For run-time processing
+                   "exiftool"                           # For metadata processing
                    "bison"                              # For Qt build (>= 2.5.0)
                    "flex"                               # For compiling (>= 2.5.0)
                    "curl"                               # For CI/CD

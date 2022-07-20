@@ -96,6 +96,26 @@ ExifToolConfPanel::ExifToolConfPanel(QWidget* const parent)
     d->exifToolBinWidget         = new DBinarySearch(this);
     d->exifToolBinWidget->addBinary(d->exifToolBin);
 
+#ifdef Q_OS_LINUX
+
+    // ExifTool for Linux is hosted in the AppImage
+
+    d->exifToolBinWidget->addDirectory(QCoreApplication::applicationFilePath() + QLatin1String("/Image-ExifTool/"));
+
+    // Native version must be here.
+
+    d->exifToolBinWidget->addDirectory(QLatin1String("/usr/bin"));
+
+#endif
+
+#ifdef Q_OS_WIN
+
+    // ExifTool for Windows is hosted in the bundle
+
+    d->exifToolBinWidget->addDirectory(QCoreApplication::applicationFilePath());
+
+#endif
+
     QGroupBox* const exifToolBox = new QGroupBox(i18nc("@title: group", "Supported File Formats"), this);
     d->exifToolFormats           = new QTreeWidget(exifToolBox);
     d->exifToolFormats->setRootIsDecorated(false);
