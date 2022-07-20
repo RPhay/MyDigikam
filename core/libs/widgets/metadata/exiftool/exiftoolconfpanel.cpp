@@ -98,8 +98,21 @@ ExifToolConfPanel::ExifToolConfPanel(QWidget* const parent)
 
 #ifdef Q_OS_LINUX
 
+    // ExifTool for Linux is hosted in the AppImage
+
     d->exifToolBinWidget->addDirectory(QCoreApplication::applicationFilePath() + QLatin1String("/Image-ExifTool/"));
+
+    // Native version must be here.
+
     d->exifToolBinWidget->addDirectory(QLatin1String("/usr/bin"));
+
+#endif
+
+#ifdef Q_OS_WIN
+
+    // ExifTool for Windows is hosted in the bundle
+
+    d->exifToolBinWidget->addDirectory(QCoreApplication::applicationFilePath());
 
 #endif
 
