@@ -79,7 +79,7 @@ return 0;
 
     if(NOT HAVE_LQR_LIBS)
 
-        message(ERROR "Cannot link with LQR-1 libraries")
+        message(STATUS "Cannot link with LQR-1 libraries")
         set(LQR-1_FOUND FALSE)
 
     endif()
