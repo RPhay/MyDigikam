@@ -64,6 +64,26 @@ return 0;
 
     FIND_PACKAGE_HANDLE_STANDARD_ARGS(LQR-1 DEFAULT_MSG LQR-1_INCLUDE_DIRS LQR-1_LIBRARIES)
 
+    # Second check to validate linking stage
+
+    set(CMAKE_REQUIRED_LIBRARIES "${LQR-1_LIBRARIES}")
+    CHECK_CXX_SOURCE_COMPILES("
+#include <lqr.h>
+
+int main()
+{
+LqrImageType t = LQR_RGB_IMAGE;
+return 0;
+}
+" HAVE_LQR_LIBS)
+
+    if(NOT HAVE_LQR_LIBS)
+
+        message(ERROR "Cannot link with LQR-1 libraries")
+        set(LQR-1_FOUND FALSE)
+
+    endif()
+
     # Show the LQR-1_INCLUDE_DIRS and LQR-1_LIBRARIES variables only in the advanced view
 
     mark_as_advanced(LQR-1_INCLUDE_DIRS LQR-1_LIBRARIES)
