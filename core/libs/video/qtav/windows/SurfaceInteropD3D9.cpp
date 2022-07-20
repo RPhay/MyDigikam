@@ -206,12 +206,15 @@ void* SurfaceInterop::mapToHost(const VideoFormat& format, void* handle, int pla
         ScopedD3DLock(IDirect3DSurface9* const d3d, D3DLOCKED_RECT* const rect)
             : mpD3D(d3d)
         {
-            if (FAILED(mpD3D->LockRect(rect, nullptr, D3DLOCK_READONLY)))
+            if (mpD3D)
             {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-                    << QString::asprintf("Failed to lock surface");
+                if (FAILED(mpD3D->LockRect(rect, nullptr, D3DLOCK_READONLY)))
+                {
+                    qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                        << QString::asprintf("Failed to lock surface");
 
-                mpD3D = nullptr;
+                    mpD3D = nullptr;
+                }
             }
         }
 

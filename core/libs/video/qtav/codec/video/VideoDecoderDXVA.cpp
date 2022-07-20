@@ -299,10 +299,15 @@ VideoFrame VideoDecoderDXVA::frame()
         ScopedD3DLock(IDirect3DSurface9* d3d, D3DLOCKED_RECT* rect)
             : mpD3D(d3d)
         {
-            if (FAILED(mpD3D->LockRect(rect, nullptr, D3DLOCK_READONLY)))
+            if (mpD3D)
             {
-                qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote() << QString::asprintf("Failed to lock surface");
-                mpD3D = 0;
+                if (FAILED(mpD3D->LockRect(rect, nullptr, D3DLOCK_READONLY)))
+                {
+                    qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+                        << QString::asprintf("Failed to lock surface");
+
+                    mpD3D = nullptr;
+                }
             }
         }
 
