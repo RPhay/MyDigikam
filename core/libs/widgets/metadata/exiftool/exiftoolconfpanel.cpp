@@ -93,17 +93,18 @@ ExifToolConfPanel::ExifToolConfPanel(QWidget* const parent)
     exifToolBinLabel->setWordWrap(true);
     exifToolBinLabel->setOpenExternalLinks(true);
 
-#ifdef Q_OS_LINUX
-
-    d->dbBinariesWidget->addDirectory(QCoreApplication::applicationFilePath());
-//    d->dbBinariesWidget->addDirectory(QLatin1String("/usr/bin"));
-
-#endif
 
     QCoreApplication::applicationFilePath()
 
     d->exifToolBinWidget         = new DBinarySearch(this);
     d->exifToolBinWidget->addBinary(d->exifToolBin);
+
+#ifdef Q_OS_LINUX
+
+    d->exifToolBinWidget->addDirectory(QCoreApplication::applicationFilePath() + QLatin1String("/Image-ExifTool/"));
+    d->exifToolBinWidget->addDirectory(QLatin1String("/usr/bin"));
+
+#endif
 
     QGroupBox* const exifToolBox = new QGroupBox(i18nc("@title: group", "Supported File Formats"), this);
     d->exifToolFormats           = new QTreeWidget(exifToolBox);
