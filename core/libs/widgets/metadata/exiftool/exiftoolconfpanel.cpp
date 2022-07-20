@@ -93,6 +93,15 @@ ExifToolConfPanel::ExifToolConfPanel(QWidget* const parent)
     exifToolBinLabel->setWordWrap(true);
     exifToolBinLabel->setOpenExternalLinks(true);
 
+#ifdef Q_OS_LINUX
+
+    d->dbBinariesWidget->addDirectory(QCoreApplication::applicationFilePath());
+//    d->dbBinariesWidget->addDirectory(QLatin1String("/usr/bin"));
+
+#endif
+
+    QCoreApplication::applicationFilePath()
+
     d->exifToolBinWidget         = new DBinarySearch(this);
     d->exifToolBinWidget->addBinary(d->exifToolBin);
 
