@@ -957,8 +957,8 @@ bool VideoDecoderCUDAPrivate::createCUVIDParser()
             extra_parser_info.format.seqhdr_data_length = codec_ctx->extradata_size;
             memcpy(extra_parser_info.raw_seqhdr_data,
                    codec_ctx->extradata,
-                   FFMIN(sizeof(extra_parser_info.raw_seqhdr_data),
-                   codec_ctx->extradata_size));
+                   FFMIN((unsigned int)sizeof(extra_parser_info.raw_seqhdr_data),
+                         (unsigned int)codec_ctx->extradata_size));
         }
     }
 
@@ -977,9 +977,9 @@ bool VideoDecoderCUDAPrivate::createCUVIDParser()
     // lavfilter: cuStreamCreate
 
     force_sequence_update = true;
-
-    //DecodeSequenceData()
-
+/*
+    DecodeSequenceData()
+*/
     return true;
 }
 
