@@ -122,6 +122,7 @@ BorderFilter::BorderFilter(DImg* image, QObject* const parent, const BorderConta
 BorderFilter::~BorderFilter()
 {
     cancelFilter();
+
     delete d;
 }
 
@@ -137,7 +138,7 @@ void BorderFilter::filterImage()
     switch (d->settings.borderType)
     {
         case BorderContainer::SolidBorder:
-
+        {
             if (d->settings.preserveAspectRatio)
             {
                 solid(m_orgImage, m_destImage, d->solidColor, d->borderMainWidth);
@@ -148,9 +149,10 @@ void BorderFilter::filterImage()
             }
 
             break;
+        }
 
         case BorderContainer::NiepceBorder:
-
+        {
             if (d->settings.preserveAspectRatio)
             {
                 niepce(m_orgImage, m_destImage, d->niepceBorderColor, d->borderMainWidth,
@@ -163,9 +165,10 @@ void BorderFilter::filterImage()
             }
 
             break;
+        }
 
         case BorderContainer::BeveledBorder:
-
+        {
             if (d->settings.preserveAspectRatio)
             {
                 bevel(m_orgImage, m_destImage, d->bevelUpperLeftColor,
@@ -178,6 +181,7 @@ void BorderFilter::filterImage()
             }
 
             break;
+        }
 
         case BorderContainer::PineBorder:
         case BorderContainer::WoodBorder:
@@ -195,7 +199,7 @@ void BorderFilter::filterImage()
         case BorderContainer::GraniteBorder:
         case BorderContainer::RockBorder:
         case BorderContainer::WallBorder:
-
+        {
             if (d->settings.preserveAspectRatio)
             {
                 pattern(m_orgImage, m_destImage, d->borderMainWidth,
@@ -210,6 +214,7 @@ void BorderFilter::filterImage()
             }
 
             break;
+        }
     }
 }
 
