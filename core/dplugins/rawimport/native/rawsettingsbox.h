@@ -56,7 +56,7 @@ public:
     void readSettings()                 override;
 
     void setDemosaicedImage(DImg& img);
-    void setPostProcessedImage(DImg& img);
+    void setPostProcessedImage(const DImg& img);
 
     void resetSettings()                override;
 
