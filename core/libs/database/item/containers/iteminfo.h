@@ -490,7 +490,7 @@ public:
      * You need to hold CoreDbAccess to ensure the validity.
      * For simple, cached read access see comment().
      */
-    ItemComments imageComments(CoreDbAccess& access)                                    const;
+    ItemComments imageComments(const CoreDbAccess& access)                                    const;
 
     /**
      * Retrieve the ItemCopyright object for this item.
