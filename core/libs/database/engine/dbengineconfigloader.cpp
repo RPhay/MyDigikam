@@ -128,7 +128,8 @@ DbEngineConfigSettings DbEngineConfigSettingsLoader::readDatabase(QDomElement& d
     return configElement;
 }
 
-void DbEngineConfigSettingsLoader::readDBActions(QDomElement& sqlStatementElements, DbEngineConfigSettings& configElement)
+void DbEngineConfigSettingsLoader::readDBActions(const QDomElement& sqlStatementElements,
+                                                 DbEngineConfigSettings& configElement)
 {
     QDomElement dbActionElement = sqlStatementElements.firstChildElement(QLatin1String("dbaction"));
 
@@ -195,6 +196,7 @@ bool DbEngineConfigSettingsLoader::readConfig(const QString& filepath, int xmlVe
     {
         errorMessage = i18n("The XML in the configuration file <b>%1</b> is invalid and cannot be read.", filepath);
         file.close();
+
         return false;
     }
 
