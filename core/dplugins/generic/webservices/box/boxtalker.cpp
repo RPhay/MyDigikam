@@ -216,7 +216,7 @@ void BOXTalker::slotOpenBrowser(const QUrl& url)
     QDesktopServices::openUrl(url);
 }
 
-void BOXTalker::createFolder(QString& path)
+void BOXTalker::createFolder(const QString& path)
 {
     QString name       = path.section(QLatin1Char('/'), -1);
     QString folderPath = path.section(QLatin1Char('/'), -2, -2);
