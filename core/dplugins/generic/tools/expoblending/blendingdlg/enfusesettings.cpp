@@ -262,7 +262,7 @@ EnfuseSettings EnfuseSettingsWidget::settings() const
     return settings;
 }
 
-void EnfuseSettingsWidget::readSettings(KConfigGroup& group)
+void EnfuseSettingsWidget::readSettings(const KConfigGroup& group)
 {
     d->autoLevelsCB->setChecked(group.readEntry("Auto Levels",       true));
     d->levelsInput->setValue(group.readEntry("Levels Value",         20));

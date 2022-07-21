@@ -86,7 +86,6 @@ public:
 
 // ------------------------------------------------------------------------
 
-
 class EnfuseSettingsWidget : public QWidget
 {
     Q_OBJECT
@@ -101,7 +100,7 @@ public:
 
     void           resetToDefault();
 
-    void readSettings(KConfigGroup& group);
+    void readSettings(const KConfigGroup& group);
     void writeSettings(KConfigGroup& group);
 
 private:
