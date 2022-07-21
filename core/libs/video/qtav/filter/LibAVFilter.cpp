@@ -452,7 +452,7 @@ void* LibAVFilter::pullFrameHolder()
 
 QStringList LibAVFilter::registeredFilters(int type)
 {
-    QStringList filters = QString();
+    QStringList filters = QStringList();
 
 #if QTAV_HAVE(AVFILTER)
 
