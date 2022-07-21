@@ -110,7 +110,7 @@ public:
             rotate += int(statistics->video_only.rotate);
         }
 
-        const qreal dar = (rotate % 180) ? 1.0 / outAspectRatio
+        const qreal dar = (rotate % 180) ? (1.0 / outAspectRatio)
                                          : outAspectRatio;
 /*
         qCDebug(DIGIKAM_QTAV_LOG).noquote()
@@ -126,9 +126,9 @@ public:
             const int w = qRound(dar * qreal(h));
             out_rect    = QRect((renderer_width - w) / 2, 0, w, h);
         }
-        else if (rendererAspectRatio < dar)     // cppcheck-suppress knownConditionTrueFalse
+        else
         {
-            // renderer is too high, use renderer's width
+            // rendererAspectRatio < dar : renderer is too high, use renderer's width
 
             const int w = renderer_width;
             const int h = qRound(qreal(w) / dar);
