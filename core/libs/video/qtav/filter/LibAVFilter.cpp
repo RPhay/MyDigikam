@@ -336,9 +336,9 @@ QStringList LibAVFilter::audioFilters()
     return list;
 }
 
-QString LibAVFilter::filterDescription(const QString &filterName)
+QString LibAVFilter::filterDescription(const QString& filterName)
 {
-    QString s;
+    QString s = QString();
 
 #if QTAV_HAVE(AVFILTER)
 
