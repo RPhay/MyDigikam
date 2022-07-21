@@ -407,12 +407,16 @@ void RatioCropWidget::setCenterSelection(int centerType)
     switch (centerType)
     {
         case CenterWidth:
+        {
             center.setY(d->regionSelection.center().y());
             break;
+        }
 
         case CenterHeight:
+        {
             center.setX(d->regionSelection.center().x());
             break;
+        }
     }
 
     d->regionSelection.moveCenter(center);
@@ -485,6 +489,7 @@ void RatioCropWidget::setSelectionOrientation(int orient)
     d->currentOrientation = orient;
     reverseRatioValues();
     applyAspectRatio(true);
+
     Q_EMIT signalSelectionOrientationChanged(d->currentOrientation);
 }
 
@@ -497,74 +502,102 @@ void RatioCropWidget::setSelectionAspectRatioType(int aspectRatioType)
     switch (aspectRatioType)
     {
         case RATIO01X01:
+        {
             d->currentHeightRatioValue = 1.0;
             d->currentWidthRatioValue  = 1.0;
             break;
+        }
 
         case RATIO02x01:
+        {
             d->currentHeightRatioValue = 2.0;
             d->currentWidthRatioValue  = 1.0;
             break;
+        }
 
         case RATIO02x03:
+        {
             d->currentHeightRatioValue = 2.0;
             d->currentWidthRatioValue  = 3.0;
             break;
+        }
 
         case RATIO03X01:
+        {
             d->currentHeightRatioValue = 3.0;
             d->currentWidthRatioValue  = 1.0;
             break;
+        }
 
         case RATIO03X04:
+        {
             d->currentHeightRatioValue = 3.0;
             d->currentWidthRatioValue  = 4.0;
             break;
+        }
 
         case RATIO04X01:
+        {
             d->currentHeightRatioValue = 4.0;
             d->currentWidthRatioValue  = 1.0;
             break;
+        }
 
         case RATIO04X05:
+        {
             d->currentHeightRatioValue = 4.0;
             d->currentWidthRatioValue  = 5.0;
             break;
+        }
 
         case RATIO05x07:
+        {
             d->currentHeightRatioValue = 5.0;
             d->currentWidthRatioValue  = 7.0;
             break;
+        }
 
         case RATIO07x10:
+        {
             d->currentHeightRatioValue = 7.0;
             d->currentWidthRatioValue  = 10.0;
             break;
+        }
 
         case RATIO08x05:
+        {
             d->currentHeightRatioValue = 8.0;
             d->currentWidthRatioValue  = 5.0;
             break;
+        }
 
         case RATIO16x09:
+        {
             d->currentHeightRatioValue = 16.0;
             d->currentWidthRatioValue  = 9.0;
             break;
+        }
 
         case RATIODINA0:
+        {
             d->currentHeightRatioValue = 1.0;
             d->currentWidthRatioValue  = DINA;
             break;
+        }
 
         case RATIOGOLDEN:
+        {
             d->currentHeightRatioValue = 1.0;
             d->currentWidthRatioValue  = PHI;
             break;
+        }
 
         case RATIOCURRENT:
+        {
             d->currentHeightRatioValue = d->image.height();
             d->currentWidthRatioValue  = d->image.width();
             break;
+        }
     }
 
     reverseRatioValues();
@@ -595,12 +628,14 @@ void RatioCropWidget::setSelectionAspectRatioValue(int widthRatioValue, int heig
                  (d->currentOrientation == Landscape))
         {
             d->currentOrientation = Portrait;
+
             Q_EMIT signalSelectionOrientationChanged(d->currentOrientation);
         }
         else if ((widthRatioValue > heightRatioValue) &&
                  (d->currentOrientation == Portrait))
         {
             d->currentOrientation = Landscape;
+
             Q_EMIT signalSelectionOrientationChanged(d->currentOrientation);
         }
     }
@@ -638,13 +673,19 @@ bool RatioCropWidget::preciseCropAvailable() const
         case RATIO01X01:
         case RATIODINA0:
         case RATIOGOLDEN:
+        {
             return false;
+        }
 
         case RATIOCUSTOM:
+        {
             return (d->currentWidthRatioValue != d->currentHeightRatioValue);
+        }
 
         default:
+        {
             return true;
+        }
     }
 }
 
@@ -745,13 +786,17 @@ void RatioCropWidget::applyAspectRatio(bool useHeight, bool repaintWidget)
         switch (d->currentAspectRatioType)
         {
             case RATIONONE:
+            {
                 break;
+            }
 
             default:
+            {
                 d->regionSelection.setHeight((int)
                                              rint(w * d->currentHeightRatioValue /
                                                   d->currentWidthRatioValue));
                 break;
+            }
         }
     }
     else      // Height changed.
@@ -764,13 +809,17 @@ void RatioCropWidget::applyAspectRatio(bool useHeight, bool repaintWidget)
         switch (d->currentAspectRatioType)
         {
             case RATIONONE:
+            {
                 break;
+            }
 
             default:
+            {
                 d->regionSelection.setWidth((int)
                                             rint(h * d->currentWidthRatioValue /
                                                  d->currentHeightRatioValue));
                 break;
+            }
         }
     }
 
@@ -779,20 +828,28 @@ void RatioCropWidget::applyAspectRatio(bool useHeight, bool repaintWidget)
     switch (d->currentResizing)
     {
         case Private::ResizingTopLeft:
+        {
             d->regionSelection.moveBottomRight(oldRegionSelection.bottomRight());
             break;
+        }
 
         case Private::ResizingTopRight:
+        {
             d->regionSelection.moveBottomLeft(oldRegionSelection.bottomLeft());
             break;
+        }
 
         case Private::ResizingBottomLeft:
+        {
             d->regionSelection.moveTopRight(oldRegionSelection.topRight());
             break;
+        }
 
         case Private::ResizingBottomRight:
+        {
             d->regionSelection.moveTopLeft(oldRegionSelection.topLeft());
             break;
+        }
     }
 
     if (repaintWidget)
@@ -1209,21 +1266,29 @@ QPoint RatioCropWidget::opposite() const
     switch (d->currentResizing)
     {
         case Private::ResizingTopRight:
+        {
             opp = d->regionSelection.bottomLeft();
             break;
+        }
 
         case Private::ResizingBottomLeft:
+        {
             opp = d->regionSelection.topRight();
             break;
+        }
 
         case Private::ResizingBottomRight:
+        {
             opp = d->regionSelection.topLeft();
             break;
+        }
 
         case Private::ResizingTopLeft:
         default:
+        {
             opp = d->regionSelection.bottomRight();
             break;
+        }
     }
 
     return opp;
@@ -1239,20 +1304,28 @@ void RatioCropWidget::setCursorResizing()
     switch (d->currentResizing)
     {
         case Private::ResizingTopLeft:
+        {
             setCursor(Qt::SizeFDiagCursor);
             break;
+        }
 
         case Private::ResizingTopRight:
+        {
             setCursor(Qt::SizeBDiagCursor);
             break;
+        }
 
         case Private::ResizingBottomLeft:
+        {
             setCursor(Qt::SizeBDiagCursor);
             break;
+        }
 
         case Private::ResizingBottomRight:
+        {
             setCursor(Qt::SizeFDiagCursor);
             break;
+        }
     }
 }
 
@@ -1270,6 +1343,7 @@ void RatioCropWidget::placeSelection(const QPoint& pm, bool symmetric, const QPo
             {
                 d->currentOrientation = Landscape;
                 reverseRatioValues();
+
                 Q_EMIT signalSelectionOrientationChanged(d->currentOrientation);
             }
         }
@@ -1279,6 +1353,7 @@ void RatioCropWidget::placeSelection(const QPoint& pm, bool symmetric, const QPo
             {
                 d->currentOrientation = Portrait;
                 reverseRatioValues();
+
                 Q_EMIT signalSelectionOrientationChanged(d->currentOrientation);
             }
         }
@@ -1292,7 +1367,7 @@ void RatioCropWidget::placeSelection(const QPoint& pm, bool symmetric, const QPo
     switch (d->currentResizing)
     {
         case Private::ResizingTopLeft:
-
+        {
             // Place corners to the proper position
 
             d->regionSelection.setTopLeft(pm);
@@ -1303,9 +1378,10 @@ void RatioCropWidget::placeSelection(const QPoint& pm, bool symmetric, const QPo
             }
 
             break;
+        }
 
         case Private::ResizingTopRight:
-
+        {
             d->regionSelection.setTopRight(pm);
 
             if (symmetric)
@@ -1314,9 +1390,10 @@ void RatioCropWidget::placeSelection(const QPoint& pm, bool symmetric, const QPo
             }
 
             break;
+        }
 
         case Private::ResizingBottomLeft:
-
+        {
             d->regionSelection.setBottomLeft(pm);
 
             if (symmetric)
@@ -1325,9 +1402,10 @@ void RatioCropWidget::placeSelection(const QPoint& pm, bool symmetric, const QPo
             }
 
             break;
+        }
 
         case Private::ResizingBottomRight:
-
+        {
             d->regionSelection.setBottomRight(pm);
 
             if (symmetric)
@@ -1336,6 +1414,7 @@ void RatioCropWidget::placeSelection(const QPoint& pm, bool symmetric, const QPo
             }
 
             break;
+        }
     }
 
     if (symmetric)
@@ -1360,11 +1439,17 @@ void RatioCropWidget::mousePressEvent(QMouseEvent* e)
 {
     if (e->button() == Qt::LeftButton)
     {
+
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
         QPoint pm        = QPoint(e->position().toPoint().x(), e->position().toPoint().y());
+
 #else
+
         QPoint pm        = QPoint(e->x(), e->y());
+
 #endif
+
         QPoint pmVirtual = convertPoint(pm);
         d->moving        = false;
 
@@ -1375,14 +1460,16 @@ void RatioCropWidget::mousePressEvent(QMouseEvent* e)
 
             // Find the closest corner
 
-            QPoint points[] = {
+            const QPoint points[] =
+                              {
                                 d->regionSelection.topLeft(),
                                 d->regionSelection.topRight(),
                                 d->regionSelection.bottomLeft(),
                                 d->regionSelection.bottomRight()
                               };
 
-            int resizings[] = {
+            const int resizings[] =
+                              {
                                 Private::ResizingTopLeft,
                                 Private::ResizingTopRight,
                                 Private::ResizingBottomLeft,
