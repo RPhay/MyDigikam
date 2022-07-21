@@ -541,7 +541,7 @@ static QColor stringToColor(const QString& s)
 
             if (match.captured(0) == QLatin1String("rgba") && colors.size() == 4)
             {
-                c.setAlpha(colors.at(4).toInt());
+                c.setAlpha(colors.at(3).toInt());
             }
 
             return c;
