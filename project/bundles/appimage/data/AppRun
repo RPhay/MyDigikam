@@ -45,6 +45,14 @@ fi
 # See bugs #414016, #414028, #415882, Qt fill log files with unwanted debug trace about locale rules.
 export QT_LOGGING_RULES="default*=false;"$QT_LOGGING_RULES
 
+# try to make Qt apps more "native looking" on Gtk-based desktops, if possible
+# see https://github.com/AppImage/AppImageKit/issues/977#issue-462374883
+case "${XDG_CURRENT_DESKTOP}" in
+    *GNOME*|*gnome*|*XFCE*)
+        export QT_QPA_PLATFORMTHEME=gtk2
+        ;;
+esac
+
 DIR="`dirname \"$0\"`"
 DIR="`( cd \"$DIR\" && readlink -f $(pwd) )`"
 echo "DIR: $DIR"
