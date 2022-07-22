@@ -173,14 +173,13 @@ BCGContainer BCGSettings::defaultSettings() const
     return prm;
 }
 
-void BCGSettings::readSettings(KConfigGroup& group)
+void BCGSettings::readSettings(const KConfigGroup& group)
 {
     BCGContainer prm;
     BCGContainer defaultPrm = defaultSettings();
-
-    prm.brightness = group.readEntry(d->configBrightnessAdjustmentEntry, defaultPrm.brightness);
-    prm.contrast   = group.readEntry(d->configContrastAdjustmentEntry,   defaultPrm.contrast);
-    prm.gamma      = group.readEntry(d->configGammaAdjustmentEntry,      defaultPrm.gamma);
+    prm.brightness          = group.readEntry(d->configBrightnessAdjustmentEntry, defaultPrm.brightness);
+    prm.contrast            = group.readEntry(d->configContrastAdjustmentEntry,   defaultPrm.contrast);
+    prm.gamma               = group.readEntry(d->configGammaAdjustmentEntry,      defaultPrm.gamma);
 
     setSettings(prm);
 }
