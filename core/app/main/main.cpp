@@ -200,6 +200,8 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
+    setupKSycocaDatabaseFile();
+
     // See bug #438701
 
     installQtTranslationFiles(app);

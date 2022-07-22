@@ -467,4 +467,33 @@ void installQtTranslationFiles(QApplication& app)
     }
 }
 
+void setupKSycocaDatabaseFile()
+{
+    if (isRunningInAppImageBundle())
+    {
+        QString cachePath = QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation);
+
+        if (!cachePath.isEmpty())
+        {
+            QString ksycoca;
+            QDir dir(cachePath);
+            const QFileInfoList& infoList = dir.entryInfoList(QStringList() << QLatin1String("ksycoca5*"),
+                                                              QDir::Files, QDir::Time);
+
+            if (!infoList.isEmpty())
+            {
+                ksycoca = infoList.first().absoluteFilePath();
+            }
+            else
+            {
+                ksycoca = cachePath + QLatin1String("/ksycoca5_appimage");
+            }
+
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Set KSycoca to file:" << ksycoca;
+
+            qputenv("KDESYCOCA", ksycoca.toUtf8());
+        }
+    }
+}
+
 } // namespace Digikam
