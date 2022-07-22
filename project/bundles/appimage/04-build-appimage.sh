@@ -530,6 +530,9 @@ cd $DOWNLOAD_DIR
 tar -xvf $DOWNLOAD_DIR/Image-ExifTool.tar.gz -C $APP_IMG_DIR/usr/bin
 mv $APP_IMG_DIR/usr/bin/Image-ExifTool* $APP_IMG_DIR/usr/bin/Image-ExifTool
 
+cd $APP_IMG_DIR/usr/bin
+ln -s ./Image-ExifTool/exiftool exiftool
+
 #################################################################################################
 
 cd /
