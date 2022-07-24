@@ -595,6 +595,21 @@ ln -sv "../../../digikam.app/Contents/lib/mariadb-10.5"                         
 ln -sv "../../../digikam.app/Contents/etc/mariadb-10.5"                          "$TEMPROOT/digikam.app/Contents/etc/mariadb"
 
 #################################################################################################
+# Install ExifTool binary.
+
+cd $DOWNLOAD_DIR
+
+#if [ ! -f "$DOWNLOAD_DIR/Image-ExifTool.tar.gz" ] ; then
+    wget https://files.kde.org/digikam/exiftool/Image-ExifTool.tar.gz -O Image-ExifTool.tar.gz
+#fi
+
+tar -xvf "$DOWNLOAD_DIR/Image-ExifTool.tar.gz" -C "$TEMPROOT/digikam.app/Contents/bin"
+mv "$TEMPROOT/digikam.app/Contents/bin/Image-ExifTool*" "$TEMPROOT/digikam.app/Contents/bin/Image-ExifTool"
+
+cd $TEMPROOT/digikam.app/Contents/bin
+ln -sv "./Image-ExifTool/exiftool" "exiftool"
+
+#################################################################################################
 # Build PKG file
 
 echo "---------- Create MacOS package for digiKam $DKRELEASEID"
