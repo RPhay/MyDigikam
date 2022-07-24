@@ -63,7 +63,7 @@ esac
 
 DIR="`dirname \"$0\"`"
 DIR="`( cd \"$DIR\" && readlink -f $(pwd) )`"
-echo "DIR: $DIR"
+echo "-- AppImage mounted directory: $DIR"
 export APPDIR=$DIR
 
 # Note: these variables are used in patched Qt to detect AppImage session.
