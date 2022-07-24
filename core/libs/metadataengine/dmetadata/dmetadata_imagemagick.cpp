@@ -57,6 +57,14 @@ bool DMetadata::loadUsingImageMagick(const QString& filePath)
 #ifdef HAVE_IMAGE_MAGICK
 
     QFileInfo fileInfo(filePath);
+
+    // Ignore null file size to prevent IM crash. See bug #457061
+
+    if (fileInfo.size() == 0)
+    {
+        return ret;
+    }
+
     QString rawFilesExt  = DRawDecoder::rawFiles();
     QString ext          = fileInfo.suffix().toUpper();
 
