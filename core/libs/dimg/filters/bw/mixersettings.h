@@ -53,7 +53,7 @@ public:
     MixerContainer settings()        const;
     void setSettings(const MixerContainer& settings);
 
-    void readSettings(KConfigGroup& group);
+    void readSettings(const KConfigGroup& group);
     void writeSettings(KConfigGroup& group);
 
     void loadSettings();

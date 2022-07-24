@@ -494,7 +494,7 @@ MixerContainer MixerSettings::defaultSettings() const
     return prm;
 }
 
-void MixerSettings::readSettings(KConfigGroup& group)
+void MixerSettings::readSettings(const KConfigGroup& group)
 {
     MixerContainer prm;
     MixerContainer defaultPrm = defaultSettings();

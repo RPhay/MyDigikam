@@ -54,7 +54,7 @@ public:
     BorderContainer settings()        const;
     void setSettings(const BorderContainer& settings);
 
-    void readSettings(KConfigGroup& group);
+    void readSettings(const KConfigGroup& group);
     void writeSettings(KConfigGroup& group);
 
 Q_SIGNALS:

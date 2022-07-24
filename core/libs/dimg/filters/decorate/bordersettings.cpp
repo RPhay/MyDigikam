@@ -291,7 +291,7 @@ BorderContainer BorderSettings::defaultSettings() const
     return prm;
 }
 
-void BorderSettings::readSettings(KConfigGroup& group)
+void BorderSettings::readSettings(const KConfigGroup& group)
 {
     blockSignals(true);
 

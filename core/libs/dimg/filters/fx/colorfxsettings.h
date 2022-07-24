@@ -53,7 +53,7 @@ public:
     ColorFXContainer settings()                 const;
     void setSettings(const ColorFXContainer& settings);
 
-    void readSettings(KConfigGroup& group);
+    void readSettings(const KConfigGroup& group);
     void writeSettings(KConfigGroup& group);
 
     void startPreviewFilters();
