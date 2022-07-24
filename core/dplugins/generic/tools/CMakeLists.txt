@@ -13,6 +13,7 @@ add_subdirectory(mediaserver)
 add_subdirectory(mjpegstream)
 add_subdirectory(wallpaper)
 add_subdirectory(dngconverter)      # NOTE: for Showfoto only
+add_subdirectory(ocrtextconverter)    
 
 if(LibXml2_FOUND AND LibXslt_FOUND)
     add_subdirectory(htmlgallery)

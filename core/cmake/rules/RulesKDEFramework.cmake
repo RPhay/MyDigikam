@@ -22,6 +22,7 @@ find_package(KF5 ${KF5_MIN_VERSION} QUIET
                                     ThreadWeaver                # For Panorama tool.
                                     NotifyConfig                # Plasma desktop application notify configuration.
                                     Notifications               # Plasma desktop notifications integration.
+                                    TextWidgets
 )
 
 if(ENABLE_KFILEMETADATASUPPORT)
