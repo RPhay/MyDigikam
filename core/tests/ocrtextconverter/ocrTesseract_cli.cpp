@@ -10,6 +10,7 @@
 #include <QApplication>
 #include <QDir>
 
+
 int main(int argc, char* argv[])
 {
     QProcess* const ocrProcess = new QProcess();
@@ -119,3 +120,4 @@ int main(int argc, char* argv[])
     delete ocrProcess;
     return 0;
 }
+
