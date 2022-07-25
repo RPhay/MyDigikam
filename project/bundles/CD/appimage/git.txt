@@ -5,7 +5,7 @@
 
 #git clone --progress --verbose git@invent.kde.org:graphics/digikam.git ./DKtest
 
-#git clone git@invent.kde.org:graphics/digikam.git ./7.x
+#git clone git@invent.kde.org:graphics/digikam.git ./7.x && git checkout -b qt5-maintenance remotes/origin/qt5-maintenance
 #git clone git@invent.kde.org:graphics/digikam.git ./8.x
 
 #git clone git@invent.kde.org:graphics/digikam.git ./DK.tarball
