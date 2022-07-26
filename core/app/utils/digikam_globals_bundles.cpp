@@ -477,14 +477,22 @@ void setupKSycocaDatabaseFile()
         {
             QString ksycoca;
             QDir dir(cachePath);
-            const QFileInfoList& infoList = dir.entryInfoList(QStringList() << QLatin1String("ksycoca5*"),
-                                                              QDir::Files, QDir::Time);
+            QFileInfoList infoList = dir.entryInfoList(QStringList() << QLatin1String("ksycoca5*"),
+                                                       QDir::Files, QDir::Time);
 
-            if (!infoList.isEmpty())
+            while (!infoList.isEmpty())
             {
-                ksycoca = infoList.first().absoluteFilePath();
+                QFileInfo info = infoList.takeFirst();
+
+                if (info.fileName() != QLatin1String("ksycoca5_appimage"))
+                {
+                    ksycoca = info.absoluteFilePath();
+
+                    break;
+                }
             }
-            else
+
+            if (ksycoca.isEmpty())
             {
                 ksycoca = cachePath + QLatin1String("/ksycoca5_appimage");
             }
