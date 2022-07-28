@@ -228,12 +228,13 @@ optional_packages=("ruby"                               # For i18n extraction
                    "libxml2-dev"                        # >= 2.7.0
                    "libtiff-dev"                        # >= 4.0
                    "liblqr-dev"                         # >= 0.4.2
-                   "fftw-dev"                           # For GMic-Qt compilation
+                   "libfftw3-dev"                       # For GMic-Qt compilation
                    "libx265-dev"                        # >= 2.2
                    "libmagick++-dev"                    # >= 6.7.0
                    "libqt5x11extras5-dev"               # >= 5.9
                    "libqt5test5"                        # >= 5.9
                    "libqt5xml5"                         # >= 5.9
+                   "qttools5-dev"                       # >= 5.9
                    "libqt5xmlpatterns5-dev"             # >= 5.9
                    "libqt5opengl5-dev"                  # >= 5.9
                    "libkf5sane-dev"                     # >= 5.5.0
