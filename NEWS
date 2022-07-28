@@ -99,4 +99,5 @@ BUGFIXES:
 077 ==> 310106 - MYSQL : try to access to database from two computers and collections get lost.
 078 ==> 456591 - No warning when delete folder not empty.
 079 ==> 457229 - Importing, wrong date.
-080 ==> 
+080 ==> 415536 - Rename on Import.
+081 ==> 
