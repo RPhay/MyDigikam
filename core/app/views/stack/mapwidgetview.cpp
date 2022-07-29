@@ -324,9 +324,9 @@ void MapWidgetView::slotModelChanged()
             Q_FOREACH (const QUrl& url, fileUrls)
             {
                 QDir dir(url.toLocalFile());
-                const QFileInfoList infoList = dir.entryInfoList(QStringList() << QLatin1String("*.gpx"), QDir::Files);
+                QStringList filter({QLatin1String("*.gpx")});
 
-                Q_FOREACH (const QFileInfo& finfo, infoList)
+                Q_FOREACH (const QFileInfo& finfo, dir.entryInfoList(filter, QDir::Files))
                 {
                     gpxList << QUrl::fromLocalFile(finfo.filePath());
                 }
