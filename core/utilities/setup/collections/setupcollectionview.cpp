@@ -713,10 +713,11 @@ void SetupCollectionModel::slotAppendPressed(int mappedId)
         return;
     }
 
-    Item& orgItem = m_collections[index.internalId()];
+    Item& orgItem   = m_collections[index.internalId()];
 
     Item item(curl.toLocalFile(), orgItem.label, (Category)orgItem.parentId);
-    orgItem.path    = orgItem.location.albumRootPath();
+    orgItem.path    = !orgItem.updated ? orgItem.location.albumRootPath()
+                                       : orgItem.path;
     orgItem.label   = orgItem.location.label();
     orgItem.childs << curl.toLocalFile();
     orgItem.updated = true;
