@@ -689,17 +689,9 @@ void SetupCollectionModel::slotAppendPressed(int mappedId)
                 possiblePaths << item.location.albumRootPath();
             }
 
-            Q_FOREACH (const QString& path, possiblePaths)
+            if (possiblePaths.contains(curl.toLocalFile()))
             {
-                if (curl.toLocalFile().startsWith(path))
-                {
-                    foundPath = true;
-                    break;
-                }
-            }
-
-            if (foundPath)
-            {
+                foundPath = true;
                 break;
             }
         }
