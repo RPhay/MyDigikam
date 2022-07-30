@@ -670,6 +670,50 @@ void SetupCollectionModel::slotAppendPressed(int mappedId)
         return;
     }
 
+    bool foundPath = false;
+
+    Q_FOREACH (const Item& item, m_collections)
+    {
+        if (!item.deleted)
+        {
+            QStringList possiblePaths;
+
+            possiblePaths << item.childs;
+
+            if      (!item.path.isEmpty())
+            {
+                possiblePaths << item.path;
+            }
+            else if (!item.location.isNull())
+            {
+                possiblePaths << item.location.albumRootPath();
+            }
+
+            Q_FOREACH (const QString& path, possiblePaths)
+            {
+                if (curl.toLocalFile().startsWith(path))
+                {
+                    foundPath = true;
+                    break;
+                }
+            }
+
+            if (foundPath)
+            {
+                break;
+            }
+        }
+    }
+
+    if (foundPath)
+    {
+        QMessageBox::warning(m_dialogParentWidget, i18n("Problem Appending Collection"),
+                                                   i18n("A collection with the path \"%1\" already exists.",
+                                                        QDir::toNativeSeparators(curl.toLocalFile())));
+
+        return;
+    }
+
     QModelIndex index = indexForId(mappedId, (int)ColumnStatus);
 
     if (!index.isValid() || (mappedId >= m_collections.count()))
