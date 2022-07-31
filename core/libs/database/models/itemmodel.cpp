@@ -150,6 +150,10 @@ ItemModel::ItemModel(QObject* const parent)
     : QAbstractListModel(parent),
       d                 (new Private)
 {
+    // --- NOTE: use dynamic binding as slotImageTagChange() is a virtual slot which can be re-implemented in derived classes.
+    connect(CoreDbAccess::databaseWatch(), static_cast<void (CoreDbWatch::*)(const AlbumChangeset&)>(&CoreDbWatch::albumChange),
+            this, &ItemModel::slotAlbumChange);
+
     // --- NOTE: use dynamic binding as slotImageChange() is a virtual slot which can be re-implemented in derived classes.
     connect(CoreDbAccess::databaseWatch(), static_cast<void (CoreDbWatch::*)(const ImageChangeset&)>(&CoreDbWatch::imageChange),
             this, &ItemModel::slotImageChange);
@@ -1397,6 +1401,26 @@ QModelIndex ItemModel::index(int row, int column, const QModelIndex& parent) con
 }
 
 // ------------ Database watch -------------
+
+void ItemModel::slotAlbumChange(const AlbumChangeset& changeset)
+{
+    if (d->infos.isEmpty() || !d->keepFilePathCache)
+    {
+        return;
+    }
+
+    if (changeset.operation() & AlbumChangeset::Renamed)
+    {
+        Q_FOREACH (const ItemInfo& info, d->infos)
+        {
+            if (changeset.albumId() == info.albumId())
+            {
+                d->filePathHash.remove(d->filePathHash.key(info.id()));
+                d->filePathHash[info.filePath()] = info.id();
+            }
+        }
+    }
+}
 
 void ItemModel::slotImageChange(const ImageChangeset& changeset)
 {
