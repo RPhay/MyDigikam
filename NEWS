@@ -100,4 +100,5 @@ BUGFIXES:
 078 ==> 456591 - No warning when delete folder not empty.
 079 ==> 457229 - Importing, wrong date.
 080 ==> 415536 - Rename on Import.
-081 ==> 
+081 ==> 457347 - Fix crash in qtav libavfilter with FFMPEG 5.
+082 ==> 
