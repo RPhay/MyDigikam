@@ -474,9 +474,9 @@ QStringList LibAVFilter::registeredFilters(int type)
 
 #       else // ffmpeg >= 5
 
-    void** ff         = nullptr;
+    void* ff          = nullptr;
 
-    while (f = av_filter_iterate(ff))
+    while ((f = av_filter_iterate(&ff)))
     {
 
 #       endif
