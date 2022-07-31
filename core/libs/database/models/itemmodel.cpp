@@ -150,7 +150,7 @@ ItemModel::ItemModel(QObject* const parent)
     : QAbstractListModel(parent),
       d                 (new Private)
 {
-    // --- NOTE: use dynamic binding as slotImageTagChange() is a virtual slot which can be re-implemented in derived classes.
+    // --- NOTE: use dynamic binding as slotAlbumChange() is a virtual slot which can be re-implemented in derived classes.
     connect(CoreDbAccess::databaseWatch(), static_cast<void (CoreDbWatch::*)(const AlbumChangeset&)>(&CoreDbWatch::albumChange),
             this, &ItemModel::slotAlbumChange);
 
