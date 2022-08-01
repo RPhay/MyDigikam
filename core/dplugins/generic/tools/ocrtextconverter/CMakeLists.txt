@@ -17,11 +17,16 @@ include_directories(
                     $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::TextWidgets,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:KF5::CoreAddons,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
 
 set(textconverterplugin_SRCS
-    ${CMAKE_CURRENT_SOURCE_DIR}/ocrtextedit.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ocroptions.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/textconverterplugin.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/textconverterdialog.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/textconverterlist.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/textconvertersettings.cpp
 )
 
 
@@ -33,6 +38,7 @@ target_link_libraries(textconverterbackend
                       PRIVATE
                       digikamcore
                       KF5::TextWidgets
+                      KF5::CoreAddons
 )
 
 
