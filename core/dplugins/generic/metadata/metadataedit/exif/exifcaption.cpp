@@ -30,11 +30,14 @@
 #include <QValidator>
 #include <QGridLayout>
 #include <QApplication>
-#include <QPlainTextEdit>
+#include <QTextEdit>
 
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <sonnet/spellcheckdecorator.h>
+
+using namespace Sonnet;
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -53,6 +56,7 @@ public:
         syncXMPCaptionCheck  (nullptr),
         syncIPTCCaptionCheck (nullptr),
         userCommentEdit      (nullptr),
+        spellChecker         (nullptr),
         documentNameEdit     (nullptr),
         imageDescEdit        (nullptr),
         artistEdit           (nullptr),
@@ -64,21 +68,22 @@ public:
     {
     }
 
-    QCheckBox*      documentNameCheck;
-    QCheckBox*      imageDescCheck;
-    QCheckBox*      artistCheck;
-    QCheckBox*      copyrightCheck;
-    QCheckBox*      userCommentCheck;
-    QCheckBox*      syncJFIFCommentCheck;
-    QCheckBox*      syncXMPCaptionCheck;
-    QCheckBox*      syncIPTCCaptionCheck;
+    QCheckBox*           documentNameCheck;
+    QCheckBox*           imageDescCheck;
+    QCheckBox*           artistCheck;
+    QCheckBox*           copyrightCheck;
+    QCheckBox*           userCommentCheck;
+    QCheckBox*           syncJFIFCommentCheck;
+    QCheckBox*           syncXMPCaptionCheck;
+    QCheckBox*           syncIPTCCaptionCheck;
 
-    QPlainTextEdit* userCommentEdit;
+    QTextEdit*           userCommentEdit;
+    SpellCheckDecorator* spellChecker;
 
-    QLineEdit*      documentNameEdit;
-    QLineEdit*      imageDescEdit;
-    QLineEdit*      artistEdit;
-    QLineEdit*      copyrightEdit;
+    QLineEdit*           documentNameEdit;
+    QLineEdit*           imageDescEdit;
+    QLineEdit*           artistEdit;
+    QLineEdit*           copyrightEdit;
 
     QLabel*         documentNameIcon;
     QLabel*         imageDescIcon;
@@ -132,7 +137,8 @@ EXIFCaption::EXIFCaption(QWidget* const parent)
     // --------------------------------------------------------
 
     d->userCommentCheck = new QCheckBox(i18nc("image caption", "Caption:"), this);
-    d->userCommentEdit  = new QPlainTextEdit(this);
+    d->userCommentEdit  = new QTextEdit(this);
+    d->spellChecker     = new SpellCheckDecorator(d->userCommentEdit);
     d->userCommentEdit->setWhatsThis(i18n("Enter the image's caption. "
                                           "This field is not limited. UTF8 encoding "
                                           "will be used to save the text."));

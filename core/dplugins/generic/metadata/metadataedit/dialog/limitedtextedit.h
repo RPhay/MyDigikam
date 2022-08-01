@@ -25,7 +25,7 @@
 
 // Qt includes
 
-#include <QPlainTextEdit>
+#include <QTextEdit>
 #include <QKeyEvent>
 #include <QMimeData>
 

@@ -29,16 +29,19 @@
 #include <QApplication>
 #include <QStyle>
 #include <QLineEdit>
-#include <QPlainTextEdit>
+#include <QTextEdit>
 
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <sonnet/spellcheckdecorator.h>
 
 // Local includes
 
 #include "altlangstringedit.h"
 #include "multistringsedit.h"
+
+using namespace Sonnet;
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -53,20 +56,22 @@ public:
         nicknameEdit           (nullptr),
         specialInstructionEdit (nullptr),
         identifiersEdit        (nullptr),
+        spellChecker           (nullptr),
         objectNameEdit         (nullptr)
     {
     }
 
-    QCheckBox*          nicknameCheck;
-    QCheckBox*          specialInstructionCheck;
+    QCheckBox*           nicknameCheck;
+    QCheckBox*           specialInstructionCheck;
 
-    QLineEdit*          nicknameEdit;
+    QLineEdit*           nicknameEdit;
 
-    QPlainTextEdit*     specialInstructionEdit;
+    QTextEdit*           specialInstructionEdit;
 
-    MultiStringsEdit*   identifiersEdit;
+    MultiStringsEdit*    identifiersEdit;
+    SpellCheckDecorator* spellChecker;
 
-    AltLangStringsEdit* objectNameEdit;
+    AltLangStringsEdit*  objectNameEdit;
 };
 
 XMPStatus::XMPStatus(QWidget* const parent)
@@ -95,8 +100,9 @@ XMPStatus::XMPStatus(QWidget* const parent)
     // --------------------------------------------------------
 
     d->specialInstructionCheck = new QCheckBox(i18n("Special Instructions:"), this);
-    d->specialInstructionEdit  = new QPlainTextEdit(this);
+    d->specialInstructionEdit  = new QTextEdit(this);
     d->specialInstructionEdit->setWhatsThis(i18n("Enter the editorial usage instructions."));
+    d->spellChecker            = new SpellCheckDecorator(d->specialInstructionEdit);
 
     // --------------------------------------------------------
 
@@ -110,7 +116,7 @@ XMPStatus::XMPStatus(QWidget* const parent)
     grid->setColumnStretch(2, 10);
     grid->setContentsMargins(QMargins());
     grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
 
     // --------------------------------------------------------
 
