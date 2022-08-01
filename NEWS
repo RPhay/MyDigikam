@@ -103,7 +103,7 @@ BUGFIXES:
 080 ==> 415536 - Rename on Import.
 081 ==> 457347 - Fix crash in qtav libavfilter with FFMPEG 5.
 082 ==> 402922 - Spell check.
-083 ==> 
+083 ==> 092310 - Wish: spell check support in picture comments.
 084 ==> 
 085 ==> 
 086 ==> 
