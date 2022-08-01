@@ -12,6 +12,11 @@
 
 using namespace Digikam;
 
+namespace DigikamGenericTextConverterPlugin
+{
+
+// TODO TextConverterActionData
+
 class TextConverterDialog : public DPluginDialog
 {
 
@@ -22,23 +27,46 @@ public:
     explicit TextConverterDialog(QWidget* const parent, DInfoInterface* const iface);
     ~TextConverterDialog() override;
 
-    void addItems(const QList<QUrl>& itemList);
+   void addItems(const QList<QUrl>& itemList);
 
 protected:
 
-    void closeEvent(QCloseEvent* e);
-
-public Q_SLOTS:
-
-    void slotSettingsChanged();
+    void closeEvent(QCloseEvent* e);  
 
 private: 
 
-    void saveSettings();
     void readSettings();
+    void saveSettings();
 
+    void busy(bool busy);
+/**
+    void processAll();                                        // TODO
+    void processed(const QUrl& url, const QString& tmpFile);  // TODO
+    void processingFailed(const QUrl& url, int result);       // TODO 
+
+**/
+    
     QMap<QString, QString> getValidValues(const QString& opt);
-    void setupTesseractOptionsView();
+
+
+private Q_SLOTS:
+
+    void slotDefault(); 
+    void slotClose();
+    void slotAborted();
+
+    /**
+     * Set Identity and Target file.
+     */ 
+
+    void slotSetupExifTool();
+
+/**
+    void slotStartStop();       // TODO
+    void slotThreadFinished();  // TODO
+    void slotIdentify();        // TODO
+
+**/
 
 private:
 
@@ -46,5 +74,6 @@ private:
     Private* const d;
 };
 
+} // namespace DigikamGenericTextConverterPlugin
 
 #endif // DIGIKAM_TEXT_CONVERTER_DIALOG_H

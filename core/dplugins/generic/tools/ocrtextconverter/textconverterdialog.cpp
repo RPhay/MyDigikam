@@ -15,6 +15,7 @@
 #include <QPushButton>
 #include <QCursor>
 #include <QWidget>
+#include <QProcess>
 
 // KDE includes
 
@@ -35,23 +36,23 @@
 #include "dfileoperations.h"
 #include "textconverterlist.h"
 #include "textconvertersettings.h"
+#include "ocroptions.h"
 
 using namespace Digikam;
 
+namespace DigikamGenericTextConverterPlugin
+{
 
 class TextConverterDialog::Private
 {
 public:
 
     Private()
-      : busy                             (false),
-        ocrTesseractLanguageMode         (nullptr),
-        ocrTesseractPSMMode              (nullptr),
-        ocrTesseractOEMMode              (nullptr),
-        listView                         (nullptr),
-        optionsTesseractSettingsView     (nullptr),
-        settings                         (nullptr),
-        iface                            (nullptr)
+      : busy             (false),
+        progressBar      (nullptr),
+        iface            (nullptr),
+        listView         (nullptr),
+        ocrSettings      (nullptr)
     {
     }
 
@@ -59,21 +60,15 @@ public:
 
     QStringList               fileList;
 
+    DProgressWdg*             progressBar;
+
+    // TODO Thread
+
     DInfoInterface*           iface;
 
     TextConverterList*        listView;
 
-    TextConverterSettings*    settings;
-
-    // Tesseract options 
-    
-    QWidget*            optionsTesseractSettingsView;
-
-    DComboBox*          ocrTesseractLanguageMode;
-    
-    DComboBox*          ocrTesseractPSMMode;
-
-    DComboBox*          ocrTesseractOEMMode;
+    TextConverterSettings*    ocrSettings;    
 };
 
 TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* const iface)
@@ -98,104 +93,156 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     //-------------------------------------------------------------------------------------------
 
-    QGridLayout* const mainLayout = new QGridLayout(mainWidget);
-    d->listView                   = new TextConverterList(mainWidget);
-    d->optionsTesseractSettingsView   = new QWidget(mainWidget);
-
-    setupTesseractOptionsView();
-
+    QGridLayout* const mainLayout     = new QGridLayout(mainWidget);
+    d->listView                       = new TextConverterList(mainWidget);
+    d->ocrSettings = new TextConverterSettings(this);
+    d->progressBar                    = new DProgressWdg(mainWidget);
+    d->progressBar->reset();
+    d->progressBar->hide();
 
     //-------------------------------------------------------------------------------------------
 
     mainLayout->addWidget(d->listView,                       0, 0, 5, 1);
-    mainLayout->addWidget(d->optionsTesseractSettingsView,   0, 1, 1, 1);
+    mainLayout->addWidget(d->ocrSettings,                    0, 1, 1, 1);
+    mainLayout->addWidget(d->progressBar,                    2, 1, 1, 1);
     mainLayout->setColumnStretch(0, 10);
     mainLayout->setRowStretch(4, 10);
     mainLayout->setContentsMargins(QMargins());
 
     // ---------------------------------------------------------------
+    
+    // TODO Thread operation 
 
+    // ---------------------------------------------------------------
 
+    
+    // TODO connect
+
+    connect(m_buttons->button(QDialogButtonBox::Close), SIGNAL(clicked()),
+            this, SLOT(slotClose()));
+
+    connect(d->ocrSettings, SIGNAL(TextConverterSettings::signalSettingsChanged()),
+            this, SLOT(slotIdentify()));
+
+    // ---------------------------------------------------------------
+    
     d->listView->setIface(d->iface);
     d->listView->loadImagesFromCurrentSelection();
 
+    busy(false);
     readSettings();
 }
 
-void TextConverterDialog::setupTesseractOptionsView()
+TextConverterDialog::~TextConverterDialog()
 {
-    // ------------
+    delete d;
+}
 
-    QMap<QString, QString> optionValues = getValidValues(QLatin1String("list-langs"));
-    QLabel* ocrTesseractLanguageLabel   = new QLabel(i18nc("@label", "Languages:"));
-    d->ocrTesseractLanguageMode         = new DComboBox(d->optionsTesseractSettingsView);
-    d->ocrTesseractLanguageMode->addItem(i18n("default"), QString());
-   
-    for (QMap<QString, QString>::const_iterator it =  optionValues.constBegin();
-         it != optionValues.constEnd();
-         it++)
+void TextConverterDialog::closeEvent(QCloseEvent* e)
+{
+    if (!e)
     {
-        if (!it.value().isEmpty())
-        {
-            d->ocrTesseractLanguageMode->addItem(it.value(), it.key());
-        }
-        else
-        {
-            d->ocrTesseractLanguageMode->addItem(it.key(), it.key());
-        }
-    }
-    
-    optionValues.clear();
-
-    // ------------
-
-    optionValues = getValidValues(QLatin1String("help-psm"));
-    QLabel* ocrTesseractPSMLabel  = new QLabel(i18nc("@label", "Segmentation mode:"));
-    d->ocrTesseractPSMMode        = new DComboBox(d->optionsTesseractSettingsView);
-    d->ocrTesseractPSMMode->addItem(i18n("default"), QString());
-   
-    for (QMap<QString, QString>::const_iterator it =  optionValues.constBegin();
-         it != optionValues.constEnd();
-         it++)
-    {
-        if (!it.value().isEmpty())
-        {
-            d->ocrTesseractPSMMode->addItem(it.value(), it.key());
-        } 
+        return;
     }
 
-    optionValues.clear();
- 
-    // ------------
-   
-    optionValues = getValidValues(QLatin1String("help-oem"));
-    QLabel* ocrTesseractOEMLabel  = new QLabel(i18nc("@label", "Engine mode:"));
-    d->ocrTesseractOEMMode        = new DComboBox(d->optionsTesseractSettingsView);
-    d->ocrTesseractOEMMode->addItem(i18n("default"), QString());
-   
-    for (QMap<QString, QString>::const_iterator it =  optionValues.constBegin();
-         it != optionValues.constEnd();
-         it++)
+    // Stop current conversion if necessary
+
+/**
+    if (d->busy)
     {
-        if (!it.value().isEmpty())
-        {
-            d->ocrTesseractOEMMode->addItem(it.value(), it.key());
-        } 
+        slotStartStop();
+    }
+**/
+
+    saveSettings();
+    d->listView->listView()->clear();
+    e->accept();
+}
+
+
+void TextConverterDialog::slotClose()
+{
+    // Stop current conversion if necessary
+/**
+     if (d->busy)
+    {
+        slotStartStop();
+    }
+**/
+
+    saveSettings();
+    d->listView->listView()->clear();
+    d->fileList.clear();
+    accept();
+}
+
+
+void TextConverterDialog::slotSetupExifTool()
+{
+    if (d->iface)
+    {
+        connect(d->iface, SIGNAL(signalSetupChanged()),
+                d->ocrSettings, SLOT(slotSetupChanged()));
+
+        d->iface->openSetupPage(DInfoInterface::ExifToolPage);
+    }
+}
+
+void TextConverterDialog::slotDefault()
+{
+    d->ocrSettings->setDefaultSettings();
+}
+
+void TextConverterDialog::readSettings()
+{
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(QLatin1String("OCR Tesseract Settings"));
+
+    d->ocrSettings->setLanguagesMode(group.readEntry("ocrLanguages",     int(OcrOptions::Languages::ENG)));
+    d->ocrSettings->setPSMMode(group.readEntry("PageSegmentationModes",  int(OcrOptions::PageSegmentationModes::FULLY_AUTO_PAGE)));
+    d->ocrSettings->setOEMMode(group.readEntry("EngineModes",            int(OcrOptions::EngineModes::DEFAULT)));
+}
+
+void TextConverterDialog::saveSettings()
+{
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(QLatin1String("OCR Tesseract Settings"));
+
+    group.writeEntry("ocrLanguages",              (int)d->ocrSettings->LanguagesMode());
+    group.writeEntry("PageSegmentationModes",     (int)d->ocrSettings->PSMMode());
+    group.writeEntry("EngineModes",               (int)d->ocrSettings->OEMMode());
+}
+
+void TextConverterDialog::addItems(const QList<QUrl>& itemList)
+{
+    d->listView->slotAddImages(itemList);
+}
+
+void TextConverterDialog::busy(bool busy)  
+{
+    d->busy = busy;
+
+    if (d->busy)
+    {
+        m_buttons->button(QDialogButtonBox::Ok)->setText(i18n("&Abort"));
+        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18n("Abort ocr Processing of Raw files."));
+    }
+    else
+    {
+        m_buttons->button(QDialogButtonBox::Ok)->setText(i18n("&Start OCR"));
+        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18n("Start OCR using the current settings."));
     }
 
-    optionValues.clear();
+    d->ocrSettings->setEnabled(!d->busy);
+    d->listView->listView()->viewport()->setEnabled(!d->busy);
+    d->busy ? setCursor(Qt::WaitCursor) : unsetCursor();
+}
 
-    // ------------
-
-    QGridLayout* const settingsBoxLayout = new QGridLayout(d->optionsTesseractSettingsView);
-    settingsBoxLayout->addWidget(ocrTesseractLanguageLabel,        0, 0, 1, 1);
-    settingsBoxLayout->addWidget(d->ocrTesseractLanguageMode,      0, 1, 1, 1);
-    settingsBoxLayout->addWidget(ocrTesseractPSMLabel,             1, 0, 1, 1);
-    settingsBoxLayout->addWidget(d->ocrTesseractPSMMode,           1, 1, 1, 1);
-    settingsBoxLayout->addWidget(ocrTesseractOEMLabel,             2, 0, 1, 1);
-    settingsBoxLayout->addWidget(d->ocrTesseractOEMMode,           2, 1, 1, 1);
-    settingsBoxLayout->setRowStretch(0, 10);
-    settingsBoxLayout->setContentsMargins(QMargins());
+void TextConverterDialog::slotAborted()
+{
+    d->progressBar->setValue(0);
+    d->progressBar->hide();
+    d->progressBar->progressCompleted();
 }
 
 QMap<QString, QString>  TextConverterDialog::getValidValues(const QString& opt)
@@ -229,7 +276,7 @@ QMap<QString, QString>  TextConverterDialog::getValidValues(const QString& opt)
         if (rx.indexIn(lineStr)>-1)
         {
             const QString value = rx.cap(1);
-            QString desc = rx.cap(2).simplified();
+            QString desc        = rx.cap(2).simplified();
     
             if (desc.endsWith(QLatin1Char('.')) || desc.endsWith(QLatin1Char(','))) 
                 desc.chop(1);
@@ -243,54 +290,4 @@ QMap<QString, QString>  TextConverterDialog::getValidValues(const QString& opt)
     return (result);
 }
 
-
-void TextConverterDialog::readSettings()
-{
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group(QLatin1String("OCR Settings"));
-
-    d->settings->readSettings(group);
-    d->ocrTesseractPSMMode->setCurrentIndex(d->settings->psm);
-    slotSettingsChanged();
-}
-
-void TextConverterDialog::saveSettings()
-{
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group(QLatin1String("OCR Settings"));
-    d->settings->writeSettings(group);
-    config->sync();
-}
-
-void TextConverterDialog::slotSettingsChanged()
-{
-    d->settings->psm                = (int)d->ocrTesseractPSMMode->currentIndex();
-}
-
-
-TextConverterDialog::~TextConverterDialog()
-{
-    delete d;
-}
-
-void TextConverterDialog::closeEvent(QCloseEvent* e)
-{
-    if (!e)
-    {
-        return;
-    }
-
-    // Stop current conversion if necessary
-
-/**
-    if (d->busy)
-    {
-        slotStartStop();
-    }
-**/
-
-//    saveSettings();
-//    d->listView->listView()->clear();
-    e->accept();
-}
-
+} // namespace DigikamGenericTextConverterPlugin
