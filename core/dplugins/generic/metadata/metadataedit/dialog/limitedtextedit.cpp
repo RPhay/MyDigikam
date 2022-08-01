@@ -29,6 +29,9 @@
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <sonnet/spellcheckdecorator.h>
+
+using namespace Sonnet;
 
 namespace DigikamGenericMetadataEditPlugin
 {

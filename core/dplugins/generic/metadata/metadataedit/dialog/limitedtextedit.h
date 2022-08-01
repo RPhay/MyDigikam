@@ -29,11 +29,10 @@
 #include <QKeyEvent>
 #include <QMimeData>
 
-// KDE includes
-
-#include <sonnet/spellcheckdecorator.h>
-
-using namespace Sonnet;
+namespace Sonnet
+{
+    class SpellCheckDecorator;
+}
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -60,8 +59,8 @@ protected:
 
 private:
 
-    int                  m_maxLength    = 0;
-    SpellCheckDecorator* m_spellChecker = nullptr;
+    int                          m_maxLength    = 0;
+    Sonnet::SpellCheckDecorator* m_spellChecker = nullptr;
 };
 
 } // namespace DigikamGenericMetadataEditPlugin
