@@ -104,8 +104,8 @@ BUGFIXES:
 081 ==> 457347 - Fix crash in qtav libavfilter with FFMPEG 5.
 082 ==> 402922 - Spell check.
 083 ==> 092310 - Wish: spell check support in picture comments.
-084 ==> 
-085 ==> 
+084 ==> 360954 - No spell checking when entering Tags.
+085 ==> 256471 - Add spell checking to text areas.
 086 ==> 
 087 ==> 
 088 ==> 
