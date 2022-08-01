@@ -34,7 +34,7 @@ namespace DigikamGenericMetadataEditPlugin
 {
 
 LimitedTextEdit::LimitedTextEdit(QWidget* const parent)
-    : QTextEdit(parent)
+    : QPlainTextEdit(parent)
 {
     m_spellChecker = new SpellCheckDecorator(this);
 }
@@ -74,7 +74,7 @@ void LimitedTextEdit::keyPressEvent(QKeyEvent* e)
 
     if ((m_maxLength <= 0) || (csize < m_maxLength))
     {
-        QTextEdit::keyPressEvent(e);
+        QPlainTextEdit::keyPressEvent(e);
     }
     else
     {
@@ -98,7 +98,7 @@ void LimitedTextEdit::keyPressEvent(QKeyEvent* e)
 
         if (txt.isEmpty() || delCondition || asciiCtrl)
         {
-            QTextEdit::keyPressEvent(e);
+            QPlainTextEdit::keyPressEvent(e);
         }
     }
 }
@@ -140,7 +140,7 @@ void LimitedTextEdit::insertFromMimeData(const QMimeData* source)
         }
     }
 
-    QTextEdit::insertFromMimeData(&scopy);
+    QPlainTextEdit::insertFromMimeData(&scopy);
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

@@ -29,7 +29,7 @@
 #include <QApplication>
 #include <QStyle>
 #include <QLineEdit>
-#include <QTextEdit>
+#include <QPlainTextEdit>
 
 // KDE includes
 
@@ -55,8 +55,8 @@ public:
         specialInstructionCheck(nullptr),
         nicknameEdit           (nullptr),
         specialInstructionEdit (nullptr),
-        identifiersEdit        (nullptr),
         spellChecker           (nullptr),
+        identifiersEdit        (nullptr),
         objectNameEdit         (nullptr)
     {
     }
@@ -66,10 +66,10 @@ public:
 
     QLineEdit*           nicknameEdit;
 
-    QTextEdit*           specialInstructionEdit;
+    QPlainTextEdit*      specialInstructionEdit;
+    SpellCheckDecorator* spellChecker;
 
     MultiStringsEdit*    identifiersEdit;
-    SpellCheckDecorator* spellChecker;
 
     AltLangStringsEdit*  objectNameEdit;
 };
@@ -100,7 +100,7 @@ XMPStatus::XMPStatus(QWidget* const parent)
     // --------------------------------------------------------
 
     d->specialInstructionCheck = new QCheckBox(i18n("Special Instructions:"), this);
-    d->specialInstructionEdit  = new QTextEdit(this);
+    d->specialInstructionEdit  = new QPlainTextEdit(this);
     d->specialInstructionEdit->setWhatsThis(i18n("Enter the editorial usage instructions."));
     d->spellChecker            = new SpellCheckDecorator(d->specialInstructionEdit);
 

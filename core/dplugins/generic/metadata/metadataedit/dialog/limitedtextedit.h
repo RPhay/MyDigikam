@@ -25,7 +25,7 @@
 
 // Qt includes
 
-#include <QTextEdit>
+#include <QPlainTextEdit>
 #include <QKeyEvent>
 #include <QMimeData>
 
@@ -38,7 +38,7 @@ using namespace Sonnet;
 namespace DigikamGenericMetadataEditPlugin
 {
 
-class LimitedTextEdit : public QTextEdit
+class LimitedTextEdit : public QPlainTextEdit
 {
     Q_OBJECT
 

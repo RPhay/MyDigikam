@@ -30,7 +30,7 @@
 #include <QValidator>
 #include <QGridLayout>
 #include <QApplication>
-#include <QTextEdit>
+#include <QPlainTextEdit>
 
 // KDE includes
 
@@ -77,7 +77,7 @@ public:
     QCheckBox*           syncXMPCaptionCheck;
     QCheckBox*           syncIPTCCaptionCheck;
 
-    QTextEdit*           userCommentEdit;
+    QPlainTextEdit*      userCommentEdit;
     SpellCheckDecorator* spellChecker;
 
     QLineEdit*           documentNameEdit;
@@ -85,15 +85,15 @@ public:
     QLineEdit*           artistEdit;
     QLineEdit*           copyrightEdit;
 
-    QLabel*         documentNameIcon;
-    QLabel*         imageDescIcon;
-    QLabel*         artistIcon;
-    QLabel*         copyrightIcon;
+    QLabel*              documentNameIcon;
+    QLabel*              imageDescIcon;
+    QLabel*              artistIcon;
+    QLabel*              copyrightIcon;
 };
 
 EXIFCaption::EXIFCaption(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     QGridLayout* const grid = new QGridLayout(this);
 
@@ -137,7 +137,7 @@ EXIFCaption::EXIFCaption(QWidget* const parent)
     // --------------------------------------------------------
 
     d->userCommentCheck = new QCheckBox(i18nc("image caption", "Caption:"), this);
-    d->userCommentEdit  = new QTextEdit(this);
+    d->userCommentEdit  = new QPlainTextEdit(this);
     d->spellChecker     = new SpellCheckDecorator(d->userCommentEdit);
     d->userCommentEdit->setWhatsThis(i18n("Enter the image's caption. "
                                           "This field is not limited. UTF8 encoding "
