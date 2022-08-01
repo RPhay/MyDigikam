@@ -29,10 +29,16 @@
 #include <QKeyEvent>
 #include <QMimeData>
 
+// KDE includes
+
+#include <sonnet/spellcheckdecorator.h>
+
+using namespace Sonnet;
+
 namespace DigikamGenericMetadataEditPlugin
 {
 
-class LimitedTextEdit : public QPlainTextEdit
+class LimitedTextEdit : public QTextEdit
 {
     Q_OBJECT
 
@@ -50,11 +56,12 @@ protected:
 
     void insertFromMimeData(const QMimeData* source) override;
 
-    void keyPressEvent(QKeyEvent* e) override;
+    void keyPressEvent(QKeyEvent* e)                 override;
 
 private:
 
-    int m_maxLength;
+    int                  m_maxLength    = 0;
+    SpellCheckDecorator* m_spellChecker = nullptr;
 };
 
 } // namespace DigikamGenericMetadataEditPlugin
