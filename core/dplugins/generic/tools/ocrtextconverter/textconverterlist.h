@@ -11,6 +11,10 @@
 
 using namespace Digikam;
 
+namespace DigikamGenericTextConverterPlugin
+{
+
+class TextConverterListViewItem;
 
 class TextConverterList : public DItemsList
 {
@@ -23,8 +27,9 @@ public:
      */
     enum FieldType
     {
-        IDENTIFICATION = DItemsListView::User1,
-        STATUS         = DItemsListView::User2
+        TARGETFILENAME = DItemsListView::User1,
+        IDENTIFICATION = DItemsListView::User2,
+        STATUS         = DItemsListView::User3
     };
 
 public:
@@ -32,9 +37,14 @@ public:
     explicit TextConverterList(QWidget* const parent = nullptr);
     ~TextConverterList();
 
+
+public Q_SLOTS:
+
+    void slotAddImages(const QList<QUrl>& list)    override; 
+
 protected Q_SLOTS:
 
-    void slotRemoveItems()                      override;
+    void slotRemoveItems()                         override;
 };
 
 // -------------------------------------------------------------------------
@@ -44,19 +54,26 @@ class TextConverterListViewItem : public DItemsListViewItem
 
 public:
 
-    TextConverterListViewItem(DItemsListView* const view, const QUrl& url);
+    explicit TextConverterListViewItem(DItemsListView* const view, const QUrl& url);
     ~TextConverterListViewItem();
+
+    void setDestFileName(const QString& str);
+    QString destFileName()  const;
 
     void setIdentity(const QString& str);
     QString identity()      const;
 
     void setStatus(const QString& str);
+
+    QString destPath()      const;
     
 private:
 
     class Private;
     Private* const d;
 };
+
+} // namespace DigikamGenericTextConverterPlugin
 
 
 #endif // DIGIKAM_TEXT_CONVERTER_LIST_H
