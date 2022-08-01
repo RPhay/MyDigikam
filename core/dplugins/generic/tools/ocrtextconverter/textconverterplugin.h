@@ -9,6 +9,8 @@
 
 using namespace Digikam;
 
+namespace DigikamGenericTextConverterPlugin
+{
 
 class TextConverterPlugin : public DPluginGeneric
 {
@@ -34,5 +36,7 @@ private Q_SLOTS:
 
     void slotTextConverter();
 };
+
+} // namespace DigikamGenericTextConverterPlugin
 
 #endif // DIGIKAM_OCR_TEXT_CONVERTER_PLUGIN_H

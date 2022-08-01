@@ -12,6 +12,8 @@
 
 #include "textconverterdialog.h"
 
+namespace DigikamGenericTextConverterPlugin
+{
 
 TextConverterPlugin::TextConverterPlugin(QObject* const parent)
     : DPluginGeneric(parent)
@@ -85,3 +87,4 @@ void TextConverterPlugin::slotTextConverter()
     delete dialog;
 }
 
+} // namespace DigikamGenericTextConverterPlugin
