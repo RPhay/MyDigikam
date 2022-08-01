@@ -19,17 +19,22 @@ include_directories(
                     $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::Service,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::TextWidgets,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:KF5::CoreAddons,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
 
-set(ocrTesseract_cli_SRCS
-#    ${CMAKE_CURRENT_SOURCE_DIR}/ocrTesseract_cli.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/post_processing.cpp
-)
 
-add_executable(ocrTesseract_cli ${ocrTesseract_cli_SRCS})
-
+add_executable(ocrTesseract_cli  ${CMAKE_CURRENT_SOURCE_DIR}/ocrTesseract_cli.cpp)
 target_link_libraries(ocrTesseract_cli
+
+                      textconverterbackend
+                      digikamcore
+                                            
+                      ${COMMON_TEST_LINK}
+)
+
+add_executable(ocrTesseract_regexp_test   ${CMAKE_CURRENT_SOURCE_DIR}/ocrTesseract_regexp_test.cpp)
+target_link_libraries(ocrTesseract_regexp_test
 
                       textconverterbackend
                       digikamcore
