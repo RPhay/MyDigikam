@@ -37,6 +37,14 @@
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <sonnet/spellcheckdecorator.h>
+#include <sonnet/highlighter.h>
+
+// Local includes
+
+#include "digikam_debug.h"
+
+using namespace Sonnet;
 
 namespace Digikam
 {
@@ -51,7 +59,8 @@ public:
         titleLabel      (nullptr),
         delValueButton  (nullptr),
         valueEdit       (nullptr),
-        languageCB      (nullptr)
+        languageCB      (nullptr),
+        spellChecker    (nullptr)
     {
 
         /**
@@ -262,12 +271,14 @@ public:
 
     QComboBox*                     languageCB;
 
+    SpellCheckDecorator*           spellChecker;
+
     MetaEngine::AltLangMap         values;
 };
 
 AltLangStrEdit::AltLangStrEdit(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     QGridLayout* const grid = new QGridLayout(this);
     d->titleLabel           = new QLabel(this);
@@ -276,16 +287,17 @@ AltLangStrEdit::AltLangStrEdit(QWidget* const parent)
     d->delValueButton->setToolTip(i18nc("@info: language edit dialog", "Remove entry for this language"));
     d->delValueButton->setEnabled(false);
 
-    d->languageCB = new QComboBox(this);
+    d->languageCB   = new QComboBox(this);
     d->languageCB->setSizeAdjustPolicy(QComboBox::AdjustToContents);
     d->languageCB->setWhatsThis(i18nc("@info: language edit dialog", "Select item language here."));
 
-    d->valueEdit  = new QTextEdit(this);
+    d->valueEdit    = new QTextEdit(this);
     d->valueEdit->setAcceptRichText(false);
+    d->spellChecker = new SpellCheckDecorator(d->valueEdit);
 
     // --------------------------------------------------------
 
-    grid->setAlignment( Qt::AlignTop );
+    grid->setAlignment(Qt::AlignTop);
     grid->addWidget(d->titleLabel,     0, 0, 1, 1);
     grid->addWidget(d->languageCB,     0, 2, 1, 1);
     grid->addWidget(d->delValueButton, 0, 3, 1, 1);
@@ -293,7 +305,7 @@ AltLangStrEdit::AltLangStrEdit(QWidget* const parent)
     grid->setColumnStretch(1, 10);
     grid->setContentsMargins(QMargins());
     grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
 
     loadLangAltListEntries();
 
@@ -355,6 +367,7 @@ void AltLangStrEdit::slotDeleteValue()
 {
     d->values.remove(d->currentLanguage);
     setValues(d->values);
+
     Q_EMIT signalValueDeleted(d->currentLanguage);
 }
 
@@ -374,6 +387,15 @@ void AltLangStrEdit::slotSelectionChanged()
     d->valueEdit->blockSignals(false);
 
     d->languageCB->setToolTip(d->languageCodeMap.value(d->currentLanguage));
+
+    // NOTE: if no specific language is set, spell-checker failback to auto-detection.
+
+    if (d->currentLanguage != QLatin1String("x-default"))
+    {
+        d->spellChecker->highlighter()->setCurrentLanguage(d->currentLanguage.left(2));
+    }
+
+    qCDebug(DIGIKAM_WIDGETS_LOG) << "Spell Checker Language:" << d->spellChecker->highlighter()->currentLanguage();
 
     Q_EMIT signalSelectionChanged(d->currentLanguage);
 }
@@ -464,6 +486,7 @@ void AltLangStrEdit::slotTextChanged()
         // so we have to check before marking the metadata as modified.
 
         d->values.insert(d->currentLanguage, editedText);
+
         Q_EMIT signalModified(d->currentLanguage, editedText);
     }
 }
@@ -475,6 +498,7 @@ void AltLangStrEdit::addCurrent()
     d->values.insert(d->currentLanguage, text);
     loadLangAltListEntries();
     d->delValueButton->setEnabled(true);
+
     Q_EMIT signalValueAdded(d->currentLanguage, text);
 }
 

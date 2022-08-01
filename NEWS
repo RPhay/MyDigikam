@@ -16,6 +16,7 @@ Advanced Rename: Add random text sequence numbering with option [r].
 Advanced Search: Add search for items by number of face regions.
 Advanced Search: Add search for items without face regions.
 Collections    : Add support for cross-platform network paths.
+General        : Add spell-checking in caption text widget using KF5::Sonnet component.
 
 *****************************************************************************************************
 BUGFIXES:

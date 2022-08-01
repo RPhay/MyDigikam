@@ -13,6 +13,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
                                     WindowSystem
                                     Solid
                                     I18n
+                                    Sonnet
 )
 
 find_package(KF5 ${KF5_MIN_VERSION} QUIET
