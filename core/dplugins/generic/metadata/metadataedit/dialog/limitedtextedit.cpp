@@ -29,15 +29,19 @@
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <sonnet/spellcheckdecorator.h>
+
+using namespace Sonnet;
 
 namespace DigikamGenericMetadataEditPlugin
 {
 
 LimitedTextEdit::LimitedTextEdit(QWidget* const parent)
-    : QPlainTextEdit(parent),
-      m_maxLength   (0)
+    : QPlainTextEdit(parent)
 {
+    m_spellChecker = new SpellCheckDecorator(this);
 }
+
 
 LimitedTextEdit::~LimitedTextEdit()
 {
@@ -50,7 +54,7 @@ int LimitedTextEdit::maxLength() const
 
 int LimitedTextEdit::leftCharacters() const
 {
-    int left = m_maxLength - toPlainText().length();
+    int left = (m_maxLength - toPlainText().length());
 
     return ((left > 0) ? left : 0);
 }

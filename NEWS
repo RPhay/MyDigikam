@@ -16,6 +16,7 @@ Advanced Rename: Add random text sequence numbering with option [r].
 Advanced Search: Add search for items by number of face regions.
 Advanced Search: Add search for items without face regions.
 Collections    : Add support for cross-platform network paths.
+General        : Add spell-checking in caption text widget using KF5::Sonnet component.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -101,4 +102,23 @@ BUGFIXES:
 079 ==> 457229 - Importing, wrong date.
 080 ==> 415536 - Rename on Import.
 081 ==> 457347 - Fix crash in qtav libavfilter with FFMPEG 5.
-082 ==> 
+082 ==> 402922 - Spell check.
+083 ==> 092310 - Wish: spell check support in picture comments.
+084 ==> 360954 - No spell checking when entering Tags.
+085 ==> 256471 - Add spell checking to text areas.
+086 ==> 
+087 ==> 
+088 ==> 
+089 ==> 
+090 ==> 
+091 ==> 
+092 ==> 
+093 ==> 
+094 ==> 
+095 ==> 
+096 ==> 
+097 ==> 
+098 ==> 
+099 ==> 
+100 ==> 
+101 ==> 

@@ -137,6 +137,7 @@ target_link_libraries(digikamcore
                       KF5::ConfigGui
                       KF5::XmlGui
                       KF5::I18n
+                      KF5::SonnetUi
                       KF5::Service
 
                       # Required by CImg which use pthread internally.

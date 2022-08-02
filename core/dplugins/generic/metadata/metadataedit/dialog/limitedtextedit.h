@@ -29,6 +29,11 @@
 #include <QKeyEvent>
 #include <QMimeData>
 
+namespace Sonnet
+{
+    class SpellCheckDecorator;
+}
+
 namespace DigikamGenericMetadataEditPlugin
 {
 
@@ -50,11 +55,12 @@ protected:
 
     void insertFromMimeData(const QMimeData* source) override;
 
-    void keyPressEvent(QKeyEvent* e) override;
+    void keyPressEvent(QKeyEvent* e)                 override;
 
 private:
 
-    int m_maxLength;
+    int                          m_maxLength    = 0;
+    Sonnet::SpellCheckDecorator* m_spellChecker = nullptr;
 };
 
 } // namespace DigikamGenericMetadataEditPlugin

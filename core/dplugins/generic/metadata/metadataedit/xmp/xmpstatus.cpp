@@ -34,11 +34,14 @@
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <sonnet/spellcheckdecorator.h>
 
 // Local includes
 
 #include "altlangstringedit.h"
 #include "multistringsedit.h"
+
+using namespace Sonnet;
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -52,21 +55,23 @@ public:
         specialInstructionCheck(nullptr),
         nicknameEdit           (nullptr),
         specialInstructionEdit (nullptr),
+        spellChecker           (nullptr),
         identifiersEdit        (nullptr),
         objectNameEdit         (nullptr)
     {
     }
 
-    QCheckBox*          nicknameCheck;
-    QCheckBox*          specialInstructionCheck;
+    QCheckBox*           nicknameCheck;
+    QCheckBox*           specialInstructionCheck;
 
-    QLineEdit*          nicknameEdit;
+    QLineEdit*           nicknameEdit;
 
-    QPlainTextEdit*     specialInstructionEdit;
+    QPlainTextEdit*      specialInstructionEdit;
+    SpellCheckDecorator* spellChecker;
 
-    MultiStringsEdit*   identifiersEdit;
+    MultiStringsEdit*    identifiersEdit;
 
-    AltLangStringsEdit* objectNameEdit;
+    AltLangStringsEdit*  objectNameEdit;
 };
 
 XMPStatus::XMPStatus(QWidget* const parent)
@@ -97,6 +102,7 @@ XMPStatus::XMPStatus(QWidget* const parent)
     d->specialInstructionCheck = new QCheckBox(i18n("Special Instructions:"), this);
     d->specialInstructionEdit  = new QPlainTextEdit(this);
     d->specialInstructionEdit->setWhatsThis(i18n("Enter the editorial usage instructions."));
+    d->spellChecker            = new SpellCheckDecorator(d->specialInstructionEdit);
 
     // --------------------------------------------------------
 
@@ -110,7 +116,7 @@ XMPStatus::XMPStatus(QWidget* const parent)
     grid->setColumnStretch(2, 10);
     grid->setContentsMargins(QMargins());
     grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
 
     // --------------------------------------------------------
 
