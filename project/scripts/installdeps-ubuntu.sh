@@ -165,6 +165,7 @@ done
 
 optional_packages=("ruby"                               # For i18n extraction
                    "subversion"                         # For i18n extraction
+                   "hunspell"                           # For check spelling
                    "valgrind"                           # For debuging
                    "keychain"                           # For git-ssh
                    "ssh-askpass"                        # For git-ssh
@@ -240,6 +241,7 @@ optional_packages=("ruby"                               # For i18n extraction
                    "libkf5sane-dev"                     # >= 5.5.0
                    "libkf5threadweaver-dev"             # >= 5.5.0
                    "libkf5kio-dev"                      # >= 5.5.0
+                   "libkf5sonnet-dev"                   # >= 5.5.0
                    "libkf5notifications-dev"            # >= 5.5.0
                    "libkf5notifyconfig-dev"             # >= 5.5.0
                    "libkf5filemetadata-dev"             # >= 5.5.0

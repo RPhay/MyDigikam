@@ -88,6 +88,7 @@ urpmi --auto \
       hugin                         `#  Panorama tool.` \
       bison                         `#  Panorama tool.` \
       flex                          `#  Panorama tool.` \
+      hunspell                      `#  For check spelling.` \
       wget \
       coreutils \
       cdialog \
@@ -139,6 +140,7 @@ urpmi --auto \
       lib64kf5xmlgui-devel \
       lib64kf5threadweaver-devel \
       lib64kf5kio-devel \
+      lib64kf5sonnet-devel \
       lib64kf5notifications-devel \
       lib64kf5notifyconfig-devel \
       lib64kf5filemetadata-devel \
