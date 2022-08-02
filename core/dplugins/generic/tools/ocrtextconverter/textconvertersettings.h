@@ -6,7 +6,7 @@
 #include <QWidget>
 #include <QString>
 
-// Local includes
+// KDE includes
 
 #include "digikam_export.h"
 #include "kconfiggroup.h"
