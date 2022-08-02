@@ -76,8 +76,8 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
 {
      // ------------
 
-    QLabel* ocrTesseractLanguageLabel   = new QLabel(i18nc("@label", "Languages:"));
-    d->ocrTesseractLanguageMode         = new DComboBox(this);
+    QLabel* const ocrTesseractLanguageLabel   = new QLabel(i18nc("@label", "Languages:"));
+    d->ocrTesseractLanguageMode               = new DComboBox(this);
     
     QMap<OcrOptions::Languages, QString>             langMap  = OcrOptions::languagesNames();
     QMap<OcrOptions::Languages, QString>::const_iterator it   = langMap.constBegin();
@@ -92,8 +92,8 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
     
     // ------------
 
-    QLabel* ocrTesseractPSMLabel  = new QLabel(i18nc("@label", "Segmentation mode:"));
-    d->ocrTesseractPSMMode        = new DComboBox(this);
+    QLabel* const ocrTesseractPSMLabel  = new QLabel(i18nc("@label", "Segmentation mode:"));
+    d->ocrTesseractPSMMode              = new DComboBox(this);
 
     QMap<OcrOptions::PageSegmentationModes, QString>                psmMap = OcrOptions::psmNames();
     QMap<OcrOptions::PageSegmentationModes, QString>::const_iterator it1   = psmMap.constBegin();
@@ -108,8 +108,8 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
 
     // ------------
    
-    QLabel* ocrTesseractOEMLabel  = new QLabel(i18nc("@label", "Engine mode:"));
-    d->ocrTesseractOEMMode        = new DComboBox(this);
+    QLabel* const ocrTesseractOEMLabel  = new QLabel(i18nc("@label", "Engine mode:"));
+    d->ocrTesseractOEMMode              = new DComboBox(this);
     
     QMap<OcrOptions::EngineModes, QString>                oemMap  = OcrOptions::oemNames();
     QMap<OcrOptions::EngineModes, QString>::const_iterator it2    = oemMap.constBegin();
