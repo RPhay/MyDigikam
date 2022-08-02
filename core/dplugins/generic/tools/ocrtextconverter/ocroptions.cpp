@@ -1,18 +1,3 @@
-
-// C++ includes
-
-#include <cstdio>
-
-// Qt includes
-
-#include <QFile>
-
-// KDE includes
-
-#include "digikam_debug.h"
-
-// Local includes
-
 #include "ocroptions.h"
 
 namespace Digikam
