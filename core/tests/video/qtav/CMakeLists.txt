@@ -163,3 +163,19 @@ target_compile_definitions(qtav-videowall_gui PRIVATE ${MEDIAPLAYER_DEFINITIONS}
 add_executable(qtav-window_cli ${CMAKE_CURRENT_SOURCE_DIR}/examples/window/main.cpp)
 target_link_libraries(qtav-window_cli digikamcore ${COMMON_TEST_LINK} ${MEDIAPLAYER_LIBRARIES})
 target_compile_definitions(qtav-window_cli PRIVATE ${MEDIAPLAYER_DEFINITIONS})
+
+#------------------------------------------------------------------------
+
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/tests/checkconfig_utest.cpp
+
+              NAME_PREFIX
+
+              "qtav-"
+
+              LINK_LIBRARIES
+
+              digikamcore
+              ${COMMON_TEST_LINK}
+              ${MEDIAPLAYER_LIBRARIES}
+)
+target_compile_definitions(checkconfig_utest PRIVATE ${MEDIAPLAYER_DEFINITIONS})
