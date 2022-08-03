@@ -41,3 +41,13 @@ target_link_libraries(ocrTesseract_regexp_test
                                             
                       ${COMMON_TEST_LINK}
 )
+
+
+add_executable(ocrTesseract_process   ${CMAKE_CURRENT_SOURCE_DIR}/ocrTesseract_process.cpp)
+target_link_libraries(ocrTesseract_process
+
+                      textconverterbackend
+                      digikamcore
+                                            
+                      ${COMMON_TEST_LINK}
+)

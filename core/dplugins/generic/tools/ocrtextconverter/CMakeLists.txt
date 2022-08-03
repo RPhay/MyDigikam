@@ -27,6 +27,7 @@ set(textconverterplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/textconverterdialog.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/textconverterlist.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/textconvertersettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ocrtesseractengine.cpp
 )
 
 
