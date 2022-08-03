@@ -25,19 +25,19 @@
 
 // Qt includes
 
-#include <QPlainTextEdit>
 #include <QKeyEvent>
 #include <QMimeData>
 
-namespace Sonnet
-{
-    class SpellCheckDecorator;
-}
+// Local includes
+
+#include "dtextedit.h"
+
+using namespace Digikam;
 
 namespace DigikamGenericMetadataEditPlugin
 {
 
-class LimitedTextEdit : public QPlainTextEdit
+class LimitedTextEdit : public DPlainTextEdit
 {
     Q_OBJECT
 
@@ -59,8 +59,7 @@ protected:
 
 private:
 
-    int                          m_maxLength    = 0;
-    Sonnet::SpellCheckDecorator* m_spellChecker = nullptr;
+    int m_maxLength    = 0;
 };
 
 } // namespace DigikamGenericMetadataEditPlugin

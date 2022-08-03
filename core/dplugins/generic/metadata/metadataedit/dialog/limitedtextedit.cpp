@@ -29,19 +29,14 @@
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <sonnet/spellcheckdecorator.h>
-
-using namespace Sonnet;
 
 namespace DigikamGenericMetadataEditPlugin
 {
 
 LimitedTextEdit::LimitedTextEdit(QWidget* const parent)
-    : QPlainTextEdit(parent)
+    : DPlainTextEdit(parent)
 {
-    m_spellChecker = new SpellCheckDecorator(this);
 }
-
 
 LimitedTextEdit::~LimitedTextEdit()
 {
@@ -77,7 +72,7 @@ void LimitedTextEdit::keyPressEvent(QKeyEvent* e)
 
     if ((m_maxLength <= 0) || (csize < m_maxLength))
     {
-        QPlainTextEdit::keyPressEvent(e);
+        DPlainTextEdit::keyPressEvent(e);
     }
     else
     {
@@ -101,7 +96,7 @@ void LimitedTextEdit::keyPressEvent(QKeyEvent* e)
 
         if (txt.isEmpty() || delCondition || asciiCtrl)
         {
-            QPlainTextEdit::keyPressEvent(e);
+            DPlainTextEdit::keyPressEvent(e);
         }
     }
 }
@@ -143,7 +138,7 @@ void LimitedTextEdit::insertFromMimeData(const QMimeData* source)
         }
     }
 
-    QPlainTextEdit::insertFromMimeData(&scopy);
+    DPlainTextEdit::insertFromMimeData(&scopy);
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

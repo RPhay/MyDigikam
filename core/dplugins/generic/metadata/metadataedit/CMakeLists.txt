@@ -63,5 +63,4 @@ set(metadataeditplugin_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/exif/exifeditwidget.cpp
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    MetadataEdit
                            SOURCES ${metadataeditplugin_SRCS}
-                           DEPENDS KF5::SonnetUi
 )

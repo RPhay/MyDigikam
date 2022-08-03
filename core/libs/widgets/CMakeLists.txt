@@ -10,6 +10,7 @@ APPLY_COMMON_POLICIES()
 set(libtextwidgets_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/text/modelcompleter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/searchtextbar.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/dtextedit.cpp
 )
 
 set(liblayouttools_SRCS
