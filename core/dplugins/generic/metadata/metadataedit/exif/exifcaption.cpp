@@ -30,14 +30,14 @@
 #include <QValidator>
 #include <QGridLayout>
 #include <QApplication>
-#include <QPlainTextEdit>
 
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <sonnet/spellcheckdecorator.h>
 
-using namespace Sonnet;
+// Local includes
+
+#include "dtextedit.h"
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -56,7 +56,6 @@ public:
         syncXMPCaptionCheck  (nullptr),
         syncIPTCCaptionCheck (nullptr),
         userCommentEdit      (nullptr),
-        spellChecker         (nullptr),
         documentNameEdit     (nullptr),
         imageDescEdit        (nullptr),
         artistEdit           (nullptr),
@@ -68,27 +67,26 @@ public:
     {
     }
 
-    QCheckBox*           documentNameCheck;
-    QCheckBox*           imageDescCheck;
-    QCheckBox*           artistCheck;
-    QCheckBox*           copyrightCheck;
-    QCheckBox*           userCommentCheck;
-    QCheckBox*           syncJFIFCommentCheck;
-    QCheckBox*           syncXMPCaptionCheck;
-    QCheckBox*           syncIPTCCaptionCheck;
+    QCheckBox*            documentNameCheck;
+    QCheckBox*            imageDescCheck;
+    QCheckBox*            artistCheck;
+    QCheckBox*            copyrightCheck;
+    QCheckBox*            userCommentCheck;
+    QCheckBox*            syncJFIFCommentCheck;
+    QCheckBox*            syncXMPCaptionCheck;
+    QCheckBox*            syncIPTCCaptionCheck;
 
-    QPlainTextEdit*      userCommentEdit;
-    SpellCheckDecorator* spellChecker;
+    DPlainTextEdit*       userCommentEdit;
 
-    QLineEdit*           documentNameEdit;
-    QLineEdit*           imageDescEdit;
-    QLineEdit*           artistEdit;
-    QLineEdit*           copyrightEdit;
+    DTextEdit*            documentNameEdit;
+    DTextEdit*            imageDescEdit;
+    DTextEdit*            artistEdit;
+    DTextEdit*            copyrightEdit;
 
-    QLabel*              documentNameIcon;
-    QLabel*              imageDescIcon;
-    QLabel*              artistIcon;
-    QLabel*              copyrightIcon;
+    QLabel*               documentNameIcon;
+    QLabel*               imageDescIcon;
+    QLabel*               artistIcon;
+    QLabel*               copyrightIcon;
 };
 
 EXIFCaption::EXIFCaption(QWidget* const parent)
@@ -100,8 +98,7 @@ EXIFCaption::EXIFCaption(QWidget* const parent)
     // --------------------------------------------------------
 
     d->documentNameCheck = new QCheckBox(i18nc("name of the document this image has been scanned from", "Name (*):"), this);
-    d->documentNameEdit  = new QLineEdit(this);
-    d->documentNameEdit->setClearButtonEnabled(true);
+    d->documentNameEdit  = new DTextEdit(this);
     d->documentNameEdit->setWhatsThis(i18n("Enter the name of the document from which "
                                            "this image was been scanned. This field is limited "
                                            "to ASCII characters."));
@@ -110,8 +107,7 @@ EXIFCaption::EXIFCaption(QWidget* const parent)
     // --------------------------------------------------------
 
     d->imageDescCheck = new QCheckBox(i18nc("image description", "Description (*):"), this);
-    d->imageDescEdit  = new QLineEdit(this);
-    d->imageDescEdit->setClearButtonEnabled(true);
+    d->imageDescEdit  = new DTextEdit(this);
     d->imageDescEdit->setWhatsThis(i18n("Enter the image description. This field is limited "
                                         "to ASCII characters."));
     d->imageDescIcon  = new QLabel(this);
@@ -119,8 +115,7 @@ EXIFCaption::EXIFCaption(QWidget* const parent)
     // --------------------------------------------------------
 
     d->artistCheck = new QCheckBox(i18n("Artist (*):"), this);
-    d->artistEdit  = new QLineEdit(this);
-    d->artistEdit->setClearButtonEnabled(true);
+    d->artistEdit  = new DTextEdit(this);
     d->artistEdit->setWhatsThis(i18n("Enter the image author's name separated by semi-colons. "
                                      "This field is limited to ASCII characters."));
     d->artistIcon  = new QLabel(this);
@@ -128,8 +123,7 @@ EXIFCaption::EXIFCaption(QWidget* const parent)
     // --------------------------------------------------------
 
     d->copyrightCheck = new QCheckBox(i18n("Copyright (*):"), this);
-    d->copyrightEdit  = new QLineEdit(this);
-    d->copyrightEdit->setClearButtonEnabled(true);
+    d->copyrightEdit  = new DTextEdit(this);
     d->copyrightEdit->setWhatsThis(i18n("Enter the copyright owner of the image. "
                                         "This field is limited to ASCII characters."));
     d->copyrightIcon  = new QLabel(this);
@@ -137,8 +131,8 @@ EXIFCaption::EXIFCaption(QWidget* const parent)
     // --------------------------------------------------------
 
     d->userCommentCheck = new QCheckBox(i18nc("image caption", "Caption:"), this);
-    d->userCommentEdit  = new QPlainTextEdit(this);
-    d->spellChecker     = new SpellCheckDecorator(d->userCommentEdit);
+    d->userCommentEdit  = new DPlainTextEdit(this);
+    d->userCommentEdit->setLinesVisible(4);
     d->userCommentEdit->setWhatsThis(i18n("Enter the image's caption. "
                                           "This field is not limited. UTF8 encoding "
                                           "will be used to save the text."));
@@ -235,17 +229,18 @@ EXIFCaption::EXIFCaption(QWidget* const parent)
     connect(d->userCommentEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
-    connect(d->documentNameEdit, SIGNAL(textChanged(QString)),
+    connect(d->documentNameEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
-    connect(d->imageDescEdit, SIGNAL(textChanged(QString)),
+    connect(d->imageDescEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
-    connect(d->artistEdit, SIGNAL(textChanged(QString)),
+    connect(d->artistEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
-    connect(d->copyrightEdit, SIGNAL(textChanged(QString)),
+    connect(d->copyrightEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
+
     // --------------------------------------------------------
 
     connect(this, SIGNAL(signalModified()),
@@ -423,10 +418,10 @@ void EXIFCaption::slotUpdateIcons()
     updateIcon(d->copyrightEdit,    d->copyrightIcon);
 }
 
-void EXIFCaption::updateIcon(QLineEdit* const edit, QLabel* const label)
+void EXIFCaption::updateIcon(DTextEdit* const edit, QLabel* const label)
 {
     bool valid    = true;
-    int  iconSize = edit->sizeHint().height() / 2;
+    int  iconSize = 24;
 
     for (int i = 0 ; i < edit->text().length() ; ++i)
     {

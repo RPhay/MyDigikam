@@ -29,19 +29,17 @@
 #include <QApplication>
 #include <QStyle>
 #include <QLineEdit>
-#include <QPlainTextEdit>
 
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <sonnet/spellcheckdecorator.h>
 
 // Local includes
 
 #include "altlangstringedit.h"
 #include "multistringsedit.h"
+#include "dtextedit.h"
 
-using namespace Sonnet;
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -55,7 +53,6 @@ public:
         specialInstructionCheck(nullptr),
         nicknameEdit           (nullptr),
         specialInstructionEdit (nullptr),
-        spellChecker           (nullptr),
         identifiersEdit        (nullptr),
         objectNameEdit         (nullptr)
     {
@@ -66,8 +63,7 @@ public:
 
     QLineEdit*           nicknameEdit;
 
-    QPlainTextEdit*      specialInstructionEdit;
-    SpellCheckDecorator* spellChecker;
+    DPlainTextEdit*      specialInstructionEdit;
 
     MultiStringsEdit*    identifiersEdit;
 
@@ -100,9 +96,9 @@ XMPStatus::XMPStatus(QWidget* const parent)
     // --------------------------------------------------------
 
     d->specialInstructionCheck = new QCheckBox(i18n("Special Instructions:"), this);
-    d->specialInstructionEdit  = new QPlainTextEdit(this);
+    d->specialInstructionEdit  = new DPlainTextEdit(this);
+    d->specialInstructionEdit->setLinesVisible(4);
     d->specialInstructionEdit->setWhatsThis(i18n("Enter the editorial usage instructions."));
-    d->spellChecker            = new SpellCheckDecorator(d->specialInstructionEdit);
 
     // --------------------------------------------------------
 
