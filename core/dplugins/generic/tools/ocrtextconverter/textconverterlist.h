@@ -27,9 +27,10 @@ public:
      */
     enum FieldType
     {
-        TARGETFILENAME = DItemsListView::User1,
-        IDENTIFICATION = DItemsListView::User2,
-        STATUS         = DItemsListView::User3
+        RAWFILENAME      = DItemsListView::User1,
+        TARGETFILENAME   = DItemsListView::User2,
+        STATUS           = DItemsListView::User3,
+        IDENTIFICATION   = DItemsListView::User4 
     };
 
 public:
