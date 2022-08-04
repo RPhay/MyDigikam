@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 
     ocrEngine->setInputFile(QLatin1String("/home/tranquochung/Desktop/repositories/digikam/core/tests/ocrtextconverter/data/scanned_img.png"));
     ocrEngine->setOutputFile(QLatin1String("/home/tranquochung/Desktop/repositories/digikam/core/tests/ocrtextconverter/data/output"));
-    bool check = ocrEngine->createOcrProcess();
+    bool check = ocrEngine->runOcrProcess();
 
     delete ocrEngine;
     return app.exec();
