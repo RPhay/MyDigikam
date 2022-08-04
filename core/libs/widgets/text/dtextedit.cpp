@@ -34,6 +34,11 @@
 // KDE includes
 
 #include <sonnet/spellcheckdecorator.h>
+#include <sonnet/highlighter.h>
+
+// Local includes
+
+#include "digikam_debug.h"
 
 using namespace Sonnet;
 
@@ -51,6 +56,13 @@ DTextEdit::DTextEdit(const QString& contents, QWidget* const parent)
 {
     init();
     setPlainText(contents);
+}
+
+DTextEdit::DTextEdit(unsigned int lines, QWidget* const parent)
+    : QTextEdit(parent)
+{
+    m_lines = lines;
+    init();
 }
 
 DTextEdit::~DTextEdit()
@@ -93,6 +105,18 @@ void DTextEdit::init()
     setLinesVisible(m_lines);
 }
 
+void DTextEdit::setCurrentLanguage(const QString& lang)
+{
+    m_spellChecker->highlighter()->setCurrentLanguage(lang);
+
+    qCDebug(DIGIKAM_WIDGETS_LOG) << "Spell Checker Language:" << currentLanguage();
+}
+
+QString DTextEdit::currentLanguage() const
+{
+    return m_spellChecker->highlighter()->currentLanguage();
+}
+
 // ------------------------------------------------------------------------------------------------
 
 DPlainTextEdit::DPlainTextEdit(QWidget* const parent)
@@ -106,6 +130,13 @@ DPlainTextEdit::DPlainTextEdit(const QString& contents, QWidget* const parent)
 {
     init();
     setPlainText(contents);
+}
+
+DPlainTextEdit::DPlainTextEdit(unsigned int lines, QWidget* const parent)
+    : QPlainTextEdit(parent)
+{
+    m_lines = lines;
+    init();
 }
 
 DPlainTextEdit::~DPlainTextEdit()
@@ -146,6 +177,18 @@ void DPlainTextEdit::init()
 {
     m_spellChecker = new SpellCheckDecorator(this);
     setLinesVisible(m_lines);
+}
+
+void DPlainTextEdit::setCurrentLanguage(const QString& lang)
+{
+    m_spellChecker->highlighter()->setCurrentLanguage(lang);
+
+    qCDebug(DIGIKAM_WIDGETS_LOG) << "Spell Checker Language:" << currentLanguage();
+}
+
+QString DPlainTextEdit::currentLanguage() const
+{
+    return m_spellChecker->highlighter()->currentLanguage();
 }
 
 } // namespace Digikam

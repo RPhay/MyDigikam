@@ -49,8 +49,24 @@ class DIGIKAM_EXPORT DTextEdit : public QTextEdit
 
 public:
 
-    DTextEdit(const QString& contents, QWidget* const parent = nullptr);
+    /**
+     * Default constructor.
+     */
     explicit DTextEdit(QWidget* const parent = nullptr);
+
+    /**
+     * Constructor with a number of lines. Zero lines do not apply a size constraint.
+     */
+    DTextEdit(unsigned int lines, QWidget* const parent = nullptr);
+
+    /**
+     * Constructor with text contents to use.
+     */
+    DTextEdit(const QString& contents, QWidget* const parent = nullptr);
+
+    /**
+     * Standard destructor.
+     */
     ~DTextEdit() override;
 
     /**
@@ -65,6 +81,13 @@ public:
      */
     void setLinesVisible(unsigned int lines);
     unsigned int linesVisible() const;
+
+    /**
+     * Helper methods to handle a specific spell-checker language (2 letters code based as "en", "fr", "es", etc.).
+     * If this property is not set, spell-checker will try to auto-detect language by parsing the text.
+     */
+    void setCurrentLanguage(const QString& lang);
+    QString currentLanguage() const;
 
 private:
 
@@ -87,8 +110,24 @@ class DIGIKAM_EXPORT DPlainTextEdit : public QPlainTextEdit
 
 public:
 
-    DPlainTextEdit(const QString& contents, QWidget* const parent = nullptr);
+    /**
+     * Default constructor.
+     */
     explicit DPlainTextEdit(QWidget* const parent = nullptr);
+
+    /**
+     * Constructor with a number of lines. Zero lines do not apply a size constraint.
+     */
+    DPlainTextEdit(unsigned int lines, QWidget* const parent = nullptr);
+
+    /**
+     * Constructor with text contents to use.
+     */
+    DPlainTextEdit(const QString& contents, QWidget* const parent = nullptr);
+
+    /**
+     * Standard destructor.
+     */
     ~DPlainTextEdit() override;
 
     /**
@@ -103,6 +142,13 @@ public:
      */
     void setLinesVisible(unsigned int lines);
     unsigned int linesVisible() const;
+
+    /**
+     * Helper methods to handle a specific spell-checker language (2 letters code based as "en", "fr", "es", etc.).
+     * If this property is not set, spell-checker will try to auto-detect language by parsing the text.
+     */
+    void setCurrentLanguage(const QString& lang);
+    QString currentLanguage() const;
 
 private:
 

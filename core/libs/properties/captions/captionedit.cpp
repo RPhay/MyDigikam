@@ -64,7 +64,7 @@ CaptionEdit::CaptionEdit(QWidget* const parent)
       d    (new Private)
 {
 
-    d->altLangStrEdit = new AltLangStrEdit(this);
+    d->altLangStrEdit = new AltLangStrEdit(this, 0);
     d->altLangStrEdit->setTitle(i18n("Captions: "));
 
     d->authorEdit = new QLineEdit(this);

@@ -37,14 +37,10 @@
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <sonnet/spellcheckdecorator.h>
-#include <sonnet/highlighter.h>
 
 // Local includes
 
 #include "digikam_debug.h"
-
-using namespace Sonnet;
 
 namespace Digikam
 {
@@ -59,8 +55,7 @@ public:
         titleLabel      (nullptr),
         delValueButton  (nullptr),
         valueEdit       (nullptr),
-        languageCB      (nullptr),
-        spellChecker    (nullptr)
+        languageCB      (nullptr)
     {
 
         /**
@@ -267,16 +262,14 @@ public:
 
     QToolButton*                   delValueButton;
 
-    QTextEdit*                     valueEdit;
+    DTextEdit*                     valueEdit;
 
     QComboBox*                     languageCB;
-
-    SpellCheckDecorator*           spellChecker;
 
     MetaEngine::AltLangMap         values;
 };
 
-AltLangStrEdit::AltLangStrEdit(QWidget* const parent)
+AltLangStrEdit::AltLangStrEdit(QWidget* const parent, unsigned int lines)
     : QWidget(parent),
       d      (new Private)
 {
@@ -291,9 +284,8 @@ AltLangStrEdit::AltLangStrEdit(QWidget* const parent)
     d->languageCB->setSizeAdjustPolicy(QComboBox::AdjustToContents);
     d->languageCB->setWhatsThis(i18nc("@info: language edit dialog", "Select item language here."));
 
-    d->valueEdit    = new QTextEdit(this);
+    d->valueEdit    = new DTextEdit(lines, this);
     d->valueEdit->setAcceptRichText(false);
-    d->spellChecker = new SpellCheckDecorator(d->valueEdit);
 
     // --------------------------------------------------------
 
@@ -392,10 +384,8 @@ void AltLangStrEdit::slotSelectionChanged()
 
     if (d->currentLanguage != QLatin1String("x-default"))
     {
-        d->spellChecker->highlighter()->setCurrentLanguage(d->currentLanguage.left(2));
+        d->valueEdit->setCurrentLanguage(d->currentLanguage.left(2));
     }
-
-    qCDebug(DIGIKAM_WIDGETS_LOG) << "Spell Checker Language:" << d->spellChecker->highlighter()->currentLanguage();
 
     Q_EMIT signalSelectionChanged(d->currentLanguage);
 }
@@ -434,7 +424,8 @@ void AltLangStrEdit::loadLangAltListEntries()
         Q_FOREACH (const QString& item, list)
         {
               d->languageCB->addItem(item);
-              d->languageCB->setItemIcon(d->languageCB->count()-1, QIcon::fromTheme(QLatin1String("dialog-ok-apply")).pixmap(16, 16));
+              d->languageCB->setItemIcon(d->languageCB->count()-1,
+                                         QIcon::fromTheme(QLatin1String("dialog-ok-apply")).pixmap(16, 16));
         }
 
         d->languageCB->insertSeparator(d->languageCB->count());
@@ -544,7 +535,7 @@ void AltLangStrEdit::changeEvent(QEvent* e)
     QWidget::changeEvent(e);
 }
 
-QTextEdit* AltLangStrEdit::textEdit() const
+DTextEdit* AltLangStrEdit::textEdit() const
 {
     return d->valueEdit;
 }
