@@ -40,6 +40,7 @@
 // Local includes
 
 #include "multistringsedit.h"
+#include "limitedtextedit.h"
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -49,25 +50,25 @@ class Q_DECL_HIDDEN IPTCCredits::Private
 public:
 
     explicit Private()
+      : copyrightCheck   (nullptr),
+        creditCheck      (nullptr),
+        sourceCheck      (nullptr),
+        copyrightEdit    (nullptr),
+        creditEdit       (nullptr),
+        sourceEdit       (nullptr),
+        bylineEdit       (nullptr),
+        bylineTitleEdit  (nullptr),
+        contactEdit      (nullptr)
     {
-        copyrightCheck   = nullptr;
-        creditCheck      = nullptr;
-        sourceCheck      = nullptr;
-        copyrightEdit    = nullptr;
-        creditEdit       = nullptr;
-        sourceEdit       = nullptr;
-        bylineEdit       = nullptr;
-        bylineTitleEdit  = nullptr;
-        contactEdit      = nullptr;
     }
 
     QCheckBox*        copyrightCheck;
     QCheckBox*        creditCheck;
     QCheckBox*        sourceCheck;
 
-    QLineEdit*        copyrightEdit;
-    QLineEdit*        creditEdit;
-    QLineEdit*        sourceEdit;
+    LimitedTextEdit*  copyrightEdit;
+    LimitedTextEdit*  creditEdit;
+    LimitedTextEdit*  sourceEdit;
 
     MultiStringsEdit* bylineEdit;
     MultiStringsEdit* bylineTitleEdit;
@@ -76,15 +77,14 @@ public:
 
 IPTCCredits::IPTCCredits(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     QGridLayout* const grid = new QGridLayout(this);
 
     // --------------------------------------------------------
 
     d->copyrightCheck = new QCheckBox(i18n("Copyright:"), this);
-    d->copyrightEdit  = new QLineEdit(this);
-    d->copyrightEdit->setClearButtonEnabled(true);
+    d->copyrightEdit  = new LimitedTextEdit(this);
     d->copyrightEdit->setMaxLength(128);
     d->copyrightEdit->setWhatsThis(i18n("Set here the necessary copyright notice. This field is limited "
                                         "to 128 characters."));
@@ -104,8 +104,7 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
     // --------------------------------------------------------
 
     d->creditCheck = new QCheckBox(i18n("Credit:"), this);
-    d->creditEdit  = new QLineEdit(this);
-    d->creditEdit->setClearButtonEnabled(true);
+    d->creditEdit  = new LimitedTextEdit(this);
     d->creditEdit->setMaxLength(32);
     d->creditEdit->setWhatsThis(i18n("Set here the content provider. "
                                      "This field is limited to 32 characters."));
@@ -113,8 +112,7 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
     // --------------------------------------------------------
 
     d->sourceCheck = new QCheckBox(i18nc("original owner of content", "Source:"), this);
-    d->sourceEdit  = new QLineEdit(this);
-    d->sourceEdit->setClearButtonEnabled(true);
+    d->sourceEdit  = new LimitedTextEdit(this);
     d->sourceEdit->setMaxLength(32);
     d->sourceEdit->setWhatsThis(i18n("Set here the original owner of content. "
                                      "This field is limited to 32 characters."));
@@ -196,22 +194,22 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    connect(d->copyrightEdit, SIGNAL(textChanged(QString)),
+    connect(d->copyrightEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
-    connect(d->copyrightEdit, SIGNAL(textChanged(QString)),
+    connect(d->copyrightEdit, SIGNAL(textChanged()),
             this, SLOT(slotLineEditModified()));
 
-    connect(d->creditEdit, SIGNAL(textChanged(QString)),
+    connect(d->creditEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
-    connect(d->creditEdit, SIGNAL(textChanged(QString)),
+    connect(d->creditEdit, SIGNAL(textChanged()),
             this, SLOT(slotLineEditModified()));
 
-    connect(d->sourceEdit, SIGNAL(textChanged(QString)),
+    connect(d->sourceEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
-    connect(d->sourceEdit, SIGNAL(textChanged(QString)),
+    connect(d->sourceEdit, SIGNAL(textChanged()),
             this, SLOT(slotLineEditModified()));
 }
 
