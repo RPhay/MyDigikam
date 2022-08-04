@@ -176,6 +176,7 @@ DPlainTextEdit::DPlainTextEdit(unsigned int lines, QWidget* const parent)
 
 DPlainTextEdit::~DPlainTextEdit()
 {
+    delete d;
 }
 
 void DPlainTextEdit::setLinesVisible(unsigned int lines)
