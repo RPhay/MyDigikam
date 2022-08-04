@@ -19,9 +19,9 @@ class  OcrTesseracrEngine::Private
 public:
 
     Private()
-      : language ((int)OcrOptions::Languages::ENG),
-        psm      ((int)OcrOptions::PageSegmentationModes::FULLY_AUTO_PAGE),
-        oem      ((int)OcrOptions::EngineModes::DEFAULT),
+      : language ((int)OcrOptions::Languages::LANG_DEFAULT),
+        psm      ((int)OcrOptions::PageSegmentationModes::PSM_DEFAULT),
+        oem      ((int)OcrOptions::EngineModes::OEM_DEFAULT),
         ocrProcess (nullptr)
     {
     }

@@ -21,9 +21,10 @@ class DIGIKAM_EXPORT OcrOptions
 public:
 
    enum Languages
-    {
-        ENG = 0,                           
-        OSD = 1
+    {   
+        LANG_DEFAULT = 0,
+        ENG,                           
+        OSD 
     };
 
     enum PageSegmentationModes
@@ -31,7 +32,7 @@ public:
         OSD_ONLY           = 0,
         AUTO_WITH_OSD      ,
         AUTO_WITH_NO_OSD   ,
-        FULLY_AUTO_PAGE,
+        PSM_DEFAULT,
         SINGLE_COL_TEXT_OF_VAR_SIZE,
         SINGLE_UNIFORM_BLOCK_OF_VERTICALLY_TEXT,
         SINGLE_UNIFORM_BLOCK_TEXT,
@@ -49,7 +50,7 @@ public:
         LEGACY_ENGINE_ONLY = 0,
         NEURAL_NETS_LSTM_ONLY = 1, 
         LEGACY_LSTM_ENGINES = 2,
-        DEFAULT = 3
+        OEM_DEFAULT = 3
     };
 
 public:

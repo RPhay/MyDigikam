@@ -88,7 +88,7 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
         ++it;
     }
     
-    d->ocrTesseractLanguageMode->setDefaultIndex(OcrOptions::Languages::ENG);
+    d->ocrTesseractLanguageMode->setDefaultIndex(OcrOptions::Languages::LANG_DEFAULT);
     
     // ------------
 
@@ -104,7 +104,7 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
         ++it1;
     }
 
-    d->ocrTesseractPSMMode->setDefaultIndex(OcrOptions::PageSegmentationModes::FULLY_AUTO_PAGE);
+    d->ocrTesseractPSMMode->setDefaultIndex(OcrOptions::PageSegmentationModes::PSM_DEFAULT);
 
     // ------------
    
@@ -120,7 +120,7 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
         ++it2;
     }
 
-    d->ocrTesseractOEMMode->setDefaultIndex(OcrOptions::EngineModes::DEFAULT);
+    d->ocrTesseractOEMMode->setDefaultIndex(OcrOptions::EngineModes::OEM_DEFAULT);
 
 
     // ------------

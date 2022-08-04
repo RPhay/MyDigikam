@@ -99,16 +99,21 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     QGridLayout* const mainLayout     = new QGridLayout(mainWidget);
     d->listView                       = new TextConverterList(mainWidget);
     d->ocrSettings = new TextConverterSettings(this);
+    
     d->progressBar                    = new DProgressWdg(mainWidget);
     d->progressBar->reset();
     d->progressBar->hide();
+    
     d->textedit                       = new DTextEdit(mainWidget);
+    d->textedit->setMaximumHeight(300);
+    d->textedit->setPlaceholderText(QLatin1String("OCR result is displayed here"));
+
 
     //-------------------------------------------------------------------------------------------
 
     mainLayout->addWidget(d->listView,                       0, 0, 5, 1);
     mainLayout->addWidget(d->ocrSettings,                    0, 1, 1, 1);
-    mainLayout->addWidget(d->textedit,                       1, 1, 1, 1);
+    mainLayout->addWidget(d->textedit,                       1, 1, 3, 1);
     mainLayout->addWidget(d->progressBar,                    2, 1, 1, 1);
     mainLayout->setColumnStretch(0, 10);
     mainLayout->setRowStretch(4, 10);
@@ -203,9 +208,9 @@ void TextConverterDialog::readSettings()
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("OCR Tesseract Settings"));
 
-    d->ocrSettings->setLanguagesMode(group.readEntry("ocrLanguages",     int(OcrOptions::Languages::ENG)));
-    d->ocrSettings->setPSMMode(group.readEntry("PageSegmentationModes",  int(OcrOptions::PageSegmentationModes::FULLY_AUTO_PAGE)));
-    d->ocrSettings->setOEMMode(group.readEntry("EngineModes",            int(OcrOptions::EngineModes::DEFAULT)));
+    d->ocrSettings->setLanguagesMode(group.readEntry("ocrLanguages",     int(OcrOptions::Languages::LANG_DEFAULT)));
+    d->ocrSettings->setPSMMode(group.readEntry("PageSegmentationModes",  int(OcrOptions::PageSegmentationModes::PSM_DEFAULT)));
+    d->ocrSettings->setOEMMode(group.readEntry("EngineModes",            int(OcrOptions::EngineModes::OEM_DEFAULT)));
 }
 
 void TextConverterDialog::saveSettings()
