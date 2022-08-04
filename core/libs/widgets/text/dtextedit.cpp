@@ -4,7 +4,8 @@
  * https://www.digikam.org
  *
  * Date        : 2022-08-01
- * Description : a text edit with spell checker capabilities
+ * Description : Two plain text edit widgets with spell checker capabilities based on KF5::Sonnet.
+ *               Widgets can be also limited to a number of lines to show text.
  *
  * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -81,6 +82,11 @@ QString DTextEdit::text() const
     return toPlainText();
 }
 
+void DTextEdit::setText(const QString& text)
+{
+    setPlainText(text);
+}
+
 void DTextEdit::init()
 {
     m_spellChecker = new SpellCheckDecorator(this);
@@ -129,6 +135,11 @@ unsigned int DPlainTextEdit::linesVisible() const
 QString DPlainTextEdit::text() const
 {
     return toPlainText();
+}
+
+void DPlainTextEdit::setText(const QString& text)
+{
+    setPlainText(text);
 }
 
 void DPlainTextEdit::init()

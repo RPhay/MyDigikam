@@ -51,14 +51,14 @@ class Q_DECL_HIDDEN IPTCContent::Private
 public:
 
     explicit Private()
-      : headlineCheck        (nullptr),
+      : captionCheck         (nullptr),
+        headlineCheck        (nullptr),
+        syncJFIFCommentCheck (nullptr),
+        syncEXIFCommentCheck (nullptr),
         captionNote          (nullptr),
         captionEdit          (nullptr),
-        writerEdit           (nullptr),
         headlineEdit         (nullptr),
-        captionCheck         (nullptr),
-        syncJFIFCommentCheck (nullptr),
-        syncEXIFCommentCheck (nullptr)
+        writerEdit           (nullptr)
     {
     }
 
