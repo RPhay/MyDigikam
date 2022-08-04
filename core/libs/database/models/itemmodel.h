@@ -40,6 +40,7 @@ class QItemSelection;
 namespace Digikam
 {
 
+class AlbumChangeset;
 class ImageChangeset;
 class ImageTagChangeset;
 
@@ -389,6 +390,7 @@ protected:
 
 protected Q_SLOTS:
 
+    virtual void slotAlbumChange(const AlbumChangeset& changeset);
     virtual void slotImageChange(const ImageChangeset& changeset);
     virtual void slotImageTagChange(const ImageTagChangeset& changeset);
 

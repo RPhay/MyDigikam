@@ -101,7 +101,8 @@ CollectionLocation CollectionManager::addNetworkLocation(const QUrl& fileUrl, co
 
     ChangingDB changing(d);
     CoreDbAccess().db()->addAlbumRoot(CollectionLocation::Network,
-                                      d->networkShareIdentifier(path), QLatin1String("/"), label);
+                                      d->networkShareIdentifier(QStringList() << path),
+                                      QLatin1String("/"), label);
 
     // Do not Q_EMIT the locationAdded signal here, it is done in updateLocations()
 
@@ -111,8 +112,9 @@ CollectionLocation CollectionManager::addNetworkLocation(const QUrl& fileUrl, co
 }
 
 CollectionLocation CollectionManager::refreshLocation(const CollectionLocation& location, int newType,
-                                                      const QUrl& fileUrl, const QString& label)
+                                                      const QStringList& pathList, const QString& label)
 {
+    QUrl fileUrl = QUrl::fromLocalFile(pathList.first());
     qCDebug(DIGIKAM_DATABASE_LOG) << "refreshLocation" << fileUrl;
     QString path = fileUrl.adjusted(QUrl::StripTrailingSlash).toLocalFile();
 
@@ -151,7 +153,7 @@ CollectionLocation CollectionManager::refreshLocation(const CollectionLocation& 
         {
             type         = CollectionLocation::Network;
             specificPath = QLatin1String("/");
-            identifier   = d->networkShareIdentifier(path);
+            identifier   = d->networkShareIdentifier(pathList);
         }
         else
         {

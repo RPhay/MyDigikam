@@ -33,6 +33,11 @@
 
 #include "dmetadata.h"
 
+namespace Digikam
+{
+    class DTextEdit;
+}
+
 using namespace Digikam;
 
 namespace DigikamGenericMetadataEditPlugin
@@ -66,7 +71,7 @@ Q_SIGNALS:
 
 private:
 
-    void updateIcon(QLineEdit* const edit,
+    void updateIcon(DTextEdit* const edit,
                     QLabel* const label);
 
 private Q_SLOTS:

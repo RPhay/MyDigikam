@@ -304,6 +304,7 @@ The full list of mandatory (X) and (optional) external dependencies required to 
 | KF::Config           |      X      | >= 5.55.0     | >= 5.91.0     | https://invent.kde.org/frameworks/kconfig             |                                                        |                                                                                       |
 | KF::XmlGui           |      X      | >= 5.55.0     | >= 5.91.0     | https://invent.kde.org/frameworks/kxmlgui             |                                                        |                                                                                       |
 | KF::I18n             |      X      | >= 5.55.0     | >= 5.91.0     | https://invent.kde.org/frameworks/ki18n               |                                                        |                                                                                       |
+| KF::Sonnet           |      X      | >= 5.55.0     | >= 5.91.0     | https://invent.kde.org/frameworks/sonnet              | To perform spell-cheking in text widget (aka caption)  |                                                                                       |
 | KF::WindowSystem     |      X      | >= 5.55.0     | >= 5.91.0     | https://invent.kde.org/frameworks/kwindowsystem       |                                                        |                                                                                       |
 | KF::Service          |      X      | >= 5.55.0     | >= 5.91.0     | https://invent.kde.org/frameworks/kservice            | TODO: make optional for Linux desktop (DFileOperations)|                                                                                       |
 | KF::Solid            |      X      | >= 5.55.0     | >= 5.91.0     | https://invent.kde.org/frameworks/solid               |                                                        |                                                                                       |
@@ -449,6 +450,7 @@ There are two configuration sections : the top level and the core.
  - Developers only options:
 
   - \b BUILD_TESTING=ON                      : Build tests code (default=ON).
+  - \b BUILD_WITH_QT6=ON                     : Build with Qt6 framework, else Qt5 (default=OFF).
 
 \subsection coreoptions Core Configuration
 

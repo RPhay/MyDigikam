@@ -196,7 +196,7 @@ void PanoActionThread::preProcessFiles(const QList<QUrl>& urlList,
     d->threadQueue->enqueue(jobSeq);
 }
 
-void PanoActionThread::optimizeProject(QUrl& ptoUrl,
+void PanoActionThread::optimizeProject(const QUrl& ptoUrl,
                                        QUrl& optimizePtoUrl,
                                        QUrl& viewCropPtoUrl,
                                        bool levelHorizon,

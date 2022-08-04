@@ -86,16 +86,7 @@ QVariant AlbumModel::albumData(Album* a, int role) const
          showCount()              &&
          a->isTrashAlbum())
     {
-        PAlbum* const palbum = AlbumManager::instance()->findPAlbum(a->parent()->id());
-
-        if (palbum)
-        {
-            QString path = palbum->folderPath();
-            path.append(QLatin1String(".dtrash/files"));
-            QDir dir(path, QLatin1String(""), QDir::Unsorted, QDir::Files);
-
-            return QString::fromUtf8("%1 (%2)").arg(albumName(a)).arg(dir.count());
-        }
+        return QString::fromUtf8("%1 (%2)").arg(albumName(a)).arg(a->countTrashAlbum());
     }
 
     return AbstractCheckableAlbumModel::albumData(a, role);

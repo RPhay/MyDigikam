@@ -68,8 +68,6 @@ urpmi --auto \
       scons                         `#  For MXE build.` \
       icoutils                      `#  For MXE build.` \
       mingw32-nsis                  `#  For MXE build.` \
-      textinfo                      `#  For MXE build.` \
-      python2-mako                  `#  For MXE build.` \
       python3-mako                  `#  For MXE build.` \
       python3-lxml                  `#  For MXE build.` \
       python3-pygments              `#  For Continuous integration.` \
@@ -90,6 +88,7 @@ urpmi --auto \
       hugin                         `#  Panorama tool.` \
       bison                         `#  Panorama tool.` \
       flex                          `#  Panorama tool.` \
+      hunspell                      `#  For check spelling.` \
       wget \
       coreutils \
       cdialog \
@@ -141,6 +140,7 @@ urpmi --auto \
       lib64kf5xmlgui-devel \
       lib64kf5threadweaver-devel \
       lib64kf5kio-devel \
+      lib64kf5sonnet-devel \
       lib64kf5notifications-devel \
       lib64kf5notifyconfig-devel \
       lib64kf5filemetadata-devel \

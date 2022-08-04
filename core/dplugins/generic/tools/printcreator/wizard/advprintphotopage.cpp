@@ -155,7 +155,7 @@ AdvPrintPhotoPage::AdvPrintPhotoPage(QWizard* const wizard, const QString& title
         d->photoUi->m_printer_choice->addSqueezedItem(it->printerName());
     }
 
-    connect(d->photoUi->m_printer_choice, SIGNAL(activated(QString)),
+    connect(d->photoUi->m_printer_choice, SIGNAL(signalItemActivated(QString)),
             this, SLOT(slotOutputChanged(QString)));
 
     connect(d->photoUi->BtnPreviewPageUp, SIGNAL(clicked()),

@@ -20,7 +20,7 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 mkdir -p build
 cd build
 
-/opt/cmake/bin/cmake -G "Unix Makefiles" .. \
+/opt/cmake/bin/cmake -G "Ninja" .. \
       -DCMAKE_BUILD_TYPE=RelWithDebInfo \
       -DCMAKE_INSTALL_PREFIX=/usr \
       -DBUILD_TESTING=ON \
@@ -46,4 +46,4 @@ if [ $? -ne 0 ]; then
     exit;
 fi
 
-make -j4
+ninja -j4

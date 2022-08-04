@@ -67,18 +67,25 @@ public:
         CategoryButtonMapId        = Qt::UserRole + 2,
 
         /// Returns true if the model index is the index of a button
-        IsUpdateRole               = Qt::UserRole + 3,
+        IsAppendRole               = Qt::UserRole + 3,
 
         /// The pixmap of the button
-        UpdateDecorationRole       = Qt::UserRole + 4,
-        UpdateMapId                = Qt::UserRole + 5,
+        AppendDecorationRole       = Qt::UserRole + 4,
+        AppendMapId                = Qt::UserRole + 5,
 
         /// Returns true if the model index is the index of a button
-        IsDeleteRole               = Qt::UserRole + 6,
+        IsUpdateRole               = Qt::UserRole + 6,
 
         /// The pixmap of the button
-        DeleteDecorationRole       = Qt::UserRole + 7,
-        DeleteMapId                = Qt::UserRole + 8
+        UpdateDecorationRole       = Qt::UserRole + 7,
+        UpdateMapId                = Qt::UserRole + 8,
+
+        /// Returns true if the model index is the index of a button
+        IsDeleteRole               = Qt::UserRole + 9,
+
+        /// The pixmap of the button
+        DeleteDecorationRole       = Qt::UserRole + 10,
+        DeleteMapId                = Qt::UserRole + 11
     };
 
     enum Columns
@@ -86,8 +93,9 @@ public:
         ColumnStatus       = 0,
         ColumnName         = 1,
         ColumnPath         = 2,
-        ColumnUpdateButton = 3,
-        ColumnDeleteButton = 4,
+        ColumnAppendButton = 3,
+        ColumnUpdateButton = 4,
+        ColumnDeleteButton = 5,
         NumberOfColumns
     };
 
@@ -152,6 +160,7 @@ public Q_SLOTS:
      * mappedId is retrieved with the ButtonMapId role
      * for the model index of the button
      */
+    void slotAppendPressed(int mappedId);
     void slotUpdatePressed(int mappedId);
     void slotDeletePressed(int mappedId);
 
@@ -186,9 +195,12 @@ protected:
     public:
 
         CollectionLocation location;
+        QStringList        childs;
         QString            label;
         QString            path;
         int                parentId;
+        int                orgIndex;
+        bool               appended;
         bool               updated;
         bool               deleted;
     };
@@ -270,6 +282,7 @@ public:
 Q_SIGNALS:
 
     void categoryButtonPressed(int mappedId)                                const;     // clazy:exclude=const-signal-or-slot
+    void appendPressed(int mappedId)                                        const;     // clazy:exclude=const-signal-or-slot
     void updatePressed(int mappedId)                                        const;     // clazy:exclude=const-signal-or-slot
     void deletePressed(int mappedId)                                        const;     // clazy:exclude=const-signal-or-slot
 
@@ -278,6 +291,7 @@ protected:
     QStyledItemDelegate* m_styledDelegate;
 
     QPushButton*         m_samplePushButton;
+    QToolButton*         m_sampleAppendButton;
     QToolButton*         m_sampleUpdateButton;
     QToolButton*         m_sampleDeleteButton;
     int                  m_categoryMaxStyledWidth;

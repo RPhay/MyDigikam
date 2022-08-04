@@ -80,6 +80,7 @@ QString ParseResults::token(const ResultsKey& key) const
     }
 
     QString token = m_results.value(key).first;
+
     return token;
 }
 
@@ -88,14 +89,15 @@ int ParseResults::offset(const ResultsKey& key) const
     int pos    = key.first;
     int length = key.second;
 
-    if (hasKeyAtPosition(pos))
+    if      (hasKeyAtPosition(pos))
     {
         return (pos + length);
     }
     else if (hasKeyAtApproximatePosition(pos))
     {
-        ResultsKey key = keyAtApproximatePosition(pos);
-        return ((key.first + key.second) - pos);
+        ResultsKey key2 = keyAtApproximatePosition(pos);
+
+        return ((key2.first + key2.second) - pos);
     }
 
     return INVALID_KEY_ID;
@@ -106,7 +108,8 @@ ParseResults::ResultsKey ParseResults::keyAtPosition(int pos) const
     Q_FOREACH (const ResultsKey& key, m_results.keys())
     {
         if (pos == key.first)
-        {   // cppcheck-suppress useStlAlgorithm
+        {
+            // cppcheck-suppress useStlAlgorithm
             return key;
         }
     }
@@ -117,6 +120,7 @@ ParseResults::ResultsKey ParseResults::keyAtPosition(int pos) const
 bool ParseResults::hasKeyAtPosition(int pos) const
 {
     ResultsKey key = keyAtPosition(pos);
+
     return keyIsValid(key);
 }
 
@@ -139,6 +143,7 @@ ParseResults::ResultsKey ParseResults::keyAtApproximatePosition(int pos) const
 bool ParseResults::hasKeyAtApproximatePosition(int pos) const
 {
     ResultsKey key = keyAtApproximatePosition(pos);
+
     return keyIsValid(key);
 }
 
@@ -164,7 +169,7 @@ ParseResults::ResultsKey ParseResults::createInvalidKey() const
 
 bool ParseResults::keyIsValid(const ResultsKey& key) const
 {
-    return (key.first != INVALID_KEY_ID && key.second != INVALID_KEY_ID);
+    return ((key.first != INVALID_KEY_ID) && (key.second != INVALID_KEY_ID));
 }
 
 QString ParseResults::replaceTokens(const QString& markedString) const

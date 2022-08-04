@@ -166,7 +166,7 @@ private:
                             const QColor& dateColor,
                             const QColor& subDateColor);
 
-    void          handleSelectionRange(QDateTime& selEndDateTime);
+    void          handleSelectionRange(const QDateTime& selEndDateTime);
 
 private:
 

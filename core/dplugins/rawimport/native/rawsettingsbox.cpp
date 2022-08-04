@@ -411,7 +411,7 @@ void RawSettingsBox::setDemosaicedImage(DImg& img)
     d->curveWidget->updateData(img);
 }
 
-void RawSettingsBox::setPostProcessedImage(DImg& img)
+void RawSettingsBox::setPostProcessedImage(const DImg& img)
 {
     histogramBox()->histogram()->stopHistogramComputation();
     histogramBox()->histogram()->updateData(img);

@@ -247,13 +247,18 @@ QString CollectionManager::Private::volumeIdentifier(const QString& path)
     return url.url();
 }
 
-QString CollectionManager::Private::networkShareIdentifier(const QString& path)
+QString CollectionManager::Private::networkShareIdentifier(const QStringList& paths)
 {
     QUrl url;
     url.setScheme(QLatin1String("networkshareid"));
 
     QUrlQuery q(url);
-    q.addQueryItem(QLatin1String("mountpath"), path);
+
+    Q_FOREACH (const QString& path, paths)
+    {
+        q.addQueryItem(QLatin1String("mountpath"), path);
+    }
+
     url.setQuery(q);
 
     return url.url();

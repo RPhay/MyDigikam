@@ -1473,7 +1473,7 @@ int PresentationWidget::effectGrowing(bool aInit)
 
 int PresentationWidget::effectHorizLines(bool aInit)
 {
-    static int iyPos[] = { 0, 4, 2, 6, 1, 5, 3, 7, -1 };
+    static const int iyPos[] = { 0, 4, 2, 6, 1, 5, 3, 7, -1 };
 
     if (aInit)
     {
@@ -1515,7 +1515,7 @@ int PresentationWidget::effectHorizLines(bool aInit)
 
 int PresentationWidget::effectVertLines(bool aInit)
 {
-    static int ixPos[] = { 0, 4, 2, 6, 1, 5, 3, 7, -1 };
+    static const int ixPos[] = { 0, 4, 2, 6, 1, 5, 3, 7, -1 };
 
     if (aInit)
     {

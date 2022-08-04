@@ -101,7 +101,7 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
 
         SearchFieldCheckBox* const field = new SearchFieldCheckBox(parent);
         field->setFieldName(name);
-        field->setText(i18n("Tags"), i18n("item has no tags"));
+        field->setText(i18n("Tags"), i18n("Return items without tags"));
         field->setLabel(i18n("Not Tagged"));
 
         return field;
@@ -978,7 +978,25 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
 
         return field;
     }
+    else if (name == QLatin1String("faceregionscount"))
+    {
+        SearchFieldRangeInt* const field = new SearchFieldRangeInt(parent);
+        field->setFieldName(name);
+        field->setText(i18n("Faces"), i18n("Return items by number of face regions"));
+        field->setBetweenText(i18nc("Return items by number of face regions between...and...", "and"));
+        field->setBoundary(0, 1000, 1);
 
+        return field;
+    }
+    else if (name == QLatin1String("nofaceregions"))
+    {
+        SearchFieldCheckBox* const field = new SearchFieldCheckBox(parent);
+        field->setFieldName(name);
+        field->setText(i18n("Faces"), i18n("Return items without face regions"));
+        field->setLabel(i18n("No Face Regions"));
+
+        return field;
+    }
     else
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "SearchField::createField: cannot create SearchField for" << name;

@@ -1,2 +1,2 @@
-+LIBRAW Snapshoot 2022-06-17
-libraw:a077aac05190530f22af4254a1e31745876d007f
++LIBRAW Snapshoot 2022-03-29
+libraw:adcb898a00746c8aa886eb06cc9f5a1cb1834fca

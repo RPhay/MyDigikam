@@ -6,14 +6,18 @@
   <name>AVPlayer</name>
   <name xml:lang="ca">AVPlayer</name>
   <name xml:lang="ca-valencia">AVPlayer</name>
+  <name xml:lang="cs">AVPlayer</name>
   <name xml:lang="de">AVPlayer</name>
+  <name xml:lang="en-GB">AVPlayer</name>
   <name xml:lang="es">AVPlayer</name>
   <name xml:lang="fi">AVPlayer</name>
   <name xml:lang="fr">AVPlayer</name>
+  <name xml:lang="is">AVPlayer</name>
   <name xml:lang="it">AVPlayer</name>
   <name xml:lang="ka">AVPlayer</name>
   <name xml:lang="nl">AVPlayer</name>
   <name xml:lang="pt">AVPlayer</name>
+  <name xml:lang="pt-BR">AVPlayer</name>
   <name xml:lang="ru">AVPlayer</name>
   <name xml:lang="sk">AVPlayer</name>
   <name xml:lang="sl">AVPlayer</name>
@@ -24,14 +28,19 @@
   <summary>Audio and Video Player</summary>
   <summary xml:lang="ca">Reproductor d'àudio i vídeo</summary>
   <summary xml:lang="ca-valencia">Reproductor d'àudio i vídeo</summary>
+  <summary xml:lang="cs">Přehrávač audio a video</summary>
   <summary xml:lang="de">Audio- und Video-Spieler</summary>
+  <summary xml:lang="en-GB">Audio and Video Player</summary>
   <summary xml:lang="es">Reproductor de sonido y vídeo</summary>
   <summary xml:lang="fi">Ääni- ja videosoitin</summary>
   <summary xml:lang="fr">Lecteur audio et vidéo</summary>
+  <summary xml:lang="is">Hljóð- og myndskeiðaspilari</summary>
   <summary xml:lang="it">Riproduttore audio e video</summary>
   <summary xml:lang="ka">აუდიო და ვიდეო დამკვრელი</summary>
   <summary xml:lang="nl">Audio- en videospeler</summary>
   <summary xml:lang="pt">Leitor de Vídeo e Áudio</summary>
+  <summary xml:lang="pt-BR">Reprodutor de áudio e vídeo</summary>
+  <summary xml:lang="ru">Аудио- и видеопроигрыватель</summary>
   <summary xml:lang="sl">Avdio in video predvajalnik</summary>
   <summary xml:lang="sv">Ljud- och videospelare</summary>
   <summary xml:lang="uk">Програвач аудіо/відео</summary>
@@ -43,13 +52,17 @@
     </p>
     <p xml:lang="ca">L'AVPlayer és el reproductor d'àudio i vídeo autònom i potent del projecte digiKam.</p>
     <p xml:lang="ca-valencia">AVPlayer és el reproductor d'àudio i vídeo autònom i potent del projecte digiKam.</p>
+    <p xml:lang="en-GB">AVPlayer is the standalone and powerful audio and video player of the digiKam project.</p>
     <p xml:lang="es">AVPlayer es el potente e independiente reproductor de sonido y vídeo del proyecto digiKam.</p>
     <p xml:lang="fi">AVPlayer on digiKam-projektin tehokas itsenäinen ääni- ja videosoitin.</p>
     <p xml:lang="fr">AVplayer est un puissant et autonome lecteur audio et vidéo du projet digikam.</p>
+    <p xml:lang="is">AVPlayer er sjálfstæði hljóð- og myndskeiðaspilarinn í digiKam-verkefninu.</p>
     <p xml:lang="it">AVPlayer è il riproduttore audio e video autonomo e ricco di funzionalità del progetto digiKam.</p>
     <p xml:lang="ka">AVPlayer არის digiKam პროექტის დამოუკიდებელი და ძლიერი აუდიო და ვიდეო პლეერი.</p>
     <p xml:lang="nl">AVPlayer is de alleenstaande en krachtige audio- en videospeler van het project digiKam.</p>
     <p xml:lang="pt">O AVPlayer é o leitor de vídeo e áudio autónomo e poderoso do projecto digiKam.</p>
+    <p xml:lang="pt-BR">AVPlayer é o reprodutor de áudio e vídeo autônomo e poderoso do projeto digiKam.</p>
+    <p xml:lang="ru">AVPlayer — это независимый и сильный аудио- и видеопроигрыватель от проекта digiKam.</p>
     <p xml:lang="sl">AVPlayer je samostojni in zmogljivi avdio in video predvajalnik projekta digiKam.</p>
     <p xml:lang="sv">AVPlayer är den fristående och kraftfulla ljud- och videospelaren i Digikam-projektet.</p>
     <p xml:lang="uk">AVPlayer — окремий і потужний програвач звукових і відеоданих проєкту digiKam.</p>
@@ -144,14 +157,18 @@
   <developer_name>digiKam Project</developer_name>
   <developer_name xml:lang="ca">Projecte digiKam</developer_name>
   <developer_name xml:lang="ca-valencia">Projecte digiKam</developer_name>
+  <developer_name xml:lang="cs">Projekt digiKam</developer_name>
   <developer_name xml:lang="de">digiKam-Projekt</developer_name>
+  <developer_name xml:lang="en-GB">digiKam Project</developer_name>
   <developer_name xml:lang="es">Proyecto digiKam</developer_name>
   <developer_name xml:lang="fi">digiKam-projekti</developer_name>
   <developer_name xml:lang="fr">Le projet digikam</developer_name>
+  <developer_name xml:lang="is">digiKam verkefnið</developer_name>
   <developer_name xml:lang="it">Progetto digiKam</developer_name>
   <developer_name xml:lang="ka">პროექტი "digiKam"</developer_name>
   <developer_name xml:lang="nl">digiKam-project</developer_name>
   <developer_name xml:lang="pt">Projecto digiKam</developer_name>
+  <developer_name xml:lang="pt-BR">Projeto digiKam</developer_name>
   <developer_name xml:lang="ru">Проект digiKam</developer_name>
   <developer_name xml:lang="sk">Projekt digiKam</developer_name>
   <developer_name xml:lang="sl">Projekt digiKam</developer_name>

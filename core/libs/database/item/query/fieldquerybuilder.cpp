@@ -88,10 +88,12 @@ void FieldQueryBuilder::addIntField(const QString& name)
 
         sql += QLatin1String(" (") + name + QLatin1Char(' ');
         ItemQueryBuilder::addSqlRelation(sql,
-                                          relation == SearchXml::Interval ? SearchXml::GreaterThanOrEqual : SearchXml::GreaterThan);
+                                         relation == SearchXml::Interval ? SearchXml::GreaterThanOrEqual
+                                                                         : SearchXml::GreaterThan);
         sql += QLatin1String(" ? AND ") + name + QLatin1Char(' ');
         ItemQueryBuilder::addSqlRelation(sql,
-                                          relation == SearchXml::Interval ? SearchXml::LessThanOrEqual : SearchXml::LessThan);
+                                         relation == SearchXml::Interval ? SearchXml::LessThanOrEqual
+                                                                         : SearchXml::LessThan);
         sql += QLatin1String(" ?) ");
 
         *boundValues << values.first() << values.last();
@@ -119,10 +121,12 @@ void FieldQueryBuilder::addLongField(const QString& name)
 
         sql += QLatin1String(" (") + name + QLatin1Char(' ');
         ItemQueryBuilder::addSqlRelation(sql,
-                                          relation == SearchXml::Interval ? SearchXml::GreaterThanOrEqual : SearchXml::GreaterThan);
+                                         relation == SearchXml::Interval ? SearchXml::GreaterThanOrEqual
+                                                                         : SearchXml::GreaterThan);
         sql += QLatin1String(" ? AND ") + name + QLatin1Char(' ');
         ItemQueryBuilder::addSqlRelation(sql,
-                                          relation == SearchXml::Interval ? SearchXml::LessThanOrEqual : SearchXml::LessThan);
+                                         relation == SearchXml::Interval ? SearchXml::LessThanOrEqual
+                                                                         : SearchXml::LessThan);
         sql += QLatin1String(" ?) ");
 
         *boundValues << values.first() << values.last();
@@ -150,10 +154,12 @@ void FieldQueryBuilder::addDoubleField(const QString& name)
 
         sql += QLatin1String(" (") + name + QLatin1Char(' ');
         ItemQueryBuilder::addSqlRelation(sql,
-                                          relation == SearchXml::Interval ? SearchXml::GreaterThanOrEqual : SearchXml::GreaterThan);
+                                         relation == SearchXml::Interval ? SearchXml::GreaterThanOrEqual
+                                                                         : SearchXml::GreaterThan);
         sql += QLatin1String(" ? AND ") + name + QLatin1Char(' ');
         ItemQueryBuilder::addSqlRelation(sql,
-                                          relation == SearchXml::Interval ? SearchXml::LessThanOrEqual : SearchXml::LessThan);
+                                         relation == SearchXml::Interval ? SearchXml::LessThanOrEqual
+                                                                         : SearchXml::LessThan);
         sql += QLatin1String(" ?) ");
 
         *boundValues << values.first() << values.last();
@@ -256,10 +262,12 @@ void FieldQueryBuilder::addDateField(const QString& name)
 
         sql += QLatin1String(" (") + name + QLatin1Char(' ');
         ItemQueryBuilder::addSqlRelation(sql,
-                                          relation == SearchXml::Interval ? SearchXml::GreaterThanOrEqual : SearchXml::GreaterThan);
+                                         relation == SearchXml::Interval ? SearchXml::GreaterThanOrEqual
+                                                                         : SearchXml::GreaterThan);
         sql += QLatin1String(" ? AND ") + name + QLatin1Char(' ');
         ItemQueryBuilder::addSqlRelation(sql,
-                                          relation == SearchXml::Interval ? SearchXml::LessThanOrEqual : SearchXml::LessThan);
+                                         relation == SearchXml::Interval ? SearchXml::LessThanOrEqual
+                                                                         : SearchXml::LessThan);
         sql += QLatin1String(" ?) ");
 
         *boundValues << values.first() << values.last();

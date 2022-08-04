@@ -223,7 +223,9 @@ void DImageHistory::insertReferredImage(int index, const HistoryImageId& id)
         return;
     }
 
-    index = qBound(0, index, d->entries.size() - 1);
+    // NOTE: Qt6::qBound() generate an exception if d->entries is empty, Qt5 no.
+
+    index = qMax(0, qMin(d->entries.size() - 1, index));
 
     if (id.isCurrentFile())
     {

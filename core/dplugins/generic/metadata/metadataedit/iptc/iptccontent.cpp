@@ -51,15 +51,15 @@ class Q_DECL_HIDDEN IPTCContent::Private
 public:
 
     explicit Private()
+      : captionCheck         (nullptr),
+        headlineCheck        (nullptr),
+        syncJFIFCommentCheck (nullptr),
+        syncEXIFCommentCheck (nullptr),
+        captionNote          (nullptr),
+        captionEdit          (nullptr),
+        headlineEdit         (nullptr),
+        writerEdit           (nullptr)
     {
-        headlineCheck        = nullptr;
-        captionNote          = nullptr;
-        captionEdit          = nullptr;
-        writerEdit           = nullptr;
-        headlineEdit         = nullptr;
-        captionCheck         = nullptr;
-        syncJFIFCommentCheck = nullptr;
-        syncEXIFCommentCheck = nullptr;
     }
 
     QCheckBox*        captionCheck;
@@ -70,22 +70,21 @@ public:
     QLabel*           captionNote;
     LimitedTextEdit*  captionEdit;
 
-    QLineEdit*        headlineEdit;
+    LimitedTextEdit*  headlineEdit;
 
     MultiStringsEdit* writerEdit;
 };
 
 IPTCContent::IPTCContent(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     QGridLayout* const grid = new QGridLayout(this);
 
     // --------------------------------------------------------
 
     d->headlineCheck = new QCheckBox(i18n("Headline:"), this);
-    d->headlineEdit  = new QLineEdit(this);
-    d->headlineEdit->setClearButtonEnabled(true);
+    d->headlineEdit  = new LimitedTextEdit(this);
     d->headlineEdit->setMaxLength(256);
     d->headlineEdit->setWhatsThis(i18n("Enter here the content synopsis. This field is limited "
                                        "to 256 characters."));
@@ -123,20 +122,20 @@ IPTCContent::IPTCContent(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    grid->addWidget(d->headlineCheck,                       0, 0, 1, 1);
-    grid->addWidget(d->headlineEdit,                        0, 1, 1, 2);
-    grid->addWidget(captionHeader,                          1, 0, 1, 3);
-    grid->addWidget(d->captionEdit,                         2, 0, 1, 3);
-    grid->addWidget(d->syncJFIFCommentCheck,                3, 0, 1, 3);
-    grid->addWidget(d->syncEXIFCommentCheck,                5, 0, 1, 3);
-    grid->addWidget(new DLineWidget(Qt::Horizontal, this),  6, 0, 1, 3);
-    grid->addWidget(d->writerEdit,                          7, 0, 1, 3);
-    grid->addWidget(note,                                   8, 0, 1, 3);
-    grid->setRowStretch(9, 10);
+    grid->addWidget(d->headlineCheck,                       0, 0, 1, 3);
+    grid->addWidget(d->headlineEdit,                        1, 0, 1, 3);
+    grid->addWidget(captionHeader,                          2, 0, 1, 3);
+    grid->addWidget(d->captionEdit,                         3, 0, 1, 3);
+    grid->addWidget(d->syncJFIFCommentCheck,                4, 0, 1, 3);
+    grid->addWidget(d->syncEXIFCommentCheck,                6, 0, 1, 3);
+    grid->addWidget(new DLineWidget(Qt::Horizontal, this),  7, 0, 1, 3);
+    grid->addWidget(d->writerEdit,                          8, 0, 1, 3);
+    grid->addWidget(note,                                   9, 0, 1, 3);
+    grid->setRowStretch(10, 10);
     grid->setColumnStretch(2, 10);
     grid->setContentsMargins(QMargins());
     grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
 
     // --------------------------------------------------------
 
@@ -174,10 +173,10 @@ IPTCContent::IPTCContent(QWidget* const parent)
     connect(d->captionEdit, SIGNAL(textChanged()),
             this, SLOT(slotCaptionLeftCharacters()));
 
-    connect(d->headlineEdit, SIGNAL(textChanged(QString)),
+    connect(d->headlineEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
-    connect(d->headlineEdit, SIGNAL(textChanged(QString)),
+    connect(d->headlineEdit, SIGNAL(textChanged()),
             this, SLOT(slotLineEditModified()));
 }
 
@@ -260,7 +259,7 @@ void IPTCContent::readMetadata(const DMetadata& meta)
     data = meta.getIptcTagString("Iptc.Application2.Headline", false);
     if (!data.isNull())
     {
-        d->headlineEdit->setText(data);
+        d->headlineEdit->setPlainText(data);
         d->headlineCheck->setChecked(true);
     }
     d->headlineEdit->setEnabled(d->headlineCheck->isChecked());

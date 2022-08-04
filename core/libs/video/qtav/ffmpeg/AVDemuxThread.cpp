@@ -78,7 +78,7 @@ public:
     {
     }
 
-    virtual void call()
+    virtual void call() override
     {
         if (!mDemuxThread)
             return;

@@ -1565,6 +1565,17 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
     {
         if      (rmeta.contains(QLatin1String("com.apple.quicktime.creationdate")))
         {
+            if (rmeta.value(QLatin1String("com.apple.quicktime.make")) == QLatin1String("Apple"))
+            {
+                QString creationdDate = rmeta.value(QLatin1String("com.apple.quicktime.creationdate"));
+
+                if ((creationdDate.length() > 5)                                     &&
+                    (creationdDate.at(creationdDate.length() - 5) == QLatin1Char('+')))
+                {
+                    rmeta[QLatin1String("com.apple.quicktime.creationdate")].chop(5);
+                }
+            }
+
             videoDateTimeOriginal.prepend(videoDateTimeOriginal.takeLast());
         }
         else if (!rmeta.contains(QLatin1String("com.android.version")))

@@ -336,9 +336,9 @@ QStringList LibAVFilter::audioFilters()
     return list;
 }
 
-QString LibAVFilter::filterDescription(const QString &filterName)
+QString LibAVFilter::filterDescription(const QString& filterName)
 {
-    QString s;
+    QString s = QString();
 
 #if QTAV_HAVE(AVFILTER)
 
@@ -452,7 +452,7 @@ void* LibAVFilter::pullFrameHolder()
 
 QStringList LibAVFilter::registeredFilters(int type)
 {
-    QStringList filters;
+    QStringList filters = QStringList();
 
 #if QTAV_HAVE(AVFILTER)
 
@@ -474,9 +474,9 @@ QStringList LibAVFilter::registeredFilters(int type)
 
 #       else // ffmpeg >= 5
 
-    void** ff         = nullptr;
+    void* ff          = nullptr;
 
-    while (f = av_filter_iterate(ff))
+    while ((f = av_filter_iterate(&ff)))
     {
 
 #       endif

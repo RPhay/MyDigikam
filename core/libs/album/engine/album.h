@@ -203,6 +203,11 @@ public:
     bool isTrashAlbum()                     const;
 
     /**
+     * @return count of trash content
+     */
+    int countTrashAlbum()                   const;
+
+    /**
      * This allows to associate some "extra" data to a Album. As one
      * Album can be used by several objects (often views) which all need
      * to add some data, you have to use a key to reference your extra data

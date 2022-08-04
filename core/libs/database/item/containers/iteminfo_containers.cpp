@@ -67,67 +67,99 @@ ImageMetadataContainer ItemInfo::imageMetadataContainer() const
             switch (*it)
             {
                 case DatabaseFields::Make:
+                {
                     container.make = fieldString;
                     break;
+                }
 
                 case DatabaseFields::Model:
+                {
                     container.model = fieldString;
                     break;
+                }
 
                 case DatabaseFields::Lens:
+                {
                     container.lens = fieldString;
                     break;
+                }
 
                 case DatabaseFields::Aperture:
+                {
                     container.aperture = fieldString;
                     break;
+                }
 
                 case DatabaseFields::FocalLength:
+                {
                     container.focalLength = fieldString;
                     break;
+                }
 
                 case DatabaseFields::FocalLength35:
+                {
                     container.focalLength35 = fieldString;
                     break;
+                }
 
                 case DatabaseFields::ExposureTime:
+                {
                     container.exposureTime = fieldString;
                     break;
+                }
 
                 case DatabaseFields::ExposureProgram:
+                {
                     container.exposureProgram = fieldString;
                     break;
+                }
 
                 case DatabaseFields::ExposureMode:
+                {
                     container.exposureMode = fieldString;
                     break;
+                }
 
                 case DatabaseFields::Sensitivity:
+                {
                     container.sensitivity = fieldString;
                     break;
+                }
 
                 case DatabaseFields::FlashMode:
+                {
                     container.flashMode = fieldString;
                     break;
+                }
 
                 case DatabaseFields::WhiteBalance:
+                {
                     container.whiteBalance = fieldString;
                     break;
+                }
 
                 case DatabaseFields::WhiteBalanceColorTemperature:
+                {
                     container.whiteBalanceColorTemperature = fieldString;
                     break;
+                }
 
                 case DatabaseFields::SubjectDistance:
+                {
                     container.subjectDistance = fieldString;
                     break;
+                }
 
                 case DatabaseFields::SubjectDistanceCategory:
+                {
                     container.subjectDistanceCategory = fieldString;
                     break;
+                }
 
                 default:
+                {
                     break;
+                }
             }
         }
     }
@@ -164,35 +196,51 @@ VideoMetadataContainer ItemInfo::videoMetadataContainer() const
             switch (*it)
             {
                 case DatabaseFields::AspectRatio:
+                {
                     container.aspectRatio = fieldString;
                     break;
+                }
 
                 case DatabaseFields::AudioBitRate:
+                {
                     container.audioBitRate = fieldString;
                     break;
+                }
 
                 case DatabaseFields::AudioChannelType:
+                {
                     container.audioChannelType = fieldString;
                     break;
+                }
 
                 case DatabaseFields::AudioCodec:
+                {
                     container.audioCodec = fieldString;
                     break;
+                }
 
                 case DatabaseFields::Duration:
+                {
                     container.duration = fieldString;
                     break;
+                }
 
                 case DatabaseFields::FrameRate:
+                {
                     container.frameRate = fieldString;
                     break;
+                }
 
                 case DatabaseFields::VideoCodec:
+                {
                     container.videoCodec = fieldString;
                     break;
+                }
 
                 default:
+                {
                     break;
+                }
             }
         }
     }
@@ -303,7 +351,7 @@ void ItemInfo::removeMetadataTemplate()
     ep.removeSubjectCode();
 }
 
-ItemComments ItemInfo::imageComments(CoreDbAccess& access) const
+ItemComments ItemInfo::imageComments(const CoreDbAccess& access) const
 {
     if (!m_data)
     {

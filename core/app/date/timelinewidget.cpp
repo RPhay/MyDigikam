@@ -2087,8 +2087,7 @@ void TimeLineWidget::slotThemeChanged()
     update();
 }
 
-
-void TimeLineWidget::handleSelectionRange(QDateTime& selEndDateTime)
+void TimeLineWidget::handleSelectionRange(const QDateTime& selEndDateTime)
 {
     // Clamp start and end date-time of current contiguous selection.
 

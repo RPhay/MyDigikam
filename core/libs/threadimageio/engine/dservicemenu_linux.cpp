@@ -51,7 +51,7 @@
 namespace Digikam
 {
 
-bool DServiceMenu::runFiles(KService* const service,
+bool DServiceMenu::runFiles(const KService::Ptr& service,
                             const QList<QUrl>& urls)
 {
     return (runFiles(service->exec(), urls, service));
@@ -59,7 +59,7 @@ bool DServiceMenu::runFiles(KService* const service,
 
 bool DServiceMenu::runFiles(const QString& appCmd,
                             const QList<QUrl>& urls,
-                            KService* const service)
+                            const KService::Ptr& service)
 {
     QRegularExpression split(QLatin1String(" +(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)"));
     QStringList cmdList = appCmd.split(split, QT_SKIP_EMPTY_PARTS);

@@ -29,7 +29,6 @@ echo "--------------------------------------------------------------------------
 # Pre-processing checks
 
 . ./config.sh
-. ./common.sh
 ChecksRunAsRoot
 StartScript
 ChecksCPUCores
@@ -120,6 +119,7 @@ urpmi --auto \
       sane-backends \
       nodejs-devel \
       python3-lxml \
+      python3-html5lib \
       perl-YAML-PP \
       perl-YAML-Syck \
       appstream \

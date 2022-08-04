@@ -53,7 +53,7 @@ public:
     CBContainer settings() const;
     void setSettings(const CBContainer& settings);
 
-    void readSettings(KConfigGroup& group);
+    void readSettings(const KConfigGroup& group);
     void writeSettings(KConfigGroup& group);
 
 Q_SIGNALS:

@@ -66,16 +66,13 @@ DK_URL="http://download.kde.org/stable/digikam"
 DK_BUILDTEMP=~/dktemp
 
 # KDE Application version.
-DK_KA_VERSION="22.04.2"
+DK_KA_VERSION="22.04.3"
 
 # KDE KF5 frameworks version.
-DK_KF5_VERSION="5.95"
+DK_KF5_VERSION="5.96"
 
 # Qt version to use in bundle and provided by MXE.
 DK_QTVERSION="5.15"
-
-# ExifTool Windows version to embed in the bundle.
-DK_EXIFTOOL_VERSION="12.42"
 
 # digiKam tag version from git. Official tarball do not include extra shared libraries.
 # The list of tags can be listed with this url: https://invent.kde.org/graphics/digikam/-/tags

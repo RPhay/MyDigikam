@@ -33,8 +33,9 @@ ExternalProject_Add(ext_qt
 
     PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-appimage-support.patch        &&
                   ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-appimage-openssl-linked.patch &&
-                  ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-appimage-icu-linked.patch     &&
                   ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-base-cmake.patch
+
+#                  ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-appimage-icu-linked.patch     &&
 
     # Script to configure Qt6 with all components required by digiKAm AppImage.
     CONFIGURE_COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/bootstrap-qt6.sh <SOURCE_DIR>/. &&

@@ -88,7 +88,7 @@ private:
 
 // ----------------------------------------------------------------------------------------------
 
-#ifdef HAVE_KNOTIFICATIONS
+#if defined HAVE_KNOTIFICATIONS && defined HAVE_DBUS
 
 static inline bool detectKDEDesktopIsRunning()
 {

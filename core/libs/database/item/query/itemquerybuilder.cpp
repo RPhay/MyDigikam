@@ -581,10 +581,12 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
 
         sql += QString::fromUtf8(" ( CAST(VideoMetadata.audioBitRate AS INTEGER)");
         ItemQueryBuilder::addSqlRelation(sql,
-                                          relation == SearchXml::Interval ? SearchXml::GreaterThanOrEqual : SearchXml::GreaterThan);
+                                         relation == SearchXml::Interval ? SearchXml::GreaterThanOrEqual
+                                                                         : SearchXml::GreaterThan);
         sql += QString::fromUtf8(" ? AND CAST(VideoMetadata.audioBitRate AS INTEGER)");
         ItemQueryBuilder::addSqlRelation(sql,
-                                          relation == SearchXml::Interval ? SearchXml::LessThanOrEqual : SearchXml::LessThan);
+                                         relation == SearchXml::Interval ? SearchXml::LessThanOrEqual
+                                                                         : SearchXml::LessThan);
         sql += QString::fromUtf8(" ?) ");
 
         *boundValues << values.first() << values.last();
@@ -654,10 +656,12 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
 
         sql += QString::fromUtf8(" ( CAST(VideoMetadata.duration AS INTEGER)");
         ItemQueryBuilder::addSqlRelation(sql,
-                                          relation == SearchXml::Interval ? SearchXml::GreaterThanOrEqual : SearchXml::GreaterThan);
+                                         relation == SearchXml::Interval ? SearchXml::GreaterThanOrEqual
+                                                                         : SearchXml::GreaterThan);
         sql += QString::fromUtf8(" ? AND CAST(VideoMetadata.duration AS INTEGER)");
         ItemQueryBuilder::addSqlRelation(sql,
-                                          relation == SearchXml::Interval ? SearchXml::LessThanOrEqual : SearchXml::LessThan);
+                                         relation == SearchXml::Interval ? SearchXml::LessThanOrEqual
+                                                                         : SearchXml::LessThan);
         sql += QString::fromUtf8(" ?) ");
 
         *boundValues << values.first()*1000 << values.last()*1000;
@@ -675,10 +679,12 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
 
         sql += QString::fromUtf8(" ( CAST(VideoMetadata.frameRate AS DOUBLE)");
         ItemQueryBuilder::addSqlRelation(sql,
-                                          relation == SearchXml::Interval ? SearchXml::GreaterThanOrEqual : SearchXml::GreaterThan);
+                                         relation == SearchXml::Interval ? SearchXml::GreaterThanOrEqual
+                                                                         : SearchXml::GreaterThan);
         sql += QString::fromUtf8(" ? AND CAST(VideoMetadata.frameRate AS DOUBLE)");
         ItemQueryBuilder::addSqlRelation(sql,
-                                          relation == SearchXml::Interval ? SearchXml::LessThanOrEqual : SearchXml::LessThan);
+                                         relation == SearchXml::Interval ? SearchXml::LessThanOrEqual
+                                                                         : SearchXml::LessThan);
         sql += QString::fromUtf8(" ?) ");
 
         *boundValues << values.first() << values.last();
@@ -1110,6 +1116,45 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
         buildField(sql, reader, QLatin1String("title"), boundValues, hooks);
 
         sql += QLatin1String(" ) ");
+    }
+    else if (name == QLatin1String("faceregionscount"))
+    {
+        sql += QString::fromUtf8(" (Images.id IN (SELECT imageid FROM ImageTagProperties WHERE property = ? "
+                                     " GROUP BY imageid HAVING COUNT(*) ");
+
+        if ((relation == SearchXml::Interval) || (relation == SearchXml::IntervalOpen))
+        {
+            QList<int> values = reader.valueToIntList();
+
+            if (values.size() != 2)
+            {
+                qCWarning(DIGIKAM_DATABASE_LOG) << "Relation Interval requires a list of two values";
+                return false;
+            }
+
+            ItemQueryBuilder::addSqlRelation(sql,
+                                             relation == SearchXml::Interval ? SearchXml::GreaterThanOrEqual
+                                                                             : SearchXml::GreaterThan);
+            sql += QString::fromUtf8(" ? AND COUNT(*) ");
+            ItemQueryBuilder::addSqlRelation(sql,
+                                             relation == SearchXml::Interval ? SearchXml::LessThanOrEqual
+                                                                             : SearchXml::LessThan);
+            sql += QString::fromUtf8(" ?) ) ");
+            *boundValues << ImageTagPropertyName::tagRegion() << values.first() << values.last();
+        }
+        else
+        {
+            ItemQueryBuilder::addSqlRelation(sql, relation);
+            sql += QString::fromUtf8(" ?) ) ");
+            *boundValues << ImageTagPropertyName::tagRegion() << reader.valueToInt();
+        }
+    }
+    else if (name == QLatin1String("nofaceregions"))
+    {
+            reader.readToEndOfElement();
+            sql += QString::fromUtf8(" (Images.id NOT IN (SELECT imageid FROM ImageTagProperties "
+                                     " WHERE property = ?) ) ");
+            *boundValues << ImageTagPropertyName::tagRegion();
     }
     else if (name == QLatin1String("similarity"))
     {

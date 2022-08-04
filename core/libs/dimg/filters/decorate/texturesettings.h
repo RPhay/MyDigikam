@@ -54,7 +54,7 @@ public:
     TextureContainer settings()        const;
     void setSettings(const TextureContainer& settings);
 
-    void readSettings(KConfigGroup& group);
+    void readSettings(const KConfigGroup& group);
     void writeSettings(KConfigGroup& group);
 
 Q_SIGNALS:

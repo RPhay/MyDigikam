@@ -177,6 +177,25 @@ QPixmap AlbumThumbnailLoader::getStandardTagIcon(TAlbum* const album, RelativeSi
     }
 }
 
+QPixmap AlbumThumbnailLoader::getStandardAlbumIcon(PAlbum* const album, RelativeSize relativeSize)
+{
+    if      (album->isRoot() || album->isAlbumRoot())
+    {
+        return getStandardAlbumRootIcon(relativeSize);
+    }
+    else if (album->isTrashAlbum())
+    {
+        if (album->countTrashAlbum() > 0)
+        {
+            return getStandardFullTrashIcon(relativeSize);
+        }
+
+        return getStandardEmptyTrashIcon(relativeSize);
+    }
+
+    return getStandardAlbumIcon(relativeSize);
+}
+
 QPixmap AlbumThumbnailLoader::getStandardFaceIcon(TAlbum* const /*album*/, RelativeSize relativeSize)
 {
     return loadIcon(QLatin1String("smiley"), computeFaceSize(relativeSize));
@@ -187,14 +206,14 @@ QPixmap AlbumThumbnailLoader::getNewTagIcon(RelativeSize relativeSize)
     return loadIcon(QLatin1String("tag-new"), computeIconSize(relativeSize));
 }
 
-QPixmap AlbumThumbnailLoader::getStandardAlbumIcon(RelativeSize relativeSize)
-{
-    return loadIcon(QLatin1String("folder"), computeIconSize(relativeSize));
-}
-
-QPixmap AlbumThumbnailLoader::getStandardAlbumTrashIcon(RelativeSize relativeSize)
+QPixmap AlbumThumbnailLoader::getStandardEmptyTrashIcon(RelativeSize relativeSize)
 {
     return loadIcon(QLatin1String("user-trash"), computeIconSize(relativeSize));
+}
+
+QPixmap AlbumThumbnailLoader::getStandardFullTrashIcon(RelativeSize relativeSize)
+{
+    return loadIcon(QLatin1String("user-trash-full"), computeIconSize(relativeSize));
 }
 
 QPixmap AlbumThumbnailLoader::getStandardAlbumRootIcon(RelativeSize relativeSize)
@@ -202,20 +221,9 @@ QPixmap AlbumThumbnailLoader::getStandardAlbumRootIcon(RelativeSize relativeSize
     return loadIcon(QLatin1String("folder-pictures"), computeIconSize(relativeSize));
 }
 
-QPixmap AlbumThumbnailLoader::getStandardAlbumIcon(PAlbum* const album, RelativeSize relativeSize)
+QPixmap AlbumThumbnailLoader::getStandardAlbumIcon(RelativeSize relativeSize)
 {
-    if      (album->isRoot() || album->isAlbumRoot())
-    {
-        return getStandardAlbumRootIcon(relativeSize);
-    }
-    else if (album->isTrashAlbum())
-    {
-        return getStandardAlbumTrashIcon();
-    }
-    else
-    {
-        return getStandardAlbumIcon(relativeSize);
-    }
+    return loadIcon(QLatin1String("folder"), computeIconSize(relativeSize));
 }
 
 int AlbumThumbnailLoader::computeIconSize(RelativeSize relativeSize) const
@@ -342,7 +350,7 @@ bool AlbumThumbnailLoader::getAlbumThumbnail(PAlbum* const album)
 
 QPixmap AlbumThumbnailLoader::getAlbumThumbnailDirectly(PAlbum* const album)
 {
-    if (album->iconId() && (d->iconSize > d->minBlendSize))
+    if (album->iconId() && !album->isTrashAlbum() && (d->iconSize > d->minBlendSize))
     {
         // icon cached?
 

@@ -69,7 +69,7 @@ public:
                          const QString& cpCleanPath,
                          const QString& cpFindPath);
 
-    void optimizeProject(QUrl& ptoUrl,
+    void optimizeProject(const QUrl& ptoUrl,
                          QUrl& optimizePtoUrl,
                          QUrl& viewCropPtoUrl,
                          bool levelHorizon,

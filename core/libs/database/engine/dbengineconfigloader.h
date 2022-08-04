@@ -49,7 +49,7 @@ public:
     bool readConfig(const QString& filepath, int xmlVersion);
     DbEngineConfigSettings readDatabase(QDomElement& databaseElement);
 
-    void readDBActions(QDomElement& sqlStatementElements, DbEngineConfigSettings& configElement);
+    void readDBActions(const QDomElement& sqlStatementElements, DbEngineConfigSettings& configElement);
 
 public:
 

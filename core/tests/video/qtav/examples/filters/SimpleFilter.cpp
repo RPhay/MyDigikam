@@ -147,7 +147,7 @@ void SimpleFilter::process(Statistics* statistics, VideoFrame* frame)
 
     if (mWave)
     {
-        static int sin_tbl[16] =
+        static const int sin_tbl[16] =
         {
              0, 38, 71, 92, 100, 92, 71, 38, 0, -38, -71, -92, -100, -92, -71, -38
         };

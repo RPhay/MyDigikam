@@ -136,6 +136,7 @@ private Q_SLOTS:
 
     void slotClearButtonPressed();
     void slotTextChanged(const QString& text);
+    void slotIndexChanged(int index);
 
 private:
 

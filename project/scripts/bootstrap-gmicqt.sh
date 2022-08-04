@@ -20,6 +20,7 @@ cmake -G "$MAKEFILES_TYPE" . \
       -DCMAKE_BUILD_TYPE=Debug \
       -DCMAKE_INSTALL_PREFIX=/usr \
       -DENABLE_ASAN=OFF \
+      -DENABLE_SYSTEM_GMIC=OFF \
       -DGMIC_QT_HOST=digikam \
       -Wno-dev \
       ..

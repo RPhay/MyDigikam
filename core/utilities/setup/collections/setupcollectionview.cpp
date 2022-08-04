@@ -39,6 +39,7 @@
 #include <QStandardPaths>
 #include <QLineEdit>
 #include <QComboBox>
+#include <QUrlQuery>
 #include <QUrl>
 #include <QIcon>
 #include <QDialog>
@@ -86,6 +87,8 @@ SetupCollectionDelegate::SetupCollectionDelegate(QAbstractItemView* const view, 
 
     m_samplePushButton   = new QPushButton(view);
     m_samplePushButton->hide();
+    m_sampleAppendButton = new QToolButton(view);
+    m_sampleAppendButton->hide();
     m_sampleUpdateButton = new QToolButton(view);
     m_sampleUpdateButton->hide();
     m_sampleDeleteButton = new QToolButton(view);
@@ -107,6 +110,14 @@ QList<QWidget*> SetupCollectionDelegate::createItemWidgets(const QModelIndex& /*
 
     connect(pushButton, &QPushButton::clicked,
             this, [this, pushButton]() { Q_EMIT categoryButtonPressed(pushButton->property("id").toInt()); });
+
+    QToolButton* const appendButton = new QToolButton();
+    appendButton->setToolTip(i18nc("@info:tooltip", "Append a path to the collection."));
+    appendButton->setAutoRaise(true);
+    list << appendButton;
+
+    connect(appendButton, &QToolButton::clicked,
+            this, [this, appendButton]() { Q_EMIT appendPressed(appendButton->property("id").toInt()); });
 
     QToolButton* const updateButton = new QToolButton();
     updateButton->setToolTip(i18nc("@info:tooltip", "Updates the path of the collection."));
@@ -158,6 +169,19 @@ QSize SetupCollectionDelegate::sizeHint(const QStyleOptionViewItem& option, cons
         hint.setWidth(m_categoryMaxStyledWidth + widgetHint.width());
         hint.setHeight(qMax(hint.height(), widgetHint.height()));
     }
+    else if (index.data(SetupCollectionModel::IsAppendRole).toBool())
+    {
+        // set real pixmap on sample button to compute correct size hint
+
+        QIcon pix      = index.data(SetupCollectionModel::AppendDecorationRole).value<QIcon>();
+        m_sampleAppendButton->setIcon(index.data(SetupCollectionModel::AppendDecorationRole).value<QIcon>());
+        QSize widgetHint = m_sampleAppendButton->sizeHint();
+
+        // combine hints
+
+        hint.setWidth(hint.width() + widgetHint.width());
+        hint.setHeight(qMax(hint.height(), widgetHint.height()));
+    }
     else if (index.data(SetupCollectionModel::IsUpdateRole).toBool())
     {
         // set real pixmap on sample button to compute correct size hint
@@ -193,8 +217,9 @@ void SetupCollectionDelegate::updateItemWidgets(const QList<QWidget*>& widgets,
                                                 const QPersistentModelIndex& index) const
 {
     QPushButton* const pushButton   = static_cast<QPushButton*>(widgets.at(0));
-    QToolButton* const updateButton = static_cast<QToolButton*>(widgets.at(1));
-    QToolButton* const deleteButton = static_cast<QToolButton*>(widgets.at(2));
+    QToolButton* const appendButton = static_cast<QToolButton*>(widgets.at(1));
+    QToolButton* const updateButton = static_cast<QToolButton*>(widgets.at(2));
+    QToolButton* const deleteButton = static_cast<QToolButton*>(widgets.at(3));
 
     if      (index.data(SetupCollectionModel::IsCategoryRole).toBool())
     {
@@ -210,11 +235,23 @@ void SetupCollectionDelegate::updateItemWidgets(const QList<QWidget*>& widgets,
 
         pushButton->move(m_categoryMaxStyledWidth, (option.rect.height() - pushButton->height()) / 2);
         pushButton->show();
+        appendButton->hide();
         updateButton->hide();
         deleteButton->hide();
 
         pushButton->setEnabled(itemView()->isEnabled());
         pushButton->setProperty("id", index.data(SetupCollectionModel::CategoryButtonMapId));
+    }
+    else if (index.data(SetupCollectionModel::IsAppendRole).toBool())
+    {
+        appendButton->setIcon(index.data(SetupCollectionModel::AppendDecorationRole).value<QIcon>());
+        appendButton->resize(appendButton->sizeHint());
+        appendButton->move(0, (option.rect.height() - appendButton->height()) / 2);
+        appendButton->show();
+        pushButton->hide();
+
+        appendButton->setEnabled(itemView()->isEnabled());
+        appendButton->setProperty("id", index.data(SetupCollectionModel::AppendMapId));
     }
     else if (index.data(SetupCollectionModel::IsUpdateRole).toBool())
     {
@@ -241,6 +278,7 @@ void SetupCollectionDelegate::updateItemWidgets(const QList<QWidget*>& widgets,
     else
     {
         pushButton->hide();
+        appendButton->hide();
         updateButton->hide();
         deleteButton->hide();
     }
@@ -308,6 +346,9 @@ void SetupCollectionTreeView::setModel(SetupCollectionModel* collectionModel)
     connect(static_cast<SetupCollectionDelegate*>(itemDelegate()), SIGNAL(categoryButtonPressed(int)),
             collectionModel, SLOT(slotCategoryButtonPressed(int)));
 
+    connect(static_cast<SetupCollectionDelegate*>(itemDelegate()), SIGNAL(appendPressed(int)),
+            collectionModel, SLOT(slotAppendPressed(int)));
+
     connect(static_cast<SetupCollectionDelegate*>(itemDelegate()), SIGNAL(updatePressed(int)),
             collectionModel, SLOT(slotUpdatePressed(int)));
 
@@ -342,6 +383,8 @@ void SetupCollectionTreeView::modelLoadedCollections()
     // Resize last column, so that delete button is always rightbound
 
     header()->setStretchLastSection(false); // defaults to true
+    header()->setSectionResizeMode(SetupCollectionModel::ColumnAppendButton, QHeaderView::Fixed);
+    resizeColumnToContents(SetupCollectionModel::ColumnAppendButton);
     header()->setSectionResizeMode(SetupCollectionModel::ColumnUpdateButton, QHeaderView::Fixed);
     resizeColumnToContents(SetupCollectionModel::ColumnUpdateButton);
     header()->setSectionResizeMode(SetupCollectionModel::ColumnDeleteButton, QHeaderView::Fixed);
@@ -363,6 +406,8 @@ void SetupCollectionTreeView::modelLoadedCollections()
 
 SetupCollectionModel::Item::Item()
     : parentId(INTERNALID),
+      orgIndex(0),
+      appended(false),
       updated (false),
       deleted (false)
 {
@@ -370,6 +415,8 @@ SetupCollectionModel::Item::Item()
 
 SetupCollectionModel::Item::Item(const CollectionLocation& location)
     : location(location),
+      orgIndex(0),
+      appended(false),
       updated (false),
       deleted (false)
 {
@@ -380,6 +427,8 @@ SetupCollectionModel::Item::Item(const QString& path, const QString& label, Setu
     : label   (label),
       path    (path),
       parentId(category),
+      orgIndex(0),
+      appended(false),
       updated (false),
       deleted (false)
 {
@@ -419,6 +468,30 @@ void SetupCollectionModel::loadCollections()
     Q_FOREACH (const CollectionLocation& location, locations)
     {
         m_collections << Item(location);
+        int idx = m_collections.size() - 1;
+
+        if (location.type() == CollectionLocation::Network)
+        {
+            QUrl url(location.identifier);
+
+            if (url.scheme() == QLatin1String("networkshareid"))
+            {
+               QUrlQuery q(url);
+
+                Q_FOREACH (const QString& path, q.allQueryItemValues(QLatin1String("mountpath")))
+                {
+                    if (location.albumRootPath() != path)
+                    {
+                        Item item(location);
+                        item.orgIndex = idx;
+                        item.appended = true;
+                        item.path     = path;
+                        m_collections << item;
+                        m_collections[idx].childs << path;
+                    }
+                }
+            }
+        }
     }
 
     endResetModel();
@@ -433,7 +506,11 @@ void SetupCollectionModel::apply()
     {
         const Item& item = m_collections.at(i);
 
-        if      (item.deleted && !item.location.isNull())
+        if      (item.appended)
+        {
+            continue;
+        }
+        else if (item.deleted && !item.location.isNull())
         {
             // if item was deleted and had a valid location, i.e. exists in DB
 
@@ -517,8 +594,10 @@ void SetupCollectionModel::apply()
             newType = CollectionLocation::Network;
         }
 
+        QStringList pathList;
+        pathList << item.path << item.childs;
         location    = CollectionManager::instance()->refreshLocation(item.location, newType,
-                                                                     QUrl::fromLocalFile(item.path), item.label);
+                                                                     pathList, item.label);
 
         if (location.isNull())
         {
@@ -576,6 +655,86 @@ void SetupCollectionModel::setParentWidgetForDialogs(QWidget* widget)
 void SetupCollectionModel::slotCategoryButtonPressed(int mappedId)
 {
     addCollection(mappedId);
+}
+
+void SetupCollectionModel::slotAppendPressed(int mappedId)
+{
+    QString picPath = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
+
+    QUrl curl       = DFileDialog::getExistingDirectoryUrl(m_dialogParentWidget,
+                                                           i18n("Choose the folder containing your collection"),
+                                                           QUrl::fromLocalFile(picPath));
+
+    if (curl.isEmpty())
+    {
+        return;
+    }
+
+    bool foundPath = false;
+
+    Q_FOREACH (const Item& item, m_collections)
+    {
+        if (!item.deleted)
+        {
+            QStringList possiblePaths;
+
+            possiblePaths << item.childs;
+
+            if      (!item.path.isEmpty())
+            {
+                possiblePaths << item.path;
+            }
+            else if (!item.location.isNull())
+            {
+                possiblePaths << item.location.albumRootPath();
+            }
+
+            if (possiblePaths.contains(curl.toLocalFile()))
+            {
+                foundPath = true;
+                break;
+            }
+        }
+    }
+
+    if (foundPath)
+    {
+        QMessageBox::warning(m_dialogParentWidget, i18n("Problem Appending Collection"),
+                                                   i18n("A collection with the path \"%1\" already exists.",
+                                                        QDir::toNativeSeparators(curl.toLocalFile())));
+
+        return;
+    }
+
+    QModelIndex index = indexForId(mappedId, (int)ColumnStatus);
+
+    if (!index.isValid() || (mappedId >= m_collections.count()))
+    {
+        return;
+    }
+
+    Item& orgItem   = m_collections[index.internalId()];
+
+    Item item(curl.toLocalFile(), orgItem.label, (Category)orgItem.parentId);
+    orgItem.path    = !orgItem.updated ? orgItem.location.albumRootPath()
+                                       : orgItem.path;
+    orgItem.label   = orgItem.location.label();
+    orgItem.childs << curl.toLocalFile();
+    orgItem.updated = true;
+
+    item.orgIndex   = index.internalId();
+    item.location   = orgItem.location;
+    item.appended   = true;
+
+    int row         = rowCount(index);
+
+    beginInsertRows(index, row, row);
+    m_collections << item;
+    endInsertRows();
+
+    // only workaround for bug 182753
+
+    Q_EMIT layoutChanged();
 }
 
 void SetupCollectionModel::slotUpdatePressed(int mappedId)
@@ -691,15 +850,28 @@ void SetupCollectionModel::deleteCollection(int internalId)
         return;
     }
 
-    Item& item = m_collections[index.internalId()];
+    int result    = QMessageBox::No;
+    Item& item    = m_collections[index.internalId()];
+    QString label = data(indexForId(internalId, (int)ColumnName), Qt::DisplayRole).toString();
 
     // Ask for confirmation
 
-    QString label = data(indexForId(internalId, (int)ColumnName), Qt::DisplayRole).toString();
-    int result    = QMessageBox::warning(m_dialogParentWidget,
-                                         i18n("Remove Collection?"),
-                                         i18n("Do you want to remove the collection \"%1\" from your list of collections?", label),
-                                         QMessageBox::Yes | QMessageBox::No);
+    if (item.appended)
+    {
+        result = QMessageBox::warning(m_dialogParentWidget,
+                                      i18n("Remove Path from the Collection?"),
+                                      i18n("Do you want to remove the appended path \"%1\" from the collection \"%2\"?",
+                                           item.path, label),
+                                      QMessageBox::Yes | QMessageBox::No);
+    }
+    else
+    {
+        result = QMessageBox::warning(m_dialogParentWidget,
+                                      i18n("Remove Collection?"),
+                                      i18n("Do you want to remove the collection \"%1\" from your list of collections?",
+                                            label),
+                                      QMessageBox::Yes | QMessageBox::No);
+    }
 
     if (result == QMessageBox::Yes)
     {
@@ -708,6 +880,33 @@ void SetupCollectionModel::deleteCollection(int internalId)
         beginRemoveRows(parentIndex, index.row(), index.row());
         item.deleted = true;
         endRemoveRows();
+
+        if (item.appended)
+        {
+            Item& orgItem   = m_collections[item.orgIndex];
+
+            orgItem.path    = orgItem.location.albumRootPath();
+            orgItem.label   = orgItem.location.label();
+            orgItem.childs.removeAll(item.path);
+            orgItem.updated = true;
+        }
+        else if (!item.childs.isEmpty())
+        {
+            for (int i = 0 ; i < m_collections.count() ; ++i)
+            {
+                Item& remItem = m_collections[i];
+
+                if (remItem.orgIndex == (int)index.internalId())
+                {
+                    QModelIndex remIndex       = indexForId(i, (int)ColumnStatus);
+                    QModelIndex remParentIndex = parent(remIndex);
+
+                    beginRemoveRows(remParentIndex, remIndex.row(), remIndex.row());
+                    remItem.deleted = true;
+                    endRemoveRows();
+                }
+            }
+        }
 
         // only workaround for bug 182753
 
@@ -800,12 +999,27 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
     {
         const Item& item = m_collections.at(index.internalId());
 
+        if ((role == Qt::BackgroundRole) && item.appended)
+        {
+             return QPalette().alternateBase().color();
+        }
+
         switch (index.column())
         {
             case ColumnName:
             {
                 if ((role == Qt::DisplayRole) || (role == Qt::EditRole))
                 {
+                    if (item.appended)
+                    {
+                        const Item& orgItem = m_collections.at(item.orgIndex);
+
+                        if (!orgItem.label.isNull())
+                        {
+                            return orgItem.label;
+                        }
+                    }
+
                     if (!item.label.isNull())
                     {
                         return item.label;
@@ -857,6 +1071,11 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
                     if (item.location.isNull())
                     {
                         return QIcon::fromTheme(QLatin1String("folder-new"));
+                    }
+
+                    if (item.appended)
+                    {
+                        return QIcon::fromTheme(QLatin1String("mail-attachment"));
                     }
 
                     switch (item.location.status())
@@ -930,6 +1149,34 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
                 break;
             }
 
+            case ColumnAppendButton:
+            {
+                switch (role)
+                {
+                    case Qt::ToolTipRole:
+                    {
+                        return i18n("Append network path");
+                    }
+
+                    case IsAppendRole:
+                    {
+                        return ((item.location.type() == CollectionLocation::Network) && !item.appended);
+                    }
+
+                    case AppendDecorationRole:
+                    {
+                        return QIcon::fromTheme(QLatin1String("list-add"));
+                    }
+
+                    case AppendMapId:
+                    {
+                        return buttonMapId(index);
+                    }
+                }
+
+                break;
+            }
+
             case ColumnUpdateButton:
             {
                 switch (role)
@@ -941,7 +1188,7 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
 
                     case IsUpdateRole:
                     {
-                        return true;
+                        return (!item.appended);
                     }
 
                     case UpdateDecorationRole:
@@ -1012,6 +1259,11 @@ QVariant SetupCollectionModel::headerData(int section, Qt::Orientation orientati
                 return i18nc("#title: collection status",     "Status");
             }
 
+            case ColumnAppendButton:
+            {
+                break;
+            }
+
             case ColumnUpdateButton:
             {
                 break;
@@ -1051,7 +1303,7 @@ int SetupCollectionModel::rowCount(const QModelIndex& parent) const
 
     Q_FOREACH (const Item& item, m_collections)
     {
-        if (!item.deleted && item.parentId == parentId)
+        if (!item.deleted && (item.parentId == parentId))
         {
             ++rowCount; // cppcheck-suppress useStlAlgorithm
         }
@@ -1062,7 +1314,7 @@ int SetupCollectionModel::rowCount(const QModelIndex& parent) const
 
 int SetupCollectionModel::columnCount(const QModelIndex& /*parent*/) const
 {
-    return 5;
+    return NumberOfColumns;
 }
 
 Qt::ItemFlags SetupCollectionModel::flags(const QModelIndex& index) const
@@ -1078,16 +1330,25 @@ Qt::ItemFlags SetupCollectionModel::flags(const QModelIndex& index) const
     }
     else
     {
+        Qt::ItemFlags flags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
+
         switch (index.column())
         {
             case ColumnName:
             {
-                return (Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsEditable);
+                const Item& item = m_collections.at(index.internalId());
+
+                if (item.appended)
+                {
+                    return flags;
+                }
+
+                return (flags | Qt::ItemIsEditable);
             }
 
             default:
             {
-                return (Qt::ItemIsEnabled | Qt::ItemIsSelectable);
+                return flags;
             }
         }
     }
@@ -1116,7 +1377,7 @@ QModelIndex SetupCollectionModel::index(int row, int column, const QModelIndex& 
             return createIndex(row, 0, INTERNALID);
         }
     }
-    else if ((row >= 0) && (column < 5))
+    else if ((row >= 0) && (column < NumberOfColumns))
     {
         // m_collections is a flat list with all entries, of all categories and also deleted entries.
         // The model indices contain as internal id the index to this list.
@@ -1127,7 +1388,7 @@ QModelIndex SetupCollectionModel::index(int row, int column, const QModelIndex& 
         {
             const Item& item = m_collections.at(i);
 
-            if (!item.deleted && item.parentId == parentId)
+            if (!item.deleted && (item.parentId == parentId))
             {
                 if (rowCount == row)
                 {
@@ -1231,8 +1492,8 @@ bool SetupCollectionModel::askForNewCollectionPath(int category, QString* const 
     }
 
     QUrl curl       = DFileDialog::getExistingDirectoryUrl(m_dialogParentWidget,
-                                                          i18n("Choose the folder containing your collection"),
-                                                          QUrl::fromLocalFile(picPath));
+                                                           i18n("Choose the folder containing your collection"),
+                                                           QUrl::fromLocalFile(picPath));
 
     if (curl.isEmpty())
     {

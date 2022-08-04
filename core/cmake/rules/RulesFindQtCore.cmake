@@ -4,20 +4,24 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
-find_package(Qt6 ${QT6_MIN_VERSION} QUIET COMPONENTS Core)
+if(BUILD_WITH_QT6)
 
-if(NOT Qt6_FOUND)
+    set(QT_DEFAULT_MAJOR_VERSION 6)
+    find_package(Qt6 ${QT6_MIN_VERSION} REQUIRED COMPONENTS Core)
 
-    find_package(Qt5 ${QT5_MIN_VERSION} REQUIRED COMPONENTS Core)
-
-    set(QT_MIN_VERSION   ${QT5_MIN_VERSION})
-    set(QT_VERSION_MAJOR 5)
-
-else()
-
+    set(QT_VERSION       ${Qt6Core_VERSION})
     set(QT_MIN_VERSION   ${QT6_MIN_VERSION})
     set(QT_VERSION_MAJOR 6)
 
+else()
+
+    set(QT_DEFAULT_MAJOR_VERSION 5)
+    find_package(Qt5 ${QT5_MIN_VERSION} REQUIRED COMPONENTS Core)
+
+    set(QT_VERSION       ${Qt5Core_VERSION})
+    set(QT_MIN_VERSION   ${QT5_MIN_VERSION})
+    set(QT_VERSION_MAJOR 5)
+
 endif()
 
-message(STATUS "Suitable Qt${QT_VERSION_MAJOR} >= ${QT_MIN_VERSION} detected...")
+message(STATUS "Suitable Qt${QT_VERSION_MAJOR} >= ${QT_MIN_VERSION} detected: '${QT_VERSION}'.")

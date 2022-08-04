@@ -193,7 +193,7 @@ CBContainer CBSettings::defaultSettings() const
     return prm;
 }
 
-void CBSettings::readSettings(KConfigGroup& group)
+void CBSettings::readSettings(const KConfigGroup& group)
 {
     CBContainer prm;
     CBContainer defaultPrm = defaultSettings();

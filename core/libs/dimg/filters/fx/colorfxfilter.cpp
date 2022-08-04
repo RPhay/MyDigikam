@@ -522,7 +522,7 @@ void ColorFXFilter::loadLut3D(const QString& path)
  * TODO: using liblcms would be fancier...
  * Tetrahedral interpolation, taken from AOSP Gallery2 app
  */
-static inline int interp(const quint16* src, int p, int* off ,float dr, float dg, float db)
+static inline int interp(const quint16* src, int p, const int* off ,float dr, float dg, float db)
 {
     float fr00 = (src[p+off[0]])*(1-dr)+(src[p+off[1]])*dr;
     float fr01 = (src[p+off[2]])*(1-dr)+(src[p+off[3]])*dr;

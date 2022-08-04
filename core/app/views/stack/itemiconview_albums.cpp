@@ -202,7 +202,7 @@ void ItemIconView::slotAlbumSelected(const QList<Album*>& albums)
     }
     else if (album->isTrashAlbum())
     {
-        PAlbum* const palbum = d->albumManager->findPAlbum(album->parent()->id());
+        PAlbum* const palbum = static_cast<PAlbum*>(album->parent());
 
         if (palbum)
         {

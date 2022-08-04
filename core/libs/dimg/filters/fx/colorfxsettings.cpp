@@ -328,7 +328,7 @@ ColorFXContainer ColorFXSettings::defaultSettings() const
     return ColorFXContainer();
 }
 
-void ColorFXSettings::readSettings(KConfigGroup& group)
+void ColorFXSettings::readSettings(const KConfigGroup& group)
 {
     ColorFXContainer prm;
     ColorFXContainer defaultPrm = defaultSettings();

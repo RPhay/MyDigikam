@@ -256,6 +256,11 @@ DIGIKAM_EXPORT void installQtTranslationFiles(QApplication& app);
  */
 DIGIKAM_EXPORT QDateTime startOfDay(const QDate&);
 
+/**
+ * For bundles only, find or set KSycoca database file in the cache directory.
+ */
+DIGIKAM_EXPORT void setupKSycocaDatabaseFile();
+
 } // namespace Digikam
 
 #endif // DIGIKAM_GLOBALS_H

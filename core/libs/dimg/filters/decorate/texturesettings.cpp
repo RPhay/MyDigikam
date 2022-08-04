@@ -169,7 +169,7 @@ TextureContainer TextureSettings::defaultSettings() const
     return prm;
 }
 
-void TextureSettings::readSettings(KConfigGroup& group)
+void TextureSettings::readSettings(const KConfigGroup& group)
 {
     blockSignals(true);
 

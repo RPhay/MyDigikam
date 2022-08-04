@@ -1031,10 +1031,8 @@ void MainWindow::openSubtitle()
     d->pSubtitle->setFile(file);
 }
 
-void MainWindow::setSubtitleCharset(const QString& charSet)
+void MainWindow::setSubtitleCharset(int)
 {
-    Q_UNUSED(charSet);
-
     QComboBox* const box = qobject_cast<QComboBox*>(sender());
 
     if (!box)
@@ -1043,10 +1041,8 @@ void MainWindow::setSubtitleCharset(const QString& charSet)
     d->pSubtitle->setCodec(box->itemData(box->currentIndex()).toByteArray());
 }
 
-void MainWindow::setSubtitleEngine(const QString &value)
+void MainWindow::setSubtitleEngine(int)
 {
-    Q_UNUSED(value)
-
     QComboBox* const box = qobject_cast<QComboBox*>(sender());
 
     if (!box)

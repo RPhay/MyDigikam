@@ -123,10 +123,13 @@ public:
      * but does not represent anything.
      * Therefore, do not store returned objects, but prefer to retrieve them freshly.
      */
-    CollectionLocation addLocation(const QUrl& fileUrl, const QString& label = QString());
-    CollectionLocation addNetworkLocation(const QUrl& fileUrl, const QString& label = QString());
+    CollectionLocation addLocation(const QUrl& fileUrl,
+                                   const QString& label = QString());
+    CollectionLocation addNetworkLocation(const QUrl& fileUrl,
+                                          const QString& label = QString());
     CollectionLocation refreshLocation(const CollectionLocation& location, int newType,
-                                       const QUrl& fileUrl, const QString& label = QString());
+                                       const QStringList& pathList,
+                                       const QString& label = QString());
 
     /**
      * Analyzes the given file path. Creates an info message
