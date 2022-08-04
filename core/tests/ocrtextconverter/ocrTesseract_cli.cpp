@@ -9,23 +9,20 @@
 #include <QDebug>
 #include <QApplication>
 #include <QDir>
-
+#include <QProcess>
 
 int main(int argc, char* argv[])
 {
     QProcess* const ocrProcess = new QProcess();
-//    ocrProcess->setProcessChannelMode(QProcess::MergedChannels);
-
-    
+    ocrProcess->setProcessChannelMode(QProcess::MergedChannels);   
+    QStringList args; 
     // ------------------------- IN/OUT ARGUMENTS -------------------------
 
-    QString pathImage       = QLatin1String("../../core/tests/text_convert/data/");
-    QString pathToSaveText  = QLatin1String("../../core/tests/text_convert/data/");
+    QString pathImage       = QLatin1String("../../core/tests/ocrtextconverter/data/");
+    QString pathToSaveText  = QLatin1String("../../core/tests/ocrtextconverter/data/");
     QString inputFileName   = pathImage.append(QLatin1String("scanned_img.png"));
-    QString outputTextName  = pathToSaveText.append(QLatin1String("scanned_img_text"));
-  
-    QStringList args;
-
+    QString outputTextName  = pathToSaveText.append(QLatin1String("scanned_img"));
+    
     // add configuration image
 
     if (!inputFileName.isEmpty())
@@ -35,18 +32,15 @@ int main(int argc, char* argv[])
 
     // output base name
 
-    QString mess;
+    outputTextName.clear();
 
     if (!outputTextName.isEmpty())
     {
         args << outputTextName;
-        mess = QLatin1String("Text is saved is file : %1").arg(outputTextName);
     }  
     else
     {
-        args << QLatin1String("stdout");
-        mess =  QLatin1String(ocrProcess->readAllStandardOutput());
-        
+        args << QLatin1String("stdout");        
     }
 
     // ----------------------------- OPTIONS -----------------------------
@@ -54,7 +48,7 @@ int main(int argc, char* argv[])
     QString lang       = QLatin1String("eng");
     QString psm        = QLatin1String("3");
     QString oem        = QLatin1String("3");
-    QString dpi        = QLatin1String("300");
+    QString dpi        = QLatin1String("70");
     QUrl userWords     = QUrl(QLatin1String(" "));                    
     QUrl userPatterns  = QUrl(QLatin1String(" "));                    
 
@@ -96,28 +90,30 @@ int main(int argc, char* argv[])
     // ------------------  Running tesseract process ------------------
 
     const QString cmd = QLatin1String("tesseract");
-    
+   
     ocrProcess->setProgram(cmd);
     ocrProcess->setArguments(args);
-
-
+   
     qDebug() << "Running OCR : "
              << ocrProcess->program() 
              << ocrProcess->arguments();
 
     ocrProcess->start();
 
-    bool successFlag    = ocrProcess->waitForFinished(-1) && ocrProcess->exitStatus() == QProcess::NormalExit;
+    bool successFlag = ocrProcess->waitForFinished(-1) && ocrProcess->exitStatus() == QProcess::NormalExit;
     
     if (!successFlag)
     {
         qWarning() << "Error starting OCR Process";
         return 0;
     }
+    
+    QString output   = QString::fromLocal8Bit(ocrProcess->readAllStandardOutput());
 
-    qDebug() << mess;
+    qDebug() << (output);
 
     delete ocrProcess;
+ 
     return 0;
 }
 
