@@ -37,6 +37,7 @@
 #include "textconverterlist.h"
 #include "textconvertersettings.h"
 #include "ocroptions.h"
+#include "dtextedit.h"
 
 using namespace Digikam;
 
@@ -68,7 +69,9 @@ public:
 
     TextConverterList*        listView;
 
-    TextConverterSettings*    ocrSettings;    
+    TextConverterSettings*    ocrSettings;  
+
+    DTextEdit*                textedit;    
 };
 
 TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* const iface)
@@ -99,11 +102,13 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     d->progressBar                    = new DProgressWdg(mainWidget);
     d->progressBar->reset();
     d->progressBar->hide();
+    d->textedit                       = new DTextEdit(mainWidget);
 
     //-------------------------------------------------------------------------------------------
 
     mainLayout->addWidget(d->listView,                       0, 0, 5, 1);
     mainLayout->addWidget(d->ocrSettings,                    0, 1, 1, 1);
+    mainLayout->addWidget(d->textedit,                       1, 1, 1, 1);
     mainLayout->addWidget(d->progressBar,                    2, 1, 1, 1);
     mainLayout->setColumnStretch(0, 10);
     mainLayout->setRowStretch(4, 10);
