@@ -49,16 +49,15 @@ class Q_DECL_HIDDEN IPTCStatus::Private
 public:
 
     explicit Private()
+      : statusCheck             (nullptr),
+        jobIDCheck              (nullptr),
+        specialInstructionCheck (nullptr),
+        objectNameCheck         (nullptr),
+        objectNameEdit          (nullptr),
+        statusEdit              (nullptr),
+        jobIDEdit               (nullptr),
+        specialInstructionEdit  (nullptr)
     {
-        statusEdit              = nullptr;
-        jobIDEdit               = nullptr;
-        statusCheck             = nullptr;
-        jobIDCheck              = nullptr;
-        specialInstructionNote  = nullptr;
-        specialInstructionEdit  = nullptr;
-        specialInstructionCheck = nullptr;
-        objectNameEdit          = nullptr;
-        objectNameCheck         = nullptr;
     }
 
     QCheckBox*       statusCheck;
@@ -66,25 +65,22 @@ public:
     QCheckBox*       specialInstructionCheck;
     QCheckBox*       objectNameCheck;
 
-    QLineEdit*       objectNameEdit;
-    QLineEdit*       statusEdit;
-    QLineEdit*       jobIDEdit;
-
-    QLabel*          specialInstructionNote;
+    LimitedTextEdit* objectNameEdit;
+    LimitedTextEdit* statusEdit;
+    LimitedTextEdit* jobIDEdit;
     LimitedTextEdit* specialInstructionEdit;
 };
 
 IPTCStatus::IPTCStatus(QWidget* const parent)
     : QWidget(parent),
-      d(new Private)
+      d      (new Private)
 {
     QGridLayout* const grid = new QGridLayout(this);
 
     // --------------------------------------------------------
 
     d->objectNameCheck = new QCheckBox(i18nc("image title", "Title:"), this);
-    d->objectNameEdit  = new QLineEdit(this);
-    d->objectNameEdit->setClearButtonEnabled(true);
+    d->objectNameEdit  = new LimitedTextEdit(this);
     d->objectNameEdit->setMaxLength(64);
     d->objectNameEdit->setWhatsThis(i18n("Set here the shorthand reference of content. "
                                          "This field is limited to 64 characters."));
@@ -92,8 +88,7 @@ IPTCStatus::IPTCStatus(QWidget* const parent)
     // --------------------------------------------------------
 
     d->statusCheck = new QCheckBox(i18n("Edit Status:"), this);
-    d->statusEdit  = new QLineEdit(this);
-    d->statusEdit->setClearButtonEnabled(true);
+    d->statusEdit  = new LimitedTextEdit(this);
     d->statusEdit->setMaxLength(64);
     d->statusEdit->setWhatsThis(i18n("Set here the title of content status. This field is limited "
                                      "to 64 characters."));
@@ -101,19 +96,14 @@ IPTCStatus::IPTCStatus(QWidget* const parent)
     // --------------------------------------------------------
 
     d->jobIDCheck = new QCheckBox(i18n("Job Identifier:"), this);
-    d->jobIDEdit  = new QLineEdit(this);
-    d->jobIDEdit->setClearButtonEnabled(true);
+    d->jobIDEdit  = new LimitedTextEdit(this);
     d->jobIDEdit->setMaxLength(32);
     d->jobIDEdit->setWhatsThis(i18n("Set here the string that identifies content that recurs. "
                                     "This field is limited to 32 characters."));
 
     // --------------------------------------------------------
 
-    DHBox* const instHeader    = new DHBox(this);
-    d->specialInstructionCheck = new QCheckBox(i18n("Special Instructions:"), instHeader);
-    d->specialInstructionNote  = new QLabel(instHeader);
-    instHeader->setStretchFactor(d->specialInstructionCheck, 10);
-
+    d->specialInstructionCheck = new QCheckBox(i18n("Special Instructions:"), this);
     d->specialInstructionEdit  = new LimitedTextEdit(this);
     d->specialInstructionEdit->setMaxLength(256);
     d->specialInstructionEdit->setWhatsThis(i18n("Enter the editorial usage instructions. "
@@ -132,20 +122,20 @@ IPTCStatus::IPTCStatus(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    grid->addWidget(d->objectNameCheck,         0, 0, 1, 1);
-    grid->addWidget(d->objectNameEdit,          0, 1, 1, 2);
-    grid->addWidget(d->statusCheck,             1, 0, 1, 1);
-    grid->addWidget(d->statusEdit,              1, 1, 1, 2);
-    grid->addWidget(d->jobIDCheck,              2, 0, 1, 1);
-    grid->addWidget(d->jobIDEdit,               2, 1, 1, 2);
-    grid->addWidget(instHeader,                 3, 0, 1, 3);
-    grid->addWidget(d->specialInstructionEdit,  4, 0, 1, 3);
+    grid->addWidget(d->objectNameCheck,         0, 0, 1, 3);
+    grid->addWidget(d->objectNameEdit,          1, 0, 1, 3);
+    grid->addWidget(d->statusCheck,             2, 0, 1, 3);
+    grid->addWidget(d->statusEdit,              3, 0, 1, 3);
+    grid->addWidget(d->jobIDCheck,              4, 0, 1, 3);
+    grid->addWidget(d->jobIDEdit,               5, 0, 1, 3);
+    grid->addWidget(d->specialInstructionCheck, 6, 0, 1, 3);
+    grid->addWidget(d->specialInstructionEdit,  7, 0, 1, 3);
     grid->addWidget(note,                       9, 0, 1, 3);
     grid->setColumnStretch(2, 10);
     grid->setRowStretch(10, 10);
     grid->setContentsMargins(QMargins());
     grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
 
     // --------------------------------------------------------
 
@@ -177,29 +167,29 @@ IPTCStatus::IPTCStatus(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    connect(d->objectNameEdit, SIGNAL(textChanged(QString)),
+    connect(d->objectNameEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
-    connect(d->objectNameEdit, SIGNAL(textChanged(QString)),
+    connect(d->objectNameEdit, SIGNAL(textChanged()),
             this, SLOT(slotLineEditModified()));
 
-    connect(d->statusEdit, SIGNAL(textChanged(QString)),
+    connect(d->statusEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
-    connect(d->statusEdit, SIGNAL(textChanged(QString)),
+    connect(d->statusEdit, SIGNAL(textChanged()),
             this, SLOT(slotLineEditModified()));
 
-    connect(d->jobIDEdit, SIGNAL(textChanged(QString)),
+    connect(d->jobIDEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
-    connect(d->jobIDEdit, SIGNAL(textChanged(QString)),
+    connect(d->jobIDEdit, SIGNAL(textChanged()),
             this, SLOT(slotLineEditModified()));
 
     connect(d->specialInstructionEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
     connect(d->specialInstructionEdit, SIGNAL(textChanged()),
-            this, SLOT(slotSpecialInstructionLeftCharacters()));
+            this, SLOT(slotLineEditModified()));
 }
 
 IPTCStatus::~IPTCStatus()
@@ -207,16 +197,9 @@ IPTCStatus::~IPTCStatus()
     delete d;
 }
 
-void IPTCStatus::slotSpecialInstructionLeftCharacters()
-{
-    QToolTip::showText(d->specialInstructionCheck->mapToGlobal(QPoint(0, -16)),
-                       i18np("%1 character left", "%1 characters left", d->specialInstructionEdit->maxLength() - d->specialInstructionEdit->toPlainText().size()),
-                       d->specialInstructionEdit);
-}
-
 void IPTCStatus::slotLineEditModified()
 {
-    QLineEdit* const ledit = dynamic_cast<QLineEdit*>(sender());
+    LimitedTextEdit* const ledit = dynamic_cast<LimitedTextEdit*>(sender());
 
     if (!ledit)
     {
@@ -224,7 +207,8 @@ void IPTCStatus::slotLineEditModified()
     }
 
     QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 16))),
-                       i18np("%1 character left", "%1 characters left", ledit->maxLength() - ledit->text().size()),
+                       i18np("%1 character left", "%1 characters left",
+                       ledit->maxLength() - ledit->text().size()),
                        ledit);
 }
 
@@ -282,7 +266,6 @@ void IPTCStatus::readMetadata(const DMetadata& meta)
     }
 
     d->specialInstructionEdit->setEnabled(d->specialInstructionCheck->isChecked());
-    slotSpecialInstructionLeftCharacters();
 
     blockSignals(false);
 }
