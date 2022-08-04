@@ -45,28 +45,46 @@ using namespace Sonnet;
 namespace Digikam
 {
 
+class Q_DECL_HIDDEN DTextEdit::Private
+{
+public:
+
+    explicit Private()
+      : spellChecker(nullptr),
+        lines       (2)
+    {
+    }
+
+    Sonnet::SpellCheckDecorator* spellChecker;
+    unsigned int                 lines;
+};
+
 DTextEdit::DTextEdit(QWidget* const parent)
-    : QTextEdit(parent)
+    : QTextEdit(parent),
+      d        (new Private)
 {
     init();
 }
 
 DTextEdit::DTextEdit(const QString& contents, QWidget* const parent)
-    : QTextEdit(parent)
+    : QTextEdit(parent),
+      d        (new Private)
 {
     init();
     setPlainText(contents);
 }
 
 DTextEdit::DTextEdit(unsigned int lines, QWidget* const parent)
-    : QTextEdit(parent)
+    : QTextEdit(parent),
+      d        (new Private)
 {
-    m_lines = lines;
+    d->lines = lines;
     init();
 }
 
 DTextEdit::~DTextEdit()
 {
+    delete d;
 }
 
 void DTextEdit::setLinesVisible(unsigned int lines)
@@ -76,17 +94,17 @@ void DTextEdit::setLinesVisible(unsigned int lines)
         return;
     }
 
-    m_lines    = lines;
+    d->lines   = lines;
 
     QFont fnt;
     setFont(fnt);
     QMargins m = contentsMargins();
-    setFixedHeight(m.top() + m.bottom() + frameWidth() + fontMetrics().lineSpacing() * m_lines);
+    setFixedHeight(m.top() + m.bottom() + frameWidth() + fontMetrics().lineSpacing() * d->lines);
 }
 
 unsigned int DTextEdit::linesVisible() const
 {
-    return m_lines;
+    return d->lines;
 }
 
 QString DTextEdit::text() const
@@ -101,41 +119,58 @@ void DTextEdit::setText(const QString& text)
 
 void DTextEdit::init()
 {
-    m_spellChecker = new SpellCheckDecorator(this);
-    setLinesVisible(m_lines);
+    d->spellChecker = new SpellCheckDecorator(this);
+    setLinesVisible(d->lines);
 }
 
 void DTextEdit::setCurrentLanguage(const QString& lang)
 {
-    m_spellChecker->highlighter()->setCurrentLanguage(lang);
+    d->spellChecker->highlighter()->setCurrentLanguage(lang);
 
     qCDebug(DIGIKAM_WIDGETS_LOG) << "Spell Checker Language:" << currentLanguage();
 }
 
 QString DTextEdit::currentLanguage() const
 {
-    return m_spellChecker->highlighter()->currentLanguage();
+    return d->spellChecker->highlighter()->currentLanguage();
 }
 
 // ------------------------------------------------------------------------------------------------
 
+class Q_DECL_HIDDEN DPlainTextEdit::Private
+{
+public:
+
+    explicit Private()
+      : spellChecker(nullptr),
+        lines       (2)
+    {
+    }
+
+    Sonnet::SpellCheckDecorator* spellChecker;
+    unsigned int                 lines;
+};
+
 DPlainTextEdit::DPlainTextEdit(QWidget* const parent)
-    : QPlainTextEdit(parent)
+    : QPlainTextEdit(parent),
+      d             (new Private)
 {
     init();
 }
 
 DPlainTextEdit::DPlainTextEdit(const QString& contents, QWidget* const parent)
-    : QPlainTextEdit(parent)
+    : QPlainTextEdit(parent),
+      d             (new Private)
 {
     init();
     setPlainText(contents);
 }
 
 DPlainTextEdit::DPlainTextEdit(unsigned int lines, QWidget* const parent)
-    : QPlainTextEdit(parent)
+    : QPlainTextEdit(parent),
+      d             (new Private)
 {
-    m_lines = lines;
+    d->lines = lines;
     init();
 }
 
@@ -150,17 +185,17 @@ void DPlainTextEdit::setLinesVisible(unsigned int lines)
         return;
     }
 
-    m_lines    = lines;
+    d->lines   = lines;
 
     QFont fnt;
     setFont(fnt);
     QMargins m = contentsMargins();
-    setFixedHeight(m.top() + m.bottom() + frameWidth() + fontMetrics().lineSpacing() * m_lines);
+    setFixedHeight(m.top() + m.bottom() + frameWidth() + fontMetrics().lineSpacing() * d->lines);
 }
 
 unsigned int DPlainTextEdit::linesVisible() const
 {
-    return m_lines;
+    return d->lines;
 }
 
 QString DPlainTextEdit::text() const
@@ -175,20 +210,20 @@ void DPlainTextEdit::setText(const QString& text)
 
 void DPlainTextEdit::init()
 {
-    m_spellChecker = new SpellCheckDecorator(this);
-    setLinesVisible(m_lines);
+    d->spellChecker = new SpellCheckDecorator(this);
+    setLinesVisible(d->lines);
 }
 
 void DPlainTextEdit::setCurrentLanguage(const QString& lang)
 {
-    m_spellChecker->highlighter()->setCurrentLanguage(lang);
+    d->spellChecker->highlighter()->setCurrentLanguage(lang);
 
     qCDebug(DIGIKAM_WIDGETS_LOG) << "Spell Checker Language:" << currentLanguage();
 }
 
 QString DPlainTextEdit::currentLanguage() const
 {
-    return m_spellChecker->highlighter()->currentLanguage();
+    return d->spellChecker->highlighter()->currentLanguage();
 }
 
 } // namespace Digikam

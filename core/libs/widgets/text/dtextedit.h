@@ -35,11 +35,6 @@
 
 #include "digikam_export.h"
 
-namespace Sonnet
-{
-    class SpellCheckDecorator;
-}
-
 namespace Digikam
 {
 
@@ -98,8 +93,8 @@ private:
 
 private:
 
-    Sonnet::SpellCheckDecorator* m_spellChecker = nullptr;
-    unsigned int m_lines                        = 2;
+    class Private;
+    Private* const d;
 };
 
 // ---------------------------------------------------------------------------
@@ -159,8 +154,8 @@ private:
 
 private:
 
-    Sonnet::SpellCheckDecorator* m_spellChecker = nullptr;
-    unsigned int m_lines                        = 2;
+    class Private;
+    Private* const d;
 };
 
 } // namespace Digikam
