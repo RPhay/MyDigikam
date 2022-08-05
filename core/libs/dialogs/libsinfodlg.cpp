@@ -339,24 +339,25 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 
 #ifdef HAVE_SONNET
 
-    new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(CONTEXT, "Sonnet support") <<                 SUPPORTED_YES);
+    QTreeWidgetItem* const spellEntry = new QTreeWidgetItem(listView(), QStringList() << i18nc("@item: component info", "Spell-Checking Configuration"));
+    listView()->addTopLevelItem(spellEntry);
+    Speller dict;
 
-    Speller dict(QLatin1String("en_US"));
-/*
-    new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(CONTEXT, "Spell-Checking Backends") <<        dict.availableBackends());
-    new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(CONTEXT, "Spell-Checking Languages") <<       dict.availableLanguages());
-    new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(CONTEXT, "Spell-Checking Languages Names") << dict.availableLanguageNames());
-    new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(CONTEXT, "Spell-Checking Dictionaries") <<    dict.availableDictionaries());
-*/
+    QTreeWidgetItem* const spell = new QTreeWidgetItem(spellEntry, QStringList() << i18nc("@item: component info", "Dictionaries"));
+    QMap<QString, QString> map   = dict.availableDictionaries();
+
+    for (QMap<QString, QString>::const_iterator it = map.constBegin() ; it != map.constEnd() ; ++it)
+    {
+        new QTreeWidgetItem(spell, QStringList() << it.value() << it.key());
+    }
+
+    new QTreeWidgetItem(spellEntry, QStringList() <<
+                        i18nc(CONTEXT, "Backends") <<                       dict.availableBackends().join(QLatin1String(";")));
+
 #else
 
     new QTreeWidgetItem(m_features, QStringList() <<
-                        i18nc(CONTEXT, "Sonnet support") <<                 SUPPORTED_NO);
+                        i18nc(CONTEXT, "Spell-Checking support") <<         SUPPORTED_NO);
 
 #endif
 
