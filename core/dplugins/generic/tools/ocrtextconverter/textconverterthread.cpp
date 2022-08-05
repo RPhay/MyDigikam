@@ -44,6 +44,7 @@ TextConverterActionThread::TextConverterActionThread(QObject* const parent)
     : ActionThreadBase(parent),
       d               (new Private)
 {
+    qRegisterMetaType<TextConverterActionData>();
 }
 
 TextConverterActionThread::~TextConverterActionThread()
@@ -90,13 +91,20 @@ void TextConverterActionThread::ocrProcessFiles(const QList<QUrl>& urlList)
 
     for (QList<QUrl>::const_iterator it = urlList.constBegin() ; it != urlList.constEnd() ; ++it)
     {
-        TextConverterTask* const t = new TextConverterTask(this, *it);
+        TextConverterTask* const t = new TextConverterTask(this, *it, PROCESS);
         t->setLanguagesMode(d->language);
         t->setPSMMode(d->psm);
         t->setOEMMode(d->oem);
 
-        connect(t, SIGNAL(TextConverterTask::signalFinished(const QString)),
-                this, SIGNAL(signalFinished(const QString)));
+        connect(t, SIGNAL(signalStarting(DigikamGenericTextConverterPlugin::TextConverterActionData)),
+                this, SIGNAL(signalStarting(DigikamGenericTextConverterPlugin::TextConverterActionData)));
+
+        connect(t, SIGNAL(signalFinished(DigikamGenericTextConverterPlugin::TextConverterActionData)),
+                this, SIGNAL(signalFinished(DigikamGenericTextConverterPlugin::TextConverterActionData)));
+
+        connect(this, SIGNAL(signalCancelTextConverterTask()),
+                t, SLOT(slotCancel()), Qt::QueuedConnection);
+
         
         collection.insert(t, 0);
     }
@@ -106,6 +114,11 @@ void TextConverterActionThread::ocrProcessFiles(const QList<QUrl>& urlList)
 
 void TextConverterActionThread::cancel()
 {
+    if (isRunning())
+    {
+        Q_EMIT signalCancelTextConverterTask();
+    }
+
     ActionThreadBase::cancel();
 }
 

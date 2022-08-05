@@ -31,6 +31,7 @@
 // Local includes
 
 #include "actionthreadbase.h"
+#include "textconverteraction.h"
 
 using namespace Digikam;
 
@@ -51,8 +52,8 @@ public:
     void setPSMMode(int mode);
     void setOEMMode(int mode);
 
-//    void identifyRawFile(const QUrl& url);
-//    void identifyRawFiles(const QList<QUrl>& urlList);
+//    void identifyRawFile(const QUrl& url);               // no need
+//    void identifyRawFiles(const QList<QUrl>& urlList);   // no need
 
     void ocrProcessFile(const QUrl& url);
     void ocrProcessFiles(const QList<QUrl>& urlList);
@@ -61,8 +62,8 @@ public:
 
 Q_SIGNALS:
 
-//    void signalStarting(const DigikamGenericDNGConverterPlugin::DNGConverterActionData& ad);
-    void signalFinished(const QString& text);
+    void signalStarting(const DigikamGenericTextConverterPlugin::TextConverterActionData& ad);
+    void signalFinished(const DigikamGenericTextConverterPlugin::TextConverterActionData& ad);
 
     /**
      * Signal to emit to sub-tasks to cancel processing.

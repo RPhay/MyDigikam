@@ -9,6 +9,7 @@
 // Local includes
 
 #include "actionthreadbase.h"
+#include "textconverteraction.h"
 
 using namespace Digikam;
 
@@ -22,7 +23,8 @@ class TextConverterTask : public ActionJob
 public:
 
     explicit TextConverterTask(QObject* const parent,
-                              const QUrl& url
+                              const QUrl& url,
+                              const TextConverterAction& action
                               );
     ~TextConverterTask();
 
@@ -32,12 +34,12 @@ public:
 
 Q_SIGNALS:
 
-//    void signalStarting(const DigikamGenericDNGConverterPlugin::DNGConverterActionData& ad);
-    void signalFinished(const QString& text);
+    void signalStarting(const DigikamGenericTextConverterPlugin::TextConverterActionData& ad);
+    void signalFinished(const DigikamGenericTextConverterPlugin::TextConverterActionData& ad);
 
-// public Q_SLOTS:
+public Q_SLOTS:
 
-//    void slotCancel();
+    void slotCancel();
 
 protected:
 
