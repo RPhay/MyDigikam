@@ -21,20 +21,18 @@ public:
     Private()
       : language ((int)OcrOptions::Languages::DEFAULT),
         psm      ((int)OcrOptions::PageSegmentationModes::DEFAULT),
-        oem      ((int)OcrOptions::EngineModes::DEFAULT),
-        ocrProcess (nullptr)
+        oem      ((int)OcrOptions::EngineModes::DEFAULT)
     {
     }
 
-    int language;
-    int psm;
-    int oem; 
-
-    QProcess* ocrProcess;
-
-    QString   inputFile;
-    QString   outputFile;
-    QString   ocrResult;  
+    int        language;
+    int        psm;
+    int        oem; 
+    bool       cancel;
+ 
+    QString    inputFile;
+    QString    outputFile;
+    QString    ocrResult;  
 };
 
 OcrTesseracrEngine::OcrTesseracrEngine()
@@ -77,21 +75,6 @@ int OcrTesseracrEngine::OEMMode() const
     return d->oem;
 }
 
-void OcrTesseracrEngine::initOcrProcess()
-{
-    if (d->ocrProcess != nullptr)
-    {
-        delete d->ocrProcess;
-    }
-
-    d->ocrProcess = new QProcess();
-    d->ocrProcess->setProcessChannelMode(QProcess::SeparateChannels);   
-}
-
-QProcess* OcrTesseracrEngine::ocrProcess() const
-{
-    return d->ocrProcess;
-}
 
 QString OcrTesseracrEngine::inputFile() const
 {
@@ -120,92 +103,109 @@ void OcrTesseracrEngine::setOutputFile(const QString& filePath)
 
 bool OcrTesseracrEngine::runOcrProcess()
 {
-    initOcrProcess();  
-      
-    // ------------------------- IN/OUT ARGUMENTS -------------------------
+    d->cancel = false;
+    QProcess* const ocrProcess = new QProcess();
+    ocrProcess->setProcessChannelMode(QProcess::SeparateChannels);
+
+    try
+    {
+        // ------------------------- IN/OUT ARGUMENTS -------------------------
+
+        QStringList args; 
+
+        // add configuration image
+
+        if (!d->inputFile.isEmpty())
+        {
+            args << d->inputFile;
+        }  
+
+        // output base name
+
+        QString mess;
+
+        if (!d->outputFile.isEmpty())
+        {
+            args << d->outputFile;
+        }  
+        else
+        {
+            args << QLatin1String("stdout");
+        }
+
+        // ----------------------------- OPTIONS -----------------------------
+
+        OcrOptions ocropt;
+
+        // page Segmentation mode 
+
+        QString val = ocropt.PsmCodeToValue(static_cast<OcrOptions::PageSegmentationModes>(d->psm));
+        if (!val.isEmpty())
+        {
+            args << QLatin1String("--psm") << val;
+        }    
+
+        // OCR enginge mode 
+
+        val = ocropt.OemCodeToValue(static_cast<OcrOptions::EngineModes>(d->oem));
+        if (!val.isEmpty())
+        {
+            args << QLatin1String("--oem") << val;
+        }
+
+        // Language
+
+        val = ocropt.LanguageCodeToValue(static_cast<OcrOptions::Languages>(d->language));
+        if (!val.isEmpty())
+        {
+            args << QLatin1String("-l") << val;
+        }
+
+
+        // dpi 
+
+        val = QLatin1String("300");
+        if (!val.isEmpty())
+        {
+            args << QLatin1String("--dpi") << val;
+        }
+
+        // ------------------  Running tesseract process ------------------
+
+        const QString cmd = QLatin1String("tesseract");
     
-    QStringList args; 
+        ocrProcess->setProgram(cmd);
+        ocrProcess->setArguments(args);
     
-    // add configuration image
+        qDebug() << "Running OCR : "
+                 << ocrProcess->program() 
+                 << ocrProcess->arguments();
 
-    if (!d->inputFile.isEmpty())
-    {
-        args << d->inputFile;
-    }  
+        ocrProcess->start();
 
-    // output base name
+        bool successFlag =  ocrProcess->waitForFinished(-1) &&  ocrProcess->exitStatus() == QProcess::NormalExit;
 
-    QString mess;
+        if (!successFlag)
+        {
+            qWarning() << "Error starting OCR Process";
+            return PROCESS_FAILED;
+        }
 
-    if (!d->outputFile.isEmpty())
-    {
-        args << d->outputFile;
-    }  
-    else
-    {
-        args << QLatin1String("stdout");
+        if (d->cancel)
+        {
+            return PROCESS_CANCELED;
+        }
+
     }
-
-    // ----------------------------- OPTIONS -----------------------------
-
-    OcrOptions ocropt;
-             
-    // page Segmentation mode 
-
-    QString val = ocropt.PsmCodeToValue(static_cast<OcrOptions::PageSegmentationModes>(d->psm));
-    if (!val.isEmpty())
-    {
-        args << QLatin1String("--psm") << val;
-    }    
-
-    // OCR enginge mode 
-
-    val = ocropt.OemCodeToValue(static_cast<OcrOptions::EngineModes>(d->oem));
-    if (!val.isEmpty())
-    {
-        args << QLatin1String("--oem") << val;
-    }
-
-    // Language
-
-    val = ocropt.LanguageCodeToValue(static_cast<OcrOptions::Languages>(d->language));
-    if (!val.isEmpty())
-    {
-        args << QLatin1String("-l") << val;
-    }
-
-
-    // dpi 
-
-    val = QLatin1String("300");
-    if (!val.isEmpty())
-    {
-        args << QLatin1String("--dpi") << val;
-    }
-
-    // ------------------  Running tesseract process ------------------
-
-    const QString cmd = QLatin1String("tesseract");
-   
-    d->ocrProcess->setProgram(cmd);
-    d->ocrProcess->setArguments(args);
-   
-    qDebug() << "Running OCR : "
-             << d->ocrProcess->program() 
-             << d->ocrProcess->arguments();
-
-    d->ocrProcess->start();
-
-    bool successFlag = d->ocrProcess->waitForFinished(-1) && d->ocrProcess->exitStatus() == QProcess::NormalExit;
-    
-    if (!successFlag)
-    {
-        qWarning() << "Error starting OCR Process";
+    catch(const QProcess::ProcessError& e)
+    {   
+        qWarning() << "Text Converter has error" << e;
         return PROCESS_FAILED;
     }
     
-    d->ocrResult   = QString::fromLocal8Bit(d->ocrProcess->readAllStandardOutput());
     
+    d->ocrResult   = QString::fromLocal8Bit(ocrProcess->readAllStandardOutput());
+
     return PROCESS_COMPLETE;
 }
 

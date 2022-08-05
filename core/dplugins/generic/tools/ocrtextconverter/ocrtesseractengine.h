@@ -51,8 +51,6 @@ public:
     void setOEMMode(int mode);
     int  OEMMode()              const;
 
-    void      initOcrProcess();
-    QProcess* ocrProcess() const;
     bool      runOcrProcess();
      
 private:
