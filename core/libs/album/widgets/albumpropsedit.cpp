@@ -43,7 +43,6 @@
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 #include <QPushButton>
-#include <QPlainTextEdit>
 
 // KDE includes
 
@@ -61,6 +60,7 @@
 #include "dxmlguiwindow.h"
 #include "dexpanderbox.h"
 #include "ddatepicker.h"
+#include "dtextedit.h"
 
 namespace Digikam
 {
@@ -111,7 +111,7 @@ public:
     QComboBox*        categoryCombo;
     QComboBox*        parentCombo;
     QLineEdit*        titleEdit;
-    QPlainTextEdit*   commentsEdit;
+    DPlainTextEdit*   commentsEdit;
 
     AlbumDatePicker*  datePicker;
 
@@ -180,7 +180,7 @@ AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
     QLabel* const commentsLabel       = new QLabel(page);
     commentsLabel->setText(i18nc("@label: album properties", "Ca&ption:"));
 
-    d->commentsEdit                   = new QPlainTextEdit(page);
+    d->commentsEdit                   = new DPlainTextEdit(page);
     commentsLabel->setBuddy(d->commentsEdit);
     d->commentsEdit->setWordWrapMode(QTextOption::WordWrap);
     d->commentsEdit->setPlaceholderText(i18nc("@label: album properties", "Enter album caption here..."));
