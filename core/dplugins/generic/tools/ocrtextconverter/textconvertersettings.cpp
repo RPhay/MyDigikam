@@ -137,13 +137,13 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
 
     // ------------------------------------------------------------------------
     
-    connect(d->ocrTesseractLanguageMode, SIGNAL((DComboBox::activated(int))),
+    connect(d->ocrTesseractLanguageMode, SIGNAL(activated(int)),
             this, SIGNAL(signalSettingsChanged()));
 
-    connect(d->ocrTesseractPSMMode, SIGNAL((DComboBox::activated(int))),
+    connect(d->ocrTesseractPSMMode, SIGNAL(activated(int)),
             this, SIGNAL(signalSettingsChanged()));
 
-    connect(d->ocrTesseractOEMMode, SIGNAL((DComboBox::activated(int))),
+    connect(d->ocrTesseractOEMMode, SIGNAL(activated(int)),
             this, SIGNAL(signalSettingsChanged()));
 
 //    connect(d->errorView, SIGNAL(signalSetupExifTool()),
