@@ -39,8 +39,9 @@ private:
     void saveSettings();
 
     void busy(bool busy);
+
+    void processAll();                                        
 /**
-    void processAll();                                        // TODO
     void processed(const QUrl& url, const QString& tmpFile);  // TODO
     void processingFailed(const QUrl& url, int result);       // TODO 
 
@@ -54,15 +55,16 @@ private Q_SLOTS:
     void slotDefault(); 
     void slotClose();
     void slotAborted();
+    void slotTextConverterAction(const QString& result);
 
     /**
      * Set Identity and Target file.
      */ 
 
     void slotSetupExifTool();
+    void slotStartStop();   
 
 /**
-    void slotStartStop();       // TODO
     void slotThreadFinished();  // TODO
     void slotIdentify();        // TODO
 

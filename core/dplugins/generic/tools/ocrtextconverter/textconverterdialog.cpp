@@ -38,6 +38,7 @@
 #include "textconvertersettings.h"
 #include "ocroptions.h"
 #include "dtextedit.h"
+#include "textconverterthread.h"
 
 using namespace Digikam;
 
@@ -64,6 +65,8 @@ public:
     DProgressWdg*             progressBar;
 
     // TODO Thread
+
+    TextConverterActionThread* thread; 
 
     DInfoInterface*           iface;
 
@@ -121,18 +124,29 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     // ---------------------------------------------------------------
     
-    // TODO Thread operation 
+    // TODO Thread operation
+
+    d->thread = new TextConverterActionThread(this);
+
+    connect(d->thread, SIGNAL(TextConverterActionThread::signalFinished(const QString)),
+            this, SLOT(slotTextConverterAction(const QString)));
+
+//    connect(d->thread, SIGNAL(finished()),
+//            this, SLOT(slotThreadFinished()));
 
     // ---------------------------------------------------------------
 
     
     // TODO connect
 
+    connect(m_buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
+            this, SLOT(slotStartStop()));
+
     connect(m_buttons->button(QDialogButtonBox::Close), SIGNAL(clicked()),
             this, SLOT(slotClose()));
 
     connect(d->ocrSettings, SIGNAL(TextConverterSettings::signalSettingsChanged()),
-            this, SLOT(slotIdentify()));
+            this, SLOT(slotStartStop()));
 
     // ---------------------------------------------------------------
     
@@ -146,6 +160,80 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 TextConverterDialog::~TextConverterDialog()
 {
     delete d;
+}
+
+
+void TextConverterDialog::slotTextConverterAction(const QString& result)
+{
+    qDebug() << QLatin1String("Test");
+    qDebug() << result;
+}
+
+void TextConverterDialog::processAll()
+{
+    d->thread->setLanguagesMode(d->ocrSettings->LanguagesMode());
+    d->thread->setPSMMode(d->ocrSettings->PSMMode());
+    d->thread->setOEMMode(d->ocrSettings->OEMMode());
+    d->thread->ocrProcessFiles(d->listView->imageUrls(true));
+
+    if (!d->thread->isRunning())
+    {
+        d->thread->start();
+    }
+}
+
+void TextConverterDialog::slotStartStop()
+{
+    if (!d->busy)
+    {
+        d->fileList.clear();
+
+        QTreeWidgetItemIterator it(d->listView->listView());
+
+        while (*it)
+        {
+            TextConverterListViewItem* const lvItem = dynamic_cast<TextConverterListViewItem*>(*it);
+
+            if (lvItem)
+            {
+                if (!lvItem->isDisabled() && (lvItem->state() != TextConverterListViewItem::Success))
+                {
+                    lvItem->setIcon(1, QIcon());
+                    lvItem->setState(TextConverterListViewItem::Waiting);
+                    d->fileList.append(lvItem->url().path());
+                }
+            }
+
+            qDebug() << lvItem->url().path();
+            ++it;
+        }
+
+        if (d->fileList.empty())
+        {
+            QMessageBox::information(this, i18n("Text Converter"), i18n("The list does not contain any Raw files to process."));
+            busy(false);
+            slotAborted();
+            return;
+        }
+
+        d->progressBar->setMaximum(d->fileList.count());
+        d->progressBar->setValue(0);
+        d->progressBar->show();
+        d->progressBar->progressScheduled(i18n("Text Converter"), true, true);
+        d->progressBar->progressThumbnailChanged(QIcon::fromTheme(QLatin1String("image-x-adobe-dng")).pixmap(22, 22));
+
+        processAll();
+    }
+    else
+    {
+        d->fileList.clear();
+        d->thread->cancel();
+        busy(false);
+
+        d->listView->cancelProcess();
+
+        QTimer::singleShot(500, this, SLOT(slotAborted()));
+    }
 }
 
 void TextConverterDialog::closeEvent(QCloseEvent* e)
