@@ -67,6 +67,13 @@
 #   include "mapwidget.h"
 #endif
 
+#ifdef HAVE_SONNET
+
+#   include <sonnet/speller.h>
+using namespace Sonnet;
+
+#endif
+
 #ifdef HAVE_IMAGE_MAGICK
 
 // Pragma directives to reduce warnings from ImageMagick header files.
@@ -331,11 +338,26 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 #endif
 
 #ifdef HAVE_SONNET
-    new QTreeWidgetItem(m_libraries, QStringList() <<
+
+    new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "Sonnet support") <<                 SUPPORTED_YES);
+
+    Speller dict(QLatin1String("en_US"));
+
+    new QTreeWidgetItem(m_features, QStringList() <<
+                        i18nc(CONTEXT, "Spell-Checking Backends") <<        dict.availableBackends());
+    new QTreeWidgetItem(m_features, QStringList() <<
+                        i18nc(CONTEXT, "Spell-Checking Languages") <<       dict.availableLanguages());
+    new QTreeWidgetItem(m_features, QStringList() <<
+                        i18nc(CONTEXT, "Spell-Checking Languages Names") << dict.availableLanguageNames());
+    new QTreeWidgetItem(m_features, QStringList() <<
+                        i18nc(CONTEXT, "Spell-Checking Dictionaries") <<    dict.availableDictionaries());
+
 #else
+
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "Sonnet support") <<                 SUPPORTED_NO);
+
 #endif
 
     int nbcore         = QThread::idealThreadCount();
