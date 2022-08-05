@@ -4,6 +4,7 @@
 // Qt includes
 
 #include <QUrl>
+#include <>
 
 // Local includes
 
@@ -15,7 +16,7 @@ using namespace Digikam;
 namespace DigikamGenericTextConverterPlugin
 {
 
-// TODO TextConverterActionData
+class TextConverterActionData;
 
 class TextConverterDialog : public DPluginDialog
 {
@@ -40,10 +41,11 @@ private:
 
     void busy(bool busy);
 
-    void processAll();                                        
+    void processAll();       
+    void processingFailed(const QUrl& url, int result);  // TODO     
+    void processed(const QUrl& url);                     // TODO  
+                                 
 /**
-    void processed(const QUrl& url, const QString& tmpFile);  // TODO
-    void processingFailed(const QUrl& url, int result);       // TODO 
 
 **/
 
@@ -51,21 +53,18 @@ private Q_SLOTS:
 
     void slotDefault(); 
     void slotClose();
+    void slotStartStop();   
     void slotAborted();
-    void slotTextConverterAction(const QString& result);
+    void slotThreadFinished(); 
+
+    void slotTextConverterAction(const DigikamGenericTextConverterPlugin::TextConverterActionData&);
+    void slotDoubleClick(QTreeWidgetItem* element, int i);
 
     /**
      * Set Identity and Target file.
      */ 
 
     void slotSetupExifTool();
-    void slotStartStop();   
-
-/**
-    void slotThreadFinished();  // TODO
-    void slotIdentify();        // TODO
-
-**/
 
 private:
 

@@ -38,6 +38,8 @@
 #include "ocroptions.h"
 #include "dtextedit.h"
 #include "textconverterthread.h"
+#include "textconverteraction.h"
+
 
 using namespace Digikam;
 
@@ -59,11 +61,11 @@ public:
 
     bool                      busy;
 
-    QStringList               fileList;
+    QList<QUrl>               fileList;
+
+    QMap<QUrl, QString>       textEditList;  
 
     DProgressWdg*             progressBar;
-
-    // TODO Thread
 
     TextConverterActionThread* thread; 
 
@@ -73,7 +75,7 @@ public:
 
     TextConverterSettings*    ocrSettings;  
 
-    DTextEdit*                textedit;    
+    DTextEdit*                textedit;
 };
 
 TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* const iface)
@@ -127,11 +129,14 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     d->thread = new TextConverterActionThread(this);
 
-    connect(d->thread, SIGNAL(TextConverterActionThread::signalFinished(const QString)),
-            this, SLOT(slotTextConverterAction(const QString)));
+     connect(d->thread, SIGNAL(signalStarting(DigikamGenericTextConverterPlugin::TextConverterActionData)),
+            this, SLOT(slotTextConverterAction(DigikamGenericTextConverterPlugin::TextConverterActionData)));
 
-//    connect(d->thread, SIGNAL(finished()),
-//            this, SLOT(slotThreadFinished()));
+    connect(d->thread, SIGNAL(signalFinished(DigikamGenericTextConverterPlugin::TextConverterActionData)),
+            this, SLOT(slotTextConverterAction(DigikamGenericTextConverterPlugin::TextConverterActionData)));
+
+    connect(d->thread, SIGNAL(finished()),
+            this, SLOT(slotThreadFinished()));
 
     // ---------------------------------------------------------------
 
@@ -142,10 +147,16 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
             this, SLOT(slotStartStop()));
 
     connect(m_buttons->button(QDialogButtonBox::Close), SIGNAL(clicked()),
-            this, SLOT(slotClose()));
+            this, SLOT(slotClose()));   
 
-    connect(d->ocrSettings, SIGNAL(TextConverterSettings::signalSettingsChanged()),
+    connect(d->ocrSettings, SIGNAL(signalSettingsChanged()),
             this, SLOT(slotStartStop()));
+
+    connect(d->progressBar, SIGNAL(signalProgressCanceled()),
+            this, SLOT(slotStartStop()));
+    
+    connect(d->listView->listView(), &DItemsListView::itemDoubleClicked,
+            this, &TextConverterDialog::slotDoubleClick);
 
     // ---------------------------------------------------------------
     
@@ -161,11 +172,138 @@ TextConverterDialog::~TextConverterDialog()
     delete d;
 }
 
-
-void TextConverterDialog::slotTextConverterAction(const QString& result)
+void TextConverterDialog::slotDoubleClick(QTreeWidgetItem* element, int i)
 {
-    qDebug() << QLatin1String("Test");
-    qDebug() << result;
+    TextConverterListViewItem* const item = dynamic_cast<TextConverterListViewItem*>(element);
+
+    if (d->textEditList.contains(item->url()))
+    {
+        d->textedit->setText(d->textEditList[item->url()]);
+    }
+    else
+    {
+        d->textedit->clear();
+    }
+}
+
+void TextConverterDialog::slotTextConverterAction(const DigikamGenericTextConverterPlugin::TextConverterActionData& ad)
+{
+    if (ad.starting)
+    {
+        switch (ad.action)
+        {
+            case(PROCESS):
+            {
+                busy(true);
+                d->listView->processing(ad.fileUrl);
+                d->progressBar->progressStatusChanged(i18n("Processing %1", ad.fileUrl.fileName()));
+                break;
+            }
+
+            default:
+            {
+                qWarning() << "DigikamGenericTextConverterPlugin: Unknown action";
+                break;
+            }
+        }
+    }
+    else
+    {
+        if (ad.result != OcrTesseracrEngine::PROCESS_COMPLETE)
+        {
+            switch (ad.action)
+            {
+                case(PROCESS):
+                {
+                    processingFailed(ad.fileUrl, ad.result);
+                    break;
+                }
+
+                default:
+                {
+                    qWarning() << "DigikamGenericTextConverterPlugin: Unknown action";
+                    break;
+                }
+            }
+        }
+        else                    // Something is done...
+        {
+            switch (ad.action)
+            {
+                case(PROCESS):
+                {
+                    d->textEditList[ad.fileUrl] = ad.outputText; 
+                    processed(ad.fileUrl);
+                    break;
+                }
+
+                default:
+                {
+                    qWarning() << "DigikamGenericDNGConverterPlugin: Unknown action";
+                    break;
+                }
+            }
+        }
+    }
+}
+
+
+void TextConverterDialog::processingFailed(const QUrl& url, int result)
+{
+    d->listView->processed(url, false);
+    d->progressBar->setValue(d->progressBar->value()+1);
+
+    TextConverterListViewItem* const item = dynamic_cast<TextConverterListViewItem*>(d->listView->listView()->findItem(url));
+
+    if (!item)
+    {
+        return;
+    }
+
+    QString status;
+
+    switch (result)
+    {
+        case OcrTesseracrEngine::PROCESS_FAILED:
+        {
+            status = i18n("Process failed");
+            break;
+        }
+
+        case OcrTesseracrEngine::PROCESS_CANCELED:
+        {
+            status = i18n("Process Canceled");
+            break;
+        }
+
+        // TODO Tesseract ocr error
+
+        default:
+        {
+            status = i18n("Internal error");
+            break;
+        }
+    }
+
+    item->setStatus(status);
+}
+
+void TextConverterDialog::processed(const QUrl& url)
+{
+    TextConverterListViewItem* const item = dynamic_cast<TextConverterListViewItem*>(d->listView->listView()->findItem(url));
+
+    if (!item)
+    {
+        return;
+    }
+
+    // TODO change fie name 
+
+    item->setDestFileName(QLatin1String("test file"));
+    d->listView->processed(url, true);
+    item->setStatus(i18n("Success"));
+
+    d->progressBar->setValue(d->progressBar->value()+1);
 }
 
 void TextConverterDialog::processAll()
@@ -173,7 +311,7 @@ void TextConverterDialog::processAll()
     d->thread->setLanguagesMode(d->ocrSettings->LanguagesMode());
     d->thread->setPSMMode(d->ocrSettings->PSMMode());
     d->thread->setOEMMode(d->ocrSettings->OEMMode());
-    d->thread->ocrProcessFiles(d->listView->imageUrls(true));
+    d->thread->ocrProcessFiles(d->fileList);
 
     if (!d->thread->isRunning())
     {
@@ -187,6 +325,21 @@ void TextConverterDialog::slotStartStop()
     {
         d->fileList.clear();
 
+        QList<QTreeWidgetItem*> selectedItemsList = d->listView->listView()->selectedItems();
+
+        for (QList<QTreeWidgetItem*>::const_iterator it = selectedItemsList.constBegin() ;
+             it != selectedItemsList.constEnd() ; ++it)
+        {
+            TextConverterListViewItem* const item = dynamic_cast<TextConverterListViewItem*>(*it);
+
+            if (item)
+            {
+                qDebug() << item->url().path();
+                d->fileList.append(item->url());
+            }
+        }
+
+/**
         QTreeWidgetItemIterator it(d->listView->listView());
 
         while (*it)
@@ -203,15 +356,15 @@ void TextConverterDialog::slotStartStop()
                 }
             }
 
-            qDebug() << lvItem->url().path();
             ++it;
         }
+**/
 
         if (d->fileList.empty())
         {
-            QMessageBox::information(this, i18n("Text Converter"), i18n("The list does not contain any Raw files to process."));
+            QMessageBox::information(this, i18n("Text Converter"), i18n("The list does not contain any digital files to process. You need to select them"));
             busy(false);
-            slotAborted();
+        //    slotAborted();
             return;
         }
 
@@ -244,12 +397,10 @@ void TextConverterDialog::closeEvent(QCloseEvent* e)
 
     // Stop current conversion if necessary
 
-/**
     if (d->busy)
     {
         slotStartStop();
     }
-**/
 
     saveSettings();
     d->listView->listView()->clear();
@@ -260,12 +411,12 @@ void TextConverterDialog::closeEvent(QCloseEvent* e)
 void TextConverterDialog::slotClose()
 {
     // Stop current conversion if necessary
-/**
-     if (d->busy)
+
+    if (d->busy)
     {
         slotStartStop();
     }
-**/
+
 
     saveSettings();
     d->listView->listView()->clear();
@@ -314,6 +465,13 @@ void TextConverterDialog::addItems(const QList<QUrl>& itemList)
 {
     d->listView->slotAddImages(itemList);
 }
+
+void TextConverterDialog::slotThreadFinished()
+{
+    busy(false);
+    slotAborted();
+}
+
 
 void TextConverterDialog::busy(bool busy)  
 {
