@@ -343,7 +343,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
                         i18nc(CONTEXT, "Sonnet support") <<                 SUPPORTED_YES);
 
     Speller dict(QLatin1String("en_US"));
-
+/*
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "Spell-Checking Backends") <<        dict.availableBackends());
     new QTreeWidgetItem(m_features, QStringList() <<
@@ -352,7 +352,7 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
                         i18nc(CONTEXT, "Spell-Checking Languages Names") << dict.availableLanguageNames());
     new QTreeWidgetItem(m_features, QStringList() <<
                         i18nc(CONTEXT, "Spell-Checking Dictionaries") <<    dict.availableDictionaries());
-
+*/
 #else
 
     new QTreeWidgetItem(m_features, QStringList() <<
