@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2022-08-01
- * Description : Two plain text edit widgets with spell checker capabilities based on KF5::Sonnet.
+ * Description : Two plain text edit widgets with spell checker capabilities based on KF5::Sonnet (optional).
  *               Widgets can be also limited to a number of lines to show text.
  *
  * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -23,6 +23,7 @@
  * ============================================================ */
 
 #include "dtextedit.h"
+#include "digikam_config.h"
 
 // Qt includes
 
@@ -33,14 +34,17 @@
 
 // KDE includes
 
-#include <sonnet/spellcheckdecorator.h>
-#include <sonnet/highlighter.h>
+#ifdef HAVE_SONNET
+#   include <sonnet/spellcheckdecorator.h>
+#   include <sonnet/highlighter.h>
+
+using namespace Sonnet;
+
+#endif
 
 // Local includes
 
 #include "digikam_debug.h"
-
-using namespace Sonnet;
 
 namespace Digikam
 {
@@ -50,13 +54,16 @@ class Q_DECL_HIDDEN DTextEdit::Private
 public:
 
     explicit Private()
-      : spellChecker(nullptr),
-        lines       (2)
     {
     }
 
-    Sonnet::SpellCheckDecorator* spellChecker;
-    unsigned int                 lines;
+#ifdef HAVE_SONNET
+
+    Sonnet::SpellCheckDecorator* spellChecker = nullptr;
+
+#endif
+
+    unsigned int                 lines        = 2;
 };
 
 DTextEdit::DTextEdit(QWidget* const parent)
@@ -119,20 +126,45 @@ void DTextEdit::setText(const QString& text)
 
 void DTextEdit::init()
 {
+#ifdef HAVE_SONNET
+
     d->spellChecker = new SpellCheckDecorator(this);
+
+#endif
+
     setLinesVisible(d->lines);
 }
 
 void DTextEdit::setCurrentLanguage(const QString& lang)
 {
+
+#ifdef HAVE_SONNET
+
     d->spellChecker->highlighter()->setCurrentLanguage(lang);
 
     qCDebug(DIGIKAM_WIDGETS_LOG) << "Spell Checker Language:" << currentLanguage();
+
+#else
+
+    Q_UNUSED(lang);
+
+#endif
+
 }
 
 QString DTextEdit::currentLanguage() const
 {
+
+#ifdef HAVE_SONNET
+
     return d->spellChecker->highlighter()->currentLanguage();
+
+#else
+
+    return QString();
+
+#endif
+
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -142,13 +174,16 @@ class Q_DECL_HIDDEN DPlainTextEdit::Private
 public:
 
     explicit Private()
-      : spellChecker(nullptr),
-        lines       (2)
     {
     }
 
-    Sonnet::SpellCheckDecorator* spellChecker;
-    unsigned int                 lines;
+#ifdef HAVE_SONNET
+
+    Sonnet::SpellCheckDecorator* spellChecker = nullptr;
+
+#endif
+
+    unsigned int                 lines        = 2;
 };
 
 DPlainTextEdit::DPlainTextEdit(QWidget* const parent)
@@ -211,20 +246,46 @@ void DPlainTextEdit::setText(const QString& text)
 
 void DPlainTextEdit::init()
 {
+
+#ifdef HAVE_SONNET
+
     d->spellChecker = new SpellCheckDecorator(this);
+
+#endif
+
     setLinesVisible(d->lines);
 }
 
 void DPlainTextEdit::setCurrentLanguage(const QString& lang)
 {
+
+#ifdef HAVE_SONNET
+
     d->spellChecker->highlighter()->setCurrentLanguage(lang);
 
     qCDebug(DIGIKAM_WIDGETS_LOG) << "Spell Checker Language:" << currentLanguage();
+
+#else
+
+    Q_UNUSED(lang);
+
+#endif
+
 }
 
 QString DPlainTextEdit::currentLanguage() const
 {
+
+#ifdef HAVE_SONNET
+
     return d->spellChecker->highlighter()->currentLanguage();
+
+#else
+
+    return QString();
+
+#endif
+
 }
 
 } // namespace Digikam

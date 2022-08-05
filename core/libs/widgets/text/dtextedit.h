@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2022-08-01
- * Description : Two plain text edit widgets with spell checker capabilities based on KF5::Sonnet.
+ * Description : Two plain text edit widgets with spell checker capabilities based on KF5::Sonnet (optional).
  *               Widgets can be also limited to a number of lines to show text.
  *
  * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -80,6 +80,7 @@ public:
     /**
      * Helper methods to handle a specific spell-checker language (2 letters code based as "en", "fr", "es", etc.).
      * If this property is not set, spell-checker will try to auto-detect language by parsing the text.
+     * If KF5::Sonnet depedencies is not resolved, these method do nothing.
      */
     void setCurrentLanguage(const QString& lang);
     QString currentLanguage() const;
@@ -87,7 +88,7 @@ public:
 private:
 
     /**
-     * Init the text widget with the spell-checker engine.
+     * Init the text widget with the spell-checker engine (optional).
      */
     void init();
 
@@ -141,6 +142,7 @@ public:
     /**
      * Helper methods to handle a specific spell-checker language (2 letters code based as "en", "fr", "es", etc.).
      * If this property is not set, spell-checker will try to auto-detect language by parsing the text.
+     * If KF5::Sonnet depedencies is not resolved, these method do nothing.
      */
     void setCurrentLanguage(const QString& lang);
     QString currentLanguage() const;
@@ -148,7 +150,7 @@ public:
 private:
 
     /**
-     * Init the text widget with the spell-checker engine.
+     * Init the text widget with the spell-checker engine (optional).
      */
     void init();
 

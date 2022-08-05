@@ -36,6 +36,9 @@
 /* Define to 1 if an external KIO shared library have been found */
 #cmakedefine HAVE_KIO 1
 
+/* Define to 1 if an external Sonnet shared library have been found */
+#cmakedefine HAVE_SONNET 1
+
 /* Define to 1 if an external Ksane shared library have been found */
 #cmakedefine HAVE_KSANE 1
 
