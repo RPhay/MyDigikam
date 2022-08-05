@@ -14,7 +14,7 @@
 int main(int argc, char* argv[])
 {
     QProcess* const ocrProcess = new QProcess();
-    ocrProcess->setProcessChannelMode(QProcess::MergedChannels);   
+    ocrProcess->setProcessChannelMode(QProcess::SeparateChannels);   
     QStringList args; 
     // ------------------------- IN/OUT ARGUMENTS -------------------------
 
@@ -48,7 +48,7 @@ int main(int argc, char* argv[])
     QString lang       = QLatin1String("eng");
     QString psm        = QLatin1String("3");
     QString oem        = QLatin1String("3");
-    QString dpi        = QLatin1String("70");
+    QString dpi        = QLatin1String("");
     QUrl userWords     = QUrl(QLatin1String(" "));                    
     QUrl userPatterns  = QUrl(QLatin1String(" "));                    
 

@@ -85,7 +85,7 @@ void OcrTesseracrEngine::initOcrProcess()
     }
 
     d->ocrProcess = new QProcess();
-    d->ocrProcess->setProcessChannelMode(QProcess::MergedChannels);   
+    d->ocrProcess->setProcessChannelMode(QProcess::SeparateChannels);   
 }
 
 QProcess* OcrTesseracrEngine::ocrProcess() const
@@ -120,8 +120,8 @@ void OcrTesseracrEngine::setOutputFile(const QString& filePath)
 
 bool OcrTesseracrEngine::runOcrProcess()
 {
-    initOcrProcess();
-    
+    initOcrProcess();  
+      
     // ------------------------- IN/OUT ARGUMENTS -------------------------
     
     QStringList args; 
@@ -144,8 +144,6 @@ bool OcrTesseracrEngine::runOcrProcess()
     else
     {
         args << QLatin1String("stdout");
-        d->ocrResult   = QString::fromLocal8Bit(d->ocrProcess->readAllStandardOutput());
-        qDebug() << (d->ocrResult);     
     }
 
     // ----------------------------- OPTIONS -----------------------------
@@ -205,6 +203,8 @@ bool OcrTesseracrEngine::runOcrProcess()
         qWarning() << "Error starting OCR Process";
         return PROCESS_FAILED;
     }
+    
+    d->ocrResult   = QString::fromLocal8Bit(d->ocrProcess->readAllStandardOutput());
     
     return PROCESS_COMPLETE;
 }
