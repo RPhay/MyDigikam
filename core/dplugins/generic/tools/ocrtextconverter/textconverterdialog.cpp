@@ -22,7 +22,6 @@
 #include <kconfiggroup.h>
 #include <ksharedconfig.h>
 #include <klocalizedstring.h>
-#include <kprocess.h>
 
 // Local includes
 
@@ -341,51 +340,6 @@ void TextConverterDialog::slotAborted()
     d->progressBar->setValue(0);
     d->progressBar->hide();
     d->progressBar->progressCompleted();
-}
-
-QMap<QString, QString>  TextConverterDialog::getValidValues(const QString& opt)
-{
-    QMap<QString, QString> result; 
-
-    KProcess process; 
-    process.setOutputChannelMode(KProcess::MergedChannels);
-    process << QLatin1String("tesseract") << QLatin1String("--%1").arg(opt);
-
-    process.execute(5000);
-
-    const QByteArray output = process.readAllStandardOutput();
-    const QList<QByteArray> lines = output.split('\n');
-    
-    QRegExp rx;
-    
-    for (const QByteArray& line : lines)
-    {
-        const QString lineStr = QString::fromLocal8Bit(line);
-
-        if (opt == QLatin1String("list-langs")) 
-        {
-            rx.setPattern(QLatin1String("^\\s*(\\w+)()$"));
-        }
-        else 
-        {
-            rx.setPattern(QLatin1String("^\\s*(\\d+)\\s+(\\w.+)?$"));
-        }
-        
-        if (rx.indexIn(lineStr)>-1)
-        {
-            const QString value = rx.cap(1);
-            QString desc        = rx.cap(2).simplified();
-    
-            if (desc.endsWith(QLatin1Char('.')) || desc.endsWith(QLatin1Char(','))) 
-                desc.chop(1);
-
-            result.insert(value, desc);
-        }
-    }
-
-    qDebug() << "values for" << opt << "=" << result.keys();
-
-    return (result);
 }
 
 } // namespace DigikamGenericTextConverterPlugin

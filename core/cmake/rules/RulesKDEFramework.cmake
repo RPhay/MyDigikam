@@ -24,7 +24,6 @@ find_package(KF5 ${KF5_MIN_VERSION} QUIET
                                     NotifyConfig                # Plasma desktop application notify configuration.
                                     Notifications               # Plasma desktop notifications integration.
                                     TextWidgets                 # For text converter tool.
-                                    CoreAddons                  # For text converter tool.
 )
 
 if(ENABLE_KFILEMETADATASUPPORT)

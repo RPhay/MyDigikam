@@ -17,7 +17,6 @@ include_directories(
                     $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::TextWidgets,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:KF5::CoreAddons,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::SonnetUi,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
@@ -42,7 +41,6 @@ target_link_libraries(textconverterbackend
                       PRIVATE
                       digikamcore
                       KF5::TextWidgets
-                      KF5::CoreAddons
                       KF5::SonnetUi
 )
 

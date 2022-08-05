@@ -46,9 +46,6 @@ private:
     void processingFailed(const QUrl& url, int result);       // TODO 
 
 **/
-    
-    QMap<QString, QString> getValidValues(const QString& opt);
-
 
 private Q_SLOTS:
 
