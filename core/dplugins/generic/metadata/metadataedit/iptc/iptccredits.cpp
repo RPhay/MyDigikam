@@ -139,15 +139,15 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
     grid->addWidget(d->bylineEdit,      0, 0, 1, 3);
     grid->addWidget(d->bylineTitleEdit, 1, 0, 1, 3);
     grid->addWidget(d->contactEdit,     2, 0, 1, 3);
-    grid->addWidget(d->creditCheck,     3, 0, 1, 1);
-    grid->addWidget(d->creditEdit,      3, 1, 1, 2);
-    grid->addWidget(d->sourceCheck,     4, 0, 1, 1);
-    grid->addWidget(d->sourceEdit,      4, 1, 1, 2);
-    grid->addWidget(d->copyrightCheck,  5, 0, 1, 1);
-    grid->addWidget(d->copyrightEdit,   5, 1, 1, 2);
-    grid->addWidget(note,               6, 0, 1, 3);
+    grid->addWidget(d->creditCheck,     3, 0, 1, 3);
+    grid->addWidget(d->creditEdit,      4, 0, 1, 3);
+    grid->addWidget(d->sourceCheck,     5, 0, 1, 3);
+    grid->addWidget(d->sourceEdit,      6, 0, 1, 3);
+    grid->addWidget(d->copyrightCheck,  7, 0, 1, 3);
+    grid->addWidget(d->copyrightEdit,   8, 0, 1, 3);
+    grid->addWidget(note,               9, 0, 1, 3);
     grid->setColumnStretch(2, 10);
-    grid->setRowStretch(7, 10);
+    grid->setRowStretch(10, 10);
     grid->setContentsMargins(QMargins());
     grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                              QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));

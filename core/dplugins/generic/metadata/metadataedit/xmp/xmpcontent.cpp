@@ -126,17 +126,17 @@ XMPContent::XMPContent(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    grid->addWidget(d->headlineCheck,                      0, 0, 1, 1);
-    grid->addWidget(d->headlineEdit,                       0, 1, 1, 2);
-    grid->addWidget(new DLineWidget(Qt::Horizontal, this), 1, 0, 1, 3);
-    grid->addWidget(d->captionEdit,                        2, 0, 1, 3);
-    grid->addWidget(syncOptions,                           3, 0, 1, 3);
-    grid->addWidget(d->writerCheck,                        4, 0, 1, 1);
-    grid->addWidget(d->writerEdit,                         4, 1, 1, 2);
-    grid->addWidget(d->copyrightEdit,                      5, 0, 1, 3);
-    grid->addWidget(d->syncEXIFCopyrightCheck,             6, 0, 1, 3);
-    grid->addWidget(d->usageTermsEdit,                     7, 0, 1, 3);
-    grid->setRowStretch(8, 10);
+    grid->addWidget(d->headlineCheck,                      0, 0, 1, 3);
+    grid->addWidget(d->headlineEdit,                       1, 0, 1, 3);
+    grid->addWidget(new DLineWidget(Qt::Horizontal, this), 2, 0, 1, 3);
+    grid->addWidget(d->captionEdit,                        3, 0, 1, 3);
+    grid->addWidget(syncOptions,                           4, 0, 1, 3);
+    grid->addWidget(d->writerCheck,                        5, 0, 1, 3);
+    grid->addWidget(d->writerEdit,                         6, 1, 1, 3);
+    grid->addWidget(d->copyrightEdit,                      7, 0, 1, 3);
+    grid->addWidget(d->syncEXIFCopyrightCheck,             8, 0, 1, 3);
+    grid->addWidget(d->usageTermsEdit,                     9, 0, 1, 3);
+    grid->setRowStretch(10, 10);
     grid->setColumnStretch(2, 10);
     grid->setContentsMargins(QMargins());
     grid->setSpacing(spacing);
