@@ -29,9 +29,9 @@ class TextConverterActionThread::Private
 public:
 
     Private()
-      : language((OcrOptions::Languages::LANG_DEFAULT)),
-        psm((OcrOptions::PageSegmentationModes::PSM_DEFAULT)),
-        oem((OcrOptions::EngineModes::OEM_DEFAULT))
+      : language(int(OcrOptions::Languages::DEFAULT)),
+        psm(int(OcrOptions::PageSegmentationModes::DEFAULT)),
+        oem(int(OcrOptions::EngineModes::DEFAULT))
     {
     }
 

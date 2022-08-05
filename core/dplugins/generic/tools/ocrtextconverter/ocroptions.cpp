@@ -15,7 +15,7 @@ QMap<OcrOptions::Languages, QString> OcrOptions::languagesNames()
 {
     QMap<OcrOptions::Languages, QString> languages;
 
-    languages[OcrOptions::Languages::LANG_DEFAULT]                                    = QString::fromLatin1("Default"); 
+    languages[OcrOptions::Languages::DEFAULT]                                    = QString::fromLatin1("Default"); 
     languages[OcrOptions::Languages::ENG]                                             = QString::fromLatin1("english"); 
     languages[OcrOptions::Languages::OSD]                                             = QString::fromLatin1("osd");
 
@@ -30,7 +30,7 @@ QMap<OcrOptions::PageSegmentationModes, QString> OcrOptions::psmNames()
     psm[OcrOptions::PageSegmentationModes::OSD_ONLY]                                  = QLatin1String("Orientation and script detection (OSD) only.");
     psm[OcrOptions::PageSegmentationModes::AUTO_WITH_OSD]                             = QLatin1String("Automatic page segmentation with OSD.");
     psm[OcrOptions::PageSegmentationModes::AUTO_WITH_NO_OSD]                          = QLatin1String("Automatic page segmentation, but no OSD, or OCR. (not implemented)");
-    psm[OcrOptions::PageSegmentationModes::PSM_DEFAULT]                               = QLatin1String("Fully automatic page segmentation, but no OSD. (Default)");
+    psm[OcrOptions::PageSegmentationModes::DEFAULT]                               = QLatin1String("Fully automatic page segmentation, but no OSD. (Default)");
     psm[OcrOptions::PageSegmentationModes::SINGLE_COL_TEXT_OF_VAR_SIZE]               = QLatin1String("Assume a single column of text of variable sizes.");
     psm[OcrOptions::PageSegmentationModes::SINGLE_UNIFORM_BLOCK_OF_VERTICALLY_TEXT]   = QLatin1String("Assume a single uniform block of vertically aligned text.");
     psm[OcrOptions::PageSegmentationModes::SINGLE_UNIFORM_BLOCK_TEXT]                 = QLatin1String("Assume a single uniform block of text.");
@@ -54,8 +54,8 @@ QMap<OcrOptions::EngineModes, QString> OcrOptions::oemNames()
     oem[OcrOptions::EngineModes::LEGACY_ENGINE_ONLY]                                 = QLatin1String("Legacy engine only.");
     oem[OcrOptions::EngineModes::NEURAL_NETS_LSTM_ONLY]                              = QLatin1String("Neural nets LSTM engine only.");
     oem[OcrOptions::EngineModes::LEGACY_LSTM_ENGINES]                                = QLatin1String("Legacy + LSTM engines.");
-    oem[OcrOptions::EngineModes::OEM_DEFAULT]                                        = QLatin1String("Default, based on what is available.");
-    
+    oem[OcrOptions::EngineModes::DEFAULT]                                            = QLatin1String("Default, based on what is available.");
+     
     return oem; 
 }
 
@@ -64,19 +64,19 @@ QString OcrOptions::LanguageCodeToValue(OcrOptions::Languages l)
 {
     switch (l)
     {
-        case ENG:
+        case OcrOptions::Languages::ENG:
         {
             return QLatin1String("eng");
             break;
         }
         
-        case OSD:
+        case OcrOptions::Languages::OSD:
         {
             return QLatin1String("osd");
             break;
         }
 
-        case LANG_DEFAULT: 
+        case OcrOptions::Languages::DEFAULT: 
         {
             return QLatin1String("");
             break;
@@ -91,15 +91,15 @@ QString OcrOptions::LanguageCodeToValue(OcrOptions::Languages l)
 }
 
 
-QString OcrOptions::PsmCodeToValue(PageSegmentationModes psm)
+QString OcrOptions::PsmCodeToValue(OcrOptions::PageSegmentationModes psm)
 {
-   return QString::fromLatin1("%1").arg(psm);  // psm tesseract cli values if range from 0 to 13 
+   return QString::fromLatin1("%1").arg((int)psm);  // psm tesseract cli values if range from 0 to 13 
 }
 
 
-QString OcrOptions::OemCodeToValue(EngineModes oem)
+QString OcrOptions::OemCodeToValue(OcrOptions::EngineModes oem)
 {
-   return QString::fromLatin1("%1").arg(oem); // oem tesseract cli values if range from 0 to 3
+   return QString::fromLatin1("%1").arg((int)oem); // oem tesseract cli values if range from 0 to 3
 }
 
 } //  namespace Digikam

@@ -20,19 +20,19 @@ class DIGIKAM_EXPORT OcrOptions
 
 public:
 
-   enum Languages
+    enum class Languages
     {   
-        LANG_DEFAULT = 0,
+        DEFAULT = 0,
         ENG,                           
         OSD 
     };
 
-    enum PageSegmentationModes
+    enum class PageSegmentationModes
     {
         OSD_ONLY           = 0,
         AUTO_WITH_OSD      ,
         AUTO_WITH_NO_OSD   ,
-        PSM_DEFAULT,
+        DEFAULT,
         SINGLE_COL_TEXT_OF_VAR_SIZE,
         SINGLE_UNIFORM_BLOCK_OF_VERTICALLY_TEXT,
         SINGLE_UNIFORM_BLOCK_TEXT,
@@ -45,12 +45,12 @@ public:
         RAW_LINE
     };
 
-    enum EngineModes
+    enum class EngineModes
     {
         LEGACY_ENGINE_ONLY = 0,
-        NEURAL_NETS_LSTM_ONLY = 1, 
-        LEGACY_LSTM_ENGINES = 2,
-        OEM_DEFAULT = 3
+        NEURAL_NETS_LSTM_ONLY, 
+        LEGACY_LSTM_ENGINES,
+        DEFAULT 
     };
 
 public:
@@ -58,13 +58,13 @@ public:
     explicit OcrOptions();
     ~OcrOptions();    
 
-    static QMap<Languages, QString>               languagesNames();
-    static QMap<PageSegmentationModes, QString>   psmNames();
-    static QMap<EngineModes, QString>             oemNames();
+    static QMap<OcrOptions::Languages, QString>               languagesNames();
+    static QMap<OcrOptions::PageSegmentationModes, QString>   psmNames();
+    static QMap<OcrOptions::EngineModes, QString>             oemNames();
 
-    QString LanguageCodeToValue(Languages l);
-    QString PsmCodeToValue(PageSegmentationModes psm);
-    QString OemCodeToValue(EngineModes oem);
+    QString LanguageCodeToValue(OcrOptions::Languages l);
+    QString PsmCodeToValue(OcrOptions::PageSegmentationModes psm);
+    QString OemCodeToValue(OcrOptions::EngineModes oem);
 };
 
 } // namespace Digikam
