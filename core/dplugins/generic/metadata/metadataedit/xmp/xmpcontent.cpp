@@ -29,8 +29,6 @@
 #include <QGridLayout>
 #include <QApplication>
 #include <QStyle>
-#include <QLineEdit>
-#include <QTextEdit>
 
 // KDE includes
 
@@ -41,6 +39,7 @@
 #include "dlayoutbox.h"
 #include "altlangstringedit.h"
 #include "dexpanderbox.h"
+#include "dtextedit.h"
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -69,8 +68,8 @@ public:
     QCheckBox*          syncEXIFCopyrightCheck;
     QCheckBox*          writerCheck;
 
-    QLineEdit*          headlineEdit;
-    QLineEdit*          writerEdit;
+    DTextEdit*          headlineEdit;
+    DTextEdit*          writerEdit;
 
     AltLangStringsEdit* captionEdit;
     AltLangStringsEdit* copyrightEdit;
@@ -89,8 +88,7 @@ XMPContent::XMPContent(QWidget* const parent)
     // --------------------------------------------------------
 
     d->headlineCheck = new QCheckBox(i18n("Headline:"), this);
-    d->headlineEdit  = new QLineEdit(this);
-    d->headlineEdit->setClearButtonEnabled(true);
+    d->headlineEdit  = new DTextEdit(this);
     d->headlineEdit->setWhatsThis(i18n("Enter here the content synopsis."));
 
     // --------------------------------------------------------
@@ -112,8 +110,7 @@ XMPContent::XMPContent(QWidget* const parent)
     // --------------------------------------------------------
 
     d->writerCheck = new QCheckBox(i18n("Caption Writer:"), this);
-    d->writerEdit  = new QLineEdit(this);
-    d->writerEdit->setClearButtonEnabled(true);
+    d->writerEdit  = new DTextEdit(this);
     d->writerEdit->setWhatsThis(i18n("Enter the name of the caption author."));
 
     // --------------------------------------------------------
@@ -186,10 +183,10 @@ XMPContent::XMPContent(QWidget* const parent)
     connect(d->usageTermsEdit, SIGNAL(signalModified()),
             this, SIGNAL(signalModified()));
 
-    connect(d->headlineEdit, SIGNAL(textChanged(QString)),
+    connect(d->headlineEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
-    connect(d->writerEdit, SIGNAL(textChanged(QString)),
+    connect(d->writerEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 }
 
@@ -317,7 +314,7 @@ void XMPContent::applyMetadata(const DMetadata& meta)
 
     DMetadata::AltLangMap oldAltLangMap, newAltLangMap;
 
-    if (d->captionEdit->getValues(oldAltLangMap, newAltLangMap))
+    if      (d->captionEdit->getValues(oldAltLangMap, newAltLangMap))
     {
         meta.setXmpTagStringListLangAlt("Xmp.dc.description", newAltLangMap);
 
@@ -345,7 +342,7 @@ void XMPContent::applyMetadata(const DMetadata& meta)
         meta.removeXmpTag("Xmp.photoshop.CaptionWriter");
     }
 
-    if (d->copyrightEdit->getValues(oldAltLangMap, newAltLangMap))
+    if      (d->copyrightEdit->getValues(oldAltLangMap, newAltLangMap))
     {
         meta.setXmpTagStringListLangAlt("Xmp.dc.rights", newAltLangMap);
 
