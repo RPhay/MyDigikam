@@ -132,6 +132,7 @@ EXIFDevice::EXIFDevice(QWidget* const parent)
     d->makeEdit  = new QLineEdit(this);
     d->makeEdit->setClearButtonEnabled(true);
     d->makeEdit->setValidator(asciiValidator);
+    d->makeEdit->setPlaceholderText(i18n("Equipment manufacturer name"));
     d->makeEdit->setWhatsThis(i18n("Set here the manufacturer of image input equipment used to "
                                    "take the picture. This field is limited to ASCII characters."));
 
@@ -141,6 +142,7 @@ EXIFDevice::EXIFDevice(QWidget* const parent)
     d->modelEdit  = new QLineEdit(this);
     d->modelEdit->setClearButtonEnabled(true);
     d->modelEdit->setValidator(asciiValidator);
+    d->modelEdit->setPlaceholderText(i18n("Equipment model name"));
     d->modelEdit->setWhatsThis(i18n("Set here the model of image input equipment used to "
                                     "take the picture. This field is limited to ASCII characters."));
 

@@ -99,33 +99,37 @@ EXIFCaption::EXIFCaption(QWidget* const parent)
 
     d->documentNameCheck = new QCheckBox(i18nc("name of the document this image has been scanned from", "Name (*):"), this);
     d->documentNameEdit  = new DTextEdit(this);
-    d->documentNameEdit->setPlaceholderText(i18n("Enter the name of the document from which "
-                                                 "this image was been scanned. This field is limited "
-                                                 "to ASCII characters."));
+    d->documentNameEdit->setPlaceholderText(i18n("Original document name."));
+    d->documentNameEdit->setWhatsThis(i18n("Enter the name of the document from which "
+                                           "this image was been scanned. This field is limited "
+                                           "to ASCII characters."));
     d->documentNameIcon  = new QLabel(this);
 
     // --------------------------------------------------------
 
     d->imageDescCheck = new QCheckBox(i18nc("image description", "Description (*):"), this);
     d->imageDescEdit  = new DTextEdit(this);
-    d->imageDescEdit->setPlaceholderText(i18n("Enter the image description. This field is limited "
-                                              "to ASCII characters."));
+    d->imageDescEdit->setPlaceholderText(i18n("Image description."));
+    d->imageDescEdit->setWhatsThis(i18n("Enter the image description. This field is limited "
+                                        "to ASCII characters."));
     d->imageDescIcon  = new QLabel(this);
 
     // --------------------------------------------------------
 
     d->artistCheck = new QCheckBox(i18n("Artist (*):"), this);
     d->artistEdit  = new DTextEdit(this);
-    d->artistEdit->setPlaceholderText(i18n("Enter the image author's name separated by semi-colons. "
-                                           "This field is limited to ASCII characters."));
+    d->artistEdit->setPlaceholderText(i18n("Author's name."));
+    d->artistEdit->setWhatsThis(i18n("Enter the image author's name separated by semi-colons. "
+                                     "This field is limited to ASCII characters."));
     d->artistIcon  = new QLabel(this);
 
     // --------------------------------------------------------
 
     d->copyrightCheck = new QCheckBox(i18n("Copyright (*):"), this);
     d->copyrightEdit  = new DTextEdit(this);
-    d->copyrightEdit->setPlaceholderText(i18n("Enter the copyright owner of the image. "
-                                              "This field is limited to ASCII characters."));
+    d->copyrightEdit->setPlaceholderText(i18n("Copyright owner."));
+    d->copyrightEdit->setWhatsThis(i18n("Enter the copyright owner of the image. "
+                                        "This field is limited to ASCII characters."));
     d->copyrightIcon  = new QLabel(this);
 
     // --------------------------------------------------------
@@ -133,9 +137,10 @@ EXIFCaption::EXIFCaption(QWidget* const parent)
     d->userCommentCheck = new QCheckBox(i18nc("image caption", "Caption:"), this);
     d->userCommentEdit  = new DPlainTextEdit(this);
     d->userCommentEdit->setLinesVisible(4);
-    d->userCommentEdit->setPlaceholderText(i18n("Enter the image's caption. "
-                                                "This field is not limited. UTF8 encoding "
-                                                "will be used to save the text."));
+    d->userCommentEdit->setPlaceholderText(i18n("Image's caption."));
+    d->userCommentEdit->setWhatsThis(i18n("Enter the image's caption. "
+                                          "This field is not limited. UTF8 encoding "
+                                          "will be used to save the text."));
 
     d->syncJFIFCommentCheck = new QCheckBox(i18n("Sync JFIF Comment section"), this);
     d->syncXMPCaptionCheck  = new QCheckBox(i18n("Sync XMP caption"), this);
