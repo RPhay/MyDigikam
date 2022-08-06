@@ -109,13 +109,10 @@ public:
 };
 
 XMPCredits::XMPCredits(QWidget* const parent)
-    : QWidget(parent),
-      d      (new Private)
+    : MetadataEditPage(parent),
+      d               (new Private)
 {
-    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
-
-    QGridLayout* const grid = new QGridLayout(this);
+    QGridLayout* const grid = new QGridLayout(widget());
 
     // --------------------------------------------------------
 
@@ -191,8 +188,12 @@ XMPCredits::XMPCredits(QWidget* const parent)
     grid2->addWidget(d->countryCheck,       7, 0, 1, 1);
     grid2->addWidget(d->countryEdit,        7, 1, 1, 2);
     grid2->setColumnStretch(2, 10);
-    grid2->setContentsMargins(spacing, spacing, spacing, spacing);
-    grid2->setSpacing(spacing);
+
+    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
+    grid->setContentsMargins(spacing, spacing, spacing, spacing);
+    grid->setSpacing(spacing);
 
     // --------------------------------------------------------
 

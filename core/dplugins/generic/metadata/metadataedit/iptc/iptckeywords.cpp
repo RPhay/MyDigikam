@@ -72,10 +72,10 @@ public:
 };
 
 IPTCKeywords::IPTCKeywords(QWidget* const parent)
-    : QWidget(parent),
-      d      (new Private)
+    : MetadataEditPage(parent),
+      d               (new Private)
 {
-    QGridLayout* const grid = new QGridLayout(this);
+    QGridLayout* const grid = new QGridLayout(widget());
 
     // --------------------------------------------------------
 
@@ -122,9 +122,12 @@ IPTCKeywords::IPTCKeywords(QWidget* const parent)
     grid->addWidget(note,                   5, 1, 1, 1);
     grid->setColumnStretch(0, 10);
     grid->setRowStretch(6, 10);
-    grid->setContentsMargins(QMargins());
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+
+    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
+    grid->setContentsMargins(spacing, spacing, spacing, spacing);
+    grid->setSpacing(spacing);
 
     // --------------------------------------------------------
 

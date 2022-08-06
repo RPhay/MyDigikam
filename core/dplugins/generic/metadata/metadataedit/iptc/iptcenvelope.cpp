@@ -157,10 +157,10 @@ public:
 };
 
 IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
-    : QWidget(parent),
-      d(new Private)
+    : MetadataEditPage(parent),
+      d               (new Private)
 {
-    QGridLayout* const grid = new QGridLayout(this);
+    QGridLayout* const grid = new QGridLayout(widget());
     QString dateFormat      = QLocale().dateFormat(QLocale::ShortFormat);
 
     if (!dateFormat.contains(QLatin1String("yyyy")))
@@ -310,9 +310,12 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
     grid->addWidget(note,                  10, 0, 1, 6);
     grid->setColumnStretch(4, 10);
     grid->setRowStretch(11, 10);
-    grid->setContentsMargins(QMargins());
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+
+    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
+    grid->setContentsMargins(spacing, spacing, spacing, spacing);
+    grid->setSpacing(spacing);
 
     // --------------------------------------------------------
 

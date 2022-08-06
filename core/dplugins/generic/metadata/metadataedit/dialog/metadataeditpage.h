@@ -3,10 +3,11 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2006-10-13
- * Description : IPTC origin settings page.
+ * Date        : 2006-10-15
+ * Description : IPTC subjects settings page.
  *
  * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2009      by Andi Clemens <andi dot clemens at googlemail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -20,58 +21,26 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IPTC_ORIGIN_H
-#define DIGIKAM_IPTC_ORIGIN_H
+#ifndef DIGIKAM_META_DATA_EDIT_PAGE_H
+#define DIGIKAM_META_DATA_EDIT_PAGE_H
 
 // Qt includes
 
-#include <QWidget>
-#include <QDateTime>
-
-// Local includes
-
-#include "dmetadata.h"
-#include "metadataeditpage.h"
-
-using namespace Digikam;
+#include <QScrollArea>
 
 namespace DigikamGenericMetadataEditPlugin
 {
 
-class IPTCOrigin : public MetadataEditPage
+class MetadataEditPage : public QScrollArea
 {
     Q_OBJECT
 
 public:
 
-    explicit IPTCOrigin(QWidget* const parent);
-    ~IPTCOrigin() override;
-
-    void applyMetadata(const DMetadata& meta);
-    void readMetadata(const DMetadata& meta);
-
-    bool syncEXIFDateIsChecked()            const;
-
-    void setCheckedSyncEXIFDate(bool c);
-
-    QDateTime getIPTCCreationDate()         const;
-
-Q_SIGNALS:
-
-    void signalModified();
-
-private Q_SLOTS:
-
-    void slotSetTodayCreated();
-    void slotSetTodayDigitalized();
-    void slotLineEditModified();
-
-private:
-
-    class Private;
-    Private* const d;
+    explicit MetadataEditPage(QWidget* const parent);
+    ~MetadataEditPage() override;
 };
 
 } // namespace DigikamGenericMetadataEditPlugin
 
-#endif // DIGIKAM_IPTC_ORIGIN_H
+#endif // DIGIKAM_META_DATA_EDIT_PAGE_H

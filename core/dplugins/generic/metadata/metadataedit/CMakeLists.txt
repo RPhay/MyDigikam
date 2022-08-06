@@ -57,6 +57,7 @@ set(metadataeditplugin_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/exif/exifeditwidget.cpp
                             ${CMAKE_CURRENT_SOURCE_DIR}/dialog/limitedtextedit.cpp
                             ${CMAKE_CURRENT_SOURCE_DIR}/dialog/objectattributesedit.cpp
                             ${CMAKE_CURRENT_SOURCE_DIR}/dialog/metadataedit.cpp
+                            ${CMAKE_CURRENT_SOURCE_DIR}/dialog/metadataeditpage.cpp
 
                             ${CMAKE_CURRENT_SOURCE_DIR}/metadataeditplugin.cpp
 )

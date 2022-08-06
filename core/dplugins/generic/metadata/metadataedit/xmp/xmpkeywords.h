@@ -30,13 +30,14 @@
 // Local includes
 
 #include "dmetadata.h"
+#include "metadataeditpage.h"
 
 using namespace Digikam;
 
 namespace DigikamGenericMetadataEditPlugin
 {
 
-class XMPKeywords : public QWidget
+class XMPKeywords : public MetadataEditPage
 {
     Q_OBJECT
 

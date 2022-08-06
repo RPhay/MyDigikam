@@ -186,12 +186,18 @@ void EXIFEditWidget::saveSettings()
 
 void EXIFEditWidget::slotItemChanged()
 {
-    d->page_caption->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "Caption Information")));
-    d->page_datetime->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "Date and Time Information")));
-    d->page_lens->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "Lens Settings")));
-    d->page_device->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "Capture Device Settings")));
-    d->page_light->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "Light Source Information")));
-    d->page_adjust->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "Pictures Adjustments")));
+    d->page_caption->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Caption Information<br/>"
+                     "<i>Record technical descriptions</i></qt>")));
+    d->page_datetime->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Date and Time Information<br/>"
+                     "<i>Record camera time-stamp properties</i></qt>")));
+    d->page_lens->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Lens Settings<br/>"
+                     "<i>Record lens details used with camera</i></qt>")));
+    d->page_device->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Capture Device Settings<br/>"
+                     "<i>Record shot conditions used by camera</i></qt>")));
+    d->page_light->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Light Source Information<br/>"
+                     "<i>Record ambient condition captured by camera</i></qt>")));
+    d->page_adjust->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Pictures Adjustments<br/>"
+                     "<i>Record technical details used by camera</i></qt>")));
 
     QScopedPointer<DMetadata> meta(new DMetadata);
     meta->load((*d->dlg->currentItem()).toLocalFile());

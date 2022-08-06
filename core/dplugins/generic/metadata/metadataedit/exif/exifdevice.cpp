@@ -116,12 +116,13 @@ public:
 };
 
 EXIFDevice::EXIFDevice(QWidget* const parent)
-    : QWidget(parent),
-      d      (new Private)
+    : MetadataEditPage(parent),
+      d               (new Private)
 {
-    QGridLayout* const grid = new QGridLayout(this);
+    QGridLayout* const grid = new QGridLayout(widget());
 
     // EXIF only accept printable Ascii char.
+
     QRegularExpression asciiRx(QLatin1String("[\x20-\x7F]+$"));
     QValidator* const asciiValidator = new QRegularExpressionValidator(asciiRx, this);
 
@@ -362,9 +363,12 @@ EXIFDevice::EXIFDevice(QWidget* const parent)
     grid->setColumnStretch(1, 10);
     grid->setColumnStretch(5, 10);
     grid->setRowStretch(16, 10);
-    grid->setContentsMargins(QMargins());
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+
+    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
+    grid->setContentsMargins(spacing, spacing, spacing, spacing);
+    grid->setSpacing(spacing);
 
     // --------------------------------------------------------
 

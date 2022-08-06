@@ -76,10 +76,10 @@ public:
 };
 
 IPTCCredits::IPTCCredits(QWidget* const parent)
-    : QWidget(parent),
-      d      (new Private)
+    : MetadataEditPage(parent),
+      d               (new Private)
 {
-    QGridLayout* const grid = new QGridLayout(this);
+    QGridLayout* const grid = new QGridLayout(widget());
 
     // --------------------------------------------------------
 
@@ -148,9 +148,12 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
     grid->addWidget(note,               9, 0, 1, 3);
     grid->setColumnStretch(2, 10);
     grid->setRowStretch(10, 10);
-    grid->setContentsMargins(QMargins());
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+
+    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
+    grid->setContentsMargins(spacing, spacing, spacing, spacing);
+    grid->setSpacing(spacing);
 
     // --------------------------------------------------------
 

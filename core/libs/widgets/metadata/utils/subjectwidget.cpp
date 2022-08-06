@@ -113,9 +113,13 @@ public:
 // --------------------------------------------------------------------------------
 
 SubjectWidget::SubjectWidget(QWidget* const parent, bool sizeLimited)
-    : QWidget(parent),
-      d      (new Private)
+    : QScrollArea(parent),
+      d          (new Private)
 {
+    QWidget* const panel   = new QWidget(viewport());
+    setWidget(panel);
+    setWidgetResizable(true);
+
     // Load subject codes provided by IPTC/NAA as xml file.
     // See iptc.cms.apa.at/std/topicset/topicset.iptc-subjectcode.xml for details.
 
@@ -272,13 +276,13 @@ SubjectWidget::SubjectWidget(QWidget* const parent, bool sizeLimited)
     optionsBoxLayout->setColumnStretch(4, 10);
     optionsBoxLayout->setContentsMargins(QMargins());
     optionsBoxLayout->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+                                      QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     d->optionsBox->setLayout(optionsBoxLayout);
 
     // --------------------------------------------------------
 
-    QGridLayout* const mainLayout = new QGridLayout;
-    mainLayout->setAlignment( Qt::AlignTop );
+    QGridLayout* const mainLayout = new QGridLayout(widget());
+    mainLayout->setAlignment(Qt::AlignTop);
     mainLayout->addWidget(m_subjectsCheck,     0, 0, 1, 4);
     mainLayout->addWidget(d->optionsBox,       1, 0, 1, 4);
     mainLayout->addWidget(d->subjectsBox,      2, 0, 5, 3);
@@ -288,10 +292,12 @@ SubjectWidget::SubjectWidget(QWidget* const parent, bool sizeLimited)
     mainLayout->addWidget(m_note,              5, 3, 1, 1);
     mainLayout->setRowStretch(6, 10);
     mainLayout->setColumnStretch(2, 1);
-    mainLayout->setContentsMargins(QMargins());
-    mainLayout->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
-    setLayout(mainLayout);
+
+    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
+    mainLayout->setContentsMargins(spacing, spacing, spacing, spacing);
+    mainLayout->setSpacing(spacing);
 
     // --------------------------------------------------------
 
