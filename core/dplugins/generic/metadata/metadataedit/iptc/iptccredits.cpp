@@ -86,6 +86,7 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
     d->copyrightCheck = new QCheckBox(i18n("Copyright:"), this);
     d->copyrightEdit  = new LimitedTextEdit(this);
     d->copyrightEdit->setMaxLength(128);
+    d->copyrightEdit->setPlaceholderText(i18n("Copyright notice."));
     d->copyrightEdit->setWhatsThis(i18n("Set here the necessary copyright notice. This field is limited "
                                         "to 128 characters."));
 
@@ -106,6 +107,7 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
     d->creditCheck = new QCheckBox(i18n("Credit:"), this);
     d->creditEdit  = new LimitedTextEdit(this);
     d->creditEdit->setMaxLength(32);
+    d->creditEdit->setPlaceholderText(i18n("Content provider."));
     d->creditEdit->setWhatsThis(i18n("Set here the content provider. "
                                      "This field is limited to 32 characters."));
 
@@ -114,6 +116,7 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
     d->sourceCheck = new QCheckBox(i18nc("original owner of content", "Source:"), this);
     d->sourceEdit  = new LimitedTextEdit(this);
     d->sourceEdit->setMaxLength(32);
+    d->sourceEdit->setPlaceholderText(i18n("Original owner of content."));
     d->sourceEdit->setWhatsThis(i18n("Set here the original owner of content. "
                                      "This field is limited to 32 characters."));
 
