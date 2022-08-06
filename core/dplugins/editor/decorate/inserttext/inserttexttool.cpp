@@ -43,7 +43,6 @@
 #include <QIcon>
 #include <QComboBox>
 #include <QApplication>
-#include <QTextEdit>
 
 // KDE includes
 
@@ -61,6 +60,7 @@
 #include "dfontproperties.h"
 #include "dcolorselector.h"
 #include "dnuminput.h"
+#include "dtextedit.h"
 
 namespace DigikamEditorInsertTextToolPlugin
 {
@@ -109,7 +109,7 @@ public:
     DIntNumInput*        textOpacity;
     DColorSelector*      fontColorButton;
     DFontProperties*     fontChooserWidget;
-    QTextEdit*           textEdit;
+    DTextEdit*           textEdit;
 
     InsertTextWidget*    previewWidget;
     EditorToolSettings*  gboxSettings;
@@ -149,9 +149,9 @@ InsertTextTool::InsertTextTool(QObject* const parent)
     // -------------------------------------------------------------
 
     d->gboxSettings = new EditorToolSettings(nullptr);
-    d->textEdit     = new QTextEdit();
+    d->textEdit     = new DTextEdit();
     d->textEdit->setWordWrapMode(QTextOption::NoWrap);
-    d->textEdit->setWhatsThis( i18n("Here, enter the text you want to insert in your image."));
+    d->textEdit->setWhatsThis(i18n("Here, enter the text you want to insert in your image."));
 
     // -------------------------------------------------------------
 
