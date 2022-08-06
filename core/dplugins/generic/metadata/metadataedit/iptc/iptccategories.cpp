@@ -89,6 +89,7 @@ IPTCCategories::IPTCCategories(QWidget* const parent)
     d->categoryEdit  = new QLineEdit(this);
     d->categoryEdit->setClearButtonEnabled(true);
     d->categoryEdit->setMaxLength(3);
+    d->categoryEdit->setPlaceholderText(i18n("Category ID."));
     d->categoryEdit->setWhatsThis(i18n("Set here the category of content. This field is limited "
                                        "to 3 characters."));
 
@@ -96,6 +97,7 @@ IPTCCategories::IPTCCategories(QWidget* const parent)
 
     d->subCategoryEdit    = new LimitedTextEdit(this);
     d->subCategoryEdit->setMaxLength(32);
+    d->subCategoryEdit->setPlaceholderText(i18n("Supplemental category."));
     d->subCategoryEdit->setWhatsThis(i18n("Enter here a new supplemental category of content. "
                                           "This field is limited to 32 characters."));
 
