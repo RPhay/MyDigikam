@@ -37,6 +37,10 @@
 
 #include <klocalizedstring.h>
 
+// Local includes
+
+#include "dtextedit.h"
+
 namespace DigikamGenericMetadataEditPlugin
 {
 
@@ -66,7 +70,7 @@ public:
     QCheckBox*   categoryCheck;
 
     QLineEdit*   categoryEdit;
-    QLineEdit*   subCategoryEdit;
+    DTextEdit*   subCategoryEdit;
 
     QListWidget* subCategoriesBox;
 };
@@ -88,16 +92,15 @@ XMPCategories::XMPCategories(QWidget* const parent)
 
     d->subCategoriesCheck = new QCheckBox(i18n("Supplemental categories:"), this);
 
-    d->subCategoryEdit = new QLineEdit(this);
-    d->subCategoryEdit->setClearButtonEnabled(true);
+    d->subCategoryEdit    = new DTextEdit(this);
     d->subCategoryEdit->setWhatsThis(i18n("Enter here a new supplemental category of content."));
 
     d->subCategoriesBox = new QListWidget(this);
     d->subCategoriesBox->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 
-    d->addSubCategoryButton = new QPushButton( i18n("&Add"), this);
-    d->delSubCategoryButton = new QPushButton( i18n("&Delete"), this);
-    d->repSubCategoryButton = new QPushButton( i18n("&Replace"), this);
+    d->addSubCategoryButton = new QPushButton(i18n("&Add"),     this);
+    d->delSubCategoryButton = new QPushButton(i18n("&Delete"),  this);
+    d->repSubCategoryButton = new QPushButton(i18n("&Replace"), this);
     d->addSubCategoryButton->setIcon(QIcon::fromTheme(QLatin1String("list-add")));
     d->delSubCategoryButton->setIcon(QIcon::fromTheme(QLatin1String("edit-delete")));
     d->repSubCategoryButton->setIcon(QIcon::fromTheme(QLatin1String("view-refresh")));
@@ -119,7 +122,7 @@ XMPCategories::XMPCategories(QWidget* const parent)
     grid->setRowStretch(6, 10);
     grid->setContentsMargins(QMargins());
     grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
 
     // --------------------------------------------------------
 
@@ -242,7 +245,11 @@ void XMPCategories::slotCategorySelectionChanged()
 void XMPCategories::slotAddCategory()
 {
     QString newCategory = d->subCategoryEdit->text();
-    if (newCategory.isEmpty()) return;
+
+    if (newCategory.isEmpty())
+    {
+        return;
+    }
 
     bool found = false;
 

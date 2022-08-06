@@ -137,7 +137,6 @@ target_link_libraries(digikamcore
                       KF5::ConfigGui
                       KF5::XmlGui
                       KF5::I18n
-                      KF5::SonnetUi
                       KF5::Service
 
                       # Required by CImg which use pthread internally.
@@ -230,6 +229,16 @@ if(KF5NotifyConfig_FOUND)
     target_link_libraries(digikamcore
                           PRIVATE
                           KF5::NotifyConfig
+    )
+
+endif()
+
+if(KF5Sonnet_FOUND)
+
+    target_link_libraries(digikamcore
+                          PRIVATE
+                          KF5::SonnetCore
+                          KF5::SonnetUi
     )
 
 endif()

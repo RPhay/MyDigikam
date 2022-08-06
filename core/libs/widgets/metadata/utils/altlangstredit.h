@@ -28,12 +28,12 @@
 
 #include <QWidget>
 #include <QString>
-#include <QTextEdit>
 
 // Local includes
 
 #include "digikam_export.h"
 #include "dmetadata.h"
+#include "dtextedit.h"
 
 namespace Digikam
 {
@@ -44,7 +44,10 @@ class DIGIKAM_EXPORT AltLangStrEdit : public QWidget
 
 public:
 
-    explicit AltLangStrEdit(QWidget* const parent);
+    /**
+     * Default contructor. Use lines to use a specific number of lines with text editor.
+     */
+    explicit AltLangStrEdit(QWidget* const parent, unsigned int lines = 2);
     ~AltLangStrEdit()                               override;
 
     void setTitle(const QString& title);
@@ -79,7 +82,7 @@ public:
      */
     void addCurrent();
 
-    QTextEdit* textEdit()                   const;
+    DTextEdit* textEdit()                   const;
 
 Q_SIGNALS:
 

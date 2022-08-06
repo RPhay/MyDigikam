@@ -40,7 +40,6 @@
 #include "multistringsedit.h"
 #include "dtextedit.h"
 
-
 namespace DigikamGenericMetadataEditPlugin
 {
 
@@ -61,7 +60,7 @@ public:
     QCheckBox*           nicknameCheck;
     QCheckBox*           specialInstructionCheck;
 
-    QLineEdit*           nicknameEdit;
+    DTextEdit*           nicknameEdit;
 
     DPlainTextEdit*      specialInstructionEdit;
 
@@ -84,8 +83,7 @@ XMPStatus::XMPStatus(QWidget* const parent)
     // --------------------------------------------------------
 
     d->nicknameCheck = new QCheckBox(i18n("Nickname:"), this);
-    d->nicknameEdit  = new QLineEdit(this);
-    d->nicknameEdit->setClearButtonEnabled(true);
+    d->nicknameEdit  = new DTextEdit(this);
     d->nicknameEdit->setWhatsThis(i18n("A short informal name for the resource."));
 
     // --------------------------------------------------------
@@ -141,7 +139,7 @@ XMPStatus::XMPStatus(QWidget* const parent)
     connect(d->objectNameEdit, SIGNAL(signalModified()),
             this, SIGNAL(signalModified()));
 
-    connect(d->nicknameEdit, SIGNAL(textChanged(QString)),
+    connect(d->nicknameEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
     connect(d->specialInstructionEdit, SIGNAL(textChanged()),

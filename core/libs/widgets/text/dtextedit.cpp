@@ -4,7 +4,8 @@
  * https://www.digikam.org
  *
  * Date        : 2022-08-01
- * Description : a text edit with spell checker capabilities
+ * Description : Two plain text edit widgets with spell checker capabilities based on KF5::Sonnet (optional).
+ *               Widgets can be also limited to a number of lines to show text.
  *
  * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -22,6 +23,7 @@
  * ============================================================ */
 
 #include "dtextedit.h"
+#include "digikam_config.h"
 
 // Qt includes
 
@@ -32,28 +34,64 @@
 
 // KDE includes
 
-#include <sonnet/spellcheckdecorator.h>
+#ifdef HAVE_SONNET
+#   include <sonnet/spellcheckdecorator.h>
+#   include <sonnet/highlighter.h>
 
 using namespace Sonnet;
+
+#endif
+
+// Local includes
+
+#include "digikam_debug.h"
 
 namespace Digikam
 {
 
+class Q_DECL_HIDDEN DTextEdit::Private
+{
+public:
+
+    explicit Private()
+    {
+    }
+
+#ifdef HAVE_SONNET
+
+    Sonnet::SpellCheckDecorator* spellChecker = nullptr;
+
+#endif
+
+    unsigned int                 lines        = 2;
+};
+
 DTextEdit::DTextEdit(QWidget* const parent)
-    : QTextEdit(parent)
+    : QTextEdit(parent),
+      d        (new Private)
 {
     init();
 }
 
 DTextEdit::DTextEdit(const QString& contents, QWidget* const parent)
-    : QTextEdit(parent)
+    : QTextEdit(parent),
+      d        (new Private)
 {
     init();
     setPlainText(contents);
 }
 
+DTextEdit::DTextEdit(unsigned int lines, QWidget* const parent)
+    : QTextEdit(parent),
+      d        (new Private)
+{
+    d->lines = lines;
+    init();
+}
+
 DTextEdit::~DTextEdit()
 {
+    delete d;
 }
 
 void DTextEdit::setLinesVisible(unsigned int lines)
@@ -63,17 +101,17 @@ void DTextEdit::setLinesVisible(unsigned int lines)
         return;
     }
 
-    m_lines    = lines;
+    d->lines   = lines;
 
     QFont fnt;
     setFont(fnt);
     QMargins m = contentsMargins();
-    setFixedHeight(m.top() + m.bottom() + frameWidth() + fontMetrics().lineSpacing() * m_lines);
+    setFixedHeight(m.top() + m.bottom() + frameWidth() + fontMetrics().lineSpacing() * d->lines);
 }
 
 unsigned int DTextEdit::linesVisible() const
 {
-    return m_lines;
+    return d->lines;
 }
 
 QString DTextEdit::text() const
@@ -81,29 +119,99 @@ QString DTextEdit::text() const
     return toPlainText();
 }
 
+void DTextEdit::setText(const QString& text)
+{
+    setPlainText(text);
+}
+
 void DTextEdit::init()
 {
-    m_spellChecker = new SpellCheckDecorator(this);
-    setLinesVisible(m_lines);
+#ifdef HAVE_SONNET
+
+    d->spellChecker = new SpellCheckDecorator(this);
+
+#endif
+
+    setLinesVisible(d->lines);
+}
+
+void DTextEdit::setCurrentLanguage(const QString& lang)
+{
+
+#ifdef HAVE_SONNET
+
+    d->spellChecker->highlighter()->setCurrentLanguage(lang);
+
+    qCDebug(DIGIKAM_WIDGETS_LOG) << "Spell Checker Language:" << currentLanguage();
+
+#else
+
+    Q_UNUSED(lang);
+
+#endif
+
+}
+
+QString DTextEdit::currentLanguage() const
+{
+
+#ifdef HAVE_SONNET
+
+    return d->spellChecker->highlighter()->currentLanguage();
+
+#else
+
+    return QString();
+
+#endif
+
 }
 
 // ------------------------------------------------------------------------------------------------
 
+class Q_DECL_HIDDEN DPlainTextEdit::Private
+{
+public:
+
+    explicit Private()
+    {
+    }
+
+#ifdef HAVE_SONNET
+
+    Sonnet::SpellCheckDecorator* spellChecker = nullptr;
+
+#endif
+
+    unsigned int                 lines        = 2;
+};
+
 DPlainTextEdit::DPlainTextEdit(QWidget* const parent)
-    : QPlainTextEdit(parent)
+    : QPlainTextEdit(parent),
+      d             (new Private)
 {
     init();
 }
 
 DPlainTextEdit::DPlainTextEdit(const QString& contents, QWidget* const parent)
-    : QPlainTextEdit(parent)
+    : QPlainTextEdit(parent),
+      d             (new Private)
 {
     init();
     setPlainText(contents);
 }
 
+DPlainTextEdit::DPlainTextEdit(unsigned int lines, QWidget* const parent)
+    : QPlainTextEdit(parent),
+      d             (new Private)
+{
+    d->lines = lines;
+    init();
+}
+
 DPlainTextEdit::~DPlainTextEdit()
 {
+    delete d;
 }
 
 void DPlainTextEdit::setLinesVisible(unsigned int lines)
@@ -113,17 +221,17 @@ void DPlainTextEdit::setLinesVisible(unsigned int lines)
         return;
     }
 
-    m_lines    = lines;
+    d->lines   = lines;
 
     QFont fnt;
     setFont(fnt);
     QMargins m = contentsMargins();
-    setFixedHeight(m.top() + m.bottom() + frameWidth() + fontMetrics().lineSpacing() * m_lines);
+    setFixedHeight(m.top() + m.bottom() + frameWidth() + fontMetrics().lineSpacing() * d->lines);
 }
 
 unsigned int DPlainTextEdit::linesVisible() const
 {
-    return m_lines;
+    return d->lines;
 }
 
 QString DPlainTextEdit::text() const
@@ -131,10 +239,53 @@ QString DPlainTextEdit::text() const
     return toPlainText();
 }
 
+void DPlainTextEdit::setText(const QString& text)
+{
+    setPlainText(text);
+}
+
 void DPlainTextEdit::init()
 {
-    m_spellChecker = new SpellCheckDecorator(this);
-    setLinesVisible(m_lines);
+
+#ifdef HAVE_SONNET
+
+    d->spellChecker = new SpellCheckDecorator(this);
+
+#endif
+
+    setLinesVisible(d->lines);
+}
+
+void DPlainTextEdit::setCurrentLanguage(const QString& lang)
+{
+
+#ifdef HAVE_SONNET
+
+    d->spellChecker->highlighter()->setCurrentLanguage(lang);
+
+    qCDebug(DIGIKAM_WIDGETS_LOG) << "Spell Checker Language:" << currentLanguage();
+
+#else
+
+    Q_UNUSED(lang);
+
+#endif
+
+}
+
+QString DPlainTextEdit::currentLanguage() const
+{
+
+#ifdef HAVE_SONNET
+
+    return d->spellChecker->highlighter()->currentLanguage();
+
+#else
+
+    return QString();
+
+#endif
+
 }
 
 } // namespace Digikam

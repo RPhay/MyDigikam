@@ -45,7 +45,6 @@ public:
     explicit Private()
       : valueCheck(nullptr),
         editor    (nullptr)
-
     {
     }
 
@@ -65,11 +64,11 @@ AltLangStringsEdit::AltLangStringsEdit(QWidget* const parent, const QString& tit
     // --------------------------------------------------------
 
     QGridLayout* const grid = new QGridLayout(this);
-    grid->setAlignment( Qt::AlignTop );
+    grid->setAlignment(Qt::AlignTop);
     grid->addWidget(d->valueCheck, 0, 0, 1, 1);
     grid->addWidget(d->editor,     1, 0, 1, 1);
     grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     grid->setContentsMargins(QMargins());
 
     // --------------------------------------------------------

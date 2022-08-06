@@ -5,8 +5,8 @@
  *
  * Date        : 2007-10-24
  * Description : XMP credits settings page.
- * Modified    : 2014-04-22 Alan Pater
  *
+ * Copyright (C) 2014      by Alan Pater <alan dot pater at gmail dot com>
  * Copyright (C) 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -40,6 +40,7 @@
 // Local includes
 
 #include "multistringsedit.h"
+#include "dtextedit.h"
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -91,9 +92,10 @@ public:
     QCheckBox*        regionCheck;
     QCheckBox*        countryCheck;
 
-    QLineEdit*        creatorTitleEdit;
-    QLineEdit*        creditEdit;
-    QLineEdit*        sourceEdit;
+    DTextEdit*        creatorTitleEdit;
+    DTextEdit*        creditEdit;
+    DTextEdit*        sourceEdit;
+
     QLineEdit*        emailEdit;
     QLineEdit*        urlEdit;
     QLineEdit*        phoneEdit;
@@ -124,8 +126,7 @@ XMPCredits::XMPCredits(QWidget* const parent)
     // --------------------------------------------------------
 
     d->creatorTitleCheck = new QCheckBox(i18n("Creator Title:"), this);
-    d->creatorTitleEdit  = new QLineEdit(this);
-    d->creatorTitleEdit->setClearButtonEnabled(true);
+    d->creatorTitleEdit  = new DTextEdit(this);
     d->creatorTitleEdit->setWhatsThis(i18n("Set here the title of content creator."));
 
     // --------------------------------------------------------
@@ -196,29 +197,27 @@ XMPCredits::XMPCredits(QWidget* const parent)
     // --------------------------------------------------------
 
     d->creditCheck = new QCheckBox(i18n("Credit:"), this);
-    d->creditEdit  = new QLineEdit(this);
-    d->creditEdit->setClearButtonEnabled(true);
+    d->creditEdit  = new DTextEdit(this);
     d->creditEdit->setWhatsThis(i18n("Set here the content provider."));
 
     // --------------------------------------------------------
 
     d->sourceCheck = new QCheckBox(i18nc("original owner of content", "Source:"), this);
-    d->sourceEdit  = new QLineEdit(this);
-    d->sourceEdit->setClearButtonEnabled(true);
+    d->sourceEdit  = new DTextEdit(this);
     d->sourceEdit->setWhatsThis(i18n("Set here the original owner of content."));
 
     // --------------------------------------------------------
 
     grid->addWidget(d->creatorEdit,         0, 0, 1, 3);
     grid->addWidget(d->syncEXIFArtistCheck, 1, 0, 1, 3);
-    grid->addWidget(d->creatorTitleCheck,   2, 0, 1, 1);
-    grid->addWidget(d->creatorTitleEdit,    2, 1, 1, 2);
-    grid->addWidget(contactBox,             3, 0, 1, 3);
-    grid->addWidget(d->creditCheck,         4, 0, 1, 1);
-    grid->addWidget(d->creditEdit,          4, 1, 1, 2);
-    grid->addWidget(d->sourceCheck,         5, 0, 1, 1);
-    grid->addWidget(d->sourceEdit,          5, 1, 1, 2);
-    grid->setRowStretch(6, 10);
+    grid->addWidget(d->creatorTitleCheck,   2, 0, 1, 3);
+    grid->addWidget(d->creatorTitleEdit,    3, 0, 1, 3);
+    grid->addWidget(contactBox,             4, 0, 1, 3);
+    grid->addWidget(d->creditCheck,         5, 0, 1, 3);
+    grid->addWidget(d->creditEdit,          6, 0, 1, 3);
+    grid->addWidget(d->sourceCheck,         7, 0, 1, 3);
+    grid->addWidget(d->sourceEdit,          8, 0, 1, 3);
+    grid->setRowStretch(9, 10);
     grid->setColumnStretch(2, 10);
     grid->setContentsMargins(QMargins());
     grid->setSpacing(spacing);
@@ -298,7 +297,7 @@ XMPCredits::XMPCredits(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    connect(d->creatorTitleEdit, SIGNAL(textChanged(QString)),
+    connect(d->creatorTitleEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
     connect(d->emailEdit, SIGNAL(textChanged(QString)),
@@ -325,10 +324,10 @@ XMPCredits::XMPCredits(QWidget* const parent)
     connect(d->countryEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 
-    connect(d->creditEdit, SIGNAL(textChanged(QString)),
+    connect(d->creditEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
-    connect(d->sourceEdit, SIGNAL(textChanged(QString)),
+    connect(d->sourceEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 }
 
