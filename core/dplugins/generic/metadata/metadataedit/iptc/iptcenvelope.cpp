@@ -386,9 +386,6 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
     connect(d->destinationEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
-    connect(d->destinationEdit, SIGNAL(textChanged()),
-            this, SLOT(slotDestinationLeftCharacters()));
-
     connect(d->serviceIDEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 
@@ -440,13 +437,6 @@ void IPTCEnvelope::slotSetTodaySent()
     d->zoneSentSel->setToUTC();
 }
 
-void IPTCEnvelope::slotDestinationLeftCharacters()
-{
-    QToolTip::showText(d->destinationCheck->mapToGlobal(QPoint(0, -16)),
-                       i18np("%1 character left", "%1 characters left", d->destinationEdit->maxLength() - d->destinationEdit->toPlainText().size()),
-                       d->destinationEdit);
-}
-
 void IPTCEnvelope::slotLineEditModified()
 {
     QLineEdit* const ledit = dynamic_cast<QLineEdit*>(sender());
@@ -482,7 +472,6 @@ void IPTCEnvelope::readMetadata(const DMetadata& meta)
     }
 
     d->destinationEdit->setEnabled(d->destinationCheck->isChecked());
-    slotDestinationLeftCharacters();
 
     d->envelopeIDEdit->clear();
     d->envelopeIDCheck->setChecked(false);

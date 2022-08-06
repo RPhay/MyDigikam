@@ -197,20 +197,11 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
     connect(d->copyrightEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
-    connect(d->copyrightEdit, SIGNAL(textChanged()),
-            this, SLOT(slotLineEditModified()));
-
     connect(d->creditEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
-    connect(d->creditEdit, SIGNAL(textChanged()),
-            this, SLOT(slotLineEditModified()));
-
     connect(d->sourceEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
-
-    connect(d->sourceEdit, SIGNAL(textChanged()),
-            this, SLOT(slotLineEditModified()));
 }
 
 IPTCCredits::~IPTCCredits()

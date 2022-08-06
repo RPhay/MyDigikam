@@ -170,9 +170,6 @@ IPTCKeywords::IPTCKeywords(QWidget* const parent)
 
     connect(d->repKeywordButton, SIGNAL(clicked()),
             this, SIGNAL(signalModified()));
-
-    connect(d->keywordsEdit, SIGNAL(textChanged()),
-            this, SLOT(slotLineEditModified()));
 }
 
 IPTCKeywords::~IPTCKeywords()
@@ -183,7 +180,11 @@ IPTCKeywords::~IPTCKeywords()
 void IPTCKeywords::slotDelKeyword()
 {
     QListWidgetItem* const item = d->keywordsBox->currentItem();
-    if (!item) return;
+
+    if (!item)
+    {
+        return;
+    }
 
     d->keywordsBox->takeItem(d->keywordsBox->row(item));
     delete item;
@@ -192,7 +193,11 @@ void IPTCKeywords::slotDelKeyword()
 void IPTCKeywords::slotRepKeyword()
 {
     QString newKeyword = d->keywordsEdit->text();
-    if (newKeyword.isEmpty()) return;
+
+    if (newKeyword.isEmpty())
+    {
+        return;
+    }
 
     if (!d->keywordsBox->selectedItems().isEmpty())
     {
@@ -219,7 +224,11 @@ void IPTCKeywords::slotKeywordSelectionChanged()
 void IPTCKeywords::slotAddKeyword()
 {
     QString newKeyword = d->keywordsEdit->text();
-    if (newKeyword.isEmpty()) return;
+
+    if (newKeyword.isEmpty())
+    {
+        return;
+    }
 
     bool found = false;
 
@@ -239,20 +248,6 @@ void IPTCKeywords::slotAddKeyword()
         d->keywordsBox->insertItem(d->keywordsBox->count(), newKeyword);
         d->keywordsEdit->clear();
     }
-}
-
-void IPTCKeywords::slotLineEditModified()
-{
-    LimitedTextEdit* const ledit = dynamic_cast<LimitedTextEdit*>(sender());
-
-    if (!ledit)
-    {
-        return;
-    }
-
-    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 16))),
-                       i18np("%1 character left", "%1 characters left", ledit->maxLength() - ledit->text().size()),
-                       ledit);
 }
 
 void IPTCKeywords::readMetadata(const DMetadata& meta)

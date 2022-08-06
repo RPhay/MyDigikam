@@ -58,7 +58,6 @@ private Q_SLOTS:
     void slotAddKeyword();
     void slotDelKeyword();
     void slotRepKeyword();
-    void slotLineEditModified();
 
 private:
 

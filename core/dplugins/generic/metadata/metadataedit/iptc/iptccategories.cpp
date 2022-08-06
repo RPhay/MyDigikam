@@ -190,9 +190,6 @@ IPTCCategories::IPTCCategories(QWidget* const parent)
 
     connect(d->subCategoryEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
-
-    connect(d->subCategoryEdit, SIGNAL(textChanged()),
-            this, SLOT(slotLineEditModified()));
 }
 
 IPTCCategories::~IPTCCategories()
@@ -263,35 +260,17 @@ void IPTCCategories::slotAddCategory()
 
 void IPTCCategories::slotLineEditModified()
 {
-    QString text;
-    int maxl      = 0;
-    QWidget* wdgt = nullptr;
-
     QLineEdit* const ledit = dynamic_cast<QLineEdit*>(sender());
 
-    if (ledit)
+    if (!ledit)
     {
-        text = ledit->text();
-        maxl = ledit->maxLength();
-        wdgt = ledit;
-    }
-    else
-    {
-        LimitedTextEdit* const ltedit = dynamic_cast<LimitedTextEdit*>(sender());
-
-        if (!ltedit)
-        {
-            return;
-        }
-
-        text = ltedit->text();
-        maxl = ltedit->maxLength();
-        wdgt = ltedit;
+        return;
     }
 
-    QToolTip::showText(wdgt->mapToGlobal(QPoint(0, (-1)*(wdgt->height() + 16))),
-                       i18np("%1 character left", "%1 characters left", maxl - text.size()),
-                       wdgt);
+    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 16))),
+                       i18np("%1 character left", "%1 characters left",
+                       ledit->maxLength() - ledit->text().size()),
+                       ledit);
 }
 
 void IPTCCategories::readMetadata(const DMetadata& meta)

@@ -170,14 +170,8 @@ IPTCContent::IPTCContent(QWidget* const parent)
     connect(d->captionEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
-    connect(d->captionEdit, SIGNAL(textChanged()),
-            this, SLOT(slotCaptionLeftCharacters()));
-
     connect(d->headlineEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
-
-    connect(d->headlineEdit, SIGNAL(textChanged()),
-            this, SLOT(slotLineEditModified()));
 }
 
 IPTCContent::~IPTCContent()
@@ -208,13 +202,6 @@ void IPTCContent::setCheckedSyncJFIFComment(bool c)
 void IPTCContent::setCheckedSyncEXIFComment(bool c)
 {
     d->syncEXIFCommentCheck->setChecked(c);
-}
-
-void IPTCContent::slotCaptionLeftCharacters()
-{
-    QToolTip::showText(d->captionCheck->mapToGlobal(QPoint(0, -16)),
-                       i18np("%1 character left", "%1 characters left", d->captionEdit->maxLength() - d->captionEdit->toPlainText().size()),
-                       d->captionEdit);
 }
 
 void IPTCContent::slotLineEditModified()
@@ -249,7 +236,6 @@ void IPTCContent::readMetadata(const DMetadata& meta)
     d->captionEdit->setEnabled(d->captionCheck->isChecked());
     d->syncJFIFCommentCheck->setEnabled(d->captionCheck->isChecked());
     d->syncEXIFCommentCheck->setEnabled(d->captionCheck->isChecked());
-    slotCaptionLeftCharacters();
 
     list = meta.getIptcTagsStringList("Iptc.Application2.Writer", false);
     d->writerEdit->setValues(list);
