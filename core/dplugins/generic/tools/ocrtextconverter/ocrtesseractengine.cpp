@@ -188,11 +188,13 @@ bool OcrTesseracrEngine::runOcrProcess()
         if (!successFlag)
         {
             qWarning() << "Error starting OCR Process";
+            delete ocrProcess;
             return PROCESS_FAILED;
         }
 
         if (d->cancel)
         {
+            delete ocrProcess;
             return PROCESS_CANCELED;
         }
 
@@ -200,11 +202,13 @@ bool OcrTesseracrEngine::runOcrProcess()
     catch(const QProcess::ProcessError& e)
     {   
         qWarning() << "Text Converter has error" << e;
+        delete ocrProcess;
         return PROCESS_FAILED;
     }
     
     
     d->ocrResult   = QString::fromLocal8Bit(ocrProcess->readAllStandardOutput());
+    delete ocrProcess;
 
     return PROCESS_COMPLETE;
 }
