@@ -156,7 +156,7 @@ int DImgJPEG2000Plugin::canRead(const QFileInfo& fileInfo, bool magic) const
         return 0;
     }
 
-    const int headerLen = 9;
+    const qint64 headerLen = 9;
 
     QByteArray header(headerLen, '\0');
 

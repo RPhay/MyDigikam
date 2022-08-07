@@ -182,7 +182,7 @@ int DImgHEIFPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
         return 0;
     }
 
-    const int headerLen = 12;
+    const qint64 headerLen = 12;
 
     QByteArray header(headerLen, '\0');
 

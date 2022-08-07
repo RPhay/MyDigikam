@@ -99,7 +99,7 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         return false;
     }
 
-    const int headerLen = 12;
+    const qint64 headerLen = 12;
 
     QByteArray header(headerLen, '\0');
 
