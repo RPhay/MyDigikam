@@ -17,9 +17,8 @@ public:
     Private()
       : language(int(OcrOptions::Languages::DEFAULT)),
         psm(int(OcrOptions::PageSegmentationModes::DEFAULT)),
-        oem(int(OcrOptions::EngineModes::DEFAULT))
-
-
+        oem(int(OcrOptions::EngineModes::DEFAULT)),
+        cancel(false)
     {
     }
 
@@ -86,8 +85,6 @@ void TextConverterTask::run()
             Q_EMIT signalStarting(ad1);
 
             // TODO dest Path
-
-            d->ocrEngine.setInputFile(d->url.toLocalFile());
 
             // TODO set Ouput File 
 
