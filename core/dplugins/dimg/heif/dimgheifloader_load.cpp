@@ -47,16 +47,21 @@ static int64_t HeifQIODeviceGetPosition(void* userdata)
 {
     QFile* const file = static_cast<QFile*>(userdata);
 
-    return file->pos();
+    return (int64_t)file->pos();
 }
 
 static int HeifQIODeviceRead(void* data, size_t size, void* userdata)
 {
     QFile* const file = static_cast<QFile*>(userdata);
 
+    if ((file->pos() + (qint64)size) > file->size())
+    {
+        return 0;
+    }
+
     qint64 bytes = file->read((char*)data, size);
 
-    return ((bytes < 0) ? 1 : 0);
+    return (int)((file->error() != QFileDevice::NoError) || bytes != (qint64)size);
 }
 
 static int HeifQIODeviceSeek(int64_t position, void* userdata)
@@ -89,34 +94,32 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
         return false;
     }
-/*
+
     const int headerLen = 12;
 
-    unsigned char header[headerLen];
+    QByteArray header(headerLen, '\0');
 
-    if (fread(&header, headerLen, 1, file) != 1)
+    if (readFile.read((char*)header.data(), headerLen) != headerLen)
     {
         qCWarning(DIGIKAM_DIMG_LOG_HEIF) << "Error: Could not parse magic identifier.";
-        fclose(file);
         loadingFailed();
 
         return false;
     }
 
-    if ((memcmp(&header[4], "ftyp", 4) != 0) &&
-        (memcmp(&header[8], "heic", 4) != 0) &&
-        (memcmp(&header[8], "heix", 4) != 0) &&
-        (memcmp(&header[8], "mif1", 4) != 0))
+    if ((memcmp(&header.data()[4], "ftyp", 4) != 0) &&
+        (memcmp(&header.data()[8], "heic", 4) != 0) &&
+        (memcmp(&header.data()[8], "heix", 4) != 0) &&
+        (memcmp(&header.data()[8], "mif1", 4) != 0))
     {
         qCWarning(DIGIKAM_DIMG_LOG_HEIF) << "Error: source file is not HEIF image.";
-        fclose(file);
         loadingFailed();
 
         return false;
     }
 
-    fclose(file);
-*/
+    readFile.reset();
+
     if (observer)
     {
         observer->progressInfo(0.1F);
