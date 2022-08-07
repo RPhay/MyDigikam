@@ -43,34 +43,53 @@
 namespace Digikam
 {
 
+static int64_t HeifQIODeviceGetPosition(void* userdata)
+{
+    QFile* const file = static_cast<QFile*>(userdata);
+
+    return file->pos();
+}
+
+static int HeifQIODeviceRead(void* data, size_t size, void* userdata)
+{
+    QFile* const file = static_cast<QFile*>(userdata);
+
+    qint64 bytes = file->read((char*)data, size);
+
+    return ((bytes < 0) ? 1 : 0);
+}
+
+static int HeifQIODeviceSeek(int64_t position, void* userdata)
+{
+    QFile* const file = static_cast<QFile*>(userdata);
+
+    return (int)file->seek(position);
+}
+
+static heif_reader_grow_status HeifQIODeviceWait(int64_t target_size, void* userdata)
+{
+    Q_UNUSED(target_size);
+    Q_UNUSED(userdata);
+
+    return heif_reader_grow_status_size_reached;
+}
+
 bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const observer)
 {
     m_observer = observer;
 
     readMetadata(filePath);
 
-    FILE* file = fopen(QFile::encodeName(filePath).constData(), "rb");
+    QFile readFile(filePath);
 
-#ifdef Q_OS_WIN
-
-    bool loadToMemory = false;
-
-    if (!file)
-    {
-        file          = _wfopen((const wchar_t*)filePath.utf16(), L"rb");
-        loadToMemory  = true;
-    }
-
-#endif
-
-    if (!file)
+    if (!readFile.open(QIODevice::ReadOnly))
     {
         qCWarning(DIGIKAM_DIMG_LOG_HEIF) << "Error: Could not open source file.";
         loadingFailed();
 
         return false;
     }
-
+/*
     const int headerLen = 12;
 
     unsigned char header[headerLen];
@@ -97,7 +116,7 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
     }
 
     fclose(file);
-
+*/
     if (observer)
     {
         observer->progressInfo(0.1F);
@@ -109,44 +128,18 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
     heif_item_id primary_image_id;
 
     struct heif_context* const heif_context = heif_context_alloc();
-    struct heif_error error;
 
-#ifdef Q_OS_WIN
+    heif_reader reader;
+    reader.reader_api_version = 1;
+    reader.get_position       = HeifQIODeviceGetPosition;
+    reader.read               = HeifQIODeviceRead;
+    reader.seek               = HeifQIODeviceSeek;
+    reader.wait_for_file_size = HeifQIODeviceWait;
 
-    if (loadToMemory)
-    {
-        QByteArray buffer;
-        QFile memFile(filePath);
-
-        if (!memFile.open(QIODevice::ReadOnly))
-        {
-            qCWarning(DIGIKAM_DIMG_LOG_HEIF) << "Error: Could not load into memory.";
-            heif_context_free(heif_context);
-            loadingFailed();
-
-            return false;
-        }
-
-        buffer = memFile.readAll();
-        memFile.close();
-
-        qCDebug(DIGIKAM_DIMG_LOG_HEIF) << "HEIF loading file to memory buffer";
-
-        error = heif_context_read_from_memory(heif_context,
-                                              (void*)buffer.data(),
-                                              buffer.size(),
-                                              nullptr);
-    }
-    else
-
-#endif
-
-    {
-
-        error = heif_context_read_from_file(heif_context,
-                                            QFile::encodeName(filePath).constData(),
-                                            nullptr);
-    }
+    struct heif_error error   = heif_context_read_from_reader(heif_context,
+                                                              &reader,
+                                                              (void*)&readFile,
+                                                              nullptr);
 
     if (!isHeifSuccess(&error))
     {
