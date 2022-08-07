@@ -4,7 +4,7 @@
 // Qt includes
 
 #include <QUrl>
-#include <>
+#include <QTreeWidgetItem>
 
 // Local includes
 
