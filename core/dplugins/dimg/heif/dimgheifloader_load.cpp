@@ -73,8 +73,12 @@ static int HeifQIODeviceSeek(int64_t position, void* userdata)
 
 static heif_reader_grow_status HeifQIODeviceWait(int64_t target_size, void* userdata)
 {
-    Q_UNUSED(target_size);
-    Q_UNUSED(userdata);
+    QFile* const file = static_cast<QFile*>(userdata);
+
+    if ((qint64)target_size > file->size())
+    {
+        return heif_reader_grow_status_size_beyond_eof;
+    }
 
     return heif_reader_grow_status_size_reached;
 }
