@@ -48,8 +48,11 @@ UniqueModifier::UniqueModifier()
              description());
     addToken(QLatin1String("{unique:||n||}"),
              i18n("Add a suffix number, ||n|| specifies the number of digits to use"));
-
-    QRegularExpression reg(QLatin1String("\\{unique(:(\\d+))?\\}"));
+    addToken(QLatin1String("{unique:||n||,||c||}"),
+             i18n("Add a suffix number, "
+                  "||n|| specifies the number of digits to use, "
+                  "||c|| specifies the separator char"));
+    QRegularExpression reg(QLatin1String("\\{unique(:(\\d+))?(,([ -~]))?\\}"));
     reg.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
     setRegExp(reg);
 }
@@ -69,8 +72,11 @@ QString UniqueModifier::parseOperation(ParseSettings& settings, const QRegularEx
 
         bool ok        = true;
         int slength    = match.captured(2).toInt(&ok);
+        QString sep    = match.captured(4);
+        QString unique = sep.isEmpty() ? QString::fromUtf8("_%1")
+                                       : sep + QString::fromUtf8("%1");
         slength        = (slength == 0 || !ok) ? 1 : slength;
-        result        += QString::fromUtf8("_%1").arg(index, slength, 10, QLatin1Char('0'));
+        result        += unique.arg(index, slength, 10, QLatin1Char('0'));
 
         return result;
     }
