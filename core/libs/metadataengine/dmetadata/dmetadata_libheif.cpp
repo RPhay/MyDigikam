@@ -45,6 +45,46 @@
 namespace Digikam
 {
 
+static int64_t HeifQIODeviceGetPosition(void* userdata)
+{
+    QFile* const file = static_cast<QFile*>(userdata);
+
+    return (int64_t)file->pos();
+}
+
+static int HeifQIODeviceRead(void* data, size_t size, void* userdata)
+{
+    QFile* const file = static_cast<QFile*>(userdata);
+
+    if ((file->pos() + (qint64)size) > file->size())
+    {
+        return 0;
+    }
+
+    qint64 bytes = file->read((char*)data, size);
+
+    return (int)((file->error() != QFileDevice::NoError) || bytes != (qint64)size);
+}
+
+static int HeifQIODeviceSeek(int64_t position, void* userdata)
+{
+    QFile* const file = static_cast<QFile*>(userdata);
+
+    return (int)file->seek(position);
+}
+
+static heif_reader_grow_status HeifQIODeviceWait(int64_t target_size, void* userdata)
+{
+    QFile* const file = static_cast<QFile*>(userdata);
+
+    if ((qint64)target_size > file->size())
+    {
+        return heif_reader_grow_status_size_beyond_eof;
+    }
+
+    return heif_reader_grow_status_size_reached;
+}
+
 bool s_isHeifSuccess(struct heif_error* const error)
 {
     if (error->code == 0)
@@ -187,51 +227,37 @@ bool DMetadata::loadUsingLibheif(const QString& filePath)
         return false;
     }
 
-    FILE* file = fopen(QFile::encodeName(filePath).constData(), "rb");
+    QFile readFile(filePath);
 
-#ifdef Q_OS_WIN
-
-    bool loadToMemory = false;
-
-    if (!file)
-    {
-        file          = _wfopen((const wchar_t*)filePath.utf16(), L"rb");
-        loadToMemory  = true;
-    }
-
-#endif
-
-    if (!file)
+    if (!readFile.open(QIODevice::ReadOnly))
     {
         qCWarning(DIGIKAM_METAENGINE_LOG) << "Error: Could not open source file.";
 
         return false;
     }
 
-    const int headerLen = 12;
+    const qint64 headerLen = 12;
 
-    unsigned char header[headerLen];
+    QByteArray header(headerLen, '\0');
 
-    if (fread(&header, headerLen, 1, file) != 1)
+    if (readFile.read((char*)header.data(), headerLen) != headerLen)
     {
         qCWarning(DIGIKAM_METAENGINE_LOG) << "Error: Could not parse magic identifier.";
-        fclose(file);
 
         return false;
     }
 
-    if ((memcmp(&header[4], "ftyp", 4) != 0) &&
-        (memcmp(&header[8], "heic", 4) != 0) &&
-        (memcmp(&header[8], "heix", 4) != 0) &&
-        (memcmp(&header[8], "mif1", 4) != 0))
+    if ((memcmp(&header.data()[4], "ftyp", 4) != 0) &&
+        (memcmp(&header.data()[8], "heic", 4) != 0) &&
+        (memcmp(&header.data()[8], "heix", 4) != 0) &&
+        (memcmp(&header.data()[8], "mif1", 4) != 0))
     {
         qCWarning(DIGIKAM_METAENGINE_LOG) << "Error: source file is not HEIF image.";
-        fclose(file);
 
         return false;
     }
 
-    fclose(file);
+    readFile.reset();
 
     // -------------------------------------------------------------------
     // Initialize HEIF API.
@@ -239,42 +265,18 @@ bool DMetadata::loadUsingLibheif(const QString& filePath)
     heif_item_id primary_image_id;
 
     struct heif_context* const heif_context = heif_context_alloc();
-    struct heif_error error;
 
-#ifdef Q_OS_WIN
+    heif_reader reader;
+    reader.reader_api_version = 1;
+    reader.get_position       = HeifQIODeviceGetPosition;
+    reader.read               = HeifQIODeviceRead;
+    reader.seek               = HeifQIODeviceSeek;
+    reader.wait_for_file_size = HeifQIODeviceWait;
 
-    if (loadToMemory)
-    {
-        QByteArray buffer;
-        QFile memFile(filePath);
-
-        if (!memFile.open(QIODevice::ReadOnly))
-        {
-            qCWarning(DIGIKAM_METAENGINE_LOG) << "Error: Could not load into memory.";
-            heif_context_free(heif_context);
-
-            return false;
-        }
-
-        buffer = memFile.readAll();
-        memFile.close();
-
-        qDebug(DIGIKAM_METAENGINE_LOG) << "HEIF loading file to memory buffer";
-
-        error = heif_context_read_from_memory(heif_context,
-                                              (void*)buffer.data(),
-                                              buffer.size(),
-                                              nullptr);
-    }
-    else
-
-#endif
-
-    {
-        error = heif_context_read_from_file(heif_context,
-                                            QFile::encodeName(filePath).constData(),
-                                            nullptr);
-    }
+    struct heif_error error   = heif_context_read_from_reader(heif_context,
+                                                              &reader,
+                                                              (void*)&readFile,
+                                                              nullptr);
 
     if (!s_isHeifSuccess(&error))
     {
