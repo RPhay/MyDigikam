@@ -359,6 +359,11 @@ void TextConverterDialog::slotStartStop()
             ++it;
         }
 **/
+        if (d->listView->listView()->topLevelItemCount() == 0)
+        {
+            qDebug() << "Test";
+            d->textedit->clear();
+        }
 
         if (d->fileList.empty())
         {
