@@ -33,7 +33,7 @@ Name[x-test]=xxElegantxx
 Name[zh_CN]=优雅
 Comment=Based on the "Simple" theme. Uses Lytebox by Markus F. Hay to display the images in a slideshow.
 Comment[ca]=Basat en el tema «Senzill». Usa el Lytebox del Markus F. Hay per a mostrar les imatges en un passi de diapositives.
-Comment[ca@valencia]=Basat en el tema «Senzill». Utilitza el Lytebox del Markus F. Hay per a mostrar les imatges en un passe de diapositives.
+Comment[ca@valencia]=Basat en el tema «Senzill». Utilitza LyteBox del Markus F. Hay per a mostrar les imatges en un passe de diapositives.
 Comment[da]=Baseret på "Simple"-temaet. Bruger Lytebox af Markus F. Hay til at vise billeder i et diasshow.
 Comment[de]=Basiert auf dem Design „Simple“ und verwendet Lytebox von Markus F. Hay, um die Bilder als Diaschau anzuzeigen.
 Comment[el]=Based on the "Simple" theme. Uses Lytebox by Markus F. Hay to display the images in a slideshow.
@@ -245,7 +245,7 @@ Caption-2=Both
 [X-HTMLGallery Parameter useLyteBox]
 Name=Use LyteBox
 Name[ca]=Usa el LyteBox
-Name[ca@valencia]=Utilitza el LyteBox
+Name[ca@valencia]=Utilitza LyteBox
 Name[cs]=Použít LyteBox
 Name[da]=Brug LyteBox
 Name[de]=LyteBox verwenden
@@ -283,7 +283,7 @@ Caption-1=No
 [X-HTMLGallery Parameter slideInterval]
 Name=LyteBox Slideshow Interval
 Name[ca]=Interval entre diapositives del LyteBox
-Name[ca@valencia]=Interval entre diapositives del LyteBox
+Name[ca@valencia]=Interval entre diapositives de LyteBox
 Name[da]=Interval for LyteBox-diasshow
 Name[de]=Intervall für LyteBox-Diaschau
 Name[el]=Χρονικό διάστημα προβολής διαφανειών LyteBox
