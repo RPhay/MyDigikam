@@ -22,10 +22,6 @@
 
 #include "dimgheifplugin.h"
 
-// C++ includes
-
-#include <cstdio>
-
 // Qt includes
 
 #include <QFile>
@@ -177,17 +173,9 @@ int DImgHEIFPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
     // In second, we trying to parse file header.
 
-#ifdef Q_OS_WIN
+    QFile file(filePath);
 
-    FILE* const f = _wfopen((const wchar_t*)filePath.utf16(), L"rb");
-
-#else
-
-    FILE* const f = fopen(filePath.toUtf8().constData(), "rb");
-
-#endif
-
-    if (!f)
+    if (!file.open(QIODevice::ReadOnly))
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Failed to open file " << filePath;
 
@@ -196,22 +184,19 @@ int DImgHEIFPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
     const int headerLen = 12;
 
-    unsigned char header[headerLen];
+    QByteArray header(headerLen, '\0');
 
-    if (fread(&header, headerLen, 1, f) != 1)
+    if (file.read((char*)header.data(), headerLen) != headerLen)
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Failed to read header of file " << filePath;
-        fclose(f);
 
         return 0;
     }
 
-    fclose(f);
-
     if (
-        (memcmp(&header[4], "ftypheic", 8) == 0) ||
-        (memcmp(&header[4], "ftypheix", 8) == 0) ||
-        (memcmp(&header[4], "ftypmif1", 8) == 0)
+        (memcmp(&header.data()[4], "ftypheic", 8) == 0) ||
+        (memcmp(&header.data()[4], "ftypheix", 8) == 0) ||
+        (memcmp(&header.data()[4], "ftypmif1", 8) == 0)
        )
     {
         return 10;
