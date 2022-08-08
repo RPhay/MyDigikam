@@ -29,12 +29,12 @@
 #include <QWidget>
 #include <QString>
 #include <QDateTime>
-#include <QTextEdit>
 
 // Local includes
 
 #include "dlayoutbox.h"
 #include "captionvalues.h"
+#include "dtextedit.h"
 
 namespace Digikam
 {
@@ -58,7 +58,7 @@ public:
 
     void reset();
 
-    QTextEdit* textEdit()           const;
+    DTextEdit* textEdit()           const;
 
 Q_SIGNALS:
 

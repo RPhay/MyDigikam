@@ -194,7 +194,7 @@ void CaptionEdit::slotAuthorChanged(const QString& text)
     }
 }
 
-QTextEdit* CaptionEdit::textEdit() const
+DTextEdit* CaptionEdit::textEdit() const
 {
     return d->altLangStrEdit->textEdit();
 }

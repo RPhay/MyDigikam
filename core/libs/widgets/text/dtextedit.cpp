@@ -126,6 +126,7 @@ void DTextEdit::setText(const QString& text)
 
 void DTextEdit::init()
 {
+
 #ifdef HAVE_SONNET
 
     d->spellChecker = new SpellCheckDecorator(this);

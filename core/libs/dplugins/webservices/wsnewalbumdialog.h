@@ -31,7 +31,6 @@
 #include <QDateTimeEdit>
 #include <QDialog>
 #include <QLineEdit>
-#include <QTextEdit>
 #include <QComboBox>
 #include <QCloseEvent>
 #include <QGridLayout>
@@ -44,6 +43,7 @@
 
 #include "digikam_export.h"
 #include "wsitem.h"
+#include "dtextedit.h"
 
 namespace Digikam
 {
@@ -64,8 +64,8 @@ public:
     QWidget*          getMainWidget()   const;
     QGroupBox*        getAlbumBox()     const;
 
-    QLineEdit*        getTitleEdit()    const;
-    QTextEdit*        getDescEdit()     const;
+    DTextEdit*        getTitleEdit()    const;
+    DTextEdit*        getDescEdit()     const;
     QLineEdit*        getLocEdit()      const;
     QDateTimeEdit*    getDateTimeEdit() const;
     QDialogButtonBox* getButtonBox()    const;
@@ -74,7 +74,7 @@ public:
 
 private Q_SLOTS:
 
-    void slotTextChanged(const QString& text);
+    void slotTextChanged();
 
 protected:
 
