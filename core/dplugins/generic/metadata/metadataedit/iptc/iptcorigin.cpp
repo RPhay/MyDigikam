@@ -194,6 +194,7 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
     d->cityEdit  = new QLineEdit(this);
     d->cityEdit->setClearButtonEnabled(true);
     d->cityEdit->setMaxLength(32);
+    d->cityEdit->setPlaceholderText(i18n("Set here the city of the content"));
     d->cityEdit->setWhatsThis(i18n("Set here the city of content origin. "
                                    "This field is limited to 32 characters."));
 
@@ -203,6 +204,7 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
     d->sublocationEdit  = new QLineEdit(this);
     d->sublocationEdit->setClearButtonEnabled(true);
     d->sublocationEdit->setMaxLength(32);
+    d->sublocationEdit->setPlaceholderText(i18n("Set here the content location"));
     d->sublocationEdit->setWhatsThis(i18n("Set here the content location within city. "
                                           "This field is limited to 32 characters."));
 
@@ -212,6 +214,7 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
     d->provinceEdit  = new QLineEdit(this);
     d->provinceEdit->setClearButtonEnabled(true);
     d->provinceEdit->setMaxLength(32);
+    d->provinceEdit->setWhatsThis(i18n("Set here the Province or State of the content"));
     d->provinceEdit->setWhatsThis(i18n("Set here the Province or State of content origin. "
                                        "This field is limited to 32 characters."));
 
