@@ -31,7 +31,6 @@
 #include <QApplication>
 #include <QStyle>
 #include <QComboBox>
-#include <QLineEdit>
 #include <QGridLayout>
 
 // KDE includes
@@ -40,6 +39,7 @@
 
 // Local includes
 
+#include "dtextedit.h"
 #include "htmlwizard.h"
 #include "galleryinfo.h"
 #include "dfileselector.h"
@@ -62,7 +62,7 @@ public:
     DFileSelector* destUrl;
     QComboBox*     openInBrowser;
     QLabel*        titleLabel;
-    QLineEdit*     imageSelectionTitle;
+    DTextEdit*     imageSelectionTitle;
 };
 
 HTMLOutputPage::HTMLOutputPage(QWizard* const dialog, const QString& title)
@@ -79,7 +79,7 @@ HTMLOutputPage::HTMLOutputPage(QWizard* const dialog, const QString& title)
     d->titleLabel->setWordWrap(false);
     d->titleLabel->setText(i18nc("@label", "Gallery Title:"));
 
-    d->imageSelectionTitle   = new QLineEdit(main);
+    d->imageSelectionTitle   = new DTextEdit(main);
     d->titleLabel->setBuddy(d->imageSelectionTitle);
 
     // --------------------
