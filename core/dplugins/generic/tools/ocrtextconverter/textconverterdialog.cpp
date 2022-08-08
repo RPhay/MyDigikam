@@ -311,6 +311,7 @@ void TextConverterDialog::processAll()
     d->thread->setLanguagesMode(d->ocrSettings->LanguagesMode());
     d->thread->setPSMMode(d->ocrSettings->PSMMode());
     d->thread->setOEMMode(d->ocrSettings->OEMMode());
+    d->thread->setDpi(d->ocrSettings->Dpi());
     d->thread->ocrProcessFiles(d->fileList);
 
     if (!d->thread->isRunning())
@@ -454,6 +455,7 @@ void TextConverterDialog::readSettings()
     d->ocrSettings->setLanguagesMode(group.readEntry("ocrLanguages",     int(OcrOptions::Languages::DEFAULT)));
     d->ocrSettings->setPSMMode(group.readEntry("PageSegmentationModes",  int(OcrOptions::PageSegmentationModes::DEFAULT)));
     d->ocrSettings->setOEMMode(group.readEntry("EngineModes",            int(OcrOptions::EngineModes::DEFAULT)));
+    d->ocrSettings->setDpi(group.readEntry("Dpi",                        300));
 }
 
 void TextConverterDialog::saveSettings()
@@ -464,6 +466,7 @@ void TextConverterDialog::saveSettings()
     group.writeEntry("ocrLanguages",              (int)d->ocrSettings->LanguagesMode());
     group.writeEntry("PageSegmentationModes",     (int)d->ocrSettings->PSMMode());
     group.writeEntry("EngineModes",               (int)d->ocrSettings->OEMMode());
+    group.writeEntry("Dpi",                       (int)d->ocrSettings->Dpi());
 }
 
 void TextConverterDialog::addItems(const QList<QUrl>& itemList)

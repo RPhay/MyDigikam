@@ -31,6 +31,7 @@ public:
     void setLanguagesMode(int mode);
     void setPSMMode(int mode);
     void setOEMMode(int mode);
+    void setDpi(int value);
 
 Q_SIGNALS:
 

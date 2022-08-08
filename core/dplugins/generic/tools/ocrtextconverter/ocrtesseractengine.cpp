@@ -21,13 +21,15 @@ public:
     Private()
       : language ((int)OcrOptions::Languages::DEFAULT),
         psm      ((int)OcrOptions::PageSegmentationModes::DEFAULT),
-        oem      ((int)OcrOptions::EngineModes::DEFAULT)
+        oem      ((int)OcrOptions::EngineModes::DEFAULT),
+        dpi      (300)
     {
     }
 
     int        language;
     int        psm;
     int        oem; 
+    int        dpi;
     bool       cancel;
  
     QString    inputFile;
@@ -75,6 +77,15 @@ int OcrTesseracrEngine::OEMMode() const
     return d->oem;
 }
 
+void OcrTesseracrEngine::setDpi(int value)
+{
+    d->dpi = value;
+}
+
+int OcrTesseracrEngine::Dpi() const
+{
+    return d->dpi;
+}
 
 QString OcrTesseracrEngine::inputFile() const
 {
@@ -164,7 +175,7 @@ bool OcrTesseracrEngine::runOcrProcess()
 
         // dpi 
 
-        val = QLatin1String("300");
+        val = QString::fromLatin1("%1").arg(d->dpi);
         if (!val.isEmpty())
         {
             args << QLatin1String("--dpi") << val;

@@ -34,6 +34,9 @@ public:
     void setOEMMode(int mode);
     int  OEMMode()              const;
 
+    void setDpi(int value);
+    int  Dpi()                  const;
+
     void setDefaultSettings();
 
 public Q_SLOTS:

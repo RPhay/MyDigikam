@@ -51,6 +51,9 @@ public:
     void setOEMMode(int mode);
     int  OEMMode()              const;
 
+    void setDpi(int value);
+    int  Dpi()              const;
+
     bool      runOcrProcess();
      
 private:

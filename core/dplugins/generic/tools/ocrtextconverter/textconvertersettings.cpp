@@ -36,6 +36,7 @@
 #include "dfileoperations.h"
 #include "exiftoolerrorview.h"
 #include "exiftoolparser.h"
+#include "dnuminput.h"
 
 #include "textconverterlist.h"
 #include "textconvertersettings.h"
@@ -54,6 +55,7 @@ public:
       : ocrTesseractLanguageMode   (nullptr),
         ocrTesseractPSMMode        (nullptr),
         ocrTesseractOEMMode        (nullptr),
+        ocrTesseractDpi            (nullptr),
         errorView                  (nullptr)
     {
     }
@@ -65,6 +67,8 @@ public:
     DComboBox*          ocrTesseractPSMMode;
 
     DComboBox*          ocrTesseractOEMMode;
+
+    DIntNumInput*       ocrTesseractDpi;
 
     ExifToolErrorView*  errorView;
 };
@@ -122,6 +126,14 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
 
     d->ocrTesseractOEMMode->setDefaultIndex(int(OcrOptions::EngineModes::DEFAULT));
 
+    // ------------
+
+    QLabel* const ocrTesseractDpiLabel  = new QLabel(i18nc("@label", "Resolution Dpi:"));
+    d->ocrTesseractDpi                  = new DIntNumInput(this);
+    d->ocrTesseractDpi->setDefaultValue(300);
+    d->ocrTesseractDpi->setRange(70, 2400, 1);
+    d->ocrTesseractDpi->setWhatsThis(i18nc("@info", "Specify DPI for input image."));
+    ocrTesseractDpiLabel->setBuddy(d->ocrTesseractDpi);
 
     // ------------
 
@@ -132,6 +144,8 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
     settingsBoxLayout->addWidget(d->ocrTesseractPSMMode,           1, 1, 1, 1);
     settingsBoxLayout->addWidget(ocrTesseractOEMLabel,             2, 0, 1, 1);
     settingsBoxLayout->addWidget(d->ocrTesseractOEMMode,           2, 1, 1, 1);
+    settingsBoxLayout->addWidget(ocrTesseractDpiLabel,             3, 0, 1, 1);
+    settingsBoxLayout->addWidget(d->ocrTesseractDpi,               3, 1, 1, 1);
     settingsBoxLayout->setRowStretch(9, 10);
     settingsBoxLayout->setContentsMargins(QMargins());
 
@@ -165,6 +179,7 @@ void TextConverterSettings::setDefaultSettings()
     d->ocrTesseractLanguageMode->slotReset();
     d->ocrTesseractOEMMode->slotReset();
     d->ocrTesseractPSMMode->slotReset(); 
+    d->ocrTesseractDpi->slotReset();
 }
 
 void TextConverterSettings::setLanguagesMode(int mode)
@@ -198,6 +213,15 @@ int TextConverterSettings::OEMMode() const
     return d->ocrTesseractOEMMode->currentIndex();
 }
 
+void TextConverterSettings::setDpi(int value)
+{
+    d->ocrTesseractDpi->setValue(value);
+}
+
+int  TextConverterSettings::Dpi() const
+{
+    return d->ocrTesseractDpi->value();
+}
 
 void TextConverterSettings::slotSetupChanged()
 {

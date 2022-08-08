@@ -18,6 +18,7 @@ public:
       : language(int(OcrOptions::Languages::DEFAULT)),
         psm(int(OcrOptions::PageSegmentationModes::DEFAULT)),
         oem(int(OcrOptions::EngineModes::DEFAULT)),
+        dpi(300),
         cancel(false)
     {
     }
@@ -25,6 +26,7 @@ public:
     int language;
     int psm; 
     int oem;
+    int dpi;
 
     bool                 cancel;         
 
@@ -66,6 +68,11 @@ void TextConverterTask::setOEMMode(int mode)
     d->oem = mode;
 }
 
+void TextConverterTask::setDpi(int value)
+{
+    d->dpi = value;
+}
+
 void TextConverterTask::run()
 {
 
@@ -92,6 +99,7 @@ void TextConverterTask::run()
             d->ocrEngine.setLanguagesMode(d->language);
             d->ocrEngine.setPSMMode(d->psm);
             d->ocrEngine.setOEMMode(d->oem);
+            d->ocrEngine.setDpi(d->dpi);
             int ret = d->ocrEngine.runOcrProcess();  
 
             TextConverterActionData ad2;

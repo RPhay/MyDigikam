@@ -31,13 +31,15 @@ public:
     Private()
       : language(int(OcrOptions::Languages::DEFAULT)),
         psm(int(OcrOptions::PageSegmentationModes::DEFAULT)),
-        oem(int(OcrOptions::EngineModes::DEFAULT))
+        oem(int(OcrOptions::EngineModes::DEFAULT)),
+        dpi(300)
     {
     }
 
     int language;
     int psm; 
     int oem;
+    int dpi;
 };
 
 TextConverterActionThread::TextConverterActionThread(QObject* const parent)
@@ -77,6 +79,11 @@ void TextConverterActionThread::setOEMMode(int mode)
     d->oem = mode;
 }
 
+void TextConverterActionThread::setDpi(int value)
+{
+    d->dpi = value;
+}
+
 void TextConverterActionThread::ocrProcessFile(const QUrl& url)
 {
     QList<QUrl> oneFile;
@@ -95,6 +102,7 @@ void TextConverterActionThread::ocrProcessFiles(const QList<QUrl>& urlList)
         t->setLanguagesMode(d->language);
         t->setPSMMode(d->psm);
         t->setOEMMode(d->oem);
+        t->setDpi(d->dpi);
 
         connect(t, SIGNAL(signalStarting(DigikamGenericTextConverterPlugin::TextConverterActionData)),
                 this, SIGNAL(signalStarting(DigikamGenericTextConverterPlugin::TextConverterActionData)));
