@@ -57,7 +57,6 @@ private Q_SLOTS:
 
     void slotSetTodayReleased();
     void slotSetTodayExpired();
-    void slotLineEditModified();
 
 private:
 

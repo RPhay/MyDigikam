@@ -86,7 +86,7 @@ IPTCContent::IPTCContent(QWidget* const parent)
     d->headlineCheck = new QCheckBox(i18n("Headline:"), this);
     d->headlineEdit  = new LimitedTextEdit(this);
     d->headlineEdit->setMaxLength(256);
-    d->headlineEdit->setPlaceholderText(i18n("Content synopsis."));
+    d->headlineEdit->setPlaceholderText(i18n("Set here the content synopsis"));
     d->headlineEdit->setWhatsThis(i18n("Enter here the content synopsis. This field is limited "
                                        "to 256 characters."));
 
@@ -101,7 +101,7 @@ IPTCContent::IPTCContent(QWidget* const parent)
     d->syncJFIFCommentCheck    = new QCheckBox(i18n("Sync JFIF Comment section"), this);
     d->syncEXIFCommentCheck    = new QCheckBox(i18n("Sync Exif Comment"), this);
     d->captionEdit->setMaxLength(2000);
-    d->captionEdit->setPlaceholderText(i18n("Content description."));
+    d->captionEdit->setPlaceholderText(i18n("Set here the content description"));
     d->captionEdit->setWhatsThis(i18n("Enter the content description. This field is limited "
                                       "to 2000 characters."));
 

@@ -26,12 +26,12 @@
 // Qt includes
 
 #include <QCheckBox>
+#include <QToolTip>
 #include <QPushButton>
 #include <QValidator>
 #include <QGridLayout>
 #include <QComboBox>
 #include <QApplication>
-#include <QLineEdit>
 #include <QListWidget>
 
 // KDE includes
@@ -42,6 +42,7 @@
 
 #include "metadatacheckbox.h"
 #include "squeezedcombobox.h"
+#include "limitedtextedit.h"
 
 using namespace Digikam;
 
@@ -69,7 +70,7 @@ public:
     QPushButton*      delValueButton;
     QPushButton*      repValueButton;
 
-    QLineEdit*        valueEdit;
+    LimitedTextEdit*  valueEdit;
 
     QListWidget*      valueBox;
 
@@ -134,8 +135,7 @@ ObjectAttributesEdit::ObjectAttributesEdit(QWidget* const parent, int size)
 
     // --------------------------------------------------------
 
-    d->valueEdit = new QLineEdit(this);
-    d->valueEdit->setClearButtonEnabled(true);
+    d->valueEdit = new LimitedTextEdit(this);
     QString whatsThis = i18n("Set here the editorial attribute description of "
                              "content.");
 
@@ -144,9 +144,13 @@ ObjectAttributesEdit::ObjectAttributesEdit(QWidget* const parent, int size)
         whatsThis.append(i18n(" This field is limited to "));
         d->valueEdit->setMaxLength(size);
         whatsThis.append(i18np("%1 character.","%1 characters.", size));
+
+        connect(d->valueEdit, SIGNAL(textChanged()),
+                this, SLOT(slotLineEditModified()));
     }
 
     d->valueEdit->setWhatsThis(whatsThis);
+    d->valueEdit->setPlaceholderText(i18n("Set here the editorial description"));
 
     // --------------------------------------------------------
 
@@ -163,7 +167,7 @@ ObjectAttributesEdit::ObjectAttributesEdit(QWidget* const parent, int size)
     grid->setColumnStretch(4, 10);
     grid->setContentsMargins(QMargins());
     grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
 
     // --------------------------------------------------------
 
@@ -217,11 +221,6 @@ ObjectAttributesEdit::ObjectAttributesEdit(QWidget* const parent, int size)
 ObjectAttributesEdit::~ObjectAttributesEdit()
 {
     delete d;
-}
-
-QLineEdit* ObjectAttributesEdit::valueEdit() const
-{
-    return d->valueEdit;
 }
 
 void ObjectAttributesEdit::slotDeleteValue()
@@ -347,6 +346,14 @@ void ObjectAttributesEdit::setValid(bool v)
 bool ObjectAttributesEdit::isValid() const
 {
     return d->valueCheck->isValid();
+}
+
+void ObjectAttributesEdit::slotLineEditModified()
+{
+    QToolTip::showText(d->valueEdit->mapToGlobal(QPoint(0, (-1)*(d->valueEdit->height() + 16))),
+                       i18np("%1 character left", "%1 characters left",
+                       d->valueEdit->maxLength() - d->valueEdit->text().size()),
+                       d->valueEdit);
 }
 
 } // namespace DigikamGenericMetadataEditPlugin
