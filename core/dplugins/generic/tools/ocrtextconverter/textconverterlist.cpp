@@ -48,9 +48,8 @@ void TextConverterList::slotAddImages(const QList<QUrl>& list)
     QList<QUrl> urls;
     bool raw = false;
 
-    for (QList<QUrl>::ConstIterator it = list.constBegin() ; it != list.constEnd() ; ++it)
+    for (auto const& imageUrl: list)
     {
-        QUrl imageUrl = *it;
 
         // Check if the new item already exist in the list.
 
