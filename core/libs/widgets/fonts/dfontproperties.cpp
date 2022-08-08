@@ -43,7 +43,6 @@
 #include <QFontDatabase>
 #include <QGroupBox>
 #include <QListWidget>
-#include <QTextEdit>
 #include <QCoreApplication>
 #include <QString>
 #include <QHash>
@@ -51,6 +50,8 @@
 // KDE includes
 
 #include <klocalizedstring.h>
+
+#include "dtextedit.h"
 
 namespace Digikam
 {
@@ -188,7 +189,7 @@ public:
 
     QPalette                palette;
     QDoubleSpinBox*         sizeOfFont;
-    QTextEdit*              sampleEdit;
+    DTextEdit*              sampleEdit;
 
     QLabel*                 familyLabel;
     QLabel*                 styleLabel;
@@ -480,7 +481,7 @@ DFontProperties::DFontProperties(QWidget* const parent,
     // Completed the font attribute grid.
     // Add the font preview into the lower part of the splitter.
 
-    d->sampleEdit = new QTextEdit(page);
+    d->sampleEdit = new DTextEdit(0, page);
     d->sampleEdit->setAcceptRichText(false);
     QFont tmpFont(font().family(), 64, QFont::Black);
     d->sampleEdit->setFont(tmpFont);

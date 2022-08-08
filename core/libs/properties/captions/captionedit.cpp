@@ -67,7 +67,7 @@ CaptionEdit::CaptionEdit(QWidget* const parent)
     d->altLangStrEdit = new AltLangStrEdit(this, 0);
     d->altLangStrEdit->setTitle(i18n("Captions: "));
 
-    d->authorEdit = new QLineEdit(this);
+    d->authorEdit     = new QLineEdit(this);
     d->authorEdit->setClearButtonEnabled(true);
     d->authorEdit->setPlaceholderText(i18n("Enter caption author name here."));
 
@@ -139,8 +139,8 @@ void CaptionEdit::slotAddValue(const QString& lang, const QString& text)
     }
 
     d->lastDeletedLanguage.clear();
-
     d->captionsValues.insert(lang, val);
+
     Q_EMIT signalModified();
 }
 
@@ -158,6 +158,7 @@ void CaptionEdit::slotDeleteValue(const QString& lang)
     d->authorEdit->blockSignals(true);
     d->authorEdit->clear();
     d->authorEdit->blockSignals(false);
+
     Q_EMIT signalModified();
 }
 
