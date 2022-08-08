@@ -177,14 +177,8 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
     connect(d->bylineEdit, SIGNAL(signalModified()),
             this, SIGNAL(signalModified()));
 
-    connect(d->bylineEdit->valueEdit(), SIGNAL(textChanged(QString)),
-            this, SLOT(slotLineEditModified()));
-
     connect(d->bylineTitleEdit, SIGNAL(signalModified()),
             this, SIGNAL(signalModified()));
-
-    connect(d->bylineTitleEdit->valueEdit(), SIGNAL(textChanged(QString)),
-            this, SLOT(slotLineEditModified()));
 
     connect(d->creditCheck, SIGNAL(toggled(bool)),
             this, SIGNAL(signalModified()));
@@ -194,9 +188,6 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
 
     connect(d->contactEdit, SIGNAL(signalModified()),
             this, SIGNAL(signalModified()));
-
-    connect(d->contactEdit->valueEdit(), SIGNAL(textChanged(QString)),
-            this, SLOT(slotLineEditModified()));
 
     // --------------------------------------------------------
 
@@ -213,20 +204,6 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
 IPTCCredits::~IPTCCredits()
 {
     delete d;
-}
-
-void IPTCCredits::slotLineEditModified()
-{
-    QLineEdit* const ledit = dynamic_cast<QLineEdit*>(sender());
-
-    if (!ledit)
-    {
-        return;
-    }
-
-    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 16))),
-                       i18np("%1 character left", "%1 characters left", ledit->maxLength() - ledit->text().size()),
-                       ledit);
 }
 
 void IPTCCredits::readMetadata(const DMetadata& meta)

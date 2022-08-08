@@ -164,9 +164,6 @@ IPTCContent::IPTCContent(QWidget* const parent)
     connect(d->writerEdit, SIGNAL(signalModified()),
             this, SIGNAL(signalModified()));
 
-    connect(d->writerEdit->valueEdit(), SIGNAL(textChanged(QString)),
-            this, SLOT(slotLineEditModified()));
-
     connect(d->headlineCheck, SIGNAL(toggled(bool)),
             this, SIGNAL(signalModified()));
 
@@ -207,20 +204,6 @@ void IPTCContent::setCheckedSyncJFIFComment(bool c)
 void IPTCContent::setCheckedSyncEXIFComment(bool c)
 {
     d->syncEXIFCommentCheck->setChecked(c);
-}
-
-void IPTCContent::slotLineEditModified()
-{
-    QLineEdit* const ledit = dynamic_cast<QLineEdit*>(sender());
-
-    if (!ledit)
-    {
-        return;
-    }
-
-    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 16))),
-                       i18np("%1 character left", "%1 characters left", ledit->maxLength() - ledit->text().size()),
-                       ledit);
 }
 
 void IPTCContent::readMetadata(const DMetadata& meta)

@@ -53,10 +53,6 @@ Q_SIGNALS:
 
     void signalModified();
 
-private Q_SLOTS:
-
-    void slotLineEditModified();
-
 private:
 
     class Private;
