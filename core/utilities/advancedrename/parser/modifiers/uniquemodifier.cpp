@@ -51,7 +51,7 @@ UniqueModifier::UniqueModifier()
     addToken(QLatin1String("{unique:||n||,||c||}"),
              i18n("Add a suffix number, "
                   "||n|| specifies the number of digits to use, "
-                  "||c|| specifies the separator char"));
+                  "||c|| specifies the separator char before the numbers"));
     QRegularExpression reg(QLatin1String("\\{unique(:(\\d+))?(,([ -~]))?\\}"));
     reg.setPatternOptions(QRegularExpression::InvertedGreedinessOption);
     setRegExp(reg);
