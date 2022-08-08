@@ -62,7 +62,7 @@
 namespace Digikam
 {
 
-static struct heif_error HeifQIODeviceWriter(struct heif_context* /* ctx */,
+static struct heif_error heifQIODeviceWriter(struct heif_context* /* ctx */,
                                              const void* data, size_t size, void* userdata)
 {
     QFile saveFile(QString::fromUtf8(static_cast<const char*>(userdata)));
@@ -463,7 +463,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     heif_writer writer;
     writer.writer_api_version = 1;
-    writer.write              = HeifQIODeviceWriter;
+    writer.write              = heifQIODeviceWriter;
 
     error                     = heif_context_write(ctx, &writer, (void*)filePath.toUtf8().constData());
 

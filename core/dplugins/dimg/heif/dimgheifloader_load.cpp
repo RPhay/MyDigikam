@@ -43,14 +43,14 @@
 namespace Digikam
 {
 
-static int64_t HeifQIODeviceGetPosition(void* userdata)
+static int64_t heifQIODeviceDImgGetPosition(void* userdata)
 {
     QFile* const file = static_cast<QFile*>(userdata);
 
     return (int64_t)file->pos();
 }
 
-static int HeifQIODeviceRead(void* data, size_t size, void* userdata)
+static int heifQIODeviceDImgRead(void* data, size_t size, void* userdata)
 {
     QFile* const file = static_cast<QFile*>(userdata);
 
@@ -64,14 +64,14 @@ static int HeifQIODeviceRead(void* data, size_t size, void* userdata)
     return (int)((file->error() != QFileDevice::NoError) || bytes != (qint64)size);
 }
 
-static int HeifQIODeviceSeek(int64_t position, void* userdata)
+static int heifQIODeviceDImgSeek(int64_t position, void* userdata)
 {
     QFile* const file = static_cast<QFile*>(userdata);
 
     return (int)file->seek(position);
 }
 
-static heif_reader_grow_status HeifQIODeviceWait(int64_t target_size, void* userdata)
+static heif_reader_grow_status heifQIODeviceDImgWait(int64_t target_size, void* userdata)
 {
     QFile* const file = static_cast<QFile*>(userdata);
 
@@ -138,10 +138,10 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
     heif_reader reader;
     reader.reader_api_version = 1;
-    reader.get_position       = HeifQIODeviceGetPosition;
-    reader.read               = HeifQIODeviceRead;
-    reader.seek               = HeifQIODeviceSeek;
-    reader.wait_for_file_size = HeifQIODeviceWait;
+    reader.get_position       = heifQIODeviceDImgGetPosition;
+    reader.read               = heifQIODeviceDImgRead;
+    reader.seek               = heifQIODeviceDImgSeek;
+    reader.wait_for_file_size = heifQIODeviceDImgWait;
 
     struct heif_error error   = heif_context_read_from_reader(heif_context,
                                                               &reader,
