@@ -41,7 +41,7 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "metadataedit.h"
+#include "metadataeditdialog.h"
 #include "metaenginesettings.h"
 #include "xmpcategories.h"
 #include "xmpcontent.h"

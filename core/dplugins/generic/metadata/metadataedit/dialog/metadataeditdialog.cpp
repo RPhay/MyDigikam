@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "metadataedit.h"
+#include "metadataeditdialog.h"
 
 // Qt includes
 

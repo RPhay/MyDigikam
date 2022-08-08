@@ -40,7 +40,7 @@
 
 // Local includes
 
-#include "metadataedit.h"
+#include "metadataeditdialog.h"
 #include "metaenginesettings.h"
 #include "exifadjust.h"
 #include "exifcaption.h"

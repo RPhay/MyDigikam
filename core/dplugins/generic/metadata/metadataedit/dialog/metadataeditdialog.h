@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_META_DATA_EDIT_H
-#define DIGIKAM_META_DATA_EDIT_H
+#ifndef DIGIKAM_META_DATA_EDIT_DIALOG_H
+#define DIGIKAM_META_DATA_EDIT_DIALOG_H
 
 // Qt includes
 
@@ -88,4 +88,4 @@ private:
 
 } // namespace DigikamGenericMetadataEditPlugin
 
-#endif // DIGIKAM_META_DATA_EDIT_H
+#endif // DIGIKAM_META_DATA_EDIT_DIALOG_H

@@ -32,7 +32,7 @@
 
 // Local includes
 
-#include "metadataedit.h"
+#include "metadataeditdialog.h"
 
 namespace DigikamGenericMetadataEditPlugin
 {
