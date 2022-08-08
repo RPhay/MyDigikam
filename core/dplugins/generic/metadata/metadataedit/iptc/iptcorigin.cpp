@@ -214,7 +214,7 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
     d->provinceEdit  = new QLineEdit(this);
     d->provinceEdit->setClearButtonEnabled(true);
     d->provinceEdit->setMaxLength(32);
-    d->provinceEdit->setWhatsThis(i18n("Set here the Province or State of the content"));
+    d->provinceEdit->setPlaceholderText(i18n("Set here the Province or State of the content"));
     d->provinceEdit->setWhatsThis(i18n("Set here the Province or State of content origin. "
                                        "This field is limited to 32 characters."));
 

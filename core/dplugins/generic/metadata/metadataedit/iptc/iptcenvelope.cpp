@@ -180,6 +180,7 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
 
     d->destinationEdit      = new LimitedTextEdit(this);
     d->destinationEdit->setMaxLength(1024);
+    d->destinationEdit->setPlaceholderText(i18n("Set here the envelope destination"));
     d->destinationEdit->setWhatsThis(i18n("Enter the envelope destination. "
                                           "This field is limited to 1024 characters."));
 
@@ -189,6 +190,7 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
     d->unoIDEdit  = new QLineEdit(this);
     d->unoIDEdit->setClearButtonEnabled(true);
     d->unoIDEdit->setMaxLength(80);
+    d->unoIDEdit->setPlaceholderText(i18n("Set here the Unique Name of Object identifier"));
     d->unoIDEdit->setWhatsThis(i18n("Set here the Unique Name of Object identifier. "
                                     "This field is limited to 80 characters."));
 
@@ -198,6 +200,7 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
     d->productIDEdit  = new QLineEdit(this);
     d->productIDEdit->setClearButtonEnabled(true);
     d->productIDEdit->setMaxLength(32);
+    d->productIDEdit->setPlaceholderText(i18n("Set here the product identifier"));
     d->productIDEdit->setWhatsThis(i18n("Set here the product identifier. "
                                          "This field is limited to 32 characters."));
 
@@ -207,6 +210,7 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
     d->serviceIDEdit  = new QLineEdit(this);
     d->serviceIDEdit->setClearButtonEnabled(true);
     d->serviceIDEdit->setMaxLength(10);
+    d->serviceIDEdit->setPlaceholderText(i18n("Set here the service identifier"));
     d->serviceIDEdit->setWhatsThis(i18n("Set here the service identifier. "
                                          "This field is limited to 10 characters."));
 
@@ -216,6 +220,7 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
     d->envelopeIDEdit  = new QLineEdit(this);
     d->envelopeIDEdit->setClearButtonEnabled(true);
     d->envelopeIDEdit->setMaxLength(8);
+    d->envelopeIDEdit->setPlaceholderText(i18n("Set here the envelope identifier"));
     d->envelopeIDEdit->setWhatsThis(i18n("Set here the envelope identifier. "
                                          "This field is limited to 8 characters."));
 
