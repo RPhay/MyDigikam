@@ -175,6 +175,7 @@ SubjectWidget::SubjectWidget(QWidget* const parent, bool sizeLimited)
 
     m_iprEdit = new QLineEdit;
     m_iprEdit->setClearButtonEnabled(true);
+    m_iprEdit->setPlaceholderText(i18n("Set here the Informative Provider Reference"));
 
     if (sizeLimited)
     {
@@ -186,6 +187,7 @@ SubjectWidget::SubjectWidget(QWidget* const parent, bool sizeLimited)
     m_refEdit = new QLineEdit;
     m_refEdit->setClearButtonEnabled(true);
     m_refEdit->setValidator(refValidator);
+    m_refEdit->setPlaceholderText(i18n("Set here the Subject Reference Number"));
 
     if (sizeLimited)
     {
@@ -196,6 +198,7 @@ SubjectWidget::SubjectWidget(QWidget* const parent, bool sizeLimited)
 
     m_nameEdit = new QLineEdit;
     m_nameEdit->setClearButtonEnabled(true);
+    m_nameEdit->setPlaceholderText(i18n("Set here the Subject Name"));
 
     if (sizeLimited)
     {
@@ -206,6 +209,7 @@ SubjectWidget::SubjectWidget(QWidget* const parent, bool sizeLimited)
 
     m_matterEdit = new QLineEdit;
     m_matterEdit->setClearButtonEnabled(true);
+    m_matterEdit->setPlaceholderText(i18n("Set here the Subject Matter Name"));
 
     if (sizeLimited)
     {
@@ -216,6 +220,7 @@ SubjectWidget::SubjectWidget(QWidget* const parent, bool sizeLimited)
 
     m_detailEdit = new QLineEdit;
     m_detailEdit->setClearButtonEnabled(true);
+    m_detailEdit->setPlaceholderText(i18n("Set here the Subject Detail Name"));
 
     if (sizeLimited)
     {
