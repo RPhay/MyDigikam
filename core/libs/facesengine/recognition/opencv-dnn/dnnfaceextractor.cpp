@@ -102,7 +102,7 @@ DNNFaceExtractor::~DNNFaceExtractor()
 
 bool DNNFaceExtractor::loadModels()
 {
-    QString appPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    QString appPath = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
     QUrl    appUrl  = QUrl::fromLocalFile(appPath).adjusted(QUrl::RemoveFilename);
     appUrl.setPath(appUrl.path() + QLatin1String("digikam/facesengine/"));
 
