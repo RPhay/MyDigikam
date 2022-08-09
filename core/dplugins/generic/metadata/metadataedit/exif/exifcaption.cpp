@@ -27,7 +27,6 @@
 #include <QIcon>
 #include <QStyle>
 #include <QCheckBox>
-#include <QValidator>
 #include <QGridLayout>
 #include <QApplication>
 

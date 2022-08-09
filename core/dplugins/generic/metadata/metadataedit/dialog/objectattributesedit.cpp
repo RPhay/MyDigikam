@@ -28,7 +28,6 @@
 #include <QCheckBox>
 #include <QToolTip>
 #include <QPushButton>
-#include <QValidator>
 #include <QGridLayout>
 #include <QComboBox>
 #include <QApplication>
