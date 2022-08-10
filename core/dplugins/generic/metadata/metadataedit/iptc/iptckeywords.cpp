@@ -83,6 +83,7 @@ IPTCKeywords::IPTCKeywords(QWidget* const parent)
 
     d->keywordsEdit   = new LimitedTextEdit(this);
     d->keywordsEdit->setMaxLength(64);
+    d->keywordsEdit->setLinesVisible(1);
     d->keywordsEdit->setPlaceholderText(i18n("Set here a keyword"));
     d->keywordsEdit->setWhatsThis(i18n("Enter here a new keyword. "
                                       "This field is limited to 64 characters."));
