@@ -98,6 +98,7 @@ IPTCContent::IPTCContent(QWidget* const parent)
     captionHeader->setStretchFactor(d->captionCheck, 10);
 
     d->captionEdit             = new LimitedTextEdit(this);
+    d->captionEdit->setLinesVisible(4);
     d->syncJFIFCommentCheck    = new QCheckBox(i18n("Sync JFIF Comment section"), this);
     d->syncEXIFCommentCheck    = new QCheckBox(i18n("Sync Exif Comment"), this);
     d->captionEdit->setMaxLength(2000);

@@ -89,12 +89,12 @@ XMPContent::XMPContent(QWidget* const parent)
 
     d->headlineCheck = new QCheckBox(i18n("Headline:"), this);
     d->headlineEdit  = new DTextEdit(this);
-    d->headlineEdit->setWhatsThis(i18n("Enter here the content synopsis."));
+    d->headlineEdit->setPlaceholderText(i18n("Set here the content synopsis."));
 
     // --------------------------------------------------------
 
     d->captionEdit          = new AltLangStringsEdit(this, i18nc("content description", "Caption:"),
-                                                     i18n("Enter the content description."));
+                                                     i18n("Set here the content description."));
 
     QGroupBox* const syncOptions  = new QGroupBox(i18n("Default Language Caption Options"), this);
     QVBoxLayout* const vlay       = new QVBoxLayout(syncOptions);
@@ -111,17 +111,17 @@ XMPContent::XMPContent(QWidget* const parent)
 
     d->writerCheck = new QCheckBox(i18n("Caption Writer:"), this);
     d->writerEdit  = new DTextEdit(this);
-    d->writerEdit->setWhatsThis(i18n("Enter the name of the caption author."));
+    d->writerEdit->setPlaceholderText(i18n("Set here the name of the caption author."));
 
     // --------------------------------------------------------
 
     d->copyrightEdit          = new AltLangStringsEdit(this, i18n("Copyright:"),
-                                                       i18n("Enter the necessary copyright notice."));
+                                                       i18n("Set here the necessary copyright notice."));
 
     d->syncEXIFCopyrightCheck = new QCheckBox(i18n("Sync Exif Copyright"), this);
 
     d->usageTermsEdit         = new AltLangStringsEdit(this, i18n("Right Usage Terms:"),
-                                                       i18n("Enter the instructions on how a "
+                                                       i18n("Set here the instructions on how a "
                                                             "resource can be legally used here."));
 
     // --------------------------------------------------------
