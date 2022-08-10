@@ -176,6 +176,7 @@ DeleteItemList::DeleteItemList(QWidget* const parent)
     d->thumbLoadThread = ThumbnailLoadThread::defaultThread();
 
     setRootIsDecorated(false);
+    setUniformRowHeights(true);
     setSelectionMode(QAbstractItemView::SingleSelection);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setAllColumnsShowFocus(true);
