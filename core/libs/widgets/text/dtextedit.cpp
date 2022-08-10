@@ -34,6 +34,11 @@
 #include <QFontMetrics>
 #include <QFontDatabase>
 #include <QMimeData>
+#include <QPushButton>
+#include <QIcon>
+#include <QStyle>
+#include <QApplication>
+#include <QScrollBar>
 
 // KDE includes
 
@@ -118,9 +123,19 @@ void DTextEdit::setLinesVisible(unsigned int lines)
 
     if (d->lines == 1)
     {
-        setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         setLineWrapMode(QTextEdit::NoWrap);
+        setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+        verticalScrollBar()->setFixedHeight(0);
+        QPushButton* const  clr = new QPushButton(this);
+        clr->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+        clr->setFocusPolicy(Qt::NoFocus);
+        clr->setFlat(true);
+        clr->setIcon(qApp->style()->standardIcon(QStyle::SP_LineEditClearButton));
+        setCornerWidget(clr);
+
+        connect(clr, SIGNAL(clicked()),
+                this, SLOT(clear()));
     }
 }
 
@@ -297,9 +312,19 @@ void DPlainTextEdit::setLinesVisible(unsigned int lines)
 
     if (d->lines == 1)
     {
-        setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         setLineWrapMode(QPlainTextEdit::NoWrap);
+        setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+        verticalScrollBar()->setFixedHeight(0);
+        QPushButton* const  clr = new QPushButton(this);
+        clr->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+        clr->setFocusPolicy(Qt::NoFocus);
+        clr->setFlat(true);
+        clr->setIcon(qApp->style()->standardIcon(QStyle::SP_LineEditClearButton));
+        setCornerWidget(clr);
+
+        connect(clr, SIGNAL(clicked()),
+                this, SLOT(clear()));
     }
 }
 
