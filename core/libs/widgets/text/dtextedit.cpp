@@ -37,6 +37,7 @@
 #include <QPushButton>
 #include <QIcon>
 #include <QStyle>
+#include <QPainter>
 #include <QApplication>
 #include <QScrollBar>
 
@@ -56,6 +57,20 @@ using namespace Sonnet;
 
 namespace Digikam
 {
+
+class Q_DECL_HIDDEN DTextEditClearButton : public QPushButton
+{
+public:
+
+    explicit DTextEditClearButton(QWidget* const parent)
+        : QPushButton(parent)
+    {
+        setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+        setFocusPolicy(Qt::NoFocus);
+        setFlat(true);
+        setIcon(qApp->style()->standardIcon(QStyle::SP_LineEditClearButton));
+    }
+};
 
 class Q_DECL_HIDDEN DTextEdit::Private
 {
@@ -109,7 +124,7 @@ void DTextEdit::setLinesVisible(unsigned int lines)
         return;
     }
 
-    d->lines   = lines;
+    d->lines    = lines;
 
     QFont fnt;
     setFont(fnt);
@@ -127,11 +142,7 @@ void DTextEdit::setLinesVisible(unsigned int lines)
         setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
         verticalScrollBar()->setFixedHeight(0);
-        QPushButton* const  clr = new QPushButton(this);
-        clr->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
-        clr->setFocusPolicy(Qt::NoFocus);
-        clr->setFlat(true);
-        clr->setIcon(qApp->style()->standardIcon(QStyle::SP_LineEditClearButton));
+        DTextEditClearButton* const clr = new DTextEditClearButton(this);
         setCornerWidget(clr);
 
         connect(clr, SIGNAL(clicked()),
@@ -298,7 +309,7 @@ void DPlainTextEdit::setLinesVisible(unsigned int lines)
         return;
     }
 
-    d->lines   = lines;
+    d->lines    = lines;
 
     QFont fnt;
     setFont(fnt);
@@ -316,11 +327,7 @@ void DPlainTextEdit::setLinesVisible(unsigned int lines)
         setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
         verticalScrollBar()->setFixedHeight(0);
-        QPushButton* const  clr = new QPushButton(this);
-        clr->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
-        clr->setFocusPolicy(Qt::NoFocus);
-        clr->setFlat(true);
-        clr->setIcon(qApp->style()->standardIcon(QStyle::SP_LineEditClearButton));
+        DTextEditClearButton* const clr = new DTextEditClearButton(this);
         setCornerWidget(clr);
 
         connect(clr, SIGNAL(clicked()),

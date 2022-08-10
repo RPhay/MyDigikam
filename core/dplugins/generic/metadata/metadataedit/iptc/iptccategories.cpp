@@ -96,6 +96,7 @@ IPTCCategories::IPTCCategories(QWidget* const parent)
     d->subCategoriesCheck = new QCheckBox(i18n("Supplemental categories:"), this);
 
     d->subCategoryEdit    = new LimitedTextEdit(this);
+    d->subCategoryEdit->setLinesVisible(1);
     d->subCategoryEdit->setMaxLength(32);
     d->subCategoryEdit->setPlaceholderText(i18n("Set here the extra category"));
     d->subCategoryEdit->setWhatsThis(i18n("Enter here a new supplemental category of content. "
@@ -104,9 +105,9 @@ IPTCCategories::IPTCCategories(QWidget* const parent)
     d->subCategoriesBox = new QListWidget(this);
     d->subCategoriesBox->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 
-    d->addSubCategoryButton = new QPushButton( i18n("&Add"), this);
-    d->delSubCategoryButton = new QPushButton( i18n("&Delete"), this);
-    d->repSubCategoryButton = new QPushButton( i18n("&Replace"), this);
+    d->addSubCategoryButton = new QPushButton(i18n("&Add"),     this);
+    d->delSubCategoryButton = new QPushButton(i18n("&Delete"),  this);
+    d->repSubCategoryButton = new QPushButton(i18n("&Replace"), this);
     d->addSubCategoryButton->setIcon(QIcon::fromTheme(QLatin1String("list-add")));
     d->delSubCategoryButton->setIcon(QIcon::fromTheme(QLatin1String("edit-delete")));
     d->repSubCategoryButton->setIcon(QIcon::fromTheme(QLatin1String("view-refresh")));
