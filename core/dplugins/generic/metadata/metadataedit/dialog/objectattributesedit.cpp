@@ -135,6 +135,7 @@ ObjectAttributesEdit::ObjectAttributesEdit(QWidget* const parent, int size)
     // --------------------------------------------------------
 
     d->valueEdit = new LimitedTextEdit(this);
+    d->valueEdit->setLinesVisible(1);
     QString whatsThis = i18n("Set here the editorial attribute description of "
                              "content.");
 

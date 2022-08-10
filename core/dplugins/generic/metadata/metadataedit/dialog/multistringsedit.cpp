@@ -99,6 +99,7 @@ MultiStringsEdit::MultiStringsEdit(QWidget* const parent,
     d->valueBox->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
     d->valueEdit      = new LimitedTextEdit(this);
+    d->valueEdit->setLinesVisible(1);
     QString whatsThis = desc;
 
     if (size != -1)
