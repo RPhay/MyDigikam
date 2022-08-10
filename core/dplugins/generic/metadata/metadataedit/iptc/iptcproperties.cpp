@@ -230,6 +230,7 @@ IPTCProperties::IPTCProperties(QWidget* const parent)
     d->objectTypeDescEdit = new LimitedTextEdit(this);
     d->objectTypeDescEdit->setPlaceholderText(i18n("Set here the content type"));
     d->objectTypeDescEdit->setMaxLength(64);
+    d->objectTypeDescEdit->setLinesVisible(1);
     d->objectTypeCB->insertItem(0, i18n("News"));
     d->objectTypeCB->insertItem(1, i18n("Data"));
     d->objectTypeCB->insertItem(2, i18n("Advisory"));
@@ -239,12 +240,13 @@ IPTCProperties::IPTCProperties(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->objectAttribute = new ObjectAttributesEdit(this, 64);
+    d->objectAttribute    = new ObjectAttributesEdit(this, 64);
 
     // --------------------------------------------------------
 
     d->originalTransCheck = new QCheckBox(i18n("Reference:"), this);
     d->originalTransEdit  = new LimitedTextEdit(this);
+    d->originalTransEdit->setLinesVisible(1);
     d->originalTransEdit->setPlaceholderText(i18n("Set here the content reference"));
     d->originalTransEdit->setMaxLength(32);
     d->originalTransEdit->setWhatsThis(i18n("Set here the original content transmission "

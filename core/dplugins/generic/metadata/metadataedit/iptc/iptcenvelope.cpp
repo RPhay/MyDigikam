@@ -299,9 +299,9 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
     grid->addWidget(d->productIDCheck,      3, 0, 1, 1);
     grid->addWidget(d->productIDEdit,       3, 1, 1, 5);
     grid->addWidget(d->serviceIDCheck,      4, 0, 1, 1);
-    grid->addWidget(d->serviceIDEdit,       4, 1, 1, 1);
+    grid->addWidget(d->serviceIDEdit,       4, 1, 1, 5);
     grid->addWidget(d->envelopeIDCheck,     5, 0, 1, 1);
-    grid->addWidget(d->envelopeIDEdit,      5, 1, 1, 1);
+    grid->addWidget(d->envelopeIDEdit,      5, 1, 1, 5);
     grid->addWidget(d->priorityCheck,       6, 0, 1, 1);
     grid->addWidget(d->priorityCB,          6, 1, 1, 1);
     grid->addWidget(d->formatCheck,         7, 0, 1, 1);
