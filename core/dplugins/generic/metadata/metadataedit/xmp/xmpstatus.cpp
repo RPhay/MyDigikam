@@ -84,6 +84,8 @@ XMPStatus::XMPStatus(QWidget* const parent)
 
     d->nicknameCheck = new QCheckBox(i18n("Nickname:"), this);
     d->nicknameEdit  = new DTextEdit(this);
+    d->nicknameEdit->setLinesVisible(1);
+    d->nicknameEdit->setPlaceholderText(i18n("Set here a short informal name"));
     d->nicknameEdit->setWhatsThis(i18n("A short informal name for the resource."));
 
     // --------------------------------------------------------
@@ -96,6 +98,7 @@ XMPStatus::XMPStatus(QWidget* const parent)
     d->specialInstructionCheck = new QCheckBox(i18n("Special Instructions:"), this);
     d->specialInstructionEdit  = new DPlainTextEdit(this);
     d->specialInstructionEdit->setLinesVisible(4);
+    d->specialInstructionEdit->setPlaceholderText(i18n("Set here the editorial usage instructions"));
     d->specialInstructionEdit->setWhatsThis(i18n("Enter the editorial usage instructions."));
 
     // --------------------------------------------------------
