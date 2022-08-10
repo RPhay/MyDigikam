@@ -6,6 +6,7 @@
  * Date        : 2022-08-01
  * Description : Two plain text edit widgets with spell checker capabilities based on KF5::Sonnet (optional).
  *               Widgets can be also limited to a number of lines to show text.
+ *               A single line constraint will mimic QLineEdit.
  *
  * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -29,8 +30,10 @@
 
 #include <QMargins>
 #include <QColor>
+#include <QTextDocument>
 #include <QFontMetrics>
 #include <QFontDatabase>
+#include <QMimeData>
 
 // KDE includes
 
@@ -63,7 +66,7 @@ public:
 
 #endif
 
-    unsigned int                 lines        = 2;
+    unsigned int                 lines        = 3;
 };
 
 DTextEdit::DTextEdit(QWidget* const parent)
@@ -105,14 +108,17 @@ void DTextEdit::setLinesVisible(unsigned int lines)
 
     QFont fnt;
     setFont(fnt);
-    QMargins m = contentsMargins();
-    setFixedHeight(m.top() + m.bottom() + frameWidth() + QFontMetrics(font()).lineSpacing() * d->lines);
+    QMargins m  = contentsMargins();
+    qreal md    = document()->documentMargin();
+    setFixedHeight(m.top() + m.bottom() + md +
+                   frameWidth() * 2          +
+                   fontMetrics().lineSpacing() * d->lines);
 
     // Mimic QLineEdit
 
     if (d->lines == 1)
     {
-        setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+        setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         setLineWrapMode(QTextEdit::NoWrap);
     }
@@ -177,6 +183,52 @@ QString DTextEdit::currentLanguage() const
 
 }
 
+void DTextEdit::keyPressEvent(QKeyEvent* e)
+{
+    if (d->lines == 1)
+    {
+        int key = e->key();
+
+        if ((key == Qt::Key_Return) || (key == Qt::Key_Enter))
+        {
+            e->ignore();
+            return;
+        }
+    }
+
+    QTextEdit::keyPressEvent(e);
+}
+
+void DTextEdit::insertFromMimeData(const QMimeData* source)
+{
+    QMimeData scopy;
+
+    if (source->hasHtml())
+    {
+        scopy.setHtml(source->html());
+    }
+
+    if (source->hasText())
+    {
+        scopy.setText(source->text());
+    }
+
+    if (source->hasUrls())
+    {
+        scopy.setUrls(source->urls());
+    }
+
+    if ((d->lines == 1) && source->hasText())
+    {
+        QString textToPaste = source->text();
+        textToPaste.replace(QLatin1String("\n\r"), QLatin1String(" "));
+        textToPaste.replace(QLatin1Char('\n'),     QLatin1Char(' '));
+        scopy.setText(textToPaste);
+    }
+
+    QTextEdit::insertFromMimeData(&scopy);
+}
+
 // ------------------------------------------------------------------------------------------------
 
 class Q_DECL_HIDDEN DPlainTextEdit::Private
@@ -193,7 +245,7 @@ public:
 
 #endif
 
-    unsigned int                 lines        = 2;
+    unsigned int                 lines        = 3;
 };
 
 DPlainTextEdit::DPlainTextEdit(QWidget* const parent)
@@ -235,14 +287,17 @@ void DPlainTextEdit::setLinesVisible(unsigned int lines)
 
     QFont fnt;
     setFont(fnt);
-    QMargins m = contentsMargins();
-    setFixedHeight(m.top() + m.bottom() + frameWidth() + QFontMetrics(font()).lineSpacing() * d->lines);
+    QMargins m  = contentsMargins();
+    qreal md    = document()->documentMargin();
+    setFixedHeight(m.top() + m.bottom() + md +
+                   frameWidth() * 2          +
+                   fontMetrics().lineSpacing() * d->lines);
 
     // Mimic QLineEdit
 
     if (d->lines == 1)
     {
-        setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+        setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         setLineWrapMode(QPlainTextEdit::NoWrap);
     }
@@ -305,6 +360,52 @@ QString DPlainTextEdit::currentLanguage() const
 
 #endif
 
+}
+
+void DPlainTextEdit::keyPressEvent(QKeyEvent* e)
+{
+    if (d->lines == 1)
+    {
+        int key = e->key();
+
+        if ((key == Qt::Key_Return) || (key == Qt::Key_Enter))
+        {
+            e->ignore();
+            return;
+        }
+    }
+
+    QPlainTextEdit::keyPressEvent(e);
+}
+
+void DPlainTextEdit::insertFromMimeData(const QMimeData* source)
+{
+    QMimeData scopy;
+
+    if (source->hasHtml())
+    {
+        scopy.setHtml(source->html());
+    }
+
+    if (source->hasText())
+    {
+        scopy.setText(source->text());
+    }
+
+    if (source->hasUrls())
+    {
+        scopy.setUrls(source->urls());
+    }
+
+    if ((d->lines == 1) && source->hasText())
+    {
+        QString textToPaste = source->text();
+        textToPaste.replace(QLatin1String("\n\r"), QLatin1String(" "));
+        textToPaste.replace(QLatin1Char('\n'),     QLatin1Char(' '));
+        scopy.setText(textToPaste);
+    }
+
+    QPlainTextEdit::insertFromMimeData(&scopy);
 }
 
 } // namespace Digikam

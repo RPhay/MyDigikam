@@ -81,7 +81,8 @@ XMPKeywords::XMPKeywords(QWidget* const parent)
     d->keywordsCheck = new QCheckBox(i18n("Use information retrieval words:"), this);
 
     d->keywordEdit   = new DTextEdit(this);
-    d->keywordEdit->setWhatsThis(i18n("Enter here a new keyword."));
+    d->keywordEdit->setLinesVisible(1);
+    d->keywordEdit->setPlaceholderText(i18n("Set here a new keyword"));
 
     d->keywordsBox   = new QListWidget(this);
     d->keywordsBox->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
