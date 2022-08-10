@@ -72,7 +72,9 @@ public:
 
     /**
      * Helper methods to handle visible lines used by the widget to show text.
-     * Lines must be superior or egal to 2.
+     * Lines must be superior or egal to 1.
+     * Notes: if a single visible line is used, the widget mimic QLineEdit.
+     *        a null value do not apply a size constraint.
      */
     void setLinesVisible(unsigned int lines);
     unsigned int linesVisible() const;
@@ -134,7 +136,9 @@ public:
 
     /**
      * Helper methods to handle visible lines used by the widget to show text.
-     * Lines must be superior or egal to 2.
+     * Lines must be superior or egal to 1.
+     * Notes: if a single visible line is used, the widget mimic QLineEdit.
+     *        a null value do not apply a size constraint.
      */
     void setLinesVisible(unsigned int lines);
     unsigned int linesVisible() const;

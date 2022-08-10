@@ -96,7 +96,7 @@ DTextEdit::~DTextEdit()
 
 void DTextEdit::setLinesVisible(unsigned int lines)
 {
-    if (lines <= 1)
+    if (lines <= 0)
     {
         return;
     }
@@ -106,7 +106,16 @@ void DTextEdit::setLinesVisible(unsigned int lines)
     QFont fnt;
     setFont(fnt);
     QMargins m = contentsMargins();
-    setFixedHeight(m.top() + m.bottom() + frameWidth() + fontMetrics().lineSpacing() * d->lines);
+    setFixedHeight(m.top() + m.bottom() + frameWidth() + QFontMetrics(font()).lineSpacing() * d->lines);
+
+    // Mimic QLineEdit
+
+    if (d->lines == 1)
+    {
+        setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+        setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        setLineWrapMode(QTextEdit::NoWrap);
+    }
 }
 
 unsigned int DTextEdit::linesVisible() const
@@ -217,7 +226,7 @@ DPlainTextEdit::~DPlainTextEdit()
 
 void DPlainTextEdit::setLinesVisible(unsigned int lines)
 {
-    if (lines <= 1)
+    if (lines <= 0)
     {
         return;
     }
@@ -227,7 +236,16 @@ void DPlainTextEdit::setLinesVisible(unsigned int lines)
     QFont fnt;
     setFont(fnt);
     QMargins m = contentsMargins();
-    setFixedHeight(m.top() + m.bottom() + frameWidth() + fontMetrics().lineSpacing() * d->lines);
+    setFixedHeight(m.top() + m.bottom() + frameWidth() + QFontMetrics(font()).lineSpacing() * d->lines);
+
+    // Mimic QLineEdit
+
+    if (d->lines == 1)
+    {
+        setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+        setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        setLineWrapMode(QPlainTextEdit::NoWrap);
+    }
 }
 
 unsigned int DPlainTextEdit::linesVisible() const
