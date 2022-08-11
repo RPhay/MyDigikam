@@ -131,7 +131,7 @@ add a new line</string>
                   </widget>
                  </item>
                  <item row="1" column="0" colspan="4">
-                  <widget class="QLineEdit" name="m_FreeCaptionFormat">
+                  <widget class="Digikam::DTextEdit" name="m_FreeCaptionFormat">
                    <property name="enabled">
                     <bool>true</bool>
                    </property>
@@ -277,6 +277,11 @@ add a new line</string>
    <class>Digikam::DItemsList</class>
    <extends>QWidget</extends>
    <header>ditemslist.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Digikam::DTextEdit</class>
+   <extends>QTextEdit</extends>
+   <header>dtextedit.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
