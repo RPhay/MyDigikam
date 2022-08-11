@@ -169,5 +169,5 @@ Name[uk]=Відомості нижнього колонтитула
 Name[x-test]=xxFooter informationxx
 Name[zh_CN]=页脚信息
 
-Type=string
+Type=caption
 Default=My personal gallery <a href="mailto:email@mydomain.tld">email@mydomain.tld</a> - Powered by <a href="https://www.digikam.org">digiKam - HTMLGallery</a>

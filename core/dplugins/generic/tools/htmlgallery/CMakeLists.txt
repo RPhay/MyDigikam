@@ -33,8 +33,10 @@ set(htmlgalleryplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/parameters/abstractthemeparameter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/parameters/intthemeparameter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/parameters/listthemeparameter.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/parameters/captionthemeparameter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/parameters/stringthemeparameter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/parameters/colorthemeparameter.cpp
+
     ${CMAKE_CURRENT_SOURCE_DIR}/wizard/invisiblebuttongroup.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/wizard/htmlintropage.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/wizard/htmlselectionpage.cpp
@@ -44,6 +46,7 @@ set(htmlgalleryplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/wizard/htmlimagesettingspage.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/wizard/htmlparameterspage.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/wizard/htmlwizard.cpp
+
     ${CMAKE_CURRENT_SOURCE_DIR}/generator/galleryxmlutils.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/generator/gallerynamehelper.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/generator/galleryelementfunctor.cpp
@@ -52,6 +55,7 @@ set(htmlgalleryplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/generator/gallerytheme.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/generator/galleryinfo.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/generator/gallerygenerator.cpp
+
     ${CMAKE_CURRENT_SOURCE_DIR}/htmlgalleryplugin.cpp
 )
 

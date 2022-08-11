@@ -127,7 +127,7 @@ Name[tr]=Başlık Çubuğu
 Name[uk]=Смужка заголовка
 Name[x-test]=xxTitle Barxx
 Name[zh_CN]=标题栏
-Type=string
+Type=caption
 Default=Gallery
 Default[de]=Galerie
 
@@ -199,7 +199,7 @@ Name[tr]=Ana Sayfanın Adı
 Name[uk]=Назва домашньої сторінки
 Name[x-test]=xxName of the Homepagexx
 Name[zh_CN]=主页名称
-Type=string
+Type=caption
 Default=
 Default[de]=
 

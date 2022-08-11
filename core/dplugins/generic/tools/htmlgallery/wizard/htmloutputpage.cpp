@@ -130,7 +130,7 @@ HTMLOutputPage::HTMLOutputPage(QWizard* const dialog, const QString& title)
     connect(d->destUrl, SIGNAL(signalUrlSelected(QUrl)),
             this, SIGNAL(completeChanged()));
 
-    connect(d->imageSelectionTitle, SIGNAL(textEdited()),
+    connect(d->imageSelectionTitle, SIGNAL(textChanged()),
             this, SIGNAL(completeChanged()));
 }
 

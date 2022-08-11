@@ -276,7 +276,7 @@ Name[tr]=Galeri Tanıtımı
 Name[uk]=Вступ до галереї
 Name[x-test]=xxGallery Introductionxx
 Name[zh_CN]=相册介绍
-Type=string
+Type=caption
 Default=Welcome to my web gallery!
 
 [X-HTMLGallery Parameter longformat]
