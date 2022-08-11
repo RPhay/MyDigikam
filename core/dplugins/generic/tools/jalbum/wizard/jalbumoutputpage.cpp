@@ -43,6 +43,7 @@
 #include "jalbumwizard.h"
 #include "jalbumsettings.h"
 #include "dfileselector.h"
+#include "dtextedit.h"
 
 namespace DigikamGenericJAlbumPlugin
 {
@@ -52,20 +53,20 @@ class Q_DECL_HIDDEN JAlbumOutputPage::Private
 public:
 
     explicit Private()
-      : destUrl(nullptr),
-        titleLabel(nullptr),
-        imageSelectionTitle(nullptr)
+      : destUrl             (nullptr),
+        titleLabel          (nullptr),
+        imageSelectionTitle (nullptr)
     {
     }
 
-    DFileSelector* destUrl;
-    QLabel*        titleLabel;
-    QLineEdit*     imageSelectionTitle;
+    DFileSelector*  destUrl;
+    QLabel*         titleLabel;
+    DPlainTextEdit* imageSelectionTitle;
 };
 
 JAlbumOutputPage::JAlbumOutputPage(QWizard* const dialog, const QString& title)
     : DWizardPage(dialog, title),
-      d(new Private)
+      d          (new Private)
 {
     setObjectName(QLatin1String("OutputPage"));
 
@@ -77,7 +78,8 @@ JAlbumOutputPage::JAlbumOutputPage(QWizard* const dialog, const QString& title)
     d->titleLabel->setWordWrap(false);
     d->titleLabel->setText(i18n("Project Title:"));
 
-    d->imageSelectionTitle   = new QLineEdit(main);
+    d->imageSelectionTitle   = new DPlainTextEdit(main);
+    d->imageSelectionTitle->setLinesVisible(1);
     d->titleLabel->setBuddy(d->imageSelectionTitle);
 
     // --------------------
@@ -96,7 +98,7 @@ JAlbumOutputPage::JAlbumOutputPage(QWizard* const dialog, const QString& title)
 
     QGridLayout* const grid = new QGridLayout(main);
     grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     grid->addWidget(d->titleLabel,          0, 0, 1, 1);
     grid->addWidget(d->imageSelectionTitle, 0, 1, 1, 1);
     grid->addWidget(textLabel1,             1, 0, 1, 1);
@@ -114,7 +116,7 @@ JAlbumOutputPage::JAlbumOutputPage(QWizard* const dialog, const QString& title)
     connect(d->destUrl, SIGNAL(signalUrlSelected(QUrl)),
             this, SIGNAL(completeChanged()));
 
-    connect(d->imageSelectionTitle, SIGNAL(textEdited(QString)),
+    connect(d->imageSelectionTitle, SIGNAL(textChanged()),
             this, SIGNAL(completeChanged()));
 }
 
