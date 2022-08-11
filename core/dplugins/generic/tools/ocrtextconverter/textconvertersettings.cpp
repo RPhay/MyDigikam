@@ -16,6 +16,7 @@
 #include <QCursor>
 #include <QWidget>
 #include <QProcess>
+#include <QCheckBox>
 
 // KDE includes
 
@@ -69,6 +70,8 @@ public:
     DComboBox*          ocrTesseractOEMMode;
 
     DIntNumInput*       ocrTesseractDpi;
+
+    QCheckBox*          saveTextFile;
 
     ExifToolErrorView*  errorView;
 };
@@ -130,11 +133,18 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
 
     QLabel* const ocrTesseractDpiLabel  = new QLabel(i18nc("@label", "Resolution Dpi:"));
     d->ocrTesseractDpi                  = new DIntNumInput(this);
-    d->ocrTesseractDpi->setDefaultValue(300);
     d->ocrTesseractDpi->setRange(70, 2400, 1);
     d->ocrTesseractDpi->setWhatsThis(i18nc("@info", "Specify DPI for input image."));
+    d->ocrTesseractDpi->setDefaultValue(300);
     ocrTesseractDpiLabel->setBuddy(d->ocrTesseractDpi);
 
+    // ------------
+
+    QLabel* const saveOcrResultLabel = new QLabel(i18nc("@label", "Store result in : "));
+    d->saveTextFile = new QCheckBox(i18nc("@option:check", "Text file"), this);
+    d->saveTextFile->setWhatsThis(i18nc("@info", "Store Ocr result in separated text file"));
+    d->saveTextFile->setChecked(true);
+    
     // ------------
 
     QGridLayout* const settingsBoxLayout = new QGridLayout(this);
@@ -146,6 +156,10 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
     settingsBoxLayout->addWidget(d->ocrTesseractOEMMode,           2, 1, 1, 1);
     settingsBoxLayout->addWidget(ocrTesseractDpiLabel,             3, 0, 1, 1);
     settingsBoxLayout->addWidget(d->ocrTesseractDpi,               3, 1, 1, 1);
+    settingsBoxLayout->addWidget(saveOcrResultLabel,               4, 0, 1, 1);
+    settingsBoxLayout->addWidget(d->saveTextFile,                  5, 0, 1, 1);
+
+
     settingsBoxLayout->setRowStretch(9, 10);
     settingsBoxLayout->setContentsMargins(QMargins());
 
@@ -180,6 +194,7 @@ void TextConverterSettings::setDefaultSettings()
     d->ocrTesseractOEMMode->slotReset();
     d->ocrTesseractPSMMode->slotReset(); 
     d->ocrTesseractDpi->slotReset();
+    d->saveTextFile->setChecked(true);
 }
 
 void TextConverterSettings::setLanguagesMode(int mode)
@@ -221,6 +236,16 @@ void TextConverterSettings::setDpi(int value)
 int  TextConverterSettings::Dpi() const
 {
     return d->ocrTesseractDpi->value();
+}
+
+void TextConverterSettings::setIsSaveTextFile(bool check)
+{
+    d->saveTextFile->setChecked(check);
+}
+
+bool  TextConverterSettings::isSaveTextFile() const
+{
+    return d->saveTextFile->isChecked();
 }
 
 void TextConverterSettings::slotSetupChanged()

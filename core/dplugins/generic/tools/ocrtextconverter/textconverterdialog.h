@@ -43,7 +43,7 @@ private:
 
     void processAll();       
     void processingFailed(const QUrl& url, int result);  // TODO     
-    void processed(const QUrl& url);                     // TODO  
+    void processed(const QUrl& url, const QString& outputFile);                    
                                  
 /**
 
@@ -59,11 +59,10 @@ private Q_SLOTS:
 
     void slotTextConverterAction(const DigikamGenericTextConverterPlugin::TextConverterActionData&);
     void slotDoubleClick(QTreeWidgetItem* element, int i);
+    void slotUpdateText();
 
-    /**
-     * Set Identity and Target file.
-     */ 
-
+    void slotSetDisable();
+    
     void slotSetupExifTool();
 
 private:

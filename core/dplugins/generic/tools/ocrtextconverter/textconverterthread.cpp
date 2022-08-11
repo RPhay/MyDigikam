@@ -32,14 +32,16 @@ public:
       : language(int(OcrOptions::Languages::DEFAULT)),
         psm(int(OcrOptions::PageSegmentationModes::DEFAULT)),
         oem(int(OcrOptions::EngineModes::DEFAULT)),
-        dpi(300)
+        dpi(300),
+        isSaveTextFile(true)
     {
     }
 
     int language;
     int psm; 
     int oem;
-    int dpi;
+    int dpi;    
+    bool isSaveTextFile; 
 };
 
 TextConverterActionThread::TextConverterActionThread(QObject* const parent)
@@ -84,6 +86,11 @@ void TextConverterActionThread::setDpi(int value)
     d->dpi = value;
 }
 
+void TextConverterActionThread::setIsSaveTextFile(bool check)
+{
+    d->isSaveTextFile = check;
+}
+
 void TextConverterActionThread::ocrProcessFile(const QUrl& url)
 {
     QList<QUrl> oneFile;
@@ -103,6 +110,7 @@ void TextConverterActionThread::ocrProcessFiles(const QList<QUrl>& urlList)
         t->setPSMMode(d->psm);
         t->setOEMMode(d->oem);
         t->setDpi(d->dpi);
+        t->setIsSaveTextFile(d->isSaveTextFile);
 
         connect(t, SIGNAL(signalStarting(DigikamGenericTextConverterPlugin::TextConverterActionData)),
                 this, SIGNAL(signalStarting(DigikamGenericTextConverterPlugin::TextConverterActionData)));

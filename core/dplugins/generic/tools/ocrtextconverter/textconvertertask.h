@@ -32,6 +32,7 @@ public:
     void setPSMMode(int mode);
     void setOEMMode(int mode);
     void setDpi(int value);
+    void setIsSaveTextFile(bool check);
 
 Q_SIGNALS:
 

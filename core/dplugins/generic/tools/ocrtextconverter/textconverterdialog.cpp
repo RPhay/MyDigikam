@@ -55,7 +55,8 @@ public:
         progressBar      (nullptr),
         iface            (nullptr),
         listView         (nullptr),
-        ocrSettings      (nullptr)
+        ocrSettings      (nullptr),
+        currentSelectedItem (nullptr)
     {
     }
 
@@ -76,6 +77,10 @@ public:
     TextConverterSettings*    ocrSettings;  
 
     DTextEdit*                textedit;
+
+    QPushButton*              saveTextButton;
+
+    TextConverterListViewItem* currentSelectedItem;
 };
 
 TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* const iface)
@@ -111,14 +116,18 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     d->textedit                       = new DTextEdit(mainWidget);
     d->textedit->setMaximumHeight(300);
     d->textedit->setPlaceholderText(QLatin1String("OCR result is displayed here"));
-
+    
+    d->saveTextButton = new QPushButton(mainWidget);
+    d->saveTextButton->setText(i18nc("@action: button", "Save"));
+    d->saveTextButton->setEnabled(false);
 
     //-------------------------------------------------------------------------------------------
 
     mainLayout->addWidget(d->listView,                       0, 0, 5, 1);
     mainLayout->addWidget(d->ocrSettings,                    0, 1, 1, 1);
     mainLayout->addWidget(d->textedit,                       1, 1, 3, 1);
-    mainLayout->addWidget(d->progressBar,                    2, 1, 1, 1);
+    mainLayout->addWidget(d->saveTextButton,                 3, 1, 1, 1);
+    mainLayout->addWidget(d->progressBar,                    5, 1, 1, 1);
     mainLayout->setColumnStretch(0, 10);
     mainLayout->setRowStretch(4, 10);
     mainLayout->setContentsMargins(QMargins());
@@ -158,6 +167,12 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     connect(d->listView->listView(), &DItemsListView::itemDoubleClicked,
             this, &TextConverterDialog::slotDoubleClick);
 
+    connect(d->listView->listView(), &DItemsListView::itemSelectionChanged,
+            this, &TextConverterDialog::slotSetDisable);
+                    
+    connect(d->saveTextButton, SIGNAL(clicked()),
+            this, SLOT(slotUpdateText()));
+
     // ---------------------------------------------------------------
     
     d->listView->setIface(d->iface);
@@ -175,15 +190,44 @@ TextConverterDialog::~TextConverterDialog()
 void TextConverterDialog::slotDoubleClick(QTreeWidgetItem* element, int i)
 {
     TextConverterListViewItem* const item = dynamic_cast<TextConverterListViewItem*>(element);
+    d->currentSelectedItem = item;
 
     if (d->textEditList.contains(item->url()))
     {
         d->textedit->setText(d->textEditList[item->url()]);
+        d->saveTextButton->setEnabled(true);
     }
     else
     {
         d->textedit->clear();
     }
+}
+
+void TextConverterDialog::slotUpdateText()
+{
+    QString newText = d->textedit->text();
+
+    if (!d->textedit->text().isEmpty() &&
+        !d->currentSelectedItem->url().isEmpty() &&
+        !d->currentSelectedItem->destFileName().isEmpty())
+    {
+        d->textEditList[d->currentSelectedItem->url()] = newText;
+        
+        QFile file(d->currentSelectedItem->destFileName());
+        
+        if(file.open(QIODevice::ReadWrite | QIODevice::Truncate))
+        {
+            QTextStream stream(&file);
+            stream << newText;
+            file.close();
+        }
+        
+    }
+}
+
+void TextConverterDialog::slotSetDisable()
+{
+    d->saveTextButton->setEnabled(false);
 }
 
 void TextConverterDialog::slotTextConverterAction(const DigikamGenericTextConverterPlugin::TextConverterActionData& ad)
@@ -233,7 +277,7 @@ void TextConverterDialog::slotTextConverterAction(const DigikamGenericTextConver
                 case(PROCESS):
                 {
                     d->textEditList[ad.fileUrl] = ad.outputText; 
-                    processed(ad.fileUrl);
+                    processed(ad.fileUrl, ad.destPath);
                     break;
                 }
 
@@ -254,7 +298,6 @@ void TextConverterDialog::processingFailed(const QUrl& url, int result)
     d->progressBar->setValue(d->progressBar->value()+1);
 
     TextConverterListViewItem* const item = dynamic_cast<TextConverterListViewItem*>(d->listView->listView()->findItem(url));
-
     if (!item)
     {
         return;
@@ -288,7 +331,7 @@ void TextConverterDialog::processingFailed(const QUrl& url, int result)
     item->setStatus(status);
 }
 
-void TextConverterDialog::processed(const QUrl& url)
+void TextConverterDialog::processed(const QUrl& url, const QString& outputFile)
 {
     TextConverterListViewItem* const item = dynamic_cast<TextConverterListViewItem*>(d->listView->listView()->findItem(url));
 
@@ -299,7 +342,11 @@ void TextConverterDialog::processed(const QUrl& url)
 
     // TODO change fie name 
 
-    item->setDestFileName(QLatin1String("test file"));
+    if (!outputFile.isEmpty())
+    {
+        item->setDestFileName(outputFile);
+    }
+
     d->listView->processed(url, true);
     item->setStatus(i18n("Success"));
 
@@ -312,6 +359,7 @@ void TextConverterDialog::processAll()
     d->thread->setPSMMode(d->ocrSettings->PSMMode());
     d->thread->setOEMMode(d->ocrSettings->OEMMode());
     d->thread->setDpi(d->ocrSettings->Dpi());
+    d->thread->setIsSaveTextFile(d->ocrSettings->isSaveTextFile());
     d->thread->ocrProcessFiles(d->fileList);
 
     if (!d->thread->isRunning())
@@ -452,10 +500,11 @@ void TextConverterDialog::readSettings()
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("OCR Tesseract Settings"));
 
-    d->ocrSettings->setLanguagesMode(group.readEntry("ocrLanguages",     int(OcrOptions::Languages::DEFAULT)));
-    d->ocrSettings->setPSMMode(group.readEntry("PageSegmentationModes",  int(OcrOptions::PageSegmentationModes::DEFAULT)));
-    d->ocrSettings->setOEMMode(group.readEntry("EngineModes",            int(OcrOptions::EngineModes::DEFAULT)));
-    d->ocrSettings->setDpi(group.readEntry("Dpi",                        300));
+    d->ocrSettings->setLanguagesMode(group.readEntry("ocrLanguages",                      int(OcrOptions::Languages::DEFAULT)));
+    d->ocrSettings->setPSMMode(group.readEntry("PageSegmentationModes",                   int(OcrOptions::PageSegmentationModes::DEFAULT)));
+    d->ocrSettings->setOEMMode(group.readEntry("EngineModes",                             int(OcrOptions::EngineModes::DEFAULT)));
+    d->ocrSettings->setDpi(group.readEntry("Dpi",                                         300));
+    d->ocrSettings->setIsSaveTextFile(group.readEntry("Check Save Test File",             true));
 }
 
 void TextConverterDialog::saveSettings()
@@ -467,6 +516,7 @@ void TextConverterDialog::saveSettings()
     group.writeEntry("PageSegmentationModes",     (int)d->ocrSettings->PSMMode());
     group.writeEntry("EngineModes",               (int)d->ocrSettings->OEMMode());
     group.writeEntry("Dpi",                       (int)d->ocrSettings->Dpi());
+    group.writeEntry("Check Save Test File",      (bool)d->ocrSettings->isSaveTextFile());
 }
 
 void TextConverterDialog::addItems(const QList<QUrl>& itemList)

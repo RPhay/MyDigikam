@@ -37,6 +37,9 @@ public:
     void setDpi(int value);
     int  Dpi()                  const;
 
+    void setIsSaveTextFile(bool check);
+    bool isSaveTextFile() const;
+
     void setDefaultSettings();
 
 public Q_SLOTS:

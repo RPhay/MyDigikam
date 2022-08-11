@@ -5,6 +5,7 @@
 #include <QString>
 #include <QProcess>
 #include <QUrl>
+#include <QFileInfo>
 
 // local includes 
 
@@ -19,10 +20,11 @@ class  OcrTesseracrEngine::Private
 public:
 
     Private()
-      : language ((int)OcrOptions::Languages::DEFAULT),
-        psm      ((int)OcrOptions::PageSegmentationModes::DEFAULT),
-        oem      ((int)OcrOptions::EngineModes::DEFAULT),
-        dpi      (300)
+      : language        ((int)OcrOptions::Languages::DEFAULT),
+        psm             ((int)OcrOptions::PageSegmentationModes::DEFAULT),
+        oem             ((int)OcrOptions::EngineModes::DEFAULT),
+        dpi             (300),
+        isSaveTextFile  (true)
     {
     }
 
@@ -30,6 +32,9 @@ public:
     int        psm;
     int        oem; 
     int        dpi;
+
+    bool       isSaveTextFile;
+
     bool       cancel;
  
     QString    inputFile;
@@ -112,6 +117,16 @@ void OcrTesseracrEngine::setOutputFile(const QString& filePath)
     d->outputFile = filePath;
 }
 
+void OcrTesseracrEngine::setIsSaveTextFile(bool check)
+{
+    d->isSaveTextFile = check;
+}
+
+bool OcrTesseracrEngine::isSaveTextFile() const
+{
+    return d->isSaveTextFile;
+}
+
 bool OcrTesseracrEngine::runOcrProcess()
 {
     d->cancel = false;
@@ -135,14 +150,7 @@ bool OcrTesseracrEngine::runOcrProcess()
 
         QString mess;
 
-        if (!d->outputFile.isEmpty())
-        {
-            args << d->outputFile;
-        }  
-        else
-        {
-            args << QLatin1String("stdout");
-        }
+        args << QLatin1String("stdout");
 
         // ----------------------------- OPTIONS -----------------------------
 
@@ -217,8 +225,32 @@ bool OcrTesseracrEngine::runOcrProcess()
     
     d->ocrResult   = QString::fromLocal8Bit(ocrProcess->readAllStandardOutput());
 
+    SaveOcrResult();
+
     return PROCESS_COMPLETE;
 }
+
+void OcrTesseracrEngine::SaveOcrResult()
+{
+    if (d->isSaveTextFile)
+    {   
+        QFileInfo fi(d->inputFile);
+        d->outputFile =   fi.absolutePath() 
+                          +  QLatin1String("/")
+                          + (QString::fromLatin1("%1-textconverter.txt").arg(fi.fileName()));
+        
+        QFile file(d->outputFile);
+
+        if (file.open(QIODevice::WriteOnly))
+        {
+            QTextStream stream(&file);
+            stream << d->ocrResult;
+            file.close();
+        }
+    }
+
+    // TODO option to save metadata into original image 
+} 
 
 }    // namespace DigikamGenericTextConverterPlugin
 

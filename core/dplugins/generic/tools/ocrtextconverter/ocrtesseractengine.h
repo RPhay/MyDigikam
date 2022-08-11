@@ -16,9 +16,9 @@ using namespace Digikam;
 namespace DigikamGenericTextConverterPlugin
 {
 
-class OcrTesseracrEngine
+class OcrTesseracrEngine : public QObject
 {
-
+    Q_OBJECT
 public: 
 
     enum ConvertError
@@ -54,6 +54,9 @@ public:
     void setDpi(int value);
     int  Dpi()              const;
 
+    void setIsSaveTextFile(bool check);
+    bool isSaveTextFile() const;
+
     bool      runOcrProcess();
      
 private:
@@ -62,6 +65,10 @@ private:
     
     OcrTesseracrEngine(const OcrTesseracrEngine&)            = delete;
     OcrTesseracrEngine& operator=(const OcrTesseracrEngine&) = delete;
+
+private:
+
+    void SaveOcrResult();
 
 private:
 

@@ -19,6 +19,7 @@ public:
         psm(int(OcrOptions::PageSegmentationModes::DEFAULT)),
         oem(int(OcrOptions::EngineModes::DEFAULT)),
         dpi(300),
+        isSaveTextFile(true),
         cancel(false)
     {
     }
@@ -27,6 +28,7 @@ public:
     int psm; 
     int oem;
     int dpi;
+    bool                 isSaveTextFile;
 
     bool                 cancel;         
 
@@ -73,6 +75,11 @@ void TextConverterTask::setDpi(int value)
     d->dpi = value;
 }
 
+void TextConverterTask::setIsSaveTextFile(bool check)
+{
+    d->isSaveTextFile = check;
+}
+
 void TextConverterTask::run()
 {
 
@@ -91,11 +98,9 @@ void TextConverterTask::run()
             ad1.starting  = true;
             Q_EMIT signalStarting(ad1);
 
-            // TODO dest Path
-
-            // TODO set Ouput File 
 
             d->ocrEngine.setInputFile(d->url.toLocalFile());
+            d->ocrEngine.setIsSaveTextFile(d->isSaveTextFile);
             d->ocrEngine.setLanguagesMode(d->language);
             d->ocrEngine.setPSMMode(d->psm);
             d->ocrEngine.setOEMMode(d->oem);
@@ -105,11 +110,10 @@ void TextConverterTask::run()
             TextConverterActionData ad2;
             ad2.action     = PROCESS;
             ad2.fileUrl    = d->url;
-            // ad2.destPath = destPath;
+            ad2.destPath   = d->ocrEngine.outputFile();
             ad2.result     = ret;
             ad2.outputText = d->ocrEngine.outputText();
 
-//            qDebug() << d->ocrEngine.outputText();
             Q_EMIT signalFinished(ad2);
             break;
         }
