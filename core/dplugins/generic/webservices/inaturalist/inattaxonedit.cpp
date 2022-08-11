@@ -22,14 +22,15 @@
 
 #include "inattaxonedit.h"
 
-// Qt includes
+// Local includes
 
-#include <QDebug>
+#include "digikam_debug.h"
 
 namespace DigikamGenericINatPlugin
 {
 
 TaxonEdit::TaxonEdit(QWidget* const)
+    : QLineEdit()
 {
 }
 
