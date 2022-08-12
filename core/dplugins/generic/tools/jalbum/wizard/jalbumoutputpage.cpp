@@ -80,6 +80,7 @@ JAlbumOutputPage::JAlbumOutputPage(QWizard* const dialog, const QString& title)
 
     d->imageSelectionTitle   = new DPlainTextEdit(main);
     d->imageSelectionTitle->setLinesVisible(1);
+    d->imageSelectionTitle->setPlaceholderText(i18n("Set here the project title"));
     d->titleLabel->setBuddy(d->imageSelectionTitle);
 
     // --------------------
