@@ -104,7 +104,7 @@ QString OcrTesseracrEngine::outputFile() const
 
 QString OcrTesseracrEngine::outputText() const
 {
-  return d->ocrResult;
+    return d->ocrResult;
 }
 
 void OcrTesseracrEngine::setInputFile(const QString& filePath)

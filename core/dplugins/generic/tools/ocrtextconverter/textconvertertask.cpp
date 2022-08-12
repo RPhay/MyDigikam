@@ -1,8 +1,10 @@
 #include "textconvertertask.h"
+
+// Local includes 
+
 #include "ocrtesseractengine.h"
 #include "ocroptions.h"
 
-// Qt includes  
 
 using namespace Digikam;
 
@@ -50,7 +52,7 @@ TextConverterTask::TextConverterTask(QObject* const parent,
 
 TextConverterTask::~TextConverterTask()
 {
-//    slotCancel();
+    slotCancel();
     delete d;
 }
 
@@ -97,7 +99,6 @@ void TextConverterTask::run()
             ad1.fileUrl   = d->url;
             ad1.starting  = true;
             Q_EMIT signalStarting(ad1);
-
 
             d->ocrEngine.setInputFile(d->url.toLocalFile());
             d->ocrEngine.setIsSaveTextFile(d->isSaveTextFile);

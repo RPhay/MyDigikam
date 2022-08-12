@@ -11,8 +11,6 @@
 #include "digikam_export.h"
 #include "kconfiggroup.h"
 
-using namespace Digikam;
-
 namespace DigikamGenericTextConverterPlugin
 {
 
@@ -38,7 +36,7 @@ public:
     int  Dpi()                  const;
 
     void setIsSaveTextFile(bool check);
-    bool isSaveTextFile() const;
+    bool isSaveTextFile()       const;
 
     void setDefaultSettings();
 

@@ -1,4 +1,4 @@
-
+#include "textconvertersettings.h"
 
 // Qt includes
 
@@ -38,9 +38,7 @@
 #include "exiftoolerrorview.h"
 #include "exiftoolparser.h"
 #include "dnuminput.h"
-
 #include "textconverterlist.h"
-#include "textconvertersettings.h"
 #include "ocroptions.h"
 
 using namespace Digikam;

@@ -42,12 +42,9 @@ private:
     void busy(bool busy);
 
     void processAll();       
-    void processingFailed(const QUrl& url, int result);  // TODO     
+    void processingFailed(const QUrl& url, int result);  // TODO 
     void processed(const QUrl& url, const QString& outputFile);                    
                                  
-/**
-
-**/
 
 private Q_SLOTS:
 

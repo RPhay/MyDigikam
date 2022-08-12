@@ -60,27 +60,27 @@ public:
     {
     }
 
-    bool                      busy;
+    bool                              busy;
+        
+    QList<QUrl>                       fileList;
+        
+    QMap<QUrl, QString>               textEditList;  
+        
+    DProgressWdg*                     progressBar;
 
-    QList<QUrl>               fileList;
+    TextConverterActionThread*        thread; 
 
-    QMap<QUrl, QString>       textEditList;  
+    DInfoInterface*                   iface;
+        
+    TextConverterList*                listView;
+        
+    TextConverterSettings*            ocrSettings;  
+        
+    DTextEdit*                        textedit;
+        
+    QPushButton*                      saveTextButton;
 
-    DProgressWdg*             progressBar;
-
-    TextConverterActionThread* thread; 
-
-    DInfoInterface*           iface;
-
-    TextConverterList*        listView;
-
-    TextConverterSettings*    ocrSettings;  
-
-    DTextEdit*                textedit;
-
-    QPushButton*              saveTextButton;
-
-    TextConverterListViewItem* currentSelectedItem;
+    TextConverterListViewItem*        currentSelectedItem;
 };
 
 TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* const iface)
@@ -388,26 +388,6 @@ void TextConverterDialog::slotStartStop()
             }
         }
 
-/**
-        QTreeWidgetItemIterator it(d->listView->listView());
-
-        while (*it)
-        {
-            TextConverterListViewItem* const lvItem = dynamic_cast<TextConverterListViewItem*>(*it);
-
-            if (lvItem)
-            {
-                if (!lvItem->isDisabled() && (lvItem->state() != TextConverterListViewItem::Success))
-                {
-                    lvItem->setIcon(1, QIcon());
-                    lvItem->setState(TextConverterListViewItem::Waiting);
-                    d->fileList.append(lvItem->url().path());
-                }
-            }
-
-            ++it;
-        }
-**/
         if (d->listView->listView()->topLevelItemCount() == 0)
         {
             qDebug() << "Test";

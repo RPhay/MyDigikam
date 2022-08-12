@@ -4,7 +4,6 @@
 // Qt includes 
 
 #include <QString>
-#include <QProcess>
 
 // Local includes
 
@@ -35,29 +34,29 @@ public:
     explicit OcrTesseracrEngine(); 
     ~OcrTesseracrEngine();
 
-    QString inputFile()             const;
-    QString outputFile()            const;
-    QString outputText()            const; 
+    QString inputFile()          const;
+    QString outputFile()         const;
+    QString outputText()         const; 
 
     void setInputFile(const QString& filePath);
     void setOutputFile(const QString& filePath);
 
     void setLanguagesMode(int mode);
-    int  languagesMode()        const;
+    int  languagesMode()         const;
+    
+    void setPSMMode(int mode);    
+    int  PSMMode()               const;
 
-    void setPSMMode(int mode);
-    int  PSMMode()              const;
+    void setOEMMode(int mode);   
+    int  OEMMode()               const;
 
-    void setOEMMode(int mode);
-    int  OEMMode()              const;
-
-    void setDpi(int value);
-    int  Dpi()              const;
+    void setDpi(int value);   
+    int  Dpi()                   const;
 
     void setIsSaveTextFile(bool check);
-    bool isSaveTextFile() const;
+    bool isSaveTextFile()        const;
 
-    bool      runOcrProcess();
+    bool runOcrProcess();
      
 private:
 

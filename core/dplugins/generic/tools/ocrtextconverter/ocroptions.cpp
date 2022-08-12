@@ -15,7 +15,7 @@ QMap<OcrOptions::Languages, QString> OcrOptions::languagesNames()
 {
     QMap<OcrOptions::Languages, QString> languages;
 
-    languages[OcrOptions::Languages::DEFAULT]                                    = QString::fromLatin1("Default"); 
+    languages[OcrOptions::Languages::DEFAULT]                                         = QString::fromLatin1("Default"); 
     languages[OcrOptions::Languages::ENG]                                             = QString::fromLatin1("english"); 
     languages[OcrOptions::Languages::OSD]                                             = QString::fromLatin1("osd");
 
@@ -30,7 +30,7 @@ QMap<OcrOptions::PageSegmentationModes, QString> OcrOptions::psmNames()
     psm[OcrOptions::PageSegmentationModes::OSD_ONLY]                                  = QLatin1String("Orientation and script detection (OSD) only.");
     psm[OcrOptions::PageSegmentationModes::AUTO_WITH_OSD]                             = QLatin1String("Automatic page segmentation with OSD.");
     psm[OcrOptions::PageSegmentationModes::AUTO_WITH_NO_OSD]                          = QLatin1String("Automatic page segmentation, but no OSD, or OCR. (not implemented)");
-    psm[OcrOptions::PageSegmentationModes::DEFAULT]                               = QLatin1String("Fully automatic page segmentation, but no OSD. (Default)");
+    psm[OcrOptions::PageSegmentationModes::DEFAULT]                                   = QLatin1String("Fully automatic page segmentation, but no OSD. (Default)");
     psm[OcrOptions::PageSegmentationModes::SINGLE_COL_TEXT_OF_VAR_SIZE]               = QLatin1String("Assume a single column of text of variable sizes.");
     psm[OcrOptions::PageSegmentationModes::SINGLE_UNIFORM_BLOCK_OF_VERTICALLY_TEXT]   = QLatin1String("Assume a single uniform block of vertically aligned text.");
     psm[OcrOptions::PageSegmentationModes::SINGLE_UNIFORM_BLOCK_TEXT]                 = QLatin1String("Assume a single uniform block of text.");

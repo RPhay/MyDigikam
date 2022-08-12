@@ -1,5 +1,10 @@
 #include "textconverterthread.h"
-#include "ocroptions.h"
+
+// Qt includes 
+
+#include <QUrl>
+#include <QList>
+#include <QString>
 
 // KDE includes
 
@@ -11,13 +16,9 @@
 #include "drawdecoder.h"
 #include "textconvertertask.h"
 #include "dmetadata.h"
+#include "ocroptions.h"
 #include "digikam_debug.h"
 
-// Qt includes 
-
-#include <QUrl>
-#include <QList>
-#include <QString>
 
 using namespace Digikam;
 
