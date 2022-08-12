@@ -31,7 +31,6 @@
 #include <QApplication>
 #include <QStyle>
 #include <QComboBox>
-#include <QLineEdit>
 #include <QGridLayout>
 
 // KDE includes
