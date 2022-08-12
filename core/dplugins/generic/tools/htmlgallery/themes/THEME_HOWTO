@@ -284,6 +284,7 @@ this is a desktop file, it can be translated like the other keys.
 - The `Type` key defines the type of the parameter. At the time
 of this writing it can be one of:
 
+ - caption
  - string
  - color
  - list
@@ -332,6 +333,11 @@ Here is an example:
      Default=12
      Min=4
      Max=28
+
+#### String and Caption parameter keys
+
+A string parameter lets the user enter a single string to set configuration rules for exemple.
+A caption parameter lets the user enter a multi-string with spell-checking support to set a description or a title.
 
 ## Final words
 
