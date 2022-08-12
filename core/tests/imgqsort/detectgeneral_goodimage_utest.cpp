@@ -22,7 +22,7 @@
  *
  * ============================================================ */
 
-#include "detectgeneral_utest.h"
+#include "detectgeneral_goodimage_utest.h"
 
 // Qt includes
 
@@ -47,9 +47,9 @@ ImgQSortTestGeneral::ImgQSortTestGeneral(QObject* const)
     m_dataTestCases = dataTestCases;
 }
 
-void ImgQSortTestGeneral::testParseTestImagesForGeneralNormalImage()
+void ImgQSortTestGeneral::testParseTestImagesForGeneralQuiteGoodImage()
 {
-    QHash<QString, bool> results = testParseTestImages(QLatin1String("normalImage"),
+    QHash<QString, bool> results = testParseTestImages(QLatin1String("quiteGoodImage"),
                                                        ImgQSortTest_ParseTestImagesDefautDetection, DETECTIONGENERAL);
 
     for (const auto& test_case : results.keys())
@@ -58,36 +58,13 @@ void ImgQSortTestGeneral::testParseTestImagesForGeneralNormalImage()
     }
 }
 
-void ImgQSortTestGeneral::testParseTestImagesForSunImage()
+void ImgQSortTestGeneral::testParseTestImagesForGeneralGoodImage()
 {
-    CustomDetection customSettings {true,true,true,false};
-
-    if (!m_hasExifTool)
-    {
-        m_dataTestCases.remove(QLatin1String("sunImage"),
-                               PairImageQuality(QLatin1String("exposure_sun_1.jpg"), 1));
-        m_dataTestCases.insert(QLatin1String("sunImage"),
-                               PairImageQuality(QLatin1String("exposure_sun_1.jpg"), 2));
-    }
-
-    QHash<QString, bool> results = testParseTestImages(QLatin1String("sunImage"),
-                                                       ImgQSortTest_ParseTestImagesCustomDetection, customSettings);
-
-    for (const auto& test_case : results.keys())
-    {
-        QVERIFY(results.value(test_case));
-    }
-}
-
-void ImgQSortTestGeneral::testParseTestImagesForGeneral_failCase()
-{
-    QHash<QString, bool> results = testParseTestImages(QLatin1String("failCase"),
+    QHash<QString, bool> results = testParseTestImages(QLatin1String("goodImage"),
                                                        ImgQSortTest_ParseTestImagesDefautDetection, DETECTIONGENERAL);
 
     for (const auto& test_case : results.keys())
     {
-        QEXPECT_FAIL("", "Will fix in the next release", Continue);
-
         QVERIFY(results.value(test_case));
     }
 }
