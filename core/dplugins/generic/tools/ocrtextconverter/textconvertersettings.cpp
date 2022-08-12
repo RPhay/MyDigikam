@@ -94,6 +94,10 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
     }
     
     d->ocrTesseractLanguageMode->setDefaultIndex(int(OcrOptions::Languages::DEFAULT));
+    d->ocrTesseractLanguageMode->setToolTip(i18nc("@info", "Specify language(s) used for OCR."
+                                                           "In the mode default of Language settings, for digital text with multiple languages \n"
+                                                           "Tesseract can automatically recognize languages using Latin Alphabets such as English or French,...\n"
+                                                           "but not compatible languages using hieroglyphs such as Chinese, Japanese."));
     
     // ------------
 
@@ -110,6 +114,7 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
     }
 
     d->ocrTesseractPSMMode->setDefaultIndex(int(OcrOptions::PageSegmentationModes::DEFAULT));
+    d->ocrTesseractPSMMode->setToolTip(i18nc("@info", "Specify page segmentation mode."));
 
     // ------------
    
@@ -126,13 +131,14 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
     }
 
     d->ocrTesseractOEMMode->setDefaultIndex(int(OcrOptions::EngineModes::DEFAULT));
+    d->ocrTesseractOEMMode->setToolTip(i18nc("@info", "Specify OCR Engine mode."));
 
     // ------------
 
     QLabel* const ocrTesseractDpiLabel  = new QLabel(i18nc("@label", "Resolution Dpi:"));
     d->ocrTesseractDpi                  = new DIntNumInput(this);
     d->ocrTesseractDpi->setRange(70, 2400, 1);
-    d->ocrTesseractDpi->setWhatsThis(i18nc("@info", "Specify DPI for input image."));
+    d->ocrTesseractDpi->setToolTip(i18nc("@info", "Specify DPI for input image."));
     d->ocrTesseractDpi->setDefaultValue(300);
     ocrTesseractDpiLabel->setBuddy(d->ocrTesseractDpi);
 
@@ -140,7 +146,7 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
 
     QLabel* const saveOcrResultLabel = new QLabel(i18nc("@label", "Store result in : "));
     d->saveTextFile = new QCheckBox(i18nc("@option:check", "Text file"), this);
-    d->saveTextFile->setWhatsThis(i18nc("@info", "Store Ocr result in separated text file"));
+    d->saveTextFile->setToolTip(i18nc("@info", "Store Ocr result in separated text file"));
     d->saveTextFile->setChecked(true);
     
     // ------------

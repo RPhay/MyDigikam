@@ -138,7 +138,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     d->thread = new TextConverterActionThread(this);
 
-     connect(d->thread, SIGNAL(signalStarting(DigikamGenericTextConverterPlugin::TextConverterActionData)),
+    connect(d->thread, SIGNAL(signalStarting(DigikamGenericTextConverterPlugin::TextConverterActionData)),
             this, SLOT(slotTextConverterAction(DigikamGenericTextConverterPlugin::TextConverterActionData)));
 
     connect(d->thread, SIGNAL(signalFinished(DigikamGenericTextConverterPlugin::TextConverterActionData)),
