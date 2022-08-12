@@ -70,7 +70,7 @@ GSNewAlbumDlg::GSNewAlbumDlg(QWidget* const parent,
 {
     d->serviceName           = serviceName;
     const int spacing        = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                    QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QGroupBox* const privBox = new QGroupBox(i18n("Access Level"), getMainWidget());
     privBox->setWhatsThis(i18n("These are security and privacy settings for the new Google Photos album."));

@@ -416,7 +416,7 @@ void ColorFXFilter::loadLut3D(const QString& path)
 
     if (fi.suffix().toLower() == QLatin1String("cube"))
     {
-        qCDebug(DIGIKAM_DIMG_LOG) << "Ca not yet process Cube LUTs";
+        qCDebug(DIGIKAM_DIMG_LOG) << "Cannot yet process Cube LUTs";
 
         // TODO: Adobe Cube LUT wwwimages.adobe.com/content/dam/Adobe/en/products/speedgrade/cc/pdfs/cube-lut-specification-1.0.pdf
     }
@@ -558,7 +558,7 @@ static inline int clamp(int from, int maxVal)
 
 template<typename T>
 static void ItemFilterFx(const quint16* lutrgb, int lutTableSize,
-                          T* rgb, uint start, uint end, int maxVal, int intensity)
+                         T* rgb, uint start, uint end, int maxVal, int intensity)
 {
     int lutdim_r  = lutTableSize;
     int lutdim_g  = lutTableSize;
