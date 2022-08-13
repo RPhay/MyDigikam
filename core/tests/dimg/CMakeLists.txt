@@ -139,9 +139,9 @@ ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/dimghistory_utest.cpp
 
               LINK_LIBRARIES
 
-              digikamcore
-
               libabstracthistory
+
+              digikamcore
 
               ${COMMON_TEST_LINK}
 )
