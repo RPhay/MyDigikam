@@ -27,20 +27,20 @@ QMap<OcrOptions::PageSegmentationModes, QString> OcrOptions::psmNames()
 {
     QMap<PageSegmentationModes, QString> psm;
 
-    psm[OcrOptions::PageSegmentationModes::OSD_ONLY]                                  = QLatin1String("Orientation and script detection (OSD) only.");
-    psm[OcrOptions::PageSegmentationModes::AUTO_WITH_OSD]                             = QLatin1String("Automatic page segmentation with OSD.");
-    psm[OcrOptions::PageSegmentationModes::AUTO_WITH_NO_OSD]                          = QLatin1String("Automatic page segmentation, but no OSD, or OCR. (not implemented)");
-    psm[OcrOptions::PageSegmentationModes::DEFAULT]                                   = QLatin1String("Fully automatic page segmentation, but no OSD. (Default)");
-    psm[OcrOptions::PageSegmentationModes::SINGLE_COL_TEXT_OF_VAR_SIZE]               = QLatin1String("Assume a single column of text of variable sizes.");
-    psm[OcrOptions::PageSegmentationModes::SINGLE_UNIFORM_BLOCK_OF_VERTICALLY_TEXT]   = QLatin1String("Assume a single uniform block of vertically aligned text.");
-    psm[OcrOptions::PageSegmentationModes::SINGLE_UNIFORM_BLOCK_TEXT]                 = QLatin1String("Assume a single uniform block of text.");
-    psm[OcrOptions::PageSegmentationModes::SINGLE_TEXT_LINE]                          = QLatin1String("Treat the image as a single text line.");
-    psm[OcrOptions::PageSegmentationModes::SINGLE_WORD]                               = QLatin1String("Treat the image as a single word.");
-    psm[OcrOptions::PageSegmentationModes::SINGLE_WORD_IN_CIRCLE]                     = QLatin1String("Treat the image as a single word in a circle.");
-    psm[OcrOptions::PageSegmentationModes::SINGLE_CHARACTER]                          = QLatin1String("Treat the image as a single character.");
-    psm[OcrOptions::PageSegmentationModes::SPARSE_TEXT]                               = QLatin1String("Sparse text. Find as much text as possible in no particular order.");
+    psm[OcrOptions::PageSegmentationModes::OSD_ONLY]                                  = QLatin1String("OSD only.");
+    psm[OcrOptions::PageSegmentationModes::AUTO_WITH_OSD]                             = QLatin1String("Automatic with OSD.");
+    psm[OcrOptions::PageSegmentationModes::AUTO_WITH_NO_OSD]                          = QLatin1String("Automatic no OSD.");
+    psm[OcrOptions::PageSegmentationModes::DEFAULT]                                   = QLatin1String("Default.");
+    psm[OcrOptions::PageSegmentationModes::SINGLE_COL_TEXT_OF_VAR_SIZE]               = QLatin1String("Column of text.");
+    psm[OcrOptions::PageSegmentationModes::SINGLE_UNIFORM_BLOCK_OF_VERTICALLY_TEXT]   = QLatin1String("Block of vertically aligned text.");
+    psm[OcrOptions::PageSegmentationModes::SINGLE_UNIFORM_BLOCK_TEXT]                 = QLatin1String("Block of text.");
+    psm[OcrOptions::PageSegmentationModes::SINGLE_TEXT_LINE]                          = QLatin1String("Single text line.");
+    psm[OcrOptions::PageSegmentationModes::SINGLE_WORD]                               = QLatin1String("Single word.");
+    psm[OcrOptions::PageSegmentationModes::SINGLE_WORD_IN_CIRCLE]                     = QLatin1String("Single word in a circle.");
+    psm[OcrOptions::PageSegmentationModes::SINGLE_CHARACTER]                          = QLatin1String("Single character.");
+    psm[OcrOptions::PageSegmentationModes::SPARSE_TEXT]                               = QLatin1String("Sparse text.");
     psm[OcrOptions::PageSegmentationModes::SPARSE_WITH_OSD]                           = QLatin1String("Sparse text with OSD.");
-    psm[OcrOptions::PageSegmentationModes::RAW_LINE]                                  = QLatin1String("Raw line. Treat the image as a single text line, bypassing hacks that are Tesseract-specific.");
+    psm[OcrOptions::PageSegmentationModes::RAW_LINE]                                  = QLatin1String("Raw line.");
 
     return psm;
 }
@@ -52,9 +52,9 @@ QMap<OcrOptions::EngineModes, QString> OcrOptions::oemNames()
     QMap<EngineModes, QString> oem;
 
     oem[OcrOptions::EngineModes::LEGACY_ENGINE_ONLY]                                 = QLatin1String("Legacy engine only.");
-    oem[OcrOptions::EngineModes::NEURAL_NETS_LSTM_ONLY]                              = QLatin1String("Neural nets LSTM engine only.");
-    oem[OcrOptions::EngineModes::LEGACY_LSTM_ENGINES]                                = QLatin1String("Legacy + LSTM engines.");
-    oem[OcrOptions::EngineModes::DEFAULT]                                            = QLatin1String("Default, based on what is available.");
+    oem[OcrOptions::EngineModes::NEURAL_NETS_LSTM_ONLY]                              = QLatin1String("LSTM engine only.");
+    oem[OcrOptions::EngineModes::LEGACY_LSTM_ENGINES]                                = QLatin1String("Legacy + LSTM .");
+    oem[OcrOptions::EngineModes::DEFAULT]                                            = QLatin1String("Default.");
      
     return oem; 
 }
