@@ -83,6 +83,7 @@ cd build.mxe
 
 ${MXE_BUILD_TARGETS}-cmake -G "Unix Makefiles" . \
                            -DMXE_TOOLCHAIN=${MXE_TOOLCHAIN} \
+                           -DMXE_USE_CCACHE= \
                            -DCMAKE_BUILD_TYPE=${BUILD_TYPE} \
                            -DCMAKE_COLOR_MAKEFILE=ON \
                            -DCMAKE_INSTALL_PREFIX=${MXE_INSTALL_PREFIX} \
