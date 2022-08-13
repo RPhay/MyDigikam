@@ -87,6 +87,7 @@ ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_breeze
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kcoreaddons         -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kwindowsystem       -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_solid               -- -j$CPU_CORES
+${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_sonnet              -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_threadweaver        -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_karchive            -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_kdbusaddons         -- -j$CPU_CORES
