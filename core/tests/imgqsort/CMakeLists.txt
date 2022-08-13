@@ -68,8 +68,9 @@ macro(IMGQSORT_BUILD_UNITTEST)
 
                   LINK_LIBRARIES
 
-                  digikamcore
                   libimgqsorttest
+
+                  digikamcore
 
                   ${COMMON_TEST_LINK}
     )
