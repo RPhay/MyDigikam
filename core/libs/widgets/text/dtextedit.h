@@ -91,15 +91,7 @@ public:
 protected:
 
     void insertFromMimeData(const QMimeData* source) override;
-
     void keyPressEvent(QKeyEvent* e)                 override;
-
-private:
-
-    /**
-     * Init the text widget with the spell-checker engine (optional).
-     */
-    void init();
 
 private:
 
@@ -161,15 +153,7 @@ public:
 protected:
 
     void insertFromMimeData(const QMimeData* source) override;
-
     void keyPressEvent(QKeyEvent* e)                 override;
-
-private:
-
-    /**
-     * Init the text widget with the spell-checker engine (optional).
-     */
-    void init();
 
 private:
 

@@ -80,6 +80,23 @@ public:
     {
     }
 
+    /**
+     * Init the text widget with the spell-checker engine (optional).
+     */
+    void init(DTextEdit* const parent)
+    {
+
+#ifdef HAVE_SONNET
+
+        spellChecker = new SpellCheckDecorator(parent);
+
+#endif
+
+        parent->setLinesVisible(lines);
+    }
+
+public:
+
 #ifdef HAVE_SONNET
 
     Sonnet::SpellCheckDecorator* spellChecker = nullptr;
@@ -93,14 +110,14 @@ DTextEdit::DTextEdit(QWidget* const parent)
     : QTextEdit(parent),
       d        (new Private)
 {
-    init();
+    d->init(this);
 }
 
 DTextEdit::DTextEdit(const QString& contents, QWidget* const parent)
     : QTextEdit(parent),
       d        (new Private)
 {
-    init();
+    d->init(this);
     setPlainText(contents);
 }
 
@@ -109,7 +126,7 @@ DTextEdit::DTextEdit(unsigned int lines, QWidget* const parent)
       d        (new Private)
 {
     d->lines = lines;
-    init();
+    d->init(this);
 }
 
 DTextEdit::~DTextEdit()
@@ -165,17 +182,6 @@ void DTextEdit::setText(const QString& text)
     setPlainText(text);
 }
 
-void DTextEdit::init()
-{
-
-#ifdef HAVE_SONNET
-
-    d->spellChecker = new SpellCheckDecorator(this);
-
-#endif
-
-    setLinesVisible(d->lines);
-}
 
 void DTextEdit::setCurrentLanguage(const QString& lang)
 {
@@ -265,6 +271,23 @@ public:
     {
     }
 
+    /**
+     * Init the text widget with the spell-checker engine (optional).
+     */
+    void init(DPlainTextEdit* const parent)
+    {
+
+#ifdef HAVE_SONNET
+
+        spellChecker = new SpellCheckDecorator(parent);
+
+#endif
+
+        parent->setLinesVisible(lines);
+    }
+
+public:
+
 #ifdef HAVE_SONNET
 
     Sonnet::SpellCheckDecorator* spellChecker = nullptr;
@@ -278,14 +301,14 @@ DPlainTextEdit::DPlainTextEdit(QWidget* const parent)
     : QPlainTextEdit(parent),
       d             (new Private)
 {
-    init();
+    d->init(this);
 }
 
 DPlainTextEdit::DPlainTextEdit(const QString& contents, QWidget* const parent)
     : QPlainTextEdit(parent),
       d             (new Private)
 {
-    init();
+    d->init(this);
     setPlainText(contents);
 }
 
@@ -294,7 +317,7 @@ DPlainTextEdit::DPlainTextEdit(unsigned int lines, QWidget* const parent)
       d             (new Private)
 {
     d->lines = lines;
-    init();
+    d->init(this);
 }
 
 DPlainTextEdit::~DPlainTextEdit()
@@ -350,17 +373,6 @@ void DPlainTextEdit::setText(const QString& text)
     setPlainText(text);
 }
 
-void DPlainTextEdit::init()
-{
-
-#ifdef HAVE_SONNET
-
-    d->spellChecker = new SpellCheckDecorator(this);
-
-#endif
-
-    setLinesVisible(d->lines);
-}
 
 void DPlainTextEdit::setCurrentLanguage(const QString& lang)
 {
