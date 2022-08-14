@@ -72,6 +72,8 @@ public:
     }
 };
 
+// -------------------------------------------------------------------------------
+
 class Q_DECL_HIDDEN DTextEdit::Private
 {
 public:
@@ -114,6 +116,8 @@ public:
     Sonnet::SpellCheckDecorator* spellChecker = nullptr;
 
 #endif
+
+    QString                      mask;                      ///< Mask of ignored character in text editor.
 
     unsigned int                 lines        = 3;
 
@@ -196,6 +200,16 @@ void DTextEdit::setText(const QString& text)
     setPlainText(text);
 }
 
+QString DTextEdit::ignoreCharacters() const
+{
+    return d->mask;
+}
+
+void DTextEdit::setIgnoreCharacters(const QString& mask)
+{
+    d->mask = mask;
+}
+
 void DTextEdit::setCurrentLanguage(const QString& lang)
 {
 
@@ -239,6 +253,15 @@ void DTextEdit::keyPressEvent(QKeyEvent* e)
             e->ignore();
             return;
         }
+
+        for (int i = 0 ; i < d->mask.size() ; ++i)
+        {
+            if (key == d->mask[i])
+            {
+                e->ignore();
+                return;
+            }
+        }
     }
 
     QTextEdit::keyPressEvent(e);
@@ -270,6 +293,15 @@ void DTextEdit::insertFromMimeData(const QMimeData* source)
         textToPaste.replace(QLatin1Char('\n'),     QLatin1Char(' '));
         scopy.setText(textToPaste);
     }
+
+    QString maskedTxt = scopy.text();
+
+    for (int i = 0 ; i < d->mask.size() ; ++i)
+    {
+        maskedTxt.remove(d->mask[i]);
+    }
+
+    scopy.setText(maskedTxt);
 
     QTextEdit::insertFromMimeData(&scopy);
 }
@@ -318,6 +350,8 @@ public:
     Sonnet::SpellCheckDecorator* spellChecker = nullptr;
 
 #endif
+
+    QString                      mask;                      ///< Mask of ignored character in text editor.
 
     unsigned int                 lines        = 3;
 
@@ -400,6 +434,15 @@ void DPlainTextEdit::setText(const QString& text)
     setPlainText(text);
 }
 
+QString DPlainTextEdit::ignoreCharacters() const
+{
+    return d->mask;
+}
+
+void DPlainTextEdit::setIgnoreCharacters(const QString& mask)
+{
+    d->mask = mask;
+}
 
 void DPlainTextEdit::setCurrentLanguage(const QString& lang)
 {
@@ -444,6 +487,15 @@ void DPlainTextEdit::keyPressEvent(QKeyEvent* e)
             e->ignore();
             return;
         }
+
+        for (int i = 0 ; i < d->mask.size() ; ++i)
+        {
+            if (key == d->mask[i])
+            {
+                e->ignore();
+                return;
+            }
+        }
     }
 
     QPlainTextEdit::keyPressEvent(e);
@@ -475,6 +527,15 @@ void DPlainTextEdit::insertFromMimeData(const QMimeData* source)
         textToPaste.replace(QLatin1Char('\n'),     QLatin1Char(' '));
         scopy.setText(textToPaste);
     }
+
+    QString maskedTxt = scopy.text();
+
+    for (int i = 0 ; i < d->mask.size() ; ++i)
+    {
+        maskedTxt.remove(d->mask[i]);
+    }
+
+    scopy.setText(maskedTxt);
 
     QPlainTextEdit::insertFromMimeData(&scopy);
 }

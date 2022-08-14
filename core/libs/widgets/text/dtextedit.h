@@ -72,6 +72,14 @@ public:
     void setText(const QString& text);
 
     /**
+     * Helper methods to handle the mask of ignored characters in text editor.
+     * The mask of characters is passed as string (ex: "+/!()").
+     * By default the mask is empty.
+     */
+    QString ignoreCharacters() const;
+    void setIgnoreCharacters(const QString& mask);
+
+    /**
      * Helper methods to handle visible lines used by the widget to show text.
      * Lines must be superior or egal to 1.
      * Notes: if a single visible line is used, the widget mimic QLineEdit.
@@ -132,6 +140,14 @@ public:
      */
     QString text() const;
     void setText(const QString& text);
+
+    /**
+     * Helper methods to handle the mask of ignored characters in text editor.
+     * The mask of characters is passed as string (ex: "+/!()").
+     * By default the mask is empty.
+     */
+    QString ignoreCharacters() const;
+    void setIgnoreCharacters(const QString& mask);
 
     /**
      * Helper methods to handle visible lines used by the widget to show text.
