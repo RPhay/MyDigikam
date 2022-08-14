@@ -94,6 +94,7 @@ public:
         dbType                  (nullptr),
         dbPathLabel             (nullptr),
         dbThumbsLabel           (nullptr),
+        walLabel                (nullptr),
         sqlInit                 (nullptr),
         expertSettings          (nullptr),
         dbNoticeBox             (nullptr),
@@ -124,6 +125,7 @@ public:
     QComboBox*         dbType;
     QLabel*            dbPathLabel;
     QLabel*            dbThumbsLabel;
+    QLabel*            walLabel;
     QTextBrowser*      sqlInit;
     QGroupBox*         expertSettings;
     QGroupBox*         dbNoticeBox;
