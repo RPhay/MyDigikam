@@ -18,6 +18,7 @@ Advanced Rename: Add configurable first character for the unique modifier with {
 Advanced Search: Add search for items by number of face regions.
 Advanced Search: Add search for items without face regions.
 Collections    : Add support for cross-platform network paths.
+Database       : Add support for SQLite WAL (Write-Ahead-Logging) mode.
 General        : Add spell-checking in caption text widget using KF5::Sonnet component.
 
 *****************************************************************************************************
