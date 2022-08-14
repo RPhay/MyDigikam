@@ -135,28 +135,36 @@ DbEngineParameters::DbEngineParameters(const QUrl& url)
       connectOptions        (QUrlQuery(url).queryItemValue(QLatin1String("connectOptions"))),
       hostName              (QUrlQuery(url).queryItemValue(QLatin1String("hostName"))),
       port                  (-1),
+      walMode               (false),
       internalServer        (false),
       databaseNameThumbnails(QUrlQuery(url).queryItemValue(QLatin1String("databaseNameThumbnails"))),
       databaseNameFace      (QUrlQuery(url).queryItemValue(QLatin1String("databaseNameFace"))),
       databaseNameSimilarity(QUrlQuery(url).queryItemValue(QLatin1String("databaseNameSimilarity")))
 {
-    QString queryPort   = QUrlQuery(url).queryItemValue(QLatin1String("port"));
+    QString queryPort    = QUrlQuery(url).queryItemValue(QLatin1String("port"));
 
     if (!queryPort.isNull())
     {
         port = queryPort.toInt();
     }
 
+    QString queryWalMode = QUrlQuery(url).queryItemValue(QLatin1String("walMode"));
+
+    if (!queryWalMode.isNull())
+    {
+        walMode = (queryWalMode == QLatin1String("true"));
+    }
+
 #if defined(HAVE_MYSQLSUPPORT) && defined(HAVE_INTERNALMYSQL)
 
-    QString queryServer = QUrlQuery(url).queryItemValue(QLatin1String("internalServer"));
+    QString queryServer  = QUrlQuery(url).queryItemValue(QLatin1String("internalServer"));
 
     if (!queryServer.isNull())
     {
         internalServer = (queryServer == QLatin1String("true"));
     }
 
-    queryServer         = QUrlQuery(url).queryItemValue(QLatin1String("internalServerPath"));
+    queryServer          = QUrlQuery(url).queryItemValue(QLatin1String("internalServerPath"));
 
     if (!queryServer.isNull())
     {
