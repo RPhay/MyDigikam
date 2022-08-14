@@ -93,6 +93,18 @@ public:
 #endif
 
         parent->setLinesVisible(lines);
+
+        // Mimic QLineEdit
+
+        QObject::connect(parent, &QTextEdit::textChanged,
+                         parent, [=]()
+                {
+                    if (lines == 1)
+                    {
+                        clrBtn->setVisible(!parent->text().isEmpty());
+                    }
+                }
+        );
     }
 
 public:
@@ -104,6 +116,8 @@ public:
 #endif
 
     unsigned int                 lines        = 3;
+
+    DTextEditClearButton*        clrBtn       = nullptr;
 };
 
 DTextEdit::DTextEdit(QWidget* const parent)
@@ -159,10 +173,10 @@ void DTextEdit::setLinesVisible(unsigned int lines)
         setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
         verticalScrollBar()->setFixedHeight(0);
-        DTextEditClearButton* const clr = new DTextEditClearButton(this);
-        setCornerWidget(clr);
+        d->clrBtn = new DTextEditClearButton(this);
+        setCornerWidget(d->clrBtn);
 
-        connect(clr, SIGNAL(clicked()),
+        connect(d->clrBtn, SIGNAL(clicked()),
                 this, SLOT(clear()));
     }
 }
@@ -181,7 +195,6 @@ void DTextEdit::setText(const QString& text)
 {
     setPlainText(text);
 }
-
 
 void DTextEdit::setCurrentLanguage(const QString& lang)
 {
@@ -284,6 +297,18 @@ public:
 #endif
 
         parent->setLinesVisible(lines);
+
+        // Mimic QLineEdit
+
+        QObject::connect(parent, &QPlainTextEdit::textChanged,
+                         parent, [=]()
+                {
+                    if (lines == 1)
+                    {
+                        clrBtn->setVisible(!parent->text().isEmpty());
+                    }
+                }
+        );
     }
 
 public:
@@ -295,6 +320,8 @@ public:
 #endif
 
     unsigned int                 lines        = 3;
+
+    DTextEditClearButton*        clrBtn       = nullptr;
 };
 
 DPlainTextEdit::DPlainTextEdit(QWidget* const parent)
@@ -350,10 +377,10 @@ void DPlainTextEdit::setLinesVisible(unsigned int lines)
         setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
         verticalScrollBar()->setFixedHeight(0);
-        DTextEditClearButton* const clr = new DTextEditClearButton(this);
-        setCornerWidget(clr);
+        d->clrBtn = new DTextEditClearButton(this);
+        setCornerWidget(d->clrBtn);
 
-        connect(clr, SIGNAL(clicked()),
+        connect(d->clrBtn, SIGNAL(clicked()),
                 this, SLOT(clear()));
     }
 }
