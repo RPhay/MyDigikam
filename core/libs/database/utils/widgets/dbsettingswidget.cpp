@@ -357,9 +357,10 @@ void DatabaseSettingsWidget::setupMainArea()
     vlay->addWidget(new DLineWidget(Qt::Horizontal));
     vlay->addWidget(d->dbPathLabel);
     vlay->addWidget(d->dbPathEdit);
-    vlay->addWidget(d->walModeCheck);
     vlay->addWidget(d->mysqlCmdBox);
     vlay->addWidget(d->tab);
+    vlay->addWidget(d->walModeCheck);
+    vlay->addStretch(10);
     vlay->setContentsMargins(spacing, spacing, spacing, spacing);
     vlay->setSpacing(spacing);
 
