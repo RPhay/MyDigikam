@@ -141,6 +141,7 @@ public:
 
     /**
      * Check or set WAL mode for SQLite database if enabled in settings.
+     * @returns true the WAL mode is confirmed enabled.
      */
     bool checkOrSetWALMode();
 
