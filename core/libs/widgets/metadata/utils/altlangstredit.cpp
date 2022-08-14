@@ -52,7 +52,8 @@ public:
     explicit Private()
       : currentLanguage (QLatin1String("x-default")),
         linesVisible    (0),
-        titleLabel      (nullptr),
+        grid            (nullptr),
+        titleWidget     (nullptr),
         delValueButton  (nullptr),
         valueEdit       (nullptr),
         languageCB      (nullptr)
@@ -258,7 +259,9 @@ public:
 
     uint                           linesVisible;
 
-    QLabel*                        titleLabel;
+    QGridLayout*                   grid;
+
+    QWidget*                       titleWidget;
 
     QToolButton*                   delValueButton;
 
@@ -273,31 +276,30 @@ AltLangStrEdit::AltLangStrEdit(QWidget* const parent, unsigned int lines)
     : QWidget(parent),
       d      (new Private)
 {
-    QGridLayout* const grid = new QGridLayout(this);
-    d->titleLabel           = new QLabel(this);
-    d->delValueButton       = new QToolButton(this);
+    d->titleWidget    = new QLabel(this);
+    d->delValueButton = new QToolButton(this);
     d->delValueButton->setIcon(QIcon::fromTheme(QLatin1String("edit-clear")));
     d->delValueButton->setToolTip(i18nc("@info: language edit dialog", "Remove entry for this language"));
     d->delValueButton->setEnabled(false);
 
-    d->languageCB   = new QComboBox(this);
+    d->languageCB     = new QComboBox(this);
     d->languageCB->setSizeAdjustPolicy(QComboBox::AdjustToContents);
     d->languageCB->setWhatsThis(i18nc("@info: language edit dialog", "Select item language here."));
 
-    d->valueEdit    = new DTextEdit(lines, this);
+    d->valueEdit      = new DTextEdit(lines, this);
     d->valueEdit->setAcceptRichText(false);
 
     // --------------------------------------------------------
 
-    grid->setAlignment(Qt::AlignTop);
-    grid->addWidget(d->titleLabel,     0, 0, 1, 1);
-    grid->addWidget(d->languageCB,     0, 2, 1, 1);
-    grid->addWidget(d->delValueButton, 0, 3, 1, 1);
-    grid->addWidget(d->valueEdit,      1, 0, 1,-1);
-    grid->setColumnStretch(1, 10);
-    grid->setContentsMargins(QMargins());
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    d->grid           = new QGridLayout(this);
+    d->grid->setAlignment(Qt::AlignTop);
+    d->grid->addWidget(d->languageCB,     0, 2, 1, 1);
+    d->grid->addWidget(d->delValueButton, 0, 3, 1, 1);
+    d->grid->addWidget(d->valueEdit,      1, 0, 1,-1);
+    d->grid->setColumnStretch(1, 10);
+    d->grid->setContentsMargins(QMargins());
+    d->grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
 
     loadLangAltListEntries();
 
@@ -316,6 +318,13 @@ AltLangStrEdit::AltLangStrEdit(QWidget* const parent, unsigned int lines)
 AltLangStrEdit::~AltLangStrEdit()
 {
     delete d;
+}
+
+void AltLangStrEdit::slotEnabledInternalWidgets(bool b)
+{
+    d->languageCB->setEnabled(b);
+    d->delValueButton->setEnabled(b);
+    d->valueEdit->setEnabled(b);
 }
 
 QString AltLangStrEdit::currentLanguageCode() const
@@ -342,7 +351,25 @@ QString AltLangStrEdit::languageCode(int index) const
 
 void AltLangStrEdit::setTitle(const QString& title)
 {
-    d->titleLabel->setText(title);
+    QLabel* const tlabel = new QLabel(this);
+    tlabel->setText(title);
+    setTitleWidget(tlabel);
+}
+
+void AltLangStrEdit::setTitleWidget(QWidget* const twdg)
+{
+    if (d->titleWidget)
+    {
+        delete d->titleWidget;
+    }
+
+    d->titleWidget = twdg;
+    d->grid->addWidget(d->titleWidget, 0, 0, 1, 1);
+}
+
+QWidget* AltLangStrEdit::titleWidget() const
+{
+    return d->titleWidget;
 }
 
 void AltLangStrEdit::setPlaceholderText(const QString& msg)
