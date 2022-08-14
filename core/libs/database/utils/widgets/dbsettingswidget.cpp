@@ -117,6 +117,10 @@ void DatabaseSettingsWidget::setupMainArea()
 
     // --------------------------------------------------------
 
+    d->walModeCheck = new QCheckBox(i18n("Enable WAL mode for the databases"), dbConfigBox);
+
+    // --------------------------------------------------------
+
     d->mysqlCmdBox = new DVBox(dbConfigBox);
     d->mysqlCmdBox->layout()->setContentsMargins(0, 0, 0, 0);
 
@@ -351,6 +355,7 @@ void DatabaseSettingsWidget::setupMainArea()
     vlay->addWidget(new DLineWidget(Qt::Horizontal));
     vlay->addWidget(d->dbPathLabel);
     vlay->addWidget(d->dbPathEdit);
+    vlay->addWidget(d->walModeCheck);
     vlay->addWidget(d->mysqlCmdBox);
     vlay->addWidget(d->tab);
     vlay->setContentsMargins(spacing, spacing, spacing, spacing);
@@ -452,6 +457,7 @@ void DatabaseSettingsWidget::setDatabaseInputFields(int index)
         {
             d->dbPathLabel->setVisible(true);
             d->dbPathEdit->setVisible(true);
+            d->walModeCheck->setVisible(true);
             d->mysqlCmdBox->setVisible(false);
             d->tab->setVisible(false);
 
@@ -465,6 +471,7 @@ void DatabaseSettingsWidget::setDatabaseInputFields(int index)
         {
             d->dbPathLabel->setVisible(true);
             d->dbPathEdit->setVisible(true);
+            d->walModeCheck->setVisible(false);
             d->mysqlCmdBox->setVisible(true);
             d->tab->setVisible(false);
 
@@ -478,6 +485,7 @@ void DatabaseSettingsWidget::setDatabaseInputFields(int index)
         {
             d->dbPathLabel->setVisible(false);
             d->dbPathEdit->setVisible(false);
+            d->walModeCheck->setVisible(false);
             d->mysqlCmdBox->setVisible(false);
             d->tab->setVisible(true);
 
@@ -681,6 +689,7 @@ void DatabaseSettingsWidget::setParametersFromSettings(const ApplicationSettings
     {
         d->dbPathEdit->setFileDlgPath(d->orgPrms.getCoreDatabaseNameOrDir());
         d->dbType->setCurrentIndex(d->dbTypeMap[SQlite]);
+        d->walModeCheck->setChecked(d->orgPrms.walMode);
         slotResetMysqlServerDBNames();
 
         if (settings->getDatabaseDirSetAtCmd() && !migration)
@@ -705,6 +714,7 @@ void DatabaseSettingsWidget::setParametersFromSettings(const ApplicationSettings
         d->mysqlInitBin.setup(QFileInfo(d->orgPrms.internalServerMysqlInitCmd).absoluteFilePath());
         d->mysqlServBin.setup(QFileInfo(d->orgPrms.internalServerMysqlServCmd).absoluteFilePath());
         d->dbBinariesWidget->allBinariesFound();
+        d->walModeCheck->setChecked(false);
         slotResetMysqlServerDBNames();
     }
 
@@ -722,6 +732,7 @@ void DatabaseSettingsWidget::setParametersFromSettings(const ApplicationSettings
         d->connectOpts->setText(d->orgPrms.connectOptions);
         d->userName->setText(d->orgPrms.userName);
         d->password->setText(d->orgPrms.password);
+        d->walModeCheck->setChecked(false);
     }
 
 #endif
@@ -737,7 +748,8 @@ DbEngineParameters DatabaseSettingsWidget::getDbEngineParameters() const
     {
         case SQlite:
         {
-            prm = DbEngineParameters::parametersForSQLiteDefaultFile(databasePath());
+            prm         = DbEngineParameters::parametersForSQLiteDefaultFile(databasePath());
+            prm.walMode = d->walModeCheck->isChecked();
             break;
         }
 

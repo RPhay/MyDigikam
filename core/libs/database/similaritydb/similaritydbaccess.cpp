@@ -222,7 +222,7 @@ bool SimilarityDbAccess::checkReadyForUse(InitializationObserver* const observer
         return false;
     }
 
-    // create an object with private shortcut constructor
+    // Create an object with private shortcut constructor
 
     SimilarityDbAccess access(false);
 
@@ -248,11 +248,15 @@ bool SimilarityDbAccess::checkReadyForUse(InitializationObserver* const observer
         }
     }
 
-    // avoid endless loops (if called methods create new SimilarityDbAccess objects)
+    // Avoid endless loops (if called methods create new SimilarityDbAccess objects)
 
     d->initializing = true;
 
-    // update schema
+    // Check or enable WAL mode for SQLite database
+
+    d->backend->checkOrSetWALMode();
+
+    // Update schema
 
     SimilarityDbSchemaUpdater updater(&access);
     updater.setObserver(observer);

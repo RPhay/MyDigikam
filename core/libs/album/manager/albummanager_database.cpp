@@ -521,11 +521,13 @@ void AlbumManager::changeDatabase(const DbEngineParameters& newParams)
     if (newParams.isSQLite())
     {
         DatabaseServerStarter::instance()->stopServerManagerProcess();
+        bool walModeChanged = ((params.walMode != newParams.walMode)                                     &&
+                               (params.getCoreDatabaseNameOrDir() == newParams.getCoreDatabaseNameOrDir()));
 
         QDir newDir(newParams.getCoreDatabaseNameOrDir());
         QFileInfo newFile(newDir, QLatin1String("digikam4.db"));
 
-        if (!newFile.exists())
+        if      (!newFile.exists() && !walModeChanged)
         {
             QFileInfo digikam3DB(newDir, QLatin1String("digikam3.db"));
             QFileInfo digikamVeryOldDB(newDir, QLatin1String("digikam.db"));
@@ -635,7 +637,7 @@ void AlbumManager::changeDatabase(const DbEngineParameters& newParams)
                 }
             }
         }
-        else
+        else if (!walModeChanged)
         {
             int result = QMessageBox::No;
 

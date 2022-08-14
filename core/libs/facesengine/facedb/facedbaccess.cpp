@@ -249,6 +249,10 @@ bool FaceDbAccess::checkReadyForUse(InitializationObserver* const observer)
 
     d->initializing = true;
 
+    // Check or enable WAL mode for SQLite database
+
+    d->backend->checkOrSetWALMode();
+
     // Update schema
 
     FaceDbSchemaUpdater updater(&access);

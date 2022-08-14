@@ -30,6 +30,7 @@
 // Qt includes
 
 #include <QApplication>
+#include <QCheckBox>
 #include <QComboBox>
 #include <QDir>
 #include <QFileInfo>
@@ -100,6 +101,7 @@ public:
         tab                     (nullptr),
         dbPathEdit              (nullptr),
         dbNameThumbs            (nullptr),
+        walModeCheck            (nullptr),
         dbBinariesWidget        (nullptr),
         ignoreDirectoriesBox    (nullptr),
         ignoreDirectoriesEdit   (nullptr),
@@ -130,6 +132,8 @@ public:
 
     DFileSelector*     dbPathEdit;
     DFileSelector*     dbNameThumbs;
+
+    QCheckBox*         walModeCheck;
 
     DBinarySearch*     dbBinariesWidget;
 
