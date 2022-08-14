@@ -118,6 +118,8 @@ void DatabaseSettingsWidget::setupMainArea()
     // --------------------------------------------------------
 
     d->walModeCheck = new QCheckBox(i18n("Enable WAL mode for the databases"), dbConfigBox);
+    d->walModeCheck->setToolTip(i18n("The WAL (Write-Ahead Log) mode is significantly "
+                                     "faster in most scenarios on supported systems."));
 
     // --------------------------------------------------------
 
