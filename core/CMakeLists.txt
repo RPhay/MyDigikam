@@ -137,7 +137,14 @@ endif()
 # More Optional Dependencies and Rules
 
 find_package(Doxygen)
-find_package(LQR-1)
+
+if(NOT CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
+
+    # Lqr-1 packaging and detection under FreeBSD is problematic since a very long time and break the Gitlab CI
+
+    find_package(LQR-1)
+
+endif()
 
 if(BUILD_WITH_CCACHE)
 
