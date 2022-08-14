@@ -240,7 +240,7 @@ DFontProperties::DFontProperties(QWidget* const parent,
     // attribute widgets and preview on the top, and XLFD data at the bottom.
 
     QVBoxLayout* const topLayout = new QVBoxLayout(this);
-    topLayout->setContentsMargins(0, 0, 0, 0);
+    topLayout->setContentsMargins(QMargins());
     const int spacingHint = qMin(style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                                  style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
     int checkBoxGap              = spacingHint / 2;
@@ -271,7 +271,7 @@ DFontProperties::DFontProperties(QWidget* const parent,
         page       = new QWidget(this);
         splitter->addWidget(page);
         gridLayout = new QGridLayout(page);
-        gridLayout->setContentsMargins(0, 0, 0, 0);
+        gridLayout->setContentsMargins(QMargins());
     }
 
     // first, create the labels across the top

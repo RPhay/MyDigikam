@@ -167,7 +167,7 @@ void VideoGroup::setSingleWindow(bool s)
         QGridLayout* const layout = new QGridLayout;
         layout->setSizeConstraint(QLayout::SetMaximumSize);
         layout->setSpacing(1);
-        layout->setContentsMargins(0, 0, 0, 0);
+        layout->setContentsMargins(QMargins());
         view->setLayout(layout);
 
         for (int i = 0 ; i < mRenderers.size() ; ++i)

@@ -191,7 +191,7 @@ ShowfotoStackViewFavorites::ShowfotoStackViewFavorites(ShowfotoStackViewSideBar*
 
     grid->setRowStretch(1, 10);
     grid->setColumnStretch(1, 10);
-    grid->setContentsMargins(0, 0, 0, 0);
+    grid->setContentsMargins(QMargins());
 
     // --------------------------------------------------------
 

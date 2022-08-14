@@ -185,7 +185,7 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
     grid2->addWidget(d->total,                                                  1, 2, 1, 1);
     grid2->addWidget(d->rate,                                                   2, 2, 1, 1);
     grid2->addWidget(d->remain,                                                 3, 2, 1, 1);
-    grid2->setContentsMargins(0, 0, 0, 0);
+    grid2->setContentsMargins(QMargins());
     grid2->setSpacing(0);
     grid2->setColumnMinimumWidth(2, fontRect.width());
 
