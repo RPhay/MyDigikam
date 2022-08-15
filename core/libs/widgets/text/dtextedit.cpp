@@ -219,6 +219,8 @@ void DTextEdit::setCurrentLanguage(const QString& lang)
 
     qCDebug(DIGIKAM_WIDGETS_LOG) << "Spell Checker Language:" << currentLanguage();
 
+    d->spellChecker->highlighter()->rehighlight();
+
 #else
 
     Q_UNUSED(lang);
@@ -251,7 +253,9 @@ void DTextEdit::keyPressEvent(QKeyEvent* e)
         if ((key == Qt::Key_Return) || (key == Qt::Key_Enter))
         {
             e->ignore();
+
             Q_EMIT returnPressed();
+
             return;
         }
 
@@ -456,6 +460,8 @@ void DPlainTextEdit::setCurrentLanguage(const QString& lang)
 
     qCDebug(DIGIKAM_WIDGETS_LOG) << "Spell Checker Language:" << currentLanguage();
 
+    d->spellChecker->highlighter()->rehighlight();
+
 #else
 
     Q_UNUSED(lang);
@@ -488,7 +494,9 @@ void DPlainTextEdit::keyPressEvent(QKeyEvent* e)
         if ((key == Qt::Key_Return) || (key == Qt::Key_Enter))
         {
             e->ignore();
+
             Q_EMIT returnPressed();
+
             return;
         }
 

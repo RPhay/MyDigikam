@@ -451,7 +451,7 @@ void AltLangStrEdit::loadLangAltListEntries()
         Q_FOREACH (const QString& item, list)
         {
               d->languageCB->addItem(item);
-              d->languageCB->setItemIcon(d->languageCB->count()-1,
+              d->languageCB->setItemIcon(d->languageCB->count() - 1,
                                          QIcon::fromTheme(QLatin1String("dialog-ok-apply")).pixmap(16, 16));
         }
 
