@@ -96,6 +96,12 @@ public:
     void setCurrentLanguage(const QString& lang);
     QString currentLanguage() const;
 
+    /**
+     * Return true if spell-checking is enabled or not.
+     * Use slotActiveSpellChecking to change it.
+     */
+    bool spellCheckingIsActive() const;
+
 Q_SIGNALS:
 
     /**
@@ -103,6 +109,10 @@ Q_SIGNALS:
      */
     void returnPressed();
     void textEdited(const QString&);
+
+public Q_SLOTS:
+
+    void slotActiveSpellChecking(bool);
 
 protected:
 
@@ -174,6 +184,12 @@ public:
     void setCurrentLanguage(const QString& lang);
     QString currentLanguage() const;
 
+    /**
+     * Return true if spell-checking is enabled or not.
+     * Use slotActiveSpellChecking to change it.
+     */
+    bool spellCheckingIsActive() const;
+
 Q_SIGNALS:
 
     /**
@@ -181,6 +197,10 @@ Q_SIGNALS:
      */
     void returnPressed();
     void textEdited(const QString&);
+
+public Q_SLOTS:
+
+    void slotActiveSpellChecking(bool);
 
 protected:
 

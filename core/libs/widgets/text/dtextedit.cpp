@@ -313,6 +313,37 @@ void DTextEdit::insertFromMimeData(const QMimeData* source)
     QTextEdit::insertFromMimeData(&scopy);
 }
 
+void DTextEdit::slotActiveSpellChecking(bool active)
+{
+
+#ifdef HAVE_SONNET
+
+    d->spellChecker->highlighter()->setAutomatic(active);
+    d->spellChecker->highlighter()->setActive(active);
+
+#else
+
+    Q_UNUSED(active);
+
+#endif
+
+}
+
+bool DTextEdit::spellCheckingIsActive() const
+{
+
+#ifdef HAVE_SONNET
+
+    return d->spellChecker->highlighter()->isActive();
+
+#else
+
+    return false;
+
+#endif
+
+}
+
 // ------------------------------------------------------------------------------------------------
 
 class Q_DECL_HIDDEN DPlainTextEdit::Private
@@ -552,6 +583,37 @@ void DPlainTextEdit::insertFromMimeData(const QMimeData* source)
     scopy.setText(maskedTxt);
 
     QPlainTextEdit::insertFromMimeData(&scopy);
+}
+
+void DPlainTextEdit::slotActiveSpellChecking(bool active)
+{
+
+#ifdef HAVE_SONNET
+
+    d->spellChecker->highlighter()->setAutomatic(active);
+    d->spellChecker->highlighter()->setActive(active);
+
+#else
+
+    Q_UNUSED(active);
+
+#endif
+
+}
+
+bool DPlainTextEdit::spellCheckingIsActive() const
+{
+
+#ifdef HAVE_SONNET
+
+    return d->spellChecker->highlighter()->isActive();
+
+#else
+
+    return false;
+
+#endif
+
 }
 
 } // namespace Digikam
