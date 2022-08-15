@@ -361,6 +361,11 @@ void DigikamItemView::setFaceMode(bool on)
     }
 }
 
+void DigikamItemView::setRunningFaceAction(bool run)
+{
+    d->runningFaceAction = run;
+}
+
 void DigikamItemView::addRejectionOverlay(ItemDelegate* delegate)
 {
     FaceRejectionOverlay* const rejectionOverlay = new FaceRejectionOverlay(this);
@@ -772,7 +777,8 @@ void DigikamItemView::scrollTo(const QModelIndex& index, ScrollHint hint)
 {
     // we do not want to change the view, when in the "Thumbnails" view in "People"
     // see bugs 444692, 40232, ...
-    if ((viewMode() == QListView::IconMode) && (getFaceMode()))
+
+    if ((viewMode() == QListView::IconMode) && getFaceMode() && d->runningFaceAction)
     {
         return;
     }

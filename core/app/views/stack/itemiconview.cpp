@@ -182,6 +182,9 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
     connect(d->peopleSideBar, SIGNAL(requestFaceMode(bool)),
             d->iconView, SLOT(setFaceMode(bool)));
 
+    connect(d->peopleSideBar, SIGNAL(signalRunningFaceAction(bool)),
+            d->iconView, SLOT(setRunningFaceAction(bool)));
+
     connect(d->peopleSideBar, SIGNAL(signalFindDuplicates(QList<TAlbum*>)),
             this, SLOT(slotNewDuplicatesSearch(QList<TAlbum*>)));
 
