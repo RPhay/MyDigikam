@@ -4,9 +4,9 @@
  * https://www.digikam.org
  *
  * Date        : 2022-08-01
- * Description : Two plain text edit widgets with spell checker capabilities based on KF5::Sonnet (optional).
+ * Description : Two text edit widgets with spell checker capabilities based on KF5::Sonnet (optional).
  *               Widgets can be also limited to a number of lines to show text.
- *               A single line constraint will mimic QLineEdit.
+ *               A single line constraint will mimic QLineEdit. See setLinesVisible() for details.
  *
  * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -81,7 +81,7 @@ public:
 
     /**
      * Helper methods to handle visible lines used by the widget to show text.
-     * Lines must be superior or egal to 1.
+     * Lines must be superior or egal to 1 to apply a size constraint.
      * Notes: if a single visible line is used, the widget mimic QLineEdit.
      *        a null value do not apply a size constraint.
      */
@@ -95,6 +95,14 @@ public:
      */
     void setCurrentLanguage(const QString& lang);
     QString currentLanguage() const;
+
+Q_SIGNALS:
+
+    /**
+     * Emmited only when mimic QLineEdit mode is enabled. See setLinesVisible() for details.
+     */
+    void returnPressed();
+    void textEdited(const QString&);
 
 protected:
 
@@ -151,7 +159,7 @@ public:
 
     /**
      * Helper methods to handle visible lines used by the widget to show text.
-     * Lines must be superior or egal to 1.
+     * Lines must be superior or egal to 1 to apply a size constraint.
      * Notes: if a single visible line is used, the widget mimic QLineEdit.
      *        a null value do not apply a size constraint.
      */
@@ -165,6 +173,14 @@ public:
      */
     void setCurrentLanguage(const QString& lang);
     QString currentLanguage() const;
+
+Q_SIGNALS:
+
+    /**
+     * Emmited only when mimic QLineEdit mode is enabled. See setLinesVisible() for details.
+     */
+    void returnPressed();
+    void textEdited(const QString&);
 
 protected:
 
