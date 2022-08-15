@@ -891,7 +891,7 @@ QDebug operator<<(QDebug dbg, const DbEngineParameters& p)
     dbg.nospace() << "   DB Similarity Name:        " << p.databaseNameSimilarity                            << QT_ENDL;
     dbg.nospace() << "   Connect Options:           " << p.connectOptions                                    << QT_ENDL;
     dbg.nospace() << "   Host Name:                 " << p.hostName                                          << QT_ENDL;
-    dbg.nospace() << "   Host port:                 " << p.port                                              << QT_ENDL;
+    dbg.nospace() << "   Host Port:                 " << p.port                                              << QT_ENDL;
     dbg.nospace() << "   WAL Mode:                  " << p.walMode                                           << QT_ENDL;
     dbg.nospace() << "   Internal Server:           " << p.internalServer                                    << QT_ENDL;
     dbg.nospace() << "   Internal Server Path:      " << p.internalServerDBPath                              << QT_ENDL;
