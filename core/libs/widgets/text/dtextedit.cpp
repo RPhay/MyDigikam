@@ -339,6 +339,7 @@ void DTextEdit::setSpellCheckSettings(const SpellCheckContainer& settings)
 
     d->spellChecker->highlighter()->setAutomatic(d->container.isActive);
     d->spellChecker->highlighter()->setActive(d->container.isActive);
+    d->spellChecker->highlighter()->rehighlight();
 
 #endif
 
@@ -613,6 +614,7 @@ void DPlainTextEdit::setSpellCheckSettings(const SpellCheckContainer& settings)
 
     d->spellChecker->highlighter()->setAutomatic(d->container.isActive);
     d->spellChecker->highlighter()->setActive(d->container.isActive);
+    d->spellChecker->highlighter()->rehighlight();
 
 #endif
 
