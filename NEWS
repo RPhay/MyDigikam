@@ -19,7 +19,8 @@ Advanced Search: Add search for items by number of face regions.
 Advanced Search: Add search for items without face regions.
 Collections    : Add support for cross-platform network paths.
 Database       : Add support for SQLite WAL (Write-Ahead-Logging) mode.
-General        : Add spell-checking in caption text widget using KF5::Sonnet component.
+General        : Add spell-checking support in caption text widget using KF5::Sonnet component.
+                 Add spellcheck config panel in Setup/Misc for digiKam and Showfoto.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -114,7 +115,7 @@ BUGFIXES:
 088 ==> 457594 - The facesengine binary should be installed to AppData\Local and not AppData\Roaming.
 089 ==> 435070 - Use WAL mode for SQLite databases.
 090 ==> 456024 - Use Write-Ahead-Logging as default journalling mode.
-091 ==> 
+091 ==> 376345 - Can't disable "auto spell check" while editing metadata.
 092 ==> 
 093 ==> 
 094 ==> 
