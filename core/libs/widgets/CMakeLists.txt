@@ -163,6 +163,7 @@ include_directories(
 )
 
 if(KF5Sonnet_FOUND)
+    include_directories($<TARGET_PROPERTY:KF5::SonnetCore,INTERFACE_INCLUDE_DIRECTORIES>)
     include_directories($<TARGET_PROPERTY:KF5::SonnetUi,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
