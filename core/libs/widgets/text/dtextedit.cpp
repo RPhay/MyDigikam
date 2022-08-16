@@ -55,6 +55,7 @@ using namespace Sonnet;
 
 #include "digikam_debug.h"
 #include "spellchecksettings.h"
+#include "spellcheckcontainer.h"
 
 namespace Digikam
 {
@@ -96,12 +97,12 @@ public:
 
         if (config)
         {
-            parent->setActiveSpellChecking(config->settings().isActive);
+            parent->setSpellCheckSettings(config->settings());
 
             QObject::connect(config, &SpellCheckSettings::signalSettingsChanged,
                              parent, [=]()
                     {
-                        parent->setActiveSpellChecking(config->settings().isActive);
+                        parent->setSpellCheckSettings(config->settings());
                     }
             );
 
@@ -137,6 +138,8 @@ public:
     unsigned int                 lines        = 3;
 
     DTextEditClearButton*        clrBtn       = nullptr;
+
+    SpellCheckContainer          container;                 ///< Spell checking settings container.
 };
 
 DTextEdit::DTextEdit(QWidget* const parent)
@@ -328,35 +331,22 @@ void DTextEdit::insertFromMimeData(const QMimeData* source)
     QTextEdit::insertFromMimeData(&scopy);
 }
 
-void DTextEdit::setActiveSpellChecking(bool active)
+void DTextEdit::setSpellCheckSettings(const SpellCheckContainer& settings)
 {
+    d->container = settings;
 
 #ifdef HAVE_SONNET
 
-    d->spellChecker->highlighter()->setAutomatic(active);
-    d->spellChecker->highlighter()->setActive(active);
-
-#else
-
-    Q_UNUSED(active);
+    d->spellChecker->highlighter()->setAutomatic(d->container.isActive);
+    d->spellChecker->highlighter()->setActive(d->container.isActive);
 
 #endif
 
 }
 
-bool DTextEdit::spellCheckingIsActive() const
+SpellCheckContainer DTextEdit::spellCheckSettings() const
 {
-
-#ifdef HAVE_SONNET
-
-    return d->spellChecker->highlighter()->isActive();
-
-#else
-
-    return false;
-
-#endif
-
+    return d->container;
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -382,12 +372,12 @@ public:
 
         if (config)
         {
-            parent->setActiveSpellChecking(config->settings().isActive);
+            parent->setSpellCheckSettings(config->settings());
 
             QObject::connect(config, &SpellCheckSettings::signalSettingsChanged,
                              parent, [=]()
                     {
-                        parent->setActiveSpellChecking(config->settings().isActive);
+                        parent->setSpellCheckSettings(config->settings());
                     }
             );
         }
@@ -422,6 +412,8 @@ public:
     unsigned int                 lines        = 3;
 
     DTextEditClearButton*        clrBtn       = nullptr;
+
+    SpellCheckContainer          container;                 ///< Spell checking settings container.
 };
 
 DPlainTextEdit::DPlainTextEdit(QWidget* const parent)
@@ -613,35 +605,22 @@ void DPlainTextEdit::insertFromMimeData(const QMimeData* source)
     QPlainTextEdit::insertFromMimeData(&scopy);
 }
 
-void DPlainTextEdit::setActiveSpellChecking(bool active)
+void DPlainTextEdit::setSpellCheckSettings(const SpellCheckContainer& settings)
 {
+    d->container = settings;
 
 #ifdef HAVE_SONNET
 
-    d->spellChecker->highlighter()->setAutomatic(active);
-    d->spellChecker->highlighter()->setActive(active);
-
-#else
-
-    Q_UNUSED(active);
+    d->spellChecker->highlighter()->setAutomatic(d->container.isActive);
+    d->spellChecker->highlighter()->setActive(d->container.isActive);
 
 #endif
 
 }
 
-bool DPlainTextEdit::spellCheckingIsActive() const
+SpellCheckContainer DPlainTextEdit::spellCheckSettings() const
 {
-
-#ifdef HAVE_SONNET
-
-    return d->spellChecker->highlighter()->isActive();
-
-#else
-
-    return false;
-
-#endif
-
+    return d->container;
 }
 
 } // namespace Digikam

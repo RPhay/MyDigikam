@@ -39,6 +39,8 @@
 namespace Digikam
 {
 
+class SpellCheckContainer;
+
 class DIGIKAM_EXPORT DTextEdit : public QTextEdit
 {
     Q_OBJECT
@@ -97,11 +99,11 @@ public:
     QString currentLanguage() const;
 
     /**
-     * Return true if spell-checking is enabled or not.
-     * Use setActiveSpellChecking to change it.
+     * Helper methods to handle the Spellcheck settings.
+     * See SpellCheckContainer class for details.
      */
-    bool spellCheckingIsActive() const;
-    void setActiveSpellChecking(bool);
+    SpellCheckContainer spellCheckSettings() const;
+    void setSpellCheckSettings(const SpellCheckContainer& settings);
 
 Q_SIGNALS:
 
@@ -182,11 +184,11 @@ public:
     QString currentLanguage() const;
 
     /**
-     * Return true if spell-checking is enabled or not.
-     * Use setActiveSpellChecking to change it.
+     * Helper methods to handle the Spellcheck settings.
+     * See SpellCheckContainer class for details.
      */
-    bool spellCheckingIsActive() const;
-    void setActiveSpellChecking(bool);
+    SpellCheckContainer spellCheckSettings() const;
+    void setSpellCheckSettings(const SpellCheckContainer& settings);
 
 Q_SIGNALS:
 
