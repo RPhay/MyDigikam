@@ -90,14 +90,14 @@ SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
                                                         "Spellchek is able to auto-detect the current language used in "
                                                         "text and will propose alternative with miss-spelled words.</p>"
                                                         "<p>With entries where alternative language can be specified, the "
-                                                        "contextual langue will be used to parse text. Spellcheck is "
-                                                        "depends of open-source backends including dictionnaries which must "
-                                                        "be available to work properly.</p>"), this);
+                                                        "contextual langue will be used to parse text. Spellcheck "
+                                                        "depends of open-source backends, including necessary dictionnaries, "
+                                                        "to operate sentence analysys in desired languages.</p>"), this);
     d->spellCheckLabel->setWordWrap(true);
 
     // ---
 
-    QGroupBox* const dictgroup = new QGroupBox(i18n("Dictionaries"), this);
+    QGroupBox* const dictgroup = new QGroupBox(i18n("Available Dictionaries"), this);
     QVBoxLayout* const dictlay = new QVBoxLayout();
     dictgroup->setLayout(dictlay);
 
@@ -118,7 +118,7 @@ SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
 
     // ---
 
-    QGroupBox* const backgroup = new QGroupBox(i18n("Backends"), this);
+    QGroupBox* const backgroup = new QGroupBox(i18n("Available Backends"), this);
     QVBoxLayout* const backlay = new QVBoxLayout();
     backgroup->setLayout(backlay);
 
