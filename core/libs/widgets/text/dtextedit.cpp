@@ -34,7 +34,7 @@
 #include <QFontMetrics>
 #include <QFontDatabase>
 #include <QMimeData>
-#include <QPushButton>
+#include <QLabel>
 #include <QIcon>
 #include <QStyle>
 #include <QPainter>
@@ -60,17 +60,36 @@ using namespace Sonnet;
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN DTextEditClearButton : public QPushButton
+class Q_DECL_HIDDEN DTextEditClearButton : public QLabel
 {
+    Q_OBJECT
+
 public:
 
     explicit DTextEditClearButton(QWidget* const parent)
-        : QPushButton(parent)
+        : QLabel(parent)
     {
         setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
         setFocusPolicy(Qt::NoFocus);
-        setFlat(true);
-        setIcon(qApp->style()->standardIcon(QStyle::SP_LineEditClearButton));
+        setContentsMargins(QMargins());
+        setScaledContents(false);
+        setMouseTracking(false);
+        QIcon ico = qApp->style()->standardIcon(QStyle::SP_LineEditClearButton);
+        int s     = qApp->style()->pixelMetric(QStyle::PM_SliderLength) -
+                    qApp->style()->pixelMetric(QStyle::PM_DefaultFrameWidth);
+        setPixmap(ico.pixmap(QSize(s, s)));
+    }
+
+Q_SIGNALS:
+
+    void clicked();
+
+protected:
+
+    void mousePressEvent(QMouseEvent* e) override
+    {
+        Q_EMIT clicked();
+        QLabel::mousePressEvent(e);
     }
 };
 
@@ -626,3 +645,5 @@ SpellCheckContainer DPlainTextEdit::spellCheckSettings() const
 }
 
 } // namespace Digikam
+
+#include "dtextedit.moc"
