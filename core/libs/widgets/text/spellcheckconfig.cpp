@@ -25,12 +25,9 @@
 
 // Qt includes
 
-#include <QButtonGroup>
 #include <QCheckBox>
 #include <QGridLayout>
-#include <QGroupBox>
 #include <QLabel>
-#include <QVBoxLayout>
 #include <QApplication>
 #include <QStyle>
 
@@ -50,11 +47,13 @@ class Q_DECL_HIDDEN SpellCheckConfig::Private
 public:
 
     explicit Private()
-      : activeSpellCheck     (nullptr)
+      : activeSpellCheck(nullptr),
+        spellCheckLabel (nullptr)
     {
     }
 
     QCheckBox*         activeSpellCheck;
+    QLabel*            spellCheckLabel;
 };
 
 SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
@@ -69,15 +68,24 @@ SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
     QGridLayout* const grid = new QGridLayout(this);
 
     d->activeSpellCheck     = new QCheckBox(this);
-    d->activeSpellCheck->setText(i18nc("@option:check", "Activate spellcheck when entering text."));
-    d->activeSpellCheck->setToolTip(i18nc("@info", "Turn on this option to activate the background spellcheck "
-                                                   "feature on captions, titles, and other text edit widgets."));
+    d->activeSpellCheck->setText(i18nc("@option:check", "Activate spellcheck when entering text"));
+
+    d->spellCheckLabel      = new QLabel(i18nc("@info", "<p>Turn on this option to activate the background spellcheck "
+                                                        "feature on captions, titles, and other text-edit widgets. "
+                                                        "Spellchek is able to auto-detect the current language used in "
+                                                        "text and will propose alternative with miss-spelled words.</p>"
+                                                        "<p>With entries where alternative language can be specified, the "
+                                                        "contextual langue will be used to parse text. Spellcheck is "
+                                                        "relevant of open-source dictionnaries which must be available "
+                                                        "to work properly.</p>"), this);
+    d->spellCheckLabel->setWordWrap(true);
 
     grid->addWidget(d->activeSpellCheck, 0, 0, 1, 1);
-    grid->setColumnStretch(1, 10);
-    grid->setRowStretch(1, 10);
+    grid->addWidget(d->spellCheckLabel,  1, 0, 1, 1);
+    grid->setColumnStretch(0, 10);
+    grid->setRowStretch(2, 10);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
-    grid->setSpacing(0);
+    grid->setSpacing(spacing);
 
     // --------------------------------------------------------
 
