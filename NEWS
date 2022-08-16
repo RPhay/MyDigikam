@@ -116,7 +116,7 @@ BUGFIXES:
 089 ==> 435070 - Use WAL mode for SQLite databases.
 090 ==> 456024 - Use Write-Ahead-Logging as default journalling mode.
 091 ==> 376345 - Can't disable "auto spell check" while editing metadata.
-092 ==> 
+092 ==> 200223 - Default language of spellchecker is ignored.
 093 ==> 
 094 ==> 
 095 ==> 
