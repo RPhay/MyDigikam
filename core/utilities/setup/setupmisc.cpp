@@ -647,7 +647,7 @@ void SetupMisc::readSettings()
     d->applicationIcon->setCurrentIndex(d->applicationIcon->findData(settings->getIconTheme()));
     d->applicationFont->setFont(settings->getApplicationFont());
 
-    // NOTE: Spell-Checking read settings is done in widget constructor.
+    // NOTE: Spellcheck read settings is done in widget constructor.
 }
 
 } // namespace Digikam
