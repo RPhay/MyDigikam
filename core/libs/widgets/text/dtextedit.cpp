@@ -54,6 +54,7 @@ using namespace Sonnet;
 // Local includes
 
 #include "digikam_debug.h"
+#include "spellchecksettings.h"
 
 namespace Digikam
 {
@@ -90,7 +91,21 @@ public:
 
 #ifdef HAVE_SONNET
 
-        spellChecker = new SpellCheckDecorator(parent);
+        spellChecker                     = new SpellCheckDecorator(parent);
+        SpellCheckSettings* const config = SpellCheckSettings::instance();
+
+        if (config)
+        {
+            parent->setActiveSpellChecking(config->settings().isActive);
+
+            QObject::connect(config, &SpellCheckSettings::signalSettingsChanged,
+                             parent, [=]()
+                    {
+                        parent->setActiveSpellChecking(config->settings().isActive);
+                    }
+            );
+
+        }
 
 #endif
 
@@ -313,7 +328,7 @@ void DTextEdit::insertFromMimeData(const QMimeData* source)
     QTextEdit::insertFromMimeData(&scopy);
 }
 
-void DTextEdit::slotActiveSpellChecking(bool active)
+void DTextEdit::setActiveSpellChecking(bool active)
 {
 
 #ifdef HAVE_SONNET
@@ -362,7 +377,20 @@ public:
 
 #ifdef HAVE_SONNET
 
-        spellChecker = new SpellCheckDecorator(parent);
+        spellChecker                     = new SpellCheckDecorator(parent);
+        SpellCheckSettings* const config = SpellCheckSettings::instance();
+
+        if (config)
+        {
+            parent->setActiveSpellChecking(config->settings().isActive);
+
+            QObject::connect(config, &SpellCheckSettings::signalSettingsChanged,
+                             parent, [=]()
+                    {
+                        parent->setActiveSpellChecking(config->settings().isActive);
+                    }
+            );
+        }
 
 #endif
 
@@ -585,7 +613,7 @@ void DPlainTextEdit::insertFromMimeData(const QMimeData* source)
     QPlainTextEdit::insertFromMimeData(&scopy);
 }
 
-void DPlainTextEdit::slotActiveSpellChecking(bool active)
+void DPlainTextEdit::setActiveSpellChecking(bool active)
 {
 
 #ifdef HAVE_SONNET

@@ -13,6 +13,7 @@ set(libtextwidgets_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/text/dtextedit.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/spellchecksettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/spellcheckcontainer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/spellcheckconfig.cpp
 )
 
 set(liblayouttools_SRCS

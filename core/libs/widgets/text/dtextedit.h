@@ -98,9 +98,10 @@ public:
 
     /**
      * Return true if spell-checking is enabled or not.
-     * Use slotActiveSpellChecking to change it.
+     * Use setActiveSpellChecking to change it.
      */
     bool spellCheckingIsActive() const;
+    void setActiveSpellChecking(bool);
 
 Q_SIGNALS:
 
@@ -109,10 +110,6 @@ Q_SIGNALS:
      */
     void returnPressed();
     void textEdited(const QString&);
-
-public Q_SLOTS:
-
-    void slotActiveSpellChecking(bool);
 
 protected:
 
@@ -186,9 +183,10 @@ public:
 
     /**
      * Return true if spell-checking is enabled or not.
-     * Use slotActiveSpellChecking to change it.
+     * Use setActiveSpellChecking to change it.
      */
     bool spellCheckingIsActive() const;
+    void setActiveSpellChecking(bool);
 
 Q_SIGNALS:
 
@@ -197,10 +195,6 @@ Q_SIGNALS:
      */
     void returnPressed();
     void textEdited(const QString&);
-
-public Q_SLOTS:
-
-    void slotActiveSpellChecking(bool);
 
 protected:
 

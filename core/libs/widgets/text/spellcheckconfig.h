@@ -3,12 +3,10 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2004-08-23
- * Description : mics configuration setup tab
+ * Date        : 2022-08-16
+ * Description : Spell-check Config widget.
  *
- * Copyright (C) 2004      by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2017      by Simon Frei <freisim93 at gmail dot com>
+ * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -23,37 +21,29 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SETUP_MISC_H
-#define DIGIKAM_SETUP_MISC_H
+#ifndef DIGIKAM_SPELL_CHECK_CONFIG_H
+#define DIGIKAM_SPELL_CHECK_CONFIG_H
 
 // Qt includes
 
-#include <QScrollArea>
+#include <QWidget>
+
+// Local includes
+
+#include "digikam_export.h"
 
 namespace Digikam
 {
 
-class SetupMisc : public QScrollArea
+class DIGIKAM_EXPORT SpellCheckConfig : public QWidget
 {
     Q_OBJECT
 
 public:
 
-    enum MiscTab
-    {
-        Behaviour = 0,
-        Appearance,
-        Grouping,
-        System,
-        SpellCheck
-    };
+    explicit SpellCheckConfig(QWidget* const parent = nullptr);
+    ~SpellCheckConfig() override;
 
-public:
-
-    explicit SetupMisc(QWidget* const parent = nullptr);
-    ~SetupMisc() override;
-
-    bool checkSettings();
     void applySettings();
 
 private:
@@ -68,4 +58,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_SETUP_MISC_H
+#endif // DIGIKAM_SPELL_CHECK_CONFIG_H
