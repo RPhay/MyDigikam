@@ -74,9 +74,10 @@ TemplateList::TemplateList(QWidget* const parent)
 {
     setColumnCount(2);
     setRootIsDecorated(false);
+    setUniformRowHeights(true);
+    setAllColumnsShowFocus(true);
     setSelectionMode(QAbstractItemView::SingleSelection);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    setAllColumnsShowFocus(true);
     setWhatsThis(i18nc("@info", "Here you can see the metadata template list managed by digiKam."));
 
     QStringList labels;

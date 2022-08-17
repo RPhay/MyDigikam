@@ -68,6 +68,7 @@ ExifToolListView::ExifToolListView(QWidget* const parent)
     setColumnCount(2);
     setHeaderHidden(true);
     setSortingEnabled(true);
+    setUniformRowHeights(true);
     setAllColumnsShowFocus(true);
     sortByColumn(0, Qt::AscendingOrder);
     setSelectionMode(QAbstractItemView::SingleSelection);

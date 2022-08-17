@@ -87,12 +87,13 @@ WorkflowList::WorkflowList(QWidget* const parent)
     setIconSize(QSize(22, 22));
     setSelectionMode(QAbstractItemView::SingleSelection);
     setSortingEnabled(false);
+    setRootIsDecorated(false);
+    setUniformRowHeights(true);
     setAllColumnsShowFocus(true);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setColumnCount(3);
     setHeaderHidden(false);
     setDragEnabled(true);
-    setRootIsDecorated(false);
 
     QStringList titles;
     titles.append(i18nc("@title: batch workflow name",        "Title"));

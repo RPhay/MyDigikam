@@ -86,12 +86,13 @@ ShowfotoStackViewList::ShowfotoStackViewList(ShowfotoStackViewSideBar* const vie
     setObjectName(QLatin1String("ShowfotoStackViewList"));
     setRootIsDecorated(false);
     setItemsExpandable(false);
-    setExpandsOnDoubleClick(false);
-    setAlternatingRowColors(true);
-    setIconSize(QSize(SizeSmall, SizeSmall));
-    setSelectionMode(QAbstractItemView::SingleSelection);
-    setSelectionBehavior(QAbstractItemView::SelectRows);
+    setUniformRowHeights(true);
     setAllColumnsShowFocus(true);
+    setAlternatingRowColors(true);
+    setExpandsOnDoubleClick(false);
+    setIconSize(QSize(SizeSmall, SizeSmall));
+    setSelectionBehavior(QAbstractItemView::SelectRows);
+    setSelectionMode(QAbstractItemView::SingleSelection);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     setColumnCount(4);
