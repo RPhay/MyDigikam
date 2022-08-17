@@ -47,14 +47,14 @@ namespace Digikam
 MetadataListView::MetadataListView(QWidget* const parent)
     : QTreeWidget(parent)
 {
+    setColumnCount(2);
     setRootIsDecorated(false);
+    setUniformRowHeights(true);
+    setAllColumnsShowFocus(true);
     setSelectionMode(QAbstractItemView::SingleSelection);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    setAllColumnsShowFocus(true);
-    setUniformRowHeights(true);
-    setColumnCount(2);
     setIndentation(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+                        QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     header()->setSectionResizeMode(QHeaderView::Stretch);
     header()->hide();
 
