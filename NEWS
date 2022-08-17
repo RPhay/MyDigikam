@@ -117,10 +117,10 @@ BUGFIXES:
 090 ==> 456024 - Use Write-Ahead-Logging as default journalling mode.
 091 ==> 376345 - Can't disable "auto spell check" while editing metadata.
 092 ==> 200223 - Default language of spellchecker is ignored.
-093 ==> 
-094 ==> 
-095 ==> 
-096 ==> 
+093 ==> 365263 - Dragging a image to an Album cannot see which album easily.
+094 ==> 426115 - Make drag-n-drop more evident.
+095 ==> 411550 - Difficulty to drag and drop a face tag to people group.
+096 ==> 458003 - Highlight albums when "dragging" items on it.
 097 ==> 
 098 ==> 
 099 ==> 
