@@ -90,6 +90,7 @@ QString DbEngineParameters::internalServerPrivatePath()
 
 DbEngineParameters::DbEngineParameters()
     : port          (-1),
+      walMode       (false),
       internalServer(false)
 {
 }

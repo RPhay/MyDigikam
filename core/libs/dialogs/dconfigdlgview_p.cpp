@@ -161,6 +161,7 @@ void DConfigDlgListView::updateWidth()
 DConfigDlgTreeView::DConfigDlgTreeView(QWidget* const parent)
     : QTreeView(parent)
 {
+    setUniformRowHeights(true);
     header()->hide();
 }
 
