@@ -186,7 +186,7 @@ void SpellCheckConfig::applySettings()
 
     SpellCheckContainer set;
 
-    set.isActive = d->activeSpellCheck->isChecked();
+    set.enableSpellCheck = d->activeSpellCheck->isChecked();
     config->setSettings(set);
 }
 
@@ -201,7 +201,7 @@ void SpellCheckConfig::readSettings()
 
     SpellCheckContainer set = config->settings();
 
-    d->activeSpellCheck->setChecked(set.isActive);
+    d->activeSpellCheck->setChecked(set.enableSpellCheck);
 }
 
 } // namespace Digikam

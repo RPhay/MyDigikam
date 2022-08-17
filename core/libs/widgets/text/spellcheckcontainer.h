@@ -55,7 +55,8 @@ public:
 
 public:
 
-    bool isActive;
+    bool enableSpellCheck;
+
 };
 
 //! qDebug() stream operator. Writes property @a inf to the debug output in a nicely formatted way.

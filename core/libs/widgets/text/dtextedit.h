@@ -93,6 +93,7 @@ public:
     /**
      * Helper methods to handle a specific spell-checker language (2 letters code based as "en", "fr", "es", etc.).
      * If this property is not set, spell-checker will try to auto-detect language by parsing the text.
+     * To reset this setting, pass a empty string as language.
      * If KF5::Sonnet depedencies is not resolved, these method do nothing.
      */
     void setCurrentLanguage(const QString& lang);
@@ -178,6 +179,7 @@ public:
     /**
      * Helper methods to handle a specific spell-checker language (2 letters code based as "en", "fr", "es", etc.).
      * If this property is not set, spell-checker will try to auto-detect language by parsing the text.
+     * To reset this setting, pass a empty string as language.
      * If KF5::Sonnet depedencies is not resolved, these method do nothing.
      */
     void setCurrentLanguage(const QString& lang);

@@ -39,7 +39,7 @@ namespace Digikam
 {
 
 SpellCheckContainer::SpellCheckContainer()
-    : isActive            (false)
+    : enableSpellCheck          (false)
 {
 }
 
@@ -49,18 +49,18 @@ SpellCheckContainer::~SpellCheckContainer()
 
 void SpellCheckContainer::readFromConfig(KConfigGroup& group)
 {
-    isActive = group.readEntry("Is Active", false);
+    enableSpellCheck = group.readEntry("EnableSpellCheck", false);
 }
 
 void SpellCheckContainer::writeToConfig(KConfigGroup& group) const
 {
-    group.writeEntry("Is Active", isActive);
+    group.writeEntry("EnableSpellCheck", enableSpellCheck);
 }
 
 QDebug operator<<(QDebug dbg, const SpellCheckContainer& inf)
 {
-    dbg.nospace() << "[SpellCheckContainer] isActive("
-                  << inf.isActive << "), ";
+    dbg.nospace() << "[SpellCheckContainer] enableSpellCheck("
+                  << inf.enableSpellCheck << "), ";
     return dbg.space();
 }
 

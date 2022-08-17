@@ -409,7 +409,11 @@ void AltLangStrEdit::slotSelectionChanged()
 
     // NOTE: if no specific language is set, spell-checker failback to auto-detection.
 
-    if (d->currentLanguage != QLatin1String("x-default"))
+    if (d->currentLanguage == QLatin1String("x-default"))
+    {
+        d->valueEdit->setCurrentLanguage(QString());
+    }
+    else
     {
         d->valueEdit->setCurrentLanguage(d->currentLanguage.left(2));
     }

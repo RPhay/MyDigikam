@@ -112,6 +112,11 @@ public:
 #ifdef HAVE_SONNET
 
         spellChecker                     = new SpellCheckDecorator(parent);
+
+        // Auto-detect language enabled by default.
+
+        spellChecker->highlighter()->setAutoDetectLanguageDisabled(false);
+
         SpellCheckSettings* const config = SpellCheckSettings::instance();
 
         if (config)
@@ -252,11 +257,23 @@ void DTextEdit::setCurrentLanguage(const QString& lang)
 
 #ifdef HAVE_SONNET
 
-    d->spellChecker->highlighter()->setCurrentLanguage(lang);
+    if (!lang.isEmpty())
+    {
+        d->spellChecker->highlighter()->setAutoDetectLanguageDisabled(true);
+        d->spellChecker->highlighter()->setCurrentLanguage(lang);
 
-    qCDebug(DIGIKAM_WIDGETS_LOG) << "Spell Checker Language:" << currentLanguage();
+        qCDebug(DIGIKAM_WIDGETS_LOG) << "Spell Checker Language:" << currentLanguage();
 
-    d->spellChecker->highlighter()->rehighlight();
+        d->spellChecker->highlighter()->rehighlight();
+    }
+    else
+    {
+        d->spellChecker->highlighter()->setAutoDetectLanguageDisabled(false);
+
+        qCDebug(DIGIKAM_WIDGETS_LOG) << "Spell Checker Language auto-detection enabled";
+
+        d->spellChecker->highlighter()->rehighlight();
+    }
 
 #else
 
@@ -356,8 +373,14 @@ void DTextEdit::setSpellCheckSettings(const SpellCheckContainer& settings)
 
 #ifdef HAVE_SONNET
 
-    d->spellChecker->highlighter()->setAutomatic(d->container.isActive);
-    d->spellChecker->highlighter()->setActive(d->container.isActive);
+    // Automatic disable spellcheck if too many spelling errors are detected.
+
+    d->spellChecker->highlighter()->setAutomatic(!d->container.enableSpellCheck);
+
+    // Enable spellcheker globaly.
+
+    d->spellChecker->highlighter()->setActive(d->container.enableSpellCheck);
+
     d->spellChecker->highlighter()->rehighlight();
 
 #endif
@@ -388,6 +411,11 @@ public:
 #ifdef HAVE_SONNET
 
         spellChecker                     = new SpellCheckDecorator(parent);
+
+        // Auto-detect language enabled by default.
+
+        spellChecker->highlighter()->setAutoDetectLanguageDisabled(false);
+
         SpellCheckSettings* const config = SpellCheckSettings::instance();
 
         if (config)
@@ -527,11 +555,23 @@ void DPlainTextEdit::setCurrentLanguage(const QString& lang)
 
 #ifdef HAVE_SONNET
 
-    d->spellChecker->highlighter()->setCurrentLanguage(lang);
+    if (!lang.isEmpty())
+    {
+        d->spellChecker->highlighter()->setAutoDetectLanguageDisabled(true);
+        d->spellChecker->highlighter()->setCurrentLanguage(lang);
 
-    qCDebug(DIGIKAM_WIDGETS_LOG) << "Spell Checker Language:" << currentLanguage();
+        qCDebug(DIGIKAM_WIDGETS_LOG) << "Spell Checker Language:" << currentLanguage();
 
-    d->spellChecker->highlighter()->rehighlight();
+        d->spellChecker->highlighter()->rehighlight();
+    }
+    else
+    {
+        d->spellChecker->highlighter()->setAutoDetectLanguageDisabled(false);
+
+        qCDebug(DIGIKAM_WIDGETS_LOG) << "Spell Checker Language auto-detection enabled";
+
+        d->spellChecker->highlighter()->rehighlight();
+    }
 
 #else
 
@@ -631,8 +671,14 @@ void DPlainTextEdit::setSpellCheckSettings(const SpellCheckContainer& settings)
 
 #ifdef HAVE_SONNET
 
-    d->spellChecker->highlighter()->setAutomatic(d->container.isActive);
-    d->spellChecker->highlighter()->setActive(d->container.isActive);
+    // Automatic disable spellcheck if too many spelling errors are detected.
+
+    d->spellChecker->highlighter()->setAutomatic(!d->container.enableSpellCheck);
+
+    // Enable spellcheker globaly.
+
+    d->spellChecker->highlighter()->setActive(d->container.enableSpellCheck);
+
     d->spellChecker->highlighter()->rehighlight();
 
 #endif
