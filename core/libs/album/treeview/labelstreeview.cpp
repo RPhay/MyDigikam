@@ -110,7 +110,7 @@ LabelsTreeView::LabelsTreeView(QWidget* const parent, bool setCheckable)
     d->isCheckableTreeView = setCheckable;
 
     setHeaderLabel(i18nc("@title", "Labels"));
-    setUniformRowHeights(false);
+    setUniformRowHeights(true);
     initTreeView();
 
     if (d->isCheckableTreeView)
