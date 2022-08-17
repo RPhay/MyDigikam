@@ -50,17 +50,17 @@ public:
     /**
      * Default constructor.
      */
-    explicit DTextEdit(QWidget* const parent = nullptr);
+    DTextEdit(QWidget* const parent = nullptr);
 
     /**
      * Constructor with a number of lines. Zero lines do not apply a size constraint.
      */
-    DTextEdit(unsigned int lines, QWidget* const parent = nullptr);
+    explicit DTextEdit(unsigned int lines, QWidget* const parent = nullptr);
 
     /**
      * Constructor with text contents to use.
      */
-    DTextEdit(const QString& contents, QWidget* const parent = nullptr);
+    explicit DTextEdit(const QString& contents, QWidget* const parent = nullptr);
 
     /**
      * Standard destructor.
@@ -136,17 +136,17 @@ public:
     /**
      * Default constructor.
      */
-    explicit DPlainTextEdit(QWidget* const parent = nullptr);
+    DPlainTextEdit(QWidget* const parent = nullptr);
 
     /**
      * Constructor with a number of lines. Zero lines do not apply a size constraint.
      */
-    DPlainTextEdit(unsigned int lines, QWidget* const parent = nullptr);
+    explicit DPlainTextEdit(unsigned int lines, QWidget* const parent = nullptr);
 
     /**
      * Constructor with text contents to use.
      */
-    DPlainTextEdit(const QString& contents, QWidget* const parent = nullptr);
+    explicit DPlainTextEdit(const QString& contents, QWidget* const parent = nullptr);
 
     /**
      * Standard destructor.

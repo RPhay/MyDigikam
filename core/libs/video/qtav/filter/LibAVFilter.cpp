@@ -338,7 +338,7 @@ QStringList LibAVFilter::audioFilters()
 
 QString LibAVFilter::filterDescription(const QString& filterName)
 {
-    QString s = QString();
+    QString s;
 
 #if QTAV_HAVE(AVFILTER)
 
@@ -351,10 +351,14 @@ QString LibAVFilter::filterDescription(const QString& filterName)
     const AVFilter* f = avfilter_get_by_name(filterName.toUtf8().constData());
 
     if (!f)
+    {
         return s;
+    }
 
     if (f->description)
+    {
         s.append(QString::fromUtf8(f->description));
+    }
 
 #if AV_MODULE_CHECK(LIBAVFILTER, 3, 7, 0, 8, 100)
 

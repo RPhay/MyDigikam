@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SPELL_CHEK_CONTAINER_H
-#define DIGIKAM_SPELL_CHEK_CONTAINER_H
+#ifndef DIGIKAM_SPELL_CHECK_CONTAINER_H
+#define DIGIKAM_SPELL_CHECK_CONTAINER_H
 
 // Qt includes
 
@@ -65,4 +65,4 @@ DIGIKAM_EXPORT QDebug operator<<(QDebug dbg, const SpellCheckContainer& inf);
 
 } // namespace Digikam
 
-#endif // DIGIKAM_SPELL_CHEK_CONTAINER_H
+#endif // DIGIKAM_SPELL_CHECK_CONTAINER_H
