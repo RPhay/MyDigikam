@@ -320,9 +320,10 @@ void SetupCollectionDelegate::updateEditorGeometry(QWidget* editor, const QStyle
 SetupCollectionTreeView::SetupCollectionTreeView(QWidget* const parent)
     : QTreeView(parent)
 {
-    setRootIsDecorated(false);
-    setExpandsOnDoubleClick(false);
     setHeaderHidden(true);
+    setRootIsDecorated(false);
+    setUniformRowHeights(true);
+    setExpandsOnDoubleClick(false);
 
     // Set custom delegate
 

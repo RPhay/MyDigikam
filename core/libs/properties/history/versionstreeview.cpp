@@ -117,6 +117,7 @@ VersionsTreeView::VersionsTreeView(QWidget* const parent)
     m_delegate = new VersionsDelegate(this);
     setItemDelegate(m_delegate);
     m_delegate->setViewOnAllOverlays(this);
+    setUniformRowHeights(true);
     setMouseTracking(true);
 }
 

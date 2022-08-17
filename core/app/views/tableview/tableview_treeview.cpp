@@ -83,8 +83,9 @@ TableViewTreeView::TableViewTreeView(TableViewShared* const tableViewShared, QWi
     setSelectionMode(QAbstractItemView::ExtendedSelection);
     setItemDelegate(s->itemDelegate);
     setAlternatingRowColors(true);
-    setSortingEnabled(true);
     setAllColumnsShowFocus(true);
+    setUniformRowHeights(true);
+    setSortingEnabled(true);
     setDragEnabled(true);
     setAcceptDrops(true);
     setWordWrap(true);
