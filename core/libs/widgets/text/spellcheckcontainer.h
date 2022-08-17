@@ -51,12 +51,13 @@ public:
 public:
 
     void readFromConfig(KConfigGroup& group);
-    void writeToConfig(KConfigGroup& group)  const;
+    void writeToConfig(KConfigGroup& group) const;
 
 public:
 
-    bool enableSpellCheck;
+    bool        enableSpellCheck;
 
+    QStringList ignoredWords;
 };
 
 //! qDebug() stream operator. Writes property @a inf to the debug output in a nicely formatted way.

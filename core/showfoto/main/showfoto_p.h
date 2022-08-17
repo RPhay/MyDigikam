@@ -108,6 +108,7 @@
 #include "dpluginloader.h"
 #include "exiftoolparser.h"
 #include "sidebarwidget.h"
+#include "spellchecksettings.h"
 
 namespace ShowFoto
 {

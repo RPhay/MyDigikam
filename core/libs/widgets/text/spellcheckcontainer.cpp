@@ -23,10 +23,6 @@
 
 #include "metaenginesettingscontainer.h"
 
-// Qt includes
-
-#include <QStringList>
-
 // KDE includes
 
 #include <kconfiggroup.h>
@@ -34,6 +30,7 @@
 // Local includes
 
 #include "spellchecksettings.h"
+#include "digikam_debug.h"
 
 namespace Digikam
 {
@@ -50,17 +47,28 @@ SpellCheckContainer::~SpellCheckContainer()
 void SpellCheckContainer::readFromConfig(KConfigGroup& group)
 {
     enableSpellCheck = group.readEntry("EnableSpellCheck", false);
+
+    ignoredWords     = group.readEntry("IgnoredWords", QStringList() << QLatin1String("digiKam")
+                                                                     << QLatin1String("Showfoto")
+                                                                     << QLatin1String("Exif")
+                                                                     << QLatin1String("IPTC")
+                                                                     << QLatin1String("Xmp"));
+    ignoredWords.removeDuplicates();
 }
 
 void SpellCheckContainer::writeToConfig(KConfigGroup& group) const
 {
     group.writeEntry("EnableSpellCheck", enableSpellCheck);
+    group.writeEntry("IgnoredWords",     ignoredWords);
+    group.sync();
 }
 
 QDebug operator<<(QDebug dbg, const SpellCheckContainer& inf)
 {
     dbg.nospace() << "[SpellCheckContainer] enableSpellCheck("
-                  << inf.enableSpellCheck << "), ";
+                  << inf.enableSpellCheck << "), "
+                  << "ignoredWords("
+                  << inf.ignoredWords << "), ";
     return dbg.space();
 }
 

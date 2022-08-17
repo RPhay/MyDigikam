@@ -381,6 +381,11 @@ void DTextEdit::setSpellCheckSettings(const SpellCheckContainer& settings)
 
     d->spellChecker->highlighter()->setActive(d->container.enableSpellCheck);
 
+    Q_FOREACH (const QString& word, d->container.ignoredWords)
+    {
+        d->spellChecker->highlighter()->ignoreWord(word);
+    }
+
     d->spellChecker->highlighter()->rehighlight();
 
 #endif
@@ -678,6 +683,11 @@ void DPlainTextEdit::setSpellCheckSettings(const SpellCheckContainer& settings)
     // Enable spellcheker globaly.
 
     d->spellChecker->highlighter()->setActive(d->container.enableSpellCheck);
+
+    Q_FOREACH (const QString& word, d->container.ignoredWords)
+    {
+        d->spellChecker->highlighter()->ignoreWord(word);
+    }
 
     d->spellChecker->highlighter()->rehighlight();
 

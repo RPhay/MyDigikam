@@ -45,10 +45,14 @@ public:
     ~SpellCheckConfig() override;
 
     void applySettings();
-
-private:
-
     void readSettings();
+
+private Q_SLOTS:
+
+    void slotIgnoreWordSelectionChanged();
+    void slotAddWord();
+    void slotDelWord();
+    void slotRepWord();
 
 private:
 

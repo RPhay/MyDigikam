@@ -89,6 +89,7 @@ DigikamApp::DigikamApp()
     ProgressManager::instance();
     ThumbnailLoadThread::setDisplayingWidget(this);
     DIO::instance();
+    SpellCheckSettings::instance();
 
     ExifToolThread* const exifToolThread = new ExifToolThread(this);
     exifToolThread->start();

@@ -125,13 +125,16 @@ SpellCheckContainer SpellCheckSettings::settings() const
 void SpellCheckSettings::setSettings(const SpellCheckContainer& settings)
 {
     d->setSettings(settings);
+
     Q_EMIT signalSettingsChanged();
+
     d->writeToConfig();
 }
 
 void SpellCheckSettings::readFromConfig()
 {
-    SpellCheckContainer s   = d->readFromConfig();
+    d->settings = d->readFromConfig();
+
     Q_EMIT signalSettingsChanged();
 }
 

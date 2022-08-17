@@ -34,6 +34,10 @@
 #include <QStyle>
 #include <QTreeWidget>
 #include <QHeaderView>
+#include <QPushButton>
+#include <QListWidget>
+#include <QLineEdit>
+#include <QIcon>
 
 // KDE includes
 
@@ -49,6 +53,7 @@ using namespace Sonnet;
 // Local includes
 
 #include "spellchecksettings.h"
+#include "digikam_debug.h"
 
 namespace Digikam
 {
@@ -58,10 +63,15 @@ class Q_DECL_HIDDEN SpellCheckConfig::Private
 public:
 
     explicit Private()
-      : activeSpellCheck(nullptr),
-        spellCheckLabel (nullptr),
-        dictList        (nullptr),
-        backList        (nullptr)
+      : activeSpellCheck (nullptr),
+        spellCheckLabel  (nullptr),
+        dictList         (nullptr),
+        backList         (nullptr),
+        addWordButton    (nullptr),
+        delWordButton    (nullptr),
+        repWordButton    (nullptr),
+        ignoreWordsBox   (nullptr),
+        ignoreWordEdit   (nullptr)
     {
     }
 
@@ -69,6 +79,13 @@ public:
     QLabel*      spellCheckLabel;
     QTreeWidget* dictList;              ///< Dictionaries list
     QTreeWidget* backList;              ///< Backends list
+    QPushButton* addWordButton;
+    QPushButton* delWordButton;
+    QPushButton* repWordButton;
+
+    QListWidget* ignoreWordsBox;
+
+    QLineEdit*   ignoreWordEdit;
 };
 
 SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
@@ -83,7 +100,7 @@ SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
     QGridLayout* const grid = new QGridLayout(this);
 
     d->activeSpellCheck     = new QCheckBox(this);
-    d->activeSpellCheck->setText(i18nc("@option:check", "Activate spellcheck when entering text"));
+    d->activeSpellCheck->setText(i18nc("@option:check", "Activate spellcheck in background when entering text"));
 
     d->spellCheckLabel      = new QLabel(i18nc("@info", "<p>Turn on this option to activate the background spellcheck "
                                                         "feature on captions, titles, and other text-edit widgets. "
@@ -97,7 +114,7 @@ SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
 
     // ---
 
-    QGroupBox* const dictgroup = new QGroupBox(i18n("Available Dictionaries"), this);
+    QGroupBox* const dictgroup = new QGroupBox(i18n("Available Language Dictionaries"), this);
     QVBoxLayout* const dictlay = new QVBoxLayout();
     dictgroup->setLayout(dictlay);
 
@@ -137,6 +154,57 @@ SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
 
     // ---
 
+    QGroupBox* const ignoreWordsGroup = new QGroupBox(i18n("Ignored Words"), this);
+    QGridLayout* const ignoreWordsLay = new QGridLayout();
+    ignoreWordsGroup->setLayout(ignoreWordsLay);
+
+    d->ignoreWordEdit  = new QLineEdit(this);
+    d->ignoreWordEdit->setClearButtonEnabled(true);
+    d->ignoreWordEdit->setPlaceholderText(i18n("Set here a new word to ignore during spellcheck"));
+
+    d->ignoreWordsBox = new QListWidget(this);
+    d->ignoreWordsBox->setWhatsThis(i18n("You can add or remove words to ignore "
+                                         "while spell-checking operations."));
+
+    d->ignoreWordsBox->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+
+    d->addWordButton = new QPushButton(i18n("&Add..."),  this);
+    d->delWordButton = new QPushButton(i18n("&Remove"),  this);
+    d->repWordButton = new QPushButton(i18n("&Replace"), this);
+
+    d->addWordButton->setIcon(QIcon::fromTheme(QLatin1String("list-add")));
+    d->delWordButton->setIcon(QIcon::fromTheme(QLatin1String("list-remove")));
+    d->repWordButton->setIcon(QIcon::fromTheme(QLatin1String("view-refresh")));
+    d->delWordButton->setEnabled(false);
+    d->repWordButton->setEnabled(false);
+
+    ignoreWordsLay->setAlignment(Qt::AlignTop);
+    ignoreWordsLay->addWidget(d->ignoreWordEdit, 0, 0, 1, 1);
+    ignoreWordsLay->addWidget(d->ignoreWordsBox, 1, 0, 5, 1);
+    ignoreWordsLay->addWidget(d->addWordButton,  1, 1, 1, 1);
+    ignoreWordsLay->addWidget(d->delWordButton,  2, 1, 1, 1);
+    ignoreWordsLay->addWidget(d->repWordButton,  3, 1, 1, 1);
+    ignoreWordsLay->setRowStretch(4, 10);
+    ignoreWordsLay->setColumnStretch(0, 10);
+    ignoreWordsLay->setContentsMargins(spacing, spacing, spacing, spacing);
+    ignoreWordsLay->setSpacing(spacing);
+
+    // --------------------------------------------------------
+
+    connect(d->ignoreWordsBox, SIGNAL(itemSelectionChanged()),
+            this, SLOT(slotIgnoreWordSelectionChanged()));
+
+    connect(d->addWordButton, SIGNAL(clicked()),
+            this, SLOT(slotAddWord()));
+
+    connect(d->delWordButton, SIGNAL(clicked()),
+            this, SLOT(slotDelWord()));
+
+    connect(d->repWordButton, SIGNAL(clicked()),
+            this, SLOT(slotRepWord()));
+
+    // ---
+
 #ifdef HAVE_SONNET
 
     Speller dict;
@@ -156,12 +224,14 @@ SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
 
     // ---
 
-    grid->addWidget(d->activeSpellCheck, 0, 0, 1, 1);
-    grid->addWidget(d->spellCheckLabel,  1, 0, 1, 1);
+    grid->setAlignment(Qt::AlignTop);
+    grid->addWidget(d->activeSpellCheck, 0, 0, 1, 2);
+    grid->addWidget(d->spellCheckLabel,  1, 0, 1, 2);
     grid->addWidget(dictgroup,           2, 0, 1, 1);
-    grid->addWidget(backgroup,           3, 0, 1, 1);
-    grid->setColumnStretch(0, 10);
+    grid->addWidget(backgroup,           2, 1, 1, 1);
+    grid->addWidget(ignoreWordsGroup,    3, 0, 1, 2);
     grid->setRowStretch(4, 10);
+    grid->setColumnStretch(0, 10);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);
 
@@ -187,6 +257,17 @@ void SpellCheckConfig::applySettings()
     SpellCheckContainer set;
 
     set.enableSpellCheck = d->activeSpellCheck->isChecked();
+
+    QStringList ignoredWords;
+
+    for (int i = 0 ; i < d->ignoreWordsBox->count() ; ++i)
+    {
+        QListWidgetItem* const item = d->ignoreWordsBox->item(i);
+        ignoredWords.append(item->text());
+    }
+
+    set.ignoredWords = ignoredWords;
+
     config->setSettings(set);
 }
 
@@ -199,9 +280,83 @@ void SpellCheckConfig::readSettings()
         return;
     }
 
-    SpellCheckContainer set = config->settings();
+    SpellCheckContainer set          = config->settings();
 
     d->activeSpellCheck->setChecked(set.enableSpellCheck);
+    d->ignoreWordsBox->insertItems(0, set.ignoredWords);
+}
+
+void SpellCheckConfig::slotDelWord()
+{
+    QListWidgetItem* const item = d->ignoreWordsBox->currentItem();
+
+    if (!item)
+    {
+        return;
+    }
+
+    d->ignoreWordsBox->takeItem(d->ignoreWordsBox->row(item));
+    delete item;
+}
+
+void SpellCheckConfig::slotRepWord()
+{
+    QString newWord = d->ignoreWordEdit->text();
+
+    if (newWord.isEmpty())
+    {
+        return;
+    }
+
+    if (!d->ignoreWordsBox->selectedItems().isEmpty())
+    {
+        d->ignoreWordsBox->selectedItems().at(0)->setText(newWord);
+        d->ignoreWordEdit->clear();
+    }
+}
+
+void SpellCheckConfig::slotIgnoreWordSelectionChanged()
+{
+    if (!d->ignoreWordsBox->selectedItems().isEmpty())
+    {
+        d->ignoreWordEdit->setText(d->ignoreWordsBox->selectedItems().at(0)->text());
+        d->delWordButton->setEnabled(true);
+        d->repWordButton->setEnabled(true);
+    }
+    else
+    {
+        d->delWordButton->setEnabled(false);
+        d->repWordButton->setEnabled(false);
+    }
+}
+
+void SpellCheckConfig::slotAddWord()
+{
+    QString newWord = d->ignoreWordEdit->text();
+
+    if (newWord.isEmpty())
+    {
+        return;
+    }
+
+    bool found = false;
+
+    for (int i = 0 ; i < d->ignoreWordsBox->count() ; ++i)
+    {
+        QListWidgetItem* const item = d->ignoreWordsBox->item(i);
+
+        if (newWord == item->text())
+        {
+            found = true;
+            break;
+        }
+    }
+
+    if (!found)
+    {
+        d->ignoreWordsBox->insertItem(d->ignoreWordsBox->count(), newWord);
+        d->ignoreWordEdit->clear();
+    }
 }
 
 } // namespace Digikam
