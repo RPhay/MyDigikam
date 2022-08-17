@@ -90,9 +90,9 @@ SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
                                                         "Spellchek is able to auto-detect the current language used in "
                                                         "text and will propose alternative with miss-spelled words.</p>"
                                                         "<p>With entries where alternative language can be specified, the "
-                                                        "contextual langue will be used to parse text. Spellcheck "
-                                                        "depends of open-source backends, including necessary dictionnaries, "
-                                                        "to operate sentence analysys in desired languages.</p>"), this);
+                                                        "contextual languagee will be used to parse text. Spellcheck "
+                                                        "depends of open-source backends, including necessary dictionaries, "
+                                                        "to operate sentence analisys in desired languages.</p>"), this);
     d->spellCheckLabel->setWordWrap(true);
 
     // ---
