@@ -220,9 +220,11 @@ void TextConverterDialog::slotUpdateText()
         !d->currentSelectedItem->destFileName().isEmpty())
     {
         d->textEditList[d->currentSelectedItem->url()] = newText;
-        
+
+        // update number of recornized words of text edit 
+        d->currentSelectedItem->setRecognizedWords(QString::fromLatin1("%1").arg(calculateNumberOfWords(newText)));
+
         QFile file(d->currentSelectedItem->destFileName());
-        
         if(file.open(QIODevice::ReadWrite | QIODevice::Truncate))
         {
             QTextStream stream(&file);
