@@ -54,8 +54,7 @@ public:
       : ocrTesseractLanguageMode   (nullptr),
         ocrTesseractPSMMode        (nullptr),
         ocrTesseractOEMMode        (nullptr),
-        ocrTesseractDpi            (nullptr),
-        errorView                  (nullptr)
+        ocrTesseractDpi            (nullptr)
     {
     }
 
@@ -70,8 +69,6 @@ public:
     DIntNumInput*       ocrTesseractDpi;
 
     QCheckBox*          saveTextFile;
-
-    ExifToolErrorView*  errorView;
 };
 
 
@@ -178,13 +175,8 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
     connect(d->ocrTesseractOEMMode, SIGNAL(activated(int)),
             this, SIGNAL(signalSettingsChanged()));
 
-//    connect(d->errorView, SIGNAL(signalSetupExifTool()),
-//            this, SIGNAL(signalSetupExifTool()));
 
     // ------------------------------------------------------------------------
-
-//    slotSetupChanged();
-
 }   
 
 TextConverterSettings::~TextConverterSettings()
@@ -250,13 +242,6 @@ void TextConverterSettings::setIsSaveTextFile(bool check)
 bool  TextConverterSettings::isSaveTextFile() const
 {
     return d->saveTextFile->isChecked();
-}
-
-void TextConverterSettings::slotSetupChanged()
-{
-    QScopedPointer<ExifToolParser> const parser(new ExifToolParser(this));
-
-    d->errorView->setVisible(!parser->exifToolAvailable());
 }
 
 } // namespace DigikamGenericTextConverterPlugin
