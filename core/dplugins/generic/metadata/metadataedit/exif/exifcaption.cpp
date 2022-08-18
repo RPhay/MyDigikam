@@ -169,21 +169,21 @@ EXIFCaption::EXIFCaption(QWidget* const parent)
     // --------------------------------------------------------
 
     grid->addWidget(d->documentNameCheck,       0, 0, 1, 1);
-    grid->addWidget(d->documentNameEdit,        0, 1, 1, 3);
-    grid->addWidget(d->imageDescCheck,          1, 0, 1, 1);
-    grid->addWidget(d->imageDescEdit,           1, 1, 1, 3);
-    grid->addWidget(d->artistCheck,             2, 0, 1, 1);
-    grid->addWidget(d->artistEdit,              2, 1, 1, 3);
-    grid->addWidget(d->copyrightCheck,          3, 0, 1, 1);
-    grid->addWidget(d->copyrightEdit,           3, 1, 1, 3);
-    grid->addWidget(d->userCommentCheck,        4, 0, 1, 4);
-    grid->addWidget(d->userCommentEdit,         5, 0, 1, 4);
-    grid->addWidget(d->syncJFIFCommentCheck,    6, 0, 1, 4);
-    grid->addWidget(d->syncXMPCaptionCheck,     7, 0, 1, 4);
-    grid->addWidget(d->syncIPTCCaptionCheck,    8, 0, 1, 4);
-    grid->addWidget(note,                       9, 0, 1, 4);
-    grid->setRowStretch(10, 10);
-    grid->setColumnStretch(2, 10);
+    grid->addWidget(d->documentNameEdit,        1, 0, 1, 1);
+    grid->addWidget(d->imageDescCheck,          2, 0, 1, 1);
+    grid->addWidget(d->imageDescEdit,           3, 0, 1, 1);
+    grid->addWidget(d->artistCheck,             4, 0, 1, 1);
+    grid->addWidget(d->artistEdit,              5, 0, 1, 1);
+    grid->addWidget(d->copyrightCheck,          6, 0, 1, 1);
+    grid->addWidget(d->copyrightEdit,           7, 0, 1, 1);
+    grid->addWidget(d->userCommentCheck,        8, 0, 1, 1);
+    grid->addWidget(d->userCommentEdit,         9, 0, 1, 1);
+    grid->addWidget(d->syncJFIFCommentCheck,   10, 0, 1, 1);
+    grid->addWidget(d->syncXMPCaptionCheck,    11, 0, 1, 1);
+    grid->addWidget(d->syncIPTCCaptionCheck,   12, 0, 1, 1);
+    grid->addWidget(note,                      13, 0, 1, 1);
+    grid->setRowStretch(14, 10);
+    grid->setColumnStretch(0, 10);
 
     int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                        QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
