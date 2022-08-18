@@ -693,11 +693,24 @@ private:
 
     // Other
 
+    /**
+     * Returns engine-specific language code for translation
+     */
     static QString languageApiCode(Engine engine, Language lang);
-    static Language language(Engine engine, const QString &langCode);
-    static int getSplitIndex(const QString &untranslatedText, int limit);
-    static bool isContainsSpace(const QString &text);
-    static void addSpaceBetweenParts(QString &text);
+
+    /**
+     * Parse language from response language code
+     */
+    static Language language(Engine engine, const QString& langCode);
+
+    /**
+     * Get split index of the text according to the limit
+     */
+    static int getSplitIndex(const QString& untranslatedText, int limit);
+
+    static bool isContainsSpace(const QString& text);
+
+    static void addSpaceBetweenParts(QString&text);
 
 private:
 

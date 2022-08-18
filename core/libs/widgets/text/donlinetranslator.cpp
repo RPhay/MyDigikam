@@ -2185,43 +2185,54 @@ void DOnlineTranslator::buildGoogleStateMachine()
     // States (Google sends translation, translit and dictionary in one request,
     // that will be splitted into several by the translation limit)
 
-    auto *translationState = new QState(m_stateMachine);
-    auto *finalState       = new QFinalState(m_stateMachine);
+    auto* translationState = new QState(m_stateMachine);
+    auto* finalState       = new QFinalState(m_stateMachine);
     m_stateMachine->setInitialState(translationState);
 
     translationState->addTransition(translationState, &QState::finished, finalState);
 
     // Setup translation state
 
-    buildSplitNetworkRequest(translationState, &DOnlineTranslator::requestGoogleTranslate, &DOnlineTranslator::parseGoogleTranslate, m_source, s_googleTranslateLimit);
+    buildSplitNetworkRequest(translationState,
+                             &DOnlineTranslator::requestGoogleTranslate,
+                             &DOnlineTranslator::parseGoogleTranslate,
+                             m_source,
+                             s_googleTranslateLimit);
 }
 
 void DOnlineTranslator::buildGoogleDetectStateMachine()
 {
     // States
-    auto *detectState = new QState(m_stateMachine);
-    auto *finalState = new QFinalState(m_stateMachine);
+
+    auto* detectState = new QState(m_stateMachine);
+    auto* finalState  = new QFinalState(m_stateMachine);
     m_stateMachine->setInitialState(detectState);
 
     detectState->addTransition(detectState, &QState::finished, finalState);
 
     // Setup detect state
+
     const QString text = m_source.left(getSplitIndex(m_source, s_googleTranslateLimit));
-    buildNetworkRequestState(detectState, &DOnlineTranslator::requestGoogleTranslate, &DOnlineTranslator::parseGoogleTranslate, text);
+    buildNetworkRequestState(detectState,
+                             &DOnlineTranslator::requestGoogleTranslate,
+                             &DOnlineTranslator::parseGoogleTranslate,
+                             text);
 }
 
 void DOnlineTranslator::buildYandexStateMachine()
 {
     // States
-    auto *keyState = new QState(m_stateMachine); // Generate SID from web version first to access API
-    auto *translationState = new QState(m_stateMachine);
-    auto *sourceTranslitState = new QState(m_stateMachine);
-    auto *translationTranslitState = new QState(m_stateMachine);
-    auto *dictionaryState = new QState(m_stateMachine);
-    auto *finalState = new QFinalState(m_stateMachine);
+
+    auto* keyState                  = new QState(m_stateMachine); // Generate SID from web version first to access API
+    auto* translationState          = new QState(m_stateMachine);
+    auto* sourceTranslitState       = new QState(m_stateMachine);
+    auto* translationTranslitState  = new QState(m_stateMachine);
+    auto* dictionaryState           = new QState(m_stateMachine);
+    auto* finalState                = new QFinalState(m_stateMachine);
     m_stateMachine->setInitialState(keyState);
 
     // Transitions
+
     keyState->addTransition(keyState, &QState::finished, translationState);
     translationState->addTransition(translationState, &QState::finished, sourceTranslitState);
     sourceTranslitState->addTransition(sourceTranslitState, &QState::finished, translationTranslitState);
@@ -2229,29 +2240,49 @@ void DOnlineTranslator::buildYandexStateMachine()
     dictionaryState->addTransition(dictionaryState, &QState::finished, finalState);
 
     // Setup key state
+
     if (s_yandexKey.isEmpty())
         buildNetworkRequestState(keyState, &DOnlineTranslator::requestYandexKey, &DOnlineTranslator::parseYandexKey);
     else
         keyState->setInitialState(new QFinalState(keyState));
 
     // Setup translation state
-    buildSplitNetworkRequest(translationState, &DOnlineTranslator::requestYandexTranslate, &DOnlineTranslator::parseYandexTranslate, m_source, s_yandexTranslateLimit);
+
+    buildSplitNetworkRequest(translationState,
+                             &DOnlineTranslator::requestYandexTranslate,
+                             &DOnlineTranslator::parseYandexTranslate,
+                             m_source,
+                             s_yandexTranslateLimit);
 
     // Setup source translit state
+
     if (m_sourceTranslitEnabled)
-        buildSplitNetworkRequest(sourceTranslitState, &DOnlineTranslator::requestYandexSourceTranslit, &DOnlineTranslator::parseYandexSourceTranslit, m_source, s_yandexTranslitLimit);
+        buildSplitNetworkRequest(sourceTranslitState,
+                                 &DOnlineTranslator::requestYandexSourceTranslit,
+                                 &DOnlineTranslator::parseYandexSourceTranslit,
+                                 m_source,
+                                 s_yandexTranslitLimit);
     else
         sourceTranslitState->setInitialState(new QFinalState(sourceTranslitState));
 
     // Setup translation translit state
+
     if (m_translationTranslitEnabled)
-        buildSplitNetworkRequest(translationTranslitState, &DOnlineTranslator::requestYandexTranslationTranslit, &DOnlineTranslator::parseYandexTranslationTranslit, m_translation, s_yandexTranslitLimit);
+        buildSplitNetworkRequest(translationTranslitState,
+                                 &DOnlineTranslator::requestYandexTranslationTranslit,
+                                 &DOnlineTranslator::parseYandexTranslationTranslit,
+                                 m_translation,
+                                 s_yandexTranslitLimit);
     else
         translationTranslitState->setInitialState(new QFinalState(translationTranslitState));
 
     // Setup dictionary state
+
     if (m_translationOptionsEnabled && !isContainsSpace(m_source))
-        buildNetworkRequestState(dictionaryState, &DOnlineTranslator::requestYandexDictionary, &DOnlineTranslator::parseYandexDictionary, m_source);
+        buildNetworkRequestState(dictionaryState,
+                                 &DOnlineTranslator::requestYandexDictionary,
+                                 &DOnlineTranslator::parseYandexDictionary,
+                                 m_source);
     else
         dictionaryState->setInitialState(new QFinalState(dictionaryState));
 }
@@ -2259,52 +2290,76 @@ void DOnlineTranslator::buildYandexStateMachine()
 void DOnlineTranslator::buildYandexDetectStateMachine()
 {
     // States
-    auto *keyState = new QState(m_stateMachine); // Generate SID from web version first to access API
-    auto *detectState = new QState(m_stateMachine);
-    auto *finalState = new QFinalState(m_stateMachine);
+
+    auto* keyState    = new QState(m_stateMachine); // Generate SID from web version first to access API
+    auto* detectState = new QState(m_stateMachine);
+    auto* finalState  = new QFinalState(m_stateMachine);
     m_stateMachine->setInitialState(keyState);
 
     // Transitions
+
     keyState->addTransition(keyState, &QState::finished, detectState);
     detectState->addTransition(detectState, &QState::finished, finalState);
 
     // Setup key state
+
     if (s_yandexKey.isEmpty())
-        buildNetworkRequestState(keyState, &DOnlineTranslator::requestYandexKey, &DOnlineTranslator::parseYandexKey);
+        buildNetworkRequestState(keyState,
+                                 &DOnlineTranslator::requestYandexKey,
+                                 &DOnlineTranslator::parseYandexKey);
     else
         keyState->setInitialState(new QFinalState(keyState));
 
     // Setup detect state
+
     const QString text = m_source.left(getSplitIndex(m_source, s_yandexTranslateLimit));
-    buildNetworkRequestState(detectState, &DOnlineTranslator::requestYandexTranslate, &DOnlineTranslator::parseYandexTranslate, text);
+
+    buildNetworkRequestState(detectState,
+                             &DOnlineTranslator::requestYandexTranslate,
+                             &DOnlineTranslator::parseYandexTranslate,
+                             text);
 }
 
 void DOnlineTranslator::buildBingStateMachine()
 {
     // States
-    auto *credentialsState = new QState(m_stateMachine); // Generate credentials from web version first to access API
-    auto *translationState = new QState(m_stateMachine);
-    auto *dictionaryState = new QState(m_stateMachine);
-    auto *finalState = new QFinalState(m_stateMachine);
+
+    auto* credentialsState = new QState(m_stateMachine); // Generate credentials from web version first to access API
+    auto* translationState = new QState(m_stateMachine);
+    auto* dictionaryState  = new QState(m_stateMachine);
+    auto* finalState       = new QFinalState(m_stateMachine);
     m_stateMachine->setInitialState(credentialsState);
 
     // Transitions
+
     credentialsState->addTransition(credentialsState, &QState::finished, translationState);
     translationState->addTransition(translationState, &QState::finished, dictionaryState);
     dictionaryState->addTransition(dictionaryState, &QState::finished, finalState);
 
     // Setup credentials state
+
     if (s_bingKey.isEmpty() || s_bingToken.isEmpty())
-        buildNetworkRequestState(credentialsState, &DOnlineTranslator::requestBingCredentials, &DOnlineTranslator::parseBingCredentials);
+        buildNetworkRequestState(credentialsState,
+                                 &DOnlineTranslator::requestBingCredentials,
+                                 &DOnlineTranslator::parseBingCredentials);
     else
         credentialsState->setInitialState(new QFinalState(credentialsState));
 
     // Setup translation state
-    buildSplitNetworkRequest(translationState, &DOnlineTranslator::requestBingTranslate, &DOnlineTranslator::parseBingTranslate, m_source, s_bingTranslateLimit);
+
+    buildSplitNetworkRequest(translationState,
+                             &DOnlineTranslator::requestBingTranslate,
+                             &DOnlineTranslator::parseBingTranslate,
+                             m_source,
+                             s_bingTranslateLimit);
 
     // Setup dictionary state
+
     if (m_translationOptionsEnabled && !isContainsSpace(m_source))
-        buildNetworkRequestState(dictionaryState, &DOnlineTranslator::requestBingDictionary, &DOnlineTranslator::parseBingDictionary, m_source);
+        buildNetworkRequestState(dictionaryState,
+                                 &DOnlineTranslator::requestBingDictionary,
+                                 &DOnlineTranslator::parseBingDictionary,
+                                 m_source);
     else
         dictionaryState->setInitialState(new QFinalState(dictionaryState));
 }
@@ -2312,102 +2367,152 @@ void DOnlineTranslator::buildBingStateMachine()
 void DOnlineTranslator::buildBingDetectStateMachine()
 {
     // States
-    auto *detectState = new QState(m_stateMachine);
-    auto *finalState = new QFinalState(m_stateMachine);
+
+    auto* detectState = new QState(m_stateMachine);
+    auto* finalState  = new QFinalState(m_stateMachine);
     m_stateMachine->setInitialState(detectState);
 
     detectState->addTransition(detectState, &QState::finished, finalState);
 
     // Setup translation state
+
     const QString text = m_source.left(getSplitIndex(m_source, s_bingTranslateLimit));
-    buildNetworkRequestState(detectState, &DOnlineTranslator::requestBingTranslate, &DOnlineTranslator::parseBingTranslate, text);
+
+    buildNetworkRequestState(detectState,
+                             &DOnlineTranslator::requestBingTranslate,
+                             &DOnlineTranslator::parseBingTranslate,
+                             text);
 }
 
 void DOnlineTranslator::buildLibreStateMachine()
 {
     // States
-    auto *languageDetectionState = new QState(m_stateMachine);
-    auto *translationState = new QState(m_stateMachine);
-    auto *finalState = new QFinalState(m_stateMachine);
+
+    auto* languageDetectionState = new QState(m_stateMachine);
+    auto* translationState       = new QState(m_stateMachine);
+    auto* finalState             = new QFinalState(m_stateMachine);
     m_stateMachine->setInitialState(languageDetectionState);
 
     // Transitions
+
     languageDetectionState->addTransition(languageDetectionState, &QState::finished, translationState);
     translationState->addTransition(translationState, &QState::finished, finalState);
 
     // Setup LibreTranslate lang code detection
-    buildNetworkRequestState(languageDetectionState, &DOnlineTranslator::requestLibreLangDetection, &DOnlineTranslator::parseLibreLangDetection, m_source);
+
+    buildNetworkRequestState(languageDetectionState,
+                             &DOnlineTranslator::requestLibreLangDetection,
+                             &DOnlineTranslator::parseLibreLangDetection,
+                             m_source);
 
     // Setup translation state
-    buildSplitNetworkRequest(translationState, &DOnlineTranslator::requestLibreTranslate, &DOnlineTranslator::parseLibreTranslate, m_source, s_libreTranslateLimit);
+
+    buildSplitNetworkRequest(translationState,
+                             &DOnlineTranslator::requestLibreTranslate,
+                             &DOnlineTranslator::parseLibreTranslate,
+                             m_source,
+                             s_libreTranslateLimit);
 }
 
 void DOnlineTranslator::buildLibreDetectStateMachine()
 {
     // States
-    auto *detectState = new QState(m_stateMachine);
-    auto *finalState = new QFinalState(m_stateMachine);
+
+    auto* detectState = new QState(m_stateMachine);
+    auto* finalState  = new QFinalState(m_stateMachine);
     m_stateMachine->setInitialState(detectState);
 
     detectState->addTransition(detectState, &QState::finished, finalState);
 
     // Setup lang detection state
+
     const QString text = m_source.left(getSplitIndex(m_source, s_libreTranslateLimit));
-    buildNetworkRequestState(detectState, &DOnlineTranslator::requestLibreLangDetection, &DOnlineTranslator::parseLibreLangDetection, text);
+
+    buildNetworkRequestState(detectState,
+                             &DOnlineTranslator::requestLibreLangDetection,
+                             &DOnlineTranslator::parseLibreLangDetection,
+                             text);
 }
 
 void DOnlineTranslator::buildLingvaStateMachine()
 {
     // States
-    auto *translationState = new QState(m_stateMachine);
-    auto *finalState = new QFinalState(m_stateMachine);
+
+    auto* translationState = new QState(m_stateMachine);
+    auto* finalState       = new QFinalState(m_stateMachine);
     m_stateMachine->setInitialState(translationState);
 
     // Transitions
+
     translationState->addTransition(translationState, &QState::finished, finalState);
 
     // Setup translation state
-    buildSplitNetworkRequest(translationState, &DOnlineTranslator::requestLingvaTranslate, &DOnlineTranslator::parseLingvaTranslate, m_source, s_googleTranslateLimit);
+
+    buildSplitNetworkRequest(translationState,
+                             &DOnlineTranslator::requestLingvaTranslate,
+                             &DOnlineTranslator::parseLingvaTranslate,
+                             m_source,
+                             s_googleTranslateLimit);
 }
 
 void DOnlineTranslator::buildLingvaDetectStateMachine()
 {
     // States
-    auto *detectState = new QState(m_stateMachine);
-    auto *finalState = new QFinalState(m_stateMachine);
+
+    auto* detectState = new QState(m_stateMachine);
+    auto* finalState  = new QFinalState(m_stateMachine);
     m_stateMachine->setInitialState(detectState);
 
     detectState->addTransition(detectState, &QState::finished, finalState);
 
     // Setup lang detection state
+
     const QString text = m_source.left(getSplitIndex(m_source, s_googleTranslateLimit));
-    buildNetworkRequestState(detectState, &DOnlineTranslator::requestLingvaTranslate, &DOnlineTranslator::parseLingvaTranslate, text);
+
+    buildNetworkRequestState(detectState,
+                             &DOnlineTranslator::requestLingvaTranslate,
+                             &DOnlineTranslator::parseLingvaTranslate,
+                             text);
 }
 
-void DOnlineTranslator::buildSplitNetworkRequest(QState *parent, void (DOnlineTranslator::*requestMethod)(), void (DOnlineTranslator::*parseMethod)(), const QString &text, int textLimit)
+void DOnlineTranslator::buildSplitNetworkRequest(QState* parent,
+                                                 void (DOnlineTranslator::*requestMethod)(),
+                                                 void (DOnlineTranslator::*parseMethod)(),
+                                                 const QString& text,
+                                                 int textLimit)
 {
-    QString unsendedText = text;
-    auto *nextTranslationState = new QState(parent);
+    QString unsendedText       = text;
+    auto* nextTranslationState = new QState(parent);
     parent->setInitialState(nextTranslationState);
 
-    while (!unsendedText.isEmpty()) {
-        auto *currentTranslationState = nextTranslationState;
-        nextTranslationState = new QState(parent);
+    while (!unsendedText.isEmpty())
+    {
+        auto* currentTranslationState = nextTranslationState;
+        nextTranslationState          = new QState(parent);
 
         // Do not translate the part if it looks like garbage
+
         const int splitIndex = getSplitIndex(unsendedText, textLimit);
-        if (splitIndex == -1) {
+
+        if (splitIndex == -1)
+        {
             currentTranslationState->setProperty(s_textProperty, unsendedText.left(textLimit));
             currentTranslationState->addTransition(nextTranslationState);
-            connect(currentTranslationState, &QState::entered, this, &DOnlineTranslator::skipGarbageText);
+
+            connect(currentTranslationState, &QState::entered,
+                    this, &DOnlineTranslator::skipGarbageText);
 
             // Remove the parsed part from the next parsing
+
             unsendedText = unsendedText.mid(textLimit);
-        } else {
+        }
+        else
+        {
             buildNetworkRequestState(currentTranslationState, requestMethod, parseMethod, unsendedText.left(splitIndex));
             currentTranslationState->addTransition(currentTranslationState, &QState::finished, nextTranslationState);
 
             // Remove the parsed part from the next parsing
+
             unsendedText = unsendedText.mid(splitIndex);
         }
     }
@@ -2415,38 +2520,52 @@ void DOnlineTranslator::buildSplitNetworkRequest(QState *parent, void (DOnlineTr
     nextTranslationState->addTransition(new QFinalState(parent));
 }
 
-void DOnlineTranslator::buildNetworkRequestState(QState *parent, void (DOnlineTranslator::*requestMethod)(), void (DOnlineTranslator::*parseMethod)(), const QString &text)
+void DOnlineTranslator::buildNetworkRequestState(QState* parent,
+                                                 void (DOnlineTranslator::*requestMethod)(),
+                                                 void (DOnlineTranslator::*parseMethod)(),
+                                                 const QString& text)
 {
     // Network substates
-    auto *requestingState = new QState(parent);
-    auto *parsingState = new QState(parent);
+
+    auto* requestingState = new QState(parent);
+    auto* parsingState    = new QState(parent);
 
     parent->setInitialState(requestingState);
 
     // Substates transitions
+
     requestingState->addTransition(m_networkManager, &QNetworkAccessManager::finished, parsingState);
     parsingState->addTransition(new QFinalState(parent));
 
     // Setup requesting state
+
     requestingState->setProperty(s_textProperty, text);
-    connect(requestingState, &QState::entered, this, requestMethod);
+
+    connect(requestingState, &QState::entered,
+            this, requestMethod);
 
     // Setup parsing state
-    connect(parsingState, &QState::entered, this, parseMethod);
+
+    connect(parsingState, &QState::entered,
+            this, parseMethod);
 }
 
 void DOnlineTranslator::requestYandexTranslit(Language language)
 {
     // Check if language is supported (need to check here because language may be autodetected)
-    if (!isSupportTranslit(Yandex, language)) {
-        auto *state = qobject_cast<QState *>(sender());
+
+    if (!isSupportTranslit(Yandex, language))
+    {
+        auto* state = qobject_cast<QState *>(sender());
         state->addTransition(new QFinalState(state->parentState()));
+
         return;
     }
 
     const QString text = sender()->property(s_textProperty).toString();
 
     // Generate API url
+
     QUrl url(QStringLiteral("https://translate.yandex.net/translit/translit"));
     url.setQuery(QString::fromUtf8("text=%1&lang=%2")
                  .arg(QString::fromUtf8(QUrl::toPercentEncoding(text)))
@@ -2455,28 +2574,35 @@ void DOnlineTranslator::requestYandexTranslit(Language language)
     m_currentReply = m_networkManager->get(QNetworkRequest(url));
 }
 
-void DOnlineTranslator::parseYandexTranslit(QString &text)
+void DOnlineTranslator::parseYandexTranslit(QString& text)
 {
     m_currentReply->deleteLater();
 
-    if (m_currentReply->error() != QNetworkReply::NoError) {
+    if (m_currentReply->error() != QNetworkReply::NoError)
+    {
         resetData(NetworkError, m_currentReply->errorString());
+
         return;
     }
 
     const QByteArray reply = m_currentReply->readAll();
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
+
     text += QString::fromUtf8(reply.mid(1).chopped(1));
+
 #else
+
     text += QString::fromUtf8(reply.mid(1));
     text.chop(1);
+
 #endif
+
 }
 
-void DOnlineTranslator::resetData(TranslationError error, const QString &errorString)
+void DOnlineTranslator::resetData(TranslationError error, const QString& errorString)
 {
-    m_error = error;
+    m_error       = error;
     m_errorString = errorString;
     m_translation.clear();
     m_translationTranslit.clear();
@@ -2485,7 +2611,9 @@ void DOnlineTranslator::resetData(TranslationError error, const QString &errorSt
     m_translationOptions.clear();
 
     m_stateMachine->stop();
-    for (QAbstractState *state : m_stateMachine->findChildren<QAbstractState *>()) {
+
+    for (QAbstractState* state : m_stateMachine->findChildren<QAbstractState*>())
+    {
         if (!m_stateMachine->configuration().contains(state))
             state->deleteLater();
     }
@@ -2493,64 +2621,70 @@ void DOnlineTranslator::resetData(TranslationError error, const QString &errorSt
 
 bool DOnlineTranslator::isSupportTranslit(Engine engine, Language lang)
 {
-    switch (engine) {
-    case Google:
-        isSupportTranslation(Google, lang); // Google supports transliteration for all supported languages
-        break;
-    case Yandex:
-        switch (lang) {
-        case Amharic:
-        case Armenian:
-        case Bengali:
-        case SimplifiedChinese:
-        case Georgian:
-        case Greek:
-        case Gujarati:
-        case Hebrew:
-        case Hindi:
-        case Japanese:
-        case Kannada:
-        case Korean:
-        case Malayalam:
-        case Marathi:
-        case Nepali:
-        case Punjabi:
-        case Russian:
-        case Sinhala:
-        case Tamil:
-        case Telugu:
-        case Thai:
-        case Yiddish:
-            return true;
-        default:
+    switch (engine)
+    {
+        case Google:
+            isSupportTranslation(Google, lang); // Google supports transliteration for all supported languages
+            break;
+
+        case Yandex:
+            switch (lang)
+            {
+                case Amharic:
+                case Armenian:
+                case Bengali:
+                case SimplifiedChinese:
+                case Georgian:
+                case Greek:
+                case Gujarati:
+                case Hebrew:
+                case Hindi:
+                case Japanese:
+                case Kannada:
+                case Korean:
+                case Malayalam:
+                case Marathi:
+                case Nepali:
+                case Punjabi:
+                case Russian:
+                case Sinhala:
+                case Tamil:
+                case Telugu:
+                case Thai:
+                case Yiddish:
+                    return true;
+                default:
+                    return false;
+            }
+
+        case Bing:
+            switch (lang)
+            {
+                case Arabic:
+                case Bengali:
+                case Gujarati:
+                case Hebrew:
+                case Hindi:
+                case Japanese:
+                case Kannada:
+                case Malayalam:
+                case Marathi:
+                case Punjabi:
+                case SerbianCyrillic:
+                case SerbianLatin:
+                case Tamil:
+                case Telugu:
+                case Thai:
+                case SimplifiedChinese:
+                case TraditionalChinese:
+                    return true;
+                default:
+                    return false;
+            }
+
+        case LibreTranslate:    // LibreTranslate doesn't support translit
+        case Lingva:            // Although Lingvo is a frontend to Google Translate, it doesn't support transliteration
             return false;
-        }
-    case Bing:
-        switch (lang) {
-        case Arabic:
-        case Bengali:
-        case Gujarati:
-        case Hebrew:
-        case Hindi:
-        case Japanese:
-        case Kannada:
-        case Malayalam:
-        case Marathi:
-        case Punjabi:
-        case SerbianCyrillic:
-        case SerbianLatin:
-        case Tamil:
-        case Telugu:
-        case Thai:
-        case SimplifiedChinese:
-        case TraditionalChinese:
-            return true;
-        default:
-            return false;
-        }
-    case LibreTranslate: // LibreTranslate doesn't support translit
-    case Lingva: // Although Lingvo is a frontend to Google Translate, it doesn't support transliteration
-        return false;
     }
 
     return false;
@@ -2558,353 +2692,413 @@ bool DOnlineTranslator::isSupportTranslit(Engine engine, Language lang)
 
 bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, Language translationLang)
 {
-    switch (engine) {
-    case Google:
-        return isSupportTranslation(Google, sourceLang) && isSupportTranslation(Google, translationLang); // Google supports dictionary for all supported languages
-    case Yandex:
-        switch (sourceLang) {
-        case Belarusian:
-            switch (translationLang) {
-            case Belarusian:
-            case Russian:
-                return true;
-            default:
-                return false;
-            }
-        case Bulgarian:
-            switch (translationLang) {
-            case Russian:
-                return true;
-            default:
-                return false;
-            }
-        case Czech:
-        case Danish:
-        case Dutch:
-        case Estonian:
-        case Greek:
-        case Latvian:
-        case Norwegian:
-        case Portuguese:
-        case Slovak:
-        case Swedish:
-            switch (translationLang) {
-            case English:
-            case Russian:
-                return true;
-            default:
-                return false;
-            }
-        case German:
-            switch (translationLang) {
-            case German:
-            case English:
-            case Russian:
-            case Turkish:
-                return true;
-            default:
-                return false;
-            }
-        case English:
-            switch (translationLang) {
-            case Czech:
-            case Danish:
-            case German:
-            case Greek:
-            case English:
-            case Spanish:
-            case Estonian:
-            case Finnish:
-            case French:
-            case Italian:
-            case Lithuanian:
-            case Latvian:
-            case Dutch:
-            case Norwegian:
-            case Portuguese:
-            case Russian:
-            case Slovak:
-            case Swedish:
-            case Turkish:
-            case Ukrainian:
-                return true;
-            default:
-                return false;
-            }
-        case Spanish:
-            switch (translationLang) {
-            case English:
-            case Spanish:
-            case Russian:
-                return true;
-            default:
-                return false;
-            }
-        case Finnish:
-            switch (translationLang) {
-            case English:
-            case Russian:
-            case Finnish:
-                return true;
-            default:
-                return false;
-            }
-        case French:
-            switch (translationLang) {
-            case French:
-            case English:
-            case Russian:
-                return true;
-            default:
-                return false;
-            }
-        case Hungarian:
-            switch (translationLang) {
-            case Hungarian:
-            case Russian:
-                return true;
-            default:
-                return false;
-            }
-        case Italian:
-            switch (translationLang) {
-            case English:
-            case Italian:
-            case Russian:
-                return true;
-            default:
-                return false;
-            }
-        case Lithuanian:
-            switch (translationLang) {
-            case English:
-            case Lithuanian:
-            case Russian:
-                return true;
-            default:
-                return false;
-            }
-        case Mari:
-        case HillMari:
-        case Polish:
-        case Tatar:
-            switch (translationLang) {
-            case Russian:
-                return true;
-            default:
-                return false;
-            }
-        case Russian:
-            switch (translationLang) {
-            case Belarusian:
-            case Bulgarian:
-            case Czech:
-            case Danish:
-            case German:
-            case Greek:
-            case English:
-            case Spanish:
-            case Estonian:
-            case Finnish:
-            case French:
-            case Italian:
-            case Lithuanian:
-            case Latvian:
-            case Mari:
-            case HillMari:
-            case Dutch:
-            case Norwegian:
-            case Portuguese:
-            case Russian:
-            case Slovak:
-            case Swedish:
-            case Turkish:
-            case Tatar:
-            case Ukrainian:
-                return true;
-            default:
-                return false;
-            }
-        case Turkish:
-            switch (translationLang) {
-            case German:
-            case English:
-            case Russian:
-                return true;
-            default:
-                return false;
-            }
-        case Ukrainian:
-            switch (translationLang) {
-            case English:
-            case Russian:
-            case Ukrainian:
-                return true;
-            default:
-                return false;
-            }
-        default:
-            return false;
-        }
-    case Bing:
-        // Bing support dictionary only to or from English
-        Language secondLang;
-        if (sourceLang == English)
-            secondLang = translationLang;
-        else if (translationLang == English)
-            secondLang = sourceLang;
-        else
-            return false;
+    switch (engine)
+    {
+        case Google:
+            // Google supports dictionary for all supported languages
+            return isSupportTranslation(Google, sourceLang) && isSupportTranslation(Google, translationLang);
 
-        switch (secondLang) {
-        case Afrikaans:
-        case Arabic:
-        case Bengali:
-        case Bosnian:
-        case Bulgarian:
-        case Catalan:
-        case SimplifiedChinese:
-        case Croatian:
-        case Czech:
-        case Danish:
-        case Dutch:
-        case Estonian:
-        case Finnish:
-        case French:
-        case German:
-        case Greek:
-        case HaitianCreole:
-        case Hebrew:
-        case Hindi:
-        case Hmong:
-        case Hungarian:
-        case Icelandic:
-        case Indonesian:
-        case Italian:
-        case Japanese:
-        case Swahili:
-        case Klingon:
-        case Korean:
-        case Latvian:
-        case Lithuanian:
-        case Malay:
-        case Maltese:
-        case Norwegian:
-        case Persian:
-        case Polish:
-        case Portuguese:
-        case Romanian:
-        case Russian:
-        case SerbianLatin:
-        case Slovak:
-        case Slovenian:
-        case Spanish:
-        case Swedish:
-        case Tamil:
-        case Thai:
-        case Turkish:
-        case Ukrainian:
-        case Urdu:
-        case Vietnamese:
-        case Welsh:
-            return true;
-        default:
-            return false;
-        }
-    case LibreTranslate: // LibreTranslate doesn't support dictinaries
-    case Lingva: // Although Lingvo is a frontend to Google Translate, it doesn't support dictionaries
-        return false;
+        case Yandex:
+            switch (sourceLang)
+            {
+                case Belarusian:
+                    switch (translationLang)
+                    {
+                        case Belarusian:
+                        case Russian:
+                            return true;
+                        default:
+                            return false;
+                    }
+
+                case Bulgarian:
+                    switch (translationLang)
+                    {
+                        case Russian:
+                            return true;
+                        default:
+                            return false;
+                    }
+
+                case Czech:
+                case Danish:
+                case Dutch:
+                case Estonian:
+                case Greek:
+                case Latvian:
+                case Norwegian:
+                case Portuguese:
+                case Slovak:
+                case Swedish:
+                    switch (translationLang)
+                    {
+                        case English:
+                        case Russian:
+                            return true;
+                        default:
+                            return false;
+                    }
+
+                case German:
+                    switch (translationLang)
+                    {
+                        case German:
+                        case English:
+                        case Russian:
+                        case Turkish:
+                            return true;
+                        default:
+                            return false;
+                    }
+
+                case English:
+                    switch (translationLang)
+                    {
+                        case Czech:
+                        case Danish:
+                        case German:
+                        case Greek:
+                        case English:
+                        case Spanish:
+                        case Estonian:
+                        case Finnish:
+                        case French:
+                        case Italian:
+                        case Lithuanian:
+                        case Latvian:
+                        case Dutch:
+                        case Norwegian:
+                        case Portuguese:
+                        case Russian:
+                        case Slovak:
+                        case Swedish:
+                        case Turkish:
+                        case Ukrainian:
+                            return true;
+                        default:
+                            return false;
+                    }
+
+                case Spanish:
+                    switch (translationLang)
+                    {
+                        case English:
+                        case Spanish:
+                        case Russian:
+                            return true;
+                        default:
+                            return false;
+                    }
+
+                case Finnish:
+                    switch (translationLang)
+                    {
+                        case English:
+                        case Russian:
+                        case Finnish:
+                            return true;
+                        default:
+                            return false;
+                    }
+                case French:
+                    switch (translationLang)
+                    {
+                        case French:
+                        case English:
+                        case Russian:
+                            return true;
+                        default:
+                            return false;
+                    }
+                
+                case Hungarian:
+                    switch (translationLang)
+                    {
+                        case Hungarian:
+                        case Russian:
+                            return true;
+                        default:
+                            return false;
+                    }
+
+                case Italian:
+                    switch (translationLang)
+                    {
+                        case English:
+                        case Italian:
+                        case Russian:
+                            return true;
+                        default:
+                            return false;
+                    }
+
+                case Lithuanian:
+                    switch (translationLang)
+                    {
+                        case English:
+                        case Lithuanian:
+                        case Russian:
+                            return true;
+                        default:
+                            return false;
+                    }
+
+                case Mari:
+                case HillMari:
+                case Polish:
+                case Tatar:
+                    switch (translationLang)
+                    {
+                        case Russian:
+                            return true;
+                        default:
+                            return false;
+                    }
+
+                case Russian:
+                    switch (translationLang)
+                    {
+                        case Belarusian:
+                        case Bulgarian:
+                        case Czech:
+                        case Danish:
+                        case German:
+                        case Greek:
+                        case English:
+                        case Spanish:
+                        case Estonian:
+                        case Finnish:
+                        case French:
+                        case Italian:
+                        case Lithuanian:
+                        case Latvian:
+                        case Mari:
+                        case HillMari:
+                        case Dutch:
+                        case Norwegian:
+                        case Portuguese:
+                        case Russian:
+                        case Slovak:
+                        case Swedish:
+                        case Turkish:
+                        case Tatar:
+                        case Ukrainian:
+                            return true;
+                        default:
+                            return false;
+                    }
+
+                    case Turkish:
+                        switch (translationLang)
+                        {
+                            case German:
+                            case English:
+                            case Russian:
+                                return true;
+                            default:
+                                return false;
+                        }
+
+                    case Ukrainian:
+                        switch (translationLang)
+                        {
+                            case English:
+                            case Russian:
+                            case Ukrainian:
+                                return true;
+                            default:
+                                return false;
+                    }
+
+                    default:
+                        return false;
+            }
+
+            case Bing:
+                // Bing support dictionary only to or from English
+                Language secondLang;
+
+                if      (sourceLang == English)
+                    secondLang = translationLang;
+                else if (translationLang == English)
+                    secondLang = sourceLang;
+                else
+                    return false;
+
+                switch (secondLang)
+                {
+                    case Afrikaans:
+                    case Arabic:
+                    case Bengali:
+                    case Bosnian:
+                    case Bulgarian:
+                    case Catalan:
+                    case SimplifiedChinese:
+                    case Croatian:
+                    case Czech:
+                    case Danish:
+                    case Dutch:
+                    case Estonian:
+                    case Finnish:
+                    case French:
+                    case German:
+                    case Greek:
+                    case HaitianCreole:
+                    case Hebrew:
+                    case Hindi:
+                    case Hmong:
+                    case Hungarian:
+                    case Icelandic:
+                    case Indonesian:
+                    case Italian:
+                    case Japanese:
+                    case Swahili:
+                    case Klingon:
+                    case Korean:
+                    case Latvian:
+                    case Lithuanian:
+                    case Malay:
+                    case Maltese:
+                    case Norwegian:
+                    case Persian:
+                    case Polish:
+                    case Portuguese:
+                    case Romanian:
+                    case Russian:
+                    case SerbianLatin:
+                    case Slovak:
+                    case Slovenian:
+                    case Spanish:
+                    case Swedish:
+                    case Tamil:
+                    case Thai:
+                    case Turkish:
+                    case Ukrainian:
+                    case Urdu:
+                    case Vietnamese:
+                    case Welsh:
+                        return true;
+                    default:
+                        return false;
+                }
+
+            case LibreTranslate: // LibreTranslate doesn't support dictinaries
+            case Lingva:         // Although Lingvo is a frontend to Google Translate, it doesn't support dictionaries
+                return false;
     }
 
     return false;
 }
 
-// Returns engine-specific language code for translation
 QString DOnlineTranslator::languageApiCode(Engine engine, Language lang)
 {
     if (!isSupportTranslation(engine, lang))
-        return {};
+        return QString();
 
-    switch (engine) {
-    case Google:
-        return s_googleLanguageCodes.value(lang, s_genericLanguageCodes.value(lang));
-    case Yandex:
-        return s_yandexLanguageCodes.value(lang, s_genericLanguageCodes.value(lang));
-    case Bing:
-        return s_bingLanguageCodes.value(lang, s_genericLanguageCodes.value(lang));
-    case LibreTranslate:
-        return s_genericLanguageCodes.value(lang);
-    case Lingva:
-        return s_lingvaLanguageCodes.value(lang, s_genericLanguageCodes.value(lang));
+    switch (engine)
+    {
+        case Google:
+            return s_googleLanguageCodes.value(lang, s_genericLanguageCodes.value(lang));
+
+        case Yandex:
+            return s_yandexLanguageCodes.value(lang, s_genericLanguageCodes.value(lang));
+
+        case Bing:
+            return s_bingLanguageCodes.value(lang, s_genericLanguageCodes.value(lang));
+
+        case LibreTranslate:
+            return s_genericLanguageCodes.value(lang);
+
+        case Lingva:
+            return s_lingvaLanguageCodes.value(lang, s_genericLanguageCodes.value(lang));
     }
 
     Q_UNREACHABLE();
 }
 
-// Parse language from response language code
 DOnlineTranslator::Language DOnlineTranslator::language(Engine engine, const QString &langCode)
 {
     // Engine exceptions
-    switch (engine) {
-    case Google:
-        return s_googleLanguageCodes.key(langCode, s_genericLanguageCodes.key(langCode, NoLanguage));
-    case Yandex:
-        return s_yandexLanguageCodes.key(langCode, s_genericLanguageCodes.key(langCode, NoLanguage));
-    case Bing:
-        return s_bingLanguageCodes.key(langCode, s_genericLanguageCodes.key(langCode, NoLanguage));
-    case LibreTranslate:
-        return s_genericLanguageCodes.key(langCode, NoLanguage);
-    case Lingva:
-        return s_lingvaLanguageCodes.key(langCode, s_genericLanguageCodes.key(langCode, NoLanguage));
+
+    switch (engine)
+    {
+        case Google:
+            return s_googleLanguageCodes.key(langCode, s_genericLanguageCodes.key(langCode, NoLanguage));
+
+        case Yandex:
+            return s_yandexLanguageCodes.key(langCode, s_genericLanguageCodes.key(langCode, NoLanguage));
+
+        case Bing:
+            return s_bingLanguageCodes.key(langCode, s_genericLanguageCodes.key(langCode, NoLanguage));
+
+        case LibreTranslate:
+            return s_genericLanguageCodes.key(langCode, NoLanguage);
+
+        case Lingva:
+            return s_lingvaLanguageCodes.key(langCode, s_genericLanguageCodes.key(langCode, NoLanguage));
     }
 
     Q_UNREACHABLE();
 }
 
-// Get split index of the text according to the limit
 int DOnlineTranslator::getSplitIndex(const QString &untranslatedText, int limit)
 {
     if (untranslatedText.size() < limit)
         return limit;
 
     int splitIndex = untranslatedText.lastIndexOf(QLatin1String(". "), limit - 1);
+
     if (splitIndex != -1)
         return splitIndex + 1;
 
     splitIndex = untranslatedText.lastIndexOf(QLatin1Char(' '), limit - 1);
+
     if (splitIndex != -1)
         return splitIndex + 1;
 
     splitIndex = untranslatedText.lastIndexOf(QLatin1Char('\n'), limit - 1);
+
     if (splitIndex != -1)
         return splitIndex + 1;
 
     // Non-breaking space
+
     splitIndex = untranslatedText.lastIndexOf(0x00a0, limit - 1);
+
     if (splitIndex != -1)
         return splitIndex + 1;
 
     // If the text has not passed any check and is most likely garbage
+
     return limit;
 }
 
-bool DOnlineTranslator::isContainsSpace(const QString &text)
+bool DOnlineTranslator::isContainsSpace(const QString& text)
 {
-    return std::any_of(text.cbegin(), text.cend(), [](QChar symbol) {
-        return symbol.isSpace();
-    });
+    return std::any_of(text.cbegin(), text.cend(), [](QChar symbol)
+        {
+            return symbol.isSpace();
+        }
+    );
 }
 
-void DOnlineTranslator::addSpaceBetweenParts(QString &text)
+void DOnlineTranslator::addSpaceBetweenParts(QString& text)
 {
     if (text.isEmpty())
         return;
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
-    if (!text.back().isSpace()) {
+
+    if (!text.back().isSpace())
+    {
+
 #else
-    if (!text.at(text.size() - 1).isSpace()) {
+
+    if (!text.at(text.size() - 1).isSpace())
+    {
+
 #endif
+
         text.append(QLatin1Char(' '));
     }
 }
