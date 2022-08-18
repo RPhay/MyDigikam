@@ -27,6 +27,7 @@
 #include <QTest>
 #include <QSignalSpy>
 #include <QObject>
+#include <QElapsedTimer>
 
 // Local includes
 
@@ -41,14 +42,17 @@ bool do_online_translation(const QString& text,
                            DOnlineTranslator::Language srcLang)
 {
     qCDebug(DIGIKAM_TESTS_LOG) << "-----------------------------------------------------:";
-    qCDebug(DIGIKAM_TESTS_LOG) << "Text to translate   :" << text;
-    qCDebug(DIGIKAM_TESTS_LOG) << "With WebService     :" << engine;
-    qCDebug(DIGIKAM_TESTS_LOG) << "To target language  :" << trLang;
-    qCDebug(DIGIKAM_TESTS_LOG) << "With source language:" << srcLang;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Text to translate        :" << text;
+    qCDebug(DIGIKAM_TESTS_LOG) << "With WebService          :" << engine;
+    qCDebug(DIGIKAM_TESTS_LOG) << "To target language       :" << trLang;
+    qCDebug(DIGIKAM_TESTS_LOG) << "With source language     :" << srcLang;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Elapsed time to translate:" << srcLang;
 
     DOnlineTranslator* const trengine = new DOnlineTranslator;
 
     QSignalSpy spy(trengine, SIGNAL(signalFinished()));
+    QElapsedTimer timer;
+    timer.start();
 
     trengine->translate(text,       // String to translate
                         engine,     // Web service
@@ -56,15 +60,17 @@ bool do_online_translation(const QString& text,
                         srcLang,    // Source langage
                         DOnlineTranslator::Auto);
 
-    bool b = spy.wait(3000);
+    bool b = spy.wait(5000);
+    qCDebug(DIGIKAM_TESTS_LOG) << "Elapsed time to translate:" << timer.elapsed() << "ms";
 
     if (b)
     {
-        qCDebug(DIGIKAM_TESTS_LOG) << "Translated text     :" << trengine->translation();
+        qCDebug(DIGIKAM_TESTS_LOG) << "Translated text          :" << trengine->translation();
     }
     else
     {
         qCDebug(DIGIKAM_TESTS_LOG) << "Time-out with online translator";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Error                    :" << trengine->error();
     }
 
     delete trengine;
@@ -95,6 +101,26 @@ int main(int argc, char* argv[])
                           DOnlineTranslator::Google,
                           DOnlineTranslator::TraditionalChinese,
                           DOnlineTranslator::Italian);
+
+    do_online_translation(QString::fromUtf8("My dog speak very well French"),
+                          DOnlineTranslator::Bing,
+                          DOnlineTranslator::French,
+                          DOnlineTranslator::English);
+
+    do_online_translation(QString::fromUtf8("Mon vélo a crevé ce matin sur la route du travail"),
+                          DOnlineTranslator::LibreTranslate,
+                          DOnlineTranslator::German,
+                          DOnlineTranslator::French);
+
+    do_online_translation(QString::fromUtf8("Hier mon réveil a sonné à 5h00 du matin"),
+                          DOnlineTranslator::Lingva,
+                          DOnlineTranslator::English,
+                          DOnlineTranslator::French);
+
+    do_online_translation(QString::fromUtf8("Les pates c'est bon avec de la sauce tomate"),
+                          DOnlineTranslator::Yandex,
+                          DOnlineTranslator::Russian,
+                          DOnlineTranslator::French);
 
     return 0;
 }

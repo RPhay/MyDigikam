@@ -291,7 +291,7 @@ public:
         NoError,
 
         /**
-         *Unsupported combination of parameters
+         * Unsupported combination of parameters
          */
         ParametersError,
 
@@ -310,6 +310,7 @@ public:
          */
         ParsingError
     };
+    Q_ENUM(TranslationError)
 
     /**
      * @brief Create object
