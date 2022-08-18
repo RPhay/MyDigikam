@@ -69,6 +69,7 @@ public:
 
     /**
      * Helper methods to handle text contents as plain text.
+     * If ignored or accepted characters masks are set, text is filtered accordingly.
      */
     QString text() const;
     void setText(const QString& text);
@@ -78,8 +79,16 @@ public:
      * The mask of characters is passed as string (ex: "+/!()").
      * By default the mask is empty.
      */
-    QString ignoreCharacters() const;
-    void setIgnoreCharacters(const QString& mask);
+    QString ignoredCharacters() const;
+    void setIgnoredCharacters(const QString& mask);
+
+    /**
+     * Helper methods to handle the mask of accepted characters in text editor.
+     * The mask of characters is passed as string (ex: "abcABC").
+     * By default the mask is empty.
+     */
+    QString acceptedCharacters() const;
+    void setAcceptedCharacters(const QString& mask);
 
     /**
      * Helper methods to handle visible lines used by the widget to show text.
@@ -155,6 +164,7 @@ public:
 
     /**
      * Helper methods to handle text contents as plain text.
+     * If ignored or accepted characters masks are set, text is filtered accordingly.
      */
     QString text() const;
     void setText(const QString& text);
@@ -164,8 +174,16 @@ public:
      * The mask of characters is passed as string (ex: "+/!()").
      * By default the mask is empty.
      */
-    QString ignoreCharacters() const;
-    void setIgnoreCharacters(const QString& mask);
+    QString ignoredCharacters() const;
+    void setIgnoredCharacters(const QString& mask);
+
+    /**
+     * Helper methods to handle the mask of accepted characters in text editor.
+     * The mask of characters is passed as string (ex: "abcABC").
+     * By default the mask is empty.
+     */
+    QString acceptedCharacters() const;
+    void setAcceptedCharacters(const QString& mask);
 
     /**
      * Helper methods to handle visible lines used by the widget to show text.

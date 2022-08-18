@@ -72,15 +72,6 @@ Q_SIGNALS:
 
 private:
 
-    void updateIcon(DTextEdit* const edit,
-                    QLabel* const label);
-
-private Q_SLOTS:
-
-    void slotUpdateIcons();
-
-private:
-
     class Private;
     Private* const d;
 };

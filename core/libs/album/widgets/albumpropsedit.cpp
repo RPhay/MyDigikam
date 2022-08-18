@@ -157,7 +157,7 @@ AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
     d->titleEdit                      = new DTextEdit(page);
     d->titleEdit->setLinesVisible(1);
     d->titleEdit->setPlaceholderText(i18nc("@label: album properties", "Set here the new album title"));
-    d->titleEdit->setIgnoreCharacters(QLatin1String("/:"));
+    d->titleEdit->setIgnoredCharacters(QLatin1String("/:"));
     titleLabel->setBuddy(d->titleEdit);
 
     QLabel* const categoryLabel       = new QLabel(page);

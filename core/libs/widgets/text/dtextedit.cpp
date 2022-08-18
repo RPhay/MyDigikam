@@ -157,7 +157,8 @@ public:
 
 #endif
 
-    QString                      mask;                      ///< Mask of ignored character in text editor.
+    QString                      ignoredMask;               ///< Mask of ignored characters in text editor.
+    QString                      acceptedMask;              ///< Mask of accepted characters in text editor.
 
     unsigned int                 lines        = 3;
 
@@ -239,17 +240,49 @@ QString DTextEdit::text() const
 
 void DTextEdit::setText(const QString& text)
 {
-    setPlainText(text);
+    QString maskedTxt = text;
+
+    for (int i = 0 ; i < d->ignoredMask.size() ; ++i)
+    {
+        maskedTxt.remove(d->ignoredMask[i]);
+    }
+
+    if (!d->acceptedMask.isEmpty())
+    {
+        QString maskedTxt2;
+
+        for (int i = 0 ; i < maskedTxt.size() ; ++i)
+        {
+            if (d->acceptedMask.contains(maskedTxt[i]))
+            {
+                maskedTxt2.append(maskedTxt[i]);
+            }
+        }
+
+        maskedTxt = maskedTxt2;
+    }
+
+    setPlainText(maskedTxt);
 }
 
-QString DTextEdit::ignoreCharacters() const
+QString DTextEdit::ignoredCharacters() const
 {
-    return d->mask;
+    return d->ignoredMask;
 }
 
-void DTextEdit::setIgnoreCharacters(const QString& mask)
+void DTextEdit::setIgnoredCharacters(const QString& mask)
 {
-    d->mask = mask;
+    d->ignoredMask = mask;
+}
+
+QString DTextEdit::acceptedCharacters() const
+{
+    return d->acceptedMask;
+}
+
+void DTextEdit::setAcceptedCharacters(const QString& mask)
+{
+    d->acceptedMask = mask;
 }
 
 void DTextEdit::setCurrentLanguage(const QString& lang)
@@ -313,9 +346,18 @@ void DTextEdit::keyPressEvent(QKeyEvent* e)
             return;
         }
 
-        for (int i = 0 ; i < d->mask.size() ; ++i)
+        for (int i = 0 ; i < d->ignoredMask.size() ; ++i)
         {
-            if (key == d->mask[i])
+            if (key == d->ignoredMask[i])
+            {
+                e->ignore();
+                return;
+            }
+        }
+
+        for (int i = 0 ; i < d->acceptedMask.size() ; ++i)
+        {
+            if (key != d->acceptedMask[i])
             {
                 e->ignore();
                 return;
@@ -357,12 +399,27 @@ void DTextEdit::insertFromMimeData(const QMimeData* source)
 
     QString maskedTxt = scopy.text();
 
-    for (int i = 0 ; i < d->mask.size() ; ++i)
+    for (int i = 0 ; i < d->ignoredMask.size() ; ++i)
     {
-        maskedTxt.remove(d->mask[i]);
+        maskedTxt.remove(d->ignoredMask[i]);
     }
 
     scopy.setText(maskedTxt);
+
+    if (!d->acceptedMask.isEmpty())
+    {
+        QString maskedTxt2;
+
+        for (int i = 0 ; i < maskedTxt.size() ; ++i)
+        {
+            if (d->acceptedMask.contains(maskedTxt[i]))
+            {
+                maskedTxt2.append(maskedTxt[i]);
+            }
+        }
+
+        scopy.setText(maskedTxt2);
+    }
 
     QTextEdit::insertFromMimeData(&scopy);
 }
@@ -460,7 +517,8 @@ public:
 
 #endif
 
-    QString                      mask;                      ///< Mask of ignored character in text editor.
+    QString                      ignoredMask;               ///< Mask of ignored characters in text editor.
+    QString                      acceptedMask;              ///< Mask of accepted characters in text editor.
 
     unsigned int                 lines        = 3;
 
@@ -542,17 +600,49 @@ QString DPlainTextEdit::text() const
 
 void DPlainTextEdit::setText(const QString& text)
 {
-    setPlainText(text);
+    QString maskedTxt = text;
+
+    for (int i = 0 ; i < d->ignoredMask.size() ; ++i)
+    {
+        maskedTxt.remove(d->ignoredMask[i]);
+    }
+
+    if (!d->acceptedMask.isEmpty())
+    {
+        QString maskedTxt2;
+
+        for (int i = 0 ; i < maskedTxt.size() ; ++i)
+        {
+            if (d->acceptedMask.contains(maskedTxt[i]))
+            {
+                maskedTxt2.append(maskedTxt[i]);
+            }
+        }
+
+        maskedTxt = maskedTxt2;
+    }
+
+    setPlainText(maskedTxt);
 }
 
-QString DPlainTextEdit::ignoreCharacters() const
+QString DPlainTextEdit::ignoredCharacters() const
 {
-    return d->mask;
+    return d->ignoredMask;
 }
 
-void DPlainTextEdit::setIgnoreCharacters(const QString& mask)
+void DPlainTextEdit::setIgnoredCharacters(const QString& mask)
 {
-    d->mask = mask;
+    d->ignoredMask = mask;
+}
+
+QString DPlainTextEdit::acceptedCharacters() const
+{
+    return d->acceptedMask;
+}
+
+void DPlainTextEdit::setAcceptedCharacters(const QString& mask)
+{
+    d->acceptedMask = mask;
 }
 
 void DPlainTextEdit::setCurrentLanguage(const QString& lang)
@@ -616,9 +706,18 @@ void DPlainTextEdit::keyPressEvent(QKeyEvent* e)
             return;
         }
 
-        for (int i = 0 ; i < d->mask.size() ; ++i)
+        for (int i = 0 ; i < d->ignoredMask.size() ; ++i)
         {
-            if (key == d->mask[i])
+            if (key == d->ignoredMask[i])
+            {
+                e->ignore();
+                return;
+            }
+        }
+
+        for (int i = 0 ; i < d->acceptedMask.size() ; ++i)
+        {
+            if (key != d->acceptedMask[i])
             {
                 e->ignore();
                 return;
@@ -660,12 +759,27 @@ void DPlainTextEdit::insertFromMimeData(const QMimeData* source)
 
     QString maskedTxt = scopy.text();
 
-    for (int i = 0 ; i < d->mask.size() ; ++i)
+    for (int i = 0 ; i < d->ignoredMask.size() ; ++i)
     {
-        maskedTxt.remove(d->mask[i]);
+        maskedTxt.remove(d->ignoredMask[i]);
     }
 
     scopy.setText(maskedTxt);
+
+    if (!d->acceptedMask.isEmpty())
+    {
+        QString maskedTxt2;
+
+        for (int i = 0 ; i < maskedTxt.size() ; ++i)
+        {
+            if (d->acceptedMask.contains(maskedTxt[i]))
+            {
+                maskedTxt2.append(maskedTxt[i]);
+            }
+        }
+
+        scopy.setText(maskedTxt2);
+    }
 
     QPlainTextEdit::insertFromMimeData(&scopy);
 }
