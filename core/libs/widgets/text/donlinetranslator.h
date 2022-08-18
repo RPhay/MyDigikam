@@ -575,7 +575,7 @@ public:
     static Language language(const QLocale& locale);
 
     /**
-     * @brief Language
+     * @brief Returns general language code
      *
      * @param langCode code
      * @return language

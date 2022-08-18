@@ -41,155 +41,160 @@ namespace Digikam
 
 const QMap<DOnlineTranslator::Language, QString> DOnlineTranslator::s_genericLanguageCodes =
 {
-    { Auto, QStringLiteral("auto")},
-    { Afrikaans, QStringLiteral("af")},
-    { Albanian, QStringLiteral("sq")},
-    { Amharic, QStringLiteral("am")},
-    { Arabic, QStringLiteral("ar")},
-    { Armenian, QStringLiteral("hy")},
-    { Azerbaijani, QStringLiteral("az")},
-    { Bashkir, QStringLiteral("ba")},
-    { Basque, QStringLiteral("eu")},
-    { Belarusian, QStringLiteral("be")},
-    { Bengali, QStringLiteral("bn")},
-    { Bosnian, QStringLiteral("bs")},
-    { Bulgarian, QStringLiteral("bg")},
-    { Cantonese, QStringLiteral("yue")},
-    { Catalan, QStringLiteral("ca")},
-    { Cebuano, QStringLiteral("ceb")},
-    { Chichewa, QStringLiteral("ny")},
-    { Corsican, QStringLiteral("co")},
-    { Croatian, QStringLiteral("hr")},
-    { Czech, QStringLiteral("cs")},
-    { Danish, QStringLiteral("da")},
-    { Dutch, QStringLiteral("nl")},
-    { English, QStringLiteral("en")},
-    { Esperanto, QStringLiteral("eo")},
-    { Estonian, QStringLiteral("et")},
-    { Fijian, QStringLiteral("fj")},
-    { Filipino, QStringLiteral("fil")},
-    { Finnish, QStringLiteral("fi")},
-    { French, QStringLiteral("fr")},
-    { Frisian, QStringLiteral("fy")},
-    { Galician, QStringLiteral("gl")},
-    { Georgian, QStringLiteral("ka")},
-    { German, QStringLiteral("de")},
-    { Greek, QStringLiteral("el")},
-    { Gujarati, QStringLiteral("gu")},
-    { HaitianCreole, QStringLiteral("ht")},
-    { Hausa, QStringLiteral("ha")},
-    { Hawaiian, QStringLiteral("haw")},
-    { Hebrew, QStringLiteral("he")},
-    { HillMari, QStringLiteral("mrj")},
-    { Hindi, QStringLiteral("hi")},
-    { Hmong, QStringLiteral("hmn")},
-    { Hungarian, QStringLiteral("hu")},
-    { Icelandic, QStringLiteral("is")},
-    { Igbo, QStringLiteral("ig")},
-    { Indonesian, QStringLiteral("id")},
-    { Irish, QStringLiteral("ga")},
-    { Italian, QStringLiteral("it")},
-    { Japanese, QStringLiteral("ja")},
-    { Javanese, QStringLiteral("jw")},
-    { Kannada, QStringLiteral("kn")},
-    { Kazakh, QStringLiteral("kk")},
-    { Khmer, QStringLiteral("km")},
-    { Kinyarwanda, QStringLiteral("rw")},
-    { Klingon, QStringLiteral("tlh")},
-    { KlingonPlqaD, QStringLiteral("tlh-Qaak")},
-    { Korean, QStringLiteral("ko")},
-    { Kurdish, QStringLiteral("ku")},
-    { Kyrgyz, QStringLiteral("ky")},
-    { Lao, QStringLiteral("lo")},
-    { Latin, QStringLiteral("la")},
-    { Latvian, QStringLiteral("lv")},
-    { LevantineArabic, QStringLiteral("apc")},
-    { Lithuanian, QStringLiteral("lt")},
-    { Luxembourgish, QStringLiteral("lb")},
-    { Macedonian, QStringLiteral("mk")},
-    { Malagasy, QStringLiteral("mg")},
-    { Malay, QStringLiteral("ms")},
-    { Malayalam, QStringLiteral("ml")},
-    { Maltese, QStringLiteral("mt")},
-    { Maori, QStringLiteral("mi")},
-    { Marathi, QStringLiteral("mr")},
-    { Mari, QStringLiteral("mhr")},
-    { Mongolian, QStringLiteral("mn")},
-    { Myanmar, QStringLiteral("my")},
-    { Nepali, QStringLiteral("ne")},
-    { Norwegian, QStringLiteral("no")},
-    { Oriya, QStringLiteral("or")},
-    { Papiamento, QStringLiteral("pap")},
-    { Pashto, QStringLiteral("ps")},
-    { Persian, QStringLiteral("fa")},
-    { Polish, QStringLiteral("pl")},
-    { Portuguese, QStringLiteral("pt")},
-    { Punjabi, QStringLiteral("pa")},
-    { QueretaroOtomi, QStringLiteral("otq")},
-    { Romanian, QStringLiteral("ro")},
-    { Russian, QStringLiteral("ru")},
-    { Samoan, QStringLiteral("sm")},
-    { ScotsGaelic, QStringLiteral("gd")},
-    { SerbianCyrillic, QStringLiteral("sr")},
-    { SerbianLatin, QStringLiteral("sr-Latin")},
-    { Sesotho, QStringLiteral("st")},
-    { Shona, QStringLiteral("sn")},
-    { SimplifiedChinese, QStringLiteral("zh-CN")},
-    { Sindhi, QStringLiteral("sd")},
-    { Sinhala, QStringLiteral("si")},
-    { Slovak, QStringLiteral("sk")},
-    { Slovenian, QStringLiteral("sl")},
-    { Somali, QStringLiteral("so")},
-    { Spanish, QStringLiteral("es")},
-    { Sundanese, QStringLiteral("su")},
-    { Swahili, QStringLiteral("sw")},
-    { Swedish, QStringLiteral("sv")},
-    { Tagalog, QStringLiteral("tl")},
-    { Tahitian, QStringLiteral("ty")},
-    { Tajik, QStringLiteral("tg")},
-    { Tamil, QStringLiteral("ta")},
-    { Tatar, QStringLiteral("tt")},
-    { Telugu, QStringLiteral("te")},
-    { Thai, QStringLiteral("th")},
-    { Tongan, QStringLiteral("to")},
-    { TraditionalChinese, QStringLiteral("zh-TW")},
-    { Turkish, QStringLiteral("tr")},
-    { Turkmen, QStringLiteral("tk")},
-    { Udmurt, QStringLiteral("udm")},
-    { Uighur, QStringLiteral("ug")},
-    { Ukrainian, QStringLiteral("uk")},
-    { Urdu, QStringLiteral("ur")},
-    { Uzbek, QStringLiteral("uz")},
-    { Vietnamese, QStringLiteral("vi")},
-    { Welsh, QStringLiteral("cy")},
-    { Xhosa, QStringLiteral("xh")},
-    { Yiddish, QStringLiteral("yi")},
-    { Yoruba, QStringLiteral("yo")},
-    { YucatecMaya, QStringLiteral("yua")},
-    { Zulu, QStringLiteral("zu")}};
+    { Auto,                 QStringLiteral("auto")},
+    { Afrikaans,            QStringLiteral("af")},
+    { Albanian,             QStringLiteral("sq")},
+    { Amharic,              QStringLiteral("am")},
+    { Arabic,               QStringLiteral("ar")},
+    { Armenian,             QStringLiteral("hy")},
+    { Azerbaijani,          QStringLiteral("az")},
+    { Bashkir,              QStringLiteral("ba")},
+    { Basque,               QStringLiteral("eu")},
+    { Belarusian,           QStringLiteral("be")},
+    { Bengali,              QStringLiteral("bn")},
+    { Bosnian,              QStringLiteral("bs")},
+    { Bulgarian,            QStringLiteral("bg")},
+    { Cantonese,            QStringLiteral("yue")},
+    { Catalan,              QStringLiteral("ca")},
+    { Cebuano,              QStringLiteral("ceb")},
+    { Chichewa,             QStringLiteral("ny")},
+    { Corsican,             QStringLiteral("co")},
+    { Croatian,             QStringLiteral("hr")},
+    { Czech,                QStringLiteral("cs")},
+    { Danish,               QStringLiteral("da")},
+    { Dutch,                QStringLiteral("nl")},
+    { English,              QStringLiteral("en")},
+    { Esperanto,            QStringLiteral("eo")},
+    { Estonian,             QStringLiteral("et")},
+    { Fijian,               QStringLiteral("fj")},
+    { Filipino,             QStringLiteral("fil")},
+    { Finnish,              QStringLiteral("fi")},
+    { French,               QStringLiteral("fr")},
+    { Frisian,              QStringLiteral("fy")},
+    { Galician,             QStringLiteral("gl")},
+    { Georgian,             QStringLiteral("ka")},
+    { German,               QStringLiteral("de")},
+    { Greek,                QStringLiteral("el")},
+    { Gujarati,             QStringLiteral("gu")},
+    { HaitianCreole,        QStringLiteral("ht")},
+    { Hausa,                QStringLiteral("ha")},
+    { Hawaiian,             QStringLiteral("haw")},
+    { Hebrew,               QStringLiteral("he")},
+    { HillMari,             QStringLiteral("mrj")},
+    { Hindi,                QStringLiteral("hi")},
+    { Hmong,                QStringLiteral("hmn")},
+    { Hungarian,            QStringLiteral("hu")},
+    { Icelandic,            QStringLiteral("is")},
+    { Igbo,                 QStringLiteral("ig")},
+    { Indonesian,           QStringLiteral("id")},
+    { Irish,                QStringLiteral("ga")},
+    { Italian,              QStringLiteral("it")},
+    { Japanese,             QStringLiteral("ja")},
+    { Javanese,             QStringLiteral("jw")},
+    { Kannada,              QStringLiteral("kn")},
+    { Kazakh,               QStringLiteral("kk")},
+    { Khmer,                QStringLiteral("km")},
+    { Kinyarwanda,          QStringLiteral("rw")},
+    { Klingon,              QStringLiteral("tlh")},
+    { KlingonPlqaD,         QStringLiteral("tlh-Qaak")},
+    { Korean,               QStringLiteral("ko")},
+    { Kurdish,              QStringLiteral("ku")},
+    { Kyrgyz,               QStringLiteral("ky")},
+    { Lao,                  QStringLiteral("lo")},
+    { Latin,                QStringLiteral("la")},
+    { Latvian,              QStringLiteral("lv")},
+    { LevantineArabic,      QStringLiteral("apc")},
+    { Lithuanian,           QStringLiteral("lt")},
+    { Luxembourgish,        QStringLiteral("lb")},
+    { Macedonian,           QStringLiteral("mk")},
+    { Malagasy,             QStringLiteral("mg")},
+    { Malay,                QStringLiteral("ms")},
+    { Malayalam,            QStringLiteral("ml")},
+    { Maltese,              QStringLiteral("mt")},
+    { Maori,                QStringLiteral("mi")},
+    { Marathi,              QStringLiteral("mr")},
+    { Mari,                 QStringLiteral("mhr")},
+    { Mongolian,            QStringLiteral("mn")},
+    { Myanmar,              QStringLiteral("my")},
+    { Nepali,               QStringLiteral("ne")},
+    { Norwegian,            QStringLiteral("no")},
+    { Oriya,                QStringLiteral("or")},
+    { Papiamento,           QStringLiteral("pap")},
+    { Pashto,               QStringLiteral("ps")},
+    { Persian,              QStringLiteral("fa")},
+    { Polish,               QStringLiteral("pl")},
+    { Portuguese,           QStringLiteral("pt")},
+    { Punjabi,              QStringLiteral("pa")},
+    { QueretaroOtomi,       QStringLiteral("otq")},
+    { Romanian,             QStringLiteral("ro")},
+    { Russian,              QStringLiteral("ru")},
+    { Samoan,               QStringLiteral("sm")},
+    { ScotsGaelic,          QStringLiteral("gd")},
+    { SerbianCyrillic,      QStringLiteral("sr")},
+    { SerbianLatin,         QStringLiteral("sr-Latin")},
+    { Sesotho,              QStringLiteral("st")},
+    { Shona,                QStringLiteral("sn")},
+    { SimplifiedChinese,    QStringLiteral("zh-CN")},
+    { Sindhi,               QStringLiteral("sd")},
+    { Sinhala,              QStringLiteral("si")},
+    { Slovak,               QStringLiteral("sk")},
+    { Slovenian,            QStringLiteral("sl")},
+    { Somali,               QStringLiteral("so")},
+    { Spanish,              QStringLiteral("es")},
+    { Sundanese,            QStringLiteral("su")},
+    { Swahili,              QStringLiteral("sw")},
+    { Swedish,              QStringLiteral("sv")},
+    { Tagalog,              QStringLiteral("tl")},
+    { Tahitian,             QStringLiteral("ty")},
+    { Tajik,                QStringLiteral("tg")},
+    { Tamil,                QStringLiteral("ta")},
+    { Tatar,                QStringLiteral("tt")},
+    { Telugu,               QStringLiteral("te")},
+    { Thai,                 QStringLiteral("th")},
+    { Tongan,               QStringLiteral("to")},
+    { TraditionalChinese,   QStringLiteral("zh-TW")},
+    { Turkish,              QStringLiteral("tr")},
+    { Turkmen,              QStringLiteral("tk")},
+    { Udmurt,               QStringLiteral("udm")},
+    { Uighur,               QStringLiteral("ug")},
+    { Ukrainian,            QStringLiteral("uk")},
+    { Urdu,                 QStringLiteral("ur")},
+    { Uzbek,                QStringLiteral("uz")},
+    { Vietnamese,           QStringLiteral("vi")},
+    { Welsh,                QStringLiteral("cy")},
+    { Xhosa,                QStringLiteral("xh")},
+    { Yiddish,              QStringLiteral("yi")},
+    { Yoruba,               QStringLiteral("yo")},
+    { YucatecMaya,          QStringLiteral("yua")},
+    { Zulu,                 QStringLiteral("zu")}
+};
 
 const QMap<DOnlineTranslator::Language, QString> DOnlineTranslator::s_googleLanguageCodes =
 {
-    { Hebrew, QStringLiteral("iw")}};
+    { Hebrew,               QStringLiteral("iw")}
+};
 
 const QMap<DOnlineTranslator::Language, QString> DOnlineTranslator::s_yandexLanguageCodes =
 {
-    { SimplifiedChinese, QStringLiteral("zn")},
-    { Javanese, QStringLiteral("jv")}};
+    { SimplifiedChinese,    QStringLiteral("zn")},
+    { Javanese,             QStringLiteral("jv")}
+};
 
 const QMap<DOnlineTranslator::Language, QString> DOnlineTranslator::s_bingLanguageCodes =
 {
-    { Auto, QStringLiteral("auto-detect")},
-    { Bosnian, QStringLiteral("bs-Latn")},
-    { SerbianCyrillic, QStringLiteral("sr-Cyrl")},
-    { SimplifiedChinese, QStringLiteral("zh-Hans")},
-    { TraditionalChinese, QStringLiteral("zh-Hant")},
-    { Hmong, QStringLiteral("mww")}};
+    { Auto,                 QStringLiteral("auto-detect")},
+    { Bosnian,              QStringLiteral("bs-Latn")},
+    { SerbianCyrillic,      QStringLiteral("sr-Cyrl")},
+    { SimplifiedChinese,    QStringLiteral("zh-Hans")},
+    { TraditionalChinese,   QStringLiteral("zh-Hant")},
+    { Hmong,                QStringLiteral("mww")}
+};
 
 const QMap<DOnlineTranslator::Language, QString> DOnlineTranslator::s_lingvaLanguageCodes =
 {
-    { SimplifiedChinese, QStringLiteral("zh")},
-    { TraditionalChinese, QStringLiteral("zh_HANT")}};
+    { SimplifiedChinese,    QStringLiteral("zh")},
+    { TraditionalChinese,   QStringLiteral("zh_HANT")}
+};
 
 DOnlineTranslator::DOnlineTranslator(QObject* const parent)
     : QObject         (parent),
@@ -213,10 +218,10 @@ void DOnlineTranslator::translate(const QString& text,
     resetData();
 
     m_onlyDetectLanguage = false;
-    m_source = text;
-    m_sourceLang = sourceLang;
-    m_translationLang = translationLang == Auto ? language(QLocale()) : translationLang;
-    m_uiLang = uiLang == Auto ? language(QLocale()) : uiLang;
+    m_source             = text;
+    m_sourceLang         = sourceLang;
+    m_translationLang    = (translationLang == Auto) ? language(QLocale()) : translationLang;
+    m_uiLang             = (uiLang == Auto)          ? language(QLocale()) : uiLang;
 
     // Check if the selected languages are supported by the engine
     if (!isSupportTranslation(engine, m_sourceLang))
@@ -225,23 +230,33 @@ void DOnlineTranslator::translate(const QString& text,
                   i18n("Selected source language %1 is not supported for %2",
                        languageName(m_sourceLang),
                        QString::fromUtf8(QMetaEnum::fromType<Engine>().valueToKey(engine))));
+
         Q_EMIT signalFinished();
+
         return;
     }
-    if (!isSupportTranslation(engine, m_translationLang)) {
+
+    if (!isSupportTranslation(engine, m_translationLang))
+    {
         resetData(ParametersError,
                   i18n("Selected translation language %1 is not supported for %2",
                        languageName(m_translationLang),
                        QString::fromUtf8(QMetaEnum::fromType<Engine>().valueToKey(engine))));
+
         Q_EMIT signalFinished();
+
         return;
     }
-    if (!isSupportTranslation(engine, m_uiLang)) {
+
+    if (!isSupportTranslation(engine, m_uiLang))
+    {
         resetData(ParametersError,
                   i18n("Selected ui language %1 is not supported for %2",
                        languageName(m_uiLang),
                        QString::fromUtf8(QMetaEnum::fromType<Engine>().valueToKey(engine))));
+
         Q_EMIT signalFinished();
+
         return;
     }
 
@@ -250,31 +265,39 @@ void DOnlineTranslator::translate(const QString& text,
         case Google:
             buildGoogleStateMachine();
             break;
+
         case Yandex:
             buildYandexStateMachine();
             break;
+
         case Bing:
             buildBingStateMachine();
             break;
+
         case LibreTranslate:
             if (m_libreUrl.isEmpty())
             {
                 resetData(ParametersError,
                         i18n("%1 URL can't be empty.",
                             QString::fromUtf8(QMetaEnum::fromType<Engine>().valueToKey(engine))));
+
                 Q_EMIT signalFinished();
+
                 return;
             }
 
             buildLibreStateMachine();
             break;
+
         case Lingva:
             if (m_lingvaUrl.isEmpty())
             {
                 resetData(ParametersError,
                         i18n("%1 URL can't be empty.",
                             QString::fromUtf8(QMetaEnum::fromType<Engine>().valueToKey(engine))));
+
                 Q_EMIT signalFinished();
+
                 return;
             }
 
@@ -291,41 +314,49 @@ void DOnlineTranslator::detectLanguage(const QString& text, Engine engine)
     resetData();
 
     m_onlyDetectLanguage = true;
-    m_source = text;
-    m_sourceLang = Auto;
-    m_translationLang = English;
-    m_uiLang = language(QLocale());
+    m_source             = text;
+    m_sourceLang         = Auto;
+    m_translationLang    = English;
+    m_uiLang             = language(QLocale());
 
     switch (engine)
     {
         case Google:
             buildGoogleDetectStateMachine();
             break;
+
         case Yandex:
             buildYandexDetectStateMachine();
             break;
+
         case Bing:
             buildBingDetectStateMachine();
             break;
+
         case LibreTranslate:
             if (m_libreUrl.isEmpty())
             {
                 resetData(ParametersError,
                         i18n("%1 URL can't be empty.",
                             QString::fromUtf8(QMetaEnum::fromType<Engine>().valueToKey(engine))));
+
                 Q_EMIT signalFinished();
+
                 return;
             }
 
             buildLibreDetectStateMachine();
             break;
+
         case Lingva:
             if (m_lingvaUrl.isEmpty())
             {
                 resetData(ParametersError,
                         i18n("%1 URL can't be empty.",
                             QString::fromUtf8(QMetaEnum::fromType<Engine>().valueToKey(engine))));
+
                 Q_EMIT signalFinished();
+
                 return;
             }
 
@@ -351,11 +382,13 @@ QJsonDocument DOnlineTranslator::toJson() const
 {
     QJsonObject translationOptions;
 
-    for (auto it = m_translationOptions.cbegin(); it != m_translationOptions.cend(); ++it)
+    for (auto it = m_translationOptions.cbegin() ; it != m_translationOptions.cend() ; ++it)
     {
         QJsonArray arr;
-        for (const DOnlineTranslatorOption &option : it.value())
+
+        for (const DOnlineTranslatorOption& option : it.value())
             arr.append(option.toJson());
+
         translationOptions.insert(it.key(), arr);
     }
 
@@ -477,9 +510,9 @@ void DOnlineTranslator::setEngineUrl(Engine engine, QString url)
     switch (engine)
     {
         case LibreTranslate:
-            m_libreUrl = qMove(url);
+            m_libreUrl  = qMove(url);
             break;
-        
+
         case Lingva:
             m_lingvaUrl = qMove(url);
             break;
@@ -508,258 +541,384 @@ QString DOnlineTranslator::languageName(Language lang)
     {
         case Auto:
             return i18n("Automatically detect");
+
         case Afrikaans:
             return i18n("Afrikaans");
+
         case Albanian:
             return i18n("Albanian");
+
         case Amharic:
             return i18n("Amharic");
+
         case Arabic:
             return i18n("Arabic");
+
         case Armenian:
             return i18n("Armenian");
+
         case Azerbaijani:
             return i18n("Azeerbaijani");
+
         case Basque:
             return i18n("Basque");
+
         case Bashkir:
             return i18n("Bashkir");
+
         case Belarusian:
             return i18n("Belarusian");
+
         case Bengali:
             return i18n("Bengali");
+
         case Bosnian:
             return i18n("Bosnian");
+
         case Bulgarian:
             return i18n("Bulgarian");
+
         case Catalan:
             return i18n("Catalan");
+
         case Cantonese:
             return i18n("Cantonese");
+
         case Cebuano:
             return i18n("Cebuano");
+
         case SimplifiedChinese:
             return i18n("Chinese (Simplified)");
+
         case TraditionalChinese:
             return i18n("Chinese (Traditional)");
+
         case Corsican:
             return i18n("Corsican");
+
         case Croatian:
             return i18n("Croatian");
+
         case Czech:
             return i18n("Czech");
+
         case Danish:
             return i18n("Danish");
+
         case Dutch:
             return i18n("Dutch");
+
         case English:
             return i18n("English");
+
         case Esperanto:
             return i18n("Esperanto");
+
         case Estonian:
             return i18n("Estonian");
+
         case Fijian:
             return i18n("Fijian");
+
         case Filipino:
             return i18n("Filipino");
+
         case Finnish:
             return i18n("Finnish");
+
         case French:
             return i18n("French");
+
         case Frisian:
             return i18n("Frisian");
+
         case Galician:
             return i18n("Galician");
+
         case Georgian:
             return i18n("Georgian");
+
         case German:
             return i18n("German");
+
         case Greek:
             return i18n("Greek");
+
         case Gujarati:
             return i18n("Gujarati");
+
         case HaitianCreole:
             return i18n("Haitian Creole");
+
         case Hausa:
             return i18n("Hausa");
+
         case Hawaiian:
             return i18n("Hawaiian");
+
         case Hebrew:
             return i18n("Hebrew");
+
         case HillMari:
             return i18n("Hill Mari");
+
         case Hindi:
             return i18n("Hindi");
+
         case Hmong:
             return i18n("Hmong");
+
         case Hungarian:
             return i18n("Hungarian");
+
         case Icelandic:
             return i18n("Icelandic");
+
         case Igbo:
             return i18n("Igbo");
+
         case Indonesian:
             return i18n("Indonesian");
+
         case Irish:
             return i18n("Irish");
+
         case Italian:
             return i18n("Italian");
+
         case Japanese:
             return i18n("Japanese");
+
         case Javanese:
             return i18n("Javanese");
+
         case Kannada:
             return i18n("Kannada");
+
         case Kazakh:
             return i18n("Kazakh");
+
         case Khmer:
             return i18n("Khmer");
+
         case Kinyarwanda:
             return i18n("Kinyarwanda");
+
         case Klingon:
             return i18n("Klingon");
+
         case KlingonPlqaD:
             return i18n("Klingon (PlqaD)");
+
         case Korean:
             return i18n("Korean");
+
         case Kurdish:
             return i18n("Kurdish");
+
         case Kyrgyz:
             return i18n("Kyrgyz");
+
         case Lao:
             return i18n("Lao");
+
         case Latin:
             return i18n("Latin");
+
         case Latvian:
             return i18n("Latvian");
+
         case LevantineArabic:
             return i18n("Levantine Arabic");
+
         case Lithuanian:
             return i18n("Lithuanian");
+
         case Luxembourgish:
             return i18n("Luxembourgish");
+
         case Macedonian:
             return i18n("Macedonian");
+
         case Malagasy:
             return i18n("Malagasy");
+
         case Malay:
             return i18n("Malay");
+
         case Malayalam:
             return i18n("Malayalam");
+
         case Maltese:
             return i18n("Maltese");
+
         case Maori:
             return i18n("Maori");
+
         case Marathi:
             return i18n("Marathi");
+
         case Mari:
             return i18n("Mari");
+
         case Mongolian:
             return i18n("Mongolian");
+
         case Myanmar:
             return i18n("Myanmar");
+
         case Nepali:
             return i18n("Nepali");
+
         case Norwegian:
             return i18n("Norwegian");
+
         case Oriya:
             return i18n("Oriya");
+
         case Chichewa:
             return i18n("Chichewa");
+
         case Papiamento:
             return i18n("Papiamento");
+
         case Pashto:
             return i18n("Pashto");
+
         case Persian:
             return i18n("Persian");
+
         case Polish:
             return i18n("Polish");
+
         case Portuguese:
             return i18n("Portuguese");
+
         case Punjabi:
             return i18n("Punjabi");
+
         case QueretaroOtomi:
             return i18n("Queretaro Otomi");
+
         case Romanian:
             return i18n("Romanian");
+
         case Russian:
             return i18n("Russian");
+
         case Samoan:
             return i18n("Samoan");
+
         case ScotsGaelic:
             return i18n("Scots Gaelic");
+
         case SerbianCyrillic:
             return i18n("Serbian (Cyrillic)");
+
         case SerbianLatin:
             return i18n("Serbian (Latin)");
+
         case Sesotho:
             return i18n("Sesotho");
+
         case Shona:
             return i18n("Shona");
+
         case Sindhi:
             return i18n("Sindhi");
+
         case Sinhala:
             return i18n("Sinhala");
+
         case Slovak:
             return i18n("Slovak");
+
         case Slovenian:
             return i18n("Slovenian");
+
         case Somali:
             return i18n("Somali");
+
         case Spanish:
             return i18n("Spanish");
+
         case Sundanese:
             return i18n("Sundanese");
+
         case Swahili:
             return i18n("Swahili");
+
         case Swedish:
             return i18n("Swedish");
+
         case Tagalog:
             return i18n("Tagalog");
+
         case Tahitian:
             return i18n("Tahitian");
+
         case Tajik:
             return i18n("Tajik");
+
         case Tamil:
             return i18n("Tamil");
+
         case Tatar:
             return i18n("Tatar");
+
         case Telugu:
             return i18n("Telugu");
+
         case Thai:
             return i18n("Thai");
+
         case Tongan:
             return i18n("Tongan");
+
         case Turkish:
             return i18n("Turkish");
+
         case Turkmen:
             return i18n("Turkmen");
+
         case Udmurt:
             return i18n("Udmurt");
+
         case Uighur:
             return i18n("Uighur");
+
         case Ukrainian:
             return i18n("Ukrainian");
+
         case Urdu:
             return i18n("Urdu");
+
         case Uzbek:
             return i18n("Uzbek");
+
         case Vietnamese:
             return i18n("Vietnamese");
+
         case Welsh:
             return i18n("Welsh");
+
         case Xhosa:
             return i18n("Xhosa");
+
         case Yiddish:
             return i18n("Yiddish");
+
         case Yoruba:
             return i18n("Yoruba");
+
         case YucatecMaya:
             return i18n("Yucatec Maya");
+
         case Zulu:
             return i18n("Zulu");
+
         default:
-            return {};
+            return QString();
     }
 }
 
@@ -774,214 +933,315 @@ DOnlineTranslator::Language DOnlineTranslator::language(const QLocale& locale)
     {
         case QLocale::Afrikaans:
             return Afrikaans;
+
         case QLocale::Albanian:
             return Albanian;
+
         case QLocale::Amharic:
             return Amharic;
+
         case QLocale::Arabic:
             return Arabic;
+
         case QLocale::Armenian:
             return Armenian;
+
         case QLocale::Azerbaijani:
             return Azerbaijani;
+
         case QLocale::Basque:
             return Basque;
+
         case QLocale::Belarusian:
             return Belarusian;
+
         case QLocale::Bengali:
             return Bengali;
+
         case QLocale::Bosnian:
             return Bosnian;
+
         case QLocale::Bulgarian:
             return Bulgarian;
+
         case QLocale::Catalan:
             return Catalan;
+
         case QLocale::Chinese:
             return SimplifiedChinese;
+
         case QLocale::LiteraryChinese:
             return TraditionalChinese;
+
         case QLocale::Corsican:
             return Corsican;
+
         case QLocale::Croatian:
             return Croatian;
+
         case QLocale::Czech:
             return Czech;
+
         case QLocale::Danish:
             return Danish;
+
         case QLocale::Dutch:
             return Dutch;
+
         case QLocale::Esperanto:
             return Esperanto;
+
         case QLocale::Estonian:
             return Estonian;
+
         case QLocale::Finnish:
             return Finnish;
+
         case QLocale::French:
             return French;
+
         case QLocale::Frisian:
             return Frisian;
+
         case QLocale::Galician:
             return Galician;
+
         case QLocale::Georgian:
             return Georgian;
+
         case QLocale::German:
             return German;
+
         case QLocale::Greek:
             return Greek;
+
         case QLocale::Gujarati:
             return Gujarati;
+
         case QLocale::Haitian:
             return HaitianCreole;
+
         case QLocale::Hausa:
             return Hausa;
+
         case QLocale::Hawaiian:
             return Hawaiian;
+
         case QLocale::Hebrew:
             return Hebrew;
+
         case QLocale::Hindi:
             return Hindi;
+
         case QLocale::Hungarian:
             return Hungarian;
+
         case QLocale::Icelandic:
             return Icelandic;
+
         case QLocale::Igbo:
             return Igbo;
+
         case QLocale::Indonesian:
             return Indonesian;
+
         case QLocale::Irish:
             return Irish;
+
         case QLocale::Italian:
             return Italian;
+
         case QLocale::Japanese:
             return Japanese;
+
         case QLocale::Javanese:
             return Javanese;
+
         case QLocale::Kannada:
             return Kannada;
+
         case QLocale::Kazakh:
             return Kazakh;
+
         case QLocale::Khmer:
             return Khmer;
+
         case QLocale::Kinyarwanda:
             return Kinyarwanda;
+
         case QLocale::Korean:
             return Korean;
+
         case QLocale::Kurdish:
             return Kurdish;
+
         case QLocale::Lao:
             return Lao;
+
         case QLocale::Latin:
             return Latin;
+
         case QLocale::Latvian:
             return Latvian;
+
         case QLocale::Lithuanian:
             return Lithuanian;
+
         case QLocale::Luxembourgish:
             return Luxembourgish;
+
         case QLocale::Macedonian:
             return Macedonian;
+
         case QLocale::Malagasy:
             return Malagasy;
+
         case QLocale::Malay:
             return Malay;
+
         case QLocale::Malayalam:
             return Malayalam;
+
         case QLocale::Maltese:
             return Maltese;
+
         case QLocale::Maori:
             return Maori;
+
         case QLocale::Marathi:
             return Marathi;
+
         case QLocale::Mongolian:
             return Mongolian;
+
         case QLocale::Nepali:
             return Nepali;
+
         case QLocale::NorwegianBokmal:
             return Norwegian;
+
         case QLocale::Oriya:
             return Oriya;
+
         case QLocale::Pashto:
             return Pashto;
+
         case QLocale::Persian:
             return Persian;
+
         case QLocale::Polish:
             return Polish;
+
         case QLocale::Portuguese:
             return Portuguese;
+
         case QLocale::Punjabi:
             return Punjabi;
+
         case QLocale::Romanian:
             return Romanian;
+
         case QLocale::Russian:
             return Russian;
+
         case QLocale::Samoan:
             return Samoan;
+
         case QLocale::Gaelic:
             return ScotsGaelic;
+
         case QLocale::Serbian:
             return SerbianCyrillic;
+
         case QLocale::Shona:
             return Shona;
+
         case QLocale::Sindhi:
             return Sindhi;
+
         case QLocale::Sinhala:
             return Sinhala;
+
         case QLocale::Slovak:
             return Slovak;
+
         case QLocale::Slovenian:
             return Slovenian;
+
         case QLocale::Somali:
             return Somali;
+
         case QLocale::Spanish:
             return Spanish;
+
         case QLocale::Sundanese:
             return Sundanese;
+
         case QLocale::Swahili:
             return Swahili;
+
         case QLocale::Swedish:
             return Swedish;
+
         case QLocale::Filipino:
             return Filipino;
+
         case QLocale::Tajik:
             return Tajik;
+
         case QLocale::Tamil:
             return Tamil;
+
         case QLocale::Tatar:
             return Tatar;
+
         case QLocale::Telugu:
             return Telugu;
+
         case QLocale::Thai:
             return Thai;
+
         case QLocale::Turkish:
             return Turkish;
+
         case QLocale::Turkmen:
             return Turkmen;
+
         case QLocale::Uighur:
             return Uighur;
+
         case QLocale::Ukrainian:
             return Ukrainian;
+
         case QLocale::Urdu:
             return Urdu;
+
         case QLocale::Uzbek:
             return Uzbek;
+
         case QLocale::Vietnamese:
             return Vietnamese;
+
         case QLocale::Welsh:
             return Welsh;
+
         case QLocale::Xhosa:
             return Xhosa;
+
         case QLocale::Yiddish:
             return Yiddish;
+
         case QLocale::Yoruba:
             return Yoruba;
+
         case QLocale::Zulu:
             return Zulu;
+
         default:
             return English;
     }
 }
 
-// Returns general language code
 DOnlineTranslator::Language DOnlineTranslator::language(const QString& langCode)
 {
     return s_genericLanguageCodes.key(langCode, NoLanguage);
@@ -1017,6 +1277,7 @@ bool DOnlineTranslator::isSupportTranslation(Engine engine, Language lang)
                 case YucatecMaya:
                     isSupported = false;
                     break;
+
                 default:
                     isSupported = true;
                     break;
@@ -1060,13 +1321,14 @@ bool DOnlineTranslator::isSupportTranslation(Engine engine, Language lang)
                 case Zulu:
                     isSupported = false;
                     break;
+
                 default:
                     isSupported = true;
                     break;
                 }
 
                 break;
-        
+
         case Bing:
             switch (lang)
             {
@@ -1133,13 +1395,14 @@ bool DOnlineTranslator::isSupportTranslation(Engine engine, Language lang)
                 case Zulu:
                     isSupported = false;
                     break;
+
                 default:
                     isSupported = true;
                     break;
                 }
 
                 break;
-        
+
         case LibreTranslate:
             switch (lang)
             {
@@ -1254,6 +1517,7 @@ bool DOnlineTranslator::isSupportTranslation(Engine engine, Language lang)
                 case Zulu:
                     isSupported = false;
                     break;
+
                 default:
                     isSupported = true;
                     break;
@@ -1276,7 +1540,7 @@ void DOnlineTranslator::requestGoogleTranslate()
 
     // Generate API url
     QUrl url(QStringLiteral("https://translate.googleapis.com/translate_a/single"));
-    
+
     url.setQuery(QStringLiteral("client=gtx&ie=UTF-8&oe=UTF-8&dt=bd&dt=ex&dt=ld&dt=md&dt=rw&dt=rm&dt=ss&dt=t&dt=at&dt=qc&sl=%1&tl=%2&hl=%3&q=%4")
                      .arg(languageApiCode(Google, m_sourceLang),
                           languageApiCode(Google, m_translationLang),
@@ -1291,32 +1555,43 @@ void DOnlineTranslator::parseGoogleTranslate()
     m_currentReply->deleteLater();
 
     // Check for error
-    if (m_currentReply->error() != QNetworkReply::NoError) {
+
+    if (m_currentReply->error() != QNetworkReply::NoError)
+    {
         if (m_currentReply->error() == QNetworkReply::ServiceUnavailableError)
             resetData(ServiceError, i18n("Error: Engine systems have detected suspicious traffic from your computer network. Please try your request again later."));
         else
             resetData(NetworkError, m_currentReply->errorString());
+
         return;
     }
 
     // Check availability of service
+
     const QByteArray data = m_currentReply->readAll();
-    if (data.startsWith('<')) {
+
+    if (data.startsWith('<'))
+    {
         resetData(ServiceError, i18n("Error: Engine systems have detected suspicious traffic from your computer network. Please try your request again later."));
         return;
     }
 
     // Read Json
-    const QJsonDocument jsonResponse = QJsonDocument::fromJson(data);
-    const QJsonArray jsonData = jsonResponse.array();
 
-    if (m_sourceLang == Auto) {
+    const QJsonDocument jsonResponse = QJsonDocument::fromJson(data);
+    const QJsonArray jsonData        = jsonResponse.array();
+
+    if (m_sourceLang == Auto)
+    {
         // Parse language
         m_sourceLang = language(Google, jsonData.at(2).toString());
-        if (m_sourceLang == NoLanguage) {
+
+        if (m_sourceLang == NoLanguage)
+        {
             resetData(ParsingError, i18n("Error: Unable to parse autodetected language"));
             return;
         }
+
         if (m_onlyDetectLanguage)
             return;
     }
@@ -1324,11 +1599,15 @@ void DOnlineTranslator::parseGoogleTranslate()
     addSpaceBetweenParts(m_translation);
     addSpaceBetweenParts(m_translationTranslit);
     addSpaceBetweenParts(m_sourceTranslit);
-    for (const QJsonValueRef translationData : jsonData.at(0).toArray()) {
+
+    for (const QJsonValueRef translationData : jsonData.at(0).toArray())
+    {
         const QJsonArray translationArray = translationData.toArray();
         m_translation.append(translationArray.at(0).toString());
+
         if (m_translationTranslitEnabled)
             m_translationTranslit.append(translationArray.at(2).toString());
+
         if (m_sourceTranslitEnabled)
             m_sourceTranslit.append(translationArray.at(3).toString());
     }
@@ -1337,19 +1616,26 @@ void DOnlineTranslator::parseGoogleTranslate()
         return;
 
     // Translation options
-    if (m_translationOptionsEnabled) {
-        for (const QJsonValueRef typeOfSpeechData : jsonData.at(1).toArray()) {
+
+    if (m_translationOptionsEnabled)
+    {
+        for (const QJsonValueRef typeOfSpeechData : jsonData.at(1).toArray())
+        {
             const QJsonArray typeOfSpeechDataArray = typeOfSpeechData.toArray();
             const QString typeOfSpeech = typeOfSpeechDataArray.at(0).toString();
-            for (const QJsonValueRef wordData : typeOfSpeechDataArray.at(2).toArray()) {
+
+            for (const QJsonValueRef wordData : typeOfSpeechDataArray.at(2).toArray())
+            {
                 const QJsonArray wordDataArray = wordData.toArray();
                 const QString word = wordDataArray.at(0).toString();
                 const QString gender = wordDataArray.at(4).toString();
                 const QJsonArray translationsArray = wordDataArray.at(1).toArray();
                 QStringList translations;
                 translations.reserve(translationsArray.size());
+
                 for (const QJsonValue &wordTranslation : translationsArray)
                     translations.append(wordTranslation.toString());
+
                 m_translationOptions[typeOfSpeech].append({word, gender, translations});
             }
         }
@@ -1366,38 +1652,47 @@ void DOnlineTranslator::parseYandexKey()
 {
     m_currentReply->deleteLater();
 
-    if (m_currentReply->error() != QNetworkReply::NoError) {
+    if (m_currentReply->error() != QNetworkReply::NoError)
+    {
         resetData(NetworkError, m_currentReply->errorString());
         return;
     }
 
     // Check availability of service
+
     const QByteArray webSiteData = m_currentReply->readAll();
-    if (webSiteData.isEmpty() || webSiteData.contains("<title>Oops!</title>") || webSiteData.contains("<title>302 Found</title>")) {
+
+    if (webSiteData.isEmpty() || webSiteData.contains("<title>Oops!</title>") || webSiteData.contains("<title>302 Found</title>"))
+    {
         resetData(ServiceError, i18n("Error: Engine systems have detected suspicious traffic from your computer network. Please try your request again later."));
         return;
     }
 
     const QByteArray sidBeginString = "SID: '";
     const int sidBeginStringPos = webSiteData.indexOf(sidBeginString);
-    if (sidBeginStringPos == -1) {
+
+    if (sidBeginStringPos == -1)
+    {
         resetData(ParsingError, i18n("Error: Unable to find Yandex SID in web version."));
         return;
     }
 
     const int sidBeginPosition = sidBeginStringPos + sidBeginString.size();
-    const int sidEndPosition = webSiteData.indexOf('\'', sidBeginPosition);
-    if (sidEndPosition == -1) {
+    const int sidEndPosition   = webSiteData.indexOf('\'', sidBeginPosition);
+
+    if (sidEndPosition == -1)
+    {
         resetData(ParsingError, i18n("Error: Unable to extract Yandex SID from web version."));
         return;
     }
 
     // Yandex show reversed parts of session ID, need to decode
-    
+
     const QString sid = QString::fromUtf8(webSiteData.mid(sidBeginPosition,
                                                           sidEndPosition - sidBeginPosition));
-    
+
     QStringList sidParts = sid.split(QLatin1Char('.'));
+
     for (int i = 0; i < sidParts.size(); ++i)
         std::reverse(sidParts[i].begin(), sidParts[i].end());
 
@@ -1409,12 +1704,14 @@ void DOnlineTranslator::requestYandexTranslate()
     const QString sourceText = sender()->property(s_textProperty).toString();
 
     QString lang;
+
     if (m_sourceLang == Auto)
         lang = languageApiCode(Yandex, m_translationLang);
     else
         lang = languageApiCode(Yandex, m_sourceLang) + QLatin1Char('-') + languageApiCode(Yandex, m_translationLang);
 
     // Generate API url
+
     QUrl url(QStringLiteral("https://translate.yandex.net/api/v1/tr.json/translate"));
 
     url.setQuery(QStringLiteral("id=%1-2-0&srv=tr-text&text=%2&lang=%3")
@@ -1423,11 +1720,13 @@ void DOnlineTranslator::requestYandexTranslate()
                           lang));
 
     // Setup request
+
     QNetworkRequest request;
     request.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/x-www-form-urlencoded"));
     request.setUrl(url);
 
     // Make reply
+
     m_currentReply = m_networkManager->post(request, QByteArray());
 }
 
@@ -1436,38 +1735,51 @@ void DOnlineTranslator::parseYandexTranslate()
     m_currentReply->deleteLater();
 
     // Check for errors
-    if (m_currentReply->error() != QNetworkReply::NoError) {
+
+    if (m_currentReply->error() != QNetworkReply::NoError)
+    {
         // Network errors
-        if (m_currentReply->error() < QNetworkReply::ContentAccessDenied) {
+
+        if (m_currentReply->error() < QNetworkReply::ContentAccessDenied)
+        {
             resetData(NetworkError, m_currentReply->errorString());
             return;
         }
 
         // Parse data to get request error type
+
         s_yandexKey.clear();
         const QJsonDocument jsonResponse = QJsonDocument::fromJson(m_currentReply->readAll());
         resetData(ServiceError, jsonResponse.object().value(QStringLiteral("message")).toString());
+
         return;
     }
 
     // Read Json
+
     const QJsonDocument jsonResponse = QJsonDocument::fromJson(m_currentReply->readAll());
     const QJsonObject jsonData = jsonResponse.object();
 
     // Parse language
-    if (m_sourceLang == Auto) {
+
+    if (m_sourceLang == Auto)
+    {
         QString sourceCode = jsonData.value(QStringLiteral("lang")).toString();
         sourceCode = sourceCode.left(sourceCode.indexOf(QLatin1Char('-')));
         m_sourceLang = language(Yandex, sourceCode);
-        if (m_sourceLang == NoLanguage) {
+
+        if (m_sourceLang == NoLanguage)
+        {
             resetData(ParsingError, i18n("Error: Unable to parse autodetected language"));
             return;
         }
+
         if (m_onlyDetectLanguage)
             return;
     }
 
     // Parse translation data
+
     m_translation += jsonData.value(QStringLiteral("text")).toArray().at(0).toString();
 }
 
@@ -1494,13 +1806,17 @@ void DOnlineTranslator::parseYandexTranslationTranslit()
 void DOnlineTranslator::requestYandexDictionary()
 {
     // Check if language is supported (need to check here because language may be autodetected)
-    if (!isSupportDictionary(Yandex, m_sourceLang, m_translationLang) && !m_source.contains(QLatin1Char(' '))) {
-        auto *state = qobject_cast<QState *>(sender());
+
+    if (!isSupportDictionary(Yandex, m_sourceLang, m_translationLang) && !m_source.contains(QLatin1Char(' ')))
+    {
+        auto* state = qobject_cast<QState*>(sender());
         state->addTransition(new QFinalState(state->parentState()));
+
         return;
     }
 
     // Generate API url
+
     const QString text = sender()->property(s_textProperty).toString();
     QUrl url(QStringLiteral("https://dictionary.yandex.net/dicservice.json/lookupMultiple"));
 
@@ -1517,29 +1833,36 @@ void DOnlineTranslator::parseYandexDictionary()
 {
     m_currentReply->deleteLater();
 
-    if (m_currentReply->error() != QNetworkReply::NoError) {
+    if (m_currentReply->error() != QNetworkReply::NoError)
+    {
         resetData(NetworkError, m_currentReply->errorString());
         return;
     }
 
     // Parse reply
+
     const QJsonDocument jsonResponse = QJsonDocument::fromJson(m_currentReply->readAll());
-    const QJsonValue jsonData = jsonResponse.object().value(languageApiCode(Yandex, m_sourceLang) + QLatin1Char('-') + languageApiCode(Yandex, m_translationLang)).toObject().value(QStringLiteral("regular"));
+    const QJsonValue jsonData        = jsonResponse.object().value(languageApiCode(Yandex, m_sourceLang) + QLatin1Char('-') + languageApiCode(Yandex, m_translationLang)).toObject().value(QStringLiteral("regular"));
 
     if (m_sourceTranscriptionEnabled)
         m_sourceTranscription = jsonData.toArray().at(0).toObject().value(QStringLiteral("ts")).toString();
 
-    for (const QJsonValueRef typeOfSpeechData : jsonData.toArray()) {
+    for (const QJsonValueRef typeOfSpeechData : jsonData.toArray())
+    {
         QJsonObject typeOfSpeechObject = typeOfSpeechData.toObject();
-        const QString typeOfSpeech = typeOfSpeechObject.value(QStringLiteral("pos")).toObject().value(QStringLiteral("text")).toString();
-        for (const QJsonValueRef wordData : typeOfSpeechObject.value(QStringLiteral("tr")).toArray()) {
+        const QString typeOfSpeech     = typeOfSpeechObject.value(QStringLiteral("pos")).toObject().value(QStringLiteral("text")).toString();
+
+        for (const QJsonValueRef wordData : typeOfSpeechObject.value(QStringLiteral("tr")).toArray())
+        {
             // Parse translation options
-            const QJsonObject wordObject = wordData.toObject();
-            const QString word = wordObject.value(QStringLiteral("text")).toString();
-            const QString gender = wordObject.value(QStringLiteral("gen")).toObject().value(QStringLiteral("text")).toString();
+
+            const QJsonObject wordObject       = wordData.toObject();
+            const QString word                 = wordObject.value(QStringLiteral("text")).toString();
+            const QString gender               = wordObject.value(QStringLiteral("gen")).toObject().value(QStringLiteral("text")).toString();
             const QJsonArray translationsArray = wordObject.value(QStringLiteral("mean")).toArray();
             QStringList translations;
             translations.reserve(translationsArray.size());
+
             for (const QJsonValue &wordTranslation : translationsArray)
                 translations.append(wordTranslation.toObject().value(QStringLiteral("text")).toString());
 
@@ -1558,49 +1881,62 @@ void DOnlineTranslator::parseBingCredentials()
 {
     m_currentReply->deleteLater();
 
-    if (m_currentReply->error() != QNetworkReply::NoError) {
+    if (m_currentReply->error() != QNetworkReply::NoError)
+    {
         resetData(NetworkError, m_currentReply->errorString());
         return;
     }
 
-    const QByteArray webSiteData = m_currentReply->readAll();
+    const QByteArray webSiteData            = m_currentReply->readAll();
     const QByteArray credentialsBeginString = "var params_RichTranslateHelper = [";
-    const int credentialsBeginPos = webSiteData.indexOf(credentialsBeginString);
-    if (credentialsBeginPos == -1) {
+    const int credentialsBeginPos           = webSiteData.indexOf(credentialsBeginString);
+
+    if (credentialsBeginPos == -1)
+    {
         resetData(ParsingError, i18n("Error: Unable to find Bing credentials in web version."));
         return;
     }
 
     const int keyBeginPos = credentialsBeginPos + credentialsBeginString.size();
-    const int keyEndPos = webSiteData.indexOf(',', keyBeginPos);
-    if (keyEndPos == -1) {
+    const int keyEndPos   = webSiteData.indexOf(',', keyBeginPos);
+
+    if (keyEndPos == -1)
+    {
         resetData(ParsingError, i18n("Error: Unable to extract Bing key from web version."));
         return;
     }
-    s_bingKey = webSiteData.mid(keyBeginPos, keyEndPos - keyBeginPos);
 
+    s_bingKey               = webSiteData.mid(keyBeginPos, keyEndPos - keyBeginPos);
     const int tokenBeginPos = keyEndPos + 2; // Skip two symbols instead of one because the value is enclosed in quotes
-    const int tokenEndPos = webSiteData.indexOf('"', tokenBeginPos);
-    if (tokenEndPos == -1) {
+    const int tokenEndPos   = webSiteData.indexOf('"', tokenBeginPos);
+
+    if (tokenEndPos == -1)
+    {
         resetData(ParsingError, i18n("Error: Unable to extract Bing token from web version."));
         return;
     }
-    s_bingToken = webSiteData.mid(tokenBeginPos, tokenEndPos - tokenBeginPos);
 
+    s_bingToken = webSiteData.mid(tokenBeginPos, tokenEndPos - tokenBeginPos);
     const int igBeginPos = webSiteData.indexOf("IG");
     const int igEndPos = webSiteData.indexOf('"', igBeginPos + 2);
-    if (igEndPos == -1) {
+
+    if (igEndPos == -1)
+    {
         resetData(ParsingError, i18n("Error: Unable to extract additional Bing information from web version."));
         return;
     }
+
     s_bingIg = QString::fromUtf8(webSiteData.mid(igBeginPos, igEndPos - igBeginPos));
 
     const int iidBeginPos = webSiteData.indexOf("data-iid");
-    const int iidEndPos = webSiteData.indexOf('"', iidBeginPos + 2);
-    if (iidEndPos == -1) {
+    const int iidEndPos   = webSiteData.indexOf('"', iidBeginPos + 2);
+
+    if (iidEndPos == -1)
+    {
         resetData(ParsingError, i18n("Error: Unable to extract additional Bing information from web version."));
         return;
     }
+
     s_bingIid = QString::fromUtf8(webSiteData.mid(iidBeginPos, iidEndPos - iidBeginPos));
 }
 
@@ -1609,22 +1945,25 @@ void DOnlineTranslator::requestBingTranslate()
     const QString sourceText = sender()->property(s_textProperty).toString();
 
     // Generate POST data
-    const QByteArray postData = "&text=" + QUrl::toPercentEncoding(sourceText)
-        + "&fromLang=" + languageApiCode(Bing, m_sourceLang).toUtf8()
-        + "&to=" + languageApiCode(Bing, m_translationLang).toUtf8()
-        + "&token=" + s_bingToken
-        + "&key=" + s_bingKey;
+
+    const QByteArray postData = "&text="     + QUrl::toPercentEncoding(sourceText)
+                              + "&fromLang=" + languageApiCode(Bing, m_sourceLang).toUtf8()
+                              + "&to="       + languageApiCode(Bing, m_translationLang).toUtf8()
+                              + "&token="    + s_bingToken
+                              + "&key="      + s_bingKey;
 
     QUrl url(QStringLiteral("https://www.bing.com/ttranslatev3"));
     url.setQuery(QStringLiteral("IG=%1&IID=%2").arg(s_bingIg, s_bingIid));
 
     // Setup request
+
     QNetworkRequest request;
     request.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/x-www-form-urlencoded"));
     request.setHeader(QNetworkRequest::UserAgentHeader, QString::fromUtf8("%1/%2").arg(QCoreApplication::applicationName()).arg(QCoreApplication::applicationVersion()));
     request.setUrl(url);
 
     // Make reply
+
     m_currentReply = m_networkManager->post(request, postData);
 }
 
@@ -1633,44 +1972,54 @@ void DOnlineTranslator::parseBingTranslate()
     m_currentReply->deleteLater();
 
     // Check for errors
-    if (m_currentReply->error() != QNetworkReply::NoError) {
+
+    if (m_currentReply->error() != QNetworkReply::NoError)
+    {
         resetData(NetworkError, m_currentReply->errorString());
         return;
     }
 
     // Parse translation data
+
     const QJsonDocument jsonResponse = QJsonDocument::fromJson(m_currentReply->readAll());
     const QJsonObject responseObject = jsonResponse.array().first().toObject();
 
-    if (m_sourceLang == Auto) {
+    if (m_sourceLang == Auto)
+    {
         const QString langCode = responseObject.value(QStringLiteral("detectedLanguage")).toObject().value(QStringLiteral("language")).toString();
-        m_sourceLang = language(Bing, langCode);
-        if (m_sourceLang == NoLanguage) {
+        m_sourceLang           = language(Bing, langCode);
+
+        if (m_sourceLang == NoLanguage)
+        {
             resetData(ParsingError, i18n("Error: Unable to parse autodetected language"));
             return;
         }
+
         if (m_onlyDetectLanguage)
             return;
     }
 
     const QJsonObject translationsObject = responseObject.value(QStringLiteral("translations")).toArray().first().toObject();
-    m_translation += translationsObject.value(QStringLiteral("text")).toString();
-    m_translationTranslit += translationsObject.value(QStringLiteral("transliteration")).toObject().value(QStringLiteral("text")).toString();
+    m_translation                       += translationsObject.value(QStringLiteral("text")).toString();
+    m_translationTranslit               += translationsObject.value(QStringLiteral("transliteration")).toObject().value(QStringLiteral("text")).toString();
 }
 
 void DOnlineTranslator::requestBingDictionary()
 {
     // Check if language is supported (need to check here because language may be autodetected)
-    if (!isSupportDictionary(Bing, m_sourceLang, m_translationLang) && !m_source.contains(QLatin1Char(' '))) {
-        auto *state = qobject_cast<QState *>(sender());
+
+    if (!isSupportDictionary(Bing, m_sourceLang, m_translationLang) && !m_source.contains(QLatin1Char(' ')))
+    {
+        auto* state = qobject_cast<QState *>(sender());
         state->addTransition(new QFinalState(state->parentState()));
         return;
     }
 
     // Generate POST data
+
     const QByteArray postData = "&text=" + QUrl::toPercentEncoding(sender()->property(s_textProperty).toString())
-        + "&from=" + languageApiCode(Bing, m_sourceLang).toUtf8()
-        + "&to=" + languageApiCode(Bing, m_translationLang).toUtf8();
+                              + "&from=" + languageApiCode(Bing, m_sourceLang).toUtf8()
+                              + "&to="   + languageApiCode(Bing, m_translationLang).toUtf8();
 
     QNetworkRequest request;
     request.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/x-www-form-urlencoded"));
@@ -1684,7 +2033,9 @@ void DOnlineTranslator::parseBingDictionary()
     m_currentReply->deleteLater();
 
     // Check for errors
-    if (m_currentReply->error() != QNetworkReply::NoError) {
+
+    if (m_currentReply->error() != QNetworkReply::NoError)
+    {
         resetData(NetworkError, m_currentReply->errorString());
         return;
     }
@@ -1692,13 +2043,15 @@ void DOnlineTranslator::parseBingDictionary()
     const QJsonDocument jsonResponse = QJsonDocument::fromJson(m_currentReply->readAll());
     const QJsonObject responseObject = jsonResponse.array().first().toObject();
 
-    for (const QJsonValueRef dictionaryData : responseObject.value(QStringLiteral("translations")).toArray()) {
+    for (const QJsonValueRef dictionaryData : responseObject.value(QStringLiteral("translations")).toArray())
+    {
         const QJsonObject dictionaryObject = dictionaryData.toObject();
-        const QString typeOfSpeech = dictionaryObject.value(QStringLiteral("posTag")).toString().toLower();
-        const QString word = dictionaryObject.value(QStringLiteral("displayTarget")).toString().toLower();
+        const QString typeOfSpeech         = dictionaryObject.value(QStringLiteral("posTag")).toString().toLower();
+        const QString word                 = dictionaryObject.value(QStringLiteral("displayTarget")).toString().toLower();
         const QJsonArray translationsArray = dictionaryObject.value(QStringLiteral("backTranslations")).toArray();
         QStringList translations;
         translations.reserve(translationsArray.size());
+
         for (const QJsonValue &wordTranslation : translationsArray)
             translations.append(wordTranslation.toObject().value(QStringLiteral("displayText")).toString());
 
@@ -1711,15 +2064,18 @@ void DOnlineTranslator::requestLibreLangDetection()
     const QString sourceText = sender()->property(s_textProperty).toString();
 
     // Generate POST data
-    const QByteArray postData = "&q=" + QUrl::toPercentEncoding(sourceText)
-        + "&api_key=" + m_libreApiKey;
+
+    const QByteArray postData = "&q="       + QUrl::toPercentEncoding(sourceText)
+                              + "&api_key=" + m_libreApiKey;
 
     // Setup request
+
     QNetworkRequest request;
     request.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/x-www-form-urlencoded"));
     request.setUrl(QUrl(QString::fromUtf8("%1/detect").arg(m_libreUrl)));
 
     // Make reply
+
     m_currentReply = m_networkManager->post(request, postData);
 }
 
@@ -1728,7 +2084,9 @@ void DOnlineTranslator::parseLibreLangDetection()
     m_currentReply->deleteLater();
 
     // Check for errors
-    if (m_currentReply->error() != QNetworkReply::NoError) {
+
+    if (m_currentReply->error() != QNetworkReply::NoError)
+    {
         resetData(NetworkError, m_currentReply->errorString());
         return;
     }
@@ -1736,10 +2094,13 @@ void DOnlineTranslator::parseLibreLangDetection()
     const QJsonDocument jsonResponse = QJsonDocument::fromJson(m_currentReply->readAll());
     const QJsonObject responseObject = jsonResponse.array().first().toObject();
 
-    if (m_sourceLang == Auto) {
+    if (m_sourceLang == Auto)
+    {
         const QString langCode = responseObject.value(QStringLiteral("language")).toString();
-        m_sourceLang = language(LibreTranslate, langCode);
-        if (m_sourceLang == NoLanguage) {
+        m_sourceLang           = language(LibreTranslate, langCode);
+
+        if (m_sourceLang == NoLanguage)
+        {
             resetData(ParsingError, i18n("Error: Unable to parse autodetected language"));
         }
     }
@@ -1750,17 +2111,20 @@ void DOnlineTranslator::requestLibreTranslate()
     const QString sourceText = sender()->property(s_textProperty).toString();
 
     // Generate POST data
-    const QByteArray postData = "&q=" + QUrl::toPercentEncoding(sourceText)
-        + "&source=" + languageApiCode(LibreTranslate, m_sourceLang).toUtf8()
-        + "&target=" + languageApiCode(LibreTranslate, m_translationLang).toUtf8()
-        + "&api_key=" + m_libreApiKey;
+
+    const QByteArray postData = "&q="       + QUrl::toPercentEncoding(sourceText)
+                              + "&source="  + languageApiCode(LibreTranslate, m_sourceLang).toUtf8()
+                              + "&target="  + languageApiCode(LibreTranslate, m_translationLang).toUtf8()
+                              + "&api_key=" + m_libreApiKey;
 
     // Setup request
+
     QNetworkRequest request;
     request.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/x-www-form-urlencoded"));
     request.setUrl(QUrl(QString::fromUtf8("%1/translate").arg(m_libreUrl)));
 
     // Make reply
+
     m_currentReply = m_networkManager->post(request, postData);
 }
 
@@ -1769,7 +2133,9 @@ void DOnlineTranslator::parseLibreTranslate()
     m_currentReply->deleteLater();
 
     // Check for errors
-    if (m_currentReply->error() != QNetworkReply::NoError) {
+
+    if (m_currentReply->error() != QNetworkReply::NoError)
+    {
         resetData(NetworkError, m_currentReply->errorString());
         return;
     }
@@ -1785,6 +2151,7 @@ void DOnlineTranslator::requestLingvaTranslate()
     const QString sourceText = sender()->property(s_textProperty).toString();
 
     // Generate API url
+
     QUrl url(QString::fromUtf8("%1/api/v1/%2/%3/%4")
                     .arg(m_lingvaUrl)
                     .arg(languageApiCode(Lingva, m_sourceLang))
@@ -1799,28 +2166,33 @@ void DOnlineTranslator::parseLingvaTranslate()
     m_currentReply->deleteLater();
 
     // Check for errors
-    if (m_currentReply->error() != QNetworkReply::NoError) {
+
+    if (m_currentReply->error() != QNetworkReply::NoError)
+    {
         resetData(NetworkError, m_currentReply->errorString());
         return;
     }
 
     // Parse translation data
+
     const QJsonDocument jsonResponse = QJsonDocument::fromJson(m_currentReply->readAll());
     const QJsonObject responseObject = jsonResponse.object();
-
-    m_translation = responseObject.value(QStringLiteral("translation")).toString();
+    m_translation                    = responseObject.value(QStringLiteral("translation")).toString();
 }
 
 void DOnlineTranslator::buildGoogleStateMachine()
 {
-    // States (Google sends translation, translit and dictionary in one request, that will be splitted into several by the translation limit)
+    // States (Google sends translation, translit and dictionary in one request,
+    // that will be splitted into several by the translation limit)
+
     auto *translationState = new QState(m_stateMachine);
-    auto *finalState = new QFinalState(m_stateMachine);
+    auto *finalState       = new QFinalState(m_stateMachine);
     m_stateMachine->setInitialState(translationState);
 
     translationState->addTransition(translationState, &QState::finished, finalState);
 
     // Setup translation state
+
     buildSplitNetworkRequest(translationState, &DOnlineTranslator::requestGoogleTranslate, &DOnlineTranslator::parseGoogleTranslate, m_source, s_googleTranslateLimit);
 }
 
