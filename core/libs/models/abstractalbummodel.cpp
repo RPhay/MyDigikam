@@ -109,16 +109,13 @@ QVariant AbstractAlbumModel::data(const QModelIndex& index, int role) const
         return QVariant();
     }
 
-    if      (role == Qt::BackgroundRole)
+    if (d->dropIndex.isValid() && (index == d->dropIndex))
     {
-        if (d->dropIndex.isValid() && (index == d->dropIndex))
+        if      (role == Qt::BackgroundRole)
         {
             return QPalette().highlight();
         }
-    }
-    else if (role == Qt::ForegroundRole)
-    {
-        if (d->dropIndex.isValid() && (index == d->dropIndex))
+        else if (role == Qt::ForegroundRole)
         {
             return QPalette().highlightedText();
         }
