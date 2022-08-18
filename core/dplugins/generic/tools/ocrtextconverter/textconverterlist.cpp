@@ -27,10 +27,10 @@ TextConverterList::TextConverterList(QWidget* const parent)
 {
     setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
 
-    listView()->setColumn(static_cast<DItemsListView::ColumnType>(RAWFILENAME),    i18n("Recognized Words"),  true);
-    listView()->setColumn(static_cast<DItemsListView::ColumnType>(TARGETFILENAME), i18n("Target File"),       true);
-    listView()->setColumn(static_cast<DItemsListView::ColumnType>(IDENTIFICATION), i18n("Camera"),            true);
-    listView()->setColumn(static_cast<DItemsListView::ColumnType>(STATUS),         i18n("Status"),            true);
+    listView()->setColumn(static_cast<DItemsListView::ColumnType>(RECOGNIZEDWORDS), i18n("Recognized Words"),  true);
+    listView()->setColumn(static_cast<DItemsListView::ColumnType>(TARGETFILENAME),  i18n("Target File"),       true);
+    listView()->setColumn(static_cast<DItemsListView::ColumnType>(IDENTIFICATION),  i18n("Camera"),            true);
+    listView()->setColumn(static_cast<DItemsListView::ColumnType>(STATUS),          i18n("Status"),            true);
 }
 
 TextConverterList::~TextConverterList()
@@ -125,6 +125,7 @@ public:
     }
 
     QString destFileName;
+    QString recognizedWords;
     QString identity;
     QString status;
 };
@@ -151,6 +152,18 @@ QString TextConverterListViewItem::destFileName() const
 {
     return d->destFileName;
 }
+
+void TextConverterListViewItem::setRecognizedWords(const QString& str)
+{
+    d->recognizedWords = str;
+    setText(TextConverterList::RECOGNIZEDWORDS, d->recognizedWords);
+}
+
+QString TextConverterListViewItem::recognizedWords() const
+{
+    return d->recognizedWords;
+}
+
 
 void TextConverterListViewItem::setIdentity(const QString& str)
 {

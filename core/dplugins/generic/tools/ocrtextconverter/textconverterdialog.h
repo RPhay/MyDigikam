@@ -43,8 +43,9 @@ private:
 
     void processAll();       
     void processingFailed(const QUrl& url, int result);  // TODO 
-    void processed(const QUrl& url, const QString& outputFile);                    
-                                 
+    void processed(const QUrl& url, const QString& outputFile, const QString& ocrResult);   
+
+    int  calculateNumberOfWords(const QString& text);                          
 
 private Q_SLOTS:
 

@@ -1,5 +1,13 @@
 #include "textconverterdialog.h"
 
+// C++ includes 
+
+#include <sstream>
+#include <string>
+#include <iostream>
+#include <algorithm>
+#include <cctype>
+
 // Qt includes
 
 #include <QCloseEvent>
@@ -277,7 +285,7 @@ void TextConverterDialog::slotTextConverterAction(const DigikamGenericTextConver
                 case(PROCESS):
                 {
                     d->textEditList[ad.fileUrl] = ad.outputText; 
-                    processed(ad.fileUrl, ad.destPath);
+                    processed(ad.fileUrl, ad.destPath, ad.outputText);
                     break;
                 }
 
@@ -331,7 +339,34 @@ void TextConverterDialog::processingFailed(const QUrl& url, int result)
     item->setStatus(status);
 }
 
-void TextConverterDialog::processed(const QUrl& url, const QString& outputFile)
+int TextConverterDialog::calculateNumberOfWords(const QString& text)
+{
+    if (!text.isEmpty())
+    { 
+        std::stringstream ss;
+	    ss << text.toStdString();
+
+	    int count = 0;
+	    std::string word;
+	    
+        while (ss >> word) 
+        {
+	    	if (word.length() == 1 && std::ispunct(word[0]))
+            {
+	    		continue; 
+            }
+	    	count ++;
+	    }
+
+        return count;
+    }
+
+    return 0;
+}
+
+void TextConverterDialog::processed(const QUrl& url, 
+                                    const QString& outputFile,
+                                    const QString& ocrResult)
 {
     TextConverterListViewItem* const item = dynamic_cast<TextConverterListViewItem*>(d->listView->listView()->findItem(url));
 
@@ -349,7 +384,7 @@ void TextConverterDialog::processed(const QUrl& url, const QString& outputFile)
 
     d->listView->processed(url, true);
     item->setStatus(i18n("Success"));
-
+    item->setRecognizedWords(QString::fromLatin1("%1").arg(calculateNumberOfWords(ocrResult)));
     d->progressBar->setValue(d->progressBar->value()+1);
 }
 
