@@ -603,6 +603,8 @@ void AbstractAlbumTreeView::dragMoveEvent(QDragMoveEvent* e)
 void AbstractAlbumTreeView::dragLeaveEvent(QDragLeaveEvent* e)
 {
     QTreeView::dragLeaveEvent(e);
+
+    m_albumModel->setDropIndex(QModelIndex());
 }
 
 void AbstractAlbumTreeView::dropEvent(QDropEvent* e)
