@@ -648,7 +648,7 @@ private Q_SLOTS:
 
 private:
 
-    /*
+    /**
      * Engines have translation limit, so need to split all text into parts and make request sequentially.
      * Also Yandex and Bing requires several requests to get dictionary, transliteration etc.
      * We use state machine to rely async computation with signals and slots.
@@ -670,22 +670,22 @@ private:
 
     // Helper functions to build nested states
 
-    void buildSplitNetworkRequest(QState *parent,
+    void buildSplitNetworkRequest(QState* const parent,
                                   void (DOnlineTranslator::*requestMethod)(),
                                   void (DOnlineTranslator::*parseMethod)(),
                                   const QString& text,
                                   int textLimit);
-    void buildNetworkRequestState(QState* parent,
+    void buildNetworkRequestState(QState* const parent,
                                   void (DOnlineTranslator::*requestMethod)(),
                                   void (DOnlineTranslator::*parseMethod)(),
-                                  const QString &text = {});
+                                  const QString& text = QString());
 
     // Helper functions for transliteration
 
     void requestYandexTranslit(Language language);
-    void parseYandexTranslit(QString &text);
+    void parseYandexTranslit(QString& text);
 
-    void resetData(TranslationError error = NoError, const QString &errorString = {});
+    void resetData(TranslationError error = NoError, const QString& errorString = QString());
 
     // Check for service support
 
@@ -711,7 +711,7 @@ private:
 
     static bool isContainsSpace(const QString& text);
 
-    static void addSpaceBetweenParts(QString&text);
+    static void addSpaceBetweenParts(QString& text);
 
 private:
 
