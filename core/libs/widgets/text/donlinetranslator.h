@@ -90,12 +90,12 @@ struct DIGIKAM_EXPORT DOnlineTranslatorOption
     /**
      * @brief Word that specified for translation options.
      */
-    QString word;
+    QString     word;
 
     /**
      * @brief Gender of the word.
      */
-    QString gender;
+    QString     gender;
 
     /**
      * @brief Associated translations for the word.
@@ -131,10 +131,12 @@ class DIGIKAM_EXPORT DOnlineTranslator : public QObject
     Q_DISABLE_COPY(DOnlineTranslator)
 
 public:
+
     /**
      * @brief Represents all languages for translation
      */
-    enum Language {
+    enum Language
+    {
         NoLanguage = -1,
         Auto,
         Afrikaans,
@@ -268,7 +270,8 @@ public:
     /**
      * @brief Represents online engines
      */
-    enum Engine {
+    enum Engine
+    {
         Google,
         Yandex,
         Bing,
@@ -280,16 +283,31 @@ public:
     /**
      * @brief Indicates all possible error conditions found during the processing of the translation
      */
-    enum TranslationError {
-        /** No error condition */
+    enum TranslationError
+    {
+        /**
+         * No error condition
+         */
         NoError,
-        /** Unsupported combination of parameters */
+
+        /**
+         *Unsupported combination of parameters
+         */
         ParametersError,
-        /** Network error */
+
+        /**
+         * Network error
+         */
         NetworkError,
-        /** Service unavailable or maximum number of requests */
+
+        /**
+         * Service unavailable or maximum number of requests
+         */
         ServiceError,
-        /** The request could not be parsed (report a bug if you see this) */
+
+        /**
+         * The request could not be parsed (report a bug if you see this)
+         */
         ParsingError
     };
 
@@ -301,7 +319,7 @@ public:
      *
      * @param parent parent object
      */
-    explicit DOnlineTranslator(QObject* parent = nullptr);
+    explicit DOnlineTranslator(QObject* const parent = nullptr);
 
     /**
      * @brief Translate text
@@ -324,7 +342,7 @@ public:
      * @param text text for language detection
      * @param engine engine to use
      */
-    void detectLanguage(const QString &text,
+    void detectLanguage(const QString& text,
                         Engine engine = Google);
 
     /**
@@ -415,7 +433,7 @@ public:
      * @return QMap whose key represents the type of speech, and the value is a QVector of translation options
      * @sa DOnlineTranslatorOption
      */
-    QMap<QString, QVector<DOnlineTranslatorOption>> translationOptions() const;
+    QMap<QString, QVector<DOnlineTranslatorOption> > translationOptions() const;
 
     /**
      * @brief Last error
@@ -554,7 +572,7 @@ public:
      * @param locale locale
      * @return language
      */
-    static Language language(const QLocale &locale);
+    static Language language(const QLocale& locale);
 
     /**
      * @brief Language
@@ -562,7 +580,7 @@ public:
      * @param langCode code
      * @return language
      */
-    static Language language(const QString &langCode);
+    static Language language(const QString& langCode);
 
     /**
      * @brief Check if transliteration is supported
@@ -574,6 +592,7 @@ public:
     static bool isSupportTranslation(Engine engine, Language lang);
 
 Q_SIGNALS:
+
     /**
      * @brief Translation finished
      *
@@ -627,6 +646,7 @@ private Q_SLOTS:
     void parseLingvaTranslate();
 
 private:
+
     /*
      * Engines have translation limit, so need to split all text into parts and make request sequentially.
      * Also Yandex and Bing requires several requests to get dictionary, transliteration etc.
@@ -648,81 +668,100 @@ private:
     void buildLingvaDetectStateMachine();
 
     // Helper functions to build nested states
-    void buildSplitNetworkRequest(QState *parent, void (DOnlineTranslator::*requestMethod)(), void (DOnlineTranslator::*parseMethod)(), const QString &text, int textLimit);
-    void buildNetworkRequestState(QState *parent, void (DOnlineTranslator::*requestMethod)(), void (DOnlineTranslator::*parseMethod)(), const QString &text = {});
+
+    void buildSplitNetworkRequest(QState *parent,
+                                  void (DOnlineTranslator::*requestMethod)(),
+                                  void (DOnlineTranslator::*parseMethod)(),
+                                  const QString& text,
+                                  int textLimit);
+    void buildNetworkRequestState(QState* parent,
+                                  void (DOnlineTranslator::*requestMethod)(),
+                                  void (DOnlineTranslator::*parseMethod)(),
+                                  const QString &text = {});
 
     // Helper functions for transliteration
+
     void requestYandexTranslit(Language language);
     void parseYandexTranslit(QString &text);
 
     void resetData(TranslationError error = NoError, const QString &errorString = {});
 
     // Check for service support
+
     static bool isSupportTranslit(Engine engine, Language lang);
     static bool isSupportDictionary(Engine engine, Language sourceLang, Language translationLang);
 
     // Other
+
     static QString languageApiCode(Engine engine, Language lang);
     static Language language(Engine engine, const QString &langCode);
     static int getSplitIndex(const QString &untranslatedText, int limit);
     static bool isContainsSpace(const QString &text);
     static void addSpaceBetweenParts(QString &text);
 
-    static const QMap<Language, QString> s_genericLanguageCodes;
+private:
+
+    static const QMap<Language, QString>            s_genericLanguageCodes;
 
     // Engines have some language codes exceptions
-    static const QMap<Language, QString> s_googleLanguageCodes;
-    static const QMap<Language, QString> s_yandexLanguageCodes;
-    static const QMap<Language, QString> s_bingLanguageCodes;
-    static const QMap<Language, QString> s_lingvaLanguageCodes;
+
+    static const QMap<Language, QString>            s_googleLanguageCodes;
+    static const QMap<Language, QString>            s_yandexLanguageCodes;
+    static const QMap<Language, QString>            s_bingLanguageCodes;
+    static const QMap<Language, QString>            s_lingvaLanguageCodes;
 
     // Credentials that is parsed from the web version to receive the translation using the API
-    static inline QString s_yandexKey;
-    static inline QByteArray s_bingKey;
-    static inline QByteArray s_bingToken;
-    static inline QString s_bingIg;
-    static inline QString s_bingIid;
+
+    static inline QString                           s_yandexKey;
+    static inline QByteArray                        s_bingKey;
+    static inline QByteArray                        s_bingToken;
+    static inline QString                           s_bingIg;
+    static inline QString                           s_bingIid;
 
     // This properties used to store unseful information in states
-    static constexpr char s_textProperty[] = "Text";
+
+    static constexpr char                           s_textProperty[]               = "Text";
 
     // Engines have a limit of characters per translation request.
     // If the query is larger, then it should be splited into several with getSplitIndex() helper function
-    static constexpr int s_googleTranslateLimit = 5000;
-    static constexpr int s_yandexTranslateLimit = 150;
-    static constexpr int s_yandexTranslitLimit = 180;
-    static constexpr int s_bingTranslateLimit = 5001;
-    static constexpr int s_libreTranslateLimit = 120;
 
-    QStateMachine *m_stateMachine;
-    QNetworkAccessManager *m_networkManager;
-    QPointer<QNetworkReply> m_currentReply;
+    static constexpr int                            s_googleTranslateLimit         = 5000;
+    static constexpr int                            s_yandexTranslateLimit         = 150;
+    static constexpr int                            s_yandexTranslitLimit          = 180;
+    static constexpr int                            s_bingTranslateLimit           = 5001;
+    static constexpr int                            s_libreTranslateLimit          = 120;
 
-    Language m_sourceLang = NoLanguage;
-    Language m_translationLang = NoLanguage;
-    Language m_uiLang = NoLanguage;
-    TranslationError m_error = NoError;
+    QStateMachine*                                  m_stateMachine                 = nullptr;
+    QNetworkAccessManager*                          m_networkManager               = nullptr;
+    QPointer<QNetworkReply>                         m_currentReply;
 
-    QString m_source;
-    QString m_sourceTranslit;
-    QString m_sourceTranscription;
-    QString m_translation;
-    QString m_translationTranslit;
-    QString m_errorString;
+    Language                                        m_sourceLang                   = NoLanguage;
+    Language                                        m_translationLang              = NoLanguage;
+    Language                                        m_uiLang                       = NoLanguage;
+    TranslationError                                m_error                        = NoError;
+
+    QString                                          m_source;
+    QString                                          m_sourceTranslit;
+    QString                                          m_sourceTranscription;
+    QString                                          m_translation;
+    QString                                          m_translationTranslit;
+    QString                                          m_errorString;
 
     // Self-hosted engines settings
-    QByteArray m_libreApiKey; // Can be empty, since free instances ignores api_key param
-    QString m_libreUrl;
-    QString m_lingvaUrl;
+    // Can be empty, since free instances ignores api_key param
 
-    QMap<QString, QVector<DOnlineTranslatorOption>> m_translationOptions;
+    QByteArray                                       m_libreApiKey;
+    QString                                          m_libreUrl;
+    QString                                          m_lingvaUrl;
 
-    bool m_sourceTranslitEnabled = true;
-    bool m_translationTranslitEnabled = true;
-    bool m_sourceTranscriptionEnabled = true;
-    bool m_translationOptionsEnabled = true;
+    QMap<QString, QVector<DOnlineTranslatorOption> > m_translationOptions;
 
-    bool m_onlyDetectLanguage = false;
+    bool                                             m_sourceTranslitEnabled        = true;
+    bool                                             m_translationTranslitEnabled   = true;
+    bool                                             m_sourceTranscriptionEnabled   = true;
+    bool                                             m_translationOptionsEnabled    = true;
+
+    bool                                             m_onlyDetectLanguage           = false;
 };
 
 } // namespace Digikam
