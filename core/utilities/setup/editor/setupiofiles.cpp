@@ -358,23 +358,23 @@ void SetupIOFiles::applySettings()
 
     if (d->JXLOptions)
     {
-        group.writeEntry(d->configJXLCompressionEntry,  d->JXLOptions->settings()[QLatin1String("quality")].toInt());
-        group.writeEntry(d->configJXLLossLessEntry,     d->JXLOptions->settings()[QLatin1String("lossless")].toBool());
+        group.writeEntry(d->configJXLCompressionEntry,      d->JXLOptions->settings()[QLatin1String("quality")].toInt());
+        group.writeEntry(d->configJXLLossLessEntry,         d->JXLOptions->settings()[QLatin1String("lossless")].toBool());
     }
 
     if (d->WEBPOptions)
     {
-        group.writeEntry(d->configWEBPCompressionEntry, d->WEBPOptions->settings()[QLatin1String("quality")].toInt());
-        group.writeEntry(d->configWEBPLossLessEntry,    d->WEBPOptions->settings()[QLatin1String("lossless")].toBool());
+        group.writeEntry(d->configWEBPCompressionEntry,     d->WEBPOptions->settings()[QLatin1String("quality")].toInt());
+        group.writeEntry(d->configWEBPLossLessEntry,        d->WEBPOptions->settings()[QLatin1String("lossless")].toBool());
     }
 
     if (d->AVIFOptions)
     {
-        group.writeEntry(d->configAVIFCompressionEntry,  d->AVIFOptions->settings()[QLatin1String("quality")].toInt());
-        group.writeEntry(d->configAVIFLossLessEntry,     d->AVIFOptions->settings()[QLatin1String("lossless")].toBool());
+        group.writeEntry(d->configAVIFCompressionEntry,     d->AVIFOptions->settings()[QLatin1String("quality")].toInt());
+        group.writeEntry(d->configAVIFLossLessEntry,        d->AVIFOptions->settings()[QLatin1String("lossless")].toBool());
     }
 
-    group.writeEntry(d->configShowImageSettingsDialog,  d->showImageSettingsDialog->isChecked());
+    group.writeEntry(d->configShowImageSettingsDialog,      d->showImageSettingsDialog->isChecked());
     config->sync();
 }
 
@@ -388,8 +388,8 @@ void SetupIOFiles::readSettings()
     if (d->JPEGOptions)
     {
         set.clear();
-        set.insert(QLatin1String("quality"),     group.readEntry(d->configJPEGCompressionEntry,    75));
-        set.insert(QLatin1String("subsampling"), group.readEntry(d->configJPEGSubSamplingEntry,    1));  // Medium sub-sampling
+        set.insert(QLatin1String("quality"),     group.readEntry(d->configJPEGCompressionEntry,  75));
+        set.insert(QLatin1String("subsampling"), group.readEntry(d->configJPEGSubSamplingEntry,  1));  // Medium sub-sampling
         d->JPEGOptions->setSettings(set);
     }
 
@@ -398,7 +398,7 @@ void SetupIOFiles::readSettings()
     if (d->PNGOptions)
     {
         set.clear();
-        set.insert(QLatin1String("quality"),  group.readEntry(d->configPNGCompressionEntry,        9));
+        set.insert(QLatin1String("quality"), group.readEntry(d->configPNGCompressionEntry,       9));
         d->PNGOptions->setSettings(set);
     }
 
@@ -407,7 +407,7 @@ void SetupIOFiles::readSettings()
     if (d->TIFFOptions)
     {
         set.clear();
-        set.insert(QLatin1String("compress"),  group.readEntry(d->configTIFFCompressionEntry,      false));
+        set.insert(QLatin1String("compress"), group.readEntry(d->configTIFFCompressionEntry,     false));
         d->TIFFOptions->setSettings(set);
     }
 
@@ -416,8 +416,8 @@ void SetupIOFiles::readSettings()
     if (d->JPEG2000Options)
     {
         set.clear();
-        set.insert(QLatin1String("quality"),  group.readEntry(d->configJPEG2000CompressionEntry,   75));
-        set.insert(QLatin1String("lossless"), group.readEntry(d->configJPEG2000LossLessEntry,      true));
+        set.insert(QLatin1String("quality"),  group.readEntry(d->configJPEG2000CompressionEntry, 75));
+        set.insert(QLatin1String("lossless"), group.readEntry(d->configJPEG2000LossLessEntry,    true));
         d->JPEG2000Options->setSettings(set);
     }
 
@@ -426,8 +426,8 @@ void SetupIOFiles::readSettings()
     if (d->PGFOptions)
     {
         set.clear();
-        set.insert(QLatin1String("quality"),  group.readEntry(d->configPGFCompressionEntry,        3));
-        set.insert(QLatin1String("lossless"), group.readEntry(d->configPGFLossLessEntry,           true));
+        set.insert(QLatin1String("quality"),  group.readEntry(d->configPGFCompressionEntry,      3));
+        set.insert(QLatin1String("lossless"), group.readEntry(d->configPGFLossLessEntry,         true));
         d->PGFOptions->setSettings(set);
     }
 
@@ -436,8 +436,8 @@ void SetupIOFiles::readSettings()
     if (d->HEIFOptions)
     {
         set.clear();
-        set.insert(QLatin1String("quality"),  group.readEntry(d->configHEIFCompressionEntry,       75));
-        set.insert(QLatin1String("lossless"), group.readEntry(d->configHEIFLossLessEntry,          true));
+        set.insert(QLatin1String("quality"),  group.readEntry(d->configHEIFCompressionEntry,     75));
+        set.insert(QLatin1String("lossless"), group.readEntry(d->configHEIFLossLessEntry,        true));
         d->HEIFOptions->setSettings(set);
     }
 
@@ -446,28 +446,28 @@ void SetupIOFiles::readSettings()
     if (d->JXLOptions)
     {
         set.clear();
-        set.insert(QLatin1String("quality"),  group.readEntry(d->configJXLCompressionEntry,    75));
-        set.insert(QLatin1String("lossless"), group.readEntry(d->configJXLLossLessEntry,       true));
+        set.insert(QLatin1String("quality"),  group.readEntry(d->configJXLCompressionEntry,      75));
+        set.insert(QLatin1String("lossless"), group.readEntry(d->configJXLLossLessEntry,         true));
         d->JXLOptions->setSettings(set);
     }
 
     if (d->WEBPOptions)
     {
         set.clear();
-        set.insert(QLatin1String("quality"),  group.readEntry(d->configWEBPCompressionEntry,   75));
-        set.insert(QLatin1String("lossless"), group.readEntry(d->configWEBPLossLessEntry,      true));
+        set.insert(QLatin1String("quality"),  group.readEntry(d->configWEBPCompressionEntry,     75));
+        set.insert(QLatin1String("lossless"), group.readEntry(d->configWEBPLossLessEntry,        true));
         d->WEBPOptions->setSettings(set);
     }
 
     if (d->AVIFOptions)
     {
         set.clear();
-        set.insert(QLatin1String("quality"),  group.readEntry(d->configAVIFCompressionEntry,   75));
-        set.insert(QLatin1String("lossless"), group.readEntry(d->configAVIFLossLessEntry,      true));
+        set.insert(QLatin1String("quality"),  group.readEntry(d->configAVIFCompressionEntry,     75));
+        set.insert(QLatin1String("lossless"), group.readEntry(d->configAVIFLossLessEntry,        true));
         d->AVIFOptions->setSettings(set);
     }
 
-    d->showImageSettingsDialog->setChecked(group.readEntry(d->configShowImageSettingsDialog,   true));
+    d->showImageSettingsDialog->setChecked(group.readEntry(d->configShowImageSettingsDialog,     true));
 }
 
 } // namespace Digikam
