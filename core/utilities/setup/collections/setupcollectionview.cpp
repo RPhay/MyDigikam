@@ -1002,7 +1002,7 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
 
         if ((role == Qt::BackgroundRole) && item.appended)
         {
-             return QPalette().alternateBase().color();
+             return QPalette().alternateBase();
         }
 
         switch (index.column())
