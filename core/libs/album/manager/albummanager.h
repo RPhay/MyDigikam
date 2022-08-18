@@ -145,9 +145,6 @@ public:
      */
     bool databaseEqual(const DbEngineParameters& parameters) const;
 
-    void addFakeConnection();
-    void removeFakeConnection();
-
     /**
      * Some checks for settings done in first run wizard in case of QSlite Database.
      */

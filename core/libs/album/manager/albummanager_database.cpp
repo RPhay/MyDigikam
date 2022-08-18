@@ -104,13 +104,6 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 
     qCDebug(DIGIKAM_GENERAL_LOG) << params;
 
-    // workaround for the problem mariaDB >= 10.2 and QTBUG-63108
-
-    if (params.isMySQL())
-    {
-        addFakeConnection();
-    }
-
     QString databaseError;
 
     ApplicationSettings* const settings = ApplicationSettings::instance();
@@ -693,26 +686,6 @@ bool AlbumManager::databaseEqual(const DbEngineParameters& parameters) const
     DbEngineParameters params = CoreDbAccess::parameters();
 
     return (params == parameters);
-}
-
-void AlbumManager::addFakeConnection()
-{
-    if (!d->dbFakeConnection)
-    {
-        // workaround for the problem mariaDB >= 10.2 and QTBUG-63108
-        // from a Qt minimum version of >= 5.9.2 we can remove this workaround
-
-        QSqlDatabase::addDatabase(QLatin1String("QMYSQL"), QLatin1String("FakeConnection"));
-        d->dbFakeConnection = true;
-    }
-}
-
-void AlbumManager::removeFakeConnection()
-{
-    if (d->dbFakeConnection)
-    {
-        QSqlDatabase::removeDatabase(QLatin1String("FakeConnection"));
-    }
 }
 
 bool AlbumManager::moveToBackup(const QFileInfo& info)

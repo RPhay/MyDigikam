@@ -379,7 +379,6 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
     if (!AlbumManager::instance()->setDatabase(params, !commandLineDBPath.isNull(), firstAlbumPath))
     {
         DatabaseServerStarter::instance()->stopServerManagerProcess();
-        AlbumManager::instance()->removeFakeConnection();
 
         CoreDbAccess::cleanUpDatabase();
         ThumbsDbAccess::cleanUpDatabase();

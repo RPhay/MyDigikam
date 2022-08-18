@@ -276,8 +276,6 @@ DigikamApp::~DigikamApp()
 
     DatabaseServerStarter::instance()->stopServerManagerProcess();
 
-    AlbumManager::instance()->removeFakeConnection();
-
     delete d->modelCollection;
 
     m_instance = nullptr;
