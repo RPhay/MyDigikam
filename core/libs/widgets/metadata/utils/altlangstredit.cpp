@@ -71,7 +71,7 @@ public:
         m_list = new QListWidget(parent);
         QFontMetrics fontMt(m_list->font());
         QRect fontRect = fontMt.boundingRect(0, 0, m_list->width(), m_list->height(), 0, QLatin1String("XXXXX"));
-        int width      = QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing) * 2;
+        int width      = (m_list->contentsMargins().left() + m_list->contentsMargins().right()) * 2;
         width         += fontRect.width() + m_list->verticalScrollBar()->height();
         m_list->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         m_list->setResizeMode(QListView::Fixed);
