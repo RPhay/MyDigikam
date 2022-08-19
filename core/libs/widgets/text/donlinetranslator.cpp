@@ -275,6 +275,7 @@ void DOnlineTranslator::translate(const QString& text,
             break;
 
         case LibreTranslate:
+
             if (m_libreUrl.isEmpty())
             {
                 resetData(ParametersError,
@@ -290,6 +291,7 @@ void DOnlineTranslator::translate(const QString& text,
             break;
 
         case Lingva:
+
             if (m_lingvaUrl.isEmpty())
             {
                 resetData(ParametersError,
@@ -334,6 +336,7 @@ void DOnlineTranslator::detectLanguage(const QString& text, Engine engine)
             break;
 
         case LibreTranslate:
+
             if (m_libreUrl.isEmpty())
             {
                 resetData(ParametersError,
@@ -349,6 +352,7 @@ void DOnlineTranslator::detectLanguage(const QString& text, Engine engine)
             break;
 
         case Lingva:
+
             if (m_lingvaUrl.isEmpty())
             {
                 resetData(ParametersError,
@@ -389,19 +393,21 @@ QJsonDocument DOnlineTranslator::toJson() const
         QJsonArray arr;
 
         for (const DOnlineTranslatorOption& option : it.value())
+        {
             arr.append(option.toJson());
+        }
 
         translationOptions.insert(it.key(), arr);
     }
 
     QJsonObject object
     {
-        {QLatin1String("source"),               m_source},
-        {QLatin1String("sourceTranscription"),  m_sourceTranscription},
-        {QLatin1String("sourceTranslit"),       m_sourceTranslit},
-        {QLatin1String("translation"),          m_translation},
-        {QLatin1String("translationOptions"),   qMove(translationOptions)},
-        {QLatin1String("translationTranslit"),  m_translationTranslit},
+        { QLatin1String("source"),               m_source                   },
+        { QLatin1String("sourceTranscription"),  m_sourceTranscription      },
+        { QLatin1String("sourceTranslit"),       m_sourceTranslit           },
+        { QLatin1String("translation"),          m_translation              },
+        { QLatin1String("translationOptions"),   qMove(translationOptions)  },
+        { QLatin1String("translationTranslit"),  m_translationTranslit      },
     };
 
     return QJsonDocument(object);
@@ -1257,6 +1263,7 @@ bool DOnlineTranslator::isSupportTranslation(Engine engine, Language lang)
     {
         case Google:
         case Lingva: // Lingva is a frontend to Google Translate
+
             switch (lang)
             {
                 case NoLanguage:
@@ -1288,6 +1295,7 @@ bool DOnlineTranslator::isSupportTranslation(Engine engine, Language lang)
             break;
 
         case Yandex:
+
             switch (lang)
             {
                 case NoLanguage:
@@ -1332,6 +1340,7 @@ bool DOnlineTranslator::isSupportTranslation(Engine engine, Language lang)
                 break;
 
         case Bing:
+
             switch (lang)
             {
                 case NoLanguage:
@@ -1406,6 +1415,7 @@ bool DOnlineTranslator::isSupportTranslation(Engine engine, Language lang)
                 break;
 
         case LibreTranslate:
+
             switch (lang)
             {
                 case NoLanguage:
@@ -1686,7 +1696,8 @@ void DOnlineTranslator::parseYandexKey()
         webSiteData.contains("<title>Oops!</title>") ||
         webSiteData.contains("<title>302 Found</title>"))
     {
-        resetData(ServiceError, i18n("Error: Engine systems have detected suspicious traffic from your computer network. Please try your request again later."));
+        resetData(ServiceError, i18n("Error: Engine systems have detected suspicious traffic "
+                                     "from your computer network. Please try your request again later."));
         return;
     }
 
@@ -1803,7 +1814,9 @@ void DOnlineTranslator::parseYandexTranslate()
         }
 
         if (m_onlyDetectLanguage)
+        {
             return;
+        }
     }
 
     // Parse translation data
@@ -1835,7 +1848,8 @@ void DOnlineTranslator::requestYandexDictionary()
 {
     // Check if language is supported (need to check here because language may be autodetected)
 
-    if (!isSupportDictionary(Yandex, m_sourceLang, m_translationLang) && !m_source.contains(QLatin1Char(' ')))
+    if (!isSupportDictionary(Yandex, m_sourceLang, m_translationLang) &&
+        !m_source.contains(QLatin1Char(' ')))
     {
         auto* state = qobject_cast<QState*>(sender());
         state->addTransition(new QFinalState(state->parentState()));
@@ -1869,7 +1883,9 @@ void DOnlineTranslator::parseYandexDictionary()
     // Parse reply
 
     const QJsonDocument jsonResponse = QJsonDocument::fromJson(m_currentReply->readAll());
-    const QJsonValue jsonData        = jsonResponse.object().value(languageApiCode(Yandex, m_sourceLang) + QLatin1Char('-') + languageApiCode(Yandex, m_translationLang)).toObject().value(QStringLiteral("regular"));
+    const QJsonValue jsonData        = jsonResponse.object().value(languageApiCode(Yandex, m_sourceLang) +
+                                       QLatin1Char('-')                                                  +
+                                       languageApiCode(Yandex, m_translationLang)).toObject().value(QStringLiteral("regular"));
 
     if (m_sourceTranscriptionEnabled)
     {
@@ -2093,7 +2109,7 @@ void DOnlineTranslator::parseBingDictionary()
 
 void DOnlineTranslator::requestLibreLangDetection()
 {
-    const QString sourceText = sender()->property(s_textProperty).toString();
+    const QString sourceText  = sender()->property(s_textProperty).toString();
 
     // Generate POST data
 
@@ -2108,7 +2124,7 @@ void DOnlineTranslator::requestLibreLangDetection()
 
     // Make reply
 
-    m_currentReply = m_networkManager->post(request, postData);
+    m_currentReply            = m_networkManager->post(request, postData);
 }
 
 void DOnlineTranslator::parseLibreLangDetection()
@@ -2140,7 +2156,7 @@ void DOnlineTranslator::parseLibreLangDetection()
 
 void DOnlineTranslator::requestLibreTranslate()
 {
-    const QString sourceText = sender()->property(s_textProperty).toString();
+    const QString sourceText  = sender()->property(s_textProperty).toString();
 
     // Generate POST data
 
@@ -2157,7 +2173,7 @@ void DOnlineTranslator::requestLibreTranslate()
 
     // Make reply
 
-    m_currentReply = m_networkManager->post(request, postData);
+    m_currentReply            = m_networkManager->post(request, postData);
 }
 
 void DOnlineTranslator::parseLibreTranslate()
@@ -2174,8 +2190,7 @@ void DOnlineTranslator::parseLibreTranslate()
 
     const QJsonDocument jsonResponse = QJsonDocument::fromJson(m_currentReply->readAll());
     const QJsonObject responseObject = jsonResponse.object();
-
-    m_translation = responseObject.value(QStringLiteral("translatedText")).toString();
+    m_translation                    = responseObject.value(QStringLiteral("translatedText")).toString();
 }
 
 void DOnlineTranslator::requestLingvaTranslate()
@@ -2236,8 +2251,8 @@ void DOnlineTranslator::buildGoogleDetectStateMachine()
 {
     // States
 
-    auto* detectState = new QState(m_stateMachine);
-    auto* finalState  = new QFinalState(m_stateMachine);
+    auto* detectState  = new QState(m_stateMachine);
+    auto* finalState   = new QFinalState(m_stateMachine);
     m_stateMachine->setInitialState(detectState);
 
     detectState->addTransition(detectState, &QState::finished, finalState);
@@ -2276,7 +2291,9 @@ void DOnlineTranslator::buildYandexStateMachine()
 
     if (s_yandexKey.isEmpty())
     {
-        buildNetworkRequestState(keyState, &DOnlineTranslator::requestYandexKey, &DOnlineTranslator::parseYandexKey);
+        buildNetworkRequestState(keyState,
+                                 &DOnlineTranslator::requestYandexKey,
+                                 &DOnlineTranslator::parseYandexKey);
     }
     else
     {
@@ -2553,7 +2570,7 @@ void DOnlineTranslator::buildSplitNetworkRequest(QState* const parent,
 
         // Do not translate the part if it looks like garbage
 
-        const int splitIndex = getSplitIndex(unsendedText, textLimit);
+        const int splitIndex          = getSplitIndex(unsendedText, textLimit);
 
         if (splitIndex == -1)
         {
@@ -2676,7 +2693,9 @@ void DOnlineTranslator::resetData(TranslationError error, const QString& errorSt
     for (QAbstractState* state : m_stateMachine->findChildren<QAbstractState*>())
     {
         if (!m_stateMachine->configuration().contains(state))
+        {
             state->deleteLater();
+        }
     }
 }
 
@@ -2689,6 +2708,7 @@ bool DOnlineTranslator::isSupportTranslit(Engine engine, Language lang)
             break;
 
         case Yandex:
+
             switch (lang)
             {
                 case Amharic:
@@ -2719,6 +2739,7 @@ bool DOnlineTranslator::isSupportTranslit(Engine engine, Language lang)
             }
 
         case Bing:
+
             switch (lang)
             {
                 case Arabic:
@@ -2760,9 +2781,11 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
             return isSupportTranslation(Google, sourceLang) && isSupportTranslation(Google, translationLang);
 
         case Yandex:
+
             switch (sourceLang)
             {
                 case Belarusian:
+
                     switch (translationLang)
                     {
                         case Belarusian:
@@ -2773,6 +2796,7 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                     }
 
                 case Bulgarian:
+
                     switch (translationLang)
                     {
                         case Russian:
@@ -2791,6 +2815,7 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                 case Portuguese:
                 case Slovak:
                 case Swedish:
+
                     switch (translationLang)
                     {
                         case English:
@@ -2801,6 +2826,7 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                     }
 
                 case German:
+
                     switch (translationLang)
                     {
                         case German:
@@ -2813,6 +2839,7 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                     }
 
                 case English:
+
                     switch (translationLang)
                     {
                         case Czech:
@@ -2841,6 +2868,7 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                     }
 
                 case Spanish:
+
                     switch (translationLang)
                     {
                         case English:
@@ -2852,6 +2880,7 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                     }
 
                 case Finnish:
+
                     switch (translationLang)
                     {
                         case English:
@@ -2862,6 +2891,7 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                             return false;
                     }
                 case French:
+
                     switch (translationLang)
                     {
                         case French:
@@ -2871,8 +2901,9 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                         default:
                             return false;
                     }
-                
+
                 case Hungarian:
+
                     switch (translationLang)
                     {
                         case Hungarian:
@@ -2883,6 +2914,7 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                     }
 
                 case Italian:
+
                     switch (translationLang)
                     {
                         case English:
@@ -2908,6 +2940,7 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                 case HillMari:
                 case Polish:
                 case Tatar:
+
                     switch (translationLang)
                     {
                         case Russian:
@@ -2917,6 +2950,7 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                     }
 
                 case Russian:
+
                     switch (translationLang)
                     {
                         case Belarusian:
@@ -2950,6 +2984,7 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                     }
 
                     case Turkish:
+
                         switch (translationLang)
                         {
                             case German:
@@ -2961,6 +2996,7 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                         }
 
                     case Ukrainian:
+
                         switch (translationLang)
                         {
                             case English:
@@ -2969,14 +3005,16 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
                                 return true;
                             default:
                                 return false;
-                    }
+                        }
 
                     default:
                         return false;
             }
 
             case Bing:
+
                 // Bing support dictionary only to or from English
+
                 Language secondLang;
 
                 if      (sourceLang == English)
@@ -3054,7 +3092,9 @@ bool DOnlineTranslator::isSupportDictionary(Engine engine, Language sourceLang, 
 QString DOnlineTranslator::languageApiCode(Engine engine, Language lang)
 {
     if (!isSupportTranslation(engine, lang))
+    {
         return QString();
+    }
 
     switch (engine)
     {
@@ -3077,7 +3117,7 @@ QString DOnlineTranslator::languageApiCode(Engine engine, Language lang)
     Q_UNREACHABLE();
 }
 
-DOnlineTranslator::Language DOnlineTranslator::language(Engine engine, const QString &langCode)
+DOnlineTranslator::Language DOnlineTranslator::language(Engine engine, const QString& langCode)
 {
     // Engine exceptions
 
@@ -3102,32 +3142,42 @@ DOnlineTranslator::Language DOnlineTranslator::language(Engine engine, const QSt
     Q_UNREACHABLE();
 }
 
-int DOnlineTranslator::getSplitIndex(const QString &untranslatedText, int limit)
+int DOnlineTranslator::getSplitIndex(const QString& untranslatedText, int limit)
 {
     if (untranslatedText.size() < limit)
+    {
         return limit;
+    }
 
     int splitIndex = untranslatedText.lastIndexOf(QLatin1String(". "), limit - 1);
 
     if (splitIndex != -1)
+    {
         return splitIndex + 1;
+    }
 
     splitIndex = untranslatedText.lastIndexOf(QLatin1Char(' '), limit - 1);
 
     if (splitIndex != -1)
+    {
         return splitIndex + 1;
+    }
 
     splitIndex = untranslatedText.lastIndexOf(QLatin1Char('\n'), limit - 1);
 
     if (splitIndex != -1)
+    {
         return splitIndex + 1;
+    }
 
     // Non-breaking space
 
     splitIndex = untranslatedText.lastIndexOf(0x00a0, limit - 1);
 
     if (splitIndex != -1)
+    {
         return splitIndex + 1;
+    }
 
     // If the text has not passed any check and is most likely garbage
 
@@ -3146,7 +3196,9 @@ bool DOnlineTranslator::isContainsSpace(const QString& text)
 void DOnlineTranslator::addSpaceBetweenParts(QString& text)
 {
     if (text.isEmpty())
+    {
         return;
+    }
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
 

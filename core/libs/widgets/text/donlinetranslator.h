@@ -57,13 +57,18 @@ namespace Digikam
  * // Obtain translation
  *
  * QTextStream out(stdout);
- * for (auto it = translator.translationOptions().cbegin(); it != translator.translationOptions().cend(); ++it) {
- *     out << it.key() << ":" << endl; // Output the type of speech with a colon
- *     for (const auto &[word, gender, translations] : it.value()) {
+ *
+ * for (auto it = translator.translationOptions().cbegin() ; it != translator.translationOptions().cend() ; ++it)
+ * {
+ *     out << it.key() << ":" << endl;  // Output the type of speech with a colon
+ *
+ *     for (const auto &[word, gender, translations] : it.value())
+ *     {
  *         out << "  " << word << ": "; // Print the word
- *         out << translations; // Print translations
+ *         out << translations;         // Print translations
  *         out << endl;
  *     }
+ *
  *     out << endl;
  * }
  * @endcode
@@ -79,7 +84,7 @@ namespace Digikam
  * //  aussprechen: express, pronounce, say, speak, voice, enunciate
  * //  vorbringen: make, put forward, raise, say, put, bring forward
  * //  aufsagen: recite, say, speak
- * 
+ *
  * // noun:
  * //  Sagen: say
  * //  Mitspracherecht: say
@@ -111,9 +116,9 @@ struct DIGIKAM_EXPORT DOnlineTranslatorOption
     {
         QJsonObject object
         {
-            { QLatin1String("gender"),       gender },
+            { QLatin1String("gender"),       gender                                   },
             { QLatin1String("translations"), QJsonArray::fromStringList(translations) },
-            { QLatin1String("word"),         word },
+            { QLatin1String("word"),         word                                     },
         };
 
         return object;
@@ -597,7 +602,7 @@ Q_SIGNALS:
     /**
      * @brief Translation finished
      *
-     * This signal is called when the translation is complete.
+     * This signal is emitted when the translation is complete.
      */
     void signalFinished();
 
@@ -605,11 +610,32 @@ private Q_SLOTS:
 
     void skipGarbageText();
 
-    // Google
+    /**
+     * NOTE: Engines have translation limit, so need to split all text into parts and make request sequentially.
+     * Also Yandex and Bing requires several requests to get dictionary, transliteration etc.
+     * We use state machine to rely async computation with signals and slots.
+     */
+
+    //@{
+    /// Google Web service specific methods.
+
+private Q_SLOTS:
+
     void requestGoogleTranslate();
     void parseGoogleTranslate();
 
-    // Yandex
+private:
+
+    void buildGoogleStateMachine();
+    void buildGoogleDetectStateMachine();
+
+    //@}
+
+    //@{
+    /// Yandex Web service specific methods.
+
+private Q_SLOTS:
+
     void requestYandexKey();
     void parseYandexKey();
 
@@ -625,7 +651,24 @@ private Q_SLOTS:
     void requestYandexDictionary();
     void parseYandexDictionary();
 
-    // Bing
+private:
+
+    void buildYandexStateMachine();
+    void buildYandexDetectStateMachine();
+
+    /**
+     * Helper functions for Yandex transliteration
+     */
+    void requestYandexTranslit(Language language);
+    void parseYandexTranslit(QString& text);
+
+    //@}
+
+    //@{
+    /// Bing Web service specific methods.
+
+private Q_SLOTS:
+
     void requestBingCredentials();
     void parseBingCredentials();
 
@@ -635,41 +678,51 @@ private Q_SLOTS:
     void requestBingDictionary();
     void parseBingDictionary();
 
-    // LibreTranslate
+private:
+
+    void buildBingStateMachine();
+    void buildBingDetectStateMachine();
+
+    //@}
+
+    //@{
+    /// LibreTranslate Web service specific methods.
+
+private Q_SLOTS:
+
     void requestLibreLangDetection();
     void parseLibreLangDetection();
 
     void requestLibreTranslate();
     void parseLibreTranslate();
 
-    // Lingva
+private:
+
+    void buildLibreStateMachine();
+    void buildLibreDetectStateMachine();
+
+    //@}
+
+    //@{
+    /// Lingva Web service specific methods.
+
+private Q_SLOTS:
+
     void requestLingvaTranslate();
     void parseLingvaTranslate();
 
 private:
 
-    /**
-     * Engines have translation limit, so need to split all text into parts and make request sequentially.
-     * Also Yandex and Bing requires several requests to get dictionary, transliteration etc.
-     * We use state machine to rely async computation with signals and slots.
-     */
-    void buildGoogleStateMachine();
-    void buildGoogleDetectStateMachine();
-
-    void buildYandexStateMachine();
-    void buildYandexDetectStateMachine();
-
-    void buildBingStateMachine();
-    void buildBingDetectStateMachine();
-
-    void buildLibreStateMachine();
-    void buildLibreDetectStateMachine();
-
     void buildLingvaStateMachine();
     void buildLingvaDetectStateMachine();
 
-    // Helper functions to build nested states
+    //@}
 
+private:
+
+    /**
+     * Helper functions to build nested states
+     */
     void buildSplitNetworkRequest(QState* const parent,
                                   void (DOnlineTranslator::*requestMethod)(),
                                   void (DOnlineTranslator::*parseMethod)(),
@@ -680,15 +733,12 @@ private:
                                   void (DOnlineTranslator::*parseMethod)(),
                                   const QString& text = QString());
 
-    // Helper functions for transliteration
-
-    void requestYandexTranslit(Language language);
-    void parseYandexTranslit(QString& text);
 
     void resetData(TranslationError error = NoError, const QString& errorString = QString());
 
-    // Check for service support
-
+    /**
+     * Check for service support
+     */
     static bool isSupportTranslit(Engine engine, Language lang);
     static bool isSupportDictionary(Engine engine, Language sourceLang, Language translationLang);
 
@@ -715,44 +765,44 @@ private:
 
 private:
 
-    static const QMap<Language, QString>            s_genericLanguageCodes;
+    static const QMap<Language, QString>             s_genericLanguageCodes;
 
     // Engines have some language codes exceptions
 
-    static const QMap<Language, QString>            s_googleLanguageCodes;
-    static const QMap<Language, QString>            s_yandexLanguageCodes;
-    static const QMap<Language, QString>            s_bingLanguageCodes;
-    static const QMap<Language, QString>            s_lingvaLanguageCodes;
+    static const QMap<Language, QString>             s_googleLanguageCodes;
+    static const QMap<Language, QString>             s_yandexLanguageCodes;
+    static const QMap<Language, QString>             s_bingLanguageCodes;
+    static const QMap<Language, QString>             s_lingvaLanguageCodes;
 
     // Credentials that is parsed from the web version to receive the translation using the API
 
-    static inline QString                           s_yandexKey;
-    static inline QByteArray                        s_bingKey;
-    static inline QByteArray                        s_bingToken;
-    static inline QString                           s_bingIg;
-    static inline QString                           s_bingIid;
+    static inline QString                            s_yandexKey;
+    static inline QByteArray                         s_bingKey;
+    static inline QByteArray                         s_bingToken;
+    static inline QString                            s_bingIg;
+    static inline QString                            s_bingIid;
 
     // This properties used to store unseful information in states
 
-    static constexpr char                           s_textProperty[]               = "Text";
+    static constexpr char                            s_textProperty[]               = "Text";
 
     // Engines have a limit of characters per translation request.
     // If the query is larger, then it should be splited into several with getSplitIndex() helper function
 
-    static constexpr int                            s_googleTranslateLimit         = 5000;
-    static constexpr int                            s_yandexTranslateLimit         = 150;
-    static constexpr int                            s_yandexTranslitLimit          = 180;
-    static constexpr int                            s_bingTranslateLimit           = 5001;
-    static constexpr int                            s_libreTranslateLimit          = 120;
+    static constexpr int                             s_googleTranslateLimit         = 5000;
+    static constexpr int                             s_yandexTranslateLimit         = 150;
+    static constexpr int                             s_yandexTranslitLimit          = 180;
+    static constexpr int                             s_bingTranslateLimit           = 5001;
+    static constexpr int                             s_libreTranslateLimit          = 120;
 
-    QStateMachine*                                  m_stateMachine                 = nullptr;
-    QNetworkAccessManager*                          m_networkManager               = nullptr;
-    QPointer<QNetworkReply>                         m_currentReply;
+    QStateMachine*                                   m_stateMachine                 = nullptr;
+    QNetworkAccessManager*                           m_networkManager               = nullptr;
+    QPointer<QNetworkReply>                          m_currentReply;
 
-    Language                                        m_sourceLang                   = NoLanguage;
-    Language                                        m_translationLang              = NoLanguage;
-    Language                                        m_uiLang                       = NoLanguage;
-    TranslationError                                m_error                        = NoError;
+    Language                                         m_sourceLang                   = NoLanguage;
+    Language                                         m_translationLang              = NoLanguage;
+    Language                                         m_uiLang                       = NoLanguage;
+    TranslationError                                 m_error                        = NoError;
 
     QString                                          m_source;
     QString                                          m_sourceTranslit;
@@ -762,7 +812,7 @@ private:
     QString                                          m_errorString;
 
     // Self-hosted engines settings
-    // Can be empty, since free instances ignores api_key param
+    // Can be empty, since free instances ignores api_key parameter
 
     QByteArray                                       m_libreApiKey;
     QString                                          m_libreUrl;
