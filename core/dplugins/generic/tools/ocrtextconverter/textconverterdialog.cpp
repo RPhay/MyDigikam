@@ -122,7 +122,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     d->progressBar->hide();
     
     d->textedit                       = new DTextEdit(mainWidget);
-    d->textedit->setMaximumHeight(300);
+    d->textedit->setLinesVisible(20);
     d->textedit->setPlaceholderText(QLatin1String("OCR result is displayed here"));
     
     d->saveTextButton = new QPushButton(mainWidget);
