@@ -383,6 +383,9 @@ AltLangStrEdit::AltLangStrEdit(QWidget* const parent, unsigned int lines)
 
     connect(d->trengine, &DOnlineTranslator::signalFinished,
             this, &AltLangStrEdit::slotTranslationFinished);
+
+    connect(d->translateButton, &QToolButton::pressed,
+            d->translateButton, &QToolButton::showMenu);
 }
 
 AltLangStrEdit::~AltLangStrEdit()
