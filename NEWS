@@ -21,6 +21,7 @@ Collections    : Add support for cross-platform network paths.
 Database       : Add support for SQLite WAL (Write-Ahead-Logging) mode.
 General        : Add spell-checking support in caption text widget using KF5::Sonnet component.
                  Add spellcheck config panel in Setup/Misc for digiKam and Showfoto.
+General        : Add online translations support to Alternative Language text editor widget.
 
 *****************************************************************************************************
 BUGFIXES:
