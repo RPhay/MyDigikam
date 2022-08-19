@@ -104,7 +104,7 @@ SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
 
     d->spellCheckLabel      = new QLabel(i18nc("@info", "<p>Turn on this option to activate the background spellcheck "
                                                         "feature on captions, titles, and other text-edit widgets. "
-                                                        "Spellchek is able to auto-detect the current language used in "
+                                                        "Spellcheck is able to auto-detect the current language used in "
                                                         "text and will propose alternative with miss-spelled words.</p>"
                                                         "<p>With entries where alternative language can be specified, the "
                                                         "contextual language will be used to parse text. Spellcheck "

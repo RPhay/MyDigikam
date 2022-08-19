@@ -434,7 +434,7 @@ void DTextEdit::setSpellCheckSettings(const SpellCheckContainer& settings)
 
     d->spellChecker->highlighter()->setAutomatic(!d->container.enableSpellCheck);
 
-    // Enable spellcheker globaly.
+    // Enable spellchecker globaly.
 
     d->spellChecker->highlighter()->setActive(d->container.enableSpellCheck);
 
@@ -794,7 +794,7 @@ void DPlainTextEdit::setSpellCheckSettings(const SpellCheckContainer& settings)
 
     d->spellChecker->highlighter()->setAutomatic(!d->container.enableSpellCheck);
 
-    // Enable spellcheker globaly.
+    // Enable spellchecker globaly.
 
     d->spellChecker->highlighter()->setActive(d->container.enableSpellCheck);
 
