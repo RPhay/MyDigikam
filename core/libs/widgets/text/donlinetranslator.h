@@ -766,6 +766,7 @@ private:
 private:
 
     static const QMap<Language, QString>             s_genericLanguageCodes;
+    static const QMap<QString, QString>              s_singleToDoubleLanguageCodes;
 
     // Engines have some language codes exceptions
 

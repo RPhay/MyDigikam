@@ -310,7 +310,7 @@ const QMap<QString, QString> DOnlineTranslator::s_singleToDoubleLanguageCodes =
     { QLatin1String("te")       , QLatin1String("te-IN") },  //
     { QLatin1String("th")       , QLatin1String("th-TH") },  //
     { QLatin1String("to")       , QLatin1String("") },       //
-    { QLatin1String("zh-TW")    , QLatin1String("zh-TW") },; //
+    { QLatin1String("zh-TW")    , QLatin1String("zh-TW") },  //
     { QLatin1String("tr")       , QLatin1String("tr-TR") },  //
     { QLatin1String("tk")       , QLatin1String("tk-TM") },  //
     { QLatin1String("udm")      , QLatin1String("") },       //
@@ -319,7 +319,7 @@ const QMap<QString, QString> DOnlineTranslator::s_singleToDoubleLanguageCodes =
     { QLatin1String("ur")       , QLatin1String("ur-PK") },  //
     { QLatin1String("uz")       , QLatin1String("") },       //
     { QLatin1String("vi")       , QLatin1String("vi-VN") },  //   QLatin1String("ms-BN"), i18nc("@info: country code", "Malay (Brunei Darussalam)") );
-    { QLatin1String("cy")       , QLatin1String("cy-GB") },; //
+    { QLatin1String("cy")       , QLatin1String("cy-GB") },  //
     { QLatin1String("xh")       , QLatin1String("xh-ZA") },  //
     { QLatin1String("yi")       , QLatin1String("") },       //   QLatin1String("nb-NO"), i18nc("@info: country code", "Norwegian Bokmål (Norway)") );
     { QLatin1String("yo")       , QLatin1String("") },       //
