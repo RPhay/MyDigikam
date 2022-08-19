@@ -496,17 +496,6 @@ void TextConverterDialog::slotClose()
 }
 
 
-void TextConverterDialog::slotSetupExifTool()
-{
-    if (d->iface)
-    {
-        connect(d->iface, SIGNAL(signalSetupChanged()),
-                d->ocrSettings, SLOT(slotSetupChanged()));
-
-        d->iface->openSetupPage(DInfoInterface::ExifToolPage);
-    }
-}
-
 void TextConverterDialog::slotDefault()
 {
     d->ocrSettings->setDefaultSettings();

@@ -61,8 +61,6 @@ private Q_SLOTS:
 
     void slotSetDisable();
     
-    void slotSetupExifTool();
-
 private:
 
     class Private;
