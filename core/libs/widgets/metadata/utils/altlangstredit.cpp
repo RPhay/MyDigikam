@@ -657,7 +657,7 @@ void AltLangStrEdit::loadTranslationTargets()
         {
             QListWidgetItem* const item = new QListWidgetItem(d->translateAction->m_list);
             item->setText(it.key());
-            item->setToolTip(it.value());
+            item->setToolTip(i18n("Translate to %1", it.value()));
             d->translateAction->m_list->addItem(item);
         }
     }

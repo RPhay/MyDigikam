@@ -196,6 +196,162 @@ const QMap<DOnlineTranslator::Language, QString> DOnlineTranslator::s_lingvaLang
     { TraditionalChinese,   QStringLiteral("zh_HANT")       }
 };
 
+// --------------------------------------------------------------------------------------------
+
+const QMap<QString, QString> DOnlineTranslator::s_singleToDoubleLanguageCodes =
+{
+    { QLatin1String("af")       , QLatin1String("af-ZA") },
+    { QLatin1String("sq")       , QLatin1String("sq-AL") },
+    { QLatin1String("am")       , QLatin1String("am-ET") },
+    { QLatin1String("ar")       , QLatin1String("ar-AE") },  //   QLatin1String("ar-BH"), i18nc("@info: country code", "Arabic (Bahrain)") );
+    { QLatin1String("hy")       , QLatin1String("hy-AM") },  //   QLatin1String("ar-DZ"), i18nc("@info: country code", "Arabic (Algeria)") );
+    { QLatin1String("az")       , QLatin1String("") },       //   QLatin1String("ar-EG"), i18nc("@info: country code", "Arabic (Egypt)") );
+    { QLatin1String("ba")       , QLatin1String("ba-RU") },  //   QLatin1String("ar-IQ"), i18nc("@info: country code", "Arabic (Iraq)") );
+    { QLatin1String("eu")       , QLatin1String("eu-ES") },  //   QLatin1String("ar-JO"), i18nc("@info: country code", "Arabic (Jordan)") );
+    { QLatin1String("be")       , QLatin1String("be-BY") },  //   QLatin1String("ar-KW"), i18nc("@info: country code", "Arabic (Kuwait)") );
+    { QLatin1String("bn")       , QLatin1String("bn-IN") },  //   QLatin1String("ar-LB"), i18nc("@info: country code", "Arabic (Lebanon)") );
+    { QLatin1String("bs")       , QLatin1String("") },       //   QLatin1String("ar-LY"), i18nc("@info: country code", "Arabic (Libya)") );
+    { QLatin1String("bg")       , QLatin1String("bg-BG") },  //   QLatin1String("ar-MA"), i18nc("@info: country code", "Arabic (Morocco)") );
+    { QLatin1String("yue")      , QLatin1String("") },       //   QLatin1String("ar-OM"), i18nc("@info: country code", "Arabic (Oman)") );
+    { QLatin1String("ca")       , QLatin1String("ca-ES") },  //   QLatin1String("ar-QA"), i18nc("@info: country code", "Arabic (Qatar)") );
+    { QLatin1String("ceb")      , QLatin1String("") },       //   QLatin1String("ar-SA"), i18nc("@info: country code", "Arabic (Saudi Arabia)") );
+    { QLatin1String("ny")       , QLatin1String("") },       //   QLatin1String("ar-SY"), i18nc("@info: country code", "Arabic (Syria)") );
+    { QLatin1String("co")       , QLatin1String("co-FR") },  //   QLatin1String("ar-TN"), i18nc("@info: country code", "Arabic (Tunisia)") );
+    { QLatin1String("hr")       , QLatin1String("hr-HR") },  //   QLatin1String("ar-YE"), i18nc("@info: country code", "Arabic (Yemen)") );
+    { QLatin1String("cs")       , QLatin1String("cs-CZ") },  //   QLatin1String("as-IN"), i18nc("@info: country code", "Assamese (India)") );
+    { QLatin1String("da")       , QLatin1String("da-DK") },  //
+    { QLatin1String("nl")       , QLatin1String("nl-NL") },  //
+    { QLatin1String("en")       , QLatin1String("en-US") },  //
+    { QLatin1String("eo")       , QLatin1String("") },       //
+    { QLatin1String("et")       , QLatin1String("et-EE") },  //   QLatin1String("bo-BT"), i18nc("@info: country code", "Tibetan (Bhutan)") );
+    { QLatin1String("fj")       , QLatin1String("") },       //   QLatin1String("bo-CN"), i18nc("@info: country code", "Tibetan (PRC)") );
+    { QLatin1String("fil")      , QLatin1String("") },       //   QLatin1String("br-FR"), i18nc("@info: country code", "Breton (France)") );
+    { QLatin1String("fi")       , QLatin1String("fi-FI") },  //   QLatin1String("ca-AD"), i18nc("@info: country code", "Catalan (Andorra)") );
+    { QLatin1String("fr")       , QLatin1String("fr-FR") },  //
+    { QLatin1String("fy")       , QLatin1String("fy-NL") },  //   QLatin1String("ca-FR"), i18nc("@info: country code", "Catalan (France)") );
+    { QLatin1String("gl")       , QLatin1String("gl-ES") },  //
+    { QLatin1String("ka")       , QLatin1String("ka-GE") },  //
+    { QLatin1String("de")       , QLatin1String("de-DE") },  //
+    { QLatin1String("el")       , QLatin1String("") },       //
+    { QLatin1String("gu")       , QLatin1String("gu-IN") },  //   QLatin1String("de-AT"), i18nc("@info: country code", "German (Austria)") );
+    { QLatin1String("ht")       , QLatin1String("") },       //   QLatin1String("de-CH"), i18nc("@info: country code", "German (Switzerland)") );
+    { QLatin1String("ha")       , QLatin1String("") },       //
+    { QLatin1String("haw")      , QLatin1String("") },       //   QLatin1String("de-LI"), i18nc("@info: country code", "German (Liechtenstein)") );
+    { QLatin1String("he")       , QLatin1String("he-IL") },  //   QLatin1String("de-LU"), i18nc("@info: country code", "German (Luxembourg)") );
+    { QLatin1String("mrj")      , QLatin1String("") },       //   QLatin1String("el-GR"), i18nc("@info: country code", "Greek (Greece)") );
+    { QLatin1String("hi")       , QLatin1String("hi-IN") },  //   QLatin1String("en-AU"), i18nc("@info: country code", "English (Australia)") );
+    { QLatin1String("hmn")      , QLatin1String("") },       //   QLatin1String("en-BZ"), i18nc("@info: country code", "English (Belize)") );
+    { QLatin1String("hu")       , QLatin1String("hu-HU") },  //   QLatin1String("en-CA"), i18nc("@info: country code", "English (Canada)") );
+    { QLatin1String("is")       , QLatin1String("is-IS") },  //   QLatin1String("en-CB"), i18nc("@info: country code", "English (Caribbean)") );
+    { QLatin1String("ig")       , QLatin1String("") },       //   QLatin1String("en-IE"), i18nc("@info: country code", "English (Ireland)") );
+    { QLatin1String("id")       , QLatin1String("id-ID") },  //   QLatin1String("en-IN"), i18nc("@info: country code", "English (India)") );
+    { QLatin1String("ga")       , QLatin1String("ga-IE") },  //   QLatin1String("en-JA"), i18nc("@info: country code", "English (Jamaica)") );
+    { QLatin1String("it")       , QLatin1String("it-IT") },  //   QLatin1String("en-MY"), i18nc("@info: country code", "English (Malaysia)") );
+    { QLatin1String("ja")       , QLatin1String("ja-JP") },  //   QLatin1String("en-NZ"), i18nc("@info: country code", "English (New Zealand)") );
+    { QLatin1String("jw")       , QLatin1String("") },       //   QLatin1String("en-PH"), i18nc("@info: country code", "English (Philippines)") );
+    { QLatin1String("kn")       , QLatin1String("kn-IN") },  //   QLatin1String("en-SG"), i18nc("@info: country code", "English (Singapore)") );
+    { QLatin1String("kk")       , QLatin1String("kk-KZ") },  //   QLatin1String("en-TT"), i18nc("@info: country code", "English (Trinidad)") );
+    { QLatin1String("km")       , QLatin1String("km-KH") },  //
+    { QLatin1String("rw")       , QLatin1String("rw-RW") },  //   QLatin1String("en-ZA"), i18nc("@info: country code", "English (South Africa)") );
+    { QLatin1String("tlh")      , QLatin1String("") },       //   QLatin1String("en-ZW"), i18nc("@info: country code", "English (Zimbabwe)") );
+    { QLatin1String("tlh-Qaak") , QLatin1String("") },       //   QLatin1String("es-AR"), i18nc("@info: country code", "Spanish (Argentina)") );
+    { QLatin1String("ko")       , QLatin1String("ko-KR") },  //   QLatin1String("es-BO"), i18nc("@info: country code", "Spanish (Bolivia)") );
+    { QLatin1String("ku")       , QLatin1String("") },       //   QLatin1String("es-CL"), i18nc("@info: country code", "Spanish (Chile)") );
+    { QLatin1String("ky")       , QLatin1String("ky-KG") },  //   QLatin1String("es-CO"), i18nc("@info: country code", "Spanish (Colombia)") );
+    { QLatin1String("lo")       , QLatin1String("lo-LA") },  //   QLatin1String("es-CR"), i18nc("@info: country code", "Spanish (Costa Rica)") );
+    { QLatin1String("la")       , QLatin1String("") },       //   QLatin1String("es-DO"), i18nc("@info: country code", "Spanish (Dominican Republic)") );
+    { QLatin1String("lv")       , QLatin1String("lv-LV") },  //   QLatin1String("es-EC"), i18nc("@info: country code", "Spanish (Ecuador)") );
+    { QLatin1String("apc")      , QLatin1String("") },       //   QLatin1String("es-ES"), i18nc("@info: country code", "Spanish (Spain)") );
+    { QLatin1String("lt")       , QLatin1String("lt-LT") },  //   QLatin1String("es-GT"), i18nc("@info: country code", "Spanish (Guatemala)") );
+    { QLatin1String("lb")       , QLatin1String("lb-LU") },  //   QLatin1String("es-HN"), i18nc("@info: country code", "Spanish (Honduras)") );
+    { QLatin1String("mk")       , QLatin1String("mk-MK") },  //   QLatin1String("es-MX"), i18nc("@info: country code", "Spanish (Mexico)") );
+    { QLatin1String("mg")       , QLatin1String("") },       //   QLatin1String("es-NI"), i18nc("@info: country code", "Spanish (Nicaragua)") );
+    { QLatin1String("ms")       , QLatin1String("ms-MY") },  //   QLatin1String("es-PA"), i18nc("@info: country code", "Spanish (Panama)") );
+    { QLatin1String("ml")       , QLatin1String("ml-IN") },  //   QLatin1String("es-PE"), i18nc("@info: country code", "Spanish (Peru)") );
+    { QLatin1String("mt")       , QLatin1String("mt-MT") },  //   QLatin1String("es-PR"), i18nc("@info: country code", "Spanish (Puerto Rico)") );
+    { QLatin1String("mi")       , QLatin1String("mi-NZ") },  //   QLatin1String("es-PY"), i18nc("@info: country code", "Spanish (Paraguay)") );
+    { QLatin1String("mr")       , QLatin1String("mr-IN") },  //   QLatin1String("es-SV"), i18nc("@info: country code", "Spanish (El Salvador)") );
+    { QLatin1String("mhr")      , QLatin1String("") },       //   QLatin1String("es-UR"), i18nc("@info: country code", "Spanish (Uruguay)") );
+    { QLatin1String("mn")       , QLatin1String("mn-MN") },  //   QLatin1String("es-US"), i18nc("@info: country code", "Spanish (United States)") );
+    { QLatin1String("my")       , QLatin1String("") },       //   QLatin1String("es-VE"), i18nc("@info: country code", "Spanish (Venezuela)") );
+    { QLatin1String("ne")       , QLatin1String("ne-NP") },  //
+    { QLatin1String("no")       , QLatin1String("") },       //
+    { QLatin1String("or")       , QLatin1String("or-IN") },  //
+    { QLatin1String("pap")      , QLatin1String("") },       //
+    { QLatin1String("ps")       , QLatin1String("ps-AF") },  //   QLatin1String("fo-FO"), i18nc("@info: country code", "Faeroese (Faero Islands)") );
+    { QLatin1String("fa")       , QLatin1String("fa-IR") },  //   QLatin1String("fr-BE"), i18nc("@info: country code", "French (Belgium)") );
+    { QLatin1String("pl")       , QLatin1String("pl-PL") },  //   QLatin1String("fr-CA"), i18nc("@info: country code", "French (Canada)") );
+    { QLatin1String("pt")       , QLatin1String("pt-PT") },  //   QLatin1String("fr-CH"), i18nc("@info: country code", "French (Switzerland)") );
+    { QLatin1String("pa")       , QLatin1String("pa-IN") },  //
+    { QLatin1String("otq")      , QLatin1String("") },       //   QLatin1String("fr-LU"), i18nc("@info: country code", "French (Luxembourg)") );
+    { QLatin1String("ro")       , QLatin1String("ro-RO") },  //   QLatin1String("fr-MC"), i18nc("@info: country code", "French (Monaco)") );
+    { QLatin1String("ru")       , QLatin1String("ru-RU") },  //
+    { QLatin1String("sm")       , QLatin1String("") },       //
+    { QLatin1String("gd")       , QLatin1String("") },       //
+    { QLatin1String("sr")       , QLatin1String("") },       //
+    { QLatin1String("sr-Latin") , QLatin1String("") },       //
+    { QLatin1String("st")       , QLatin1String("") },       //
+    { QLatin1String("sn")       , QLatin1String("") },       //   QLatin1String("hr-BA"), i18nc("@info: country code", "Croatian (Bosnia and Herzegovina, Latin)") )
+    { QLatin1String("zh-CN")    , QLatin1String("") },       //   QLatin1String("hr-HR"), i18nc("@info: country code", "Croatian (Croatia)") );
+    { QLatin1String("sd")       , QLatin1String("") },       //
+    { QLatin1String("si")       , QLatin1String("") },       //
+    { QLatin1String("sk")       , QLatin1String("") },       //
+    { QLatin1String("sl")       , QLatin1String("") },       //   QLatin1String("ii-CN"), i18nc("@info: country code", "Yi (PRC)") );
+    { QLatin1String("so")       , QLatin1String("") },       //
+    { QLatin1String("es")       , QLatin1String("") },       //   QLatin1String("it-CH"), i18nc("@info: country code", "Italian (Switzerland)") );
+    { QLatin1String("su")       , QLatin1String("") },       //
+    { QLatin1String("sw")       , QLatin1String("") },       //
+    { QLatin1String("sv")       , QLatin1String("") },       //
+    { QLatin1String("tl")       , QLatin1String("") },       //
+    { QLatin1String("ty")       , QLatin1String("") },       //   QLatin1String("kl-GL"), i18nc("@info: country code", "Greenlandic (Greenland)") );
+    { QLatin1String("tg")       , QLatin1String("") },       //
+    { QLatin1String("ta")       , QLatin1String("ta-IN") },  //
+    { QLatin1String("tt")       , QLatin1String("tt-RU") },  //
+    { QLatin1String("te")       , QLatin1String("te-IN") },  //
+    { QLatin1String("th")       , QLatin1String("th-TH") },  //
+    { QLatin1String("to")       , QLatin1String("") },       //
+    { QLatin1String("zh-TW")    , QLatin1String("zh-TW") },; //
+    { QLatin1String("tr")       , QLatin1String("tr-TR") },  //
+    { QLatin1String("tk")       , QLatin1String("tk-TM") },  //
+    { QLatin1String("udm")      , QLatin1String("") },       //
+    { QLatin1String("ug")       , QLatin1String("ug-CN") },  //
+    { QLatin1String("uk")       , QLatin1String("uk-UA") },  //   QLatin1String("mn-CN"), i18nc("@info: country code", "Mongolian (PRC)") );
+    { QLatin1String("ur")       , QLatin1String("ur-PK") },  //
+    { QLatin1String("uz")       , QLatin1String("") },       //
+    { QLatin1String("vi")       , QLatin1String("vi-VN") },  //   QLatin1String("ms-BN"), i18nc("@info: country code", "Malay (Brunei Darussalam)") );
+    { QLatin1String("cy")       , QLatin1String("cy-GB") },; //
+    { QLatin1String("xh")       , QLatin1String("xh-ZA") },  //
+    { QLatin1String("yi")       , QLatin1String("") },       //   QLatin1String("nb-NO"), i18nc("@info: country code", "Norwegian Bokmål (Norway)") );
+    { QLatin1String("yo")       , QLatin1String("") },       //
+    { QLatin1String("yua")      , QLatin1String("") },       //   QLatin1String("nl-BE"), i18nc("@info: country code", "Dutch (Belgium)") );
+    { QLatin1String("zu")       , QLatin1String("zu-ZA") },  //
+    { QLatin1String("iw")       , QLatin1String("") },       //   QLatin1String("nn-NO"), i18nc("@info: country code", "Norwegian Nynorsk (Norway)") );
+    { QLatin1String("zn")       , QLatin1String("") },       //   QLatin1String("ns-ZA"), i18nc("@info: country code", "Sesotho sa Leboa (South Africa)") );
+    { QLatin1String("jv")       , QLatin1String("") },       //   QLatin1String("oc-FR"), i18nc("@info: country code", "Occitan (France)") );
+    { QLatin1String("bs-Latn")  , QLatin1String("") },       //
+    { QLatin1String("sr-Cyrl")  , QLatin1String("") },       //
+    { QLatin1String("zh-Hans")  , QLatin1String("zh-MO") },  //
+    { QLatin1String("zh-Hant")  , QLatin1String("zh-HK") },  //
+    { QLatin1String("mww")      , QLatin1String("") },       //   QLatin1String("pt-BR"), i18nc("@info: country code", "Portuguese (Brazil)") );
+    { QLatin1String("zh")       , QLatin1String("zh-CN") },  //
+    { QLatin1String("zh_HANT")  , QLatin1String("zh-SG") }   //
+};                                                           //
+                                                             //
+                                                             //   QLatin1String("sa-IN"), i18nc("@info: country code", "Sanskrit (India)") );
+                                                             //   QLatin1String("se-FI"), i18nc("@info: country code", "Sami (Northern, Finland)") );
+                                                             //   QLatin1String("se-NO"), i18nc("@info: country code", "Sami (Northern, Norway)") );
+                                                             //   QLatin1String("se-SE"), i18nc("@info: country code", "Sami (Northern, Sweden)") );
+                                                             //   QLatin1String("si-LK"), i18nc("@info: country code", "Sinhala (Sri Lanka)") );
+                                                             //   QLatin1String("sk-SK"), i18nc("@info: country code", "Slovak (Slovakia)") );
+                                                             //   QLatin1String("sl-SI"), i18nc("@info: country code", "Slovenian (Slovenia)") );
+                                                             //   QLatin1String("sv-FI"), i18nc("@info: country code", "Swedish (Finland)") );
+                                                             //   QLatin1String("sv-SE"), i18nc("@info: country code", "Swedish (Sweden)") );
+                                                             //   QLatin1String("sw-KE"), i18nc("@info: country code", "Swahili (Kenya)") );
+                                                             //   QLatin1String("tn-ZA"), i18nc("@info: country code", "Setswana Tswana (South Africa)") );
+                                                             //   QLatin1String("tr-IN"), i18nc("@info: country code", "Urdu (India)") );
+                                                             //   QLatin1String("wo-SN"), i18nc("@info: country code", "Wolof (Senegal)") );
+                                                             //   QLatin1String("yo-NG"), i18nc("@info: country code", "Yoruba (Nigeria)") );
+                                                         
 DOnlineTranslator::DOnlineTranslator(QObject* const parent)
     : QObject         (parent),
       m_stateMachine  (new QStateMachine(this)),
