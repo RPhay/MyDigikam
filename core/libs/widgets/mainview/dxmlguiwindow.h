@@ -92,7 +92,7 @@ static const QString s_configFullScreenHideSideBarsEntry(QLatin1String("FullScre
 static const QString s_configFullScreenHideStatusBarEntry(QLatin1String("FullScreen Hide StatusBar"));
 
 /**
- * Data container to use in managed window.
+ * Generi class to use with all main window.
  */
 class DIGIKAM_EXPORT DXmlGuiWindow : public KXmlGuiWindow
 {

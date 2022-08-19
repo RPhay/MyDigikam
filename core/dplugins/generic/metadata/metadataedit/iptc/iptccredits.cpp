@@ -76,16 +76,17 @@ public:
 };
 
 IPTCCredits::IPTCCredits(QWidget* const parent)
-    : QWidget(parent),
-      d      (new Private)
+    : MetadataEditPage(parent),
+      d               (new Private)
 {
-    QGridLayout* const grid = new QGridLayout(this);
+    QGridLayout* const grid = new QGridLayout(widget());
 
     // --------------------------------------------------------
 
     d->copyrightCheck = new QCheckBox(i18n("Copyright:"), this);
     d->copyrightEdit  = new LimitedTextEdit(this);
     d->copyrightEdit->setMaxLength(128);
+    d->copyrightEdit->setPlaceholderText(i18n("Set here the copyright notice."));
     d->copyrightEdit->setWhatsThis(i18n("Set here the necessary copyright notice. This field is limited "
                                         "to 128 characters."));
 
@@ -106,6 +107,7 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
     d->creditCheck = new QCheckBox(i18n("Credit:"), this);
     d->creditEdit  = new LimitedTextEdit(this);
     d->creditEdit->setMaxLength(32);
+    d->creditEdit->setPlaceholderText(i18n("Set here the content provider."));
     d->creditEdit->setWhatsThis(i18n("Set here the content provider. "
                                      "This field is limited to 32 characters."));
 
@@ -114,6 +116,7 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
     d->sourceCheck = new QCheckBox(i18nc("original owner of content", "Source:"), this);
     d->sourceEdit  = new LimitedTextEdit(this);
     d->sourceEdit->setMaxLength(32);
+    d->sourceEdit->setPlaceholderText(i18n("Set here the content owner."));
     d->sourceEdit->setWhatsThis(i18n("Set here the original owner of content. "
                                      "This field is limited to 32 characters."));
 
@@ -139,18 +142,21 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
     grid->addWidget(d->bylineEdit,      0, 0, 1, 3);
     grid->addWidget(d->bylineTitleEdit, 1, 0, 1, 3);
     grid->addWidget(d->contactEdit,     2, 0, 1, 3);
-    grid->addWidget(d->creditCheck,     3, 0, 1, 1);
-    grid->addWidget(d->creditEdit,      3, 1, 1, 2);
-    grid->addWidget(d->sourceCheck,     4, 0, 1, 1);
-    grid->addWidget(d->sourceEdit,      4, 1, 1, 2);
-    grid->addWidget(d->copyrightCheck,  5, 0, 1, 1);
-    grid->addWidget(d->copyrightEdit,   5, 1, 1, 2);
-    grid->addWidget(note,               6, 0, 1, 3);
+    grid->addWidget(d->creditCheck,     3, 0, 1, 3);
+    grid->addWidget(d->creditEdit,      4, 0, 1, 3);
+    grid->addWidget(d->sourceCheck,     5, 0, 1, 3);
+    grid->addWidget(d->sourceEdit,      6, 0, 1, 3);
+    grid->addWidget(d->copyrightCheck,  7, 0, 1, 3);
+    grid->addWidget(d->copyrightEdit,   8, 0, 1, 3);
+    grid->addWidget(note,               9, 0, 1, 3);
     grid->setColumnStretch(2, 10);
-    grid->setRowStretch(7, 10);
-    grid->setContentsMargins(QMargins());
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    grid->setRowStretch(10, 10);
+
+    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
+    grid->setContentsMargins(spacing, spacing, spacing, spacing);
+    grid->setSpacing(spacing);
 
     // --------------------------------------------------------
 
@@ -171,14 +177,8 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
     connect(d->bylineEdit, SIGNAL(signalModified()),
             this, SIGNAL(signalModified()));
 
-    connect(d->bylineEdit->valueEdit(), SIGNAL(textChanged(QString)),
-            this, SLOT(slotLineEditModified()));
-
     connect(d->bylineTitleEdit, SIGNAL(signalModified()),
             this, SIGNAL(signalModified()));
-
-    connect(d->bylineTitleEdit->valueEdit(), SIGNAL(textChanged(QString)),
-            this, SLOT(slotLineEditModified()));
 
     connect(d->creditCheck, SIGNAL(toggled(bool)),
             this, SIGNAL(signalModified()));
@@ -189,47 +189,21 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
     connect(d->contactEdit, SIGNAL(signalModified()),
             this, SIGNAL(signalModified()));
 
-    connect(d->contactEdit->valueEdit(), SIGNAL(textChanged(QString)),
-            this, SLOT(slotLineEditModified()));
-
     // --------------------------------------------------------
 
     connect(d->copyrightEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
-    connect(d->copyrightEdit, SIGNAL(textChanged()),
-            this, SLOT(slotLineEditModified()));
-
     connect(d->creditEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
-    connect(d->creditEdit, SIGNAL(textChanged()),
-            this, SLOT(slotLineEditModified()));
-
     connect(d->sourceEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
-
-    connect(d->sourceEdit, SIGNAL(textChanged()),
-            this, SLOT(slotLineEditModified()));
 }
 
 IPTCCredits::~IPTCCredits()
 {
     delete d;
-}
-
-void IPTCCredits::slotLineEditModified()
-{
-    QLineEdit* const ledit = dynamic_cast<QLineEdit*>(sender());
-
-    if (!ledit)
-    {
-        return;
-    }
-
-    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 16))),
-                       i18np("%1 character left", "%1 characters left", ledit->maxLength() - ledit->text().size()),
-                       ledit);
 }
 
 void IPTCCredits::readMetadata(const DMetadata& meta)

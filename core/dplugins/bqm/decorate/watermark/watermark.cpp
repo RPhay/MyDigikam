@@ -42,7 +42,6 @@
 #include <QStyle>
 #include <QFontComboBox>
 #include <QComboBox>
-#include <QLineEdit>
 #include <QDoubleSpinBox>
 #include <QRandomGenerator>
 
@@ -61,6 +60,7 @@
 #include "dfontproperties.h"
 #include "metaengine.h"
 #include "dcolorselector.h"
+#include "dtextedit.h"
 
 namespace DigikamBqmWatermarkPlugin
 {
@@ -132,7 +132,7 @@ public:
     QRadioButton*    useTextRadioButton;
 
     DFileSelector*   imageFileUrlRequester;
-    QLineEdit*       textEdit;
+    DTextEdit*       textEdit;
 
     QComboBox*       placementPositionComboBox;
     QComboBox*       placementTypeComboBox;
@@ -278,8 +278,7 @@ void WaterMark::registerSettingsWidget()
     d->textSettingsGroupBox->setLayout(textSettingsGroupBoxLayout);
 
     QLabel* const textEditLabel = new QLabel(vbox);
-    d->textEdit                 = new QLineEdit(vbox);
-    d->textEdit->setClearButtonEnabled(true);
+    d->textEdit                 = new DTextEdit(vbox);
     d->textEdit->setPlaceholderText(i18n("Enter your watermark string here."));
     textEditLabel->setText(i18n("Watermark text:"));
     textSettingsGroupBoxLayout->addWidget(textEditLabel);
@@ -451,7 +450,7 @@ void WaterMark::registerSettingsWidget()
     connect(d->fontColorButton, SIGNAL(signalColorSelected(QColor)),
             this, SLOT(slotSettingsChanged()));
 
-    connect(d->textEdit, SIGNAL(textChanged(QString)),
+    connect(d->textEdit, SIGNAL(textChanged()),
             this, SLOT(slotSettingsChanged()));
 
     connect(d->textOpacity, SIGNAL(valueChanged(int)),
@@ -503,7 +502,7 @@ void WaterMark::registerSettingsWidget()
             this, SLOT(slotSettingsChanged()));
 
     connect(d->waterMarkOpacityPercent, SIGNAL(valueChanged(int)),
-	    this, SLOT(slotSettingsChanged()));
+            this, SLOT(slotSettingsChanged()));
 
     BatchTool::registerSettingsWidget();
 }

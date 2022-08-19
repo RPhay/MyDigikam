@@ -76,16 +76,17 @@ public:
 };
 
 IPTCContent::IPTCContent(QWidget* const parent)
-    : QWidget(parent),
-      d      (new Private)
+    : MetadataEditPage(parent),
+      d               (new Private)
 {
-    QGridLayout* const grid = new QGridLayout(this);
+    QGridLayout* const grid = new QGridLayout(widget());
 
     // --------------------------------------------------------
 
     d->headlineCheck = new QCheckBox(i18n("Headline:"), this);
     d->headlineEdit  = new LimitedTextEdit(this);
     d->headlineEdit->setMaxLength(256);
+    d->headlineEdit->setPlaceholderText(i18n("Set here the content synopsis"));
     d->headlineEdit->setWhatsThis(i18n("Enter here the content synopsis. This field is limited "
                                        "to 256 characters."));
 
@@ -97,9 +98,11 @@ IPTCContent::IPTCContent(QWidget* const parent)
     captionHeader->setStretchFactor(d->captionCheck, 10);
 
     d->captionEdit             = new LimitedTextEdit(this);
+    d->captionEdit->setLinesVisible(4);
     d->syncJFIFCommentCheck    = new QCheckBox(i18n("Sync JFIF Comment section"), this);
     d->syncEXIFCommentCheck    = new QCheckBox(i18n("Sync Exif Comment"), this);
     d->captionEdit->setMaxLength(2000);
+    d->captionEdit->setPlaceholderText(i18n("Set here the content description"));
     d->captionEdit->setWhatsThis(i18n("Enter the content description. This field is limited "
                                       "to 2000 characters."));
 
@@ -133,9 +136,12 @@ IPTCContent::IPTCContent(QWidget* const parent)
     grid->addWidget(note,                                   9, 0, 1, 3);
     grid->setRowStretch(10, 10);
     grid->setColumnStretch(2, 10);
-    grid->setContentsMargins(QMargins());
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+
+    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
+    grid->setContentsMargins(spacing, spacing, spacing, spacing);
+    grid->setSpacing(spacing);
 
     // --------------------------------------------------------
 
@@ -159,9 +165,6 @@ IPTCContent::IPTCContent(QWidget* const parent)
     connect(d->writerEdit, SIGNAL(signalModified()),
             this, SIGNAL(signalModified()));
 
-    connect(d->writerEdit->valueEdit(), SIGNAL(textChanged(QString)),
-            this, SLOT(slotLineEditModified()));
-
     connect(d->headlineCheck, SIGNAL(toggled(bool)),
             this, SIGNAL(signalModified()));
 
@@ -170,14 +173,8 @@ IPTCContent::IPTCContent(QWidget* const parent)
     connect(d->captionEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
-    connect(d->captionEdit, SIGNAL(textChanged()),
-            this, SLOT(slotCaptionLeftCharacters()));
-
     connect(d->headlineEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
-
-    connect(d->headlineEdit, SIGNAL(textChanged()),
-            this, SLOT(slotLineEditModified()));
 }
 
 IPTCContent::~IPTCContent()
@@ -210,27 +207,6 @@ void IPTCContent::setCheckedSyncEXIFComment(bool c)
     d->syncEXIFCommentCheck->setChecked(c);
 }
 
-void IPTCContent::slotCaptionLeftCharacters()
-{
-    QToolTip::showText(d->captionCheck->mapToGlobal(QPoint(0, -16)),
-                       i18np("%1 character left", "%1 characters left", d->captionEdit->maxLength() - d->captionEdit->toPlainText().size()),
-                       d->captionEdit);
-}
-
-void IPTCContent::slotLineEditModified()
-{
-    QLineEdit* const ledit = dynamic_cast<QLineEdit*>(sender());
-
-    if (!ledit)
-    {
-        return;
-    }
-
-    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 16))),
-                       i18np("%1 character left", "%1 characters left", ledit->maxLength() - ledit->text().size()),
-                       ledit);
-}
-
 void IPTCContent::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
@@ -249,7 +225,6 @@ void IPTCContent::readMetadata(const DMetadata& meta)
     d->captionEdit->setEnabled(d->captionCheck->isChecked());
     d->syncJFIFCommentCheck->setEnabled(d->captionCheck->isChecked());
     d->syncEXIFCommentCheck->setEnabled(d->captionCheck->isChecked());
-    slotCaptionLeftCharacters();
 
     list = meta.getIptcTagsStringList("Iptc.Application2.Writer", false);
     d->writerEdit->setValues(list);

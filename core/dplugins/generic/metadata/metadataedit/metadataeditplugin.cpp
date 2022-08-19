@@ -32,7 +32,7 @@
 
 // Local includes
 
-#include "metadataedit.h"
+#include "metadataeditdialog.h"
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -82,6 +82,12 @@ QList<DPluginAuthor> MetadataEditPlugin::authors() const
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
                              QString::fromUtf8("(C) 2006-2022"))
+            << DPluginAuthor(QString::fromUtf8("Alan Pater"),
+                             QString::fromUtf8("alan dot pater at gmail dot com"),
+                             QString::fromUtf8("(C) 2014"))
+            << DPluginAuthor(QString::fromUtf8("Andi Clemens"),
+                             QString::fromUtf8("andi dot clemens at googlemail dot com"),
+                             QString::fromUtf8("(C) 2009"))
             ;
 }
 

@@ -97,6 +97,7 @@ MetadataSelector::MetadataSelector(MetadataSelectorView* const parent)
     setSelectionMode(QAbstractItemView::SingleSelection);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setAllColumnsShowFocus(true);
+    setUniformRowHeights(true);
     setColumnCount(2);
 
     QStringList labels;

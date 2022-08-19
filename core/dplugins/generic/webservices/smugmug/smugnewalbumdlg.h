@@ -47,7 +47,8 @@ public:
 
     void getAlbumProperties(SmugAlbum& album);
 
-/*  Categories are deprecated
+/*
+    Categories are deprecated
     QComboBox* categoryCombo()    const;
     QComboBox* subCategoryCombo() const;
 */

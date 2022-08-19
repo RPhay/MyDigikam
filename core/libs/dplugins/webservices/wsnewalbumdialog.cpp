@@ -49,8 +49,8 @@ public:
       : toolName  (name),
         mainWidget(widget)
     {
-        titleEdt       = new QLineEdit;
-        descEdt        = new QTextEdit;
+        titleEdt       = new DTextEdit;
+        descEdt        = new DTextEdit(0, nullptr);
         locEdt         = new QLineEdit;
         dtEdt          = new QDateTimeEdit(QDateTime::currentDateTime());
 
@@ -67,8 +67,8 @@ public:
         buttonBox      = new QDialogButtonBox();
     }
 
-    QLineEdit*         titleEdt;
-    QTextEdit*         descEdt;
+    DTextEdit*         titleEdt;
+    DTextEdit*         descEdt;
     QLineEdit*         locEdt;
     QDateTimeEdit*     dtEdt;
 
@@ -89,7 +89,7 @@ public:
 
 WSNewAlbumDialog::WSNewAlbumDialog(QWidget* const parent, const QString& toolName)
     : QDialog(parent),
-      d(new Private(this, toolName))
+      d      (new Private(this, toolName))
 {
     d->mainWidget->setMinimumSize(500, 500);
     setWindowTitle(QString(d->toolName + QLatin1String(" New Album")));
@@ -103,8 +103,8 @@ WSNewAlbumDialog::WSNewAlbumDialog(QWidget* const parent, const QString& toolNam
     d->buttonBox->button(QDialogButtonBox::Cancel)->setDefault(true);
     d->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
 
-    connect(d->titleEdt, SIGNAL(textChanged(QString)),
-            this, SLOT(slotTextChanged(QString)));
+    connect(d->titleEdt, SIGNAL(textChanged()),
+            this, SLOT(slotTextChanged()));
 
     connect(d->buttonBox, SIGNAL(accepted()),
             this, SLOT(accept()));
@@ -147,15 +147,15 @@ WSNewAlbumDialog::~WSNewAlbumDialog()
     delete d;
 }
 
-void WSNewAlbumDialog::slotTextChanged(const QString& /*text*/)
+void WSNewAlbumDialog::slotTextChanged()
 {
     if (QString::compare(getTitleEdit()->text(), QLatin1String(""), Qt::CaseInsensitive) == 0)
     {
-        d->buttonBox->button( QDialogButtonBox::Ok )->setEnabled(false);
+        d->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
     }
     else
     {
-        d->buttonBox->button( QDialogButtonBox::Ok )->setEnabled(true);
+        d->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
     }
 }
 
@@ -193,12 +193,12 @@ QGroupBox* WSNewAlbumDialog::getAlbumBox() const
     return d->albumBox;
 }
 
-QLineEdit* WSNewAlbumDialog::getTitleEdit() const
+DTextEdit* WSNewAlbumDialog::getTitleEdit() const
 {
     return d->titleEdt;
 }
 
-QTextEdit* WSNewAlbumDialog::getDescEdit() const
+DTextEdit* WSNewAlbumDialog::getDescEdit() const
 {
     return d->descEdt;
 }

@@ -22,9 +22,8 @@ add_executable(detect_gui ${detect_gui_SRCS})
 target_link_libraries(detect_gui
 
                       digikamcore
-                      digikamgui
-                      digikamfacesengine
                       digikamdatabase
+                      digikamgui
 
                       ${COMMON_TEST_LINK}
 )
@@ -37,9 +36,8 @@ add_executable(benchmark_dnndetection_gui ${dnndetection_gui_SRCS})
 target_link_libraries(benchmark_dnndetection_gui
 
                       digikamcore
-                      digikamgui
-                      digikamfacesengine
                       digikamdatabase
+                      digikamgui
 
                       ${COMMON_TEST_LINK}
 )

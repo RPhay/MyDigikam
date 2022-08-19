@@ -89,6 +89,7 @@ DigikamApp::DigikamApp()
     ProgressManager::instance();
     ThumbnailLoadThread::setDisplayingWidget(this);
     DIO::instance();
+    SpellCheckSettings::instance();
 
     ExifToolThread* const exifToolThread = new ExifToolThread(this);
     exifToolThread->start();
@@ -274,8 +275,6 @@ DigikamApp::~DigikamApp()
     // close database server
 
     DatabaseServerStarter::instance()->stopServerManagerProcess();
-
-    AlbumManager::instance()->removeFakeConnection();
 
     delete d->modelCollection;
 

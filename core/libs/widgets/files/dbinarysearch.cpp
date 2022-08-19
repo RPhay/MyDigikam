@@ -62,8 +62,9 @@ DBinarySearch::DBinarySearch(QWidget* const parent)
     setAlternatingRowColors(true);
     setSelectionMode(QAbstractItemView::NoSelection);
     setSortingEnabled(false);
-    setAllColumnsShowFocus(true);
     setRootIsDecorated(false);
+    setUniformRowHeights(true);
+    setAllColumnsShowFocus(true);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setColumnCount(5);
     setHeaderLabels(QStringList() << QLatin1String("")

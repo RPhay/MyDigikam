@@ -7,7 +7,7 @@
  * Description : an unit-test to detect image quality level
  *
  * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
+ * Copyright (C) 2021      by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -47,53 +47,9 @@ ImgQSortTestGeneral::ImgQSortTestGeneral(QObject* const)
     m_dataTestCases = dataTestCases;
 }
 
-void ImgQSortTestGeneral::testParseTestImagesForGeneralBadImage()
-{
-    QHash<QString, bool> results = testParseTestImages(QLatin1String("badImage"),
-                                                       ImgQSortTest_ParseTestImagesDefautDetection, DETECTIONGENERAL);
-
-    for (const auto& test_case : results.keys())
-    {
-        QVERIFY(results.value(test_case));
-    }
-}
-
-void ImgQSortTestGeneral::testParseTestImagesForGeneralQuiteBadImage()
-{
-    QHash<QString, bool> results = testParseTestImages(QLatin1String("quiteBadImage"),
-                                                       ImgQSortTest_ParseTestImagesDefautDetection, DETECTIONGENERAL);
-
-    for (const auto& test_case : results.keys())
-    {
-        QVERIFY(results.value(test_case));
-    }
-}
-
 void ImgQSortTestGeneral::testParseTestImagesForGeneralNormalImage()
 {
     QHash<QString, bool> results = testParseTestImages(QLatin1String("normalImage"),
-                                                       ImgQSortTest_ParseTestImagesDefautDetection, DETECTIONGENERAL);
-
-    for (const auto& test_case : results.keys())
-    {
-        QVERIFY(results.value(test_case));
-    }
-}
-
-void ImgQSortTestGeneral::testParseTestImagesForGeneralQuiteGoodImage()
-{
-    QHash<QString, bool> results = testParseTestImages(QLatin1String("quiteGoodImage"),
-                                                       ImgQSortTest_ParseTestImagesDefautDetection, DETECTIONGENERAL);
-
-    for (const auto& test_case : results.keys())
-    {
-        QVERIFY(results.value(test_case));
-    }
-}
-
-void ImgQSortTestGeneral::testParseTestImagesForGeneralGoodImage()
-{
-    QHash<QString, bool> results = testParseTestImages(QLatin1String("goodImage"),
                                                        ImgQSortTest_ParseTestImagesDefautDetection, DETECTIONGENERAL);
 
     for (const auto& test_case : results.keys())

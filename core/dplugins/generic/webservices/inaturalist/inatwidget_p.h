@@ -40,7 +40,6 @@
 #include <QApplication>
 #include <QStyle>
 #include <QDialog>
-#include <QPlainTextEdit>
 
 // KDE includes
 
@@ -52,6 +51,7 @@
 #include "wscomboboxintermediate.h"
 #include "ditemslist.h"
 #include "inatsuggest.h"
+#include "dtextedit.h"
 
 using namespace Digikam;
 
@@ -90,7 +90,7 @@ public:
     QLabel*                 identificationImage;
     QLabel*                 identificationLabel;
     QLabel*                 closestKnownObservation;
-    QPlainTextEdit*         observationDescription;
+    DPlainTextEdit*         observationDescription;
     TaxonEdit*              identificationEdit;
     SuggestTaxonCompletion* taxonPopup;
     QSpinBox*               photoMaxTimeDiffSpB;

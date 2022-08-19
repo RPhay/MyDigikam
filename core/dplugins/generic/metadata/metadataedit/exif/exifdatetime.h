@@ -31,13 +31,14 @@
 // Local includes
 
 #include "dmetadata.h"
+#include "metadataeditpage.h"
 
 using namespace Digikam;
 
 namespace DigikamGenericMetadataEditPlugin
 {
 
-class EXIFDateTime : public QWidget
+class EXIFDateTime : public MetadataEditPage
 {
     Q_OBJECT
 

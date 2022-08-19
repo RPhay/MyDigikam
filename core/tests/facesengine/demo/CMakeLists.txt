@@ -24,9 +24,8 @@ add_executable(facesenginedemo_gui ${facesenginedemo_gui_SRCS})
 target_link_libraries(facesenginedemo_gui
 
                       digikamcore
-                      digikamgui
-                      digikamfacesengine
                       digikamdatabase
+                      digikamgui
 
                       ${COMMON_TEST_LINK}
 )

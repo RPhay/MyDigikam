@@ -161,6 +161,7 @@ ToolsListView::ToolsListView(QWidget* const parent)
     setIconSize(QSize(22, 22));
     setSelectionMode(QAbstractItemView::ExtendedSelection);
     setSortingEnabled(false);
+    setUniformRowHeights(true);
     setAllColumnsShowFocus(true);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setColumnCount(2);

@@ -113,9 +113,13 @@ public:
 // --------------------------------------------------------------------------------
 
 SubjectWidget::SubjectWidget(QWidget* const parent, bool sizeLimited)
-    : QWidget(parent),
-      d      (new Private)
+    : QScrollArea(parent),
+      d          (new Private)
 {
+    QWidget* const panel   = new QWidget(viewport());
+    setWidget(panel);
+    setWidgetResizable(true);
+
     // Load subject codes provided by IPTC/NAA as xml file.
     // See iptc.cms.apa.at/std/topicset/topicset.iptc-subjectcode.xml for details.
 
@@ -171,6 +175,7 @@ SubjectWidget::SubjectWidget(QWidget* const parent, bool sizeLimited)
 
     m_iprEdit = new QLineEdit;
     m_iprEdit->setClearButtonEnabled(true);
+    m_iprEdit->setPlaceholderText(i18n("Set here the Informative Provider Reference"));
 
     if (sizeLimited)
     {
@@ -182,6 +187,7 @@ SubjectWidget::SubjectWidget(QWidget* const parent, bool sizeLimited)
     m_refEdit = new QLineEdit;
     m_refEdit->setClearButtonEnabled(true);
     m_refEdit->setValidator(refValidator);
+    m_refEdit->setPlaceholderText(i18n("Set here the Subject Reference Number"));
 
     if (sizeLimited)
     {
@@ -192,6 +198,7 @@ SubjectWidget::SubjectWidget(QWidget* const parent, bool sizeLimited)
 
     m_nameEdit = new QLineEdit;
     m_nameEdit->setClearButtonEnabled(true);
+    m_nameEdit->setPlaceholderText(i18n("Set here the Subject Name"));
 
     if (sizeLimited)
     {
@@ -202,6 +209,7 @@ SubjectWidget::SubjectWidget(QWidget* const parent, bool sizeLimited)
 
     m_matterEdit = new QLineEdit;
     m_matterEdit->setClearButtonEnabled(true);
+    m_matterEdit->setPlaceholderText(i18n("Set here the Subject Matter Name"));
 
     if (sizeLimited)
     {
@@ -212,6 +220,7 @@ SubjectWidget::SubjectWidget(QWidget* const parent, bool sizeLimited)
 
     m_detailEdit = new QLineEdit;
     m_detailEdit->setClearButtonEnabled(true);
+    m_detailEdit->setPlaceholderText(i18n("Set here the Subject Detail Name"));
 
     if (sizeLimited)
     {
@@ -272,13 +281,13 @@ SubjectWidget::SubjectWidget(QWidget* const parent, bool sizeLimited)
     optionsBoxLayout->setColumnStretch(4, 10);
     optionsBoxLayout->setContentsMargins(QMargins());
     optionsBoxLayout->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+                                      QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     d->optionsBox->setLayout(optionsBoxLayout);
 
     // --------------------------------------------------------
 
-    QGridLayout* const mainLayout = new QGridLayout;
-    mainLayout->setAlignment( Qt::AlignTop );
+    QGridLayout* const mainLayout = new QGridLayout(widget());
+    mainLayout->setAlignment(Qt::AlignTop);
     mainLayout->addWidget(m_subjectsCheck,     0, 0, 1, 4);
     mainLayout->addWidget(d->optionsBox,       1, 0, 1, 4);
     mainLayout->addWidget(d->subjectsBox,      2, 0, 5, 3);
@@ -288,10 +297,12 @@ SubjectWidget::SubjectWidget(QWidget* const parent, bool sizeLimited)
     mainLayout->addWidget(m_note,              5, 3, 1, 1);
     mainLayout->setRowStretch(6, 10);
     mainLayout->setColumnStretch(2, 1);
-    mainLayout->setContentsMargins(QMargins());
-    mainLayout->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
-    setLayout(mainLayout);
+
+    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
+    mainLayout->setContentsMargins(spacing, spacing, spacing, spacing);
+    mainLayout->setSpacing(spacing);
 
     // --------------------------------------------------------
 

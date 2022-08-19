@@ -4351,10 +4351,11 @@ void CoreDB::moveItem(int srcAlbumID, const QString& srcName,
     d->db->execSql(QString::fromUtf8("UPDATE Images SET album=?, name=? "
                                      "WHERE id=?;"),
                    dstAlbumID, dstName, imageId);
+
     d->db->recordChangeset(ImageChangeset(imageId, DatabaseFields::Set(DatabaseFields::Album)));
+    d->db->recordChangeset(CollectionImageChangeset(imageId, dstAlbumID, CollectionImageChangeset::Added));
     d->db->recordChangeset(CollectionImageChangeset(imageId, srcAlbumID, CollectionImageChangeset::Moved));
     d->db->recordChangeset(CollectionImageChangeset(imageId, srcAlbumID, CollectionImageChangeset::Removed));
-    d->db->recordChangeset(CollectionImageChangeset(imageId, dstAlbumID, CollectionImageChangeset::Added));
 }
 
 int CoreDB::copyItem(int srcAlbumID, const QString& srcName,
@@ -4395,8 +4396,8 @@ int CoreDB::copyItem(int srcAlbumID, const QString& srcName,
     }
 
     d->db->recordChangeset(ImageChangeset(id.toLongLong(), DatabaseFields::Set(DatabaseFields::ImagesAll)));
-    d->db->recordChangeset(CollectionImageChangeset(id.toLongLong(), srcAlbumID, CollectionImageChangeset::Copied));
     d->db->recordChangeset(CollectionImageChangeset(id.toLongLong(), dstAlbumID, CollectionImageChangeset::Added));
+    d->db->recordChangeset(CollectionImageChangeset(id.toLongLong(), srcAlbumID, CollectionImageChangeset::Copied));
 
     // copy all other tables
 

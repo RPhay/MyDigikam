@@ -29,13 +29,13 @@
 // Qt includes
 
 #include <QLabel>
-#include <QValidator>
 #include <QGridLayout>
 #include <QApplication>
 #include <QStyle>
 #include <QComboBox>
 #include <QSpinBox>
 #include <QLineEdit>
+#include <QValidator>
 
 // KDE includes
 
@@ -116,12 +116,13 @@ public:
 };
 
 EXIFDevice::EXIFDevice(QWidget* const parent)
-    : QWidget(parent),
-      d      (new Private)
+    : MetadataEditPage(parent),
+      d               (new Private)
 {
-    QGridLayout* const grid = new QGridLayout(this);
+    QGridLayout* const grid = new QGridLayout(widget());
 
     // EXIF only accept printable Ascii char.
+
     QRegularExpression asciiRx(QLatin1String("[\x20-\x7F]+$"));
     QValidator* const asciiValidator = new QRegularExpressionValidator(asciiRx, this);
 
@@ -131,6 +132,7 @@ EXIFDevice::EXIFDevice(QWidget* const parent)
     d->makeEdit  = new QLineEdit(this);
     d->makeEdit->setClearButtonEnabled(true);
     d->makeEdit->setValidator(asciiValidator);
+    d->makeEdit->setPlaceholderText(i18n("Set here the manufacturer name"));
     d->makeEdit->setWhatsThis(i18n("Set here the manufacturer of image input equipment used to "
                                    "take the picture. This field is limited to ASCII characters."));
 
@@ -140,6 +142,7 @@ EXIFDevice::EXIFDevice(QWidget* const parent)
     d->modelEdit  = new QLineEdit(this);
     d->modelEdit->setClearButtonEnabled(true);
     d->modelEdit->setValidator(asciiValidator);
+    d->modelEdit->setPlaceholderText(i18n("Set here the model name"));
     d->modelEdit->setWhatsThis(i18n("Set here the model of image input equipment used to "
                                     "take the picture. This field is limited to ASCII characters."));
 
@@ -177,7 +180,7 @@ EXIFDevice::EXIFDevice(QWidget* const parent)
     d->exposureTimeDenEdit->setSingleStep(1);
     d->exposureTimeDenEdit->setValue(1);
     QLabel* const exposureLabel = new QLabel(QLatin1String("/"), this);
-    exposureLabel->setAlignment (Qt::AlignRight|Qt::AlignVCenter);
+    exposureLabel->setAlignment (Qt::AlignRight | Qt::AlignVCenter);
     d->exposureTimeCheck->setWhatsThis(i18n("Set on this option to set the exposure time "
                                             "of picture, given in seconds."));
 
@@ -314,7 +317,7 @@ EXIFDevice::EXIFDevice(QWidget* const parent)
     d->subjectDistanceTypeCB->insertItem(3, i18nc("@item: subject distance", "Close view"));
     d->subjectDistanceTypeCB->insertItem(4, i18nc("@item: subject distance", "Distant view"));
     d->subjectDistanceTypeCB->setWhatsThis(i18nc("@info", "Select here the type of distance between "
-                                                "the subject and the image input equipment."));
+                                                 "the subject and the image input equipment."));
 
     // --------------------------------------------------------
 
@@ -362,9 +365,12 @@ EXIFDevice::EXIFDevice(QWidget* const parent)
     grid->setColumnStretch(1, 10);
     grid->setColumnStretch(5, 10);
     grid->setRowStretch(16, 10);
-    grid->setContentsMargins(QMargins());
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+
+    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
+    grid->setContentsMargins(spacing, spacing, spacing, spacing);
+    grid->setSpacing(spacing);
 
     // --------------------------------------------------------
 
@@ -496,8 +502,8 @@ void EXIFDevice::readMetadata(const DMetadata& meta)
 {
     blockSignals(true);
 
-    long int num=1, den=1;
-    long     val=0;
+    long int num = 1, den = 1;
+    long     val = 0;
     QString  data;
 
     d->makeEdit->clear();
@@ -529,7 +535,7 @@ void EXIFDevice::readMetadata(const DMetadata& meta)
 
     if (meta.getExifTagLong("Exif.Photo.FileSource", val))
     {
-        if (val>0 && val<4)
+        if ((val > 0) && (val < 4))
         {
             d->deviceTypeCB->setCurrentIndex(val-1);
             d->deviceTypeCheck->setChecked(true);
@@ -554,12 +560,12 @@ void EXIFDevice::readMetadata(const DMetadata& meta)
     }
     else if (meta.getExifTagRational("Exif.Photo.ShutterSpeedValue", num, den))
     {
-        double tmp = std::exp(std::log(2.0) * (double)(num)/(double)(den));
+        double tmp = std::exp(std::log(2.0) * (double)(num) / (double)(den));
 
         if (tmp > 1.0)
             num = (long int)(tmp + 0.5);
         else
-            den = (long int)(1.0/tmp + 0.5);
+            den = (long int)(1.0 / tmp + 0.5);
 
         d->exposureTimeNumEdit->setValue(num);
         d->exposureTimeDenEdit->setValue(den);
@@ -574,7 +580,7 @@ void EXIFDevice::readMetadata(const DMetadata& meta)
 
     if (meta.getExifTagLong("Exif.Photo.ExposureProgram", val))
     {
-        if (val>=0 && val <=8)
+        if ((val >= 0) && (val <= 8))
         {
             d->exposureProgramCB->setCurrentIndex(val);
             d->exposureProgramCheck->setChecked(true);
@@ -592,7 +598,7 @@ void EXIFDevice::readMetadata(const DMetadata& meta)
 
     if (meta.getExifTagLong("Exif.Photo.ExposureMode", val))
     {
-        if (val >= 0 && val <= 2)
+        if ((val >= 0) && (val <= 2))
         {
             d->exposureModeCB->setCurrentIndex(val);
             d->exposureModeCheck->setChecked(true);
@@ -621,9 +627,9 @@ void EXIFDevice::readMetadata(const DMetadata& meta)
 
     if (meta.getExifTagLong("Exif.Photo.MeteringMode", val))
     {
-        if ((val >= 0 && val <= 6) || val == 255)
+        if (((val >= 0) && (val <= 6)) || (val == 255))
         {
-            d->meteringModeCB->setCurrentIndex(val == 255 ? 7 : val);
+            d->meteringModeCB->setCurrentIndex((val == 255) ? 7 : val);
             d->meteringModeCheck->setChecked(true);
         }
         else
@@ -644,7 +650,9 @@ void EXIFDevice::readMetadata(const DMetadata& meta)
         for (int i = 0 ; i < d->ISOSpeedCB->count() ; ++i)
         {
             if (d->ISOSpeedCB->itemText(i) == QString::number(val))
+            {
                 item = i;
+            }
         }
 
         if (item != -1)
@@ -659,13 +667,15 @@ void EXIFDevice::readMetadata(const DMetadata& meta)
     }
     else if (meta.getExifTagRational("Exif.Photo.ExposureIndex", num, den))
     {
-        val = num / den;
+        val      = num / den;
         int item = -1;
 
         for (int i = 0 ; i < d->ISOSpeedCB->count() ; ++i)
         {
             if (d->ISOSpeedCB->itemText(i) == QString::number(val))
+            {
                 item = i;
+            }
         }
 
         if (item != -1)
@@ -686,9 +696,9 @@ void EXIFDevice::readMetadata(const DMetadata& meta)
 
     if (meta.getExifTagLong("Exif.Photo.SensingMethod", val))
     {
-        if (val >= 1 && val <= 8 && val != 6)
+        if ((val >= 1) && (val <= 8) && (val != 6))
         {
-            d->sensingMethodCB->setCurrentIndex(val > 6 ? val-2 : val-1);
+            d->sensingMethodCB->setCurrentIndex((val > 6) ? val-2 : val-1);
             d->sensingMethodCheck->setChecked(true);
         }
         else
@@ -704,7 +714,7 @@ void EXIFDevice::readMetadata(const DMetadata& meta)
 
     if (meta.getExifTagLong("Exif.Photo.SceneCaptureType", val))
     {
-        if (val >= 0 && val <= 3)
+        if ((val >= 0) && (val <= 3))
         {
             d->sceneTypeCB->setCurrentIndex(val);
             d->sceneTypeCheck->setChecked(true);
@@ -722,7 +732,7 @@ void EXIFDevice::readMetadata(const DMetadata& meta)
 
     if (meta.getExifTagLong("Exif.Photo.SubjectDistanceRange", val))
     {
-        if (val >= 0 && val <= 3)
+        if ((val >= 0) && (val <= 3))
         {
             d->subjectDistanceTypeCB->setCurrentIndex(val);
             d->subjectDistanceTypeCheck->setChecked(true);
@@ -740,7 +750,7 @@ void EXIFDevice::readMetadata(const DMetadata& meta)
 
 void EXIFDevice::applyMetadata(const DMetadata& meta)
 {
-    long int num=1, den=1;
+    long int num = 1, den = 1;
 
     if (d->makeCheck->isChecked())
         meta.setExifTagString("Exif.Image.Make", d->makeEdit->text());
@@ -760,11 +770,11 @@ void EXIFDevice::applyMetadata(const DMetadata& meta)
     if (d->exposureTimeCheck->isChecked())
     {
         meta.setExifTagRational("Exif.Photo.ExposureTime", d->exposureTimeNumEdit->value(),
-                                      d->exposureTimeDenEdit->value());
+                                                           d->exposureTimeDenEdit->value());
 
-        double exposureTime = (double)(d->exposureTimeNumEdit->value())/
+        double exposureTime = (double)(d->exposureTimeNumEdit->value()) /
                               (double)(d->exposureTimeDenEdit->value());
-        double shutterSpeed = (-1.0)*(std::log(exposureTime)/std::log(2.0));
+        double shutterSpeed = (-1.0) * (std::log(exposureTime) / std::log(2.0));
         meta.convertToRational(shutterSpeed, &num, &den, 8);
         meta.setExifTagRational("Exif.Photo.ShutterSpeedValue", num, den);
     }
@@ -774,12 +784,12 @@ void EXIFDevice::applyMetadata(const DMetadata& meta)
         meta.removeExifTag("Exif.Photo.ShutterSpeedValue");
     }
 
-    if (d->exposureProgramCheck->isChecked())
+    if      (d->exposureProgramCheck->isChecked())
         meta.setExifTagLong("Exif.Photo.ExposureProgram", d->exposureProgramCB->currentIndex());
     else if (d->exposureProgramCheck->isValid())
         meta.removeExifTag("Exif.Photo.ExposureProgram");
 
-    if (d->exposureModeCheck->isChecked())
+    if      (d->exposureModeCheck->isChecked())
         meta.setExifTagLong("Exif.Photo.ExposureMode", d->exposureModeCB->currentIndex());
     else if (d->exposureModeCheck->isValid())
         meta.removeExifTag("Exif.Photo.ExposureMode");
@@ -794,15 +804,15 @@ void EXIFDevice::applyMetadata(const DMetadata& meta)
         meta.removeExifTag("Exif.Photo.ExposureBiasValue");
     }
 
-    if (d->meteringModeCheck->isChecked())
+    if      (d->meteringModeCheck->isChecked())
     {
         long met = d->meteringModeCB->currentIndex();
-        meta.setExifTagLong("Exif.Photo.MeteringMode", met > 6 ? 255 : met);
+        meta.setExifTagLong("Exif.Photo.MeteringMode", (met > 6) ? 255 : met);
     }
     else if (d->meteringModeCheck->isValid())
         meta.removeExifTag("Exif.Photo.MeteringMode");
 
-    if (d->ISOSpeedCheck->isChecked())
+    if      (d->ISOSpeedCheck->isChecked())
     {
         meta.setExifTagLong("Exif.Photo.ISOSpeedRatings", d->ISOSpeedCB->currentText().toLong());
 
@@ -815,7 +825,7 @@ void EXIFDevice::applyMetadata(const DMetadata& meta)
         meta.removeExifTag("Exif.Photo.ExposureIndex");
     }
 
-    if (d->sensingMethodCheck->isChecked())
+    if      (d->sensingMethodCheck->isChecked())
     {
         long sem = d->sensingMethodCB->currentIndex();
         meta.setExifTagLong("Exif.Photo.SensingMethod", sem > 4 ? sem+2 : sem+1);
@@ -825,12 +835,12 @@ void EXIFDevice::applyMetadata(const DMetadata& meta)
         meta.removeExifTag("Exif.Photo.SensingMethod");
     }
 
-    if (d->sceneTypeCheck->isChecked())
+    if      (d->sceneTypeCheck->isChecked())
         meta.setExifTagLong("Exif.Photo.SceneCaptureType", d->sceneTypeCB->currentIndex());
     else if (d->sceneTypeCheck->isValid())
         meta.removeExifTag("Exif.Photo.SceneCaptureType");
 
-    if (d->subjectDistanceTypeCheck->isChecked())
+    if      (d->subjectDistanceTypeCheck->isChecked())
         meta.setExifTagLong("Exif.Photo.SubjectDistanceRange", d->subjectDistanceTypeCB->currentIndex());
     else if (d->subjectDistanceTypeCheck->isValid())
         meta.removeExifTag("Exif.Photo.SubjectDistanceRange");

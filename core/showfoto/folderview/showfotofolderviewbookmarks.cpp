@@ -171,7 +171,7 @@ ShowfotoFolderViewBookmarks::ShowfotoFolderViewBookmarks(ShowfotoFolderViewSideB
     grid->addWidget(d->bookmarksList,  1, 0, 1, 5);
     grid->setRowStretch(1, 10);
     grid->setColumnStretch(1, 10);
-    grid->setContentsMargins(0, 0, 0, 0);
+    grid->setContentsMargins(QMargins());
 
     // --------------------------------------------------------
 

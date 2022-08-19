@@ -177,8 +177,9 @@ EnfuseStackList::EnfuseStackList(QWidget* const parent)
     setIconSize(QSize(64, 64));
     setSelectionMode(QAbstractItemView::SingleSelection);
     setSortingEnabled(false);
-    setAllColumnsShowFocus(true);
     setRootIsDecorated(false);
+    setUniformRowHeights(true);
+    setAllColumnsShowFocus(true);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setColumnCount(3);
     setHeaderHidden(false);

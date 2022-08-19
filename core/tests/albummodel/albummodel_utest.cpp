@@ -104,7 +104,7 @@ void AlbumModelTest::initTestCase()
     AlbumManager::checkDatabaseDirsAfterFirstRun(QDir::temp().absoluteFilePath(
                                                  tempSuffix), QDir::temp().absoluteFilePath(tempSuffix));
     DbEngineParameters params(QLatin1String("QSQLITE"), QDir::temp().absoluteFilePath(tempSuffix + QLatin1String("/digikam4.db")),
-                              QString(), QString(), -1, false, QString(), QString());
+                              QString(), QString(), -1, false, false, QString(), QString());
     bool dbChangeGood = AlbumManager::instance()->setDatabase(params, false,
                         QDir::temp().absoluteFilePath(tempSuffix));
     QVERIFY2(dbChangeGood, "Could not set temp album db");

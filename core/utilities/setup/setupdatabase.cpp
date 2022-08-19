@@ -76,7 +76,7 @@ SetupDatabase::SetupDatabase(QWidget* const parent)
       d(new Private)
 {
     const int spacing    = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QWidget* const panel = new QWidget(viewport());
     setWidget(panel);

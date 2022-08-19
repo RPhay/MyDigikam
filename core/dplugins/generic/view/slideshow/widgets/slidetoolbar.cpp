@@ -315,6 +315,8 @@ void SlideToolBar::slotMenuSlideShowConfiguration()
     }
 
     d->configDialog->show();
+    d->configDialog->raise();
+    d->configDialog->activateWindow();
 }
 
 void SlideToolBar::slotConfigurationAccepted()

@@ -161,6 +161,7 @@ void DConfigDlgListView::updateWidth()
 DConfigDlgTreeView::DConfigDlgTreeView(QWidget* const parent)
     : QTreeView(parent)
 {
+    setUniformRowHeights(true);
     header()->hide();
 }
 
@@ -229,7 +230,7 @@ DConfigDlgTabbedView::DConfigDlgTabbedView(QWidget* const parent)
     setFrameShape(NoFrame);
 
     QVBoxLayout* const layout = new QVBoxLayout(this);
-    layout->setContentsMargins(0, 0, 0, 0);
+    layout->setContentsMargins(QMargins());
 
     mTabWidget = new QTabWidget(this);
 

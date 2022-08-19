@@ -30,8 +30,6 @@
 #include <QApplication>
 #include <QStyle>
 #include <QComboBox>
-#include <QLineEdit>
-#include <QTextEdit>
 
 // KDE includes
 
@@ -47,6 +45,7 @@
 #include "multivaluesedit.h"
 #include "objectattributesedit.h"
 #include "dexpanderbox.h"
+#include "dtextedit.h"
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -128,8 +127,8 @@ public:
     QComboBox*                      priorityCB;
     QComboBox*                      objectTypeCB;
 
-    QLineEdit*                      objectAttributeEdit;
-    QLineEdit*                      originalTransEdit;
+    DTextEdit*                      objectAttributeEdit;
+    DTextEdit*                      originalTransEdit;
 
     MetadataCheckBox*               priorityCheck;
     MetadataCheckBox*               objectAttributeCheck;
@@ -142,10 +141,10 @@ public:
 };
 
 XMPProperties::XMPProperties(QWidget* const parent)
-    : QWidget(parent),
-      d      (new Private)
+    : MetadataEditPage(parent),
+      d               (new Private)
 {
-    QGridLayout* const grid = new QGridLayout(this);
+    QGridLayout* const grid = new QGridLayout(widget());
 
     // --------------------------------------------------------
 
@@ -214,8 +213,9 @@ XMPProperties::XMPProperties(QWidget* const parent)
     d->objectAttributeCheck = new MetadataCheckBox(i18nc("@option", "Attribute:"), this);
     d->objectAttributeCB    = new SqueezedComboBox(objectBox);
     d->objectAttributeCB->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    d->objectAttributeEdit  = new QLineEdit(objectBox);
-    d->objectAttributeEdit->setClearButtonEnabled(true);
+    d->objectAttributeEdit  = new DTextEdit(objectBox);
+    d->objectAttributeEdit->setLinesVisible(1);
+    d->objectAttributeEdit->setPlaceholderText(i18nc("@info", "Set here the editorial attribute description"));
     d->objectAttributeEdit->setWhatsThis(i18nc("@info", "Set here the editorial attribute description of the content."));
 
     d->objectAttributeCB->setWhatsThis(i18nc("@info", "Select here the editorial attribute of the content."));
@@ -245,8 +245,9 @@ XMPProperties::XMPProperties(QWidget* const parent)
     // --------------------------------------------------------
 
     d->originalTransCheck = new QCheckBox(i18nc("@option", "Reference:"), this);
-    d->originalTransEdit  = new QLineEdit(this);
-    d->originalTransEdit->setClearButtonEnabled(true);
+    d->originalTransEdit  = new DTextEdit(this);
+    d->originalTransEdit->setLinesVisible(1);
+    d->originalTransEdit->setPlaceholderText(i18nc("@info", "Set here the content reference"));
     d->originalTransEdit->setWhatsThis(i18nc("@info", "Set here the original content transmission reference."));
 
     // --------------------------------------------------------
@@ -264,9 +265,12 @@ XMPProperties::XMPProperties(QWidget* const parent)
     grid->addWidget(d->originalTransEdit,                   7, 1, 1, 4);
     grid->setRowStretch(8, 10);
     grid->setColumnStretch(4, 10);
-    grid->setContentsMargins(QMargins());
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+
+    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
+    grid->setContentsMargins(spacing, spacing, spacing, spacing);
+    grid->setSpacing(spacing);
 
     // --------------------------------------------------------
 
@@ -310,10 +314,10 @@ XMPProperties::XMPProperties(QWidget* const parent)
     connect(d->objectAttributeCB, SIGNAL(activated(int)),
             this, SIGNAL(signalModified()));
 
-    connect(d->objectAttributeEdit, SIGNAL(textChanged(QString)),
+    connect(d->objectAttributeEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
-    connect(d->originalTransEdit, SIGNAL(textChanged(QString)),
+    connect(d->originalTransEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 }
 

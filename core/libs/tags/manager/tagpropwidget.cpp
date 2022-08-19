@@ -54,6 +54,7 @@
 #include "syncjob.h"
 #include "dexpanderbox.h"
 #include "dlayoutbox.h"
+#include "dtextedit.h"
 
 namespace Digikam
 {
@@ -84,7 +85,7 @@ public:
     QPushButton*        discardButton;
     QList<TAlbum*>      selectedAlbums;
     KKeySequenceWidget* keySeqWidget;
-    SearchTextBar*      titleEdit;
+    DTextEdit*          titleEdit;
     bool                changed;
 };
 
@@ -116,9 +117,9 @@ TagPropWidget::TagPropWidget(QWidget* const parent)
     titleLabel->setContentsMargins(cmargin, cmargin, cmargin, cmargin);
     titleLabel->setIndent(spacing);
 
-    d->titleEdit             = new SearchTextBar(this, QLatin1String("TagEditDlgTitleEdit"),
-                                                 i18nc("@info", "Enter tag name here"));
-    d->titleEdit->setCaseSensitive(false);
+    d->titleEdit             = new DTextEdit(this);
+    d->titleEdit->setPlaceholderText(i18nc("@info", "Enter tag name here"));
+    d->titleEdit->setLinesVisible(1);
     titleLabel->setBuddy(d->titleEdit);
 
     QLabel* const tipLabel   = new QLabel(this);
@@ -197,6 +198,8 @@ TagPropWidget::TagPropWidget(QWidget* const parent)
 
     adjustSize();
 
+    // ---------------------------------------------------------------
+
     connect(d->iconButton, SIGNAL(clicked()),
             this, SLOT(slotIconChanged()));
 
@@ -228,7 +231,6 @@ TagPropWidget::~TagPropWidget()
 
 void TagPropWidget::slotSelectionChanged(const QList<Album*>& albums)
 {
-
     if (albums.isEmpty())
     {
         enableItems(TagPropWidget::DisabledAll);
@@ -447,6 +449,7 @@ void TagPropWidget::slotDiscardChanges()
 void TagPropWidget::slotReturnPressed()
 {
     slotSaveChanges();
+
     Q_EMIT signalTitleEditReady();
 }
 

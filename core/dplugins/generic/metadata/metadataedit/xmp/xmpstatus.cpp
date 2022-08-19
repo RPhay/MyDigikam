@@ -40,7 +40,6 @@
 #include "multistringsedit.h"
 #include "dtextedit.h"
 
-
 namespace DigikamGenericMetadataEditPlugin
 {
 
@@ -61,7 +60,7 @@ public:
     QCheckBox*           nicknameCheck;
     QCheckBox*           specialInstructionCheck;
 
-    QLineEdit*           nicknameEdit;
+    DTextEdit*           nicknameEdit;
 
     DPlainTextEdit*      specialInstructionEdit;
 
@@ -71,10 +70,10 @@ public:
 };
 
 XMPStatus::XMPStatus(QWidget* const parent)
-    : QWidget(parent),
-      d      (new Private)
+    : MetadataEditPage(parent),
+      d               (new Private)
 {
-    QGridLayout* const grid  = new QGridLayout(this);
+    QGridLayout* const grid  = new QGridLayout(widget());
 
     // --------------------------------------------------------
 
@@ -84,8 +83,9 @@ XMPStatus::XMPStatus(QWidget* const parent)
     // --------------------------------------------------------
 
     d->nicknameCheck = new QCheckBox(i18n("Nickname:"), this);
-    d->nicknameEdit  = new QLineEdit(this);
-    d->nicknameEdit->setClearButtonEnabled(true);
+    d->nicknameEdit  = new DTextEdit(this);
+    d->nicknameEdit->setLinesVisible(1);
+    d->nicknameEdit->setPlaceholderText(i18n("Set here a short informal name"));
     d->nicknameEdit->setWhatsThis(i18n("A short informal name for the resource."));
 
     // --------------------------------------------------------
@@ -98,6 +98,7 @@ XMPStatus::XMPStatus(QWidget* const parent)
     d->specialInstructionCheck = new QCheckBox(i18n("Special Instructions:"), this);
     d->specialInstructionEdit  = new DPlainTextEdit(this);
     d->specialInstructionEdit->setLinesVisible(4);
+    d->specialInstructionEdit->setPlaceholderText(i18n("Set here the editorial usage instructions"));
     d->specialInstructionEdit->setWhatsThis(i18n("Enter the editorial usage instructions."));
 
     // --------------------------------------------------------
@@ -110,9 +111,12 @@ XMPStatus::XMPStatus(QWidget* const parent)
     grid->addWidget(d->specialInstructionEdit,  4, 0, 1, 3);
     grid->setRowStretch(5, 10);
     grid->setColumnStretch(2, 10);
-    grid->setContentsMargins(QMargins());
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+
+    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
+    grid->setContentsMargins(spacing, spacing, spacing, spacing);
+    grid->setSpacing(spacing);
 
     // --------------------------------------------------------
 
@@ -141,7 +145,7 @@ XMPStatus::XMPStatus(QWidget* const parent)
     connect(d->objectNameEdit, SIGNAL(signalModified()),
             this, SIGNAL(signalModified()));
 
-    connect(d->nicknameEdit, SIGNAL(textChanged(QString)),
+    connect(d->nicknameEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
     connect(d->specialInstructionEdit, SIGNAL(textChanged()),

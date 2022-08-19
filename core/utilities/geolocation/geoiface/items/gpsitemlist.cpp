@@ -74,9 +74,9 @@ GPSItemList::GPSItemList(QWidget* const parent)
       d(new Private())
 {
     header()->setSectionsMovable(true);
+    setAlternatingRowColors(true);
     setUniformRowHeights(true);
     setRootIsDecorated(false);
-    setAlternatingRowColors(true);
 
     d->itemDelegate = new GPSItemDelegate(this, this);
     setItemDelegate(d->itemDelegate);

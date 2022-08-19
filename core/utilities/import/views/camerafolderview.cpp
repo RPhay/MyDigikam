@@ -59,12 +59,13 @@ CameraFolderView::CameraFolderView(QWidget* const parent)
 {
     setColumnCount(1);
     setRootIsDecorated(false);
+    setUniformRowHeights(true);
+    setAllColumnsShowFocus(true);
     setSelectionMode(QAbstractItemView::SingleSelection);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    setAllColumnsShowFocus(true);
     setDragEnabled(false);
-    setDropIndicatorShown(false);
     setAcceptDrops(false);
+    setDropIndicatorShown(false);
     setHeaderLabels(QStringList() << i18n("Camera Folders"));
 
     connect(this, SIGNAL(itemActivated(QTreeWidgetItem*,int)),

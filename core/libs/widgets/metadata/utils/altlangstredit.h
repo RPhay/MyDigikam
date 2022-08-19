@@ -28,12 +28,14 @@
 
 #include <QWidget>
 #include <QString>
-#include <QTextEdit>
 
 // Local includes
 
 #include "digikam_export.h"
 #include "dmetadata.h"
+#include "dtextedit.h"
+
+class QListWidgetItem;
 
 namespace Digikam
 {
@@ -44,28 +46,45 @@ class DIGIKAM_EXPORT AltLangStrEdit : public QWidget
 
 public:
 
-    explicit AltLangStrEdit(QWidget* const parent);
+    /**
+     * Default contructor. Use lines to use a specific number of lines with text editor.
+     */
+    explicit AltLangStrEdit(QWidget* const parent, unsigned int lines = 3);
     ~AltLangStrEdit()                               override;
 
+    /**
+     * Create a title widget with a QLabel and relevant text.
+     * If a title widget already exists, it's remplaced.
+     */
     void setTitle(const QString& title);
+
+    /**
+     * Create a title with a specific widget instance (aka a QCheckBox for ex).
+     * If a title widget already exists, it's remplaced.
+     */
+    void setTitleWidget(QWidget* const twdg);
+
+    /**
+     * Return the current title widget instance.
+     * If no previous call of setTitle() or setWidgetTitle(), this function will return nullptr.
+     */
+    QWidget* titleWidget()                   const;
+
     void setPlaceholderText(const QString& msg);
 
     void    setCurrentLanguageCode(const QString& lang);
-    QString currentLanguageCode()           const;
+    QString currentLanguageCode()            const;
 
-    QString languageCode(int index)         const;
-
-    void setValues(const MetaEngine::AltLangMap& values);
-    MetaEngine::AltLangMap& values()        const;
+    QString languageCode(int index)          const;
 
     /**
      * Fix lines visibile in text editor to lines. If zero, do not fix layout to number of lines visible.
      */
     void setLinesVisible(uint lines);
-    uint linesVisible()                     const;
+    uint linesVisible()                      const;
 
-    QString defaultAltLang()                const;
-    bool    asDefaultAltLang()              const;
+    QString defaultAltLang()                 const;
+    bool    asDefaultAltLang()               const;
 
     /**
      * Reset widget, clear all entries
@@ -79,20 +98,32 @@ public:
      */
     void addCurrent();
 
-    QTextEdit* textEdit()                   const;
+    DTextEdit* textEdit()                    const;
+
+    MetaEngine::AltLangMap& values()         const;
+
+    virtual void setValues(const MetaEngine::AltLangMap& values);
 
 Q_SIGNALS:
 
-    /// Emitted when the user changes the text for the current language.
+    /**
+     * Emitted when the user changes the text for the current language.
+     */
     void signalModified(const QString& lang, const QString& text);
 
-    /// Emitted when the current language changed.
+    /**
+     * Emitted when the current language changed.
+     */
     void signalSelectionChanged(const QString& lang);
 
-    /// Emitted when an entry for a new language is added.
+    /**
+     * Emitted when an entry for a new language is added.
+     */
     void signalValueAdded(const QString& lang, const QString& text);
 
-    /// Emitted when the entry for a language is removed.
+    /**
+     * Emitted when the entry for a language is removed.
+     */
     void signalValueDeleted(const QString& lang);
 
 protected Q_SLOTS:
@@ -101,9 +132,25 @@ protected Q_SLOTS:
     void slotSelectionChanged();
     void slotDeleteValue();
 
+    /**
+     * Can be used to turn on/off visibility of internal widgets.
+     * This do not includes the title widget.
+     */
+    void slotEnabledInternalWidgets(bool);
+
+private Q_SLOTS:
+
+    /**
+     * Perform text translation with Web-service.
+     */
+    void slotTranslate(QListWidgetItem*);
+
+    void slotTranslationFinished();
+
 protected:
 
     void loadLangAltListEntries();
+    void loadTranslationTargets();
 
     void changeEvent(QEvent* e)                 override;
 

@@ -41,7 +41,7 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "metadataedit.h"
+#include "metadataeditdialog.h"
 #include "metaenginesettings.h"
 #include "xmpcategories.h"
 #include "xmpcontent.h"
@@ -216,22 +216,22 @@ void XMPEditWidget::saveSettings()
 
 void XMPEditWidget::slotItemChanged()
 {
-    d->page_content->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Content Information<br/>"
-                     "<i>Use this panel to describe the visual content of the image</i></qt>")));
-    d->page_origin->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Origin Information<br/>"
-                     "<i>Use this panel for formal descriptive information about the image</i></qt>")));
-    d->page_credits->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Credit Information<br/>"
-                     "<i>Use this panel to record copyright information about the image</i></qt>")));
-    d->page_subjects->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Subject Information<br/>"
-                     "<i>Use this panel to record subject information about the image</i></qt>")));
-    d->page_keywords->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Keyword Information<br/>"
-                     "<i>Use this panel to record keywords relevant to the image</i></qt>")));
-    d->page_categories->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Category Information<br/>"
-                     "<i>Use this panel to record categories relevant to the image</i></qt>")));
-    d->page_status->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Status Information<br/>"
-                     "<i>Use this panel to record workflow information</i></qt>")));
-    d->page_properties->setHeader(d->dlg->currentItemTitleHeader(i18n("<qt>Status Properties<br/>"
-                     "<i>Use this panel to record workflow properties</i></qt>")));
+    d->page_content->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Content Information<br/>"
+                     "<i>Describe the visual content of the item</i></qt>")));
+    d->page_origin->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Origin Information<br/>"
+                     "<i>Formal descriptive information about the item</i></qt>")));
+    d->page_credits->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Credit Information<br/>"
+                     "<i>Record copyright information about the item</i></qt>")));
+    d->page_subjects->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Subject Information<br/>"
+                     "<i>Record subject information about the item</i></qt>")));
+    d->page_keywords->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Keyword Information<br/>"
+                     "<i>Record keywords relevant to the item</i></qt>")));
+    d->page_categories->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Category Information<br/>"
+                     "<i>Record categories relevant to the item</i></qt>")));
+    d->page_status->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Status Information<br/>"
+                     "<i>Record workflow information</i></qt>")));
+    d->page_properties->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Status Properties<br/>"
+                     "<i>Record workflow properties</i></qt>")));
 
     QScopedPointer<DMetadata> meta(new DMetadata);
     meta->load((*d->dlg->currentItem()).toLocalFile());

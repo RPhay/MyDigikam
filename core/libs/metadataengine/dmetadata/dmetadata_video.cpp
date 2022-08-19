@@ -50,6 +50,7 @@
 #include <QFileInfo>
 #include <QMimeDatabase>
 #include <QStringList>
+#include <QTimeZone>
 
 // KDE includes
 
@@ -1567,12 +1568,15 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
         {
             if (rmeta.value(QLatin1String("com.apple.quicktime.make")) == QLatin1String("Apple"))
             {
-                QString creationdDate = rmeta.value(QLatin1String("com.apple.quicktime.creationdate"));
+                QString dateStr         = rmeta.value(QLatin1String("com.apple.quicktime.creationdate"));
+                QDateTime creationdDate = QDateTime::fromString(dateStr, Qt::ISODate);
 
-                if ((creationdDate.length() > 5)                                     &&
-                    (creationdDate.at(creationdDate.length() - 5) == QLatin1Char('+')))
+                if (creationdDate.isValid())
                 {
-                    rmeta[QLatin1String("com.apple.quicktime.creationdate")].chop(5);
+                    creationdDate.setTimeZone(QTimeZone(0));
+                    dateStr = creationdDate.toString(Qt::ISODate);
+                    dateStr.chop(6);
+                    rmeta.insert(QLatin1String("com.apple.quicktime.creationdate"), dateStr);
                 }
             }
 

@@ -47,6 +47,7 @@
 #include "timezonecombobox.h"
 #include "objectattributesedit.h"
 #include "dexpanderbox.h"
+#include "limitedtextedit.h"
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -102,8 +103,8 @@ public:
     QComboBox*                     objectCycleCB;
     QComboBox*                     objectTypeCB;
 
-    QLineEdit*                     objectTypeDescEdit;
-    QLineEdit*                     originalTransEdit;
+    LimitedTextEdit*               objectTypeDescEdit;
+    LimitedTextEdit*               originalTransEdit;
 
     QComboBox*                     languageBtn;
 
@@ -119,10 +120,10 @@ public:
 };
 
 IPTCProperties::IPTCProperties(QWidget* const parent)
-    : QWidget(parent),
-      d      (new Private)
+    : MetadataEditPage(parent),
+      d               (new Private)
 {
-    QGridLayout* const grid = new QGridLayout(this);
+    QGridLayout* const grid = new QGridLayout(widget());
     QString dateFormat      = QLocale().dateFormat(QLocale::ShortFormat);
 
     if (!dateFormat.contains(QLatin1String("yyyy")))
@@ -226,9 +227,10 @@ IPTCProperties::IPTCProperties(QWidget* const parent)
 
     d->objectTypeCheck    = new MetadataCheckBox(i18n("Type:"), this);
     d->objectTypeCB       = new QComboBox(this);
-    d->objectTypeDescEdit = new QLineEdit(this);
-    d->objectTypeDescEdit->setClearButtonEnabled(true);
+    d->objectTypeDescEdit = new LimitedTextEdit(this);
+    d->objectTypeDescEdit->setPlaceholderText(i18n("Set here the content type"));
     d->objectTypeDescEdit->setMaxLength(64);
+    d->objectTypeDescEdit->setLinesVisible(1);
     d->objectTypeCB->insertItem(0, i18n("News"));
     d->objectTypeCB->insertItem(1, i18n("Data"));
     d->objectTypeCB->insertItem(2, i18n("Advisory"));
@@ -238,13 +240,14 @@ IPTCProperties::IPTCProperties(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->objectAttribute = new ObjectAttributesEdit(this, 64);
+    d->objectAttribute    = new ObjectAttributesEdit(this, 64);
 
     // --------------------------------------------------------
 
     d->originalTransCheck = new QCheckBox(i18n("Reference:"), this);
-    d->originalTransEdit  = new QLineEdit(this);
-    d->originalTransEdit->setClearButtonEnabled(true);
+    d->originalTransEdit  = new LimitedTextEdit(this);
+    d->originalTransEdit->setLinesVisible(1);
+    d->originalTransEdit->setPlaceholderText(i18n("Set here the content reference"));
     d->originalTransEdit->setMaxLength(32);
     d->originalTransEdit->setWhatsThis(i18n("Set here the original content transmission "
                                             "reference. This field is limited to 32 characters."));
@@ -292,9 +295,12 @@ IPTCProperties::IPTCProperties(QWidget* const parent)
     grid->addWidget(note,                                  13, 0, 1, 6);
     grid->setColumnStretch(4, 10);
     grid->setRowStretch(14, 10);
-    grid->setContentsMargins(QMargins());
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+
+    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
+    grid->setContentsMargins(spacing, spacing, spacing, spacing);
+    grid->setSpacing(spacing);
 
     // --------------------------------------------------------
 
@@ -408,20 +414,11 @@ IPTCProperties::IPTCProperties(QWidget* const parent)
     connect(d->objectTypeCB, SIGNAL(activated(int)),
             this, SIGNAL(signalModified()));
 
-    connect(d->objectTypeDescEdit, SIGNAL(textChanged(QString)),
+    connect(d->objectTypeDescEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
-    connect(d->objectTypeDescEdit, SIGNAL(textChanged(QString)),
-            this, SLOT(slotLineEditModified()));
-
-    connect(d->originalTransEdit, SIGNAL(textChanged(QString)),
+    connect(d->originalTransEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
-
-    connect(d->originalTransEdit, SIGNAL(textChanged(QString)),
-            this, SLOT(slotLineEditModified()));
-
-    connect(d->objectAttribute->valueEdit(), SIGNAL(textChanged(QString)),
-            this, SLOT(slotLineEditModified()));
 }
 
 IPTCProperties::~IPTCProperties()
@@ -441,20 +438,6 @@ void IPTCProperties::slotSetTodayExpired()
     d->dateExpiredSel->setDate(QDate::currentDate());
     d->timeExpiredSel->setTime(QTime::currentTime());
     d->zoneExpiredSel->setToUTC();
-}
-
-void IPTCProperties::slotLineEditModified()
-{
-    QLineEdit* const ledit = dynamic_cast<QLineEdit*>(sender());
-
-    if (!ledit)
-    {
-        return;
-    }
-
-    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 16))),
-                       i18np("%1 character left", "%1 characters left", ledit->maxLength() - ledit->text().size()),
-                       ledit);
 }
 
 void IPTCProperties::readMetadata(const DMetadata& meta)

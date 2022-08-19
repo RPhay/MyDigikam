@@ -29,8 +29,6 @@
 #include <QGridLayout>
 #include <QApplication>
 #include <QStyle>
-#include <QLineEdit>
-#include <QTextEdit>
 
 // KDE includes
 
@@ -41,6 +39,7 @@
 #include "dlayoutbox.h"
 #include "altlangstringedit.h"
 #include "dexpanderbox.h"
+#include "dtextedit.h"
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -69,8 +68,8 @@ public:
     QCheckBox*          syncEXIFCopyrightCheck;
     QCheckBox*          writerCheck;
 
-    QLineEdit*          headlineEdit;
-    QLineEdit*          writerEdit;
+    DTextEdit*          headlineEdit;
+    DTextEdit*          writerEdit;
 
     AltLangStringsEdit* captionEdit;
     AltLangStringsEdit* copyrightEdit;
@@ -78,25 +77,24 @@ public:
 };
 
 XMPContent::XMPContent(QWidget* const parent)
-    : QWidget(parent),
-      d      (new Private)
+    : MetadataEditPage(parent),
+      d               (new Private)
 {
-    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
-    QGridLayout* const grid = new QGridLayout(this);
+    QGridLayout* const grid = new QGridLayout(widget());
 
     // --------------------------------------------------------
 
     d->headlineCheck = new QCheckBox(i18n("Headline:"), this);
-    d->headlineEdit  = new QLineEdit(this);
-    d->headlineEdit->setClearButtonEnabled(true);
-    d->headlineEdit->setWhatsThis(i18n("Enter here the content synopsis."));
+    d->headlineEdit  = new DTextEdit(this);
+    d->headlineEdit->setPlaceholderText(i18n("Set here the content synopsis."));
 
     // --------------------------------------------------------
 
-    d->captionEdit          = new AltLangStringsEdit(this, i18nc("content description", "Caption:"),
-                                                     i18n("Enter the content description."));
+    d->captionEdit          = new AltLangStringsEdit(this, i18nc("content description", "Captions:"),
+                                                     i18n("Set here the content descriptions."));
 
     QGroupBox* const syncOptions  = new QGroupBox(i18n("Default Language Caption Options"), this);
     QVBoxLayout* const vlay       = new QVBoxLayout(syncOptions);
@@ -112,36 +110,35 @@ XMPContent::XMPContent(QWidget* const parent)
     // --------------------------------------------------------
 
     d->writerCheck = new QCheckBox(i18n("Caption Writer:"), this);
-    d->writerEdit  = new QLineEdit(this);
-    d->writerEdit->setClearButtonEnabled(true);
-    d->writerEdit->setWhatsThis(i18n("Enter the name of the caption author."));
+    d->writerEdit  = new DTextEdit(this);
+    d->writerEdit->setPlaceholderText(i18n("Set here the name of the caption author."));
 
     // --------------------------------------------------------
 
     d->copyrightEdit          = new AltLangStringsEdit(this, i18n("Copyright:"),
-                                                       i18n("Enter the necessary copyright notice."));
+                                                       i18n("Set here the necessary copyright notice."));
 
     d->syncEXIFCopyrightCheck = new QCheckBox(i18n("Sync Exif Copyright"), this);
 
     d->usageTermsEdit         = new AltLangStringsEdit(this, i18n("Right Usage Terms:"),
-                                                       i18n("Enter the instructions on how a "
+                                                       i18n("Set here the instructions on how a "
                                                             "resource can be legally used here."));
 
     // --------------------------------------------------------
 
-    grid->addWidget(d->headlineCheck,                      0, 0, 1, 1);
-    grid->addWidget(d->headlineEdit,                       0, 1, 1, 2);
-    grid->addWidget(new DLineWidget(Qt::Horizontal, this), 1, 0, 1, 3);
-    grid->addWidget(d->captionEdit,                        2, 0, 1, 3);
-    grid->addWidget(syncOptions,                           3, 0, 1, 3);
-    grid->addWidget(d->writerCheck,                        4, 0, 1, 1);
-    grid->addWidget(d->writerEdit,                         4, 1, 1, 2);
-    grid->addWidget(d->copyrightEdit,                      5, 0, 1, 3);
-    grid->addWidget(d->syncEXIFCopyrightCheck,             6, 0, 1, 3);
-    grid->addWidget(d->usageTermsEdit,                     7, 0, 1, 3);
-    grid->setRowStretch(8, 10);
+    grid->addWidget(d->headlineCheck,                      0, 0, 1, 3);
+    grid->addWidget(d->headlineEdit,                       1, 0, 1, 3);
+    grid->addWidget(new DLineWidget(Qt::Horizontal, this), 2, 0, 1, 3);
+    grid->addWidget(d->captionEdit,                        3, 0, 1, 3);
+    grid->addWidget(syncOptions,                           4, 0, 1, 3);
+    grid->addWidget(d->writerCheck,                        5, 0, 1, 3);
+    grid->addWidget(d->writerEdit,                         6, 1, 1, 3);
+    grid->addWidget(d->copyrightEdit,                      7, 0, 1, 3);
+    grid->addWidget(d->syncEXIFCopyrightCheck,             8, 0, 1, 3);
+    grid->addWidget(d->usageTermsEdit,                     9, 0, 1, 3);
+    grid->setRowStretch(10, 10);
     grid->setColumnStretch(2, 10);
-    grid->setContentsMargins(QMargins());
+    grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);
 
     // --------------------------------------------------------
@@ -186,10 +183,10 @@ XMPContent::XMPContent(QWidget* const parent)
     connect(d->usageTermsEdit, SIGNAL(signalModified()),
             this, SIGNAL(signalModified()));
 
-    connect(d->headlineEdit, SIGNAL(textChanged(QString)),
+    connect(d->headlineEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
-    connect(d->writerEdit, SIGNAL(textChanged(QString)),
+    connect(d->writerEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 }
 
@@ -317,7 +314,7 @@ void XMPContent::applyMetadata(const DMetadata& meta)
 
     DMetadata::AltLangMap oldAltLangMap, newAltLangMap;
 
-    if (d->captionEdit->getValues(oldAltLangMap, newAltLangMap))
+    if      (d->captionEdit->getValues(oldAltLangMap, newAltLangMap))
     {
         meta.setXmpTagStringListLangAlt("Xmp.dc.description", newAltLangMap);
 
@@ -345,7 +342,7 @@ void XMPContent::applyMetadata(const DMetadata& meta)
         meta.removeXmpTag("Xmp.photoshop.CaptionWriter");
     }
 
-    if (d->copyrightEdit->getValues(oldAltLangMap, newAltLangMap))
+    if      (d->copyrightEdit->getValues(oldAltLangMap, newAltLangMap))
     {
         meta.setXmpTagStringListLangAlt("Xmp.dc.rights", newAltLangMap);
 

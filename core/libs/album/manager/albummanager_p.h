@@ -154,8 +154,6 @@ public:
     bool                        changed;
     bool                        hasPriorizedDbPath;
 
-    bool                        dbFakeConnection;
-
     bool                        showOnlyAvailableAlbums;
 
     int                         longTimeMessageBoxResult;

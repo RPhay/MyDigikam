@@ -36,7 +36,6 @@
 #include <QVBoxLayout>
 #include <QApplication>
 #include <QStyle>
-#include <QLineEdit>
 #include <QUrl>
 #include <QListWidget>
 #include <QIcon>
@@ -49,6 +48,7 @@
 
 #include "applicationsettings.h"
 #include "thumbnailsize.h"
+#include "dtextedit.h"
 
 namespace Digikam
 {
@@ -72,7 +72,7 @@ public:
 
     QListWidget* albumCategoryBox;
 
-    QLineEdit*   categoryEdit;
+    DTextEdit*   categoryEdit;
 };
 
 SetupCategory::SetupCategory(QWidget* const parent)
@@ -93,8 +93,9 @@ SetupCategory::SetupCategory(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->categoryEdit     = new QLineEdit(panel);
-    d->categoryEdit->setClearButtonEnabled(true);
+    d->categoryEdit     = new DTextEdit(panel);
+    d->categoryEdit->setLinesVisible(1);
+    d->categoryEdit->setPlaceholderText(i18n("Set here the new category"));
 
     d->albumCategoryBox = new QListWidget(panel);
     d->albumCategoryBox->setWhatsThis(i18n("You can add or remove Album "

@@ -169,13 +169,13 @@ void ExifToolConfPanel::slotExifToolBinaryFound(bool found)
         QStringList read;
         QStringList write;
 
-        if (parser->readableFormats())
+        if (parser->readableFormats() && !parser->currentData().isEmpty())
         {
             parsed = parser->currentData();
             read   = parsed.find(QLatin1String("READ_FORMATS")).value()[0].toStringList();
         }
 
-        if (parser->writableFormats())
+        if (parser->writableFormats() && !parser->currentData().isEmpty())
         {
             parsed = parser->currentData();
             write  = parsed.find(QLatin1String("WRITE_FORMATS")).value()[0].toStringList();

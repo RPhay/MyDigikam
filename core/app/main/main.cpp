@@ -86,6 +86,7 @@ using namespace Magick;
 #include "similaritydbaccess.h"
 #include "databaseserverstarter.h"
 #include "filesdownloader.h"
+#include "dfileoperations.h"
 
 #ifdef Q_OS_WIN
 #   include <windows.h>
@@ -226,6 +227,32 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
                                    "a better experience with digiKam.</p>"));
     }
 
+    QString appPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    QUrl    appUrl  = QUrl::fromLocalFile(appPath).adjusted(QUrl::RemoveFilename);
+    appUrl.setPath(appUrl.path() + QLatin1String("digikam/facesengine"));
+
+    QFileInfo appInfo(appUrl.toLocalFile());
+
+    if (appInfo.exists() && appInfo.isDir())
+    {
+        QString appLocalPath = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
+        QUrl    appLocalUrl  = QUrl::fromLocalFile(appLocalPath).adjusted(QUrl::RemoveFilename);
+        appLocalUrl.setPath(appLocalUrl.path() + QLatin1String("digikam"));
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Copy faces engine data from"
+                                     << appUrl.toLocalFile() << "to"
+                                     << appLocalUrl.toLocalFile();
+
+        if (DFileOperations::copyFolderRecursively(appUrl.toLocalFile(), appLocalUrl.toLocalFile()))
+        {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Delete faces engine data from"
+                                         << appUrl.toLocalFile();
+
+            QDir rmAppPath(appUrl.toLocalFile());
+            rmAppPath.removeRecursively();
+        }
+    }
+
 #endif
 
     // Check if Qt database plugins are available.
@@ -352,7 +379,6 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
     if (!AlbumManager::instance()->setDatabase(params, !commandLineDBPath.isNull(), firstAlbumPath))
     {
         DatabaseServerStarter::instance()->stopServerManagerProcess();
-        AlbumManager::instance()->removeFakeConnection();
 
         CoreDbAccess::cleanUpDatabase();
         ThumbsDbAccess::cleanUpDatabase();

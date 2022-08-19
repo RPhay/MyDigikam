@@ -56,6 +56,10 @@
 #include "onlineversionchecker.h"
 #include "showfotosetup.h"
 
+#ifdef HAVE_SONNET
+#   include "spellcheckconfig.h"
+#endif
+
 using namespace Digikam;
 
 namespace ShowFoto
@@ -85,6 +89,13 @@ public:
         applicationIcon         (nullptr),
         applicationFont         (nullptr),
         systemSettingsWidget    (nullptr),
+
+#ifdef HAVE_SONNET
+
+        spellCheckWidget        (nullptr),
+
+#endif
+
         settings                (ShowfotoSettings::instance())
     {
     }
@@ -113,6 +124,12 @@ public:
     DFontSelect*          applicationFont;
 
     SystemSettingsWidget* systemSettingsWidget;
+
+#ifdef HAVE_SONNET
+
+    SpellCheckConfig*     spellCheckWidget;
+
+#endif
 
     ShowfotoSettings*     settings;
 };
@@ -326,6 +343,16 @@ ShowfotoSetupMisc::ShowfotoSetupMisc(QWidget* const parent)
 
     d->tab->insertTab(System, d->systemSettingsWidget, i18nc("@title:tab", "System"));
 
+    // -- Spell Check Options ---------------------------------
+
+#ifdef HAVE_SONNET
+
+    d->spellCheckWidget = new SpellCheckConfig(d->tab);
+
+    d->tab->insertTab(SpellCheck, d->spellCheckWidget, i18nc("@title:tab", "Spellcheck"));
+
+#endif
+
     // --------------------------------------------------------
 
     readSettings();
@@ -386,6 +413,8 @@ void ShowfotoSetupMisc::readSettings()
 
     d->applicationIcon->setCurrentIndex(d->applicationIcon->findData(d->settings->getIconTheme()));
     d->applicationFont->setFont(d->settings->getApplicationFont());
+
+    // NOTE: Spellcheck read settings is done in widget constructor.
 }
 
 void ShowfotoSetupMisc::applySettings()
@@ -412,6 +441,13 @@ void ShowfotoSetupMisc::applySettings()
     d->settings->setIconTheme(d->applicationIcon->currentData().toString());
     d->settings->setApplicationFont(d->applicationFont->font());
     d->settings->syncConfig();
+
+#ifdef HAVE_SONNET
+
+    d->spellCheckWidget->applySettings();
+
+#endif
+
 }
 
 } // namespace ShowFoto

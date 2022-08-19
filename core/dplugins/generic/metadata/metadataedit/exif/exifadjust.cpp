@@ -83,10 +83,10 @@ public:
 };
 
 EXIFAdjust::EXIFAdjust(QWidget* const parent)
-    : QWidget(parent),
-      d(new Private)
+    : MetadataEditPage(parent),
+      d               (new Private)
 {
-    QGridLayout* const grid = new QGridLayout(this);
+    QGridLayout* const grid = new QGridLayout(widget());
 
     // --------------------------------------------------------
 
@@ -163,9 +163,12 @@ EXIFAdjust::EXIFAdjust(QWidget* const parent)
     grid->addWidget(d->customRenderedCB,    5, 2, 1, 1);
     grid->setColumnStretch(1, 10);
     grid->setRowStretch(6, 10);
-    grid->setContentsMargins(QMargins());
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+
+    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
+    grid->setContentsMargins(spacing, spacing, spacing, spacing);
+    grid->setSpacing(spacing);
 
     // --------------------------------------------------------
 

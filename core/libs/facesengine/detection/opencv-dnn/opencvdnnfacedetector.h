@@ -45,7 +45,7 @@ enum DetectorNNModel
     YOLO                ///< YOLO neural network inference.
 };
 
-class OpenCVDNNFaceDetector
+class DIGIKAM_EXPORT OpenCVDNNFaceDetector
 {
 
 public:

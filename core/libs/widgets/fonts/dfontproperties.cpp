@@ -43,7 +43,6 @@
 #include <QFontDatabase>
 #include <QGroupBox>
 #include <QListWidget>
-#include <QTextEdit>
 #include <QCoreApplication>
 #include <QString>
 #include <QHash>
@@ -51,6 +50,8 @@
 // KDE includes
 
 #include <klocalizedstring.h>
+
+#include "dtextedit.h"
 
 namespace Digikam
 {
@@ -188,7 +189,7 @@ public:
 
     QPalette                palette;
     QDoubleSpinBox*         sizeOfFont;
-    QTextEdit*              sampleEdit;
+    DTextEdit*              sampleEdit;
 
     QLabel*                 familyLabel;
     QLabel*                 styleLabel;
@@ -239,7 +240,7 @@ DFontProperties::DFontProperties(QWidget* const parent,
     // attribute widgets and preview on the top, and XLFD data at the bottom.
 
     QVBoxLayout* const topLayout = new QVBoxLayout(this);
-    topLayout->setContentsMargins(0, 0, 0, 0);
+    topLayout->setContentsMargins(QMargins());
     const int spacingHint = qMin(style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                                  style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
     int checkBoxGap              = spacingHint / 2;
@@ -270,7 +271,7 @@ DFontProperties::DFontProperties(QWidget* const parent,
         page       = new QWidget(this);
         splitter->addWidget(page);
         gridLayout = new QGridLayout(page);
-        gridLayout->setContentsMargins(0, 0, 0, 0);
+        gridLayout->setContentsMargins(QMargins());
     }
 
     // first, create the labels across the top
@@ -480,7 +481,7 @@ DFontProperties::DFontProperties(QWidget* const parent,
     // Completed the font attribute grid.
     // Add the font preview into the lower part of the splitter.
 
-    d->sampleEdit = new QTextEdit(page);
+    d->sampleEdit = new DTextEdit(0, page);
     d->sampleEdit->setAcceptRichText(false);
     QFont tmpFont(font().family(), 64, QFont::Black);
     d->sampleEdit->setFont(tmpFont);

@@ -63,7 +63,6 @@ bool PAlbumPath::operator==(const PAlbumPath& other) const
 AlbumManager::Private::Private()
     : changed                 (false),
       hasPriorizedDbPath      (false),
-      dbFakeConnection        (false),
       showOnlyAvailableAlbums (false),
       longTimeMessageBoxResult(-1),
       askMergeMessageBoxResult(-1),

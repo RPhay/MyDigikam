@@ -47,6 +47,7 @@
 #include "intthemeparameter.h"
 #include "listthemeparameter.h"
 #include "stringthemeparameter.h"
+#include "captionthemeparameter.h"
 
 namespace DigikamGenericHtmlGalleryPlugin
 {
@@ -56,6 +57,7 @@ static const char* PARAMETER_GROUP_PREFIX = "X-HTMLGallery Parameter ";
 static const char* PARAMETER_TYPE_KEY     = "Type";
 static const char* PREVIEW_GROUP          = "X-HTMLGallery Preview";
 static const char* OPTIONS_GROUP          = "X-HTMLGallery Options";
+static const char* CAPTION_PARAMETER_TYPE = "caption";
 static const char* STRING_PARAMETER_TYPE  = "string";
 static const char* LIST_PARAMETER_TYPE    = "list";
 static const char* COLOR_PARAMETER_TYPE   = "color";
@@ -113,9 +115,11 @@ public:
             }
 
             // Remove opening bracket and group prefix
+
             line         = line.mid(prefix.length());
 
             // Remove closing bracket
+
             line.truncate(line.length() - 1);
 
             list.append(line);
@@ -149,9 +153,13 @@ public:
             QString type                      = group.readEntry(PARAMETER_TYPE_KEY);
             AbstractThemeParameter* parameter = nullptr;
 
-            if (type == QLatin1String(STRING_PARAMETER_TYPE))
+            if      (type == QLatin1String(STRING_PARAMETER_TYPE))
             {
                 parameter = new StringThemeParameter();
+            }
+            else if (type == QLatin1String(CAPTION_PARAMETER_TYPE))
+            {
+                parameter = new CaptionThemeParameter();
             }
             else if (type == QLatin1String(LIST_PARAMETER_TYPE))
             {
@@ -168,8 +176,8 @@ public:
             else
             {
                 qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Parameter '" << internalName
-                                               << "' has unknown type '" << type
-                                               << "'. Falling back to string type\n";
+                                                       << "' has unknown type '" << type
+                                                       << "'. Falling back to string type\n";
                 parameter = new StringThemeParameter();
             }
 

@@ -122,7 +122,9 @@ SuggestTaxonCompletion::SuggestTaxonCompletion(TaxonEdit* const parent)
 
     d->timer.setSingleShot(true);
     d->timer.setInterval(500);
-    connect(&d->timer, SIGNAL(timeout()), SLOT(slotAutoSuggest()));
+
+    connect(&d->timer, SIGNAL(timeout()),
+            this, SLOT(slotAutoSuggest()));
 
     connect(d->editor, SIGNAL(textEdited(QString)),
             SLOT(slotTextEdited(QString)));

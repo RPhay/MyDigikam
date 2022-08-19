@@ -30,7 +30,6 @@
 
 // Qt includes
 
-#include <QTextEdit>
 #include <QStyle>
 #include <QGridLayout>
 #include <QScrollArea>
@@ -181,7 +180,7 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
       d    (new Private)
 {
     const int spacing      = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                  QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     setContentsMargins(QMargins());
     setSpacing(spacing);
@@ -201,7 +200,7 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
     QGridLayout* const grid1       = new QGridLayout(captionTagsArea);
     sv->setWidget(captionTagsArea);
 
-    d->titleEdit          = new AltLangStrEdit(captionTagsArea);
+    d->titleEdit          = new AltLangStrEdit(captionTagsArea, 0);
     d->titleEdit->setTitle(i18nc("@title: comment title string", "Title:"));
     resetTitleEditPlaceholderText();
 
@@ -285,9 +284,9 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
     d->tagCheckView = new TagCheckView(tagsArea, d->tagModel);
     d->tagCheckView->setCheckNewTags(true);
 
-    d->openTagMngr = new QPushButton(i18n("Open Tag Manager"));
+    d->openTagMngr  = new QPushButton(i18n("Open Tag Manager"));
 
-    d->newTagEdit  = new AddTagsLineEdit(tagsArea);
+    d->newTagEdit   = new AddTagsLineEdit(tagsArea);
     d->newTagEdit->setSupportingTagModel(d->tagModel);
     d->newTagEdit->setTagTreeView(d->tagCheckView);
     //, "ItemDescEditTabNewTagEdit",

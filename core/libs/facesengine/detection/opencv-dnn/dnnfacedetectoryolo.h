@@ -37,7 +37,7 @@
 namespace Digikam
 {
 
-class DNNFaceDetectorYOLO: public DNNFaceDetectorBase
+class DIGIKAM_EXPORT DNNFaceDetectorYOLO: public DNNFaceDetectorBase
 {
 
 public:

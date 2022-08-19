@@ -39,6 +39,10 @@
 
 #include <klocalizedstring.h>
 
+// Local includes
+
+#include "limitedtextedit.h"
+
 namespace DigikamGenericMetadataEditPlugin
 {
 
@@ -47,37 +51,37 @@ class Q_DECL_HIDDEN IPTCCategories::Private
 public:
 
     explicit Private()
+      : addSubCategoryButton(nullptr),
+        delSubCategoryButton(nullptr),
+        repSubCategoryButton(nullptr),
+        subCategoriesCheck  (nullptr),
+        categoryCheck       (nullptr),
+        categoryEdit        (nullptr),
+        subCategoryEdit     (nullptr),
+        subCategoriesBox    (nullptr)
     {
-        addSubCategoryButton = nullptr;
-        delSubCategoryButton = nullptr;
-        repSubCategoryButton = nullptr;
-        subCategoriesBox     = nullptr;
-        subCategoriesCheck   = nullptr;
-        categoryCheck        = nullptr;
-        categoryEdit         = nullptr;
-        subCategoryEdit      = nullptr;
     }
 
-    QStringList  oldSubCategories;
+    QStringList      oldSubCategories;
 
-    QPushButton* addSubCategoryButton;
-    QPushButton* delSubCategoryButton;
-    QPushButton* repSubCategoryButton;
+    QPushButton*     addSubCategoryButton;
+    QPushButton*     delSubCategoryButton;
+    QPushButton*     repSubCategoryButton;
 
-    QCheckBox*   subCategoriesCheck;
-    QCheckBox*   categoryCheck;
+    QCheckBox*       subCategoriesCheck;
+    QCheckBox*       categoryCheck;
 
-    QLineEdit*   categoryEdit;
-    QLineEdit*   subCategoryEdit;
+    QLineEdit*       categoryEdit;
+    LimitedTextEdit* subCategoryEdit;
 
-    QListWidget* subCategoriesBox;
+    QListWidget*     subCategoriesBox;
 };
 
 IPTCCategories::IPTCCategories(QWidget* const parent)
-    : QWidget(parent),
-      d(new Private)
+    : MetadataEditPage(parent),
+      d               (new Private)
 {
-    QGridLayout* const grid = new QGridLayout(this);
+    QGridLayout* const grid = new QGridLayout(widget());
 
     // --------------------------------------------------------
 
@@ -85,23 +89,25 @@ IPTCCategories::IPTCCategories(QWidget* const parent)
     d->categoryEdit  = new QLineEdit(this);
     d->categoryEdit->setClearButtonEnabled(true);
     d->categoryEdit->setMaxLength(3);
+    d->categoryEdit->setPlaceholderText(i18n("Set here the category ID"));
     d->categoryEdit->setWhatsThis(i18n("Set here the category of content. This field is limited "
                                        "to 3 characters."));
 
     d->subCategoriesCheck = new QCheckBox(i18n("Supplemental categories:"), this);
 
-    d->subCategoryEdit = new QLineEdit(this);
-    d->subCategoryEdit->setClearButtonEnabled(true);
+    d->subCategoryEdit    = new LimitedTextEdit(this);
+    d->subCategoryEdit->setLinesVisible(1);
     d->subCategoryEdit->setMaxLength(32);
+    d->subCategoryEdit->setPlaceholderText(i18n("Set here the extra category"));
     d->subCategoryEdit->setWhatsThis(i18n("Enter here a new supplemental category of content. "
                                           "This field is limited to 32 characters."));
 
     d->subCategoriesBox = new QListWidget(this);
     d->subCategoriesBox->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 
-    d->addSubCategoryButton = new QPushButton( i18n("&Add"), this);
-    d->delSubCategoryButton = new QPushButton( i18n("&Delete"), this);
-    d->repSubCategoryButton = new QPushButton( i18n("&Replace"), this);
+    d->addSubCategoryButton = new QPushButton(i18n("&Add"),     this);
+    d->delSubCategoryButton = new QPushButton(i18n("&Delete"),  this);
+    d->repSubCategoryButton = new QPushButton(i18n("&Replace"), this);
     d->addSubCategoryButton->setIcon(QIcon::fromTheme(QLatin1String("list-add")));
     d->delSubCategoryButton->setIcon(QIcon::fromTheme(QLatin1String("edit-delete")));
     d->repSubCategoryButton->setIcon(QIcon::fromTheme(QLatin1String("view-refresh")));
@@ -122,7 +128,7 @@ IPTCCategories::IPTCCategories(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    grid->setAlignment( Qt::AlignTop );
+    grid->setAlignment(Qt::AlignTop);
     grid->addWidget(d->categoryCheck,           0, 0, 1, 2);
     grid->addWidget(d->categoryEdit,            0, 2, 1, 1);
     grid->addWidget(d->subCategoriesCheck,      1, 0, 1, 3);
@@ -134,9 +140,12 @@ IPTCCategories::IPTCCategories(QWidget* const parent)
     grid->addWidget(note,                       6, 3, 1, 1);
     grid->setColumnStretch(1, 10);
     grid->setRowStretch(7, 10);
-    grid->setContentsMargins(QMargins());
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+
+    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
+    grid->setContentsMargins(spacing, spacing, spacing, spacing);
+    grid->setSpacing(spacing);
 
     // --------------------------------------------------------
 
@@ -185,11 +194,8 @@ IPTCCategories::IPTCCategories(QWidget* const parent)
     connect(d->categoryEdit, SIGNAL(textChanged(QString)),
             this, SLOT(slotLineEditModified()));
 
-    connect(d->subCategoryEdit, SIGNAL(textChanged(QString)),
+    connect(d->subCategoryEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
-
-    connect(d->subCategoryEdit, SIGNAL(textChanged(QString)),
-            this, SLOT(slotLineEditModified()));
 }
 
 IPTCCategories::~IPTCCategories()
@@ -268,7 +274,8 @@ void IPTCCategories::slotLineEditModified()
     }
 
     QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 16))),
-                       i18np("%1 character left", "%1 characters left", ledit->maxLength() - ledit->text().size()),
+                       i18np("%1 character left", "%1 characters left",
+                       ledit->maxLength() - ledit->text().size()),
                        ledit);
 }
 

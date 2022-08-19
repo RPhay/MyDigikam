@@ -44,7 +44,8 @@ public:
         Behaviour = 0,
         Appearance,
         Grouping,
-        System
+        System,
+        SpellCheck
     };
 
 public:

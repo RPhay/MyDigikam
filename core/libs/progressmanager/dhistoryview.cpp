@@ -134,6 +134,7 @@ DHistoryView::DHistoryView(QWidget* const parent)
     setColumnCount(3);
     setHeaderHidden(true);
     setRootIsDecorated(false);
+    setUniformRowHeights(true);
     setDragEnabled(true);
     viewport()->setMouseTracking(true);
     header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);  // Icon

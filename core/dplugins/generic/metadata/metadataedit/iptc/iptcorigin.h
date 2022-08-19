@@ -31,13 +31,14 @@
 // Local includes
 
 #include "dmetadata.h"
+#include "metadataeditpage.h"
 
 using namespace Digikam;
 
 namespace DigikamGenericMetadataEditPlugin
 {
 
-class IPTCOrigin : public QWidget
+class IPTCOrigin : public MetadataEditPage
 {
     Q_OBJECT
 

@@ -109,10 +109,10 @@ public:
 };
 
 XMPOrigin::XMPOrigin(QWidget* const parent)
-    : QWidget(parent),
-      d      (new Private)
+    : MetadataEditPage(parent),
+      d               (new Private)
 {
-    QGridLayout* const grid = new QGridLayout(this);
+    QGridLayout* const grid = new QGridLayout(widget());
 
     QString dateTimeFormat  = QLocale().dateTimeFormat(QLocale::ShortFormat);
 
@@ -192,28 +192,30 @@ XMPOrigin::XMPOrigin(QWidget* const parent)
     d->cityCheck = new QCheckBox(i18n("City:"), this);
     d->cityEdit  = new QLineEdit(this);
     d->cityEdit->setClearButtonEnabled(true);
-    d->cityEdit->setWhatsThis(i18n("Set here the content's city of origin."));
+    d->cityEdit->setPlaceholderText(i18n("Set here the content's city of origin."));
 
     // --------------------------------------------------------
 
     d->sublocationCheck = new QCheckBox(i18n("Sublocation:"), this);
     d->sublocationEdit  = new QLineEdit(this);
     d->sublocationEdit->setClearButtonEnabled(true);
-    d->sublocationEdit->setWhatsThis(i18n("Set here the content's location within the city."));
+    d->sublocationEdit->setPlaceholderText(i18n("Set here the content's location within the city."));
 
     // --------------------------------------------------------
 
     d->provinceCheck = new QCheckBox(i18n("State/Province:"), this);
     d->provinceEdit  = new QLineEdit(this);
     d->provinceEdit->setClearButtonEnabled(true);
-    d->provinceEdit->setWhatsThis(i18n("Set here the content's Province or State of origin."));
+    d->provinceEdit->setPlaceholderText(i18n("Set here the content's Province or State of origin."));
 
     // --------------------------------------------------------
 
     d->countryCheck = new MetadataCheckBox(i18n("Country:"), this);
     d->countryCB    = new CountrySelector(this);
     d->countryCB->setWhatsThis(i18n("Select here country name of content origin."));
+
     // Remove 2 last items for the list (separator + Unknown item)
+
     d->countryCB->removeItem(d->countryCB->count()-1);
     d->countryCB->removeItem(d->countryCB->count()-1);
 
@@ -244,9 +246,12 @@ XMPOrigin::XMPOrigin(QWidget* const parent)
     grid->addWidget(d->countryCB,                          12, 1, 1, 5);
     grid->setColumnStretch(4, 10);
     grid->setRowStretch(13, 10);
-    grid->setContentsMargins(QMargins());
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+
+    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
+    grid->setContentsMargins(spacing, spacing, spacing, spacing);
+    grid->setSpacing(spacing);
 
     // --------------------------------------------------------
 

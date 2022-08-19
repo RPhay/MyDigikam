@@ -41,6 +41,7 @@
 
 #include "templatelist.h"
 #include "subjectedit.h"
+#include "dtextedit.h"
 #include "altlangstredit.h"
 #include "countryselector.h"
 #include "digikam_globals.h"
@@ -79,10 +80,10 @@ public:
 
     /// Rights template information panel.
     QLineEdit*       authorsEdit;
-    QLineEdit*       authorsPositionEdit;
-    QLineEdit*       creditEdit;
-    QLineEdit*       sourceEdit;
-    QLineEdit*       instructionsEdit;
+    DTextEdit*       authorsPositionEdit;
+    DTextEdit*       creditEdit;
+    DTextEdit*       sourceEdit;
+    DTextEdit*       instructionsEdit;
 
     AltLangStrEdit*  copyrightEdit;
     AltLangStrEdit*  rightUsageEdit;
@@ -131,8 +132,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
     // --------------------------------------------------------
 
     QLabel* const label2   = new QLabel(i18n("Authors' Positions:"), page1);
-    d->authorsPositionEdit = new QLineEdit(page1);
-    d->authorsPositionEdit->setClearButtonEnabled(true);
+    d->authorsPositionEdit = new DTextEdit(page1);
     d->authorsPositionEdit->setPlaceholderText(i18n("Enter the job titles of the authors here."));
     label2->setBuddy(d->authorsPositionEdit);
     d->authorsPositionEdit->setWhatsThis(i18n("<p>This field should contain the job titles of the authors. Examples might include "
@@ -144,8 +144,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
     // --------------------------------------------------------
 
     QLabel* const label3 = new QLabel(i18n("Credit:"), page1);
-    d->creditEdit        = new QLineEdit(page1);
-    d->creditEdit->setClearButtonEnabled(true);
+    d->creditEdit        = new DTextEdit(page1);
     d->creditEdit->setPlaceholderText(i18n("Enter the photograph credit here."));
     label3->setBuddy(d->creditEdit);
     d->creditEdit->setWhatsThis(i18n("<p>(synonymous to Provider): Use the Provider field to identify who is providing the photograph. "
@@ -193,8 +192,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
     // --------------------------------------------------------
 
     QLabel* const label6 = new QLabel(i18nc("@label: template properties", "Source:"), page1);
-    d->sourceEdit        = new QLineEdit(page1);
-    d->sourceEdit->setClearButtonEnabled(true);
+    d->sourceEdit        = new DTextEdit(page1);
     d->sourceEdit->setPlaceholderText(i18n("Enter the original owner of the photograph here."));
     label6->setBuddy(d->sourceEdit);
     d->sourceEdit->setWhatsThis(i18n("<p>The Source field should be used to identify the original owner or copyright holder of the "
@@ -210,8 +208,7 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
     // --------------------------------------------------------
 
     QLabel* const label7 = new QLabel(i18n("Instructions:"), page1);
-    d->instructionsEdit  = new QLineEdit(page1);
-    d->instructionsEdit->setClearButtonEnabled(true);
+    d->instructionsEdit  = new DTextEdit(page1);
     d->instructionsEdit->setPlaceholderText(i18n("Enter the editorial notice here."));
     label7->setBuddy(d->instructionsEdit);
     d->instructionsEdit->setWhatsThis(i18n("<p>The Instructions field should be used to list editorial "
@@ -227,18 +224,18 @@ TemplatePanel::TemplatePanel(QWidget* const parent)
     grid1->setSpacing(spacing);
     grid1->setAlignment(Qt::AlignTop);
     grid1->setColumnStretch(1, 10);
-    grid1->addWidget(label1,                 0, 0, 1, 1);
-    grid1->addWidget(d->authorsEdit,         0, 1, 1, 2);
-    grid1->addWidget(label2,                 1, 0, 1, 1);
-    grid1->addWidget(d->authorsPositionEdit, 1, 1, 1, 2);
-    grid1->addWidget(label3,                 2, 0, 1, 1);
-    grid1->addWidget(d->creditEdit,          2, 1, 1, 2);
-    grid1->addWidget(d->copyrightEdit,       3, 0, 1, 2);
-    grid1->addWidget(d->rightUsageEdit,      4, 0, 1, 2);
-    grid1->addWidget(label6,                 5, 0, 1, 1);
-    grid1->addWidget(d->sourceEdit,          5, 1, 1, 2);
-    grid1->addWidget(label7,                 6, 0, 1, 1);
-    grid1->addWidget(d->instructionsEdit,    6, 1, 1, 2);
+    grid1->addWidget(label1,                 0,  0, 1, 1);
+    grid1->addWidget(d->authorsEdit,         0,  1, 1, 2);
+    grid1->addWidget(label2,                 1,  0, 1, 2);
+    grid1->addWidget(d->authorsPositionEdit, 2,  0, 1, 2);
+    grid1->addWidget(label3,                 3,  0, 1, 2);
+    grid1->addWidget(d->creditEdit,          4,  0, 1, 2);
+    grid1->addWidget(d->copyrightEdit,       5,  0, 1, 2);
+    grid1->addWidget(d->rightUsageEdit,      6,  0, 1, 2);
+    grid1->addWidget(label6,                 7,  0, 1, 2);
+    grid1->addWidget(d->sourceEdit,          8,  0, 1, 2);
+    grid1->addWidget(label7,                 9,  0, 1, 2);
+    grid1->addWidget(d->instructionsEdit,    10, 0, 1, 2);
 
     insertTab(RIGHTS, page1, QIcon::fromTheme(QLatin1String("flag")), i18n("Rights"));
 

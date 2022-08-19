@@ -171,7 +171,7 @@ void VideoWall::show()
         QGridLayout* const layout = new QGridLayout;
         layout->setSizeConstraint(QLayout::SetMaximumSize);
         layout->setSpacing(1);
-        layout->setContentsMargins(0, 0, 0, 0);
+        layout->setContentsMargins(QMargins());
         view->setLayout(layout);
     }
 

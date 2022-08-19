@@ -13,7 +13,6 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
                                     WindowSystem
                                     Solid
                                     I18n
-                                    Sonnet
 )
 
 find_package(KF5 ${KF5_MIN_VERSION} QUIET
@@ -23,7 +22,6 @@ find_package(KF5 ${KF5_MIN_VERSION} QUIET
                                     ThreadWeaver                # For Panorama tool.
                                     NotifyConfig                # Plasma desktop application notify configuration.
                                     Notifications               # Plasma desktop notifications integration.
-                                    TextWidgets                 # For text converter tool.
 )
 
 if(ENABLE_KFILEMETADATASUPPORT)

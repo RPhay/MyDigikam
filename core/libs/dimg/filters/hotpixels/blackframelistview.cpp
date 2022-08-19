@@ -66,6 +66,7 @@ BlackFrameListView::BlackFrameListView(QWidget* const parent)
 {
     setColumnCount(3);
     setRootIsDecorated(false);
+    setUniformRowHeights(true);
     setSelectionMode(QAbstractItemView::SingleSelection);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setAllColumnsShowFocus(true);

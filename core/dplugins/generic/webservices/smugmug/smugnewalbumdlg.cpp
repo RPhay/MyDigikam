@@ -31,7 +31,6 @@
 #include <QHBoxLayout>
 #include <QRadioButton>
 #include <QApplication>
-#include <QTextEdit>
 #include <QLineEdit>
 #include <QDialogButtonBox>
 #include <QPushButton>
@@ -43,6 +42,9 @@
 // local includes
 
 #include "smugitem.h"
+#include "dtextedit.h"
+
+using namespace Digikam;
 
 namespace DigikamGenericSmugPlugin
 {
@@ -75,17 +77,17 @@ public:
 */
 
     QGroupBox*    privBox;
-    QLineEdit*    titleEdt;
+    DTextEdit*    titleEdt;
     QLineEdit*    passwdEdt;
     QLineEdit*    hintEdt;
-    QTextEdit*    descEdt;
+    DTextEdit*    descEdt;
     QRadioButton* publicRBtn;
     QRadioButton* unlistedRBtn;
 };
 
 SmugNewAlbumDlg::SmugNewAlbumDlg(QWidget* const parent)
     : QDialog(parent),
-      d(new Private)
+      d      (new Private)
 {
     QString header(i18n("SmugMug New Album"));
     setWindowTitle(header);
@@ -95,12 +97,12 @@ SmugNewAlbumDlg::SmugNewAlbumDlg(QWidget* const parent)
     // ------------------------------------------------------------------------
 
     const int spacing         = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                     QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QGroupBox* const albumBox = new QGroupBox(i18n("Album"), this);
     albumBox->setWhatsThis(i18n("These are basic settings for the new SmugMug album."));
 
-    d->titleEdt          = new QLineEdit;
+    d->titleEdt               = new DTextEdit;
     d->titleEdt->setWhatsThis(i18n("Title of the album that will be created (required)."));
 
 /*  Categories are deprecated
@@ -113,7 +115,7 @@ SmugNewAlbumDlg::SmugNewAlbumDlg(QWidget* const parent)
     d->subCategCoB->setWhatsThis(i18n("Subcategory of the album that will be created (optional)."));
 */
 
-    d->descEdt           = new QTextEdit;
+    d->descEdt           = new DTextEdit(0, nullptr);
     d->descEdt->setWhatsThis(i18n("Description of the album that will be created (optional)."));
 
     d->templateCoB       = new QComboBox;
@@ -191,7 +193,7 @@ SmugNewAlbumDlg::~SmugNewAlbumDlg()
     delete d;
 }
 
-void SmugNewAlbumDlg::getAlbumProperties(SmugAlbum &album)
+void SmugNewAlbumDlg::getAlbumProperties(SmugAlbum& album)
 {
     album.title         = d->titleEdt->text();
 

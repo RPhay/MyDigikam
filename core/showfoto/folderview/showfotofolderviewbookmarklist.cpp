@@ -74,6 +74,7 @@ ShowfotoFolderViewBookmarkList::ShowfotoFolderViewBookmarkList(ShowfotoFolderVie
     setColumnCount(1);
     setHeaderHidden(true);
     setSortingEnabled(true);
+    setUniformRowHeights(true);
     setAllColumnsShowFocus(true);
     sortByColumn(0, Qt::AscendingOrder);
     setSelectionMode(QAbstractItemView::SingleSelection);

@@ -172,7 +172,7 @@ Name[tr]=Galeri Tanıtımı
 Name[uk]=Вступ до галереї
 Name[x-test]=xxGallery Introductionxx
 Name[zh_CN]=相册介绍
-Type=string
+Type=caption
 Default=Title of my web gallery
 
 
@@ -206,7 +206,7 @@ Name[ru]=Миниатюр в ряду
 Name[sk]=Miniatúr na riadok
 Name[sl]=Predoglednih sličic v vrstici
 Name[sv]=Miniatyrbilder per rad
-Name[tr]=Satır başına küçük resimler
+Name[tr]=Satır başına küçük görsel
 Name[uk]=Мініатюр на ряд
 Name[x-test]=xxThumbnails per rowxx
 Name[zh_CN]=每行缩略图

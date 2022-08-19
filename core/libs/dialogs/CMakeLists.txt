@@ -23,6 +23,10 @@ include_directories(
     $<TARGET_PROPERTY:KF5::Solid,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+if(KF5Sonnet_FOUND)
+    include_directories($<TARGET_PROPERTY:KF5::SonnetCore,INTERFACE_INCLUDE_DIRECTORIES>)
+endif()
+
 if(ENABLE_QWEBENGINE)
     include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::WebEngineWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
 else()

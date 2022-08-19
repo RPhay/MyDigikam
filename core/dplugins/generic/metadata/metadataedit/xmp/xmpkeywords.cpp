@@ -36,6 +36,10 @@
 
 #include <klocalizedstring.h>
 
+// Local includes
+
+#include "dtextedit.h"
+
 namespace DigikamGenericMetadataEditPlugin
 {
 
@@ -61,24 +65,24 @@ public:
 
     QCheckBox*   keywordsCheck;
 
-    QLineEdit*   keywordEdit;
+    DTextEdit*   keywordEdit;
 
     QListWidget* keywordsBox;
 };
 
 XMPKeywords::XMPKeywords(QWidget* const parent)
-    : QWidget(parent),
-      d(new Private)
+    : MetadataEditPage(parent),
+      d               (new Private)
 {
-    QGridLayout* const grid = new QGridLayout(this);
+    QGridLayout* const grid = new QGridLayout(widget());
 
     // --------------------------------------------------------
 
     d->keywordsCheck = new QCheckBox(i18n("Use information retrieval words:"), this);
 
-    d->keywordEdit   = new QLineEdit(this);
-    d->keywordEdit->setClearButtonEnabled(true);
-    d->keywordEdit->setWhatsThis(i18n("Enter here a new keyword."));
+    d->keywordEdit   = new DTextEdit(this);
+    d->keywordEdit->setLinesVisible(1);
+    d->keywordEdit->setPlaceholderText(i18n("Set here a new keyword"));
 
     d->keywordsBox   = new QListWidget(this);
     d->keywordsBox->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
@@ -94,7 +98,7 @@ XMPKeywords::XMPKeywords(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    grid->setAlignment( Qt::AlignTop );
+    grid->setAlignment(Qt::AlignTop);
     grid->addWidget(d->keywordsCheck,       0, 0, 1, 2);
     grid->addWidget(d->keywordEdit,         1, 0, 1, 1);
     grid->addWidget(d->keywordsBox,         2, 0, 5, 1);
@@ -103,9 +107,12 @@ XMPKeywords::XMPKeywords(QWidget* const parent)
     grid->addWidget(d->repKeywordButton,    4, 1, 1, 1);
     grid->setColumnStretch(0, 10);
     grid->setRowStretch(5, 10);
-    grid->setContentsMargins(QMargins());
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+
+    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
+    grid->setContentsMargins(spacing, spacing, spacing, spacing);
+    grid->setSpacing(spacing);
 
     // --------------------------------------------------------
 
@@ -161,7 +168,11 @@ XMPKeywords::~XMPKeywords()
 void XMPKeywords::slotDelKeyword()
 {
     QListWidgetItem* const item = d->keywordsBox->currentItem();
-    if (!item) return;
+
+    if (!item)
+    {
+        return;
+    }
 
     d->keywordsBox->takeItem(d->keywordsBox->row(item));
     delete item;
@@ -261,9 +272,11 @@ void XMPKeywords::applyMetadata(const DMetadata& meta)
     }
 
     // We remove in first all existing keywords.
+
     meta.removeXmpTag("Xmp.dc.subject");
 
     // And add new list if necessary.
+
     if (d->keywordsCheck->isChecked())
     {
         meta.setXmpKeywords(newKeywords);

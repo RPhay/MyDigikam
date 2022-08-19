@@ -111,7 +111,7 @@ DConfigDlgWdgItem* DConfigDlgWdg::addPage(QWidget* widget, const QString& name)
 
     if (widget->layout())
     {
-        widget->layout()->setContentsMargins(0, 0, 0, 0);
+        widget->layout()->setContentsMargins(QMargins());
     }
 
     return d_func()->model()->addPage(widget, name);
@@ -211,7 +211,7 @@ DConfigDlgTitle::DConfigDlgTitle(QWidget* const parent)
 
     QVBoxLayout* const mainLayout = new QVBoxLayout(this);
     mainLayout->addWidget(titleFrame);
-    mainLayout->setContentsMargins(0, 0, 0, 0);
+    mainLayout->setContentsMargins(QMargins());
     setLayout(mainLayout);
 }
 

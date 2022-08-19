@@ -22,9 +22,8 @@ add_executable(recognize_cli ${recognize_cli_SRCS})
 target_link_libraries(recognize_cli
 
                       digikamcore
-                      digikamgui
-                      digikamfacesengine
                       digikamdatabase
+                      digikamgui
 
                       ${COMMON_TEST_LINK}
 )
@@ -37,9 +36,8 @@ add_executable(face_rec_cli ${facerec_cli_SRCS})
 target_link_libraries(face_rec_cli
 
                       digikamcore
-                      digikamgui
-                      digikamfacesengine
                       digikamdatabase
+                      digikamgui
 
                       ${COMMON_TEST_LINK}
 )
@@ -54,9 +52,8 @@ target_link_libraries(face_rec_cli
 #target_link_libraries(face_cluster_cli
 
 #                      digikamcore
-#                      digikamgui
-#                      digikamfacesengine
 #                      digikamdatabase
+#                      digikamgui
 
 #                      ${COMMON_TEST_LINK}
 #)
@@ -69,9 +66,8 @@ add_executable(benchmark_recognition_cli ${benchmark_recognition_cli_SRCS})
 target_link_libraries(benchmark_recognition_cli
 
                       digikamcore
-                      digikamgui
-                      digikamfacesengine
                       digikamdatabase
+                      digikamgui
 
                       ${COMMON_TEST_LINK}
 )
@@ -84,9 +80,8 @@ add_executable(recognition_gui ${recognition_gui_SRCS})
 target_link_libraries(recognition_gui
 
                       digikamcore
-                      digikamgui
-                      digikamfacesengine
                       digikamdatabase
+                      digikamgui
 
                       ${COMMON_TEST_LINK}
 )
@@ -99,9 +94,8 @@ add_executable(traindb_cli ${traindb_cli_SRCS})
 target_link_libraries(traindb_cli
 
                       digikamcore
-                      digikamgui
-                      digikamfacesengine
                       digikamdatabase
+                      digikamgui
 
                       ${COMMON_TEST_LINK}
 )

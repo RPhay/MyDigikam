@@ -55,6 +55,7 @@ public:
                        const QString& _connectOptions = QString(),
                        const QString& _hostName = QString(),
                        int            _port = -1,
+                       bool           _walMode = false,
                        bool           _internalServer = false,
                        const QString& _userName = QString(),
                        const QString& _password = QString(),
@@ -200,6 +201,7 @@ public:
     QString connectOptions;
     QString hostName;
     int     port;
+    bool    walMode;
     bool    internalServer;
     QString userName;
     QString password;
