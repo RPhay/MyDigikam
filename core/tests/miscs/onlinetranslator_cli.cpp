@@ -46,7 +46,6 @@ bool do_online_translation(const QString& text,
     qCDebug(DIGIKAM_TESTS_LOG) << "With WebService          :" << engine;
     qCDebug(DIGIKAM_TESTS_LOG) << "To target language       :" << trLang;
     qCDebug(DIGIKAM_TESTS_LOG) << "With source language     :" << srcLang;
-    qCDebug(DIGIKAM_TESTS_LOG) << "Elapsed time to translate:" << srcLang;
 
     DOnlineTranslator* const trengine = new DOnlineTranslator;
 
