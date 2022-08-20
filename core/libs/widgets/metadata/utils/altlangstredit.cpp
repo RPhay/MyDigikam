@@ -334,7 +334,7 @@ AltLangStrEdit::AltLangStrEdit(QWidget* const parent, unsigned int lines)
 
     d->translateButton = new QToolButton(this);
     d->translateButton->setIcon(QIcon::fromTheme(QLatin1String("language-chooser")));
-    d->translateButton->setToolTip(i18nc("@info: language edit widget", "Select langue to translate with Web-service"));
+    d->translateButton->setToolTip(i18nc("@info: language edit widget", "Select language to translate with Web-service"));
     d->translateButton->setEnabled(false);
     d->translateButton->setPopupMode(QToolButton::MenuButtonPopup);
     QMenu* const menu  = new QMenu(d->translateButton);
