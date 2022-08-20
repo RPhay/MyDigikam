@@ -122,7 +122,7 @@ BUGFIXES:
 094 ==> 426115 - Make drag-n-drop more evident.
 095 ==> 411550 - Difficulty to drag and drop a face tag to people group.
 096 ==> 458003 - Highlight albums when "dragging" items on it.
-097 ==> 
+097 ==> 458082 - MP4 video failed to update metadata timestamp.
 098 ==> 
 099 ==> 
 100 ==> 
