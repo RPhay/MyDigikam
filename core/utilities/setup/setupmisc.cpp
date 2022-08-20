@@ -62,6 +62,7 @@
 #include "spellcheckconfig.h"
 #include "onlineversionchecker.h"
 #include "setup.h"
+#include "localizeconfig.h"
 
 #ifdef HAVE_SONNET
 #   include "spellcheckconfig.h"
@@ -113,6 +114,7 @@ public:
 
 #endif
 
+        localizeWidget                          (nullptr),
         groupingButtons                         (QHash<int, QButtonGroup*>())
     {
     }
@@ -161,6 +163,7 @@ public:
 
 #endif
 
+    LocalizeConfig*           localizeWidget;
     QHash<int, QButtonGroup*> groupingButtons;
 };
 
@@ -497,7 +500,7 @@ SetupMisc::SetupMisc(QWidget* const parent)
 
     d->tab->insertTab(System, d->systemSettingsWidget, i18nc("@title:tab", "System"));
 
-    // -- Spell Check Options ---------------------------------
+    // -- Spell Check and localize Options --------------------------------------
 
 #ifdef HAVE_SONNET
 
@@ -506,6 +509,10 @@ SetupMisc::SetupMisc(QWidget* const parent)
     d->tab->insertTab(SpellCheck, d->spellCheckWidget, i18nc("@title:tab", "Spellcheck"));
 
 #endif
+
+    d->localizeWidget = new LocalizeConfig(d->tab);
+
+    d->tab->insertTab(Localize, d->localizeWidget, i18nc("@title:tab", "Localize"));
 
     // --------------------------------------------------------
 
@@ -602,6 +609,7 @@ void SetupMisc::applySettings()
 
 #endif
 
+    d->localizeWidget->applySettings();
 }
 
 void SetupMisc::readSettings()
@@ -647,7 +655,7 @@ void SetupMisc::readSettings()
     d->applicationIcon->setCurrentIndex(d->applicationIcon->findData(settings->getIconTheme()));
     d->applicationFont->setFont(settings->getApplicationFont());
 
-    // NOTE: Spellcheck read settings is done in widget constructor.
+    // NOTE: Spellcheck and Localize read settings is done in widget constructor.
 }
 
 } // namespace Digikam

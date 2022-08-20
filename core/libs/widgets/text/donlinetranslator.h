@@ -520,22 +520,6 @@ public:
     void setTranslationOptionsEnabled(bool enable);
 
     /**
-     * @brief Check if translation examples are enabled
-     *
-     * @return `true` if translation examples are enabled
-     * @sa QExample
-     */
-    bool isExamplesEnabled() const;
-
-    /**
-     * @brief Enable or disable translation examples
-     *
-     * @param enable whether to enable translation examples
-     * @sa QExample
-     */
-    void setExamplesEnabled(bool enable);
-
-    /**
      * @brief Set the URL engine
      *
      * Only affects LibreTranslate and Lingva because these engines have multiple instances.
@@ -606,6 +590,11 @@ public:
      * Return a list of all supported language in ISO3066.
      */
     static QStringList supportedISO3066();
+
+    /**
+     * Return the engine litteral name.
+     */
+    static QString engineName(Engine engine);
 
 Q_SIGNALS:
 

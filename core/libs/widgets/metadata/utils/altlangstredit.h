@@ -147,6 +147,8 @@ private Q_SLOTS:
 
     void slotTranslationFinished();
 
+    void slotLocalizeChanged();
+
 protected:
 
     void loadLangAltListEntries();

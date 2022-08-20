@@ -549,6 +549,27 @@ void DOnlineTranslator::translate(const QString& text,
     m_stateMachine->start();
 }
 
+QString DOnlineTranslator::engineName(Engine engine)
+{
+    switch (engine)
+    {
+        case Yandex:
+            return QLatin1String("Yandex");
+
+        case Bing:
+            return QLatin1String("Bing");
+
+        case LibreTranslate:
+            return QLatin1String("Libre Translate");
+
+        case Lingva:
+            return QLatin1String("Lingva");
+
+        default:
+            return QLatin1String("Google");
+    }
+}
+
 void DOnlineTranslator::detectLanguage(const QString& text, Engine engine)
 {
     abort();

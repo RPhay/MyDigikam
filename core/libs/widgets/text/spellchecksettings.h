@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2022-08-16
- * Description : central place for Spell-check settings
+ * Description : central place for Spell-check and localize settings
  *
  * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *

@@ -14,6 +14,7 @@ set(libtextwidgets_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/text/spellchecksettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/spellcheckcontainer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/spellcheckconfig.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/localizeconfig.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator.cpp
 )
 

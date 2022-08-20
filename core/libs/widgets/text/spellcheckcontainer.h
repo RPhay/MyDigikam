@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2022-08-16
- * Description : Spell-check Container.
+ * Description : Spell-check and localize Settings Container.
  *
  * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -32,6 +32,7 @@
 // Local includes
 
 #include "digikam_export.h"
+#include "donlinetranslator.h"
 
 class KConfigGroup;
 
@@ -55,9 +56,11 @@ public:
 
 public:
 
-    bool        enableSpellCheck;
+    bool                        enableSpellCheck;
 
-    QStringList ignoredWords;
+    QStringList                 ignoredWords;
+
+    DOnlineTranslator::Engine   translatorEngine;
 };
 
 //! qDebug() stream operator. Writes property @a inf to the debug output in a nicely formatted way.

@@ -45,7 +45,8 @@ public:
         Appearance,
         Grouping,
         System,
-        SpellCheck
+        SpellCheck,
+        Localize
     };
 
 public:

@@ -49,7 +49,8 @@ public:
         Behaviour = 0,
         Appearance,
         System,
-        SpellCheck
+        SpellCheck,
+        Localize
     };
 
 public:

@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2022-08-16
- * Description : Spell-chec Settings Container.
+ * Description : Spell-check and localize Settings Container.
  *
  * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -36,7 +36,8 @@ namespace Digikam
 {
 
 SpellCheckContainer::SpellCheckContainer()
-    : enableSpellCheck          (false)
+    : enableSpellCheck(false),
+      translatorEngine(DOnlineTranslator::Google)
 {
 }
 
@@ -62,12 +63,15 @@ void SpellCheckContainer::readFromConfig(KConfigGroup& group)
                                                                      << QLatin1String("IPTC")
                                                                      << QLatin1String("Xmp"));
     ignoredWords.removeDuplicates();
+
+    translatorEngine = (DOnlineTranslator::Engine)group.readEntry("TranslatorEngine", (int)DOnlineTranslator::Engine::Google);
 }
 
 void SpellCheckContainer::writeToConfig(KConfigGroup& group) const
 {
     group.writeEntry("EnableSpellCheck", enableSpellCheck);
     group.writeEntry("IgnoredWords",     ignoredWords);
+    group.writeEntry("TranslatorEngine", (int)translatorEngine);
     group.sync();
 }
 
@@ -76,7 +80,9 @@ QDebug operator<<(QDebug dbg, const SpellCheckContainer& inf)
     dbg.nospace() << "[SpellCheckContainer] enableSpellCheck("
                   << inf.enableSpellCheck << "), "
                   << "ignoredWords("
-                  << inf.ignoredWords << "), ";
+                  << inf.ignoredWords << "), "
+                  << "translatorEngine("
+                  << inf.translatorEngine << "), ";
     return dbg.space();
 }
 

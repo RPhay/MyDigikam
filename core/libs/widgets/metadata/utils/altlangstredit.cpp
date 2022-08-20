@@ -51,6 +51,7 @@
 
 #include "digikam_debug.h"
 #include "donlinetranslator.h"
+#include "spellchecksettings.h"
 
 namespace Digikam
 {
@@ -334,7 +335,6 @@ AltLangStrEdit::AltLangStrEdit(QWidget* const parent, unsigned int lines)
 
     d->translateButton = new QToolButton(this);
     d->translateButton->setIcon(QIcon::fromTheme(QLatin1String("language-chooser")));
-    d->translateButton->setToolTip(i18nc("@info: language edit widget", "Select language to translate with Web-service"));
     d->translateButton->setEnabled(false);
     d->translateButton->setPopupMode(QToolButton::MenuButtonPopup);
     QMenu* const menu  = new QMenu(d->translateButton);
@@ -365,7 +365,7 @@ AltLangStrEdit::AltLangStrEdit(QWidget* const parent, unsigned int lines)
                              QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
 
     loadLangAltListEntries();
-    loadTranslationTargets();
+    slotLocalizeChanged();
 
     // --------------------------------------------------------
 
@@ -386,6 +386,9 @@ AltLangStrEdit::AltLangStrEdit(QWidget* const parent, unsigned int lines)
 
     connect(d->translateButton, &QToolButton::pressed,
             d->translateButton, &QToolButton::showMenu);
+
+    connect(SpellCheckSettings::instance(), &SpellCheckSettings::signalSettingsChanged,
+            this, &AltLangStrEdit::slotLocalizeChanged);
 }
 
 AltLangStrEdit::~AltLangStrEdit()
@@ -658,7 +661,7 @@ void AltLangStrEdit::loadTranslationTargets()
     Q_FOREACH (const QString& iso, allISO3066)
     {
         if (
-            DOnlineTranslator::isSupportTranslation(DOnlineTranslator::Google, 
+            DOnlineTranslator::isSupportTranslation(SpellCheckSettings::instance()->settings().translatorEngine,
                                                     DOnlineTranslator::language(DOnlineTranslator::fromISO3066(iso)))
            )
         {
@@ -712,10 +715,10 @@ void AltLangStrEdit::slotTranslate(QListWidgetItem* item)
         qCDebug(DIGIKAM_WIDGETS_LOG) << "To target language       :" << trLang;
         qCDebug(DIGIKAM_WIDGETS_LOG) << "With source language     :" << srcLang;
 
-        d->trengine->translate(text,                           // String to translate
-                               DOnlineTranslator::Google,      // Web service
-                               trLang,                         // Target language
-                               srcLang,                        // Source langage
+        d->trengine->translate(text,                                                            // String to translate
+                               SpellCheckSettings::instance()->settings().translatorEngine,     // Web service
+                               trLang,                                                          // Target language
+                               srcLang,                                                         // Source langage
                                DOnlineTranslator::Auto);
     }
 }
@@ -745,6 +748,13 @@ void AltLangStrEdit::slotTranslationFinished()
     {
         qCDebug(DIGIKAM_WIDGETS_LOG) << "Translation Error       :" << d->trengine->error();
     }
+}
+
+void AltLangStrEdit::slotLocalizeChanged()
+{
+    loadTranslationTargets();
+    d->translateButton->setToolTip(i18nc("@info: language edit widget", "Select language to translate with %1",
+                                   DOnlineTranslator::engineName(SpellCheckSettings::instance()->settings().translatorEngine)));
 }
 
 } // namespace Digikam

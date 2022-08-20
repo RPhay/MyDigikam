@@ -55,6 +55,7 @@
 #include "systemsettingswidget.h"
 #include "onlineversionchecker.h"
 #include "showfotosetup.h"
+#include "localizeconfig.h"
 
 #ifdef HAVE_SONNET
 #   include "spellcheckconfig.h"
@@ -96,6 +97,7 @@ public:
 
 #endif
 
+        localizeWidget          (nullptr),
         settings                (ShowfotoSettings::instance())
     {
     }
@@ -131,6 +133,7 @@ public:
 
 #endif
 
+    LocalizeConfig*       localizeWidget;
     ShowfotoSettings*     settings;
 };
 
@@ -343,7 +346,7 @@ ShowfotoSetupMisc::ShowfotoSetupMisc(QWidget* const parent)
 
     d->tab->insertTab(System, d->systemSettingsWidget, i18nc("@title:tab", "System"));
 
-    // -- Spell Check Options ---------------------------------
+    // -- Spell Check and Localize Options --------------------------------------
 
 #ifdef HAVE_SONNET
 
@@ -352,6 +355,10 @@ ShowfotoSetupMisc::ShowfotoSetupMisc(QWidget* const parent)
     d->tab->insertTab(SpellCheck, d->spellCheckWidget, i18nc("@title:tab", "Spellcheck"));
 
 #endif
+
+    d->localizeWidget = new LocalizeConfig(d->tab);
+
+    d->tab->insertTab(Localize, d->localizeWidget, i18nc("@title:tab", "Localize"));
 
     // --------------------------------------------------------
 
@@ -414,7 +421,7 @@ void ShowfotoSetupMisc::readSettings()
     d->applicationIcon->setCurrentIndex(d->applicationIcon->findData(d->settings->getIconTheme()));
     d->applicationFont->setFont(d->settings->getApplicationFont());
 
-    // NOTE: Spellcheck read settings is done in widget constructor.
+    // NOTE: Spellcheck and Localize read settings is done in widget constructor.
 }
 
 void ShowfotoSetupMisc::applySettings()
@@ -448,6 +455,7 @@ void ShowfotoSetupMisc::applySettings()
 
 #endif
 
+    d->localizeWidget->applySettings();
 }
 
 } // namespace ShowFoto
