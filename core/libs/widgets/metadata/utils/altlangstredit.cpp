@@ -396,6 +396,21 @@ AltLangStrEdit::~AltLangStrEdit()
     delete d;
 }
 
+// Static method
+
+QString AltLangStrEdit::languageName(const QString& code)
+{
+    Private d;
+    Private::LanguageCodeMap::Iterator it = d.languageCodeMap.find(code);
+
+    if (it != d.languageCodeMap.end())
+    {
+        return it.value();
+    }
+
+    return QString();
+}
+
 void AltLangStrEdit::slotEnabledInternalWidgets(bool b)
 {
     d->languageCB->setEnabled(b);

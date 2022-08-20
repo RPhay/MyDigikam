@@ -47,6 +47,10 @@ public:
     void applySettings();
     void readSettings();
 
+private Q_SLOTS:
+
+    void slotPopulateLanguage();
+
 private:
 
     class Private;

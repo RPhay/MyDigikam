@@ -104,6 +104,8 @@ public:
 
     virtual void setValues(const MetaEngine::AltLangMap& values);
 
+    static QString languageName(const QString& code);
+
 Q_SIGNALS:
 
     /**
