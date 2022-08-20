@@ -650,12 +650,26 @@ DTextEdit* AltLangStrEdit::textEdit() const
 
 void AltLangStrEdit::loadTranslationTargets()
 {
-    QStringList supportedISO3066 = DOnlineTranslator::supportedISO3066();
+    d->translateAction->m_list->clear();
+
+    QStringList allISO3066 = DOnlineTranslator::supportedISO3066();
+    QStringList engineISO3066;
+
+    Q_FOREACH (const QString& iso, allISO3066)
+    {
+        if (
+            DOnlineTranslator::isSupportTranslation(DOnlineTranslator::Google, 
+                                                    DOnlineTranslator::language(DOnlineTranslator::fromISO3066(iso)))
+           )
+        {
+            engineISO3066 << iso;
+        }
+    }
 
     for (Private::LanguageCodeMap::Iterator it = d->languageCodeMap.begin() ;
          it != d->languageCodeMap.end() ; ++it)
     {
-        if (supportedISO3066.contains(it.key()))
+        if (!it.key().isEmpty() && engineISO3066.contains(it.key()))
         {
             QListWidgetItem* const item = new QListWidgetItem(d->translateAction->m_list);
             item->setText(it.key());
