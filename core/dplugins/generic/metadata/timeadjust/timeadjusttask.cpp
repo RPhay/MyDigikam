@@ -104,8 +104,9 @@ void TimeAdjustTask::run()
         return;
     }
 
-    bool writeToSidecar  = (MetaEngineSettings::instance()->settings()
-                            .metadataWritingMode != DMetadata::WRITE_TO_FILE_ONLY);
+    bool writeToSidecar    = (MetaEngineSettings::instance()->settings()
+                                .metadataWritingMode != DMetadata::WRITE_TO_FILE_ONLY);
+    bool writeWithExifTool = (MetaEngineSettings::instance()->settings().writeWithExifTool);
 
     bool metadataChanged = d->settings.updEXIFModDate || d->settings.updEXIFOriDate ||
                            d->settings.updEXIFDigDate || d->settings.updEXIFThmDate ||
@@ -127,7 +128,7 @@ void TimeAdjustTask::run()
             QString exifDateTimeFormat = QLatin1String("yyyy:MM:dd hh:mm:ss");
             QString xmpDateTimeFormat  = QLatin1String("yyyy-MM-ddThh:mm:ss");
 
-            if (writeToSidecar || meta->canWriteExif(d->url.toLocalFile()))
+            if (writeWithExifTool || writeToSidecar || meta->canWriteExif(d->url.toLocalFile()))
             {
                 if (d->settings.updEXIFModDate)
                 {
@@ -177,7 +178,7 @@ void TimeAdjustTask::run()
 
             if (d->settings.updIPTCDate)
             {
-                if (writeToSidecar || meta->canWriteIptc(d->url.toLocalFile()))
+                if (writeWithExifTool || writeToSidecar || meta->canWriteIptc(d->url.toLocalFile()))
                 {
                     if (!d->settings.updIfAvailable ||
                         !meta->getIptcTagString("Iptc.Application2.DateCreated").isEmpty())
@@ -201,7 +202,7 @@ void TimeAdjustTask::run()
 
             if (d->settings.updXMPDate)
             {
-                if (writeToSidecar || (meta->supportXmp() && meta->canWriteXmp(d->url.toLocalFile())))
+                if (writeWithExifTool || writeToSidecar || (meta->supportXmp() && meta->canWriteXmp(d->url.toLocalFile())))
                 {
                     if (!d->settings.updIfAvailable ||
                         !meta->getXmpTagString("Xmp.exif.DateTimeOriginal").isEmpty())
