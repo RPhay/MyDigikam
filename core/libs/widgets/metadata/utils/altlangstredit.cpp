@@ -687,10 +687,10 @@ void AltLangStrEdit::slotTranslate(QListWidgetItem* item)
         }
         else
         {
-            srcLang = DOnlineTranslator::language(srcCode.section(QLatin1Char('-'), 0, 0));
+            srcLang = DOnlineTranslator::language(DOnlineTranslator::fromISO3066(srcCode));
         }
 
-        trLang       = DOnlineTranslator::language(d->trCode.section(QLatin1Char('-'), 0, 0));
+        trLang       = DOnlineTranslator::language(DOnlineTranslator::fromISO3066(d->trCode));
         QString text = textEdit()->text();
 
         qCDebug(DIGIKAM_WIDGETS_LOG) << "Request to translate with Web-service:";
