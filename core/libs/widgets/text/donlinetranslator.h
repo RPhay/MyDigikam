@@ -597,6 +597,16 @@ public:
      */
     static bool isSupportTranslation(Engine engine, Language lang);
 
+    /**
+     * Convert language ISO3066 to supported language code
+     */
+    static QString fromISO3066(const QString& langCode3066);
+
+    /**
+     * Return a list of all supported language in ISO3066.
+     */
+    static QStringList supportedISO3066();
+
 Q_SIGNALS:
 
     /**
@@ -753,7 +763,6 @@ private:
      * Parse language from response language code
      */
     static Language language(Engine engine, const QString& langCode);
-
     /**
      * Get split index of the text according to the limit
      */
@@ -766,7 +775,7 @@ private:
 private:
 
     static const QMap<Language, QString>             s_genericLanguageCodes;
-    static const QMap<QString, QString>              s_doubleToSingleLanguageCodes;
+    static const QMap<QString, QString>              s_iso3066LanguageCodes;
 
     // Engines have some language codes exceptions
 

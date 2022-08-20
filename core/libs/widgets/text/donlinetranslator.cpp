@@ -198,7 +198,7 @@ const QMap<DOnlineTranslator::Language, QString> DOnlineTranslator::s_lingvaLang
 
 // --------------------------------------------------------------------------------------------
 
-const QMap<QString, QString> DOnlineTranslator::s_doubleToSingleLanguageCodes =
+const QMap<QString, QString> DOnlineTranslator::s_iso3066LanguageCodes =
 {
     { QLatin1String("af-ZA"),  QLatin1String("af")       },
     { QLatin1String("sq-AL"),  QLatin1String("sq")       },
@@ -219,25 +219,35 @@ const QMap<QString, QString> DOnlineTranslator::s_doubleToSingleLanguageCodes =
     { QLatin1String("ar-SY"),  QLatin1String("ar")       },
     { QLatin1String("ar-TN"),  QLatin1String("ar")       },
     { QLatin1String("ar-YE"),  QLatin1String("ar")       },
-    { QLatin1String("hy-AM"),  QLatin1String("hy")       },   
-    { QLatin1String("")     ,  QLatin1String("az")       },   
-    { QLatin1String("ba-RU"),  QLatin1String("ba")       },   
-    { QLatin1String("eu-ES"),  QLatin1String("eu")       },   
-    { QLatin1String("be-BY"),  QLatin1String("be")       },   
-    { QLatin1String("bn-IN"),  QLatin1String("bn")       },   
-    { QLatin1String("")     ,  QLatin1String("bs")       },   
-    { QLatin1String("bg-BG"),  QLatin1String("bg")       },   
-    { QLatin1String("")     ,  QLatin1String("yue")      },   
+//     { QLatin1String("as-IN"),  QLatin1String("")         },
+    { QLatin1String("hy-AM"),  QLatin1String("hy")       },
+//     { QLatin1String("")     ,  QLatin1String("az")       },
+    { QLatin1String("ba-RU"),  QLatin1String("ba")       },
+    { QLatin1String("eu-ES"),  QLatin1String("eu")       },
+    { QLatin1String("be-BY"),  QLatin1String("be")       },
+    { QLatin1String("bn-IN"),  QLatin1String("bn")       },
+//     { QLatin1String("bo-BT"),  QLatin1String("")         },
+//     { QLatin1String("bo-CN"),  QLatin1String("")         },
+//     { QLatin1String("")     ,  QLatin1String("bs")       },
+//     { QLatin1String("")     ,  QLatin1String("bs-Latn")  }, 
+    { QLatin1String("bg-BG"),  QLatin1String("bg")       },
+    { QLatin1String("br-FR"),  QLatin1String("")         },
+//     { QLatin1String("")     ,  QLatin1String("yue")      },
     { QLatin1String("ca-ES"),  QLatin1String("ca")       },
     { QLatin1String("ca-AD"),  QLatin1String("ca")       },
     { QLatin1String("ca-FR"),  QLatin1String("ca")       },
-    { QLatin1String("")     ,  QLatin1String("ceb")      },   
-    { QLatin1String("")     ,  QLatin1String("ny")       },   
-    { QLatin1String("co-FR"),  QLatin1String("co")       },   
-    { QLatin1String("hr-HR"),  QLatin1String("hr")       },   
-    { QLatin1String("cs-CZ"),  QLatin1String("cs")       },  //   QLatin1String("as-IN"),
+//     { QLatin1String("")     ,  QLatin1String("ceb")      },
+//     { QLatin1String("")     ,  QLatin1String("ny")       },
+    { QLatin1String("co-FR"),  QLatin1String("co")       },
+    { QLatin1String("cy-GB"),  QLatin1String("cy")       }, 
+    { QLatin1String("cs-CZ"),  QLatin1String("cs")       },
     { QLatin1String("da-DK"),  QLatin1String("da")       },
-    { QLatin1String("nl-NL"),  QLatin1String("nl")       },
+    { QLatin1String("de-DE"),  QLatin1String("de")       },
+    { QLatin1String("de-LI"),  QLatin1String("de")       },
+    { QLatin1String("de-AT"),  QLatin1String("de")       },
+    { QLatin1String("de-LU"),  QLatin1String("de")       },
+    { QLatin1String("de-CH"),  QLatin1String("de")       },
+    { QLatin1String("el-GR"),  QLatin1String("el")       },
     { QLatin1String("en-US"),  QLatin1String("en")       },
     { QLatin1String("en-AU"),  QLatin1String("en")       },
     { QLatin1String("en-BZ"),  QLatin1String("en")       },
@@ -253,11 +263,32 @@ const QMap<QString, QString> DOnlineTranslator::s_doubleToSingleLanguageCodes =
     { QLatin1String("en-TT"),  QLatin1String("en")       },
     { QLatin1String("en-ZA"),  QLatin1String("en")       },
     { QLatin1String("en-ZW"),  QLatin1String("en")       },
-    { QLatin1String("")     ,  QLatin1String("eo")       },
-    { QLatin1String("et-EE"),  QLatin1String("et")       },  //   QLatin1String("bo-BT"),
-    { QLatin1String("")     ,  QLatin1String("fj")       },  //   QLatin1String("bo-CN"),
-    { QLatin1String("")     ,  QLatin1String("fil")      },  //   QLatin1String("br-FR"),
-    { QLatin1String("fi-FI"),  QLatin1String("fi")       },    
+//     { QLatin1String("")     ,  QLatin1String("eo")       },
+    { QLatin1String("et-EE"),  QLatin1String("et")       },
+//     { QLatin1String("es-AR"),  QLatin1String("")         },
+//     { QLatin1String("es-BO"),  QLatin1String("")         },
+//     { QLatin1String("es-CL"),  QLatin1String("")         },
+//     { QLatin1String("es-CO"),  QLatin1String("")         },
+//     { QLatin1String("es-CR"),  QLatin1String("")         },
+//     { QLatin1String("es-DO"),  QLatin1String("")         },
+//     { QLatin1String("es-EC"),  QLatin1String("")         },
+//     { QLatin1String("es-ES"),  QLatin1String("")         },
+//     { QLatin1String("es-GT"),  QLatin1String("")         },
+//     { QLatin1String("es-HN"),  QLatin1String("")         },
+//     { QLatin1String("es-MX"),  QLatin1String("")         },
+//     { QLatin1String("es-NI"),  QLatin1String("")         },
+//     { QLatin1String("es-PA"),  QLatin1String("")         },
+//     { QLatin1String("es-PE"),  QLatin1String("")         },
+//     { QLatin1String("es-PR"),  QLatin1String("")         },
+//     { QLatin1String("es-PY"),  QLatin1String("")         },
+//     { QLatin1String("es-SV"),  QLatin1String("")         },
+//     { QLatin1String("es-UR"),  QLatin1String("")         },
+//     { QLatin1String("es-US"),  QLatin1String("")         },
+//     { QLatin1String("es-VE"),  QLatin1String("")         },
+    { QLatin1String("fa-IR"),  QLatin1String("fa")       },   
+//     { QLatin1String("")     ,  QLatin1String("fj")       },
+//     { QLatin1String("")     ,  QLatin1String("fil")      },
+    { QLatin1String("fi-FI"),  QLatin1String("fi")       },
     { QLatin1String("fr-FR"),  QLatin1String("fr")       },
     { QLatin1String("fo-FO"),  QLatin1String("fr")       },
     { QLatin1String("fr-BE"),  QLatin1String("fr")       },
@@ -265,134 +296,135 @@ const QMap<QString, QString> DOnlineTranslator::s_doubleToSingleLanguageCodes =
     { QLatin1String("fr-CH"),  QLatin1String("fr")       },
     { QLatin1String("fr-LU"),  QLatin1String("fr")       },
     { QLatin1String("fr-MC"),  QLatin1String("fr")       },
-    { QLatin1String("fy-NL"),  QLatin1String("fy")       },    
-    { QLatin1String("gl-ES"),  QLatin1String("gl")       },  
-    { QLatin1String("ka-GE"),  QLatin1String("ka")       },  
-    { QLatin1String("de-DE"),  QLatin1String("de")       },  
-    { QLatin1String("de-LI"),  QLatin1String("de")       },
-    { QLatin1String("de-AT"),  QLatin1String("de")       },
-    { QLatin1String("de-LU"),  QLatin1String("de")       },
-    { QLatin1String("de-CH"),  QLatin1String("de")       },
-    { QLatin1String("el-GR"),  QLatin1String("el")       },  
-    { QLatin1String("gu-IN"),  QLatin1String("gu")       },    
-    { QLatin1String("")     ,  QLatin1String("ht")       },   
-    { QLatin1String("")     ,  QLatin1String("ha")       },
-    { QLatin1String("")     ,  QLatin1String("haw")      },   
-    { QLatin1String("he-IL"),  QLatin1String("he")       },   
-    { QLatin1String("")     ,  QLatin1String("mrj")      },
+    { QLatin1String("fy-NL"),  QLatin1String("fy")       },
+    { QLatin1String("gl-ES"),  QLatin1String("gl")       },
+    { QLatin1String("ka-GE"),  QLatin1String("ka")       },
+    { QLatin1String("ga-IE"),  QLatin1String("ga")       },
+//     { QLatin1String("")     ,  QLatin1String("gd")       },
+    { QLatin1String("gu-IN"),  QLatin1String("gu")       },
+//     { QLatin1String("")     ,  QLatin1String("ht")       },
+//     { QLatin1String("")     ,  QLatin1String("ha")       },
+//     { QLatin1String("")     ,  QLatin1String("haw")      },   
+    { QLatin1String("he-IL"),  QLatin1String("he")       },
+    { QLatin1String("hr-HR"),  QLatin1String("hr")       },
+    { QLatin1String("hr-BA"),  QLatin1String("")         },
+//     { QLatin1String("")     ,  QLatin1String("mrj")      },
     { QLatin1String("hi-IN"),  QLatin1String("hi")       },     
-    { QLatin1String("")     ,  QLatin1String("hmn")      },     
+//     { QLatin1String("")     ,  QLatin1String("hmn")      },     
     { QLatin1String("hu-HU"),  QLatin1String("hu")       },     
-    { QLatin1String("is-IS"),  QLatin1String("is")       },     
-    { QLatin1String("")     ,  QLatin1String("ig")       },     
     { QLatin1String("id-ID"),  QLatin1String("id")       },     
-    { QLatin1String("ga-IE"),  QLatin1String("ga")       },     
+//     { QLatin1String("")     ,  QLatin1String("ig")       },     
+    { QLatin1String("is-IS"),  QLatin1String("is")       },     
+//     { QLatin1String("")     ,  QLatin1String("iw")       },   
+    { QLatin1String("ii-CN"),  QLatin1String("")         },
+    { QLatin1String("it-CH"),  QLatin1String("it")       },
     { QLatin1String("it-IT"),  QLatin1String("it")       },     
     { QLatin1String("ja-JP"),  QLatin1String("ja")       },     
-    { QLatin1String("")     ,  QLatin1String("jw")       },     
+//     { QLatin1String("")     ,  QLatin1String("jv")       },   
+//     { QLatin1String("")     ,  QLatin1String("jw")       },     
     { QLatin1String("kn-IN"),  QLatin1String("kn")       },     
     { QLatin1String("kk-KZ"),  QLatin1String("kk")       },     
+//     { QLatin1String("kl-GL"),  QLatin1String("")         },
     { QLatin1String("km-KH"),  QLatin1String("km")       },  
+    { QLatin1String("ko-KR"),  QLatin1String("ko")       },   
+//     { QLatin1String("")     ,  QLatin1String("ku")       },   
+    { QLatin1String("ky-KG"),  QLatin1String("ky")       },   
+    { QLatin1String("lo-LA"),  QLatin1String("lo")       },   
+//     { QLatin1String("")     ,  QLatin1String("la")       },   
+    { QLatin1String("lv-LV"),  QLatin1String("lv")       },   
+//     { QLatin1String("")     ,  QLatin1String("apc")      },   
+    { QLatin1String("lt-LT"),  QLatin1String("lt")       },   
+    { QLatin1String("lb-LU"),  QLatin1String("lb")       },   
+    { QLatin1String("mk-MK"),  QLatin1String("mk")       },   
+//     { QLatin1String("")     ,  QLatin1String("mg")       },   
+    { QLatin1String("ms-MY"),  QLatin1String("ms")       },   
+    { QLatin1String("ml-IN"),  QLatin1String("ml")       },   
+    { QLatin1String("mt-MT"),  QLatin1String("mt")       },   
+    { QLatin1String("mi-NZ"),  QLatin1String("mi")       },   
+    { QLatin1String("mr-IN"),  QLatin1String("mr")       },   
+//     { QLatin1String("")     ,  QLatin1String("mhr")      },   
+    { QLatin1String("mn-MN"),  QLatin1String("mn")       },
+    { QLatin1String("mn-CN"),  QLatin1String("mn")       },
+//     { QLatin1String("ms-BN"),  QLatin1String("")         },
+//     { QLatin1String("")     ,  QLatin1String("my")       },
+//     { QLatin1String("")     ,  QLatin1String("mww")      },   
+//     { QLatin1String("nb-NO"),  QLatin1String("")         },
+    { QLatin1String("ne-NP"),  QLatin1String("ne")       },
+    { QLatin1String("nl-NL"),  QLatin1String("nl")       },
+    { QLatin1String("nl-BE"),  QLatin1String("nl")       },
+//     { QLatin1String("nn-NO"),  QLatin1String("")         },
+//     { QLatin1String("ns-ZA"),  QLatin1String("")         },
+//     { QLatin1String("oc-FR"),  QLatin1String("")         },
+//     { QLatin1String("")     ,  QLatin1String("no")       },
+    { QLatin1String("or-IN"),  QLatin1String("or")       },
+//     { QLatin1String("")     ,  QLatin1String("pap")      },
+    { QLatin1String("ps-AF"),  QLatin1String("ps")       },   
+    { QLatin1String("pt-BR"),  QLatin1String("")         },
+    { QLatin1String("pl-PL"),  QLatin1String("pl")       },   
+    { QLatin1String("pt-PT"),  QLatin1String("pt")       },   
+    { QLatin1String("pa-IN"),  QLatin1String("pa")       },
+//     { QLatin1String("")     ,  QLatin1String("otq")      },   
+    { QLatin1String("ro-RO"),  QLatin1String("ro")       },   
+    { QLatin1String("ru-RU"),  QLatin1String("ru")       },
     { QLatin1String("rw-RW"),  QLatin1String("rw")       },     
-    { QLatin1String("")     ,  QLatin1String("tlh")      },     
-    { QLatin1String("")     ,  QLatin1String("tlh-Qaak") },  //   QLatin1String("es-AR"),
-    { QLatin1String("ko-KR"),  QLatin1String("ko")       },  //   QLatin1String("es-BO"),
-    { QLatin1String("")     ,  QLatin1String("ku")       },  //   QLatin1String("es-CL"),
-    { QLatin1String("ky-KG"),  QLatin1String("ky")       },  //   QLatin1String("es-CO"),
-    { QLatin1String("lo-LA"),  QLatin1String("lo")       },  //   QLatin1String("es-CR"),
-    { QLatin1String("")     ,  QLatin1String("la")       },  //   QLatin1String("es-DO"),
-    { QLatin1String("lv-LV"),  QLatin1String("lv")       },  //   QLatin1String("es-EC"),
-    { QLatin1String("")     ,  QLatin1String("apc")      },  //   QLatin1String("es-ES"),
-    { QLatin1String("lt-LT"),  QLatin1String("lt")       },  //   QLatin1String("es-GT"),
-    { QLatin1String("lb-LU"),  QLatin1String("lb")       },  //   QLatin1String("es-HN"),
-    { QLatin1String("mk-MK"),  QLatin1String("mk")       },  //   QLatin1String("es-MX"),
-    { QLatin1String("")     ,  QLatin1String("mg")       },  //   QLatin1String("es-NI"),
-    { QLatin1String("ms-MY"),  QLatin1String("ms")       },  //   QLatin1String("es-PA"),
-    { QLatin1String("ml-IN"),  QLatin1String("ml")       },  //   QLatin1String("es-PE"),
-    { QLatin1String("mt-MT"),  QLatin1String("mt")       },  //   QLatin1String("es-PR"),
-    { QLatin1String("mi-NZ"),  QLatin1String("mi")       },  //   QLatin1String("es-PY"),
-    { QLatin1String("mr-IN"),  QLatin1String("mr")       },  //   QLatin1String("es-SV"),
-    { QLatin1String("")     ,  QLatin1String("mhr")      },  //   QLatin1String("es-UR"),
-    { QLatin1String("mn-MN"),  QLatin1String("mn")       },  //   QLatin1String("es-US"),
-    { QLatin1String("")     ,  QLatin1String("my")       },  //   QLatin1String("es-VE"),
-    { QLatin1String("ne-NP"),  QLatin1String("ne")       },  //
-    { QLatin1String("")     ,  QLatin1String("no")       },  //
-    { QLatin1String("or-IN"),  QLatin1String("or")       },  //
-    { QLatin1String("")     ,  QLatin1String("pap")      },  //
-    { QLatin1String("ps-AF"),  QLatin1String("ps")       },  //   
-    { QLatin1String("fa-IR"),  QLatin1String("fa")       },  //   
-    { QLatin1String("pl-PL"),  QLatin1String("pl")       },  //   
-    { QLatin1String("pt-PT"),  QLatin1String("pt")       },  //   
-    { QLatin1String("pa-IN"),  QLatin1String("pa")       },  //
-    { QLatin1String("")     ,  QLatin1String("otq")      },  //   
-    { QLatin1String("ro-RO"),  QLatin1String("ro")       },  //   
-    { QLatin1String("ru-RU"),  QLatin1String("ru")       },  //
-    { QLatin1String("")     ,  QLatin1String("sm")       },  //
-    { QLatin1String("")     ,  QLatin1String("gd")       },  //
-    { QLatin1String("")     ,  QLatin1String("sr")       },  //
-    { QLatin1String("")     ,  QLatin1String("sr-Latin") },  //
-    { QLatin1String("")     ,  QLatin1String("st")       },  //
-    { QLatin1String("")     ,  QLatin1String("sn")       },  //   QLatin1String("hr-BA"),
-    { QLatin1String("")     ,  QLatin1String("zh-CN")    },  //   QLatin1String("hr-HR"),
-    { QLatin1String("")     ,  QLatin1String("sd")       },  //
-    { QLatin1String("")     ,  QLatin1String("si")       },  //
-    { QLatin1String("")     ,  QLatin1String("sk")       },  //
-    { QLatin1String("")     ,  QLatin1String("sl")       },  //   QLatin1String("ii-CN"),
-    { QLatin1String("")     ,  QLatin1String("so")       },  //
-    { QLatin1String("")     ,  QLatin1String("es")       },  //   QLatin1String("it-CH"),
-    { QLatin1String("")     ,  QLatin1String("su")       },  //
-    { QLatin1String("")     ,  QLatin1String("sw")       },  //
-    { QLatin1String("")     ,  QLatin1String("sv")       },  //
-    { QLatin1String("")     ,  QLatin1String("tl")       },  //
-    { QLatin1String("")     ,  QLatin1String("ty")       },  //   QLatin1String("kl-GL"),
-    { QLatin1String("")     ,  QLatin1String("tg")       },  //
-    { QLatin1String("ta-IN"),  QLatin1String("ta")       },  //
-    { QLatin1String("tt-RU"),  QLatin1String("tt")       },  //
-    { QLatin1String("te-IN"),  QLatin1String("te")       },  //
-    { QLatin1String("th-TH"),  QLatin1String("th")       },  //
-    { QLatin1String("")     ,  QLatin1String("to")       },  //
-    { QLatin1String("zh-TW"),  QLatin1String("zh-TW")    },  //
-    { QLatin1String("tr-TR"),  QLatin1String("tr")       },  //
-    { QLatin1String("tk-TM"),  QLatin1String("tk")       },  //
-    { QLatin1String("")     ,  QLatin1String("udm")      },  //
-    { QLatin1String("ug-CN"),  QLatin1String("ug")       },  //
-    { QLatin1String("uk-UA"),  QLatin1String("uk")       },  //   QLatin1String("mn-CN"),
-    { QLatin1String("ur-PK"),  QLatin1String("ur")       },  //
-    { QLatin1String("")     ,  QLatin1String("uz")       },  //
-    { QLatin1String("vi-VN"),  QLatin1String("vi")       },  //   QLatin1String("ms-BN"),
-    { QLatin1String("cy-GB"),  QLatin1String("cy")       },  //
-    { QLatin1String("xh-ZA"),  QLatin1String("xh")       },  //
-    { QLatin1String("")     ,  QLatin1String("yi")       },  //   QLatin1String("nb-NO"),
-    { QLatin1String("")     ,  QLatin1String("yo")       },  //
-    { QLatin1String("")     ,  QLatin1String("yua")      },  //   QLatin1String("nl-BE"),
-    { QLatin1String("zu-ZA"),  QLatin1String("zu")       },  //
-    { QLatin1String("")     ,  QLatin1String("iw")       },  //   QLatin1String("nn-NO"),
-    { QLatin1String("")     ,  QLatin1String("zn")       },  //   QLatin1String("ns-ZA"),
-    { QLatin1String("")     ,  QLatin1String("jv")       },  //   QLatin1String("oc-FR"),
-    { QLatin1String("")     ,  QLatin1String("bs-Latn")  },  //
-    { QLatin1String("")     ,  QLatin1String("sr-Cyrl")  },  //
-    { QLatin1String("zh-MO"),  QLatin1String("zh-Hans")  },  //
-    { QLatin1String("zh-HK"),  QLatin1String("zh-Hant")  },  //
-    { QLatin1String("")     ,  QLatin1String("mww")      },  //   QLatin1String("pt-BR"),
-    { QLatin1String("zh-CN"),  QLatin1String("zh")       },  //
-    { QLatin1String("zh-SG"),  QLatin1String("zh_HANT")  }   //
-};                                                           //
-                                                             //
-                                                             //   QLatin1String("sa-IN"),
-                                                             //   QLatin1String("se-FI"),
-                                                             //   QLatin1String("se-NO"),
-                                                             //   QLatin1String("se-SE"),
-                                                             //   QLatin1String("si-LK"),
-                                                             //   QLatin1String("sk-SK"),
-                                                             //   QLatin1String("sl-SI"),
-                                                             //   QLatin1String("sv-FI"),
-                                                             //   QLatin1String("sv-SE"),
-                                                             //   QLatin1String("sw-KE"),
-                                                             //   QLatin1String("tn-ZA"),
-                                                             //   QLatin1String("tr-IN"),
-                                                             //   QLatin1String("wo-SN"),
-                                                             //   QLatin1String("yo-NG"),
-                                                         
+//     { QLatin1String("sa-IN"),  QLatin1String("")         },
+//     { QLatin1String("se-FI"),  QLatin1String("")         },
+//     { QLatin1String("se-NO"),  QLatin1String("")         },
+//     { QLatin1String("se-SE"),  QLatin1String("")         },
+//     { QLatin1String("")     ,  QLatin1String("sm")       },
+//     { QLatin1String("")     ,  QLatin1String("sr")       },
+//     { QLatin1String("")     ,  QLatin1String("sr-Latin") },
+//     { QLatin1String("")     ,  QLatin1String("st")       },
+//     { QLatin1String("")     ,  QLatin1String("sn")       },    
+//     { QLatin1String("")     ,  QLatin1String("zh-CN")    },    
+//     { QLatin1String("")     ,  QLatin1String("sd")       }, 
+    { QLatin1String("si-LK"),  QLatin1String("si")       }, 
+    { QLatin1String("sk-SK"),  QLatin1String("sk")       }, 
+    { QLatin1String("sl-SI"),  QLatin1String("sl")       },
+//     { QLatin1String("")     ,  QLatin1String("so")       },
+//     { QLatin1String("")     ,  QLatin1String("es")       }, 
+//     { QLatin1String("")     ,  QLatin1String("su")       }, 
+//     { QLatin1String("")     ,  QLatin1String("sr-Cyrl")  }, 
+    { QLatin1String("sv-FI"),  QLatin1String("sv")       }, 
+    { QLatin1String("sv-SE"),  QLatin1String("sv")       }, 
+    { QLatin1String("sw-KE"),  QLatin1String("sw")       }, 
+    { QLatin1String("ta-IN"),  QLatin1String("ta")       },
+    { QLatin1String("te-IN"),  QLatin1String("te")       }, 
+    { QLatin1String("th-TH"),  QLatin1String("th")       }, 
+//     { QLatin1String("")     ,  QLatin1String("to")       }, 
+//     { QLatin1String("")     ,  QLatin1String("tg")       }, 
+//     { QLatin1String("")     ,  QLatin1String("tl")       }, 
+//     { QLatin1String("")     ,  QLatin1String("tlh")      },     
+//     { QLatin1String("")     ,  QLatin1String("tlh-Qaak") },   
+//     { QLatin1String("tn-ZA"),  QLatin1String("")         },
+//     { QLatin1String("tr-IN"),  QLatin1String("")         },
+    { QLatin1String("tt-RU"),  QLatin1String("tt")       }, 
+//     { QLatin1String("")     ,  QLatin1String("ty")       },
+    { QLatin1String("tr-TR"),  QLatin1String("tr")       }, 
+    { QLatin1String("tk-TM"),  QLatin1String("tk")       }, 
+//     { QLatin1String("")     ,  QLatin1String("udm")      }, 
+    { QLatin1String("ug-CN"),  QLatin1String("ug")       }, 
+    { QLatin1String("uk-UA"),  QLatin1String("uk")       },
+    { QLatin1String("ur-PK"),  QLatin1String("ur")       }, 
+//     { QLatin1String("")     ,  QLatin1String("uz")       }, 
+    { QLatin1String("vi-VN"),  QLatin1String("vi")       }, 
+//     { QLatin1String("wo-SN"),  QLatin1String("")         },
+    { QLatin1String("xh-ZA"),  QLatin1String("xh")       }, 
+//     { QLatin1String("")     ,  QLatin1String("yi")       },
+    { QLatin1String("yo-NG"),  QLatin1String("yo")       }, 
+//     { QLatin1String("")     ,  QLatin1String("yua")      },
+//     { QLatin1String("")     ,  QLatin1String("zh-Hans")  }, 
+//     { QLatin1String(""),       QLatin1String("zh-Hant")  }, 
+//     { QLatin1String(""),       QLatin1String("zh_HANT")  }, 
+    { QLatin1String("zh-CN"),  QLatin1String("zh")       },
+    { QLatin1String("zh-MO"),  QLatin1String("zh")       },
+    { QLatin1String("zh-HK"),  QLatin1String("zh")       },
+    { QLatin1String("zh-SG"),  QLatin1String("zh")       },
+    { QLatin1String("zh-TW"),  QLatin1String("zh-TW")    },
+//     { QLatin1String("")     ,  QLatin1String("zn")       },
+    { QLatin1String("zu-ZA"),  QLatin1String("zu")       }
+};
+
 DOnlineTranslator::DOnlineTranslator(QObject* const parent)
     : QObject         (parent),
       m_stateMachine  (new QStateMachine(this)),
@@ -403,6 +435,16 @@ DOnlineTranslator::DOnlineTranslator(QObject* const parent)
 
     connect(m_stateMachine, &QStateMachine::stopped,
             this, &DOnlineTranslator::signalFinished);
+}
+
+QString DOnlineTranslator::fromISO3066(const QString& langCode3066)
+{
+    return s_iso3066LanguageCodes[langCode3066];
+}
+
+QStringList DOnlineTranslator::supportedISO3066()
+{
+    return s_iso3066LanguageCodes.keys();
 }
 
 void DOnlineTranslator::translate(const QString& text,

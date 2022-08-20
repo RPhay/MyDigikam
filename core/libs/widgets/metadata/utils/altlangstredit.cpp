@@ -650,10 +650,12 @@ DTextEdit* AltLangStrEdit::textEdit() const
 
 void AltLangStrEdit::loadTranslationTargets()
 {
+    QStringList supportedISO3066 = DOnlineTranslator::supportedISO3066();
+
     for (Private::LanguageCodeMap::Iterator it = d->languageCodeMap.begin() ;
          it != d->languageCodeMap.end() ; ++it)
     {
-        if (it.key() != QLatin1String("x-default"))
+        if (supportedISO3066.contains(it.key()))
         {
             QListWidgetItem* const item = new QListWidgetItem(d->translateAction->m_list);
             item->setText(it.key());
