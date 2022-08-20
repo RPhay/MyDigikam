@@ -428,7 +428,9 @@ const QMap<QString, QString> DOnlineTranslator::s_iso3066LanguageCodes =
 DOnlineTranslator::DOnlineTranslator(QObject* const parent)
     : QObject         (parent),
       m_stateMachine  (new QStateMachine(this)),
-      m_networkManager(new QNetworkAccessManager(this))
+      m_networkManager(new QNetworkAccessManager(this)),
+      m_libreUrl      (QLatin1String("https://translate.argosopentech.com")),
+      m_lingvaUrl     (QLatin1String("https://lingva.ml"))
 {
     connect(m_stateMachine, &QStateMachine::finished,
             this, &DOnlineTranslator::signalFinished);
