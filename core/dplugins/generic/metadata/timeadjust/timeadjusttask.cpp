@@ -104,45 +104,24 @@ void TimeAdjustTask::run()
         return;
     }
 
-    bool metadataChanged   = false;
+    bool metadataChanged               = false;
+    bool writeToSidecar                = (MetaEngineSettings::instance()->settings()
+                                          .metadataWritingMode != DMetadata::WRITE_TO_FILE_ONLY);
+    bool writeWithExifTool             = (MetaEngineSettings::instance()->settings().writeWithExifTool);
 
-    bool writeToSidecar    = (MetaEngineSettings::instance()->settings()
-                                .metadataWritingMode != DMetadata::WRITE_TO_FILE_ONLY);
-    bool writeWithExifTool = (MetaEngineSettings::instance()->settings().writeWithExifTool);
+    int status                         = TimeAdjustList::NOPROCESS_ERROR;
 
-    int status             = TimeAdjustList::NOPROCESS_ERROR;
+    QString exifDateTimeFormat         = QLatin1String("yyyy:MM:dd hh:mm:ss");
+    QString xmpDateTimeFormat          = QLatin1String("yyyy-MM-ddThh:mm:ss");
 
-    QMap<QString, bool> metadataMap;
+    const QMap<QString, bool>& tagsMap = d->settings.getDateTimeTagsMap();
     QMap<QString, bool>::const_iterator it;
-
-    const QString exifDateTimeFormat = QLatin1String("yyyy:MM:dd hh:mm:ss");
-    const QString xmpDateTimeFormat  = QLatin1String("yyyy-MM-ddThh:mm:ss");
-
-    metadataMap.insert(QLatin1String("Exif.Image.DateTime"),           d->settings.updEXIFModDate);
-    metadataMap.insert(QLatin1String("Exif.Photo.DateTimeOriginal"),   d->settings.updEXIFOriDate);
-    metadataMap.insert(QLatin1String("Exif.Photo.DateTimeDigitized"),  d->settings.updEXIFDigDate);
-    metadataMap.insert(QLatin1String("Exif.Image.PreviewDateTime"),    d->settings.updEXIFThmDate);
-
-    metadataMap.insert(QLatin1String("Iptc.Application2.DateCreated"), d->settings.updIPTCDate);
-    metadataMap.insert(QLatin1String("Iptc.Application2.TimeCreated"), d->settings.updIPTCDate);
-
-    metadataMap.insert(QLatin1String("Xmp.exif.DateTimeOriginal"),     d->settings.updXMPDate);
-    metadataMap.insert(QLatin1String("Xmp.photoshop.DateCreated"),     d->settings.updXMPDate);
-    metadataMap.insert(QLatin1String("Xmp.xmp.MetadataDate"),          d->settings.updXMPDate);
-    metadataMap.insert(QLatin1String("Xmp.xmp.CreateDate"),            d->settings.updXMPDate);
-    metadataMap.insert(QLatin1String("Xmp.xmp.ModifyDate"),            d->settings.updXMPDate);
-    metadataMap.insert(QLatin1String("Xmp.tiff.DateTime"),             d->settings.updXMPDate);
-
-    metadataMap.insert(QLatin1String("Xmp.video.DateTimeOriginal"),    d->settings.updXMPVideo);
-    metadataMap.insert(QLatin1String("Xmp.video.DateTimeDigitized"),   d->settings.updXMPVideo);
-    metadataMap.insert(QLatin1String("Xmp.video.ModificationDate"),    d->settings.updXMPVideo);
-    metadataMap.insert(QLatin1String("Xmp.video.DateUTC"),             d->settings.updXMPVideo);
 
     QScopedPointer<DMetadata> meta(new DMetadata);
 
     if (meta->load(d->url.toLocalFile()))
     {
-        for (it = metadataMap.constBegin() ; it != metadataMap.constEnd() ; ++it)
+        for (it = tagsMap.constBegin() ; it != tagsMap.constEnd() ; ++it)
         {
             if (!it.value())
             {
