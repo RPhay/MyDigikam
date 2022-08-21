@@ -109,13 +109,10 @@ public:
 };
 
 XMPCredits::XMPCredits(QWidget* const parent)
-    : QWidget(parent),
-      d      (new Private)
+    : MetadataEditPage(parent),
+      d               (new Private)
 {
-    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
-
-    QGridLayout* const grid = new QGridLayout(this);
+    QGridLayout* const grid = new QGridLayout(widget());
 
     // --------------------------------------------------------
 
@@ -127,7 +124,7 @@ XMPCredits::XMPCredits(QWidget* const parent)
 
     d->creatorTitleCheck = new QCheckBox(i18n("Creator Title:"), this);
     d->creatorTitleEdit  = new DTextEdit(this);
-    d->creatorTitleEdit->setWhatsThis(i18n("Set here the title of content creator."));
+    d->creatorTitleEdit->setPlaceholderText(i18n("Set here the title of content creator."));
 
     // --------------------------------------------------------
 
@@ -137,42 +134,42 @@ XMPCredits::XMPCredits(QWidget* const parent)
     d->emailCheck = new QCheckBox(i18nc("contact email address", "E-mail:"), contactBox);
     d->emailEdit  = new QLineEdit(contactBox);
     d->emailEdit->setClearButtonEnabled(true);
-    d->emailEdit->setWhatsThis(i18n("Set here the contact e-mail."));
+    d->emailEdit->setPlaceholderText(i18n("Set here the contact e-mail."));
 
     d->urlCheck = new QCheckBox(i18n("URL:"), contactBox);
     d->urlEdit  = new QLineEdit(contactBox);
     d->urlEdit->setClearButtonEnabled(true);
-    d->urlEdit->setWhatsThis(i18n("Set here the contact URL."));
+    d->urlEdit->setPlaceholderText(i18n("Set here the contact URL."));
 
     d->phoneCheck = new QCheckBox(i18n("Phone:"), contactBox);
     d->phoneEdit  = new QLineEdit(contactBox);
     d->phoneEdit->setClearButtonEnabled(true);
-    d->phoneEdit->setWhatsThis(i18n("Set here the contact 'phone number."));
+    d->phoneEdit->setPlaceholderText(i18n("Set here the contact 'phone number."));
 
     d->addressCheck = new QCheckBox(i18nc("Street address", "Address:"), contactBox);
     d->addressEdit  = new QLineEdit(contactBox);
     d->addressEdit->setClearButtonEnabled(true);
-    d->addressEdit->setWhatsThis(i18n("Set here the contact address."));
+    d->addressEdit->setPlaceholderText(i18n("Set here the contact address."));
 
     d->postalCodeCheck = new QCheckBox(i18n("Postal code:"), contactBox);
     d->postalCodeEdit  = new QLineEdit(contactBox);
     d->postalCodeEdit->setClearButtonEnabled(true);
-    d->postalCodeEdit->setWhatsThis(i18n("Set here the contact postal code."));
+    d->postalCodeEdit->setPlaceholderText(i18n("Set here the contact postal code."));
 
     d->cityCheck = new QCheckBox(i18n("City:"), contactBox);
     d->cityEdit  = new QLineEdit(contactBox);
     d->cityEdit->setClearButtonEnabled(true);
-    d->cityEdit->setWhatsThis(i18n("Set here the contact city."));
+    d->cityEdit->setPlaceholderText(i18n("Set here the contact city."));
 
     d->regionCheck = new QCheckBox(i18n("State/Province:"), contactBox);
     d->regionEdit  = new QLineEdit(contactBox);
     d->regionEdit->setClearButtonEnabled(true);
-    d->regionEdit->setWhatsThis(i18n("Set here the contact state/province."));
+    d->regionEdit->setPlaceholderText(i18n("Set here the contact state/province."));
 
     d->countryCheck = new QCheckBox(i18n("Country:"), contactBox);
     d->countryEdit  = new QLineEdit(contactBox);
     d->countryEdit->setClearButtonEnabled(true);
-    d->countryEdit->setWhatsThis(i18n("Set here the contact country."));
+    d->countryEdit->setPlaceholderText(i18n("Set here the contact country."));
 
     grid2->addWidget(d->emailCheck,         0, 0, 1, 1);
     grid2->addWidget(d->emailEdit,          0, 1, 1, 2);
@@ -191,6 +188,10 @@ XMPCredits::XMPCredits(QWidget* const parent)
     grid2->addWidget(d->countryCheck,       7, 0, 1, 1);
     grid2->addWidget(d->countryEdit,        7, 1, 1, 2);
     grid2->setColumnStretch(2, 10);
+
+    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
     grid2->setContentsMargins(spacing, spacing, spacing, spacing);
     grid2->setSpacing(spacing);
 
@@ -198,13 +199,13 @@ XMPCredits::XMPCredits(QWidget* const parent)
 
     d->creditCheck = new QCheckBox(i18n("Credit:"), this);
     d->creditEdit  = new DTextEdit(this);
-    d->creditEdit->setWhatsThis(i18n("Set here the content provider."));
+    d->creditEdit->setPlaceholderText(i18n("Set here the content provider."));
 
     // --------------------------------------------------------
 
     d->sourceCheck = new QCheckBox(i18nc("original owner of content", "Source:"), this);
     d->sourceEdit  = new DTextEdit(this);
-    d->sourceEdit->setWhatsThis(i18n("Set here the original owner of content."));
+    d->sourceEdit->setPlaceholderText(i18n("Set here the original owner of content."));
 
     // --------------------------------------------------------
 
@@ -219,7 +220,7 @@ XMPCredits::XMPCredits(QWidget* const parent)
     grid->addWidget(d->sourceEdit,          8, 0, 1, 3);
     grid->setRowStretch(9, 10);
     grid->setColumnStretch(2, 10);
-    grid->setContentsMargins(QMargins());
+    grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);
 
     // --------------------------------------------------------

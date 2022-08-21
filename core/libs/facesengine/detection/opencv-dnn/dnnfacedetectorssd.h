@@ -32,7 +32,7 @@
 namespace Digikam
 {
 
-class DNNFaceDetectorSSD: public DNNFaceDetectorBase
+class DIGIKAM_EXPORT DNNFaceDetectorSSD: public DNNFaceDetectorBase
 {
 
 public:

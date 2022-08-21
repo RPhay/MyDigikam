@@ -20,9 +20,8 @@ add_executable(convert_format_cli ${convert_format_cli_SRCS})
 target_link_libraries(convert_format_cli
 
                       digikamcore
-                      digikamgui
-                      digikamfacesengine
                       digikamdatabase
+                      digikamgui
 
                       ${COMMON_TEST_LINK}
 )

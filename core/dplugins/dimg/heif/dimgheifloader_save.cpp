@@ -62,7 +62,7 @@
 namespace Digikam
 {
 
-static struct heif_error HeifQIODeviceWriter(struct heif_context* /* ctx */,
+static struct heif_error heifQIODeviceWriter(struct heif_context* /* ctx */,
                                              const void* data, size_t size, void* userdata)
 {
     QFile saveFile(QString::fromUtf8(static_cast<const char*>(userdata)));
@@ -70,6 +70,9 @@ static struct heif_error HeifQIODeviceWriter(struct heif_context* /* ctx */,
 
     if (!saveFile.open(QIODevice::WriteOnly))
     {
+        qCWarning(DIGIKAM_DIMG_LOG_HEIF) << "Cannot open target image file:"
+                                         << saveFile.fileName();
+
         error.code    = heif_error_Encoding_error;
         error.subcode = heif_suberror_Cannot_write_output_data;
         error.message = QByteArray("File open error").constData();
@@ -81,9 +84,9 @@ static struct heif_error HeifQIODeviceWriter(struct heif_context* /* ctx */,
     error.subcode       = heif_suberror_Unspecified;
     error.message       = QByteArray("Success").constData();
 
-    qint64 bytesWritten = saveFile.write(static_cast<const char*>(data), size);
+    qint64 bytesWritten = saveFile.write((const char*)data, size);
 
-    if (bytesWritten < static_cast<qint64>(size))
+    if (bytesWritten < (qint64)size)
     {
         error.code    = heif_error_Encoding_error;
         error.subcode = heif_suberror_Cannot_write_output_data;
@@ -133,28 +136,7 @@ int DImgHEIFLoader::x265MaxBitsDepth()
 
 bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const observer)
 {
-    m_observer = observer;
-
-    // -------------------------------------------------------------------
-    // Open the file
-
-#ifdef Q_OS_WIN
-
-    FILE* const file = _wfopen((const wchar_t*)filePath.utf16(), L"wb");
-
-#else
-
-    FILE* const file = fopen(filePath.toUtf8().constData(), "wb");
-
-#endif
-
-    if (!file)
-    {
-        qCWarning(DIGIKAM_DIMG_LOG_HEIF) << "Cannot open target image file.";
-        return false;
-    }
-
-    fclose(file);
+    m_observer             = observer;
 
     QVariant qualityAttr   = imageGetAttribute(QLatin1String("quality"));
     int quality            = qualityAttr.isValid() ? qualityAttr.toInt() : 75;
@@ -481,7 +463,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     heif_writer writer;
     writer.writer_api_version = 1;
-    writer.write              = HeifQIODeviceWriter;
+    writer.write              = heifQIODeviceWriter;
 
     error                     = heif_context_write(ctx, &writer, (void*)filePath.toUtf8().constData());
 

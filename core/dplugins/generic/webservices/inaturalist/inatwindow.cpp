@@ -58,6 +58,7 @@
 #include "inattaxon.h"
 #include "ditemslist.h"
 #include "dmetadata.h"
+#include "dtextedit.h"
 #include "wsselectuserdlg.h"
 #include "digikam_debug.h"
 #include "previewloadthread.h"
@@ -148,7 +149,7 @@ public:
     QLabel*                 identificationLabel;
     bool                    identificationFromVision;
     QLabel*                 closestKnownObservation;
-    QPlainTextEdit*         observationDescription;
+    DPlainTextEdit*         observationDescription;
     TaxonEdit*              identificationEdit;
     SuggestTaxonCompletion* taxonPopup;
     QComboBox*              placesComboBox;

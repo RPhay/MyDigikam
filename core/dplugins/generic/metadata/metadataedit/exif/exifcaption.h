@@ -32,6 +32,7 @@
 // Local includes
 
 #include "dmetadata.h"
+#include "metadataeditpage.h"
 
 namespace Digikam
 {
@@ -43,7 +44,7 @@ using namespace Digikam;
 namespace DigikamGenericMetadataEditPlugin
 {
 
-class EXIFCaption : public QWidget
+class EXIFCaption : public MetadataEditPage
 {
     Q_OBJECT
 

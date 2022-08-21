@@ -29,8 +29,6 @@
 #include <QRadioButton>
 #include <QDateTimeEdit>
 #include <QDialog>
-#include <QLineEdit>
-#include <QTextEdit>
 #include <QComboBox>
 #include <QCloseEvent>
 

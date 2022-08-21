@@ -25,9 +25,8 @@ add_dependencies(align_gui extract_funnel_data)
 target_link_libraries(align_gui
 
                       digikamcore
-                      digikamgui
-                      digikamfacesengine
                       digikamdatabase
+                      digikamgui
 
                       ${COMMON_TEST_LINK}
 )

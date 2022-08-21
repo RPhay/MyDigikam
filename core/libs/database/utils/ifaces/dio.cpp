@@ -637,9 +637,11 @@ void DIO::slotOneProccessed(const QUrl& url)
         }
     }
 
-    if ((operation == IOJobData::CopyImage) || (operation == IOJobData::CopyAlbum) ||
-        (operation == IOJobData::CopyFiles) || (operation == IOJobData::MoveImage) ||
-        (operation == IOJobData::MoveAlbum) || (operation == IOJobData::MoveFiles))
+    if ((operation == IOJobData::CopyImage) ||
+        (operation == IOJobData::CopyAlbum) ||
+        (operation == IOJobData::CopyFiles) ||
+        (operation == IOJobData::MoveAlbum) ||
+        (operation == IOJobData::MoveFiles))
     {
         scanPaths << data->destUrl().toLocalFile();
     }

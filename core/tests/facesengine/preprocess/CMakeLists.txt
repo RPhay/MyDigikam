@@ -19,9 +19,8 @@ add_executable(preprocess_gui ${preprocess_gui_SRCS})
 target_link_libraries(preprocess_gui
 
                       digikamcore
-                      digikamgui
-                      digikamfacesengine
                       digikamdatabase
+                      digikamgui
 
                       ${COMMON_TEST_LINK}
 )

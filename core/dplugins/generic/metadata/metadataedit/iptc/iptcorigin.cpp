@@ -117,10 +117,10 @@ public:
 };
 
 IPTCOrigin::IPTCOrigin(QWidget* const parent)
-    : QWidget(parent),
-      d(new Private)
+    : MetadataEditPage(parent),
+      d               (new Private)
 {
-    QGridLayout* const grid = new QGridLayout(this);
+    QGridLayout* const grid = new QGridLayout(widget());
     QString dateFormat      = QLocale().dateFormat(QLocale::ShortFormat);
 
     if (!dateFormat.contains(QLatin1String("yyyy")))
@@ -194,6 +194,7 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
     d->cityEdit  = new QLineEdit(this);
     d->cityEdit->setClearButtonEnabled(true);
     d->cityEdit->setMaxLength(32);
+    d->cityEdit->setPlaceholderText(i18n("Set here the city of the content"));
     d->cityEdit->setWhatsThis(i18n("Set here the city of content origin. "
                                    "This field is limited to 32 characters."));
 
@@ -203,6 +204,7 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
     d->sublocationEdit  = new QLineEdit(this);
     d->sublocationEdit->setClearButtonEnabled(true);
     d->sublocationEdit->setMaxLength(32);
+    d->sublocationEdit->setPlaceholderText(i18n("Set here the content location"));
     d->sublocationEdit->setWhatsThis(i18n("Set here the content location within city. "
                                           "This field is limited to 32 characters."));
 
@@ -212,6 +214,7 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
     d->provinceEdit  = new QLineEdit(this);
     d->provinceEdit->setClearButtonEnabled(true);
     d->provinceEdit->setMaxLength(32);
+    d->provinceEdit->setPlaceholderText(i18n("Set here the Province or State of the content"));
     d->provinceEdit->setWhatsThis(i18n("Set here the Province or State of content origin. "
                                        "This field is limited to 32 characters."));
 
@@ -274,9 +277,12 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
     grid->addWidget(note,                                  12, 0, 1, 6);
     grid->setColumnStretch(4, 10);
     grid->setRowStretch(13, 10);
-    grid->setContentsMargins(QMargins());
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+
+    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
+    grid->setContentsMargins(spacing, spacing, spacing, spacing);
+    grid->setSpacing(spacing);
 
     // --------------------------------------------------------
 

@@ -72,16 +72,17 @@ public:
 };
 
 IPTCStatus::IPTCStatus(QWidget* const parent)
-    : QWidget(parent),
-      d      (new Private)
+    : MetadataEditPage(parent),
+      d               (new Private)
 {
-    QGridLayout* const grid = new QGridLayout(this);
+    QGridLayout* const grid = new QGridLayout(widget());
 
     // --------------------------------------------------------
 
     d->objectNameCheck = new QCheckBox(i18nc("image title", "Title:"), this);
     d->objectNameEdit  = new LimitedTextEdit(this);
     d->objectNameEdit->setMaxLength(64);
+    d->objectNameEdit->setPlaceholderText(i18n("Set here the content title"));
     d->objectNameEdit->setWhatsThis(i18n("Set here the shorthand reference of content. "
                                          "This field is limited to 64 characters."));
 
@@ -90,6 +91,7 @@ IPTCStatus::IPTCStatus(QWidget* const parent)
     d->statusCheck = new QCheckBox(i18n("Edit Status:"), this);
     d->statusEdit  = new LimitedTextEdit(this);
     d->statusEdit->setMaxLength(64);
+    d->statusEdit->setPlaceholderText(i18n("Set here the content status"));
     d->statusEdit->setWhatsThis(i18n("Set here the title of content status. This field is limited "
                                      "to 64 characters."));
 
@@ -98,6 +100,7 @@ IPTCStatus::IPTCStatus(QWidget* const parent)
     d->jobIDCheck = new QCheckBox(i18n("Job Identifier:"), this);
     d->jobIDEdit  = new LimitedTextEdit(this);
     d->jobIDEdit->setMaxLength(32);
+    d->jobIDEdit->setPlaceholderText(i18n("Set here the job ID"));
     d->jobIDEdit->setWhatsThis(i18n("Set here the string that identifies content that recurs. "
                                     "This field is limited to 32 characters."));
 
@@ -106,6 +109,7 @@ IPTCStatus::IPTCStatus(QWidget* const parent)
     d->specialInstructionCheck = new QCheckBox(i18n("Special Instructions:"), this);
     d->specialInstructionEdit  = new LimitedTextEdit(this);
     d->specialInstructionEdit->setMaxLength(256);
+    d->specialInstructionEdit->setPlaceholderText(i18n("Set here the content instructions"));
     d->specialInstructionEdit->setWhatsThis(i18n("Enter the editorial usage instructions. "
                                                  "This field is limited to 256 characters."));
 
@@ -133,9 +137,12 @@ IPTCStatus::IPTCStatus(QWidget* const parent)
     grid->addWidget(note,                       9, 0, 1, 3);
     grid->setColumnStretch(2, 10);
     grid->setRowStretch(10, 10);
-    grid->setContentsMargins(QMargins());
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+
+    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
+    grid->setContentsMargins(spacing, spacing, spacing, spacing);
+    grid->setSpacing(spacing);
 
     // --------------------------------------------------------
 
@@ -170,46 +177,19 @@ IPTCStatus::IPTCStatus(QWidget* const parent)
     connect(d->objectNameEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
-    connect(d->objectNameEdit, SIGNAL(textChanged()),
-            this, SLOT(slotLineEditModified()));
-
     connect(d->statusEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
-
-    connect(d->statusEdit, SIGNAL(textChanged()),
-            this, SLOT(slotLineEditModified()));
 
     connect(d->jobIDEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
-    connect(d->jobIDEdit, SIGNAL(textChanged()),
-            this, SLOT(slotLineEditModified()));
-
     connect(d->specialInstructionEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
-
-    connect(d->specialInstructionEdit, SIGNAL(textChanged()),
-            this, SLOT(slotLineEditModified()));
 }
 
 IPTCStatus::~IPTCStatus()
 {
     delete d;
-}
-
-void IPTCStatus::slotLineEditModified()
-{
-    LimitedTextEdit* const ledit = dynamic_cast<LimitedTextEdit*>(sender());
-
-    if (!ledit)
-    {
-        return;
-    }
-
-    QToolTip::showText(ledit->mapToGlobal(QPoint(0, (-1)*(ledit->height() + 16))),
-                       i18np("%1 character left", "%1 characters left",
-                       ledit->maxLength() - ledit->text().size()),
-                       ledit);
 }
 
 void IPTCStatus::readMetadata(const DMetadata& meta)

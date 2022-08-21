@@ -34,7 +34,6 @@
 #include <QGridLayout>
 #include <QHBoxLayout>
 #include <QLineEdit>
-#include <QPlainTextEdit>
 #include <QPointer>
 #include <QPushButton>
 #include <QRadioButton>

@@ -31,7 +31,7 @@
 #include <QMap>
 #include <QStringList>
 #include <QUrl>
-#include <QWidget>
+#include <QScrollArea>
 #include <QCheckBox>
 #include <QLabel>
 #include <QLineEdit>
@@ -61,7 +61,7 @@ public:
 
 // --------------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT SubjectWidget : public QWidget
+class DIGIKAM_EXPORT SubjectWidget : public QScrollArea
 {
     Q_OBJECT
 

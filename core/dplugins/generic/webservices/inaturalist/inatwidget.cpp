@@ -92,7 +92,7 @@ INatWidget::INatWidget(QWidget* const parent,
     d->closestKnownObservation->setOpenExternalLinks(true);
     idBoxLayout->addWidget(d->closestKnownObservation);
 
-    d->observationDescription               = new QPlainTextEdit(idBox);
+    d->observationDescription               = new DPlainTextEdit(0, idBox);
     d->observationDescription->setPlaceholderText(i18n("Optionally describe "
                                                   "your observation or explain your identification here."));
     QTextDocument* const pdoc               = d->observationDescription->document();

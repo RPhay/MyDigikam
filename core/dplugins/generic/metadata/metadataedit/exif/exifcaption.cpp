@@ -27,7 +27,6 @@
 #include <QIcon>
 #include <QStyle>
 #include <QCheckBox>
-#include <QValidator>
 #include <QGridLayout>
 #include <QApplication>
 
@@ -90,15 +89,16 @@ public:
 };
 
 EXIFCaption::EXIFCaption(QWidget* const parent)
-    : QWidget(parent),
-      d      (new Private)
+    : MetadataEditPage(parent),
+      d               (new Private)
 {
-    QGridLayout* const grid = new QGridLayout(this);
+    QGridLayout* const grid = new QGridLayout(widget());
 
     // --------------------------------------------------------
 
     d->documentNameCheck = new QCheckBox(i18nc("name of the document this image has been scanned from", "Name (*):"), this);
     d->documentNameEdit  = new DTextEdit(this);
+    d->documentNameEdit->setPlaceholderText(i18n("Set here the original document name."));
     d->documentNameEdit->setWhatsThis(i18n("Enter the name of the document from which "
                                            "this image was been scanned. This field is limited "
                                            "to ASCII characters."));
@@ -108,6 +108,7 @@ EXIFCaption::EXIFCaption(QWidget* const parent)
 
     d->imageDescCheck = new QCheckBox(i18nc("image description", "Description (*):"), this);
     d->imageDescEdit  = new DTextEdit(this);
+    d->imageDescEdit->setPlaceholderText(i18n("Set here the image description."));
     d->imageDescEdit->setWhatsThis(i18n("Enter the image description. This field is limited "
                                         "to ASCII characters."));
     d->imageDescIcon  = new QLabel(this);
@@ -116,6 +117,7 @@ EXIFCaption::EXIFCaption(QWidget* const parent)
 
     d->artistCheck = new QCheckBox(i18n("Artist (*):"), this);
     d->artistEdit  = new DTextEdit(this);
+    d->artistEdit->setPlaceholderText(i18n("Set here the author's name."));
     d->artistEdit->setWhatsThis(i18n("Enter the image author's name separated by semi-colons. "
                                      "This field is limited to ASCII characters."));
     d->artistIcon  = new QLabel(this);
@@ -124,6 +126,7 @@ EXIFCaption::EXIFCaption(QWidget* const parent)
 
     d->copyrightCheck = new QCheckBox(i18n("Copyright (*):"), this);
     d->copyrightEdit  = new DTextEdit(this);
+    d->copyrightEdit->setPlaceholderText(i18n("Set here the copyright owner."));
     d->copyrightEdit->setWhatsThis(i18n("Enter the copyright owner of the image. "
                                         "This field is limited to ASCII characters."));
     d->copyrightIcon  = new QLabel(this);
@@ -133,6 +136,7 @@ EXIFCaption::EXIFCaption(QWidget* const parent)
     d->userCommentCheck = new QCheckBox(i18nc("image caption", "Caption:"), this);
     d->userCommentEdit  = new DPlainTextEdit(this);
     d->userCommentEdit->setLinesVisible(4);
+    d->userCommentEdit->setPlaceholderText(i18n("Set here the image's caption."));
     d->userCommentEdit->setWhatsThis(i18n("Enter the image's caption. "
                                           "This field is not limited. UTF8 encoding "
                                           "will be used to save the text."));
@@ -177,9 +181,12 @@ EXIFCaption::EXIFCaption(QWidget* const parent)
     grid->addWidget(note,                       9, 0, 1, 4);
     grid->setRowStretch(10, 10);
     grid->setColumnStretch(2, 10);
-    grid->setContentsMargins(QMargins());
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+
+    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
+    grid->setContentsMargins(spacing, spacing, spacing, spacing);
+    grid->setSpacing(spacing);
 
     // --------------------------------------------------------
 

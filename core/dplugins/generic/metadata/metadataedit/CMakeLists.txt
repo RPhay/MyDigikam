@@ -12,7 +12,6 @@ include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Widgets,INTERFACE_I
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
 
                     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:KF5::SonnetUi,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
 
                     ${CMAKE_CURRENT_SOURCE_DIR}/dialog
@@ -56,7 +55,8 @@ set(metadataeditplugin_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/exif/exifeditwidget.cpp
                             ${CMAKE_CURRENT_SOURCE_DIR}/dialog/multivaluesedit.cpp
                             ${CMAKE_CURRENT_SOURCE_DIR}/dialog/limitedtextedit.cpp
                             ${CMAKE_CURRENT_SOURCE_DIR}/dialog/objectattributesedit.cpp
-                            ${CMAKE_CURRENT_SOURCE_DIR}/dialog/metadataedit.cpp
+                            ${CMAKE_CURRENT_SOURCE_DIR}/dialog/metadataeditdialog.cpp
+                            ${CMAKE_CURRENT_SOURCE_DIR}/dialog/metadataeditpage.cpp
 
                             ${CMAKE_CURRENT_SOURCE_DIR}/metadataeditplugin.cpp
 )

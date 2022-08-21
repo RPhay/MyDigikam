@@ -25,6 +25,7 @@
 // Qt includes
 
 #include <QUrl>
+#include <QToolTip>
 
 // KDE includes
 
@@ -36,6 +37,8 @@ namespace DigikamGenericMetadataEditPlugin
 LimitedTextEdit::LimitedTextEdit(QWidget* const parent)
     : DPlainTextEdit(parent)
 {
+    connect(this, SIGNAL(textChanged()),
+            this, SLOT(slotChanged()));
 }
 
 LimitedTextEdit::~LimitedTextEdit()
@@ -139,6 +142,14 @@ void LimitedTextEdit::insertFromMimeData(const QMimeData* source)
     }
 
     DPlainTextEdit::insertFromMimeData(&scopy);
+}
+
+void LimitedTextEdit::slotChanged()
+{
+    QToolTip::showText(mapToGlobal(QPoint(0, (-1)*(height() + 16))),
+                       i18np("%1 character left", "%1 characters left",
+                       maxLength() - text().size()),
+                       this);
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

@@ -30,13 +30,14 @@
 // Local includes
 
 #include "dmetadata.h"
+#include "metadataeditpage.h"
 
 using namespace Digikam;
 
 namespace DigikamGenericMetadataEditPlugin
 {
 
-class IPTCContent : public QWidget
+class IPTCContent : public MetadataEditPage
 {
     Q_OBJECT
 
@@ -59,11 +60,6 @@ public:
 Q_SIGNALS:
 
     void signalModified();
-
-private Q_SLOTS:
-
-    void slotCaptionLeftCharacters();
-    void slotLineEditModified();
 
 private:
 

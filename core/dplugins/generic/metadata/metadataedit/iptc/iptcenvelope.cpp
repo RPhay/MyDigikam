@@ -157,10 +157,10 @@ public:
 };
 
 IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
-    : QWidget(parent),
-      d(new Private)
+    : MetadataEditPage(parent),
+      d               (new Private)
 {
-    QGridLayout* const grid = new QGridLayout(this);
+    QGridLayout* const grid = new QGridLayout(widget());
     QString dateFormat      = QLocale().dateFormat(QLocale::ShortFormat);
 
     if (!dateFormat.contains(QLatin1String("yyyy")))
@@ -180,6 +180,7 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
 
     d->destinationEdit      = new LimitedTextEdit(this);
     d->destinationEdit->setMaxLength(1024);
+    d->destinationEdit->setPlaceholderText(i18n("Set here the envelope destination"));
     d->destinationEdit->setWhatsThis(i18n("Enter the envelope destination. "
                                           "This field is limited to 1024 characters."));
 
@@ -189,6 +190,7 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
     d->unoIDEdit  = new QLineEdit(this);
     d->unoIDEdit->setClearButtonEnabled(true);
     d->unoIDEdit->setMaxLength(80);
+    d->unoIDEdit->setPlaceholderText(i18n("Set here the Unique Name of Object identifier"));
     d->unoIDEdit->setWhatsThis(i18n("Set here the Unique Name of Object identifier. "
                                     "This field is limited to 80 characters."));
 
@@ -198,6 +200,7 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
     d->productIDEdit  = new QLineEdit(this);
     d->productIDEdit->setClearButtonEnabled(true);
     d->productIDEdit->setMaxLength(32);
+    d->productIDEdit->setPlaceholderText(i18n("Set here the product identifier"));
     d->productIDEdit->setWhatsThis(i18n("Set here the product identifier. "
                                          "This field is limited to 32 characters."));
 
@@ -207,6 +210,7 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
     d->serviceIDEdit  = new QLineEdit(this);
     d->serviceIDEdit->setClearButtonEnabled(true);
     d->serviceIDEdit->setMaxLength(10);
+    d->serviceIDEdit->setPlaceholderText(i18n("Set here the service identifier"));
     d->serviceIDEdit->setWhatsThis(i18n("Set here the service identifier. "
                                          "This field is limited to 10 characters."));
 
@@ -216,6 +220,7 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
     d->envelopeIDEdit  = new QLineEdit(this);
     d->envelopeIDEdit->setClearButtonEnabled(true);
     d->envelopeIDEdit->setMaxLength(8);
+    d->envelopeIDEdit->setPlaceholderText(i18n("Set here the envelope identifier"));
     d->envelopeIDEdit->setWhatsThis(i18n("Set here the envelope identifier. "
                                          "This field is limited to 8 characters."));
 
@@ -294,9 +299,9 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
     grid->addWidget(d->productIDCheck,      3, 0, 1, 1);
     grid->addWidget(d->productIDEdit,       3, 1, 1, 5);
     grid->addWidget(d->serviceIDCheck,      4, 0, 1, 1);
-    grid->addWidget(d->serviceIDEdit,       4, 1, 1, 1);
+    grid->addWidget(d->serviceIDEdit,       4, 1, 1, 5);
     grid->addWidget(d->envelopeIDCheck,     5, 0, 1, 1);
-    grid->addWidget(d->envelopeIDEdit,      5, 1, 1, 1);
+    grid->addWidget(d->envelopeIDEdit,      5, 1, 1, 5);
     grid->addWidget(d->priorityCheck,       6, 0, 1, 1);
     grid->addWidget(d->priorityCB,          6, 1, 1, 1);
     grid->addWidget(d->formatCheck,         7, 0, 1, 1);
@@ -310,9 +315,12 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
     grid->addWidget(note,                  10, 0, 1, 6);
     grid->setColumnStretch(4, 10);
     grid->setRowStretch(11, 10);
-    grid->setContentsMargins(QMargins());
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+
+    int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
+    grid->setContentsMargins(spacing, spacing, spacing, spacing);
+    grid->setSpacing(spacing);
 
     // --------------------------------------------------------
 
@@ -386,9 +394,6 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
     connect(d->destinationEdit, SIGNAL(textChanged()),
             this, SIGNAL(signalModified()));
 
-    connect(d->destinationEdit, SIGNAL(textChanged()),
-            this, SLOT(slotDestinationLeftCharacters()));
-
     connect(d->serviceIDEdit, SIGNAL(textChanged(QString)),
             this, SIGNAL(signalModified()));
 
@@ -440,13 +445,6 @@ void IPTCEnvelope::slotSetTodaySent()
     d->zoneSentSel->setToUTC();
 }
 
-void IPTCEnvelope::slotDestinationLeftCharacters()
-{
-    QToolTip::showText(d->destinationCheck->mapToGlobal(QPoint(0, -16)),
-                       i18np("%1 character left", "%1 characters left", d->destinationEdit->maxLength() - d->destinationEdit->toPlainText().size()),
-                       d->destinationEdit);
-}
-
 void IPTCEnvelope::slotLineEditModified()
 {
     QLineEdit* const ledit = dynamic_cast<QLineEdit*>(sender());
@@ -482,7 +480,6 @@ void IPTCEnvelope::readMetadata(const DMetadata& meta)
     }
 
     d->destinationEdit->setEnabled(d->destinationCheck->isChecked());
-    slotDestinationLeftCharacters();
 
     d->envelopeIDEdit->clear();
     d->envelopeIDCheck->setChecked(false);

@@ -13,6 +13,7 @@ Metadata       : Add new option to write metadata to files with ExifTool backend
 Metadata       : Optional write metadata operations to DNG and RAW files are now always delegated to ExifTool Backend.
 Advanced Rename: Add increment file counter to sequence numbering with option [c] or [c,step].
 Advanced Rename: Add random text sequence numbering with option [r].
+Advanced Rename: Add configurable first character for the unique modifier with {unique:n,c}.
 Advanced Search: Add search for items by number of face regions.
 Advanced Search: Add search for items without face regions.
 Collections    : Add support for cross-platform network paths.
@@ -106,9 +107,9 @@ BUGFIXES:
 083 ==> 092310 - Wish: spell check support in picture comments.
 084 ==> 360954 - No spell checking when entering Tags.
 085 ==> 256471 - Add spell checking to text areas.
-086 ==> 
-087 ==> 
-088 ==> 
+086 ==> 407468 - Metadata Edit window is too small.
+087 ==> 457602 - Configurable first character for the unique modifier.
+088 ==> 457594 - The facesengine binary should be installed to AppData\Local and not AppData\Roaming.
 089 ==> 
 090 ==> 
 091 ==> 

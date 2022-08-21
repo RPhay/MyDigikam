@@ -36,11 +36,12 @@
 // Local includes
 
 #include "digikam_opencv.h"
+#include "digikam_export.h"
 
 namespace Digikam
 {
 
-class DNNFaceDetectorBase
+class DIGIKAM_EXPORT DNNFaceDetectorBase
 {
 
 public:

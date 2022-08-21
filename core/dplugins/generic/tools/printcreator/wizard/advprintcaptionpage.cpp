@@ -101,6 +101,8 @@ AdvPrintCaptionPage::AdvPrintCaptionPage(QWizard* const wizard, const QString& t
         ++it;
     }
 
+    d->captionUi->m_FreeCaptionFormat->setLinesVisible(1);
+
     // ----------------------------------------------------------------------
 
     connect(d->captionUi->m_captionType, SIGNAL(activated(int)),
@@ -310,25 +312,35 @@ QString AdvPrintCaptionPage::captionFormatter(AdvPrintPhoto* const photo)
     switch (photo->m_pAdvPrintCaptionInfo->m_captionType)
     {
         case AdvPrintSettings::FILENAME:
+        {
             format = QLatin1String("%f");
             break;
+        }
 
         case AdvPrintSettings::DATETIME:
+        {
             format = QLatin1String("%d");
             break;
+        }
 
         case AdvPrintSettings::COMMENT:
+        {
             format = QLatin1String("%c");
             break;
+        }
 
         case AdvPrintSettings::CUSTOM:
+        {
             format = photo->m_pAdvPrintCaptionInfo->m_captionText;
             break;
+        }
 
         default:
+        {
             qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "UNKNOWN caption type "
                                                    << photo->m_pAdvPrintCaptionInfo->m_captionType;
             break;
+        }
     }
 
     format.replace(QLatin1String("\\n"), QLatin1String("\n"));

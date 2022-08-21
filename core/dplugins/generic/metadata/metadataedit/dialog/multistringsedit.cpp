@@ -26,14 +26,18 @@
 
 #include <QCheckBox>
 #include <QPushButton>
-#include <QValidator>
 #include <QGridLayout>
 #include <QApplication>
 #include <QListWidget>
+#include <QToolTip>
 
 // KDE includes
 
 #include <klocalizedstring.h>
+
+// Local includes
+
+#include "limitedtextedit.h"
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -52,17 +56,17 @@ public:
     {
     }
 
-    QStringList  oldValues;
+    QStringList      oldValues;
 
-    QPushButton* addValueButton;
-    QPushButton* delValueButton;
-    QPushButton* repValueButton;
+    QPushButton*     addValueButton;
+    QPushButton*     delValueButton;
+    QPushButton*     repValueButton;
 
-    QCheckBox*   valueCheck;
+    QCheckBox*       valueCheck;
 
-    QLineEdit*   valueEdit;
+    LimitedTextEdit* valueEdit;
 
-    QListWidget* valueBox;
+    QListWidget*     valueBox;
 };
 
 MultiStringsEdit::MultiStringsEdit(QWidget* const parent,
@@ -94,8 +98,8 @@ MultiStringsEdit::MultiStringsEdit(QWidget* const parent,
     d->valueBox->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Ignored);
     d->valueBox->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-    d->valueEdit      = new QLineEdit(this);
-    d->valueEdit->setClearButtonEnabled(true);
+    d->valueEdit      = new LimitedTextEdit(this);
+    d->valueEdit->setLinesVisible(1);
     QString whatsThis = desc;
 
     if (size != -1)
@@ -103,8 +107,12 @@ MultiStringsEdit::MultiStringsEdit(QWidget* const parent,
         whatsThis.append(i18n(" This field is limited to:"));
         d->valueEdit->setMaxLength(size);
         whatsThis.append(i18np("<p>1 character.</p>","<p>%1 characters.</p>", size));
+
+        connect(d->valueEdit, SIGNAL(textChanged()),
+                this, SLOT(slotLineEditModified()));
     }
 
+    d->valueEdit->setPlaceholderText(desc);
     d->valueEdit->setWhatsThis(whatsThis);
 
     // --------------------------------------------------------
@@ -121,7 +129,7 @@ MultiStringsEdit::MultiStringsEdit(QWidget* const parent,
     grid->setColumnStretch(4, 10);
     grid->setContentsMargins(QMargins());
     grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
 
     // --------------------------------------------------------
 
@@ -172,11 +180,6 @@ MultiStringsEdit::MultiStringsEdit(QWidget* const parent,
 MultiStringsEdit::~MultiStringsEdit()
 {
     delete d;
-}
-
-QLineEdit* MultiStringsEdit::valueEdit() const
-{
-    return d->valueEdit;
 }
 
 void MultiStringsEdit::slotDeleteValue()
@@ -286,6 +289,14 @@ bool MultiStringsEdit::getValues(QStringList& oldValues, QStringList& newValues)
     }
 
     return d->valueCheck->isChecked();
+}
+
+void MultiStringsEdit::slotLineEditModified()
+{
+    QToolTip::showText(d->valueEdit->mapToGlobal(QPoint(0, (-1)*(d->valueEdit->height() + 16))),
+                       i18np("%1 character left", "%1 characters left",
+                       d->valueEdit->maxLength() - d->valueEdit->text().size()),
+                       d->valueEdit);
 }
 
 } // namespace DigikamGenericMetadataEditPlugin

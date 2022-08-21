@@ -44,7 +44,6 @@
 #include <QComboBox>
 #include <QApplication>
 #include <QPushButton>
-#include <QTextEdit>
 #include <QLineEdit>
 #include <QGroupBox>
 
@@ -60,6 +59,7 @@
 #include "digikam_debug.h"
 #include "dprogresswdg.h"
 #include "dlayoutbox.h"
+#include "dtextedit.h"
 
 namespace DigikamGenericMediaWikiPlugin
 {
@@ -109,11 +109,11 @@ public:
 
     QWidget*                                 fileBox;
     QLineEdit*                               titleEdit;
-    QTextEdit*                               descEdit;
+    DTextEdit*                               descEdit;
     QLineEdit*                               dateEdit;
     QLineEdit*                               longitudeEdit;
     QLineEdit*                               latitudeEdit;
-    QTextEdit*                               categoryEdit;
+    DTextEdit*                               categoryEdit;
 
     QLabel*                                  loginHeaderLbl;
     QLineEdit*                               nameEdit;
@@ -126,9 +126,9 @@ public:
     QLineEdit*                               authorEdit;
     QLineEdit*                               sourceEdit;
 
-    QTextEdit*                               genCatEdit;
-    QTextEdit*                               genTxtEdit;
-    QTextEdit*                               genComEdit;
+    DTextEdit*                               genCatEdit;
+    DTextEdit*                               genTxtEdit;
+    DTextEdit*                               genComEdit;
 
     QLabel*                                  headerLbl;
     QLabel*                                  wikiNameDisplayLbl;
@@ -214,11 +214,11 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
     d->titleEdit    = new QLineEdit(d->defaultMessage, d->fileBox);
     d->dateEdit     = new QLineEdit(d->defaultMessage, d->fileBox);
 
-    d->descEdit     = new QTextEdit(d->fileBox);
+    d->descEdit     = new DTextEdit(0, d->fileBox);
     d->descEdit->setPlainText(d->defaultMessage);
     d->descEdit->setTabChangesFocus(1);
     d->descEdit->setAcceptRichText(false);
-    d->categoryEdit = new QTextEdit(d->fileBox);
+    d->categoryEdit = new DTextEdit(0, d->fileBox);
     d->categoryEdit->setPlainText(d->defaultMessage);
     d->categoryEdit->setTabChangesFocus(1);
     d->categoryEdit->setAcceptRichText(false);
@@ -425,20 +425,20 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
                                        QLatin1String(""));
 
     QLabel* const genCatLbl = new QLabel(i18nc("@label", "Generic categories:"), textGBox);
-    d->genCatEdit           = new QTextEdit(textGBox);
+    d->genCatEdit           = new DTextEdit(0, textGBox);
     d->genCatEdit->setTabChangesFocus(1);
     d->genCatEdit->setWhatsThis(i18nc("@info", "This is a place to enter categories that will be added to all the files."));
     d->genCatEdit->setAcceptRichText(false);
 
     QLabel* const genTxtLbl = new QLabel(i18nc("@label", "Generic text:"), textGBox);
-    d->genTxtEdit           = new QTextEdit(textGBox);
+    d->genTxtEdit           = new DTextEdit(0, textGBox);
     d->genTxtEdit->setTabChangesFocus(1);
     d->genTxtEdit->setWhatsThis(i18nc("@info", "This is a place to enter text that will be added to all the files, "
                                       "below the Information template."));
     d->genTxtEdit->setAcceptRichText(false);
 
     QLabel* const genComLbl = new QLabel(i18nc("@label", "Upload comments:"), textGBox);
-    d->genComEdit           = new QTextEdit(textGBox);
+    d->genComEdit           = new DTextEdit(0, textGBox);
     d->genComEdit->setTabChangesFocus(1);
     d->genComEdit->setWhatsThis(i18nc("@info", "This is a place to enter text that will be used as upload comments. "
                                       "The default of 'Uploaded via digiKam uploader' will be used if empty."));
@@ -716,8 +716,8 @@ void MediaWikiWidget::slotChangeUserClicked()
 void MediaWikiWidget::slotLoginClicked()
 {
      Q_EMIT signalLoginRequest(d->nameEdit->text(), d->passwdEdit->text(),
-                             d->wikiSelect->itemText(d->wikiSelect->currentIndex()),
-                             d->wikiSelect->itemData(d->wikiSelect->currentIndex()).toUrl());
+                               d->wikiSelect->itemText(d->wikiSelect->currentIndex()),
+                               d->wikiSelect->itemData(d->wikiSelect->currentIndex()).toUrl());
 }
 
 void MediaWikiWidget::slotNewWikiClicked()
@@ -874,6 +874,7 @@ void MediaWikiWidget::slotRestoreExtension()
     QList<QTreeWidgetItem*> selectedItems = d->imgList->listView()->selectedItems();
 
     // Build the list of items to rename
+
     for (int i = 0 ; i < selectedItems.size() ; ++i)
     {
         DItemsListViewItem* const l_item = dynamic_cast<DItemsListViewItem*>(selectedItems.at(i));
@@ -888,6 +889,7 @@ void MediaWikiWidget::slotRestoreExtension()
         imageTitle    = imageMetaData[QLatin1String("title")];
 
         // Add original extension if removed
+
         currentExtension  = imageTitle.split(QLatin1Char('.')).last();
         originalExtension = urls.at(i).toLocalFile().split(QLatin1Char('.')).last();
 
@@ -918,6 +920,7 @@ void MediaWikiWidget::slotApplyTitle()
     const int minLength = givenTitle.count(QLatin1Char('#'));
 
     // Build the list of items to rename
+
     for (int i = 0 ; i < selectedItems.size() ; ++i)
     {
         DItemsListViewItem* const l_item = dynamic_cast<DItemsListViewItem*>(selectedItems.at(i));
@@ -932,6 +935,7 @@ void MediaWikiWidget::slotApplyTitle()
         imageTitle    = givenTitle;
 
         // If there is at least one #, replace it the correct number
+
         if (minLength > 0)
         {
             parts      = imageTitle.split(QLatin1Char('#'), QT_KEEP_EMPTY_PARTS);

@@ -23,7 +23,7 @@
 #ifndef DIGIKAM_INAT_TAXON_EDIT_H
 #define DIGIKAM_INAT_TAXON_EDIT_H
 
-// Local includes
+// Qt includes
 
 #include <QWidget>
 #include <QLineEdit>

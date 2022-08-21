@@ -68,14 +68,17 @@ macro(IMGQSORT_BUILD_UNITTEST)
 
                   LINK_LIBRARIES
 
-                  digikamcore
                   libimgqsorttest
+
+                  digikamcore
 
                   ${COMMON_TEST_LINK}
     )
 
 endmacro()
 
+IMGQSORT_BUILD_UNITTEST(detectgeneral_badimage_utest.cpp)
+IMGQSORT_BUILD_UNITTEST(detectgeneral_goodimage_utest.cpp)
 IMGQSORT_BUILD_UNITTEST(detectgeneral_utest.cpp)
 IMGQSORT_BUILD_UNITTEST(detectnoise_utest.cpp)
 IMGQSORT_BUILD_UNITTEST(detectblur_utest.cpp)

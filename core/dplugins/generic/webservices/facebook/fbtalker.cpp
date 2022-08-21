@@ -38,7 +38,6 @@
 #include <QtAlgorithms>
 #include <QVBoxLayout>
 #include <QLineEdit>
-#include <QPlainTextEdit>
 #include <QList>
 #include <QApplication>
 #include <QPushButton>

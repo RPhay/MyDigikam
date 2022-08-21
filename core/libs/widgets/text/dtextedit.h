@@ -6,6 +6,7 @@
  * Date        : 2022-08-01
  * Description : Two plain text edit widgets with spell checker capabilities based on KF5::Sonnet (optional).
  *               Widgets can be also limited to a number of lines to show text.
+ *               A single line constraint will mimic QLineEdit.
  *
  * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -72,7 +73,9 @@ public:
 
     /**
      * Helper methods to handle visible lines used by the widget to show text.
-     * Lines must be superior or egal to 2.
+     * Lines must be superior or egal to 1.
+     * Notes: if a single visible line is used, the widget mimic QLineEdit.
+     *        a null value do not apply a size constraint.
      */
     void setLinesVisible(unsigned int lines);
     unsigned int linesVisible() const;
@@ -85,12 +88,10 @@ public:
     void setCurrentLanguage(const QString& lang);
     QString currentLanguage() const;
 
-private:
+protected:
 
-    /**
-     * Init the text widget with the spell-checker engine (optional).
-     */
-    void init();
+    void insertFromMimeData(const QMimeData* source) override;
+    void keyPressEvent(QKeyEvent* e)                 override;
 
 private:
 
@@ -134,7 +135,9 @@ public:
 
     /**
      * Helper methods to handle visible lines used by the widget to show text.
-     * Lines must be superior or egal to 2.
+     * Lines must be superior or egal to 1.
+     * Notes: if a single visible line is used, the widget mimic QLineEdit.
+     *        a null value do not apply a size constraint.
      */
     void setLinesVisible(unsigned int lines);
     unsigned int linesVisible() const;
@@ -147,12 +150,10 @@ public:
     void setCurrentLanguage(const QString& lang);
     QString currentLanguage() const;
 
-private:
+protected:
 
-    /**
-     * Init the text widget with the spell-checker engine (optional).
-     */
-    void init();
+    void insertFromMimeData(const QMimeData* source) override;
+    void keyPressEvent(QKeyEvent* e)                 override;
 
 private:
 

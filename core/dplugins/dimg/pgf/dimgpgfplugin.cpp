@@ -22,10 +22,6 @@
 
 #include "dimgpgfplugin.h"
 
-// C++ includes
-
-#include <cstdio>
-
 // Qt includes
 
 #include <QFile>
@@ -136,38 +132,29 @@ int DImgPGFPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
     // In second, we trying to parse file header.
 
-#ifdef Q_OS_WIN
+    QFile file(filePath);
 
-    FILE* const f = _wfopen((const wchar_t*)filePath.utf16(), L"rb");
-
-#else
-
-    FILE* const f = fopen(filePath.toUtf8().constData(), "rb");
-
-#endif
-
-    if (!f)
+    if (!file.open(QIODevice::ReadOnly))
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Failed to open file " << filePath;
+
         return 0;
     }
 
-    const int headerLen = 9;
+    const qint64 headerLen = 9;
 
-    unsigned char header[headerLen];
+    QByteArray header(headerLen, '\0');
 
-    if (fread(&header, headerLen, 1, f) != 1)
+    if (file.read((char*)header.data(), headerLen) != headerLen)
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Failed to read header of file " << filePath;
-        fclose(f);
+
         return 0;
     }
-
-    fclose(f);
 
     uchar pgfID[3] = { 0x50, 0x47, 0x46 };
 
-    if (memcmp(&header, &pgfID, 3) == 0)
+    if (memcmp(header.data(), &pgfID, 3) == 0)
     {
         return 10;
     }

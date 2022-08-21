@@ -31,7 +31,6 @@
 #include <QApplication>
 #include <QStyle>
 #include <QComboBox>
-#include <QLineEdit>
 #include <QGridLayout>
 
 // KDE includes
@@ -40,6 +39,7 @@
 
 // Local includes
 
+#include "dtextedit.h"
 #include "htmlwizard.h"
 #include "galleryinfo.h"
 #include "dfileselector.h"
@@ -62,7 +62,7 @@ public:
     DFileSelector* destUrl;
     QComboBox*     openInBrowser;
     QLabel*        titleLabel;
-    QLineEdit*     imageSelectionTitle;
+    DTextEdit*     imageSelectionTitle;
 };
 
 HTMLOutputPage::HTMLOutputPage(QWizard* const dialog, const QString& title)
@@ -79,7 +79,7 @@ HTMLOutputPage::HTMLOutputPage(QWizard* const dialog, const QString& title)
     d->titleLabel->setWordWrap(false);
     d->titleLabel->setText(i18nc("@label", "Gallery Title:"));
 
-    d->imageSelectionTitle   = new QLineEdit(main);
+    d->imageSelectionTitle   = new DTextEdit(main);
     d->titleLabel->setBuddy(d->imageSelectionTitle);
 
     // --------------------
@@ -110,7 +110,7 @@ HTMLOutputPage::HTMLOutputPage(QWizard* const dialog, const QString& title)
 
     QGridLayout* const grid = new QGridLayout(main);
     grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     grid->addWidget(d->titleLabel,          0, 0, 1, 1);
     grid->addWidget(d->imageSelectionTitle, 0, 1, 1, 1);
     grid->addWidget(textLabel1,             1, 0, 1, 1);
@@ -130,7 +130,7 @@ HTMLOutputPage::HTMLOutputPage(QWizard* const dialog, const QString& title)
     connect(d->destUrl, SIGNAL(signalUrlSelected(QUrl)),
             this, SIGNAL(completeChanged()));
 
-    connect(d->imageSelectionTitle, SIGNAL(textEdited(QString)),
+    connect(d->imageSelectionTitle, SIGNAL(textChanged()),
             this, SIGNAL(completeChanged()));
 }
 

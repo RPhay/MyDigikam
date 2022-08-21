@@ -30,7 +30,6 @@
 
 // Qt includes
 
-#include <QTextEdit>
 #include <QStyle>
 #include <QGridLayout>
 #include <QScrollArea>
