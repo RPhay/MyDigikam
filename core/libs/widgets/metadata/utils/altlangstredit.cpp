@@ -555,6 +555,11 @@ QString AltLangStrEdit::languageNameRFC3066(const QString& code)
     return QString();
 }
 
+QStringList AltLangStrEdit::alllanguageRFC3066()
+{
+    return s_rfc3066ForXMP.keys();
+}
+
 void AltLangStrEdit::slotEnabledInternalWidgets(bool b)
 {
     d->languageCB->setEnabled(b);
