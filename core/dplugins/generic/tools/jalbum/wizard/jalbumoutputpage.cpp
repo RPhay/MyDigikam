@@ -116,7 +116,7 @@ JAlbumOutputPage::JAlbumOutputPage(QWizard* const dialog, const QString& title)
     connect(d->destUrl, SIGNAL(signalUrlSelected(QUrl)),
             this, SIGNAL(completeChanged()));
 
-    connect(d->imageSelectionTitle, SIGNAL(textChanged()),
+    connect(d->imageSelectionTitle, SIGNAL(textEdited(QString)),
             this, SIGNAL(completeChanged()));
 }
 

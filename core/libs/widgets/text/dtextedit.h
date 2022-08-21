@@ -4,9 +4,9 @@
  * https://www.digikam.org
  *
  * Date        : 2022-08-01
- * Description : Two plain text edit widgets with spell checker capabilities based on KF5::Sonnet (optional).
+ * Description : Two text edit widgets with spell checker capabilities based on KF5::Sonnet (optional).
  *               Widgets can be also limited to a number of lines to show text.
- *               A single line constraint will mimic QLineEdit.
+ *               A single line constraint will mimic QLineEdit. See setLinesVisible() for details.
  *
  * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -39,6 +39,8 @@
 namespace Digikam
 {
 
+class SpellCheckContainer;
+
 class DIGIKAM_EXPORT DTextEdit : public QTextEdit
 {
     Q_OBJECT
@@ -48,17 +50,17 @@ public:
     /**
      * Default constructor.
      */
-    explicit DTextEdit(QWidget* const parent = nullptr);
+    DTextEdit(QWidget* const parent = nullptr);
 
     /**
      * Constructor with a number of lines. Zero lines do not apply a size constraint.
      */
-    DTextEdit(unsigned int lines, QWidget* const parent = nullptr);
+    explicit DTextEdit(unsigned int lines, QWidget* const parent = nullptr);
 
     /**
      * Constructor with text contents to use.
      */
-    DTextEdit(const QString& contents, QWidget* const parent = nullptr);
+    explicit DTextEdit(const QString& contents, QWidget* const parent = nullptr);
 
     /**
      * Standard destructor.
@@ -67,13 +69,30 @@ public:
 
     /**
      * Helper methods to handle text contents as plain text.
+     * If ignored or accepted characters masks are set, text is filtered accordingly.
      */
     QString text() const;
     void setText(const QString& text);
 
     /**
+     * Helper methods to handle the mask of ignored characters in text editor.
+     * The mask of characters is passed as string (ex: "+/!()").
+     * By default the mask is empty.
+     */
+    QString ignoredCharacters() const;
+    void setIgnoredCharacters(const QString& mask);
+
+    /**
+     * Helper methods to handle the mask of accepted characters in text editor.
+     * The mask of characters is passed as string (ex: "abcABC").
+     * By default the mask is empty.
+     */
+    QString acceptedCharacters() const;
+    void setAcceptedCharacters(const QString& mask);
+
+    /**
      * Helper methods to handle visible lines used by the widget to show text.
-     * Lines must be superior or egal to 1.
+     * Lines must be superior or egal to 1 to apply a size constraint.
      * Notes: if a single visible line is used, the widget mimic QLineEdit.
      *        a null value do not apply a size constraint.
      */
@@ -83,10 +102,26 @@ public:
     /**
      * Helper methods to handle a specific spell-checker language (2 letters code based as "en", "fr", "es", etc.).
      * If this property is not set, spell-checker will try to auto-detect language by parsing the text.
+     * To reset this setting, pass a empty string as language.
      * If KF5::Sonnet depedencies is not resolved, these method do nothing.
      */
     void setCurrentLanguage(const QString& lang);
     QString currentLanguage() const;
+
+    /**
+     * Helper methods to handle the Spellcheck settings.
+     * See SpellCheckContainer class for details.
+     */
+    SpellCheckContainer spellCheckSettings() const;
+    void setSpellCheckSettings(const SpellCheckContainer& settings);
+
+Q_SIGNALS:
+
+    /**
+     * Emmited only when mimic QLineEdit mode is enabled. See setLinesVisible() for details.
+     */
+    void returnPressed();
+    void textEdited(const QString&);
 
 protected:
 
@@ -110,17 +145,17 @@ public:
     /**
      * Default constructor.
      */
-    explicit DPlainTextEdit(QWidget* const parent = nullptr);
+    DPlainTextEdit(QWidget* const parent = nullptr);
 
     /**
      * Constructor with a number of lines. Zero lines do not apply a size constraint.
      */
-    DPlainTextEdit(unsigned int lines, QWidget* const parent = nullptr);
+    explicit DPlainTextEdit(unsigned int lines, QWidget* const parent = nullptr);
 
     /**
      * Constructor with text contents to use.
      */
-    DPlainTextEdit(const QString& contents, QWidget* const parent = nullptr);
+    explicit DPlainTextEdit(const QString& contents, QWidget* const parent = nullptr);
 
     /**
      * Standard destructor.
@@ -129,13 +164,30 @@ public:
 
     /**
      * Helper methods to handle text contents as plain text.
+     * If ignored or accepted characters masks are set, text is filtered accordingly.
      */
     QString text() const;
     void setText(const QString& text);
 
     /**
+     * Helper methods to handle the mask of ignored characters in text editor.
+     * The mask of characters is passed as string (ex: "+/!()").
+     * By default the mask is empty.
+     */
+    QString ignoredCharacters() const;
+    void setIgnoredCharacters(const QString& mask);
+
+    /**
+     * Helper methods to handle the mask of accepted characters in text editor.
+     * The mask of characters is passed as string (ex: "abcABC").
+     * By default the mask is empty.
+     */
+    QString acceptedCharacters() const;
+    void setAcceptedCharacters(const QString& mask);
+
+    /**
      * Helper methods to handle visible lines used by the widget to show text.
-     * Lines must be superior or egal to 1.
+     * Lines must be superior or egal to 1 to apply a size constraint.
      * Notes: if a single visible line is used, the widget mimic QLineEdit.
      *        a null value do not apply a size constraint.
      */
@@ -145,10 +197,26 @@ public:
     /**
      * Helper methods to handle a specific spell-checker language (2 letters code based as "en", "fr", "es", etc.).
      * If this property is not set, spell-checker will try to auto-detect language by parsing the text.
+     * To reset this setting, pass a empty string as language.
      * If KF5::Sonnet depedencies is not resolved, these method do nothing.
      */
     void setCurrentLanguage(const QString& lang);
     QString currentLanguage() const;
+
+    /**
+     * Helper methods to handle the Spellcheck settings.
+     * See SpellCheckContainer class for details.
+     */
+    SpellCheckContainer spellCheckSettings() const;
+    void setSpellCheckSettings(const SpellCheckContainer& settings);
+
+Q_SIGNALS:
+
+    /**
+     * Emmited only when mimic QLineEdit mode is enabled. See setLinesVisible() for details.
+     */
+    void returnPressed();
+    void textEdited(const QString&);
 
 protected:
 

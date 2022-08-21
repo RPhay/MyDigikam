@@ -72,7 +72,7 @@ public:
 
 private Q_SLOTS:
 
-    void slotTitleChanged(const QString& newtitle);
+    void slotTitleChanged();
     void slotNewAlbumTextChanged(int index);
     void slotDateLowButtonClicked();
     void slotDateAverageButtonClicked();

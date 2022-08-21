@@ -80,6 +80,7 @@ HTMLOutputPage::HTMLOutputPage(QWizard* const dialog, const QString& title)
     d->titleLabel->setText(i18nc("@label", "Gallery Title:"));
 
     d->imageSelectionTitle   = new DTextEdit(main);
+    d->imageSelectionTitle->setLinesVisible(1);
     d->titleLabel->setBuddy(d->imageSelectionTitle);
 
     // --------------------
@@ -130,7 +131,7 @@ HTMLOutputPage::HTMLOutputPage(QWizard* const dialog, const QString& title)
     connect(d->destUrl, SIGNAL(signalUrlSelected(QUrl)),
             this, SIGNAL(completeChanged()));
 
-    connect(d->imageSelectionTitle, SIGNAL(textChanged()),
+    connect(d->imageSelectionTitle, SIGNAL(textEdited(QString)),
             this, SIGNAL(completeChanged()));
 }
 

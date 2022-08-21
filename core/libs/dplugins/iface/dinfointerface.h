@@ -56,7 +56,6 @@ class DIGIKAM_EXPORT DInfoInterface : public QObject
 {
     Q_OBJECT
 
-
 public:
 
     typedef QMap<QString, QVariant> DInfoMap;       ///< Map of properties name and value.

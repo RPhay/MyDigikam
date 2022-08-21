@@ -109,7 +109,7 @@ DAbstractSliderSpinBox::DAbstractSliderSpinBox(QWidget* const parent, DAbstractS
     changeEvent(&e);
 
     d->edit = new QLineEdit(this);
-    d->edit->setContentsMargins(0, 0, 0, 0);
+    d->edit->setContentsMargins(QMargins());
     d->edit->setAlignment(Qt::AlignCenter);
     d->edit->installEventFilter(this);
     d->edit->setFrame(false);

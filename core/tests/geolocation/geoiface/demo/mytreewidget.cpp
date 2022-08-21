@@ -54,6 +54,7 @@ MyTreeWidget::MyTreeWidget(QWidget* const parent)
       d          (new Private())
 {
     setDragEnabled(true);
+    setUniformRowHeights(true);
     setDragDropMode(QAbstractItemView::DragOnly);
 }
 

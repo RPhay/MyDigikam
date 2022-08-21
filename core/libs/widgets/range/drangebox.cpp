@@ -76,7 +76,7 @@ DIntRangeBox::DIntRangeBox(QWidget* const parent)
 /*
     mainLayout->setContentsMargins(spacing, spacing, spacing, spacing);
 */
-    mainLayout->setContentsMargins(0, 0, 0, 0);
+    mainLayout->setContentsMargins(QMargins());
     setLayout(mainLayout);
 
     connect(d->minValueBox, SIGNAL(valueChanged(int)),

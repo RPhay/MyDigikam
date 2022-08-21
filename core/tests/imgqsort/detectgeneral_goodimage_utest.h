@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DETECT_GENERAL_GODD_IMAGE_UTEST_H
-#define DIGIKAM_DETECT_GENERAL_GODD_IMAGE_UTEST_H
+#ifndef DIGIKAM_DETECT_GENERAL_GOOD_IMAGE_UTEST_H
+#define DIGIKAM_DETECT_GENERAL_GOOD_IMAGE_UTEST_H
 
 // Qt includes
 

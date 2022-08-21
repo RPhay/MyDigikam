@@ -56,6 +56,8 @@ public:
     bool                                  itemDrag;
     bool                                  itemDrop;
     bool                                  isFaceTagModel;
+
+    QModelIndex                           dropIndex;
 };
 
 AbstractAlbumModel::AbstractAlbumModel(Album::Type albumType,
@@ -105,6 +107,18 @@ QVariant AbstractAlbumModel::data(const QModelIndex& index, int role) const
     if (!index.isValid())
     {
         return QVariant();
+    }
+
+    if (d->dropIndex.isValid() && (index == d->dropIndex))
+    {
+        if      (role == Qt::BackgroundRole)
+        {
+            return QPalette().highlight();
+        }
+        else if (role == Qt::ForegroundRole)
+        {
+            return QPalette().highlightedText();
+        }
     }
 
     Album* const a = static_cast<Album*>(index.internalPointer());
@@ -341,6 +355,17 @@ void AbstractAlbumModel::setEnableDrag(bool enable)
 void AbstractAlbumModel::setEnableDrop(bool enable)
 {
     d->itemDrop = enable;
+}
+
+void AbstractAlbumModel::setDropIndex(const QModelIndex& index)
+{
+    const QModelIndex oldIndex = d->dropIndex;
+    d->dropIndex               = index;
+
+    if (!index.isValid() && oldIndex.isValid())
+    {
+        Q_EMIT dataChanged(oldIndex, oldIndex);
+    }
 }
 
 void AbstractAlbumModel::setDragDropHandler(AlbumModelDragDropHandler* handler)

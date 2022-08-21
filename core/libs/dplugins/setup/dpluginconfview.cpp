@@ -125,6 +125,7 @@ DPluginConfView::DPluginConfView(QWidget* const parent)
       d          (new Private)
 {
     setRootIsDecorated(false);
+    setUniformRowHeights(true);
     setSelectionMode(QAbstractItemView::SingleSelection);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setAllColumnsShowFocus(true);

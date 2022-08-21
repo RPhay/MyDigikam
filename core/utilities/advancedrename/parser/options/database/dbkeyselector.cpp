@@ -91,11 +91,12 @@ QString DbKeySelectorItem::description() const
 DbKeySelector::DbKeySelector(QWidget* const parent)
     : QTreeWidget(parent)
 {
+    setColumnCount(2);
     setRootIsDecorated(false);
+    setUniformRowHeights(true);
+    setAllColumnsShowFocus(true);
     setSelectionMode(QAbstractItemView::SingleSelection);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    setAllColumnsShowFocus(true);
-    setColumnCount(2);
 
     QStringList labels;
     labels.append(i18n("Key"));

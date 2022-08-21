@@ -26,13 +26,22 @@
 // Qt includes
 
 #include <QEvent>
+#include <QIcon>
+#include <QLineEdit>
 #include <QMap>
+#include <QFontMetrics>
+#include <QRect>
+#include <QMenu>
+#include <QListWidget>
+#include <QWidgetAction>
 #include <QStyle>
 #include <QLabel>
 #include <QToolButton>
 #include <QGridLayout>
 #include <QApplication>
 #include <QComboBox>
+#include <QScrollBar>
+#include <QListWidgetItem>
 
 // KDE includes
 
@@ -41,9 +50,44 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "donlinetranslator.h"
+#include "spellchecksettings.h"
 
 namespace Digikam
 {
+
+class Q_DECL_HIDDEN TranslateAction : public QWidgetAction
+{
+    Q_OBJECT
+
+public:
+
+    explicit TranslateAction(QObject* const parent)
+        : QWidgetAction(parent)
+    {
+    }
+
+    QWidget* createWidget(QWidget* parent) override
+    {
+        m_list = new QListWidget(parent);
+        QFontMetrics fontMt(m_list->font());
+        QRect fontRect = fontMt.boundingRect(0, 0, m_list->width(), m_list->height(), 0, QLatin1String("mm-MM"));
+        int width      =  m_list->contentsMargins().left() + m_list->contentsMargins().right();
+        width         += fontRect.width() + m_list->verticalScrollBar()->height();
+        m_list->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        m_list->setResizeMode(QListView::Fixed);
+        m_list->setFixedWidth(width);
+
+
+        return m_list;
+    }
+
+public:
+
+    QListWidget* m_list = nullptr;
+};
+
+// ------------------------------------------------------------------------
 
 class Q_DECL_HIDDEN AltLangStrEdit::Private
 {
@@ -52,12 +96,15 @@ public:
     explicit Private()
       : currentLanguage (QLatin1String("x-default")),
         linesVisible    (0),
-        titleLabel      (nullptr),
+        grid            (nullptr),
+        titleWidget     (nullptr),
         delValueButton  (nullptr),
+        translateButton (nullptr),
         valueEdit       (nullptr),
-        languageCB      (nullptr)
+        languageCB      (nullptr),
+        translateAction (nullptr),
+        trengine        (nullptr)
     {
-
         /**
          * NOTE: We cannot use KLocale::allLanguagesList() here because KDE only
          * support 2 characters country codes. XMP require 2+2 characters language+country
@@ -258,13 +305,19 @@ public:
 
     uint                           linesVisible;
 
-    QLabel*                        titleLabel;
+    QGridLayout*                   grid;
+
+    QWidget*                       titleWidget;
 
     QToolButton*                   delValueButton;
+    QToolButton*                   translateButton;
 
     DTextEdit*                     valueEdit;
 
     QComboBox*                     languageCB;
+    TranslateAction*               translateAction;
+    DOnlineTranslator*             trengine;
+    QString                        trCode;
 
     MetaEngine::AltLangMap         values;
 };
@@ -273,33 +326,46 @@ AltLangStrEdit::AltLangStrEdit(QWidget* const parent, unsigned int lines)
     : QWidget(parent),
       d      (new Private)
 {
-    QGridLayout* const grid = new QGridLayout(this);
-    d->titleLabel           = new QLabel(this);
-    d->delValueButton       = new QToolButton(this);
+    d->titleWidget    = new QLabel(this);
+
+    d->delValueButton = new QToolButton(this);
     d->delValueButton->setIcon(QIcon::fromTheme(QLatin1String("edit-clear")));
-    d->delValueButton->setToolTip(i18nc("@info: language edit dialog", "Remove entry for this language"));
+    d->delValueButton->setToolTip(i18nc("@info: language edit widget", "Remove entry for this language"));
     d->delValueButton->setEnabled(false);
 
-    d->languageCB   = new QComboBox(this);
-    d->languageCB->setSizeAdjustPolicy(QComboBox::AdjustToContents);
-    d->languageCB->setWhatsThis(i18nc("@info: language edit dialog", "Select item language here."));
+    d->translateButton = new QToolButton(this);
+    d->translateButton->setIcon(QIcon::fromTheme(QLatin1String("language-chooser")));
+    d->translateButton->setEnabled(false);
+    d->translateButton->setPopupMode(QToolButton::MenuButtonPopup);
+    QMenu* const menu  = new QMenu(d->translateButton);
+    d->translateAction = new TranslateAction(d->translateButton);
+    menu->addAction(d->translateAction);
+    d->translateButton->setMenu(menu);
 
-    d->valueEdit    = new DTextEdit(lines, this);
+    d->trengine        = new DOnlineTranslator(this);
+
+    d->languageCB      = new QComboBox(this);
+    d->languageCB->setSizeAdjustPolicy(QComboBox::AdjustToContents);
+    d->languageCB->setWhatsThis(i18nc("@info: language edit widget", "Select item language here."));
+
+    d->valueEdit       = new DTextEdit(lines, this);
     d->valueEdit->setAcceptRichText(false);
 
     // --------------------------------------------------------
 
-    grid->setAlignment(Qt::AlignTop);
-    grid->addWidget(d->titleLabel,     0, 0, 1, 1);
-    grid->addWidget(d->languageCB,     0, 2, 1, 1);
-    grid->addWidget(d->delValueButton, 0, 3, 1, 1);
-    grid->addWidget(d->valueEdit,      1, 0, 1,-1);
-    grid->setColumnStretch(1, 10);
-    grid->setContentsMargins(QMargins());
-    grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+    d->grid            = new QGridLayout(this);
+    d->grid->setAlignment(Qt::AlignTop);
+    d->grid->addWidget(d->languageCB,      0, 2, 1,  1);
+    d->grid->addWidget(d->delValueButton,  0, 3, 1,  1);
+    d->grid->addWidget(d->translateButton, 0, 4, 1,  1);
+    d->grid->addWidget(d->valueEdit,       1, 0, 1, -1);
+    d->grid->setColumnStretch(1, 10);
+    d->grid->setContentsMargins(QMargins());
+    d->grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
 
     loadLangAltListEntries();
+    slotLocalizeChanged();
 
     // --------------------------------------------------------
 
@@ -309,13 +375,48 @@ AltLangStrEdit::AltLangStrEdit(QWidget* const parent, unsigned int lines)
     connect(d->delValueButton, &QToolButton::clicked,
             this, &AltLangStrEdit::slotDeleteValue);
 
+    connect(d->translateAction->m_list, &QListWidget::itemClicked,
+            this, &AltLangStrEdit::slotTranslate);
+
     connect(d->valueEdit, &QTextEdit::textChanged,
             this, &AltLangStrEdit::slotTextChanged);
+
+    connect(d->trengine, &DOnlineTranslator::signalFinished,
+            this, &AltLangStrEdit::slotTranslationFinished);
+
+    connect(d->translateButton, &QToolButton::pressed,
+            d->translateButton, &QToolButton::showMenu);
+
+    connect(SpellCheckSettings::instance(), &SpellCheckSettings::signalSettingsChanged,
+            this, &AltLangStrEdit::slotLocalizeChanged);
 }
 
 AltLangStrEdit::~AltLangStrEdit()
 {
     delete d;
+}
+
+// Static method
+
+QString AltLangStrEdit::languageName(const QString& code)
+{
+    Private d;
+    Private::LanguageCodeMap::Iterator it = d.languageCodeMap.find(code);
+
+    if (it != d.languageCodeMap.end())
+    {
+        return it.value();
+    }
+
+    return QString();
+}
+
+void AltLangStrEdit::slotEnabledInternalWidgets(bool b)
+{
+    d->languageCB->setEnabled(b);
+    d->delValueButton->setEnabled(b);
+    d->translateButton->setEnabled(b);
+    d->valueEdit->setEnabled(b);
 }
 
 QString AltLangStrEdit::currentLanguageCode() const
@@ -342,7 +443,25 @@ QString AltLangStrEdit::languageCode(int index) const
 
 void AltLangStrEdit::setTitle(const QString& title)
 {
-    d->titleLabel->setText(title);
+    QLabel* const tlabel = new QLabel(this);
+    tlabel->setText(title);
+    setTitleWidget(tlabel);
+}
+
+void AltLangStrEdit::setTitleWidget(QWidget* const twdg)
+{
+    if (d->titleWidget)
+    {
+        delete d->titleWidget;
+    }
+
+    d->titleWidget = twdg;
+    d->grid->addWidget(d->titleWidget, 0, 0, 1, 1);
+}
+
+QWidget* AltLangStrEdit::titleWidget() const
+{
+    return d->titleWidget;
 }
 
 void AltLangStrEdit::setPlaceholderText(const QString& msg)
@@ -375,6 +494,7 @@ void AltLangStrEdit::slotSelectionChanged()
     QString text = d->values.value(d->currentLanguage);
     d->valueEdit->setPlainText(text);
     d->delValueButton->setEnabled(!text.isNull());
+    d->translateButton->setEnabled(!text.isNull());
 
     d->valueEdit->blockSignals(false);
 
@@ -382,7 +502,11 @@ void AltLangStrEdit::slotSelectionChanged()
 
     // NOTE: if no specific language is set, spell-checker failback to auto-detection.
 
-    if (d->currentLanguage != QLatin1String("x-default"))
+    if (d->currentLanguage == QLatin1String("x-default"))
+    {
+        d->valueEdit->setCurrentLanguage(QString());
+    }
+    else
     {
         d->valueEdit->setCurrentLanguage(d->currentLanguage.left(2));
     }
@@ -400,6 +524,7 @@ void AltLangStrEdit::setValues(const MetaEngine::AltLangMap& values)
     QString text = d->values.value(d->currentLanguage);
     d->valueEdit->setPlainText(text);
     d->delValueButton->setEnabled(!text.isNull());
+    d->translateButton->setEnabled(!text.isNull());
 
     d->valueEdit->blockSignals(false);
 }
@@ -424,7 +549,7 @@ void AltLangStrEdit::loadLangAltListEntries()
         Q_FOREACH (const QString& item, list)
         {
               d->languageCB->addItem(item);
-              d->languageCB->setItemIcon(d->languageCB->count()-1,
+              d->languageCB->setItemIcon(d->languageCB->count() - 1,
                                          QIcon::fromTheme(QLatin1String("dialog-ok-apply")).pixmap(16, 16));
         }
 
@@ -489,6 +614,7 @@ void AltLangStrEdit::addCurrent()
     d->values.insert(d->currentLanguage, text);
     loadLangAltListEntries();
     d->delValueButton->setEnabled(true);
+    d->translateButton->setEnabled(true);
 
     Q_EMIT signalValueAdded(d->currentLanguage, text);
 }
@@ -540,4 +666,112 @@ DTextEdit* AltLangStrEdit::textEdit() const
     return d->valueEdit;
 }
 
+void AltLangStrEdit::loadTranslationTargets()
+{
+    d->translateAction->m_list->clear();
+
+    QStringList allISO3066 = DOnlineTranslator::supportedISO3066();
+    QStringList engineISO3066;
+
+    Q_FOREACH (const QString& iso, allISO3066)
+    {
+        if (
+            DOnlineTranslator::isSupportTranslation(SpellCheckSettings::instance()->settings().translatorEngine,
+                                                    DOnlineTranslator::language(DOnlineTranslator::fromISO3066(iso)))
+           )
+        {
+            engineISO3066 << iso;
+        }
+    }
+
+    for (Private::LanguageCodeMap::Iterator it = d->languageCodeMap.begin() ;
+         it != d->languageCodeMap.end() ; ++it)
+    {
+        if (!it.key().isEmpty() && engineISO3066.contains(it.key()))
+        {
+            QListWidgetItem* const item = new QListWidgetItem(d->translateAction->m_list);
+            item->setText(it.key());
+            item->setToolTip(i18n("Translate to %1", it.value()));
+            d->translateAction->m_list->addItem(item);
+        }
+    }
+}
+
+void AltLangStrEdit::slotTranslate(QListWidgetItem* item)
+{
+    d->translateButton->menu()->close();
+
+    if (d->trengine->isRunning())
+    {
+        return;
+    }
+
+    if (item)
+    {
+        d->trCode       = item->text();
+        QString srcCode = currentLanguageCode();
+        DOnlineTranslator::Language trLang;
+        DOnlineTranslator::Language srcLang;
+
+        if (srcCode == QLatin1String("x-default"))
+        {
+            srcLang = DOnlineTranslator::Auto;
+        }
+        else
+        {
+            srcLang = DOnlineTranslator::language(DOnlineTranslator::fromISO3066(srcCode));
+        }
+
+        trLang       = DOnlineTranslator::language(DOnlineTranslator::fromISO3066(d->trCode));
+        QString text = textEdit()->text();
+
+        qCDebug(DIGIKAM_WIDGETS_LOG) << "Request to translate with Web-service:";
+        qCDebug(DIGIKAM_WIDGETS_LOG) << "Text to translate        :" << text;
+        qCDebug(DIGIKAM_WIDGETS_LOG) << "To target language       :" << trLang;
+        qCDebug(DIGIKAM_WIDGETS_LOG) << "With source language     :" << srcLang;
+
+        d->trengine->translate(text,                                                            // String to translate
+                               SpellCheckSettings::instance()->settings().translatorEngine,     // Web service
+                               trLang,                                                          // Target language
+                               srcLang,                                                         // Source langage
+                               DOnlineTranslator::Auto);
+    }
+}
+
+void AltLangStrEdit::slotTranslationFinished()
+{
+    if (d->trengine->error() == DOnlineTranslator::NoError)
+    {
+        if (d->trCode.isEmpty())
+        {
+            return;
+        }
+
+        QString translation = d->trengine->translation();
+        qCDebug(DIGIKAM_WIDGETS_LOG) << "Text translated          :" << translation;
+
+        MetaEngine::AltLangMap vals = values();
+        vals.insert(d->trCode, translation);
+        setValues(vals);
+        setCurrentLanguageCode(d->trCode);
+
+        Q_EMIT signalValueAdded(d->trCode, translation);
+
+        d->trCode.clear();
+    }
+    else
+    {
+        qCDebug(DIGIKAM_WIDGETS_LOG) << "Translation Error       :" << d->trengine->error();
+    }
+}
+
+void AltLangStrEdit::slotLocalizeChanged()
+{
+    loadTranslationTargets();
+    d->translateButton->setToolTip(i18nc("@info: language edit widget", "Select language to translate with %1",
+                                   DOnlineTranslator::engineName(SpellCheckSettings::instance()->settings().translatorEngine)));
+}
+
 } // namespace Digikam
+
+#include "altlangstredit.moc"

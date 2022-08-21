@@ -79,6 +79,7 @@ ShowfotoStackViewFavoriteList::ShowfotoStackViewFavoriteList(ShowfotoStackViewFa
     setAlternatingRowColors(true);
     setColumnCount(1);
     setSortingEnabled(true);
+    setUniformRowHeights(true);
     setAllColumnsShowFocus(true);
     sortByColumn(0, Qt::AscendingOrder);
     setSelectionMode(QAbstractItemView::SingleSelection);

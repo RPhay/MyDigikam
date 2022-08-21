@@ -318,18 +318,19 @@ QueueListView::QueueListView(QWidget* const parent)
     setSelectionMode(QAbstractItemView::ExtendedSelection);
     setWhatsThis(i18nc("@info", "This is the list of images to batch process."));
 
-    setAcceptDrops(true);
-    viewport()->setAcceptDrops(true);
-    setDropIndicatorShown(true);
     setDragEnabled(true);
+    setAcceptDrops(true);
+    setDropIndicatorShown(true);
+    viewport()->setAcceptDrops(true);
     viewport()->setMouseTracking(true);
 
-    setSortingEnabled(true);
-    sortByColumn(1,Qt::AscendingOrder);
-    setAllColumnsShowFocus(true);
-    setRootIsDecorated(false);
-    setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setColumnCount(3);
+    setSortingEnabled(true);
+    setRootIsDecorated(false);
+    setUniformRowHeights(true);
+    setAllColumnsShowFocus(true);
+    sortByColumn(1, Qt::AscendingOrder);
+    setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setContextMenuPolicy(Qt::CustomContextMenu);
 
     QStringList titles;

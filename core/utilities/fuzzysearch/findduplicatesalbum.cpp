@@ -66,14 +66,14 @@ FindDuplicatesAlbum::FindDuplicatesAlbum(QWidget* const parent)
 {
     d->thumbLoadThread = ThumbnailLoadThread::defaultThread();
 
+    setColumnCount(5);
+    setSortingEnabled(true);
     setRootIsDecorated(false);
     setUniformRowHeights(true);
+    setAllColumnsShowFocus(true);
     setSelectionMode(QAbstractItemView::ExtendedSelection);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    setAllColumnsShowFocus(true);
     setIconSize(QSize(d->iconSize, d->iconSize));
-    setSortingEnabled(true);
-    setColumnCount(5);
     setHeaderLabels(QStringList() << i18n("Ref. images")
                                   << i18n("Ref. dates")
                                   << i18n("Ref. albums")

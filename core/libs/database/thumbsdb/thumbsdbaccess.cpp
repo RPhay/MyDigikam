@@ -232,7 +232,7 @@ bool ThumbsDbAccess::checkReadyForUse(InitializationObserver* const observer)
         return false;
     }
 
-    // create an object with private shortcut constructor
+    // Create an object with private shortcut constructor
 
     ThumbsDbAccess access(false);
 
@@ -258,11 +258,15 @@ bool ThumbsDbAccess::checkReadyForUse(InitializationObserver* const observer)
         }
     }
 
-    // avoid endless loops (if called methods create new ThumbsDbAccess objects)
+    // Avoid endless loops (if called methods create new ThumbsDbAccess objects)
 
     d->initializing = true;
 
-    // update schema
+    // Check or set WAL mode for SQLite database from DbEngineParameters
+
+    d->backend->checkOrSetWALMode();
+
+    // Update schema
 
     ThumbsDbSchemaUpdater updater(&access);
     updater.setObserver(observer);

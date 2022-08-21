@@ -33,8 +33,6 @@
 #include "AudioEncoder.h"
 #include "AVMuxer.h"
 #include "LibAVFilter.h"
-#include <VideoDecoder.h>
-
 
 using namespace QtAV;
 
@@ -54,7 +52,7 @@ private Q_SLOTS:
         QVERIFY(audioCodecs.size() > 0);
         //QVERIFY(audioCodecs.contains(QLatin1String("mp3")));
     }
-        
+
     void EncoderConfig()
     {
         auto videoCodecs = VideoEncoder::supportedCodecs();
@@ -71,18 +69,18 @@ private Q_SLOTS:
         auto formats = AVMuxer::supportedFormats();
         QVERIFY(formats.size() > 0);
         //QVERIFY(formats.contains(QLatin1String("mpeg")));
-        
+
         auto extensions = AVMuxer::supportedExtensions();
         QVERIFY(extensions.size() > 0);
         //QVERIFY(extensions.contains(QLatin1String("xbm")));
     }
-    
+
     void LibAvConfig()
     {
         auto videoFilters = LibAVFilter::videoFilters();
         QVERIFY(videoFilters.size() > 0);
         //QVERIFY(videoFilters.contains(QLatin1String("chromakey")));
-        
+
         auto audioFilters = LibAVFilter::audioFilters();
         QVERIFY(audioFilters.size() > 0);
         //QVERIFY(audioFilters.contains(QLatin1String("earwax")));
@@ -90,4 +88,5 @@ private Q_SLOTS:
 };
 
 QTEST_MAIN(CheckConfig)
+
 #include "checkconfig_utest.moc"

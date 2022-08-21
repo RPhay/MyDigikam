@@ -53,6 +53,7 @@ TagMngrListView::TagMngrListView(QWidget* const parent)
     : QTreeView(parent)
 {
     setRootIsDecorated(false);
+    setUniformRowHeights(true);
     setAlternatingRowColors(true);
 }
 

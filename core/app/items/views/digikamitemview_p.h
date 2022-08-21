@@ -70,6 +70,7 @@ public:
 
     bool                     overlaysActive;
     bool                     fullscreenActive;
+    bool                     runningFaceAction;
 
     ItemRotateOverlay*       rotateLeftOverlay;
     ItemRotateOverlay*       rotateRightOverlay;

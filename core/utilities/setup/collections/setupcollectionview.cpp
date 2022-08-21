@@ -320,9 +320,10 @@ void SetupCollectionDelegate::updateEditorGeometry(QWidget* editor, const QStyle
 SetupCollectionTreeView::SetupCollectionTreeView(QWidget* const parent)
     : QTreeView(parent)
 {
-    setRootIsDecorated(false);
-    setExpandsOnDoubleClick(false);
     setHeaderHidden(true);
+    setRootIsDecorated(false);
+    setUniformRowHeights(true);
+    setExpandsOnDoubleClick(false);
 
     // Set custom delegate
 
@@ -1001,7 +1002,7 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
 
         if ((role == Qt::BackgroundRole) && item.appended)
         {
-             return QPalette().alternateBase().color();
+             return QPalette().alternateBase();
         }
 
         switch (index.column())

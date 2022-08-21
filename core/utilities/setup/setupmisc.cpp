@@ -59,8 +59,14 @@
 #include "metaenginesettings.h"
 #include "applicationsettings.h"
 #include "systemsettingswidget.h"
+#include "spellcheckconfig.h"
 #include "onlineversionchecker.h"
 #include "setup.h"
+#include "localizeconfig.h"
+
+#ifdef HAVE_SONNET
+#   include "spellcheckconfig.h"
+#endif
 
 namespace Digikam
 {
@@ -101,6 +107,14 @@ public:
         applicationFont                         (nullptr),
         minimumSimilarityBound                  (nullptr),
         systemSettingsWidget                    (nullptr),
+
+#ifdef HAVE_SONNET
+
+        spellCheckWidget                        (nullptr),
+
+#endif
+
+        localizeWidget                          (nullptr),
         groupingButtons                         (QHash<int, QButtonGroup*>())
     {
     }
@@ -143,6 +157,13 @@ public:
 
     SystemSettingsWidget*     systemSettingsWidget;
 
+#ifdef HAVE_SONNET
+
+    SpellCheckConfig*         spellCheckWidget;
+
+#endif
+
+    LocalizeConfig*           localizeWidget;
     QHash<int, QButtonGroup*> groupingButtons;
 };
 
@@ -348,6 +369,7 @@ SetupMisc::SetupMisc(QWidget* const parent)
 #ifndef HAVE_APPSTYLE_SUPPORT
 
     // See Bug #365262
+
     appStyleHbox->setVisible(false);
 
 #endif
@@ -413,12 +435,10 @@ SetupMisc::SetupMisc(QWidget* const parent)
 
     d->tab->insertTab(Appearance, appearancePanel, i18nc("@title:tab", "Appearance"));
 
-    // --------------------------------------------------------
+    // -- Grouping Options -------------------------------------
 
     QWidget* const groupingPanel = new QWidget(d->tab);
     QGridLayout* const grid      = new QGridLayout(groupingPanel);
-
-    // --------------------------------------------------------
 
     QLabel* const description    = new QLabel(i18n("Perform the following operations on all group members:"), groupingPanel);
     description->setToolTip(i18n("When images are grouped the following operations<br/>"
@@ -451,8 +471,6 @@ SetupMisc::SetupMisc(QWidget* const parent)
         d->groupingButtons.value(i)->addButton(new QRadioButton(groupingPanel), 2);
     }
 
-    // --------------------------------------------------------
-
     grid->addWidget(description, 0, 0, 1, 4);
     grid->addWidget(noLabel,     1, 1, 1, 1);
     grid->addWidget(yesLabel,    1, 2, 1, 1);
@@ -481,6 +499,20 @@ SetupMisc::SetupMisc(QWidget* const parent)
     d->systemSettingsWidget = new SystemSettingsWidget(d->tab);
 
     d->tab->insertTab(System, d->systemSettingsWidget, i18nc("@title:tab", "System"));
+
+    // -- Spell Check and localize Options --------------------------------------
+
+#ifdef HAVE_SONNET
+
+    d->spellCheckWidget = new SpellCheckConfig(d->tab);
+
+    d->tab->insertTab(SpellCheck, d->spellCheckWidget, i18nc("@title:tab", "Spellcheck"));
+
+#endif
+
+    d->localizeWidget = new LocalizeConfig(d->tab);
+
+    d->tab->insertTab(Localize, d->localizeWidget, i18nc("@title:tab", "Localize"));
 
     // --------------------------------------------------------
 
@@ -570,6 +602,14 @@ void SetupMisc::applySettings()
     settings->setIconTheme(d->applicationIcon->currentData().toString());
     settings->setApplicationFont(d->applicationFont->font());
     settings->saveSettings();
+
+#ifdef HAVE_SONNET
+
+    d->spellCheckWidget->applySettings();
+
+#endif
+
+    d->localizeWidget->applySettings();
 }
 
 void SetupMisc::readSettings()
@@ -614,6 +654,8 @@ void SetupMisc::readSettings()
 
     d->applicationIcon->setCurrentIndex(d->applicationIcon->findData(settings->getIconTheme()));
     d->applicationFont->setFont(settings->getApplicationFont());
+
+    // NOTE: Spellcheck and Localize read settings is done in widget constructor.
 }
 
 } // namespace Digikam

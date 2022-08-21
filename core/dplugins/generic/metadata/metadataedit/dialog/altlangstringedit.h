@@ -4,8 +4,8 @@
  * https://www.digikam.org
  *
  * Date        : 2007-10-18
- * Description : a widget to edit a tag with multiple alternative
- *               language string entries.
+ * Description : a widget to edit multiple alternative
+ *               language string entries with an activation checkbox.
  *
  * Copyright (C) 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -31,29 +31,28 @@
 // Local includes
 
 #include "dmetadata.h"
+#include "altlangstredit.h"
 
 using namespace Digikam;
 
 namespace DigikamGenericMetadataEditPlugin
 {
 
-class AltLangStringsEdit : public QWidget
+class AltLangStringsEdit : public AltLangStrEdit
 {
     Q_OBJECT
 
 public:
 
     explicit AltLangStringsEdit(QWidget* const parent, const QString& title, const QString& desc);
-    ~AltLangStringsEdit() override;
-
-    void setValues(const DMetadata::AltLangMap& values);
-    bool getValues(DMetadata::AltLangMap& oldValues, DMetadata::AltLangMap& newValues);
+    ~AltLangStringsEdit()                                   override;
 
     void setValid(bool v);
-    bool isValid()              const;
+    bool isValid()                                   const;
 
-    QString defaultAltLang()    const;
-    bool    asDefaultAltLang()  const;
+    void setValues(const DMetadata::AltLangMap& values)     override;
+    bool getValues(DMetadata::AltLangMap& oldValues,
+                   DMetadata::AltLangMap& newValues) const;
 
 Q_SIGNALS:
 

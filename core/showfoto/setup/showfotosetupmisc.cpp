@@ -55,6 +55,11 @@
 #include "systemsettingswidget.h"
 #include "onlineversionchecker.h"
 #include "showfotosetup.h"
+#include "localizeconfig.h"
+
+#ifdef HAVE_SONNET
+#   include "spellcheckconfig.h"
+#endif
 
 using namespace Digikam;
 
@@ -85,6 +90,14 @@ public:
         applicationIcon         (nullptr),
         applicationFont         (nullptr),
         systemSettingsWidget    (nullptr),
+
+#ifdef HAVE_SONNET
+
+        spellCheckWidget        (nullptr),
+
+#endif
+
+        localizeWidget          (nullptr),
         settings                (ShowfotoSettings::instance())
     {
     }
@@ -114,6 +127,13 @@ public:
 
     SystemSettingsWidget* systemSettingsWidget;
 
+#ifdef HAVE_SONNET
+
+    SpellCheckConfig*     spellCheckWidget;
+
+#endif
+
+    LocalizeConfig*       localizeWidget;
     ShowfotoSettings*     settings;
 };
 
@@ -326,6 +346,20 @@ ShowfotoSetupMisc::ShowfotoSetupMisc(QWidget* const parent)
 
     d->tab->insertTab(System, d->systemSettingsWidget, i18nc("@title:tab", "System"));
 
+    // -- Spell Check and Localize Options --------------------------------------
+
+#ifdef HAVE_SONNET
+
+    d->spellCheckWidget = new SpellCheckConfig(d->tab);
+
+    d->tab->insertTab(SpellCheck, d->spellCheckWidget, i18nc("@title:tab", "Spellcheck"));
+
+#endif
+
+    d->localizeWidget = new LocalizeConfig(d->tab);
+
+    d->tab->insertTab(Localize, d->localizeWidget, i18nc("@title:tab", "Localize"));
+
     // --------------------------------------------------------
 
     readSettings();
@@ -386,6 +420,8 @@ void ShowfotoSetupMisc::readSettings()
 
     d->applicationIcon->setCurrentIndex(d->applicationIcon->findData(d->settings->getIconTheme()));
     d->applicationFont->setFont(d->settings->getApplicationFont());
+
+    // NOTE: Spellcheck and Localize read settings is done in widget constructor.
 }
 
 void ShowfotoSetupMisc::applySettings()
@@ -412,6 +448,14 @@ void ShowfotoSetupMisc::applySettings()
     d->settings->setIconTheme(d->applicationIcon->currentData().toString());
     d->settings->setApplicationFont(d->applicationFont->font());
     d->settings->syncConfig();
+
+#ifdef HAVE_SONNET
+
+    d->spellCheckWidget->applySettings();
+
+#endif
+
+    d->localizeWidget->applySettings();
 }
 
 } // namespace ShowFoto

@@ -138,12 +138,13 @@ CameraItemList::CameraItemList(QWidget* const parent)
     : QTreeWidget(parent),
       d          (new Private)
 {
+    setColumnCount(2);
     setRootIsDecorated(false);
+    setUniformRowHeights(true);
+    setAllColumnsShowFocus(true);
     setSelectionMode(QAbstractItemView::SingleSelection);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    setAllColumnsShowFocus(true);
     setIconSize(QSize(d->iconSize, d->iconSize));
-    setColumnCount(2);
     setHeaderLabels(QStringList() << i18nc("@title", "Thumb") << i18nc("@title", "File Name"));
     header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
     header()->setSectionResizeMode(1, QHeaderView::Stretch);

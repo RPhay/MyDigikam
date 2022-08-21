@@ -583,14 +583,17 @@ void AbstractAlbumTreeView::dragMoveEvent(QDragMoveEvent* e)
 #else
         const QModelIndex index     = indexVisuallyAt(e->pos());
 #endif
-        const Qt::DropAction action = handler->accepts(e, m_albumFilterModel->mapToSourceAlbumModel(index));
+        const QModelIndex source    = m_albumFilterModel->mapToSourceAlbumModel(index);
+        const Qt::DropAction action = handler->accepts(e, source);
 
         if (action == Qt::IgnoreAction)
         {
+            m_albumModel->setDropIndex(QModelIndex());
             e->ignore();
         }
         else
         {
+            m_albumModel->setDropIndex(source);
             e->setDropAction(action);
             e->accept();
         }
@@ -600,6 +603,8 @@ void AbstractAlbumTreeView::dragMoveEvent(QDragMoveEvent* e)
 void AbstractAlbumTreeView::dragLeaveEvent(QDragLeaveEvent* e)
 {
     QTreeView::dragLeaveEvent(e);
+
+    m_albumModel->setDropIndex(QModelIndex());
 }
 
 void AbstractAlbumTreeView::dropEvent(QDropEvent* e)
@@ -620,6 +625,8 @@ void AbstractAlbumTreeView::dropEvent(QDropEvent* e)
             e->accept();
         }
     }
+
+    m_albumModel->setDropIndex(QModelIndex());
 }
 
 bool AbstractAlbumTreeView::viewportEvent(QEvent* event)

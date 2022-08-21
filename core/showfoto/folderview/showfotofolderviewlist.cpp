@@ -86,6 +86,7 @@ ShowfotoFolderViewList::ShowfotoFolderViewList(ShowfotoFolderViewSideBar* const 
     setObjectName(QLatin1String("ShowfotoFolderViewList"));
     setRootIsDecorated(false);
     setItemsExpandable(false);
+    setUniformRowHeights(true);
     setExpandsOnDoubleClick(false);
     setAlternatingRowColors(true);
     setIconSize(QSize(32, 32));

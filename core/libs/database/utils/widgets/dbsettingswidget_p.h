@@ -30,6 +30,7 @@
 // Qt includes
 
 #include <QApplication>
+#include <QCheckBox>
 #include <QComboBox>
 #include <QDir>
 #include <QFileInfo>
@@ -93,6 +94,7 @@ public:
         dbType                  (nullptr),
         dbPathLabel             (nullptr),
         dbThumbsLabel           (nullptr),
+        walLabel                (nullptr),
         sqlInit                 (nullptr),
         expertSettings          (nullptr),
         dbNoticeBox             (nullptr),
@@ -100,6 +102,7 @@ public:
         tab                     (nullptr),
         dbPathEdit              (nullptr),
         dbNameThumbs            (nullptr),
+        walModeCheck            (nullptr),
         dbBinariesWidget        (nullptr),
         ignoreDirectoriesBox    (nullptr),
         ignoreDirectoriesEdit   (nullptr),
@@ -122,6 +125,7 @@ public:
     QComboBox*         dbType;
     QLabel*            dbPathLabel;
     QLabel*            dbThumbsLabel;
+    QLabel*            walLabel;
     QTextBrowser*      sqlInit;
     QGroupBox*         expertSettings;
     QGroupBox*         dbNoticeBox;
@@ -130,6 +134,8 @@ public:
 
     DFileSelector*     dbPathEdit;
     DFileSelector*     dbNameThumbs;
+
+    QCheckBox*         walModeCheck;
 
     DBinarySearch*     dbBinariesWidget;
 

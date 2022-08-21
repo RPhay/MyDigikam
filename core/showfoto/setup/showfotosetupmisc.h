@@ -48,7 +48,9 @@ public:
     {
         Behaviour = 0,
         Appearance,
-        System
+        System,
+        SpellCheck,
+        Localize
     };
 
 public:

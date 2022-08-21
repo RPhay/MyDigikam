@@ -127,7 +127,7 @@ ShowfotoFolderViewSideBar::ShowfotoFolderViewSideBar(Showfoto* const parent)
     QVBoxLayout* const layout  = new QVBoxLayout(this);
     layout->addWidget(d->fsbar);
     layout->addWidget(d->splitter);
-    layout->setContentsMargins(0, 0, 0, 0);
+    layout->setContentsMargins(QMargins());
 
     // --- Setup connections
 

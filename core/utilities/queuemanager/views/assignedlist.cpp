@@ -128,8 +128,9 @@ AssignedListView::AssignedListView(QWidget* const parent)
 
     setContextMenuPolicy(Qt::CustomContextMenu);
     setSortingEnabled(false);
-    setAllColumnsShowFocus(true);
     setRootIsDecorated(false);
+    setUniformRowHeights(true);
+    setAllColumnsShowFocus(true);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setColumnCount(2);
     setHeaderHidden(true);

@@ -290,7 +290,7 @@ bool CoreDbAccess::checkReadyForUse(InitializationObserver* const observer)
         return false;
     }
 
-    // create an object with private shortcut constructor
+    // Create an object with private shortcut constructor
 
     CoreDbAccess access(false);
 
@@ -318,11 +318,15 @@ bool CoreDbAccess::checkReadyForUse(InitializationObserver* const observer)
         }
     }
 
-    // avoid endless loops (if called methods create new CoreDbAccess objects)
+    // Avoid endless loops (if called methods create new CoreDbAccess objects)
 
     d->initializing = true;
 
-    // update schema
+    // Check or set WAL mode for SQLite database from DbEngineParameters
+
+    d->backend->checkOrSetWALMode();
+
+    // Update schema
 
     CoreDbSchemaUpdater updater(access.db(), access.backend(), access.parameters());
     updater.setCoreDbAccess(&access);
@@ -337,11 +341,11 @@ bool CoreDbAccess::checkReadyForUse(InitializationObserver* const observer)
         return false;
     }
 
-    // set identifier again
+    // Set identifier again
 
     d->databaseWatch->setDatabaseIdentifier(d->db->databaseUuid().toString());
 
-    // initialize CollectionManager
+    // Initialize CollectionManager
 
     CollectionManager::instance()->refresh();
 

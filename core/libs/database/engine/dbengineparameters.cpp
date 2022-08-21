@@ -66,6 +66,8 @@ static const char* configDatabaseUsername                    = "Database Usernam
 static const char* configDatabasePassword                    = "Database Password";          ///< For compatbilitity. Use encrypted version instead.
 static const char* configDatabaseEncryptedPassword           = "Database Encrypted Password";
 static const char* configDatabaseConnectOptions              = "Database Connectoptions";
+static const char* configDatabaseWALMode                     = "Database WAL Mode";
+
 /// Legacy for older versions.
 static const char* configDatabaseFilePathEntry               = "Database File Path";
 static const char* configAlbumPathEntry                      = "Album Path";
@@ -88,6 +90,7 @@ QString DbEngineParameters::internalServerPrivatePath()
 
 DbEngineParameters::DbEngineParameters()
     : port          (-1),
+      walMode       (false),
       internalServer(false)
 {
 }
@@ -97,6 +100,7 @@ DbEngineParameters::DbEngineParameters(const QString& _type,
                                        const QString& _connectOptions,
                                        const QString& _hostName,
                                        int            _port,
+                                       bool           _walMode,
                                        bool           _internalServer,
                                        const QString& _userName,
                                        const QString& _password,
@@ -112,6 +116,7 @@ DbEngineParameters::DbEngineParameters(const QString& _type,
       connectOptions                (_connectOptions),
       hostName                      (_hostName),
       port                          (_port),
+      walMode                       (_walMode),
       internalServer                (_internalServer),
       userName                      (_userName),
       password                      (_password),
@@ -131,28 +136,36 @@ DbEngineParameters::DbEngineParameters(const QUrl& url)
       connectOptions        (QUrlQuery(url).queryItemValue(QLatin1String("connectOptions"))),
       hostName              (QUrlQuery(url).queryItemValue(QLatin1String("hostName"))),
       port                  (-1),
+      walMode               (false),
       internalServer        (false),
       databaseNameThumbnails(QUrlQuery(url).queryItemValue(QLatin1String("databaseNameThumbnails"))),
       databaseNameFace      (QUrlQuery(url).queryItemValue(QLatin1String("databaseNameFace"))),
       databaseNameSimilarity(QUrlQuery(url).queryItemValue(QLatin1String("databaseNameSimilarity")))
 {
-    QString queryPort   = QUrlQuery(url).queryItemValue(QLatin1String("port"));
+    QString queryPort    = QUrlQuery(url).queryItemValue(QLatin1String("port"));
 
     if (!queryPort.isNull())
     {
         port = queryPort.toInt();
     }
 
+    QString queryWalMode = QUrlQuery(url).queryItemValue(QLatin1String("walMode"));
+
+    if (!queryWalMode.isNull())
+    {
+        walMode = (queryWalMode == QLatin1String("true"));
+    }
+
 #if defined(HAVE_MYSQLSUPPORT) && defined(HAVE_INTERNALMYSQL)
 
-    QString queryServer = QUrlQuery(url).queryItemValue(QLatin1String("internalServer"));
+    QString queryServer  = QUrlQuery(url).queryItemValue(QLatin1String("internalServer"));
 
     if (!queryServer.isNull())
     {
         internalServer = (queryServer == QLatin1String("true"));
     }
 
-    queryServer         = QUrlQuery(url).queryItemValue(QLatin1String("internalServerPath"));
+    queryServer          = QUrlQuery(url).queryItemValue(QLatin1String("internalServerPath"));
 
     if (!queryServer.isNull())
     {
@@ -203,6 +216,11 @@ void DbEngineParameters::insertInUrl(QUrl& url) const
         q.addQueryItem(QLatin1String("port"), QString::number(port));
     }
 
+    if (walMode)
+    {
+        q.addQueryItem(QLatin1String("walMode"), QLatin1String("true"));
+    }
+
     if (internalServer)
     {
         q.addQueryItem(QLatin1String("internalServer"),              QLatin1String("true"));
@@ -237,6 +255,7 @@ void DbEngineParameters::removeFromUrl(QUrl& url)
     q.removeQueryItem(QLatin1String("connectOptions"));
     q.removeQueryItem(QLatin1String("hostName"));
     q.removeQueryItem(QLatin1String("port"));
+    q.removeQueryItem(QLatin1String("walMode"));
     q.removeQueryItem(QLatin1String("internalServer"));
     q.removeQueryItem(QLatin1String("internalServerPath"));
     q.removeQueryItem(QLatin1String("internalServerMysqlAdminCmd"));
@@ -259,6 +278,7 @@ bool DbEngineParameters::operator==(const DbEngineParameters& other) const
             (connectOptions              == other.connectOptions)              &&
             (hostName                    == other.hostName)                    &&
             (port                        == other.port)                        &&
+            (walMode                     == other.walMode)                     &&
             (internalServer              == other.internalServer)              &&
             (internalServerDBPath        == other.internalServerDBPath)        &&
             (internalServerMysqlAdminCmd == other.internalServerMysqlAdminCmd) &&
@@ -364,6 +384,7 @@ void DbEngineParameters::readFromConfig(const QString& configGroup)
         databaseNameThumbnails  = group.readPathEntry(configDatabaseNameThumbnails,          QString());
         databaseNameFace        = group.readPathEntry(configDatabaseNameFace,                QString());
         databaseNameSimilarity  = group.readPathEntry(configDatabaseNameSimilarity,          QString());
+        walMode                 = group.readEntry(configDatabaseWALMode,                     false);
     }
     else
     {
@@ -636,6 +657,7 @@ void DbEngineParameters::writeToConfig(const QString& configGroup) const
     group.writeEntry(configDatabaseNameSimilarity,              dbNameSimilarity);
     group.writeEntry(configDatabaseHostName,                    hostName);
     group.writeEntry(configDatabasePort,                        port);
+    group.writeEntry(configDatabaseWALMode,                     walMode);
     group.writeEntry(configDatabaseUsername,                    userName);
 
     O0SimpleCrypt crypto(QCryptographicHash::hash(configDatabaseEncryptedPassword, QCryptographicHash::Sha1).toULongLong());
@@ -743,7 +765,6 @@ QString DbEngineParameters::similarityDatabaseDirectorySQLite(const QString& pat
     return path;
 }
 
-
 DbEngineParameters DbEngineParameters::defaultParameters(const QString& databaseType)
 {
     DbEngineParameters parameters;
@@ -758,6 +779,7 @@ DbEngineParameters DbEngineParameters::defaultParameters(const QString& database
     parameters.databaseNameSimilarity      = config.databaseName;
     parameters.userName                    = config.userName;
     parameters.password                    = config.password;
+    parameters.walMode                     = false;
     parameters.internalServer              = (databaseType == QLatin1String("QMYSQL"));
     parameters.internalServerDBPath        = (databaseType == QLatin1String("QMYSQL")) ? internalServerPrivatePath() : QString();
     parameters.internalServerMysqlAdminCmd = (databaseType == QLatin1String("QMYSQL")) ? defaultMysqlAdminCmd()      : QString();
@@ -870,7 +892,8 @@ QDebug operator<<(QDebug dbg, const DbEngineParameters& p)
     dbg.nospace() << "   DB Similarity Name:        " << p.databaseNameSimilarity                            << QT_ENDL;
     dbg.nospace() << "   Connect Options:           " << p.connectOptions                                    << QT_ENDL;
     dbg.nospace() << "   Host Name:                 " << p.hostName                                          << QT_ENDL;
-    dbg.nospace() << "   Host port:                 " << p.port                                              << QT_ENDL;
+    dbg.nospace() << "   Host Port:                 " << p.port                                              << QT_ENDL;
+    dbg.nospace() << "   WAL Mode:                  " << p.walMode                                           << QT_ENDL;
     dbg.nospace() << "   Internal Server:           " << p.internalServer                                    << QT_ENDL;
     dbg.nospace() << "   Internal Server Path:      " << p.internalServerDBPath                              << QT_ENDL;
     dbg.nospace() << "   Internal Server Admin Cmd: " << p.internalServerMysqlAdminCmd                       << QT_ENDL;

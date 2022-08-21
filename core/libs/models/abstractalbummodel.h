@@ -100,6 +100,11 @@ public:
     ~AbstractAlbumModel() override;
 
     /**
+     * Set current index from QDragMoveEvent
+     */
+    void setDropIndex(const QModelIndex& index);
+
+    /**
      * Set a drag drop handler
      */
     void setDragDropHandler(AlbumModelDragDropHandler* handler);

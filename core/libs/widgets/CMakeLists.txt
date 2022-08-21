@@ -11,6 +11,11 @@ set(libtextwidgets_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/text/modelcompleter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/searchtextbar.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/dtextedit.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/spellchecksettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/spellcheckcontainer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/spellcheckconfig.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/localizeconfig.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator.cpp
 )
 
 set(liblayouttools_SRCS
@@ -151,6 +156,7 @@ include_directories(
     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Gui,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Sql,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Network,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Concurrent,INTERFACE_INCLUDE_DIRECTORIES>
 
     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
@@ -160,6 +166,7 @@ include_directories(
 )
 
 if(KF5Sonnet_FOUND)
+    include_directories($<TARGET_PROPERTY:KF5::SonnetCore,INTERFACE_INCLUDE_DIRECTORIES>)
     include_directories($<TARGET_PROPERTY:KF5::SonnetUi,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 

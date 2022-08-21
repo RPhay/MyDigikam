@@ -93,8 +93,8 @@ XMPContent::XMPContent(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->captionEdit          = new AltLangStringsEdit(this, i18nc("content description", "Caption:"),
-                                                     i18n("Set here the content description."));
+    d->captionEdit          = new AltLangStringsEdit(this, i18nc("content description", "Captions:"),
+                                                     i18n("Set here the content descriptions."));
 
     QGroupBox* const syncOptions  = new QGroupBox(i18n("Default Language Caption Options"), this);
     QVBoxLayout* const vlay       = new QVBoxLayout(syncOptions);
