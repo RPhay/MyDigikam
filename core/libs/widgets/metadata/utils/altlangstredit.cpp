@@ -587,16 +587,17 @@ void AltLangStrEdit::slotTextChanged()
 {
     QString editedText   = d->valueEdit->toPlainText();
     QString previousText = d->values.value(d->currentLanguage);
+    bool textChanged     = (editedText != previousText);
 
-    if      (editedText.isEmpty())
+    if      (editedText.isEmpty() && textChanged)
     {
         slotDeleteValue();
     }
-    else if (previousText.isNull())
+    else if (previousText.isNull() && textChanged)
     {
         addCurrent();
     }
-    else if (editedText != previousText)
+    else if (textChanged)
     {
         // we cannot trust that the text actually changed
         // (there are bogus signals caused by spell checking, see bug #141663)
