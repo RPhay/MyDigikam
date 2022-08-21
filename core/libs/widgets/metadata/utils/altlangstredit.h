@@ -28,6 +28,7 @@
 
 #include <QWidget>
 #include <QString>
+#include <QStringList>
 #include <QMap>
 
 // Local includes
@@ -109,6 +110,11 @@ public:
      * Return the litteral name of RFC 3066 language code (format FR-fr for ex).
      */
     static QString languageNameRFC3066(const QString& code);
+
+    /**
+     * Return all language codes available following the RFC 3066.
+     */
+    static QStringList alllanguageRFC3066();
 
 Q_SIGNALS:
 
