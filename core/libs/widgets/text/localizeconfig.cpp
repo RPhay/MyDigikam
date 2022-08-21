@@ -113,7 +113,7 @@ LocalizeConfig::LocalizeConfig(QWidget* const parent)
     d->langList->setAllColumnsShowFocus(true);
     d->langList->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     d->langList->setColumnCount(2);
-    d->langList->setHeaderLabels(QStringList() << i18nc("@title: translator language code", "Code")
+    d->langList->setHeaderLabels(QStringList() << i18nc("@title: translator language code", "Code (Language-Country)")
                                                << i18nc("@title: translator language name", "Name"));
     d->langList->header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
     d->langList->header()->setSectionResizeMode(1, QHeaderView::Stretch);
@@ -126,7 +126,7 @@ LocalizeConfig::LocalizeConfig(QWidget* const parent)
     grid->addWidget(d->translatorCB,     0, 1, 1, 1);
     grid->addWidget(d->translatorLabel,  1, 0, 1, 3);
     grid->addWidget(d->langGroup,        2, 0, 1, 3);
-    grid->setRowStretch(3, 10);
+    grid->setRowStretch(2, 10);
     grid->setColumnStretch(2, 10);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);
