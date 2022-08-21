@@ -104,7 +104,10 @@ public:
 
     virtual void setValues(const MetaEngine::AltLangMap& values);
 
-    static QString languageName(const QString& code);
+    /**
+     * Return the litteral name of RFC 3066 language code (format FR-fr for ex).
+     */
+    static QString languageNameRFC3066(const QString& code);
 
 Q_SIGNALS:
 

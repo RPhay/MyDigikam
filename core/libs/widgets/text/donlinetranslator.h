@@ -582,14 +582,14 @@ public:
     static bool isSupportTranslation(Engine engine, Language lang);
 
     /**
-     * Convert language ISO3066 to supported language code
+     * Convert language RFC3066 to supported language code
      */
-    static QString fromISO3066(const QString& langCode3066);
+    static QString fromRFC3066(const QString& langCodeRFC3066);
 
     /**
-     * Return a list of all supported language in ISO3066.
+     * Return a list of all supported language in RFC3066.
      */
-    static QStringList supportedISO3066();
+    static QStringList supportedRFC3066();
 
     /**
      * Return the engine litteral name.
@@ -764,7 +764,7 @@ private:
 private:
 
     static const QMap<Language, QString>             s_genericLanguageCodes;
-    static const QMap<QString, QString>              s_iso3066LanguageCodes;
+    static const QMap<QString, QString>              s_rfc3066LanguageCodes;
 
     // Engines have some language codes exceptions
 

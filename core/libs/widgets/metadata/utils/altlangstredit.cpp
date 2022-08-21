@@ -108,7 +108,8 @@ public:
         /**
          * NOTE: We cannot use KLocale::allLanguagesList() here because KDE only
          * support 2 characters country codes. XMP require 2+2 characters language+country
-         * following ISO 3066 (babelwiki.babelzilla.org/index.php?title=Language_codes)
+         * following RFC 3066 (www.i18nguy.com/unicode/language-identifiers.html)
+         * ISO-639 two-letter code with ISO-3166 two-letter country code.
          */
 
         // The first one from the list is the Default Language code specified by XMP paper
@@ -396,9 +397,9 @@ AltLangStrEdit::~AltLangStrEdit()
     delete d;
 }
 
-// Static method
+// NOTE: Static method
 
-QString AltLangStrEdit::languageName(const QString& code)
+QString AltLangStrEdit::languageNameRFC3066(const QString& code)
 {
     Private d;
     Private::LanguageCodeMap::Iterator it = d.languageCodeMap.find(code);
@@ -670,24 +671,24 @@ void AltLangStrEdit::loadTranslationTargets()
 {
     d->translateAction->m_list->clear();
 
-    QStringList allISO3066 = DOnlineTranslator::supportedISO3066();
-    QStringList engineISO3066;
+    QStringList allRFC3066 = DOnlineTranslator::supportedRFC3066();
+    QStringList engineRFC3066;
 
-    Q_FOREACH (const QString& iso, allISO3066)
+    Q_FOREACH (const QString& rfc, allRFC3066)
     {
         if (
             DOnlineTranslator::isSupportTranslation(SpellCheckSettings::instance()->settings().translatorEngine,
-                                                    DOnlineTranslator::language(DOnlineTranslator::fromISO3066(iso)))
+                                                    DOnlineTranslator::language(DOnlineTranslator::fromRFC3066(rfc)))
            )
         {
-            engineISO3066 << iso;
+            engineRFC3066 << rfc;
         }
     }
 
     for (Private::LanguageCodeMap::Iterator it = d->languageCodeMap.begin() ;
          it != d->languageCodeMap.end() ; ++it)
     {
-        if (!it.key().isEmpty() && engineISO3066.contains(it.key()))
+        if (!it.key().isEmpty() && engineRFC3066.contains(it.key()))
         {
             QListWidgetItem* const item = new QListWidgetItem(d->translateAction->m_list);
             item->setText(it.key());
@@ -719,10 +720,10 @@ void AltLangStrEdit::slotTranslate(QListWidgetItem* item)
         }
         else
         {
-            srcLang = DOnlineTranslator::language(DOnlineTranslator::fromISO3066(srcCode));
+            srcLang = DOnlineTranslator::language(DOnlineTranslator::fromRFC3066(srcCode));
         }
 
-        trLang       = DOnlineTranslator::language(DOnlineTranslator::fromISO3066(d->trCode));
+        trLang       = DOnlineTranslator::language(DOnlineTranslator::fromRFC3066(d->trCode));
         QString text = textEdit()->text();
 
         qCDebug(DIGIKAM_WIDGETS_LOG) << "Request to translate with Web-service:";
