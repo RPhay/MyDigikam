@@ -54,9 +54,6 @@ public:
     void setDpi(int value);
     void setIsSaveTextFile(bool check);
 
-//    void identifyRawFile(const QUrl& url);               // no need
-//    void identifyRawFiles(const QList<QUrl>& urlList);   // no need
-
     void ocrProcessFile(const QUrl& url);
     void ocrProcessFiles(const QList<QUrl>& urlList);
 
