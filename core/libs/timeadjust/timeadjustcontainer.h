@@ -26,6 +26,7 @@
 // Qt includes
 
 #include <QUrl>
+#include <QMap>
 #include <QDateTime>
 
 // Local includes
@@ -86,6 +87,7 @@ public:
 
     QDateTime calculateAdjustedDate(const QDateTime& originalTime, int index = 0);
     QDateTime getDateTimeFromUrl(const QUrl& url)                   const;
+    QMap<QString, bool> getDateTimeTagsMap()                        const;
 
 public:
 
