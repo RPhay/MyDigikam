@@ -167,7 +167,8 @@ void LocalizeConfig::slotPopulateLanguage()
         }
     }
 
-    d->langGroup->setTitle(i18nc("@title", "Available Languages (%1/%2)", count, d->langList->topLevelItemCount()));
+    d->langGroup->setTitle(i18nc("@title", "Available Trnaslator Languages (%1/%2)",
+                           count, d->langList->topLevelItemCount()));
 }
 
 void LocalizeConfig::applySettings()
