@@ -49,7 +49,11 @@ public:
 
 private Q_SLOTS:
 
-    void slotPopulateLanguage();
+    void slotTranslatorChanged();
+
+private:
+
+    void populateTranslatorLanguages();
 
 private:
 

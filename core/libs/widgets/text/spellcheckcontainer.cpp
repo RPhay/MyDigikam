@@ -65,6 +65,13 @@ void SpellCheckContainer::readFromConfig(KConfigGroup& group)
     ignoredWords.removeDuplicates();
 
     translatorEngine = (DOnlineTranslator::Engine)group.readEntry("TranslatorEngine", (int)DOnlineTranslator::Engine::Google);
+    translatorLang   = group.readEntry("TranslatorLang", QStringList() << QLatin1String("en-US")
+                                                                       << QLatin1String("fr-FR")
+                                                                       << QLatin1String("es-ES")
+                                                                       << QLatin1String("it-IT")
+                                                                       << QLatin1String("de-DE")
+                                                                       << QLatin1String("pt-PT")
+    );
 }
 
 void SpellCheckContainer::writeToConfig(KConfigGroup& group) const
@@ -72,6 +79,7 @@ void SpellCheckContainer::writeToConfig(KConfigGroup& group) const
     group.writeEntry("EnableSpellCheck", enableSpellCheck);
     group.writeEntry("IgnoredWords",     ignoredWords);
     group.writeEntry("TranslatorEngine", (int)translatorEngine);
+    group.writeEntry("TranslatorLang",   translatorLang);
     group.sync();
 }
 
@@ -82,7 +90,9 @@ QDebug operator<<(QDebug dbg, const SpellCheckContainer& inf)
                   << "ignoredWords("
                   << inf.ignoredWords << "), "
                   << "translatorEngine("
-                  << inf.translatorEngine << "), ";
+                  << inf.translatorEngine << "), "
+                  << "translatorLang("
+                  << inf.translatorLang << "), ";
     return dbg.space();
 }
 

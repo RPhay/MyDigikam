@@ -822,11 +822,12 @@ void AltLangStrEdit::loadTranslationTargets()
 
     QStringList allRFC3066 = DOnlineTranslator::supportedRFC3066();
     QStringList engineRFC3066;
+    SpellCheckContainer set = SpellCheckSettings::instance()->settings();
 
     Q_FOREACH (const QString& rfc, allRFC3066)
     {
         if (
-            DOnlineTranslator::isSupportTranslation(SpellCheckSettings::instance()->settings().translatorEngine,
+            DOnlineTranslator::isSupportTranslation(set.translatorEngine,
                                                     DOnlineTranslator::language(DOnlineTranslator::fromRFC3066(rfc)))
            )
         {
@@ -837,7 +838,7 @@ void AltLangStrEdit::loadTranslationTargets()
     for (LanguageCodeMap::const_iterator it = s_rfc3066ForXMP.constBegin() ;
          it != s_rfc3066ForXMP.constEnd() ; ++it)
     {
-        if (!it.key().isEmpty() && engineRFC3066.contains(it.key()))
+        if (!it.key().isEmpty() && set.translatorLang.contains(it.key()))
         {
             QListWidgetItem* const item = new QListWidgetItem(d->translateAction->m_list);
             item->setText(it.key());
