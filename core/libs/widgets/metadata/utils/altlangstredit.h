@@ -28,6 +28,7 @@
 
 #include <QWidget>
 #include <QString>
+#include <QMap>
 
 // Local includes
 
@@ -162,6 +163,9 @@ protected:
     void changeEvent(QEvent* e)                 override;
 
 private:
+
+    typedef QMap<QString, QString> LanguageCodeMap;
+    static const LanguageCodeMap s_rfc3066ForXMP;
 
     class Private;
     Private* const d;
