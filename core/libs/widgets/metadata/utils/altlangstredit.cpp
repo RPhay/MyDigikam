@@ -115,9 +115,9 @@ public:
         // The first one from the list is the Default Language code specified by XMP paper
 
         languageCodeMap.insert(QLatin1String("x-default"), i18nc("@info: country code", "Default Language")                         );
-                                                                                                                                    
-        // Standard RFC 3066 country codes.                                                                                         
-                                                                                                                                    
+
+        // Standard RFC 3066 country codes.
+
         languageCodeMap.insert(QLatin1String("af-ZA"),     i18nc("@info: country code", "Afrikaans (South Africa)")                 );
         languageCodeMap.insert(QLatin1String("am-ET"),     i18nc("@info: country code", "Amharic (Ethiopia)")                       );
         languageCodeMap.insert(QLatin1String("ar-AE"),     i18nc("@info: country code", "Arabic (UAE)")                             );
