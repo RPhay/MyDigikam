@@ -586,7 +586,7 @@ QString AltLangStrEdit::languageNameRFC3066(const QString& code)
     return QString();
 }
 
-QStringList AltLangStrEdit::alllanguageRFC3066()
+QStringList AltLangStrEdit::allLanguagesRFC3066()
 {
     return s_rfc3066ForXMP.keys();
 }
@@ -728,9 +728,10 @@ void AltLangStrEdit::loadLangAltListEntries()
     {
         Q_FOREACH (const QString& item, list)
         {
-              d->languageCB->addItem(item);
-              d->languageCB->setItemIcon(d->languageCB->count() - 1,
-                                         QIcon::fromTheme(QLatin1String("dialog-ok-apply")).pixmap(16, 16));
+            d->languageCB->addItem(item);
+            d->languageCB->setItemIcon(d->languageCB->count() - 1,
+                                       QIcon::fromTheme(QLatin1String("dialog-ok-apply")).pixmap(16, 16));
+            d->languageCB->setItemData(d->languageCB->findText(item), languageNameRFC3066(item), Qt::ToolTipRole);
         }
 
         d->languageCB->insertSeparator(d->languageCB->count());
@@ -738,12 +739,15 @@ void AltLangStrEdit::loadLangAltListEntries()
 
     // ...and now, all the rest...
 
-    for (LanguageCodeMap::const_iterator it = s_rfc3066ForXMP.constBegin() ;
-         it != s_rfc3066ForXMP.constEnd() ; ++it)
+    SpellCheckContainer set = SpellCheckSettings::instance()->settings();
+    QStringList lang        = set.alternativeLang;
+
+    Q_FOREACH (const QString& lg, lang)
     {
-        if (!list.contains(it.key()))
+        if (!list.contains(lg))
         {
-            d->languageCB->addItem(it.key());
+            d->languageCB->addItem(lg);
+            d->languageCB->setItemData(d->languageCB->findText(lg), languageNameRFC3066(lg), Qt::ToolTipRole);
         }
     }
 
@@ -851,31 +855,15 @@ void AltLangStrEdit::loadTranslationTargets()
 {
     d->translateAction->m_list->clear();
 
-    QStringList allRFC3066 = DOnlineTranslator::supportedRFC3066();
-    QStringList engineRFC3066;
+    QStringList allRFC3066  = DOnlineTranslator::supportedRFC3066();
     SpellCheckContainer set = SpellCheckSettings::instance()->settings();
 
-    Q_FOREACH (const QString& rfc, allRFC3066)
+    Q_FOREACH (const QString& lg, set.translatorLang)
     {
-        if (
-            DOnlineTranslator::isSupportTranslation(set.translatorEngine,
-                                                    DOnlineTranslator::language(DOnlineTranslator::fromRFC3066(rfc)))
-           )
-        {
-            engineRFC3066 << rfc;
-        }
-    }
-
-    for (LanguageCodeMap::const_iterator it = s_rfc3066ForXMP.constBegin() ;
-         it != s_rfc3066ForXMP.constEnd() ; ++it)
-    {
-        if (!it.key().isEmpty() && set.translatorLang.contains(it.key()))
-        {
-            QListWidgetItem* const item = new QListWidgetItem(d->translateAction->m_list);
-            item->setText(it.key());
-            item->setToolTip(i18n("Translate to %1", it.value()));
-            d->translateAction->m_list->addItem(item);
-        }
+        QListWidgetItem* const item = new QListWidgetItem(d->translateAction->m_list);
+        item->setText(lg);
+        item->setToolTip(i18n("Translate to %1", languageNameRFC3066(lg)));
+        d->translateAction->m_list->addItem(item);
     }
 }
 

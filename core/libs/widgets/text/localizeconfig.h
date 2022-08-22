@@ -53,6 +53,7 @@ private Q_SLOTS:
 
 private:
 
+    void populateAltLanguages();
     void populateTranslatorLanguages();
 
 private:

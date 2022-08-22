@@ -114,7 +114,7 @@ public:
     /**
      * Return all language codes available following the RFC 3066.
      */
-    static QStringList alllanguageRFC3066();
+    static QStringList allLanguagesRFC3066();
 
 Q_SIGNALS:
 

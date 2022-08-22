@@ -56,12 +56,14 @@ public:
 
 public:
 
-    bool                        enableSpellCheck;
+    bool                        enableSpellCheck;       ///< Enable spell-checking feature.
 
-    QStringList                 ignoredWords;
+    QStringList                 ignoredWords;           ///< Words to ignore with spell-checking.
 
-    DOnlineTranslator::Engine   translatorEngine;
-    QStringList                 translatorLang;
+    DOnlineTranslator::Engine   translatorEngine;       ///< Online translator to use.
+    QStringList                 translatorLang;         ///< List of langues to use with Online translator.
+
+    QStringList                 alternativeLang;        ///< List of langges to use with Alternative Languages Text editor.
 };
 
 //! qDebug() stream operator. Writes property @a inf to the debug output in a nicely formatted way.

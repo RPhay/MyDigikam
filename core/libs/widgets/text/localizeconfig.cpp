@@ -49,6 +49,7 @@
 #include "digikam_debug.h"
 #include "searchtextbar.h"
 #include "dlayoutbox.h"
+#include "dexpanderbox.h"
 
 namespace Digikam
 {
@@ -182,12 +183,17 @@ class Q_DECL_HIDDEN LocalizeConfig::Private
 public:
 
     explicit Private()
-      : translatorCB    (nullptr),
+      : altLangList     (nullptr),
+        altLangGroup    (nullptr),
+        translatorCB    (nullptr),
         translatorLabel (nullptr),
         trLangList      (nullptr),
         trLangGroup     (nullptr)
     {
     }
+
+    LanguagesList*  altLangList;
+    LanguagesView*  altLangGroup;
 
     QStringList     trLangEnabled;
     QComboBox*      translatorCB;
@@ -203,9 +209,15 @@ LocalizeConfig::LocalizeConfig(QWidget* const parent)
     const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                              QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
+    QGridLayout* const grid = new QGridLayout(this);
+
     // --------------------------------------------------------
 
-    QGridLayout* const grid = new QGridLayout(this);
+    d->altLangGroup         = new LanguagesView(this);
+    d->altLangGroup->setTitle(i18nc("@title", "Alternative Languages for Text Editor"));
+    d->altLangList          = d->altLangGroup->m_langList;
+
+    // --------------------------------------------------------
 
     QLabel* const trLabel   = new QLabel(i18n("Online Translator:"), this);
     d->translatorCB         = new QComboBox(this);
@@ -226,25 +238,26 @@ LocalizeConfig::LocalizeConfig(QWidget* const parent)
                                                         "by online Web-services.</p>"), this);
     d->translatorLabel->setWordWrap(true);
 
-    // ---
-
     d->trLangGroup             = new LanguagesView(this);
     d->trLangList              = d->trLangGroup->m_langList;
 
     // --------------------------------------------------------
 
     grid->setAlignment(Qt::AlignTop);
-    grid->addWidget(trLabel,             0, 0, 1, 1);
-    grid->addWidget(d->translatorCB,     0, 1, 1, 1);
-    grid->addWidget(d->translatorLabel,  1, 0, 1, 3);
-    grid->addWidget(d->trLangGroup,      2, 0, 1, 3);
-    grid->setRowStretch(2, 10);
+    grid->addWidget(d->altLangGroup,                       0, 0, 1, 3);
+    grid->addWidget(new DLineWidget(Qt::Horizontal, this), 1, 0, 1, 3);
+    grid->addWidget(trLabel,                               2, 0, 1, 1);
+    grid->addWidget(d->translatorCB,                       2, 1, 1, 1);
+    grid->addWidget(d->translatorLabel,                    3, 0, 1, 3);
+    grid->addWidget(d->trLangGroup,                        4, 0, 1, 3);
+    grid->setRowStretch(4, 10);
     grid->setColumnStretch(2, 10);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);
 
     // --------------------------------------------------------
 
+    populateAltLanguages();
     populateTranslatorLanguages();
     readSettings();
     slotTranslatorChanged();
@@ -258,13 +271,23 @@ LocalizeConfig::~LocalizeConfig()
     delete d;
 }
 
+void LocalizeConfig::populateAltLanguages()
+{
+    d->altLangList->clear();
+
+    Q_FOREACH (const QString& code, AltLangStrEdit::allLanguagesRFC3066())
+    {
+        new QTreeWidgetItem(d->altLangList,
+                            QStringList() << code
+                                          << AltLangStrEdit::languageNameRFC3066(code));
+    }
+}
+
 void LocalizeConfig::populateTranslatorLanguages()
 {
     d->trLangList->clear();
 
-    QStringList iso = DOnlineTranslator::supportedRFC3066();
-
-    Q_FOREACH (const QString& code, iso)
+    Q_FOREACH (const QString& code, DOnlineTranslator::supportedRFC3066())
     {
         new QTreeWidgetItem(d->trLangList,
                             QStringList() << code
@@ -306,18 +329,32 @@ void LocalizeConfig::applySettings()
 
     SpellCheckContainer set;
 
-    set.translatorEngine = (DOnlineTranslator::Engine)d->translatorCB->currentIndex();
+    set.alternativeLang << QLatin1String("x-default");  // This first entry must always be present on the list.
 
-    QTreeWidgetItemIterator it(d->trLangList);
+    QTreeWidgetItemIterator it(d->altLangList);
 
     while (*it)
     {
-        if (((*it)->checkState(0) == Qt::Checked) && !(*it)->isDisabled())
+        if (((*it)->checkState(0) == Qt::Checked))
         {
-            set.translatorLang << (*it)->text(0);
+            set.alternativeLang << (*it)->text(0);
         }
 
         ++it;
+    }
+
+    set.translatorEngine = (DOnlineTranslator::Engine)d->translatorCB->currentIndex();
+
+    QTreeWidgetItemIterator it2(d->trLangList);
+
+    while (*it2)
+    {
+        if (((*it2)->checkState(0) == Qt::Checked) && !(*it2)->isDisabled())
+        {
+            set.translatorLang << (*it2)->text(0);
+        }
+
+        ++it2;
     }
 
     config->setSettings(set);
@@ -334,9 +371,7 @@ void LocalizeConfig::readSettings()
 
     SpellCheckContainer set          = config->settings();
 
-    d->translatorCB->setCurrentIndex(set.translatorEngine);
-
-    QTreeWidgetItemIterator it(d->trLangList);
+    QTreeWidgetItemIterator it(d->altLangList);
 
     while (*it)
     {
@@ -351,9 +386,26 @@ void LocalizeConfig::readSettings()
 
         ++it;
     }
+
+    d->translatorCB->setCurrentIndex(set.translatorEngine);
+
+    QTreeWidgetItemIterator it2(d->trLangList);
+
+    while (*it2)
+    {
+        if (set.translatorLang.contains((*it2)->text(0)))
+        {
+            (*it2)->setCheckState(0, Qt::Checked);
+        }
+        else
+        {
+            (*it2)->setCheckState(0, Qt::Unchecked);
+        }
+
+        ++it2;
+    }
 }
 
 } // namespace Digikam
 
 #include "localizeconfig.moc"
-
