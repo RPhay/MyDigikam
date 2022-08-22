@@ -69,7 +69,7 @@ public:
 
     QWidget* createWidget(QWidget* parent) override
     {
-        m_list = new QListWidget(parent);
+        m_list         = new QListWidget(parent);
         QFontMetrics fontMt(m_list->font());
         QRect fontRect = fontMt.boundingRect(0, 0, m_list->width(), m_list->height(), 0, QLatin1String("XXXXX"));
         int width      =  m_list->contentsMargins().left() + m_list->contentsMargins().right();
@@ -541,7 +541,7 @@ AltLangStrEdit::AltLangStrEdit(QWidget* const parent, unsigned int lines)
     d->grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                              QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
 
-    loadLangAltListEntries();
+    populateLangAltListEntries();
     slotLocalizeChanged();
 
     // --------------------------------------------------------
@@ -706,7 +706,7 @@ void AltLangStrEdit::slotSelectionChanged()
 void AltLangStrEdit::setValues(const MetaEngine::AltLangMap& values)
 {
     d->values    = values;
-    loadLangAltListEntries();
+    populateLangAltListEntries();
 
     d->valueEdit->blockSignals(true);
 
@@ -723,7 +723,7 @@ MetaEngine::AltLangMap& AltLangStrEdit::values() const
     return d->values;
 }
 
-void AltLangStrEdit::loadLangAltListEntries()
+void AltLangStrEdit::populateLangAltListEntries()
 {
     d->languageCB->blockSignals(true);
 
@@ -763,10 +763,32 @@ void AltLangStrEdit::loadLangAltListEntries()
     d->languageCB->insertSeparator(d->languageCB->count());
     d->languageCB->addItem(QIcon::fromTheme(QLatin1String("configure")),
                            i18n("more..."), QLatin1String("SetupLocalize"));
+    d->languageCB->setItemData(d->languageCB->findText(i18n("more...")), i18n("Open localize setup"), Qt::ToolTipRole);
 
     d->languageCB->setCurrentIndex(d->languageCB->findText(d->currentLanguage));
 
     d->languageCB->blockSignals(false);
+}
+
+void AltLangStrEdit::populateTranslationEntries()
+{
+    d->translateAction->m_list->clear();
+
+    QStringList allRFC3066  = DOnlineTranslator::supportedRFC3066();
+    SpellCheckContainer set = SpellCheckSettings::instance()->settings();
+
+    Q_FOREACH (const QString& lg, set.translatorLang)
+    {
+        QListWidgetItem* const item = new QListWidgetItem(d->translateAction->m_list);
+        item->setText(lg);
+        item->setToolTip(i18n("Translate to %1", languageNameRFC3066(lg)));
+        d->translateAction->m_list->addItem(item);
+    }
+
+    QListWidgetItem* const more = new QListWidgetItem(i18n("more..."), nullptr, 9999);
+    more->setIcon(QIcon::fromTheme(QLatin1String("configure")));
+    more->setToolTip(i18n("Open localize setup"));
+    d->translateAction->m_list->addItem(more);
 }
 
 QString AltLangStrEdit::defaultAltLang() const
@@ -810,7 +832,7 @@ void AltLangStrEdit::addCurrent()
     QString text = d->valueEdit->toPlainText();
 
     d->values.insert(d->currentLanguage, text);
-    loadLangAltListEntries();
+    populateLangAltListEntries();
     d->delValueButton->setEnabled(true);
     d->translateButton->setEnabled(true);
 
@@ -862,26 +884,6 @@ void AltLangStrEdit::changeEvent(QEvent* e)
 DTextEdit* AltLangStrEdit::textEdit() const
 {
     return d->valueEdit;
-}
-
-void AltLangStrEdit::loadTranslationTargets()
-{
-    d->translateAction->m_list->clear();
-
-    QStringList allRFC3066  = DOnlineTranslator::supportedRFC3066();
-    SpellCheckContainer set = SpellCheckSettings::instance()->settings();
-
-    Q_FOREACH (const QString& lg, set.translatorLang)
-    {
-        QListWidgetItem* const item = new QListWidgetItem(d->translateAction->m_list);
-        item->setText(lg);
-        item->setToolTip(i18n("Translate to %1", languageNameRFC3066(lg)));
-        d->translateAction->m_list->addItem(item);
-    }
-
-    QListWidgetItem* const more = new QListWidgetItem(i18n("more..."), nullptr, 9999);
-    more->setIcon(QIcon::fromTheme(QLatin1String("configure")));
-    d->translateAction->m_list->addItem(more);
 }
 
 void AltLangStrEdit::slotTranslate(QListWidgetItem* item)
@@ -960,7 +962,7 @@ void AltLangStrEdit::slotTranslationFinished()
 
 void AltLangStrEdit::slotLocalizeChanged()
 {
-    loadTranslationTargets();
+    populateTranslationEntries();
     d->translateButton->setToolTip(i18nc("@info: language edit widget", "Select language to translate with %1",
                                    DOnlineTranslator::engineName(SpellCheckSettings::instance()->settings().translatorEngine)));
 }

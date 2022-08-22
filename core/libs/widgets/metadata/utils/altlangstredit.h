@@ -163,8 +163,8 @@ private Q_SLOTS:
 
 protected:
 
-    void loadLangAltListEntries();
-    void loadTranslationTargets();
+    void populateLangAltListEntries();
+    void populateTranslationEntries();
 
     void changeEvent(QEvent* e)                 override;
 
