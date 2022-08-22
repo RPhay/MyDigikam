@@ -34,7 +34,7 @@
 #include <QTreeWidget>
 #include <QHeaderView>
 #include <QPushButton>
-#include <QListWidget>
+#include <QCheckBox>
 #include <QIcon>
 #include <QTreeWidgetItemIterator>
 
@@ -47,6 +47,8 @@
 #include "spellchecksettings.h"
 #include "altlangstredit.h"
 #include "digikam_debug.h"
+#include "searchtextbar.h"
+#include "dlayoutbox.h"
 
 namespace Digikam
 {
@@ -73,6 +75,106 @@ public:
         header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
         header()->setSectionResizeMode(1, QHeaderView::Stretch);
     }
+
+public Q_SLOTS:
+
+    void slotSearchTextChanged(const SearchTextSettings& settings)
+    {
+        int found = 0;
+
+        QTreeWidgetItemIterator it(this);
+
+        while (*it)
+        {
+            if (
+                (*it)->text(0).contains(settings.text, settings.caseSensitive) ||
+                (*it)->text(1).contains(settings.text, settings.caseSensitive)
+               )
+            {
+                found++;
+                (*it)->setHidden(false);
+            }
+            else
+            {
+                (*it)->setHidden(true);
+            }
+
+            ++it;
+        }
+
+        Q_EMIT signalSearchResult(found);
+    }
+
+Q_SIGNALS:
+
+    void signalSearchResult(int);
+};
+
+class Q_DECL_HIDDEN LanguagesView : public QGroupBox
+{
+    Q_OBJECT
+
+public:
+
+    explicit LanguagesView(QWidget* const parent)
+        : QGroupBox     (parent),
+          m_langList    (nullptr),
+          m_showSelected(nullptr),
+          m_langFilter  (nullptr)
+    {
+        QVBoxLayout* const vlay = new QVBoxLayout();
+        setLayout(vlay);
+
+        m_langList              = new LanguagesList(this);
+        DHBox* const hbox       = new DHBox(this);
+        m_showSelected          = new QCheckBox(i18n("Show only selected items"), hbox);
+        m_langFilter            = new SearchTextBar(hbox, QLatin1String("TranslatorLangSearchBar"));
+
+        vlay->addWidget(m_langList);
+        vlay->addWidget(hbox);
+
+        connect(m_showSelected, SIGNAL(toggled(bool)),
+                this, SLOT(slotShowSelected(bool)));
+
+        connect(m_langFilter, SIGNAL(signalSearchTextSettings(SearchTextSettings)),
+                m_langList, SLOT(slotSearchTextChanged(SearchTextSettings)));
+
+        connect(m_langList, SIGNAL(signalSearchResult(int)),
+                this, SLOT(slotSearchResult(int)));
+
+    }
+
+private Q_SLOTS:
+
+    void slotShowSelected(bool b)
+    {
+        QTreeWidgetItemIterator it(m_langList);
+
+        while (*it)
+        {
+            if (b)
+            {
+                (*it)->setHidden((*it)->checkState(0) != Qt::Checked);
+            }
+            else
+            {
+                (*it)->setHidden(false);
+            }
+
+            ++it;
+        }
+    }
+
+    void slotSearchResult(int found)
+    {
+        m_langFilter->slotSearchResult(found ? true : false);
+    }
+
+public:
+
+    LanguagesList* m_langList;
+    QCheckBox*     m_showSelected;
+    SearchTextBar* m_langFilter;
 };
 
 class Q_DECL_HIDDEN LocalizeConfig::Private
@@ -87,11 +189,11 @@ public:
     {
     }
 
-    QStringList    trLangEnabled;
-    QComboBox*     translatorCB;
-    QLabel*        translatorLabel;
-    LanguagesList* trLangList;
-    QGroupBox*     trLangGroup;
+    QStringList     trLangEnabled;
+    QComboBox*      translatorCB;
+    QLabel*         translatorLabel;
+    LanguagesList*  trLangList;
+    LanguagesView*  trLangGroup;
 };
 
 LocalizeConfig::LocalizeConfig(QWidget* const parent)
@@ -126,12 +228,8 @@ LocalizeConfig::LocalizeConfig(QWidget* const parent)
 
     // ---
 
-    d->trLangGroup             = new QGroupBox(this);
-    QVBoxLayout* const langlay = new QVBoxLayout();
-    d->trLangGroup->setLayout(langlay);
-
-    d->trLangList              = new LanguagesList(this);
-    langlay->addWidget(d->trLangList);
+    d->trLangGroup             = new LanguagesView(this);
+    d->trLangList              = d->trLangGroup->m_langList;
 
     // --------------------------------------------------------
 
@@ -139,7 +237,7 @@ LocalizeConfig::LocalizeConfig(QWidget* const parent)
     grid->addWidget(trLabel,             0, 0, 1, 1);
     grid->addWidget(d->translatorCB,     0, 1, 1, 1);
     grid->addWidget(d->translatorLabel,  1, 0, 1, 3);
-    grid->addWidget(d->trLangGroup,        2, 0, 1, 3);
+    grid->addWidget(d->trLangGroup,      2, 0, 1, 3);
     grid->setRowStretch(2, 10);
     grid->setColumnStretch(2, 10);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
