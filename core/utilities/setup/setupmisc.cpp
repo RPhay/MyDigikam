@@ -525,6 +525,11 @@ SetupMisc::~SetupMisc()
     delete d;
 }
 
+void SetupMisc::setActiveTab(MiscTab tab)
+{
+    d->tab->setCurrentIndex(tab);
+}
+
 bool SetupMisc::checkSettings()
 {
     // If check for new version use weekly pre-releases, warn end-user.

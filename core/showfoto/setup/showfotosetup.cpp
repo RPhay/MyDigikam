@@ -459,6 +459,34 @@ bool ShowfotoSetup::execExifTool(QWidget* const parent)
     return success;
 }
 
+bool ShowfotoSetup::execLocalize(QWidget* const parent)
+{
+    QPointer<ShowfotoSetup> setup        = new ShowfotoSetup(parent);
+    setup->showPage(MiscellaneousPage);
+    setup->setFaceType(Plain);
+
+    DConfigDlgWdgItem* const cur         = setup->currentPage();
+
+    if (!cur)
+    {
+        return false;
+    }
+
+    ShowfotoSetupMisc* const widget  = dynamic_cast<ShowfotoSetupMisc*>(cur->widget());
+
+    if (!widget)
+    {
+        return false;
+    }
+
+    widget->setActiveTab(ShowfotoSetupMisc::Localize);
+
+    bool success                         = (setup->DConfigDlg::exec() == QDialog::Accepted);
+    delete setup;
+
+    return success;
+}
+
 void ShowfotoSetup::onlineVersionCheck()
 {
     OnlineVersionDlg* const dlg = new OnlineVersionDlg(qApp->activeWindow(),

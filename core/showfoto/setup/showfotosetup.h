@@ -63,6 +63,8 @@ public:
     static bool execMetadataFilters(QWidget* const parent, int tab);
     static bool execExifTool(QWidget* const parent);
 
+    static bool execLocalize(QWidget* const parent);
+
     /**
      * Show a setup dialog. Only the specified page will be available.
      */

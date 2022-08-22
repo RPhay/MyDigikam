@@ -370,6 +370,11 @@ ShowfotoSetupMisc::~ShowfotoSetupMisc()
     delete d;
 }
 
+void ShowfotoSetupMisc::setActiveTab(MiscTab tab)
+{
+    d->tab->setCurrentIndex(tab);
+}
+
 bool ShowfotoSetupMisc::checkSettings()
 {
     // If check for new version use weekly pre-releases, warn end-user.

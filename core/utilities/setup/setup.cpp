@@ -443,6 +443,34 @@ bool Setup::execExifTool(QWidget* const parent)
     return success;
 }
 
+bool Setup::execLocalize(QWidget* const parent)
+{
+    QPointer<Setup> setup        = new Setup(parent);
+    setup->showPage(MiscellaneousPage);
+    setup->setFaceType(Plain);
+
+    DConfigDlgWdgItem* const cur = setup->currentPage();
+
+    if (!cur)
+    {
+        return false;
+    }
+
+    SetupMisc* const widget  = dynamic_cast<SetupMisc*>(cur->widget());
+
+    if (!widget)
+    {
+        return false;
+    }
+
+    widget->setActiveTab(SetupMisc::Localize);
+
+    bool success                 = (setup->DConfigDlg::exec() == QDialog::Accepted);
+    delete setup;
+
+    return success;
+}
+
 void Setup::slotOkClicked()
 {
     if (!d->cameraPage->checkSettings())

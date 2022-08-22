@@ -58,6 +58,8 @@ public:
     explicit ShowfotoSetupMisc(QWidget* const parent = nullptr);
     ~ShowfotoSetupMisc() override;
 
+    void setActiveTab(MiscTab tab);
+
     bool checkSettings();
     void applySettings();
 
