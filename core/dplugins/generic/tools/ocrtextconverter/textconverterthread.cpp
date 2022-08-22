@@ -39,10 +39,10 @@ public:
     {
     }
 
-    int language;
-    int psm; 
-    int oem;
-    int dpi;    
+    int  language;
+    int  psm; 
+    int  oem;
+    int  dpi;    
     bool isSaveTextFile; 
     bool isSaveXMP;
 };
