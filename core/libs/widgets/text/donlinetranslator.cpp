@@ -411,7 +411,7 @@ const QMap<QString, QString> DOnlineTranslator::s_rfc3066LanguageCodes =
 //    { QLatin1String("gv-GB"),  QLatin1String("")          },
     { QLatin1String("ka-GE"),  QLatin1String("ka")       },
     { QLatin1String("gu-IN"),  QLatin1String("gu")       },
-//     { QLatin1String("")     ,  QLatin1String("ht")       },
+    { QLatin1String("ht-FR"),  QLatin1String("ht")       },
 //     { QLatin1String("")     ,  QLatin1String("ha")       },
 //     { QLatin1String("")     ,  QLatin1String("haw")      },
     { QLatin1String("he-IL"),  QLatin1String("he")       },

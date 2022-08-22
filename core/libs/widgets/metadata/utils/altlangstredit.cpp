@@ -319,6 +319,7 @@ const AltLangStrEdit::LanguageCodeMap AltLangStrEdit::s_rfc3066ForXMP =
     { QLatin1String("hi-IN"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Hindi (India)")                                                   )},
     { QLatin1String("hr-BA"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Croatian (Bosnia and Herzegovina, Latin)")                        )},
     { QLatin1String("hr-HR"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Croatian (Croatia)")                                              )},
+    { QLatin1String("ht-FR"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Haitian Creole (France)")                                         )},
     { QLatin1String("hu-HU"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Hungarian (Hungary)")                                             )},
     { QLatin1String("hu-SI"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Hungarian (Slovenia)")                                            )},
     { QLatin1String("hy-AM"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Armenian (Armenia)")                                              )},
