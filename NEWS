@@ -23,6 +23,7 @@ General        : Add spell-checking support in caption text widget using KF5::So
                  Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto.
 General        : Add online translations support to Alternative Language text editor widget.
                  Add Localize config panel in Setup/Misc for digiKam and Showfoto.
+General        : Add settings to list prefered alternative/translated languages in text edit widget.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -124,7 +125,7 @@ BUGFIXES:
 095 ==> 411550 - Difficulty to drag and drop a face tag to people group.
 096 ==> 458003 - Highlight albums when "dragging" items on it.
 097 ==> 458082 - MP4 video failed to update metadata timestamp.
-098 ==> 
-099 ==> 
+098 ==> 283492 - Display only favorite languages in language selection comboboxes.
+099 ==> 370192 - Better handling of language selection menu entries with Captions tab.
 100 ==> 
 101 ==> 
