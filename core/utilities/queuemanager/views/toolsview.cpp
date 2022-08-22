@@ -104,7 +104,7 @@ ToolsView::ToolsView(QWidget* const parent)
             this, SIGNAL(signalUpdateQueueSettings(QString)));
 
     connect(WorkflowManager::instance(), SIGNAL(signalQueueSettingsAdded(QString)),
-            d->workflow, SLOT(slotsAddQueueSettings(QString)));
+            d->workflow, SLOT(slotAddQueueSettings(QString)));
 
     connect(d->historyView, SIGNAL(signalEntryClicked(QVariant)),
             this, SLOT(slotHistoryEntryClicked(QVariant)));

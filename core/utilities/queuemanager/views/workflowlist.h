@@ -78,7 +78,7 @@ Q_SIGNALS:
 public Q_SLOTS:
 
     void slotRemoveQueueSettings(const QString& title);
-    void slotsAddQueueSettings(const QString& title);
+    void slotAddQueueSettings(const QString& title);
 
 private Q_SLOTS:
 

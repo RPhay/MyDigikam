@@ -114,7 +114,7 @@ WorkflowList::WorkflowList(QWidget* const parent)
 
     Q_FOREACH (const Workflow& q, mngr->queueSettingsList())
     {
-        slotsAddQueueSettings(q.title);
+        slotAddQueueSettings(q.title);
     }
 
     if (!failed.isEmpty())
@@ -132,7 +132,7 @@ WorkflowList::~WorkflowList()
 {
 }
 
-void WorkflowList::slotsAddQueueSettings(const QString& title)
+void WorkflowList::slotAddQueueSettings(const QString& title)
 {
     WorkflowItem* const item = findByTitle(title);
 
