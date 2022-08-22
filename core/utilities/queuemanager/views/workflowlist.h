@@ -73,6 +73,7 @@ public:
 Q_SIGNALS:
 
     void signalAssignQueueSettings(const QString&);
+    void signalUpdateQueueSettings(const QString&);
 
 public Q_SLOTS:
 
@@ -99,6 +100,10 @@ private:
 #endif
 
     void mouseDoubleClickEvent(QMouseEvent*)                        override;
+
+private:
+
+    QString m_lastAssignedTitel;
 };
 
 } // namespace Digikam

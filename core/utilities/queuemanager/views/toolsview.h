@@ -65,6 +65,7 @@ public:
 Q_SIGNALS:
 
     void signalAssignQueueSettings(QString);
+    void signalUpdateQueueSettings(QString);
     void signalAssignTools(const QMultiMap<int, QString>&);
     void signalHistoryEntryClicked(int, qlonglong);
 
