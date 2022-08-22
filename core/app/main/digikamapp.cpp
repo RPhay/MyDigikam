@@ -91,6 +91,13 @@ DigikamApp::DigikamApp()
     DIO::instance();
     SpellCheckSettings::instance();
 
+    connect(SpellCheckSettings::instance(), &SpellCheckSettings::signalOpenLocalizeSetup,
+            this, [=]()
+        {
+            Setup::execLocalize(this);
+        }
+    );
+
     ExifToolThread* const exifToolThread = new ExifToolThread(this);
     exifToolThread->start();
 

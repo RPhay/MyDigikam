@@ -77,7 +77,6 @@ public:
         m_list->setResizeMode(QListView::Fixed);
         m_list->setFixedWidth(width);
 
-
         return m_list;
     }
 
@@ -664,6 +663,16 @@ void AltLangStrEdit::slotDeleteValue()
 
 void AltLangStrEdit::slotSelectionChanged()
 {
+    if (d->languageCB->itemData(d->languageCB->currentIndex()).toString() == QLatin1String("SetupLocalize"))
+    {
+        d->languageCB->blockSignals(true);
+        d->languageCB->setCurrentText(d->currentLanguage);  // NOTE: do not change combo box current language.
+        d->languageCB->blockSignals(false);
+
+        SpellCheckSettings::instance()->openLocalizeSetup();
+        return;
+    }
+
     d->currentLanguage = d->languageCB->currentText();
 
     // There are bogus signals caused by spell checking, see bug #141663.
@@ -750,6 +759,9 @@ void AltLangStrEdit::loadLangAltListEntries()
             d->languageCB->setItemData(d->languageCB->findText(lg), languageNameRFC3066(lg), Qt::ToolTipRole);
         }
     }
+
+    d->languageCB->insertSeparator(d->languageCB->count());
+    d->languageCB->addItem(i18n("more..."), QLatin1String("SetupLocalize"));
 
     d->languageCB->setCurrentIndex(d->languageCB->findText(d->currentLanguage));
 
@@ -865,11 +877,21 @@ void AltLangStrEdit::loadTranslationTargets()
         item->setToolTip(i18n("Translate to %1", languageNameRFC3066(lg)));
         d->translateAction->m_list->addItem(item);
     }
+
+//    d->translateAction->m_list->insertSeparator(d->translateAction->m_list->count());
+    QListWidgetItem* const more = new QListWidgetItem(i18n("more..."), nullptr, 9999);
+    d->translateAction->m_list->addItem(more);
 }
 
 void AltLangStrEdit::slotTranslate(QListWidgetItem* item)
 {
     d->translateButton->menu()->close();
+
+    if (item->type() == 9999)
+    {
+        SpellCheckSettings::instance()->openLocalizeSetup();
+        return;
+    }
 
     if (d->trengine->isRunning())
     {

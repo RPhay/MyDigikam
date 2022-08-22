@@ -57,9 +57,12 @@ public:
      */
     void setSettings(const SpellCheckContainer& settings);
 
+    void openLocalizeSetup();
+
 Q_SIGNALS:
 
     void signalSettingsChanged();
+    void signalOpenLocalizeSetup();
 
 private:
 

@@ -114,6 +114,11 @@ SpellCheckSettings::~SpellCheckSettings()
     delete d;
 }
 
+void SpellCheckSettings::openLocalizeSetup()
+{
+    Q_EMIT signalOpenLocalizeSetup();
+}
+
 SpellCheckContainer SpellCheckSettings::settings() const
 {
     QMutexLocker lock(&d->mutex);
