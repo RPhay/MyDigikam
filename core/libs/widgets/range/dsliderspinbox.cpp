@@ -75,6 +75,7 @@ public:
         STYLE_PLASTIQUE,
         STYLE_BREEZE,
         STYLE_FUSION,
+        STYLE_GTK2
     };
 
     QLineEdit*        edit;
@@ -232,8 +233,13 @@ void DAbstractSliderSpinBox::paint(QPainter& painter)
     painter.setClipping(false);
     painter.restore();
 
-
     QStyleOptionProgressBar progressOpts = progressBarOptions();
+
+    if (d->style == DAbstractSliderSpinBoxPrivate::STYLE_GTK2)
+    {
+        progressOpts.state |= QStyle::State_Horizontal;
+    }
+
     progressOpts.rect.adjust(0, 2, 0, -2);
     style()->drawControl(QStyle::CE_ProgressBar, &progressOpts, &painter, nullptr);
 
@@ -691,6 +697,10 @@ QSize DAbstractSliderSpinBox::sizeHint() const
             hint += QSize(2, 0);
             break;
 
+        case DAbstractSliderSpinBoxPrivate::STYLE_GTK2:
+            hint += QSize(8, 8);
+            break;
+
         case DAbstractSliderSpinBoxPrivate::STYLE_NOQUIRK:
             // almost all "modern" styles have a margin around controls
             hint += QSize(6, 6);
@@ -967,6 +977,10 @@ void DAbstractSliderSpinBox::changeEvent(QEvent* e)
         else if (style()->objectName() == QLatin1String("breeze"))
         {
             d->style = DAbstractSliderSpinBoxPrivate::STYLE_BREEZE;
+        }
+        else if (style()->objectName() == QLatin1String("gtk2"))
+        {
+            d->style = DAbstractSliderSpinBoxPrivate::STYLE_GTK2;
         }
         else
         {
