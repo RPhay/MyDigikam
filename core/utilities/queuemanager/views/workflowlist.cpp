@@ -184,7 +184,6 @@ void WorkflowList::startDrag(Qt::DropActions /*supportedActions*/)
             return;
         }
 
-        m_lastAssignedTitel.clear();
         QPixmap icon(QIcon::fromTheme(QLatin1String("step")).pixmap(48));
         int w = icon.width();
         int h = icon.height();
