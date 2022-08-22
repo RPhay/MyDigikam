@@ -54,7 +54,9 @@ public:
       : ocrTesseractLanguageMode   (nullptr),
         ocrTesseractPSMMode        (nullptr),
         ocrTesseractOEMMode        (nullptr),
-        ocrTesseractDpi            (nullptr)
+        ocrTesseractDpi            (nullptr),
+        saveTextFile               (nullptr),
+        saveXMP                    (nullptr)
     {
     }
 
@@ -69,6 +71,8 @@ public:
     DIntNumInput*       ocrTesseractDpi;
 
     QCheckBox*          saveTextFile;
+
+    QCheckBox*          saveXMP;
 };
 
 
@@ -146,6 +150,10 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
     d->saveTextFile->setToolTip(i18nc("@info", "Store Ocr result in separated text file"));
     d->saveTextFile->setChecked(true);
     
+    d->saveXMP = new QCheckBox(i18nc("@option:check", "XMP"), this);
+    d->saveXMP->setToolTip(i18nc("@info", "Store Ocr result in XMP metadata"));
+    d->saveXMP->setChecked(true);
+    
     // ------------
 
     QGridLayout* const settingsBoxLayout = new QGridLayout(this);
@@ -159,6 +167,7 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
     settingsBoxLayout->addWidget(d->ocrTesseractDpi,               3, 1, 1, 1);
     settingsBoxLayout->addWidget(saveOcrResultLabel,               4, 0, 1, 1);
     settingsBoxLayout->addWidget(d->saveTextFile,                  5, 0, 1, 1);
+    settingsBoxLayout->addWidget(d->saveXMP,                       5, 1, 1, 1);
 
 
     settingsBoxLayout->setRowStretch(9, 10);
@@ -243,5 +252,16 @@ bool  TextConverterSettings::isSaveTextFile() const
 {
     return d->saveTextFile->isChecked();
 }
+
+void TextConverterSettings::setIsSaveXMP(bool check)
+{
+    d->saveXMP->setChecked(check);
+}
+
+bool  TextConverterSettings::isSaveXMP() const
+{
+    return d->saveXMP->isChecked();
+}
+
 
 } // namespace DigikamGenericTextConverterPlugin

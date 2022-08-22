@@ -89,6 +89,8 @@ public:
     QPushButton*                      saveTextButton;
 
     TextConverterListViewItem*        currentSelectedItem;
+
+    OcrTesseracrEngine                ocrEngine;    
 };
 
 TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* const iface)
@@ -181,6 +183,9 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     connect(d->saveTextButton, SIGNAL(clicked()),
             this, SLOT(slotUpdateText()));
 
+    connect(this, SIGNAL(singalMetadataChangedForUrl(QUrl)),
+            d->iface, SLOT(slotMetadataChangedForUrl(QUrl)));
+
     // ---------------------------------------------------------------
     
     d->listView->setIface(d->iface);
@@ -220,18 +225,19 @@ void TextConverterDialog::slotUpdateText()
         !d->currentSelectedItem->destFileName().isEmpty())
     {
         d->textEditList[d->currentSelectedItem->url()] = newText;
-
-        // update number of recornized words of text edit 
         d->currentSelectedItem->setRecognizedWords(QString::fromLatin1("%1").arg(calculateNumberOfWords(newText)));
-
-        QFile file(d->currentSelectedItem->destFileName());
-        if(file.open(QIODevice::ReadWrite | QIODevice::Truncate))
-        {
-            QTextStream stream(&file);
-            stream << newText;
-            file.close();
-        }
         
+        if (d->ocrSettings->isSaveTextFile())
+        {
+            d->ocrEngine.saveTextFile(d->currentSelectedItem->destFileName(), newText);
+        }
+
+        if (d->ocrSettings->isSaveXMP())
+        {
+            d->ocrEngine.saveXMP(d->currentSelectedItem->url().toLocalFile(), newText);
+
+            Q_EMIT singalMetadataChangedForUrl(d->currentSelectedItem->url());
+        }
     }
 }
 
@@ -288,6 +294,7 @@ void TextConverterDialog::slotTextConverterAction(const DigikamGenericTextConver
                 {
                     d->textEditList[ad.fileUrl] = ad.outputText; 
                     processed(ad.fileUrl, ad.destPath, ad.outputText);
+                    Q_EMIT singalMetadataChangedForUrl(ad.fileUrl);
                     break;
                 }
 
@@ -377,8 +384,6 @@ void TextConverterDialog::processed(const QUrl& url,
         return;
     }
 
-    // TODO change fie name 
-
     if (!outputFile.isEmpty())
     {
         item->setDestFileName(outputFile);
@@ -397,6 +402,7 @@ void TextConverterDialog::processAll()
     d->thread->setOEMMode(d->ocrSettings->OEMMode());
     d->thread->setDpi(d->ocrSettings->Dpi());
     d->thread->setIsSaveTextFile(d->ocrSettings->isSaveTextFile());
+    d->thread->setIsSaveXMP(d->ocrSettings->isSaveXMP());
     d->thread->ocrProcessFiles(d->fileList);
 
     if (!d->thread->isRunning())
@@ -427,7 +433,6 @@ void TextConverterDialog::slotStartStop()
 
         if (d->listView->listView()->topLevelItemCount() == 0)
         {
-            qDebug() << "Test";
             d->textedit->clear();
         }
 
@@ -511,6 +516,7 @@ void TextConverterDialog::readSettings()
     d->ocrSettings->setOEMMode(group.readEntry("EngineModes",                             int(OcrOptions::EngineModes::DEFAULT)));
     d->ocrSettings->setDpi(group.readEntry("Dpi",                                         300));
     d->ocrSettings->setIsSaveTextFile(group.readEntry("Check Save Test File",             true));
+    d->ocrSettings->setIsSaveXMP(group.readEntry("Check Save in XMP",                     true));
 }
 
 void TextConverterDialog::saveSettings()
@@ -523,6 +529,7 @@ void TextConverterDialog::saveSettings()
     group.writeEntry("EngineModes",               (int)d->ocrSettings->OEMMode());
     group.writeEntry("Dpi",                       (int)d->ocrSettings->Dpi());
     group.writeEntry("Check Save Test File",      (bool)d->ocrSettings->isSaveTextFile());
+    group.writeEntry("Check Save in XMP",         (bool)d->ocrSettings->isSaveXMP());
 }
 
 void TextConverterDialog::addItems(const QList<QUrl>& itemList)

@@ -38,6 +38,9 @@ public:
     void setIsSaveTextFile(bool check);
     bool isSaveTextFile()       const;
 
+    void setIsSaveXMP(bool check);
+    bool isSaveXMP()            const;
+
     void setDefaultSettings();
 
 Q_SIGNALS:

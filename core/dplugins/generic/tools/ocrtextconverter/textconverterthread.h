@@ -53,6 +53,7 @@ public:
     void setOEMMode(int mode);
     void setDpi(int value);
     void setIsSaveTextFile(bool check);
+    void setIsSaveXMP(bool check);
 
     void ocrProcessFile(const QUrl& url);
     void ocrProcessFiles(const QList<QUrl>& urlList);

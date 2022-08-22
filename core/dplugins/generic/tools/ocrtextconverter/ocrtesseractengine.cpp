@@ -10,6 +10,7 @@
 // local includes 
 
 #include "ocroptions.h"
+#include "dmetadata.h"
 
 namespace DigikamGenericTextConverterPlugin
 {
@@ -24,7 +25,8 @@ public:
         psm             ((int)OcrOptions::PageSegmentationModes::DEFAULT),
         oem             ((int)OcrOptions::EngineModes::DEFAULT),
         dpi             (300),
-        isSaveTextFile  (true)
+        isSaveTextFile  (true),
+        isSaveXMP       (true)
     {
     }
 
@@ -34,6 +36,7 @@ public:
     int        dpi;
 
     bool       isSaveTextFile;
+    bool       isSaveXMP;
 
     bool       cancel;
  
@@ -125,6 +128,16 @@ void OcrTesseracrEngine::setIsSaveTextFile(bool check)
 bool OcrTesseracrEngine::isSaveTextFile() const
 {
     return d->isSaveTextFile;
+}
+
+void OcrTesseracrEngine::setIsSaveXMP(bool check)
+{
+    d->isSaveXMP = check;
+}
+
+bool OcrTesseracrEngine::isSaveXMP() const
+{
+    return d->isSaveXMP;
 }
 
 bool OcrTesseracrEngine::runOcrProcess()
@@ -238,19 +251,59 @@ void OcrTesseracrEngine::SaveOcrResult()
         d->outputFile =   fi.absolutePath() 
                           +  QLatin1String("/")
                           + (QString::fromLatin1("%1-textconverter.txt").arg(fi.fileName()));
-        
-        QFile file(d->outputFile);
 
-        if (file.open(QIODevice::WriteOnly))
-        {
-            QTextStream stream(&file);
-            stream << d->ocrResult;
-            file.close();
-        }
+        saveTextFile(d->outputFile, d->ocrResult);
     }
 
-    // TODO option to save metadata into original image 
+    if (d->isSaveXMP)
+    {
+        saveXMP(d->inputFile, d->ocrResult);
+    }
 } 
+
+void OcrTesseracrEngine::saveTextFile(const QString& filePath, const QString& text)
+{  
+    QFile file(filePath);
+
+    if (file.open(QIODevice::ReadWrite | QIODevice::Truncate))
+    {
+        QTextStream stream(&file);
+        stream << text;
+        file.close();
+    }
+}
+
+void OcrTesseracrEngine::saveXMP(const QString& filePath, const QString& text)
+{
+    QScopedPointer<DMetadata> dmeta(new DMetadata(filePath));
+
+    MetaEngine::AltLangMap authorsMap;
+    MetaEngine::AltLangMap datesMap;
+    MetaEngine::AltLangMap commentsMap;
+
+    Digikam::CaptionsMap commentsSet;
+
+    commentsSet = dmeta->getItemComments();
+    
+    QString   rezAuthor   = commentsSet.value(QLatin1String("x-default")).author;
+    QDateTime rezDateTime = commentsSet.value(QLatin1String("x-default")).date;
+
+    commentsMap.insert(QLatin1String("x-default"), text);
+    datesMap.insert(QLatin1String("x-default"),    rezDateTime.toString());
+    authorsMap.insert(QLatin1String("x-default"),  rezAuthor);
+
+    commentsSet.setData(commentsMap, authorsMap, QString(), datesMap);
+    dmeta->setItemComments(commentsSet);
+    
+    if (dmeta->applyChanges())
+    {
+        qDebug() << "Sucess in hosting text in XMP";
+    }
+    else
+    {
+        qDebug() << "Errors in hosting text in XMP";
+    }
+}
 
 }    // namespace DigikamGenericTextConverterPlugin
 

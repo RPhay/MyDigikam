@@ -56,8 +56,16 @@ public:
     void setIsSaveTextFile(bool check);
     bool isSaveTextFile()        const;
 
+    void setIsSaveXMP(bool check);
+    bool isSaveXMP()             const;
+
     bool runOcrProcess();
-     
+
+public:
+
+    void saveTextFile(const QString& filePath, const QString& text);
+    void saveXMP(const QString& filePath,  const QString& text);
+
 private:
 
     // Disable

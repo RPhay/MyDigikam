@@ -22,6 +22,7 @@ public:
         oem(int(OcrOptions::EngineModes::DEFAULT)),
         dpi(300),
         isSaveTextFile(true),
+        isSaveXMP(true),
         cancel(false)
     {
     }
@@ -31,6 +32,7 @@ public:
     int oem;
     int dpi;
     bool                 isSaveTextFile;
+    bool                 isSaveXMP;
 
     bool                 cancel;         
 
@@ -82,6 +84,11 @@ void TextConverterTask::setIsSaveTextFile(bool check)
     d->isSaveTextFile = check;
 }
 
+void TextConverterTask::setIsSaveXMP(bool check)
+{
+    d->isSaveXMP = check;
+}
+
 void TextConverterTask::run()
 {
 
@@ -102,6 +109,7 @@ void TextConverterTask::run()
 
             d->ocrEngine.setInputFile(d->url.toLocalFile());
             d->ocrEngine.setIsSaveTextFile(d->isSaveTextFile);
+            d->ocrEngine.setIsSaveXMP(d->isSaveXMP);
             d->ocrEngine.setLanguagesMode(d->language);
             d->ocrEngine.setPSMMode(d->psm);
             d->ocrEngine.setOEMMode(d->oem);

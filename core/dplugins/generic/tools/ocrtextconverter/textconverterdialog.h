@@ -42,10 +42,14 @@ private:
     void busy(bool busy);
 
     void processAll();       
-    void processingFailed(const QUrl& url, int result);  // TODO 
+    void processingFailed(const QUrl& url, int result);  
     void processed(const QUrl& url, const QString& outputFile, const QString& ocrResult);   
 
     int  calculateNumberOfWords(const QString& text);                          
+
+Q_SIGNALS:
+
+    void singalMetadataChangedForUrl(const QUrl&);
 
 private Q_SLOTS:
 
