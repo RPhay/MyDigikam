@@ -51,6 +51,7 @@
 #include "digikam_debug.h"
 #include "donlinetranslator.h"
 #include "spellchecksettings.h"
+#include "dexpanderbox.h"
 
 namespace Digikam
 {
@@ -70,11 +71,10 @@ public:
     {
         m_list = new QListWidget(parent);
         QFontMetrics fontMt(m_list->font());
-        QRect fontRect = fontMt.boundingRect(0, 0, m_list->width(), m_list->height(), 0, QLatin1String("mm-MM"));
+        QRect fontRect = fontMt.boundingRect(0, 0, m_list->width(), m_list->height(), 0, QLatin1String("XXXXX"));
         int width      =  m_list->contentsMargins().left() + m_list->contentsMargins().right();
         width         += fontRect.width() + m_list->verticalScrollBar()->height();
         m_list->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        m_list->setResizeMode(QListView::Fixed);
         m_list->setFixedWidth(width);
 
         return m_list;
@@ -761,7 +761,8 @@ void AltLangStrEdit::loadLangAltListEntries()
     }
 
     d->languageCB->insertSeparator(d->languageCB->count());
-    d->languageCB->addItem(i18n("more..."), QLatin1String("SetupLocalize"));
+    d->languageCB->addItem(QIcon::fromTheme(QLatin1String("configure")),
+                           i18n("more..."), QLatin1String("SetupLocalize"));
 
     d->languageCB->setCurrentIndex(d->languageCB->findText(d->currentLanguage));
 
@@ -878,8 +879,8 @@ void AltLangStrEdit::loadTranslationTargets()
         d->translateAction->m_list->addItem(item);
     }
 
-//    d->translateAction->m_list->insertSeparator(d->translateAction->m_list->count());
     QListWidgetItem* const more = new QListWidgetItem(i18n("more..."), nullptr, 9999);
+    more->setIcon(QIcon::fromTheme(QLatin1String("configure")));
     d->translateAction->m_list->addItem(more);
 }
 

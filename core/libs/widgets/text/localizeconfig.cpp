@@ -214,7 +214,7 @@ LocalizeConfig::LocalizeConfig(QWidget* const parent)
     // --------------------------------------------------------
 
     d->altLangGroup         = new LanguagesView(this);
-    d->altLangGroup->setTitle(i18nc("@title", "Alternative Languages for Text Editor"));
+    d->altLangGroup->setTitle(i18nc("@title", "Select Alternative Languages To Edit Text"));
     d->altLangList          = d->altLangGroup->m_langList;
 
     // --------------------------------------------------------
