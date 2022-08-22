@@ -128,4 +128,8 @@ BUGFIXES:
 098 ==> 283492 - Display only favorite languages in language selection comboboxes.
 099 ==> 370192 - Better handling of language selection menu entries with Captions tab.
 100 ==> 458163 - Cannot modify an existing BQM process.
-101 ==> 
+101 ==> 458167 - Add more position for watermark.
+102 ==> 
+103 ==> 
+104 ==> 
+
