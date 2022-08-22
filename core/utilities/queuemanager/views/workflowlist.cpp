@@ -86,7 +86,7 @@ WorkflowList::WorkflowList(QWidget* const parent)
     setContextMenuPolicy(Qt::CustomContextMenu);
     setIconSize(QSize(22, 22));
     setSelectionMode(QAbstractItemView::SingleSelection);
-    setSortingEnabled(false);
+    setSortingEnabled(true);
     setRootIsDecorated(false);
     setUniformRowHeights(true);
     setAllColumnsShowFocus(true);
