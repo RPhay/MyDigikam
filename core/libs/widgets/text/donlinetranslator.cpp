@@ -234,7 +234,7 @@ const QMap<QString, QString> DOnlineTranslator::s_rfc3066LanguageCodes =
 //     { QLatin1String("bo-BT"),  QLatin1String("")         },
 //     { QLatin1String("bo-CN"),  QLatin1String("")         },
     { QLatin1String("bs-BA"),  QLatin1String("bs")       },
-//     { QLatin1String("")     ,  QLatin1String("bs-Latn")  },      // Which country use Bostian language written in Latin?
+    { QLatin1String("bs-BG"),  QLatin1String("bs-Latn")  },
     { QLatin1String("bg-BG"),  QLatin1String("bg")       },
 //     { QLatin1String("br-FR"),  QLatin1String("")         },
 //     { QLatin1String("")     ,  QLatin1String("yue")      },      // Yue Chinese: do not exists as 2 letters code
@@ -507,7 +507,7 @@ const QMap<QString, QString> DOnlineTranslator::s_rfc3066LanguageCodes =
     { QLatin1String("sr-BA"),  QLatin1String("sr")       },
     { QLatin1String("sr-YU"),  QLatin1String("sr")       },
     { QLatin1String("sr-RS"),  QLatin1String("sr-Cyrl")  },
-//     { QLatin1String("")     ,  QLatin1String("sr-Latin") },
+    { QLatin1String("sr-SP"),  QLatin1String("sr-Latin") },
 //     { QLatin1String("ss-SZ")     ,  QLatin1String("")       },
 //     { QLatin1String("ss-ZA")     ,  QLatin1String("")       },
     { QLatin1String("st-LS"),  QLatin1String("st")       },
