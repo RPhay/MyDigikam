@@ -41,6 +41,7 @@
 #include <QComboBox>
 #include <QScrollBar>
 #include <QListWidgetItem>
+#include <QMessageBox>
 
 // KDE includes
 
@@ -950,6 +951,13 @@ void AltLangStrEdit::slotTranslationFinished()
     else
     {
         qCDebug(DIGIKAM_WIDGETS_LOG) << "Translation Error       :" << d->trengine->error();
+
+        QMessageBox::information(qApp->activeWindow(),
+                                 i18n("Failed to translate string with %1 Web-service",
+                                 DOnlineTranslator::engineName(SpellCheckSettings::instance()->settings().translatorEngine)),
+                                 i18n("Error message: %1",
+                                 d->trengine->errorString()));
+
     }
 }
 
