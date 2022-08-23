@@ -270,6 +270,8 @@ Setup::~Setup()
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("Setup Dialog"));
     group.writeEntry(QLatin1String("Setup Page"), (int)activePageIndex());
+    group.writeEntry(QLatin1String("Plugin Tab"), (int)d->pluginsPage->activeTab());
+    group.writeEntry(QLatin1String("Misc Tab"),   (int)d->miscPage->activeTab());
     DXmlGuiWindow::saveWindowSize(windowHandle(), group);
     config->sync();
 
@@ -534,6 +536,8 @@ void Setup::showPage(Setup::Page page)
         KConfigGroup group        = config->group(QLatin1String("Setup Dialog"));
 
         item = d->pageItem((Page)group.readEntry(QLatin1String("Setup Page"), (int)CollectionsPage));
+        d->pluginsPage->setActiveTab((SetupPlugins::PluginTab)group.readEntry(QLatin1String("Plugin Tab"), (int)SetupPlugins::Generic));
+        d->miscPage->setActiveTab((SetupMisc::MiscTab)group.readEntry(QLatin1String("Misc Tab"), (int)SetupMisc::Behaviour));
     }
     else
     {

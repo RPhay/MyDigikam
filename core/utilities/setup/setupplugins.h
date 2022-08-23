@@ -50,6 +50,9 @@ public:
     explicit SetupPlugins(QWidget* const parent = nullptr);
     ~SetupPlugins() override;
 
+    void setActiveTab(PluginTab tab);
+    PluginTab activeTab() const;
+
     void applySettings();
 
 private:

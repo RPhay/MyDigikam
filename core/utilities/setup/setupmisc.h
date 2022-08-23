@@ -55,6 +55,7 @@ public:
     ~SetupMisc() override;
 
     void setActiveTab(MiscTab tab);
+    MiscTab activeTab() const;
 
     bool checkSettings();
     void applySettings();

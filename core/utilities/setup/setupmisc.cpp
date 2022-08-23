@@ -530,6 +530,11 @@ void SetupMisc::setActiveTab(MiscTab tab)
     d->tab->setCurrentIndex(tab);
 }
 
+SetupMisc::MiscTab SetupMisc::activeTab() const
+{
+    return (MiscTab)d->tab->currentIndex();
+}
+
 bool SetupMisc::checkSettings()
 {
     // If check for new version use weekly pre-releases, warn end-user.
