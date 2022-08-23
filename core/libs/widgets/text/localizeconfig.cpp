@@ -111,6 +111,8 @@ Q_SIGNALS:
     void signalSearchResult(int);
 };
 
+// --------------------------------------------------------------------------------------------------
+
 class Q_DECL_HIDDEN LanguagesView : public QGroupBox
 {
     Q_OBJECT
@@ -128,8 +130,9 @@ public:
 
         m_langList              = new LanguagesList(this);
         DHBox* const hbox       = new DHBox(this);
-        m_showSelected          = new QCheckBox(i18n("Show only selected items"), hbox);
-        m_langFilter            = new SearchTextBar(hbox, QLatin1String("TranslatorLangSearchBar"));
+        m_showSelected          = new QCheckBox(hbox);
+        m_langFilter            = new SearchTextBar(hbox, QLatin1String("TranslatorLangSearchBar"),
+                                                    i18n("Enter here a string to search in languages list..."));
 
         vlay->addWidget(m_langList);
         vlay->addWidget(hbox);
@@ -143,9 +146,39 @@ public:
         connect(m_langList, SIGNAL(signalSearchResult(int)),
                 this, SLOT(slotSearchResult(int)));
 
+        connect(m_langList, SIGNAL(itemClicked(QTreeWidgetItem*,int)),
+                this, SLOT(slotItemClicked(QTreeWidgetItem*,int)));
+
+        slotItemClicked(nullptr, 0);
+    }
+
+    void updateStats()
+    {
+        int count = 0;
+        QTreeWidgetItemIterator it(m_langList);
+
+        while (*it)
+        {
+            if ((*it)->checkState(0) == Qt::Checked)
+            {
+                count++;
+            }
+
+            ++it;
+        }
+
+        m_showSelected->setText(i18n("Show only selected items (%1/%2)", count, m_langList->topLevelItemCount()));
     }
 
 private Q_SLOTS:
+
+    void slotItemClicked(QTreeWidgetItem*, int column)
+    {
+        if (column == 0)
+        {
+            updateStats();
+        }
+    }
 
     void slotShowSelected(bool b)
     {
@@ -404,6 +437,9 @@ void LocalizeConfig::readSettings()
 
         ++it2;
     }
+
+    d->altLangGroup->updateStats();
+    d->trLangGroup->updateStats();
 }
 
 } // namespace Digikam
