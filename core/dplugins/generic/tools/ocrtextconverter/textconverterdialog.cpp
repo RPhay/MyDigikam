@@ -300,7 +300,7 @@ void TextConverterDialog::slotTextConverterAction(const DigikamGenericTextConver
 
                 default:
                 {
-                    qWarning() << "DigikamGenericDNGConverterPlugin: Unknown action";
+                    qWarning() << "DigikamGenericTextConverterPlugin: Unknown action";
                     break;
                 }
             }
