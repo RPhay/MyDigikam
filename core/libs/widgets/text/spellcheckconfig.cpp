@@ -127,7 +127,7 @@ SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
     d->dictList->setAllColumnsShowFocus(true);
     d->dictList->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     d->dictList->setColumnCount(2);
-    d->dictList->setHeaderLabels(QStringList() << i18nc("@title: dictionary language code", "Code (Language-Country)")
+    d->dictList->setHeaderLabels(QStringList() << i18nc("@title: dictionary language code", "Code")
                                                << i18nc("@title: dictionary language name", "Name"));
     d->dictList->header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
     d->dictList->header()->setSectionResizeMode(1, QHeaderView::Stretch);
