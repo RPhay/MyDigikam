@@ -202,6 +202,7 @@ const QMap<QString, QString> DOnlineTranslator::s_rfc3066LanguageCodes =
 {
     { QLatin1String("af-ZA"),  QLatin1String("af")       },
     { QLatin1String("am-ET"),  QLatin1String("am")       },
+//     { QLatin1String("")     ,  QLatin1String("apc")      },      // North Levantine Arabic: do not exists as 2 letters code
     { QLatin1String("ar-AE"),  QLatin1String("ar")       },
     { QLatin1String("ar-BH"),  QLatin1String("ar")       },
     { QLatin1String("ar-DZ"),  QLatin1String("ar")       },
@@ -413,7 +414,6 @@ const QMap<QString, QString> DOnlineTranslator::s_rfc3066LanguageCodes =
     { QLatin1String("hi-IN"),  QLatin1String("hi")       },
     { QLatin1String("hr-HR"),  QLatin1String("hr")       },
     { QLatin1String("hr-BA"),  QLatin1String("")         },
-//     { QLatin1String("")     ,  QLatin1String("mrj")      },      // Western Mari: do not exists as 2 letters code
 //     { QLatin1String("")     ,  QLatin1String("hmn")      },      // Hmong: do not exists as 2 letters code
     { QLatin1String("ht-FR"),  QLatin1String("ht")       },
     { QLatin1String("hu-HU"),  QLatin1String("hu")       },
@@ -446,7 +446,6 @@ const QMap<QString, QString> DOnlineTranslator::s_rfc3066LanguageCodes =
 //    { QLatin1String("ln-CD"),  QLatin1String("")          },
 //    { QLatin1String("ln-CG"),  QLatin1String("")          },
     { QLatin1String("lo-LA"),  QLatin1String("lo")       },
-//     { QLatin1String("")     ,  QLatin1String("apc")      },      // North Levantine Arabic: do not exists as 2 letters code
     { QLatin1String("lb-LU"),  QLatin1String("lb")       },
     { QLatin1String("lt-LT"),  QLatin1String("lt")       },
     { QLatin1String("lv-LV"),  QLatin1String("lv")       },
@@ -458,6 +457,7 @@ const QMap<QString, QString> DOnlineTranslator::s_rfc3066LanguageCodes =
     { QLatin1String("mn-MN"),  QLatin1String("mn")       },
     { QLatin1String("mn-CN"),  QLatin1String("mn")       },
     { QLatin1String("mr-IN"),  QLatin1String("mr")       },
+//     { QLatin1String("")     ,  QLatin1String("mrj")      },      // Western Mari: do not exists as 2 letters code
     { QLatin1String("ms-BN"),  QLatin1String("ms")         },
     { QLatin1String("ms-MY"),  QLatin1String("ms")       },
     { QLatin1String("ms-SG"),  QLatin1String("ms")       },
