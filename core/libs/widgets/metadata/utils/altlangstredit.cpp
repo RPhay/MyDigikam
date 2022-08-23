@@ -71,7 +71,7 @@ public:
     {
         m_list         = new QListWidget(parent);
         QFontMetrics fontMt(m_list->font());
-        QRect fontRect = fontMt.boundingRect(0, 0, m_list->width(), m_list->height(), 0, QLatin1String("XXXXX"));
+        QRect fontRect = fontMt.boundingRect(0, 0, m_list->width(), m_list->height(), 0, QLatin1String("XX-XX"));
         int width      =  m_list->contentsMargins().left() + m_list->contentsMargins().right();
         width         += fontRect.width() + m_list->verticalScrollBar()->height();
         m_list->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -465,6 +465,7 @@ public:
         titleWidget     (nullptr),
         delValueButton  (nullptr),
         translateButton (nullptr),
+        settingsButton  (nullptr),
         valueEdit       (nullptr),
         languageCB      (nullptr),
         translateAction (nullptr),
@@ -488,6 +489,7 @@ public:
 
     QToolButton*                   delValueButton;
     QToolButton*                   translateButton;
+    QToolButton*                   settingsButton;
 
     DTextEdit*                     valueEdit;
 
@@ -519,6 +521,10 @@ AltLangStrEdit::AltLangStrEdit(QWidget* const parent, unsigned int lines)
     menu->addAction(d->translateAction);
     d->translateButton->setMenu(menu);
 
+    d->settingsButton  = new QToolButton(this);
+    d->settingsButton->setIcon(QIcon::fromTheme(QLatin1String("configure")));
+    d->settingsButton->setToolTip(i18n("Open localize setup"));
+
     d->trengine        = new DOnlineTranslator(this);
 
     d->languageCB      = new QComboBox(this);
@@ -535,6 +541,7 @@ AltLangStrEdit::AltLangStrEdit(QWidget* const parent, unsigned int lines)
     d->grid->addWidget(d->languageCB,      0, 2, 1,  1);
     d->grid->addWidget(d->delValueButton,  0, 3, 1,  1);
     d->grid->addWidget(d->translateButton, 0, 4, 1,  1);
+    d->grid->addWidget(d->settingsButton,  0, 5, 1,  1);
     d->grid->addWidget(d->valueEdit,       1, 0, 1, -1);
     d->grid->setColumnStretch(1, 10);
     d->grid->setContentsMargins(QMargins());
@@ -551,6 +558,9 @@ AltLangStrEdit::AltLangStrEdit(QWidget* const parent, unsigned int lines)
 
     connect(d->delValueButton, &QToolButton::clicked,
             this, &AltLangStrEdit::slotDeleteValue);
+
+    connect(d->settingsButton, &QToolButton::clicked,
+            this, &AltLangStrEdit::slotOpenLocalizeSetup);
 
     connect(d->translateAction->m_list, &QListWidget::itemClicked,
             this, &AltLangStrEdit::slotTranslate);
@@ -663,16 +673,6 @@ void AltLangStrEdit::slotDeleteValue()
 
 void AltLangStrEdit::slotSelectionChanged()
 {
-    if (d->languageCB->itemData(d->languageCB->currentIndex()).toString() == QLatin1String("SetupLocalize"))
-    {
-        d->languageCB->blockSignals(true);
-        d->languageCB->setCurrentText(d->currentLanguage);  // NOTE: do not change combo box current language.
-        d->languageCB->blockSignals(false);
-
-        SpellCheckSettings::instance()->openLocalizeSetup();
-        return;
-    }
-
     d->currentLanguage = d->languageCB->currentText();
 
     // There are bogus signals caused by spell checking, see bug #141663.
@@ -760,11 +760,6 @@ void AltLangStrEdit::populateLangAltListEntries()
         }
     }
 
-    d->languageCB->insertSeparator(d->languageCB->count());
-    d->languageCB->addItem(QIcon::fromTheme(QLatin1String("configure")),
-                           i18n("more..."), QLatin1String("SetupLocalize"));
-    d->languageCB->setItemData(d->languageCB->findText(i18n("more...")), i18n("Open localize setup"), Qt::ToolTipRole);
-
     d->languageCB->setCurrentIndex(d->languageCB->findText(d->currentLanguage));
 
     d->languageCB->blockSignals(false);
@@ -784,11 +779,6 @@ void AltLangStrEdit::populateTranslationEntries()
         item->setToolTip(i18n("Translate to %1", languageNameRFC3066(lg)));
         d->translateAction->m_list->addItem(item);
     }
-
-    QListWidgetItem* const more = new QListWidgetItem(i18n("more..."), nullptr, 9999);
-    more->setIcon(QIcon::fromTheme(QLatin1String("configure")));
-    more->setToolTip(i18n("Open localize setup"));
-    d->translateAction->m_list->addItem(more);
 }
 
 QString AltLangStrEdit::defaultAltLang() const
@@ -886,15 +876,14 @@ DTextEdit* AltLangStrEdit::textEdit() const
     return d->valueEdit;
 }
 
+void AltLangStrEdit::slotOpenLocalizeSetup()
+{
+    SpellCheckSettings::instance()->openLocalizeSetup();
+}
+
 void AltLangStrEdit::slotTranslate(QListWidgetItem* item)
 {
     d->translateButton->menu()->close();
-
-    if (item->type() == 9999)
-    {
-        SpellCheckSettings::instance()->openLocalizeSetup();
-        return;
-    }
 
     if (d->trengine->isRunning())
     {

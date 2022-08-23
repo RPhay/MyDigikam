@@ -161,6 +161,8 @@ private Q_SLOTS:
 
     void slotLocalizeChanged();
 
+    void slotOpenLocalizeSetup();
+
 protected:
 
     void populateLangAltListEntries();
