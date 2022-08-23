@@ -129,7 +129,7 @@ BUGFIXES:
 099 ==> 370192 - Better handling of language selection menu entries with Captions tab.
 100 ==> 458163 - Cannot modify an existing BQM process.
 101 ==> 458167 - Add more position for watermark.
-102 ==> 
+102 ==> 458200 - Size or position change made to face rectangle is only written to database and not to image file/sidecar.
 103 ==> 
 104 ==> 
 
