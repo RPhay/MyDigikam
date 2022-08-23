@@ -901,6 +901,8 @@ void AltLangStrEdit::slotTranslate(QListWidgetItem* item)
         return;
     }
 
+    setDisabled(true);
+
     if (item)
     {
         d->trCode       = item->text();
@@ -935,6 +937,8 @@ void AltLangStrEdit::slotTranslate(QListWidgetItem* item)
 
 void AltLangStrEdit::slotTranslationFinished()
 {
+    setDisabled(false);
+
     if (d->trengine->error() == DOnlineTranslator::NoError)
     {
         if (d->trCode.isEmpty())
