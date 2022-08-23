@@ -360,9 +360,9 @@ const QMap<QString, QString> DOnlineTranslator::s_rfc3066LanguageCodes =
     { QLatin1String("es-VE"),  QLatin1String("es")       },
     { QLatin1String("eu-ES"),  QLatin1String("eu")       },
     { QLatin1String("fa-IR"),  QLatin1String("fa")       },
-    { QLatin1String("fj-FJ"),  QLatin1String("fj")       },
 //     { QLatin1String("")     ,  QLatin1String("fil")      },      // Filipino: do not exists as 2 letters code
     { QLatin1String("fi-FI"),  QLatin1String("fi")       },
+    { QLatin1String("fj-FJ"),  QLatin1String("fj")       },
     { QLatin1String("fr-AD"),  QLatin1String("fr")       },
     { QLatin1String("fr-BF"),  QLatin1String("fr")       },
     { QLatin1String("fr-BI"),  QLatin1String("fr")       },
@@ -406,7 +406,6 @@ const QMap<QString, QString> DOnlineTranslator::s_rfc3066LanguageCodes =
     { QLatin1String("gd-GB"),  QLatin1String("gd")       },
     { QLatin1String("gl-ES"),  QLatin1String("gl")       },
 //    { QLatin1String("gv-GB"),  QLatin1String("")          },
-    { QLatin1String("ka-GE"),  QLatin1String("ka")       },
     { QLatin1String("gu-IN"),  QLatin1String("gu")       },
     { QLatin1String("ha-TD"),  QLatin1String("ha")       },
 //     { QLatin1String("")     ,  QLatin1String("haw")      },      // Hawaiia: do not exists as 2 letters code
@@ -433,6 +432,7 @@ const QMap<QString, QString> DOnlineTranslator::s_rfc3066LanguageCodes =
     { QLatin1String("ja-JP"),  QLatin1String("ja")       },
     { QLatin1String("jv-ID"),  QLatin1String("jv")       },
     { QLatin1String("jw-ID"),  QLatin1String("jw")       },
+    { QLatin1String("ka-GE"),  QLatin1String("ka")       },
     { QLatin1String("kn-IN"),  QLatin1String("kn")       },
     { QLatin1String("kk-KZ"),  QLatin1String("kk")       },
 //     { QLatin1String("kl-GL"),  QLatin1String("")         },
@@ -442,26 +442,26 @@ const QMap<QString, QString> DOnlineTranslator::s_rfc3066LanguageCodes =
     { QLatin1String("ku-IR"),  QLatin1String("ku")       },
     { QLatin1String("ky-KG"),  QLatin1String("ky")       },
 //    { QLatin1String("kw-GB"),  QLatin1String("")          },
+    { QLatin1String("la-IT"),  QLatin1String("la")       },
 //    { QLatin1String("ln-CD"),  QLatin1String("")          },
 //    { QLatin1String("ln-CG"),  QLatin1String("")          },
     { QLatin1String("lo-LA"),  QLatin1String("lo")       },
-    { QLatin1String("la-IT"),  QLatin1String("la")       },
-    { QLatin1String("lv-LV"),  QLatin1String("lv")       },
 //     { QLatin1String("")     ,  QLatin1String("apc")      },      // North Levantine Arabic: do not exists as 2 letters code
-    { QLatin1String("lt-LT"),  QLatin1String("lt")       },
     { QLatin1String("lb-LU"),  QLatin1String("lb")       },
-    { QLatin1String("mk-MK"),  QLatin1String("mk")       },
+    { QLatin1String("lt-LT"),  QLatin1String("lt")       },
+    { QLatin1String("lv-LV"),  QLatin1String("lv")       },
     { QLatin1String("mg-MG"),  QLatin1String("mg")       },
-    { QLatin1String("ms-SG"),  QLatin1String("ms")       },
-    { QLatin1String("ms-MY"),  QLatin1String("ms")       },
-    { QLatin1String("ml-IN"),  QLatin1String("ml")       },
-    { QLatin1String("mt-MT"),  QLatin1String("mt")       },
     { QLatin1String("mi-NZ"),  QLatin1String("mi")       },
-    { QLatin1String("mr-IN"),  QLatin1String("mr")       },
+    { QLatin1String("mk-MK"),  QLatin1String("mk")       },
+    { QLatin1String("ml-IN"),  QLatin1String("ml")       },
 //     { QLatin1String("")     ,  QLatin1String("mhr")      },      // Meadow Mari language: do not exists as 2 letters code
     { QLatin1String("mn-MN"),  QLatin1String("mn")       },
     { QLatin1String("mn-CN"),  QLatin1String("mn")       },
-//     { QLatin1String("ms-BN"),  QLatin1String("")         },
+    { QLatin1String("mr-IN"),  QLatin1String("mr")       },
+    { QLatin1String("ms-BN"),  QLatin1String("ms")         },
+    { QLatin1String("ms-MY"),  QLatin1String("ms")       },
+    { QLatin1String("ms-SG"),  QLatin1String("ms")       },
+    { QLatin1String("mt-MT"),  QLatin1String("mt")       },
     { QLatin1String("my-MM"),  QLatin1String("my")       },
 //     { QLatin1String("")     ,  QLatin1String("mww")      },      // Hmong: do not exists as 2 letters code
 //     { QLatin1String("nb-NO"),  QLatin1String("")         },
@@ -479,6 +479,7 @@ const QMap<QString, QString> DOnlineTranslator::s_rfc3066LanguageCodes =
     { QLatin1String("or-IN"),  QLatin1String("or")       },
 //     { QLatin1String("")     ,  QLatin1String("pap")      },      // Papiamento: do not exists as 2 letters code
     { QLatin1String("pa-IN"),  QLatin1String("pa")       },
+    { QLatin1String("pl-PL"),  QLatin1String("pl")       },
     { QLatin1String("pt-AO"),  QLatin1String("pt")         },
     { QLatin1String("pt-BR"),  QLatin1String("pt")         },
     { QLatin1String("pt-CV"),  QLatin1String("pt")         },
@@ -486,17 +487,16 @@ const QMap<QString, QString> DOnlineTranslator::s_rfc3066LanguageCodes =
     { QLatin1String("pt-MZ"),  QLatin1String("pt")         },
     { QLatin1String("pt-PT"),  QLatin1String("pt")       },
     { QLatin1String("pt-ST"),  QLatin1String("pt")       },
-    { QLatin1String("pl-PL"),  QLatin1String("pl")       },
     { QLatin1String("ps-AF"),  QLatin1String("ps")       },
 //     { QLatin1String("")     ,  QLatin1String("otq")      },      // Otomi Querétaro:  do not exists as 2 letters code
     { QLatin1String("ro-RO"),  QLatin1String("ro")       },
     { QLatin1String("ru-RU"),  QLatin1String("ru")       },
     { QLatin1String("rw-RW"),  QLatin1String("rw")       },
 //     { QLatin1String("sa-IN"),  QLatin1String("")         },
+    { QLatin1String("sd-PK"),  QLatin1String("sd")       },
 //     { QLatin1String("se-FI"),  QLatin1String("")         },
 //     { QLatin1String("se-NO"),  QLatin1String("")         },
 //     { QLatin1String("se-SE"),  QLatin1String("")         },
-    { QLatin1String("sd-PK"),  QLatin1String("sd")       },
     { QLatin1String("si-LK"),  QLatin1String("si")       },
     { QLatin1String("sk-SK"),  QLatin1String("sk")       },
     { QLatin1String("sl-SI"),  QLatin1String("sl")       },
@@ -510,7 +510,6 @@ const QMap<QString, QString> DOnlineTranslator::s_rfc3066LanguageCodes =
 //     { QLatin1String("")     ,  QLatin1String("sr-Latin") },
 //     { QLatin1String("ss-SZ")     ,  QLatin1String("")       },
 //     { QLatin1String("ss-ZA")     ,  QLatin1String("")       },
-//     { QLatin1String("")     ,  QLatin1String("")       },
     { QLatin1String("st-LS"),  QLatin1String("st")       },
     { QLatin1String("su-ID"),  QLatin1String("su")       },
     { QLatin1String("sv-FI"),  QLatin1String("sv")       },
@@ -520,8 +519,8 @@ const QMap<QString, QString> DOnlineTranslator::s_rfc3066LanguageCodes =
     { QLatin1String("ta-IN"),  QLatin1String("ta")       },
     { QLatin1String("ta-SG"),  QLatin1String("ta")       },
     { QLatin1String("te-IN"),  QLatin1String("te")       },
-    { QLatin1String("th-TH"),  QLatin1String("th")       },
     { QLatin1String("tg-TJ"),  QLatin1String("tg")       },
+    { QLatin1String("th-TH"),  QLatin1String("th")       },
     { QLatin1String("tk-TM"),  QLatin1String("tk")       },
     { QLatin1String("tl-PH"),  QLatin1String("tl")       },
     { QLatin1String("to-TO"),  QLatin1String("to")       },
@@ -548,7 +547,7 @@ const QMap<QString, QString> DOnlineTranslator::s_rfc3066LanguageCodes =
 //     { QLatin1String("")     ,  QLatin1String("zh-Hans")  },      // SimplifiedChinese
 //     { QLatin1String(""),       QLatin1String("zh-Hant")  },      // TraditionalChinese
 //     { QLatin1String(""),       QLatin1String("zh_HANT")  },      // TraditionalChinese
-    { QLatin1String("zh-CN"),  QLatin1String("zh-CN")    },
+    { QLatin1String("zh-CN"),  QLatin1String("zh-CN")    },         // Chinese (Simplified, PRC)
     { QLatin1String("zh-MO"),  QLatin1String("zh")       },         // Chinese (Traditional, Macao S.A.R.)
     { QLatin1String("zh-HK"),  QLatin1String("zh")       },         // Chinese (Traditional, Hong Kong S.A.R.)
     { QLatin1String("zh-SG"),  QLatin1String("zh")       },         // Chinese (Simplified, Singapore)
