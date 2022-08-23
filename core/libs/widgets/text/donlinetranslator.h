@@ -528,7 +528,7 @@ public:
      * @param engine engine
      * @param url engine url
      */
-    void setEngineUrl(Engine engine, QString url);
+    void setEngineUrl(Engine engine, const QString& url);
 
     /**
      * @brief Set api key for engine
@@ -538,7 +538,7 @@ public:
      * @param engine engine
      * @param apiKey your key for this particular instance
      */
-    void setEngineApiKey(Engine engine, QByteArray apiKey);
+    void setEngineApiKey(Engine engine, const QByteArray& apiKey);
 
     /**
      * @brief Language name
