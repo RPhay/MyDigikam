@@ -300,7 +300,7 @@ const AltLangStrEdit::LanguageCodeMap AltLangStrEdit::s_rfc3066ForXMP =
     { QLatin1String("fr-MG"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "French (Madagascar)")                                             )},
     { QLatin1String("fr-ML"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "French (Mali)")                                                   )},
     { QLatin1String("fr-MQ"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "French (Martinique)")                                             )},
-    { QLatin1String("fr-NC"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Frisian (New Caledonia)")                                         )},
+    { QLatin1String("fr-NC"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "French (New Caledonia)")                                          )},
     { QLatin1String("fr-PF"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "French (French Polynesia)")                                       )},
     { QLatin1String("fr-PM"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "French (St. Pierre and Miquelon)")                                )},
     { QLatin1String("fr-RE"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "French (Reunion)")                                                )},
