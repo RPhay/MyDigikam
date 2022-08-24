@@ -130,6 +130,7 @@ set(libmetadatawidgets_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/metadata/config/metadatapanel.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/metadata/utils/altlangstredit.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/utils/altlangstredit_p.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/metadata/utils/countryselector.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/metadata/utils/subjectwidget.cpp
 

@@ -172,9 +172,6 @@ protected:
 
 private:
 
-    typedef QMap<QString, QString> LanguageCodeMap;
-    static const LanguageCodeMap s_rfc3066ForXMP;
-
     class Private;
     Private* const d;
 
