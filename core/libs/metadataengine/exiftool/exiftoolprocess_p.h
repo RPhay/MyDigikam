@@ -104,6 +104,9 @@ public:
 
     bool                    writeChannelIsClosed;
 
+    QProcess::ProcessError  processError;
+    QString                 errorString;
+
     int                     nextCmdId;               ///< Unique identifier, even in a multi-instances or multi-thread environment
 
     QMutex                  mutex;

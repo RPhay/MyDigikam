@@ -35,6 +35,7 @@ ExifToolProcess::Private::Private(ExifToolProcess* const q)
       cmdRunning          (0),
       cmdAction           (ExifToolProcess::LOAD_METADATA),
       writeChannelIsClosed(true),
+      processError        (QProcess::UnknownError),
       nextCmdId           (CMD_ID_MIN)
 {
     outAwait[0] = false;
@@ -167,7 +168,10 @@ void ExifToolProcess::Private::readOutput(const QProcess::ProcessChannel channel
 
 void ExifToolProcess::Private::setProcessErrorAndEmit(QProcess::ProcessError error, const QString& description)
 {
-    Q_EMIT pp->signalErrorOccurred(cmdRunning, cmdAction, error, description);
+    processError = error;
+    errorString  = description;
+
+    Q_EMIT pp->signalErrorOccurred(cmdRunning, cmdAction, error);
 }
 
 } // namespace Digikam

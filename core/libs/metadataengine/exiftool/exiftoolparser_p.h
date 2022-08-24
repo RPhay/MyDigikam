@@ -75,7 +75,6 @@ public:
     ExifToolProcess*               proc;            ///< ExifTool process instance.
     QList<QEventLoop*>             evLoops;         ///< Event loops for the ExifTool process actions.
     QString                        currentPath;     ///< Current file path processed by ExifTool.
-    QString                        errorString;     ///< Last error string from the ExifTool process instance.
     ExifToolData                   exifToolData;    ///< Current ExifTool data (input or output depending of the called method.
     QTemporaryFile                 argsFile;        ///< Temporary file to store Exiftool arg config file.
 
