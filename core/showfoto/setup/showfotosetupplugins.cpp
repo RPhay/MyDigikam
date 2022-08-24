@@ -94,6 +94,16 @@ ShowfotoSetupPlugins::~ShowfotoSetupPlugins()
     delete d;
 }
 
+void ShowfotoSetupPlugins::setActiveTab(PluginTab tab)
+{
+    d->tab->setCurrentIndex(tab);
+}
+
+ShowfotoSetupPlugins::PluginTab ShowfotoSetupPlugins::activeTab() const
+{
+    return (PluginTab)d->tab->currentIndex();
+}
+
 void ShowfotoSetupPlugins::applySettings()
 {
     d->setupGeneric->applySettings();

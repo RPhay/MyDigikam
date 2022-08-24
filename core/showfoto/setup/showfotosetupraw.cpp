@@ -68,6 +68,16 @@ ShowfotoSetupRaw::~ShowfotoSetupRaw()
     delete d;
 }
 
+void ShowfotoSetupRaw::setActiveTab(RAWTab tab)
+{
+    d->tab->setCurrentIndex(tab);
+}
+
+ShowfotoSetupRaw::RAWTab ShowfotoSetupRaw::activeTab() const
+{
+    return (RAWTab)d->tab->currentIndex();
+}
+
 void ShowfotoSetupRaw::applySettings()
 {
     d->raw->applySettings();

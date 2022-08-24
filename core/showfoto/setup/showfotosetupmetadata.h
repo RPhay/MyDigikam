@@ -53,7 +53,9 @@ public:
     ~ShowfotoSetupMetadata() override;
 
     void applySettings();
+
     void setActiveTab(MetadataTab tab);
+    MetadataTab activeTab() const;
 
 private:
 

@@ -188,6 +188,11 @@ ShowfotoSetup::ShowfotoSetup(QWidget* const parent, ShowfotoSetup::Page page)
     if (page != LastPageUsed)
     {
         showPage(page);
+        d->metadataPage->setActiveTab((ShowfotoSetupMetadata::MetadataTab)group.readEntry(QLatin1String("Metadata Tab"), (int)ShowfotoSetupMetadata::Behavior));
+        d->rawPage->setActiveTab((ShowfotoSetupRaw::RAWTab)group.readEntry(QLatin1String("RAW Tab"), (int)ShowfotoSetupRaw::RAWBehavior));
+        d->iccPage->setActiveTab((Digikam::SetupICC::ICCTab)group.readEntry(QLatin1String("ICC Tab"), (int)Digikam::SetupICC::Behavior));
+        d->pluginsPage->setActiveTab((ShowfotoSetupPlugins::PluginTab)group.readEntry(QLatin1String("Plugin Tab"), (int)ShowfotoSetupPlugins::Generic));
+        d->miscPage->setActiveTab((ShowfotoSetupMisc::MiscTab)group.readEntry(QLatin1String("Misc Tab"), (int)ShowfotoSetupMisc::Behaviour));
     }
     else
     {
@@ -203,7 +208,12 @@ ShowfotoSetup::~ShowfotoSetup()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("Setup Dialog"));
-    group.writeEntry(QLatin1String("Setup Page"), (int)activePageIndex());
+    group.writeEntry(QLatin1String("Setup Page"),      (int)activePageIndex());
+    group.writeEntry(QLatin1String("Metadata Tab"),    (int)d->metadataPage->activeTab());
+    group.writeEntry(QLatin1String("RAW Tab"),         (int)d->rawPage->activeTab());
+    group.writeEntry(QLatin1String("ICC Tab"),         (int)d->iccPage->activeTab());
+    group.writeEntry(QLatin1String("Plugin Tab"),      (int)d->pluginsPage->activeTab());
+    group.writeEntry(QLatin1String("Misc Tab"),        (int)d->miscPage->activeTab());
     Digikam::DXmlGuiWindow::saveWindowSize(windowHandle(), group);
     config->sync();
 

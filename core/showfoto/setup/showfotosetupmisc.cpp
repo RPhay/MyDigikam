@@ -375,6 +375,11 @@ void ShowfotoSetupMisc::setActiveTab(MiscTab tab)
     d->tab->setCurrentIndex(tab);
 }
 
+ShowfotoSetupMisc::MiscTab ShowfotoSetupMisc::activeTab() const
+{
+    return (MiscTab)d->tab->currentIndex();
+}
+
 bool ShowfotoSetupMisc::checkSettings()
 {
     // If check for new version use weekly pre-releases, warn end-user.
