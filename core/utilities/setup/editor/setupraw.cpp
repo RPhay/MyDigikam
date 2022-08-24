@@ -47,6 +47,7 @@
 #include "dpluginloader.h"
 #include "dpluginrawimport.h"
 #include "dpluginaboutdlg.h"
+#include "setupeditor.h"
 
 namespace Digikam
 {
@@ -189,8 +190,8 @@ SetupRaw::SetupRaw(QTabWidget* const tab)
 
     // --------------------------------------------------------
 
-    d->tab->addTab(d->behaviorPanel, i18nc("@title:tab", "RAW Behavior"));
-    d->tab->addTab(d->settingsPanel, i18nc("@title:tab", "RAW Default Settings"));
+    d->tab->insertTab(SetupEditor::RAWBehavior,        d->behaviorPanel, i18nc("@title:tab", "RAW Behavior"));
+    d->tab->insertTab(SetupEditor::RAWDefaultSettings, d->settingsPanel, i18nc("@title:tab", "RAW Default Settings"));
 
     // --------------------------------------------------------
 

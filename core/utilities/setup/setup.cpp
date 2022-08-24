@@ -270,6 +270,7 @@ Setup::~Setup()
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("Setup Dialog"));
     group.writeEntry(QLatin1String("Setup Page"), (int)activePageIndex());
+    group.writeEntry(QLatin1String("Editor Tab"), (int)d->editorPage->activeTab());
     group.writeEntry(QLatin1String("ICC Tab"),    (int)d->iccPage->activeTab());
     group.writeEntry(QLatin1String("Camera Tab"), (int)d->cameraPage->activeTab());
     group.writeEntry(QLatin1String("Plugin Tab"), (int)d->pluginsPage->activeTab());
@@ -538,6 +539,7 @@ void Setup::showPage(Setup::Page page)
         KConfigGroup group        = config->group(QLatin1String("Setup Dialog"));
 
         item = d->pageItem((Page)group.readEntry(QLatin1String("Setup Page"), (int)CollectionsPage));
+        d->editorPage->setActiveTab((SetupEditor::EditorTab)group.readEntry(QLatin1String("Editor Tab"), (int)SetupEditor::EditorWindow));
         d->iccPage->setActiveTab((SetupICC::ICCTab)group.readEntry(QLatin1String("ICC Tab"), (int)SetupICC::Behavior));
         d->cameraPage->setActiveTab((SetupCamera::CameraTab)group.readEntry(QLatin1String("Camera Tab"), (int)SetupCamera::Devices));
         d->pluginsPage->setActiveTab((SetupPlugins::PluginTab)group.readEntry(QLatin1String("Plugin Tab"), (int)SetupPlugins::Generic));
