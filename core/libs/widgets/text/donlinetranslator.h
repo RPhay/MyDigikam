@@ -406,6 +406,25 @@ public:
     Language sourceLanguage() const;
 
     /**
+     * Convert language RFC3066 to supported language code
+     */
+    static QString fromRFC3066(const QString& langCodeRFC3066);
+
+    /**
+     * Return a list of all supported language in RFC3066.
+     */
+    static QStringList supportedRFC3066();
+
+    /**
+     * Return the engine litteral name.
+     */
+    static QString engineName(Engine engine);
+
+
+    //@{
+    // Properties methods (donlinetranslator_properties.cpp)
+
+   /**
      * @brief Translated text
      *
      * @return translated text.
@@ -442,6 +461,22 @@ public:
     QMap<QString, QVector<DOnlineTranslatorOption> > translationOptions() const;
 
     /**
+     * @brief Language code
+     *
+     * @param lang language
+     * @return language code
+     */
+    static QString languageCode(Language lang);
+
+    /**
+     * @brief Returns general language code
+     *
+     * @param langCode code
+     * @return language
+     */
+    static Language language(const QString& langCode);
+
+    /**
      * @brief Last error
      *
      * Error that was found during the processing of the last translation.
@@ -469,25 +504,11 @@ public:
     bool isSourceTranslitEnabled() const;
 
     /**
-     * @brief Enable or disable source transliteration
-     *
-     * @param enable whether to enable source transliteration
-     */
-    void setSourceTranslitEnabled(bool enable);
-
-    /**
      * @brief Check if translation transliteration is enabled
      *
      * @return `true` if translation transliteration is enabled
      */
     bool isTranslationTranslitEnabled() const;
-
-    /**
-     * @brief Enable or disable translation transliteration
-     *
-     * @param enable whether to enable translation transliteration
-     */
-    void setTranslationTranslitEnabled(bool enable);
 
     /**
      * @brief Check if source transcription is enabled
@@ -497,19 +518,33 @@ public:
     bool isSourceTranscriptionEnabled() const;
 
     /**
-     * @brief Enable or disable source transcription
-     *
-     * @param enable whether to enable source transcription
-     */
-    void setSourceTranscriptionEnabled(bool enable);
-
-    /**
      * @brief Check if translation options are enabled
      *
      * @return `true` if translation options are enabled
      * @sa DOnlineTranslatorOption
      */
     bool isTranslationOptionsEnabled() const;
+
+    /**
+     * @brief Enable or disable source transliteration
+     *
+     * @param enable whether to enable source transliteration
+     */
+    void setSourceTranslitEnabled(bool enable);
+
+    /**
+     * @brief Enable or disable translation transliteration
+     *
+     * @param enable whether to enable translation transliteration
+     */
+    void setTranslationTranslitEnabled(bool enable);
+
+    /**
+     * @brief Enable or disable source transcription
+     *
+     * @param enable whether to enable source transcription
+     */
+    void setSourceTranscriptionEnabled(bool enable);
 
     /**
      * @brief Enable or disable translation options
@@ -540,37 +575,7 @@ public:
      */
     void setEngineApiKey(Engine engine, const QByteArray& apiKey);
 
-    /**
-     * @brief Language code
-     *
-     * @param lang language
-     * @return language code
-     */
-    static QString languageCode(Language lang);
-
-
-    /**
-     * @brief Returns general language code
-     *
-     * @param langCode code
-     * @return language
-     */
-    static Language language(const QString& langCode);
-
-    /**
-     * Convert language RFC3066 to supported language code
-     */
-    static QString fromRFC3066(const QString& langCodeRFC3066);
-
-    /**
-     * Return a list of all supported language in RFC3066.
-     */
-    static QStringList supportedRFC3066();
-
-    /**
-     * Return the engine litteral name.
-     */
-    static QString engineName(Engine engine);
+    //@}
 
     //@{
     // Conversion tables (donlinetranslator_tables.cpp)

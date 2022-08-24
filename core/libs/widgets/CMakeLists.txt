@@ -22,6 +22,7 @@ set(libtextwidgets_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator_bing.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator_libretr.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator_lingva.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator_properties.cpp
 )
 
 set(liblayouttools_SRCS
