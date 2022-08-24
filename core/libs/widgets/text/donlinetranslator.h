@@ -717,7 +717,7 @@ private:
     //@}
 
     //@{
-    /// Lingva Web service specific methods.
+    /// Lingva Web service specific methods (donlinetranslator_lingva.cpp).
 
 private Q_SLOTS:
 
