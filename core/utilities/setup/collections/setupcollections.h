@@ -52,6 +52,9 @@ public:
     explicit SetupCollections(QWidget* const parent = nullptr);
     ~SetupCollections() override;
 
+    void setActiveTab(CollectionsTab tab);
+    CollectionsTab activeTab() const;
+
     void applySettings();
 
 private:
