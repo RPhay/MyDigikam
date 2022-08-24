@@ -645,7 +645,7 @@ private:
     //@}
 
     //@{
-    /// Yandex Web service specific methods.
+    /// Yandex Web service specific methods (donlinetranslator_yandex.cppp).
 
 private Q_SLOTS:
 
