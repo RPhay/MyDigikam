@@ -50,10 +50,22 @@ class DIGIKAM_EXPORT SetupICC : public QScrollArea
 
 public:
 
+    enum ICCTab
+    {
+        Behavior = 0,
+        Profiles,
+        Advanced
+    };
+
+public:
+
     explicit SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent = nullptr);
     ~SetupICC() override;
 
     void applySettings();
+
+    void setActiveTab(ICCTab tab);
+    ICCTab activeTab() const;
 
     static bool iccRepositoryIsValid();
 
