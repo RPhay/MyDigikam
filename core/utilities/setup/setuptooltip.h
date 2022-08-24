@@ -37,8 +37,20 @@ class SetupToolTip : public QScrollArea
 
 public:
 
+    enum ToolTipTab
+    {
+        IconItems = 0,
+        AlbumItems,
+        ImportItems
+    };
+
+public:
+
     explicit SetupToolTip(QWidget* const parent = nullptr);
     ~SetupToolTip() override;
+
+    void setActiveTab(ToolTipTab tab);
+    ToolTipTab activeTab() const;
 
     void applySettings();
 

@@ -123,11 +123,14 @@ void SetupVideo::applySettings()
 
 void SetupVideo::readSettings()
 {
+    int i = Decoder;
+
     Q_FOREACH (ConfigPageBase* const page, d->pages)
     {
         page->applyToUi();
         page->applyOnUiChange(false);
-        d->tab->addTab(page, page->name());
+        d->tab->insertTab(i, page, page->name());
+        i++;
     }
 }
 
