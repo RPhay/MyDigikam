@@ -616,7 +616,7 @@ private Q_SLOTS:
      */
 
     //@{
-    /// Google Web service specific methods.
+    /// Google Web service specific methods (donlinetranslator_google.cpp).
 
 private Q_SLOTS:
 
