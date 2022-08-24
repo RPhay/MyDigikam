@@ -944,10 +944,10 @@ void AltLangStrEdit::slotTranslationFinished()
         MetaEngine::AltLangMap vals = values();
         vals.insert(d->trCode, translation);
         setValues(vals);
-        setCurrentLanguageCode(d->trCode);
 
         Q_EMIT signalValueAdded(d->trCode, translation);
 
+        d->languageCB->setCurrentText(d->trCode);
         d->trCode.clear();
     }
     else
