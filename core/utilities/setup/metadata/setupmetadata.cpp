@@ -107,14 +107,24 @@ SetupMetadata::~SetupMetadata()
     delete d;
 }
 
-void SetupMetadata::setActiveMainTab(MetadataTab tab)
+void SetupMetadata::setActiveTab(MetadataTab tab)
 {
     d->tab->setCurrentIndex(tab);
 }
 
-void SetupMetadata::setActiveSubTab(int tab)
+void SetupMetadata::setActiveSubTab(MetadataSubTab tab)
 {
     d->displaySubTab->setCurrentIndex(tab);
+}
+
+SetupMetadata::MetadataTab SetupMetadata::activeTab() const
+{
+    return (MetadataTab)d->tab->currentIndex();
+}
+
+SetupMetadata::MetadataSubTab SetupMetadata::activeSubTab() const
+{
+    return (MetadataSubTab)d->displaySubTab->currentIndex();
 }
 
 void SetupMetadata::applySettings()

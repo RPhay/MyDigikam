@@ -269,12 +269,14 @@ Setup::~Setup()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("Setup Dialog"));
-    group.writeEntry(QLatin1String("Setup Page"), (int)activePageIndex());
-    group.writeEntry(QLatin1String("Editor Tab"), (int)d->editorPage->activeTab());
-    group.writeEntry(QLatin1String("ICC Tab"),    (int)d->iccPage->activeTab());
-    group.writeEntry(QLatin1String("Camera Tab"), (int)d->cameraPage->activeTab());
-    group.writeEntry(QLatin1String("Plugin Tab"), (int)d->pluginsPage->activeTab());
-    group.writeEntry(QLatin1String("Misc Tab"),   (int)d->miscPage->activeTab());
+    group.writeEntry(QLatin1String("Setup Page"),      (int)activePageIndex());
+    group.writeEntry(QLatin1String("Metadata Tab"),    (int)d->metadataPage->activeTab());
+    group.writeEntry(QLatin1String("Metadata SubTab"), (int)d->metadataPage->activeSubTab());
+    group.writeEntry(QLatin1String("Editor Tab"),      (int)d->editorPage->activeTab());
+    group.writeEntry(QLatin1String("ICC Tab"),         (int)d->iccPage->activeTab());
+    group.writeEntry(QLatin1String("Camera Tab"),      (int)d->cameraPage->activeTab());
+    group.writeEntry(QLatin1String("Plugin Tab"),      (int)d->pluginsPage->activeTab());
+    group.writeEntry(QLatin1String("Misc Tab"),        (int)d->miscPage->activeTab());
     DXmlGuiWindow::saveWindowSize(windowHandle(), group);
     config->sync();
 
@@ -411,8 +413,8 @@ bool Setup::execMetadataFilters(QWidget* const parent, int tab)
         return false;
     }
 
-    widget->setActiveMainTab(SetupMetadata::Display);
-    widget->setActiveSubTab(tab);
+    widget->setActiveTab(SetupMetadata::Display);
+    widget->setActiveSubTab((SetupMetadata::MetadataSubTab)tab);
 
     bool success                 = (setup->DConfigDlg::exec() == QDialog::Accepted);
     delete setup;
@@ -440,7 +442,7 @@ bool Setup::execExifTool(QWidget* const parent)
         return false;
     }
 
-    widget->setActiveMainTab(SetupMetadata::ExifTool);
+    widget->setActiveTab(SetupMetadata::ExifTool);
 
     bool success                 = (setup->DConfigDlg::exec() == QDialog::Accepted);
     delete setup;
@@ -539,6 +541,8 @@ void Setup::showPage(Setup::Page page)
         KConfigGroup group        = config->group(QLatin1String("Setup Dialog"));
 
         item = d->pageItem((Page)group.readEntry(QLatin1String("Setup Page"), (int)CollectionsPage));
+        d->metadataPage->setActiveTab((SetupMetadata::MetadataTab)group.readEntry(QLatin1String("Metadata Tab"), (int)SetupMetadata::Behavior));
+        d->metadataPage->setActiveSubTab((SetupMetadata::MetadataSubTab)group.readEntry(QLatin1String("Metadata SubTab"), (int)SetupMetadata::ExifViewer));
         d->editorPage->setActiveTab((SetupEditor::EditorTab)group.readEntry(QLatin1String("Editor Tab"), (int)SetupEditor::EditorWindow));
         d->iccPage->setActiveTab((SetupICC::ICCTab)group.readEntry(QLatin1String("ICC Tab"), (int)SetupICC::Behavior));
         d->cameraPage->setActiveTab((SetupCamera::CameraTab)group.readEntry(QLatin1String("Camera Tab"), (int)SetupCamera::Devices));

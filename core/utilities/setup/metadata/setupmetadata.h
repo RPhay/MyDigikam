@@ -49,6 +49,15 @@ public:
         AdvancedConfig
     };
 
+    enum MetadataSubTab
+    {
+        ExifViewer = 0,
+        MakernotesViewer,
+        IPTCViewer,
+        XMPViewer,
+        ExifToolViewer
+    };
+
 public:
 
     explicit SetupMetadata(QWidget* const parent = nullptr);
@@ -58,8 +67,11 @@ public:
 
     bool exifAutoRotateHasChanged() const;
 
-    void setActiveMainTab(MetadataTab tab);
-    void setActiveSubTab(int tab);
+    void setActiveTab(MetadataTab tab);
+    void setActiveSubTab(MetadataSubTab tab);
+
+    MetadataTab activeTab() const;
+    MetadataSubTab activeSubTab() const;
 
 private:
 
