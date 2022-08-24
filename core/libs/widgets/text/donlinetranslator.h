@@ -699,7 +699,7 @@ private:
     //@}
 
     //@{
-    /// LibreTranslate Web service specific methods.
+    /// LibreTranslate Web service specific methods ()donlinetranslator_libretr.cpp).
 
 private Q_SLOTS:
 
