@@ -270,6 +270,7 @@ Setup::~Setup()
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("Setup Dialog"));
     group.writeEntry(QLatin1String("Setup Page"),      (int)activePageIndex());
+    group.writeEntry(QLatin1String("Albumview Tab"),   (int)d->albumViewPage->activeTab());
     group.writeEntry(QLatin1String("ToolTip Tab"),     (int)d->tooltipPage->activeTab());
     group.writeEntry(QLatin1String("Video Tab"),       (int)d->videoPage->activeTab());
     group.writeEntry(QLatin1String("Metadata Tab"),    (int)d->metadataPage->activeTab());
@@ -543,6 +544,7 @@ void Setup::showPage(Setup::Page page)
         KConfigGroup group        = config->group(QLatin1String("Setup Dialog"));
 
         item = d->pageItem((Page)group.readEntry(QLatin1String("Setup Page"), (int)CollectionsPage));
+        d->albumViewPage->setActiveTab((SetupAlbumView::AlbumTab)group.readEntry(QLatin1String("AlbumView Tab"), (int)SetupAlbumView::IconView));
         d->tooltipPage->setActiveTab((SetupToolTip::ToolTipTab)group.readEntry(QLatin1String("ToolTip Tab"), (int)SetupToolTip::IconItems));
         d->videoPage->setActiveTab((SetupVideo::VideoTab)group.readEntry(QLatin1String("Video Tab"), (int)SetupVideo::Decoder));
         d->metadataPage->setActiveTab((SetupMetadata::MetadataTab)group.readEntry(QLatin1String("Metadata Tab"), (int)SetupMetadata::Behavior));
