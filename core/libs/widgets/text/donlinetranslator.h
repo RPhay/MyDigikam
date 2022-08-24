@@ -541,14 +541,6 @@ public:
     void setEngineApiKey(Engine engine, const QByteArray& apiKey);
 
     /**
-     * @brief Language name
-     *
-     * @param lang language
-     * @return language name
-     */
-    static QString languageName(Language lang);
-
-    /**
      * @brief Language code
      *
      * @param lang language
@@ -556,13 +548,6 @@ public:
      */
     static QString languageCode(Language lang);
 
-    /**
-     * @brief Language
-     *
-     * @param locale locale
-     * @return language
-     */
-    static Language language(const QLocale& locale);
 
     /**
      * @brief Returns general language code
@@ -571,15 +556,6 @@ public:
      * @return language
      */
     static Language language(const QString& langCode);
-
-    /**
-     * @brief Check if transliteration is supported
-     *
-     * @param engine engine
-     * @param lang language
-     * @return `true` if the specified engine supports transliteration for specified language
-     */
-    static bool isSupportTranslation(Engine engine, Language lang);
 
     /**
      * Convert language RFC3066 to supported language code
@@ -595,6 +571,44 @@ public:
      * Return the engine litteral name.
      */
     static QString engineName(Engine engine);
+
+    //@{
+    // Conversion tables (donlinetranslator_tables.cpp)
+
+    /**
+     * @brief Language
+     *
+     * @param locale locale
+     * @return language
+     */
+    static Language language(const QLocale& locale);
+
+    /**
+     * @brief Language name
+     *
+     * @param lang language
+     * @return language name
+     */
+    static QString languageName(Language lang);
+
+    /**
+     * @brief Check if transliteration is supported
+     *
+     * @param engine engine
+     * @param lang language
+     * @return `true` if the specified engine supports transliteration for specified language
+     */
+    static bool isSupportTranslation(Engine engine, Language lang);
+
+private:
+
+    /**
+     * Check for service support
+     */
+    static bool isSupportTranslit(Engine engine, Language lang);
+    static bool isSupportDictionary(Engine engine, Language sourceLang, Language translationLang);
+
+    //@}
 
 Q_SIGNALS:
 
@@ -735,11 +749,6 @@ private:
 
     void resetData(TranslationError error = NoError, const QString& errorString = QString());
 
-    /**
-     * Check for service support
-     */
-    static bool isSupportTranslit(Engine engine, Language lang);
-    static bool isSupportDictionary(Engine engine, Language sourceLang, Language translationLang);
 
     // Other
 
