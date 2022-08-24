@@ -106,6 +106,7 @@
 #include "dexpanderbox.h"
 #include "dfiledialog.h"
 #include "dpluginloader.h"
+#include "exiftoolthread.h"
 #include "exiftoolparser.h"
 #include "sidebarwidget.h"
 #include "spellchecksettings.h"

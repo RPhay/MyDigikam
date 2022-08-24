@@ -71,6 +71,9 @@ Showfoto::Showfoto(const QList<QUrl>& urlList, QWidget* const)
         }
     );
 
+    ExifToolThread* const exifToolThread = new ExifToolThread(this);
+    exifToolThread->start();
+
     d->thumbLoadThread = new Digikam::ThumbnailLoadThread();
     d->thumbLoadThread->setThumbnailSize(Digikam::ThumbnailSize::Huge);
     d->thumbLoadThread->setSendSurrogatePixmap(true);
