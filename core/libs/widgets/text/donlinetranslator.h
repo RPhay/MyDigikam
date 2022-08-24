@@ -342,7 +342,7 @@ public:
                    Language sourceLang = Auto,
                    Language uiLang = Auto);
 
-    /**
+    /** 
      * @brief Detect language
      *
      * @param text text for language detection
@@ -416,7 +416,7 @@ public:
     static QStringList supportedRFC3066();
 
     /**
-     * Return the engine litteral name.
+     * Return the engine literal name.
      */
     static QString engineName(Engine engine);
 
