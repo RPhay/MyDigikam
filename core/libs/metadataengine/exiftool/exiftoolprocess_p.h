@@ -37,6 +37,7 @@
 #include <QByteArray>
 #include <QApplication>
 #include <QElapsedTimer>
+#include <QStandardPaths>
 
 // KDE includes
 

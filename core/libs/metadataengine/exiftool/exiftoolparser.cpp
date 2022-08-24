@@ -105,6 +105,11 @@ ExifToolParser::ExifToolData ExifToolParser::currentData() const
 
 QString ExifToolParser::currentErrorString() const
 {
+    if (!d->errorString.isEmpty())
+    {
+        return d->errorString;
+    }
+
     return d->proc->exifToolErrorString();
 }
 
