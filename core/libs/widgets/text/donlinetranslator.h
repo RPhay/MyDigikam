@@ -678,7 +678,7 @@ private:
     //@}
 
     //@{
-    /// Bing Web service specific methods.
+    /// Bing Web service specific methods (donlinntranslator_bing.cpp).
 
 private Q_SLOTS:
 
