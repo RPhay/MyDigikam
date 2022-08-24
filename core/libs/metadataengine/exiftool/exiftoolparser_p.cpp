@@ -45,6 +45,7 @@ ExifToolParser::Private::~Private()
 void ExifToolParser::Private::prepareProcess()
 {
     currentPath.clear();
+    errorString.clear();
     exifToolData.clear();
 }
 
@@ -57,6 +58,8 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifTo
     if (cmdRunning == 0)
     {
         qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool cannot be sent:" << actionString(cmdAction);
+
+        errorString = i18n("ExifTool is not running or missing");
 
         return false;
     }

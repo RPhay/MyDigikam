@@ -152,16 +152,6 @@ public:
     bool                   exifToolIsBusy()      const;
 
     /**
-     * Returns the type of error that occurred last.
-     */
-    QProcess::ProcessError exifToolError()       const;
-
-    /**
-     * Returns an error message.
-     */
-    QString                exifToolErrorString() const;
-
-    /**
      * Send a command to exiftool process.
      * This function can be called from another thread.
      * Return 0: ExitTool not running, write channel is closed or args is empty.
@@ -179,7 +169,8 @@ Q_SIGNALS:
 
     void signalErrorOccurred(int cmdId,
                              int cmdAction,
-                             QProcess::ProcessError error);
+                             QProcess::ProcessError error,
+                             const QString& description);
 
     void signalFinished(int cmdId,
                         int cmdAction,

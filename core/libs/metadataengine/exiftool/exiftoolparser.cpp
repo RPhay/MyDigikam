@@ -105,7 +105,7 @@ ExifToolParser::ExifToolData ExifToolParser::currentData() const
 
 QString ExifToolParser::currentErrorString() const
 {
-    return d->proc->exifToolErrorString();
+    return d->errorString;
 }
 
 bool ExifToolParser::exifToolAvailable() const

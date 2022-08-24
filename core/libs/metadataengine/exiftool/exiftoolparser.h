@@ -222,7 +222,8 @@ private Q_SLOTS:
 
     void slotErrorOccurred(int cmdId,
                            int cmdAction,
-                           QProcess::ProcessError error);
+                           QProcess::ProcessError error,
+                           const QString& description);
 
     void slotFinished(int cmdId,
                       int cmdAction,

@@ -129,11 +129,6 @@ bool ExifToolProcess::startExifTool()
     d->cmdRunning           = 0;
     d->cmdAction            = NO_ACTION;
 
-    // Clear errors
-
-    d->processError         = QProcess::UnknownError;
-    d->errorString.clear();
-
     // Start ExifTool process
 
     d->writeChannelIsClosed = false;
@@ -211,16 +206,6 @@ bool ExifToolProcess::exifToolAvailable() const
 bool ExifToolProcess::exifToolIsBusy() const
 {
     return (d->cmdRunning ? true : false);
-}
-
-QProcess::ProcessError ExifToolProcess::exifToolError() const
-{
-    return d->processError;
-}
-
-QString ExifToolProcess::exifToolErrorString() const
-{
-    return d->errorString;
 }
 
 int ExifToolProcess::command(const QByteArrayList& args, Action ac)
@@ -362,8 +347,8 @@ bool ExifToolProcess::checkExifToolProgram() const
         !(QFile::permissions(d->etExePath) & QFile::ExeUser))
        )
     {
-        d->processError = QProcess::FailedToStart;
-        d->errorString  = i18n("ExifTool does not exists or exec permission is missing");
+        d->setProcessErrorAndEmit(QProcess::FailedToStart,
+                                  i18n("ExifTool does not exists or exec permission is missing"));
 
         return false;
     }
@@ -376,8 +361,8 @@ bool ExifToolProcess::checkExifToolProgram() const
         !(QFile::permissions(d->perlExePath) & QFile::ExeUser))
        )
     {
-        d->processError = QProcess::FailedToStart;
-        d->errorString  = i18n("Perl does not exists or exec permission is missing");
+        d->setProcessErrorAndEmit(QProcess::FailedToStart,
+                                  i18n("Perl does not exists or exec permission is missing"));
 
         return false;
     }
