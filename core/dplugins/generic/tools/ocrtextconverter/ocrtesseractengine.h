@@ -63,6 +63,7 @@ public:
 
     void saveTextFile(const QString& filePath, const QString& text);
     void saveXMP(const QString& filePath,  const QString& text);
+    bool runOcrProcess();
 
 private:
 
@@ -74,7 +75,6 @@ private:
 private:
 
     void SaveOcrResult();
-    bool runOcrProcess();
 
 private:
 
