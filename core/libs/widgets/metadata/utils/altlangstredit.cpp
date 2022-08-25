@@ -48,7 +48,7 @@ AltLangStrEdit::AltLangStrEdit(QWidget* const parent, unsigned int lines)
 
     d->settingsButton  = new QToolButton(this);
     d->settingsButton->setIcon(QIcon::fromTheme(QLatin1String("configure")));
-    d->settingsButton->setToolTip(i18n("Open localize setup"));
+    d->settingsButton->setToolTip(i18nc("@info", "Open localize setup"));
 
     d->trengine        = new DOnlineTranslator(this);
 
@@ -265,7 +265,7 @@ void AltLangStrEdit::populateLangAltListEntries()
             d->languageCB->addItem(lg);
             d->languageCB->setItemIcon(d->languageCB->count() - 1,
                                        QIcon::fromTheme(QLatin1String("dialog-ok-apply")).pixmap(16, 16));
-            d->languageCB->setItemData(d->languageCB->findText(lg), i18n("Switch to %1", languageNameRFC3066(lg)), Qt::ToolTipRole);
+            d->languageCB->setItemData(d->languageCB->findText(lg), i18nc("@info", "Switch to %1", languageNameRFC3066(lg)), Qt::ToolTipRole);
         }
 
         d->languageCB->insertSeparator(d->languageCB->count());
@@ -281,7 +281,7 @@ void AltLangStrEdit::populateLangAltListEntries()
         if (!list.contains(lg))
         {
             d->languageCB->addItem(lg);
-            d->languageCB->setItemData(d->languageCB->findText(lg), i18n("Switch to %1", languageNameRFC3066(lg)), Qt::ToolTipRole);
+            d->languageCB->setItemData(d->languageCB->findText(lg), i18nc("@info", "Switch to %1", languageNameRFC3066(lg)), Qt::ToolTipRole);
         }
     }
 
@@ -301,7 +301,7 @@ void AltLangStrEdit::populateTranslationEntries()
     {
         QListWidgetItem* const item = new QListWidgetItem(d->translateAction->m_list);
         item->setText(lg);
-        item->setToolTip(i18n("Translate to %1", languageNameRFC3066(lg)));
+        item->setToolTip(i18nc("@info", "Translate to %1", languageNameRFC3066(lg)));
         d->translateAction->m_list->addItem(item);
     }
 }
@@ -442,7 +442,7 @@ void AltLangStrEdit::slotTranslate(QListWidgetItem* item)
         qCDebug(DIGIKAM_WIDGETS_LOG) << "With source language     :" << srcLang;
 
         d->trengine->translate(text,                                                            // String to translate
-                               LocalizeSettings::instance()->settings().translatorEngine,     // Web service
+                               LocalizeSettings::instance()->settings().translatorEngine,       // Web service
                                trLang,                                                          // Target language
                                srcLang,                                                         // Source langage
                                DOnlineTranslator::Auto);
@@ -477,9 +477,9 @@ void AltLangStrEdit::slotTranslationFinished()
         qCDebug(DIGIKAM_WIDGETS_LOG) << "Translation Error       :" << d->trengine->error();
 
         QMessageBox::information(qApp->activeWindow(),
-                                 i18n("Failed to translate string with %1 Web-service",
+                                 i18nc("@info", "Failed to translate string with %1 Web-service",
                                  DOnlineTranslator::engineName(LocalizeSettings::instance()->settings().translatorEngine)),
-                                 i18n("Error message: %1",
+                                 i18nc("@info", "Error message: %1",
                                  d->trengine->errorString()));
 
     }
