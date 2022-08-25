@@ -39,13 +39,13 @@
 namespace Digikam
 {
 
-void DOnlineTranslator::requestBingCredentials()
+void DOnlineTranslator::slotRequestBingCredentials()
 {
     const QUrl url(QStringLiteral("https://www.bing.com/translator"));
     m_currentReply = m_networkManager->get(QNetworkRequest(url));
 }
 
-void DOnlineTranslator::parseBingCredentials()
+void DOnlineTranslator::slotParseBingCredentials()
 {
     m_currentReply->deleteLater();
 
@@ -107,7 +107,7 @@ void DOnlineTranslator::parseBingCredentials()
     s_bingIid = QString::fromUtf8(webSiteData.mid(iidBeginPos, iidEndPos - iidBeginPos));
 }
 
-void DOnlineTranslator::requestBingTranslate()
+void DOnlineTranslator::slotRequestBingTranslate()
 {
     const QString sourceText = sender()->property(s_textProperty).toString();
 
@@ -134,7 +134,7 @@ void DOnlineTranslator::requestBingTranslate()
     m_currentReply = m_networkManager->post(request, postData);
 }
 
-void DOnlineTranslator::parseBingTranslate()
+void DOnlineTranslator::slotParseBingTranslate()
 {
     m_currentReply->deleteLater();
 
@@ -171,7 +171,7 @@ void DOnlineTranslator::parseBingTranslate()
     m_translationTranslit               += translationsObject.value(QStringLiteral("transliteration")).toObject().value(QStringLiteral("text")).toString();
 }
 
-void DOnlineTranslator::requestBingDictionary()
+void DOnlineTranslator::slotRequestBingDictionary()
 {
     // Check if language is supported (need to check here because language may be autodetected)
 
@@ -195,7 +195,7 @@ void DOnlineTranslator::requestBingDictionary()
     m_currentReply = m_networkManager->post(request, postData);
 }
 
-void DOnlineTranslator::parseBingDictionary()
+void DOnlineTranslator::slotParseBingDictionary()
 {
     m_currentReply->deleteLater();
 
@@ -249,8 +249,8 @@ void DOnlineTranslator::buildBingStateMachine()
     if (s_bingKey.isEmpty() || s_bingToken.isEmpty())
     {
         buildNetworkRequestState(credentialsState,
-                                 &DOnlineTranslator::requestBingCredentials,
-                                 &DOnlineTranslator::parseBingCredentials);
+                                 &DOnlineTranslator::slotRequestBingCredentials,
+                                 &DOnlineTranslator::slotParseBingCredentials);
     }
     else
     {
@@ -260,8 +260,8 @@ void DOnlineTranslator::buildBingStateMachine()
     // Setup translation state
 
     buildSplitNetworkRequest(translationState,
-                             &DOnlineTranslator::requestBingTranslate,
-                             &DOnlineTranslator::parseBingTranslate,
+                             &DOnlineTranslator::slotRequestBingTranslate,
+                             &DOnlineTranslator::slotParseBingTranslate,
                              m_source,
                              s_bingTranslateLimit);
 
@@ -270,8 +270,8 @@ void DOnlineTranslator::buildBingStateMachine()
     if (m_translationOptionsEnabled && !isContainsSpace(m_source))
     {
         buildNetworkRequestState(dictionaryState,
-                                 &DOnlineTranslator::requestBingDictionary,
-                                 &DOnlineTranslator::parseBingDictionary,
+                                 &DOnlineTranslator::slotRequestBingDictionary,
+                                 &DOnlineTranslator::slotParseBingDictionary,
                                  m_source);
     }
     else
@@ -295,8 +295,8 @@ void DOnlineTranslator::buildBingDetectStateMachine()
     const QString text = m_source.left(getSplitIndex(m_source, s_bingTranslateLimit));
 
     buildNetworkRequestState(detectState,
-                             &DOnlineTranslator::requestBingTranslate,
-                             &DOnlineTranslator::parseBingTranslate,
+                             &DOnlineTranslator::slotRequestBingTranslate,
+                             &DOnlineTranslator::slotParseBingTranslate,
                              text);
 }
 

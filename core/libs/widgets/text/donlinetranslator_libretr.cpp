@@ -39,7 +39,7 @@
 namespace Digikam
 {
 
-void DOnlineTranslator::requestLibreLangDetection()
+void DOnlineTranslator::slotRequestLibreLangDetection()
 {
     const QString sourceText  = sender()->property(s_textProperty).toString();
 
@@ -59,7 +59,7 @@ void DOnlineTranslator::requestLibreLangDetection()
     m_currentReply            = m_networkManager->post(request, postData);
 }
 
-void DOnlineTranslator::parseLibreLangDetection()
+void DOnlineTranslator::slotParseLibreLangDetection()
 {
     m_currentReply->deleteLater();
 
@@ -86,7 +86,7 @@ void DOnlineTranslator::parseLibreLangDetection()
     }
 }
 
-void DOnlineTranslator::requestLibreTranslate()
+void DOnlineTranslator::slotRequestLibreTranslate()
 {
     const QString sourceText  = sender()->property(s_textProperty).toString();
 
@@ -108,7 +108,7 @@ void DOnlineTranslator::requestLibreTranslate()
     m_currentReply            = m_networkManager->post(request, postData);
 }
 
-void DOnlineTranslator::parseLibreTranslate()
+void DOnlineTranslator::slotParseLibreTranslate()
 {
     m_currentReply->deleteLater();
 
@@ -140,8 +140,8 @@ void DOnlineTranslator::buildLibreDetectStateMachine()
     const QString text = m_source.left(getSplitIndex(m_source, s_libreTranslateLimit));
 
     buildNetworkRequestState(detectState,
-                             &DOnlineTranslator::requestLibreLangDetection,
-                             &DOnlineTranslator::parseLibreLangDetection,
+                             &DOnlineTranslator::slotRequestLibreLangDetection,
+                             &DOnlineTranslator::slotParseLibreLangDetection,
                              text);
 }
 
@@ -162,15 +162,15 @@ void DOnlineTranslator::buildLibreStateMachine()
     // Setup LibreTranslate lang code detection
 
     buildNetworkRequestState(languageDetectionState,
-                             &DOnlineTranslator::requestLibreLangDetection,
-                             &DOnlineTranslator::parseLibreLangDetection,
+                             &DOnlineTranslator::slotRequestLibreLangDetection,
+                             &DOnlineTranslator::slotParseLibreLangDetection,
                              m_source);
 
     // Setup translation state
 
     buildSplitNetworkRequest(translationState,
-                             &DOnlineTranslator::requestLibreTranslate,
-                             &DOnlineTranslator::parseLibreTranslate,
+                             &DOnlineTranslator::slotRequestLibreTranslate,
+                             &DOnlineTranslator::slotParseLibreTranslate,
                              m_source,
                              s_libreTranslateLimit);
 }

@@ -39,7 +39,7 @@
 namespace Digikam
 {
 
-void DOnlineTranslator::requestLingvaTranslate()
+void DOnlineTranslator::slotRequestLingvaTranslate()
 {
     const QString sourceText = sender()->property(s_textProperty).toString();
 
@@ -54,7 +54,7 @@ void DOnlineTranslator::requestLingvaTranslate()
     m_currentReply = m_networkManager->get(QNetworkRequest(url));
 }
 
-void DOnlineTranslator::parseLingvaTranslate()
+void DOnlineTranslator::slotParseLingvaTranslate()
 {
     m_currentReply->deleteLater();
 
@@ -88,8 +88,8 @@ void DOnlineTranslator::buildLingvaStateMachine()
     // Setup translation state
 
     buildSplitNetworkRequest(translationState,
-                             &DOnlineTranslator::requestLingvaTranslate,
-                             &DOnlineTranslator::parseLingvaTranslate,
+                             &DOnlineTranslator::slotRequestLingvaTranslate,
+                             &DOnlineTranslator::slotParseLingvaTranslate,
                              m_source,
                              s_googleTranslateLimit);
 }
@@ -109,8 +109,8 @@ void DOnlineTranslator::buildLingvaDetectStateMachine()
     const QString text = m_source.left(getSplitIndex(m_source, s_googleTranslateLimit));
 
     buildNetworkRequestState(detectState,
-                             &DOnlineTranslator::requestLingvaTranslate,
-                             &DOnlineTranslator::parseLingvaTranslate,
+                             &DOnlineTranslator::slotRequestLingvaTranslate,
+                             &DOnlineTranslator::slotParseLingvaTranslate,
                              text);
 }
 

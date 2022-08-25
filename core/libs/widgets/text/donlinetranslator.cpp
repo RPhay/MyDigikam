@@ -778,7 +778,7 @@ bool DOnlineTranslator::isRunning() const
     return m_stateMachine->isRunning();
 }
 
-void DOnlineTranslator::skipGarbageText()
+void DOnlineTranslator::slotSkipGarbageText()
 {
     m_translation.append(sender()->property(s_textProperty).toString());
 }
@@ -808,7 +808,7 @@ void DOnlineTranslator::buildSplitNetworkRequest(QState* const parent,
             currentTranslationState->addTransition(nextTranslationState);
 
             connect(currentTranslationState, &QState::entered,
-                    this, &DOnlineTranslator::skipGarbageText);
+                    this, &DOnlineTranslator::slotSkipGarbageText);
 
             // Remove the parsed part from the next parsing
 

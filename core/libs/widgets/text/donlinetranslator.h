@@ -420,7 +420,6 @@ public:
      */
     static QString engineName(Engine engine);
 
-
     //@{
     // Properties methods (donlinetranslator_properties.cpp)
 
@@ -626,7 +625,7 @@ Q_SIGNALS:
 
 private Q_SLOTS:
 
-    void skipGarbageText();
+    void slotSkipGarbageText();
 
     /**
      * NOTE: Engines have translation limit, so need to split all text into parts and make request sequentially.
@@ -639,8 +638,8 @@ private Q_SLOTS:
 
 private Q_SLOTS:
 
-    void requestGoogleTranslate();
-    void parseGoogleTranslate();
+    void slotRequestGoogleTranslate();
+    void slotParseGoogleTranslate();
 
 private:
 
@@ -654,20 +653,20 @@ private:
 
 private Q_SLOTS:
 
-    void requestYandexKey();
-    void parseYandexKey();
+    void slotRequestYandexKey();
+    void slotParseYandexKey();
 
-    void requestYandexTranslate();
-    void parseYandexTranslate();
+    void slotRequestYandexTranslate();
+    void slotParseYandexTranslate();
 
-    void requestYandexSourceTranslit();
-    void parseYandexSourceTranslit();
+    void slotRequestYandexSourceTranslit();
+    void slotParseYandexSourceTranslit();
 
-    void requestYandexTranslationTranslit();
-    void parseYandexTranslationTranslit();
+    void slotRequestYandexTranslationTranslit();
+    void slotParseYandexTranslationTranslit();
 
-    void requestYandexDictionary();
-    void parseYandexDictionary();
+    void slotRequestYandexDictionary();
+    void slotParseYandexDictionary();
 
 private:
 
@@ -687,14 +686,14 @@ private:
 
 private Q_SLOTS:
 
-    void requestBingCredentials();
-    void parseBingCredentials();
+    void slotRequestBingCredentials();
+    void slotParseBingCredentials();
 
-    void requestBingTranslate();
-    void parseBingTranslate();
+    void slotRequestBingTranslate();
+    void slotParseBingTranslate();
 
-    void requestBingDictionary();
-    void parseBingDictionary();
+    void slotRequestBingDictionary();
+    void slotParseBingDictionary();
 
 private:
 
@@ -708,11 +707,11 @@ private:
 
 private Q_SLOTS:
 
-    void requestLibreLangDetection();
-    void parseLibreLangDetection();
+    void slotRequestLibreLangDetection();
+    void slotParseLibreLangDetection();
 
-    void requestLibreTranslate();
-    void parseLibreTranslate();
+    void slotRequestLibreTranslate();
+    void slotParseLibreTranslate();
 
 private:
 
@@ -726,8 +725,8 @@ private:
 
 private Q_SLOTS:
 
-    void requestLingvaTranslate();
-    void parseLingvaTranslate();
+    void slotRequestLingvaTranslate();
+    void slotParseLingvaTranslate();
 
 private:
 

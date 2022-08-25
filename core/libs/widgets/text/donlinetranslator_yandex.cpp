@@ -39,13 +39,13 @@
 namespace Digikam
 {
 
-void DOnlineTranslator::requestYandexKey()
+void DOnlineTranslator::slotRequestYandexKey()
 {
     const QUrl url(QStringLiteral("https://translate.yandex.com"));
     m_currentReply = m_networkManager->get(QNetworkRequest(url));
 }
 
-void DOnlineTranslator::parseYandexKey()
+void DOnlineTranslator::slotParseYandexKey()
 {
     m_currentReply->deleteLater();
 
@@ -101,7 +101,7 @@ void DOnlineTranslator::parseYandexKey()
     s_yandexKey = sidParts.join(QLatin1Char('.'));
 }
 
-void DOnlineTranslator::requestYandexTranslate()
+void DOnlineTranslator::slotRequestYandexTranslate()
 {
     const QString sourceText = sender()->property(s_textProperty).toString();
 
@@ -136,7 +136,7 @@ void DOnlineTranslator::requestYandexTranslate()
     m_currentReply = m_networkManager->post(request, QByteArray());
 }
 
-void DOnlineTranslator::parseYandexTranslate()
+void DOnlineTranslator::slotParseYandexTranslate()
 {
     m_currentReply->deleteLater();
 
@@ -191,27 +191,27 @@ void DOnlineTranslator::parseYandexTranslate()
     m_translation += jsonData.value(QStringLiteral("text")).toArray().at(0).toString();
 }
 
-void DOnlineTranslator::requestYandexSourceTranslit()
+void DOnlineTranslator::slotRequestYandexSourceTranslit()
 {
     requestYandexTranslit(m_sourceLang);
 }
 
-void DOnlineTranslator::parseYandexSourceTranslit()
+void DOnlineTranslator::slotParseYandexSourceTranslit()
 {
     parseYandexTranslit(m_sourceTranslit);
 }
 
-void DOnlineTranslator::requestYandexTranslationTranslit()
+void DOnlineTranslator::slotRequestYandexTranslationTranslit()
 {
     requestYandexTranslit(m_translationLang);
 }
 
-void DOnlineTranslator::parseYandexTranslationTranslit()
+void DOnlineTranslator::slotParseYandexTranslationTranslit()
 {
     parseYandexTranslit(m_translationTranslit);
 }
 
-void DOnlineTranslator::requestYandexDictionary()
+void DOnlineTranslator::slotRequestYandexDictionary()
 {
     // Check if language is supported (need to check here because language may be autodetected)
 
@@ -237,7 +237,7 @@ void DOnlineTranslator::requestYandexDictionary()
     m_currentReply = m_networkManager->get(QNetworkRequest(url));
 }
 
-void DOnlineTranslator::parseYandexDictionary()
+void DOnlineTranslator::slotParseYandexDictionary()
 {
     m_currentReply->deleteLater();
 
@@ -310,8 +310,8 @@ void DOnlineTranslator::buildYandexStateMachine()
     if (s_yandexKey.isEmpty())
     {
         buildNetworkRequestState(keyState,
-                                 &DOnlineTranslator::requestYandexKey,
-                                 &DOnlineTranslator::parseYandexKey);
+                                 &DOnlineTranslator::slotRequestYandexKey,
+                                 &DOnlineTranslator::slotParseYandexKey);
     }
     else
     {
@@ -321,8 +321,8 @@ void DOnlineTranslator::buildYandexStateMachine()
     // Setup translation state
 
     buildSplitNetworkRequest(translationState,
-                             &DOnlineTranslator::requestYandexTranslate,
-                             &DOnlineTranslator::parseYandexTranslate,
+                             &DOnlineTranslator::slotRequestYandexTranslate,
+                             &DOnlineTranslator::slotParseYandexTranslate,
                              m_source,
                              s_yandexTranslateLimit);
 
@@ -331,8 +331,8 @@ void DOnlineTranslator::buildYandexStateMachine()
     if (m_sourceTranslitEnabled)
     {
         buildSplitNetworkRequest(sourceTranslitState,
-                                 &DOnlineTranslator::requestYandexSourceTranslit,
-                                 &DOnlineTranslator::parseYandexSourceTranslit,
+                                 &DOnlineTranslator::slotRequestYandexSourceTranslit,
+                                 &DOnlineTranslator::slotParseYandexSourceTranslit,
                                  m_source,
                                  s_yandexTranslitLimit);
     }
@@ -343,8 +343,8 @@ void DOnlineTranslator::buildYandexStateMachine()
     if (m_sourceTranslitEnabled)
     {
         buildSplitNetworkRequest(sourceTranslitState,
-                                 &DOnlineTranslator::requestYandexSourceTranslit,
-                                 &DOnlineTranslator::parseYandexSourceTranslit,
+                                 &DOnlineTranslator::slotRequestYandexSourceTranslit,
+                                 &DOnlineTranslator::slotParseYandexSourceTranslit,
                                  m_source,
                                  s_yandexTranslitLimit);
     }
@@ -358,8 +358,8 @@ void DOnlineTranslator::buildYandexStateMachine()
     if (m_translationTranslitEnabled)
     {
         buildSplitNetworkRequest(translationTranslitState,
-                                 &DOnlineTranslator::requestYandexTranslationTranslit,
-                                 &DOnlineTranslator::parseYandexTranslationTranslit,
+                                 &DOnlineTranslator::slotRequestYandexTranslationTranslit,
+                                 &DOnlineTranslator::slotParseYandexTranslationTranslit,
                                  m_translation,
                                  s_yandexTranslitLimit);
     }
@@ -373,8 +373,8 @@ void DOnlineTranslator::buildYandexStateMachine()
     if (m_translationOptionsEnabled && !isContainsSpace(m_source))
     {
         buildNetworkRequestState(dictionaryState,
-                                 &DOnlineTranslator::requestYandexDictionary,
-                                 &DOnlineTranslator::parseYandexDictionary,
+                                 &DOnlineTranslator::slotRequestYandexDictionary,
+                                 &DOnlineTranslator::slotParseYandexDictionary,
                                  m_source);
     }
     else
@@ -402,8 +402,8 @@ void DOnlineTranslator::buildYandexDetectStateMachine()
     if (s_yandexKey.isEmpty())
     {
         buildNetworkRequestState(keyState,
-                                 &DOnlineTranslator::requestYandexKey,
-                                 &DOnlineTranslator::parseYandexKey);
+                                 &DOnlineTranslator::slotRequestYandexKey,
+                                 &DOnlineTranslator::slotParseYandexKey);
     }
     else
     {
@@ -415,8 +415,8 @@ void DOnlineTranslator::buildYandexDetectStateMachine()
     const QString text = m_source.left(getSplitIndex(m_source, s_yandexTranslateLimit));
 
     buildNetworkRequestState(detectState,
-                             &DOnlineTranslator::requestYandexTranslate,
-                             &DOnlineTranslator::parseYandexTranslate,
+                             &DOnlineTranslator::slotRequestYandexTranslate,
+                             &DOnlineTranslator::slotParseYandexTranslate,
                              text);
 }
 
