@@ -22,19 +22,7 @@
  *
  * ============================================================ */
 
-#include "donlinetranslator.h"
-
-// Qt includes
-
-#include <QCoreApplication>
-#include <QFinalState>
-#include <QJsonDocument>
-#include <QNetworkReply>
-#include <QStateMachine>
-
-// KDE includes
-
-#include <klocalizedstring.h>
+#include "donlinetranslator_p.h"
 
 namespace Digikam
 {

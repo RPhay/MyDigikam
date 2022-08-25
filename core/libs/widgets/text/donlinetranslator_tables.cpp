@@ -22,22 +22,87 @@
  *
  * ============================================================ */
 
-#include "donlinetranslator.h"
-
-// Qt includes
-
-#include <QCoreApplication>
-#include <QFinalState>
-#include <QJsonDocument>
-#include <QNetworkReply>
-#include <QStateMachine>
-
-// KDE includes
-
-#include <klocalizedstring.h>
+#include "donlinetranslator_p.h"
 
 namespace Digikam
 {
+
+QString DOnlineTranslator::fromRFC3066(Engine engine, const QString& langCodeRFC3066)
+{
+    QString lg;
+
+    switch (engine)
+    {
+        case Google:
+        case LibreTranslate:
+        {
+            lg = s_rfc3066LanguageCodesGoogle[langCodeRFC3066];
+            break;
+        }
+
+        case Yandex:
+        {
+            lg = s_rfc3066LanguageCodesYandex[langCodeRFC3066];
+            break;
+        }
+
+        case Bing:
+        {
+            lg = s_rfc3066LanguageCodesBing[langCodeRFC3066];
+            break;
+        }
+
+        case Lingva:
+        {
+            lg = s_rfc3066LanguageCodesLingva[langCodeRFC3066];
+            break;
+        }
+    }
+
+    if (lg.isEmpty())
+    {
+        lg = s_rfc3066LanguageCodesGeneric[langCodeRFC3066];
+    }
+
+    return lg;
+}
+
+QStringList DOnlineTranslator::supportedRFC3066(Engine engine)
+{
+    QStringList lst = s_rfc3066LanguageCodesGeneric.keys();
+
+    switch (engine)
+    {
+        case Google:
+        case LibreTranslate:
+        {
+            lst << s_rfc3066LanguageCodesGoogle.keys();
+            break;
+        }
+
+        case Yandex:
+        {
+            lst << s_rfc3066LanguageCodesYandex.keys();
+            break;
+        }
+
+        case Bing:
+        {
+            lst << s_rfc3066LanguageCodesBing.keys();
+            break;
+        }
+
+        case Lingva:
+        {
+            lst << s_rfc3066LanguageCodesLingva.keys();
+            break;
+        }
+    }
+
+    lst.removeDuplicates();
+
+    return lst;
+}
 
 QString DOnlineTranslator::languageName(Language lang)
 {

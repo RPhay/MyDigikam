@@ -342,7 +342,7 @@ public:
                    Language sourceLang = Auto,
                    Language uiLang = Auto);
 
-    /** 
+    /**
      * @brief Detect language
      *
      * @param text text for language detection
@@ -406,6 +406,14 @@ public:
     Language sourceLanguage() const;
 
     /**
+     * Return the engine literal name.
+     */
+    static QString engineName(Engine engine);
+
+    //@{
+    // Properties methods (donlinetranslator_properties.cpp)
+
+    /**
      * Convert language RFC3066 to supported language code
      */
     static QString fromRFC3066(Engine engine, const QString& langCodeRFC3066);
@@ -416,14 +424,6 @@ public:
     static QStringList supportedRFC3066(Engine engine);
 
     /**
-     * Return the engine literal name.
-     */
-    static QString engineName(Engine engine);
-
-    //@{
-    // Properties methods (donlinetranslator_properties.cpp)
-
-   /**
      * @brief Translated text
      *
      * @return translated text.
@@ -775,20 +775,6 @@ private:
     static void addSpaceBetweenParts(QString& text);
 
 private:
-
-    static const QMap<Language, QString>             s_genericLanguageCodes;
-    static const QMap<QString, QString>              s_rfc3066LanguageCodesGeneric;
-    static const QMap<QString, QString>              s_rfc3066LanguageCodesGoogle;
-    static const QMap<QString, QString>              s_rfc3066LanguageCodesYandex;
-    static const QMap<QString, QString>              s_rfc3066LanguageCodesBing;
-    static const QMap<QString, QString>              s_rfc3066LanguageCodesLingva;
-
-    // Engines have some language codes exceptions
-
-    static const QMap<Language, QString>             s_googleLanguageCodes;
-    static const QMap<Language, QString>             s_yandexLanguageCodes;
-    static const QMap<Language, QString>             s_bingLanguageCodes;
-    static const QMap<Language, QString>             s_lingvaLanguageCodes;
 
     // Credentials that is parsed from the web version to receive the translation using the API
 
