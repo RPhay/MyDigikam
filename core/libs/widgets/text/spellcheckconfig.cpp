@@ -102,14 +102,14 @@ SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
     d->activeSpellCheck     = new QCheckBox(this);
     d->activeSpellCheck->setText(i18nc("@option:check", "Activate spellcheck in background when entering text"));
 
-    d->spellCheckLabel      = new QLabel(i18nc("@info", "<para>Turn on this option to activate the background spellcheck "
-                                                        "feature on captions, titles, and other text-edit widgets. "
-                                                        "Spellcheck is able to auto-detect the current language used in "
-                                                        "text and will propose alternative with miss-spelled words.</para>"
-                                                        "<para>With entries where alternative language can be specified, the "
-                                                        "contextual language will be used to parse text. Spellcheck "
-                                                        "depends of open-source backends, including necessary dictionaries, "
-                                                        "to operate sentence analysis in desired languages.</para>"), this);
+    d->spellCheckLabel      = new QLabel(xi18nc("@info", "<para>Turn on this option to activate the background spellcheck "
+                                                         "feature on captions, titles, and other text-edit widgets. "
+                                                         "Spellcheck is able to auto-detect the current language used in "
+                                                         "text and will propose alternative with miss-spelled words.</para>"
+                                                         "<para>With entries where alternative language can be specified, the "
+                                                         "contextual language will be used to parse text. Spellcheck "
+                                                         "depends of open-source backends, including necessary dictionaries, "
+                                                         "to operate sentence analysis in desired languages.</para>"), this);
     d->spellCheckLabel->setWordWrap(true);
 
     // ---
@@ -164,7 +164,7 @@ SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
 
     d->ignoreWordsBox = new QListWidget(this);
     d->ignoreWordsBox->setWhatsThis(i18nc("@info", "You can add or remove words to ignore "
-                                         "while spell-checking operations."));
+                                          "while spell-checking operations."));
 
     d->ignoreWordsBox->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 
