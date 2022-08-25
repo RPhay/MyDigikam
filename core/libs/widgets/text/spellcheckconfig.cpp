@@ -230,7 +230,7 @@ SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
     grid->addWidget(dictgroup,           2, 0, 1, 1);
     grid->addWidget(backgroup,           2, 1, 1, 1);
     grid->addWidget(ignoreWordsGroup,    3, 0, 1, 2);
-    grid->setRowStretch(4, 10);
+    grid->setRowStretch(3, 10);
     grid->setColumnStretch(0, 10);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);
