@@ -408,12 +408,12 @@ public:
     /**
      * Convert language RFC3066 to supported language code
      */
-    static QString fromRFC3066(const QString& langCodeRFC3066);
+    static QString fromRFC3066(Engine engine, const QString& langCodeRFC3066);
 
     /**
      * Return a list of all supported language in RFC3066.
      */
-    static QStringList supportedRFC3066();
+    static QStringList supportedRFC3066(Engine engine);
 
     /**
      * Return the engine literal name.
@@ -777,7 +777,11 @@ private:
 private:
 
     static const QMap<Language, QString>             s_genericLanguageCodes;
-    static const QMap<QString, QString>              s_rfc3066LanguageCodes;
+    static const QMap<QString, QString>              s_rfc3066LanguageCodesGeneric;
+    static const QMap<QString, QString>              s_rfc3066LanguageCodesGoogle;
+    static const QMap<QString, QString>              s_rfc3066LanguageCodesYandex;
+    static const QMap<QString, QString>              s_rfc3066LanguageCodesBing;
+    static const QMap<QString, QString>              s_rfc3066LanguageCodesLingva;
 
     // Engines have some language codes exceptions
 

@@ -242,16 +242,19 @@ void SetupMetadata::slotExifToolSettingsChanged(bool available)
         d->writeWithExifToolBox->setEnabled(true);
         d->writeDngFilesBox->setEnabled(true);
         d->writeRawFilesBox->setEnabled(true);
-        d->writeWithExifToolLabel->setText(xi18nc("@label", "Note: see <a href='https://exiftool.org/#limitations'>write limitations</a> "
-                                                  "of ExifTool backend."));
+        d->writeWithExifToolLabel->setText(i18nc("@label", "Note: see %1 of ExifTool backend.",
+                                                 QString::fromUtf8("<a href='https://exiftool.org/#limitations'>%1</a>")
+                                                     .arg(i18nc("@label", "write limitations"))));
     }
     else
     {
         d->writeWithExifToolBox->setEnabled(false);
         d->writeDngFilesBox->setEnabled(false);
         d->writeRawFilesBox->setEnabled(false);
-        d->writeWithExifToolLabel->setText(xi18nc("@label", "Note: these options depends of <a href='https://exiftool.org/'>ExifTool backend</a> availability. "
-                                                  "Check in the ExifTool tab for details."));
+        d->writeWithExifToolLabel->setText(i18nc("@label", "Note: these options depends of %1 availability. "
+                                                 "Check in the ExifTool tab for details.",
+                                                 QString::fromUtf8("<a href='https://exiftool.org/'>%1</a>")
+                                                    .arg(i18nc("@label", "ExifTool backend"))));
     }
 }
 

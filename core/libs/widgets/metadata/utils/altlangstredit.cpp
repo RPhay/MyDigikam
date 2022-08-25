@@ -294,8 +294,8 @@ void AltLangStrEdit::populateTranslationEntries()
 {
     d->translateAction->m_list->clear();
 
-    QStringList allRFC3066  = DOnlineTranslator::supportedRFC3066();
-    LocalizeContainer set = LocalizeSettings::instance()->settings();
+    QStringList allRFC3066  = DOnlineTranslator::supportedRFC3066(LocalizeSettings::instance()->settings().translatorEngine);
+    LocalizeContainer set   = LocalizeSettings::instance()->settings();
 
     Q_FOREACH (const QString& lg, set.translatorLang)
     {
@@ -430,10 +430,10 @@ void AltLangStrEdit::slotTranslate(QListWidgetItem* item)
         }
         else
         {
-            srcLang = DOnlineTranslator::language(DOnlineTranslator::fromRFC3066(srcCode));
+            srcLang = DOnlineTranslator::language(DOnlineTranslator::fromRFC3066(LocalizeSettings::instance()->settings().translatorEngine, srcCode));
         }
 
-        trLang       = DOnlineTranslator::language(DOnlineTranslator::fromRFC3066(d->trCode));
+        trLang       = DOnlineTranslator::language(DOnlineTranslator::fromRFC3066(LocalizeSettings::instance()->settings().translatorEngine, d->trCode));
         QString text = textEdit()->text();
 
         qCDebug(DIGIKAM_WIDGETS_LOG) << "Request to translate with Web-service:";

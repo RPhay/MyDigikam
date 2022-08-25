@@ -198,7 +198,7 @@ const QMap<DOnlineTranslator::Language, QString> DOnlineTranslator::s_lingvaLang
 
 // --------------------------------------------------------------------------------------------
 
-const QMap<QString, QString> DOnlineTranslator::s_rfc3066LanguageCodes =
+const QMap<QString, QString> DOnlineTranslator::s_rfc3066LanguageCodesGeneric =
 {
     { QLatin1String("af-ZA"),  QLatin1String("af")       },
     { QLatin1String("am-ET"),  QLatin1String("am")       },
@@ -235,7 +235,6 @@ const QMap<QString, QString> DOnlineTranslator::s_rfc3066LanguageCodes =
 //     { QLatin1String("bo-BT"),  QLatin1String("")         },
 //     { QLatin1String("bo-CN"),  QLatin1String("")         },
     { QLatin1String("bs-BA"),  QLatin1String("bs")       },
-    { QLatin1String("bs-BG"),  QLatin1String("bs-Latn")  },         // NOTE: Bing translator only
     { QLatin1String("bg-BG"),  QLatin1String("bg")       },
 //     { QLatin1String("br-FR"),  QLatin1String("")         },
 //     { QLatin1String("")     ,  QLatin1String("yue")      },      // Yue Chinese: do not exists as 2 letters code
@@ -422,7 +421,6 @@ const QMap<QString, QString> DOnlineTranslator::s_rfc3066LanguageCodes =
     { QLatin1String("id-ID"),  QLatin1String("id")       },
     { QLatin1String("ig-NG"),  QLatin1String("ig")       },
     { QLatin1String("is-IS"),  QLatin1String("is")       },
-    { QLatin1String("iw-IL"),  QLatin1String("iw")       },         // NOTE: Google translator only.
 //    { QLatin1String("ii-CN"),  QLatin1String("")         },
     { QLatin1String("it-CH"),  QLatin1String("it")       },
     { QLatin1String("it-HR"),  QLatin1String("it")       },
@@ -430,7 +428,6 @@ const QMap<QString, QString> DOnlineTranslator::s_rfc3066LanguageCodes =
     { QLatin1String("it-SI"),  QLatin1String("it")       },
     { QLatin1String("it-SM"),  QLatin1String("it")       },
     { QLatin1String("ja-JP"),  QLatin1String("ja")       },
-    { QLatin1String("jv-ID"),  QLatin1String("jv")       },     // NOTE: Yandex translator only
     { QLatin1String("jw-ID"),  QLatin1String("jw")       },
     { QLatin1String("ka-GE"),  QLatin1String("ka")       },
     { QLatin1String("kn-IN"),  QLatin1String("kn")       },
@@ -463,7 +460,6 @@ const QMap<QString, QString> DOnlineTranslator::s_rfc3066LanguageCodes =
     { QLatin1String("ms-SG"),  QLatin1String("ms")       },
     { QLatin1String("mt-MT"),  QLatin1String("mt")       },
     { QLatin1String("my-MM"),  QLatin1String("my")       },
-//     { QLatin1String("")     ,  QLatin1String("mww")      },      // Hmong: do not exists as 2 letters code; NOTE: Bing translator only
 //     { QLatin1String("nb-NO"),  QLatin1String("")         },
     { QLatin1String("ne-NP"),  QLatin1String("ne")       },
     { QLatin1String("nl-AN"),  QLatin1String("nl")       },
@@ -506,7 +502,6 @@ const QMap<QString, QString> DOnlineTranslator::s_rfc3066LanguageCodes =
     { QLatin1String("sq-AL"),  QLatin1String("sq")       },
     { QLatin1String("sr-BA"),  QLatin1String("sr")       },
     { QLatin1String("sr-YU"),  QLatin1String("sr")       },
-    { QLatin1String("sr-RS"),  QLatin1String("sr-Cyrl")  },         // NOTE: Bing translator only
     { QLatin1String("sr-SP"),  QLatin1String("sr-Latin") },
 //     { QLatin1String("ss-SZ")     ,  QLatin1String("")       },
 //     { QLatin1String("ss-ZA")     ,  QLatin1String("")       },
@@ -544,17 +539,48 @@ const QMap<QString, QString> DOnlineTranslator::s_rfc3066LanguageCodes =
     { QLatin1String("yi-DE"),  QLatin1String("yi")       },
     { QLatin1String("yo-NG"),  QLatin1String("yo")       },
 //     { QLatin1String("")     ,  QLatin1String("yua")      },      // Maya Yucatec: do not exists as 2 letters code
-//     { QLatin1String("")     ,  QLatin1String("zh-Hans")  },      // SimplifiedChinese                        ; NOTE: Bing translator only
-//     { QLatin1String(""),       QLatin1String("zh-Hant")  },      // TraditionalChinese                       ; NOTE: Bing translator only
-//     { QLatin1String(""),       QLatin1String("zh_HANT")  },      // TraditionalChinese
     { QLatin1String("zh-CN"),  QLatin1String("zh-CN")    },         // Chinese (Simplified, PRC)
-    { QLatin1String("zh-MO"),  QLatin1String("zh")       },         // Chinese (Traditional, Macao S.A.R.)      ; NOTE: Lingva translator only
-    { QLatin1String("zh-HK"),  QLatin1String("zh")       },         // Chinese (Traditional, Hong Kong S.A.R.)  ; NOTE: Lingva translator only
-    { QLatin1String("zh-SG"),  QLatin1String("zh")       },         // Chinese (Simplified, Singapore)          ; NOTE: Lingva translator only
     { QLatin1String("zh-TW"),  QLatin1String("zh-TW")    },         // Chinese (Traditional, Taiwan)
-    { QLatin1String("zn-CN"),  QLatin1String("zn")       },         // NOTE: Yandex translator only
     { QLatin1String("zu-ZA"),  QLatin1String("zu")       }
 };
+
+// --------------------------------------------------------------------------------------------
+
+const QMap<QString, QString> DOnlineTranslator::s_rfc3066LanguageCodesGoogle =
+{
+    { QLatin1String("iw-IL"),  QLatin1String("iw")       }          //                                            NOTE: Google translator only.
+};
+
+// --------------------------------------------------------------------------------------------
+
+const QMap<QString, QString> DOnlineTranslator::s_rfc3066LanguageCodesYandex =
+{
+    { QLatin1String("jv-ID"),  QLatin1String("jv")       },         //                                            NOTE: Yandex translator only
+    { QLatin1String("zn-CN"),  QLatin1String("zn")       }          //                                            NOTE: Yandex translator only
+};
+
+// --------------------------------------------------------------------------------------------
+
+const QMap<QString, QString> DOnlineTranslator::s_rfc3066LanguageCodesBing =
+{
+    { QLatin1String("bs-BG"),  QLatin1String("bs-Latn")  },         //                                            NOTE: Bing translator only
+//     { QLatin1String("")     ,  QLatin1String("mww")      },      // Hmong: do not exists as 2 letters code   ; NOTE: Bing translator only
+    { QLatin1String("sr-RS"),  QLatin1String("sr-Cyrl")  },         //                                            NOTE: Bing translator only
+    { QLatin1String("zh-CN"),  QLatin1String("zh-Hans")  },         // SimplifiedChinese                        ; NOTE: Bing translator only
+    { QLatin1String("zh-TW"),  QLatin1String("zh-Hant")  }          // TraditionalChinese                       ; NOTE: Bing translator only
+};
+
+// --------------------------------------------------------------------------------------------
+
+const QMap<QString, QString> DOnlineTranslator::s_rfc3066LanguageCodesLingva =
+{
+    { QLatin1String("zh-TW"),  QLatin1String("zh_HANT")  },         // TraditionalChinese                       ; NOTE: Lingva translator only
+    { QLatin1String("zh-MO"),  QLatin1String("zh")       },         // Chinese (Traditional, Macao S.A.R.)      ; NOTE: Lingva translator only
+    { QLatin1String("zh-HK"),  QLatin1String("zh")       },         // Chinese (Traditional, Hong Kong S.A.R.)  ; NOTE: Lingva translator only
+    { QLatin1String("zh-SG"),  QLatin1String("zh")       }          // Chinese (Simplified, Singapore)          ; NOTE: Lingva translator only
+};
+
+// --------------------------------------------------------------------------------------------
 
 DOnlineTranslator::DOnlineTranslator(QObject* const parent)
     : QObject         (parent),
@@ -570,14 +596,81 @@ DOnlineTranslator::DOnlineTranslator(QObject* const parent)
             this, &DOnlineTranslator::signalFinished);
 }
 
-QString DOnlineTranslator::fromRFC3066(const QString& langCodeRFC3066)
+QString DOnlineTranslator::fromRFC3066(Engine engine, const QString& langCodeRFC3066)
 {
-    return s_rfc3066LanguageCodes[langCodeRFC3066];
+    QString lg;
+
+    switch (engine)
+    {
+        case Google:
+        case LibreTranslate:
+        {
+            lg = s_rfc3066LanguageCodesGoogle[langCodeRFC3066];
+            break;
+        }
+
+        case Yandex:
+        {
+            lg = s_rfc3066LanguageCodesYandex[langCodeRFC3066];
+            break;
+        }
+
+        case Bing:
+        {
+            lg = s_rfc3066LanguageCodesBing[langCodeRFC3066];
+            break;
+        }
+
+        case Lingva:
+        {
+            lg = s_rfc3066LanguageCodesLingva[langCodeRFC3066];
+            break;
+        }
+    }
+
+    if (lg.isEmpty())
+    {
+        lg = s_rfc3066LanguageCodesGeneric[langCodeRFC3066];
+    }
+
+    return lg;
 }
 
-QStringList DOnlineTranslator::supportedRFC3066()
+QStringList DOnlineTranslator::supportedRFC3066(Engine engine)
 {
-    return s_rfc3066LanguageCodes.keys();
+    QStringList lst = s_rfc3066LanguageCodesGeneric.keys();
+
+    switch (engine)
+    {
+        case Google:
+        case LibreTranslate:
+        {
+            lst << s_rfc3066LanguageCodesGoogle.keys();
+            break;
+        }
+
+        case Yandex:
+        {
+            lst << s_rfc3066LanguageCodesYandex.keys();
+            break;
+        }
+
+        case Bing:
+        {
+            lst << s_rfc3066LanguageCodesBing.keys();
+            break;
+        }
+
+        case Lingva:
+        {
+            lst << s_rfc3066LanguageCodesLingva.keys();
+            break;
+        }
+    }
+
+    lst.removeDuplicates();
+
+    return lst;
 }
 
 void DOnlineTranslator::translate(const QString& text,
@@ -636,19 +729,25 @@ void DOnlineTranslator::translate(const QString& text,
     switch (engine)
     {
         case Google:
+        {
             buildGoogleStateMachine();
             break;
+        }
 
         case Yandex:
+        {
             buildYandexStateMachine();
             break;
+        }
 
         case Bing:
+        {
             buildBingStateMachine();
             break;
+        }
 
         case LibreTranslate:
-
+        {
             if (m_libreUrl.isEmpty())
             {
                 resetData(ParametersError,
@@ -662,9 +761,10 @@ void DOnlineTranslator::translate(const QString& text,
 
             buildLibreStateMachine();
             break;
+        }
 
         case Lingva:
-
+        {
             if (m_lingvaUrl.isEmpty())
             {
                 resetData(ParametersError,
@@ -678,6 +778,7 @@ void DOnlineTranslator::translate(const QString& text,
 
             buildLingvaStateMachine();
             break;
+        }
     }
 
     m_stateMachine->start();
@@ -688,19 +789,29 @@ QString DOnlineTranslator::engineName(Engine engine)
     switch (engine)
     {
         case Yandex:
+        {
             return QLatin1String("Yandex");
+        }
 
         case Bing:
+        {
             return QLatin1String("Bing");
+        }
 
         case LibreTranslate:
+        {
             return QLatin1String("Libre Translate");
+        }
 
         case Lingva:
+        {
             return QLatin1String("Lingva");
+        }
 
         default:
+        {
             return QLatin1String("Google");
+        }
     }
 }
 
@@ -718,19 +829,25 @@ void DOnlineTranslator::detectLanguage(const QString& text, Engine engine)
     switch (engine)
     {
         case Google:
+        {
             buildGoogleDetectStateMachine();
             break;
+        }
 
         case Yandex:
+        {
             buildYandexDetectStateMachine();
             break;
+        }
 
         case Bing:
+        {
             buildBingDetectStateMachine();
             break;
+        }
 
         case LibreTranslate:
-
+        {
             if (m_libreUrl.isEmpty())
             {
                 resetData(ParametersError,
@@ -744,9 +861,10 @@ void DOnlineTranslator::detectLanguage(const QString& text, Engine engine)
 
             buildLibreDetectStateMachine();
             break;
+        }
 
         case Lingva:
-
+        {
             if (m_lingvaUrl.isEmpty())
             {
                 resetData(ParametersError,
@@ -760,6 +878,7 @@ void DOnlineTranslator::detectLanguage(const QString& text, Engine engine)
 
             buildLingvaDetectStateMachine();
             break;
+        }
     }
 
     m_stateMachine->start();
@@ -889,19 +1008,29 @@ QString DOnlineTranslator::languageApiCode(Engine engine, Language lang)
     switch (engine)
     {
         case Google:
+        {
             return s_googleLanguageCodes.value(lang, s_genericLanguageCodes.value(lang));
+        }
 
         case Yandex:
+        {
             return s_yandexLanguageCodes.value(lang, s_genericLanguageCodes.value(lang));
+        }
 
         case Bing:
+        {
             return s_bingLanguageCodes.value(lang, s_genericLanguageCodes.value(lang));
+        }
 
         case LibreTranslate:
+        {
             return s_genericLanguageCodes.value(lang);
+        }
 
         case Lingva:
+        {
             return s_lingvaLanguageCodes.value(lang, s_genericLanguageCodes.value(lang));
+        }
     }
 
     Q_UNREACHABLE();
@@ -914,19 +1043,29 @@ DOnlineTranslator::Language DOnlineTranslator::language(Engine engine, const QSt
     switch (engine)
     {
         case Google:
+        {
             return s_googleLanguageCodes.key(langCode, s_genericLanguageCodes.key(langCode, NoLanguage));
+        }
 
         case Yandex:
+        {
             return s_yandexLanguageCodes.key(langCode, s_genericLanguageCodes.key(langCode, NoLanguage));
+        }
 
         case Bing:
+        {
             return s_bingLanguageCodes.key(langCode, s_genericLanguageCodes.key(langCode, NoLanguage));
+        }
 
         case LibreTranslate:
+        {
             return s_genericLanguageCodes.key(langCode, NoLanguage);
+        }
 
         case Lingva:
+        {
             return s_lingvaLanguageCodes.key(langCode, s_genericLanguageCodes.key(langCode, NoLanguage));
+        }
     }
 
     Q_UNREACHABLE();

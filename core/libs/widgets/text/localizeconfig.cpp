@@ -321,7 +321,7 @@ void LocalizeConfig::populateTranslatorLanguages()
 {
     d->trLangList->clear();
 
-    Q_FOREACH (const QString& code, DOnlineTranslator::supportedRFC3066())
+    Q_FOREACH (const QString& code, DOnlineTranslator::supportedRFC3066((DOnlineTranslator::Engine)d->translatorCB->currentIndex()))
     {
         new QTreeWidgetItem(d->trLangList,
                             QStringList() << code
@@ -337,8 +337,10 @@ void LocalizeConfig::slotTranslatorChanged()
 
     while (*it)
     {
-        (*it)->setDisabled(!DOnlineTranslator::isSupportTranslation((DOnlineTranslator::Engine)d->translatorCB->currentIndex(),
-                                                                    DOnlineTranslator::language(DOnlineTranslator::fromRFC3066((*it)->text(0)))));
+        (*it)->setDisabled(!DOnlineTranslator::isSupportTranslation(
+            (DOnlineTranslator::Engine)d->translatorCB->currentIndex(),
+            DOnlineTranslator::language(DOnlineTranslator::fromRFC3066((DOnlineTranslator::Engine)d->translatorCB->currentIndex(), (*it)->text(0))))
+        );
 
         if (!(*it)->isDisabled())
         {
