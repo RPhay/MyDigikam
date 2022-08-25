@@ -44,382 +44,382 @@ QString DOnlineTranslator::languageName(Language lang)
     switch (lang)
     {
         case Auto:
-            return i18n("Automatically detect");
+            return i18nc("@info: language name", "Automatically detect");
 
         case Afrikaans:
-            return i18n("Afrikaans");
+            return i18nc("@info: language name", "Afrikaans");
 
         case Albanian:
-            return i18n("Albanian");
+            return i18nc("@info: language name", "Albanian");
 
         case Amharic:
-            return i18n("Amharic");
+            return i18nc("@info: language name", "Amharic");
 
         case Arabic:
-            return i18n("Arabic");
+            return i18nc("@info: language name", "Arabic");
 
         case Armenian:
-            return i18n("Armenian");
+            return i18nc("@info: language name", "Armenian");
 
         case Azerbaijani:
-            return i18n("Azeerbaijani");
+            return i18nc("@info: language name", "Azeerbaijani");
 
         case Basque:
-            return i18n("Basque");
+            return i18nc("@info: language name", "Basque");
 
         case Bashkir:
-            return i18n("Bashkir");
+            return i18nc("@info: language name", "Bashkir");
 
         case Belarusian:
-            return i18n("Belarusian");
+            return i18nc("@info: language name", "Belarusian");
 
         case Bengali:
-            return i18n("Bengali");
+            return i18nc("@info: language name", "Bengali");
 
         case Bosnian:
-            return i18n("Bosnian");
+            return i18nc("@info: language name", "Bosnian");
 
         case Bulgarian:
-            return i18n("Bulgarian");
+            return i18nc("@info: language name", "Bulgarian");
 
         case Catalan:
-            return i18n("Catalan");
+            return i18nc("@info: language name", "Catalan");
 
         case Cantonese:
-            return i18n("Cantonese");
+            return i18nc("@info: language name", "Cantonese");
 
         case Cebuano:
-            return i18n("Cebuano");
+            return i18nc("@info: language name", "Cebuano");
 
         case SimplifiedChinese:
-            return i18n("Chinese (Simplified)");
+            return i18nc("@info: language name", "Chinese (Simplified)");
 
         case TraditionalChinese:
-            return i18n("Chinese (Traditional)");
+            return i18nc("@info: language name", "Chinese (Traditional)");
 
         case Corsican:
-            return i18n("Corsican");
+            return i18nc("@info: language name", "Corsican");
 
         case Croatian:
-            return i18n("Croatian");
+            return i18nc("@info: language name", "Croatian");
 
         case Czech:
-            return i18n("Czech");
+            return i18nc("@info: language name", "Czech");
 
         case Danish:
-            return i18n("Danish");
+            return i18nc("@info: language name", "Danish");
 
         case Dutch:
-            return i18n("Dutch");
+            return i18nc("@info: language name", "Dutch");
 
         case English:
-            return i18n("English");
+            return i18nc("@info: language name", "English");
 
         case Esperanto:
-            return i18n("Esperanto");
+            return i18nc("@info: language name", "Esperanto");
 
         case Estonian:
-            return i18n("Estonian");
+            return i18nc("@info: language name", "Estonian");
 
         case Fijian:
-            return i18n("Fijian");
+            return i18nc("@info: language name", "Fijian");
 
         case Filipino:
-            return i18n("Filipino");
+            return i18nc("@info: language name", "Filipino");
 
         case Finnish:
-            return i18n("Finnish");
+            return i18nc("@info: language name", "Finnish");
 
         case French:
-            return i18n("French");
+            return i18nc("@info: language name", "French");
 
         case Frisian:
-            return i18n("Frisian");
+            return i18nc("@info: language name", "Frisian");
 
         case Galician:
-            return i18n("Galician");
+            return i18nc("@info: language name", "Galician");
 
         case Georgian:
-            return i18n("Georgian");
+            return i18nc("@info: language name", "Georgian");
 
         case German:
-            return i18n("German");
+            return i18nc("@info: language name", "German");
 
         case Greek:
-            return i18n("Greek");
+            return i18nc("@info: language name", "Greek");
 
         case Gujarati:
-            return i18n("Gujarati");
+            return i18nc("@info: language name", "Gujarati");
 
         case HaitianCreole:
-            return i18n("Haitian Creole");
+            return i18nc("@info: language name", "Haitian Creole");
 
         case Hausa:
-            return i18n("Hausa");
+            return i18nc("@info: language name", "Hausa");
 
         case Hawaiian:
-            return i18n("Hawaiian");
+            return i18nc("@info: language name", "Hawaiian");
 
         case Hebrew:
-            return i18n("Hebrew");
+            return i18nc("@info: language name", "Hebrew");
 
         case HillMari:
-            return i18n("Hill Mari");
+            return i18nc("@info: language name", "Hill Mari");
 
         case Hindi:
-            return i18n("Hindi");
+            return i18nc("@info: language name", "Hindi");
 
         case Hmong:
-            return i18n("Hmong");
+            return i18nc("@info: language name", "Hmong");
 
         case Hungarian:
-            return i18n("Hungarian");
+            return i18nc("@info: language name", "Hungarian");
 
         case Icelandic:
-            return i18n("Icelandic");
+            return i18nc("@info: language name", "Icelandic");
 
         case Igbo:
-            return i18n("Igbo");
+            return i18nc("@info: language name", "Igbo");
 
         case Indonesian:
-            return i18n("Indonesian");
+            return i18nc("@info: language name", "Indonesian");
 
         case Irish:
-            return i18n("Irish");
+            return i18nc("@info: language name", "Irish");
 
         case Italian:
-            return i18n("Italian");
+            return i18nc("@info: language name", "Italian");
 
         case Japanese:
-            return i18n("Japanese");
+            return i18nc("@info: language name", "Japanese");
 
         case Javanese:
-            return i18n("Javanese");
+            return i18nc("@info: language name", "Javanese");
 
         case Kannada:
-            return i18n("Kannada");
+            return i18nc("@info: language name", "Kannada");
 
         case Kazakh:
-            return i18n("Kazakh");
+            return i18nc("@info: language name", "Kazakh");
 
         case Khmer:
-            return i18n("Khmer");
+            return i18nc("@info: language name", "Khmer");
 
         case Kinyarwanda:
-            return i18n("Kinyarwanda");
+            return i18nc("@info: language name", "Kinyarwanda");
 
         case Klingon:
-            return i18n("Klingon");
+            return i18nc("@info: language name", "Klingon");
 
         case KlingonPlqaD:
-            return i18n("Klingon (PlqaD)");
+            return i18nc("@info: language name", "Klingon (PlqaD)");
 
         case Korean:
-            return i18n("Korean");
+            return i18nc("@info: language name", "Korean");
 
         case Kurdish:
-            return i18n("Kurdish");
+            return i18nc("@info: language name", "Kurdish");
 
         case Kyrgyz:
-            return i18n("Kyrgyz");
+            return i18nc("@info: language name", "Kyrgyz");
 
         case Lao:
-            return i18n("Lao");
+            return i18nc("@info: language name", "Lao");
 
         case Latin:
-            return i18n("Latin");
+            return i18nc("@info: language name", "Latin");
 
         case Latvian:
-            return i18n("Latvian");
+            return i18nc("@info: language name", "Latvian");
 
         case LevantineArabic:
-            return i18n("Levantine Arabic");
+            return i18nc("@info: language name", "Levantine Arabic");
 
         case Lithuanian:
-            return i18n("Lithuanian");
+            return i18nc("@info: language name", "Lithuanian");
 
         case Luxembourgish:
-            return i18n("Luxembourgish");
+            return i18nc("@info: language name", "Luxembourgish");
 
         case Macedonian:
-            return i18n("Macedonian");
+            return i18nc("@info: language name", "Macedonian");
 
         case Malagasy:
-            return i18n("Malagasy");
+            return i18nc("@info: language name", "Malagasy");
 
         case Malay:
-            return i18n("Malay");
+            return i18nc("@info: language name", "Malay");
 
         case Malayalam:
-            return i18n("Malayalam");
+            return i18nc("@info: language name", "Malayalam");
 
         case Maltese:
-            return i18n("Maltese");
+            return i18nc("@info: language name", "Maltese");
 
         case Maori:
-            return i18n("Maori");
+            return i18nc("@info: language name", "Maori");
 
         case Marathi:
-            return i18n("Marathi");
+            return i18nc("@info: language name", "Marathi");
 
         case Mari:
-            return i18n("Mari");
+            return i18nc("@info: language name", "Mari");
 
         case Mongolian:
-            return i18n("Mongolian");
+            return i18nc("@info: language name", "Mongolian");
 
         case Myanmar:
-            return i18n("Myanmar");
+            return i18nc("@info: language name", "Myanmar");
 
         case Nepali:
-            return i18n("Nepali");
+            return i18nc("@info: language name", "Nepali");
 
         case Norwegian:
-            return i18n("Norwegian");
+            return i18nc("@info: language name", "Norwegian");
 
         case Oriya:
-            return i18n("Oriya");
+            return i18nc("@info: language name", "Oriya");
 
         case Chichewa:
-            return i18n("Chichewa");
+            return i18nc("@info: language name", "Chichewa");
 
         case Papiamento:
-            return i18n("Papiamento");
+            return i18nc("@info: language name", "Papiamento");
 
         case Pashto:
-            return i18n("Pashto");
+            return i18nc("@info: language name", "Pashto");
 
         case Persian:
-            return i18n("Persian");
+            return i18nc("@info: language name", "Persian");
 
         case Polish:
-            return i18n("Polish");
+            return i18nc("@info: language name", "Polish");
 
         case Portuguese:
-            return i18n("Portuguese");
+            return i18nc("@info: language name", "Portuguese");
 
         case Punjabi:
-            return i18n("Punjabi");
+            return i18nc("@info: language name", "Punjabi");
 
         case QueretaroOtomi:
-            return i18n("Queretaro Otomi");
+            return i18nc("@info: language name", "Queretaro Otomi");
 
         case Romanian:
-            return i18n("Romanian");
+            return i18nc("@info: language name", "Romanian");
 
         case Russian:
-            return i18n("Russian");
+            return i18nc("@info: language name", "Russian");
 
         case Samoan:
-            return i18n("Samoan");
+            return i18nc("@info: language name", "Samoan");
 
         case ScotsGaelic:
-            return i18n("Scots Gaelic");
+            return i18nc("@info: language name", "Scots Gaelic");
 
         case SerbianCyrillic:
-            return i18n("Serbian (Cyrillic)");
+            return i18nc("@info: language name", "Serbian (Cyrillic)");
 
         case SerbianLatin:
-            return i18n("Serbian (Latin)");
+            return i18nc("@info: language name", "Serbian (Latin)");
 
         case Sesotho:
-            return i18n("Sesotho");
+            return i18nc("@info: language name", "Sesotho");
 
         case Shona:
-            return i18n("Shona");
+            return i18nc("@info: language name", "Shona");
 
         case Sindhi:
-            return i18n("Sindhi");
+            return i18nc("@info: language name", "Sindhi");
 
         case Sinhala:
-            return i18n("Sinhala");
+            return i18nc("@info: language name", "Sinhala");
 
         case Slovak:
-            return i18n("Slovak");
+            return i18nc("@info: language name", "Slovak");
 
         case Slovenian:
-            return i18n("Slovenian");
+            return i18nc("@info: language name", "Slovenian");
 
         case Somali:
-            return i18n("Somali");
+            return i18nc("@info: language name", "Somali");
 
         case Spanish:
-            return i18n("Spanish");
+            return i18nc("@info: language name", "Spanish");
 
         case Sundanese:
-            return i18n("Sundanese");
+            return i18nc("@info: language name", "Sundanese");
 
         case Swahili:
-            return i18n("Swahili");
+            return i18nc("@info: language name", "Swahili");
 
         case Swedish:
-            return i18n("Swedish");
+            return i18nc("@info: language name", "Swedish");
 
         case Tagalog:
-            return i18n("Tagalog");
+            return i18nc("@info: language name", "Tagalog");
 
         case Tahitian:
-            return i18n("Tahitian");
+            return i18nc("@info: language name", "Tahitian");
 
         case Tajik:
-            return i18n("Tajik");
+            return i18nc("@info: language name", "Tajik");
 
         case Tamil:
-            return i18n("Tamil");
+            return i18nc("@info: language name", "Tamil");
 
         case Tatar:
-            return i18n("Tatar");
+            return i18nc("@info: language name", "Tatar");
 
         case Telugu:
-            return i18n("Telugu");
+            return i18nc("@info: language name", "Telugu");
 
         case Thai:
-            return i18n("Thai");
+            return i18nc("@info: language name", "Thai");
 
         case Tongan:
-            return i18n("Tongan");
+            return i18nc("@info: language name", "Tongan");
 
         case Turkish:
-            return i18n("Turkish");
+            return i18nc("@info: language name", "Turkish");
 
         case Turkmen:
-            return i18n("Turkmen");
+            return i18nc("@info: language name", "Turkmen");
 
         case Udmurt:
-            return i18n("Udmurt");
+            return i18nc("@info: language name", "Udmurt");
 
         case Uighur:
-            return i18n("Uighur");
+            return i18nc("@info: language name", "Uighur");
 
         case Ukrainian:
-            return i18n("Ukrainian");
+            return i18nc("@info: language name", "Ukrainian");
 
         case Urdu:
-            return i18n("Urdu");
+            return i18nc("@info: language name", "Urdu");
 
         case Uzbek:
-            return i18n("Uzbek");
+            return i18nc("@info: language name", "Uzbek");
 
         case Vietnamese:
-            return i18n("Vietnamese");
+            return i18nc("@info: language name", "Vietnamese");
 
         case Welsh:
-            return i18n("Welsh");
+            return i18nc("@info: language name", "Welsh");
 
         case Xhosa:
-            return i18n("Xhosa");
+            return i18nc("@info: language name", "Xhosa");
 
         case Yiddish:
-            return i18n("Yiddish");
+            return i18nc("@info: language name", "Yiddish");
 
         case Yoruba:
-            return i18n("Yoruba");
+            return i18nc("@info: language name", "Yoruba");
 
         case YucatecMaya:
-            return i18n("Yucatec Maya");
+            return i18nc("@info: language name", "Yucatec Maya");
 
         case Zulu:
-            return i18n("Zulu");
+            return i18nc("@info: language name", "Zulu");
 
         default:
             return QString();
