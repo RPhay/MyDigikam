@@ -132,7 +132,7 @@ public:
         DHBox* const hbox       = new DHBox(this);
         m_showSelected          = new QCheckBox(hbox);
         m_langFilter            = new SearchTextBar(hbox, QLatin1String("TranslatorLangSearchBar"),
-                                                    i18n("Enter here a string to search in languages list..."));
+                                                    i18nc("@info", "Enter here a string to search in languages list..."));
 
         vlay->addWidget(m_langList);
         vlay->addWidget(hbox);
@@ -167,7 +167,8 @@ public:
             ++it;
         }
 
-        m_showSelected->setText(i18n("Show only selected items (%1/%2)", count, m_langList->topLevelItemCount()));
+        m_showSelected->setText(i18nc("@info", "Show only selected items (%1/%2)",
+                                count, m_langList->topLevelItemCount()));
     }
 
 private Q_SLOTS:
@@ -252,7 +253,7 @@ LocalizeConfig::LocalizeConfig(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    QLabel* const trLabel   = new QLabel(i18n("Online Translator:"), this);
+    QLabel* const trLabel   = new QLabel(i18nc("@label", "Online Translator:"), this);
     d->translatorCB         = new QComboBox(this);
     d->translatorCB->setToolTip(i18nc("@option", "Select here the online engine to translate text"));
     d->translatorCB->insertItem(DOnlineTranslator::Google,         QLatin1String("Google"));
@@ -261,14 +262,14 @@ LocalizeConfig::LocalizeConfig(QWidget* const parent)
     d->translatorCB->insertItem(DOnlineTranslator::LibreTranslate, QLatin1String("Libre Translate"));
     d->translatorCB->insertItem(DOnlineTranslator::Lingva,         QLatin1String("Lingva"));
 
-    d->translatorLabel      = new QLabel(i18nc("@info", "<p>The translator engine is an online Web-service used to translate "
+    d->translatorLabel      = new QLabel(i18nc("@info", "<para>The translator engine is an online Web-service used to translate "
                                                         "text from one language to another one. This feature is available on "
                                                         "metadata option where alternative language is supported, as Title, "
                                                         "Caption, etc. The translation process is fully automatized but it requires "
-                                                        "an Internet connection to work.</p>"
-                                                        "<p>User can select the more appropriate translator engine depending of "
+                                                        "an Internet connection to work.</para>"
+                                                        "<para>User can select the more appropriate translator engine depending of "
                                                         "desired target language, as not all world-wide languages are supported "
-                                                        "by online Web-services.</p>"), this);
+                                                        "by online Web-services.</para>"), this);
     d->translatorLabel->setWordWrap(true);
 
     d->trLangGroup             = new LanguagesView(this);
