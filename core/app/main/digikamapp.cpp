@@ -89,9 +89,9 @@ DigikamApp::DigikamApp()
     ProgressManager::instance();
     ThumbnailLoadThread::setDisplayingWidget(this);
     DIO::instance();
-    SpellCheckSettings::instance();
+    LocalizeSettings::instance();
 
-    connect(SpellCheckSettings::instance(), &SpellCheckSettings::signalOpenLocalizeSetup,
+    connect(LocalizeSettings::instance(), &LocalizeSettings::signalOpenLocalizeSetup,
             this, [=]()
         {
             Setup::execLocalize(this);

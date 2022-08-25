@@ -44,7 +44,7 @@
 
 // Local includes
 
-#include "spellchecksettings.h"
+#include "localizesettings.h"
 #include "altlangstredit.h"
 #include "digikam_debug.h"
 #include "searchtextbar.h"
@@ -354,14 +354,14 @@ void LocalizeConfig::slotTranslatorChanged()
 
 void LocalizeConfig::applySettings()
 {
-    SpellCheckSettings* const config = SpellCheckSettings::instance();
+    LocalizeSettings* const config = LocalizeSettings::instance();
 
     if (!config)
     {
         return;
     }
 
-    SpellCheckContainer set;
+    LocalizeContainer set;
 
     set.alternativeLang << QLatin1String("x-default");  // This first entry must always be present on the list.
 
@@ -396,14 +396,14 @@ void LocalizeConfig::applySettings()
 
 void LocalizeConfig::readSettings()
 {
-    SpellCheckSettings* const config = SpellCheckSettings::instance();
+    LocalizeSettings* const config = LocalizeSettings::instance();
 
     if (!config)
     {
         return;
     }
 
-    SpellCheckContainer set          = config->settings();
+    LocalizeContainer set          = config->settings();
 
     QTreeWidgetItemIterator it(d->altLangList);
 

@@ -54,7 +54,7 @@
 
 #include "digikam_debug.h"
 #include "donlinetranslator.h"
-#include "spellchecksettings.h"
+#include "localizesettings.h"
 #include "dexpanderbox.h"
 
 namespace Digikam

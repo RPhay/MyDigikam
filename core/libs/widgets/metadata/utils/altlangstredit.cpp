@@ -99,7 +99,7 @@ AltLangStrEdit::AltLangStrEdit(QWidget* const parent, unsigned int lines)
     connect(d->translateButton, &QToolButton::pressed,
             d->translateButton, &QToolButton::showMenu);
 
-    connect(SpellCheckSettings::instance(), &SpellCheckSettings::signalSettingsChanged,
+    connect(LocalizeSettings::instance(), &LocalizeSettings::signalSettingsChanged,
             this, &AltLangStrEdit::slotLocalizeChanged);
 }
 
@@ -273,7 +273,7 @@ void AltLangStrEdit::populateLangAltListEntries()
 
     // ...and now, all the rest...
 
-    SpellCheckContainer set = SpellCheckSettings::instance()->settings();
+    LocalizeContainer set = LocalizeSettings::instance()->settings();
     QStringList lang        = set.alternativeLang;
 
     Q_FOREACH (const QString& lg, lang)
@@ -295,7 +295,7 @@ void AltLangStrEdit::populateTranslationEntries()
     d->translateAction->m_list->clear();
 
     QStringList allRFC3066  = DOnlineTranslator::supportedRFC3066();
-    SpellCheckContainer set = SpellCheckSettings::instance()->settings();
+    LocalizeContainer set = LocalizeSettings::instance()->settings();
 
     Q_FOREACH (const QString& lg, set.translatorLang)
     {
@@ -403,7 +403,7 @@ DTextEdit* AltLangStrEdit::textEdit() const
 
 void AltLangStrEdit::slotOpenLocalizeSetup()
 {
-    SpellCheckSettings::instance()->openLocalizeSetup();
+    LocalizeSettings::instance()->openLocalizeSetup();
 }
 
 void AltLangStrEdit::slotTranslate(QListWidgetItem* item)
@@ -442,7 +442,7 @@ void AltLangStrEdit::slotTranslate(QListWidgetItem* item)
         qCDebug(DIGIKAM_WIDGETS_LOG) << "With source language     :" << srcLang;
 
         d->trengine->translate(text,                                                            // String to translate
-                               SpellCheckSettings::instance()->settings().translatorEngine,     // Web service
+                               LocalizeSettings::instance()->settings().translatorEngine,     // Web service
                                trLang,                                                          // Target language
                                srcLang,                                                         // Source langage
                                DOnlineTranslator::Auto);
@@ -478,7 +478,7 @@ void AltLangStrEdit::slotTranslationFinished()
 
         QMessageBox::information(qApp->activeWindow(),
                                  i18n("Failed to translate string with %1 Web-service",
-                                 DOnlineTranslator::engineName(SpellCheckSettings::instance()->settings().translatorEngine)),
+                                 DOnlineTranslator::engineName(LocalizeSettings::instance()->settings().translatorEngine)),
                                  i18n("Error message: %1",
                                  d->trengine->errorString()));
 
@@ -489,7 +489,7 @@ void AltLangStrEdit::slotLocalizeChanged()
 {
     populateTranslationEntries();
     d->translateButton->setToolTip(i18nc("@info: language edit widget", "Select language to translate with %1",
-                                   DOnlineTranslator::engineName(SpellCheckSettings::instance()->settings().translatorEngine)));
+                                   DOnlineTranslator::engineName(LocalizeSettings::instance()->settings().translatorEngine)));
 }
 
 } // namespace Digikam

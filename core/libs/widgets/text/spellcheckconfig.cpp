@@ -52,7 +52,7 @@ using namespace Sonnet;
 
 // Local includes
 
-#include "spellchecksettings.h"
+#include "localizesettings.h"
 #include "digikam_debug.h"
 
 namespace Digikam
@@ -247,14 +247,14 @@ SpellCheckConfig::~SpellCheckConfig()
 
 void SpellCheckConfig::applySettings()
 {
-    SpellCheckSettings* const config = SpellCheckSettings::instance();
+    LocalizeSettings* const config = LocalizeSettings::instance();
 
     if (!config)
     {
         return;
     }
 
-    SpellCheckContainer set;
+    LocalizeContainer set;
 
     set.enableSpellCheck = d->activeSpellCheck->isChecked();
 
@@ -273,14 +273,14 @@ void SpellCheckConfig::applySettings()
 
 void SpellCheckConfig::readSettings()
 {
-    SpellCheckSettings* const config = SpellCheckSettings::instance();
+    LocalizeSettings* const config = LocalizeSettings::instance();
 
     if (!config)
     {
         return;
     }
 
-    SpellCheckContainer set          = config->settings();
+    LocalizeContainer set          = config->settings();
 
     d->activeSpellCheck->setChecked(set.enableSpellCheck);
     d->ignoreWordsBox->insertItems(0, set.ignoredWords);

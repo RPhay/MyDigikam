@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SPELL_CHECK_CONTAINER_H
-#define DIGIKAM_SPELL_CHECK_CONTAINER_H
+#ifndef DIGIKAM_LOCALIZE_CONTAINER_H
+#define DIGIKAM_LOCALIZE_CONTAINER_H
 
 // Qt includes
 
@@ -40,14 +40,14 @@ namespace Digikam
 {
 
 /**
- * The class SpellCheckContainer encapsulates all spell-check related settings.
+ * The class LocalizeContainer encapsulates all spell-check and localize related settings.
  */
-class DIGIKAM_EXPORT SpellCheckContainer
+class DIGIKAM_EXPORT LocalizeContainer
 {
 public:
 
-    explicit SpellCheckContainer();
-    ~SpellCheckContainer();
+    explicit LocalizeContainer();
+    ~LocalizeContainer();
 
 public:
 
@@ -67,8 +67,8 @@ public:
 };
 
 //! qDebug() stream operator. Writes property @a inf to the debug output in a nicely formatted way.
-DIGIKAM_EXPORT QDebug operator<<(QDebug dbg, const SpellCheckContainer& inf);
+DIGIKAM_EXPORT QDebug operator<<(QDebug dbg, const LocalizeContainer& inf);
 
 } // namespace Digikam
 
-#endif // DIGIKAM_SPELL_CHECK_CONTAINER_H
+#endif // DIGIKAM_LOCALIZE_CONTAINER_H

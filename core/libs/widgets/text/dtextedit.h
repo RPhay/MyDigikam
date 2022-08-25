@@ -39,7 +39,7 @@
 namespace Digikam
 {
 
-class SpellCheckContainer;
+class LocalizeContainer;
 
 class DIGIKAM_EXPORT DTextEdit : public QTextEdit
 {
@@ -110,10 +110,10 @@ public:
 
     /**
      * Helper methods to handle the Spellcheck settings.
-     * See SpellCheckContainer class for details.
+     * See LocalizeContainer class for details.
      */
-    SpellCheckContainer spellCheckSettings() const;
-    void setSpellCheckSettings(const SpellCheckContainer& settings);
+    LocalizeContainer spellCheckSettings() const;
+    void setLocalizeSettings(const LocalizeContainer& settings);
 
 Q_SIGNALS:
 
@@ -205,10 +205,10 @@ public:
 
     /**
      * Helper methods to handle the Spellcheck settings.
-     * See SpellCheckContainer class for details.
+     * See LocalizeContainer class for details.
      */
-    SpellCheckContainer spellCheckSettings() const;
-    void setSpellCheckSettings(const SpellCheckContainer& settings);
+    LocalizeContainer spellCheckSettings() const;
+    void setLocalizeSettings(const LocalizeContainer& settings);
 
 Q_SIGNALS:
 

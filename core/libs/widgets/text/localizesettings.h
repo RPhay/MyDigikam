@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SPELL_CHECK_SETTINGS_H
-#define DIGIKAM_SPELL_CHECK_SETTINGS_H
+#ifndef DIGIKAM_LOCALIZE_SETTINGS_H
+#define DIGIKAM_LOCALIZE_SETTINGS_H
 
 // Qt includes
 
@@ -31,31 +31,31 @@
 // Local includes
 
 #include "digikam_export.h"
-#include "spellcheckcontainer.h"
+#include "localizecontainer.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT SpellCheckSettings : public QObject
+class DIGIKAM_EXPORT LocalizeSettings : public QObject
 {
     Q_OBJECT
 
 public:
 
     /**
-     * Global container for spell-check settings. All accessor methods are thread-safe.
+     * Global container for spell-check and localize settings. All accessor methods are thread-safe.
      */
-    static SpellCheckSettings* instance();
+    static LocalizeSettings* instance();
 
     /**
      * Returns the current Metadata settings.
      */
-    SpellCheckContainer settings() const;
+    LocalizeContainer settings() const;
 
     /**
      * Sets the current Metadata settings and writes them to config.
      */
-    void setSettings(const SpellCheckContainer& settings);
+    void setSettings(const LocalizeContainer& settings);
 
     void openLocalizeSetup();
 
@@ -67,9 +67,9 @@ Q_SIGNALS:
 private:
 
     // Disabled
-    SpellCheckSettings();
-    explicit SpellCheckSettings(QObject*);
-    ~SpellCheckSettings() override;
+    LocalizeSettings();
+    explicit LocalizeSettings(QObject*);
+    ~LocalizeSettings() override;
 
     void readFromConfig();
 
@@ -78,9 +78,9 @@ private:
     class Private;
     Private* const d;
 
-    friend class SpellCheckSettingsCreator;
+    friend class LocalizeSettingsCreator;
 };
 
 } // namespace Digikam
 
-#endif // DIGIKAM_SPELL_CHECK_SETTINGS_H
+#endif // DIGIKAM_LOCALIZE_SETTINGS_H

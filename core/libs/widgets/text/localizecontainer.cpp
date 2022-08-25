@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "metaenginesettingscontainer.h"
+#include "localizecontainer.h"
 
 // KDE includes
 
@@ -29,23 +29,23 @@
 
 // Local includes
 
-#include "spellchecksettings.h"
+#include "localizesettings.h"
 #include "digikam_debug.h"
 
 namespace Digikam
 {
 
-SpellCheckContainer::SpellCheckContainer()
+LocalizeContainer::LocalizeContainer()
     : enableSpellCheck(false),
       translatorEngine(DOnlineTranslator::Google)
 {
 }
 
-SpellCheckContainer::~SpellCheckContainer()
+LocalizeContainer::~LocalizeContainer()
 {
 }
 
-void SpellCheckContainer::readFromConfig(KConfigGroup& group)
+void LocalizeContainer::readFromConfig(KConfigGroup& group)
 {
     enableSpellCheck = group.readEntry("EnableSpellCheck", false);
 
@@ -82,7 +82,7 @@ void SpellCheckContainer::readFromConfig(KConfigGroup& group)
     );
 }
 
-void SpellCheckContainer::writeToConfig(KConfigGroup& group) const
+void LocalizeContainer::writeToConfig(KConfigGroup& group) const
 {
     group.writeEntry("EnableSpellCheck", enableSpellCheck);
     group.writeEntry("IgnoredWords",     ignoredWords);
@@ -92,9 +92,9 @@ void SpellCheckContainer::writeToConfig(KConfigGroup& group) const
     group.sync();
 }
 
-QDebug operator<<(QDebug dbg, const SpellCheckContainer& inf)
+QDebug operator<<(QDebug dbg, const LocalizeContainer& inf)
 {
-    dbg.nospace() << "[SpellCheckContainer] enableSpellCheck("
+    dbg.nospace() << "[LocalizeContainer] enableSpellCheck("
                   << inf.enableSpellCheck << "), "
                   << "ignoredWords("
                   << inf.ignoredWords << "), "

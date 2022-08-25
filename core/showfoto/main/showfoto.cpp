@@ -62,9 +62,9 @@ Showfoto::Showfoto(const QList<QUrl>& urlList, QWidget* const)
 
     Digikam::LoadingCacheInterface::initialize();
     Digikam::MetaEngineSettings::instance();
-    Digikam::SpellCheckSettings::instance();
+    Digikam::LocalizeSettings::instance();
 
-    connect(SpellCheckSettings::instance(), &SpellCheckSettings::signalOpenLocalizeSetup,
+    connect(LocalizeSettings::instance(), &LocalizeSettings::signalOpenLocalizeSetup,
             this, [=]()
         {
             ShowfotoSetup::execLocalize(this);

@@ -54,8 +54,8 @@ using namespace Sonnet;
 // Local includes
 
 #include "digikam_debug.h"
-#include "spellchecksettings.h"
-#include "spellcheckcontainer.h"
+#include "localizesettings.h"
+#include "localizecontainer.h"
 
 namespace Digikam
 {
@@ -117,16 +117,16 @@ public:
 
         spellChecker->highlighter()->setAutoDetectLanguageDisabled(false);
 
-        SpellCheckSettings* const config = SpellCheckSettings::instance();
+        LocalizeSettings* const config = LocalizeSettings::instance();
 
         if (config)
         {
-            parent->setSpellCheckSettings(config->settings());
+            parent->setLocalizeSettings(config->settings());
 
-            QObject::connect(config, &SpellCheckSettings::signalSettingsChanged,
+            QObject::connect(config, &LocalizeSettings::signalSettingsChanged,
                              parent, [=]()
                     {
-                        parent->setSpellCheckSettings(config->settings());
+                        parent->setLocalizeSettings(config->settings());
                     }
             );
 
@@ -164,7 +164,7 @@ public:
 
     DTextEditClearButton*        clrBtn       = nullptr;
 
-    SpellCheckContainer          container;                 ///< Spell checking settings container.
+    LocalizeContainer          container;                 ///< Spell checking settings container.
 };
 
 DTextEdit::DTextEdit(QWidget* const parent)
@@ -424,7 +424,7 @@ void DTextEdit::insertFromMimeData(const QMimeData* source)
     QTextEdit::insertFromMimeData(&scopy);
 }
 
-void DTextEdit::setSpellCheckSettings(const SpellCheckContainer& settings)
+void DTextEdit::setLocalizeSettings(const LocalizeContainer& settings)
 {
     d->container = settings;
 
@@ -449,7 +449,7 @@ void DTextEdit::setSpellCheckSettings(const SpellCheckContainer& settings)
 
 }
 
-SpellCheckContainer DTextEdit::spellCheckSettings() const
+LocalizeContainer DTextEdit::spellCheckSettings() const
 {
     return d->container;
 }
@@ -478,16 +478,16 @@ public:
 
         spellChecker->highlighter()->setAutoDetectLanguageDisabled(false);
 
-        SpellCheckSettings* const config = SpellCheckSettings::instance();
+        LocalizeSettings* const config = LocalizeSettings::instance();
 
         if (config)
         {
-            parent->setSpellCheckSettings(config->settings());
+            parent->setLocalizeSettings(config->settings());
 
-            QObject::connect(config, &SpellCheckSettings::signalSettingsChanged,
+            QObject::connect(config, &LocalizeSettings::signalSettingsChanged,
                              parent, [=]()
                     {
-                        parent->setSpellCheckSettings(config->settings());
+                        parent->setLocalizeSettings(config->settings());
                     }
             );
         }
@@ -524,7 +524,7 @@ public:
 
     DTextEditClearButton*        clrBtn       = nullptr;
 
-    SpellCheckContainer          container;                 ///< Spell checking settings container.
+    LocalizeContainer          container;                 ///< Spell checking settings container.
 };
 
 DPlainTextEdit::DPlainTextEdit(QWidget* const parent)
@@ -784,7 +784,7 @@ void DPlainTextEdit::insertFromMimeData(const QMimeData* source)
     QPlainTextEdit::insertFromMimeData(&scopy);
 }
 
-void DPlainTextEdit::setSpellCheckSettings(const SpellCheckContainer& settings)
+void DPlainTextEdit::setLocalizeSettings(const LocalizeContainer& settings)
 {
     d->container = settings;
 
@@ -809,7 +809,7 @@ void DPlainTextEdit::setSpellCheckSettings(const SpellCheckContainer& settings)
 
 }
 
-SpellCheckContainer DPlainTextEdit::spellCheckSettings() const
+LocalizeContainer DPlainTextEdit::spellCheckSettings() const
 {
     return d->container;
 }

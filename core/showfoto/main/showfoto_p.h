@@ -109,7 +109,7 @@
 #include "exiftoolthread.h"
 #include "exiftoolparser.h"
 #include "sidebarwidget.h"
-#include "spellchecksettings.h"
+#include "localizesettings.h"
 
 namespace ShowFoto
 {

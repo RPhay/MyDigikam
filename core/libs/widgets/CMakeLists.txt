@@ -11,10 +11,10 @@ set(libtextwidgets_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/text/modelcompleter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/searchtextbar.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/dtextedit.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/text/spellchecksettings.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/text/spellcheckcontainer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/text/spellcheckconfig.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/localizesettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/localizecontainer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/localizeconfig.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/spellcheckconfig.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator_google.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator_tables.cpp
