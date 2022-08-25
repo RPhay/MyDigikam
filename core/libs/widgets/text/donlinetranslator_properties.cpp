@@ -29,42 +29,42 @@ namespace Digikam
 
 bool DOnlineTranslator::isSourceTranslitEnabled() const
 {
-    return m_sourceTranslitEnabled;
+    return d->sourceTranslitEnabled;
 }
 
 void DOnlineTranslator::setSourceTranslitEnabled(bool enable)
 {
-    m_sourceTranslitEnabled = enable;
+    d->sourceTranslitEnabled = enable;
 }
 
 bool DOnlineTranslator::isTranslationTranslitEnabled() const
 {
-    return m_translationTranslitEnabled;
+    return d->translationTranslitEnabled;
 }
 
 void DOnlineTranslator::setTranslationTranslitEnabled(bool enable)
 {
-    m_translationTranslitEnabled = enable;
+    d->translationTranslitEnabled = enable;
 }
 
 bool DOnlineTranslator::isSourceTranscriptionEnabled() const
 {
-    return m_sourceTranscriptionEnabled;
+    return d->sourceTranscriptionEnabled;
 }
 
 void DOnlineTranslator::setSourceTranscriptionEnabled(bool enable)
 {
-    m_sourceTranscriptionEnabled = enable;
+    d->sourceTranscriptionEnabled = enable;
 }
 
 bool DOnlineTranslator::isTranslationOptionsEnabled() const
 {
-    return m_translationOptionsEnabled;
+    return d->translationOptionsEnabled;
 }
 
 void DOnlineTranslator::setTranslationOptionsEnabled(bool enable)
 {
-    m_translationOptionsEnabled = enable;
+    d->translationOptionsEnabled = enable;
 }
 
 void DOnlineTranslator::setEngineUrl(Engine engine, const QString& url)
@@ -72,11 +72,11 @@ void DOnlineTranslator::setEngineUrl(Engine engine, const QString& url)
     switch (engine)
     {
         case LibreTranslate:
-            m_libreUrl  = url;
+            d->libreUrl  = url;
             break;
 
         case Lingva:
-            m_lingvaUrl = url;
+            d->lingvaUrl = url;
             break;
 
         default:
@@ -89,7 +89,7 @@ void DOnlineTranslator::setEngineApiKey(Engine engine, const QByteArray& apiKey)
     switch (engine)
     {
         case LibreTranslate:
-            m_libreApiKey = apiKey;
+            d->libreApiKey = apiKey;
             break;
 
         default:
@@ -101,7 +101,7 @@ QJsonDocument DOnlineTranslator::toJson() const
 {
     QJsonObject translationOptions;
 
-    for (auto it = m_translationOptions.cbegin() ; it != m_translationOptions.cend() ; ++it)
+    for (auto it = d->translationOptions.cbegin() ; it != d->translationOptions.cend() ; ++it)
     {
         QJsonArray arr;
 
@@ -115,12 +115,12 @@ QJsonDocument DOnlineTranslator::toJson() const
 
     QJsonObject object
     {
-        { QLatin1String("source"),               m_source                   },
-        { QLatin1String("sourceTranscription"),  m_sourceTranscription      },
-        { QLatin1String("sourceTranslit"),       m_sourceTranslit           },
-        { QLatin1String("translation"),          m_translation              },
+        { QLatin1String("source"),               d->source                   },
+        { QLatin1String("sourceTranscription"),  d->sourceTranscription      },
+        { QLatin1String("sourceTranslit"),       d->sourceTranslit           },
+        { QLatin1String("translation"),          d->translation              },
         { QLatin1String("translationOptions"),   qMove(translationOptions)  },
-        { QLatin1String("translationTranslit"),  m_translationTranslit      },
+        { QLatin1String("translationTranslit"),  d->translationTranslit      },
     };
 
     return QJsonDocument(object);
@@ -128,62 +128,62 @@ QJsonDocument DOnlineTranslator::toJson() const
 
 QString DOnlineTranslator::source() const
 {
-    return m_source;
+    return d->source;
 }
 
 QString DOnlineTranslator::sourceTranslit() const
 {
-    return m_sourceTranslit;
+    return d->sourceTranslit;
 }
 
 QString DOnlineTranslator::sourceTranscription() const
 {
-    return m_sourceTranscription;
+    return d->sourceTranscription;
 }
 
 QString DOnlineTranslator::sourceLanguageName() const
 {
-    return languageName(m_sourceLang);
+    return languageName(d->sourceLang);
 }
 
 DOnlineTranslator::Language DOnlineTranslator::sourceLanguage() const
 {
-    return m_sourceLang;
+    return d->sourceLang;
 }
 
 QString DOnlineTranslator::translation() const
 {
-    return m_translation;
+    return d->translation;
 }
 
 QString DOnlineTranslator::translationTranslit() const
 {
-    return m_translationTranslit;
+    return d->translationTranslit;
 }
 
 QString DOnlineTranslator::translationLanguageName() const
 {
-    return languageName(m_translationLang);
+    return languageName(d->translationLang);
 }
 
 DOnlineTranslator::Language DOnlineTranslator::translationLanguage() const
 {
-    return m_translationLang;
+    return d->translationLang;
 }
 
 QMap<QString, QVector<DOnlineTranslatorOption>> DOnlineTranslator::translationOptions() const
 {
-    return m_translationOptions;
+    return d->translationOptions;
 }
 
 DOnlineTranslator::TranslationError DOnlineTranslator::error() const
 {
-    return m_error;
+    return d->error;
 }
 
 QString DOnlineTranslator::errorString() const
 {
-    return m_errorString;
+    return d->errorString;
 }
 
 QString DOnlineTranslator::languageCode(Language lang)

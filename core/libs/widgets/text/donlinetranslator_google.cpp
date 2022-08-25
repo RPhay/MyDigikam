@@ -29,37 +29,37 @@ namespace Digikam
 
 void DOnlineTranslator::slotRequestGoogleTranslate()
 {
-    const QString sourceText = sender()->property(s_textProperty).toString();
+    const QString sourceText = sender()->property(Private::s_textProperty).toString();
 
     // Generate API url
 
     QUrl url(QStringLiteral("https://translate.googleapis.com/translate_a/single"));
 
     url.setQuery(QStringLiteral("client=gtx&ie=UTF-8&oe=UTF-8&dt=bd&dt=ex&dt=ld&dt=md&dt=rw&dt=rm&dt=ss&dt=t&dt=at&dt=qc&sl=%1&tl=%2&hl=%3&q=%4")
-                     .arg(languageApiCode(Google, m_sourceLang),
-                          languageApiCode(Google, m_translationLang),
-                          languageApiCode(Google, m_uiLang),
+                     .arg(languageApiCode(Google, d->sourceLang),
+                          languageApiCode(Google, d->translationLang),
+                          languageApiCode(Google, d->uiLang),
                           QString::fromUtf8(QUrl::toPercentEncoding(sourceText))));
 
-    m_currentReply = m_networkManager->get(QNetworkRequest(url));
+    d->currentReply = d->networkManager->get(QNetworkRequest(url));
 }
 
 void DOnlineTranslator::slotParseGoogleTranslate()
 {
-    m_currentReply->deleteLater();
+    d->currentReply->deleteLater();
 
     // Check for error
 
-    if (m_currentReply->error() != QNetworkReply::NoError)
+    if (d->currentReply->error() != QNetworkReply::NoError)
     {
-        if (m_currentReply->error() == QNetworkReply::ServiceUnavailableError)
+        if (d->currentReply->error() == QNetworkReply::ServiceUnavailableError)
         {
             resetData(ServiceError, i18n("Error: Engine systems have detected suspicious traffic from your "
                                          "computer network. Please try your request again later."));
         }
         else
         {
-            resetData(NetworkError, m_currentReply->errorString());
+            resetData(NetworkError, d->currentReply->errorString());
         }
 
         return;
@@ -67,7 +67,7 @@ void DOnlineTranslator::slotParseGoogleTranslate()
 
     // Check availability of service
 
-    const QByteArray data = m_currentReply->readAll();
+    const QByteArray data = d->currentReply->readAll();
 
     if (data.startsWith('<'))
     {
@@ -81,52 +81,52 @@ void DOnlineTranslator::slotParseGoogleTranslate()
     const QJsonDocument jsonResponse = QJsonDocument::fromJson(data);
     const QJsonArray jsonData        = jsonResponse.array();
 
-    if (m_sourceLang == Auto)
+    if (d->sourceLang == Auto)
     {
         // Parse language
 
-        m_sourceLang = language(Google, jsonData.at(2).toString());
+        d->sourceLang = language(Google, jsonData.at(2).toString());
 
-        if (m_sourceLang == NoLanguage)
+        if (d->sourceLang == NoLanguage)
         {
             resetData(ParsingError, i18n("Error: Unable to parse autodetected language"));
             return;
         }
 
-        if (m_onlyDetectLanguage)
+        if (d->onlyDetectLanguage)
         {
             return;
         }
     }
 
-    addSpaceBetweenParts(m_translation);
-    addSpaceBetweenParts(m_translationTranslit);
-    addSpaceBetweenParts(m_sourceTranslit);
+    addSpaceBetweenParts(d->translation);
+    addSpaceBetweenParts(d->translationTranslit);
+    addSpaceBetweenParts(d->sourceTranslit);
 
     for (const QJsonValueRef translationData : jsonData.at(0).toArray())
     {
         const QJsonArray translationArray = translationData.toArray();
-        m_translation.append(translationArray.at(0).toString());
+        d->translation.append(translationArray.at(0).toString());
 
-        if (m_translationTranslitEnabled)
+        if (d->translationTranslitEnabled)
         {
-            m_translationTranslit.append(translationArray.at(2).toString());
+            d->translationTranslit.append(translationArray.at(2).toString());
         }
 
-        if (m_sourceTranslitEnabled)
+        if (d->sourceTranslitEnabled)
         {
-            m_sourceTranslit.append(translationArray.at(3).toString());
+            d->sourceTranslit.append(translationArray.at(3).toString());
         }
     }
 
-    if (m_source.size() >= s_googleTranslateLimit)
+    if (d->source.size() >= Private::s_googleTranslateLimit)
     {
         return;
     }
 
     // Translation options
 
-    if (m_translationOptionsEnabled)
+    if (d->translationOptionsEnabled)
     {
         for (const QJsonValueRef typeOfSpeechData : jsonData.at(1).toArray())
         {
@@ -147,7 +147,7 @@ void DOnlineTranslator::slotParseGoogleTranslate()
                     translations.append(wordTranslation.toString());
                 }
 
-                m_translationOptions[typeOfSpeech].append({word, gender, translations});
+                d->translationOptions[typeOfSpeech].append({word, gender, translations});
             }
         }
     }
@@ -158,9 +158,9 @@ void DOnlineTranslator::buildGoogleStateMachine()
     // States (Google sends translation, translit and dictionary in one request,
     // that will be splitted into several by the translation limit)
 
-    auto* translationState = new QState(m_stateMachine);
-    auto* finalState       = new QFinalState(m_stateMachine);
-    m_stateMachine->setInitialState(translationState);
+    auto* translationState = new QState(d->stateMachine);
+    auto* finalState       = new QFinalState(d->stateMachine);
+    d->stateMachine->setInitialState(translationState);
 
     translationState->addTransition(translationState, &QState::finished, finalState);
 
@@ -169,23 +169,23 @@ void DOnlineTranslator::buildGoogleStateMachine()
     buildSplitNetworkRequest(translationState,
                              &DOnlineTranslator::slotRequestGoogleTranslate,
                              &DOnlineTranslator::slotParseGoogleTranslate,
-                             m_source,
-                             s_googleTranslateLimit);
+                             d->source,
+                             Private::s_googleTranslateLimit);
 }
 
 void DOnlineTranslator::buildGoogleDetectStateMachine()
 {
     // States
 
-    auto* detectState  = new QState(m_stateMachine);
-    auto* finalState   = new QFinalState(m_stateMachine);
-    m_stateMachine->setInitialState(detectState);
+    auto* detectState  = new QState(d->stateMachine);
+    auto* finalState   = new QFinalState(d->stateMachine);
+    d->stateMachine->setInitialState(detectState);
 
     detectState->addTransition(detectState, &QState::finished, finalState);
 
     // Setup detect state
 
-    const QString text = m_source.left(getSplitIndex(m_source, s_googleTranslateLimit));
+    const QString text = d->source.left(getSplitIndex(d->source, Private::s_googleTranslateLimit));
 
     buildNetworkRequestState(detectState,
                              &DOnlineTranslator::slotRequestGoogleTranslate                             ,

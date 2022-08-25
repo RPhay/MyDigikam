@@ -568,4 +568,12 @@ const QMap<QString, QString> s_rfc3066LanguageCodesLingva =
     { QLatin1String("zh-SG"),  QLatin1String("zh")       }          // Chinese (Simplified, Singapore)          ; NOTE: Lingva translator only
 };
 
+DOnlineTranslator::Private::Private(DOnlineTranslator* const parent)
+    : stateMachine  (new QStateMachine(parent)),
+      networkManager(new QNetworkAccessManager(parent)),
+      libreUrl      (QLatin1String("https://translate.argosopentech.com")),
+      lingvaUrl     (QLatin1String("https://lingva.ml"))
+{
+}
+
 } // namespace Digikam

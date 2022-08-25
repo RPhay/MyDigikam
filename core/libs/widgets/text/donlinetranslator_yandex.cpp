@@ -30,22 +30,22 @@ namespace Digikam
 void DOnlineTranslator::slotRequestYandexKey()
 {
     const QUrl url(QStringLiteral("https://translate.yandex.com"));
-    m_currentReply = m_networkManager->get(QNetworkRequest(url));
+    d->currentReply = d->networkManager->get(QNetworkRequest(url));
 }
 
 void DOnlineTranslator::slotParseYandexKey()
 {
-    m_currentReply->deleteLater();
+    d->currentReply->deleteLater();
 
-    if (m_currentReply->error() != QNetworkReply::NoError)
+    if (d->currentReply->error() != QNetworkReply::NoError)
     {
-        resetData(NetworkError, m_currentReply->errorString());
+        resetData(NetworkError, d->currentReply->errorString());
         return;
     }
 
     // Check availability of service
 
-    const QByteArray webSiteData = m_currentReply->readAll();
+    const QByteArray webSiteData = d->currentReply->readAll();
 
     if (webSiteData.isEmpty()                        ||
         webSiteData.contains("<title>Oops!</title>") ||
@@ -86,22 +86,22 @@ void DOnlineTranslator::slotParseYandexKey()
         std::reverse(sidParts[i].begin(), sidParts[i].end());
     }
 
-    s_yandexKey = sidParts.join(QLatin1Char('.'));
+    Private::s_yandexKey = sidParts.join(QLatin1Char('.'));
 }
 
 void DOnlineTranslator::slotRequestYandexTranslate()
 {
-    const QString sourceText = sender()->property(s_textProperty).toString();
+    const QString sourceText = sender()->property(Private::s_textProperty).toString();
 
     QString lang;
 
-    if (m_sourceLang == Auto)
+    if (d->sourceLang == Auto)
     {
-        lang = languageApiCode(Yandex, m_translationLang);
+        lang = languageApiCode(Yandex, d->translationLang);
     }
     else
     {
-        lang = languageApiCode(Yandex, m_sourceLang) + QLatin1Char('-') + languageApiCode(Yandex, m_translationLang);
+        lang = languageApiCode(Yandex, d->sourceLang) + QLatin1Char('-') + languageApiCode(Yandex, d->translationLang);
     }
 
     // Generate API url
@@ -109,7 +109,7 @@ void DOnlineTranslator::slotRequestYandexTranslate()
     QUrl url(QStringLiteral("https://translate.yandex.net/api/v1/tr.json/translate"));
 
     url.setQuery(QStringLiteral("id=%1-2-0&srv=tr-text&text=%2&lang=%3")
-                     .arg(s_yandexKey,
+                     .arg(Private::s_yandexKey,
                           QString::fromUtf8(QUrl::toPercentEncoding(sourceText)),
                           lang));
 
@@ -121,29 +121,29 @@ void DOnlineTranslator::slotRequestYandexTranslate()
 
     // Make reply
 
-    m_currentReply = m_networkManager->post(request, QByteArray());
+    d->currentReply = d->networkManager->post(request, QByteArray());
 }
 
 void DOnlineTranslator::slotParseYandexTranslate()
 {
-    m_currentReply->deleteLater();
+    d->currentReply->deleteLater();
 
     // Check for errors
 
-    if (m_currentReply->error() != QNetworkReply::NoError)
+    if (d->currentReply->error() != QNetworkReply::NoError)
     {
         // Network errors
 
-        if (m_currentReply->error() < QNetworkReply::ContentAccessDenied)
+        if (d->currentReply->error() < QNetworkReply::ContentAccessDenied)
         {
-            resetData(NetworkError, m_currentReply->errorString());
+            resetData(NetworkError, d->currentReply->errorString());
             return;
         }
 
         // Parse data to get request error type
 
-        s_yandexKey.clear();
-        const QJsonDocument jsonResponse = QJsonDocument::fromJson(m_currentReply->readAll());
+        Private::s_yandexKey.clear();
+        const QJsonDocument jsonResponse = QJsonDocument::fromJson(d->currentReply->readAll());
         resetData(ServiceError, jsonResponse.object().value(QStringLiteral("message")).toString());
 
         return;
@@ -151,24 +151,24 @@ void DOnlineTranslator::slotParseYandexTranslate()
 
     // Read Json
 
-    const QJsonDocument jsonResponse = QJsonDocument::fromJson(m_currentReply->readAll());
+    const QJsonDocument jsonResponse = QJsonDocument::fromJson(d->currentReply->readAll());
     const QJsonObject jsonData       = jsonResponse.object();
 
     // Parse language
 
-    if (m_sourceLang == Auto)
+    if (d->sourceLang == Auto)
     {
         QString sourceCode = jsonData.value(QStringLiteral("lang")).toString();
         sourceCode         = sourceCode.left(sourceCode.indexOf(QLatin1Char('-')));
-        m_sourceLang       = language(Yandex, sourceCode);
+        d->sourceLang       = language(Yandex, sourceCode);
 
-        if (m_sourceLang == NoLanguage)
+        if (d->sourceLang == NoLanguage)
         {
             resetData(ParsingError, i18n("Error: Unable to parse autodetected language"));
             return;
         }
 
-        if (m_onlyDetectLanguage)
+        if (d->onlyDetectLanguage)
         {
             return;
         }
@@ -176,35 +176,35 @@ void DOnlineTranslator::slotParseYandexTranslate()
 
     // Parse translation data
 
-    m_translation += jsonData.value(QStringLiteral("text")).toArray().at(0).toString();
+    d->translation += jsonData.value(QStringLiteral("text")).toArray().at(0).toString();
 }
 
 void DOnlineTranslator::slotRequestYandexSourceTranslit()
 {
-    requestYandexTranslit(m_sourceLang);
+    requestYandexTranslit(d->sourceLang);
 }
 
 void DOnlineTranslator::slotParseYandexSourceTranslit()
 {
-    parseYandexTranslit(m_sourceTranslit);
+    parseYandexTranslit(d->sourceTranslit);
 }
 
 void DOnlineTranslator::slotRequestYandexTranslationTranslit()
 {
-    requestYandexTranslit(m_translationLang);
+    requestYandexTranslit(d->translationLang);
 }
 
 void DOnlineTranslator::slotParseYandexTranslationTranslit()
 {
-    parseYandexTranslit(m_translationTranslit);
+    parseYandexTranslit(d->translationTranslit);
 }
 
 void DOnlineTranslator::slotRequestYandexDictionary()
 {
     // Check if language is supported (need to check here because language may be autodetected)
 
-    if (!isSupportDictionary(Yandex, m_sourceLang, m_translationLang) &&
-        !m_source.contains(QLatin1Char(' ')))
+    if (!isSupportDictionary(Yandex, d->sourceLang, d->translationLang) &&
+        !d->source.contains(QLatin1Char(' ')))
     {
         auto* state = qobject_cast<QState*>(sender());
         state->addTransition(new QFinalState(state->parentState()));
@@ -213,38 +213,38 @@ void DOnlineTranslator::slotRequestYandexDictionary()
 
     // Generate API url
 
-    const QString text = sender()->property(s_textProperty).toString();
+    const QString text = sender()->property(Private::s_textProperty).toString();
     QUrl url(QStringLiteral("https://dictionary.yandex.net/dicservice.json/lookupMultiple"));
 
     url.setQuery(QStringLiteral("text=%1&ui=%2&dict=%3-%4")
                      .arg(QString::fromUtf8(QUrl::toPercentEncoding(text)),
-                          languageApiCode(Yandex, m_uiLang),
-                          languageApiCode(Yandex, m_sourceLang),
-                          languageApiCode(Yandex, m_translationLang)));
+                          languageApiCode(Yandex, d->uiLang),
+                          languageApiCode(Yandex, d->sourceLang),
+                          languageApiCode(Yandex, d->translationLang)));
 
-    m_currentReply = m_networkManager->get(QNetworkRequest(url));
+    d->currentReply = d->networkManager->get(QNetworkRequest(url));
 }
 
 void DOnlineTranslator::slotParseYandexDictionary()
 {
-    m_currentReply->deleteLater();
+    d->currentReply->deleteLater();
 
-    if (m_currentReply->error() != QNetworkReply::NoError)
+    if (d->currentReply->error() != QNetworkReply::NoError)
     {
-        resetData(NetworkError, m_currentReply->errorString());
+        resetData(NetworkError, d->currentReply->errorString());
         return;
     }
 
     // Parse reply
 
-    const QJsonDocument jsonResponse = QJsonDocument::fromJson(m_currentReply->readAll());
-    const QJsonValue jsonData        = jsonResponse.object().value(languageApiCode(Yandex, m_sourceLang) +
+    const QJsonDocument jsonResponse = QJsonDocument::fromJson(d->currentReply->readAll());
+    const QJsonValue jsonData        = jsonResponse.object().value(languageApiCode(Yandex, d->sourceLang) +
                                        QLatin1Char('-')                                                  +
-                                       languageApiCode(Yandex, m_translationLang)).toObject().value(QStringLiteral("regular"));
+                                       languageApiCode(Yandex, d->translationLang)).toObject().value(QStringLiteral("regular"));
 
-    if (m_sourceTranscriptionEnabled)
+    if (d->sourceTranscriptionEnabled)
     {
-        m_sourceTranscription = jsonData.toArray().at(0).toObject().value(QStringLiteral("ts")).toString();
+        d->sourceTranscription = jsonData.toArray().at(0).toObject().value(QStringLiteral("ts")).toString();
     }
 
     for (const QJsonValueRef typeOfSpeechData : jsonData.toArray())
@@ -268,7 +268,7 @@ void DOnlineTranslator::slotParseYandexDictionary()
                 translations.append(wordTranslation.toObject().value(QStringLiteral("text")).toString());
             }
 
-            m_translationOptions[typeOfSpeech].append({word, gender, translations});
+            d->translationOptions[typeOfSpeech].append({word, gender, translations});
         }
     }
 }
@@ -277,13 +277,13 @@ void DOnlineTranslator::buildYandexStateMachine()
 {
     // States
 
-    auto* keyState                  = new QState(m_stateMachine); // Generate SID from web version first to access API
-    auto* translationState          = new QState(m_stateMachine);
-    auto* sourceTranslitState       = new QState(m_stateMachine);
-    auto* translationTranslitState  = new QState(m_stateMachine);
-    auto* dictionaryState           = new QState(m_stateMachine);
-    auto* finalState                = new QFinalState(m_stateMachine);
-    m_stateMachine->setInitialState(keyState);
+    auto* keyState                  = new QState(d->stateMachine); // Generate SID from web version first to access API
+    auto* translationState          = new QState(d->stateMachine);
+    auto* sourceTranslitState       = new QState(d->stateMachine);
+    auto* translationTranslitState  = new QState(d->stateMachine);
+    auto* dictionaryState           = new QState(d->stateMachine);
+    auto* finalState                = new QFinalState(d->stateMachine);
+    d->stateMachine->setInitialState(keyState);
 
     // Transitions
 
@@ -295,7 +295,7 @@ void DOnlineTranslator::buildYandexStateMachine()
 
     // Setup key state
 
-    if (s_yandexKey.isEmpty())
+    if (Private::s_yandexKey.isEmpty())
     {
         buildNetworkRequestState(keyState,
                                  &DOnlineTranslator::slotRequestYandexKey,
@@ -311,30 +311,30 @@ void DOnlineTranslator::buildYandexStateMachine()
     buildSplitNetworkRequest(translationState,
                              &DOnlineTranslator::slotRequestYandexTranslate,
                              &DOnlineTranslator::slotParseYandexTranslate,
-                             m_source,
-                             s_yandexTranslateLimit);
+                             d->source,
+                             Private::s_yandexTranslateLimit);
 
     // Setup source translit state
 
-    if (m_sourceTranslitEnabled)
+    if (d->sourceTranslitEnabled)
     {
         buildSplitNetworkRequest(sourceTranslitState,
                                  &DOnlineTranslator::slotRequestYandexSourceTranslit,
                                  &DOnlineTranslator::slotParseYandexSourceTranslit,
-                                 m_source,
-                                 s_yandexTranslitLimit);
+                                 d->source,
+                                 Private::s_yandexTranslitLimit);
     }
     else
 
     // Setup source translit state
 
-    if (m_sourceTranslitEnabled)
+    if (d->sourceTranslitEnabled)
     {
         buildSplitNetworkRequest(sourceTranslitState,
                                  &DOnlineTranslator::slotRequestYandexSourceTranslit,
                                  &DOnlineTranslator::slotParseYandexSourceTranslit,
-                                 m_source,
-                                 s_yandexTranslitLimit);
+                                 d->source,
+                                 Private::s_yandexTranslitLimit);
     }
     else
     {
@@ -343,13 +343,13 @@ void DOnlineTranslator::buildYandexStateMachine()
 
     // Setup translation translit state
 
-    if (m_translationTranslitEnabled)
+    if (d->translationTranslitEnabled)
     {
         buildSplitNetworkRequest(translationTranslitState,
                                  &DOnlineTranslator::slotRequestYandexTranslationTranslit,
                                  &DOnlineTranslator::slotParseYandexTranslationTranslit,
-                                 m_translation,
-                                 s_yandexTranslitLimit);
+                                 d->translation,
+                                 Private::s_yandexTranslitLimit);
     }
     else
     {
@@ -358,12 +358,12 @@ void DOnlineTranslator::buildYandexStateMachine()
 
     // Setup dictionary state
 
-    if (m_translationOptionsEnabled && !isContainsSpace(m_source))
+    if (d->translationOptionsEnabled && !isContainsSpace(d->source))
     {
         buildNetworkRequestState(dictionaryState,
                                  &DOnlineTranslator::slotRequestYandexDictionary,
                                  &DOnlineTranslator::slotParseYandexDictionary,
-                                 m_source);
+                                 d->source);
     }
     else
     {
@@ -375,10 +375,10 @@ void DOnlineTranslator::buildYandexDetectStateMachine()
 {
     // States
 
-    auto* keyState    = new QState(m_stateMachine); // Generate SID from web version first to access API
-    auto* detectState = new QState(m_stateMachine);
-    auto* finalState  = new QFinalState(m_stateMachine);
-    m_stateMachine->setInitialState(keyState);
+    auto* keyState    = new QState(d->stateMachine); // Generate SID from web version first to access API
+    auto* detectState = new QState(d->stateMachine);
+    auto* finalState  = new QFinalState(d->stateMachine);
+    d->stateMachine->setInitialState(keyState);
 
     // Transitions
 
@@ -387,7 +387,7 @@ void DOnlineTranslator::buildYandexDetectStateMachine()
 
     // Setup key state
 
-    if (s_yandexKey.isEmpty())
+    if (Private::s_yandexKey.isEmpty())
     {
         buildNetworkRequestState(keyState,
                                  &DOnlineTranslator::slotRequestYandexKey,
@@ -400,7 +400,7 @@ void DOnlineTranslator::buildYandexDetectStateMachine()
 
     // Setup detect state
 
-    const QString text = m_source.left(getSplitIndex(m_source, s_yandexTranslateLimit));
+    const QString text = d->source.left(getSplitIndex(d->source, Private::s_yandexTranslateLimit));
 
     buildNetworkRequestState(detectState,
                              &DOnlineTranslator::slotRequestYandexTranslate,
@@ -420,7 +420,7 @@ void DOnlineTranslator::requestYandexTranslit(Language language)
         return;
     }
 
-    const QString text = sender()->property(s_textProperty).toString();
+    const QString text = sender()->property(Private::s_textProperty).toString();
 
     // Generate API url
 
@@ -429,21 +429,21 @@ void DOnlineTranslator::requestYandexTranslit(Language language)
                  .arg(QString::fromUtf8(QUrl::toPercentEncoding(text)))
                  .arg(languageApiCode(Yandex, language)));
 
-    m_currentReply = m_networkManager->get(QNetworkRequest(url));
+    d->currentReply = d->networkManager->get(QNetworkRequest(url));
 }
 
 void DOnlineTranslator::parseYandexTranslit(QString& text)
 {
-    m_currentReply->deleteLater();
+    d->currentReply->deleteLater();
 
-    if (m_currentReply->error() != QNetworkReply::NoError)
+    if (d->currentReply->error() != QNetworkReply::NoError)
     {
-        resetData(NetworkError, m_currentReply->errorString());
+        resetData(NetworkError, d->currentReply->errorString());
 
         return;
     }
 
-    const QByteArray reply = m_currentReply->readAll();
+    const QByteArray reply = d->currentReply->readAll();
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
 

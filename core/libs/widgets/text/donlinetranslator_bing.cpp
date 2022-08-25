@@ -30,20 +30,20 @@ namespace Digikam
 void DOnlineTranslator::slotRequestBingCredentials()
 {
     const QUrl url(QStringLiteral("https://www.bing.com/translator"));
-    m_currentReply = m_networkManager->get(QNetworkRequest(url));
+    d->currentReply = d->networkManager->get(QNetworkRequest(url));
 }
 
 void DOnlineTranslator::slotParseBingCredentials()
 {
-    m_currentReply->deleteLater();
+    d->currentReply->deleteLater();
 
-    if (m_currentReply->error() != QNetworkReply::NoError)
+    if (d->currentReply->error() != QNetworkReply::NoError)
     {
-        resetData(NetworkError, m_currentReply->errorString());
+        resetData(NetworkError, d->currentReply->errorString());
         return;
     }
 
-    const QByteArray webSiteData            = m_currentReply->readAll();
+    const QByteArray webSiteData            = d->currentReply->readAll();
     const QByteArray credentialsBeginString = "var params_RichTranslateHelper = [";
     const int credentialsBeginPos           = webSiteData.indexOf(credentialsBeginString);
 
@@ -62,7 +62,7 @@ void DOnlineTranslator::slotParseBingCredentials()
         return;
     }
 
-    s_bingKey               = webSiteData.mid(keyBeginPos, keyEndPos - keyBeginPos);
+    Private::s_bingKey               = webSiteData.mid(keyBeginPos, keyEndPos - keyBeginPos);
     const int tokenBeginPos = keyEndPos + 2; // Skip two symbols instead of one because the value is enclosed in quotes
     const int tokenEndPos   = webSiteData.indexOf('"', tokenBeginPos);
 
@@ -72,7 +72,7 @@ void DOnlineTranslator::slotParseBingCredentials()
         return;
     }
 
-    s_bingToken          = webSiteData.mid(tokenBeginPos, tokenEndPos - tokenBeginPos);
+    Private::s_bingToken          = webSiteData.mid(tokenBeginPos, tokenEndPos - tokenBeginPos);
     const int igBeginPos = webSiteData.indexOf("IG");
     const int igEndPos   = webSiteData.indexOf('"', igBeginPos + 2);
 
@@ -82,7 +82,7 @@ void DOnlineTranslator::slotParseBingCredentials()
         return;
     }
 
-    s_bingIg              = QString::fromUtf8(webSiteData.mid(igBeginPos, igEndPos - igBeginPos));
+    Private::s_bingIg              = QString::fromUtf8(webSiteData.mid(igBeginPos, igEndPos - igBeginPos));
     const int iidBeginPos = webSiteData.indexOf("data-iid");
     const int iidEndPos   = webSiteData.indexOf('"', iidBeginPos + 2);
 
@@ -92,23 +92,23 @@ void DOnlineTranslator::slotParseBingCredentials()
         return;
     }
 
-    s_bingIid = QString::fromUtf8(webSiteData.mid(iidBeginPos, iidEndPos - iidBeginPos));
+    Private::s_bingIid = QString::fromUtf8(webSiteData.mid(iidBeginPos, iidEndPos - iidBeginPos));
 }
 
 void DOnlineTranslator::slotRequestBingTranslate()
 {
-    const QString sourceText = sender()->property(s_textProperty).toString();
+    const QString sourceText = sender()->property(Private::s_textProperty).toString();
 
     // Generate POST data
 
     const QByteArray postData = "&text="     + QUrl::toPercentEncoding(sourceText)
-                              + "&fromLang=" + languageApiCode(Bing, m_sourceLang).toUtf8()
-                              + "&to="       + languageApiCode(Bing, m_translationLang).toUtf8()
-                              + "&token="    + s_bingToken
-                              + "&key="      + s_bingKey;
+                              + "&fromLang=" + languageApiCode(Bing, d->sourceLang).toUtf8()
+                              + "&to="       + languageApiCode(Bing, d->translationLang).toUtf8()
+                              + "&token="    + Private::s_bingToken
+                              + "&key="      + Private::s_bingKey;
 
     QUrl url(QStringLiteral("https://www.bing.com/ttranslatev3"));
-    url.setQuery(QStringLiteral("IG=%1&IID=%2").arg(s_bingIg, s_bingIid));
+    url.setQuery(QStringLiteral("IG=%1&IID=%2").arg(Private::s_bingIg, Private::s_bingIid));
 
     // Setup request
 
@@ -119,51 +119,51 @@ void DOnlineTranslator::slotRequestBingTranslate()
 
     // Make reply
 
-    m_currentReply = m_networkManager->post(request, postData);
+    d->currentReply = d->networkManager->post(request, postData);
 }
 
 void DOnlineTranslator::slotParseBingTranslate()
 {
-    m_currentReply->deleteLater();
+    d->currentReply->deleteLater();
 
     // Check for errors
 
-    if (m_currentReply->error() != QNetworkReply::NoError)
+    if (d->currentReply->error() != QNetworkReply::NoError)
     {
-        resetData(NetworkError, m_currentReply->errorString());
+        resetData(NetworkError, d->currentReply->errorString());
         return;
     }
 
     // Parse translation data
 
-    const QJsonDocument jsonResponse = QJsonDocument::fromJson(m_currentReply->readAll());
+    const QJsonDocument jsonResponse = QJsonDocument::fromJson(d->currentReply->readAll());
     const QJsonObject responseObject = jsonResponse.array().first().toObject();
 
-    if (m_sourceLang == Auto)
+    if (d->sourceLang == Auto)
     {
         const QString langCode = responseObject.value(QStringLiteral("detectedLanguage")).toObject().value(QStringLiteral("language")).toString();
-        m_sourceLang           = language(Bing, langCode);
+        d->sourceLang           = language(Bing, langCode);
 
-        if (m_sourceLang == NoLanguage)
+        if (d->sourceLang == NoLanguage)
         {
             resetData(ParsingError, i18n("Error: Unable to parse autodetected language"));
             return;
         }
 
-        if (m_onlyDetectLanguage)
+        if (d->onlyDetectLanguage)
             return;
     }
 
     const QJsonObject translationsObject = responseObject.value(QStringLiteral("translations")).toArray().first().toObject();
-    m_translation                       += translationsObject.value(QStringLiteral("text")).toString();
-    m_translationTranslit               += translationsObject.value(QStringLiteral("transliteration")).toObject().value(QStringLiteral("text")).toString();
+    d->translation                       += translationsObject.value(QStringLiteral("text")).toString();
+    d->translationTranslit               += translationsObject.value(QStringLiteral("transliteration")).toObject().value(QStringLiteral("text")).toString();
 }
 
 void DOnlineTranslator::slotRequestBingDictionary()
 {
     // Check if language is supported (need to check here because language may be autodetected)
 
-    if (!isSupportDictionary(Bing, m_sourceLang, m_translationLang) && !m_source.contains(QLatin1Char(' ')))
+    if (!isSupportDictionary(Bing, d->sourceLang, d->translationLang) && !d->source.contains(QLatin1Char(' ')))
     {
         auto* state = qobject_cast<QState *>(sender());
         state->addTransition(new QFinalState(state->parentState()));
@@ -172,30 +172,30 @@ void DOnlineTranslator::slotRequestBingDictionary()
 
     // Generate POST data
 
-    const QByteArray postData = "&text=" + QUrl::toPercentEncoding(sender()->property(s_textProperty).toString())
-                              + "&from=" + languageApiCode(Bing, m_sourceLang).toUtf8()
-                              + "&to="   + languageApiCode(Bing, m_translationLang).toUtf8();
+    const QByteArray postData = "&text=" + QUrl::toPercentEncoding(sender()->property(Private::s_textProperty).toString())
+                              + "&from=" + languageApiCode(Bing, d->sourceLang).toUtf8()
+                              + "&to="   + languageApiCode(Bing, d->translationLang).toUtf8();
 
     QNetworkRequest request;
     request.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/x-www-form-urlencoded"));
     request.setUrl(QUrl(QStringLiteral("https://www.bing.com/tlookupv3")));
 
-    m_currentReply = m_networkManager->post(request, postData);
+    d->currentReply = d->networkManager->post(request, postData);
 }
 
 void DOnlineTranslator::slotParseBingDictionary()
 {
-    m_currentReply->deleteLater();
+    d->currentReply->deleteLater();
 
     // Check for errors
 
-    if (m_currentReply->error() != QNetworkReply::NoError)
+    if (d->currentReply->error() != QNetworkReply::NoError)
     {
-        resetData(NetworkError, m_currentReply->errorString());
+        resetData(NetworkError, d->currentReply->errorString());
         return;
     }
 
-    const QJsonDocument jsonResponse = QJsonDocument::fromJson(m_currentReply->readAll());
+    const QJsonDocument jsonResponse = QJsonDocument::fromJson(d->currentReply->readAll());
     const QJsonObject responseObject = jsonResponse.array().first().toObject();
 
     for (const QJsonValueRef dictionaryData : responseObject.value(QStringLiteral("translations")).toArray())
@@ -212,7 +212,7 @@ void DOnlineTranslator::slotParseBingDictionary()
             translations.append(wordTranslation.toObject().value(QStringLiteral("displayText")).toString());
         }
 
-        m_translationOptions[typeOfSpeech].append({word, {}, translations});
+        d->translationOptions[typeOfSpeech].append({word, {}, translations});
     }
 }
 
@@ -220,11 +220,11 @@ void DOnlineTranslator::buildBingStateMachine()
 {
     // States
 
-    auto* credentialsState = new QState(m_stateMachine); // Generate credentials from web version first to access API
-    auto* translationState = new QState(m_stateMachine);
-    auto* dictionaryState  = new QState(m_stateMachine);
-    auto* finalState       = new QFinalState(m_stateMachine);
-    m_stateMachine->setInitialState(credentialsState);
+    auto* credentialsState = new QState(d->stateMachine); // Generate credentials from web version first to access API
+    auto* translationState = new QState(d->stateMachine);
+    auto* dictionaryState  = new QState(d->stateMachine);
+    auto* finalState       = new QFinalState(d->stateMachine);
+    d->stateMachine->setInitialState(credentialsState);
 
     // Transitions
 
@@ -234,7 +234,7 @@ void DOnlineTranslator::buildBingStateMachine()
 
     // Setup credentials state
 
-    if (s_bingKey.isEmpty() || s_bingToken.isEmpty())
+    if (Private::s_bingKey.isEmpty() || Private::s_bingToken.isEmpty())
     {
         buildNetworkRequestState(credentialsState,
                                  &DOnlineTranslator::slotRequestBingCredentials,
@@ -250,17 +250,17 @@ void DOnlineTranslator::buildBingStateMachine()
     buildSplitNetworkRequest(translationState,
                              &DOnlineTranslator::slotRequestBingTranslate,
                              &DOnlineTranslator::slotParseBingTranslate,
-                             m_source,
-                             s_bingTranslateLimit);
+                             d->source,
+                             Private::s_bingTranslateLimit);
 
     // Setup dictionary state
 
-    if (m_translationOptionsEnabled && !isContainsSpace(m_source))
+    if (d->translationOptionsEnabled && !isContainsSpace(d->source))
     {
         buildNetworkRequestState(dictionaryState,
                                  &DOnlineTranslator::slotRequestBingDictionary,
                                  &DOnlineTranslator::slotParseBingDictionary,
-                                 m_source);
+                                 d->source);
     }
     else
     {
@@ -272,15 +272,15 @@ void DOnlineTranslator::buildBingDetectStateMachine()
 {
     // States
 
-    auto* detectState = new QState(m_stateMachine);
-    auto* finalState  = new QFinalState(m_stateMachine);
-    m_stateMachine->setInitialState(detectState);
+    auto* detectState = new QState(d->stateMachine);
+    auto* finalState  = new QFinalState(d->stateMachine);
+    d->stateMachine->setInitialState(detectState);
 
     detectState->addTransition(detectState, &QState::finished, finalState);
 
     // Setup translation state
 
-    const QString text = m_source.left(getSplitIndex(m_source, s_bingTranslateLimit));
+    const QString text = d->source.left(getSplitIndex(d->source, Private::s_bingTranslateLimit));
 
     buildNetworkRequestState(detectState,
                              &DOnlineTranslator::slotRequestBingTranslate,

@@ -164,7 +164,7 @@ public:
 
     DTextEditClearButton*        clrBtn       = nullptr;
 
-    LocalizeContainer          container;                 ///< Spell checking settings container.
+    LocalizeContainer            container;                 ///< Spell checking settings container.
 };
 
 DTextEdit::DTextEdit(QWidget* const parent)
@@ -524,7 +524,7 @@ public:
 
     DTextEditClearButton*        clrBtn       = nullptr;
 
-    LocalizeContainer          container;                 ///< Spell checking settings container.
+    LocalizeContainer            container;                 ///< Spell checking settings container.
 };
 
 DPlainTextEdit::DPlainTextEdit(QWidget* const parent)

@@ -29,45 +29,45 @@ namespace Digikam
 
 void DOnlineTranslator::slotRequestLibreLangDetection()
 {
-    const QString sourceText  = sender()->property(s_textProperty).toString();
+    const QString sourceText  = sender()->property(Private::s_textProperty).toString();
 
     // Generate POST data
 
     const QByteArray postData = "&q="       + QUrl::toPercentEncoding(sourceText)
-                              + "&api_key=" + m_libreApiKey;
+                              + "&api_key=" + d->libreApiKey;
 
     // Setup request
 
     QNetworkRequest request;
     request.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/x-www-form-urlencoded"));
-    request.setUrl(QUrl(QString::fromUtf8("%1/detect").arg(m_libreUrl)));
+    request.setUrl(QUrl(QString::fromUtf8("%1/detect").arg(d->libreUrl)));
 
     // Make reply
 
-    m_currentReply            = m_networkManager->post(request, postData);
+    d->currentReply            = d->networkManager->post(request, postData);
 }
 
 void DOnlineTranslator::slotParseLibreLangDetection()
 {
-    m_currentReply->deleteLater();
+    d->currentReply->deleteLater();
 
     // Check for errors
 
-    if (m_currentReply->error() != QNetworkReply::NoError)
+    if (d->currentReply->error() != QNetworkReply::NoError)
     {
-        resetData(NetworkError, m_currentReply->errorString());
+        resetData(NetworkError, d->currentReply->errorString());
         return;
     }
 
-    const QJsonDocument jsonResponse = QJsonDocument::fromJson(m_currentReply->readAll());
+    const QJsonDocument jsonResponse = QJsonDocument::fromJson(d->currentReply->readAll());
     const QJsonObject responseObject = jsonResponse.array().first().toObject();
 
-    if (m_sourceLang == Auto)
+    if (d->sourceLang == Auto)
     {
         const QString langCode = responseObject.value(QStringLiteral("language")).toString();
-        m_sourceLang           = language(LibreTranslate, langCode);
+        d->sourceLang           = language(LibreTranslate, langCode);
 
-        if (m_sourceLang == NoLanguage)
+        if (d->sourceLang == NoLanguage)
         {
             resetData(ParsingError, i18n("Error: Unable to parse autodetected language"));
         }
@@ -76,56 +76,56 @@ void DOnlineTranslator::slotParseLibreLangDetection()
 
 void DOnlineTranslator::slotRequestLibreTranslate()
 {
-    const QString sourceText  = sender()->property(s_textProperty).toString();
+    const QString sourceText  = sender()->property(Private::s_textProperty).toString();
 
     // Generate POST data
 
     const QByteArray postData = "&q="       + QUrl::toPercentEncoding(sourceText)
-                              + "&source="  + languageApiCode(LibreTranslate, m_sourceLang).toUtf8()
-                              + "&target="  + languageApiCode(LibreTranslate, m_translationLang).toUtf8()
-                              + "&api_key=" + m_libreApiKey;
+                              + "&source="  + languageApiCode(LibreTranslate, d->sourceLang).toUtf8()
+                              + "&target="  + languageApiCode(LibreTranslate, d->translationLang).toUtf8()
+                              + "&api_key=" + d->libreApiKey;
 
     // Setup request
 
     QNetworkRequest request;
     request.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/x-www-form-urlencoded"));
-    request.setUrl(QUrl(QString::fromUtf8("%1/translate").arg(m_libreUrl)));
+    request.setUrl(QUrl(QString::fromUtf8("%1/translate").arg(d->libreUrl)));
 
     // Make reply
 
-    m_currentReply            = m_networkManager->post(request, postData);
+    d->currentReply            = d->networkManager->post(request, postData);
 }
 
 void DOnlineTranslator::slotParseLibreTranslate()
 {
-    m_currentReply->deleteLater();
+    d->currentReply->deleteLater();
 
     // Check for errors
 
-    if (m_currentReply->error() != QNetworkReply::NoError)
+    if (d->currentReply->error() != QNetworkReply::NoError)
     {
-        resetData(NetworkError, m_currentReply->errorString());
+        resetData(NetworkError, d->currentReply->errorString());
         return;
     }
 
-    const QJsonDocument jsonResponse = QJsonDocument::fromJson(m_currentReply->readAll());
+    const QJsonDocument jsonResponse = QJsonDocument::fromJson(d->currentReply->readAll());
     const QJsonObject responseObject = jsonResponse.object();
-    m_translation                    = responseObject.value(QStringLiteral("translatedText")).toString();
+    d->translation                    = responseObject.value(QStringLiteral("translatedText")).toString();
 }
 
 void DOnlineTranslator::buildLibreDetectStateMachine()
 {
     // States
 
-    auto* detectState = new QState(m_stateMachine);
-    auto* finalState  = new QFinalState(m_stateMachine);
-    m_stateMachine->setInitialState(detectState);
+    auto* detectState = new QState(d->stateMachine);
+    auto* finalState  = new QFinalState(d->stateMachine);
+    d->stateMachine->setInitialState(detectState);
 
     detectState->addTransition(detectState, &QState::finished, finalState);
 
     // Setup lang detection state
 
-    const QString text = m_source.left(getSplitIndex(m_source, s_libreTranslateLimit));
+    const QString text = d->source.left(getSplitIndex(d->source, Private::s_libreTranslateLimit));
 
     buildNetworkRequestState(detectState,
                              &DOnlineTranslator::slotRequestLibreLangDetection,
@@ -137,10 +137,10 @@ void DOnlineTranslator::buildLibreStateMachine()
 {
     // States
 
-    auto* languageDetectionState = new QState(m_stateMachine);
-    auto* translationState       = new QState(m_stateMachine);
-    auto* finalState             = new QFinalState(m_stateMachine);
-    m_stateMachine->setInitialState(languageDetectionState);
+    auto* languageDetectionState = new QState(d->stateMachine);
+    auto* translationState       = new QState(d->stateMachine);
+    auto* finalState             = new QFinalState(d->stateMachine);
+    d->stateMachine->setInitialState(languageDetectionState);
 
     // Transitions
 
@@ -152,15 +152,15 @@ void DOnlineTranslator::buildLibreStateMachine()
     buildNetworkRequestState(languageDetectionState,
                              &DOnlineTranslator::slotRequestLibreLangDetection,
                              &DOnlineTranslator::slotParseLibreLangDetection,
-                             m_source);
+                             d->source);
 
     // Setup translation state
 
     buildSplitNetworkRequest(translationState,
                              &DOnlineTranslator::slotRequestLibreTranslate,
                              &DOnlineTranslator::slotParseLibreTranslate,
-                             m_source,
-                             s_libreTranslateLimit);
+                             d->source,
+                             Private::s_libreTranslateLimit);
 }
 
 } // namespace Digikam

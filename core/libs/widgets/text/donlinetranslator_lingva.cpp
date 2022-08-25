@@ -29,45 +29,45 @@ namespace Digikam
 
 void DOnlineTranslator::slotRequestLingvaTranslate()
 {
-    const QString sourceText = sender()->property(s_textProperty).toString();
+    const QString sourceText = sender()->property(Private::s_textProperty).toString();
 
     // Generate API url
 
     QUrl url(QString::fromUtf8("%1/api/v1/%2/%3/%4")
-                    .arg(m_lingvaUrl)
-                    .arg(languageApiCode(Lingva, m_sourceLang))
-                    .arg(languageApiCode(Lingva, m_translationLang))
+                    .arg(d->lingvaUrl)
+                    .arg(languageApiCode(Lingva, d->sourceLang))
+                    .arg(languageApiCode(Lingva, d->translationLang))
                     .arg(QString::fromUtf8(QUrl::toPercentEncoding(sourceText))));
 
-    m_currentReply = m_networkManager->get(QNetworkRequest(url));
+    d->currentReply = d->networkManager->get(QNetworkRequest(url));
 }
 
 void DOnlineTranslator::slotParseLingvaTranslate()
 {
-    m_currentReply->deleteLater();
+    d->currentReply->deleteLater();
 
     // Check for errors
 
-    if (m_currentReply->error() != QNetworkReply::NoError)
+    if (d->currentReply->error() != QNetworkReply::NoError)
     {
-        resetData(NetworkError, m_currentReply->errorString());
+        resetData(NetworkError, d->currentReply->errorString());
         return;
     }
 
     // Parse translation data
 
-    const QJsonDocument jsonResponse = QJsonDocument::fromJson(m_currentReply->readAll());
+    const QJsonDocument jsonResponse = QJsonDocument::fromJson(d->currentReply->readAll());
     const QJsonObject responseObject = jsonResponse.object();
-    m_translation                    = responseObject.value(QStringLiteral("translation")).toString();
+    d->translation                    = responseObject.value(QStringLiteral("translation")).toString();
 }
 
 void DOnlineTranslator::buildLingvaStateMachine()
 {
     // States
 
-    auto* translationState = new QState(m_stateMachine);
-    auto* finalState       = new QFinalState(m_stateMachine);
-    m_stateMachine->setInitialState(translationState);
+    auto* translationState = new QState(d->stateMachine);
+    auto* finalState       = new QFinalState(d->stateMachine);
+    d->stateMachine->setInitialState(translationState);
 
     // Transitions
 
@@ -78,23 +78,23 @@ void DOnlineTranslator::buildLingvaStateMachine()
     buildSplitNetworkRequest(translationState,
                              &DOnlineTranslator::slotRequestLingvaTranslate,
                              &DOnlineTranslator::slotParseLingvaTranslate,
-                             m_source,
-                             s_googleTranslateLimit);
+                             d->source,
+                             Private::s_googleTranslateLimit);
 }
 
 void DOnlineTranslator::buildLingvaDetectStateMachine()
 {
     // States
 
-    auto* detectState = new QState(m_stateMachine);
-    auto* finalState  = new QFinalState(m_stateMachine);
-    m_stateMachine->setInitialState(detectState);
+    auto* detectState = new QState(d->stateMachine);
+    auto* finalState  = new QFinalState(d->stateMachine);
+    d->stateMachine->setInitialState(detectState);
 
     detectState->addTransition(detectState, &QState::finished, finalState);
 
     // Setup lang detection state
 
-    const QString text = m_source.left(getSplitIndex(m_source, s_googleTranslateLimit));
+    const QString text = d->source.left(getSplitIndex(d->source, Private::s_googleTranslateLimit));
 
     buildNetworkRequestState(detectState,
                              &DOnlineTranslator::slotRequestLingvaTranslate,

@@ -28,17 +28,19 @@ namespace Digikam
 {
 
 DOnlineTranslator::DOnlineTranslator(QObject* const parent)
-    : QObject         (parent),
-      m_stateMachine  (new QStateMachine(this)),
-      m_networkManager(new QNetworkAccessManager(this)),
-      m_libreUrl      (QLatin1String("https://translate.argosopentech.com")),
-      m_lingvaUrl     (QLatin1String("https://lingva.ml"))
+    : QObject(parent),
+      d      (new Private(this))
 {
-    connect(m_stateMachine, &QStateMachine::finished,
+    connect(d->stateMachine, &QStateMachine::finished,
             this, &DOnlineTranslator::signalFinished);
 
-    connect(m_stateMachine, &QStateMachine::stopped,
+    connect(d->stateMachine, &QStateMachine::stopped,
             this, &DOnlineTranslator::signalFinished);
+}
+
+DOnlineTranslator::~DOnlineTranslator()
+{
+    delete d;
 }
 
 void DOnlineTranslator::translate(const QString& text,
@@ -50,19 +52,19 @@ void DOnlineTranslator::translate(const QString& text,
     abort();
     resetData();
 
-    m_onlyDetectLanguage = false;
-    m_source             = text;
-    m_sourceLang         = sourceLang;
-    m_translationLang    = (translationLang == Auto) ? language(QLocale()) : translationLang;
-    m_uiLang             = (uiLang == Auto)          ? language(QLocale()) : uiLang;
+    d->onlyDetectLanguage = false;
+    d->source             = text;
+    d->sourceLang         = sourceLang;
+    d->translationLang    = (translationLang == Auto) ? language(QLocale()) : translationLang;
+    d->uiLang             = (uiLang == Auto)          ? language(QLocale()) : uiLang;
 
     // Check if the selected languages are supported by the engine
  
-   if (!isSupportTranslation(engine, m_sourceLang))
+   if (!isSupportTranslation(engine, d->sourceLang))
     {
         resetData(ParametersError,
                   i18n("Selected source language %1 is not supported for %2",
-                       languageName(m_sourceLang),
+                       languageName(d->sourceLang),
                        QString::fromUtf8(QMetaEnum::fromType<Engine>().valueToKey(engine))));
 
         Q_EMIT signalFinished();
@@ -70,11 +72,11 @@ void DOnlineTranslator::translate(const QString& text,
         return;
     }
 
-    if (!isSupportTranslation(engine, m_translationLang))
+    if (!isSupportTranslation(engine, d->translationLang))
     {
         resetData(ParametersError,
                   i18n("Selected translation language %1 is not supported for %2",
-                       languageName(m_translationLang),
+                       languageName(d->translationLang),
                        QString::fromUtf8(QMetaEnum::fromType<Engine>().valueToKey(engine))));
 
         Q_EMIT signalFinished();
@@ -82,11 +84,11 @@ void DOnlineTranslator::translate(const QString& text,
         return;
     }
 
-    if (!isSupportTranslation(engine, m_uiLang))
+    if (!isSupportTranslation(engine, d->uiLang))
     {
         resetData(ParametersError,
                   i18n("Selected ui language %1 is not supported for %2",
-                       languageName(m_uiLang),
+                       languageName(d->uiLang),
                        QString::fromUtf8(QMetaEnum::fromType<Engine>().valueToKey(engine))));
 
         Q_EMIT signalFinished();
@@ -116,7 +118,7 @@ void DOnlineTranslator::translate(const QString& text,
 
         case LibreTranslate:
         {
-            if (m_libreUrl.isEmpty())
+            if (d->libreUrl.isEmpty())
             {
                 resetData(ParametersError,
                         i18n("%1 URL can't be empty.",
@@ -133,7 +135,7 @@ void DOnlineTranslator::translate(const QString& text,
 
         case Lingva:
         {
-            if (m_lingvaUrl.isEmpty())
+            if (d->lingvaUrl.isEmpty())
             {
                 resetData(ParametersError,
                         i18n("%1 URL can't be empty.",
@@ -149,7 +151,7 @@ void DOnlineTranslator::translate(const QString& text,
         }
     }
 
-    m_stateMachine->start();
+    d->stateMachine->start();
 }
 
 QString DOnlineTranslator::engineName(Engine engine)
@@ -188,11 +190,11 @@ void DOnlineTranslator::detectLanguage(const QString& text, Engine engine)
     abort();
     resetData();
 
-    m_onlyDetectLanguage = true;
-    m_source             = text;
-    m_sourceLang         = Auto;
-    m_translationLang    = English;
-    m_uiLang             = language(QLocale());
+    d->onlyDetectLanguage = true;
+    d->source             = text;
+    d->sourceLang         = Auto;
+    d->translationLang    = English;
+    d->uiLang             = language(QLocale());
 
     switch (engine)
     {
@@ -216,7 +218,7 @@ void DOnlineTranslator::detectLanguage(const QString& text, Engine engine)
 
         case LibreTranslate:
         {
-            if (m_libreUrl.isEmpty())
+            if (d->libreUrl.isEmpty())
             {
                 resetData(ParametersError,
                         i18n("%1 URL can't be empty.",
@@ -233,7 +235,7 @@ void DOnlineTranslator::detectLanguage(const QString& text, Engine engine)
 
         case Lingva:
         {
-            if (m_lingvaUrl.isEmpty())
+            if (d->lingvaUrl.isEmpty())
             {
                 resetData(ParametersError,
                         i18n("%1 URL can't be empty.",
@@ -249,25 +251,25 @@ void DOnlineTranslator::detectLanguage(const QString& text, Engine engine)
         }
     }
 
-    m_stateMachine->start();
+    d->stateMachine->start();
 }
 
 void DOnlineTranslator::abort()
 {
-    if (m_currentReply != nullptr)
+    if (d->currentReply != nullptr)
     {
-        m_currentReply->abort();
+        d->currentReply->abort();
     }
 }
 
 bool DOnlineTranslator::isRunning() const
 {
-    return m_stateMachine->isRunning();
+    return d->stateMachine->isRunning();
 }
 
 void DOnlineTranslator::slotSkipGarbageText()
 {
-    m_translation.append(sender()->property(s_textProperty).toString());
+    d->translation.append(sender()->property(Private::s_textProperty).toString());
 }
 
 void DOnlineTranslator::buildSplitNetworkRequest(QState* const parent,
@@ -291,7 +293,7 @@ void DOnlineTranslator::buildSplitNetworkRequest(QState* const parent,
 
         if (splitIndex == -1)
         {
-            currentTranslationState->setProperty(s_textProperty, unsendedText.left(textLimit));
+            currentTranslationState->setProperty(Private::s_textProperty, unsendedText.left(textLimit));
             currentTranslationState->addTransition(nextTranslationState);
 
             connect(currentTranslationState, &QState::entered,
@@ -329,12 +331,12 @@ void DOnlineTranslator::buildNetworkRequestState(QState* const parent,
 
     // Substates transitions
 
-    requestingState->addTransition(m_networkManager, &QNetworkAccessManager::finished, parsingState);
+    requestingState->addTransition(d->networkManager, &QNetworkAccessManager::finished, parsingState);
     parsingState->addTransition(new QFinalState(parent));
 
     // Setup requesting state
 
-    requestingState->setProperty(s_textProperty, text);
+    requestingState->setProperty(Private::s_textProperty, text);
 
     connect(requestingState, &QState::entered,
             this, requestMethod);
@@ -347,19 +349,19 @@ void DOnlineTranslator::buildNetworkRequestState(QState* const parent,
 
 void DOnlineTranslator::resetData(TranslationError error, const QString& errorString)
 {
-    m_error       = error;
-    m_errorString = errorString;
-    m_translation.clear();
-    m_translationTranslit.clear();
-    m_sourceTranslit.clear();
-    m_sourceTranscription.clear();
-    m_translationOptions.clear();
+    d->error       = error;
+    d->errorString = errorString;
+    d->translation.clear();
+    d->translationTranslit.clear();
+    d->sourceTranslit.clear();
+    d->sourceTranscription.clear();
+    d->translationOptions.clear();
 
-    m_stateMachine->stop();
+    d->stateMachine->stop();
 
-    for (QAbstractState* state : m_stateMachine->findChildren<QAbstractState*>())
+    for (QAbstractState* state : d->stateMachine->findChildren<QAbstractState*>())
     {
-        if (!m_stateMachine->configuration().contains(state))
+        if (!d->stateMachine->configuration().contains(state))
         {
             state->deleteLater();
         }

@@ -326,6 +326,7 @@ public:
      * @param parent parent object
      */
     explicit DOnlineTranslator(QObject* const parent = nullptr);
+    ~DOnlineTranslator() override;
 
     /**
      * @brief Translate text
@@ -776,58 +777,8 @@ private:
 
 private:
 
-    // Credentials that is parsed from the web version to receive the translation using the API
-
-    static inline QString                            s_yandexKey;
-    static inline QByteArray                         s_bingKey;
-    static inline QByteArray                         s_bingToken;
-    static inline QString                            s_bingIg;
-    static inline QString                            s_bingIid;
-
-    // This properties used to store unseful information in states
-
-    static constexpr char                            s_textProperty[]               = "Text";
-
-    // Engines have a limit of characters per translation request.
-    // If the query is larger, then it should be splited into several with getSplitIndex() helper function
-
-    static constexpr int                             s_googleTranslateLimit         = 5000;
-    static constexpr int                             s_yandexTranslateLimit         = 150;
-    static constexpr int                             s_yandexTranslitLimit          = 180;
-    static constexpr int                             s_bingTranslateLimit           = 5001;
-    static constexpr int                             s_libreTranslateLimit          = 120;
-
-    QStateMachine*                                   m_stateMachine                 = nullptr;
-    QNetworkAccessManager*                           m_networkManager               = nullptr;
-    QPointer<QNetworkReply>                          m_currentReply;
-
-    Language                                         m_sourceLang                   = NoLanguage;
-    Language                                         m_translationLang              = NoLanguage;
-    Language                                         m_uiLang                       = NoLanguage;
-    TranslationError                                 m_error                        = NoError;
-
-    QString                                          m_source;
-    QString                                          m_sourceTranslit;
-    QString                                          m_sourceTranscription;
-    QString                                          m_translation;
-    QString                                          m_translationTranslit;
-    QString                                          m_errorString;
-
-    // Self-hosted engines settings
-    // Can be empty, since free instances ignores api_key parameter
-
-    QByteArray                                       m_libreApiKey;
-    QString                                          m_libreUrl;
-    QString                                          m_lingvaUrl;
-
-    QMap<QString, QVector<DOnlineTranslatorOption> > m_translationOptions;
-
-    bool                                             m_sourceTranslitEnabled        = true;
-    bool                                             m_translationTranslitEnabled   = true;
-    bool                                             m_sourceTranscriptionEnabled   = true;
-    bool                                             m_translationOptionsEnabled    = true;
-
-    bool                                             m_onlyDetectLanguage           = false;
+    class Private;
+    Private* const d;
 };
 
 } // namespace Digikam
