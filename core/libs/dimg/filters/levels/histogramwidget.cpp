@@ -64,11 +64,11 @@ public:
 
     enum HistogramState
     {
-        HistogramNone = 0,        // No current histogram values calculation.
-        HistogramDataLoading,     // The image is being loaded
-        HistogramStarted,         // Histogram values calculation started.
-        HistogramCompleted,       // Histogram values calculation completed.
-        HistogramFailed           // Histogram values calculation failed.
+        HistogramNone = 0,        ///< No current histogram values calculation.
+        HistogramDataLoading,     ///< The image is being loaded
+        HistogramStarted,         ///< Histogram values calculation started.
+        HistogramCompleted,       ///< Histogram values calculation completed.
+        HistogramFailed           ///< Histogram values calculation failed.
     };
 
 public:
@@ -583,7 +583,8 @@ void HistogramWidget::paintEvent(QPaintEvent*)
     if (d->statisticsVisible)
     {
         DToolTipStyleSheet cnt;
-        QString            tipText, value;
+        QString            tipText;
+        QString            value;
         tipText = QLatin1String("<qt><table cellspacing=0 cellpadding=0>");
 
         tipText += cnt.cellBeg + i18nc("@info: histogram properties", "Mean:") + cnt.cellMid;
