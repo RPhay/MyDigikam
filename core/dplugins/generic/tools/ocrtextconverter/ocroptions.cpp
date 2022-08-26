@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2022-08-26
- * Description : OCR Tesseract options 
+ * Description : OCR Tesseract options
  *
  * Copyright (C) 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2022      by Quoc Hung Tran <quochungtran1999 at gmail dot com>

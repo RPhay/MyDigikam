@@ -90,7 +90,7 @@ public:
         currentSelectedItem (nullptr),
         textedit            (nullptr),
         saveTextButton      (nullptr),
-        thread              (nullptr)  
+        thread              (nullptr)
     {
     }
 
