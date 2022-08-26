@@ -3,8 +3,8 @@
  * This file is a part of kipi-plugins project
  * https://www.digikam.org
  *
- * Date        : 2008-09-24
- * Description : DNG Converter threads manager
+ * Date        : 2022-08-26
+ * Description : Text Converter threads manager
  *
  * Copyright (C) 2012      by Smit Mehta <smit dot meh at gmail dot com>
  * Copyright (C) 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
