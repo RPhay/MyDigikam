@@ -90,25 +90,21 @@ QString OcrOptions::LanguageCodeToValue(OcrOptions::Languages l)
         case OcrOptions::Languages::ENG:
         {
             return QLatin1String("eng");
-            break;
         }
 
         case OcrOptions::Languages::OSD:
         {
             return QLatin1String("osd");
-            break;
         }
 
         case OcrOptions::Languages::DEFAULT:
         {
             return QLatin1String("");
-            break;
         }
 
         default:
         {
             return QLatin1String("");
-            break;
         }
     }
 }

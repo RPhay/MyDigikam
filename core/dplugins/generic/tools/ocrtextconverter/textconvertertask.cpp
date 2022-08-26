@@ -46,7 +46,8 @@ public:
         dpi(300),
         isSaveTextFile(true),
         isSaveXMP(true),
-        cancel(false)
+        cancel(false),
+        action(TextConverterAction())
     {
     }
 

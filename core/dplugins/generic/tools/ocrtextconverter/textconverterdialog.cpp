@@ -87,7 +87,10 @@ public:
         iface            (nullptr),
         listView         (nullptr),
         ocrSettings      (nullptr),
-        currentSelectedItem (nullptr)
+        currentSelectedItem (nullptr),
+        textedit            (nullptr),
+        saveTextButton      (nullptr),
+        thread              (nullptr)  
     {
     }
 

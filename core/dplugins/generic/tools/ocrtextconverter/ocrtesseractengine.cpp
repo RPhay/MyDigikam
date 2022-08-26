@@ -49,7 +49,8 @@ public:
         oem             ((int)OcrOptions::EngineModes::DEFAULT),
         dpi             (300),
         isSaveTextFile  (true),
-        isSaveXMP       (true)
+        isSaveXMP       (true),
+        cancel          (false)
     {
     }
 
@@ -163,7 +164,7 @@ bool OcrTesseracrEngine::isSaveXMP() const
     return d->isSaveXMP;
 }
 
-bool OcrTesseracrEngine::runOcrProcess()
+int OcrTesseracrEngine::runOcrProcess()
 {
     d->cancel = false;
     QScopedPointer<QProcess> ocrProcess (new QProcess());
