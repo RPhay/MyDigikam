@@ -195,7 +195,7 @@ const QMap<QString, QString> DOnlineTranslator::Private::s_rfc3066LanguageCodesG
 {
     { QLatin1String("af-ZA"),  QLatin1String("af")       },
     { QLatin1String("am-ET"),  QLatin1String("am")       },
-//     { QLatin1String("")     ,  QLatin1String("apc")      },      // North Levantine Arabic: do not exists as 2 letters code
+    { QLatin1String("apc-TR"), QLatin1String("apc")      },
     { QLatin1String("ar-AE"),  QLatin1String("ar")       },
     { QLatin1String("ar-BH"),  QLatin1String("ar")       },
     { QLatin1String("ar-DZ"),  QLatin1String("ar")       },
@@ -230,11 +230,10 @@ const QMap<QString, QString> DOnlineTranslator::Private::s_rfc3066LanguageCodesG
     { QLatin1String("bs-BA"),  QLatin1String("bs")       },
     { QLatin1String("bg-BG"),  QLatin1String("bg")       },
 //     { QLatin1String("br-FR"),  QLatin1String("")         },
-//     { QLatin1String("")     ,  QLatin1String("yue")      },      // Yue Chinese: do not exists as 2 letters code
     { QLatin1String("ca-ES"),  QLatin1String("ca")       },
     { QLatin1String("ca-AD"),  QLatin1String("ca")       },
     { QLatin1String("ca-FR"),  QLatin1String("ca")       },
-//     { QLatin1String("")     ,  QLatin1String("ceb")      },      // Cebuano: do not exists as 2 letters code
+    { QLatin1String("ceb-PH"), QLatin1String("ceb")      }, 
 //    { QLatin1String("ch-GU"),  QLatin1String("")       },
 //    { QLatin1String("ch-MP"),  QLatin1String("")       },
     { QLatin1String("co-FR"),  QLatin1String("co")       },
@@ -531,7 +530,8 @@ const QMap<QString, QString> DOnlineTranslator::Private::s_rfc3066LanguageCodesG
     { QLatin1String("xh-ZA"),  QLatin1String("xh")       },
     { QLatin1String("yi-DE"),  QLatin1String("yi")       },
     { QLatin1String("yo-NG"),  QLatin1String("yo")       },
-//     { QLatin1String("")     ,  QLatin1String("yua")      },      // Maya Yucatec: do not exists as 2 letters code
+    { QLatin1String("yua-MX"), QLatin1String("yua")      },
+    { QLatin1String("yue-CN"), QLatin1String("yue")      },
     { QLatin1String("zh-CN"),  QLatin1String("zh-CN")    },         // Chinese (Simplified, PRC)
     { QLatin1String("zh-TW"),  QLatin1String("zh-TW")    },         // Chinese (Traditional, Taiwan)
     { QLatin1String("zu-ZA"),  QLatin1String("zu")       }

@@ -51,6 +51,7 @@ const LanguageCodeMap s_rfc3066ForXMP =
 
     { QLatin1String("af-ZA"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Afrikaans (South Africa)")                                        )},
     { QLatin1String("am-ET"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Amharic (Ethiopia)")                                              )},
+    { QLatin1String("apc-TR"),    QString::fromUtf8(I18N_NOOP2("@info: country code", "North Levantine Arabic (Turkey)")                                 )},
     { QLatin1String("ar-AE"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Arabic (UAE)")                                                    )},
     { QLatin1String("ar-BH"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Arabic (Bahrain)")                                                )},
     { QLatin1String("ar-DZ"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Arabic (Algeria)")                                                )},
@@ -90,6 +91,7 @@ const LanguageCodeMap s_rfc3066ForXMP =
     { QLatin1String("ca-AD"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Catalan (Andorra)")                                               )},
     { QLatin1String("ca-ES"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Catalan (Spain)")                                                 )},
     { QLatin1String("ca-FR"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Catalan (France)")                                                )},
+    { QLatin1String("ceb-PH"),    QString::fromUtf8(I18N_NOOP2("@info: country code", "Cebuano (Philippines)")                                           )},
     { QLatin1String("ch-GU"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Chamorro (Guam)")                                                 )},
     { QLatin1String("ch-MP"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Chamorro (Northern Mariana Islands)")                             )},
     { QLatin1String("co-FR"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Corsican (France)")                                               )},
@@ -387,6 +389,7 @@ const LanguageCodeMap s_rfc3066ForXMP =
     { QLatin1String("xh-ZA"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "IsiXhosa Xhosa (South Africa)")                                   )},
     { QLatin1String("yi-DE"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Yiddish (Germany)")                                               )},
     { QLatin1String("yo-NG"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Yoruba (Nigeria)")                                                )},
+    { QLatin1String("yua-MX"),    QString::fromUtf8(I18N_NOOP2("@info: country code", "Yucatec Maya (Mexico)")                                           )},
     { QLatin1String("zh-CN"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Chinese (People's Republic of China)")                            )},
     { QLatin1String("zh-HK"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Chinese (Hong Kong SAR, People's Republic of China)")             )},
     { QLatin1String("zh-MO"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Chinese (Macao SAR)")                                             )},
