@@ -379,27 +379,27 @@ QString DOnlineTranslator::languageApiCode(Engine engine, Language lang)
     {
         case Google:
         {
-            return s_googleLanguageCodes.value(lang, s_genericLanguageCodes.value(lang));
+            return DOnlineTranslator::Private::s_googleLanguageCodes.value(lang, DOnlineTranslator::Private::s_genericLanguageCodes.value(lang));
         }
 
         case Yandex:
         {
-            return s_yandexLanguageCodes.value(lang, s_genericLanguageCodes.value(lang));
+            return DOnlineTranslator::Private::s_yandexLanguageCodes.value(lang, DOnlineTranslator::Private::s_genericLanguageCodes.value(lang));
         }
 
         case Bing:
         {
-            return s_bingLanguageCodes.value(lang, s_genericLanguageCodes.value(lang));
+            return DOnlineTranslator::Private::s_bingLanguageCodes.value(lang, DOnlineTranslator::Private::s_genericLanguageCodes.value(lang));
         }
 
         case LibreTranslate:
         {
-            return s_genericLanguageCodes.value(lang);
+            return DOnlineTranslator::Private::s_genericLanguageCodes.value(lang);
         }
 
         case Lingva:
         {
-            return s_lingvaLanguageCodes.value(lang, s_genericLanguageCodes.value(lang));
+            return DOnlineTranslator::Private::s_lingvaLanguageCodes.value(lang, DOnlineTranslator::Private::s_genericLanguageCodes.value(lang));
         }
     }
 
@@ -414,27 +414,27 @@ DOnlineTranslator::Language DOnlineTranslator::language(Engine engine, const QSt
     {
         case Google:
         {
-            return s_googleLanguageCodes.key(langCode, s_genericLanguageCodes.key(langCode, NoLanguage));
+            return DOnlineTranslator::Private::s_googleLanguageCodes.key(langCode, DOnlineTranslator::Private::s_genericLanguageCodes.key(langCode, NoLanguage));
         }
 
         case Yandex:
         {
-            return s_yandexLanguageCodes.key(langCode, s_genericLanguageCodes.key(langCode, NoLanguage));
+            return DOnlineTranslator::Private::s_yandexLanguageCodes.key(langCode, DOnlineTranslator::Private::s_genericLanguageCodes.key(langCode, NoLanguage));
         }
 
         case Bing:
         {
-            return s_bingLanguageCodes.key(langCode, s_genericLanguageCodes.key(langCode, NoLanguage));
+            return DOnlineTranslator::Private::s_bingLanguageCodes.key(langCode, DOnlineTranslator::Private::s_genericLanguageCodes.key(langCode, NoLanguage));
         }
 
         case LibreTranslate:
         {
-            return s_genericLanguageCodes.key(langCode, NoLanguage);
+            return DOnlineTranslator::Private::s_genericLanguageCodes.key(langCode, NoLanguage);
         }
 
         case Lingva:
         {
-            return s_lingvaLanguageCodes.key(langCode, s_genericLanguageCodes.key(langCode, NoLanguage));
+            return DOnlineTranslator::Private::s_lingvaLanguageCodes.key(langCode, DOnlineTranslator::Private::s_genericLanguageCodes.key(langCode, NoLanguage));
         }
     }
 

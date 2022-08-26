@@ -188,12 +188,12 @@ QString DOnlineTranslator::errorString() const
 
 QString DOnlineTranslator::languageCode(Language lang)
 {
-    return s_genericLanguageCodes.value(lang);
+    return DOnlineTranslator::Private::s_genericLanguageCodes.value(lang);
 }
 
 DOnlineTranslator::Language DOnlineTranslator::language(const QString& langCode)
 {
-    return s_genericLanguageCodes.key(langCode, NoLanguage);
+    return DOnlineTranslator::Private::s_genericLanguageCodes.key(langCode, NoLanguage);
 }
 
 } // namespace Digikam

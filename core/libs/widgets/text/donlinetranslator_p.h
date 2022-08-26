@@ -42,17 +42,6 @@
 namespace Digikam
 {
 
-extern const QMap<DOnlineTranslator::Language, QString> s_genericLanguageCodes;
-extern const QMap<DOnlineTranslator::Language, QString> s_googleLanguageCodes;
-extern const QMap<DOnlineTranslator::Language, QString> s_yandexLanguageCodes;
-extern const QMap<DOnlineTranslator::Language, QString> s_bingLanguageCodes;
-extern const QMap<DOnlineTranslator::Language, QString> s_lingvaLanguageCodes;
-
-extern const QMap<QString, QString>                     s_rfc3066LanguageCodesGeneric;
-extern const QMap<QString, QString>                     s_rfc3066LanguageCodesGoogle;
-extern const QMap<QString, QString>                     s_rfc3066LanguageCodesYandex;
-extern const QMap<QString, QString>                     s_rfc3066LanguageCodesBing;
-extern const QMap<QString, QString>                     s_rfc3066LanguageCodesLingva;
 
 // -----------------------------------------------------------------------------------------------------
 
@@ -62,58 +51,70 @@ public:
 
     explicit Private(DOnlineTranslator* const parent);
 
-    QStateMachine*                                   stateMachine                 = nullptr;
-    QNetworkAccessManager*                           networkManager               = nullptr;
-    QPointer<QNetworkReply>                          currentReply;
+    QStateMachine*                                          stateMachine                 = nullptr;
+    QNetworkAccessManager*                                  networkManager               = nullptr;
+    QPointer<QNetworkReply>                                 currentReply;
 
-    Language                                         sourceLang                   = NoLanguage;
-    Language                                         translationLang              = NoLanguage;
-    Language                                         uiLang                       = NoLanguage;
-    TranslationError                                 error                        = NoError;
+    Language                                                sourceLang                   = NoLanguage;
+    Language                                                translationLang              = NoLanguage;
+    Language                                                uiLang                       = NoLanguage;
+    TranslationError                                        error                        = NoError;
 
-    QString                                          source;
-    QString                                          sourceTranslit;
-    QString                                          sourceTranscription;
-    QString                                          translation;
-    QString                                          translationTranslit;
-    QString                                          errorString;
+    QString                                                 source;
+    QString                                                 sourceTranslit;
+    QString                                                 sourceTranscription;
+    QString                                                 translation;
+    QString                                                 translationTranslit;
+    QString                                                 errorString;
 
     // Self-hosted engines settings
     // Can be empty, since free instances ignores api key parameter
 
-    QByteArray                                       libreApiKey;
-    QString                                          libreUrl;
-    QString                                          lingvaUrl;
+    QByteArray                                              libreApiKey;
+    QString                                                 libreUrl;
+    QString                                                 lingvaUrl;
 
-    QMap<QString, QVector<DOnlineTranslatorOption> > translationOptions;
+    QMap<QString, QVector<DOnlineTranslatorOption> >        translationOptions;
 
-    bool                                             sourceTranslitEnabled        = true;
-    bool                                             translationTranslitEnabled   = true;
-    bool                                             sourceTranscriptionEnabled   = true;
-    bool                                             translationOptionsEnabled    = true;
+    bool                                                    sourceTranslitEnabled        = true;
+    bool                                                    translationTranslitEnabled   = true;
+    bool                                                    sourceTranscriptionEnabled   = true;
+    bool                                                    translationOptionsEnabled    = true;
 
-    bool                                             onlyDetectLanguage           = false;
+    bool                                                    onlyDetectLanguage           = false;
 
     // Credentials that is parsed from the web version to receive the translation using the API
 
-    static inline QString                            s_yandexKey;
-    static inline QByteArray                         s_bingKey;
-    static inline QByteArray                         s_bingToken;
-    static inline QString                            s_bingIg;
-    static inline QString                            s_bingIid;
+    static inline QString                                   s_yandexKey;
+    static inline QByteArray                                s_bingKey;
+    static inline QByteArray                                s_bingToken;
+    static inline QString                                   s_bingIg;
+    static inline QString                                   s_bingIid;
 
     // This properties used to store unseful information in states
 
-    static constexpr char                            s_textProperty[]               = "Text";
+    static constexpr char                                   s_textProperty[]               = "Text";
 
     // Engines have a limit of characters per translation request.
     // If the query is larger, then it should be splited into several with getSplitIndex() helper function
 
-    static constexpr int                             s_googleTranslateLimit         = 5000;
-    static constexpr int                             s_yandexTranslateLimit         = 150;
-    static constexpr int                             s_yandexTranslitLimit          = 180;
-    static constexpr int                             s_bingTranslateLimit           = 5001;
-    static constexpr int                             s_libreTranslateLimit          = 120;
+    static constexpr int                                    s_googleTranslateLimit         = 5000;
+    static constexpr int                                    s_yandexTranslateLimit         = 150;
+    static constexpr int                                    s_yandexTranslitLimit          = 180;
+    static constexpr int                                    s_bingTranslateLimit           = 5001;
+    static constexpr int                                    s_libreTranslateLimit          = 120;
+
+    static const QMap<DOnlineTranslator::Language, QString> s_genericLanguageCodes;
+    static const QMap<DOnlineTranslator::Language, QString> s_googleLanguageCodes;
+    static const QMap<DOnlineTranslator::Language, QString> s_yandexLanguageCodes;
+    static const QMap<DOnlineTranslator::Language, QString> s_bingLanguageCodes;
+    static const QMap<DOnlineTranslator::Language, QString> s_lingvaLanguageCodes;
+
+    static const QMap<QString, QString>                     s_rfc3066LanguageCodesGeneric;
+    static const QMap<QString, QString>                     s_rfc3066LanguageCodesGoogle;
+    static const QMap<QString, QString>                     s_rfc3066LanguageCodesYandex;
+    static const QMap<QString, QString>                     s_rfc3066LanguageCodesBing;
+    static const QMap<QString, QString>                     s_rfc3066LanguageCodesLingva;
 };
 
 } // namespace Digikam

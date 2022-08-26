@@ -27,7 +27,7 @@
 namespace Digikam
 {
 
-const QMap<DOnlineTranslator::Language, QString> s_genericLanguageCodes =
+const QMap<DOnlineTranslator::Language, QString> DOnlineTranslator::Private::s_genericLanguageCodes =
 {
     { DOnlineTranslator::Auto,                 QStringLiteral("auto")          },
     { DOnlineTranslator::Afrikaans,            QStringLiteral("af")            },
@@ -157,18 +157,18 @@ const QMap<DOnlineTranslator::Language, QString> s_genericLanguageCodes =
     { DOnlineTranslator::Zulu,                 QStringLiteral("zu")            }
 };
 
-const QMap<DOnlineTranslator::Language, QString> s_googleLanguageCodes =
+const QMap<DOnlineTranslator::Language, QString> DOnlineTranslator::Private::s_googleLanguageCodes =
 {
     { DOnlineTranslator::Hebrew,               QStringLiteral("iw")            }
 };
 
-const QMap<DOnlineTranslator::Language, QString> s_yandexLanguageCodes =
+const QMap<DOnlineTranslator::Language, QString> DOnlineTranslator::Private::s_yandexLanguageCodes =
 {
     { DOnlineTranslator::SimplifiedChinese,    QStringLiteral("zn")            },
     { DOnlineTranslator::Javanese,             QStringLiteral("jv")            }
 };
 
-const QMap<DOnlineTranslator::Language, QString> s_bingLanguageCodes =
+const QMap<DOnlineTranslator::Language, QString> DOnlineTranslator::Private::s_bingLanguageCodes =
 {
     { DOnlineTranslator::Auto,                 QStringLiteral("auto-detect")   },
     { DOnlineTranslator::Bosnian,              QStringLiteral("bs-Latn")       },
@@ -178,7 +178,7 @@ const QMap<DOnlineTranslator::Language, QString> s_bingLanguageCodes =
     { DOnlineTranslator::Hmong,                QStringLiteral("mww")           }
 };
 
-const QMap<DOnlineTranslator::Language, QString> s_lingvaLanguageCodes =
+const QMap<DOnlineTranslator::Language, QString> DOnlineTranslator::Private::s_lingvaLanguageCodes =
 {
     { DOnlineTranslator::SimplifiedChinese,    QStringLiteral("zh")            },
     { DOnlineTranslator::TraditionalChinese,   QStringLiteral("zh_HANT")       }
@@ -186,7 +186,7 @@ const QMap<DOnlineTranslator::Language, QString> s_lingvaLanguageCodes =
 
 // --------------------------------------------------------------------------------------------
 
-const QMap<QString, QString> s_rfc3066LanguageCodesGeneric =
+const QMap<QString, QString> DOnlineTranslator::Private::s_rfc3066LanguageCodesGeneric =
 {
     { QLatin1String("af-ZA"),  QLatin1String("af")       },
     { QLatin1String("am-ET"),  QLatin1String("am")       },
@@ -534,14 +534,14 @@ const QMap<QString, QString> s_rfc3066LanguageCodesGeneric =
 
 // --------------------------------------------------------------------------------------------
 
-const QMap<QString, QString> s_rfc3066LanguageCodesGoogle =
+const QMap<QString, QString> DOnlineTranslator::Private::s_rfc3066LanguageCodesGoogle =
 {
     { QLatin1String("iw-IL"),  QLatin1String("iw")       }          //                                            NOTE: Google translator only.
 };
 
 // --------------------------------------------------------------------------------------------
 
-const QMap<QString, QString> s_rfc3066LanguageCodesYandex =
+const QMap<QString, QString> DOnlineTranslator::Private::s_rfc3066LanguageCodesYandex =
 {
     { QLatin1String("jv-ID"),  QLatin1String("jv")       },         //                                            NOTE: Yandex translator only
     { QLatin1String("zn-CN"),  QLatin1String("zn")       }          //                                            NOTE: Yandex translator only
@@ -549,7 +549,7 @@ const QMap<QString, QString> s_rfc3066LanguageCodesYandex =
 
 // --------------------------------------------------------------------------------------------
 
-const QMap<QString, QString> s_rfc3066LanguageCodesBing =
+const QMap<QString, QString> DOnlineTranslator::Private::s_rfc3066LanguageCodesBing =
 {
     { QLatin1String("bs-BG"),  QLatin1String("bs-Latn")  },         //                                            NOTE: Bing translator only
 //     { QLatin1String("")     ,  QLatin1String("mww")      },      // Hmong: do not exists as 2 letters code   ; NOTE: Bing translator only
@@ -560,7 +560,7 @@ const QMap<QString, QString> s_rfc3066LanguageCodesBing =
 
 // --------------------------------------------------------------------------------------------
 
-const QMap<QString, QString> s_rfc3066LanguageCodesLingva =
+const QMap<QString, QString> DOnlineTranslator::Private::s_rfc3066LanguageCodesLingva =
 {
     { QLatin1String("zh-TW"),  QLatin1String("zh_HANT")  },         // TraditionalChinese                       ; NOTE: Lingva translator only
     { QLatin1String("zh-MO"),  QLatin1String("zh")       },         // Chinese (Traditional, Macao S.A.R.)      ; NOTE: Lingva translator only
