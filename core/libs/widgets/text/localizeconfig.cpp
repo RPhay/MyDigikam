@@ -393,7 +393,7 @@ void LocalizeConfig::applySettings()
         ++it2;
     }
 
-    config->setSettings(set);
+    config->setSettings(set, LocalizeSettings::LocalizeConfig);
 }
 
 void LocalizeConfig::readSettings()

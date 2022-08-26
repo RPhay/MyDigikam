@@ -42,6 +42,15 @@ class DIGIKAM_EXPORT LocalizeSettings : public QObject
 
 public:
 
+    enum ConfigPart
+    {
+        LocalizeConfig,
+        SpellCheckConfig,
+        AllConfig
+    };
+
+public:
+
     /**
      * Global container for spell-check and localize settings. All accessor methods are thread-safe.
      */
@@ -55,7 +64,7 @@ public:
     /**
      * Sets the current Metadata settings and writes them to config.
      */
-    void setSettings(const LocalizeContainer& settings);
+    void setSettings(const LocalizeContainer& settings, ConfigPart config);
 
     void openLocalizeSetup();
 

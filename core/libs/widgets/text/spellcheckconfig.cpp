@@ -268,7 +268,9 @@ void SpellCheckConfig::applySettings()
 
     set.ignoredWords = ignoredWords;
 
-    config->setSettings(set);
+    qCDebug(DIGIKAM_WIDGETS_LOG) << set;
+
+    config->setSettings(set, LocalizeSettings::SpellCheckConfig);
 }
 
 void SpellCheckConfig::readSettings()

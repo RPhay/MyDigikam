@@ -56,13 +56,13 @@ public:
 
 public:
 
+    // SpellCheck settings
     bool                        enableSpellCheck;       ///< Enable spell-checking feature.
-
     QStringList                 ignoredWords;           ///< Words to ignore with spell-checking.
 
+    // Localize settings
     DOnlineTranslator::Engine   translatorEngine;       ///< Online translator to use.
     QStringList                 translatorLang;         ///< List of langues to use with Online translator.
-
     QStringList                 alternativeLang;        ///< List of langges to use with Alternative Languages Text editor.
 };
 

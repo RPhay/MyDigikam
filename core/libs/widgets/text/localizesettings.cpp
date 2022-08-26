@@ -58,7 +58,7 @@ public:
 
     LocalizeContainer readFromConfig() const;
     void                writeToConfig()  const;
-    void                setSettings(const LocalizeContainer& s);
+    void                setSettings(const LocalizeContainer& s, LocalizeSettings::ConfigPart config);
 };
 
 LocalizeContainer LocalizeSettings::Private::readFromConfig() const
@@ -78,10 +78,33 @@ void LocalizeSettings::Private::writeToConfig() const
     settings.writeToConfig(group);
 }
 
-void LocalizeSettings::Private::setSettings(const LocalizeContainer& s)
+void LocalizeSettings::Private::setSettings(const LocalizeContainer& s, LocalizeSettings::ConfigPart config)
 {
     QMutexLocker lock(&mutex);
-    settings = s;
+
+    switch (config)
+    {
+        case LocalizeConfig:
+        {
+            settings.translatorEngine = s.translatorEngine;
+            settings.translatorLang   = s.translatorLang;
+            settings.alternativeLang  = s.alternativeLang;
+            break;
+        }
+
+        case SpellCheckConfig:
+        {
+            settings.enableSpellCheck = s.enableSpellCheck;
+            settings.ignoredWords     = s.ignoredWords;
+            break;
+        }
+
+        default:        // AllConfig
+        {
+            settings = s;
+            break;
+        }
+    }
 }
 
 // -----------------------------------------------------------------------------------------------
@@ -93,13 +116,13 @@ public:
     LocalizeSettings object;
 };
 
-Q_GLOBAL_STATIC(LocalizeSettingsCreator, speckCheckSettingsCreator)
+Q_GLOBAL_STATIC(LocalizeSettingsCreator, localizeSettingsCreator)
 
 // -----------------------------------------------------------------------------------------------
 
 LocalizeSettings* LocalizeSettings::instance()
 {
-    return &speckCheckSettingsCreator->object;
+    return &localizeSettingsCreator->object;
 }
 
 LocalizeSettings::LocalizeSettings()
@@ -127,9 +150,9 @@ LocalizeContainer LocalizeSettings::settings() const
     return s;
 }
 
-void LocalizeSettings::setSettings(const LocalizeContainer& settings)
+void LocalizeSettings::setSettings(const LocalizeContainer& settings, ConfigPart config)
 {
-    d->setSettings(settings);
+    d->setSettings(settings, config);
 
     Q_EMIT signalSettingsChanged();
 
