@@ -760,7 +760,7 @@ private:
      * If the media is loading or loaded but not playing, unload it. Internall use only.
      * TODO: private. call in stop() if not load() by user? or always unload() in stop()?
      */
-    void unload(); 
+    void unload();
     qint64 normalizedPosition(qint64 pos);
 
 private:

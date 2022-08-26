@@ -60,6 +60,18 @@ target_link_libraries(onlinetranslator_cli
 
 # -----------------------------------------------------------------
 
+set(onlinetts_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/onlinetts_cli.cpp)
+add_executable(onlinetts_cli ${onlinetts_cli_SRCS})
+
+target_link_libraries(onlinetts_cli
+
+                      digikamcore
+
+                      ${COMMON_TEST_LINK}
+)
+
+# -----------------------------------------------------------------
+
 set(solidhardware_gui_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/solidhardware_gui.cpp)
 add_executable(solidhardware_gui ${solidhardware_gui_SRCS})
 

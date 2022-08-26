@@ -568,6 +568,8 @@ const QMap<QString, QString> DOnlineTranslator::Private::s_rfc3066LanguageCodesL
     { QLatin1String("zh-SG"),  QLatin1String("zh")       }          // Chinese (Simplified, Singapore)          ; NOTE: Lingva translator only
 };
 
+// --------------------------------------------------------------------------------------------
+
 DOnlineTranslator::Private::Private(DOnlineTranslator* const parent)
     : stateMachine  (new QStateMachine(parent)),
       networkManager(new QNetworkAccessManager(parent)),
@@ -575,5 +577,24 @@ DOnlineTranslator::Private::Private(DOnlineTranslator* const parent)
       lingvaUrl     (QLatin1String("https://lingva.ml"))
 {
 }
+
+// --------------------------------------------------------------------------------------------
+
+const QMap<DOnlineTts::Emotion, QString> DOnlineTts::Private::s_emotionCodes =
+{
+    { Neutral, QStringLiteral("neutral") },
+    { Good,    QStringLiteral("good")    },
+    { Evil,    QStringLiteral("evil")    }
+};
+
+const QMap<DOnlineTts::Voice, QString> DOnlineTts::Private::s_voiceCodes =
+{
+    { Zahar,   QStringLiteral("zahar")   },
+    { Ermil,   QStringLiteral("ermil")   },
+    { Jane,    QStringLiteral("jane")    },
+    { Oksana,  QStringLiteral("oksana")  },
+    { Alyss,   QStringLiteral("alyss")   },
+    { Omazh,   QStringLiteral("omazh")   }
+};
 
 } // namespace Digikam

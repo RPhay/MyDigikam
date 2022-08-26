@@ -42,9 +42,6 @@
 namespace Digikam
 {
 
-
-// -----------------------------------------------------------------------------------------------------
-
 class Q_DECL_HIDDEN DOnlineTranslator::Private
 {
 public:
@@ -115,6 +112,26 @@ public:
     static const QMap<QString, QString>                     s_rfc3066LanguageCodesYandex;
     static const QMap<QString, QString>                     s_rfc3066LanguageCodesBing;
     static const QMap<QString, QString>                     s_rfc3066LanguageCodesLingva;
+};
+
+
+class Q_DECL_HIDDEN DOnlineTts::Private
+{
+public:
+
+    explicit Private()
+    {
+    }
+
+    QList<QUrl>                             media;
+    QString                                 errorString;
+    TtsError                                error            = NoError;
+
+    static const QMap<Emotion, QString>     s_emotionCodes;
+    static const QMap<Voice, QString>       s_voiceCodes;
+
+    static constexpr int                    s_googleTtsLimit = 200;
+    static constexpr int                    s_yandexTtsLimit = 1400;
 };
 
 } // namespace Digikam
