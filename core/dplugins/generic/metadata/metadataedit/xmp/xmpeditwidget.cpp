@@ -123,31 +123,31 @@ XMPEditWidget::XMPEditWidget(MetadataEditDialog* const parent)
     d->page_content->setIcon(QIcon::fromTheme(QLatin1String("draw-text")));
 
     d->originPage  = new XMPOrigin(this);
-    d->page_origin = addPage(d->originPage, i18nc("@title", "Origin"));
+    d->page_origin = addPage(d->originPage, i18nc("@item", "Origin"));
     d->page_origin->setIcon(QIcon::fromTheme(QLatin1String("globe")));
 
     d->creditsPage  = new XMPCredits(this);
-    d->page_credits = addPage(d->creditsPage, i18nc("@title", "Credits"));
+    d->page_credits = addPage(d->creditsPage, i18nc("@item", "Credits"));
     d->page_credits->setIcon(QIcon::fromTheme(QLatin1String("address-book-new")));
 
     d->subjectsPage  = new XMPSubjects(this);
-    d->page_subjects = addPage(d->subjectsPage, i18nc("@title", "Subjects"));
+    d->page_subjects = addPage(d->subjectsPage, i18nc("@item", "Subjects"));
     d->page_subjects->setIcon(QIcon::fromTheme(QLatin1String("feed-subscribe")));
 
     d->keywordsPage  = new XMPKeywords(this);
-    d->page_keywords = addPage(d->keywordsPage, i18nc("@title", "Keywords"));
+    d->page_keywords = addPage(d->keywordsPage, i18nc("@item", "Keywords"));
     d->page_keywords->setIcon(QIcon::fromTheme(QLatin1String("bookmark-new")));
 
     d->categoriesPage  = new XMPCategories(this);
-    d->page_categories = addPage(d->categoriesPage, i18nc("@title", "Categories"));
+    d->page_categories = addPage(d->categoriesPage, i18nc("@item", "Categories"));
     d->page_categories->setIcon(QIcon::fromTheme(QLatin1String("folder-pictures")));
 
     d->statusPage  = new XMPStatus(this);
-    d->page_status = addPage(d->statusPage, i18nc("@title", "Status"));
+    d->page_status = addPage(d->statusPage, i18nc("@item", "Status"));
     d->page_status->setIcon(QIcon::fromTheme(QLatin1String("view-task")));
 
     d->propertiesPage  = new XMPProperties(this);
-    d->page_properties = addPage(d->propertiesPage, i18nc("@title", "Properties"));
+    d->page_properties = addPage(d->propertiesPage, i18nc("@item", "Properties"));
     d->page_properties->setIcon(QIcon::fromTheme(QLatin1String("draw-freehand")));
 
     // ------------------------------------------------------------

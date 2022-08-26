@@ -64,7 +64,7 @@ scan-build -o $REPORT_DIR \
            --html-title $TITLE \
            -v \
            -k \
-           make
+           make -j$CPU_CORES
 
 cd $ORIG_WD
 
