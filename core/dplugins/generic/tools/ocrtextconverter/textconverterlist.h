@@ -30,7 +30,7 @@ public:
         RECOGNIZEDWORDS      = DItemsListView::User1,
         TARGETFILENAME       = DItemsListView::User2,
         STATUS               = DItemsListView::User3,
-        IDENTIFICATION       = DItemsListView::User4 
+        IDENTIFICATION       = DItemsListView::User4
     };
 
 public:
@@ -41,7 +41,7 @@ public:
 
 public Q_SLOTS:
 
-    void slotAddImages(const QList<QUrl>& list)    override; 
+    void slotAddImages(const QList<QUrl>& list)    override;
 
 protected Q_SLOTS:
 
@@ -70,7 +70,7 @@ public:
     void setStatus(const QString& str);
 
     QString destPath()      const;
-    
+
 private:
 
     class Private;

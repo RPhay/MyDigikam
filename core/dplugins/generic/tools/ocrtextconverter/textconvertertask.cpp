@@ -1,6 +1,6 @@
 #include "textconvertertask.h"
 
-// Local includes 
+// Local includes
 
 #include "ocrtesseractengine.h"
 #include "ocroptions.h"
@@ -14,7 +14,7 @@ namespace DigikamGenericTextConverterPlugin
 class TextConverterTask::Private
 
 {
-public: 
+public:
 
     Private()
       : language(int(OcrOptions::Languages::DEFAULT)),
@@ -28,21 +28,21 @@ public:
     }
 
     int                  language;
-    int                  psm; 
+    int                  psm;
     int                  oem;
     int                  dpi;
     bool                 isSaveTextFile;
     bool                 isSaveXMP;
 
-    bool                 cancel;         
+    bool                 cancel;
 
     QUrl                 url;
-    TextConverterAction  action; 
+    TextConverterAction  action;
 
     OcrTesseracrEngine   ocrEngine;
 };
 
-TextConverterTask::TextConverterTask(QObject* const parent, 
+TextConverterTask::TextConverterTask(QObject* const parent,
                                      const QUrl& fileUrl,
                                      const TextConverterAction& action)
     : ActionJob(parent),
@@ -94,13 +94,13 @@ void TextConverterTask::run()
 
     if (d->cancel)
     {
-        return; 
+        return;
     }
 
     switch (d->action)
     {
-        case PROCESS: 
-        {   
+        case PROCESS:
+        {
             TextConverterActionData ad1;
             ad1.action    = PROCESS;
             ad1.fileUrl   = d->url;
@@ -114,7 +114,7 @@ void TextConverterTask::run()
             d->ocrEngine.setPSMMode(d->psm);
             d->ocrEngine.setOEMMode(d->oem);
             d->ocrEngine.setDpi(d->dpi);
-            int ret = d->ocrEngine.runOcrProcess();  
+            int ret = d->ocrEngine.runOcrProcess();
 
             TextConverterActionData ad2;
             ad2.action     = PROCESS;
@@ -126,12 +126,12 @@ void TextConverterTask::run()
             Q_EMIT signalFinished(ad2);
             break;
         }
-    
+
         default:
         {
             qCritical() << "Unknown action specified";
             break;
-        }    
+        }
     }
 
     Q_EMIT signalDone();

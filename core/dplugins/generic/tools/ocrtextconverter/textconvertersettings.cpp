@@ -60,10 +60,10 @@ public:
     {
     }
 
-    // Tesseract options 
-    
+    // Tesseract options
+
     DComboBox*          ocrTesseractLanguageMode;
-    
+
     DComboBox*          ocrTesseractPSMMode;
 
     DComboBox*          ocrTesseractOEMMode;
@@ -84,7 +84,7 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
 
     QLabel* const ocrTesseractLanguageLabel   = new QLabel(i18nc("@label", "Languages:"));
     d->ocrTesseractLanguageMode               = new DComboBox(this);
-    
+
     QMap<OcrOptions::Languages, QString>             langMap  = OcrOptions::languagesNames();
     QMap<OcrOptions::Languages, QString>::const_iterator it   = langMap.constBegin();
 
@@ -93,13 +93,13 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
         d->ocrTesseractLanguageMode->addItem(it.value(), (int)it.key());
         ++it;
     }
-    
+
     d->ocrTesseractLanguageMode->setDefaultIndex(int(OcrOptions::Languages::DEFAULT));
     d->ocrTesseractLanguageMode->setToolTip(i18nc("@info", "Specify language(s) used for OCR."
                                                            "In the mode default of Language settings, for digital text with multiple languages \n"
                                                            "Tesseract can automatically recognize languages using Latin Alphabets such as English or French,...\n"
                                                            "but not compatible languages using hieroglyphs such as Chinese, Japanese."));
-    
+
     // ------------
 
     QLabel* const ocrTesseractPSMLabel  = new QLabel(i18nc("@label", "Segmentation mode:"));
@@ -118,10 +118,10 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
     d->ocrTesseractPSMMode->setToolTip(i18nc("@info", "Specify page segmentation mode."));
 
     // ------------
-   
+
     QLabel* const ocrTesseractOEMLabel  = new QLabel(i18nc("@label", "Engine mode:"));
     d->ocrTesseractOEMMode              = new DComboBox(this);
-    
+
     QMap<OcrOptions::EngineModes, QString>                oemMap  = OcrOptions::oemNames();
     QMap<OcrOptions::EngineModes, QString>::const_iterator it2    = oemMap.constBegin();
 
@@ -149,11 +149,11 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
     d->saveTextFile = new QCheckBox(i18nc("@option:check", "Text file"), this);
     d->saveTextFile->setToolTip(i18nc("@info", "Store Ocr result in separated text file"));
     d->saveTextFile->setChecked(true);
-    
+
     d->saveXMP = new QCheckBox(i18nc("@option:check", "XMP"), this);
     d->saveXMP->setToolTip(i18nc("@info", "Store Ocr result in XMP metadata"));
     d->saveXMP->setChecked(true);
-    
+
     // ------------
 
     QGridLayout* const settingsBoxLayout = new QGridLayout(this);
@@ -174,7 +174,7 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
     settingsBoxLayout->setContentsMargins(QMargins());
 
     // ------------------------------------------------------------------------
-    
+
     connect(d->ocrTesseractLanguageMode, SIGNAL(activated(int)),
             this, SIGNAL(signalSettingsChanged()));
 
@@ -186,7 +186,7 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
 
 
     // ------------------------------------------------------------------------
-}   
+}
 
 TextConverterSettings::~TextConverterSettings()
 {
@@ -197,7 +197,7 @@ void TextConverterSettings::setDefaultSettings()
 {
     d->ocrTesseractLanguageMode->slotReset();
     d->ocrTesseractOEMMode->slotReset();
-    d->ocrTesseractPSMMode->slotReset(); 
+    d->ocrTesseractPSMMode->slotReset();
     d->ocrTesseractDpi->slotReset();
     d->saveTextFile->setChecked(true);
 }

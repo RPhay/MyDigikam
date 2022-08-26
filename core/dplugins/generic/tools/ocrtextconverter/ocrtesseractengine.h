@@ -1,7 +1,7 @@
 #ifndef OCR_TESSERACT_ENGINE_H
 #define OCR_TESSERACT_ENGINE_H
 
-// Qt includes 
+// Qt includes
 
 #include <QString>
 
@@ -18,7 +18,7 @@ namespace DigikamGenericTextConverterPlugin
 class OcrTesseracrEngine : public QObject
 {
     Q_OBJECT
-public: 
+public:
 
     enum ConvertError
     {
@@ -31,26 +31,26 @@ public:
 public:
 
 
-    explicit OcrTesseracrEngine(); 
+    explicit OcrTesseracrEngine();
     ~OcrTesseracrEngine();
 
     QString inputFile()          const;
     QString outputFile()         const;
-    QString outputText()         const; 
+    QString outputText()         const;
 
     void setInputFile(const QString& filePath);
     void setOutputFile(const QString& filePath);
 
     void setLanguagesMode(int mode);
     int  languagesMode()         const;
-    
-    void setPSMMode(int mode);    
+
+    void setPSMMode(int mode);
     int  PSMMode()               const;
 
-    void setOEMMode(int mode);   
+    void setOEMMode(int mode);
     int  OEMMode()               const;
 
-    void setDpi(int value);   
+    void setDpi(int value);
     int  Dpi()                   const;
 
     void setIsSaveTextFile(bool check);
@@ -68,7 +68,7 @@ public:
 private:
 
     // Disable
-    
+
     OcrTesseracrEngine(const OcrTesseracrEngine&)            = delete;
     OcrTesseracrEngine& operator=(const OcrTesseracrEngine&) = delete;
 
@@ -79,7 +79,7 @@ private:
 private:
 
     class Private;
-    Private* const d; 
+    Private* const d;
 
 };
 

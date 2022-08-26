@@ -15,8 +15,8 @@ QMap<OcrOptions::Languages, QString> OcrOptions::languagesNames()
 {
     QMap<OcrOptions::Languages, QString> languages;
 
-    languages[OcrOptions::Languages::DEFAULT]                                         = QString::fromLatin1("Default"); 
-    languages[OcrOptions::Languages::ENG]                                             = QString::fromLatin1("english"); 
+    languages[OcrOptions::Languages::DEFAULT]                                         = QString::fromLatin1("Default");
+    languages[OcrOptions::Languages::ENG]                                             = QString::fromLatin1("english");
     languages[OcrOptions::Languages::OSD]                                             = QString::fromLatin1("osd");
 
     return languages;
@@ -55,8 +55,8 @@ QMap<OcrOptions::EngineModes, QString> OcrOptions::oemNames()
     oem[OcrOptions::EngineModes::NEURAL_NETS_LSTM_ONLY]                              = QLatin1String("LSTM engine only.");
     oem[OcrOptions::EngineModes::LEGACY_LSTM_ENGINES]                                = QLatin1String("Legacy + LSTM .");
     oem[OcrOptions::EngineModes::DEFAULT]                                            = QLatin1String("Default.");
-     
-    return oem; 
+
+    return oem;
 }
 
 
@@ -69,21 +69,21 @@ QString OcrOptions::LanguageCodeToValue(OcrOptions::Languages l)
             return QLatin1String("eng");
             break;
         }
-        
+
         case OcrOptions::Languages::OSD:
         {
             return QLatin1String("osd");
             break;
         }
 
-        case OcrOptions::Languages::DEFAULT: 
+        case OcrOptions::Languages::DEFAULT:
         {
             return QLatin1String("");
             break;
         }
-        
+
         default:
-        {    
+        {
             return QLatin1String("");
             break;
         }
@@ -93,7 +93,7 @@ QString OcrOptions::LanguageCodeToValue(OcrOptions::Languages l)
 
 QString OcrOptions::PsmCodeToValue(OcrOptions::PageSegmentationModes psm)
 {
-   return QString::fromLatin1("%1").arg((int)psm);  // psm tesseract cli values if range from 0 to 13 
+   return QString::fromLatin1("%1").arg((int)psm);  // psm tesseract cli values if range from 0 to 13
 }
 
 

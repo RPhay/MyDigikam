@@ -1,6 +1,6 @@
 #include "textconverterdialog.h"
 
-// C++ includes 
+// C++ includes
 
 #include <sstream>
 #include <string>
@@ -69,28 +69,28 @@ public:
     }
 
     bool                              busy;
-        
+
     QList<QUrl>                       fileList;
-        
-    QMap<QUrl, QString>               textEditList;  
-        
+
+    QMap<QUrl, QString>               textEditList;
+
     DProgressWdg*                     progressBar;
 
-    TextConverterActionThread*        thread; 
+    TextConverterActionThread*        thread;
 
     DInfoInterface*                   iface;
-        
+
     TextConverterList*                listView;
-        
-    TextConverterSettings*            ocrSettings;  
-        
+
+    TextConverterSettings*            ocrSettings;
+
     DTextEdit*                        textedit;
-        
+
     QPushButton*                      saveTextButton;
 
     TextConverterListViewItem*        currentSelectedItem;
 
-    OcrTesseracrEngine                ocrEngine;    
+    OcrTesseracrEngine                ocrEngine;
 };
 
 TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* const iface)
@@ -107,7 +107,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     m_buttons->addButton(QDialogButtonBox::Ok);
     m_buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action:button", "&start OCR"));
     QWidget* const mainWidget = new QWidget(this);
-    
+
     QVBoxLayout* const vbx    = new QVBoxLayout(this);
     vbx->addWidget(mainWidget);
     vbx->addWidget(m_buttons);
@@ -118,15 +118,15 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     QGridLayout* const mainLayout     = new QGridLayout(mainWidget);
     d->listView                       = new TextConverterList(mainWidget);
     d->ocrSettings = new TextConverterSettings(this);
-    
+
     d->progressBar                    = new DProgressWdg(mainWidget);
     d->progressBar->reset();
     d->progressBar->hide();
-    
+
     d->textedit                       = new DTextEdit(mainWidget);
     d->textedit->setLinesVisible(20);
     d->textedit->setPlaceholderText(QLatin1String("OCR result is displayed here"));
-    
+
     d->saveTextButton = new QPushButton(mainWidget);
     d->saveTextButton->setText(i18nc("@action: button", "Save"));
     d->saveTextButton->setEnabled(false);
@@ -143,7 +143,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     mainLayout->setContentsMargins(QMargins());
 
     // ---------------------------------------------------------------
-    
+
     // TODO Thread operation
 
     d->thread = new TextConverterActionThread(this);
@@ -159,27 +159,27 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     // ---------------------------------------------------------------
 
-    
+
     // TODO connect
 
     connect(m_buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
             this, SLOT(slotStartStop()));
 
     connect(m_buttons->button(QDialogButtonBox::Close), SIGNAL(clicked()),
-            this, SLOT(slotClose()));   
+            this, SLOT(slotClose()));
 
     connect(d->ocrSettings, SIGNAL(signalSettingsChanged()),
             this, SLOT(slotStartStop()));
 
     connect(d->progressBar, SIGNAL(signalProgressCanceled()),
             this, SLOT(slotStartStop()));
-    
+
     connect(d->listView->listView(), &DItemsListView::itemDoubleClicked,
             this, &TextConverterDialog::slotDoubleClick);
 
     connect(d->listView->listView(), &DItemsListView::itemSelectionChanged,
             this, &TextConverterDialog::slotSetDisable);
-                    
+
     connect(d->saveTextButton, SIGNAL(clicked()),
             this, SLOT(slotUpdateText()));
 
@@ -187,7 +187,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
             d->iface, SLOT(slotMetadataChangedForUrl(QUrl)));
 
     // ---------------------------------------------------------------
-    
+
     d->listView->setIface(d->iface);
     d->listView->loadImagesFromCurrentSelection();
 
@@ -226,7 +226,7 @@ void TextConverterDialog::slotUpdateText()
     {
         d->textEditList[d->currentSelectedItem->url()] = newText;
         d->currentSelectedItem->setRecognizedWords(QString::fromLatin1("%1").arg(calculateNumberOfWords(newText)));
-        
+
         if (d->ocrSettings->isSaveTextFile())
         {
             d->ocrEngine.saveTextFile(d->currentSelectedItem->destFileName(), newText);
@@ -292,7 +292,7 @@ void TextConverterDialog::slotTextConverterAction(const DigikamGenericTextConver
             {
                 case(PROCESS):
                 {
-                    d->textEditList[ad.fileUrl] = ad.outputText; 
+                    d->textEditList[ad.fileUrl] = ad.outputText;
                     processed(ad.fileUrl, ad.destPath, ad.outputText);
                     Q_EMIT singalMetadataChangedForUrl(ad.fileUrl);
                     break;
@@ -351,18 +351,18 @@ void TextConverterDialog::processingFailed(const QUrl& url, int result)
 int TextConverterDialog::calculateNumberOfWords(const QString& text)
 {
     if (!text.isEmpty())
-    { 
+    {
         std::stringstream ss;
 	    ss << text.toStdString();
 
 	    int count = 0;
 	    std::string word;
-	    
-        while (ss >> word) 
+
+        while (ss >> word)
         {
 	    	if (word.length() == 1 && std::ispunct(word[0]))
             {
-	    		continue; 
+	    		continue;
             }
 	    	count ++;
 	    }
@@ -373,7 +373,7 @@ int TextConverterDialog::calculateNumberOfWords(const QString& text)
     return 0;
 }
 
-void TextConverterDialog::processed(const QUrl& url, 
+void TextConverterDialog::processed(const QUrl& url,
                                     const QString& outputFile,
                                     const QString& ocrResult)
 {
@@ -544,7 +544,7 @@ void TextConverterDialog::slotThreadFinished()
 }
 
 
-void TextConverterDialog::busy(bool busy)  
+void TextConverterDialog::busy(bool busy)
 {
     d->busy = busy;
 

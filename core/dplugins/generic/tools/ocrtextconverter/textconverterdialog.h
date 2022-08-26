@@ -32,20 +32,20 @@ public:
 
 protected:
 
-    void closeEvent(QCloseEvent* e);  
+    void closeEvent(QCloseEvent* e);
 
-private: 
+private:
 
     void readSettings();
     void saveSettings();
 
     void busy(bool busy);
 
-    void processAll();       
-    void processingFailed(const QUrl& url, int result);  
-    void processed(const QUrl& url, const QString& outputFile, const QString& ocrResult);   
+    void processAll();
+    void processingFailed(const QUrl& url, int result);
+    void processed(const QUrl& url, const QString& outputFile, const QString& ocrResult);
 
-    int  calculateNumberOfWords(const QString& text);                          
+    int  calculateNumberOfWords(const QString& text);
 
 Q_SIGNALS:
 
@@ -53,18 +53,18 @@ Q_SIGNALS:
 
 private Q_SLOTS:
 
-    void slotDefault(); 
+    void slotDefault();
     void slotClose();
-    void slotStartStop();   
+    void slotStartStop();
     void slotAborted();
-    void slotThreadFinished(); 
+    void slotThreadFinished();
 
     void slotTextConverterAction(const DigikamGenericTextConverterPlugin::TextConverterActionData&);
     void slotDoubleClick(QTreeWidgetItem* element, int i);
     void slotUpdateText();
 
     void slotSetDisable();
-    
+
 private:
 
     class Private;

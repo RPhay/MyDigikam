@@ -66,7 +66,7 @@ void TextConverterList::slotAddImages(const QList<QUrl>& list)
             }
         }
 
-        if (!found)                                           
+        if (!found)
         {
             if (DRawDecoder::isRawFile(imageUrl))
             {

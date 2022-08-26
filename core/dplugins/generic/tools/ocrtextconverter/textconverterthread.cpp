@@ -1,6 +1,6 @@
 #include "textconverterthread.h"
 
-// Qt includes 
+// Qt includes
 
 #include <QUrl>
 #include <QList>
@@ -40,10 +40,10 @@ public:
     }
 
     int  language;
-    int  psm; 
+    int  psm;
     int  oem;
-    int  dpi;    
-    bool isSaveTextFile; 
+    int  dpi;
+    bool isSaveTextFile;
     bool isSaveXMP;
 };
 
@@ -130,7 +130,7 @@ void TextConverterActionThread::ocrProcessFiles(const QList<QUrl>& urlList)
         connect(this, SIGNAL(signalCancelTextConverterTask()),
                 t, SLOT(slotCancel()), Qt::QueuedConnection);
 
-        
+
         collection.insert(t, 0);
     }
 

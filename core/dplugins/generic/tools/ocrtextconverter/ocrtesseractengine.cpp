@@ -1,13 +1,13 @@
 #include "ocrtesseractengine.h"
 
-// Qt includes 
+// Qt includes
 
 #include <QString>
 #include <QProcess>
 #include <QUrl>
 #include <QFileInfo>
 
-// local includes 
+// local includes
 
 #include "ocroptions.h"
 #include "dmetadata.h"
@@ -32,17 +32,17 @@ public:
 
     int        language;
     int        psm;
-    int        oem; 
+    int        oem;
     int        dpi;
 
     bool       isSaveTextFile;
     bool       isSaveXMP;
 
     bool       cancel;
- 
+
     QString    inputFile;
     QString    outputFile;
-    QString    ocrResult;  
+    QString    ocrResult;
 };
 
 OcrTesseracrEngine::OcrTesseracrEngine()
@@ -58,9 +58,9 @@ OcrTesseracrEngine::~OcrTesseracrEngine()
 void OcrTesseracrEngine::setLanguagesMode(int mode)
 {
     d->language = mode;
-} 
+}
 
-int OcrTesseracrEngine::languagesMode() const 
+int OcrTesseracrEngine::languagesMode() const
 {
     return d->language;
 }
@@ -70,7 +70,7 @@ void OcrTesseracrEngine::setPSMMode(int mode)
     d->psm = mode;
 }
 
-int OcrTesseracrEngine::PSMMode() const 
+int OcrTesseracrEngine::PSMMode() const
 {
     return d->psm;
 }
@@ -80,7 +80,7 @@ void OcrTesseracrEngine::setOEMMode(int mode)
     d->oem = mode;
 }
 
-int OcrTesseracrEngine::OEMMode() const 
+int OcrTesseracrEngine::OEMMode() const
 {
     return d->oem;
 }
@@ -150,14 +150,14 @@ bool OcrTesseracrEngine::runOcrProcess()
     {
         // ------------------------- IN/OUT ARGUMENTS -------------------------
 
-        QStringList args; 
+        QStringList args;
 
         // add configuration image
 
         if (!d->inputFile.isEmpty())
         {
             args << d->inputFile;
-        }  
+        }
 
         // output base name
 
@@ -169,15 +169,15 @@ bool OcrTesseracrEngine::runOcrProcess()
 
         OcrOptions ocropt;
 
-        // page Segmentation mode 
+        // page Segmentation mode
 
         QString val = ocropt.PsmCodeToValue(static_cast<OcrOptions::PageSegmentationModes>(d->psm));
         if (!val.isEmpty())
         {
             args << QLatin1String("--psm") << val;
-        }    
+        }
 
-        // OCR enginge mode 
+        // OCR enginge mode
 
         val = ocropt.OemCodeToValue(static_cast<OcrOptions::EngineModes>(d->oem));
         if (!val.isEmpty())
@@ -194,7 +194,7 @@ bool OcrTesseracrEngine::runOcrProcess()
         }
 
 
-        // dpi 
+        // dpi
 
         val = QString::fromLatin1("%1").arg(d->dpi);
         if (!val.isEmpty())
@@ -205,12 +205,12 @@ bool OcrTesseracrEngine::runOcrProcess()
         // ------------------  Running tesseract process ------------------
 
         const QString cmd = QLatin1String("tesseract");
-    
+
         ocrProcess->setProgram(cmd);
         ocrProcess->setArguments(args);
-    
+
         qDebug() << "Running OCR : "
-                 << ocrProcess->program() 
+                 << ocrProcess->program()
                  << ocrProcess->arguments();
 
         ocrProcess->start();
@@ -230,12 +230,12 @@ bool OcrTesseracrEngine::runOcrProcess()
 
     }
     catch(const QProcess::ProcessError& e)
-    {   
+    {
         qWarning() << "Text Converter has error" << e;
         return PROCESS_FAILED;
     }
-    
-    
+
+
     d->ocrResult   = QString::fromLocal8Bit(ocrProcess->readAllStandardOutput());
 
     SaveOcrResult();
@@ -246,9 +246,9 @@ bool OcrTesseracrEngine::runOcrProcess()
 void OcrTesseracrEngine::SaveOcrResult()
 {
     if (d->isSaveTextFile)
-    {   
+    {
         QFileInfo fi(d->inputFile);
-        d->outputFile =   fi.absolutePath() 
+        d->outputFile =   fi.absolutePath()
                           +  QLatin1String("/")
                           + (QString::fromLatin1("%1-textconverter.txt").arg(fi.fileName()));
 
@@ -259,10 +259,10 @@ void OcrTesseracrEngine::SaveOcrResult()
     {
         saveXMP(d->inputFile, d->ocrResult);
     }
-} 
+}
 
 void OcrTesseracrEngine::saveTextFile(const QString& filePath, const QString& text)
-{  
+{
     QFile file(filePath);
 
     if (file.open(QIODevice::ReadWrite | QIODevice::Truncate))
@@ -284,7 +284,7 @@ void OcrTesseracrEngine::saveXMP(const QString& filePath, const QString& text)
     Digikam::CaptionsMap commentsSet;
 
     commentsSet = dmeta->getItemComments();
-    
+
     QString   rezAuthor   = commentsSet.value(QLatin1String("x-default")).author;
     QDateTime rezDateTime = commentsSet.value(QLatin1String("x-default")).date;
 
@@ -294,7 +294,7 @@ void OcrTesseracrEngine::saveXMP(const QString& filePath, const QString& text)
 
     commentsSet.setData(commentsMap, authorsMap, QString(), datesMap);
     dmeta->setItemComments(commentsSet);
-    
+
     if (dmeta->applyChanges())
     {
         qDebug() << "Sucess in hosting text in XMP";

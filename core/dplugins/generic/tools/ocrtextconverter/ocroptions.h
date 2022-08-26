@@ -21,10 +21,10 @@ class DIGIKAM_EXPORT OcrOptions
 public:
 
     enum class Languages
-    {   
+    {
         DEFAULT = 0,
-        ENG,                           
-        OSD 
+        ENG,
+        OSD
     };
 
     enum class PageSegmentationModes
@@ -48,15 +48,15 @@ public:
     enum class EngineModes
     {
         LEGACY_ENGINE_ONLY = 0,
-        NEURAL_NETS_LSTM_ONLY, 
+        NEURAL_NETS_LSTM_ONLY,
         LEGACY_LSTM_ENGINES,
-        DEFAULT 
+        DEFAULT
     };
 
 public:
 
     explicit OcrOptions();
-    ~OcrOptions();    
+    ~OcrOptions();
 
     static QMap<OcrOptions::Languages, QString>               languagesNames();
     static QMap<OcrOptions::PageSegmentationModes, QString>   psmNames();

@@ -37,14 +37,14 @@ public:
 
     bool                 starting;
     int                  result;
- 
+
     QString              destPath;
     QString              message;
 
     QString              outputText;
- 
+
     QImage               image;
- 
+
     QUrl                 fileUrl;
 
     TextConverterAction  action;
