@@ -197,7 +197,7 @@ DTextEdit::~DTextEdit()
 
 void DTextEdit::setLinesVisible(unsigned int lines)
 {
-    if (lines <= 0)
+    if (lines == 0)
     {
         return;
     }
@@ -557,7 +557,7 @@ DPlainTextEdit::~DPlainTextEdit()
 
 void DPlainTextEdit::setLinesVisible(unsigned int lines)
 {
-    if (lines <= 0)
+    if (lines == 0)
     {
         return;
     }
