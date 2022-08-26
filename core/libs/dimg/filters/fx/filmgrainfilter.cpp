@@ -106,7 +106,7 @@ FilmGrainFilter::FilmGrainFilter(DImgThreadedFilter* const parentFilter,
     d(new Private)
 {
     d->settings = settings;
-    filterImage();
+    this->filterImage();
 }
 
 FilmGrainFilter::~FilmGrainFilter()
