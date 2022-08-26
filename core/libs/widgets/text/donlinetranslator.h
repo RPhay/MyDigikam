@@ -790,9 +790,13 @@ private:
  *
  * Example:
  * @code
+ *
  * DOnlineTts tts;
  * tts.generateUrls(QLatin1String("Hello World!"), DOnlineTranslator::Google, DOnlineTranslator::English);
+ *
+ * // Get list of Urls to play with media player.
  * QList<QUrl> urls = tts.media();
+ *
  * @endcode
  */
 class DIGIKAM_EXPORT DOnlineTts : public QObject

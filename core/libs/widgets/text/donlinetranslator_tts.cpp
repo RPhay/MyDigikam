@@ -54,15 +54,15 @@ void DOnlineTts::generateUrls(const QString& text,
         {
             if (voice != NoVoice)
             {
-                setError(UnsupportedVoice, i18n("Selected engine %1 does not support voice settings",
-                                                QString::fromUtf8(QMetaEnum::fromType<DOnlineTranslator::Engine>().valueToKey(engine))));
+                setError(UnsupportedVoice, i18nc("@info", "Selected engine %1 does not support voice settings",
+                                                 QString::fromUtf8(QMetaEnum::fromType<DOnlineTranslator::Engine>().valueToKey(engine))));
                 return;
             }
 
             if (emotion != NoEmotion)
             {
-                setError(UnsupportedEmotion, i18n("Selected engine %1 does not support emotion settings",
-                                                QString::fromUtf8(QMetaEnum::fromType<DOnlineTranslator::Engine>().valueToKey(engine))));
+                setError(UnsupportedEmotion, i18nc("@info", "Selected engine %1 does not support emotion settings",
+                                                   QString::fromUtf8(QMetaEnum::fromType<DOnlineTranslator::Engine>().valueToKey(engine))));
                 return;
             }
 
@@ -160,8 +160,8 @@ void DOnlineTts::generateUrls(const QString& text,
             // Example: https://lingva.ml/api/v1/audio/en/Hello%20World!
             // Will return json with uint bytes array, according to documentation
             // See: https://github.com/TheDavidDelta/lingva-translate#public-apis
-            setError(UnsupportedEngine, i18n("%1 engine does not support TTS",
-                                            QString::fromUtf8(QMetaEnum::fromType<DOnlineTranslator::Engine>().valueToKey(engine))));
+            setError(UnsupportedEngine, i18nc("@info", "%1 engine does not support TTS",
+                                              QString::fromUtf8(QMetaEnum::fromType<DOnlineTranslator::Engine>().valueToKey(engine))));
             break;
         }
     }
@@ -258,9 +258,9 @@ QString DOnlineTts::languageApiCode(DOnlineTranslator::Engine engine, DOnlineTra
         }
     }
 
-    setError(UnsupportedLanguage, i18n("Selected language %1 is not supported for %2",
-                                       QString::fromUtf8(QMetaEnum::fromType<DOnlineTranslator::Language>().valueToKey(lang)),
-                                       QString::fromUtf8(QMetaEnum::fromType<DOnlineTranslator::Engine>().valueToKey(engine))));
+    setError(UnsupportedLanguage, i18nc("@info", "Selected language %1 is not supported for %2",
+                                        QString::fromUtf8(QMetaEnum::fromType<DOnlineTranslator::Language>().valueToKey(lang)),
+                                        QString::fromUtf8(QMetaEnum::fromType<DOnlineTranslator::Engine>().valueToKey(engine))));
 
     return QString();
 }
@@ -277,9 +277,9 @@ QString DOnlineTts::voiceApiCode(DOnlineTranslator::Engine engine, Voice voice)
         return voiceCode(voice);
     }
 
-    setError(UnsupportedVoice, i18n("Selected voice %1 is not supported for %2",
-                                    QString::fromUtf8(QMetaEnum::fromType<Voice>().valueToKey(voice)),
-                                    QString::fromUtf8(QMetaEnum::fromType<DOnlineTranslator::Engine>().valueToKey(engine))));
+    setError(UnsupportedVoice, i18nc("@info", "Selected voice %1 is not supported for %2",
+                                     QString::fromUtf8(QMetaEnum::fromType<Voice>().valueToKey(voice)),
+                                     QString::fromUtf8(QMetaEnum::fromType<DOnlineTranslator::Engine>().valueToKey(engine))));
 
     return QString();
 }
@@ -296,9 +296,9 @@ QString DOnlineTts::emotionApiCode(DOnlineTranslator::Engine engine, Emotion emo
         return emotionCode(emotion);
     }
 
-    setError(UnsupportedEmotion, i18n("Selected emotion %1 is not supported for %2",
-                                      QString::fromUtf8(QMetaEnum::fromType<Emotion>().valueToKey(emotion)),
-                                      QString::fromUtf8(QMetaEnum::fromType<DOnlineTranslator::Engine>().valueToKey(engine))));
+    setError(UnsupportedEmotion, i18nc("@info", "Selected emotion %1 is not supported for %2",
+                                       QString::fromUtf8(QMetaEnum::fromType<Emotion>().valueToKey(emotion)),
+                                       QString::fromUtf8(QMetaEnum::fromType<DOnlineTranslator::Engine>().valueToKey(engine))));
 
     return QString();
 }
