@@ -323,7 +323,7 @@ public:
      * Constructs an object with empty data and with parent.
      * You can use translate() to send text to object.
      *
-     * @param parent parent object
+     * @param parent the parent object
      */
     explicit DOnlineTranslator(QObject* const parent = nullptr);
     ~DOnlineTranslator() override;
@@ -331,7 +331,7 @@ public:
     /**
      * @brief Translate text
      *
-     * @param text text to translate
+     * @param text the text to translate
      * @param engine online engine to use
      * @param translationLang language to translation
      * @param sourceLang language of the passed text
@@ -346,8 +346,8 @@ public:
     /**
      * @brief Detect language
      *
-     * @param text text for language detection
-     * @param engine engine to use
+     * @param text the text for language detection
+     * @param engine the engine to use
      */
     void detectLanguage(const QString& text,
                         Engine engine = Google);
@@ -560,7 +560,7 @@ public:
      * Only affects LibreTranslate and Lingva because these engines have multiple instances.
      * You need to call this function to specify the URL of an instance for them.
      *
-     * @param engine engine
+     * @param engine the engine to use
      * @param url engine url
      */
     void setEngineUrl(Engine engine, const QString& url);
@@ -570,7 +570,7 @@ public:
      *
      * Affects only LibreTranslate.
      *
-     * @param engine engine
+     * @param engine the engine to use
      * @param apiKey your key for this particular instance
      */
     void setEngineApiKey(Engine engine, const QByteArray& apiKey);
@@ -583,7 +583,7 @@ public:
     /**
      * @brief Language
      *
-     * @param locale locale
+     * @param locale the locale to use
      * @return language
      */
     static Language language(const QLocale& locale);
@@ -599,7 +599,7 @@ public:
     /**
      * @brief Check if transliteration is supported
      *
-     * @param engine engine
+     * @param engine the engine to use
      * @param lang language
      * @return `true` if the specified engine supports transliteration for specified language
      */
@@ -890,8 +890,8 @@ public:
      * @param text text to speak
      * @param engine online translation engine
      * @param lang text language
-     * @param voice voice to use (used only by Yandex)
-     * @param emotion emotion to use (used only by Yandex)
+     * @param voice the voice to use (used only by Yandex)
+     * @param emotion the emotion to use (used only by Yandex)
      */
     void generateUrls(const QString& text,
                       DOnlineTranslator::Engine engine,
@@ -929,7 +929,7 @@ public:
     /**
      * @brief Code of the voice
      *
-     * @param voice voice
+     * @param voice the voice to use
      * @return code for voice
      */
     static QString voiceCode(Voice voice);
@@ -939,7 +939,7 @@ public:
      *
      * Used only by Yandex.
      *
-     * @param emotion emotion
+     * @param emotion the emotion to use
      * @return code for emotion
      */
     static QString emotionCode(Emotion emotion);
