@@ -128,7 +128,7 @@ void TimeAdjustTask::run()
                 continue;
             }
 
-            int ret = true;
+            bool ret = true;
 
             if      (it.key().startsWith(QLatin1String("Exif.")) &&
                      (meta->canWriteExif(d->url.toLocalFile())   ||
