@@ -114,6 +114,7 @@ public:
     static const QMap<QString, QString>                     s_rfc3066LanguageCodesLingva;
 };
 
+// ---------------------------------------------------------------------------------------------
 
 class Q_DECL_HIDDEN DOnlineTts::Private
 {
