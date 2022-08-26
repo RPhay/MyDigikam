@@ -186,6 +186,11 @@ const QMap<DOnlineTranslator::Language, QString> DOnlineTranslator::Private::s_l
 
 // --------------------------------------------------------------------------------------------
 
+/*
+ * NOTE: these lists of RFC3066 conversion map are mostly usee in AltLangStrEdit class.
+ *       Any changes here must be also backported to the list used by AltLangStrEdit class.
+ */
+
 const QMap<QString, QString> DOnlineTranslator::Private::s_rfc3066LanguageCodesGeneric =
 {
     { QLatin1String("af-ZA"),  QLatin1String("af")       },

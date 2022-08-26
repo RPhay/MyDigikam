@@ -37,6 +37,9 @@ namespace Digikam
  * List version 3 update: List of ISO 639-1 codes (https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
  *                        List of ISO 639-2 codes (https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes)
  *                        List of ISO 639 macrolanguage (https://en.wikipedia.org/wiki/ISO_639_macrolanguage)
+ *
+ * NOTE: this lists of RFC3066 map is also used un conversion map from DOnlineTranslator class.
+ *       Any changes here must be also backported to DOnlineTranslator class.
  */
 const LanguageCodeMap s_rfc3066ForXMP =
 {
