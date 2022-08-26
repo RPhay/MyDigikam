@@ -107,7 +107,7 @@ DAbstractSliderSpinBox::DAbstractSliderSpinBox(QWidget* const parent, DAbstractS
     Q_D(DAbstractSliderSpinBox);
 
     QEvent e(QEvent::StyleChange);
-    changeEvent(&e);
+    this->changeEvent(&e);
 
     d->edit = new QLineEdit(this);
     d->edit->setContentsMargins(QMargins());

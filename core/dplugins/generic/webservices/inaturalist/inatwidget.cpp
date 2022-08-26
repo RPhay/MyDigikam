@@ -195,7 +195,7 @@ INatWidget::INatWidget(QWidget* const parent,
 
     replaceImageList(d->imglst);
 
-    updateLabels(QString());
+    this->updateLabels(QString());
 }
 
 INatWidget::~INatWidget()

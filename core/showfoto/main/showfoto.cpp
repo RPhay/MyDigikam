@@ -108,8 +108,8 @@ Showfoto::Showfoto(const QList<QUrl>& urlList, QWidget* const)
 
     // -- Build the GUI -----------------------------------
 
-    setupUserArea();
-    setupActions();
+    this->setupUserArea();
+    this->setupActions();
     setupStatusBar();
     createGUI(xmlFile());
     registerPluginsActions();
@@ -128,15 +128,15 @@ Showfoto::Showfoto(const QList<QUrl>& urlList, QWidget* const)
 
     // Make signals/slots connections
 
-    setupConnections();
+    this->setupConnections();
 
     // Disable all actions
 
-    toggleActions(false);
+    this->toggleActions(false);
 
     // -- Read settings --------------------------------
 
-    readSettings();
+    this->readSettings();
     applySettings();
     setAutoSaveSettings(configGroupName(), true);
 

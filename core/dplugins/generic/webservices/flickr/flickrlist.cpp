@@ -544,7 +544,7 @@ FlickrListViewItem::FlickrListViewItem(DItemsListView* const view,
     view->setItemWidget(this, static_cast<DItemsListView::ColumnType>(
                         FlickrList::TAGS), d->tagLineEdit);
 */
-    updateItemWidgets();
+    this->updateItemWidgets();
 }
 
 FlickrListViewItem::~FlickrListViewItem()

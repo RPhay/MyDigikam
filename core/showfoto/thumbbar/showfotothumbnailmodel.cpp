@@ -95,7 +95,7 @@ ShowfotoThumbnailModel::ShowfotoThumbnailModel(QObject* const parent)
 
 ShowfotoThumbnailModel::~ShowfotoThumbnailModel()
 {
-    showfotoItemInfosCleared();
+    this->showfotoItemInfosCleared();
 
     delete d->preloadThread;
     delete d;

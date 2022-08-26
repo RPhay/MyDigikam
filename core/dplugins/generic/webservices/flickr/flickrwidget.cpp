@@ -223,7 +223,7 @@ FlickrWidget::FlickrWidget(QWidget* const parent,
 
     replaceImageList(d->imglst);
 
-    updateLabels();
+    this->updateLabels();
 
     connect(d->imglst, SIGNAL(signalPermissionChanged(FlickrList::FieldType,Qt::CheckState)),
             this, SLOT(slotPermissionChanged(FlickrList::FieldType,Qt::CheckState)));
