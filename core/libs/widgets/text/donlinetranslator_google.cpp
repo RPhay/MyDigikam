@@ -156,7 +156,7 @@ void DOnlineTranslator::slotParseGoogleTranslate()
 void DOnlineTranslator::buildGoogleStateMachine()
 {
     // States (Google sends translation, translit and dictionary in one request,
-    // that will be splitted into several by the translation limit)
+    // that will be splited into several by the translation limit)
 
     auto* translationState = new QState(d->stateMachine);
     auto* finalState       = new QFinalState(d->stateMachine);

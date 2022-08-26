@@ -877,7 +877,7 @@ public:
      * Constructs an object with empty data and with parent.
      * You can use generateUrls() to create URLs for use in QMediaPlayer.
      *
-     * @param parent parent object
+     * @param parent the parent object
      */
     explicit DOnlineTts(QObject* const parent = nullptr);
     ~DOnlineTts() override;
@@ -887,7 +887,7 @@ public:
      *
      * Splits text into parts (engines have a limited number of characters per request) and returns list with the generated API URLs to play.
      *
-     * @param text text to speak
+     * @param text the text to speak
      * @param engine online translation engine
      * @param lang text language
      * @param voice the voice to use (used only by Yandex)
