@@ -331,7 +331,7 @@ const LanguageCodeMap s_rfc3066ForXMP =
     { QLatin1String("oc-FR"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Occitan (France)")                                                )},
     { QLatin1String("or-IN"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Oriya (India)")                                                   )},
     { QLatin1String("pa-IN"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Punjabi (India)")                                                 )},
-    { QLatin1String("pap-AW")     QString::fromUtf8(I18N_NOOP2("@info: country code", "Papiamento (Aruba-Dutch Caribbean)")                              )},
+    { QLatin1String("pap-AW"),    QString::fromUtf8(I18N_NOOP2("@info: country code", "Papiamento (Aruba-Dutch Caribbean)")                              )},
     { QLatin1String("pl-PL"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Polish (Poland)")                                                 )},
     { QLatin1String("ps-AF"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Pashto (Afghanistan)")                                            )},
     { QLatin1String("pt-AO"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "Portuguese (Angola)")                                             )},
