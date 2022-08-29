@@ -47,9 +47,6 @@ DPlainTextEdit::DPlainTextEdit(unsigned int lines, QWidget* const parent)
 {
     d->lines = lines;
     d->init(this);
-
-    connect(this, SIGNAL(textChanged()),
-            this, SLOT(slotChanged()));
 }
 
 DPlainTextEdit::~DPlainTextEdit()

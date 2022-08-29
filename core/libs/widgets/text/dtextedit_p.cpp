@@ -92,6 +92,9 @@ void DTextEdit::Private::init(DTextEdit* const parent)
             }
         }
     );
+
+    QObject::connect(parent, &QTextEdit::textChanged,
+                     parent, &DTextEdit::slotChanged);
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -140,6 +143,9 @@ void DPlainTextEdit::Private::init(DPlainTextEdit* const parent)
             }
         }
     );
+
+    QObject::connect(parent, &QPlainTextEdit::textChanged,
+                     parent, &DPlainTextEdit::slotChanged);
 }
 
 } // namespace Digikam

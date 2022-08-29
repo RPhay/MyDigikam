@@ -41,7 +41,7 @@
 
 // Local includes
 
-#include "limitedtextedit.h"
+#include "dtextedit.h"
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -72,7 +72,7 @@ public:
     QCheckBox*       categoryCheck;
 
     QLineEdit*       categoryEdit;
-    LimitedTextEdit* subCategoryEdit;
+    DPlainTextEdit* subCategoryEdit;
 
     QListWidget*     subCategoriesBox;
 };
@@ -95,7 +95,7 @@ IPTCCategories::IPTCCategories(QWidget* const parent)
 
     d->subCategoriesCheck = new QCheckBox(i18n("Supplemental categories:"), this);
 
-    d->subCategoryEdit    = new LimitedTextEdit(this);
+    d->subCategoryEdit    = new DPlainTextEdit(this);
     d->subCategoryEdit->setLinesVisible(1);
     d->subCategoryEdit->setMaxLength(32);
     d->subCategoryEdit->setPlaceholderText(i18n("Set here the extra category"));

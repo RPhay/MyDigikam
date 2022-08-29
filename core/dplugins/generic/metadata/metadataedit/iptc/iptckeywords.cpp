@@ -39,7 +39,7 @@
 
 // Local includes
 
-#include "limitedtextedit.h"
+#include "dtextedit.h"
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -66,7 +66,7 @@ public:
 
     QCheckBox*       keywordsCheck;
 
-    LimitedTextEdit* keywordsEdit;
+    DPlainTextEdit* keywordsEdit;
 
     QListWidget*     keywordsBox;
 };
@@ -81,7 +81,7 @@ IPTCKeywords::IPTCKeywords(QWidget* const parent)
 
     d->keywordsCheck  = new QCheckBox(i18n("Use information retrieval words:"), this);
 
-    d->keywordsEdit   = new LimitedTextEdit(this);
+    d->keywordsEdit   = new DPlainTextEdit(this);
     d->keywordsEdit->setMaxLength(64);
     d->keywordsEdit->setLinesVisible(1);
     d->keywordsEdit->setPlaceholderText(i18n("Set here a keyword"));

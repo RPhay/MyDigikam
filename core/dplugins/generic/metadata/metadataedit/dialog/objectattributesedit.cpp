@@ -41,7 +41,7 @@
 
 #include "metadatacheckbox.h"
 #include "squeezedcombobox.h"
-#include "limitedtextedit.h"
+#include "dtextedit.h"
 
 using namespace Digikam;
 
@@ -69,7 +69,7 @@ public:
     QPushButton*      delValueButton;
     QPushButton*      repValueButton;
 
-    LimitedTextEdit*  valueEdit;
+    DPlainTextEdit*  valueEdit;
 
     QListWidget*      valueBox;
 
@@ -134,7 +134,7 @@ ObjectAttributesEdit::ObjectAttributesEdit(QWidget* const parent, int size)
 
     // --------------------------------------------------------
 
-    d->valueEdit = new LimitedTextEdit(this);
+    d->valueEdit = new DPlainTextEdit(this);
     d->valueEdit->setLinesVisible(1);
     QString whatsThis = i18n("Set here the editorial attribute description of "
                              "content.");
