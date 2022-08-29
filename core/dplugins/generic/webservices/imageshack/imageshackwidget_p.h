@@ -52,6 +52,7 @@
 
 #include "digikam_debug.h"
 #include "ditemslist.h"
+#include "dtextedit.h"
 #include "imageshacksession.h"
 
 using namespace Digikam;
@@ -86,7 +87,7 @@ public:
     QLabel*            headerLbl;
     QLabel*            accountNameLbl;
 
-    QLineEdit*         tagsFld;
+    DTextEdit*         tagsFld;
 
     QCheckBox*         privateImagesChb;
     QCheckBox*         remBarChb;

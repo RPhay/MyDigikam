@@ -37,7 +37,6 @@
 #include <QHBoxLayout>
 #include <QMessageBox>
 #include <QStandardPaths>
-#include <QLineEdit>
 #include <QComboBox>
 #include <QUrlQuery>
 #include <QUrl>
@@ -59,6 +58,7 @@
 #include "collectionlocation.h"
 #include "collectionmanager.h"
 #include "newitemsfinder.h"
+#include "dtextedit.h"
 
 namespace Digikam
 {
@@ -1587,8 +1587,8 @@ bool SetupCollectionModel::askForNewCollectionPath(int category, QString* const 
 
     // lineedit for collection name
 
-    QLineEdit* const nameEdit = new QLineEdit;
-    nameEdit->setClearButtonEnabled(true);
+    DTextEdit* const nameEdit = new DTextEdit;
+    nameEdit->setLinesVisible(1);
     nameLabel->setBuddy(nameEdit);
 
     // label for the icon showing the type of storage (hard disk, CD, USB drive)

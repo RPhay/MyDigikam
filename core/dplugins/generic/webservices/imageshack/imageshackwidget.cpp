@@ -53,14 +53,15 @@ ImageShackWidget::ImageShackWidget(QWidget* const parent,
     d->privateImagesChb->setText(i18nc("@option", "Make private"));
     d->privateImagesChb->setChecked(false);
 
-    d->tagsFld             = new QLineEdit(tagsBox);
+    d->tagsFld             = new DTextEdit(tagsBox);
+    d->tagsFld->setLinesVisible(1);
     QLabel* const tagsLbl  = new QLabel(i18nc("@label", "Tags (optional):"), tagsBox);
 
     d->remBarChb           = new QCheckBox(i18nc("@option", "Remove information bar on thumbnails"));
     d->remBarChb->setChecked(false);
 
     tagsLayout->addWidget(d->privateImagesChb, 0, 0);
-    tagsLayout->addWidget(tagsLbl,            1, 0);
+    tagsLayout->addWidget(tagsLbl,             1, 0);
     tagsLayout->addWidget(d->tagsFld,          1, 1);
 
     addWidgetToSettingsBox(tagsBox);
@@ -99,6 +100,7 @@ void ImageShackWidget::slotGetGalleries(const QStringList& gTexts, const QString
                              QLatin1String("--new-gallery--"));
 
     // TODO check if the lists have the same size
+
     for (int i = 0 ; i < gTexts.size() ; ++i)
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "gTexts is "<<gTexts[i] << " gNames is "<<gNames[i];

@@ -58,6 +58,7 @@
 #include "dxmlguiwindow.h"
 #include "itempropertiesgpstab.h"
 #include "gpsiteminfo.h"
+#include "dtextedit.h"
 
 namespace Digikam
 {
@@ -79,8 +80,8 @@ public:
     BookmarksManager*      manager;
     AddBookmarkProxyModel* proxyModel;
     QComboBox*             location;
-    QLineEdit*             title;
-    QLineEdit*             desc;
+    DTextEdit*             title;
+    DTextEdit*             desc;
 };
 
 AddBookmarkDialog::AddBookmarkDialog(const QString& url,
@@ -104,11 +105,13 @@ AddBookmarkDialog::AddBookmarkDialog(const QString& url,
     label->setTextFormat(Qt::PlainText);
     label->setWordWrap(true);
 
-    d->title            = new QLineEdit(this);
+    d->title            = new DTextEdit(this);
+    d->title->setLinesVisible(1);
     d->title->setPlaceholderText(i18n("Bookmark title"));
     d->title->setText(title);
 
-    d->desc             = new QLineEdit(this);
+    d->desc             = new DTextEdit(this);
+    d->desc->setLinesVisible(1);
     d->desc->setPlaceholderText(i18n("Bookmark comment"));
     d->location         = new QComboBox(this);
 

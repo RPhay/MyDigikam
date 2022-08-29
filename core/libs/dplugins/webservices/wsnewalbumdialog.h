@@ -66,7 +66,7 @@ public:
 
     DTextEdit*        getTitleEdit()    const;
     DTextEdit*        getDescEdit()     const;
-    QLineEdit*        getLocEdit()      const;
+    DTextEdit*        getLocEdit()      const;
     QDateTimeEdit*    getDateTimeEdit() const;
     QDialogButtonBox* getButtonBox()    const;
 

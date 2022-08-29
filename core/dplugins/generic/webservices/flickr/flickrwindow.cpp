@@ -133,7 +133,7 @@ public:
 
     QList< QPair<QUrl, FPhotoInfo> > uploadQueue;
 
-    QLineEdit*                       tagsLineEdit;
+    DTextEdit*                       tagsLineEdit;
 
     FlickrWidget*                    widget;
     FlickrTalker*                    talker;

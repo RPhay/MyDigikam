@@ -108,7 +108,7 @@ public:
     }
 
     QWidget*                                 fileBox;
-    QLineEdit*                               titleEdit;
+    DTextEdit*                               titleEdit;
     DTextEdit*                               descEdit;
     QLineEdit*                               dateEdit;
     QLineEdit*                               longitudeEdit;
@@ -211,7 +211,8 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
 
     loadItemInfoFirstLoad();
 
-    d->titleEdit    = new QLineEdit(d->defaultMessage, d->fileBox);
+    d->titleEdit    = new DTextEdit(d->defaultMessage, d->fileBox);
+    d->titleEdit->setLinesVisible(1);
     d->dateEdit     = new QLineEdit(d->defaultMessage, d->fileBox);
 
     d->descEdit     = new DTextEdit(0, d->fileBox);
@@ -559,7 +560,7 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
     connect(d->titleEdit, SIGNAL(editingFinished()),
             this, SLOT(slotRestoreExtension()));
 
-    connect(d->titleEdit, SIGNAL(textEdited(QString)),
+    connect(d->titleEdit, SIGNAL(textChanged()),
             this, SLOT(slotApplyTitle()));
 
     connect(d->dateEdit, SIGNAL(textEdited(QString)),

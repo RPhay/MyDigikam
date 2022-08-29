@@ -72,7 +72,7 @@ public:
     QCheckBox*       categoryCheck;
 
     QLineEdit*       categoryEdit;
-    DPlainTextEdit* subCategoryEdit;
+    DPlainTextEdit*  subCategoryEdit;
 
     QListWidget*     subCategoriesBox;
 };

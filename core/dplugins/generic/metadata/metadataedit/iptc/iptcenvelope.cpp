@@ -148,7 +148,7 @@ public:
     QDateEdit*                     dateSentSel;
 
     QLabel*                        destinationNote;
-    DPlainTextEdit*               destinationEdit;
+    DPlainTextEdit*                destinationEdit;
 
     MetadataCheckBox*              priorityCheck;
     MetadataCheckBox*              formatCheck;
