@@ -41,8 +41,11 @@ class LocalizeContainer;
 
 /**
  * A text edit widget based on QTextEdit with spell checker capabilities based on KF5::Sonnet (optional).
- * Widget can be limited to a number of lines to show text.
+ * Widget size can be constrained with the number of visible lines.
  * A single line constraint will mimic QLineEdit. See setLinesVisible() for details.
+ * The maximum number of characters can be limited with setMaxLenght().
+ * The characters can be limited in editor by setIgnoredCharacters() and setAcceptedCharacters().
+ * Implementation: dtextedit.cpp
  */
 class DIGIKAM_EXPORT DTextEdit : public QTextEdit
 {
@@ -118,9 +121,18 @@ public:
     LocalizeContainer spellCheckSettings() const;
     void setLocalizeSettings(const LocalizeContainer& settings);
 
+    /**
+     * Helper methods to handle the maximum of characters
+     * that user can enter in editor.
+     * By default no limit is set.
+     * A zero lenght reset a limit.
+     */
     void setMaxLength(int length);
     int  maxLength()     const;
 
+    /**
+     * Return the left characters that user can enter if a limit have been previously set with setMaxLeght().
+     */
     int leftCharacters() const;
 
 Q_SIGNALS:
@@ -138,6 +150,10 @@ protected:
 
 private Q_SLOTS:
 
+    /**
+     * Internal slot used to display a tooltips of left characters available when enter text in editor.
+     * This slot do nothing is no limit is set with setMaxLenght§).
+     */
     void slotChanged();
 
 private:
@@ -150,8 +166,7 @@ private:
 
 /**
  * A text edit widget based on QPlainTextEdit with spell checker capabilities based on KF5::Sonnet (optional).
- * Widget can be limited to a number of lines to show text.
- * A single line constraint will mimic QLineEdit. See setLinesVisible() for details.
+ * Implementation: dplaintextedit.cpp
  */
 class DIGIKAM_EXPORT DPlainTextEdit : public QPlainTextEdit
 {
@@ -227,9 +242,18 @@ public:
     LocalizeContainer spellCheckSettings() const;
     void setLocalizeSettings(const LocalizeContainer& settings);
 
+    /**
+     * Helper methods to handle the maximum of characters
+     * that user can enter in editor.
+     * By default no limit is set.
+     * A zero lenght reset a limit.
+     */
     void setMaxLength(int length);
     int  maxLength()     const;
 
+    /**
+     * Return the left characters that user can enter if a limit have been previously set with setMaxLeght().
+     */
     int leftCharacters() const;
 
 Q_SIGNALS:
@@ -247,6 +271,10 @@ protected:
 
 private Q_SLOTS:
 
+    /**
+     * Internal slot used to display a tooltips of left characters available when enter text in editor.
+     * This slot do nothing is no limit is set with setMaxLenght§).
+     */
     void slotChanged();
 
 private:
