@@ -69,7 +69,7 @@ public:
     QPushButton*      delValueButton;
     QPushButton*      repValueButton;
 
-    DPlainTextEdit*  valueEdit;
+    DPlainTextEdit*   valueEdit;
 
     QListWidget*      valueBox;
 

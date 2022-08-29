@@ -39,6 +39,7 @@
 // Local includes
 
 #include "digikam_export.h"
+#include "dtextedit.h"
 
 namespace Digikam
 {
@@ -48,7 +49,7 @@ class DIGIKAM_EXPORT SubjectData
 public:
 
     SubjectData(const QString& n, const QString& m, const QString& d)
-      : name(n),
+      : name  (n),
         matter(m),
         detail(d)
     {
@@ -100,9 +101,9 @@ protected:
 
     QLineEdit* m_iprEdit;
     QLineEdit* m_refEdit;
-    QLineEdit* m_nameEdit;
-    QLineEdit* m_matterEdit;
-    QLineEdit* m_detailEdit;
+    DTextEdit* m_nameEdit;
+    DTextEdit* m_matterEdit;
+    DTextEdit* m_detailEdit;
 
     QString    m_iprDefault;
 
