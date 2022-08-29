@@ -85,19 +85,7 @@ void LimitedTextEdit::keyPressEvent(QKeyEvent* e)
                             (key == Qt::Key_Backspace) ||
                             (key == Qt::Key_Cancel);
 
-        bool asciiCtrl    = false;
-
-        if (txt.length() == 1)
-        {
-            int sym = txt.toLatin1().at(0);
-
-            if (((sym >= 0) && (sym <= 31)) || sym == 127)
-            {
-                asciiCtrl = true;
-            }
-        }
-
-        if (txt.isEmpty() || delCondition || asciiCtrl)
+        if (txt.isEmpty() || delCondition)
         {
             DPlainTextEdit::keyPressEvent(e);
         }
