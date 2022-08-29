@@ -41,6 +41,8 @@
 #include <QPainter>
 #include <QApplication>
 #include <QScrollBar>
+#include <QUrl>
+#include <QToolTip>
 
 // KDE includes
 
@@ -51,6 +53,8 @@
 using namespace Sonnet;
 
 #endif
+
+#include <klocalizedstring.h>
 
 // Local includes
 
@@ -107,6 +111,8 @@ public:
     DTextEditClearButton*        clrBtn       = nullptr;
 
     LocalizeContainer            container;                 ///< Spell checking settings container.
+
+    int                          maxLength    = 0;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -138,6 +144,8 @@ public:
     DTextEditClearButton*        clrBtn       = nullptr;
 
     LocalizeContainer            container;                 ///< Spell checking settings container.
+
+    int                          maxLength    = 0;
 };
 
 } // namespace Digikam

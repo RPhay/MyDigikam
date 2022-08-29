@@ -26,24 +26,24 @@
 namespace Digikam
 {
 
-DTextEdit::DTextEdit(QWidget* const parent)
-    : QTextEdit(parent),
-      d        (new Private)
+DPlainTextEdit::DPlainTextEdit(QWidget* const parent)
+    : QPlainTextEdit(parent),
+      d             (new Private)
 {
     d->init(this);
 }
 
-DTextEdit::DTextEdit(const QString& contents, QWidget* const parent)
-    : QTextEdit(parent),
-      d        (new Private)
+DPlainTextEdit::DPlainTextEdit(const QString& contents, QWidget* const parent)
+    : QPlainTextEdit(parent),
+      d             (new Private)
 {
     d->init(this);
     setPlainText(contents);
 }
 
-DTextEdit::DTextEdit(unsigned int lines, QWidget* const parent)
-    : QTextEdit(parent),
-      d        (new Private)
+DPlainTextEdit::DPlainTextEdit(unsigned int lines, QWidget* const parent)
+    : QPlainTextEdit(parent),
+      d             (new Private)
 {
     d->lines = lines;
     d->init(this);
@@ -52,12 +52,12 @@ DTextEdit::DTextEdit(unsigned int lines, QWidget* const parent)
             this, SLOT(slotChanged()));
 }
 
-DTextEdit::~DTextEdit()
+DPlainTextEdit::~DPlainTextEdit()
 {
     delete d;
 }
 
-void DTextEdit::setLinesVisible(unsigned int lines)
+void DPlainTextEdit::setLinesVisible(unsigned int lines)
 {
     if (lines == 0)
     {
@@ -78,7 +78,7 @@ void DTextEdit::setLinesVisible(unsigned int lines)
 
     if (d->lines == 1)
     {
-        setLineWrapMode(QTextEdit::NoWrap);
+        setLineWrapMode(QPlainTextEdit::NoWrap);
         setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
         verticalScrollBar()->setFixedHeight(0);
@@ -90,17 +90,17 @@ void DTextEdit::setLinesVisible(unsigned int lines)
     }
 }
 
-unsigned int DTextEdit::linesVisible() const
+unsigned int DPlainTextEdit::linesVisible() const
 {
     return d->lines;
 }
 
-QString DTextEdit::text() const
+QString DPlainTextEdit::text() const
 {
     return toPlainText();
 }
 
-void DTextEdit::setText(const QString& text)
+void DPlainTextEdit::setText(const QString& text)
 {
     QString maskedTxt = text;
 
@@ -127,27 +127,27 @@ void DTextEdit::setText(const QString& text)
     setPlainText(maskedTxt);
 }
 
-QString DTextEdit::ignoredCharacters() const
+QString DPlainTextEdit::ignoredCharacters() const
 {
     return d->ignoredMask;
 }
 
-void DTextEdit::setIgnoredCharacters(const QString& mask)
+void DPlainTextEdit::setIgnoredCharacters(const QString& mask)
 {
     d->ignoredMask = mask;
 }
 
-QString DTextEdit::acceptedCharacters() const
+QString DPlainTextEdit::acceptedCharacters() const
 {
     return d->acceptedMask;
 }
 
-void DTextEdit::setAcceptedCharacters(const QString& mask)
+void DPlainTextEdit::setAcceptedCharacters(const QString& mask)
 {
     d->acceptedMask = mask;
 }
 
-void DTextEdit::setCurrentLanguage(const QString& lang)
+void DPlainTextEdit::setCurrentLanguage(const QString& lang)
 {
 
 #ifdef HAVE_SONNET
@@ -178,7 +178,7 @@ void DTextEdit::setCurrentLanguage(const QString& lang)
 
 }
 
-QString DTextEdit::currentLanguage() const
+QString DPlainTextEdit::currentLanguage() const
 {
 
 #ifdef HAVE_SONNET
@@ -193,7 +193,7 @@ QString DTextEdit::currentLanguage() const
 
 }
 
-void DTextEdit::keyPressEvent(QKeyEvent* e)
+void DPlainTextEdit::keyPressEvent(QKeyEvent* e)
 {
     if ((d->maxLength > 0) && (text().length() >= d->maxLength))
     {
@@ -205,7 +205,7 @@ void DTextEdit::keyPressEvent(QKeyEvent* e)
 
         if (txt.isEmpty() || delCondition)
         {
-            DTextEdit::keyPressEvent(e);
+            DPlainTextEdit::keyPressEvent(e);
 
             return;
         }
@@ -245,10 +245,10 @@ void DTextEdit::keyPressEvent(QKeyEvent* e)
         Q_EMIT textEdited(text());
     }
 
-    QTextEdit::keyPressEvent(e);
+    QPlainTextEdit::keyPressEvent(e);
 }
 
-void DTextEdit::insertFromMimeData(const QMimeData* source)
+void DPlainTextEdit::insertFromMimeData(const QMimeData* source)
 {
     QMimeData scopy;
 
@@ -317,10 +317,10 @@ void DTextEdit::insertFromMimeData(const QMimeData* source)
         }
     }
 
-    QTextEdit::insertFromMimeData(&scopy);
+    QPlainTextEdit::insertFromMimeData(&scopy);
 }
 
-void DTextEdit::setLocalizeSettings(const LocalizeContainer& settings)
+void DPlainTextEdit::setLocalizeSettings(const LocalizeContainer& settings)
 {
     d->container = settings;
 
@@ -345,24 +345,24 @@ void DTextEdit::setLocalizeSettings(const LocalizeContainer& settings)
 
 }
 
-LocalizeContainer DTextEdit::spellCheckSettings() const
+LocalizeContainer DPlainTextEdit::spellCheckSettings() const
 {
     return d->container;
 }
 
-int DTextEdit::maxLength() const
+int DPlainTextEdit::maxLength() const
 {
     return d->maxLength;
 }
 
-int DTextEdit::leftCharacters() const
+int DPlainTextEdit::leftCharacters() const
 {
     int left = (d->maxLength - toPlainText().length());
 
     return ((left > 0) ? left : 0);
 }
 
-void DTextEdit::setMaxLength(int length)
+void DPlainTextEdit::setMaxLength(int length)
 {
     d->maxLength    = length;
     QString curText = text();
@@ -374,7 +374,7 @@ void DTextEdit::setMaxLength(int length)
     }
 }
 
-void DTextEdit::slotChanged()
+void DPlainTextEdit::slotChanged()
 {
     if (d->maxLength <= 0)
     {

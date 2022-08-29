@@ -118,6 +118,11 @@ public:
     LocalizeContainer spellCheckSettings() const;
     void setLocalizeSettings(const LocalizeContainer& settings);
 
+    void setMaxLength(int length);
+    int  maxLength()     const;
+
+    int leftCharacters() const;
+
 Q_SIGNALS:
 
     /**
@@ -130,6 +135,10 @@ protected:
 
     void insertFromMimeData(const QMimeData* source) override;
     void keyPressEvent(QKeyEvent* e)                 override;
+
+private Q_SLOTS:
+
+    void slotChanged();
 
 private:
 
@@ -218,6 +227,11 @@ public:
     LocalizeContainer spellCheckSettings() const;
     void setLocalizeSettings(const LocalizeContainer& settings);
 
+    void setMaxLength(int length);
+    int  maxLength()     const;
+
+    int leftCharacters() const;
+
 Q_SIGNALS:
 
     /**
@@ -230,6 +244,10 @@ protected:
 
     void insertFromMimeData(const QMimeData* source) override;
     void keyPressEvent(QKeyEvent* e)                 override;
+
+private Q_SLOTS:
+
+    void slotChanged();
 
 private:
 
