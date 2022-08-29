@@ -363,7 +363,7 @@ SetupCamera::SetupCamera(QWidget* const parent)
     grid->addItem(spacer,                4, 1, 1, 1);
     grid->addWidget(gphotoLogoLabel,     5, 1, 1, 1);
 
-    d->tab->insertTab(0, panel, i18n("Devices"));
+    d->tab->insertTab(Devices, panel, i18n("Devices"));
 
     // -------------------------------------------------------------
 
@@ -400,7 +400,7 @@ SetupCamera::SetupCamera(QWidget* const parent)
     boxLayout->setColumnStretch(2, 1);
     conflictBox->setLayout(boxLayout);
 
-    d->tab->insertTab(1, panel2, i18n("Behavior"));
+    d->tab->insertTab(Behavior, panel2, i18n("Behavior"));
 
     layout->setContentsMargins(spacing, spacing, spacing, spacing);
     layout->setSpacing(spacing);
@@ -460,7 +460,7 @@ SetupCamera::SetupCamera(QWidget* const parent)
     importGrid->addWidget(d->importEditButton,   2, 1, 1, 1);
     importGrid->addItem(spacer2,                 3, 1, 1, 1);
 
-    d->tab->insertTab(2, panel3, i18n("Import Filters"));
+    d->tab->insertTab(ImportFilters, panel3, i18n("Import Filters"));
 
     // -- Import Icon View ----------------------------------------------------------
 
@@ -569,7 +569,7 @@ SetupCamera::SetupCamera(QWidget* const parent)
     layout2->addWidget(d->fullScreenSettings);
     layout2->addStretch();
 
-    d->tab->insertTab(3, panel4, i18n("Import Window"));
+    d->tab->insertTab(ImportWindow, panel4, i18n("Import Window"));
 
     // -------------------------------------------------------------
 
@@ -628,6 +628,16 @@ SetupCamera::SetupCamera(QWidget* const parent)
 SetupCamera::~SetupCamera()
 {
     delete d;
+}
+
+void SetupCamera::setActiveTab(CameraTab tab)
+{
+    d->tab->setCurrentIndex(tab);
+}
+
+SetupCamera::CameraTab SetupCamera::activeTab() const
+{
+    return (CameraTab)d->tab->currentIndex();
 }
 
 bool SetupCamera::useFileMetadata()

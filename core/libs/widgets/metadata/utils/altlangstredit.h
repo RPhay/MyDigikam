@@ -28,6 +28,8 @@
 
 #include <QWidget>
 #include <QString>
+#include <QStringList>
+#include <QMap>
 
 // Local includes
 
@@ -104,7 +106,15 @@ public:
 
     virtual void setValues(const MetaEngine::AltLangMap& values);
 
-    static QString languageName(const QString& code);
+    /**
+     * Return the literal name of RFC 3066 language code (format FR-fr for ex).
+     */
+    static QString languageNameRFC3066(const QString& code);
+
+    /**
+     * Return all language codes available following the RFC 3066.
+     */
+    static QStringList allLanguagesRFC3066();
 
 Q_SIGNALS:
 
@@ -151,10 +161,12 @@ private Q_SLOTS:
 
     void slotLocalizeChanged();
 
+    void slotOpenLocalizeSetup();
+
 protected:
 
-    void loadLangAltListEntries();
-    void loadTranslationTargets();
+    void populateLangAltListEntries();
+    void populateTranslationEntries();
 
     void changeEvent(QEvent* e)                 override;
 

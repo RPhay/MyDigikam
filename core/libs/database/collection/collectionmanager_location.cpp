@@ -837,7 +837,6 @@ void CollectionManager::updateLocations()
 
             if (!info.isNull())
             {
-                available          = info.isMounted;
                 QString volumePath = info.path;
 
                 // volume.path has a trailing slash (and this is good)
@@ -849,6 +848,7 @@ void CollectionManager::updateLocations()
                 // specific path is the path on the file system of the volume.
 
                 absolutePath = volumePath + location->specificPath;
+                available    = (info.isMounted && QFileInfo::exists(absolutePath));
             }
             else
             {

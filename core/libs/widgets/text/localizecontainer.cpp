@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "metaenginesettingscontainer.h"
+#include "localizecontainer.h"
 
 // KDE includes
 
@@ -29,23 +29,23 @@
 
 // Local includes
 
-#include "spellchecksettings.h"
+#include "localizesettings.h"
 #include "digikam_debug.h"
 
 namespace Digikam
 {
 
-SpellCheckContainer::SpellCheckContainer()
+LocalizeContainer::LocalizeContainer()
     : enableSpellCheck(false),
       translatorEngine(DOnlineTranslator::Google)
 {
 }
 
-SpellCheckContainer::~SpellCheckContainer()
+LocalizeContainer::~LocalizeContainer()
 {
 }
 
-void SpellCheckContainer::readFromConfig(KConfigGroup& group)
+void LocalizeContainer::readFromConfig(KConfigGroup& group)
 {
     enableSpellCheck = group.readEntry("EnableSpellCheck", false);
 
@@ -65,24 +65,45 @@ void SpellCheckContainer::readFromConfig(KConfigGroup& group)
     ignoredWords.removeDuplicates();
 
     translatorEngine = (DOnlineTranslator::Engine)group.readEntry("TranslatorEngine", (int)DOnlineTranslator::Engine::Google);
+    translatorLang   = group.readEntry("TranslatorLang", QStringList() << QLatin1String("en-US")
+                                                                       << QLatin1String("fr-FR")
+                                                                       << QLatin1String("es-ES")
+                                                                       << QLatin1String("it-IT")
+                                                                       << QLatin1String("de-DE")
+                                                                       << QLatin1String("pt-PT")
+    );
+
+    alternativeLang  = group.readEntry("AlternativeLang", QStringList() << QLatin1String("en-US")
+                                                                        << QLatin1String("fr-FR")
+                                                                        << QLatin1String("es-ES")
+                                                                        << QLatin1String("it-IT")
+                                                                        << QLatin1String("de-DE")
+                                                                        << QLatin1String("pt-PT")
+    );
 }
 
-void SpellCheckContainer::writeToConfig(KConfigGroup& group) const
+void LocalizeContainer::writeToConfig(KConfigGroup& group) const
 {
     group.writeEntry("EnableSpellCheck", enableSpellCheck);
     group.writeEntry("IgnoredWords",     ignoredWords);
     group.writeEntry("TranslatorEngine", (int)translatorEngine);
+    group.writeEntry("TranslatorLang",   translatorLang);
+    group.writeEntry("AlternativeLang",  alternativeLang);
     group.sync();
 }
 
-QDebug operator<<(QDebug dbg, const SpellCheckContainer& inf)
+QDebug operator<<(QDebug dbg, const LocalizeContainer& inf)
 {
-    dbg.nospace() << "[SpellCheckContainer] enableSpellCheck("
+    dbg.nospace() << "[LocalizeContainer] enableSpellCheck("
                   << inf.enableSpellCheck << "), "
                   << "ignoredWords("
                   << inf.ignoredWords << "), "
                   << "translatorEngine("
-                  << inf.translatorEngine << "), ";
+                  << inf.translatorEngine << "), "
+                  << "translatorLang("
+                  << inf.translatorLang << "), "
+                  << "alternativeLang("
+                  << inf.alternativeLang << "), ";
     return dbg.space();
 }
 

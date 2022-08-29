@@ -402,7 +402,8 @@ void ExifToolParser::slotCmdCompleted(int cmdId,
 
 void ExifToolParser::slotErrorOccurred(int cmdId,
                                        int cmdAction,
-                                       QProcess::ProcessError error)
+                                       QProcess::ProcessError error,
+                                       const QString& description)
 {
     if (cmdId != d->cmdRunning)
     {
@@ -411,6 +412,8 @@ void ExifToolParser::slotErrorOccurred(int cmdId,
 
     qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool process for action" << d->actionString(cmdAction)
                                       << "exited with error:" << error;
+
+    d->errorString = description;
 
     d->manageEventLoop(cmdAction);
 

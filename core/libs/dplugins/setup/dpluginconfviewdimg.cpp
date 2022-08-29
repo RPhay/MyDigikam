@@ -46,7 +46,7 @@ DPluginConfViewDImg::DPluginConfViewDImg(QWidget* const parent)
     setColumnHidden(1, true);
     headerItem()->setText(2, i18n("Type-Mimes"));
     header()->setSectionResizeMode(2, QHeaderView::Stretch);
-    loadPlugins();
+    this->loadPlugins();
 }
 
 DPluginConfViewDImg::~DPluginConfViewDImg()

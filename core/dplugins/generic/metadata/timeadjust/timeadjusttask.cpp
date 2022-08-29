@@ -104,208 +104,113 @@ void TimeAdjustTask::run()
         return;
     }
 
-    bool writeToSidecar    = (MetaEngineSettings::instance()->settings()
-                                .metadataWritingMode != DMetadata::WRITE_TO_FILE_ONLY);
-    bool writeWithExifTool = (MetaEngineSettings::instance()->settings().writeWithExifTool);
+    bool metadataChanged               = false;
+    bool writeToSidecar                = (MetaEngineSettings::instance()->settings()
+                                          .metadataWritingMode != DMetadata::WRITE_TO_FILE_ONLY);
+    bool writeWithExifTool             = (MetaEngineSettings::instance()->settings().writeWithExifTool);
 
-    bool metadataChanged = d->settings.updEXIFModDate || d->settings.updEXIFOriDate ||
-                           d->settings.updEXIFDigDate || d->settings.updEXIFThmDate ||
-                           d->settings.updIPTCDate    || d->settings.updXMPVideo    ||
-                           d->settings.updXMPDate;
+    int status                         = TimeAdjustList::NOPROCESS_ERROR;
 
-    int status = TimeAdjustList::NOPROCESS_ERROR;
+    QString exifDateTimeFormat         = QLatin1String("yyyy:MM:dd hh:mm:ss");
+    QString xmpDateTimeFormat          = QLatin1String("yyyy-MM-ddThh:mm:ss");
 
-    if (metadataChanged)
+    const QMap<QString, bool>& tagsMap = d->settings.getDateTimeTagsMap();
+    QMap<QString, bool>::const_iterator it;
+
+    QScopedPointer<DMetadata> meta(new DMetadata);
+
+    if (meta->load(d->url.toLocalFile()))
     {
-        bool ret = true;
-
-        QScopedPointer<DMetadata> meta(new DMetadata);
-
-        ret &= meta->load(d->url.toLocalFile());
-
-        if (ret)
+        for (it = tagsMap.constBegin() ; it != tagsMap.constEnd() ; ++it)
         {
-            QString exifDateTimeFormat = QLatin1String("yyyy:MM:dd hh:mm:ss");
-            QString xmpDateTimeFormat  = QLatin1String("yyyy-MM-ddThh:mm:ss");
-
-            if (writeWithExifTool || writeToSidecar || meta->canWriteExif(d->url.toLocalFile()))
+            if (!it.value())
             {
-                if (d->settings.updEXIFModDate)
-                {
-                    if (!d->settings.updIfAvailable ||
-                        !meta->getExifTagString("Exif.Image.DateTime").isEmpty())
-                    {
-                        ret &= meta->setExifTagString("Exif.Image.DateTime",
-                                                      adj.toString(exifDateTimeFormat));
-                    }
-                }
-
-                if (d->settings.updEXIFOriDate)
-                {
-                    if (!d->settings.updIfAvailable ||
-                        !meta->getExifTagString("Exif.Photo.DateTimeOriginal").isEmpty())
-                    {
-                        ret &= meta->setExifTagString("Exif.Photo.DateTimeOriginal",
-                                                      adj.toString(exifDateTimeFormat));
-                    }
-                }
-
-                if (d->settings.updEXIFDigDate)
-                {
-                    if (!d->settings.updIfAvailable ||
-                        !meta->getExifTagString("Exif.Photo.DateTimeDigitized").isEmpty())
-                    {
-                        ret &= meta->setExifTagString("Exif.Photo.DateTimeDigitized",
-                                                      adj.toString(exifDateTimeFormat));
-                    }
-                }
-
-                if (d->settings.updEXIFThmDate)
-                {
-                   if (!d->settings.updIfAvailable ||
-                        !meta->getExifTagString("Exif.Image.PreviewDateTime").isEmpty())
-                   {
-                       ret &= meta->setExifTagString("Exif.Image.PreviewDateTime",
-                                                     adj.toString(exifDateTimeFormat));
-                   }
-                }
-            }
-            else if (d->settings.updEXIFModDate || d->settings.updEXIFOriDate ||
-                     d->settings.updEXIFDigDate || d->settings.updEXIFThmDate)
-            {
-                ret = false;
+                continue;
             }
 
-            if (d->settings.updIPTCDate)
+            bool ret = true;
+
+            if      (it.key().startsWith(QLatin1String("Exif.")) &&
+                     (meta->canWriteExif(d->url.toLocalFile())   ||
+                      writeWithExifTool                          ||
+                      writeToSidecar)
+                    )
             {
-                if (writeWithExifTool || writeToSidecar || meta->canWriteIptc(d->url.toLocalFile()))
+                if (!d->settings.updIfAvailable ||
+                    !meta->getExifTagString(it.key().toLatin1().constData()).isEmpty())
                 {
-                    if (!d->settings.updIfAvailable ||
-                        !meta->getIptcTagString("Iptc.Application2.DateCreated").isEmpty())
+                    ret &= meta->setExifTagString(it.key().toLatin1().constData(),
+                                                  adj.toString(exifDateTimeFormat));
+
+                    metadataChanged = true;
+                }
+            }
+            else if (it.key().startsWith(QLatin1String("Iptc.")) &&
+                     (meta->canWriteIptc(d->url.toLocalFile())   ||
+                      writeWithExifTool                          ||
+                      writeToSidecar)
+                    )
+            {
+                if (!d->settings.updIfAvailable ||
+                    !meta->getIptcTagString(it.key().toLatin1().constData()).isEmpty())
+                {
+                    if      (it.key().contains(QLatin1String("Date")))
                     {
-                        ret &= meta->setIptcTagString("Iptc.Application2.DateCreated",
+                        ret &= meta->setIptcTagString(it.key().toLatin1().constData(),
                                                       adj.date().toString(Qt::ISODate));
-                    }
 
-                    if (!d->settings.updIfAvailable ||
-                        !meta->getIptcTagString("Iptc.Application2.TimeCreated").isEmpty())
+                        metadataChanged = true;
+                    }
+                    else if (it.key().contains(QLatin1String("Time")))
                     {
-                        ret &= meta->setIptcTagString("Iptc.Application2.TimeCreated",
+                        ret &= meta->setIptcTagString(it.key().toLatin1().constData(),
                                                       adj.time().toString(Qt::ISODate));
+
+                        metadataChanged = true;
                     }
                 }
-                else
-                {
-                    ret = false;
-                }
             }
-
-            if (d->settings.updXMPDate)
+            else if (it.key().startsWith(QLatin1String("Xmp.")) &&
+                     (meta->canWriteXmp(d->url.toLocalFile())   ||
+                      writeWithExifTool                         ||
+                      writeToSidecar)
+                     )
             {
-                if (writeWithExifTool || writeToSidecar || (meta->supportXmp() && meta->canWriteXmp(d->url.toLocalFile())))
+                if (!d->settings.updIfAvailable ||
+                    !meta->getXmpTagString(it.key().toLatin1().constData()).isEmpty())
                 {
-                    if (!d->settings.updIfAvailable ||
-                        !meta->getXmpTagString("Xmp.exif.DateTimeOriginal").isEmpty())
-                    {
-                        ret &= meta->setXmpTagString("Xmp.exif.DateTimeOriginal",
-                                                     adj.toString(xmpDateTimeFormat));
-                    }
+                    ret &= meta->setXmpTagString(it.key().toLatin1().constData(),
+                                                 adj.toString(xmpDateTimeFormat));
 
-                    if (!d->settings.updIfAvailable ||
-                        !meta->getXmpTagString("Xmp.photoshop.DateCreated").isEmpty())
-                    {
-                        ret &= meta->setXmpTagString("Xmp.photoshop.DateCreated",
-                                                     adj.toString(xmpDateTimeFormat));
-                    }
-
-                    if (!d->settings.updIfAvailable ||
-                        !meta->getXmpTagString("Xmp.tiff.DateTime").isEmpty())
-                    {
-                        ret &= meta->setXmpTagString("Xmp.tiff.DateTime",
-                                                     adj.toString(xmpDateTimeFormat));
-                    }
-
-                    if (!d->settings.updIfAvailable ||
-                        !meta->getXmpTagString("Xmp.xmp.CreateDate").isEmpty())
-                    {
-                        ret &= meta->setXmpTagString("Xmp.xmp.CreateDate",
-                                                     adj.toString(xmpDateTimeFormat));
-                    }
-
-                    if (!d->settings.updIfAvailable ||
-                        !meta->getXmpTagString("Xmp.xmp.MetadataDate").isEmpty())
-                    {
-                        ret &= meta->setXmpTagString("Xmp.xmp.MetadataDate",
-                                                     adj.toString(xmpDateTimeFormat));
-                    }
-
-                    if (!d->settings.updIfAvailable ||
-                        !meta->getXmpTagString("Xmp.xmp.ModifyDate").isEmpty())
-                    {
-                        ret &= meta->setXmpTagString("Xmp.xmp.ModifyDate",
-                                                     adj.toString(xmpDateTimeFormat));
-                    }
-                }
-                else
-                {
-                    ret = false;
+                    metadataChanged = true;
                 }
             }
-
-            if (d->settings.updXMPVideo)
-            {
-                if (writeToSidecar || (meta->supportXmp() && meta->canWriteXmp(d->url.toLocalFile())))
-                {
-                    if (!d->settings.updIfAvailable ||
-                        !meta->getXmpTagString("Xmp.video.DateTimeOriginal").isEmpty())
-                    {
-                        ret &= meta->setXmpTagString("Xmp.video.DateTimeOriginal",
-                                                     adj.toString(xmpDateTimeFormat));
-                    }
-
-                    if (!d->settings.updIfAvailable ||
-                        !meta->getXmpTagString("Xmp.video.DateTimeDigitized").isEmpty())
-                    {
-                        ret &= meta->setXmpTagString("Xmp.video.DateTimeDigitized",
-                                                     adj.toString(xmpDateTimeFormat));
-                    }
-
-                    if (!d->settings.updIfAvailable ||
-                        !meta->getXmpTagString("Xmp.video.ModificationDate").isEmpty())
-                    {
-                        ret &= meta->setXmpTagString("Xmp.video.ModificationDate",
-                                                     adj.toString(xmpDateTimeFormat));
-                    }
-
-                    if (!d->settings.updIfAvailable ||
-                        !meta->getXmpTagString("Xmp.video.DateUTC").isEmpty())
-                    {
-                        ret &= meta->setXmpTagString("Xmp.video.DateUTC",
-                                                     adj.toUTC().toString(xmpDateTimeFormat));
-                    }
-                }
-                else
-                {
-                    ret = false;
-                }
-            }
-
-            ret &= meta->save(d->url.toLocalFile());
 
             if (!ret)
             {
-                qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Failed to update metadata in file " << d->url.fileName();
+                qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Failed to set metadata for tag" << it.key();
+
+                status |= TimeAdjustList::META_TIME_ERROR;
+
+                break;
             }
         }
-        else
-        {
-            qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Failed to load metadata from file " << d->url.fileName();
-        }
 
-        if (!ret)
+        if ((status == TimeAdjustList::NOPROCESS_ERROR) && metadataChanged)
         {
-            status |= TimeAdjustList::META_TIME_ERROR;
+            if (!meta->save(d->url.toLocalFile()))
+            {
+                qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Failed to update metadata in file" << d->url.fileName();
+
+                status |= TimeAdjustList::META_TIME_ERROR;
+            }
         }
+    }
+    else
+    {
+        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Failed to load metadata from file" << d->url.fileName();
+
+        status |= TimeAdjustList::META_TIME_ERROR;
     }
 
     if (d->settings.updFileModDate)

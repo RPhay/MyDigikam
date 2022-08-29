@@ -86,7 +86,7 @@ WorkflowList::WorkflowList(QWidget* const parent)
     setContextMenuPolicy(Qt::CustomContextMenu);
     setIconSize(QSize(22, 22));
     setSelectionMode(QAbstractItemView::SingleSelection);
-    setSortingEnabled(false);
+    setSortingEnabled(true);
     setRootIsDecorated(false);
     setUniformRowHeights(true);
     setAllColumnsShowFocus(true);
@@ -114,7 +114,7 @@ WorkflowList::WorkflowList(QWidget* const parent)
 
     Q_FOREACH (const Workflow& q, mngr->queueSettingsList())
     {
-        slotsAddQueueSettings(q.title);
+        slotAddQueueSettings(q.title);
     }
 
     if (!failed.isEmpty())
@@ -132,7 +132,7 @@ WorkflowList::~WorkflowList()
 {
 }
 
-void WorkflowList::slotsAddQueueSettings(const QString& title)
+void WorkflowList::slotAddQueueSettings(const QString& title)
 {
     WorkflowItem* const item = findByTitle(title);
 
@@ -211,6 +211,11 @@ void WorkflowList::startDrag(Qt::DropActions /*supportedActions*/)
         drag->setMimeData(mimeData(list));
         drag->setPixmap(pix);
         drag->exec();
+
+        if (drag->target())
+        {
+            m_lastAssignedTitel = item->title();
+        }
     }
 }
 
@@ -254,13 +259,35 @@ QMimeData* WorkflowList::mimeData(const QList<QTreeWidgetItem*> items) const    
 
 void WorkflowList::slotContextMenu()
 {
+    QList<QTreeWidgetItem*> list = selectedItems();
+
+    if (list.isEmpty())
+    {
+        return;
+    }
+
+    WorkflowItem* const item    = dynamic_cast<WorkflowItem*>(list.first());
+    WorkflowManager* const mngr = WorkflowManager::instance();
+
+    if (!item)
+    {
+        return;
+    }
+
     QMenu popmenu(this);
-    QAction* const assignAction = new QAction(QIcon::fromTheme(QLatin1String("list-add")),    i18nc("@action", "Assign Workflow to current queue"), this);
-    QAction* const propAction   = new QAction(QIcon::fromTheme(QLatin1String("configure")),   i18nc("@action", "Edit Workflow"),                    this);
-    QAction* const delAction    = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")), i18nc("@action", "Delete Workflow"),                  this);
+    QAction* const assignAction = new QAction(QIcon::fromTheme(QLatin1String("list-add")),     i18nc("@action", "Assign Workflow to current queue"), this);
+    QAction* const propAction   = new QAction(QIcon::fromTheme(QLatin1String("configure")),    i18nc("@action", "Edit Workflow"),                    this);
+    QAction* const updAction    = new QAction(QIcon::fromTheme(QLatin1String("view-refresh")), i18nc("@action", "Update Workflow"),                  this);
+    QAction* const delAction    = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")),  i18nc("@action", "Delete Workflow"),                  this);
 
     popmenu.addAction(assignAction);
     popmenu.addAction(propAction);
+
+    if (m_lastAssignedTitel == item->title())
+    {
+        popmenu.addAction(updAction);
+    }
+
     popmenu.addSeparator();
     popmenu.addAction(delAction);
 
@@ -272,53 +299,35 @@ void WorkflowList::slotContextMenu()
     }
     else if (choice == propAction)
     {
-        QList<QTreeWidgetItem*> list = selectedItems();
+        Workflow wfOld = mngr->findByTitle(item->title());
+        Workflow wfNew = wfOld;
 
-        if (!list.isEmpty())
+        if (WorkflowDlg::editProps(wfNew))
         {
-            WorkflowItem* const item = dynamic_cast<WorkflowItem*>(list.first());
-
-            if (item)
-            {
-                WorkflowManager* const mngr = WorkflowManager::instance();
-                Workflow wfOld              = mngr->findByTitle(item->title());
-                Workflow wfNew              = wfOld;
-
-                if (WorkflowDlg::editProps(wfNew))
-                {
-                    mngr->remove(wfOld);
-                    mngr->insert(wfNew);
-                    mngr->save();
-                }
-            }
+            mngr->remove(wfOld);
+            mngr->insert(wfNew);
+            mngr->save();
         }
+    }
+    else if (choice == updAction)
+    {
+        Q_EMIT signalUpdateQueueSettings(item->title());
     }
     else if (choice == delAction)
     {
-        QList<QTreeWidgetItem*> list = selectedItems();
+        int result = QMessageBox::warning(qApp->activeWindow(),
+                                  i18nc("@title", "Delete Workflow?"),
+                                  i18nc("@info", "Are you sure you want to "
+                                                 "delete the selected workflow "
+                                                 "\"%1\"?", item->title()),
+                                  QMessageBox::Yes | QMessageBox::Cancel);
 
-        if (!list.isEmpty())
+        if (result == QMessageBox::Yes)
         {
-            WorkflowItem* const item = dynamic_cast<WorkflowItem*>(list.first());
-
-            if (item)
-            {
-                int result = QMessageBox::warning(qApp->activeWindow(),
-                                          i18nc("@title", "Delete Workflow?"),
-                                          i18nc("@info", "Are you sure you want to "
-                                                         "delete the selected workflow "
-                                                         "\"%1\"?", item->title()),
-                                          QMessageBox::Yes | QMessageBox::Cancel);
-
-                if (result == QMessageBox::Yes)
-                {
-                    WorkflowManager* const mngr = WorkflowManager::instance();
-                    Workflow wf                 = mngr->findByTitle(item->title());
-                    mngr->remove(wf);
-                    removeItemWidget(item, 0);
-                    delete item;
-                }
-            }
+            Workflow wf = mngr->findByTitle(item->title());
+            mngr->remove(wf);
+            removeItemWidget(item, 0);
+            delete item;
         }
     }
 }
@@ -334,6 +343,7 @@ void WorkflowList::slotAssignQueueSettings()
         if (item)
         {
             Q_EMIT signalAssignQueueSettings(item->title());
+            m_lastAssignedTitel = item->title();
         }
     }
 }

@@ -99,6 +99,7 @@ public Q_SLOTS:
     void slotRunAll();
     void slotStop();
     void slotAssignQueueSettings(const QString&);
+    void slotUpdateQueueSettings(const QString&);
 
 private:
 

@@ -512,9 +512,9 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->tab->addTab(d->behaviorPanel, i18nc("@title: icc panel tab", "Behavior"));
-    d->tab->addTab(d->profilesPanel, i18nc("@title: icc panel tab", "Profiles"));
-    d->tab->addTab(d->advancedPanel, i18nc("@title: icc panel tab", "Advanced"));
+    d->tab->insertTab(Behavior, d->behaviorPanel, i18nc("@title: icc panel tab", "Behavior"));
+    d->tab->insertTab(Profiles, d->profilesPanel, i18nc("@title: icc panel tab", "Profiles"));
+    d->tab->insertTab(Advanced, d->advancedPanel, i18nc("@title: icc panel tab", "Advanced"));
 
     // --------------------------------------------------------
 
@@ -560,13 +560,21 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
 
     readSettings();
     slotToggledEnabled();
-
-    // --------------------------------------------------------
 }
 
 SetupICC::~SetupICC()
 {
     delete d;
+}
+
+void SetupICC::setActiveTab(ICCTab tab)
+{
+    d->tab->setCurrentIndex(tab);
+}
+
+SetupICC::ICCTab SetupICC::activeTab() const
+{
+    return (ICCTab)d->tab->currentIndex();
 }
 
 void SetupICC::applySettings()

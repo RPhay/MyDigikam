@@ -102,10 +102,10 @@ QString OilPaintFilter::DisplayableName()
  */
 void OilPaintFilter::oilPaintImageMultithreaded(uint start, uint stop)
 {
-    QScopedPointer<uchar> intensityCount(new uchar[d->smoothness + 1]);
-    QScopedPointer<uint>  averageColorR(new  uint[d->smoothness + 1]);
-    QScopedPointer<uint>  averageColorG(new  uint[d->smoothness + 1]);
-    QScopedPointer<uint>  averageColorB(new  uint[d->smoothness + 1]);
+    QScopedArrayPointer<uchar> intensityCount(new uchar[d->smoothness + 1]);
+    QScopedArrayPointer<uint>  averageColorR(new  uint[d->smoothness + 1]);
+    QScopedArrayPointer<uint>  averageColorG(new  uint[d->smoothness + 1]);
+    QScopedArrayPointer<uint>  averageColorB(new  uint[d->smoothness + 1]);
 
     memset(intensityCount.data(), 0, sizeof(uchar)*(d->smoothness + 1));
     memset(averageColorR.data(),  0, sizeof(uint)*(d->smoothness + 1));

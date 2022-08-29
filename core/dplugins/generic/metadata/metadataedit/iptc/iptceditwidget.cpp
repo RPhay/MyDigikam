@@ -218,24 +218,50 @@ void IPTCEditWidget::saveSettings()
 
 void IPTCEditWidget::slotItemChanged()
 {
-    d->page_content->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Content Information<br/>"
-                     "<i>Describe the visual content of the item</i></qt>")));
-    d->page_origin->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Origin Information<br/>"
-                     "<i>Formal descriptive information about the item</i></qt>")));
-    d->page_credits->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Credit Information<br/>"
-                     "<i>Record copyright information about the item</i></qt>")));
-    d->page_subjects->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Subject Information<br/>"
-                     "<i>Record subject information about the item</i></qt>")));
-    d->page_keywords->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Keyword Information<br/>"
-                     "<i>Record keywords relevant to the item</i></qt>")));
-    d->page_categories->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Category Information<br/>"
-                     "<i>Record categories relevant to the item</i></qt>")));
-    d->page_status->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Status Information<br/>"
-                     "<i>Record workflow information</i></qt>")));
-    d->page_properties->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Status Properties<br/>"
-                     "<i>Record workflow properties</i></qt>")));
-    d->page_envelope->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Envelope Information<br/>"
-                     "<i>Record editorial details</i></qt>")));
+    d->page_content->setHeader(d->dlg->currentItemTitleHeader(
+                                   QString::fromUtf8("<qt>%1<br/><i>%2</i></qt>")
+                                       .arg(i18nc("@title", "Content Information"))
+                                       .arg(i18nc("@title", "Describe the visual content of the item"))));
+
+    d->page_origin->setHeader(d->dlg->currentItemTitleHeader(
+                                   QString::fromUtf8("<qt>%1<br/><i>%2</i></qt>")
+                                       .arg(i18nc("@title", "Origin Information"))
+                                       .arg(i18nc("@title", "Formal descriptive information about the item"))));
+
+    d->page_credits->setHeader(d->dlg->currentItemTitleHeader(
+                                   QString::fromUtf8("<qt>%1<br/><i>%2</i></qt>")
+                                       .arg(i18nc("@title", "Credit Information"))
+                                       .arg(i18nc("@title", "Record copyright information about the item"))));
+
+    d->page_subjects->setHeader(d->dlg->currentItemTitleHeader(
+                                   QString::fromUtf8("<qt>%1<br/><i>%2</i></qt>")
+                                       .arg(i18nc("@title", "Subject Information"))
+                                       .arg(i18nc("@title", "Record subject information about the item"))));
+
+    d->page_keywords->setHeader(d->dlg->currentItemTitleHeader(
+                                   QString::fromUtf8("<qt>%1<br/><i>%2</i></qt>")
+                                       .arg(i18nc("@title", "Keyword Information"))
+                                       .arg(i18nc("@title", "Record keywords relevant to the item"))));
+
+    d->page_categories->setHeader(d->dlg->currentItemTitleHeader(
+                                   QString::fromUtf8("<qt>%1<br/><i>%2</i></qt>")
+                                       .arg(i18nc("@title", "Category Information"))
+                                       .arg(i18nc("@title", "Record categories relevant to the item"))));
+
+    d->page_status->setHeader(d->dlg->currentItemTitleHeader(
+                                   QString::fromUtf8("<qt>%1<br/><i>%2</i></qt>")
+                                       .arg(i18nc("@title", "Status Information"))
+                                       .arg(i18nc("@title", "Record workflow information"))));
+
+    d->page_properties->setHeader(d->dlg->currentItemTitleHeader(
+                                   QString::fromUtf8("<qt>%1<br/><i>%2</i></qt>")
+                                       .arg(i18nc("@title", "Status Properties"))
+                                       .arg(i18nc("@title", "Record workflow properties"))));
+
+    d->page_envelope->setHeader(d->dlg->currentItemTitleHeader(
+                                   QString::fromUtf8("<qt>%1<br/><i>%2</i></qt>")
+                                       .arg(i18nc("@title", "Envelope Information"))
+                                       .arg(i18nc("@title", "Record editorial details"))));
 
     QScopedPointer<DMetadata> meta(new DMetadata);
     meta->load((*d->dlg->currentItem()).toLocalFile());

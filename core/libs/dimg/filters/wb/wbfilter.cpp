@@ -97,7 +97,7 @@ WBFilter::WBFilter(const WBContainer& settings,
       m_settings        (settings),
       d                 (new Private)
 {
-    filterImage();
+    this->filterImage();
 }
 
 WBFilter::~WBFilter()

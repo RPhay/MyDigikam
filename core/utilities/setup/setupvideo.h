@@ -37,11 +37,23 @@ class SetupVideo : public QScrollArea
 
 public:
 
+    enum VideoTab
+    {
+        Decoder = 0,
+        AVFormat,
+        Misc
+    };
+
+public:
+
     explicit SetupVideo(QWidget* const parent = nullptr);
     ~SetupVideo() override;
 
     void applySettings();
     void cancel();
+
+    void setActiveTab(VideoTab tab);
+    VideoTab activeTab() const;
 
 private Q_SLOTS:
 

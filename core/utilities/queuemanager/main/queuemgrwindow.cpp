@@ -267,6 +267,9 @@ void QueueMgrWindow::setupConnections()
 
     connect(d->toolsView, SIGNAL(signalAssignQueueSettings(QString)),
             this, SLOT(slotAssignQueueSettings(QString)));
+
+    connect(d->toolsView, SIGNAL(signalUpdateQueueSettings(QString)),
+            this, SLOT(slotUpdateQueueSettings(QString)));
 }
 
 void QueueMgrWindow::setupActions()
@@ -1032,6 +1035,26 @@ void QueueMgrWindow::slotAssignQueueSettings(const QString& title)
 
             queue->setAssignedTools(tools);
             d->queuePool->slotQueueSelected(d->queuePool->currentIndex());
+        }
+    }
+}
+
+void QueueMgrWindow::slotUpdateQueueSettings(const QString& title)
+{
+    if (!title.isEmpty())
+    {
+        QueueListView* const queue = d->queuePool->currentQueue();
+
+        if (queue)
+        {
+            WorkflowManager* const mngr = WorkflowManager::instance();
+            Workflow wfOld              = mngr->findByTitle(title);
+            Workflow wfNew              = wfOld;
+            mngr->remove(wfOld);
+            wfNew.qSettings             = queue->settings();
+            wfNew.aTools                = queue->assignedTools().m_toolsList;
+            mngr->insert(wfNew);
+            mngr->save();
         }
     }
 }

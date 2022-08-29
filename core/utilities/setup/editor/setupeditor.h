@@ -37,8 +37,22 @@ class SetupEditor : public QScrollArea
 
 public:
 
+    enum EditorTab
+    {
+        EditorWindow = 0,
+        Versioning,
+        SaveSettings,
+        RAWBehavior,
+        RAWDefaultSettings
+    };
+
+public:
+
     explicit SetupEditor(QWidget* const parent = nullptr);
     ~SetupEditor() override;
+
+    void setActiveTab(EditorTab tab);
+    EditorTab activeTab() const;
 
     void applySettings();
 

@@ -45,6 +45,7 @@ ExifToolParser::Private::~Private()
 void ExifToolParser::Private::prepareProcess()
 {
     currentPath.clear();
+    errorString.clear();
     exifToolData.clear();
 }
 

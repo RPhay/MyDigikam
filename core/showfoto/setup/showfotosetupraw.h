@@ -37,8 +37,19 @@ class ShowfotoSetupRaw : public QScrollArea
 
 public:
 
+    enum RAWTab
+    {
+        RAWBehavior = 0,
+        RAWDefaultSettings
+    };
+
+public:
+
     explicit ShowfotoSetupRaw(QWidget* const parent = nullptr);
     ~ShowfotoSetupRaw() override;
+
+    void setActiveTab(RAWTab tab);
+    RAWTab activeTab() const;
 
     void applySettings();
 

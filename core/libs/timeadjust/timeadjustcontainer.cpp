@@ -193,6 +193,32 @@ QDateTime TimeAdjustContainer::getDateTimeFromUrl(const QUrl& url) const
     return dateTime;
 }
 
+QMap<QString, bool> TimeAdjustContainer::getDateTimeTagsMap() const
+{
+    QMap<QString, bool> tagsMap;
+
+    tagsMap.insert(QLatin1String("Exif.Image.DateTime"),           updEXIFModDate);
+    tagsMap.insert(QLatin1String("Exif.Photo.DateTimeOriginal"),   updEXIFOriDate);
+    tagsMap.insert(QLatin1String("Exif.Photo.DateTimeDigitized"),  updEXIFDigDate);
+    tagsMap.insert(QLatin1String("Exif.Image.PreviewDateTime"),    updEXIFThmDate);
+
+    tagsMap.insert(QLatin1String("Iptc.Application2.DateCreated"), updIPTCDate);
+    tagsMap.insert(QLatin1String("Iptc.Application2.TimeCreated"), updIPTCDate);
+
+    tagsMap.insert(QLatin1String("Xmp.exif.DateTimeOriginal"),     updXMPDate);
+    tagsMap.insert(QLatin1String("Xmp.photoshop.DateCreated"),     updXMPDate);
+    tagsMap.insert(QLatin1String("Xmp.xmp.MetadataDate"),          updXMPDate);
+    tagsMap.insert(QLatin1String("Xmp.xmp.CreateDate"),            updXMPDate);
+    tagsMap.insert(QLatin1String("Xmp.xmp.ModifyDate"),            updXMPDate);
+    tagsMap.insert(QLatin1String("Xmp.tiff.DateTime"),             updXMPDate);
+
+    tagsMap.insert(QLatin1String("Xmp.video.DateTimeOriginal"),    updXMPVideo);
+    tagsMap.insert(QLatin1String("Xmp.video.DateTimeDigitized"),   updXMPVideo);
+    tagsMap.insert(QLatin1String("Xmp.video.ModificationDate"),    updXMPVideo);
+    tagsMap.insert(QLatin1String("Xmp.video.DateUTC"),             updXMPVideo);
+
+    return tagsMap;
+}
 // -------------------------------------------------------------------
 
 DeltaTime::DeltaTime()

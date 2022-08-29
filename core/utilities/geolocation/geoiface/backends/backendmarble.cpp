@@ -185,7 +185,7 @@ BackendMarble::BackendMarble(const QExplicitlySharedDataPointer<GeoIfaceSharedDa
 #endif
 
     d->marbleMapThemeManager = new Marble::MapThemeManager(this);
-    createActions();
+    this->createActions();
 }
 
 BackendMarble::~BackendMarble()

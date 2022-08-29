@@ -468,9 +468,9 @@ SetupToolTip::SetupToolTip(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->tab->insertTab(0, vbox,  i18n("Icon Items"));
-    d->tab->insertTab(1, vbox2, i18n("Album Items"));
-    d->tab->insertTab(2, vbox3, i18n("Import Items"));
+    d->tab->insertTab(IconItems,   vbox,  i18n("Icon Items"));
+    d->tab->insertTab(AlbumItems,  vbox2, i18n("Album Items"));
+    d->tab->insertTab(ImportItems, vbox3, i18n("Import Items"));
 
     vlay->addWidget(d->fontSelect);
     vlay->addWidget(d->tab);
@@ -507,6 +507,16 @@ SetupToolTip::SetupToolTip(QWidget* const parent)
 SetupToolTip::~SetupToolTip()
 {
     delete d;
+}
+
+void SetupToolTip::setActiveTab(ToolTipTab tab)
+{
+    d->tab->setCurrentIndex(tab);
+}
+
+SetupToolTip::ToolTipTab SetupToolTip::activeTab() const
+{
+    return (ToolTipTab)d->tab->currentIndex();
 }
 
 void SetupToolTip::applySettings()

@@ -384,6 +384,16 @@ SetupAlbumView::~SetupAlbumView()
     delete d;
 }
 
+void SetupAlbumView::setActiveTab(AlbumTab tab)
+{
+    d->tab->setCurrentIndex(tab);
+}
+
+SetupAlbumView::AlbumTab SetupAlbumView::activeTab() const
+{
+    return (AlbumTab)d->tab->currentIndex();
+}
+
 void SetupAlbumView::applySettings()
 {
     ApplicationSettings* const settings = ApplicationSettings::instance();

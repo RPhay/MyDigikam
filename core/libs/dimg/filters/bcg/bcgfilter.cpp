@@ -84,7 +84,7 @@ BCGFilter::BCGFilter(const BCGContainer& settings,
 {
     d->settings = settings;
     reset();
-    filterImage();
+    this->filterImage();
 }
 
 BCGFilter::~BCGFilter()

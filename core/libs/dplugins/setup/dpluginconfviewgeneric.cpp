@@ -34,7 +34,7 @@ namespace Digikam
 DPluginConfViewGeneric::DPluginConfViewGeneric(QWidget* const parent)
     : DPluginConfView(parent)
 {
-    loadPlugins();
+    this->loadPlugins();
 }
 
 DPluginConfViewGeneric::~DPluginConfViewGeneric()

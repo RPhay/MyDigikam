@@ -89,7 +89,14 @@ DigikamApp::DigikamApp()
     ProgressManager::instance();
     ThumbnailLoadThread::setDisplayingWidget(this);
     DIO::instance();
-    SpellCheckSettings::instance();
+    LocalizeSettings::instance();
+
+    connect(LocalizeSettings::instance(), &LocalizeSettings::signalOpenLocalizeSetup,
+            this, [=]()
+        {
+            Setup::execLocalize(this);
+        }
+    );
 
     ExifToolThread* const exifToolThread = new ExifToolThread(this);
     exifToolThread->start();

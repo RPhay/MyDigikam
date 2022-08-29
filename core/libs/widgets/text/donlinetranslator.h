@@ -323,14 +323,15 @@ public:
      * Constructs an object with empty data and with parent.
      * You can use translate() to send text to object.
      *
-     * @param parent parent object
+     * @param parent the parent object
      */
     explicit DOnlineTranslator(QObject* const parent = nullptr);
+    ~DOnlineTranslator() override;
 
     /**
      * @brief Translate text
      *
-     * @param text text to translate
+     * @param text the text to translate
      * @param engine online engine to use
      * @param translationLang language to translation
      * @param sourceLang language of the passed text
@@ -345,8 +346,8 @@ public:
     /**
      * @brief Detect language
      *
-     * @param text text for language detection
-     * @param engine engine to use
+     * @param text the text for language detection
+     * @param engine the engine to use
      */
     void detectLanguage(const QString& text,
                         Engine engine = Google);
@@ -406,6 +407,24 @@ public:
     Language sourceLanguage() const;
 
     /**
+     * Return the engine literal name.
+     */
+    static QString engineName(Engine engine);
+
+    //@{
+    // Properties methods (donlinetranslator_properties.cpp)
+
+    /**
+     * Convert language RFC3066 to supported language code
+     */
+    static QString fromRFC3066(Engine engine, const QString& langCodeRFC3066);
+
+    /**
+     * Return a list of all supported language in RFC3066.
+     */
+    static QStringList supportedRFC3066(Engine engine);
+
+    /**
      * @brief Translated text
      *
      * @return translated text.
@@ -442,6 +461,22 @@ public:
     QMap<QString, QVector<DOnlineTranslatorOption> > translationOptions() const;
 
     /**
+     * @brief Language code
+     *
+     * @param lang language
+     * @return language code
+     */
+    static QString languageCode(Language lang);
+
+    /**
+     * @brief Returns general language code
+     *
+     * @param langCode code
+     * @return language
+     */
+    static Language language(const QString& langCode);
+
+    /**
      * @brief Last error
      *
      * Error that was found during the processing of the last translation.
@@ -469,25 +504,11 @@ public:
     bool isSourceTranslitEnabled() const;
 
     /**
-     * @brief Enable or disable source transliteration
-     *
-     * @param enable whether to enable source transliteration
-     */
-    void setSourceTranslitEnabled(bool enable);
-
-    /**
      * @brief Check if translation transliteration is enabled
      *
      * @return `true` if translation transliteration is enabled
      */
     bool isTranslationTranslitEnabled() const;
-
-    /**
-     * @brief Enable or disable translation transliteration
-     *
-     * @param enable whether to enable translation transliteration
-     */
-    void setTranslationTranslitEnabled(bool enable);
 
     /**
      * @brief Check if source transcription is enabled
@@ -497,19 +518,33 @@ public:
     bool isSourceTranscriptionEnabled() const;
 
     /**
-     * @brief Enable or disable source transcription
-     *
-     * @param enable whether to enable source transcription
-     */
-    void setSourceTranscriptionEnabled(bool enable);
-
-    /**
      * @brief Check if translation options are enabled
      *
      * @return `true` if translation options are enabled
      * @sa DOnlineTranslatorOption
      */
     bool isTranslationOptionsEnabled() const;
+
+    /**
+     * @brief Enable or disable source transliteration
+     *
+     * @param enable whether to enable source transliteration
+     */
+    void setSourceTranslitEnabled(bool enable);
+
+    /**
+     * @brief Enable or disable translation transliteration
+     *
+     * @param enable whether to enable translation transliteration
+     */
+    void setTranslationTranslitEnabled(bool enable);
+
+    /**
+     * @brief Enable or disable source transcription
+     *
+     * @param enable whether to enable source transcription
+     */
+    void setSourceTranscriptionEnabled(bool enable);
 
     /**
      * @brief Enable or disable translation options
@@ -525,20 +560,33 @@ public:
      * Only affects LibreTranslate and Lingva because these engines have multiple instances.
      * You need to call this function to specify the URL of an instance for them.
      *
-     * @param engine engine
+     * @param engine the engine to use
      * @param url engine url
      */
-    void setEngineUrl(Engine engine, QString url);
+    void setEngineUrl(Engine engine, const QString& url);
 
     /**
      * @brief Set api key for engine
      *
      * Affects only LibreTranslate.
      *
-     * @param engine engine
+     * @param engine the engine to use
      * @param apiKey your key for this particular instance
      */
-    void setEngineApiKey(Engine engine, QByteArray apiKey);
+    void setEngineApiKey(Engine engine, const QByteArray& apiKey);
+
+    //@}
+
+    //@{
+    // Conversion tables (donlinetranslator_tables.cpp)
+
+    /**
+     * @brief Language
+     *
+     * @param locale the locale to use
+     * @return language
+     */
+    static Language language(const QLocale& locale);
 
     /**
      * @brief Language name
@@ -549,52 +597,23 @@ public:
     static QString languageName(Language lang);
 
     /**
-     * @brief Language code
-     *
-     * @param lang language
-     * @return language code
-     */
-    static QString languageCode(Language lang);
-
-    /**
-     * @brief Language
-     *
-     * @param locale locale
-     * @return language
-     */
-    static Language language(const QLocale& locale);
-
-    /**
-     * @brief Returns general language code
-     *
-     * @param langCode code
-     * @return language
-     */
-    static Language language(const QString& langCode);
-
-    /**
      * @brief Check if transliteration is supported
      *
-     * @param engine engine
+     * @param engine the engine to use
      * @param lang language
      * @return `true` if the specified engine supports transliteration for specified language
      */
     static bool isSupportTranslation(Engine engine, Language lang);
 
-    /**
-     * Convert language ISO3066 to supported language code
-     */
-    static QString fromISO3066(const QString& langCode3066);
+private:
 
     /**
-     * Return a list of all supported language in ISO3066.
+     * Check for service support
      */
-    static QStringList supportedISO3066();
+    static bool isSupportTranslit(Engine engine, Language lang);
+    static bool isSupportDictionary(Engine engine, Language sourceLang, Language translationLang);
 
-    /**
-     * Return the engine litteral name.
-     */
-    static QString engineName(Engine engine);
+    //@}
 
 Q_SIGNALS:
 
@@ -607,7 +626,7 @@ Q_SIGNALS:
 
 private Q_SLOTS:
 
-    void skipGarbageText();
+    void slotSkipGarbageText();
 
     /**
      * NOTE: Engines have translation limit, so need to split all text into parts and make request sequentially.
@@ -616,12 +635,12 @@ private Q_SLOTS:
      */
 
     //@{
-    /// Google Web service specific methods.
+    /// Google Web service specific methods (donlinetranslator_google.cpp).
 
 private Q_SLOTS:
 
-    void requestGoogleTranslate();
-    void parseGoogleTranslate();
+    void slotRequestGoogleTranslate();
+    void slotParseGoogleTranslate();
 
 private:
 
@@ -631,24 +650,24 @@ private:
     //@}
 
     //@{
-    /// Yandex Web service specific methods.
+    /// Yandex Web service specific methods (donlinetranslator_yandex.cppp).
 
 private Q_SLOTS:
 
-    void requestYandexKey();
-    void parseYandexKey();
+    void slotRequestYandexKey();
+    void slotParseYandexKey();
 
-    void requestYandexTranslate();
-    void parseYandexTranslate();
+    void slotRequestYandexTranslate();
+    void slotParseYandexTranslate();
 
-    void requestYandexSourceTranslit();
-    void parseYandexSourceTranslit();
+    void slotRequestYandexSourceTranslit();
+    void slotParseYandexSourceTranslit();
 
-    void requestYandexTranslationTranslit();
-    void parseYandexTranslationTranslit();
+    void slotRequestYandexTranslationTranslit();
+    void slotParseYandexTranslationTranslit();
 
-    void requestYandexDictionary();
-    void parseYandexDictionary();
+    void slotRequestYandexDictionary();
+    void slotParseYandexDictionary();
 
 private:
 
@@ -664,18 +683,18 @@ private:
     //@}
 
     //@{
-    /// Bing Web service specific methods.
+    /// Bing Web service specific methods (donlinntranslator_bing.cpp).
 
 private Q_SLOTS:
 
-    void requestBingCredentials();
-    void parseBingCredentials();
+    void slotRequestBingCredentials();
+    void slotParseBingCredentials();
 
-    void requestBingTranslate();
-    void parseBingTranslate();
+    void slotRequestBingTranslate();
+    void slotParseBingTranslate();
 
-    void requestBingDictionary();
-    void parseBingDictionary();
+    void slotRequestBingDictionary();
+    void slotParseBingDictionary();
 
 private:
 
@@ -685,15 +704,15 @@ private:
     //@}
 
     //@{
-    /// LibreTranslate Web service specific methods.
+    /// LibreTranslate Web service specific methods ()donlinetranslator_libretr.cpp).
 
 private Q_SLOTS:
 
-    void requestLibreLangDetection();
-    void parseLibreLangDetection();
+    void slotRequestLibreLangDetection();
+    void slotParseLibreLangDetection();
 
-    void requestLibreTranslate();
-    void parseLibreTranslate();
+    void slotRequestLibreTranslate();
+    void slotParseLibreTranslate();
 
 private:
 
@@ -703,12 +722,12 @@ private:
     //@}
 
     //@{
-    /// Lingva Web service specific methods.
+    /// Lingva Web service specific methods (donlinetranslator_lingva.cpp).
 
 private Q_SLOTS:
 
-    void requestLingvaTranslate();
-    void parseLingvaTranslate();
+    void slotRequestLingvaTranslate();
+    void slotParseLingvaTranslate();
 
 private:
 
@@ -735,11 +754,6 @@ private:
 
     void resetData(TranslationError error = NoError, const QString& errorString = QString());
 
-    /**
-     * Check for service support
-     */
-    static bool isSupportTranslit(Engine engine, Language lang);
-    static bool isSupportDictionary(Engine engine, Language sourceLang, Language translationLang);
 
     // Other
 
@@ -763,68 +777,205 @@ private:
 
 private:
 
-    static const QMap<Language, QString>             s_genericLanguageCodes;
-    static const QMap<QString, QString>              s_iso3066LanguageCodes;
+    class Private;
+    Private* const d;
 
-    // Engines have some language codes exceptions
+    friend class DOnlineTts;
+};
 
-    static const QMap<Language, QString>             s_googleLanguageCodes;
-    static const QMap<Language, QString>             s_yandexLanguageCodes;
-    static const QMap<Language, QString>             s_bingLanguageCodes;
-    static const QMap<Language, QString>             s_lingvaLanguageCodes;
+// -------------------------------------------------------------------------------------------
 
-    // Credentials that is parsed from the web version to receive the translation using the API
+/**
+ * @brief Provides TTS URL generation
+ *
+ * Example:
+ * @code
+ *
+ * DOnlineTts tts;
+ * tts.generateUrls(QLatin1String("Hello World!"), DOnlineTranslator::Google, DOnlineTranslator::English);
+ *
+ * // Get list of Urls to play with media player.
+ * QList<QUrl> urls = tts.media();
+ *
+ * @endcode
+ */
+class DIGIKAM_EXPORT DOnlineTts : public QObject
+{
+    Q_OBJECT
+    Q_DISABLE_COPY(DOnlineTts)
 
-    static inline QString                            s_yandexKey;
-    static inline QByteArray                         s_bingKey;
-    static inline QByteArray                         s_bingToken;
-    static inline QString                            s_bingIg;
-    static inline QString                            s_bingIid;
+public:
 
-    // This properties used to store unseful information in states
+    /**
+     * @brief Defines voice to use
+     *
+     * Used only by Yandex.
+     */
+    enum Voice
+    {
+        // All
+        NoVoice = -1,
 
-    static constexpr char                            s_textProperty[]               = "Text";
+        // Yandex
+        Zahar,
+        Ermil,
+        Jane,
+        Oksana,
+        Alyss,
+        Omazh
+    };
+    Q_ENUM(Voice)
 
-    // Engines have a limit of characters per translation request.
-    // If the query is larger, then it should be splited into several with getSplitIndex() helper function
+    /**
+     * @brief Defines emotion to use
+     *
+     * Used only by Yandex.
+     */
+    enum Emotion
+    {
+        // All
+        NoEmotion = -1,
 
-    static constexpr int                             s_googleTranslateLimit         = 5000;
-    static constexpr int                             s_yandexTranslateLimit         = 150;
-    static constexpr int                             s_yandexTranslitLimit          = 180;
-    static constexpr int                             s_bingTranslateLimit           = 5001;
-    static constexpr int                             s_libreTranslateLimit          = 120;
+        // Yandex
+        Neutral,
+        Good,
+        Evil
+    };
+    Q_ENUM(Emotion)
 
-    QStateMachine*                                   m_stateMachine                 = nullptr;
-    QNetworkAccessManager*                           m_networkManager               = nullptr;
-    QPointer<QNetworkReply>                          m_currentReply;
+    /**
+     * @brief Indicates all possible error conditions found during the processing of the URLs generation
+     */
+    enum TtsError
+    {
+        /**
+         * No error condition
+         */
+        NoError,
+        /**
+         * Specified engine does not support TTS
+         */
+        UnsupportedEngine,
+        /**
+         * Unsupported language by specified engine
+         */
+        UnsupportedLanguage,
+        /**
+         * Unsupported voice by specified engine
+         */
+        UnsupportedVoice,
+        /**
+         * Unsupported emotion by specified engine
+         */
+        UnsupportedEmotion,
+    };
+    Q_ENUM(TtsError)
 
-    Language                                         m_sourceLang                   = NoLanguage;
-    Language                                         m_translationLang              = NoLanguage;
-    Language                                         m_uiLang                       = NoLanguage;
-    TranslationError                                 m_error                        = NoError;
+    /**
+     * @brief Create object
+     *
+     * Constructs an object with empty data and with parent.
+     * You can use generateUrls() to create URLs for use in QMediaPlayer.
+     *
+     * @param parent the parent object
+     */
+    explicit DOnlineTts(QObject* const parent = nullptr);
+    ~DOnlineTts() override;
 
-    QString                                          m_source;
-    QString                                          m_sourceTranslit;
-    QString                                          m_sourceTranscription;
-    QString                                          m_translation;
-    QString                                          m_translationTranslit;
-    QString                                          m_errorString;
+    /**
+     * @brief Create TTS urls
+     *
+     * Splits text into parts (engines have a limited number of characters per request) and returns list with the generated API URLs to play.
+     *
+     * @param text the text to speak
+     * @param engine online translation engine
+     * @param lang text language
+     * @param voice the voice to use (used only by Yandex)
+     * @param emotion the emotion to use (used only by Yandex)
+     */
+    void generateUrls(const QString& text,
+                      DOnlineTranslator::Engine engine,
+                      DOnlineTranslator::Language lang,
+                      Voice voice = NoVoice,
+                      Emotion emotion = NoEmotion);
 
-    // Self-hosted engines settings
-    // Can be empty, since free instances ignores api_key parameter
+    /**
+     * @brief Generated media
+     *
+     * @return List of generated URLs
+     */
+    QList<QUrl> media() const;
 
-    QByteArray                                       m_libreApiKey;
-    QString                                          m_libreUrl;
-    QString                                          m_lingvaUrl;
+    /**
+     * @brief Last error
+     *
+     * Error that was found during the generating tts.
+     * If no error was found, returns TtsError::NoError.
+     * The text of the error can be obtained by errorString().
+     *
+     * @return last error
+     */
+    TtsError error() const;
 
-    QMap<QString, QVector<DOnlineTranslatorOption> > m_translationOptions;
+    /**
+     * @brief Last error string
+     *
+     * A human-readable description of the last tts URL generation error that occurred.
+     *
+     * @return last error string
+     */
+    QString errorString() const;
 
-    bool                                             m_sourceTranslitEnabled        = true;
-    bool                                             m_translationTranslitEnabled   = true;
-    bool                                             m_sourceTranscriptionEnabled   = true;
-    bool                                             m_translationOptionsEnabled    = true;
+    /**
+     * @brief Code of the voice
+     *
+     * @param voice the voice to use
+     * @return code for voice
+     */
+    static QString voiceCode(Voice voice);
 
-    bool                                             m_onlyDetectLanguage           = false;
+    /**
+     * @brief Code of the emotion
+     *
+     * Used only by Yandex.
+     *
+     * @param emotion the emotion to use
+     * @return code for emotion
+     */
+    static QString emotionCode(Emotion emotion);
+
+    /**
+     * @brief Emotion from code
+     *
+     * Used only by Yandex.
+     *
+     * @param emotionCode emotion code
+     * @return corresponding emotion
+     */
+    static Emotion emotion(const QString& emotionCode);
+
+    /**
+     * @brief Voice from code
+     *
+     * Used only by Yandex.
+     *
+     * @param voiceCode voice code
+     * @return corresponding voice
+     */
+    static Voice voice(const QString& voiceCode);
+
+private:
+
+    void setError(TtsError error, const QString& errorString);
+
+    QString languageApiCode(DOnlineTranslator::Engine engine, DOnlineTranslator::Language lang);
+    QString voiceApiCode(DOnlineTranslator::Engine engine, Voice voice);
+    QString emotionApiCode(DOnlineTranslator::Engine engine, Emotion emotion);
+
+private:
+
+    class Private;
+    Private* const d;
 };
 
 } // namespace Digikam

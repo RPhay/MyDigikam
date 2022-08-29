@@ -52,7 +52,7 @@ using namespace Sonnet;
 
 // Local includes
 
-#include "spellchecksettings.h"
+#include "localizesettings.h"
 #include "digikam_debug.h"
 
 namespace Digikam
@@ -102,19 +102,19 @@ SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
     d->activeSpellCheck     = new QCheckBox(this);
     d->activeSpellCheck->setText(i18nc("@option:check", "Activate spellcheck in background when entering text"));
 
-    d->spellCheckLabel      = new QLabel(i18nc("@info", "<p>Turn on this option to activate the background spellcheck "
-                                                        "feature on captions, titles, and other text-edit widgets. "
-                                                        "Spellcheck is able to auto-detect the current language used in "
-                                                        "text and will propose alternative with miss-spelled words.</p>"
-                                                        "<p>With entries where alternative language can be specified, the "
-                                                        "contextual language will be used to parse text. Spellcheck "
-                                                        "depends of open-source backends, including necessary dictionaries, "
-                                                        "to operate sentence analysis in desired languages.</p>"), this);
+    d->spellCheckLabel      = new QLabel(xi18nc("@info", "<para>Turn on this option to activate the background spellcheck "
+                                                         "feature on captions, titles, and other text-edit widgets. "
+                                                         "Spellcheck is able to auto-detect the current language used in "
+                                                         "text and will propose alternative with miss-spelled words.</para>"
+                                                         "<para>With entries where alternative language can be specified, the "
+                                                         "contextual language will be used to parse text. Spellcheck "
+                                                         "depends of open-source backends, including necessary dictionaries, "
+                                                         "to operate sentence analysis in desired languages.</para>"), this);
     d->spellCheckLabel->setWordWrap(true);
 
     // ---
 
-    QGroupBox* const dictgroup = new QGroupBox(i18n("Available Language Dictionaries"), this);
+    QGroupBox* const dictgroup = new QGroupBox(i18nc("@title", "Available Language Dictionaries"), this);
     QVBoxLayout* const dictlay = new QVBoxLayout();
     dictgroup->setLayout(dictlay);
 
@@ -135,7 +135,7 @@ SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
 
     // ---
 
-    QGroupBox* const backgroup = new QGroupBox(i18n("Available Backends"), this);
+    QGroupBox* const backgroup = new QGroupBox(i18nc("@title", "Available Backends"), this);
     QVBoxLayout* const backlay = new QVBoxLayout();
     backgroup->setLayout(backlay);
 
@@ -154,23 +154,23 @@ SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
 
     // ---
 
-    QGroupBox* const ignoreWordsGroup = new QGroupBox(i18n("Ignored Words"), this);
+    QGroupBox* const ignoreWordsGroup = new QGroupBox(i18nc("@title", "Ignored Words"), this);
     QGridLayout* const ignoreWordsLay = new QGridLayout();
     ignoreWordsGroup->setLayout(ignoreWordsLay);
 
     d->ignoreWordEdit  = new QLineEdit(this);
     d->ignoreWordEdit->setClearButtonEnabled(true);
-    d->ignoreWordEdit->setPlaceholderText(i18n("Set here a new word to ignore during spellcheck"));
+    d->ignoreWordEdit->setPlaceholderText(i18nc("@info", "Set here a new word to ignore during spellcheck"));
 
     d->ignoreWordsBox = new QListWidget(this);
-    d->ignoreWordsBox->setWhatsThis(i18n("You can add or remove words to ignore "
-                                         "while spell-checking operations."));
+    d->ignoreWordsBox->setWhatsThis(i18nc("@info", "You can add or remove words to ignore "
+                                          "while spell-checking operations."));
 
     d->ignoreWordsBox->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 
-    d->addWordButton = new QPushButton(i18n("&Add..."),  this);
-    d->delWordButton = new QPushButton(i18n("&Remove"),  this);
-    d->repWordButton = new QPushButton(i18n("&Replace"), this);
+    d->addWordButton = new QPushButton(i18nc("@action", "&Add..."),  this);
+    d->delWordButton = new QPushButton(i18nc("@action", "&Remove"),  this);
+    d->repWordButton = new QPushButton(i18nc("@action", "&Replace"), this);
 
     d->addWordButton->setIcon(QIcon::fromTheme(QLatin1String("list-add")));
     d->delWordButton->setIcon(QIcon::fromTheme(QLatin1String("list-remove")));
@@ -230,7 +230,7 @@ SpellCheckConfig::SpellCheckConfig(QWidget* const parent)
     grid->addWidget(dictgroup,           2, 0, 1, 1);
     grid->addWidget(backgroup,           2, 1, 1, 1);
     grid->addWidget(ignoreWordsGroup,    3, 0, 1, 2);
-    grid->setRowStretch(4, 10);
+    grid->setRowStretch(3, 10);
     grid->setColumnStretch(0, 10);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);
@@ -247,14 +247,14 @@ SpellCheckConfig::~SpellCheckConfig()
 
 void SpellCheckConfig::applySettings()
 {
-    SpellCheckSettings* const config = SpellCheckSettings::instance();
+    LocalizeSettings* const config = LocalizeSettings::instance();
 
     if (!config)
     {
         return;
     }
 
-    SpellCheckContainer set;
+    LocalizeContainer set;
 
     set.enableSpellCheck = d->activeSpellCheck->isChecked();
 
@@ -268,19 +268,21 @@ void SpellCheckConfig::applySettings()
 
     set.ignoredWords = ignoredWords;
 
-    config->setSettings(set);
+    qCDebug(DIGIKAM_WIDGETS_LOG) << set;
+
+    config->setSettings(set, LocalizeSettings::SpellCheckConfig);
 }
 
 void SpellCheckConfig::readSettings()
 {
-    SpellCheckSettings* const config = SpellCheckSettings::instance();
+    LocalizeSettings* const config = LocalizeSettings::instance();
 
     if (!config)
     {
         return;
     }
 
-    SpellCheckContainer set          = config->settings();
+    LocalizeContainer set          = config->settings();
 
     d->activeSpellCheck->setChecked(set.enableSpellCheck);
     d->ignoreWordsBox->insertItems(0, set.ignoredWords);

@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "spellchecksettings.h"
+#include "localizesettings.h"
 
 // Qt includes
 
@@ -39,7 +39,7 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN SpellCheckSettings::Private
+class Q_DECL_HIDDEN LocalizeSettings::Private
 {
 public:
 
@@ -49,21 +49,21 @@ public:
     {
     }
 
-    SpellCheckContainer settings;
+    LocalizeContainer settings;
     QMutex              mutex;
 
     const QString       configGroup;
 
 public:
 
-    SpellCheckContainer readFromConfig() const;
+    LocalizeContainer readFromConfig() const;
     void                writeToConfig()  const;
-    void                setSettings(const SpellCheckContainer& s);
+    void                setSettings(const LocalizeContainer& s, LocalizeSettings::ConfigPart config);
 };
 
-SpellCheckContainer SpellCheckSettings::Private::readFromConfig() const
+LocalizeContainer LocalizeSettings::Private::readFromConfig() const
 {
-    SpellCheckContainer s;
+    LocalizeContainer s;
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(configGroup);
     s.readFromConfig(group);
@@ -71,67 +71,95 @@ SpellCheckContainer SpellCheckSettings::Private::readFromConfig() const
     return s;
 }
 
-void SpellCheckSettings::Private::writeToConfig() const
+void LocalizeSettings::Private::writeToConfig() const
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(configGroup);
     settings.writeToConfig(group);
 }
 
-void SpellCheckSettings::Private::setSettings(const SpellCheckContainer& s)
+void LocalizeSettings::Private::setSettings(const LocalizeContainer& s, LocalizeSettings::ConfigPart config)
 {
     QMutexLocker lock(&mutex);
-    settings = s;
+
+    switch (config)
+    {
+        case LocalizeConfig:
+        {
+            settings.translatorEngine = s.translatorEngine;
+            settings.translatorLang   = s.translatorLang;
+            settings.alternativeLang  = s.alternativeLang;
+            break;
+        }
+
+        case SpellCheckConfig:
+        {
+            settings.enableSpellCheck = s.enableSpellCheck;
+            settings.ignoredWords     = s.ignoredWords;
+            break;
+        }
+
+        default:        // AllConfig
+        {
+            settings = s;
+            break;
+        }
+    }
 }
 
 // -----------------------------------------------------------------------------------------------
 
-class Q_DECL_HIDDEN SpellCheckSettingsCreator
+class Q_DECL_HIDDEN LocalizeSettingsCreator
 {
 public:
 
-    SpellCheckSettings object;
+    LocalizeSettings object;
 };
 
-Q_GLOBAL_STATIC(SpellCheckSettingsCreator, speckCheckSettingsCreator)
+Q_GLOBAL_STATIC(LocalizeSettingsCreator, localizeSettingsCreator)
 
 // -----------------------------------------------------------------------------------------------
 
-SpellCheckSettings* SpellCheckSettings::instance()
+LocalizeSettings* LocalizeSettings::instance()
 {
-    return &speckCheckSettingsCreator->object;
+    return &localizeSettingsCreator->object;
 }
 
-SpellCheckSettings::SpellCheckSettings()
+LocalizeSettings::LocalizeSettings()
     : d(new Private)
 {
     readFromConfig();
-    qRegisterMetaType<SpellCheckContainer>("SpellCheckContainer");
+    qRegisterMetaType<LocalizeContainer>("LocalizeContainer");
 }
 
-SpellCheckSettings::~SpellCheckSettings()
+LocalizeSettings::~LocalizeSettings()
 {
     delete d;
 }
 
-SpellCheckContainer SpellCheckSettings::settings() const
+void LocalizeSettings::openLocalizeSetup()
+{
+    Q_EMIT signalOpenLocalizeSetup();
+}
+
+LocalizeContainer LocalizeSettings::settings() const
 {
     QMutexLocker lock(&d->mutex);
-    SpellCheckContainer s(d->settings);
+    LocalizeContainer s(d->settings);
 
     return s;
 }
 
-void SpellCheckSettings::setSettings(const SpellCheckContainer& settings)
+void LocalizeSettings::setSettings(const LocalizeContainer& settings, ConfigPart config)
 {
-    d->setSettings(settings);
+    d->setSettings(settings, config);
 
     Q_EMIT signalSettingsChanged();
 
     d->writeToConfig();
 }
 
-void SpellCheckSettings::readFromConfig()
+void LocalizeSettings::readFromConfig()
 {
     d->settings = d->readFromConfig();
 
@@ -140,4 +168,4 @@ void SpellCheckSettings::readFromConfig()
 
 } // namespace Digikam
 
-#include "moc_spellchecksettings.cpp"
+#include "moc_localizesettings.cpp"

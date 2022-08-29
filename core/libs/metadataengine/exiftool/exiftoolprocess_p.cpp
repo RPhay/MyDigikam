@@ -171,7 +171,7 @@ void ExifToolProcess::Private::setProcessErrorAndEmit(QProcess::ProcessError err
     processError = error;
     errorString  = description;
 
-    Q_EMIT pp->signalErrorOccurred(cmdRunning, cmdAction, error);
+    Q_EMIT pp->signalErrorOccurred(cmdRunning, cmdAction, error, description);
 }
 
 } // namespace Digikam

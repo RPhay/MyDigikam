@@ -185,6 +185,16 @@ ShowfotoSetupMetadata::~ShowfotoSetupMetadata()
     delete d;
 }
 
+void ShowfotoSetupMetadata::setActiveTab(MetadataTab tab)
+{
+    d->tab->setCurrentIndex(tab);
+}
+
+ShowfotoSetupMetadata::MetadataTab ShowfotoSetupMetadata::activeTab() const
+{
+    return (MetadataTab)d->tab->currentIndex();
+}
+
 void ShowfotoSetupMetadata::applySettings()
 {
     MetaEngineSettings* const mSettings = MetaEngineSettings::instance();
@@ -218,11 +228,6 @@ void ShowfotoSetupMetadata::readSettings()
     d->exifRotateBox->setChecked(set.exifRotate);
     d->exifSetOrientationBox->setChecked(set.exifSetOrientation);
     d->exifToolView->setExifToolDirectory(set.exifToolPath);
-}
-
-void ShowfotoSetupMetadata::setActiveTab(MetadataTab tab)
-{
-    d->tab->setCurrentIndex(tab);
 }
 
 } // namespace ShowFoto

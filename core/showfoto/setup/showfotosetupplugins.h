@@ -49,6 +49,9 @@ public:
     explicit ShowfotoSetupPlugins(QWidget* const parent = nullptr);
     ~ShowfotoSetupPlugins() override;
 
+    void setActiveTab(PluginTab tab);
+    PluginTab activeTab() const;
+
     void applySettings();
 
 private:
