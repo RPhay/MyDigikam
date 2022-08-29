@@ -4,9 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2022-08-01
- * Description : Two text edit widgets with spell checker capabilities based on KF5::Sonnet (optional).
- *               Widgets can be also limited to a number of lines to show text.
- *               A single line constraint will mimic QLineEdit. See setLinesVisible() for details.
+ * Description : Text edit widgets with spellcheck support and edition limitations.
  *
  * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
