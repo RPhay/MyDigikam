@@ -42,7 +42,7 @@ class LocalizeContainer;
 /**
  * A text edit widget based on QTextEdit with spell checker capabilities based on KF5::Sonnet (optional).
  * Widget size can be constrained with the number of visible lines.
- * A single line constraint will mimic QLineEdit. See setLinesVisible() for details.
+ * A single line constraint will emulate QLineEdit. See setLinesVisible() for details.
  * The maximum number of characters can be limited with setMaxLenght().
  * The characters can be limited in editor by setIgnoredCharacters() and setAcceptedCharacters().
  * Implementation: dtextedit.cpp
@@ -84,7 +84,7 @@ public:
      * This property holds whether the edit widget displays a clear button when it is not empty.
      * If enabled, the edit widget displays a trailing clear button when it contains some text,
      * otherwise the edit widget does not show a clear button.
-     * This option only take effect in QLinEdit emulation mode when lines visible is set to 1.
+     * This option only take effect in QLineEdit emulation mode when lines visible is set to 1.
      * See setLinesVisible() for details.
      */
     bool  isClearButtonEnabled() const;
@@ -176,6 +176,10 @@ private:
 
 /**
  * A text edit widget based on QPlainTextEdit with spell checker capabilities based on KF5::Sonnet (optional).
+ * Widget size can be constrained with the number of visible lines.
+ * A single line constraint will emulate QLineEdit. See setLinesVisible() for details.
+ * The maximum number of characters can be limited with setMaxLenght().
+ * The characters can be limited in editor by setIgnoredCharacters() and setAcceptedCharacters().
  * Implementation: dplaintextedit.cpp
  */
 class DIGIKAM_EXPORT DPlainTextEdit : public QPlainTextEdit
@@ -215,6 +219,8 @@ public:
      * This property holds whether the edit widget displays a clear button when it is not empty.
      * If enabled, the edit widget displays a trailing clear button when it contains some text,
      * otherwise the edit widget does not show a clear button.
+     * This option only take effect in QLineEdit emulation mode when lines visible is set to 1.
+     * See setLinesVisible() for details.
      */
     bool  isClearButtonEnabled() const;
     void  setClearButtonEnabled(bool enable);
@@ -238,7 +244,7 @@ public:
     /**
      * Helper methods to handle visible lines used by the widget to show text.
      * Lines must be superior or egal to 1 to apply a size constraint.
-     * Notes: if a single visible line is used, the widget mimic QLineEdit.
+     * Notes: if a single visible line is used, the widget emulate QLineEdit.
      *        a null value do not apply a size constraint.
      */
     void setLinesVisible(unsigned int lines);
