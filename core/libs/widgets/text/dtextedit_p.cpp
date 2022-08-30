@@ -92,7 +92,7 @@ void DTextEdit::Private::init(DTextEdit* const parent)
     QObject::connect(parent, &QTextEdit::textChanged,
                      parent, [=]()
         {
-            if (clearBtnEnable)
+            if (clearBtnEnable && (lines == 1))
             {
                 clrBtn->setVisible(!parent->text().isEmpty());
             }
@@ -149,7 +149,7 @@ void DPlainTextEdit::Private::init(DPlainTextEdit* const parent)
     QObject::connect(parent, &QPlainTextEdit::textChanged,
                      parent, [=]()
         {
-            if (clearBtnEnable)
+            if (clearBtnEnable && (lines == 1))
             {
                 clrBtn->setVisible(!parent->text().isEmpty());
             }

@@ -84,6 +84,8 @@ public:
      * This property holds whether the edit widget displays a clear button when it is not empty.
      * If enabled, the edit widget displays a trailing clear button when it contains some text,
      * otherwise the edit widget does not show a clear button.
+     * This option only take effect in QLinEdit emulation mode when lines visible is set to 1.
+     * See setLinesVisible() for details.
      */
     bool  isClearButtonEnabled() const;
     void  setClearButtonEnabled(bool enable);
@@ -107,7 +109,7 @@ public:
     /**
      * Helper methods to handle visible lines used by the widget to show text.
      * Lines must be superior or egal to 1 to apply a size constraint.
-     * Notes: if a single visible line is used, the widget mimic QLineEdit.
+     * Notes: if a single visible line is used, the widget will emulate QLineEdit.
      *        a null value do not apply a size constraint.
      */
     void setLinesVisible(unsigned int lines);
