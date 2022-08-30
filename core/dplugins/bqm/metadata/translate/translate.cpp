@@ -176,7 +176,7 @@ void Translate::slotAssignSettings2Widget()
     d->usageTermsCB->setChecked(settings()[QLatin1String("UsageTerms")].toBool());
 
     QString lang = settings()[QLatin1String("TrLang")].toString();
-    d->trComboBox->setCurrentIndex(d->trComboBox->findData(lang));
+    d->trComboBox->setCurrentIndex(d->trComboBox->findText(lang));
 
     d->changeSettings = true;
 }
@@ -187,12 +187,11 @@ void Translate::slotSettingsChanged()
     {
         BatchToolSettings settings;
 
-        settings.insert(QLatin1String("RemoveExif"), d->removeExif->isChecked());
-        settings.insert(QLatin1String("RemoveIptc"), d->removeIptc->isChecked());
-        settings.insert(QLatin1String("RemoveXmp"),  d->removeXmp->isChecked());
-        settings.insert(QLatin1String("ExifData"),   d->exifComboBox->currentData().toInt());
-        settings.insert(QLatin1String("IptcData"),   d->iptcComboBox->currentData().toInt());
-        settings.insert(QLatin1String("XmpData" ),   d->xmpComboBox->currentData().toInt());
+        settings.insert(QLatin1String("Title"),       d->titleCB->isChecked());
+        settings.insert(QLatin1String("Caption"),     d->captionCB->isChecked());
+        settings.insert(QLatin1String("Copyrights"),  d->copyrightsCB->isChecked());
+        settings.insert(QLatin1String("UsageTerms"),  d->usageTermsCB->isChecked());
+        settings.insert(QLatin1String("trLang"),      d->trComboBox->currentText());
 
         BatchTool::slotSettingsChanged(settings);
     }
@@ -200,12 +199,6 @@ void Translate::slotSettingsChanged()
 
 bool Translate::toolOperations()
 {
-    if (!isLastChainedTool())
-    {
-        setErrorDescription(i18nc("@info", "Remove Metadata: Not the last tool in the list."));
-        return false;
-    }
-
     bool ret = true;
     QScopedPointer<DMetadata> meta(new DMetadata);
 
@@ -225,40 +218,15 @@ bool Translate::toolOperations()
         meta->setData(image().getMetadata());
     }
 
-    bool removeExif = settings()[QLatin1String("RemoveExif")].toBool();
-    bool removeIptc = settings()[QLatin1String("RemoveIptc")].toBool();
-    bool removeXmp  = settings()[QLatin1String("RemoveXmp")].toBool();
+    bool titleAc       = settings()[QLatin1String("Title")].toBool();
+    bool captionAc     = settings()[QLatin1String("Caption")].toBool();
+    bool copyrightsAc  = settings()[QLatin1String("Copyrights")].toBool();
+    bool usageTermsAc  = settings()[QLatin1String("UsageTerms")].toBool();
+    QString trLang     = settings()[QLatin1String("TrLAng")].toString();
 
-    int exifData    = settings()[QLatin1String("ExifData")].toInt();
-    int iptcData    = settings()[QLatin1String("IptcData")].toInt();
-    int xmpData     = settings()[QLatin1String("XmpData")].toInt();
-
-    if (removeExif)
+    if (titleAc)
     {
-        if      (exifData == Private::ALL)
-        {
-            meta->clearExif();
-        }
-        else if (exifData == Private::DATE)
-        {
-            meta->removeExifTag("Exif.Image.DateTime");
-            meta->removeExifTag("Exif.Image.PreviewDateTime");
-            meta->removeExifTag("Exif.Photo.DateTimeOriginal");
-            meta->removeExifTag("Exif.Photo.DateTimeDigitized");
-        }
-        else if (exifData == Private::GPS)
-        {
-            meta->removeExifTags(QStringList() << QLatin1String("GPSInfo"));
-        }
-        else if (exifData == Private::XPKEYWORDS)
-        {
-            meta->removeExifTag("Exif.Image.XPKeywords");
-        }
-        else if (exifData == Private::COMMENT)
-        {
-            meta->removeExifTag("Exif.Image.ImageDescription");
-            meta->removeExifTag("Exif.Photo.UserComment");
-        }
+        
     }
 
     if (removeIptc)
@@ -335,6 +303,60 @@ bool Translate::toolOperations()
     }
 
     return ret;
+}
+
+QString Translate::translate(const QString& text, const QString& trCode)
+{
+    DOnlineTranslator* const trengine   = new DOnlineTranslator;
+    DOnlineTranslator::Language srcLang = DOnlineTranslator::Auto;
+    DOnlineTranslator::Language trLang  = DOnlineTranslator::language(DOnlineTranslator::fromRFC3066(LocalizeSettings::instance()->settings().translatorEngine, trCode));
+
+    qCDebug(DIGIKAM_WIDGETS_LOG) << "Request to translate with Web-service:";
+    qCDebug(DIGIKAM_WIDGETS_LOG) << "Text to translate        :" << text;
+    qCDebug(DIGIKAM_WIDGETS_LOG) << "To target language       :" << trLang;
+    qCDebug(DIGIKAM_WIDGETS_LOG) << "With source language     :" << srcLang;
+
+    trengine->translate(text,                                                            // String to translate
+                        LocalizeSettings::instance()->settings().translatorEngine,       // Web service
+                        trLang,                                                          // Target language
+                        srcLang,                                                         // Source langage
+                        DOnlineTranslator::Auto);
+}
+
+void AltLangStrEdit::slotTranslationFinished()
+{
+    setDisabled(false);
+
+    if (d->trengine->error() == DOnlineTranslator::NoError)
+    {
+        if (d->trCode.isEmpty())
+        {
+            return;
+        }
+
+        QString translation = d->trengine->translation();
+        qCDebug(DIGIKAM_WIDGETS_LOG) << "Text translated          :" << translation;
+
+        MetaEngine::AltLangMap vals = values();
+        vals.insert(d->trCode, translation);
+        setValues(vals);
+
+        Q_EMIT signalValueAdded(d->trCode, translation);
+
+        d->languageCB->setCurrentText(d->trCode);
+        d->trCode.clear();
+    }
+    else
+    {
+        qCDebug(DIGIKAM_WIDGETS_LOG) << "Translation Error       :" << d->trengine->error();
+
+        QMessageBox::information(qApp->activeWindow(),
+                                 i18nc("@info", "Failed to translate string with %1 Web-service",
+                                 DOnlineTranslator::engineName(LocalizeSettings::instance()->settings().translatorEngine)),
+                                 i18nc("@info", "Error message: %1",
+                                 d->trengine->errorString()));
+
+    }
 }
 
 } // namespace DigikamBqmTranslatePlugin

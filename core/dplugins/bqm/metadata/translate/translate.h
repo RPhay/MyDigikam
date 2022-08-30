@@ -40,7 +40,7 @@ class Translate : public BatchTool
 public:
 
     explicit Translate(QObject* const parent = nullptr);
-    ~Translate()                                       override;
+    ~Translate()                                            override;
 
     BatchToolSettings defaultSettings()                     override;
 
