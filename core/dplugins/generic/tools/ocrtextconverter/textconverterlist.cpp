@@ -52,7 +52,6 @@ TextConverterList::TextConverterList(QWidget* const parent)
 
     listView()->setColumn(static_cast<DItemsListView::ColumnType>(RECOGNIZEDWORDS), i18n("Recognized Words"),  true);
     listView()->setColumn(static_cast<DItemsListView::ColumnType>(TARGETFILENAME),  i18n("Target File"),       true);
-    listView()->setColumn(static_cast<DItemsListView::ColumnType>(IDENTIFICATION),  i18n("Camera"),            true);
     listView()->setColumn(static_cast<DItemsListView::ColumnType>(STATUS),          i18n("Status"),            true);
 }
 
@@ -164,7 +163,6 @@ TextConverterListViewItem::~TextConverterListViewItem()
     delete d;
 }
 
-
 void TextConverterListViewItem::setDestFileName(const QString& str)
 {
     d->destFileName = str;
@@ -187,27 +185,10 @@ QString TextConverterListViewItem::recognizedWords() const
     return d->recognizedWords;
 }
 
-
-void TextConverterListViewItem::setIdentity(const QString& str)
-{
-    d->identity = str;
-    setText(TextConverterList::IDENTIFICATION, d->identity);
-}
-
-QString TextConverterListViewItem::identity() const
-{
-    return d->identity;
-}
-
 void TextConverterListViewItem::setStatus(const QString& str)
 {
     d->status = str;
     setText(TextConverterList::STATUS, d->status);
-}
-
-QString TextConverterListViewItem::destPath() const
-{
-    return (QDir::fromNativeSeparators(QFileInfo(url().toLocalFile()).path() + QLatin1String("/") + destFileName()));
 }
 
 } // namespace DigikamGenericTextConverterPlugin

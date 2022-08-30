@@ -53,7 +53,6 @@ public:
         RECOGNIZEDWORDS      = DItemsListView::User1,
         TARGETFILENAME       = DItemsListView::User2,
         STATUS               = DItemsListView::User3,
-        IDENTIFICATION       = DItemsListView::User4
     };
 
 public:
@@ -84,15 +83,10 @@ public:
     void setDestFileName(const QString& str);
     QString destFileName()  const;
 
-    void setIdentity(const QString& str);
-    QString identity()      const;
-
     void setRecognizedWords(const QString& str);
     QString recognizedWords()      const;
 
     void setStatus(const QString& str);
-
-    QString destPath()      const;
 
 private:
 

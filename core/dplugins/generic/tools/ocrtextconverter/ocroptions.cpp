@@ -54,6 +54,7 @@ QMap<OcrOptions::PageSegmentationModes, QString> OcrOptions::psmNames()
 {
     QMap<PageSegmentationModes, QString> psm;
 
+    psm[OcrOptions::PageSegmentationModes::OSD_ONLY]                                  = i18nc("@info","OSD only.");
     psm[OcrOptions::PageSegmentationModes::AUTO_WITH_OSD]                             = i18nc("@info","Automatic with OSD.");
     psm[OcrOptions::PageSegmentationModes::AUTO_WITH_NO_OSD]                          = i18nc("@info","Automatic no OSD.");
     psm[OcrOptions::PageSegmentationModes::DEFAULT]                                   = i18nc("@info","Default.");
