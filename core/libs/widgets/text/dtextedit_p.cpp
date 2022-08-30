@@ -81,12 +81,18 @@ void DTextEdit::Private::init(DTextEdit* const parent)
 
     parent->setLinesVisible(lines);
 
+    clrBtn = new DTextEditClearButton(parent);
+    parent->setCornerWidget(clrBtn);
+
+    connect(clrBtn, &DTextEditClearButton::clicked,
+            parent, &QTextEdit::clear);
+
     // Mimic QLineEdit
 
     QObject::connect(parent, &QTextEdit::textChanged,
                      parent, [=]()
         {
-            if (lines == 1)
+            if (clearBtnEnable)
             {
                 clrBtn->setVisible(!parent->text().isEmpty());
             }
@@ -132,12 +138,18 @@ void DPlainTextEdit::Private::init(DPlainTextEdit* const parent)
 
     parent->setLinesVisible(lines);
 
+    clrBtn = new DTextEditClearButton(parent);
+    parent->setCornerWidget(clrBtn);
+
+    connect(clrBtn, &DTextEditClearButton::clicked,
+            parent, &QPlainTextEdit::clear);
+
     // Mimic QLineEdit
 
     QObject::connect(parent, &QPlainTextEdit::textChanged,
                      parent, [=]()
         {
-            if (lines == 1)
+            if (clearBtnEnable)
             {
                 clrBtn->setVisible(!parent->text().isEmpty());
             }

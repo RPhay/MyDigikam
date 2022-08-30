@@ -81,6 +81,14 @@ public:
     void setText(const QString& text);
 
     /**
+     * This property holds whether the edit widget displays a clear button when it is not empty.
+     * If enabled, the edit widget displays a trailing clear button when it contains some text,
+     * otherwise the edit widget does not show a clear button.
+     */
+    bool  isClearButtonEnabled() const;
+    void  setClearButtonEnabled(bool enable);
+
+    /**
      * Helper methods to handle the mask of ignored characters in text editor.
      * The mask of characters is passed as string (ex: "+/!()").
      * By default the mask is empty.
@@ -200,6 +208,14 @@ public:
      */
     QString text() const;
     void setText(const QString& text);
+
+    /**
+     * This property holds whether the edit widget displays a clear button when it is not empty.
+     * If enabled, the edit widget displays a trailing clear button when it contains some text,
+     * otherwise the edit widget does not show a clear button.
+     */
+    bool  isClearButtonEnabled() const;
+    void  setClearButtonEnabled(bool enable);
 
     /**
      * Helper methods to handle the mask of ignored characters in text editor.

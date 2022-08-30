@@ -54,6 +54,16 @@ DPlainTextEdit::~DPlainTextEdit()
     delete d;
 }
 
+bool DPlainTextEdit::isClearButtonEnabled() const
+{
+    return d->clearBtnEnable;
+}
+
+void DPlainTextEdit::setClearButtonEnabled(bool enable)
+{
+    d->clearBtnEnable = enable;
+}
+
 void DPlainTextEdit::setLinesVisible(unsigned int lines)
 {
     if (lines == 0)
@@ -79,11 +89,6 @@ void DPlainTextEdit::setLinesVisible(unsigned int lines)
         setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
         verticalScrollBar()->setFixedHeight(0);
-        d->clrBtn = new DTextEditClearButton(this);
-        setCornerWidget(d->clrBtn);
-
-        connect(d->clrBtn, SIGNAL(clicked()),
-                this, SLOT(clear()));
     }
 }
 

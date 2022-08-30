@@ -106,13 +106,15 @@ public:
     QString                      ignoredMask;               ///< Mask of ignored characters in text editor.
     QString                      acceptedMask;              ///< Mask of accepted characters in text editor.
 
-    unsigned int                 lines        = 3;
+    unsigned int                 lines          = 3;
 
-    DTextEditClearButton*        clrBtn       = nullptr;
+    DTextEditClearButton*        clrBtn         = nullptr;
 
     LocalizeContainer            container;                 ///< Spell checking settings container.
 
-    int                          maxLength    = 0;
+    int                          maxLength      = 0;
+
+    bool                         clearBtnEnable = true;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -139,13 +141,15 @@ public:
     QString                      ignoredMask;               ///< Mask of ignored characters in text editor.
     QString                      acceptedMask;              ///< Mask of accepted characters in text editor.
 
-    unsigned int                 lines        = 3;
+    unsigned int                 lines          = 3;
 
-    DTextEditClearButton*        clrBtn       = nullptr;
+    DTextEditClearButton*        clrBtn         = nullptr;
 
     LocalizeContainer            container;                 ///< Spell checking settings container.
 
-    int                          maxLength    = 0;
+    int                          maxLength      = 0;
+
+    bool                         clearBtnEnable = true;
 };
 
 } // namespace Digikam

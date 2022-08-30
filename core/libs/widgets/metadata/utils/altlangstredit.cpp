@@ -58,6 +58,7 @@ AltLangStrEdit::AltLangStrEdit(QWidget* const parent, unsigned int lines)
 
     d->valueEdit       = new DTextEdit(lines, this);
     d->valueEdit->setAcceptRichText(false);
+    d->valueEdit->setClearButtonEnabled(false);
 
     // --------------------------------------------------------
 
