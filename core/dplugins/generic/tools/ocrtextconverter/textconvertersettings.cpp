@@ -206,9 +206,6 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
 
     connect(d->ocrTesseractOEMMode, SIGNAL(activated(int)),
             this, SIGNAL(signalSettingsChanged()));
-
-
-    // ------------------------------------------------------------------------
 }
 
 TextConverterSettings::~TextConverterSettings()

@@ -452,7 +452,6 @@ void TextConverterDialog::slotStartStop()
 
             if (item)
             {
-                qDebug() << item->url().path();
                 d->fileList.append(item->url());
             }
         }
