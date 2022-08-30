@@ -405,7 +405,7 @@ void INatWindow::switchUser(bool restoreToken)
     connect(dlg, SIGNAL(signalApiToken(QString,QList<QNetworkCookie>)),
             d->talker, SLOT(slotApiToken(QString,QList<QNetworkCookie>)));
 
-    dlg->exec();
+    (void)dlg->exec();
 }
 
 void INatWindow::slotApiTokenExpires()
@@ -963,7 +963,7 @@ void INatWindow::slotNearbyPlaces(const QStringList& places)
     QString selected = d->placesComboBox->currentText();
     d->placesComboBox->clear();
 
-    for (auto place : d->editedPlaces)
+    for (auto& place : d->editedPlaces)
     {
         d->placesComboBox->addItem(place);
 
@@ -975,7 +975,7 @@ void INatWindow::slotNearbyPlaces(const QStringList& places)
         }
     }
 
-    for (auto place : places)
+    for (auto& place : places)
     {
         d->placesComboBox->addItem(place);
 
@@ -1054,7 +1054,7 @@ void INatWindow::slotImageListChanged()
 
     DItemsListView* const listView = d->widget->d->imglst->listView();
 
-    for (auto url : d->imglst->imageUrls())
+    for (auto& url : d->imglst->imageUrls())
     {
         if (url.isEmpty())
         {

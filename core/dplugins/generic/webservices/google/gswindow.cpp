@@ -703,7 +703,7 @@ void GSWindow::uploadNextPhoto()
                         QPointer<ReplaceDialog> dlg = new ReplaceDialog(this, QLatin1String(""),
                                                                         d->iface, pathComments.first,
                                                                         info.thumbURL);
-                        dlg->exec();
+                        (void)dlg->exec();
 
                         switch (dlg->getResult())
                         {
