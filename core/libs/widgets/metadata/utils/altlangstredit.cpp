@@ -274,7 +274,7 @@ void AltLangStrEdit::populateLangAltListEntries()
     // ...and now, all the rest...
 
     LocalizeContainer set = LocalizeSettings::instance()->settings();
-    QStringList lang        = set.alternativeLang;
+    QStringList lang      = set.alternativeLang;
 
     Q_FOREACH (const QString& lg, lang)
     {

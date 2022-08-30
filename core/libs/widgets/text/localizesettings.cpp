@@ -50,15 +50,15 @@ public:
     }
 
     LocalizeContainer settings;
-    QMutex              mutex;
+    QMutex            mutex;
 
-    const QString       configGroup;
+    const QString     configGroup;
 
 public:
 
     LocalizeContainer readFromConfig() const;
-    void                writeToConfig()  const;
-    void                setSettings(const LocalizeContainer& s, LocalizeSettings::ConfigPart config);
+    void              writeToConfig()  const;
+    void              setSettings(const LocalizeContainer& s, LocalizeSettings::ConfigPart config);
 };
 
 LocalizeContainer LocalizeSettings::Private::readFromConfig() const

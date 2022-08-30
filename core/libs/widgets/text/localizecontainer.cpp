@@ -73,7 +73,8 @@ void LocalizeContainer::readFromConfig(KConfigGroup& group)
                                                                        << QLatin1String("pt-PT")
     );
 
-    alternativeLang  = group.readEntry("AlternativeLang", QStringList() << QLatin1String("en-US")
+    alternativeLang  = group.readEntry("AlternativeLang", QStringList() << QLatin1String("x-default")
+                                                                        << QLatin1String("en-US")
                                                                         << QLatin1String("fr-FR")
                                                                         << QLatin1String("es-ES")
                                                                         << QLatin1String("it-IT")
