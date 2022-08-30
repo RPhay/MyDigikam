@@ -23,6 +23,10 @@
 
 #include "ocroptions.h"
 
+// Local includes
+
+#include <klocalizedstring.h>
+
 namespace Digikam
 {
 
@@ -38,9 +42,9 @@ QMap<OcrOptions::Languages, QString> OcrOptions::languagesNames()
 {
     QMap<OcrOptions::Languages, QString> languages;
 
-    languages[OcrOptions::Languages::DEFAULT]                                         = QString::fromLatin1("Default");
-    languages[OcrOptions::Languages::ENG]                                             = QString::fromLatin1("english");
-    languages[OcrOptions::Languages::OSD]                                             = QString::fromLatin1("osd");
+    languages[OcrOptions::Languages::DEFAULT]                                         = i18nc("@info","Default");
+    languages[OcrOptions::Languages::ENG]                                             = i18nc("@info","english");
+    languages[OcrOptions::Languages::OSD]                                             = i18nc("@info","osd");
 
     return languages;
 }
@@ -50,20 +54,19 @@ QMap<OcrOptions::PageSegmentationModes, QString> OcrOptions::psmNames()
 {
     QMap<PageSegmentationModes, QString> psm;
 
-    psm[OcrOptions::PageSegmentationModes::OSD_ONLY]                                  = QLatin1String("OSD only.");
-    psm[OcrOptions::PageSegmentationModes::AUTO_WITH_OSD]                             = QLatin1String("Automatic with OSD.");
-    psm[OcrOptions::PageSegmentationModes::AUTO_WITH_NO_OSD]                          = QLatin1String("Automatic no OSD.");
-    psm[OcrOptions::PageSegmentationModes::DEFAULT]                                   = QLatin1String("Default.");
-    psm[OcrOptions::PageSegmentationModes::SINGLE_COL_TEXT_OF_VAR_SIZE]               = QLatin1String("Column of text.");
-    psm[OcrOptions::PageSegmentationModes::SINGLE_UNIFORM_BLOCK_OF_VERTICALLY_TEXT]   = QLatin1String("Block of vertically aligned text.");
-    psm[OcrOptions::PageSegmentationModes::SINGLE_UNIFORM_BLOCK_TEXT]                 = QLatin1String("Block of text.");
-    psm[OcrOptions::PageSegmentationModes::SINGLE_TEXT_LINE]                          = QLatin1String("Single text line.");
-    psm[OcrOptions::PageSegmentationModes::SINGLE_WORD]                               = QLatin1String("Single word.");
-    psm[OcrOptions::PageSegmentationModes::SINGLE_WORD_IN_CIRCLE]                     = QLatin1String("Single word in a circle.");
-    psm[OcrOptions::PageSegmentationModes::SINGLE_CHARACTER]                          = QLatin1String("Single character.");
-    psm[OcrOptions::PageSegmentationModes::SPARSE_TEXT]                               = QLatin1String("Sparse text.");
-    psm[OcrOptions::PageSegmentationModes::SPARSE_WITH_OSD]                           = QLatin1String("Sparse text with OSD.");
-    psm[OcrOptions::PageSegmentationModes::RAW_LINE]                                  = QLatin1String("Raw line.");
+    psm[OcrOptions::PageSegmentationModes::AUTO_WITH_OSD]                             = i18nc("@info","Automatic with OSD.");
+    psm[OcrOptions::PageSegmentationModes::AUTO_WITH_NO_OSD]                          = i18nc("@info","Automatic no OSD.");
+    psm[OcrOptions::PageSegmentationModes::DEFAULT]                                   = i18nc("@info","Default.");
+    psm[OcrOptions::PageSegmentationModes::SINGLE_COL_TEXT_OF_VAR_SIZE]               = i18nc("@info","Column of text.");
+    psm[OcrOptions::PageSegmentationModes::SINGLE_UNIFORM_BLOCK_OF_VERTICALLY_TEXT]   = i18nc("@info","Block of vertically aligned text.");
+    psm[OcrOptions::PageSegmentationModes::SINGLE_UNIFORM_BLOCK_TEXT]                 = i18nc("@info","Block of text.");
+    psm[OcrOptions::PageSegmentationModes::SINGLE_TEXT_LINE]                          = i18nc("@info","Single text line.");
+    psm[OcrOptions::PageSegmentationModes::SINGLE_WORD]                               = i18nc("@info","Single word.");
+    psm[OcrOptions::PageSegmentationModes::SINGLE_WORD_IN_CIRCLE]                     = i18nc("@info","Single word in a circle.");
+    psm[OcrOptions::PageSegmentationModes::SINGLE_CHARACTER]                          = i18nc("@info","Single character.");
+    psm[OcrOptions::PageSegmentationModes::SPARSE_TEXT]                               = i18nc("@info","Sparse text.");
+    psm[OcrOptions::PageSegmentationModes::SPARSE_WITH_OSD]                           = i18nc("@info","Sparse text with OSD.");
+    psm[OcrOptions::PageSegmentationModes::RAW_LINE]                                  = i18nc("@info","Raw line.");
 
     return psm;
 }
@@ -74,10 +77,10 @@ QMap<OcrOptions::EngineModes, QString> OcrOptions::oemNames()
 {
     QMap<EngineModes, QString> oem;
 
-    oem[OcrOptions::EngineModes::LEGACY_ENGINE_ONLY]                                 = QLatin1String("Legacy engine only.");
-    oem[OcrOptions::EngineModes::NEURAL_NETS_LSTM_ONLY]                              = QLatin1String("LSTM engine only.");
-    oem[OcrOptions::EngineModes::LEGACY_LSTM_ENGINES]                                = QLatin1String("Legacy + LSTM .");
-    oem[OcrOptions::EngineModes::DEFAULT]                                            = QLatin1String("Default.");
+    oem[OcrOptions::EngineModes::LEGACY_ENGINE_ONLY]                                 = i18nc("@info","Legacy engine only.");
+    oem[OcrOptions::EngineModes::NEURAL_NETS_LSTM_ONLY]                              = i18nc("@info","LSTM engine only.");
+    oem[OcrOptions::EngineModes::LEGACY_LSTM_ENGINES]                                = i18nc("@info","Legacy + LSTM .");
+    oem[OcrOptions::EngineModes::DEFAULT]                                            = i18nc("@info","Default.");
 
     return oem;
 }
