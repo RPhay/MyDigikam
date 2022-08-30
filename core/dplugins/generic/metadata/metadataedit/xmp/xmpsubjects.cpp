@@ -43,6 +43,7 @@ XMPSubjects::XMPSubjects(QWidget* const parent)
     // - '*' (\x2A)
     // - ':' (\x3A)
     // - '?' (\x3F)
+
     QRegularExpression subjectRx(QLatin1String("[^*:?]+$"));
     QValidator* const subjectValidator = new QRegularExpressionValidator(subjectRx, this);
 
@@ -68,19 +69,20 @@ XMPSubjects::XMPSubjects(QWidget* const parent)
                                  "are the English language reference versions. "
                                  "This field is limited to 8 digit code."));
 
-    m_nameEdit->setValidator(subjectValidator);
+    m_nameEdit->setIgnoredCharacters(QLatin1String("*:?"));
     m_nameEdit->setWhatsThis(i18n("Enter here the Subject Name. English language is used "
                                   "if you selected a standard XMP/NAA reference code."));
 
-    m_matterEdit->setValidator(subjectValidator);
+    m_matterEdit->setIgnoredCharacters(QLatin1String("*:?"));
     m_matterEdit->setWhatsThis(i18n("Enter here the Subject Matter Name. English language is used "
                                     "if you selected a standard XMP/NAA reference code."));
 
-    m_detailEdit->setValidator(subjectValidator);
+    m_detailEdit->setIgnoredCharacters(QLatin1String("*:?"));
     m_detailEdit->setWhatsThis(i18n("Enter here the Subject Detail Name. English language is used "
                                     "if you selected a standard XMP/NAA reference code."));
 
     // reset the note label, not used in XMP view
+
     delete m_note;
 
     m_subjectsCheck->setVisible(true);
@@ -101,9 +103,11 @@ void XMPSubjects::applyMetadata(const DMetadata& meta)
     QStringList newSubjects = subjectsList();
 
     // We remove in first all existing subjects.
+
     meta.removeXmpTag("Xmp.iptc.SubjectCode");
 
     // And add new list if necessary.
+
     if (m_subjectsCheck->isChecked())
     {
         meta.setXmpSubjects(newSubjects);

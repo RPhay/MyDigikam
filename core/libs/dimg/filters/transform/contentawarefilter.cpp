@@ -195,7 +195,7 @@ ContentAwareFilter::ContentAwareFilter(DImg* const orgImage, QObject* const pare
 
 ContentAwareFilter::~ContentAwareFilter()
 {
-    cancelFilter();
+    this->cancelFilter();
 
     if (d->carver)
     {

@@ -62,6 +62,7 @@
 #include "searchfolderview.h"
 #include "searchtabheader.h"
 #include "searchtextbardb.h"
+#include "dtextedit.h"
 
 namespace Digikam
 {
@@ -99,7 +100,7 @@ public:
     QToolButton*              saveButton;
 
     QComboBox*                timeUnitCB;
-    QLineEdit*                nameEdit;
+    DTextEdit*                nameEdit;
     DAdjustableLabel*         cursorDateLabel;
 
     SearchTextBarDb*          searchDateBar;
@@ -212,8 +213,8 @@ TimelineSideBarWidget::TimelineSideBarWidget(QWidget* const parent,
     d->resetButton->setIcon(QIcon::fromTheme(QLatin1String("document-revert")));
     d->resetButton->setToolTip(i18n("Clear current selection"));
     d->resetButton->setWhatsThis(i18n("If you press this button, the current date selection on the time-line will be cleared."));
-    d->nameEdit    = new QLineEdit(hbox2);
-    d->nameEdit->setClearButtonEnabled(true);
+    d->nameEdit    = new DTextEdit(hbox2);
+    d->nameEdit->setLinesVisible(1);
     d->nameEdit->setWhatsThis(i18n("Enter the name of the current dates search to save in the "
                                    "\"Searches\" view"));
 
@@ -303,7 +304,7 @@ TimelineSideBarWidget::TimelineSideBarWidget(QWidget* const parent,
     connect(d->scrollBar, SIGNAL(valueChanged(int)),
             this, SLOT(slotScrollBarValueChanged(int)));
 
-    connect(d->nameEdit, SIGNAL(textChanged(QString)),
+    connect(d->nameEdit, SIGNAL(textChanged()),
             this, SLOT(slotCheckAboutSelection()));
 
     connect(d->nameEdit, SIGNAL(returnPressed()),

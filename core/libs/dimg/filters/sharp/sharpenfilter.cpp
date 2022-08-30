@@ -79,7 +79,7 @@ SharpenFilter::SharpenFilter(DImgThreadedFilter* const parentFilter,
         m_destImage = DImg(destImage.width(), destImage.height(), destImage.sixteenBit());
     }
 
-    filterImage();
+    this->filterImage();
 
     if (orgImage.bits() == destImage.bits())
     {

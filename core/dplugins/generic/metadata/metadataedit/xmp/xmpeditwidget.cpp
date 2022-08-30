@@ -123,31 +123,31 @@ XMPEditWidget::XMPEditWidget(MetadataEditDialog* const parent)
     d->page_content->setIcon(QIcon::fromTheme(QLatin1String("draw-text")));
 
     d->originPage  = new XMPOrigin(this);
-    d->page_origin = addPage(d->originPage, i18n("Origin"));
+    d->page_origin = addPage(d->originPage, i18nc("@item", "Origin"));
     d->page_origin->setIcon(QIcon::fromTheme(QLatin1String("globe")));
 
     d->creditsPage  = new XMPCredits(this);
-    d->page_credits = addPage(d->creditsPage, i18n("Credits"));
+    d->page_credits = addPage(d->creditsPage, i18nc("@item", "Credits"));
     d->page_credits->setIcon(QIcon::fromTheme(QLatin1String("address-book-new")));
 
     d->subjectsPage  = new XMPSubjects(this);
-    d->page_subjects = addPage(d->subjectsPage, i18n("Subjects"));
+    d->page_subjects = addPage(d->subjectsPage, i18nc("@item", "Subjects"));
     d->page_subjects->setIcon(QIcon::fromTheme(QLatin1String("feed-subscribe")));
 
     d->keywordsPage  = new XMPKeywords(this);
-    d->page_keywords = addPage(d->keywordsPage, i18n("Keywords"));
+    d->page_keywords = addPage(d->keywordsPage, i18nc("@item", "Keywords"));
     d->page_keywords->setIcon(QIcon::fromTheme(QLatin1String("bookmark-new")));
 
     d->categoriesPage  = new XMPCategories(this);
-    d->page_categories = addPage(d->categoriesPage, i18n("Categories"));
+    d->page_categories = addPage(d->categoriesPage, i18nc("@item", "Categories"));
     d->page_categories->setIcon(QIcon::fromTheme(QLatin1String("folder-pictures")));
 
     d->statusPage  = new XMPStatus(this);
-    d->page_status = addPage(d->statusPage, i18n("Status"));
+    d->page_status = addPage(d->statusPage, i18nc("@item", "Status"));
     d->page_status->setIcon(QIcon::fromTheme(QLatin1String("view-task")));
 
     d->propertiesPage  = new XMPProperties(this);
-    d->page_properties = addPage(d->propertiesPage, i18n("Properties"));
+    d->page_properties = addPage(d->propertiesPage, i18nc("@item", "Properties"));
     d->page_properties->setIcon(QIcon::fromTheme(QLatin1String("draw-freehand")));
 
     // ------------------------------------------------------------
@@ -216,22 +216,45 @@ void XMPEditWidget::saveSettings()
 
 void XMPEditWidget::slotItemChanged()
 {
-    d->page_content->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Content Information<br/>"
-                     "<i>Describe the visual content of the item</i></qt>")));
-    d->page_origin->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Origin Information<br/>"
-                     "<i>Formal descriptive information about the item</i></qt>")));
-    d->page_credits->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Credit Information<br/>"
-                     "<i>Record copyright information about the item</i></qt>")));
-    d->page_subjects->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Subject Information<br/>"
-                     "<i>Record subject information about the item</i></qt>")));
-    d->page_keywords->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Keyword Information<br/>"
-                     "<i>Record keywords relevant to the item</i></qt>")));
-    d->page_categories->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Category Information<br/>"
-                     "<i>Record categories relevant to the item</i></qt>")));
-    d->page_status->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Status Information<br/>"
-                     "<i>Record workflow information</i></qt>")));
-    d->page_properties->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Status Properties<br/>"
-                     "<i>Record workflow properties</i></qt>")));
+    d->page_content->setHeader(d->dlg->currentItemTitleHeader(
+                                   QString::fromUtf8("<qt>%1<br/><i>%2</i></qt>")
+                                       .arg(i18nc("@title", "Content Information"))
+                                       .arg(i18nc("@title", "Describe the visual content of the item"))));
+
+    d->page_origin->setHeader(d->dlg->currentItemTitleHeader(
+                                   QString::fromUtf8("<qt>%1<br/><i>%2</i></qt>")
+                                       .arg(i18nc("@title", "Origin Information"))
+                                       .arg(i18nc("@title", "Formal descriptive information about the item"))));
+
+    d->page_credits->setHeader(d->dlg->currentItemTitleHeader(
+                                   QString::fromUtf8("<qt>%1<br/><i>%2</i></qt>")
+                                       .arg(i18nc("@title", "Credit Information"))
+                                       .arg(i18nc("@title", "Record copyright information about the item"))));
+
+    d->page_subjects->setHeader(d->dlg->currentItemTitleHeader(
+                                   QString::fromUtf8("<qt>%1<br/><i>%2</i></qt>")
+                                       .arg(i18nc("@title", "Subject Information"))
+                                       .arg(i18nc("@title", "Record subject information about the item"))));
+
+    d->page_keywords->setHeader(d->dlg->currentItemTitleHeader(
+                                   QString::fromUtf8("<qt>%1<br/><i>%2</i></qt>")
+                                       .arg(i18nc("@title", "Keyword Information"))
+                                       .arg(i18nc("@title", "Record keywords relevant to the item"))));
+
+    d->page_categories->setHeader(d->dlg->currentItemTitleHeader(
+                                   QString::fromUtf8("<qt>%1<br/><i>%2</i></qt>")
+                                       .arg(i18nc("@title", "Category Information"))
+                                       .arg(i18nc("@title", "Record categories relevant to the item"))));
+
+    d->page_status->setHeader(d->dlg->currentItemTitleHeader(
+                                   QString::fromUtf8("<qt>%1<br/><i>%2</i></qt>")
+                                       .arg(i18nc("@title", "Status Information"))
+                                       .arg(i18nc("@title", "Record workflow information"))));
+
+    d->page_properties->setHeader(d->dlg->currentItemTitleHeader(
+                                   QString::fromUtf8("<qt>%1<br/><i>%2</i></qt>")
+                                       .arg(i18nc("@title", "Status Properties"))
+                                       .arg(i18nc("@title", "Record workflow properties"))));
 
     QScopedPointer<DMetadata> meta(new DMetadata);
     meta->load((*d->dlg->currentItem()).toLocalFile());

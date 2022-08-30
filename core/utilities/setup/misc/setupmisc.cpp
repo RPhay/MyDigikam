@@ -23,146 +23,10 @@
  *
  * ============================================================ */
 
-#include "setupmisc.h"
-
-// Qt includes
-
-#include <QApplication>
-#include <QDirIterator>
-#include <QButtonGroup>
-#include <QCheckBox>
-#include <QComboBox>
-#include <QFile>
-#include <QGroupBox>
-#include <QHash>
-#include <QLabel>
-#include <QRadioButton>
-#include <QSpinBox>
-#include <QStyle>
-#include <QStyleFactory>
-#include <QVBoxLayout>
-#include <QTabWidget>
-#include <QMessageBox>
-#include <QPushButton>
-
-// KDE includes
-
-#include <klocalizedstring.h>
-
-// Local includes
-
-#include "digikam_config.h"
-#include "dexpanderbox.h"
-#include "dlayoutbox.h"
-#include "dfontselect.h"
-#include "thememanager.h"
-#include "metaenginesettings.h"
-#include "applicationsettings.h"
-#include "systemsettingswidget.h"
-#include "spellcheckconfig.h"
-#include "onlineversionchecker.h"
-#include "setup.h"
-
-#ifdef HAVE_SONNET
-#   include "spellcheckconfig.h"
-#endif
+#include "setupmisc_p.h"
 
 namespace Digikam
 {
-
-class Q_DECL_HIDDEN SetupMisc::Private
-{
-public:
-
-    explicit Private()
-      : tab                                     (nullptr),
-        updateTypeLabel                         (nullptr),
-        updateWithDebug                         (nullptr),
-        sidebarTypeLabel                        (nullptr),
-        albumDateSourceLabel                    (nullptr),
-        stringComparisonTypeLabel               (nullptr),
-        applicationStyleLabel                   (nullptr),
-        applicationIconLabel                    (nullptr),
-        minSimilarityBoundLabel                 (nullptr),
-        showSplashCheck                         (nullptr),
-        showTrashDeleteDialogCheck              (nullptr),
-        showPermanentDeleteDialogCheck          (nullptr),
-        sidebarApplyDirectlyCheck               (nullptr),
-        useNativeFileDialogCheck                (nullptr),
-        drawFramesToGroupedCheck                (nullptr),
-        expandNewCurrentItemCheck               (nullptr),
-        scrollItemToCenterCheck                 (nullptr),
-        showOnlyPersonTagsInPeopleSidebarCheck  (nullptr),
-        scanAtStart                             (nullptr),
-        useFastScan                             (nullptr),
-        detectFaces                             (nullptr),
-        cleanAtStart                            (nullptr),
-        updateType                              (nullptr),
-        sidebarType                             (nullptr),
-        albumDateSource                         (nullptr),
-        stringComparisonType                    (nullptr),
-        applicationStyle                        (nullptr),
-        applicationIcon                         (nullptr),
-        applicationFont                         (nullptr),
-        minimumSimilarityBound                  (nullptr),
-        systemSettingsWidget                    (nullptr),
-
-#ifdef HAVE_SONNET
-
-        spellCheckWidget                        (nullptr),
-
-#endif
-
-        groupingButtons                         (QHash<int, QButtonGroup*>())
-    {
-    }
-
-    QTabWidget*               tab;
-
-    QLabel*                   updateTypeLabel;
-    QCheckBox*                updateWithDebug;
-
-    QLabel*                   sidebarTypeLabel;
-    QLabel*                   albumDateSourceLabel;
-    QLabel*                   stringComparisonTypeLabel;
-    QLabel*                   applicationStyleLabel;
-    QLabel*                   applicationIconLabel;
-    QLabel*                   minSimilarityBoundLabel;
-
-    QCheckBox*                showSplashCheck;
-    QCheckBox*                showTrashDeleteDialogCheck;
-    QCheckBox*                showPermanentDeleteDialogCheck;
-    QCheckBox*                sidebarApplyDirectlyCheck;
-    QCheckBox*                useNativeFileDialogCheck;
-    QCheckBox*                drawFramesToGroupedCheck;
-    QCheckBox*                expandNewCurrentItemCheck;
-    QCheckBox*                scrollItemToCenterCheck;
-    QCheckBox*                showOnlyPersonTagsInPeopleSidebarCheck;
-    QCheckBox*                scanAtStart;
-    QCheckBox*                useFastScan;
-    QCheckBox*                detectFaces;
-    QCheckBox*                cleanAtStart;
-
-    QComboBox*                updateType;
-    QComboBox*                sidebarType;
-    QComboBox*                albumDateSource;
-    QComboBox*                stringComparisonType;
-    QComboBox*                applicationStyle;
-    QComboBox*                applicationIcon;
-    DFontSelect*              applicationFont;
-
-    QSpinBox*                 minimumSimilarityBound;
-
-    SystemSettingsWidget*     systemSettingsWidget;
-
-#ifdef HAVE_SONNET
-
-    SpellCheckConfig*         spellCheckWidget;
-
-#endif
-
-    QHash<int, QButtonGroup*> groupingButtons;
-};
 
 SetupMisc::SetupMisc(QWidget* const parent)
     : QScrollArea(parent),
@@ -497,7 +361,7 @@ SetupMisc::SetupMisc(QWidget* const parent)
 
     d->tab->insertTab(System, d->systemSettingsWidget, i18nc("@title:tab", "System"));
 
-    // -- Spell Check Options ---------------------------------
+    // -- Spell Check and localize Options --------------------------------------
 
 #ifdef HAVE_SONNET
 
@@ -506,6 +370,10 @@ SetupMisc::SetupMisc(QWidget* const parent)
     d->tab->insertTab(SpellCheck, d->spellCheckWidget, i18nc("@title:tab", "Spellcheck"));
 
 #endif
+
+    d->localizeWidget = new LocalizeConfig(d->tab);
+
+    d->tab->insertTab(Localize, d->localizeWidget, i18nc("@title:tab", "Localize"));
 
     // --------------------------------------------------------
 
@@ -516,6 +384,16 @@ SetupMisc::SetupMisc(QWidget* const parent)
 SetupMisc::~SetupMisc()
 {
     delete d;
+}
+
+void SetupMisc::setActiveTab(MiscTab tab)
+{
+    d->tab->setCurrentIndex(tab);
+}
+
+SetupMisc::MiscTab SetupMisc::activeTab() const
+{
+    return (MiscTab)d->tab->currentIndex();
 }
 
 bool SetupMisc::checkSettings()
@@ -602,6 +480,7 @@ void SetupMisc::applySettings()
 
 #endif
 
+    d->localizeWidget->applySettings();
 }
 
 void SetupMisc::readSettings()
@@ -647,7 +526,7 @@ void SetupMisc::readSettings()
     d->applicationIcon->setCurrentIndex(d->applicationIcon->findData(settings->getIconTheme()));
     d->applicationFont->setFont(settings->getApplicationFont());
 
-    // NOTE: Spellcheck read settings is done in widget constructor.
+    // NOTE: Spellcheck and Localize read settings is done in widget constructor.
 }
 
 } // namespace Digikam

@@ -52,6 +52,7 @@
 #include "wscomboboxdelegate.h"
 #include "wscomboboxintermediate.h"
 #include "flickrlist.h"
+#include "dtextedit.h"
 
 using namespace Digikam;
 
@@ -96,7 +97,7 @@ public:
     QGroupBox*              extendedTagsBox;
     QGroupBox*              extendedPublicationBox;
 
-    QLineEdit*              tagsLineEdit;
+    DTextEdit*              tagsLineEdit;
 
     WSComboBoxIntermediate* contentTypeComboBox;
     WSComboBoxIntermediate* safetyLevelComboBox;

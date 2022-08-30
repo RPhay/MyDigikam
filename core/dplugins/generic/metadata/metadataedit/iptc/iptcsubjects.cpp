@@ -94,13 +94,13 @@ IPTCSubjects::IPTCSubjects(QWidget* const parent)
     connect(m_refEdit, SIGNAL(textChanged(QString)),
             this, SLOT(slotLineEditModified()));
 
-    connect(m_nameEdit, SIGNAL(textChanged(QString)),
+    connect(m_nameEdit, SIGNAL(textChanged()),
             this, SLOT(slotLineEditModified()));
 
-    connect(m_matterEdit, SIGNAL(textChanged(QString)),
+    connect(m_matterEdit, SIGNAL(textChanged()),
             this, SLOT(slotLineEditModified()));
 
-    connect(m_detailEdit, SIGNAL(textChanged(QString)),
+    connect(m_detailEdit, SIGNAL(textChanged()),
             this, SLOT(slotLineEditModified()));
 }
 

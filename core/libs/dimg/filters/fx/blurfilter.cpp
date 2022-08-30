@@ -85,7 +85,7 @@ BlurFilter::BlurFilter(DImgThreadedFilter* const parentFilter,
       d(new Private)
 {
     d->radius = radius;
-    filterImage();
+    this->filterImage();
 }
 
 BlurFilter::~BlurFilter()

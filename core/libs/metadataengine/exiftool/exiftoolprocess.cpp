@@ -354,12 +354,19 @@ bool ExifToolProcess::checkExifToolProgram() const
 {
     // Check if Exiftool program exists and have execution permissions
 
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "Path to ExifTool:" << d->etExePath;
+    QString exifToolPath = d->etExePath;
+
+    if (d->etExePath == exifToolBin())
+    {
+        exifToolPath = QStandardPaths::findExecutable(d->etExePath);
+    }
+
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "Path to ExifTool:" << exifToolPath;
 
     if (
-        (d->etExePath != exifToolBin())                    &&
-        (!QFile::exists(d->etExePath)                      ||
-        !(QFile::permissions(d->etExePath) & QFile::ExeUser))
+        exifToolPath.isEmpty()                             ||
+        (!QFile::exists(exifToolPath)                      ||
+        !(QFile::permissions(exifToolPath) & QFile::ExeUser))
        )
     {
         d->processError = QProcess::FailedToStart;

@@ -179,7 +179,8 @@ Q_SIGNALS:
 
     void signalErrorOccurred(int cmdId,
                              int cmdAction,
-                             QProcess::ProcessError error);
+                             QProcess::ProcessError error,
+                             const QString& description);
 
     void signalFinished(int cmdId,
                         int cmdAction,

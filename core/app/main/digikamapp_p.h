@@ -151,7 +151,7 @@
 #include "exiftoolparser.h"
 #include "exiftoolthread.h"
 #include "facesdetector.h"
-#include "spellchecksettings.h"
+#include "localizesettings.h"
 
 #ifdef HAVE_DBUS
 #   include "digikamadaptor.h"

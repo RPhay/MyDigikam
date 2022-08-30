@@ -89,6 +89,8 @@ public:
     static bool execMetadataFilters(QWidget* const parent, int tab);
     static bool execExifTool(QWidget* const parent);
 
+    static bool execLocalize(QWidget* const parent);
+
     QSize sizeHint() const  override;
 
 private Q_SLOTS:

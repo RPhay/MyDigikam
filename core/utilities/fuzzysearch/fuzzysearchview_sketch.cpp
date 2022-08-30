@@ -114,8 +114,8 @@ QWidget* FuzzySearchView::setupSketchPanel() const
     d->resetButton->setToolTip(i18n("Clear sketch"));
     d->resetButton->setWhatsThis(i18n("Use this button to clear sketch contents."));
 
-    d->nameEditSketch = new QLineEdit(saveBox);
-    d->nameEditSketch->setClearButtonEnabled(true);
+    d->nameEditSketch = new DTextEdit(saveBox);
+    d->nameEditSketch->setLinesVisible(1);
     d->nameEditSketch->setWhatsThis(i18n("Enter the name of the current sketch search to save in the "
                                          "\"Similarity Searches\" view."));
 

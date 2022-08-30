@@ -20,8 +20,10 @@ Advanced Search: Add search for items without face regions.
 Collections    : Add support for cross-platform network paths.
 Database       : Add support for SQLite WAL (Write-Ahead-Logging) mode.
 General        : Add spell-checking support in caption text widget using KF5::Sonnet component.
-                 Add spellcheck config panel in Setup/Misc for digiKam and Showfoto.
+                 Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto.
 General        : Add online translations support to Alternative Language text editor widget.
+                 Add Localize config panel in Setup/Misc for digiKam and Showfoto.
+General        : Add settings to list prefered alternative/translated languages in text edit widget.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -122,8 +124,13 @@ BUGFIXES:
 094 ==> 426115 - Make drag-n-drop more evident.
 095 ==> 411550 - Difficulty to drag and drop a face tag to people group.
 096 ==> 458003 - Highlight albums when "dragging" items on it.
-097 ==> 
-098 ==> 
-099 ==> 
-100 ==> 
-101 ==> 
+097 ==> 458082 - MP4 video failed to update metadata timestamp.
+098 ==> 283492 - Display only favorite languages in language selection comboboxes.
+099 ==> 370192 - Better handling of language selection menu entries with Captions tab.
+100 ==> 458163 - Cannot modify an existing BQM process.
+101 ==> 458167 - Add more position for watermark.
+102 ==> 458200 - Size or position change made to face rectangle is only written to database and not to image file/sidecar.
+103 ==> 458344 - Inconsistencies between Collections and albums.
+104 ==> 444757 - Albums empty.
+105 ==> 371535 - Albums from ext hdd are removed when digikam starts up if the external HDD is not plugged in.
+106 ==> 

@@ -51,7 +51,7 @@ public:
     {
         titleEdt       = new DTextEdit;
         descEdt        = new DTextEdit(0, nullptr);
-        locEdt         = new QLineEdit;
+        locEdt         = new DTextEdit;
         dtEdt          = new QDateTimeEdit(QDateTime::currentDateTime());
 
         mainLayout     = new QVBoxLayout(mainWidget);
@@ -69,7 +69,7 @@ public:
 
     DTextEdit*         titleEdt;
     DTextEdit*         descEdt;
-    QLineEdit*         locEdt;
+    DTextEdit*         locEdt;
     QDateTimeEdit*     dtEdt;
 
     QLabel*            titleLabel;
@@ -203,7 +203,7 @@ DTextEdit* WSNewAlbumDialog::getDescEdit() const
     return d->descEdt;
 }
 
-QLineEdit* WSNewAlbumDialog::getLocEdit() const
+DTextEdit* WSNewAlbumDialog::getLocEdit() const
 {
     return d->locEdt;
 }

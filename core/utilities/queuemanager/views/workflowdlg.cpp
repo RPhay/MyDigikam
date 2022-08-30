@@ -33,7 +33,6 @@
 #include <QValidator>
 #include <QApplication>
 #include <QStyle>
-#include <QLineEdit>
 #include <QStandardPaths>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
@@ -48,6 +47,7 @@
 #include "dlayoutbox.h"
 #include "dxmlguiwindow.h"
 #include "dexpanderbox.h"
+#include "dtextedit.h"
 
 namespace Digikam
 {
@@ -65,8 +65,8 @@ public:
     }
 
     QDialogButtonBox* buttons;
-    QLineEdit*        titleEdit;
-    QLineEdit*        descEdit;
+    DTextEdit*        titleEdit;
+    DTextEdit*        descEdit;
 };
 
 WorkflowDlg::WorkflowDlg(const Workflow& wf, bool create)
@@ -101,15 +101,12 @@ WorkflowDlg::WorkflowDlg(const Workflow& wf, bool create)
 
     // --------------------------------------------------------
 
-    QRegularExpression           reg(QLatin1String("[^/]+"));
-    QValidator* const validator = new QRegularExpressionValidator(reg, this);
-
     QLabel* const titleLabel    = new QLabel(page);
     titleLabel->setText(i18nc("@title: batch worklow name", "&Title:"));
 
-    d->titleEdit                = new QLineEdit(page);
-    d->titleEdit->setClearButtonEnabled(true);
-    d->titleEdit->setValidator(validator);
+    d->titleEdit                = new DTextEdit(page);
+    d->titleEdit->setLinesVisible(1);
+    d->titleEdit->setIgnoredCharacters(QLatin1String("/"));
     d->titleEdit->selectAll();
     d->titleEdit->setFocus();
     titleLabel->setBuddy(d->titleEdit);
@@ -119,9 +116,9 @@ WorkflowDlg::WorkflowDlg(const Workflow& wf, bool create)
     QLabel* const descLabel = new QLabel(page);
     descLabel->setText(i18n("Description:"));
 
-    d->descEdit             = new QLineEdit(page);
-    d->titleEdit->setClearButtonEnabled(true);
-    d->descEdit->setValidator(validator);
+    d->descEdit             = new DTextEdit(page);
+    d->descEdit->setLinesVisible(1);
+    d->descEdit->setIgnoredCharacters(QLatin1String("/"));
     descLabel->setBuddy(d->descEdit);
 
     // --------------------------------------------------------
@@ -135,7 +132,7 @@ WorkflowDlg::WorkflowDlg(const Workflow& wf, bool create)
     grid->addWidget(descLabel,    3, 0, 1, 1, Qt::AlignLeft | Qt::AlignTop);
     grid->addWidget(d->descEdit,  3, 1, 1, 1);
     grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     grid->setContentsMargins(QMargins());
     page->setLayout(grid);
 
@@ -156,8 +153,8 @@ WorkflowDlg::WorkflowDlg(const Workflow& wf, bool create)
 
     // -- slots connections -------------------------------------------
 
-    connect(d->titleEdit, SIGNAL(textChanged(QString)),
-            this, SLOT(slotTitleChanged(QString)));
+    connect(d->titleEdit, SIGNAL(textChanged()),
+            this, SLOT(slotTitleChanged()));
 
     connect(d->buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
             this, SLOT(accept()));
@@ -216,10 +213,11 @@ bool WorkflowDlg::createNew(Workflow& wf)
     return ok;
 }
 
-void WorkflowDlg::slotTitleChanged(const QString& text)
+void WorkflowDlg::slotTitleChanged()
 {
-    Workflow wf = WorkflowManager::instance()->findByTitle(text);
-    bool enable = (wf.title.isEmpty() && !text.isEmpty());
+    QString text = d->titleEdit->text();
+    Workflow wf  = WorkflowManager::instance()->findByTitle(text);
+    bool enable  = (wf.title.isEmpty() && !text.isEmpty());
     d->buttons->button(QDialogButtonBox::Ok)->setEnabled(enable);
 }
 

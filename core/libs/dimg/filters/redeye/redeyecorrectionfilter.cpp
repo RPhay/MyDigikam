@@ -95,7 +95,7 @@ RedEyeCorrectionFilter::RedEyeCorrectionFilter(const RedEyeCorrectionContainer& 
       d                 (new Private)
 {
     d->settings = settings;
-    filterImage();
+    this->filterImage();
 }
 
 RedEyeCorrectionFilter::~RedEyeCorrectionFilter()

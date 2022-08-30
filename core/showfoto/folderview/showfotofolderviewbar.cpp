@@ -29,9 +29,9 @@
 #include <QApplication>
 #include <QSlider>
 #include <QLayout>
+#include <QLineEdit>
 #include <QToolButton>
 #include <QPixmap>
-#include <QLineEdit>
 #include <QActionGroup>
 #include <QMenu>
 #include <QComboBox>

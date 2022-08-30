@@ -126,7 +126,7 @@ RajceWidget::RajceWidget(DInfoInterface* const iface, QWidget* const parent)
     getUploadBox()->hide();
     getSizeBox()->hide();
 
-    updateLabels();
+    this->updateLabels();
 
     // ------------------------------------------------------------------------
 

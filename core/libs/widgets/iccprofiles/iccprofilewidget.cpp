@@ -196,7 +196,7 @@ ICCProfileWidget::ICCProfileWidget(QWidget* const parent, int w, int h)
                                      "direction of this correction."));
 
     setUserAreaWidget(d->cieTongue);
-    decodeMetadata();
+    this->decodeMetadata();
 }
 
 ICCProfileWidget::~ICCProfileWidget()

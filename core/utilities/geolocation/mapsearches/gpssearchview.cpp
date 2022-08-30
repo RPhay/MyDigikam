@@ -58,6 +58,7 @@
 #include "gpsmarkertiler.h"
 #include "gpsiteminfosorter.h"
 #include "searchtextbardb.h"
+#include "dtextedit.h"
 
 namespace Digikam
 {
@@ -86,7 +87,7 @@ public:
 
     static const QString    configSplitterStateEntry;
     QToolButton*            saveBtn;
-    QLineEdit*              nameEdit;
+    DTextEdit*              nameEdit;
     ItemInfoJob             imageInfoJob;
     SearchTextBarDb*        searchGPSBar;
     EditableSearchTreeView* searchTreeView;
@@ -162,8 +163,8 @@ GPSSearchView::GPSSearchView(QWidget* const parent,
     hbox->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                              QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
 
-    d->nameEdit       = new QLineEdit(hbox);
-    d->nameEdit->setClearButtonEnabled(true);
+    d->nameEdit       = new DTextEdit(hbox);
+    d->nameEdit->setLinesVisible(1);
     d->nameEdit->setWhatsThis(i18n("Enter the name of the current map search to save in the "
                                    "\"Map Searches\" view."));
 
@@ -281,7 +282,7 @@ GPSSearchView::GPSSearchView(QWidget* const parent,
     connect(d->saveBtn, SIGNAL(clicked()),
             this, SLOT(slotSaveGPSSAlbum()));
 
-    connect(d->nameEdit, SIGNAL(textChanged(QString)),
+    connect(d->nameEdit, SIGNAL(textChanged()),
             this, SLOT(slotCheckNameEditGPSConditions()));
 
     connect(d->nameEdit, SIGNAL(returnPressed()),

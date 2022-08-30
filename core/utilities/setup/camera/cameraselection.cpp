@@ -52,6 +52,7 @@
 #include "dfileselector.h"
 #include "digikam_config.h"
 #include "gpcamera.h"
+#include "dtextedit.h"
 #include "dxmlguiwindow.h"
 
 namespace Digikam
@@ -95,7 +96,7 @@ public:
 
     QTreeWidget*      listView;
 
-    QLineEdit*        titleEdit;
+    DTextEdit*        titleEdit;
     QLineEdit*        networkEdit;
 
     DFileSelector*    umsMountURL;
@@ -147,7 +148,8 @@ CameraSelection::CameraSelection(QWidget* const parent)
 
     QGroupBox* const titleBox   = new QGroupBox(i18n("Camera Title"), page);
     QVBoxLayout* const gLayout1 = new QVBoxLayout(titleBox);
-    d->titleEdit                = new QLineEdit(titleBox);
+    d->titleEdit                = new DTextEdit(titleBox);
+    d->titleEdit->setLinesVisible(1);
     d->titleEdit->setWhatsThis(i18n("<p>Set here the name used in digiKam interface to "
                                     "identify this camera.</p>"));
 

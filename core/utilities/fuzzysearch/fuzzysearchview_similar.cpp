@@ -88,8 +88,8 @@ QWidget* FuzzySearchView::setupFindSimilarPanel() const
     saveBox->setContentsMargins(QMargins());
     saveBox->setSpacing(spacing);
 
-    d->nameEditImage = new QLineEdit(saveBox);
-    d->nameEditImage->setClearButtonEnabled(true);
+    d->nameEditImage = new DTextEdit(saveBox);
+    d->nameEditImage->setLinesVisible(1);
     d->nameEditImage->setWhatsThis(i18n("Enter the name of the current similar image search to save in the "
                                         "\"Similarity Searches\" view."));
 

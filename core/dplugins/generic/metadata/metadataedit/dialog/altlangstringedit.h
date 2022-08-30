@@ -5,7 +5,7 @@
  *
  * Date        : 2007-10-18
  * Description : a widget to edit multiple alternative
- *               language string entries with an activation checkbox.
+ *               language string entries and an activation checkbox.
  *
  * Copyright (C) 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *

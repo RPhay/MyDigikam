@@ -48,6 +48,7 @@
 #include "digikam_globals.h"
 #include "importfiltercombobox.h"
 #include "dexpanderbox.h"
+#include "dtextedit.h"
 
 namespace Digikam
 {
@@ -72,7 +73,7 @@ public:
 
     QDialogButtonBox*   buttons;
 
-    QLineEdit*          filterName;
+    DTextEdit*          filterName;
     QCheckBox*          mimeCheckBox;
     DAdjustableLabel*   mimeLabel;
     QToolButton*        mimeButton;
@@ -108,7 +109,8 @@ ImportFilterDlg::ImportFilterDlg(QWidget* const parent)
     label            = new QLabel(page);
     label->setText(i18nc("@label: name of items filter", "Name:"));
     verticalLayout->addWidget(label);
-    d->filterName    = new QLineEdit(page);
+    d->filterName    = new DTextEdit(page);
+    d->filterName->setLinesVisible(1);
     verticalLayout->addWidget(d->filterName);
 
     d->mimeCheckBox  = new QCheckBox(page);

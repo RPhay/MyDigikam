@@ -41,7 +41,7 @@
 #include "dlayoutbox.h"
 #include "multistringsedit.h"
 #include "dexpanderbox.h"
-#include "limitedtextedit.h"
+#include "dtextedit.h"
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -68,9 +68,9 @@ public:
     QCheckBox*        syncEXIFCommentCheck;
 
     QLabel*           captionNote;
-    LimitedTextEdit*  captionEdit;
+    DPlainTextEdit*   captionEdit;
 
-    LimitedTextEdit*  headlineEdit;
+    DPlainTextEdit*   headlineEdit;
 
     MultiStringsEdit* writerEdit;
 };
@@ -84,7 +84,7 @@ IPTCContent::IPTCContent(QWidget* const parent)
     // --------------------------------------------------------
 
     d->headlineCheck = new QCheckBox(i18n("Headline:"), this);
-    d->headlineEdit  = new LimitedTextEdit(this);
+    d->headlineEdit  = new DPlainTextEdit(this);
     d->headlineEdit->setMaxLength(256);
     d->headlineEdit->setPlaceholderText(i18n("Set here the content synopsis"));
     d->headlineEdit->setWhatsThis(i18n("Enter here the content synopsis. This field is limited "
@@ -97,7 +97,7 @@ IPTCContent::IPTCContent(QWidget* const parent)
     d->captionNote             = new QLabel(captionHeader);
     captionHeader->setStretchFactor(d->captionCheck, 10);
 
-    d->captionEdit             = new LimitedTextEdit(this);
+    d->captionEdit             = new DPlainTextEdit(this);
     d->captionEdit->setLinesVisible(4);
     d->syncJFIFCommentCheck    = new QCheckBox(i18n("Sync JFIF Comment section"), this);
     d->syncEXIFCommentCheck    = new QCheckBox(i18n("Sync Exif Comment"), this);

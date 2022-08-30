@@ -70,15 +70,15 @@ SubjectEdit::SubjectEdit(QWidget* const parent)
                                  "are the English language reference versions. "
                                  "This field is limited to 8 digit code."));
 
-    m_nameEdit->setValidator(subjectValidator);
+    m_nameEdit->setIgnoredCharacters(QLatin1String("*:?"));
     m_nameEdit->setWhatsThis(i18n("Enter the Subject Name here. English language is used "
                                   "if you selected a standard XMP/NAA reference code."));
 
-    m_matterEdit->setValidator(subjectValidator);
+    m_matterEdit->setIgnoredCharacters(QLatin1String("*:?"));
     m_matterEdit->setWhatsThis(i18n("Enter the Subject Matter Name here. English language is used "
                                     "if you selected a standard XMP/NAA reference code."));
 
-    m_detailEdit->setValidator(subjectValidator);
+    m_detailEdit->setIgnoredCharacters(QLatin1String("*:?"));
     m_detailEdit->setWhatsThis(i18n("Enter the Subject Detail Name here. English language is used "
                                     "if you selected a standard XMP/NAA reference code."));
 

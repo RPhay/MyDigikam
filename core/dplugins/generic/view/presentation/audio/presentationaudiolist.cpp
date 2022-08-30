@@ -72,7 +72,7 @@ public:
     QString       artist;
     QString       title;
     QTime         totalTime;
-    AVPlayerCore*     mediaObject;
+    AVPlayerCore* mediaObject;
 };
 
 PresentationAudioListItem::PresentationAudioListItem(QListWidget* const parent, const QUrl& url)

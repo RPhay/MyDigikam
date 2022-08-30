@@ -47,8 +47,7 @@ class Q_DECL_HIDDEN GSTalkerBase::Private
 public:
 
     explicit Private()
-      : parent    (nullptr),
-        linked    (false),
+      : linked    (false),
         authUrl   (QLatin1String("https://accounts.google.com/o/oauth2/auth")),
         tokenUrl  (QLatin1String("https://accounts.google.com/o/oauth2/token")),
         identity  (QLatin1String("258540448336-hgdegpohibcjasvk1p595fpvjor15pbc.apps.googleusercontent.com")),
@@ -56,8 +55,6 @@ public:
         netMngr   (nullptr)
     {
     }
-
-    QWidget*               parent;
 
     bool                   linked;
 
@@ -69,14 +66,14 @@ public:
     QNetworkAccessManager* netMngr;
 };
 
-GSTalkerBase::GSTalkerBase(QWidget* const parent, const QStringList& scope, const QString& serviceName)
-    : m_scope      (scope),
+GSTalkerBase::GSTalkerBase(QObject* const parent, const QStringList& scope, const QString& serviceName)
+    : QObject      (parent),
+      m_scope      (scope),
       m_serviceName(serviceName),
       m_reply      (nullptr),
       m_service    (nullptr),
       d            (new Private)
 {
-    d->parent  = parent;
     d->netMngr = new QNetworkAccessManager(this);
     m_service  = new QOAuth2AuthorizationCodeFlow(d->netMngr, this);
 

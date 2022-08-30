@@ -43,6 +43,14 @@ class SetupCamera : public QScrollArea
 
 public:
 
+    enum CameraTab
+    {
+        Devices = 0,
+        Behavior,
+        ImportFilters,
+        ImportWindow
+    };
+
     enum ConflictRule
     {
         OVERWRITE = 0,
@@ -59,6 +67,9 @@ public:
     bool checkSettings();
 
     bool useFileMetadata();
+
+    void setActiveTab(CameraTab tab);
+    CameraTab activeTab() const;
 
 Q_SIGNALS:
 

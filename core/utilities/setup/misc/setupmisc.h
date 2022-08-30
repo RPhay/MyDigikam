@@ -45,13 +45,17 @@ public:
         Appearance,
         Grouping,
         System,
-        SpellCheck
+        SpellCheck,
+        Localize
     };
 
 public:
 
     explicit SetupMisc(QWidget* const parent = nullptr);
     ~SetupMisc() override;
+
+    void setActiveTab(MiscTab tab);
+    MiscTab activeTab() const;
 
     bool checkSettings();
     void applySettings();

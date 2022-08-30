@@ -37,7 +37,9 @@
 
 // Local includes
 
-#include "limitedtextedit.h"
+#include "dtextedit.h"
+
+using namespace Digikam;
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -64,7 +66,7 @@ public:
 
     QCheckBox*       valueCheck;
 
-    LimitedTextEdit* valueEdit;
+    DPlainTextEdit*  valueEdit;
 
     QListWidget*     valueBox;
 };
@@ -98,7 +100,7 @@ MultiStringsEdit::MultiStringsEdit(QWidget* const parent,
     d->valueBox->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Ignored);
     d->valueBox->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-    d->valueEdit      = new LimitedTextEdit(this);
+    d->valueEdit      = new DPlainTextEdit(this);
     d->valueEdit->setLinesVisible(1);
     QString whatsThis = desc;
 

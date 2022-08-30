@@ -40,6 +40,13 @@ class CheckConfig : public QObject
 {
     Q_OBJECT
 
+public:
+
+    CheckConfig(QObject* const parent = nullptr)
+        : QObject(parent)
+    {
+    }
+
 private Q_SLOTS:
 
     void DecoderConfig()

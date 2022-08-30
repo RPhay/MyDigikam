@@ -494,7 +494,8 @@ FaceTagsIface FaceTagsEditor::changeRegion(const FaceTagsIface& face, const TagR
 
     FaceTagsIface newFace = face;
     newFace.setRegion(newRegion);
-    addFaceAndTag(pair, newFace, FaceTagsIface::attributesForFlags(face.type()), false);
+    addFaceAndTag(pair, newFace, FaceTagsIface::attributesForFlags(face.type()),
+                  (face.type() == FaceTagsIface::ConfirmedName));
 
     if (face.type() == FaceTagsIface::UnconfirmedName)
     {

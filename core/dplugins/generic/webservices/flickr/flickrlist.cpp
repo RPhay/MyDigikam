@@ -36,6 +36,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "dtextedit.h"
 #include "wscomboboxdelegate.h"
 
 namespace DigikamGenericFlickrPlugin
@@ -459,9 +460,9 @@ class Q_DECL_HIDDEN FlickrListViewItem::Private
 public:
 
     explicit Private()
-      : isPublic(true),
-        isFamily(true),
-        isFriends(true),
+      : isPublic   (true),
+        isFamily   (true),
+        isFriends  (true),
         safetyLevel(FlickrList::SAFE),
         contentType(FlickrList::PHOTO),
         tagLineEdit(nullptr)
@@ -478,7 +479,7 @@ public:
     /**
      * LineEdit used for extra tags per image.
      */
-    QLineEdit*              tagLineEdit;
+    DTextEdit*              tagLineEdit;
 };
 
 FlickrListViewItem::FlickrListViewItem(DItemsListView* const view,
@@ -538,13 +539,8 @@ FlickrListViewItem::FlickrListViewItem(DItemsListView* const view,
                    FlickrList::TAGS),
                i18n("Add extra tags per image or use Upload Options tab to "
                     "add tags for all images"));
-/*
-    d->tagLineEdit = new QLineEdit(view);
-    d->tagLineEdit->setToolTip(i18n("Enter extra tags, separated by commas."));
-    view->setItemWidget(this, static_cast<DItemsListView::ColumnType>(
-                        FlickrList::TAGS), d->tagLineEdit);
-*/
-    updateItemWidgets();
+
+    this->updateItemWidgets();
 }
 
 FlickrListViewItem::~FlickrListViewItem()
@@ -554,7 +550,8 @@ FlickrListViewItem::~FlickrListViewItem()
 
 void FlickrListViewItem::updateItemWidgets()
 {
-    d->tagLineEdit = new QLineEdit(view());
+    d->tagLineEdit = new DTextEdit(view());
+    d->tagLineEdit->setLinesVisible(1);
     d->tagLineEdit->setToolTip(i18n("Enter extra tags, separated by commas."));
     view()->setItemWidget(this, static_cast<DItemsListView::ColumnType>(
                           FlickrList::TAGS), d->tagLineEdit);

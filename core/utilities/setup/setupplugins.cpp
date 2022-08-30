@@ -105,6 +105,16 @@ SetupPlugins::~SetupPlugins()
     delete d;
 }
 
+void SetupPlugins::setActiveTab(PluginTab tab)
+{
+    d->tab->setCurrentIndex(tab);
+}
+
+SetupPlugins::PluginTab SetupPlugins::activeTab() const
+{
+    return (PluginTab)d->tab->currentIndex();
+}
+
 void SetupPlugins::applySettings()
 {
     d->setupGeneric->applySettings();

@@ -25,8 +25,8 @@ set(libsetupshowfoto_SRCS
 
     ${CMAKE_CURRENT_SOURCE_DIR}/downloader/filesdownloader.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/system/systemsettingswidget.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/system/systemsettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/misc/systemsettingswidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/misc/systemsettings.cpp
 )
 
 # Used by digikamcore
@@ -43,12 +43,13 @@ set(libsetup_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/setup.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setuptooltip.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setuptemplate.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/setupmisc.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setupplugins.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setuplighttable.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setupdatabase.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setupimagequalitysorter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setuputils.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/misc/setupmisc.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/editor/setupeditor.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/editor/setupversioning.cpp

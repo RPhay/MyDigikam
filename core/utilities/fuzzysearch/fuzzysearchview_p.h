@@ -83,6 +83,7 @@
 #include "similaritydbaccess.h"
 #include "similaritydb.h"
 #include "dnotificationwidget.h"
+#include "dtextedit.h"
 
 namespace Digikam
 {
@@ -178,8 +179,8 @@ public:
 
     DVBox*                    folderView;
 
-    QLineEdit*                nameEditSketch;
-    QLineEdit*                nameEditImage;
+    DTextEdit*                nameEditSketch;
+    DTextEdit*                nameEditImage;
 
     QTabWidget*               tabWidget;
 

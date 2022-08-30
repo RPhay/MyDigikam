@@ -45,7 +45,7 @@
 #include "squeezedcombobox.h"
 #include "metadatacheckbox.h"
 #include "timezonecombobox.h"
-#include "limitedtextedit.h"
+#include "dtextedit.h"
 #include "dlayoutbox.h"
 
 namespace DigikamGenericMetadataEditPlugin
@@ -148,7 +148,7 @@ public:
     QDateEdit*                     dateSentSel;
 
     QLabel*                        destinationNote;
-    LimitedTextEdit*               destinationEdit;
+    DPlainTextEdit*                destinationEdit;
 
     MetadataCheckBox*              priorityCheck;
     MetadataCheckBox*              formatCheck;
@@ -178,7 +178,7 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
     d->destinationNote      = new QLabel(destHeader);
     destHeader->setStretchFactor(d->destinationCheck, 10);
 
-    d->destinationEdit      = new LimitedTextEdit(this);
+    d->destinationEdit      = new DPlainTextEdit(this);
     d->destinationEdit->setMaxLength(1024);
     d->destinationEdit->setPlaceholderText(i18n("Set here the envelope destination"));
     d->destinationEdit->setWhatsThis(i18n("Enter the envelope destination. "

@@ -11,10 +11,22 @@ set(libtextwidgets_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/text/modelcompleter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/searchtextbar.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/dtextedit.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/text/spellchecksettings.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/text/spellcheckcontainer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/dplaintextedit.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/dtextedit_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/localizesettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/localizecontainer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/localizeconfig.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/spellcheckconfig.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator_google.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator_tables.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator_yandex.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator_bing.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator_libretr.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator_lingva.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator_properties.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator_tts.cpp
 )
 
 set(liblayouttools_SRCS
@@ -129,6 +141,7 @@ set(libmetadatawidgets_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/metadata/config/metadatapanel.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/metadata/utils/altlangstredit.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/utils/altlangstredit_p.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/metadata/utils/countryselector.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/metadata/utils/subjectwidget.cpp
 

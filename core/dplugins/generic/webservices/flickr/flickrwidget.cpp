@@ -133,7 +133,8 @@ FlickrWidget::FlickrWidget(QWidget* const parent,
     QGridLayout* extendedTagsLayout  = new QGridLayout(d->extendedTagsBox);
 
     QLabel* const tagsLabel          = new QLabel(i18n("Added Tags: "), d->extendedTagsBox);
-    d->tagsLineEdit                  = new QLineEdit(d->extendedTagsBox);
+    d->tagsLineEdit                  = new DTextEdit(d->extendedTagsBox);
+    d->tagsLineEdit->setLinesVisible(1);
     d->tagsLineEdit->setToolTip(i18n("Enter new tags here, separated by commas."));
     d->addExtraTagsCheckBox          = new QCheckBox(d->extendedTagsBox);
     d->addExtraTagsCheckBox->setText(i18n("Add tags per image"));
@@ -223,7 +224,7 @@ FlickrWidget::FlickrWidget(QWidget* const parent,
 
     replaceImageList(d->imglst);
 
-    updateLabels();
+    this->updateLabels();
 
     connect(d->imglst, SIGNAL(signalPermissionChanged(FlickrList::FieldType,Qt::CheckState)),
             this, SLOT(slotPermissionChanged(FlickrList::FieldType,Qt::CheckState)));

@@ -31,7 +31,6 @@
 #include <QPushButton>
 #include <QApplication>
 #include <QStyle>
-#include <QLineEdit>
 #include <QIcon>
 #include <QMessageBox>
 
@@ -46,6 +45,7 @@
 #include "templatelist.h"
 #include "templatepanel.h"
 #include "altlangstredit.h"
+#include "dtextedit.h"
 
 namespace Digikam
 {
@@ -68,7 +68,7 @@ public:
     QPushButton*   delButton;
     QPushButton*   repButton;
 
-    QLineEdit*     titleEdit;
+    DTextEdit*     titleEdit;
 
     TemplateList*  listView;
 
@@ -92,8 +92,8 @@ SetupTemplate::SetupTemplate(QWidget* const parent)
     // --------------------------------------------------------
 
     QLabel* const label0 = new QLabel(i18n("Template Title:"), panel);
-    d->titleEdit         = new QLineEdit(panel);
-    d->titleEdit->setClearButtonEnabled(true);
+    d->titleEdit         = new DTextEdit(panel);
+    d->titleEdit->setLinesVisible(1);
     d->titleEdit->setPlaceholderText(i18n("Enter the metadata template title here."));
     d->titleEdit->setWhatsThis(i18n("<p>Enter the metadata template title here. This title will be "
                                     "used to identify a template in your collection.</p>"));

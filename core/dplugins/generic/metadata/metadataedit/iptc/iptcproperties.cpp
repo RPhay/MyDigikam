@@ -47,7 +47,7 @@
 #include "timezonecombobox.h"
 #include "objectattributesedit.h"
 #include "dexpanderbox.h"
-#include "limitedtextedit.h"
+#include "dtextedit.h"
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -103,8 +103,8 @@ public:
     QComboBox*                     objectCycleCB;
     QComboBox*                     objectTypeCB;
 
-    LimitedTextEdit*               objectTypeDescEdit;
-    LimitedTextEdit*               originalTransEdit;
+    DPlainTextEdit*               objectTypeDescEdit;
+    DPlainTextEdit*               originalTransEdit;
 
     QComboBox*                     languageBtn;
 
@@ -227,7 +227,7 @@ IPTCProperties::IPTCProperties(QWidget* const parent)
 
     d->objectTypeCheck    = new MetadataCheckBox(i18n("Type:"), this);
     d->objectTypeCB       = new QComboBox(this);
-    d->objectTypeDescEdit = new LimitedTextEdit(this);
+    d->objectTypeDescEdit = new DPlainTextEdit(this);
     d->objectTypeDescEdit->setPlaceholderText(i18n("Set here the content type"));
     d->objectTypeDescEdit->setMaxLength(64);
     d->objectTypeDescEdit->setLinesVisible(1);
@@ -245,7 +245,7 @@ IPTCProperties::IPTCProperties(QWidget* const parent)
     // --------------------------------------------------------
 
     d->originalTransCheck = new QCheckBox(i18n("Reference:"), this);
-    d->originalTransEdit  = new LimitedTextEdit(this);
+    d->originalTransEdit  = new DPlainTextEdit(this);
     d->originalTransEdit->setLinesVisible(1);
     d->originalTransEdit->setPlaceholderText(i18n("Set here the content reference"));
     d->originalTransEdit->setMaxLength(32);

@@ -57,7 +57,7 @@ public:
 
 private Q_SLOTS:
 
-    void slotTitleChanged(const QString& text);
+    void slotTitleChanged();
     void slotHelp();
 
 private:

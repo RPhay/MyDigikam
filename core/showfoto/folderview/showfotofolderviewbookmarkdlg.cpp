@@ -26,9 +26,9 @@
 // Qt includes
 
 #include <QGridLayout>
+#include <QLineEdit>
 #include <QLabel>
 #include <QPointer>
-#include <QLineEdit>
 #include <QApplication>
 #include <QStyle>
 #include <QDir>
@@ -50,6 +50,7 @@
 #include "digikam_debug.h"
 #include "dfileselector.h"
 #include "dlayoutbox.h"
+#include "dtextedit.h"
 #include "showfotofolderviewbookmarklist.h"
 
 using namespace Digikam;
@@ -85,7 +86,7 @@ public:
 
     QDialogButtonBox*               buttons;
 
-    QLineEdit*                      titleEdit;
+    DTextEdit*                      titleEdit;
     DFileSelector*                  pathEdit;
     ShowfotoFolderViewBookmarkList* list;
 };
@@ -126,7 +127,8 @@ ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewB
     QLabel* const titleLabel = new QLabel(page);
     titleLabel->setText(i18nc("@label: bookmark properties", "&Title:"));
 
-    d->titleEdit             = new QLineEdit(page);
+    d->titleEdit             = new DTextEdit(page);
+    d->titleEdit->setLinesVisible(1);
     d->titleEdit->setPlaceholderText(i18nc("@info", "Enter bookmark title here..."));
     d->titleEdit->setToolTip(i18nc("@info", "The bookmark title which must be unique and not empty"));
     titleLabel->setBuddy(d->titleEdit);
@@ -182,7 +184,7 @@ ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewB
 
     // --------------------------------------------------------
 
-    connect(d->titleEdit, SIGNAL(textChanged(QString)),
+    connect(d->titleEdit, SIGNAL(textChanged()),
             this, SLOT(slotModified()));
 
     connect(d->pathEdit->lineEdit(), SIGNAL(textChanged(QString)),

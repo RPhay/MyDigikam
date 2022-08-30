@@ -53,6 +53,9 @@ public:
     explicit SetupAlbumView(QWidget* const parent = nullptr);
     ~SetupAlbumView() override;
 
+    void setActiveTab(AlbumTab tab);
+    AlbumTab activeTab() const;
+
     void applySettings();
 
     bool useLargeThumbsHasChanged() const;
