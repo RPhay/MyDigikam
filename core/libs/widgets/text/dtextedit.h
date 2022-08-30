@@ -74,7 +74,7 @@ public:
     ~DTextEdit() override;
 
     /**
-     * Helper methods to handle text contents as plain text.
+     * This property holds whether the edit widget handle text contents as plain text.
      * If ignored or accepted characters masks are set, text is filtered accordingly.
      */
     QString text() const;
@@ -91,7 +91,7 @@ public:
     void  setClearButtonEnabled(bool enable);
 
     /**
-     * Helper methods to handle the mask of ignored characters in text editor.
+     * This property holds whether the edit widget handle the mask of ignored characters in text editor.
      * The mask of characters is passed as string (ex: "+/!()").
      * By default the mask is empty.
      */
@@ -99,7 +99,7 @@ public:
     void setIgnoredCharacters(const QString& mask);
 
     /**
-     * Helper methods to handle the mask of accepted characters in text editor.
+     * This property holds whether the edit widget handle the mask of accepted characters in text editor.
      * The mask of characters is passed as string (ex: "abcABC").
      * By default the mask is empty.
      */
@@ -107,7 +107,7 @@ public:
     void setAcceptedCharacters(const QString& mask);
 
     /**
-     * Helper methods to handle visible lines used by the widget to show text.
+     * This property holds whether the edit widget handle visible lines used by the widget to show text.
      * Lines must be superior or egal to 1 to apply a size constraint.
      * Notes: if a single visible line is used, the widget will emulate QLineEdit.
      *        a null value do not apply a size constraint.
@@ -116,7 +116,7 @@ public:
     unsigned int linesVisible() const;
 
     /**
-     * Helper methods to handle a specific spell-checker language (2 letters code based as "en", "fr", "es", etc.).
+     * This property holds whether the edit widget handle a specific spell-checker language (2 letters code based as "en", "fr", "es", etc.).
      * If this property is not set, spell-checker will try to auto-detect language by parsing the text.
      * To reset this setting, pass a empty string as language.
      * If KF5::Sonnet depedencies is not resolved, these method do nothing.
@@ -125,14 +125,14 @@ public:
     QString currentLanguage() const;
 
     /**
-     * Helper methods to handle the Spellcheck settings.
+     * This property holds whether the edit widget handle the Spellcheck settings.
      * See LocalizeContainer class for details.
      */
     LocalizeContainer spellCheckSettings() const;
     void setLocalizeSettings(const LocalizeContainer& settings);
 
     /**
-     * Helper methods to handle the maximum of characters
+     * This property holds whether the edit widget handle the maximum of characters
      * that user can enter in editor.
      * By default no limit is set.
      * A zero lenght reset a limit.
@@ -209,7 +209,7 @@ public:
     ~DPlainTextEdit() override;
 
     /**
-     * Helper methods to handle text contents as plain text.
+     * This property holds whether the edit widget handle text contents as plain text.
      * If ignored or accepted characters masks are set, text is filtered accordingly.
      */
     QString text() const;
@@ -226,7 +226,7 @@ public:
     void  setClearButtonEnabled(bool enable);
 
     /**
-     * Helper methods to handle the mask of ignored characters in text editor.
+     * This property holds whether the edit widget handle the mask of ignored characters in text editor.
      * The mask of characters is passed as string (ex: "+/!()").
      * By default the mask is empty.
      */
@@ -234,7 +234,7 @@ public:
     void setIgnoredCharacters(const QString& mask);
 
     /**
-     * Helper methods to handle the mask of accepted characters in text editor.
+     * This property holds whether the edit widget handle the mask of accepted characters in text editor.
      * The mask of characters is passed as string (ex: "abcABC").
      * By default the mask is empty.
      */
@@ -242,7 +242,7 @@ public:
     void setAcceptedCharacters(const QString& mask);
 
     /**
-     * Helper methods to handle visible lines used by the widget to show text.
+     * This property holds whether the edit widget handle visible lines used by the widget to show text.
      * Lines must be superior or egal to 1 to apply a size constraint.
      * Notes: if a single visible line is used, the widget emulate QLineEdit.
      *        a null value do not apply a size constraint.
@@ -251,7 +251,7 @@ public:
     unsigned int linesVisible() const;
 
     /**
-     * Helper methods to handle a specific spell-checker language (2 letters code based as "en", "fr", "es", etc.).
+     * This property holds whether the edit widget handle a specific spell-checker language (2 letters code based as "en", "fr", "es", etc.).
      * If this property is not set, spell-checker will try to auto-detect language by parsing the text.
      * To reset this setting, pass a empty string as language.
      * If KF5::Sonnet depedencies is not resolved, these method do nothing.
@@ -260,14 +260,14 @@ public:
     QString currentLanguage() const;
 
     /**
-     * Helper methods to handle the Spellcheck settings.
+     * This property holds whether the edit widget handle the Spellcheck settings.
      * See LocalizeContainer class for details.
      */
     LocalizeContainer spellCheckSettings() const;
     void setLocalizeSettings(const LocalizeContainer& settings);
 
     /**
-     * Helper methods to handle the maximum of characters
+     * This property holds whether the edit widget handle the maximum of characters
      * that user can enter in editor.
      * By default no limit is set.
      * A zero lenght reset a limit.
