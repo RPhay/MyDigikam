@@ -100,13 +100,13 @@ void Translate::registerSettingsWidget()
     QWidget* const panel     = new QWidget;
     QGridLayout* const grid  = new QGridLayout(panel);
 
-    d->tagsLabel             = new QLabel(i18nc("@label", "Tags to Translate:"), panel);
+    d->tagsLabel             = new QLabel(i18nc("@label", "Entries to Translate:"), panel);
     d->titleCB               = new QCheckBox(i18nc("@title", "Title"),           panel);
     d->captionCB             = new QCheckBox(i18nc("@title", "Caption"),         panel);
     d->copyrightsCB          = new QCheckBox(i18nc("@title", "Copyrights"),      panel);
     d->usageTermsCB          = new QCheckBox(i18nc("@title", "Usage Terms"),     panel);
 
-    d->trLabel              = new QLabel(i18nc("@label", "Translate to:"),      panel);
+    d->trLabel               = new QLabel(i18nc("@label", "Translate to:"),      panel);
     d->trComboBox            = new QComboBox(panel);
 
     slotLocalizeChanged();
@@ -182,7 +182,7 @@ void Translate::slotSettingsChanged()
         settings.insert(QLatin1String("Caption"),     d->captionCB->isChecked());
         settings.insert(QLatin1String("Copyrights"),  d->copyrightsCB->isChecked());
         settings.insert(QLatin1String("UsageTerms"),  d->usageTermsCB->isChecked());
-        settings.insert(QLatin1String("trLang"),      d->trComboBox->currentText());
+        settings.insert(QLatin1String("TrLang"),      d->trComboBox->currentText());
 
         BatchTool::slotSettingsChanged(settings);
     }
@@ -195,17 +195,13 @@ bool Translate::toolOperations()
 
     if (image().isNull())
     {
-        QFile::remove(outputUrl().toLocalFile());
-        ret = QFile::copy(inputUrl().toLocalFile(), outputUrl().toLocalFile());
-
-        if (!ret || !meta->load(outputUrl().toLocalFile()))
+        if (!meta->load(inputUrl().toLocalFile()))
         {
-            return ret;
+            return false;
         }
     }
     else
     {
-        ret = savefromDImg();
         meta->setData(image().getMetadata());
     }
 
@@ -217,27 +213,46 @@ bool Translate::toolOperations()
 
     if (titleStage)
     {
+        qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Translate Title";
         ret = insertTranslation(QLatin1String("Xmp.dc.title"), trLang, meta.data());
     }
 
     if (captionStage)
     {
+        qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Translate Caption";
         ret = insertTranslation(QLatin1String("Xmp.dc.description"), trLang, meta.data());
     }
 
     if (copyrightsStage)
     {
+        qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Translate Copyrights";
         ret = insertTranslation(QLatin1String("Xmp.dc.rights"), trLang, meta.data());
     }
 
     if (usageTermsStage)
     {
+        qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Translate Usage Terms";
         ret = insertTranslation(QLatin1String("Xmp.xmpRights.UsageTerms"), trLang, meta.data());
     }
 
-    if (ret && (titleStage || captionStage || copyrightsStage || usageTermsStage))
+    if (image().isNull())
     {
-        ret = meta->save(outputUrl().toLocalFile());
+        QFile::remove(outputUrl().toLocalFile());
+        ret = QFile::copy(inputUrl().toLocalFile(), outputUrl().toLocalFile());
+
+        if (ret && (titleStage || captionStage || copyrightsStage || usageTermsStage))
+        {
+            ret = meta->save(outputUrl().toLocalFile());
+        }
+    }
+    else
+    {
+        if (titleStage || captionStage || copyrightsStage || usageTermsStage)
+        {
+            image().setMetadata(meta->data());
+        }
+
+        ret = savefromDImg();
     }
 
     return ret;
@@ -245,7 +260,7 @@ bool Translate::toolOperations()
 
 bool Translate::insertTranslation(const QString& tagName, const QString& trLang, DMetadata* const meta) const
 {
-    bool ret                  = false;
+    bool ret                  = true;
     DMetadata::AltLangMap map = meta->getXmpTagStringListLangAlt(tagName.toLatin1().constData(), false);
 
     if (!map.isEmpty() && map.contains(QLatin1String("x-default")))
@@ -260,9 +275,22 @@ bool Translate::insertTranslation(const QString& tagName, const QString& trLang,
             if (ret)
             {
                 map[trLang] = tr;
+                qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << map;
                 meta->setXmpTagStringListLangAlt(tagName.toLatin1().constData(), map);
             }
+            else
+            {
+                qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Cannot process online translation from" << meta->getFilePath();
+            }
         }
+        else
+        {
+            qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "No x-default language found from" << meta->getFilePath();
+        }
+    }
+    else
+    {
+        qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "No alternative language string found from" << meta->getFilePath();
     }
 
     return ret;
