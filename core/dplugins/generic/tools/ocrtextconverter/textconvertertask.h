@@ -27,7 +27,6 @@
 // Qt includes
 
 #include <QUrl>
-#include <QString>
 
 // Local includes
 

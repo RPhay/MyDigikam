@@ -26,10 +26,7 @@
 
 // Qt includes
 
-#include <QString>
 #include <QImage>
-#include <QMetaType>
-#include <QUrl>
 
 // Local includes
 

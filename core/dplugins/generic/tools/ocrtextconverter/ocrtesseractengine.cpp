@@ -25,7 +25,6 @@
 
 // Qt includes
 
-#include <QString>
 #include <QProcess>
 #include <QUrl>
 #include <QFileInfo>
@@ -34,6 +33,8 @@
 
 #include "ocroptions.h"
 #include "dmetadata.h"
+
+using namespace Digikam;
 
 namespace DigikamGenericTextConverterPlugin
 {

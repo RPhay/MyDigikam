@@ -23,25 +23,10 @@
 
 #include "textconverterthread.h"
 
-// Qt includes
-
-#include <QUrl>
-#include <QList>
-#include <QString>
-
-// KDE includes
-
-#include <klocalizedstring.h>
-
 // Local includes
 
-#include "drawinfo.h"
-#include "drawdecoder.h"
 #include "textconvertertask.h"
-#include "dmetadata.h"
 #include "ocroptions.h"
-#include "digikam_debug.h"
-
 
 using namespace Digikam;
 

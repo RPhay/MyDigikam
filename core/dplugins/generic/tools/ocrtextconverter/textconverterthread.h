@@ -38,7 +38,6 @@ using namespace Digikam;
 namespace DigikamGenericTextConverterPlugin
 {
 
-
 class TextConverterActionThread : public ActionThreadBase
 {
     Q_OBJECT

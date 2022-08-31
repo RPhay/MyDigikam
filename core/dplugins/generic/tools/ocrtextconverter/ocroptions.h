@@ -26,13 +26,11 @@
 
 // Qt includes
 
-#include <QString>
 #include <QMap>
 
 // Local includes
 
 #include "digikam_export.h"
-
 
 namespace Digikam
 {

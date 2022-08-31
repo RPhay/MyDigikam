@@ -24,9 +24,6 @@
 #ifndef DIGIKAM_TEXT_CONVERTER_LIST_H
 #define DIGIKAM_TEXT_CONVERTER_LIST_H
 
-// Qt includes
-
-#include <QUrl>
 
 // Local includes
 

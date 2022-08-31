@@ -26,27 +26,12 @@
 // C++ includes
 
 #include <sstream>
-#include <string>
-#include <iostream>
-#include <algorithm>
-#include <cctype>
 
 // Qt includes
 
-#include <QCloseEvent>
-#include <QFile>
-#include <QFileInfo>
 #include <QGridLayout>
-#include <QPixmap>
 #include <QTimer>
-#include <QTreeWidgetItemIterator>
-#include <QApplication>
 #include <QMessageBox>
-#include <QMenu>
-#include <QPushButton>
-#include <QCursor>
-#include <QWidget>
-#include <QProcess>
 
 // KDE includes
 
@@ -56,14 +41,8 @@
 
 // Local includes
 
-#include "filesaveconflictbox.h"
 #include "dcombobox.h"
 #include "dprogresswdg.h"
-#include "dmetadata.h"
-#include "digikam_debug.h"
-#include "imagedialog.h"
-#include "dexpanderbox.h"
-#include "dfileoperations.h"
 #include "textconverterlist.h"
 #include "textconvertersettings.h"
 #include "ocroptions.h"

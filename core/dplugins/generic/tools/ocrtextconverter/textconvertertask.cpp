@@ -27,7 +27,7 @@
 
 #include "ocrtesseractengine.h"
 #include "ocroptions.h"
-
+#include "drawdecoder.h"
 
 using namespace Digikam;
 

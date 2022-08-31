@@ -25,40 +25,18 @@
 
 // Qt includes
 
-#include <QCloseEvent>
-#include <QFile>
-#include <QFileInfo>
 #include <QGridLayout>
-#include <QPixmap>
-#include <QTimer>
-#include <QTreeWidgetItemIterator>
-#include <QApplication>
-#include <QMessageBox>
-#include <QMenu>
-#include <QPushButton>
-#include <QCursor>
-#include <QWidget>
-#include <QProcess>
 #include <QCheckBox>
 
 // KDE includes
 
-#include <kconfiggroup.h>
-#include <ksharedconfig.h>
 #include <klocalizedstring.h>
 
 // Local includes
 
-#include "filesaveconflictbox.h"
 #include "dcombobox.h"
 #include "dprogresswdg.h"
-#include "dmetadata.h"
-#include "digikam_debug.h"
-#include "imagedialog.h"
 #include "dexpanderbox.h"
-#include "dfileoperations.h"
-#include "exiftoolerrorview.h"
-#include "exiftoolparser.h"
 #include "dnuminput.h"
 #include "textconverterlist.h"
 #include "ocroptions.h"

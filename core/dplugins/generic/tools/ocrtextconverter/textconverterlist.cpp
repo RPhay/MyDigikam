@@ -23,11 +23,6 @@
 
 #include "textconverterlist.h"
 
-// Qt includes
-
-#include <QFileInfo>
-#include <QDir>
-
 // KDE includes
 
 #include <klocalizedstring.h>

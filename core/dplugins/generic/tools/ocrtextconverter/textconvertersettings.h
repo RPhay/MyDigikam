@@ -29,7 +29,6 @@
 #include <QWidget>
 #include <QString>
 
-
 namespace DigikamGenericTextConverterPlugin
 {
 

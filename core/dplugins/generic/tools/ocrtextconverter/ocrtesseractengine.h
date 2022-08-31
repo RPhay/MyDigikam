@@ -27,13 +27,7 @@
 // Qt includes
 
 #include <QString>
-
-// Local includes
-
-#include "drawdecoder.h"
-#include "digikam_export.h"
-
-using namespace Digikam;
+#include <QObject>
 
 namespace DigikamGenericTextConverterPlugin
 {
