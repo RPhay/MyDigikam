@@ -27,6 +27,7 @@
 // Local includes
 
 #include "batchtool.h"
+#include "dmetadata.h"
 
 using namespace Digikam;
 
@@ -59,7 +60,8 @@ private:
 
     bool toolOperations()                                   override;
 
-    bool translate(const QString& text, const QString& trCode, QString& tr);
+    bool translate(const QString& text, const QString& trCode, QString& tr) const;
+    bool insertTranslation(char* const tagName, DMetadata& meta)      const;
 
 private:
 

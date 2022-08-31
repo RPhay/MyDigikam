@@ -41,7 +41,6 @@
 // Local includes
 
 #include "dimg.h"
-#include "dmetadata.h"
 #include "donlinetranslator.h"
 #include "localizesettings.h"
 
@@ -207,23 +206,22 @@ bool Translate::toolOperations()
 
     if (titleStage)
     {
-        DMetadata::AltLangMap map = meta.getXmpTagStringListLangAlt("Xmp.dc.title", false);
+        ret = insertTranslation("Xmp.dc.title", meta);
+    }
 
-        if (!map.isEmpty() && map.contains(QLatin1String("x-default")))
-        {
-            QString sc = map.value(QLatin1String("x-default");
+    if (captionStage)
+    {
+        ret = insertTranslation("Xmp.dc.description", meta);
+    }
 
-            if (!sc.isEmpty())
-            {
-                ret = translate(sc, trLang, tr);
+    if (copyrightStage)
+    {
+        ret = insertTranslation("Xmp.dc.rights", meta);
+    }
 
-                if (ret)
-                {
-                    map[trLang] = tr;
-                    meta.setXmpTagStringListLangAlt("Xmp.dc.title", map);
-                }
-            }
-        }
+    if (usageTermsStage)
+    {
+        ret = insertTranslation("Xmp.xmpRights.UsageTerms", meta);
     }
 
     if (ret && (titleStage || captionStage || copyrightsStage || usageTermsStage))
@@ -234,7 +232,31 @@ bool Translate::toolOperations()
     return ret;
 }
 
-bool Translate::translate(const QString& text, const QString& trCode, QString& tr)
+bool Translate::insertTranslation(char* const tagName, DMetadata& meta) const
+{
+    bool ret                  = false;
+    DMetadata::AltLangMap map = meta.getXmpTagStringListLangAlt(tagName, false);
+
+    if (!map.isEmpty() && map.contains(QLatin1String("x-default")))
+    {
+        QString sc = map.value(QLatin1String("x-default");
+
+        if (!sc.isEmpty())
+        {
+            ret = translate(sc, trLang, tr);
+
+            if (ret)
+            {
+                map[trLang] = tr;
+                meta.setXmpTagStringListLangAlt(tagName, map);
+            }
+        }
+    }
+
+    return ret;
+}
+
+bool Translate::translate(const QString& text, const QString& trCode, QString& tr) const
 {
     QScopedPointer<DOnlineTranslator> trengine(new DOnlineTranslator);
     QScopedPointer<QEventLoop> waitingLoop(new QEventLoop);
