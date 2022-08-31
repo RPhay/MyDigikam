@@ -32,6 +32,7 @@
 #include <QLabel>
 #include <QFile>
 #include <QScopedPointer>
+#include <QEventLoop>
 
 // KDE includes
 
@@ -49,22 +50,6 @@ namespace DigikamBqmTranslatePlugin
 
 class Q_DECL_HIDDEN Translate::Private
 {
-public:
-
-    enum RemoveAction
-    {
-        ALL = 0,
-        GPS,
-        DATE,
-        EXIF,
-        VIDEO,
-        DUBLIN,
-        COMMENT,
-        DIGIKAM,
-        HISTORY,
-        XPKEYWORDS
-
-    };
 
 public:
 
@@ -116,14 +101,7 @@ void Translate::registerSettingsWidget()
 
     d->trComboBox            = new QComboBox(panel);
 
-    QStringList allRFC3066  = DOnlineTranslator::supportedRFC3066(LocalizeSettings::instance()->settings().translatorEngine);
-    LocalizeContainer set   = LocalizeSettings::instance()->settings();
-
-    Q_FOREACH (const QString& lg, set.translatorLang)
-    {
-        d->trComboBox->addItem(lg);
-        d->trComboBox->setItemData(d->trComboBox->findText(lg), i18nc("@info", "Translate to %1", languageNameRFC3066(lg)), Qt::ToolTipRole);
-    }
+    slotLocalizeChanged();
 
     grid->addWidget(d->titleCB,      0, 0, 1, 1);
     grid->addWidget(d->captionCB,    1, 0, 1, 1);
@@ -149,6 +127,9 @@ void Translate::registerSettingsWidget()
 
     connect(d->trComboBox, SIGNAL(currentIndexChanged(int)),
             this, SLOT(slotSettingsChanged()));
+
+    connect(LocalizeSettings::instance(), SLOT(signalSettingsChanged()),
+            this, SLOT(slotLocalizeChanged()));
 
     BatchTool::registerSettingsWidget();
 }
@@ -218,86 +199,34 @@ bool Translate::toolOperations()
         meta->setData(image().getMetadata());
     }
 
-    bool titleAc       = settings()[QLatin1String("Title")].toBool();
-    bool captionAc     = settings()[QLatin1String("Caption")].toBool();
-    bool copyrightsAc  = settings()[QLatin1String("Copyrights")].toBool();
-    bool usageTermsAc  = settings()[QLatin1String("UsageTerms")].toBool();
-    QString trLang     = settings()[QLatin1String("TrLAng")].toString();
+    bool titleStage      = settings()[QLatin1String("Title")].toBool();
+    bool captionStage    = settings()[QLatin1String("Caption")].toBool();
+    bool copyrightsStage = settings()[QLatin1String("Copyrights")].toBool();
+    bool usageTermsStage = settings()[QLatin1String("UsageTerms")].toBool();
+    QString trLang       = settings()[QLatin1String("TrLang")].toString();
 
-    if (titleAc)
+    if (titleStage)
     {
-        
-    }
+        DMetadata::AltLangMap map = meta.getXmpTagStringListLangAlt("Xmp.dc.title", false);
 
-    if (removeIptc)
-    {
-        if      (iptcData == Private::ALL)
+        if (!map.isEmpty() && map.contains(QLatin1String("x-default")))
         {
-            meta->clearIptc();
-        }
-        else if (iptcData == Private::DATE)
-        {
-            meta->removeIptcTag("Iptc.Application2.DateCreated");
-            meta->removeIptcTag("Iptc.Application2.TimeCreated");
-        }
-        else if (iptcData == Private::COMMENT)
-        {
-            meta->removeIptcTag("Iptc.Application2.Caption");
-        }
-    }
+            QString sc = map.value(QLatin1String("x-default");
 
-    if (removeXmp)
-    {
-        if      (xmpData == Private::ALL)
-        {
-            meta->clearXmp();
-        }
-        else if (xmpData == Private::DATE)
-        {
-            meta->removeXmpTag("Xmp.photoshop.DateCreated");
-            meta->removeXmpTag("Xmp.exif.DateTimeOriginal");
-            meta->removeXmpTag("Xmp.xmp.MetadataDate");
-            meta->removeXmpTag("Xmp.xmp.CreateDate");
-            meta->removeXmpTag("Xmp.xmp.ModifyDate");
-            meta->removeXmpTag("Xmp.tiff.DateTime");
-            meta->removeXmpTag("Xmp.video.DateTimeDigitized");
-            meta->removeXmpTag("Xmp.video.DateTimeOriginal");
-            meta->removeXmpTag("Xmp.video.ModificationDate");
-            meta->removeXmpTag("Xmp.video.DateUTC");
-        }
-        else if (xmpData == Private::HISTORY)
-        {
-            meta->removeXmpTag("Xmp.digiKam.ImageHistory");
-        }
-        else if (xmpData == Private::DIGIKAM)
-        {
-            meta->removeXmpTags(QStringList() << QLatin1String("digiKam"));
-        }
-        else if (xmpData == Private::DUBLIN)
-        {
-            meta->removeXmpTags(QStringList() << QLatin1String("dc"));
-        }
-        else if (xmpData == Private::EXIF)
-        {
-            meta->removeXmpTags(QStringList() << QLatin1String("exif"));
-        }
-        else if (xmpData == Private::VIDEO)
-        {
-            meta->removeXmpTags(QStringList() << QLatin1String("video"));
-        }
-        else if (xmpData == Private::COMMENT)
-        {
-            meta->removeXmpTag("Xmp.acdsee.Caption");
-            meta->removeXmpTag("Xmp.dc.Description");
-            meta->removeXmpTag("Xmp.crs.Description");
-            meta->removeXmpTag("Xmp.exif.UserComment");
-            meta->removeXmpTag("Xmp.tiff.ImageDescription");
-            meta->removeXmpTag("Xmp.xmp.Description");
-            meta->removeXmpTag("Xmp.xmpDM.DMComment");
+            if (!sc.isEmpty())
+            {
+                ret = translate(sc, trLang, tr);
+
+                if (ret)
+                {
+                    map[trLang] = tr;
+                    meta.setXmpTagStringListLangAlt("Xmp.dc.title", map);
+                }
+            }
         }
     }
 
-    if (ret && (removeExif || removeIptc || removeXmp))
+    if (ret && (titleStage || captionStage || copyrightsStage || usageTermsStage))
     {
         ret = meta->save(outputUrl().toLocalFile());
     }
@@ -305,57 +234,56 @@ bool Translate::toolOperations()
     return ret;
 }
 
-QString Translate::translate(const QString& text, const QString& trCode)
+bool Translate::translate(const QString& text, const QString& trCode, QString& tr)
 {
-    DOnlineTranslator* const trengine   = new DOnlineTranslator;
+    QScopedPointer<DOnlineTranslator> trengine(new DOnlineTranslator);
+    QScopedPointer<QEventLoop> waitingLoop(new QEventLoop);
+
     DOnlineTranslator::Language srcLang = DOnlineTranslator::Auto;
     DOnlineTranslator::Language trLang  = DOnlineTranslator::language(DOnlineTranslator::fromRFC3066(LocalizeSettings::instance()->settings().translatorEngine, trCode));
 
-    qCDebug(DIGIKAM_WIDGETS_LOG) << "Request to translate with Web-service:";
-    qCDebug(DIGIKAM_WIDGETS_LOG) << "Text to translate        :" << text;
-    qCDebug(DIGIKAM_WIDGETS_LOG) << "To target language       :" << trLang;
-    qCDebug(DIGIKAM_WIDGETS_LOG) << "With source language     :" << srcLang;
+    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Request to translate with Web-service:";
+    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Text to translate        :" << text;
+    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "To target language       :" << trLang;
+    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "With source language     :" << srcLang;
+
+    connect(trengine, &DOnlineTranslator::signalFinished,
+            waitingLoop, &QEventLoop::quit);
 
     trengine->translate(text,                                                            // String to translate
                         LocalizeSettings::instance()->settings().translatorEngine,       // Web service
                         trLang,                                                          // Target language
                         srcLang,                                                         // Source langage
                         DOnlineTranslator::Auto);
-}
 
-void AltLangStrEdit::slotTranslationFinished()
-{
-    setDisabled(false);
+    waitingLoop->exec(QEventLoop::ExcludeUserInputEvents);
 
-    if (d->trengine->error() == DOnlineTranslator::NoError)
+    if (trengine->error() == DOnlineTranslator::NoError)
     {
-        if (d->trCode.isEmpty())
-        {
-            return;
-        }
+        tr = trengine->translation();
+        qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Text translated          :" << tr;
 
-        QString translation = d->trengine->translation();
-        qCDebug(DIGIKAM_WIDGETS_LOG) << "Text translated          :" << translation;
-
-        MetaEngine::AltLangMap vals = values();
-        vals.insert(d->trCode, translation);
-        setValues(vals);
-
-        Q_EMIT signalValueAdded(d->trCode, translation);
-
-        d->languageCB->setCurrentText(d->trCode);
-        d->trCode.clear();
+        return true;
     }
     else
     {
-        qCDebug(DIGIKAM_WIDGETS_LOG) << "Translation Error       :" << d->trengine->error();
+        qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Translation Error       :" << trengine->error();
+    }
 
-        QMessageBox::information(qApp->activeWindow(),
-                                 i18nc("@info", "Failed to translate string with %1 Web-service",
-                                 DOnlineTranslator::engineName(LocalizeSettings::instance()->settings().translatorEngine)),
-                                 i18nc("@info", "Error message: %1",
-                                 d->trengine->errorString()));
+    return false;
+}
 
+void AltLangStrEdit::slotLocalizeChanged()
+{
+    d->trComboBox->clear();
+
+    QStringList allRFC3066  = DOnlineTranslator::supportedRFC3066(LocalizeSettings::instance()->settings().translatorEngine);
+    LocalizeContainer set   = LocalizeSettings::instance()->settings();
+
+    Q_FOREACH (const QString& lg, set.translatorLang)
+    {
+        d->trComboBox->addItem(lg);
+        d->trComboBox->setItemData(d->trComboBox->findText(lg), i18nc("@info", "Translate to %1", languageNameRFC3066(lg)), Qt::ToolTipRole);
     }
 }
 

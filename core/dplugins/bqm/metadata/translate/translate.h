@@ -53,9 +53,13 @@ private Q_SLOTS:
     void slotAssignSettings2Widget()                        override;
     void slotSettingsChanged()                              override;
 
+    void slotLocalizeChanged();
+
 private:
 
     bool toolOperations()                                   override;
+
+    bool translate(const QString& text, const QString& trCode, QString& tr);
 
 private:
 
