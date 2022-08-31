@@ -44,6 +44,7 @@
 #include "dimg.h"
 #include "donlinetranslator.h"
 #include "localizesettings.h"
+#include "altlangstredit.h"
 
 namespace DigikamBqmTranslatePlugin
 {
@@ -58,6 +59,8 @@ public:
         captionCB     (nullptr),
         copyrightsCB  (nullptr),
         usageTermsCB  (nullptr),
+        trLabel       (nullptr),
+        tagsLabel     (nullptr),
         trComboBox    (nullptr),
         changeSettings(true)
     {
@@ -67,6 +70,9 @@ public:
     QCheckBox* captionCB;
     QCheckBox* copyrightsCB;
     QCheckBox* usageTermsCB;
+
+    QLabel*    trLabel;
+    QLabel*    tagsLabel;
 
     QComboBox* trComboBox;
 
@@ -94,22 +100,26 @@ void Translate::registerSettingsWidget()
     QWidget* const panel     = new QWidget;
     QGridLayout* const grid  = new QGridLayout(panel);
 
-    d->titleCB               = new QCheckBox(i18nc("@title", "Title"),       panel);
-    d->captionCB             = new QCheckBox(i18nc("@title", "Caption"),     panel);
-    d->copyrightsCB          = new QCheckBox(i18nc("@title", "Copyrights"),  panel);
-    d->usageTermsCB          = new QCheckBox(i18nc("@title", "Usage Terms"), panel);
+    d->tagsLabel             = new QLabel(i18nc("@label", "Tags to Translate:"), panel);
+    d->titleCB               = new QCheckBox(i18nc("@title", "Title"),           panel);
+    d->captionCB             = new QCheckBox(i18nc("@title", "Caption"),         panel);
+    d->copyrightsCB          = new QCheckBox(i18nc("@title", "Copyrights"),      panel);
+    d->usageTermsCB          = new QCheckBox(i18nc("@title", "Usage Terms"),     panel);
 
+    d->trLabel              = new QLabel(i18nc("@label", "Translate to:"),      panel);
     d->trComboBox            = new QComboBox(panel);
 
     slotLocalizeChanged();
 
-    grid->addWidget(d->titleCB,      0, 0, 1, 1);
-    grid->addWidget(d->captionCB,    1, 0, 1, 1);
-    grid->addWidget(d->copyrightsCB, 2, 0, 1, 1);
-    grid->addWidget(d->usageTermsCB, 3, 0, 1, 1);
-    grid->addWidget(d->trComboBox,   4, 0, 1, 1);
+    grid->addWidget(d->tagsLabel,    0, 0, 1, 1);
+    grid->addWidget(d->titleCB,      1, 0, 1, 1);
+    grid->addWidget(d->captionCB,    2, 0, 1, 1);
+    grid->addWidget(d->copyrightsCB, 3, 0, 1, 1);
+    grid->addWidget(d->usageTermsCB, 4, 0, 1, 1);
+    grid->addWidget(d->trLabel,      5, 0, 1, 1);
+    grid->addWidget(d->trComboBox,   6, 0, 1, 1);
     grid->setColumnStretch(0, 10);
-    grid->setRowStretch(5, 10);
+    grid->setRowStretch(7, 10);
 
     m_settingsWidget = panel;
 
@@ -128,7 +138,7 @@ void Translate::registerSettingsWidget()
     connect(d->trComboBox, SIGNAL(currentIndexChanged(int)),
             this, SLOT(slotSettingsChanged()));
 
-    connect(LocalizeSettings::instance(), SLOT(signalSettingsChanged()),
+    connect(LocalizeSettings::instance(), SIGNAL(signalSettingsChanged()),
             this, SLOT(slotLocalizeChanged()));
 
     BatchTool::registerSettingsWidget();
@@ -207,22 +217,22 @@ bool Translate::toolOperations()
 
     if (titleStage)
     {
-        ret = insertTranslation("Xmp.dc.title", meta.data());
+        ret = insertTranslation(QLatin1String("Xmp.dc.title"), trLang, meta.data());
     }
 
     if (captionStage)
     {
-        ret = insertTranslation("Xmp.dc.description", meta.data());
+        ret = insertTranslation(QLatin1String("Xmp.dc.description"), trLang, meta.data());
     }
 
     if (copyrightsStage)
     {
-        ret = insertTranslation("Xmp.dc.rights", meta.data());
+        ret = insertTranslation(QLatin1String("Xmp.dc.rights"), trLang, meta.data());
     }
 
     if (usageTermsStage)
     {
-        ret = insertTranslation("Xmp.xmpRights.UsageTerms", meta.data());
+        ret = insertTranslation(QLatin1String("Xmp.xmpRights.UsageTerms"), trLang, meta.data());
     }
 
     if (ret && (titleStage || captionStage || copyrightsStage || usageTermsStage))
@@ -233,23 +243,24 @@ bool Translate::toolOperations()
     return ret;
 }
 
-bool Translate::insertTranslation(const QString& tagName, DMetadata* const meta) const
+bool Translate::insertTranslation(const QString& tagName, const QString& trLang, DMetadata* const meta) const
 {
     bool ret                  = false;
-    DMetadata::AltLangMap map = meta->getXmpTagStringListLangAlt(tagName.constData(), false);
+    DMetadata::AltLangMap map = meta->getXmpTagStringListLangAlt(tagName.toLatin1().constData(), false);
 
     if (!map.isEmpty() && map.contains(QLatin1String("x-default")))
     {
-        QString sc = map.value(QLatin1String("x-default");
+        QString sc = map.value(QLatin1String("x-default"));
 
         if (!sc.isEmpty())
         {
-            ret = translate(sc, trLang, tr);
+            QString tr;
+            ret = translateString(sc, trLang, tr);
 
             if (ret)
             {
                 map[trLang] = tr;
-                meta->setXmpTagStringListLangAlt(tagName.constData(), map);
+                meta->setXmpTagStringListLangAlt(tagName.toLatin1().constData(), map);
             }
         }
     }
@@ -257,7 +268,7 @@ bool Translate::insertTranslation(const QString& tagName, DMetadata* const meta)
     return ret;
 }
 
-bool Translate::translate(const QString& text, const QString& trCode, QString& tr) const
+bool Translate::translateString(const QString& text, const QString& trCode, QString& tr) const
 {
     QScopedPointer<DOnlineTranslator> trengine(new DOnlineTranslator);
     QScopedPointer<QEventLoop> waitingLoop(new QEventLoop);
@@ -270,8 +281,8 @@ bool Translate::translate(const QString& text, const QString& trCode, QString& t
     qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "To target language       :" << trLang;
     qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "With source language     :" << srcLang;
 
-    connect(trengine, &DOnlineTranslator::signalFinished,
-            waitingLoop, &QEventLoop::quit);
+    connect(trengine.data(), &DOnlineTranslator::signalFinished,
+            waitingLoop.data(), &QEventLoop::quit);
 
     trengine->translate(text,                                                            // String to translate
                         LocalizeSettings::instance()->settings().translatorEngine,       // Web service
@@ -298,6 +309,9 @@ bool Translate::translate(const QString& text, const QString& trCode, QString& t
 
 void Translate::slotLocalizeChanged()
 {
+    d->trComboBox->setToolTip(i18nc("@info", "Select language to translate with %1",
+                              DOnlineTranslator::engineName(LocalizeSettings::instance()->settings().translatorEngine)));
+
     d->trComboBox->clear();
 
     QStringList allRFC3066  = DOnlineTranslator::supportedRFC3066(LocalizeSettings::instance()->settings().translatorEngine);
@@ -306,7 +320,7 @@ void Translate::slotLocalizeChanged()
     Q_FOREACH (const QString& lg, set.translatorLang)
     {
         d->trComboBox->addItem(lg);
-        d->trComboBox->setItemData(d->trComboBox->findText(lg), i18nc("@info", "Translate to %1", languageNameRFC3066(lg)), Qt::ToolTipRole);
+        d->trComboBox->setItemData(d->trComboBox->findText(lg), i18nc("@info", "Translate to %1", AltLangStrEdit::languageNameRFC3066(lg)), Qt::ToolTipRole);
     }
 }
 
