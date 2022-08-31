@@ -29,10 +29,6 @@
 #include <QWidget>
 #include <QString>
 
-// KDE includes
-
-#include "digikam_export.h"
-#include "kconfiggroup.h"
 
 namespace DigikamGenericTextConverterPlugin
 {
