@@ -175,13 +175,13 @@ void FuzzySearchView::setupConnections()
     connect(d->saveBtnImage, SIGNAL(clicked()),
             this, SLOT(slotSaveImageSAlbum()));
 
-    connect(d->nameEditSketch, SIGNAL(textChanged(QString)),
+    connect(d->nameEditSketch, SIGNAL(textChanged()),
             this, SLOT(slotCheckNameEditSketchConditions()));
 
     connect(d->nameEditSketch, SIGNAL(returnPressed()),
             d->saveBtnSketch, SLOT(animateClick()));
 
-    connect(d->nameEditImage, SIGNAL(textChanged(QString)),
+    connect(d->nameEditImage, SIGNAL(textChanged()),
             this, SLOT(slotCheckNameEditImageConditions()));
 
     connect(d->nameEditImage, SIGNAL(returnPressed()),
