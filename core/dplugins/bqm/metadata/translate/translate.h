@@ -61,7 +61,7 @@ private:
     bool toolOperations()                                   override;
 
     bool translate(const QString& text, const QString& trCode, QString& tr) const;
-    bool insertTranslation(char* const tagName, DMetadata& meta)      const;
+    bool insertTranslation(const QString& tagName, DMetadata* const meta)   const;
 
 private:
 

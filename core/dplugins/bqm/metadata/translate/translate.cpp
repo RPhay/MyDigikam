@@ -40,6 +40,7 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "dimg.h"
 #include "donlinetranslator.h"
 #include "localizesettings.h"
@@ -206,22 +207,22 @@ bool Translate::toolOperations()
 
     if (titleStage)
     {
-        ret = insertTranslation("Xmp.dc.title", meta);
+        ret = insertTranslation("Xmp.dc.title", meta.data());
     }
 
     if (captionStage)
     {
-        ret = insertTranslation("Xmp.dc.description", meta);
+        ret = insertTranslation("Xmp.dc.description", meta.data());
     }
 
-    if (copyrightStage)
+    if (copyrightsStage)
     {
-        ret = insertTranslation("Xmp.dc.rights", meta);
+        ret = insertTranslation("Xmp.dc.rights", meta.data());
     }
 
     if (usageTermsStage)
     {
-        ret = insertTranslation("Xmp.xmpRights.UsageTerms", meta);
+        ret = insertTranslation("Xmp.xmpRights.UsageTerms", meta.data());
     }
 
     if (ret && (titleStage || captionStage || copyrightsStage || usageTermsStage))
@@ -232,10 +233,10 @@ bool Translate::toolOperations()
     return ret;
 }
 
-bool Translate::insertTranslation(char* const tagName, DMetadata& meta) const
+bool Translate::insertTranslation(const QString& tagName, DMetadata* const meta) const
 {
     bool ret                  = false;
-    DMetadata::AltLangMap map = meta.getXmpTagStringListLangAlt(tagName, false);
+    DMetadata::AltLangMap map = meta->getXmpTagStringListLangAlt(tagName.constData(), false);
 
     if (!map.isEmpty() && map.contains(QLatin1String("x-default")))
     {
@@ -248,7 +249,7 @@ bool Translate::insertTranslation(char* const tagName, DMetadata& meta) const
             if (ret)
             {
                 map[trLang] = tr;
-                meta.setXmpTagStringListLangAlt(tagName, map);
+                meta->setXmpTagStringListLangAlt(tagName.constData(), map);
             }
         }
     }
@@ -295,7 +296,7 @@ bool Translate::translate(const QString& text, const QString& trCode, QString& t
     return false;
 }
 
-void AltLangStrEdit::slotLocalizeChanged()
+void Translate::slotLocalizeChanged()
 {
     d->trComboBox->clear();
 
