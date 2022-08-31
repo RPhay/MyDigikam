@@ -23,7 +23,7 @@
 
 #include "ocroptions.h"
 
-// Local includes
+// KDE includes
 
 #include <klocalizedstring.h>
 

@@ -46,7 +46,6 @@
 #include <kconfiggroup.h>
 #include <ksharedconfig.h>
 #include <klocalizedstring.h>
-#include <kprocess.h>
 
 // Local includes
 
