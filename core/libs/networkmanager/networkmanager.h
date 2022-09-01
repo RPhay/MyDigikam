@@ -48,7 +48,7 @@ public:
      */
     static NetworkManager* instance();
 
-    QNetworkAccessManager* getNetworkManager() const; 
+    QNetworkAccessManager* getNetworkManager(QObject* object) const;
 
 private:
 

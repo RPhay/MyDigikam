@@ -71,9 +71,16 @@ NetworkManager* NetworkManager::instance()
     return &networkManagerCreator->object;
 }
 
-QNetworkAccessManager* NetworkManager::getNetworkManager() const
+QNetworkAccessManager* NetworkManager::getNetworkManager(QObject* object) const
 {
-    return d->networkManager;
+    if (thread() == object->thread())
+    {
+        return d->networkManager;
+    }
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "New QNetworkAccessManager for" << object;
+
+    return (new QNetworkAccessManager(object));
 }
 
 } // namespace Digikam
