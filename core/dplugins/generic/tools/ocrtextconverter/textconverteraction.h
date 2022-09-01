@@ -27,6 +27,7 @@
 // Qt includes
 
 #include <QImage>
+#include <QUrl>
 
 // Local includes
 
