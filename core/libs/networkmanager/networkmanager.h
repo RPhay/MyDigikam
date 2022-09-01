@@ -36,7 +36,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_DATABASE_EXPORT NetworkManager : public QObject
+class DIGIKAM_EXPORT NetworkManager : public QObject
 {
     Q_OBJECT
 
