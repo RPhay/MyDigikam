@@ -41,6 +41,7 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "networkmanager.h"
 
 namespace Digikam

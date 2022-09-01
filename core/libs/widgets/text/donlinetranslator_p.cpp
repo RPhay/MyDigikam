@@ -584,6 +584,8 @@ DOnlineTranslator::Private::Private(DOnlineTranslator* const parent)
 
     if (!networkManager || (networkManager->thread() != parent->thread()))
     {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "DOnlineTranslator: create network manager";
+
         networkManager = new QNetworkAccessManager(parent);
     }
 }
