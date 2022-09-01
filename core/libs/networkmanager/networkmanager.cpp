@@ -71,7 +71,7 @@ NetworkManager* NetworkManager::instance()
     return &networkManagerCreator->object;
 }
 
-QNetworkAccessManager* NetworkManager::getNetworkManager(QObject* object) const
+QNetworkAccessManager* NetworkManager::getNetworkManager(QObject* const object) const
 {
     if (thread() == object->thread())
     {
