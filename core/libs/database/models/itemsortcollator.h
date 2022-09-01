@@ -57,8 +57,10 @@ public:
 private:
 
     // Disable
+
     ItemSortCollator();
     explicit ItemSortCollator(QObject*) = delete;
+
     ~ItemSortCollator() override;
 
 private:

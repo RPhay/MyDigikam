@@ -53,8 +53,10 @@ public:
 private:
 
     // Disable
+
     NetworkManager();
     explicit NetworkManager(QObject*) = delete;
+
     ~NetworkManager() override;
 
 private:
