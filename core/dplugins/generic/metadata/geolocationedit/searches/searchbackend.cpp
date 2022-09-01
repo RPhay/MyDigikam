@@ -26,7 +26,6 @@
 
 // Qt includes
 
-#include <QNetworkAccessManager>
 #include <QDomDocument>
 #include <QUrlQuery>
 
@@ -38,6 +37,7 @@
 
 #include "gpscommon.h"
 #include "digikam_debug.h"
+#include "networkmanager.h"
 
 namespace DigikamGenericGeolocationEditPlugin
 {
@@ -65,7 +65,7 @@ SearchBackend::SearchBackend(QObject* const parent)
     : QObject(parent),
       d      (new Private())
 {
-    d->mngr = new QNetworkAccessManager(this);
+    d->mngr = NetworkManager::instance()->getNetworkManager(this);
 
     connect(d->mngr, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotFinished(QNetworkReply*)));

@@ -26,7 +26,7 @@
 
 // Qt includes
 
-#include <QNetworkAccessManager>
+
 #include <QUrlQuery>
 #include <QRegularExpression>
 
@@ -37,6 +37,7 @@
 // Local includes
 
 #include "geoifacetypes.h"
+#include "networkmanager.h"
 
 namespace Digikam
 {
@@ -71,10 +72,10 @@ class Q_DECL_HIDDEN LookupAltitudeGeonames::Private
 public:
 
     explicit Private()
-      : status(StatusSuccess),
+      : status                   (StatusSuccess),
         currentMergedRequestIndex(0),
-        netReply(nullptr),
-        mngr(nullptr)
+        netReply                 (nullptr),
+        mngr                     (nullptr)
 
     {
     }
@@ -98,7 +99,7 @@ LookupAltitudeGeonames::LookupAltitudeGeonames(QObject* const parent)
     : LookupAltitude(parent),
       d(new Private)
 {
-    d->mngr = new QNetworkAccessManager(this);
+    d->mngr = NetworkManager::instance()->getNetworkManager(this);
 
     connect(d->mngr, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotFinished(QNetworkReply*)));
@@ -219,6 +220,11 @@ void LookupAltitudeGeonames::startNextRequest()
 
 void LookupAltitudeGeonames::slotFinished(QNetworkReply* reply)
 {
+    if (reply != d->netReply)
+    {
+        return;
+    }
+
     if (reply->error() != QNetworkReply::NoError)
     {
         d->errorMessage = reply->errorString();
