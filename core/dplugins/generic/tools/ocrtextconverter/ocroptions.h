@@ -78,9 +78,9 @@ public:
     explicit OcrOptions();
     ~OcrOptions();
 
-    static QMap<OcrOptions::Languages, QString>               languagesNames();
-    static QMap<OcrOptions::PageSegmentationModes, QString>   psmNames();
-    static QMap<OcrOptions::EngineModes, QString>             oemNames();
+    static QMap<OcrOptions::Languages,             QPair<QString, QString>>   languagesNames();
+    static QMap<OcrOptions::PageSegmentationModes, QPair<QString, QString>>   psmNames();
+    static QMap<OcrOptions::EngineModes,           QPair<QString, QString>>   oemNames();
 
     QString LanguageCodeToValue(OcrOptions::Languages l);
     QString PsmCodeToValue(OcrOptions::PageSegmentationModes psm);

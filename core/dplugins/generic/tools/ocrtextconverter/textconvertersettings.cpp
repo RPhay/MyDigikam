@@ -85,12 +85,13 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
     QLabel* const ocrTesseractLanguageLabel   = new QLabel(i18nc("@label", "Languages:"));
     d->ocrTesseractLanguageMode               = new DComboBox(this);
 
-    QMap<OcrOptions::Languages, QString>             langMap  = OcrOptions::languagesNames();
-    QMap<OcrOptions::Languages, QString>::const_iterator it   = langMap.constBegin();
+    QMap<OcrOptions::Languages, QPair<QString, QString>>             langMap  = OcrOptions::languagesNames();
+    QMap<OcrOptions::Languages, QPair<QString, QString>>::const_iterator it   = langMap.constBegin();
 
     while (it != langMap.constEnd())
     {
-        d->ocrTesseractLanguageMode->addItem(it.value(), (int)it.key());
+        d->ocrTesseractLanguageMode->addItem(it.value().first, (int)it.key());
+        d->ocrTesseractLanguageMode->combo()->setItemData((int)it.key(), it.value().second, Qt::ToolTipRole);
         ++it;
     }
 
@@ -105,12 +106,13 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
     QLabel* const ocrTesseractPSMLabel  = new QLabel(i18nc("@label", "Segmentation mode:"));
     d->ocrTesseractPSMMode              = new DComboBox(this);
 
-    QMap<OcrOptions::PageSegmentationModes, QString>                psmMap = OcrOptions::psmNames();
-    QMap<OcrOptions::PageSegmentationModes, QString>::const_iterator it1   = psmMap.constBegin();
+    QMap<OcrOptions::PageSegmentationModes,  QPair<QString, QString>>                psmMap = OcrOptions::psmNames();
+    QMap<OcrOptions::PageSegmentationModes,  QPair<QString, QString>>::const_iterator it1   = psmMap.constBegin();
 
     while (it1 != psmMap.constEnd())
     {
-        d->ocrTesseractPSMMode->addItem(it1.value(), (int)it1.key());
+        d->ocrTesseractPSMMode->addItem(it1.value().first, (int)it1.key());
+        d->ocrTesseractPSMMode->combo()->setItemData((int)it1.key(), it1.value().second, Qt::ToolTipRole);
         ++it1;
     }
 
@@ -122,12 +124,13 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
     QLabel* const ocrTesseractOEMLabel  = new QLabel(i18nc("@label", "Engine mode:"));
     d->ocrTesseractOEMMode              = new DComboBox(this);
 
-    QMap<OcrOptions::EngineModes, QString>                oemMap  = OcrOptions::oemNames();
-    QMap<OcrOptions::EngineModes, QString>::const_iterator it2    = oemMap.constBegin();
+    QMap<OcrOptions::EngineModes,  QPair<QString, QString>>                oemMap  = OcrOptions::oemNames();
+    QMap<OcrOptions::EngineModes,  QPair<QString, QString>>::const_iterator it2    = oemMap.constBegin();
 
     while (it2 !=  oemMap.constEnd())
     {
-        d->ocrTesseractOEMMode->addItem(it2.value(), (int)it2.key());
+        d->ocrTesseractOEMMode->addItem(it2.value().first, (int)it2.key());
+        d->ocrTesseractOEMMode->combo()->setItemData((int)it2.key(), it2.value().second, Qt::ToolTipRole);
         ++it2;
     }
 
