@@ -64,7 +64,7 @@ private:
                          const QString& trCode,
                          QString& tr) const;
 
-    bool insertTranslation(const QString& tagName,
+    bool insertTranslation(int entry,
                            const QString& trLang,
                            DMetadata* const meta)                           const;
 

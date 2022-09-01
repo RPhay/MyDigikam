@@ -54,6 +54,16 @@ class Q_DECL_HIDDEN Translate::Private
 
 public:
 
+    enum Entries
+    {
+        Title       = 0x01,
+        Caption     = 0x02,
+        Copyrights  = 0x04,
+        UsageTerms  = 0x08
+    };
+
+public:
+
     explicit Private()
       : titleCB       (nullptr),
         captionCB     (nullptr),
@@ -214,26 +224,31 @@ bool Translate::toolOperations()
     if (titleStage)
     {
         qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Translate Title";
-        ret = insertTranslation(QLatin1String("Xmp.dc.title"), trLang, meta.data());
+        ret = insertTranslation(Private::Title, trLang, meta.data());
     }
 
     if (captionStage)
     {
         qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Translate Caption";
-        ret = insertTranslation(QLatin1String("Xmp.dc.description"), trLang, meta.data());
+        ret = insertTranslation(Private::Caption, trLang, meta.data());
     }
 
     if (copyrightsStage)
     {
         qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Translate Copyrights";
-        ret = insertTranslation(QLatin1String("Xmp.dc.rights"), trLang, meta.data());
+        ret = insertTranslation(Private::Copyrights, trLang, meta.data());
     }
 
     if (usageTermsStage)
     {
         qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Translate Usage Terms";
-        ret = insertTranslation(QLatin1String("Xmp.xmpRights.UsageTerms"), trLang, meta.data());
+        ret = insertTranslation(Private::UsageTerms, trLang, meta.data());
     }
+
+    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Title     :" << meta->getXmpTagStringListLangAlt("Xmp.dc.title", false);
+    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Caption   :" << meta->getXmpTagStringListLangAlt("Xmp.dc.description", false);
+    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "CopyRights:" << meta->getXmpTagStringListLangAlt("Xmp.dc.rights", false);
+    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "UsageTerms:" << meta->getXmpTagStringListLangAlt("Xmp.xmpRights.UsageTerms", false);
 
     if (image().isNull())
     {
@@ -243,12 +258,14 @@ bool Translate::toolOperations()
         if (ret && (titleStage || captionStage || copyrightsStage || usageTermsStage))
         {
             ret = meta->save(outputUrl().toLocalFile());
+            qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Save metadata to file:" << ret;
         }
     }
     else
     {
         if (titleStage || captionStage || copyrightsStage || usageTermsStage)
         {
+            qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Save metadata to image";
             image().setMetadata(meta->data());
         }
 
@@ -258,10 +275,40 @@ bool Translate::toolOperations()
     return ret;
 }
 
-bool Translate::insertTranslation(const QString& tagName, const QString& trLang, DMetadata* const meta) const
+bool Translate::insertTranslation(int entry, const QString& trLang, DMetadata* const meta) const
 {
-    bool ret                  = true;
-    DMetadata::AltLangMap map = meta->getXmpTagStringListLangAlt(tagName.toLatin1().constData(), false);
+    bool ret = true;
+    CaptionsMap captions;
+    DMetadata::AltLangMap map;
+
+    switch (entry)
+    {
+        case Private::Title:
+        {
+            captions = meta->getItemTitles();
+            map      = captions.toAltLangMap();
+            break;
+        }
+
+        case Private::Caption:
+        {
+            captions = meta->getItemComments();
+            map     = captions.toAltLangMap();
+            break;
+        }
+
+        case Private::Copyrights:
+        {
+            map = meta->getXmpTagStringListLangAlt("Xmp.dc.rights", false);
+            break;
+        }
+
+        case Private::UsageTerms:
+        {
+            map = meta->getXmpTagStringListLangAlt("Xmp.xmpRights.UsageTerms", false);
+            break;
+        }
+    }
 
     if (!map.isEmpty() && map.contains(QLatin1String("x-default")))
     {
@@ -274,9 +321,40 @@ bool Translate::insertTranslation(const QString& tagName, const QString& trLang,
 
             if (ret)
             {
-                map[trLang] = tr;
-                qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << map;
-                meta->setXmpTagStringListLangAlt(tagName.toLatin1().constData(), map);
+                switch (entry)
+                {
+                    case Private::Title:
+                    {
+                        CaptionValues val = captions[QLatin1String("x-default")];
+                        val.caption       = tr;
+                        captions[trLang]  = val;
+                        meta->setItemTitles(captions);
+                        break;
+                    }
+
+                    case Private::Caption:
+                    {
+                        CaptionValues val = captions[QLatin1String("x-default")];
+                        val.caption       = tr;
+                        captions[trLang]  = val;
+                        meta->setItemComments(captions);
+                        break;
+                    }
+
+                    case Private::Copyrights:
+                    {
+                        map[trLang] = tr;
+                        meta->setXmpTagStringListLangAlt("Xmp.dc.rights", map);
+                        break;
+                    }
+
+                    case Private::UsageTerms:
+                    {
+                        map[trLang] = tr;
+                        meta->setXmpTagStringListLangAlt("Xmp.xmpRights.UsageTerms", map);
+                        break;
+                    }
+                }
             }
             else
             {
