@@ -46,6 +46,11 @@ void DOnlineTranslator::slotRequestGoogleTranslate()
 
 void DOnlineTranslator::slotParseGoogleTranslate()
 {
+    if ((quintptr)d->currentReply.data() != sender()->property("QNetworkReply").value<quintptr>())
+    {
+        return;
+    }
+
     d->currentReply->deleteLater();
 
     // Check for error

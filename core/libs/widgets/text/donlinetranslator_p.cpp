@@ -577,10 +577,15 @@ const QMap<QString, QString> DOnlineTranslator::Private::s_rfc3066LanguageCodesL
 
 DOnlineTranslator::Private::Private(DOnlineTranslator* const parent)
     : stateMachine  (new QStateMachine(parent)),
-      networkManager(new QNetworkAccessManager(parent)),
       libreUrl      (QLatin1String("https://translate.argosopentech.com")),
       lingvaUrl     (QLatin1String("https://lingva.ml"))
 {
+    networkManager = NetworkManager::instance()->getNetworkManager();
+
+    if (!networkManager || (networkManager->thread() != parent->thread()))
+    {
+        networkManager = new QNetworkAccessManager(parent);
+    }
 }
 
 // --------------------------------------------------------------------------------------------

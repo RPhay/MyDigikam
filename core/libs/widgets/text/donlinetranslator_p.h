@@ -39,6 +39,10 @@
 
 #include <klocalizedstring.h>
 
+// Local includes
+
+#include "networkmanager.h"
+
 namespace Digikam
 {
 
