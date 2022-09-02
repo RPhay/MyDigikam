@@ -168,6 +168,8 @@ DigikamApp::DigikamApp()
 
     d->validIccPath = SetupICC::iccRepositoryIsValid();
 
+    // Clean up database if enabled in the settings
+
     if (ApplicationSettings::instance()->getCleanAtStart() &&
         CollectionScanner::databaseInitialScanDone())
     {
