@@ -90,6 +90,7 @@ DigikamApp::DigikamApp()
     ThumbnailLoadThread::setDisplayingWidget(this);
     DIO::instance();
     LocalizeSettings::instance();
+    NetworkManager::instance();
 
     connect(LocalizeSettings::instance(), &LocalizeSettings::signalOpenLocalizeSetup,
             this, [=]()

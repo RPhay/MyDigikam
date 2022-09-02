@@ -577,7 +577,7 @@ const QMap<QString, QString> DOnlineTranslator::Private::s_rfc3066LanguageCodesL
 
 DOnlineTranslator::Private::Private(DOnlineTranslator* const parent)
     : stateMachine  (new QStateMachine(parent)),
-      networkManager(new QNetworkAccessManager(parent)),
+      networkManager(NetworkManager::instance()->getNetworkManager(parent)),
       libreUrl      (QLatin1String("https://translate.argosopentech.com")),
       lingvaUrl     (QLatin1String("https://lingva.ml"))
 {

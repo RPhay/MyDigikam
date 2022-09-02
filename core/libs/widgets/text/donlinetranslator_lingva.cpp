@@ -44,6 +44,11 @@ void DOnlineTranslator::slotRequestLingvaTranslate()
 
 void DOnlineTranslator::slotParseLingvaTranslate()
 {
+    if ((quintptr)d->currentReply.data() != sender()->property("QNetworkReply").value<quintptr>())
+    {
+        return;
+    }
+
     d->currentReply->deleteLater();
 
     // Check for errors

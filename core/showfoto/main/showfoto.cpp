@@ -63,6 +63,7 @@ Showfoto::Showfoto(const QList<QUrl>& urlList, QWidget* const)
     Digikam::LoadingCacheInterface::initialize();
     Digikam::MetaEngineSettings::instance();
     Digikam::LocalizeSettings::instance();
+    Digikam::NetworkManager::instance();
 
     connect(LocalizeSettings::instance(), &LocalizeSettings::signalOpenLocalizeSetup,
             this, [=]()

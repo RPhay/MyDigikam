@@ -329,6 +329,13 @@ void DOnlineTranslator::buildNetworkRequestState(QState* const parent,
 
     parent->setInitialState(requestingState);
 
+    connect(d->networkManager, &QNetworkAccessManager::finished,
+            parsingState, [parsingState](QNetworkReply* reply)
+        {
+            parsingState->setProperty("QNetworkReply", (quintptr)reply);
+        }
+    );
+
     // Substates transitions
 
     requestingState->addTransition(d->networkManager, &QNetworkAccessManager::finished, parsingState);

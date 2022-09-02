@@ -110,6 +110,7 @@
 #include "exiftoolparser.h"
 #include "sidebarwidget.h"
 #include "localizesettings.h"
+#include "networkmanager.h"
 
 namespace ShowFoto
 {
