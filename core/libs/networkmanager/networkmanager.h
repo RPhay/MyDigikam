@@ -48,6 +48,11 @@ public:
      */
     static NetworkManager* instance();
 
+    /**
+     * Get the current QNetworkAccessManager or create
+     * a new QNetworkAccessManager if the passed
+     * QObject runs on a different thread.
+     */
     QNetworkAccessManager* getNetworkManager(QObject* const object) const;
 
 private:
