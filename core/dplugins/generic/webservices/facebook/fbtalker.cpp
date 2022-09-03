@@ -46,7 +46,6 @@
 #include <QUrlQuery>
 #include <QSettings>
 #include <QMessageBox>
-#include <QNetworkAccessManager>
 
 // KDE includes
 
@@ -59,6 +58,8 @@
 #include "fbmpform.h"
 #include "wstoolutils.h"
 #include "webbrowserdlg.h"
+#include "networkmanager.h"
+
 
 using namespace Digikam;
 
@@ -149,7 +150,7 @@ FbTalker::FbTalker(QWidget* const parent)
     : d(new Private())
 {
     d->parent   = parent;
-    d->netMngr  = new QNetworkAccessManager(this);
+    d->netMngr  = NetworkManager::instance()->getNetworkManager(this);
     d->settings = WSToolUtils::getOauthSettings(this);
 
     connect(this, SIGNAL(linkingSucceeded()),

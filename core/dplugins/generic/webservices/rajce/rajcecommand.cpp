@@ -28,8 +28,6 @@
 #include <QWidget>
 #include <QMutex>
 #include <QQueue>
-#include <QNetworkReply>
-#include <QNetworkAccessManager>
 #include <QCryptographicHash>
 #include <QXmlQuery>
 #include <QXmlResultItems>
