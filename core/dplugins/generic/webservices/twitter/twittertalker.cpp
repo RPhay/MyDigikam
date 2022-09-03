@@ -42,7 +42,6 @@
 #include <QMessageBox>
 #include <QApplication>
 #include <QDesktopServices>
-#include <QNetworkAccessManager>
 
 /*
 #include <QWebEngineView>
@@ -64,6 +63,7 @@
 #include "twitteritem.h"
 #include "twittermpform.h"
 #include "previewloadthread.h"
+#include "networkmanager.h"
 #include "o0settingsstore.h"
 #include "o1requestor.h"
 
@@ -151,7 +151,7 @@ TwTalker::TwTalker(QWidget* const parent)
     : d(new Private)
 {
     d->parent  = parent;
-    d->netMngr = new QNetworkAccessManager(this);
+    d->netMngr = NetworkManager::instance()->getNetworkManager(this);
 
     connect(d->netMngr, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotFinished(QNetworkReply*)));
@@ -653,12 +653,12 @@ void TwTalker::slotCheckUploadStatus()
 
 void TwTalker::slotFinished(QNetworkReply* reply)
 {
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "TwTalker::slotFinished";
-
     if (reply != d->reply)
     {
         return;
     }
+
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "TwTalker::slotFinished";
 
     d->reply = nullptr;
 

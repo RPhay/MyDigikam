@@ -34,7 +34,6 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QNetworkReply>
-#include <QNetworkAccessManager>
 
 // KDE includes
 
@@ -43,6 +42,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "networkmanager.h"
 
 namespace DigikamGenericIpfsPlugin
 {
@@ -55,7 +55,8 @@ public:
       : ipfsUploadUrl(QLatin1String("https://api.globalupload.io/transport/add")),
         workTimer    (0),
         reply        (nullptr),
-        image        (nullptr)
+        image        (nullptr),
+        netMngr      (nullptr)
     {
     }
 
@@ -81,13 +82,14 @@ public:
 
     // The QNetworkAccessManager used for connections
 
-    QNetworkAccessManager    netMngr;
+    QNetworkAccessManager*   netMngr;
 };
 
 IpfsTalker::IpfsTalker(QObject* const parent)
     : QObject(parent),
       d      (new Private)
 {
+    d->netMngr = NetworkManager::instance()->getNetworkManager(this);
 }
 
 IpfsTalker::~IpfsTalker()
@@ -305,7 +307,7 @@ void IpfsTalker::doWork()
             image.setBodyDevice(d->image);
             multipart->append(image);
             QNetworkRequest request(QUrl(d->ipfsUploadUrl));
-            d->reply = d->netMngr.post(request, multipart);
+            d->reply = d->netMngr->post(request, multipart);
 
             break;
         }

@@ -43,7 +43,6 @@
 #include <QCryptographicHash>
 #include <QUrlQuery>
 #include <QNetworkReply>
-#include <QNetworkAccessManager>
 
 // KDE includes
 
@@ -64,6 +63,7 @@
 #endif
 
 #include "wstoolutils.h"
+#include "networkmanager.h"
 #include "o0settingsstore.h"
 #include "o1requestor.h"
 #include "o0globals.h"
@@ -155,16 +155,16 @@ public:
 SmugTalker::SmugTalker(DInfoInterface* const iface, QWidget* const parent)
     : d(new Private)
 {
-    d->parent     = parent;
-    d->iface      = iface;
-    d->netMngr    = new QNetworkAccessManager(this);
+    d->parent  = parent;
+    d->iface   = iface;
+    d->netMngr = NetworkManager::instance()->getNetworkManager(this);
 
     connect(d->netMngr, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotFinished(QNetworkReply*)));
 
     // Init
 
-    d->o1 = new O1SmugMug(this, d->netMngr);
+    d->o1      = new O1SmugMug(this, d->netMngr);
 
     // Config for authentication flow
 
@@ -717,12 +717,12 @@ QString SmugTalker::errorToText(int errCode, const QString& errMsg) const
 
 void SmugTalker::slotFinished(QNetworkReply* reply)
 {
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "error code : " << reply->error() << "error text " << reply->errorString();
-
     if (reply != d->reply)
     {
         return;
     }
+
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "error code : " << reply->error() << "error text " << reply->errorString();
 
     d->reply = nullptr;
 

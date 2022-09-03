@@ -40,7 +40,6 @@
 #include <QMessageBox>
 #include <QApplication>
 #include <QDesktopServices>
-#include <QNetworkAccessManager>
 
 // KDE includes
 
@@ -59,6 +58,7 @@
 #include "o2.h"
 #include "o0globals.h"
 #include "o0settingsstore.h"
+#include "networkmanager.h"
 
 using namespace Digikam;
 
@@ -118,7 +118,7 @@ public:
 DBTalker::DBTalker(QWidget* const parent)
     : d           (new Private(parent))
 {
-    d->netMngr = new QNetworkAccessManager(this);
+    d->netMngr = NetworkManager::instance()->getNetworkManager(this);
 
     connect(d->netMngr, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotFinished(QNetworkReply*)));
