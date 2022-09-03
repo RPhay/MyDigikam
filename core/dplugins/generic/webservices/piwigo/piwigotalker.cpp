@@ -49,6 +49,7 @@
 #include "piwigoitem.h"
 #include "digikam_version.h"
 #include "wstoolutils.h"
+#include "networkmanager.h"
 #include "previewloadthread.h"
 
 namespace DigikamGenericPiwigoPlugin
@@ -104,7 +105,7 @@ PiwigoTalker::PiwigoTalker(DInfoInterface* const iface, QWidget* const parent)
 {
     d->parent  = parent;
     d->iface   = iface;
-    d->netMngr = new QNetworkAccessManager(this);
+    d->netMngr = NetworkManager::instance()->getNetworkManager(this);
 
     connect(d->netMngr, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotFinished(QNetworkReply*)));

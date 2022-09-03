@@ -35,6 +35,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "networkmanager.h"
 #include "wstoolutils.h"
 
 using namespace Digikam;
@@ -74,7 +75,7 @@ GSTalkerBase::GSTalkerBase(QObject* const parent, const QStringList& scope, cons
       m_service    (nullptr),
       d            (new Private)
 {
-    d->netMngr = new QNetworkAccessManager(this);
+    d->netMngr = NetworkManager::instance()->getNetworkManager(this);
     m_service  = new QOAuth2AuthorizationCodeFlow(d->netMngr, this);
 
     m_service->setContentType(QAbstractOAuth::ContentType::Json);

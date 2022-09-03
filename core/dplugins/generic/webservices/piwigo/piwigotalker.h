@@ -36,7 +36,6 @@
 #include <QFile>
 #include <QUrl>
 #include <QNetworkReply>
-#include <QNetworkAccessManager>
 
 // Local includes
 

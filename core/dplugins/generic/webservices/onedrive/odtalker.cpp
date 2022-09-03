@@ -39,7 +39,6 @@
 #include <QMimeDatabase>
 #include <QDesktopServices>
 #include <QUrlQuery>
-#include <QNetworkAccessManager>
 
 // KDE includes
 
@@ -51,6 +50,7 @@
 #include "digikam_debug.h"
 #include "digikam_version.h"
 #include "previewloadthread.h"
+#include "networkmanager.h"
 #include "webbrowserdlg.h"
 #include "wstoolutils.h"
 #include "odwindow.h"
@@ -128,7 +128,7 @@ ODTalker::ODTalker(QWidget* const parent)
     : d           (new Private)
 {
     d->parent   = parent;
-    d->netMngr  = new QNetworkAccessManager(this);
+    d->netMngr  = NetworkManager::instance()->getNetworkManager(this);
     d->settings = WSToolUtils::getOauthSettings(this);
 
     connect(this, SIGNAL(oneDriveLinkingFailed()),

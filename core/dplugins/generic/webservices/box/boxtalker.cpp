@@ -40,7 +40,6 @@
 #include <QApplication>
 #include <QDesktopServices>
 #include <QHttpMultiPart>
-#include <QNetworkAccessManager>
 
 // KDE includes
 
@@ -55,6 +54,7 @@
 #include "boxitem.h"
 #include "previewloadthread.h"
 #include "o0settingsstore.h"
+#include "networkmanager.h"
 
 namespace DigikamGenericBoxPlugin
 {
@@ -114,7 +114,7 @@ BOXTalker::BOXTalker(QWidget* const parent)
     : d(new Private)
 {
     d->parent  = parent;
-    d->netMngr = new QNetworkAccessManager(this);
+    d->netMngr = NetworkManager::instance()->getNetworkManager(this);
 
     connect(this, SIGNAL(boxLinkingFailed()),
             this, SLOT(slotLinkingFailed()));

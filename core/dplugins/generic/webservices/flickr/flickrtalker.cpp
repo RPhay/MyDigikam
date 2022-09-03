@@ -38,7 +38,6 @@
 #include <QMessageBox>
 #include <QApplication>
 #include <QProgressDialog>
-#include <QNetworkAccessManager>
 
 // KDE includes
 
@@ -67,6 +66,7 @@
 #include "o0globals.h"
 #include "o1requestor.h"
 #include "o0settingsstore.h"
+#include "networkmanager.h"
 
 #if defined(Q_CC_CLANG)
 #   pragma clang diagnostic pop
@@ -144,7 +144,7 @@ FlickrTalker::FlickrTalker(QWidget* const parent,
     m_photoSetsList    = nullptr;
     m_authProgressDlg  = nullptr;
 
-    d->netMngr         = new QNetworkAccessManager(this);
+    d->netMngr         = NetworkManager::instance()->getNetworkManager(this);
 
     connect(d->netMngr, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotFinished(QNetworkReply*)));

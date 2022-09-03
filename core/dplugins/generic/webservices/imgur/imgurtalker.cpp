@@ -25,13 +25,12 @@
 
 // Qt includes
 
-#include <QFileInfo>
 #include <QHttpMultiPart>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QTimerEvent>
 #include <QUrlQuery>
-#include <QNetworkAccessManager>
+#include <QFileInfo>
 #include <QQueue>
 
 // KDE includes
@@ -43,8 +42,10 @@
 #include "dinfointerface.h"
 #include "digikam_debug.h"
 #include "wstoolutils.h"
+#include "networkmanager.h"
 #include "o0settingsstore.h"
 #include "o0globals.h"
+
 
 using namespace Digikam;
 
@@ -64,7 +65,8 @@ public:
         client_secret   (QLatin1String("300988683e99cb7b203a5889cf71de9ac891c1c1")),
         workTimer       (0),
         reply           (nullptr),
-        image           (nullptr)
+        image           (nullptr),
+        netMngr         (nullptr)
     {
     }
 
@@ -88,13 +90,15 @@ public:
     QFile*                    image;
 
     /// The QNetworkAccessManager instance used for connections.
-    QNetworkAccessManager     net;
+    QNetworkAccessManager*    netMngr;
 };
 
 ImgurTalker::ImgurTalker(QObject* const parent)
     : QObject(parent),
       d      (new Private)
 {
+    d->netMngr = NetworkManager::instance()->getNetworkManager(this);
+
     d->auth.setClientId(d->client_id);
     d->auth.setClientSecret(d->client_secret);
     d->auth.setRequestUrl(imgur_auth_url);
@@ -375,7 +379,7 @@ void ImgurTalker::doWork()
                                         .arg(QLatin1String(work.account.username.toUtf8().toPercentEncoding()))));
             addAuthToken(&request);
 
-            d->reply = d->net.get(request);
+            d->reply = d->netMngr->get(request);
             break;
         }
 
@@ -431,7 +435,7 @@ void ImgurTalker::doWork()
                 addAnonToken(&request);
             }
 
-            d->reply = d->net.post(request, multiPart);
+            d->reply = d->netMngr->post(request, multiPart);
 
             // delete the multiPart with the reply
 

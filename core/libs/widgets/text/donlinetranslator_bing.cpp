@@ -35,6 +35,11 @@ void DOnlineTranslator::slotRequestBingCredentials()
 
 void DOnlineTranslator::slotParseBingCredentials()
 {
+    if ((quintptr)d->currentReply.data() != sender()->property("QNetworkReply").value<quintptr>())
+    {
+        return;
+    }
+
     d->currentReply->deleteLater();
 
     if (d->currentReply->error() != QNetworkReply::NoError)
@@ -185,6 +190,11 @@ void DOnlineTranslator::slotRequestBingDictionary()
 
 void DOnlineTranslator::slotParseBingDictionary()
 {
+    if ((quintptr)d->currentReply.data() != sender()->property("QNetworkReply").value<quintptr>())
+    {
+        return;
+    }
+
     d->currentReply->deleteLater();
 
     // Check for errors

@@ -35,6 +35,11 @@ void DOnlineTranslator::slotRequestYandexKey()
 
 void DOnlineTranslator::slotParseYandexKey()
 {
+    if ((quintptr)d->currentReply.data() != sender()->property("QNetworkReply").value<quintptr>())
+    {
+        return;
+    }
+
     d->currentReply->deleteLater();
 
     if (d->currentReply->error() != QNetworkReply::NoError)
@@ -126,6 +131,11 @@ void DOnlineTranslator::slotRequestYandexTranslate()
 
 void DOnlineTranslator::slotParseYandexTranslate()
 {
+    if ((quintptr)d->currentReply.data() != sender()->property("QNetworkReply").value<quintptr>())
+    {
+        return;
+    }
+
     d->currentReply->deleteLater();
 
     // Check for errors
@@ -227,6 +237,11 @@ void DOnlineTranslator::slotRequestYandexDictionary()
 
 void DOnlineTranslator::slotParseYandexDictionary()
 {
+    if ((quintptr)d->currentReply.data() != sender()->property("QNetworkReply").value<quintptr>())
+    {
+        return;
+    }
+
     d->currentReply->deleteLater();
 
     if (d->currentReply->error() != QNetworkReply::NoError)
@@ -434,6 +449,11 @@ void DOnlineTranslator::requestYandexTranslit(Language language)
 
 void DOnlineTranslator::parseYandexTranslit(QString& text)
 {
+    if ((quintptr)d->currentReply.data() != sender()->property("QNetworkReply").value<quintptr>())
+    {
+        return;
+    }
+
     d->currentReply->deleteLater();
 
     if (d->currentReply->error() != QNetworkReply::NoError)

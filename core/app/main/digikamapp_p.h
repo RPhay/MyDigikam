@@ -152,6 +152,7 @@
 #include "exiftoolthread.h"
 #include "facesdetector.h"
 #include "localizesettings.h"
+#include "networkmanager.h"
 
 #ifdef HAVE_DBUS
 #   include "digikamadaptor.h"

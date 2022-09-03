@@ -90,6 +90,7 @@ DigikamApp::DigikamApp()
     ThumbnailLoadThread::setDisplayingWidget(this);
     DIO::instance();
     LocalizeSettings::instance();
+    NetworkManager::instance();
 
     connect(LocalizeSettings::instance(), &LocalizeSettings::signalOpenLocalizeSetup,
             this, [=]()
@@ -166,6 +167,27 @@ DigikamApp::DigikamApp()
     }
 
     d->validIccPath = SetupICC::iccRepositoryIsValid();
+
+    // Clean up database if enabled in the settings
+
+    if (ApplicationSettings::instance()->getCleanAtStart() &&
+        CollectionScanner::databaseInitialScanDone())
+    {
+        if (d->splashScreen)
+        {
+            d->splashScreen->setMessage(i18n("Clean up Database..."));
+        }
+
+        QEventLoop loop;
+
+        DbCleaner* const tool = new DbCleaner(false, false);
+
+        connect(tool, SIGNAL(signalComplete()),
+                &loop, SLOT(quit()));
+
+        tool->start();
+        loop.exec();
+    }
 
     // Read albums from database
 
@@ -360,12 +382,6 @@ void DigikamApp::show()
                     this, SLOT(slotDetectFaces()));
         }
 
-        QTimer::singleShot(1000, tool, SLOT(start()));
-    }
-
-    if (settings->getCleanAtStart())
-    {
-        DbCleaner* const tool = new DbCleaner(false, false);
         QTimer::singleShot(1000, tool, SLOT(start()));
     }
 }

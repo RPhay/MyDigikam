@@ -27,6 +27,7 @@
 // Local includes
 
 #include "batchtool.h"
+#include "dmetadata.h"
 
 using namespace Digikam;
 
@@ -53,9 +54,19 @@ private Q_SLOTS:
     void slotAssignSettings2Widget()                        override;
     void slotSettingsChanged()                              override;
 
+    void slotLocalizeChanged();
+
 private:
 
     bool toolOperations()                                   override;
+
+    bool translateString(const QString& text,
+                         const QString& trCode,
+                         QString& tr) const;
+
+    bool insertTranslation(int entry,
+                           const QString& trLang,
+                           DMetadata* const meta)                           const;
 
 private:
 

@@ -28,7 +28,6 @@
 #include <QWidget>
 #include <QQueue>
 #include <QNetworkReply>
-#include <QNetworkAccessManager>
 #include <QCryptographicHash>
 #include <QXmlResultItems>
 #include <QXmlQuery>
@@ -44,6 +43,7 @@
 #include "digikam_version.h"
 #include "dmetadata.h"
 #include "wstoolutils.h"
+#include "networkmanager.h"
 #include "previewloadthread.h"
 
 using namespace Digikam;
@@ -80,7 +80,7 @@ RajceTalker::RajceTalker(QWidget* const parent)
       d      (new Private)
 {
     d->tmpDir  = WSToolUtils::makeTemporaryDir("rajce").absolutePath() + QLatin1Char('/');
-    d->netMngr = new QNetworkAccessManager(this);
+    d->netMngr = NetworkManager::instance()->getNetworkManager(this);
 
     connect(d->netMngr, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotFinished(QNetworkReply*)));

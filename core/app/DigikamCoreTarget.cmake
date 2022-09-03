@@ -21,6 +21,7 @@ set(DIGIKAMCORE_OBJECTS
             $<TARGET_OBJECTS:core_threadimageio_obj>
             $<TARGET_OBJECTS:core_pgfutils_obj>
             $<TARGET_OBJECTS:core_dthread_obj>
+            $<TARGET_OBJECTS:core_networkmanager_obj>
             $<TARGET_OBJECTS:core_versionmanager_obj>
             $<TARGET_OBJECTS:core_libraw_obj>
             $<TARGET_OBJECTS:core_rawengine_obj>

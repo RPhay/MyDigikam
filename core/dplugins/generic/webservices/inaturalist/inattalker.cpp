@@ -32,7 +32,6 @@
 #include <QMessageBox>
 #include <QApplication>
 #include <QProgressDialog>
-#include <QNetworkAccessManager>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
@@ -51,6 +50,7 @@
 #include "digikam_version.h"
 #include "previewloadthread.h"
 #include "inatbrowserdlg.h"
+#include "networkmanager.h"
 
 // OAuth2 library includes
 
@@ -298,12 +298,6 @@ public:
         apiToken        = QString();
     }
 
-    ~Private()
-    {
-        delete netMngr;
-        delete store;
-    }
-
     QWidget*                          parent;
     QNetworkAccessManager*            netMngr;
     QTimer*                           timer;
@@ -343,7 +337,7 @@ INatTalker::INatTalker(QWidget* const parent, const QString& serviceName,
     d->iface           = iface;
     m_authProgressDlg  = nullptr;
 
-    d->netMngr         = new QNetworkAccessManager(this);
+    d->netMngr         = NetworkManager::instance()->getNetworkManager(this);
     d->timer           = new QTimer(this);
 
     connect(d->netMngr, SIGNAL(finished(QNetworkReply*)),
@@ -1882,8 +1876,6 @@ void INatTalker::slotFinished(QNetworkReply* reply)
 
     if (!d->pendingRequests.contains(reply))
     {
-        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Ignoring unexpected NetworkReply.";
-        reply->deleteLater();
         return;
     }
 

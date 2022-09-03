@@ -30,7 +30,6 @@
 #include <QString>
 #include <QMap>
 #include <QNetworkReply>
-#include <QNetworkAccessManager>
 
 class QDomElement;
 class QByteArray;

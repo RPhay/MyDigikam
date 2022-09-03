@@ -26,7 +26,6 @@
 
 // Qt includes
 
-#include <QNetworkAccessManager>
 #include <QDomDocument>
 #include <QUrlQuery>
 #include <QTimer>
@@ -34,6 +33,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "networkmanager.h"
 #include "gpscommon.h"
 
 namespace Digikam
@@ -96,7 +96,7 @@ BackendGeonamesRG::BackendGeonamesRG(QObject* const parent)
     : RGBackend(parent),
       d        (new Private())
 {
-    d->mngr = new QNetworkAccessManager(this);
+    d->mngr = NetworkManager::instance()->getNetworkManager(this);
 
     connect(d->mngr, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotFinished(QNetworkReply*)));
@@ -224,20 +224,20 @@ QString BackendGeonamesRG::backendName()
 
 void BackendGeonamesRG::slotFinished(QNetworkReply* reply)
 {
-    if (reply->error() != QNetworkReply::NoError)
-    {
-        d->errorMessage = reply->errorString();
-        Q_EMIT signalRGReady(d->jobs.first().request);
-        reply->deleteLater();
-        d->jobs.clear();
-
-        return;
-    }
-
     for (int i = 0 ; i < d->jobs.count() ; ++i)
     {
         if (d->jobs.at(i).netReply == reply)
         {
+            if (reply->error() != QNetworkReply::NoError)
+            {
+                d->errorMessage = reply->errorString();
+                Q_EMIT signalRGReady(d->jobs.first().request);
+                reply->deleteLater();
+                d->jobs.clear();
+
+                return;
+            }
+
             d->jobs[i].data.append(reply->readAll());
             break;
         }
@@ -269,11 +269,10 @@ void BackendGeonamesRG::slotFinished(QNetworkReply* reply)
                 QTimer::singleShot(500, this, SLOT(nextPhoto()));
             }
 
+            reply->deleteLater();
             break;
         }
     }
-
-    reply->deleteLater();
 }
 
 void BackendGeonamesRG::cancelRequests()

@@ -3,10 +3,10 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2020-10-11
- * Description : item sort based on QCollator
+ * Date        : 2022-08-31
+ * Description : digiKam global static QNetworkAccessManager
  *
- * Copyright (C) 2020 by Maik Qualmann <metzpinguin at gmail dot com>
+ * Copyright (C) 2022 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,13 +21,13 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ITEM_SORT_COLLATOR_H
-#define DIGIKAM_ITEM_SORT_COLLATOR_H
+#ifndef DIGIKAM_NETWORK_MANAGER_H
+#define DIGIKAM_NETWORK_MANAGER_H
 
 // Qt includes
 
 #include <QObject>
-#include <QString>
+#include <QNetworkAccessManager>
 
 // Local includes
 
@@ -36,41 +36,42 @@
 namespace Digikam
 {
 
-class DIGIKAM_DATABASE_EXPORT ItemSortCollator : public QObject
+class DIGIKAM_EXPORT NetworkManager : public QObject
 {
     Q_OBJECT
 
 public:
 
     /**
-     * Global instance of internal item sort collator.
+     * Global instance of internal network manager.
      * All accessor methods are thread-safe.
      */
-    static ItemSortCollator* instance();
+    static NetworkManager* instance();
 
-    int itemCompare(const QString& a, const QString& b,
-                    Qt::CaseSensitivity caseSensitive, bool natural)  const;
-
-    int albumCompare(const QString& a, const QString& b,
-                     Qt::CaseSensitivity caseSensitive, bool natural) const;
+    /**
+     * Get the current QNetworkAccessManager or create
+     * a new QNetworkAccessManager if the passed
+     * QObject runs on a different thread.
+     */
+    QNetworkAccessManager* getNetworkManager(QObject* const object) const;
 
 private:
 
     // Disable
 
-    ItemSortCollator();
-    explicit ItemSortCollator(QObject*) = delete;
+    NetworkManager();
+    explicit NetworkManager(QObject*) = delete;
 
-    ~ItemSortCollator() override;
+    ~NetworkManager() override;
 
 private:
 
     class Private;
     Private* const d;
 
-    friend class ItemSortCollatorCreator;
+    friend class NetworkManagerCreator;
 };
 
 } // namespace Digikam
 
-#endif // DIGIKAM_ITEM_SORT_COLLATOR_H
+#endif // DIGIKAM_NETWORK_MANAGER_H

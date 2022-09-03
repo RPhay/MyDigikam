@@ -49,6 +49,11 @@ void DOnlineTranslator::slotRequestLibreLangDetection()
 
 void DOnlineTranslator::slotParseLibreLangDetection()
 {
+    if ((quintptr)d->currentReply.data() != sender()->property("QNetworkReply").value<quintptr>())
+    {
+        return;
+    }
+
     d->currentReply->deleteLater();
 
     // Check for errors
@@ -98,6 +103,11 @@ void DOnlineTranslator::slotRequestLibreTranslate()
 
 void DOnlineTranslator::slotParseLibreTranslate()
 {
+    if ((quintptr)d->currentReply.data() != sender()->property("QNetworkReply").value<quintptr>())
+    {
+        return;
+    }
+
     d->currentReply->deleteLater();
 
     // Check for errors

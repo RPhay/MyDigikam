@@ -47,10 +47,11 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "digikam_version.h"
 #include "imageshacksession.h"
 #include "imageshackmpform.h"
-#include "digikam_debug.h"
+#include "networkmanager.h"
 
 using namespace Digikam;
 
@@ -111,8 +112,8 @@ public:
 ImageShackTalker::ImageShackTalker(ImageShackSession* const session)
     : d(new Private)
 {
-    d->session     = session;
-    d->netMngr     = new QNetworkAccessManager(this);
+    d->session = session;
+    d->netMngr = NetworkManager::instance()->getNetworkManager(this);
 
     connect(d->netMngr, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotFinished(QNetworkReply*)));

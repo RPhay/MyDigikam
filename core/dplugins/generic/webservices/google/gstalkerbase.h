@@ -32,7 +32,6 @@
 #include <QObject>
 #include <QStringList>
 #include <QNetworkReply>
-#include <QNetworkAccessManager>
 #include <QOAuth2AuthorizationCodeFlow>
 
 namespace DigikamGenericGoogleServicesPlugin
