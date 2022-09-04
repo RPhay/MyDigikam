@@ -79,12 +79,6 @@ QString TextConverterPlugin::details() const
 QList<DPluginAuthor> TextConverterPlugin::authors() const
 {
     return QList<DPluginAuthor>()
-            << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
-                             QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2008-2022"))
-            << DPluginAuthor(QString::fromUtf8("Maik Qualmann"),
-                             QString::fromUtf8("metzpinguin at gmail dot com"),
-                             QString::fromUtf8("(C) 2020-2022"))
             << DPluginAuthor(QString::fromUtf8("TRAN Quoc Hung"),
                       QString::fromUtf8("quochungtran at gmail dot com"),
                       QString::fromUtf8("(C) 2022"))

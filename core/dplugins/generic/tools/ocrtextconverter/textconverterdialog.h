@@ -83,7 +83,7 @@ private Q_SLOTS:
     void slotThreadFinished();
 
     void slotTextConverterAction(const DigikamGenericTextConverterPlugin::TextConverterActionData&);
-    void slotDoubleClick(QTreeWidgetItem* element, int i);
+    void slotDoubleClick(QTreeWidgetItem* element);
     void slotUpdateText();
 
     void slotSetDisable();

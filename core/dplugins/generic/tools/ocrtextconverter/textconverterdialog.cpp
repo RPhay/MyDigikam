@@ -130,7 +130,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     d->textedit                       = new DTextEdit(mainWidget);
     d->textedit->setLinesVisible(20);
-    d->textedit->setPlaceholderText(QLatin1String("OCR result is displayed here"));
+    d->textedit->setPlaceholderText(QLatin1String("Recognized text is displayed here"));
 
     d->saveTextButton = new QPushButton(mainWidget);
     d->saveTextButton->setText(i18nc("@action: button", "Save"));
@@ -205,7 +205,7 @@ TextConverterDialog::~TextConverterDialog()
     delete d;
 }
 
-void TextConverterDialog::slotDoubleClick(QTreeWidgetItem* element, int i)
+void TextConverterDialog::slotDoubleClick(QTreeWidgetItem* element)
 {
     TextConverterListViewItem* const item = dynamic_cast<TextConverterListViewItem*>(element);
     d->currentSelectedItem = item;
@@ -422,29 +422,35 @@ void TextConverterDialog::slotStartStop()
     {
         d->fileList.clear();
 
-        QList<QTreeWidgetItem*> selectedItemsList = d->listView->listView()->selectedItems();
-
-        for (QList<QTreeWidgetItem*>::const_iterator it = selectedItemsList.constBegin() ;
-             it != selectedItemsList.constEnd() ; ++it)
-        {
-            TextConverterListViewItem* const item = dynamic_cast<TextConverterListViewItem*>(*it);
-
-            if (item)
-            {
-                d->fileList.append(item->url());
-            }
-        }
-
         if (d->listView->listView()->topLevelItemCount() == 0)
         {
             d->textedit->clear();
         }
 
+        QTreeWidgetItemIterator it(d->listView->listView());
+
+        while (*it)
+        {
+            TextConverterListViewItem* const lvItem = dynamic_cast<TextConverterListViewItem*>(*it);
+
+            if (lvItem)
+            {
+                if (!lvItem->isDisabled() && (lvItem->state() != TextConverterListViewItem::Success))
+                {
+                    lvItem->setIcon(1, QIcon());
+                    lvItem->setState(TextConverterListViewItem::Waiting);
+                    d->fileList.append(lvItem->url());
+                }
+            }
+
+            ++it;
+        }
+       
         if (d->fileList.empty())
         {
             QMessageBox::information(this, i18n("Text Converter"), i18n("The list does not contain any digital files to process. You need to select them"));
             busy(false);
-        //    slotAborted();
+            slotAborted();
             return;
         }
 
