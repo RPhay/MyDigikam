@@ -205,7 +205,7 @@ TextConverterDialog::~TextConverterDialog()
     delete d;
 }
 
-void TextConverterDialog::slotDoubleClick(QTreeWidgetItem* element, int i)
+void TextConverterDialog::slotDoubleClick(QTreeWidgetItem* element)
 {
     TextConverterListViewItem* const item = dynamic_cast<TextConverterListViewItem*>(element);
     d->currentSelectedItem = item;
