@@ -72,7 +72,7 @@ static int heifQIODeviceDImgSeek(int64_t position, void* userdata)
 {
     QFile* const file = static_cast<QFile*>(userdata);
 
-    return (int)file->seek(position);
+    return (int)!file->seek(position);
 }
 
 static heif_reader_grow_status heifQIODeviceDImgWait(int64_t target_size, void* userdata)
