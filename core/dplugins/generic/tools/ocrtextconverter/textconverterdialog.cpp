@@ -110,7 +110,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     m_buttons->addButton(QDialogButtonBox::Close);
     m_buttons->addButton(QDialogButtonBox::Ok);
-    m_buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action:button", "&start OCR"));
+    m_buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action:button", "&Start OCR"));
     QWidget* const mainWidget = new QWidget(this);
 
     QVBoxLayout* const vbx    = new QVBoxLayout(this);
@@ -337,7 +337,7 @@ void TextConverterDialog::processingFailed(const QUrl& url, int result)
 
         case OcrTesseracrEngine::PROCESS_CANCELED:
         {
-            status = i18n("Process Canceled");
+            status = i18n("Process canceled");
             break;
         }
 
@@ -448,7 +448,7 @@ void TextConverterDialog::slotStartStop()
        
         if (d->fileList.empty())
         {
-            QMessageBox::information(this, i18n("Text Converter"), i18n("The list does not contain any digital files to process. You need to select them"));
+            QMessageBox::information(this, i18n("Text Converter"), i18n("The list does not contain any digital files to process. You need to select them."));
             busy(false);
             slotAborted();
             return;
@@ -561,7 +561,7 @@ void TextConverterDialog::busy(bool busy)
     if (d->busy)
     {
         m_buttons->button(QDialogButtonBox::Ok)->setText(i18n("&Abort"));
-        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18n("Abort ocr Processing of Raw files."));
+        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18n("Abort OCR processing of Raw files."));
     }
     else
     {

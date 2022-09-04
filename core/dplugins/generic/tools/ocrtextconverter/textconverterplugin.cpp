@@ -69,9 +69,9 @@ QString TextConverterPlugin::description() const
 
 QString TextConverterPlugin::details() const
 {
-    return i18nc("@info", "This tool can convert documented images data to Text format.\n\n"
-                 "by using Tesseract, is a software OCR engine, originally developed at HP labs and now sponsored by Google.\n\n"
-                 "It supports multiple languages and scripts (including right-to-left text) and page layout analyse\n\n"
+    return i18nc("@info", "This tool can convert documented images data to Text format "
+                 "by using Tesseract, a software OCR engine, originally developed at HP labs and now sponsored by Google.\n\n"
+                 "It supports multiple languages and scripts (including right-to-left text) and page layout analysis.\n\n"
                  "See details on %1 for more information on Tesseract",
                  QLatin1String("<a href='https://github.com/tesseract-ocr/tesseract'>https://github.com/tesseract-ocr/tesseract</a>"));
 }
