@@ -54,7 +54,8 @@ private Q_SLOTS:
     void slotAssignSettings2Widget()                        override;
     void slotSettingsChanged()                              override;
 
-    void slotLocalizeChanged();
+    void slotAppendTranslation(const QString& lang);
+    void slotShowContextMenu(const QPoint& pos);
 
 private:
 

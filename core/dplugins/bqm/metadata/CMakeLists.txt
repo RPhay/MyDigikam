@@ -7,3 +7,4 @@
 add_subdirectory(assigntemplate)
 add_subdirectory(removemetadata)
 add_subdirectory(timeadjust)
+#add_subdirectory(translate)
