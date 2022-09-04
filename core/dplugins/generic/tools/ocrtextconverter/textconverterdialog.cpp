@@ -130,7 +130,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     d->textedit                       = new DTextEdit(mainWidget);
     d->textedit->setLinesVisible(20);
-    d->textedit->setPlaceholderText(QLatin1String("OCR result is displayed here"));
+    d->textedit->setPlaceholderText(QLatin1String("Recognized text is displayed here"));
 
     d->saveTextButton = new QPushButton(mainWidget);
     d->saveTextButton->setText(i18nc("@action: button", "Save"));
