@@ -422,29 +422,35 @@ void TextConverterDialog::slotStartStop()
     {
         d->fileList.clear();
 
-        QList<QTreeWidgetItem*> selectedItemsList = d->listView->listView()->selectedItems();
-
-        for (QList<QTreeWidgetItem*>::const_iterator it = selectedItemsList.constBegin() ;
-             it != selectedItemsList.constEnd() ; ++it)
-        {
-            TextConverterListViewItem* const item = dynamic_cast<TextConverterListViewItem*>(*it);
-
-            if (item)
-            {
-                d->fileList.append(item->url());
-            }
-        }
-
         if (d->listView->listView()->topLevelItemCount() == 0)
         {
             d->textedit->clear();
         }
 
+        QTreeWidgetItemIterator it(d->listView->listView());
+
+        while (*it)
+        {
+            TextConverterListViewItem* const lvItem = dynamic_cast<TextConverterListViewItem*>(*it);
+
+            if (lvItem)
+            {
+                if (!lvItem->isDisabled() && (lvItem->state() != TextConverterListViewItem::Success))
+                {
+                    lvItem->setIcon(1, QIcon());
+                    lvItem->setState(TextConverterListViewItem::Waiting);
+                    d->fileList.append(lvItem->url());
+                }
+            }
+
+            ++it;
+        }
+       
         if (d->fileList.empty())
         {
             QMessageBox::information(this, i18n("Text Converter"), i18n("The list does not contain any digital files to process. You need to select them"));
             busy(false);
-        //    slotAborted();
+            slotAborted();
             return;
         }
 
