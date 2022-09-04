@@ -23,6 +23,10 @@
 
 #include "dimgheifloader.h"
 
+// C++ includes
+
+#include <cstdint>
+
 // Qt includes
 
 #include <QFile>
@@ -43,7 +47,7 @@
 namespace Digikam
 {
 
-static int64_t heifQIODeviceDImgGetPosition(void* userdata)     // krazy:exclude=typedefs
+static int64_t heifQIODeviceDImgGetPosition(void* userdata)
 {
     QFile* const file = static_cast<QFile*>(userdata);
 
@@ -64,14 +68,14 @@ static int heifQIODeviceDImgRead(void* data, size_t size, void* userdata)
     return (int)((file->error() != QFileDevice::NoError) || bytes != (qint64)size);
 }
 
-static int heifQIODeviceDImgSeek(int64_t position, void* userdata)  // krazy:exclude=typedefs
+static int heifQIODeviceDImgSeek(int64_t position, void* userdata)
 {
     QFile* const file = static_cast<QFile*>(userdata);
 
     return (int)file->seek(position);
 }
 
-static heif_reader_grow_status heifQIODeviceDImgWait(int64_t target_size, void* userdata)   // krazy:exclude=typedefs
+static heif_reader_grow_status heifQIODeviceDImgWait(int64_t target_size, void* userdata)
 {
     QFile* const file = static_cast<QFile*>(userdata);
 
