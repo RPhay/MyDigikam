@@ -363,10 +363,8 @@ DTextEdit* AltLangStrEdit::textEdit() const
     return d->valueEdit;
 }
 
-void AltLangStrEdit::slotTranslate(QListWidgetItem* item)
+void AltLangStrEdit::slotTranslate(const QString& lang)
 {
-    d->localizeSelector->closeMenu();
-
     if (d->trengine->isRunning())
     {
         return;
@@ -374,36 +372,33 @@ void AltLangStrEdit::slotTranslate(QListWidgetItem* item)
 
     setDisabled(true);
 
-    if (item)
+    d->trCode       = lang;
+    QString srcCode = currentLanguageCode();
+    DOnlineTranslator::Language trLang;
+    DOnlineTranslator::Language srcLang;
+
+    if (srcCode == QLatin1String("x-default"))
     {
-        d->trCode       = item->text();
-        QString srcCode = currentLanguageCode();
-        DOnlineTranslator::Language trLang;
-        DOnlineTranslator::Language srcLang;
-
-        if (srcCode == QLatin1String("x-default"))
-        {
-            srcLang = DOnlineTranslator::Auto;
-        }
-        else
-        {
-            srcLang = DOnlineTranslator::language(DOnlineTranslator::fromRFC3066(LocalizeSettings::instance()->settings().translatorEngine, srcCode));
-        }
-
-        trLang       = DOnlineTranslator::language(DOnlineTranslator::fromRFC3066(LocalizeSettings::instance()->settings().translatorEngine, d->trCode));
-        QString text = textEdit()->text();
-
-        qCDebug(DIGIKAM_WIDGETS_LOG) << "Request to translate with Web-service:";
-        qCDebug(DIGIKAM_WIDGETS_LOG) << "Text to translate        :" << text;
-        qCDebug(DIGIKAM_WIDGETS_LOG) << "To target language       :" << trLang;
-        qCDebug(DIGIKAM_WIDGETS_LOG) << "With source language     :" << srcLang;
-
-        d->trengine->translate(text,                                                            // String to translate
-                               LocalizeSettings::instance()->settings().translatorEngine,       // Web service
-                               trLang,                                                          // Target language
-                               srcLang,                                                         // Source langage
-                               DOnlineTranslator::Auto);
+        srcLang = DOnlineTranslator::Auto;
     }
+    else
+    {
+        srcLang = DOnlineTranslator::language(DOnlineTranslator::fromRFC3066(LocalizeSettings::instance()->settings().translatorEngine, srcCode));
+    }
+
+    trLang       = DOnlineTranslator::language(DOnlineTranslator::fromRFC3066(LocalizeSettings::instance()->settings().translatorEngine, d->trCode));
+    QString text = textEdit()->text();
+
+    qCDebug(DIGIKAM_WIDGETS_LOG) << "Request to translate with Web-service:";
+    qCDebug(DIGIKAM_WIDGETS_LOG) << "Text to translate        :" << text;
+    qCDebug(DIGIKAM_WIDGETS_LOG) << "To target language       :" << trLang;
+    qCDebug(DIGIKAM_WIDGETS_LOG) << "With source language     :" << srcLang;
+
+    d->trengine->translate(text,                                                            // String to translate
+                           LocalizeSettings::instance()->settings().translatorEngine,       // Web service
+                           trLang,                                                          // Target language
+                           srcLang,                                                         // Source langage
+                           DOnlineTranslator::Auto);
 }
 
 void AltLangStrEdit::slotTranslationFinished()

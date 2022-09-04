@@ -50,16 +50,15 @@ public:
 
     void populateTranslationEntries();
 
-    void closeMenu();
-
 Q_SIGNALS:
 
-    void signalTranslate(QListWidgetItem*);
+    void signalTranslate(const QString& lang);
 
 private Q_SLOTS:
 
     void slotLocalizeChanged();
     void slotOpenLocalizeSetup();
+    void slotTranslate(QListWidgetItem*);
 
 private:
 

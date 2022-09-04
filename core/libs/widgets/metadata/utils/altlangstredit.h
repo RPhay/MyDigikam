@@ -37,8 +37,6 @@
 #include "dmetadata.h"
 #include "dtextedit.h"
 
-class QListWidgetItem;
-
 namespace Digikam
 {
 
@@ -155,7 +153,7 @@ private Q_SLOTS:
     /**
      * Perform text translation with Web-service.
      */
-    void slotTranslate(QListWidgetItem*);
+    void slotTranslate(const QString& lang);
 
     void slotTranslationFinished();
 

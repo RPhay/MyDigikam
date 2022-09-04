@@ -125,7 +125,7 @@ LocalizeSelector::LocalizeSelector(QWidget* const parent)
             this, &LocalizeSelector::slotOpenLocalizeSetup);
 
     connect(d->translateAction->m_list, &QListWidget::itemClicked,
-            this, &LocalizeSelector::signalTranslate);
+            this, &LocalizeSelector::slotTranslate);
 
     connect(d->translateButton, &QToolButton::pressed,
             d->translateButton, &QToolButton::showMenu);
@@ -167,9 +167,14 @@ void LocalizeSelector::slotLocalizeChanged()
                                    DOnlineTranslator::engineName(LocalizeSettings::instance()->settings().translatorEngine)));
 }
 
-void LocalizeSelector::closeMenu()
+void LocalizeSelector::slotTranslate(QListWidgetItem* item)
 {
     d->translateButton->menu()->close();
+
+    if (item)
+    {
+        Q_EMIT signalTranslate(item->text());
+    }
 }
 
 } // namespace Digikam
