@@ -159,14 +159,9 @@ private Q_SLOTS:
 
     void slotTranslationFinished();
 
-    void slotLocalizeChanged();
-
-    void slotOpenLocalizeSetup();
-
 protected:
 
     void populateLangAltListEntries();
-    void populateTranslationEntries();
 
     void changeEvent(QEvent* e)                 override;
 

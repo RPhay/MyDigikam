@@ -408,24 +408,4 @@ const LanguageCodeMap s_rfc3066ForXMP =
     { QLatin1String("zu-ZA"),     QString::fromUtf8(I18N_NOOP2("@info: country code", "isiZulu Zulu (South Africa)")                                     )}
 };
 
-// ------------------------------------------------------------------------
-
-TranslateAction::TranslateAction(QObject* const parent)
-    : QWidgetAction(parent)
-{
-}
-
-QWidget* TranslateAction::createWidget(QWidget* parent)
-{
-    m_list         = new QListWidget(parent);
-    QFontMetrics fontMt(m_list->font());
-    QRect fontRect = fontMt.boundingRect(0, 0, m_list->width(), m_list->height(), 0, QLatin1String("XX-XX"));
-    int width      =  m_list->contentsMargins().left() + m_list->contentsMargins().right();
-    width         += fontRect.width() + m_list->verticalScrollBar()->height();
-    m_list->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    m_list->setFixedWidth(width);
-
-    return m_list;
-}
-
 } // namespace Digikam

@@ -103,7 +103,6 @@ LocalizeSelector::LocalizeSelector(QWidget* const parent)
 {
     d->translateButton = new QToolButton(this);
     d->translateButton->setIcon(QIcon::fromTheme(QLatin1String("language-chooser")));
-    d->translateButton->setEnabled(false);
     d->translateButton->setPopupMode(QToolButton::MenuButtonPopup);
     QMenu* const menu  = new QMenu(d->translateButton);
     d->translateAction = new Private::TranslateAction(d->translateButton);
@@ -166,6 +165,11 @@ void LocalizeSelector::slotLocalizeChanged()
     populateTranslationEntries();
     d->translateButton->setToolTip(i18nc("@info: language edit widget", "Select language to translate with %1",
                                    DOnlineTranslator::engineName(LocalizeSettings::instance()->settings().translatorEngine)));
+}
+
+void LocalizeSelector::closeMenu()
+{
+    d->translateButton->menu()->close();
 }
 
 } // namespace Digikam

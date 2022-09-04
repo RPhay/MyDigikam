@@ -34,6 +34,8 @@
 #include "digikam_export.h"
 #include "dlayoutbox.h"
 
+class QListWidgetItem;
+
 namespace Digikam
 {
 
@@ -48,9 +50,11 @@ public:
 
     void populateTranslationEntries();
 
+    void closeMenu();
+
 Q_SIGNALS:
 
-    void signalTranslate();
+    void signalTranslate(QListWidgetItem*);
 
 private Q_SLOTS:
 
