@@ -33,6 +33,7 @@
 
 #include "ocroptions.h"
 #include "dmetadata.h"
+#include "digikam_globals.h"
 
 using namespace Digikam;
 
@@ -169,6 +170,7 @@ int OcrTesseracrEngine::runOcrProcess()
 {
     d->cancel = false;
     QScopedPointer<QProcess> ocrProcess (new QProcess());
+    ocrProcess->setProcessEnvironment(adjustedEnvironmentForAppImage());
     ocrProcess->setProcessChannelMode(QProcess::SeparateChannels);
 
     try
