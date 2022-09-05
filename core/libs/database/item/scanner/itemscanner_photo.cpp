@@ -246,7 +246,8 @@ void ItemScanner::commitItemComments()
 
         for (it = d->commit.titles.constBegin() ; it != d->commit.titles.constEnd() ; ++it)
         {
-            comments.addTitle(it.value().caption, it.key());
+            CaptionValues val = it.value();
+            comments.addTitle(val.caption, it.key(), val.author, val.date);
         }
     }
 }
