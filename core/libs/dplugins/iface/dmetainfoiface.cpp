@@ -180,6 +180,13 @@ DMetaInfoIface::DInfoMap DMetaInfoIface::itemInfo(const QUrl& url) const
         map.insert(QLatin1String("videocodec"),      videoInfo.videoCodec);
 
         // TODO: add more video metadata as needed
+
+        // Get complex text containers.
+
+        CaptionsMap titles   = meta->getItemTitles();
+        map.insert(QLatin1String("titles"),          QVariant::fromValue(titles));
+        CaptionsMap captions = meta->getItemComments();
+        map.insert(QLatin1String("captions"),        QVariant::fromValue(captions));
     }
 
     return map;
@@ -212,6 +219,18 @@ void DMetaInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
     {
         meta->setItemPickLabel(map[QLatin1String("picklabel")].toInt());
         keys.removeAll(QLatin1String("picklabel"));
+    }
+
+    if (map.contains(QLatin1String("titles")))
+    {
+        meta->setItemTitles(qvariant_cast<CaptionsMap>(map[QLatin1String("titles")]));
+        keys.removeAll(QLatin1String("titles"));
+    }
+
+    if (map.contains(QLatin1String("captions")))
+    {
+        meta->setItemComments(qvariant_cast<CaptionsMap>(map[QLatin1String("captions")]));
+        keys.removeAll(QLatin1String("captions"));
     }
 
     if (!keys.isEmpty())

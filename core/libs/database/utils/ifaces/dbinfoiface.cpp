@@ -48,6 +48,7 @@
 #include "digikam_debug.h"
 #include "itemattributeswatch.h"
 #include "itemiconview.h"
+#include "itemcomments.h"
 #include "itemcopyright.h"
 #include "iteminfo.h"
 #include "photoinfocontainer.h"
@@ -515,6 +516,14 @@ DBInfoIface::DInfoMap DBInfoIface::itemInfo(const QUrl& url) const
         VideoInfoContainer videoInfo = info.videoInfoContainer();
         map.insert(QLatin1String("videocodec"),      videoInfo.videoCodec);
 
+        // Get complex text containers.
+
+        ItemComments comments = info.imageComments(CoreDbAccess());
+        CaptionsMap titles    = comments.toCaptionsMap(DatabaseComment::Title);
+        map.insert(QLatin1String("titles"),          QVariant::fromValue(titles));
+        CaptionsMap captions  = comments.toCaptionsMap(DatabaseComment::Comment);
+        map.insert(QLatin1String("captions"),        QVariant::fromValue(captions));
+
         qCDebug(DIGIKAM_GENERAL_LOG) << "Database Info populated for" << url;
     }
     else
@@ -542,13 +551,13 @@ void DBInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
         keys.removeAll(QLatin1String("rating"));
     }
 
-    if  (map.contains(QLatin1String("colorlabel")))
+    if (map.contains(QLatin1String("colorlabel")))
     {
         info.setColorLabel(map[QLatin1String("colorlabel")].toInt());
         keys.removeAll(QLatin1String("colorlabel"));
     }
 
-    if  (map.contains(QLatin1String("picklabel")))
+    if (map.contains(QLatin1String("picklabel")))
     {
         info.setPickLabel(map[QLatin1String("picklabel")].toInt());
         keys.removeAll(QLatin1String("picklabel"));
@@ -556,7 +565,7 @@ void DBInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
 
     // NOTE: For now tag doesn't really exist anywhere else apart from digikam therefore it's not really necessary to implement accessor method in InfoIface
 
-    if  (map.contains(QLatin1String("tag")))
+    if (map.contains(QLatin1String("tag")))
     {
         int tagID = map[QLatin1String("tag")].toInt();
 
@@ -568,6 +577,20 @@ void DBInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
         {
             FileActionMngr::instance()->removeTag(info, tagID);
         }
+    }
+
+    if (map.contains(QLatin1String("titles")))
+    {
+        ItemComments comments = info.imageComments(CoreDbAccess());
+        comments.replaceComments(qvariant_cast<CaptionsMap>(map[QLatin1String("titles")]), DatabaseComment::Title);
+        keys.removeAll(QLatin1String("titles"));
+    }
+
+    if (map.contains(QLatin1String("captions")))
+    {
+        ItemComments comments = info.imageComments(CoreDbAccess());
+        comments.replaceComments(qvariant_cast<CaptionsMap>(map[QLatin1String("captions")]), DatabaseComment::Comment);
+        keys.removeAll(QLatin1String("captions"));
     }
 
     if (!keys.isEmpty())

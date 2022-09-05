@@ -419,6 +419,30 @@ bool DItemInfo::hasGeolocationInfo() const
     return (!qIsNaN(latitude()) && !qIsNaN(longitude()));
 }
 
+CaptionsMap DItemInfo::titles() const
+{
+    QVariant val = parseInfoMap(QLatin1String("titles"));
+
+    return (!val.isNull() ? qvariant_cast<CaptionsMap>(val) : CaptionsMap());
+}
+
+void DItemInfo::setTitles(const CaptionsMap& map)
+{
+    m_info.insert(QLatin1String("titles"), QVariant::fromValue(map));
+}
+
+CaptionsMap DItemInfo::captions() const
+{
+    QVariant val = parseInfoMap(QLatin1String("captions"));
+
+    return (!val.isNull() ? qvariant_cast<CaptionsMap>(val) : CaptionsMap());
+}
+
+void DItemInfo::setCaptions(const CaptionsMap& map)
+{
+    m_info.insert(QLatin1String("captions"), QVariant::fromValue(map));
+}
+
 // -----------------------------------------------------------------
 
 DAlbumInfo::DAlbumInfo(const DInfoInterface::DInfoMap& info)

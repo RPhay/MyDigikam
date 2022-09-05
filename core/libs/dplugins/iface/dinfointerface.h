@@ -44,6 +44,7 @@
 
 #include "digikam_export.h"
 #include "digikam_config.h"
+#include "captionvalues.h"
 
 #ifdef HAVE_MARBLE
 #   include "gpsitemcontainer.h"
@@ -212,6 +213,11 @@ public:
     QDateTime          dateTime()             const;
     QStringList        tagsPath()             const;
     QStringList        keywords()             const;
+
+    CaptionsMap        titles()               const;
+    void               setTitles(const CaptionsMap&);
+    CaptionsMap        captions()             const;
+    void               setCaptions(const CaptionsMap&);
 
     int                albumId()              const;
     int                orientation()          const;
