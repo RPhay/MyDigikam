@@ -32,8 +32,6 @@ int main(int argc, char* argv[])
 
     // output base name
 
-    outputTextName.clear();
-
     if (!outputTextName.isEmpty())
     {
         args << outputTextName;
