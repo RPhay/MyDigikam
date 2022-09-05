@@ -324,7 +324,7 @@ void OcrTesseracrEngine::saveXMP(const QString& filePath, const QString& text)
 
     if (dmeta->applyChanges())
     {
-        qDebug() << "Sucess in hosting text in XMP";
+        qDebug() << "Success in hosting text in XMP";
     }
     else
     {

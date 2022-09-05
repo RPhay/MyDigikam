@@ -445,7 +445,7 @@ void TextConverterDialog::slotStartStop()
 
             ++it;
         }
-       
+
         if (d->fileList.empty())
         {
             QMessageBox::information(this, i18n("Text Converter"), i18n("The list does not contain any digital files to process. You need to select them."));

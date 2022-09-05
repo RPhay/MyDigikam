@@ -9,7 +9,6 @@
 #include <QDebug>
 #include <QApplication>
 #include <QDir>
-#include <QProcess>
 
 int main(int argc, char* argv[])
 {
