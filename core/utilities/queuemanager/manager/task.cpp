@@ -156,6 +156,7 @@ void Task::run()
     ItemInfo source = ItemInfo::fromUrl(d->tools.m_itemUrl);
     bool timeAdjust = false;
     bool rmMetadata = false;
+    bool translate  = false;
 
     Q_FOREACH (const BatchToolSet& set, d->tools.m_toolsList)
     {
@@ -178,6 +179,7 @@ void Task::run()
 
         timeAdjust |= (set.name == QLatin1String("TimeAdjust"));
         rmMetadata |= (set.name == QLatin1String("RemoveMetadata"));
+        translate  |= (set.name == QLatin1String("Translate"));
 
         inUrl       = outUrl;
         index       = set.index + 1;
@@ -205,6 +207,7 @@ void Task::run()
         {
             // If the next tool is under the custom group (user script)
             // treat as the last chained tool, i.e. save image to file
+
             d->tool->setLastChainedTool(true);
         }
         else
@@ -301,7 +304,7 @@ void Task::run()
                                              timeAdjust))
         {
             emitActionData(ActionData::BatchDone, i18n("Item processed successfully %1", renameMess),
-                           dest, (rmMetadata | timeAdjust));
+                           dest, (rmMetadata | timeAdjust | translate));
         }
         else
         {
