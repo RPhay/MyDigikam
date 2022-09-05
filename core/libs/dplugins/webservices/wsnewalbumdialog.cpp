@@ -49,7 +49,7 @@ public:
       : toolName  (name),
         mainWidget(widget)
     {
-        titleEdt       = new DTextEdit;
+        titleEdt       = new DTextEdit(1, nullptr);
         descEdt        = new DTextEdit(0, nullptr);
         locEdt         = new DTextEdit;
         dtEdt          = new QDateTimeEdit(QDateTime::currentDateTime());
