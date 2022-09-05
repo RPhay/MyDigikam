@@ -45,6 +45,7 @@
 #include "digikam_export.h"
 #include "digikam_config.h"
 #include "captionvalues.h"
+#include "dmetadata.h"
 
 #ifdef HAVE_MARBLE
 #   include "gpsitemcontainer.h"
@@ -86,19 +87,19 @@ public:
     ///@{
     /// Low level items and albums methods
 
-    virtual QList<QUrl> currentSelectedItems()                                  const;
-    virtual QList<QUrl> currentAlbumItems()                                     const;
+    virtual QList<QUrl> currentSelectedItems()                                      const;
+    virtual QList<QUrl> currentAlbumItems()                                         const;
     virtual void        parseAlbumItemsRecursive();
 
-    virtual QList<QUrl> albumItems(int)                                         const;
-    virtual QList<QUrl> albumsItems(const DAlbumIDs&)                           const;
-    virtual QList<QUrl> allAlbumItems()                                         const;
+    virtual QList<QUrl> albumItems(int)                                             const;
+    virtual QList<QUrl> albumsItems(const DAlbumIDs&)                               const;
+    virtual QList<QUrl> allAlbumItems()                                             const;
 
-    virtual DInfoMap albumInfo(int)                                             const;
-    virtual void     setAlbumInfo(int, const DInfoMap&)                         const;
+    virtual DInfoMap albumInfo(int)                                                 const;
+    virtual void     setAlbumInfo(int, const DInfoMap&)                             const;
 
-    virtual DInfoMap itemInfo(const QUrl&)                                      const;
-    virtual void     setItemInfo(const QUrl&, const DInfoMap&)                  const;
+    virtual DInfoMap itemInfo(const QUrl&)                                          const;
+    virtual void     setItemInfo(const QUrl&, const DInfoMap&)                      const;
 
     Q_SIGNAL void signalLastItemUrl(const QUrl&);
     ///@}
@@ -108,9 +109,9 @@ public:
     ///@{
     /// Albums chooser view methods (to use items from albums before to process).
 
-    virtual QWidget*  albumChooser(QWidget* const parent)                       const;
-    virtual DAlbumIDs albumChooserItems()                                       const;
-    virtual bool      supportAlbums()                                           const;
+    virtual QWidget*  albumChooser(QWidget* const parent)                           const;
+    virtual DAlbumIDs albumChooserItems()                                           const;
+    virtual bool      supportAlbums()                                               const;
 
     Q_SIGNAL void signalAlbumChooserSelectionChanged();
     ///@}
@@ -120,13 +121,13 @@ public:
     ///@{
     /// Album selector view methods (to upload items from an external place).
 
-    virtual QWidget* uploadWidget(QWidget* const parent)                        const;
-    virtual QUrl     uploadUrl()                                                const;
+    virtual QWidget* uploadWidget(QWidget* const parent)                            const;
+    virtual QUrl     uploadUrl()                                                    const;
 
     Q_SIGNAL void signalUploadUrlChanged();
 
     /// Url to upload new items without to use album selector.
-    virtual QUrl     defaultUploadUrl()                                         const;
+    virtual QUrl     defaultUploadUrl()                                             const;
 
     Q_SIGNAL void signalImportedImage(const QUrl&);
     ///@}
@@ -138,14 +139,14 @@ public:
 
 #ifdef HAVE_MARBLE
 
-    virtual QList<GPSItemContainer*> currentGPSItems()                          const;
+    virtual QList<GPSItemContainer*> currentGPSItems()                              const;
 
 #endif
 
 public:
 
     /// Pass extra shortcut actions to widget and return prefixes of shortcuts
-    virtual QMap<QString, QString> passShortcutActionsToWidget(QWidget* const)  const;
+    virtual QMap<QString, QString> passShortcutActionsToWidget(QWidget* const)      const;
 
 public:
 
@@ -206,52 +207,57 @@ public:
 
 public:
 
-    QString            name()                 const;
-    QString            title()                const;
-    QString            comment()              const;
-    QSize              dimensions()           const;
-    QDateTime          dateTime()             const;
-    QStringList        tagsPath()             const;
-    QStringList        keywords()             const;
+    QString            name()                                                       const;
+    QString            title()                                                      const;
+    QString            comment()                                                    const;
+    QSize              dimensions()                                                 const;
+    QDateTime          dateTime()                                                   const;
+    QStringList        tagsPath()                                                   const;
+    QStringList        keywords()                                                   const;
 
-    CaptionsMap        titles()               const;
+    CaptionsMap        titles()                                                     const;
     void               setTitles(const CaptionsMap&);
-    CaptionsMap        captions()             const;
+    CaptionsMap        captions()                                                   const;
     void               setCaptions(const CaptionsMap&);
 
-    int                albumId()              const;
-    int                orientation()          const;
+    DMetadata::AltLangMap   copyrights()                                            const;
+    void                    setCopyrights(const DMetadata::AltLangMap& map);
+    DMetadata::AltLangMap   copyrightNotices()                                      const;
+    void                    setCopyrightNotices(const DMetadata::AltLangMap& map);
+
+    int                albumId()                                                    const;
+    int                orientation()                                                const;
     void               setOrientation(int);
-    int                rating()               const;
+    int                rating()                                                     const;
     void               setRating(int);
-    int                colorLabel()           const;
+    int                colorLabel()                                                 const;
     void               setColorLabel(int);
-    int                pickLabel()            const;
+    int                pickLabel()                                                  const;
     void               setPickLabel(int);
 
-    double             latitude()             const;
-    double             longitude()            const;
-    double             altitude()             const;
-    qlonglong          fileSize()             const;
-    QStringList        creators()             const;
-    QString            credit()               const;
-    QString            rights()               const;
-    QString            source()               const;
-    QString            lens()                 const;
-    QString            make()                 const;
-    QString            model()                const;
-    QString            exposureTime()         const;
-    QString            sensitivity()          const;
-    QString            aperture()             const;
-    QString            focalLength()          const;
-    QString            focalLength35mm()      const;
-    QString            videoCodec()           const;
+    double             latitude()                                                   const;
+    double             longitude()                                                  const;
+    double             altitude()                                                   const;
+    qlonglong          fileSize()                                                   const;
+    QStringList        creators()                                                   const;
+    QString            credit()                                                     const;
+    QString            rights()                                                     const;
+    QString            source()                                                     const;
+    QString            lens()                                                       const;
+    QString            make()                                                       const;
+    QString            model()                                                      const;
+    QString            exposureTime()                                               const;
+    QString            sensitivity()                                                const;
+    QString            aperture()                                                   const;
+    QString            focalLength()                                                const;
+    QString            focalLength35mm()                                            const;
+    QString            videoCodec()                                                 const;
 
-    bool hasGeolocationInfo()                 const;
+    bool hasGeolocationInfo()                                                       const;
 
 private:
 
-    QVariant parseInfoMap(const QString& key) const;
+    QVariant parseInfoMap(const QString& key)                                       const;
 
 private:
 
@@ -270,11 +276,11 @@ public:
 
 public:
 
-    QString title()                           const;
-    QString caption()                         const;
-    QDate   date()                            const;
-    QString path()                            const;
-    QString albumPath()                       const;
+    QString title()                                                                 const;
+    QString caption()                                                               const;
+    QDate   date()                                                                  const;
+    QString path()                                                                  const;
+    QString albumPath()                                                             const;
 
 private:
 

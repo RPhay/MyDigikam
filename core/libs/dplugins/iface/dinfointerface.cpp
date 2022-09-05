@@ -32,7 +32,6 @@
 
 // Local includes
 
-#include "metaengine.h"
 #include "digikam_globals.h"
 #include "digikam_debug.h"
 
@@ -441,6 +440,30 @@ CaptionsMap DItemInfo::captions() const
 void DItemInfo::setCaptions(const CaptionsMap& map)
 {
     m_info.insert(QLatin1String("captions"), QVariant::fromValue(map));
+}
+
+DMetadata::AltLangMap DItemInfo::copyrights() const
+{
+    QVariant val = parseInfoMap(QLatin1String("copyrights"));
+
+    return (!val.isNull() ? qvariant_cast<DMetadata::AltLangMap>(val) : DMetadata::AltLangMap());
+}
+
+void DItemInfo::setCopyrights(const DMetadata::AltLangMap& map)
+{
+    m_info.insert(QLatin1String("copyrights"), QVariant::fromValue(map));
+}
+
+DMetadata::AltLangMap DItemInfo::copyrightNotices() const
+{
+    QVariant val = parseInfoMap(QLatin1String("copyrightnotices"));
+
+    return (!val.isNull() ? qvariant_cast<DMetadata::AltLangMap>(val) : DMetadata::AltLangMap());
+}
+
+void DItemInfo::setCopyrightNotices(const DMetadata::AltLangMap& map)
+{
+    m_info.insert(QLatin1String("copyrightnotices"), QVariant::fromValue(map));
 }
 
 // -----------------------------------------------------------------
