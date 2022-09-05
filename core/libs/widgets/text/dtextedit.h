@@ -135,7 +135,7 @@ public:
      * This property holds whether the edit widget handle the maximum of characters
      * that user can enter in editor.
      * By default no limit is set.
-     * A zero lenght reset a limit.
+     * A zero length reset a limit.
      */
     void setMaxLength(int length);
     int  maxLength()     const;
@@ -270,7 +270,7 @@ public:
      * This property holds whether the edit widget handle the maximum of characters
      * that user can enter in editor.
      * By default no limit is set.
-     * A zero lenght reset a limit.
+     * A zero length reset a limit.
      */
     void setMaxLength(int length);
     int  maxLength()     const;
