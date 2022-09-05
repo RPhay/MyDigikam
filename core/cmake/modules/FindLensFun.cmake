@@ -12,8 +12,8 @@
 # Copyright (c) 2012      by Ananta Palani <anantapalani at gmail dot com>
 # Copyright (c) 2012-2022 by Caulier Gilles <caulier dot gilles at gmail dot com>
 #
-# Redistribution and use is allowed according to the terms of the BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file..
+# SPDX-License-Identifier: BSD-3-Clause
+#.
 #
 
 IF(LENSFUN_LIBRARIES AND LENSFUN_INCLUDE_DIRS AND LENSFUN_DEFINITIONS AND LENSFUN_VERSION)

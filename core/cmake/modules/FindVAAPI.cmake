@@ -8,7 +8,7 @@
 # VAAPI_DEFINITIONS  - the VAAPI definitions
 #
 # Redistribution and use is allowed according to the terms of the New BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+#
 #
 
 if(PKG_CONFIG_FOUND)

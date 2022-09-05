@@ -14,8 +14,8 @@
 # Copyright (c) 2008-2009 by Gael Guennebaud, <g.gael@free.fr>
 # Copyright (c) 2009      by Benoit Jacob <jacob.benoit.1@gmail.com>
 #
-# Redistribution and use is allowed according to the terms of the BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+# SPDX-License-Identifier: BSD-3-Clause
+#
 #
 
 if(NOT Eigen3_FIND_VERSION)

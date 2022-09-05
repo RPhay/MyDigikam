@@ -4,8 +4,8 @@
 # Copyright (c) 2015      by Mohamed_Anwer, <m_dot_anwer at gmx dot com>
 # Copyright (C) 2018      by Mario Frank,   <mario dot frank at uni minus potsdam dot de>
 #
-# Redistribution and use is allowed according to the terms of the BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+# SPDX-License-Identifier: BSD-3-Clause
+#
 
 APPLY_COMMON_POLICIES()
 
