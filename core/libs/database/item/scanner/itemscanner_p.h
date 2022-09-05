@@ -102,7 +102,7 @@ public:
 
     CaptionsMap                      captions;
     QString                          headline;
-    QString                          title;
+    CaptionsMap                      titles;
 
     Template                         copyrightTemplate;
     QMultiMap<QString, QVariant>     metadataFacesMap;

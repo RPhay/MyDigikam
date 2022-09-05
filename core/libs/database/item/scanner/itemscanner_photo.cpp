@@ -191,35 +191,31 @@ void ItemScanner::commitItemPosition()
 void ItemScanner::scanItemComments()
 {
     MetadataFields fields;
-    fields << MetadataInfo::Headline
-           << MetadataInfo::Title;
+    fields << MetadataInfo::Headline;
 
     QVariantList metadataInfos = d->metadata->getMetadataFields(fields);
 
     // handles all possible fields, multi-language, author, date
 
     CaptionsMap captions = d->metadata->getItemComments();
+    CaptionsMap titles   = d->metadata->getItemTitles();
 
-    if (captions.isEmpty() && !hasValidField(metadataInfos))
+    if (titles.isEmpty()            &&
+        captions.isEmpty()          &&
+        !hasValidField(metadataInfos))
     {
         return;
     }
 
     d->commit.commitItemComments = true;
     d->commit.captions           = captions;
+    d->commit.titles             = titles;
 
     // Headline
 
     if (!metadataInfos.at(0).isNull())
     {
         d->commit.headline = metadataInfos.at(0).toString();
-    }
-
-    // Title
-
-    if (!metadataInfos.at(1).isNull())
-    {
-        d->commit.title = metadataInfos.at(1).toMap()[QLatin1String("x-default")].toString();
     }
 }
 
@@ -244,9 +240,14 @@ void ItemScanner::commitItemComments()
 
     // Title
 
-    if (!d->commit.title.isNull())
+    if (!d->commit.titles.isEmpty())
     {
-        comments.addTitle(d->commit.title);
+        CaptionsMap::const_iterator it;
+
+        for (it = d->commit.titles.constBegin() ; it != d->commit.titles.constEnd() ; ++it)
+        {
+            comments.addTitle(it.value().caption, it.key());
+        }
     }
 }
 
