@@ -177,6 +177,8 @@ void Translate::slotShowContextMenu(const QPoint& pos)
     {
         d->trList->clear();
     }
+
+    slotSettingsChanged();
 }
 
 void Translate::slotAppendTranslation(const QString& lang)
