@@ -268,6 +268,7 @@ bool Translate::toolOperations()
     else
     {
         meta->setData(image().getMetadata());
+        meta->setFilePath(inputUrl().toLocalFile());
     }
 
     bool titleStage      = settings()[QLatin1String("Title")].toBool();
