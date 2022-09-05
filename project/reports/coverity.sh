@@ -17,7 +17,7 @@
 # export PATH=$PATH:/opt/cov-analysis-linux64-2020.09/bin
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+#
 #
 
 # Halt and catch errors
