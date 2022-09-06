@@ -41,11 +41,6 @@ namespace Digikam
 
 int DMetadata::getItemPickLabel() const
 {
-    if (getFilePath().isEmpty())
-    {
-        return -1;
-    }
-
     if (hasXmp())
     {
         QString value = getXmpTagString("Xmp.digiKam.PickLabel", false);
@@ -67,11 +62,6 @@ int DMetadata::getItemPickLabel() const
 
 int DMetadata::getItemColorLabel(const DMetadataSettingsContainer& settings) const
 {
-    if (getFilePath().isEmpty())
-    {
-        return -1;
-    }
-
     bool xmpSupported  = hasXmp();
     bool exivSupported = hasExif();
 
@@ -162,11 +152,6 @@ int DMetadata::getItemColorLabel(const DMetadataSettingsContainer& settings) con
 
 int DMetadata::getItemRating(const DMetadataSettingsContainer& settings) const
 {
-    if (getFilePath().isEmpty())
-    {
-        return -1;
-    }
-
     long rating        = -1;
     bool xmpSupported  = hasXmp();
     bool iptcSupported = hasIptc();

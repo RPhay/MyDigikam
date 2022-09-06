@@ -40,11 +40,6 @@ namespace Digikam
 
 CaptionsMap DMetadata::getItemComments(const DMetadataSettingsContainer& settings) const
 {
-    if (getFilePath().isEmpty())
-    {
-        return CaptionsMap();
-    }
-
     CaptionsMap            captionsMap;
     MetaEngine::AltLangMap authorsMap;
     MetaEngine::AltLangMap datesMap;
@@ -377,11 +372,6 @@ bool DMetadata::setItemComments(const CaptionsMap& comments, const DMetadataSett
 
 CaptionsMap DMetadata::getItemTitles(const DMetadataSettingsContainer& settings) const
 {
-    if (getFilePath().isEmpty())
-    {
-        return CaptionsMap();
-    }
-
     CaptionsMap            captionsMap;
     MetaEngine::AltLangMap authorsMap;
     MetaEngine::AltLangMap datesMap;
@@ -485,8 +475,9 @@ CaptionsMap DMetadata::getItemTitles(const DMetadataSettingsContainer& settings)
 
 bool DMetadata::setItemTitles(const CaptionsMap& titles, const DMetadataSettingsContainer& settings) const
 {
-    //qCDebug(DIGIKAM_METAENGINE_LOG) << getFilePath() << " ==> Title: " << titles;
-
+/*
+    qCDebug(DIGIKAM_METAENGINE_LOG) << getFilePath() << " ==> Title: " << titles;
+*/
     QString defaultTitle          = titles[QLatin1String("x-default")].caption;
     QList<NamespaceEntry> toWrite = settings.getReadMapping(NamespaceEntry::DM_TITLE_CONTAINER());
 
