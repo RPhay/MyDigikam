@@ -17,7 +17,7 @@ find .. -type f -name "*.cpp" \
 find .. -type f -name "*.h" \
     -exec ./replace.py \
       -F ./GPL2_1.txt \
-      -T ./SPDX-GPL2t.txt \
+      -T ./SPDX-GPL2.txt \
       -v \
       -i {} \;
 
@@ -48,4 +48,19 @@ find .. -type f -name "*.h" \
       -T ./SPDX-GPL2.txt \
       -v \
       -i {} \;
+
+find .. -type f -name "*.cpp" \
+    -exec ./replace.py \
+      -F ./GPL2_4.txt \
+      -T ./SPDX-GPL2.txt \
+      -v \
+      -i {} \;
+
+find .. -type f -name "*.h" \
+    -exec ./replace.py \
+      -F ./GPL2_4.txt \
+      -T ./SPDX-GPL2.txt \
+      -v \
+      -i {} \;
+
 
