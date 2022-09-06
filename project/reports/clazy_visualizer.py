@@ -5,8 +5,7 @@
 #
 # Export Clazy static analyzer output to HTML reports.
 #
-# Redistribution and use is allowed according to the terms of the BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+# SPDX-License-Identifier: BSD-3-Clause
 #
 
 import sys

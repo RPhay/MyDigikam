@@ -7,6 +7,9 @@
 # up = !gitup
 # or, if the script is not in your path,
 # up = !/path/to/the/script/gitup
+#
+# SPDX-License-Identifier: BSD-3-Clause
+#
 
 ns=`git diff | wc -l`
 test $ns -eq 0 && ns=`git diff --cached | wc -l`
