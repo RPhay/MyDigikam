@@ -133,4 +133,5 @@ BUGFIXES:
 103 ==> 458344 - Inconsistencies between Collections and albums.
 104 ==> 444757 - Albums empty.
 105 ==> 371535 - Albums from ext hdd are removed when digikam starts up if the external HDD is not plugged in.
-106 ==> 
+106 ==> 458782 - Not all new images downloaded.
+107 ==> 
