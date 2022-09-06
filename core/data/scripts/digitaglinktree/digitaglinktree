@@ -3,6 +3,8 @@
 $version="1.8.3";
 # Author: Rainer Krienke, krienke@uni-koblenz.de
 #
+# SPDX-License-Identifier: BSD-3-Clause
+#
 # Description:
 #
 # This script will create a linktree for all photos in a digikam
@@ -15,7 +17,7 @@ $version="1.8.3";
 #
 # Call this script like:
 # digitaglinktree -r /home/user/photos -l /home/user/photos/tags \
-#            -d /home/user/photos/digikam.db
+#                 -d /home/user/photos/digikam.db
 
 
 # Changes 
@@ -64,28 +66,6 @@ $version="1.8.3";
 # Made mapping from filesystem uuid to mountpoints containing photos more robust using systemtool blkid
 # Changed default for -i from "all to "none" for -M mode. -i is now
 # mandatory for -M
-
-
-
-# ---------------------------------------------------------------------------
-# LICENSE:
-#
-# This program is free software; you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2, or (at your option)
-# any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program; if not, write to the Free Software
-# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
-# 02110-1301, USA.
-#
-# ---------------------------------------------------------------------------
 
 
 use Getopt::Std;
