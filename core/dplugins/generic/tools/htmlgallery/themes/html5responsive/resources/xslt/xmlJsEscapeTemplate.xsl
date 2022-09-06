@@ -10,14 +10,7 @@ This escapeTextForJavaScript template is a modification of code derived from
 xml2json.xsl which is Copyright (c) 2009, 2019 Jens Duttke and is made available
 at https://xml2json.duttke.de/ under the MIT License.
 
-This derivative is being made available under the GNU GPLv3, as described in the
-LICENCE.txt file found in the html5responsive directory of this software work.
-
-This program is distributed in the hope that it will be
-useful, but WITHOUT ANY WARRANTY; without even the implied
-warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
-PURPOSE.  See the GNU General Public License for more
-details.
+SPDX-License-Identifier: MIT
 
 -->
 
