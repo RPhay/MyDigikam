@@ -1,0 +1,6 @@
+Script to replace a block of text by another one in files.
+Multilines text to search and replace is hosted in input.txt
+Multilines text use to replace inline source is hosted in output.txt
+Copy this folder in root of source code hiearchy. Files will be scanned reccursively from root dir.
+Script is configured to search in .cpp and .h, this can be customized.
+Look replace.sh bash script for details.
