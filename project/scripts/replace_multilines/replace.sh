@@ -17,3 +17,15 @@ find . -type f -name "*.h" \
       -F ./input.txt \
       -T ./output.txt \
       -i {} \;
+
+find . -type f -name "*.cpp" \
+    -exec ./replace.py \
+      -F ./input_2.txt \
+      -T ./output.txt \
+      -i {} \;
+
+find . -type f -name "*.h" \
+    -exec ./replace.py \
+      -F ./input_2.txt \
+      -T ./output.txt \
+      -i {} \;
