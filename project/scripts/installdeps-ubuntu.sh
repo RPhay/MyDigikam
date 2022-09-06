@@ -8,8 +8,7 @@
 # Copyright (c) 2021      by Surya K M      <suryakm_is20 dot rvitm@rvei dot edu dot in>
 # Copyright (c) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
 #
-# Redistribution and use is allowed according to the terms of the BSD license.
-#
+# SPDX-License-Identifier: BSD-3-Clause
 #
 
 # Check OS name and version.
