@@ -207,6 +207,7 @@ LocalizeSelectorList::LocalizeSelectorList(QWidget* const parent)
     grid->addWidget(d->trList,       1, 0, 1, 2);
     grid->setColumnStretch(0, 10);
     grid->setRowStretch(2, 10);
+    grid->setContentsMargins(0, 0, 0, 0);
 
     connect(d->trSelector, SIGNAL(signalTranslate(QString)),
             this, SLOT(slotAppendTranslation(QString)));
@@ -225,9 +226,26 @@ void LocalizeSelectorList::setTitle(const QString& title)
     d->trLabel->setText(title);
 }
 
-LocalizeSelector* LocalizeSelectorList::selector() const
+void LocalizeSelectorList::clearLanguages()
 {
-    return d->trSelector;
+    return d->trList->clear();
+}
+
+void LocalizeSelectorList::addLanguage(const QString& code)
+{
+    d->trList->addItem(QString::fromUtf8("%1 - %2").arg(code).arg(AltLangStrEdit::languageNameRFC3066(code)));
+}
+
+QStringList LocalizeSelectorList::languagesList() const
+{
+    QStringList codes;
+
+    for (int i = 0 ; i < d->trList->count() ; ++i)
+    {
+        codes << d->trList->item(i)->text().section(QLatin1String(" - "), 0, 0);
+    }
+
+    return codes;
 }
 
 void LocalizeSelectorList::slotShowContextMenu(const QPoint& pos)

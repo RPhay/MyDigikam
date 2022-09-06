@@ -65,24 +65,22 @@ public:
         usageTermsCB  (nullptr),
         trLabel       (nullptr),
         tagsLabel     (nullptr),
-        trSelector    (nullptr),
-        trList        (nullptr),
+        trSelectorList(nullptr),
         changeSettings(true)
     {
     }
 
-    QCheckBox*        titleCB;
-    QCheckBox*        captionCB;
-    QCheckBox*        copyrightsCB;
-    QCheckBox*        usageTermsCB;
+    QCheckBox*            titleCB;
+    QCheckBox*            captionCB;
+    QCheckBox*            copyrightsCB;
+    QCheckBox*            usageTermsCB;
 
-    QLabel*           trLabel;
-    QLabel*           tagsLabel;
+    QLabel*               trLabel;
+    QLabel*               tagsLabel;
 
-    LocalizeSelector* trSelector;
-    QListWidget*      trList;
+    LocalizeSelectorList* trSelectorList;
 
-    bool              changeSettings;
+    bool                  changeSettings;
 };
 
 Translate::Translate(QObject* const parent)
@@ -112,21 +110,17 @@ void Translate::registerSettingsWidget()
     d->copyrightsCB          = new QCheckBox(i18nc("@option:check", "Copyrights"),  panel);
     d->usageTermsCB          = new QCheckBox(i18nc("@option:check", "Usage Terms"), panel);
 
-    d->trLabel               = new QLabel(i18nc("@label", "Translate to:"),         panel);
-    d->trSelector            = new LocalizeSelector(panel);
-    d->trList                = new QListWidget(panel);
-    d->trList->setContextMenuPolicy(Qt::CustomContextMenu);
+    d->trSelectorList        = new LocalizeSelectorList(panel);
+    d->trSelectorList->setTitle(i18nc("@label", "Translate to:"));
 
-    grid->addWidget(d->tagsLabel,    0, 0, 1, 2);
-    grid->addWidget(d->titleCB,      1, 0, 1, 2);
-    grid->addWidget(d->captionCB,    2, 0, 1, 2);
-    grid->addWidget(d->copyrightsCB, 3, 0, 1, 2);
-    grid->addWidget(d->usageTermsCB, 4, 0, 1, 2);
-    grid->addWidget(d->trLabel,      5, 0, 1, 1);
-    grid->addWidget(d->trSelector,   5, 1, 1, 1);
-    grid->addWidget(d->trList,       6, 0, 1, 2);
+    grid->addWidget(d->tagsLabel,      0, 0, 1, 2);
+    grid->addWidget(d->titleCB,        1, 0, 1, 2);
+    grid->addWidget(d->captionCB,      2, 0, 1, 2);
+    grid->addWidget(d->copyrightsCB,   3, 0, 1, 2);
+    grid->addWidget(d->usageTermsCB,   4, 0, 1, 2);
+    grid->addWidget(d->trSelectorList, 5, 0, 1, 2);
     grid->setColumnStretch(0, 10);
-    grid->setRowStretch(7, 10);
+    grid->setRowStretch(6, 10);
 
     m_settingsWidget = panel;
 
@@ -142,48 +136,10 @@ void Translate::registerSettingsWidget()
     connect(d->usageTermsCB, SIGNAL(toggled(bool)),
             this, SLOT(slotSettingsChanged()));
 
-    connect(d->trSelector, SIGNAL(signalTranslate(QString)),
-            this, SLOT(slotAppendTranslation(QString)));
-
-    connect(d->trList, SIGNAL(customContextMenuRequested(QPoint)),
-            this, SLOT(slotShowContextMenu(QPoint)));
+    connect(d->trSelectorList, SIGNAL(signalSettingsChanged()),
+            this, SLOT(slotSettingsChanged()));
 
     BatchTool::registerSettingsWidget();
-}
-
-void Translate::slotShowContextMenu(const QPoint& pos)
-{
-    QPoint globalPos = d->trList->mapToGlobal(pos);
-
-    QMenu menu;
-    QAction* const rm = menu.addAction(i18nc("@action", "Remove this entry"));
-    QAction* const cl = menu.addAction(i18nc("@action", "Clear List"));
-    QAction* const ac = menu.exec(globalPos);
-
-    if      (ac == rm)
-    {
-        delete d->trList->takeItem(d->trList->currentRow());
-    }
-    else if (ac == cl)
-    {
-        d->trList->clear();
-    }
-
-    slotSettingsChanged();
-}
-
-void Translate::slotAppendTranslation(const QString& lang)
-{
-    for (int i = 0 ; i < d->trList->count() ; ++i)
-    {
-        if (d->trList->item(i)->text().startsWith(lang))
-        {
-            return;
-        }
-    }
-
-    d->trList->addItem(QString::fromUtf8("%1 - %2").arg(lang).arg(AltLangStrEdit::languageNameRFC3066(lang)));
-    slotSettingsChanged();
 }
 
 BatchToolSettings Translate::defaultSettings()
@@ -210,11 +166,11 @@ void Translate::slotAssignSettings2Widget()
 
     QStringList langs = settings()[QLatin1String("TrLangs")].toStringList();
 
-    d->trList->clear();
+    d->trSelectorList->clearLanguages();
 
     Q_FOREACH (const QString& lg, langs)
     {
-        d->trList->addItem(QString::fromUtf8("%1 - %2").arg(lg).arg(AltLangStrEdit::languageNameRFC3066(lg)));
+        d->trSelectorList->addLanguage(lg);
     }
 
     d->changeSettings = true;
@@ -231,13 +187,7 @@ void Translate::slotSettingsChanged()
         settings.insert(QLatin1String("Copyrights"),  d->copyrightsCB->isChecked());
         settings.insert(QLatin1String("UsageTerms"),  d->usageTermsCB->isChecked());
 
-        QStringList langs;
-
-        for (int i = 0 ; i < d->trList->count() ; ++i)
-        {
-            langs << d->trList->item(i)->text().section(QLatin1String(" - "), 0, 0);
-        }
-
+        QStringList langs = d->trSelectorList->languagesList();
         settings.insert(QLatin1String("TrLangs"),     langs);
 
         BatchTool::slotSettingsChanged(settings);

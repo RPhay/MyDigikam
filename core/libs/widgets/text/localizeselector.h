@@ -19,6 +19,7 @@
 
 #include <QWidget>
 #include <QString>
+#include <QStringList>
 #include <QPoint>
 
 // Local includes
@@ -71,7 +72,9 @@ public:
 
     void setTitle(const QString& title);
 
-    LocalizeSelector* selector() const;
+    void clearLanguages();
+    void addLanguage(const QString& code);
+    QStringList languagesList() const;
 
 Q_SIGNALS:
 
