@@ -19,6 +19,7 @@
 
 #include <QWidget>
 #include <QString>
+#include <QPoint>
 
 // Local includes
 
@@ -50,6 +51,36 @@ private Q_SLOTS:
     void slotLocalizeChanged();
     void slotOpenLocalizeSetup();
     void slotTranslate(QListWidgetItem*);
+
+private:
+
+    class Private;
+    Private* const d;
+};
+
+// -----------------------------------------------------------------
+
+class DIGIKAM_EXPORT LocalizeSelectorList : public QWidget
+{
+    Q_OBJECT
+
+public:
+
+    explicit LocalizeSelectorList(QWidget* const parent);
+    ~LocalizeSelectorList()                               override;
+
+    void setTitle(const QString& title);
+
+    LocalizeSelector* selector() const;
+
+Q_SIGNALS:
+
+    void signalSettingsChanged();
+
+private Q_SLOTS:
+
+    void slotAppendTranslation(const QString& lang);
+    void slotShowContextMenu(const QPoint& pos);
 
 private:
 

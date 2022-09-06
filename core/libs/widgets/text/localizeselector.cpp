@@ -16,8 +16,10 @@
 
 // Qt includes
 
+#include <QLabel>
 #include <QIcon>
 #include <QMenu>
+#include <QAction>
 #include <QListWidget>
 #include <QWidgetAction>
 #include <QStyle>
@@ -25,6 +27,7 @@
 #include <QApplication>
 #include <QScrollBar>
 #include <QListWidgetItem>
+#include <QGridLayout>
 
 // KDE includes
 
@@ -166,6 +169,101 @@ void LocalizeSelector::slotTranslate(QListWidgetItem* item)
     {
         Q_EMIT signalTranslate(item->text());
     }
+}
+
+// ------------------------------------------------------------------------
+
+class Q_DECL_HIDDEN LocalizeSelectorList::Private
+{
+public:
+
+    explicit Private()
+      : trLabel   (nullptr),
+        trSelector(nullptr),
+        trList    (nullptr)
+    {
+    }
+
+public:
+
+    QLabel*           trLabel;
+    LocalizeSelector* trSelector;
+    QListWidget*      trList;
+};
+
+LocalizeSelectorList::LocalizeSelectorList(QWidget* const parent)
+    : QWidget(parent),
+      d      (new Private)
+{
+    QGridLayout* const grid  = new QGridLayout(this);
+
+    d->trLabel               = new QLabel(this);
+    d->trSelector            = new LocalizeSelector(this);
+    d->trList                = new QListWidget(this);
+    d->trList->setContextMenuPolicy(Qt::CustomContextMenu);
+
+    grid->addWidget(d->trLabel,      0, 0, 1, 1);
+    grid->addWidget(d->trSelector,   0, 1, 1, 1);
+    grid->addWidget(d->trList,       1, 0, 1, 2);
+    grid->setColumnStretch(0, 10);
+    grid->setRowStretch(2, 10);
+
+    connect(d->trSelector, SIGNAL(signalTranslate(QString)),
+            this, SLOT(slotAppendTranslation(QString)));
+
+    connect(d->trList, SIGNAL(customContextMenuRequested(QPoint)),
+            this, SLOT(slotShowContextMenu(QPoint)));
+}
+
+LocalizeSelectorList::~LocalizeSelectorList()
+{
+    delete d;
+}
+
+void LocalizeSelectorList::setTitle(const QString& title)
+{
+    d->trLabel->setText(title);
+}
+
+LocalizeSelector* LocalizeSelectorList::selector() const
+{
+    return d->trSelector;
+}
+
+void LocalizeSelectorList::slotShowContextMenu(const QPoint& pos)
+{
+    QPoint globalPos = d->trList->mapToGlobal(pos);
+
+    QMenu menu;
+    QAction* const rm = menu.addAction(i18nc("@action", "Remove this entry"));
+    QAction* const cl = menu.addAction(i18nc("@action", "Clear List"));
+    QAction* const ac = menu.exec(globalPos);
+
+    if      (ac == rm)
+    {
+        delete d->trList->takeItem(d->trList->currentRow());
+    }
+    else if (ac == cl)
+    {
+        d->trList->clear();
+    }
+
+    Q_EMIT signalSettingsChanged();
+}
+
+void LocalizeSelectorList::slotAppendTranslation(const QString& lang)
+{
+    for (int i = 0 ; i < d->trList->count() ; ++i)
+    {
+        if (d->trList->item(i)->text().startsWith(lang))
+        {
+            return;
+        }
+    }
+
+    d->trList->addItem(QString::fromUtf8("%1 - %2").arg(lang).arg(AltLangStrEdit::languageNameRFC3066(lang)));
+
+    Q_EMIT signalSettingsChanged();
 }
 
 } // namespace Digikam
