@@ -36,6 +36,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "localizeconfig.h"
 #include "localizesettings.h"
 #include "donlinetranslator.h"
 #include "altlangstredit.h"
@@ -188,7 +189,7 @@ public:
 
     QLabel*           trLabel;
     LocalizeSelector* trSelector;
-    QListWidget*      trList;
+    LanguagesList*    trList;
 };
 
 LocalizeSelectorList::LocalizeSelectorList(QWidget* const parent)
@@ -199,7 +200,7 @@ LocalizeSelectorList::LocalizeSelectorList(QWidget* const parent)
 
     d->trLabel               = new QLabel(this);
     d->trSelector            = new LocalizeSelector(this);
-    d->trList                = new QListWidget(this);
+    d->trList                = new LanguagesList(this);
     d->trList->setContextMenuPolicy(Qt::CustomContextMenu);
 
     grid->addWidget(d->trLabel,      0, 0, 1, 1);
@@ -233,16 +234,19 @@ void LocalizeSelectorList::clearLanguages()
 
 void LocalizeSelectorList::addLanguage(const QString& code)
 {
-    d->trList->addItem(QString::fromUtf8("%1 - %2").arg(code).arg(AltLangStrEdit::languageNameRFC3066(code)));
+    d->trList->addTopLevelItem(new QTreeWidgetItem(d->trList, QStringList() << code << AltLangStrEdit::languageNameRFC3066(code)));
 }
 
 QStringList LocalizeSelectorList::languagesList() const
 {
     QStringList codes;
 
-    for (int i = 0 ; i < d->trList->count() ; ++i)
+    QTreeWidgetItemIterator it(d->trList);
+
+    while (*it)
     {
-        codes << d->trList->item(i)->text().section(QLatin1String(" - "), 0, 0);
+        codes << (*it)->text(0);
+        ++it;
     }
 
     return codes;
@@ -259,7 +263,7 @@ void LocalizeSelectorList::slotShowContextMenu(const QPoint& pos)
 
     if      (ac == rm)
     {
-        delete d->trList->takeItem(d->trList->currentRow());
+        delete d->trList->currentItem();
     }
     else if (ac == cl)
     {
@@ -271,18 +275,21 @@ void LocalizeSelectorList::slotShowContextMenu(const QPoint& pos)
 
 void LocalizeSelectorList::slotAppendTranslation(const QString& lang)
 {
-    for (int i = 0 ; i < d->trList->count() ; ++i)
+    QTreeWidgetItemIterator it(d->trList);
+
+    while (*it)
     {
-        if (d->trList->item(i)->text().startsWith(lang))
+        if ((*it)->text(0).startsWith(lang))
         {
             return;
         }
+
+        ++it;
     }
 
-    d->trList->addItem(QString::fromUtf8("%1 - %2").arg(lang).arg(AltLangStrEdit::languageNameRFC3066(lang)));
+    addLanguage(lang);
 
     Q_EMIT signalSettingsChanged();
 }
 
 } // namespace Digikam
-

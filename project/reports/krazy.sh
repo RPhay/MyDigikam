@@ -80,7 +80,7 @@ krazy2all --export xml \
           --strict all \
           --priority all \
           --verbose \
-          --exclude qclasses \
+          --exclude qclasses,license \
           --exclude-types qml,python,qdoc,perl \
           --topdir ../../ \
           --config ../../.krazy \

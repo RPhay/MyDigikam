@@ -18,13 +18,34 @@
 // Qt includes
 
 #include <QWidget>
+#include <QTreeWidget>
 
 // Local includes
 
 #include "digikam_export.h"
+#include "searchtextbar.h"
 
 namespace Digikam
 {
+
+class DIGIKAM_EXPORT LanguagesList : public QTreeWidget
+{
+    Q_OBJECT
+
+public:
+
+    explicit LanguagesList(QWidget* const parent);
+
+public Q_SLOTS:
+
+    void slotSearchTextChanged(const SearchTextSettings& settings);
+
+Q_SIGNALS:
+
+    void signalSearchResult(int);
+};
+
+// -------------------------------------------------------------------------
 
 class DIGIKAM_EXPORT LocalizeConfig : public QWidget
 {
