@@ -134,4 +134,5 @@ BUGFIXES:
 104 ==> 444757 - Albums empty.
 105 ==> 371535 - Albums from ext hdd are removed when digikam starts up if the external HDD is not plugged in.
 106 ==> 458782 - Not all new images downloaded.
-107 ==> 
+107 ==> 458846 - Popup Menus in wrong position with Sway window manager.
+108 ==> 
