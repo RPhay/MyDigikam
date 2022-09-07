@@ -331,18 +331,6 @@ void DOnlineTranslator::buildYandexStateMachine()
                                  Private::s_yandexTranslitLimit);
     }
     else
-
-    // Setup source translit state
-
-    if (d->sourceTranslitEnabled)
-    {
-        buildSplitNetworkRequest(sourceTranslitState,
-                                 &DOnlineTranslator::slotRequestYandexSourceTranslit,
-                                 &DOnlineTranslator::slotParseYandexSourceTranslit,
-                                 d->source,
-                                 Private::s_yandexTranslitLimit);
-    }
-    else
     {
         sourceTranslitState->setInitialState(new QFinalState(sourceTranslitState));
     }
