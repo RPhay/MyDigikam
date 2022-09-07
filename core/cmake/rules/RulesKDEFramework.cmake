@@ -1,8 +1,8 @@
 #
 # Copyright (c) 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
-# Redistribution and use is allowed according to the terms of the BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+# SPDX-License-Identifier: BSD-3-Clause
+#
 
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
                                     COMPONENTS
@@ -13,6 +13,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
                                     WindowSystem
                                     Solid
                                     I18n
+                                    TextWidgets
 )
 
 find_package(KF5 ${KF5_MIN_VERSION} QUIET
@@ -22,7 +23,6 @@ find_package(KF5 ${KF5_MIN_VERSION} QUIET
                                     ThreadWeaver                # For Panorama tool.
                                     NotifyConfig                # Plasma desktop application notify configuration.
                                     Notifications               # Plasma desktop notifications integration.
-                                    Sonnet                      # For spell-checking.
 )
 
 if(ENABLE_KFILEMETADATASUPPORT)

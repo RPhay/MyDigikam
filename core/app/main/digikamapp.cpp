@@ -13,16 +13,7 @@
  * Copyright (C) 2014-2015 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  * Copyright (C) 2002-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -90,6 +81,7 @@ DigikamApp::DigikamApp()
     ThumbnailLoadThread::setDisplayingWidget(this);
     DIO::instance();
     LocalizeSettings::instance();
+    NetworkManager::instance();
 
     connect(LocalizeSettings::instance(), &LocalizeSettings::signalOpenLocalizeSetup,
             this, [=]()
@@ -166,6 +158,27 @@ DigikamApp::DigikamApp()
     }
 
     d->validIccPath = SetupICC::iccRepositoryIsValid();
+
+    // Clean up database if enabled in the settings
+
+    if (ApplicationSettings::instance()->getCleanAtStart() &&
+        CollectionScanner::databaseInitialScanDone())
+    {
+        if (d->splashScreen)
+        {
+            d->splashScreen->setMessage(i18n("Clean up Database..."));
+        }
+
+        QEventLoop loop;
+
+        DbCleaner* const tool = new DbCleaner(false, false);
+
+        connect(tool, SIGNAL(signalComplete()),
+                &loop, SLOT(quit()));
+
+        tool->start();
+        loop.exec();
+    }
 
     // Read albums from database
 
@@ -360,12 +373,6 @@ void DigikamApp::show()
                     this, SLOT(slotDetectFaces()));
         }
 
-        QTimer::singleShot(1000, tool, SLOT(start()));
-    }
-
-    if (settings->getCleanAtStart())
-    {
-        DbCleaner* const tool = new DbCleaner(false, false);
         QTimer::singleShot(1000, tool, SLOT(start()));
     }
 }

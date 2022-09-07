@@ -3,8 +3,8 @@
 # Copyright (c) 2015      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
 # Copyright (c) 2015      by Mohamed_Anwer, <m_dot_anwer at gmx dot com>
 #
-# Redistribution and use is allowed according to the terms of the BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+# SPDX-License-Identifier: BSD-3-Clause
+#
 
 # NOTE: Look rules extension scripts located at core/cmake/rules/
 

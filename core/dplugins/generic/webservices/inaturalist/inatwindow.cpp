@@ -11,15 +11,7 @@
  * Copyright (C) 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009      by Luka Renko <lure at kubuntu dot org>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -405,7 +397,7 @@ void INatWindow::switchUser(bool restoreToken)
     connect(dlg, SIGNAL(signalApiToken(QString,QList<QNetworkCookie>)),
             d->talker, SLOT(slotApiToken(QString,QList<QNetworkCookie>)));
 
-    dlg->exec();
+    (void)dlg->exec();
 }
 
 void INatWindow::slotApiTokenExpires()
@@ -963,7 +955,7 @@ void INatWindow::slotNearbyPlaces(const QStringList& places)
     QString selected = d->placesComboBox->currentText();
     d->placesComboBox->clear();
 
-    for (auto place : d->editedPlaces)
+    for (auto& place : d->editedPlaces)
     {
         d->placesComboBox->addItem(place);
 
@@ -975,7 +967,7 @@ void INatWindow::slotNearbyPlaces(const QStringList& places)
         }
     }
 
-    for (auto place : places)
+    for (auto& place : places)
     {
         d->placesComboBox->addItem(place);
 
@@ -1054,7 +1046,7 @@ void INatWindow::slotImageListChanged()
 
     DItemsListView* const listView = d->widget->d->imglst->listView();
 
-    for (auto url : d->imglst->imageUrls())
+    for (auto& url : d->imglst->imageUrls())
     {
         if (url.isEmpty())
         {

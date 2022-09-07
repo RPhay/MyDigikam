@@ -2,8 +2,8 @@
 # Copyright (c) 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 # Copyright (c) 2015      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
 #
-# Redistribution and use is allowed according to the terms of the BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+# SPDX-License-Identifier: BSD-3-Clause
+#
 
 APPLY_COMMON_POLICIES()
 
@@ -11,9 +11,12 @@ set(libtextwidgets_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/text/modelcompleter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/searchtextbar.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/dtextedit.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/dplaintextedit.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/dtextedit_p.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/localizesettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/localizecontainer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/localizeconfig.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/localizeselector.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/spellcheckconfig.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator_p.cpp

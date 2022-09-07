@@ -8,16 +8,7 @@
  *
  * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -73,7 +64,8 @@ void LocalizeContainer::readFromConfig(KConfigGroup& group)
                                                                        << QLatin1String("pt-PT")
     );
 
-    alternativeLang  = group.readEntry("AlternativeLang", QStringList() << QLatin1String("en-US")
+    alternativeLang  = group.readEntry("AlternativeLang", QStringList() << QLatin1String("x-default")
+                                                                        << QLatin1String("en-US")
                                                                         << QLatin1String("fr-FR")
                                                                         << QLatin1String("es-ES")
                                                                         << QLatin1String("it-IT")

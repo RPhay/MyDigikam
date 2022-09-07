@@ -8,7 +8,7 @@
 # Copyright (C) 2014 Belledonne Communications, Grenoble France
 #
 # Redistribution and use is allowed according to the terms of the New BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+#
 #
 
 include(CheckSymbolExists)

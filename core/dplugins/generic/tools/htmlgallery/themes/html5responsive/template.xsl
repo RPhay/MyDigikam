@@ -15,15 +15,7 @@
 * which was created in 2007 by Wojciech Jarosz
 * <jiri at boha dot cz>.
 *
-* This program is free software, made available under the GNU
-* GPLv3 as described in the LICENCE.txt file found in the
-* html5responive directory of this program.
-*
-* This program is distributed in the hope that it will be
-* useful, but WITHOUT ANY WARRANTY; without even the implied
-* warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
-* PURPOSE.  See the GNU General Public License for more
-* details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
 *
 * ============================================================
 -->

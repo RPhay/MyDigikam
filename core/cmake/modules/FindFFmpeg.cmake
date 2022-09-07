@@ -33,8 +33,8 @@
 # Copyright (c) 2011      by Michael Jansen, <kde at michael-jansen dot biz>
 # Copyright (c) 2016-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
-# Redistribution and use is allowed according to the terms of the BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+# SPDX-License-Identifier: BSD-3-Clause
+#
 #
 
 INCLUDE(FindPackageHandleStandardArgs)

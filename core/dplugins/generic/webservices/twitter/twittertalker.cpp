@@ -9,15 +9,7 @@
  * Copyright (C) 2018 by Tarek Talaat <tarektalaat93 at gmail dot com>
  * Copyright (C) 2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -42,7 +34,6 @@
 #include <QMessageBox>
 #include <QApplication>
 #include <QDesktopServices>
-#include <QNetworkAccessManager>
 
 /*
 #include <QWebEngineView>
@@ -64,6 +55,7 @@
 #include "twitteritem.h"
 #include "twittermpform.h"
 #include "previewloadthread.h"
+#include "networkmanager.h"
 #include "o0settingsstore.h"
 #include "o1requestor.h"
 
@@ -151,7 +143,7 @@ TwTalker::TwTalker(QWidget* const parent)
     : d(new Private)
 {
     d->parent  = parent;
-    d->netMngr = new QNetworkAccessManager(this);
+    d->netMngr = NetworkManager::instance()->getNetworkManager(this);
 
     connect(d->netMngr, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotFinished(QNetworkReply*)));
@@ -653,12 +645,12 @@ void TwTalker::slotCheckUploadStatus()
 
 void TwTalker::slotFinished(QNetworkReply* reply)
 {
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "TwTalker::slotFinished";
-
     if (reply != d->reply)
     {
         return;
     }
+
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "TwTalker::slotFinished";
 
     d->reply = nullptr;
 

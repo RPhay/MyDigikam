@@ -9,16 +9,7 @@
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -191,35 +182,31 @@ void ItemScanner::commitItemPosition()
 void ItemScanner::scanItemComments()
 {
     MetadataFields fields;
-    fields << MetadataInfo::Headline
-           << MetadataInfo::Title;
+    fields << MetadataInfo::Headline;
 
     QVariantList metadataInfos = d->metadata->getMetadataFields(fields);
 
     // handles all possible fields, multi-language, author, date
 
     CaptionsMap captions = d->metadata->getItemComments();
+    CaptionsMap titles   = d->metadata->getItemTitles();
 
-    if (captions.isEmpty() && !hasValidField(metadataInfos))
+    if (titles.isEmpty()            &&
+        captions.isEmpty()          &&
+        !hasValidField(metadataInfos))
     {
         return;
     }
 
     d->commit.commitItemComments = true;
     d->commit.captions           = captions;
+    d->commit.titles             = titles;
 
     // Headline
 
     if (!metadataInfos.at(0).isNull())
     {
         d->commit.headline = metadataInfos.at(0).toString();
-    }
-
-    // Title
-
-    if (!metadataInfos.at(1).isNull())
-    {
-        d->commit.title = metadataInfos.at(1).toMap()[QLatin1String("x-default")].toString();
     }
 }
 
@@ -244,9 +231,15 @@ void ItemScanner::commitItemComments()
 
     // Title
 
-    if (!d->commit.title.isNull())
+    if (!d->commit.titles.isEmpty())
     {
-        comments.addTitle(d->commit.title);
+        CaptionsMap::const_iterator it;
+
+        for (it = d->commit.titles.constBegin() ; it != d->commit.titles.constEnd() ; ++it)
+        {
+            CaptionValues val = it.value();
+            comments.addTitle(val.caption, it.key(), val.author, val.date);
+        }
     }
 }
 

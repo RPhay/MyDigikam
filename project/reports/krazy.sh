@@ -16,8 +16,7 @@
 #
 # If '--nowebupdate' is passed as argument, static analyzer results are just created locally.
 #
-# Redistribution and use is allowed according to the terms of the BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+# SPDX-License-Identifier: BSD-3-Clause
 #
 
 # Halt and catch errors

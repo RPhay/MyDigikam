@@ -8,16 +8,7 @@
  *
  * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -30,51 +21,38 @@ AltLangStrEdit::AltLangStrEdit(QWidget* const parent, unsigned int lines)
     : QWidget(parent),
       d      (new Private)
 {
-    d->titleWidget    = new QLabel(this);
+    d->titleWidget      = new QLabel(this);
 
-    d->delValueButton = new QToolButton(this);
+    d->delValueButton   = new QToolButton(this);
     d->delValueButton->setIcon(QIcon::fromTheme(QLatin1String("edit-clear")));
     d->delValueButton->setToolTip(i18nc("@info: language edit widget", "Remove entry for this language"));
     d->delValueButton->setEnabled(false);
 
-    d->translateButton = new QToolButton(this);
-    d->translateButton->setIcon(QIcon::fromTheme(QLatin1String("language-chooser")));
-    d->translateButton->setEnabled(false);
-    d->translateButton->setPopupMode(QToolButton::MenuButtonPopup);
-    QMenu* const menu  = new QMenu(d->translateButton);
-    d->translateAction = new TranslateAction(d->translateButton);
-    menu->addAction(d->translateAction);
-    d->translateButton->setMenu(menu);
+    d->localizeSelector = new LocalizeSelector(this);
+    d->trengine         = new DOnlineTranslator(this);
 
-    d->settingsButton  = new QToolButton(this);
-    d->settingsButton->setIcon(QIcon::fromTheme(QLatin1String("configure")));
-    d->settingsButton->setToolTip(i18nc("@info", "Open localize setup"));
-
-    d->trengine        = new DOnlineTranslator(this);
-
-    d->languageCB      = new QComboBox(this);
+    d->languageCB       = new QComboBox(this);
     d->languageCB->setSizeAdjustPolicy(QComboBox::AdjustToContents);
     d->languageCB->setWhatsThis(i18nc("@info: language edit widget", "Select item language here."));
 
-    d->valueEdit       = new DTextEdit(lines, this);
+    d->valueEdit        = new DTextEdit(lines, this);
     d->valueEdit->setAcceptRichText(false);
+    d->valueEdit->setClearButtonEnabled(false);
 
     // --------------------------------------------------------
 
-    d->grid            = new QGridLayout(this);
+    d->grid             = new QGridLayout(this);
     d->grid->setAlignment(Qt::AlignTop);
-    d->grid->addWidget(d->languageCB,      0, 2, 1,  1);
-    d->grid->addWidget(d->delValueButton,  0, 3, 1,  1);
-    d->grid->addWidget(d->translateButton, 0, 4, 1,  1);
-    d->grid->addWidget(d->settingsButton,  0, 5, 1,  1);
-    d->grid->addWidget(d->valueEdit,       1, 0, 1, -1);
+    d->grid->addWidget(d->languageCB,       0, 2, 1,  1);
+    d->grid->addWidget(d->delValueButton,   0, 3, 1,  1);
+    d->grid->addWidget(d->localizeSelector, 0, 4, 1,  2);
+    d->grid->addWidget(d->valueEdit,        1, 0, 1, -1);
     d->grid->setColumnStretch(1, 10);
     d->grid->setContentsMargins(QMargins());
     d->grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                              QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
 
     populateLangAltListEntries();
-    slotLocalizeChanged();
 
     // --------------------------------------------------------
 
@@ -84,10 +62,7 @@ AltLangStrEdit::AltLangStrEdit(QWidget* const parent, unsigned int lines)
     connect(d->delValueButton, &QToolButton::clicked,
             this, &AltLangStrEdit::slotDeleteValue);
 
-    connect(d->settingsButton, &QToolButton::clicked,
-            this, &AltLangStrEdit::slotOpenLocalizeSetup);
-
-    connect(d->translateAction->m_list, &QListWidget::itemClicked,
+    connect(d->localizeSelector, &LocalizeSelector::signalTranslate,
             this, &AltLangStrEdit::slotTranslate);
 
     connect(d->valueEdit, &QTextEdit::textChanged,
@@ -95,12 +70,6 @@ AltLangStrEdit::AltLangStrEdit(QWidget* const parent, unsigned int lines)
 
     connect(d->trengine, &DOnlineTranslator::signalFinished,
             this, &AltLangStrEdit::slotTranslationFinished);
-
-    connect(d->translateButton, &QToolButton::pressed,
-            d->translateButton, &QToolButton::showMenu);
-
-    connect(LocalizeSettings::instance(), &LocalizeSettings::signalSettingsChanged,
-            this, &AltLangStrEdit::slotLocalizeChanged);
 }
 
 AltLangStrEdit::~AltLangStrEdit()
@@ -129,7 +98,7 @@ void AltLangStrEdit::slotEnabledInternalWidgets(bool b)
 {
     d->languageCB->setEnabled(b);
     d->delValueButton->setEnabled(b);
-    d->translateButton->setEnabled(b);
+    d->localizeSelector->setEnabled(b);
     d->valueEdit->setEnabled(b);
 }
 
@@ -208,7 +177,7 @@ void AltLangStrEdit::slotSelectionChanged()
     QString text = d->values.value(d->currentLanguage);
     d->valueEdit->setPlainText(text);
     d->delValueButton->setEnabled(!text.isNull());
-    d->translateButton->setEnabled(!text.isNull());
+    d->localizeSelector->setEnabled(!text.isNull());
 
     d->valueEdit->blockSignals(false);
 
@@ -238,7 +207,7 @@ void AltLangStrEdit::setValues(const MetaEngine::AltLangMap& values)
     QString text = d->values.value(d->currentLanguage);
     d->valueEdit->setPlainText(text);
     d->delValueButton->setEnabled(!text.isNull());
-    d->translateButton->setEnabled(!text.isNull());
+    d->localizeSelector->setEnabled(!text.isNull());
 
     d->valueEdit->blockSignals(false);
 }
@@ -274,7 +243,7 @@ void AltLangStrEdit::populateLangAltListEntries()
     // ...and now, all the rest...
 
     LocalizeContainer set = LocalizeSettings::instance()->settings();
-    QStringList lang        = set.alternativeLang;
+    QStringList lang      = set.alternativeLang;
 
     Q_FOREACH (const QString& lg, lang)
     {
@@ -288,22 +257,6 @@ void AltLangStrEdit::populateLangAltListEntries()
     d->languageCB->setCurrentIndex(d->languageCB->findText(d->currentLanguage));
 
     d->languageCB->blockSignals(false);
-}
-
-void AltLangStrEdit::populateTranslationEntries()
-{
-    d->translateAction->m_list->clear();
-
-    QStringList allRFC3066  = DOnlineTranslator::supportedRFC3066(LocalizeSettings::instance()->settings().translatorEngine);
-    LocalizeContainer set   = LocalizeSettings::instance()->settings();
-
-    Q_FOREACH (const QString& lg, set.translatorLang)
-    {
-        QListWidgetItem* const item = new QListWidgetItem(d->translateAction->m_list);
-        item->setText(lg);
-        item->setToolTip(i18nc("@info", "Translate to %1", languageNameRFC3066(lg)));
-        d->translateAction->m_list->addItem(item);
-    }
 }
 
 QString AltLangStrEdit::defaultAltLang() const
@@ -349,7 +302,7 @@ void AltLangStrEdit::addCurrent()
     d->values.insert(d->currentLanguage, text);
     populateLangAltListEntries();
     d->delValueButton->setEnabled(true);
-    d->translateButton->setEnabled(true);
+    d->localizeSelector->setEnabled(true);
 
     Q_EMIT signalValueAdded(d->currentLanguage, text);
 }
@@ -401,15 +354,8 @@ DTextEdit* AltLangStrEdit::textEdit() const
     return d->valueEdit;
 }
 
-void AltLangStrEdit::slotOpenLocalizeSetup()
+void AltLangStrEdit::slotTranslate(const QString& lang)
 {
-    LocalizeSettings::instance()->openLocalizeSetup();
-}
-
-void AltLangStrEdit::slotTranslate(QListWidgetItem* item)
-{
-    d->translateButton->menu()->close();
-
     if (d->trengine->isRunning())
     {
         return;
@@ -417,36 +363,33 @@ void AltLangStrEdit::slotTranslate(QListWidgetItem* item)
 
     setDisabled(true);
 
-    if (item)
+    d->trCode       = lang;
+    QString srcCode = currentLanguageCode();
+    DOnlineTranslator::Language trLang;
+    DOnlineTranslator::Language srcLang;
+
+    if (srcCode == QLatin1String("x-default"))
     {
-        d->trCode       = item->text();
-        QString srcCode = currentLanguageCode();
-        DOnlineTranslator::Language trLang;
-        DOnlineTranslator::Language srcLang;
-
-        if (srcCode == QLatin1String("x-default"))
-        {
-            srcLang = DOnlineTranslator::Auto;
-        }
-        else
-        {
-            srcLang = DOnlineTranslator::language(DOnlineTranslator::fromRFC3066(LocalizeSettings::instance()->settings().translatorEngine, srcCode));
-        }
-
-        trLang       = DOnlineTranslator::language(DOnlineTranslator::fromRFC3066(LocalizeSettings::instance()->settings().translatorEngine, d->trCode));
-        QString text = textEdit()->text();
-
-        qCDebug(DIGIKAM_WIDGETS_LOG) << "Request to translate with Web-service:";
-        qCDebug(DIGIKAM_WIDGETS_LOG) << "Text to translate        :" << text;
-        qCDebug(DIGIKAM_WIDGETS_LOG) << "To target language       :" << trLang;
-        qCDebug(DIGIKAM_WIDGETS_LOG) << "With source language     :" << srcLang;
-
-        d->trengine->translate(text,                                                            // String to translate
-                               LocalizeSettings::instance()->settings().translatorEngine,       // Web service
-                               trLang,                                                          // Target language
-                               srcLang,                                                         // Source langage
-                               DOnlineTranslator::Auto);
+        srcLang = DOnlineTranslator::Auto;
     }
+    else
+    {
+        srcLang = DOnlineTranslator::language(DOnlineTranslator::fromRFC3066(LocalizeSettings::instance()->settings().translatorEngine, srcCode));
+    }
+
+    trLang       = DOnlineTranslator::language(DOnlineTranslator::fromRFC3066(LocalizeSettings::instance()->settings().translatorEngine, d->trCode));
+    QString text = textEdit()->text();
+
+    qCDebug(DIGIKAM_WIDGETS_LOG) << "Request to translate with Web-service:";
+    qCDebug(DIGIKAM_WIDGETS_LOG) << "Text to translate        :" << text;
+    qCDebug(DIGIKAM_WIDGETS_LOG) << "To target language       :" << trLang;
+    qCDebug(DIGIKAM_WIDGETS_LOG) << "With source language     :" << srcLang;
+
+    d->trengine->translate(text,                                                            // String to translate
+                           LocalizeSettings::instance()->settings().translatorEngine,       // Web service
+                           trLang,                                                          // Target language
+                           srcLang,                                                         // Source langage
+                           DOnlineTranslator::Auto);
 }
 
 void AltLangStrEdit::slotTranslationFinished()
@@ -483,13 +426,6 @@ void AltLangStrEdit::slotTranslationFinished()
                                  d->trengine->errorString()));
 
     }
-}
-
-void AltLangStrEdit::slotLocalizeChanged()
-{
-    populateTranslationEntries();
-    d->translateButton->setToolTip(i18nc("@info: language edit widget", "Select language to translate with %1",
-                                   DOnlineTranslator::engineName(LocalizeSettings::instance()->settings().translatorEngine)));
 }
 
 } // namespace Digikam

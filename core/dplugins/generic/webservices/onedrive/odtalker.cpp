@@ -8,15 +8,7 @@
  *
  * Copyright (C) 2018      by Tarek Talaat <tarektalaat93 at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -39,7 +31,6 @@
 #include <QMimeDatabase>
 #include <QDesktopServices>
 #include <QUrlQuery>
-#include <QNetworkAccessManager>
 
 // KDE includes
 
@@ -51,6 +42,7 @@
 #include "digikam_debug.h"
 #include "digikam_version.h"
 #include "previewloadthread.h"
+#include "networkmanager.h"
 #include "webbrowserdlg.h"
 #include "wstoolutils.h"
 #include "odwindow.h"
@@ -128,7 +120,7 @@ ODTalker::ODTalker(QWidget* const parent)
     : d           (new Private)
 {
     d->parent   = parent;
-    d->netMngr  = new QNetworkAccessManager(this);
+    d->netMngr  = NetworkManager::instance()->getNetworkManager(this);
     d->settings = WSToolUtils::getOauthSettings(this);
 
     connect(this, SIGNAL(oneDriveLinkingFailed()),

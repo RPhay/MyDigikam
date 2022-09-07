@@ -11,16 +11,7 @@
  * Copyright (C) 2008-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2012      by Andi Clemens <andi dot clemens at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -114,8 +105,8 @@ QWidget* FuzzySearchView::setupSketchPanel() const
     d->resetButton->setToolTip(i18n("Clear sketch"));
     d->resetButton->setWhatsThis(i18n("Use this button to clear sketch contents."));
 
-    d->nameEditSketch = new QLineEdit(saveBox);
-    d->nameEditSketch->setClearButtonEnabled(true);
+    d->nameEditSketch = new DTextEdit(saveBox);
+    d->nameEditSketch->setLinesVisible(1);
     d->nameEditSketch->setWhatsThis(i18n("Enter the name of the current sketch search to save in the "
                                          "\"Similarity Searches\" view."));
 

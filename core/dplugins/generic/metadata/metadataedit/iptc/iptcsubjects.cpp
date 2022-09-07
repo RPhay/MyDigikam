@@ -9,15 +9,7 @@
  * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009      by Andi Clemens <andi dot clemens at googlemail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -94,13 +86,13 @@ IPTCSubjects::IPTCSubjects(QWidget* const parent)
     connect(m_refEdit, SIGNAL(textChanged(QString)),
             this, SLOT(slotLineEditModified()));
 
-    connect(m_nameEdit, SIGNAL(textChanged(QString)),
+    connect(m_nameEdit, SIGNAL(textChanged()),
             this, SLOT(slotLineEditModified()));
 
-    connect(m_matterEdit, SIGNAL(textChanged(QString)),
+    connect(m_matterEdit, SIGNAL(textChanged()),
             this, SLOT(slotLineEditModified()));
 
-    connect(m_detailEdit, SIGNAL(textChanged(QString)),
+    connect(m_detailEdit, SIGNAL(textChanged()),
             this, SLOT(slotLineEditModified()));
 }
 

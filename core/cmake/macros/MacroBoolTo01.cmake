@@ -5,8 +5,8 @@
 #
 # Copyright (c) 2006 by Alexander Neundorf, <neundorf@kde.org>
 #
-# Redistribution and use is allowed according to the terms of the BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+# SPDX-License-Identifier: BSD-3-Clause
+#
 
 MACRO(MACRO_BOOL_TO_01 FOUND_VAR )
 

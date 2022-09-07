@@ -8,20 +8,15 @@
  *
  * Copyright (C) 2019-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
 #include "dimgheifloader.h"
+
+// C++ includes
+
+#include <cstdint>
 
 // Qt includes
 
@@ -43,7 +38,7 @@
 namespace Digikam
 {
 
-static int64_t heifQIODeviceDImgGetPosition(void* userdata)     // krazy:exclude=typedefs
+static int64_t heifQIODeviceDImgGetPosition(void* userdata)
 {
     QFile* const file = static_cast<QFile*>(userdata);
 
@@ -64,14 +59,14 @@ static int heifQIODeviceDImgRead(void* data, size_t size, void* userdata)
     return (int)((file->error() != QFileDevice::NoError) || bytes != (qint64)size);
 }
 
-static int heifQIODeviceDImgSeek(int64_t position, void* userdata)  // krazy:exclude=typedefs
+static int heifQIODeviceDImgSeek(int64_t position, void* userdata)
 {
     QFile* const file = static_cast<QFile*>(userdata);
 
-    return (int)file->seek(position);
+    return (int)!file->seek(position);
 }
 
-static heif_reader_grow_status heifQIODeviceDImgWait(int64_t target_size, void* userdata)   // krazy:exclude=typedefs
+static heif_reader_grow_status heifQIODeviceDImgWait(int64_t target_size, void* userdata)
 {
     QFile* const file = static_cast<QFile*>(userdata);
 

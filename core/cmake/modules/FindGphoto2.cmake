@@ -12,8 +12,8 @@
 # Copyright (c) 2006-2007 by Laurent Montel <montel@kde.org>
 # Copyright (c) 2011-2022 by Gilles Caulier <caulier.gilles@gmail.com>
 #
-# Redistribution and use is allowed according to the terms of the BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+# SPDX-License-Identifier: BSD-3-Clause
+#
 #
 
 set(GPHOTO2_FIND_REQUIRED ${Gphoto2_FIND_REQUIRED})

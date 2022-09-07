@@ -13,15 +13,7 @@
  * Copyright (C) 2012      by Iliya Ivanov <ilko2002 at abv dot bg>
  * Copyright (C) 2012-2016 by Peter Potrowl <peter dot potrowl at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -108,7 +100,7 @@ public:
     }
 
     QWidget*                                 fileBox;
-    QLineEdit*                               titleEdit;
+    DTextEdit*                               titleEdit;
     DTextEdit*                               descEdit;
     QLineEdit*                               dateEdit;
     QLineEdit*                               longitudeEdit;
@@ -211,7 +203,8 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
 
     loadItemInfoFirstLoad();
 
-    d->titleEdit    = new QLineEdit(d->defaultMessage, d->fileBox);
+    d->titleEdit    = new DTextEdit(d->defaultMessage, d->fileBox);
+    d->titleEdit->setLinesVisible(1);
     d->dateEdit     = new QLineEdit(d->defaultMessage, d->fileBox);
 
     d->descEdit     = new DTextEdit(0, d->fileBox);
@@ -559,7 +552,7 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
     connect(d->titleEdit, SIGNAL(editingFinished()),
             this, SLOT(slotRestoreExtension()));
 
-    connect(d->titleEdit, SIGNAL(textEdited(QString)),
+    connect(d->titleEdit, SIGNAL(textChanged()),
             this, SLOT(slotApplyTitle()));
 
     connect(d->dateEdit, SIGNAL(textEdited(QString)),

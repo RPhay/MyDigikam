@@ -9,16 +9,7 @@
  * Copyright (C) 2018-2022 by Hennadii Chernyshchyk <genaloner at gmail dot com>
  * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -35,6 +26,11 @@ void DOnlineTranslator::slotRequestBingCredentials()
 
 void DOnlineTranslator::slotParseBingCredentials()
 {
+    if ((quintptr)d->currentReply.data() != sender()->property("QNetworkReply").value<quintptr>())
+    {
+        return;
+    }
+
     d->currentReply->deleteLater();
 
     if (d->currentReply->error() != QNetworkReply::NoError)
@@ -185,6 +181,11 @@ void DOnlineTranslator::slotRequestBingDictionary()
 
 void DOnlineTranslator::slotParseBingDictionary()
 {
+    if ((quintptr)d->currentReply.data() != sender()->property("QNetworkReply").value<quintptr>())
+    {
+        return;
+    }
+
     d->currentReply->deleteLater();
 
     // Check for errors

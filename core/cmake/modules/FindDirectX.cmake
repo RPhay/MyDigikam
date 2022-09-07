@@ -4,7 +4,7 @@
 # Copyright (c) 2021-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the New BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+#
 
 # For MSVC compiler, find Microsoft DirectX installation in Windows SDK or in June 2010 DirectX SDK or later
 # For MinGW compiler, assume MinGW not only comes with the necessary headers & libraries but also
