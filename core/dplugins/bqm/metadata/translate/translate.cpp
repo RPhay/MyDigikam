@@ -105,10 +105,10 @@ void Translate::registerSettingsWidget()
     QGridLayout* const grid  = new QGridLayout(panel);
 
     d->tagsLabel             = new QLabel(i18nc("@label", "Entries to Translate:"), panel);
-    d->titleCB               = new QCheckBox(i18nc("@option:check", "Title"),       panel);
-    d->captionCB             = new QCheckBox(i18nc("@option:check", "Caption"),     panel);
-    d->copyrightsCB          = new QCheckBox(i18nc("@option:check", "Copyrights"),  panel);
-    d->usageTermsCB          = new QCheckBox(i18nc("@option:check", "Usage Terms"), panel);
+    d->titleCB               = new QCheckBox(i18nc("@option:check metadata entry", "Title"),       panel);
+    d->captionCB             = new QCheckBox(i18nc("@option:check metadata entry", "Caption"),     panel);
+    d->copyrightsCB          = new QCheckBox(i18nc("@option:check metadata entry", "Copyrights"),  panel);
+    d->usageTermsCB          = new QCheckBox(i18nc("@option:check metadata entry", "Usage Terms"), panel);
 
     d->trSelectorList        = new LocalizeSelectorList(panel);
     d->trSelectorList->setTitle(i18nc("@label", "Translate to:"));
