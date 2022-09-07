@@ -24,9 +24,10 @@ QString ItemScanner::iptcCorePropertyName(MetadataInfo::Field field)
 
     switch (field)
     {
-            // copyright table
+        // Copyright table                                     krazy:exclude=copyright
+
         case MetadataInfo::IptcCoreCopyrightNotice:
-            return QLatin1String("copyrightNotice");
+            return QLatin1String("copyrightNotice");        // krazy:exclude=copyright
         case MetadataInfo::IptcCoreCreator:
             return QLatin1String("creator");
         case MetadataInfo::IptcCoreProvider:
@@ -40,7 +41,8 @@ QString ItemScanner::iptcCorePropertyName(MetadataInfo::Field field)
         case MetadataInfo::IptcCoreInstructions:
             return QLatin1String("instructions");
 
-            // ImageProperties table
+        // ImageProperties table
+
         case MetadataInfo::IptcCoreCountryCode:
             return QLatin1String("countryCode");
         case MetadataInfo::IptcCoreCountry:
