@@ -49,10 +49,6 @@ private:
 
     bool toolOperations()                                   override;
 
-    bool translateString(const QString& text,
-                         const QString& trCode,
-                         QString& tr) const;
-
     bool insertTranslation(int entry,
                            const QString& trLang,
                            DMetadata* const meta)                           const;

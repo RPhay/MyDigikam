@@ -24,8 +24,6 @@
 #include <QLabel>
 #include <QFile>
 #include <QMenu>
-#include <QScopedPointer>
-#include <QEventLoop>
 
 // KDE includes
 
@@ -104,7 +102,7 @@ void Translate::registerSettingsWidget()
     QWidget* const panel     = new QWidget;
     QGridLayout* const grid  = new QGridLayout(panel);
 
-    d->tagsLabel             = new QLabel(i18nc("@label", "Entries to Translate:"), panel);
+    d->tagsLabel             = new QLabel(i18nc("@label", "Entries to Translate:"),                panel);
     d->titleCB               = new QCheckBox(i18nc("@option:check metadata entry", "Title"),       panel);
     d->captionCB             = new QCheckBox(i18nc("@option:check metadata entry", "Caption"),     panel);
     d->copyrightsCB          = new QCheckBox(i18nc("@option:check metadata entry", "Copyrights"),  panel);
@@ -292,7 +290,7 @@ bool Translate::insertTranslation(int entry, const QString& trLang, DMetadata* c
         case Private::Caption:
         {
             captions = meta->getItemComments();
-            map     = captions.toAltLangMap();
+            map      = captions.toAltLangMap();
             break;
         }
 
@@ -316,7 +314,8 @@ bool Translate::insertTranslation(int entry, const QString& trLang, DMetadata* c
         if (!sc.isEmpty())
         {
             QString tr;
-            ret = translateString(sc, trLang, tr);
+            QString error;
+            ret = s_inlineTranslateString(sc, trLang, tr, error);
 
             if (ret)
             {
@@ -357,7 +356,9 @@ bool Translate::insertTranslation(int entry, const QString& trLang, DMetadata* c
             }
             else
             {
-                qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Cannot process online translation from" << meta->getFilePath();
+                qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Cannot process online translation from"
+                                                 << meta->getFilePath()
+                                                 << " - Error:" << error;
             }
         }
         else
@@ -371,45 +372,6 @@ bool Translate::insertTranslation(int entry, const QString& trLang, DMetadata* c
     }
 
     return ret;
-}
-
-bool Translate::translateString(const QString& text, const QString& trCode, QString& tr) const
-{
-    QScopedPointer<DOnlineTranslator> trengine(new DOnlineTranslator);
-    QScopedPointer<QEventLoop> waitingLoop(new QEventLoop);
-
-    DOnlineTranslator::Language srcLang = DOnlineTranslator::Auto;
-    DOnlineTranslator::Language trLang  = DOnlineTranslator::language(DOnlineTranslator::fromRFC3066(LocalizeSettings::instance()->settings().translatorEngine, trCode));
-
-    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Request to translate with Web-service:";
-    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Text to translate        :" << text;
-    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "To target language       :" << trLang;
-    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "With source language     :" << srcLang;
-
-    connect(trengine.data(), &DOnlineTranslator::signalFinished,
-            waitingLoop.data(), &QEventLoop::quit);
-
-    trengine->translate(text,                                                            // String to translate
-                        LocalizeSettings::instance()->settings().translatorEngine,       // Web service
-                        trLang,                                                          // Target language
-                        srcLang,                                                         // Source langage
-                        DOnlineTranslator::Auto);
-
-    waitingLoop->exec(QEventLoop::ExcludeUserInputEvents);
-
-    if (trengine->error() == DOnlineTranslator::NoError)
-    {
-        tr = trengine->translation();
-        qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Text translated          :" << tr;
-
-        return true;
-    }
-    else
-    {
-        qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Translation Error       :" << trengine->error();
-    }
-
-    return false;
 }
 
 } // namespace DigikamBqmTranslatePlugin

@@ -91,6 +91,19 @@ private:
     Private* const d;
 };
 
+// -----------------------------------------------------------------
+
+/**
+ * Helpher re-entrant static method to translate a string with online translator.
+ * Language from string is auto-detected, and target language is specified to 'trCode'.
+ * If string can be processed, translation is returned to 'tr' and function return true,
+ * else false is returned with a dysfuntion description in 'error'.
+ */
+bool DIGIKAM_EXPORT s_inlineTranslateString(const QString& text,
+                                            const QString& trCode,
+                                            QString& tr,
+                                            QString& error);
+
 } // namespace Digikam
 
 #endif // DIGIKAM_LOCALIZE_SELECTOR_H

@@ -28,6 +28,8 @@
 #include <QScrollBar>
 #include <QListWidgetItem>
 #include <QGridLayout>
+#include <QScopedPointer>
+#include <QEventLoop>
 
 // KDE includes
 
@@ -290,6 +292,47 @@ void LocalizeSelectorList::slotAppendTranslation(const QString& lang)
     addLanguage(lang);
 
     Q_EMIT signalSettingsChanged();
+}
+
+// ------------------------------------------------------------------------
+
+bool s_inlineTranslateString(const QString& text, const QString& trCode, QString& tr, QString& error)
+{
+    QScopedPointer<DOnlineTranslator> trengine(new DOnlineTranslator);
+    QScopedPointer<QEventLoop> waitingLoop(new QEventLoop);
+
+    DOnlineTranslator::Language srcLang = DOnlineTranslator::Auto;
+    DOnlineTranslator::Language trLang  = DOnlineTranslator::language(DOnlineTranslator::fromRFC3066(LocalizeSettings::instance()->settings().translatorEngine, trCode));
+
+    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Request to translate with Web-service:";
+    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Text to translate        :" << text;
+    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "To target language       :" << trLang;
+    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "With source language     :" << srcLang;
+
+    QObject::connect(trengine.data(), &DOnlineTranslator::signalFinished,
+                     waitingLoop.data(), &QEventLoop::quit);
+
+    trengine->translate(text,                                                            // String to translate
+                        LocalizeSettings::instance()->settings().translatorEngine,       // Web service
+                        trLang,                                                          // Target language
+                        srcLang,                                                         // Source langage
+                        DOnlineTranslator::Auto);
+
+    waitingLoop->exec(QEventLoop::ExcludeUserInputEvents);
+
+    if (trengine->error() == DOnlineTranslator::NoError)
+    {
+        tr = trengine->translation();
+        qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Text translated          :" << tr;
+
+        return true;
+    }
+    else
+    {
+        error = trengine->error();
+    }
+
+    return false;
 }
 
 } // namespace Digikam
