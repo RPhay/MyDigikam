@@ -155,13 +155,14 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
 
     aboutData.addCredit ( ki18n("Phuoc Khanh LE").toString(),
                           ki18n("Rewrite Image Quality Sorter algorithms and Photo Focus Information Extraction, "
+                                "Aesthetic Detection to classify images using deep learning model,"
                                 "Slideshow and Presentation tools improvement").toString(),
                           QLatin1String("phuockhanhnk94 at gmail dot com "),
                           QLatin1String("https://www.linkedin.com/in/phuoc-khanh-le-476448169/")
                         );
 
     aboutData.addCredit ( ki18n("Quốc Hưng Trần").toString(),
-                          ki18n("MJPEGStream plugin").toString(),
+                          ki18n("MJPEGStream plugin, OCR text Converter plugin").toString(),
                           QLatin1String("quochungtran1999 at gmail dot com "),
                           QLatin1String("https://www.linkedin.com/in/qu%E1%BB%91c-h%C6%B0ng-tr%E1%BA%A7n-92a504163/")
                         );
