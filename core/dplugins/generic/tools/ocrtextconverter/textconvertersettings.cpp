@@ -26,6 +26,7 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "dcombobox.h"
 #include "dprogresswdg.h"
 #include "dexpanderbox.h"

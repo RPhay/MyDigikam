@@ -33,6 +33,7 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "dcombobox.h"
 #include "dprogresswdg.h"
 #include "textconverterlist.h"
@@ -41,7 +42,6 @@
 #include "dtextedit.h"
 #include "textconverterthread.h"
 #include "textconverteraction.h"
-
 
 using namespace Digikam;
 
@@ -53,11 +53,11 @@ class TextConverterDialog::Private
 public:
 
     Private()
-      : busy             (false),
-        progressBar      (nullptr),
-        iface            (nullptr),
-        listView         (nullptr),
-        ocrSettings      (nullptr),
+      : busy                (false),
+        progressBar         (nullptr),
+        iface               (nullptr),
+        listView            (nullptr),
+        ocrSettings         (nullptr),
         currentSelectedItem (nullptr),
         textedit            (nullptr),
         saveTextButton      (nullptr),
@@ -200,6 +200,13 @@ TextConverterDialog::~TextConverterDialog()
 void TextConverterDialog::slotDoubleClick(QTreeWidgetItem* element)
 {
     TextConverterListViewItem* const item = dynamic_cast<TextConverterListViewItem*>(element);
+
+    if (!item)
+    {
+        d->currentSelectedItem = nullptr;
+        return;
+    }
+
     d->currentSelectedItem = item;
 
     if (d->textEditList.contains(item->url()))
@@ -217,7 +224,7 @@ void TextConverterDialog::slotUpdateText()
 {
     QString newText = d->textedit->text();
 
-    if (!d->textedit->text().isEmpty() &&
+    if (!d->textedit->text().isEmpty()           &&
         !d->currentSelectedItem->url().isEmpty() &&
         !d->currentSelectedItem->destFileName().isEmpty())
     {
@@ -259,7 +266,7 @@ void TextConverterDialog::slotTextConverterAction(const DigikamGenericTextConver
 
             default:
             {
-                qWarning() << "DigikamGenericTextConverterPlugin: Unknown action";
+                qCWarning(DIGIKAM_GENERAL_LOG) << "DigikamGenericTextConverterPlugin: Unknown action";
                 break;
             }
         }
@@ -278,7 +285,7 @@ void TextConverterDialog::slotTextConverterAction(const DigikamGenericTextConver
 
                 default:
                 {
-                    qWarning() << "DigikamGenericTextConverterPlugin: Unknown action";
+                    qCWarning(DIGIKAM_GENERAL_LOG) << "DigikamGenericTextConverterPlugin: Unknown action";
                     break;
                 }
             }
@@ -297,7 +304,7 @@ void TextConverterDialog::slotTextConverterAction(const DigikamGenericTextConver
 
                 default:
                 {
-                    qWarning() << "DigikamGenericTextConverterPlugin: Unknown action";
+                    qCWarning(DIGIKAM_GENERAL_LOG) << "DigikamGenericTextConverterPlugin: Unknown action";
                     break;
                 }
             }
@@ -312,6 +319,7 @@ void TextConverterDialog::processingFailed(const QUrl& url, int result)
     d->progressBar->setValue(d->progressBar->value()+1);
 
     TextConverterListViewItem* const item = dynamic_cast<TextConverterListViewItem*>(d->listView->listView()->findItem(url));
+
     if (!item)
     {
         return;
@@ -350,19 +358,20 @@ int TextConverterDialog::calculateNumberOfWords(const QString& text)
     if (!text.isEmpty())
     {
         std::stringstream ss;
-	    ss << text.toStdString();
+        ss << text.toStdString();
 
-	    int count = 0;
-	    std::string word;
+        int count = 0;
+        std::string word;
 
         while (ss >> word)
         {
-	    	if (word.length() == 1 && std::ispunct(word[0]))
+            if ((word.length() == 1) && std::ispunct(word[0]))
             {
-	    		continue;
+                continue;
             }
-	    	count ++;
-	    }
+
+            count++;
+        }
 
         return count;
     }
@@ -389,7 +398,7 @@ void TextConverterDialog::processed(const QUrl& url,
     d->listView->processed(url, true);
     item->setStatus(i18n("Success"));
     item->setRecognizedWords(QString::fromLatin1("%1").arg(calculateNumberOfWords(ocrResult)));
-    d->progressBar->setValue(d->progressBar->value()+1);
+    d->progressBar->setValue(d->progressBar->value() + 1);
 }
 
 void TextConverterDialog::processAll()
@@ -440,9 +449,11 @@ void TextConverterDialog::slotStartStop()
 
         if (d->fileList.empty())
         {
-            QMessageBox::information(this, i18n("Text Converter"), i18n("The list does not contain any digital files to process. You need to select them."));
+            QMessageBox::information(this, i18n("Text Converter"),
+                                     i18n("The list does not contain any digital files to process. You need to select them."));
             busy(false);
             slotAborted();
+
             return;
         }
 
@@ -485,7 +496,6 @@ void TextConverterDialog::closeEvent(QCloseEvent* e)
     e->accept();
 }
 
-
 void TextConverterDialog::slotClose()
 {
     // Stop current conversion if necessary
@@ -495,13 +505,11 @@ void TextConverterDialog::slotClose()
         slotStartStop();
     }
 
-
     saveSettings();
     d->listView->listView()->clear();
     d->fileList.clear();
     accept();
 }
-
 
 void TextConverterDialog::slotDefault()
 {
@@ -544,7 +552,6 @@ void TextConverterDialog::slotThreadFinished()
     busy(false);
     slotAborted();
 }
-
 
 void TextConverterDialog::busy(bool busy)
 {

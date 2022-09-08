@@ -22,15 +22,12 @@
 // LibKDcraw includes
 
 #include "drawdecoder.h"
+#include "digikam_debug.h"
 
 using namespace Digikam;
 
 namespace DigikamGenericTextConverterPlugin
 {
-
-// -------------------------------------------------------------------------------------
-// -------------------------------- Text Converter List --------------------------------
-// -------------------------------------------------------------------------------------
 
 TextConverterList::TextConverterList(QWidget* const parent)
     : DItemsList(parent)

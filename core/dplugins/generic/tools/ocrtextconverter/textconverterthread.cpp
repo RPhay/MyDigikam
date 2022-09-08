@@ -17,6 +17,7 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "textconvertertask.h"
 #include "ocroptions.h"
 
@@ -67,12 +68,10 @@ TextConverterActionThread::~TextConverterActionThread()
     delete d;
 }
 
-
 void TextConverterActionThread::setLanguagesMode(int mode)
 {
     d->language = mode;
 }
-
 
 void TextConverterActionThread::setPSMMode(int mode)
 {
@@ -106,7 +105,6 @@ void TextConverterActionThread::ocrProcessFile(const QUrl& url)
     ocrProcessFiles(oneFile);
 }
 
-
 void TextConverterActionThread::ocrProcessFiles(const QList<QUrl>& urlList)
 {
     ActionJobCollection collection;
@@ -129,7 +127,6 @@ void TextConverterActionThread::ocrProcessFiles(const QList<QUrl>& urlList)
 
         connect(this, SIGNAL(signalCancelTextConverterTask()),
                 t, SLOT(slotCancel()), Qt::QueuedConnection);
-
 
         collection.insert(t, 0);
     }

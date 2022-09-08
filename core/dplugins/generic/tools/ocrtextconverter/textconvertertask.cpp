@@ -17,6 +17,7 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "ocrtesseractengine.h"
 #include "ocroptions.h"
 #include "drawdecoder.h"
@@ -145,7 +146,7 @@ void TextConverterTask::run()
 
         default:
         {
-            qCritical() << "Unknown action specified";
+            qCritical(DIGIKAM_GENERAL_LOG) << "Unknown action specified";
             break;
         }
     }

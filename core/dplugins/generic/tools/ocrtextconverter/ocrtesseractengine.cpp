@@ -26,6 +26,7 @@
 #include "ocroptions.h"
 #include "dmetadata.h"
 #include "digikam_globals.h"
+#include "digikam_debug.h"
 
 using namespace Digikam;
 
@@ -231,7 +232,7 @@ int OcrTesseracrEngine::runOcrProcess()
         ocrProcess->setProgram(cmd);
         ocrProcess->setArguments(args);
 
-        qDebug() << "Running OCR : "
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Running OCR : "
                  << ocrProcess->program()
                  << ocrProcess->arguments();
 
@@ -241,7 +242,7 @@ int OcrTesseracrEngine::runOcrProcess()
 
         if (!successFlag)
         {
-            qWarning() << "Error starting OCR Process";
+            qCWarning(DIGIKAM_GENERAL_LOG) << "Error starting OCR Process";
 
             return PROCESS_FAILED;
         }
@@ -254,7 +255,7 @@ int OcrTesseracrEngine::runOcrProcess()
     }
     catch(const QProcess::ProcessError& e)
     {
-        qWarning() << "Text Converter has error" << e;
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Text Converter has error" << e;
 
         return PROCESS_FAILED;
     }
@@ -320,11 +321,11 @@ void OcrTesseracrEngine::saveXMP(const QString& filePath, const QString& text)
 
     if (dmeta->applyChanges())
     {
-        qDebug() << "Success in hosting text in XMP";
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Success in hosting text in XMP";
     }
     else
     {
-        qDebug() << "Errors in hosting text in XMP";
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Errors in hosting text in XMP";
     }
 }
 
