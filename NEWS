@@ -140,4 +140,5 @@ BUGFIXES:
 106 ==> 458782 - Not all new images downloaded.
 107 ==> 458846 - Popup Menus in wrong position with Sway window manager.
 108 ==> 117629 - New tool to perform OCR of an image and store result in metadata.
-109 ==> 
+109 ==> 458850 - Not valid createdate.
+110 ==> 
