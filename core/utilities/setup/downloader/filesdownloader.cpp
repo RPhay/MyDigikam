@@ -106,6 +106,11 @@ FilesDownloader::FilesDownloader(QWidget* const parent)
                              QLatin1String("a88f3b3882e3cce1e553a81d42beef6202cb9afc3db88e7944f9ffbcc369e7df"),
                              246305388
                             );
+    d->files << DownloadInfo(QLatin1String("aestheticdetector/"),
+                             QLatin1String("weights_inceptionv3_299.pb"),
+                             QLatin1String("205ade89705680a0bd778252d877a862c841374b19c7a96468ff108e69af2b11"),
+                             217975225
+                            );
 
     if (qApp->applicationName() == QLatin1String("digikam"))
     {

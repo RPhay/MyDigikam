@@ -30,6 +30,7 @@
 #include "imagequalitycontainer.h"
 #include "databasetask.h"
 #include "maintenancedata.h"
+#include "imagequalityparser.h"
 
 namespace Digikam
 {
@@ -311,6 +312,7 @@ void MaintenanceThread::slotThreadFinished()
 {
     if (isEmpty())
     {
+        ImageQualityParser::unloadDLModel();
         qCDebug(DIGIKAM_GENERAL_LOG) << "List of Pending Jobs is empty";
         Q_EMIT signalCompleted();
     }

@@ -84,3 +84,19 @@ IMGQSORT_BUILD_UNITTEST(detectnoise_utest.cpp)
 IMGQSORT_BUILD_UNITTEST(detectblur_utest.cpp)
 IMGQSORT_BUILD_UNITTEST(detectexposure_utest.cpp)
 IMGQSORT_BUILD_UNITTEST(detectcompression_utest.cpp)
+# IMGQSORT_BUILD_UNITTEST(detectaesthetic_utest.cpp)
+
+# --------------------------------------------------------------
+
+# set(_filename NIMA_inference_cli.cpp)
+# string(REPLACE "." ";" _temp ${_filename})
+# list(GET _temp 0 _target)
+
+# set(${_target}_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/${_filename})
+
+# add_executable(${_target} ${${_target}_SRCS})
+
+# target_link_libraries(${_target}
+#                         digikamcore
+#                         ${COMMON_TEST_LINK}
+# )

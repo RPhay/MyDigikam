@@ -41,6 +41,9 @@ public:
     void readSettings();
     ImageQualityContainer getImageQualityContainer() const;
 
+private Q_SLOTS:
+    void setDisableOptionViews(bool b);
+
 private:
 
     class Private;
