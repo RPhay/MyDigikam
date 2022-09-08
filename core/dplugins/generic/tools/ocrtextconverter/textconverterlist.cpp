@@ -34,9 +34,9 @@ TextConverterList::TextConverterList(QWidget* const parent)
 {
     setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
 
-    listView()->setColumn(static_cast<DItemsListView::ColumnType>(RECOGNIZEDWORDS), i18n("Recognized Words"),  true);
-    listView()->setColumn(static_cast<DItemsListView::ColumnType>(TARGETFILENAME),  i18n("Target File"),       true);
-    listView()->setColumn(static_cast<DItemsListView::ColumnType>(STATUS),          i18n("Status"),            true);
+    listView()->setColumn(static_cast<DItemsListView::ColumnType>(RECOGNIZEDWORDS), i18n("Words"),       true);
+    listView()->setColumn(static_cast<DItemsListView::ColumnType>(TARGETFILENAME),  i18n("Target File"), true);
+    listView()->setColumn(static_cast<DItemsListView::ColumnType>(STATUS),          i18n("Status"),      true);
 }
 
 TextConverterList::~TextConverterList()

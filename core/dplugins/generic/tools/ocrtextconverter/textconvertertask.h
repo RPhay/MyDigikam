@@ -48,6 +48,8 @@ public:
     void setIsSaveTextFile(bool check);
     void setIsSaveXMP(bool check);
 
+    void setTesseractPath(const QString& path);
+
 Q_SIGNALS:
 
     void signalStarting(const DigikamGenericTextConverterPlugin::TextConverterActionData& ad);

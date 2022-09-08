@@ -68,6 +68,8 @@ public:
     void setIsSaveXMP(bool check);
     bool isSaveXMP()             const;
 
+    void setTesseractPath(const QString& path);
+
 public:
 
     void saveTextFile(const QString& filePath, const QString& text);

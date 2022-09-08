@@ -62,6 +62,8 @@ public:
     QString    inputFile;
     QString    outputFile;
     QString    ocrResult;
+
+    QString    tesseractPath;
 };
 
 OcrTesseractEngine::OcrTesseractEngine()
@@ -72,6 +74,11 @@ OcrTesseractEngine::OcrTesseractEngine()
 OcrTesseractEngine::~OcrTesseractEngine()
 {
     delete d;
+}
+
+void OcrTesseractEngine::setTesseractPath(const QString& path)
+{
+    d->tesseractPath = path;
 }
 
 void OcrTesseractEngine::setLanguagesMode(int mode)
@@ -227,14 +234,12 @@ int OcrTesseractEngine::runOcrProcess()
 
         // ------------------  Running tesseract process ------------------
 
-        const QString cmd = QLatin1String("tesseract");
-
-        ocrProcess->setProgram(cmd);
+        ocrProcess->setProgram(d->tesseractPath);
         ocrProcess->setArguments(args);
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Running OCR : "
-                 << ocrProcess->program()
-                 << ocrProcess->arguments();
+                                     << ocrProcess->program()
+                                     << ocrProcess->arguments();
 
         ocrProcess->start();
 

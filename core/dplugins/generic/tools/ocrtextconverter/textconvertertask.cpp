@@ -52,6 +52,8 @@ public:
     bool                 isSaveTextFile;
     bool                 isSaveXMP;
 
+    QString              tesseractPath;
+
     bool                 cancel;
 
     QUrl                 url;
@@ -77,6 +79,11 @@ TextConverterTask::~TextConverterTask()
 
     delete d->ocrEngine;
     delete d;
+}
+
+void TextConverterTask::setTesseractPath(const QString& path)
+{
+    d->tesseractPath = path;
 }
 
 void TextConverterTask::setLanguagesMode(int mode)
@@ -134,6 +141,7 @@ void TextConverterTask::run()
             d->ocrEngine->setPSMMode(d->psm);
             d->ocrEngine->setOEMMode(d->oem);
             d->ocrEngine->setDpi(d->dpi);
+            d->ocrEngine->setTesseractPath(d->tesseractPath);
             int ret = d->ocrEngine->runOcrProcess();
 
             TextConverterActionData ad2;

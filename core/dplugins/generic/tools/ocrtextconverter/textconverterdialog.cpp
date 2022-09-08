@@ -42,6 +42,8 @@
 #include "dtextedit.h"
 #include "textconverterthread.h"
 #include "textconverteraction.h"
+#include "tesseractbinary.h"
+#include "dbinarysearch.h"
 
 using namespace Digikam;
 
@@ -61,7 +63,8 @@ public:
         ocrSettings         (nullptr),
         textedit            (nullptr),
         saveTextButton      (nullptr),
-        currentSelectedItem (nullptr)
+        currentSelectedItem (nullptr),
+        binWidget           (nullptr)
     {
     }
 
@@ -88,6 +91,9 @@ public:
     TextConverterListViewItem*        currentSelectedItem;
 
     OcrTesseractEngine                ocrEngine;
+
+    TesseractBinary                   tesseractBin;
+    DBinarySearch*                    binWidget;
 };
 
 TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* const iface)
@@ -114,7 +120,25 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     QGridLayout* const mainLayout     = new QGridLayout(mainWidget);
     d->listView                       = new TextConverterList(mainWidget);
-    d->ocrSettings = new TextConverterSettings(this);
+
+    QLabel* const tesseractLabel      = new QLabel(i18nc("@label", "This tool use the open-source Tesseract "
+                                                   "engine to perform Optical Carracters Recognition. "
+                                                   "Terreract and the desired languages packages must "
+                                                   "be installed on your system."), mainWidget);
+    tesseractLabel->setWordWrap(true);
+
+    d->binWidget                      = new DBinarySearch(mainWidget);
+    d->binWidget->addBinary(d->tesseractBin);
+
+#ifdef Q_OS_MACOS
+
+    // Std Macports install
+
+    d->binWidget->addDirectory(QLatin1String("/opt/local/bin"));
+
+#endif
+
+    d->ocrSettings                    = new TextConverterSettings(mainWidget);
 
     d->progressBar                    = new DProgressWdg(mainWidget);
     d->progressBar->reset();
@@ -130,13 +154,15 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     //-------------------------------------------------------------------------------------------
 
-    mainLayout->addWidget(d->listView,                       0, 0, 5, 1);
-    mainLayout->addWidget(d->ocrSettings,                    0, 1, 1, 1);
-    mainLayout->addWidget(d->textedit,                       1, 1, 3, 1);
-    mainLayout->addWidget(d->saveTextButton,                 3, 1, 1, 1);
-    mainLayout->addWidget(d->progressBar,                    5, 1, 1, 1);
+    mainLayout->addWidget(d->listView,                       0, 0, 6, 1);
+    mainLayout->addWidget(tesseractLabel,                    0, 1, 1, 1);
+    mainLayout->addWidget(d->binWidget,                      1, 1, 2, 1);
+    mainLayout->addWidget(d->ocrSettings,                    3, 1, 1, 1);
+    mainLayout->addWidget(d->textedit,                       4, 1, 1, 1);
+    mainLayout->addWidget(d->saveTextButton,                 5, 1, 1, 1);
+    mainLayout->addWidget(d->progressBar,                    6, 1, 1, 1);
     mainLayout->setColumnStretch(0, 10);
-    mainLayout->setRowStretch(4, 10);
+    mainLayout->setRowStretch(1, 10);
     mainLayout->setContentsMargins(QMargins());
 
     // ---------------------------------------------------------------
@@ -155,7 +181,6 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
             this, SLOT(slotThreadFinished()));
 
     // ---------------------------------------------------------------
-
 
     // TODO connect
 
@@ -190,6 +215,8 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     busy(false);
     readSettings();
+
+    d->binWidget->allBinariesFound();
 }
 
 TextConverterDialog::~TextConverterDialog()
@@ -312,7 +339,6 @@ void TextConverterDialog::slotTextConverterAction(const DigikamGenericTextConver
     }
 }
 
-
 void TextConverterDialog::processingFailed(const QUrl& url, int result)
 {
     d->listView->processed(url, false);
@@ -409,6 +435,8 @@ void TextConverterDialog::processAll()
     d->thread->setDpi(d->ocrSettings->Dpi());
     d->thread->setIsSaveTextFile(d->ocrSettings->isSaveTextFile());
     d->thread->setIsSaveXMP(d->ocrSettings->isSaveXMP());
+    d->thread->setTesseractPath(d->tesseractBin.path());
+
     d->thread->ocrProcessFiles(d->fileList);
 
     if (!d->thread->isRunning())

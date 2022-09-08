@@ -40,12 +40,14 @@ public:
     {
     }
 
-    int  language;
-    int  psm;
-    int  oem;
-    int  dpi;
-    bool isSaveTextFile;
-    bool isSaveXMP;
+    int     language;
+    int     psm;
+    int     oem;
+    int     dpi;
+    bool    isSaveTextFile;
+    bool    isSaveXMP;
+
+    QString tesseractPath;
 };
 
 TextConverterActionThread::TextConverterActionThread(QObject* const parent)
@@ -66,6 +68,11 @@ TextConverterActionThread::~TextConverterActionThread()
     wait();
 
     delete d;
+}
+
+void TextConverterActionThread::setTesseractPath(const QString& path)
+{
+    d->tesseractPath = path;
 }
 
 void TextConverterActionThread::setLanguagesMode(int mode)
@@ -118,6 +125,7 @@ void TextConverterActionThread::ocrProcessFiles(const QList<QUrl>& urlList)
         t->setDpi(d->dpi);
         t->setIsSaveTextFile(d->isSaveTextFile);
         t->setIsSaveXMP(d->isSaveXMP);
+        t->setTesseractPath(d->tesseractPath);
 
         connect(t, SIGNAL(signalStarting(DigikamGenericTextConverterPlugin::TextConverterActionData)),
                 this, SIGNAL(signalStarting(DigikamGenericTextConverterPlugin::TextConverterActionData)));

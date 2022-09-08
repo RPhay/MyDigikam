@@ -143,7 +143,7 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
     d->saveTextFile->setToolTip(i18nc("@info", "Store OCR result in separated text file"));
     d->saveTextFile->setChecked(true);
 
-    d->saveXMP = new QCheckBox(i18nc("@option:check", "XMP"), this);
+    d->saveXMP = new QCheckBox(i18nc("@option:check", "Metadata"), this);
     d->saveXMP->setToolTip(i18nc("@info", "Store OCR result in XMP metadata"));
     d->saveXMP->setChecked(true);
 
