@@ -102,7 +102,7 @@ void Translate::registerSettingsWidget()
     QWidget* const panel     = new QWidget;
     QGridLayout* const grid  = new QGridLayout(panel);
 
-    d->tagsLabel             = new QLabel(i18nc("@label", "Entries to Translate:"),                panel);
+    d->tagsLabel             = new QLabel(panel);
     d->titleCB               = new QCheckBox(i18nc("@option:check metadata entry", "Title"),       panel);
     d->captionCB             = new QCheckBox(i18nc("@option:check metadata entry", "Caption"),     panel);
     d->copyrightsCB          = new QCheckBox(i18nc("@option:check metadata entry", "Copyrights"),  panel);
@@ -119,6 +119,8 @@ void Translate::registerSettingsWidget()
     grid->addWidget(d->trSelectorList, 5, 0, 1, 2);
     grid->setColumnStretch(0, 10);
     grid->setRowStretch(6, 10);
+
+    slotLocalizeChanged();
 
     m_settingsWidget = panel;
 
@@ -137,7 +139,16 @@ void Translate::registerSettingsWidget()
     connect(d->trSelectorList, SIGNAL(signalSettingsChanged()),
             this, SLOT(slotSettingsChanged()));
 
+    connect(LocalizeSettings::instance(), &LocalizeSettings::signalSettingsChanged,
+            this, &Translate::slotLocalizeChanged);
+
     BatchTool::registerSettingsWidget();
+}
+
+void Translate::slotLocalizeChanged()
+{
+    d->tagsLabel->setText(i18nc("@label", "Entries to Translate with %1:",
+                          DOnlineTranslator::engineName(LocalizeSettings::instance()->settings().translatorEngine)));
 }
 
 BatchToolSettings Translate::defaultSettings()

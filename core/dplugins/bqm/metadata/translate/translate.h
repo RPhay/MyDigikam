@@ -45,6 +45,8 @@ private Q_SLOTS:
     void slotAssignSettings2Widget()                        override;
     void slotSettingsChanged()                              override;
 
+    void slotLocalizeChanged();
+
 private:
 
     bool toolOperations()                                   override;
