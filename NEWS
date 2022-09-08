@@ -24,6 +24,10 @@ General        : Add spell-checking support in caption text widget using KF5::So
 General        : Add online translations support to Alternative Language text editor widget.
                  Add Localize config panel in Setup/Misc for digiKam and Showfoto.
 General        : Add settings to list prefered alternative/translated languages in text edit widget.
+General        : Add new tool to perform OCR over scanned text.
+                 https://community.kde.org/GSoC/2022/StatusReports/QuocHungTran
+Maintenance    : Add Aesthetic Detection to classify images using deep learning model.
+                 https://community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe
 
 *****************************************************************************************************
 BUGFIXES:
@@ -135,4 +139,5 @@ BUGFIXES:
 105 ==> 371535 - Albums from ext hdd are removed when digikam starts up if the external HDD is not plugged in.
 106 ==> 458782 - Not all new images downloaded.
 107 ==> 458846 - Popup Menus in wrong position with Sway window manager.
-108 ==> 
+108 ==> 117629 - New tool to perform OCR of an image and store result in metadata.
+109 ==> 
