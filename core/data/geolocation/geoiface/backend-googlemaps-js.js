@@ -6,7 +6,6 @@
  * Copyright (C) 2010, 2011, 2014 by Michael G. Hansen <mike at mghansen dot de>
  * Copyright (C) 2014 by Justus Schwartz <justus at gmx dot li>
  *
- *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
