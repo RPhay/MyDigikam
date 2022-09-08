@@ -43,7 +43,6 @@ TextConverterList::~TextConverterList()
 {
 }
 
-
 void TextConverterList::slotAddImages(const QList<QUrl>& list)
 {
     if (list.count() == 0)
@@ -56,7 +55,6 @@ void TextConverterList::slotAddImages(const QList<QUrl>& list)
 
     for (auto const& imageUrl: list)
     {
-
         // Check if the new item already exist in the list.
 
         bool found    = false;
@@ -90,7 +88,6 @@ void TextConverterList::slotAddImages(const QList<QUrl>& list)
     Q_EMIT signalImageListChanged();
 }
 
-
 void TextConverterList::slotRemoveItems()
 {
     bool find = false;
@@ -117,9 +114,6 @@ void TextConverterList::slotRemoveItems()
     while(find);
 }
 
-
-// --------------------------------------------------------------------------------------
-// ---------------------------- Text Converter List View Item ---------------------------
 // --------------------------------------------------------------------------------------
 
 class TextConverterListViewItem::Private

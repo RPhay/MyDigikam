@@ -16,7 +16,6 @@
 #ifndef DIGIKAM_TEXT_CONVERTER_LIST_H
 #define DIGIKAM_TEXT_CONVERTER_LIST_H
 
-
 // Local includes
 
 #include "ditemslist.h"
@@ -39,16 +38,15 @@ public:
      */
     enum FieldType
     {
-        RECOGNIZEDWORDS      = DItemsListView::User1,
-        TARGETFILENAME       = DItemsListView::User2,
-        STATUS               = DItemsListView::User3,
+        RECOGNIZEDWORDS = DItemsListView::User1,
+        TARGETFILENAME  = DItemsListView::User2,
+        STATUS          = DItemsListView::User3,
     };
 
 public:
 
     explicit TextConverterList(QWidget* const parent = nullptr);
     ~TextConverterList();
-
 
 public Q_SLOTS:
 
@@ -70,7 +68,7 @@ public:
     ~TextConverterListViewItem();
 
     void setDestFileName(const QString& str);
-    QString destFileName()  const;
+    QString destFileName()         const;
 
     void setRecognizedWords(const QString& str);
     QString recognizedWords()      const;
@@ -84,6 +82,5 @@ private:
 };
 
 } // namespace DigikamGenericTextConverterPlugin
-
 
 #endif // DIGIKAM_TEXT_CONVERTER_LIST_H

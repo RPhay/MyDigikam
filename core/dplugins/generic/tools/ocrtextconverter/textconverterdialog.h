@@ -60,7 +60,7 @@ private:
     void processingFailed(const QUrl& url, int result);
     void processed(const QUrl& url, const QString& outputFile, const QString& ocrResult);
 
-    int  calculateNumberOfWords(const QString& text);
+    int  calculateNumberOfWords(const QString& text) const;
 
 Q_SIGNALS:
 

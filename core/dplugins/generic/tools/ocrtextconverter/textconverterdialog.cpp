@@ -353,7 +353,7 @@ void TextConverterDialog::processingFailed(const QUrl& url, int result)
     item->setStatus(status);
 }
 
-int TextConverterDialog::calculateNumberOfWords(const QString& text)
+int TextConverterDialog::calculateNumberOfWords(const QString& text) const
 {
     if (!text.isEmpty())
     {

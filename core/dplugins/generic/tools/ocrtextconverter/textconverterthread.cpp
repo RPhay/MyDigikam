@@ -31,12 +31,12 @@ class TextConverterActionThread::Private
 public:
 
     Private()
-      : language(int(OcrOptions::Languages::DEFAULT)),
-        psm(int(OcrOptions::PageSegmentationModes::DEFAULT)),
-        oem(int(OcrOptions::EngineModes::DEFAULT)),
-        dpi(300),
-        isSaveTextFile(true),
-        isSaveXMP(true)
+      : language        (int(OcrOptions::Languages::DEFAULT)),
+        psm             (int(OcrOptions::PageSegmentationModes::DEFAULT)),
+        oem             (int(OcrOptions::EngineModes::DEFAULT)),
+        dpi             (300),
+        isSaveTextFile  (true),
+        isSaveXMP       (true)
     {
     }
 

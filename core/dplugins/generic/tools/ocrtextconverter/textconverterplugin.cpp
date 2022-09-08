@@ -51,7 +51,7 @@ QString TextConverterPlugin::iid() const
 
 QIcon TextConverterPlugin::icon() const
 {
-    return QIcon::fromTheme(QLatin1String("image-x-adobe-dng"));
+    return QIcon::fromTheme(QLatin1String("text-x-generic"));
 }
 
 QString TextConverterPlugin::description() const

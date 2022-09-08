@@ -75,7 +75,6 @@ TextConverterTask::~TextConverterTask()
     delete d;
 }
 
-
 void TextConverterTask::setLanguagesMode(int mode)
 {
     d->language = mode;
@@ -108,7 +107,6 @@ void TextConverterTask::setIsSaveXMP(bool check)
 
 void TextConverterTask::run()
 {
-
     if (d->cancel)
     {
         return;
@@ -122,6 +120,7 @@ void TextConverterTask::run()
             ad1.action    = PROCESS;
             ad1.fileUrl   = d->url;
             ad1.starting  = true;
+
             Q_EMIT signalStarting(ad1);
 
             d->ocrEngine.setInputFile(d->url.toLocalFile());
@@ -141,6 +140,7 @@ void TextConverterTask::run()
             ad2.outputText = d->ocrEngine.outputText();
 
             Q_EMIT signalFinished(ad2);
+
             break;
         }
 
@@ -152,13 +152,11 @@ void TextConverterTask::run()
     }
 
     Q_EMIT signalDone();
-
 }
 
 void TextConverterTask::slotCancel()
 {
     d->cancel = true;
 }
-
 
 } // namespace DigikamGenericTextConverterPlugin

@@ -36,7 +36,7 @@ class TextConverterPlugin : public DPluginGeneric
 public:
 
     explicit TextConverterPlugin(QObject* const parent = nullptr);
-    ~TextConverterPlugin()                override;
+    ~TextConverterPlugin()               override;
 
     QString name()                 const override;
     QString iid()                  const override;

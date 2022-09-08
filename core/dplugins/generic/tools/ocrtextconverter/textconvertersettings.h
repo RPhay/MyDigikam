@@ -24,7 +24,7 @@
 namespace DigikamGenericTextConverterPlugin
 {
 
-class TextConverterSettings  : public QWidget
+class TextConverterSettings : public QWidget
 {
     Q_OBJECT
 

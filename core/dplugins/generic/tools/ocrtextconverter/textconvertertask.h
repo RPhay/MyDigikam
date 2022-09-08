@@ -38,8 +38,7 @@ public:
 
     explicit TextConverterTask(QObject* const parent,
                               const QUrl& url,
-                              const TextConverterAction& action
-                              );
+                              const TextConverterAction& action);
     ~TextConverterTask();
 
     void setLanguagesMode(int mode);
@@ -71,4 +70,3 @@ private:
 } // namespace DigikamGenericTextConverterPlugin
 
 #endif // DIGIKAM_Text_CONVERTER_TASK_H
-

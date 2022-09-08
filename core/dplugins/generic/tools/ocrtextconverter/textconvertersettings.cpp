@@ -68,13 +68,10 @@ public:
     QCheckBox*          saveXMP;
 };
 
-
 TextConverterSettings::TextConverterSettings(QWidget* const parent)
     : QWidget(parent),
       d      (new Private)
 {
-     // ------------
-
     QLabel* const ocrTesseractLanguageLabel   = new QLabel(i18nc("@label", "Languages:"));
     d->ocrTesseractLanguageMode               = new DComboBox(this);
 
@@ -205,7 +202,6 @@ int TextConverterSettings::LanguagesMode() const
     return d->ocrTesseractLanguageMode->currentIndex();
 }
 
-
 void TextConverterSettings::setPSMMode(int mode)
 {
     d->ocrTesseractPSMMode->setCurrentIndex(mode);
@@ -255,6 +251,5 @@ bool  TextConverterSettings::isSaveXMP() const
 {
     return d->saveXMP->isChecked();
 }
-
 
 } // namespace DigikamGenericTextConverterPlugin
