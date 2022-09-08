@@ -27,6 +27,7 @@ namespace DigikamGenericTextConverterPlugin
 class OcrTesseracrEngine : public QObject
 {
     Q_OBJECT
+
 public:
 
     enum ConvertError
@@ -38,7 +39,6 @@ public:
     };
 
 public:
-
 
     explicit OcrTesseracrEngine();
     ~OcrTesseracrEngine();
@@ -89,7 +89,6 @@ private:
 
     class Private;
     Private* const d;
-
 };
 
 } // namespace DigikamGenericTextConverterPlugin

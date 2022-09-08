@@ -32,7 +32,7 @@ using namespace Digikam;
 namespace DigikamGenericTextConverterPlugin
 {
 
-class  OcrTesseracrEngine::Private
+class OcrTesseracrEngine::Private
 {
 
 public:
@@ -191,6 +191,7 @@ int OcrTesseracrEngine::runOcrProcess()
         // page Segmentation mode
 
         QString val = ocropt.PsmCodeToValue(static_cast<OcrOptions::PageSegmentationModes>(d->psm));
+
         if (!val.isEmpty())
         {
             args << QLatin1String("--psm") << val;
@@ -199,6 +200,7 @@ int OcrTesseracrEngine::runOcrProcess()
         // OCR enginge mode
 
         val = ocropt.OemCodeToValue(static_cast<OcrOptions::EngineModes>(d->oem));
+
         if (!val.isEmpty())
         {
             args << QLatin1String("--oem") << val;
@@ -207,15 +209,16 @@ int OcrTesseracrEngine::runOcrProcess()
         // Language
 
         val = ocropt.LanguageCodeToValue(static_cast<OcrOptions::Languages>(d->language));
+
         if (!val.isEmpty())
         {
             args << QLatin1String("-l") << val;
         }
 
-
         // dpi
 
         val = QString::fromLatin1("%1").arg(d->dpi);
+
         if (!val.isEmpty())
         {
             args << QLatin1String("--dpi") << val;
@@ -239,6 +242,7 @@ int OcrTesseracrEngine::runOcrProcess()
         if (!successFlag)
         {
             qWarning() << "Error starting OCR Process";
+
             return PROCESS_FAILED;
         }
 
@@ -251,6 +255,7 @@ int OcrTesseracrEngine::runOcrProcess()
     catch(const QProcess::ProcessError& e)
     {
         qWarning() << "Text Converter has error" << e;
+
         return PROCESS_FAILED;
     }
 
@@ -267,9 +272,9 @@ void OcrTesseracrEngine::SaveOcrResult()
     if (d->isSaveTextFile)
     {
         QFileInfo fi(d->inputFile);
-        d->outputFile =   fi.absolutePath()
-                          +  QLatin1String("/")
-                          + (QString::fromLatin1("%1-textconverter.txt").arg(fi.fileName()));
+        d->outputFile =   fi.absolutePath()  +
+                          QLatin1String("/") +
+                          (QString::fromLatin1("%1-textconverter.txt").arg(fi.fileName()));
 
         saveTextFile(d->outputFile, d->ocrResult);
     }
@@ -302,8 +307,7 @@ void OcrTesseracrEngine::saveXMP(const QString& filePath, const QString& text)
 
     Digikam::CaptionsMap commentsSet;
 
-    commentsSet = dmeta->getItemComments();
-
+    commentsSet           = dmeta->getItemComments();
     QString   rezAuthor   = commentsSet.value(QLatin1String("x-default")).author;
     QDateTime rezDateTime = commentsSet.value(QLatin1String("x-default")).date;
 
@@ -324,5 +328,4 @@ void OcrTesseracrEngine::saveXMP(const QString& filePath, const QString& text)
     }
 }
 
-}    // namespace DigikamGenericTextConverterPlugin
-
+} // namespace DigikamGenericTextConverterPlugin

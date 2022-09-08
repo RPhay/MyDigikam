@@ -19,7 +19,7 @@
 
 #include <klocalizedstring.h>
 
-namespace Digikam
+namespace DigikamGenericTextConverterPlugin
 {
 
 OcrOptions::OcrOptions()
@@ -30,9 +30,9 @@ OcrOptions::~OcrOptions()
 {
 }
 
-QMap<OcrOptions::Languages, QPair<QString, QString>> OcrOptions::languagesNames()
+QMap<OcrOptions::Languages, QPair<QString, QString> > OcrOptions::languagesNames()
 {
-    QMap<OcrOptions::Languages, QPair<QString, QString>> languages;
+    QMap<OcrOptions::Languages, QPair<QString, QString> > languages;
 
     languages[OcrOptions::Languages::DEFAULT]                                         = QPair(QLatin1String("Default")             , i18nc("@info:tooltip","Default language mode"));
     languages[OcrOptions::Languages::ENG]                                             = QPair(QLatin1String("Eng")                 , i18nc("@info:tooltip","English mode"));
@@ -41,9 +41,9 @@ QMap<OcrOptions::Languages, QPair<QString, QString>> OcrOptions::languagesNames(
     return languages;
 }
 
-QMap<OcrOptions::PageSegmentationModes,  QPair<QString, QString>> OcrOptions::psmNames()
+QMap<OcrOptions::PageSegmentationModes,  QPair<QString, QString> > OcrOptions::psmNames()
 {
-    QMap<PageSegmentationModes,  QPair<QString, QString>> psm;
+    QMap<PageSegmentationModes,  QPair<QString, QString> > psm;
 
     psm[OcrOptions::PageSegmentationModes::OSD_ONLY]                                  = QPair(QLatin1String("OSD only")            , i18nc("@info:tooltip","Orientation and script detection (OSD) only."));
     psm[OcrOptions::PageSegmentationModes::AUTO_WITH_OSD]                             = QPair(QLatin1String("With OSD")            , i18nc("@info:tooltip","Automatic page segmentation with OSD."));
@@ -64,9 +64,9 @@ QMap<OcrOptions::PageSegmentationModes,  QPair<QString, QString>> OcrOptions::ps
     return psm;
 }
 
-QMap<OcrOptions::EngineModes, QPair<QString, QString>> OcrOptions::oemNames()
+QMap<OcrOptions::EngineModes, QPair<QString, QString> > OcrOptions::oemNames()
 {
-    QMap<EngineModes, QPair<QString, QString>> oem;
+    QMap<EngineModes, QPair<QString, QString> > oem;
 
     oem[OcrOptions::EngineModes::LEGACY_ENGINE_ONLY]                                 = QPair(QLatin1String("Legacy")               , i18nc("@info:tooltip","Legacy engine only."));
     oem[OcrOptions::EngineModes::NEURAL_NETS_LSTM_ONLY]                              = QPair(QLatin1String("LSTM")                 , i18nc("@info:tooltip","Neural nets LSTM engine only."));
@@ -112,4 +112,4 @@ QString OcrOptions::OemCodeToValue(OcrOptions::EngineModes oem) const
    return QString::fromLatin1("%1").arg((int)oem); // oem tesseract cli values if range from 0 to 3
 }
 
-} //  namespace Digikam
+} // namespace DigikamGenericTextConverterPlugin

@@ -24,7 +24,7 @@
 
 #include "digikam_export.h"
 
-namespace Digikam
+namespace DigikamGenericTextConverterPlugin
 {
 
 class DIGIKAM_EXPORT OcrOptions
@@ -72,18 +72,18 @@ public:
 
 public:
 
-    static QMap<OcrOptions::Languages,             QPair<QString, QString>> languagesNames();
-    static QMap<OcrOptions::PageSegmentationModes, QPair<QString, QString>> psmNames();
-    static QMap<OcrOptions::EngineModes,           QPair<QString, QString>> oemNames();
+    static QMap<OcrOptions::Languages,             QPair<QString, QString> > languagesNames();
+    static QMap<OcrOptions::PageSegmentationModes, QPair<QString, QString> > psmNames();
+    static QMap<OcrOptions::EngineModes,           QPair<QString, QString> > oemNames();
 
 public:
 
     QString LanguageCodeToValue(OcrOptions::Languages l)            const;
     QString PsmCodeToValue(OcrOptions::PageSegmentationModes psm)   const;
-    QString OemCodeToValue(OcrOptions::EngineModes oem)             const ;
+    QString OemCodeToValue(OcrOptions::EngineModes oem)             const;
 };
 
-} // namespace Digikam
+} // namespace DigikamGenericTextConverterPlugin
 
 #endif // TESSERACT_OCR_OPTIONS_H
 
