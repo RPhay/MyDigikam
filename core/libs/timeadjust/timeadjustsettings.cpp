@@ -183,12 +183,15 @@ TimeAdjustSettings::TimeAdjustSettings(QWidget* const parent, bool timeAdjustToo
 
     d->useMetaDateBtn         = new QRadioButton(QString(), d->useSettingsBox);
     d->useMetaDateTypeChooser = new QComboBox(d->useSettingsBox);
-    d->useMetaDateTypeChooser->insertItem(TimeAdjustContainer::EXIFIPTCXMP,   i18n("EXIF/IPTC/XMP"));
-    d->useMetaDateTypeChooser->insertItem(TimeAdjustContainer::EXIFCREATED,   i18n("EXIF: created"));
-    d->useMetaDateTypeChooser->insertItem(TimeAdjustContainer::EXIFORIGINAL,  i18n("EXIF: original"));
-    d->useMetaDateTypeChooser->insertItem(TimeAdjustContainer::EXIFDIGITIZED, i18n("EXIF: digitized"));
-    d->useMetaDateTypeChooser->insertItem(TimeAdjustContainer::IPTCCREATED,   i18n("IPTC: created"));
-    d->useMetaDateTypeChooser->insertItem(TimeAdjustContainer::XMPCREATED,    i18n("XMP: created"));
+    d->useMetaDateTypeChooser->insertItem(TimeAdjustContainer::EXIFIPTCXMP,    i18n("EXIF/IPTC/XMP"));
+    d->useMetaDateTypeChooser->insertItem(TimeAdjustContainer::EXIFCREATED,    i18n("EXIF: created"));
+    d->useMetaDateTypeChooser->insertItem(TimeAdjustContainer::EXIFORIGINAL,   i18n("EXIF: original"));
+    d->useMetaDateTypeChooser->insertItem(TimeAdjustContainer::EXIFDIGITIZED,  i18n("EXIF: digitized"));
+    d->useMetaDateTypeChooser->insertItem(TimeAdjustContainer::IPTCCREATED,    i18n("IPTC: created"));
+    d->useMetaDateTypeChooser->insertItem(TimeAdjustContainer::XMPCREATED,     i18n("XMP: created"));
+    d->useMetaDateTypeChooser->insertItem(TimeAdjustContainer::FUZZYCREATED,   i18n("EXIF: created (fuzzy)"));
+    d->useMetaDateTypeChooser->insertItem(TimeAdjustContainer::FUZZYORIGINAL,  i18n("EXIF: original (fuzzy)"));
+    d->useMetaDateTypeChooser->insertItem(TimeAdjustContainer::FUZZYDIGITIZED, i18n("EXIF: digitized (fuzzy)"));
 
     d->useCustomDateBtn       = new QRadioButton(d->useSettingsBox);
     d->useCustDateInput       = new QDateEdit(d->useSettingsBox);

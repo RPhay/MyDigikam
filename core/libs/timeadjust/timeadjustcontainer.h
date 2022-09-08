@@ -52,7 +52,10 @@ public:
         EXIFORIGINAL,
         EXIFDIGITIZED,
         IPTCCREATED,
-        XMPCREATED
+        XMPCREATED,
+        FUZZYCREATED,
+        FUZZYORIGINAL,
+        FUZZYDIGITIZED
     };
 
     enum UseFileDateType
@@ -78,7 +81,7 @@ public:
     bool atLeastOneUpdateToProcess()                                const;
 
     QDateTime calculateAdjustedDate(const QDateTime& originalTime, int index = 0);
-    QDateTime getDateTimeFromUrl(const QUrl& url)                   const;
+    QDateTime getDateTimeFromString(const QString& dateStr)         const;
     QMap<QString, bool> getDateTimeTagsMap()                        const;
 
 public:

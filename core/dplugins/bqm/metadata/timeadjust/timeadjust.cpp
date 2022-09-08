@@ -255,6 +255,24 @@ bool TimeAdjust::toolOperations()
                     break;
                 }
 
+                case TimeAdjustContainer::FUZZYCREATED:
+                {
+                    orgDateTime = prm.getDateTimeFromString(meta->getExifTagString("Exif.Image.DateTime"));
+                    break;
+                }
+
+                case TimeAdjustContainer::FUZZYORIGINAL:
+                {
+                    orgDateTime = prm.getDateTimeFromString(meta->getExifTagString("Exif.Photo.DateTimeOriginal"));
+                    break;
+                }
+
+                case TimeAdjustContainer::FUZZYDIGITIZED:
+                {
+                    orgDateTime = prm.getDateTimeFromString(meta->getExifTagString("Exif.Photo.DateTimeDigitized"));
+                    break;
+                }
+
                 default:
                 {
                     // orgDateTime stays invalid
@@ -273,7 +291,7 @@ bool TimeAdjust::toolOperations()
 
         case TimeAdjustContainer::FILENAME:
         {
-            orgDateTime = prm.getDateTimeFromUrl(inputUrl());
+            orgDateTime = prm.getDateTimeFromString(inputUrl().fileName());
             break;
         }
 
