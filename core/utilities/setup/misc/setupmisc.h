@@ -35,9 +35,9 @@ public:
         Behaviour = 0,
         Appearance,
         Grouping,
-        System,
         SpellCheck,
-        Localize
+        Localize,
+        System
     };
 
 public:
