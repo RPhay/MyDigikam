@@ -346,12 +346,6 @@ SetupMisc::SetupMisc(QWidget* const parent)
 
     d->tab->insertTab(Grouping, groupingPanel, i18nc("@title:tab", "Grouping"));
 
-    // -- System Options --------------------------------------------------------
-
-    d->systemSettingsWidget = new SystemSettingsWidget(d->tab);
-
-    d->tab->insertTab(System, d->systemSettingsWidget, i18nc("@title:tab", "System"));
-
     // -- Spell Check and localize Options --------------------------------------
 
 #ifdef HAVE_SONNET
@@ -365,6 +359,12 @@ SetupMisc::SetupMisc(QWidget* const parent)
     d->localizeWidget = new LocalizeConfig(d->tab);
 
     d->tab->insertTab(Localize, d->localizeWidget, i18nc("@title:tab", "Localize"));
+
+    // -- System Options --------------------------------------------------------
+
+    d->systemSettingsWidget = new SystemSettingsWidget(d->tab);
+
+    d->tab->insertTab(System, d->systemSettingsWidget, i18nc("@title:tab", "System"));
 
     // --------------------------------------------------------
 
