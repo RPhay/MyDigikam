@@ -31,12 +31,13 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
-    QScopedPointer<OcrTesseracrEngine> ocrEngine (new OcrTesseracrEngine());
+    QScopedPointer<OcrTesseractEngine> ocrEngine (new OcrTesseractEngine());
 
     ocrEngine->setInputFile(QLatin1String("./data/scanned_img.png"));
     ocrEngine->setOutputFile(QLatin1String("./"));
 
     int check = ocrEngine->runOcrProcess();
+    Q_UNUSED(check);
 
     return app.exec();
 }

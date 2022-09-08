@@ -20,11 +20,13 @@
 #include <QFile>
 #include <QUrl>
 #include <QDebug>
-#include <QApplication>
+#include <QCoreApplication>
 #include <QDir>
 
 int main(int argc, char* argv[])
 {
+    QCoreApplication app(argc, argv);
+
     QProcess* const ocrProcess = new QProcess();
     ocrProcess->setProcessChannelMode(QProcess::SeparateChannels);
     QStringList args;
@@ -119,7 +121,7 @@ int main(int argc, char* argv[])
 
     ocrProcess->start();
 
-    bool successFlag = ocrProcess->waitForFinished(-1) && ocrProcess->exitStatus() == QProcess::NormalExit;
+    bool successFlag = (ocrProcess->waitForFinished(-1) && (ocrProcess->exitStatus() == QProcess::NormalExit));
 
     if (!successFlag)
     {
@@ -129,7 +131,7 @@ int main(int argc, char* argv[])
 
     QString output   = QString::fromLocal8Bit(ocrProcess->readAllStandardOutput());
 
-    qDebug() << (output);
+    qDebug() << output;
 
     delete ocrProcess;
 

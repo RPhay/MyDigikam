@@ -20,10 +20,9 @@ include_directories(
                     $<TARGET_PROPERTY:KF5::SonnetUi,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-
-set(textconverterplugin_SRCS
+set(textconverterbackend_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/ocroptions.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/textconverterplugin.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tesseractbinary.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/textconverterdialog.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/textconverterlist.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/textconvertersettings.cpp
@@ -32,10 +31,8 @@ set(textconverterplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/textconverterthread.cpp
 )
 
-
 # For Unit-tests and plugin
-add_library(textconverterbackend STATIC ${textconverterplugin_SRCS})
-
+add_library(textconverterbackend STATIC ${textconverterbackend_SRCS})
 
 target_link_libraries(textconverterbackend
                       PRIVATE
@@ -44,6 +41,9 @@ target_link_libraries(textconverterbackend
                       KF5::SonnetUi
 )
 
+set(textconverterplugin_SRCS
+    ${CMAKE_CURRENT_SOURCE_DIR}/textconverterplugin.cpp
+)
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    TEXTConverter
                           SOURCES ${textconverterplugin_SRCS}

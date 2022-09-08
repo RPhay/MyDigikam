@@ -22,22 +22,29 @@ include_directories(
                     $<TARGET_PROPERTY:KF5::CoreAddons,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-
-
 add_executable(ocrTesseract_cli  ${CMAKE_CURRENT_SOURCE_DIR}/ocrTesseract_cli.cpp)
 target_link_libraries(ocrTesseract_cli
 
                       textconverterbackend
                       digikamcore
-                                            
+
                       ${COMMON_TEST_LINK}
 )
 
-add_executable(ocrTesseract_process   ${CMAKE_CURRENT_SOURCE_DIR}/ocrTesseract_process.cpp)
+add_executable(ocrTesseract_process   ${CMAKE_CURRENT_SOURCE_DIR}/ocrTesseract_process_cli.cpp)
 target_link_libraries(ocrTesseract_process
 
                       textconverterbackend
                       digikamcore
-                                            
+
+                      ${COMMON_TEST_LINK}
+)
+
+add_executable(tesseract_version ${CMAKE_CURRENT_SOURCE_DIR}/tesseractversion_cli.cpp)
+target_link_libraries(tesseract_version
+
+                      textconverterbackend
+                      digikamcore
+
                       ${COMMON_TEST_LINK}
 )
