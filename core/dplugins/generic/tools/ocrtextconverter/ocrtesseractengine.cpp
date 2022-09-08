@@ -17,16 +17,17 @@
 
 // Qt includes
 
-#include <QProcess>
+#include <QDir>
 #include <QUrl>
+#include <QProcess>
 #include <QFileInfo>
 
 // local includes
 
+#include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "ocroptions.h"
 #include "dmetadata.h"
-#include "digikam_globals.h"
-#include "digikam_debug.h"
 
 using namespace Digikam;
 
@@ -234,6 +235,7 @@ int OcrTesseractEngine::runOcrProcess()
 
         // ------------------  Running tesseract process ------------------
 
+        ocrProcess->setWorkingDirectory(QDir::tempPath());
         ocrProcess->setProgram(d->tesseractPath);
         ocrProcess->setArguments(args);
 
