@@ -30,9 +30,9 @@ OcrOptions::~OcrOptions()
 {
 }
 
-QMap<OcrOptions::Languages,  QPair<QString, QString>> OcrOptions::languagesNames()
+QMap<OcrOptions::Languages, QPair<QString, QString>> OcrOptions::languagesNames()
 {
-    QMap<OcrOptions::Languages,  QPair<QString, QString>> languages;
+    QMap<OcrOptions::Languages, QPair<QString, QString>> languages;
 
     languages[OcrOptions::Languages::DEFAULT]                                         = QPair(QLatin1String("Default")             , i18nc("@info:tooltip","Default language mode"));
     languages[OcrOptions::Languages::ENG]                                             = QPair(QLatin1String("Eng")                 , i18nc("@info:tooltip","English mode"));
@@ -40,7 +40,6 @@ QMap<OcrOptions::Languages,  QPair<QString, QString>> OcrOptions::languagesNames
 
     return languages;
 }
-
 
 QMap<OcrOptions::PageSegmentationModes,  QPair<QString, QString>> OcrOptions::psmNames()
 {
@@ -60,17 +59,14 @@ QMap<OcrOptions::PageSegmentationModes,  QPair<QString, QString>> OcrOptions::ps
     psm[OcrOptions::PageSegmentationModes::SPARSE_TEXT]                               = QPair(QLatin1String("Sparse text")         , i18nc("@info:tooltip","Sparse text. Find as much text as possible in no particular order."));
     psm[OcrOptions::PageSegmentationModes::SPARSE_WITH_OSD]                           = QPair(QLatin1String("Sparse text + OSD")   , i18nc("@info:tooltip","Sparse text with OSD."));
     psm[OcrOptions::PageSegmentationModes::RAW_LINE]                                  = QPair(QLatin1String("Raw line")            , i18nc("@info:tooltip","Raw line. Treat the image as a single text line,"
-                                                                                                                                                   "bypassing hacks that are Tesseract-specific."));
-
+                                                                                                                                           "bypassing hacks that are Tesseract-specific."));
 
     return psm;
 }
 
-
-
-QMap<OcrOptions::EngineModes,  QPair<QString, QString>> OcrOptions::oemNames()
+QMap<OcrOptions::EngineModes, QPair<QString, QString>> OcrOptions::oemNames()
 {
-    QMap<EngineModes,  QPair<QString, QString>> oem;
+    QMap<EngineModes, QPair<QString, QString>> oem;
 
     oem[OcrOptions::EngineModes::LEGACY_ENGINE_ONLY]                                 = QPair(QLatin1String("Legacy")               , i18nc("@info:tooltip","Legacy engine only."));
     oem[OcrOptions::EngineModes::NEURAL_NETS_LSTM_ONLY]                              = QPair(QLatin1String("LSTM")                 , i18nc("@info:tooltip","Neural nets LSTM engine only."));
@@ -80,8 +76,7 @@ QMap<OcrOptions::EngineModes,  QPair<QString, QString>> OcrOptions::oemNames()
     return oem;
 }
 
-
-QString OcrOptions::LanguageCodeToValue(OcrOptions::Languages l)
+QString OcrOptions::LanguageCodeToValue(OcrOptions::Languages l) const
 {
     switch (l)
     {
@@ -107,14 +102,12 @@ QString OcrOptions::LanguageCodeToValue(OcrOptions::Languages l)
     }
 }
 
-
-QString OcrOptions::PsmCodeToValue(OcrOptions::PageSegmentationModes psm)
+QString OcrOptions::PsmCodeToValue(OcrOptions::PageSegmentationModes psm) const
 {
    return QString::fromLatin1("%1").arg((int)psm);  // psm tesseract cli values if range from 0 to 13
 }
 
-
-QString OcrOptions::OemCodeToValue(OcrOptions::EngineModes oem)
+QString OcrOptions::OemCodeToValue(OcrOptions::EngineModes oem) const
 {
    return QString::fromLatin1("%1").arg((int)oem); // oem tesseract cli values if range from 0 to 3
 }

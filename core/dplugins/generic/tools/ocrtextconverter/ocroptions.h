@@ -41,9 +41,9 @@ public:
 
     enum class PageSegmentationModes
     {
-        OSD_ONLY           = 0,
-        AUTO_WITH_OSD      ,
-        AUTO_WITH_NO_OSD   ,
+        OSD_ONLY = 0,
+        AUTO_WITH_OSD,
+        AUTO_WITH_NO_OSD,
         DEFAULT,
         SINGLE_COL_TEXT_OF_VAR_SIZE,
         SINGLE_UNIFORM_BLOCK_OF_VERTICALLY_TEXT,
@@ -70,13 +70,17 @@ public:
     explicit OcrOptions();
     ~OcrOptions();
 
-    static QMap<OcrOptions::Languages,             QPair<QString, QString>>   languagesNames();
-    static QMap<OcrOptions::PageSegmentationModes, QPair<QString, QString>>   psmNames();
-    static QMap<OcrOptions::EngineModes,           QPair<QString, QString>>   oemNames();
+public:
 
-    QString LanguageCodeToValue(OcrOptions::Languages l);
-    QString PsmCodeToValue(OcrOptions::PageSegmentationModes psm);
-    QString OemCodeToValue(OcrOptions::EngineModes oem);
+    static QMap<OcrOptions::Languages,             QPair<QString, QString>> languagesNames();
+    static QMap<OcrOptions::PageSegmentationModes, QPair<QString, QString>> psmNames();
+    static QMap<OcrOptions::EngineModes,           QPair<QString, QString>> oemNames();
+
+public:
+
+    QString LanguageCodeToValue(OcrOptions::Languages l)            const;
+    QString PsmCodeToValue(OcrOptions::PageSegmentationModes psm)   const;
+    QString OemCodeToValue(OcrOptions::EngineModes oem)             const ;
 };
 
 } // namespace Digikam
