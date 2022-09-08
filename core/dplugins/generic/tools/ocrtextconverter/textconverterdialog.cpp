@@ -55,13 +55,13 @@ public:
     Private()
       : busy                (false),
         progressBar         (nullptr),
+        thread              (nullptr),
         iface               (nullptr),
         listView            (nullptr),
         ocrSettings         (nullptr),
-        currentSelectedItem (nullptr),
         textedit            (nullptr),
         saveTextButton      (nullptr),
-        thread              (nullptr)
+        currentSelectedItem (nullptr)
     {
     }
 
