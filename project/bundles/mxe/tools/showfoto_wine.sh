@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# Copyright (c) 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+#
+# SPDX-License-Identifier: BSD-3-Clause
+#
+
 export MYDK="`pwd`\\bundle"
 export KDEHOME=$MYDK
 #export KDESYCOCA=$MYDK\\kbuildsycoca5
