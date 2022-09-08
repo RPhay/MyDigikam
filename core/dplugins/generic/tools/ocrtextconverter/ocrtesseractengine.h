@@ -24,7 +24,7 @@
 namespace DigikamGenericTextConverterPlugin
 {
 
-class OcrTesseracrEngine : public QObject
+class OcrTesseractEngine : public QObject
 {
     Q_OBJECT
 
@@ -32,16 +32,16 @@ public:
 
     enum ConvertError
     {
-        PROCESS_CONTINUE       =  1,        ///< Current stages is done.
-        PROCESS_COMPLETE       =  0,        ///< All stages done.
-        PROCESS_FAILED         = -1,        ///< A failure happen while processing.
-        PROCESS_CANCELED       = -2,        ///< User has canceled processing.
+        PROCESS_CONTINUE =  1,        ///< Current stages is done.
+        PROCESS_COMPLETE =  0,        ///< All stages done.
+        PROCESS_FAILED   = -1,        ///< A failure happen while processing.
+        PROCESS_CANCELED = -2,        ///< User has canceled processing.
     };
 
 public:
 
-    explicit OcrTesseracrEngine();
-    ~OcrTesseracrEngine();
+    explicit OcrTesseractEngine();
+    ~OcrTesseractEngine();
 
     QString inputFile()          const;
     QString outputFile()         const;
@@ -78,8 +78,8 @@ private:
 
     // Disable
 
-    OcrTesseracrEngine(const OcrTesseracrEngine&)            = delete;
-    OcrTesseracrEngine& operator=(const OcrTesseracrEngine&) = delete;
+    OcrTesseractEngine(const OcrTesseractEngine&)            = delete;
+    OcrTesseractEngine& operator=(const OcrTesseractEngine&) = delete;
 
 private:
 

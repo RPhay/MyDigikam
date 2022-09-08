@@ -33,14 +33,15 @@ class TextConverterTask::Private
 public:
 
     Private()
-      : language(int(OcrOptions::Languages::DEFAULT)),
-        psm(int(OcrOptions::PageSegmentationModes::DEFAULT)),
-        oem(int(OcrOptions::EngineModes::DEFAULT)),
-        dpi(300),
-        isSaveTextFile(true),
-        isSaveXMP(true),
-        cancel(false),
-        action(TextConverterAction())
+      : language        (int(OcrOptions::Languages::DEFAULT)),
+        psm             (int(OcrOptions::PageSegmentationModes::DEFAULT)),
+        oem             (int(OcrOptions::EngineModes::DEFAULT)),
+        dpi             (300),
+        isSaveTextFile  (true),
+        isSaveXMP       (true),
+        cancel          (false),
+        action          (TextConverterAction()),
+        ocrEngine       (nullptr)
     {
     }
 
@@ -56,7 +57,7 @@ public:
     QUrl                 url;
     TextConverterAction  action;
 
-    OcrTesseracrEngine   ocrEngine;
+    OcrTesseractEngine*  ocrEngine;
 };
 
 TextConverterTask::TextConverterTask(QObject* const parent,
@@ -67,11 +68,14 @@ TextConverterTask::TextConverterTask(QObject* const parent,
 {
     d->url    = fileUrl;
     d->action = action;
+    d->ocrEngine = new OcrTesseractEngine;
 }
 
 TextConverterTask::~TextConverterTask()
 {
     slotCancel();
+
+    delete d->ocrEngine;
     delete d;
 }
 
@@ -123,21 +127,21 @@ void TextConverterTask::run()
 
             Q_EMIT signalStarting(ad1);
 
-            d->ocrEngine.setInputFile(d->url.toLocalFile());
-            d->ocrEngine.setIsSaveTextFile(d->isSaveTextFile);
-            d->ocrEngine.setIsSaveXMP(d->isSaveXMP);
-            d->ocrEngine.setLanguagesMode(d->language);
-            d->ocrEngine.setPSMMode(d->psm);
-            d->ocrEngine.setOEMMode(d->oem);
-            d->ocrEngine.setDpi(d->dpi);
-            int ret = d->ocrEngine.runOcrProcess();
+            d->ocrEngine->setInputFile(d->url.toLocalFile());
+            d->ocrEngine->setIsSaveTextFile(d->isSaveTextFile);
+            d->ocrEngine->setIsSaveXMP(d->isSaveXMP);
+            d->ocrEngine->setLanguagesMode(d->language);
+            d->ocrEngine->setPSMMode(d->psm);
+            d->ocrEngine->setOEMMode(d->oem);
+            d->ocrEngine->setDpi(d->dpi);
+            int ret = d->ocrEngine->runOcrProcess();
 
             TextConverterActionData ad2;
             ad2.action     = PROCESS;
             ad2.fileUrl    = d->url;
-            ad2.destPath   = d->ocrEngine.outputFile();
+            ad2.destPath   = d->ocrEngine->outputFile();
             ad2.result     = ret;
-            ad2.outputText = d->ocrEngine.outputText();
+            ad2.outputText = d->ocrEngine->outputText();
 
             Q_EMIT signalFinished(ad2);
 

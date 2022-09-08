@@ -75,8 +75,8 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
     QLabel* const ocrTesseractLanguageLabel   = new QLabel(i18nc("@label", "Languages:"));
     d->ocrTesseractLanguageMode               = new DComboBox(this);
 
-    QMap<OcrOptions::Languages, QPair<QString, QString>>             langMap  = OcrOptions::languagesNames();
-    QMap<OcrOptions::Languages, QPair<QString, QString>>::const_iterator it   = langMap.constBegin();
+    QMap<OcrOptions::Languages, QPair<QString, QString> >             langMap = OcrOptions::languagesNames();
+    QMap<OcrOptions::Languages, QPair<QString, QString> >::const_iterator it  = langMap.constBegin();
 
     while (it != langMap.constEnd())
     {
@@ -96,8 +96,8 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
     QLabel* const ocrTesseractPSMLabel  = new QLabel(i18nc("@label", "Segmentation mode:"));
     d->ocrTesseractPSMMode              = new DComboBox(this);
 
-    QMap<OcrOptions::PageSegmentationModes,  QPair<QString, QString>>                psmMap = OcrOptions::psmNames();
-    QMap<OcrOptions::PageSegmentationModes,  QPair<QString, QString>>::const_iterator it1   = psmMap.constBegin();
+    QMap<OcrOptions::PageSegmentationModes, QPair<QString, QString> >                psmMap = OcrOptions::psmNames();
+    QMap<OcrOptions::PageSegmentationModes, QPair<QString, QString> >::const_iterator it1   = psmMap.constBegin();
 
     while (it1 != psmMap.constEnd())
     {
@@ -114,8 +114,8 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
     QLabel* const ocrTesseractOEMLabel  = new QLabel(i18nc("@label", "Engine mode:"));
     d->ocrTesseractOEMMode              = new DComboBox(this);
 
-    QMap<OcrOptions::EngineModes,  QPair<QString, QString>>                oemMap  = OcrOptions::oemNames();
-    QMap<OcrOptions::EngineModes,  QPair<QString, QString>>::const_iterator it2    = oemMap.constBegin();
+    QMap<OcrOptions::EngineModes, QPair<QString, QString> >                oemMap  = OcrOptions::oemNames();
+    QMap<OcrOptions::EngineModes, QPair<QString, QString> >::const_iterator it2    = oemMap.constBegin();
 
     while (it2 !=  oemMap.constEnd())
     {

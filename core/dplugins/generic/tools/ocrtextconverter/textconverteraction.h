@@ -43,7 +43,7 @@ public:
 
     TextConverterActionData()
       : starting(false),
-        result  (OcrTesseracrEngine::PROCESS_COMPLETE),
+        result  (OcrTesseractEngine::PROCESS_COMPLETE),
         action  (NONE)
     {
     }

@@ -87,7 +87,7 @@ public:
 
     TextConverterListViewItem*        currentSelectedItem;
 
-    OcrTesseracrEngine                ocrEngine;
+    OcrTesseractEngine                ocrEngine;
 };
 
 TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* const iface)
@@ -273,7 +273,7 @@ void TextConverterDialog::slotTextConverterAction(const DigikamGenericTextConver
     }
     else
     {
-        if (ad.result != OcrTesseracrEngine::PROCESS_COMPLETE)
+        if (ad.result != OcrTesseractEngine::PROCESS_COMPLETE)
         {
             switch (ad.action)
             {
@@ -329,13 +329,13 @@ void TextConverterDialog::processingFailed(const QUrl& url, int result)
 
     switch (result)
     {
-        case OcrTesseracrEngine::PROCESS_FAILED:
+        case OcrTesseractEngine::PROCESS_FAILED:
         {
             status = i18n("Process failed");
             break;
         }
 
-        case OcrTesseracrEngine::PROCESS_CANCELED:
+        case OcrTesseractEngine::PROCESS_CANCELED:
         {
             status = i18n("Process canceled");
             break;

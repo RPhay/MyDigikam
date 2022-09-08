@@ -33,7 +33,7 @@ using namespace Digikam;
 namespace DigikamGenericTextConverterPlugin
 {
 
-class OcrTesseracrEngine::Private
+class OcrTesseractEngine::Private
 {
 
 public:
@@ -64,102 +64,102 @@ public:
     QString    ocrResult;
 };
 
-OcrTesseracrEngine::OcrTesseracrEngine()
+OcrTesseractEngine::OcrTesseractEngine()
     : d(new Private())
 {
 }
 
-OcrTesseracrEngine::~OcrTesseracrEngine()
+OcrTesseractEngine::~OcrTesseractEngine()
 {
     delete d;
 }
 
-void OcrTesseracrEngine::setLanguagesMode(int mode)
+void OcrTesseractEngine::setLanguagesMode(int mode)
 {
     d->language = mode;
 }
 
-int OcrTesseracrEngine::languagesMode() const
+int OcrTesseractEngine::languagesMode() const
 {
     return d->language;
 }
 
-void OcrTesseracrEngine::setPSMMode(int mode)
+void OcrTesseractEngine::setPSMMode(int mode)
 {
     d->psm = mode;
 }
 
-int OcrTesseracrEngine::PSMMode() const
+int OcrTesseractEngine::PSMMode() const
 {
     return d->psm;
 }
 
-void OcrTesseracrEngine::setOEMMode(int mode)
+void OcrTesseractEngine::setOEMMode(int mode)
 {
     d->oem = mode;
 }
 
-int OcrTesseracrEngine::OEMMode() const
+int OcrTesseractEngine::OEMMode() const
 {
     return d->oem;
 }
 
-void OcrTesseracrEngine::setDpi(int value)
+void OcrTesseractEngine::setDpi(int value)
 {
     d->dpi = value;
 }
 
-int OcrTesseracrEngine::Dpi() const
+int OcrTesseractEngine::Dpi() const
 {
     return d->dpi;
 }
 
-QString OcrTesseracrEngine::inputFile() const
+QString OcrTesseractEngine::inputFile() const
 {
     return d->inputFile;
 }
 
-QString OcrTesseracrEngine::outputFile() const
+QString OcrTesseractEngine::outputFile() const
 {
     return d->outputFile;
 }
 
-QString OcrTesseracrEngine::outputText() const
+QString OcrTesseractEngine::outputText() const
 {
     return d->ocrResult;
 }
 
-void OcrTesseracrEngine::setInputFile(const QString& filePath)
+void OcrTesseractEngine::setInputFile(const QString& filePath)
 {
     d->inputFile = filePath;
 }
 
-void OcrTesseracrEngine::setOutputFile(const QString& filePath)
+void OcrTesseractEngine::setOutputFile(const QString& filePath)
 {
     d->outputFile = filePath;
 }
 
-void OcrTesseracrEngine::setIsSaveTextFile(bool check)
+void OcrTesseractEngine::setIsSaveTextFile(bool check)
 {
     d->isSaveTextFile = check;
 }
 
-bool OcrTesseracrEngine::isSaveTextFile() const
+bool OcrTesseractEngine::isSaveTextFile() const
 {
     return d->isSaveTextFile;
 }
 
-void OcrTesseracrEngine::setIsSaveXMP(bool check)
+void OcrTesseractEngine::setIsSaveXMP(bool check)
 {
     d->isSaveXMP = check;
 }
 
-bool OcrTesseracrEngine::isSaveXMP() const
+bool OcrTesseractEngine::isSaveXMP() const
 {
     return d->isSaveXMP;
 }
 
-int OcrTesseracrEngine::runOcrProcess()
+int OcrTesseractEngine::runOcrProcess()
 {
     d->cancel = false;
     QScopedPointer<QProcess> ocrProcess (new QProcess());
@@ -268,7 +268,7 @@ int OcrTesseracrEngine::runOcrProcess()
     return PROCESS_COMPLETE;
 }
 
-void OcrTesseracrEngine::SaveOcrResult()
+void OcrTesseractEngine::SaveOcrResult()
 {
     if (d->isSaveTextFile)
     {
@@ -286,7 +286,7 @@ void OcrTesseracrEngine::SaveOcrResult()
     }
 }
 
-void OcrTesseracrEngine::saveTextFile(const QString& filePath, const QString& text)
+void OcrTesseractEngine::saveTextFile(const QString& filePath, const QString& text)
 {
     QFile file(filePath);
 
@@ -298,7 +298,7 @@ void OcrTesseracrEngine::saveTextFile(const QString& filePath, const QString& te
     }
 }
 
-void OcrTesseracrEngine::saveXMP(const QString& filePath, const QString& text)
+void OcrTesseractEngine::saveXMP(const QString& filePath, const QString& text)
 {
     QScopedPointer<DMetadata> dmeta(new DMetadata(filePath));
 
