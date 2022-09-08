@@ -24,6 +24,9 @@ namespace DigikamGenericTextConverterPlugin
 TesseractBinary::TesseractBinary(QObject* const)
     : DBinaryIface(
                    QLatin1String("tesseract"),
+                   QLatin1String("4.0.0"),
+                   QLatin1String("tesseract "),
+                   0,
                    QLatin1String("Tesseract OCR"),
                    QLatin1String("https://github.com/tesseract-ocr/tesseract#installing-tesseract"),
                    QLatin1String("TextConverter"),
