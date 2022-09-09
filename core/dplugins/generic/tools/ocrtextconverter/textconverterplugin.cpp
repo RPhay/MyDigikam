@@ -41,7 +41,7 @@ TextConverterPlugin::~TextConverterPlugin()
 
 QString TextConverterPlugin::name() const
 {
-    return i18nc("@title", "Text Converter");
+    return i18nc("@title", "OCR Text Converter");
 }
 
 QString TextConverterPlugin::iid() const
@@ -56,13 +56,13 @@ QIcon TextConverterPlugin::icon() const
 
 QString TextConverterPlugin::description() const
 {
-    return i18nc("@info", "A tool to batch convert documented images to text");
+    return i18nc("@info", "A tool to batch convert documented images to text using OCR");
 }
 
 QString TextConverterPlugin::details() const
 {
     return i18nc("@info", "This tool can convert documented images data to Text format "
-                 "by using Tesseract, a software OCR engine, originally developed at HP labs and now sponsored by Google.\n\n"
+                 "by using Tesseract, an open-source Optical Characters Recognition engine, originally developed at HP labs and now sponsored by Google.\n\n"
                  "It supports multiple languages and scripts (including right-to-left text) and page layout analysis.\n\n"
                  "See details on %1 for more information on Tesseract",
                  QLatin1String("<a href='https://github.com/tesseract-ocr/tesseract'>https://github.com/tesseract-ocr/tesseract</a>"));
@@ -81,7 +81,7 @@ void TextConverterPlugin::setup(QObject* const parent)
 {
     DPluginAction* const ac = new DPluginAction(parent);
     ac->setIcon(icon());
-    ac->setText(i18nc("@action", "Text Converter..."));
+    ac->setText(i18nc("@action", "OCR Text Converter..."));
     ac->setObjectName(QLatin1String("textconverter"));
     ac->setActionCategory(DPluginAction::GenericTool);
 
