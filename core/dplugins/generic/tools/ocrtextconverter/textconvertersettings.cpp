@@ -32,7 +32,6 @@
 #include "dexpanderbox.h"
 #include "dnuminput.h"
 #include "textconverterlist.h"
-#include "ocroptions.h"
 
 using namespace Digikam;
 
@@ -75,21 +74,15 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
     QLabel* const ocrTesseractLanguageLabel   = new QLabel(i18nc("@label", "Languages:"));
     d->ocrTesseractLanguageMode               = new DComboBox(this);
 
-    QMap<OcrOptions::Languages, QPair<QString, QString> >             langMap = OcrOptions::languagesNames();
-    QMap<OcrOptions::Languages, QPair<QString, QString> >::const_iterator it  = langMap.constBegin();
-
-    while (it != langMap.constEnd())
-    {
-        d->ocrTesseractLanguageMode->addItem(it.value().first, (int)it.key());
-        d->ocrTesseractLanguageMode->combo()->setItemData((int)it.key(), it.value().second, Qt::ToolTipRole);
-        ++it;
-    }
+    d->ocrTesseractLanguageMode->insertItem(int(OcrOptions::Languages::DEFAULT),
+                                            i18nc("@option:default Tesseract mode", "Default"));
 
     d->ocrTesseractLanguageMode->setDefaultIndex(int(OcrOptions::Languages::DEFAULT));
     d->ocrTesseractLanguageMode->setToolTip(i18nc("@info", "Specify language(s) used for OCR. "
-                                                           "In the default mode of Language settings for digital text with multiple languages, \n"
+                                                           "In the Default mode of Language settings for digital text with multiple languages, \n"
                                                            "Tesseract can automatically recognize languages using Latin alphabets such as English or French, \n"
-                                                           "but is not compatible with languages using hieroglyphs such as Chinese, Japanese."));
+                                                           "but is not compatible with languages using hieroglyphs such as Chinese, Japanese.\n"
+                                                           "OSD mode use the Orientation and Script detection Module."));
 
     // ------------
 
@@ -192,64 +185,54 @@ void TextConverterSettings::setDefaultSettings()
     d->saveTextFile->setChecked(true);
 }
 
-void TextConverterSettings::setLanguagesMode(int mode)
+void TextConverterSettings::setOcrOptions(const OcrOptions& opt)
 {
-    d->ocrTesseractLanguageMode->setCurrentIndex(mode);
+    QString lg = opt.language;
+
+    if (lg.isEmpty())
+    {
+        d->ocrTesseractLanguageMode->setCurrentIndex((int)OcrOptions::Languages::DEFAULT);
+    }
+    else
+    {
+        d->ocrTesseractLanguageMode->combo()->setCurrentText(lg);
+    }
+
+    d->ocrTesseractPSMMode->setCurrentIndex(opt.psm);
+    d->ocrTesseractOEMMode->setCurrentIndex(opt.oem);
+    d->ocrTesseractDpi->setValue(opt.dpi);
+    d->saveTextFile->setChecked(opt.isSaveTextFile);
+    d->saveXMP->setChecked(opt.isSaveXMP);
 }
 
-int TextConverterSettings::LanguagesMode() const
+OcrOptions TextConverterSettings::ocrOptions() const
 {
-    return d->ocrTesseractLanguageMode->currentIndex();
+    OcrOptions opt;
+
+    if (d->ocrTesseractLanguageMode->currentIndex() == (int)OcrOptions::Languages::DEFAULT)
+    {
+        opt.language = QString();
+    }
+    else
+    {
+        opt.language = d->ocrTesseractLanguageMode->combo()->currentText();
+    }
+
+    opt.psm            = d->ocrTesseractPSMMode->currentIndex();
+    opt.oem            = d->ocrTesseractOEMMode->currentIndex();
+    opt.dpi            = d->ocrTesseractDpi->value();
+    opt.isSaveTextFile = d->saveTextFile->isChecked();
+    opt.isSaveXMP      = d->saveXMP->isChecked();
+
+    return opt;
 }
 
-void TextConverterSettings::setPSMMode(int mode)
+void TextConverterSettings::populateLanguagesMode(const QStringList& langs)
 {
-    d->ocrTesseractPSMMode->setCurrentIndex(mode);
-}
-
-int TextConverterSettings::PSMMode() const
-{
-    return d->ocrTesseractPSMMode->currentIndex();
-}
-
-void TextConverterSettings::setOEMMode(int mode)
-{
-    d->ocrTesseractOEMMode->setCurrentIndex(mode);
-}
-
-int TextConverterSettings::OEMMode() const
-{
-    return d->ocrTesseractOEMMode->currentIndex();
-}
-
-void TextConverterSettings::setDpi(int value)
-{
-    d->ocrTesseractDpi->setValue(value);
-}
-
-int  TextConverterSettings::Dpi() const
-{
-    return d->ocrTesseractDpi->value();
-}
-
-void TextConverterSettings::setIsSaveTextFile(bool check)
-{
-    d->saveTextFile->setChecked(check);
-}
-
-bool  TextConverterSettings::isSaveTextFile() const
-{
-    return d->saveTextFile->isChecked();
-}
-
-void TextConverterSettings::setIsSaveXMP(bool check)
-{
-    d->saveXMP->setChecked(check);
-}
-
-bool  TextConverterSettings::isSaveXMP() const
-{
-    return d->saveXMP->isChecked();
+    Q_FOREACH (const QString& lg, langs)
+    {
+        d->ocrTesseractLanguageMode->addItem(lg);
+    }
 }
 
 } // namespace DigikamGenericTextConverterPlugin

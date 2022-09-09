@@ -21,6 +21,10 @@
 #include <QString>
 #include <QObject>
 
+// Local includes
+
+#include "ocroptions.h"
+
 namespace DigikamGenericTextConverterPlugin
 {
 
@@ -50,25 +54,8 @@ public:
     void setInputFile(const QString& filePath);
     void setOutputFile(const QString& filePath);
 
-    void setLanguagesMode(int mode);
-    int  languagesMode()         const;
-
-    void setPSMMode(int mode);
-    int  PSMMode()               const;
-
-    void setOEMMode(int mode);
-    int  OEMMode()               const;
-
-    void setDpi(int value);
-    int  Dpi()                   const;
-
-    void setIsSaveTextFile(bool check);
-    bool isSaveTextFile()        const;
-
-    void setIsSaveXMP(bool check);
-    bool isSaveXMP()             const;
-
-    void setTesseractPath(const QString& path);
+    OcrOptions ocrOptions() const;
+    void setOcrOptions(const OcrOptions& opt);
 
 public:
 

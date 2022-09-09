@@ -34,9 +34,7 @@ public:
 
     enum class Languages
     {
-        DEFAULT = 0,
-        ENG,
-        OSD
+        DEFAULT = 0
     };
 
     enum class PageSegmentationModes
@@ -72,15 +70,24 @@ public:
 
 public:
 
-    static QMap<OcrOptions::Languages,             QPair<QString, QString> > languagesNames();
-    static QMap<OcrOptions::PageSegmentationModes, QPair<QString, QString> > psmNames();
-    static QMap<OcrOptions::EngineModes,           QPair<QString, QString> > oemNames();
+    static QMap<PageSegmentationModes, QPair<QString, QString> > psmNames();
+    static QMap<EngineModes,           QPair<QString, QString> > oemNames();
 
 public:
 
-    QString LanguageCodeToValue(OcrOptions::Languages l)            const;
-    QString PsmCodeToValue(OcrOptions::PageSegmentationModes psm)   const;
-    QString OemCodeToValue(OcrOptions::EngineModes oem)             const;
+    QString PsmCodeToValue(PageSegmentationModes psm)   const;
+    QString OemCodeToValue(EngineModes oem)             const;
+
+public:
+
+    int     psm;
+    int     oem;
+    int     dpi;
+    bool    isSaveTextFile;
+    bool    isSaveXMP;
+
+    QString language;
+    QString tesseractPath;
 };
 
 } // namespace DigikamGenericTextConverterPlugin

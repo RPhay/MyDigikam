@@ -24,7 +24,6 @@
 #include <QGridLayout>
 #include <QTimer>
 #include <QMessageBox>
-#include <QListWidget>
 
 // KDE includes
 
@@ -65,7 +64,6 @@ public:
         textedit            (nullptr),
         saveTextButton      (nullptr),
         currentSelectedItem (nullptr),
-        tesseractLangs      (nullptr),
         binWidget           (nullptr)
     {
     }
@@ -93,8 +91,6 @@ public:
     TextConverterListViewItem*        currentSelectedItem;
 
     OcrTesseractEngine                ocrEngine;
-
-    QListWidget*                      tesseractLangs;
 
     TesseractBinary                   tesseractBin;
     DBinarySearch*                    binWidget;
@@ -166,10 +162,6 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     //-------------------------------------------------------------------------------------------
 
-    QLabel* const languagesLabel      = new QLabel(i18nc("@label", "Tesseract Languages:"), mainWidget);
-
-    d->tesseractLangs                 = new QListWidget(mainWidget);
-
     d->ocrSettings                    = new TextConverterSettings(mainWidget);
 
     d->progressBar                    = new DProgressWdg(mainWidget);
@@ -189,15 +181,13 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     mainLayout->addWidget(d->listView,                       0, 0, 9, 1);
     mainLayout->addWidget(tesseractLabel,                    0, 1, 1, 1);
     mainLayout->addWidget(d->binWidget,                      1, 1, 2, 1);
-    mainLayout->addWidget(languagesLabel,                    3, 1, 1, 1);
-    mainLayout->addWidget(d->tesseractLangs,                 4, 1, 1, 1);
-    mainLayout->addWidget(d->ocrSettings,                    5, 1, 1, 1);
-    mainLayout->addWidget(d->textedit,                       6, 1, 1, 1);
-    mainLayout->addWidget(d->saveTextButton,                 7, 1, 1, 1);
-    mainLayout->addWidget(d->progressBar,                    8, 1, 1, 1);
+    mainLayout->addWidget(d->ocrSettings,                    3, 1, 1, 1);
+    mainLayout->addWidget(d->textedit,                       4, 1, 1, 1);
+    mainLayout->addWidget(d->saveTextButton,                 5, 1, 1, 1);
+    mainLayout->addWidget(d->progressBar,                    6, 1, 1, 1);
     mainLayout->setColumnStretch(0, 10);
     mainLayout->setRowStretch(1, 2);
-    mainLayout->setRowStretch(6, 10);
+    mainLayout->setRowStretch(4, 10);
     mainLayout->setContentsMargins(QMargins());
 
     // ---------------------------------------------------------------
@@ -285,6 +275,7 @@ void TextConverterDialog::slotDoubleClick(QTreeWidgetItem* element)
 void TextConverterDialog::slotUpdateText()
 {
     QString newText = d->textedit->text();
+    OcrOptions opt  = d->ocrSettings->ocrOptions();
 
     if (!d->textedit->text().isEmpty()           &&
         !d->currentSelectedItem->url().isEmpty() &&
@@ -293,12 +284,12 @@ void TextConverterDialog::slotUpdateText()
         d->textEditList[d->currentSelectedItem->url()] = newText;
         d->currentSelectedItem->setRecognizedWords(QString::fromLatin1("%1").arg(calculateNumberOfWords(newText)));
 
-        if (d->ocrSettings->isSaveTextFile())
+        if (opt.isSaveTextFile)
         {
             d->ocrEngine.saveTextFile(d->currentSelectedItem->destFileName(), newText);
         }
 
-        if (d->ocrSettings->isSaveXMP())
+        if (opt.isSaveXMP)
         {
             d->ocrEngine.saveXMP(d->currentSelectedItem->url().toLocalFile(), newText);
 
@@ -464,14 +455,9 @@ void TextConverterDialog::processed(const QUrl& url,
 
 void TextConverterDialog::processAll()
 {
-    d->thread->setLanguagesMode(d->ocrSettings->LanguagesMode());
-    d->thread->setPSMMode(d->ocrSettings->PSMMode());
-    d->thread->setOEMMode(d->ocrSettings->OEMMode());
-    d->thread->setDpi(d->ocrSettings->Dpi());
-    d->thread->setIsSaveTextFile(d->ocrSettings->isSaveTextFile());
-    d->thread->setIsSaveXMP(d->ocrSettings->isSaveXMP());
-    d->thread->setTesseractPath(d->tesseractBin.path());
-
+    OcrOptions opt    = d->ocrSettings->ocrOptions();
+    opt.tesseractPath = d->tesseractBin.path();
+    d->thread->setOcrOptions(opt);
     d->thread->ocrProcessFiles(d->fileList);
 
     if (!d->thread->isRunning())
@@ -583,26 +569,29 @@ void TextConverterDialog::readSettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("OCR Tesseract Settings"));
+    OcrOptions opt;
+    opt.language       = group.readEntry("ocrLanguages",          int(OcrOptions::Languages::DEFAULT));
+    opt.psm            = group.readEntry("PageSegmentationModes", int(OcrOptions::PageSegmentationModes::DEFAULT));
+    opt.oem            = group.readEntry("EngineModes",           int(OcrOptions::EngineModes::DEFAULT));
+    opt.dpi            = group.readEntry("Dpi",                   300);
+    opt.isSaveTextFile = group.readEntry("Check Save Test File",  true);
+    opt.isSaveXMP      = group.readEntry("Check Save in XMP",     true);
 
-    d->ocrSettings->setLanguagesMode(group.readEntry("ocrLanguages",                      int(OcrOptions::Languages::DEFAULT)));
-    d->ocrSettings->setPSMMode(group.readEntry("PageSegmentationModes",                   int(OcrOptions::PageSegmentationModes::DEFAULT)));
-    d->ocrSettings->setOEMMode(group.readEntry("EngineModes",                             int(OcrOptions::EngineModes::DEFAULT)));
-    d->ocrSettings->setDpi(group.readEntry("Dpi",                                         300));
-    d->ocrSettings->setIsSaveTextFile(group.readEntry("Check Save Test File",             true));
-    d->ocrSettings->setIsSaveXMP(group.readEntry("Check Save in XMP",                     true));
+    d->ocrSettings->setOcrOptions(opt);
 }
 
 void TextConverterDialog::saveSettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("OCR Tesseract Settings"));
+    OcrOptions opt            = d->ocrSettings->ocrOptions();
 
-    group.writeEntry("ocrLanguages",              (int)d->ocrSettings->LanguagesMode());
-    group.writeEntry("PageSegmentationModes",     (int)d->ocrSettings->PSMMode());
-    group.writeEntry("EngineModes",               (int)d->ocrSettings->OEMMode());
-    group.writeEntry("Dpi",                       (int)d->ocrSettings->Dpi());
-    group.writeEntry("Check Save Test File",      (bool)d->ocrSettings->isSaveTextFile());
-    group.writeEntry("Check Save in XMP",         (bool)d->ocrSettings->isSaveXMP());
+    group.writeEntry("ocrLanguages",              opt.language);
+    group.writeEntry("PageSegmentationModes",     (int)opt.psm);
+    group.writeEntry("EngineModes",               (int)opt.oem);
+    group.writeEntry("Dpi",                       (int)opt.dpi);
+    group.writeEntry("Check Save Test File",      (bool)opt.isSaveTextFile);
+    group.writeEntry("Check Save in XMP",         (bool)opt.isSaveXMP);
 }
 
 void TextConverterDialog::addItems(const QList<QUrl>& itemList)
@@ -668,14 +657,7 @@ void TextConverterDialog::slotTesseractBinaryFound(bool b)
         m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18n("Tesseract program is not found on your system."));
     }
 
-    QStringList langs = d->tesseractBin.tesseractLanguages();
-
-    d->tesseractLangs->clear();
-
-    Q_FOREACH (const QString& l, langs)
-    {
-        d->tesseractLangs->addItem(l);
-    }
+    d->ocrSettings->populateLanguagesMode(d->tesseractBin.tesseractLanguages());
 }
 
 } // namespace DigikamGenericTextConverterPlugin

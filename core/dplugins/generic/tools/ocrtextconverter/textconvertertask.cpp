@@ -19,7 +19,6 @@
 
 #include "digikam_debug.h"
 #include "ocrtesseractengine.h"
-#include "ocroptions.h"
 #include "drawdecoder.h"
 
 using namespace Digikam;
@@ -33,27 +32,13 @@ class TextConverterTask::Private
 public:
 
     Private()
-      : language        (int(OcrOptions::Languages::DEFAULT)),
-        psm             (int(OcrOptions::PageSegmentationModes::DEFAULT)),
-        oem             (int(OcrOptions::EngineModes::DEFAULT)),
-        dpi             (300),
-        isSaveTextFile  (true),
-        isSaveXMP       (true),
-        cancel          (false),
+      : cancel          (false),
         action          (TextConverterAction()),
         ocrEngine       (nullptr)
     {
     }
 
-    int                  language;
-    int                  psm;
-    int                  oem;
-    int                  dpi;
-    bool                 isSaveTextFile;
-    bool                 isSaveXMP;
-
-    QString              tesseractPath;
-
+    OcrOptions           opt;
     bool                 cancel;
 
     QUrl                 url;
@@ -81,39 +66,14 @@ TextConverterTask::~TextConverterTask()
     delete d;
 }
 
-void TextConverterTask::setTesseractPath(const QString& path)
+void TextConverterTask::setOcrOptions(const OcrOptions& opt)
 {
-    d->tesseractPath = path;
+    d->opt = opt;
 }
 
-void TextConverterTask::setLanguagesMode(int mode)
+OcrOptions TextConverterTask::ocrOptions() const
 {
-    d->language = mode;
-}
-
-void TextConverterTask::setPSMMode(int mode)
-{
-    d->psm = mode;
-}
-
-void TextConverterTask::setOEMMode(int mode)
-{
-    d->oem = mode;
-}
-
-void TextConverterTask::setDpi(int value)
-{
-    d->dpi = value;
-}
-
-void TextConverterTask::setIsSaveTextFile(bool check)
-{
-    d->isSaveTextFile = check;
-}
-
-void TextConverterTask::setIsSaveXMP(bool check)
-{
-    d->isSaveXMP = check;
+    return d->opt;
 }
 
 void TextConverterTask::run()
@@ -135,13 +95,7 @@ void TextConverterTask::run()
             Q_EMIT signalStarting(ad1);
 
             d->ocrEngine->setInputFile(d->url.toLocalFile());
-            d->ocrEngine->setIsSaveTextFile(d->isSaveTextFile);
-            d->ocrEngine->setIsSaveXMP(d->isSaveXMP);
-            d->ocrEngine->setLanguagesMode(d->language);
-            d->ocrEngine->setPSMMode(d->psm);
-            d->ocrEngine->setOEMMode(d->oem);
-            d->ocrEngine->setDpi(d->dpi);
-            d->ocrEngine->setTesseractPath(d->tesseractPath);
+            d->ocrEngine->setOcrOptions(d->opt);
             int ret = d->ocrEngine->runOcrProcess();
 
             TextConverterActionData ad2;

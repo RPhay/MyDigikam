@@ -19,7 +19,6 @@
 
 #include "digikam_debug.h"
 #include "textconvertertask.h"
-#include "ocroptions.h"
 
 using namespace Digikam;
 
@@ -31,23 +30,10 @@ class TextConverterActionThread::Private
 public:
 
     Private()
-      : language        (int(OcrOptions::Languages::DEFAULT)),
-        psm             (int(OcrOptions::PageSegmentationModes::DEFAULT)),
-        oem             (int(OcrOptions::EngineModes::DEFAULT)),
-        dpi             (300),
-        isSaveTextFile  (true),
-        isSaveXMP       (true)
     {
     }
 
-    int     language;
-    int     psm;
-    int     oem;
-    int     dpi;
-    bool    isSaveTextFile;
-    bool    isSaveXMP;
-
-    QString tesseractPath;
+    OcrOptions opt;
 };
 
 TextConverterActionThread::TextConverterActionThread(QObject* const parent)
@@ -70,39 +56,14 @@ TextConverterActionThread::~TextConverterActionThread()
     delete d;
 }
 
-void TextConverterActionThread::setTesseractPath(const QString& path)
+void TextConverterActionThread::setOcrOptions(const OcrOptions& opt)
 {
-    d->tesseractPath = path;
+    d->opt = opt;
 }
 
-void TextConverterActionThread::setLanguagesMode(int mode)
+OcrOptions TextConverterActionThread::ocrOptions() const
 {
-    d->language = mode;
-}
-
-void TextConverterActionThread::setPSMMode(int mode)
-{
-    d->psm = mode;
-}
-
-void TextConverterActionThread::setOEMMode(int mode)
-{
-    d->oem = mode;
-}
-
-void TextConverterActionThread::setDpi(int value)
-{
-    d->dpi = value;
-}
-
-void TextConverterActionThread::setIsSaveTextFile(bool check)
-{
-    d->isSaveTextFile = check;
-}
-
-void TextConverterActionThread::setIsSaveXMP(bool check)
-{
-    d->isSaveXMP = check;
+    return d->opt;
 }
 
 void TextConverterActionThread::ocrProcessFile(const QUrl& url)
@@ -119,13 +80,7 @@ void TextConverterActionThread::ocrProcessFiles(const QList<QUrl>& urlList)
     for (QList<QUrl>::const_iterator it = urlList.constBegin() ; it != urlList.constEnd() ; ++it)
     {
         TextConverterTask* const t = new TextConverterTask(this, *it, PROCESS);
-        t->setLanguagesMode(d->language);
-        t->setPSMMode(d->psm);
-        t->setOEMMode(d->oem);
-        t->setDpi(d->dpi);
-        t->setIsSaveTextFile(d->isSaveTextFile);
-        t->setIsSaveXMP(d->isSaveXMP);
-        t->setTesseractPath(d->tesseractPath);
+        t->setOcrOptions(d->opt);
 
         connect(t, SIGNAL(signalStarting(DigikamGenericTextConverterPlugin::TextConverterActionData)),
                 this, SIGNAL(signalStarting(DigikamGenericTextConverterPlugin::TextConverterActionData)));

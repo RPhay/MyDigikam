@@ -26,7 +26,6 @@
 
 #include "digikam_debug.h"
 #include "digikam_globals.h"
-#include "ocroptions.h"
 #include "dmetadata.h"
 
 using namespace Digikam;
@@ -40,31 +39,17 @@ class OcrTesseractEngine::Private
 public:
 
     Private()
-      : language        ((int)OcrOptions::Languages::DEFAULT),
-        psm             ((int)OcrOptions::PageSegmentationModes::DEFAULT),
-        oem             ((int)OcrOptions::EngineModes::DEFAULT),
-        dpi             (300),
-        isSaveTextFile  (true),
-        isSaveXMP       (true),
-        cancel          (false)
+      : cancel(false)
     {
     }
 
-    int        language;
-    int        psm;
-    int        oem;
-    int        dpi;
-
-    bool       isSaveTextFile;
-    bool       isSaveXMP;
+    OcrOptions opt;
 
     bool       cancel;
 
     QString    inputFile;
     QString    outputFile;
     QString    ocrResult;
-
-    QString    tesseractPath;
 };
 
 OcrTesseractEngine::OcrTesseractEngine()
@@ -77,49 +62,14 @@ OcrTesseractEngine::~OcrTesseractEngine()
     delete d;
 }
 
-void OcrTesseractEngine::setTesseractPath(const QString& path)
+void OcrTesseractEngine::setOcrOptions(const OcrOptions& opt)
 {
-    d->tesseractPath = path;
+    d->opt = opt;
 }
 
-void OcrTesseractEngine::setLanguagesMode(int mode)
+OcrOptions OcrTesseractEngine::ocrOptions() const
 {
-    d->language = mode;
-}
-
-int OcrTesseractEngine::languagesMode() const
-{
-    return d->language;
-}
-
-void OcrTesseractEngine::setPSMMode(int mode)
-{
-    d->psm = mode;
-}
-
-int OcrTesseractEngine::PSMMode() const
-{
-    return d->psm;
-}
-
-void OcrTesseractEngine::setOEMMode(int mode)
-{
-    d->oem = mode;
-}
-
-int OcrTesseractEngine::OEMMode() const
-{
-    return d->oem;
-}
-
-void OcrTesseractEngine::setDpi(int value)
-{
-    d->dpi = value;
-}
-
-int OcrTesseractEngine::Dpi() const
-{
-    return d->dpi;
+    return d->opt;
 }
 
 QString OcrTesseractEngine::inputFile() const
@@ -145,26 +95,6 @@ void OcrTesseractEngine::setInputFile(const QString& filePath)
 void OcrTesseractEngine::setOutputFile(const QString& filePath)
 {
     d->outputFile = filePath;
-}
-
-void OcrTesseractEngine::setIsSaveTextFile(bool check)
-{
-    d->isSaveTextFile = check;
-}
-
-bool OcrTesseractEngine::isSaveTextFile() const
-{
-    return d->isSaveTextFile;
-}
-
-void OcrTesseractEngine::setIsSaveXMP(bool check)
-{
-    d->isSaveXMP = check;
-}
-
-bool OcrTesseractEngine::isSaveXMP() const
-{
-    return d->isSaveXMP;
 }
 
 int OcrTesseractEngine::runOcrProcess()
@@ -195,11 +125,9 @@ int OcrTesseractEngine::runOcrProcess()
 
         // ----------------------------- OPTIONS -----------------------------
 
-        OcrOptions ocropt;
-
         // page Segmentation mode
 
-        QString val = ocropt.PsmCodeToValue(static_cast<OcrOptions::PageSegmentationModes>(d->psm));
+        QString val = d->opt.PsmCodeToValue(static_cast<OcrOptions::PageSegmentationModes>(d->opt.psm));
 
         if (!val.isEmpty())
         {
@@ -208,7 +136,7 @@ int OcrTesseractEngine::runOcrProcess()
 
         // OCR enginge mode
 
-        val = ocropt.OemCodeToValue(static_cast<OcrOptions::EngineModes>(d->oem));
+        val = d->opt.OemCodeToValue(static_cast<OcrOptions::EngineModes>(d->opt.oem));
 
         if (!val.isEmpty())
         {
@@ -217,7 +145,7 @@ int OcrTesseractEngine::runOcrProcess()
 
         // Language
 
-        val = ocropt.LanguageCodeToValue(static_cast<OcrOptions::Languages>(d->language));
+        val = d->opt.language;
 
         if (!val.isEmpty())
         {
@@ -226,7 +154,7 @@ int OcrTesseractEngine::runOcrProcess()
 
         // dpi
 
-        val = QString::fromLatin1("%1").arg(d->dpi);
+        val = QString::fromLatin1("%1").arg(d->opt.dpi);
 
         if (!val.isEmpty())
         {
@@ -236,7 +164,7 @@ int OcrTesseractEngine::runOcrProcess()
         // ------------------  Running tesseract process ------------------
 
         ocrProcess->setWorkingDirectory(QDir::tempPath());
-        ocrProcess->setProgram(d->tesseractPath);
+        ocrProcess->setProgram(d->opt.tesseractPath);
         ocrProcess->setArguments(args);
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Running OCR : "
@@ -245,7 +173,7 @@ int OcrTesseractEngine::runOcrProcess()
 
         ocrProcess->start();
 
-        bool successFlag =  ocrProcess->waitForFinished(-1) &&  ocrProcess->exitStatus() == QProcess::NormalExit;
+        bool successFlag = ocrProcess->waitForFinished(-1) && (ocrProcess->exitStatus() == QProcess::NormalExit);
 
         if (!successFlag)
         {
@@ -258,7 +186,6 @@ int OcrTesseractEngine::runOcrProcess()
         {
             return PROCESS_CANCELED;
         }
-
     }
     catch(const QProcess::ProcessError& e)
     {
@@ -268,7 +195,7 @@ int OcrTesseractEngine::runOcrProcess()
     }
 
 
-    d->ocrResult   = QString::fromLocal8Bit(ocrProcess->readAllStandardOutput());
+    d->ocrResult = QString::fromLocal8Bit(ocrProcess->readAllStandardOutput());
 
     SaveOcrResult();
 
@@ -277,17 +204,17 @@ int OcrTesseractEngine::runOcrProcess()
 
 void OcrTesseractEngine::SaveOcrResult()
 {
-    if (d->isSaveTextFile)
+    if (d->opt.isSaveTextFile)
     {
         QFileInfo fi(d->inputFile);
-        d->outputFile =   fi.absolutePath()  +
-                          QLatin1String("/") +
-                          (QString::fromLatin1("%1-textconverter.txt").arg(fi.fileName()));
+        d->outputFile = fi.absolutePath()  +
+                        QLatin1String("/") +
+                        (QString::fromLatin1("%1-textconverter.txt").arg(fi.fileName()));
 
         saveTextFile(d->outputFile, d->ocrResult);
     }
 
-    if (d->isSaveXMP)
+    if (d->opt.isSaveXMP)
     {
         saveXMP(d->inputFile, d->ocrResult);
     }

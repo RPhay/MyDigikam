@@ -20,6 +20,11 @@
 
 #include <QWidget>
 #include <QString>
+#include <QStringList>
+
+// Local includes
+
+#include "ocroptions.h"
 
 namespace DigikamGenericTextConverterPlugin
 {
@@ -33,25 +38,12 @@ public:
     explicit TextConverterSettings(QWidget* const parent = nullptr);
     ~TextConverterSettings() override;
 
-    void setLanguagesMode(int mode);
-    int  LanguagesMode()        const;
-
-    void setPSMMode(int mode);
-    int  PSMMode()              const;
-
-    void setOEMMode(int mode);
-    int  OEMMode()              const;
-
-    void setDpi(int value);
-    int  Dpi()                  const;
-
-    void setIsSaveTextFile(bool check);
-    bool isSaveTextFile()       const;
-
-    void setIsSaveXMP(bool check);
-    bool isSaveXMP()            const;
+    OcrOptions ocrOptions() const;
+    void setOcrOptions(const OcrOptions& opt);
 
     void setDefaultSettings();
+
+    void populateLanguagesMode(const QStringList& langs);
 
 Q_SIGNALS:
 

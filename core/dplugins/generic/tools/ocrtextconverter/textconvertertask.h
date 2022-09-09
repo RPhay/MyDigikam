@@ -22,6 +22,7 @@
 
 // Local includes
 
+#include "ocroptions.h"
 #include "actionthreadbase.h"
 #include "textconverteraction.h"
 
@@ -41,14 +42,8 @@ public:
                               const TextConverterAction& action);
     ~TextConverterTask();
 
-    void setLanguagesMode(int mode);
-    void setPSMMode(int mode);
-    void setOEMMode(int mode);
-    void setDpi(int value);
-    void setIsSaveTextFile(bool check);
-    void setIsSaveXMP(bool check);
-
-    void setTesseractPath(const QString& path);
+    OcrOptions ocrOptions() const;
+    void setOcrOptions(const OcrOptions& opt);
 
 Q_SIGNALS:
 
