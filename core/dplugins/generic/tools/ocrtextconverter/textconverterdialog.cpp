@@ -128,7 +128,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     QLabel* const tesseractLabel      = new QLabel(i18nc("@label", "This tool use the %1 open-source "
                                                    "engine to perform Optical Characters Recognition. "
-                                                   "Terreract program and the desired languages packages must "
+                                                   "Tesseract program and the desired languages packages must "
                                                    "be installed on your system.",
                                                    QString::fromUtf8("<a href='https://github.com/tesseract-ocr/tesseract'>Tesseract</a>")),
                                                    mainWidget);
