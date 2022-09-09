@@ -15,6 +15,10 @@
 #ifndef DIGIKAM_TESSERACT_BINARY_H
 #define DIGIKAM_TESSERACT_BINARY_H
 
+// Qt includes
+
+#include <QStringList>
+
 // Local includes
 
 #include "dbinaryiface.h"
@@ -31,7 +35,9 @@ class TesseractBinary : public DBinaryIface
 public:
 
     explicit TesseractBinary(QObject* const parent = nullptr);
-    ~TesseractBinary() override;
+    ~TesseractBinary()                      override;
+
+    QStringList tesseractLanguages() const;
 };
 
 } // namespace DigikamGenericTextConverterPlugin

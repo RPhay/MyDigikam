@@ -80,6 +80,7 @@ private Q_SLOTS:
 
     void slotSetDisable();
 
+    void slotStartFoundTesseract();
     void slotTesseractBinaryFound(bool);
 
 private:

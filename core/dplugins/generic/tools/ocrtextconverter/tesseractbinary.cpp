@@ -14,9 +14,18 @@
 
 #include "tesseractbinary.h"
 
+// Qt includes
+
+#include <QProcess>
+
 // KDE includes
 
 #include <klocalizedstring.h>
+
+// Local includes
+
+#include "digikam_debug.h"
+#include "digikam_globals.h"
 
 namespace DigikamGenericTextConverterPlugin
 {
@@ -39,6 +48,56 @@ TesseractBinary::TesseractBinary(QObject* const)
 
 TesseractBinary::~TesseractBinary()
 {
+}
+
+QStringList TesseractBinary::tesseractLanguages() const
+{
+    /*
+     * Output look like this:
+     *
+     * tesseract --list-langs
+     * List of available languages (3):
+     * eng
+     * fra
+     * osd
+     */
+
+    QStringList langs;
+    QProcess process;
+    process.setProcessChannelMode(QProcess::MergedChannels);
+    process.setProcessEnvironment(adjustedEnvironmentForAppImage());
+    process.start(path(), QStringList() << QLatin1String("--list-langs"));
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << process.arguments();
+
+    bool val = process.waitForFinished();
+
+    if (val && (process.error() != QProcess::FailedToStart))
+    {
+        QString output    = QString::fromUtf8(process.readAllStandardOutput());
+        QStringList lines = output.split(QLatin1Char('\n'));
+        bool found        = false;
+
+        Q_FOREACH (const QString& l, lines)
+        {
+            qCDebug(DIGIKAM_GENERAL_LOG) << l;
+
+            if (!found && l.startsWith(QLatin1String("List of available languages")))
+            {
+                found = true;
+                continue;
+            }
+
+            if (found && !l.isEmpty())
+            {
+                langs << l;
+            }
+        }
+    }
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Tesseract Languages:" << langs;
+
+    return langs;
 }
 
 } // namespace DigikamGenericTextConverterPlugin

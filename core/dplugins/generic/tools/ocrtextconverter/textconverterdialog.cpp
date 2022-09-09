@@ -24,6 +24,7 @@
 #include <QGridLayout>
 #include <QTimer>
 #include <QMessageBox>
+#include <QListWidget>
 
 // KDE includes
 
@@ -64,6 +65,7 @@ public:
         textedit            (nullptr),
         saveTextButton      (nullptr),
         currentSelectedItem (nullptr),
+        tesseractLangs      (nullptr),
         binWidget           (nullptr)
     {
     }
@@ -92,6 +94,8 @@ public:
 
     OcrTesseractEngine                ocrEngine;
 
+    QListWidget*                      tesseractLangs;
+
     TesseractBinary                   tesseractBin;
     DBinarySearch*                    binWidget;
 };
@@ -109,6 +113,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     m_buttons->addButton(QDialogButtonBox::Close);
     m_buttons->addButton(QDialogButtonBox::Ok);
     m_buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action:button", "&Start OCR"));
+    m_buttons->button(QDialogButtonBox::Ok)->setDisabled(true);
     QWidget* const mainWidget = new QWidget(this);
 
     QVBoxLayout* const vbx    = new QVBoxLayout(this);
@@ -159,6 +164,12 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
 #endif
 
+    //-------------------------------------------------------------------------------------------
+
+    QLabel* const languagesLabel      = new QLabel(i18nc("@label", "Tesseract Languages:"), mainWidget);
+
+    d->tesseractLangs                 = new QListWidget(mainWidget);
+
     d->ocrSettings                    = new TextConverterSettings(mainWidget);
 
     d->progressBar                    = new DProgressWdg(mainWidget);
@@ -169,22 +180,24 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     d->textedit->setLinesVisible(20);
     d->textedit->setPlaceholderText(QLatin1String("Recognized text is displayed here"));
 
-    d->saveTextButton = new QPushButton(mainWidget);
+    d->saveTextButton                 = new QPushButton(mainWidget);
     d->saveTextButton->setText(i18nc("@action: button", "Save"));
     d->saveTextButton->setEnabled(false);
 
     //-------------------------------------------------------------------------------------------
 
-    mainLayout->addWidget(d->listView,                       0, 0, 6, 1);
+    mainLayout->addWidget(d->listView,                       0, 0, 9, 1);
     mainLayout->addWidget(tesseractLabel,                    0, 1, 1, 1);
     mainLayout->addWidget(d->binWidget,                      1, 1, 2, 1);
-    mainLayout->addWidget(d->ocrSettings,                    3, 1, 1, 1);
-    mainLayout->addWidget(d->textedit,                       4, 1, 1, 1);
-    mainLayout->addWidget(d->saveTextButton,                 5, 1, 1, 1);
-    mainLayout->addWidget(d->progressBar,                    6, 1, 1, 1);
+    mainLayout->addWidget(languagesLabel,                    3, 1, 1, 1);
+    mainLayout->addWidget(d->tesseractLangs,                 4, 1, 1, 1);
+    mainLayout->addWidget(d->ocrSettings,                    5, 1, 1, 1);
+    mainLayout->addWidget(d->textedit,                       6, 1, 1, 1);
+    mainLayout->addWidget(d->saveTextButton,                 7, 1, 1, 1);
+    mainLayout->addWidget(d->progressBar,                    8, 1, 1, 1);
     mainLayout->setColumnStretch(0, 10);
-    mainLayout->setRowStretch(1, 3);
-    mainLayout->setRowStretch(4, 10);
+    mainLayout->setRowStretch(1, 2);
+    mainLayout->setRowStretch(6, 10);
     mainLayout->setContentsMargins(QMargins());
 
     // ---------------------------------------------------------------
@@ -234,10 +247,11 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     d->listView->setIface(d->iface);
     d->listView->loadImagesFromCurrentSelection();
 
-    busy(false);
     readSettings();
 
-    d->binWidget->allBinariesFound();
+    // ---------------------------------------------------------------
+
+    QTimer::singleShot(0, this, SLOT(slotStartFoundTesseract()));
 }
 
 TextConverterDialog::~TextConverterDialog()
@@ -629,8 +643,18 @@ void TextConverterDialog::slotAborted()
     d->progressBar->progressCompleted();
 }
 
+void TextConverterDialog::slotStartFoundTesseract()
+{
+    if (d->binWidget->allBinariesFound())
+    {
+        slotTesseractBinaryFound(true);
+    }
+}
+
 void TextConverterDialog::slotTesseractBinaryFound(bool b)
 {
+    busy(false);
+
     // Disable Start button if Tesseract is not found.
 
     m_buttons->button(QDialogButtonBox::Ok)->setDisabled(b);
@@ -642,6 +666,15 @@ void TextConverterDialog::slotTesseractBinaryFound(bool b)
     else
     {
         m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18n("Tesseract program is not found on your system."));
+    }
+
+    QStringList langs = d->tesseractBin.tesseractLanguages();
+
+    d->tesseractLangs->clear();
+
+    Q_FOREACH (const QString& l, langs)
+    {
+        d->tesseractLangs->addItem(l);
     }
 }
 
