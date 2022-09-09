@@ -13,7 +13,6 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
-#
 
 # use pkg-config to get the directories and then use these values
 # in the FIND_PATH() and FIND_LIBRARY() calls

@@ -4,7 +4,6 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
-#
 
 if (NOT ${KDE_INSTALL_FULL_KNOTIFY5RCDIR} STREQUAL "")
 

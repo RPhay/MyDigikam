@@ -9,7 +9,6 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
-#
 
 if(GLIB2_INCLUDE_DIR AND GLIB2_LIBRARIES)
     # Already in cache, be silent

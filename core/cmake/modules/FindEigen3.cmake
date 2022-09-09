@@ -16,7 +16,6 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
-#
 
 if(NOT Eigen3_FIND_VERSION)
   if(NOT Eigen3_FIND_VERSION_MAJOR)

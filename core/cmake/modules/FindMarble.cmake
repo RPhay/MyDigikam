@@ -10,7 +10,6 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
-#
 
 IF ( MARBLE_INCLUDE_DIR AND MARBLE_LIBRARIES )
 

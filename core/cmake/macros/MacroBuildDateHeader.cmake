@@ -4,7 +4,6 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
-#
 
 macro(BUILD_DATE_HEADER)
 

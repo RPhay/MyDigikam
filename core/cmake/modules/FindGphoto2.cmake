@@ -14,7 +14,6 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
-#
 
 set(GPHOTO2_FIND_REQUIRED ${Gphoto2_FIND_REQUIRED})
 

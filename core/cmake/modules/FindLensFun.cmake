@@ -13,7 +13,6 @@
 # Copyright (c) 2012-2022 by Caulier Gilles <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
-#.
 #
 
 IF(LENSFUN_LIBRARIES AND LENSFUN_INCLUDE_DIRS AND LENSFUN_DEFINITIONS AND LENSFUN_VERSION)

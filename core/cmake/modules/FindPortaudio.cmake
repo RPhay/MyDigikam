@@ -9,8 +9,7 @@
 #
 # Copyright (c) 2006 Andreas Schneider <mail@cynapses.org>
 #
-# Redistribution and use is allowed according to the terms of the New BSD license.
-#
+# SPDX-License-Identifier: BSD-3-Clause
 #
 
 if (PORTAUDIO_LIBRARIES AND PORTAUDIO_INCLUDE_DIRS)
