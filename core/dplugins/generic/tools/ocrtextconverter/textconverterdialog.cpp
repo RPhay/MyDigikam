@@ -162,7 +162,8 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     mainLayout->addWidget(d->saveTextButton,                 5, 1, 1, 1);
     mainLayout->addWidget(d->progressBar,                    6, 1, 1, 1);
     mainLayout->setColumnStretch(0, 10);
-    mainLayout->setRowStretch(1, 10);
+    mainLayout->setRowStretch(1, 3);
+    mainLayout->setRowStretch(4, 10);
     mainLayout->setContentsMargins(QMargins());
 
     // ---------------------------------------------------------------
