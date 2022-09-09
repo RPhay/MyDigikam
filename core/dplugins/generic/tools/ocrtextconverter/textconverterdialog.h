@@ -64,7 +64,7 @@ private:
 
 Q_SIGNALS:
 
-    void singalMetadataChangedForUrl(const QUrl&);
+    void signalMetadataChangedForUrl(const QUrl&);
 
 private Q_SLOTS:
 
@@ -79,6 +79,8 @@ private Q_SLOTS:
     void slotUpdateText();
 
     void slotSetDisable();
+
+    void slotTesseractBinaryFound(bool);
 
 private:
 

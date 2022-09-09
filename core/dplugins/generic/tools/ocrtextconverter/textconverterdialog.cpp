@@ -123,7 +123,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     QLabel* const tesseractLabel      = new QLabel(i18nc("@label", "This tool use the %1 open-source "
                                                    "engine to perform Optical Carracters Recognition. "
-                                                   "Terreract and the desired languages packages must "
+                                                   "Terreract program and the desired languages packages must "
                                                    "be installed on your system.",
                                                    QString::fromUtf8("<a href='https://github.com/tesseract-ocr/tesseract'>Tesseract</a>")),
                                                    mainWidget);
@@ -223,8 +223,11 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     connect(d->saveTextButton, SIGNAL(clicked()),
             this, SLOT(slotUpdateText()));
 
-    connect(this, SIGNAL(singalMetadataChangedForUrl(QUrl)),
+    connect(this, SIGNAL(signalMetadataChangedForUrl(QUrl)),
             d->iface, SLOT(slotMetadataChangedForUrl(QUrl)));
+
+    connect(d->binWidget, SIGNAL(signalBinariesFound(bool)),
+            this, SLOT(slotTesseractBinaryFound(bool)));
 
     // ---------------------------------------------------------------
 
@@ -285,7 +288,7 @@ void TextConverterDialog::slotUpdateText()
         {
             d->ocrEngine.saveXMP(d->currentSelectedItem->url().toLocalFile(), newText);
 
-            Q_EMIT singalMetadataChangedForUrl(d->currentSelectedItem->url());
+            Q_EMIT signalMetadataChangedForUrl(d->currentSelectedItem->url());
         }
     }
 }
@@ -343,7 +346,7 @@ void TextConverterDialog::slotTextConverterAction(const DigikamGenericTextConver
                 {
                     d->textEditList[ad.fileUrl] = ad.outputText;
                     processed(ad.fileUrl, ad.destPath, ad.outputText);
-                    Q_EMIT singalMetadataChangedForUrl(ad.fileUrl);
+                    Q_EMIT signalMetadataChangedForUrl(ad.fileUrl);
                     break;
                 }
 
@@ -624,6 +627,22 @@ void TextConverterDialog::slotAborted()
     d->progressBar->setValue(0);
     d->progressBar->hide();
     d->progressBar->progressCompleted();
+}
+
+void TextConverterDialog::slotTesseractBinaryFound(bool b)
+{
+    // Disable Start button if Tesseract is not found.
+
+    m_buttons->button(QDialogButtonBox::Ok)->setDisabled(b);
+
+    if (b)
+    {
+        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18n("Start OCR using the current settings."));
+    }
+    else
+    {
+        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18n("Tesseract program is not found on your system."));
+    }
 }
 
 } // namespace DigikamGenericTextConverterPlugin
