@@ -121,11 +121,14 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     QGridLayout* const mainLayout     = new QGridLayout(mainWidget);
     d->listView                       = new TextConverterList(mainWidget);
 
-    QLabel* const tesseractLabel      = new QLabel(i18nc("@label", "This tool use the open-source Tesseract "
+    QLabel* const tesseractLabel      = new QLabel(i18nc("@label", "This tool use the %1 open-source "
                                                    "engine to perform Optical Carracters Recognition. "
                                                    "Terreract and the desired languages packages must "
-                                                   "be installed on your system."), mainWidget);
+                                                   "be installed on your system.",
+                                                   QString::fromUtf8("<a href='https://github.com/tesseract-ocr/tesseract'>Tesseract</a>")),
+                                                   mainWidget);
     tesseractLabel->setWordWrap(true);
+    tesseractLabel->setOpenExternalLinks(true);
 
     d->binWidget                      = new DBinarySearch(mainWidget);
     d->binWidget->addBinary(d->tesseractBin);
@@ -135,6 +138,24 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     // Std Macports install
 
     d->binWidget->addDirectory(QLatin1String("/opt/local/bin"));
+
+    // digiKam Bundle PKG install
+
+    d->binWidget->addDirectory(macOSBundlePrefix() + QLatin1String("bin"));
+
+#endif
+
+#ifdef Q_OS_WIN
+
+    d->binWidget->addDirectory(QLatin1String("C:/Program Files/digiKam"));
+
+#endif
+
+#ifdef Q_OS_UNIX
+
+    d->binWidget->addDirectory(QLatin1String("/usr/bin"));
+    d->binWidget->addDirectory(QLatin1String("/usr/local/bin"));
+    d->binWidget->addDirectory(QLatin1String("/bin"));
 
 #endif
 
@@ -168,8 +189,6 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     // ---------------------------------------------------------------
 
-    // TODO Thread operation
-
     d->thread = new TextConverterActionThread(this);
 
     connect(d->thread, SIGNAL(signalStarting(DigikamGenericTextConverterPlugin::TextConverterActionData)),
@@ -182,8 +201,6 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
             this, SLOT(slotThreadFinished()));
 
     // ---------------------------------------------------------------
-
-    // TODO connect
 
     connect(m_buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
             this, SLOT(slotStartStop()));
