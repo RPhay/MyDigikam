@@ -15,9 +15,7 @@ include_directories(
                     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
 
                     $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:KF5::TextWidgets,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:KF5::SonnetUi,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
 set(textconverterbackend_SRCS
@@ -37,8 +35,6 @@ add_library(textconverterbackend STATIC ${textconverterbackend_SRCS})
 target_link_libraries(textconverterbackend
                       PRIVATE
                       digikamcore
-                      KF5::TextWidgets
-                      KF5::SonnetUi
 )
 
 set(textconverterplugin_SRCS
@@ -46,6 +42,6 @@ set(textconverterplugin_SRCS
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    TEXTConverter
-                          SOURCES ${textconverterplugin_SRCS}
-                          DEPENDS textconverterbackend
+                           SOURCES ${textconverterplugin_SRCS}
+                           DEPENDS textconverterbackend
 )
