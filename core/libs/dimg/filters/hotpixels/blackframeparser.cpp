@@ -6,9 +6,9 @@
  * Date        : 2005-03-27
  * Description : black frames parser
  *
- * Copyright (C) 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2005-2006 by Unai Garro <ugarro at users dot sourceforge dot net>
- * Copyright (C) 2015      by Mohamed_Anwer <d->dot_anwer at gmx dot com>
+ * SPDX-FileCopyrightText: 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2005-2006 by Unai Garro <ugarro at users dot sourceforge dot net>
+ * SPDX-FileCopyrightText: 2015      by Mohamed_Anwer <d->dot_anwer at gmx dot com>
  *
  * Part of the algorithm for finding the hot pixels was based on
  * the code of jpegpixi, which was released under the GPL license,

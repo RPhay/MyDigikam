@@ -6,7 +6,7 @@
  * Date        : 2011-02-16
  * Description : pick label filter
  *
- * Copyright (C) 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

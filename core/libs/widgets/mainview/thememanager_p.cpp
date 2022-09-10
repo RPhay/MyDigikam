@@ -6,8 +6,8 @@
  * Date        : 2004-08-02
  * Description : colors theme manager - private classes
  *
- * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2007      by Matthew Woehlke <mw_triad at users dot sourceforge dot net>
+ * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2007      by Matthew Woehlke <mw_triad at users dot sourceforge dot net>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

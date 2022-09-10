@@ -10,7 +10,7 @@
  *               This file contains the interface constants, structure definitions
  *               and function prototypes.
  *
- * Copyright (C) 2012-2022 Wang Bin <wbsecg1 at gmail dot com>
+ * SPDX-FileCopyrightText: 2012-2022 Wang Bin <wbsecg1 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

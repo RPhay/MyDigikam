@@ -6,12 +6,12 @@
  * Date        : 2004-09-29
  * Description : helper methods for JPEG image format.
  *
- * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * Parts of the loading code is taken from qjpeghandler.cpp
- * Copyright (C) 2011 Nokia Corporation and/or its subsidiary(-ies).
+ * SPDX-FileCopyrightText: 2011 Nokia Corporation and/or its subsidiary(-ies).
  * All rights reserved.
  * Contact: Nokia Corporation (qt-info@nokia.com)
  *

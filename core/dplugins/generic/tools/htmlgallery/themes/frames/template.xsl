@@ -9,7 +9,7 @@
  * Date        : 2010-01-21
  * Description : A framed theme for the digiKam html gallery tool.
  *
- * Copyright (C) 2010 by Ruediger Bente <ruediger dot bente at gmx dot de>
+ * SPDX-FileCopyrightText: 2010 by Ruediger Bente <ruediger dot bente at gmx dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

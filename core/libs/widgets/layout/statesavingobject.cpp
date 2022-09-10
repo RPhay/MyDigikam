@@ -6,7 +6,7 @@
  * Date        : 2009-20-12
  * Description : Interface class for objects that can store their state.
  *
- * Copyright (C) 2009 by Johannes Wienke <languitar at semipol dot de>
+ * SPDX-FileCopyrightText: 2009 by Johannes Wienke <languitar at semipol dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

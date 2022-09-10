@@ -3,8 +3,8 @@
  * Date        : 2010-02-05
  * Description : JavaScript part of the GoogleMaps-backend for WorldMapWidget2
  *
- * Copyright (C) 2010, 2011, 2014 by Michael G. Hansen <mike at mghansen dot de>
- * Copyright (C) 2014 by Justus Schwartz <justus at gmx dot li>
+ * SPDX-FileCopyrightText: 2010, 2011, 2014 by Michael G. Hansen <mike at mghansen dot de>
+ * SPDX-FileCopyrightText: 2014 by Justus Schwartz <justus at gmx dot li>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

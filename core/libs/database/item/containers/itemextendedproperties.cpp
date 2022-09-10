@@ -6,9 +6,9 @@
  * Date        : 2009-07-04
  * Description : Access to extended properties of an item in the database
  *
- * Copyright (C) 2009      by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2017-2018 by Mario Frank    <mario dot frank at uni minus potsdam dot de>
+ * SPDX-FileCopyrightText: 2009      by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2017-2018 by Mario Frank    <mario dot frank at uni minus potsdam dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

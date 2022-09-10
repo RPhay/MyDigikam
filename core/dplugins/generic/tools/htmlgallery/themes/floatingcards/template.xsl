@@ -10,7 +10,7 @@
  * Description : A dark theme with floating thumbnail and description
  *               cards for the digiKam html gallery tool.
  *
- * Copyright (C) 2009 by Jiří Boháč <jiri at boha dot cz>
+ * SPDX-FileCopyrightText: 2009 by Jiří Boháč <jiri at boha dot cz>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

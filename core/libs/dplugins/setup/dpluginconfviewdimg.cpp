@@ -6,7 +6,7 @@
  * Date        : 2018-09-22
  * Description : configuration view for external DImg plugin
  *
- * Copyright (C) 2020-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2020-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

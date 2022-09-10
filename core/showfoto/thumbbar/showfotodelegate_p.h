@@ -6,8 +6,8 @@
  * Date        : 2013-08-01
  * Description : Qt model view for Showfoto item - the delegate Private
  *
- * Copyright (C) 2013      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
- * Copyright (C) 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2013      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
+ * SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

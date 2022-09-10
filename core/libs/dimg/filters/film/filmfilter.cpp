@@ -6,7 +6,7 @@
  * Date        : 2012-02-05
  * Description : film color negative inverter filter
  *
- * Copyright (C) 2012 by Matthias Welwarsky <matthias at welwarsky dot de>
+ * SPDX-FileCopyrightText: 2012 by Matthias Welwarsky <matthias at welwarsky dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

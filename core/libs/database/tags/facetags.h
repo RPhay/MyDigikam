@@ -6,8 +6,8 @@
  * Date        : 2011-08-08
  * Description : Accessing face tags
  *
- * Copyright (C) 2010-2011 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
- * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2010-2011 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

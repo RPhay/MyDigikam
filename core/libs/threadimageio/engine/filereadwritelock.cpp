@@ -6,10 +6,10 @@
  * Date        : 2012-01-29
  * Description : Intra-process file i/o lock
  *
- * Copyright (C) 2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * Parts of this file are based on qreadwritelock.cpp, LGPL,
- * Copyright (C) 2011 Nokia Corporation and/or its subsidiary(-ies).
+ * SPDX-FileCopyrightText: 2011 Nokia Corporation and/or its subsidiary(-ies).
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

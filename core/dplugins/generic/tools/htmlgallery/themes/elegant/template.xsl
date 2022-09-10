@@ -9,7 +9,7 @@
  * Date        : 2007-03-11
  * Description : A LyteBox based theme for the digiKam html gallery tool.
  *
- * Copyright (C) 2007 by Wojciech Jarosz <jiri at boha dot cz>
+ * SPDX-FileCopyrightText: 2007 by Wojciech Jarosz <jiri at boha dot cz>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

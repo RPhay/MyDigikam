@@ -6,7 +6,7 @@
  * Date        : 2010-08-03
  * Description : Widget displaying filters history used on an image
  *
- * Copyright (C) 2010 by Martin Klapetek <martin dot klapetek at gmail dot com>
+ * SPDX-FileCopyrightText: 2010 by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

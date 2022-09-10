@@ -6,8 +6,8 @@
  * Date        : 2015-06-15
  * Description : IO Jobs thread for file system jobs
  *
- * Copyright (C) 2015 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
- * Copyright (C) 2018 by Maik Qualmann <metzpinguin at gmail dot com>
+ * SPDX-FileCopyrightText: 2015 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
+ * SPDX-FileCopyrightText: 2018 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

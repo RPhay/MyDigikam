@@ -9,7 +9,7 @@
  * Date        : 2011-03-30
  * Description : A cleaned frame theme for the digiKam html gallery tool.
  *
- * Copyright (C) 2011 by Elizabeth Marmorstein <purplegamba at cox dot net>
+ * SPDX-FileCopyrightText: 2011 by Elizabeth Marmorstein <purplegamba at cox dot net>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

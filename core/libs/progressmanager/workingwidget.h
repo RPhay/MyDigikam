@@ -6,8 +6,8 @@
  * Date        : 2010-07-27
  * Description : Widget showing a throbber ("working" animation)
  *
- * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
- * Copyright (C) 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

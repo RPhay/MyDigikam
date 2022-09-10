@@ -6,8 +6,8 @@
  * Date        : 2014-05-17
  * Description : Album Labels Tree View.
  *
- * Copyright (C) 2014-2015 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
- * Copyright (C) 2014-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2014-2015 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
+ * SPDX-FileCopyrightText: 2014-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

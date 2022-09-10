@@ -6,7 +6,7 @@
  * Date        : 2010-07-24
  * Description : Core database privileges checker
  *
- * Copyright (C) 2010 by Holger Foerster <hamsi2k at freenet dot de>
+ * SPDX-FileCopyrightText: 2010 by Holger Foerster <hamsi2k at freenet dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

@@ -8,7 +8,7 @@
  *               a custom context menu and some batch view options, such as
  *               expanding multiple items
  *
- * Copyright (C) 2013 by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
+ * SPDX-FileCopyrightText: 2013 by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

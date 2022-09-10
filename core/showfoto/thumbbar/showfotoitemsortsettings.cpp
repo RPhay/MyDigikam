@@ -6,7 +6,7 @@
  * Date        : 29-07-2013
  * Description : Sort settings for showfoto item infos
  *
- * Copyright (C) 2013 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
+ * SPDX-FileCopyrightText: 2013 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

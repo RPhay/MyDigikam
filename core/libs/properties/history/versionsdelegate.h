@@ -6,7 +6,7 @@
  * Date        : 2010-07-15
  * Description : Item delegate for image versions list view
  *
- * Copyright (C) 2010-2011 by Martin Klapetek <martin dot klapetek at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2011 by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

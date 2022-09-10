@@ -6,8 +6,8 @@
  * Date        : 2010-09-15
  * Description : Special combo box for adding or creating tags
  *
- * Copyright (C) 2010       by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 1997       by Sven Radej (sven.radej@iname.com)
+ * SPDX-FileCopyrightText: 2010       by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 1997       by Sven Radej (sven.radej@iname.com)
  * Copyright (c) 1999       by Patrick Ward <PAT_WARD@HP-USA-om5.om.hp.com>
  * Copyright (c) 1999       by Preston Brown <pbrown at kde dot org>
  * Copyright (c) 2000, 2001 by Dawit Alemayehu <adawit at kde dot org>

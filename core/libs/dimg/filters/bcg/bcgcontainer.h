@@ -6,9 +6,9 @@
  * Date        : 2010-12-15
  * Description : a Brightness/Contrast/Gamma settings container.
  *
- * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
+ * SPDX-FileCopyrightText: 2005      by Renchi Raju <renchi dot raju at gmail dot com>
+ * SPDX-FileCopyrightText: 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

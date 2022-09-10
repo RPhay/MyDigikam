@@ -9,7 +9,7 @@
  * Date        : 2013-12-11
  * Description : A blue curved theme for the digiKam html gallery tool.
  *
- * Copyright (C) 2013 by Vincent Deroo Blanquart <vincent dot deroo at free dot fr>
+ * SPDX-FileCopyrightText: 2013 by Vincent Deroo Blanquart <vincent dot deroo at free dot fr>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

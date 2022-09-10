@@ -6,7 +6,7 @@
  * Date        : 2010-06-23
  * Description : model for view with used filters on currently loaded image
  *
- * Copyright (C) 2010 by Martin Klapetek <martin dot klapetek at gmail dot com>
+ * SPDX-FileCopyrightText: 2010 by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

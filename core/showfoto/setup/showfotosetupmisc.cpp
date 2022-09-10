@@ -6,9 +6,9 @@
  * Date        : 2005-04-02
  * Description : setup Misc tab.
  *
- * Copyright (C) 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C)      2008 by Arnd Baecker <arnd dot baecker at web dot de>
- * Copyright (C)      2014 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
+ * SPDX-FileCopyrightText: 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText:      2008 by Arnd Baecker <arnd dot baecker at web dot de>
+ * SPDX-FileCopyrightText:      2014 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

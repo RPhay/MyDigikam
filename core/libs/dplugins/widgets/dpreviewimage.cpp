@@ -6,9 +6,9 @@
  * Date        : 2009-12-13
  * Description : a widget to preview image effect.
  *
- * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2008      by Kare Sars <kare dot sars at iki dot fi>
- * Copyright (C) 2012      by Benjamin Girault <benjamin dot girault at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2008      by Kare Sars <kare dot sars at iki dot fi>
+ * SPDX-FileCopyrightText: 2012      by Benjamin Girault <benjamin dot girault at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

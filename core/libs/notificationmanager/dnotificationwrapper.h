@@ -6,8 +6,8 @@
  * Date        : 2008-07-03
  * Description : A wrapper send desktop notifications
  *
- * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2009-2011 by Michael G. Hansen <mike at mghansen dot de>
+ * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2011 by Michael G. Hansen <mike at mghansen dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

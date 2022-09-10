@@ -10,7 +10,7 @@
  *               thumbnail bar. It inherits QDockWidget and can be used in
  *               the dock area's of a QMainWindow.
  *
- * Copyright (C) 2009 by Pieter Edelman <p dot edelman at gmx dot net>
+ * SPDX-FileCopyrightText: 2009 by Pieter Edelman <p dot edelman at gmx dot net>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

@@ -6,7 +6,7 @@
  * Date        : 30-07-2013
  * Description : Qt filter model for showfoto items
  *
- * Copyright (C) 2013 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
+ * SPDX-FileCopyrightText: 2013 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

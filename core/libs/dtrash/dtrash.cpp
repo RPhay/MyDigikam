@@ -6,7 +6,7 @@
  * Date        : 2015-07-27
  * Description : Special digiKam trash implementation
  *
- * Copyright (C) 2015 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
+ * SPDX-FileCopyrightText: 2015 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

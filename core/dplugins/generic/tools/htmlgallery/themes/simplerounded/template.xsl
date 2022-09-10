@@ -9,7 +9,7 @@
  * Date        : 2009-02-01
  * Description : A rounded corner theme for the digiKam html gallery tool.
  *
- * Copyright (C) 2009 by Franz Dietrich <enaut dot w at googlemail dot com>
+ * SPDX-FileCopyrightText: 2009 by Franz Dietrich <enaut dot w at googlemail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

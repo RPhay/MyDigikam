@@ -6,7 +6,7 @@
  * Date        : 2009-07-05
  * Description : A combobox delegate to display in Web service image lists.
  *
- * Copyright (C) 2009 by Pieter Edelman <pieter dot edelman at gmx dot net>
+ * SPDX-FileCopyrightText: 2009 by Pieter Edelman <pieter dot edelman at gmx dot net>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

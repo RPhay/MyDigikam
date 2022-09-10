@@ -6,8 +6,8 @@
  * Date        : 2009-08-09
  * Description : LDR ToneMapper <zynaddsubfx.sourceforge.net/other/tonemapping>.
  *
- * Copyright (C) 2009      by Nasca Octavian Paul <zynaddsubfx at yahoo dot com>
- * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009      by Nasca Octavian Paul <zynaddsubfx at yahoo dot com>
+ * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

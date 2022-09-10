@@ -6,8 +6,8 @@
  * Date        : 2009-07-05
  * Description : A combobox which also has an intermediate state.
  *
- * Copyright (C) 2009      by Pieter Edelman <pieter dot edelman at gmx dot net>
- * Copyright (C) 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009      by Pieter Edelman <pieter dot edelman at gmx dot net>
+ * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

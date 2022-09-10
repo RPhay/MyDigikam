@@ -6,9 +6,9 @@
  * Date        : 2015-08-01
  * Description : new album creation dialog for remote web service.
  *
- * Copyright (C) 2010 by Jens Mueller <tschenser at gmx dot de>
- * Copyright (C) 2015 by Shourya Singh Gupta <shouryasgupta at gmail dot com>
- * Copyright (C) 2018 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * SPDX-FileCopyrightText: 2010 by Jens Mueller <tschenser at gmx dot de>
+ * SPDX-FileCopyrightText: 2015 by Shourya Singh Gupta <shouryasgupta at gmail dot com>
+ * SPDX-FileCopyrightText: 2018 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

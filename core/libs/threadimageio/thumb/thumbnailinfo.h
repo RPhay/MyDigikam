@@ -6,7 +6,7 @@
  * Date        : 2014-11-15
  * Description : Information for thumbnails
  *
- * Copyright (C) 2006-2014 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2006-2014 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

@@ -7,8 +7,8 @@
  * Description : QtAV: Multimedia framework based on Qt and FFmpeg
  *               XAudio2 compat layer with both DXSDK and WINSDK support
  *
- * Copyright (C) 2012-2022 Wang Bin <wbsecg1 at gmail dot com>
- * Copyright (C)      2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2012-2022 Wang Bin <wbsecg1 at gmail dot com>
+ * SPDX-FileCopyrightText:      2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

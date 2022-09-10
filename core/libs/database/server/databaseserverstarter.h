@@ -6,8 +6,8 @@
  * Date        : 2010-01-08
  * Description : database server starter
  *
- * Copyright (C) 2009-2010 by Holger Foerster <Hamsi2k at freenet dot de>
- * Copyright (C) 2016      by Swati Lodha <swatilodha27 at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2010 by Holger Foerster <Hamsi2k at freenet dot de>
+ * SPDX-FileCopyrightText: 2016      by Swati Lodha <swatilodha27 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

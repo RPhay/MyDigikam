@@ -6,8 +6,8 @@
  * Date        : 25/08/2013
  * Description : Image Quality Parser
  *
- * Copyright (C) 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2013-2014 by Gowtham Ashok <gwty93 at gmail dot com>
+ * SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2013-2014 by Gowtham Ashok <gwty93 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

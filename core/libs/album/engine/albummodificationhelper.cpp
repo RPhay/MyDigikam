@@ -6,8 +6,8 @@
  * Date        : 2000-12-05
  * Description : helper class used to modify physical albums in views
  *
- * Copyright (C) 2009-2011 by Johannes Wienke <languitar at semipol dot de>
- * Copyright (C) 2014-2015 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
+ * SPDX-FileCopyrightText: 2009-2011 by Johannes Wienke <languitar at semipol dot de>
+ * SPDX-FileCopyrightText: 2014-2015 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

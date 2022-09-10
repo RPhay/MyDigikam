@@ -6,8 +6,8 @@
  * Date        : 2005-03-27
  * Description : a class to calculate filter weights for hot pixels tool
  *
- * Copyright (C) 2005-2006 by Unai Garro <ugarro at users dot sourceforge dot net>
- * Copyright (C) 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2005-2006 by Unai Garro <ugarro at users dot sourceforge dot net>
+ * SPDX-FileCopyrightText: 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

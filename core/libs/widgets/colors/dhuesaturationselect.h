@@ -6,8 +6,8 @@
  * Date        : 1997-02-20
  * Description : color chooser widgets
  *
- * Copyright (C)      1997 by Martin Jones (mjones at kde dot org)
- * Copyright (C) 2015-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText:      1997 by Martin Jones (mjones at kde dot org)
+ * SPDX-FileCopyrightText: 2015-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

@@ -4,7 +4,7 @@
  *
  * Date        : 11.09.2015
  *
- * Copyright (C) 2012 by Marcel Wiesweg <marcel dot wiesweg at uk-essen dot de>
+ * SPDX-FileCopyrightText: 2012 by Marcel Wiesweg <marcel dot wiesweg at uk-essen dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

@@ -9,7 +9,7 @@
  * Date        : 2018-05-10
  * Description : A slideshow theme for the digiKam html gallery tool.
  *
- * Copyright (C) 2018 by Simon Kuss <sjk281 at iinet dot net dot au>
+ * SPDX-FileCopyrightText: 2018 by Simon Kuss <sjk281 at iinet dot net dot au>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

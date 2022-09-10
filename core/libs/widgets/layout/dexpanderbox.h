@@ -6,9 +6,9 @@
  * Date        : 2008-03-14
  * Description : A widget to host settings as expander box
  *
- * Copyright (C) 2008-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C)      2010 by Manuel Viet <contact at 13zenrv dot fr>
+ * SPDX-FileCopyrightText: 2008-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText:      2010 by Manuel Viet <contact at 13zenrv dot fr>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
