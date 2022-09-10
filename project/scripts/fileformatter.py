@@ -10,7 +10,7 @@
 # prerequisites: Python 2.7 or higher: http://www.python.org
 #                AStyle:               http://astyle.sourceforge.net
 #
-# Copyright (C) 2011 by Andi Clemens <andi dot clemens at gmail dot com>
+# SPDX-FileCopyrightText: 2011 by Andi Clemens <andi dot clemens at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
