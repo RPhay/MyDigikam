@@ -23,7 +23,10 @@
 
 #include <QGridLayout>
 #include <QTimer>
+#include <QStyle>
+#include <QApplication>
 #include <QMessageBox>
+#include <QTabWidget>
 
 // KDE includes
 
@@ -40,6 +43,7 @@
 #include "textconvertersettings.h"
 #include "ocroptions.h"
 #include "dtextedit.h"
+#include "dlayoutbox.h"
 #include "textconverterthread.h"
 #include "textconverteraction.h"
 #include "tesseractbinary.h"
@@ -55,6 +59,14 @@ class TextConverterDialog::Private
 {
 public:
 
+    enum OcrTabs
+    {
+        RecognitionTab = 0,
+        ReviewTab
+    };
+
+public:
+
     Private()
       : busy                (false),
         progressBar         (nullptr),
@@ -66,7 +78,8 @@ public:
         saveTextButton      (nullptr),
         currentSelectedItem (nullptr),
         binWidget           (nullptr),
-        localizeList        (nullptr)
+        localizeList        (nullptr),
+        tabView             (nullptr)
     {
     }
 
@@ -96,6 +109,8 @@ public:
     DBinarySearch*                    binWidget;
 
     LocalizeSelectorList*             localizeList;
+
+    QTabWidget*                       tabView;
 };
 
 TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* const iface)
@@ -107,6 +122,9 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     setModal(true);
 
     d->iface                  = iface;
+
+    const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     m_buttons->addButton(QDialogButtonBox::Close);
     m_buttons->addButton(QDialogButtonBox::Ok);
@@ -123,17 +141,22 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     QGridLayout* const mainLayout     = new QGridLayout(mainWidget);
     d->listView                       = new TextConverterList(mainWidget);
+    d->tabView                        = new QTabWidget(mainWidget);
+
+    // -- Recognition tab
+
+    DVBox* const recognitionTab       = new DVBox(d->tabView);
 
     QLabel* const tesseractLabel      = new QLabel(i18nc("@label", "This tool use the %1 open-source "
                                                    "engine to perform Optical Characters Recognition. "
                                                    "Tesseract program and the desired languages modules must "
                                                    "be installed on your system.",
                                                    QString::fromUtf8("<a href='https://github.com/tesseract-ocr/tesseract'>Tesseract</a>")),
-                                                   mainWidget);
+                                                   recognitionTab);
     tesseractLabel->setWordWrap(true);
     tesseractLabel->setOpenExternalLinks(true);
 
-    d->binWidget                      = new DBinarySearch(mainWidget);
+    d->binWidget                      = new DBinarySearch(recognitionTab);
     d->binWidget->addBinary(d->tesseractBin);
 
 #ifdef Q_OS_MACOS
@@ -162,38 +185,49 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
 #endif
 
-    //-------------------------------------------------------------------------------------------
+    d->ocrSettings                    = new TextConverterSettings(recognitionTab);
 
-    d->ocrSettings                    = new TextConverterSettings(mainWidget);
-
-    d->localizeList                   = new LocalizeSelectorList(mainWidget);
+    d->localizeList                   = new LocalizeSelectorList(recognitionTab);
     d->localizeList->setTitle(i18nc("@label", "Translate to:"));
 
-    d->progressBar                    = new DProgressWdg(mainWidget);
+    QWidget* const space              = new QWidget(recognitionTab);
+    recognitionTab->setStretchFactor(space, 10);
+
+    d->progressBar                    = new DProgressWdg(recognitionTab);
     d->progressBar->reset();
     d->progressBar->hide();
 
-    d->textedit                       = new DTextEdit(mainWidget);
-    d->textedit->setLinesVisible(20);
-    d->textedit->setPlaceholderText(QLatin1String("Recognized text is displayed here"));
+    recognitionTab->setContentsMargins(spacing, spacing, spacing, spacing);
 
-    d->saveTextButton                 = new QPushButton(mainWidget);
+    d->tabView->insertTab(Private::RecognitionTab, recognitionTab, i18nc("@title", "Text Recognition"));
+
+    // --- Review tab
+
+    DVBox* const reviewTab            = new DVBox(d->tabView);
+    d->textedit                       = new DTextEdit(reviewTab);
+    d->textedit->setLinesVisible(20);
+    d->textedit->setPlaceholderText(i18nc("@info", "After to process recognition, "
+                                                   "double-click on one item to "
+                                                   "display recognized text here. "
+                                                   "You can review words and fix "
+                                                   "if necessary. Press the Save "
+                                                   "button to record your changes."));
+    reviewTab->setStretchFactor(d->textedit, 100);
+
+    d->saveTextButton                 = new QPushButton(reviewTab);
     d->saveTextButton->setText(i18nc("@action: button", "Save"));
     d->saveTextButton->setEnabled(false);
 
+    reviewTab->setContentsMargins(spacing, spacing, spacing, spacing);
+
+    d->tabView->insertTab(Private::ReviewTab, reviewTab, i18nc("@title", "Text Review"));
+
     //-------------------------------------------------------------------------------------------
 
-    mainLayout->addWidget(d->listView,       0, 0, 8, 1);
-    mainLayout->addWidget(tesseractLabel,    0, 1, 1, 1);
-    mainLayout->addWidget(d->binWidget,      1, 1, 2, 1);
-    mainLayout->addWidget(d->ocrSettings,    3, 1, 1, 1);
-    mainLayout->addWidget(d->localizeList,   4, 1, 1, 1);
-    mainLayout->addWidget(d->textedit,       5, 1, 1, 1);
-    mainLayout->addWidget(d->saveTextButton, 6, 1, 1, 1);
-    mainLayout->addWidget(d->progressBar,    7, 1, 1, 1);
+    mainLayout->addWidget(d->listView,       0, 0, 1, 1);
+    mainLayout->addWidget(d->tabView,        0, 1, 1, 1);
     mainLayout->setColumnStretch(0, 10);
-    mainLayout->setRowStretch(1, 2);
-    mainLayout->setRowStretch(5, 10);
+    mainLayout->setRowStretch(0, 10);
     mainLayout->setContentsMargins(QMargins());
 
     // ---------------------------------------------------------------
