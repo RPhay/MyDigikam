@@ -19,15 +19,12 @@
 // Qt includes
 
 #include <QMap>
-
-// Local includes
-
-#include "digikam_export.h"
+#include <QString>
 
 namespace DigikamGenericTextConverterPlugin
 {
 
-class DIGIKAM_EXPORT OcrOptions
+class OcrOptions
 {
 
 public:
