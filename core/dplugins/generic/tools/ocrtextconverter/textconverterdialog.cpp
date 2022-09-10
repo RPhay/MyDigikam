@@ -198,14 +198,14 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     d->progressBar->hide();
 
     recognitionTab->setContentsMargins(spacing, spacing, spacing, spacing);
+    recognitionTab->setSpacing(spacing);
 
     d->tabView->insertTab(Private::RecognitionTab, recognitionTab, i18nc("@title", "Text Recognition"));
 
     // --- Review tab
 
     DVBox* const reviewTab            = new DVBox(d->tabView);
-    d->textedit                       = new DTextEdit(reviewTab);
-    d->textedit->setLinesVisible(20);
+    d->textedit                       = new DTextEdit(0, reviewTab);
     d->textedit->setPlaceholderText(i18nc("@info", "After to process recognition, "
                                                    "double-click on one item to "
                                                    "display recognized text here. "
@@ -219,6 +219,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     d->saveTextButton->setEnabled(false);
 
     reviewTab->setContentsMargins(spacing, spacing, spacing, spacing);
+    reviewTab->setSpacing(spacing);
 
     d->tabView->insertTab(Private::ReviewTab, reviewTab, i18nc("@title", "Text Review"));
 
