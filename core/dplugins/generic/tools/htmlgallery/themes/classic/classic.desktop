@@ -2,6 +2,7 @@
 Type=Theme
 Name=Classic
 Name[ar]=تقليدي
+Name[be]=Класічная
 Name[ca]=Clàssic
 Name[ca@valencia]=Clàssic
 Name[cs]=Klasický
@@ -35,6 +36,7 @@ Name[uk]=Класична
 Name[x-test]=xxClassicxx
 Name[zh_CN]=经典
 Comment=A port of the old HTML Export plugin theme
+Comment[be]=Порт старой тэмы для экспарту ў HTML
 Comment[ca]=Una adaptació de l'antic tema del connector d'exportació a HTML
 Comment[ca@valencia]=Una adaptació de l'antic tema del connector d'exportació a HTML
 Comment[cs]=Port starého motivu pro modul HTML export
@@ -69,6 +71,7 @@ Comment[zh_CN]=移植自旧版 HTML 导出插件主题
 [X-HTMLGallery Preview]
 Name=Classic
 Name[ar]=تقليدي
+Name[be]=Класічная
 Name[ca]=Clàssic
 Name[ca@valencia]=Clàssic
 Name[cs]=Klasický
@@ -105,6 +108,7 @@ Url=preview.png
 
 [X-HTMLGallery Author]
 Name=Aurélien Gâteau
+Name[be]=Aurélien Gâteau
 Name[bg]=Aurélien Gâteau
 Name[ca]=Aurélien Gâteau
 Name[ca@valencia]=Aurélien Gâteau
@@ -142,6 +146,7 @@ Url=mailto:aurelien.gateau@free.fr
 
 [X-HTMLGallery Parameter thumbnailPerRow]
 Name=Thumbnails per row
+Name[be]=Мініяцюр у радку
 Name[ca]=Miniatures per fila
 Name[ca@valencia]=Miniatures per fila
 Name[cs]=Náhledy na řádek
@@ -182,6 +187,7 @@ Max=100
 [X-HTMLGallery Parameter bgColor]
 Name=Background Color
 Name[ar]=لون الخلفية
+Name[be]=Колер фону
 Name[ca]=Color de fons
 Name[ca@valencia]=Color de fons
 Name[cs]=Barva pozadí
@@ -222,6 +228,7 @@ Default=#333333
 [X-HTMLGallery Parameter fgColor]
 Name=Foreground Color
 Name[ar]=لون المقدمة
+Name[be]=Колер тэксту
 Name[ca]=Color de primer pla
 Name[ca@valencia]=Color de primer pla
 Name[cs]=Barva popředí
@@ -262,6 +269,7 @@ Default=#d0ffd0
 [X-HTMLGallery Parameter fontSize]
 Name=Font Size
 Name[ar]=حجم الخط
+Name[be]=Памер шрыфту
 Name[ca]=Mida del tipus de lletra
 Name[ca@valencia]=Mida del tipus de lletra
 Name[cs]=Velikost písma
@@ -304,6 +312,7 @@ Max=100
 [X-HTMLGallery Parameter imgBorderSize]
 Name=Image Border Size
 Name[ar]=حجم حدود الصورة
+Name[be]=Таўшчыня рамкі выявы
 Name[ca]=Mida de la vora de la imatge
 Name[ca@valencia]=Mida de la vora de la imatge
 Name[cs]=Velikost rámečku obrázku
@@ -345,6 +354,7 @@ Max=50
 [X-HTMLGallery Parameter imgBorderColor]
 Name=Image Border Color
 Name[ar]=لون حدود الصورة
+Name[be]=Колер рамкі выявы
 Name[ca]=Color de la vora de la imatge
 Name[ca@valencia]=Color de la vora de la imatge
 Name[cs]=Barva rámečku obrázku
@@ -385,6 +395,7 @@ Default=#d0ffd0
 [X-HTMLGallery Parameter linkColor]
 Name=Link Color
 Name[ar]=لون الروابط
+Name[be]=Колер спасылкі
 Name[ca]=Color de l'enllaç
 Name[ca@valencia]=Color de l'enllaç
 Name[cs]=Barva odkazu
@@ -423,6 +434,7 @@ Default=#b3b3b3
 
 [X-HTMLGallery Parameter visitedLinkColor]
 Name=Visited Link Color
+Name[be]=Колер наведанай спасылкі
 Name[ca]=Color de l'enllaç visitat
 Name[ca@valencia]=Color de l'enllaç visitat
 Name[cs]=Barva navštíveného odkazu

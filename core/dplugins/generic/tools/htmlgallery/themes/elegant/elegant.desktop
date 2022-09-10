@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Theme
 Name=Elegant
+Name[be]=Элегантная
 Name[ca]=Elegant
 Name[ca@valencia]=Elegant
 Name[cs]=Elegantní
@@ -32,6 +33,7 @@ Name[uk]=Елегантний
 Name[x-test]=xxElegantxx
 Name[zh_CN]=优雅
 Comment=Based on the "Simple" theme. Uses Lytebox by Markus F. Hay to display the images in a slideshow.
+Comment[be]=Заснаваная на тэме "Простая". Выкарыстоўваецца Lytebox ад Markus F. Hay для паказу слайд-шоу.
 Comment[ca]=Basat en el tema «Senzill». Usa el Lytebox del Markus F. Hay per a mostrar les imatges en un passi de diapositives.
 Comment[ca@valencia]=Basat en el tema «Senzill». Utilitza LyteBox del Markus F. Hay per a mostrar les imatges en un passe de diapositives.
 Comment[da]=Baseret på "Simple"-temaet. Bruger Lytebox af Markus F. Hay til at vise billeder i et diasshow.
@@ -63,6 +65,7 @@ Comment[zh_CN]=基于“简洁”主题设计。使用 Markus F. Hay 编写的 L
 
 [X-HTMLGallery Author]
 Name=Wojciech Jarosz
+Name[be]=Wojciech Jarosz
 Name[bg]=Wojciech Jarosz
 Name[ca]=Wojciech Jarosz
 Name[ca@valencia]=Wojciech Jarosz
@@ -98,6 +101,7 @@ Url=mailto:wjarosz@ucsd.edu
 
 [X-HTMLGallery Preview]
 Name=Elegant
+Name[be]=Элегантная
 Name[ca]=Elegant
 Name[ca@valencia]=Elegant
 Name[cs]=Elegantní
@@ -133,6 +137,7 @@ Url=preview.png
 [X-HTMLGallery Parameter author]
 Name=Author
 Name[ar]=المؤلف
+Name[be]=Аўтар
 Name[bg]=Автор
 Name[ca]=Autor
 Name[ca@valencia]=Autoria
@@ -170,6 +175,7 @@ Default=
 
 [X-HTMLGallery Parameter pageSize]
 Name=Images per page
+Name[be]=Выяў на старонцы
 Name[ca]=Imatges per pàgina
 Name[ca@valencia]=Imatges per pàgina
 Name[cs]=Obrázků na stránku
@@ -205,6 +211,7 @@ Default=20
 
 [X-HTMLGallery Parameter paginationLocation]
 Name=Page links location
+Name[be]=Размяшчэнне спасылак на старонцы
 Name[ca]=La pàgina enllaça amb la ubicació
 Name[ca@valencia]=La pàgina enllaça amb la ubicació
 Name[da]=Placering af sidelinks
@@ -244,6 +251,7 @@ Caption-2=Both
 
 [X-HTMLGallery Parameter useLyteBox]
 Name=Use LyteBox
+Name[be]=Выкарыстоўваць LyteBox
 Name[ca]=Usa el LyteBox
 Name[ca@valencia]=Utilitza LyteBox
 Name[cs]=Použít LyteBox
@@ -282,6 +290,7 @@ Caption-1=No
 
 [X-HTMLGallery Parameter slideInterval]
 Name=LyteBox Slideshow Interval
+Name[be]=Інтэрвал слайд-шоу LyteBox
 Name[ca]=Interval entre diapositives del LyteBox
 Name[ca@valencia]=Interval entre diapositives de LyteBox
 Name[da]=Interval for LyteBox-diasshow
@@ -326,6 +335,7 @@ Caption-4=10 seconds
 [X-HTMLGallery Parameter style]
 Name=Style
 Name[ar]=النّمط
+Name[be]=Стыль
 Name[bg]=Стил
 Name[ca]=Estil
 Name[ca@valencia]=Estil
@@ -372,6 +382,7 @@ Caption-2=Custom
 
 [X-HTMLGallery Parameter bgColor]
 Name=Custom Background Color
+Name[be]=Адвольны колер фону
 Name[ca]=Color personalitzat pel fons
 Name[ca@valencia]=Color personalitzat pel fons
 Name[cs]=Vlastní barva pozadí
@@ -407,6 +418,7 @@ Default=#000000
 
 [X-HTMLGallery Parameter fgColor]
 Name=Custom Foreground Color
+Name[be]=Адвольны колер тэксту
 Name[ca]=Color personalitzat pel primer pla
 Name[ca@valencia]=Color personalitzat pel primer pla
 Name[da]=Brugertilpasset forgrundsfarve
@@ -441,6 +453,7 @@ Default=#888888
 
 [X-HTMLGallery Parameter linkColor]
 Name=Custom Link Color
+Name[be]=Адвольны колер спасылак
 Name[ca]=Color personalitzat per a l'enllaç
 Name[ca@valencia]=Color personalitzat per a l'enllaç
 Name[cs]=Barva odkazu
@@ -476,6 +489,7 @@ Default=#aaaaaa
 
 [X-HTMLGallery Parameter hoverLinkColor]
 Name=Custom Hover Link Color
+Name[be]=Адвольны колер спасылак пад курсорам
 Name[ca]=Color personalitzat per a l'enllaç en passar-hi per sobre
 Name[ca@valencia]=Color personalitzat per a l'enllaç en passar-hi per damunt
 Name[cs]=Vlastní odkazu, nad kterým je myš
@@ -509,6 +523,7 @@ Default=#ffffff
 
 [X-HTMLGallery Parameter visitedLinkColor]
 Name=Custom Visited Link Color
+Name[be]=Адвольны колер наведаных спасылак
 Name[ca]=Color personalitzat per a l'enllaç visitat
 Name[ca@valencia]=Color personalitzat per a l'enllaç visitat
 Name[cs]=Vlastní barva navštíveného odkazu
@@ -542,6 +557,7 @@ Default=#aaaaaa
 
 [X-HTMLGallery Parameter frameColor]
 Name=Custom Frame Color
+Name[be]=Адвольны колер рамкі
 Name[ca]=Color personalitzat pel marc
 Name[ca@valencia]=Color personalitzat pel marc
 Name[cs]=Vlastní barva rámečku obrázku
@@ -574,6 +590,7 @@ Default=#222222
 
 [X-HTMLGallery Parameter frameBorderColor]
 Name=Custom Frame Border Color
+Name[be]=Адвольны колер межаў рамкі
 Name[ca]=Color personalitzat per a la vora del marc
 Name[ca@valencia]=Color personalitzat per a la vora del marc
 Name[cs]=Vlastní barva okraje rámečku obrázku
@@ -606,6 +623,7 @@ Default=#444444
 
 [X-HTMLGallery Parameter selectedFrameColor]
 Name=Custom Selected Frame Color
+Name[be]=Адвольны колер рамкі пад курсорам
 Name[ca]=Color personalitzat pel marc seleccionat
 Name[ca@valencia]=Color personalitzat pel marc seleccionat
 Name[cs]=Vlastní barva rámečku vybraného obrázku
@@ -638,6 +656,7 @@ Default=#555555
 
 [X-HTMLGallery Parameter selectedFrameBorderColor]
 Name=Custom Selected Frame Border Color
+Name[be]=Адвольны колер межаў рамкі пад курсорам
 Name[ca]=Color personalitzat per a la vora del marc seleccionat
 Name[ca@valencia]=Color personalitzat per a la vora del marc seleccionat
 Name[cs]=Vlastní barva okraje rámečku vybraného obrázku

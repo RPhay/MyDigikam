@@ -2,6 +2,7 @@
 Type=Theme
 Name=Blue curves
 Name[ar]=منحنيات زرقاء
+Name[be]=Сінія выгібы
 Name[ca]=Corbes blaves
 Name[ca@valencia]=Corbes blaves
 Name[cs]=Modré křivky
@@ -34,6 +35,7 @@ Name[uk]=Сині криві
 Name[x-test]=xxBlue curvesxx
 Name[zh_CN]=蓝色曲线
 Comment=A stylised theme
+Comment[be]=Стылізаваная тэма
 Comment[ca]=Un tema estilitzat
 Comment[ca@valencia]=Un tema estilitzat
 Comment[cs]=Stylizovaný motiv
@@ -69,6 +71,7 @@ Comment[zh_CN]=一个时尚美观的相册主题
 [X-HTMLGallery Preview]
 Name=Blue curves
 Name[ar]=منحنيات زرقاء
+Name[be]=Сінія выгібы
 Name[ca]=Corbes blaves
 Name[ca@valencia]=Corbes blaves
 Name[cs]=Modré křivky
@@ -104,6 +107,7 @@ Url=preview.png
 
 [X-HTMLGallery Author]
 Name=Vincent Deroo Blanquart
+Name[be]=Vincent Deroo Blanquart
 Name[bg]=Vincent Deroo Blanquart
 Name[ca]=Vincent Deroo Blanquart
 Name[ca@valencia]=Vincent Deroo Blanquart
@@ -140,6 +144,7 @@ Url=mailto:vincent.deroo@free.fr
 
 [X-HTMLGallery Parameter TitleOfPage]
 Name=Gallery Introduction
+Name[be]=Уводзіны ў галерэю
 Name[ca]=Introducció a galeries
 Name[ca@valencia]=Introducció a galeries
 Name[cs]=Představení galerie
@@ -178,6 +183,7 @@ Default=Title of my web gallery
 
 [X-HTMLGallery Parameter thumbnailPerRow]
 Name=Thumbnails per row
+Name[be]=Мініяцюр у радку
 Name[ca]=Miniatures per fila
 Name[ca@valencia]=Miniatures per fila
 Name[cs]=Náhledy na řádek
