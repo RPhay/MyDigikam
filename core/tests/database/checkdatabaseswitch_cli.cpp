@@ -6,7 +6,7 @@
  * Date        : 2010-06-21
  * Description : CLI test program for switch digiKam DB from sqlite to mysql
  *
- * Copyright (C) 2014-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2014-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
