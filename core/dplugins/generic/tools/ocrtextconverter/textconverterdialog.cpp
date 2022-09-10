@@ -178,13 +178,13 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     //-------------------------------------------------------------------------------------------
 
-    mainLayout->addWidget(d->listView,                       0, 0, 7, 1);
-    mainLayout->addWidget(tesseractLabel,                    0, 1, 1, 1);
-    mainLayout->addWidget(d->binWidget,                      1, 1, 2, 1);
-    mainLayout->addWidget(d->ocrSettings,                    3, 1, 1, 1);
-    mainLayout->addWidget(d->textedit,                       4, 1, 1, 1);
-    mainLayout->addWidget(d->saveTextButton,                 5, 1, 1, 1);
-    mainLayout->addWidget(d->progressBar,                    6, 1, 1, 1);
+    mainLayout->addWidget(d->listView,       0, 0, 7, 1);
+    mainLayout->addWidget(tesseractLabel,    0, 1, 1, 1);
+    mainLayout->addWidget(d->binWidget,      1, 1, 2, 1);
+    mainLayout->addWidget(d->ocrSettings,    3, 1, 1, 1);
+    mainLayout->addWidget(d->textedit,       4, 1, 1, 1);
+    mainLayout->addWidget(d->saveTextButton, 5, 1, 1, 1);
+    mainLayout->addWidget(d->progressBar,    6, 1, 1, 1);
     mainLayout->setColumnStretch(0, 10);
     mainLayout->setRowStretch(1, 2);
     mainLayout->setRowStretch(4, 10);
@@ -662,7 +662,8 @@ void TextConverterDialog::slotTesseractBinaryFound(bool found)
     }
     else
     {
-        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18n("Tesseract program or no language module are installed on your system."));
+        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18n("Tesseract program or no language module\n"
+                                                                 "are installed on your system."));
     }
 }
 
