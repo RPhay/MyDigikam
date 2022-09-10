@@ -5,6 +5,6 @@ https://community.kde.org/Policies/Licensing_Policy
 Usual usages:
 
 BSD-3       : cmake, sh, rb, py, pl.
-GPL2+/LGPL2+: cpp, h, xsl, conf, nsh, nsl.
+GPL2+/LGPL2+: cpp, c, h, xsl, conf, nsh, nsl.
 CC0-1       : yml.
 MIT         : css, js.
