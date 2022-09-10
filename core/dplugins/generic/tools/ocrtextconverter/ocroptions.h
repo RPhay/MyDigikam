@@ -78,19 +78,21 @@ public:
 
 public:
 
-    int     psm;                ///< Page segmentation mode.
-    int     oem;                ///< OCR Engine mode
-    int     dpi;                ///< Dot per inch.of input images.
-    bool    isSaveTextFile;     ///< If true, save recognized text to text file.
-    bool    isSaveXMP;          ///< If true, save recognized text to image XMP metadata alternative language tags.
+    int         psm;                ///< Page segmentation mode.
+    int         oem;                ///< OCR Engine mode
+    int         dpi;                ///< Dot per inch.of input images.
+    bool        isSaveTextFile;     ///< If true, save recognized text to text file.
+    bool        isSaveXMP;          ///< If true, save recognized text to image XMP metadata alternative language tags.
 
     /**
      * ISO 639-2 3 letters Language code to use while performing OCR on images.
      * https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes
      */
-    QString language;
+    QString     language;
 
-    QString tesseractPath;      ///< Path to tesseract binary program.
+    QString     tesseractPath;      ///< Path to tesseract binary program.
+
+    QStringList translations;       ///< List of translation codes to localize recognized text.
 };
 
 } // namespace DigikamGenericTextConverterPlugin

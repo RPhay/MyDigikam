@@ -44,6 +44,7 @@
 #include "textconverteraction.h"
 #include "tesseractbinary.h"
 #include "dbinarysearch.h"
+#include "localizeselector.h"
 
 using namespace Digikam;
 
@@ -64,7 +65,8 @@ public:
         textedit            (nullptr),
         saveTextButton      (nullptr),
         currentSelectedItem (nullptr),
-        binWidget           (nullptr)
+        binWidget           (nullptr),
+        localizeList        (nullptr)
     {
     }
 
@@ -90,10 +92,10 @@ public:
 
     TextConverterListViewItem*        currentSelectedItem;
 
-    OcrTesseractEngine                ocrEngine;
-
     TesseractBinary                   tesseractBin;
     DBinarySearch*                    binWidget;
+
+    LocalizeSelectorList*             localizeList;
 };
 
 TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* const iface)
@@ -164,6 +166,9 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     d->ocrSettings                    = new TextConverterSettings(mainWidget);
 
+    d->localizeList                   = new LocalizeSelectorList(mainWidget);
+    d->localizeList->setTitle(i18nc("@label", "Translate to:"));
+
     d->progressBar                    = new DProgressWdg(mainWidget);
     d->progressBar->reset();
     d->progressBar->hide();
@@ -178,16 +183,17 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     //-------------------------------------------------------------------------------------------
 
-    mainLayout->addWidget(d->listView,       0, 0, 7, 1);
+    mainLayout->addWidget(d->listView,       0, 0, 8, 1);
     mainLayout->addWidget(tesseractLabel,    0, 1, 1, 1);
     mainLayout->addWidget(d->binWidget,      1, 1, 2, 1);
     mainLayout->addWidget(d->ocrSettings,    3, 1, 1, 1);
-    mainLayout->addWidget(d->textedit,       4, 1, 1, 1);
-    mainLayout->addWidget(d->saveTextButton, 5, 1, 1, 1);
-    mainLayout->addWidget(d->progressBar,    6, 1, 1, 1);
+    mainLayout->addWidget(d->localizeList,   4, 1, 1, 1);
+    mainLayout->addWidget(d->textedit,       5, 1, 1, 1);
+    mainLayout->addWidget(d->saveTextButton, 6, 1, 1, 1);
+    mainLayout->addWidget(d->progressBar,    7, 1, 1, 1);
     mainLayout->setColumnStretch(0, 10);
     mainLayout->setRowStretch(1, 2);
-    mainLayout->setRowStretch(4, 10);
+    mainLayout->setRowStretch(5, 10);
     mainLayout->setContentsMargins(QMargins());
 
     // ---------------------------------------------------------------
@@ -274,8 +280,9 @@ void TextConverterDialog::slotDoubleClick(QTreeWidgetItem* element)
 
 void TextConverterDialog::slotUpdateText()
 {
-    QString newText = d->textedit->text();
-    OcrOptions opt  = d->ocrSettings->ocrOptions();
+    QString newText  = d->textedit->text();
+    OcrOptions opt   = d->ocrSettings->ocrOptions();
+    opt.translations = d->localizeList->languagesList();
 
     if (!d->textedit->text().isEmpty()           &&
         !d->currentSelectedItem->url().isEmpty() &&
@@ -284,14 +291,20 @@ void TextConverterDialog::slotUpdateText()
         d->textEditList[d->currentSelectedItem->url()] = newText;
         d->currentSelectedItem->setRecognizedWords(QString::fromLatin1("%1").arg(calculateNumberOfWords(newText)));
 
-        if (opt.isSaveTextFile)
+        MetaEngine::AltLangMap commentsMap;
+        commentsMap.insert(QLatin1String("x-default"), newText);
+
+        if (opt.isSaveTextFile || opt.isSaveXMP)
         {
-            d->ocrEngine.saveTextFile(d->currentSelectedItem->destFileName(), newText);
+            OcrTesseractEngine::translate(commentsMap, opt.translations);
         }
 
-        if (opt.isSaveXMP)
+        if (opt.isSaveTextFile)
         {
-            d->ocrEngine.saveXMP(d->currentSelectedItem->url().toLocalFile(), newText);
+            QString outFile = d->currentSelectedItem->destFileName();
+            OcrTesseractEngine::saveTextFile(d->currentSelectedItem->url().toLocalFile(),
+                                             outFile,
+                                             commentsMap);
 
             Q_EMIT signalMetadataChangedForUrl(d->currentSelectedItem->url());
         }
@@ -460,6 +473,7 @@ void TextConverterDialog::processAll()
 {
     OcrOptions opt    = d->ocrSettings->ocrOptions();
     opt.tesseractPath = d->tesseractBin.path();
+    opt.translations  = d->localizeList->languagesList();
     d->thread->setOcrOptions(opt);
     d->thread->ocrProcessFiles(d->fileList);
 
@@ -579,6 +593,12 @@ void TextConverterDialog::readSettings()
     opt.dpi            = group.readEntry("Dpi",                   300);
     opt.isSaveTextFile = group.readEntry("Check Save Test File",  true);
     opt.isSaveXMP      = group.readEntry("Check Save in XMP",     true);
+    opt.translations   = group.readEntry("Translation Codes",     QStringList());
+
+    Q_FOREACH (const QString& lg, opt.translations)
+    {
+        d->localizeList->addLanguage(lg);
+    }
 
     d->ocrSettings->setOcrOptions(opt);
 }
@@ -588,6 +608,7 @@ void TextConverterDialog::saveSettings()
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("OCR Tesseract Settings"));
     OcrOptions opt            = d->ocrSettings->ocrOptions();
+    opt.translations          = d->localizeList->languagesList();
 
     group.writeEntry("ocrLanguages",              opt.language);
     group.writeEntry("PageSegmentationModes",     (int)opt.psm);
@@ -595,6 +616,7 @@ void TextConverterDialog::saveSettings()
     group.writeEntry("Dpi",                       (int)opt.dpi);
     group.writeEntry("Check Save Test File",      (bool)opt.isSaveTextFile);
     group.writeEntry("Check Save in XMP",         (bool)opt.isSaveXMP);
+    group.writeEntry("Translation Codes",         opt.translations);
 }
 
 void TextConverterDialog::addItems(const QList<QUrl>& itemList)

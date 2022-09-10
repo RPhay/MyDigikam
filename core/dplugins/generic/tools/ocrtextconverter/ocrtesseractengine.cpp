@@ -26,9 +26,7 @@
 
 #include "digikam_debug.h"
 #include "digikam_globals.h"
-#include "dmetadata.h"
-
-using namespace Digikam;
+#include "localizeselector.h"
 
 namespace DigikamGenericTextConverterPlugin
 {
@@ -187,65 +185,98 @@ int OcrTesseractEngine::runOcrProcess()
             return PROCESS_CANCELED;
         }
     }
-    catch(const QProcess::ProcessError& e)
+    catch (const QProcess::ProcessError& e)
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "Text Converter has error" << e;
 
         return PROCESS_FAILED;
     }
 
-
     d->ocrResult = QString::fromLocal8Bit(ocrProcess->readAllStandardOutput());
 
-    SaveOcrResult();
+    saveOcrResult();
 
     return PROCESS_COMPLETE;
 }
 
-void OcrTesseractEngine::SaveOcrResult()
+void OcrTesseractEngine::saveOcrResult()
 {
+    MetaEngine::AltLangMap commentsMap;
+    commentsMap.insert(QLatin1String("x-default"), d->ocrResult);
+
+    if (d->opt.isSaveTextFile || d->opt.isSaveXMP)
+    {
+        translate(commentsMap, d->opt.translations);
+    }
+
     if (d->opt.isSaveTextFile)
     {
-        QFileInfo fi(d->inputFile);
-        d->outputFile = fi.absolutePath()  +
-                        QLatin1String("/") +
-                        (QString::fromLatin1("%1-textconverter.txt").arg(fi.fileName()));
-
-        saveTextFile(d->outputFile, d->ocrResult);
+        saveTextFile(d->inputFile, d->outputFile, commentsMap);
     }
 
     if (d->opt.isSaveXMP)
     {
-        saveXMP(d->inputFile, d->ocrResult);
+        saveXMP(d->inputFile, commentsMap);
     }
 }
 
-void OcrTesseractEngine::saveTextFile(const QString& filePath, const QString& text)
+void OcrTesseractEngine::translate(MetaEngine::AltLangMap& commentsMap,
+                                   const QStringList& langs)
 {
-    QFile file(filePath);
+    QString text = commentsMap[QLatin1String("x-default")];
 
-    if (file.open(QIODevice::ReadWrite | QIODevice::Truncate))
+    Q_FOREACH (const QString& lg, langs)
     {
-        QTextStream stream(&file);
-        stream << text;
-        file.close();
+        QString tr;
+        QString error;
+
+        bool b = s_inlineTranslateString(text, lg, tr, error);
+
+        if (b)
+        {
+            commentsMap.insert(lg, tr);
+        }
+        else
+        {
+            qCWarning(DIGIKAM_GENERAL_LOG) << "Error while translating in" << lg << ":" << error;
+        }
     }
 }
 
-void OcrTesseractEngine::saveXMP(const QString& filePath, const QString& text)
+void OcrTesseractEngine::saveTextFile(const QString& inFile,
+                                      QString& outFile,
+                                      const MetaEngine::AltLangMap& commentsMap)
+{
+    Q_FOREACH (const QString& lg, commentsMap.keys())
+    {
+        QFileInfo fi(inFile);
+        outFile = fi.absolutePath()  +
+                  QLatin1String("/") +
+                  (QString::fromLatin1("%1-ocr-%2.txt").arg(fi.fileName()).arg(lg));
+
+        QFile file(outFile);
+
+        if (file.open(QIODevice::ReadWrite | QIODevice::Truncate))
+        {
+            QTextStream stream(&file);
+            stream << commentsMap[lg];
+            file.close();
+        }
+    }
+}
+
+void OcrTesseractEngine::saveXMP(const QString& filePath,
+                                 const MetaEngine::AltLangMap& commentsMap)
 {
     QScopedPointer<DMetadata> dmeta(new DMetadata(filePath));
 
     MetaEngine::AltLangMap authorsMap;
     MetaEngine::AltLangMap datesMap;
-    MetaEngine::AltLangMap commentsMap;
-    CaptionsMap            commentsSet;
 
-    commentsSet           = dmeta->getItemComments();
-    QString   rezAuthor   = commentsSet.value(QLatin1String("x-default")).author;
-    QDateTime rezDateTime = commentsSet.value(QLatin1String("x-default")).date;
+    CaptionsMap commentsSet = dmeta->getItemComments();
+    QString   rezAuthor     = commentsSet.value(QLatin1String("x-default")).author;
+    QDateTime rezDateTime   = commentsSet.value(QLatin1String("x-default")).date;
 
-    commentsMap.insert(QLatin1String("x-default"), text);
     datesMap.insert(QLatin1String("x-default"),    rezDateTime.toString());
     authorsMap.insert(QLatin1String("x-default"),  rezAuthor);
 

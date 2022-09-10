@@ -24,6 +24,9 @@
 // Local includes
 
 #include "ocroptions.h"
+#include "dmetadata.h"
+
+using namespace Digikam;
 
 namespace DigikamGenericTextConverterPlugin
 {
@@ -59,8 +62,16 @@ public:
 
 public:
 
-    void saveTextFile(const QString& filePath, const QString& text);
-    void saveXMP(const QString& filePath,  const QString& text);
+    static void translate(MetaEngine::AltLangMap& commentsMap,
+                          const QStringList& langs);
+
+    static void saveTextFile(const QString& inFile,
+                             QString& outFile,
+                             const MetaEngine::AltLangMap& commentsMap);
+
+    static void saveXMP(const QString& filePath,
+                        const MetaEngine::AltLangMap& commentsMap);
+
     int  runOcrProcess();
 
 private:
@@ -72,7 +83,7 @@ private:
 
 private:
 
-    void SaveOcrResult();
+    void saveOcrResult();
 
 private:
 
