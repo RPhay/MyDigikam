@@ -6,8 +6,8 @@
  * Date        : 2009-04-20
  * Description : Qt model-view for items - category drawer
  *
- * Copyright (C) 2009-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2011      by Andi Clemens <andi dot clemens at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2011      by Andi Clemens <andi dot clemens at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

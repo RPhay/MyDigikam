@@ -6,9 +6,9 @@
  * Date        : 2014-09-08
  * Description : digiKam debug spaces
  *
- * Copyright (C) 2014      by Laurent Montel <montel at kde dot org>
- * Copyright (C) 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
- * Copyright (C) 2014-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2014      by Laurent Montel <montel at kde dot org>
+ * SPDX-FileCopyrightText: 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
+ * SPDX-FileCopyrightText: 2014-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

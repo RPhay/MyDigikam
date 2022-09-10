@@ -6,7 +6,7 @@
  * Date        : 2017-11-02
  * Description : Implementation of grouping specific functions for views
  *
- * Copyright (C) 2017 by Simon Frei <freisim93 at gmail dot com>
+ * SPDX-FileCopyrightText: 2017 by Simon Frei <freisim93 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
