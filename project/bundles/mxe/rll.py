@@ -3,8 +3,8 @@
 # Python script that takes an EXE file, automatically figures out all the DLL dependencies,
 # and copies them next to the EXE.
 #
-# Copyright (c)      2015 by Martin Preisler <martin at preisler dot me>
-# Copyright (c) 2016-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText:      2015 by Martin Preisler <martin at preisler dot me>
+# SPDX-FileCopyrightText: 2016-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
 #
 # Blog post         : https://martin.preisler.me/2015/03/mingw-bundledlls-automatically-bundle-dlls/
 # Github repository : https://github.com/mpreisler/mingw-bundledlls

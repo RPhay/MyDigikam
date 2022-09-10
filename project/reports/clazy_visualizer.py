@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
-# Copyright (c) 2019      by Austin Hale, <ah at unc dot edu>
-# Copyright (c) 2020-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2019      by Austin Hale, <ah at unc dot edu>
+# SPDX-FileCopyrightText: 2020-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Export Clazy static analyzer output to HTML reports.
 #

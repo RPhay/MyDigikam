@@ -2,7 +2,7 @@
 #
 # Support .gitslave files, recursive processing of git commands into slave directories
 #
-# Copyright (c) 2003 The Authors. All rights reserved.
+# SPDX-FileCopyrightText: 2003 The Authors. All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
