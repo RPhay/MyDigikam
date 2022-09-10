@@ -159,6 +159,7 @@ protected:
 
     bool copyFromSource(qlonglong src);
     void commitCopyImageAttributes();
+    void clearDatabaseMetadata();
 
     void prepareAddImage(int albumId);
     bool commitAddImage();

@@ -104,7 +104,6 @@ public:
     bool                            writeDngFiles;
     bool                            updateFileTimeStamp;
     bool                            rescanImageIfModified;
-    bool                            clearMetadataIfRescan;
     bool                            useXMPSidecar4Reading;
     bool                            useCompatibleFileName;
     bool                            useLazySync;

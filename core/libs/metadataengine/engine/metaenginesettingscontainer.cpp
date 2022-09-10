@@ -47,7 +47,6 @@ MetaEngineSettingsContainer::MetaEngineSettingsContainer()
       writeDngFiles         (false),
       updateFileTimeStamp   (true),
       rescanImageIfModified (false),
-      clearMetadataIfRescan (false),
       useXMPSidecar4Reading (false),
       useCompatibleFileName (false),
       useLazySync           (false),
@@ -89,7 +88,6 @@ void MetaEngineSettingsContainer::readFromConfig(KConfigGroup& group)
                             group.readEntry("Metadata Writing Mode",                    (int)MetaEngine::WRITE_TO_FILE_ONLY);
     updateFileTimeStamp   = group.readEntry("Update File Timestamp",                    true);
     rescanImageIfModified = group.readEntry("Rescan File If Modified",                  false);
-    clearMetadataIfRescan = group.readEntry("Clear Metadata If Rescan",                 false);
     useLazySync           = group.readEntry("Use Lazy Synchronization",                 false);
     useFastScan           = group.readEntry("Use Fast Scan At Startup",                 false);
 
@@ -148,7 +146,6 @@ void MetaEngineSettingsContainer::writeToConfig(KConfigGroup& group) const
     group.writeEntry("Metadata Writing Mode",                   (int)metadataWritingMode);
     group.writeEntry("Update File Timestamp",                   updateFileTimeStamp);
     group.writeEntry("Rescan File If Modified",                 rescanImageIfModified);
-    group.writeEntry("Clear Metadata If Rescan",                clearMetadataIfRescan);
 
     group.writeEntry("Rotate By Internal Flag",                 bool(rotationBehavior & RotateByInternalFlag));
     group.writeEntry("Rotate By Metadata Flag",                 bool(rotationBehavior & RotateByMetadataFlag));
@@ -231,8 +228,6 @@ QDebug operator<<(QDebug dbg, const MetaEngineSettingsContainer& inf)
                   << inf.updateFileTimeStamp << "), ";
     dbg.nospace() << "rescanImageIfModified("
                   << inf.rescanImageIfModified << "), ";
-    dbg.nospace() << "clearMetadataIfRescan("
-                  << inf.clearMetadataIfRescan << "), ";
     dbg.nospace() << "useXMPSidecar4Reading("
                   << inf.useXMPSidecar4Reading << "), ";
     dbg.nospace() << "useCompatibleFileName("

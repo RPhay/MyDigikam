@@ -74,7 +74,6 @@ public:
 
     bool                 exifAutoRotateOriginal;
     bool                 exifAutoRotateShowedInfo;
-    bool                 clearMetadataShowedInfo;
     bool                 sidecarFileNameShowedInfo;
 
     QGroupBox*           fieldsGroup;
@@ -102,7 +101,6 @@ public:
     QCheckBox*           sidecarFileNameBox;
     QCheckBox*           updateFileTimeStampBox;
     QCheckBox*           rescanImageIfModifiedBox;
-    QCheckBox*           clearMetadataIfRescanBox;
     QComboBox*           writingModeCombo;
 
     QRadioButton*        rotateByFlag;

@@ -210,11 +210,9 @@ void ItemScanner::scanFile(ScanMode mode)
     }
     else
     {
-        if ((d->scanMode == Rescan) &&
-            (d->scanInfo.id != -1)  &&
-            MetaEngineSettings::instance()->settings().clearMetadataIfRescan)
+        if (d->scanMode == Rescan)
         {
-            CoreDbAccess().db()->clearMetadataFromImage(d->scanInfo.id);
+            clearDatabaseMetadata();
         }
 
         if      (d->scanInfo.category == DatabaseItem::Image)

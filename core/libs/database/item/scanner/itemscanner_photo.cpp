@@ -408,18 +408,21 @@ void ItemScanner::scanTags()
 
 void ItemScanner::commitTags()
 {
-    QList<int> currentTags = CoreDbAccess().db()->getItemTagIDs(d->scanInfo.id);
-    QVector<int> colorTags = TagsCache::instance()->colorLabelTags();
-    QVector<int> pickTags  = TagsCache::instance()->pickLabelTags();
+    const QList<int>& currentTags = CoreDbAccess().db()->getItemTagIDs(d->scanInfo.id);
+    const QVector<int>& colorTags = TagsCache::instance()->colorLabelTags();
+    const QVector<int>& pickTags  = TagsCache::instance()->pickLabelTags();
     QList<int> removeTags;
 
-    Q_FOREACH (int cTag, currentTags)
+    if (d->commit.hasColorTag || d->commit.hasPickTag)
     {
-        if ((d->commit.hasColorTag && colorTags.contains(cTag)) ||
-            (d->commit.hasPickTag && pickTags.contains(cTag)))
+        Q_FOREACH (int tag, currentTags)
         {
-            removeTags << cTag;
+            if (colorTags.contains(tag) || pickTags.contains(tag))
+            {
+                removeTags << tag;
+            }
         }
+
     }
 
     if (!removeTags.isEmpty())

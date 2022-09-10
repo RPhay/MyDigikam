@@ -23,7 +23,6 @@ namespace Digikam
 SetupMetadata::Private::Private()
   : exifAutoRotateOriginal   (false),
     exifAutoRotateShowedInfo (false),
-    clearMetadataShowedInfo  (false),
     sidecarFileNameShowedInfo(false),
     fieldsGroup              (nullptr),
     readWriteGroup           (nullptr),
@@ -48,7 +47,6 @@ SetupMetadata::Private::Private()
     sidecarFileNameBox       (nullptr),
     updateFileTimeStampBox   (nullptr),
     rescanImageIfModifiedBox (nullptr),
-    clearMetadataIfRescanBox (nullptr),
     writingModeCombo         (nullptr),
     rotateByFlag             (nullptr),
     rotateByContents         (nullptr),
@@ -113,7 +111,6 @@ void SetupMetadata::Private::readSettings()
     sidecarFileNameBox->setChecked(set.useCompatibleFileName);
     updateFileTimeStampBox->setChecked(set.updateFileTimeStamp);
     rescanImageIfModifiedBox->setChecked(set.rescanImageIfModified);
-    clearMetadataIfRescanBox->setChecked(set.clearMetadataIfRescan);
 
     if (set.metadataWritingMode == MetaEngine::WRITE_TO_FILE_ONLY)
     {

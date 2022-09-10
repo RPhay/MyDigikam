@@ -141,4 +141,5 @@ BUGFIXES:
 107 ==> 458846 - Popup Menus in wrong position with Sway window manager.
 108 ==> 117629 - New tool to perform OCR of an image and store result in metadata.
 109 ==> 458850 - Not valid createdate.
-110 ==> 
+110 ==> 458921 - Maintenance > Sync Metadata and Database (Sync Direction: From image metadata to database) does not work for disabled or deleted tags.
+111 ==> 

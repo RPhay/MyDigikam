@@ -1947,12 +1947,20 @@ void CoreDB::changeImageComment(int commentId, qlonglong imageID, const QVariant
     d->db->recordChangeset(ImageChangeset(imageID, DatabaseFields::Set(fields)));
 }
 
-void CoreDB::removeImageComment(int commentid, qlonglong imageid)
+void CoreDB::removeImageComment(int commentid, qlonglong imageID)
 {
     d->db->execSql(QString::fromUtf8("DELETE FROM ImageComments WHERE id=?;"),
                    commentid);
 
-    d->db->recordChangeset(ImageChangeset(imageid, DatabaseFields::Set(DatabaseFields::ItemCommentsAll)));
+    d->db->recordChangeset(ImageChangeset(imageID, DatabaseFields::Set(DatabaseFields::ItemCommentsAll)));
+}
+
+void CoreDB::removeAllImageComments(qlonglong imageID)
+{
+    d->db->execSql(QString::fromUtf8("DELETE FROM ImageComments WHERE imageid=?;"),
+                   imageID);
+
+    d->db->recordChangeset(ImageChangeset(imageID, DatabaseFields::Set(DatabaseFields::ItemCommentsAll)));
 }
 
 QString CoreDB::getImageProperty(qlonglong imageID, const QString& property) const
@@ -1989,6 +1997,12 @@ void CoreDB::removeImagePropertyByName(const QString& property)
 {
     d->db->execSql(QString::fromUtf8("DELETE FROM ImageProperties WHERE property=?;"),
                    property);
+}
+
+void CoreDB::removeAllImageProperties(qlonglong imageID)
+{
+    d->db->execSql(QString::fromUtf8("DELETE FROM ImageProperties WHERE imageid=?;"),
+                   imageID);
 }
 
 QList<CopyrightInfo> CoreDB::getItemCopyright(qlonglong imageID, const QString& property) const
@@ -2104,6 +2118,12 @@ void CoreDB::removeItemCopyrightProperties(qlonglong imageID, const QString& pro
             break;
         }
     }
+}
+
+void CoreDB::removeAllItemCopyrightProperties(qlonglong imageID)
+{
+    d->db->execSql(QString::fromUtf8("DELETE FROM ImageCopyright WHERE imageid=?;"),
+                   imageID);
 }
 
 QList<qlonglong> CoreDB::findByNameAndCreationDate(const QString& fileName, const QDateTime& creationDate) const
@@ -4556,65 +4576,6 @@ QList<QVariant> CoreDB::getImageIdsFromArea(qreal lat1, qreal lat2, qreal lng1, 
                    boundValues, &values);
 
     return values;
-}
-
-void CoreDB::clearMetadataFromImage(qlonglong imageID)
-{
-    DatabaseFields::Set fields;
-
-    qCDebug(DIGIKAM_DATABASE_LOG) << "Clean up the image information, the "
-                                     "file will be scanned again";
-
-    changeItemInformation(imageID, QVariantList() << 0, DatabaseFields::Rating);
-
-    d->db->execSql(QString::fromUtf8("DELETE FROM ImageProperties WHERE imageid=?;"),
-                   imageID);
-
-    d->db->execSql(QString::fromUtf8("DELETE FROM ImageCopyright WHERE imageid=?;"),
-                   imageID);
-
-    d->db->execSql(QString::fromUtf8("DELETE FROM ImagePositions WHERE imageid=?;"),
-                   imageID);
-    fields |= DatabaseFields::ItemPositionsAll;
-
-    d->db->execSql(QString::fromUtf8("DELETE FROM ImageComments WHERE imageid=?;"),
-                   imageID);
-    fields |= DatabaseFields::ItemCommentsAll;
-
-    d->db->execSql(QString::fromUtf8("DELETE FROM ImageMetadata WHERE imageid=?;"),
-                   imageID);
-    fields |= DatabaseFields::ImageMetadataAll;
-
-    d->db->execSql(QString::fromUtf8("DELETE FROM VideoMetadata WHERE imageid=?;"),
-                   imageID);
-    fields |= DatabaseFields::VideoMetadataAll;
-
-    d->db->recordChangeset(ImageChangeset(imageID, fields));
-
-    QList<int> tagIds = getItemTagIDs(imageID);
-
-    if (!tagIds.isEmpty())
-    {
-        d->db->execSql(QString::fromUtf8("DELETE FROM ImageTags WHERE imageid=?;"),
-                       imageID);
-        d->db->recordChangeset(ImageTagChangeset(imageID, tagIds, ImageTagChangeset::RemovedAll));
-    }
-
-    QList<ImageTagProperty> properties = getImageTagProperties(imageID);
-
-    if (!properties.isEmpty())
-    {
-        QList<int> tids;
-
-        Q_FOREACH (const ImageTagProperty& property, properties)
-        {
-            tids << property.tagId;
-        }
-
-        d->db->execSql(QString::fromUtf8("DELETE FROM ImageTagProperties WHERE imageid=?;"),
-                       imageID);
-        d->db->recordChangeset(ImageTagChangeset(imageID, tids, ImageTagChangeset::PropertiesChanged));
-    }
 }
 
 bool CoreDB::integrityCheck() const

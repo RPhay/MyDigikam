@@ -225,4 +225,75 @@ bool ItemScanner::commitAddImage()
     return true;
 }
 
+void ItemScanner::clearDatabaseMetadata()
+{
+    if (d->scanInfo.id == -1)
+    {
+        return;
+    }
+
+    const MetaEngineSettingsContainer& settings = MetaEngineSettings::instance()->settings();
+    QList<int> removeTags;
+
+    if (settings.saveColorLabel)
+    {
+        QVector<int> colorTags = TagsCache::instance()->colorLabelTags();
+        removeTags << QList<int>(colorTags.begin(), colorTags.end());
+    }
+
+    if (settings.savePickLabel)
+    {
+        QVector<int> pickTags = TagsCache::instance()->pickLabelTags();
+        removeTags << QList<int>(pickTags.begin(), pickTags.end());
+    }
+
+    if (settings.saveTags)
+    {
+        Q_FOREACH (int tag, CoreDbAccess().db()->getItemTagIDs(d->scanInfo.id))
+        {
+            if (!TagsCache::instance()->isInternalTag(tag))
+            {
+                removeTags << tag;
+            }
+        }
+    }
+
+    if (!removeTags.isEmpty())
+    {
+        CoreDbAccess().db()->removeTagsFromItems(QList<qlonglong>() << d->scanInfo.id, removeTags);
+    }
+
+    if (settings.savePosition)
+    {
+        CoreDbAccess().db()->removeItemPosition(d->scanInfo.id);
+    }
+
+    if (settings.saveTemplate)
+    {
+        CoreDbAccess().db()->removeAllImageProperties(d->scanInfo.id);
+        CoreDbAccess().db()->removeAllItemCopyrightProperties(d->scanInfo.id);
+    }
+
+    if (settings.saveComments)
+    {
+        CoreDbAccess().db()->removeAllImageComments(d->scanInfo.id);
+    }
+
+    if (settings.saveFaceTags)
+    {
+        Q_FOREACH (const ImageTagProperty& property, CoreDbAccess().db()->getImageTagProperties(d->scanInfo.id))
+        {
+            if (property.property == ImageTagPropertyName::tagRegion())
+            {
+                CoreDbAccess().db()->removeImageTagProperties(d->scanInfo.id, property.tagId, property.property);
+            }
+        }
+    }
+
+    if (settings.saveRating)
+    {
+        CoreDbAccess().db()->changeItemInformation(d->scanInfo.id, QVariantList() << NoRating, DatabaseFields::Rating);
+    }
+}
+
 } // namespace Digikam

@@ -153,15 +153,6 @@ void SetupMetadata::appendBehaviorTab()
                                                     "the last modified timestamp has changed, a rescan of that "
                                                     "file will be performed when digiKam starts."));
 
-    d->clearMetadataIfRescanBox        = new QCheckBox;
-    d->clearMetadataIfRescanBox->setText(i18nc("@option:check", "&Clean up the metadata from the database when rescan files"));
-    d->clearMetadataIfRescanBox->setWhatsThis(i18nc("@info:whatsthis",
-                                                    "Turning this option on, will force digiKam to delete the file metadata "
-                                                    "contained in the database before the file is rescanned. WARNING: "
-                                                    "if your metadata has been written to the database only and not "
-                                                    "to the file or sidecar, you will be able to lose inserted "
-                                                    "metadata such as tags, keywords, or geographic coordinates."));
-
     readWriteLayout->addWidget(readWriteIconLabel,                    0,  0, 2, 3);
     readWriteLayout->addWidget(readWriteLabel,                        0,  1, 2, 3);
     readWriteLayout->addWidget(d->writeWithExifToolBox,               2,  0, 1, 3);
@@ -172,7 +163,6 @@ void SetupMetadata::appendBehaviorTab()
     readWriteLayout->addWidget(d->useLazySync,                        7,  0, 1, 3);
     readWriteLayout->addWidget(d->updateFileTimeStampBox,             8,  0, 1, 3);
     readWriteLayout->addWidget(d->rescanImageIfModifiedBox,           9,  0, 1, 3);
-    readWriteLayout->addWidget(d->clearMetadataIfRescanBox,           10, 0, 1, 3);
     readWriteLayout->setColumnStretch(0, 5);
     readWriteLayout->setColumnStretch(1, 100);
     d->readWriteGroup->setLayout(readWriteLayout);

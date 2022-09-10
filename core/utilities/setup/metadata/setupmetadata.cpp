@@ -85,9 +85,6 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     connect(d->sidecarFileNameBox, SIGNAL(toggled(bool)),
             this, SLOT(slotSidecarFileNameToggled(bool)));
 
-    connect(d->clearMetadataIfRescanBox, SIGNAL(toggled(bool)),
-            this, SLOT(slotClearMetadataToggled(bool)));
-
     // --------------------------------------------------------
 
     QTimer::singleShot(0, d->exifToolView, SLOT(slotStartFoundExifTool()));
@@ -178,7 +175,6 @@ void SetupMetadata::applySettings()
 
     set.updateFileTimeStamp   = d->updateFileTimeStampBox->isChecked();
     set.rescanImageIfModified = d->rescanImageIfModifiedBox->isChecked();
-    set.clearMetadataIfRescan = d->clearMetadataIfRescanBox->isChecked();
 
     set.sidecarExtensions     = cleanUserFilterString(d->extensionsEdit->text(), true);
     set.sidecarExtensions.removeAll(QLatin1String("xmp"));
@@ -244,22 +240,6 @@ void SetupMetadata::slotExifAutoRotateToggled(bool b)
                                        "Switching off exif auto rotation will most probably show "
                                        "your images in a wrong orientation, so only change this "
                                        "option if you explicitly require this."));
-    }
-}
-
-void SetupMetadata::slotClearMetadataToggled(bool b)
-{
-    // Show info if delete metadata from the database was switched on, and only once.
-
-    if (b && !d->clearMetadataShowedInfo)
-    {
-        d->clearMetadataShowedInfo = true;
-        QMessageBox::information(this, qApp->applicationName(),
-                                 i18nc("@info",
-                                       "Switching on this option and your metadata has been written to the "
-                                       "database only and not to the file or sidecar, you will be able to "
-                                       "lose inserted metadata such as tags, keywords, or geographic "
-                                       "coordinates."));
     }
 }
 
