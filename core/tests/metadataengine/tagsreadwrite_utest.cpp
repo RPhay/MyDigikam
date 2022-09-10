@@ -6,7 +6,7 @@
  * Date        : 2015-08-12
  * Description : metadata settings tests for getImageTagPaths and setImageTagPaths.
  *
- * Copyright (C) 2015 by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
+ * SPDX-FileCopyrightText: 2015 by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

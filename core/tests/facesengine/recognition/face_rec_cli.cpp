@@ -10,7 +10,7 @@
  *               Face Recognition algorithm. It is adapted from recognize.cpp
  *               developed by Aditya Bhatt.
  *
- * Copyright (C) 2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * SPDX-FileCopyrightText: 2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

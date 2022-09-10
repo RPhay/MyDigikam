@@ -7,7 +7,7 @@
  * Description : A tool to calibrate the tiling levels
  *               used in geolocation interface
  *
- * Copyright (C) 2010 by Michael G. Hansen <mike at mghansen dot de>
+ * SPDX-FileCopyrightText: 2010 by Michael G. Hansen <mike at mghansen dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

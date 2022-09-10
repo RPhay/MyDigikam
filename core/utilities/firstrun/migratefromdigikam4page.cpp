@@ -6,7 +6,7 @@
  * Date        : 2016-09-29
  * Description : migration page from digikam4
  *
- * Copyright (C) 2016 by Antonio Larrosa <alarrosa at suse dot com>
+ * SPDX-FileCopyrightText: 2016 by Antonio Larrosa <alarrosa at suse dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

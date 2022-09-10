@@ -5,7 +5,7 @@
  * Date        : 2020-08-23
  * Description : Convert images format to PNG
  *
- * Copyright (C) 2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
+ * SPDX-FileCopyrightText: 2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

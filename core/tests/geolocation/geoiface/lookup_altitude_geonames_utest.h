@@ -6,7 +6,7 @@
  * Date        : 2010-05-07
  * Description : Test for the geonames based altitude lookup class
  *
- * Copyright (C) 2010-2011 by Michael G. Hansen <mike at mghansen dot de>
+ * SPDX-FileCopyrightText: 2010-2011 by Michael G. Hansen <mike at mghansen dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

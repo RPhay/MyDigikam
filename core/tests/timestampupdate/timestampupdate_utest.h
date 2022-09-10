@@ -6,7 +6,7 @@
  * Date        : 2015
  * Description : a test for timestamp trigger for re-reading metadata from image
  *
- * Copyright (C) 2015 by Kristian Karl <kristian dot hermann dot karl at gmail dot com>
+ * SPDX-FileCopyrightText: 2015 by Kristian Karl <kristian dot hermann dot karl at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

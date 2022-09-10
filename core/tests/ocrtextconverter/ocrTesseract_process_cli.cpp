@@ -6,7 +6,7 @@
  * Date        : 2022-08-26
  * Description : CLI tool for OCR Text Converter plugin
  *
- * Copyright (C) 2022      by Quoc Hung Tran <quochungtran1999 at gmail dot com>
+ * SPDX-FileCopyrightText: 2022      by Quoc Hung Tran <quochungtran1999 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

@@ -6,8 +6,8 @@
  * Date        : 2003-08-03
  * Description : setup Metadata tab.
  *
- * Copyright (C) 2003-2004 by Ralf Holzer <ralf at well.com>
- * Copyright (C) 2003-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2003-2004 by Ralf Holzer <ralf at well.com>
+ * SPDX-FileCopyrightText: 2003-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

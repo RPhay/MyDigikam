@@ -6,7 +6,7 @@
  * Date        : 2022-08-01
  * Description : unit test of qtav static configuration
  *
- * Copyright (C) 2022 by Steve Robbins <steve at sumost dot ca>
+ * SPDX-FileCopyrightText: 2022 by Steve Robbins <steve at sumost dot ca>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

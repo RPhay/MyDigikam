@@ -7,7 +7,7 @@
  * Description : A modifier for appending a suffix number to a renaming option.
  *               This guarantees a unique string for duplicate values.
  *
- * Copyright (C) 2009-2012 by Andi Clemens <andi dot clemens at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2012 by Andi Clemens <andi dot clemens at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

@@ -6,7 +6,7 @@
  * Date        : 2012-14-07
  * Description : An embedded view to show the cam item preview widget.
  *
- * Copyright (C) 2012 by Islam Wazery  <wazery at ubuntu dot com>
+ * SPDX-FileCopyrightText: 2012 by Islam Wazery  <wazery at ubuntu dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

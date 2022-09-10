@@ -6,7 +6,7 @@
  * Date        : 2017-01-29
  * Description : Database cleaner.
  *
- * Copyright (C) 2017-2018 by Mario Frank <mario dot frank at uni minus potsdam dot de>
+ * SPDX-FileCopyrightText: 2017-2018 by Mario Frank <mario dot frank at uni minus potsdam dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

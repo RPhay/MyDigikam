@@ -6,7 +6,7 @@
  * Date        : 2010-03-18
  * Description : Drag-and-drop handler for geolocation interface used in the demo
  *
- * Copyright (C) 2010 by Michael G. Hansen <mike at mghansen dot de>
+ * SPDX-FileCopyrightText: 2010 by Michael G. Hansen <mike at mghansen dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

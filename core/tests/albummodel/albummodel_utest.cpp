@@ -6,7 +6,7 @@
  * Date        : 2009-12-11
  * Description : test cases for the various album models
  *
- * Copyright (C) 2009 by Johannes Wienke <languitar at semipol dot de>
+ * SPDX-FileCopyrightText: 2009 by Johannes Wienke <languitar at semipol dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

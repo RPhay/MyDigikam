@@ -6,7 +6,7 @@
  * Date        : 2010-02-07
  * Description : test for the simple datatypes and helper functions
  *
- * Copyright (C) 2010-2013 by Michael G. Hansen <mike at mghansen dot de>
+ * SPDX-FileCopyrightText: 2010-2013 by Michael G. Hansen <mike at mghansen dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

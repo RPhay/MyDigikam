@@ -6,8 +6,8 @@
  * Date        : 07/07/2022
  * Description : a command line tool to calculate quality level using NIMA model
  *
- * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

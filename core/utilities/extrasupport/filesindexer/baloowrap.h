@@ -6,7 +6,7 @@
  * Date        : 2014-08-05
  * Description : Plasma file indexer interface.
  *
- * Copyright (C) 2014 by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
+ * SPDX-FileCopyrightText: 2014 by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

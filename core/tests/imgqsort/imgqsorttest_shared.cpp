@@ -6,7 +6,7 @@
  * Date        : 2009-02-04
  * Description : an unit-test to detect image quality level - shared code
  *
- * Copyright (C) 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

@@ -6,7 +6,7 @@
  * Date        : 2020-05-20
  * Description : Testing tool for dnn face recognition of face engines
  *
- * Copyright (C) 2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
+ * SPDX-FileCopyrightText: 2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

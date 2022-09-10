@@ -6,7 +6,7 @@
  * Date        : 2009-09-14
  * Description : modifier to change the case of a renaming option
  *
- * Copyright (C) 2009-2012 by Andi Clemens <andi dot clemens at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2012 by Andi Clemens <andi dot clemens at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

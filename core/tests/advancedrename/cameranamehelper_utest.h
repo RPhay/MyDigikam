@@ -6,7 +6,7 @@
  * Date        : 2009-08-01
  * Description : a test for the CameraNameHelper
  *
- * Copyright (C) 2009 by Andi Clemens <andi dot clemens at gmail dot com>
+ * SPDX-FileCopyrightText: 2009 by Andi Clemens <andi dot clemens at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

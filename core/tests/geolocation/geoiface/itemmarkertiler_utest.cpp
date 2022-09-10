@@ -6,7 +6,7 @@
  * Date        : 2010-01-16
  * Description : test for the model holding markers
  *
- * Copyright (C) 2010-2011 by Michael G. Hansen <mike at mghansen dot de>
+ * SPDX-FileCopyrightText: 2010-2011 by Michael G. Hansen <mike at mghansen dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

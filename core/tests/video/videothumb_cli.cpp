@@ -6,7 +6,7 @@
  * Date        : 2016-04-21
  * Description : Video thumbnails extraction CLI test tool
  *
- * Copyright (C) 2016-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2016-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

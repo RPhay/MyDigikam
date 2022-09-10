@@ -6,7 +6,7 @@
  * Date        : 2021-06-09
  * Description : a test for verifying unique keys in FilterAction for all filters
  *
- * Copyright (C) 2021 by Anjani Kumar <anjanik012 at gmail dot com>
+ * SPDX-FileCopyrightText: 2021 by Anjani Kumar <anjanik012 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

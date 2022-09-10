@@ -6,7 +6,7 @@
  * Date        : 2010-01-17
  * Description : Test parsing gpx data.
  *
- * Copyright (C) 2010-2014 by Michael G. Hansen <mike at mghansen dot de>
+ * SPDX-FileCopyrightText: 2010-2014 by Michael G. Hansen <mike at mghansen dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

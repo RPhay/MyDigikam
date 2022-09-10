@@ -6,7 +6,7 @@
  * Date        : 2016-08-14
  * Description : An unit test to read or write metadata through multi-core threads.
  *
- * Copyright (C) 2016-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2016-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
