@@ -6,7 +6,7 @@
  * Date        : 2018-06-29
  * Description : a tool to export images to Twitter social network
  *
- * Copyright (C) 2018 by Tarek Talaat <tarektalaat93 at gmail dot com>
+ * SPDX-FileCopyrightText: 2018 by Tarek Talaat <tarektalaat93 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

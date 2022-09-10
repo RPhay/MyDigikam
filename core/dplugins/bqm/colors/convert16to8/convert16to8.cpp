@@ -6,7 +6,7 @@
  * Date        : 2010-03-16
  * Description : 16 to 8 bits color depth converter batch tool.
  *
- * Copyright (C) 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

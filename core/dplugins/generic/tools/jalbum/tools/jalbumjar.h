@@ -6,7 +6,7 @@
  * Date        : 2017-07-04
  * Description : Autodetect jAlbum jar archive
  *
- * Copyright (C) 2013-2019 by Andrew Goodbody <ajg zero two at elfringham dot co dot uk>
+ * SPDX-FileCopyrightText: 2013-2019 by Andrew Goodbody <ajg zero two at elfringham dot co dot uk>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

@@ -6,9 +6,9 @@
  * Date        : 2011-03-22
  * Description : a Iface C++ interface
  *
- * Copyright (C) 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2011      by Alexandre Mendes <alex dot mendes1988 at gmail dot com>
- * Copyright (C) 2011      by Vincent Garcia <xavier dot vincent dot garcia at gmail dot com>
+ * SPDX-FileCopyrightText: 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2011      by Alexandre Mendes <alex dot mendes1988 at gmail dot com>
+ * SPDX-FileCopyrightText: 2011      by Vincent Garcia <xavier dot vincent dot garcia at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

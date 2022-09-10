@@ -6,7 +6,7 @@
  * Date        : 16/08/2016
  * Description : A Red-Eye tool for automatic detection and correction filter.
  *
- * Copyright (C) 2016 by Omar Amin <Omar dot moh dot amin at gmail dot com>
+ * SPDX-FileCopyrightText: 2016 by Omar Amin <Omar dot moh dot amin at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

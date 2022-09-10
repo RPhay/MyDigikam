@@ -6,7 +6,7 @@
  * Date        : 2008-10-02
  * Description : a presentation tool.
  *
- * Copyright (C) 2008-2009 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
+ * SPDX-FileCopyrightText: 2008-2009 by Valerio Fuoglio <valerio dot fuoglio at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

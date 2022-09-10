@@ -6,8 +6,8 @@
  * Date        : 2010-02-04
  * Description : a tool to export images to Imgur web service
  *
- * Copyright (C) 2010-2012 by Marius Orcsik <marius at habarnam dot ro>
- * Copyright (C) 2013-2020 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2012 by Marius Orcsik <marius at habarnam dot ro>
+ * SPDX-FileCopyrightText: 2013-2020 by Caulier Gilles <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

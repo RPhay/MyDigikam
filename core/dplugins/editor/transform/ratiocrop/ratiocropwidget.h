@@ -6,9 +6,9 @@
  * Date        : 2004-12-09
  * Description : image selection widget used by ratio crop tool.
  *
- * Copyright (C) 2007      by Jaromir Malenko <malenko at email.cz>
- * Copyright (C) 2008      by Roberto Castagnola <roberto dot castagnola at gmail dot com>
- * Copyright (C) 2004-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2007      by Jaromir Malenko <malenko at email.cz>
+ * SPDX-FileCopyrightText: 2008      by Roberto Castagnola <roberto dot castagnola at gmail dot com>
+ * SPDX-FileCopyrightText: 2004-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

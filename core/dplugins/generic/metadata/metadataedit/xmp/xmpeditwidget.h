@@ -6,8 +6,8 @@
  * Date        : 2011-03-14
  * Description : a Widget to edit XMP metadata
  *
- * Copyright (C) 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2011 by Victor Dodon <dodon dot victor at gmail dot com>
+ * SPDX-FileCopyrightText: 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2011 by Victor Dodon <dodon dot victor at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

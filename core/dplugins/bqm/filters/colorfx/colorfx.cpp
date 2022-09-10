@@ -6,7 +6,7 @@
  * Date        : 2012-11-08
  * Description : a batch tool to apply color effects to images.
  *
- * Copyright (C) 2012 by Alexander Dymo <adymo at develop dot org>
+ * SPDX-FileCopyrightText: 2012 by Alexander Dymo <adymo at develop dot org>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

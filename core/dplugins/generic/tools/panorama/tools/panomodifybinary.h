@@ -6,7 +6,7 @@
  * Date        : 2013-05-16
  * Description : Autodetects pano_modify binary program and version
  *
- * Copyright (C) 2013-2016 by Benjamin Girault <benjamin dot girault at gmail dot com>
+ * SPDX-FileCopyrightText: 2013-2016 by Benjamin Girault <benjamin dot girault at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

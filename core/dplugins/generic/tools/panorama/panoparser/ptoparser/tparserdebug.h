@@ -5,7 +5,7 @@
  *
  * Description : Hugin parser debug header
  *
- * Copyright (C) 2007 by Daniel M German <dmgerman at uvic doooot ca>
+ * SPDX-FileCopyrightText: 2007 by Daniel M German <dmgerman at uvic doooot ca>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

@@ -6,7 +6,7 @@
  * Date        : 2021-03-20
  * Description : a tool to export images to iNaturalist web service
  *
- * Copyright (C) 2021      by Joerg Lohse <joergmlpts at gmail dot com>
+ * SPDX-FileCopyrightText: 2021      by Joerg Lohse <joergmlpts at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
