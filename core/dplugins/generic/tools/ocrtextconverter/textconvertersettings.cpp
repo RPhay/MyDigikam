@@ -28,6 +28,7 @@
 
 #include "digikam_debug.h"
 #include "dcombobox.h"
+#include "dmetadata.h"
 #include "dprogresswdg.h"
 #include "dexpanderbox.h"
 #include "dnuminput.h"
@@ -184,17 +185,9 @@ void TextConverterSettings::setDefaultSettings()
 
 void TextConverterSettings::setOcrOptions(const OcrOptions& opt)
 {
-    QString lg = opt.language;
+    int id = d->ocrTesseractLanguageMode->combo()->findData(opt.language);
 
-    if (lg.isEmpty())
-    {
-        d->ocrTesseractLanguageMode->setCurrentIndex((int)OcrOptions::Languages::DEFAULT);
-    }
-    else
-    {
-        d->ocrTesseractLanguageMode->combo()->setCurrentText(lg);
-    }
-
+    d->ocrTesseractLanguageMode->setCurrentIndex((id == -1) ? int(OcrOptions::Languages::DEFAULT) : id);
     d->ocrTesseractPSMMode->setCurrentIndex(opt.psm);
     d->ocrTesseractOEMMode->setCurrentIndex(opt.oem);
     d->ocrTesseractDpi->setValue(opt.dpi);
@@ -206,15 +199,7 @@ OcrOptions TextConverterSettings::ocrOptions() const
 {
     OcrOptions opt;
 
-    if (d->ocrTesseractLanguageMode->currentIndex() == (int)OcrOptions::Languages::DEFAULT)
-    {
-        opt.language = QString();
-    }
-    else
-    {
-        opt.language = d->ocrTesseractLanguageMode->combo()->currentText();
-    }
-
+    opt.language       = d->ocrTesseractLanguageMode->combo()->currentData().toString();
     opt.psm            = d->ocrTesseractPSMMode->currentIndex();
     opt.oem            = d->ocrTesseractOEMMode->currentIndex();
     opt.dpi            = d->ocrTesseractDpi->value();
@@ -231,12 +216,29 @@ void TextConverterSettings::populateLanguagesMode(const QStringList& langs)
         return;
     }
 
-    d->ocrTesseractLanguageMode->insertItem(int(OcrOptions::Languages::DEFAULT),
-                                            i18nc("@option:default Tesseract mode", "Default"));
+    QStringList tlanguages = langs;
 
-    Q_FOREACH (const QString& lg, langs)
+    d->ocrTesseractLanguageMode->insertItem(int(OcrOptions::Languages::DEFAULT),
+                                            i18nc("@option:default Tesseract mode", "Default"),
+                                            QString());
+
+    if (tlanguages.contains(QLatin1String("osd")))
     {
-        d->ocrTesseractLanguageMode->addItem(lg);
+        d->ocrTesseractLanguageMode->insertItem(int(OcrOptions::Languages::OSD),
+                                                i18nc("@option:osd Tesseract mode", "Orientation and Script Detection"),
+                                                QLatin1String("osd"));
+        tlanguages.removeAll(QLatin1String("osd"));
+    }
+
+    d->ocrTesseractLanguageMode->combo()->insertSeparator(d->ocrTesseractLanguageMode->combo()->count() + 1);
+
+    // All others languages are based on 3 letters ISO 639-2
+
+    DMetadata::CountryCodeMap codes = DMetadata::countryCodeMap2();
+
+    Q_FOREACH (const QString& lg, tlanguages)
+    {
+         d->ocrTesseractLanguageMode->addItem(codes.value(lg, lg), lg);
     }
 }
 

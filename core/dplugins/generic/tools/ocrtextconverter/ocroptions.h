@@ -34,7 +34,8 @@ public:
 
     enum class Languages
     {
-        DEFAULT = 0
+        DEFAULT = 0,
+        OSD
     };
 
     enum class PageSegmentationModes
@@ -86,7 +87,12 @@ public:
     bool    isSaveTextFile;     ///< If true, save recognized text to text file.
     bool    isSaveXMP;          ///< If true, save recognized text to image XMP metadata alternative language tags.
 
-    QString language;           ///< Language code to use while performing OCR on images.
+    /**
+     * ISO 639-2 3 letters Language code to use while performing OCR on images.
+     * https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes
+     */
+    QString language;
+
     QString tesseractPath;      ///< Path to tesseract binary program.
 };
 

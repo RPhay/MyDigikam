@@ -221,7 +221,15 @@ public: // IPTC helpers
 
     bool removeIptcTags(const QStringList& tagFilters);
 
+    /**
+     * Return a map of ISO-639-1 2 letters country codes with country names.
+     */
     static CountryCodeMap countryCodeMap();
+
+    /**
+     * Return a map of ISO-639-2 3 letters country codes with country names.
+     */
+    static CountryCodeMap countryCodeMap2();
 
 private:
 
