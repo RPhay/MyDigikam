@@ -79,7 +79,7 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
                                                            "In the Default mode of Language settings for digital text with multiple languages, \n"
                                                            "Tesseract can automatically recognize languages using Latin alphabets such as English or French, \n"
                                                            "but is not compatible with languages using hieroglyphs such as Chinese, Japanese.\n"
-                                                           "OSD mode use the Orientation and Script detection Module."));
+                                                           "OSD mode use the Orientation and Script Detection module."));
 
     // ------------
 

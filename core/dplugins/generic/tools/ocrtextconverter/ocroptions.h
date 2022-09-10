@@ -80,14 +80,14 @@ public:
 
 public:
 
-    int     psm;
-    int     oem;
-    int     dpi;
-    bool    isSaveTextFile;
-    bool    isSaveXMP;
+    int     psm;                ///< Page segmentation mode.
+    int     oem;                ///< OCR Engine mode
+    int     dpi;                ///< Dot per inch.of input images.
+    bool    isSaveTextFile;     ///< If true, save recognized text to text file.
+    bool    isSaveXMP;          ///< If true, save recognized text to image XMP metadata alternative language tags.
 
-    QString language;
-    QString tesseractPath;
+    QString language;           ///< Language code to use while performing OCR on images.
+    QString tesseractPath;      ///< Path to tesseract binary program.
 };
 
 } // namespace DigikamGenericTextConverterPlugin
