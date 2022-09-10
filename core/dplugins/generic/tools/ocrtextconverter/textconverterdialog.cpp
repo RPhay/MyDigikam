@@ -1,6 +1,6 @@
 /* ============================================================
  *
- * This file is a part of kipi-plugins project
+ * This file is a part of digiKam project
  * https://www.digikam.org
  *
  * Date        : 2022-08-26
@@ -124,7 +124,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     QLabel* const tesseractLabel      = new QLabel(i18nc("@label", "This tool use the %1 open-source "
                                                    "engine to perform Optical Characters Recognition. "
-                                                   "Tesseract program and the desired languages packages must "
+                                                   "Tesseract program and the desired languages modules must "
                                                    "be installed on your system.",
                                                    QString::fromUtf8("<a href='https://github.com/tesseract-ocr/tesseract'>Tesseract</a>")),
                                                    mainWidget);
@@ -178,7 +178,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     //-------------------------------------------------------------------------------------------
 
-    mainLayout->addWidget(d->listView,                       0, 0, 9, 1);
+    mainLayout->addWidget(d->listView,                       0, 0, 7, 1);
     mainLayout->addWidget(tesseractLabel,                    0, 1, 1, 1);
     mainLayout->addWidget(d->binWidget,                      1, 1, 2, 1);
     mainLayout->addWidget(d->ocrSettings,                    3, 1, 1, 1);
@@ -309,7 +309,7 @@ void TextConverterDialog::slotTextConverterAction(const DigikamGenericTextConver
     {
         switch (ad.action)
         {
-            case(PROCESS):
+            case PROCESS:
             {
                 busy(true);
                 d->listView->processing(ad.fileUrl);
@@ -330,7 +330,7 @@ void TextConverterDialog::slotTextConverterAction(const DigikamGenericTextConver
         {
             switch (ad.action)
             {
-                case(PROCESS):
+                case PROCESS:
                 {
                     processingFailed(ad.fileUrl, ad.result);
                     break;
@@ -347,17 +347,20 @@ void TextConverterDialog::slotTextConverterAction(const DigikamGenericTextConver
         {
             switch (ad.action)
             {
-                case(PROCESS):
+                case PROCESS:
                 {
                     d->textEditList[ad.fileUrl] = ad.outputText;
                     processed(ad.fileUrl, ad.destPath, ad.outputText);
+
                     Q_EMIT signalMetadataChangedForUrl(ad.fileUrl);
+
                     break;
                 }
 
                 default:
                 {
                     qCWarning(DIGIKAM_GENERAL_LOG) << "DigikamGenericTextConverterPlugin: Unknown action";
+
                     break;
                 }
             }
@@ -634,19 +637,24 @@ void TextConverterDialog::slotAborted()
 
 void TextConverterDialog::slotStartFoundTesseract()
 {
-    if (d->binWidget->allBinariesFound())
-    {
-        slotTesseractBinaryFound(true);
-    }
+    bool b = d->binWidget->allBinariesFound();
+    slotTesseractBinaryFound(b);
 }
 
-void TextConverterDialog::slotTesseractBinaryFound(bool b)
+void TextConverterDialog::slotTesseractBinaryFound(bool found)
 {
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Tesseract binary found:" << found;
+
+    QStringList langs = d->tesseractBin.tesseractLanguages();
+    d->ocrSettings->populateLanguagesMode(langs);
+
+    bool b = found && !langs.isEmpty();
+
     busy(false);
 
-    // Disable Start button if Tesseract is not found.
+    // Disable Start button if Tesseract is not found or if no language plugin installed.
 
-    m_buttons->button(QDialogButtonBox::Ok)->setDisabled(b);
+    m_buttons->button(QDialogButtonBox::Ok)->setEnabled(b);
 
     if (b)
     {
@@ -654,10 +662,8 @@ void TextConverterDialog::slotTesseractBinaryFound(bool b)
     }
     else
     {
-        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18n("Tesseract program is not found on your system."));
+        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18n("Tesseract program or no language module are installed on your system."));
     }
-
-    d->ocrSettings->populateLanguagesMode(d->tesseractBin.tesseractLanguages());
 }
 
 } // namespace DigikamGenericTextConverterPlugin

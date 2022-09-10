@@ -1,6 +1,6 @@
 /* ============================================================
  *
- * This file is a part of kipi-plugins project
+ * This file is a part of digiKam project
  * https://www.digikam.org
  *
  * Date        : 2022-08-26
@@ -54,7 +54,7 @@ Q_SIGNALS:
     void signalFinished(const DigikamGenericTextConverterPlugin::TextConverterActionData& ad);
 
     /**
-     * Signal to emit to sub-tasks to cancel processing.
+     * Signal emitted to sub-tasks for cancel processing.
      */
     void signalCancelTextConverterTask();
 

@@ -1,6 +1,6 @@
 /* ============================================================
  *
- * This file is a part of kipi-plugins project
+ * This file is a part of digiKam project
  * https://www.digikam.org
  *
  * Date        : 2022-08-26
@@ -89,7 +89,8 @@ void TextConverterActionThread::ocrProcessFiles(const QList<QUrl>& urlList)
                 this, SIGNAL(signalFinished(DigikamGenericTextConverterPlugin::TextConverterActionData)));
 
         connect(this, SIGNAL(signalCancelTextConverterTask()),
-                t, SLOT(slotCancel()), Qt::QueuedConnection);
+                t, SLOT(slotCancel()),
+                Qt::QueuedConnection);
 
         collection.insert(t, 0);
     }

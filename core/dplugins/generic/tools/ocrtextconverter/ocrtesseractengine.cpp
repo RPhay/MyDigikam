@@ -1,6 +1,6 @@
 /* ============================================================
  *
- * This file is a part of kipi-plugins project
+ * This file is a part of digiKam project
  * https://www.digikam.org
  *
  * Date        : 2022-08-26
@@ -239,8 +239,7 @@ void OcrTesseractEngine::saveXMP(const QString& filePath, const QString& text)
     MetaEngine::AltLangMap authorsMap;
     MetaEngine::AltLangMap datesMap;
     MetaEngine::AltLangMap commentsMap;
-
-    Digikam::CaptionsMap commentsSet;
+    CaptionsMap            commentsSet;
 
     commentsSet           = dmeta->getItemComments();
     QString   rezAuthor   = commentsSet.value(QLatin1String("x-default")).author;

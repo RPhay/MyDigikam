@@ -1,6 +1,6 @@
 /* ============================================================
  *
- * This file is a part of kipi-plugins project
+ * This file is a part of digiKam project
  * https://www.digikam.org
  *
  * Date        : 2022-08-26
@@ -43,28 +43,28 @@ class Q_DECL_HIDDEN TextConverterSettings::Private
 public:
 
     explicit Private()
-      : ocrTesseractLanguageMode   (nullptr),
-        ocrTesseractPSMMode        (nullptr),
-        ocrTesseractOEMMode        (nullptr),
-        ocrTesseractDpi            (nullptr),
-        saveTextFile               (nullptr),
-        saveXMP                    (nullptr)
+      : ocrTesseractLanguageMode(nullptr),
+        ocrTesseractPSMMode     (nullptr),
+        ocrTesseractOEMMode     (nullptr),
+        ocrTesseractDpi         (nullptr),
+        saveTextFile            (nullptr),
+        saveXMP                 (nullptr)
     {
     }
 
     // Tesseract options
 
-    DComboBox*          ocrTesseractLanguageMode;
+    DComboBox*    ocrTesseractLanguageMode;
 
-    DComboBox*          ocrTesseractPSMMode;
+    DComboBox*    ocrTesseractPSMMode;
 
-    DComboBox*          ocrTesseractOEMMode;
+    DComboBox*    ocrTesseractOEMMode;
 
-    DIntNumInput*       ocrTesseractDpi;
+    DIntNumInput* ocrTesseractDpi;
 
-    QCheckBox*          saveTextFile;
+    QCheckBox*    saveTextFile;
 
-    QCheckBox*          saveXMP;
+    QCheckBox*    saveXMP;
 };
 
 TextConverterSettings::TextConverterSettings(QWidget* const parent)
@@ -73,9 +73,6 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
 {
     QLabel* const ocrTesseractLanguageLabel   = new QLabel(i18nc("@label", "Languages:"));
     d->ocrTesseractLanguageMode               = new DComboBox(this);
-
-    d->ocrTesseractLanguageMode->insertItem(int(OcrOptions::Languages::DEFAULT),
-                                            i18nc("@option:default Tesseract mode", "Default"));
 
     d->ocrTesseractLanguageMode->setDefaultIndex(int(OcrOptions::Languages::DEFAULT));
     d->ocrTesseractLanguageMode->setToolTip(i18nc("@info", "Specify language(s) used for OCR. "
@@ -229,6 +226,14 @@ OcrOptions TextConverterSettings::ocrOptions() const
 
 void TextConverterSettings::populateLanguagesMode(const QStringList& langs)
 {
+    if (langs.isEmpty())
+    {
+        return;
+    }
+
+    d->ocrTesseractLanguageMode->insertItem(int(OcrOptions::Languages::DEFAULT),
+                                            i18nc("@option:default Tesseract mode", "Default"));
+
     Q_FOREACH (const QString& lg, langs)
     {
         d->ocrTesseractLanguageMode->addItem(lg);

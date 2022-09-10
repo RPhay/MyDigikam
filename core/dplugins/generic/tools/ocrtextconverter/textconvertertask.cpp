@@ -1,6 +1,6 @@
 /* ============================================================
  *
- * This file is a part of kipi-plugins project
+ * This file is a part of digiKam project
  * https://www.digikam.org
  *
  * Date        : 2022-08-26
@@ -88,15 +88,15 @@ void TextConverterTask::run()
         case PROCESS:
         {
             TextConverterActionData ad1;
-            ad1.action    = PROCESS;
-            ad1.fileUrl   = d->url;
-            ad1.starting  = true;
+            ad1.action     = PROCESS;
+            ad1.fileUrl    = d->url;
+            ad1.starting   = true;
 
             Q_EMIT signalStarting(ad1);
 
             d->ocrEngine->setInputFile(d->url.toLocalFile());
             d->ocrEngine->setOcrOptions(d->opt);
-            int ret = d->ocrEngine->runOcrProcess();
+            int ret        = d->ocrEngine->runOcrProcess();
 
             TextConverterActionData ad2;
             ad2.action     = PROCESS;
