@@ -9,8 +9,8 @@
 #  GPHOTO2_VERSION_MINOR  - e.g. "4"
 #  GPHOTO2_VERSION_PATCH  - e.g. "14"
 #
-# Copyright (c) 2006-2007 by Laurent Montel <montel@kde.org>
-# Copyright (c) 2011-2022 by Gilles Caulier <caulier.gilles@gmail.com>
+# SPDX-FileCopyrightText: 2006-2007 by Laurent Montel <montel@kde.org>
+# SPDX-FileCopyrightText: 2011-2022 by Gilles Caulier <caulier.gilles@gmail.com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #

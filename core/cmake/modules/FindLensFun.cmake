@@ -7,10 +7,10 @@
 #  LENSFUN_DEFINITIONS  - Compiler switches required for using lensfun
 #  LENSFUN_VERSION      - library version
 #
-# Copyright (c) 2008      by Adrian Schroeter <adrian at suse dot de>
-# Copyright (c) 2012      by Pino Toscano <pino at kde dot org>
-# Copyright (c) 2012      by Ananta Palani <anantapalani at gmail dot com>
-# Copyright (c) 2012-2022 by Caulier Gilles <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2008      by Adrian Schroeter <adrian at suse dot de>
+# SPDX-FileCopyrightText: 2012      by Pino Toscano <pino at kde dot org>
+# SPDX-FileCopyrightText: 2012      by Ananta Palani <anantapalani at gmail dot com>
+# SPDX-FileCopyrightText: 2012-2022 by Caulier Gilles <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #

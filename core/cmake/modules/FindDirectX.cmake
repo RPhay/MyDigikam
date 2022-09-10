@@ -1,7 +1,7 @@
 # Finds the Direct libraries
 #
-# Copyright (c) 2008-2016 the Urho3D project.
-# Copyright (c) 2021-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2008-2016 the Urho3D project.
+# SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #

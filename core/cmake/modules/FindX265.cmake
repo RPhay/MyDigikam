@@ -6,7 +6,7 @@
 #  X265_LIBRARIES    - Link these to use libx265
 #  X265_DEFINITIONS  - Compiler switches required for using libx265
 #
-# Copyright (c) 2019-2021 Caulier Gilles <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2019-2021 Caulier Gilles <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #

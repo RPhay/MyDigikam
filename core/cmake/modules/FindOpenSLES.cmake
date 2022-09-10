@@ -5,7 +5,7 @@
 #  OPENSLES_INCLUDE_DIR - The OpenSLES include directory.
 #  OPENSLES_LIBRARIES   - The OpenSLES libraries.
 #
-# Copyright (c) 2021-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #

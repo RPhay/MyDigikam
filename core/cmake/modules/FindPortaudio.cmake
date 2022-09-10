@@ -7,7 +7,7 @@
 # PORTAUDIO_LIBRARIES    - Link these to use Portaudio
 # PORTAUDIO_DEFINITIONS  - Compiler switches required for using Portaudio
 #
-# Copyright (c) 2006 Andreas Schneider <mail@cynapses.org>
+# SPDX-FileCopyrightText: 2006 Andreas Schneider <mail@cynapses.org>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #

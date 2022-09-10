@@ -3,7 +3,7 @@
 # and sets all the given vaiables either to 0 or 1
 # depending on the value of the first one
 #
-# Copyright (c) 2006 by Alexander Neundorf, <neundorf@kde.org>
+# SPDX-FileCopyrightText: 2006 by Alexander Neundorf, <neundorf@kde.org>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #

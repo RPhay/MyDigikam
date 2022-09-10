@@ -1,4 +1,4 @@
-# Copyright (c) 2013-2019, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2013-2019, Gilles Caulier, <caulier dot gilles at gmail dot com>
 # Copyright (C) 2013-2014 by Gowtham Ashok <gwty93 at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
