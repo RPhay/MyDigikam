@@ -19,7 +19,6 @@
 
 #include "digikam_debug.h"
 #include "ocrtesseractengine.h"
-#include "drawdecoder.h"
 
 using namespace Digikam;
 
@@ -51,8 +50,8 @@ TextConverterTask::TextConverterTask(QObject* const parent,
     : ActionJob(parent),
       d        (new Private)
 {
-    d->url    = fileUrl;
-    d->action = action;
+    d->url       = fileUrl;
+    d->action    = action;
     d->ocrEngine = new OcrTesseractEngine;
 }
 
