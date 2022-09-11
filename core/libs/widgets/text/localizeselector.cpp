@@ -304,10 +304,10 @@ bool s_inlineTranslateString(const QString& text, const QString& trCode, QString
     DOnlineTranslator::Language srcLang = DOnlineTranslator::Auto;
     DOnlineTranslator::Language trLang  = DOnlineTranslator::language(DOnlineTranslator::fromRFC3066(LocalizeSettings::instance()->settings().translatorEngine, trCode));
 
-    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Request to translate with Web-service:";
-    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Text to translate        :" << text;
-    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "To target language       :" << trLang;
-    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "With source language     :" << srcLang;
+    qCDebug(DIGIKAM_WIDGETS_LOG) << "Request to translate with Web-service:";
+    qCDebug(DIGIKAM_WIDGETS_LOG) << "Text to translate        :" << text;
+    qCDebug(DIGIKAM_WIDGETS_LOG) << "To target language       :" << trLang;
+    qCDebug(DIGIKAM_WIDGETS_LOG) << "With source language     :" << srcLang;
 
     QObject::connect(trengine.data(), &DOnlineTranslator::signalFinished,
                      waitingLoop.data(), &QEventLoop::quit);
@@ -323,7 +323,7 @@ bool s_inlineTranslateString(const QString& text, const QString& trCode, QString
     if (trengine->error() == DOnlineTranslator::NoError)
     {
         tr = trengine->translation();
-        qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Text translated          :" << tr;
+        qCDebug(DIGIKAM_WIDGETS_LOG) << "Text translated          :" << tr;
 
         return true;
     }
