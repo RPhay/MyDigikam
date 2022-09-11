@@ -343,6 +343,13 @@ void TextConverterDialog::slotUpdateText()
             OcrTesseractEngine::saveTextFile(d->currentSelectedItem->url().toLocalFile(),
                                              outFile,
                                              commentsMap);
+        }
+
+        if (opt.isSaveXMP)
+        {
+            OcrTesseractEngine::saveXMP(d->currentSelectedItem->url(),
+                                        commentsMap,
+                                        opt.iface);
 
             Q_EMIT signalMetadataChangedForUrl(d->currentSelectedItem->url());
         }

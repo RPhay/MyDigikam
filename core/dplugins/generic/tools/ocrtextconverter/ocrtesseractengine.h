@@ -20,6 +20,7 @@
 
 #include <QString>
 #include <QObject>
+#include <QUrl>
 
 // Local includes
 
@@ -69,8 +70,9 @@ public:
                              QString& outFile,
                              const MetaEngine::AltLangMap& commentsMap);
 
-    static void saveXMP(const QString& filePath,
-                        const MetaEngine::AltLangMap& commentsMap);
+    static void saveXMP(const QUrl& url,
+                        const MetaEngine::AltLangMap& commentsMap,
+                        DInfoInterface* const iface);
 
     int  runOcrProcess();
 

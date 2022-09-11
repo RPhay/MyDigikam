@@ -216,7 +216,7 @@ void OcrTesseractEngine::saveOcrResult()
 
     if (d->opt.isSaveXMP)
     {
-        saveXMP(d->inputFile, commentsMap);
+        saveXMP(QUrl::fromLocalFile(d->inputFile), commentsMap, d->opt.iface);
     }
 }
 
@@ -265,22 +265,35 @@ void OcrTesseractEngine::saveTextFile(const QString& inFile,
     }
 }
 
-void OcrTesseractEngine::saveXMP(const QString& filePath,
-                                 const MetaEngine::AltLangMap& commentsMap)
+void OcrTesseractEngine::saveXMP(const QUrl& url,
+                                 const MetaEngine::AltLangMap& commentsMap,
+                                 DInfoInterface* const iface)
 {
-    QScopedPointer<DMetadata> dmeta(new DMetadata(filePath));
+    CaptionsMap commentsSet;
+    QString   author = QLatin1String("digiKam OCR Text Converter Plugin");
+    QDateTime dt     = QDateTime::currentDateTime();
 
     MetaEngine::AltLangMap authorsMap;
     MetaEngine::AltLangMap datesMap;
 
-    CaptionsMap commentsSet = dmeta->getItemComments();
-    QString   rezAuthor     = commentsSet.value(QLatin1String("x-default")).author;
-    QDateTime rezDateTime   = commentsSet.value(QLatin1String("x-default")).date;
-
-    datesMap.insert(QLatin1String("x-default"),    rezDateTime.toString());
-    authorsMap.insert(QLatin1String("x-default"),  rezAuthor);
+    Q_FOREACH (const QString& lg, commentsMap.keys())
+    {
+        datesMap.insert(lg,   dt.toString(Qt::ISODate));
+        authorsMap.insert(lg, author);
+    }
 
     commentsSet.setData(commentsMap, authorsMap, QString(), datesMap);
+
+    // --- Version using DInfoInterface
+
+    DItemInfo witem;
+    witem.setCaptions(commentsSet);
+    iface->setItemInfo(url, witem.infoMap());
+
+    // --- Version using DMetadata
+/*
+    QScopedPointer<DMetadata> dmeta(new DMetadata(url.toLocalFile()));
+
     dmeta->setItemComments(commentsSet);
 
     if (dmeta->applyChanges())
@@ -291,6 +304,7 @@ void OcrTesseractEngine::saveXMP(const QString& filePath,
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Errors in hosting text in XMP";
     }
+*/
 }
 
 } // namespace DigikamGenericTextConverterPlugin
