@@ -588,10 +588,6 @@ void DBInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
     if (map.contains(QLatin1String("captions")))
     {
         ItemComments comments = info.imageComments(CoreDbAccess());
-
-        CaptionsMap cmap = qvariant_cast<CaptionsMap>(map[QLatin1String("captions")]);
-        qCDebug(DIGIKAM_GENERAL_LOG) << "captions properties" << cmap;
-
         comments.replaceComments(qvariant_cast<CaptionsMap>(map[QLatin1String("captions")]), DatabaseComment::Comment);
         keys.removeAll(QLatin1String("captions"));
     }

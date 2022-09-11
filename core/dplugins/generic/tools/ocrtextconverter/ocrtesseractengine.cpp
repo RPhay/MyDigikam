@@ -289,22 +289,6 @@ void OcrTesseractEngine::saveXMP(const QUrl& url,
     DItemInfo witem;
     witem.setCaptions(commentsSet);
     iface->setItemInfo(url, witem.infoMap());
-
-    // --- Version using DMetadata
-/*
-    QScopedPointer<DMetadata> dmeta(new DMetadata(url.toLocalFile()));
-
-    dmeta->setItemComments(commentsSet);
-
-    if (dmeta->applyChanges())
-    {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Success in hosting text in XMP";
-    }
-    else
-    {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Errors in hosting text in XMP";
-    }
-*/
 }
 
 } // namespace DigikamGenericTextConverterPlugin
