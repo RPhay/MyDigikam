@@ -32,14 +32,12 @@ class TextConverterTask::Private
 public:
 
     Private()
-      : cancel          (false),
-        action          (TextConverterAction()),
-        ocrEngine       (nullptr)
+      : action    (TextConverterAction()),
+        ocrEngine (nullptr)
     {
     }
 
     OcrOptions           opt;
-    bool                 cancel;
 
     QUrl                 url;
     TextConverterAction  action;
@@ -78,7 +76,7 @@ OcrOptions TextConverterTask::ocrOptions() const
 
 void TextConverterTask::run()
 {
-    if (d->cancel)
+    if (m_cancel)
     {
         return;
     }
@@ -122,7 +120,6 @@ void TextConverterTask::run()
 
 void TextConverterTask::slotCancel()
 {
-    d->cancel = true;
     d->ocrEngine->cancelOcrProcess();
 }
 
