@@ -273,12 +273,12 @@ void ItemScanner::clearDatabaseMetadata()
         CoreDbAccess().db()->removeAllImageProperties(d->scanInfo.id);
         CoreDbAccess().db()->removeAllItemCopyrightProperties(d->scanInfo.id);
     }
-/*
+
     if (settings.saveComments)
     {
         CoreDbAccess().db()->removeAllImageComments(d->scanInfo.id);
     }
-*/
+
     if (settings.saveFaceTags)
     {
         Q_FOREACH (const ImageTagProperty& property, CoreDbAccess().db()->getImageTagProperties(d->scanInfo.id))

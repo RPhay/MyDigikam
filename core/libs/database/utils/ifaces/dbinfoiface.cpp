@@ -336,7 +336,7 @@ void DBInfoIface::slotMetadataChangedForUrl(const QUrl& url)
 
     CollectionScanner scanner;
 
-    scanner.scanFile(url.toLocalFile(), CollectionScanner::Rescan);
+    scanner.scanFile(url.toLocalFile(), CollectionScanner::NormalScan);
     ItemAttributesWatch::instance()->fileMetadataChanged(url);
 }
 
