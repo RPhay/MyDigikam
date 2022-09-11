@@ -19,6 +19,7 @@
 
 #include <QDir>
 #include <QUrl>
+#include <QPointer>
 #include <QProcess>
 #include <QFileInfo>
 
@@ -45,9 +46,11 @@ public:
 
     bool       cancel;
 
-    QString    inputFile;
-    QString    outputFile;
-    QString    ocrResult;
+    QPointer<QProcess>  ocrProcess;
+
+    QString             inputFile;
+    QString             outputFile;
+    QString             ocrResult;
 };
 
 OcrTesseractEngine::OcrTesseractEngine()
@@ -57,7 +60,8 @@ OcrTesseractEngine::OcrTesseractEngine()
 
 OcrTesseractEngine::~OcrTesseractEngine()
 {
-    delete d;
+   delete d->ocrProcess;
+   delete d;
 }
 
 void OcrTesseractEngine::setOcrOptions(const OcrOptions& opt)
@@ -97,10 +101,14 @@ void OcrTesseractEngine::setOutputFile(const QString& filePath)
 
 int OcrTesseractEngine::runOcrProcess()
 {
-    d->cancel = false;
-    QScopedPointer<QProcess> ocrProcess (new QProcess());
-    ocrProcess->setProcessEnvironment(adjustedEnvironmentForAppImage());
-    ocrProcess->setProcessChannelMode(QProcess::SeparateChannels);
+    if (d->cancel)
+    {
+        return PROCESS_CANCELED;
+    }
+
+    d->ocrProcess = new QProcess();
+    d->ocrProcess->setProcessEnvironment(adjustedEnvironmentForAppImage());
+    d->ocrProcess->setProcessChannelMode(QProcess::SeparateChannels);
 
     try
     {
@@ -161,17 +169,17 @@ int OcrTesseractEngine::runOcrProcess()
 
         // ------------------  Running tesseract process ------------------
 
-        ocrProcess->setWorkingDirectory(QDir::tempPath());
-        ocrProcess->setProgram(d->opt.tesseractPath);
-        ocrProcess->setArguments(args);
+        d->ocrProcess->setWorkingDirectory(QDir::tempPath());
+        d->ocrProcess->setProgram(d->opt.tesseractPath);
+        d->ocrProcess->setArguments(args);
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Running OCR : "
-                                     << ocrProcess->program()
-                                     << ocrProcess->arguments();
+                                     << d->ocrProcess->program()
+                                     << d->ocrProcess->arguments();
 
-        ocrProcess->start();
+        d->ocrProcess->start();
 
-        bool successFlag = ocrProcess->waitForFinished(-1) && (ocrProcess->exitStatus() == QProcess::NormalExit);
+        bool successFlag = d->ocrProcess->waitForFinished(-1) && (d->ocrProcess->exitStatus() == QProcess::NormalExit);
 
         if (!successFlag)
         {
@@ -192,7 +200,7 @@ int OcrTesseractEngine::runOcrProcess()
         return PROCESS_FAILED;
     }
 
-    d->ocrResult = QString::fromLocal8Bit(ocrProcess->readAllStandardOutput());
+    d->ocrResult = QString::fromLocal8Bit(d->ocrProcess->readAllStandardOutput());
 
     saveOcrResult();
 
@@ -289,6 +297,16 @@ void OcrTesseractEngine::saveXMP(const QUrl& url,
     DItemInfo item;
     item.setCaptions(commentsSet);
     iface->setItemInfo(url, item.infoMap());
+}
+
+void OcrTesseractEngine::slotCancelOcrProcess()
+{
+    d->cancel = true;
+
+    if (d->ocrProcess)
+    {
+        d->ocrProcess->kill();
+    }
 }
 
 } // namespace DigikamGenericTextConverterPlugin

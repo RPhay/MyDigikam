@@ -76,6 +76,10 @@ public:
 
     int  runOcrProcess();
 
+public Q_SLOTS:
+
+    void slotCancelOcrProcess();
+
 private:
 
     // Disable
