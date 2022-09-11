@@ -695,30 +695,27 @@ void SlideShowLoader::allowScreenSaver()
 
 void SlideShowLoader::slotAssignRating(int rating)
 {
-    DInfoInterface::DInfoMap info;
-    info.insert(QLatin1String("rating"), rating);
-
-    d->settings->iface->setItemInfo(currentItem(), info);
+    DItemInfo item;
+    item.setRating(rating);
+    d->settings->iface->setItemInfo(currentItem(), item.infoMap());
 
     dispatchCurrentInfoChange(currentItem());
 }
 
 void SlideShowLoader::slotAssignColorLabel(int color)
 {
-    DInfoInterface::DInfoMap info;
-    info.insert(QLatin1String("colorlabel"), color);
-
-    d->settings->iface->setItemInfo(currentItem(), info);
+    DItemInfo item;
+    item.setColorLabel(color);
+    d->settings->iface->setItemInfo(currentItem(), item.infoMap());
 
     dispatchCurrentInfoChange(currentItem());
 }
 
 void SlideShowLoader::slotAssignPickLabel(int pick)
 {
-    DInfoInterface::DInfoMap info;
-    info.insert(QLatin1String("picklabel"), pick);
-
-    d->settings->iface->setItemInfo(currentItem(), info);
+    DItemInfo item;
+    item.setPickLabel(pick);
+    d->settings->iface->setItemInfo(currentItem(), item.infoMap());
 
     dispatchCurrentInfoChange(currentItem());
 }
@@ -735,8 +732,9 @@ void SlideShowLoader::slotToggleTag(int tag)
 
 void SlideShowLoader::slotHandleShortcut(const QString& shortcut, int val)
 {
-    //qCDebug(DIGIKAM_GENERAL_LOG) << "SlideShowLoader::slotHandleShortcut";
-
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "SlideShowLoader::slotHandleShortcut";
+*/
     if (d->shortcutPrefixes.contains(QLatin1String("rating")) &&
         shortcut.startsWith(d->shortcutPrefixes[QLatin1String("rating")]))
     {
