@@ -195,7 +195,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     d->progressBar                    = new DProgressWdg(recognitionTab);
     d->progressBar->reset();
-    d->progressBar->hide();
+    d->progressBar->setDisabled(true);
 
     recognitionTab->setContentsMargins(spacing, spacing, spacing, spacing);
     recognitionTab->setSpacing(spacing);
@@ -571,7 +571,7 @@ void TextConverterDialog::slotStartStop()
 
         d->progressBar->setMaximum(d->fileList.count());
         d->progressBar->setValue(0);
-        d->progressBar->show();
+        d->progressBar->setDisabled(false);
         d->progressBar->progressScheduled(i18nc("@title", "Text Converter"), true, true);
         d->progressBar->progressThumbnailChanged(QIcon::fromTheme(QLatin1String("text-x-generic")).pixmap(22, 22));
 
@@ -699,7 +699,7 @@ void TextConverterDialog::busy(bool busy)
 void TextConverterDialog::slotAborted()
 {
     d->progressBar->setValue(0);
-    d->progressBar->hide();
+    d->progressBar->setDisabled(true);
     d->progressBar->progressCompleted();
 }
 
