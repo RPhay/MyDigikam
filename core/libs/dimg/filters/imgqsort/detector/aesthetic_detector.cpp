@@ -91,6 +91,7 @@ public:
     explicit Private()
     {
     }
+
     // cv::dnn::Net model;
 };
 
@@ -108,21 +109,19 @@ AestheticDetector::~AestheticDetector()
 float AestheticDetector::detect(const cv::Mat& image) const
 {
     cv::Mat input = preprocess(image);
-    
+
     if (!model.empty())
     {
         model.setInput(input);
         cv::Mat out = model.forward();
-        
+
         return postProcess(out);
     }
     else
     {
         qCCritical(DIGIKAM_DIMG_LOG) << "Cannot load Aesthetic DNN model\n";
-        return -1.0;
+        return (-1.0);
     }
-    
-    
 }
 
 cv::Mat AestheticDetector::preprocess(const cv::Mat& image) const
@@ -145,6 +144,7 @@ float AestheticDetector::postProcess(const cv::Mat& modelOutput) const
     cv::Point maxLoc;
     cv::minMaxLoc(modelOutput, nullptr, nullptr, nullptr, &maxLoc);
     qCDebug(DIGIKAM_DIMG_LOG) << "class : " << maxLoc.x << "\n";
+
     return float(maxLoc.x);
 }
 bool AestheticDetector::loadModel()
@@ -211,4 +211,4 @@ void AestheticDetector::unloadModel()
     }
 }
 
-}
+} // namespace Digikam

@@ -371,7 +371,7 @@ void TextConverterDialog::slotTextConverterAction(const DigikamGenericTextConver
             {
                 busy(true);
                 d->listView->processing(ad.fileUrl);
-                d->progressBar->progressStatusChanged(i18n("Processing %1", ad.fileUrl.fileName()));
+                d->progressBar->progressStatusChanged(i18nc("@info", "Processing %1", ad.fileUrl.fileName()));
                 break;
             }
 
@@ -444,13 +444,13 @@ void TextConverterDialog::processingFailed(const QUrl& url, int result)
     {
         case OcrTesseractEngine::PROCESS_FAILED:
         {
-            status = i18n("Process failed");
+            status = i18nc("@info", "Process failed");
             break;
         }
 
         case OcrTesseractEngine::PROCESS_CANCELED:
         {
-            status = i18n("Process canceled");
+            status = i18nc("@info", "Process canceled");
             break;
         }
 
@@ -458,7 +458,7 @@ void TextConverterDialog::processingFailed(const QUrl& url, int result)
 
         default:
         {
-            status = i18n("Internal error");
+            status = i18nc("@info", "Internal error");
             break;
         }
     }
@@ -509,7 +509,7 @@ void TextConverterDialog::processed(const QUrl& url,
     }
 
     d->listView->processed(url, true);
-    item->setStatus(i18n("Success"));
+    item->setStatus(i18nc("@info", "Success"));
     item->setRecognizedWords(QString::fromLatin1("%1").arg(calculateNumberOfWords(ocrResult)));
     d->progressBar->setValue(d->progressBar->value() + 1);
 }
@@ -561,8 +561,8 @@ void TextConverterDialog::slotStartStop()
 
         if (d->fileList.empty())
         {
-            QMessageBox::information(this, i18n("Text Converter"),
-                                     i18n("The list does not contain any digital files to process. You need to select them."));
+            QMessageBox::information(this, i18nc("@title", "Text Converter"),
+                                     i18nc("@info", "The list does not contain any digital files to process. You need to select them."));
             busy(false);
             slotAborted();
 
@@ -572,8 +572,8 @@ void TextConverterDialog::slotStartStop()
         d->progressBar->setMaximum(d->fileList.count());
         d->progressBar->setValue(0);
         d->progressBar->show();
-        d->progressBar->progressScheduled(i18n("Text Converter"), true, true);
-        d->progressBar->progressThumbnailChanged(QIcon::fromTheme(QLatin1String("image-x-adobe-dng")).pixmap(22, 22));
+        d->progressBar->progressScheduled(i18nc("@title", "Text Converter"), true, true);
+        d->progressBar->progressThumbnailChanged(QIcon::fromTheme(QLatin1String("text-x-generic")).pixmap(22, 22));
 
         processAll();
     }
@@ -682,13 +682,13 @@ void TextConverterDialog::busy(bool busy)
 
     if (d->busy)
     {
-        m_buttons->button(QDialogButtonBox::Ok)->setText(i18n("&Abort"));
-        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18n("Abort OCR processing of Raw files."));
+        m_buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action", "&Abort"));
+        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@info", "Abort OCR processing of Raw files."));
     }
     else
     {
-        m_buttons->button(QDialogButtonBox::Ok)->setText(i18n("&Start OCR"));
-        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18n("Start OCR using the current settings."));
+        m_buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action", "&Start OCR"));
+        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@info", "Start OCR using the current settings."));
     }
 
     d->ocrSettings->setEnabled(!d->busy);
@@ -726,12 +726,12 @@ void TextConverterDialog::slotTesseractBinaryFound(bool found)
 
     if (b)
     {
-        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18n("Start OCR using the current settings."));
+        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@info", "Start OCR using the current settings."));
     }
     else
     {
-        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18n("Tesseract program or no language module\n"
-                                                                 "are installed on your system."));
+        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@info", "Tesseract program or no language module\n"
+                                                                  "are installed on your system."));
     }
 }
 
