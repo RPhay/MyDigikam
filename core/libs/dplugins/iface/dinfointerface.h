@@ -181,11 +181,10 @@ public:
  *  QUrl                     itemUrl;                                   // The item url that you want to retrieve information.
  *  DInfoInterface*          hostIface;                                 // The host application interface instance.
  *
- *  DInfoInterface::DInfoMap info;                                      // First stage is to create an empty information storage map for this item.
- *  DItemInfo item(info);                                               // Second stage, is to create the DIntenInfo instance for this item.
- *  item.setRating(3);                                                  // Store rating to info map.
- *  item.setColorLabel(1);                                              // Store color label to info map.
- *  hostIface->setItemInfo(url, info);                                  // Update item information to host using map.
+ *  DItemInfo item;                                                     // Create the DIntenInfo instance for this item with an empty internal info map.
+ *  item.setRating(3);                                                  // Store rating to internal info map.
+ *  item.setColorLabel(1);                                              // Store color label to internal info map.
+ *  hostIface->setItemInfo(url, item.infoMap());                        // Update item information to host using internal info map.
  */
 
 class DIGIKAM_EXPORT DItemInfo
@@ -193,8 +192,11 @@ class DIGIKAM_EXPORT DItemInfo
 
 public:
 
+    DItemInfo();
     explicit DItemInfo(const DInfoInterface::DInfoMap&);
     ~DItemInfo();
+
+    DInfoInterface::DInfoMap infoMap() const;
 
 public:
 

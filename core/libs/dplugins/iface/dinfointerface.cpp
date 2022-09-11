@@ -154,6 +154,10 @@ void DInfoInterface::openSetupPage(SetupPage)
 
 // -----------------------------------------------------------------
 
+DItemInfo::DItemInfo()
+{
+}
+
 DItemInfo::DItemInfo(const DInfoInterface::DInfoMap& info)
     : m_info(info)
 {
@@ -164,6 +168,11 @@ DItemInfo::DItemInfo(const DInfoInterface::DInfoMap& info)
 
 DItemInfo::~DItemInfo()
 {
+}
+
+DInfoInterface::DInfoMap DItemInfo::infoMap() const
+{
+    return m_info;
 }
 
 QVariant DItemInfo::parseInfoMap(const QString& key) const
