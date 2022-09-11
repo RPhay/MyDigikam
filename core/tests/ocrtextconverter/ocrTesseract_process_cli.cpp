@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 
     QScopedPointer<OcrTesseractEngine> ocrEngine (new OcrTesseractEngine());
 
-    ocrEngine->setInputFile(QLatin1String("./data/scanned_img.png"));
+    ocrEngine->setInputFile(QLatin1String("./data/scanned_img.jpg"));
     ocrEngine->setOutputFile(QLatin1String("./"));
 
     int check = ocrEngine->runOcrProcess();
