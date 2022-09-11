@@ -110,92 +110,97 @@ int OcrTesseractEngine::runOcrProcess()
     d->ocrProcess->setProcessEnvironment(adjustedEnvironmentForAppImage());
     d->ocrProcess->setProcessChannelMode(QProcess::SeparateChannels);
 
-    try
+    // ------------------------- IN/OUT ARGUMENTS -------------------------
+
+    QStringList args;
+
+    // add configuration image
+
+    if (!d->inputFile.isEmpty())
     {
-        // ------------------------- IN/OUT ARGUMENTS -------------------------
+        args << d->inputFile;
+    }
 
-        QStringList args;
+    // output base name
 
-        // add configuration image
+    QString mess;
 
-        if (!d->inputFile.isEmpty())
-        {
-            args << d->inputFile;
-        }
+    args << QLatin1String("stdout");
 
-        // output base name
+    // ----------------------------- OPTIONS -----------------------------
 
-        QString mess;
+    // page Segmentation mode
 
-        args << QLatin1String("stdout");
+    QString val = d->opt.PsmCodeToValue(static_cast<OcrOptions::PageSegmentationModes>(d->opt.psm));
 
-        // ----------------------------- OPTIONS -----------------------------
+    if (!val.isEmpty())
+    {
+        args << QLatin1String("--psm") << val;
+    }
 
-        // page Segmentation mode
+    // OCR enginge mode
 
-        QString val = d->opt.PsmCodeToValue(static_cast<OcrOptions::PageSegmentationModes>(d->opt.psm));
+    val = d->opt.OemCodeToValue(static_cast<OcrOptions::EngineModes>(d->opt.oem));
 
-        if (!val.isEmpty())
-        {
-            args << QLatin1String("--psm") << val;
-        }
+    if (!val.isEmpty())
+    {
+        args << QLatin1String("--oem") << val;
+    }
 
-        // OCR enginge mode
+    // Language
 
-        val = d->opt.OemCodeToValue(static_cast<OcrOptions::EngineModes>(d->opt.oem));
+    val = d->opt.language;
 
-        if (!val.isEmpty())
-        {
-            args << QLatin1String("--oem") << val;
-        }
+    if (!val.isEmpty())
+    {
+        args << QLatin1String("-l") << val;
+    }
 
-        // Language
+    // dpi
 
-        val = d->opt.language;
+    val = QString::fromLatin1("%1").arg(d->opt.dpi);
 
-        if (!val.isEmpty())
-        {
-            args << QLatin1String("-l") << val;
-        }
+    if (!val.isEmpty())
+    {
+        args << QLatin1String("--dpi") << val;
+    }
 
-        // dpi
+    // ------------------  Running tesseract process ------------------
 
-        val = QString::fromLatin1("%1").arg(d->opt.dpi);
+    d->ocrProcess->setWorkingDirectory(QDir::tempPath());
+    d->ocrProcess->setProgram(d->opt.tesseractPath);
+    d->ocrProcess->setArguments(args);
 
-        if (!val.isEmpty())
-        {
-            args << QLatin1String("--dpi") << val;
-        }
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Running OCR : "
+                                 << d->ocrProcess->program()
+                                 << d->ocrProcess->arguments();
 
-        // ------------------  Running tesseract process ------------------
+    d->ocrProcess->start();
 
-        d->ocrProcess->setWorkingDirectory(QDir::tempPath());
-        d->ocrProcess->setProgram(d->opt.tesseractPath);
-        d->ocrProcess->setArguments(args);
+    if (!d->ocrProcess->waitForStarted(10000))
+    {
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Error starting OCR Process";
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Running OCR : "
-                                     << d->ocrProcess->program()
-                                     << d->ocrProcess->arguments();
+        return PROCESS_FAILED;
+    }
 
-        d->ocrProcess->start();
-
-        bool successFlag = d->ocrProcess->waitForFinished(-1) && (d->ocrProcess->exitStatus() == QProcess::NormalExit);
-
-        if (!successFlag)
-        {
-            qCWarning(DIGIKAM_GENERAL_LOG) << "Error starting OCR Process";
-
-            return PROCESS_FAILED;
-        }
-
+    if (!d->ocrProcess->waitForFinished(-1)                 ||
+        (d->ocrProcess->exitStatus() != QProcess::NormalExit))
+    {
         if (d->cancel)
         {
             return PROCESS_CANCELED;
         }
+
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Error finish OCR Process";
+
+        return PROCESS_FAILED;
     }
-    catch (const QProcess::ProcessError& e)
+
+    if (d->ocrProcess->error() != QProcess::UnknownError)
     {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "Text Converter has error" << e;
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Text Converter has error"
+                                       << d->ocrProcess->error();
 
         return PROCESS_FAILED;
     }
