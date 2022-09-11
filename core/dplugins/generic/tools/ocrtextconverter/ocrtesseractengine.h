@@ -76,9 +76,7 @@ public:
 
     int  runOcrProcess();
 
-public Q_SLOTS:
-
-    void slotCancelOcrProcess();
+    void cancelOcrProcess();
 
 private:
 

@@ -299,7 +299,7 @@ void OcrTesseractEngine::saveXMP(const QUrl& url,
     iface->setItemInfo(url, item.infoMap());
 }
 
-void OcrTesseractEngine::slotCancelOcrProcess()
+void OcrTesseractEngine::cancelOcrProcess()
 {
     d->cancel = true;
 

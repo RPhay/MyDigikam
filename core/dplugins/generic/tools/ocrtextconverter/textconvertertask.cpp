@@ -56,10 +56,6 @@ TextConverterTask::TextConverterTask(QObject* const parent,
     d->url    = fileUrl;
     d->action = action;
     d->ocrEngine = new OcrTesseractEngine;
-
-    connect(this, SIGNAL(signalCancelOcrTesseractEngine()),
-            d->ocrEngine, SLOT(slotCancelOcrProcess()),
-            Qt::QueuedConnection);
 }
 
 TextConverterTask::~TextConverterTask()
@@ -127,7 +123,7 @@ void TextConverterTask::run()
 void TextConverterTask::slotCancel()
 {
     d->cancel = true;
-    Q_EMIT signalCancelOcrTesseractEngine();
+    d->ocrEngine->cancelOcrProcess();
 }
 
 } // namespace DigikamGenericTextConverterPlugin

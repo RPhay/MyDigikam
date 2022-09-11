@@ -49,7 +49,6 @@ Q_SIGNALS:
 
     void signalStarting(const DigikamGenericTextConverterPlugin::TextConverterActionData& ad);
     void signalFinished(const DigikamGenericTextConverterPlugin::TextConverterActionData& ad);
-    void signalCancelOcrTesseractEngine();
 
 public Q_SLOTS:
 
