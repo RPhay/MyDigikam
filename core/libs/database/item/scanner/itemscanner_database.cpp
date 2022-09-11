@@ -237,13 +237,13 @@ void ItemScanner::clearDatabaseMetadata()
 
     if (settings.saveColorLabel)
     {
-        QVector<int> colorTags = TagsCache::instance()->colorLabelTags();
+        const QVector<int>& colorTags = TagsCache::instance()->colorLabelTags();
         removeTags << QList<int>(colorTags.begin(), colorTags.end());
     }
 
     if (settings.savePickLabel)
     {
-        QVector<int> pickTags = TagsCache::instance()->pickLabelTags();
+        const QVector<int>& pickTags = TagsCache::instance()->pickLabelTags();
         removeTags << QList<int>(pickTags.begin(), pickTags.end());
     }
 
