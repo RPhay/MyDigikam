@@ -57,7 +57,7 @@ void TextConverterList::slotAddImages(const QList<QUrl>& list)
     {
         // Check if the new item already exist in the list.
 
-        bool found    = false;
+        bool found = false;
 
         for (int i = 0 ; i < listView()->topLevelItemCount() ; ++i)
         {
@@ -111,7 +111,7 @@ void TextConverterList::slotRemoveItems()
             ++it;
         }
     }
-    while(find);
+    while (find);
 }
 
 // --------------------------------------------------------------------------------------

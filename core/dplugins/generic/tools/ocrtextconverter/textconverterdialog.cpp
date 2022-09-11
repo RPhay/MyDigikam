@@ -302,9 +302,10 @@ void TextConverterDialog::slotDoubleClick(QTreeWidgetItem* element)
 
     d->currentSelectedItem = item;
 
-    if (d->textEditList.contains(item->url()))
+    if (d->textEditList.contains(d->currentSelectedItem->url()))
     {
-        d->textedit->setText(d->textEditList[item->url()]);
+        d->tabView->setCurrentIndex(Private::ReviewTab);
+        d->textedit->setText(d->textEditList[d->currentSelectedItem->url()]);
         d->saveTextButton->setEnabled(true);
     }
     else
