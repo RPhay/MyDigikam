@@ -38,7 +38,7 @@ class OcrTesseractEngine::Private
 public:
 
     Private()
-      : cancel(false)
+      : cancel (false)
     {
     }
 

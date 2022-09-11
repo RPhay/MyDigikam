@@ -15,6 +15,10 @@
 
 #include "textconvertertask.h"
 
+// Qt includes
+
+#include <QPointer>
+
 // Local includes
 
 #include "digikam_debug.h"
@@ -31,17 +35,16 @@ class TextConverterTask::Private
 public:
 
     Private()
-      : action    (TextConverterAction()),
-        ocrEngine (nullptr)
+      : action (TextConverterAction())
     {
     }
 
-    OcrOptions           opt;
+    OcrOptions                   opt;
 
-    QUrl                 url;
-    TextConverterAction  action;
+    QUrl                         url;
+    TextConverterAction          action;
 
-    OcrTesseractEngine*  ocrEngine;
+    QPointer<OcrTesseractEngine> ocrEngine;
 };
 
 TextConverterTask::TextConverterTask(QObject* const parent,
@@ -50,9 +53,8 @@ TextConverterTask::TextConverterTask(QObject* const parent,
     : ActionJob(parent),
       d        (new Private)
 {
-    d->url       = fileUrl;
-    d->action    = action;
-    d->ocrEngine = new OcrTesseractEngine;
+    d->url    = fileUrl;
+    d->action = action;
 }
 
 TextConverterTask::~TextConverterTask()
@@ -91,6 +93,7 @@ void TextConverterTask::run()
 
             Q_EMIT signalStarting(ad1);
 
+            d->ocrEngine   = new OcrTesseractEngine;
             d->ocrEngine->setInputFile(d->url.toLocalFile());
             d->ocrEngine->setOcrOptions(d->opt);
             int ret        = d->ocrEngine->runOcrProcess();
@@ -119,7 +122,10 @@ void TextConverterTask::run()
 
 void TextConverterTask::slotCancel()
 {
-    d->ocrEngine->cancelOcrProcess();
+    if (d->ocrEngine)
+    {
+        d->ocrEngine->cancelOcrProcess();
+    }
 }
 
 } // namespace DigikamGenericTextConverterPlugin
