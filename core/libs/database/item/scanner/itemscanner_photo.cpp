@@ -6,8 +6,8 @@
  * Date        : 2007-09-19
  * Description : Scanning a single item - photo metadata helper.
  *
- * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -24,9 +24,10 @@ QString ItemScanner::iptcCorePropertyName(MetadataInfo::Field field)
 
     switch (field)
     {
-            // copyright table
+        // Copyright table                                     krazy:exclude=copyright
+
         case MetadataInfo::IptcCoreCopyrightNotice:
-            return QLatin1String("copyrightNotice");
+            return QLatin1String("copyrightNotice");        // krazy:exclude=copyright
         case MetadataInfo::IptcCoreCreator:
             return QLatin1String("creator");
         case MetadataInfo::IptcCoreProvider:
@@ -40,7 +41,8 @@ QString ItemScanner::iptcCorePropertyName(MetadataInfo::Field field)
         case MetadataInfo::IptcCoreInstructions:
             return QLatin1String("instructions");
 
-            // ImageProperties table
+        // ImageProperties table
+
         case MetadataInfo::IptcCoreCountryCode:
             return QLatin1String("countryCode");
         case MetadataInfo::IptcCoreCountry:
@@ -406,18 +408,21 @@ void ItemScanner::scanTags()
 
 void ItemScanner::commitTags()
 {
-    QList<int> currentTags = CoreDbAccess().db()->getItemTagIDs(d->scanInfo.id);
-    QVector<int> colorTags = TagsCache::instance()->colorLabelTags();
-    QVector<int> pickTags  = TagsCache::instance()->pickLabelTags();
+    const QList<int>& currentTags = CoreDbAccess().db()->getItemTagIDs(d->scanInfo.id);
+    const QVector<int>& colorTags = TagsCache::instance()->colorLabelTags();
+    const QVector<int>& pickTags  = TagsCache::instance()->pickLabelTags();
     QList<int> removeTags;
 
-    Q_FOREACH (int cTag, currentTags)
+    if (d->commit.hasColorTag || d->commit.hasPickTag)
     {
-        if ((d->commit.hasColorTag && colorTags.contains(cTag)) ||
-            (d->commit.hasPickTag && pickTags.contains(cTag)))
+        Q_FOREACH (int tag, currentTags)
         {
-            removeTags << cTag;
+            if (colorTags.contains(tag) || pickTags.contains(tag))
+            {
+                removeTags << tag;
+            }
         }
+
     }
 
     if (!removeTags.isEmpty())

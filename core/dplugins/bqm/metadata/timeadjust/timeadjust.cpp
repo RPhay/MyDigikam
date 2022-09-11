@@ -6,7 +6,7 @@
  * Date        : 2009-03-04
  * Description : a tool to adjust date time stamp of images
  *
- * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -255,6 +255,24 @@ bool TimeAdjust::toolOperations()
                     break;
                 }
 
+                case TimeAdjustContainer::FUZZYCREATED:
+                {
+                    orgDateTime = prm.getDateTimeFromString(meta->getExifTagString("Exif.Image.DateTime"));
+                    break;
+                }
+
+                case TimeAdjustContainer::FUZZYORIGINAL:
+                {
+                    orgDateTime = prm.getDateTimeFromString(meta->getExifTagString("Exif.Photo.DateTimeOriginal"));
+                    break;
+                }
+
+                case TimeAdjustContainer::FUZZYDIGITIZED:
+                {
+                    orgDateTime = prm.getDateTimeFromString(meta->getExifTagString("Exif.Photo.DateTimeDigitized"));
+                    break;
+                }
+
                 default:
                 {
                     // orgDateTime stays invalid
@@ -273,7 +291,7 @@ bool TimeAdjust::toolOperations()
 
         case TimeAdjustContainer::FILENAME:
         {
-            orgDateTime = prm.getDateTimeFromUrl(inputUrl());
+            orgDateTime = prm.getDateTimeFromString(inputUrl().fileName());
             break;
         }
 

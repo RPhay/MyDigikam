@@ -1,13 +1,13 @@
 /* ============================================================
  *
- * This file is a part of kipi-plugins project
+ * This file is a part of digiKam project
  * https://www.digikam.org
  *
  * Date        : 2022-08-26
  * Description : OCR Tesseract engine
  *
- * Copyright (C) 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2022      by Quoc Hung Tran <quochungtran1999 at gmail dot com>
+ * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2022      by Quoc Hung Tran <quochungtran1999 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -20,28 +20,36 @@
 
 #include <QString>
 #include <QObject>
+#include <QUrl>
+
+// Local includes
+
+#include "ocroptions.h"
+#include "dmetadata.h"
+
+using namespace Digikam;
 
 namespace DigikamGenericTextConverterPlugin
 {
 
-class OcrTesseracrEngine : public QObject
+class OcrTesseractEngine : public QObject
 {
     Q_OBJECT
+
 public:
 
     enum ConvertError
     {
-        PROCESS_CONTINUE       =  1,        ///< Current stages is done.
-        PROCESS_COMPLETE       =  0,        ///< All stages done.
-        PROCESS_FAILED         = -1,        ///< A failure happen while processing.
-        PROCESS_CANCELED       = -2,        ///< User has canceled processing.
+        PROCESS_CONTINUE =  1,        ///< Current stages is done.
+        PROCESS_COMPLETE =  0,        ///< All stages done.
+        PROCESS_FAILED   = -1,        ///< A failure happen while processing.
+        PROCESS_CANCELED = -2,        ///< User has canceled processing.
     };
 
 public:
 
-
-    explicit OcrTesseracrEngine();
-    ~OcrTesseracrEngine();
+    explicit OcrTesseractEngine();
+    ~OcrTesseractEngine();
 
     QString inputFile()          const;
     QString outputFile()         const;
@@ -50,46 +58,39 @@ public:
     void setInputFile(const QString& filePath);
     void setOutputFile(const QString& filePath);
 
-    void setLanguagesMode(int mode);
-    int  languagesMode()         const;
-
-    void setPSMMode(int mode);
-    int  PSMMode()               const;
-
-    void setOEMMode(int mode);
-    int  OEMMode()               const;
-
-    void setDpi(int value);
-    int  Dpi()                   const;
-
-    void setIsSaveTextFile(bool check);
-    bool isSaveTextFile()        const;
-
-    void setIsSaveXMP(bool check);
-    bool isSaveXMP()             const;
+    OcrOptions ocrOptions() const;
+    void setOcrOptions(const OcrOptions& opt);
 
 public:
 
-    void saveTextFile(const QString& filePath, const QString& text);
-    void saveXMP(const QString& filePath,  const QString& text);
+    static void translate(MetaEngine::AltLangMap& commentsMap,
+                          const QStringList& langs);
+
+    static void saveTextFile(const QString& inFile,
+                             QString& outFile,
+                             const MetaEngine::AltLangMap& commentsMap);
+
+    static void saveXMP(const QUrl& url,
+                        const MetaEngine::AltLangMap& commentsMap,
+                        DInfoInterface* const iface);
+
     int  runOcrProcess();
 
 private:
 
     // Disable
 
-    OcrTesseracrEngine(const OcrTesseracrEngine&)            = delete;
-    OcrTesseracrEngine& operator=(const OcrTesseracrEngine&) = delete;
+    OcrTesseractEngine(const OcrTesseractEngine&)            = delete;
+    OcrTesseractEngine& operator=(const OcrTesseractEngine&) = delete;
 
 private:
 
-    void SaveOcrResult();
+    void saveOcrResult();
 
 private:
 
     class Private;
     Private* const d;
-
 };
 
 } // namespace DigikamGenericTextConverterPlugin

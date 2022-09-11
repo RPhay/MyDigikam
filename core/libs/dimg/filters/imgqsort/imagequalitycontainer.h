@@ -6,7 +6,7 @@
  * Date        : 2013-08-19
  * Description : Image quality Settings Container.
  *
- * Copyright (C) 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -49,6 +49,7 @@ public:
     bool detectNoise;           ///< Enable image noise detection.
     bool detectCompression;     ///< Enable image compression detection.
     bool detectExposure;        ///< Enable image over and under exposure detection.
+    bool detectAesthetic;       ///< Enable image aesthetic detection.
 
     bool lowQRejected;          ///< Assign Rejected property to low quality.
     bool mediumQPending;        ///< Assign Pending property to medium quality.

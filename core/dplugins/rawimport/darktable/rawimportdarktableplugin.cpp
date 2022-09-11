@@ -6,7 +6,7 @@
  * Date        : 2019-09-18
  * Description : DarkTable raw import plugin.
  *
- * Copyright (C) 2019-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2019-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * Lua script inspired from Darktable Gimp plugin by Tobias Ellinghaus
  *

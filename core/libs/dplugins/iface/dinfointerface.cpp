@@ -8,8 +8,8 @@
  *               This class do not depend of digiKam database library
  *               to permit to re-use plugins with Showfoto.
  *
- * Copyright (C) 2017-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
+ * SPDX-FileCopyrightText: 2017-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -154,6 +154,10 @@ void DInfoInterface::openSetupPage(SetupPage)
 
 // -----------------------------------------------------------------
 
+DItemInfo::DItemInfo()
+{
+}
+
 DItemInfo::DItemInfo(const DInfoInterface::DInfoMap& info)
     : m_info(info)
 {
@@ -164,6 +168,11 @@ DItemInfo::DItemInfo(const DInfoInterface::DInfoMap& info)
 
 DItemInfo::~DItemInfo()
 {
+}
+
+DInfoInterface::DInfoMap DItemInfo::infoMap() const
+{
+    return m_info;
 }
 
 QVariant DItemInfo::parseInfoMap(const QString& key) const

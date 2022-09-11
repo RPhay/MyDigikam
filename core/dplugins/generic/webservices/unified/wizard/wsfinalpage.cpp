@@ -6,8 +6,8 @@
  * Date        : 2017-06-27
  * Description : finish page of export tool, where user can watch upload process.
  *
- * Copyright (C) 2017-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2018      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * SPDX-FileCopyrightText: 2017-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2018      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

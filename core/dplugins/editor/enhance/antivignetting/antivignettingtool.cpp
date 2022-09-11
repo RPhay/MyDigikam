@@ -7,8 +7,8 @@
  * Description : a digiKam image tool to reduce
  *               vignetting on an image.
  *
- * Copyright (C) 2004-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2010      by Julien Narboux <julien at narboux dot fr>
+ * SPDX-FileCopyrightText: 2004-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010      by Julien Narboux <julien at narboux dot fr>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

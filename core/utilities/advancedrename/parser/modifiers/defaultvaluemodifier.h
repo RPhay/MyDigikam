@@ -6,7 +6,7 @@
  * Date        : 2009-11-11
  * Description : a modifier for setting a default value if option parsing failed
  *
- * Copyright (C) 2009-2012 by Andi Clemens <andi dot clemens at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2012 by Andi Clemens <andi dot clemens at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

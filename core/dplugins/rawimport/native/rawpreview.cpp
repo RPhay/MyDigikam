@@ -6,7 +6,7 @@
  * Date        : 2008-08-04
  * Description : RAW postProcessedImg widget.
  *
- * Copyright (C) 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

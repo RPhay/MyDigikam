@@ -6,8 +6,8 @@
  * Date        : 2012-02-03
  * Description : LCMS2 wrapper
  *
- * Copyright (C) 2012      by Francesco Riosa <francesco+kde at pnpitalia dot it>
- * Copyright (C) 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2012      by Francesco Riosa <francesco+kde at pnpitalia dot it>
+ * SPDX-FileCopyrightText: 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

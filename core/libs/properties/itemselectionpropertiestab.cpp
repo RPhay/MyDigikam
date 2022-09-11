@@ -6,7 +6,7 @@
  * Date        : 2020-04-11
  * Description : A tab to display information about the current selection.
  *
- * Copyright (C) 2020 by Kartik Ramesh <kartikx2000 at gmail dot com>
+ * SPDX-FileCopyrightText: 2020 by Kartik Ramesh <kartikx2000 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

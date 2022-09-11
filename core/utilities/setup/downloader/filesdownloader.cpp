@@ -6,7 +6,7 @@
  * Date        : 2020-11-14
  * Description : Files downloader
  *
- * Copyright (C) 2020-2021 by Maik Qualmann <metzpinguin at gmail dot com>
+ * SPDX-FileCopyrightText: 2020-2021 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -105,6 +105,12 @@ FilesDownloader::FilesDownloader(QWidget* const parent)
                              QLatin1String("yolov3-wider_16000.weights"),
                              QLatin1String("a88f3b3882e3cce1e553a81d42beef6202cb9afc3db88e7944f9ffbcc369e7df"),
                              246305388
+                            );
+
+    d->files << DownloadInfo(QLatin1String("aestheticdetector/"),
+                             QLatin1String("weights_inceptionv3_299.pb"),
+                             QLatin1String("8923e3daff71c07533b9023ef32c69d8c058d1e0931d76d8b81241a201138538"),
+                             88007527
                             );
 
     if (qApp->applicationName() == QLatin1String("digikam"))

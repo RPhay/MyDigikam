@@ -6,10 +6,10 @@
  * Date        : 2010-07-20
  * Description : GPS search marker tiler
  *
- * Copyright (C) 2010      by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2010      by Gabriel Voicu <ping dot gabi at gmail dot com>
- * Copyright (C) 2010-2011 by Michael G. Hansen <mike at mghansen dot de>
- * Copyright (C) 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
+ * SPDX-FileCopyrightText: 2010      by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2010      by Gabriel Voicu <ping dot gabi at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2011 by Michael G. Hansen <mike at mghansen dot de>
+ * SPDX-FileCopyrightText: 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

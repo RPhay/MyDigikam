@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2020 by Kartik Ramesh, <kartikx2000 at gmail dot com>
+# SPDX-FileCopyrightText: 2020 by Kartik Ramesh, <kartikx2000 at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #

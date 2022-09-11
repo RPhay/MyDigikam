@@ -11,8 +11,8 @@
  *               See this wiki page for details:
  *               community.kde.org/Digikam/SoK2012/AutoNR
  *
- * Copyright (C) 2012-2013 by Sayantan Datta <sayantan dot knz at gmail dot com>
- * Copyright (C) 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2012-2013 by Sayantan Datta <sayantan dot knz at gmail dot com>
+ * SPDX-FileCopyrightText: 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

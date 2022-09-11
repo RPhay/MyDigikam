@@ -5,10 +5,9 @@
 #  GLIB2_INCLUDE_DIR - the glib2 include directory
 #  GLIB2_LIBRARIES   - glib2 library
 #
-# Copyright (c) 2008 by Laurent Montel, <montel@kde.org>
+# SPDX-FileCopyrightText: 2008 by Laurent Montel, <montel@kde.org>
 #
 # SPDX-License-Identifier: BSD-3-Clause
-#
 #
 
 if(GLIB2_INCLUDE_DIR AND GLIB2_LIBRARIES)

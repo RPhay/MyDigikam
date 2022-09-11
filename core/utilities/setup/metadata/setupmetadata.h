@@ -6,8 +6,8 @@
  * Date        : 2003-08-03
  * Description : setup Metadata tab.
  *
- * Copyright (C) 2003-2004 by Ralf Holzer <ralf at well.com>
- * Copyright (C) 2003-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2003-2004 by Ralf Holzer <ralf at well.com>
+ * SPDX-FileCopyrightText: 2003-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -76,7 +76,6 @@ private Q_SLOTS:
 
     void slotSidecarFileNameToggled(bool);
     void slotExifAutoRotateToggled(bool);
-    void slotClearMetadataToggled(bool);
     void slotWriteWithExifToolToggled(bool);
     void slotExifToolSettingsChanged(bool);
     void slotWriteRawFilesToggled(bool);

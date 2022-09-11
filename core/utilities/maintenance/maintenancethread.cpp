@@ -6,8 +6,8 @@
  * Date        : 2013-08-09
  * Description : Thread actions manager for maintenance tools.
  *
- * Copyright (C) 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2017-2018 by Mario Frank <mario dot frank at uni minus potsdam dot de>
+ * SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2017-2018 by Mario Frank <mario dot frank at uni minus potsdam dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -30,6 +30,7 @@
 #include "imagequalitycontainer.h"
 #include "databasetask.h"
 #include "maintenancedata.h"
+#include "imagequalityparser.h"
 
 namespace Digikam
 {
@@ -311,6 +312,7 @@ void MaintenanceThread::slotThreadFinished()
 {
     if (isEmpty())
     {
+        ImageQualityParser::unloadDLModel();
         qCDebug(DIGIKAM_GENERAL_LOG) << "List of Pending Jobs is empty";
         Q_EMIT signalCompleted();
     }

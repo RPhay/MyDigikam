@@ -6,7 +6,7 @@
  * Date        : 2012-07-13
  * Description : Qt categorized item view for camera items
  *
- * Copyright (C) 2012 by Islam Wazery <wazery at ubuntu dot com>
+ * SPDX-FileCopyrightText: 2012 by Islam Wazery <wazery at ubuntu dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

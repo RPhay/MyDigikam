@@ -6,8 +6,8 @@
  * Date        : 2015-05-29
  * Description : a combobox with time zones.
  *
- * Copyright (C) 2015      by Maik Qualmann <metzpinguin at gmail dot com>
- * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2015      by Maik Qualmann <metzpinguin at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

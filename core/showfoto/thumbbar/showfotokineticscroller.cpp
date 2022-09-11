@@ -7,7 +7,7 @@
  * Description : Kinetic Scroller for Thumbnail Bar
  *               based on Razvan Petru implementation.
  *
- * Copyright (C) 2014 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
+ * SPDX-FileCopyrightText: 2014 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

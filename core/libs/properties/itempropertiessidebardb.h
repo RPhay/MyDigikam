@@ -6,8 +6,8 @@
  * Date        : 2004-11-17
  * Description : item properties side bar using data from digiKam database.
  *
- * Copyright (C) 2004-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2007-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2004-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2007-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

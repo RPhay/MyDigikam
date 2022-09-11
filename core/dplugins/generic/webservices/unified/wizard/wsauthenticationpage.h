@@ -6,7 +6,7 @@
  * Date        : 2018-07-02
  * Description : embedded web browser for web service authentication
  *
- * Copyright (C) 2018      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * SPDX-FileCopyrightText: 2018      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

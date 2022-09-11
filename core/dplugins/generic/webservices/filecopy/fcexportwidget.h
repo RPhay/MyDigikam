@@ -6,9 +6,9 @@
  * Date        : 2019-03-27
  * Description : a tool to export items to a local storage
  *
- * Copyright (C) 2006-2009 by Johannes Wienke <languitar at semipol dot de>
- * Copyright (C) 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2019-2020 by Maik Qualmann <metzpinguin at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2009 by Johannes Wienke <languitar at semipol dot de>
+ * SPDX-FileCopyrightText: 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2019-2020 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

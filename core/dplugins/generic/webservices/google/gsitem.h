@@ -6,9 +6,9 @@
  * Date        : 2013-11-18
  * Description : a tool to export items to Google web services
  *
- * Copyright (C) 2013      by Pankaj Kumar <me at panks dot me>
- * Copyright (C) 2013-2018 by Caulier Gilles <caulier dot gilles at gmail dot com>
- * Copyright (C) 2018      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * SPDX-FileCopyrightText: 2013      by Pankaj Kumar <me at panks dot me>
+ * SPDX-FileCopyrightText: 2013-2018 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2018      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

@@ -9,7 +9,7 @@
  * Date        : 2008-04-01
  * Description : A Matrix like theme for the digiKam html gallery tool.
  *
- * Copyright (C) 2008 by Aurélien Gâteau <aurelien dot gateau at free.fr>
+ * SPDX-FileCopyrightText: 2008 by Aurélien Gâteau <aurelien dot gateau at free.fr>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

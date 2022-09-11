@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2021      by Joerg Lohse <joergmlpts at gmail dot com>
+# SPDX-FileCopyrightText: 2021      by Joerg Lohse <joergmlpts at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #

@@ -6,10 +6,10 @@
  * Date        : 2004-09-16
  * Description : Camera interface
  *
- * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012      by Islam Wazery <wazery at ubuntu dot com>
+ * SPDX-FileCopyrightText: 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2012      by Islam Wazery <wazery at ubuntu dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

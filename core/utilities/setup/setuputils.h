@@ -6,7 +6,7 @@
  * Date        : 2017-05-06
  * Description : utilities for digiKam setup
  *
- * Copyright (C) 2017      by Simon Frei <freisim93 at gmail dot com>
+ * SPDX-FileCopyrightText: 2017      by Simon Frei <freisim93 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

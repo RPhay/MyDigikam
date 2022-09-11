@@ -6,9 +6,9 @@
  * Date        : 2006-02-23
  * Description : item metadata interface
  *
- * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2013      by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2013      by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -221,7 +221,15 @@ public: // IPTC helpers
 
     bool removeIptcTags(const QStringList& tagFilters);
 
+    /**
+     * Return a map of ISO-639-1 2 letters country codes with country names.
+     */
     static CountryCodeMap countryCodeMap();
+
+    /**
+     * Return a map of ISO-639-2 3 letters country codes with country names.
+     */
+    static CountryCodeMap countryCodeMap2();
 
 private:
 

@@ -6,8 +6,8 @@
  * Date        : 2005-05-25
  * Description : threaded image filter class.
  *
- * Copyright (C) 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2007-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2007-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

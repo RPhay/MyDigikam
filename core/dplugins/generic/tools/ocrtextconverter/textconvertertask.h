@@ -1,13 +1,13 @@
 /* ============================================================
  *
- * This file is a part of kipi-plugins project
+ * This file is a part of digiKam project
  * https://www.digikam.org
  *
  * Date        : 2022-08-26
  * Description : Text Converter thread
  *
- * Copyright (C) 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2022      by Quoc Hung Tran <quochungtran1999 at gmail dot com>
+ * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2022      by Quoc Hung Tran <quochungtran1999 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -22,6 +22,7 @@
 
 // Local includes
 
+#include "ocroptions.h"
 #include "actionthreadbase.h"
 #include "textconverteraction.h"
 
@@ -38,16 +39,11 @@ public:
 
     explicit TextConverterTask(QObject* const parent,
                               const QUrl& url,
-                              const TextConverterAction& action
-                              );
+                              const TextConverterAction& action);
     ~TextConverterTask();
 
-    void setLanguagesMode(int mode);
-    void setPSMMode(int mode);
-    void setOEMMode(int mode);
-    void setDpi(int value);
-    void setIsSaveTextFile(bool check);
-    void setIsSaveXMP(bool check);
+    OcrOptions ocrOptions() const;
+    void setOcrOptions(const OcrOptions& opt);
 
 Q_SIGNALS:
 
@@ -71,4 +67,3 @@ private:
 } // namespace DigikamGenericTextConverterPlugin
 
 #endif // DIGIKAM_Text_CONVERTER_TASK_H
-

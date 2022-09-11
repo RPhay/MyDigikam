@@ -6,7 +6,7 @@
  * Date        : 2010-06-16
  * Description : Face pre-processing CLI tool
  *
- * Copyright (C) 2010 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
+ * SPDX-FileCopyrightText: 2010 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

@@ -6,7 +6,7 @@
  * Date        : 2018-07-03
  * Description : Web Service authentication container.
  *
- * Copyright (C) 2018 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * SPDX-FileCopyrightText: 2018 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

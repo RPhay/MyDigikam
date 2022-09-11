@@ -6,7 +6,7 @@
  * Date        : 2015-01-19
  * Description : message box notification settings
  *
- * Copyright (C) 2015-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2015-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

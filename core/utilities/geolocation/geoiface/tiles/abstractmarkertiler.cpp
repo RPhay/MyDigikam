@@ -6,8 +6,8 @@
  * Date        : 2009-12-01
  * Description : An abstract base class for tiling of markers
  *
- * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2009-2011 by Michael G. Hansen <mike at mghansen dot de>
+ * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2011 by Michael G. Hansen <mike at mghansen dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

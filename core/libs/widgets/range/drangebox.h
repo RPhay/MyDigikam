@@ -6,7 +6,7 @@
  * Date        : 2017-08-09
  * Description : Generic range boxes, i.e. ranges where a minimum and maximum can be given.
  *
- * Copyright (C) 2017 by Mario Frank <mario dot frank at uni minus potsdam dot de>
+ * SPDX-FileCopyrightText: 2017 by Mario Frank <mario dot frank at uni minus potsdam dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

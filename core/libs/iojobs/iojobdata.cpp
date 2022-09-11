@@ -6,7 +6,7 @@
  * Date        : 2018-02-24
  * Description : Container for IOJob data.
  *
- * Copyright (C) 2018 by Maik Qualmann <metzpinguin at gmail dot com>
+ * SPDX-FileCopyrightText: 2018 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

@@ -6,7 +6,7 @@
  * Date        : 2010-01-12
  * Description : a test for the searchtextbar
  *
- * Copyright (C) 2010 by Johannes Wienke <languitar at semipol dot de>
+ * SPDX-FileCopyrightText: 2010 by Johannes Wienke <languitar at semipol dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

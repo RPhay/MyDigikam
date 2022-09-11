@@ -6,9 +6,9 @@
  * Date        : 2012-01-13
  * Description : progress manager
  *
- * Copyright (C) 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2004      by Till Adam <adam at kde dot org>
- * Copyright (C) 2004      by David Faure <faure at kde dot org>
+ * SPDX-FileCopyrightText: 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2004      by Till Adam <adam at kde dot org>
+ * SPDX-FileCopyrightText: 2004      by David Faure <faure at kde dot org>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

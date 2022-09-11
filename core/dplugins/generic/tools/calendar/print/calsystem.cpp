@@ -6,8 +6,8 @@
  * Date        : 2014-11-03
  * Description : calendar system.
  *
- * Copyright (C) 2014      by John Layt <john at layt dot net>
- * Copyright (C) 2016-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2014      by John Layt <john at layt dot net>
+ * SPDX-FileCopyrightText: 2016-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

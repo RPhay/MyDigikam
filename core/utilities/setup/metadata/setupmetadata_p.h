@@ -6,10 +6,10 @@
  * Date        : 2003-08-03
  * Description : setup Metadata tab.
  *
- * Copyright (C) 2003-2004 by Ralf Holzer <ralf at well dot com>
- * Copyright (C) 2003-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2009-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2017      by Simon Frei <freisim93 at gmail dot com>
+ * SPDX-FileCopyrightText: 2003-2004 by Ralf Holzer <ralf at well dot com>
+ * SPDX-FileCopyrightText: 2003-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2017      by Simon Frei <freisim93 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -74,7 +74,6 @@ public:
 
     bool                 exifAutoRotateOriginal;
     bool                 exifAutoRotateShowedInfo;
-    bool                 clearMetadataShowedInfo;
     bool                 sidecarFileNameShowedInfo;
 
     QGroupBox*           fieldsGroup;
@@ -102,7 +101,6 @@ public:
     QCheckBox*           sidecarFileNameBox;
     QCheckBox*           updateFileTimeStampBox;
     QCheckBox*           rescanImageIfModifiedBox;
-    QCheckBox*           clearMetadataIfRescanBox;
     QComboBox*           writingModeCombo;
 
     QRadioButton*        rotateByFlag;

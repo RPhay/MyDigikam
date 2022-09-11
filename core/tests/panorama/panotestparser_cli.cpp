@@ -6,7 +6,7 @@
  * Date        : 2014-05-24
  * Description : a test program for the pto parser
  *
- * Copyright (C) 2011-2016 by Benjamin Girault <benjamin dot girault at gmail dot com>
+ * SPDX-FileCopyrightText: 2011-2016 by Benjamin Girault <benjamin dot girault at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

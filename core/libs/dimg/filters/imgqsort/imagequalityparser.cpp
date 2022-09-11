@@ -6,8 +6,8 @@
  * Date        : 25/08/2013
  * Description : Image Quality Parser
  *
- * Copyright (C) 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2013-2014 by Gowtham Ashok <gwty93 at gmail dot com>
+ * SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2013-2014 by Gowtham Ashok <gwty93 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -34,6 +34,7 @@
 #include "exposure_detector.h"
 #include "compression_detector.h"
 #include "blur_detector.h"
+#include "aesthetic_detector.h"
 #include "imagequalitythread.h"
 
 namespace Digikam
@@ -59,8 +60,6 @@ void ImageQualityParser::startAnalyse()
 
     float finalQuality = -1.0;
 
-    // const DetectorDistortion detector(d->image);
-
     cv::Mat cvImage    = DetectorDistortion::prepareForDetection(d->image);
 
     cv::Mat grayImage;
@@ -73,40 +72,58 @@ void ImageQualityParser::startAnalyse()
     std::unique_ptr<NoiseDetector> noiseDetector;
     std::unique_ptr<CompressionDetector> compressionDetector;
     std::unique_ptr<ExposureDetector> exposureDetector;
+    std::unique_ptr<AestheticDetector> aestheticDetector;
 
     ImageQualityThreadPool pool(this, d->calculator);
 
-    if (d->running && d->imq.detectBlur)
+    float aestheticScore = -1.0;
+    
+    if (d->running)
     {
-        blurDetector = std::unique_ptr<BlurDetector>(new BlurDetector(d->image));
+        if (d->imq.detectAesthetic)
+        {
+            if (AestheticDetector::model.empty())
+            {
+                AestheticDetector::loadModel();
+            }
+            aestheticDetector = std::unique_ptr<AestheticDetector>(new AestheticDetector());
 
-        pool.addDetector(cvImage, d->imq.blurWeight, blurDetector.get());
+            aestheticScore = aestheticDetector->detect(cvImage);
+        }
+        else
+        {
+            if (d->imq.detectBlur)
+            {
+                blurDetector = std::unique_ptr<BlurDetector>(new BlurDetector(d->image));
+
+                pool.addDetector(cvImage, d->imq.blurWeight, blurDetector.get());
+            }
+
+            if (d->imq.detectNoise)
+            {
+                noiseDetector = std::unique_ptr<NoiseDetector>(new NoiseDetector());
+
+                pool.addDetector(grayImage, d->imq.noiseWeight, noiseDetector.get());
+            }
+
+            if (d->imq.detectCompression)
+            {
+                compressionDetector = std::unique_ptr<CompressionDetector>(new CompressionDetector());
+
+                pool.addDetector(cvImage, d->imq.compressionWeight, compressionDetector.get());
+            }
+
+            if (d->imq.detectExposure)
+            {
+                exposureDetector = std::unique_ptr<ExposureDetector>(new ExposureDetector());
+
+                pool.addDetector(grayImage, d->imq.exposureWeight, exposureDetector.get());
+            }
+
+            pool.start();
+            pool.end();
+        }
     }
-
-    if (d->running && d->imq.detectNoise)
-    {
-        noiseDetector = std::unique_ptr<NoiseDetector>(new NoiseDetector());
-
-        pool.addDetector(grayImage, d->imq.noiseWeight, noiseDetector.get());
-    }
-
-    if (d->running && d->imq.detectCompression)
-    {
-        compressionDetector = std::unique_ptr<CompressionDetector>(new CompressionDetector());
-
-        pool.addDetector(cvImage, d->imq.compressionWeight, compressionDetector.get());
-    }
-
-    if (d->running && d->imq.detectExposure)
-    {
-        exposureDetector = std::unique_ptr<ExposureDetector>(new ExposureDetector());
-
-        pool.addDetector(grayImage, d->imq.exposureWeight, exposureDetector.get());
-    }
-
-    pool.start();
-    pool.end();
-
 #ifdef TRACE
 
     // QFile filems("imgqsortresult.txt");
@@ -147,28 +164,50 @@ void ImageQualityParser::startAnalyse()
 
     if (d->running)
     {
-        finalQuality            =  d->calculator->calculateQuality();
-
-        qCDebug(DIGIKAM_DIMG_LOG) << "Final Quality estimated: " << finalQuality;
-
-        // Assigning PickLabels
-
-        if      (finalQuality == -1.0)
+        if (d->imq.detectAesthetic)
         {
-            *d->label = NoPickLabel;
-        }
-        else if ((int)finalQuality <= d->imq.rejectedThreshold)
-        {
-            *d->label = RejectedLabel;
-        }
-        else if (((int)finalQuality >  d->imq.rejectedThreshold) &&
-                 ((int)finalQuality <= d->imq.acceptedThreshold))
-        {
-            *d->label = PendingLabel;
+            if (aestheticScore == float(-1.0))
+            {
+                *d->label = NoPickLabel;
+            }
+            else if (aestheticScore == float(0))
+            {
+                *d->label = RejectedLabel;
+            }
+            else if (aestheticScore == float(1))
+            {
+                *d->label = PendingLabel;
+            }
+            else
+            {
+                *d->label = AcceptedLabel;
+            }
         }
         else
         {
-            *d->label = AcceptedLabel;
+            finalQuality            =  d->calculator->calculateQuality();
+
+            qCDebug(DIGIKAM_DIMG_LOG) << "Final Quality estimated: " << finalQuality;
+
+            // Assigning PickLabels
+
+            if      (finalQuality == -1.0)
+            {
+                *d->label = NoPickLabel;
+            }
+            else if ((int)finalQuality <= d->imq.rejectedThreshold)
+            {
+                *d->label = RejectedLabel;
+            }
+            else if (((int)finalQuality >  d->imq.rejectedThreshold) &&
+                    ((int)finalQuality <= d->imq.acceptedThreshold))
+            {
+                *d->label = PendingLabel;
+            }
+            else
+            {
+                *d->label = AcceptedLabel;
+            }
         }
     }
     else
@@ -180,6 +219,11 @@ void ImageQualityParser::startAnalyse()
 void ImageQualityParser::cancelAnalyse()
 {
     d->running = false;
+}
+
+void ImageQualityParser::unloadDLModel()
+{
+    AestheticDetector::unloadModel();
 }
 
 } // namespace Digikam

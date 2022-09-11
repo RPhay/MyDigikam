@@ -12,7 +12,7 @@
 #               entries with the defined variables. The result is
 #               stored in a new file. Expects a file name as argument
 #
-# Copyright (C) 2012 by Johannes Wienke <languitar at semipol dot de>
+# SPDX-FileCopyrightText: 2012 by Johannes Wienke <languitar at semipol dot de>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #

@@ -7,7 +7,7 @@
  * Description : Tag Properties widget to display tag properties
  *               when a tag or multiple tags are selected
  *
- * Copyright (C) 2013 by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
+ * SPDX-FileCopyrightText: 2013 by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

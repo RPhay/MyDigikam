@@ -6,7 +6,7 @@
  * Date        : 2013-08-09
  * Description : Thread actions task for metadata synchronizer.
  *
- * Copyright (C) 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

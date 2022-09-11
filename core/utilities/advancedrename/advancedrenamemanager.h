@@ -6,7 +6,7 @@
  * Date        : 2010-08-08
  * Description : a class that manages the files to be renamed
  *
- * Copyright (C) 2009-2012 by Andi Clemens <andi dot clemens at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2012 by Andi Clemens <andi dot clemens at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

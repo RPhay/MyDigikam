@@ -6,7 +6,7 @@
  * Date        : 2006-04-04
  * Description : a tool to generate jAlbum image galleries
  *
- * Copyright (C) 2013-2019 by Andrew Goodbody <ajg zero two at elfringham dot co dot uk>
+ * SPDX-FileCopyrightText: 2013-2019 by Andrew Goodbody <ajg zero two at elfringham dot co dot uk>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

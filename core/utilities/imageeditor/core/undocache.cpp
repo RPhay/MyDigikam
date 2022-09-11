@@ -6,9 +6,9 @@
  * Date        : 2005-02-05
  * Description : undo cache manager for image editor
  *
- * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2005      by Joern Ahrens <joern dot ahrens at kdemail dot net>
- * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2005      by Renchi Raju <renchi dot raju at gmail dot com>
+ * SPDX-FileCopyrightText: 2005      by Joern Ahrens <joern dot ahrens at kdemail dot net>
+ * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

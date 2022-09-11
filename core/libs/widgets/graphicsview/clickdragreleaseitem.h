@@ -6,7 +6,7 @@
  * Date        : 2011-03-04
  * Description : A simple item to click, drag and release
  *
- * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

@@ -6,8 +6,8 @@
  * Date        :
  * Description : Image Quality Parser - Abtrait class for detector
  *
- * Copyright (C) 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2021      by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
+ * SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2021      by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

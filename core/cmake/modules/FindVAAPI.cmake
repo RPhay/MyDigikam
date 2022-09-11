@@ -7,8 +7,7 @@
 # VAAPI_LIBRARIES    - the VAAPI libraries
 # VAAPI_DEFINITIONS  - the VAAPI definitions
 #
-# Redistribution and use is allowed according to the terms of the New BSD license.
-#
+# SPDX-License-Identifier: BSD-3-Clause
 #
 
 if(PKG_CONFIG_FOUND)

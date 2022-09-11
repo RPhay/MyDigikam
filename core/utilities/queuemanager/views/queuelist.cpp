@@ -6,8 +6,8 @@
  * Date        : 2008-11-21
  * Description : Batch Queue Manager items list.
  *
- * Copyright (C) 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C)      2014 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
+ * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText:      2014 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

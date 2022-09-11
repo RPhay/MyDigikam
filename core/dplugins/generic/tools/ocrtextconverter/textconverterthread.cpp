@@ -1,13 +1,13 @@
 /* ============================================================
  *
- * This file is a part of kipi-plugins project
+ * This file is a part of digiKam project
  * https://www.digikam.org
  *
  * Date        : 2022-08-26
  * Description : Text Converter threads manager
  *
- * Copyright (C) 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2022      by Quoc Hung Tran <quochungtran1999 at gmail dot com>
+ * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2022      by Quoc Hung Tran <quochungtran1999 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -17,8 +17,8 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "textconvertertask.h"
-#include "ocroptions.h"
 
 using namespace Digikam;
 
@@ -30,21 +30,10 @@ class TextConverterActionThread::Private
 public:
 
     Private()
-      : language(int(OcrOptions::Languages::DEFAULT)),
-        psm(int(OcrOptions::PageSegmentationModes::DEFAULT)),
-        oem(int(OcrOptions::EngineModes::DEFAULT)),
-        dpi(300),
-        isSaveTextFile(true),
-        isSaveXMP(true)
     {
     }
 
-    int  language;
-    int  psm;
-    int  oem;
-    int  dpi;
-    bool isSaveTextFile;
-    bool isSaveXMP;
+    OcrOptions opt;
 };
 
 TextConverterActionThread::TextConverterActionThread(QObject* const parent)
@@ -67,36 +56,14 @@ TextConverterActionThread::~TextConverterActionThread()
     delete d;
 }
 
-
-void TextConverterActionThread::setLanguagesMode(int mode)
+void TextConverterActionThread::setOcrOptions(const OcrOptions& opt)
 {
-    d->language = mode;
+    d->opt = opt;
 }
 
-
-void TextConverterActionThread::setPSMMode(int mode)
+OcrOptions TextConverterActionThread::ocrOptions() const
 {
-    d->psm = mode;
-}
-
-void TextConverterActionThread::setOEMMode(int mode)
-{
-    d->oem = mode;
-}
-
-void TextConverterActionThread::setDpi(int value)
-{
-    d->dpi = value;
-}
-
-void TextConverterActionThread::setIsSaveTextFile(bool check)
-{
-    d->isSaveTextFile = check;
-}
-
-void TextConverterActionThread::setIsSaveXMP(bool check)
-{
-    d->isSaveXMP = check;
+    return d->opt;
 }
 
 void TextConverterActionThread::ocrProcessFile(const QUrl& url)
@@ -106,7 +73,6 @@ void TextConverterActionThread::ocrProcessFile(const QUrl& url)
     ocrProcessFiles(oneFile);
 }
 
-
 void TextConverterActionThread::ocrProcessFiles(const QList<QUrl>& urlList)
 {
     ActionJobCollection collection;
@@ -114,12 +80,7 @@ void TextConverterActionThread::ocrProcessFiles(const QList<QUrl>& urlList)
     for (QList<QUrl>::const_iterator it = urlList.constBegin() ; it != urlList.constEnd() ; ++it)
     {
         TextConverterTask* const t = new TextConverterTask(this, *it, PROCESS);
-        t->setLanguagesMode(d->language);
-        t->setPSMMode(d->psm);
-        t->setOEMMode(d->oem);
-        t->setDpi(d->dpi);
-        t->setIsSaveTextFile(d->isSaveTextFile);
-        t->setIsSaveXMP(d->isSaveXMP);
+        t->setOcrOptions(d->opt);
 
         connect(t, SIGNAL(signalStarting(DigikamGenericTextConverterPlugin::TextConverterActionData)),
                 this, SIGNAL(signalStarting(DigikamGenericTextConverterPlugin::TextConverterActionData)));
@@ -128,8 +89,8 @@ void TextConverterActionThread::ocrProcessFiles(const QList<QUrl>& urlList)
                 this, SIGNAL(signalFinished(DigikamGenericTextConverterPlugin::TextConverterActionData)));
 
         connect(this, SIGNAL(signalCancelTextConverterTask()),
-                t, SLOT(slotCancel()), Qt::QueuedConnection);
-
+                t, SLOT(slotCancel()),
+                Qt::QueuedConnection);
 
         collection.insert(t, 0);
     }

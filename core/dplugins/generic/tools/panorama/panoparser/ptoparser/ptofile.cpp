@@ -9,7 +9,7 @@
  *               hugin.sourceforge.net/docs/nona/nona.txt, and
  *               on pto files produced by Hugin's tools.
  *
- * Copyright (C) 2012-2015 by Benjamin Girault <benjamin dot girault at gmail dot com>
+ * SPDX-FileCopyrightText: 2012-2015 by Benjamin Girault <benjamin dot girault at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

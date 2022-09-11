@@ -6,7 +6,7 @@
  * Date        : 2010-08-20
  * Description : MetaEngine Settings Container.
  *
- * Copyright (C) 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -104,7 +104,6 @@ public:
     bool                            writeDngFiles;
     bool                            updateFileTimeStamp;
     bool                            rescanImageIfModified;
-    bool                            clearMetadataIfRescan;
     bool                            useXMPSidecar4Reading;
     bool                            useCompatibleFileName;
     bool                            useLazySync;

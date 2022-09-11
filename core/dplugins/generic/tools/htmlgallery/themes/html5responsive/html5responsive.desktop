@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Theme
 Name=HTML5 Responsive
+Name[be]=Адаптыўны HTML5
 Name[ca]=HTML5 responsiu
 Name[ca@valencia]=HTML5 responsiu
 Name[de]=HTML5 Responsive
@@ -27,6 +28,7 @@ Name[uk]=Інтерактивний HTML5
 Name[x-test]=xxHTML5 Responsivexx
 Name[zh_CN]=响应式 HTML5
 Comment=Generates a gallery using responsive HTML5 and CSS3 and UTF-8 encoding. Optionally uses PhotoSwipe by Dmitry Semenov to display the images.
+Comment[be]=Стварае галерэю з выкарыстаннем адаптыўнага HTML5, CSS3, UTF-8. Таксама мае магчымасць выкарыстання PhotoSwipe ад Dmitry Semenov для адлюстравання малюнкаў.
 Comment[ca]=Genera una galeria usant HTML5 responsiu i CSS3 i codificació UTF-8. Opcionalment usa el PhotoSwipe del Dmitry Semenov per mostrar les imatges.
 Comment[ca@valencia]=Genera una galeria utilitzant HTML5 responsiu i CSS3 i codificació UTF-8. De manera opcional utilitza PhotoSwipe del Dmitry Semenov per a mostrar les imatges.
 Comment[de]=Erzeugt eine Responsive Galerie auf Basis HTML5 und CSS3. Sie verwendet optional PhotoSwipe von Dmitry Semenov zur Anzeige der Bilder.
@@ -54,6 +56,7 @@ Comment[zh_CN]=使用响应式 HTML5、CSS3 和 UTF-8 编码生成相册。可�
 
 [X-HTMLGallery Author]
 Name=Bobulous
+Name[be]=Bobulous
 Name[ca]=Bobulous
 Name[ca@valencia]=Bobulous
 Name[cs]=Bobulous
@@ -82,6 +85,7 @@ Url=https://www.bobulous.org.uk/
 
 [X-HTMLGallery Preview]
 Name=HTML5 Responsive
+Name[be]=Адаптыўны HTML5
 Name[ca]=HTML5 responsiu
 Name[ca@valencia]=HTML5 responsiu
 Name[de]=HTML5 Responsive
@@ -115,6 +119,7 @@ Allow-non-square-thumbnails=true
 [X-HTMLGallery Parameter author]
 Name=Author
 Name[ar]=المؤلف
+Name[be]=Аўтар
 Name[bg]=Автор
 Name[ca]=Autor
 Name[ca@valencia]=Autoria
@@ -153,6 +158,7 @@ Default=
 [X-HTMLGallery Parameter style]
 Name=Style
 Name[ar]=النّمط
+Name[be]=Стыль
 Name[bg]=Стил
 Name[ca]=Estil
 Name[ca@valencia]=Estil
@@ -201,6 +207,7 @@ Caption-3=Brown Card
 
 [X-HTMLGallery Parameter pageSize]
 Name=Images per page
+Name[be]=Выяў на старонцы
 Name[ca]=Imatges per pàgina
 Name[ca@valencia]=Imatges per pàgina
 Name[cs]=Obrázků na stránku
@@ -236,6 +243,7 @@ Default=20
 
 [X-HTMLGallery Parameter paginationLocation]
 Name=Page links location
+Name[be]=Размяшчэнне спасылак на старонцы
 Name[ca]=La pàgina enllaça amb la ubicació
 Name[ca@valencia]=La pàgina enllaça amb la ubicació
 Name[da]=Placering af sidelinks
@@ -275,6 +283,7 @@ Caption-2=Both
 
 [X-HTMLGallery Parameter paginationModeTop]
 Name=Top pagination mode
+Name[be]=Рэжым верхняй нумарацыі
 Name[ca]=Mode de paginació de la part superior
 Name[ca@valencia]=Mode de paginació de la part superior
 Name[de]=Oberer Blättermodus
@@ -306,6 +315,7 @@ Caption-1=List all
 
 [X-HTMLGallery Parameter paginationModeBottom]
 Name=Bottom pagination mode
+Name[be]=Рэжым ніжняй нумарацыі
 Name[ca]=Mode de paginació de la part inferior
 Name[ca@valencia]=Mode de paginació de la part inferior
 Name[de]=Unterer Blättermodus
@@ -337,6 +347,7 @@ Caption-1=List all
 
 [X-HTMLGallery Parameter usePhotoSwipe]
 Name=Use PhotoSwipe
+Name[be]=Выкарыстоўваць PhotoSwipe
 Name[ca]=Usa el PhotoSwipe
 Name[ca@valencia]=Utilitza PhotoSwipe
 Name[de]=PhotoSwipe verwenden
@@ -371,6 +382,7 @@ Caption-1=No
 
 [X-HTMLGallery Parameter photoSwipeBackgroundOpacity]
 Name=PhotoSwipe Background Opacity
+Name[be]=Непразрыстасць фону PhotoSwipe
 Name[ca]=Opacitat del fons del PhotoSwipe
 Name[ca@valencia]=Opacitat del fons de PhotoSwipe
 Name[de]=PhotoSwipe Deckkraft
@@ -403,6 +415,7 @@ Max=10
 
 [X-HTMLGallery Parameter photoSwipeShowSharingButton]
 Name=PhotoSwipe sharing button
+Name[be]=Кнопка абагульвання PhotoSwipe
 Name[ca]=Botó de compartició del PhotoSwipe
 Name[ca@valencia]=Botó de compartició de PhotoSwipe
 Name[de]=Knopf für Bilder-Teilen
@@ -437,6 +450,7 @@ Caption-1=No
 
 [X-HTMLGallery Parameter addJiggle]
 Name=Add jiggle
+Name[be]=Дадаць хістанне
 Name[ca]=Afegeix un sacseig
 Name[ca@valencia]=Afig un sacsament
 Name[de]=Wackeln hinzufügen
@@ -468,6 +482,7 @@ Caption-1=No
 
 [X-HTMLGallery Parameter showGPS]
 Name=Show GPS data
+Name[be]=Паказваць даныя GPS
 Name[ca]=Mostra les dades del GPS
 Name[ca@valencia]=Mostra les dades del GPS
 Name[cs]=Zobrazit data GPS

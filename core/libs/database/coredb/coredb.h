@@ -6,10 +6,10 @@
  * Date        : 2004-06-18
  * Description : Core database interface.
  *
- * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2012      by Andi Clemens <andi dot clemens at gmail dot com>
+ * SPDX-FileCopyrightText: 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2012      by Andi Clemens <andi dot clemens at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -1017,7 +1017,12 @@ public:
     /**
      * Remove the specified entry in ItemComments
      */
-    void removeImageComment(int commentId, qlonglong imageid);
+    void removeImageComment(int commentId, qlonglong imageID);
+
+    /**
+     * Remove all ItemComments
+     */
+    void removeAllImageComments(qlonglong imageID);
 
     /**
      * Returns the property with the specified name for the specified image
@@ -1030,6 +1035,7 @@ public:
     void setImageProperty(qlonglong imageID, const QString& property, const QString& value);
     void removeImageProperty(qlonglong imageID, const QString& property);
     void removeImagePropertyByName(const QString& property);
+    void removeAllImageProperties(qlonglong imageID);
 
     /**
      * Returns the copyright properties of the specified image.
@@ -1060,6 +1066,11 @@ public:
     void removeItemCopyrightProperties(qlonglong imageID, const QString& property = QString(),
                                         const QString& extraValue = QString(),
                                         const QString& value = QString() /* NOTE parameter order */);
+
+    /**
+     * Removes all copyright properties for the given image id.
+     */
+    void removeAllItemCopyrightProperties(qlonglong imageID);
 
     /**
      * Returns all items with the given file name and creation date.
@@ -1374,14 +1385,6 @@ public:
      * Copies all entries in the ImageTags table.
      */
     void copyImageTags(qlonglong srcId, qlonglong dstId);
-
-    // ------------ Clear all Item Metadata -----------
-
-    /**
-     * Clear all metadata of an item
-     * @param  imageID the ID of the item
-     */
-    void clearMetadataFromImage(qlonglong imageID);
 
     // ----------- Download history methods -----------
 

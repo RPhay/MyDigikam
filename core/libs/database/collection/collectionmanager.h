@@ -6,7 +6,7 @@
  * Date        : 2007-04-09
  * Description : Collection location management
  *
- * Copyright (C) 2007-2009 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2007-2009 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

@@ -6,9 +6,9 @@
  * Date        : 2013-02-11
  * Description : Table view
  *
- * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
- * Copyright (C) 2017      by Simon Frei <freisim93 at gmail dot com>
- * Copyright (C) 2017-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2013      by Michael G. Hansen <mike at mghansen dot de>
+ * SPDX-FileCopyrightText: 2017      by Simon Frei <freisim93 at gmail dot com>
+ * SPDX-FileCopyrightText: 2017-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

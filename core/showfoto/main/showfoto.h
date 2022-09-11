@@ -6,11 +6,11 @@
  * Date        : 2004-11-22
  * Description : stand alone digiKam image editor GUI
  *
- * Copyright (C) 2004-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2011 by Andi Clemens <andi dot clemens at gmail dot com>
- * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2005-2006 by Tom Albers <tomalbers at kde dot nl>
+ * SPDX-FileCopyrightText: 2004-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2009-2011 by Andi Clemens <andi dot clemens at gmail dot com>
+ * SPDX-FileCopyrightText: 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
+ * SPDX-FileCopyrightText: 2005-2006 by Tom Albers <tomalbers at kde dot nl>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

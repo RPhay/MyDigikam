@@ -10,7 +10,7 @@
  * Description : A based on the default Adobe Lighroom theme
  *               for the digiKam html gallery tool.
  *
- * Copyright (C) 2007 by Wojciech Jarosz <wjarosz at ucsd dot edu>
+ * SPDX-FileCopyrightText: 2007 by Wojciech Jarosz <wjarosz at ucsd dot edu>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

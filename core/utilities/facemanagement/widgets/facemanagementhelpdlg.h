@@ -6,7 +6,7 @@
  * Date        : 2008-07-11
  * Description : Help Box Dialog for Face Management
  *
- * Copyright (C) 2020 by Kartik Ramesh <kartikx2000 at gmail dot com>
+ * SPDX-FileCopyrightText: 2020 by Kartik Ramesh <kartikx2000 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

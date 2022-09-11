@@ -6,7 +6,7 @@
  * Date        : 2009-04-30
  * Description : line edit for addition of tags on mouse hover
  *
- * Copyright (C) 2010 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
+ * SPDX-FileCopyrightText: 2010 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

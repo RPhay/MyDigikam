@@ -6,7 +6,7 @@
  * Date        : 2020-07-05
  * Description : File copy settings container.
  *
- * Copyright (C) 2020 by Maik Qualmann <metzpinguin at gmail dot com>
+ * SPDX-FileCopyrightText: 2020 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

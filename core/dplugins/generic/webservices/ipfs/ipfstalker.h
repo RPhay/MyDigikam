@@ -6,8 +6,8 @@
  * Date        : 2012-02-12
  * Description : a tool to export images to IPFS web service
  *
- * Copyright (C) 2018      by Amar Lakshya <amar dot lakshya at xaviers dot edu dot in>
- * Copyright (C) 2018-2020 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2018      by Amar Lakshya <amar dot lakshya at xaviers dot edu dot in>
+ * SPDX-FileCopyrightText: 2018-2020 by Caulier Gilles <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

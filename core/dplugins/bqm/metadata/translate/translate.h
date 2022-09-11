@@ -6,7 +6,7 @@
  * Date        : 2022-08-30
  * Description : translate metadata batch tool.
  *
- * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -45,13 +45,11 @@ private Q_SLOTS:
     void slotAssignSettings2Widget()                        override;
     void slotSettingsChanged()                              override;
 
+    void slotLocalizeChanged();
+
 private:
 
     bool toolOperations()                                   override;
-
-    bool translateString(const QString& text,
-                         const QString& trCode,
-                         QString& tr) const;
 
     bool insertTranslation(int entry,
                            const QString& trLang,

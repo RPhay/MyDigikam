@@ -5,7 +5,7 @@
  * Date        : 2019-06-08
  * Description : Node of KD-Tree for vector space partitioning
  *
- * Copyright (C) 2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
+ * SPDX-FileCopyrightText: 2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

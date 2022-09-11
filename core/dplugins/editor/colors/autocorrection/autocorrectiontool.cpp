@@ -6,7 +6,7 @@
  * Date        : 2005-05-31
  * Description : Auto-Color correction tool.
  *
- * Copyright (C) 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

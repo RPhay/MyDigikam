@@ -6,8 +6,8 @@
  * Date        : 2016-05-27
  * Description : Implementation of v3 of the Imgur API
  *
- * Copyright (C) 2016      by Fabian Vogt <fabian at ritter dash vogt dot de>
- * Copyright (C) 2016-2020 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2016      by Fabian Vogt <fabian at ritter dash vogt dot de>
+ * SPDX-FileCopyrightText: 2016-2020 by Caulier Gilles <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

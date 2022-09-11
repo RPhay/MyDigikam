@@ -6,7 +6,7 @@
  * Date        : 2011-01-12
  * Description : Test the TileIndex class
  *
- * Copyright (C) 2011 by Michael G. Hansen <mike at mghansen dot de>
+ * SPDX-FileCopyrightText: 2011 by Michael G. Hansen <mike at mghansen dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

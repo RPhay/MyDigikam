@@ -1,3 +1,8 @@
+; https://nsis.sourceforge.io/Registry_plug-in
+;
+; SPDX-License-Identifier: BSD-3-Clause
+;
+
 !define registry::Open `!insertmacro registry::Open`
 
 !macro registry::Open _PATH _OPTIONS _HANDLE

@@ -1,13 +1,13 @@
 /* ============================================================
  *
- * This file is a part of kipi-plugins project
+ * This file is a part of digiKam project
  * https://www.digikam.org
  *
  * Date        : 2022-08-26
  * Description : Text converter batch dialog
  *
- * Copyright (C) 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2022      by Quoc Hung Tran <quochungtran1999 at gmail dot com>
+ * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2022      by Quoc Hung Tran <quochungtran1999 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -60,11 +60,11 @@ private:
     void processingFailed(const QUrl& url, int result);
     void processed(const QUrl& url, const QString& outputFile, const QString& ocrResult);
 
-    int  calculateNumberOfWords(const QString& text);
+    int  calculateNumberOfWords(const QString& text) const;
 
 Q_SIGNALS:
 
-    void singalMetadataChangedForUrl(const QUrl&);
+    void signalMetadataChangedForUrl(const QUrl&);
 
 private Q_SLOTS:
 
@@ -79,6 +79,9 @@ private Q_SLOTS:
     void slotUpdateText();
 
     void slotSetDisable();
+
+    void slotStartFoundTesseract();
+    void slotTesseractBinaryFound(bool);
 
 private:
 

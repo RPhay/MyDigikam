@@ -6,7 +6,7 @@
  * Date        : 2009-02-04
  * Description : an unit-test to detect image quality level - shared code
  *
- * Copyright (C) 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -48,6 +48,7 @@ ImageQualityContainer ImgQSortTest_ArrangeSettings (DetectionType type)
     settings.detectNoise        = false;
     settings.detectCompression  = false;
     settings.detectExposure     = false;
+    settings.detectAesthetic    = false;
 
     switch (type)
     {
@@ -67,11 +68,16 @@ ImageQualityContainer ImgQSortTest_ArrangeSettings (DetectionType type)
             settings.detectBlur         = true;
             break;
 
+        case DETECTAESTHETIC:
+            settings.detectAesthetic    = true;
+            break;
+
         default:
             settings.detectBlur         = true;
             settings.detectCompression  = true;
             settings.detectNoise        = true;
             settings.detectExposure     = true;
+            settings.detectAesthetic    = false;
             break;
     }
 
@@ -91,6 +97,7 @@ ImageQualityContainer ImgQSortTest_ArrangeCustomSettings(const CustomDetection& 
     settings.detectCompression  = customSetting.detectCompression;
     settings.detectNoise        = customSetting.detectNoise;
     settings.detectExposure     = customSetting.detectExposure;
+    settings.detectAesthetic    = customSetting.detectAesthetic;
 
     return settings;
 }

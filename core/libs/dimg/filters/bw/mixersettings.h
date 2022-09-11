@@ -6,7 +6,7 @@
  * Date        : 2009-02-18
  * Description : Channel mixer settings view.
  *
- * Copyright (C) 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

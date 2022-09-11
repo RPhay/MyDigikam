@@ -1,13 +1,13 @@
 /* ============================================================
  *
- * This file is a part of kipi-plugins project
+ * This file is a part of digiKam project
  * https://www.digikam.org
  *
  * Date        : 2022-08-26
  * Description : file list view and items
  *
- * Copyright (C) 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2022      by Quoc Hung Tran <quochungtran1999 at gmail dot com>
+ * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2022      by Quoc Hung Tran <quochungtran1999 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -22,30 +22,26 @@
 // LibKDcraw includes
 
 #include "drawdecoder.h"
+#include "digikam_debug.h"
 
 using namespace Digikam;
 
 namespace DigikamGenericTextConverterPlugin
 {
 
-// -------------------------------------------------------------------------------------
-// -------------------------------- Text Converter List --------------------------------
-// -------------------------------------------------------------------------------------
-
 TextConverterList::TextConverterList(QWidget* const parent)
     : DItemsList(parent)
 {
     setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
 
-    listView()->setColumn(static_cast<DItemsListView::ColumnType>(RECOGNIZEDWORDS), i18n("Recognized Words"),  true);
-    listView()->setColumn(static_cast<DItemsListView::ColumnType>(TARGETFILENAME),  i18n("Target File"),       true);
-    listView()->setColumn(static_cast<DItemsListView::ColumnType>(STATUS),          i18n("Status"),            true);
+    listView()->setColumn(static_cast<DItemsListView::ColumnType>(RECOGNIZEDWORDS), i18n("Words"),       true);
+    listView()->setColumn(static_cast<DItemsListView::ColumnType>(TARGETFILENAME),  i18n("Target File"), true);
+    listView()->setColumn(static_cast<DItemsListView::ColumnType>(STATUS),          i18n("Status"),      true);
 }
 
 TextConverterList::~TextConverterList()
 {
 }
-
 
 void TextConverterList::slotAddImages(const QList<QUrl>& list)
 {
@@ -59,10 +55,9 @@ void TextConverterList::slotAddImages(const QList<QUrl>& list)
 
     for (auto const& imageUrl: list)
     {
-
         // Check if the new item already exist in the list.
 
-        bool found    = false;
+        bool found = false;
 
         for (int i = 0 ; i < listView()->topLevelItemCount() ; ++i)
         {
@@ -93,7 +88,6 @@ void TextConverterList::slotAddImages(const QList<QUrl>& list)
     Q_EMIT signalImageListChanged();
 }
 
-
 void TextConverterList::slotRemoveItems()
 {
     bool find = false;
@@ -117,12 +111,9 @@ void TextConverterList::slotRemoveItems()
             ++it;
         }
     }
-    while(find);
+    while (find);
 }
 
-
-// --------------------------------------------------------------------------------------
-// ---------------------------- Text Converter List View Item ---------------------------
 // --------------------------------------------------------------------------------------
 
 class TextConverterListViewItem::Private

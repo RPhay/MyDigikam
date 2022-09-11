@@ -6,7 +6,7 @@
  * Date        : 2022-08-31
  * Description : digiKam global static QNetworkAccessManager
  *
- * Copyright (C) 2022 by Maik Qualmann <metzpinguin at gmail dot com>
+ * SPDX-FileCopyrightText: 2022 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

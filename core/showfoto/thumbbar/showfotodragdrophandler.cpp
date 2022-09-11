@@ -6,7 +6,7 @@
  * Date        : 2014-01-28
  * Description : drag and drop handling for Showfoto
  *
- * Copyright (C) 2014 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
+ * SPDX-FileCopyrightText: 2014 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

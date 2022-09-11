@@ -6,7 +6,7 @@
  * Date        : 2015-06-07
  * Description : a tool to create panorama by fusion of several images.
  *
- * Copyright (C) 2015-2016 by Benjamin Girault <benjamin dot girault at gmail dot com>
+ * SPDX-FileCopyrightText: 2015-2016 by Benjamin Girault <benjamin dot girault at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

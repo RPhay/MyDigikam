@@ -6,7 +6,7 @@
  * Date        : 2010-12-16
  * Description : Import filter combobox
  *
- * Copyright (C) 2010-2011 by Petri Damstén <petri dot damsten at iki dot fi>
+ * SPDX-FileCopyrightText: 2010-2011 by Petri Damstén <petri dot damsten at iki dot fi>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

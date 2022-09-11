@@ -6,8 +6,8 @@
  * Date        : 2008-12-10
  * Description : album icon view tool tip
  *
- * Copyright (C) 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
+ * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

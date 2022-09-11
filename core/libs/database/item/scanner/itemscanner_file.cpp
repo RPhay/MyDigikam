@@ -6,8 +6,8 @@
  * Date        : 2007-09-19
  * Description : Scanning a single item - file metadata helper.
  *
- * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -210,11 +210,9 @@ void ItemScanner::scanFile(ScanMode mode)
     }
     else
     {
-        if ((d->scanMode == Rescan) &&
-            (d->scanInfo.id != -1)  &&
-            MetaEngineSettings::instance()->settings().clearMetadataIfRescan)
+        if (d->scanMode == Rescan)
         {
-            CoreDbAccess().db()->clearMetadataFromImage(d->scanInfo.id);
+            clearDatabaseMetadata();
         }
 
         if      (d->scanInfo.category == DatabaseItem::Image)

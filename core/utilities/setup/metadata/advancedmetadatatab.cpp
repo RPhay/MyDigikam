@@ -6,7 +6,7 @@
  * Date        : 2015-06-16
  * Description : Advanced Configuration tab for metadata.
  *
- * Copyright (C) 2015 by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail.com>
+ * SPDX-FileCopyrightText: 2015 by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail.com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

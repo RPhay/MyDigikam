@@ -1,19 +1,18 @@
 #!/usr/bin/env python
 
 # ============================================================
-# 
+#
 # This file is a part of digiKam project
 # https://www.digikam.org
-# 
+#
 # Date        : 2009-10-12
 # Description : a helper script for formatting the digiKam source code
-# 
-# Copyright (C) 2009-2012 by Andi Clemens <andi dot clemens at gmail dot com>
-# 
+#
+# SPDX-FileCopyrightText: 2009-2012 by Andi Clemens <andi dot clemens at gmail dot com>
+#
 # SPDX-License-Identifier: BSD-3-Clause
-# 
+#
 # ============================================================ */
-
 
 import os
 import sys

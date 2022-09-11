@@ -9,7 +9,7 @@
  * Date        : 2008-06-22
  * Description : A clean look theme for the digiKam html gallery tool.
  *
- * Copyright (C) 2008 by Gianluca Urgese <g dot urgese at jaone dot it>
+ * SPDX-FileCopyrightText: 2008 by Gianluca Urgese <g dot urgese at jaone dot it>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

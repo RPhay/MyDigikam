@@ -6,9 +6,9 @@
  * Date        : 2009-11-14
  * Description : Mysql internal database server
  *
- * Copyright (C) 2009-2011 by Holger Foerster <Hamsi2k at freenet dot de>
- * Copyright (C) 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2016      by Swati Lodha <swatilodha27 at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2011 by Holger Foerster <Hamsi2k at freenet dot de>
+ * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2016      by Swati Lodha <swatilodha27 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

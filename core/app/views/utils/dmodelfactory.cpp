@@ -6,8 +6,8 @@
  * Date        : 2009-12-05
  * Description : factory of basic models used for views in digikam
  *
- * Copyright (C) 2009-2010 by Johannes Wienke <languitar at semipol dot de>
- * Copyright (C) 2010      by Andi Clemens <andi dot clemens at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2010 by Johannes Wienke <languitar at semipol dot de>
+ * SPDX-FileCopyrightText: 2010      by Andi Clemens <andi dot clemens at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

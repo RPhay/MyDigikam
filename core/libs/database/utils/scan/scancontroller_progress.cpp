@@ -6,9 +6,9 @@
  * Date        : 2005-10-28
  * Description : scan item controller - progress operations.
  *
- * Copyright (C) 2005-2006 by Tom Albers <tomalbers at kde dot nl>
- * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2005-2006 by Tom Albers <tomalbers at kde dot nl>
+ * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

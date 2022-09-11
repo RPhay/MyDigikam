@@ -11,7 +11,7 @@
  *               International Conference on Computer Vision (ICCV), 2007.
  *               Based on Gary B. Huang, UMass-Amherst implementation.
  *
- * Copyright (C) 2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

@@ -6,7 +6,7 @@
  * Date        : 2018-07-08
  * Description : Base class for web service talkers.
  *
- * Copyright (C) 2018 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * SPDX-FileCopyrightText: 2018 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

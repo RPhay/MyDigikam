@@ -6,8 +6,8 @@
  * Date        : 2010-11-10
  * Description : basic filter management for DImg builtin methods
  *
- * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

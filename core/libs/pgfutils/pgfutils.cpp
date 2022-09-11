@@ -6,7 +6,7 @@
  * Date        : 2009-05-29
  * Description : static helper methods for PGF image format.
  *
- * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

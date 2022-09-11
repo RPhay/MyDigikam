@@ -6,9 +6,9 @@
  * Date        : 2005-11-18
  * Description : a class to apply ICC color correction to image.
  *
- * Copyright (C) 2005-2006 by F.J. Cruz <fj dot cruz at supercable dot es>
- * Copyright (C) 2009      by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2005-2006 by F.J. Cruz <fj dot cruz at supercable dot es>
+ * SPDX-FileCopyrightText: 2009      by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

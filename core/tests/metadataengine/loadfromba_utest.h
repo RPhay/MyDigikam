@@ -6,7 +6,7 @@
  * Date        : 2009-06-11
  * Description : An unit test to load metadata from byte array
  *
- * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

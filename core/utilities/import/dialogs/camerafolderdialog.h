@@ -6,7 +6,7 @@
  * Date        : 2006-07-24
  * Description : a dialog to select a camera folders.
  *
- * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

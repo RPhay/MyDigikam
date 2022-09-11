@@ -6,7 +6,7 @@
  * Date        : 2010-05-22
  * Description : database key selector.
  *
- * Copyright (C) 2010-2012 by Andi Clemens <andi dot clemens at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2012 by Andi Clemens <andi dot clemens at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

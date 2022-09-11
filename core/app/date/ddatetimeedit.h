@@ -6,8 +6,8 @@
  * Date        : 2005-04-21
  * Description : a widget to edit time stamp.
  *
- * Copyright (C) 2005      by Tom Albers <tomalbers at kde dot nl>
- * Copyright (C) 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2005      by Tom Albers <tomalbers at kde dot nl>
+ * SPDX-FileCopyrightText: 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

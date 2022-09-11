@@ -6,8 +6,8 @@
  * Date        : 2005-07-18
  * Description : Shear tool threaded image filter.
  *
- * Copyright (C) 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
+ * SPDX-FileCopyrightText: 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * Original Shear algorithms copyrighted 2005 by
  * Pieter Z. Voloshyn <pieter dot voloshyn at gmail dot com>.

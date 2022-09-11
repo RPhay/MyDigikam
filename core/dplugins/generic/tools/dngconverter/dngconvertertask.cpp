@@ -1,12 +1,12 @@
 /* ============================================================
  *
- * This file is a part of kipi-plugins project
+ * This file is a part of digiKam project
  * https://www.digikam.org
  *
  * Date        : 2012-12-24
  * Description : DNG Converter thread
  *
- * Copyright (C) 2012 by Smit Mehta <smit dot meh at gmail dot com>
+ * SPDX-FileCopyrightText: 2012 by Smit Mehta <smit dot meh at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

@@ -6,8 +6,8 @@
  * Date        : 1998-01-25
  * Description : helper methods to handle ICC color profile with JPEG file.
  *
- * Copyright (C) 1998-2004 by Marti Maria <info at littlecms dot com>
- * Copyright (C) 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 1998-2004 by Marti Maria <info at littlecms dot com>
+ * SPDX-FileCopyrightText: 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

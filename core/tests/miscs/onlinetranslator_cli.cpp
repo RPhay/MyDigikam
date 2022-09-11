@@ -6,7 +6,7 @@
  * Date        : 2021-01-05
  * Description : an unit test to check text online-translators.
  *
- * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

@@ -1,13 +1,13 @@
 /* ============================================================
  *
- * This file is a part of kipi-plugins project
+ * This file is a part of digiKam project
  * https://www.digikam.org
  *
  * Date        : 2022-08-26
  * Description : OCR Tesseract engine
  *
- * Copyright (C) 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2022      by Quoc Hung Tran <quochungtran1999 at gmail dot com>
+ * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2022      by Quoc Hung Tran <quochungtran1999 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -17,44 +17,31 @@
 
 // Qt includes
 
-#include <QProcess>
+#include <QDir>
 #include <QUrl>
+#include <QProcess>
 #include <QFileInfo>
 
 // local includes
 
-#include "ocroptions.h"
-#include "dmetadata.h"
+#include "digikam_debug.h"
 #include "digikam_globals.h"
-
-using namespace Digikam;
+#include "localizeselector.h"
 
 namespace DigikamGenericTextConverterPlugin
 {
 
-class  OcrTesseracrEngine::Private
+class OcrTesseractEngine::Private
 {
 
 public:
 
     Private()
-      : language        ((int)OcrOptions::Languages::DEFAULT),
-        psm             ((int)OcrOptions::PageSegmentationModes::DEFAULT),
-        oem             ((int)OcrOptions::EngineModes::DEFAULT),
-        dpi             (300),
-        isSaveTextFile  (true),
-        isSaveXMP       (true),
-        cancel          (false)
+      : cancel(false)
     {
     }
 
-    int        language;
-    int        psm;
-    int        oem;
-    int        dpi;
-
-    bool       isSaveTextFile;
-    bool       isSaveXMP;
+    OcrOptions opt;
 
     bool       cancel;
 
@@ -63,102 +50,52 @@ public:
     QString    ocrResult;
 };
 
-OcrTesseracrEngine::OcrTesseracrEngine()
+OcrTesseractEngine::OcrTesseractEngine()
     : d(new Private())
 {
 }
 
-OcrTesseracrEngine::~OcrTesseracrEngine()
+OcrTesseractEngine::~OcrTesseractEngine()
 {
     delete d;
 }
 
-void OcrTesseracrEngine::setLanguagesMode(int mode)
+void OcrTesseractEngine::setOcrOptions(const OcrOptions& opt)
 {
-    d->language = mode;
+    d->opt = opt;
 }
 
-int OcrTesseracrEngine::languagesMode() const
+OcrOptions OcrTesseractEngine::ocrOptions() const
 {
-    return d->language;
+    return d->opt;
 }
 
-void OcrTesseracrEngine::setPSMMode(int mode)
-{
-    d->psm = mode;
-}
-
-int OcrTesseracrEngine::PSMMode() const
-{
-    return d->psm;
-}
-
-void OcrTesseracrEngine::setOEMMode(int mode)
-{
-    d->oem = mode;
-}
-
-int OcrTesseracrEngine::OEMMode() const
-{
-    return d->oem;
-}
-
-void OcrTesseracrEngine::setDpi(int value)
-{
-    d->dpi = value;
-}
-
-int OcrTesseracrEngine::Dpi() const
-{
-    return d->dpi;
-}
-
-QString OcrTesseracrEngine::inputFile() const
+QString OcrTesseractEngine::inputFile() const
 {
     return d->inputFile;
 }
 
-QString OcrTesseracrEngine::outputFile() const
+QString OcrTesseractEngine::outputFile() const
 {
     return d->outputFile;
 }
 
-QString OcrTesseracrEngine::outputText() const
+QString OcrTesseractEngine::outputText() const
 {
     return d->ocrResult;
 }
 
-void OcrTesseracrEngine::setInputFile(const QString& filePath)
+void OcrTesseractEngine::setInputFile(const QString& filePath)
 {
     d->inputFile = filePath;
 }
 
-void OcrTesseracrEngine::setOutputFile(const QString& filePath)
+void OcrTesseractEngine::setOutputFile(const QString& filePath)
 {
     d->outputFile = filePath;
 }
 
-void OcrTesseracrEngine::setIsSaveTextFile(bool check)
-{
-    d->isSaveTextFile = check;
-}
-
-bool OcrTesseracrEngine::isSaveTextFile() const
-{
-    return d->isSaveTextFile;
-}
-
-void OcrTesseracrEngine::setIsSaveXMP(bool check)
-{
-    d->isSaveXMP = check;
-}
-
-bool OcrTesseracrEngine::isSaveXMP() const
-{
-    return d->isSaveXMP;
-}
-
-int OcrTesseracrEngine::runOcrProcess()
+int OcrTesseractEngine::runOcrProcess()
 {
     d->cancel = false;
     QScopedPointer<QProcess> ocrProcess (new QProcess());
@@ -186,11 +123,10 @@ int OcrTesseracrEngine::runOcrProcess()
 
         // ----------------------------- OPTIONS -----------------------------
 
-        OcrOptions ocropt;
-
         // page Segmentation mode
 
-        QString val = ocropt.PsmCodeToValue(static_cast<OcrOptions::PageSegmentationModes>(d->psm));
+        QString val = d->opt.PsmCodeToValue(static_cast<OcrOptions::PageSegmentationModes>(d->opt.psm));
+
         if (!val.isEmpty())
         {
             args << QLatin1String("--psm") << val;
@@ -198,7 +134,8 @@ int OcrTesseracrEngine::runOcrProcess()
 
         // OCR enginge mode
 
-        val = ocropt.OemCodeToValue(static_cast<OcrOptions::EngineModes>(d->oem));
+        val = d->opt.OemCodeToValue(static_cast<OcrOptions::EngineModes>(d->opt.oem));
+
         if (!val.isEmpty())
         {
             args << QLatin1String("--oem") << val;
@@ -206,16 +143,17 @@ int OcrTesseracrEngine::runOcrProcess()
 
         // Language
 
-        val = ocropt.LanguageCodeToValue(static_cast<OcrOptions::Languages>(d->language));
+        val = d->opt.language;
+
         if (!val.isEmpty())
         {
             args << QLatin1String("-l") << val;
         }
 
-
         // dpi
 
-        val = QString::fromLatin1("%1").arg(d->dpi);
+        val = QString::fromLatin1("%1").arg(d->opt.dpi);
+
         if (!val.isEmpty())
         {
             args << QLatin1String("--dpi") << val;
@@ -223,22 +161,22 @@ int OcrTesseracrEngine::runOcrProcess()
 
         // ------------------  Running tesseract process ------------------
 
-        const QString cmd = QLatin1String("tesseract");
-
-        ocrProcess->setProgram(cmd);
+        ocrProcess->setWorkingDirectory(QDir::tempPath());
+        ocrProcess->setProgram(d->opt.tesseractPath);
         ocrProcess->setArguments(args);
 
-        qDebug() << "Running OCR : "
-                 << ocrProcess->program()
-                 << ocrProcess->arguments();
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Running OCR : "
+                                     << ocrProcess->program()
+                                     << ocrProcess->arguments();
 
         ocrProcess->start();
 
-        bool successFlag =  ocrProcess->waitForFinished(-1) &&  ocrProcess->exitStatus() == QProcess::NormalExit;
+        bool successFlag = ocrProcess->waitForFinished(-1) && (ocrProcess->exitStatus() == QProcess::NormalExit);
 
         if (!successFlag)
         {
-            qWarning() << "Error starting OCR Process";
+            qCWarning(DIGIKAM_GENERAL_LOG) << "Error starting OCR Process";
+
             return PROCESS_FAILED;
         }
 
@@ -246,83 +184,111 @@ int OcrTesseracrEngine::runOcrProcess()
         {
             return PROCESS_CANCELED;
         }
-
     }
-    catch(const QProcess::ProcessError& e)
+    catch (const QProcess::ProcessError& e)
     {
-        qWarning() << "Text Converter has error" << e;
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Text Converter has error" << e;
+
         return PROCESS_FAILED;
     }
 
+    d->ocrResult = QString::fromLocal8Bit(ocrProcess->readAllStandardOutput());
 
-    d->ocrResult   = QString::fromLocal8Bit(ocrProcess->readAllStandardOutput());
-
-    SaveOcrResult();
+    saveOcrResult();
 
     return PROCESS_COMPLETE;
 }
 
-void OcrTesseracrEngine::SaveOcrResult()
+void OcrTesseractEngine::saveOcrResult()
 {
-    if (d->isSaveTextFile)
-    {
-        QFileInfo fi(d->inputFile);
-        d->outputFile =   fi.absolutePath()
-                          +  QLatin1String("/")
-                          + (QString::fromLatin1("%1-textconverter.txt").arg(fi.fileName()));
+    MetaEngine::AltLangMap commentsMap;
+    commentsMap.insert(QLatin1String("x-default"), d->ocrResult);
 
-        saveTextFile(d->outputFile, d->ocrResult);
+    if (d->opt.isSaveTextFile || d->opt.isSaveXMP)
+    {
+        translate(commentsMap, d->opt.translations);
     }
 
-    if (d->isSaveXMP)
+    if (d->opt.isSaveTextFile)
     {
-        saveXMP(d->inputFile, d->ocrResult);
+        saveTextFile(d->inputFile, d->outputFile, commentsMap);
     }
-}
 
-void OcrTesseracrEngine::saveTextFile(const QString& filePath, const QString& text)
-{
-    QFile file(filePath);
-
-    if (file.open(QIODevice::ReadWrite | QIODevice::Truncate))
+    if (d->opt.isSaveXMP)
     {
-        QTextStream stream(&file);
-        stream << text;
-        file.close();
+        saveXMP(QUrl::fromLocalFile(d->inputFile), commentsMap, d->opt.iface);
     }
 }
 
-void OcrTesseracrEngine::saveXMP(const QString& filePath, const QString& text)
+void OcrTesseractEngine::translate(MetaEngine::AltLangMap& commentsMap,
+                                   const QStringList& langs)
 {
-    QScopedPointer<DMetadata> dmeta(new DMetadata(filePath));
+    QString text = commentsMap[QLatin1String("x-default")];
+
+    Q_FOREACH (const QString& lg, langs)
+    {
+        QString tr;
+        QString error;
+
+        bool b = s_inlineTranslateString(text, lg, tr, error);
+
+        if (b)
+        {
+            commentsMap.insert(lg, tr);
+        }
+        else
+        {
+            qCWarning(DIGIKAM_GENERAL_LOG) << "Error while translating in" << lg << ":" << error;
+        }
+    }
+}
+
+void OcrTesseractEngine::saveTextFile(const QString& inFile,
+                                      QString& outFile,
+                                      const MetaEngine::AltLangMap& commentsMap)
+{
+    Q_FOREACH (const QString& lg, commentsMap.keys())
+    {
+        QFileInfo fi(inFile);
+        outFile = fi.absolutePath()  +
+                  QLatin1String("/") +
+                  (QString::fromLatin1("%1-ocr-%2.txt").arg(fi.fileName()).arg(lg));
+
+        QFile file(outFile);
+
+        if (file.open(QIODevice::ReadWrite | QIODevice::Truncate))
+        {
+            QTextStream stream(&file);
+            stream << commentsMap[lg];
+            file.close();
+        }
+    }
+}
+
+void OcrTesseractEngine::saveXMP(const QUrl& url,
+                                 const MetaEngine::AltLangMap& commentsMap,
+                                 DInfoInterface* const iface)
+{
+    CaptionsMap commentsSet;
+    QString   author = QLatin1String("digiKam OCR Text Converter Plugin");
+    QDateTime dt     = QDateTime::currentDateTime();
 
     MetaEngine::AltLangMap authorsMap;
     MetaEngine::AltLangMap datesMap;
-    MetaEngine::AltLangMap commentsMap;
 
-    Digikam::CaptionsMap commentsSet;
-
-    commentsSet = dmeta->getItemComments();
-
-    QString   rezAuthor   = commentsSet.value(QLatin1String("x-default")).author;
-    QDateTime rezDateTime = commentsSet.value(QLatin1String("x-default")).date;
-
-    commentsMap.insert(QLatin1String("x-default"), text);
-    datesMap.insert(QLatin1String("x-default"),    rezDateTime.toString());
-    authorsMap.insert(QLatin1String("x-default"),  rezAuthor);
+    Q_FOREACH (const QString& lg, commentsMap.keys())
+    {
+        datesMap.insert(lg,   dt.toString(Qt::ISODate));
+        authorsMap.insert(lg, author);
+    }
 
     commentsSet.setData(commentsMap, authorsMap, QString(), datesMap);
-    dmeta->setItemComments(commentsSet);
 
-    if (dmeta->applyChanges())
-    {
-        qDebug() << "Success in hosting text in XMP";
-    }
-    else
-    {
-        qDebug() << "Errors in hosting text in XMP";
-    }
+    // --- Version using DInfoInterface
+
+    DItemInfo witem;
+    witem.setCaptions(commentsSet);
+    iface->setItemInfo(url, witem.infoMap());
 }
 
-}    // namespace DigikamGenericTextConverterPlugin
-
+} // namespace DigikamGenericTextConverterPlugin

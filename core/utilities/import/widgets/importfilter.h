@@ -6,8 +6,8 @@
  * Date        : 2010-12-16
  * Description : Filter for filter combobox
  *
- * Copyright (C) 2010-2011 by Petri Damstén <petri dot damsten at iki dot fi>
- * Copyright (C) 2014      by Teemu Rytilahti <tpr@iki.fi>
+ * SPDX-FileCopyrightText: 2010-2011 by Petri Damstén <petri dot damsten at iki dot fi>
+ * SPDX-FileCopyrightText: 2014      by Teemu Rytilahti <tpr@iki.fi>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

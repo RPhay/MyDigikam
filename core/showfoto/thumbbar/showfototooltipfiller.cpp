@@ -6,7 +6,7 @@
  * Date        : 09-08-2013
  * Description : Showfoto tool tip filler
  *
- * Copyright (C) 2013 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
+ * SPDX-FileCopyrightText: 2013 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

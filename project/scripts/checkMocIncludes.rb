@@ -8,12 +8,11 @@
 # Date        : 2012-07-14
 # Description : a helper script for finding source code with no moc includes
 #
-# Copyright (C) 2012 by Andi Clemens <andi dot clemens at gmail dot com>
+# SPDX-FileCopyrightText: 2012 by Andi Clemens <andi dot clemens at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
 # ============================================================ */
-
 
 # get all header files containing the line "Q_OBJECT"
 candidates = Dir.glob("**/*.h").select do |file_name|

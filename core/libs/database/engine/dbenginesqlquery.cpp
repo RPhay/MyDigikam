@@ -6,7 +6,7 @@
  * Date        : 2009-09-27
  * Description : Database engine SQL query
  *
- * Copyright (C) 2009-2010 by Holger Foerster <Hamsi2k at freenet dot de>
+ * SPDX-FileCopyrightText: 2009-2010 by Holger Foerster <Hamsi2k at freenet dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

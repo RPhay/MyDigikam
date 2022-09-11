@@ -6,7 +6,7 @@
  * Date        : 2013-06-29
  * Description : Test the functions for dealing with DatabaseFields
  *
- * Copyright (C) 2013 by Michael G. Hansen <mike at mghansen dot de>
+ * SPDX-FileCopyrightText: 2013 by Michael G. Hansen <mike at mghansen dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

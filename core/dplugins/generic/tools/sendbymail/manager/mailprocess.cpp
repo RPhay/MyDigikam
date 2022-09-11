@@ -6,10 +6,10 @@
  * Date        : 2004-02-25
  * Description : a tool to e-mailing images
  *
- * Copyright (C) 2004-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2010      by Andi Clemens <andi dot clemens at googlemail dot com>
- * Copyright (C) 2006      by Tom Albers <tomalbers at kde dot nl>
- * Copyright (C) 2006      by Michael Hoechstetter <michael dot hoechstetter at gmx dot de>
+ * SPDX-FileCopyrightText: 2004-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010      by Andi Clemens <andi dot clemens at googlemail dot com>
+ * SPDX-FileCopyrightText: 2006      by Tom Albers <tomalbers at kde dot nl>
+ * SPDX-FileCopyrightText: 2006      by Michael Hoechstetter <michael dot hoechstetter at gmx dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

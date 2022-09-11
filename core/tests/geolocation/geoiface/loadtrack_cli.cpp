@@ -6,7 +6,7 @@
  * Date        : 2014-07-02
  * Description : Simple program to load a track for timing tests.
  *
- * Copyright (C) 2014 by Michael G. Hansen <mike at mghansen dot de>
+ * SPDX-FileCopyrightText: 2014 by Michael G. Hansen <mike at mghansen dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

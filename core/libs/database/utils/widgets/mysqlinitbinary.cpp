@@ -6,7 +6,7 @@
  * Date        : 2016-06-20
  * Description : Autodetects Mysql initializer binary program and version
  *
- * Copyright (C) 2016-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2016-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

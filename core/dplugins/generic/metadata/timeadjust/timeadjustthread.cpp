@@ -6,8 +6,8 @@
  * Date        : 2004-05-16
  * Description : time adjust thread.
  *
- * Copyright (C) 2012      by Smit Mehta <smit dot meh at gmail dot com>
- * Copyright (C) 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2012      by Smit Mehta <smit dot meh at gmail dot com>
+ * SPDX-FileCopyrightText: 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (c) 2018-2021 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
@@ -176,7 +176,7 @@ QDateTime TimeAdjustThread::readApplicationTimestamp(const QUrl& url) const
 
 QDateTime TimeAdjustThread::readFileNameTimestamp(const QUrl& url) const
 {
-    return d->settings.getDateTimeFromUrl(url);
+    return d->settings.getDateTimeFromString(url.fileName());
 }
 
 QDateTime TimeAdjustThread::readFileTimestamp(const QUrl& url) const
@@ -243,6 +243,24 @@ QDateTime TimeAdjustThread::readMetadataTimestamp(const QUrl& url) const
         {
             dateTime = QDateTime::fromString(meta->getXmpTagString("Xmp.xmp.CreateDate"),
                                              xmpDateTimeFormat);
+            break;
+        }
+
+        case TimeAdjustContainer::FUZZYCREATED:
+        {
+            dateTime = d->settings.getDateTimeFromString(meta->getExifTagString("Exif.Image.DateTime"));
+            break;
+        }
+
+        case TimeAdjustContainer::FUZZYORIGINAL:
+        {
+            dateTime = d->settings.getDateTimeFromString(meta->getExifTagString("Exif.Photo.DateTimeOriginal"));
+            break;
+        }
+
+        case TimeAdjustContainer::FUZZYDIGITIZED:
+        {
+            dateTime = d->settings.getDateTimeFromString(meta->getExifTagString("Exif.Photo.DateTimeDigitized"));
             break;
         }
 

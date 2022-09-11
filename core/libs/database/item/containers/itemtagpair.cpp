@@ -6,7 +6,7 @@
  * Date        : 2009-07-05
  * Description : Access to the properties of an Item / Tag pair, i.e., a tag associated to an item
  *
- * Copyright (C) 2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

@@ -5,11 +5,10 @@
 #  LQR-1_INCLUDE_DIRS - The lqr-1 library include directory
 #  LQR-1_LIBRARIES    - Link these to use the lqr-1 library
 #
-# Copyright (c) 2009      by Pino Toscano <pino at kde dot org>
-# Copyright (c) 2012-2022 by Caulier Gilles <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2009      by Pino Toscano <pino at kde dot org>
+# SPDX-FileCopyrightText: 2012-2022 by Caulier Gilles <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
-#
 #
 
 if(LQR-1_LIBRARIES AND LQR-1_INCLUDE_DIRS)

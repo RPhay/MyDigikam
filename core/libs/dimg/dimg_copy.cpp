@@ -7,8 +7,8 @@
  * Description : digiKam 8/16 bits image management API.
  *               Copying operations.
  *
- * Copyright (C) 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

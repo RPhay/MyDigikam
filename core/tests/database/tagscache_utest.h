@@ -6,7 +6,7 @@
  * Date        : 2021-02-20
  * Description : Unit tests for TagsCache class
  *
- * Copyright (C) 2021 by David Haslam, <dch dot code at gmail dot com>
+ * SPDX-FileCopyrightText: 2021 by David Haslam, <dch dot code at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

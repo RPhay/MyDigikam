@@ -6,7 +6,7 @@
  * Date        : 2020-08-20
  * Description : black frame list view tool tip
  *
- * Copyright (C) 2020-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2020-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

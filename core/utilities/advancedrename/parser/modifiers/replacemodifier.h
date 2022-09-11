@@ -6,7 +6,7 @@
  * Date        : 2009-09-18
  * Description : a modifier for replacing text in a token result
  *
- * Copyright (C) 2009-2012 by Andi Clemens <andi dot clemens at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2012 by Andi Clemens <andi dot clemens at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

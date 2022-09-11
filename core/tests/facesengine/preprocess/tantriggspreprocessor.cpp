@@ -9,8 +9,8 @@
  *               on Image Processing 19 (2010), 1635–650.
  *               Default parameters are taken from the paper.
  *
- * Copyright (C) 2012-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C)      2012 Philipp Wagner <bytefish at gmx dot de>
+ * SPDX-FileCopyrightText: 2012-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText:      2012 Philipp Wagner <bytefish at gmx dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

@@ -5,8 +5,8 @@
  *
  * Description : Helper functions for the Hugin API
  *
- * Copyright (C) 2007 by Daniel M German <dmgerman at uvic doooot ca>
- * Copyright (C) 2012 by Benjamin Girault <benjamin dot girault at gmail dot com>
+ * SPDX-FileCopyrightText: 2007 by Daniel M German <dmgerman at uvic doooot ca>
+ * SPDX-FileCopyrightText: 2012 by Benjamin Girault <benjamin dot girault at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

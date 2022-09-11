@@ -7,8 +7,7 @@
 #
 # Copyright (C) 2014 Belledonne Communications, Grenoble France
 #
-# Redistribution and use is allowed according to the terms of the New BSD license.
-#
+# SPDX-License-Identifier: BSD-3-Clause
 #
 
 include(CheckSymbolExists)

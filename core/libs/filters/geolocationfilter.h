@@ -6,8 +6,8 @@
  * Date        : 2007-10-22
  * Description : a widget to filter album contents by geolocation
  *
- * Copyright (C) 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2011      by Michael G. Hansen <mike at mghansen dot de>
+ * SPDX-FileCopyrightText: 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2011      by Michael G. Hansen <mike at mghansen dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

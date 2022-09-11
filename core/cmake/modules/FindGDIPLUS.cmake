@@ -6,8 +6,7 @@
 #  GDIPLUS_LIBRARIES   - List of libraries when using GDI+.
 #  GDIPLUS_FOUND       - True if GDI+ found.
 #
-# Redistribution and use is allowed according to the terms of the New BSD license.
-#
+# SPDX-License-Identifier: BSD-3-Clause
 #
 
 if(GDIPLUS_INCLUDE_DIR)

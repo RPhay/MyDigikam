@@ -1,13 +1,13 @@
 /* ============================================================
  *
- * This file is a part of kipi-plugins project
+ * This file is a part of digiKam project
  * https://www.digikam.org
  *
  * Date        : 2022-08-26
  * Description : file list view and items
  *
- * Copyright (C) 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2022      by Quoc Hung Tran <quochungtran1999 at gmail dot com>
+ * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2022      by Quoc Hung Tran <quochungtran1999 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -15,7 +15,6 @@
 
 #ifndef DIGIKAM_TEXT_CONVERTER_LIST_H
 #define DIGIKAM_TEXT_CONVERTER_LIST_H
-
 
 // Local includes
 
@@ -39,16 +38,15 @@ public:
      */
     enum FieldType
     {
-        RECOGNIZEDWORDS      = DItemsListView::User1,
-        TARGETFILENAME       = DItemsListView::User2,
-        STATUS               = DItemsListView::User3,
+        RECOGNIZEDWORDS = DItemsListView::User1,
+        TARGETFILENAME  = DItemsListView::User2,
+        STATUS          = DItemsListView::User3,
     };
 
 public:
 
     explicit TextConverterList(QWidget* const parent = nullptr);
     ~TextConverterList();
-
 
 public Q_SLOTS:
 
@@ -70,7 +68,7 @@ public:
     ~TextConverterListViewItem();
 
     void setDestFileName(const QString& str);
-    QString destFileName()  const;
+    QString destFileName()         const;
 
     void setRecognizedWords(const QString& str);
     QString recognizedWords()      const;
@@ -84,6 +82,5 @@ private:
 };
 
 } // namespace DigikamGenericTextConverterPlugin
-
 
 #endif // DIGIKAM_TEXT_CONVERTER_LIST_H

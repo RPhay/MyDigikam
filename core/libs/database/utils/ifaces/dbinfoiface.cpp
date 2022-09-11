@@ -6,9 +6,9 @@
  * Date        : 2017-05-06
  * Description : interface to database information for shared tools.
  *
- * Copyright (C) 2017-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
- * Copyright (C) 2017      by Mario Frank <mario dot frank at uni minus potsdam dot de>
+ * SPDX-FileCopyrightText: 2017-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
+ * SPDX-FileCopyrightText: 2017      by Mario Frank <mario dot frank at uni minus potsdam dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -336,7 +336,7 @@ void DBInfoIface::slotMetadataChangedForUrl(const QUrl& url)
 
     CollectionScanner scanner;
 
-    scanner.scanFile(url.toLocalFile(), CollectionScanner::Rescan);
+    scanner.scanFile(url.toLocalFile(), CollectionScanner::NormalScan);
     ItemAttributesWatch::instance()->fileMetadataChanged(url);
 }
 
@@ -535,6 +535,8 @@ void DBInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
 {
     ItemInfo info    = ItemInfo::fromUrl(url);
     QStringList keys = map.keys();
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "DBInfoIface::setItemInfo() keys:" << keys;
 
     if (map.contains(QLatin1String("orientation")))
     {

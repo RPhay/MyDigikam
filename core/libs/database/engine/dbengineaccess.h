@@ -6,7 +6,7 @@
  * Date        : 2007-03-18
  * Description : Core database access wrapper.
  *
- * Copyright (C) 2016 by Swati Lodha <swatilodha27 at gmail dot com>
+ * SPDX-FileCopyrightText: 2016 by Swati Lodha <swatilodha27 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

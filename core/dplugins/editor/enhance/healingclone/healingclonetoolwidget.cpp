@@ -6,8 +6,8 @@
  * Date        : 2017-06-15
  * Description : a brush for use with tool to replace part of the image using another
  *
- * Copyright (C) 2017 by Shaza Ismail Kaoud <shaza dot ismail dot k at gmail dot com>
- * Copyright (C) 2019 by Ahmed Fathi <ahmed dot fathi dot abdelmageed at gmail dot com>
+ * SPDX-FileCopyrightText: 2017 by Shaza Ismail Kaoud <shaza dot ismail dot k at gmail dot com>
+ * SPDX-FileCopyrightText: 2019 by Ahmed Fathi <ahmed dot fathi dot abdelmageed at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

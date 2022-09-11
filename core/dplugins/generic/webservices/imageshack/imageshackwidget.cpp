@@ -6,8 +6,8 @@
  * Date        : 2012-02-02
  * Description : a tool to export items to ImageShack web service
  *
- * Copyright (C) 2012      by Dodon Victor <dodonvictor at gmail dot com>
- * Copyright (C) 2013-2018 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2012      by Dodon Victor <dodonvictor at gmail dot com>
+ * SPDX-FileCopyrightText: 2013-2018 by Caulier Gilles <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

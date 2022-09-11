@@ -6,8 +6,8 @@
  * Date        : 2010-11-03
  * Description : Generating random numbers
  *
- * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2021      by Anjani Kumar <anjanik012 at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2021      by Anjani Kumar <anjanik012 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

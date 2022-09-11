@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
 # Generic search & replace tool
-# Aurelio Jargas, 2016-08-13
 # https://github.com/aureliojargas/replace
+#
+# SPDX-FileCopyrightText: 2016 Aurelio Jargas <aurelio at aurelio dot net>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #

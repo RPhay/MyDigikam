@@ -6,7 +6,7 @@
  * Date        : 2010-02-01
  * Description : a tool to export items to Google web services
  *
- * Copyright (C) 2010 by Jens Mueller <tschenser at gmx dot de>
+ * SPDX-FileCopyrightText: 2010 by Jens Mueller <tschenser at gmx dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

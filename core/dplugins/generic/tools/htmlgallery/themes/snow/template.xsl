@@ -9,7 +9,7 @@
  * Date        : 2012-07-05
  * Description : A Snow theme for the digiKam html gallery tool.
  *
- * Copyright (C) 2012 by Aurélien Gâteau <aurelien dot gateau at free.fr>
+ * SPDX-FileCopyrightText: 2012 by Aurélien Gâteau <aurelien dot gateau at free.fr>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

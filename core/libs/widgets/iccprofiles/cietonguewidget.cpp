@@ -6,10 +6,10 @@
  * Date        : 2006-01-10
  * Description : a widget to display CIE tongue from an ICC profile.
  *
- * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * Any source code are inspired from lprof project and
- * Copyright (C) 1998-2001 Marti Maria <info at littlecms dot com>
+ * SPDX-FileCopyrightText: 1998-2001 Marti Maria <info at littlecms dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

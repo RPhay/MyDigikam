@@ -6,8 +6,8 @@
  * Date        : 2010-05-12
  * Description : OSM Nominatim backend for Reverse Geocoding
  *
- * Copyright (C) 2010 by Michael G. Hansen <mike at mghansen dot de>
- * Copyright (C) 2010 by Gabriel Voicu <ping dot gabi at gmail dot com>
+ * SPDX-FileCopyrightText: 2010 by Michael G. Hansen <mike at mghansen dot de>
+ * SPDX-FileCopyrightText: 2010 by Gabriel Voicu <ping dot gabi at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

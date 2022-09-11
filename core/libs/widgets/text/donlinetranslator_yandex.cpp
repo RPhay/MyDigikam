@@ -6,8 +6,8 @@
  * Date        : 2018-02-22
  * Description : A text translator using web-services - Tnadex methods.
  *
- * Copyright (C) 2018-2022 by Hennadii Chernyshchyk <genaloner at gmail dot com>
- * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2018-2022 by Hennadii Chernyshchyk <genaloner at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -319,18 +319,6 @@ void DOnlineTranslator::buildYandexStateMachine()
                              &DOnlineTranslator::slotParseYandexTranslate,
                              d->source,
                              Private::s_yandexTranslateLimit);
-
-    // Setup source translit state
-
-    if (d->sourceTranslitEnabled)
-    {
-        buildSplitNetworkRequest(sourceTranslitState,
-                                 &DOnlineTranslator::slotRequestYandexSourceTranslit,
-                                 &DOnlineTranslator::slotParseYandexSourceTranslit,
-                                 d->source,
-                                 Private::s_yandexTranslitLimit);
-    }
-    else
 
     // Setup source translit state
 

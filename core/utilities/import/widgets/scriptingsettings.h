@@ -6,7 +6,7 @@
  * Date        : 2012-07-20
  * Description : scripting settings for camera interface.
  *
- * Copyright (C) 2012 by Petri Damstén <damu@iki.fi>
+ * SPDX-FileCopyrightText: 2012 by Petri Damstén <damu@iki.fi>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

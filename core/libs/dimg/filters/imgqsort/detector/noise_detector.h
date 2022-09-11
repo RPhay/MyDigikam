@@ -6,8 +6,8 @@
  * Date        : 28/08/2021
  * Description : Image Quality Parser - noise detection
  *
- * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

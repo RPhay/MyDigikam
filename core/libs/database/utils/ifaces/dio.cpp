@@ -6,10 +6,10 @@
  * Date        : 2005-05-17
  * Description : low level files management interface.
  *
- * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2012-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
- * Copyright (C) 2018      by Maik Qualmann <metzpinguin at gmail dot com>
+ * SPDX-FileCopyrightText: 2005      by Renchi Raju <renchi dot raju at gmail dot com>
+ * SPDX-FileCopyrightText: 2012-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
+ * SPDX-FileCopyrightText: 2018      by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

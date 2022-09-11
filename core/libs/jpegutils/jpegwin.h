@@ -7,7 +7,7 @@
  * Description : some workaround functions to read jpeg
  *               files without relying on libjpeg
  *
- * Copyright (C) 2008 by Patrick Spendrin <ps ml at gmx dot de>
+ * SPDX-FileCopyrightText: 2008 by Patrick Spendrin <ps ml at gmx dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

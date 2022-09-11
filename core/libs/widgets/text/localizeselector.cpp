@@ -6,7 +6,7 @@
  * Date        : 2009-06-15
  * Description : localize selector widget
  *
- * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -28,6 +28,8 @@
 #include <QScrollBar>
 #include <QListWidgetItem>
 #include <QGridLayout>
+#include <QScopedPointer>
+#include <QEventLoop>
 
 // KDE includes
 
@@ -36,6 +38,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "localizeconfig.h"
 #include "localizesettings.h"
 #include "donlinetranslator.h"
 #include "altlangstredit.h"
@@ -188,7 +191,7 @@ public:
 
     QLabel*           trLabel;
     LocalizeSelector* trSelector;
-    QListWidget*      trList;
+    LanguagesList*    trList;
 };
 
 LocalizeSelectorList::LocalizeSelectorList(QWidget* const parent)
@@ -199,7 +202,7 @@ LocalizeSelectorList::LocalizeSelectorList(QWidget* const parent)
 
     d->trLabel               = new QLabel(this);
     d->trSelector            = new LocalizeSelector(this);
-    d->trList                = new QListWidget(this);
+    d->trList                = new LanguagesList(this);
     d->trList->setContextMenuPolicy(Qt::CustomContextMenu);
 
     grid->addWidget(d->trLabel,      0, 0, 1, 1);
@@ -233,16 +236,19 @@ void LocalizeSelectorList::clearLanguages()
 
 void LocalizeSelectorList::addLanguage(const QString& code)
 {
-    d->trList->addItem(QString::fromUtf8("%1 - %2").arg(code).arg(AltLangStrEdit::languageNameRFC3066(code)));
+    d->trList->addTopLevelItem(new QTreeWidgetItem(d->trList, QStringList() << code << AltLangStrEdit::languageNameRFC3066(code)));
 }
 
 QStringList LocalizeSelectorList::languagesList() const
 {
     QStringList codes;
 
-    for (int i = 0 ; i < d->trList->count() ; ++i)
+    QTreeWidgetItemIterator it(d->trList);
+
+    while (*it)
     {
-        codes << d->trList->item(i)->text().section(QLatin1String(" - "), 0, 0);
+        codes << (*it)->text(0);
+        ++it;
     }
 
     return codes;
@@ -259,7 +265,7 @@ void LocalizeSelectorList::slotShowContextMenu(const QPoint& pos)
 
     if      (ac == rm)
     {
-        delete d->trList->takeItem(d->trList->currentRow());
+        delete d->trList->currentItem();
     }
     else if (ac == cl)
     {
@@ -271,18 +277,62 @@ void LocalizeSelectorList::slotShowContextMenu(const QPoint& pos)
 
 void LocalizeSelectorList::slotAppendTranslation(const QString& lang)
 {
-    for (int i = 0 ; i < d->trList->count() ; ++i)
+    QTreeWidgetItemIterator it(d->trList);
+
+    while (*it)
     {
-        if (d->trList->item(i)->text().startsWith(lang))
+        if ((*it)->text(0).startsWith(lang))
         {
             return;
         }
+
+        ++it;
     }
 
-    d->trList->addItem(QString::fromUtf8("%1 - %2").arg(lang).arg(AltLangStrEdit::languageNameRFC3066(lang)));
+    addLanguage(lang);
 
     Q_EMIT signalSettingsChanged();
 }
 
-} // namespace Digikam
+// ------------------------------------------------------------------------
 
+bool s_inlineTranslateString(const QString& text, const QString& trCode, QString& tr, QString& error)
+{
+    QScopedPointer<DOnlineTranslator> trengine(new DOnlineTranslator);
+    QScopedPointer<QEventLoop> waitingLoop(new QEventLoop);
+
+    DOnlineTranslator::Language srcLang = DOnlineTranslator::Auto;
+    DOnlineTranslator::Language trLang  = DOnlineTranslator::language(DOnlineTranslator::fromRFC3066(LocalizeSettings::instance()->settings().translatorEngine, trCode));
+
+    qCDebug(DIGIKAM_WIDGETS_LOG) << "Request to translate with Web-service:";
+    qCDebug(DIGIKAM_WIDGETS_LOG) << "Text to translate        :" << text;
+    qCDebug(DIGIKAM_WIDGETS_LOG) << "To target language       :" << trLang;
+    qCDebug(DIGIKAM_WIDGETS_LOG) << "With source language     :" << srcLang;
+
+    QObject::connect(trengine.data(), &DOnlineTranslator::signalFinished,
+                     waitingLoop.data(), &QEventLoop::quit);
+
+    trengine->translate(text,                                                            // String to translate
+                        LocalizeSettings::instance()->settings().translatorEngine,       // Web service
+                        trLang,                                                          // Target language
+                        srcLang,                                                         // Source langage
+                        DOnlineTranslator::Auto);
+
+    waitingLoop->exec(QEventLoop::ExcludeUserInputEvents);
+
+    if (trengine->error() == DOnlineTranslator::NoError)
+    {
+        tr = trengine->translation();
+        qCDebug(DIGIKAM_WIDGETS_LOG) << "Text translated          :" << tr;
+
+        return true;
+    }
+    else
+    {
+        error = trengine->error();
+    }
+
+    return false;
+}
+
+} // namespace Digikam

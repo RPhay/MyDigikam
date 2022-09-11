@@ -6,7 +6,7 @@
  * Date        : 2009-05-31
  * Description : Sort settings for use with ItemFilterModel
  *
- * Copyright (C) 2009 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2009 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

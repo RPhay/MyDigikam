@@ -10,7 +10,7 @@
  * Description : A "Calligraphics" icon based theme
  *               for the digiKam html gallery tool.
  *
- * Copyright (C) 2011 by Petr Vaněk <petr at scribus dot info>
+ * SPDX-FileCopyrightText: 2011 by Petr Vaněk <petr at scribus dot info>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

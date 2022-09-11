@@ -6,7 +6,7 @@
  * Date        : 2013-11-28
  * Description : a command line tool to write metadata with ExifTool
  *
- * Copyright (C) 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

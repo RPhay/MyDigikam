@@ -6,7 +6,7 @@
  * Date        : 2019-04-19
  * Description : ImageMagick loader for DImg framework.
  *
- * Copyright (C) 2019 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2019 by Caulier Gilles <caulier dot gilles at gmail dot com>
  * Copyright (c) 2019 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later

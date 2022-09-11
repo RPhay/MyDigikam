@@ -7,8 +7,8 @@
  * Description : a digiKam image editor tool to correct
  *               image white balance
  *
- * Copyright (C) 2008-2009 by Guillaume Castagnino <casta at xwing dot info>
- * Copyright (C) 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2008-2009 by Guillaume Castagnino <casta at xwing dot info>
+ * SPDX-FileCopyrightText: 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

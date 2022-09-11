@@ -6,8 +6,8 @@
  * Date        : 2010-04-26
  * Description : database server error reporting
  *
- * Copyright (C) 2010 by Holger Foerster <Hamsi2k at freenet dot de>
- * Copyright (C) 2016 by Swati Lodha <swatilodha27 at gmail dot com>
+ * SPDX-FileCopyrightText: 2010 by Holger Foerster <Hamsi2k at freenet dot de>
+ * SPDX-FileCopyrightText: 2016 by Swati Lodha <swatilodha27 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

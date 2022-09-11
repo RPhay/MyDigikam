@@ -6,8 +6,8 @@
  * Date        : 2009-04-22
  * Description : Qt model-view for items
  *
- * Copyright (C) 2009-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2017      by Simon Frei <freisim93 at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2017      by Simon Frei <freisim93 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

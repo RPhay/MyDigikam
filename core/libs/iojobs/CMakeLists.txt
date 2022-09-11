@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 by Mohamed_Anwer, <m_dot_anwer at gmx dot com>
+# SPDX-FileCopyrightText: 2015 by Mohamed_Anwer, <m_dot_anwer at gmx dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #

@@ -6,7 +6,7 @@
  * Date        : 2020-12-31
  * Description : Online version checker
  *
- * Copyright (C) 2020-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2020-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

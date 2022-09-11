@@ -6,10 +6,10 @@
  * Date        : 2003-08-03
  * Description : setup Metadata tab.
  *
- * Copyright (C) 2003-2004 by Ralf Holzer <ralf at well dot com>
- * Copyright (C) 2003-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2009-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2017      by Simon Frei <freisim93 at gmail dot com>
+ * SPDX-FileCopyrightText: 2003-2004 by Ralf Holzer <ralf at well dot com>
+ * SPDX-FileCopyrightText: 2003-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2017      by Simon Frei <freisim93 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -84,9 +84,6 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
 
     connect(d->sidecarFileNameBox, SIGNAL(toggled(bool)),
             this, SLOT(slotSidecarFileNameToggled(bool)));
-
-    connect(d->clearMetadataIfRescanBox, SIGNAL(toggled(bool)),
-            this, SLOT(slotClearMetadataToggled(bool)));
 
     // --------------------------------------------------------
 
@@ -178,7 +175,6 @@ void SetupMetadata::applySettings()
 
     set.updateFileTimeStamp   = d->updateFileTimeStampBox->isChecked();
     set.rescanImageIfModified = d->rescanImageIfModifiedBox->isChecked();
-    set.clearMetadataIfRescan = d->clearMetadataIfRescanBox->isChecked();
 
     set.sidecarExtensions     = cleanUserFilterString(d->extensionsEdit->text(), true);
     set.sidecarExtensions.removeAll(QLatin1String("xmp"));
@@ -244,22 +240,6 @@ void SetupMetadata::slotExifAutoRotateToggled(bool b)
                                        "Switching off exif auto rotation will most probably show "
                                        "your images in a wrong orientation, so only change this "
                                        "option if you explicitly require this."));
-    }
-}
-
-void SetupMetadata::slotClearMetadataToggled(bool b)
-{
-    // Show info if delete metadata from the database was switched on, and only once.
-
-    if (b && !d->clearMetadataShowedInfo)
-    {
-        d->clearMetadataShowedInfo = true;
-        QMessageBox::information(this, qApp->applicationName(),
-                                 i18nc("@info",
-                                       "Switching on this option and your metadata has been written to the "
-                                       "database only and not to the file or sidecar, you will be able to "
-                                       "lose inserted metadata such as tags, keywords, or geographic "
-                                       "coordinates."));
     }
 }
 

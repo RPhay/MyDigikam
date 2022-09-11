@@ -6,7 +6,7 @@
  * Date        : 2022-08-20
  * Description : Localization of Strings Config widget.
  *
- * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -18,13 +18,34 @@
 // Qt includes
 
 #include <QWidget>
+#include <QTreeWidget>
 
 // Local includes
 
 #include "digikam_export.h"
+#include "searchtextbar.h"
 
 namespace Digikam
 {
+
+class DIGIKAM_EXPORT LanguagesList : public QTreeWidget
+{
+    Q_OBJECT
+
+public:
+
+    explicit LanguagesList(QWidget* const parent);
+
+public Q_SLOTS:
+
+    void slotSearchTextChanged(const SearchTextSettings& settings);
+
+Q_SIGNALS:
+
+    void signalSearchResult(int);
+};
+
+// -------------------------------------------------------------------------
 
 class DIGIKAM_EXPORT LocalizeConfig : public QWidget
 {

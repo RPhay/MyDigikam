@@ -6,7 +6,7 @@
  * Date        : 2015-06-01
  * Description : DB Jobs thread for listing and scanning
  *
- * Copyright (C) 2015 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
+ * SPDX-FileCopyrightText: 2015 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *

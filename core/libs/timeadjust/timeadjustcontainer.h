@@ -6,7 +6,7 @@
  * Date        : 2012-04-19
  * Description : time adjust settings container.
  *
- * Copyright (C) 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -52,7 +52,10 @@ public:
         EXIFORIGINAL,
         EXIFDIGITIZED,
         IPTCCREATED,
-        XMPCREATED
+        XMPCREATED,
+        FUZZYCREATED,
+        FUZZYORIGINAL,
+        FUZZYDIGITIZED
     };
 
     enum UseFileDateType
@@ -78,7 +81,7 @@ public:
     bool atLeastOneUpdateToProcess()                                const;
 
     QDateTime calculateAdjustedDate(const QDateTime& originalTime, int index = 0);
-    QDateTime getDateTimeFromUrl(const QUrl& url)                   const;
+    QDateTime getDateTimeFromString(const QString& dateStr)         const;
     QMap<QString, bool> getDateTimeTagsMap()                        const;
 
 public:
