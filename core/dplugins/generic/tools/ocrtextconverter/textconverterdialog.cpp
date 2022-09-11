@@ -121,7 +121,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     setMinimumSize(900, 500);
     setModal(true);
 
-    d->iface                  = iface;
+    d->iface          = iface;
 
     const int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                              QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
@@ -225,8 +225,8 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     //-------------------------------------------------------------------------------------------
 
-    mainLayout->addWidget(d->listView,       0, 0, 1, 1);
-    mainLayout->addWidget(d->tabView,        0, 1, 1, 1);
+    mainLayout->addWidget(d->listView, 0, 0, 1, 1);
+    mainLayout->addWidget(d->tabView,  0, 1, 1, 1);
     mainLayout->setColumnStretch(0, 10);
     mainLayout->setRowStretch(0, 10);
     mainLayout->setContentsMargins(QMargins());
@@ -316,9 +316,11 @@ void TextConverterDialog::slotDoubleClick(QTreeWidgetItem* element)
 
 void TextConverterDialog::slotUpdateText()
 {
-    QString newText  = d->textedit->text();
-    OcrOptions opt   = d->ocrSettings->ocrOptions();
-    opt.translations = d->localizeList->languagesList();
+    QString newText   = d->textedit->text();
+    OcrOptions opt    = d->ocrSettings->ocrOptions();
+    opt.tesseractPath = d->tesseractBin.path();
+    opt.translations  = d->localizeList->languagesList();
+    opt.iface         = d->iface;
 
     if (!d->textedit->text().isEmpty()           &&
         !d->currentSelectedItem->url().isEmpty() &&
@@ -510,6 +512,7 @@ void TextConverterDialog::processAll()
     OcrOptions opt    = d->ocrSettings->ocrOptions();
     opt.tesseractPath = d->tesseractBin.path();
     opt.translations  = d->localizeList->languagesList();
+    opt.iface         = d->iface;
     d->thread->setOcrOptions(opt);
     d->thread->ocrProcessFiles(d->fileList);
 

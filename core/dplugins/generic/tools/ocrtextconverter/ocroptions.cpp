@@ -31,7 +31,8 @@ OcrOptions::OcrOptions()
       oem             (int(EngineModes::DEFAULT)),
       dpi             (300),
       isSaveTextFile  (true),
-      isSaveXMP       (true)
+      isSaveXMP       (true),
+      iface           (nullptr)
 {
 }
 
