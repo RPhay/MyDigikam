@@ -252,6 +252,7 @@ bool RemoveMetadata::toolOperations()
         if      (exifData == Private::ALL)
         {
             meta->clearExif();
+            meta->clearComments();
         }
         else if (exifData == Private::DATE)
         {
@@ -272,6 +273,7 @@ bool RemoveMetadata::toolOperations()
         {
             meta->removeExifTag("Exif.Image.ImageDescription");
             meta->removeExifTag("Exif.Photo.UserComment");
+            meta->clearComments();
         }
     }
 
@@ -280,6 +282,7 @@ bool RemoveMetadata::toolOperations()
         if      (iptcData == Private::ALL)
         {
             meta->clearIptc();
+            meta->clearComments();
         }
         else if (iptcData == Private::DATE)
         {
@@ -289,6 +292,7 @@ bool RemoveMetadata::toolOperations()
         else if (iptcData == Private::COMMENT)
         {
             meta->removeIptcTag("Iptc.Application2.Caption");
+            meta->clearComments();
         }
     }
 
@@ -297,6 +301,7 @@ bool RemoveMetadata::toolOperations()
         if      (xmpData == Private::ALL)
         {
             meta->clearXmp();
+            meta->clearComments();
         }
         else if (xmpData == Private::DATE)
         {
@@ -340,6 +345,7 @@ bool RemoveMetadata::toolOperations()
             meta->removeXmpTag("Xmp.tiff.ImageDescription");
             meta->removeXmpTag("Xmp.xmp.Description");
             meta->removeXmpTag("Xmp.xmpDM.DMComment");
+            meta->clearComments();
         }
     }
 
