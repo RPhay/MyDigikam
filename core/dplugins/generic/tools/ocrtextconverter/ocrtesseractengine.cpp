@@ -286,9 +286,9 @@ void OcrTesseractEngine::saveXMP(const QUrl& url,
 
     // --- Version using DInfoInterface
 
-    DItemInfo witem;
-    witem.setCaptions(commentsSet);
-    iface->setItemInfo(url, witem.infoMap());
+    DItemInfo item;
+    item.setCaptions(commentsSet);
+    iface->setItemInfo(url, item.infoMap());
 }
 
 } // namespace DigikamGenericTextConverterPlugin
