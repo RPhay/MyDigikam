@@ -42,9 +42,9 @@ public:
     {
     }
 
-    OcrOptions opt;
+    OcrOptions          opt;
 
-    bool       cancel;
+    bool                cancel;
 
     QPointer<QProcess>  ocrProcess;
 
