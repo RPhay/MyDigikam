@@ -49,6 +49,7 @@
 #include "tesseractbinary.h"
 #include "dbinarysearch.h"
 #include "localizeselector.h"
+#include "localizesettings.h"
 
 using namespace Digikam;
 
@@ -188,7 +189,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     d->ocrSettings                    = new TextConverterSettings(recognitionTab);
 
     d->localizeList                   = new LocalizeSelectorList(recognitionTab);
-    d->localizeList->setTitle(i18nc("@label", "Translate to:"));
+    slotLocalizeChanged();
 
     QWidget* const space              = new QWidget(recognitionTab);
     recognitionTab->setStretchFactor(space, 10);
@@ -269,6 +270,9 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     connect(d->binWidget, SIGNAL(signalBinariesFound(bool)),
             this, SLOT(slotTesseractBinaryFound(bool)));
+
+    connect(LocalizeSettings::instance(), &LocalizeSettings::signalSettingsChanged,
+            this, &TextConverterDialog::slotLocalizeChanged);
 
     // ---------------------------------------------------------------
 
@@ -730,6 +734,12 @@ void TextConverterDialog::slotTesseractBinaryFound(bool found)
         m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@info", "Tesseract program or no language module\n"
                                                                   "are installed on your system."));
     }
+}
+
+void TextConverterDialog::slotLocalizeChanged()
+{
+    d->localizeList->setTitle(i18nc("@label", "Translate with %1:",
+                              DOnlineTranslator::engineName(LocalizeSettings::instance()->settings().translatorEngine)));
 }
 
 } // namespace DigikamGenericTextConverterPlugin
