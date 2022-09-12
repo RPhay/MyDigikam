@@ -252,9 +252,6 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     connect(m_buttons->button(QDialogButtonBox::Close), SIGNAL(clicked()),
             this, SLOT(slotClose()));
 
-    connect(d->ocrSettings, SIGNAL(signalSettingsChanged()),
-            this, SLOT(slotStartStop()));
-
     connect(d->progressBar, SIGNAL(signalProgressCanceled()),
             this, SLOT(slotStartStop()));
 
