@@ -35,9 +35,19 @@ class OcrOptions
 
 public:
 
-    enum class Languages
+    enum class LanguageModes
     {
+        /**
+         * In the Default mode of Language settings for digital text with multiple languages,
+         * Tesseract can automatically recognize languages using Latin alphabets such as English or French,
+         * but is not compatible with languages using hieroglyphs such as Chinese, Japanese.
+         */
         DEFAULT = 0,
+
+        /**
+         * Orientation and Script Detection mode remplace Default mode for hieroglyphs languages.
+         * See comment on https://invent.kde.org/graphics/digikam/-/merge_requests/177#note_522008
+         */
         OSD
     };
 

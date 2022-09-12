@@ -75,12 +75,13 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
     QLabel* const ocrTesseractLanguageLabel   = new QLabel(i18nc("@label", "Languages:"));
     d->ocrTesseractLanguageMode               = new DComboBox(this);
 
-    d->ocrTesseractLanguageMode->setDefaultIndex(int(OcrOptions::Languages::DEFAULT));
-    d->ocrTesseractLanguageMode->setToolTip(i18nc("@info", "Specify language(s) used for OCR. "
+    d->ocrTesseractLanguageMode->setDefaultIndex(int(OcrOptions::LanguageModes::DEFAULT));
+    d->ocrTesseractLanguageMode->setToolTip(i18nc("@info", "Specify the language used for OCR. "
                                                            "In the Default mode of Language settings for digital text with multiple languages, \n"
                                                            "Tesseract can automatically recognize languages using Latin alphabets such as English or French, \n"
                                                            "but is not compatible with languages using hieroglyphs such as Chinese, Japanese.\n"
-                                                           "OSD mode use the Orientation and Script Detection module."));
+                                                           "You can use the Orientation and Script Detection mode instead or a specific language"
+                                                           "module if available."));
 
     // ------------
 
@@ -187,7 +188,7 @@ void TextConverterSettings::setOcrOptions(const OcrOptions& opt)
 {
     int id = d->ocrTesseractLanguageMode->combo()->findData(opt.language);
 
-    d->ocrTesseractLanguageMode->setCurrentIndex((id == -1) ? int(OcrOptions::Languages::DEFAULT) : id);
+    d->ocrTesseractLanguageMode->setCurrentIndex((id == -1) ? int(OcrOptions::LanguageModes::DEFAULT) : id);
     d->ocrTesseractPSMMode->setCurrentIndex(opt.psm);
     d->ocrTesseractOEMMode->setCurrentIndex(opt.oem);
     d->ocrTesseractDpi->setValue(opt.dpi);
@@ -218,13 +219,13 @@ void TextConverterSettings::populateLanguagesMode(const QStringList& langs)
 
     QStringList tlanguages = langs;
 
-    d->ocrTesseractLanguageMode->insertItem(int(OcrOptions::Languages::DEFAULT),
+    d->ocrTesseractLanguageMode->insertItem(int(OcrOptions::LanguageModes::DEFAULT),
                                             i18nc("@option: default Tesseract mode", "Default"),
                                             QString());
 
     if (tlanguages.contains(QLatin1String("osd")))
     {
-        d->ocrTesseractLanguageMode->insertItem(int(OcrOptions::Languages::OSD),
+        d->ocrTesseractLanguageMode->insertItem(int(OcrOptions::LanguageModes::OSD),
                                                 i18nc("@option: osd Tesseract mode", "Orientation and Script Detection"),
                                                 QLatin1String("osd"));
         tlanguages.removeAll(QLatin1String("osd"));
