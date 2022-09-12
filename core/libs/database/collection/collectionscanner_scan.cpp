@@ -411,6 +411,7 @@ qlonglong CollectionScanner::scanFile(const QFileInfo& fi, int albumId, qlonglon
                 break;
 
             case Rescan:
+            case CleanScan:
                 imageId = scanNewFileFullScan(fi, albumId);
                 break;
         }
@@ -431,6 +432,10 @@ qlonglong CollectionScanner::scanFile(const QFileInfo& fi, int albumId, qlonglon
 
             case Rescan:
                 rescanFile(fi, scanInfo);
+                break;
+
+            case CleanScan:
+                cleanScanFile(fi, scanInfo);
                 break;
         }
     }
@@ -992,7 +997,7 @@ void CollectionScanner::scanFileNormal(const QFileInfo& fi, const ItemScanInfo& 
     {
         if (settings.rescanImageIfModified)
         {
-            rescanFile(fi, scanInfo);
+            cleanScanFile(fi, scanInfo);
         }
         else
         {
@@ -1123,6 +1128,19 @@ void CollectionScanner::scanFileUpdateHashReuseThumbnail(const QFileInfo& info, 
         }
     }
 
+    d->finishScanner(scanner);
+}
+
+void CollectionScanner::cleanScanFile(const QFileInfo& info, const ItemScanInfo& scanInfo)
+{
+    if (d->checkDeferred(info))
+    {
+        return;
+    }
+
+    ItemScanner scanner(info, scanInfo);
+    scanner.setCategory(category(info));
+    scanner.cleanScan();
     d->finishScanner(scanner);
 }
 

@@ -40,7 +40,8 @@ public:
     {
         NewScan,
         ModifiedScan,
-        Rescan
+        Rescan,
+        CleanScan
     };
 
 public:
@@ -126,6 +127,13 @@ public:
      * information there.
      */
     void rescan();
+
+    /**
+     * This is the same as rescan() but the database metadata
+     * will be cleaned up if the corresponding metadata
+     * write option is enabled.
+     */
+    void cleanScan();
 
     /**
      * Commits the scanned information to the database.

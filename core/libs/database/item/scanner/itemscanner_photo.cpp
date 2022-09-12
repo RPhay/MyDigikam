@@ -571,7 +571,7 @@ bool ItemScanner::checkRatingFromMetadata(const QVariant& ratingFromMetadata) co
 {
     // should only be overwritten if set in metadata
 
-    if (d->scanMode == Rescan)
+    if ((d->scanMode == Rescan) || (d->scanMode == CleanScan))
     {
         if (ratingFromMetadata.isNull() || (ratingFromMetadata.toInt() == -1))
         {

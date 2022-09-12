@@ -109,7 +109,7 @@ void MetadataTask::run()
         else // MetadataSynchronizer::ReadFromFileToDatabase
         {
             CollectionScanner scanner;
-            scanner.scanFile(item, CollectionScanner::Rescan);
+            scanner.scanFile(item, CollectionScanner::CleanScan);
         }
 
         Q_EMIT signalFinished(QImage());

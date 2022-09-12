@@ -854,7 +854,7 @@ void ItemDescEditTab::slotReadFromFileMetadataToDatabase()
 
     Q_FOREACH (const ItemInfo& info, d->currInfos)
     {
-        scanner.scanFile(info, CollectionScanner::Rescan);
+        scanner.scanFile(info, CollectionScanner::CleanScan);
 
         Q_EMIT signalProgressValueChanged(i++/(float)d->currInfos.count());
 
