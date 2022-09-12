@@ -282,7 +282,6 @@ bool RemoveMetadata::toolOperations()
         if      (iptcData == Private::ALL)
         {
             meta->clearIptc();
-            meta->clearComments();
         }
         else if (iptcData == Private::DATE)
         {
@@ -301,7 +300,6 @@ bool RemoveMetadata::toolOperations()
         if      (xmpData == Private::ALL)
         {
             meta->clearXmp();
-            meta->clearComments();
         }
         else if (xmpData == Private::DATE)
         {
