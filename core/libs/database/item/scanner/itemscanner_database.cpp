@@ -232,7 +232,7 @@ bool ItemScanner::commitAddImage()
     return true;
 }
 
-void ItemScanner::clearDatabaseMetadata()
+void ItemScanner::cleanDatabaseMetadata()
 {
     if (d->scanInfo.id == -1)
     {

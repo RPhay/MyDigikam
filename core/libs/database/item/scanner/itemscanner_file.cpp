@@ -214,7 +214,7 @@ void ItemScanner::scanFile(ScanMode mode)
     {
         if (d->scanMode == CleanScan)
         {
-            clearDatabaseMetadata();
+            cleanDatabaseMetadata();
         }
 
         if      (d->scanInfo.category == DatabaseItem::Image)
