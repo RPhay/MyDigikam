@@ -238,7 +238,7 @@ void ItemScanner::clearDatabaseMetadata()
     {
         return;
     }
-qDebug() << "Angeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
+
     const MetaEngineSettingsContainer& settings = MetaEngineSettings::instance()->settings();
     QList<int> removeTags;
 
