@@ -219,13 +219,13 @@ void TextConverterSettings::populateLanguagesMode(const QStringList& langs)
     QStringList tlanguages = langs;
 
     d->ocrTesseractLanguageMode->insertItem(int(OcrOptions::Languages::DEFAULT),
-                                            i18nc("@option:default Tesseract mode", "Default"),
+                                            i18nc("@option: default Tesseract mode", "Default"),
                                             QString());
 
     if (tlanguages.contains(QLatin1String("osd")))
     {
         d->ocrTesseractLanguageMode->insertItem(int(OcrOptions::Languages::OSD),
-                                                i18nc("@option:osd Tesseract mode", "Orientation and Script Detection"),
+                                                i18nc("@option: osd Tesseract mode", "Orientation and Script Detection"),
                                                 QLatin1String("osd"));
         tlanguages.removeAll(QLatin1String("osd"));
     }
