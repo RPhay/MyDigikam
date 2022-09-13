@@ -51,9 +51,6 @@ protected:
 
 private:
 
-    void readSettings();
-    void saveSettings();
-
     void busy(bool busy);
 
     void processAll();

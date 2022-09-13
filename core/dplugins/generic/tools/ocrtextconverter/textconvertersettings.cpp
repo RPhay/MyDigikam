@@ -23,6 +23,8 @@
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <kconfiggroup.h>
+#include <ksharedconfig.h>
 
 // Local includes
 
@@ -224,6 +226,39 @@ OcrOptions TextConverterSettings::ocrOptions() const
     opt.translations   = d->localizeList->languagesList();
 
     return opt;
+}
+
+void TextConverterSettings::readSettings()
+{
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(QLatin1String("OCR Tesseract Settings"));
+    OcrOptions opt;
+    opt.language       = group.readEntry("ocrLanguages",          int(OcrOptions::LanguageModes::DEFAULT));
+    opt.psm            = group.readEntry("PageSegmentationModes", int(OcrOptions::PageSegmentationModes::DEFAULT));
+    opt.oem            = group.readEntry("EngineModes",           int(OcrOptions::EngineModes::DEFAULT));
+    opt.dpi            = group.readEntry("Dpi",                   300);
+    opt.isSaveTextFile = group.readEntry("Check Save Test File",  true);
+    opt.isSaveXMP      = group.readEntry("Check Save in XMP",     true);
+    opt.translations   = group.readEntry("Translation Codes",     QStringList());
+
+    setOcrOptions(opt);
+}
+
+void TextConverterSettings::saveSettings()
+{
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(QLatin1String("OCR Tesseract Settings"));
+    OcrOptions opt            = ocrOptions();
+
+    group.writeEntry("ocrLanguages",              opt.language);
+    group.writeEntry("PageSegmentationModes",     (int)opt.psm);
+    group.writeEntry("EngineModes",               (int)opt.oem);
+    group.writeEntry("Dpi",                       (int)opt.dpi);
+    group.writeEntry("Check Save Test File",      (bool)opt.isSaveTextFile);
+    group.writeEntry("Check Save in XMP",         (bool)opt.isSaveXMP);
+    group.writeEntry("Translation Codes",         opt.translations);
+
+    config->sync();
 }
 
 void TextConverterSettings::populateLanguagesMode(const QStringList& langs)

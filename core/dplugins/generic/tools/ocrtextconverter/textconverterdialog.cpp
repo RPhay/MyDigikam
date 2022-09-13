@@ -30,8 +30,6 @@
 
 // KDE includes
 
-#include <kconfiggroup.h>
-#include <ksharedconfig.h>
 #include <klocalizedstring.h>
 
 // Local includes
@@ -265,7 +263,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     d->listView->setIface(d->iface);
     d->listView->loadImagesFromCurrentSelection();
 
-    readSettings();
+    d->ocrSettings->readSettings();
 
     // ---------------------------------------------------------------
 
@@ -588,7 +586,7 @@ void TextConverterDialog::closeEvent(QCloseEvent* e)
         slotStartStop();
     }
 
-    saveSettings();
+    d->ocrSettings->saveSettings();
     d->listView->listView()->clear();
     e->accept();
 }
@@ -602,7 +600,7 @@ void TextConverterDialog::slotClose()
         slotStartStop();
     }
 
-    saveSettings();
+    d->ocrSettings->saveSettings();
     d->listView->listView()->clear();
     d->fileList.clear();
     accept();
@@ -611,37 +609,6 @@ void TextConverterDialog::slotClose()
 void TextConverterDialog::slotDefault()
 {
     d->ocrSettings->setDefaultSettings();
-}
-
-void TextConverterDialog::readSettings()
-{
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group(QLatin1String("OCR Tesseract Settings"));
-    OcrOptions opt;
-    opt.language       = group.readEntry("ocrLanguages",          int(OcrOptions::LanguageModes::DEFAULT));
-    opt.psm            = group.readEntry("PageSegmentationModes", int(OcrOptions::PageSegmentationModes::DEFAULT));
-    opt.oem            = group.readEntry("EngineModes",           int(OcrOptions::EngineModes::DEFAULT));
-    opt.dpi            = group.readEntry("Dpi",                   300);
-    opt.isSaveTextFile = group.readEntry("Check Save Test File",  true);
-    opt.isSaveXMP      = group.readEntry("Check Save in XMP",     true);
-    opt.translations   = group.readEntry("Translation Codes",     QStringList());
-
-    d->ocrSettings->setOcrOptions(opt);
-}
-
-void TextConverterDialog::saveSettings()
-{
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group(QLatin1String("OCR Tesseract Settings"));
-    OcrOptions opt            = d->ocrSettings->ocrOptions();
-
-    group.writeEntry("ocrLanguages",              opt.language);
-    group.writeEntry("PageSegmentationModes",     (int)opt.psm);
-    group.writeEntry("EngineModes",               (int)opt.oem);
-    group.writeEntry("Dpi",                       (int)opt.dpi);
-    group.writeEntry("Check Save Test File",      (bool)opt.isSaveTextFile);
-    group.writeEntry("Check Save in XMP",         (bool)opt.isSaveXMP);
-    group.writeEntry("Translation Codes",         opt.translations);
 }
 
 void TextConverterDialog::addItems(const QList<QUrl>& itemList)
