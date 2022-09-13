@@ -54,7 +54,8 @@ public:
         ocrTesseractDpi         (nullptr),
         saveTextFile            (nullptr),
         saveXMP                 (nullptr),
-        localizeList            (nullptr)
+        localizeList            (nullptr),
+        multicores              (nullptr)
     {
     }
 
@@ -73,6 +74,8 @@ public:
     QCheckBox*            saveXMP;
 
     LocalizeSelectorList* localizeList;
+
+    QCheckBox*            multicores;
 };
 
 TextConverterSettings::TextConverterSettings(QWidget* const parent)
@@ -149,6 +152,10 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
     d->localizeList                  = new LocalizeSelectorList(this);
     slotLocalizeChanged();
 
+    d->multicores                    = new QCheckBox(i18nc("@option:check", "Use Multi-cores"), this);
+    d->multicores->setToolTip(i18nc("@info", "If this option is enabled, files will be processed in parallel"));
+    d->multicores->setChecked(true);
+
     // ------------
 
     QGridLayout* const settingsBoxLayout = new QGridLayout(this);
@@ -164,7 +171,8 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
     settingsBoxLayout->addWidget(d->saveTextFile,                  5, 0, 1, 1);
     settingsBoxLayout->addWidget(d->saveXMP,                       5, 1, 1, 1);
     settingsBoxLayout->addWidget(d->localizeList,                  6, 0, 1, 2);
-    settingsBoxLayout->setRowStretch(7, 10);
+    settingsBoxLayout->addWidget(d->multicores,                    7, 0, 1, 2);
+    settingsBoxLayout->setRowStretch(6, 10);
     settingsBoxLayout->setContentsMargins(QMargins());
 
     // ------------------------------------------------------------------------
@@ -194,6 +202,8 @@ void TextConverterSettings::setDefaultSettings()
     d->ocrTesseractPSMMode->slotReset();
     d->ocrTesseractDpi->slotReset();
     d->saveTextFile->setChecked(true);
+    d->localizeList->clearLanguages();
+    d->multicores->setChecked(false);
 }
 
 void TextConverterSettings::setOcrOptions(const OcrOptions& opt)
@@ -211,6 +221,8 @@ void TextConverterSettings::setOcrOptions(const OcrOptions& opt)
     {
         d->localizeList->addLanguage(lg);
     }
+
+    d->multicores->setChecked(opt.multicores);
 }
 
 OcrOptions TextConverterSettings::ocrOptions() const
@@ -224,6 +236,7 @@ OcrOptions TextConverterSettings::ocrOptions() const
     opt.isSaveTextFile = d->saveTextFile->isChecked();
     opt.isSaveXMP      = d->saveXMP->isChecked();
     opt.translations   = d->localizeList->languagesList();
+    opt.multicores     = d->multicores->isChecked();
 
     return opt;
 }
@@ -233,13 +246,14 @@ void TextConverterSettings::readSettings()
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("OCR Tesseract Settings"));
     OcrOptions opt;
-    opt.language       = group.readEntry("ocrLanguages",          int(OcrOptions::LanguageModes::DEFAULT));
+    opt.language       = group.readEntry("OcrLanguages",          int(OcrOptions::LanguageModes::DEFAULT));
     opt.psm            = group.readEntry("PageSegmentationModes", int(OcrOptions::PageSegmentationModes::DEFAULT));
     opt.oem            = group.readEntry("EngineModes",           int(OcrOptions::EngineModes::DEFAULT));
     opt.dpi            = group.readEntry("Dpi",                   300);
     opt.isSaveTextFile = group.readEntry("Check Save Test File",  true);
     opt.isSaveXMP      = group.readEntry("Check Save in XMP",     true);
     opt.translations   = group.readEntry("Translation Codes",     QStringList());
+    opt.multicores     = group.readEntry("Multicores",            false);
 
     setOcrOptions(opt);
 }
@@ -250,13 +264,14 @@ void TextConverterSettings::saveSettings()
     KConfigGroup group        = config->group(QLatin1String("OCR Tesseract Settings"));
     OcrOptions opt            = ocrOptions();
 
-    group.writeEntry("ocrLanguages",              opt.language);
+    group.writeEntry("OcrLanguages",              opt.language);
     group.writeEntry("PageSegmentationModes",     (int)opt.psm);
     group.writeEntry("EngineModes",               (int)opt.oem);
     group.writeEntry("Dpi",                       (int)opt.dpi);
     group.writeEntry("Check Save Test File",      (bool)opt.isSaveTextFile);
     group.writeEntry("Check Save in XMP",         (bool)opt.isSaveXMP);
     group.writeEntry("Translation Codes",         opt.translations);
+    group.writeEntry("Multicores",                (bool)opt.multicores);
 
     config->sync();
 }

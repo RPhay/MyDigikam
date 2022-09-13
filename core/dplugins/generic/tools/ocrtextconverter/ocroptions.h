@@ -111,6 +111,8 @@ public:
     QStringList     translations;       ///< List of translation codes to localize recognized text.
 
     DInfoInterface* iface;              ///< Host application interface.
+
+    bool            multicores;         ///< Process files in parallel.
 };
 
 } // namespace DigikamGenericTextConverterPlugin
