@@ -64,7 +64,7 @@ public:
 };
 
 ThumbsGenerator::ThumbsGenerator(const bool rebuildAll, const AlbumList& list, ProgressItem* const parent)
-    : MaintenanceTool(QLatin1String("ThumbsGenerator"), parent),
+    : MaintenanceTool(QString::number(reinterpret_cast<quintptr>(this)), parent),
       d(new Private)
 {
     d->albumList = list;
@@ -72,7 +72,7 @@ ThumbsGenerator::ThumbsGenerator(const bool rebuildAll, const AlbumList& list, P
 }
 
 ThumbsGenerator::ThumbsGenerator(const bool rebuildAll, int albumId, ProgressItem* const parent)
-    : MaintenanceTool(QLatin1String("ThumbsGenerator"), parent),
+    : MaintenanceTool(QString::number(reinterpret_cast<quintptr>(this)), parent),
       d(new Private)
 {
     d->albumList.append(AlbumManager::instance()->findPAlbum(albumId));
