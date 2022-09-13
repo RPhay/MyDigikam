@@ -82,7 +82,6 @@ private Q_SLOTS:
 
     void slotStartFoundTesseract();
     void slotTesseractBinaryFound(bool);
-    void slotLocalizeChanged();
 
 private:
 

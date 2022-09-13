@@ -33,6 +33,8 @@
 #include "dexpanderbox.h"
 #include "dnuminput.h"
 #include "textconverterlist.h"
+#include "localizeselector.h"
+#include "localizesettings.h"
 
 using namespace Digikam;
 
@@ -49,23 +51,26 @@ public:
         ocrTesseractOEMMode     (nullptr),
         ocrTesseractDpi         (nullptr),
         saveTextFile            (nullptr),
-        saveXMP                 (nullptr)
+        saveXMP                 (nullptr),
+        localizeList            (nullptr)
     {
     }
 
     // Tesseract options
 
-    DComboBox*    ocrTesseractLanguageMode;
+    DComboBox*            ocrTesseractLanguageMode;
 
-    DComboBox*    ocrTesseractPSMMode;
+    DComboBox*            ocrTesseractPSMMode;
 
-    DComboBox*    ocrTesseractOEMMode;
+    DComboBox*            ocrTesseractOEMMode;
 
-    DIntNumInput* ocrTesseractDpi;
+    DIntNumInput*         ocrTesseractDpi;
 
-    QCheckBox*    saveTextFile;
+    QCheckBox*            saveTextFile;
 
-    QCheckBox*    saveXMP;
+    QCheckBox*            saveXMP;
+
+    LocalizeSelectorList* localizeList;
 };
 
 TextConverterSettings::TextConverterSettings(QWidget* const parent)
@@ -131,13 +136,16 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
     // ------------
 
     QLabel* const saveOcrResultLabel = new QLabel(i18nc("@label", "Store result in : "));
-    d->saveTextFile = new QCheckBox(i18nc("@option:check", "Text file"), this);
+    d->saveTextFile                  = new QCheckBox(i18nc("@option:check", "Text file"), this);
     d->saveTextFile->setToolTip(i18nc("@info", "Store OCR result in separated text file"));
     d->saveTextFile->setChecked(true);
 
-    d->saveXMP = new QCheckBox(i18nc("@option:check", "Metadata"), this);
+    d->saveXMP                       = new QCheckBox(i18nc("@option:check", "Metadata"), this);
     d->saveXMP->setToolTip(i18nc("@info", "Store OCR result in XMP metadata"));
     d->saveXMP->setChecked(true);
+
+    d->localizeList                  = new LocalizeSelectorList(this);
+    slotLocalizeChanged();
 
     // ------------
 
@@ -153,9 +161,8 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
     settingsBoxLayout->addWidget(saveOcrResultLabel,               4, 0, 1, 1);
     settingsBoxLayout->addWidget(d->saveTextFile,                  5, 0, 1, 1);
     settingsBoxLayout->addWidget(d->saveXMP,                       5, 1, 1, 1);
-
-
-    settingsBoxLayout->setRowStretch(9, 10);
+    settingsBoxLayout->addWidget(d->localizeList,                  6, 0, 1, 2);
+    settingsBoxLayout->setRowStretch(7, 10);
     settingsBoxLayout->setContentsMargins(QMargins());
 
     // ------------------------------------------------------------------------
@@ -168,6 +175,9 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
 
     connect(d->ocrTesseractOEMMode, SIGNAL(activated(int)),
             this, SIGNAL(signalSettingsChanged()));
+
+    connect(LocalizeSettings::instance(), &LocalizeSettings::signalSettingsChanged,
+            this, &TextConverterSettings::slotLocalizeChanged);
 }
 
 TextConverterSettings::~TextConverterSettings()
@@ -194,6 +204,11 @@ void TextConverterSettings::setOcrOptions(const OcrOptions& opt)
     d->ocrTesseractDpi->setValue(opt.dpi);
     d->saveTextFile->setChecked(opt.isSaveTextFile);
     d->saveXMP->setChecked(opt.isSaveXMP);
+
+    Q_FOREACH (const QString& lg, opt.translations)
+    {
+        d->localizeList->addLanguage(lg);
+    }
 }
 
 OcrOptions TextConverterSettings::ocrOptions() const
@@ -206,6 +221,7 @@ OcrOptions TextConverterSettings::ocrOptions() const
     opt.dpi            = d->ocrTesseractDpi->value();
     opt.isSaveTextFile = d->saveTextFile->isChecked();
     opt.isSaveXMP      = d->saveXMP->isChecked();
+    opt.translations   = d->localizeList->languagesList();
 
     return opt;
 }
@@ -241,6 +257,12 @@ void TextConverterSettings::populateLanguagesMode(const QStringList& langs)
     {
          d->ocrTesseractLanguageMode->addItem(codes.value(lg, lg), lg);
     }
+}
+
+void TextConverterSettings::slotLocalizeChanged()
+{
+    d->localizeList->setTitle(i18nc("@label", "Translate with %1:",
+                              DOnlineTranslator::engineName(LocalizeSettings::instance()->settings().translatorEngine)));
 }
 
 } // namespace DigikamGenericTextConverterPlugin

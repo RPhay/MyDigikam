@@ -49,6 +49,10 @@ Q_SIGNALS:
 
     void signalSettingsChanged();
 
+private Q_SLOTS:
+
+    void slotLocalizeChanged();
+
 private:
 
     class Private;

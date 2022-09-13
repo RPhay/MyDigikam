@@ -48,8 +48,6 @@
 #include "textconverteraction.h"
 #include "tesseractbinary.h"
 #include "dbinarysearch.h"
-#include "localizeselector.h"
-#include "localizesettings.h"
 
 using namespace Digikam;
 
@@ -79,7 +77,6 @@ public:
         saveTextButton      (nullptr),
         currentSelectedItem (nullptr),
         binWidget           (nullptr),
-        localizeList        (nullptr),
         tabView             (nullptr)
     {
     }
@@ -108,8 +105,6 @@ public:
 
     TesseractBinary                   tesseractBin;
     DBinarySearch*                    binWidget;
-
-    LocalizeSelectorList*             localizeList;
 
     QTabWidget*                       tabView;
 };
@@ -188,12 +183,6 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     d->ocrSettings                    = new TextConverterSettings(recognitionTab);
 
-    d->localizeList                   = new LocalizeSelectorList(recognitionTab);
-    slotLocalizeChanged();
-
-    QWidget* const space              = new QWidget(recognitionTab);
-    recognitionTab->setStretchFactor(space, 10);
-
     d->progressBar                    = new DProgressWdg(recognitionTab);
     d->progressBar->reset();
     d->progressBar->setDisabled(true);
@@ -271,9 +260,6 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     connect(d->binWidget, SIGNAL(signalBinariesFound(bool)),
             this, SLOT(slotTesseractBinaryFound(bool)));
 
-    connect(LocalizeSettings::instance(), &LocalizeSettings::signalSettingsChanged,
-            this, &TextConverterDialog::slotLocalizeChanged);
-
     // ---------------------------------------------------------------
 
     d->listView->setIface(d->iface);
@@ -320,7 +306,6 @@ void TextConverterDialog::slotUpdateText()
     QString newText   = d->textedit->text();
     OcrOptions opt    = d->ocrSettings->ocrOptions();
     opt.tesseractPath = d->tesseractBin.path();
-    opt.translations  = d->localizeList->languagesList();
     opt.iface         = d->iface;
 
     if (!d->textedit->text().isEmpty()           &&
@@ -519,7 +504,6 @@ void TextConverterDialog::processAll()
 {
     OcrOptions opt    = d->ocrSettings->ocrOptions();
     opt.tesseractPath = d->tesseractBin.path();
-    opt.translations  = d->localizeList->languagesList();
     opt.iface         = d->iface;
     d->thread->setOcrOptions(opt);
     d->thread->ocrProcessFiles(d->fileList);
@@ -642,11 +626,6 @@ void TextConverterDialog::readSettings()
     opt.isSaveXMP      = group.readEntry("Check Save in XMP",     true);
     opt.translations   = group.readEntry("Translation Codes",     QStringList());
 
-    Q_FOREACH (const QString& lg, opt.translations)
-    {
-        d->localizeList->addLanguage(lg);
-    }
-
     d->ocrSettings->setOcrOptions(opt);
 }
 
@@ -655,7 +634,6 @@ void TextConverterDialog::saveSettings()
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("OCR Tesseract Settings"));
     OcrOptions opt            = d->ocrSettings->ocrOptions();
-    opt.translations          = d->localizeList->languagesList();
 
     group.writeEntry("ocrLanguages",              opt.language);
     group.writeEntry("PageSegmentationModes",     (int)opt.psm);
@@ -734,12 +712,6 @@ void TextConverterDialog::slotTesseractBinaryFound(bool found)
         m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@info", "Tesseract program or no language module\n"
                                                                   "are installed on your system."));
     }
-}
-
-void TextConverterDialog::slotLocalizeChanged()
-{
-    d->localizeList->setTitle(i18nc("@label", "Translate with %1:",
-                              DOnlineTranslator::engineName(LocalizeSettings::instance()->settings().translatorEngine)));
 }
 
 } // namespace DigikamGenericTextConverterPlugin
