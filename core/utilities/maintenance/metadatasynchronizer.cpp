@@ -106,6 +106,16 @@ void MetadataSynchronizer::setUseMultiCoreCPU(bool b)
 void MetadataSynchronizer::slotStart()
 {
     MaintenanceTool::slotStart();
+
+    if (ProgressManager::instance()->findItembyId(id()))
+    {
+        slotDone();
+
+        return;
+    }
+
+    ProgressManager::addProgressItem(this);
+
     d->imageInfoJob = new ItemInfoJob;
 
     connect(d->imageInfoJob, SIGNAL(signalItemsInfo(ItemInfoList)),
@@ -117,10 +127,7 @@ void MetadataSynchronizer::slotStart()
     connect(this, SIGNAL(progressItemCanceled(ProgressItem*)),
             this, SLOT(slotCancel()));
 
-    if (ProgressManager::addProgressItem(this))
-    {
-        QTimer::singleShot(500, this, SLOT(slotParseAlbums()));
-    }
+    QTimer::singleShot(500, this, SLOT(slotParseAlbums()));
 }
 
 MetadataSynchronizer::~MetadataSynchronizer()

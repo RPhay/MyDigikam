@@ -60,9 +60,6 @@ FingerPrintsGenerator::FingerPrintsGenerator(const bool rebuildAll, const AlbumL
     : MaintenanceTool(QLatin1String("FingerPrintsGenerator"), parent),
       d(new Private)
 {
-    setLabel(i18n("Finger-prints"));
-    ProgressManager::addProgressItem(this);
-
     d->albumList  = list;
     d->rebuildAll = rebuildAll;
     d->thread     = new MaintenanceThread(this);
@@ -93,6 +90,17 @@ void FingerPrintsGenerator::slotCancel()
 void FingerPrintsGenerator::slotStart()
 {
     MaintenanceTool::slotStart();
+
+    if (ProgressManager::instance()->findItembyId(id()))
+    {
+        slotDone();
+
+        return;
+    }
+
+    setLabel(i18n("Finger-prints"));
+
+    ProgressManager::addProgressItem(this);
 
     QApplication::setOverrideCursor(Qt::WaitCursor);
 

@@ -92,8 +92,17 @@ DuplicatesFinder::~DuplicatesFinder()
 void DuplicatesFinder::slotStart()
 {
     MaintenanceTool::slotStart();
+
+    if (ProgressManager::instance()->findItembyId(id()))
+    {
+        slotDone();
+
+        return;
+    }
+
     setLabel(i18n("Find duplicates items"));
     setThumbnail(QIcon::fromTheme(QLatin1String("tools-wizard")).pixmap(22));
+
     ProgressManager::addProgressItem(this);
 
     double minThresh = d->minSimilarity / 100.0;

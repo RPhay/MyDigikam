@@ -126,8 +126,17 @@ DbCleaner::~DbCleaner()
 void DbCleaner::slotStart()
 {
     MaintenanceTool::slotStart();
+
+    if (ProgressManager::instance()->findItembyId(id()))
+    {
+        slotDone();
+
+        return;
+    }
+
     setLabel(i18n("Clean up the databases : ") + i18n("analysing databases"));
     setThumbnail(QIcon::fromTheme(QLatin1String("tools-wizard")).pixmap(22));
+
     ProgressManager::addProgressItem(this);
 
     // Set one item to make sure that the progress bar is shown.

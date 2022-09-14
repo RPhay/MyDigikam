@@ -86,9 +86,6 @@ ThumbsGenerator::~ThumbsGenerator()
 
 void ThumbsGenerator::init(const bool rebuildAll)
 {
-    setLabel(i18n("Thumbs"));
-    ProgressManager::addProgressItem(this);
-
     d->rebuildAll = rebuildAll;
     d->thread     = new MaintenanceThread(this);
 
@@ -113,6 +110,17 @@ void ThumbsGenerator::slotCancel()
 void ThumbsGenerator::slotStart()
 {
     MaintenanceTool::slotStart();
+
+    if (ProgressManager::instance()->findItembyId(id()))
+    {
+        slotDone();
+
+        return;
+    }
+
+    setLabel(i18n("Thumbs"));
+
+    ProgressManager::addProgressItem(this);
 
     QApplication::setOverrideCursor(Qt::WaitCursor);
 

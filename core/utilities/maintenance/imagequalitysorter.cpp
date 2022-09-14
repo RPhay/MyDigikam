@@ -64,9 +64,6 @@ ImageQualitySorter::ImageQualitySorter(QualityScanMode mode,
     : MaintenanceTool(QLatin1String("ImageQualitySorter"), parent),
       d(new Private)
 {
-    setLabel(i18n("Image Quality Sorter"));
-    ProgressManager::addProgressItem(this);
-
     d->mode       = mode;
     d->albumList  = list;
     d->quality    = quality;
@@ -98,6 +95,17 @@ void ImageQualitySorter::slotCancel()
 void ImageQualitySorter::slotStart()
 {
     MaintenanceTool::slotStart();
+
+    if (ProgressManager::instance()->findItembyId(id()))
+    {
+        slotDone();
+
+        return;
+    }
+
+    setLabel(i18n("Image Quality Sorter"));
+
+    ProgressManager::addProgressItem(this);
 
     if (d->albumList.isEmpty())
     {
