@@ -546,7 +546,8 @@ void TextConverterDialog::slotStartStop()
         if (d->fileList.empty())
         {
             QMessageBox::information(this, i18nc("@title", "Text Converter"),
-                                     i18nc("@info", "The list does not contain any digital files to process. You need to select them."));
+                                     i18nc("@info", "The list does not contain any digital files to process. "
+                                           "You need to select them."));
             busy(false);
             slotAborted();
 
@@ -677,8 +678,8 @@ void TextConverterDialog::slotTesseractBinaryFound(bool found)
     }
     else
     {
-        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@info", "Tesseract program or no language module\n"
-                                                                  "are installed on your system."));
+        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@info", "Tesseract program or language module\n"
+                                                                  "are not installed on your system."));
     }
 }
 
