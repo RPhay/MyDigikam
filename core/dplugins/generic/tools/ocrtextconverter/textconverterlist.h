@@ -25,7 +25,29 @@ using namespace Digikam;
 namespace DigikamGenericTextConverterPlugin
 {
 
-class TextConverterListViewItem;
+class TextConverterListViewItem : public DItemsListViewItem
+{
+
+public:
+
+    explicit TextConverterListViewItem(DItemsListView* const view, const QUrl& url);
+    ~TextConverterListViewItem();
+
+    void setDestFileName(const QString& str);
+    QString destFileName()         const;
+
+    void setRecognizedWords(const QString& str);
+    QString recognizedWords()      const;
+
+    void setStatus(const QString& str);
+
+private:
+
+    class Private;
+    Private* const d;
+};
+
+// -------------------------------------------------------------------------
 
 class TextConverterList : public DItemsList
 {
@@ -55,30 +77,6 @@ public Q_SLOTS:
 protected Q_SLOTS:
 
     void slotRemoveItems()                         override;
-};
-
-// -------------------------------------------------------------------------
-
-class TextConverterListViewItem : public DItemsListViewItem
-{
-
-public:
-
-    explicit TextConverterListViewItem(DItemsListView* const view, const QUrl& url);
-    ~TextConverterListViewItem();
-
-    void setDestFileName(const QString& str);
-    QString destFileName()         const;
-
-    void setRecognizedWords(const QString& str);
-    QString recognizedWords()      const;
-
-    void setStatus(const QString& str);
-
-private:
-
-    class Private;
-    Private* const d;
 };
 
 } // namespace DigikamGenericTextConverterPlugin
