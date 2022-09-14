@@ -52,7 +52,7 @@ public:
 };
 
 NewItemsFinder::NewItemsFinder(const FinderMode mode, const QStringList& foldersToScan, ProgressItem* const parent)
-    : MaintenanceTool(QString::number(reinterpret_cast<quintptr>(this)), parent),
+    : MaintenanceTool(QLatin1String("NewItemsFinder"), parent),
       d(new Private)
 {
     setLabel(i18n("Find new items"));
