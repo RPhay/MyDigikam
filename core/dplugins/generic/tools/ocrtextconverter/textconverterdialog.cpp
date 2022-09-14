@@ -112,7 +112,6 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
       d            (new Private)
 {
     setWindowTitle(i18nc("@title", "Text Converter"));
-    setMinimumSize(900, 500);
     setModal(true);
 
     d->iface          = iface;
@@ -264,6 +263,8 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     d->listView->loadImagesFromCurrentSelection();
 
     d->ocrSettings->readSettings();
+
+    adjustSize();
 
     // ---------------------------------------------------------------
 
