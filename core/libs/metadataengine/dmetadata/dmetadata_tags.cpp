@@ -217,6 +217,8 @@ bool DMetadata::setItemTagsPath(const QStringList& tagsPath, const DMetadataSett
             newList.append(tagPath.split(QLatin1Char('/')).last());
         }
 
+        newList.removeDuplicates();
+
         switch (entry.subspace)
         {
             case NamespaceEntry::XMP:
