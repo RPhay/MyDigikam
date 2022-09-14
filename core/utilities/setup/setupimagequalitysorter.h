@@ -39,7 +39,6 @@ public:
     void applySettings();
     ImageQualityContainer getImageQualityContainer();
 
-
 private:
 
     void readSettings();

@@ -38,7 +38,7 @@ public:
 
 SetupImageQualitySorter::SetupImageQualitySorter(QWidget* const parent)
     : QScrollArea(parent),
-      d(new Private)
+      d          (new Private)
 {
     d->settingsWidget = new ImageQualitySettings(viewport());
     setWidget(d->settingsWidget);
