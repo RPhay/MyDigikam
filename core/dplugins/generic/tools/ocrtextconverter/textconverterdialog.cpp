@@ -27,6 +27,7 @@
 #include <QApplication>
 #include <QMessageBox>
 #include <QTabWidget>
+#include <QMenu>
 
 // KDE includes
 
@@ -60,6 +61,12 @@ public:
     {
         RecognitionTab = 0,
         ReviewTab
+    };
+
+    enum ProcessActions
+    {
+        ProcessAll = 0,
+        ProcessSelected
     };
 
 public:
@@ -123,8 +130,10 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     m_buttons->addButton(QDialogButtonBox::Ok);
     m_buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action:button", "&Start OCR"));
     m_buttons->button(QDialogButtonBox::Ok)->setDisabled(true);
-    QWidget* const mainWidget = new QWidget(this);
 
+//    plugProcessMenu();
+
+    QWidget* const mainWidget = new QWidget(this);
     QVBoxLayout* const vbx    = new QVBoxLayout(this);
     vbx->addWidget(mainWidget);
     vbx->addWidget(m_buttons);
@@ -354,7 +363,7 @@ void TextConverterDialog::slotTextConverterAction(const DigikamGenericTextConver
         {
             case PROCESS:
             {
-                busy(true);
+                setBusy(true);
                 d->listView->processing(ad.fileUrl);
                 d->progressBar->progressStatusChanged(i18nc("@info", "Processing %1", ad.fileUrl.fileName()));
                 break;
@@ -517,6 +526,15 @@ void TextConverterDialog::slotStartStop()
 {
     if (!d->busy)
     {
+        QAction* const ac = qobject_cast<QAction*>(sender());
+
+        if (!ac)
+        {
+            return;
+        }
+
+        int ptype = ac->data().toInt();
+
         d->fileList.clear();
 
         if (d->listView->listView()->topLevelItemCount() == 0)
@@ -532,7 +550,11 @@ void TextConverterDialog::slotStartStop()
 
             if (lvItem)
             {
-                if (!lvItem->isDisabled() && (lvItem->state() != TextConverterListViewItem::Success))
+                if (
+                    !lvItem->isDisabled()                                   &&
+                    (lvItem->state() != TextConverterListViewItem::Success) &&
+                    ((ptype == Private::ProcessAll) ? true : lvItem->isSelected())
+                   )
                 {
                     lvItem->setIcon(1, QIcon());
                     lvItem->setState(TextConverterListViewItem::Waiting);
@@ -548,7 +570,7 @@ void TextConverterDialog::slotStartStop()
             QMessageBox::information(this, i18nc("@title", "Text Converter"),
                                      i18nc("@info", "The list does not contain any digital files to process. "
                                            "You need to select them."));
-            busy(false);
+            setBusy(false);
             slotAborted();
 
             return;
@@ -566,7 +588,7 @@ void TextConverterDialog::slotStartStop()
     {
         d->fileList.clear();
         d->thread->cancel();
-        busy(false);
+        setBusy(false);
 
         d->listView->cancelProcess();
 
@@ -620,11 +642,11 @@ void TextConverterDialog::addItems(const QList<QUrl>& itemList)
 
 void TextConverterDialog::slotThreadFinished()
 {
-    busy(false);
+    setBusy(false);
     slotAborted();
 }
 
-void TextConverterDialog::busy(bool busy)
+void TextConverterDialog::setBusy(bool busy)
 {
     d->busy = busy;
 
@@ -632,11 +654,13 @@ void TextConverterDialog::busy(bool busy)
     {
         m_buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action", "&Abort"));
         m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@info", "Abort OCR processing of Raw files."));
+        unplugProcessMenu();
     }
     else
     {
         m_buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action", "&Start OCR"));
-        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@info", "Start OCR using the current settings."));
+        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@info", "Start OCR using the current settings."));      
+        plugProcessMenu();
     }
 
     d->ocrSettings->setEnabled(!d->busy);
@@ -666,7 +690,7 @@ void TextConverterDialog::slotTesseractBinaryFound(bool found)
 
     bool b = found && !langs.isEmpty();
 
-    busy(false);
+    setBusy(false);
 
     // Disable Start button if Tesseract is not found or if no language plugin installed.
 
@@ -678,8 +702,44 @@ void TextConverterDialog::slotTesseractBinaryFound(bool found)
     }
     else
     {
-        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@info", "Tesseract program or language module\n"
+        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@info", "Tesseract program or language modules\n"
                                                                   "are not installed on your system."));
+    }
+}
+
+void TextConverterDialog::plugProcessMenu()
+{
+    if (!m_buttons->button(QDialogButtonBox::Ok)->menu())
+    {
+        QMenu* const processMenu = new QMenu(this);
+        m_buttons->button(QDialogButtonBox::Ok)->setMenu(processMenu);
+
+        connect(processMenu, SIGNAL(aboutToShow()),
+                this, SLOT(slotProcessMenu()));
+    }
+}
+
+void TextConverterDialog::unplugProcessMenu()
+{
+    m_buttons->button(QDialogButtonBox::Ok)->setMenu(nullptr);
+}
+
+void TextConverterDialog::slotProcessMenu()
+{
+    if (!d->busy)
+    {
+        QMenu* const processMenu = qobject_cast<QMenu*>(sender());
+
+        if (processMenu)
+        {
+            processMenu->clear();
+
+            QAction* ac = nullptr;
+            ac          = processMenu->addAction(i18nc("@action", "Process All Items"),      this, SLOT(slotStartStop()));
+            ac->setData(Private::ProcessAll);
+            ac          = processMenu->addAction(i18nc("@action", "Process Selected Items"), this, SLOT(slotStartStop()));
+            ac->setData(Private::ProcessSelected);
+        }
     }
 }
 
