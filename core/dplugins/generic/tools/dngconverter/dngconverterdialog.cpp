@@ -532,12 +532,12 @@ void DNGConverterDialog::slotDNGConverterAction(const DigikamGenericDNGConverter
     {
         switch (ad.action)
         {
-            case(IDENTIFY):
+            case IDENTIFY:
             {
                 break;
             }
 
-            case(PROCESS):
+            case PROCESS:
             {
                 busy(true);
                 d->listView->processing(ad.fileUrl);
@@ -558,12 +558,12 @@ void DNGConverterDialog::slotDNGConverterAction(const DigikamGenericDNGConverter
         {
             switch (ad.action)
             {
-                case(IDENTIFY):
+                case IDENTIFY:
                 {
                     break;
                 }
 
-                case(PROCESS):
+                case PROCESS:
                 {
                     processingFailed(ad.fileUrl, ad.result);
                     break;
@@ -580,7 +580,7 @@ void DNGConverterDialog::slotDNGConverterAction(const DigikamGenericDNGConverter
         {
             switch (ad.action)
             {
-                case(IDENTIFY):
+                case IDENTIFY:
                 {
                     DNGConverterListViewItem* const item = dynamic_cast<DNGConverterListViewItem*>(d->listView->listView()->findItem(ad.fileUrl));
 
@@ -592,7 +592,7 @@ void DNGConverterDialog::slotDNGConverterAction(const DigikamGenericDNGConverter
                     break;
                 }
 
-                case(PROCESS):
+                case PROCESS:
                 {
                     processed(ad.fileUrl, ad.destPath);
                     break;
