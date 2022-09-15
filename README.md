@@ -1,8 +1,8 @@
 ![](https://c1.staticflickr.com/1/822/26082076957_5ff0796a99_o.png) digiKam - Professional Photo Management with the Power of Open Source
 
-[comment]: # TODO: move badges to plug when available
-[comment]: # https://invent.kde.org/graphics/digikam/badges/master/coverage.svg
-[comment]: # https://invent.kde.org/graphics/digikam/-/badges/release.svg
+{::comment} TODO: move badges to plug when available
+{::comment} https://invent.kde.org/graphics/digikam/badges/master/coverage.svg
+{::comment} https://invent.kde.org/graphics/digikam/-/badges/release.svg
 
 | CI Job        | Status                                                                                                                                                                                                  |
 |---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
