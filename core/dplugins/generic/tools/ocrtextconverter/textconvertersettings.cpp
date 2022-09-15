@@ -244,7 +244,7 @@ OcrOptions TextConverterSettings::ocrOptions() const
 void TextConverterSettings::readSettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group(QLatin1String("OCR Tesseract Settings"));
+    KConfigGroup group        = config->group(QLatin1String("Text Converter Settings"));
     OcrOptions opt;
     opt.language       = group.readEntry("OcrLanguages",          int(OcrOptions::LanguageModes::DEFAULT));
     opt.psm            = group.readEntry("PageSegmentationModes", int(OcrOptions::PageSegmentationModes::DEFAULT));
@@ -261,7 +261,7 @@ void TextConverterSettings::readSettings()
 void TextConverterSettings::saveSettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group(QLatin1String("OCR Tesseract Settings"));
+    KConfigGroup group        = config->group(QLatin1String("Text Converter Settings"));
     OcrOptions opt            = ocrOptions();
 
     group.writeEntry("OcrLanguages",              opt.language);

@@ -118,7 +118,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     : DPluginDialog(parent, QLatin1String("Text Converter Dialog")),
       d            (new Private)
 {
-    setWindowTitle(i18nc("@title", "Text Converter"));
+    setWindowTitle(i18nc("@title", "OCR Text Converter"));
     setModal(true);
 
     d->iface          = iface;
@@ -272,8 +272,6 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     d->listView->loadImagesFromCurrentSelection();
 
     d->ocrSettings->readSettings();
-
-    adjustSize();
 
     // ---------------------------------------------------------------
 
