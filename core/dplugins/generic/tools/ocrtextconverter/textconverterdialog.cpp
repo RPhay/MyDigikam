@@ -153,9 +153,6 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     QScrollArea* const recsv          = new QScrollArea(d->tabView);
     DVBox* const recognitionTab       = new DVBox(recsv->viewport());
-    recsv->setWidget(recognitionTab);
-    recsv->setWidgetResizable(true);
-
     QLabel* const tesseractLabel      = new QLabel(i18nc("@label", "This tool use the %1 open-source "
                                                    "engine to perform Optical Characters Recognition. "
                                                    "Tesseract program and the desired languages modules must "
@@ -203,6 +200,10 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     recognitionTab->setContentsMargins(spacing, spacing, spacing, spacing);
     recognitionTab->setSpacing(spacing);
 
+    recsv->setFrameStyle(QFrame::NoFrame);
+    recsv->setWidgetResizable(true);
+    recsv->setWidget(recognitionTab);
+
     d->tabView->insertTab(Private::RecognitionTab, recsv, i18nc("@title", "Text Recognition"));
 
     // --- Review tab
@@ -230,7 +231,8 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     mainLayout->addWidget(d->listView, 0, 0, 1, 1);
     mainLayout->addWidget(d->tabView,  0, 1, 1, 1);
-    mainLayout->setColumnStretch(0, 10);
+    mainLayout->setColumnStretch(0, 7);
+    mainLayout->setColumnStretch(1, 3);
     mainLayout->setRowStretch(0, 10);
     mainLayout->setContentsMargins(QMargins());
 
