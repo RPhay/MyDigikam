@@ -167,12 +167,12 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
     settingsBoxLayout->addWidget(d->ocrTesseractOEMMode,           2, 1, 1, 1);
     settingsBoxLayout->addWidget(ocrTesseractDpiLabel,             3, 0, 1, 1);
     settingsBoxLayout->addWidget(d->ocrTesseractDpi,               3, 1, 1, 1);
-    settingsBoxLayout->addWidget(saveOcrResultLabel,               4, 0, 1, 1);
-    settingsBoxLayout->addWidget(d->saveTextFile,                  5, 0, 1, 1);
-    settingsBoxLayout->addWidget(d->saveXMP,                       5, 1, 1, 1);
-    settingsBoxLayout->addWidget(d->localizeList,                  6, 0, 1, 2);
-    settingsBoxLayout->addWidget(d->multicores,                    7, 0, 1, 2);
-    settingsBoxLayout->setRowStretch(6, 10);
+    settingsBoxLayout->addWidget(d->multicores,                    4, 0, 1, 2);
+    settingsBoxLayout->addWidget(saveOcrResultLabel,               5, 0, 1, 1);
+    settingsBoxLayout->addWidget(d->saveTextFile,                  6, 0, 1, 1);
+    settingsBoxLayout->addWidget(d->saveXMP,                       6, 1, 1, 1);
+    settingsBoxLayout->addWidget(d->localizeList,                  7, 0, 1, 2);
+    settingsBoxLayout->setRowStretch(7, 10);
     settingsBoxLayout->setContentsMargins(QMargins());
 
     // ------------------------------------------------------------------------

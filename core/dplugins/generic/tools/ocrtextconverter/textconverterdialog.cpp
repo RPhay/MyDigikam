@@ -28,6 +28,7 @@
 #include <QMessageBox>
 #include <QTabWidget>
 #include <QMenu>
+#include <QScrollArea>
 
 // KDE includes
 
@@ -150,7 +151,10 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     // -- Recognition tab
 
-    DVBox* const recognitionTab       = new DVBox(d->tabView);
+    QScrollArea* const recsv          = new QScrollArea(d->tabView);
+    DVBox* const recognitionTab       = new DVBox(recsv->viewport());
+    recsv->setWidget(recognitionTab);
+    recsv->setWidgetResizable(true);
 
     QLabel* const tesseractLabel      = new QLabel(i18nc("@label", "This tool use the %1 open-source "
                                                    "engine to perform Optical Characters Recognition. "
@@ -199,7 +203,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     recognitionTab->setContentsMargins(spacing, spacing, spacing, spacing);
     recognitionTab->setSpacing(spacing);
 
-    d->tabView->insertTab(Private::RecognitionTab, recognitionTab, i18nc("@title", "Text Recognition"));
+    d->tabView->insertTab(Private::RecognitionTab, recsv, i18nc("@title", "Text Recognition"));
 
     // --- Review tab
 
