@@ -130,8 +130,11 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     m_buttons->addButton(QDialogButtonBox::Ok);
     m_buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action:button", "&Start OCR"));
     m_buttons->button(QDialogButtonBox::Ok)->setDisabled(true);
-
-//    plugProcessMenu();
+    m_buttons->addButton(QDialogButtonBox::Reset);
+    m_buttons->button(QDialogButtonBox::Reset)->setText(i18nc("@action: button", "&Default"));
+    m_buttons->button(QDialogButtonBox::Reset)->setIcon(QIcon::fromTheme(QLatin1String("document-revert")));
+    m_buttons->button(QDialogButtonBox::Reset)->setToolTip(i18nc("@info:tooltip",
+                                                           "Revert current settings to default values."));
 
     QWidget* const mainWidget = new QWidget(this);
     QVBoxLayout* const vbx    = new QVBoxLayout(this);
@@ -247,6 +250,9 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     connect(m_buttons->button(QDialogButtonBox::Close), SIGNAL(clicked()),
             this, SLOT(slotClose()));
+
+    connect(m_buttons->button(QDialogButtonBox::Reset), SIGNAL(clicked()),
+            this, SLOT(slotDefault()));
 
     connect(d->progressBar, SIGNAL(signalProgressCanceled()),
             this, SLOT(slotStartStop()));
