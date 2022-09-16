@@ -201,7 +201,6 @@ QBoxLayout* DItemsList::setControlButtonsPlacement(ControlButtonPlacement placem
     // --------------------------------------------------------
 
     QHBoxLayout* const hBtnLayout = new QHBoxLayout;
-    hBtnLayout->addStretch(10);
     hBtnLayout->addWidget(d->moveUpButton);
     hBtnLayout->addWidget(d->moveDownButton);
     hBtnLayout->addWidget(d->addButton);
@@ -209,18 +208,16 @@ QBoxLayout* DItemsList::setControlButtonsPlacement(ControlButtonPlacement placem
     hBtnLayout->addWidget(d->loadButton);
     hBtnLayout->addWidget(d->saveButton);
     hBtnLayout->addWidget(d->clearButton);
+    hBtnLayout->addStretch(1);
 
     if (d->extraWidget)
     {
         hBtnLayout->addWidget(d->extraWidget);
     }
 
-    hBtnLayout->addStretch(10);
-
     // --------------------------------------------------------
 
     QVBoxLayout* const vBtnLayout = new QVBoxLayout;
-    vBtnLayout->addStretch(10);
     vBtnLayout->addWidget(d->moveUpButton);
     vBtnLayout->addWidget(d->moveDownButton);
     vBtnLayout->addWidget(d->addButton);
@@ -228,13 +225,12 @@ QBoxLayout* DItemsList::setControlButtonsPlacement(ControlButtonPlacement placem
     vBtnLayout->addWidget(d->loadButton);
     vBtnLayout->addWidget(d->saveButton);
     vBtnLayout->addWidget(d->clearButton);
+    vBtnLayout->addStretch(1);
 
     if (d->extraWidget)
     {
         vBtnLayout->addWidget(d->extraWidget);
     }
-
-    vBtnLayout->addStretch(10);
 
     // --------------------------------------------------------
 

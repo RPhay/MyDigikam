@@ -149,7 +149,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     d->listView                   = new TextConverterList(mainWidget);
     d->progressBar                = new DProgressWdg(mainWidget);
     d->progressBar->reset();
-    d->progressBar->setDisabled(true);
+    d->progressBar->setVisible(false);
 
     d->listView->appendControlButtonsWidget(d->progressBar);
     QBoxLayout* const blay        = d->listView->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
@@ -593,7 +593,7 @@ void TextConverterDialog::slotStartStop()
 
         d->progressBar->setMaximum(d->fileList.count());
         d->progressBar->setValue(0);
-        d->progressBar->setDisabled(false);
+        d->progressBar->setVisible(true);
         d->progressBar->progressScheduled(i18nc("@title", "Text Converter"), true, true);
         d->progressBar->progressThumbnailChanged(QIcon::fromTheme(QLatin1String("text-x-generic")).pixmap(22, 22));
 
@@ -686,7 +686,7 @@ void TextConverterDialog::setBusy(bool busy)
 void TextConverterDialog::slotAborted()
 {
     d->progressBar->setValue(0);
-    d->progressBar->setDisabled(true);
+    d->progressBar->setVisible(false);
     d->progressBar->progressCompleted();
 }
 
