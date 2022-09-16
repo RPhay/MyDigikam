@@ -19,6 +19,7 @@
 
 // Qt includes
 
+#include <QBoxLayout>
 #include <QPushButton>
 #include <QStringList>
 #include <QTreeWidget>
@@ -242,7 +243,21 @@ public:
     void                clearProcessedStatus();
 
     void                setControlButtons(ControlButtons buttonMask);
-    void                setControlButtonsPlacement(ControlButtonPlacement placement);
+
+    /**
+     * Plug the control buttons near to the list, following 'placement' position.
+     * Return the instance of the layout supporting the control buttons, if any.
+     * This method must be calls after to use appendControlButtonsWidget().
+     */
+    QBoxLayout*         setControlButtonsPlacement(ControlButtonPlacement placement);
+
+   /**
+    * Append a extra widget to the end of Control Button layout (as a progress bar for exemple).
+    * This method must be call before setControlButtonsPlacement().
+    * Ownership of the widget is not transferred to the DItemList.
+    */
+    void                appendControlButtonsWidget(QWidget* const widget);
+
     void                enableControlButtons(bool enable = true);
     void                enableDragAndDrop(const bool enable = true);
 

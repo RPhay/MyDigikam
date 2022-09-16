@@ -145,20 +145,28 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     //-------------------------------------------------------------------------------------------
 
-    QGridLayout* const mainLayout     = new QGridLayout(mainWidget);
-    d->listView                       = new TextConverterList(mainWidget);
-    d->tabView                        = new QTabWidget(mainWidget);
+    QGridLayout* const mainLayout = new QGridLayout(mainWidget);
+    d->listView                   = new TextConverterList(mainWidget);
+    d->progressBar                = new DProgressWdg(mainWidget);
+    d->progressBar->reset();
+    d->progressBar->setDisabled(true);
+
+    d->listView->appendControlButtonsWidget(d->progressBar);
+    QBoxLayout* const blay        = d->listView->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
+    blay->setStretchFactor(d->progressBar, 20);
+
+    d->tabView                    = new QTabWidget(mainWidget);
 
     // -- Recognition tab
 
-    QScrollArea* const recsv          = new QScrollArea(d->tabView);
-    DVBox* const recognitionTab       = new DVBox(recsv->viewport());
-    QLabel* const tesseractLabel      = new QLabel(i18nc("@label", "This tool use the %1 open-source "
-                                                   "engine to perform Optical Characters Recognition. "
-                                                   "Tesseract program and the desired languages modules must "
-                                                   "be installed on your system.",
-                                                   QString::fromUtf8("<a href='https://github.com/tesseract-ocr/tesseract'>Tesseract</a>")),
-                                                   recognitionTab);
+    QScrollArea* const recsv      = new QScrollArea(d->tabView);
+    DVBox* const recognitionTab   = new DVBox(recsv->viewport());
+    QLabel* const tesseractLabel  = new QLabel(i18nc("@label", "This tool use the %1 open-source "
+                                               "engine to perform Optical Characters Recognition. "
+                                               "Tesseract program and the desired languages modules must "
+                                               "be installed on your system.",
+                                                QString::fromUtf8("<a href='https://github.com/tesseract-ocr/tesseract'>Tesseract</a>")),
+                                                recognitionTab);
     tesseractLabel->setWordWrap(true);
     tesseractLabel->setOpenExternalLinks(true);
 
@@ -193,9 +201,6 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     d->ocrSettings                    = new TextConverterSettings(recognitionTab);
 
-    d->progressBar                    = new DProgressWdg(recognitionTab);
-    d->progressBar->reset();
-    d->progressBar->setDisabled(true);
 
     recognitionTab->setContentsMargins(spacing, spacing, spacing, spacing);
     recognitionTab->setSpacing(spacing);
@@ -206,7 +211,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     d->tabView->insertTab(Private::RecognitionTab, recsv, i18nc("@title", "Text Recognition"));
 
-    // --- Review tab
+    // --- Review tab --------------------------------------------------------------------------
 
     DVBox* const reviewTab            = new DVBox(d->tabView);
     d->textedit                       = new DTextEdit(0, reviewTab);
