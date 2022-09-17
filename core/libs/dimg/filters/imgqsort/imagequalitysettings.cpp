@@ -126,18 +126,6 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
     d->detectAesthetic->setToolTip(i18nc("@info:tooltip", "Detect if the image has aesthetic value.\n"
                                          "The aesthetic detection engine use deep learning model to classify images"));
 
-    d->detectBlur             = new QCheckBox(i18nc("@option:check", "Detect Blur"), d->optionsView);
-    d->detectBlur->setToolTip(i18nc("@info:tooltip", "Detect the amount of blur in the images passed to it"));
-
-    d->detectNoise            = new QCheckBox(i18nc("@option:check", "Detect Noise"), d->optionsView);
-    d->detectNoise->setToolTip(i18nc("@info:tooltip", "Detect the amount of noise in the images passed to it"));
-
-    d->detectCompression      = new QCheckBox(i18nc("@option:check", "Detect Compression"), d->optionsView);
-    d->detectCompression->setToolTip(i18nc("@info:tooltip", "Detect the amount of compression in the images passed to it"));
-
-    d->detectExposure         = new QCheckBox(i18nc("@option:check", "Detect Under and Over Exposure"), d->optionsView);
-    d->detectExposure->setToolTip(i18nc("@info:tooltip", "Detect if the images are under-exposed or over-exposed"));
-
     // ------------------------------------------------------------------------------
 
     DHBox* const hlay1        = new DHBox(d->optionsView);
@@ -176,6 +164,20 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
 
     QLabel* const workIcon3   = new QLabel(hlay3);
     workIcon3->setPixmap(QIcon::fromTheme(QLatin1String("flag-green")).pixmap(style()->pixelMetric(QStyle::PM_SmallIconSize)));
+
+    // ------------------------------------------------------------------------------
+
+    d->detectBlur             = new QCheckBox(i18nc("@option:check", "Detect Blur"), d->optionsView);
+    d->detectBlur->setToolTip(i18nc("@info:tooltip", "Detect the amount of blur in the images passed to it"));
+
+    d->detectNoise            = new QCheckBox(i18nc("@option:check", "Detect Noise"), d->optionsView);
+    d->detectNoise->setToolTip(i18nc("@info:tooltip", "Detect the amount of noise in the images passed to it"));
+
+    d->detectCompression      = new QCheckBox(i18nc("@option:check", "Detect Compression"), d->optionsView);
+    d->detectCompression->setToolTip(i18nc("@info:tooltip", "Detect the amount of compression in the images passed to it"));
+
+    d->detectExposure         = new QCheckBox(i18nc("@option:check", "Detect Under and Over Exposure"), d->optionsView);
+    d->detectExposure->setToolTip(i18nc("@info:tooltip", "Detect if the images are under-exposed or over-exposed"));
 
     // ------------------------------------------------------------------------------
 
