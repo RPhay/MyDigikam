@@ -96,17 +96,17 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
 {
     QVBoxLayout* const layout = new QVBoxLayout(this);
 
-    QLabel* const explanation = new QLabel(i18nc("@label", "The goal of the settings from this view is to determine "
-                                                 "the quality of an image and convert it into a score. This score can be based "
-                                                 "on 2 ways: using four basic factors sabotaging image (blur, noise, exposure, and compression), "
-                                                 "or using a deep learning neural network. Both ways can be mixed together at the same time "
-                                                 "if necessary.\n"
-                                                 "The first way helps determine whether images are distorted for one of these reasons, "
+    QLabel* const explanation = new QLabel(i18nc("@label", "The goal of this settings is to determine "
+                                                 "the quality of an image and convert it into a score, stored in database. "
+                                                 "This property can be evaluated by 2 ways: using four basic factors sabotaging "
+                                                 "the images (blur, noise, exposure, and compression), or using a deep learning "
+                                                 "neural network engine.\n"
+                                                 "The first one helps to determine whether images are distorted for one of these factors, "
                                                  "however it demands some drawbacks as fine-tuning from the user’s side and it cannot work "
-                                                 "on the aesthetic image.\n"
-                                                 "The second way use an IA approach based on an aesthetic image quality model to "
+                                                 "with the aesthetic image processing.\n"
+                                                 "The second one uses an IA approach based on an aesthetic image quality model to "
                                                  "predict the score. As deep learning is an end-to-end solution, it doesn’t "
-                                                 "require hyperparameter setting, and make this feature easier to use"), this);
+                                                 "require hyperparameter settings, and make this feature easier to use."), this);
     explanation->setOpenExternalLinks(true);
     explanation->setWordWrap(true);
 
