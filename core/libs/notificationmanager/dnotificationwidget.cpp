@@ -7,8 +7,8 @@
  * Description : A widget to provide feedback or propose opportunistic interactions
  *
  * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (c) 2011      by Aurelien Gateau <agateau at kde dot org>
- * Copyright (c) 2014      by Dominik Haumann <dhaumann at kde dot org>
+ * SPDX-FileCopyrightText: 2011      by Aurelien Gateau <agateau at kde dot org>
+ * SPDX-FileCopyrightText: 2014      by Dominik Haumann <dhaumann at kde dot org>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
