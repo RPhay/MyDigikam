@@ -48,18 +48,25 @@ SmugWidget::SmugWidget(QWidget* const parent, DInfoInterface* const iface, bool 
     setObjectName(QLatin1String("SmugWidget"));
 
     const int spacing             = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                         QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
     QHBoxLayout* const mainLayout = new QHBoxLayout(this);
 
     // -------------------------------------------------------------------
 
-    m_imgList = new DItemsList(this);
+    m_imgList     = new DItemsList(this);
     m_imgList->setObjectName(QLatin1String("WebService ImagesList"));
-    m_imgList->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
+    m_progressBar = new DProgressWdg(this);
+
+    m_imgList->appendControlButtonsWidget(m_progressBar);
+    QBoxLayout* const blay = m_imgList->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
+    blay->setStretchFactor(m_progressBar, 20);
+
     m_imgList->setAllowRAW(true);
     m_imgList->setIface(m_iface);
     m_imgList->loadImagesFromCurrentSelection();
     m_imgList->listView()->setWhatsThis(i18n("This is the list of images to upload to your SmugMug account."));
+
+    m_progressBar->hide();
 
     QWidget* const settingsBox           = new QWidget(this);
     QVBoxLayout* const settingsBoxLayout = new QVBoxLayout(settingsBox);
@@ -183,10 +190,6 @@ SmugWidget::SmugWidget(QWidget* const parent, DInfoInterface* const iface, bool 
     optionsBoxLayout->setContentsMargins(spacing, spacing, spacing, spacing);
     optionsBoxLayout->setSpacing(spacing);
 
-    m_progressBar = new DProgressWdg(settingsBox);
-    m_progressBar->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
-    m_progressBar->hide();
-
     // ------------------------------------------------------------------------
 
     settingsBoxLayout->addWidget(m_headerLbl);
@@ -194,7 +197,6 @@ SmugWidget::SmugWidget(QWidget* const parent, DInfoInterface* const iface, bool 
     settingsBoxLayout->addWidget(albumsBox);
     settingsBoxLayout->addWidget(uploadBox);
     settingsBoxLayout->addWidget(optionsBox);
-    settingsBoxLayout->addWidget(m_progressBar);
     settingsBoxLayout->setSpacing(spacing);
     settingsBoxLayout->setContentsMargins(spacing, spacing, spacing, spacing);
 

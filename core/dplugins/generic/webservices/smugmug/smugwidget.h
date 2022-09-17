@@ -113,6 +113,8 @@ private:
     DItemsList*     m_imgList;
     QWidget*        m_uploadWidget;
 
+private:
+
     friend class SmugWindow;
 };
 
