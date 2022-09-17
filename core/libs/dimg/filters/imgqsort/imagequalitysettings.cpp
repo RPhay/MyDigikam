@@ -98,19 +98,18 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
 
     QLabel* const explanation = new QLabel(i18nc("@label", "The goal of this settings is to determine "
                                                  "the quality of an image and convert it into a score, stored in database. "
-                                                 "This property can be evaluated by 2 ways: using four basic factors sabotaging "
+                                                 "This property can be evaluated by two ways: using four basic factors sabotaging "
                                                  "the images (blur, noise, exposure, and compression), or using a deep learning "
-                                                 "neural network engine.\n"
-                                                 "The first one helps to determine whether images are distorted by the basic factors, "
-                                                 "however it demands some drawbacks as fine-tuning from the user’s side and it cannot work "
-                                                 "along the aesthetic image processing.\n"
-                                                 "The second one uses an IA approach based on %1 model to "
-                                                 "predict the score. As deep learning is an end-to-end solution, it doesn’t "
-                                                 "require hyper-parameter settings, and make this feature easier to use.",
-                                           QString::fromUtf8("<a href='https://expertphotography.com/aesthetic-photography/'>%1></a>")
+                                                 "neural network engine. The first one helps to determine whether images are distorted "
+                                                 "by the basic factors, however it demands some drawbacks as fine-tuning from the user’s "
+                                                 "side and it cannot work along the aesthetic image processing. The second one uses an IA "
+                                                 "approach based on %1 model to predict the score. As deep learning is an end-to-end "
+                                                 "solution, it doesn’t require hyper-parameter settings, and make this feature easier to use.",
+                                           QString::fromUtf8("<a href='https://expertphotography.com/aesthetic-photography/'>%1</a>")
                                                  .arg(i18nc("@label", "aesthetic image quality"))), this);
     explanation->setOpenExternalLinks(true);
     explanation->setWordWrap(true);
+    explanation->setTextFormat(Qt::RichText);
 
     d->enableSorter           = new QCheckBox(i18nc("@option:check", "Enable Image Quality Sorting"), this);
     d->enableSorter->setToolTip(i18nc("@info:tooltip", "Enable this option to assign automatically Pick Labels based on image quality."));
@@ -123,6 +122,10 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
 
     // ------------------------------------------------------------------------------
 
+    d->detectAesthetic         = new QCheckBox(i18nc("@option:check", "Detect Aesthetic Image using Deep Learning"), d->optionsView);
+    d->detectAesthetic->setToolTip(i18nc("@info:tooltip", "Detect if the image has aesthetic value.\n"
+                                         "The aesthetic detection engine use deep learning model to classify images"));
+
     d->detectBlur             = new QCheckBox(i18nc("@option:check", "Detect Blur"), d->optionsView);
     d->detectBlur->setToolTip(i18nc("@info:tooltip", "Detect the amount of blur in the images passed to it"));
 
@@ -134,10 +137,6 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
 
     d->detectExposure         = new QCheckBox(i18nc("@option:check", "Detect Under and Over Exposure"), d->optionsView);
     d->detectExposure->setToolTip(i18nc("@info:tooltip", "Detect if the images are under-exposed or over-exposed"));
-
-    d->detectAesthetic         = new QCheckBox(i18nc("@option:check", "Detect Aesthetic Image using Deep Learning"), d->optionsView);
-    d->detectAesthetic->setToolTip(i18nc("@info:tooltip", "Detect if the image has aesthetic value.\n"
-                                         "The aesthetic detection engine use deep learning model to classify images"));
 
     // ------------------------------------------------------------------------------
 
