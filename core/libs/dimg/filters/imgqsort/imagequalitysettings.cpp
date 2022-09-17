@@ -101,12 +101,14 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
                                                  "This property can be evaluated by 2 ways: using four basic factors sabotaging "
                                                  "the images (blur, noise, exposure, and compression), or using a deep learning "
                                                  "neural network engine.\n"
-                                                 "The first one helps to determine whether images are distorted for one of these factors, "
+                                                 "The first one helps to determine whether images are distorted by the basic factors, "
                                                  "however it demands some drawbacks as fine-tuning from the user’s side and it cannot work "
-                                                 "with the aesthetic image processing.\n"
-                                                 "The second one uses an IA approach based on an aesthetic image quality model to "
+                                                 "along the aesthetic image processing.\n"
+                                                 "The second one uses an IA approach based on %1 model to "
                                                  "predict the score. As deep learning is an end-to-end solution, it doesn’t "
-                                                 "require hyperparameter settings, and make this feature easier to use."), this);
+                                                 "require hyper-parameter settings, and make this feature easier to use.",
+                                           QString::fromUtf8("<a href='https://expertphotography.com/aesthetic-photography/'>%1></a>")
+                                                 .arg(i18nc("@label", "aesthetic image quality"))), this);
     explanation->setOpenExternalLinks(true);
     explanation->setWordWrap(true);
 
