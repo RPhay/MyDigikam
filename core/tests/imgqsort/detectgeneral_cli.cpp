@@ -7,7 +7,7 @@
  * Description : a command line tool to detect image quality
  *
  * SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * SPDX-FileCopyrightText: 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2022 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -32,6 +32,7 @@ int main(int argc, char** argv)
     {
         qDebug() << "detect all quality - Parse image data to detect general level";
         qDebug() << "Usage: <image file>";
+
         return -1;
     }
 
