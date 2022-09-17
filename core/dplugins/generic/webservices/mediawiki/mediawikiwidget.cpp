@@ -157,23 +157,29 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
 
     d->iface                      = iface;
     const int spacing             = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                         QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
     QVBoxLayout* const mainLayout = new QVBoxLayout(this);
 
     // -------------------------------------------------------------------
 
-    d->headerLbl = new QLabel(this);
+    d->headerLbl           = new QLabel(this);
     d->headerLbl->setWhatsThis(i18nc("@info", "This is a clickable link to open the MediaWiki home page in a web browser."));
     d->headerLbl->setOpenExternalLinks(true);
     d->headerLbl->setFocusPolicy(Qt::NoFocus);
 
-    d->imgList   = new DItemsList(this);
+    d->imgList             = new DItemsList(this);
     d->imgList->setObjectName(QLatin1String("WebService ImagesList"));
-    d->imgList->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
+    d->progressBar         = new DProgressWdg(this);
+
+    d->imgList->appendControlButtonsWidget(d->progressBar);
+    QBoxLayout* const blay = d->imgList->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
+    blay->setStretchFactor(d->progressBar, 20);
+
     d->imgList->setAllowRAW(true);
     d->imgList->setIface(d->iface);
     d->imgList->loadImagesFromCurrentSelection();
     d->imgList->listView()->setWhatsThis(i18nc("@info", "This is the list of images to upload to the wiki."));
+    d->progressBar->hide();
 
     // --------------------- Upload tab ----------------------------------
 
@@ -510,12 +516,6 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
 
     // ------------------------------------------------------------------------
 
-    d->progressBar = new DProgressWdg(this);
-    d->progressBar->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
-    d->progressBar->hide();
-
-    // ------------------------------------------------------------------------
-
     wrapperLayout->addWidget(d->imgList);
     wrapperLayout->addWidget(tabWidget);
     wrapperLayout->setStretch(0, 10);
@@ -524,7 +524,6 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
     mainLayout->addWidget(d->headerLbl);
     mainLayout->addWidget(wrapper);
     mainLayout->setSpacing(spacing);
-    mainLayout->addWidget(d->progressBar);
     mainLayout->setContentsMargins(QMargins());
 
     updateLabels();  // use empty labels until login
