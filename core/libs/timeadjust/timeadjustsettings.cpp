@@ -158,7 +158,7 @@ TimeAdjustSettings::TimeAdjustSettings(QWidget* const parent, bool timeAdjustToo
 
     if      (appName == QLatin1String("digikam"))
     {
-        appName = i18n("DigiKam");
+        appName = i18n("digiKam");
     }
     else if (appName == QLatin1String("showfoto"))
     {
