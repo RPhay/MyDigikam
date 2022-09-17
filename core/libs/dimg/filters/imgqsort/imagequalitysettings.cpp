@@ -57,6 +57,13 @@ public:
         setRejected         (nullptr),
         setPending          (nullptr),
         setAccepted         (nullptr),
+        lbl1                (nullptr),
+        lbl2                (nullptr),
+        lbl3                (nullptr),
+        lbl4                (nullptr),
+        lbl5                (nullptr),
+        lbl6                (nullptr),
+        lbl7                (nullptr),
         setSpeed            (nullptr),
         setRejectedThreshold(nullptr),
         setPendingThreshold (nullptr),
@@ -78,6 +85,14 @@ public:
     QCheckBox*    setRejected;
     QCheckBox*    setPending;
     QCheckBox*    setAccepted;
+
+    QLabel*       lbl1;
+    QLabel*       lbl2;
+    QLabel*       lbl3;
+    QLabel*       lbl4;
+    QLabel*       lbl5;
+    QLabel*       lbl6;
+    QLabel*       lbl7;
 
     DIntNumInput* setSpeed;
     DIntNumInput* setRejectedThreshold;
@@ -184,68 +199,68 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
     QWidget* const settings   = new QWidget(d->optionsView);
     QGridLayout* const glay   = new QGridLayout(settings);
 
-    QLabel* const lbl1        = new QLabel(i18n("Speed:"), settings);
-    lbl1->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+    d->lbl1                   = new QLabel(i18n("Speed:"), settings);
+    d->lbl1->setAlignment(Qt::AlignLeft | Qt::AlignTop);
     d->setSpeed               = new DIntNumInput(settings);
     d->setSpeed->setDefaultValue(5);
     d->setSpeed->setRange(1, 3, 1);
     d->setSpeed->setToolTip(i18nc("@info:tooltip", "Tradeoff between speed and accuracy of sorting algorithm"));
 
-    QLabel* const lbl2        = new QLabel(i18nc("@label", "Rejected threshold:"), settings);
-    lbl2->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+    d->lbl2                   = new QLabel(i18nc("@label", "Rejected threshold:"), settings);
+    d->lbl2->setAlignment(Qt::AlignLeft | Qt::AlignTop);
     d->setRejectedThreshold   = new DIntNumInput(settings);
     d->setRejectedThreshold->setDefaultValue(5);
     d->setRejectedThreshold->setRange(1, 100, 1);
     d->setRejectedThreshold->setToolTip(i18nc("@info:tooltip", "Threshold below which all pictures are assigned Rejected Label"));
 
-    QLabel* const lbl3        = new QLabel(i18nc("@label", "Pending threshold:"), settings);
-    lbl3->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+    d->lbl3                   = new QLabel(i18nc("@label", "Pending threshold:"), settings);
+    d->lbl3->setAlignment(Qt::AlignLeft | Qt::AlignTop);
     d->setPendingThreshold    = new DIntNumInput(settings);
     d->setPendingThreshold->setDefaultValue(5);
     d->setPendingThreshold->setRange(1, 100, 1);
     d->setPendingThreshold->setToolTip(i18nc("@info:tooltip", "Threshold below which all pictures are assigned Pending Label"));
 
-    QLabel* const lbl4        = new QLabel(i18nc("@label", "Accepted threshold:"), settings);
-    lbl4->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+    d->lbl4                   = new QLabel(i18nc("@label", "Accepted threshold:"), settings);
+    d->lbl4->setAlignment(Qt::AlignLeft | Qt::AlignTop);
     d->setAcceptedThreshold   = new DIntNumInput(settings);
     d->setAcceptedThreshold->setDefaultValue(5);
     d->setAcceptedThreshold->setRange(1, 100, 1);
     d->setAcceptedThreshold->setToolTip(i18nc("@info:tooltip", "Threshold above which all pictures are assigned Accepted Label"));
 
-    QLabel* const lbl5        = new QLabel(i18nc("@label", "Blur Weight:"), settings);
-    lbl5->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+    d->lbl5                   = new QLabel(i18nc("@label", "Blur Weight:"), settings);
+    d->lbl5->setAlignment(Qt::AlignLeft | Qt::AlignTop);
     d->setBlurWeight          = new DIntNumInput(settings);
     d->setBlurWeight->setDefaultValue(5);
     d->setBlurWeight->setRange(1, 100, 1);
     d->setBlurWeight->setToolTip(i18nc("@info:tooltip", "Weight to assign to Blur Algorithm"));
 
-    QLabel* const lbl6        = new QLabel(i18nc("@label", "Noise Weight:"), settings);
-    lbl6->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+    d->lbl6                   = new QLabel(i18nc("@label", "Noise Weight:"), settings);
+    d->lbl6->setAlignment(Qt::AlignLeft | Qt::AlignTop);
     d->setNoiseWeight         = new DIntNumInput(settings);
     d->setNoiseWeight->setDefaultValue(5);
     d->setNoiseWeight->setRange(1, 100, 1);
     d->setNoiseWeight->setToolTip(i18nc("@info:tooltip", "Weight to assign to Noise Algorithm"));
 
-    QLabel* const lbl7        = new QLabel(i18nc("@label", "Compression Weight:"), settings);
-    lbl7->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+    d->lbl7                   = new QLabel(i18nc("@label", "Compression Weight:"), settings);
+    d->lbl7->setAlignment(Qt::AlignLeft | Qt::AlignTop);
     d->setCompressionWeight   = new DIntNumInput(settings);
     d->setCompressionWeight->setDefaultValue(5);
     d->setCompressionWeight->setRange(1, 100, 1);
     d->setCompressionWeight->setToolTip(i18nc("@info:tooltip", "Weight to assign to Compression Algorithm"));
 
-    glay->addWidget(lbl1,                     0, 0, 1, 1);
+    glay->addWidget(d->lbl1,                  0, 0, 1, 1);
     glay->addWidget(d->setSpeed,              0, 1, 1, 1);
-    glay->addWidget(lbl2,                     1, 0, 1, 1);
+    glay->addWidget(d->lbl2,                  1, 0, 1, 1);
     glay->addWidget(d->setRejectedThreshold,  1, 1, 1, 1);
-    glay->addWidget(lbl3,                     2, 0, 1, 1);
+    glay->addWidget(d->lbl3,                  2, 0, 1, 1);
     glay->addWidget(d->setPendingThreshold,   2, 1, 1, 1);
-    glay->addWidget(lbl4,                     3, 0, 1, 1);
+    glay->addWidget(d->lbl4,                  3, 0, 1, 1);
     glay->addWidget(d->setAcceptedThreshold,  3, 1, 1, 1);
-    glay->addWidget(lbl5,                     4, 0, 1, 1);
+    glay->addWidget(d->lbl5,                  4, 0, 1, 1);
     glay->addWidget(d->setBlurWeight,         4, 1, 1, 1);
-    glay->addWidget(lbl6,                     5, 0, 1, 1);
+    glay->addWidget(d->lbl6,                  5, 0, 1, 1);
     glay->addWidget(d->setNoiseWeight,        5, 1, 1, 1);
-    glay->addWidget(lbl7,                     6, 0, 1, 1);
+    glay->addWidget(d->lbl7,                  6, 0, 1, 1);
     glay->addWidget(d->setCompressionWeight,  6, 1, 1, 1);
     glay->setRowStretch(7, 10);
 
@@ -323,6 +338,12 @@ ImageQualityContainer ImageQualitySettings::getImageQualityContainer() const
 
 void ImageQualitySettings::setDisableOptionViews(bool b)
 {
+    d->lbl2->setEnabled(!b);
+    d->lbl3->setEnabled(!b);
+    d->lbl4->setEnabled(!b);
+    d->lbl5->setEnabled(!b);
+    d->lbl6->setEnabled(!b);
+    d->lbl7->setEnabled(!b);
     d->detectBlur->setEnabled(!b);
     d->detectNoise->setEnabled(!b);
     d->detectCompression->setEnabled(!b);
