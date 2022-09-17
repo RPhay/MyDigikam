@@ -31,6 +31,7 @@
 #include <QMenu>
 #include <QPushButton>
 #include <QCursor>
+#include <QBoxLayout>
 
 // KDE includes
 
@@ -114,20 +115,24 @@ DNGConverterDialog::DNGConverterDialog(QWidget* const parent, DInfoInterface* co
 
     QGridLayout* const mainLayout = new QGridLayout(mainWidget);
     d->listView                   = new DNGConverterList(mainWidget);
-    d->dngSettings                = new DNGSettings(this);
-    DLineWidget* const line       = new DLineWidget(Qt::Horizontal, this);
-    d->conflictSettings           = new FileSaveConflictBox(this);
     d->progressBar                = new DProgressWdg(mainWidget);
     d->progressBar->reset();
     d->progressBar->hide();
+
+    d->listView->appendControlButtonsWidget(d->progressBar);
+    QBoxLayout* const blay        = d->listView->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
+    blay->setStretchFactor(d->progressBar, 20);
+
+    d->dngSettings                = new DNGSettings(this);
+    DLineWidget* const line       = new DLineWidget(Qt::Horizontal, this);
+    d->conflictSettings           = new FileSaveConflictBox(this);
 
     mainLayout->addWidget(d->listView,         0, 0, 5, 1);
     mainLayout->addWidget(d->dngSettings,      0, 1, 1, 1);
     mainLayout->addWidget(line,                1, 1, 1, 1);
     mainLayout->addWidget(d->conflictSettings, 2, 1, 1, 1);
-    mainLayout->addWidget(d->progressBar,      3, 1, 1, 1);
     mainLayout->setColumnStretch(0, 10);
-    mainLayout->setRowStretch(4, 10);
+    mainLayout->setRowStretch(3, 10);
     mainLayout->setContentsMargins(QMargins());
 
     // ---------------------------------------------------------------
