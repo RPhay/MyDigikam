@@ -20,6 +20,7 @@
 // Qt includes
 
 #include <QDir>
+#include <QThread>
 #include <QLocale>
 #include <QStringList>
 #include <QVariant>
@@ -31,6 +32,8 @@
 #include <QTemporaryFile>
 #include <QDomDocument>
 #include <QDomElement>
+#include <QApplication>
+#include <QWaitCondition>
 
 // KDE includes
 
@@ -48,7 +51,7 @@ class Q_DECL_HIDDEN ExifToolParser::Private
 {
 public:
 
-    explicit Private();
+    explicit Private(ExifToolParser* const q);
     ~Private();
 
     void       prepareProcess();
@@ -63,17 +66,17 @@ public:
 
 public:
 
+    ExifToolParser*                pp;
     ExifToolProcess*               proc;            ///< ExifTool process instance.
-    QList<QEventLoop*>             evLoops;         ///< Event loops for the ExifTool process actions.
     QString                        currentPath;     ///< Current file path processed by ExifTool.
     QString                        errorString;     ///< Current error string from the last started ExifTool process.
     ExifToolData                   exifToolData;    ///< Current ExifTool data (input or output depending of the called method.
     QTemporaryFile                 argsFile;        ///< Temporary file to store Exiftool arg config file.
 
     int                            cmdRunning;
-    int                            asyncLoading;
 
-    QList<QMetaObject::Connection> hdls;            ///< Handles of signals/slots connections used to control streams with ExifTool process.
+    QWaitCondition                 condVar;
+    QMutex                         mutex;
 };
 
 } // namespace Digikam

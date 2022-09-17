@@ -119,6 +119,7 @@ bool ExifToolProcess::startExifTool()
     d->cmdQueue.clear();
     d->cmdRunning           = 0;
     d->cmdAction            = NO_ACTION;
+    d->runCommand.parser    = nullptr;
 
     // Clear errors
 
@@ -214,7 +215,7 @@ QString ExifToolProcess::exifToolErrorString() const
     return d->errorString;
 }
 
-int ExifToolProcess::command(const QByteArrayList& args, Action ac)
+int ExifToolProcess::command(const QByteArrayList& args, Action ac, ExifToolParser* const parser)
 {
     if (
         (state() != QProcess::Running) ||
@@ -277,6 +278,7 @@ int ExifToolProcess::command(const QByteArrayList& args, Action ac)
     command.id      = cmdId;
     command.argsStr = cmdStr;
     command.ac      = ac;
+    command.parser  = parser;
     d->cmdQueue.append(command);
 
     // Exec cmd queue
@@ -295,11 +297,14 @@ void ExifToolProcess::slotStarted()
 
 void ExifToolProcess::slotFinished(int exitCode, QProcess::ExitStatus exitStatus)
 {
+    QMutexLocker locker(&d->mutex);
+
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool process finished" << exitCode << exitStatus;
 
-    if (d->cmdRunning)
+    if (d->cmdRunning && d->runCommand.parser)
     {
-        Q_EMIT signalFinished(d->cmdRunning, d->cmdAction, exitCode, exitStatus);
+        d->runCommand.parser->cmdFinished(d->cmdRunning, d->cmdAction, exitCode, exitStatus);
+        d->runCommand.parser = nullptr;
     }
 
     d->cmdRunning = 0;

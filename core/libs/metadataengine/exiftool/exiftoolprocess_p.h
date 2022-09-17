@@ -39,6 +39,7 @@
 #include "digikam_debug.h"
 #include "digikam_globals.h"
 #include "metaenginesettings.h"
+#include "exiftoolparser.h"
 
 #define CMD_ID_MIN 1
 #define CMD_ID_MAX 2000000000
@@ -57,14 +58,16 @@ public:
     public:
 
         Command()
-          : id (0),
-            ac (ExifToolProcess::NO_ACTION)
+          : id     (0),
+            ac     (ExifToolProcess::NO_ACTION),
+            parser (nullptr)
         {
         }
 
         int                     id;
         QByteArray              argsStr;
         ExifToolProcess::Action ac;
+        ExifToolParser*         parser;
     };
 
 public:
@@ -88,6 +91,7 @@ public:
     QElapsedTimer           execTimer;
     QList<Command>          cmdQueue;
     int                     cmdRunning;
+    Command                 runCommand;
     ExifToolProcess::Action cmdAction;
 
     int                     outAwait[2];             ///< [0] StandardOutput | [1] ErrorOutput

@@ -29,6 +29,7 @@
 #include "dmetadata.h"
 #include "wstoolutils.h"
 #include "exiftoolparser.h"
+#include "exiftoolthread.h"
 
 #ifdef HAVE_IMAGE_MAGICK
 #   include <Magick++.h>
@@ -68,6 +69,9 @@ protected Q_SLOTS:
         qCDebug(DIGIKAM_TESTS_LOG) << "Using Exiv2 Version:" << MetaEngine::Exiv2Version();
         m_tempPath = QString::fromLatin1(QTest::currentAppName());
         m_tempPath.replace(QLatin1String("./"), QString());
+
+        ExifToolThread* const exifToolThread = new ExifToolThread(this);
+        exifToolThread->start();
 
         QScopedPointer<ExifToolParser> const parser(new ExifToolParser(nullptr));
         m_hasExifTool = parser->exifToolAvailable();

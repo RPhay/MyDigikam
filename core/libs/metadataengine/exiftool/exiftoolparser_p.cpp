@@ -17,10 +17,10 @@
 namespace Digikam
 {
 
-ExifToolParser::Private::Private()
-    : proc        (nullptr),
-      cmdRunning  (0),
-      asyncLoading(ExifToolProcess::NO_ACTION)
+ExifToolParser::Private::Private(ExifToolParser* const q)
+    : pp          (q),
+      proc        (nullptr),
+      cmdRunning  (0)
 {
     argsFile.setAutoRemove(false);
 }
@@ -44,7 +44,14 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifTo
 {
     // Send command to ExifToolProcess
 
-    cmdRunning = proc->command(cmdArgs, cmdAction);
+    QMutexLocker locker(&mutex);
+
+    if (!proc)
+    {
+        return false;
+    }
+
+    cmdRunning = proc->command(cmdArgs, cmdAction, pp);
 
     if (cmdRunning == 0)
     {
@@ -55,18 +62,15 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifTo
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool" << actionString(cmdAction) << cmdArgs.join(QByteArray(" "));
 
-    if (asyncLoading == ExifToolProcess::NO_ACTION)
-    {
-        evLoops[cmdAction]->exec(QEventLoop::ExcludeUserInputEvents);
+    condVar.wait(&mutex);
 
-        if (currentPath.isEmpty())
-        {
-            qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction);
-        }
-        else
-        {
-            qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction) << "for" << currentPath;
-        }
+    if (currentPath.isEmpty())
+    {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction);
+    }
+    else
+    {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction) << "for" << currentPath;
     }
 
     return true;
@@ -147,20 +151,12 @@ QString ExifToolParser::Private::actionString(int cmdAction) const
 
 void ExifToolParser::Private::manageEventLoop(int cmdAction)
 {
-    if (asyncLoading == cmdAction)
+    QMutexLocker locker(&mutex);
+
+    if ((cmdAction >= ExifToolProcess::LOAD_METADATA) &&
+        (cmdAction <  ExifToolProcess::NO_ACTION))
     {
-        asyncLoading = ExifToolProcess::NO_ACTION;
-    }
-    else
-    {
-        if ((cmdAction >= ExifToolProcess::LOAD_METADATA) &&
-            (cmdAction <  ExifToolProcess::NO_ACTION))
-        {
-            if (evLoops[cmdAction])
-            {
-                evLoops[cmdAction]->quit();
-            }
-        }
+        condVar.wakeAll();
     }
 }
 

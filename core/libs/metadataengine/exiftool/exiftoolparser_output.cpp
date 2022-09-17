@@ -29,11 +29,11 @@ void ExifToolParser::printExifToolOutput(const QByteArray& stdOut)
     qCDebug(DIGIKAM_METAENGINE_LOG) << "---";
 }
 
-void ExifToolParser::slotCmdCompleted(int cmdId,
-                                      int cmdAction,
-                                      int execTime,
-                                      const QByteArray& stdOut,
-                                      const QByteArray& /*stdErr*/)
+void ExifToolParser::cmdCompleted(int cmdId,
+                                  int cmdAction,
+                                  int execTime,
+                                  const QByteArray& stdOut,
+                                  const QByteArray& /*stdErr*/)
 {
     if (cmdId != d->cmdRunning)
     {
@@ -391,10 +391,10 @@ void ExifToolParser::slotCmdCompleted(int cmdId,
     qCDebug(DIGIKAM_METAENGINE_LOG) << d->exifToolData.count() << "properties decoded";
 }
 
-void ExifToolParser::slotErrorOccurred(int cmdId,
-                                       int cmdAction,
-                                       QProcess::ProcessError error,
-                                       const QString& description)
+void ExifToolParser::cmdErrorOccurred(int cmdId,
+                                      int cmdAction,
+                                      QProcess::ProcessError error,
+                                      const QString& description)
 {
     if (cmdId != d->cmdRunning)
     {
@@ -411,10 +411,10 @@ void ExifToolParser::slotErrorOccurred(int cmdId,
     Q_EMIT signalExifToolDataAvailable();
 }
 
-void ExifToolParser::slotFinished(int cmdId,
-                                  int cmdAction,
-                                  int exitCode,
-                                  QProcess::ExitStatus exitStatus)
+void ExifToolParser::cmdFinished(int cmdId,
+                                 int cmdAction,
+                                 int exitCode,
+                                 QProcess::ExitStatus exitStatus)
 {
     if (cmdId != d->cmdRunning)
     {
@@ -434,7 +434,7 @@ void ExifToolParser::setOutputStream(int cmdAction,
                                      const QByteArray& cmdOutputChannel,
                                      const QByteArray& cmdErrorChannel)
 {
-    slotCmdCompleted(d->cmdRunning, cmdAction, 0, cmdOutputChannel, cmdErrorChannel);
+    cmdCompleted(d->cmdRunning, cmdAction, 0, cmdOutputChannel, cmdErrorChannel);
 }
 
 } // namespace Digikam

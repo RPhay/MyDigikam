@@ -22,12 +22,16 @@
 
 #include "digikam_debug.h"
 #include "exiftoolparser.h"
+#include "exiftoolthread.h"
 
 using namespace Digikam;
 
 int main(int argc, char** argv)
 {
     QCoreApplication app(argc, argv);
+
+    ExifToolThread* const exifToolThread = new ExifToolThread(qApp);
+    exifToolThread->start();
 
     // Create ExifTool parser instance.
 

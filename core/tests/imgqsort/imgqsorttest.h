@@ -29,6 +29,7 @@
 #include "digikam_globals.h"
 #include "imagequalitycontainer.h"
 #include "exiftoolparser.h"
+#include "exiftoolthread.h"
 #include "dpluginloader.h"
 
 // Shared class for utest
@@ -95,6 +96,9 @@ protected Q_SLOTS:
         QDir dir(qApp->applicationDirPath());
         qputenv("DK_PLUGIN_PATH", dir.canonicalPath().toUtf8());
         DPluginLoader::instance()->init();
+
+        ExifToolThread* const exifToolThread = new ExifToolThread(this);
+        exifToolThread->start();
 
         QScopedPointer<ExifToolParser> const parser(new ExifToolParser(nullptr));
         m_hasExifTool = parser->exifToolAvailable();

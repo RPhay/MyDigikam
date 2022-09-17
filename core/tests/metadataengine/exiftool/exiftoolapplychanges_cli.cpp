@@ -25,6 +25,7 @@
 #include "dpluginloader.h"
 #include "metaengine.h"
 #include "exiftoolparser.h"
+#include "exiftoolthread.h"
 
 using namespace Digikam;
 
@@ -40,6 +41,9 @@ int main(int argc, char** argv)
     }
 
     MetaEngine::initializeExiv2();
+
+    ExifToolThread* const exifToolThread = new ExifToolThread(qApp);
+    exifToolThread->start();
 
     QFileInfo input(QString::fromUtf8(argv[1]));
 
