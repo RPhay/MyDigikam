@@ -7,7 +7,7 @@
  * Description : Image Quality Parser - Noise detection
  *
  * SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * SPDX-FileCopyrightText: 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2022 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * References  : https://cse.buffalo.edu/~siweilyu/papers/ijcv14.pdf
  *
