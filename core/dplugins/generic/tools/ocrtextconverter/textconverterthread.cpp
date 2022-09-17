@@ -59,6 +59,11 @@ TextConverterActionThread::~TextConverterActionThread()
 void TextConverterActionThread::setOcrOptions(const OcrOptions& opt)
 {
     d->opt = opt;
+
+    if (!opt.multicores)
+    {
+        setMaximumNumberOfThreads(1);
+    }
 }
 
 OcrOptions TextConverterActionThread::ocrOptions() const

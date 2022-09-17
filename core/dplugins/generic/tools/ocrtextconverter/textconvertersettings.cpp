@@ -23,6 +23,8 @@
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <kconfiggroup.h>
+#include <ksharedconfig.h>
 
 // Local includes
 
@@ -33,6 +35,8 @@
 #include "dexpanderbox.h"
 #include "dnuminput.h"
 #include "textconverterlist.h"
+#include "localizeselector.h"
+#include "localizesettings.h"
 
 using namespace Digikam;
 
@@ -49,23 +53,29 @@ public:
         ocrTesseractOEMMode     (nullptr),
         ocrTesseractDpi         (nullptr),
         saveTextFile            (nullptr),
-        saveXMP                 (nullptr)
+        saveXMP                 (nullptr),
+        localizeList            (nullptr),
+        multicores              (nullptr)
     {
     }
 
     // Tesseract options
 
-    DComboBox*    ocrTesseractLanguageMode;
+    DComboBox*            ocrTesseractLanguageMode;
 
-    DComboBox*    ocrTesseractPSMMode;
+    DComboBox*            ocrTesseractPSMMode;
 
-    DComboBox*    ocrTesseractOEMMode;
+    DComboBox*            ocrTesseractOEMMode;
 
-    DIntNumInput* ocrTesseractDpi;
+    DIntNumInput*         ocrTesseractDpi;
 
-    QCheckBox*    saveTextFile;
+    QCheckBox*            saveTextFile;
 
-    QCheckBox*    saveXMP;
+    QCheckBox*            saveXMP;
+
+    LocalizeSelectorList* localizeList;
+
+    QCheckBox*            multicores;
 };
 
 TextConverterSettings::TextConverterSettings(QWidget* const parent)
@@ -75,12 +85,13 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
     QLabel* const ocrTesseractLanguageLabel   = new QLabel(i18nc("@label", "Languages:"));
     d->ocrTesseractLanguageMode               = new DComboBox(this);
 
-    d->ocrTesseractLanguageMode->setDefaultIndex(int(OcrOptions::Languages::DEFAULT));
-    d->ocrTesseractLanguageMode->setToolTip(i18nc("@info", "Specify language(s) used for OCR. "
+    d->ocrTesseractLanguageMode->setDefaultIndex(int(OcrOptions::LanguageModes::DEFAULT));
+    d->ocrTesseractLanguageMode->setToolTip(i18nc("@info", "Specify the language used for OCR. "
                                                            "In the Default mode of Language settings for digital text with multiple languages, \n"
                                                            "Tesseract can automatically recognize languages using Latin alphabets such as English or French, \n"
                                                            "but is not compatible with languages using hieroglyphs such as Chinese, Japanese.\n"
-                                                           "OSD mode use the Orientation and Script Detection module."));
+                                                           "You can use the Orientation and Script Detection mode instead or a specific language"
+                                                           "module if available."));
 
     // ------------
 
@@ -130,13 +141,20 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
     // ------------
 
     QLabel* const saveOcrResultLabel = new QLabel(i18nc("@label", "Store result in : "));
-    d->saveTextFile = new QCheckBox(i18nc("@option:check", "Text file"), this);
+    d->saveTextFile                  = new QCheckBox(i18nc("@option:check", "Text file"), this);
     d->saveTextFile->setToolTip(i18nc("@info", "Store OCR result in separated text file"));
     d->saveTextFile->setChecked(true);
 
-    d->saveXMP = new QCheckBox(i18nc("@option:check", "Metadata"), this);
+    d->saveXMP                       = new QCheckBox(i18nc("@option:check", "Metadata"), this);
     d->saveXMP->setToolTip(i18nc("@info", "Store OCR result in XMP metadata"));
     d->saveXMP->setChecked(true);
+
+    d->localizeList                  = new LocalizeSelectorList(this);
+    slotLocalizeChanged();
+
+    d->multicores                    = new QCheckBox(i18nc("@option:check", "Use Multi-cores"), this);
+    d->multicores->setToolTip(i18nc("@info", "If this option is enabled, files will be processed in parallel"));
+    d->multicores->setChecked(true);
 
     // ------------
 
@@ -149,12 +167,12 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
     settingsBoxLayout->addWidget(d->ocrTesseractOEMMode,           2, 1, 1, 1);
     settingsBoxLayout->addWidget(ocrTesseractDpiLabel,             3, 0, 1, 1);
     settingsBoxLayout->addWidget(d->ocrTesseractDpi,               3, 1, 1, 1);
-    settingsBoxLayout->addWidget(saveOcrResultLabel,               4, 0, 1, 1);
-    settingsBoxLayout->addWidget(d->saveTextFile,                  5, 0, 1, 1);
-    settingsBoxLayout->addWidget(d->saveXMP,                       5, 1, 1, 1);
-
-
-    settingsBoxLayout->setRowStretch(9, 10);
+    settingsBoxLayout->addWidget(d->multicores,                    4, 0, 1, 2);
+    settingsBoxLayout->addWidget(saveOcrResultLabel,               5, 0, 1, 1);
+    settingsBoxLayout->addWidget(d->saveTextFile,                  6, 0, 1, 1);
+    settingsBoxLayout->addWidget(d->saveXMP,                       6, 1, 1, 1);
+    settingsBoxLayout->addWidget(d->localizeList,                  7, 0, 1, 2);
+    settingsBoxLayout->setRowStretch(7, 10);
     settingsBoxLayout->setContentsMargins(QMargins());
 
     // ------------------------------------------------------------------------
@@ -167,6 +185,9 @@ TextConverterSettings::TextConverterSettings(QWidget* const parent)
 
     connect(d->ocrTesseractOEMMode, SIGNAL(activated(int)),
             this, SIGNAL(signalSettingsChanged()));
+
+    connect(LocalizeSettings::instance(), &LocalizeSettings::signalSettingsChanged,
+            this, &TextConverterSettings::slotLocalizeChanged);
 }
 
 TextConverterSettings::~TextConverterSettings()
@@ -181,18 +202,27 @@ void TextConverterSettings::setDefaultSettings()
     d->ocrTesseractPSMMode->slotReset();
     d->ocrTesseractDpi->slotReset();
     d->saveTextFile->setChecked(true);
+    d->localizeList->clearLanguages();
+    d->multicores->setChecked(false);
 }
 
 void TextConverterSettings::setOcrOptions(const OcrOptions& opt)
 {
     int id = d->ocrTesseractLanguageMode->combo()->findData(opt.language);
 
-    d->ocrTesseractLanguageMode->setCurrentIndex((id == -1) ? int(OcrOptions::Languages::DEFAULT) : id);
+    d->ocrTesseractLanguageMode->setCurrentIndex((id == -1) ? int(OcrOptions::LanguageModes::DEFAULT) : id);
     d->ocrTesseractPSMMode->setCurrentIndex(opt.psm);
     d->ocrTesseractOEMMode->setCurrentIndex(opt.oem);
     d->ocrTesseractDpi->setValue(opt.dpi);
     d->saveTextFile->setChecked(opt.isSaveTextFile);
     d->saveXMP->setChecked(opt.isSaveXMP);
+
+    Q_FOREACH (const QString& lg, opt.translations)
+    {
+        d->localizeList->addLanguage(lg);
+    }
+
+    d->multicores->setChecked(opt.multicores);
 }
 
 OcrOptions TextConverterSettings::ocrOptions() const
@@ -205,8 +235,45 @@ OcrOptions TextConverterSettings::ocrOptions() const
     opt.dpi            = d->ocrTesseractDpi->value();
     opt.isSaveTextFile = d->saveTextFile->isChecked();
     opt.isSaveXMP      = d->saveXMP->isChecked();
+    opt.translations   = d->localizeList->languagesList();
+    opt.multicores     = d->multicores->isChecked();
 
     return opt;
+}
+
+void TextConverterSettings::readSettings()
+{
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(QLatin1String("Text Converter Settings"));
+    OcrOptions opt;
+    opt.language       = group.readEntry("OcrLanguages",          int(OcrOptions::LanguageModes::DEFAULT));
+    opt.psm            = group.readEntry("PageSegmentationModes", int(OcrOptions::PageSegmentationModes::DEFAULT));
+    opt.oem            = group.readEntry("EngineModes",           int(OcrOptions::EngineModes::DEFAULT));
+    opt.dpi            = group.readEntry("Dpi",                   300);
+    opt.isSaveTextFile = group.readEntry("Check Save Test File",  true);
+    opt.isSaveXMP      = group.readEntry("Check Save in XMP",     true);
+    opt.translations   = group.readEntry("Translation Codes",     QStringList());
+    opt.multicores     = group.readEntry("Multicores",            false);
+
+    setOcrOptions(opt);
+}
+
+void TextConverterSettings::saveSettings()
+{
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(QLatin1String("Text Converter Settings"));
+    OcrOptions opt            = ocrOptions();
+
+    group.writeEntry("OcrLanguages",              opt.language);
+    group.writeEntry("PageSegmentationModes",     (int)opt.psm);
+    group.writeEntry("EngineModes",               (int)opt.oem);
+    group.writeEntry("Dpi",                       (int)opt.dpi);
+    group.writeEntry("Check Save Test File",      (bool)opt.isSaveTextFile);
+    group.writeEntry("Check Save in XMP",         (bool)opt.isSaveXMP);
+    group.writeEntry("Translation Codes",         opt.translations);
+    group.writeEntry("Multicores",                (bool)opt.multicores);
+
+    config->sync();
 }
 
 void TextConverterSettings::populateLanguagesMode(const QStringList& langs)
@@ -218,14 +285,14 @@ void TextConverterSettings::populateLanguagesMode(const QStringList& langs)
 
     QStringList tlanguages = langs;
 
-    d->ocrTesseractLanguageMode->insertItem(int(OcrOptions::Languages::DEFAULT),
-                                            i18nc("@option:default Tesseract mode", "Default"),
+    d->ocrTesseractLanguageMode->insertItem(int(OcrOptions::LanguageModes::DEFAULT),
+                                            i18nc("@option: default Tesseract mode", "Default"),
                                             QString());
 
     if (tlanguages.contains(QLatin1String("osd")))
     {
-        d->ocrTesseractLanguageMode->insertItem(int(OcrOptions::Languages::OSD),
-                                                i18nc("@option:osd Tesseract mode", "Orientation and Script Detection"),
+        d->ocrTesseractLanguageMode->insertItem(int(OcrOptions::LanguageModes::OSD),
+                                                i18nc("@option: osd Tesseract mode", "Orientation and Script Detection"),
                                                 QLatin1String("osd"));
         tlanguages.removeAll(QLatin1String("osd"));
     }
@@ -240,6 +307,12 @@ void TextConverterSettings::populateLanguagesMode(const QStringList& langs)
     {
          d->ocrTesseractLanguageMode->addItem(codes.value(lg, lg), lg);
     }
+}
+
+void TextConverterSettings::slotLocalizeChanged()
+{
+    d->localizeList->setTitle(i18nc("@label", "Translate with %1:",
+                              DOnlineTranslator::engineName(LocalizeSettings::instance()->settings().translatorEngine)));
 }
 
 } // namespace DigikamGenericTextConverterPlugin

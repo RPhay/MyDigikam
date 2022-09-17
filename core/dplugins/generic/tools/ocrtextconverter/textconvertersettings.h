@@ -41,6 +41,9 @@ public:
     OcrOptions ocrOptions() const;
     void setOcrOptions(const OcrOptions& opt);
 
+    void readSettings();
+    void saveSettings();
+
     void setDefaultSettings();
 
     void populateLanguagesMode(const QStringList& langs);
@@ -48,6 +51,10 @@ public:
 Q_SIGNALS:
 
     void signalSettingsChanged();
+
+private Q_SLOTS:
+
+    void slotLocalizeChanged();
 
 private:
 

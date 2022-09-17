@@ -66,7 +66,14 @@ public:
          * The complete metadata is re-read into the database.
          * No search for identical files will be done.
          */
-        Rescan
+        Rescan,
+
+        /**
+         * This is the same as Rescan but the database metadata
+         * will be cleaned up if the corresponding metadata
+         * write option is enabled.
+         */
+        CleanScan
     };
 
 public:
@@ -196,6 +203,7 @@ protected:
     void scanFileNormal(const QFileInfo& info, const ItemScanInfo& scanInfo, bool checkSidecar = true);
     void scanModifiedFile(const QFileInfo& info, const ItemScanInfo& scanInfo);
     void scanFileUpdateHashReuseThumbnail(const QFileInfo& fi, const ItemScanInfo& scanInfo, bool fileWasEdited);
+    void cleanScanFile(const QFileInfo& info, const ItemScanInfo& scanInfo);
     void rescanFile(const QFileInfo& info, const ItemScanInfo& scanInfo);
     void completeScanCleanupPart();
     void completeHistoryScanning();

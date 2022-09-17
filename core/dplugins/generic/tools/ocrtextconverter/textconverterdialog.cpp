@@ -27,11 +27,11 @@
 #include <QApplication>
 #include <QMessageBox>
 #include <QTabWidget>
+#include <QMenu>
+#include <QScrollArea>
 
 // KDE includes
 
-#include <kconfiggroup.h>
-#include <ksharedconfig.h>
 #include <klocalizedstring.h>
 
 // Local includes
@@ -48,7 +48,6 @@
 #include "textconverteraction.h"
 #include "tesseractbinary.h"
 #include "dbinarysearch.h"
-#include "localizeselector.h"
 
 using namespace Digikam;
 
@@ -65,6 +64,12 @@ public:
         ReviewTab
     };
 
+    enum ProcessActions
+    {
+        ProcessAll = 0,
+        ProcessSelected
+    };
+
 public:
 
     Private()
@@ -78,7 +83,6 @@ public:
         saveTextButton      (nullptr),
         currentSelectedItem (nullptr),
         binWidget           (nullptr),
-        localizeList        (nullptr),
         tabView             (nullptr)
     {
     }
@@ -108,8 +112,6 @@ public:
     TesseractBinary                   tesseractBin;
     DBinarySearch*                    binWidget;
 
-    LocalizeSelectorList*             localizeList;
-
     QTabWidget*                       tabView;
 };
 
@@ -117,8 +119,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     : DPluginDialog(parent, QLatin1String("Text Converter Dialog")),
       d            (new Private)
 {
-    setWindowTitle(i18nc("@title", "Text Converter"));
-    setMinimumSize(900, 500);
+    setWindowTitle(i18nc("@title", "OCR Text Converter"));
     setModal(true);
 
     d->iface          = iface;
@@ -130,8 +131,13 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     m_buttons->addButton(QDialogButtonBox::Ok);
     m_buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action:button", "&Start OCR"));
     m_buttons->button(QDialogButtonBox::Ok)->setDisabled(true);
-    QWidget* const mainWidget = new QWidget(this);
+    m_buttons->addButton(QDialogButtonBox::Reset);
+    m_buttons->button(QDialogButtonBox::Reset)->setText(i18nc("@action: button", "&Default"));
+    m_buttons->button(QDialogButtonBox::Reset)->setIcon(QIcon::fromTheme(QLatin1String("document-revert")));
+    m_buttons->button(QDialogButtonBox::Reset)->setToolTip(i18nc("@info:tooltip",
+                                                           "Revert current settings to default values."));
 
+    QWidget* const mainWidget = new QWidget(this);
     QVBoxLayout* const vbx    = new QVBoxLayout(this);
     vbx->addWidget(mainWidget);
     vbx->addWidget(m_buttons);
@@ -139,20 +145,28 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     //-------------------------------------------------------------------------------------------
 
-    QGridLayout* const mainLayout     = new QGridLayout(mainWidget);
-    d->listView                       = new TextConverterList(mainWidget);
-    d->tabView                        = new QTabWidget(mainWidget);
+    QGridLayout* const mainLayout = new QGridLayout(mainWidget);
+    d->listView                   = new TextConverterList(mainWidget);
+    d->progressBar                = new DProgressWdg(mainWidget);
+    d->progressBar->reset();
+    d->progressBar->setVisible(false);
+
+    d->listView->appendControlButtonsWidget(d->progressBar);
+    QBoxLayout* const blay        = d->listView->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
+    blay->setStretchFactor(d->progressBar, 20);
+
+    d->tabView                    = new QTabWidget(mainWidget);
 
     // -- Recognition tab
 
-    DVBox* const recognitionTab       = new DVBox(d->tabView);
-
-    QLabel* const tesseractLabel      = new QLabel(i18nc("@label", "This tool use the %1 open-source "
-                                                   "engine to perform Optical Characters Recognition. "
-                                                   "Tesseract program and the desired languages modules must "
-                                                   "be installed on your system.",
-                                                   QString::fromUtf8("<a href='https://github.com/tesseract-ocr/tesseract'>Tesseract</a>")),
-                                                   recognitionTab);
+    QScrollArea* const recsv      = new QScrollArea(d->tabView);
+    DVBox* const recognitionTab   = new DVBox(recsv->viewport());
+    QLabel* const tesseractLabel  = new QLabel(i18nc("@label", "This tool use the %1 open-source "
+                                               "engine to perform Optical Characters Recognition. "
+                                               "Tesseract program and the desired languages modules must "
+                                               "be installed on your system.",
+                                                QString::fromUtf8("<a href='https://github.com/tesseract-ocr/tesseract'>Tesseract</a>")),
+                                                recognitionTab);
     tesseractLabel->setWordWrap(true);
     tesseractLabel->setOpenExternalLinks(true);
 
@@ -187,22 +201,17 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     d->ocrSettings                    = new TextConverterSettings(recognitionTab);
 
-    d->localizeList                   = new LocalizeSelectorList(recognitionTab);
-    d->localizeList->setTitle(i18nc("@label", "Translate to:"));
-
-    QWidget* const space              = new QWidget(recognitionTab);
-    recognitionTab->setStretchFactor(space, 10);
-
-    d->progressBar                    = new DProgressWdg(recognitionTab);
-    d->progressBar->reset();
-    d->progressBar->hide();
 
     recognitionTab->setContentsMargins(spacing, spacing, spacing, spacing);
     recognitionTab->setSpacing(spacing);
 
-    d->tabView->insertTab(Private::RecognitionTab, recognitionTab, i18nc("@title", "Text Recognition"));
+    recsv->setFrameStyle(QFrame::NoFrame);
+    recsv->setWidgetResizable(true);
+    recsv->setWidget(recognitionTab);
 
-    // --- Review tab
+    d->tabView->insertTab(Private::RecognitionTab, recsv, i18nc("@title", "Text Recognition"));
+
+    // --- Review tab --------------------------------------------------------------------------
 
     DVBox* const reviewTab            = new DVBox(d->tabView);
     d->textedit                       = new DTextEdit(0, reviewTab);
@@ -227,7 +236,8 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
 
     mainLayout->addWidget(d->listView, 0, 0, 1, 1);
     mainLayout->addWidget(d->tabView,  0, 1, 1, 1);
-    mainLayout->setColumnStretch(0, 10);
+    mainLayout->setColumnStretch(0, 7);
+    mainLayout->setColumnStretch(1, 3);
     mainLayout->setRowStretch(0, 10);
     mainLayout->setContentsMargins(QMargins());
 
@@ -252,8 +262,8 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     connect(m_buttons->button(QDialogButtonBox::Close), SIGNAL(clicked()),
             this, SLOT(slotClose()));
 
-    connect(d->ocrSettings, SIGNAL(signalSettingsChanged()),
-            this, SLOT(slotStartStop()));
+    connect(m_buttons->button(QDialogButtonBox::Reset), SIGNAL(clicked()),
+            this, SLOT(slotDefault()));
 
     connect(d->progressBar, SIGNAL(signalProgressCanceled()),
             this, SLOT(slotStartStop()));
@@ -278,7 +288,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     d->listView->setIface(d->iface);
     d->listView->loadImagesFromCurrentSelection();
 
-    readSettings();
+    d->ocrSettings->readSettings();
 
     // ---------------------------------------------------------------
 
@@ -319,7 +329,6 @@ void TextConverterDialog::slotUpdateText()
     QString newText   = d->textedit->text();
     OcrOptions opt    = d->ocrSettings->ocrOptions();
     opt.tesseractPath = d->tesseractBin.path();
-    opt.translations  = d->localizeList->languagesList();
     opt.iface         = d->iface;
 
     if (!d->textedit->text().isEmpty()           &&
@@ -369,7 +378,7 @@ void TextConverterDialog::slotTextConverterAction(const DigikamGenericTextConver
         {
             case PROCESS:
             {
-                busy(true);
+                setBusy(true);
                 d->listView->processing(ad.fileUrl);
                 d->progressBar->progressStatusChanged(i18nc("@info", "Processing %1", ad.fileUrl.fileName()));
                 break;
@@ -518,7 +527,6 @@ void TextConverterDialog::processAll()
 {
     OcrOptions opt    = d->ocrSettings->ocrOptions();
     opt.tesseractPath = d->tesseractBin.path();
-    opt.translations  = d->localizeList->languagesList();
     opt.iface         = d->iface;
     d->thread->setOcrOptions(opt);
     d->thread->ocrProcessFiles(d->fileList);
@@ -533,6 +541,15 @@ void TextConverterDialog::slotStartStop()
 {
     if (!d->busy)
     {
+        QAction* const ac = qobject_cast<QAction*>(sender());
+
+        if (!ac)
+        {
+            return;
+        }
+
+        int ptype = ac->data().toInt();
+
         d->fileList.clear();
 
         if (d->listView->listView()->topLevelItemCount() == 0)
@@ -548,7 +565,11 @@ void TextConverterDialog::slotStartStop()
 
             if (lvItem)
             {
-                if (!lvItem->isDisabled() && (lvItem->state() != TextConverterListViewItem::Success))
+                if (
+                    !lvItem->isDisabled()                                   &&
+                    (lvItem->state() != TextConverterListViewItem::Success) &&
+                    ((ptype == Private::ProcessAll) ? true : lvItem->isSelected())
+                   )
                 {
                     lvItem->setIcon(1, QIcon());
                     lvItem->setState(TextConverterListViewItem::Waiting);
@@ -562,8 +583,9 @@ void TextConverterDialog::slotStartStop()
         if (d->fileList.empty())
         {
             QMessageBox::information(this, i18nc("@title", "Text Converter"),
-                                     i18nc("@info", "The list does not contain any digital files to process. You need to select them."));
-            busy(false);
+                                     i18nc("@info", "The list does not contain any digital files to process. "
+                                           "You need to select them."));
+            setBusy(false);
             slotAborted();
 
             return;
@@ -571,7 +593,7 @@ void TextConverterDialog::slotStartStop()
 
         d->progressBar->setMaximum(d->fileList.count());
         d->progressBar->setValue(0);
-        d->progressBar->show();
+        d->progressBar->setVisible(true);
         d->progressBar->progressScheduled(i18nc("@title", "Text Converter"), true, true);
         d->progressBar->progressThumbnailChanged(QIcon::fromTheme(QLatin1String("text-x-generic")).pixmap(22, 22));
 
@@ -581,7 +603,7 @@ void TextConverterDialog::slotStartStop()
     {
         d->fileList.clear();
         d->thread->cancel();
-        busy(false);
+        setBusy(false);
 
         d->listView->cancelProcess();
 
@@ -603,7 +625,7 @@ void TextConverterDialog::closeEvent(QCloseEvent* e)
         slotStartStop();
     }
 
-    saveSettings();
+    d->ocrSettings->saveSettings();
     d->listView->listView()->clear();
     e->accept();
 }
@@ -617,7 +639,7 @@ void TextConverterDialog::slotClose()
         slotStartStop();
     }
 
-    saveSettings();
+    d->ocrSettings->saveSettings();
     d->listView->listView()->clear();
     d->fileList.clear();
     accept();
@@ -628,43 +650,6 @@ void TextConverterDialog::slotDefault()
     d->ocrSettings->setDefaultSettings();
 }
 
-void TextConverterDialog::readSettings()
-{
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group(QLatin1String("OCR Tesseract Settings"));
-    OcrOptions opt;
-    opt.language       = group.readEntry("ocrLanguages",          int(OcrOptions::Languages::DEFAULT));
-    opt.psm            = group.readEntry("PageSegmentationModes", int(OcrOptions::PageSegmentationModes::DEFAULT));
-    opt.oem            = group.readEntry("EngineModes",           int(OcrOptions::EngineModes::DEFAULT));
-    opt.dpi            = group.readEntry("Dpi",                   300);
-    opt.isSaveTextFile = group.readEntry("Check Save Test File",  true);
-    opt.isSaveXMP      = group.readEntry("Check Save in XMP",     true);
-    opt.translations   = group.readEntry("Translation Codes",     QStringList());
-
-    Q_FOREACH (const QString& lg, opt.translations)
-    {
-        d->localizeList->addLanguage(lg);
-    }
-
-    d->ocrSettings->setOcrOptions(opt);
-}
-
-void TextConverterDialog::saveSettings()
-{
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group(QLatin1String("OCR Tesseract Settings"));
-    OcrOptions opt            = d->ocrSettings->ocrOptions();
-    opt.translations          = d->localizeList->languagesList();
-
-    group.writeEntry("ocrLanguages",              opt.language);
-    group.writeEntry("PageSegmentationModes",     (int)opt.psm);
-    group.writeEntry("EngineModes",               (int)opt.oem);
-    group.writeEntry("Dpi",                       (int)opt.dpi);
-    group.writeEntry("Check Save Test File",      (bool)opt.isSaveTextFile);
-    group.writeEntry("Check Save in XMP",         (bool)opt.isSaveXMP);
-    group.writeEntry("Translation Codes",         opt.translations);
-}
-
 void TextConverterDialog::addItems(const QList<QUrl>& itemList)
 {
     d->listView->slotAddImages(itemList);
@@ -672,11 +657,11 @@ void TextConverterDialog::addItems(const QList<QUrl>& itemList)
 
 void TextConverterDialog::slotThreadFinished()
 {
-    busy(false);
+    setBusy(false);
     slotAborted();
 }
 
-void TextConverterDialog::busy(bool busy)
+void TextConverterDialog::setBusy(bool busy)
 {
     d->busy = busy;
 
@@ -684,11 +669,13 @@ void TextConverterDialog::busy(bool busy)
     {
         m_buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action", "&Abort"));
         m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@info", "Abort OCR processing of Raw files."));
+        unplugProcessMenu();
     }
     else
     {
         m_buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action", "&Start OCR"));
-        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@info", "Start OCR using the current settings."));
+        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@info", "Start OCR using the current settings."));      
+        plugProcessMenu();
     }
 
     d->ocrSettings->setEnabled(!d->busy);
@@ -699,7 +686,7 @@ void TextConverterDialog::busy(bool busy)
 void TextConverterDialog::slotAborted()
 {
     d->progressBar->setValue(0);
-    d->progressBar->hide();
+    d->progressBar->setVisible(false);
     d->progressBar->progressCompleted();
 }
 
@@ -718,7 +705,7 @@ void TextConverterDialog::slotTesseractBinaryFound(bool found)
 
     bool b = found && !langs.isEmpty();
 
-    busy(false);
+    setBusy(false);
 
     // Disable Start button if Tesseract is not found or if no language plugin installed.
 
@@ -730,8 +717,44 @@ void TextConverterDialog::slotTesseractBinaryFound(bool found)
     }
     else
     {
-        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@info", "Tesseract program or no language module\n"
-                                                                  "are installed on your system."));
+        m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@info", "Tesseract program or language modules\n"
+                                                                  "are not installed on your system."));
+    }
+}
+
+void TextConverterDialog::plugProcessMenu()
+{
+    if (!m_buttons->button(QDialogButtonBox::Ok)->menu())
+    {
+        QMenu* const processMenu = new QMenu(this);
+        m_buttons->button(QDialogButtonBox::Ok)->setMenu(processMenu);
+
+        connect(processMenu, SIGNAL(aboutToShow()),
+                this, SLOT(slotProcessMenu()));
+    }
+}
+
+void TextConverterDialog::unplugProcessMenu()
+{
+    m_buttons->button(QDialogButtonBox::Ok)->setMenu(nullptr);
+}
+
+void TextConverterDialog::slotProcessMenu()
+{
+    if (!d->busy)
+    {
+        QMenu* const processMenu = qobject_cast<QMenu*>(sender());
+
+        if (processMenu)
+        {
+            processMenu->clear();
+
+            QAction* ac = nullptr;
+            ac          = processMenu->addAction(i18nc("@action", "Process All Items"),      this, SLOT(slotStartStop()));
+            ac->setData(Private::ProcessAll);
+            ac          = processMenu->addAction(i18nc("@action", "Process Selected Items"), this, SLOT(slotStartStop()));
+            ac->setData(Private::ProcessSelected);
+        }
     }
 }
 

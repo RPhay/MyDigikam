@@ -19,6 +19,7 @@
 
 #include <QDir>
 #include <QUrl>
+#include <QPointer>
 #include <QProcess>
 #include <QFileInfo>
 
@@ -37,17 +38,19 @@ class OcrTesseractEngine::Private
 public:
 
     Private()
-      : cancel(false)
+      : cancel (false)
     {
     }
 
-    OcrOptions opt;
+    OcrOptions          opt;
 
-    bool       cancel;
+    bool                cancel;
 
-    QString    inputFile;
-    QString    outputFile;
-    QString    ocrResult;
+    QPointer<QProcess>  ocrProcess;
+
+    QString             inputFile;
+    QString             outputFile;
+    QString             ocrResult;
 };
 
 OcrTesseractEngine::OcrTesseractEngine()
@@ -57,7 +60,8 @@ OcrTesseractEngine::OcrTesseractEngine()
 
 OcrTesseractEngine::~OcrTesseractEngine()
 {
-    delete d;
+   delete d->ocrProcess;
+   delete d;
 }
 
 void OcrTesseractEngine::setOcrOptions(const OcrOptions& opt)
@@ -97,102 +101,111 @@ void OcrTesseractEngine::setOutputFile(const QString& filePath)
 
 int OcrTesseractEngine::runOcrProcess()
 {
-    d->cancel = false;
-    QScopedPointer<QProcess> ocrProcess (new QProcess());
-    ocrProcess->setProcessEnvironment(adjustedEnvironmentForAppImage());
-    ocrProcess->setProcessChannelMode(QProcess::SeparateChannels);
-
-    try
+    if (d->cancel)
     {
-        // ------------------------- IN/OUT ARGUMENTS -------------------------
-
-        QStringList args;
-
-        // add configuration image
-
-        if (!d->inputFile.isEmpty())
-        {
-            args << d->inputFile;
-        }
-
-        // output base name
-
-        QString mess;
-
-        args << QLatin1String("stdout");
-
-        // ----------------------------- OPTIONS -----------------------------
-
-        // page Segmentation mode
-
-        QString val = d->opt.PsmCodeToValue(static_cast<OcrOptions::PageSegmentationModes>(d->opt.psm));
-
-        if (!val.isEmpty())
-        {
-            args << QLatin1String("--psm") << val;
-        }
-
-        // OCR enginge mode
-
-        val = d->opt.OemCodeToValue(static_cast<OcrOptions::EngineModes>(d->opt.oem));
-
-        if (!val.isEmpty())
-        {
-            args << QLatin1String("--oem") << val;
-        }
-
-        // Language
-
-        val = d->opt.language;
-
-        if (!val.isEmpty())
-        {
-            args << QLatin1String("-l") << val;
-        }
-
-        // dpi
-
-        val = QString::fromLatin1("%1").arg(d->opt.dpi);
-
-        if (!val.isEmpty())
-        {
-            args << QLatin1String("--dpi") << val;
-        }
-
-        // ------------------  Running tesseract process ------------------
-
-        ocrProcess->setWorkingDirectory(QDir::tempPath());
-        ocrProcess->setProgram(d->opt.tesseractPath);
-        ocrProcess->setArguments(args);
-
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Running OCR : "
-                                     << ocrProcess->program()
-                                     << ocrProcess->arguments();
-
-        ocrProcess->start();
-
-        bool successFlag = ocrProcess->waitForFinished(-1) && (ocrProcess->exitStatus() == QProcess::NormalExit);
-
-        if (!successFlag)
-        {
-            qCWarning(DIGIKAM_GENERAL_LOG) << "Error starting OCR Process";
-
-            return PROCESS_FAILED;
-        }
-
-        if (d->cancel)
-        {
-            return PROCESS_CANCELED;
-        }
+        return PROCESS_CANCELED;
     }
-    catch (const QProcess::ProcessError& e)
+
+    d->ocrProcess = new QProcess();
+    d->ocrProcess->setProcessEnvironment(adjustedEnvironmentForAppImage());
+    d->ocrProcess->setProcessChannelMode(QProcess::SeparateChannels);
+
+    // ------------------------- IN/OUT ARGUMENTS -------------------------
+
+    QStringList args;
+
+    // add configuration image
+
+    if (!d->inputFile.isEmpty())
     {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "Text Converter has error" << e;
+        args << d->inputFile;
+    }
+
+    // output base name
+
+    QString mess;
+
+    args << QLatin1String("stdout");
+
+    // ----------------------------- OPTIONS -----------------------------
+
+    // page Segmentation mode
+
+    QString val = d->opt.PsmCodeToValue(static_cast<OcrOptions::PageSegmentationModes>(d->opt.psm));
+
+    if (!val.isEmpty())
+    {
+        args << QLatin1String("--psm") << val;
+    }
+
+    // OCR enginge mode
+
+    val = d->opt.OemCodeToValue(static_cast<OcrOptions::EngineModes>(d->opt.oem));
+
+    if (!val.isEmpty())
+    {
+        args << QLatin1String("--oem") << val;
+    }
+
+    // Language
+
+    val = d->opt.language;
+
+    if (!val.isEmpty())
+    {
+        args << QLatin1String("-l") << val;
+    }
+
+    // dpi
+
+    val = QString::fromLatin1("%1").arg(d->opt.dpi);
+
+    if (!val.isEmpty())
+    {
+        args << QLatin1String("--dpi") << val;
+    }
+
+    // ------------------  Running tesseract process ------------------
+
+    d->ocrProcess->setWorkingDirectory(QDir::tempPath());
+    d->ocrProcess->setProgram(d->opt.tesseractPath);
+    d->ocrProcess->setArguments(args);
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Running OCR : "
+                                 << d->ocrProcess->program()
+                                 << d->ocrProcess->arguments();
+
+    d->ocrProcess->start();
+
+    if (!d->ocrProcess->waitForStarted(10000))
+    {
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Error starting OCR Process";
 
         return PROCESS_FAILED;
     }
 
-    d->ocrResult = QString::fromLocal8Bit(ocrProcess->readAllStandardOutput());
+    if (!d->ocrProcess->waitForFinished(-1)                 ||
+        (d->ocrProcess->exitStatus() != QProcess::NormalExit))
+    {
+        if (d->cancel)
+        {
+            return PROCESS_CANCELED;
+        }
+
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Error finish OCR Process";
+
+        return PROCESS_FAILED;
+    }
+
+    if (d->ocrProcess->error() != QProcess::UnknownError)
+    {
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Text Converter has error"
+                                       << d->ocrProcess->error();
+
+        return PROCESS_FAILED;
+    }
+
+    d->ocrResult = QString::fromLocal8Bit(d->ocrProcess->readAllStandardOutput());
 
     saveOcrResult();
 
@@ -286,9 +299,19 @@ void OcrTesseractEngine::saveXMP(const QUrl& url,
 
     // --- Version using DInfoInterface
 
-    DItemInfo witem;
-    witem.setCaptions(commentsSet);
-    iface->setItemInfo(url, witem.infoMap());
+    DItemInfo item;
+    item.setCaptions(commentsSet);
+    iface->setItemInfo(url, item.infoMap());
+}
+
+void OcrTesseractEngine::cancelOcrProcess()
+{
+    d->cancel = true;
+
+    if (d->ocrProcess)
+    {
+        d->ocrProcess->kill();
+    }
 }
 
 } // namespace DigikamGenericTextConverterPlugin

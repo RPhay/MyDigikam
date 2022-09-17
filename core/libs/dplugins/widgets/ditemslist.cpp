@@ -35,6 +35,7 @@ public:
         clearButton          (nullptr),
         loadButton           (nullptr),
         saveButton           (nullptr),
+        extraWidget          (nullptr),
         progressPix          (nullptr),
         progressCount        (0),
         progressTimer        (nullptr),
@@ -57,6 +58,7 @@ public:
     CtrlButton*                 clearButton;
     CtrlButton*                 loadButton;
     CtrlButton*                 saveButton;
+    QWidget*                    extraWidget;        ///< Extra widget append to the end of control buttons layout.
 
     QList<QUrl>                 processItems;
     DWorkingPixmap*             progressPix;
@@ -176,12 +178,18 @@ void DItemsList::enableDragAndDrop(const bool enable)
     d->listView->enableDragAndDrop(enable);
 }
 
-void DItemsList::setControlButtonsPlacement(ControlButtonPlacement placement)
+void DItemsList::appendControlButtonsWidget(QWidget* const widget)
+{
+    d->extraWidget = widget;
+}
+
+QBoxLayout* DItemsList::setControlButtonsPlacement(ControlButtonPlacement placement)
 {
     delete layout();
 
+    QBoxLayout* lay               = nullptr;        // Layout instance to return;
     const int spacing             = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                         QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QGridLayout* const mainLayout = new QGridLayout;
     mainLayout->addWidget(d->listView, 1, 1, 1, 1);
@@ -193,7 +201,6 @@ void DItemsList::setControlButtonsPlacement(ControlButtonPlacement placement)
     // --------------------------------------------------------
 
     QHBoxLayout* const hBtnLayout = new QHBoxLayout;
-    hBtnLayout->addStretch(10);
     hBtnLayout->addWidget(d->moveUpButton);
     hBtnLayout->addWidget(d->moveDownButton);
     hBtnLayout->addWidget(d->addButton);
@@ -201,12 +208,16 @@ void DItemsList::setControlButtonsPlacement(ControlButtonPlacement placement)
     hBtnLayout->addWidget(d->loadButton);
     hBtnLayout->addWidget(d->saveButton);
     hBtnLayout->addWidget(d->clearButton);
-    hBtnLayout->addStretch(10);
+    hBtnLayout->addStretch(1);
+
+    if (d->extraWidget)
+    {
+        hBtnLayout->addWidget(d->extraWidget);
+    }
 
     // --------------------------------------------------------
 
     QVBoxLayout* const vBtnLayout = new QVBoxLayout;
-    vBtnLayout->addStretch(10);
     vBtnLayout->addWidget(d->moveUpButton);
     vBtnLayout->addWidget(d->moveDownButton);
     vBtnLayout->addWidget(d->addButton);
@@ -214,7 +225,12 @@ void DItemsList::setControlButtonsPlacement(ControlButtonPlacement placement)
     vBtnLayout->addWidget(d->loadButton);
     vBtnLayout->addWidget(d->saveButton);
     vBtnLayout->addWidget(d->clearButton);
-    vBtnLayout->addStretch(10);
+    vBtnLayout->addStretch(1);
+
+    if (d->extraWidget)
+    {
+        vBtnLayout->addWidget(d->extraWidget);
+    }
 
     // --------------------------------------------------------
 
@@ -222,6 +238,7 @@ void DItemsList::setControlButtonsPlacement(ControlButtonPlacement placement)
     {
         case ControlButtonsAbove:
         {
+            lay = hBtnLayout;
             mainLayout->addLayout(hBtnLayout, 0, 1, 1, 1);
             delete vBtnLayout;
             break;
@@ -229,6 +246,7 @@ void DItemsList::setControlButtonsPlacement(ControlButtonPlacement placement)
 
         case ControlButtonsBelow:
         {
+            lay = hBtnLayout;
             mainLayout->addLayout(hBtnLayout, 2, 1, 1, 1);
             delete vBtnLayout;
             break;
@@ -236,6 +254,7 @@ void DItemsList::setControlButtonsPlacement(ControlButtonPlacement placement)
 
         case ControlButtonsLeft:
         {
+            lay = vBtnLayout;
             mainLayout->addLayout(vBtnLayout, 1, 0, 1, 1);
             delete hBtnLayout;
             break;
@@ -243,6 +262,7 @@ void DItemsList::setControlButtonsPlacement(ControlButtonPlacement placement)
 
         case ControlButtonsRight:
         {
+            lay = vBtnLayout;
             mainLayout->addLayout(vBtnLayout, 1, 2, 1, 1);
             delete hBtnLayout;
             break;
@@ -257,11 +277,19 @@ void DItemsList::setControlButtonsPlacement(ControlButtonPlacement placement)
             // set all buttons invisible
 
             setControlButtons(ControlButtons());
+
+            if (d->extraWidget)
+            {
+                d->extraWidget->setVisible(false);
+            }
+
             break;
         }
     }
 
     setLayout(mainLayout);
+
+    return lay;
 }
 
 void DItemsList::setControlButtons(ControlButtons buttonMask)

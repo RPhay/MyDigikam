@@ -106,7 +106,7 @@ void MaintenanceThread::generateThumbs(const QStringList& paths)
 
         collection.insert(t, 0);
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Creating a thumbnails task for generating thumbnails";
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Creating a thumbnails task for generating thumbnails" << t;
     }
 
     appendJobs(collection);

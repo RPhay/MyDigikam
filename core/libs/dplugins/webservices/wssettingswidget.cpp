@@ -158,7 +158,7 @@ WSSettingsWidget::WSSettingsWidget(QWidget* const parent,
     d->photoIdChB         = new QCheckBox(d->optionsBox);
     d->dimensionSpB       = new QSpinBox(d->optionsBox);
     d->imageQualitySpB    = new QSpinBox(d->optionsBox);
-    d->progressBar        = new DProgressWdg(d->settingsBox);
+    d->progressBar        = new DProgressWdg(this);
 
     //----------------------------------------------------------
 
@@ -166,7 +166,11 @@ WSSettingsWidget::WSSettingsWidget(QWidget* const parent,
                              QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     d->imgList->setObjectName(QLatin1String("WebService ImagesList"));
-    d->imgList->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
+
+    d->imgList->appendControlButtonsWidget(d->progressBar);
+    QBoxLayout* const blay = d->imgList->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
+    blay->setStretchFactor(d->progressBar, 20);
+
     d->imgList->setAllowRAW(true);
     d->imgList->listView()->setWhatsThis(i18n("This is the list of images "
                                               "to upload to your %1 account.", d->toolName));
@@ -192,7 +196,7 @@ WSSettingsWidget::WSSettingsWidget(QWidget* const parent,
     d->changeUserBtn->setIcon(QIcon::fromTheme(QLatin1String("system-switch-user")).pixmap(16));
     d->changeUserBtn->setToolTip(i18n("Change %1 account for transfer", d->toolName));
 
-    d->accountBoxLayout->addWidget(userNameLbl,             0, 0, 1, 2);
+    d->accountBoxLayout->addWidget(userNameLbl,           0, 0, 1, 2);
     d->accountBoxLayout->addWidget(d->userNameDisplayLbl, 0, 2, 1, 2);
     d->accountBoxLayout->addWidget(d->changeUserBtn,      1, 0, 1, 4);
     d->accountBoxLayout->setContentsMargins(spacing, spacing, spacing, spacing);
@@ -296,7 +300,6 @@ WSSettingsWidget::WSSettingsWidget(QWidget* const parent,
     d->settingsBoxLayout->addWidget(d->sizeBox);
     d->settingsBoxLayout->addWidget(d->uploadBox);
     d->settingsBoxLayout->addWidget(d->optionsBox);
-    d->settingsBoxLayout->addWidget(d->progressBar);
     d->settingsBoxLayout->setSpacing(spacing);
     d->settingsBoxLayout->setContentsMargins(spacing, spacing, spacing, spacing);
 

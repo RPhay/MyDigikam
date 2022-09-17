@@ -29,11 +29,65 @@ using namespace Digikam;
 namespace DigikamGenericTextConverterPlugin
 {
 
+
+class TextConverterListViewItem::Private
+{
+public:
+
+    Private()
+    {
+    }
+
+    QString destFileName;
+    QString recognizedWords;
+    QString identity;
+    QString status;
+};
+
+TextConverterListViewItem::TextConverterListViewItem(DItemsListView* const view, const QUrl& url)
+    : DItemsListViewItem(view, url),
+      d                 (new Private)
+{
+}
+
+TextConverterListViewItem::~TextConverterListViewItem()
+{
+    delete d;
+}
+
+void TextConverterListViewItem::setDestFileName(const QString& str)
+{
+    d->destFileName = str;
+    setText(TextConverterList::TARGETFILENAME, d->destFileName);
+}
+
+QString TextConverterListViewItem::destFileName() const
+{
+    return d->destFileName;
+}
+
+void TextConverterListViewItem::setRecognizedWords(const QString& str)
+{
+    d->recognizedWords = str;
+    setText(TextConverterList::RECOGNIZEDWORDS, d->recognizedWords);
+}
+
+QString TextConverterListViewItem::recognizedWords() const
+{
+    return d->recognizedWords;
+}
+
+void TextConverterListViewItem::setStatus(const QString& str)
+{
+    d->status = str;
+    setText(TextConverterList::STATUS, d->status);
+}
+
+// --------------------------------------------------------------------------------------
+
 TextConverterList::TextConverterList(QWidget* const parent)
     : DItemsList(parent)
 {
-    setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
-
     listView()->setColumn(static_cast<DItemsListView::ColumnType>(RECOGNIZEDWORDS), i18n("Words"),       true);
     listView()->setColumn(static_cast<DItemsListView::ColumnType>(TARGETFILENAME),  i18n("Target File"), true);
     listView()->setColumn(static_cast<DItemsListView::ColumnType>(STATUS),          i18n("Status"),      true);
@@ -112,61 +166,6 @@ void TextConverterList::slotRemoveItems()
         }
     }
     while (find);
-}
-
-// --------------------------------------------------------------------------------------
-
-class TextConverterListViewItem::Private
-{
-public:
-
-    Private()
-    {
-    }
-
-    QString destFileName;
-    QString recognizedWords;
-    QString identity;
-    QString status;
-};
-
-TextConverterListViewItem::TextConverterListViewItem(DItemsListView* const view, const QUrl& url)
-    : DItemsListViewItem(view, url),
-      d                 (new Private)
-{
-}
-
-TextConverterListViewItem::~TextConverterListViewItem()
-{
-    delete d;
-}
-
-void TextConverterListViewItem::setDestFileName(const QString& str)
-{
-    d->destFileName = str;
-    setText(TextConverterList::TARGETFILENAME, d->destFileName);
-}
-
-QString TextConverterListViewItem::destFileName() const
-{
-    return d->destFileName;
-}
-
-void TextConverterListViewItem::setRecognizedWords(const QString& str)
-{
-    d->recognizedWords = str;
-    setText(TextConverterList::RECOGNIZEDWORDS, d->recognizedWords);
-}
-
-QString TextConverterListViewItem::recognizedWords() const
-{
-    return d->recognizedWords;
-}
-
-void TextConverterListViewItem::setStatus(const QString& str)
-{
-    d->status = str;
-    setText(TextConverterList::STATUS, d->status);
 }
 
 } // namespace DigikamGenericTextConverterPlugin

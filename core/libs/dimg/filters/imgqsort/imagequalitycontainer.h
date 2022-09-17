@@ -7,6 +7,7 @@
  * Description : Image quality Settings Container.
  *
  * SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2022 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -62,7 +63,7 @@ public:
     int  blurWeight;            ///< Item blur level.
     int  noiseWeight;           ///< Item noise level.
     int  compressionWeight;     ///< Item compression level.
-    int  exposureWeight;
+    int  exposureWeight;        ///< Item exposure level.
 };
 
 //! qDebug() stream operator. Writes property @a s to the debug output in a nicely formatted way.

@@ -7,11 +7,12 @@
  * Description : an unit-test to detect image quality level
  *
  * SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * SPDX-FileCopyrightText: 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2022 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
+
 #ifndef DIGIKAM_DETECT_AESTHETIC_UTEST_H
 #define DIGIKAM_DETECT_AESTHETIC_UTEST_H
 
@@ -41,9 +42,9 @@ private Q_SLOTS:
 
 DataTestCases const dataTestCases =
 {
-    {QLatin1String("aestheticDetection"),         PairImageQuality(QLatin1String("aesthetic_1.jpg"), 3)},
-    {QLatin1String("aestheticDetection"),         PairImageQuality(QLatin1String("aesthetic_2.jpg"), 3)},
-    {QLatin1String("aestheticDetection"),         PairImageQuality(QLatin1String("aesthetic_3.jpg"), 3)},
+    {QLatin1String("aestheticDetection"),         PairImageQuality(QLatin1String("aesthetic_1.jpg"),         3)},
+    {QLatin1String("aestheticDetection"),         PairImageQuality(QLatin1String("aesthetic_2.jpg"),         3)},
+    {QLatin1String("aestheticDetection"),         PairImageQuality(QLatin1String("aesthetic_3.jpg"),         3)},
 
     {QLatin1String("aestheticDetection"),         PairImageQuality(QLatin1String("general_bad_image_1.jpg"), 1)},
     {QLatin1String("aestheticDetection"),         PairImageQuality(QLatin1String("general_bad_image_2.jpg"), 1)},

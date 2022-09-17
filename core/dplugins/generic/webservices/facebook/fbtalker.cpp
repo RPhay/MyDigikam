@@ -7,7 +7,7 @@
  * Description : a tool to export items to Facebook web service
  *
  * SPDX-FileCopyrightText: 2008-2010 by Luka Renko <lure at kubuntu dot org>
- * Copyright (c) 2011      by Dirk Tilger <dirk dot kde at miriup dot de>
+ * SPDX-FileCopyrightText: 2011      by Dirk Tilger <dirk dot kde at miriup dot de>
  * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2018      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *

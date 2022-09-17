@@ -55,11 +55,6 @@ NewItemsFinder::NewItemsFinder(const FinderMode mode, const QStringList& folders
     : MaintenanceTool(QLatin1String("NewItemsFinder"), parent),
       d(new Private)
 {
-    setLabel(i18n("Find new items"));
-    setThumbnail(QIcon::fromTheme(QLatin1String("view-refresh")).pixmap(22));
-    setShowAtStart(true);
-    ProgressManager::addProgressItem(this);
-
     d->mode          = mode;
     d->foldersToScan = foldersToScan;
     d->foldersToScan.sort();
@@ -73,6 +68,19 @@ NewItemsFinder::~NewItemsFinder()
 void NewItemsFinder::slotStart()
 {
     MaintenanceTool::slotStart();
+
+    if (ProgressManager::instance()->findItembyId(id()))
+    {
+        slotDone();
+
+        return;
+    }
+
+    setShowAtStart(true);
+    setLabel(i18n("Find new items"));
+    setThumbnail(QIcon::fromTheme(QLatin1String("view-refresh")).pixmap(22));
+
+    ProgressManager::addProgressItem(this);
 
     switch (d->mode)
     {

@@ -221,7 +221,13 @@ void ItemScanner::commitItemComments()
 
     if (!d->commit.captions.isEmpty())
     {
-        comments.replaceComments(d->commit.captions);
+        CaptionsMap::const_iterator it;
+
+        for (it = d->commit.captions.constBegin() ; it != d->commit.captions.constEnd() ; ++it)
+        {
+            CaptionValues val = it.value();
+            comments.addComment(val.caption, it.key(), val.author, val.date);
+        }
     }
 
     // Headline
@@ -565,7 +571,7 @@ bool ItemScanner::checkRatingFromMetadata(const QVariant& ratingFromMetadata) co
 {
     // should only be overwritten if set in metadata
 
-    if (d->scanMode == Rescan)
+    if ((d->scanMode == Rescan) || (d->scanMode == CleanScan))
     {
         if (ratingFromMetadata.isNull() || (ratingFromMetadata.toInt() == -1))
         {

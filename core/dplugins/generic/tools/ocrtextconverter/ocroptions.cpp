@@ -32,7 +32,8 @@ OcrOptions::OcrOptions()
       dpi             (300),
       isSaveTextFile  (true),
       isSaveXMP       (true),
-      iface           (nullptr)
+      iface           (nullptr),
+      multicores      (false)
 {
 }
 

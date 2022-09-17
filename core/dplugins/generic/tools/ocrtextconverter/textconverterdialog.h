@@ -51,16 +51,16 @@ protected:
 
 private:
 
-    void readSettings();
-    void saveSettings();
-
-    void busy(bool busy);
+    void setBusy(bool busy);
 
     void processAll();
     void processingFailed(const QUrl& url, int result);
     void processed(const QUrl& url, const QString& outputFile, const QString& ocrResult);
 
     int  calculateNumberOfWords(const QString& text) const;
+
+    void plugProcessMenu();
+    void unplugProcessMenu();
 
 Q_SIGNALS:
 
@@ -82,6 +82,7 @@ private Q_SLOTS:
 
     void slotStartFoundTesseract();
     void slotTesseractBinaryFound(bool);
+    void slotProcessMenu();
 
 private:
 

@@ -93,7 +93,9 @@ void ItemScanner::scanItemInformation()
 {
     d->commit.commitItemInformation = true;
 
-    if ((d->scanMode == NewScan) || (d->scanMode == Rescan))
+    if ((d->scanMode == NewScan) ||
+        (d->scanMode == Rescan)  ||
+        (d->scanMode == CleanScan))
     {
         d->commit.imageInformationFields = DatabaseFields::ItemInformationAll;
 
@@ -155,7 +157,7 @@ void ItemScanner::commitItemInformation()
                                                 d->commit.imageInformationInfos,
                                                 d->commit.imageInformationFields);
     }
-    else // d->scanMode == Rescan or d->scanMode == ModifiedScan
+    else // d->scanMode == Rescan or CleanScan or ModifiedScan
     {
         CoreDbAccess().db()->changeItemInformation(d->scanInfo.id,
                                                    d->commit.imageInformationInfos,
@@ -210,9 +212,9 @@ void ItemScanner::scanFile(ScanMode mode)
     }
     else
     {
-        if (d->scanMode == Rescan)
+        if (d->scanMode == CleanScan)
         {
-            clearDatabaseMetadata();
+            cleanDatabaseMetadata();
         }
 
         if      (d->scanInfo.category == DatabaseItem::Image)

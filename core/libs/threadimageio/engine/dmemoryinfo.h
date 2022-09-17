@@ -6,8 +6,8 @@
  * Date        : 2010-12-10
  * Description : list of memory features from host computer
  *
- * Copyright (c)      2010 Pino Toscano <pino at kde dot org>
- * Copyright (c)      2011 Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText:      2010 Pino Toscano <pino at kde dot org>
+ * SPDX-FileCopyrightText:      2011 Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later

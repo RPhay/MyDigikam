@@ -129,6 +129,13 @@ void ItemScanner::rescan()
     scanFile(Rescan);
 }
 
+void ItemScanner::cleanScan()
+{
+    loadFromDisk();
+    prepareUpdateImage();
+    scanFile(CleanScan);
+}
+
 void ItemScanner::copiedFrom(int albumId, qlonglong srcId)
 {
     loadFromDisk();
@@ -225,7 +232,7 @@ bool ItemScanner::commitAddImage()
     return true;
 }
 
-void ItemScanner::clearDatabaseMetadata()
+void ItemScanner::cleanDatabaseMetadata()
 {
     if (d->scanInfo.id == -1)
     {

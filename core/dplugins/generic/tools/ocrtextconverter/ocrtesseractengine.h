@@ -76,6 +76,8 @@ public:
 
     int  runOcrProcess();
 
+    void cancelOcrProcess();
+
 private:
 
     // Disable

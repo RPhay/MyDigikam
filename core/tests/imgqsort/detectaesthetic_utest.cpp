@@ -7,11 +7,12 @@
  * Description : an unit-test to detect image quality level
  *
  * SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * SPDX-FileCopyrightText: 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2022 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
+
 #include "detectaesthetic_utest.h"
 
 // Qt includes
@@ -40,7 +41,7 @@ ImgQSortTestDetectQesthetic::ImgQSortTestDetectQesthetic(QObject* const parent)
 void ImgQSortTestDetectQesthetic::testParseTestImagesForAestheticDetection()
 {
    QHash<QString, bool> results = testParseTestImages(QLatin1String("aestheticDetection"),
-                                                       ImgQSortTest_ParseTestImagesDefautDetection, DETECTAESTHETIC);
+                                                      ImgQSortTest_ParseTestImagesDefautDetection, DETECTAESTHETIC);
 
     for (const auto& test_case : results.keys())
     {

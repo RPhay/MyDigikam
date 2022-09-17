@@ -101,7 +101,7 @@ void ThumbsTask::run()
     }
 
     Q_EMIT signalDone();
-
+    qDebug() << "ThumbsTask::signalDone()" << this;
     d->catcher->setActive(false);
 }
 

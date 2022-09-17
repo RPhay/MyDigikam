@@ -7,7 +7,7 @@
  * Description : an unit-test to detect image quality level
  *
  * SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * SPDX-FileCopyrightText: 2021 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2022 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -43,10 +43,10 @@ private Q_SLOTS:
 
 DataTestCases const dataTestCases =
 {
-    {QLatin1String("badImage"),         PairImageQuality(QLatin1String("general_bad_image_1.jpg"), 1)},
-    {QLatin1String("badImage"),         PairImageQuality(QLatin1String("general_bad_image_3.jpg"), 1)},
-    {QLatin1String("badImage"),         PairImageQuality(QLatin1String("general_bad_image_5.jpg"), 1)},
-    {QLatin1String("badImage"),         PairImageQuality(QLatin1String("general_bad_image_6.jpg"), 1)},
+    {QLatin1String("badImage"),         PairImageQuality(QLatin1String("general_bad_image_1.jpg"),       1)},
+    {QLatin1String("badImage"),         PairImageQuality(QLatin1String("general_bad_image_3.jpg"),       1)},
+    {QLatin1String("badImage"),         PairImageQuality(QLatin1String("general_bad_image_5.jpg"),       1)},
+    {QLatin1String("badImage"),         PairImageQuality(QLatin1String("general_bad_image_6.jpg"),       1)},
 
     {QLatin1String("quiteBadImage"),    PairImageQuality(QLatin1String("general_quite_bad_image_1.jpg"), 1)},
     {QLatin1String("quiteBadImage"),    PairImageQuality(QLatin1String("general_quite_bad_image_2.jpg"), 1)},

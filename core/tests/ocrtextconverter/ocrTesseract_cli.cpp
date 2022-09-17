@@ -35,7 +35,7 @@ int main(int argc, char* argv[])
 
     QString pathImage       = QLatin1String("../../core/tests/ocrtextconverter/data/");
     QString pathToSaveText  = QLatin1String("../../core/tests/ocrtextconverter/data/");
-    QString inputFileName   = pathImage.append(QLatin1String("scanned_img.png"));
+    QString inputFileName   = pathImage.append(QLatin1String("scanned_img.jpg"));
     QString outputTextName  = pathToSaveText.append(QLatin1String("scanned_img"));
 
     // add configuration image

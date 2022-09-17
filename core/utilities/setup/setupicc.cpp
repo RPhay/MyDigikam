@@ -163,7 +163,7 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
       d          (new Private)
 {
     const int spacing              = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
     d->dlgBtnBox                   = dlgBtnBox;
     d->tab                         = new QTabWidget(viewport());
     setWidget(d->tab);

@@ -40,7 +40,8 @@ public:
     {
         NewScan,
         ModifiedScan,
-        Rescan
+        Rescan,
+        CleanScan
     };
 
 public:
@@ -128,6 +129,13 @@ public:
     void rescan();
 
     /**
+     * This is the same as rescan() but the database metadata
+     * will be cleaned up if the corresponding metadata
+     * write option is enabled.
+     */
+    void cleanScan();
+
+    /**
      * Commits the scanned information to the database.
      * You must call this after scanning was done for any changes to take effect.
      * Only this method will perform write operations to the database.
@@ -159,7 +167,7 @@ protected:
 
     bool copyFromSource(qlonglong src);
     void commitCopyImageAttributes();
-    void clearDatabaseMetadata();
+    void cleanDatabaseMetadata();
 
     void prepareAddImage(int albumId);
     bool commitAddImage();

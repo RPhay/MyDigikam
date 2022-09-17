@@ -113,9 +113,6 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
     : MaintenanceTool(QLatin1String("FacesDetector"), parent),
       d              (new Private)
 {
-    setLabel(i18n("Updating faces database."));
-    ProgressManager::addProgressItem(this);
-
     if      (settings.task == FaceScanSettings::RetrainAll)
     {
         // clear all training data in the database
@@ -265,7 +262,17 @@ void FacesDetector::slotStart()
 {
     MaintenanceTool::slotStart();
 
+    if (ProgressManager::instance()->findItembyId(id()))
+    {
+        slotDone();
+
+        return;
+    }
+
+    setLabel(i18n("Updating faces database."));
     setThumbnail(QIcon::fromTheme(QLatin1String("edit-image-face-show")).pixmap(22));
+
+    ProgressManager::addProgressItem(this);
 
     if      (d->source == FacesDetector::Infos)
     {
