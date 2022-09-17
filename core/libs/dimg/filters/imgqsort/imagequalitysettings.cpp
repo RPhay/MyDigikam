@@ -96,11 +96,26 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
 {
     QVBoxLayout* const layout = new QVBoxLayout(this);
 
+    QLabel* const explanation = new QLabel(i18nc("@label", "The goal of the settings from this view is to determine "
+                                                 "the quality of an image and convert it into a score. This score can be based "
+                                                 "on 2 ways: using four basic factors sabotaging image (blur, noise, exposure, and compression), "
+                                                 "or using a deep learning neural network. Both ways can be mixed together at the same time "
+                                                 "if necessary.\n"
+                                                 "The first way helps determine whether images are distorted for one of these reasons, "
+                                                 "however it demands some drawbacks as fine-tuning from the user’s side and it cannot work "
+                                                 "on the aesthetic image.\n"
+                                                 "The second way use an IA approach based on an aesthetic image quality model to "
+                                                 "predict the score. As deep learning is an end-to-end solution, it doesn’t "
+                                                 "require hyperparameter setting, and make this feature easier to use"), this);
+    explanation->setOpenExternalLinks(true);
+    explanation->setWordWrap(true);
+
     d->enableSorter           = new QCheckBox(i18nc("@option:check", "Enable Image Quality Sorting"), this);
     d->enableSorter->setToolTip(i18nc("@info:tooltip", "Enable this option to assign automatically Pick Labels based on image quality."));
 
     d->optionsView            = new DVBox(this);
 
+    layout->addWidget(explanation);
     layout->addWidget(d->enableSorter);
     layout->addWidget(d->optionsView);
 
