@@ -42,7 +42,18 @@ ExifToolParser::ExifToolParser(QObject* const parent)
 
 ExifToolParser::~ExifToolParser()
 {
-   delete d;
+    {
+        // Still waiting for a result
+
+        QMutexLocker locker(&d->mutex);
+
+        if (d->startAsync && d->cmdRunning)
+        {
+            d->condVar.wait(&d->mutex);
+        }
+    }
+
+    delete d;
 }
 
 void ExifToolParser::setExifToolProgram(const QString& path)

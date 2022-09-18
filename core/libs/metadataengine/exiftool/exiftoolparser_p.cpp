@@ -157,6 +157,8 @@ void ExifToolParser::Private::manageWaitCondition(int cmdAction)
     {
         condVar.wakeAll();
     }
+
+    cmdRunning = 0;
 }
 
 } // namespace Digikam
