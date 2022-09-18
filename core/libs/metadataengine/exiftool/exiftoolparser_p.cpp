@@ -46,11 +46,6 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifTo
 
     QMutexLocker locker(&mutex);
 
-    if (!proc)
-    {
-        return false;
-    }
-
     cmdRunning = proc->command(cmdArgs, cmdAction, pp);
 
     if (cmdRunning == 0)

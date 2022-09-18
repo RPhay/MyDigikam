@@ -43,6 +43,7 @@
 
 #include "digikam_config.h"
 #include "digikam_debug.h"
+#include "exiftoolthread.h"
 
 namespace Digikam
 {

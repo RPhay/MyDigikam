@@ -21,25 +21,28 @@ ExifToolParser::ExifToolParser(QObject* const parent)
     : QObject(parent),
       d      (new Private(this))
 {
+    // For handling the unit-test tools.
+
+    if (!ExifToolProcess::isCreated())
+    {
+        ExifToolThread* const exifToolThread = new ExifToolThread(qApp);
+        exifToolThread->start();
+        QThread::sleep(2);
+    }
+
     // Get ExifTool process instance.
 
-    if (ExifToolProcess::isCreated())
-    {
-        d->proc = ExifToolProcess::instance();
-    }
+    d->proc = ExifToolProcess::instance();
 }
 
 ExifToolParser::~ExifToolParser()
 {
-    delete d;
+   delete d;
 }
 
 void ExifToolParser::setExifToolProgram(const QString& path)
 {
-    if (d->proc)
-    {
-        d->proc->setExifToolProgram(path);
-    }
+    d->proc->setExifToolProgram(path);
 }
 
 QString ExifToolParser::currentPath() const
@@ -59,26 +62,16 @@ QString ExifToolParser::currentErrorString() const
         return d->errorString;
     }
 
-    if (d->proc)
-    {
-        return d->proc->exifToolErrorString();
-    }
-
-    return QString();
+    return d->proc->exifToolErrorString();
 }
 
 bool ExifToolParser::exifToolAvailable() const
 {
-    if (d->proc)
-    {
-        bool ret = d->proc->exifToolAvailable();
+    bool ret = d->proc->exifToolAvailable();
 
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "Check ExifTool availability:" << ret;
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "Check ExifTool availability:" << ret;
 
-        return ret;
-    }
-
-    return false;
+    return ret;
 }
 
 MetaEngine::TagsMap ExifToolParser::tagsDbToOrderedMap(const ExifToolData& tagsDb)
