@@ -25,9 +25,14 @@ ExifToolParser::ExifToolParser(QObject* const parent)
 
     if (!ExifToolProcess::isCreated())
     {
+        QEventLoop loop;
         ExifToolThread* const exifToolThread = new ExifToolThread(qApp);
+
+        connect(exifToolThread, &ExifToolThread::exifToolProcessStarted,
+                &loop, &QEventLoop::quit);
+
         exifToolThread->start();
-        QThread::sleep(2);
+        loop.exec();
     }
 
     // Get ExifTool process instance.

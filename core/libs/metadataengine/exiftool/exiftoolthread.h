@@ -36,6 +36,10 @@ public:
     explicit ExifToolThread(QObject* const parent);
     ~ExifToolThread() override;
 
+Q_SIGNALS:
+
+    void exifToolProcessStarted();
+
 protected:
 
     /**
