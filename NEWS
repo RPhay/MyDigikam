@@ -142,4 +142,5 @@ BUGFIXES:
 108 ==> 117629 - New tool to perform OCR of an image and store result in metadata.
 109 ==> 458850 - Not valid createdate.
 110 ==> 458921 - Maintenance > Sync Metadata and Database (Sync Direction: From image metadata to database) does not work for disabled or deleted tags.
-111 ==> 
+111 ==> 459129 - Duplicate tags are displayed below thumbnail when tags are repeated in tag hierarchy.
+112 ==> 

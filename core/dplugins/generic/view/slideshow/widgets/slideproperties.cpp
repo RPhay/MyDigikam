@@ -373,6 +373,7 @@ void SlideProperties::printComments(QPainter& p, int& offset, const QString& com
 
 void SlideProperties::printTags(QPainter& p, int& offset, QStringList& tags)
 {
+    tags.removeDuplicates();
     tags.sort();
 
     QString str = tags.join(QLatin1String(", "));
