@@ -140,6 +140,8 @@ void ExifToolProcess::Private::readOutput(const QProcess::ProcessChannel channel
                                            << ") and errChannel("
                                            << outAwait[1]
                                            << ")";
+
+        setProcessErrorAndEmit(QProcess::ReadError, i18n("Synchronization error between the channels"));
     }
     else
     {
