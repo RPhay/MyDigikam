@@ -116,7 +116,7 @@ bool DMetadata::load(const QString& filePath, Backend* backend)
 
         if (!(hasLoaded = loadUsingFFmpeg(filePath)))
         {
-            if (!(hasLoaded = loadUsingExifTool(filePath, true)))
+            if (!(hasLoaded = loadUsingExifTool(filePath)))
             {
                 usedBackend = NoBackend;
             }

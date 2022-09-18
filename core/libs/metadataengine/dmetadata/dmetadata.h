@@ -414,7 +414,7 @@ private:
     /**
      * ExifTool helper methods.
      */
-    bool loadUsingExifTool(const QString& filePath, bool fromVideo = false);
+    bool loadUsingExifTool(const QString& filePath);
     bool saveUsingExifTool(const QString& filePath) const;
 };
 

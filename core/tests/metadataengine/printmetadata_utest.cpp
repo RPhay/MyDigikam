@@ -71,16 +71,15 @@ void PrintMetadataTest::printMetadataMap(const DMetadata::MetaDataMap& map)
 
 void PrintMetadataTest::testPrintMetadata()
 {
-    //                                                   Expected tags to found in Exif,  Iptc,  Xmp,   expectedRead
-    printMetadata(m_originalImageFolder + QLatin1String("nikon-e2100.jpg"),        true,  true,  true,  true);
-    printMetadata(m_originalImageFolder + QLatin1String("_27A1417.CR2"),           true,  false, true,  true);
-    printMetadata(m_originalImageFolder + QLatin1String("2008-05_DSC_0294.JPG"),   true,  true,  true,  true);
+    //                                                    Expected tags to found in Exif,  Iptc,  Xmp,   expectedRead
+    printMetadata(m_originalImageFolder + QLatin1String("nikon-e2100.jpg"),         true,  true,  true,  true);
+    printMetadata(m_originalImageFolder + QLatin1String("_27A1417.CR2"),            true,  false, true,  true);
+    printMetadata(m_originalImageFolder + QLatin1String("2008-05_DSC_0294.JPG"),    true,  true,  true,  true);
 
-#ifdef HAVE_IMAGE_MAGICK
-
-    printMetadata(m_originalImageFolder + QLatin1String("kepler_xray_he.fits"),    false, false, true,  true);
-
-#endif
+    if (m_hasExifTool)
+    {
+        printMetadata(m_originalImageFolder + QLatin1String("kepler_xray_he.fits"), false, false, false, true);
+    }
 
     // The file cannot be loaded with Exiv2-0.26, only test the newer versions
 

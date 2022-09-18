@@ -71,7 +71,7 @@ bool ExifToolParser::load(const QString& path)
     return (d->startProcess(cmdArgs, ExifToolProcess::LOAD_METADATA));
 }
 
-bool ExifToolParser::loadChunk(const QString& path, bool fromVideo)
+bool ExifToolParser::loadChunk(const QString& path, bool copyToAll)
 {
     QFileInfo fileInfo(path);
 
@@ -91,7 +91,7 @@ bool ExifToolParser::loadChunk(const QString& path, bool fromVideo)
 
     QByteArray cpyOpt("-all");
 
-    if (!fromVideo)
+    if (!copyToAll)
     {
         cpyOpt += ":all";
     }
