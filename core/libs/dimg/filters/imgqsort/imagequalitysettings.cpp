@@ -128,10 +128,9 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
 
     QVBoxLayout* const layout = new QVBoxLayout(this);
 
-    QLabel* const explanation = new QLabel(i18nc("@label", "The goal of this settings is to determine "
-                                                 "the quality of an image and convert it into a score, stored in database. "
-                                                 "This property can be evaluated by two ways: using four basic factors sabotaging "
-                                                 "the images (blur, noise, exposure, and compression), or using a deep learning "
+    QLabel* const explanation = new QLabel(i18nc("@label", "These settings determines the quality of an image and convert it into a score, "
+                                                 "stored in database. This property can be evaluated by two ways: using four basic factors "
+                                                 "sabotaging the images (blur, noise, exposure, and compression), or using a deep learning "
                                                  "neural network engine. The first one helps to determine whether images are distorted "
                                                  "by the basic factors, however it demands some drawbacks as fine-tuning from the user’s "
                                                  "side and it cannot work along the aesthetic image processing. The second one uses an IA "
@@ -204,7 +203,7 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
 
     d->detectButtonGroup->addButton(d->detectAesthetic, Private::AESTHETIC);
 
-    d->detectBasicFactors     = new QRadioButton(i18nc("@option:radio", "Detect Using Basic Factors"),
+    d->detectBasicFactors     = new QRadioButton(i18nc("@option:radio", "Detect Quality Using Basic Factors"),
                                                  d->optionsView);
     d->detectBasicFactors->setToolTip(i18nc("@info:tooltip", "Detect if the image is sabotating by four basic factors "
                                             "(blur, noise, exposure, and compression)."));
@@ -240,49 +239,42 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
     QWidget* const settings   = new QWidget(d->optionsView);
     QGridLayout* const grid2  = new QGridLayout(settings);
 
-    d->lbl1                   = new QLabel(QLatin1String("   ") + i18nc("@label", "Speed:"), settings);
-    d->lbl1->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-    d->setSpeed               = new DIntNumInput(settings);
-    d->setSpeed->setDefaultValue(5);
-    d->setSpeed->setRange(1, 3, 1);
-    d->setSpeed->setToolTip(i18nc("@info:tooltip", "Tradeoff between speed and accuracy of sorting algorithm"));
-
-    d->lbl2                   = new QLabel(QLatin1String("   ") + i18nc("@label", "Rejected threshold:"), settings);
+    d->lbl2                   = new QLabel(i18nc("@label", "Rejected threshold:"), settings);
     d->lbl2->setAlignment(Qt::AlignLeft | Qt::AlignTop);
     d->setRejectedThreshold   = new DIntNumInput(settings);
     d->setRejectedThreshold->setDefaultValue(5);
     d->setRejectedThreshold->setRange(1, 100, 1);
     d->setRejectedThreshold->setToolTip(i18nc("@info:tooltip", "Threshold below which all pictures are assigned Rejected Label"));
 
-    d->lbl3                   = new QLabel(QLatin1String("   ") + i18nc("@label", "Pending threshold:"), settings);
+    d->lbl3                   = new QLabel(i18nc("@label", "Pending threshold:"), settings);
     d->lbl3->setAlignment(Qt::AlignLeft | Qt::AlignTop);
     d->setPendingThreshold    = new DIntNumInput(settings);
     d->setPendingThreshold->setDefaultValue(5);
     d->setPendingThreshold->setRange(1, 100, 1);
     d->setPendingThreshold->setToolTip(i18nc("@info:tooltip", "Threshold below which all pictures are assigned Pending Label"));
 
-    d->lbl4                   = new QLabel(QLatin1String("   ") + i18nc("@label", "Accepted threshold:"), settings);
+    d->lbl4                   = new QLabel(i18nc("@label", "Accepted threshold:"), settings);
     d->lbl4->setAlignment(Qt::AlignLeft | Qt::AlignTop);
     d->setAcceptedThreshold   = new DIntNumInput(settings);
     d->setAcceptedThreshold->setDefaultValue(5);
     d->setAcceptedThreshold->setRange(1, 100, 1);
     d->setAcceptedThreshold->setToolTip(i18nc("@info:tooltip", "Threshold above which all pictures are assigned Accepted Label"));
 
-    d->lbl5                   = new QLabel(QLatin1String("   ") + i18nc("@label", "Blur Weight:"), settings);
+    d->lbl5                   = new QLabel(i18nc("@label", "Blur Weight:"), settings);
     d->lbl5->setAlignment(Qt::AlignLeft | Qt::AlignTop);
     d->setBlurWeight          = new DIntNumInput(settings);
     d->setBlurWeight->setDefaultValue(5);
     d->setBlurWeight->setRange(1, 100, 1);
     d->setBlurWeight->setToolTip(i18nc("@info:tooltip", "Weight to assign to Blur Algorithm"));
 
-    d->lbl6                   = new QLabel(QLatin1String("   ") + i18nc("@label", "Noise Weight:"), settings);
+    d->lbl6                   = new QLabel(i18nc("@label", "Noise Weight:"), settings);
     d->lbl6->setAlignment(Qt::AlignLeft | Qt::AlignTop);
     d->setNoiseWeight         = new DIntNumInput(settings);
     d->setNoiseWeight->setDefaultValue(5);
     d->setNoiseWeight->setRange(1, 100, 1);
     d->setNoiseWeight->setToolTip(i18nc("@info:tooltip", "Weight to assign to Noise Algorithm"));
 
-    d->lbl7                   = new QLabel(QLatin1String("   ") + i18nc("@label", "Compression Weight:"), settings);
+    d->lbl7                   = new QLabel(i18nc("@label", "Compression Weight:"), settings);
     d->lbl7->setAlignment(Qt::AlignLeft | Qt::AlignTop);
     d->setCompressionWeight   = new DIntNumInput(settings);
     d->setCompressionWeight->setDefaultValue(5);
@@ -351,7 +343,6 @@ void ImageQualitySettings::applySettings()
     ImageQualityContainer imq;
 
     imq.enableSorter      = d->enableSorter->isChecked();
-    imq.speed             = d->setSpeed->value();
     imq.detectBlur        = d->detectBlur->isChecked();
     imq.detectNoise       = d->detectNoise->isChecked();
     imq.detectCompression = d->detectCompression->isChecked();
@@ -376,7 +367,6 @@ void ImageQualitySettings::readSettings()
     imq.readFromConfig();
 
     d->enableSorter->setChecked(imq.enableSorter);
-    d->setSpeed->setValue(imq.speed);
     d->detectBlur->setChecked(imq.detectBlur);
     d->detectNoise->setChecked(imq.detectNoise);
     d->detectCompression->setChecked(imq.detectCompression);
