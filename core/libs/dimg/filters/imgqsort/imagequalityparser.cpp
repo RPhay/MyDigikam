@@ -83,10 +83,11 @@ void ImageQualityParser::startAnalyse()
     {
         if (d->imq.detectAesthetic)
         {
-            if (AestheticDetector::model.empty())
+            if (AestheticDetector::s_model.empty())
             {
-                AestheticDetector::loadModel();
+                AestheticDetector::s_loadModel();
             }
+
             aestheticDetector = std::unique_ptr<AestheticDetector>(new AestheticDetector());
             aestheticScore    = aestheticDetector->detect(cvImage);
         }
@@ -224,7 +225,7 @@ void ImageQualityParser::cancelAnalyse()
 
 void ImageQualityParser::unloadDLModel()
 {
-    AestheticDetector::unloadModel();
+    AestheticDetector::s_unloadModel();
 }
 
 } // namespace Digikam

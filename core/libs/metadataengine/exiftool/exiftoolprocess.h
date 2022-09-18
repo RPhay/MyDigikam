@@ -31,6 +31,7 @@
 
 namespace Digikam
 {
+class ExifToolParser;
 
 class DIGIKAM_EXPORT ExifToolProcess : public QProcess
 {
@@ -157,7 +158,7 @@ public:
      * This function can be called from another thread.
      * Return 0: ExitTool not running, write channel is closed or args is empty.
      */
-    int command(const QByteArrayList& args, Action ac);
+    int command(const QByteArrayList& args, Action ac, ExifToolParser* const parser);
 
 Q_SIGNALS:
 
@@ -167,22 +168,6 @@ Q_SIGNALS:
     void signalStateChanged(int cmdId,
                             int cmdAction,
                             QProcess::ProcessState newState);
-
-    void signalErrorOccurred(int cmdId,
-                             int cmdAction,
-                             QProcess::ProcessError error,
-                             const QString& description);
-
-    void signalFinished(int cmdId,
-                        int cmdAction,
-                        int exitCode,
-                        QProcess::ExitStatus exitStatus);
-
-    void signalCmdCompleted(int cmdId,
-                            int cmdAction,
-                            int execTime,
-                            const QByteArray& cmdOutputChannel,
-                            const QByteArray& cmdErrorChannel);
 
 private:
 

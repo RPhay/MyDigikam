@@ -1,17 +1,17 @@
 /* ============================================================
-*
-* This file is a part of digiKam project
-* https://www.digikam.org
-*
-* Date        : 2010-09-09
-* Description : tag region frame
-*
-* Copyright (C) 2007      by Aurelien Gateau <agateau at kde dot org>
-* Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
-*
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2010-09-09
+ * Description : tag region frame
+ *
+ * SPDX-FileCopyrightText: 2007      by Aurelien Gateau <agateau at kde dot org>
+ * SPDX-FileCopyrightText: 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ *
  * SPDX-License-Identifier: GPL-2.0-or-later
-*
-* ============================================================ */
+ *
+ * ============================================================ */
 
 #ifndef DIGIKAM_REGION_FRAME_ITEM_H
 #define DIGIKAM_REGION_FRAME_ITEM_H

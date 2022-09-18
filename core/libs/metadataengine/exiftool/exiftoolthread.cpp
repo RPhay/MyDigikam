@@ -40,6 +40,8 @@ void ExifToolThread::run()
     proc->moveToThread(this);
     proc->initExifTool();
 
+    Q_EMIT exifToolProcessStarted();
+
     exec();
 
     if (ExifToolProcess::isCreated())

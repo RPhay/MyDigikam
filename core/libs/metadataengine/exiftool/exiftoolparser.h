@@ -97,6 +97,7 @@ public:
     ~ExifToolParser();
 
     void setExifToolProgram(const QString& path);
+    void setExifToolAsync(bool async);
 
     QString      currentPath()        const;
     ExifToolData currentData()        const;
@@ -119,13 +120,13 @@ public:
      * Load all metadata with ExifTool from a file.
      * Use currentData() to get the ExifTool map.
      */
-    bool load(const QString& path, bool async = false);
+    bool load(const QString& path);
 
     /**
      * Load Exif, Iptc, and Xmp chunk as Exiv2 EXV byte-array from a file.
      * Use currentData() to get the container.
      */
-    bool loadChunk(const QString& path, bool fromVideo = false);
+    bool loadChunk(const QString& path, bool copyToAll = false);
 
     /**
      * Apply tag changes to a target file using ExifTool with a list of tag properties.
@@ -195,31 +196,33 @@ public:
 
     //@}
 
-Q_SIGNALS:
-
-    void signalExifToolDataAvailable();
-
-private Q_SLOTS:
+public:
 
     //---------------------------------------------------------------------------------------------
     /// ExifTool Output Management Methods. See exiftoolparser_output.cpp for details
     //@{
 
-    void slotCmdCompleted(int cmdId,
-                          int cmdAction,
-                          int execTime,
-                          const QByteArray& cmdOutputChannel,
-                          const QByteArray& cmdErrorChannel);
-
-    void slotErrorOccurred(int cmdId,
-                           int cmdAction,
-                           QProcess::ProcessError error,
-                           const QString& description);
-
-    void slotFinished(int cmdId,
+    void cmdCompleted(int cmdId,
                       int cmdAction,
-                      int exitCode,
-                      QProcess::ExitStatus exitStatus);
+                      int execTime,
+                      const QByteArray& cmdOutputChannel,
+                      const QByteArray& cmdErrorChannel);
+
+    void cmdErrorOccurred(int cmdId,
+                          int cmdAction,
+                          QProcess::ProcessError error,
+                          const QString& description);
+
+    void cmdFinished(int cmdId,
+                     int cmdAction,
+                     int exitCode,
+                     QProcess::ExitStatus exitStatus);
+
+    //@}
+
+Q_SIGNALS:
+
+    void signalExifToolDataAvailable();
 
 public:
 

@@ -37,7 +37,6 @@ ImageQualityContainer::ImageQualityContainer()
       lowQRejected      (true),
       mediumQPending    (true),
       highQAccepted     (true),
-      speed             (1),
       rejectedThreshold (10),
       pendingThreshold  (40),
       acceptedThreshold (60),
@@ -58,7 +57,6 @@ ImageQualityContainer::ImageQualityContainer(const ImageQualityContainer& other)
       lowQRejected      (other.lowQRejected),
       mediumQPending    (other.mediumQPending),
       highQAccepted     (other.highQAccepted),
-      speed             (other.speed),
       rejectedThreshold (other.rejectedThreshold),
       pendingThreshold  (other.pendingThreshold),
       acceptedThreshold (other.acceptedThreshold),
@@ -87,7 +85,6 @@ ImageQualityContainer& ImageQualityContainer::operator=(const ImageQualityContai
     noiseWeight        = other.noiseWeight;
     compressionWeight  = other.compressionWeight;
     exposureWeight     = other.exposureWeight;
-    speed              = other.speed;
 
     return *this;
 }
@@ -110,7 +107,6 @@ void ImageQualityContainer::readFromConfig()
     lowQRejected              = group.readEntry("LowQ Rejected",      true);
     mediumQPending            = group.readEntry("MediumQ Pending",    true);
     highQAccepted             = group.readEntry("HighQ Accepted",     true);
-    speed                     = group.readEntry("Speed",              1);
     rejectedThreshold         = group.readEntry("Rejected Threshold", 10);
     pendingThreshold          = group.readEntry("Pending Threshold",  40);
     acceptedThreshold         = group.readEntry("Accepted Threshold", 60);
@@ -134,7 +130,6 @@ void ImageQualityContainer::writeToConfig()
     group.writeEntry("LowQ Rejected",       lowQRejected);
     group.writeEntry("MediumQ Pending",     mediumQPending);
     group.writeEntry("HighQ Accepted",      highQAccepted);
-    group.writeEntry("Speed",               speed);
     group.writeEntry("Rejected Threshold",  rejectedThreshold);
     group.writeEntry("Pending Threshold",   pendingThreshold);
     group.writeEntry("Accepted Threshold",  acceptedThreshold);
@@ -156,7 +151,6 @@ QDebug operator<<(QDebug dbg, const ImageQualityContainer& s)
     dbg.nospace() << "LowQRejected       :" << s.lowQRejected       << QT_ENDL;
     dbg.nospace() << "MediumQPending     :" << s.mediumQPending     << QT_ENDL;
     dbg.nospace() << "HighQAccepted      :" << s.highQAccepted      << QT_ENDL;
-    dbg.nospace() << "Speed              :" << s.speed              << QT_ENDL;
     dbg.nospace() << "Rejected Threshold :" << s.rejectedThreshold  << QT_ENDL;
     dbg.nospace() << "Pending Threshold  :" << s.pendingThreshold   << QT_ENDL;
     dbg.nospace() << "Accepted Threshold :" << s.acceptedThreshold  << QT_ENDL;

@@ -56,7 +56,6 @@ public:
     bool mediumQPending;        ///< Assign Pending property to medium quality.
     bool highQAccepted;         ///< Assign Accepted property to high quality.
 
-    int  speed;                 ///< Calculation speed.
     int  rejectedThreshold;     ///< Item rejection threshold.
     int  pendingThreshold;      ///< Item pending threshold.
     int  acceptedThreshold;     ///< Item accepted threshold.

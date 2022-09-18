@@ -56,6 +56,7 @@ private:
     explicit ImageQualityParser(QObject*);
 
 public:
+
     static void unloadDLModel();
 
 private:

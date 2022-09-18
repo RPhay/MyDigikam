@@ -27,94 +27,25 @@
 namespace Digikam
 {
 
-/*
-cv::dnn::Net loadModel()
-{
-    cv::dnn::Net model;
-
-    QString appPath = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
-
-    QUrl    appUrl  = QUrl::fromLocalFile(appPath).adjusted(QUrl::RemoveFilename);
-    appUrl.setPath(appUrl.path() + QLatin1String("share/digikam/aestheticdetector/"));
-
-    QString nnmodel = appUrl.toLocalFile() + QLatin1String("weights_inceptionv3_299.pb");
-
-    if (QFileInfo::exists(nnmodel))
-    {
-        try
-        {
-            qCDebug(DIGIKAM_DIMG_LOG) << "Aesthetic detector model:" << nnmodel;
-
-#ifdef Q_OS_WIN
-
-            model = cv::dnn::readNetFromTensorflow(nnmodel.toLocal8Bit().constData());
-
-#else
-
-            model = cv::dnn::readNetFromTensorflow(nnmodel.toStdString());
-
-#endif
-            model.setPreferableBackend(cv::dnn::DNN_TARGET_CPU);
-            model.setPreferableTarget(cv::dnn::DNN_TARGET_CPU);
-        }
-        catch (cv::Exception& e)
-        {
-            qCWarning(DIGIKAM_DIMG_LOG) << "cv::Exception:" << e.what();
-
-            return model;
-        }
-        catch (...)
-        {
-           qCWarning(DIGIKAM_DIMG_LOG) << "Default exception from OpenCV";
-
-           return model;
-        }
-    }
-    else
-    {
-        qCCritical(DIGIKAM_DIMG_LOG) << "Cannot found Aesthetic DNN model" << nnmodel;
-        qCCritical(DIGIKAM_DIMG_LOG) << "Aesthetic detection feature cannot be used!";
-
-        return model;
-    }
-
-    return model;
-}
-*/
-
-cv::dnn::Net AestheticDetector::model = cv::dnn::Net();
-
-class Q_DECL_HIDDEN AestheticDetector::Private
-{
-
-public:
-
-    explicit Private()
-    {
-    }
-
-    // cv::dnn::Net model;
-};
+cv::dnn::Net AestheticDetector::s_model = cv::dnn::Net();
 
 AestheticDetector::AestheticDetector()
-    : DetectorDistortion(),
-      d                 (new Private)
+    : DetectorDistortion()
 {
 }
 
 AestheticDetector::~AestheticDetector()
 {
-    delete d;
 }
 
 float AestheticDetector::detect(const cv::Mat& image) const
 {
     cv::Mat input = preprocess(image);
 
-    if (!model.empty())
+    if (!s_model.empty())
     {
-        model.setInput(input);
-        cv::Mat out = model.forward();
+        s_model.setInput(input);
+        cv::Mat out = s_model.forward();
 
         return postProcess(out);
     }
@@ -128,31 +59,61 @@ float AestheticDetector::detect(const cv::Mat& image) const
 
 cv::Mat AestheticDetector::preprocess(const cv::Mat& image) const
 {
-    cv::Mat img_rgb;
-    cv::cvtColor(image, img_rgb, cv::COLOR_BGR2RGB);
-    cv::Mat cv_resized;
-    cv::resize(img_rgb, cv_resized, cv::Size(299, 299), 0, 0, cv::INTER_NEAREST_EXACT);
-    cv_resized.convertTo(cv_resized, CV_32FC3);
-    cv_resized   = cv_resized.mul(1.0F / 127.5F);
-    subtract(cv_resized, cv::Scalar(1, 1, 1), cv_resized);
+    try
+    {
+        cv::Mat img_rgb;
+        cv::cvtColor(image, img_rgb, cv::COLOR_BGR2RGB);
+        cv::Mat cv_resized;
+        cv::resize(img_rgb, cv_resized, cv::Size(299, 299), 0, 0, cv::INTER_NEAREST_EXACT);
+        cv_resized.convertTo(cv_resized, CV_32FC3);
+        cv_resized   = cv_resized.mul(1.0F / 127.5F);
+        subtract(cv_resized, cv::Scalar(1, 1, 1), cv_resized);
 
-    cv::Mat blob = cv::dnn::blobFromImage(cv_resized, 1, cv::Size(299, 299), cv::Scalar(0, 0, 0), false, false);
+        cv::Mat blob = cv::dnn::blobFromImage(cv_resized, 1, cv::Size(299, 299), cv::Scalar(0, 0, 0), false, false);
 
-    return blob;
+        return blob;
+    }
+    catch (cv::Exception& e)
+    {
+        qCWarning(DIGIKAM_DIMG_LOG) << "cv::Exception:" << e.what();
+
+        return cv::Mat();
+    }
+    catch (...)
+    {
+        qCWarning(DIGIKAM_DIMG_LOG) << "Default exception from OpenCV";
+
+        return cv::Mat();
+    }
 }
 
 float AestheticDetector::postProcess(const cv::Mat& modelOutput) const
 {
-    cv::Point maxLoc;
-    cv::minMaxLoc(modelOutput, nullptr, nullptr, nullptr, &maxLoc);
-    qCDebug(DIGIKAM_DIMG_LOG) << "class : " << maxLoc.x;
+    try
+    {
+        cv::Point maxLoc;
+        cv::minMaxLoc(modelOutput, nullptr, nullptr, nullptr, &maxLoc);
+        qCDebug(DIGIKAM_DIMG_LOG) << "class : " << maxLoc.x;
 
-    return float(maxLoc.x);
+        return float(maxLoc.x);
+    }
+    catch (cv::Exception& e)
+    {
+        qCWarning(DIGIKAM_DIMG_LOG) << "cv::Exception:" << e.what();
+
+        return float(cv::Point().x);
+    }
+    catch (...)
+    {
+        qCWarning(DIGIKAM_DIMG_LOG) << "Default exception from OpenCV";
+
+        return float(cv::Point().x);
+    }
 }
 
-bool AestheticDetector::loadModel()
+bool AestheticDetector::s_loadModel()
 {
-    if (!model.empty())
+    if (!s_model.empty())
     {
         return true;
     }
@@ -172,15 +133,15 @@ bool AestheticDetector::loadModel()
 
 #ifdef Q_OS_WIN
 
-            model = cv::dnn::readNetFromTensorflow(nnmodel.toLocal8Bit().constData());
+            s_model = cv::dnn::readNetFromTensorflow(nnmodel.toLocal8Bit().constData());
 
 #else
 
-            model = cv::dnn::readNetFromTensorflow(nnmodel.toStdString());
+            s_model = cv::dnn::readNetFromTensorflow(nnmodel.toStdString());
 
 #endif
-            model.setPreferableBackend(cv::dnn::DNN_TARGET_CPU);
-            model.setPreferableTarget(cv::dnn::DNN_TARGET_CPU);
+            s_model.setPreferableBackend(cv::dnn::DNN_TARGET_CPU);
+            s_model.setPreferableTarget(cv::dnn::DNN_TARGET_CPU);
         }
         catch (cv::Exception& e)
         {
@@ -206,11 +167,22 @@ bool AestheticDetector::loadModel()
     return true;
 }
 
-void AestheticDetector::unloadModel()
+void AestheticDetector::s_unloadModel()
 {
-    if (!model.empty())
+    try
     {
-        model = cv::dnn::Net();
+        if (!s_model.empty())
+        {
+            s_model = cv::dnn::Net();
+        }
+    }
+    catch (cv::Exception& e)
+    {
+        qCWarning(DIGIKAM_DIMG_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCWarning(DIGIKAM_DIMG_LOG) << "Default exception from OpenCV";
     }
 }
 

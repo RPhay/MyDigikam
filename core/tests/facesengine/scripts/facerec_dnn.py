@@ -8,7 +8,7 @@
 # Date        : 2019-08-11
 # Description : A script to perform face recognition with OpenFace collection
 #
-# Copyright (C) 2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+# SPDX-FileCopyrightText: 2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #

@@ -328,6 +328,7 @@ void ImportDelegate::paint(QPainter* p, const QStyleOptionViewItem& option, cons
     if (!d->tagRect.isNull())
     {
         QStringList tagsList = AlbumManager::instance()->tagNames(info.tagIds);
+        tagsList.removeDuplicates();
         tagsList.sort();
         QString tags         = tagsList.join(QLatin1String(", "));
         drawTags(p, d->tagRect, tags, isSelected);

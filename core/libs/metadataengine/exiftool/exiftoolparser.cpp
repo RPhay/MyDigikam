@@ -19,60 +19,37 @@ namespace Digikam
 
 ExifToolParser::ExifToolParser(QObject* const parent)
     : QObject(parent),
-      d      (new Private())
+      d      (new Private(this))
 {
-    // Get or create ExifTool process instance.
-
-    d->proc = ExifToolProcess::instance();
-
     // For handling the unit-test tools.
 
-    if (d->proc->thread() == thread())
+    if (!ExifToolProcess::isCreated())
     {
-        d->proc->initExifTool();
+        QEventLoop loop;
+        ExifToolThread* const exifToolThread = new ExifToolThread(qApp);
+
+        connect(exifToolThread, &ExifToolThread::exifToolProcessStarted,
+                &loop, &QEventLoop::quit);
+
+        exifToolThread->start();
+        loop.exec();
     }
 
-    for (int i = ExifToolProcess::LOAD_METADATA ; i < ExifToolProcess::NO_ACTION ; ++i)
-    {
-        d->evLoops << new QEventLoop(this);
-    }
+    // Get ExifTool process instance.
 
-    d->hdls << connect(d->proc, &ExifToolProcess::signalCmdCompleted,
-                       this, &ExifToolParser::slotCmdCompleted,
-                       Qt::QueuedConnection);
-
-    d->hdls << connect(d->proc, &ExifToolProcess::signalErrorOccurred,
-                       this, &ExifToolParser::slotErrorOccurred,
-                       Qt::QueuedConnection);
-
-    d->hdls << connect(d->proc, &ExifToolProcess::signalFinished,
-                       this, &ExifToolParser::slotFinished,
-                       Qt::QueuedConnection);
+    d->proc = ExifToolProcess::instance();
 }
 
 ExifToolParser::~ExifToolParser()
 {
-    for (int i = ExifToolProcess::LOAD_METADATA ; i < ExifToolProcess::NO_ACTION ; ++i)
     {
-        if (d->evLoops[i])
+        // Still waiting for a result
+
+        QMutexLocker locker(&d->mutex);
+
+        if (d->startAsync && d->cmdRunning)
         {
-            d->evLoops[i]->exit();
-            delete d->evLoops[i];
-        }
-    }
-
-    Q_FOREACH (QMetaObject::Connection hdl, d->hdls)
-    {
-        disconnect(hdl);
-    }
-
-    // For handling the unit-test tools.
-
-    if (ExifToolProcess::isCreated())
-    {
-        if (d->proc->thread() == thread())
-        {
-            delete ExifToolProcess::internalPtr;
+            d->condVar.wait(&d->mutex);
         }
     }
 
@@ -82,6 +59,11 @@ ExifToolParser::~ExifToolParser()
 void ExifToolParser::setExifToolProgram(const QString& path)
 {
     d->proc->setExifToolProgram(path);
+}
+
+void ExifToolParser::setExifToolAsync(bool async)
+{
+    d->startAsync = async;
 }
 
 QString ExifToolParser::currentPath() const

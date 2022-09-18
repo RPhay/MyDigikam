@@ -22,8 +22,8 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "exiftoolparser.h"
 #include "digikam_globals.h"
+#include "exiftoolparser.h"
 
 using namespace Digikam;
 

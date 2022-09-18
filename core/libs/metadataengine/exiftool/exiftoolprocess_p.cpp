@@ -69,11 +69,11 @@ void ExifToolProcess::Private::slotExecNextCmd()
 
     execTimer.start();
 
-    Command command = cmdQueue.takeFirst();
-    cmdRunning      = command.id;
-    cmdAction       = command.ac;
+    runCommand = cmdQueue.takeFirst();
+    cmdRunning = runCommand.id;
+    cmdAction  = runCommand.ac;
 
-    pp->write(command.argsStr);
+    pp->write(runCommand.argsStr);
 }
 
 void ExifToolProcess::Private::readOutput(const QProcess::ProcessChannel channel)
@@ -140,16 +140,24 @@ void ExifToolProcess::Private::readOutput(const QProcess::ProcessChannel channel
                                            << ") and errChannel("
                                            << outAwait[1]
                                            << ")";
+
+        setProcessErrorAndEmit(QProcess::ReadError, i18n("Synchronization error between the channels"));
     }
     else
     {
+        QMutexLocker locker(&mutex);
+
         qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::readOutput(): ExifTool command completed";
 
-        Q_EMIT pp->signalCmdCompleted(cmdRunning,
-                                      cmdAction,
-                                      execTimer.elapsed(),
-                                      outBuff[QProcess::StandardOutput],
-                                      outBuff[QProcess::StandardError]);
+        if (runCommand.parser)
+        {
+            runCommand.parser->cmdCompleted(cmdRunning,
+                                            cmdAction,
+                                            execTimer.elapsed(),
+                                            outBuff[QProcess::StandardOutput],
+                                            outBuff[QProcess::StandardError]);
+            runCommand.parser = nullptr;
+        }
     }
 
     cmdRunning = 0;    // No command is running
@@ -159,10 +167,16 @@ void ExifToolProcess::Private::readOutput(const QProcess::ProcessChannel channel
 
 void ExifToolProcess::Private::setProcessErrorAndEmit(QProcess::ProcessError error, const QString& description)
 {
+    QMutexLocker locker(&mutex);
+
     processError = error;
     errorString  = description;
 
-    Q_EMIT pp->signalErrorOccurred(cmdRunning, cmdAction, error, description);
+    if (runCommand.parser)
+    {
+        runCommand.parser->cmdErrorOccurred(cmdRunning, cmdAction, error, description);
+        runCommand.parser = nullptr;
+    }
 }
 
 } // namespace Digikam

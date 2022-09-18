@@ -69,7 +69,7 @@ void ImageQualityCalculator::addDetectionResult(const QString& name,
 
 void ImageQualityCalculator::normalizeWeight() const
 {
-    float sum = 0;
+    float sum = 0.0F;
 
     for (const auto& result : d->detectionResults)
     {
@@ -88,21 +88,21 @@ float ImageQualityCalculator::calculateQuality() const
 
     if (!numberDetectors())
     {
-        return -1;
+        return (-1.0F);
     }
 
     adjustWeightByQualityLevel();
 
     normalizeWeight();
 
-    float damage = 0.0;
+    float damage = 0.0F;
 
     for (const auto& result : d->detectionResults)
     {
         damage += result.score * result.weight;
     }
 
-    return ((1 - damage) * 100);
+    return ((1.0F - damage) * 100.0F);
 }
 
 int ImageQualityCalculator::numberDetectors() const

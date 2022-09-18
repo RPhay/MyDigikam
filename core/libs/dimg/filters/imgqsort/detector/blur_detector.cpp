@@ -199,8 +199,8 @@ cv::Mat BlurDetector::detectMotionBlurMap(const cv::Mat& edgesMap) const
             {
                 cv::Rect rect
                 {
-                    j*d->part_size_motion_blur,
-                    i*d->part_size_motion_blur,
+                    j * d->part_size_motion_blur,
+                    i * d->part_size_motion_blur,
                     d->part_size_motion_blur,
                     d->part_size_motion_blur
                 };
@@ -210,6 +210,7 @@ cv::Mat BlurDetector::detectMotionBlurMap(const cv::Mat& edgesMap) const
                 if (isMotionBlur(subImg))
                 {
                     // qCDebug(DIGIKAM_DIMG_LOG) << "Motion blurred part detected";
+
                     res(rect).setTo(1);
                 }
             }

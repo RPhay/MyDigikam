@@ -46,14 +46,12 @@ private:
 
 public:
 
-    static cv::dnn::Net model;
-    static bool loadModel();
-    static void unloadModel();
+    static cv::dnn::Net s_model;
 
-private:
+public:
 
-    class Private;
-    Private* const d;
+    static bool s_loadModel();
+    static void s_unloadModel();
 };
 
 } // namespace Digikam

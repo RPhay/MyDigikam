@@ -286,6 +286,7 @@ void MjpegFrameOsd::PopulateOSD(QImage& frm,
 
 void MjpegFrameOsd::printTags(QStringList& tags)
 {
+    tags.removeDuplicates();
     tags.sort();
 
     QString str = tags.join(QLatin1String(", "));
