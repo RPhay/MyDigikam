@@ -67,6 +67,7 @@ ExifToolListView::ExifToolListView(QWidget* const parent)
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     d->parser = new ExifToolParser(this);
+    d->parser->setExifToolAsync(true);
 
     connect(d->parser, SIGNAL(signalExifToolDataAvailable()),
             this, SLOT(slotExifToolDataAvailable()));
@@ -92,7 +93,7 @@ void ExifToolListView::loadFromUrl(const QUrl& url)
         return;
     }
 
-    if (!d->parser->load(url.toLocalFile(), true))
+    if (!d->parser->load(url.toLocalFile()))
     {
         d->lastError = d->parser->currentErrorString();
 

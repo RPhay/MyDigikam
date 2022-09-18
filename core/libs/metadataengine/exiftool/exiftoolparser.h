@@ -97,6 +97,7 @@ public:
     ~ExifToolParser();
 
     void setExifToolProgram(const QString& path);
+    void setExifToolAsync(bool async);
 
     QString      currentPath()        const;
     ExifToolData currentData()        const;
@@ -119,7 +120,7 @@ public:
      * Load all metadata with ExifTool from a file.
      * Use currentData() to get the ExifTool map.
      */
-    bool load(const QString& path, bool async = false);
+    bool load(const QString& path);
 
     /**
      * Load Exif, Iptc, and Xmp chunk as Exiv2 EXV byte-array from a file.

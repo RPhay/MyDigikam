@@ -58,7 +58,7 @@ void ExifToolParser::cmdCompleted(int cmdId,
 
             if (jsonArray.size() == 0)
             {
-                d->manageEventLoop(cmdAction);
+                d->manageWaitCondition(cmdAction);
 
                 Q_EMIT signalExifToolDataAvailable();
 
@@ -383,7 +383,7 @@ void ExifToolParser::cmdCompleted(int cmdId,
         }
     }
 
-    d->manageEventLoop(cmdAction);
+    d->manageWaitCondition(cmdAction);
 
     Q_EMIT signalExifToolDataAvailable();
 
@@ -406,7 +406,7 @@ void ExifToolParser::cmdErrorOccurred(int cmdId,
 
     d->errorString = description;
 
-    d->manageEventLoop(cmdAction);
+    d->manageWaitCondition(cmdAction);
 
     Q_EMIT signalExifToolDataAvailable();
 }
@@ -425,7 +425,7 @@ void ExifToolParser::cmdFinished(int cmdId,
                                     << "finished with code:" << exitCode
                                     << "and status" << exitStatus;
 
-    d->manageEventLoop(cmdAction);
+    d->manageWaitCondition(cmdAction);
 
     Q_EMIT signalExifToolDataAvailable();
 }

@@ -20,6 +20,7 @@ namespace Digikam
 ExifToolParser::Private::Private(ExifToolParser* const q)
     : pp          (q),
       proc        (nullptr),
+      startAsync  (false),
       cmdRunning  (0)
 {
     argsFile.setAutoRemove(false);
@@ -57,15 +58,18 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifTo
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool" << actionString(cmdAction) << cmdArgs.join(QByteArray(" "));
 
-    condVar.wait(&mutex);
+    if (!startAsync)
+    {
+        condVar.wait(&mutex);
 
-    if (currentPath.isEmpty())
-    {
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction);
-    }
-    else
-    {
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction) << "for" << currentPath;
+        if (currentPath.isEmpty())
+        {
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction);
+        }
+        else
+        {
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction) << "for" << currentPath;
+        }
     }
 
     return true;
@@ -144,12 +148,12 @@ QString ExifToolParser::Private::actionString(int cmdAction) const
     return QString();
 }
 
-void ExifToolParser::Private::manageEventLoop(int cmdAction)
+void ExifToolParser::Private::manageWaitCondition(int cmdAction)
 {
     QMutexLocker locker(&mutex);
 
-    if ((cmdAction >= ExifToolProcess::LOAD_METADATA) &&
-        (cmdAction <  ExifToolProcess::NO_ACTION))
+    if (!startAsync                             &&
+        (cmdAction != ExifToolProcess::NO_ACTION))
     {
         condVar.wakeAll();
     }

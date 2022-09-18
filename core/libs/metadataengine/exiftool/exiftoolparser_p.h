@@ -58,7 +58,7 @@ public:
     void       prepareProcess();
     bool       startProcess(const QByteArrayList& cmdArgs, ExifToolProcess::Action cmdAction);
     QByteArray filePathEncoding(const QFileInfo& fi) const;
-    void       manageEventLoop(int cmdAction);
+    void       manageWaitCondition(int cmdAction);
 
     /**
      * Returns a string for an action.
@@ -74,6 +74,7 @@ public:
     ExifToolData                   exifToolData;    ///< Current ExifTool data (input or output depending of the called method.
     QTemporaryFile                 argsFile;        ///< Temporary file to store Exiftool arg config file.
 
+    bool                           startAsync;
     int                            cmdRunning;
 
     QWaitCondition                 condVar;
