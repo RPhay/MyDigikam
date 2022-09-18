@@ -85,7 +85,7 @@ public:
     {
     }
 
-    DVBox*        optionsView;
+    QWidget*      optionsView;
     QCheckBox*    enableSorter;
     QCheckBox*    detectBlur;
     QCheckBox*    detectNoise;
@@ -144,9 +144,10 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
     explanation->setTextFormat(Qt::RichText);
 
     d->enableSorter           = new QCheckBox(i18nc("@option:check", "Enable Image Quality Sorting"), this);
-    d->enableSorter->setToolTip(i18nc("@info:tooltip", "Enable this option to assign automatically Pick Labels based on image quality."));
+    d->enableSorter->setToolTip(i18nc("@info:tooltip", "Enable this option to assign automatically "
+                                      "Pick Labels based on image quality."));
 
-    d->optionsView            = new DVBox(this);
+    d->optionsView            = new QWidget(this);
 
     layout->addWidget(explanation);
     layout->addWidget(d->enableSorter);
@@ -162,7 +163,7 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
     QWidget* const hspace1    = new QWidget(hlay1);
     hlay1->setStretchFactor(hspace1, 10);
 
-    QLabel* const workIcon1 = new QLabel(hlay1);
+    QLabel* const workIcon1   = new QLabel(hlay1);
     workIcon1->setPixmap(QIcon::fromTheme(QLatin1String("flag-red")).pixmap(style()->pixelMetric(QStyle::PM_SmallIconSize)));
 
     // ------------------------------------------------------------------------------
@@ -232,7 +233,7 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
     grid1->addWidget(d->detectNoise,       1, 0, 1, 1);
     grid1->addWidget(d->detectCompression, 2, 0, 1, 1);
     grid1->addWidget(d->detectExposure,    3, 0, 1, 1);
-    grid1->setContentsMargins(2*spacing, spacing, spacing, spacing);
+    grid1->setContentsMargins(2 * spacing, spacing, spacing, spacing);
 
     // ------------------------------------------------------------------------------
 
@@ -305,6 +306,21 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
     grid2->setContentsMargins(2*spacing, spacing, spacing, spacing);
     grid2->setColumnStretch(1, 10);
     grid2->setRowStretch(7, 10);
+
+    // ------------------------------------------------------------------------------
+
+    QGridLayout* const glay = new QGridLayout(d->optionsView);
+    glay->addWidget(hlay1,                 0, 1, 1, 1);
+    glay->addWidget(hlay2,                 1, 1, 1, 1);
+    glay->addWidget(hlay3,                 2, 1, 1, 1);
+    glay->addWidget(d->detectAesthetic,    3, 1, 1, 1);
+    glay->addWidget(d->detectBasicFactors, 4, 1, 1, 1);
+    glay->addWidget(basicView,             5, 1, 1, 1);
+    glay->addWidget(settings,              6, 1, 1, 1);
+    glay->setColumnStretch(1, 10);
+    glay->setContentsMargins(2 * spacing, spacing, spacing, spacing);
+
+    // ------------------------------------------------------------------------------
 
     connect(d->enableSorter, SIGNAL(toggled(bool)),
             d->optionsView, SLOT(setEnabled(bool)));
