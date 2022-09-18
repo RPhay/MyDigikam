@@ -40,6 +40,7 @@ public:
 
     void applySettings();
     void readSettings();
+
     ImageQualityContainer getImageQualityContainer() const;
 
 private Q_SLOTS:
