@@ -1,16 +1,16 @@
 /* ============================================================
-*
-* This file is a part of digiKam project
-* https://www.digikam.org
-*
-* Date        : 2013-09-13
-* Description : rubber item for Canvas
-*
-* Copyright (C) 2013-2014 by Yiou Wang <geow812 at gmail dot com>
-*
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2013-09-13
+ * Description : rubber item for Canvas
+ *
+ * SPDX-FileCopyrightText: 2013-2014 by Yiou Wang <geow812 at gmail dot com>
+ *
  * SPDX-License-Identifier: GPL-2.0-or-later
-*
-* ============================================================ */
+ *
+ * ============================================================ */
 
 #ifndef DIGIKAM_RUBBER_ITEM_H
 #define DIGIKAM_RUBBER_ITEM_H

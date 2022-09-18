@@ -1,19 +1,19 @@
 /* ============================================================
-*
-* This file is a part of digiKam project
-* https://www.digikam.org
-*
-* Date        : 2010-10-14
-* Description : overlay for assigning names to faces
-*
-* Copyright (C) 2010      by Aditya Bhatt <caulier dot gilles at gmail dot com>
-* Copyright (C) 2009-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
-* Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
-* Copyright (C) 2008      by Peter Penz <peter dot penz at gmx dot at>
-*
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2010-10-14
+ * Description : overlay for assigning names to faces
+ *
+ * SPDX-FileCopyrightText: 2010      by Aditya Bhatt <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2008      by Peter Penz <peter dot penz at gmx dot at>
+ *
  * SPDX-License-Identifier: GPL-2.0-or-later
-*
-* ============================================================ */
+ *
+ * ============================================================ */
 
 #include "assignnameoverlay.h"
 
