@@ -71,7 +71,7 @@ bool DMetadata::load(const QString& filePath, Backend* backend)
 #endif
                         ))
                     {
-                        if (!(hasLoaded = loadUsingImageMagick(filePath)))
+                        if (!(hasLoaded = false/*loadUsingImageMagick(filePath)*/))
                         {
                             usedBackend = NoBackend;
                         }
