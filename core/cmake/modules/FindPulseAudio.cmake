@@ -5,7 +5,7 @@
 #  PULSEAUDIO_INCLUDE_DIRS - the pulseaudio include directory
 #  PULSEAUDIO_LIBRARIES    - The libraries needed to use pulseaudio
 #
-# Copyright (C) 2014 Belledonne Communications, Grenoble France
+# SPDX-FileCopyrightText: 2014 Belledonne Communications, Grenoble France
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #

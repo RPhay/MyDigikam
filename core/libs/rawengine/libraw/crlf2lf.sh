@@ -7,7 +7,7 @@
 # Description : simple BASH script to check EOL of each file from LibRaw
 #               which can use CRLF and must be converted to LF for KDE git.
 #
-# Copyright (C) 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
