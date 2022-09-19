@@ -73,9 +73,8 @@ void ThumbsTask::setMaintenanceData(MaintenanceData* const data)
 
 void ThumbsTask::run()
 {
-    d->catcher->setActive(true);
-
     // While we have data (using this as check for non-null)
+
     while (d->data)
     {
         if (m_cancel)
@@ -93,16 +92,18 @@ void ThumbsTask::run()
         }
 
         // TODO Should be improved by some update procedure
+
+        d->catcher->setActive(true);
         d->catcher->thread()->deleteThumbnail(path);
         d->catcher->thread()->find(ThumbnailIdentifier(path));
         d->catcher->enqueue();
         QList<QImage> images = d->catcher->waitForThumbnails();
+        d->catcher->setActive(false);
+
         Q_EMIT signalFinished(images.first());
     }
 
     Q_EMIT signalDone();
-
-    d->catcher->setActive(false);
 }
 
 } // namespace Digikam
