@@ -68,14 +68,12 @@ public:
         setRejected         (nullptr),
         setPending          (nullptr),
         setAccepted         (nullptr),
-        lbl1                (nullptr),
         lbl2                (nullptr),
         lbl3                (nullptr),
         lbl4                (nullptr),
         lbl5                (nullptr),
         lbl6                (nullptr),
         lbl7                (nullptr),
-        setSpeed            (nullptr),
         setRejectedThreshold(nullptr),
         setPendingThreshold (nullptr),
         setAcceptedThreshold(nullptr),
@@ -100,7 +98,6 @@ public:
     QCheckBox*    setPending;
     QCheckBox*    setAccepted;
 
-    QLabel*       lbl1;
     QLabel*       lbl2;
     QLabel*       lbl3;
     QLabel*       lbl4;
@@ -108,7 +105,6 @@ public:
     QLabel*       lbl6;
     QLabel*       lbl7;
 
-    DIntNumInput* setSpeed;
     DIntNumInput* setRejectedThreshold;
     DIntNumInput* setPendingThreshold;
     DIntNumInput* setAcceptedThreshold;
@@ -216,88 +212,79 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
     QWidget* const basicView  = new QWidget(d->optionsView);
     QGridLayout* const grid1  = new QGridLayout(basicView);
 
-    d->detectBlur             = new QCheckBox(i18nc("@option:check", "Detect Blur"), basicView);
-    d->detectBlur->setToolTip(i18nc("@info:tooltip", "Detect the amount of blur in the images passed to it"));
-
-    d->detectNoise            = new QCheckBox(i18nc("@option:check", "Detect Noise"), basicView);
-    d->detectNoise->setToolTip(i18nc("@info:tooltip", "Detect the amount of noise in the images passed to it"));
-
-    d->detectCompression      = new QCheckBox(i18nc("@option:check", "Detect Compression"), basicView);
-    d->detectCompression->setToolTip(i18nc("@info:tooltip", "Detect the amount of compression in the images passed to it"));
-
-    d->detectExposure         = new QCheckBox(i18nc("@option:check", "Detect Under and Over Exposure"), basicView);
-    d->detectExposure->setToolTip(i18nc("@info:tooltip", "Detect if the images are under-exposed or over-exposed"));
-
-    grid1->addWidget(d->detectBlur,        0, 0, 1, 1);
-    grid1->addWidget(d->detectNoise,       1, 0, 1, 1);
-    grid1->addWidget(d->detectCompression, 2, 0, 1, 1);
-    grid1->addWidget(d->detectExposure,    3, 0, 1, 1);
-    grid1->setContentsMargins(2 * spacing, spacing, spacing, spacing);
-
-    // ------------------------------------------------------------------------------
-
-    QWidget* const settings   = new QWidget(d->optionsView);
-    QGridLayout* const grid2  = new QGridLayout(settings);
-
-    d->lbl2                   = new QLabel(i18nc("@label", "Rejected threshold:"), settings);
+    d->lbl2                   = new QLabel(i18nc("@label", "Rejected threshold:"), basicView);
     d->lbl2->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-    d->setRejectedThreshold   = new DIntNumInput(settings);
+    d->setRejectedThreshold   = new DIntNumInput(basicView);
     d->setRejectedThreshold->setDefaultValue(5);
     d->setRejectedThreshold->setRange(1, 100, 1);
     d->setRejectedThreshold->setToolTip(i18nc("@info:tooltip", "Threshold below which all pictures are assigned Rejected Label"));
 
-    d->lbl3                   = new QLabel(i18nc("@label", "Pending threshold:"), settings);
+    d->lbl3                   = new QLabel(i18nc("@label", "Pending threshold:"), basicView);
     d->lbl3->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-    d->setPendingThreshold    = new DIntNumInput(settings);
+    d->setPendingThreshold    = new DIntNumInput(basicView);
     d->setPendingThreshold->setDefaultValue(5);
     d->setPendingThreshold->setRange(1, 100, 1);
     d->setPendingThreshold->setToolTip(i18nc("@info:tooltip", "Threshold below which all pictures are assigned Pending Label"));
 
-    d->lbl4                   = new QLabel(i18nc("@label", "Accepted threshold:"), settings);
+    d->lbl4                   = new QLabel(i18nc("@label", "Accepted threshold:"), basicView);
     d->lbl4->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-    d->setAcceptedThreshold   = new DIntNumInput(settings);
+    d->setAcceptedThreshold   = new DIntNumInput(basicView);
     d->setAcceptedThreshold->setDefaultValue(5);
     d->setAcceptedThreshold->setRange(1, 100, 1);
     d->setAcceptedThreshold->setToolTip(i18nc("@info:tooltip", "Threshold above which all pictures are assigned Accepted Label"));
 
-    d->lbl5                   = new QLabel(i18nc("@label", "Blur Weight:"), settings);
+    d->detectBlur             = new QCheckBox(i18nc("@option:check", "Detect Blur"), basicView);
+    d->detectBlur->setToolTip(i18nc("@info:tooltip", "Detect the amount of blur in the images passed to it"));
+
+    d->lbl5                   = new QLabel(i18nc("@label", "Blur Weight:"), basicView);
     d->lbl5->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-    d->setBlurWeight          = new DIntNumInput(settings);
+    d->setBlurWeight          = new DIntNumInput(basicView);
     d->setBlurWeight->setDefaultValue(5);
     d->setBlurWeight->setRange(1, 100, 1);
     d->setBlurWeight->setToolTip(i18nc("@info:tooltip", "Weight to assign to Blur Algorithm"));
 
-    d->lbl6                   = new QLabel(i18nc("@label", "Noise Weight:"), settings);
+    d->detectNoise            = new QCheckBox(i18nc("@option:check", "Detect Noise"), basicView);
+    d->detectNoise->setToolTip(i18nc("@info:tooltip", "Detect the amount of noise in the images passed to it"));
+
+    d->lbl6                   = new QLabel(i18nc("@label", "Noise Weight:"), basicView);
     d->lbl6->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-    d->setNoiseWeight         = new DIntNumInput(settings);
+    d->setNoiseWeight         = new DIntNumInput(basicView);
     d->setNoiseWeight->setDefaultValue(5);
     d->setNoiseWeight->setRange(1, 100, 1);
     d->setNoiseWeight->setToolTip(i18nc("@info:tooltip", "Weight to assign to Noise Algorithm"));
 
-    d->lbl7                   = new QLabel(i18nc("@label", "Compression Weight:"), settings);
+    d->detectCompression      = new QCheckBox(i18nc("@option:check", "Detect Compression"), basicView);
+    d->detectCompression->setToolTip(i18nc("@info:tooltip", "Detect the amount of compression in the images passed to it"));
+
+    d->lbl7                   = new QLabel(i18nc("@label", "Compression Weight:"), basicView);
     d->lbl7->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-    d->setCompressionWeight   = new DIntNumInput(settings);
+    d->setCompressionWeight   = new DIntNumInput(basicView);
     d->setCompressionWeight->setDefaultValue(5);
     d->setCompressionWeight->setRange(1, 100, 1);
     d->setCompressionWeight->setToolTip(i18nc("@info:tooltip", "Weight to assign to Compression Algorithm"));
 
-    grid2->addWidget(d->lbl1,                  0, 0, 1, 1);
-    grid2->addWidget(d->setSpeed,              0, 1, 1, 1);
-    grid2->addWidget(d->lbl2,                  1, 0, 1, 1);
-    grid2->addWidget(d->setRejectedThreshold,  1, 1, 1, 1);
-    grid2->addWidget(d->lbl3,                  2, 0, 1, 1);
-    grid2->addWidget(d->setPendingThreshold,   2, 1, 1, 1);
-    grid2->addWidget(d->lbl4,                  3, 0, 1, 1);
-    grid2->addWidget(d->setAcceptedThreshold,  3, 1, 1, 1);
-    grid2->addWidget(d->lbl5,                  4, 0, 1, 1);
-    grid2->addWidget(d->setBlurWeight,         4, 1, 1, 1);
-    grid2->addWidget(d->lbl6,                  5, 0, 1, 1);
-    grid2->addWidget(d->setNoiseWeight,        5, 1, 1, 1);
-    grid2->addWidget(d->lbl7,                  6, 0, 1, 1);
-    grid2->addWidget(d->setCompressionWeight,  6, 1, 1, 1);
-    grid2->setContentsMargins(2 * spacing, spacing, spacing, spacing);
-    grid2->setColumnStretch(1, 10);
-    grid2->setRowStretch(7, 10);
+    d->detectExposure         = new QCheckBox(i18nc("@option:check", "Detect Under and Over Exposure"), basicView);
+    d->detectExposure->setToolTip(i18nc("@info:tooltip", "Detect if the images are under-exposed or over-exposed"));
+
+    grid1->addWidget(d->lbl2,                  0, 0, 1, 1);
+    grid1->addWidget(d->setRejectedThreshold,  0, 1, 1, 1);
+    grid1->addWidget(d->lbl3,                  1, 0, 1, 1);
+    grid1->addWidget(d->setPendingThreshold,   1, 1, 1, 1);
+    grid1->addWidget(d->lbl4,                  2, 0, 1, 1);
+    grid1->addWidget(d->setAcceptedThreshold,  2, 1, 1, 1);
+    grid1->addWidget(d->detectBlur,            3, 0, 1, 2);
+    grid1->addWidget(d->lbl5,                  4, 0, 1, 1);
+    grid1->addWidget(d->setBlurWeight,         4, 1, 1, 1);
+    grid1->addWidget(d->detectNoise,           5, 0, 1, 2);
+    grid1->addWidget(d->lbl6,                  6, 0, 1, 1);
+    grid1->addWidget(d->setNoiseWeight,        6, 1, 1, 1);
+    grid1->addWidget(d->detectCompression,     7, 0, 1, 2);
+    grid1->addWidget(d->lbl7,                  8, 0, 1, 1);
+    grid1->addWidget(d->setCompressionWeight,  8, 1, 1, 1);
+    grid1->addWidget(d->detectExposure,        9, 0, 1, 2);
+    grid1->setContentsMargins(2 * spacing, spacing, spacing, spacing);
+    grid1->setColumnStretch(1, 10);
+    grid1->setRowStretch(10, 10);
 
     // ------------------------------------------------------------------------------
 
@@ -308,7 +295,6 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
     glay->addWidget(d->detectAesthetic,    3, 1, 1, 1);
     glay->addWidget(d->detectBasicFactors, 4, 1, 1, 1);
     glay->addWidget(basicView,             5, 1, 1, 1);
-    glay->addWidget(settings,              6, 1, 1, 1);
     glay->setColumnStretch(1, 10);
     glay->setContentsMargins(2 * spacing, spacing, spacing, spacing);
 
