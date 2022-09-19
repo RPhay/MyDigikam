@@ -137,17 +137,6 @@ set(libdimgfilters_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/redeye/redeyecorrectionfilter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/redeye/redeyecorrectionsettings.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/filters/redeye/redeyecorrectioncontainer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/imagequalitycontainer.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/imagequalitysettings.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/imagequalityparser.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/imagequalitycalculator.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/imagequalitythread.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/detector/blur_detector.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/detector/noise_detector.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/detector/exposure_detector.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/detector/compression_detector.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/detector/aesthetic_detector.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/filters/imgqsort/detector/detector.cpp
 )
 
 if (Qt6_FOUND)
@@ -230,6 +219,7 @@ set(libdimgloaders_SRCS
 include_directories(
     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Concurrent,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Gui,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Xml,INTERFACE_INCLUDE_DIRECTORIES>
 
     $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
