@@ -44,7 +44,7 @@ void ExifToolProcess::Private::slotExecNextCmd()
         return;
     }
 
-    QMutexLocker locker(&mutex);
+    QMutexLocker locker(&cmdMutex);
 
     if (cmdRunning || cmdQueue.isEmpty())
     {
@@ -73,7 +73,11 @@ void ExifToolProcess::Private::slotExecNextCmd()
     cmdRunning = runCommand.id;
     cmdAction  = runCommand.ac;
 
-    pp->write(runCommand.argsStr);
+    QTimer::singleShot(1, this, [=]()
+        {
+            pp->write(runCommand.argsStr);
+        }
+    );
 }
 
 void ExifToolProcess::Private::readOutput(const QProcess::ProcessChannel channel)
@@ -145,8 +149,6 @@ void ExifToolProcess::Private::readOutput(const QProcess::ProcessChannel channel
     }
     else
     {
-        QMutexLocker locker(&mutex);
-
         qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::readOutput(): ExifTool command completed";
 
         if (runCommand.parser)
@@ -167,8 +169,6 @@ void ExifToolProcess::Private::readOutput(const QProcess::ProcessChannel channel
 
 void ExifToolProcess::Private::setProcessErrorAndEmit(QProcess::ProcessError error, const QString& description)
 {
-    QMutexLocker locker(&mutex);
-
     processError = error;
     errorString  = description;
 

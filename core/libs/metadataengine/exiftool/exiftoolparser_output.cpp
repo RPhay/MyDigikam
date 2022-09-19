@@ -383,12 +383,12 @@ void ExifToolParser::cmdCompleted(int cmdId,
         }
     }
 
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool parsed command for action" << d->actionString(cmdAction);
+    qCDebug(DIGIKAM_METAENGINE_LOG) << d->exifToolData.count() << "properties decoded";
+
     d->manageWaitCondition(cmdAction);
 
     Q_EMIT signalExifToolDataAvailable();
-
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool parsed command for action" << d->actionString(cmdAction);
-    qCDebug(DIGIKAM_METAENGINE_LOG) << d->exifToolData.count() << "properties decoded";
 }
 
 void ExifToolParser::cmdErrorOccurred(int cmdId,

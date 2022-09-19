@@ -24,6 +24,7 @@
 
 #include <QFile>
 #include <QList>
+#include <QTimer>
 #include <QFileInfo>
 #include <QByteArray>
 #include <QApplication>
@@ -105,7 +106,8 @@ public:
 
     int                     nextCmdId;               ///< Unique identifier, even in a multi-instances or multi-thread environment
 
-    QMutex                  mutex;
+    QMutex                  cmdMutex;
+    QMutex                  outMutex;
 };
 
 } // namespace Digikam
