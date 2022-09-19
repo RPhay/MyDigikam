@@ -44,6 +44,7 @@ private:
     int count_by_condition(const cv::Mat& image,
                            int minVal, int maxVal)      const;
 
+    // Disable
     explicit ExposureDetector(QObject*);
 
 private:

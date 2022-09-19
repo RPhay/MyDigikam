@@ -89,29 +89,42 @@ BlurDetector::~BlurDetector()
 
 float BlurDetector::detect(const cv::Mat& image) const
 {
-    cv::Mat edgesMap      = edgeDetection(image);
+    try
+    {
+        cv::Mat edgesMap      = edgeDetection(image);
 
-    cv::Mat defocusMap    = detectDefocusMap(edgesMap);
-    defocusMap.convertTo(defocusMap, CV_8U);
+        cv::Mat defocusMap    = detectDefocusMap(edgesMap);
+        defocusMap.convertTo(defocusMap, CV_8U);
 
-    cv::Mat motionBlurMap = detectMotionBlurMap(edgesMap);
-    motionBlurMap.convertTo(motionBlurMap, CV_8U);
+        cv::Mat motionBlurMap = detectMotionBlurMap(edgesMap);
+        motionBlurMap.convertTo(motionBlurMap, CV_8U);
 
-    cv::Mat weightsMat    = getWeightMap(image);
+        cv::Mat weightsMat    = getWeightMap(image);
 
-    cv::Mat blurMap       = defocusMap + motionBlurMap;
+        cv::Mat blurMap       = defocusMap + motionBlurMap;
 
-    cv::Mat res           = weightsMat.mul(blurMap);
+        cv::Mat res           = weightsMat.mul(blurMap);
 
-    int totalPixels       = cv::countNonZero(weightsMat);
+        int totalPixels       = cv::countNonZero(weightsMat);
 
-    int blurPixel         = cv::countNonZero(res);
+        int blurPixel         = cv::countNonZero(res);
 
-    float percentBlur     = float(blurPixel) / float(totalPixels);
+        float percentBlur     = float(blurPixel) / float(totalPixels);
 
-    // qCDebug(DIGIKAM_DIMG_LOG) << "percentage of blur" << percentBlur;
+        // qCDebug(DIGIKAM_DIMG_LOG) << "percentage of blur" << percentBlur;
 
-    return percentBlur;
+        return percentBlur;
+    }
+    catch (cv::Exception& e)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+    }
+
+    return 0.0F;
 }
 
 cv::Mat BlurDetector::edgeDetection(const cv::Mat& image) const

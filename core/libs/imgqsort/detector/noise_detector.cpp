@@ -32,29 +32,42 @@ const int SIZE_FILTER = 4;
 
 NoiseDetector::Mat3D initFiltersHaar()
 {
-    NoiseDetector::Mat3D res;
-
-    res.reserve(SIZE_FILTER * SIZE_FILTER);
-
-    float mat_base[SIZE_FILTER][SIZE_FILTER] =
+    try
     {
-        {   0.5F,            0.5F,           0.5F,            0.5F           },
-        {   0.5F,            0.5F,          -0.5F,           -0.5F           },
-        {   0.7071F,        -0.7071F,        0.0F,            0.0F           },
-        {   0.0F,            0.0F,           0.7071F,        -0.7071F        }
-    };
+        NoiseDetector::Mat3D res;
 
-    cv::Mat mat_base_opencv = cv::Mat(SIZE_FILTER, SIZE_FILTER, CV_32FC1, &mat_base);
+        res.reserve(SIZE_FILTER * SIZE_FILTER);
 
-    for (int i = 0 ; i < SIZE_FILTER ; i++)
-    {
-        for (int j = 0 ; j < SIZE_FILTER ; j++)
+        float mat_base[SIZE_FILTER][SIZE_FILTER] =
         {
-            res.push_back(mat_base_opencv.row(i).t() * mat_base_opencv.row(j));
+            {   0.5F,            0.5F,           0.5F,            0.5F           },
+            {   0.5F,            0.5F,          -0.5F,           -0.5F           },
+            {   0.7071F,        -0.7071F,        0.0F,            0.0F           },
+            {   0.0F,            0.0F,           0.7071F,        -0.7071F        }
+        };
+
+        cv::Mat mat_base_opencv = cv::Mat(SIZE_FILTER, SIZE_FILTER, CV_32FC1, &mat_base);
+
+        for (int i = 0 ; i < SIZE_FILTER ; i++)
+        {
+            for (int j = 0 ; j < SIZE_FILTER ; j++)
+            {
+                res.push_back(mat_base_opencv.row(i).t() * mat_base_opencv.row(j));
+            }
         }
+
+        return res;
+    }
+    catch (cv::Exception& e)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
     }
 
-    return res;
+    return NoiseDetector::Mat3D();
 }
 
 const NoiseDetector::Mat3D NoiseDetector::filtersHaar = initFiltersHaar();

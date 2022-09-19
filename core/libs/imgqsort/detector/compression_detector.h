@@ -46,6 +46,7 @@ private:
 
     float normalize(const float number);
 
+    // Disable
     explicit CompressionDetector(QObject*);
 
 private:

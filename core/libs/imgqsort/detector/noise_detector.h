@@ -57,6 +57,7 @@ private:
     cv::Mat pow_mat(const cv::Mat& mat, float ordre)                            const;
     float   mean_mat(const cv::Mat& mat)                                        const;
 
+    // Disable
     explicit NoiseDetector(QObject*);
 
 private:
