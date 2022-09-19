@@ -79,6 +79,7 @@ void ImageQualityTask::slotCancel()
 void ImageQualityTask::run()
 {
     // While we have data (using this as check for non-null)
+
     while (d->data)
     {
         if (m_cancel)

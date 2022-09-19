@@ -74,6 +74,7 @@ void MetadataTask::setMaintenanceData(MaintenanceData* const data)
 void MetadataTask::run()
 {
     // While we have data (using this as check for non-null)
+
     while (d->data)
     {
         if (m_cancel)
@@ -84,6 +85,7 @@ void MetadataTask::run()
         ItemInfo item = d->data->getItemInfo();
 
         // If the item is null, we are done.
+
         if (item.isNull())
         {
             break;
@@ -94,9 +96,11 @@ void MetadataTask::run()
             MetadataHub fileHub;
 
             // read in from database
+
             fileHub.load(item);
 
             // write out to file DMetadata
+
             if (d->tagsOnly)
             {
                 fileHub.writeTags(item.filePath());
