@@ -295,7 +295,7 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
     grid2->addWidget(d->setNoiseWeight,        5, 1, 1, 1);
     grid2->addWidget(d->lbl7,                  6, 0, 1, 1);
     grid2->addWidget(d->setCompressionWeight,  6, 1, 1, 1);
-    grid2->setContentsMargins(2*spacing, spacing, spacing, spacing);
+    grid2->setContentsMargins(2 * spacing, spacing, spacing, spacing);
     grid2->setColumnStretch(1, 10);
     grid2->setRowStretch(7, 10);
 
@@ -316,6 +316,24 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
 
     connect(d->enableSorter, SIGNAL(toggled(bool)),
             d->optionsView, SLOT(setEnabled(bool)));
+
+    connect(d->detectBlur, SIGNAL(toggled(bool)),
+            d->lbl5, SLOT(setEnabled(bool)));
+
+    connect(d->detectBlur, SIGNAL(toggled(bool)),
+            d->setBlurWeight, SLOT(setEnabled(bool)));
+
+    connect(d->detectNoise, SIGNAL(toggled(bool)),
+            d->lbl6, SLOT(setEnabled(bool)));
+
+    connect(d->detectNoise, SIGNAL(toggled(bool)),
+            d->setNoiseWeight, SLOT(setEnabled(bool)));
+
+    connect(d->detectCompression, SIGNAL(toggled(bool)),
+            d->lbl7, SLOT(setEnabled(bool)));
+
+    connect(d->detectCompression, SIGNAL(toggled(bool)),
+            d->setCompressionWeight, SLOT(setEnabled(bool)));
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
 
@@ -392,6 +410,12 @@ void ImageQualitySettings::readSettings()
     d->setCompressionWeight->setValue(imq.compressionWeight);
 
     d->optionsView->setEnabled(imq.enableSorter);
+    d->lbl5->setEnabled(imq.detectBlur);
+    d->setBlurWeight->setEnabled(imq.detectBlur);
+    d->lbl6->setEnabled(imq.detectNoise);
+    d->setNoiseWeight->setEnabled(imq.detectNoise);
+    d->lbl7->setEnabled(imq.detectCompression);
+    d->setCompressionWeight->setEnabled(imq.detectCompression);
 }
 
 ImageQualityContainer ImageQualitySettings::getImageQualityContainer() const
@@ -410,9 +434,6 @@ void ImageQualitySettings::slotDisableOptionViews()
     d->lbl2->setEnabled(b);
     d->lbl3->setEnabled(b);
     d->lbl4->setEnabled(b);
-    d->lbl5->setEnabled(b);
-    d->lbl6->setEnabled(b);
-    d->lbl7->setEnabled(b);
     d->detectBlur->setEnabled(b);
     d->detectNoise->setEnabled(b);
     d->detectCompression->setEnabled(b);
@@ -420,9 +441,13 @@ void ImageQualitySettings::slotDisableOptionViews()
     d->setRejectedThreshold->setEnabled(b);
     d->setPendingThreshold->setEnabled(b);
     d->setAcceptedThreshold->setEnabled(b);
-    d->setBlurWeight->setEnabled(b);
-    d->setNoiseWeight->setEnabled(b);
-    d->setCompressionWeight->setEnabled(b);
+
+    d->lbl5->setEnabled(b && d->detectBlur->isChecked());
+    d->setBlurWeight->setEnabled(b && d->detectBlur->isChecked());
+    d->lbl6->setEnabled(b && d->detectNoise->isChecked());
+    d->setNoiseWeight->setEnabled(b && d->detectNoise->isChecked());
+    d->lbl7->setEnabled(b && d->detectCompression->isChecked());
+    d->setCompressionWeight->setEnabled(b && d->detectCompression->isChecked());
 }
 
 } // namespace Digikam
