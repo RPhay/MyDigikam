@@ -49,7 +49,7 @@ ExifToolParser::~ExifToolParser()
 
         if (d->startAsync && d->cmdRunning)
         {
-            d->condVar.wait(&d->mutex);
+            d->condVar.wait(&d->mutex, 5000);
         }
     }
 

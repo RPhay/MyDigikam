@@ -60,7 +60,12 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifTo
 
     if (!startAsync)
     {
-        condVar.wait(&mutex);
+        if (!condVar.wait(&mutex, 5000))
+        {
+            qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool timed out:" << actionString(cmdAction);
+
+            return false;
+        }
 
         if (currentPath.isEmpty())
         {
