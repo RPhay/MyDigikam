@@ -266,24 +266,30 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
     d->detectExposure         = new QCheckBox(i18nc("@option:check", "Detect Under and Over Exposure"), basicView);
     d->detectExposure->setToolTip(i18nc("@info:tooltip", "Detect if the images are under-exposed or over-exposed"));
 
-    grid1->addWidget(d->lbl2,                  0, 0, 1, 1);
-    grid1->addWidget(d->setRejectedThreshold,  0, 1, 1, 1);
-    grid1->addWidget(d->lbl3,                  1, 0, 1, 1);
-    grid1->addWidget(d->setPendingThreshold,   1, 1, 1, 1);
-    grid1->addWidget(d->lbl4,                  2, 0, 1, 1);
-    grid1->addWidget(d->setAcceptedThreshold,  2, 1, 1, 1);
-    grid1->addWidget(d->detectBlur,            3, 0, 1, 2);
-    grid1->addWidget(d->lbl5,                  4, 0, 1, 1);
-    grid1->addWidget(d->setBlurWeight,         4, 1, 1, 1);
-    grid1->addWidget(d->detectNoise,           5, 0, 1, 2);
-    grid1->addWidget(d->lbl6,                  6, 0, 1, 1);
-    grid1->addWidget(d->setNoiseWeight,        6, 1, 1, 1);
-    grid1->addWidget(d->detectCompression,     7, 0, 1, 2);
-    grid1->addWidget(d->lbl7,                  8, 0, 1, 1);
-    grid1->addWidget(d->setCompressionWeight,  8, 1, 1, 1);
-    grid1->addWidget(d->detectExposure,        9, 0, 1, 2);
+    grid1->addWidget(d->lbl2,                  0, 0, 1, 2);
+    grid1->addWidget(d->setRejectedThreshold,  0, 2, 1, 1);
+    grid1->addWidget(d->lbl3,                  1, 0, 1, 2);
+    grid1->addWidget(d->setPendingThreshold,   1, 2, 1, 1);
+    grid1->addWidget(d->lbl4,                  2, 0, 1, 2);
+    grid1->addWidget(d->setAcceptedThreshold,  2, 2, 1, 1);
+
+    grid1->addWidget(d->detectBlur,            3, 0, 1, 3);
+    grid1->addWidget(d->lbl5,                  4, 1, 1, 1);
+    grid1->addWidget(d->setBlurWeight,         4, 2, 1, 1);
+
+    grid1->addWidget(d->detectNoise,           5, 0, 1, 3);
+    grid1->addWidget(d->lbl6,                  6, 1, 1, 1);
+    grid1->addWidget(d->setNoiseWeight,        6, 2, 1, 1);
+
+    grid1->addWidget(d->detectCompression,     7, 0, 1, 3);
+    grid1->addWidget(d->lbl7,                  8, 1, 1, 1);
+    grid1->addWidget(d->setCompressionWeight,  8, 2, 1, 1);
+
+    grid1->addWidget(d->detectExposure,        9, 0, 1, 3);
     grid1->setContentsMargins(2 * spacing, spacing, spacing, spacing);
-    grid1->setColumnStretch(1, 10);
+    grid1->setColumnStretch(0, 1);
+    grid1->setColumnStretch(1, 1);
+    grid1->setColumnStretch(2, 100);
     grid1->setRowStretch(10, 10);
 
     // ------------------------------------------------------------------------------
