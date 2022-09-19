@@ -201,7 +201,7 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
 
     d->detectBasicFactors     = new QRadioButton(i18nc("@option:radio", "Detect Quality Using Basic Factors"),
                                                  d->optionsView);
-    d->detectBasicFactors->setToolTip(i18nc("@info:tooltip", "Detect if the image is sabotating by four basic factors "
+    d->detectBasicFactors->setToolTip(i18nc("@info:tooltip", "Detect if the image is sabotaging by four basic factors "
                                             "(blur, noise, exposure, and compression)."));
 
     d->detectButtonGroup->addButton(d->detectBasicFactors, Private::BASICFACTORS);
