@@ -20,7 +20,6 @@ namespace Digikam
 ExifToolParser::Private::Private(ExifToolParser* const q)
     : pp          (q),
       proc        (nullptr),
-      startAsync  (false),
       cmdRunning  (0)
 {
     argsFile.setAutoRemove(false);
@@ -56,59 +55,56 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifTo
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool" << actionString(cmdAction) << cmdArgs.join(QByteArray(" "));
 
-    //if (!startAsync)
+    while (cmdRunning != proc->cmdRunning() && (proc->cmdState() != ExifToolProcess::EXIT_RESULT))
     {
-        while (cmdRunning != proc->cmdRunning() && (proc->cmdState() != ExifToolProcess::EXIT_RESULT))
+        if (!proc->waitForExifToolResult())
         {
-            if (!proc->waitForExifToolResult())
-            {
-                qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool timed out:" << actionString(cmdAction);
+            qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool timed out:" << actionString(cmdAction);
 
-                return false;
-            }
+            return false;
+        }
+    }
+
+    switch (proc->cmdState())
+    {
+        case ExifToolProcess::COMMAND_RESULT:
+        {
+            pp->cmdCompleted(proc->cmdRunning(),
+                             cmdAction,
+                             proc->elapsedTime(),
+                             proc->outputBuffer(),
+                             QByteArray());
+            break;
         }
 
-        switch (proc->cmdState())
+        case ExifToolProcess::FINISH_RESULT:
         {
-            case ExifToolProcess::COMMAND_RESULT:
-            {
-                pp->cmdCompleted(proc->cmdRunning(),
+            pp->cmdFinished(proc->cmdRunning());
+            break;
+        }
+
+        case ExifToolProcess::ERROR_RESULT:
+        {
+            pp->cmdErrorOccurred(proc->cmdRunning(),
                                  cmdAction,
-                                 proc->elapsedTime(),
-                                 proc->outputBuffer(),
-                                 QByteArray());
-                break;
-            }
-
-            case ExifToolProcess::FINISH_RESULT:
-            {
-                pp->cmdFinished(proc->cmdRunning());
-                break;
-            }
-
-            case ExifToolProcess::ERROR_RESULT:
-            {
-                pp->cmdErrorOccurred(proc->cmdRunning(),
-                                     cmdAction,
-                                     proc->exifToolError(),
-                                     proc->exifToolErrorString());
-                break;
-            }
-
-            case ExifToolProcess::EXIT_RESULT:
-            {
-                return false;
-            }
+                                 proc->exifToolError(),
+                                 proc->exifToolErrorString());
+            break;
         }
 
-        if (currentPath.isEmpty())
+        case ExifToolProcess::EXIT_RESULT:
         {
-            qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction);
+            return false;
         }
-        else
-        {
-            qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction) << "for" << currentPath;
-        }
+    }
+
+    if (currentPath.isEmpty())
+    {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction);
+    }
+    else
+    {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction) << "for" << currentPath;
     }
 
     return true;

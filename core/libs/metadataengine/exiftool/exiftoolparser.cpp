@@ -50,11 +50,6 @@ void ExifToolParser::setExifToolProgram(const QString& path)
     d->proc->setExifToolProgram(path);
 }
 
-void ExifToolParser::setExifToolAsync(bool async)
-{
-    d->startAsync = async;
-}
-
 QString ExifToolParser::currentPath() const
 {
     return d->currentPath;
