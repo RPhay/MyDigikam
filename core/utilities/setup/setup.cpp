@@ -199,7 +199,7 @@ Setup::Setup(QWidget* const parent)
 
     d->imageQualitySorterPage = new SetupImageQualitySorter();
     d->page_imagequalitysorter = addPage(d->imageQualitySorterPage, i18nc("@title: settings section", "Image Quality Sorter"));
-    d->page_imagequalitysorter->setHeader(i18nc("@title", "Image Quality Sorter Settings\nCustomize settings to perform image triaging by quality"));
+    d->page_imagequalitysorter->setHeader(i18nc("@title", "Image Quality Sorter Settings\nCustomize default settings to perform image triaging by quality"));
     d->page_imagequalitysorter->setIcon(QIcon::fromTheme(QLatin1String("flag-green")));
 
     d->cameraPage  = new SetupCamera();

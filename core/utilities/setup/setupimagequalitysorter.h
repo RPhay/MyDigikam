@@ -34,10 +34,10 @@ class SetupImageQualitySorter : public QScrollArea
 public:
 
     explicit SetupImageQualitySorter(QWidget* const parent = nullptr);
-    ~SetupImageQualitySorter() override;
+    ~SetupImageQualitySorter()                              override;
 
     void applySettings();
-    ImageQualityContainer getImageQualityContainer();
+    ImageQualityContainer getImageQualityContainer() const;
 
 private:
 

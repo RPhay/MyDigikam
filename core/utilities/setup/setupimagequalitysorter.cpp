@@ -62,7 +62,7 @@ void SetupImageQualitySorter::readSettings()
     d->settingsWidget->readSettings();
 }
 
-ImageQualityContainer SetupImageQualitySorter::getImageQualityContainer()
+ImageQualityContainer SetupImageQualitySorter::getImageQualityContainer() const
 {
     return d->settingsWidget->getImageQualityContainer();
 }
