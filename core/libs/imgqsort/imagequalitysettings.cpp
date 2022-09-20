@@ -57,7 +57,6 @@ public:
 
     explicit Private()
       : optionsView         (nullptr),
-        enableSorter        (nullptr),
         detectBlur          (nullptr),
         detectNoise         (nullptr),
         detectCompression   (nullptr),
@@ -84,7 +83,6 @@ public:
     }
 
     QWidget*      optionsView;
-    QCheckBox*    enableSorter;
     QCheckBox*    detectBlur;
     QCheckBox*    detectNoise;
     QCheckBox*    detectCompression;
@@ -138,14 +136,9 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
     explanation->setWordWrap(true);
     explanation->setTextFormat(Qt::RichText);
 
-    d->enableSorter           = new QCheckBox(i18nc("@option:check", "Enable Image Quality Sorting"), this);
-    d->enableSorter->setToolTip(i18nc("@info:tooltip", "Enable this option to assign automatically "
-                                      "Pick Labels based on image quality."));
-
     d->optionsView            = new QWidget(this);
 
     layout->addWidget(explanation);
-    layout->addWidget(d->enableSorter);
     layout->addWidget(d->optionsView);
 
     // ------------------------------------------------------------------------------
@@ -306,9 +299,6 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
 
     // ------------------------------------------------------------------------------
 
-    connect(d->enableSorter, SIGNAL(toggled(bool)),
-            d->optionsView, SLOT(setEnabled(bool)));
-
     connect(d->detectBlur, SIGNAL(toggled(bool)),
             d->lbl5, SLOT(setEnabled(bool)));
 
@@ -352,7 +342,6 @@ void ImageQualitySettings::applySettings()
 {
     ImageQualityContainer imq;
 
-    imq.enableSorter      = d->enableSorter->isChecked();
     imq.detectBlur        = d->detectBlur->isChecked();
     imq.detectNoise       = d->detectNoise->isChecked();
     imq.detectCompression = d->detectCompression->isChecked();
@@ -376,7 +365,6 @@ void ImageQualitySettings::readSettings()
     ImageQualityContainer imq;
     imq.readFromConfig();
 
-    d->enableSorter->setChecked(imq.enableSorter);
     d->detectBlur->setChecked(imq.detectBlur);
     d->detectNoise->setChecked(imq.detectNoise);
     d->detectCompression->setChecked(imq.detectCompression);
@@ -401,7 +389,6 @@ void ImageQualitySettings::readSettings()
     d->setNoiseWeight->setValue(imq.noiseWeight);
     d->setCompressionWeight->setValue(imq.compressionWeight);
 
-    d->optionsView->setEnabled(imq.enableSorter);
     d->lbl5->setEnabled(imq.detectBlur);
     d->setBlurWeight->setEnabled(imq.detectBlur);
     d->lbl6->setEnabled(imq.detectNoise);

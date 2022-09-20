@@ -28,8 +28,7 @@ namespace Digikam
 {
 
 ImageQualityContainer::ImageQualityContainer()
-    : enableSorter      (false),
-      detectBlur        (true),
+    : detectBlur        (true),
       detectNoise       (true),
       detectCompression (true),
       detectExposure    (true),
@@ -48,8 +47,7 @@ ImageQualityContainer::ImageQualityContainer()
 }
 
 ImageQualityContainer::ImageQualityContainer(const ImageQualityContainer& other)
-    : enableSorter      (other.enableSorter),
-      detectBlur        (other.detectBlur),
+    : detectBlur        (other.detectBlur),
       detectNoise       (other.detectNoise),
       detectCompression (other.detectCompression),
       detectExposure    (other.detectExposure),
@@ -69,7 +67,6 @@ ImageQualityContainer::ImageQualityContainer(const ImageQualityContainer& other)
 
 ImageQualityContainer& ImageQualityContainer::operator=(const ImageQualityContainer& other)
 {
-    enableSorter       = other.enableSorter;
     detectBlur         = other.detectBlur;
     detectNoise        = other.detectNoise;
     detectCompression  = other.detectCompression;
@@ -98,7 +95,6 @@ void ImageQualityContainer::readFromConfig()
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group("Image Quality Settings");
 
-    enableSorter              = group.readEntry("Enable Sorter",      false);
     detectBlur                = group.readEntry("Detect Blur",        true);
     detectNoise               = group.readEntry("Detect Noise",       true);
     detectCompression         = group.readEntry("Detect Compression", true);
@@ -121,7 +117,6 @@ void ImageQualityContainer::writeToConfig()
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group("Image Quality Settings");
 
-    group.writeEntry("Enable Sorter",       enableSorter);
     group.writeEntry("Detect Blur",         detectBlur);
     group.writeEntry("Detect Noise",        detectNoise);
     group.writeEntry("Detect Compression",  detectCompression);
@@ -142,7 +137,6 @@ void ImageQualityContainer::writeToConfig()
 QDebug operator<<(QDebug dbg, const ImageQualityContainer& s)
 {
     dbg.nospace()                                                   << QT_ENDL;
-    dbg.nospace() << "EnableSorter       :" << s.enableSorter       << QT_ENDL;
     dbg.nospace() << "DetectBlur         :" << s.detectBlur         << QT_ENDL;
     dbg.nospace() << "DetectNoise        :" << s.detectNoise        << QT_ENDL;
     dbg.nospace() << "DetectCompression  :" << s.detectCompression  << QT_ENDL;

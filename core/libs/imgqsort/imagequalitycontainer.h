@@ -44,8 +44,6 @@ public:
 
 public:
 
-    bool enableSorter;          ///< Global quality detection enabler/disabler.
-
     bool detectBlur;            ///< Enable image blur detection.
     bool detectNoise;           ///< Enable image noise detection.
     bool detectCompression;     ///< Enable image compression detection.
