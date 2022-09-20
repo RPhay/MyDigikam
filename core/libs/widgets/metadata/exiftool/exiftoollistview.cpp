@@ -67,7 +67,6 @@ ExifToolListView::ExifToolListView(QWidget* const parent)
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     d->parser = new ExifToolParser(this);
-    d->parser->setExifToolAsync(true);
 
     connect(d->parser, SIGNAL(signalExifToolDataAvailable()),
             this, SLOT(slotExifToolDataAvailable()));

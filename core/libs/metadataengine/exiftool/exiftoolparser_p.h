@@ -72,7 +72,6 @@ public:
     ExifToolData                   exifToolData;    ///< Current ExifTool data (input or output depending of the called method.
     QTemporaryFile                 argsFile;        ///< Temporary file to store Exiftool arg config file.
 
-    bool                           startAsync;
     int                            cmdRunning;
 };
 

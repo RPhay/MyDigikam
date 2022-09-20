@@ -97,7 +97,6 @@ public:
     ~ExifToolParser();
 
     void setExifToolProgram(const QString& path);
-    void setExifToolAsync(bool async);
 
     QString      currentPath()        const;
     ExifToolData currentData()        const;
