@@ -92,7 +92,7 @@ public:
 
 // Main noise detection
 NoiseDetector::NoiseDetector()
-    :  DetectorDistortion(),
+    :  AbstractDetector(),
        d                 (new Private)
 {
 }

@@ -30,7 +30,7 @@ namespace Digikam
 cv::dnn::Net AestheticDetector::s_model = cv::dnn::Net();
 
 AestheticDetector::AestheticDetector()
-    : DetectorDistortion()
+    : AbstractDetector()
 {
 }
 

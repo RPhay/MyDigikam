@@ -58,7 +58,7 @@ public:
 };
 
 ExposureDetector::ExposureDetector()
-    :  DetectorDistortion(),
+    :  AbstractDetector(),
        d                 (new Private)
 {
 }

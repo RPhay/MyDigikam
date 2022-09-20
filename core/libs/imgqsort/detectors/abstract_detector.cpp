@@ -3,8 +3,8 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        :
- * Description : Image Quality Parser - blur detection
+ * Date        : 25/08/2013
+ * Description : Image Quality Parser - Abstract class for detector
  *
  * SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2021-2022 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
@@ -13,7 +13,7 @@
  *
  * ============================================================ */
 
-#include "detector.h"
+#include "abstract_detector.h"
 
 // Qt includes
 
@@ -27,14 +27,16 @@
 namespace Digikam
 {
 
-DetectorDistortion::DetectorDistortion(QObject* const parent)
+AbstractDetector::AbstractDetector(QObject* const parent)
     : QObject(parent)
 {
 }
 
-// Maybe this function will move to read_image() of imagequalityparser
-// in case all detector of IQS use cv::Mat
-cv::Mat DetectorDistortion::prepareForDetection(const DImg& inputImage)
+/**
+ * NOTE: Maybe this function will move to read_image() of imagequalityparser
+ * in case all detectors of IQS use cv::Mat
+ */
+cv::Mat AbstractDetector::prepareForDetection(const DImg& inputImage)
 {
     if (inputImage.isNull() || !inputImage.size().isValid())
     {
@@ -70,7 +72,7 @@ cv::Mat DetectorDistortion::prepareForDetection(const DImg& inputImage)
     return cv::Mat();
 }
 
-// void DetectorDistortion::run()
+// void AbstractDetector::run()
 // {
 //     Q_EMIT resultReady(detect(m_image));
 // }

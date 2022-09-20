@@ -19,7 +19,7 @@ namespace Digikam
 {
 
 ImageQualityThread::ImageQualityThread(QObject* const parent,
-                                       DetectorDistortion* const detector,
+                                       AbstractDetector* const detector,
                                        const cv::Mat& image,
                                        ImageQualityCalculator* const calculator,
                                        float weight_quality)
@@ -60,7 +60,7 @@ ImageQualityThreadPool::~ImageQualityThreadPool()
 
 void ImageQualityThreadPool::addDetector(const cv::Mat& image,
                                          float weight_quality,
-                                         DetectorDistortion* const detector)
+                                         AbstractDetector* const detector)
 {
     ImageQualityThread* const thread = new ImageQualityThread(this,
                                                               detector,

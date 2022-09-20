@@ -24,7 +24,7 @@
 
 #include "dimg.h"
 #include "digikam_opencv.h"
-#include "detector.h"
+#include "abstract_detector.h"
 #include "imagequalitycalculator.h"
 
 namespace Digikam
@@ -37,7 +37,7 @@ class ImageQualityThread : public QThread
 public:
 
     explicit ImageQualityThread(QObject* const parent,
-                                DetectorDistortion* const detector,
+                                AbstractDetector* const detector,
                                 const cv::Mat& image,
                                 ImageQualityCalculator* const calculator,
                                 float weight_quality);
@@ -49,7 +49,7 @@ public:
 
 private:
 
-    DetectorDistortion*     m_detector;
+    AbstractDetector*     m_detector;
     ImageQualityCalculator* m_calculator;
     cv::Mat                 m_image;
     float                   m_weight;
@@ -71,7 +71,7 @@ public:
 
     void addDetector(const cv::Mat& image,
                      float weight_quality,
-                     DetectorDistortion* const detector);
+                     AbstractDetector* const detector);
 
     void start();
     void end();

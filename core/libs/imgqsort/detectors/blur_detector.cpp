@@ -73,7 +73,7 @@ public:
 };
 
 BlurDetector::BlurDetector(const DImg& image)
-    : DetectorDistortion(),
+    : AbstractDetector(),
       d                 (new Private)
 {
     QScopedPointer<FocusPointsExtractor> const extractor (new FocusPointsExtractor(nullptr, image.originalFilePath()));

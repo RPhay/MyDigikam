@@ -20,12 +20,12 @@
 
 #include "dimg.h"
 #include "digikam_opencv.h"
-#include "detector.h"
+#include "abstract_detector.h"
 
 namespace Digikam
 {
 
-class BlurDetector : public DetectorDistortion
+class BlurDetector : public AbstractDetector
 {
     Q_OBJECT
 

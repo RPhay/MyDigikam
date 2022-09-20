@@ -53,7 +53,7 @@ public:
 };
 
 CompressionDetector::CompressionDetector()
-    :  DetectorDistortion(),
+    :  AbstractDetector(),
        d                 (new Private)
 {
 }

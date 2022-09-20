@@ -15,12 +15,12 @@ set(libimgqsort_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/imagequalityparser.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/imagequalitycalculator.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/imagequalitythread.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/detector/blur_detector.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/detector/noise_detector.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/detector/exposure_detector.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/detector/compression_detector.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/detector/aesthetic_detector.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/detector/detector.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/detectors/abstract_detector.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/detectors/aesthetic_detector.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/detectors/blur_detector.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/detectors/compression_detector.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/detectors/exposure_detector.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/detectors/noise_detector.cpp
 )
 
 include_directories(

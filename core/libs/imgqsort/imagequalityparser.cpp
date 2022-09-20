@@ -61,7 +61,7 @@ void ImageQualityParser::startAnalyse()
 
     float finalQuality = -1.0F;
 
-    cv::Mat cvImage    = DetectorDistortion::prepareForDetection(d->image);
+    cv::Mat cvImage    = AbstractDetector::prepareForDetection(d->image);
 
     cv::Mat grayImage;
 
