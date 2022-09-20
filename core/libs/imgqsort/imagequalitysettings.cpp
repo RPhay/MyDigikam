@@ -28,6 +28,7 @@
 #include <QIcon>
 #include <QApplication>
 #include <QStyle>
+#include <QPushButton>
 
 // KDE includes
 
@@ -402,6 +403,112 @@ void ImageQualitySettings::slotDisableOptionViews()
     d->setNoiseWeight->setEnabled(b && d->detectNoise->isChecked());
     d->lbl7->setEnabled(b && d->detectCompression->isChecked());
     d->setCompressionWeight->setEnabled(b && d->detectCompression->isChecked());
+}
+
+// ------------------------------------------------------------------------------------
+
+class Q_DECL_HIDDEN ImageQualityConfSelector::Private
+{
+public:
+
+    enum SettingsType
+    {
+        DEFAULT = 0,
+        CUSTOM
+    };
+
+public:
+
+    explicit Private()
+      : selButtonGroup(nullptr),
+        selDefault    (nullptr),
+        selCustom     (nullptr),
+        qualitySetup  (nullptr),
+        customView    (nullptr)
+    {
+    }
+
+    QButtonGroup*         selButtonGroup;
+    QRadioButton*         selDefault;
+    QRadioButton*         selCustom;
+
+    QPushButton*          qualitySetup;
+
+    ImageQualitySettings* customView;
+};
+
+ImageQualityConfSelector::ImageQualityConfSelector(QWidget* const parent)
+    : QWidget(parent),
+      d      (new Private)
+{
+    const int spacing         = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                                     QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
+    d->selButtonGroup       = new QButtonGroup(this);
+    d->selButtonGroup->setExclusive(true);
+
+    d->selDefault           = new QRadioButton(i18nc("@option:radio", "Use default settings"), this);
+    d->selDefault->setToolTip(i18nc("@info:tooltip", "Use the default quality sorting parameters "
+                                    "configured in Setup dialog."));
+
+    d->qualitySetup         = new QPushButton(i18n("Settings..."), this);
+
+    d->selButtonGroup->addButton(d->selDefault, Private::DEFAULT);
+
+    d->selCustom            = new QRadioButton(i18nc("@option:radio", "Use custom settings"), this);
+    d->selCustom->setToolTip(i18nc("@info:tooltip", "Use custom parameters to perform quality "
+                                   "sorting instead default one."));
+
+    d->selButtonGroup->addButton(d->selCustom, Private::CUSTOM);
+    d->selDefault->setChecked(true);
+
+    d->customView           = new ImageQualitySettings(this);
+
+    QGridLayout* const glay = new QGridLayout(this);
+    glay->addWidget(d->selDefault,         0, 0, 1, 1);
+    glay->addWidget(d->selDefault,         0, 2, 1, 1);
+    glay->addWidget(d->selCustom,          2, 0, 1, 3);
+    glay->addWidget(d->customView,         3, 0, 1, 3);
+    glay->setColumnStretch(1, 10);
+    glay->setContentsMargins(spacing, spacing, spacing, spacing);
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
+
+    connect(d->selButtonGroup, static_cast<void (QButtonGroup::*)(int)>(&QButtonGroup::idClicked),
+            this, &ImageQualityConfSelector::slotDisableCustomView);
+
+#else
+
+    connect(d->selButtonGroup, static_cast<void (QButtonGroup::*)(int)>(&QButtonGroup::buttonClicked),
+            this, &ImageQualityConfSelector::slotDisableCustomView);
+
+#endif
+
+    connect(d->qualitySetup, SIGNAL(clicked()),
+            this, SIGNAL(signalQualitySetup()));
+}
+
+ImageQualityConfSelector::~ImageQualityConfSelector()
+{
+    delete d;
+}
+
+ImageQualityContainer ImageQualityConfSelector::getImageQualityContainer() const
+{
+    if (d->selDefault->isChecked())
+    {
+        ImageQualityContainer imgq;
+        imgq.readFromConfig();
+
+        return imgq;
+    }
+
+    return d->customView->getImageQualityContainer();
+}
+
+void ImageQualityConfSelector::slotDisableCustomView()
+{
+    d->customView->setDisabled(d->selDefault->isChecked());
 }
 
 } // namespace Digikam

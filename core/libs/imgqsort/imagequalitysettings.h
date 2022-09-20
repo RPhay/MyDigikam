@@ -53,6 +53,33 @@ private:
     Private* const d;
 };
 
+// ----------------------------------------------------------------------
+
+class DIGIKAM_EXPORT ImageQualityConfSelector : public QWidget
+{
+    Q_OBJECT
+
+public:
+
+    explicit ImageQualityConfSelector(QWidget* const parent = nullptr);
+    ~ImageQualityConfSelector() override;
+
+    ImageQualityContainer getImageQualityContainer() const;
+
+Q_SIGNALS:
+
+    void signalQualitySetup();
+
+private Q_SLOTS:
+
+    void slotDisableCustomView();
+
+private:
+
+    class Private;
+    Private* const d;
+};
+
 } // namespace Digikam
 
 #endif // DIGIKAM_IMAGE_QUALITY_SETTINGS_H
