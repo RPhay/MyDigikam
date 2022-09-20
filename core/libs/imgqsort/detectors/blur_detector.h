@@ -18,8 +18,6 @@
 
 // Local includes
 
-#include "dimg.h"
-#include "digikam_opencv.h"
 #include "abstract_detector.h"
 
 namespace Digikam
