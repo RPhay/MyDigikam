@@ -95,6 +95,17 @@ public:
         TRANS_ALL_EXIF      = 0x04                  ///< Translate all existing Tags from source file to Exif.
     };
 
+    /**
+     * Command result state.
+     */
+    enum ResultState
+    {
+        COMMAND_RESULT = 0,
+        FINISH_RESULT,
+        ERROR_RESULT,
+        EXIT_RESULT
+    };
+
 public:
 
     /**
@@ -154,11 +165,36 @@ public:
     QString                exifToolErrorString() const;
 
     /**
+     * Returns state from current result.
+     */
+    int                    cmdState()            const;
+
+    /**
+     * Returns cmdRunning from current result.
+     */
+    int                    cmdRunning()          const;
+
+    /**
+     * Returns elapsed time from current result.
+     */
+    int                    elapsedTime()         const;
+
+    /**
+     * Returns output buffer from current result.
+     */
+    QByteArray             outputBuffer()        const;
+
+    /**
      * Send a command to exiftool process.
      * This function can be called from another thread.
      * Return 0: ExitTool not running, write channel is closed or args is empty.
      */
-    int command(const QByteArrayList& args, Action ac, ExifToolParser* const parser);
+    int command(const QByteArrayList& args, Action ac);
+
+    /**
+     * WatCondition for the ExifToolParser class.
+     */
+    bool waitForExifToolResult()                 const;
 
 Q_SIGNALS:
 

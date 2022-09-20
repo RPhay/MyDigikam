@@ -30,6 +30,7 @@
 #include <QApplication>
 #include <QElapsedTimer>
 #include <QStandardPaths>
+#include <QWaitCondition>
 
 // KDE includes
 
@@ -60,15 +61,13 @@ public:
 
         Command()
           : id     (0),
-            ac     (ExifToolProcess::NO_ACTION),
-            parser (nullptr)
+            ac     (ExifToolProcess::NO_ACTION)
         {
         }
 
         int                     id;
         QByteArray              argsStr;
         ExifToolProcess::Action ac;
-        ExifToolParser*         parser;
     };
 
 public:
@@ -106,8 +105,15 @@ public:
 
     int                     nextCmdId;               ///< Unique identifier, even in a multi-instances or multi-thread environment
 
+    int                     commandState;
+    int                     cmdRunResult;
+    int                     elapseResult;
+    QByteArray              outputResult;
+
     QMutex                  cmdMutex;
-    QMutex                  outMutex;
+
+    QMutex                  mutex;
+    QWaitCondition          condVar;
 };
 
 } // namespace Digikam

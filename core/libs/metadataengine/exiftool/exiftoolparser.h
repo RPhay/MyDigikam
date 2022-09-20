@@ -213,10 +213,7 @@ public:
                           QProcess::ProcessError error,
                           const QString& description);
 
-    void cmdFinished(int cmdId,
-                     int cmdAction,
-                     int exitCode,
-                     QProcess::ExitStatus exitStatus);
+    void cmdFinished(int cmdId);
 
     //@}
 
