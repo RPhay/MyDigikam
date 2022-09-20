@@ -56,8 +56,7 @@ public:
 public:
 
     explicit Private()
-      : optionsView         (nullptr),
-        detectBlur          (nullptr),
+      : detectBlur          (nullptr),
         detectNoise         (nullptr),
         detectCompression   (nullptr),
         detectExposure      (nullptr),
@@ -82,7 +81,6 @@ public:
     {
     }
 
-    QWidget*      optionsView;
     QCheckBox*    detectBlur;
     QCheckBox*    detectNoise;
     QCheckBox*    detectCompression;
@@ -120,30 +118,7 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
     const int spacing         = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                                      QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
-    QVBoxLayout* const layout = new QVBoxLayout(this);
-
-    QLabel* const explanation = new QLabel(i18nc("@label", "These settings determines the quality of an image and convert it into a score, "
-                                                 "stored in database. This property can be evaluated by two ways: using four basic factors "
-                                                 "sabotaging the images (blur, noise, exposure, and compression), or using a deep learning "
-                                                 "neural network engine. The first one helps to determine whether images are distorted "
-                                                 "by the basic factors, however it demands some drawbacks as fine-tuning from the user’s "
-                                                 "side and it cannot work along the aesthetic image processing. The second one uses an IA "
-                                                 "approach based on %1 model to predict the score. As deep learning is an end-to-end "
-                                                 "solution, it doesn’t require hyper-parameter settings, and make this feature easier to use.",
-                                           QString::fromUtf8("<a href='https://expertphotography.com/aesthetic-photography/'>%1</a>")
-                                                 .arg(i18nc("@label", "aesthetic image quality"))), this);
-    explanation->setOpenExternalLinks(true);
-    explanation->setWordWrap(true);
-    explanation->setTextFormat(Qt::RichText);
-
-    d->optionsView            = new QWidget(this);
-
-    layout->addWidget(explanation);
-    layout->addWidget(d->optionsView);
-
-    // ------------------------------------------------------------------------------
-
-    DHBox* const hlay1        = new DHBox(d->optionsView);
+    DHBox* const hlay1        = new DHBox(this);
 
     d->setRejected            = new QCheckBox(i18nc("@option:check", "Assign 'Rejected' Label to Low Quality Pictures"), hlay1);
     d->setRejected->setToolTip(i18nc("@info:tooltip", "Low quality images detected by blur, noise, and compression analysis will be assigned to Rejected label."));
@@ -156,7 +131,7 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
 
     // ------------------------------------------------------------------------------
 
-    DHBox* const hlay2        = new DHBox(d->optionsView);
+    DHBox* const hlay2        = new DHBox(this);
 
     d->setPending             = new QCheckBox(i18nc("@option:check", "Assign 'Pending' Label to Medium Quality Pictures"), hlay2);
     d->setPending->setToolTip(i18nc("@info:tooltip", "Medium quality images detected by blur, noise, and compression analysis will be assigned to Pending label."));
@@ -169,7 +144,7 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
 
     // ------------------------------------------------------------------------------
 
-    DHBox* const hlay3        = new DHBox(d->optionsView);
+    DHBox* const hlay3        = new DHBox(this);
 
     d->setAccepted            = new QCheckBox(i18nc("@option:check", "Assign 'Accepted' Label to High Quality Pictures"), hlay3);
     d->setAccepted->setToolTip(i18nc("@info:tooltip", "High quality images detected by blur, noise, and compression analysis will be assigned to Accepted label."));
@@ -182,18 +157,18 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
 
     // ------------------------------------------------------------------------------
 
-    d->detectButtonGroup      = new QButtonGroup(d->optionsView);
+    d->detectButtonGroup      = new QButtonGroup(this);
     d->detectButtonGroup->setExclusive(true);
 
     d->detectAesthetic        = new QRadioButton(i18nc("@option:radio", "Detect Aesthetic Image using Deep Learning"),
-                                                 d->optionsView);
+                                                 this);
     d->detectAesthetic->setToolTip(i18nc("@info:tooltip", "Detect if the image has aesthetic value.\n"
                                          "The aesthetic detection engine use deep learning model to classify images"));
 
     d->detectButtonGroup->addButton(d->detectAesthetic, Private::AESTHETIC);
 
     d->detectBasicFactors     = new QRadioButton(i18nc("@option:radio", "Detect Quality Using Basic Factors"),
-                                                 d->optionsView);
+                                                 this);
     d->detectBasicFactors->setToolTip(i18nc("@info:tooltip", "Detect if the image is sabotaging by four basic factors "
                                             "(blur, noise, exposure, and compression)."));
 
@@ -202,7 +177,7 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
 
     // ------------------------------------------------------------------------------
 
-    QWidget* const basicView  = new QWidget(d->optionsView);
+    QWidget* const basicView  = new QWidget(this);
     QGridLayout* const grid1  = new QGridLayout(basicView);
 
     d->lbl2                   = new QLabel(i18nc("@label", "Rejected threshold:"), basicView);
@@ -287,7 +262,7 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
 
     // ------------------------------------------------------------------------------
 
-    QGridLayout* const glay = new QGridLayout(d->optionsView);
+    QGridLayout* const glay = new QGridLayout(this);
     glay->addWidget(hlay1,                 0, 1, 1, 1);
     glay->addWidget(hlay2,                 1, 1, 1, 1);
     glay->addWidget(hlay3,                 2, 1, 1, 1);
