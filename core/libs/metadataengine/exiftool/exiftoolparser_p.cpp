@@ -70,7 +70,7 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifTo
         case ExifToolProcess::COMMAND_RESULT:
         {
             pp->cmdCompleted(proc->cmdRunning(),
-                             cmdAction,
+                             proc->cmdAction(),
                              proc->elapsedTime(),
                              proc->outputBuffer(),
                              QByteArray());
@@ -86,7 +86,7 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifTo
         case ExifToolProcess::ERROR_RESULT:
         {
             pp->cmdErrorOccurred(proc->cmdRunning(),
-                                 cmdAction,
+                                 proc->cmdAction(),
                                  proc->exifToolError(),
                                  proc->exifToolErrorString());
             break;
