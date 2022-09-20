@@ -41,7 +41,7 @@ class Q_DECL_HIDDEN ImageQualitySorter::Private
 public:
 
     explicit Private()
-      : mode(ImageQualitySorter::NonAssignedItems),
+      : mode  (ImageQualitySorter::NonAssignedItems),
         thread(nullptr)
     {
     }
@@ -113,6 +113,7 @@ void ImageQualitySorter::slotStart()
     }
 
     // Get all item in DB which do not have any Pick Label assigned.
+
     QStringList dirty = CoreDbAccess().db()->getItemsURLsWithTag(TagsCache::instance()->tagForPickLabel(NoPickLabel));
 
     // Get all digiKam albums collection pictures path, depending of d->rebuildAll flag.
@@ -122,7 +123,7 @@ void ImageQualitySorter::slotStart()
     {
         QStringList aPaths;
 
-        if ((*it)->type() == Album::PHYSICAL)
+        if      ((*it)->type() == Album::PHYSICAL)
         {
             aPaths = CoreDbAccess().db()->getItemURLsInAlbum((*it)->id());
         }
@@ -150,6 +151,7 @@ void ImageQualitySorter::slotStart()
     if (d->allPicturesPath.isEmpty())
     {
         slotDone();
+
         return;
     }
 

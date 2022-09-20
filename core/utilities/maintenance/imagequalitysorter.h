@@ -38,17 +38,18 @@ public:
 
     enum QualityScanMode
     {
-        AllItems = 0,        // Clean all Pick Labels assignments and re-scan all items.
-        NonAssignedItems     // Scan only items with no Pick Labels assigned.
+        AllItems = 0,        ///< Clean all Pick Labels assignments and re-scan all items.
+        NonAssignedItems     ///< Scan only items with no Pick Labels assigned.
     };
 
 public:
 
-    /** Constructor using AlbumList as argument. If list is empty, whole Albums collection is processed.
+    /**
+     * Constructor using AlbumList as argument. If list is empty, whole Albums collection is processed.
      */
     explicit ImageQualitySorter(QualityScanMode mode,
                                 const AlbumList& list=AlbumList(),
-                                const ImageQualityContainer& quality=ImageQualityContainer(),
+                                const ImageQualityContainer& quality = ImageQualityContainer(),
                                 ProgressItem* const parent = nullptr);
     ~ImageQualitySorter() override;
 
