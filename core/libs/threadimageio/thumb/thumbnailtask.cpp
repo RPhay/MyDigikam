@@ -115,7 +115,7 @@ void ThumbnailLoadingTask::execute()
                 // has finished.
 
                 usedProcess->addListener(this);
-
+qCDebug(DIGIKAM_GENERAL_LOG) << "Another task" << usedProcess << "load the thumbnail" << m_loadingDescription.filePath;
                 // break loop when either the loading has completed, or this task is being stopped
 
                 // cppcheck-suppress knownConditionTrueFalse
@@ -127,10 +127,11 @@ void ThumbnailLoadingTask::execute()
                 // remove listener from process
 
                 usedProcess->removeListener(this);
-
+qCDebug(DIGIKAM_GENERAL_LOG) << "Another task" << usedProcess << "is ready" << m_loadingDescription.filePath;
                 // wake up the process which is waiting until all listeners have removed themselves
 
                 lock.wakeAll();
+qCDebug(DIGIKAM_GENERAL_LOG) << "Another task" << usedProcess << "has loaded" << m_qimage;
             }
         }
     }
