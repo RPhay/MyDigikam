@@ -59,45 +59,6 @@ private:
     Private* const d;
 };
 
-// ----------------------------------------------------------------------
-
-class DIGIKAM_EXPORT ImageQualityConfSelector : public QWidget
-{
-    Q_OBJECT
-
-public:
-
-    enum SettingsType
-    {
-        DefaultSettings = 0,
-        CustomSettings
-    };
-
-public:
-
-    explicit ImageQualityConfSelector(QWidget* const parent = nullptr);
-    ~ImageQualityConfSelector()                                         override;
-
-    SettingsType          settingsSelected()                      const;
-    void                  setSettingsSelected(SettingsType type);
-
-    ImageQualityContainer customSettings()                        const;
-    void setCustomSettings(const ImageQualityContainer& settings);
-
-Q_SIGNALS:
-
-    void signalQualitySetup();
-
-private Q_SLOTS:
-
-    void slotSelectionChanged();
-
-private:
-
-    class Private;
-    Private* const d;
-};
-
 } // namespace Digikam
 
 #endif // DIGIKAM_IMAGE_QUALITY_SETTINGS_H

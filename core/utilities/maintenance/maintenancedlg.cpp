@@ -43,7 +43,7 @@
 #include "albumselectors.h"
 #include "facescansettings.h"
 #include "imagequalitycontainer.h"
-#include "imagequalitysettings.h"
+#include "imagequalityconfselector.h"
 #include "metadatasynchronizer.h"
 #include "dxmlguiwindow.h"
 #include "applicationsettings.h"

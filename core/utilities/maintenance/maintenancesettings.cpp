@@ -17,7 +17,7 @@
 // Local includes
 
 #include "digikam_globals.h"
-#include "imagequalitysettings.h"
+#include "imagequalityconfselector.h"
 
 namespace Digikam
 {
