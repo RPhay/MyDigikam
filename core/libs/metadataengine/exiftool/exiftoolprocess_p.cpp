@@ -29,6 +29,7 @@ ExifToolProcess::Private::Private(ExifToolProcess* const q)
       processError        (QProcess::UnknownError),
       nextCmdId           (CMD_ID_MIN),
       commandState        (ExifToolProcess::COMMAND_RESULT),
+      cmdRunAction        (ExifToolProcess::NO_ACTION),
       cmdRunResult        (0),
       elapseResult        (0)
 {
@@ -72,11 +73,11 @@ void ExifToolProcess::Private::slotExecNextCmd()
 
     execTimer.start();
 
-    runCommand = cmdQueue.takeFirst();
-    cmdRunning = runCommand.id;
-    cmdAction  = runCommand.ac;
+    Command command = cmdQueue.takeFirst();
+    cmdRunning      = command.id;
+    cmdAction       = command.ac;
 
-    pp->write(runCommand.argsStr);
+    pp->write(command.argsStr);
 }
 
 void ExifToolProcess::Private::readOutput(const QProcess::ProcessChannel channel)
@@ -153,6 +154,7 @@ void ExifToolProcess::Private::readOutput(const QProcess::ProcessChannel channel
         QMutexLocker locker(&mutex);
 
         commandState = ExifToolProcess::COMMAND_RESULT;
+        cmdRunAction = cmdAction;
         cmdRunResult = cmdRunning;
         elapseResult = execTimer.elapsed();
         outputResult = outBuff[QProcess::StandardOutput];
@@ -173,6 +175,7 @@ void ExifToolProcess::Private::setProcessErrorAndEmit(QProcess::ProcessError err
     errorString  = description;
 
     commandState = ExifToolProcess::ERROR_RESULT;
+    cmdRunAction = cmdAction;
     cmdRunResult = cmdRunning;
     elapseResult = execTimer.elapsed();
     outputResult = outBuff[QProcess::StandardOutput];

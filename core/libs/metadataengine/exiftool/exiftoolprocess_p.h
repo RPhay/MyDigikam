@@ -91,7 +91,6 @@ public:
     QElapsedTimer           execTimer;
     QList<Command>          cmdQueue;
     int                     cmdRunning;
-    Command                 runCommand;
     ExifToolProcess::Action cmdAction;
 
     int                     outAwait[2];             ///< [0] StandardOutput | [1] ErrorOutput
@@ -106,6 +105,7 @@ public:
     int                     nextCmdId;               ///< Unique identifier, even in a multi-instances or multi-thread environment
 
     int                     commandState;
+    int                     cmdRunAction;
     int                     cmdRunResult;
     int                     elapseResult;
     QByteArray              outputResult;

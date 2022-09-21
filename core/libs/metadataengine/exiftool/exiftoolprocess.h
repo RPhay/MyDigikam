@@ -170,6 +170,11 @@ public:
     int                    cmdState()            const;
 
     /**
+     * Returns cmdAction from current result.
+     */
+    int                    cmdAction()           const;
+
+    /**
      * Returns cmdRunning from current result.
      */
     int                    cmdRunning()          const;

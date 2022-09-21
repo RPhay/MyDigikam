@@ -227,6 +227,11 @@ int ExifToolProcess::cmdState() const
     return d->commandState;
 }
 
+int ExifToolProcess::cmdAction() const
+{
+    return d->cmdRunAction;
+}
+
 int ExifToolProcess::cmdRunning() const
 {
     return d->cmdRunResult;
@@ -336,6 +341,7 @@ void ExifToolProcess::slotFinished(int exitCode, QProcess::ExitStatus exitStatus
     QMutexLocker locker(&d->mutex);
 
     d->commandState = FINISH_RESULT;
+    d->cmdRunAction = d->cmdAction;
     d->cmdRunResult = d->cmdRunning;
     d->elapseResult = d->execTimer.elapsed();
     d->outputResult = d->outBuff[QProcess::StandardOutput];
