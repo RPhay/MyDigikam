@@ -182,21 +182,21 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
     QGridLayout* const grid1  = new QGridLayout(basicView);
 
     d->lbl2                   = new QLabel(i18nc("@label", "Rejected threshold:"), basicView);
-    d->lbl2->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+    d->lbl2->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     d->setRejectedThreshold   = new DIntNumInput(basicView);
     d->setRejectedThreshold->setDefaultValue(5);
     d->setRejectedThreshold->setRange(1, 100, 1);
     d->setRejectedThreshold->setToolTip(i18nc("@info:tooltip", "Threshold below which all pictures are assigned Rejected Label"));
 
     d->lbl3                   = new QLabel(i18nc("@label", "Pending threshold:"), basicView);
-    d->lbl3->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+    d->lbl3->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     d->setPendingThreshold    = new DIntNumInput(basicView);
     d->setPendingThreshold->setDefaultValue(5);
     d->setPendingThreshold->setRange(1, 100, 1);
     d->setPendingThreshold->setToolTip(i18nc("@info:tooltip", "Threshold below which all pictures are assigned Pending Label"));
 
     d->lbl4                   = new QLabel(i18nc("@label", "Accepted threshold:"), basicView);
-    d->lbl4->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+    d->lbl4->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     d->setAcceptedThreshold   = new DIntNumInput(basicView);
     d->setAcceptedThreshold->setDefaultValue(5);
     d->setAcceptedThreshold->setRange(1, 100, 1);
@@ -206,7 +206,7 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
     d->detectBlur->setToolTip(i18nc("@info:tooltip", "Detect the amount of blur in the images passed to it"));
 
     d->lbl5                   = new QLabel(i18nc("@label", "Blur Weight:"), basicView);
-    d->lbl5->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+    d->lbl5->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     d->setBlurWeight          = new DIntNumInput(basicView);
     d->setBlurWeight->setDefaultValue(5);
     d->setBlurWeight->setRange(1, 100, 1);
@@ -216,7 +216,7 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
     d->detectNoise->setToolTip(i18nc("@info:tooltip", "Detect the amount of noise in the images passed to it"));
 
     d->lbl6                   = new QLabel(i18nc("@label", "Noise Weight:"), basicView);
-    d->lbl6->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+    d->lbl6->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     d->setNoiseWeight         = new DIntNumInput(basicView);
     d->setNoiseWeight->setDefaultValue(5);
     d->setNoiseWeight->setRange(1, 100, 1);
@@ -226,7 +226,7 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
     d->detectCompression->setToolTip(i18nc("@info:tooltip", "Detect the amount of compression in the images passed to it"));
 
     d->lbl7                   = new QLabel(i18nc("@label", "Compression Weight:"), basicView);
-    d->lbl7->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+    d->lbl7->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     d->setCompressionWeight   = new DIntNumInput(basicView);
     d->setCompressionWeight->setDefaultValue(5);
     d->setCompressionWeight->setRange(1, 100, 1);
@@ -242,24 +242,24 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
     grid1->addWidget(d->lbl4,                  2, 0, 1, 2);
     grid1->addWidget(d->setAcceptedThreshold,  2, 2, 1, 1);
 
-    grid1->addWidget(d->detectBlur,            3, 0, 1, 3);
-    grid1->addWidget(d->lbl5,                  4, 1, 1, 1);
-    grid1->addWidget(d->setBlurWeight,         4, 2, 1, 1);
+    grid1->addWidget(d->detectBlur,            3, 0, 1, 1);
+    grid1->addWidget(d->lbl5,                  3, 1, 1, 1);
+    grid1->addWidget(d->setBlurWeight,         3, 2, 1, 1);
 
-    grid1->addWidget(d->detectNoise,           5, 0, 1, 3);
-    grid1->addWidget(d->lbl6,                  6, 1, 1, 1);
-    grid1->addWidget(d->setNoiseWeight,        6, 2, 1, 1);
+    grid1->addWidget(d->detectNoise,           4, 0, 1, 1);
+    grid1->addWidget(d->lbl6,                  4, 1, 1, 1);
+    grid1->addWidget(d->setNoiseWeight,        4, 2, 1, 1);
 
-    grid1->addWidget(d->detectCompression,     7, 0, 1, 3);
-    grid1->addWidget(d->lbl7,                  8, 1, 1, 1);
-    grid1->addWidget(d->setCompressionWeight,  8, 2, 1, 1);
+    grid1->addWidget(d->detectCompression,     5, 0, 1, 1);
+    grid1->addWidget(d->lbl7,                  5, 1, 1, 1);
+    grid1->addWidget(d->setCompressionWeight,  5, 2, 1, 1);
 
-    grid1->addWidget(d->detectExposure,        9, 0, 1, 3);
+    grid1->addWidget(d->detectExposure,        6, 0, 1, 3);
     grid1->setContentsMargins(2 * spacing, spacing, spacing, spacing);
     grid1->setColumnStretch(0, 1);
     grid1->setColumnStretch(1, 1);
     grid1->setColumnStretch(2, 100);
-    grid1->setRowStretch(10, 10);
+    grid1->setRowStretch(7, 10);
 
     // ------------------------------------------------------------------------------
 
