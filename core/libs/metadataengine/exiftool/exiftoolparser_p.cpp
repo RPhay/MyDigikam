@@ -55,7 +55,7 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifTo
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool" << actionString(cmdAction) << cmdArgs.join(QByteArray(" "));
 
-    while (cmdRunning != proc->cmdRunning() && (proc->cmdState() != ExifToolProcess::EXIT_RESULT))
+    while ((proc->cmdRunning() != cmdRunning) && (proc->cmdState() != ExifToolProcess::EXIT_RESULT))
     {
         if (!proc->waitForExifToolResult())
         {
