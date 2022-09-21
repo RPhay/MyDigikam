@@ -608,16 +608,28 @@ int TagsCache::tagForPath(const QString& path) const
     // to lookup all the tag ids with that name, then find the one
     // with a matching full path
 
-    int tagID       = 0;
-    QString tagName = tagHierarchy.last();
+    int tagID                       = 0;
+    QString tagName                 = tagHierarchy.last();
+    const QList<int> possibleTagIds = d->nameHash.values(tagName);
 
-    for (int const id : d->nameHash.values(tagName))
+    for (int const id : possibleTagIds)
     {
         if (d->tagPath(id, NoLeadingSlash) == fullPath)
         {
             tagID = id;
             break;
         }
+    }
+
+    // We only have one entry in tagHierarchy (no path),
+    // if only a tag exists, we can assign it to this.
+    // Otherwise we recreate it in the root.
+
+    if ((tagID == 0)               &&
+        (tagHierarchy.size() == 1) &&
+        (possibleTagIds.size() == 1))
+    {
+        tagID = possibleTagIds.first();
     }
 
     return tagID;
