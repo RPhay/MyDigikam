@@ -94,7 +94,11 @@ void ImageQualityContainer::readFromConfig()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group("Image Quality Settings");
+    readFromConfig(group);
+}
 
+void ImageQualityContainer::readFromConfig(const KConfigGroup& group)
+{
     detectBlur                = group.readEntry("Detect Blur",        true);
     detectNoise               = group.readEntry("Detect Noise",       true);
     detectCompression         = group.readEntry("Detect Compression", true);
@@ -116,7 +120,11 @@ void ImageQualityContainer::writeToConfig()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group("Image Quality Settings");
+    writeToConfig(group);
+}
 
+void ImageQualityContainer::writeToConfig(KConfigGroup& group)
+{
     group.writeEntry("Detect Blur",         detectBlur);
     group.writeEntry("Detect Noise",        detectNoise);
     group.writeEntry("Detect Compression",  detectCompression);

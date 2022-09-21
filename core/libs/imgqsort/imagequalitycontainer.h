@@ -24,6 +24,8 @@
 
 #include "digikam_export.h"
 
+class KConfigGroup;
+
 namespace Digikam
 {
 
@@ -40,7 +42,9 @@ public:
 public:
 
     void readFromConfig();
+    void readFromConfig(const KConfigGroup&);
     void writeToConfig();
+    void writeToConfig(KConfigGroup&);
 
 public:
 

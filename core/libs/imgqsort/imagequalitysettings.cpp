@@ -305,7 +305,6 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
 
 #endif
 
-    readSettings();
     slotDisableOptionViews();
 }
 
@@ -316,31 +315,34 @@ ImageQualitySettings::~ImageQualitySettings()
 
 void ImageQualitySettings::applySettings()
 {
-    ImageQualityContainer imq;
-
-    imq.detectBlur        = d->detectBlur->isChecked();
-    imq.detectNoise       = d->detectNoise->isChecked();
-    imq.detectCompression = d->detectCompression->isChecked();
-    imq.detectExposure    = d->detectExposure->isChecked();
-    imq.detectAesthetic   = d->detectAesthetic->isChecked();
-    imq.lowQRejected      = d->setRejected->isChecked();
-    imq.mediumQPending    = d->setPending->isChecked();
-    imq.highQAccepted     = d->setAccepted->isChecked();
-    imq.rejectedThreshold = d->setRejectedThreshold->value();
-    imq.pendingThreshold  = d->setPendingThreshold->value();
-    imq.acceptedThreshold = d->setAcceptedThreshold->value();
-    imq.blurWeight        = d->setBlurWeight->value();
-    imq.noiseWeight       = d->setNoiseWeight->value();
-    imq.compressionWeight = d->setCompressionWeight->value();
-
+    ImageQualityContainer imq = getImageQualityContainer();
     imq.writeToConfig();
+}
+
+void ImageQualitySettings::applySettings(KConfigGroup& group)
+{
+    ImageQualityContainer imq = getImageQualityContainer();
+    imq.writeToConfig(group);
 }
 
 void ImageQualitySettings::readSettings()
 {
     ImageQualityContainer imq;
     imq.readFromConfig();
+    setImageQualityContainer(imq);
+    slotDisableOptionViews();
+}
 
+void ImageQualitySettings::readSettings(const KConfigGroup& group)
+{
+    ImageQualityContainer imq;
+    imq.readFromConfig(group);
+    setImageQualityContainer(imq);
+    slotDisableOptionViews();
+}
+
+void ImageQualitySettings::setImageQualityContainer(const ImageQualityContainer& imq)
+{
     d->detectBlur->setChecked(imq.detectBlur);
     d->detectNoise->setChecked(imq.detectNoise);
     d->detectCompression->setChecked(imq.detectCompression);
@@ -377,7 +379,20 @@ ImageQualityContainer ImageQualitySettings::getImageQualityContainer() const
 {
     ImageQualityContainer imq;
 
-    imq.readFromConfig();
+    imq.detectBlur        = d->detectBlur->isChecked();
+    imq.detectNoise       = d->detectNoise->isChecked();
+    imq.detectCompression = d->detectCompression->isChecked();
+    imq.detectExposure    = d->detectExposure->isChecked();
+    imq.detectAesthetic   = d->detectAesthetic->isChecked();
+    imq.lowQRejected      = d->setRejected->isChecked();
+    imq.mediumQPending    = d->setPending->isChecked();
+    imq.highQAccepted     = d->setAccepted->isChecked();
+    imq.rejectedThreshold = d->setRejectedThreshold->value();
+    imq.pendingThreshold  = d->setPendingThreshold->value();
+    imq.acceptedThreshold = d->setAcceptedThreshold->value();
+    imq.blurWeight        = d->setBlurWeight->value();
+    imq.noiseWeight       = d->setNoiseWeight->value();
+    imq.compressionWeight = d->setCompressionWeight->value();
 
     return imq;
 }
@@ -409,14 +424,6 @@ void ImageQualitySettings::slotDisableOptionViews()
 
 class Q_DECL_HIDDEN ImageQualityConfSelector::Private
 {
-public:
-
-    enum SettingsType
-    {
-        DEFAULT = 0,
-        CUSTOM
-    };
-
 public:
 
     explicit Private()
@@ -453,39 +460,41 @@ ImageQualityConfSelector::ImageQualityConfSelector(QWidget* const parent)
 
     d->qualitySetup         = new QPushButton(i18n("Settings..."), this);
 
-    d->selButtonGroup->addButton(d->selDefault, Private::DEFAULT);
+    d->selButtonGroup->addButton(d->selDefault, DefaultSettings);
 
     d->selCustom            = new QRadioButton(i18nc("@option:radio", "Use custom settings"), this);
     d->selCustom->setToolTip(i18nc("@info:tooltip", "Use custom parameters to perform quality "
                                    "sorting instead default one."));
 
-    d->selButtonGroup->addButton(d->selCustom, Private::CUSTOM);
+    d->selButtonGroup->addButton(d->selCustom, CustomSettings);
     d->selDefault->setChecked(true);
 
     d->customView           = new ImageQualitySettings(this);
 
     QGridLayout* const glay = new QGridLayout(this);
     glay->addWidget(d->selDefault,         0, 0, 1, 1);
-    glay->addWidget(d->selDefault,         0, 2, 1, 1);
-    glay->addWidget(d->selCustom,          2, 0, 1, 3);
-    glay->addWidget(d->customView,         3, 0, 1, 3);
+    glay->addWidget(d->qualitySetup,       0, 2, 1, 1);
+    glay->addWidget(d->selCustom,          1, 0, 1, 3);
+    glay->addWidget(d->customView,         2, 0, 1, 3);
     glay->setColumnStretch(1, 10);
     glay->setContentsMargins(spacing, spacing, spacing, spacing);
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
 
     connect(d->selButtonGroup, static_cast<void (QButtonGroup::*)(int)>(&QButtonGroup::idClicked),
-            this, &ImageQualityConfSelector::slotDisableCustomView);
+            this, &ImageQualityConfSelector::slotSelectionChanged);
 
 #else
 
     connect(d->selButtonGroup, static_cast<void (QButtonGroup::*)(int)>(&QButtonGroup::buttonClicked),
-            this, &ImageQualityConfSelector::slotDisableCustomView);
+            this, &ImageQualityConfSelector::slotSelectionChanged);
 
 #endif
 
     connect(d->qualitySetup, SIGNAL(clicked()),
             this, SIGNAL(signalQualitySetup()));
+
+    slotSelectionChanged();
 }
 
 ImageQualityConfSelector::~ImageQualityConfSelector()
@@ -493,21 +502,36 @@ ImageQualityConfSelector::~ImageQualityConfSelector()
     delete d;
 }
 
-ImageQualityContainer ImageQualityConfSelector::getImageQualityContainer() const
+ImageQualityConfSelector::SettingsType ImageQualityConfSelector::settingsSelected() const
 {
-    if (d->selDefault->isChecked())
-    {
-        ImageQualityContainer imgq;
-        imgq.readFromConfig();
+    return ((SettingsType)(d->selButtonGroup->checkedId()));
+}
 
-        return imgq;
+void ImageQualityConfSelector::setSettingsSelected(SettingsType type)
+{
+    QAbstractButton* const btn = d->selButtonGroup->button((int)(type));
+
+    if (btn)
+    {
+        btn->setChecked(true);
     }
 
+    slotSelectionChanged();
+}
+
+ImageQualityContainer ImageQualityConfSelector::customSettings() const
+{
     return d->customView->getImageQualityContainer();
 }
 
-void ImageQualityConfSelector::slotDisableCustomView()
+void ImageQualityConfSelector::setCustomSettings(const ImageQualityContainer& settings)
 {
+    d->customView->setImageQualityContainer(settings);
+}
+
+void ImageQualityConfSelector::slotSelectionChanged()
+{
+    d->qualitySetup->setDisabled(d->selCustom->isChecked());
     d->customView->setDisabled(d->selDefault->isChecked());
 }
 

@@ -26,6 +26,8 @@
 #include "digikam_export.h"
 #include "imagequalitycontainer.h"
 
+class KConfigGroup;
+
 namespace Digikam
 {
 
@@ -36,12 +38,16 @@ class DIGIKAM_EXPORT ImageQualitySettings : public QWidget
 public:
 
     explicit ImageQualitySettings(QWidget* const parent = nullptr);
-    ~ImageQualitySettings() override;
+    ~ImageQualitySettings()                                 override;
 
     void applySettings();
+    void applySettings(KConfigGroup&);
+
     void readSettings();
+    void readSettings(const KConfigGroup&);
 
     ImageQualityContainer getImageQualityContainer() const;
+    void setImageQualityContainer(const ImageQualityContainer& imq);
 
 private Q_SLOTS:
 
@@ -61,10 +67,22 @@ class DIGIKAM_EXPORT ImageQualityConfSelector : public QWidget
 
 public:
 
-    explicit ImageQualityConfSelector(QWidget* const parent = nullptr);
-    ~ImageQualityConfSelector() override;
+    enum SettingsType
+    {
+        DefaultSettings = 0,
+        CustomSettings
+    };
 
-    ImageQualityContainer getImageQualityContainer() const;
+public:
+
+    explicit ImageQualityConfSelector(QWidget* const parent = nullptr);
+    ~ImageQualityConfSelector()                                         override;
+
+    SettingsType          settingsSelected()                      const;
+    void                  setSettingsSelected(SettingsType type);
+
+    ImageQualityContainer customSettings()                        const;
+    void setCustomSettings(const ImageQualityContainer& settings);
 
 Q_SIGNALS:
 
@@ -72,7 +90,7 @@ Q_SIGNALS:
 
 private Q_SLOTS:
 
-    void slotDisableCustomView();
+    void slotSelectionChanged();
 
 private:
 
