@@ -37,8 +37,8 @@ bool DMetadata::loadUsingExifTool(const QString& filePath)
     QMimeDatabase mimeDB;
     QFileInfo info(filePath);
 
-    QString mimeName  = mimeDB.mimeTypeForFile(info).name();
-    bool    copyToAll = (mimeName.startsWith(QLatin1String("video/"))     ||
+    QString mimeType  = mimeDB.mimeTypeForFile(info).name();
+    bool    copyToAll = (mimeType.startsWith(QLatin1String("video/"))     ||
                          (info.suffix().toUpper() == QLatin1String("FITS")));
 
     QScopedPointer<ExifToolParser> const parser(new ExifToolParser(nullptr));
