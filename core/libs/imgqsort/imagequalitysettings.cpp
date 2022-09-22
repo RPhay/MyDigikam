@@ -276,6 +276,47 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
     // ------------------------------------------------------------------------------
 
     connect(d->detectBlur, SIGNAL(toggled(bool)),
+            this, SIGNAL(signalSettingsChanged()));
+
+    connect(d->detectNoise, SIGNAL(toggled(bool)),
+            this, SIGNAL(signalSettingsChanged()));
+
+    connect(d->detectCompression, SIGNAL(toggled(bool)),
+            this, SIGNAL(signalSettingsChanged()));
+
+    connect(d->detectExposure, SIGNAL(toggled(bool)),
+            this, SIGNAL(signalSettingsChanged()));
+
+    connect(d->setRejected, SIGNAL(toggled(bool)),
+            this, SIGNAL(signalSettingsChanged()));
+
+    connect(d->setPending, SIGNAL(toggled(bool)),
+            this, SIGNAL(signalSettingsChanged()));
+
+    connect(d->setAccepted, SIGNAL(toggled(bool)),
+            this, SIGNAL(signalSettingsChanged()));
+
+    connect(d->setRejectedThreshold, SIGNAL(valueChanged(int)),
+            this, SIGNAL(signalSettingsChanged()));
+
+    connect(d->setPendingThreshold, SIGNAL(valueChanged(int)),
+            this, SIGNAL(signalSettingsChanged()));
+
+    connect(d->setAcceptedThreshold, SIGNAL(valueChanged(int)),
+            this, SIGNAL(signalSettingsChanged()));
+
+    connect(d->setBlurWeight, SIGNAL(valueChanged(int)),
+            this, SIGNAL(signalSettingsChanged()));
+
+    connect(d->setNoiseWeight, SIGNAL(valueChanged(int)),
+            this, SIGNAL(signalSettingsChanged()));
+
+    connect(d->setCompressionWeight, SIGNAL(valueChanged(int)),
+            this, SIGNAL(signalSettingsChanged()));
+
+    // ------------------------------------------------------------------------------
+
+    connect(d->detectBlur, SIGNAL(toggled(bool)),
             d->lbl5, SLOT(setEnabled(bool)));
 
     connect(d->detectBlur, SIGNAL(toggled(bool)),
@@ -418,6 +459,8 @@ void ImageQualitySettings::slotDisableOptionViews()
     d->setNoiseWeight->setEnabled(b && d->detectNoise->isChecked());
     d->lbl7->setEnabled(b && d->detectCompression->isChecked());
     d->setCompressionWeight->setEnabled(b && d->detectCompression->isChecked());
+
+    Q_EMIT signalSettingsChanged();
 }
 
 } // namespace Digikam

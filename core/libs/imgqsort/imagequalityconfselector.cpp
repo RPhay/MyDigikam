@@ -111,6 +111,9 @@ ImageQualityConfSelector::ImageQualityConfSelector(QWidget* const parent)
     connect(d->qualitySetup, SIGNAL(clicked()),
             this, SIGNAL(signalQualitySetup()));
 
+    connect(d->customView, SIGNAL(signalSettingsChanged()),
+            this, SIGNAL(signalSettingsChanged()));
+
     slotSelectionChanged();
 }
 
@@ -150,6 +153,8 @@ void ImageQualityConfSelector::slotSelectionChanged()
 {
     d->qualitySetup->setDisabled(d->selCustom->isChecked());
     d->customView->setDisabled(d->selDefault->isChecked());
+
+    Q_EMIT signalSettingsChanged();
 }
 
 } // namespace Digikam

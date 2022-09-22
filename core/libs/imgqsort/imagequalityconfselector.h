@@ -55,6 +55,7 @@ public:
 Q_SIGNALS:
 
     void signalQualitySetup();
+    void signalSettingsChanged();
 
 private Q_SLOTS:
 

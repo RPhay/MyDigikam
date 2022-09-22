@@ -49,6 +49,10 @@ public:
     ImageQualityContainer getImageQualityContainer() const;
     void setImageQualityContainer(const ImageQualityContainer& imq);
 
+Q_SIGNALS:
+
+    void signalSettingsChanged();
+
 private Q_SLOTS:
 
     void slotDisableOptionViews();
