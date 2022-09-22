@@ -184,21 +184,21 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
     d->lbl2                   = new QLabel(i18nc("@label", "Rejected threshold:"), basicView);
     d->lbl2->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     d->setRejectedThreshold   = new DIntNumInput(basicView);
-    d->setRejectedThreshold->setDefaultValue(5);
+    d->setRejectedThreshold->setDefaultValue(10);
     d->setRejectedThreshold->setRange(1, 100, 1);
     d->setRejectedThreshold->setToolTip(i18nc("@info:tooltip", "Threshold below which all pictures are assigned Rejected Label"));
 
     d->lbl3                   = new QLabel(i18nc("@label", "Pending threshold:"), basicView);
     d->lbl3->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     d->setPendingThreshold    = new DIntNumInput(basicView);
-    d->setPendingThreshold->setDefaultValue(5);
+    d->setPendingThreshold->setDefaultValue(40);
     d->setPendingThreshold->setRange(1, 100, 1);
     d->setPendingThreshold->setToolTip(i18nc("@info:tooltip", "Threshold below which all pictures are assigned Pending Label"));
 
     d->lbl4                   = new QLabel(i18nc("@label", "Accepted threshold:"), basicView);
     d->lbl4->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     d->setAcceptedThreshold   = new DIntNumInput(basicView);
-    d->setAcceptedThreshold->setDefaultValue(5);
+    d->setAcceptedThreshold->setDefaultValue(60);
     d->setAcceptedThreshold->setRange(1, 100, 1);
     d->setAcceptedThreshold->setToolTip(i18nc("@info:tooltip", "Threshold above which all pictures are assigned Accepted Label"));
 
@@ -208,7 +208,7 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
     d->lbl5                   = new QLabel(i18nc("@label", "Weight:"), basicView);
     d->lbl5->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     d->setBlurWeight          = new DIntNumInput(basicView);
-    d->setBlurWeight->setDefaultValue(5);
+    d->setBlurWeight->setDefaultValue(100);
     d->setBlurWeight->setRange(1, 100, 1);
     d->setBlurWeight->setToolTip(i18nc("@info:tooltip", "Weight to assign to Blur Algorithm"));
 
@@ -218,7 +218,7 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
     d->lbl6                   = new QLabel(i18nc("@label", "Weight:"), basicView);
     d->lbl6->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     d->setNoiseWeight         = new DIntNumInput(basicView);
-    d->setNoiseWeight->setDefaultValue(5);
+    d->setNoiseWeight->setDefaultValue(100);
     d->setNoiseWeight->setRange(1, 100, 1);
     d->setNoiseWeight->setToolTip(i18nc("@info:tooltip", "Weight to assign to Noise Algorithm"));
 
@@ -228,7 +228,7 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
     d->lbl7                   = new QLabel(i18nc("@label", "Weight:"), basicView);
     d->lbl7->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     d->setCompressionWeight   = new DIntNumInput(basicView);
-    d->setCompressionWeight->setDefaultValue(5);
+    d->setCompressionWeight->setDefaultValue(100);
     d->setCompressionWeight->setRange(1, 100, 1);
     d->setCompressionWeight->setToolTip(i18nc("@info:tooltip", "Weight to assign to Compression Algorithm"));
 
@@ -461,6 +461,23 @@ void ImageQualitySettings::slotDisableOptionViews()
     d->setCompressionWeight->setEnabled(b && d->detectCompression->isChecked());
 
     Q_EMIT signalSettingsChanged();
+}
+
+void ImageQualitySettings::resetToDefault()
+{
+    blockSignals(true);
+
+    ImageQualityContainer prm;
+    setImageQualityContainer(prm);
+
+    blockSignals(false);
+}
+
+ImageQualityContainer ImageQualitySettings::defaultSettings() const
+{
+    ImageQualityContainer prm;
+
+    return prm;
 }
 
 } // namespace Digikam

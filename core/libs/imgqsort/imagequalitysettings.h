@@ -49,6 +49,9 @@ public:
     ImageQualityContainer getImageQualityContainer() const;
     void setImageQualityContainer(const ImageQualityContainer& imq);
 
+    ImageQualityContainer defaultSettings()          const;
+    void resetToDefault();
+
 Q_SIGNALS:
 
     void signalSettingsChanged();
