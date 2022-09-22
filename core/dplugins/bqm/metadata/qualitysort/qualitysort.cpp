@@ -222,7 +222,9 @@ bool QualitySort::toolOperations()
     else
     {
         meta->setData(image().getMetadata());
-        dimg = image();
+        QSize scaledSize = image().size();
+        scaledSize.scale(1024, 1024, Qt::KeepAspectRatio);
+        dimg             = image().smoothScale(scaledSize.width(), scaledSize.height());
     }
 
     ImageQualityConfSelector::SettingsType type = (ImageQualityConfSelector::SettingsType)
