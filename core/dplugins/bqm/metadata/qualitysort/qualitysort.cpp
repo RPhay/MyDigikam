@@ -84,10 +84,10 @@ BatchTool* QualitySort::clone(QObject* const parent) const
 
 void QualitySort::registerSettingsWidget()
 {
-    DVBox* const vbox     = new DVBox;
-    d->qualitySelector    = new ImageQualityConfSelector(vbox);
+    DVBox* const vbox  = new DVBox;
+    d->qualitySelector = new ImageQualityConfSelector(vbox);
 
-    m_settingsWidget = vbox;
+    m_settingsWidget   = vbox;
 
     connect(d->qualitySelector, SIGNAL(signalSettingsChanged()),
             this, SLOT(slotSettingsChanged()));
@@ -98,6 +98,7 @@ void QualitySort::registerSettingsWidget()
 BatchToolSettings QualitySort::defaultSettings()
 {
     BatchToolSettings settings;
+
 /*
     settings.insert(QLatin1String("Title"),      false);
     settings.insert(QLatin1String("Caption"),    false);
@@ -111,23 +112,15 @@ BatchToolSettings QualitySort::defaultSettings()
 void QualitySort::slotAssignSettings2Widget()
 {
     d->changeSettings = false;
+
 /*
     d->titleCB->setChecked(settings()[QLatin1String("Title")].toBool());
     d->captionCB->setChecked(settings()[QLatin1String("Caption")].toBool());
     d->copyrightsCB->setChecked(settings()[QLatin1String("Copyrights")].toBool());
     d->usageTermsCB->setChecked(settings()[QLatin1String("UsageTerms")].toBool());
-
-    QStringList langs = settings()[QLatin1String("TrLangs")].toStringList();
-
-    d->trSelectorList->clearLanguages();
-
-    Q_FOREACH (const QString& lg, langs)
-    {
-        d->trSelectorList->addLanguage(lg);
-    }
+*/
 
     d->changeSettings = true;
-*/
 }
 
 void QualitySort::slotSettingsChanged()
@@ -140,9 +133,6 @@ void QualitySort::slotSettingsChanged()
         settings.insert(QLatin1String("Caption"),     d->captionCB->isChecked());
         settings.insert(QLatin1String("Copyrights"),  d->copyrightsCB->isChecked());
         settings.insert(QLatin1String("UsageTerms"),  d->usageTermsCB->isChecked());
-
-        QStringList langs = d->trSelectorList->languagesList();
-        settings.insert(QLatin1String("TrLangs"),     langs);
 */
         BatchTool::slotSettingsChanged(settings);
     }
