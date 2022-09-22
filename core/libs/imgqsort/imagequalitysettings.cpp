@@ -205,7 +205,7 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
     d->detectBlur             = new QCheckBox(i18nc("@option:check", "Detect Blur"), basicView);
     d->detectBlur->setToolTip(i18nc("@info:tooltip", "Detect the amount of blur in the images passed to it"));
 
-    d->lbl5                   = new QLabel(i18nc("@label", "Blur Weight:"), basicView);
+    d->lbl5                   = new QLabel(i18nc("@label", "Weight:"), basicView);
     d->lbl5->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     d->setBlurWeight          = new DIntNumInput(basicView);
     d->setBlurWeight->setDefaultValue(5);
@@ -215,7 +215,7 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
     d->detectNoise            = new QCheckBox(i18nc("@option:check", "Detect Noise"), basicView);
     d->detectNoise->setToolTip(i18nc("@info:tooltip", "Detect the amount of noise in the images passed to it"));
 
-    d->lbl6                   = new QLabel(i18nc("@label", "Noise Weight:"), basicView);
+    d->lbl6                   = new QLabel(i18nc("@label", "Weight:"), basicView);
     d->lbl6->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     d->setNoiseWeight         = new DIntNumInput(basicView);
     d->setNoiseWeight->setDefaultValue(5);
@@ -225,7 +225,7 @@ ImageQualitySettings::ImageQualitySettings(QWidget* const parent)
     d->detectCompression      = new QCheckBox(i18nc("@option:check", "Detect Compression"), basicView);
     d->detectCompression->setToolTip(i18nc("@info:tooltip", "Detect the amount of compression in the images passed to it"));
 
-    d->lbl7                   = new QLabel(i18nc("@label", "Compression Weight:"), basicView);
+    d->lbl7                   = new QLabel(i18nc("@label", "Weight:"), basicView);
     d->lbl7->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     d->setCompressionWeight   = new DIntNumInput(basicView);
     d->setCompressionWeight->setDefaultValue(5);
