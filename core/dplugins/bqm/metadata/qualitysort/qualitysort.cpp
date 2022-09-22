@@ -124,12 +124,27 @@ void QualitySort::slotAssignSettings2Widget()
 {
     d->changeSettings = false;
 
-/*
-    d->titleCB->setChecked(settings()[QLatin1String("Title")].toBool());
-    d->captionCB->setChecked(settings()[QLatin1String("Caption")].toBool());
-    d->copyrightsCB->setChecked(settings()[QLatin1String("Copyrights")].toBool());
-    d->usageTermsCB->setChecked(settings()[QLatin1String("UsageTerms")].toBool());
-*/
+    ImageQualityContainer prm;
+
+    d->qualitySelector->setSettingsSelected(settings()[QLatin1String("SettingsSelected")].toInt());
+
+    prm.detectBlur          = settings()[QLatin1String("CustomSettingsDetectBlur")].toBool());
+    prm.detectNoise         = settings()[QLatin1String("CustomSettingsDetectNoise")].toBool());
+    prm.detectCompression   = settings()[QLatin1String("CustomSettingsDetectCompression")].toBool());
+    prm.detectExposure      = settings()[QLatin1String("CustomSettingsDetectExposure")].toBool());
+    prm.detectAesthetic     = settings()[QLatin1String("CustomSettingsDetectAesthetic")].toBool());
+    prm.lowQRejected        = settings()[QLatin1String("CustomSettingsLowQRejected")].toBool());
+    prm.mediumQPending      = settings()[QLatin1String("CustomSettingsMediumQPending")].toBool());
+    prm.highQAccepted       = settings()[QLatin1String("CustomSettingsHighQAccepted")].toBool());
+    prm.rejectedThreshold   = settings()[QLatin1String("CustomSettingsRejectedThreshold")].toInt());
+    prm.pendingThreshold    = settings()[QLatin1String("CustomSettingsPendingThreshold")].toInt());
+    prm.acceptedThreshold   = settings()[QLatin1String("CustomSettingsAcceptedThreshold")].toInt());
+    prm.blurWeight          = settings()[QLatin1String("CustomSettingsBlurWeight")].toInt());
+    prm.noiseWeight         = settings()[QLatin1String("CustomSettingsNoiseWeight")].toInt());
+    prm.compressionWeight   = settings()[QLatin1String("CustomSettingsCompressionWeight")].toInt());
+    prm.exposureWeight      = settings()[QLatin1String("CustomSettingsExposureWeight")].toInt());
+
+    d->qualitySelector->setCustomSettings(prm);
 
     d->changeSettings = true;
 }
