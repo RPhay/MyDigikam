@@ -77,7 +77,7 @@ ImageQualityConfSelector::ImageQualityConfSelector(QWidget* const parent)
 
     d->qualitySetup         = new QPushButton(i18n("Settings..."), this);
 
-    d->selButtonGroup->addButton(d->selDefault, DefaultSettings);
+    d->selButtonGroup->addButton(d->selDefault, GlobalSettings);
 
     d->selCustom            = new QRadioButton(i18nc("@option:radio", "Use custom settings"), this);
     d->selCustom->setToolTip(i18nc("@info:tooltip", "Use custom parameters to perform quality "

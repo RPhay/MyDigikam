@@ -38,7 +38,7 @@ MaintenanceSettings::MaintenanceSettings()
       faceManagement         (false),
       qualitySort            (false),
       qualityScanMode        (true),   // NOTE: turn on by default to prevent clearing whole Pick Labels from Collection
-      qualitySettingsSelected(ImageQualityConfSelector::DefaultSettings),
+      qualitySettingsSelected(ImageQualityConfSelector::GlobalSettings),
       metadataSync           (false),
       syncDirection          (MetadataSynchronizer::WriteFromDatabaseToFile),
       databaseCleanup        (false),

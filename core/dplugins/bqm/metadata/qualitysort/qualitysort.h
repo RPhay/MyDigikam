@@ -43,6 +43,7 @@ private Q_SLOTS:
 
     void slotAssignSettings2Widget()                        override;
     void slotSettingsChanged()                              override;
+    void slotQualitySetup();
 
 private:
 

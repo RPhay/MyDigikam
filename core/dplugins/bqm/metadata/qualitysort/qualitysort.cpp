@@ -16,6 +16,7 @@
 
 // Qt includes
 
+#include <QApplication>
 #include <QGridLayout>
 #include <QCheckBox>
 #include <QComboBox>
@@ -32,10 +33,16 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "dimg.h"
+#include "dinfointerface.h"
+#include "dmetadata.h"
+#include "dpluginbqm.h"
 #include "imagequalityconfselector.h"
 #include "imagequalitycontainer.h"
+#include "imagequalityparser.h"
 #include "dlayoutbox.h"
+#include "previewloadthread.h"
 
 namespace DigikamBqmQualitySortPlugin
 {
@@ -92,7 +99,26 @@ void QualitySort::registerSettingsWidget()
     connect(d->qualitySelector, SIGNAL(signalSettingsChanged()),
             this, SLOT(slotSettingsChanged()));
 
+    connect(d->qualitySelector, SIGNAL(signalQualitySetup()),
+            this, SLOT(slotQualitySetup()));
+
     BatchTool::registerSettingsWidget();
+}
+
+void QualitySort::slotQualitySetup()
+{
+    DInfoInterface* const iface = plugin()->infoIface();
+
+    if (iface)
+    {
+        if (d->qualitySelector)
+        {
+            connect(iface, SIGNAL(signalSetupChanged()),
+                    this, SLOT(slotSettingsChanged()));
+        }
+
+        iface->openSetupPage(DInfoInterface::ImageQualityPage);
+    }
 }
 
 BatchToolSettings QualitySort::defaultSettings()
@@ -100,7 +126,7 @@ BatchToolSettings QualitySort::defaultSettings()
     BatchToolSettings settings;
     ImageQualityContainer prm;
 
-    settings.insert(QLatin1String("SettingsSelected"),                  ImageQualityConfSelector::DefaultSettings);
+    settings.insert(QLatin1String("SettingsSelected"),                  ImageQualityConfSelector::GlobalSettings);
     settings.insert(QLatin1String("CustomSettingsDetectBlur"),          prm.detectBlur);
     settings.insert(QLatin1String("CustomSettingsDetectNoise"),         prm.detectNoise);
     settings.insert(QLatin1String("CustomSettingsDetectCompression"),   prm.detectCompression);
@@ -126,23 +152,24 @@ void QualitySort::slotAssignSettings2Widget()
 
     ImageQualityContainer prm;
 
-    d->qualitySelector->setSettingsSelected(settings()[QLatin1String("SettingsSelected")].toInt());
+    d->qualitySelector->setSettingsSelected((ImageQualityConfSelector::SettingsType)
+                                            settings()[QLatin1String("SettingsSelected")].toInt());
 
-    prm.detectBlur          = settings()[QLatin1String("CustomSettingsDetectBlur")].toBool());
-    prm.detectNoise         = settings()[QLatin1String("CustomSettingsDetectNoise")].toBool());
-    prm.detectCompression   = settings()[QLatin1String("CustomSettingsDetectCompression")].toBool());
-    prm.detectExposure      = settings()[QLatin1String("CustomSettingsDetectExposure")].toBool());
-    prm.detectAesthetic     = settings()[QLatin1String("CustomSettingsDetectAesthetic")].toBool());
-    prm.lowQRejected        = settings()[QLatin1String("CustomSettingsLowQRejected")].toBool());
-    prm.mediumQPending      = settings()[QLatin1String("CustomSettingsMediumQPending")].toBool());
-    prm.highQAccepted       = settings()[QLatin1String("CustomSettingsHighQAccepted")].toBool());
-    prm.rejectedThreshold   = settings()[QLatin1String("CustomSettingsRejectedThreshold")].toInt());
-    prm.pendingThreshold    = settings()[QLatin1String("CustomSettingsPendingThreshold")].toInt());
-    prm.acceptedThreshold   = settings()[QLatin1String("CustomSettingsAcceptedThreshold")].toInt());
-    prm.blurWeight          = settings()[QLatin1String("CustomSettingsBlurWeight")].toInt());
-    prm.noiseWeight         = settings()[QLatin1String("CustomSettingsNoiseWeight")].toInt());
-    prm.compressionWeight   = settings()[QLatin1String("CustomSettingsCompressionWeight")].toInt());
-    prm.exposureWeight      = settings()[QLatin1String("CustomSettingsExposureWeight")].toInt());
+    prm.detectBlur          = settings()[QLatin1String("CustomSettingsDetectBlur")].toBool();
+    prm.detectNoise         = settings()[QLatin1String("CustomSettingsDetectNoise")].toBool();
+    prm.detectCompression   = settings()[QLatin1String("CustomSettingsDetectCompression")].toBool();
+    prm.detectExposure      = settings()[QLatin1String("CustomSettingsDetectExposure")].toBool();
+    prm.detectAesthetic     = settings()[QLatin1String("CustomSettingsDetectAesthetic")].toBool();
+    prm.lowQRejected        = settings()[QLatin1String("CustomSettingsLowQRejected")].toBool();
+    prm.mediumQPending      = settings()[QLatin1String("CustomSettingsMediumQPending")].toBool();
+    prm.highQAccepted       = settings()[QLatin1String("CustomSettingsHighQAccepted")].toBool();
+    prm.rejectedThreshold   = settings()[QLatin1String("CustomSettingsRejectedThreshold")].toInt();
+    prm.pendingThreshold    = settings()[QLatin1String("CustomSettingsPendingThreshold")].toInt();
+    prm.acceptedThreshold   = settings()[QLatin1String("CustomSettingsAcceptedThreshold")].toInt();
+    prm.blurWeight          = settings()[QLatin1String("CustomSettingsBlurWeight")].toInt();
+    prm.noiseWeight         = settings()[QLatin1String("CustomSettingsNoiseWeight")].toInt();
+    prm.compressionWeight   = settings()[QLatin1String("CustomSettingsCompressionWeight")].toInt();
+    prm.exposureWeight      = settings()[QLatin1String("CustomSettingsExposureWeight")].toInt();
 
     d->qualitySelector->setCustomSettings(prm);
 
@@ -179,10 +206,9 @@ void QualitySort::slotSettingsChanged()
 
 bool QualitySort::toolOperations()
 {
-
     bool ret = true;
-/*
     QScopedPointer<DMetadata> meta(new DMetadata);
+    DImg dimg;
 
     if (image().isNull())
     {
@@ -190,72 +216,68 @@ bool QualitySort::toolOperations()
         {
             return false;
         }
+
+        dimg = PreviewLoadThread::loadFastSynchronously(inputUrl().toLocalFile(), 1024);
     }
     else
     {
         meta->setData(image().getMetadata());
+        dimg = image();
     }
 
-    bool titleStage      = settings()[QLatin1String("Title")].toBool();
-    bool captionStage    = settings()[QLatin1String("Caption")].toBool();
-    bool copyrightsStage = settings()[QLatin1String("Copyrights")].toBool();
-    bool usageTermsStage = settings()[QLatin1String("UsageTerms")].toBool();
-    QStringList langs    = settings()[QLatin1String("TrLangs")].toStringList();
+    ImageQualityConfSelector::SettingsType type = (ImageQualityConfSelector::SettingsType)
+                                                  settings()[QLatin1String("SettingsSelected")].toInt();
+    ImageQualityContainer prm;
 
-    Q_FOREACH (const QString& trLang, langs)
+    if (type == ImageQualityConfSelector::GlobalSettings)
     {
-        if (titleStage)
+        prm.readFromConfig();
+    }
+    else
+    {
+        prm.detectBlur          = settings()[QLatin1String("CustomSettingsDetectBlur")].toBool();
+        prm.detectNoise         = settings()[QLatin1String("CustomSettingsDetectNoise")].toBool();
+        prm.detectCompression   = settings()[QLatin1String("CustomSettingsDetectCompression")].toBool();
+        prm.detectExposure      = settings()[QLatin1String("CustomSettingsDetectExposure")].toBool();
+        prm.detectAesthetic     = settings()[QLatin1String("CustomSettingsDetectAesthetic")].toBool();
+        prm.lowQRejected        = settings()[QLatin1String("CustomSettingsLowQRejected")].toBool();
+        prm.mediumQPending      = settings()[QLatin1String("CustomSettingsMediumQPending")].toBool();
+        prm.highQAccepted       = settings()[QLatin1String("CustomSettingsHighQAccepted")].toBool();
+        prm.rejectedThreshold   = settings()[QLatin1String("CustomSettingsRejectedThreshold")].toInt();
+        prm.pendingThreshold    = settings()[QLatin1String("CustomSettingsPendingThreshold")].toInt();
+        prm.acceptedThreshold   = settings()[QLatin1String("CustomSettingsAcceptedThreshold")].toInt();
+        prm.blurWeight          = settings()[QLatin1String("CustomSettingsBlurWeight")].toInt();
+        prm.noiseWeight         = settings()[QLatin1String("CustomSettingsNoiseWeight")].toInt();
+        prm.compressionWeight   = settings()[QLatin1String("CustomSettingsCompressionWeight")].toInt();
+        prm.exposureWeight      = settings()[QLatin1String("CustomSettingsExposureWeight")].toInt();
+    }
+
+    PickLabel pick;
+    ImageQualityParser* const imgqsort = new ImageQualityParser(dimg, prm, &pick);
+    imgqsort->startAnalyse();
+
+    meta->setItemPickLabel(pick);
+
+    if (image().isNull())
+    {
+        QFile::remove(outputUrl().toLocalFile());
+        ret &= QFile::copy(inputUrl().toLocalFile(), outputUrl().toLocalFile());
+
+        if (ret)
         {
-            qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "QualitySort Title";
-            ret &= insertTranslation(Private::Title, trLang, meta.data());
-        }
-
-        if (captionStage)
-        {
-            qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "QualitySort Caption";
-            ret &= insertTranslation(Private::Caption, trLang, meta.data());
-        }
-
-        if (copyrightsStage)
-        {
-            qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "QualitySort Copyrights";
-            ret &= insertTranslation(Private::Copyrights, trLang, meta.data());
-        }
-
-        if (usageTermsStage)
-        {
-            qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "QualitySort Usage Terms";
-            ret &= insertTranslation(Private::UsageTerms, trLang, meta.data());
-        }
-
-        qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Title     :" << meta->getXmpTagStringListLangAlt("Xmp.dc.title", false);
-        qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Caption   :" << meta->getXmpTagStringListLangAlt("Xmp.dc.description", false);
-        qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "CopyRights:" << meta->getXmpTagStringListLangAlt("Xmp.dc.rights", false);
-        qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "UsageTerms:" << meta->getXmpTagStringListLangAlt("Xmp.xmpRights.UsageTerms", false);
-
-        if (image().isNull())
-        {
-            QFile::remove(outputUrl().toLocalFile());
-            ret &= QFile::copy(inputUrl().toLocalFile(), outputUrl().toLocalFile());
-
-            if (ret && (titleStage || captionStage || copyrightsStage || usageTermsStage))
-            {
-                ret &= meta->save(outputUrl().toLocalFile());
-                qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Save metadata to file:" << ret;
-            }
-        }
-        else
-        {
-            if (titleStage || captionStage || copyrightsStage || usageTermsStage)
-            {
-                qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Save metadata to image";
-                image().setMetadata(meta->data());
-            }
-
-            ret &= savefromDImg();
+            ret &= meta->save(outputUrl().toLocalFile());
+            qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Save metadata to file:" << ret;
         }
     }
-*/
+    else
+    {
+        qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Save metadata to image";
+        image().setMetadata(meta->data());
+        ret &= savefromDImg();
+    }
+
+    delete imgqsort;
+
     return ret;
 }
 

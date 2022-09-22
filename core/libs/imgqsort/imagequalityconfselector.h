@@ -37,8 +37,8 @@ public:
 
     enum SettingsType
     {
-        DefaultSettings = 0,
-        CustomSettings
+        GlobalSettings = 0,     ///< Global settings avaialble in setup dialog.
+        CustomSettings          ///< Sttings cusomized by end-user.
     };
 
 public:

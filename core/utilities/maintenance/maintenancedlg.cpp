@@ -462,7 +462,7 @@ MaintenanceSettings MaintenanceDlg::settings() const
     prm.qualityScanMode                     = d->qualityScanMode->itemData(d->qualityScanMode->currentIndex()).toInt();
     prm.qualitySettingsSelected             = (int)d->qualitySelector->settingsSelected();
 
-    if (prm.qualitySettingsSelected == ImageQualityConfSelector::DefaultSettings)
+    if (prm.qualitySettingsSelected == ImageQualityConfSelector::GlobalSettings)
     {
         ImageQualityContainer imgq;
         imgq.readFromConfig();

@@ -472,6 +472,32 @@ bool Setup::execLocalize(QWidget* const parent)
     return success;
 }
 
+bool Setup::execImageQualitySorter(QWidget* const parent)
+{
+    QPointer<Setup> setup        = new Setup(parent);
+    setup->showPage(ImageQualityPage);
+    setup->setFaceType(Plain);
+
+    DConfigDlgWdgItem* const cur = setup->currentPage();
+
+    if (!cur)
+    {
+        return false;
+    }
+
+    SetupImageQualitySorter* const widget  = dynamic_cast<SetupImageQualitySorter*>(cur->widget());
+
+    if (!widget)
+    {
+        return false;
+    }
+
+    bool success                 = (setup->DConfigDlg::exec() == QDialog::Accepted);
+    delete setup;
+
+    return success;
+}
+
 void Setup::slotOkClicked()
 {
     if (!d->cameraPage->checkSettings())
