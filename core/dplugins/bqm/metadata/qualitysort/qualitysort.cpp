@@ -98,14 +98,25 @@ void QualitySort::registerSettingsWidget()
 BatchToolSettings QualitySort::defaultSettings()
 {
     BatchToolSettings settings;
+    ImageQualityContainer prm;
 
-/*
-    settings.insert(QLatin1String("Title"),      false);
-    settings.insert(QLatin1String("Caption"),    false);
-    settings.insert(QLatin1String("Copyrights"), false);
-    settings.insert(QLatin1String("UsageTerms"), false);
-    settings.insert(QLatin1String("TrLangs"),    QStringList() << QLatin1String("en-US"));
-*/
+    settings.insert(QLatin1String("SettingsSelected"),                  ImageQualityConfSelector::DefaultSettings);
+    settings.insert(QLatin1String("CustomSettingsDetectBlur"),          prm.detectBlur);
+    settings.insert(QLatin1String("CustomSettingsDetectNoise"),         prm.detectNoise);
+    settings.insert(QLatin1String("CustomSettingsDetectCompression"),   prm.detectCompression);
+    settings.insert(QLatin1String("CustomSettingsDetectExposure"),      prm.detectExposure);
+    settings.insert(QLatin1String("CustomSettingsDetectAesthetic"),     prm.detectAesthetic);
+    settings.insert(QLatin1String("CustomSettingsLowQRejected"),        prm.lowQRejected);
+    settings.insert(QLatin1String("CustomSettingsMediumQPending"),      prm.mediumQPending);
+    settings.insert(QLatin1String("CustomSettingsHighQAccepted"),       prm.highQAccepted);
+    settings.insert(QLatin1String("CustomSettingsRejectedThreshold"),   prm.rejectedThreshold);
+    settings.insert(QLatin1String("CustomSettingsPendingThreshold"),    prm.pendingThreshold);
+    settings.insert(QLatin1String("CustomSettingsAcceptedThreshold"),   prm.acceptedThreshold);
+    settings.insert(QLatin1String("CustomSettingsBlurWeight"),          prm.blurWeight);
+    settings.insert(QLatin1String("CustomSettingsNoiseWeight"),         prm.noiseWeight);
+    settings.insert(QLatin1String("CustomSettingsCompressionWeight"),   prm.compressionWeight);
+    settings.insert(QLatin1String("CustomSettingsExposureWeight"),      prm.exposureWeight);
+
     return settings;
 }
 
@@ -128,12 +139,25 @@ void QualitySort::slotSettingsChanged()
     if (d->changeSettings)
     {
         BatchToolSettings settings;
-/*
-        settings.insert(QLatin1String("Title"),       d->titleCB->isChecked());
-        settings.insert(QLatin1String("Caption"),     d->captionCB->isChecked());
-        settings.insert(QLatin1String("Copyrights"),  d->copyrightsCB->isChecked());
-        settings.insert(QLatin1String("UsageTerms"),  d->usageTermsCB->isChecked());
-*/
+        ImageQualityContainer prm = d->qualitySelector->customSettings();
+
+        settings.insert(QLatin1String("SettingsSelected"),                  d->qualitySelector->settingsSelected());
+        settings.insert(QLatin1String("CustomSettingsDetectBlur"),          prm.detectBlur);
+        settings.insert(QLatin1String("CustomSettingsDetectNoise"),         prm.detectNoise);
+        settings.insert(QLatin1String("CustomSettingsDetectCompression"),   prm.detectCompression);
+        settings.insert(QLatin1String("CustomSettingsDetectExposure"),      prm.detectExposure);
+        settings.insert(QLatin1String("CustomSettingsDetectAesthetic"),     prm.detectAesthetic);
+        settings.insert(QLatin1String("CustomSettingsLowQRejected"),        prm.lowQRejected);
+        settings.insert(QLatin1String("CustomSettingsMediumQPending"),      prm.mediumQPending);
+        settings.insert(QLatin1String("CustomSettingsHighQAccepted"),       prm.highQAccepted);
+        settings.insert(QLatin1String("CustomSettingsRejectedThreshold"),   prm.rejectedThreshold);
+        settings.insert(QLatin1String("CustomSettingsPendingThreshold"),    prm.pendingThreshold);
+        settings.insert(QLatin1String("CustomSettingsAcceptedThreshold"),   prm.acceptedThreshold);
+        settings.insert(QLatin1String("CustomSettingsBlurWeight"),          prm.blurWeight);
+        settings.insert(QLatin1String("CustomSettingsNoiseWeight"),         prm.noiseWeight);
+        settings.insert(QLatin1String("CustomSettingsCompressionWeight"),   prm.compressionWeight);
+        settings.insert(QLatin1String("CustomSettingsExposureWeight"),      prm.exposureWeight);
+
         BatchTool::slotSettingsChanged(settings);
     }
 }
