@@ -52,13 +52,14 @@ SetupImageQualitySorter::SetupImageQualitySorter(QWidget* const parent)
     DVBox* const vbox = new DVBox(viewport());
 
     QLabel* const explanation = new QLabel(i18nc("@label", "These settings determines the quality of an image and convert it into a score, "
-                                                 "stored in database. This property can be evaluated by two ways: using four basic factors "
-                                                 "sabotaging the images (blur, noise, exposure, and compression), or using a deep learning "
-                                                 "neural network engine. The first one helps to determine whether images are distorted "
-                                                 "by the basic factors, however it demands some drawbacks as fine-tuning from the user’s "
-                                                 "side and it cannot work along the aesthetic image processing. The second one uses an IA "
-                                                 "approach based on %1 model to predict the score. As deep learning is an end-to-end "
-                                                 "solution, it doesn’t require hyper-parameter settings, and make this feature easier to use.",
+                                                 "stored in database as Pick Label property. This information can be evaluated by two ways: "
+                                                 "using four basic factors sabotaging the images (blur, noise, exposure, and compression), "
+                                                 "or using a deep learning neural network engine. The first one helps to determine whether "
+                                                 "images are distorted by the basic factors, however it demands some drawbacks as fine-tuning "
+                                                 "from the user’s side and it cannot work along the aesthetic image processing. "
+                                                 "The second one uses an IA approach based on %1 model to predict the score. "
+                                                 "As deep learning is an end-to-end solution, it doesn’t require hyper-parameter settings, "
+                                                 "and make this feature easier to use.",
                                            QString::fromUtf8("<a href='https://expertphotography.com/aesthetic-photography/'>%1</a>")
                                                  .arg(i18nc("@label", "aesthetic image quality"))), vbox);
     explanation->setOpenExternalLinks(true);
