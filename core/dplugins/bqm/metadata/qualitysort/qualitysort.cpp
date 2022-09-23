@@ -49,26 +49,17 @@ namespace DigikamBqmQualitySortPlugin
 
 class Q_DECL_HIDDEN QualitySort::Private
 {
-
-public:
-
-    enum Entries
-    {
-        Title       = 0x01,
-        Caption     = 0x02,
-        Copyrights  = 0x04,
-        UsageTerms  = 0x08
-    };
-
 public:
 
     explicit Private()
       : qualitySelector(nullptr),
+        imgqsort       (nullptr),
         changeSettings (true)
     {
     }
 
     ImageQualityConfSelector* qualitySelector;
+    ImageQualityParser*       imgqsort;
 
     bool                      changeSettings;
 };
@@ -255,10 +246,13 @@ bool QualitySort::toolOperations()
     }
 
     PickLabel pick;
-    ImageQualityParser* const imgqsort = new ImageQualityParser(dimg, prm, &pick);
-    imgqsort->startAnalyse();
+    d->imgqsort = new ImageQualityParser(dimg, prm, &pick);
+    d->imgqsort->startAnalyse();
 
     meta->setItemPickLabel(pick);
+
+    delete d->imgqsort;
+    d->imgqsort = nullptr;
 
     if (image().isNull())
     {
@@ -278,9 +272,17 @@ bool QualitySort::toolOperations()
         ret &= savefromDImg();
     }
 
-    delete imgqsort;
-
     return ret;
+}
+
+void QualitySort::cancel()
+{
+    if (d->imgqsort)
+    {
+        d->imgqsort->cancelAnalyse();
+    }
+
+    BatchTool::cancel();
 }
 
 } // namespace DigikamBqmQualitySortPlugin

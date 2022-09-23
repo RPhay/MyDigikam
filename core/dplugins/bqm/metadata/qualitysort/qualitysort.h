@@ -48,7 +48,7 @@ private Q_SLOTS:
 private:
 
     bool toolOperations()                                   override;
-
+    void cancel()                                           override;
 private:
 
     class Private;
