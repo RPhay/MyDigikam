@@ -148,6 +148,7 @@ void Task::run()
     bool timeAdjust = false;
     bool rmMetadata = false;
     bool translate  = false;
+    bool imgqsort   = false;
 
     Q_FOREACH (const BatchToolSet& set, d->tools.m_toolsList)
     {
@@ -157,7 +158,9 @@ void Task::run()
         {
             emitActionData(ActionData::BatchFailed, i18n("Failed to find tool..."));
             removeTempFiles(tmp2del);
+
             Q_EMIT signalDone();
+
             return;
         }
 
@@ -171,6 +174,7 @@ void Task::run()
         timeAdjust |= (set.name == QLatin1String("TimeAdjust"));
         rmMetadata |= (set.name == QLatin1String("RemoveMetadata"));
         translate  |= (set.name == QLatin1String("Translate"));
+        imgqsort   |= (set.name == QLatin1String("QualitySort"));
 
         inUrl       = outUrl;
         index       = set.index + 1;
@@ -223,7 +227,9 @@ void Task::run()
         {
             emitActionData(ActionData::BatchCanceled);
             removeTempFiles(tmp2del);
+
             Q_EMIT signalDone();
+
             return;
         }
         else if (!success)
@@ -295,7 +301,7 @@ void Task::run()
                                              timeAdjust))
         {
             emitActionData(ActionData::BatchDone, i18n("Item processed successfully %1", renameMess),
-                           dest, (rmMetadata | timeAdjust | translate));
+                           dest, (rmMetadata | timeAdjust | translate | imgqsort));
         }
         else
         {
