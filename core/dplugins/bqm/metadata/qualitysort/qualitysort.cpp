@@ -250,6 +250,7 @@ bool QualitySort::toolOperations()
     d->imgqsort->startAnalyse();
 
     meta->setItemPickLabel(pick);
+    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Assign Picklabel:" << pick;;
 
     delete d->imgqsort;
     d->imgqsort = nullptr;
