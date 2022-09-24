@@ -20,6 +20,7 @@
 #include <QWidget>
 #include <QLabel>
 #include <QStyle>
+#include <QLayout>
 
 // KDE includes
 
