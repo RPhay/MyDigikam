@@ -259,7 +259,7 @@ void PickLabelWidget::setPickLabels(const QList<PickLabel>& list)
     }
 }
 
-QList<PickLabel> PickLabelWidget::colorLabels() const
+QList<PickLabel> PickLabelWidget::pickLabels() const
 {
     QList<PickLabel> list;
 
@@ -277,19 +277,27 @@ QIcon PickLabelWidget::buildIcon(PickLabel label)
     switch (label)
     {
         case RejectedLabel:
+        {
             return QIcon::fromTheme(QLatin1String("flag-red"));
             break;
+        }
 
         case PendingLabel:
+        {
             return QIcon::fromTheme(QLatin1String("flag-yellow"));
             break;
+        }
 
         case AcceptedLabel:
+        {
             return QIcon::fromTheme(QLatin1String("flag-green"));
             break;
+        }
 
         default:
+        {
             break;
+        }
     }
 
     // default : NoPickLabel
@@ -304,20 +312,28 @@ QString PickLabelWidget::labelPickName(PickLabel label)
     switch (label)
     {
         case RejectedLabel:
+        {
             name = i18nc("@info: pick label name", "Rejected");
             break;
+        }
 
         case PendingLabel:
+        {
             name = i18nc("@info: pick label name", "Pending");
             break;
+        }
 
         case AcceptedLabel:
+        {
             name = i18nc("@info: pick label name", "Accepted");
             break;
+        }
 
         default:   // NoPickLabel
+        {
             name = i18nc("@info: pick label name", "None");
             break;
+        }
     }
 
     return name;
@@ -371,9 +387,9 @@ void PickLabelSelector::setPickLabel(PickLabel label)
     slotPickLabelChanged(label);
 }
 
-PickLabel PickLabelSelector::colorLabel()
+PickLabel PickLabelSelector::pickLabel()
 {
-    QList<PickLabel> list = d->plw->colorLabels();
+    QList<PickLabel> list = d->plw->pickLabels();
 
     if (!list.isEmpty())
     {
