@@ -694,66 +694,9 @@ void ImageWindow::prepareImageToSave()
 {
     if (!d->currentItemInfo.isNull())
     {
-        MetadataHub hub;
-        hub.load(d->currentItemInfo);
-
-        // Get face tags
-
-        d->newFaceTags.clear();
-        QMultiMap<QString, QVariant> faceTags = hub.getFaceTags();
-
-        if (!faceTags.isEmpty())
-        {
-            QMultiMap<QString, QVariant>::const_iterator it;
-
-            QSize size      = d->currentItemInfo.dimensions();
-            int orientation = d->currentItemInfo.orientation();
-
-            for (it = faceTags.constBegin() ; it != faceTags.constEnd() ; ++it)
-            {
-                // Start transform each face rect
-
-                QRect faceRect = TagRegion::relativeToAbsolute(it.value().toRectF(), size);
-                QSize tempSize = TagRegion::adjustToOrientation(faceRect, orientation, size);
-
-                qCDebug(DIGIKAM_GENERAL_LOG) << ">>>>>>>>>face rect before:"
-                                             << faceRect.x()     << faceRect.y()
-                                             << faceRect.width() << faceRect.height();
-
-                for (int i = 0 ; i < m_transformQue.size() ; ++i)
-                {
-                    EditorWindow::TransformType type = m_transformQue[i];
-
-                    switch (type)
-                    {
-                        case EditorWindow::TransformType::RotateLeft:
-                            tempSize = TagRegion::adjustToOrientation(faceRect, MetaEngine::ORIENTATION_ROT_270, tempSize);
-                            break;
-
-                        case EditorWindow::TransformType::RotateRight:
-                            tempSize = TagRegion::adjustToOrientation(faceRect, MetaEngine::ORIENTATION_ROT_90,  tempSize);
-                            break;
-
-                        case EditorWindow::TransformType::FlipHorizontal:
-                            tempSize = TagRegion::adjustToOrientation(faceRect, MetaEngine::ORIENTATION_HFLIP,   tempSize);
-                            break;
-
-                        case EditorWindow::TransformType::FlipVertical:
-                            tempSize = TagRegion::adjustToOrientation(faceRect, MetaEngine::ORIENTATION_VFLIP,   tempSize);
-                            break;
-
-                        default:
-                            break;
-                    }
-
-                    qCDebug(DIGIKAM_GENERAL_LOG) << ">>>>>>>>>face rect transform:"
-                                                 << faceRect.x()     << faceRect.y()
-                                                 << faceRect.width() << faceRect.height();
-                }
-
-                d->newFaceTags.insert(it.key(), QVariant(faceRect));
-            }
-        }
+        FaceTagsEditor editor;
+        d->faceImageSize = d->currentItemInfo.dimensions();
+        d->facesList     = editor.databaseFaces(d->currentItemInfo.id());
 
         // Ensure there is a UUID for the source image in the database,
         // even if not in the source image's metadata
@@ -772,38 +715,64 @@ void ImageWindow::prepareImageToSave()
 
 void ImageWindow::saveFaceTagsToImage(const ItemInfo& info)
 {
-    if (!info.isNull() && !d->newFaceTags.isEmpty())
+    if (!info.isNull() && !d->facesList.isEmpty())
     {
-        // Delete all old faces
+        FaceTagsEditor editor;
+        editor.removeAllFaces(info.id());
 
-        FaceTagsEditor().removeAllFaces(info.id());
-
-        QMultiMap<QString, QVariant>::const_iterator it;
-
-        for (it = d->newFaceTags.constBegin() ; it != d->newFaceTags.constEnd() ; ++it)
+        Q_FOREACH (const FaceTagsIface& dface, d->facesList)
         {
-            int tagId = FaceTags::getOrCreateTagForPerson(it.key());
+            QRect faceRect = dface.region().toRect();
+            QSize tempSize = d->faceImageSize;
 
-            if (tagId)
+            // Start transform each face rect
+
+            qCDebug(DIGIKAM_GENERAL_LOG) << ">>>>>>>>>face rect before:"
+                                         << faceRect.x()     << faceRect.y()
+                                         << faceRect.width() << faceRect.height();
+
+            for (int i = 0 ; i < m_transformQue.size() ; ++i)
             {
-                TagRegion region(it.value().toRect());
-                FaceTagsEditor().add(info.id(), tagId, region, false);
+                EditorWindow::TransformType type = m_transformQue[i];
+
+                switch (type)
+                {
+                    case EditorWindow::TransformType::RotateLeft:
+                        tempSize = TagRegion::adjustToOrientation(faceRect, MetaEngine::ORIENTATION_ROT_270, tempSize);
+                        break;
+
+                    case EditorWindow::TransformType::RotateRight:
+                        tempSize = TagRegion::adjustToOrientation(faceRect, MetaEngine::ORIENTATION_ROT_90,  tempSize);
+                        break;
+
+                    case EditorWindow::TransformType::FlipHorizontal:
+                        tempSize = TagRegion::adjustToOrientation(faceRect, MetaEngine::ORIENTATION_HFLIP,   tempSize);
+                        break;
+
+                    case EditorWindow::TransformType::FlipVertical:
+                        tempSize = TagRegion::adjustToOrientation(faceRect, MetaEngine::ORIENTATION_VFLIP,   tempSize);
+                        break;
+
+                    default:
+                        break;
+                }
+
+                qCDebug(DIGIKAM_GENERAL_LOG) << ">>>>>>>>>face rect transform:"
+                                             << faceRect.x()     << faceRect.y()
+                                             << faceRect.width() << faceRect.height();
             }
-            else
-            {
-                qCDebug(DIGIKAM_GENERAL_LOG) << "Failed to create a person tag for name" << it.key();
-            }
+
+            FaceTagsIface face(dface.type(), info.id(), dface.tagId(), TagRegion(faceRect));
+            editor.addManually(face);
         }
 
         MetadataHub hub;
         hub.load(info);
-        QSize tempS = info.dimensions();
-        hub.setFaceTags(d->newFaceTags, tempS);
         hub.write(info.filePath(), MetadataHub::WRITE_ALL);
     }
 
     m_transformQue.clear();
-    d->newFaceTags.clear();
+    d->facesList.clear();
 }
 
 VersionManager* ImageWindow::versionManager() const
