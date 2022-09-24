@@ -24,6 +24,7 @@ General        : Add spell-checking support in caption text widget using KF5::So
 General        : Add online translations support to Alternative Language text editor widget.
                  Add Localize config panel in Setup/Misc for digiKam and Showfoto.
 General        : Add settings to list prefered alternative/translated languages in text edit widget.
+General        : Allow to use Global or Customized Image Quality Sorting settings everywhere.
 General        : Add new tool to perform OCR over scanned text.
                  https://community.kde.org/GSoC/2022/StatusReports/QuocHungTran
 Maintenance    : Add Aesthetic Detection to classify images using deep learning model.
