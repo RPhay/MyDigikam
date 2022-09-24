@@ -28,6 +28,8 @@ General        : Add new tool to perform OCR over scanned text.
                  https://community.kde.org/GSoC/2022/StatusReports/QuocHungTran
 Maintenance    : Add Aesthetic Detection to classify images using deep learning model.
                  https://community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe
+QueueManager   : Add new tool to assign pick label automatically by parsing image quality.
+QueueManager   : Add new tool to assign rating, pick, and color labels in batch.
 
 *****************************************************************************************************
 BUGFIXES:
