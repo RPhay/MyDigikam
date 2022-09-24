@@ -21,6 +21,7 @@
 #include <QLabel>
 #include <QStyle>
 #include <QLayout>
+#include <QCheckBox>
 
 // KDE includes
 
@@ -47,15 +48,23 @@ class Q_DECL_HIDDEN AssignLabels::Private
 public:
 
     explicit Private()
-      : ratingWidget      (nullptr),
+      : setRating         (nullptr),
+        ratingWidget      (nullptr),
+        setColor          (nullptr),
         colorLabelSelector(nullptr),
+        setPick           (nullptr),
         pickLabelSelector (nullptr),
         changeSettings    (true)
     {
     }
 
+    QCheckBox*          setRating;
     RatingWidget*       ratingWidget;
+
+    QCheckBox*          setColor;
     ColorLabelSelector* colorLabelSelector;
+
+    QCheckBox*          setPick;
     PickLabelSelector*  pickLabelSelector;
 
     bool                changeSettings;
@@ -85,30 +94,39 @@ void AssignLabels::registerSettingsWidget()
     DVBox* const vbox     = new DVBox;
 
     DHBox* const pickBox  = new DHBox(vbox);
-    new QLabel(i18n("Pick Label:"), pickBox);
+    d->setPick = new QCheckBox(i18n("Pick Label:"), pickBox);
     d->pickLabelSelector  = new PickLabelSelector(pickBox);
     pickBox->layout()->setAlignment(d->pickLabelSelector, Qt::AlignVCenter | Qt::AlignRight);
 
     DHBox* const colorBox = new DHBox(vbox);
-    new QLabel(i18n("Color Label:"), colorBox);
+    d->setColor = new QCheckBox(i18n("Color Label:"), colorBox);
     d->colorLabelSelector = new ColorLabelSelector(colorBox);
     colorBox->layout()->setAlignment(d->colorLabelSelector, Qt::AlignVCenter | Qt::AlignRight);
 
     DHBox* const rateBox  = new DHBox(vbox);
-    new QLabel(i18n("Rating:"), rateBox);
+    d->setRating = new QCheckBox(i18n("Rating:"), rateBox);
     d->ratingWidget       = new RatingWidget(rateBox);
     rateBox->layout()->setAlignment(d->ratingWidget, Qt::AlignVCenter | Qt::AlignRight);
 
-    QWidget* const space = new QWidget(vbox);
+    QWidget* const space  = new QWidget(vbox);
     vbox->setStretchFactor(space, 10);
     vbox->setContentsMargins(spacing, spacing, spacing, spacing);
 
-    m_settingsWidget   = vbox;
+    m_settingsWidget      = vbox;
+
+    connect(d->setPick, SIGNAL(toggled(bool)),
+            this, SLOT(slotSettingsChanged()));
 
     connect(d->pickLabelSelector, SIGNAL(signalPickLabelChanged(int)),
             this, SLOT(slotSettingsChanged()));
 
+    connect(d->setColor, SIGNAL(toggled(bool)),
+            this, SLOT(slotSettingsChanged()));
+
     connect(d->colorLabelSelector, SIGNAL(signalColorLabelChanged(int)),
+            this, SLOT(slotSettingsChanged()));
+
+    connect(d->setRating, SIGNAL(toggled(bool)),
             this, SLOT(slotSettingsChanged()));
 
     connect(d->ratingWidget, SIGNAL(signalRatingChanged(int)),
@@ -121,8 +139,11 @@ BatchToolSettings AssignLabels::defaultSettings()
 {
     BatchToolSettings settings;
 
+    settings.insert(QLatin1String("SetPick"),     false);
     settings.insert(QLatin1String("PickLabel"),   (int)NoPickLabel);
+    settings.insert(QLatin1String("SetColor"),    false);
     settings.insert(QLatin1String("ColorLabel"),  (int)NoColorLabel);
+    settings.insert(QLatin1String("SetRating"),   false);
     settings.insert(QLatin1String("RatingValue"), (int)NoRating);
 
     return settings;
@@ -132,12 +153,18 @@ void AssignLabels::slotAssignSettings2Widget()
 {
     d->changeSettings = false;
 
+    bool setPick     = settings()[QLatin1String("SetPick")].toBool();
     PickLabel pick   = (PickLabel)settings()[QLatin1String("PickLabel")].toInt();
+    bool setColor    = settings()[QLatin1String("SetColor")].toBool();
     ColorLabel color = (ColorLabel)settings()[QLatin1String("ColorLabel")].toInt();
+    bool setRating   = settings()[QLatin1String("SetRating")].toBool();
     int rating       = settings()[QLatin1String("RatingValue")].toInt();
 
+    d->setPick->setChecked(setPick);
     d->pickLabelSelector->setPickLabel(pick);
+    d->setColor->setChecked(setColor);
     d->colorLabelSelector->setColorLabel(color);
+    d->setRating->setChecked(setRating);
     d->ratingWidget->setRating(rating);
 
     d->changeSettings = true;
@@ -149,8 +176,11 @@ void AssignLabels::slotSettingsChanged()
     {
         BatchToolSettings settings;
 
+        settings.insert(QLatin1String("SetPick"),     d->setPick->isChecked());
         settings.insert(QLatin1String("PickLabel"),   (int)d->pickLabelSelector->pickLabel());
+        settings.insert(QLatin1String("SetColor"),    d->setColor->isChecked());
         settings.insert(QLatin1String("ColorLabel"),  (int)d->colorLabelSelector->colorLabel());
+        settings.insert(QLatin1String("SetRating"),   d->setRating->isChecked());
         settings.insert(QLatin1String("RatingValue"), d->ratingWidget->rating());
 
         BatchTool::slotSettingsChanged(settings);
@@ -174,16 +204,30 @@ bool AssignLabels::toolOperations()
         meta->setData(image().getMetadata());
     }
 
+    bool setPick     = settings()[QLatin1String("SetPick")].toBool();
     PickLabel pick   = (PickLabel)settings()[QLatin1String("PickLabel")].toInt();
+    bool setColor    = settings()[QLatin1String("SetColor")].toBool();
     ColorLabel color = (ColorLabel)settings()[QLatin1String("ColorLabel")].toInt();
+    bool setRating   = settings()[QLatin1String("SetRating")].toBool();
     int rating       = settings()[QLatin1String("RatingValue")].toInt();
 
-    meta->setItemPickLabel(pick);
-    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Assign Picklabel:" << pick;
-    meta->setItemColorLabel(color);
-    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Assign Colorlabel:" << color;
-    meta->setItemRating(rating);
-    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Assign Rating:" << rating;
+    if (setPick)
+    {
+        meta->setItemPickLabel(pick);
+        qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Assign Picklabel:" << pick;
+    }
+
+    if (setColor)
+    {
+        meta->setItemColorLabel(color);
+        qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Assign Colorlabel:" << color;
+    }
+
+    if (setRating)
+    {
+        meta->setItemRating(rating);
+        qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Assign Rating:" << rating;
+    }
 
     if (image().isNull())
     {
