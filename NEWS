@@ -31,6 +31,7 @@ Maintenance    : Add Aesthetic Detection to classify images using deep learning 
                  https://community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe
 QueueManager   : Add new tool to assign pick label automatically by parsing image quality.
 QueueManager   : Add new tool to assign rating, pick, and color labels in batch.
+QueueManager   : Add new tool to assign titles and captions in batch.
 
 *****************************************************************************************************
 BUGFIXES:

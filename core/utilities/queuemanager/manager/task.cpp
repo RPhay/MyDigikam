@@ -145,6 +145,7 @@ void Task::run()
     // ItemInfo must be tread-safe.
 
     ItemInfo source     = ItemInfo::fromUrl(d->tools.m_itemUrl);
+    bool assignCaptions = false;
     bool assignTemplate = false;
     bool timeAdjust     = false;
     bool rmMetadata     = false;
@@ -173,6 +174,7 @@ void Task::run()
 
         // Only true if it is also the last tool
 
+        assignCaptions |= (set.name == QLatin1String("AssignCaptions"));
         assignTemplate |= (set.name == QLatin1String("AssignTemplate"));
         timeAdjust     |= (set.name == QLatin1String("TimeAdjust"));
         rmMetadata     |= (set.name == QLatin1String("RemoveMetadata"));
@@ -305,7 +307,8 @@ void Task::run()
                                              timeAdjust))
         {
             emitActionData(ActionData::BatchDone, i18n("Item processed successfully %1", renameMess),
-                           dest, (assignTemplate | rmMetadata | timeAdjust | translate | imgqsort | assignLabels));
+                           dest,
+                           (assignCaptions | assignTemplate | rmMetadata | timeAdjust | translate | imgqsort | assignLabels));
         }
         else
         {

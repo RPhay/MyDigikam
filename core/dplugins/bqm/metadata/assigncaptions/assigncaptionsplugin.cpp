@@ -12,7 +12,7 @@
  *
  * ============================================================ */
 
-#include "assignlabelsplugin.h"
+#include "assigncaptionsplugin.h"
 
 // Qt includes
 
@@ -27,46 +27,47 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "assignlabels.h"
+#include "assigncaptions.h"
 
-namespace DigikamBqmAssignLabelsPlugin
+namespace DigikamBqmAssignCaptionsPlugin
 {
 
-AssignLabelsPlugin::AssignLabelsPlugin(QObject* const parent)
+AssignCaptionsPlugin::AssignCaptionsPlugin(QObject* const parent)
     : DPluginBqm(parent)
 {
 }
 
-AssignLabelsPlugin::~AssignLabelsPlugin()
+AssignCaptionsPlugin::~AssignCaptionsPlugin()
 {
 }
 
-QString AssignLabelsPlugin::name() const
+QString AssignCaptionsPlugin::name() const
 {
-    return i18nc("@title", "Assign Labels");
+    return i18nc("@title", "Assign Captions");
 }
 
-QString AssignLabelsPlugin::iid() const
+QString AssignCaptionsPlugin::iid() const
 {
     return QLatin1String(DPLUGIN_IID);
 }
 
-QIcon AssignLabelsPlugin::icon() const
+QIcon AssignCaptionsPlugin::icon() const
 {
-    return QIcon::fromTheme(QLatin1String("rating"));
+    return QIcon::fromTheme(QLatin1String("edit-text-frame-update"));
 }
 
-QString AssignLabelsPlugin::description() const
+QString AssignCaptionsPlugin::description() const
 {
-    return i18nc("@info", "A tool to assign labels metadata to images");
+    return i18nc("@info", "A tool to assign captions metadata to images");
 }
 
-QString AssignLabelsPlugin::details() const
+QString AssignCaptionsPlugin::details() const
 {
-    return xi18nc("@info", "<para>This Batch Queue Manager tool will assign rating, or color, or pick label metadata values to images.</para>");
+    return xi18nc("@info", "<para>This Batch Queue Manager tool will assign title "
+                  "and description metadata alternative values to images.</para>");
 }
 
-QList<DPluginAuthor> AssignLabelsPlugin::authors() const
+QList<DPluginAuthor> AssignCaptionsPlugin::authors() const
 {
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
@@ -75,12 +76,12 @@ QList<DPluginAuthor> AssignLabelsPlugin::authors() const
             ;
 }
 
-void AssignLabelsPlugin::setup(QObject* const parent)
+void AssignCaptionsPlugin::setup(QObject* const parent)
 {
-    AssignLabels* const tool = new AssignLabels(parent);
+    AssignCaptions* const tool = new AssignCaptions(parent);
     tool->setPlugin(this);
 
     addTool(tool);
 }
 
-} // namespace DigikamBqmAssignLabelsPlugin
+} // namespace DigikamBqmAssignCaptionsPlugin
