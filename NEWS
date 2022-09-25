@@ -148,4 +148,5 @@ BUGFIXES:
 110 ==> 458921 - Maintenance > Sync Metadata and Database (Sync Direction: From image metadata to database) does not work for disabled or deleted tags.
 111 ==> 459129 - Duplicate tags are displayed below thumbnail when tags are repeated in tag hierarchy.
 112 ==> 459537 - "Ignored" face regions should not be saved into XMP metadata.
-113 ==> 
+113 ==> 459497 - digiKam fails to load images.
+114 ==> 
