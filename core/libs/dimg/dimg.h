@@ -66,7 +66,6 @@ public:
         RAW,
         QIMAGE  ///< QImage or ImageMagick
     };
-    Q_ENUM(FORMAT)
 
     enum ANGLE
     {
@@ -75,14 +74,12 @@ public:
         ROT270,
         ROTNONE
     };
-    Q_ENUM(ANGLE)
 
     enum FLIP
     {
         HORIZONTAL = 0,
         VERTICAL
     };
-    Q_ENUM(FLIP)
 
     enum COLORMODEL
     {
@@ -96,7 +93,6 @@ public:
         CIELAB,
         COLORMODELRAW
     };
-    Q_ENUM(COLORMODEL)
 
 public:
 

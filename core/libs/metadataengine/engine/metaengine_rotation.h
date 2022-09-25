@@ -50,7 +50,6 @@ public:
         Rotate180        = 6, ///< 180-degree rotation
         Rotate270        = 7  ///< 270-degree clockwise (or 90 ccw)
     };
-    Q_ENUM(TransformationAction)
 
 public:
 

@@ -68,7 +68,6 @@ public:
         /// Write metadata to sidecar file only for read only items such as RAW files for example.
         WRITE_TO_SIDECAR_ONLY_FOR_READ_ONLY_FILES = 3
     };
-    Q_ENUM(MetadataWritingMode)
 
     /**
      * The item color workspace values given by Exif metadata.
@@ -80,7 +79,6 @@ public:
         WORKSPACE_ADOBERGB     = 2,
         WORKSPACE_UNCALIBRATED = 65535
     };
-    Q_ENUM(ImageColorWorkSpace)
 
     /**
      * The item orientation values given by Exif metadata.
@@ -97,7 +95,6 @@ public:
         ORIENTATION_ROT_90_VFLIP = 7,
         ORIENTATION_ROT_270      = 8
     };
-    Q_ENUM(ImageOrientation)
 
     /**
      * Xmp tag types, used by setXmpTag, only first three types are used
@@ -110,7 +107,6 @@ public:
         ArrayLangTag = 3,
         ArraySeqTag  = 4
     };
-    Q_ENUM(XmpTagType)
 
     /**
      * Metadata Backend used to populate information.
@@ -125,7 +121,6 @@ public:
         ExifToolBackend,          ///< DMetadata only.
         NoBackend                 ///< No backend used (aka file cannot be read).
     };
-    Q_ENUM(Backend)
 
     /**
      * A map used to store Tags Key and Tags Value.
