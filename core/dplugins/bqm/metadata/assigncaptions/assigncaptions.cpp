@@ -104,7 +104,7 @@ void AssignCaptions::registerSettingsWidget()
 
     d->cleanupCB          = new QCheckBox(i18n("Cleanup up and overwrite"), vbox);
     d->cleanupCB->setToolTip(i18nc("@info", "If you turn on this options, titles and captions"
-                                   "will be cleaned and replaced by the new values, else "
+                                   "will be cleaned and replaced by the new values,\nelse "
                                    "old values will be merged with new values."));
 
     m_settingsWidget      = vbox;
