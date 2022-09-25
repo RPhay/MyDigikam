@@ -238,8 +238,7 @@ protected:
               int rating, const Template& t);
 
     void loadTags(const QList<int>& loadedTagIds);
-    void loadTags(const QStringList& loadedTagPaths);
-    void loadFaceTags(const ItemInfo& info, const QSize& size);
+    void loadFaceTags(const ItemInfo& info);
 
     void notifyTagDeleted(int id);
 

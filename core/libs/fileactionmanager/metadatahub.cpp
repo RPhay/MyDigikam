@@ -67,34 +67,33 @@ public:
 
 public:
 
-    int                                       pickLabel;
-    int                                       colorLabel;
-    int                                       rating;
-    int                                       count;
+    int                            pickLabel;
+    int                            colorLabel;
+    int                            rating;
+    int                            count;
 
-    QDateTime                                 dateTime;
-    QSize                                     imageSize;
+    QDateTime                      dateTime;
+    QPair<QSize, int>              imageProp;
 
-    CaptionsMap                               titles;
-    CaptionsMap                               comments;
+    CaptionsMap                    titles;
+    CaptionsMap                    comments;
 
-    Template                                  metadataTemplate;
+    Template                       metadataTemplate;
 
-    QMap<int, MetadataHub::Status>            tags;
+    QMap<int, MetadataHub::Status> tags;
 
-    QStringList                               tagList;
+    QStringList                    tagList;
 
-    QMultiMap<QString, QPair<QVariant, int> > faceTagsMap;
+    QList<FaceTagsIface>           facesList;
+    ItemPosition                   itemPosition;
 
-    ItemPosition                              itemPosition;
-
-    MetadataHub::Status                       dateTimeStatus;
-    MetadataHub::Status                       titlesStatus;
-    MetadataHub::Status                       commentsStatus;
-    MetadataHub::Status                       pickLabelStatus;
-    MetadataHub::Status                       colorLabelStatus;
-    MetadataHub::Status                       ratingStatus;
-    MetadataHub::Status                       templateStatus;
+    MetadataHub::Status            dateTimeStatus;
+    MetadataHub::Status            titlesStatus;
+    MetadataHub::Status            commentsStatus;
+    MetadataHub::Status            pickLabelStatus;
+    MetadataHub::Status            colorLabelStatus;
+    MetadataHub::Status            ratingStatus;
+    MetadataHub::Status            templateStatus;
 
 public:
 
@@ -151,9 +150,7 @@ void MetadataHub::load(const ItemInfo& info)
 
     QList<int> tagIds = info.tagIds();
     loadTags(tagIds);
-
-    d->imageSize      = info.dimensions();
-    loadFaceTags(info, d->imageSize);
+    loadFaceTags(info);
 
     d->itemPosition   = info.imagePosition();
 }
@@ -565,7 +562,30 @@ bool MetadataHub::writeTags(const DMetadata& metadata, bool saveTags)
 
 bool MetadataHub::writeFaceTagsMap(const DMetadata& metadata, bool saveFaces)
 {
-    // Add person tags to which no region is assigned to Microsoft Photo Region schema.
+    QSize size      = d->imageProp.first;
+    int orientation = d->imageProp.second;
+
+    QMultiMap<QString, QVariant> faceTagsMap;
+
+    // Add confirmed face regions from the database.
+
+    Q_FOREACH (const FaceTagsIface& dface, d->facesList)
+    {
+        if (!FaceTags::isSystemPersonTagId(dface.tagId()))
+        {
+            QString faceName = FaceTags::faceNameForTag(dface.tagId());
+
+            // Rotate face region back to the unaligned image.
+
+            QRect  tempRect  = dface.region().toRect();
+            TagRegion::reverseToOrientation(tempRect, orientation, size);
+            QRectF faceRect  = TagRegion::absoluteToRelative(tempRect, size);
+            faceTagsMap.insert(faceName, faceRect);
+        }
+    }
+
+    // Add person tags to which no region is
+    // assigned to Microsoft Photo Region schema.
 
     Q_FOREACH (int tagId, d->tags.keys())
     {
@@ -573,27 +593,14 @@ bool MetadataHub::writeFaceTagsMap(const DMetadata& metadata, bool saveFaces)
         {
             QString faceName = FaceTags::faceNameForTag(tagId);
 
-            if (!faceName.isEmpty() && !d->faceTagsMap.contains(faceName))
+            if (!faceName.isEmpty() && !faceTagsMap.contains(faceName))
             {
-                d->faceTagsMap.insert(faceName, qMakePair(QRectF(), tagId));
+                faceTagsMap.insert(faceName, QRectF());
             }
         }
     }
 
-    // Remove system faces for writing to metadata.
-
-    QMultiMap<QString, QVariant> faceMap;
-    QMultiMap<QString, QPair<QVariant, int> >::const_iterator it;
-
-    for (it = d->faceTagsMap.constBegin() ; it != d->faceTagsMap.constEnd() ; ++it)
-    {
-        if (!FaceTags::isSystemPersonTagId(it.value().second))
-        {
-            faceMap.insert(it.key(), it.value().first);
-        }
-    }
-
-    return metadata.setItemFacesMap(faceMap, saveFaces, d->imageSize);
+    return metadata.setItemFacesMap(faceTagsMap, saveFaces, size);
 }
 
 QStringList MetadataHub::cleanupTags(const QStringList& toClean)
@@ -718,26 +725,12 @@ void MetadataHub::applyChangeNotifications()
 {
 }
 
-void MetadataHub::loadFaceTags(const ItemInfo& info, const QSize& size)
+void MetadataHub::loadFaceTags(const ItemInfo& info)
 {
     FaceTagsEditor editor;
-    d->faceTagsMap.clear();
-
-    QList<FaceTagsIface> facesList = editor.databaseFaces(info.id());
-
-    if (!facesList.isEmpty())
-    {
-        Q_FOREACH (const FaceTagsIface& dface, facesList)
-        {
-            const int tagId  = dface.tagId();
-            QString faceName = FaceTags::faceNameForTag(tagId);
-
-            QRect  tempRect  = dface.region().toRect();
-            TagRegion::reverseToOrientation(tempRect, info.orientation(), size);
-            QRectF faceRect  = TagRegion::absoluteToRelative(tempRect, size);
-            d->faceTagsMap.insert(faceName, qMakePair(faceRect, tagId));
-        }
-    }
+    d->facesList = editor.databaseFaces(info.id());
+    d->imageProp = qMakePair(info.dimensions(),
+                             info.orientation());
 }
 
 // NOTE: Unused code
