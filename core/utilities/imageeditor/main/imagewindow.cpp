@@ -768,7 +768,7 @@ void ImageWindow::saveFaceTagsToImage(const ItemInfo& info)
 
         MetadataHub hub;
         hub.load(info);
-        hub.write(info.filePath(), MetadataHub::WRITE_ALL);
+        hub.write(info.filePath(), MetadataHub::WRITE_TAGS, true);
     }
 
     m_transformQue.clear();

@@ -116,8 +116,10 @@ public:
     /**
      * Rotate face tags
      */
-    QSize                rotateFaces(const ItemInfo& info, int newOrientation,
-                                                           int oldOrientation);
+    QSize                rotateFaces(qlonglong imageId,
+                                     const QSize& size,
+                                     int newOrientation,
+                                     int oldOrientation);
 
     /**
      * For display, it may be desirable to display a slightly larger region than the strict

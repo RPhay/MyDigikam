@@ -206,17 +206,6 @@ public:
     void writeToBaloo(const QString& filePath,
                       const MetaEngineSettingsContainer& settings = MetaEngineSettings::instance()->settings());
 
-
-    // --------------------------------------------------
-
-    /**
-     * Dedicated method to set face rectangles from database
-     * When called from outside the metadatahub and  ItemInfo is cached,
-     * method dimension() can return wrong values, QSize must be specified
-     * manually
-     */
-    void loadFaceTags(const ItemInfo& info, const QSize& size);
-
 protected:
 
     /**
@@ -250,6 +239,8 @@ protected:
 
     void loadTags(const QList<int>& loadedTagIds);
     void loadTags(const QStringList& loadedTagPaths);
+    void loadFaceTags(const ItemInfo& info, const QSize& size);
+
     void notifyTagDeleted(int id);
 
     void applyChangeNotifications();
