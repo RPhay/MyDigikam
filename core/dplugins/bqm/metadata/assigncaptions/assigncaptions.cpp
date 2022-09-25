@@ -51,6 +51,7 @@ public:
         titlesWidget  (nullptr),
         setCaptions   (nullptr),
         captionsWidget(nullptr),
+        cleanupCB     (nullptr),
         changeSettings(true)
     {
     }
@@ -60,6 +61,8 @@ public:
 
     QCheckBox*          setCaptions;
     AltLangStrEdit*     captionsWidget;
+
+    QCheckBox*          cleanupCB;
 
     bool                changeSettings;
 };
@@ -99,6 +102,11 @@ void AssignCaptions::registerSettingsWidget()
     d->captionsWidget->setPlaceholderText(i18nc("@info", "Enter here the caption string"));
     d->captionsWidget->setTitleWidget(d->setCaptions);
 
+    d->cleanupCB          = new QCheckBox(i18n("Cleanup up and overwrite"), vbox);
+    d->cleanupCB->setToolTip(i18nc("@info", "If you turn on this options, titles and captions"
+                                   "will be cleaned and replaced by the new values, else "
+                                   "old values will be merged with new values."));
+
     m_settingsWidget      = vbox;
 
     connect(d->setTitles, SIGNAL(toggled(bool)),
@@ -125,6 +133,9 @@ void AssignCaptions::registerSettingsWidget()
     connect(d->captionsWidget, SIGNAL(signalValueDeleted(QString)),
             this, SLOT(slotSettingsChanged()));
 
+    connect(d->cleanupCB, SIGNAL(toggled(bool)),
+            this, SLOT(slotSettingsChanged()));
+
     BatchTool::registerSettingsWidget();
 }
 
@@ -136,6 +147,7 @@ BatchToolSettings AssignCaptions::defaultSettings()
     settings.insert(QLatin1String("TitleValues"),   QVariant::fromValue(MetaEngine::AltLangMap()));
     settings.insert(QLatin1String("SetCaptions"),   false);
     settings.insert(QLatin1String("CaptionValues"), QVariant::fromValue(MetaEngine::AltLangMap()));
+    settings.insert(QLatin1String("CleanUp"),       false);
 
     return settings;
 }
@@ -148,11 +160,13 @@ void AssignCaptions::slotAssignSettings2Widget()
     MetaEngine::AltLangMap titles   = qvariant_cast<MetaEngine::AltLangMap>(settings()[QLatin1String("TitleValues")]);
     bool setCaptions                = settings()[QLatin1String("SetCaptions")].toBool();
     MetaEngine::AltLangMap captions = qvariant_cast<MetaEngine::AltLangMap>(settings()[QLatin1String("CaptionValues")]);
+    bool cleanup                    = settings()[QLatin1String("CleanUp")].toBool();
 
     d->setTitles->setChecked(setTitles);
     d->titlesWidget->setValues(titles);
     d->setCaptions->setChecked(setCaptions);
     d->captionsWidget->setValues(captions);
+    d->cleanupCB->setChecked(cleanup);
 
     d->changeSettings               = true;
 }
@@ -167,6 +181,7 @@ void AssignCaptions::slotSettingsChanged()
         settings.insert(QLatin1String("TitleValues"),   QVariant::fromValue(d->titlesWidget->values()));
         settings.insert(QLatin1String("SetCaptions"),   d->setCaptions->isChecked());
         settings.insert(QLatin1String("CaptionValues"), QVariant::fromValue(d->captionsWidget->values()));
+        settings.insert(QLatin1String("CleanUp"),       d->cleanupCB->isChecked());
 
         BatchTool::slotSettingsChanged(settings);
     }
@@ -193,12 +208,18 @@ bool AssignCaptions::toolOperations()
     MetaEngine::AltLangMap titles   = qvariant_cast<MetaEngine::AltLangMap>(settings()[QLatin1String("TitleValues")]);
     bool setCaptions                = settings()[QLatin1String("SetCaptions")].toBool();
     MetaEngine::AltLangMap captions = qvariant_cast<MetaEngine::AltLangMap>(settings()[QLatin1String("CaptionValues")]);
+    bool cleanup                    = settings()[QLatin1String("CleanUp")].toBool();
 
     if (setTitles)
     {
-        CaptionsMap orgTitlesMap         = meta->getItemTitles();
-        MetaEngine::AltLangMap orgTitles = orgTitlesMap.toAltLangMap();
+        CaptionsMap orgTitlesMap;
 
+        if (!cleanup)
+        {
+            orgTitlesMap = meta->getItemTitles();
+        }
+
+        MetaEngine::AltLangMap orgTitles = orgTitlesMap.toAltLangMap();
         MetaEngine::AltLangMap::const_iterator it;
 
         for (it = titles.constBegin() ; it != titles.constEnd() ; ++it)
@@ -214,9 +235,14 @@ bool AssignCaptions::toolOperations()
 
     if (setCaptions)
     {
-        CaptionsMap orgCaptionsMap         = meta->getItemComments();
-        MetaEngine::AltLangMap orgCaptions = orgCaptionsMap.toAltLangMap();
+        CaptionsMap orgCaptionsMap;
 
+        if (!cleanup)
+        {
+            orgCaptionsMap = meta->getItemComments();
+        }
+
+        MetaEngine::AltLangMap orgCaptions = orgCaptionsMap.toAltLangMap();
         MetaEngine::AltLangMap::const_iterator it;
 
         for (it = captions.constBegin() ; it != captions.constEnd() ; ++it)
