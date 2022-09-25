@@ -62,9 +62,11 @@ public:
         ConvertTool,              ///< Tools to convert images format (PNG, JPEG, TIFF, etc...)
         MetadataTool              ///< Tools to play with metadata.
     };
+    Q_ENUM(BatchToolGroup)
 
-/// Tool data and properties management. NOTE: these methods can be used safely in multi-threading part (ActionThread).
-
+/**
+ * Tool data and properties management. NOTE: these methods can be used safely in multi-threading part (ActionThread).
+ */
 public:
 
     explicit BatchTool(const QString& name, BatchToolGroup group, QObject* const parent = nullptr);

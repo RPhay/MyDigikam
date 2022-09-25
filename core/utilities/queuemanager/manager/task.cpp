@@ -145,13 +145,8 @@ void Task::run()
     // ItemInfo must be tread-safe.
 
     ItemInfo source     = ItemInfo::fromUrl(d->tools.m_itemUrl);
-    bool assignCaptions = false;
-    bool assignTemplate = false;
+    bool isMetadataTool = false;
     bool timeAdjust     = false;
-    bool rmMetadata     = false;
-    bool translate      = false;
-    bool imgqsort       = false;
-    bool assignLabels   = false;
 
     Q_FOREACH (const BatchToolSet& set, d->tools.m_toolsList)
     {
@@ -174,16 +169,10 @@ void Task::run()
 
         // Only true if it is also the last tool
 
-        assignCaptions |= (set.name == QLatin1String("AssignCaptions"));
-        assignTemplate |= (set.name == QLatin1String("AssignTemplate"));
-        timeAdjust     |= (set.name == QLatin1String("TimeAdjust"));
-        rmMetadata     |= (set.name == QLatin1String("RemoveMetadata"));
-        translate      |= (set.name == QLatin1String("Translate"));
-        imgqsort       |= (set.name == QLatin1String("QualitySort"));
-        assignLabels   |= (set.name == QLatin1String("AssignLabels"));
-
-        inUrl       = outUrl;
-        index       = set.index + 1;
+        isMetadataTool = (set.group == BatchTool::MetadataTool);
+        timeAdjust    |= (set.name == QLatin1String("TimeAdjust"));
+        inUrl          = outUrl;
+        index          = set.index + 1;
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Tool : index= " << index
                  << " :: name= "     << set.name
@@ -307,8 +296,7 @@ void Task::run()
                                              timeAdjust))
         {
             emitActionData(ActionData::BatchDone, i18n("Item processed successfully %1", renameMess),
-                           dest,
-                           (assignCaptions | assignTemplate | rmMetadata | timeAdjust | translate | imgqsort | assignLabels));
+                           dest, isMetadataTool);
         }
         else
         {
