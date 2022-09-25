@@ -210,6 +210,19 @@ Q_SIGNALS:
                             int cmdAction,
                             QProcess::ProcessState newState);
 
+    void signalCmdCompleted(int cmdId,
+                            int cmdAction,
+                            int execTime,
+                            const QByteArray& cmdOutputChannel,
+                            const QByteArray& cmdErrorChannel);
+
+    void signalErrorOccurred(int cmdId,
+                             int cmdAction,
+                             QProcess::ProcessError error,
+                             const QString& description);
+
+    void signalFinished(int cmdId);
+
 private:
 
     /**

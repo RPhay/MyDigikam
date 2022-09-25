@@ -151,6 +151,12 @@ void ExifToolProcess::Private::readOutput(const QProcess::ProcessChannel channel
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::readOutput(): ExifTool command completed";
 
+        Q_EMIT pp->signalCmdCompleted(cmdRunning,
+                                      cmdAction,
+                                      execTimer.elapsed(),
+                                      outBuff[QProcess::StandardOutput],
+                                      outBuff[QProcess::StandardError]);
+
         QMutexLocker locker(&mutex);
 
         commandState = ExifToolProcess::COMMAND_RESULT;
@@ -169,6 +175,8 @@ void ExifToolProcess::Private::readOutput(const QProcess::ProcessChannel channel
 
 void ExifToolProcess::Private::setProcessErrorAndEmit(QProcess::ProcessError error, const QString& description)
 {
+    Q_EMIT pp->signalErrorOccurred(cmdRunning, cmdAction, error, description);
+
     QMutexLocker locker(&mutex);
 
     processError = error;

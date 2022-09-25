@@ -29,11 +29,11 @@ void ExifToolParser::printExifToolOutput(const QByteArray& stdOut)
     qCDebug(DIGIKAM_METAENGINE_LOG) << "---";
 }
 
-void ExifToolParser::cmdCompleted(int cmdId,
-                                  int cmdAction,
-                                  int execTime,
-                                  const QByteArray& stdOut,
-                                  const QByteArray& /*stdErr*/)
+void ExifToolParser::slotCmdCompleted(int cmdId,
+                                      int cmdAction,
+                                      int execTime,
+                                      const QByteArray& stdOut,
+                                      const QByteArray& /*stdErr*/)
 {
     if (cmdId != d->cmdRunning)
     {
@@ -387,10 +387,10 @@ void ExifToolParser::cmdCompleted(int cmdId,
     Q_EMIT signalExifToolDataAvailable();
 }
 
-void ExifToolParser::cmdErrorOccurred(int cmdId,
-                                      int cmdAction,
-                                      QProcess::ProcessError error,
-                                      const QString& description)
+void ExifToolParser::slotErrorOccurred(int cmdId,
+                                       int cmdAction,
+                                       QProcess::ProcessError error,
+                                       const QString& description)
 {
     if (cmdId != d->cmdRunning)
     {
@@ -405,7 +405,7 @@ void ExifToolParser::cmdErrorOccurred(int cmdId,
     Q_EMIT signalExifToolDataAvailable();
 }
 
-void ExifToolParser::cmdFinished(int cmdId)
+void ExifToolParser::slotFinished(int cmdId)
 {
     if (cmdId != d->cmdRunning)
     {
@@ -419,7 +419,7 @@ void ExifToolParser::setOutputStream(int cmdAction,
                                      const QByteArray& cmdOutputChannel,
                                      const QByteArray& cmdErrorChannel)
 {
-    cmdCompleted(d->cmdRunning, cmdAction, 0, cmdOutputChannel, cmdErrorChannel);
+    slotCmdCompleted(d->cmdRunning, cmdAction, 0, cmdOutputChannel, cmdErrorChannel);
 }
 
 } // namespace Digikam

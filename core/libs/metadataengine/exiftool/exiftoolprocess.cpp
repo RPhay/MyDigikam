@@ -338,6 +338,8 @@ void ExifToolProcess::slotFinished(int exitCode, QProcess::ExitStatus exitStatus
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool process finished with code:"
                                     << exitCode << "and status" << exitStatus;
 
+    Q_EMIT signalFinished(d->cmdRunning);
+
     QMutexLocker locker(&d->mutex);
 
     d->commandState = FINISH_RESULT;
