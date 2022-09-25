@@ -77,6 +77,7 @@ public:
     void readOutput(const QProcess::ProcessChannel channel);
     void setProcessErrorAndEmit(QProcess::ProcessError error,
                                 const QString& description);
+    void setCommandResult(int cmdState);
 
 public Q_SLOTS:
 
@@ -104,11 +105,7 @@ public:
 
     int                     nextCmdId;               ///< Unique identifier, even in a multi-instances or multi-thread environment
 
-    int                     commandState;
-    int                     cmdRunAction;
-    int                     cmdRunResult;
-    int                     elapseResult;
-    QByteArray              outputResult;
+    ExifToolProcess::Result cmdResult;
 
     QMutex                  cmdMutex;
 

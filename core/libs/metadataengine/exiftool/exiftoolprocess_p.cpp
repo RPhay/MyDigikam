@@ -24,14 +24,10 @@ ExifToolProcess::Private::Private(ExifToolProcess* const q)
     : QObject             (q),
       pp                  (q),
       cmdRunning          (0),
-      cmdAction           (ExifToolProcess::LOAD_METADATA),
+      cmdAction           (ExifToolProcess::NO_ACTION),
       writeChannelIsClosed(true),
       processError        (QProcess::UnknownError),
-      nextCmdId           (CMD_ID_MIN),
-      commandState        (ExifToolProcess::COMMAND_RESULT),
-      cmdRunAction        (ExifToolProcess::NO_ACTION),
-      cmdRunResult        (0),
-      elapseResult        (0)
+      nextCmdId           (CMD_ID_MIN)
 {
     outAwait[0] = false;
     outAwait[1] = false;
@@ -157,18 +153,8 @@ void ExifToolProcess::Private::readOutput(const QProcess::ProcessChannel channel
                                       outBuff[QProcess::StandardOutput],
                                       outBuff[QProcess::StandardError]);
 
-        QMutexLocker locker(&mutex);
-
-        commandState = ExifToolProcess::COMMAND_RESULT;
-        cmdRunAction = cmdAction;
-        cmdRunResult = cmdRunning;
-        elapseResult = execTimer.elapsed();
-        outputResult = outBuff[QProcess::StandardOutput];
-
-        condVar.wakeAll();
+        setCommandResult(ExifToolProcess::COMMAND_RESULT);
     }
-
-    cmdRunning = 0;    // No command is running
 
     slotExecNextCmd(); // Exec next command
 }
@@ -177,16 +163,25 @@ void ExifToolProcess::Private::setProcessErrorAndEmit(QProcess::ProcessError err
 {
     Q_EMIT pp->signalErrorOccurred(cmdRunning, cmdAction, error, description);
 
-    QMutexLocker locker(&mutex);
-
     processError = error;
     errorString  = description;
 
-    commandState = ExifToolProcess::ERROR_RESULT;
-    cmdRunAction = cmdAction;
-    cmdRunResult = cmdRunning;
-    elapseResult = execTimer.elapsed();
-    outputResult = outBuff[QProcess::StandardOutput];
+    setCommandResult(ExifToolProcess::ERROR_RESULT);
+}
+
+void ExifToolProcess::Private::setCommandResult(int cmdState)
+{
+    QMutexLocker locker(&mutex);
+
+    cmdResult.cmdWaitError = false;
+    cmdResult.commandState = cmdState;
+    cmdResult.cmdRunAction = cmdAction;
+    cmdResult.cmdRunResult = cmdRunning;
+    cmdResult.elapsedTimer = execTimer.elapsed();
+    cmdResult.outputBuffer = outBuff[QProcess::StandardOutput];
+
+    cmdRunning             = 0;
+    cmdAction              = ExifToolProcess::NO_ACTION;
 
     condVar.wakeAll();
 }

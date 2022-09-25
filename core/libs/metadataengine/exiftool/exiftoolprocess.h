@@ -108,6 +108,29 @@ public:
 
 public:
 
+    class Result
+    {
+    public:
+
+        Result()
+          : cmdWaitError (false),
+            commandState (ExifToolProcess::COMMAND_RESULT),
+            cmdRunAction (ExifToolProcess::NO_ACTION),
+            cmdRunResult (0),
+            elapsedTimer (0)
+        {
+        }
+
+        bool       cmdWaitError;
+        int        commandState;
+        int        cmdRunAction;
+        int        cmdRunResult;
+        int        elapsedTimer;
+        QByteArray outputBuffer;
+    };
+
+public:
+
     /**
      * Constructs a ExifToolProcess.
      */
@@ -140,54 +163,40 @@ public:
      */
     void setExifToolProgram(const QString& etExePath);
 
-    QString getExifToolProgram()                 const;
+    QString getExifToolProgram()                   const;
 
 public:
 
     /**
      * Returns true if ExifToolProcess is available (process state == Running)
      */
-    bool                   exifToolAvailable()   const;
+    bool                    exifToolAvailable()     const;
 
     /**
      * Returns true if a command is running.
      */
-    bool                   exifToolIsBusy()      const;
+    bool                    exifToolIsBusy()        const;
 
     /**
      * Returns the type of error that occurred last.
      */
-    QProcess::ProcessError exifToolError()       const;
+    QProcess::ProcessError  exifToolError()         const;
 
     /**
      * Returns an error message.
      */
-    QString                exifToolErrorString() const;
+    QString                 exifToolErrorString()   const;
 
     /**
-     * Returns state from current result.
+     * Returns the ExifToolProcess result.
      */
-    int                    cmdState()            const;
+    ExifToolProcess::Result getExifToolResult()     const;
 
     /**
-     * Returns cmdAction from current result.
+     * WatCondition for the ExifToolParser class.
+     * Returns the ExifToolProcess result.
      */
-    int                    cmdAction()           const;
-
-    /**
-     * Returns cmdRunning from current result.
-     */
-    int                    cmdRunning()          const;
-
-    /**
-     * Returns elapsed time from current result.
-     */
-    int                    elapsedTime()         const;
-
-    /**
-     * Returns output buffer from current result.
-     */
-    QByteArray             outputBuffer()        const;
+    ExifToolProcess::Result waitForExifToolResult() const;
 
     /**
      * Send a command to exiftool process.
@@ -195,11 +204,6 @@ public:
      * Return 0: ExitTool not running, write channel is closed or args is empty.
      */
     int command(const QByteArrayList& args, Action ac);
-
-    /**
-     * WatCondition for the ExifToolParser class.
-     */
-    bool waitForExifToolResult()                 const;
 
 Q_SIGNALS:
 

@@ -35,10 +35,11 @@ ExifToolProcess::~ExifToolProcess()
 
     terminateExifTool();
 
+    if (d->cmdRunning)
     {
         QMutexLocker locker(&d->mutex);
 
-        d->commandState = EXIT_RESULT;
+        d->cmdResult.commandState = EXIT_RESULT;
 
         d->condVar.wakeAll();
     }
@@ -222,29 +223,19 @@ QString ExifToolProcess::exifToolErrorString() const
     return d->errorString;
 }
 
-int ExifToolProcess::cmdState() const
+ExifToolProcess::Result ExifToolProcess::getExifToolResult() const
 {
-    return d->commandState;
+    return d->cmdResult;
 }
 
-int ExifToolProcess::cmdAction() const
+ExifToolProcess::Result ExifToolProcess::waitForExifToolResult() const
 {
-    return d->cmdRunAction;
-}
+    QMutexLocker locker(&d->mutex);
 
-int ExifToolProcess::cmdRunning() const
-{
-    return d->cmdRunResult;
-}
+    bool ret = d->condVar.wait(&d->mutex, 10000);
+    d->cmdResult.cmdWaitError = !ret;
 
-int ExifToolProcess::elapsedTime() const
-{
-    return d->elapseResult;
-}
-
-QByteArray ExifToolProcess::outputBuffer() const
-{
-    return d->outputResult;
+    return d->cmdResult;
 }
 
 int ExifToolProcess::command(const QByteArrayList& args, Action ac)
@@ -319,13 +310,6 @@ int ExifToolProcess::command(const QByteArrayList& args, Action ac)
     return cmdId;
 }
 
-bool ExifToolProcess::waitForExifToolResult() const
-{
-    QMutexLocker locker(&d->mutex);
-
-    return d->condVar.wait(&d->mutex, 10000);
-}
-
 void ExifToolProcess::slotStarted()
 {
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool process started";
@@ -340,18 +324,7 @@ void ExifToolProcess::slotFinished(int exitCode, QProcess::ExitStatus exitStatus
 
     Q_EMIT signalFinished(d->cmdRunning);
 
-    QMutexLocker locker(&d->mutex);
-
-    d->commandState = FINISH_RESULT;
-    d->cmdRunAction = d->cmdAction;
-    d->cmdRunResult = d->cmdRunning;
-    d->elapseResult = d->execTimer.elapsed();
-    d->outputResult = d->outBuff[QProcess::StandardOutput];
-
-    d->condVar.wakeAll();
-
-    d->cmdRunning   = 0;
-    d->cmdAction    = NO_ACTION;
+    d->setCommandResult(FINISH_RESULT);
 }
 
 void ExifToolProcess::slotStateChanged(QProcess::ProcessState newState)

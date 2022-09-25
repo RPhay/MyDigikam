@@ -58,9 +58,13 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifTo
 
     if (!async)
     {
-        while ((proc->cmdRunning() != cmdRunning) && (proc->cmdState() != ExifToolProcess::EXIT_RESULT))
+        ExifToolProcess::Result result = proc->getExifToolResult();
+
+        while ((result.cmdRunResult != cmdRunning) && (result.commandState != ExifToolProcess::EXIT_RESULT))
         {
-            if (!proc->waitForExifToolResult())
+            result = proc->waitForExifToolResult();
+
+            if ((result.cmdRunResult == cmdRunning) && result.cmdWaitError)
             {
                 qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool timed out:" << actionString(cmdAction);
 
@@ -68,28 +72,28 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifTo
             }
         }
 
-        switch (proc->cmdState())
+        switch (result.commandState)
         {
             case ExifToolProcess::COMMAND_RESULT:
             {
-                pp->slotCmdCompleted(proc->cmdRunning(),
-                                     proc->cmdAction(),
-                                     proc->elapsedTime(),
-                                     proc->outputBuffer(),
+                pp->slotCmdCompleted(result.cmdRunResult,
+                                     result.cmdRunAction,
+                                     result.elapsedTimer,
+                                     result.outputBuffer,
                                      QByteArray());
                 break;
             }
 
             case ExifToolProcess::FINISH_RESULT:
             {
-                pp->slotFinished(proc->cmdRunning());
+                pp->slotFinished(result.cmdRunResult);
                 break;
             }
 
             case ExifToolProcess::ERROR_RESULT:
             {
-                pp->slotErrorOccurred(proc->cmdRunning(),
-                                      proc->cmdAction(),
+                pp->slotErrorOccurred(result.cmdRunResult,
+                                      result.cmdRunAction,
                                       proc->exifToolError(),
                                       proc->exifToolErrorString());
                 break;
