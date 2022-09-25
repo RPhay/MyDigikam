@@ -163,7 +163,7 @@ public:
      */
     void setExifToolProgram(const QString& etExePath);
 
-    QString getExifToolProgram()                   const;
+    QString getExifToolProgram()                    const;
 
 public:
 
