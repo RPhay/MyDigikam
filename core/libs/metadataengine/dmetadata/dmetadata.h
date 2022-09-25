@@ -60,6 +60,7 @@ public:
         VIDEOCOLORMODEL_BT709,
         VIDEOCOLORMODEL_BT601
     };
+    Q_ENUM(VIDEOCOLORMODEL)
 
 public:
 

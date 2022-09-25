@@ -61,6 +61,7 @@ public:
         RotatingPixels           = RotateByLosslessRotation | RotateByLossyRotation
     };
     Q_DECLARE_FLAGS(RotationBehaviorFlags, RotationBehaviorFlag)
+    Q_ENUM(RotationBehaviorFlag)
 
     enum AlbumDateSource
     {
@@ -70,6 +71,7 @@ public:
         FolderDate,
         IgnoreDate
     };
+    Q_ENUM(AlbumDateSource)
 
 public:
 

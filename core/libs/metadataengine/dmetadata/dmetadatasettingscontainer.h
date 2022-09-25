@@ -49,12 +49,14 @@ public:
         IPTC = 1,
         XMP  = 2
     };
+    Q_ENUM(NsSubspace)
 
     enum TagType
     {
         TAG     = 0,
         TAGPATH = 1
     };
+    Q_ENUM(TagType)
 
     enum SpecialOptions
     {
@@ -67,6 +69,7 @@ public:
         TAG_XMPSEQ          = 6,
         TAG_ACDSEE          = 7
     };
+    Q_ENUM(SpecialOptions)
 
     enum NamespaceType
     {
@@ -77,6 +80,7 @@ public:
         PICKLABEL  = 4,
         COLORLABEL = 5
     };
+    Q_ENUM(NamespaceType)
 
 public:
 
