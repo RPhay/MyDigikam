@@ -225,6 +225,8 @@ QString ExifToolProcess::exifToolErrorString() const
 
 ExifToolProcess::Result ExifToolProcess::getExifToolResult() const
 {
+    QMutexLocker locker(&d->mutex);
+
     return d->cmdResult;
 }
 
