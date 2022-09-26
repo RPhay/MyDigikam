@@ -108,8 +108,8 @@ void AssignCaptions::registerSettingsWidget()
     d->captionsWidget->altLangStrEdit()->slotEnabledInternalWidgets(false);
     d->captionsWidget->authorEdit()->setEnabled(false);
 
-    d->cleanupCB          = new QCheckBox(i18n("Cleanup up and overwrite"), vbox);
-    d->cleanupCB->setToolTip(i18nc("@info", "If you turn on this options, titles and captions"
+    d->cleanupCB          = new QCheckBox(i18n("Clean up and overwrite"), vbox);
+    d->cleanupCB->setToolTip(i18nc("@info", "If you turn on this options, titles and captions "
                                    "will be cleaned and replaced by the new values,\nelse "
                                    "old values will be merged with new values."));
 
