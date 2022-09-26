@@ -93,14 +93,18 @@ void AssignCaptions::registerSettingsWidget()
 
     d->titlesWidget       = new AltLangStrEdit(vbox, 0);
     d->setTitles          = new QCheckBox(i18n("Titles:"), d->titlesWidget);
+    d->setTitles->setChecked(false);
     d->titlesWidget->setPlaceholderText(i18nc("@info", "Enter here the title string"));
     d->titlesWidget->setTitleWidget(d->setTitles);
+    d->titlesWidget->slotEnabledInternalWidgets(false);
 
     d->captionsWidget     = new AltLangStrEdit(vbox, 0);
 
     d->setCaptions        = new QCheckBox(i18n("Captions:"), d->captionsWidget);
+    d->setCaptions->setChecked(false);
     d->captionsWidget->setPlaceholderText(i18nc("@info", "Enter here the caption string"));
     d->captionsWidget->setTitleWidget(d->setCaptions);
+    d->captionsWidget->slotEnabledInternalWidgets(false);
 
     d->cleanupCB          = new QCheckBox(i18n("Cleanup up and overwrite"), vbox);
     d->cleanupCB->setToolTip(i18nc("@info", "If you turn on this options, titles and captions"
@@ -111,6 +115,9 @@ void AssignCaptions::registerSettingsWidget()
 
     connect(d->setTitles, SIGNAL(toggled(bool)),
             this, SLOT(slotSettingsChanged()));
+
+    connect(d->setTitles, SIGNAL(toggled(bool)),
+            d->titlesWidget, SLOT(slotEnabledInternalWidgets(bool)));
 
     connect(d->titlesWidget, SIGNAL(signalModified(QString,QString)),
             this, SLOT(slotSettingsChanged()));
@@ -123,6 +130,9 @@ void AssignCaptions::registerSettingsWidget()
 
     connect(d->setCaptions, SIGNAL(toggled(bool)),
             this, SLOT(slotSettingsChanged()));
+
+    connect(d->setCaptions, SIGNAL(toggled(bool)),
+            d->captionsWidget, SLOT(slotEnabledInternalWidgets(bool)));
 
     connect(d->captionsWidget, SIGNAL(signalModified(QString,QString)),
             this, SLOT(slotSettingsChanged()));
