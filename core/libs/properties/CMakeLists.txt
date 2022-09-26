@@ -30,6 +30,7 @@ set(libitemproperties_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/itempropertiesmetadatatab.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/itempropertiescolorstab.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/itempropertiestxtlabel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/captions/captionedit.cpp
 )
 
 if(${Marble_FOUND})
@@ -62,9 +63,7 @@ set(libitempropertiesdigikam_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/captions/itemdescedittab.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/captions/disjointmetadata.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/captions/disjointmetadata_p.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/captions/captionedit.cpp
 )
-
 
 # Used by digikamgui
 add_library(gui_itempropertiesdigikam_obj OBJECT ${libitemversionssidebar_SRCS} ${libitempropertiesdigikam_SRCS})
