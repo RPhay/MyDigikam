@@ -94,7 +94,7 @@ void AssignCaptions::registerSettingsWidget()
     d->titlesWidget       = new AltLangStrEdit(vbox, 0);
     d->setTitles          = new QCheckBox(i18n("Titles:"), d->titlesWidget);
     d->setTitles->setChecked(false);
-    d->titlesWidget->setPlaceholderText(i18nc("@info", "Enter here the title string"));
+    d->titlesWidget->setPlaceholderText(i18nc("@info", "Enter title text here."));
     d->titlesWidget->setTitleWidget(d->setTitles);
     d->titlesWidget->slotEnabledInternalWidgets(false);
 
@@ -102,7 +102,7 @@ void AssignCaptions::registerSettingsWidget()
 
     d->setCaptions        = new QCheckBox(i18n("Captions:"), d->captionsWidget);
     d->setCaptions->setChecked(false);
-    d->captionsWidget->setPlaceholderText(i18nc("@info", "Enter here the caption string"));
+    d->captionsWidget->setPlaceholderText(i18nc("@info", "Enter caption text here."));
     d->captionsWidget->setTitleWidget(d->setCaptions);
     d->captionsWidget->slotEnabledInternalWidgets(false);
 
