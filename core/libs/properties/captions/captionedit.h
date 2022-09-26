@@ -20,36 +20,39 @@
 #include <QWidget>
 #include <QString>
 #include <QDateTime>
+#include <QLineEdit>
 
 // Local includes
 
+#include "digikam_export.h"
 #include "dlayoutbox.h"
 #include "captionvalues.h"
-#include "dtextedit.h"
+#include "altlangstredit.h"
 
 namespace Digikam
 {
 
-class CaptionEdit : public DVBox
+class DIGIKAM_EXPORT CaptionEdit : public DVBox
 {
     Q_OBJECT
 
 public:
 
     explicit CaptionEdit(QWidget* const parent);
-    ~CaptionEdit() override;
+    ~CaptionEdit()                          override;
 
     void setValues(const CaptionsMap& values);
-    CaptionsMap& values()           const;
+    CaptionsMap& values()            const;
 
     void setPlaceholderText(const QString& msg);
 
     void setCurrentLanguageCode(const QString& lang);
-    QString currentLanguageCode()   const;
+    QString currentLanguageCode()    const;
 
     void reset();
 
-    DTextEdit* textEdit()           const;
+    AltLangStrEdit* altLangStrEdit() const;
+    QLineEdit* authorEdit()          const;
 
 Q_SIGNALS:
 

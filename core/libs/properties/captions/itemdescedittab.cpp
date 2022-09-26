@@ -407,7 +407,7 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
     // Initialize ---------------------------------------------
 
     d->titleEdit->textEdit()->installEventFilter(this);
-    d->captionsEdit->textEdit()->installEventFilter(this);
+    d->captionsEdit->altLangStrEdit()->textEdit()->installEventFilter(this);
 
     d->dateTimeEdit->installEventFilter(this);
     d->pickLabelSelector->installEventFilter(this);
@@ -507,7 +507,7 @@ void ItemDescEditTab::setFocusToTitlesEdit()
 void ItemDescEditTab::setFocusToCommentsEdit()
 {
     d->tabWidget->setCurrentIndex(Private::DESCRIPTIONS);
-    d->captionsEdit->textEdit()->setFocus();
+    d->captionsEdit->altLangStrEdit()->textEdit()->setFocus();
 }
 
 void ItemDescEditTab::activateAssignedTagsButton()
