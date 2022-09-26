@@ -296,13 +296,13 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
             }
         }
 
-        CollectionScanner scanner;
-        scanner.scanFile(info, CollectionScanner::NormalScan);
-
         // Adjust Faces in the DB and Metadata.
 
         FaceUtils().rotateFaces(info.id(), originalSize,
                                 finalOrientation, currentOrientation);
+
+        CollectionScanner scanner;
+        scanner.scanFile(info, CollectionScanner::NormalScan);
 
         if (rotatedPixels)
         {
