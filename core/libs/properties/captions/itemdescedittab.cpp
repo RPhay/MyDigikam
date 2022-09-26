@@ -1597,7 +1597,7 @@ void ItemDescEditTab::initProgressIndicator()
 
 void ItemDescEditTab::resetTitleEditPlaceholderText()
 {
-    d->titleEdit->setPlaceholderText(i18n("Enter title here."));
+    d->titleEdit->setPlaceholderText(i18n("Enter title text here."));
 }
 
 void ItemDescEditTab::resetCaptionEditPlaceholderText()
