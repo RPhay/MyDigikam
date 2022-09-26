@@ -38,6 +38,7 @@
 #include "ratingwidget.h"
 #include "colorlabelwidget.h"
 #include "picklabelwidget.h"
+#include "dfileoperations.h"
 #include "dlayoutbox.h"
 
 namespace DigikamBqmAssignLabelsPlugin
@@ -232,7 +233,7 @@ bool AssignLabels::toolOperations()
     if (image().isNull())
     {
         QFile::remove(outputUrl().toLocalFile());
-        ret &= QFile::copy(inputUrl().toLocalFile(), outputUrl().toLocalFile());
+        ret &= DFileOperations::copyFile(inputUrl().toLocalFile(), outputUrl().toLocalFile());
 
         if (ret)
         {

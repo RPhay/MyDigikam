@@ -33,6 +33,7 @@
 
 #include "digikam_debug.h"
 #include "dimg.h"
+#include "dfileoperations.h"
 #include "donlinetranslator.h"
 #include "localizesettings.h"
 #include "localizeselector.h"
@@ -260,7 +261,7 @@ bool Translate::toolOperations()
         if (image().isNull())
         {
             QFile::remove(outputUrl().toLocalFile());
-            ret &= QFile::copy(inputUrl().toLocalFile(), outputUrl().toLocalFile());
+            ret &= DFileOperations::copyFile(inputUrl().toLocalFile(), outputUrl().toLocalFile());
 
             if (ret && (titleStage || captionStage || copyrightsStage || usageTermsStage))
             {

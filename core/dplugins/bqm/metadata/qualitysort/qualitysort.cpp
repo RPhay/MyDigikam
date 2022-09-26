@@ -43,6 +43,7 @@
 #include "imagequalityparser.h"
 #include "dlayoutbox.h"
 #include "previewloadthread.h"
+#include "dfileoperations.h"
 
 namespace DigikamBqmQualitySortPlugin
 {
@@ -258,7 +259,7 @@ bool QualitySort::toolOperations()
     if (image().isNull())
     {
         QFile::remove(outputUrl().toLocalFile());
-        ret &= QFile::copy(inputUrl().toLocalFile(), outputUrl().toLocalFile());
+        ret &= DFileOperations::copyFile(inputUrl().toLocalFile(), outputUrl().toLocalFile());
 
         if (ret)
         {

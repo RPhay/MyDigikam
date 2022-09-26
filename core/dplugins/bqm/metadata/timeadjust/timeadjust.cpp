@@ -380,7 +380,7 @@ bool TimeAdjust::toolOperations()
     if (image().isNull())
     {
         QFile::remove(outputUrl().toLocalFile());
-        ret = QFile::copy(inputUrl().toLocalFile(), outputUrl().toLocalFile());
+        ret = DFileOperations::copyFile(inputUrl().toLocalFile(), outputUrl().toLocalFile());
 
         if (ret && metadataChanged && metaLoadState)
         {

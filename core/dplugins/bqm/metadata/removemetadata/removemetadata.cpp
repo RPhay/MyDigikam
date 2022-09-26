@@ -32,6 +32,7 @@
 
 #include "dimg.h"
 #include "dmetadata.h"
+#include "dfileoperations.h"
 
 namespace DigikamBqmRemoveMetadataPlugin
 {
@@ -226,7 +227,7 @@ bool RemoveMetadata::toolOperations()
     if (image().isNull())
     {
         QFile::remove(outputUrl().toLocalFile());
-        ret = QFile::copy(inputUrl().toLocalFile(), outputUrl().toLocalFile());
+        ret = DFileOperations::copyFile(inputUrl().toLocalFile(), outputUrl().toLocalFile());
 
         if (!ret || !meta->load(outputUrl().toLocalFile()))
         {
