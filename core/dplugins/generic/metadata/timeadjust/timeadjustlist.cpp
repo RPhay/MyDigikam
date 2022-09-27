@@ -84,7 +84,8 @@ void TimeAdjustList::setStatus(const QUrl& url,
         }
         else if (errors.isEmpty())
         {
-            item->setText(STATUS, i18n("Processed without error"));
+            // Processed without error
+            item->setText(STATUS, i18n("Success"));
         }
         else
         {
