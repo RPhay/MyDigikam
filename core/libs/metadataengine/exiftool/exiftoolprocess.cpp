@@ -321,12 +321,16 @@ void ExifToolProcess::slotStarted()
 
 void ExifToolProcess::slotFinished(int exitCode, QProcess::ExitStatus exitStatus)
 {
+    QMutexLocker locker(&d->mutex);
+
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool process finished with code:"
                                     << exitCode << "and status" << exitStatus;
 
     Q_EMIT signalFinished(d->cmdRunning);
 
     d->setCommandResult(FINISH_RESULT);
+
+    d->condVar.wakeAll();
 }
 
 void ExifToolProcess::slotStateChanged(QProcess::ProcessState newState)
@@ -411,31 +415,38 @@ bool ExifToolProcess::checkExifToolProgram() const
 void ExifToolProcess::initExifTool()
 {
     connect(this, &QProcess::started,
-            this, &ExifToolProcess::slotStarted);
+            this, &ExifToolProcess::slotStarted,
+            Qt::QueuedConnection);
 
 #if QT_VERSION >= 0x060000
 
     connect(this, &QProcess::finished,
-            this, &ExifToolProcess::slotFinished);
+            this, &ExifToolProcess::slotFinished,
+            Qt::QueuedConnection);
 
 #else
 
     connect(this, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
-            this, &ExifToolProcess::slotFinished);
+            this, &ExifToolProcess::slotFinished,
+            Qt::QueuedConnection);
 
 #endif
 
     connect(this, &QProcess::stateChanged,
-            this, &ExifToolProcess::slotStateChanged);
+            this, &ExifToolProcess::slotStateChanged,
+            Qt::QueuedConnection);
 
     connect(this, &QProcess::errorOccurred,
-            this, &ExifToolProcess::slotErrorOccurred);
+            this, &ExifToolProcess::slotErrorOccurred,
+            Qt::QueuedConnection);
 
     connect(this, &QProcess::readyReadStandardOutput,
-            this, &ExifToolProcess::slotReadyReadStandardOutput);
+            this, &ExifToolProcess::slotReadyReadStandardOutput,
+            Qt::QueuedConnection);
 
     connect(this, &QProcess::readyReadStandardError,
-            this, &ExifToolProcess::slotReadyReadStandardError);
+            this, &ExifToolProcess::slotReadyReadStandardError,
+            Qt::QueuedConnection);
 
     connect(this, &ExifToolProcess::signalExecNextCmd,
             d,    &ExifToolProcess::Private::slotExecNextCmd,

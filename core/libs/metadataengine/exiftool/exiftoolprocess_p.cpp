@@ -78,6 +78,8 @@ void ExifToolProcess::Private::slotExecNextCmd()
 
 void ExifToolProcess::Private::readOutput(const QProcess::ProcessChannel channel)
 {
+    QMutexLocker locker(&mutex);
+
     if (cmdRunning == 0)
     {
         return;
@@ -142,6 +144,8 @@ void ExifToolProcess::Private::readOutput(const QProcess::ProcessChannel channel
                                            << ")";
 
         setProcessErrorAndEmit(QProcess::ReadError, i18n("Synchronization error between the channels"));
+
+        condVar.wakeAll();
     }
     else
     {
@@ -154,6 +158,8 @@ void ExifToolProcess::Private::readOutput(const QProcess::ProcessChannel channel
                                       outBuff[QProcess::StandardError]);
 
         setCommandResult(ExifToolProcess::COMMAND_RESULT);
+
+        condVar.wakeAll();
     }
 
     slotExecNextCmd(); // Exec next command
@@ -171,8 +177,6 @@ void ExifToolProcess::Private::setProcessErrorAndEmit(QProcess::ProcessError err
 
 void ExifToolProcess::Private::setCommandResult(int cmdState)
 {
-    QMutexLocker locker(&mutex);
-
     cmdResult.cmdWaitError = false;
     cmdResult.commandState = cmdState;
     cmdResult.cmdRunAction = cmdAction;
@@ -182,8 +186,6 @@ void ExifToolProcess::Private::setCommandResult(int cmdState)
 
     cmdRunning             = 0;
     cmdAction              = ExifToolProcess::NO_ACTION;
-
-    condVar.wakeAll();
 }
 
 } // namespace Digikam
