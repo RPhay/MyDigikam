@@ -81,7 +81,7 @@ cd "$INSTALL_PREFIX"
 FILES=$(find . | grep -E '(digikam|showfoto|avplayer)')
 
 for FILE in $FILES ; do
-    if [[ -f ${FILE} ]] ; then
+    if [[ -f ${FILE} || -d ${FILE} ]] ; then
         echo -e "   ==> $INSTALL_PREFIX/${FILE} will be removed from previous install"
         rm -f $INSTALL_PREFIX/${FILE}
     fi
