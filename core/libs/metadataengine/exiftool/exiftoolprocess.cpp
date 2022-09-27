@@ -340,9 +340,11 @@ void ExifToolProcess::slotStateChanged(QProcess::ProcessState newState)
 
 void ExifToolProcess::slotErrorOccurred(QProcess::ProcessError error)
 {
+    QMutexLocker locker(&d->mutex);
+
     d->setProcessErrorAndEmit(error, errorString());
 
-    d->cmdRunning = 0;
+    d->condVar.wakeAll();
 }
 
 void ExifToolProcess::slotReadyReadStandardOutput()
