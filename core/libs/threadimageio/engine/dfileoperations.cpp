@@ -571,6 +571,9 @@ bool DFileOperations::copyFile(const QString& srcFile,
 
     if (ret)
     {
+        QFile::Permissions permissions = QFile::permissions(srcFile);
+        QFile::setPermissions(dstFile, permissions);
+
         copyModificationTime(srcFile, dstFile);
     }
 
