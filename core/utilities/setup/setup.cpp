@@ -6,19 +6,10 @@
  * Date        : 2003-02-03
  * Description : digiKam setup dialog.
  *
- * Copyright (C) 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2003-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
+ * SPDX-FileCopyrightText: 2003-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU Album
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Album Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -208,7 +199,7 @@ Setup::Setup(QWidget* const parent)
 
     d->imageQualitySorterPage = new SetupImageQualitySorter();
     d->page_imagequalitysorter = addPage(d->imageQualitySorterPage, i18nc("@title: settings section", "Image Quality Sorter"));
-    d->page_imagequalitysorter->setHeader(i18nc("@title", "Image Quality Sorter Settings\nCustomize settings to perform image triaging by quality"));
+    d->page_imagequalitysorter->setHeader(i18nc("@title", "Image Quality Sorter Settings\nCustomize default settings to perform image triaging by quality"));
     d->page_imagequalitysorter->setIcon(QIcon::fromTheme(QLatin1String("flag-green")));
 
     d->cameraPage  = new SetupCamera();
@@ -269,7 +260,17 @@ Setup::~Setup()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("Setup Dialog"));
-    group.writeEntry(QLatin1String("Setup Page"), (int)activePageIndex());
+    group.writeEntry(QLatin1String("Setup Page"),      (int)activePageIndex());
+    group.writeEntry(QLatin1String("Albumview Tab"),   (int)d->albumViewPage->activeTab());
+    group.writeEntry(QLatin1String("ToolTip Tab"),     (int)d->tooltipPage->activeTab());
+    group.writeEntry(QLatin1String("Video Tab"),       (int)d->videoPage->activeTab());
+    group.writeEntry(QLatin1String("Metadata Tab"),    (int)d->metadataPage->activeTab());
+    group.writeEntry(QLatin1String("Metadata SubTab"), (int)d->metadataPage->activeSubTab());
+    group.writeEntry(QLatin1String("Editor Tab"),      (int)d->editorPage->activeTab());
+    group.writeEntry(QLatin1String("ICC Tab"),         (int)d->iccPage->activeTab());
+    group.writeEntry(QLatin1String("Camera Tab"),      (int)d->cameraPage->activeTab());
+    group.writeEntry(QLatin1String("Plugin Tab"),      (int)d->pluginsPage->activeTab());
+    group.writeEntry(QLatin1String("Misc Tab"),        (int)d->miscPage->activeTab());
     DXmlGuiWindow::saveWindowSize(windowHandle(), group);
     config->sync();
 
@@ -406,8 +407,8 @@ bool Setup::execMetadataFilters(QWidget* const parent, int tab)
         return false;
     }
 
-    widget->setActiveMainTab(SetupMetadata::Display);
-    widget->setActiveSubTab(tab);
+    widget->setActiveTab(SetupMetadata::Display);
+    widget->setActiveSubTab((SetupMetadata::MetadataSubTab)tab);
 
     bool success                 = (setup->DConfigDlg::exec() == QDialog::Accepted);
     delete setup;
@@ -435,7 +436,61 @@ bool Setup::execExifTool(QWidget* const parent)
         return false;
     }
 
-    widget->setActiveMainTab(SetupMetadata::ExifTool);
+    widget->setActiveTab(SetupMetadata::ExifTool);
+
+    bool success                 = (setup->DConfigDlg::exec() == QDialog::Accepted);
+    delete setup;
+
+    return success;
+}
+
+bool Setup::execLocalize(QWidget* const parent)
+{
+    QPointer<Setup> setup        = new Setup(parent);
+    setup->showPage(MiscellaneousPage);
+    setup->setFaceType(Plain);
+
+    DConfigDlgWdgItem* const cur = setup->currentPage();
+
+    if (!cur)
+    {
+        return false;
+    }
+
+    SetupMisc* const widget  = dynamic_cast<SetupMisc*>(cur->widget());
+
+    if (!widget)
+    {
+        return false;
+    }
+
+    widget->setActiveTab(SetupMisc::Localize);
+
+    bool success                 = (setup->DConfigDlg::exec() == QDialog::Accepted);
+    delete setup;
+
+    return success;
+}
+
+bool Setup::execImageQualitySorter(QWidget* const parent)
+{
+    QPointer<Setup> setup        = new Setup(parent);
+    setup->showPage(ImageQualityPage);
+    setup->setFaceType(Plain);
+
+    DConfigDlgWdgItem* const cur = setup->currentPage();
+
+    if (!cur)
+    {
+        return false;
+    }
+
+    SetupImageQualitySorter* const widget  = dynamic_cast<SetupImageQualitySorter*>(cur->widget());
+
+    if (!widget)
+    {
+        return false;
+    }
 
     bool success                 = (setup->DConfigDlg::exec() == QDialog::Accepted);
     delete setup;
@@ -506,6 +561,16 @@ void Setup::showPage(Setup::Page page)
         KConfigGroup group        = config->group(QLatin1String("Setup Dialog"));
 
         item = d->pageItem((Page)group.readEntry(QLatin1String("Setup Page"), (int)CollectionsPage));
+        d->albumViewPage->setActiveTab((SetupAlbumView::AlbumTab)group.readEntry(QLatin1String("AlbumView Tab"), (int)SetupAlbumView::IconView));
+        d->tooltipPage->setActiveTab((SetupToolTip::ToolTipTab)group.readEntry(QLatin1String("ToolTip Tab"), (int)SetupToolTip::IconItems));
+        d->videoPage->setActiveTab((SetupVideo::VideoTab)group.readEntry(QLatin1String("Video Tab"), (int)SetupVideo::Decoder));
+        d->metadataPage->setActiveTab((SetupMetadata::MetadataTab)group.readEntry(QLatin1String("Metadata Tab"), (int)SetupMetadata::Behavior));
+        d->metadataPage->setActiveSubTab((SetupMetadata::MetadataSubTab)group.readEntry(QLatin1String("Metadata SubTab"), (int)SetupMetadata::ExifViewer));
+        d->editorPage->setActiveTab((SetupEditor::EditorTab)group.readEntry(QLatin1String("Editor Tab"), (int)SetupEditor::EditorWindow));
+        d->iccPage->setActiveTab((SetupICC::ICCTab)group.readEntry(QLatin1String("ICC Tab"), (int)SetupICC::Behavior));
+        d->cameraPage->setActiveTab((SetupCamera::CameraTab)group.readEntry(QLatin1String("Camera Tab"), (int)SetupCamera::Devices));
+        d->pluginsPage->setActiveTab((SetupPlugins::PluginTab)group.readEntry(QLatin1String("Plugin Tab"), (int)SetupPlugins::Generic));
+        d->miscPage->setActiveTab((SetupMisc::MiscTab)group.readEntry(QLatin1String("Misc Tab"), (int)SetupMisc::Behaviour));
     }
     else
     {

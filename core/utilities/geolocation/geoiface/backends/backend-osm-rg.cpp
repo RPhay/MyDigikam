@@ -6,19 +6,10 @@
  * Date        : 2010-05-12
  * Description : OSM Nominatim backend for Reverse Geocoding
  *
- * Copyright (C) 2010 by Michael G. Hansen <mike at mghansen dot de>
- * Copyright (C) 2010 by Gabriel Voicu <ping dot gabi at gmail dot com>
+ * SPDX-FileCopyrightText: 2010 by Michael G. Hansen <mike at mghansen dot de>
+ * SPDX-FileCopyrightText: 2010 by Gabriel Voicu <ping dot gabi at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -26,7 +17,6 @@
 
 // Qt includes
 
-#include <QNetworkAccessManager>
 #include <QDomDocument>
 #include <QUrlQuery>
 #include <QTimer>
@@ -34,6 +24,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "networkmanager.h"
 #include "gpscommon.h"
 
 namespace Digikam
@@ -92,7 +83,7 @@ BackendOsmRG::BackendOsmRG(QObject* const parent)
     : RGBackend(parent),
       d        (new Private())
 {
-    d->mngr = new QNetworkAccessManager(this);
+    d->mngr = NetworkManager::instance()->getNetworkManager(this);
 
     connect(d->mngr, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotFinished(QNetworkReply*)));
@@ -236,20 +227,20 @@ QString BackendOsmRG::backendName()
 
 void BackendOsmRG::slotFinished(QNetworkReply* reply)
 {
-    if (reply->error() != QNetworkReply::NoError)
-    {
-        d->errorMessage = reply->errorString();
-        Q_EMIT signalRGReady(d->jobs.first().request);
-        reply->deleteLater();
-        d->jobs.clear();
-
-        return;
-    }
-
     for (int i = 0 ; i < d->jobs.count() ; ++i)
     {
         if (d->jobs.at(i).netReply == reply)
         {
+            if (reply->error() != QNetworkReply::NoError)
+            {
+                d->errorMessage = reply->errorString();
+                Q_EMIT signalRGReady(d->jobs.first().request);
+                reply->deleteLater();
+                d->jobs.clear();
+
+                return;
+            }
+
             d->jobs[i].data.append(reply->readAll());
             break;
         }
@@ -280,11 +271,10 @@ void BackendOsmRG::slotFinished(QNetworkReply* reply)
                 QTimer::singleShot(500, this, SLOT(nextPhoto()));
             }
 
+            reply->deleteLater();
             break;
         }
     }
-
-    reply->deleteLater();
 }
 
 void BackendOsmRG::cancelRequests()

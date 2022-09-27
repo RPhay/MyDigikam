@@ -6,19 +6,10 @@
  * Date        : 2009-11-14
  * Description : database settings widget - private container
  *
- * Copyright (C) 2009-2010 by Holger Foerster <Hamsi2k at freenet dot de>
- * Copyright (C) 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2010 by Holger Foerster <Hamsi2k at freenet dot de>
+ * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -30,6 +21,7 @@
 // Qt includes
 
 #include <QApplication>
+#include <QCheckBox>
 #include <QComboBox>
 #include <QDir>
 #include <QFileInfo>
@@ -93,6 +85,7 @@ public:
         dbType                  (nullptr),
         dbPathLabel             (nullptr),
         dbThumbsLabel           (nullptr),
+        walLabel                (nullptr),
         sqlInit                 (nullptr),
         expertSettings          (nullptr),
         dbNoticeBox             (nullptr),
@@ -100,6 +93,7 @@ public:
         tab                     (nullptr),
         dbPathEdit              (nullptr),
         dbNameThumbs            (nullptr),
+        walModeCheck            (nullptr),
         dbBinariesWidget        (nullptr),
         ignoreDirectoriesBox    (nullptr),
         ignoreDirectoriesEdit   (nullptr),
@@ -122,6 +116,7 @@ public:
     QComboBox*         dbType;
     QLabel*            dbPathLabel;
     QLabel*            dbThumbsLabel;
+    QLabel*            walLabel;
     QTextBrowser*      sqlInit;
     QGroupBox*         expertSettings;
     QGroupBox*         dbNoticeBox;
@@ -130,6 +125,8 @@ public:
 
     DFileSelector*     dbPathEdit;
     DFileSelector*     dbNameThumbs;
+
+    QCheckBox*         walModeCheck;
 
     DBinarySearch*     dbBinariesWidget;
 

@@ -6,20 +6,11 @@
  * Date        : 2006-02-23
  * Description : item metadata interface - file I/O helpers.
  *
- * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2011      by Leif Huhn <leif at dkstat dot com>
+ * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2011      by Leif Huhn <leif at dkstat dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -55,9 +46,9 @@ bool DMetadata::load(const QString& filePath, Backend* backend)
     QMimeDatabase mimeDB;
 
     if (
-        !mimeDB.mimeTypeForFile(filePath).name().startsWith(QLatin1String("video/")) &&
-        !mimeDB.mimeTypeForFile(filePath).name().startsWith(QLatin1String("audio/")) &&
-        (info.suffix().toUpper() != QLatin1String("INSV"))                           &&
+        !mimeDB.mimeTypeForFile(info).name().startsWith(QLatin1String("video/")) &&
+        !mimeDB.mimeTypeForFile(info).name().startsWith(QLatin1String("audio/")) &&
+        (info.suffix().toUpper() != QLatin1String("INSV"))                       &&
         (info.suffix().toUpper() != QLatin1String("H264"))
        )
     {
@@ -80,7 +71,7 @@ bool DMetadata::load(const QString& filePath, Backend* backend)
 #endif
                         ))
                     {
-                        if (!(hasLoaded = loadUsingImageMagick(filePath)))
+                        if (!(hasLoaded = false/*loadUsingImageMagick(filePath)*/))
                         {
                             usedBackend = NoBackend;
                         }
@@ -125,7 +116,7 @@ bool DMetadata::load(const QString& filePath, Backend* backend)
 
         if (!(hasLoaded = loadUsingFFmpeg(filePath)))
         {
-            if (!(hasLoaded = loadUsingExifTool(filePath, true)))
+            if (!(hasLoaded = loadUsingExifTool(filePath)))
             {
                 usedBackend = NoBackend;
             }

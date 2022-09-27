@@ -6,18 +6,9 @@
  * Date        : 2013-04-29
  * Description : digiKam XML GUI window
  *
- * Copyright (C) 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -92,7 +83,7 @@ static const QString s_configFullScreenHideSideBarsEntry(QLatin1String("FullScre
 static const QString s_configFullScreenHideStatusBarEntry(QLatin1String("FullScreen Hide StatusBar"));
 
 /**
- * Data container to use in managed window.
+ * Generi class to use with all main window.
  */
 class DIGIKAM_EXPORT DXmlGuiWindow : public KXmlGuiWindow
 {

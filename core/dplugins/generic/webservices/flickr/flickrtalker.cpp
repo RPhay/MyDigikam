@@ -6,19 +6,11 @@
  * Date        : 2005-07-07
  * Description : a tool to export images to Flickr web service
  *
- * Copyright (C) 2005-2009 by Vardhman Jain <vardhman at gmail dot com>
- * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2017-2019 by Maik Qualmann <metzpinguin at gmail dot com>
+ * SPDX-FileCopyrightText: 2005-2009 by Vardhman Jain <vardhman at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2017-2019 by Maik Qualmann <metzpinguin at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -38,7 +30,6 @@
 #include <QMessageBox>
 #include <QApplication>
 #include <QProgressDialog>
-#include <QNetworkAccessManager>
 
 // KDE includes
 
@@ -67,6 +58,7 @@
 #include "o0globals.h"
 #include "o1requestor.h"
 #include "o0settingsstore.h"
+#include "networkmanager.h"
 
 #if defined(Q_CC_CLANG)
 #   pragma clang diagnostic pop
@@ -144,7 +136,7 @@ FlickrTalker::FlickrTalker(QWidget* const parent,
     m_photoSetsList    = nullptr;
     m_authProgressDlg  = nullptr;
 
-    d->netMngr         = new QNetworkAccessManager(this);
+    d->netMngr         = NetworkManager::instance()->getNetworkManager(this);
 
     connect(d->netMngr, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotFinished(QNetworkReply*)));

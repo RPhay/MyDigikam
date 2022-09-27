@@ -6,18 +6,9 @@
  * Date        : 2011-02-14
  * Description : pick label widget
  *
- * Copyright (C) 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -68,9 +59,9 @@ public:
     void setPickLabels(const QList<PickLabel>& list);
 
     /**
-     * Return the list of Color Label buttons turned on or an empty list of none.
+     * Return the list of Pick Label buttons turned on or an empty list of none.
      */
-    QList<PickLabel> colorLabels() const;
+    QList<PickLabel> pickLabels() const;
 
     static QString labelPickName(PickLabel label);
 
@@ -106,7 +97,7 @@ public:
     ~PickLabelSelector() override;
 
     void setPickLabel(PickLabel label);
-    PickLabel colorLabel();
+    PickLabel pickLabel();
 
     PickLabelWidget* pickLabelWidget() const;
 

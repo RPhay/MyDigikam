@@ -6,18 +6,9 @@
  * Date        : 2004-08-03
  * Description : setup Image Editor interface.
  *
- * Copyright (C) 2004-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2004-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -201,8 +192,9 @@ SetupEditorIface::SetupEditorIface(QWidget* const parent)
     QLabel* const exampleLabel = new QLabel(i18n("Example:"), exposureOptionsGroup);
     d->expoPreview             = new QLabel(exposureOptionsGroup);
     d->expoPreviewHisto        = new HistogramWidget(256, 128, exposureOptionsGroup, false, false);
-    d->preview                 = DImg(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                                             QLatin1String("digikam/data/sample-aix.png")));
+    QImage image(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                        QLatin1String("digikam/data/sample-aix.png")));
+    d->preview                 = DImg(image);
 
     if (!d->preview.isNull())
     {

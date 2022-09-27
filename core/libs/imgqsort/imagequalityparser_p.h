@@ -1,0 +1,122 @@
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 25/08/2013
+ * Description : Image Quality Parser - private container
+ *
+ * SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2013-2014 by Gowtham Ashok <gwty93 at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2022 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
+ *
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ *
+ * ============================================================ */
+
+#ifndef DIGIKAM_IMAGE_QUALITY_PARSER_P_H
+#define DIGIKAM_IMAGE_QUALITY_PARSER_P_H
+
+#include "imagequalityparser.h"
+
+// C++ includes
+
+#include <cmath>
+#include <cfloat>
+#include <cstdio>
+
+// Qt includes
+
+#include <QTextStream>
+#include <QFile>
+#include <QImage>
+
+// Local includes
+
+#include "digikam_opencv.h"
+#include "digikam_debug.h"
+#include "mixerfilter.h"
+#include "nrfilter.h"
+#include "nrestimate.h"
+#include "exposurecontainer.h"
+#include "imagequalitycalculator.h"
+
+// To switch on/off log trace file.
+// #define TRACE 1
+
+using namespace cv;
+
+namespace Digikam
+{
+
+class Q_DECL_HIDDEN ImageQualityParser::Private
+{
+public:
+
+    explicit Private()
+      : clusterCount     (30),               ///< used for k-means clustering algorithm in noise detection
+        size             (512),
+        edgeThresh       (1),
+        ratio            (3),
+        kernel_size      (3),
+        lowThreshold     (0.4),
+        blurrejected     (0.0),
+        blur             (0.0),
+        acceptedThreshold(0.0),
+        pendingThreshold (0.0),
+        rejectedThreshold(0.0),
+        calculator       (nullptr),
+        label            (nullptr),
+        running          (true)
+    {
+        for (int c = 0 ; c < 3 ; ++c)
+        {
+            fimg[c] = nullptr;
+        }
+
+        calculator = new ImageQualityCalculator();
+    }
+
+    ~Private()
+    {
+        delete calculator;
+    }
+
+    float*                  fimg[3];
+    const uint              clusterCount;
+    const uint              size;              ///< Size of squared original image.
+
+    Mat                     src_gray;          ///< Matrix of the grayscaled source image
+    Mat                     detected_edges;    ///< Matrix containing only edges in the image
+
+    int                     edgeThresh;        ///< threshold above which we say that edges are present at a point
+    int                     ratio;             ///< lower:upper threshold for canny edge detector algorithm
+    int                     kernel_size;       ///< kernel size for the Sobel operations to be performed internally by the edge detector
+
+    double                  lowThreshold;
+
+    DImg                    image;             ///< original image
+    DImg                    neimage;           ///< noise estimation image[for color]
+    DImg                    img8;              ///< compression detector image on 8 bits
+
+    ImageQualityContainer   imq;
+
+    double                  blurrejected;
+    double                  blur;
+
+    double                  acceptedThreshold;
+    double                  pendingThreshold;
+    double                  rejectedThreshold;
+
+    QString                 path;              ///< Path to host result file
+
+    ImageQualityCalculator* calculator;
+
+    PickLabel*              label;
+
+    volatile bool           running;
+};
+
+} // namespace Digikam
+
+#endif // DIGIKAM_IMAGE_QUALITY_PARSER_P_H

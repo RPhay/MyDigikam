@@ -6,17 +6,9 @@
  * Date        : 2006-10-12
  * Description : IPTC status settings page.
  *
- * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -38,7 +30,7 @@
 
 // Local includes
 
-#include "limitedtextedit.h"
+#include "dtextedit.h"
 #include "dlayoutbox.h"
 
 namespace DigikamGenericMetadataEditPlugin
@@ -65,10 +57,10 @@ public:
     QCheckBox*       specialInstructionCheck;
     QCheckBox*       objectNameCheck;
 
-    LimitedTextEdit* objectNameEdit;
-    LimitedTextEdit* statusEdit;
-    LimitedTextEdit* jobIDEdit;
-    LimitedTextEdit* specialInstructionEdit;
+    DPlainTextEdit* objectNameEdit;
+    DPlainTextEdit* statusEdit;
+    DPlainTextEdit* jobIDEdit;
+    DPlainTextEdit* specialInstructionEdit;
 };
 
 IPTCStatus::IPTCStatus(QWidget* const parent)
@@ -80,7 +72,7 @@ IPTCStatus::IPTCStatus(QWidget* const parent)
     // --------------------------------------------------------
 
     d->objectNameCheck = new QCheckBox(i18nc("image title", "Title:"), this);
-    d->objectNameEdit  = new LimitedTextEdit(this);
+    d->objectNameEdit  = new DPlainTextEdit(this);
     d->objectNameEdit->setMaxLength(64);
     d->objectNameEdit->setPlaceholderText(i18n("Set here the content title"));
     d->objectNameEdit->setWhatsThis(i18n("Set here the shorthand reference of content. "
@@ -89,7 +81,7 @@ IPTCStatus::IPTCStatus(QWidget* const parent)
     // --------------------------------------------------------
 
     d->statusCheck = new QCheckBox(i18n("Edit Status:"), this);
-    d->statusEdit  = new LimitedTextEdit(this);
+    d->statusEdit  = new DPlainTextEdit(this);
     d->statusEdit->setMaxLength(64);
     d->statusEdit->setPlaceholderText(i18n("Set here the content status"));
     d->statusEdit->setWhatsThis(i18n("Set here the title of content status. This field is limited "
@@ -98,7 +90,7 @@ IPTCStatus::IPTCStatus(QWidget* const parent)
     // --------------------------------------------------------
 
     d->jobIDCheck = new QCheckBox(i18n("Job Identifier:"), this);
-    d->jobIDEdit  = new LimitedTextEdit(this);
+    d->jobIDEdit  = new DPlainTextEdit(this);
     d->jobIDEdit->setMaxLength(32);
     d->jobIDEdit->setPlaceholderText(i18n("Set here the job ID"));
     d->jobIDEdit->setWhatsThis(i18n("Set here the string that identifies content that recurs. "
@@ -107,7 +99,7 @@ IPTCStatus::IPTCStatus(QWidget* const parent)
     // --------------------------------------------------------
 
     d->specialInstructionCheck = new QCheckBox(i18n("Special Instructions:"), this);
-    d->specialInstructionEdit  = new LimitedTextEdit(this);
+    d->specialInstructionEdit  = new DPlainTextEdit(this);
     d->specialInstructionEdit->setMaxLength(256);
     d->specialInstructionEdit->setPlaceholderText(i18n("Set here the content instructions"));
     d->specialInstructionEdit->setWhatsThis(i18n("Enter the editorial usage instructions. "

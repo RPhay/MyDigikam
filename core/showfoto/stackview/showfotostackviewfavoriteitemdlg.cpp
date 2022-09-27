@@ -6,18 +6,9 @@
  * Date        : 2021-09-27
  * Description : Showfoto stack view favorite item edit dialog
  *
- * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -28,7 +19,6 @@
 #include <QGridLayout>
 #include <QLabel>
 #include <QPointer>
-#include <QLineEdit>
 #include <QApplication>
 #include <QStyle>
 #include <QDir>
@@ -60,6 +50,7 @@
 #include "dlayoutbox.h"
 #include "dexpanderbox.h"
 #include "drawdecoder.h"
+#include "dtextedit.h"
 #include "dxmlguiwindow.h"
 #include "showfotostackviewfavoritelist.h"
 #include "showfotostackviewfavoriteitem.h"
@@ -115,8 +106,8 @@ public:
 
     QDialogButtonBox*              buttons;
 
-    QLineEdit*                     nameEdit;
-    QLineEdit*                     descEdit;
+    DTextEdit*                     nameEdit;
+    DTextEdit*                     descEdit;
     QComboBox*                     favoriteTypeBox;
     QDateTimeEdit*                 dateEdit;
     DItemsList*                    urlsEdit;
@@ -155,8 +146,8 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     QLabel* const nameLabel = new QLabel(page);
     nameLabel->setText(i18nc("@label: favorite item title properties", "&Name:"));
 
-    d->nameEdit             = new QLineEdit(page);
-    d->nameEdit->setClearButtonEnabled(true);
+    d->nameEdit             = new DTextEdit(page);
+    d->nameEdit->setLinesVisible(1);
     d->nameEdit->setPlaceholderText(i18nc("@info", "Enter favorite entry name here..."));
     d->nameEdit->setWhatsThis(i18nc("@info", "The favorite item name which must be unique and not empty"));
     nameLabel->setBuddy(d->nameEdit);
@@ -188,8 +179,8 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
     d->descLabel            = new QLabel(page);
     d->descLabel->setText(i18nc("@label: favorite item caption properties", "&Description:"));
 
-    d->descEdit             = new QLineEdit(page);
-    d->descEdit->setClearButtonEnabled(true);
+    d->descEdit             = new DTextEdit(page);
+    d->descEdit->setLinesVisible(1);
     d->descEdit->setPlaceholderText(i18nc("@info", "Enter favorite item description here..."));
     d->descLabel->setBuddy(d->descEdit);
 
@@ -303,7 +294,10 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
 
     // --------------------------------------------------------
 
-    connect(d->nameEdit, SIGNAL(textChanged(QString)),
+    connect(d->nameEdit, SIGNAL(textChanged()),
+            this, SLOT(slotModified()));
+
+    connect(d->descEdit, SIGNAL(textChanged()),
             this, SLOT(slotModified()));
 
     connect(d->favoriteTypeBox, SIGNAL(activated(int)),

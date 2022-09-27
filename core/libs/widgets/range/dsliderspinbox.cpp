@@ -6,20 +6,11 @@
  * Date        : 2014-11-30
  * Description : Save space slider widget
  *
- * Copyright (C) 2014-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C)      2010 by Justin Noel <justin at ics dot com>
- * Copyright (C)      2010 by Cyrille Berger <cberger at cberger dot net>
+ * SPDX-FileCopyrightText: 2014-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText:      2010 by Justin Noel <justin at ics dot com>
+ * SPDX-FileCopyrightText:      2010 by Cyrille Berger <cberger at cberger dot net>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -75,6 +66,7 @@ public:
         STYLE_PLASTIQUE,
         STYLE_BREEZE,
         STYLE_FUSION,
+        STYLE_GTK2
     };
 
     QLineEdit*        edit;
@@ -106,10 +98,10 @@ DAbstractSliderSpinBox::DAbstractSliderSpinBox(QWidget* const parent, DAbstractS
     Q_D(DAbstractSliderSpinBox);
 
     QEvent e(QEvent::StyleChange);
-    changeEvent(&e);
+    this->changeEvent(&e);
 
     d->edit = new QLineEdit(this);
-    d->edit->setContentsMargins(0, 0, 0, 0);
+    d->edit->setContentsMargins(QMargins());
     d->edit->setAlignment(Qt::AlignCenter);
     d->edit->installEventFilter(this);
     d->edit->setFrame(false);
@@ -232,8 +224,13 @@ void DAbstractSliderSpinBox::paint(QPainter& painter)
     painter.setClipping(false);
     painter.restore();
 
-
     QStyleOptionProgressBar progressOpts = progressBarOptions();
+
+    if (d->style == DAbstractSliderSpinBoxPrivate::STYLE_GTK2)
+    {
+        progressOpts.state |= QStyle::State_Horizontal;
+    }
+
     progressOpts.rect.adjust(0, 2, 0, -2);
     style()->drawControl(QStyle::CE_ProgressBar, &progressOpts, &painter, nullptr);
 
@@ -691,6 +688,10 @@ QSize DAbstractSliderSpinBox::sizeHint() const
             hint += QSize(2, 0);
             break;
 
+        case DAbstractSliderSpinBoxPrivate::STYLE_GTK2:
+            hint += QSize(8, 8);
+            break;
+
         case DAbstractSliderSpinBoxPrivate::STYLE_NOQUIRK:
             // almost all "modern" styles have a margin around controls
             hint += QSize(6, 6);
@@ -967,6 +968,10 @@ void DAbstractSliderSpinBox::changeEvent(QEvent* e)
         else if (style()->objectName() == QLatin1String("breeze"))
         {
             d->style = DAbstractSliderSpinBoxPrivate::STYLE_BREEZE;
+        }
+        else if (style()->objectName() == QLatin1String("gtk2"))
+        {
+            d->style = DAbstractSliderSpinBoxPrivate::STYLE_GTK2;
         }
         else
         {

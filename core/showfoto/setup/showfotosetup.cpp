@@ -6,18 +6,9 @@
  * Date        : 2005-04-02
  * Description : showFoto setup dialog.
  *
- * Copyright (C) 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -188,6 +179,11 @@ ShowfotoSetup::ShowfotoSetup(QWidget* const parent, ShowfotoSetup::Page page)
     if (page != LastPageUsed)
     {
         showPage(page);
+        d->metadataPage->setActiveTab((ShowfotoSetupMetadata::MetadataTab)group.readEntry(QLatin1String("Metadata Tab"), (int)ShowfotoSetupMetadata::Behavior));
+        d->rawPage->setActiveTab((ShowfotoSetupRaw::RAWTab)group.readEntry(QLatin1String("RAW Tab"), (int)ShowfotoSetupRaw::RAWBehavior));
+        d->iccPage->setActiveTab((Digikam::SetupICC::ICCTab)group.readEntry(QLatin1String("ICC Tab"), (int)Digikam::SetupICC::Behavior));
+        d->pluginsPage->setActiveTab((ShowfotoSetupPlugins::PluginTab)group.readEntry(QLatin1String("Plugin Tab"), (int)ShowfotoSetupPlugins::Generic));
+        d->miscPage->setActiveTab((ShowfotoSetupMisc::MiscTab)group.readEntry(QLatin1String("Misc Tab"), (int)ShowfotoSetupMisc::Behaviour));
     }
     else
     {
@@ -203,7 +199,12 @@ ShowfotoSetup::~ShowfotoSetup()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("Setup Dialog"));
-    group.writeEntry(QLatin1String("Setup Page"), (int)activePageIndex());
+    group.writeEntry(QLatin1String("Setup Page"),      (int)activePageIndex());
+    group.writeEntry(QLatin1String("Metadata Tab"),    (int)d->metadataPage->activeTab());
+    group.writeEntry(QLatin1String("RAW Tab"),         (int)d->rawPage->activeTab());
+    group.writeEntry(QLatin1String("ICC Tab"),         (int)d->iccPage->activeTab());
+    group.writeEntry(QLatin1String("Plugin Tab"),      (int)d->pluginsPage->activeTab());
+    group.writeEntry(QLatin1String("Misc Tab"),        (int)d->miscPage->activeTab());
     Digikam::DXmlGuiWindow::saveWindowSize(windowHandle(), group);
     config->sync();
 
@@ -452,6 +453,34 @@ bool ShowfotoSetup::execExifTool(QWidget* const parent)
     }
 
     widget->setActiveTab(ShowfotoSetupMetadata::ExifTool);
+
+    bool success                         = (setup->DConfigDlg::exec() == QDialog::Accepted);
+    delete setup;
+
+    return success;
+}
+
+bool ShowfotoSetup::execLocalize(QWidget* const parent)
+{
+    QPointer<ShowfotoSetup> setup        = new ShowfotoSetup(parent);
+    setup->showPage(MiscellaneousPage);
+    setup->setFaceType(Plain);
+
+    DConfigDlgWdgItem* const cur         = setup->currentPage();
+
+    if (!cur)
+    {
+        return false;
+    }
+
+    ShowfotoSetupMisc* const widget  = dynamic_cast<ShowfotoSetupMisc*>(cur->widget());
+
+    if (!widget)
+    {
+        return false;
+    }
+
+    widget->setActiveTab(ShowfotoSetupMisc::Localize);
 
     bool success                         = (setup->DConfigDlg::exec() == QDialog::Accepted);
     delete setup;

@@ -6,17 +6,9 @@
  * Date        : 2007-11-10
  * Description : IPTC envelope settings page.
  *
- * Copyright (C) 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -45,7 +37,7 @@
 #include "squeezedcombobox.h"
 #include "metadatacheckbox.h"
 #include "timezonecombobox.h"
-#include "limitedtextedit.h"
+#include "dtextedit.h"
 #include "dlayoutbox.h"
 
 namespace DigikamGenericMetadataEditPlugin
@@ -148,7 +140,7 @@ public:
     QDateEdit*                     dateSentSel;
 
     QLabel*                        destinationNote;
-    LimitedTextEdit*               destinationEdit;
+    DPlainTextEdit*                destinationEdit;
 
     MetadataCheckBox*              priorityCheck;
     MetadataCheckBox*              formatCheck;
@@ -178,7 +170,7 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
     d->destinationNote      = new QLabel(destHeader);
     destHeader->setStretchFactor(d->destinationCheck, 10);
 
-    d->destinationEdit      = new LimitedTextEdit(this);
+    d->destinationEdit      = new DPlainTextEdit(this);
     d->destinationEdit->setMaxLength(1024);
     d->destinationEdit->setPlaceholderText(i18n("Set here the envelope destination"));
     d->destinationEdit->setWhatsThis(i18n("Enter the envelope destination. "

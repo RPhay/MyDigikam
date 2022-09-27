@@ -6,18 +6,9 @@
  * Date        : 2011-02-16
  * Description : pick label filter
  *
- * Copyright (C) 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -59,7 +50,7 @@ QList<TAlbum*> PickLabelFilter::getCheckedPickLabelTags()
     int tagId   = 0;
     TAlbum* tag = nullptr;
 
-    Q_FOREACH (const PickLabel& pl, colorLabels())
+    Q_FOREACH (const PickLabel& pl, pickLabels())
     {
         tagId = TagsCache::instance()->tagForPickLabel(pl);
         tag   = AlbumManager::instance()->findTAlbum(tagId);
@@ -74,7 +65,7 @@ QList<TAlbum*> PickLabelFilter::getCheckedPickLabelTags()
 
 void PickLabelFilter::slotPickLabelSelectionChanged()
 {
-    Q_EMIT signalPickLabelSelectionChanged(colorLabels());
+    Q_EMIT signalPickLabelSelectionChanged(pickLabels());
 }
 
 } // namespace Digikam

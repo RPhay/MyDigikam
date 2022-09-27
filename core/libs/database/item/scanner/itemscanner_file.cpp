@@ -6,19 +6,10 @@
  * Date        : 2007-09-19
  * Description : Scanning a single item - file metadata helper.
  *
- * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -102,7 +93,9 @@ void ItemScanner::scanItemInformation()
 {
     d->commit.commitItemInformation = true;
 
-    if ((d->scanMode == NewScan) || (d->scanMode == Rescan))
+    if ((d->scanMode == NewScan) ||
+        (d->scanMode == Rescan)  ||
+        (d->scanMode == CleanScan))
     {
         d->commit.imageInformationFields = DatabaseFields::ItemInformationAll;
 
@@ -164,7 +157,7 @@ void ItemScanner::commitItemInformation()
                                                 d->commit.imageInformationInfos,
                                                 d->commit.imageInformationFields);
     }
-    else // d->scanMode == Rescan or d->scanMode == ModifiedScan
+    else // d->scanMode == Rescan or CleanScan or ModifiedScan
     {
         CoreDbAccess().db()->changeItemInformation(d->scanInfo.id,
                                                    d->commit.imageInformationInfos,
@@ -219,11 +212,9 @@ void ItemScanner::scanFile(ScanMode mode)
     }
     else
     {
-        if ((d->scanMode == Rescan) &&
-            (d->scanInfo.id != -1)  &&
-            MetaEngineSettings::instance()->settings().clearMetadataIfRescan)
+        if (d->scanMode == CleanScan)
         {
-            CoreDbAccess().db()->clearMetadataFromImage(d->scanInfo.id);
+            cleanDatabaseMetadata();
         }
 
         if      (d->scanInfo.category == DatabaseItem::Image)

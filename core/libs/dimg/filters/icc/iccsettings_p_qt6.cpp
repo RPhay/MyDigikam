@@ -6,20 +6,11 @@
  * Date        : 2009-08-09
  * Description : central place for ICC settings - Qt6 implementations
  *
- * Copyright (C) 2005-2006 by F.J. Cruz <fj dot cruz at supercable dot es>
- * Copyright (C) 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2009-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2005-2006 by F.J. Cruz <fj dot cruz at supercable dot es>
+ * SPDX-FileCopyrightText: 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -137,11 +128,11 @@ Display* IccSettings::Private::display()
 
 /*
  * From koffice/libs/pigment/colorprofiles/KoLcmsColorProfileContainer.cpp
- * Copyright (C) 2000 Matthias Elter <elter at kde dot org>
+ * SPDX-FileCopyrightText: 2000 Matthias Elter <elter at kde dot org>
  *               2001 John Califf
  *               2004 Boudewijn Rempt <boud at valdyas dot org>
- * Copyright (C) 2007 Thomas Zander <zander at kde dot org>
- * Copyright (C) 2007 Adrian Page <adrian at pagenet dot plus dot com>
+ * SPDX-FileCopyrightText: 2007 Thomas Zander <zander at kde dot org>
+ * SPDX-FileCopyrightText: 2007 Adrian Page <adrian at pagenet dot plus dot com>
 */
 IccProfile IccSettings::Private::profileFromWindowSystem(QWidget* const widget)
 {

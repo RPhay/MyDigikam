@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Theme
 Name=Floating Cards
+Name[be]=Выплыўныя карткі
 Name[ca]=Targetes flotants
 Name[ca@valencia]=Targetes flotants
 Name[cs]=Plovoucí karty
@@ -32,6 +33,7 @@ Name[uk]=Картки, що плавають
 Name[x-test]=xxFloating Cardsxx
 Name[zh_CN]=浮动卡片
 Comment=A dark theme with floating thumbnail/description cards. Fast navigation through the gallery.
+Comment[be]=Цёмная тэма з выплыўнымі карткамі з мініяцюрамі альбо апісаннем, праз якія можна хутка перамяшчацца па галерэі.
 Comment[ca]=Un tema fosc amb targetes de miniatures/descripcions flotants. Navegació ràpida per la galeria.
 Comment[ca@valencia]=Un tema fosc amb targetes de miniatures/descripcions flotants. Navegació ràpida per la galeria.
 Comment[cs]=Tmavý motiv s plovoucími kartami s náhledem / popisem. Rychlé prohledávání sbírky.
@@ -65,6 +67,7 @@ Comment[zh_CN]=一款深色主题，显示浮动的缩略图和描述卡片，�
 
 [X-HTMLGallery Author]
 Name=Jiří Boháč
+Name[be]=Jiří Boháč
 Name[bg]=Jiří Boháč
 Name[ca]=Jiří Boháč
 Name[ca@valencia]=Jiří Boháč
@@ -100,6 +103,7 @@ Url=mailto:jiri@boha.cz
 
 [X-HTMLGallery Preview]
 Name=Floating Cards
+Name[be]=Выплыўныя карткі
 Name[ca]=Targetes flotants
 Name[ca@valencia]=Targetes flotants
 Name[cs]=Plovoucí karty
@@ -137,6 +141,7 @@ Allow-non-square-thumbnails=true
 
 [X-HTMLGallery Parameter keyboard_navigation]
 Name=Keyboard & swipe navigation
+Name[be]=Навігацыя клавіятурай і пракручваннем
 Name[ca]=Navegació amb el teclat i lliscament
 Name[ca@valencia]=Navegació amb el teclat i lliscament
 Name[cs]=Animace posunem klávesnicí nebo táhnutím
@@ -183,6 +188,7 @@ Caption-1[de]=Aus
 [X-HTMLGallery Parameter preload]
 Name=Preload
 Name[ar]=محملة مسبقاً
+Name[be]=Папярэдняя загрузка
 Name[ca]=Càrrega prèvia
 Name[ca@valencia]=Càrrega prèvia
 Name[cs]=Předem načíst

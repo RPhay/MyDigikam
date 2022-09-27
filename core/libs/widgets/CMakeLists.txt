@@ -1,9 +1,9 @@
 #
-# Copyright (c) 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
-# Copyright (c) 2015      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
+# SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2015      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
 #
-# Redistribution and use is allowed according to the terms of the BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+# SPDX-License-Identifier: BSD-3-Clause
+#
 
 APPLY_COMMON_POLICIES()
 
@@ -11,6 +11,23 @@ set(libtextwidgets_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/text/modelcompleter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/searchtextbar.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/text/dtextedit.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/dplaintextedit.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/dtextedit_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/localizesettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/localizecontainer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/localizeconfig.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/localizeselector.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/spellcheckconfig.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator_google.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator_tables.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator_yandex.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator_bing.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator_libretr.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator_lingva.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator_properties.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/text/donlinetranslator_tts.cpp
 )
 
 set(liblayouttools_SRCS
@@ -125,6 +142,7 @@ set(libmetadatawidgets_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/metadata/config/metadatapanel.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/metadata/utils/altlangstredit.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/metadata/utils/altlangstredit_p.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/metadata/utils/countryselector.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/metadata/utils/subjectwidget.cpp
 
@@ -151,6 +169,7 @@ include_directories(
     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Gui,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Sql,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Network,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Concurrent,INTERFACE_INCLUDE_DIRECTORIES>
 
     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
@@ -160,6 +179,7 @@ include_directories(
 )
 
 if(KF5Sonnet_FOUND)
+    include_directories($<TARGET_PROPERTY:KF5::SonnetCore,INTERFACE_INCLUDE_DIRECTORIES>)
     include_directories($<TARGET_PROPERTY:KF5::SonnetUi,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 

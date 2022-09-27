@@ -6,18 +6,9 @@
  * Date        : 2022-05-12
  * Description : video setup page.
  *
- * Copyright (C) 2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -54,12 +45,12 @@ class Q_DECL_HIDDEN SetupVideo::Private
 public:
 
     explicit Private()
-      : tabContent(nullptr),
-        resetBtn  (nullptr)
+      : tab     (nullptr),
+        resetBtn(nullptr)
     {
     }
 
-    QTabWidget*                  tabContent;
+    QTabWidget*                  tab;
     QPushButton*                 resetBtn;
     QList<QtAV::ConfigPageBase*> pages;
 };
@@ -75,8 +66,8 @@ SetupVideo::SetupVideo(QWidget* const parent)
     QVBoxLayout* const vbl = new QVBoxLayout();
     panel->setLayout(vbl);
 
-    d->tabContent          = new QTabWidget(this);
-    d->tabContent->setTabPosition(QTabWidget::North);
+    d->tab                 = new QTabWidget(this);
+    d->tab->setTabPosition(QTabWidget::North);
 
     d->resetBtn            = new QPushButton(this);
     d->resetBtn->setText(i18nc("@action", "Reset"));
@@ -85,7 +76,7 @@ SetupVideo::SetupVideo(QWidget* const parent)
     connect(d->resetBtn, SIGNAL(clicked()),
             this, SLOT(slotReset()));
 
-    vbl->addWidget(d->tabContent);
+    vbl->addWidget(d->tab);
     vbl->addWidget(d->resetBtn);
 
     d->pages << new DecoderConfigPage(nullptr, false)
@@ -101,6 +92,16 @@ SetupVideo::~SetupVideo()
     delete d;
 }
 
+void SetupVideo::setActiveTab(VideoTab tab)
+{
+    d->tab->setCurrentIndex(tab);
+}
+
+SetupVideo::VideoTab SetupVideo::activeTab() const
+{
+    return (VideoTab)d->tab->currentIndex();
+}
+
 void SetupVideo::applySettings()
 {
     Q_FOREACH (ConfigPageBase* const page, d->pages)
@@ -113,11 +114,14 @@ void SetupVideo::applySettings()
 
 void SetupVideo::readSettings()
 {
+    int i = Decoder;
+
     Q_FOREACH (ConfigPageBase* const page, d->pages)
     {
         page->applyToUi();
         page->applyOnUiChange(false);
-        d->tabContent->addTab(page, page->name());
+        d->tab->insertTab(i, page, page->name());
+        i++;
     }
 }
 

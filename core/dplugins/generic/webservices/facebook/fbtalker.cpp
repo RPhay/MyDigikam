@@ -6,20 +6,12 @@
  * Date        : 2008-12-26
  * Description : a tool to export items to Facebook web service
  *
- * Copyright (C) 2008-2010 by Luka Renko <lure at kubuntu dot org>
- * Copyright (c) 2011      by Dirk Tilger <dirk dot kde at miriup dot de>
- * Copyright (C) 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2018      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * SPDX-FileCopyrightText: 2008-2010 by Luka Renko <lure at kubuntu dot org>
+ * SPDX-FileCopyrightText: 2011      by Dirk Tilger <dirk dot kde at miriup dot de>
+ * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2018      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -46,7 +38,6 @@
 #include <QUrlQuery>
 #include <QSettings>
 #include <QMessageBox>
-#include <QNetworkAccessManager>
 
 // KDE includes
 
@@ -59,6 +50,8 @@
 #include "fbmpform.h"
 #include "wstoolutils.h"
 #include "webbrowserdlg.h"
+#include "networkmanager.h"
+
 
 using namespace Digikam;
 
@@ -149,7 +142,7 @@ FbTalker::FbTalker(QWidget* const parent)
     : d(new Private())
 {
     d->parent   = parent;
-    d->netMngr  = new QNetworkAccessManager(this);
+    d->netMngr  = NetworkManager::instance()->getNetworkManager(this);
     d->settings = WSToolUtils::getOauthSettings(this);
 
     connect(this, SIGNAL(linkingSucceeded()),

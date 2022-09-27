@@ -6,19 +6,10 @@
  * Date        : 2003-02-10
  * Description : camera setup tab.
  *
- * Copyright (C) 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -363,7 +354,7 @@ SetupCamera::SetupCamera(QWidget* const parent)
     grid->addItem(spacer,                4, 1, 1, 1);
     grid->addWidget(gphotoLogoLabel,     5, 1, 1, 1);
 
-    d->tab->insertTab(0, panel, i18n("Devices"));
+    d->tab->insertTab(Devices, panel, i18n("Devices"));
 
     // -------------------------------------------------------------
 
@@ -400,7 +391,7 @@ SetupCamera::SetupCamera(QWidget* const parent)
     boxLayout->setColumnStretch(2, 1);
     conflictBox->setLayout(boxLayout);
 
-    d->tab->insertTab(1, panel2, i18n("Behavior"));
+    d->tab->insertTab(Behavior, panel2, i18n("Behavior"));
 
     layout->setContentsMargins(spacing, spacing, spacing, spacing);
     layout->setSpacing(spacing);
@@ -460,7 +451,7 @@ SetupCamera::SetupCamera(QWidget* const parent)
     importGrid->addWidget(d->importEditButton,   2, 1, 1, 1);
     importGrid->addItem(spacer2,                 3, 1, 1, 1);
 
-    d->tab->insertTab(2, panel3, i18n("Import Filters"));
+    d->tab->insertTab(ImportFilters, panel3, i18n("Import Filters"));
 
     // -- Import Icon View ----------------------------------------------------------
 
@@ -569,7 +560,7 @@ SetupCamera::SetupCamera(QWidget* const parent)
     layout2->addWidget(d->fullScreenSettings);
     layout2->addStretch();
 
-    d->tab->insertTab(3, panel4, i18n("Import Window"));
+    d->tab->insertTab(ImportWindow, panel4, i18n("Import Window"));
 
     // -------------------------------------------------------------
 
@@ -628,6 +619,16 @@ SetupCamera::SetupCamera(QWidget* const parent)
 SetupCamera::~SetupCamera()
 {
     delete d;
+}
+
+void SetupCamera::setActiveTab(CameraTab tab)
+{
+    d->tab->setCurrentIndex(tab);
+}
+
+SetupCamera::CameraTab SetupCamera::activeTab() const
+{
+    return (CameraTab)d->tab->currentIndex();
 }
 
 bool SetupCamera::useFileMetadata()

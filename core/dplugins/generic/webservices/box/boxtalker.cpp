@@ -6,17 +6,9 @@
  * Date        : 2018-05-20
  * Description : a tool to export images to Box web service
  *
- * Copyright (C) 2018      by Tarek Talaat <tarektalaat93 at gmail dot com>
+ * SPDX-FileCopyrightText: 2018      by Tarek Talaat <tarektalaat93 at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -40,7 +32,6 @@
 #include <QApplication>
 #include <QDesktopServices>
 #include <QHttpMultiPart>
-#include <QNetworkAccessManager>
 
 // KDE includes
 
@@ -55,6 +46,7 @@
 #include "boxitem.h"
 #include "previewloadthread.h"
 #include "o0settingsstore.h"
+#include "networkmanager.h"
 
 namespace DigikamGenericBoxPlugin
 {
@@ -114,7 +106,7 @@ BOXTalker::BOXTalker(QWidget* const parent)
     : d(new Private)
 {
     d->parent  = parent;
-    d->netMngr = new QNetworkAccessManager(this);
+    d->netMngr = NetworkManager::instance()->getNetworkManager(this);
 
     connect(this, SIGNAL(boxLinkingFailed()),
             this, SLOT(slotLinkingFailed()));

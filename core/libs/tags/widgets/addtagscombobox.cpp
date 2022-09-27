@@ -6,23 +6,14 @@
  * Date        : 2010-09-15
  * Description : Special combo box for adding or creating tags
  *
- * Copyright (C) 2010       by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 1997       by Sven Radej (sven.radej@iname.com)
- * Copyright (c) 1999       by Patrick Ward <PAT_WARD@HP-USA-om5.om.hp.com>
- * Copyright (c) 1999       by Preston Brown <pbrown at kde dot org>
- * Copyright (c) 2000, 2001 by Dawit Alemayehu <adawit at kde dot org>
- * Copyright (c) 2000, 2001 by Carsten Pfeiffer <pfeiffer at kde dot org>
+ * SPDX-FileCopyrightText: 2010       by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 1997       by Sven Radej (sven.radej@iname.com)
+ * SPDX-FileCopyrightText: 1999       by Patrick Ward <PAT_WARD@HP-USA-om5.om.hp.com>
+ * SPDX-FileCopyrightText: 1999       by Preston Brown <pbrown at kde dot org>
+ * SPDX-FileCopyrightText: 2000, 2001 by Dawit Alemayehu <adawit at kde dot org>
+ * SPDX-FileCopyrightText: 2000, 2001 by Carsten Pfeiffer <pfeiffer at kde dot org>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 

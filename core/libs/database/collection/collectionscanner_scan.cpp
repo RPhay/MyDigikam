@@ -6,20 +6,11 @@
  * Date        : 2007-03-21
  * Description : Collection scanning to database - scan operations.
  *
- * Copyright (C) 2005-2006 by Tom Albers <tomalbers at kde dot nl>
- * Copyright (C) 2007-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2005-2006 by Tom Albers <tomalbers at kde dot nl>
+ * SPDX-FileCopyrightText: 2007-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -420,6 +411,7 @@ qlonglong CollectionScanner::scanFile(const QFileInfo& fi, int albumId, qlonglon
                 break;
 
             case Rescan:
+            case CleanScan:
                 imageId = scanNewFileFullScan(fi, albumId);
                 break;
         }
@@ -440,6 +432,10 @@ qlonglong CollectionScanner::scanFile(const QFileInfo& fi, int albumId, qlonglon
 
             case Rescan:
                 rescanFile(fi, scanInfo);
+                break;
+
+            case CleanScan:
+                cleanScanFile(fi, scanInfo);
                 break;
         }
     }
@@ -1001,7 +997,7 @@ void CollectionScanner::scanFileNormal(const QFileInfo& fi, const ItemScanInfo& 
     {
         if (settings.rescanImageIfModified)
         {
-            rescanFile(fi, scanInfo);
+            cleanScanFile(fi, scanInfo);
         }
         else
         {
@@ -1132,6 +1128,19 @@ void CollectionScanner::scanFileUpdateHashReuseThumbnail(const QFileInfo& info, 
         }
     }
 
+    d->finishScanner(scanner);
+}
+
+void CollectionScanner::cleanScanFile(const QFileInfo& info, const ItemScanInfo& scanInfo)
+{
+    if (d->checkDeferred(info))
+    {
+        return;
+    }
+
+    ItemScanner scanner(info, scanInfo);
+    scanner.setCategory(category(info));
+    scanner.cleanScan();
     d->finishScanner(scanner);
 }
 

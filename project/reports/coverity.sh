@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright (c) 2013-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Run Coverity Scan static analyzer on whole digiKam source code.
 # https://scan.coverity.com/
@@ -16,8 +16,7 @@
 # export DKCoverityToken=xxxxxxx
 # export PATH=$PATH:/opt/cov-analysis-linux64-2020.09/bin
 #
-# Redistribution and use is allowed according to the terms of the BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+# SPDX-License-Identifier: BSD-3-Clause
 #
 
 # Halt and catch errors

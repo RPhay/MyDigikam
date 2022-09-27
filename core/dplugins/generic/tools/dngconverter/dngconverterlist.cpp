@@ -1,23 +1,15 @@
 /* ============================================================
  *
- * This file is a part of kipi-plugins project
+ * This file is a part of digiKam project
  * https://www.digikam.org
  *
  * Date        : 2008-09-24
  * Description : file list view and items.
  *
- * Copyright (C) 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2011      by Veaceslav Munteanu <slavuttici at gmail dot com>
+ * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2011      by Veaceslav Munteanu <slavuttici at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -42,7 +34,6 @@ namespace DigikamGenericDNGConverterPlugin
 DNGConverterList::DNGConverterList(QWidget* const parent)
     : DItemsList(parent)
 {
-    setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
     listView()->setColumnLabel(DItemsListView::Filename, i18n("Raw File"));
     listView()->setColumn(static_cast<DItemsListView::ColumnType>(TARGETFILENAME), i18n("Target File"), true);
     listView()->setColumn(static_cast<DItemsListView::ColumnType>(IDENTIFICATION), i18n("Camera"),      true);

@@ -6,20 +6,11 @@
  * Date        : 2007-03-18
  * Description : Database Engine storage container for connection parameters.
  *
- * Copyright (C) 2007-2008 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C)      2018 by Mario Frank    <mario dot frank at uni minus potsdam dot de>
+ * SPDX-FileCopyrightText: 2007-2008 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText:      2018 by Mario Frank    <mario dot frank at uni minus potsdam dot de>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -55,6 +46,7 @@ public:
                        const QString& _connectOptions = QString(),
                        const QString& _hostName = QString(),
                        int            _port = -1,
+                       bool           _walMode = false,
                        bool           _internalServer = false,
                        const QString& _userName = QString(),
                        const QString& _password = QString(),
@@ -200,6 +192,7 @@ public:
     QString connectOptions;
     QString hostName;
     int     port;
+    bool    walMode;
     bool    internalServer;
     QString userName;
     QString password;

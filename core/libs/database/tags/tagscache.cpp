@@ -6,19 +6,10 @@
  * Date        : 2010-04-02
  * Description : Cache for Tag information
  *
- * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -617,16 +608,28 @@ int TagsCache::tagForPath(const QString& path) const
     // to lookup all the tag ids with that name, then find the one
     // with a matching full path
 
-    int tagID       = 0;
-    QString tagName = tagHierarchy.last();
+    int tagID                       = 0;
+    QString tagName                 = tagHierarchy.last();
+    const QList<int> possibleTagIds = d->nameHash.values(tagName);
 
-    for (int const id : d->nameHash.values(tagName))
+    for (int const id : possibleTagIds)
     {
         if (d->tagPath(id, NoLeadingSlash) == fullPath)
         {
             tagID = id;
             break;
         }
+    }
+
+    // We only have one entry in tagHierarchy (no path),
+    // if only a tag exists, we can assign it to this.
+    // Otherwise we recreate it in the root.
+
+    if ((tagID == 0)               &&
+        (tagHierarchy.size() == 1) &&
+        (possibleTagIds.size() == 1))
+    {
+        tagID = possibleTagIds.first();
     }
 
     return tagID;

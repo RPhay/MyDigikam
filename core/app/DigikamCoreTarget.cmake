@@ -1,9 +1,9 @@
 #
-# Copyright (c) 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
-# Copyright (c) 2015      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
+# SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2015      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
 #
-# Redistribution and use is allowed according to the terms of the BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+# SPDX-License-Identifier: BSD-3-Clause
+#
 
 ### digiKam core object library #################################################################################################
 
@@ -13,6 +13,7 @@ set(DIGIKAMCORE_OBJECTS
             ${CMAKE_CURRENT_SOURCE_DIR}/utils/digikam_version.cpp
 
             $<TARGET_OBJECTS:core_dimg_obj>
+            $<TARGET_OBJECTS:core_imgqsort_obj>
             $<TARGET_OBJECTS:core_dragdrop_obj>
             $<TARGET_OBJECTS:core_dmetadata_obj>
             $<TARGET_OBJECTS:core_onlineversion_obj>
@@ -21,6 +22,7 @@ set(DIGIKAMCORE_OBJECTS
             $<TARGET_OBJECTS:core_threadimageio_obj>
             $<TARGET_OBJECTS:core_pgfutils_obj>
             $<TARGET_OBJECTS:core_dthread_obj>
+            $<TARGET_OBJECTS:core_networkmanager_obj>
             $<TARGET_OBJECTS:core_versionmanager_obj>
             $<TARGET_OBJECTS:core_libraw_obj>
             $<TARGET_OBJECTS:core_rawengine_obj>

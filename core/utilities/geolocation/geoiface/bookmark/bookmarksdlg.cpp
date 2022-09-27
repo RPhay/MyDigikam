@@ -6,18 +6,9 @@
  * Date        : 2017-05-15
  * Description : Managemenet dialogs for bookmarks
  *
- * Copyright (C) 2017-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2017-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -58,6 +49,7 @@
 #include "dxmlguiwindow.h"
 #include "itempropertiesgpstab.h"
 #include "gpsiteminfo.h"
+#include "dtextedit.h"
 
 namespace Digikam
 {
@@ -79,8 +71,8 @@ public:
     BookmarksManager*      manager;
     AddBookmarkProxyModel* proxyModel;
     QComboBox*             location;
-    QLineEdit*             title;
-    QLineEdit*             desc;
+    DTextEdit*             title;
+    DTextEdit*             desc;
 };
 
 AddBookmarkDialog::AddBookmarkDialog(const QString& url,
@@ -104,11 +96,13 @@ AddBookmarkDialog::AddBookmarkDialog(const QString& url,
     label->setTextFormat(Qt::PlainText);
     label->setWordWrap(true);
 
-    d->title            = new QLineEdit(this);
+    d->title            = new DTextEdit(this);
+    d->title->setLinesVisible(1);
     d->title->setPlaceholderText(i18n("Bookmark title"));
     d->title->setText(title);
 
-    d->desc             = new QLineEdit(this);
+    d->desc             = new DTextEdit(this);
+    d->desc->setLinesVisible(1);
     d->desc->setPlaceholderText(i18n("Bookmark comment"));
     d->location         = new QComboBox(this);
 

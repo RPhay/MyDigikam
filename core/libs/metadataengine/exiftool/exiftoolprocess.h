@@ -8,19 +8,10 @@
  *               Based on ZExifTool Qt interface published at 18 Feb 2021
  *               https://github.com/philvl/ZExifTool
  *
- * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (c) 2021 by Philippe Vianney Liaud <philvl dot dev at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2021 by Philippe Vianney Liaud <philvl dot dev at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -40,6 +31,7 @@
 
 namespace Digikam
 {
+class ExifToolParser;
 
 class DIGIKAM_EXPORT ExifToolProcess : public QProcess
 {
@@ -103,6 +95,40 @@ public:
         TRANS_ALL_EXIF      = 0x04                  ///< Translate all existing Tags from source file to Exif.
     };
 
+    /**
+     * Command result state.
+     */
+    enum ResultState
+    {
+        COMMAND_RESULT = 0,
+        FINISH_RESULT,
+        ERROR_RESULT,
+        EXIT_RESULT
+    };
+
+public:
+
+    class Result
+    {
+    public:
+
+        Result()
+          : cmdWaitError (false),
+            commandState (ExifToolProcess::COMMAND_RESULT),
+            cmdRunAction (ExifToolProcess::NO_ACTION),
+            cmdRunResult (0),
+            elapsedTimer (0)
+        {
+        }
+
+        bool       cmdWaitError;
+        int        commandState;
+        int        cmdRunAction;
+        int        cmdRunResult;
+        int        elapsedTimer;
+        QByteArray outputBuffer;
+    };
+
 public:
 
     /**
@@ -137,29 +163,40 @@ public:
      */
     void setExifToolProgram(const QString& etExePath);
 
-    QString getExifToolProgram()                 const;
+    QString getExifToolProgram()                    const;
 
 public:
 
     /**
      * Returns true if ExifToolProcess is available (process state == Running)
      */
-    bool                   exifToolAvailable()   const;
+    bool                    exifToolAvailable()     const;
 
     /**
      * Returns true if a command is running.
      */
-    bool                   exifToolIsBusy()      const;
+    bool                    exifToolIsBusy()        const;
 
     /**
      * Returns the type of error that occurred last.
      */
-    QProcess::ProcessError exifToolError()       const;
+    QProcess::ProcessError  exifToolError()         const;
 
     /**
      * Returns an error message.
      */
-    QString                exifToolErrorString() const;
+    QString                 exifToolErrorString()   const;
+
+    /**
+     * Returns the ExifToolProcess result.
+     */
+    ExifToolProcess::Result getExifToolResult()     const;
+
+    /**
+     * WatCondition for the ExifToolParser class.
+     * Returns the ExifToolProcess result.
+     */
+    ExifToolProcess::Result waitForExifToolResult() const;
 
     /**
      * Send a command to exiftool process.
@@ -177,20 +214,18 @@ Q_SIGNALS:
                             int cmdAction,
                             QProcess::ProcessState newState);
 
-    void signalErrorOccurred(int cmdId,
-                             int cmdAction,
-                             QProcess::ProcessError error);
-
-    void signalFinished(int cmdId,
-                        int cmdAction,
-                        int exitCode,
-                        QProcess::ExitStatus exitStatus);
-
     void signalCmdCompleted(int cmdId,
                             int cmdAction,
                             int execTime,
                             const QByteArray& cmdOutputChannel,
                             const QByteArray& cmdErrorChannel);
+
+    void signalErrorOccurred(int cmdId,
+                             int cmdAction,
+                             QProcess::ProcessError error,
+                             const QString& description);
+
+    void signalFinished(int cmdId);
 
 private:
 

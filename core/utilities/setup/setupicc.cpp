@@ -6,20 +6,11 @@
  * Date        : 2005-11-24
  * Description : Color management setup tab.
  *
- * Copyright (C) 2005-2007 by F.J. Cruz <fj dot cruz at supercable dot es>
- * Copyright (C) 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2009-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2005-2007 by F.J. Cruz <fj dot cruz at supercable dot es>
+ * SPDX-FileCopyrightText: 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -172,7 +163,7 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
       d          (new Private)
 {
     const int spacing              = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
     d->dlgBtnBox                   = dlgBtnBox;
     d->tab                         = new QTabWidget(viewport());
     setWidget(d->tab);
@@ -512,9 +503,9 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->tab->addTab(d->behaviorPanel, i18nc("@title: icc panel tab", "Behavior"));
-    d->tab->addTab(d->profilesPanel, i18nc("@title: icc panel tab", "Profiles"));
-    d->tab->addTab(d->advancedPanel, i18nc("@title: icc panel tab", "Advanced"));
+    d->tab->insertTab(Behavior, d->behaviorPanel, i18nc("@title: icc panel tab", "Behavior"));
+    d->tab->insertTab(Profiles, d->profilesPanel, i18nc("@title: icc panel tab", "Profiles"));
+    d->tab->insertTab(Advanced, d->advancedPanel, i18nc("@title: icc panel tab", "Advanced"));
 
     // --------------------------------------------------------
 
@@ -560,13 +551,21 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
 
     readSettings();
     slotToggledEnabled();
-
-    // --------------------------------------------------------
 }
 
 SetupICC::~SetupICC()
 {
     delete d;
+}
+
+void SetupICC::setActiveTab(ICCTab tab)
+{
+    d->tab->setCurrentIndex(tab);
+}
+
+SetupICC::ICCTab SetupICC::activeTab() const
+{
+    return (ICCTab)d->tab->currentIndex();
 }
 
 void SetupICC::applySettings()

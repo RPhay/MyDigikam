@@ -6,22 +6,14 @@
  * Date        : 2011-02-11
  * Description : a tool to export images to MediaWiki web service
  *
- * Copyright (C) 2011      by Alexandre Mendes <alex dot mendes1988 at gmail dot com>
- * Copyright (C) 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2012      by Parthasarathy Gopavarapu <gparthasarathy93 at gmail dot com>
- * Copyright (C) 2012      by Nathan Damie <nathan dot damie at gmail dot com>
- * Copyright (C) 2012      by Iliya Ivanov <ilko2002 at abv dot bg>
- * Copyright (C) 2012-2016 by Peter Potrowl <peter dot potrowl at gmail dot com>
+ * SPDX-FileCopyrightText: 2011      by Alexandre Mendes <alex dot mendes1988 at gmail dot com>
+ * SPDX-FileCopyrightText: 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2012      by Parthasarathy Gopavarapu <gparthasarathy93 at gmail dot com>
+ * SPDX-FileCopyrightText: 2012      by Nathan Damie <nathan dot damie at gmail dot com>
+ * SPDX-FileCopyrightText: 2012      by Iliya Ivanov <ilko2002 at abv dot bg>
+ * SPDX-FileCopyrightText: 2012-2016 by Peter Potrowl <peter dot potrowl at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -108,7 +100,7 @@ public:
     }
 
     QWidget*                                 fileBox;
-    QLineEdit*                               titleEdit;
+    DTextEdit*                               titleEdit;
     DTextEdit*                               descEdit;
     QLineEdit*                               dateEdit;
     QLineEdit*                               longitudeEdit;
@@ -165,23 +157,29 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
 
     d->iface                      = iface;
     const int spacing             = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                         QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
     QVBoxLayout* const mainLayout = new QVBoxLayout(this);
 
     // -------------------------------------------------------------------
 
-    d->headerLbl = new QLabel(this);
+    d->headerLbl           = new QLabel(this);
     d->headerLbl->setWhatsThis(i18nc("@info", "This is a clickable link to open the MediaWiki home page in a web browser."));
     d->headerLbl->setOpenExternalLinks(true);
     d->headerLbl->setFocusPolicy(Qt::NoFocus);
 
-    d->imgList   = new DItemsList(this);
+    d->imgList             = new DItemsList(this);
     d->imgList->setObjectName(QLatin1String("WebService ImagesList"));
-    d->imgList->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
+    d->progressBar         = new DProgressWdg(this);
+
+    d->imgList->appendControlButtonsWidget(d->progressBar);
+    QBoxLayout* const blay = d->imgList->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
+    blay->setStretchFactor(d->progressBar, 20);
+
     d->imgList->setAllowRAW(true);
     d->imgList->setIface(d->iface);
     d->imgList->loadImagesFromCurrentSelection();
     d->imgList->listView()->setWhatsThis(i18nc("@info", "This is the list of images to upload to the wiki."));
+    d->progressBar->hide();
 
     // --------------------- Upload tab ----------------------------------
 
@@ -211,7 +209,8 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
 
     loadItemInfoFirstLoad();
 
-    d->titleEdit    = new QLineEdit(d->defaultMessage, d->fileBox);
+    d->titleEdit    = new DTextEdit(d->defaultMessage, d->fileBox);
+    d->titleEdit->setLinesVisible(1);
     d->dateEdit     = new QLineEdit(d->defaultMessage, d->fileBox);
 
     d->descEdit     = new DTextEdit(0, d->fileBox);
@@ -517,12 +516,6 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
 
     // ------------------------------------------------------------------------
 
-    d->progressBar = new DProgressWdg(this);
-    d->progressBar->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
-    d->progressBar->hide();
-
-    // ------------------------------------------------------------------------
-
     wrapperLayout->addWidget(d->imgList);
     wrapperLayout->addWidget(tabWidget);
     wrapperLayout->setStretch(0, 10);
@@ -531,7 +524,6 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
     mainLayout->addWidget(d->headerLbl);
     mainLayout->addWidget(wrapper);
     mainLayout->setSpacing(spacing);
-    mainLayout->addWidget(d->progressBar);
     mainLayout->setContentsMargins(QMargins());
 
     updateLabels();  // use empty labels until login
@@ -559,7 +551,7 @@ MediaWikiWidget::MediaWikiWidget(DInfoInterface* const iface, QWidget* const par
     connect(d->titleEdit, SIGNAL(editingFinished()),
             this, SLOT(slotRestoreExtension()));
 
-    connect(d->titleEdit, SIGNAL(textEdited(QString)),
+    connect(d->titleEdit, SIGNAL(textChanged()),
             this, SLOT(slotApplyTitle()));
 
     connect(d->dateEdit, SIGNAL(textEdited(QString)),

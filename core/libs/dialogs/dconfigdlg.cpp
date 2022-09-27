@@ -6,22 +6,13 @@
  * Date        : 2009-11-03
  * Description : A dialog base class which can handle multiple pages.
  *
- * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 1999-2001 by Mirko Boehm <mirko at kde dot org>
- * Copyright (C) 1999-2001 by Espen Sand <espen at kde dot org>
- * Copyright (C) 1999-2001 by Holger Freyther <freyther at kde dot org>
- * Copyright (C) 2005-2006 by Olivier Goffart <ogoffart at kde dot org>
+ * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 1999-2001 by Mirko Boehm <mirko at kde dot org>
+ * SPDX-FileCopyrightText: 1999-2001 by Espen Sand <espen at kde dot org>
+ * SPDX-FileCopyrightText: 1999-2001 by Holger Freyther <freyther at kde dot org>
+ * SPDX-FileCopyrightText: 2005-2006 by Olivier Goffart <ogoffart at kde dot org>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -107,7 +98,7 @@ DConfigDlg::DConfigDlg(QWidget* const parent, Qt::WindowFlags flags)
 {
     Q_D(DConfigDlg);
     d->mPageWidget = new DConfigDlgWdg(this);
-    d->mPageWidget->layout()->setContentsMargins(0, 0, 0, 0);
+    d->mPageWidget->layout()->setContentsMargins(QMargins());
 
     d->mButtonBox  = new QDialogButtonBox(this);
     d->mButtonBox->setObjectName(QLatin1String("buttonbox"));

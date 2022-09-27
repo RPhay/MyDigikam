@@ -6,18 +6,10 @@
  * Date        : 2012-02-12
  * Description : a tool to export images to IPFS web service
  *
- * Copyright (C) 2018      by Amar Lakshya <amar dot lakshya at xaviers dot edu dot in>
- * Copyright (C) 2018-2020 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2018      by Amar Lakshya <amar dot lakshya at xaviers dot edu dot in>
+ * SPDX-FileCopyrightText: 2018-2020 by Caulier Gilles <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -34,7 +26,6 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QNetworkReply>
-#include <QNetworkAccessManager>
 
 // KDE includes
 
@@ -43,6 +34,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "networkmanager.h"
 
 namespace DigikamGenericIpfsPlugin
 {
@@ -55,7 +47,8 @@ public:
       : ipfsUploadUrl(QLatin1String("https://api.globalupload.io/transport/add")),
         workTimer    (0),
         reply        (nullptr),
-        image        (nullptr)
+        image        (nullptr),
+        netMngr      (nullptr)
     {
     }
 
@@ -81,13 +74,14 @@ public:
 
     // The QNetworkAccessManager used for connections
 
-    QNetworkAccessManager    netMngr;
+    QNetworkAccessManager*   netMngr;
 };
 
 IpfsTalker::IpfsTalker(QObject* const parent)
     : QObject(parent),
       d      (new Private)
 {
+    d->netMngr = NetworkManager::instance()->getNetworkManager(this);
 }
 
 IpfsTalker::~IpfsTalker()
@@ -305,7 +299,7 @@ void IpfsTalker::doWork()
             image.setBodyDevice(d->image);
             multipart->append(image);
             QNetworkRequest request(QUrl(d->ipfsUploadUrl));
-            d->reply = d->netMngr.post(request, multipart);
+            d->reply = d->netMngr->post(request, multipart);
 
             break;
         }

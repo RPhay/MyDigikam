@@ -1,9 +1,9 @@
 #
-# Copyright (c) 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
-# Copyright (c) 2015      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
+# SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2015      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
 #
-# Redistribution and use is allowed according to the terms of the BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+# SPDX-License-Identifier: BSD-3-Clause
+#
 
 APPLY_COMMON_POLICIES()
 
@@ -25,8 +25,8 @@ set(libsetupshowfoto_SRCS
 
     ${CMAKE_CURRENT_SOURCE_DIR}/downloader/filesdownloader.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/system/systemsettingswidget.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/system/systemsettings.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/misc/systemsettingswidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/misc/systemsettings.cpp
 )
 
 # Used by digikamcore
@@ -43,12 +43,13 @@ set(libsetup_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/setup.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setuptooltip.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setuptemplate.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/setupmisc.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setupplugins.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setuplighttable.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setupdatabase.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setupimagequalitysorter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setuputils.cpp
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/misc/setupmisc.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/editor/setupeditor.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/editor/setupversioning.cpp

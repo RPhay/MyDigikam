@@ -6,17 +6,9 @@
  * Date        : 2007-10-08
  * Description : a widget to edit a tag with multiple string entries.
  *
- * Copyright (C) 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -37,7 +29,7 @@ class MultiStringsEdit : public QWidget
 public:
 
     explicit MultiStringsEdit(QWidget* const parent, const QString& title,
-                              const QString& desc, int size=-1);
+                              const QString& desc, int size = -1);
     ~MultiStringsEdit() override;
 
     void setValues(const QStringList& values);

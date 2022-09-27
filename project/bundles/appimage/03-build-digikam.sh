@@ -3,10 +3,9 @@
 # Script to build digiKam under Linux host
 # This script must be run as sudo
 #
-# Copyright (c) 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
-# Redistribution and use is allowed according to the terms of the BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+# SPDX-License-Identifier: BSD-3-Clause
 #
 
 # Halt and catch errors
@@ -69,6 +68,17 @@ cp $DOWNLOAD_DIR/lensfun_manifest.txt $ORIG_WD/data/
 
 #################################################################################################
 # Build digiKam in temporary directory and installation
+
+# Clean up previous install (see bug #459276)
+
+FILES=$(find /usr | grep -E '(digikam|showfoto|avplayer)')
+
+for FILE in $FILES ; do
+    if [[ -f ${FILE} ]] ; then
+        echo -e "   ==> ${FILE} will be removed from previous install"
+        rm -f ${FILE}
+    fi
+done
 
 if [ -d "$DK_BUILDTEMP/digikam-$DK_VERSION" ] ; then
 

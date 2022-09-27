@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Vanilla
 Name[ar]=فانيللا
+Name[be]=Ваніль
 Name[ca]=Vainilla
 Name[ca@valencia]=Vainilla
 Name[cs]=Vanilla
@@ -31,6 +32,7 @@ Name[x-test]=xxVanillaxx
 Name[zh_CN]=普通
 Type=Theme
 Comment=This theme is based on the look of Adobe Lightroom's HTML export. It has a simple but usable grid layout and comes with various color presets.
+Comment[be]=Тэма на аснове HTML, падрыхтаваных для экспарту ў Adobe Lightroom. Простая, але са зручным выкладам і некалькімі колеравымі схемамі.
 Comment[ca]=Aquest tema està basat en l'aspecte de l'exportació HTML del Lightroom de l'Adobe. Té una disposició de quadrícula senzilla però útil i es distribueix amb diverses predefinicions de colors.
 Comment[ca@valencia]=Este tema està basat en l'aspecte de l'exportació HTML de Lightroom de l'Adobe. Té una disposició de quadrícula senzilla però útil i es distribuïx amb diverses predefinicions de colors.
 Comment[de]=Dieses Design basiert auf Adobe Lightroom's HTML-Export. Es hat eine einfache Gitteranordnung und besitzt viele Farb-Voreinstellungen.
@@ -60,6 +62,7 @@ Comment[zh_CN]=此主题基于 Adobe Lightroom 的 HTML 导出外观设计。它
 
 [X-HTMLGallery Author]
 Name=Wojciech Jarosz
+Name[be]=Wojciech Jarosz
 Name[bg]=Wojciech Jarosz
 Name[ca]=Wojciech Jarosz
 Name[ca@valencia]=Wojciech Jarosz
@@ -96,6 +99,7 @@ Url=mailto:wjarosz@ucsd.edu
 [X-HTMLGallery Parameter author]
 Name=Author
 Name[ar]=المؤلف
+Name[be]=Аўтар
 Name[bg]=Автор
 Name[ca]=Autor
 Name[ca@valencia]=Autoria
@@ -134,6 +138,7 @@ Default=
 [X-HTMLGallery Parameter authorEmail]
 Name=Author Email
 Name[ar]=بريد المؤلّف:
+Name[be]=Электронная пошта аўтара
 Name[ca]=Correu de l'autor
 Name[ca@valencia]=Correu de l'autor
 Name[cs]=E-mail autora
@@ -167,6 +172,7 @@ Default=
 
 [X-HTMLGallery Parameter numRows]
 Name=Rows per page
+Name[be]=Радкоў на старонцы
 Name[ca]=Files per pàgina
 Name[ca@valencia]=Files per pàgina
 Name[cs]=Řádků na stranu
@@ -200,6 +206,7 @@ Default=3
 
 [X-HTMLGallery Parameter numCols]
 Name=Columns per page
+Name[be]=Слупкоў на старонцы
 Name[ca]=Columnes per pàgina
 Name[ca@valencia]=Columnes per pàgina
 Name[cs]=Sloupců na stranu
@@ -234,6 +241,7 @@ Default=3
 [X-HTMLGallery Parameter style]
 Name=Style
 Name[ar]=النّمط
+Name[be]=Стыль
 Name[bg]=Стил
 Name[ca]=Estil
 Name[ca@valencia]=Estil
@@ -290,6 +298,7 @@ Caption-7=White on Black
 
 [X-HTMLGallery Parameter displayNumbers]
 Name=Show image numbers
+Name[be]=Нумараваць выявы
 Name[ca]=Mostra els números de les imatges
 Name[ca@valencia]=Mostra els números de les imatges
 Name[cs]=Zobrazit čísla obrázků
@@ -327,6 +336,7 @@ Caption-1=No
 
 [X-HTMLGallery Parameter dropShadow]
 Name=Add drop shadow
+Name[be]=Дадаць цень
 Name[ca]=Afegeix una ombra difusa
 Name[ca@valencia]=Afig una ombra difusa
 Name[cs]=Přidat vrhání stínu
@@ -363,6 +373,7 @@ Caption-1=No
 [X-HTMLGallery Parameter thumbMargin]
 Name=Thumbnail margin
 Name[ar]=هامش المصغرة
+Name[be]=Контур мініяцюр
 Name[ca]=Marge de les miniatures
 Name[ca@valencia]=Marge de les miniatures
 Name[cs]=Okraj náhledu
@@ -395,6 +406,7 @@ Default=25
 
 [X-HTMLGallery Parameter useLyteBox]
 Name=Use LyteBox
+Name[be]=Выкарыстоўваць LyteBox
 Name[ca]=Usa el LyteBox
 Name[ca@valencia]=Utilitza LyteBox
 Name[cs]=Použít LyteBox
@@ -433,6 +445,7 @@ Caption-1=No
 
 [X-HTMLGallery Parameter slideInterval]
 Name=LyteBox Slideshow Interval
+Name[be]=Інтэрвал слайд-шоу LyteBox
 Name[ca]=Interval entre diapositives del LyteBox
 Name[ca@valencia]=Interval entre diapositives de LyteBox
 Name[da]=Interval for LyteBox-diasshow
@@ -477,6 +490,7 @@ Caption-4=10 seconds
 [X-HTMLGallery Preview]
 Name=Vanilla
 Name[ar]=فانيللا
+Name[be]=Ваніль
 Name[ca]=Vainilla
 Name[ca@valencia]=Vainilla
 Name[cs]=Vanilla

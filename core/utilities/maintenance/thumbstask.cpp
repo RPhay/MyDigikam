@@ -6,18 +6,9 @@
  * Date        : 2013-08-14
  * Description : Thread actions task for thumbs generator.
  *
- * Copyright (C) 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -82,9 +73,8 @@ void ThumbsTask::setMaintenanceData(MaintenanceData* const data)
 
 void ThumbsTask::run()
 {
-    d->catcher->setActive(true);
-
     // While we have data (using this as check for non-null)
+
     while (d->data)
     {
         if (m_cancel)
@@ -102,16 +92,18 @@ void ThumbsTask::run()
         }
 
         // TODO Should be improved by some update procedure
+
+        d->catcher->setActive(true);
         d->catcher->thread()->deleteThumbnail(path);
         d->catcher->thread()->find(ThumbnailIdentifier(path));
         d->catcher->enqueue();
         QList<QImage> images = d->catcher->waitForThumbnails();
+        d->catcher->setActive(false);
+
         Q_EMIT signalFinished(images.first());
     }
 
     Q_EMIT signalDone();
-
-    d->catcher->setActive(false);
 }
 
 } // namespace Digikam

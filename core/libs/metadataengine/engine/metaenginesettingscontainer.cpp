@@ -6,18 +6,9 @@
  * Date        : 2010-08-20
  * Description : MetaEngine Settings Container.
  *
- * Copyright (C) 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -56,7 +47,6 @@ MetaEngineSettingsContainer::MetaEngineSettingsContainer()
       writeDngFiles         (false),
       updateFileTimeStamp   (true),
       rescanImageIfModified (false),
-      clearMetadataIfRescan (false),
       useXMPSidecar4Reading (false),
       useCompatibleFileName (false),
       useLazySync           (false),
@@ -98,7 +88,6 @@ void MetaEngineSettingsContainer::readFromConfig(KConfigGroup& group)
                             group.readEntry("Metadata Writing Mode",                    (int)MetaEngine::WRITE_TO_FILE_ONLY);
     updateFileTimeStamp   = group.readEntry("Update File Timestamp",                    true);
     rescanImageIfModified = group.readEntry("Rescan File If Modified",                  false);
-    clearMetadataIfRescan = group.readEntry("Clear Metadata If Rescan",                 false);
     useLazySync           = group.readEntry("Use Lazy Synchronization",                 false);
     useFastScan           = group.readEntry("Use Fast Scan At Startup",                 false);
 
@@ -157,7 +146,6 @@ void MetaEngineSettingsContainer::writeToConfig(KConfigGroup& group) const
     group.writeEntry("Metadata Writing Mode",                   (int)metadataWritingMode);
     group.writeEntry("Update File Timestamp",                   updateFileTimeStamp);
     group.writeEntry("Rescan File If Modified",                 rescanImageIfModified);
-    group.writeEntry("Clear Metadata If Rescan",                clearMetadataIfRescan);
 
     group.writeEntry("Rotate By Internal Flag",                 bool(rotationBehavior & RotateByInternalFlag));
     group.writeEntry("Rotate By Metadata Flag",                 bool(rotationBehavior & RotateByMetadataFlag));
@@ -240,8 +228,6 @@ QDebug operator<<(QDebug dbg, const MetaEngineSettingsContainer& inf)
                   << inf.updateFileTimeStamp << "), ";
     dbg.nospace() << "rescanImageIfModified("
                   << inf.rescanImageIfModified << "), ";
-    dbg.nospace() << "clearMetadataIfRescan("
-                  << inf.clearMetadataIfRescan << "), ";
     dbg.nospace() << "useXMPSidecar4Reading("
                   << inf.useXMPSidecar4Reading << "), ";
     dbg.nospace() << "useCompatibleFileName("

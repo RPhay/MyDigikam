@@ -6,18 +6,10 @@
  * Date        : 2009-05-22
  * Description : Flickr file list view and items.
  *
- * Copyright (C) 2009      by Pieter Edelman <pieter dot edelman at gmx dot net>
- * Copyright (C) 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009      by Pieter Edelman <pieter dot edelman at gmx dot net>
+ * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -36,6 +28,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "dtextedit.h"
 #include "wscomboboxdelegate.h"
 
 namespace DigikamGenericFlickrPlugin
@@ -459,9 +452,9 @@ class Q_DECL_HIDDEN FlickrListViewItem::Private
 public:
 
     explicit Private()
-      : isPublic(true),
-        isFamily(true),
-        isFriends(true),
+      : isPublic   (true),
+        isFamily   (true),
+        isFriends  (true),
         safetyLevel(FlickrList::SAFE),
         contentType(FlickrList::PHOTO),
         tagLineEdit(nullptr)
@@ -478,7 +471,7 @@ public:
     /**
      * LineEdit used for extra tags per image.
      */
-    QLineEdit*              tagLineEdit;
+    DTextEdit*              tagLineEdit;
 };
 
 FlickrListViewItem::FlickrListViewItem(DItemsListView* const view,
@@ -538,13 +531,8 @@ FlickrListViewItem::FlickrListViewItem(DItemsListView* const view,
                    FlickrList::TAGS),
                i18n("Add extra tags per image or use Upload Options tab to "
                     "add tags for all images"));
-/*
-    d->tagLineEdit = new QLineEdit(view);
-    d->tagLineEdit->setToolTip(i18n("Enter extra tags, separated by commas."));
-    view->setItemWidget(this, static_cast<DItemsListView::ColumnType>(
-                        FlickrList::TAGS), d->tagLineEdit);
-*/
-    updateItemWidgets();
+
+    this->updateItemWidgets();
 }
 
 FlickrListViewItem::~FlickrListViewItem()
@@ -554,7 +542,8 @@ FlickrListViewItem::~FlickrListViewItem()
 
 void FlickrListViewItem::updateItemWidgets()
 {
-    d->tagLineEdit = new QLineEdit(view());
+    d->tagLineEdit = new DTextEdit(view());
+    d->tagLineEdit->setLinesVisible(1);
     d->tagLineEdit->setToolTip(i18n("Enter extra tags, separated by commas."));
     view()->setItemWidget(this, static_cast<DItemsListView::ColumnType>(
                           FlickrList::TAGS), d->tagLineEdit);

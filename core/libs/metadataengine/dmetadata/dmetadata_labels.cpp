@@ -6,20 +6,11 @@
  * Date        : 2006-02-23
  * Description : item metadata interface - labels helpers.
  *
- * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2011      by Leif Huhn <leif at dkstat dot com>
+ * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2011      by Leif Huhn <leif at dkstat dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -41,11 +32,6 @@ namespace Digikam
 
 int DMetadata::getItemPickLabel() const
 {
-    if (getFilePath().isEmpty())
-    {
-        return -1;
-    }
-
     if (hasXmp())
     {
         QString value = getXmpTagString("Xmp.digiKam.PickLabel", false);
@@ -67,11 +53,6 @@ int DMetadata::getItemPickLabel() const
 
 int DMetadata::getItemColorLabel(const DMetadataSettingsContainer& settings) const
 {
-    if (getFilePath().isEmpty())
-    {
-        return -1;
-    }
-
     bool xmpSupported  = hasXmp();
     bool exivSupported = hasExif();
 
@@ -162,11 +143,6 @@ int DMetadata::getItemColorLabel(const DMetadataSettingsContainer& settings) con
 
 int DMetadata::getItemRating(const DMetadataSettingsContainer& settings) const
 {
-    if (getFilePath().isEmpty())
-    {
-        return -1;
-    }
-
     long rating        = -1;
     bool xmpSupported  = hasXmp();
     bool iptcSupported = hasIptc();

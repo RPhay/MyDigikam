@@ -6,18 +6,9 @@
  * Date        : 2020-11-28
  * Description : ExifTool process stream parser.
  *
- * Copyright (C) 2020-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2020-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -102,7 +93,7 @@ public:
     /// Constructor, Destructor, and Configuration Accessors. See exiftoolparser.cpp for details.
     //@{
 
-    explicit ExifToolParser(QObject* const parent);
+    explicit ExifToolParser(QObject* const parent, bool async = false);
     ~ExifToolParser();
 
     void setExifToolProgram(const QString& path);
@@ -128,13 +119,13 @@ public:
      * Load all metadata with ExifTool from a file.
      * Use currentData() to get the ExifTool map.
      */
-    bool load(const QString& path, bool async = false);
+    bool load(const QString& path);
 
     /**
      * Load Exif, Iptc, and Xmp chunk as Exiv2 EXV byte-array from a file.
      * Use currentData() to get the container.
      */
-    bool loadChunk(const QString& path, bool fromVideo = false);
+    bool loadChunk(const QString& path, bool copyToAll = false);
 
     /**
      * Apply tag changes to a target file using ExifTool with a list of tag properties.
@@ -204,15 +195,13 @@ public:
 
     //@}
 
-Q_SIGNALS:
-
-    void signalExifToolDataAvailable();
-
-private Q_SLOTS:
+public:
 
     //---------------------------------------------------------------------------------------------
     /// ExifTool Output Management Methods. See exiftoolparser_output.cpp for details
     //@{
+
+public Q_SLOTS:
 
     void slotCmdCompleted(int cmdId,
                           int cmdAction,
@@ -222,12 +211,16 @@ private Q_SLOTS:
 
     void slotErrorOccurred(int cmdId,
                            int cmdAction,
-                           QProcess::ProcessError error);
+                           QProcess::ProcessError error,
+                           const QString& description);
 
-    void slotFinished(int cmdId,
-                      int cmdAction,
-                      int exitCode,
-                      QProcess::ExitStatus exitStatus);
+    void slotFinished(int cmdId);
+
+    //@}
+
+Q_SIGNALS:
+
+    void signalExifToolDataAvailable();
 
 public:
 

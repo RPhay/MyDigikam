@@ -8,19 +8,10 @@
  *               This class do not depend of digiKam database library
  *               to permit to re-use plugins with Showfoto.
  *
- * Copyright (C) 2017-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
+ * SPDX-FileCopyrightText: 2017-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -32,7 +23,6 @@
 
 // Local includes
 
-#include "metaengine.h"
 #include "digikam_globals.h"
 #include "digikam_debug.h"
 
@@ -164,6 +154,10 @@ void DInfoInterface::openSetupPage(SetupPage)
 
 // -----------------------------------------------------------------
 
+DItemInfo::DItemInfo()
+{
+}
+
 DItemInfo::DItemInfo(const DInfoInterface::DInfoMap& info)
     : m_info(info)
 {
@@ -174,6 +168,11 @@ DItemInfo::DItemInfo(const DInfoInterface::DInfoMap& info)
 
 DItemInfo::~DItemInfo()
 {
+}
+
+DInfoInterface::DInfoMap DItemInfo::infoMap() const
+{
+    return m_info;
 }
 
 QVariant DItemInfo::parseInfoMap(const QString& key) const
@@ -417,6 +416,54 @@ bool DItemInfo::hasGeolocationInfo() const
     // NOTE: GPS position without altitude is a valid geolocation.
 
     return (!qIsNaN(latitude()) && !qIsNaN(longitude()));
+}
+
+CaptionsMap DItemInfo::titles() const
+{
+    QVariant val = parseInfoMap(QLatin1String("titles"));
+
+    return (!val.isNull() ? qvariant_cast<CaptionsMap>(val) : CaptionsMap());
+}
+
+void DItemInfo::setTitles(const CaptionsMap& map)
+{
+    m_info.insert(QLatin1String("titles"), QVariant::fromValue(map));
+}
+
+CaptionsMap DItemInfo::captions() const
+{
+    QVariant val = parseInfoMap(QLatin1String("captions"));
+
+    return (!val.isNull() ? qvariant_cast<CaptionsMap>(val) : CaptionsMap());
+}
+
+void DItemInfo::setCaptions(const CaptionsMap& map)
+{
+    m_info.insert(QLatin1String("captions"), QVariant::fromValue(map));
+}
+
+DMetadata::AltLangMap DItemInfo::copyrights() const
+{
+    QVariant val = parseInfoMap(QLatin1String("copyrights"));
+
+    return (!val.isNull() ? qvariant_cast<DMetadata::AltLangMap>(val) : DMetadata::AltLangMap());
+}
+
+void DItemInfo::setCopyrights(const DMetadata::AltLangMap& map)
+{
+    m_info.insert(QLatin1String("copyrights"), QVariant::fromValue(map));
+}
+
+DMetadata::AltLangMap DItemInfo::copyrightNotices() const
+{
+    QVariant val = parseInfoMap(QLatin1String("copyrightnotices"));
+
+    return (!val.isNull() ? qvariant_cast<DMetadata::AltLangMap>(val) : DMetadata::AltLangMap());
+}
+
+void DItemInfo::setCopyrightNotices(const DMetadata::AltLangMap& map)
+{
+    m_info.insert(QLatin1String("copyrightnotices"), QVariant::fromValue(map));
 }
 
 // -----------------------------------------------------------------

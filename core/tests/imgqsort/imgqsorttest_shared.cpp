@@ -6,18 +6,10 @@
  * Date        : 2009-02-04
  * Description : an unit-test to detect image quality level - shared code
  *
- * Copyright (C) 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2022 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -41,7 +33,6 @@
 #include "imagequalitycontainer.h"
 #include "dpluginloader.h"
 
-
 namespace Digikam
 {
 
@@ -57,6 +48,7 @@ ImageQualityContainer ImgQSortTest_ArrangeSettings (DetectionType type)
     settings.detectNoise        = false;
     settings.detectCompression  = false;
     settings.detectExposure     = false;
+    settings.detectAesthetic    = false;
 
     switch (type)
     {
@@ -76,11 +68,16 @@ ImageQualityContainer ImgQSortTest_ArrangeSettings (DetectionType type)
             settings.detectBlur         = true;
             break;
 
+        case DETECTAESTHETIC:
+            settings.detectAesthetic    = true;
+            break;
+
         default:
             settings.detectBlur         = true;
             settings.detectCompression  = true;
             settings.detectNoise        = true;
             settings.detectExposure     = true;
+            settings.detectAesthetic    = false;
             break;
     }
 
@@ -100,6 +97,7 @@ ImageQualityContainer ImgQSortTest_ArrangeCustomSettings(const CustomDetection& 
     settings.detectCompression  = customSetting.detectCompression;
     settings.detectNoise        = customSetting.detectNoise;
     settings.detectExposure     = customSetting.detectExposure;
+    settings.detectAesthetic    = customSetting.detectAesthetic;
 
     return settings;
 }

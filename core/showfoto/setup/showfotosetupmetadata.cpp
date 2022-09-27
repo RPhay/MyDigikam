@@ -6,18 +6,9 @@
  * Date        : 2009-07-18
  * Description : setup Metadata tab.
  *
- * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -185,6 +176,16 @@ ShowfotoSetupMetadata::~ShowfotoSetupMetadata()
     delete d;
 }
 
+void ShowfotoSetupMetadata::setActiveTab(MetadataTab tab)
+{
+    d->tab->setCurrentIndex(tab);
+}
+
+ShowfotoSetupMetadata::MetadataTab ShowfotoSetupMetadata::activeTab() const
+{
+    return (MetadataTab)d->tab->currentIndex();
+}
+
 void ShowfotoSetupMetadata::applySettings()
 {
     MetaEngineSettings* const mSettings = MetaEngineSettings::instance();
@@ -218,11 +219,6 @@ void ShowfotoSetupMetadata::readSettings()
     d->exifRotateBox->setChecked(set.exifRotate);
     d->exifSetOrientationBox->setChecked(set.exifSetOrientation);
     d->exifToolView->setExifToolDirectory(set.exifToolPath);
-}
-
-void ShowfotoSetupMetadata::setActiveTab(MetadataTab tab)
-{
-    d->tab->setCurrentIndex(tab);
 }
 
 } // namespace ShowFoto

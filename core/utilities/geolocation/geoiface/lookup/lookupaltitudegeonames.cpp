@@ -6,19 +6,10 @@
  * Date        : 2011-04-30
  * Description : Class for geonames.org based altitude lookup
  *
- * Copyright (C) 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2010-2011 by Michael G. Hansen <mike at mghansen dot de>
+ * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2011 by Michael G. Hansen <mike at mghansen dot de>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -26,7 +17,7 @@
 
 // Qt includes
 
-#include <QNetworkAccessManager>
+
 #include <QUrlQuery>
 #include <QRegularExpression>
 
@@ -37,6 +28,7 @@
 // Local includes
 
 #include "geoifacetypes.h"
+#include "networkmanager.h"
 
 namespace Digikam
 {
@@ -71,10 +63,10 @@ class Q_DECL_HIDDEN LookupAltitudeGeonames::Private
 public:
 
     explicit Private()
-      : status(StatusSuccess),
+      : status                   (StatusSuccess),
         currentMergedRequestIndex(0),
-        netReply(nullptr),
-        mngr(nullptr)
+        netReply                 (nullptr),
+        mngr                     (nullptr)
 
     {
     }
@@ -98,7 +90,7 @@ LookupAltitudeGeonames::LookupAltitudeGeonames(QObject* const parent)
     : LookupAltitude(parent),
       d(new Private)
 {
-    d->mngr = new QNetworkAccessManager(this);
+    d->mngr = NetworkManager::instance()->getNetworkManager(this);
 
     connect(d->mngr, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotFinished(QNetworkReply*)));
@@ -219,6 +211,11 @@ void LookupAltitudeGeonames::startNextRequest()
 
 void LookupAltitudeGeonames::slotFinished(QNetworkReply* reply)
 {
+    if (reply != d->netReply)
+    {
+        return;
+    }
+
     if (reply->error() != QNetworkReply::NoError)
     {
         d->errorMessage = reply->errorString();

@@ -6,18 +6,9 @@
  * Date        : 2020-11-28
  * Description : ExifTool process stream parser - private container.
  *
- * Copyright (C) 2020-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2020-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -26,10 +17,11 @@
 namespace Digikam
 {
 
-ExifToolParser::Private::Private()
-    : proc        (nullptr),
-      cmdRunning  (0),
-      asyncLoading(ExifToolProcess::NO_ACTION)
+ExifToolParser::Private::Private(ExifToolParser* const q)
+    : pp          (q),
+      proc        (nullptr),
+      async       (false),
+      cmdRunning  (0)
 {
     argsFile.setAutoRemove(false);
 }
@@ -45,6 +37,7 @@ ExifToolParser::Private::~Private()
 void ExifToolParser::Private::prepareProcess()
 {
     currentPath.clear();
+    errorString.clear();
     exifToolData.clear();
 }
 
@@ -63,9 +56,54 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifTo
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool" << actionString(cmdAction) << cmdArgs.join(QByteArray(" "));
 
-    if (asyncLoading == ExifToolProcess::NO_ACTION)
+    if (!async)
     {
-        evLoops[cmdAction]->exec(QEventLoop::ExcludeUserInputEvents);
+        ExifToolProcess::Result result = proc->getExifToolResult();
+
+        while ((result.cmdRunResult != cmdRunning) && (result.commandState != ExifToolProcess::EXIT_RESULT))
+        {
+            result = proc->waitForExifToolResult();
+
+            if ((result.cmdRunResult == cmdRunning) && result.cmdWaitError)
+            {
+                qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool timed out:" << actionString(cmdAction);
+
+                return false;
+            }
+        }
+
+        switch (result.commandState)
+        {
+            case ExifToolProcess::COMMAND_RESULT:
+            {
+                pp->slotCmdCompleted(result.cmdRunResult,
+                                     result.cmdRunAction,
+                                     result.elapsedTimer,
+                                     result.outputBuffer,
+                                     QByteArray());
+                break;
+            }
+
+            case ExifToolProcess::FINISH_RESULT:
+            {
+                pp->slotFinished(result.cmdRunResult);
+                break;
+            }
+
+            case ExifToolProcess::ERROR_RESULT:
+            {
+                pp->slotErrorOccurred(result.cmdRunResult,
+                                      result.cmdRunAction,
+                                      proc->exifToolError(),
+                                      proc->exifToolErrorString());
+                break;
+            }
+
+            case ExifToolProcess::EXIT_RESULT:
+            {
+                return false;
+            }
+        }
 
         if (currentPath.isEmpty())
         {
@@ -151,25 +189,6 @@ QString ExifToolParser::Private::actionString(int cmdAction) const
     }
 
     return QString();
-}
-
-void ExifToolParser::Private::manageEventLoop(int cmdAction)
-{
-    if (asyncLoading == cmdAction)
-    {
-        asyncLoading = ExifToolProcess::NO_ACTION;
-    }
-    else
-    {
-        if ((cmdAction >= ExifToolProcess::LOAD_METADATA) &&
-            (cmdAction <  ExifToolProcess::NO_ACTION))
-        {
-            if (evLoops[cmdAction])
-            {
-                evLoops[cmdAction]->quit();
-            }
-        }
-    }
 }
 
 } // namespace Digikam

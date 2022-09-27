@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Theme
 Comment=Yet another simple theme. Clean look with more image details.
+Comment[be]=Яшчэ адна простая тэма. Зручны прагляд з падрабязнай інфармацыяй пра выяву.
 Comment[ca]=Un altre tema senzill. Un aspecte net amb més detalls per a les imatges.
 Comment[ca@valencia]=Un altre tema senzill. Un aspecte net amb més detalls per a les imatges.
 Comment[cs]=Ještě další jednoduchý motiv.Čistý vzhled s více detaily obrázku.
@@ -34,6 +35,7 @@ Comment[zh_CN]=另一款简洁的主题。设计干净且包含更多图像细�
 Icon=
 Name=Details
 Name[ar]=التّفاصيل
+Name[be]=Падрабязнасці
 Name[ca]=Detalls
 Name[ca@valencia]=Detalls
 Name[cs]=Podrobnosti
@@ -69,6 +71,7 @@ Name[zh_CN]=细节
 
 [X-HTMLGallery Author]
 Name=Gianluca Urgese
+Name[be]=Gianluca Urgese
 Name[bg]=Gianluca Urgese
 Name[ca]=Gianluca Urgese
 Name[ca@valencia]=Gianluca Urgese
@@ -105,6 +108,7 @@ Url=mailto:g.urgese@jaone.it
 
 [X-HTMLGallery Preview]
 Name=Details screenshot
+Name[be]=Папярэдні прагляд падрабязнасцяў
 Name[ca]=Captura de pantalla dels detalls
 Name[ca@valencia]=Captura de pantalla dels detalls
 Name[cs]=Snímek podrobností
@@ -138,6 +142,7 @@ Url=preview.png
 
 [X-HTMLGallery Parameter footer]
 Name=Footer information
+Name[be]=Змесціва ніжняга калонтытула
 Name[ca]=Informació del peu
 Name[ca@valencia]=Informació del peu
 Name[cs]=Informace v zápatí

@@ -8,11 +8,10 @@
 #  LCMS2_VERSION, The value of LCMS_VERSION defined in lcms.h
 #  LCMS2_FOUND, If false, do not try to use LCMS2.
 #
-# Copyright (c) 2008 by Adrian Page, <adrian@pagenet.plus.com>
-# Copyright (c) 2009 by Cyrille Berger, <cberger@cberger.net>
+# SPDX-FileCopyrightText: 2008 by Adrian Page, <adrian@pagenet.plus.com>
+# SPDX-FileCopyrightText: 2009 by Cyrille Berger, <cberger@cberger.net>
 #
-# Redistribution and use is allowed according to the terms of the BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+# SPDX-License-Identifier: BSD-3-Clause
 #
 
 # use pkg-config to get the directories and then use these values

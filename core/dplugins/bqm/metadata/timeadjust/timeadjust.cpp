@@ -6,18 +6,9 @@
  * Date        : 2009-03-04
  * Description : a tool to adjust date time stamp of images
  *
- * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -184,36 +175,36 @@ bool TimeAdjust::toolOperations()
 
     TimeAdjustContainer prm;
 
-    prm.customDate       = settings()[QLatin1String("Custom Date")].toDateTime();
-    prm.customTime       = settings()[QLatin1String("Custom Time")].toDateTime();
+    bool metadataChanged               = false;
 
-    prm.adjustmentType   = settings()[QLatin1String("Adjustment Type")].toInt();
-    prm.adjustmentDays   = settings()[QLatin1String("Adjustment Days")].toInt();
-    prm.adjustmentTime   = settings()[QLatin1String("Adjustment Time")].toDateTime();
+    prm.customDate                     = settings()[QLatin1String("Custom Date")].toDateTime();
+    prm.customTime                     = settings()[QLatin1String("Custom Time")].toDateTime();
 
-    prm.updIfAvailable   = settings()[QLatin1String("Update Only If Available Time")].toBool();
-    prm.updFileModDate   = settings()[QLatin1String("Update File Modification Time")].toBool();
-    prm.updEXIFModDate   = settings()[QLatin1String("Update EXIF Modification Time")].toBool();
-    prm.updEXIFOriDate   = settings()[QLatin1String("Update EXIF Original Time")].toBool();
-    prm.updEXIFDigDate   = settings()[QLatin1String("Update EXIF Digitization Time")].toBool();
-    prm.updEXIFThmDate   = settings()[QLatin1String("Update EXIF Thumbnail Time")].toBool();
-    prm.updIPTCDate      = settings()[QLatin1String("Update IPTC Time")].toBool();
-    prm.updXMPVideo      = settings()[QLatin1String("Update XMP Video Time")].toBool();
-    prm.updXMPDate       = settings()[QLatin1String("Update XMP Creation Time")].toBool();
+    prm.adjustmentType                 = settings()[QLatin1String("Adjustment Type")].toInt();
+    prm.adjustmentDays                 = settings()[QLatin1String("Adjustment Days")].toInt();
+    prm.adjustmentTime                 = settings()[QLatin1String("Adjustment Time")].toDateTime();
 
-    prm.dateSource       = settings()[QLatin1String("Use Timestamp Type")].toInt();
-    prm.metadataSource   = settings()[QLatin1String("Meta Timestamp Type")].toInt();
-    prm.fileDateSource   = settings()[QLatin1String("File Timestamp Type")].toInt();
+    prm.updIfAvailable                 = settings()[QLatin1String("Update Only If Available Time")].toBool();
+    prm.updFileModDate                 = settings()[QLatin1String("Update File Modification Time")].toBool();
+    prm.updEXIFModDate                 = settings()[QLatin1String("Update EXIF Modification Time")].toBool();
+    prm.updEXIFOriDate                 = settings()[QLatin1String("Update EXIF Original Time")].toBool();
+    prm.updEXIFDigDate                 = settings()[QLatin1String("Update EXIF Digitization Time")].toBool();
+    prm.updEXIFThmDate                 = settings()[QLatin1String("Update EXIF Thumbnail Time")].toBool();
+    prm.updIPTCDate                    = settings()[QLatin1String("Update IPTC Time")].toBool();
+    prm.updXMPVideo                    = settings()[QLatin1String("Update XMP Video Time")].toBool();
+    prm.updXMPDate                     = settings()[QLatin1String("Update XMP Creation Time")].toBool();
 
-    bool metadataChanged = prm.updEXIFModDate || prm.updEXIFOriDate ||
-                           prm.updEXIFDigDate || prm.updEXIFThmDate ||
-                           prm.updIPTCDate    || prm.updXMPVideo    ||
-                           prm.updXMPDate;
+    prm.dateSource                     = settings()[QLatin1String("Use Timestamp Type")].toInt();
+    prm.metadataSource                 = settings()[QLatin1String("Meta Timestamp Type")].toInt();
+    prm.fileDateSource                 = settings()[QLatin1String("File Timestamp Type")].toInt();
+
+    QString exifDateTimeFormat         = QLatin1String("yyyy:MM:dd hh:mm:ss");
+    QString xmpDateTimeFormat          = QLatin1String("yyyy-MM-ddThh:mm:ss");
+
+    const QMap<QString, bool>& tagsMap = prm.getDateTimeTagsMap();
+    QMap<QString, bool>::const_iterator it;
 
     QDateTime orgDateTime;
-
-    QString exifDateTimeFormat = QLatin1String("yyyy:MM:dd hh:mm:ss");
-    QString xmpDateTimeFormat  = QLatin1String("yyyy-MM-ddThh:mm:ss");
 
     switch (prm.dateSource)
     {
@@ -264,6 +255,24 @@ bool TimeAdjust::toolOperations()
                     break;
                 }
 
+                case TimeAdjustContainer::FUZZYCREATED:
+                {
+                    orgDateTime = prm.getDateTimeFromString(meta->getExifTagString("Exif.Image.DateTime"));
+                    break;
+                }
+
+                case TimeAdjustContainer::FUZZYORIGINAL:
+                {
+                    orgDateTime = prm.getDateTimeFromString(meta->getExifTagString("Exif.Photo.DateTimeOriginal"));
+                    break;
+                }
+
+                case TimeAdjustContainer::FUZZYDIGITIZED:
+                {
+                    orgDateTime = prm.getDateTimeFromString(meta->getExifTagString("Exif.Photo.DateTimeDigitized"));
+                    break;
+                }
+
                 default:
                 {
                     // orgDateTime stays invalid
@@ -282,7 +291,7 @@ bool TimeAdjust::toolOperations()
 
         case TimeAdjustContainer::FILENAME:
         {
-            orgDateTime = prm.getDateTimeFromUrl(inputUrl());
+            orgDateTime = prm.getDateTimeFromString(inputUrl().fileName());
             break;
         }
 
@@ -311,138 +320,57 @@ bool TimeAdjust::toolOperations()
         return false;
     }
 
-    if (metadataChanged && metaLoadState)
+    if (metaLoadState)
     {
-        if (prm.updEXIFModDate)
+        for (it = tagsMap.constBegin() ; it != tagsMap.constEnd() ; ++it)
         {
-            if (!prm.updIfAvailable ||
-                !meta->getExifTagString("Exif.Image.DateTime").isEmpty())
+            if (!it.value())
             {
-                meta->setExifTagString("Exif.Image.DateTime",
-                                       dt.toString(exifDateTimeFormat));
-            }
-        }
-
-        if (prm.updEXIFOriDate)
-        {
-            if (!prm.updIfAvailable ||
-                !meta->getExifTagString("Exif.Photo.DateTimeOriginal").isEmpty())
-            {
-                meta->setExifTagString("Exif.Photo.DateTimeOriginal",
-                                       dt.toString(exifDateTimeFormat));
-            }
-        }
-
-        if (prm.updEXIFDigDate)
-        {
-            if (!prm.updIfAvailable ||
-                !meta->getExifTagString("Exif.Photo.DateTimeDigitized").isEmpty())
-            {
-                meta->setExifTagString("Exif.Photo.DateTimeDigitized",
-                                       dt.toString(exifDateTimeFormat));
-            }
-        }
-
-        if (prm.updEXIFThmDate)
-        {
-            if (!prm.updIfAvailable ||
-                !meta->getExifTagString("Exif.Image.PreviewDateTime").isEmpty())
-            {
-                meta->setExifTagString("Exif.Image.PreviewDateTime",
-                                       dt.toString(exifDateTimeFormat));
-            }
-        }
-
-        if (prm.updIPTCDate)
-        {
-            if (!prm.updIfAvailable ||
-                !meta->getIptcTagString("Iptc.Application2.DateCreated").isEmpty())
-            {
-                meta->setIptcTagString("Iptc.Application2.DateCreated",
-                                       dt.date().toString(Qt::ISODate));
+                continue;
             }
 
-            if (!prm.updIfAvailable ||
-                !meta->getIptcTagString("Iptc.Application2.TimeCreated").isEmpty())
+            if      (it.key().startsWith(QLatin1String("Exif.")))
             {
-                meta->setIptcTagString("Iptc.Application2.TimeCreated",
-                                       dt.time().toString(Qt::ISODate));
-            }
-        }
+                if (!prm.updIfAvailable ||
+                    !meta->getExifTagString(it.key().toLatin1().constData()).isEmpty())
+                {
+                    meta->setExifTagString(it.key().toLatin1().constData(),
+                                           dt.toString(exifDateTimeFormat));
 
-        if (prm.updXMPDate && meta->supportXmp())
-        {
-            if (!prm.updIfAvailable ||
-                !meta->getXmpTagString("Xmp.exif.DateTimeOriginal").isEmpty())
-            {
-                meta->setXmpTagString("Xmp.exif.DateTimeOriginal",
-                                      dt.toString(xmpDateTimeFormat));
+                    metadataChanged = true;
+                }
             }
-
-            if (!prm.updIfAvailable ||
-                !meta->getXmpTagString("Xmp.photoshop.DateCreated").isEmpty())
+            else if (it.key().startsWith(QLatin1String("Iptc.")))
             {
-                meta->setXmpTagString("Xmp.photoshop.DateCreated",
-                                      dt.toString(xmpDateTimeFormat));
+                if (!prm.updIfAvailable ||
+                    !meta->getIptcTagString(it.key().toLatin1().constData()).isEmpty())
+                {
+                    if      (it.key().contains(QLatin1String("Date")))
+                    {
+                        meta->setIptcTagString(it.key().toLatin1().constData(),
+                                               dt.date().toString(Qt::ISODate));
+
+                        metadataChanged = true;
+                    }
+                    else if (it.key().contains(QLatin1String("Time")))
+                    {
+                        meta->setIptcTagString(it.key().toLatin1().constData(),
+                                               dt.time().toString(Qt::ISODate));
+
+                        metadataChanged = true;
+                    }
+                }
             }
-
-            if (!prm.updIfAvailable ||
-                !meta->getXmpTagString("Xmp.tiff.DateTime").isEmpty())
+            else if (it.key().startsWith(QLatin1String("Xmp.")) && meta->supportXmp())
             {
-                meta->setXmpTagString("Xmp.tiff.DateTime",
-                                      dt.toString(xmpDateTimeFormat));
-            }
+                if (!prm.updIfAvailable ||
+                    !meta->getXmpTagString(it.key().toLatin1().constData()).isEmpty())
+                {
+                    meta->setXmpTagString(it.key().toLatin1().constData(),
+                                          dt.toString(xmpDateTimeFormat));
 
-            if (!prm.updIfAvailable ||
-                !meta->getXmpTagString("Xmp.xmp.CreateDate").isEmpty())
-            {
-                meta->setXmpTagString("Xmp.xmp.CreateDate",
-                                      dt.toString(xmpDateTimeFormat));
-            }
-
-            if (!prm.updIfAvailable ||
-                !meta->getXmpTagString("Xmp.xmp.MetadataDate").isEmpty())
-            {
-                meta->setXmpTagString("Xmp.xmp.MetadataDate",
-                                      dt.toString(xmpDateTimeFormat));
-            }
-
-            if (!prm.updIfAvailable ||
-                !meta->getXmpTagString("Xmp.xmp.ModifyDate").isEmpty())
-            {
-                meta->setXmpTagString("Xmp.xmp.ModifyDate",
-                                      dt.toString(xmpDateTimeFormat));
-            }
-        }
-
-        if (prm.updXMPVideo && meta->supportXmp())
-        {
-            if (!prm.updIfAvailable ||
-                !meta->getXmpTagString("Xmp.video.DateTimeOriginal").isEmpty())
-            {
-                meta->setXmpTagString("Xmp.video.DateTimeOriginal",
-                                      dt.toString(xmpDateTimeFormat));
-            }
-
-            if (!prm.updIfAvailable ||
-                !meta->getXmpTagString("Xmp.video.DateTimeDigitized").isEmpty())
-            {
-                meta->setXmpTagString("Xmp.video.DateTimeDigitized",
-                                      dt.toString(xmpDateTimeFormat));
-            }
-
-            if (!prm.updIfAvailable ||
-                !meta->getXmpTagString("Xmp.video.ModificationDate").isEmpty())
-            {
-                meta->setXmpTagString("Xmp.video.ModificationDate",
-                                      dt.toString(xmpDateTimeFormat));
-            }
-
-            if (!prm.updIfAvailable ||
-                !meta->getXmpTagString("Xmp.video.DateUTC").isEmpty())
-            {
-                meta->setXmpTagString("Xmp.video.DateUTC",
-                                      dt.toUTC().toString(xmpDateTimeFormat));
+                    metadataChanged = true;
+                }
             }
         }
     }
@@ -452,7 +380,7 @@ bool TimeAdjust::toolOperations()
     if (image().isNull())
     {
         QFile::remove(outputUrl().toLocalFile());
-        ret = QFile::copy(inputUrl().toLocalFile(), outputUrl().toLocalFile());
+        ret = DFileOperations::copyFile(inputUrl().toLocalFile(), outputUrl().toLocalFile());
 
         if (ret && metadataChanged && metaLoadState)
         {

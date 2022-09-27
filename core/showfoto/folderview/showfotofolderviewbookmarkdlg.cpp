@@ -6,18 +6,9 @@
  * Date        : 2021-08-27
  * Description : Showfoto folder view bookmark edit dialog
  *
- * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -26,9 +17,9 @@
 // Qt includes
 
 #include <QGridLayout>
+#include <QLineEdit>
 #include <QLabel>
 #include <QPointer>
-#include <QLineEdit>
 #include <QApplication>
 #include <QStyle>
 #include <QDir>
@@ -50,6 +41,7 @@
 #include "digikam_debug.h"
 #include "dfileselector.h"
 #include "dlayoutbox.h"
+#include "dtextedit.h"
 #include "showfotofolderviewbookmarklist.h"
 
 using namespace Digikam;
@@ -85,7 +77,7 @@ public:
 
     QDialogButtonBox*               buttons;
 
-    QLineEdit*                      titleEdit;
+    DTextEdit*                      titleEdit;
     DFileSelector*                  pathEdit;
     ShowfotoFolderViewBookmarkList* list;
 };
@@ -126,7 +118,8 @@ ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewB
     QLabel* const titleLabel = new QLabel(page);
     titleLabel->setText(i18nc("@label: bookmark properties", "&Title:"));
 
-    d->titleEdit             = new QLineEdit(page);
+    d->titleEdit             = new DTextEdit(page);
+    d->titleEdit->setLinesVisible(1);
     d->titleEdit->setPlaceholderText(i18nc("@info", "Enter bookmark title here..."));
     d->titleEdit->setToolTip(i18nc("@info", "The bookmark title which must be unique and not empty"));
     titleLabel->setBuddy(d->titleEdit);
@@ -182,7 +175,7 @@ ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewB
 
     // --------------------------------------------------------
 
-    connect(d->titleEdit, SIGNAL(textChanged(QString)),
+    connect(d->titleEdit, SIGNAL(textChanged()),
             this, SLOT(slotModified()));
 
     connect(d->pathEdit->lineEdit(), SIGNAL(textChanged(QString)),

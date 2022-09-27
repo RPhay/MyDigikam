@@ -7,10 +7,9 @@
 # HEIF_DEFINITIONS      Compiler switches required for using HEIF library
 # HEIF_VERSION          Version of HEIF library (e.g., 1.12.0)
 #
-#  Copyright (c) 2019-2022 Caulier Gilles <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2019-2022 Caulier Gilles <caulier dot gilles at gmail dot com>
 #
-#  Redistribution and use is allowed according to the terms of the New BSD license.
-#  For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+# SPDX-License-Identifier: BSD-3-Clause
 #
 
 if(HEIF_LIBRARIES AND HEIF_INCLUDE_DIRS AND HEIF_VERSION AND HEIF_DEFINITIONS)

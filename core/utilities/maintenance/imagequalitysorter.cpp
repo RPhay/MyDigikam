@@ -4,20 +4,13 @@
  * https://www.digikam.org
  *
  * Date        : 2013-08-19
- * Description : image quality sorter
+ * Description : image quality sorter maintenance tool
  *
- * Copyright (C) 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2013-2014 by Gowtham Ashok <gwty93 at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2022 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -50,7 +43,7 @@ class Q_DECL_HIDDEN ImageQualitySorter::Private
 public:
 
     explicit Private()
-      : mode(ImageQualitySorter::NonAssignedItems),
+      : mode  (ImageQualitySorter::NonAssignedItems),
         thread(nullptr)
     {
     }
@@ -73,9 +66,6 @@ ImageQualitySorter::ImageQualitySorter(QualityScanMode mode,
     : MaintenanceTool(QLatin1String("ImageQualitySorter"), parent),
       d(new Private)
 {
-    setLabel(i18n("Image Quality Sorter"));
-    ProgressManager::addProgressItem(this);
-
     d->mode       = mode;
     d->albumList  = list;
     d->quality    = quality;
@@ -108,12 +98,24 @@ void ImageQualitySorter::slotStart()
 {
     MaintenanceTool::slotStart();
 
+    if (ProgressManager::instance()->findItembyId(id()))
+    {
+        slotDone();
+
+        return;
+    }
+
+    setLabel(i18n("Image Quality Sorter"));
+
+    ProgressManager::addProgressItem(this);
+
     if (d->albumList.isEmpty())
     {
         d->albumList = AlbumManager::instance()->allPAlbums();
     }
 
     // Get all item in DB which do not have any Pick Label assigned.
+
     QStringList dirty = CoreDbAccess().db()->getItemsURLsWithTag(TagsCache::instance()->tagForPickLabel(NoPickLabel));
 
     // Get all digiKam albums collection pictures path, depending of d->rebuildAll flag.
@@ -123,7 +125,7 @@ void ImageQualitySorter::slotStart()
     {
         QStringList aPaths;
 
-        if ((*it)->type() == Album::PHYSICAL)
+        if      ((*it)->type() == Album::PHYSICAL)
         {
             aPaths = CoreDbAccess().db()->getItemURLsInAlbum((*it)->id());
         }
@@ -151,6 +153,7 @@ void ImageQualitySorter::slotStart()
     if (d->allPicturesPath.isEmpty())
     {
         slotDone();
+
         return;
     }
 

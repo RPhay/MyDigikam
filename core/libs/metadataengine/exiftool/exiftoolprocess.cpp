@@ -8,19 +8,10 @@
  *               Based on ZExifTool Qt interface published at 18 Feb 2021
  *               https://github.com/philvl/ZExifTool
  *
- * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (c) 2021 by Philippe Vianney Liaud <philvl dot dev at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2021 by Philippe Vianney Liaud <philvl dot dev at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -43,6 +34,15 @@ ExifToolProcess::~ExifToolProcess()
     internalPtr = nullptr;
 
     terminateExifTool();
+
+    if (d->cmdRunning)
+    {
+        QMutexLocker locker(&d->mutex);
+
+        d->cmdResult.commandState = EXIT_RESULT;
+
+        d->condVar.wakeAll();
+    }
 
     delete d;
 }
@@ -223,6 +223,23 @@ QString ExifToolProcess::exifToolErrorString() const
     return d->errorString;
 }
 
+ExifToolProcess::Result ExifToolProcess::getExifToolResult() const
+{
+    QMutexLocker locker(&d->mutex);
+
+    return d->cmdResult;
+}
+
+ExifToolProcess::Result ExifToolProcess::waitForExifToolResult() const
+{
+    QMutexLocker locker(&d->mutex);
+
+    bool ret = d->condVar.wait(&d->mutex, 10000);
+    d->cmdResult.cmdWaitError = !ret;
+
+    return d->cmdResult;
+}
+
 int ExifToolProcess::command(const QByteArrayList& args, Action ac)
 {
     if (
@@ -238,7 +255,7 @@ int ExifToolProcess::command(const QByteArrayList& args, Action ac)
 
     // ThreadSafe incrementation of d->nextCmdId
 
-    QMutexLocker locker(&d->mutex);
+    QMutexLocker locker(&d->cmdMutex);
 
     const int cmdId = d->nextCmdId;
 
@@ -304,15 +321,12 @@ void ExifToolProcess::slotStarted()
 
 void ExifToolProcess::slotFinished(int exitCode, QProcess::ExitStatus exitStatus)
 {
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool process finished" << exitCode << exitStatus;
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool process finished with code:"
+                                    << exitCode << "and status" << exitStatus;
 
-    if (d->cmdRunning)
-    {
-        Q_EMIT signalFinished(d->cmdRunning, d->cmdAction, exitCode, exitStatus);
-    }
+    Q_EMIT signalFinished(d->cmdRunning);
 
-    d->cmdRunning = 0;
-    d->cmdAction  = NO_ACTION;
+    d->setCommandResult(FINISH_RESULT);
 }
 
 void ExifToolProcess::slotStateChanged(QProcess::ProcessState newState)
@@ -323,6 +337,8 @@ void ExifToolProcess::slotStateChanged(QProcess::ProcessState newState)
 void ExifToolProcess::slotErrorOccurred(QProcess::ProcessError error)
 {
     d->setProcessErrorAndEmit(error, errorString());
+
+    d->cmdRunning = 0;
 }
 
 void ExifToolProcess::slotReadyReadStandardOutput()
@@ -354,12 +370,19 @@ bool ExifToolProcess::checkExifToolProgram() const
 {
     // Check if Exiftool program exists and have execution permissions
 
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "Path to ExifTool:" << d->etExePath;
+    QString exifToolPath = d->etExePath;
+
+    if (d->etExePath == exifToolBin())
+    {
+        exifToolPath = QStandardPaths::findExecutable(d->etExePath);
+    }
+
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "Path to ExifTool:" << exifToolPath;
 
     if (
-        (d->etExePath != exifToolBin())                    &&
-        (!QFile::exists(d->etExePath)                      ||
-        !(QFile::permissions(d->etExePath) & QFile::ExeUser))
+        exifToolPath.isEmpty()                             ||
+        (!QFile::exists(exifToolPath)                      ||
+        !(QFile::permissions(exifToolPath) & QFile::ExeUser))
        )
     {
         d->processError = QProcess::FailedToStart;

@@ -1,8 +1,8 @@
-# Copyright (c) 2013-2019, Gilles Caulier, <caulier dot gilles at gmail dot com>
-# Copyright (C) 2013-2014 by Gowtham Ashok <gwty93 at gmail dot com>
+# SPDX-FileCopyrightText: 2013-2019, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2013-2014 by Gowtham Ashok <gwty93 at gmail dot com>
 #
-# Redistribution and use is allowed according to the terms of the BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+# SPDX-License-Identifier: BSD-3-Clause
+#
 #
 # This creates image test-cases with ImageMagick which artificially apply
 # blur, noise, compression, and over-exposure to given test image.

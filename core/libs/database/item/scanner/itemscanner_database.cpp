@@ -6,19 +6,10 @@
  * Date        : 2007-09-19
  * Description : Scanning a single item - database helper.
  *
- * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -138,6 +129,13 @@ void ItemScanner::rescan()
     scanFile(Rescan);
 }
 
+void ItemScanner::cleanScan()
+{
+    loadFromDisk();
+    prepareUpdateImage();
+    scanFile(CleanScan);
+}
+
 void ItemScanner::copiedFrom(int albumId, qlonglong srcId)
 {
     loadFromDisk();
@@ -232,6 +230,77 @@ bool ItemScanner::commitAddImage()
     }
 
     return true;
+}
+
+void ItemScanner::cleanDatabaseMetadata()
+{
+    if (d->scanInfo.id == -1)
+    {
+        return;
+    }
+
+    const MetaEngineSettingsContainer& settings = MetaEngineSettings::instance()->settings();
+    QList<int> removeTags;
+
+    if (settings.saveColorLabel)
+    {
+        const QVector<int>& colorTags = TagsCache::instance()->colorLabelTags();
+        removeTags << QList<int>(colorTags.begin(), colorTags.end());
+    }
+
+    if (settings.savePickLabel)
+    {
+        const QVector<int>& pickTags = TagsCache::instance()->pickLabelTags();
+        removeTags << QList<int>(pickTags.begin(), pickTags.end());
+    }
+
+    if (settings.saveTags)
+    {
+        Q_FOREACH (int tag, CoreDbAccess().db()->getItemTagIDs(d->scanInfo.id))
+        {
+            if (!TagsCache::instance()->isInternalTag(tag))
+            {
+                removeTags << tag;
+            }
+        }
+    }
+
+    if (!removeTags.isEmpty())
+    {
+        CoreDbAccess().db()->removeTagsFromItems(QList<qlonglong>() << d->scanInfo.id, removeTags);
+    }
+
+    if (settings.savePosition)
+    {
+        CoreDbAccess().db()->removeItemPosition(d->scanInfo.id);
+    }
+
+    if (settings.saveTemplate)
+    {
+        CoreDbAccess().db()->removeAllImageProperties(d->scanInfo.id);
+        CoreDbAccess().db()->removeAllItemCopyrightProperties(d->scanInfo.id);
+    }
+
+    if (settings.saveComments)
+    {
+        CoreDbAccess().db()->removeAllImageComments(d->scanInfo.id);
+    }
+
+    if (settings.saveFaceTags)
+    {
+        Q_FOREACH (const ImageTagProperty& property, CoreDbAccess().db()->getImageTagProperties(d->scanInfo.id))
+        {
+            if (property.property == ImageTagPropertyName::tagRegion())
+            {
+                CoreDbAccess().db()->removeImageTagProperties(d->scanInfo.id, property.tagId, property.property);
+            }
+        }
+    }
+
+    if (settings.saveRating)
+    {
+        CoreDbAccess().db()->changeItemInformation(d->scanInfo.id, QVariantList() << NoRating, DatabaseFields::Rating);
+    }
 }
 
 } // namespace Digikam

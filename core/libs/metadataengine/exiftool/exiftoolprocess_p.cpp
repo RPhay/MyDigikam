@@ -8,19 +8,10 @@
  *               Based on ZExifTool Qt interface published at 18 Feb 2021
  *               https://github.com/philvl/ZExifTool
  *
- * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (c) 2021 by Philippe Vianney Liaud <philvl dot dev at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2021 by Philippe Vianney Liaud <philvl dot dev at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -33,7 +24,7 @@ ExifToolProcess::Private::Private(ExifToolProcess* const q)
     : QObject             (q),
       pp                  (q),
       cmdRunning          (0),
-      cmdAction           (ExifToolProcess::LOAD_METADATA),
+      cmdAction           (ExifToolProcess::NO_ACTION),
       writeChannelIsClosed(true),
       processError        (QProcess::UnknownError),
       nextCmdId           (CMD_ID_MIN)
@@ -53,7 +44,7 @@ void ExifToolProcess::Private::slotExecNextCmd()
         return;
     }
 
-    QMutexLocker locker(&mutex);
+    QMutexLocker locker(&cmdMutex);
 
     if (cmdRunning || cmdQueue.isEmpty())
     {
@@ -149,6 +140,8 @@ void ExifToolProcess::Private::readOutput(const QProcess::ProcessChannel channel
                                            << ") and errChannel("
                                            << outAwait[1]
                                            << ")";
+
+        setProcessErrorAndEmit(QProcess::ReadError, i18n("Synchronization error between the channels"));
     }
     else
     {
@@ -159,19 +152,38 @@ void ExifToolProcess::Private::readOutput(const QProcess::ProcessChannel channel
                                       execTimer.elapsed(),
                                       outBuff[QProcess::StandardOutput],
                                       outBuff[QProcess::StandardError]);
-    }
 
-    cmdRunning = 0;    // No command is running
+        setCommandResult(ExifToolProcess::COMMAND_RESULT);
+    }
 
     slotExecNextCmd(); // Exec next command
 }
 
 void ExifToolProcess::Private::setProcessErrorAndEmit(QProcess::ProcessError error, const QString& description)
 {
+    Q_EMIT pp->signalErrorOccurred(cmdRunning, cmdAction, error, description);
+
     processError = error;
     errorString  = description;
 
-    Q_EMIT pp->signalErrorOccurred(cmdRunning, cmdAction, error);
+    setCommandResult(ExifToolProcess::ERROR_RESULT);
+}
+
+void ExifToolProcess::Private::setCommandResult(int cmdState)
+{
+    QMutexLocker locker(&mutex);
+
+    cmdResult.cmdWaitError = false;
+    cmdResult.commandState = cmdState;
+    cmdResult.cmdRunAction = cmdAction;
+    cmdResult.cmdRunResult = cmdRunning;
+    cmdResult.elapsedTimer = execTimer.elapsed();
+    cmdResult.outputBuffer = outBuff[QProcess::StandardOutput];
+
+    cmdRunning             = 0;
+    cmdAction              = ExifToolProcess::NO_ACTION;
+
+    condVar.wakeAll();
 }
 
 } // namespace Digikam

@@ -6,18 +6,9 @@
  * Date        : 2007-02-06
  * Description : Setup view panel for dplugins.
  *
- * Copyright (C) 2018-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2018-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -92,6 +83,16 @@ ShowfotoSetupPlugins::ShowfotoSetupPlugins(QWidget* const parent)
 ShowfotoSetupPlugins::~ShowfotoSetupPlugins()
 {
     delete d;
+}
+
+void ShowfotoSetupPlugins::setActiveTab(PluginTab tab)
+{
+    d->tab->setCurrentIndex(tab);
+}
+
+ShowfotoSetupPlugins::PluginTab ShowfotoSetupPlugins::activeTab() const
+{
+    return (PluginTab)d->tab->currentIndex();
 }
 
 void ShowfotoSetupPlugins::applySettings()

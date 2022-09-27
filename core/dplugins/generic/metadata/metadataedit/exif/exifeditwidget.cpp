@@ -6,18 +6,10 @@
  * Date        : 2011-03-14
  * Description : a widget to edit EXIF metadata
  *
- * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2011      by Victor Dodon <dodon dot victor at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2011      by Victor Dodon <dodon dot victor at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -186,18 +178,35 @@ void EXIFEditWidget::saveSettings()
 
 void EXIFEditWidget::slotItemChanged()
 {
-    d->page_caption->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Caption Information<br/>"
-                     "<i>Record technical descriptions</i></qt>")));
-    d->page_datetime->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Date and Time Information<br/>"
-                     "<i>Record camera time-stamp properties</i></qt>")));
-    d->page_lens->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Lens Settings<br/>"
-                     "<i>Record lens details used with camera</i></qt>")));
-    d->page_device->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Capture Device Settings<br/>"
-                     "<i>Record shot conditions used by camera</i></qt>")));
-    d->page_light->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Light Source Information<br/>"
-                     "<i>Record ambient condition captured by camera</i></qt>")));
-    d->page_adjust->setHeader(d->dlg->currentItemTitleHeader(i18nc("@info", "<qt>Pictures Adjustments<br/>"
-                     "<i>Record technical details used by camera</i></qt>")));
+    d->page_caption->setHeader(d->dlg->currentItemTitleHeader(
+                                   QString::fromUtf8("<qt>%1<br/><i>%2</i></qt>")
+                                       .arg(i18nc("@title", "Caption Information"))
+                                       .arg(i18nc("@title", "Record technical descriptions"))));
+
+    d->page_datetime->setHeader(d->dlg->currentItemTitleHeader(
+                                   QString::fromUtf8("<qt>%1<br/><i>%2</i></qt>")
+                                       .arg(i18nc("@title", "Date and Time Information"))
+                                       .arg(i18nc("@title", "Record camera time-stamp properties"))));
+
+    d->page_lens->setHeader(d->dlg->currentItemTitleHeader(
+                                   QString::fromUtf8("<qt>%1<br/><i>%2</i></qt>")
+                                       .arg(i18nc("@title", "Lens Settings"))
+                                       .arg(i18nc("@title", "Record lens details used with camera"))));
+
+    d->page_device->setHeader(d->dlg->currentItemTitleHeader(
+                                   QString::fromUtf8("<qt>%1<br/><i>%2</i></qt>")
+                                       .arg(i18nc("@title", "Capture Device Settings"))
+                                       .arg(i18nc("@title", "Record shot conditions used by camera"))));
+
+    d->page_light->setHeader(d->dlg->currentItemTitleHeader(
+                                   QString::fromUtf8("<qt>%1<br/><i>%2</i></qt>")
+                                       .arg(i18nc("@title", "Light Source Information"))
+                                       .arg(i18nc("@title", "Record ambient condition captured by camera"))));
+
+    d->page_adjust->setHeader(d->dlg->currentItemTitleHeader(
+                                   QString::fromUtf8("<qt>%1<br/><i>%2</i></qt>")
+                                       .arg(i18nc("@title", "Pictures Adjustments"))
+                                       .arg(i18nc("@title", "Record technical details used by camera"))));
 
     QScopedPointer<DMetadata> meta(new DMetadata);
     meta->load((*d->dlg->currentItem()).toLocalFile());

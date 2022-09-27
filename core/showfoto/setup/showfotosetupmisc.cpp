@@ -6,20 +6,11 @@
  * Date        : 2005-04-02
  * Description : setup Misc tab.
  *
- * Copyright (C) 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C)      2008 by Arnd Baecker <arnd dot baecker at web dot de>
- * Copyright (C)      2014 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
+ * SPDX-FileCopyrightText: 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText:      2008 by Arnd Baecker <arnd dot baecker at web dot de>
+ * SPDX-FileCopyrightText:      2014 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -55,6 +46,11 @@
 #include "systemsettingswidget.h"
 #include "onlineversionchecker.h"
 #include "showfotosetup.h"
+#include "localizeconfig.h"
+
+#ifdef HAVE_SONNET
+#   include "spellcheckconfig.h"
+#endif
 
 using namespace Digikam;
 
@@ -85,6 +81,14 @@ public:
         applicationIcon         (nullptr),
         applicationFont         (nullptr),
         systemSettingsWidget    (nullptr),
+
+#ifdef HAVE_SONNET
+
+        spellCheckWidget        (nullptr),
+
+#endif
+
+        localizeWidget          (nullptr),
         settings                (ShowfotoSettings::instance())
     {
     }
@@ -114,6 +118,13 @@ public:
 
     SystemSettingsWidget* systemSettingsWidget;
 
+#ifdef HAVE_SONNET
+
+    SpellCheckConfig*     spellCheckWidget;
+
+#endif
+
+    LocalizeConfig*       localizeWidget;
     ShowfotoSettings*     settings;
 };
 
@@ -326,6 +337,20 @@ ShowfotoSetupMisc::ShowfotoSetupMisc(QWidget* const parent)
 
     d->tab->insertTab(System, d->systemSettingsWidget, i18nc("@title:tab", "System"));
 
+    // -- Spell Check and Localize Options --------------------------------------
+
+#ifdef HAVE_SONNET
+
+    d->spellCheckWidget = new SpellCheckConfig(d->tab);
+
+    d->tab->insertTab(SpellCheck, d->spellCheckWidget, i18nc("@title:tab", "Spellcheck"));
+
+#endif
+
+    d->localizeWidget = new LocalizeConfig(d->tab);
+
+    d->tab->insertTab(Localize, d->localizeWidget, i18nc("@title:tab", "Localize"));
+
     // --------------------------------------------------------
 
     readSettings();
@@ -334,6 +359,16 @@ ShowfotoSetupMisc::ShowfotoSetupMisc(QWidget* const parent)
 ShowfotoSetupMisc::~ShowfotoSetupMisc()
 {
     delete d;
+}
+
+void ShowfotoSetupMisc::setActiveTab(MiscTab tab)
+{
+    d->tab->setCurrentIndex(tab);
+}
+
+ShowfotoSetupMisc::MiscTab ShowfotoSetupMisc::activeTab() const
+{
+    return (MiscTab)d->tab->currentIndex();
 }
 
 bool ShowfotoSetupMisc::checkSettings()
@@ -386,6 +421,8 @@ void ShowfotoSetupMisc::readSettings()
 
     d->applicationIcon->setCurrentIndex(d->applicationIcon->findData(d->settings->getIconTheme()));
     d->applicationFont->setFont(d->settings->getApplicationFont());
+
+    // NOTE: Spellcheck and Localize read settings is done in widget constructor.
 }
 
 void ShowfotoSetupMisc::applySettings()
@@ -412,6 +449,14 @@ void ShowfotoSetupMisc::applySettings()
     d->settings->setIconTheme(d->applicationIcon->currentData().toString());
     d->settings->setApplicationFont(d->applicationFont->font());
     d->settings->syncConfig();
+
+#ifdef HAVE_SONNET
+
+    d->spellCheckWidget->applySettings();
+
+#endif
+
+    d->localizeWidget->applySettings();
 }
 
 } // namespace ShowFoto

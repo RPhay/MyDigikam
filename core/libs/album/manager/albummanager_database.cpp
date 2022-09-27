@@ -6,20 +6,11 @@
  * Date        : 2004-06-15
  * Description : Albums manager interface - Database helpers.
  *
- * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
+ * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2015      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -103,13 +94,6 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
     // ensure, embedded database is loaded
 
     qCDebug(DIGIKAM_GENERAL_LOG) << params;
-
-    // workaround for the problem mariaDB >= 10.2 and QTBUG-63108
-
-    if (params.isMySQL())
-    {
-        addFakeConnection();
-    }
 
     QString databaseError;
 
@@ -521,11 +505,13 @@ void AlbumManager::changeDatabase(const DbEngineParameters& newParams)
     if (newParams.isSQLite())
     {
         DatabaseServerStarter::instance()->stopServerManagerProcess();
+        bool walModeChanged = ((params.walMode != newParams.walMode)                                     &&
+                               (params.getCoreDatabaseNameOrDir() == newParams.getCoreDatabaseNameOrDir()));
 
         QDir newDir(newParams.getCoreDatabaseNameOrDir());
         QFileInfo newFile(newDir, QLatin1String("digikam4.db"));
 
-        if (!newFile.exists())
+        if      (!newFile.exists() && !walModeChanged)
         {
             QFileInfo digikam3DB(newDir, QLatin1String("digikam3.db"));
             QFileInfo digikamVeryOldDB(newDir, QLatin1String("digikam.db"));
@@ -635,7 +621,7 @@ void AlbumManager::changeDatabase(const DbEngineParameters& newParams)
                 }
             }
         }
-        else
+        else if (!walModeChanged)
         {
             int result = QMessageBox::No;
 
@@ -691,26 +677,6 @@ bool AlbumManager::databaseEqual(const DbEngineParameters& parameters) const
     DbEngineParameters params = CoreDbAccess::parameters();
 
     return (params == parameters);
-}
-
-void AlbumManager::addFakeConnection()
-{
-    if (!d->dbFakeConnection)
-    {
-        // workaround for the problem mariaDB >= 10.2 and QTBUG-63108
-        // from a Qt minimum version of >= 5.9.2 we can remove this workaround
-
-        QSqlDatabase::addDatabase(QLatin1String("QMYSQL"), QLatin1String("FakeConnection"));
-        d->dbFakeConnection = true;
-    }
-}
-
-void AlbumManager::removeFakeConnection()
-{
-    if (d->dbFakeConnection)
-    {
-        QSqlDatabase::removeDatabase(QLatin1String("FakeConnection"));
-    }
 }
 
 bool AlbumManager::moveToBackup(const QFileInfo& info)

@@ -1,8 +1,8 @@
 #
-# Copyright (c) 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
-# Redistribution and use is allowed according to the terms of the BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+# SPDX-License-Identifier: BSD-3-Clause
+#
 
 # digiKam exported API for external DPlugins based projects.
 #
@@ -84,6 +84,7 @@ install(FILES
               ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/engine/metaengine.h
               ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/engine/metaengine_data.h
               ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/containers/photoinfocontainer.h
+              ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/containers/captionvalues.h
 
               ${CMAKE_SOURCE_DIR}/core/libs/rawengine/drawdecoder.h
               ${CMAKE_SOURCE_DIR}/core/libs/rawengine/drawinfo.h

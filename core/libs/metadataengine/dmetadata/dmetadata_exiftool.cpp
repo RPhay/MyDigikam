@@ -6,20 +6,11 @@
  * Date        : 2006-02-23
  * Description : item metadata interface - Exiftool helpers.
  *
- * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2011      by Leif Huhn <leif at dkstat dot com>
+ * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2011      by Leif Huhn <leif at dkstat dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -28,21 +19,28 @@
 // Qt includes
 
 #include <QString>
-#include <QScopedPointer>
 #include <QFileInfo>
+#include <QMimeDatabase>
+#include <QScopedPointer>
 
 // Local includes
 
 #include "digikam_config.h"
 #include "digikam_debug.h"
-#include "drawfiles.h"
 #include "exiftoolparser.h"
 
 namespace Digikam
 {
 
-bool DMetadata::loadUsingExifTool(const QString& filePath, bool fromVideo)
+bool DMetadata::loadUsingExifTool(const QString& filePath)
 {
+    QMimeDatabase mimeDB;
+    QFileInfo info(filePath);
+
+    QString mimeType  = mimeDB.mimeTypeForFile(info).name();
+    bool    copyToAll = (mimeType.startsWith(QLatin1String("video/"))     ||
+                         (info.suffix().toUpper() == QLatin1String("FITS")));
+
     QScopedPointer<ExifToolParser> const parser(new ExifToolParser(nullptr));
 
     if (!parser->exifToolAvailable())
@@ -52,9 +50,7 @@ bool DMetadata::loadUsingExifTool(const QString& filePath, bool fromVideo)
         return false;
     }
 
-    bool ret = parser->loadChunk(filePath, fromVideo);
-
-    if (!ret)
+    if (!parser->loadChunk(filePath, copyToAll))
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Load metadata using ExifTool failed...";
 

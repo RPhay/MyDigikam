@@ -6,24 +6,15 @@
  * Date        : 2002-16-10
  * Description : Item icon view interface.
  *
- * Copyright (C) 2002-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2002-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2009-2011 by Johannes Wienke <languitar at semipol dot de>
- * Copyright (C) 2010-2011 by Andi Clemens <andi dot clemens at gmail dot com>
- * Copyright (C) 2011-2013 by Michael G. Hansen <mike at mghansen dot de>
- * Copyright (C) 2014-2015 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
- * Copyright (C) 2017      by Simon Frei <freisim93 at gmail dot com>
+ * SPDX-FileCopyrightText: 2002-2005 by Renchi Raju <renchi dot raju at gmail dot com>
+ * SPDX-FileCopyrightText: 2002-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2011 by Johannes Wienke <languitar at semipol dot de>
+ * SPDX-FileCopyrightText: 2010-2011 by Andi Clemens <andi dot clemens at gmail dot com>
+ * SPDX-FileCopyrightText: 2011-2013 by Michael G. Hansen <mike at mghansen dot de>
+ * SPDX-FileCopyrightText: 2014-2015 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
+ * SPDX-FileCopyrightText: 2017      by Simon Frei <freisim93 at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -181,6 +172,9 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
 
     connect(d->peopleSideBar, SIGNAL(requestFaceMode(bool)),
             d->iconView, SLOT(setFaceMode(bool)));
+
+    connect(d->peopleSideBar, SIGNAL(signalRunningFaceAction(bool)),
+            d->iconView, SLOT(setRunningFaceAction(bool)));
 
     connect(d->peopleSideBar, SIGNAL(signalFindDuplicates(QList<TAlbum*>)),
             this, SLOT(slotNewDuplicatesSearch(QList<TAlbum*>)));

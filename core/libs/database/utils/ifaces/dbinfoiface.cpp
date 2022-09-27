@@ -6,20 +6,11 @@
  * Date        : 2017-05-06
  * Description : interface to database information for shared tools.
  *
- * Copyright (C) 2017-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
- * Copyright (C) 2017      by Mario Frank <mario dot frank at uni minus potsdam dot de>
+ * SPDX-FileCopyrightText: 2017-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
+ * SPDX-FileCopyrightText: 2017      by Mario Frank <mario dot frank at uni minus potsdam dot de>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -48,6 +39,7 @@
 #include "digikam_debug.h"
 #include "itemattributeswatch.h"
 #include "itemiconview.h"
+#include "itemcomments.h"
 #include "itemcopyright.h"
 #include "iteminfo.h"
 #include "photoinfocontainer.h"
@@ -456,30 +448,30 @@ DBInfoIface::DInfoMap DBInfoIface::itemInfo(const QUrl& url) const
 
     if (!info.isNull())
     {
-        map.insert(QLatin1String("name"),            info.name());
-        map.insert(QLatin1String("title"),           info.title());
-        map.insert(QLatin1String("albumid"),         info.albumId());
-        map.insert(QLatin1String("comment"),         info.comment());
-        map.insert(QLatin1String("orientation"),     info.orientation());
-        map.insert(QLatin1String("datetime"),        info.dateTime());
-        map.insert(QLatin1String("rating"),          info.rating());
-        map.insert(QLatin1String("colorlabel"),      info.colorLabel());
-        map.insert(QLatin1String("picklabel"),       info.pickLabel());
-        map.insert(QLatin1String("filesize"),        info.fileSize());
-        map.insert(QLatin1String("dimensions"),      info.dimensions());
+        map.insert(QLatin1String("name"),               info.name());
+        map.insert(QLatin1String("title"),              info.title());
+        map.insert(QLatin1String("albumid"),            info.albumId());
+        map.insert(QLatin1String("comment"),            info.comment());
+        map.insert(QLatin1String("orientation"),        info.orientation());
+        map.insert(QLatin1String("datetime"),           info.dateTime());
+        map.insert(QLatin1String("rating"),             info.rating());
+        map.insert(QLatin1String("colorlabel"),         info.colorLabel());
+        map.insert(QLatin1String("picklabel"),          info.pickLabel());
+        map.insert(QLatin1String("filesize"),           info.fileSize());
+        map.insert(QLatin1String("dimensions"),         info.dimensions());
 
         // Get digiKam Tags Path list of picture from database.
         // Ex.: "City/Paris/Monuments/Notre Dame"
 
         QList<int> tagIds            = info.tagIds();
         QStringList tagspath         = AlbumManager::instance()->tagPaths(tagIds, false);
-        map.insert(QLatin1String("tagspath"),        tagspath);
+        map.insert(QLatin1String("tagspath"),           tagspath);
 
         // Get digiKam Tags name (keywords) list of picture from database.
         // Ex.: "Notre Dame"
 
         QStringList tags             = AlbumManager::instance()->tagNames(tagIds);
-        map.insert(QLatin1String("keywords"),        tags);
+        map.insert(QLatin1String("keywords"),           tags);
 
         // Get GPS location of picture from database.
 
@@ -487,33 +479,47 @@ DBInfoIface::DInfoMap DBInfoIface::itemInfo(const QUrl& url) const
 
         if (!pos.isEmpty())
         {
-            map.insert(QLatin1String("latitude"),    pos.latitudeNumber());
-            map.insert(QLatin1String("longitude"),   pos.longitudeNumber());
-            map.insert(QLatin1String("altitude"),    pos.altitude());
+            map.insert(QLatin1String("latitude"),       pos.latitudeNumber());
+            map.insert(QLatin1String("longitude"),      pos.longitudeNumber());
+            map.insert(QLatin1String("altitude"),       pos.altitude());
         }
 
         // Get Copyright information of picture from database.
 
         ItemCopyright rights         = info.imageCopyright();
-        map.insert(QLatin1String("creators"),        rights.creator());
-        map.insert(QLatin1String("credit"),          rights.credit());
-        map.insert(QLatin1String("rights"),          rights.rights());
-        map.insert(QLatin1String("source"),          rights.source());
+        map.insert(QLatin1String("creators"),           rights.creator());
+        map.insert(QLatin1String("credit"),             rights.credit());
+        map.insert(QLatin1String("rights"),             rights.rights());
+        map.insert(QLatin1String("source"),             rights.source());
 
         PhotoInfoContainer photoInfo = info.photoInfoContainer();
-        map.insert(QLatin1String("lens"),            photoInfo.lens);
-        map.insert(QLatin1String("make"),            photoInfo.make);
-        map.insert(QLatin1String("model"),           photoInfo.model);
-        map.insert(QLatin1String("exposuretime"),    photoInfo.exposureTime);
-        map.insert(QLatin1String("sensitivity"),     photoInfo.sensitivity);
-        map.insert(QLatin1String("aperture"),        photoInfo.aperture);
-        map.insert(QLatin1String("focallength"),     photoInfo.focalLength);
-        map.insert(QLatin1String("focalLength35mm"), photoInfo.focalLength35mm);
+        map.insert(QLatin1String("lens"),               photoInfo.lens);
+        map.insert(QLatin1String("make"),               photoInfo.make);
+        map.insert(QLatin1String("model"),              photoInfo.model);
+        map.insert(QLatin1String("exposuretime"),       photoInfo.exposureTime);
+        map.insert(QLatin1String("sensitivity"),        photoInfo.sensitivity);
+        map.insert(QLatin1String("aperture"),           photoInfo.aperture);
+        map.insert(QLatin1String("focallength"),        photoInfo.focalLength);
+        map.insert(QLatin1String("focalLength35mm"),    photoInfo.focalLength35mm);
 
         // TODO: add more video metadata as needed
 
         VideoInfoContainer videoInfo = info.videoInfoContainer();
-        map.insert(QLatin1String("videocodec"),      videoInfo.videoCodec);
+        map.insert(QLatin1String("videocodec"),         videoInfo.videoCodec);
+
+        // Get complex text containers.
+
+        ItemComments comments = info.imageComments(CoreDbAccess());
+        CaptionsMap titles    = comments.toCaptionsMap(DatabaseComment::Title);
+        map.insert(QLatin1String("titles"),             QVariant::fromValue(titles));
+        CaptionsMap captions  = comments.toCaptionsMap(DatabaseComment::Comment);
+        map.insert(QLatin1String("captions"),           QVariant::fromValue(captions));
+
+        Template tpl                     = info.metadataTemplate();
+        DMetadata::AltLangMap copyrights = tpl.copyright();
+        map.insert(QLatin1String("copyrights"),         QVariant::fromValue(copyrights));
+        DMetadata::AltLangMap notices    = tpl.rightUsageTerms();
+        map.insert(QLatin1String("copyrightnotices"),   QVariant::fromValue(notices));
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Database Info populated for" << url;
     }
@@ -530,6 +536,8 @@ void DBInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
     ItemInfo info    = ItemInfo::fromUrl(url);
     QStringList keys = map.keys();
 
+    qCDebug(DIGIKAM_GENERAL_LOG) << "DBInfoIface::setItemInfo() keys:" << keys;
+
     if (map.contains(QLatin1String("orientation")))
     {
         info.setOrientation(map[QLatin1String("orientation")].toInt());
@@ -542,13 +550,13 @@ void DBInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
         keys.removeAll(QLatin1String("rating"));
     }
 
-    if  (map.contains(QLatin1String("colorlabel")))
+    if (map.contains(QLatin1String("colorlabel")))
     {
         info.setColorLabel(map[QLatin1String("colorlabel")].toInt());
         keys.removeAll(QLatin1String("colorlabel"));
     }
 
-    if  (map.contains(QLatin1String("picklabel")))
+    if (map.contains(QLatin1String("picklabel")))
     {
         info.setPickLabel(map[QLatin1String("picklabel")].toInt());
         keys.removeAll(QLatin1String("picklabel"));
@@ -556,7 +564,7 @@ void DBInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
 
     // NOTE: For now tag doesn't really exist anywhere else apart from digikam therefore it's not really necessary to implement accessor method in InfoIface
 
-    if  (map.contains(QLatin1String("tag")))
+    if (map.contains(QLatin1String("tag")))
     {
         int tagID = map[QLatin1String("tag")].toInt();
 
@@ -568,6 +576,36 @@ void DBInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
         {
             FileActionMngr::instance()->removeTag(info, tagID);
         }
+    }
+
+    if (map.contains(QLatin1String("titles")))
+    {
+        ItemComments comments = info.imageComments(CoreDbAccess());
+        comments.replaceComments(qvariant_cast<CaptionsMap>(map[QLatin1String("titles")]), DatabaseComment::Title);
+        keys.removeAll(QLatin1String("titles"));
+    }
+
+    if (map.contains(QLatin1String("captions")))
+    {
+        ItemComments comments = info.imageComments(CoreDbAccess());
+        comments.replaceComments(qvariant_cast<CaptionsMap>(map[QLatin1String("captions")]), DatabaseComment::Comment);
+        keys.removeAll(QLatin1String("captions"));
+    }
+
+    if (map.contains(QLatin1String("copyrights")))
+    {
+        Template tpl = info.metadataTemplate();
+        tpl.setCopyright(qvariant_cast<DMetadata::AltLangMap>(map[QLatin1String("copyrights")]));
+        info.setMetadataTemplate(tpl);
+        keys.removeAll(QLatin1String("copyrights"));
+    }
+
+    if (map.contains(QLatin1String("copyrightnotices")))
+    {
+        Template tpl = info.metadataTemplate();
+        tpl.setRightUsageTerms(qvariant_cast<DMetadata::AltLangMap>(map[QLatin1String("copyrightnotices")]));
+        info.setMetadataTemplate(tpl);
+        keys.removeAll(QLatin1String("copyrightnotices"));
     }
 
     if (!keys.isEmpty())
@@ -807,6 +845,14 @@ void DBInfoIface::openSetupPage(SetupPage page)
         case ExifToolPage:
         {
             if (Setup::execExifTool(nullptr))
+            {
+                Q_EMIT signalSetupChanged();
+            }
+        }
+
+        case ImageQualityPage:
+        {
+            if (Setup::execImageQualitySorter(nullptr))
             {
                 Q_EMIT signalSetupChanged();
             }

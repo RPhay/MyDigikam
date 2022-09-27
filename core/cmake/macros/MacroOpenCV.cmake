@@ -12,10 +12,9 @@
 # OpenCV_INCLUDE_DIRS - OpenCV include directories
 # OpenCV_LIBS         - OpenCV libraries
 #
-# Copyright (c) 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
-# Redistribution and use is allowed according to the terms of the BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+# SPDX-License-Identifier: BSD-3-Clause
 #
 
 macro(DETECT_OPENCV OPENCV_MIN_VERSION)

@@ -6,17 +6,9 @@
  * Date        : 2006-09-13
  * Description : a widget to provide conflict rules to save image.
  *
- * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -69,7 +61,7 @@ FileSaveConflictBox::FileSaveConflictBox(QWidget* const parent, bool addSkip)
     setAttribute(Qt::WA_DeleteOnClose);
 
     const int spacing          = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                      QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
     QGridLayout* const grid    = new QGridLayout(this);
     d->conflictLabel           = new QLabel(i18n("If Target File Exists:"), this);
     QWidget* const conflictBox = new QWidget(this);

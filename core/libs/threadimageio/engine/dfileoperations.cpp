@@ -6,19 +6,10 @@
  * Date        : 2008-12-10
  * Description : misc file operation methods
  *
- * Copyright (C) 2014-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2006-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2014-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -409,7 +400,7 @@ bool DFileOperations::copyFolderRecursively(const QString& srcPath,
             return false;
         }
 
-        if (!copyFile(fileInfo.filePath(), copyPath))
+        if (!copyFile(fileInfo.filePath(), copyPath, cancel))
         {
             return false;
         }
@@ -523,20 +514,66 @@ bool DFileOperations::renameFile(const QString& srcFile,
 }
 
 bool DFileOperations::copyFile(const QString& srcFile,
-                               const QString& dstFile)
+                               const QString& dstFile,
+                               bool* const cancel)
 {
+    bool ret = true;
     QString tmpFile(dstFile);
     tmpFile += QLatin1String(".digikamtempfile.tmp");
 
-    bool ret = QFile::copy(srcFile, tmpFile);
+    QFile sFile(srcFile);
+    QFile dFile(tmpFile);
 
-    if (ret && !(ret = QFile::rename(tmpFile, dstFile)))
+    if (!sFile.open(QIODevice::ReadOnly))
+    {
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to open source file for reading:" << srcFile;
+
+        return false;
+    }
+
+    if (!dFile.open(QIODevice::WriteOnly | QIODevice::Unbuffered))
+    {
+        sFile.close();
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to open destination file for writing:" << tmpFile;
+
+        return false;
+    }
+
+    const int  MAX_IPC_SIZE = (1024 * 32);
+    QByteArray buffer(MAX_IPC_SIZE, '\0');
+    qint64     len;
+
+    while (((len = sFile.read(buffer.data(), MAX_IPC_SIZE)) != 0))
+    {
+        if ((cancel && *cancel) || (len == -1) || (dFile.write(buffer.data(), len) != len))
+        {
+            sFile.close();
+            dFile.close();
+
+            ret = false;
+
+            break;
+        }
+    }
+
+    sFile.close();
+    dFile.close();
+
+    if (ret)
+    {
+        ret = QFile::rename(tmpFile, dstFile);
+    }
+
+    if (!ret)
     {
         QFile::remove(tmpFile);
     }
 
     if (ret)
     {
+        QFile::Permissions permissions = QFile::permissions(srcFile);
+        QFile::setPermissions(dstFile, permissions);
+
         copyModificationTime(srcFile, dstFile);
     }
 

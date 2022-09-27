@@ -6,20 +6,11 @@
  * Date        : 2009-02-28
  * Description : batch tool to add visible watermark.
  *
- * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2010      by Mikkel Baekhoej Christensen <mbc at baekhoej dot dk>
- * Copyright (C) 2017      by Ahmed Fathi <ahmed dot fathi dot abdelmageed at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010      by Mikkel Baekhoej Christensen <mbc at baekhoej dot dk>
+ * SPDX-FileCopyrightText: 2017      by Ahmed Fathi <ahmed dot fathi dot abdelmageed at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -76,7 +67,9 @@ public:
         TopRight,
         BottomLeft,
         BottomRight,
-        Center
+        Center,
+        TopCenter,
+        BottomCenter
     };
 
     enum WaterMarkPlacementType
@@ -392,11 +385,14 @@ void WaterMark::registerSettingsWidget()
 
     QLabel* const label4         = new QLabel(vbox);
     d->placementPositionComboBox = new QComboBox(vbox);
-    d->placementPositionComboBox->insertItem(Private::TopLeft,     i18nc("@item: placement position", "Top left"));
-    d->placementPositionComboBox->insertItem(Private::TopRight,    i18nc("@item: placement position", "Top right"));
-    d->placementPositionComboBox->insertItem(Private::BottomLeft,  i18nc("@item: placement position", "Bottom left"));
-    d->placementPositionComboBox->insertItem(Private::BottomRight, i18nc("@item: placement position", "Bottom right"));
-    d->placementPositionComboBox->insertItem(Private::Center,      i18nc("@item: placement position", "Center"));
+    d->placementPositionComboBox->insertItem(Private::TopLeft,      i18nc("@item: placement position", "Top left"));
+    d->placementPositionComboBox->insertItem(Private::TopRight,     i18nc("@item: placement position", "Top right"));
+    d->placementPositionComboBox->insertItem(Private::BottomLeft,   i18nc("@item: placement position", "Bottom left"));
+    d->placementPositionComboBox->insertItem(Private::BottomRight,  i18nc("@item: placement position", "Bottom right"));
+    d->placementPositionComboBox->insertItem(Private::Center,       i18nc("@item: placement position", "Center"));
+    d->placementPositionComboBox->insertItem(Private::TopCenter,    i18nc("@item: placement position", "Top center"));
+    d->placementPositionComboBox->insertItem(Private::BottomCenter, i18nc("@item: placement position", "Bottom center"));
+
     label4->setText(i18n("Placement Position:"));
 
     QLabel* const labelRotation  = new QLabel(vbox);
@@ -755,6 +751,8 @@ bool WaterMark::toolOperations()
             }
 
             case Private::Center:
+            case Private::TopCenter:
+            case Private::BottomCenter:
             {
                 alignMode = Qt::AlignCenter;
                 break;
@@ -878,6 +876,30 @@ bool WaterMark::toolOperations()
 
                 watermarkRect.moveCenter(QPoint((int)(image().width()  / 2 + xAdditionalValue),
                                                 (int)(image().height() / 2 + yAdditionalValue)));
+                break;
+            }
+
+            case Private::TopCenter:
+            {
+                if ((rotationAngle == DImg::ANGLE::ROT90) || (rotationAngle == DImg::ANGLE::ROT270))
+                {
+                    xAdditionalValue += (watermarkRect.width() - watermarkRect.height()) / 2;
+                }
+
+                watermarkRect.moveCenter(QPoint((int)(image().width()  / 2 + xAdditionalValue), marginH));
+                break;
+            }
+
+            case Private::BottomCenter:
+            {
+                if ((rotationAngle == DImg::ANGLE::ROT90) || (rotationAngle == DImg::ANGLE::ROT270))
+                {
+                    xAdditionalValue += (watermarkRect.width() - watermarkRect.height()) / 2;
+                    yAdditionalValue += watermarkRect.height() - watermarkRect.width();
+                }
+
+                watermarkRect.moveCenter(QPoint((int)(image().width()  / 2 + xAdditionalValue),
+                                                image().height() + yAdditionalValue - 1 - marginH));
                 break;
             }
 

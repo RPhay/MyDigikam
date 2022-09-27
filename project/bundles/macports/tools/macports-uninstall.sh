@@ -1,10 +1,10 @@
 #!/bin/sh
 
-# Copyright (c) 2013-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 # This script must be run as sudo
 #
-# Redistribution and use is allowed according to the terms of the BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+# SPDX-License-Identifier: BSD-3-Clause
+#
 
 # Ask to run as root
 (( EUID != 0 )) && exec sudo -- "$0" "$@"

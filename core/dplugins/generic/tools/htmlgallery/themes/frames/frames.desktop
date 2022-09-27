@@ -2,6 +2,7 @@
 Type=Theme
 Name=Frames
 Name[ar]=الإطارات
+Name[be]=Рамкі
 Name[ca]=Marcs
 Name[ca@valencia]=Marcs
 Name[cs]=Rámce
@@ -34,6 +35,7 @@ Name[uk]=Рамки
 Name[x-test]=xxFramesxx
 Name[zh_CN]=Frames 相框
 Comment=A frame theme
+Comment[be]=Тэма з рамкамі
 Comment[ca]=Un tema de marcs
 Comment[ca@valencia]=Un tema de marcs
 Comment[cs]=Motiv rámce
@@ -67,6 +69,7 @@ Comment[zh_CN]=一个相框主题
 
 [X-HTMLGallery Author]
 Name=Ruediger Bente
+Name[be]=Ruediger Bente
 Name[bg]=Ruediger Bente
 Name[ca]=Ruediger Bente
 Name[ca@valencia]=Ruediger Bente
@@ -104,6 +107,7 @@ Url=mailto:ruediger.bente@gmx.de
 [X-HTMLGallery Preview]
 Name=Frames
 Name[ar]=الإطارات
+Name[be]=Рамкі
 Name[ca]=Marcs
 Name[ca@valencia]=Marcs
 Name[cs]=Rámce

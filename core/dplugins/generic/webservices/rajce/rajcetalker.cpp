@@ -6,18 +6,10 @@
  * Date        : 2011-04-12
  * Description : A tool to export items to Rajce web service
  *
- * Copyright (C) 2011      by Lukas Krejci <krejci.l at centrum dot cz>
- * Copyright (C) 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2011      by Lukas Krejci <krejci.l at centrum dot cz>
+ * SPDX-FileCopyrightText: 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -28,7 +20,6 @@
 #include <QWidget>
 #include <QQueue>
 #include <QNetworkReply>
-#include <QNetworkAccessManager>
 #include <QCryptographicHash>
 #include <QXmlResultItems>
 #include <QXmlQuery>
@@ -44,6 +35,7 @@
 #include "digikam_version.h"
 #include "dmetadata.h"
 #include "wstoolutils.h"
+#include "networkmanager.h"
 #include "previewloadthread.h"
 
 using namespace Digikam;
@@ -80,7 +72,7 @@ RajceTalker::RajceTalker(QWidget* const parent)
       d      (new Private)
 {
     d->tmpDir  = WSToolUtils::makeTemporaryDir("rajce").absolutePath() + QLatin1Char('/');
-    d->netMngr = new QNetworkAccessManager(this);
+    d->netMngr = NetworkManager::instance()->getNetworkManager(this);
 
     connect(d->netMngr, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotFinished(QNetworkReply*)));

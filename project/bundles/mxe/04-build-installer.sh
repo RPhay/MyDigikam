@@ -4,10 +4,9 @@
 # and create a Windows installer file with NSIS application
 # Dependency : NSIS makensis program for Linux.
 #
-# Copyright (c) 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
-# Redistribution and use is allowed according to the terms of the BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+# SPDX-License-Identifier: BSD-3-Clause
 #
 
 # Halt and catch errors

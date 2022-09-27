@@ -6,19 +6,10 @@
  * Date        : 2004-12-21
  * Description : USB Mass Storage camera interface
  *
- * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
+ * SPDX-FileCopyrightText: 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -390,26 +381,26 @@ bool UMSCamera::downloadItem(const QString& folder, const QString& itemName, con
 
     if (!sFile.open(QIODevice::ReadOnly))
     {
-        qCWarning(DIGIKAM_IMPORTUI_LOG) << "Failed to open source file for reading: " << src;
+        qCWarning(DIGIKAM_IMPORTUI_LOG) << "Failed to open source file for reading:" << src;
 
         return false;
     }
 
-    if (!dFile.open(QIODevice::WriteOnly))
+    if (!dFile.open(QIODevice::WriteOnly | QIODevice::Unbuffered))
     {
         sFile.close();
-        qCWarning(DIGIKAM_IMPORTUI_LOG) << "Failed to open destination file for writing: " << dest;
+        qCWarning(DIGIKAM_IMPORTUI_LOG) << "Failed to open destination file for writing:" << dest;
 
         return false;
     }
 
-    const int MAX_IPC_SIZE = (1024 * 32);
-    char      buffer[MAX_IPC_SIZE];
-    qint64    len;
+    const int  MAX_IPC_SIZE = (1024 * 32);
+    QByteArray buffer(MAX_IPC_SIZE, '\0');
+    qint64     len;
 
-    while (((len = sFile.read(buffer, MAX_IPC_SIZE)) != 0) && !m_cancel)
+    while (((len = sFile.read(buffer.data(), MAX_IPC_SIZE)) != 0) && !m_cancel)
     {
-        if ((len == -1) || (dFile.write(buffer, (quint64)len) != len))
+        if ((len == -1) || (dFile.write(buffer.data(), len) != len))
         {
             sFile.close();
             dFile.close();

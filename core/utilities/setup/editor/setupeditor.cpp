@@ -6,18 +6,9 @@
  * Date        : 2007-02-06
  * Description : setup Image Editor page
  *
- * Copyright (C) 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -76,9 +67,9 @@ SetupEditor::SetupEditor(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->tab->addTab(d->iface,      i18nc("@title:tab", "Editor Window"));
-    d->tab->addTab(d->versioning, i18nc("@title:tab", "Versioning"));
-    d->tab->addTab(d->iofiles,    i18nc("@title:tab", "Save Settings"));
+    d->tab->insertTab(EditorWindow, d->iface,      i18nc("@title:tab", "Editor Window"));
+    d->tab->insertTab(Versioning,   d->versioning, i18nc("@title:tab", "Versioning"));
+    d->tab->insertTab(SaveSettings, d->iofiles,    i18nc("@title:tab", "Save Settings"));
 
     d->raw        = new SetupRaw(d->tab);
 
@@ -92,6 +83,16 @@ SetupEditor::SetupEditor(QWidget* const parent)
 SetupEditor::~SetupEditor()
 {
     delete d;
+}
+
+void SetupEditor::setActiveTab(EditorTab tab)
+{
+    d->tab->setCurrentIndex(tab);
+}
+
+SetupEditor::EditorTab SetupEditor::activeTab() const
+{
+    return (EditorTab)d->tab->currentIndex();
 }
 
 void SetupEditor::applySettings()

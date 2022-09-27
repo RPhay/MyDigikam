@@ -8,24 +8,15 @@
  *               Integer arithmetic inspired by DirectFB,
  *               src/gfx/generic/generic.c and src/display/idirectfbsurface.c
  *
- * Copyright (C) 2006-2009 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2000-2002 by convergence integrated media GmbH <curanz@convergence.de>
- * Copyright (C) 2002-2005 by Denis Oliver Kropp <dok at directfb dot org>
- * Copyright (C) 2002-2005 by Andreas Hundt <andi at fischlustig dot de>
- * Copyright (C) 2002-2005 by Sven Neumann <neo at directfb dot org>
- * Copyright (C) 2002-2005 by Ville Syrj <syrjala at sci dot fi>
- * Copyright (C) 2002-2005 by Claudio Ciccani <klan at users dot sf dot net>
+ * SPDX-FileCopyrightText: 2006-2009 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2000-2002 by convergence integrated media GmbH <curanz@convergence.de>
+ * SPDX-FileCopyrightText: 2002-2005 by Denis Oliver Kropp <dok at directfb dot org>
+ * SPDX-FileCopyrightText: 2002-2005 by Andreas Hundt <andi at fischlustig dot de>
+ * SPDX-FileCopyrightText: 2002-2005 by Sven Neumann <neo at directfb dot org>
+ * SPDX-FileCopyrightText: 2002-2005 by Ville Syrj <syrjala at sci dot fi>
+ * SPDX-FileCopyrightText: 2002-2005 by Claudio Ciccani <klan at users dot sf dot net>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 

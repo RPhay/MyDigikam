@@ -6,20 +6,11 @@
  * Date        : 2003-03-09
  * Description : Album properties dialog.
  *
- * Copyright (C) 2003-2004 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2005      by Tom Albers <tomalbers at kde dot nl>
- * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2003-2004 by Renchi Raju <renchi dot raju at gmail dot com>
+ * SPDX-FileCopyrightText: 2005      by Tom Albers <tomalbers at kde dot nl>
+ * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -110,7 +101,7 @@ public:
     QLabel*           topLabel;
     QComboBox*        categoryCombo;
     QComboBox*        parentCombo;
-    QLineEdit*        titleEdit;
+    DTextEdit*        titleEdit;
     DPlainTextEdit*   commentsEdit;
 
     AlbumDatePicker*  datePicker;
@@ -154,15 +145,11 @@ AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
     QLabel* const titleLabel          = new QLabel(page);
     titleLabel->setText(i18nc("@label: album properties", "&Title:"));
 
-    d->titleEdit                      = new QLineEdit(page);
-    d->titleEdit->setClearButtonEnabled(true);
+    d->titleEdit                      = new DTextEdit(page);
+    d->titleEdit->setLinesVisible(1);
+    d->titleEdit->setPlaceholderText(i18nc("@label: album properties", "Set here the new album title"));
+    d->titleEdit->setIgnoredCharacters(QLatin1String("/:"));
     titleLabel->setBuddy(d->titleEdit);
-
-    QRegularExpression titleRx(QLatin1String("[^/:]+"));
-    QValidator* const titleValidator = new QRegularExpressionValidator(titleRx, this);
-
-    d->titleEdit->setValidator(titleValidator);
-    d->titleEdit->setPlaceholderText(i18nc("@label: album properties", "Enter album title here..."));
 
     QLabel* const categoryLabel       = new QLabel(page);
     categoryLabel->setText(i18nc("@label: album properties", "Ca&tegory:"));
@@ -201,19 +188,19 @@ AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
 
     if (create)
     {
-        setTabOrder(d->titleEdit, d->categoryCombo);
+        setTabOrder(d->titleEdit,     d->categoryCombo);
         setTabOrder(d->categoryCombo, d->parentCombo);
-        setTabOrder(d->parentCombo, d->commentsEdit);
-        setTabOrder(d->commentsEdit, d->datePicker);
+        setTabOrder(d->parentCombo,   d->commentsEdit);
+        setTabOrder(d->commentsEdit,  d->datePicker);
         dateHighButton->hide();
         dateAvgButton->hide();
         dateLowButton->hide();
     }
     else
     {
-        setTabOrder(d->titleEdit, d->categoryCombo);
+        setTabOrder(d->titleEdit,     d->categoryCombo);
         setTabOrder(d->categoryCombo, d->commentsEdit);
-        setTabOrder(d->commentsEdit, d->datePicker);
+        setTabOrder(d->commentsEdit,  d->datePicker);
         d->parentCombo->hide();
         parentLabel->hide();
     }
@@ -251,7 +238,7 @@ AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
     }
 
     grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
     grid->setContentsMargins(QMargins());
     page->setLayout(grid);
 
@@ -298,8 +285,8 @@ AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
 
     // -- slots connections -------------------------------------------
 
-    connect(d->titleEdit, SIGNAL(textChanged(QString)),
-            this, SLOT(slotTitleChanged(QString)));
+    connect(d->titleEdit, SIGNAL(textChanged()),
+            this, SLOT(slotTitleChanged()));
 
     connect(dateLowButton, SIGNAL(clicked()),
             this, SLOT(slotDateLowButtonClicked()));
@@ -423,8 +410,9 @@ bool AlbumPropsEdit::createNew(PAlbum* const parent, QString& title, QString& co
     return ok;
 }
 
-void AlbumPropsEdit::slotTitleChanged(const QString& newtitle)
+void AlbumPropsEdit::slotTitleChanged()
 {
+    QString newtitle = d->titleEdit->text();
     QRegularExpression emptyTitle(QRegularExpression::anchoredPattern(QLatin1String("^\\s*$")));
     bool enable      = (!emptyTitle.match(newtitle).hasMatch() && !newtitle.isEmpty());
     d->buttons->button(QDialogButtonBox::Ok)->setEnabled(enable);

@@ -6,17 +6,9 @@
  * Date        : 2012-04-19
  * Description : time adjust settings container.
  *
- * Copyright (C) 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -103,8 +95,13 @@ QDateTime TimeAdjustContainer::calculateAdjustedDate(const QDateTime& originalTi
     return newTime;
 }
 
-QDateTime TimeAdjustContainer::getDateTimeFromUrl(const QUrl& url) const
+QDateTime TimeAdjustContainer::getDateTimeFromString(const QString& dateStr) const
 {
+    if (dateStr.isEmpty())
+    {
+        return QDateTime();
+    }
+
     QStringList regExpStrings;
 
     // Do not change the order of the list.
@@ -117,12 +114,14 @@ QDateTime TimeAdjustContainer::getDateTimeFromUrl(const QUrl& url) const
                                    "[-_:.]?[0-9]{3})(.+)?");
     regExpStrings << QLatin1String("(.+)?([0-9]{4}[-_:/]?[0-9]{2}[-_:/]?[0-9]{2})"
                                    "(.+)?([0-9]{2}[-_:.]?[0-9]{2}[-_:.]?[0-9]{2})(.+)?");
-    regExpStrings << QLatin1String("(.+)?([0-9]{2}[-_:/]?[0-9]{2}[-_:/]?[0-9]{4})"
+    regExpStrings << QLatin1String("(.+)?([0-9]{2}[-_:/.]?[0-9]{2}[-_:/.]?[0-9]{4})"
                                    "(.+)?([0-9]{2}[-_:.]?[0-9]{2}[-_:.]?[0-9]{2})(.+)?");
+    regExpStrings << QLatin1String("(.+)?([0-9]{2}[-_:/.]?[0-9]{2}[-_:/.]?[0-9]{4})"
+                                   "(.+)?([0-9]{2}[-_:.]?[0-9]{2})(.+)?");
     regExpStrings << QLatin1String("(.+)?([0-9]{2}-[0-9]{2}-[0-9]{2})"
                                    "(.+)?([0-9]{2}[0-9]{2})(.+)?");
     regExpStrings << QLatin1String("(.+)?([0-9]{4}[-_:/]?[0-9]{2}[-_:/]?[0-9]{2})(.+)?");
-    regExpStrings << QLatin1String("(.+)?([0-9]{2}[-_:/]?[0-9]{2}[-_:/]?[0-9]{4})(.+)?");
+    regExpStrings << QLatin1String("(.+)?([0-9]{2}[-_:/.]?[0-9]{2}[-_:/.]?[0-9]{4})(.+)?");
     regExpStrings << QLatin1String("(.+)?([0-9]{2}[0-9]{2}[0-9]{4})([0-9]{3})(.+)?");
     regExpStrings << QLatin1String("(.+)?([0-9]{2}_[0-9]{2} [0-9]{2})(.+)?");
 
@@ -132,6 +131,7 @@ QDateTime TimeAdjustContainer::getDateTimeFromUrl(const QUrl& url) const
     formatStrings << qMakePair(QLatin1String("yyyyMMddhhmmsszzz"), QString());
     formatStrings << qMakePair(QLatin1String("yyyyMMddhhmmss"),    QString());
     formatStrings << qMakePair(QLatin1String("ddMMyyyyhhmmss"),    QLatin1String("MMddyyyyhhmmss"));
+    formatStrings << qMakePair(QLatin1String("ddMMyyyyhhmm"),      QLatin1String("MMddyyyyhhmm"));
     formatStrings << qMakePair(QLatin1String("ddMMyyhhmm"),        QString());
     formatStrings << qMakePair(QLatin1String("yyyyMMdd"),          QString());
     formatStrings << qMakePair(QLatin1String("ddMMyyyy"),          QLatin1String("MMddyyyy"));
@@ -143,7 +143,7 @@ QDateTime TimeAdjustContainer::getDateTimeFromUrl(const QUrl& url) const
     for (int index = 0 ; index < regExpStrings.count() ; ++index)
     {
         QRegularExpression dateRegExp(QRegularExpression::anchoredPattern(regExpStrings.at(index)));
-        QRegularExpressionMatch match = dateRegExp.match(url.fileName());
+        QRegularExpressionMatch match = dateRegExp.match(dateStr);
 
         if (match.hasMatch())
         {
@@ -193,6 +193,32 @@ QDateTime TimeAdjustContainer::getDateTimeFromUrl(const QUrl& url) const
     return dateTime;
 }
 
+QMap<QString, bool> TimeAdjustContainer::getDateTimeTagsMap() const
+{
+    QMap<QString, bool> tagsMap;
+
+    tagsMap.insert(QLatin1String("Exif.Image.DateTime"),           updEXIFModDate);
+    tagsMap.insert(QLatin1String("Exif.Photo.DateTimeOriginal"),   updEXIFOriDate);
+    tagsMap.insert(QLatin1String("Exif.Photo.DateTimeDigitized"),  updEXIFDigDate);
+    tagsMap.insert(QLatin1String("Exif.Image.PreviewDateTime"),    updEXIFThmDate);
+
+    tagsMap.insert(QLatin1String("Iptc.Application2.DateCreated"), updIPTCDate);
+    tagsMap.insert(QLatin1String("Iptc.Application2.TimeCreated"), updIPTCDate);
+
+    tagsMap.insert(QLatin1String("Xmp.exif.DateTimeOriginal"),     updXMPDate);
+    tagsMap.insert(QLatin1String("Xmp.photoshop.DateCreated"),     updXMPDate);
+    tagsMap.insert(QLatin1String("Xmp.xmp.MetadataDate"),          updXMPDate);
+    tagsMap.insert(QLatin1String("Xmp.xmp.CreateDate"),            updXMPDate);
+    tagsMap.insert(QLatin1String("Xmp.xmp.ModifyDate"),            updXMPDate);
+    tagsMap.insert(QLatin1String("Xmp.tiff.DateTime"),             updXMPDate);
+
+    tagsMap.insert(QLatin1String("Xmp.video.DateTimeOriginal"),    updXMPVideo);
+    tagsMap.insert(QLatin1String("Xmp.video.DateTimeDigitized"),   updXMPVideo);
+    tagsMap.insert(QLatin1String("Xmp.video.ModificationDate"),    updXMPVideo);
+    tagsMap.insert(QLatin1String("Xmp.video.DateUTC"),             updXMPVideo);
+
+    return tagsMap;
+}
 // -------------------------------------------------------------------
 
 DeltaTime::DeltaTime()

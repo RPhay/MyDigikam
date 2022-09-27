@@ -6,18 +6,9 @@
  * Date        : 2006-01-23
  * Description : setup image editor output files settings.
  *
- * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -158,26 +149,52 @@ SetupIOFiles::SetupIOFiles(QWidget* const parent)
     DPluginLoader* const ploader = DPluginLoader::instance();
 
     d->JPEGOptions               = ploader->exportWidget(QLatin1String("JPEG"));
-    d->JPEGOptions->setParent(this);
+
+    if (d->JPEGOptions)
+    {
+        d->JPEGOptions->setParent(this);
+    }
+
     d->PNGOptions                = ploader->exportWidget(QLatin1String("PNG"));
-    d->PNGOptions->setParent(this);
+
+    if (d->PNGOptions)
+    {
+        d->PNGOptions->setParent(this);
+    }
+
     d->TIFFOptions               = ploader->exportWidget(QLatin1String("TIFF"));
-    d->TIFFOptions->setParent(this);
+
+    if (d->TIFFOptions)
+    {
+        d->TIFFOptions->setParent(this);
+    }
 
 #ifdef HAVE_JASPER
 
     d->JPEG2000Options           = ploader->exportWidget(QLatin1String("JP2"));
-    d->JPEG2000Options->setParent(this);
+
+    if (d->JPEG2000Options)
+    {
+        d->JPEG2000Options->setParent(this);
+    }
 
 #endif // HAVE_JASPER
 
     d->PGFOptions                = ploader->exportWidget(QLatin1String("PGF"));
-    d->PGFOptions->setParent(this);
+
+    if (d->PGFOptions)
+    {
+        d->PGFOptions->setParent(this);
+    }
 
 #ifdef HAVE_X265
 
     d->HEIFOptions               = ploader->exportWidget(QLatin1String("HEIF"));
-    d->HEIFOptions->setParent(this);
+
+    if (d->HEIFOptions)
+    {
+        d->HEIFOptions->setParent(this);
+    }
 
 #endif // HAVE_X265
 
@@ -209,21 +226,41 @@ SetupIOFiles::SetupIOFiles(QWidget* const parent)
     d->showImageSettingsDialog->setWhatsThis(i18n("<ul><li>Checked: A dialog where settings can be changed when saving image files</li>"
                                                   "<li>Unchecked: Default settings are used when saving image files</li></ul>"));
 
-    vbox->addWidget(d->createGroupBox(d->JPEGOptions));
-    vbox->addWidget(d->createGroupBox(d->PNGOptions));
-    vbox->addWidget(d->createGroupBox(d->TIFFOptions));
+    if (d->JPEGOptions)
+    {
+        vbox->addWidget(d->createGroupBox(d->JPEGOptions));
+    }
+
+    if (d->PNGOptions)
+    {
+        vbox->addWidget(d->createGroupBox(d->PNGOptions));
+    }
+
+    if (d->TIFFOptions)
+    {
+        vbox->addWidget(d->createGroupBox(d->TIFFOptions));
+    }
 
 #ifdef HAVE_JASPER
 
-    vbox->addWidget(d->createGroupBox(d->JPEG2000Options));
+    if (d->JPEG2000Options)
+    {
+        vbox->addWidget(d->createGroupBox(d->JPEG2000Options));
+    }
 
 #endif // HAVE_JASPER
 
-    vbox->addWidget(d->createGroupBox(d->PGFOptions));
+    if (d->PGFOptions)
+    {
+        vbox->addWidget(d->createGroupBox(d->PGFOptions));
+    }
 
 #ifdef HAVE_X265
 
-    vbox->addWidget(d->createGroupBox(d->HEIFOptions));
+    if (d->HEIFOptions)
+    {
+        vbox->addWidget(d->createGroupBox(d->HEIFOptions));
+    }
 
 #endif // HAVE_265
 
@@ -263,53 +300,72 @@ void SetupIOFiles::applySettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(d->configGroupName);
-    group.writeEntry(d->configJPEGCompressionEntry,     d->JPEGOptions->settings()[QLatin1String("quality")].toInt());
-    group.writeEntry(d->configJPEGSubSamplingEntry,     d->JPEGOptions->settings()[QLatin1String("subsampling")].toInt());
+
+    if (d->JPEGOptions)
+    {
+        group.writeEntry(d->configJPEGCompressionEntry,     d->JPEGOptions->settings()[QLatin1String("quality")].toInt());
+        group.writeEntry(d->configJPEGSubSamplingEntry,     d->JPEGOptions->settings()[QLatin1String("subsampling")].toInt());
+    }
 
     // ---
 
-    group.writeEntry(d->configPNGCompressionEntry,      d->PNGOptions->settings()[QLatin1String("quality")].toInt());
+    if (d->PNGOptions)
+    {
+        group.writeEntry(d->configPNGCompressionEntry,      d->PNGOptions->settings()[QLatin1String("quality")].toInt());
+    }
 
     // ---
 
-    group.writeEntry(d->configTIFFCompressionEntry,     d->TIFFOptions->settings()[QLatin1String("compress")].toBool());
+    if (d->TIFFOptions)
+    {
+        group.writeEntry(d->configTIFFCompressionEntry,     d->TIFFOptions->settings()[QLatin1String("compress")].toBool());
+    }
 
 #ifdef HAVE_JASPER
 
-    group.writeEntry(d->configJPEG2000CompressionEntry, d->JPEG2000Options->settings()[QLatin1String("quality")].toInt());
-    group.writeEntry(d->configJPEG2000LossLessEntry,    d->JPEG2000Options->settings()[QLatin1String("lossless")].toBool());
+    if (d->JPEG2000Options)
+    {
+        group.writeEntry(d->configJPEG2000CompressionEntry, d->JPEG2000Options->settings()[QLatin1String("quality")].toInt());
+        group.writeEntry(d->configJPEG2000LossLessEntry,    d->JPEG2000Options->settings()[QLatin1String("lossless")].toBool());
+    }
 
 #endif // HAVE_JASPER
 
-    group.writeEntry(d->configPGFCompressionEntry,      d->PGFOptions->settings()[QLatin1String("quality")].toInt());
-    group.writeEntry(d->configPGFLossLessEntry,         d->PGFOptions->settings()[QLatin1String("lossless")].toBool());
+    if (d->PGFOptions)
+    {
+        group.writeEntry(d->configPGFCompressionEntry,      d->PGFOptions->settings()[QLatin1String("quality")].toInt());
+        group.writeEntry(d->configPGFLossLessEntry,         d->PGFOptions->settings()[QLatin1String("lossless")].toBool());
+    }
 
 #ifdef HAVE_X265
 
-    group.writeEntry(d->configHEIFCompressionEntry,     d->HEIFOptions->settings()[QLatin1String("quality")].toInt());
-    group.writeEntry(d->configHEIFLossLessEntry,        d->HEIFOptions->settings()[QLatin1String("lossless")].toBool());
+    if (d->HEIFOptions)
+    {
+        group.writeEntry(d->configHEIFCompressionEntry,     d->HEIFOptions->settings()[QLatin1String("quality")].toInt());
+        group.writeEntry(d->configHEIFLossLessEntry,        d->HEIFOptions->settings()[QLatin1String("lossless")].toBool());
+    }
 
 #endif // HAVE_X265
 
     if (d->JXLOptions)
     {
-        group.writeEntry(d->configJXLCompressionEntry,  d->JXLOptions->settings()[QLatin1String("quality")].toInt());
-        group.writeEntry(d->configJXLLossLessEntry,     d->JXLOptions->settings()[QLatin1String("lossless")].toBool());
+        group.writeEntry(d->configJXLCompressionEntry,      d->JXLOptions->settings()[QLatin1String("quality")].toInt());
+        group.writeEntry(d->configJXLLossLessEntry,         d->JXLOptions->settings()[QLatin1String("lossless")].toBool());
     }
 
     if (d->WEBPOptions)
     {
-        group.writeEntry(d->configWEBPCompressionEntry, d->WEBPOptions->settings()[QLatin1String("quality")].toInt());
-        group.writeEntry(d->configWEBPLossLessEntry,    d->WEBPOptions->settings()[QLatin1String("lossless")].toBool());
+        group.writeEntry(d->configWEBPCompressionEntry,     d->WEBPOptions->settings()[QLatin1String("quality")].toInt());
+        group.writeEntry(d->configWEBPLossLessEntry,        d->WEBPOptions->settings()[QLatin1String("lossless")].toBool());
     }
 
     if (d->AVIFOptions)
     {
-        group.writeEntry(d->configAVIFCompressionEntry,  d->AVIFOptions->settings()[QLatin1String("quality")].toInt());
-        group.writeEntry(d->configAVIFLossLessEntry,     d->AVIFOptions->settings()[QLatin1String("lossless")].toBool());
+        group.writeEntry(d->configAVIFCompressionEntry,     d->AVIFOptions->settings()[QLatin1String("quality")].toInt());
+        group.writeEntry(d->configAVIFLossLessEntry,        d->AVIFOptions->settings()[QLatin1String("lossless")].toBool());
     }
 
-    group.writeEntry(d->configShowImageSettingsDialog,  d->showImageSettingsDialog->isChecked());
+    group.writeEntry(d->configShowImageSettingsDialog,      d->showImageSettingsDialog->isChecked());
     config->sync();
 }
 
@@ -320,71 +376,89 @@ void SetupIOFiles::readSettings()
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(d->configGroupName);
 
-    set.clear();
-    set.insert(QLatin1String("quality"),     group.readEntry(d->configJPEGCompressionEntry,    75));
-    set.insert(QLatin1String("subsampling"), group.readEntry(d->configJPEGSubSamplingEntry,    1));  // Medium sub-sampling
-    d->JPEGOptions->setSettings(set);
+    if (d->JPEGOptions)
+    {
+        set.clear();
+        set.insert(QLatin1String("quality"),     group.readEntry(d->configJPEGCompressionEntry,  75));
+        set.insert(QLatin1String("subsampling"), group.readEntry(d->configJPEGSubSamplingEntry,  1));  // Medium sub-sampling
+        d->JPEGOptions->setSettings(set);
+    }
 
     // ---
 
-    set.clear();
-    set.insert(QLatin1String("quality"),  group.readEntry(d->configPNGCompressionEntry,        9));
-    d->PNGOptions->setSettings(set);
+    if (d->PNGOptions)
+    {
+        set.clear();
+        set.insert(QLatin1String("quality"), group.readEntry(d->configPNGCompressionEntry,       9));
+        d->PNGOptions->setSettings(set);
+    }
 
     // ---
 
-    set.clear();
-    set.insert(QLatin1String("compress"),  group.readEntry(d->configTIFFCompressionEntry,      false));
-    d->TIFFOptions->setSettings(set);
+    if (d->TIFFOptions)
+    {
+        set.clear();
+        set.insert(QLatin1String("compress"), group.readEntry(d->configTIFFCompressionEntry,     false));
+        d->TIFFOptions->setSettings(set);
+    }
 
 #ifdef HAVE_JASPER
 
-    set.clear();
-    set.insert(QLatin1String("quality"),  group.readEntry(d->configJPEG2000CompressionEntry,   75));
-    set.insert(QLatin1String("lossless"), group.readEntry(d->configJPEG2000LossLessEntry,      true));
-    d->JPEG2000Options->setSettings(set);
+    if (d->JPEG2000Options)
+    {
+        set.clear();
+        set.insert(QLatin1String("quality"),  group.readEntry(d->configJPEG2000CompressionEntry, 75));
+        set.insert(QLatin1String("lossless"), group.readEntry(d->configJPEG2000LossLessEntry,    true));
+        d->JPEG2000Options->setSettings(set);
+    }
 
 #endif // HAVE_JASPER
 
-    set.clear();
-    set.insert(QLatin1String("quality"),  group.readEntry(d->configPGFCompressionEntry,        3));
-    set.insert(QLatin1String("lossless"), group.readEntry(d->configPGFLossLessEntry,           true));
-    d->PGFOptions->setSettings(set);
+    if (d->PGFOptions)
+    {
+        set.clear();
+        set.insert(QLatin1String("quality"),  group.readEntry(d->configPGFCompressionEntry,      3));
+        set.insert(QLatin1String("lossless"), group.readEntry(d->configPGFLossLessEntry,         true));
+        d->PGFOptions->setSettings(set);
+    }
 
 #ifdef HAVE_X265
 
-    set.clear();
-    set.insert(QLatin1String("quality"),  group.readEntry(d->configHEIFCompressionEntry,       75));
-    set.insert(QLatin1String("lossless"), group.readEntry(d->configHEIFLossLessEntry,          true));
-    d->HEIFOptions->setSettings(set);
+    if (d->HEIFOptions)
+    {
+        set.clear();
+        set.insert(QLatin1String("quality"),  group.readEntry(d->configHEIFCompressionEntry,     75));
+        set.insert(QLatin1String("lossless"), group.readEntry(d->configHEIFLossLessEntry,        true));
+        d->HEIFOptions->setSettings(set);
+    }
 
 #endif // HAVE_X265
 
     if (d->JXLOptions)
     {
         set.clear();
-        set.insert(QLatin1String("quality"),  group.readEntry(d->configJXLCompressionEntry,    75));
-        set.insert(QLatin1String("lossless"), group.readEntry(d->configJXLLossLessEntry,       true));
+        set.insert(QLatin1String("quality"),  group.readEntry(d->configJXLCompressionEntry,      75));
+        set.insert(QLatin1String("lossless"), group.readEntry(d->configJXLLossLessEntry,         true));
         d->JXLOptions->setSettings(set);
     }
 
     if (d->WEBPOptions)
     {
         set.clear();
-        set.insert(QLatin1String("quality"),  group.readEntry(d->configWEBPCompressionEntry,   75));
-        set.insert(QLatin1String("lossless"), group.readEntry(d->configWEBPLossLessEntry,      true));
+        set.insert(QLatin1String("quality"),  group.readEntry(d->configWEBPCompressionEntry,     75));
+        set.insert(QLatin1String("lossless"), group.readEntry(d->configWEBPLossLessEntry,        true));
         d->WEBPOptions->setSettings(set);
     }
 
     if (d->AVIFOptions)
     {
         set.clear();
-        set.insert(QLatin1String("quality"),  group.readEntry(d->configAVIFCompressionEntry,   75));
-        set.insert(QLatin1String("lossless"), group.readEntry(d->configAVIFLossLessEntry,      true));
+        set.insert(QLatin1String("quality"),  group.readEntry(d->configAVIFCompressionEntry,     75));
+        set.insert(QLatin1String("lossless"), group.readEntry(d->configAVIFLossLessEntry,        true));
         d->AVIFOptions->setSettings(set);
     }
 
-    d->showImageSettingsDialog->setChecked(group.readEntry(d->configShowImageSettingsDialog,   true));
+    d->showImageSettingsDialog->setChecked(group.readEntry(d->configShowImageSettingsDialog,     true));
 }
 
 } // namespace Digikam

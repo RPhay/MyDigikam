@@ -7,8 +7,7 @@
 #  Direct2D_FOUND        - If false, do not try to use Direct2D.
 #  DirectX_ROOT_DIR      - directory where DirectX was installed.
 #
-# Redistribution and use is allowed according to the terms of the New BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+# SPDX-License-Identifier: BSD-3-Clause
 #
 
 set(sdk_include)

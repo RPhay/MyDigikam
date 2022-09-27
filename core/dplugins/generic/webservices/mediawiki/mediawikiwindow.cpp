@@ -6,20 +6,12 @@
  * Date        : 2011-02-11
  * Description : a tool to export images to WikiMedia web service
  *
- * Copyright (C) 2011      by Alexandre Mendes <alex dot mendes1988 at gmail dot com>
- * Copyright (C) 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2012      by Parthasarathy Gopavarapu <gparthasarathy93 at gmail dot com>
- * Copyright (C) 2012-2016 by Peter Potrowl <peter dot potrowl at gmail dot com>
+ * SPDX-FileCopyrightText: 2011      by Alexandre Mendes <alex dot mendes1988 at gmail dot com>
+ * SPDX-FileCopyrightText: 2011-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2012      by Parthasarathy Gopavarapu <gparthasarathy93 at gmail dot com>
+ * SPDX-FileCopyrightText: 2012-2016 by Peter Potrowl <peter dot potrowl at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -60,6 +52,7 @@
 #include "previewloadthread.h"
 #include "mediawikiwidget.h"
 #include "mediawikitalker.h"
+#include "dfileoperations.h"
 
 using namespace MediaWiki;
 
@@ -235,7 +228,7 @@ bool MediaWikiWindow::prepareImageForUpload(const QString& imgPath)
     else
     {
         // file is copied with its embedded metadata
-        if (!QFile::copy(imgPath, d->tmpPath))
+        if (!DFileOperations::copyFile(imgPath, d->tmpPath))
         {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "File copy error from:" << imgPath << "to" << d->tmpPath;
             return false;

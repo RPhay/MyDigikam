@@ -1,10 +1,10 @@
 #
-# Copyright (c) 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
-# Copyright (c) 2015      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
-# Copyright (c) 2015      by Mohamed_Anwer, <m_dot_anwer at gmx dot com>
+# SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2015      by Veaceslav Munteanu, <veaceslav dot munteanu90 at gmail dot com>
+# SPDX-FileCopyrightText: 2015      by Mohamed_Anwer, <m_dot_anwer at gmx dot com>
 #
-# Redistribution and use is allowed according to the terms of the BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+# SPDX-License-Identifier: BSD-3-Clause
+#
 
 # NOTE: Look rules extension scripts located at core/cmake/rules/
 
@@ -137,7 +137,14 @@ endif()
 # More Optional Dependencies and Rules
 
 find_package(Doxygen)
-find_package(LQR-1)
+
+if(NOT CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
+
+    # Lqr-1 packaging and detection under FreeBSD is problematic since a very long time and break the Gitlab CI
+
+    find_package(LQR-1)
+
+endif()
 
 if(BUILD_WITH_CCACHE)
 

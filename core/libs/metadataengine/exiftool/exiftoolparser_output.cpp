@@ -6,18 +6,9 @@
  * Date        : 2020-11-28
  * Description : ExifTool process stream parser.
  *
- * Copyright (C) 2020-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2020-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -67,8 +58,6 @@ void ExifToolParser::slotCmdCompleted(int cmdId,
 
             if (jsonArray.size() == 0)
             {
-                d->manageEventLoop(cmdAction);
-
                 Q_EMIT signalExifToolDataAvailable();
 
                 return;
@@ -392,17 +381,16 @@ void ExifToolParser::slotCmdCompleted(int cmdId,
         }
     }
 
-    d->manageEventLoop(cmdAction);
-
-    Q_EMIT signalExifToolDataAvailable();
-
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool parsed command for action" << d->actionString(cmdAction);
     qCDebug(DIGIKAM_METAENGINE_LOG) << d->exifToolData.count() << "properties decoded";
+
+    Q_EMIT signalExifToolDataAvailable();
 }
 
 void ExifToolParser::slotErrorOccurred(int cmdId,
                                        int cmdAction,
-                                       QProcess::ProcessError error)
+                                       QProcess::ProcessError error,
+                                       const QString& description)
 {
     if (cmdId != d->cmdRunning)
     {
@@ -412,26 +400,17 @@ void ExifToolParser::slotErrorOccurred(int cmdId,
     qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool process for action" << d->actionString(cmdAction)
                                       << "exited with error:" << error;
 
-    d->manageEventLoop(cmdAction);
+    d->errorString = description;
 
     Q_EMIT signalExifToolDataAvailable();
 }
 
-void ExifToolParser::slotFinished(int cmdId,
-                                  int cmdAction,
-                                  int exitCode,
-                                  QProcess::ExitStatus exitStatus)
+void ExifToolParser::slotFinished(int cmdId)
 {
     if (cmdId != d->cmdRunning)
     {
         return;
     }
-
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool process for action" << d->actionString(cmdAction)
-                                    << "finished with code:" << exitCode
-                                    << "and status" << exitStatus;
-
-    d->manageEventLoop(cmdAction);
 
     Q_EMIT signalExifToolDataAvailable();
 }

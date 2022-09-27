@@ -6,17 +6,9 @@
  * Date        : 2021-03-20
  * Description : a tool to export images to iNaturalist web service
  *
- * Copyright (C) 2021-2022 by Joerg Lohse <joergmlpts at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2022 by Joerg Lohse <joergmlpts at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -32,7 +24,6 @@
 #include <QMessageBox>
 #include <QApplication>
 #include <QProgressDialog>
-#include <QNetworkAccessManager>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
@@ -51,6 +42,7 @@
 #include "digikam_version.h"
 #include "previewloadthread.h"
 #include "inatbrowserdlg.h"
+#include "networkmanager.h"
 
 // OAuth2 library includes
 
@@ -298,12 +290,6 @@ public:
         apiToken        = QString();
     }
 
-    ~Private()
-    {
-        delete netMngr;
-        delete store;
-    }
-
     QWidget*                          parent;
     QNetworkAccessManager*            netMngr;
     QTimer*                           timer;
@@ -343,7 +329,7 @@ INatTalker::INatTalker(QWidget* const parent, const QString& serviceName,
     d->iface           = iface;
     m_authProgressDlg  = nullptr;
 
-    d->netMngr         = new QNetworkAccessManager(this);
+    d->netMngr         = NetworkManager::instance()->getNetworkManager(this);
     d->timer           = new QTimer(this);
 
     connect(d->netMngr, SIGNAL(finished(QNetworkReply*)),
@@ -1882,8 +1868,6 @@ void INatTalker::slotFinished(QNetworkReply* reply)
 
     if (!d->pendingRequests.contains(reply))
     {
-        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Ignoring unexpected NetworkReply.";
-        reply->deleteLater();
         return;
     }
 

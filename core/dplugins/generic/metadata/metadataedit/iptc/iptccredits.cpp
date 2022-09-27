@@ -6,17 +6,9 @@
  * Date        : 2006-10-12
  * Description : IPTC credits settings page.
  *
- * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -40,7 +32,7 @@
 // Local includes
 
 #include "multistringsedit.h"
-#include "limitedtextedit.h"
+#include "dtextedit.h"
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -66,9 +58,9 @@ public:
     QCheckBox*        creditCheck;
     QCheckBox*        sourceCheck;
 
-    LimitedTextEdit*  copyrightEdit;
-    LimitedTextEdit*  creditEdit;
-    LimitedTextEdit*  sourceEdit;
+    DPlainTextEdit*  copyrightEdit;
+    DPlainTextEdit*  creditEdit;
+    DPlainTextEdit*  sourceEdit;
 
     MultiStringsEdit* bylineEdit;
     MultiStringsEdit* bylineTitleEdit;
@@ -84,7 +76,7 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
     // --------------------------------------------------------
 
     d->copyrightCheck = new QCheckBox(i18n("Copyright:"), this);
-    d->copyrightEdit  = new LimitedTextEdit(this);
+    d->copyrightEdit  = new DPlainTextEdit(this);
     d->copyrightEdit->setMaxLength(128);
     d->copyrightEdit->setPlaceholderText(i18n("Set here the copyright notice."));
     d->copyrightEdit->setWhatsThis(i18n("Set here the necessary copyright notice. This field is limited "
@@ -105,7 +97,7 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
     // --------------------------------------------------------
 
     d->creditCheck = new QCheckBox(i18n("Credit:"), this);
-    d->creditEdit  = new LimitedTextEdit(this);
+    d->creditEdit  = new DPlainTextEdit(this);
     d->creditEdit->setMaxLength(32);
     d->creditEdit->setPlaceholderText(i18n("Set here the content provider."));
     d->creditEdit->setWhatsThis(i18n("Set here the content provider. "
@@ -114,7 +106,7 @@ IPTCCredits::IPTCCredits(QWidget* const parent)
     // --------------------------------------------------------
 
     d->sourceCheck = new QCheckBox(i18nc("original owner of content", "Source:"), this);
-    d->sourceEdit  = new LimitedTextEdit(this);
+    d->sourceEdit  = new DPlainTextEdit(this);
     d->sourceEdit->setMaxLength(32);
     d->sourceEdit->setPlaceholderText(i18n("Set here the content owner."));
     d->sourceEdit->setWhatsThis(i18n("Set here the original owner of content. "

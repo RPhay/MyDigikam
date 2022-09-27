@@ -6,18 +6,9 @@
  * Date        : 2009-12-11
  * Description : test cases for the various album models
  *
- * Copyright (C) 2009 by Johannes Wienke <languitar at semipol dot de>
+ * SPDX-FileCopyrightText: 2009 by Johannes Wienke <languitar at semipol dot de>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -104,7 +95,7 @@ void AlbumModelTest::initTestCase()
     AlbumManager::checkDatabaseDirsAfterFirstRun(QDir::temp().absoluteFilePath(
                                                  tempSuffix), QDir::temp().absoluteFilePath(tempSuffix));
     DbEngineParameters params(QLatin1String("QSQLITE"), QDir::temp().absoluteFilePath(tempSuffix + QLatin1String("/digikam4.db")),
-                              QString(), QString(), -1, false, QString(), QString());
+                              QString(), QString(), -1, false, false, QString(), QString());
     bool dbChangeGood = AlbumManager::instance()->setDatabase(params, false,
                         QDir::temp().absoluteFilePath(tempSuffix));
     QVERIFY2(dbChangeGood, "Could not set temp album db");

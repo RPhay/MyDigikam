@@ -6,18 +6,9 @@
  * Date        : 2006-07-04
  * Description : metadata template setup page.
  *
- * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -31,7 +22,6 @@
 #include <QPushButton>
 #include <QApplication>
 #include <QStyle>
-#include <QLineEdit>
 #include <QIcon>
 #include <QMessageBox>
 
@@ -46,6 +36,7 @@
 #include "templatelist.h"
 #include "templatepanel.h"
 #include "altlangstredit.h"
+#include "dtextedit.h"
 
 namespace Digikam
 {
@@ -68,7 +59,7 @@ public:
     QPushButton*   delButton;
     QPushButton*   repButton;
 
-    QLineEdit*     titleEdit;
+    DTextEdit*     titleEdit;
 
     TemplateList*  listView;
 
@@ -92,8 +83,8 @@ SetupTemplate::SetupTemplate(QWidget* const parent)
     // --------------------------------------------------------
 
     QLabel* const label0 = new QLabel(i18n("Template Title:"), panel);
-    d->titleEdit         = new QLineEdit(panel);
-    d->titleEdit->setClearButtonEnabled(true);
+    d->titleEdit         = new DTextEdit(panel);
+    d->titleEdit->setLinesVisible(1);
     d->titleEdit->setPlaceholderText(i18n("Enter the metadata template title here."));
     d->titleEdit->setWhatsThis(i18n("<p>Enter the metadata template title here. This title will be "
                                     "used to identify a template in your collection.</p>"));

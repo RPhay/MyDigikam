@@ -6,18 +6,9 @@
  * Date        : 2020-11-28
  * Description : ExifTool process stream parser - private container.
  *
- * Copyright (C) 2020-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2020-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -29,6 +20,7 @@
 // Qt includes
 
 #include <QDir>
+#include <QThread>
 #include <QLocale>
 #include <QStringList>
 #include <QVariant>
@@ -40,6 +32,7 @@
 #include <QTemporaryFile>
 #include <QDomDocument>
 #include <QDomElement>
+#include <QApplication>
 
 // KDE includes
 
@@ -49,6 +42,7 @@
 
 #include "digikam_config.h"
 #include "digikam_debug.h"
+#include "exiftoolthread.h"
 
 namespace Digikam
 {
@@ -57,13 +51,12 @@ class Q_DECL_HIDDEN ExifToolParser::Private
 {
 public:
 
-    explicit Private();
+    explicit Private(ExifToolParser* const q);
     ~Private();
 
     void       prepareProcess();
     bool       startProcess(const QByteArrayList& cmdArgs, ExifToolProcess::Action cmdAction);
     QByteArray filePathEncoding(const QFileInfo& fi) const;
-    void       manageEventLoop(int cmdAction);
 
     /**
      * Returns a string for an action.
@@ -72,16 +65,15 @@ public:
 
 public:
 
+    ExifToolParser*                pp;
     ExifToolProcess*               proc;            ///< ExifTool process instance.
-    QList<QEventLoop*>             evLoops;         ///< Event loops for the ExifTool process actions.
     QString                        currentPath;     ///< Current file path processed by ExifTool.
+    QString                        errorString;     ///< Current error string from the last started ExifTool process.
     ExifToolData                   exifToolData;    ///< Current ExifTool data (input or output depending of the called method.
     QTemporaryFile                 argsFile;        ///< Temporary file to store Exiftool arg config file.
 
+    bool                           async;
     int                            cmdRunning;
-    int                            asyncLoading;
-
-    QList<QMetaObject::Connection> hdls;            ///< Handles of signals/slots connections used to control streams with ExifTool process.
 };
 
 } // namespace Digikam

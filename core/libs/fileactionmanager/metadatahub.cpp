@@ -6,20 +6,11 @@
  * Date        : 2007-01-05
  * Description : Metadata handling
  *
- * Copyright (C) 2007-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2014-2015 by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
+ * SPDX-FileCopyrightText: 2007-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2007-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2014-2015 by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
  *
- * This program is free software you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -76,34 +67,33 @@ public:
 
 public:
 
-    int                               pickLabel;
-    int                               colorLabel;
-    int                               rating;
-    int                               count;
+    int                            pickLabel;
+    int                            colorLabel;
+    int                            rating;
+    int                            count;
 
-    QDateTime                         dateTime;
-    QSize                             imageSize;
+    QDateTime                      dateTime;
+    QPair<QSize, int>              imageProp;
 
-    CaptionsMap                       titles;
-    CaptionsMap                       comments;
+    CaptionsMap                    titles;
+    CaptionsMap                    comments;
 
-    Template                          metadataTemplate;
+    Template                       metadataTemplate;
 
-    QMap<int, MetadataHub::Status>    tags;
+    QMap<int, MetadataHub::Status> tags;
 
-    QStringList                       tagList;
+    QStringList                    tagList;
 
-    QMultiMap<QString, QVariant>      faceTagsList;
+    QList<FaceTagsIface>           facesList;
+    ItemPosition                   itemPosition;
 
-    ItemPosition                      itemPosition;
-
-    MetadataHub::Status               dateTimeStatus;
-    MetadataHub::Status               titlesStatus;
-    MetadataHub::Status               commentsStatus;
-    MetadataHub::Status               pickLabelStatus;
-    MetadataHub::Status               colorLabelStatus;
-    MetadataHub::Status               ratingStatus;
-    MetadataHub::Status               templateStatus;
+    MetadataHub::Status            dateTimeStatus;
+    MetadataHub::Status            titlesStatus;
+    MetadataHub::Status            commentsStatus;
+    MetadataHub::Status            pickLabelStatus;
+    MetadataHub::Status            colorLabelStatus;
+    MetadataHub::Status            ratingStatus;
+    MetadataHub::Status            templateStatus;
 
 public:
 
@@ -160,9 +150,7 @@ void MetadataHub::load(const ItemInfo& info)
 
     QList<int> tagIds = info.tagIds();
     loadTags(tagIds);
-
-    d->imageSize      = info.dimensions();
-    loadFaceTags(info, d->imageSize);
+    loadFaceTags(info);
 
     d->itemPosition   = info.imagePosition();
 }
@@ -574,7 +562,30 @@ bool MetadataHub::writeTags(const DMetadata& metadata, bool saveTags)
 
 bool MetadataHub::writeFaceTagsMap(const DMetadata& metadata, bool saveFaces)
 {
-    // add person tags to which no region is assigned to Microsoft Photo Region schema
+    QSize size      = d->imageProp.first;
+    int orientation = d->imageProp.second;
+
+    QMultiMap<QString, QVariant> faceTagsMap;
+
+    // Add confirmed face regions from the database.
+
+    Q_FOREACH (const FaceTagsIface& dface, d->facesList)
+    {
+        if (!FaceTags::isSystemPersonTagId(dface.tagId()))
+        {
+            QString faceName = FaceTags::faceNameForTag(dface.tagId());
+
+            // Rotate face region back to the unaligned image.
+
+            QRect  tempRect  = dface.region().toRect();
+            TagRegion::reverseToOrientation(tempRect, orientation, size);
+            QRectF faceRect  = TagRegion::absoluteToRelative(tempRect, size);
+            faceTagsMap.insert(faceName, faceRect);
+        }
+    }
+
+    // Add person tags to which no region is
+    // assigned to Microsoft Photo Region schema.
 
     Q_FOREACH (int tagId, d->tags.keys())
     {
@@ -582,14 +593,14 @@ bool MetadataHub::writeFaceTagsMap(const DMetadata& metadata, bool saveFaces)
         {
             QString faceName = FaceTags::faceNameForTag(tagId);
 
-            if (!faceName.isEmpty() && !d->faceTagsList.contains(faceName))
+            if (!faceName.isEmpty() && !faceTagsMap.contains(faceName))
             {
-                d->faceTagsList.insert(faceName, QRectF());
+                faceTagsMap.insert(faceName, QRectF());
             }
         }
     }
 
-    return metadata.setItemFacesMap(d->faceTagsList, saveFaces, d->imageSize);
+    return metadata.setItemFacesMap(faceTagsMap, saveFaces, size);
 }
 
 QStringList MetadataHub::cleanupTags(const QStringList& toClean)
@@ -714,55 +725,12 @@ void MetadataHub::applyChangeNotifications()
 {
 }
 
-void MetadataHub::loadFaceTags(const ItemInfo& info, const QSize& size)
+void MetadataHub::loadFaceTags(const ItemInfo& info)
 {
     FaceTagsEditor editor;
-/*
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Image Dimensions ----------------" << info.dimensions();
-*/
-    QList<FaceTagsIface> facesList = editor.confirmedFaceTagsIfaces(info.id());
-
-    // ignored faces metadata needs to be written to Images.
-
-    facesList.append(editor.ignoredFaceTagsIfaces(info.id()));
-
-    d->faceTagsList.clear();
-
-    if (!facesList.isEmpty())
-    {
-        Q_FOREACH (const FaceTagsIface& dface, facesList)
-        {
-            QString faceName = FaceTags::faceNameForTag(dface.tagId());
-
-            if (faceName.isEmpty())
-            {
-                continue;
-            }
-
-            QRect  tempRect = dface.region().toRect();
-            TagRegion::reverseToOrientation(tempRect, info.orientation(), size);
-            QRectF faceRect = TagRegion::absoluteToRelative(tempRect, size);
-            d->faceTagsList.insert(faceName, faceRect);
-        }
-    }
-}
-
-QMultiMap<QString, QVariant> MetadataHub::getFaceTags()
-{
-    return d->faceTagsList;
-}
-
-void MetadataHub::setFaceTags(QMultiMap<QString, QVariant> newFaceTags, QSize size)
-{
-    d->faceTagsList.clear();
-    QMultiMap<QString, QVariant>::iterator it;
-
-    for (it = newFaceTags.begin() ; it != newFaceTags.end() ; ++it)
-    {
-        QRect  tempRect = it.value().toRect();
-        QRectF faceRect = TagRegion::absoluteToRelative(tempRect, size);
-        d->faceTagsList.insert(it.key(), faceRect);
-    }
+    d->facesList = editor.databaseFaces(info.id());
+    d->imageProp = qMakePair(info.dimensions(),
+                             info.orientation());
 }
 
 // NOTE: Unused code

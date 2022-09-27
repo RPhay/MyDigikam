@@ -6,17 +6,9 @@
  * Date        : 2006-04-04
  * Description : a tool to generate HTML image galleries
  *
- * Copyright (C) 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -80,6 +72,7 @@ HTMLOutputPage::HTMLOutputPage(QWizard* const dialog, const QString& title)
     d->titleLabel->setText(i18nc("@label", "Gallery Title:"));
 
     d->imageSelectionTitle   = new DTextEdit(main);
+    d->imageSelectionTitle->setLinesVisible(1);
     d->titleLabel->setBuddy(d->imageSelectionTitle);
 
     // --------------------
@@ -130,7 +123,7 @@ HTMLOutputPage::HTMLOutputPage(QWizard* const dialog, const QString& title)
     connect(d->destUrl, SIGNAL(signalUrlSelected(QUrl)),
             this, SIGNAL(completeChanged()));
 
-    connect(d->imageSelectionTitle, SIGNAL(textChanged()),
+    connect(d->imageSelectionTitle, SIGNAL(textEdited(QString)),
             this, SIGNAL(completeChanged()));
 }
 

@@ -6,19 +6,11 @@
  * Date        : 2004-05-16
  * Description : time adjust thread.
  *
- * Copyright (C) 2012      by Smit Mehta <smit dot meh at gmail dot com>
- * Copyright (C) 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (c) 2018-2021 by Maik Qualmann <metzpinguin at gmail dot com>
+ * SPDX-FileCopyrightText: 2012      by Smit Mehta <smit dot meh at gmail dot com>
+ * SPDX-FileCopyrightText: 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2018-2021 by Maik Qualmann <metzpinguin at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -184,7 +176,7 @@ QDateTime TimeAdjustThread::readApplicationTimestamp(const QUrl& url) const
 
 QDateTime TimeAdjustThread::readFileNameTimestamp(const QUrl& url) const
 {
-    return d->settings.getDateTimeFromUrl(url);
+    return d->settings.getDateTimeFromString(url.fileName());
 }
 
 QDateTime TimeAdjustThread::readFileTimestamp(const QUrl& url) const
@@ -251,6 +243,24 @@ QDateTime TimeAdjustThread::readMetadataTimestamp(const QUrl& url) const
         {
             dateTime = QDateTime::fromString(meta->getXmpTagString("Xmp.xmp.CreateDate"),
                                              xmpDateTimeFormat);
+            break;
+        }
+
+        case TimeAdjustContainer::FUZZYCREATED:
+        {
+            dateTime = d->settings.getDateTimeFromString(meta->getExifTagString("Exif.Image.DateTime"));
+            break;
+        }
+
+        case TimeAdjustContainer::FUZZYORIGINAL:
+        {
+            dateTime = d->settings.getDateTimeFromString(meta->getExifTagString("Exif.Photo.DateTimeOriginal"));
+            break;
+        }
+
+        case TimeAdjustContainer::FUZZYDIGITIZED:
+        {
+            dateTime = d->settings.getDateTimeFromString(meta->getExifTagString("Exif.Photo.DateTimeDigitized"));
             break;
         }
 

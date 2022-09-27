@@ -6,18 +6,10 @@
  * Date        : 2016-05-27
  * Description : Implementation of v3 of the Imgur API
  *
- * Copyright (C) 2016      by Fabian Vogt <fabian at ritter dash vogt dot de>
- * Copyright (C) 2016-2020 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2016      by Fabian Vogt <fabian at ritter dash vogt dot de>
+ * SPDX-FileCopyrightText: 2016-2020 by Caulier Gilles <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -25,13 +17,12 @@
 
 // Qt includes
 
-#include <QFileInfo>
 #include <QHttpMultiPart>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QTimerEvent>
 #include <QUrlQuery>
-#include <QNetworkAccessManager>
+#include <QFileInfo>
 #include <QQueue>
 
 // KDE includes
@@ -43,8 +34,10 @@
 #include "dinfointerface.h"
 #include "digikam_debug.h"
 #include "wstoolutils.h"
+#include "networkmanager.h"
 #include "o0settingsstore.h"
 #include "o0globals.h"
+
 
 using namespace Digikam;
 
@@ -64,7 +57,8 @@ public:
         client_secret   (QLatin1String("300988683e99cb7b203a5889cf71de9ac891c1c1")),
         workTimer       (0),
         reply           (nullptr),
-        image           (nullptr)
+        image           (nullptr),
+        netMngr         (nullptr)
     {
     }
 
@@ -88,13 +82,15 @@ public:
     QFile*                    image;
 
     /// The QNetworkAccessManager instance used for connections.
-    QNetworkAccessManager     net;
+    QNetworkAccessManager*    netMngr;
 };
 
 ImgurTalker::ImgurTalker(QObject* const parent)
     : QObject(parent),
       d      (new Private)
 {
+    d->netMngr = NetworkManager::instance()->getNetworkManager(this);
+
     d->auth.setClientId(d->client_id);
     d->auth.setClientSecret(d->client_secret);
     d->auth.setRequestUrl(imgur_auth_url);
@@ -375,7 +371,7 @@ void ImgurTalker::doWork()
                                         .arg(QLatin1String(work.account.username.toUtf8().toPercentEncoding()))));
             addAuthToken(&request);
 
-            d->reply = d->net.get(request);
+            d->reply = d->netMngr->get(request);
             break;
         }
 
@@ -431,7 +427,7 @@ void ImgurTalker::doWork()
                 addAnonToken(&request);
             }
 
-            d->reply = d->net.post(request, multiPart);
+            d->reply = d->netMngr->post(request, multiPart);
 
             // delete the multiPart with the reply
 

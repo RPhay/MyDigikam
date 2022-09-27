@@ -6,21 +6,12 @@
  * Date        : 2003-08-03
  * Description : setup Metadata tab.
  *
- * Copyright (C) 2003-2004 by Ralf Holzer <ralf at well dot com>
- * Copyright (C) 2003-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2009-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2017      by Simon Frei <freisim93 at gmail dot com>
+ * SPDX-FileCopyrightText: 2003-2004 by Ralf Holzer <ralf at well dot com>
+ * SPDX-FileCopyrightText: 2003-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2017      by Simon Frei <freisim93 at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -32,7 +23,6 @@ namespace Digikam
 SetupMetadata::Private::Private()
   : exifAutoRotateOriginal   (false),
     exifAutoRotateShowedInfo (false),
-    clearMetadataShowedInfo  (false),
     sidecarFileNameShowedInfo(false),
     fieldsGroup              (nullptr),
     readWriteGroup           (nullptr),
@@ -57,7 +47,6 @@ SetupMetadata::Private::Private()
     sidecarFileNameBox       (nullptr),
     updateFileTimeStampBox   (nullptr),
     rescanImageIfModifiedBox (nullptr),
-    clearMetadataIfRescanBox (nullptr),
     writingModeCombo         (nullptr),
     rotateByFlag             (nullptr),
     rotateByContents         (nullptr),
@@ -122,7 +111,6 @@ void SetupMetadata::Private::readSettings()
     sidecarFileNameBox->setChecked(set.useCompatibleFileName);
     updateFileTimeStampBox->setChecked(set.updateFileTimeStamp);
     rescanImageIfModifiedBox->setChecked(set.rescanImageIfModified);
-    clearMetadataIfRescanBox->setChecked(set.clearMetadataIfRescan);
 
     if (set.metadataWritingMode == MetaEngine::WRITE_TO_FILE_ONLY)
     {

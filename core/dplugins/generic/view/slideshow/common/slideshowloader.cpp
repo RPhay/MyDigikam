@@ -6,20 +6,11 @@
  * Date        : 2005-04-21
  * Description : slide show tool using preview of pictures.
  *
- * Copyright (C) 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C)      2004 by Enrico Ros <eros dot kde at email dot it>
- * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
+ * SPDX-FileCopyrightText: 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText:      2004 by Enrico Ros <eros dot kde at email dot it>
+ * SPDX-FileCopyrightText: 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -354,7 +345,8 @@ void SlideShowLoader::slotLoadNextItem()
 
         QMimeDatabase mimeDB;
 
-        if (mimeDB.mimeTypeForFile(currentItem().toLocalFile()).name().startsWith(QLatin1String("video/")))
+        if (mimeDB.mimeTypeForFile(currentItem().toLocalFile())
+                                   .name().startsWith(QLatin1String("video/")))
         {
             d->videoView->setCurrentUrl(currentItem());
             return;
@@ -704,30 +696,27 @@ void SlideShowLoader::allowScreenSaver()
 
 void SlideShowLoader::slotAssignRating(int rating)
 {
-    DInfoInterface::DInfoMap info;
-    info.insert(QLatin1String("rating"), rating);
-
-    d->settings->iface->setItemInfo(currentItem(), info);
+    DItemInfo item;
+    item.setRating(rating);
+    d->settings->iface->setItemInfo(currentItem(), item.infoMap());
 
     dispatchCurrentInfoChange(currentItem());
 }
 
 void SlideShowLoader::slotAssignColorLabel(int color)
 {
-    DInfoInterface::DInfoMap info;
-    info.insert(QLatin1String("colorlabel"), color);
-
-    d->settings->iface->setItemInfo(currentItem(), info);
+    DItemInfo item;
+    item.setColorLabel(color);
+    d->settings->iface->setItemInfo(currentItem(), item.infoMap());
 
     dispatchCurrentInfoChange(currentItem());
 }
 
 void SlideShowLoader::slotAssignPickLabel(int pick)
 {
-    DInfoInterface::DInfoMap info;
-    info.insert(QLatin1String("picklabel"), pick);
-
-    d->settings->iface->setItemInfo(currentItem(), info);
+    DItemInfo item;
+    item.setPickLabel(pick);
+    d->settings->iface->setItemInfo(currentItem(), item.infoMap());
 
     dispatchCurrentInfoChange(currentItem());
 }
@@ -744,8 +733,9 @@ void SlideShowLoader::slotToggleTag(int tag)
 
 void SlideShowLoader::slotHandleShortcut(const QString& shortcut, int val)
 {
-    //qCDebug(DIGIKAM_GENERAL_LOG) << "SlideShowLoader::slotHandleShortcut";
-
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "SlideShowLoader::slotHandleShortcut";
+*/
     if (d->shortcutPrefixes.contains(QLatin1String("rating")) &&
         shortcut.startsWith(d->shortcutPrefixes[QLatin1String("rating")]))
     {

@@ -6,25 +6,16 @@
  * Date        : 2004-09-29
  * Description : helper methods for JPEG image format.
  *
- * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
  * Parts of the loading code is taken from qjpeghandler.cpp
- * Copyright (C) 2011 Nokia Corporation and/or its subsidiary(-ies).
+ * SPDX-FileCopyrightText: 2011 Nokia Corporation and/or its subsidiary(-ies).
  * All rights reserved.
  * Contact: Nokia Corporation (qt-info@nokia.com)
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -425,7 +416,7 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
     {
         if (m_file != m_destFile)
         {
-            return QFile::copy(m_file, m_destFile);
+            return DFileOperations::copyFile(m_file, m_destFile);
         }
 
         return true;

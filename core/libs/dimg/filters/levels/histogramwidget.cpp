@@ -6,18 +6,9 @@
  * Date        : 2004-07-21
  * Description : a widget to display an image histogram.
  *
- * Copyright (C) 2004-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2004-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -64,11 +55,11 @@ public:
 
     enum HistogramState
     {
-        HistogramNone = 0,        // No current histogram values calculation.
-        HistogramDataLoading,     // The image is being loaded
-        HistogramStarted,         // Histogram values calculation started.
-        HistogramCompleted,       // Histogram values calculation completed.
-        HistogramFailed           // Histogram values calculation failed.
+        HistogramNone = 0,        ///< No current histogram values calculation.
+        HistogramDataLoading,     ///< The image is being loaded
+        HistogramStarted,         ///< Histogram values calculation started.
+        HistogramCompleted,       ///< Histogram values calculation completed.
+        HistogramFailed           ///< Histogram values calculation failed.
     };
 
 public:
@@ -583,7 +574,8 @@ void HistogramWidget::paintEvent(QPaintEvent*)
     if (d->statisticsVisible)
     {
         DToolTipStyleSheet cnt;
-        QString            tipText, value;
+        QString            tipText;
+        QString            value;
         tipText = QLatin1String("<qt><table cellspacing=0 cellpadding=0>");
 
         tipText += cnt.cellBeg + i18nc("@info: histogram properties", "Mean:") + cnt.cellMid;

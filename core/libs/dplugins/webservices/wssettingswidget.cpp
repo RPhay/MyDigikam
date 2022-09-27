@@ -6,19 +6,11 @@
  * Date        : 2015-07-28
  * Description : Common widgets shared by Web Service tools
  *
- * Copyright (C) 2013      by Pankaj Kumar <me at panks dot me>
- * Copyright (C) 2015      by Shourya Singh Gupta <shouryasgupta at gmail dot com>
- * Copyright (C) 2016-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2013      by Pankaj Kumar <me at panks dot me>
+ * SPDX-FileCopyrightText: 2015      by Shourya Singh Gupta <shouryasgupta at gmail dot com>
+ * SPDX-FileCopyrightText: 2016-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -166,7 +158,7 @@ WSSettingsWidget::WSSettingsWidget(QWidget* const parent,
     d->photoIdChB         = new QCheckBox(d->optionsBox);
     d->dimensionSpB       = new QSpinBox(d->optionsBox);
     d->imageQualitySpB    = new QSpinBox(d->optionsBox);
-    d->progressBar        = new DProgressWdg(d->settingsBox);
+    d->progressBar        = new DProgressWdg(this);
 
     //----------------------------------------------------------
 
@@ -174,7 +166,11 @@ WSSettingsWidget::WSSettingsWidget(QWidget* const parent,
                              QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     d->imgList->setObjectName(QLatin1String("WebService ImagesList"));
-    d->imgList->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
+
+    d->imgList->appendControlButtonsWidget(d->progressBar);
+    QBoxLayout* const blay = d->imgList->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
+    blay->setStretchFactor(d->progressBar, 20);
+
     d->imgList->setAllowRAW(true);
     d->imgList->listView()->setWhatsThis(i18n("This is the list of images "
                                               "to upload to your %1 account.", d->toolName));
@@ -200,7 +196,7 @@ WSSettingsWidget::WSSettingsWidget(QWidget* const parent,
     d->changeUserBtn->setIcon(QIcon::fromTheme(QLatin1String("system-switch-user")).pixmap(16));
     d->changeUserBtn->setToolTip(i18n("Change %1 account for transfer", d->toolName));
 
-    d->accountBoxLayout->addWidget(userNameLbl,             0, 0, 1, 2);
+    d->accountBoxLayout->addWidget(userNameLbl,           0, 0, 1, 2);
     d->accountBoxLayout->addWidget(d->userNameDisplayLbl, 0, 2, 1, 2);
     d->accountBoxLayout->addWidget(d->changeUserBtn,      1, 0, 1, 4);
     d->accountBoxLayout->setContentsMargins(spacing, spacing, spacing, spacing);
@@ -304,7 +300,6 @@ WSSettingsWidget::WSSettingsWidget(QWidget* const parent,
     d->settingsBoxLayout->addWidget(d->sizeBox);
     d->settingsBoxLayout->addWidget(d->uploadBox);
     d->settingsBoxLayout->addWidget(d->optionsBox);
-    d->settingsBoxLayout->addWidget(d->progressBar);
     d->settingsBoxLayout->setSpacing(spacing);
     d->settingsBoxLayout->setContentsMargins(spacing, spacing, spacing, spacing);
 

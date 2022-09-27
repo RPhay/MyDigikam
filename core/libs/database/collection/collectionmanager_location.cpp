@@ -6,18 +6,9 @@
  * Date        : 2007-04-09
  * Description : Collection location management - location helpers.
  *
- * Copyright (C) 2007-2009 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2007-2009 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -837,7 +828,6 @@ void CollectionManager::updateLocations()
 
             if (!info.isNull())
             {
-                available          = info.isMounted;
                 QString volumePath = info.path;
 
                 // volume.path has a trailing slash (and this is good)
@@ -849,6 +839,7 @@ void CollectionManager::updateLocations()
                 // specific path is the path on the file system of the volume.
 
                 absolutePath = volumePath + location->specificPath;
+                available    = (info.isMounted && QFileInfo::exists(absolutePath));
             }
             else
             {

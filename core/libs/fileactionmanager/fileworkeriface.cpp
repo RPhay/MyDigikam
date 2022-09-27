@@ -6,18 +6,9 @@
  * Date        : 2012-01-18
  * Description : database worker interface
  *
- * Copyright (C) 2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -60,8 +51,8 @@ void FileActionMngrFileWorker::writeOrientationToFiles(const FileActionItemInfoL
             break;
         }
 
-        QString path                  = info.filePath();
-        QScopedPointer<DMetadata> metadata(new DMetadata(path));
+        QString filePath              = info.filePath();
+        QScopedPointer<DMetadata> metadata(new DMetadata(filePath));
         DMetadata::ImageOrientation o = (DMetadata::ImageOrientation)orientation;
         metadata->setItemOrientation(o);
 
@@ -71,8 +62,8 @@ void FileActionMngrFileWorker::writeOrientationToFiles(const FileActionItemInfoL
         }
         else
         {
-            Q_EMIT imageDataChanged(path, true, true);
-            QUrl url = QUrl::fromLocalFile(path);
+            Q_EMIT imageDataChanged(filePath, true, true);
+            QUrl url = QUrl::fromLocalFile(filePath);
             ItemAttributesWatch::instance()->fileMetadataChanged(url);
         }
 
@@ -103,16 +94,16 @@ void FileActionMngrFileWorker::writeMetadataToFiles(const FileActionItemInfoList
         }
 
         hub.load(info);
-        QString path = info.filePath();
+        QString filePath = info.filePath();
 
         if (MetaEngineSettings::instance()->settings().useLazySync)
         {
-            hub.write(path, MetadataHub::WRITE_ALL);
+            hub.write(filePath, MetadataHub::WRITE_ALL);
         }
         else
         {
             ScanController::FileMetadataWrite writeScope(info);
-            writeScope.changed(hub.write(path, MetadataHub::WRITE_ALL));
+            writeScope.changed(hub.write(filePath, MetadataHub::WRITE_ALL));
         }
 
         // hub emits fileMetadataChanged
@@ -180,8 +171,9 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
 
         FileWriteLocker lock(info.filePath());
 
-        QString path                                    = info.filePath();
         QString format                                  = info.format();
+        QString filePath                                = info.filePath();
+        QSize originalSize                              = info.dimensions();
         MetaEngine::ImageOrientation currentOrientation = (MetaEngine::ImageOrientation)info.orientation();
         bool isRaw                                      = info.format().startsWith(QLatin1String("RAW"));
         bool isDng                                      = (info.format() == QLatin1String("RAW-DNG"));
@@ -197,14 +189,14 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
 
         if (behavior & MetaEngineSettingsContainer::RotatingPixels)
         {
-            if (format == QLatin1String("JPG") && JPEGUtils::isJpegImage(path))
+            if (format == QLatin1String("JPG") && JPEGUtils::isJpegImage(filePath))
             {
                 rotateAsJpeg = true;
             }
 
             if (behavior & MetaEngineSettingsContainer::RotateByLossyRotation)
             {
-                DImg::FORMAT frmt = DImg::fileFormat(path);
+                DImg::FORMAT frmt = DImg::fileFormat(filePath);
 
                 switch (frmt)
                 {
@@ -250,7 +242,7 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
 
         if      (rotateAsJpeg)
         {
-            JPEGUtils::JpegRotator rotator(path);
+            JPEGUtils::JpegRotator rotator(filePath);
             rotator.setCurrentOrientation(currentOrientation);
 
             if (action == MetaEngineRotation::NoTransformation)
@@ -273,7 +265,7 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
 
             DImg image;
 
-            if (!image.load(path))
+            if (!image.load(filePath))
             {
                 failedItems.append(info.name());
             }
@@ -291,9 +283,9 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
                 // TODO: Atomic operation!!
                 // prepare metadata, including to reset Exif tag
 
-                image.prepareMetadataToSave(path, image.format(), true);
+                image.prepareMetadataToSave(filePath, image.format(), true);
 
-                if (image.save(path, image.detectedFormat()))
+                if (image.save(filePath, image.detectedFormat()))
                 {
                     rotatedPixels = true;
                 }
@@ -304,32 +296,17 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
             }
         }
 
-        int newOrientation = finalOrientation;
+        // Adjust Faces in the DB and Metadata.
+
+        FaceUtils().rotateFaces(info.id(), originalSize,
+                                finalOrientation, currentOrientation);
+
+        CollectionScanner scanner;
+        scanner.scanFile(info, CollectionScanner::NormalScan);
 
         if (rotatedPixels)
         {
             finalOrientation = MetaEngine::ORIENTATION_NORMAL;
-        }
-
-        // DB rotation
-
-        ItemInfo(info).setOrientation(finalOrientation);
-
-        // Adjust Faces
-
-        QSize newSize = FaceUtils().rotateFaces(info, newOrientation,
-                                                      currentOrientation);
-        if (newSize.isValid())
-        {
-            MetadataHub hub;
-            hub.load(info);
-
-            // Adjusted newSize
-
-            newSize = rotatedPixels ? newSize : info.dimensions();
-
-            hub.loadFaceTags(info, newSize);
-            hub.write(info.filePath(), MetadataHub::WRITE_TAGS, true);
         }
 
         if (rotateByMetadata || isDng)
@@ -339,18 +316,15 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
 
             if (!isRaw || isDng)
             {
-                QScopedPointer<DMetadata> metadata(new DMetadata(path));
+                QScopedPointer<DMetadata> metadata(new DMetadata(filePath));
                 metadata->setItemOrientation(finalOrientation);
                 metadata->applyChanges();
             }
         }
 
-        CollectionScanner scanner;
-        scanner.scanFile(info, CollectionScanner::NormalScan);
-
         if (!failedItems.contains(info.name()))
         {
-            Q_EMIT imageDataChanged(path, true, true);
+            Q_EMIT imageDataChanged(filePath, true, true);
             ItemAttributesWatch::instance()->fileMetadataChanged(info.fileUrl());
         }
 

@@ -6,18 +6,9 @@
  * Date        : 2020-11-28
  * Description : ExifTool process stream parser.
  *
- * Copyright (C) 2020-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2020-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -26,65 +17,47 @@
 namespace Digikam
 {
 
-ExifToolParser::ExifToolParser(QObject* const parent)
+ExifToolParser::ExifToolParser(QObject* const parent, bool async)
     : QObject(parent),
-      d      (new Private())
+      d      (new Private(this))
 {
-    // Get or create ExifTool process instance.
-
-    d->proc = ExifToolProcess::instance();
-
     // For handling the unit-test tools.
 
-    if (d->proc->thread() == thread())
+    if (!ExifToolProcess::isCreated())
     {
-        d->proc->initExifTool();
+        QEventLoop loop;
+        ExifToolThread* const exifToolThread = new ExifToolThread(qApp);
+
+        connect(exifToolThread, &ExifToolThread::exifToolProcessStarted,
+                &loop, &QEventLoop::quit);
+
+        exifToolThread->start();
+        loop.exec();
     }
 
-    for (int i = ExifToolProcess::LOAD_METADATA ; i < ExifToolProcess::NO_ACTION ; ++i)
+    // Get ExifTool process instance.
+
+    d->proc  = ExifToolProcess::instance();
+    d->async = async;
+
+    if (d->async)
     {
-        d->evLoops << new QEventLoop(this);
+        connect(d->proc, &ExifToolProcess::signalCmdCompleted,
+                this, &ExifToolParser::slotCmdCompleted,
+                Qt::QueuedConnection);
+
+        connect(d->proc, &ExifToolProcess::signalErrorOccurred,
+                this, &ExifToolParser::slotErrorOccurred,
+                Qt::QueuedConnection);
+
+        connect(d->proc, &ExifToolProcess::signalFinished,
+                this, &ExifToolParser::slotFinished,
+                Qt::QueuedConnection);
     }
-
-    d->hdls << connect(d->proc, &ExifToolProcess::signalCmdCompleted,
-                       this, &ExifToolParser::slotCmdCompleted,
-                       Qt::QueuedConnection);
-
-    d->hdls << connect(d->proc, &ExifToolProcess::signalErrorOccurred,
-                       this, &ExifToolParser::slotErrorOccurred,
-                       Qt::QueuedConnection);
-
-    d->hdls << connect(d->proc, &ExifToolProcess::signalFinished,
-                       this, &ExifToolParser::slotFinished,
-                       Qt::QueuedConnection);
 }
 
 ExifToolParser::~ExifToolParser()
 {
-    for (int i = ExifToolProcess::LOAD_METADATA ; i < ExifToolProcess::NO_ACTION ; ++i)
-    {
-        if (d->evLoops[i])
-        {
-            d->evLoops[i]->exit();
-            delete d->evLoops[i];
-        }
-    }
-
-    Q_FOREACH (QMetaObject::Connection hdl, d->hdls)
-    {
-        disconnect(hdl);
-    }
-
-    // For handling the unit-test tools.
-
-    if (ExifToolProcess::isCreated())
-    {
-        if (d->proc->thread() == thread())
-        {
-            delete ExifToolProcess::internalPtr;
-        }
-    }
-
     delete d;
 }
 
@@ -105,6 +78,11 @@ ExifToolParser::ExifToolData ExifToolParser::currentData() const
 
 QString ExifToolParser::currentErrorString() const
 {
+    if (!d->errorString.isEmpty())
+    {
+        return d->errorString;
+    }
+
     return d->proc->exifToolErrorString();
 }
 

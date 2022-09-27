@@ -1,25 +1,17 @@
 /* ============================================================
  *
- * This file is a part of kipi-plugins project
+ * This file is a part of digiKam project
  * https://www.digikam.org
  *
  * Date        : 2008-09-24
  * Description : DNG converter batch dialog
  *
- * Copyright (C) 2012      by Smit Mehta <smit dot meh at gmail dot com>
- * Copyright (C) 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2010-2011 by Jens Mueller <tschenser at gmx dot de>
- * Copyright (C) 2011      by Veaceslav Munteanu <slavuttici at gmail dot com>
+ * SPDX-FileCopyrightText: 2012      by Smit Mehta <smit dot meh at gmail dot com>
+ * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2010-2011 by Jens Mueller <tschenser at gmx dot de>
+ * SPDX-FileCopyrightText: 2011      by Veaceslav Munteanu <slavuttici at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -39,6 +31,7 @@
 #include <QMenu>
 #include <QPushButton>
 #include <QCursor>
+#include <QBoxLayout>
 
 // KDE includes
 
@@ -122,20 +115,24 @@ DNGConverterDialog::DNGConverterDialog(QWidget* const parent, DInfoInterface* co
 
     QGridLayout* const mainLayout = new QGridLayout(mainWidget);
     d->listView                   = new DNGConverterList(mainWidget);
-    d->dngSettings                = new DNGSettings(this);
-    DLineWidget* const line       = new DLineWidget(Qt::Horizontal, this);
-    d->conflictSettings           = new FileSaveConflictBox(this);
     d->progressBar                = new DProgressWdg(mainWidget);
     d->progressBar->reset();
     d->progressBar->hide();
+
+    d->listView->appendControlButtonsWidget(d->progressBar);
+    QBoxLayout* const blay        = d->listView->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
+    blay->setStretchFactor(d->progressBar, 20);
+
+    d->dngSettings                = new DNGSettings(this);
+    DLineWidget* const line       = new DLineWidget(Qt::Horizontal, this);
+    d->conflictSettings           = new FileSaveConflictBox(this);
 
     mainLayout->addWidget(d->listView,         0, 0, 5, 1);
     mainLayout->addWidget(d->dngSettings,      0, 1, 1, 1);
     mainLayout->addWidget(line,                1, 1, 1, 1);
     mainLayout->addWidget(d->conflictSettings, 2, 1, 1, 1);
-    mainLayout->addWidget(d->progressBar,      3, 1, 1, 1);
     mainLayout->setColumnStretch(0, 10);
-    mainLayout->setRowStretch(4, 10);
+    mainLayout->setRowStretch(3, 10);
     mainLayout->setContentsMargins(QMargins());
 
     // ---------------------------------------------------------------
@@ -540,12 +537,12 @@ void DNGConverterDialog::slotDNGConverterAction(const DigikamGenericDNGConverter
     {
         switch (ad.action)
         {
-            case(IDENTIFY):
+            case IDENTIFY:
             {
                 break;
             }
 
-            case(PROCESS):
+            case PROCESS:
             {
                 busy(true);
                 d->listView->processing(ad.fileUrl);
@@ -566,12 +563,12 @@ void DNGConverterDialog::slotDNGConverterAction(const DigikamGenericDNGConverter
         {
             switch (ad.action)
             {
-                case(IDENTIFY):
+                case IDENTIFY:
                 {
                     break;
                 }
 
-                case(PROCESS):
+                case PROCESS:
                 {
                     processingFailed(ad.fileUrl, ad.result);
                     break;
@@ -588,7 +585,7 @@ void DNGConverterDialog::slotDNGConverterAction(const DigikamGenericDNGConverter
         {
             switch (ad.action)
             {
-                case(IDENTIFY):
+                case IDENTIFY:
                 {
                     DNGConverterListViewItem* const item = dynamic_cast<DNGConverterListViewItem*>(d->listView->listView()->findItem(ad.fileUrl));
 
@@ -600,7 +597,7 @@ void DNGConverterDialog::slotDNGConverterAction(const DigikamGenericDNGConverter
                     break;
                 }
 
-                case(PROCESS):
+                case PROCESS:
                 {
                     processed(ad.fileUrl, ad.destPath);
                     break;

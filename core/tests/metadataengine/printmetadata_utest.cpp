@@ -6,18 +6,9 @@
  * Date        : 2009-06-11
  * Description : An unit-test to print metadata tags from file using DMetadata.
  *
- * Copyright (C) 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -80,16 +71,15 @@ void PrintMetadataTest::printMetadataMap(const DMetadata::MetaDataMap& map)
 
 void PrintMetadataTest::testPrintMetadata()
 {
-    //                                                   Expected tags to found in Exif,  Iptc,  Xmp,   expectedRead
-    printMetadata(m_originalImageFolder + QLatin1String("nikon-e2100.jpg"),        true,  true,  true,  true);
-    printMetadata(m_originalImageFolder + QLatin1String("_27A1417.CR2"),           true,  false, true,  true);
-    printMetadata(m_originalImageFolder + QLatin1String("2008-05_DSC_0294.JPG"),   true,  true,  true,  true);
+    //                                                    Expected tags to found in Exif,  Iptc,  Xmp,   expectedRead
+    printMetadata(m_originalImageFolder + QLatin1String("nikon-e2100.jpg"),         true,  true,  true,  true);
+    printMetadata(m_originalImageFolder + QLatin1String("_27A1417.CR2"),            true,  false, true,  true);
+    printMetadata(m_originalImageFolder + QLatin1String("2008-05_DSC_0294.JPG"),    true,  true,  true,  true);
 
-#ifdef HAVE_IMAGE_MAGICK
-
-    printMetadata(m_originalImageFolder + QLatin1String("kepler_xray_he.fits"),    false, false, true,  true);
-
-#endif
+    if (m_hasExifTool)
+    {
+        printMetadata(m_originalImageFolder + QLatin1String("kepler_xray_he.fits"), false, false, false, true);
+    }
 
     // The file cannot be loaded with Exiv2-0.26, only test the newer versions
 

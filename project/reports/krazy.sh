@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright (c) 2013-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Run Krazy static analyzer on whole digiKam source code.
 # https://github.com/Krazy-collection/krazy
@@ -16,8 +16,7 @@
 #
 # If '--nowebupdate' is passed as argument, static analyzer results are just created locally.
 #
-# Redistribution and use is allowed according to the terms of the BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+# SPDX-License-Identifier: BSD-3-Clause
 #
 
 # Halt and catch errors
@@ -81,7 +80,7 @@ krazy2all --export xml \
           --strict all \
           --priority all \
           --verbose \
-          --exclude qclasses \
+          --exclude qclasses,license \
           --exclude-types qml,python,qdoc,perl \
           --topdir ../../ \
           --config ../../.krazy \

@@ -6,18 +6,9 @@
  * Date        : 2008-07-11
  * Description : shared libraries list dialog common to digiKam and Showfoto
  *
- * Copyright (C) 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -65,13 +56,6 @@
 
 #ifdef HAVE_MARBLE
 #   include "mapwidget.h"
-#endif
-
-#ifdef HAVE_SONNET
-
-#   include <sonnet/speller.h>
-using namespace Sonnet;
-
 #endif
 
 #ifdef HAVE_IMAGE_MAGICK
@@ -339,20 +323,8 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
 
 #ifdef HAVE_SONNET
 
-    QTreeWidgetItem* const spellEntry = new QTreeWidgetItem(listView(), QStringList() << i18nc("@item: component info", "Spell-Checking Configuration"));
-    listView()->addTopLevelItem(spellEntry);
-    Speller dict;
-
-    QTreeWidgetItem* const spell = new QTreeWidgetItem(spellEntry, QStringList() << i18nc("@item: component info", "Dictionaries"));
-    QMap<QString, QString> map   = dict.availableDictionaries();
-
-    for (QMap<QString, QString>::const_iterator it = map.constBegin() ; it != map.constEnd() ; ++it)
-    {
-        new QTreeWidgetItem(spell, QStringList() << it.value() << it.key());
-    }
-
-    new QTreeWidgetItem(spellEntry, QStringList() <<
-                        i18nc(CONTEXT, "Backends") <<                       dict.availableBackends().join(QLatin1String(";")));
+    new QTreeWidgetItem(m_features, QStringList() <<
+                        i18nc(CONTEXT, "Spell-Checking support") <<         SUPPORTED_YES);
 
 #else
 

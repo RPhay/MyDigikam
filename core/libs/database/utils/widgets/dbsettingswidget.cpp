@@ -6,19 +6,10 @@
  * Date        : 2009-11-14
  * Description : database settings widget
  *
- * Copyright (C) 2009-2010 by Holger Foerster <Hamsi2k at freenet dot de>
- * Copyright (C) 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2009-2010 by Holger Foerster <Hamsi2k at freenet dot de>
+ * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -117,8 +108,22 @@ void DatabaseSettingsWidget::setupMainArea()
 
     // --------------------------------------------------------
 
+    d->walModeCheck = new QCheckBox(i18n("Enable WAL mode for the databases"), dbConfigBox);
+    d->walModeCheck->setToolTip(i18n("The WAL (Write-Ahead Log) mode is significantly "
+                                     "faster in most scenarios on supported systems."));
+
+    d->walLabel     = new QLabel(i18n("Write-Ahead Log is a mode to use a roll-forward journal that records transactions "
+                                      "that have been committed but not yet applied to the databases. It uses an auxiliary "
+                                      "journalized file to host structures for recovery transactions during a crash. The changes "
+                                      "are first recorded in the log, before the changes are written to the database. This made "
+                                      "database requests atomic and robust in extensive and critical use cases."),
+                                 dbConfigBox);
+    d->walLabel->setWordWrap(true);
+
+    // --------------------------------------------------------
+
     d->mysqlCmdBox = new DVBox(dbConfigBox);
-    d->mysqlCmdBox->layout()->setContentsMargins(0, 0, 0, 0);
+    d->mysqlCmdBox->layout()->setContentsMargins(QMargins());
 
     new DLineWidget(Qt::Horizontal, d->mysqlCmdBox);
     QLabel* const mysqlBinariesLabel  = new QLabel(i18n("<p>Here you can configure locations where MySQL binary tools are located. "
@@ -353,6 +358,9 @@ void DatabaseSettingsWidget::setupMainArea()
     vlay->addWidget(d->dbPathEdit);
     vlay->addWidget(d->mysqlCmdBox);
     vlay->addWidget(d->tab);
+    vlay->addWidget(d->walModeCheck);
+    vlay->addWidget(d->walLabel);
+    vlay->addStretch(10);
     vlay->setContentsMargins(spacing, spacing, spacing, spacing);
     vlay->setSpacing(spacing);
 
@@ -452,6 +460,8 @@ void DatabaseSettingsWidget::setDatabaseInputFields(int index)
         {
             d->dbPathLabel->setVisible(true);
             d->dbPathEdit->setVisible(true);
+            d->walModeCheck->setVisible(true);
+            d->walLabel->setVisible(true);
             d->mysqlCmdBox->setVisible(false);
             d->tab->setVisible(false);
 
@@ -465,6 +475,8 @@ void DatabaseSettingsWidget::setDatabaseInputFields(int index)
         {
             d->dbPathLabel->setVisible(true);
             d->dbPathEdit->setVisible(true);
+            d->walModeCheck->setVisible(false);
+            d->walLabel->setVisible(false);
             d->mysqlCmdBox->setVisible(true);
             d->tab->setVisible(false);
 
@@ -478,6 +490,8 @@ void DatabaseSettingsWidget::setDatabaseInputFields(int index)
         {
             d->dbPathLabel->setVisible(false);
             d->dbPathEdit->setVisible(false);
+            d->walModeCheck->setVisible(false);
+            d->walLabel->setVisible(false);
             d->mysqlCmdBox->setVisible(false);
             d->tab->setVisible(true);
 
@@ -643,8 +657,6 @@ bool DatabaseSettingsWidget::checkMysqlServerConnection(QString& error)
 
     qApp->setOverrideCursor(Qt::WaitCursor);
 
-    AlbumManager::instance()->addFakeConnection();
-
     QString databaseID(QLatin1String("ConnectionTest"));
 
     {
@@ -681,6 +693,7 @@ void DatabaseSettingsWidget::setParametersFromSettings(const ApplicationSettings
     {
         d->dbPathEdit->setFileDlgPath(d->orgPrms.getCoreDatabaseNameOrDir());
         d->dbType->setCurrentIndex(d->dbTypeMap[SQlite]);
+        d->walModeCheck->setChecked(d->orgPrms.walMode);
         slotResetMysqlServerDBNames();
 
         if (settings->getDatabaseDirSetAtCmd() && !migration)
@@ -705,6 +718,7 @@ void DatabaseSettingsWidget::setParametersFromSettings(const ApplicationSettings
         d->mysqlInitBin.setup(QFileInfo(d->orgPrms.internalServerMysqlInitCmd).absoluteFilePath());
         d->mysqlServBin.setup(QFileInfo(d->orgPrms.internalServerMysqlServCmd).absoluteFilePath());
         d->dbBinariesWidget->allBinariesFound();
+        d->walModeCheck->setChecked(false);
         slotResetMysqlServerDBNames();
     }
 
@@ -722,6 +736,7 @@ void DatabaseSettingsWidget::setParametersFromSettings(const ApplicationSettings
         d->connectOpts->setText(d->orgPrms.connectOptions);
         d->userName->setText(d->orgPrms.userName);
         d->password->setText(d->orgPrms.password);
+        d->walModeCheck->setChecked(false);
     }
 
 #endif
@@ -737,7 +752,8 @@ DbEngineParameters DatabaseSettingsWidget::getDbEngineParameters() const
     {
         case SQlite:
         {
-            prm = DbEngineParameters::parametersForSQLiteDefaultFile(databasePath());
+            prm         = DbEngineParameters::parametersForSQLiteDefaultFile(databasePath());
+            prm.walMode = d->walModeCheck->isChecked();
             break;
         }
 

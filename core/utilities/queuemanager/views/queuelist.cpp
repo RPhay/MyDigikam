@@ -6,19 +6,10 @@
  * Date        : 2008-11-21
  * Description : Batch Queue Manager items list.
  *
- * Copyright (C) 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C)      2014 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
+ * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText:      2014 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -318,18 +309,19 @@ QueueListView::QueueListView(QWidget* const parent)
     setSelectionMode(QAbstractItemView::ExtendedSelection);
     setWhatsThis(i18nc("@info", "This is the list of images to batch process."));
 
-    setAcceptDrops(true);
-    viewport()->setAcceptDrops(true);
-    setDropIndicatorShown(true);
     setDragEnabled(true);
+    setAcceptDrops(true);
+    setDropIndicatorShown(true);
+    viewport()->setAcceptDrops(true);
     viewport()->setMouseTracking(true);
 
-    setSortingEnabled(true);
-    sortByColumn(1,Qt::AscendingOrder);
-    setAllColumnsShowFocus(true);
-    setRootIsDecorated(false);
-    setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setColumnCount(3);
+    setSortingEnabled(true);
+    setRootIsDecorated(false);
+    setUniformRowHeights(true);
+    setAllColumnsShowFocus(true);
+    sortByColumn(1, Qt::AscendingOrder);
+    setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     setContextMenuPolicy(Qt::CustomContextMenu);
 
     QStringList titles;

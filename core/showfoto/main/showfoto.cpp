@@ -6,24 +6,15 @@
  * Date        : 2004-11-22
  * Description : stand alone digiKam image editor
  *
- * Copyright (C) 2004-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2009-2011 by Andi Clemens <andi dot clemens at gmail dot com>
- * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
- * Copyright (C) 2005-2006 by Tom Albers <tomalbers at kde dot nl>
- * Copyright (C) 2008      by Arnd Baecker <arnd dot baecker at web dot de>
- * Copyright (C) 2013-2015 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
+ * SPDX-FileCopyrightText: 2004-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2009-2011 by Andi Clemens <andi dot clemens at gmail dot com>
+ * SPDX-FileCopyrightText: 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
+ * SPDX-FileCopyrightText: 2005-2006 by Tom Albers <tomalbers at kde dot nl>
+ * SPDX-FileCopyrightText: 2008      by Arnd Baecker <arnd dot baecker at web dot de>
+ * SPDX-FileCopyrightText: 2013-2015 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -62,6 +53,18 @@ Showfoto::Showfoto(const QList<QUrl>& urlList, QWidget* const)
 
     Digikam::LoadingCacheInterface::initialize();
     Digikam::MetaEngineSettings::instance();
+    Digikam::LocalizeSettings::instance();
+    Digikam::NetworkManager::instance();
+
+    connect(LocalizeSettings::instance(), &LocalizeSettings::signalOpenLocalizeSetup,
+            this, [=]()
+        {
+            ShowfotoSetup::execLocalize(this);
+        }
+    );
+
+    ExifToolThread* const exifToolThread = new ExifToolThread(this);
+    exifToolThread->start();
 
     d->thumbLoadThread = new Digikam::ThumbnailLoadThread();
     d->thumbLoadThread->setThumbnailSize(Digikam::ThumbnailSize::Huge);
@@ -97,8 +100,8 @@ Showfoto::Showfoto(const QList<QUrl>& urlList, QWidget* const)
 
     // -- Build the GUI -----------------------------------
 
-    setupUserArea();
-    setupActions();
+    this->setupUserArea();
+    this->setupActions();
     setupStatusBar();
     createGUI(xmlFile());
     registerPluginsActions();
@@ -117,15 +120,15 @@ Showfoto::Showfoto(const QList<QUrl>& urlList, QWidget* const)
 
     // Make signals/slots connections
 
-    setupConnections();
+    this->setupConnections();
 
     // Disable all actions
 
-    toggleActions(false);
+    this->toggleActions(false);
 
     // -- Read settings --------------------------------
 
-    readSettings();
+    this->readSettings();
     applySettings();
     setAutoSaveSettings(configGroupName(), true);
 

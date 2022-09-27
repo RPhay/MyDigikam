@@ -6,19 +6,10 @@
  * Date        : 2007-04-15
  * Description : Database engine abstract database backend
  *
- * Copyright (C) 2007-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2007-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -817,6 +808,69 @@ void BdEngineBackend::setDbEngineErrorHandler(DbEngineErrorHandler* const handle
 bool BdEngineBackend::isCompatible(const DbEngineParameters& parameters)
 {
     return QSqlDatabase::drivers().contains(parameters.databaseType);
+}
+
+bool BdEngineBackend::checkOrSetWALMode()
+{
+    Q_D(BdEngineBackend);
+
+    if (!d->parameters.isSQLite())
+    {
+        return false;
+    }
+
+    QList<QVariant> values;
+
+    execSql(QString::fromUtf8("PRAGMA journal_mode;"), &values);
+
+    if (values.isEmpty())
+    {
+        return false;
+    }
+
+    QSqlDatabase db = d->databaseForThread();
+    QString walMode = values.constFirst().toString().toUpper();
+    QString dbName  = QUrl::fromLocalFile(db.databaseName()).fileName();
+
+    if       (walMode == QLatin1String("DELETE"))
+    {
+        if (d->parameters.walMode)
+        {
+            execSql(QString::fromUtf8("PRAGMA journal_mode=WAL;"), &values);
+        }
+        else
+        {
+            qCDebug(DIGIKAM_DBENGINE_LOG) << "WAL mode is disabled for" << dbName;
+
+            return false;
+        }
+    }
+    else  if (walMode == QLatin1String("WAL"))
+    {
+        if (!d->parameters.walMode)
+        {
+            execSql(QString::fromUtf8("PRAGMA journal_mode=DELETE;"), &values);
+        }
+        else
+        {
+            qCDebug(DIGIKAM_DBENGINE_LOG) << "WAL mode is enabled for" << dbName;
+
+            return true;
+        }
+    }
+
+    if (values.isEmpty())
+    {
+        return false;
+    }
+
+    walMode      = values.constFirst().toString().toUpper();
+    bool newMode = (walMode == QLatin1String("WAL"));
+
+    qCDebug(DIGIKAM_DBENGINE_LOG) << "WAL mode is set to" << newMode
+                                  << "for" << dbName;
+
+    return newMode;
 }
 
 bool BdEngineBackend::open(const DbEngineParameters& parameters)

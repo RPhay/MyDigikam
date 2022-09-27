@@ -7,18 +7,9 @@
  * Description : Tag Properties widget to display tag properties
  *               when a tag or multiple tags are selected
  *
- * Copyright (C) 2013 by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
+ * SPDX-FileCopyrightText: 2013 by Veaceslav Munteanu <veaceslav dot munteanu90 at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -54,6 +45,7 @@
 #include "syncjob.h"
 #include "dexpanderbox.h"
 #include "dlayoutbox.h"
+#include "dtextedit.h"
 
 namespace Digikam
 {
@@ -84,7 +76,7 @@ public:
     QPushButton*        discardButton;
     QList<TAlbum*>      selectedAlbums;
     KKeySequenceWidget* keySeqWidget;
-    SearchTextBar*      titleEdit;
+    DTextEdit*          titleEdit;
     bool                changed;
 };
 
@@ -116,9 +108,9 @@ TagPropWidget::TagPropWidget(QWidget* const parent)
     titleLabel->setContentsMargins(cmargin, cmargin, cmargin, cmargin);
     titleLabel->setIndent(spacing);
 
-    d->titleEdit             = new SearchTextBar(this, QLatin1String("TagEditDlgTitleEdit"),
-                                                 i18nc("@info", "Enter tag name here"));
-    d->titleEdit->setCaseSensitive(false);
+    d->titleEdit             = new DTextEdit(this);
+    d->titleEdit->setPlaceholderText(i18nc("@info", "Enter tag name here"));
+    d->titleEdit->setLinesVisible(1);
     titleLabel->setBuddy(d->titleEdit);
 
     QLabel* const tipLabel   = new QLabel(this);
@@ -197,6 +189,8 @@ TagPropWidget::TagPropWidget(QWidget* const parent)
 
     adjustSize();
 
+    // ---------------------------------------------------------------
+
     connect(d->iconButton, SIGNAL(clicked()),
             this, SLOT(slotIconChanged()));
 
@@ -228,7 +222,6 @@ TagPropWidget::~TagPropWidget()
 
 void TagPropWidget::slotSelectionChanged(const QList<Album*>& albums)
 {
-
     if (albums.isEmpty())
     {
         enableItems(TagPropWidget::DisabledAll);
@@ -447,6 +440,7 @@ void TagPropWidget::slotDiscardChanges()
 void TagPropWidget::slotReturnPressed()
 {
     slotSaveChanges();
+
     Q_EMIT signalTitleEditReady();
 }
 

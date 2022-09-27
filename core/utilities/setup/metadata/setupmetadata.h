@@ -6,19 +6,10 @@
  * Date        : 2003-08-03
  * Description : setup Metadata tab.
  *
- * Copyright (C) 2003-2004 by Ralf Holzer <ralf at well.com>
- * Copyright (C) 2003-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2003-2004 by Ralf Holzer <ralf at well.com>
+ * SPDX-FileCopyrightText: 2003-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -49,6 +40,15 @@ public:
         AdvancedConfig
     };
 
+    enum MetadataSubTab
+    {
+        ExifViewer = 0,
+        MakernotesViewer,
+        IPTCViewer,
+        XMPViewer,
+        ExifToolViewer
+    };
+
 public:
 
     explicit SetupMetadata(QWidget* const parent = nullptr);
@@ -58,8 +58,11 @@ public:
 
     bool exifAutoRotateHasChanged() const;
 
-    void setActiveMainTab(MetadataTab tab);
-    void setActiveSubTab(int tab);
+    void setActiveTab(MetadataTab tab);
+    void setActiveSubTab(MetadataSubTab tab);
+
+    MetadataTab activeTab() const;
+    MetadataSubTab activeSubTab() const;
 
 private:
 
@@ -73,7 +76,6 @@ private Q_SLOTS:
 
     void slotSidecarFileNameToggled(bool);
     void slotExifAutoRotateToggled(bool);
-    void slotClearMetadataToggled(bool);
     void slotWriteWithExifToolToggled(bool);
     void slotExifToolSettingsChanged(bool);
     void slotWriteRawFilesToggled(bool);

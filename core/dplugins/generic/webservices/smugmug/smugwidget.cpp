@@ -6,18 +6,10 @@
  * Date        : 2008-12-01
  * Description : a tool to export images to Smugmug web service
  *
- * Copyright (C) 2008-2009 by Luka Renko <lure at kubuntu dot org>
- * Copyright (C) 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2008-2009 by Luka Renko <lure at kubuntu dot org>
+ * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -56,18 +48,25 @@ SmugWidget::SmugWidget(QWidget* const parent, DInfoInterface* const iface, bool 
     setObjectName(QLatin1String("SmugWidget"));
 
     const int spacing             = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                         QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
     QHBoxLayout* const mainLayout = new QHBoxLayout(this);
 
     // -------------------------------------------------------------------
 
-    m_imgList = new DItemsList(this);
+    m_imgList     = new DItemsList(this);
     m_imgList->setObjectName(QLatin1String("WebService ImagesList"));
-    m_imgList->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
+    m_progressBar = new DProgressWdg(this);
+
+    m_imgList->appendControlButtonsWidget(m_progressBar);
+    QBoxLayout* const blay = m_imgList->setControlButtonsPlacement(DItemsList::ControlButtonsBelow);
+    blay->setStretchFactor(m_progressBar, 20);
+
     m_imgList->setAllowRAW(true);
     m_imgList->setIface(m_iface);
     m_imgList->loadImagesFromCurrentSelection();
     m_imgList->listView()->setWhatsThis(i18n("This is the list of images to upload to your SmugMug account."));
+
+    m_progressBar->hide();
 
     QWidget* const settingsBox           = new QWidget(this);
     QVBoxLayout* const settingsBoxLayout = new QVBoxLayout(settingsBox);
@@ -191,10 +190,6 @@ SmugWidget::SmugWidget(QWidget* const parent, DInfoInterface* const iface, bool 
     optionsBoxLayout->setContentsMargins(spacing, spacing, spacing, spacing);
     optionsBoxLayout->setSpacing(spacing);
 
-    m_progressBar = new DProgressWdg(settingsBox);
-    m_progressBar->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
-    m_progressBar->hide();
-
     // ------------------------------------------------------------------------
 
     settingsBoxLayout->addWidget(m_headerLbl);
@@ -202,7 +197,6 @@ SmugWidget::SmugWidget(QWidget* const parent, DInfoInterface* const iface, bool 
     settingsBoxLayout->addWidget(albumsBox);
     settingsBoxLayout->addWidget(uploadBox);
     settingsBoxLayout->addWidget(optionsBox);
-    settingsBoxLayout->addWidget(m_progressBar);
     settingsBoxLayout->setSpacing(spacing);
     settingsBoxLayout->setContentsMargins(spacing, spacing, spacing, spacing);
 

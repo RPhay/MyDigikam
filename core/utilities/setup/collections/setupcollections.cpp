@@ -6,18 +6,9 @@
  * Date        : 2005-02-01
  * Description : collections setup tab
  *
- * Copyright (C) 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2005-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -60,6 +51,7 @@ public:
         collectionModel (nullptr),
         monitoringBox   (nullptr),
         ignoreEdit      (nullptr),
+        tab             (nullptr),
         ignoreLabel     (nullptr)
     {
     }
@@ -71,6 +63,7 @@ public:
 
     QCheckBox*               monitoringBox;
     QLineEdit*               ignoreEdit;
+    QTabWidget*              tab;
     QLabel*                  ignoreLabel;
 };
 
@@ -81,13 +74,13 @@ SetupCollections::SetupCollections(QWidget* const parent)
     const int spacing     = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                              QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
-    QTabWidget* const tab = new QTabWidget(viewport());
-    setWidget(tab);
+    d->tab                = new QTabWidget(viewport());
+    setWidget(d->tab);
     setWidgetResizable(true);
 
     // --------------------------------------------------------
 
-    QWidget* const albumPanel      = new QWidget(tab);
+    QWidget* const albumPanel      = new QWidget(d->tab);
     QVBoxLayout* const albumLayout = new QVBoxLayout(albumPanel);
 
 #ifndef Q_OS_WIN
@@ -135,11 +128,11 @@ SetupCollections::SetupCollections(QWidget* const parent)
     albumLayout->setContentsMargins(spacing, spacing, spacing, spacing);
     albumLayout->setSpacing(spacing);
 
-    tab->insertTab(Collections, albumPanel, i18nc("@title:tab", "Root Album Folders"));
+    d->tab->insertTab(Collections, albumPanel, i18nc("@title:tab", "Root Album Folders"));
 
     // --------------------------------------------------------
 
-    QWidget* const ignorePanel      = new QWidget(tab);
+    QWidget* const ignorePanel      = new QWidget(d->tab);
     QGridLayout* const ignoreLayout = new QGridLayout(ignorePanel);
 
     QLabel* const ignoreInfoLabel   = new QLabel(i18n("<p>Set the names of directories that you want to ignore "
@@ -181,7 +174,7 @@ SetupCollections::SetupCollections(QWidget* const parent)
     connect(d->ignoreLabel, SIGNAL(linkActivated(QString)),
             this, SLOT(slotShowCurrentIgnoredDirectoriesSettings()));
 
-    tab->insertTab(IgnoreDirs, ignorePanel, i18nc("@title:tab", "Ignored Directories"));
+    d->tab->insertTab(IgnoreDirs, ignorePanel, i18nc("@title:tab", "Ignored Directories"));
 
     // --------------------------------------------------------
 
@@ -192,6 +185,16 @@ SetupCollections::SetupCollections(QWidget* const parent)
 SetupCollections::~SetupCollections()
 {
     delete d;
+}
+
+void SetupCollections::setActiveTab(CollectionsTab tab)
+{
+    d->tab->setCurrentIndex(tab);
+}
+
+SetupCollections::CollectionsTab SetupCollections::activeTab() const
+{
+    return (CollectionsTab)d->tab->currentIndex();
 }
 
 void SetupCollections::applySettings()

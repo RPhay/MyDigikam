@@ -6,18 +6,10 @@
  * Date        : 2013-11-18
  * Description : a tool to export images to Dropbox web service
  *
- * Copyright (C) 2013      by Pankaj Kumar <me at panks dot me>
- * Copyright (C) 2018-2019 by Maik Qualmann <metzpinguin at gmail dot com>
+ * SPDX-FileCopyrightText: 2013      by Pankaj Kumar <me at panks dot me>
+ * SPDX-FileCopyrightText: 2018-2019 by Maik Qualmann <metzpinguin at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -40,7 +32,6 @@
 #include <QMessageBox>
 #include <QApplication>
 #include <QDesktopServices>
-#include <QNetworkAccessManager>
 
 // KDE includes
 
@@ -59,6 +50,7 @@
 #include "o2.h"
 #include "o0globals.h"
 #include "o0settingsstore.h"
+#include "networkmanager.h"
 
 using namespace Digikam;
 
@@ -118,7 +110,7 @@ public:
 DBTalker::DBTalker(QWidget* const parent)
     : d           (new Private(parent))
 {
-    d->netMngr = new QNetworkAccessManager(this);
+    d->netMngr = NetworkManager::instance()->getNetworkManager(this);
 
     connect(d->netMngr, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotFinished(QNetworkReply*)));

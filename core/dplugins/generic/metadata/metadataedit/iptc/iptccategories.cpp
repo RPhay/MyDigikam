@@ -6,18 +6,10 @@
  * Date        : 2006-10-15
  * Description : IPTC categories settings page.
  *
- * Copyright (C) 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2013      by Victor Dodon <dodonvictor at gmail dot com>
+ * SPDX-FileCopyrightText: 2006-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2013      by Victor Dodon <dodonvictor at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -41,7 +33,7 @@
 
 // Local includes
 
-#include "limitedtextedit.h"
+#include "dtextedit.h"
 
 namespace DigikamGenericMetadataEditPlugin
 {
@@ -72,7 +64,7 @@ public:
     QCheckBox*       categoryCheck;
 
     QLineEdit*       categoryEdit;
-    LimitedTextEdit* subCategoryEdit;
+    DPlainTextEdit*  subCategoryEdit;
 
     QListWidget*     subCategoriesBox;
 };
@@ -95,7 +87,7 @@ IPTCCategories::IPTCCategories(QWidget* const parent)
 
     d->subCategoriesCheck = new QCheckBox(i18n("Supplemental categories:"), this);
 
-    d->subCategoryEdit    = new LimitedTextEdit(this);
+    d->subCategoryEdit    = new DPlainTextEdit(this);
     d->subCategoryEdit->setLinesVisible(1);
     d->subCategoryEdit->setMaxLength(32);
     d->subCategoryEdit->setPlaceholderText(i18n("Set here the extra category"));

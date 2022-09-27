@@ -8,19 +8,10 @@
  *               Based on ZExifTool Qt interface published at 18 Feb 2021
  *               https://github.com/philvl/ZExifTool
  *
- * Copyright (C) 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (c) 2021 by Philippe Vianney Liaud <philvl dot dev at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2021 by Philippe Vianney Liaud <philvl dot dev at gmail dot com>
  *
- * This program is free software; you can redistribute it
- * and/or modify it under the terms of the GNU General
- * Public License as published by the Free Software Foundation;
- * either version 2, or (at your option)
- * any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
 
@@ -33,10 +24,13 @@
 
 #include <QFile>
 #include <QList>
+#include <QTimer>
 #include <QFileInfo>
 #include <QByteArray>
 #include <QApplication>
 #include <QElapsedTimer>
+#include <QStandardPaths>
+#include <QWaitCondition>
 
 // KDE includes
 
@@ -47,6 +41,7 @@
 #include "digikam_debug.h"
 #include "digikam_globals.h"
 #include "metaenginesettings.h"
+#include "exiftoolparser.h"
 
 #define CMD_ID_MIN 1
 #define CMD_ID_MAX 2000000000
@@ -65,8 +60,8 @@ public:
     public:
 
         Command()
-          : id (0),
-            ac (ExifToolProcess::NO_ACTION)
+          : id     (0),
+            ac     (ExifToolProcess::NO_ACTION)
         {
         }
 
@@ -82,6 +77,7 @@ public:
     void readOutput(const QProcess::ProcessChannel channel);
     void setProcessErrorAndEmit(QProcess::ProcessError error,
                                 const QString& description);
+    void setCommandResult(int cmdState);
 
 public Q_SLOTS:
 
@@ -109,7 +105,12 @@ public:
 
     int                     nextCmdId;               ///< Unique identifier, even in a multi-instances or multi-thread environment
 
+    ExifToolProcess::Result cmdResult;
+
+    QMutex                  cmdMutex;
+
     QMutex                  mutex;
+    QWaitCondition          condVar;
 };
 
 } // namespace Digikam
