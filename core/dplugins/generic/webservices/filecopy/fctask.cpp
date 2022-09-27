@@ -128,13 +128,8 @@ void FCTask::run()
         else
         {
             deleteTargetFile(dest.toLocalFile());
-            ok = QFile::copy(d->srcUrl.toLocalFile(),
-                             dest.toLocalFile());
-            if (ok)
-            {
-                DFileOperations::copyModificationTime(d->srcUrl.toLocalFile(),
-                                                      dest.toLocalFile());
-            }
+            ok = DFileOperations::copyFile(d->srcUrl.toLocalFile(),
+                                           dest.toLocalFile());
         }
     }
     else if (ok                                                     &&

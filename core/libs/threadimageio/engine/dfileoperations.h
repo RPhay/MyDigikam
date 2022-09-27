@@ -91,7 +91,8 @@ public:
      * Copy file and keep the source file modification time.
      */
     static bool copyFile(const QString& srcFile,
-                         const QString& dstFile);
+                         const QString& dstFile,
+                         bool* const cancel = nullptr);
 
     /**
      * Copy file modification time from source to destination file.
