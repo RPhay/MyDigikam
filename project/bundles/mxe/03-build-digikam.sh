@@ -100,7 +100,7 @@ FILES=$(find . | grep -E '(digikam|showfoto|avplayer)')
 for FILE in $FILES ; do
     if [[ -f ${FILE} || -d ${FILE} ]] ; then
         echo -e "   ==> $MXE_BUILDROOT/${FILE} will be removed from previous install"
-        rm -f $MXE_BUILDROOT/${FILE}
+        rm -fr $MXE_BUILDROOT/${FILE}
     fi
 done
 
