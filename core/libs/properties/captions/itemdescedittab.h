@@ -54,14 +54,8 @@ public:
     void assignRating(int rating);
     void setItem(const ItemInfo& info = ItemInfo());
     void setItems(const ItemInfoList& infos);
-    void populateTags();
-    void setFocusToTagsView();
-    void setFocusToNewTagEdit();
     void setFocusToTitlesEdit();
     void setFocusToCommentsEdit();
-    void activateAssignedTagsButton();
-
-    AddTagsLineEdit* getNewTagEdit() const;
 
     void readSettings(KConfigGroup& group);
     void writeSettings(KConfigGroup& group);
@@ -72,9 +66,10 @@ Q_SIGNALS:
     void signalProgressValueChanged(float percent);
     void signalProgressFinished();
 
-    void signalTagFilterMatch(bool);
     void signalPrevItem();
     void signalNextItem();
+
+    void askToApplyChanges(const QList<ItemInfo>& infos, DisjointMetadata* hub);
 
 protected:
 
@@ -83,19 +78,16 @@ protected:
 private:
 
     void reset();
-    void setTagState(TAlbum* const tag, DisjointMetadataDataFields::Status status);
 
     void setInfos(const ItemInfoList& infos);
     void setFocusToLastSelectedWidget();
 
-    void updateTagsView();
     void updateComments();
     void updatePickLabel();
     void updateColorLabel();
     void updateRating();
     void updateDate();
     void updateTemplate();
-    void updateRecentTags();
 
     bool singleSelection() const;
     void setMetadataWidgetStatus(int status, QWidget* const widget);
@@ -106,18 +98,12 @@ private:
     void resetTitleEditPlaceholderText();
     void resetCaptionEditPlaceholderText();
 
-Q_SIGNALS:
-
-    void askToApplyChanges(const QList<ItemInfo>& infos, DisjointMetadata* hub);
-
 private Q_SLOTS:
 
     void slotApplyAllChanges();
     void slotApplyChangesToAllVersions();
     void slotRevertAllChanges();
     void slotChangingItems();
-    void slotTagsSearchChanged(const SearchTextSettings& settings);
-    void slotTagStateChanged(Album* album, Qt::CheckState checkState);
     void slotOpenTagsManager();
     void slotCommentChanged();
     void slotTitleChanged();
@@ -127,24 +113,53 @@ private Q_SLOTS:
     void slotRatingChanged(int rating);
     void slotTemplateSelected();
     void slotModified();
-    void slotTaggingActionActivated(const TaggingAction&);
     void slotReloadForMetadataChange();
 
-    void slotImageTagsChanged(qlonglong imageId);
     void slotImagesChanged(int albumId);
     void slotImageRatingChanged(qlonglong imageId);
     void slotImageDateChanged(qlonglong imageId);
     void slotImageCaptionChanged(qlonglong imageId);
 
-    void slotRecentTagsMenuActivated(int);
-    void slotAssignedTagsToggled(bool);
-
     void slotMoreMenu();
-    void slotUnifyPartiallyTags();
     void slotReadFromFileMetadataToDatabase();
     void slotWriteToFileMetadataFromDatabase();
 
     void slotAskToApplyChanges(const QList<ItemInfo>& infos, DisjointMetadata* hub);
+
+    ///@{
+    /// Tags management methods (itemdescedittab_tags.cpp)
+
+public:
+
+    void populateTags();
+    void setFocusToTagsView();
+    void setFocusToNewTagEdit();
+    void activateAssignedTagsButton();
+
+    AddTagsLineEdit* getNewTagEdit() const;
+
+Q_SIGNALS:
+
+    void signalTagFilterMatch(bool);
+
+private:
+
+    void setTagState(TAlbum* const tag, DisjointMetadataDataFields::Status status);
+    void updateTagsView();
+    void updateRecentTags();
+
+private Q_SLOTS:
+
+    void slotTagsSearchChanged(const SearchTextSettings& settings);
+    void slotTagStateChanged(Album* album, Qt::CheckState checkState);
+    void slotTaggingActionActivated(const TaggingAction&);
+    void slotImageTagsChanged(qlonglong imageId);
+
+    void slotRecentTagsMenuActivated(int);
+    void slotAssignedTagsToggled(bool);
+    void slotUnifyPartiallyTags();
+
+    ///@}
 
 private:
 

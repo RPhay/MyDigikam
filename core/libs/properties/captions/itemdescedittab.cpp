@@ -339,21 +339,6 @@ void ItemDescEditTab::setFocusToLastSelectedWidget()
     d->lastSelectedWidget = nullptr;
 }
 
-void ItemDescEditTab::setFocusToTagsView()
-{
-    d->lastSelectedWidget = qobject_cast<QWidget*>(d->tagCheckView);
-    d->tagCheckView->setFocus();
-    d->tabWidget->setCurrentIndex(Private::TAGS);
-}
-
-void ItemDescEditTab::setFocusToNewTagEdit()
-{
-    // select "Tags" tab and focus the NewTagLineEdit widget
-
-    d->tabWidget->setCurrentIndex(Private::TAGS);
-    d->newTagEdit->setFocus();
-}
-
 void ItemDescEditTab::setFocusToTitlesEdit()
 {
     d->tabWidget->setCurrentIndex(Private::DESCRIPTIONS);
@@ -364,12 +349,6 @@ void ItemDescEditTab::setFocusToCommentsEdit()
 {
     d->tabWidget->setCurrentIndex(Private::DESCRIPTIONS);
     d->captionsEdit->altLangStrEdit()->textEdit()->setFocus();
-}
-
-void ItemDescEditTab::activateAssignedTagsButton()
-{
-    d->tabWidget->setCurrentIndex(Private::TAGS);
-    d->assignedTagsBtn->click();
 }
 
 bool ItemDescEditTab::singleSelection() const
@@ -754,14 +733,6 @@ void ItemDescEditTab::slotWriteToFileMetadataFromDatabase()
     Q_EMIT signalProgressFinished();
 }
 
-void ItemDescEditTab::slotUnifyPartiallyTags()
-{
-    Q_FOREACH (Album* const album, d->tagModel->partiallyCheckedAlbums())
-    {
-        d->tagModel->setChecked(album, true);
-    }
-}
-
 bool ItemDescEditTab::eventFilter(QObject* o, QEvent* e)
 {
     if (e->type() == QEvent::KeyPress)
@@ -818,36 +789,6 @@ bool ItemDescEditTab::eventFilter(QObject* o, QEvent* e)
     }
 
     return DVBox::eventFilter(o, e);
-}
-
-void ItemDescEditTab::populateTags()
-{
-    // TODO update, this wont work... crashes
-    //KConfigGroup group;
-    //d->tagCheckView->loadViewState(group);
-}
-
-void ItemDescEditTab::slotTagStateChanged(Album* album, Qt::CheckState checkState)
-{
-    TAlbum* const tag = dynamic_cast<TAlbum*>(album);
-
-    if (!tag || d->ignoreTagChanges)
-    {
-        return;
-    }
-
-    switch (checkState)
-    {
-        case Qt::Checked:
-            d->hub.setTag(tag->id());
-            break;
-
-        default:
-            d->hub.setTag(tag->id(), DisjointMetadataDataFields::MetadataInvalid);
-            break;
-    }
-
-    slotModified();
 }
 
 void ItemDescEditTab::slotCommentChanged()
@@ -924,36 +865,6 @@ void ItemDescEditTab::slotModified()
     }
 }
 
-void ItemDescEditTab::slotTaggingActionActivated(const TaggingAction& action)
-{
-    TAlbum* assigned = nullptr;
-
-    if (action.shallAssignTag())
-    {
-        assigned = AlbumManager::instance()->findTAlbum(action.tagId());
-
-        if (assigned)
-        {
-            d->tagModel->setChecked(assigned, true);
-            d->tagCheckView->checkableAlbumFilterModel()->updateFilter();
-        }
-    }
-    else if (action.shallCreateNewTag())
-    {
-        TAlbum* const parent = AlbumManager::instance()->findTAlbum(action.parentTagId());
-
-        // tag is assigned automatically
-
-        assigned = d->tagCheckView->tagModificationHelper()->slotTagNew(parent, action.newTagName());
-    }
-
-    if (assigned)
-    {
-        d->tagCheckView->scrollTo(d->tagCheckView->albumFilterModel()->indexForAlbum(assigned));
-        QTimer::singleShot(0, d->newTagEdit, SLOT(clear()));
-    }
-}
-
 void ItemDescEditTab::assignPickLabel(int pickId)
 {
     d->pickLabelSelector->setPickLabel((PickLabel)pickId);
@@ -967,70 +878,6 @@ void ItemDescEditTab::assignColorLabel(int colorId)
 void ItemDescEditTab::assignRating(int rating)
 {
     d->ratingWidget->setRating(rating);
-}
-
-void ItemDescEditTab::setTagState(TAlbum* const tag, DisjointMetadataDataFields::Status status)
-{
-    if (!tag)
-    {
-        return;
-    }
-
-    switch (status)
-    {
-        case DisjointMetadataDataFields::MetadataDisjoint:
-            d->tagModel->setCheckState(tag, Qt::PartiallyChecked);
-            break;
-
-        case DisjointMetadataDataFields::MetadataAvailable:
-            d->tagModel->setChecked(tag, true);
-            break;
-
-        case DisjointMetadataDataFields::MetadataInvalid:
-            d->tagModel->setChecked(tag, false);
-            break;
-
-        default:
-            qCWarning(DIGIKAM_GENERAL_LOG) << "Untreated tag status enum value " << status;
-            d->tagModel->setCheckState(tag, Qt::PartiallyChecked);
-            break;
-    }
-}
-
-void ItemDescEditTab::updateTagsView()
-{
-    // Avoid that the automatic tag toggling handles these calls and
-    // modification is indicated to this widget
-
-    TagCheckView::ToggleAutoTags toggle = d->tagCheckView->getToggleAutoTags();
-    d->tagCheckView->setToggleAutoTags(TagCheckView::NoToggleAuto);
-    d->ignoreTagChanges                 = true;
-
-    // first reset the tags completely
-
-    d->tagModel->resetAllCheckedAlbums();
-
-    // Then update checked state for all tags of the currently selected images
-
-    const QMap<int, DisjointMetadataDataFields::Status> hubMap = d->hub.tags();
-
-    for (QMap<int, DisjointMetadataDataFields::Status>::const_iterator it = hubMap.begin() ;
-         it != hubMap.end() ; ++it)
-    {
-        TAlbum* const tag = AlbumManager::instance()->findTAlbum(it.key());
-        setTagState(tag, it.value());
-    }
-
-    d->ignoreTagChanges = false;
-    d->tagCheckView->setToggleAutoTags(toggle);
-
-    // The condition is a temporary fix not to destroy name filtering on image change.
-    // See comments in these methods.
-
-    if (d->assignedTagsBtn->isChecked())
-    {
-        slotAssignedTagsToggled(d->assignedTagsBtn->isChecked());
-    }
 }
 
 void ItemDescEditTab::updateComments()
@@ -1177,14 +1024,6 @@ void ItemDescEditTab::slotMoreMenu()
     }
 }
 
-void ItemDescEditTab::slotOpenTagsManager()
-{
-    TagsManager* const tagMngr = TagsManager::instance();
-    tagMngr->show();
-    tagMngr->activateWindow();
-    tagMngr->raise();
-}
-
 void ItemDescEditTab::slotImagesChanged(int albumId)
 {
     if (d->ignoreItemAttributesWatch || d->modified)
@@ -1200,11 +1039,6 @@ void ItemDescEditTab::slotImagesChanged(int albumId)
     }
 
     setInfos(d->currInfos);
-}
-
-void ItemDescEditTab::slotImageTagsChanged(qlonglong imageId)
-{
-    metadataChange(imageId);
 }
 
 void ItemDescEditTab::slotImageRatingChanged(qlonglong imageId)
@@ -1274,119 +1108,6 @@ void ItemDescEditTab::slotReloadForMetadataChange()
             }
         }
     }
-}
-
-void ItemDescEditTab::updateRecentTags()
-{
-    QMenu* const menu = dynamic_cast<QMenu*>(d->recentTagsBtn->menu());
-
-    if (!menu)
-    {
-        return;
-    }
-
-    menu->clear();
-
-    AlbumList recentTags = AlbumManager::instance()->getRecentlyAssignedTags();
-
-    if (recentTags.isEmpty())
-    {
-        QAction* const noTagsAction = menu->addAction(i18n("No Recently Assigned Tags"));
-        noTagsAction->setEnabled(false);
-    }
-    else
-    {
-        for (AlbumList::const_iterator it = recentTags.constBegin() ;
-             it != recentTags.constEnd() ; ++it)
-        {
-            TAlbum* const album = static_cast<TAlbum*>(*it);
-
-            if (album)
-            {
-                AlbumThumbnailLoader* const loader = AlbumThumbnailLoader::instance();
-                QPixmap                     icon;
-
-                if (!loader->getTagThumbnail(album, icon))
-                {
-                    if (icon.isNull())
-                    {
-                        icon = loader->getStandardTagIcon(album, AlbumThumbnailLoader::SmallerSize);
-                    }
-                }
-
-                TAlbum* const parent = dynamic_cast<TAlbum*> (album->parent());
-
-                if (parent)
-                {
-                    QString text          = album->title() + QLatin1String(" (") + parent->prettyUrl() + QLatin1Char(')');
-                    QAction* const action = menu->addAction(icon, text);
-                    int id                = album->id();
-
-                    connect(action, &QAction::triggered,
-                            this, [this, id]() { slotRecentTagsMenuActivated(id); });
-                }
-                else
-                {
-                    qCDebug(DIGIKAM_GENERAL_LOG) << "Tag" << album
-                                                 << "do not have a valid parent";
-                }
-            }
-        }
-    }
-}
-
-void ItemDescEditTab::slotRecentTagsMenuActivated(int id)
-{
-    AlbumManager* const albumMan = AlbumManager::instance();
-
-    if (id > 0)
-    {
-        TAlbum* const album = albumMan->findTAlbum(id);
-
-        if (album)
-        {
-            d->tagModel->setChecked(album, true);
-            d->tagCheckView->checkableAlbumFilterModel()->updateFilter();
-        }
-    }
-}
-
-void ItemDescEditTab::slotTagsSearchChanged(const SearchTextSettings& settings)
-{
-    Q_UNUSED(settings);
-
-    // if we filter, we should reset the assignedTagsBtn again.
-
-    if (d->assignedTagsBtn->isChecked() && !d->togglingSearchSettings)
-    {
-        d->togglingSearchSettings = true;
-        d->assignedTagsBtn->setChecked(false);
-        d->togglingSearchSettings = false;
-    }
-}
-
-void ItemDescEditTab::slotAssignedTagsToggled(bool t)
-{
-    d->tagCheckView->checkableAlbumFilterModel()->setFilterChecked(t);
-    d->tagCheckView->checkableAlbumFilterModel()->setFilterPartiallyChecked(t);
-    d->tagCheckView->checkableAlbumFilterModel()->setFilterBehavior(t ? AlbumFilterModel::StrictFiltering
-                                                                      : AlbumFilterModel::FullFiltering);
-
-    if (t)
-    {
-        // if we filter by assigned, we should initially clear the normal search.
-
-        if (!d->togglingSearchSettings)
-        {
-            d->togglingSearchSettings = true;
-            d->tagsSearchBar->clear();
-            d->togglingSearchSettings = false;
-        }
-
-        // Only after above change, do this.
-
-        d->tagCheckView->expandMatches(d->tagCheckView->rootIndex());
-   }
 }
 
 void ItemDescEditTab::slotApplyChangesToAllVersions()
@@ -1459,11 +1180,6 @@ void ItemDescEditTab::resetTitleEditPlaceholderText()
 void ItemDescEditTab::resetCaptionEditPlaceholderText()
 {
     d->captionsEdit->setPlaceholderText(i18n("Enter caption text here."));
-}
-
-AddTagsLineEdit* ItemDescEditTab::getNewTagEdit() const
-{
-    return d->newTagEdit;
 }
 
 } // namespace Digikam
