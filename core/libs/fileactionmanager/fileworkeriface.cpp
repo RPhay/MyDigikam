@@ -296,19 +296,6 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
             }
         }
 
-        // Adjust Faces in the DB and Metadata.
-
-        FaceUtils().rotateFaces(info.id(), originalSize,
-                                finalOrientation, currentOrientation);
-
-        CollectionScanner scanner;
-        scanner.scanFile(info, CollectionScanner::NormalScan);
-
-        if (rotatedPixels)
-        {
-            finalOrientation = MetaEngine::ORIENTATION_NORMAL;
-        }
-
         if (rotateByMetadata || isDng)
         {
             // Setting the rotation flag on Raws with embedded JPEG is a mess
@@ -317,10 +304,19 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
             if (!isRaw || isDng)
             {
                 QScopedPointer<DMetadata> metadata(new DMetadata(filePath));
-                metadata->setItemOrientation(finalOrientation);
+                metadata->setItemOrientation(rotatedPixels ? MetaEngine::ORIENTATION_NORMAL
+                                                           : finalOrientation);
                 metadata->applyChanges();
             }
         }
+
+        CollectionScanner scanner;
+        scanner.scanFile(info, CollectionScanner::NormalScan);
+
+        // Adjust Faces in the DB and Metadata.
+
+        FaceUtils().rotateFaces(info.id(), originalSize,
+                                finalOrientation, currentOrientation);
 
         if (!failedItems.contains(info.name()))
         {
