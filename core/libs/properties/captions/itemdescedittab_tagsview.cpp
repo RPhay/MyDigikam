@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2003-03-09
- * Description : Captions, Tags, and Rating properties editor - Tags management.
+ * Description : Captions, Tags, and Rating properties editor - Tags view.
  *
  * SPDX-FileCopyrightText: 2003-2005 by Renchi Raju <renchi dot raju at gmail dot com>
  * SPDX-FileCopyrightText: 2003-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>

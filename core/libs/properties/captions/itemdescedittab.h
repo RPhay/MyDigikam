@@ -49,13 +49,8 @@ public:
     explicit ItemDescEditTab(QWidget* const parent);
     ~ItemDescEditTab()                      override;
 
-    void assignPickLabel(int pickId);
-    void assignColorLabel(int colorId);
-    void assignRating(int rating);
     void setItem(const ItemInfo& info = ItemInfo());
     void setItems(const ItemInfoList& infos);
-    void setFocusToTitlesEdit();
-    void setFocusToCommentsEdit();
 
     void readSettings(KConfigGroup& group);
     void writeSettings(KConfigGroup& group);
@@ -82,11 +77,6 @@ private:
     void setInfos(const ItemInfoList& infos);
     void setFocusToLastSelectedWidget();
 
-    void updateComments();
-    void updatePickLabel();
-    void updateColorLabel();
-    void updateRating();
-    void updateDate();
     void updateTemplate();
 
     bool singleSelection() const;
@@ -95,29 +85,17 @@ private:
     void resetMetadataChangeInfo();
     void initProgressIndicator();
 
-    void resetTitleEditPlaceholderText();
-    void resetCaptionEditPlaceholderText();
-
 private Q_SLOTS:
 
     void slotApplyAllChanges();
     void slotApplyChangesToAllVersions();
     void slotRevertAllChanges();
     void slotChangingItems();
-    void slotCommentChanged();
-    void slotTitleChanged();
-    void slotDateTimeChanged(const QDateTime& dateTime);
-    void slotPickLabelChanged(int pickId);
-    void slotColorLabelChanged(int colorId);
-    void slotRatingChanged(int rating);
     void slotTemplateSelected();
     void slotModified();
     void slotReloadForMetadataChange();
 
     void slotImagesChanged(int albumId);
-    void slotImageRatingChanged(qlonglong imageId);
-    void slotImageDateChanged(qlonglong imageId);
-    void slotImageCaptionChanged(qlonglong imageId);
 
     void slotMoreMenu();
     void slotReadFromFileMetadataToDatabase();
@@ -126,7 +104,44 @@ private Q_SLOTS:
     void slotAskToApplyChanges(const QList<ItemInfo>& infos, DisjointMetadata* hub);
 
     ///@{
-    /// Tags management methods (itemdescedittab_tags.cpp)
+    /// Description view methods (itemdescedittab_descview.cpp)
+
+public:
+
+    void assignPickLabel(int pickId);
+    void assignColorLabel(int colorId);
+    void assignRating(int rating);
+    void setFocusToTitlesEdit();
+    void setFocusToCommentsEdit();
+
+private:
+
+    void updateComments();
+    void updatePickLabel();
+    void updateColorLabel();
+    void updateRating();
+    void updateDate();
+
+    void resetTitleEditPlaceholderText();
+    void resetCaptionEditPlaceholderText();
+
+private Q_SLOTS:
+
+    void slotCommentChanged();
+    void slotTitleChanged();
+    void slotDateTimeChanged(const QDateTime& dateTime);
+    void slotPickLabelChanged(int pickId);
+    void slotColorLabelChanged(int colorId);
+    void slotRatingChanged(int rating);
+
+    void slotImageRatingChanged(qlonglong imageId);
+    void slotImageDateChanged(qlonglong imageId);
+    void slotImageCaptionChanged(qlonglong imageId);
+
+    ///@}
+
+    ///@{
+    /// Tags view methods (itemdescedittab_tagsview.cpp)
 
 public:
 
