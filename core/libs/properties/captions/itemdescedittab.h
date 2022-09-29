@@ -69,7 +69,7 @@ Q_SIGNALS:
     void signalPrevItem();
     void signalNextItem();
 
-    void askToApplyChanges(const QList<ItemInfo>& infos, DisjointMetadata* hub);
+    void signalAskToApplyChanges(const QList<ItemInfo>& infos, DisjointMetadata* hub);
 
 protected:
 

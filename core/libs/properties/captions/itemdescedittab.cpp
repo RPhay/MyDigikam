@@ -256,7 +256,7 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
     connect(d->metadataChangeTimer, SIGNAL(timeout()),
             this, SLOT(slotReloadForMetadataChange()));
 
-    connect(this, SIGNAL(askToApplyChanges(QList<ItemInfo>,DisjointMetadata*)),
+    connect(this, SIGNAL(signalAskToApplyChanges(QList<ItemInfo>,DisjointMetadata*)),
             this, SLOT(slotAskToApplyChanges(QList<ItemInfo>,DisjointMetadata*)),
             Qt::QueuedConnection);
 
@@ -375,7 +375,7 @@ void ItemDescEditTab::slotChangingItems()
         DisjointMetadata* const hub2 = new DisjointMetadata();
         hub2->setDataFields(d->hub.dataFields());
 
-        Q_EMIT askToApplyChanges(d->currInfos, hub2);
+        Q_EMIT signalAskToApplyChanges(d->currInfos, hub2);
 
         reset();
     }
