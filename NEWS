@@ -149,4 +149,5 @@ BUGFIXES:
 111 ==> 459129 - Duplicate tags are displayed below thumbnail when tags are repeated in tag hierarchy.
 112 ==> 459537 - "Ignored" face regions should not be saved into XMP metadata.
 113 ==> 459497 - digiKam fails to load images.
-114 ==> 
+114 ==> 459702 - digiKam git Mariadb issue.
+115 ==> 
