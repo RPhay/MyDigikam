@@ -22,6 +22,88 @@
 namespace Digikam
 {
 
+void ItemDescEditTab::initDescriptionView()
+{
+    const int spacing           = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
+    QScrollArea* const sv       = new QScrollArea(d->tabWidget);
+    sv->setFrameStyle(QFrame::NoFrame);
+    sv->setWidgetResizable(true);
+
+    QWidget* const captionsArea = new QWidget(sv->viewport());
+    QGridLayout* const grid1    = new QGridLayout(captionsArea);
+    sv->setWidget(captionsArea);
+
+    d->titleEdit          = new AltLangStrEdit(captionsArea, 0);
+    d->titleEdit->setTitle(i18nc("@title: comment title string", "Title:"));
+    resetTitleEditPlaceholderText();
+
+    d->captionsEdit       = new CaptionEdit(captionsArea);
+    resetCaptionEditPlaceholderText();
+
+    DHBox* const dateBox  = new DHBox(captionsArea);
+    new QLabel(i18n("Date:"), dateBox);
+    d->dateTimeEdit       = new DDateTimeEdit(dateBox, QLatin1String("datepicker"));
+
+    DHBox* const pickBox  = new DHBox(captionsArea);
+    new QLabel(i18n("Pick Label:"), pickBox);
+    d->pickLabelSelector  = new PickLabelSelector(pickBox);
+    pickBox->layout()->setAlignment(d->pickLabelSelector, Qt::AlignVCenter | Qt::AlignRight);
+
+    DHBox* const colorBox = new DHBox(captionsArea);
+    new QLabel(i18n("Color Label:"), colorBox);
+    d->colorLabelSelector = new ColorLabelSelector(colorBox);
+    colorBox->layout()->setAlignment(d->colorLabelSelector, Qt::AlignVCenter | Qt::AlignRight);
+
+    DHBox* const rateBox  = new DHBox(captionsArea);
+    new QLabel(i18n("Rating:"), rateBox);
+    d->ratingWidget       = new RatingWidget(rateBox);
+    rateBox->layout()->setAlignment(d->ratingWidget, Qt::AlignVCenter | Qt::AlignRight);
+
+    // Buttons -----------------------------------------
+
+    DHBox* const applyButtonBox = new DHBox(this);
+    applyButtonBox->setSpacing(spacing);
+
+    d->applyBtn                 = new QPushButton(i18n("Apply"), applyButtonBox);
+    d->applyBtn->setIcon(QIcon::fromTheme(QLatin1String("dialog-ok-apply")));
+    d->applyBtn->setEnabled(false);
+    d->applyBtn->setToolTip(i18n("Apply all changes to images"));
+    //buttonsBox->setStretchFactor(d->applyBtn, 10);
+
+    DHBox* const buttonsBox     = new DHBox(this);
+    buttonsBox->setSpacing(spacing);
+
+    d->revertBtn                = new QToolButton(buttonsBox);
+    d->revertBtn->setIcon(QIcon::fromTheme(QLatin1String("document-revert")));
+    d->revertBtn->setToolTip(i18n("Revert all changes"));
+    d->revertBtn->setEnabled(false);
+
+    d->applyToAllVersionsButton = new QPushButton(i18n("Apply to all versions"), buttonsBox);
+    d->applyToAllVersionsButton->setIcon(QIcon::fromTheme(QLatin1String("dialog-ok-apply")));
+    d->applyToAllVersionsButton->setEnabled(false);
+    d->applyToAllVersionsButton->setToolTip(i18n("Apply all changes to all versions of this image"));
+
+    d->moreButton               = new QPushButton(i18nc("@action: more actions to apply changes", "More"), buttonsBox);
+    d->moreMenu                 = new QMenu(captionsArea);
+    d->moreButton->setMenu(d->moreMenu);
+
+    // --------------------------------------------------
+
+    grid1->addWidget(d->titleEdit,    0, 0, 1, 2);
+    grid1->addWidget(d->captionsEdit, 1, 0, 1, 2);
+    grid1->addWidget(dateBox,         2, 0, 1, 2);
+    grid1->addWidget(pickBox,         3, 0, 1, 2);
+    grid1->addWidget(colorBox,        4, 0, 1, 2);
+    grid1->addWidget(rateBox,         5, 0, 1, 2);
+    grid1->setRowStretch(1, 10);
+    grid1->setContentsMargins(spacing, spacing, spacing, spacing);
+    grid1->setSpacing(spacing);
+
+    d->tabWidget->insertTab(Private::DESCRIPTIONS, sv, i18n("Description"));
+}
+
 void ItemDescEditTab::setFocusToTitlesEdit()
 {
     d->tabWidget->setCurrentIndex(Private::DESCRIPTIONS);

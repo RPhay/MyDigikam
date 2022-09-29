@@ -116,6 +116,7 @@ public:
 
 private:
 
+    void initDescriptionView();
     void updateComments();
     void updatePickLabel();
     void updateColorLabel();
