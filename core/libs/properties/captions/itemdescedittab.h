@@ -158,6 +158,7 @@ Q_SIGNALS:
 
 private:
 
+    void initTagsView();
     void setTagState(TAlbum* const tag, DisjointMetadataDataFields::Status status);
     void updateTagsView();
     void updateRecentTags();

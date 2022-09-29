@@ -22,6 +22,70 @@
 namespace Digikam
 {
 
+void ItemDescEditTab::initTagsView()
+{
+    const int spacing         = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                                     QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+
+    QScrollArea* const sv3    = new QScrollArea(d->tabWidget);
+    sv3->setFrameStyle(QFrame::NoFrame);
+    sv3->setWidgetResizable(true);
+
+    QWidget* const tagsArea   = new QWidget(sv3->viewport());
+    QGridLayout* const grid3  = new QGridLayout(tagsArea);
+    sv3->setWidget(tagsArea);
+
+    d->tagModel     = new TagModel(AbstractAlbumModel::IncludeRootAlbum, this);
+    d->tagModel->setCheckable(true);
+    d->tagModel->setRootCheckable(false);
+    d->tagCheckView = new TagCheckView(tagsArea, d->tagModel);
+    d->tagCheckView->setCheckNewTags(true);
+
+    d->openTagMngr  = new QPushButton(i18n("Open Tag Manager"));
+
+    d->newTagEdit   = new AddTagsLineEdit(tagsArea);
+    d->newTagEdit->setSupportingTagModel(d->tagModel);
+    d->newTagEdit->setTagTreeView(d->tagCheckView);
+    //, "ItemDescEditTabNewTagEdit",
+    //d->newTagEdit->setCaseSensitive(false);
+    d->newTagEdit->setPlaceholderText(i18n("Enter tag here."));
+    d->newTagEdit->setWhatsThis(i18n("Enter the text used to create tags here. "
+                                     "'/' can be used to create a hierarchy of tags. "
+                                     "',' can be used to create more than one hierarchy at the same time."));
+
+    DHBox* const tagsSearch = new DHBox(tagsArea);
+    tagsSearch->setSpacing(spacing);
+
+    d->tagsSearchBar        = new SearchTextBarDb(tagsSearch, QLatin1String("ItemDescEditTabTagsSearchBar"));
+
+    d->tagsSearchBar->setModel(d->tagCheckView->filteredModel(),
+                               AbstractAlbumModel::AlbumIdRole,
+                               AbstractAlbumModel::AlbumTitleRole);
+
+    d->tagsSearchBar->setFilterModel(d->tagCheckView->albumFilterModel());
+
+    d->assignedTagsBtn      = new QToolButton(tagsSearch);
+    d->assignedTagsBtn->setToolTip(i18n("Tags already assigned"));
+    d->assignedTagsBtn->setIcon(QIcon::fromTheme(QLatin1String("tag-assigned")));
+    d->assignedTagsBtn->setCheckable(true);
+
+    d->recentTagsBtn            = new QToolButton(tagsSearch);
+    QMenu* const recentTagsMenu = new QMenu(d->recentTagsBtn);
+    d->recentTagsBtn->setToolTip(i18n("Recent Tags"));
+    d->recentTagsBtn->setIcon(QIcon::fromTheme(QLatin1String("tag-recents")));
+    d->recentTagsBtn->setIconSize(QSize(16, 16));
+    d->recentTagsBtn->setMenu(recentTagsMenu);
+    d->recentTagsBtn->setPopupMode(QToolButton::InstantPopup);
+
+    grid3->addWidget(d->openTagMngr,  0, 0, 1, 2);
+    grid3->addWidget(d->newTagEdit,   1, 0, 1, 2);
+    grid3->addWidget(d->tagCheckView, 2, 0, 1, 2);
+    grid3->addWidget(tagsSearch,      3, 0, 1, 2);
+    grid3->setRowStretch(1, 10);
+
+    d->tabWidget->insertTab(Private::TAGS, sv3, i18n("Tags"));
+}
+
 void ItemDescEditTab::setFocusToTagsView()
 {
     d->lastSelectedWidget = qobject_cast<QWidget*>(d->tagCheckView);
