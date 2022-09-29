@@ -104,7 +104,6 @@ private Q_SLOTS:
     void slotApplyChangesToAllVersions();
     void slotRevertAllChanges();
     void slotChangingItems();
-    void slotOpenTagsManager();
     void slotCommentChanged();
     void slotTitleChanged();
     void slotDateTimeChanged(const QDateTime& dateTime);
@@ -154,6 +153,7 @@ private Q_SLOTS:
     void slotTagStateChanged(Album* album, Qt::CheckState checkState);
     void slotTaggingActionActivated(const TaggingAction&);
     void slotImageTagsChanged(qlonglong imageId);
+    void slotOpenTagsManager();
 
     void slotRecentTagsMenuActivated(int);
     void slotAssignedTagsToggled(bool);
