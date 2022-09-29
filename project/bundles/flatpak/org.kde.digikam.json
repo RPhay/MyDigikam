@@ -242,11 +242,13 @@
             "sources": [ { "type": "git", "url": "https://github.com/ImageMagick/ImageMagick.git", "tag": "7.0.10-34" } ]
         },
         {
-            "name": "x265",
-            "buildsystem": "cmake-ninja",
-            "builddir": true,
-            "subdir" : "source",
-            "sources": [ { "type": "git", "url": "https://github.com/videolan/x265.git", "tag": "3.4" } ]
+            "name": "de265",
+            "config-opts": [
+                "--disable-encoder",
+                "--disable-dec265",
+                "--disable-sherlock265"
+            ],
+            "sources": [ { "type": "git", "url": "https://github.com/strukturag/libde265.git" } ]
         },
         {
             "name": "x265",
