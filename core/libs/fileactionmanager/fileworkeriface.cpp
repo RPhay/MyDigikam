@@ -311,7 +311,7 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
         }
 
         CollectionScanner scanner;
-        scanner.scanFile(info, CollectionScanner::NormalScan);
+        scanner.scanFile(info, CollectionScanner::ModifiedScan);
 
         // Adjust Faces in the DB and Metadata.
 
