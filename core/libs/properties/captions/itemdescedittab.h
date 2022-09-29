@@ -77,8 +77,6 @@ private:
     void setInfos(const ItemInfoList& infos);
     void setFocusToLastSelectedWidget();
 
-    void updateTemplate();
-
     bool singleSelection() const;
     void setMetadataWidgetStatus(int status, QWidget* const widget);
     void metadataChange(qlonglong imageId);
@@ -91,7 +89,6 @@ private Q_SLOTS:
     void slotApplyChangesToAllVersions();
     void slotRevertAllChanges();
     void slotChangingItems();
-    void slotTemplateSelected();
     void slotModified();
     void slotReloadForMetadataChange();
 
@@ -177,6 +174,20 @@ private Q_SLOTS:
     void slotUnifyPartiallyTags();
 
     ///@}
+
+    ///@{
+    /// Information view methods (itemdescedittab_infoview.cpp)
+
+private:
+
+    void initInformationView();
+    void updateTemplate();
+
+    ///@}
+
+private Q_SLOTS:
+
+    void slotTemplateSelected();
 
 private:
 

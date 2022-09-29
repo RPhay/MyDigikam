@@ -64,6 +64,7 @@ set(libitempropertiesdigikam_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/captions/itemdescedittab_p.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/captions/itemdescedittab_tagsview.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/captions/itemdescedittab_descview.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/captions/itemdescedittab_infoview.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/captions/disjointmetadata.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/captions/disjointmetadata_p.cpp
 )

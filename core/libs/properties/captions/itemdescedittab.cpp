@@ -47,25 +47,7 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
 
     // Information Management View --------------------------------------
 
-    QScrollArea* const sv2    = new QScrollArea(d->tabWidget);
-    sv2->setFrameStyle(QFrame::NoFrame);
-    sv2->setWidgetResizable(true);
-
-    QWidget* const infoArea   = new QWidget(sv2->viewport());
-    QGridLayout* const grid2  = new QGridLayout(infoArea);
-    sv2->setWidget(infoArea);
-
-    d->templateSelector       = new TemplateSelector(infoArea);
-    d->templateViewer         = new TemplateViewer(infoArea);
-    d->templateViewer->setObjectName(QLatin1String("ItemDescEditTab Expander"));
-
-    grid2->addWidget(d->templateSelector, 0, 0, 1, 2);
-    grid2->addWidget(d->templateViewer,   1, 0, 1, 2);
-    grid2->setRowStretch(1, 10);
-    grid2->setContentsMargins(spacing, spacing, spacing, spacing);
-    grid2->setSpacing(spacing);
-
-    d->tabWidget->insertTab(Private::INFOS, sv2, i18n("Information"));
+    initInformationView();
 
     // --------------------------------------------------
 
@@ -649,14 +631,6 @@ bool ItemDescEditTab::eventFilter(QObject* o, QEvent* e)
     return DVBox::eventFilter(o, e);
 }
 
-void ItemDescEditTab::slotTemplateSelected()
-{
-    d->hub.setMetadataTemplate(d->templateSelector->getTemplate());
-    d->templateViewer->setTemplate(d->templateSelector->getTemplate());
-    setMetadataWidgetStatus(d->hub.templateStatus(), d->templateSelector);
-    slotModified();
-}
-
 void ItemDescEditTab::slotModified()
 {
     d->modified = true;
@@ -667,15 +641,6 @@ void ItemDescEditTab::slotModified()
     {
         d->applyToAllVersionsButton->setEnabled(true);
     }
-}
-
-void ItemDescEditTab::updateTemplate()
-{
-    d->templateSelector->blockSignals(true);
-    d->templateSelector->setTemplate(d->hub.metadataTemplate());
-    d->templateViewer->setTemplate(d->hub.metadataTemplate());
-    setMetadataWidgetStatus(d->hub.templateStatus(), d->templateSelector);
-    d->templateSelector->blockSignals(false);
 }
 
 void ItemDescEditTab::setMetadataWidgetStatus(int status, QWidget* const widget)
