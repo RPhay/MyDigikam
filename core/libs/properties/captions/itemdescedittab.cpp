@@ -39,36 +39,36 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
 
     // Captions/Date/Rating view -----------------------------------
 
-    QScrollArea* const sv          = new QScrollArea(d->tabWidget);
+    QScrollArea* const sv       = new QScrollArea(d->tabWidget);
     sv->setFrameStyle(QFrame::NoFrame);
     sv->setWidgetResizable(true);
 
-    QWidget* const captionTagsArea = new QWidget(sv->viewport());
-    QGridLayout* const grid1       = new QGridLayout(captionTagsArea);
-    sv->setWidget(captionTagsArea);
+    QWidget* const captionsArea = new QWidget(sv->viewport());
+    QGridLayout* const grid1    = new QGridLayout(captionsArea);
+    sv->setWidget(captionsArea);
 
-    d->titleEdit          = new AltLangStrEdit(captionTagsArea, 0);
+    d->titleEdit          = new AltLangStrEdit(captionsArea, 0);
     d->titleEdit->setTitle(i18nc("@title: comment title string", "Title:"));
     resetTitleEditPlaceholderText();
 
-    d->captionsEdit       = new CaptionEdit(captionTagsArea);
+    d->captionsEdit       = new CaptionEdit(captionsArea);
     resetCaptionEditPlaceholderText();
 
-    DHBox* const dateBox  = new DHBox(captionTagsArea);
+    DHBox* const dateBox  = new DHBox(captionsArea);
     new QLabel(i18n("Date:"), dateBox);
     d->dateTimeEdit       = new DDateTimeEdit(dateBox, QLatin1String("datepicker"));
 
-    DHBox* const pickBox  = new DHBox(captionTagsArea);
+    DHBox* const pickBox  = new DHBox(captionsArea);
     new QLabel(i18n("Pick Label:"), pickBox);
     d->pickLabelSelector  = new PickLabelSelector(pickBox);
     pickBox->layout()->setAlignment(d->pickLabelSelector, Qt::AlignVCenter | Qt::AlignRight);
 
-    DHBox* const colorBox = new DHBox(captionTagsArea);
+    DHBox* const colorBox = new DHBox(captionsArea);
     new QLabel(i18n("Color Label:"), colorBox);
     d->colorLabelSelector = new ColorLabelSelector(colorBox);
     colorBox->layout()->setAlignment(d->colorLabelSelector, Qt::AlignVCenter | Qt::AlignRight);
 
-    DHBox* const rateBox  = new DHBox(captionTagsArea);
+    DHBox* const rateBox  = new DHBox(captionsArea);
     new QLabel(i18n("Rating:"), rateBox);
     d->ratingWidget       = new RatingWidget(rateBox);
     rateBox->layout()->setAlignment(d->ratingWidget, Qt::AlignVCenter | Qt::AlignRight);
@@ -98,7 +98,7 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
     d->applyToAllVersionsButton->setToolTip(i18n("Apply all changes to all versions of this image"));
 
     d->moreButton               = new QPushButton(i18nc("@action: more actions to apply changes", "More"), buttonsBox);
-    d->moreMenu                 = new QMenu(captionTagsArea);
+    d->moreMenu                 = new QMenu(captionsArea);
     d->moreButton->setMenu(d->moreMenu);
 
     // --------------------------------------------------
