@@ -413,8 +413,6 @@ void DigikamApp::closeEvent(QCloseEvent* e)
         MetadataHubMngr::instance()->requestShutDown();
     }
 
-    setAttribute(Qt::WA_DeleteOnClose, true);
-
     DXmlGuiWindow::closeEvent(e);
 }
 
