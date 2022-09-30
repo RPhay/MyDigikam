@@ -29,16 +29,18 @@
 #include "digikam_export.h"
 #include "iteminfolist.h"
 #include "albummanager.h"
-#include "albummodel.h"
-#include "metadatahub.h"
 #include "searchtextbar.h"
-#include "addtagslineedit.h"
 #include "disjointmetadata.h"
+
+class KConfigGroup;
 
 namespace Digikam
 {
+
 class ItemInfo;
 class TaggingAction;
+class DisjointMetadata;
+class AddTagsLineEdit;
 
 class ItemDescEditTab : public DVBox
 {
@@ -176,12 +178,17 @@ private Q_SLOTS:
 
     ///@}
 
+    ///@{
+    /// Private container (itemdescedittab_p.cpp)
+
 private:
 
     class Private;
     Private* const d;
 
     friend class Private;
+
+    ///@}
 };
 
 } // namespace Digikam

@@ -74,6 +74,9 @@
 #include "searchtextbardb.h"
 #include "disjointmetadata.h"
 #include "altlangstredit.h"
+#include "albummodel.h"
+#include "metadatahub.h"
+#include "addtagslineedit.h"
 
 namespace Digikam
 {
