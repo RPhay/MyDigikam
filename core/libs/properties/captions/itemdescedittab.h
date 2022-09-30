@@ -70,19 +70,6 @@ protected:
 
     bool eventFilter(QObject* o, QEvent* e) override;
 
-private:
-
-    void reset();
-
-    void setInfos(const ItemInfoList& infos);
-    void setFocusToLastSelectedWidget();
-
-    bool singleSelection() const;
-    void setMetadataWidgetStatus(int status, QWidget* const widget);
-    void metadataChange(qlonglong imageId);
-    void resetMetadataChangeInfo();
-    void initProgressIndicator();
-
 private Q_SLOTS:
 
     void slotApplyAllChanges();
@@ -183,16 +170,18 @@ private:
     void initInformationView();
     void updateTemplate();
 
-    ///@}
-
 private Q_SLOTS:
 
     void slotTemplateSelected();
+
+    ///@}
 
 private:
 
     class Private;
     Private* const d;
+
+    friend class Private;
 };
 
 } // namespace Digikam

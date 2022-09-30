@@ -43,21 +43,21 @@ void ItemDescEditTab::initDescriptionView()
     resetCaptionEditPlaceholderText();
 
     DHBox* const dateBox  = new DHBox(captionsArea);
-    new QLabel(i18n("Date:"), dateBox);
+    new QLabel(i18nc("@label", "Date:"), dateBox);
     d->dateTimeEdit       = new DDateTimeEdit(dateBox, QLatin1String("datepicker"));
 
     DHBox* const pickBox  = new DHBox(captionsArea);
-    new QLabel(i18n("Pick Label:"), pickBox);
+    new QLabel(i18nc("@label", "Pick Label:"), pickBox);
     d->pickLabelSelector  = new PickLabelSelector(pickBox);
     pickBox->layout()->setAlignment(d->pickLabelSelector, Qt::AlignVCenter | Qt::AlignRight);
 
     DHBox* const colorBox = new DHBox(captionsArea);
-    new QLabel(i18n("Color Label:"), colorBox);
+    new QLabel(i18nc("@label", "Color Label:"), colorBox);
     d->colorLabelSelector = new ColorLabelSelector(colorBox);
     colorBox->layout()->setAlignment(d->colorLabelSelector, Qt::AlignVCenter | Qt::AlignRight);
 
     DHBox* const rateBox  = new DHBox(captionsArea);
-    new QLabel(i18n("Rating:"), rateBox);
+    new QLabel(i18nc("@label", "Rating:"), rateBox);
     d->ratingWidget       = new RatingWidget(rateBox);
     rateBox->layout()->setAlignment(d->ratingWidget, Qt::AlignVCenter | Qt::AlignRight);
 
@@ -66,10 +66,10 @@ void ItemDescEditTab::initDescriptionView()
     DHBox* const applyButtonBox = new DHBox(this);
     applyButtonBox->setSpacing(spacing);
 
-    d->applyBtn                 = new QPushButton(i18n("Apply"), applyButtonBox);
+    d->applyBtn                 = new QPushButton(i18nc("@action", "Apply"), applyButtonBox);
     d->applyBtn->setIcon(QIcon::fromTheme(QLatin1String("dialog-ok-apply")));
     d->applyBtn->setEnabled(false);
-    d->applyBtn->setToolTip(i18n("Apply all changes to images"));
+    d->applyBtn->setToolTip(i18nc("@info", "Apply all changes to images"));
     //buttonsBox->setStretchFactor(d->applyBtn, 10);
 
     DHBox* const buttonsBox     = new DHBox(this);
@@ -77,13 +77,13 @@ void ItemDescEditTab::initDescriptionView()
 
     d->revertBtn                = new QToolButton(buttonsBox);
     d->revertBtn->setIcon(QIcon::fromTheme(QLatin1String("document-revert")));
-    d->revertBtn->setToolTip(i18n("Revert all changes"));
+    d->revertBtn->setToolTip(i18nc("@info", "Revert all changes"));
     d->revertBtn->setEnabled(false);
 
-    d->applyToAllVersionsButton = new QPushButton(i18n("Apply to all versions"), buttonsBox);
+    d->applyToAllVersionsButton = new QPushButton(i18nc("@action", "Apply to all versions"), buttonsBox);
     d->applyToAllVersionsButton->setIcon(QIcon::fromTheme(QLatin1String("dialog-ok-apply")));
     d->applyToAllVersionsButton->setEnabled(false);
-    d->applyToAllVersionsButton->setToolTip(i18n("Apply all changes to all versions of this image"));
+    d->applyToAllVersionsButton->setToolTip(i18nc("@info", "Apply all changes to all versions of this image"));
 
     d->moreButton               = new QPushButton(i18nc("@action: more actions to apply changes", "More"), buttonsBox);
     d->moreMenu                 = new QMenu(captionsArea);
@@ -101,7 +101,7 @@ void ItemDescEditTab::initDescriptionView()
     grid1->setContentsMargins(spacing, spacing, spacing, spacing);
     grid1->setSpacing(spacing);
 
-    d->tabWidget->insertTab(Private::DESCRIPTIONS, sv, i18n("Description"));
+    d->tabWidget->insertTab(Private::DESCRIPTIONS, sv, i18nc("@title", "Description"));
 }
 
 void ItemDescEditTab::setFocusToTitlesEdit()
@@ -119,7 +119,7 @@ void ItemDescEditTab::setFocusToCommentsEdit()
 void ItemDescEditTab::slotCommentChanged()
 {
     d->hub.setComments(d->captionsEdit->values());
-    setMetadataWidgetStatus(d->hub.commentsStatus(), d->captionsEdit);
+    d->setMetadataWidgetStatus(d->hub.commentsStatus(), d->captionsEdit);
     slotModified();
 }
 
@@ -129,14 +129,14 @@ void ItemDescEditTab::slotTitleChanged()
 
     titles.fromAltLangMap(d->titleEdit->values());
     d->hub.setTitles(titles);
-    setMetadataWidgetStatus(d->hub.titlesStatus(), d->titleEdit);
+    d->setMetadataWidgetStatus(d->hub.titlesStatus(), d->titleEdit);
     slotModified();
 }
 
 void ItemDescEditTab::slotDateTimeChanged(const QDateTime& dateTime)
 {
     d->hub.setDateTime(dateTime);
-    setMetadataWidgetStatus(d->hub.dateTimeStatus(), d->dateTimeEdit);
+    d->setMetadataWidgetStatus(d->hub.dateTimeStatus(), d->dateTimeEdit);
     slotModified();
 }
 
@@ -189,12 +189,12 @@ void ItemDescEditTab::updateComments()
 {
     d->captionsEdit->blockSignals(true);
     d->captionsEdit->setValues(d->hub.comments());
-    setMetadataWidgetStatus(d->hub.commentsStatus(), d->captionsEdit);
+    d->setMetadataWidgetStatus(d->hub.commentsStatus(), d->captionsEdit);
     d->captionsEdit->blockSignals(false);
 
     d->titleEdit->blockSignals(true);
     d->titleEdit->setValues(d->hub.titles().toAltLangMap());
-    setMetadataWidgetStatus(d->hub.titlesStatus(), d->titleEdit);
+    d->setMetadataWidgetStatus(d->hub.titlesStatus(), d->titleEdit);
     d->titleEdit->blockSignals(false);
 }
 
@@ -250,33 +250,33 @@ void ItemDescEditTab::updateDate()
 {
     d->dateTimeEdit->blockSignals(true);
     d->dateTimeEdit->setDateTime(d->hub.dateTime());
-    setMetadataWidgetStatus(d->hub.dateTimeStatus(), d->dateTimeEdit);
+    d->setMetadataWidgetStatus(d->hub.dateTimeStatus(), d->dateTimeEdit);
     d->dateTimeEdit->blockSignals(false);
 }
 
 void ItemDescEditTab::slotImageRatingChanged(qlonglong imageId)
 {
-    metadataChange(imageId);
+    d->metadataChange(imageId);
 }
 
 void ItemDescEditTab::slotImageCaptionChanged(qlonglong imageId)
 {
-    metadataChange(imageId);
+    d->metadataChange(imageId);
 }
 
 void ItemDescEditTab::slotImageDateChanged(qlonglong imageId)
 {
-    metadataChange(imageId);
+    d->metadataChange(imageId);
 }
 
 void ItemDescEditTab::resetTitleEditPlaceholderText()
 {
-    d->titleEdit->setPlaceholderText(i18n("Enter title text here."));
+    d->titleEdit->setPlaceholderText(i18nc("@info", "Enter title text here."));
 }
 
 void ItemDescEditTab::resetCaptionEditPlaceholderText()
 {
-    d->captionsEdit->setPlaceholderText(i18n("Enter caption text here."));
+    d->captionsEdit->setPlaceholderText(i18nc("@info", "Enter caption text here."));
 }
 
 } // namespace Digikam

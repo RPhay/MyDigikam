@@ -90,7 +90,11 @@ public:
         INFOS
     };
 
-    explicit Private();
+public:
+
+    explicit Private(ItemDescEditTab* const tab);
+
+public:
 
     bool                 modified;
     bool                 ignoreItemAttributesWatch;
@@ -138,6 +142,21 @@ public:
 
     QTimer*              metadataChangeTimer;
     QList<int>           metadataChangeIds;
+
+public:
+
+    void reset();
+    void resetMetadataChangeInfo();
+    void setInfos(const ItemInfoList& infos);
+    void setFocusToLastSelectedWidget();
+    bool singleSelection() const;
+    void setMetadataWidgetStatus(int status, QWidget* const widget);
+    void metadataChange(qlonglong imageId);
+    void initProgressIndicator();
+
+private:
+
+    ItemDescEditTab* q = nullptr;
 };
 
 } // namespace Digikam

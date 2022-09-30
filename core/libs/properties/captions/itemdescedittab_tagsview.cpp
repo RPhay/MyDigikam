@@ -41,17 +41,16 @@ void ItemDescEditTab::initTagsView()
     d->tagCheckView = new TagCheckView(tagsArea, d->tagModel);
     d->tagCheckView->setCheckNewTags(true);
 
-    d->openTagMngr  = new QPushButton(i18n("Open Tag Manager"));
+    d->openTagMngr  = new QPushButton(i18nc("@action", "Open Tag Manager"));
 
     d->newTagEdit   = new AddTagsLineEdit(tagsArea);
     d->newTagEdit->setSupportingTagModel(d->tagModel);
-    d->newTagEdit->setTagTreeView(d->tagCheckView);
-    //, "ItemDescEditTabNewTagEdit",
+    d->newTagEdit->setTagTreeView(d->tagCheckView); //, "ItemDescEditTabNewTagEdit");
     //d->newTagEdit->setCaseSensitive(false);
-    d->newTagEdit->setPlaceholderText(i18n("Enter tag here."));
-    d->newTagEdit->setWhatsThis(i18n("Enter the text used to create tags here. "
-                                     "'/' can be used to create a hierarchy of tags. "
-                                     "',' can be used to create more than one hierarchy at the same time."));
+    d->newTagEdit->setPlaceholderText(i18nc("@info", "Enter tag here."));
+    d->newTagEdit->setWhatsThis(i18nc("@info", "Enter the text used to create tags here. "
+                                      "'/' can be used to create a hierarchy of tags. "
+                                      "',' can be used to create more than one hierarchy at the same time."));
 
     DHBox* const tagsSearch = new DHBox(tagsArea);
     tagsSearch->setSpacing(spacing);
@@ -65,13 +64,13 @@ void ItemDescEditTab::initTagsView()
     d->tagsSearchBar->setFilterModel(d->tagCheckView->albumFilterModel());
 
     d->assignedTagsBtn      = new QToolButton(tagsSearch);
-    d->assignedTagsBtn->setToolTip(i18n("Tags already assigned"));
+    d->assignedTagsBtn->setToolTip(i18nc("@info", "Tags already assigned"));
     d->assignedTagsBtn->setIcon(QIcon::fromTheme(QLatin1String("tag-assigned")));
     d->assignedTagsBtn->setCheckable(true);
 
     d->recentTagsBtn            = new QToolButton(tagsSearch);
     QMenu* const recentTagsMenu = new QMenu(d->recentTagsBtn);
-    d->recentTagsBtn->setToolTip(i18n("Recent Tags"));
+    d->recentTagsBtn->setToolTip(i18nc("@info", "Recent Tags"));
     d->recentTagsBtn->setIcon(QIcon::fromTheme(QLatin1String("tag-recents")));
     d->recentTagsBtn->setIconSize(QSize(16, 16));
     d->recentTagsBtn->setMenu(recentTagsMenu);
@@ -83,7 +82,7 @@ void ItemDescEditTab::initTagsView()
     grid3->addWidget(tagsSearch,      3, 0, 1, 2);
     grid3->setRowStretch(1, 10);
 
-    d->tabWidget->insertTab(Private::TAGS, sv3, i18n("Tags"));
+    d->tabWidget->insertTab(Private::TAGS, sv3, i18nc("@title", "Tags"));
 }
 
 void ItemDescEditTab::setFocusToTagsView()
@@ -134,12 +133,16 @@ void ItemDescEditTab::slotTagStateChanged(Album* album, Qt::CheckState checkStat
     switch (checkState)
     {
         case Qt::Checked:
+        {
             d->hub.setTag(tag->id());
             break;
+        }
 
         default:
+        {
             d->hub.setTag(tag->id(), DisjointMetadataDataFields::MetadataInvalid);
             break;
+        }
     }
 
     slotModified();
@@ -149,7 +152,7 @@ void ItemDescEditTab::slotTaggingActionActivated(const TaggingAction& action)
 {
     TAlbum* assigned = nullptr;
 
-    if (action.shallAssignTag())
+    if      (action.shallAssignTag())
     {
         assigned = AlbumManager::instance()->findTAlbum(action.tagId());
 
@@ -189,7 +192,7 @@ void ItemDescEditTab::setTagState(TAlbum* const tag, DisjointMetadataDataFields:
             d->tagModel->setCheckState(tag, Qt::PartiallyChecked);
             break;
         }
-    
+
         case DisjointMetadataDataFields::MetadataAvailable:
         {
             d->tagModel->setChecked(tag, true);
@@ -257,7 +260,7 @@ void ItemDescEditTab::slotOpenTagsManager()
 
 void ItemDescEditTab::slotImageTagsChanged(qlonglong imageId)
 {
-    metadataChange(imageId);
+    d->metadataChange(imageId);
 }
 
 void ItemDescEditTab::updateRecentTags()
@@ -275,7 +278,7 @@ void ItemDescEditTab::updateRecentTags()
 
     if (recentTags.isEmpty())
     {
-        QAction* const noTagsAction = menu->addAction(i18n("No Recently Assigned Tags"));
+        QAction* const noTagsAction = menu->addAction(i18nc("@action", "No Recently Assigned Tags"));
         noTagsAction->setEnabled(false);
     }
     else
