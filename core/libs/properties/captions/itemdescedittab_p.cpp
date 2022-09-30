@@ -54,6 +54,87 @@ ItemDescEditTab::Private::Private(ItemDescEditTab* const tab)
 {
 }
 
+void ItemDescEditTab::Private::setupConnections()
+{
+    QObject::connect(openTagMngr, SIGNAL(clicked()),
+                     q, SLOT(slotOpenTagsManager()));
+
+    QObject::connect(tagCheckView->checkableModel(), SIGNAL(checkStateChanged(Album*,Qt::CheckState)),
+                     q, SLOT(slotTagStateChanged(Album*,Qt::CheckState)));
+
+    QObject::connect(titleEdit, SIGNAL(signalModified(QString,QString)),
+                     q, SLOT(slotTitleChanged()));
+
+    QObject::connect(titleEdit, SIGNAL(signalValueAdded(QString,QString)),
+                     q, SLOT(slotTitleChanged()));
+
+    QObject::connect(titleEdit, SIGNAL(signalValueDeleted(QString)),
+                     q, SLOT(slotTitleChanged()));
+
+    QObject::connect(captionsEdit, SIGNAL(signalModified()),
+                     q, SLOT(slotCommentChanged()));
+
+    QObject::connect(dateTimeEdit, SIGNAL(dateTimeChanged(QDateTime)),
+                     q, SLOT(slotDateTimeChanged(QDateTime)));
+
+    QObject::connect(pickLabelSelector, SIGNAL(signalPickLabelChanged(int)),
+                     q, SLOT(slotPickLabelChanged(int)));
+
+    QObject::connect(colorLabelSelector, SIGNAL(signalColorLabelChanged(int)),
+                     q, SLOT(slotColorLabelChanged(int)));
+
+    QObject::connect(ratingWidget, SIGNAL(signalRatingChanged(int)),
+                     q, SLOT(slotRatingChanged(int)));
+
+    QObject::connect(templateSelector, SIGNAL(signalTemplateSelected()),
+                     q, SLOT(slotTemplateSelected()));
+
+    QObject::connect(tagsSearchBar, SIGNAL(signalSearchTextSettings(SearchTextSettings)),
+                     q, SLOT(slotTagsSearchChanged(SearchTextSettings)));
+
+    QObject::connect(assignedTagsBtn, SIGNAL(toggled(bool)),
+                     q, SLOT(slotAssignedTagsToggled(bool)));
+
+    QObject::connect(newTagEdit, SIGNAL(taggingActionActivated(TaggingAction)),
+                     q, SLOT(slotTaggingActionActivated(TaggingAction)));
+
+    QObject::connect(applyBtn, SIGNAL(clicked()),
+                     q, SLOT(slotApplyAllChanges()));
+
+    QObject::connect(applyToAllVersionsButton, SIGNAL(clicked()),
+                     q, SLOT(slotApplyChangesToAllVersions()));
+
+    QObject::connect(revertBtn, SIGNAL(clicked()),
+                     q, SLOT(slotRevertAllChanges()));
+
+    QObject::connect(moreMenu, SIGNAL(aboutToShow()),
+                     q, SLOT(slotMoreMenu()));
+
+    QObject::connect(metadataChangeTimer, SIGNAL(timeout()),
+                     q, SLOT(slotReloadForMetadataChange()));
+
+    QObject::connect(q, SIGNAL(signalAskToApplyChanges(QList<ItemInfo>,DisjointMetadata*)),
+                     q, SLOT(slotAskToApplyChanges(QList<ItemInfo>,DisjointMetadata*)),
+                     Qt::QueuedConnection);
+
+    ItemAttributesWatch* const watch = ItemAttributesWatch::instance();
+
+    QObject::connect(watch, SIGNAL(signalImageTagsChanged(qlonglong)),
+                     q, SLOT(slotImageTagsChanged(qlonglong)));
+
+    QObject::connect(watch, SIGNAL(signalImagesChanged(int)),
+                     q, SLOT(slotImagesChanged(int)));
+
+    QObject::connect(watch, SIGNAL(signalImageRatingChanged(qlonglong)),
+                     q, SLOT(slotImageRatingChanged(qlonglong)));
+
+    QObject::connect(watch, SIGNAL(signalImageDateChanged(qlonglong)),
+                     q, SLOT(slotImageDateChanged(qlonglong)));
+
+    QObject::connect(watch, SIGNAL(signalImageCaptionChanged(qlonglong)),
+                     q, SLOT(slotImageCaptionChanged(qlonglong)));
+}
+
 void ItemDescEditTab::Private::reset()
 {
     modified = false;

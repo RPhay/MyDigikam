@@ -145,6 +145,7 @@ public:
 
 public:
 
+    void setupConnections();
     void reset();
     void resetMetadataChangeInfo();
     void setInfos(const ItemInfoList& infos);

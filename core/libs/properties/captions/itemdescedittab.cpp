@@ -45,74 +45,11 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
 
     initTagsView();
 
-    // Information Management View --------------------------------------
+    // Information Management View ---------------------------------
 
     initInformationView();
 
-    // --------------------------------------------------
-
-    connect(d->openTagMngr, SIGNAL(clicked()),
-            this, SLOT(slotOpenTagsManager()));
-
-    connect(d->tagCheckView->checkableModel(), SIGNAL(checkStateChanged(Album*,Qt::CheckState)),
-            this, SLOT(slotTagStateChanged(Album*,Qt::CheckState)));
-
-    connect(d->titleEdit, SIGNAL(signalModified(QString,QString)),
-            this, SLOT(slotTitleChanged()));
-
-    connect(d->titleEdit, SIGNAL(signalValueAdded(QString,QString)),
-            this, SLOT(slotTitleChanged()));
-
-    connect(d->titleEdit, SIGNAL(signalValueDeleted(QString)),
-            this, SLOT(slotTitleChanged()));
-
-    connect(d->captionsEdit, SIGNAL(signalModified()),
-            this, SLOT(slotCommentChanged()));
-
-    connect(d->dateTimeEdit, SIGNAL(dateTimeChanged(QDateTime)),
-            this, SLOT(slotDateTimeChanged(QDateTime)));
-
-    connect(d->pickLabelSelector, SIGNAL(signalPickLabelChanged(int)),
-            this, SLOT(slotPickLabelChanged(int)));
-
-    connect(d->colorLabelSelector, SIGNAL(signalColorLabelChanged(int)),
-            this, SLOT(slotColorLabelChanged(int)));
-
-    connect(d->ratingWidget, SIGNAL(signalRatingChanged(int)),
-            this, SLOT(slotRatingChanged(int)));
-
-    connect(d->templateSelector, SIGNAL(signalTemplateSelected()),
-            this, SLOT(slotTemplateSelected()));
-
-    connect(d->tagsSearchBar, SIGNAL(signalSearchTextSettings(SearchTextSettings)),
-            this, SLOT(slotTagsSearchChanged(SearchTextSettings)));
-
-    connect(d->assignedTagsBtn, SIGNAL(toggled(bool)),
-            this, SLOT(slotAssignedTagsToggled(bool)));
-
-    connect(d->newTagEdit, SIGNAL(taggingActionActivated(TaggingAction)),
-            this, SLOT(slotTaggingActionActivated(TaggingAction)));
-
-    connect(d->applyBtn, SIGNAL(clicked()),
-            this, SLOT(slotApplyAllChanges()));
-
-    connect(d->applyToAllVersionsButton, SIGNAL(clicked()),
-            this, SLOT(slotApplyChangesToAllVersions()));
-
-    connect(d->revertBtn, SIGNAL(clicked()),
-            this, SLOT(slotRevertAllChanges()));
-
-    connect(d->moreMenu, SIGNAL(aboutToShow()),
-            this, SLOT(slotMoreMenu()));
-
-    connect(d->metadataChangeTimer, SIGNAL(timeout()),
-            this, SLOT(slotReloadForMetadataChange()));
-
-    connect(this, SIGNAL(signalAskToApplyChanges(QList<ItemInfo>,DisjointMetadata*)),
-            this, SLOT(slotAskToApplyChanges(QList<ItemInfo>,DisjointMetadata*)),
-            Qt::QueuedConnection);
-
-    // Initialize ---------------------------------------------
+    // Initialize --------------------------------------------------
 
     d->titleEdit->textEdit()->installEventFilter(this);
     d->captionsEdit->altLangStrEdit()->textEdit()->installEventFilter(this);
@@ -128,24 +65,9 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
     d->newTagEdit->installEventFilter(this);
     updateRecentTags();
 
-    // Connect to attribute watch ------------------------------
+    // Setup signals/slots connctions -------------------------------
 
-    ItemAttributesWatch* const watch = ItemAttributesWatch::instance();
-
-    connect(watch, SIGNAL(signalImageTagsChanged(qlonglong)),
-            this, SLOT(slotImageTagsChanged(qlonglong)));
-
-    connect(watch, SIGNAL(signalImagesChanged(int)),
-            this, SLOT(slotImagesChanged(int)));
-
-    connect(watch, SIGNAL(signalImageRatingChanged(qlonglong)),
-            this, SLOT(slotImageRatingChanged(qlonglong)));
-
-    connect(watch, SIGNAL(signalImageDateChanged(qlonglong)),
-            this, SLOT(slotImageDateChanged(qlonglong)));
-
-    connect(watch, SIGNAL(signalImageCaptionChanged(qlonglong)),
-            this, SLOT(slotImageCaptionChanged(qlonglong)));
+    d->setupConnections();
 }
 
 ItemDescEditTab::~ItemDescEditTab()
@@ -179,6 +101,95 @@ void ItemDescEditTab::writeSettings(KConfigGroup& group)
 
     d->tagCheckView->saveState();
     d->tagsSearchBar->saveState();
+}
+
+void ItemDescEditTab::setItem(const ItemInfo& info)
+{
+    slotChangingItems();
+    ItemInfoList list;
+
+    if (!info.isNull())
+    {
+        list << info;
+    }
+
+    d->setInfos(list);
+}
+
+void ItemDescEditTab::setItems(const ItemInfoList& infos)
+{
+    slotChangingItems();
+    d->setInfos(infos);
+}
+
+bool ItemDescEditTab::eventFilter(QObject* o, QEvent* e)
+{
+    if (e->type() == QEvent::KeyPress)
+    {
+        QKeyEvent* const k = static_cast<QKeyEvent*>(e);
+
+        if ((k->key() == Qt::Key_Enter) || (k->key() == Qt::Key_Return))
+        {
+            if      (k->modifiers() == Qt::ControlModifier)
+            {
+                d->lastSelectedWidget = qobject_cast<QWidget*>(o);
+
+                Q_EMIT signalNextItem();
+
+                return true;
+            }
+            else if (k->modifiers() == Qt::ShiftModifier)
+            {
+                d->lastSelectedWidget = qobject_cast<QWidget*>(o);
+
+                Q_EMIT signalPrevItem();
+
+                return true;
+            }
+        }
+
+        if (k->key() == Qt::Key_PageUp)
+        {
+            d->lastSelectedWidget = qobject_cast<QWidget*>(o);
+
+            Q_EMIT signalPrevItem();
+
+            return true;
+        }
+
+        if (k->key() == Qt::Key_PageDown)
+        {
+            d->lastSelectedWidget = qobject_cast<QWidget*>(o);
+
+            Q_EMIT signalNextItem();
+
+            return true;
+        }
+
+        if ((d->newTagEdit == o) &&
+            !d->newTagEdit->completer()->popup()->isVisible())
+        {
+            if (k->key() == Qt::Key_Up)
+            {
+                d->lastSelectedWidget = qobject_cast<QWidget*>(o);
+
+                Q_EMIT signalPrevItem();
+
+                return true;
+            }
+
+            if (k->key() == Qt::Key_Down)
+            {
+                d->lastSelectedWidget = qobject_cast<QWidget*>(o);
+
+                Q_EMIT signalNextItem();
+
+                return true;
+            }
+        }
+    }
+
+    return DVBox::eventFilter(o, e);
 }
 
 void ItemDescEditTab::slotChangingItems()
@@ -414,24 +425,6 @@ void ItemDescEditTab::slotRevertAllChanges()
     d->setInfos(d->currInfos);
 }
 
-void ItemDescEditTab::setItem(const ItemInfo& info)
-{
-    slotChangingItems();
-    ItemInfoList list;
-
-    if (!info.isNull())
-    {
-        list << info;
-    }
-
-    d->setInfos(list);
-}
-
-void ItemDescEditTab::setItems(const ItemInfoList& infos)
-{
-    slotChangingItems();
-    d->setInfos(infos);
-}
 
 void ItemDescEditTab::slotReadFromFileMetadataToDatabase()
 {
@@ -491,76 +484,6 @@ void ItemDescEditTab::slotWriteToFileMetadataFromDatabase()
     }
 
     Q_EMIT signalProgressFinished();
-}
-
-bool ItemDescEditTab::eventFilter(QObject* o, QEvent* e)
-{
-    if (e->type() == QEvent::KeyPress)
-    {
-        QKeyEvent* const k = static_cast<QKeyEvent*>(e);
-
-        if ((k->key() == Qt::Key_Enter) || (k->key() == Qt::Key_Return))
-        {
-            if      (k->modifiers() == Qt::ControlModifier)
-            {
-                d->lastSelectedWidget = qobject_cast<QWidget*>(o);
-
-                Q_EMIT signalNextItem();
-
-                return true;
-            }
-            else if (k->modifiers() == Qt::ShiftModifier)
-            {
-                d->lastSelectedWidget = qobject_cast<QWidget*>(o);
-
-                Q_EMIT signalPrevItem();
-
-                return true;
-            }
-        }
-
-        if (k->key() == Qt::Key_PageUp)
-        {
-            d->lastSelectedWidget = qobject_cast<QWidget*>(o);
-
-            Q_EMIT signalPrevItem();
-
-            return true;
-        }
-
-        if (k->key() == Qt::Key_PageDown)
-        {
-            d->lastSelectedWidget = qobject_cast<QWidget*>(o);
-
-            Q_EMIT signalNextItem();
-
-            return true;
-        }
-
-        if ((d->newTagEdit == o) &&
-            !d->newTagEdit->completer()->popup()->isVisible())
-        {
-            if (k->key() == Qt::Key_Up)
-            {
-                d->lastSelectedWidget = qobject_cast<QWidget*>(o);
-
-                Q_EMIT signalPrevItem();
-
-                return true;
-            }
-
-            if (k->key() == Qt::Key_Down)
-            {
-                d->lastSelectedWidget = qobject_cast<QWidget*>(o);
-
-                Q_EMIT signalNextItem();
-
-                return true;
-            }
-        }
-    }
-
-    return DVBox::eventFilter(o, e);
 }
 
 void ItemDescEditTab::slotModified()
