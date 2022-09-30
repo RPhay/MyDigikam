@@ -25,6 +25,7 @@
 #include <QFile>
 #include <QList>
 #include <QTimer>
+#include <QMutex>
 #include <QFileInfo>
 #include <QByteArray>
 #include <QApplication>

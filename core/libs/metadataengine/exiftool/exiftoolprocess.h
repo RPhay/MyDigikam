@@ -23,7 +23,6 @@
 #include <QProcess>
 #include <QPointer>
 #include <QString>
-#include <QMutex>
 
 // Local includes
 
@@ -100,7 +99,7 @@ public:
      */
     enum ResultState
     {
-        COMMAND_RESULT = 0,
+        COMMAND_RESULT      = 0,
         FINISH_RESULT,
         ERROR_RESULT,
         EXIT_RESULT
