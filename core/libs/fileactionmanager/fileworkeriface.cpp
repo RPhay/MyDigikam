@@ -30,7 +30,6 @@
 #include "metaenginesettings.h"
 #include "itemattributeswatch.h"
 #include "iteminfotasksplitter.h"
-#include "collectionscanner.h"
 #include "filereadwritelock.h"
 #include "scancontroller.h"
 #include "faceutils.h"
@@ -310,8 +309,7 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
             }
         }
 
-        CollectionScanner scanner;
-        scanner.scanFile(info, CollectionScanner::NormalScan);
+        ScanController::instance()->scannedInfo(filePath);
 
         // Adjust Faces in the DB and Metadata.
 
