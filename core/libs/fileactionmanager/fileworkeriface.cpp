@@ -309,7 +309,7 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
             }
         }
 
-        ScanController::instance()->scannedInfo(filePath);
+        ScanController::instance()->scannedInfo(filePath, CollectionScanner::ModifiedScan);
 
         // Adjust Faces in the DB and Metadata.
 

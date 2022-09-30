@@ -28,6 +28,7 @@
 #include "digikam_export.h"
 #include "collectionscannerobserver.h"
 #include "collectionscannerhints.h"
+#include "collectionscanner.h"
 #include "iteminfo.h"
 #include "loadingcache.h"
 #include "coredbchangesets.h"
@@ -95,7 +96,8 @@ public:
      * If necessary (modified or newly created, scans the file directly
      * Returns the up-to-date ItemInfo.
      */
-    ItemInfo scannedInfo(const QString& filePath);
+    ItemInfo scannedInfo(const QString& filePath,
+                         CollectionScanner::FileScanMode mode = CollectionScanner::NormalScan);
 
     /**
      * Returns item ids from new detected items
