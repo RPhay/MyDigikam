@@ -24,9 +24,6 @@ namespace Digikam
 
 void ItemDescEditTab::initInformationView()
 {
-    const int spacing         = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                     QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
-
     QScrollArea* const sv2    = new QScrollArea(d->tabWidget);
     sv2->setFrameStyle(QFrame::NoFrame);
     sv2->setWidgetResizable(true);
@@ -42,8 +39,8 @@ void ItemDescEditTab::initInformationView()
     grid2->addWidget(d->templateSelector, 0, 0, 1, 2);
     grid2->addWidget(d->templateViewer,   1, 0, 1, 2);
     grid2->setRowStretch(1, 10);
-    grid2->setContentsMargins(spacing, spacing, spacing, spacing);
-    grid2->setSpacing(spacing);
+    grid2->setContentsMargins(d->spacing, d->spacing, d->spacing, d->spacing);
+    grid2->setSpacing(d->spacing);
 
     d->tabWidget->insertTab(Private::INFOS, sv2, i18nc("@title", "Information"));
 }

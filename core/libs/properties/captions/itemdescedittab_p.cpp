@@ -52,6 +52,8 @@ ItemDescEditTab::Private::Private(ItemDescEditTab* const tab)
       metadataChangeTimer         (nullptr),
       q                           (tab)
 {
+    spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
+                   QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 }
 
 void ItemDescEditTab::Private::setupConnections()
@@ -133,6 +135,22 @@ void ItemDescEditTab::Private::setupConnections()
 
     QObject::connect(watch, SIGNAL(signalImageCaptionChanged(qlonglong)),
                      q, SLOT(slotImageCaptionChanged(qlonglong)));
+}
+
+void ItemDescEditTab::Private::setupEventFilters()
+{
+    titleEdit->textEdit()->installEventFilter(q);
+    captionsEdit->altLangStrEdit()->textEdit()->installEventFilter(q);
+
+    dateTimeEdit->installEventFilter(q);
+    pickLabelSelector->installEventFilter(q);
+    colorLabelSelector->installEventFilter(q);
+    ratingWidget->installEventFilter(q);
+
+    // TODO update, what does this filter?
+
+    tagCheckView->installEventFilter(q);
+    newTagEdit->installEventFilter(q);
 }
 
 void ItemDescEditTab::Private::reset()

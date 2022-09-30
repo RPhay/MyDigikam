@@ -26,11 +26,8 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
     : DVBox(parent),
       d    (new Private(this))
 {
-    const int spacing      = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                  QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
-
     setContentsMargins(QMargins());
-    setSpacing(spacing);
+    setSpacing(d->spacing);
     d->tabWidget           = new QTabWidget(this);
 
     d->metadataChangeTimer = new QTimer(this);
@@ -51,18 +48,8 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
 
     // Initialize --------------------------------------------------
 
-    d->titleEdit->textEdit()->installEventFilter(this);
-    d->captionsEdit->altLangStrEdit()->textEdit()->installEventFilter(this);
+    d->setupEventFilters();
 
-    d->dateTimeEdit->installEventFilter(this);
-    d->pickLabelSelector->installEventFilter(this);
-    d->colorLabelSelector->installEventFilter(this);
-    d->ratingWidget->installEventFilter(this);
-
-    // TODO update, what does this filter?
-
-    d->tagCheckView->installEventFilter(this);
-    d->newTagEdit->installEventFilter(this);
     updateRecentTags();
 
     // Setup signals/slots connctions -------------------------------

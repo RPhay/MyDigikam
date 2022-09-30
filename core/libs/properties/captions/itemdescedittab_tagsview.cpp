@@ -24,9 +24,6 @@ namespace Digikam
 
 void ItemDescEditTab::initTagsView()
 {
-    const int spacing         = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                     QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
-
     QScrollArea* const sv3    = new QScrollArea(d->tabWidget);
     sv3->setFrameStyle(QFrame::NoFrame);
     sv3->setWidgetResizable(true);
@@ -53,7 +50,7 @@ void ItemDescEditTab::initTagsView()
                                       "',' can be used to create more than one hierarchy at the same time."));
 
     DHBox* const tagsSearch = new DHBox(tagsArea);
-    tagsSearch->setSpacing(spacing);
+    tagsSearch->setSpacing(d->spacing);
 
     d->tagsSearchBar        = new SearchTextBarDb(tagsSearch, QLatin1String("ItemDescEditTabTagsSearchBar"));
 

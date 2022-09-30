@@ -146,17 +146,22 @@ public:
     QTimer*              metadataChangeTimer;
     QList<int>           metadataChangeIds;
 
+    int                  spacing;
+
 public:
 
     void setupConnections();
+    void setupEventFilters();
+    void initProgressIndicator();
+
     void reset();
     void resetMetadataChangeInfo();
+
     void setInfos(const ItemInfoList& infos);
     void setFocusToLastSelectedWidget();
-    bool singleSelection() const;
     void setMetadataWidgetStatus(int status, QWidget* const widget);
     void metadataChange(qlonglong imageId);
-    void initProgressIndicator();
+    bool singleSelection() const;
 
 private:
 

@@ -24,9 +24,6 @@ namespace Digikam
 
 void ItemDescEditTab::initDescriptionView()
 {
-    const int spacing           = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                                       QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
-
     QScrollArea* const sv       = new QScrollArea(d->tabWidget);
     sv->setFrameStyle(QFrame::NoFrame);
     sv->setWidgetResizable(true);
@@ -64,7 +61,7 @@ void ItemDescEditTab::initDescriptionView()
     // Buttons -----------------------------------------
 
     DHBox* const applyButtonBox = new DHBox(this);
-    applyButtonBox->setSpacing(spacing);
+    applyButtonBox->setSpacing(d->spacing);
 
     d->applyBtn                 = new QPushButton(i18nc("@action", "Apply"), applyButtonBox);
     d->applyBtn->setIcon(QIcon::fromTheme(QLatin1String("dialog-ok-apply")));
@@ -73,7 +70,7 @@ void ItemDescEditTab::initDescriptionView()
     //buttonsBox->setStretchFactor(d->applyBtn, 10);
 
     DHBox* const buttonsBox     = new DHBox(this);
-    buttonsBox->setSpacing(spacing);
+    buttonsBox->setSpacing(d->spacing);
 
     d->revertBtn                = new QToolButton(buttonsBox);
     d->revertBtn->setIcon(QIcon::fromTheme(QLatin1String("document-revert")));
@@ -98,8 +95,8 @@ void ItemDescEditTab::initDescriptionView()
     grid1->addWidget(colorBox,        4, 0, 1, 2);
     grid1->addWidget(rateBox,         5, 0, 1, 2);
     grid1->setRowStretch(1, 10);
-    grid1->setContentsMargins(spacing, spacing, spacing, spacing);
-    grid1->setSpacing(spacing);
+    grid1->setContentsMargins(d->spacing, d->spacing, d->spacing, d->spacing);
+    grid1->setSpacing(d->spacing);
 
     d->tabWidget->insertTab(Private::DESCRIPTIONS, sv, i18nc("@title", "Description"));
 }
