@@ -306,7 +306,7 @@ void FileActionMngrDatabaseWorker::setExifOrientation(const FileActionItemInfoLi
             // Adjust Faces
 
             FaceUtils().rotateFaces(info.id(), info.dimensions(),
-                                    orientation, info.orientation());
+                                    info.orientation(), orientation);
 
             info.setOrientation(orientation);
         }

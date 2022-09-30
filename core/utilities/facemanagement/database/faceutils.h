@@ -118,8 +118,8 @@ public:
      */
     QSize                rotateFaces(qlonglong imageId,
                                      const QSize& size,
-                                     int newOrientation,
-                                     int oldOrientation);
+                                     int oldOrientation,
+                                     int newOrientation);
 
     /**
      * For display, it may be desirable to display a slightly larger region than the strict

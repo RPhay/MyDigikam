@@ -314,7 +314,7 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
         // Adjust Faces in the DB and Metadata.
 
         FaceUtils().rotateFaces(info.id(), originalSize,
-                                finalOrientation, currentOrientation);
+                                currentOrientation, finalOrientation);
 
         if (!failedItems.contains(info.name()))
         {

@@ -386,8 +386,8 @@ void FaceUtils::removeNormalTags(qlonglong imageId, const QList<int>& tagIds)
 
 QSize FaceUtils::rotateFaces(qlonglong imageId,
                              const QSize& size,
-                             int newOrientation,
-                             int oldOrientation)
+                             int oldOrientation,
+                             int newOrientation)
 {
     /**
      *  Get all faces from database and rotate them
