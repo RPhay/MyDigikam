@@ -80,6 +80,26 @@ void ItemDescEditTab::initTagsView()
     grid3->setRowStretch(1, 10);
 
     d->tabWidget->insertTab(Private::TAGS, sv3, i18nc("@title", "Tags"));
+
+    // ---
+
+    connect(d->openTagMngr, SIGNAL(clicked()),
+            this, SLOT(slotOpenTagsManager()));
+
+    connect(d->tagCheckView->checkableModel(), SIGNAL(checkStateChanged(Album*,Qt::CheckState)),
+            this, SLOT(slotTagStateChanged(Album*,Qt::CheckState)));
+
+    connect(d->tagsSearchBar, SIGNAL(signalSearchTextSettings(SearchTextSettings)),
+            this, SLOT(slotTagsSearchChanged(SearchTextSettings)));
+
+    connect(d->assignedTagsBtn, SIGNAL(toggled(bool)),
+            this, SLOT(slotAssignedTagsToggled(bool)));
+
+    connect(d->newTagEdit, SIGNAL(taggingActionActivated(TaggingAction)),
+            this, SLOT(slotTaggingActionActivated(TaggingAction)));
+
+    connect(ItemAttributesWatch::instance(), SIGNAL(signalImageTagsChanged(qlonglong)),
+            this, SLOT(slotImageTagsChanged(qlonglong)));
 }
 
 void ItemDescEditTab::setFocusToTagsView()

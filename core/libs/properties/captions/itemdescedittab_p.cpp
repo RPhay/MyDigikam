@@ -58,12 +58,6 @@ ItemDescEditTab::Private::Private(ItemDescEditTab* const tab)
 
 void ItemDescEditTab::Private::setupConnections()
 {
-    QObject::connect(openTagMngr, SIGNAL(clicked()),
-                     q, SLOT(slotOpenTagsManager()));
-
-    QObject::connect(tagCheckView->checkableModel(), SIGNAL(checkStateChanged(Album*,Qt::CheckState)),
-                     q, SLOT(slotTagStateChanged(Album*,Qt::CheckState)));
-
     QObject::connect(titleEdit, SIGNAL(signalModified(QString,QString)),
                      q, SLOT(slotTitleChanged()));
 
@@ -91,15 +85,6 @@ void ItemDescEditTab::Private::setupConnections()
     QObject::connect(templateSelector, SIGNAL(signalTemplateSelected()),
                      q, SLOT(slotTemplateSelected()));
 
-    QObject::connect(tagsSearchBar, SIGNAL(signalSearchTextSettings(SearchTextSettings)),
-                     q, SLOT(slotTagsSearchChanged(SearchTextSettings)));
-
-    QObject::connect(assignedTagsBtn, SIGNAL(toggled(bool)),
-                     q, SLOT(slotAssignedTagsToggled(bool)));
-
-    QObject::connect(newTagEdit, SIGNAL(taggingActionActivated(TaggingAction)),
-                     q, SLOT(slotTaggingActionActivated(TaggingAction)));
-
     QObject::connect(applyBtn, SIGNAL(clicked()),
                      q, SLOT(slotApplyAllChanges()));
 
@@ -120,9 +105,6 @@ void ItemDescEditTab::Private::setupConnections()
                      Qt::QueuedConnection);
 
     ItemAttributesWatch* const watch = ItemAttributesWatch::instance();
-
-    QObject::connect(watch, SIGNAL(signalImageTagsChanged(qlonglong)),
-                     q, SLOT(slotImageTagsChanged(qlonglong)));
 
     QObject::connect(watch, SIGNAL(signalImagesChanged(int)),
                      q, SLOT(slotImagesChanged(int)));
