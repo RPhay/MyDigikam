@@ -361,11 +361,11 @@ void ItemDescEditTab::slotTagsSearchChanged(const SearchTextSettings& settings)
 
     // if we filter, we should reset the assignedTagsBtn again.
 
-    if (d->assignedTagsBtn->isChecked() && !d->togglingSearchSettings)
+    if (d->assignedTagsBtn->isChecked() && !d->togglingTagsSearchSettings)
     {
-        d->togglingSearchSettings = true;
+        d->togglingTagsSearchSettings = true;
         d->assignedTagsBtn->setChecked(false);
-        d->togglingSearchSettings = false;
+        d->togglingTagsSearchSettings = false;
     }
 }
 
@@ -380,11 +380,11 @@ void ItemDescEditTab::slotAssignedTagsToggled(bool t)
     {
         // if we filter by assigned, we should initially clear the normal search.
 
-        if (!d->togglingSearchSettings)
+        if (!d->togglingTagsSearchSettings)
         {
-            d->togglingSearchSettings = true;
+            d->togglingTagsSearchSettings = true;
             d->tagsSearchBar->clear();
-            d->togglingSearchSettings = false;
+            d->togglingTagsSearchSettings = false;
         }
 
         // Only after above change, do this.

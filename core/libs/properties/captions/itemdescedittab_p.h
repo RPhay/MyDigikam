@@ -101,13 +101,8 @@ public:
 
     bool                 modified;
     bool                 ignoreItemAttributesWatch;
-    bool                 ignoreTagChanges;
-    bool                 togglingSearchSettings;
 
-    QToolButton*         recentTagsBtn;
-    QToolButton*         assignedTagsBtn;
     QToolButton*         revertBtn;
-    QPushButton*         openTagMngr;
 
     QMenu*               moreMenu;
 
@@ -125,12 +120,8 @@ public:
 
     QTabWidget*          tabWidget;
 
-    SearchTextBarDb*     tagsSearchBar;
-    AddTagsLineEdit*     newTagEdit;
-
     ItemInfoList         currInfos;
 
-    TagCheckView*        tagCheckView;
 
     TemplateSelector*    templateSelector;
     TemplateViewer*      templateViewer;
@@ -141,12 +132,22 @@ public:
 
     DisjointMetadata     hub;
 
-    TagModel*            tagModel;
-
     QTimer*              metadataChangeTimer;
     QList<int>           metadataChangeIds;
 
     int                  spacing;
+
+    // ---
+
+    bool                 togglingTagsSearchSettings;
+    bool                 ignoreTagChanges;
+    QToolButton*         recentTagsBtn;
+    QToolButton*         assignedTagsBtn;
+    QPushButton*         openTagMngr;
+    SearchTextBarDb*     tagsSearchBar;
+    AddTagsLineEdit*     newTagEdit;
+    TagCheckView*        tagCheckView;
+    TagModel*            tagModel;
 
 public:
 
