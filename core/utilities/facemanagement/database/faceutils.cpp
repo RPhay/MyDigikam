@@ -307,6 +307,8 @@ int FaceUtils::tagForIdentity(const Identity& identity) const
 
 void FaceUtils::addNormalTag(qlonglong imageId, int tagId)
 {
+    FaceTagsEditor::addNormalTag(imageId, tagId);
+
     FileActionMngr::instance()->assignTag(ItemInfo(imageId), tagId);
 
     /**
@@ -344,6 +346,8 @@ void FaceUtils::addNormalTag(qlonglong imageId, int tagId)
 
 void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
 {
+    FaceTagsEditor::removeNormalTag(imageId, tagId);
+
     FileActionMngr::instance()->removeTag(ItemInfo(imageId), tagId);
 
     if (
@@ -379,6 +383,8 @@ void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
 
 void FaceUtils::removeNormalTags(qlonglong imageId, const QList<int>& tagIds)
 {
+    FaceTagsEditor::removeNormalTags(imageId, tagIds);
+
     FileActionMngr::instance()->removeTags(ItemInfo(imageId), tagIds);
 }
 

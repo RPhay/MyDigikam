@@ -151,7 +151,7 @@ BUGFIXES:
 113 ==> 459497 - digiKam fails to load images.
 114 ==> 459702 - digiKam git Mariadb issue.
 115 ==> 432265 - No error message when Digikam fails to read XMP metadata from image file.
-116 ==> 
+116 ==> 446304 - Not all faces are saved when more than one face is confirmed at the same time in a picture.
 117 ==> 
 118 ==> 
 119 ==> 
