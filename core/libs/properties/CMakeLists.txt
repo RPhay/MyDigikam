@@ -67,6 +67,7 @@ set(libitempropertiesdigikam_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/captions/itemdescedittab_infoview.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/captions/disjointmetadata.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/captions/disjointmetadata_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/captions/tagsedit.cpp
 )
 
 # Used by digikamgui
