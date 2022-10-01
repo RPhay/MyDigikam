@@ -295,21 +295,29 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
             }
         }
 
-        if (rotateByMetadata || isDng)
-        {
-            // Setting the rotation flag on Raws with embedded JPEG is a mess
-            // Can apply to the RAW data, or to the embedded JPEG, or to both.
+        MetaEngine::ImageOrientation metaOrientation = finalOrientation;
 
-            if (!isRaw || isDng)
-            {
-                QScopedPointer<DMetadata> metadata(new DMetadata(filePath));
-                metadata->setItemOrientation(rotatedPixels ? MetaEngine::ORIENTATION_NORMAL
-                                                           : finalOrientation);
-                metadata->applyChanges();
-            }
+        if (rotatedPixels)
+        {
+            metaOrientation = MetaEngine::ORIENTATION_NORMAL;
         }
 
-        ScanController::instance()->scannedInfo(filePath, CollectionScanner::ModifiedScan);
+        // Setting the rotation flag on Raws with embedded JPEG is a mess
+        // Can apply to the RAW data, or to the embedded JPEG, or to both.
+
+        if ((rotateByMetadata && !isRaw) || isDng)
+        {
+            QScopedPointer<DMetadata> metadata(new DMetadata(filePath));
+            metadata->setItemOrientation(metaOrientation);
+            metadata->applyChanges();
+        }
+
+        // DB rotation
+
+        ItemInfo(info).setOrientation(metaOrientation);
+
+        ScanController::instance()->scannedInfo(filePath,
+                                                CollectionScanner::ModifiedScan);
 
         // Adjust Faces in the DB and Metadata.
 
