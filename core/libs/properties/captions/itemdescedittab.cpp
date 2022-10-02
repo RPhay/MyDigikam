@@ -382,7 +382,7 @@ void ItemDescEditTab::slotAskToApplyChanges(const QList<ItemInfo>& infos, Disjoi
 
     // otherwise apply:
 
-    FileActionMngr::instance()->applyMetadata(infos, *hub);
+    FileActionMngr::instance()->applyMetadata(infos, hub);
 }
 
 void ItemDescEditTab::slotApplyAllChanges()
