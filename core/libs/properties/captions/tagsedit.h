@@ -31,6 +31,7 @@ class Album;
 class DisjointMetadata;
 class SearchTextSettings;
 class TaggingAction;
+class AddTagsLineEdit;
 
 class DIGIKAM_GUI_EXPORT TagsEdit : public QScrollArea
 {
@@ -39,7 +40,10 @@ class DIGIKAM_GUI_EXPORT TagsEdit : public QScrollArea
 public:
 
     explicit TagsEdit(DisjointMetadata* const hub, QWidget* const parent);
-    ~TagsEdit()                          override;
+    ~TagsEdit()                                      override;
+
+    void updateRecentTags();
+    AddTagsLineEdit* getNewTagEdit() const;
 
 Q_SIGNALS:
 
@@ -52,6 +56,7 @@ private Q_SLOTS:
     void slotTagsSearchChanged(const SearchTextSettings& settings);
     void slotAssignedTagsToggled(bool t);
     void slotTaggingActionActivated(const TaggingAction& action);
+    void slotRecentTagsMenuActivated(int id);
 
 private:
 

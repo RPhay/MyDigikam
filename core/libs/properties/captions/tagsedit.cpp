@@ -21,6 +21,7 @@
 #include <QApplication>
 #include <QStyle>
 #include <QMenu>
+#include <QAction>
 #include <QTimer>
 #include <QGridLayout>
 
@@ -42,6 +43,8 @@
 #include "disjointmetadata.h"
 #include "album.h"
 #include "albummodel.h"
+#include "albummanager.h"
+#include "albumthumbnailloader.h"
 #include "metadatahub.h"
 #include "addtagslineedit.h"
 #include "disjointmetadata.h"
@@ -271,6 +274,90 @@ void TagsEdit::slotTaggingActionActivated(const TaggingAction& action)
     }
 }
 
+void TagsEdit::updateRecentTags()
+{
+    QMenu* const menu = dynamic_cast<QMenu*>(d->recentTagsBtn->menu());
+
+    if (!menu)
+    {
+        return;
+    }
+
+    menu->clear();
+
+    AlbumList recentTags = AlbumManager::instance()->getRecentlyAssignedTags();
+
+    if (recentTags.isEmpty())
+    {
+        QAction* const noTagsAction = menu->addAction(i18nc("@action", "No Recently Assigned Tags"));
+        noTagsAction->setEnabled(false);
+    }
+    else
+    {
+        for (AlbumList::const_iterator it = recentTags.constBegin() ;
+             it != recentTags.constEnd() ; ++it)
+        {
+            TAlbum* const album = static_cast<TAlbum*>(*it);
+
+            if (album)
+            {
+                AlbumThumbnailLoader* const loader = AlbumThumbnailLoader::instance();
+                QPixmap                     icon;
+
+                if (!loader->getTagThumbnail(album, icon))
+                {
+                    if (icon.isNull())
+                    {
+                        icon = loader->getStandardTagIcon(album, AlbumThumbnailLoader::SmallerSize);
+                    }
+                }
+
+                TAlbum* const parent = dynamic_cast<TAlbum*> (album->parent());
+
+                if (parent)
+                {
+                    QString text          = album->title() + QLatin1String(" (") + parent->prettyUrl() + QLatin1Char(')');
+                    QAction* const action = menu->addAction(icon, text);
+                    int id                = album->id();
+
+                    connect(action, &QAction::triggered,
+                            this, [this, id]()
+                            {
+                                slotRecentTagsMenuActivated(id);
+                            }
+                    );
+                }
+                else
+                {
+                    qCDebug(DIGIKAM_GENERAL_LOG) << "Tag" << album
+                                                 << "do not have a valid parent";
+                }
+            }
+        }
+    }
+}
+
+void TagsEdit::slotRecentTagsMenuActivated(int id)
+{
+    AlbumManager* const albumMan = AlbumManager::instance();
+
+    if (id > 0)
+    {
+        TAlbum* const album = albumMan->findTAlbum(id);
+
+        if (album)
+        {
+            d->tagModel->setChecked(album, true);
+            d->tagCheckView->checkableAlbumFilterModel()->updateFilter();
+        }
+    }
+}
+
+AddTagsLineEdit* TagsEdit::getNewTagEdit() const
+{
+    return d->newTagEdit;
+}
+
 /*
 void ItemDescEditTab::setFocusToTagsView()
 {
@@ -307,8 +394,6 @@ void ItemDescEditTab::populateTags()
     //KConfigGroup group;
     //d->tagCheckView->loadViewState(group);
 }
-
-
 
 void ItemDescEditTab::setTagState(TAlbum* const tag, DisjointMetadataDataFields::Status status)
 {
@@ -387,85 +472,6 @@ void ItemDescEditTab::slotImageTagsChanged(qlonglong imageId)
     d->metadataChange(imageId);
 }
 
-void ItemDescEditTab::updateRecentTags()
-{
-    QMenu* const menu = dynamic_cast<QMenu*>(d->recentTagsBtn->menu());
-
-    if (!menu)
-    {
-        return;
-    }
-
-    menu->clear();
-
-    AlbumList recentTags = AlbumManager::instance()->getRecentlyAssignedTags();
-
-    if (recentTags.isEmpty())
-    {
-        QAction* const noTagsAction = menu->addAction(i18nc("@action", "No Recently Assigned Tags"));
-        noTagsAction->setEnabled(false);
-    }
-    else
-    {
-        for (AlbumList::const_iterator it = recentTags.constBegin() ;
-             it != recentTags.constEnd() ; ++it)
-        {
-            TAlbum* const album = static_cast<TAlbum*>(*it);
-
-            if (album)
-            {
-                AlbumThumbnailLoader* const loader = AlbumThumbnailLoader::instance();
-                QPixmap                     icon;
-
-                if (!loader->getTagThumbnail(album, icon))
-                {
-                    if (icon.isNull())
-                    {
-                        icon = loader->getStandardTagIcon(album, AlbumThumbnailLoader::SmallerSize);
-                    }
-                }
-
-                TAlbum* const parent = dynamic_cast<TAlbum*> (album->parent());
-
-                if (parent)
-                {
-                    QString text          = album->title() + QLatin1String(" (") + parent->prettyUrl() + QLatin1Char(')');
-                    QAction* const action = menu->addAction(icon, text);
-                    int id                = album->id();
-
-                    connect(action, &QAction::triggered,
-                            this, [this, id]() { slotRecentTagsMenuActivated(id); });
-                }
-                else
-                {
-                    qCDebug(DIGIKAM_GENERAL_LOG) << "Tag" << album
-                                                 << "do not have a valid parent";
-                }
-            }
-        }
-    }
-}
-
-void ItemDescEditTab::slotRecentTagsMenuActivated(int id)
-{
-    AlbumManager* const albumMan = AlbumManager::instance();
-
-    if (id > 0)
-    {
-        TAlbum* const album = albumMan->findTAlbum(id);
-
-        if (album)
-        {
-            d->tagModel->setChecked(album, true);
-            d->tagCheckView->checkableAlbumFilterModel()->updateFilter();
-        }
-    }
-}
-
-
-AddTagsLineEdit* ItemDescEditTab::getNewTagEdit() const
-{
-    return d->newTagEdit;
-}
 */
+
 } // namespace Digikam

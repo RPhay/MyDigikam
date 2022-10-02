@@ -327,7 +327,11 @@ void ItemDescEditTab::updateRecentTags()
                     int id                = album->id();
 
                     connect(action, &QAction::triggered,
-                            this, [this, id]() { slotRecentTagsMenuActivated(id); });
+                            this, [this, id]()
+                            {
+                                slotRecentTagsMenuActivated(id);
+                            }
+                    );
                 }
                 else
                 {
