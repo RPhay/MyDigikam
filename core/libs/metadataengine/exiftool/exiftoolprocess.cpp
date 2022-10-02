@@ -333,11 +333,6 @@ void ExifToolProcess::slotFinished(int exitCode, QProcess::ExitStatus exitStatus
     d->condVar.wakeAll();
 }
 
-void ExifToolProcess::slotStateChanged(QProcess::ProcessState newState)
-{
-    Q_EMIT signalStateChanged(d->cmdRunning, d->cmdAction, newState);
-}
-
 void ExifToolProcess::slotErrorOccurred(QProcess::ProcessError error)
 {
     QMutexLocker locker(&d->mutex);
@@ -433,10 +428,6 @@ void ExifToolProcess::initExifTool()
             Qt::QueuedConnection);
 
 #endif
-
-    connect(this, &QProcess::stateChanged,
-            this, &ExifToolProcess::slotStateChanged,
-            Qt::QueuedConnection);
 
     connect(this, &QProcess::errorOccurred,
             this, &ExifToolProcess::slotErrorOccurred,
