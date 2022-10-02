@@ -763,6 +763,12 @@ void ImageWindow::saveFaceTagsToImage(const ItemInfo& info)
             }
 
             FaceTagsIface face(dface.type(), info.id(), dface.tagId(), TagRegion(faceRect));
+
+            if (!FaceTags::isSystemPersonTagId(dface.tagId()))
+            {
+                ItemInfo(info.id()).setTag(dface.tagId());
+            }
+
             editor.addManually(face);
         }
 
