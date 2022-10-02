@@ -209,10 +209,6 @@ Q_SIGNALS:
     void signalStarted(int cmdId,
                        int cmdAction);
 
-    void signalStateChanged(int cmdId,
-                            int cmdAction,
-                            QProcess::ProcessState newState);
-
     void signalCmdCompleted(int cmdId,
                             int cmdAction,
                             int execTime,
@@ -269,7 +265,6 @@ private Q_SLOTS:
     void slotReadyReadStandardOutput();
     void slotChangeProgram(const QString& etExePath);
     void slotErrorOccurred(QProcess::ProcessError error);
-    void slotStateChanged(QProcess::ProcessState newState);
     void slotFinished(int exitCode, QProcess::ExitStatus exitStatus);
 
 private:
