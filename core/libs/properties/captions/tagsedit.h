@@ -23,15 +23,17 @@
 // Local includes
 
 #include "digikam_export.h"
+#include "disjointmetadata.h"
 
 namespace Digikam
 {
 
 class Album;
-class DisjointMetadata;
+class TAlbum;
 class SearchTextSettings;
 class TaggingAction;
 class AddTagsLineEdit;
+class TagCheckView;
 
 class DIGIKAM_GUI_EXPORT TagsEdit : public QScrollArea
 {
@@ -43,11 +45,19 @@ public:
     ~TagsEdit()                                      override;
 
     void updateRecentTags();
-    AddTagsLineEdit* getNewTagEdit() const;
+
+    AddTagsLineEdit* newTagEdit() const;
+    TagCheckView* tagsCheckView() const;
+    void activateAssignedTagsButton();
+    void updateTagsView();
 
 Q_SIGNALS:
 
     void signalModified();
+
+public Q_SLOTS:
+
+    void slotUnifyPartiallyTags();
 
 private Q_SLOTS:
 
@@ -57,6 +67,10 @@ private Q_SLOTS:
     void slotAssignedTagsToggled(bool t);
     void slotTaggingActionActivated(const TaggingAction& action);
     void slotRecentTagsMenuActivated(int id);
+
+private:
+
+    void setTagState(TAlbum* const tag, DisjointMetadataDataFields::Status status);
 
 private:
 

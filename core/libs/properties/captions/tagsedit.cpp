@@ -40,7 +40,6 @@
 #include "tagsmanager.h"
 #include "tagtreeview.h"
 #include "searchtextbardb.h"
-#include "disjointmetadata.h"
 #include "album.h"
 #include "albummodel.h"
 #include "albummanager.h"
@@ -353,34 +352,22 @@ void TagsEdit::slotRecentTagsMenuActivated(int id)
     }
 }
 
-AddTagsLineEdit* TagsEdit::getNewTagEdit() const
+AddTagsLineEdit* TagsEdit::newTagEdit() const
 {
     return d->newTagEdit;
 }
 
-/*
-void ItemDescEditTab::setFocusToTagsView()
+TagCheckView* TagsEdit::tagsCheckView() const
 {
-    d->lastSelectedWidget = qobject_cast<QWidget*>(d->tagCheckView);
-    d->tagCheckView->setFocus();
-    d->tabWidget->setCurrentIndex(Private::TAGS);
+    return d->tagCheckView;
 }
 
-void ItemDescEditTab::setFocusToNewTagEdit()
+void TagsEdit::activateAssignedTagsButton()
 {
-    // select "Tags" tab and focus the NewTagLineEdit widget
-
-    d->tabWidget->setCurrentIndex(Private::TAGS);
-    d->newTagEdit->setFocus();
-}
-
-void ItemDescEditTab::activateAssignedTagsButton()
-{
-    d->tabWidget->setCurrentIndex(Private::TAGS);
     d->assignedTagsBtn->click();
 }
 
-void ItemDescEditTab::slotUnifyPartiallyTags()
+void TagsEdit::slotUnifyPartiallyTags()
 {
     Q_FOREACH (Album* const album, d->tagModel->partiallyCheckedAlbums())
     {
@@ -388,14 +375,7 @@ void ItemDescEditTab::slotUnifyPartiallyTags()
     }
 }
 
-void ItemDescEditTab::populateTags()
-{
-    // TODO update, this wont work... crashes
-    //KConfigGroup group;
-    //d->tagCheckView->loadViewState(group);
-}
-
-void ItemDescEditTab::setTagState(TAlbum* const tag, DisjointMetadataDataFields::Status status)
+void TagsEdit::setTagState(TAlbum* const tag, DisjointMetadataDataFields::Status status)
 {
     if (!tag)
     {
@@ -431,7 +411,7 @@ void ItemDescEditTab::setTagState(TAlbum* const tag, DisjointMetadataDataFields:
     }
 }
 
-void ItemDescEditTab::updateTagsView()
+void TagsEdit::updateTagsView()
 {
     // Avoid that the automatic tag toggling handles these calls and
     // modification is indicated to this widget
@@ -466,6 +446,8 @@ void ItemDescEditTab::updateTagsView()
         slotAssignedTagsToggled(d->assignedTagsBtn->isChecked());
     }
 }
+
+/*
 
 void ItemDescEditTab::slotImageTagsChanged(qlonglong imageId)
 {
