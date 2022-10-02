@@ -459,15 +459,16 @@ void ItemDescEditTab::slotWriteToFileMetadataFromDatabase()
 
     Q_FOREACH (const ItemInfo& info, d->currInfos)
     {
-        MetadataHub fileHub;
+        MetadataHub hub;
 
         // read in from database
 
-        fileHub.load(info);
+        hub.load(info);
 
         // write out to file DMetadata
 
-        fileHub.write(info.filePath());
+        ScanController::FileMetadataWrite writeScope(info);
+        writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_ALL));
 
         Q_EMIT signalProgressValueChanged(i++ / (float)d->currInfos.count());
 

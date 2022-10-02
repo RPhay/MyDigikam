@@ -17,6 +17,7 @@
 // Local includes
 
 #include "collectionscanner.h"
+#include "scancontroller.h"
 #include "metadatahub.h"
 #include "digikam_debug.h"
 #include "maintenancedata.h"
@@ -93,21 +94,23 @@ void MetadataTask::run()
 
         if (d->direction == MetadataSynchronizer::WriteFromDatabaseToFile)
         {
-            MetadataHub fileHub;
+            MetadataHub hub;
 
             // read in from database
 
-            fileHub.load(item);
+            hub.load(item);
 
             // write out to file DMetadata
 
             if (d->tagsOnly)
             {
-                fileHub.writeTags(item.filePath());
+                ScanController::FileMetadataWrite writeScope(item);
+                writeScope.changed(hub.writeToMetadata(item, MetadataHub::WRITE_TAGS, true));
             }
             else
             {
-                fileHub.write(item.filePath(), MetadataHub::WRITE_ALL, true);
+                ScanController::FileMetadataWrite writeScope(item);
+                writeScope.changed(hub.writeToMetadata(item, MetadataHub::WRITE_ALL, true));
             }
         }
         else // MetadataSynchronizer::ReadFromFileToDatabase

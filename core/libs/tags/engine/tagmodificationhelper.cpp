@@ -608,8 +608,6 @@ void TagModificationHelper::slotMultipleFaceTagDel(const QList<TAlbum*>& tags)
                                                           qApp->applicationName(), msg,
                                                           QMessageBox::Yes | QMessageBox::No));
 
-        MetadataHub metadataHub;
-
         // remove the face region from images and unassign the tag if wished
 
         Q_FOREACH (const qlonglong& imageId, allAssignedItems)
@@ -633,12 +631,11 @@ void TagModificationHelper::slotMultipleFaceTagDel(const QList<TAlbum*>& tags)
 
                         if (!info.isNull())
                         {
-                            metadataHub.load(info);
+                            MetadataHub hub;
+                            hub.load(info);
 
-                            if (!metadataHub.writeToMetadata(info))
-                            {
-                                qCWarning(DIGIKAM_GENERAL_LOG) << "Tags in image not changed:" << info.filePath();
-                            }
+                            ScanController::FileMetadataWrite writeScope(info);
+                            writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_TAGS, true));
                         }
                     }
                 }
