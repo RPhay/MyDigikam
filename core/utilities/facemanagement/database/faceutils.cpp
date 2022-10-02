@@ -32,7 +32,6 @@
 #include "facetags.h"
 #include "iteminfo.h"
 #include "itemtagpair.h"
-#include "fileactionmngr.h"
 #include "tagproperties.h"
 #include "tagscache.h"
 #include "tagregion.h"
@@ -271,7 +270,8 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
             if (newFace.isUnconfirmedType() && !FaceTags::isTheUnknownPerson(newFace.tagId()))
             {
                 ItemTagPair unconfirmedPair(imageid, FaceTags::unconfirmedPersonTagId());
-                unconfirmedPair.addProperty(ImageTagPropertyName::autodetectedPerson(),newFace.getAutodetectedPersonString());
+                unconfirmedPair.addProperty(ImageTagPropertyName::autodetectedPerson(),
+                                            newFace.getAutodetectedPersonString());
             }
         }
     }
@@ -307,7 +307,7 @@ int FaceUtils::tagForIdentity(const Identity& identity) const
 
 void FaceUtils::addNormalTag(qlonglong imageId, int tagId)
 {
-    FileActionMngr::instance()->assignTag(ItemInfo(imageId), tagId);
+    FaceTagsEditor::addNormalTag(imageId, tagId);
 
     /**
      * Implementation for automatic assigning of face as
@@ -344,7 +344,7 @@ void FaceUtils::addNormalTag(qlonglong imageId, int tagId)
 
 void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
 {
-    FileActionMngr::instance()->removeTag(ItemInfo(imageId), tagId);
+    FaceTagsEditor::removeNormalTag(imageId, tagId);
 
     if (
         !FaceTags::isTheIgnoredPerson(tagId)  &&
@@ -375,11 +375,6 @@ void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
             }
         }
     }
-}
-
-void FaceUtils::removeNormalTags(qlonglong imageId, const QList<int>& tagIds)
-{
-    FileActionMngr::instance()->removeTags(ItemInfo(imageId), tagIds);
 }
 
 // --- Utilities ---

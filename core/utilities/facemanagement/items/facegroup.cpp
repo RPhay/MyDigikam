@@ -359,7 +359,9 @@ void FaceGroup::rejectAll()
 
     MetadataHub hub;
     hub.load(d->info);
-    hub.write(d->info.filePath(), MetadataHub::WRITE_TAGS, true);
+
+    ScanController::FileMetadataWrite writeScope(d->info);
+    writeScope.changed(hub.writeToMetadata(d->info, MetadataHub::WRITE_TAGS));
 
     clear();
 }
