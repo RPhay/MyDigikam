@@ -38,7 +38,8 @@ void FaceItem::setFace(const FaceTagsIface& face)
 {
     m_face = face;
     updateCurrentTag();
-    setEditable(!m_face.isConfirmedName());
+    setEditable(!(m_face.isIgnoredName()  ||
+                  m_face.isConfirmedName()));
 }
 
 FaceTagsIface FaceItem::face() const
