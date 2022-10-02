@@ -114,20 +114,20 @@ bool DMetadata::load(const QString& filePath, Backend* backend)
     {
         // No image files (aka video or audio), process with ExifTool or ffmpeg backends.
 
-        if (!(hasLoaded = loadUsingFFmpeg(filePath)) || !getItemDateTime().isValid())
+        if (!(hasLoaded = loadUsingExifTool(filePath)))
         {
-            if (!(hasLoaded = loadUsingExifTool(filePath)))
+            if (!(hasLoaded = loadUsingFFmpeg(filePath)))
             {
                 usedBackend = NoBackend;
             }
             else
             {
-                usedBackend = ExifToolBackend;
+                usedBackend = FFMpegBackend;
             }
         }
         else
         {
-            usedBackend = FFMpegBackend;
+            usedBackend = ExifToolBackend;
         }
 
         hasLoaded |= loadFromSidecarAndMerge(filePath);
