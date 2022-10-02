@@ -321,8 +321,17 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
 
         // Adjust Faces in the DB and Metadata.
 
-        FaceUtils().rotateFaces(info.id(), originalSize,
-                                currentOrientation, finalOrientation);
+        QSize newSize = FaceUtils().rotateFaces(info.id(), originalSize,
+                                                currentOrientation, finalOrientation);
+
+        if (newSize.isValid())
+        {
+            MetadataHub hub;
+            hub.load(info);
+
+            ScanController::FileMetadataWrite writeScope(info);
+            writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_TAGS));
+        }
 
         if (!failedItems.contains(info.name()))
         {
