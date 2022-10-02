@@ -152,7 +152,7 @@ BUGFIXES:
 114 ==> 459702 - digiKam git Mariadb issue.
 115 ==> 432265 - No error message when Digikam fails to read XMP metadata from image file.
 116 ==> 459898 - Import video files into digiKam uses current date but not metadata date.
-117 ==> 
+117 ==> 436345 - Renamed FaceTags not written to file metadata.
 118 ==> 
 119 ==> 
 120 ==> 
