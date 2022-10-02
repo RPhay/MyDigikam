@@ -1573,7 +1573,8 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
 
             videoDateTimeOriginal.prepend(videoDateTimeOriginal.takeLast());
         }
-        else if (!rmeta.contains(QLatin1String("com.android.version")))
+        else if (!rmeta.contains(QLatin1String("com.android.version"))                             &&
+                 !(rmeta.value(QLatin1String("compatible_brands")) == QLatin1String("mp42avc1niko")))
         {
             if (rmeta[QLatin1String("creation_time")].endsWith(QLatin1Char('Z')))
             {
