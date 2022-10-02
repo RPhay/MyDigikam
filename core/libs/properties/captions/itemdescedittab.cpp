@@ -382,7 +382,7 @@ void ItemDescEditTab::slotAskToApplyChanges(const QList<ItemInfo>& infos, Disjoi
 
     // otherwise apply:
 
-    FileActionMngr::instance()->applyMetadata(infos, hub);
+    FileActionMngr::instance()->applyMetadata(infos, *hub);
 }
 
 void ItemDescEditTab::slotApplyAllChanges()
@@ -397,7 +397,7 @@ void ItemDescEditTab::slotApplyAllChanges()
         return;
     }
 
-    FileActionMngr::instance()->applyMetadata(d->currInfos, d->hub);
+    FileActionMngr::instance()->applyMetadata(d->currInfos, *d->hub);
     d->reset();
 }
 
@@ -613,7 +613,7 @@ void ItemDescEditTab::slotApplyChangesToAllVersions()
         tmpSet.insert(relations.at(i).second);
     }
 
-    FileActionMngr::instance()->applyMetadata(ItemInfoList(tmpSet.values()), d->hub);
+    FileActionMngr::instance()->applyMetadata(ItemInfoList(tmpSet.values()), *d->hub);
 
     d->modified = false;
     d->hub->resetChanged();
