@@ -82,7 +82,7 @@ public:
     //@{
 
     /**
-     * Returnsthe metadata field Status.
+     * Returns the metadata field Status.
      */
     DisjointMetadataDataFields::Status dateTimeStatus()                     const;
     DisjointMetadataDataFields::Status titlesStatus()                       const;

@@ -61,6 +61,7 @@ public:
             {
                 storage = data;
                 status  = DisjointMetadataDataFields::MetadataAvailable;
+
                 break;
             }
 
@@ -76,6 +77,7 @@ public:
                 // they are not equal. We need to enter the disjoint state.
 
                 status = DisjointMetadataDataFields::MetadataDisjoint;
+
                 break;
             }
 

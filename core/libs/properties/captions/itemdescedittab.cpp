@@ -416,7 +416,6 @@ void ItemDescEditTab::slotRevertAllChanges()
     d->setInfos(d->currInfos);
 }
 
-
 void ItemDescEditTab::slotReadFromFileMetadataToDatabase()
 {
     d->initProgressIndicator();
@@ -434,7 +433,7 @@ void ItemDescEditTab::slotReadFromFileMetadataToDatabase()
     {
         scanner.scanFile(info, CollectionScanner::CleanScan);
 
-        Q_EMIT signalProgressValueChanged(i++/(float)d->currInfos.count());
+        Q_EMIT signalProgressValueChanged(i++ / (float)d->currInfos.count());
 
         qApp->processEvents();
     }
@@ -514,10 +513,16 @@ void ItemDescEditTab::slotMoreMenu()
         // We need to make clear that this action is different from the Apply button,
         // which saves the same changes to all files. These batch operations operate on each single file.
 
-        d->moreMenu->addAction(i18nc("@action", "Read metadata from each file to database"), this, SLOT(slotReadFromFileMetadataToDatabase()));
-        d->moreMenu->addAction(i18nc("@action", "Write metadata to each file"), this, SLOT(slotWriteToFileMetadataFromDatabase()));
+        d->moreMenu->addAction(i18nc("@action", "Read metadata from each file to database"),
+                               this, SLOT(slotReadFromFileMetadataToDatabase()));
+
+        d->moreMenu->addAction(i18nc("@action", "Write metadata to each file"),
+                               this, SLOT(slotWriteToFileMetadataFromDatabase()));
+
         d->moreMenu->addSeparator();
-        d->moreMenu->addAction(i18nc("@action", "Unify tags of selected items"), this, SLOT(slotUnifyPartiallyTags()));
+
+        d->moreMenu->addAction(i18nc("@action", "Unify tags of selected items"),
+                               this, SLOT(slotUnifyPartiallyTags()));
     }
 }
 
