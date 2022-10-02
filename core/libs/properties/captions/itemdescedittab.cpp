@@ -26,8 +26,11 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
     : DVBox(parent),
       d    (new Private(this))
 {
+    d->hub                 = new DisjointMetadata;
+
     setContentsMargins(QMargins());
     setSpacing(d->spacing);
+
     d->tabWidget           = new QTabWidget(this);
 
     d->metadataChangeTimer = new QTimer(this);
@@ -59,6 +62,7 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
 
 ItemDescEditTab::~ItemDescEditTab()
 {
+    delete d->hub;
     delete d;
 }
 
@@ -196,7 +200,7 @@ void ItemDescEditTab::slotChangingItems()
         // Open dialog via queued connection out-of-scope, see bug 302311
 
         DisjointMetadata* const hub2 = new DisjointMetadata();
-        hub2->setDataFields(d->hub.dataFields());
+        hub2->setDataFields(d->hub->dataFields());
 
         Q_EMIT signalAskToApplyChanges(d->currInfos, hub2);
 
@@ -606,7 +610,7 @@ void ItemDescEditTab::slotApplyChangesToAllVersions()
     FileActionMngr::instance()->applyMetadata(ItemInfoList(tmpSet.values()), d->hub);
 
     d->modified = false;
-    d->hub.resetChanged();
+    d->hub->resetChanged();
     d->applyBtn->setEnabled(false);
     d->revertBtn->setEnabled(false);
     d->applyToAllVersionsButton->setEnabled(false);

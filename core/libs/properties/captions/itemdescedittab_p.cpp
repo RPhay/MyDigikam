@@ -41,6 +41,7 @@ ItemDescEditTab::Private::Private(ItemDescEditTab* const tab)
       colorLabelSelector          (nullptr),
       pickLabelSelector           (nullptr),
       metadataChangeTimer         (nullptr),
+      hub                         (nullptr),
       togglingTagsSearchSettings  (false),
       ignoreTagChanges            (false),
       recentTagsBtn               (nullptr),
@@ -138,7 +139,7 @@ void ItemDescEditTab::Private::setupEventFilters()
 void ItemDescEditTab::Private::reset()
 {
     modified = false;
-    hub.resetChanged();
+    hub->resetChanged();
     applyBtn->setEnabled(false);
     revertBtn->setEnabled(false);
     applyToAllVersionsButton->setEnabled(false);
@@ -148,7 +149,7 @@ void ItemDescEditTab::Private::setInfos(const ItemInfoList& infos)
 {
     if (infos.isEmpty())
     {
-        hub.reset();
+        hub->reset();
         captionsEdit->blockSignals(true);
         captionsEdit->reset();
         q->resetCaptionEditPlaceholderText();
@@ -168,7 +169,7 @@ void ItemDescEditTab::Private::setInfos(const ItemInfoList& infos)
     currInfos = infos;
     modified  = false;
     resetMetadataChangeInfo();
-    hub.reset();
+    hub->reset();
     applyBtn->setEnabled(false);
     revertBtn->setEnabled(false);
 
@@ -184,7 +185,7 @@ void ItemDescEditTab::Private::setInfos(const ItemInfoList& infos)
 
     Q_FOREACH (const ItemInfo& info, currInfos)
     {
-        hub.load(info);
+        hub->load(info);
     }
 
     q->updateComments();

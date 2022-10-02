@@ -21,6 +21,7 @@
 #include <QApplication>
 #include <QStyle>
 #include <QMenu>
+#include <QTimer>
 #include <QGridLayout>
 
 // KDE includes
@@ -39,9 +40,11 @@
 #include "tagtreeview.h"
 #include "searchtextbardb.h"
 #include "disjointmetadata.h"
+#include "album.h"
 #include "albummodel.h"
 #include "metadatahub.h"
 #include "addtagslineedit.h"
+#include "disjointmetadata.h"
 
 namespace Digikam
 {
@@ -59,7 +62,8 @@ public:
         tagsSearchBar               (nullptr),
         newTagEdit                  (nullptr),
         tagCheckView                (nullptr),
-        tagModel                    (nullptr)
+        tagModel                    (nullptr),
+        hub                         (nullptr)
     {
     }
 
@@ -72,12 +76,15 @@ public:
     AddTagsLineEdit*     newTagEdit;
     TagCheckView*        tagCheckView;
     TagModel*            tagModel;
+    DisjointMetadata*    hub;
 };
 
-TagsEdit::TagsEdit(QWidget* const parent)
+TagsEdit::TagsEdit(DisjointMetadata* const hub, QWidget* const parent)
     : QScrollArea(parent),
       d          (new Private)
 {
+    d->hub      = hub;
+
     int spacing = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                        QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
@@ -161,7 +168,111 @@ TagsEdit::~TagsEdit()
     delete d;
 }
 
-/*void ItemDescEditTab::setFocusToTagsView()
+void TagsEdit::slotOpenTagsManager()
+{
+    TagsManager* const tagMngr = TagsManager::instance();
+    tagMngr->show();
+    tagMngr->activateWindow();
+    tagMngr->raise();
+}
+
+void TagsEdit::slotTagStateChanged(Album* album, Qt::CheckState checkState)
+{
+    TAlbum* const tag = dynamic_cast<TAlbum*>(album);
+
+    if (!tag || d->ignoreTagChanges)
+    {
+        return;
+    }
+
+    switch (checkState)
+    {
+        case Qt::Checked:
+        {
+            d->hub->setTag(tag->id());
+            break;
+        }
+
+        default:
+        {
+            d->hub->setTag(tag->id(), DisjointMetadataDataFields::MetadataInvalid);
+            break;
+        }
+    }
+
+    Q_EMIT signalModified();
+}
+
+void TagsEdit::slotTagsSearchChanged(const SearchTextSettings& settings)
+{
+    Q_UNUSED(settings);
+
+    // if we filter, we should reset the assignedTagsBtn again.
+
+    if (d->assignedTagsBtn->isChecked() && !d->togglingTagsSearchSettings)
+    {
+        d->togglingTagsSearchSettings = true;
+        d->assignedTagsBtn->setChecked(false);
+        d->togglingTagsSearchSettings = false;
+    }
+}
+
+void TagsEdit::slotAssignedTagsToggled(bool t)
+{
+    d->tagCheckView->checkableAlbumFilterModel()->setFilterChecked(t);
+    d->tagCheckView->checkableAlbumFilterModel()->setFilterPartiallyChecked(t);
+    d->tagCheckView->checkableAlbumFilterModel()->setFilterBehavior(t ? AlbumFilterModel::StrictFiltering
+                                                                      : AlbumFilterModel::FullFiltering);
+
+    if (t)
+    {
+        // if we filter by assigned, we should initially clear the normal search.
+
+        if (!d->togglingTagsSearchSettings)
+        {
+            d->togglingTagsSearchSettings = true;
+            d->tagsSearchBar->clear();
+            d->togglingTagsSearchSettings = false;
+        }
+
+        // Only after above change, do this.
+
+        d->tagCheckView->expandMatches(d->tagCheckView->rootIndex());
+   }
+}
+
+void TagsEdit::slotTaggingActionActivated(const TaggingAction& action)
+{
+    TAlbum* assigned = nullptr;
+
+    if      (action.shallAssignTag())
+    {
+        assigned = AlbumManager::instance()->findTAlbum(action.tagId());
+
+        if (assigned)
+        {
+            d->tagModel->setChecked(assigned, true);
+            d->tagCheckView->checkableAlbumFilterModel()->updateFilter();
+        }
+    }
+    else if (action.shallCreateNewTag())
+    {
+        TAlbum* const parent = AlbumManager::instance()->findTAlbum(action.parentTagId());
+
+        // tag is assigned automatically
+
+        assigned = d->tagCheckView->tagModificationHelper()->slotTagNew(parent, action.newTagName());
+    }
+
+    if (assigned)
+    {
+        d->tagCheckView->scrollTo(d->tagCheckView->albumFilterModel()->indexForAlbum(assigned));
+        QTimer::singleShot(0, d->newTagEdit, SLOT(clear()));
+    }
+}
+
+/*
+void ItemDescEditTab::setFocusToTagsView()
 {
     d->lastSelectedWidget = qobject_cast<QWidget*>(d->tagCheckView);
     d->tagCheckView->setFocus();
@@ -197,62 +308,7 @@ void ItemDescEditTab::populateTags()
     //d->tagCheckView->loadViewState(group);
 }
 
-void ItemDescEditTab::slotTagStateChanged(Album* album, Qt::CheckState checkState)
-{
-    TAlbum* const tag = dynamic_cast<TAlbum*>(album);
 
-    if (!tag || d->ignoreTagChanges)
-    {
-        return;
-    }
-
-    switch (checkState)
-    {
-        case Qt::Checked:
-        {
-            d->hub.setTag(tag->id());
-            break;
-        }
-
-        default:
-        {
-            d->hub.setTag(tag->id(), DisjointMetadataDataFields::MetadataInvalid);
-            break;
-        }
-    }
-
-    slotModified();
-}
-
-void ItemDescEditTab::slotTaggingActionActivated(const TaggingAction& action)
-{
-    TAlbum* assigned = nullptr;
-
-    if      (action.shallAssignTag())
-    {
-        assigned = AlbumManager::instance()->findTAlbum(action.tagId());
-
-        if (assigned)
-        {
-            d->tagModel->setChecked(assigned, true);
-            d->tagCheckView->checkableAlbumFilterModel()->updateFilter();
-        }
-    }
-    else if (action.shallCreateNewTag())
-    {
-        TAlbum* const parent = AlbumManager::instance()->findTAlbum(action.parentTagId());
-
-        // tag is assigned automatically
-
-        assigned = d->tagCheckView->tagModificationHelper()->slotTagNew(parent, action.newTagName());
-    }
-
-    if (assigned)
-    {
-        d->tagCheckView->scrollTo(d->tagCheckView->albumFilterModel()->indexForAlbum(assigned));
-        QTimer::singleShot(0, d->newTagEdit, SLOT(clear()));
-    }
-}
 
 void ItemDescEditTab::setTagState(TAlbum* const tag, DisjointMetadataDataFields::Status status)
 {
@@ -305,7 +361,7 @@ void ItemDescEditTab::updateTagsView()
 
     // Then update checked state for all tags of the currently selected images
 
-    const QMap<int, DisjointMetadataDataFields::Status> hubMap = d->hub.tags();
+    const QMap<int, DisjointMetadataDataFields::Status> hubMap = d->hub->tags();
 
     for (QMap<int, DisjointMetadataDataFields::Status>::const_iterator it = hubMap.begin() ;
          it != hubMap.end() ; ++it)
@@ -324,14 +380,6 @@ void ItemDescEditTab::updateTagsView()
     {
         slotAssignedTagsToggled(d->assignedTagsBtn->isChecked());
     }
-}
-
-void ItemDescEditTab::slotOpenTagsManager()
-{
-    TagsManager* const tagMngr = TagsManager::instance();
-    tagMngr->show();
-    tagMngr->activateWindow();
-    tagMngr->raise();
 }
 
 void ItemDescEditTab::slotImageTagsChanged(qlonglong imageId)
@@ -414,43 +462,6 @@ void ItemDescEditTab::slotRecentTagsMenuActivated(int id)
     }
 }
 
-void ItemDescEditTab::slotTagsSearchChanged(const SearchTextSettings& settings)
-{
-    Q_UNUSED(settings);
-
-    // if we filter, we should reset the assignedTagsBtn again.
-
-    if (d->assignedTagsBtn->isChecked() && !d->togglingTagsSearchSettings)
-    {
-        d->togglingTagsSearchSettings = true;
-        d->assignedTagsBtn->setChecked(false);
-        d->togglingTagsSearchSettings = false;
-    }
-}
-
-void ItemDescEditTab::slotAssignedTagsToggled(bool t)
-{
-    d->tagCheckView->checkableAlbumFilterModel()->setFilterChecked(t);
-    d->tagCheckView->checkableAlbumFilterModel()->setFilterPartiallyChecked(t);
-    d->tagCheckView->checkableAlbumFilterModel()->setFilterBehavior(t ? AlbumFilterModel::StrictFiltering
-                                                                      : AlbumFilterModel::FullFiltering);
-
-    if (t)
-    {
-        // if we filter by assigned, we should initially clear the normal search.
-
-        if (!d->togglingTagsSearchSettings)
-        {
-            d->togglingTagsSearchSettings = true;
-            d->tagsSearchBar->clear();
-            d->togglingTagsSearchSettings = false;
-        }
-
-        // Only after above change, do this.
-
-        d->tagCheckView->expandMatches(d->tagCheckView->rootIndex());
-   }
-}
 
 AddTagsLineEdit* ItemDescEditTab::getNewTagEdit() const
 {

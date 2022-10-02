@@ -27,18 +27,31 @@
 namespace Digikam
 {
 
+class Album;
+class DisjointMetadata;
+class SearchTextSettings;
+class TaggingAction;
+
 class DIGIKAM_GUI_EXPORT TagsEdit : public QScrollArea
 {
     Q_OBJECT
 
 public:
 
-    explicit TagsEdit(QWidget* const parent);
+    explicit TagsEdit(DisjointMetadata* const hub, QWidget* const parent);
     ~TagsEdit()                          override;
 
 Q_SIGNALS:
 
     void signalModified();
+
+private Q_SLOTS:
+
+    void slotOpenTagsManager();
+    void slotTagStateChanged(Album* album, Qt::CheckState checkState);
+    void slotTagsSearchChanged(const SearchTextSettings& settings);
+    void slotAssignedTagsToggled(bool t);
+    void slotTaggingActionActivated(const TaggingAction& action);
 
 private:
 

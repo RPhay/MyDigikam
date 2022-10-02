@@ -115,8 +115,8 @@ void ItemDescEditTab::setFocusToCommentsEdit()
 
 void ItemDescEditTab::slotCommentChanged()
 {
-    d->hub.setComments(d->captionsEdit->values());
-    d->setMetadataWidgetStatus(d->hub.commentsStatus(), d->captionsEdit);
+    d->hub->setComments(d->captionsEdit->values());
+    d->setMetadataWidgetStatus(d->hub->commentsStatus(), d->captionsEdit);
     slotModified();
 }
 
@@ -125,21 +125,21 @@ void ItemDescEditTab::slotTitleChanged()
     CaptionsMap titles;
 
     titles.fromAltLangMap(d->titleEdit->values());
-    d->hub.setTitles(titles);
-    d->setMetadataWidgetStatus(d->hub.titlesStatus(), d->titleEdit);
+    d->hub->setTitles(titles);
+    d->setMetadataWidgetStatus(d->hub->titlesStatus(), d->titleEdit);
     slotModified();
 }
 
 void ItemDescEditTab::slotDateTimeChanged(const QDateTime& dateTime)
 {
-    d->hub.setDateTime(dateTime);
-    d->setMetadataWidgetStatus(d->hub.dateTimeStatus(), d->dateTimeEdit);
+    d->hub->setDateTime(dateTime);
+    d->setMetadataWidgetStatus(d->hub->dateTimeStatus(), d->dateTimeEdit);
     slotModified();
 }
 
 void ItemDescEditTab::slotPickLabelChanged(int pickId)
 {
-    d->hub.setPickLabel(pickId);
+    d->hub->setPickLabel(pickId);
 
     // no handling for MetadataDisjoint needed for pick label,
     // we set it to 0 when disjoint, see below
@@ -149,7 +149,7 @@ void ItemDescEditTab::slotPickLabelChanged(int pickId)
 
 void ItemDescEditTab::slotColorLabelChanged(int colorId)
 {
-    d->hub.setColorLabel(colorId);
+    d->hub->setColorLabel(colorId);
 
     // no handling for MetadataDisjoint needed for color label,
     // we set it to 0 when disjoint, see below
@@ -159,7 +159,7 @@ void ItemDescEditTab::slotColorLabelChanged(int colorId)
 
 void ItemDescEditTab::slotRatingChanged(int rating)
 {
-    d->hub.setRating(rating);
+    d->hub->setRating(rating);
 
     // no handling for MetadataDisjoint needed for rating,
     // we set it to 0 when disjoint, see below
@@ -185,13 +185,13 @@ void ItemDescEditTab::assignRating(int rating)
 void ItemDescEditTab::updateComments()
 {
     d->captionsEdit->blockSignals(true);
-    d->captionsEdit->setValues(d->hub.comments());
-    d->setMetadataWidgetStatus(d->hub.commentsStatus(), d->captionsEdit);
+    d->captionsEdit->setValues(d->hub->comments());
+    d->setMetadataWidgetStatus(d->hub->commentsStatus(), d->captionsEdit);
     d->captionsEdit->blockSignals(false);
 
     d->titleEdit->blockSignals(true);
-    d->titleEdit->setValues(d->hub.titles().toAltLangMap());
-    d->setMetadataWidgetStatus(d->hub.titlesStatus(), d->titleEdit);
+    d->titleEdit->setValues(d->hub->titles().toAltLangMap());
+    d->setMetadataWidgetStatus(d->hub->titlesStatus(), d->titleEdit);
     d->titleEdit->blockSignals(false);
 }
 
@@ -199,13 +199,13 @@ void ItemDescEditTab::updatePickLabel()
 {
     d->pickLabelSelector->blockSignals(true);
 
-    if (d->hub.pickLabelStatus() == DisjointMetadataDataFields::MetadataDisjoint)
+    if (d->hub->pickLabelStatus() == DisjointMetadataDataFields::MetadataDisjoint)
     {
         d->pickLabelSelector->setPickLabel(NoPickLabel);
     }
     else
     {
-        d->pickLabelSelector->setPickLabel((PickLabel)d->hub.pickLabel());
+        d->pickLabelSelector->setPickLabel((PickLabel)d->hub->pickLabel());
     }
 
     d->pickLabelSelector->blockSignals(false);
@@ -215,13 +215,13 @@ void ItemDescEditTab::updateColorLabel()
 {
     d->colorLabelSelector->blockSignals(true);
 
-    if (d->hub.colorLabelStatus() == DisjointMetadataDataFields::MetadataDisjoint)
+    if (d->hub->colorLabelStatus() == DisjointMetadataDataFields::MetadataDisjoint)
     {
         d->colorLabelSelector->setColorLabel(NoColorLabel);
     }
     else
     {
-        d->colorLabelSelector->setColorLabel((ColorLabel)d->hub.colorLabel());
+        d->colorLabelSelector->setColorLabel((ColorLabel)d->hub->colorLabel());
     }
 
     d->colorLabelSelector->blockSignals(false);
@@ -231,13 +231,13 @@ void ItemDescEditTab::updateRating()
 {
     d->ratingWidget->blockSignals(true);
 
-    if (d->hub.ratingStatus() == DisjointMetadataDataFields::MetadataDisjoint)
+    if (d->hub->ratingStatus() == DisjointMetadataDataFields::MetadataDisjoint)
     {
         d->ratingWidget->setRating(0);
     }
     else
     {
-        d->ratingWidget->setRating(d->hub.rating());
+        d->ratingWidget->setRating(d->hub->rating());
     }
 
     d->ratingWidget->blockSignals(false);
@@ -246,8 +246,8 @@ void ItemDescEditTab::updateRating()
 void ItemDescEditTab::updateDate()
 {
     d->dateTimeEdit->blockSignals(true);
-    d->dateTimeEdit->setDateTime(d->hub.dateTime());
-    d->setMetadataWidgetStatus(d->hub.dateTimeStatus(), d->dateTimeEdit);
+    d->dateTimeEdit->setDateTime(d->hub->dateTime());
+    d->setMetadataWidgetStatus(d->hub->dateTimeStatus(), d->dateTimeEdit);
     d->dateTimeEdit->blockSignals(false);
 }
 

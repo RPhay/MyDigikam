@@ -151,13 +151,13 @@ void ItemDescEditTab::slotTagStateChanged(Album* album, Qt::CheckState checkStat
     {
         case Qt::Checked:
         {
-            d->hub.setTag(tag->id());
+            d->hub->setTag(tag->id());
             break;
         }
 
         default:
         {
-            d->hub.setTag(tag->id(), DisjointMetadataDataFields::MetadataInvalid);
+            d->hub->setTag(tag->id(), DisjointMetadataDataFields::MetadataInvalid);
             break;
         }
     }
@@ -246,7 +246,7 @@ void ItemDescEditTab::updateTagsView()
 
     // Then update checked state for all tags of the currently selected images
 
-    const QMap<int, DisjointMetadataDataFields::Status> hubMap = d->hub.tags();
+    const QMap<int, DisjointMetadataDataFields::Status> hubMap = d->hub->tags();
 
     for (QMap<int, DisjointMetadataDataFields::Status>::const_iterator it = hubMap.begin() ;
          it != hubMap.end() ; ++it)

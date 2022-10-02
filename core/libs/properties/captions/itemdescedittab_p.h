@@ -122,7 +122,6 @@ public:
 
     ItemInfoList         currInfos;
 
-
     TemplateSelector*    templateSelector;
     TemplateViewer*      templateViewer;
 
@@ -130,7 +129,7 @@ public:
     ColorLabelSelector*  colorLabelSelector;
     PickLabelSelector*   pickLabelSelector;
 
-    DisjointMetadata     hub;
+    DisjointMetadata*    hub;
 
     QTimer*              metadataChangeTimer;
     QList<int>           metadataChangeIds;

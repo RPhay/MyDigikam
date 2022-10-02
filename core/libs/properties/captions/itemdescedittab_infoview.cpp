@@ -47,18 +47,18 @@ void ItemDescEditTab::initInformationView()
 
 void ItemDescEditTab::slotTemplateSelected()
 {
-    d->hub.setMetadataTemplate(d->templateSelector->getTemplate());
+    d->hub->setMetadataTemplate(d->templateSelector->getTemplate());
     d->templateViewer->setTemplate(d->templateSelector->getTemplate());
-    d->setMetadataWidgetStatus(d->hub.templateStatus(), d->templateSelector);
+    d->setMetadataWidgetStatus(d->hub->templateStatus(), d->templateSelector);
     slotModified();
 }
 
 void ItemDescEditTab::updateTemplate()
 {
     d->templateSelector->blockSignals(true);
-    d->templateSelector->setTemplate(d->hub.metadataTemplate());
-    d->templateViewer->setTemplate(d->hub.metadataTemplate());
-    d->setMetadataWidgetStatus(d->hub.templateStatus(), d->templateSelector);
+    d->templateSelector->setTemplate(d->hub->metadataTemplate());
+    d->templateViewer->setTemplate(d->hub->metadataTemplate());
+    d->setMetadataWidgetStatus(d->hub->templateStatus(), d->templateSelector);
     d->templateSelector->blockSignals(false);
 }
 
