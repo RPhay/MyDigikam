@@ -330,7 +330,7 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
             hub.load(info);
 
             ScanController::FileMetadataWrite writeScope(info);
-            writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_TAGS));
+            writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_TAGS, true));
         }
 
         if (!failedItems.contains(info.name()))
