@@ -157,7 +157,7 @@ BUGFIXES:
 119 ==> 316856 - Add text-recognition system.
 120 ==> 459928 - Tags/keywords are not written back to MP4 video files, even with exiftool being configured.
 121 ==> 432369 - Wrong time for mp4 in _almost_ all places, metadata differs from filesystem/other apps. DB issues?
-122 ==> 
+122 ==> 438960 - Add support for searching images created in a time interval.
 123 ==> 
 124 ==> 
 125 ==> 
