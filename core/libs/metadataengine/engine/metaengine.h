@@ -119,6 +119,7 @@ public:
         ImageMagickBackend,       ///< DMetadata only.
         FFMpegBackend,            ///< DMetadata only.
         ExifToolBackend,          ///< DMetadata only.
+        VideoMergeBackend,        ///< DMetadata only.
         NoBackend                 ///< No backend used (aka file cannot be read).
     };
 
@@ -215,6 +216,12 @@ public:
      * Return true if metadata have been loaded successfully from item data.
      */
     bool loadFromData(const QByteArray& imgData);
+
+    /**
+     * Load and merge metadata (Exif, Iptc and Xmp) from a byte array.
+     * Return true if metadata have been loaded and merged successfully from item data.
+     */
+    bool loadFromDataAndMerge(const QByteArray& imgData);
 
     /**
      * Return 'true' if metadata container in memory as no Comments, Exif, Iptc, and Xmp.

@@ -32,7 +32,7 @@
 namespace Digikam
 {
 
-bool DMetadata::loadUsingExifTool(const QString& filePath)
+bool DMetadata::loadUsingExifTool(const QString& filePath, bool merge)
 {
     QMimeDatabase mimeDB;
     QFileInfo info(filePath);
@@ -80,7 +80,14 @@ bool DMetadata::loadUsingExifTool(const QString& filePath)
         return false;
     }
 
-    loadFromData(exv);
+    if (merge)
+    {
+        loadFromDataAndMerge(exv);
+    }
+    else
+    {
+        loadFromData(exv);
+    }
 
     // Restore file path.
 
