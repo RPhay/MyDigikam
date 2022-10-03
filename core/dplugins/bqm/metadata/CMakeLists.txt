@@ -6,6 +6,7 @@
 
 add_subdirectory(assigncaptions)
 add_subdirectory(assignlabels)
+#add_subdirectory(assigntags)
 add_subdirectory(assigntemplate)
 add_subdirectory(qualitysort)
 add_subdirectory(removemetadata)
