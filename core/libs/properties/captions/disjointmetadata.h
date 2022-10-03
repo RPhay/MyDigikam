@@ -24,6 +24,7 @@
 
 // Local includes
 
+#include "digikam_export.h"
 #include "disjointmetadatadatafields.h"
 #include "metaenginesettings.h"
 
@@ -34,7 +35,7 @@ class ItemInfo;
 class CaptionsMap;
 class Template;
 
-class DisjointMetadata : public QObject
+class DIGIKAM_GUI_EXPORT DisjointMetadata : public QObject
 {
     Q_OBJECT
 
