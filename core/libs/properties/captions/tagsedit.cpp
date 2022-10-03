@@ -93,19 +93,19 @@ TagsEdit::TagsEdit(DisjointMetadata* const hub, QWidget* const parent)
     setFrameStyle(QFrame::NoFrame);
     setWidgetResizable(true);
 
-    QWidget* const tagsArea   = new QWidget(viewport());
-    QGridLayout* const grid3  = new QGridLayout(tagsArea);
+    QWidget* const tagsArea     = new QWidget(viewport());
+    QGridLayout* const grid3    = new QGridLayout(tagsArea);
     setWidget(tagsArea);
 
-    d->tagModel     = new TagModel(AbstractAlbumModel::IncludeRootAlbum, this);
+    d->tagModel                 = new TagModel(AbstractAlbumModel::IncludeRootAlbum, this);
     d->tagModel->setCheckable(true);
     d->tagModel->setRootCheckable(false);
-    d->tagCheckView = new TagCheckView(tagsArea, d->tagModel);
+    d->tagCheckView             = new TagCheckView(tagsArea, d->tagModel);
     d->tagCheckView->setCheckNewTags(true);
 
-    d->openTagMngr  = new QPushButton(i18nc("@action", "Open Tag Manager"));
+    d->openTagMngr              = new QPushButton(i18nc("@action", "Open Tag Manager"));
 
-    d->newTagEdit   = new AddTagsLineEdit(tagsArea);
+    d->newTagEdit               = new AddTagsLineEdit(tagsArea);
     d->newTagEdit->setSupportingTagModel(d->tagModel);
     d->newTagEdit->setTagTreeView(d->tagCheckView); //, "ItemDescEditTabNewTagEdit");
     //d->newTagEdit->setCaseSensitive(false);
@@ -114,10 +114,11 @@ TagsEdit::TagsEdit(DisjointMetadata* const hub, QWidget* const parent)
                                       "'/' can be used to create a hierarchy of tags. "
                                       "',' can be used to create more than one hierarchy at the same time."));
 
-    DHBox* const tagsSearch = new DHBox(tagsArea);
+    DHBox* const tagsSearch     = new DHBox(tagsArea);
     tagsSearch->setSpacing(spacing);
 
-    d->tagsSearchBar        = new SearchTextBarDb(tagsSearch, QLatin1String("ItemDescEditTabTagsSearchBar"));
+    d->tagsSearchBar            = new SearchTextBarDb(tagsSearch,
+                                                      QLatin1String("ItemDescEditTabTagsSearchBar"));
 
     d->tagsSearchBar->setModel(d->tagCheckView->filteredModel(),
                                AbstractAlbumModel::AlbumIdRole,
@@ -125,7 +126,7 @@ TagsEdit::TagsEdit(DisjointMetadata* const hub, QWidget* const parent)
 
     d->tagsSearchBar->setFilterModel(d->tagCheckView->albumFilterModel());
 
-    d->assignedTagsBtn      = new QToolButton(tagsSearch);
+    d->assignedTagsBtn          = new QToolButton(tagsSearch);
     d->assignedTagsBtn->setToolTip(i18nc("@info", "Tags already assigned"));
     d->assignedTagsBtn->setIcon(QIcon::fromTheme(QLatin1String("tag-assigned")));
     d->assignedTagsBtn->setCheckable(true);
@@ -162,7 +163,7 @@ TagsEdit::TagsEdit(DisjointMetadata* const hub, QWidget* const parent)
             this, SLOT(slotTaggingActionActivated(TaggingAction)));
 
     connect(ItemAttributesWatch::instance(), SIGNAL(signalImageTagsChanged(qlonglong)),
-            this, SLOT(slotImageTagsChanged(qlonglong)));
+            this, SIGNAL(signalImageTagsChanged(qlonglong)));
 }
 
 TagsEdit::~TagsEdit()
@@ -192,12 +193,14 @@ void TagsEdit::slotTagStateChanged(Album* album, Qt::CheckState checkState)
         case Qt::Checked:
         {
             d->hub->setTag(tag->id());
+
             break;
         }
 
         default:
         {
             d->hub->setTag(tag->id(), DisjointMetadataDataFields::MetadataInvalid);
+
             break;
         }
     }
@@ -315,7 +318,10 @@ void TagsEdit::updateRecentTags()
 
                 if (parent)
                 {
-                    QString text          = album->title() + QLatin1String(" (") + parent->prettyUrl() + QLatin1Char(')');
+                    QString text          = album->title()      +
+                                            QLatin1String(" (") +
+                                            parent->prettyUrl() +
+                                            QLatin1Char(')');
                     QAction* const action = menu->addAction(icon, text);
                     int id                = album->id();
 
@@ -387,18 +393,21 @@ void TagsEdit::setTagState(TAlbum* const tag, DisjointMetadataDataFields::Status
         case DisjointMetadataDataFields::MetadataDisjoint:
         {
             d->tagModel->setCheckState(tag, Qt::PartiallyChecked);
+
             break;
         }
 
         case DisjointMetadataDataFields::MetadataAvailable:
         {
             d->tagModel->setChecked(tag, true);
+
             break;
         }
 
         case DisjointMetadataDataFields::MetadataInvalid:
         {
             d->tagModel->setChecked(tag, false);
+
             break;
         }
 
@@ -406,6 +415,7 @@ void TagsEdit::setTagState(TAlbum* const tag, DisjointMetadataDataFields::Status
         {
             qCWarning(DIGIKAM_GENERAL_LOG) << "Untreated tag status enum value " << status;
             d->tagModel->setCheckState(tag, Qt::PartiallyChecked);
+
             break;
         }
     }
@@ -446,14 +456,5 @@ void TagsEdit::updateTagsView()
         slotAssignedTagsToggled(d->assignedTagsBtn->isChecked());
     }
 }
-
-/*
-
-void ItemDescEditTab::slotImageTagsChanged(qlonglong imageId)
-{
-    d->metadataChange(imageId);
-}
-
-*/
 
 } // namespace Digikam
