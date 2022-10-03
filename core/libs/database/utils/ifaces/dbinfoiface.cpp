@@ -848,6 +848,8 @@ void DBInfoIface::openSetupPage(SetupPage page)
             {
                 Q_EMIT signalSetupChanged();
             }
+
+            break;
         }
 
         case ImageQualityPage:
@@ -856,6 +858,8 @@ void DBInfoIface::openSetupPage(SetupPage page)
             {
                 Q_EMIT signalSetupChanged();
             }
+
+            break;
         }
 
         default:
