@@ -54,7 +54,6 @@ public:
 Q_SIGNALS:
 
     void signalChanged();
-    void signalModified();
     void signalImageTagsChanged(qlonglong imageId);
 
 public Q_SLOTS:

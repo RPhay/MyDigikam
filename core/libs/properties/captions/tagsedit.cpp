@@ -205,7 +205,7 @@ void TagsEdit::slotTagStateChanged(Album* album, Qt::CheckState checkState)
         }
     }
 
-    Q_EMIT signalModified();
+    Q_EMIT signalChanged();
 }
 
 void TagsEdit::slotTagsSearchChanged(const SearchTextSettings& settings)
