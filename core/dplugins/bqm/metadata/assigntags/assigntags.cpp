@@ -37,7 +37,10 @@
 #include "dmetadata.h"
 #include "dpluginbqm.h"
 #include "tagsedit.h"
+#include "fileactionmngr.h"
 #include "dfileoperations.h"
+#include "iteminfolist.h"
+#include "iteminfo.h"
 #include "dlayoutbox.h"
 
 namespace DigikamBqmAssignTagsPlugin
