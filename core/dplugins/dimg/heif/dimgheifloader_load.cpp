@@ -133,7 +133,6 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
 #endif
 
-
     heif_item_id primary_image_id;
 
     struct heif_context* const heif_context = heif_context_alloc();
