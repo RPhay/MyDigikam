@@ -131,7 +131,8 @@ void DigikamApp::setupActions()
 
     // -----------------------------------------------------------------
 
-    d->backwardActionMenu = new KToolBarPopupAction(QIcon::fromTheme(QLatin1String("go-previous")), i18nc("@action: setup", "&Back"), this);
+    d->backwardActionMenu = new KToolBarPopupAction(QIcon::fromTheme(QLatin1String("go-previous")),
+                                                    i18nc("@action: setup", "&Back"), this);
     d->backwardActionMenu->setEnabled(false);
     ac->addAction(QLatin1String("album_back"), d->backwardActionMenu);
     ac->setDefaultShortcut(d->backwardActionMenu, Qt::ALT | Qt::Key_Left);
@@ -144,7 +145,8 @@ void DigikamApp::setupActions()
 
     // -----------------------------------------------------------------
 
-    d->forwardActionMenu = new KToolBarPopupAction(QIcon::fromTheme(QLatin1String("go-next")), i18nc("@action: setup", "Forward"), this);
+    d->forwardActionMenu = new KToolBarPopupAction(QIcon::fromTheme(QLatin1String("go-next")),
+                                                   i18nc("@action: setup", "Forward"), this);
     d->forwardActionMenu->setEnabled(false);
     ac->addAction(QLatin1String("album_forward"), d->forwardActionMenu);
     ac->setDefaultShortcut(d->forwardActionMenu, Qt::ALT | Qt::Key_Right);
@@ -157,7 +159,8 @@ void DigikamApp::setupActions()
 
     // -----------------------------------------------------------------
 
-    d->refreshAction = new QAction(QIcon::fromTheme(QLatin1String("view-refresh")), i18nc("@action: setup", "Refresh"), this);
+    d->refreshAction = new QAction(QIcon::fromTheme(QLatin1String("view-refresh")),
+                                   i18nc("@action: setup", "Refresh"), this);
     d->refreshAction->setWhatsThis(i18nc("@info: setup", "Refresh the current contents."));
     connect(d->refreshAction, SIGNAL(triggered()), d->view, SLOT(slotRefresh()));
     ac->addAction(QLatin1String("view_refresh"), d->refreshAction);
@@ -184,7 +187,8 @@ void DigikamApp::setupActions()
 
     // -----------------------------------------------------------------
 
-    d->newAction = new QAction(QIcon::fromTheme(QLatin1String("folder-new")), i18nc("@action: setup", "&New..."), this);
+    d->newAction = new QAction(QIcon::fromTheme(QLatin1String("folder-new")),
+                               i18nc("@action: setup", "&New..."), this);
     d->newAction->setWhatsThis(i18nc("@info: setup", "Creates a new empty Album in the collection."));
     connect(d->newAction, SIGNAL(triggered()), d->view, SLOT(slotNewAlbum()));
     ac->addAction(QLatin1String("album_new"), d->newAction);
@@ -192,34 +196,39 @@ void DigikamApp::setupActions()
 
     // -----------------------------------------------------------------
 
-    d->moveSelectionToAlbumAction = new QAction(QIcon::fromTheme(QLatin1String("folder-new")), i18nc("@action: setup", "&Move to Album..."), this);
+    d->moveSelectionToAlbumAction = new QAction(QIcon::fromTheme(QLatin1String("folder-new")),
+                                                i18nc("@action: setup", "&Move to Album..."), this);
     d->moveSelectionToAlbumAction->setWhatsThis(i18nc("@info: setup", "Move selected images into an album."));
     connect(d->moveSelectionToAlbumAction, SIGNAL(triggered()), d->view, SLOT(slotMoveSelectionToAlbum()));
     ac->addAction(QLatin1String("move_selection_to_album"), d->moveSelectionToAlbumAction);
 
     // -----------------------------------------------------------------
 
-    d->copySelectionToAction = new QAction(QIcon::fromTheme(QLatin1String("edit-copy")), i18nc("@action: setup", "&Copy to..."), this);
+    d->copySelectionToAction = new QAction(QIcon::fromTheme(QLatin1String("edit-copy")),
+                                           i18nc("@action: setup", "&Copy to..."), this);
     d->copySelectionToAction->setWhatsThis(i18nc("@info: setup", "Copy selected images to a target folder."));
     connect(d->copySelectionToAction, SIGNAL(triggered()), d->view, SLOT(slotCopySelectionTo()));
     ac->addAction(QLatin1String("copy_selection_to"), d->copySelectionToAction);
 
     // -----------------------------------------------------------------
 
-    d->deleteAction = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")), i18nc("@action: setup", "Delete Album"), this);
+    d->deleteAction = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")),
+                                  i18nc("@action: setup", "Delete Album"), this);
     connect(d->deleteAction, SIGNAL(triggered()), d->view, SLOT(slotDeleteAlbum()));
     ac->addAction(QLatin1String("album_delete"), d->deleteAction);
 
     // -----------------------------------------------------------------
 
-    d->renameAction = new QAction(QIcon::fromTheme(QLatin1String("document-edit")), i18nc("@action: setup", "Rename..."), this);
+    d->renameAction = new QAction(QIcon::fromTheme(QLatin1String("document-edit")),
+                                  i18nc("@action: setup", "Rename..."), this);
     connect(d->renameAction, SIGNAL(triggered()), d->view, SLOT(slotRenameAlbum()));
     ac->addAction(QLatin1String("album_rename"), d->renameAction);
     ac->setDefaultShortcut(d->renameAction, Qt::SHIFT | Qt::Key_F2);
 
     // -----------------------------------------------------------------
 
-    d->propsEditAction = new QAction(QIcon::fromTheme(QLatin1String("configure")), i18nc("@action: setup", "Properties"), this);
+    d->propsEditAction = new QAction(QIcon::fromTheme(QLatin1String("configure")),
+                                     i18nc("@action: setup", "Properties"), this);
     d->propsEditAction->setWhatsThis(i18nc("@info: setup", "Edit album properties and collection information."));
     connect(d->propsEditAction, SIGNAL(triggered()), d->view, SLOT(slotAlbumPropsEdit()));
     ac->addAction(QLatin1String("album_propsEdit"), d->propsEditAction);
@@ -227,7 +236,8 @@ void DigikamApp::setupActions()
 
     // -----------------------------------------------------------------
 
-    d->writeAlbumMetadataAction = new QAction(QIcon::fromTheme(QLatin1String("document-edit")), i18nc("@action: setup", "Write Metadata to Files"), this);
+    d->writeAlbumMetadataAction = new QAction(QIcon::fromTheme(QLatin1String("document-edit")),
+                                              i18nc("@action: setup", "Write Metadata to Files"), this);
     d->writeAlbumMetadataAction->setWhatsThis(i18nc("@info: setup", "Updates metadata of files in the current "
                                                     "album with the contents of digiKam database "
                                                     "(file metadata will be overwritten with data from "
@@ -237,7 +247,8 @@ void DigikamApp::setupActions()
 
     // -----------------------------------------------------------------
 
-    d->readAlbumMetadataAction = new QAction(QIcon::fromTheme(QLatin1String("edit-redo")), i18nc("@action: setup", "Reread Metadata From Files"), this);
+    d->readAlbumMetadataAction = new QAction(QIcon::fromTheme(QLatin1String("edit-redo")),
+                                             i18nc("@action: setup", "Reread Metadata From Files"), this);
     d->readAlbumMetadataAction->setWhatsThis(i18nc("@info: setup", "Updates the digiKam database from the metadata "
                                                    "of the files in the current album "
                                                    "(information in the database will be overwritten with data from "
@@ -247,44 +258,51 @@ void DigikamApp::setupActions()
 
     // -----------------------------------------------------------------
 
-    d->openInFileManagerAction = new QAction(QIcon::fromTheme(QLatin1String("folder-open")), i18nc("@action: setup", "Open in File Manager"), this);
+    d->openInFileManagerAction = new QAction(QIcon::fromTheme(QLatin1String("folder-open")),
+                                             i18nc("@action: setup", "Open in File Manager"), this);
     connect(d->openInFileManagerAction, SIGNAL(triggered()), d->view, SLOT(slotAlbumOpenInFileManager()));
     ac->addAction(QLatin1String("album_openinfilemanager"), d->openInFileManagerAction);
 
     // -----------------------------------------------------------
 
-    d->openTagMngrAction = new QAction(QIcon::fromTheme(QLatin1String("tag")), i18nc("@action: setup", "Tag Manager"), this);
+    d->openTagMngrAction = new QAction(QIcon::fromTheme(QLatin1String("tag")),
+                                       i18nc("@action: setup", "Tag Manager"), this);
     connect(d->openTagMngrAction, SIGNAL(triggered()), d->view, SLOT(slotOpenTagsManager()));
     ac->addAction(QLatin1String("open_tag_mngr"), d->openTagMngrAction);
 
     // -----------------------------------------------------------
 
-    d->newTagAction = new QAction(QIcon::fromTheme(QLatin1String("tag-new")), i18nc("@action: new tag", "N&ew..."), this);
+    d->newTagAction = new QAction(QIcon::fromTheme(QLatin1String("tag-new")),
+                                  i18nc("@action: new tag", "N&ew..."), this);
     connect(d->newTagAction, SIGNAL(triggered()), d->view, SLOT(slotNewTag()));
     ac->addAction(QLatin1String("tag_new"), d->newTagAction);
 
     // -----------------------------------------------------------
 
-    d->editTagAction = new QAction(QIcon::fromTheme(QLatin1String("tag-properties")), i18nc("@action: setup", "Properties"), this);
+    d->editTagAction = new QAction(QIcon::fromTheme(QLatin1String("tag-properties")),
+                                   i18nc("@action: setup", "Properties"), this);
     connect(d->editTagAction, SIGNAL(triggered()), d->view, SLOT(slotEditTag()));
     ac->addAction(QLatin1String("tag_edit"), d->editTagAction);
 
     // -----------------------------------------------------------
 
-    d->deleteTagAction = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")), i18nc("@action: setup", "Delete"), this);
+    d->deleteTagAction = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")),
+                                     i18nc("@action: setup", "Delete"), this);
     connect(d->deleteTagAction, SIGNAL(triggered()), d->view, SLOT(slotDeleteTag()));
     ac->addAction(QLatin1String("tag_delete"), d->deleteTagAction);
 
     // -----------------------------------------------------------
 
-    d->assignTagAction = new QAction(QIcon::fromTheme(QLatin1String("tag-new")), i18nc("@action: setup", "Assign Tag"), this);
+    d->assignTagAction = new QAction(QIcon::fromTheme(QLatin1String("tag-new")),
+                                     i18nc("@action: setup", "Assign Tag"), this);
     connect(d->assignTagAction, SIGNAL(triggered()), d->view, SLOT(slotAssignTag()));
     ac->addAction(QLatin1String("tag_assign"), d->assignTagAction);
     ac->setDefaultShortcut(d->assignTagAction, Qt::Key_T);
 
     // -----------------------------------------------------------
 
-    d->imageViewSelectionAction = new KSelectAction(QIcon::fromTheme(QLatin1String("view-preview")), i18nc("@action: setup", "Views"), this);
+    d->imageViewSelectionAction = new KSelectAction(QIcon::fromTheme(QLatin1String("view-preview")),
+                                                    i18nc("@action: setup", "Views"), this);
     ac->addAction(QLatin1String("view_selection"), d->imageViewSelectionAction);
 
     d->imageIconViewAction = new QAction(QIcon::fromTheme(QLatin1String("view-list-icons")),
@@ -322,37 +340,43 @@ void DigikamApp::setupActions()
 
     // -----------------------------------------------------------
 
-    d->imageViewAction = new QAction(QIcon::fromTheme(QLatin1String("quickopen-file")), i18nc("@action: setup", "Open..."), this);
+    d->imageViewAction = new QAction(QIcon::fromTheme(QLatin1String("quickopen-file")),
+                                     i18nc("@action: setup", "Open..."), this);
     d->imageViewAction->setWhatsThis(i18nc("@info: setup", "Open the selected item."));
     connect(d->imageViewAction, SIGNAL(triggered()), d->view, SLOT(slotImageEdit()));
     ac->addAction(QLatin1String("image_edit"), d->imageViewAction);
     ac->setDefaultShortcut(d->imageViewAction, Qt::Key_F4);
 
-    d->openWithAction = new QAction(QIcon::fromTheme(QLatin1String("preferences-desktop-filetype-association")), i18nc("@action: setup", "Open With Default Application"), this);
+    d->openWithAction = new QAction(QIcon::fromTheme(QLatin1String("preferences-desktop-filetype-association")),
+                                    i18nc("@action: setup", "Open With Default Application"), this);
     d->openWithAction->setWhatsThis(i18nc("@info: setup", "Open the selected item with default assigned application."));
     connect(d->openWithAction, SIGNAL(triggered()), d->view, SLOT(slotFileWithDefaultApplication()));
     ac->addAction(QLatin1String("open_with_default_application"), d->openWithAction);
     ac->setDefaultShortcut(d->openWithAction, Qt::CTRL | Qt::Key_F4);
 
-    d->ieAction = new QAction(QIcon::fromTheme(QLatin1String("document-edit")), i18nc("@action: setup", "Image Editor"), this);
+    d->ieAction = new QAction(QIcon::fromTheme(QLatin1String("document-edit")),
+                              i18nc("@action: setup", "Image Editor"), this);
     d->ieAction->setWhatsThis(i18nc("@action: setup", "Open the image editor."));
     connect(d->ieAction, SIGNAL(triggered()), d->view, SLOT(slotEditor()));
     ac->addAction(QLatin1String("imageeditor"), d->ieAction);
 
     // -----------------------------------------------------------
 
-    d->ltAction = new QAction(QIcon::fromTheme(QLatin1String("lighttable")), i18nc("@action: setup", "Light Table"), this);
+    d->ltAction = new QAction(QIcon::fromTheme(QLatin1String("lighttable")),
+                              i18nc("@action: setup", "Light Table"), this);
     connect(d->ltAction, SIGNAL(triggered()), d->view, SLOT(slotLightTable()));
     ac->addAction(QLatin1String("light_table"), d->ltAction);
     ac->setDefaultShortcut(d->ltAction, Qt::SHIFT | Qt::Key_L);
 
-    d->imageLightTableAction = new QAction(QIcon::fromTheme(QLatin1String("lighttable")), i18nc("@action: setup", "Place onto Light Table"), this);
+    d->imageLightTableAction = new QAction(QIcon::fromTheme(QLatin1String("lighttable")),
+                                           i18nc("@action: setup", "Place onto Light Table"), this);
     d->imageLightTableAction->setWhatsThis(i18nc("@info: setup", "Place the selected items on the light table thumbbar."));
     connect(d->imageLightTableAction, SIGNAL(triggered()), d->view, SLOT(slotImageLightTable()));
     ac->addAction(QLatin1String("image_lighttable"), d->imageLightTableAction);
     ac->setDefaultShortcut(d->imageLightTableAction, Qt::CTRL | Qt::Key_L);
 
-    d->imageAddLightTableAction = new QAction(QIcon::fromTheme(QLatin1String("list-add")), i18nc("@action: setup", "Add to Light Table"), this);
+    d->imageAddLightTableAction = new QAction(QIcon::fromTheme(QLatin1String("list-add")),
+                                              i18nc("@action: setup", "Add to Light Table"), this);
     d->imageAddLightTableAction->setWhatsThis(i18nc("@info: setup", "Add selected items to the light table thumbbar."));
     connect(d->imageAddLightTableAction, SIGNAL(triggered()), d->view, SLOT(slotImageAddToLightTable()));
     ac->addAction(QLatin1String("image_add_to_lighttable"), d->imageAddLightTableAction);
@@ -360,18 +384,21 @@ void DigikamApp::setupActions()
 
     // -----------------------------------------------------------
 
-    d->bqmAction = new QAction(QIcon::fromTheme(QLatin1String("run-build")), i18nc("@action: setup", "Batch Queue Manager"), this);
+    d->bqmAction = new QAction(QIcon::fromTheme(QLatin1String("run-build")),
+                               i18nc("@action: setup", "Batch Queue Manager"), this);
     connect(d->bqmAction, SIGNAL(triggered()), d->view, SLOT(slotQueueMgr()));
     ac->addAction(QLatin1String("queue_manager"), d->bqmAction);
     ac->setDefaultShortcut(d->bqmAction, Qt::SHIFT | Qt::Key_B);
 
-    d->imageAddCurrentQueueAction = new QAction(QIcon::fromTheme(QLatin1String("go-up")), i18nc("@action: setup", "Add to Current Queue"), this);
+    d->imageAddCurrentQueueAction = new QAction(QIcon::fromTheme(QLatin1String("go-up")),
+                                                i18nc("@action: setup", "Add to Current Queue"), this);
     d->imageAddCurrentQueueAction->setWhatsThis(i18nc("@info: setup", "Add selected items to current queue from batch manager."));
     connect(d->imageAddCurrentQueueAction, SIGNAL(triggered()), d->view, SLOT(slotImageAddToCurrentQueue()));
     ac->addAction(QLatin1String("image_add_to_current_queue"), d->imageAddCurrentQueueAction);
     ac->setDefaultShortcut(d->imageAddCurrentQueueAction, Qt::CTRL | Qt::Key_B);
 
-    d->imageAddNewQueueAction = new QAction(QIcon::fromTheme(QLatin1String("list-add")), i18nc("@action: setup", "Add to New Queue"), this);
+    d->imageAddNewQueueAction = new QAction(QIcon::fromTheme(QLatin1String("list-add")),
+                                            i18nc("@action: setup", "Add to New Queue"), this);
     d->imageAddNewQueueAction->setWhatsThis(i18nc("@info: setup", "Add selected items to a new queue from batch manager."));
     connect(d->imageAddNewQueueAction, SIGNAL(triggered()), d->view, SLOT(slotImageAddToNewQueue()));
     ac->addAction(QLatin1String("image_add_to_new_queue"), d->imageAddNewQueueAction);
@@ -407,24 +434,28 @@ void DigikamApp::setupActions()
 
     // -----------------------------------------------------------
 
-    d->imageScanForFacesAction = new QAction(QIcon::fromTheme(QLatin1String("list-add-user")), i18nc("@action: setup", "Scan for Faces"), this);
+    d->imageScanForFacesAction = new QAction(QIcon::fromTheme(QLatin1String("list-add-user")),
+                                             i18nc("@action: setup", "Scan for Faces"), this);
     connect(d->imageScanForFacesAction, SIGNAL(triggered()), d->view, SLOT(slotImageScanForFaces()));
     ac->addAction(QLatin1String("image_scan_for_faces"), d->imageScanForFacesAction);
 
-    d->imageRecognizeFacesAction = new QAction(QIcon::fromTheme(QLatin1String("edit-find-user")), i18nc("@action: setup", "Recognize Faces"), this);
+    d->imageRecognizeFacesAction = new QAction(QIcon::fromTheme(QLatin1String("edit-find-user")),
+                                               i18nc("@action: setup", "Recognize Faces"), this);
     connect(d->imageRecognizeFacesAction, SIGNAL(triggered()), d->view, SLOT(slotImageRecognizeFaces()));
     ac->addAction(QLatin1String("image_recognize_faces"), d->imageRecognizeFacesAction);
 
     // -----------------------------------------------------------
 
-    d->imageFindSimilarAction = new QAction(QIcon::fromTheme(QLatin1String("tools-wizard")), i18nc("@action: setup", "Find Similar..."), this);
+    d->imageFindSimilarAction = new QAction(QIcon::fromTheme(QLatin1String("tools-wizard")),
+                                            i18nc("@action: setup", "Find Similar..."), this);
     d->imageFindSimilarAction->setWhatsThis(i18nc("@info: setup", "Find similar images using selected item as reference."));
     connect(d->imageFindSimilarAction, SIGNAL(triggered()), d->view, SLOT(slotImageFindSimilar()));
     ac->addAction(QLatin1String("image_find_similar"), d->imageFindSimilarAction);
 
     // -----------------------------------------------------------
 
-    d->imageRenameAction = new QAction(QIcon::fromTheme(QLatin1String("document-edit")), i18nc("@action: setup", "Rename..."), this);
+    d->imageRenameAction = new QAction(QIcon::fromTheme(QLatin1String("document-edit")),
+                                       i18nc("@action: setup", "Rename..."), this);
     d->imageRenameAction->setWhatsThis(i18nc("@info: setup", "Change the filename of the currently selected item."));
     connect(d->imageRenameAction, SIGNAL(triggered()), d->view, SLOT(slotImageRename()));
     ac->addAction(QLatin1String("image_rename"), d->imageRenameAction);
@@ -434,7 +465,8 @@ void DigikamApp::setupActions()
 
     // Pop up dialog to ask user whether to move to trash
 
-    d->imageDeleteAction = new QAction(QIcon::fromTheme(QLatin1String("user-trash")), i18nc("@action: Non-pluralized", "Move to Trash"), this);
+    d->imageDeleteAction = new QAction(QIcon::fromTheme(QLatin1String("user-trash")),
+                                       i18nc("@action: Non-pluralized", "Move to Trash"), this);
     connect(d->imageDeleteAction, SIGNAL(triggered()), d->view, SLOT(slotImageDelete()));
     ac->addAction(QLatin1String("image_delete"), d->imageDeleteAction);
     ac->setDefaultShortcut(d->imageDeleteAction, Qt::Key_Delete);
@@ -447,7 +479,8 @@ void DigikamApp::setupActions()
     //        Also note that we use the wrong icon for the default album delete action, which should have a trashcan icon instead
     //        of a red cross, it confuses users.
 
-    d->imageDeletePermanentlyAction = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")), i18nc("@action: setup", "Delete Permanently"), this);
+    d->imageDeletePermanentlyAction = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")),
+                                                  i18nc("@action: setup", "Delete Permanently"), this);
     connect(d->imageDeletePermanentlyAction, SIGNAL(triggered()), d->view, SLOT(slotImageDeletePermanently()));
     ac->addAction(QLatin1String("image_delete_permanently"), d->imageDeletePermanentlyAction);
     ac->setDefaultShortcut(d->imageDeletePermanentlyAction, Qt::SHIFT | Qt::Key_Delete);
@@ -682,7 +715,8 @@ void DigikamApp::setupActions()
 
     // -----------------------------------------------------------
 
-    d->showBarAction = new QAction(QIcon::fromTheme(QLatin1String("view-choose")), i18nc("@action: setup", "Show Thumbbar"), this);
+    d->showBarAction = new QAction(QIcon::fromTheme(QLatin1String("view-choose")),
+                                   i18nc("@action: setup", "Show Thumbbar"), this);
     d->showBarAction->setCheckable(true);
     connect(d->showBarAction, SIGNAL(triggered()), this, SLOT(slotToggleShowBar()));
     ac->addAction(QLatin1String("showthumbs"), d->showBarAction);
@@ -712,14 +746,16 @@ void DigikamApp::setupActions()
 
     // -----------------------------------------------------------
 
-    d->zoomTo100percents = new QAction(QIcon::fromTheme(QLatin1String("zoom-original")), i18nc("@action: setup", "Zoom to 100%"), this);
+    d->zoomTo100percents = new QAction(QIcon::fromTheme(QLatin1String("zoom-original")),
+                                       i18nc("@action: setup", "Zoom to 100%"), this);
     connect(d->zoomTo100percents, SIGNAL(triggered()), d->view, SLOT(slotZoomTo100Percents()));
     ac->addAction(QLatin1String("album_zoomto100percents"), d->zoomTo100percents);
     ac->setDefaultShortcut(d->zoomTo100percents, Qt::CTRL | Qt::Key_Period);
 
     // -----------------------------------------------------------
 
-    d->zoomFitToWindowAction = new QAction(QIcon::fromTheme(QLatin1String("zoom-fit-best")), i18nc("@action: setup", "Fit to &Window"), this);
+    d->zoomFitToWindowAction = new QAction(QIcon::fromTheme(QLatin1String("zoom-fit-best")),
+                                           i18nc("@action: setup", "Fit to &Window"), this);
     connect(d->zoomFitToWindowAction, SIGNAL(triggered()), d->view, SLOT(slotFitToWindow()));
     ac->addAction(QLatin1String("album_zoomfit2window"), d->zoomFitToWindowAction);
     ac->setDefaultShortcut(d->zoomFitToWindowAction, Qt::CTRL | Qt::ALT | Qt::Key_E);
@@ -731,7 +767,8 @@ void DigikamApp::setupActions()
 
     // -----------------------------------------------------------
 
-    d->viewCMViewAction = new QAction(QIcon::fromTheme(QLatin1String("video-display")), i18nc("@action: setup", "Color-Managed View"), this);
+    d->viewCMViewAction = new QAction(QIcon::fromTheme(QLatin1String("video-display")),
+                                      i18nc("@action: setup", "Color-Managed View"), this);
     d->viewCMViewAction->setCheckable(true);
     connect(d->viewCMViewAction, SIGNAL(triggered()), this, SLOT(slotToggleColorManagedView()));
     ac->addAction(QLatin1String("color_managed_view"), d->viewCMViewAction);
@@ -748,21 +785,24 @@ void DigikamApp::setupActions()
 
     // -----------------------------------------------------------
 
-    QAction* const findAction = new QAction(QIcon::fromTheme(QLatin1String("edit-find")), i18nc("@action: setup", "Search..."), this);
+    QAction* const findAction = new QAction(QIcon::fromTheme(QLatin1String("edit-find")),
+                                            i18nc("@action: setup", "Search..."), this);
     connect(findAction, SIGNAL(triggered()), d->view, SLOT(slotNewKeywordSearch()));
     ac->addAction(QLatin1String("search_quick"), findAction);
     ac->setDefaultShortcut(findAction, Qt::CTRL | Qt::Key_F);
 
     // -----------------------------------------------------------
 
-    d->advSearchAction = new QAction(QIcon::fromTheme(QLatin1String("edit-find")), i18nc("@action: setup", "Advanced Search..."), this);
+    d->advSearchAction = new QAction(QIcon::fromTheme(QLatin1String("edit-find")),
+                                     i18nc("@action: setup", "Advanced Search..."), this);
     connect(d->advSearchAction, SIGNAL(triggered()), d->view, SLOT(slotNewAdvancedSearch()));
     ac->addAction(QLatin1String("search_advanced"), d->advSearchAction);
     ac->setDefaultShortcut(d->advSearchAction, Qt::CTRL | Qt::ALT | Qt::Key_F);
 
     // -----------------------------------------------------------
 
-    QAction* const duplicatesAction = new QAction(QIcon::fromTheme(QLatin1String("tools-wizard")), i18nc("@action: setup", "Find Duplicates..."), this);
+    QAction* const duplicatesAction = new QAction(QIcon::fromTheme(QLatin1String("tools-wizard")),
+                                                  i18nc("@action: setup", "Find Duplicates..."), this);
     connect(duplicatesAction, SIGNAL(triggered()), d->view, SLOT(slotNewDuplicatesSearch()));
     ac->addAction(QLatin1String("find_duplicates"), duplicatesAction);
     ac->setDefaultShortcut(duplicatesAction, Qt::CTRL | Qt::Key_D);
@@ -771,7 +811,8 @@ void DigikamApp::setupActions()
 
 #ifdef HAVE_MYSQLSUPPORT
 
-    QAction* const databaseMigrationAction = new QAction(QIcon::fromTheme(QLatin1String("network-server-database")), i18nc("@action: setup", "Database Migration..."), this);
+    QAction* const databaseMigrationAction = new QAction(QIcon::fromTheme(QLatin1String("network-server-database")),
+                                                         i18nc("@action: setup", "Database Migration..."), this);
     connect(databaseMigrationAction, SIGNAL(triggered()), this, SLOT(slotDatabaseMigration()));
     ac->addAction(QLatin1String("database_migration"), databaseMigrationAction);
 
@@ -779,13 +820,15 @@ void DigikamApp::setupActions()
 
     // -----------------------------------------------------------
 
-    d->maintenanceAction = new QAction(QIcon::fromTheme(QLatin1String("run-build-prune")), i18nc("@action: setup", "Maintenance..."), this);
+    d->maintenanceAction = new QAction(QIcon::fromTheme(QLatin1String("run-build-prune")),
+                                       i18nc("@action: setup", "Maintenance..."), this);
     connect(d->maintenanceAction, SIGNAL(triggered()), this, SLOT(slotMaintenance()));
     ac->addAction(QLatin1String("maintenance"), d->maintenanceAction);
 
     // -----------------------------------------------------------
 
-    d->scanNewItemsAction = new QAction(QIcon::fromTheme(QLatin1String("view-refresh")), i18nc("@action: setup", "Scan for new Items"), this);
+    d->scanNewItemsAction = new QAction(QIcon::fromTheme(QLatin1String("view-refresh")),
+                                        i18nc("@action: setup", "Scan for new Items"), this);
     connect(d->scanNewItemsAction, SIGNAL(triggered()), this, SLOT(slotScanNewItems()));
     ac->addAction(QLatin1String("scan_newitems"), d->scanNewItemsAction);
 
