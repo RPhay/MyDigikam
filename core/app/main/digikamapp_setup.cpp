@@ -411,6 +411,10 @@ void DigikamApp::setupActions()
     connect(d->imageScanForFacesAction, SIGNAL(triggered()), d->view, SLOT(slotImageScanForFaces()));
     ac->addAction(QLatin1String("image_scan_for_faces"), d->imageScanForFacesAction);
 
+    d->imageRecognizeFacesAction = new QAction(QIcon::fromTheme(QLatin1String("edit-find-user")), i18nc("@action: setup", "Recognize Faces"), this);
+    connect(d->imageRecognizeFacesAction, SIGNAL(triggered()), d->view, SLOT(slotImageRecognizeFaces()));
+    ac->addAction(QLatin1String("image_recognize_faces"), d->imageRecognizeFacesAction);
+
     // -----------------------------------------------------------
 
     d->imageFindSimilarAction = new QAction(QIcon::fromTheme(QLatin1String("tools-wizard")), i18nc("@action: setup", "Find Similar..."), this);

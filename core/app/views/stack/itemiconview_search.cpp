@@ -79,4 +79,36 @@ void ItemIconView::slotImageScanForFaces()
     tool->start();
 }
 
+void ItemIconView::slotImageRecognizeFaces()
+{
+    FaceScanSettings settings;
+
+    // TODO Faces engine : set K-nearest config
+
+    settings.accuracy  = ApplicationSettings::instance()->getFaceDetectionAccuracy();
+    settings.useYoloV3 = ApplicationSettings::instance()->getFaceDetectionYoloV3();
+    settings.task      = FaceScanSettings::RecognizeMarkedFaces;
+
+    ItemInfoList itemInfos;
+
+    // Remove possible duplicate ItemInfos.
+
+    Q_FOREACH (const ItemInfo& info, selectedInfoList(ApplicationSettings::Tools))
+    {
+        if (!itemInfos.contains(info))
+        {
+            itemInfos << info;
+        }
+    }
+
+    settings.infos     = itemInfos;
+
+    FacesDetector* const tool = new FacesDetector(settings);
+
+    connect(tool, SIGNAL(signalComplete()),
+            this, SLOT(slotRefreshImagePreview()));
+
+    tool->start();
+}
+
 } // namespace Digikam
