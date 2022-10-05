@@ -140,8 +140,13 @@ void DateFolderView::slotAllAlbumsLoaded()
 {
     if (d->active)
     {
-        AlbumManager::instance()->setCurrentAlbums(QList<Album*>() << d->dateTreeView->currentAlbum());
-        slotSelectionChanged(d->dateTreeView->currentAlbum());
+        QList<Album*> albums({d->dateTreeView->currentAlbum()});
+
+        if (AlbumManager::instance()->currentAlbums() != albums)
+        {
+            AlbumManager::instance()->setCurrentAlbums(albums);
+            slotSelectionChanged(d->dateTreeView->currentAlbum());
+        }
     }
 
     // Workaround for bug 447874
