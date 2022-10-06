@@ -4,7 +4,11 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
+add_subdirectory(assigncaptions)
+add_subdirectory(assignlabels)
+#add_subdirectory(assigntags)
 add_subdirectory(assigntemplate)
+add_subdirectory(qualitysort)
 add_subdirectory(removemetadata)
 add_subdirectory(timeadjust)
 add_subdirectory(translate)

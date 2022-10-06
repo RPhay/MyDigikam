@@ -284,7 +284,15 @@ void ItemIconView::slotShowContextMenuOnInfo(QContextMenuEvent* event, const Ite
 
     // --------------------------------------------------------
 
-    cmHelper.addAction(QLatin1String("image_scan_for_faces"));
+    if (d->leftSideBar->getActiveTab() == d->peopleSideBar)
+    {
+        cmHelper.addAction(QLatin1String("image_recognize_faces"));
+    }
+    else
+    {
+        cmHelper.addAction(QLatin1String("image_scan_for_faces"));
+    }
+
     cmHelper.addAction(QLatin1String("image_find_similar"));
     cmHelper.addStandardActionLightTable();
     cmHelper.addQueueManagerMenu();

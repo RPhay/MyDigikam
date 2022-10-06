@@ -43,6 +43,7 @@
 #include "albumselectors.h"
 #include "facescansettings.h"
 #include "imagequalitycontainer.h"
+#include "imagequalityconfselector.h"
 #include "metadatasynchronizer.h"
 #include "dxmlguiwindow.h"
 #include "applicationsettings.h"
@@ -86,7 +87,7 @@ public:
         shrinkDatabases         (nullptr),
         qualityScanMode         (nullptr),
         metadataSetup           (nullptr),
-        qualitySetup            (nullptr),
+        qualitySelector         (nullptr),
         syncDirection           (nullptr),
         similarityRangeBox      (nullptr),
         dupeRestrictionBox      (nullptr),
@@ -119,6 +120,7 @@ public:
     static const QString configFaceScannedHandling;
     static const QString configImageQualitySorter;
     static const QString configQualityScanMode;
+    static const QString configQualitySettingsSelected;
     static const QString configMetadataSync;
     static const QString configCleanupDatabase;
     static const QString configCleanupThumbDatabase;
@@ -127,34 +129,34 @@ public:
     static const QString configShrinkDatabases;
     static const QString configSyncDirection;
 
-    QDialogButtonBox*    buttons;
-    QLabel*              logo;
-    QLabel*              title;
-    QCheckBox*           scanThumbs;
-    QCheckBox*           scanFingerPrints;
-    QCheckBox*           useLastSettings;
-    QCheckBox*           useMutiCoreCPU;
-    QCheckBox*           cleanThumbsDb;
-    QCheckBox*           cleanFacesDb;
-    QCheckBox*           cleanSimilarityDb;
-    QCheckBox*           retrainAllFaces;
-    QCheckBox*           shrinkDatabases;
-    QComboBox*           qualityScanMode;
-    QPushButton*         metadataSetup;
-    QPushButton*         qualitySetup;
-    QComboBox*           syncDirection;
-    DHBox*               similarityRangeBox;
-    DHBox*               dupeRestrictionBox;
-    DVBox*               vbox;
-    DVBox*               vbox2;
-    DVBox*               vbox3;
-    DVBox*               vbox4;
-    DVBox*               duplicatesBox;
-    DIntRangeBox*        similarityRange;
-    QComboBox*           faceScannedHandling;
-    QComboBox*           searchResultRestriction;
-    DExpanderBox*        expanderBox;
-    AlbumSelectors*      albumSelectors;
+    QDialogButtonBox*         buttons;
+    QLabel*                   logo;
+    QLabel*                   title;
+    QCheckBox*                scanThumbs;
+    QCheckBox*                scanFingerPrints;
+    QCheckBox*                useLastSettings;
+    QCheckBox*                useMutiCoreCPU;
+    QCheckBox*                cleanThumbsDb;
+    QCheckBox*                cleanFacesDb;
+    QCheckBox*                cleanSimilarityDb;
+    QCheckBox*                retrainAllFaces;
+    QCheckBox*                shrinkDatabases;
+    QComboBox*                qualityScanMode;
+    QPushButton*              metadataSetup;
+    ImageQualityConfSelector* qualitySelector;
+    QComboBox*                syncDirection;
+    DHBox*                    similarityRangeBox;
+    DHBox*                    dupeRestrictionBox;
+    DVBox*                    vbox;
+    DVBox*                    vbox2;
+    DVBox*                    vbox3;
+    DVBox*                    vbox4;
+    DVBox*                    duplicatesBox;
+    DIntRangeBox*             similarityRange;
+    QComboBox*                faceScannedHandling;
+    QComboBox*                searchResultRestriction;
+    DExpanderBox*             expanderBox;
+    AlbumSelectors*           albumSelectors;
 };
 
 const QString MaintenanceDlg::Private::configGroupName(QLatin1String("MaintenanceDlg Settings"));
@@ -173,6 +175,7 @@ const QString MaintenanceDlg::Private::configFaceManagement(QLatin1String("FaceM
 const QString MaintenanceDlg::Private::configFaceScannedHandling(QLatin1String("FaceScannedHandling"));
 const QString MaintenanceDlg::Private::configImageQualitySorter(QLatin1String("ImageQualitySorter"));
 const QString MaintenanceDlg::Private::configQualityScanMode(QLatin1String("QualityScanMode"));
+const QString MaintenanceDlg::Private::configQualitySettingsSelected(QLatin1String("QualitySettingsSelected"));
 const QString MaintenanceDlg::Private::configMetadataSync(QLatin1String("MetadataSync"));
 const QString MaintenanceDlg::Private::configSyncDirection(QLatin1String("SyncDirection"));
 const QString MaintenanceDlg::Private::configCleanupDatabase(QLatin1String("CleanupDatabase"));
@@ -336,11 +339,8 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     d->qualityScanMode->addItem(i18n("Clean all and re-scan"),  ImageQualitySorter::AllItems);
     d->qualityScanMode->addItem(i18n("Scan non-assigned only"), ImageQualitySorter::NonAssignedItems);
 
-    DHBox* const hbox12   = new DHBox(d->vbox);
-    new QLabel(i18n("Check quality sorter setup panel for details: "), hbox12);
-    QWidget* const space2 = new QWidget(hbox12);
-    hbox12->setStretchFactor(space2, 10);
-    d->qualitySetup       = new QPushButton(i18n("Settings..."), hbox12);
+    d->qualitySelector    = new ImageQualityConfSelector(d->vbox);
+
     d->expanderBox->insertItem(Private::ImageQualitySorter, d->vbox, QIcon::fromTheme(QLatin1String("flag-green")),
                                i18n("Image Quality Sorter"), QLatin1String("ImageQualitySorter"), false);
     d->expanderBox->setCheckBoxVisible(Private::ImageQualitySorter, true);
@@ -403,7 +403,7 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     connect(d->metadataSetup, SIGNAL(clicked()),
             this, SLOT(slotMetadataSetup()));
 
-    connect(d->qualitySetup, SIGNAL(clicked()),
+    connect(d->qualitySelector, SIGNAL(signalQualitySetup()),
             this, SLOT(slotQualitySetup()));
 
     connect(d->retrainAllFaces, &QCheckBox::toggled,
@@ -460,11 +460,22 @@ MaintenanceSettings MaintenanceDlg::settings() const
     prm.faceSettings.albums                 = d->albumSelectors->selectedAlbums();
     prm.qualitySort                         = d->expanderBox->isChecked(Private::ImageQualitySorter);
     prm.qualityScanMode                     = d->qualityScanMode->itemData(d->qualityScanMode->currentIndex()).toInt();
-    ImageQualityContainer imgq;
-    imgq.readFromConfig();
-    prm.quality                             = imgq;
+    prm.qualitySettingsSelected             = (int)d->qualitySelector->settingsSelected();
+
+    if (prm.qualitySettingsSelected == ImageQualityConfSelector::GlobalSettings)
+    {
+        ImageQualityContainer imgq;
+        imgq.readFromConfig();
+        prm.quality                         = imgq;
+    }
+    else
+    {
+        prm.quality                         = d->qualitySelector->customSettings();
+    }
+
     prm.metadataSync                        = d->expanderBox->isChecked(Private::MetadataSync);
     prm.syncDirection                       = d->syncDirection->itemData(d->syncDirection->currentIndex()).toInt();
+
     return prm;
 }
 
@@ -509,6 +520,12 @@ void MaintenanceDlg::readSettings()
 
         d->expanderBox->setChecked(Private::ImageQualitySorter, group.readEntry(d->configImageQualitySorter,    prm.qualitySort));
         d->qualityScanMode->setCurrentIndex(group.readEntry(d->configQualityScanMode,                           prm.qualityScanMode));
+        d->qualitySelector->setSettingsSelected(
+            (ImageQualityConfSelector::SettingsType)group.readEntry(d->configQualitySettingsSelected,           prm.qualitySettingsSelected));
+
+        ImageQualityContainer imq;
+        imq.readFromConfig(group);
+        d->qualitySelector->setCustomSettings(imq);
 
         d->expanderBox->setChecked(Private::MetadataSync,       group.readEntry(d->configMetadataSync,          prm.metadataSync));
         d->syncDirection->setCurrentIndex(group.readEntry(d->configSyncDirection,                               prm.syncDirection));
@@ -557,6 +574,11 @@ void MaintenanceDlg::writeSettings()
         group.writeEntry(d->configFaceScannedHandling,        (int)prm.faceSettings.alreadyScannedHandling);
         group.writeEntry(d->configImageQualitySorter,         prm.qualitySort);
         group.writeEntry(d->configQualityScanMode,            prm.qualityScanMode);
+        group.writeEntry(d->configQualitySettingsSelected,    prm.qualitySettingsSelected);
+
+        ImageQualityContainer imq = d->qualitySelector->customSettings();
+        imq.writeToConfig(group);
+
         group.writeEntry(d->configMetadataSync,               prm.metadataSync);
         group.writeEntry(d->configSyncDirection,              prm.syncDirection);
     }
@@ -569,35 +591,51 @@ void MaintenanceDlg::slotItemToggled(int index, bool b)
     switch (index)
     {
         case Private::Thumbnails:
+        {
             d->scanThumbs->setEnabled(b);
             break;
+        }
 
         case Private::FingerPrints:
+        {
             d->scanFingerPrints->setEnabled(b);
             break;
+        }
 
         case Private::Duplicates:
+        {
             d->duplicatesBox->setEnabled(b);
             break;
+        }
 
         case Private::FaceManagement:
+        {
             d->vbox4->setEnabled(b);
             break;
+        }
 
         case Private::ImageQualitySorter:
+        {
             d->vbox->setEnabled(b);
             break;
+        }
 
         case Private::MetadataSync:
+        {
             d->vbox2->setEnabled(b);
             break;
+        }
 
         case Private::DbCleanup:
+        {
             d->vbox3->setEnabled(b);
             break;
+        }
 
         default :  // NewItems
+        {
             break;
+        }
     }
 }
 

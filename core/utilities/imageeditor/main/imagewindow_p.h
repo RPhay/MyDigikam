@@ -279,7 +279,8 @@ public:
 
     DatabaseVersionManager       versionManager;
 
-    QMultiMap<QString, QVariant> newFaceTags;
+    QList<FaceTagsIface>         facesList;
+    QSize                        faceImageSize;
 };
 
 } // namespace Digikam

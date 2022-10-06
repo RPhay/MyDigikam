@@ -17,7 +17,7 @@
 namespace Digikam
 {
 
-ExifToolParser::ExifToolParser(QObject* const parent)
+ExifToolParser::ExifToolParser(QObject* const parent, bool async)
     : QObject(parent),
       d      (new Private(this))
 {
@@ -37,33 +37,33 @@ ExifToolParser::ExifToolParser(QObject* const parent)
 
     // Get ExifTool process instance.
 
-    d->proc = ExifToolProcess::instance();
+    d->proc  = ExifToolProcess::instance();
+    d->async = async;
+
+    if (d->async)
+    {
+        connect(d->proc, &ExifToolProcess::signalCmdCompleted,
+                this, &ExifToolParser::slotCmdCompleted,
+                Qt::QueuedConnection);
+
+        connect(d->proc, &ExifToolProcess::signalErrorOccurred,
+                this, &ExifToolParser::slotErrorOccurred,
+                Qt::QueuedConnection);
+
+        connect(d->proc, &ExifToolProcess::signalFinished,
+                this, &ExifToolParser::slotFinished,
+                Qt::QueuedConnection);
+    }
 }
 
 ExifToolParser::~ExifToolParser()
 {
-    {
-        // Still waiting for a result
-
-        QMutexLocker locker(&d->mutex);
-
-        if (d->startAsync && d->cmdRunning)
-        {
-            d->condVar.wait(&d->mutex);
-        }
-    }
-
     delete d;
 }
 
 void ExifToolParser::setExifToolProgram(const QString& path)
 {
     d->proc->setExifToolProgram(path);
-}
-
-void ExifToolParser::setExifToolAsync(bool async)
-{
-    d->startAsync = async;
 }
 
 QString ExifToolParser::currentPath() const

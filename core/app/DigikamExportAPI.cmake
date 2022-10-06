@@ -84,6 +84,7 @@ install(FILES
               ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/engine/metaengine.h
               ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/engine/metaengine_data.h
               ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/containers/photoinfocontainer.h
+              ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/containers/captionvalues.h
 
               ${CMAKE_SOURCE_DIR}/core/libs/rawengine/drawdecoder.h
               ${CMAKE_SOURCE_DIR}/core/libs/rawengine/drawinfo.h

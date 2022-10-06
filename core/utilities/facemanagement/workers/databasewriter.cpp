@@ -18,6 +18,8 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "scancontroller.h"
+#include "metadatahub.h"
 
 namespace Digikam
 {
@@ -144,6 +146,12 @@ void DatabaseWriter::process(FacePipelineExtendedPackage::Ptr package)
 
             // Training is done by trainerWorker
         }
+
+        MetadataHub hub;
+        hub.load(package->info);
+
+        ScanController::FileMetadataWrite writeScope(package->info);
+        writeScope.changed(hub.writeToMetadata(package->info, MetadataHub::WRITE_TAGS));
 
         if (!package->image.isNull())
         {

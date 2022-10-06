@@ -148,7 +148,8 @@ public:
 
     enum SetupPage
     {
-        ExifToolPage = 0
+        ExifToolPage = 0,
+        ImageQualityPage
     };
 
     /// Open configuration dialog page.

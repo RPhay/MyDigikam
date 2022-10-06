@@ -14,18 +14,14 @@
 
 #include "captionedit.h"
 
-// Qt includes
-
-#include <QLineEdit>
-
 // KDE includes
 
 #include <klocalizedstring.h>
 
 // Local includes
 
-#include "altlangstredit.h"
 #include "digikam_debug.h"
+#include "dtextedit.h"
 
 namespace Digikam
 {
@@ -54,7 +50,6 @@ CaptionEdit::CaptionEdit(QWidget* const parent)
     : DVBox(parent),
       d    (new Private)
 {
-
     d->altLangStrEdit = new AltLangStrEdit(this, 0);
     d->altLangStrEdit->setTitle(i18n("Captions: "));
 
@@ -185,9 +180,14 @@ void CaptionEdit::slotAuthorChanged(const QString& text)
     }
 }
 
-DTextEdit* CaptionEdit::textEdit() const
+AltLangStrEdit* CaptionEdit::altLangStrEdit() const
 {
-    return d->altLangStrEdit->textEdit();
+    return d->altLangStrEdit;
+}
+
+QLineEdit* CaptionEdit::authorEdit() const
+{
+    return d->authorEdit;
 }
 
 } // namespace Digikam

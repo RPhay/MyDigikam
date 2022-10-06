@@ -7,6 +7,8 @@
  * Description : Thread actions task for image quality sorter.
  *
  * SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2013-2014 by Gowtham Ashok <gwty93 at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2022 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -36,7 +38,7 @@ class ImageQualityTask : public ActionJob
 public:
 
     explicit ImageQualityTask();
-    ~ImageQualityTask() override;
+    ~ImageQualityTask()     override;
 
     void setQuality(const ImageQualityContainer& quality);
     void setMaintenanceData(MaintenanceData* const data = nullptr);
@@ -51,7 +53,7 @@ public Q_SLOTS:
 
 protected:
 
-    void run() override;
+    void run()              override;
 
 private:
 

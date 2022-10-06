@@ -50,7 +50,7 @@ QList<TAlbum*> PickLabelFilter::getCheckedPickLabelTags()
     int tagId   = 0;
     TAlbum* tag = nullptr;
 
-    Q_FOREACH (const PickLabel& pl, colorLabels())
+    Q_FOREACH (const PickLabel& pl, pickLabels())
     {
         tagId = TagsCache::instance()->tagForPickLabel(pl);
         tag   = AlbumManager::instance()->findTAlbum(tagId);
@@ -65,7 +65,7 @@ QList<TAlbum*> PickLabelFilter::getCheckedPickLabelTags()
 
 void PickLabelFilter::slotPickLabelSelectionChanged()
 {
-    Q_EMIT signalPickLabelSelectionChanged(colorLabels());
+    Q_EMIT signalPickLabelSelectionChanged(pickLabels());
 }
 
 } // namespace Digikam

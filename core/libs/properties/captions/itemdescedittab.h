@@ -29,16 +29,18 @@
 #include "digikam_export.h"
 #include "iteminfolist.h"
 #include "albummanager.h"
-#include "albummodel.h"
-#include "metadatahub.h"
 #include "searchtextbar.h"
-#include "addtagslineedit.h"
 #include "disjointmetadata.h"
+
+class KConfigGroup;
 
 namespace Digikam
 {
+
 class ItemInfo;
 class TaggingAction;
+class DisjointMetadata;
+class AddTagsLineEdit;
 
 class ItemDescEditTab : public DVBox
 {
@@ -49,19 +51,8 @@ public:
     explicit ItemDescEditTab(QWidget* const parent);
     ~ItemDescEditTab()                      override;
 
-    void assignPickLabel(int pickId);
-    void assignColorLabel(int colorId);
-    void assignRating(int rating);
     void setItem(const ItemInfo& info = ItemInfo());
     void setItems(const ItemInfoList& infos);
-    void populateTags();
-    void setFocusToTagsView();
-    void setFocusToNewTagEdit();
-    void setFocusToTitlesEdit();
-    void setFocusToCommentsEdit();
-    void activateAssignedTagsButton();
-
-    AddTagsLineEdit* getNewTagEdit() const;
 
     void readSettings(KConfigGroup& group);
     void writeSettings(KConfigGroup& group);
@@ -72,43 +63,14 @@ Q_SIGNALS:
     void signalProgressValueChanged(float percent);
     void signalProgressFinished();
 
-    void signalTagFilterMatch(bool);
     void signalPrevItem();
     void signalNextItem();
+
+    void signalAskToApplyChanges(const QList<ItemInfo>& infos, DisjointMetadata* hub);
 
 protected:
 
     bool eventFilter(QObject* o, QEvent* e) override;
-
-private:
-
-    void reset();
-    void setTagState(TAlbum* const tag, DisjointMetadataDataFields::Status status);
-
-    void setInfos(const ItemInfoList& infos);
-    void setFocusToLastSelectedWidget();
-
-    void updateTagsView();
-    void updateComments();
-    void updatePickLabel();
-    void updateColorLabel();
-    void updateRating();
-    void updateDate();
-    void updateTemplate();
-    void updateRecentTags();
-
-    bool singleSelection() const;
-    void setMetadataWidgetStatus(int status, QWidget* const widget);
-    void metadataChange(qlonglong imageId);
-    void resetMetadataChangeInfo();
-    void initProgressIndicator();
-
-    void resetTitleEditPlaceholderText();
-    void resetCaptionEditPlaceholderText();
-
-Q_SIGNALS:
-
-    void askToApplyChanges(const QList<ItemInfo>& infos, DisjointMetadata* hub);
 
 private Q_SLOTS:
 
@@ -116,40 +78,117 @@ private Q_SLOTS:
     void slotApplyChangesToAllVersions();
     void slotRevertAllChanges();
     void slotChangingItems();
-    void slotTagsSearchChanged(const SearchTextSettings& settings);
-    void slotTagStateChanged(Album* album, Qt::CheckState checkState);
-    void slotOpenTagsManager();
+    void slotModified();
+    void slotReloadForMetadataChange();
+
+    void slotImagesChanged(int albumId);
+
+    void slotMoreMenu();
+    void slotReadFromFileMetadataToDatabase();
+    void slotWriteToFileMetadataFromDatabase();
+
+    void slotAskToApplyChanges(const QList<ItemInfo>& infos, DisjointMetadata* hub);
+
+    ///@{
+    /// Description view methods (itemdescedittab_descview.cpp)
+
+public:
+
+    void assignPickLabel(int pickId);
+    void assignColorLabel(int colorId);
+    void assignRating(int rating);
+    void setFocusToTitlesEdit();
+    void setFocusToCommentsEdit();
+
+private:
+
+    void initDescriptionView();
+    void updateComments();
+    void updatePickLabel();
+    void updateColorLabel();
+    void updateRating();
+    void updateDate();
+
+    void resetTitleEditPlaceholderText();
+    void resetCaptionEditPlaceholderText();
+
+private Q_SLOTS:
+
     void slotCommentChanged();
     void slotTitleChanged();
     void slotDateTimeChanged(const QDateTime& dateTime);
     void slotPickLabelChanged(int pickId);
     void slotColorLabelChanged(int colorId);
     void slotRatingChanged(int rating);
-    void slotTemplateSelected();
-    void slotModified();
-    void slotTaggingActionActivated(const TaggingAction&);
-    void slotReloadForMetadataChange();
 
-    void slotImageTagsChanged(qlonglong imageId);
-    void slotImagesChanged(int albumId);
     void slotImageRatingChanged(qlonglong imageId);
     void slotImageDateChanged(qlonglong imageId);
     void slotImageCaptionChanged(qlonglong imageId);
 
+    ///@}
+
+    ///@{
+    /// Tags view methods (itemdescedittab_tagsview.cpp)
+
+public:
+
+    void populateTags();
+    void setFocusToTagsView();
+    void setFocusToNewTagEdit();
+    void activateAssignedTagsButton();
+
+    AddTagsLineEdit* getNewTagEdit() const;
+
+Q_SIGNALS:
+
+    void signalTagFilterMatch(bool);
+
+private:
+
+    void initTagsView();
+    void setTagState(TAlbum* const tag, DisjointMetadataDataFields::Status status);
+    void updateTagsView();
+    void updateRecentTags();
+
+private Q_SLOTS:
+
+    void slotTagsSearchChanged(const SearchTextSettings& settings);
+    void slotTagStateChanged(Album* album, Qt::CheckState checkState);
+    void slotTaggingActionActivated(const TaggingAction&);
+    void slotImageTagsChanged(qlonglong imageId);
+    void slotOpenTagsManager();
+
     void slotRecentTagsMenuActivated(int);
     void slotAssignedTagsToggled(bool);
-
-    void slotMoreMenu();
     void slotUnifyPartiallyTags();
-    void slotReadFromFileMetadataToDatabase();
-    void slotWriteToFileMetadataFromDatabase();
 
-    void slotAskToApplyChanges(const QList<ItemInfo>& infos, DisjointMetadata* hub);
+    ///@}
+
+    ///@{
+    /// Information view methods (itemdescedittab_infoview.cpp)
+
+private:
+
+    void initInformationView();
+    void updateTemplate();
+
+private Q_SLOTS:
+
+    void slotTemplateSelected();
+
+    ///@}
+
+    ///@{
+    /// Private container (itemdescedittab_p.cpp)
 
 private:
 
     class Private;
     Private* const d;
+
+    friend class Private;
+
+    ///@}
 };
 
 } // namespace Digikam

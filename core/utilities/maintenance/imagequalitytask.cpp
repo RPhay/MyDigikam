@@ -7,6 +7,8 @@
  * Description : Thread actions task for image quality sorter.
  *
  * SPDX-FileCopyrightText: 2013-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2013-2014 by Gowtham Ashok <gwty93 at gmail dot com>
+ * SPDX-FileCopyrightText: 2021-2022 by Phuoc Khanh Le <phuockhanhnk94 at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -33,7 +35,7 @@ public:
 
     explicit Private()
         : imgqsort(nullptr),
-          data(nullptr)
+          data    (nullptr)
     {
     }
 
@@ -47,7 +49,7 @@ public:
 
 ImageQualityTask::ImageQualityTask()
     : ActionJob(),
-      d(new Private)
+      d        (new Private)
 {
 }
 
@@ -55,6 +57,7 @@ ImageQualityTask::~ImageQualityTask()
 {
     slotCancel();
     cancel();
+
     delete d;
 }
 
@@ -79,6 +82,7 @@ void ImageQualityTask::slotCancel()
 void ImageQualityTask::run()
 {
     // While we have data (using this as check for non-null)
+
     while (d->data)
     {
         if (m_cancel)
@@ -116,13 +120,16 @@ void ImageQualityTask::run()
             ItemInfo info = ItemInfo::fromLocalFile(path);
             info.setPickLabel(pick);
 
-            delete d->imgqsort; //delete image data after setting label
+            // delete image data after to set label
+
+            delete d->imgqsort; 
             d->imgqsort = nullptr;
         }
 
         // Dispatch progress to Progress Manager
 
         QImage qimg = dimg.smoothScale(22, 22, Qt::KeepAspectRatio).copyQImage();
+
         Q_EMIT signalFinished(qimg);
     }
 

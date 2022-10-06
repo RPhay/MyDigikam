@@ -217,6 +217,8 @@ QMap<QString, bool> TimeAdjustContainer::getDateTimeTagsMap() const
     tagsMap.insert(QLatin1String("Xmp.video.ModificationDate"),    updXMPVideo);
     tagsMap.insert(QLatin1String("Xmp.video.DateUTC"),             updXMPVideo);
 
+    tagsMap.insert(QLatin1String("Xmp.xmpDM.shotDate"),            updXMPVideo);
+
     return tagsMap;
 }
 // -------------------------------------------------------------------

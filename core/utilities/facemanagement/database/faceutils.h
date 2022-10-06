@@ -116,8 +116,10 @@ public:
     /**
      * Rotate face tags
      */
-    QSize                rotateFaces(const ItemInfo& info, int newOrientation,
-                                                           int oldOrientation);
+    QSize                rotateFaces(qlonglong imageId,
+                                     const QSize& size,
+                                     int oldOrientation,
+                                     int newOrientation);
 
     /**
      * For display, it may be desirable to display a slightly larger region than the strict
@@ -135,7 +137,6 @@ protected:
     // Reimplemented
     void addNormalTag(qlonglong imageid, int tagId)                                           override;
     void removeNormalTag(qlonglong imageid, int tagId)                                        override;
-    void removeNormalTags(qlonglong imageid, const QList<int>& tagId)                         override;
 
 private:
 

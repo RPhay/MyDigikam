@@ -327,7 +327,7 @@ void MaintenanceMngr::stage7()
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "stage7";
 
-    if (d->settings.qualitySort && d->settings.quality.enableSorter)
+    if (d->settings.qualitySort)
     {
         AlbumList list;
         list << d->settings.albums;

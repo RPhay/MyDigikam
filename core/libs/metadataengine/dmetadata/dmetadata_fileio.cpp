@@ -46,9 +46,9 @@ bool DMetadata::load(const QString& filePath, Backend* backend)
     QMimeDatabase mimeDB;
 
     if (
-        !mimeDB.mimeTypeForFile(filePath).name().startsWith(QLatin1String("video/")) &&
-        !mimeDB.mimeTypeForFile(filePath).name().startsWith(QLatin1String("audio/")) &&
-        (info.suffix().toUpper() != QLatin1String("INSV"))                           &&
+        !mimeDB.mimeTypeForFile(info).name().startsWith(QLatin1String("video/")) &&
+        !mimeDB.mimeTypeForFile(info).name().startsWith(QLatin1String("audio/")) &&
+        (info.suffix().toUpper() != QLatin1String("INSV"))                       &&
         (info.suffix().toUpper() != QLatin1String("H264"))
        )
     {
@@ -127,7 +127,14 @@ bool DMetadata::load(const QString& filePath, Backend* backend)
         }
         else
         {
-            usedBackend = FFMpegBackend;
+            if (loadUsingExifTool(filePath, true))
+            {
+                usedBackend = VideoMergeBackend;
+            }
+            else
+            {
+                usedBackend = FFMpegBackend;
+            }
         }
 
         hasLoaded |= loadFromSidecarAndMerge(filePath);

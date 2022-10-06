@@ -848,6 +848,18 @@ void DBInfoIface::openSetupPage(SetupPage page)
             {
                 Q_EMIT signalSetupChanged();
             }
+
+            break;
+        }
+
+        case ImageQualityPage:
+        {
+            if (Setup::execImageQualitySorter(nullptr))
+            {
+                Q_EMIT signalSetupChanged();
+            }
+
+            break;
         }
 
         default:

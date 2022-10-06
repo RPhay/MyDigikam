@@ -78,12 +78,12 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         loadingFailed();
         return false;
     }
-
+/*
     if (DIGIKAM_DIMG_LOG_TIFF().isDebugEnabled())
     {
         TIFFPrintDirectory(tif, stdout, 0);
     }
-
+*/
     // -------------------------------------------------------------------
     // Get image information.
 

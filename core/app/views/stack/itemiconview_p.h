@@ -95,6 +95,7 @@
 #include "dnotificationwidget.h"
 #include "coredb.h"
 #include "coredbaccess.h"
+#include "addtagslineedit.h"
 
 #ifdef HAVE_MEDIAPLAYER
 #   include "mediaplayerview.h"

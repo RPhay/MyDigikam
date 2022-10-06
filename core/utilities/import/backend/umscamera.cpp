@@ -381,26 +381,26 @@ bool UMSCamera::downloadItem(const QString& folder, const QString& itemName, con
 
     if (!sFile.open(QIODevice::ReadOnly))
     {
-        qCWarning(DIGIKAM_IMPORTUI_LOG) << "Failed to open source file for reading: " << src;
+        qCWarning(DIGIKAM_IMPORTUI_LOG) << "Failed to open source file for reading:" << src;
 
         return false;
     }
 
-    if (!dFile.open(QIODevice::WriteOnly))
+    if (!dFile.open(QIODevice::WriteOnly | QIODevice::Unbuffered))
     {
         sFile.close();
-        qCWarning(DIGIKAM_IMPORTUI_LOG) << "Failed to open destination file for writing: " << dest;
+        qCWarning(DIGIKAM_IMPORTUI_LOG) << "Failed to open destination file for writing:" << dest;
 
         return false;
     }
 
-    const int MAX_IPC_SIZE = (1024 * 32);
-    char      buffer[MAX_IPC_SIZE];
-    qint64    len;
+    const int  MAX_IPC_SIZE = (1024 * 32);
+    QByteArray buffer(MAX_IPC_SIZE, '\0');
+    qint64     len;
 
-    while (((len = sFile.read(buffer, MAX_IPC_SIZE)) != 0) && !m_cancel)
+    while (((len = sFile.read(buffer.data(), MAX_IPC_SIZE)) != 0) && !m_cancel)
     {
-        if ((len == -1) || (dFile.write(buffer, (quint64)len) != len))
+        if ((len == -1) || (dFile.write(buffer.data(), len) != len))
         {
             sFile.close();
             dFile.close();

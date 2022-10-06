@@ -32,7 +32,6 @@
 #include "facetags.h"
 #include "iteminfo.h"
 #include "itemtagpair.h"
-#include "fileactionmngr.h"
 #include "tagproperties.h"
 #include "tagscache.h"
 #include "tagregion.h"
@@ -271,7 +270,8 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
             if (newFace.isUnconfirmedType() && !FaceTags::isTheUnknownPerson(newFace.tagId()))
             {
                 ItemTagPair unconfirmedPair(imageid, FaceTags::unconfirmedPersonTagId());
-                unconfirmedPair.addProperty(ImageTagPropertyName::autodetectedPerson(),newFace.getAutodetectedPersonString());
+                unconfirmedPair.addProperty(ImageTagPropertyName::autodetectedPerson(),
+                                            newFace.getAutodetectedPersonString());
             }
         }
     }
@@ -282,7 +282,7 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
 Identity FaceUtils::identityForTag(int tagId, FacialRecognitionWrapper& recognizer) const
 {
     QMultiMap<QString, QString> attributes = FaceTags::identityAttributes(tagId);
-    Identity identity                 = recognizer.findIdentity(attributes);
+    Identity identity                      = recognizer.findIdentity(attributes);
 
     if (!identity.isNull())
     {
@@ -291,7 +291,7 @@ Identity FaceUtils::identityForTag(int tagId, FacialRecognitionWrapper& recogniz
     }
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Adding new FacesEngine identity with attributes" << attributes;
-    identity                          = recognizer.addIdentity(attributes);
+    identity                               = recognizer.addIdentity(attributes);
 
     FaceTags::applyTagIdentityMapping(tagId, identity.attributesMap());
 
@@ -307,7 +307,7 @@ int FaceUtils::tagForIdentity(const Identity& identity) const
 
 void FaceUtils::addNormalTag(qlonglong imageId, int tagId)
 {
-    FileActionMngr::instance()->assignTag(ItemInfo(imageId), tagId);
+    FaceTagsEditor::addNormalTag(imageId, tagId);
 
     /**
      * Implementation for automatic assigning of face as
@@ -344,7 +344,7 @@ void FaceUtils::addNormalTag(qlonglong imageId, int tagId)
 
 void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
 {
-    FileActionMngr::instance()->removeTag(ItemInfo(imageId), tagId);
+    FaceTagsEditor::removeNormalTag(imageId, tagId);
 
     if (
         !FaceTags::isTheIgnoredPerson(tagId)  &&
@@ -377,40 +377,34 @@ void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
     }
 }
 
-void FaceUtils::removeNormalTags(qlonglong imageId, const QList<int>& tagIds)
-{
-    FileActionMngr::instance()->removeTags(ItemInfo(imageId), tagIds);
-}
-
 // --- Utilities ---
 
-QSize FaceUtils::rotateFaces(const ItemInfo& info,
-                             int newOrientation,
-                             int oldOrientation)
+QSize FaceUtils::rotateFaces(qlonglong imageId,
+                             const QSize& size,
+                             int oldOrientation,
+                             int newOrientation)
 {
     /**
      *  Get all faces from database and rotate them
      */
-    QList<FaceTagsIface> facesList = databaseFaces(info.id());
+    QList<FaceTagsIface> facesList = databaseFaces(imageId);
 
     if (facesList.isEmpty())
     {
         return QSize();
     }
 
-    QSize newSize = info.dimensions();
+    QSize newSize = size;
 
     Q_FOREACH (const FaceTagsIface& dface, facesList)
     {
         QRect faceRect = dface.region().toRect();
 
         TagRegion::reverseToOrientation(faceRect,
-                                        oldOrientation,
-                                        info.dimensions());
+                                        oldOrientation, size);
 
         newSize = TagRegion::adjustToOrientation(faceRect,
-                                                 newOrientation,
-                                                 info.dimensions());
+                                                 newOrientation, size);
 
         changeRegion(dface, TagRegion(faceRect));
     }

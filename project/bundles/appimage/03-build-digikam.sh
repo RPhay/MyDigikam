@@ -69,6 +69,17 @@ cp $DOWNLOAD_DIR/lensfun_manifest.txt $ORIG_WD/data/
 #################################################################################################
 # Build digiKam in temporary directory and installation
 
+# Clean up previous install (see bug #459276)
+
+FILES=$(find /usr | grep -E '(digikam|showfoto|avplayer)')
+
+for FILE in $FILES ; do
+    if [[ -f ${FILE} || -d ${FILE} ]] ; then
+        echo -e "   ==> ${FILE} will be removed from previous install"
+        rm -f ${FILE}
+    fi
+done
+
 if [ -d "$DK_BUILDTEMP/digikam-$DK_VERSION" ] ; then
 
     echo "---------- Updating existing $DK_BUILDTEMP"

@@ -59,9 +59,9 @@ public:
     void setPickLabels(const QList<PickLabel>& list);
 
     /**
-     * Return the list of Color Label buttons turned on or an empty list of none.
+     * Return the list of Pick Label buttons turned on or an empty list of none.
      */
-    QList<PickLabel> colorLabels() const;
+    QList<PickLabel> pickLabels() const;
 
     static QString labelPickName(PickLabel label);
 
@@ -97,7 +97,7 @@ public:
     ~PickLabelSelector() override;
 
     void setPickLabel(PickLabel label);
-    PickLabel colorLabel();
+    PickLabel pickLabel();
 
     PickLabelWidget* pickLabelWidget() const;
 

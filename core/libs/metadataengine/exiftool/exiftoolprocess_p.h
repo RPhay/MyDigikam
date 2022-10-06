@@ -24,11 +24,14 @@
 
 #include <QFile>
 #include <QList>
+#include <QTimer>
+#include <QMutex>
 #include <QFileInfo>
 #include <QByteArray>
 #include <QApplication>
 #include <QElapsedTimer>
 #include <QStandardPaths>
+#include <QWaitCondition>
 
 // KDE includes
 
@@ -59,15 +62,13 @@ public:
 
         Command()
           : id     (0),
-            ac     (ExifToolProcess::NO_ACTION),
-            parser (nullptr)
+            ac     (ExifToolProcess::NO_ACTION)
         {
         }
 
         int                     id;
         QByteArray              argsStr;
         ExifToolProcess::Action ac;
-        ExifToolParser*         parser;
     };
 
 public:
@@ -77,6 +78,7 @@ public:
     void readOutput(const QProcess::ProcessChannel channel);
     void setProcessErrorAndEmit(QProcess::ProcessError error,
                                 const QString& description);
+    void setCommandResult(int cmdState);
 
 public Q_SLOTS:
 
@@ -91,7 +93,6 @@ public:
     QElapsedTimer           execTimer;
     QList<Command>          cmdQueue;
     int                     cmdRunning;
-    Command                 runCommand;
     ExifToolProcess::Action cmdAction;
 
     int                     outAwait[2];             ///< [0] StandardOutput | [1] ErrorOutput
@@ -105,7 +106,12 @@ public:
 
     int                     nextCmdId;               ///< Unique identifier, even in a multi-instances or multi-thread environment
 
+    ExifToolProcess::Result cmdResult;
+
+    QMutex                  cmdMutex;
+
     QMutex                  mutex;
+    QWaitCondition          condVar;
 };
 
 } // namespace Digikam

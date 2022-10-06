@@ -82,6 +82,8 @@ public:
 
     static bool execLocalize(QWidget* const parent);
 
+    static bool execImageQualitySorter(QWidget* const parent);
+
     QSize sizeHint() const  override;
 
 private Q_SLOTS:

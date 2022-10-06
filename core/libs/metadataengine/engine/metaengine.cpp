@@ -199,7 +199,9 @@ void MetaEngine::setData(const MetaEngineData& data)
 bool MetaEngine::loadFromData(const QByteArray& imgData)
 {
     if (imgData.isEmpty())
+    {
         return false;
+    }
 
     QMutexLocker lock(&s_metaEngineMutex);
 
@@ -249,10 +251,66 @@ bool MetaEngine::loadFromData(const QByteArray& imgData)
     return false;
 }
 
+bool MetaEngine::loadFromDataAndMerge(const QByteArray& imgData)
+{
+    if (imgData.isEmpty())
+    {
+        return false;
+    }
+
+    QMutexLocker lock(&s_metaEngineMutex);
+
+    try
+    {
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((Exiv2::byte*)imgData.data(), imgData.size());
+
+        d->filePath.clear();
+        image->readMetadata();
+
+        // Size and mimetype ---------------------------------
+
+        d->pixelSize = QSize(image->pixelWidth(), image->pixelHeight());
+        d->mimeType  = QString::fromStdString(image->mimeType());
+
+        // Exif metadata ----------------------------------
+
+        ExifMetaEngineMergeHelper exifHelper;
+        exifHelper.mergeAll(image->exifData(), d->exifMetadata());
+
+        // Iptc metadata ----------------------------------
+
+        IptcMetaEngineMergeHelper iptcHelper;
+        iptcHelper.mergeAll(image->iptcData(), d->iptcMetadata());
+
+#ifdef _XMP_SUPPORT_
+
+        // Xmp metadata -----------------------------------
+
+        XmpMetaEngineMergeHelper xmpHelper;
+        xmpHelper.mergeAll(image->xmpData(), d->xmpMetadata());
+
+#endif // _XMP_SUPPORT_
+
+        return true;
+    }
+    catch (Exiv2::AnyError& e)
+    {
+        d->printExiv2ExceptionError(QLatin1String("Cannot load and merge metadata with Exiv2:"), e);
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
+    }
+
+    return false;
+}
+
 bool MetaEngine::isEmpty() const
 {
     if (!hasComments() && !hasExif() && !hasIptc() && !hasXmp())
+    {
         return true;
+    }
 
     return false;
 }
@@ -341,6 +399,7 @@ bool MetaEngine::setProgramId() const
 {
     QString version(digiKamVersion());
     QLatin1String software("digiKam");
+
     return setItemProgramId(software, version);
 }
 

@@ -144,10 +144,9 @@ void Task::run()
 
     // ItemInfo must be tread-safe.
 
-    ItemInfo source = ItemInfo::fromUrl(d->tools.m_itemUrl);
-    bool timeAdjust = false;
-    bool rmMetadata = false;
-    bool translate  = false;
+    ItemInfo source     = ItemInfo::fromUrl(d->tools.m_itemUrl);
+    bool isMetadataTool = false;
+    bool timeAdjust     = false;
 
     Q_FOREACH (const BatchToolSet& set, d->tools.m_toolsList)
     {
@@ -157,7 +156,9 @@ void Task::run()
         {
             emitActionData(ActionData::BatchFailed, i18n("Failed to find tool..."));
             removeTempFiles(tmp2del);
+
             Q_EMIT signalDone();
+
             return;
         }
 
@@ -168,12 +169,10 @@ void Task::run()
 
         // Only true if it is also the last tool
 
-        timeAdjust |= (set.name == QLatin1String("TimeAdjust"));
-        rmMetadata |= (set.name == QLatin1String("RemoveMetadata"));
-        translate  |= (set.name == QLatin1String("Translate"));
-
-        inUrl       = outUrl;
-        index       = set.index + 1;
+        isMetadataTool = (set.group == BatchTool::MetadataTool);
+        timeAdjust    |= (set.name == QLatin1String("TimeAdjust"));
+        inUrl          = outUrl;
+        index          = set.index + 1;
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Tool : index= " << index
                  << " :: name= "     << set.name
@@ -223,7 +222,9 @@ void Task::run()
         {
             emitActionData(ActionData::BatchCanceled);
             removeTempFiles(tmp2del);
+
             Q_EMIT signalDone();
+
             return;
         }
         else if (!success)
@@ -295,7 +296,7 @@ void Task::run()
                                              timeAdjust))
         {
             emitActionData(ActionData::BatchDone, i18n("Item processed successfully %1", renameMess),
-                           dest, (rmMetadata | timeAdjust | translate));
+                           dest, isMetadataTool);
         }
         else
         {

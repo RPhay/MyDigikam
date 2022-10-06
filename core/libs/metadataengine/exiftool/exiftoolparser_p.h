@@ -33,7 +33,6 @@
 #include <QDomDocument>
 #include <QDomElement>
 #include <QApplication>
-#include <QWaitCondition>
 
 // KDE includes
 
@@ -58,7 +57,6 @@ public:
     void       prepareProcess();
     bool       startProcess(const QByteArrayList& cmdArgs, ExifToolProcess::Action cmdAction);
     QByteArray filePathEncoding(const QFileInfo& fi) const;
-    void       manageWaitCondition(int cmdAction);
 
     /**
      * Returns a string for an action.
@@ -74,11 +72,8 @@ public:
     ExifToolData                   exifToolData;    ///< Current ExifTool data (input or output depending of the called method.
     QTemporaryFile                 argsFile;        ///< Temporary file to store Exiftool arg config file.
 
-    bool                           startAsync;
+    bool                           async;
     int                            cmdRunning;
-
-    QWaitCondition                 condVar;
-    QMutex                         mutex;
 };
 
 } // namespace Digikam

@@ -127,6 +127,12 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
     // -------------------------------------------------------------------
     // Initialize HEIF API.
 
+#if LIBHEIF_NUMERIC_VERSION >= 0x010d0000
+
+    heif_init(nullptr);
+
+#endif
+
     heif_item_id primary_image_id;
 
     struct heif_context* const heif_context = heif_context_alloc();
@@ -149,6 +155,12 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         heif_context_free(heif_context);
         loadingFailed();
 
+#if LIBHEIF_NUMERIC_VERSION >= 0x010d0000
+
+        heif_deinit();
+
+#endif
+
         return false;
     }
 
@@ -160,11 +172,23 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         heif_context_free(heif_context);
         loadingFailed();
 
+#if LIBHEIF_NUMERIC_VERSION >= 0x010d0000
+
+        heif_deinit();
+
+#endif
+
         return false;
     }
 
     bool ret = readHEICImageByID(heif_context, primary_image_id);
     heif_context_free(heif_context);
+
+#if LIBHEIF_NUMERIC_VERSION >= 0x010d0000
+
+    heif_deinit();
+
+#endif
 
     return ret;
 }

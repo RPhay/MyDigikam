@@ -199,7 +199,7 @@ Setup::Setup(QWidget* const parent)
 
     d->imageQualitySorterPage = new SetupImageQualitySorter();
     d->page_imagequalitysorter = addPage(d->imageQualitySorterPage, i18nc("@title: settings section", "Image Quality Sorter"));
-    d->page_imagequalitysorter->setHeader(i18nc("@title", "Image Quality Sorter Settings\nCustomize settings to perform image triaging by quality"));
+    d->page_imagequalitysorter->setHeader(i18nc("@title", "Image Quality Sorter Settings\nCustomize default settings to perform image triaging by quality"));
     d->page_imagequalitysorter->setIcon(QIcon::fromTheme(QLatin1String("flag-green")));
 
     d->cameraPage  = new SetupCamera();
@@ -465,6 +465,32 @@ bool Setup::execLocalize(QWidget* const parent)
     }
 
     widget->setActiveTab(SetupMisc::Localize);
+
+    bool success                 = (setup->DConfigDlg::exec() == QDialog::Accepted);
+    delete setup;
+
+    return success;
+}
+
+bool Setup::execImageQualitySorter(QWidget* const parent)
+{
+    QPointer<Setup> setup        = new Setup(parent);
+    setup->showPage(ImageQualityPage);
+    setup->setFaceType(Plain);
+
+    DConfigDlgWdgItem* const cur = setup->currentPage();
+
+    if (!cur)
+    {
+        return false;
+    }
+
+    SetupImageQualitySorter* const widget  = dynamic_cast<SetupImageQualitySorter*>(cur->widget());
+
+    if (!widget)
+    {
+        return false;
+    }
 
     bool success                 = (setup->DConfigDlg::exec() == QDialog::Accepted);
     delete setup;

@@ -359,7 +359,8 @@ void ScanController::updateUniqueHash()
     d->needTotalFiles = false;
 }
 
-ItemInfo ScanController::scannedInfo(const QString& filePath)
+ItemInfo ScanController::scannedInfo(const QString& filePath,
+                                     CollectionScanner::FileScanMode mode)
 {
     CollectionScanner scanner;
     scanner.setHintContainer(d->hints);
@@ -374,7 +375,7 @@ ItemInfo ScanController::scannedInfo(const QString& filePath)
     }
     else
     {
-        scanner.scanFile(info, CollectionScanner::NormalScan);
+        scanner.scanFile(info, mode);
 
         return info;
     }

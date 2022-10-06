@@ -127,17 +127,19 @@ Q_SIGNALS:
      */
     void signalValueDeleted(const QString& lang);
 
-protected Q_SLOTS:
-
-    void slotTextChanged();
-    void slotSelectionChanged();
-    void slotDeleteValue();
+public Q_SLOTS:
 
     /**
      * Can be used to turn on/off visibility of internal widgets.
      * This do not includes the title widget.
      */
     void slotEnabledInternalWidgets(bool);
+
+protected Q_SLOTS:
+
+    void slotTextChanged();
+    void slotSelectionChanged();
+    void slotDeleteValue();
 
 private Q_SLOTS:
 

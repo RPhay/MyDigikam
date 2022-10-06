@@ -41,7 +41,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "collectionscanner.h"
 #include "coredbaccess.h"
 #include "collectionmanager.h"
 #include "collectionlocation.h"

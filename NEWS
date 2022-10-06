@@ -24,10 +24,14 @@ General        : Add spell-checking support in caption text widget using KF5::So
 General        : Add online translations support to Alternative Language text editor widget.
                  Add Localize config panel in Setup/Misc for digiKam and Showfoto.
 General        : Add settings to list prefered alternative/translated languages in text edit widget.
+General        : Allow to use Global or Customized Image Quality Sorting settings everywhere.
 General        : Add new tool to perform OCR over scanned text.
                  https://community.kde.org/GSoC/2022/StatusReports/QuocHungTran
 Maintenance    : Add Aesthetic Detection to classify images using deep learning model.
                  https://community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe
+QueueManager   : Add new tool to assign pick label automatically by parsing image quality.
+QueueManager   : Add new tool to assign rating, pick, and color labels in batch.
+QueueManager   : Add new tool to assign titles and captions in batch.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -143,4 +147,19 @@ BUGFIXES:
 109 ==> 458850 - Not valid createdate.
 110 ==> 458921 - Maintenance > Sync Metadata and Database (Sync Direction: From image metadata to database) does not work for disabled or deleted tags.
 111 ==> 459129 - Duplicate tags are displayed below thumbnail when tags are repeated in tag hierarchy.
-112 ==> 
+112 ==> 459537 - "Ignored" face regions should not be saved into XMP metadata.
+113 ==> 459497 - digiKam fails to load images.
+114 ==> 459702 - digiKam git Mariadb issue.
+115 ==> 432265 - No error message when digiKam fails to read XMP metadata from image file.
+116 ==> 459898 - Import video files into digiKam uses current date but not metadata date.
+117 ==> 436345 - Renamed FaceTags not written to file metadata.
+118 ==> 452539 - People tags are not shown correctly.
+119 ==> 316856 - Add text-recognition system.
+120 ==> 459928 - Tags/keywords are not written back to MP4 video files, even with exiftool being configured.
+121 ==> 432369 - Wrong time for mp4 in _almost_ all places, metadata differs from filesystem/other apps. DB issues?
+122 ==> 438960 - Add support for searching images created in a time interval.
+123 ==> 458082 - MP4 video failed to update metadata timestamp.
+124 ==> 
+125 ==> 
+126 ==> 
+127 ==> 

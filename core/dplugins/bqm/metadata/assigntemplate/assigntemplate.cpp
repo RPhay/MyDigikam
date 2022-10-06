@@ -31,6 +31,7 @@
 #include "dmetadata.h"
 #include "template.h"
 #include "templatemanager.h"
+#include "dfileoperations.h"
 
 namespace DigikamBqmAssignTemplatePlugin
 {
@@ -140,7 +141,7 @@ bool AssignTemplate::toolOperations()
     if (image().isNull())
     {
         QFile::remove(outputUrl().toLocalFile());
-        ret = QFile::copy(inputUrl().toLocalFile(), outputUrl().toLocalFile());
+        ret = DFileOperations::copyFile(inputUrl().toLocalFile(), outputUrl().toLocalFile());
 
         if (ret && !title.isEmpty())
         {

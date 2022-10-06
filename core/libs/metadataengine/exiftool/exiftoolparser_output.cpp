@@ -29,11 +29,11 @@ void ExifToolParser::printExifToolOutput(const QByteArray& stdOut)
     qCDebug(DIGIKAM_METAENGINE_LOG) << "---";
 }
 
-void ExifToolParser::cmdCompleted(int cmdId,
-                                  int cmdAction,
-                                  int execTime,
-                                  const QByteArray& stdOut,
-                                  const QByteArray& /*stdErr*/)
+void ExifToolParser::slotCmdCompleted(int cmdId,
+                                      int cmdAction,
+                                      int execTime,
+                                      const QByteArray& stdOut,
+                                      const QByteArray& /*stdErr*/)
 {
     if (cmdId != d->cmdRunning)
     {
@@ -58,8 +58,6 @@ void ExifToolParser::cmdCompleted(int cmdId,
 
             if (jsonArray.size() == 0)
             {
-                d->manageWaitCondition(cmdAction);
-
                 Q_EMIT signalExifToolDataAvailable();
 
                 return;
@@ -383,18 +381,16 @@ void ExifToolParser::cmdCompleted(int cmdId,
         }
     }
 
-    d->manageWaitCondition(cmdAction);
-
-    Q_EMIT signalExifToolDataAvailable();
-
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool parsed command for action" << d->actionString(cmdAction);
     qCDebug(DIGIKAM_METAENGINE_LOG) << d->exifToolData.count() << "properties decoded";
+
+    Q_EMIT signalExifToolDataAvailable();
 }
 
-void ExifToolParser::cmdErrorOccurred(int cmdId,
-                                      int cmdAction,
-                                      QProcess::ProcessError error,
-                                      const QString& description)
+void ExifToolParser::slotErrorOccurred(int cmdId,
+                                       int cmdAction,
+                                       QProcess::ProcessError error,
+                                       const QString& description)
 {
     if (cmdId != d->cmdRunning)
     {
@@ -406,26 +402,15 @@ void ExifToolParser::cmdErrorOccurred(int cmdId,
 
     d->errorString = description;
 
-    d->manageWaitCondition(cmdAction);
-
     Q_EMIT signalExifToolDataAvailable();
 }
 
-void ExifToolParser::cmdFinished(int cmdId,
-                                 int cmdAction,
-                                 int exitCode,
-                                 QProcess::ExitStatus exitStatus)
+void ExifToolParser::slotFinished(int cmdId)
 {
     if (cmdId != d->cmdRunning)
     {
         return;
     }
-
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool process for action" << d->actionString(cmdAction)
-                                    << "finished with code:" << exitCode
-                                    << "and status" << exitStatus;
-
-    d->manageWaitCondition(cmdAction);
 
     Q_EMIT signalExifToolDataAvailable();
 }
@@ -434,7 +419,7 @@ void ExifToolParser::setOutputStream(int cmdAction,
                                      const QByteArray& cmdOutputChannel,
                                      const QByteArray& cmdErrorChannel)
 {
-    cmdCompleted(d->cmdRunning, cmdAction, 0, cmdOutputChannel, cmdErrorChannel);
+    slotCmdCompleted(d->cmdRunning, cmdAction, 0, cmdOutputChannel, cmdErrorChannel);
 }
 
 } // namespace Digikam

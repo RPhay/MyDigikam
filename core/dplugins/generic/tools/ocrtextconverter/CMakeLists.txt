@@ -41,7 +41,7 @@ set(textconverterplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/textconverterplugin.cpp
 )
 
-DIGIKAM_ADD_GENERIC_PLUGIN(NAME    TEXTConverter
+DIGIKAM_ADD_GENERIC_PLUGIN(NAME    TextConverter
                            SOURCES ${textconverterplugin_SRCS}
                            DEPENDS textconverterbackend
 )

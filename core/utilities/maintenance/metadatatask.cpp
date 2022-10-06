@@ -17,6 +17,7 @@
 // Local includes
 
 #include "collectionscanner.h"
+#include "scancontroller.h"
 #include "metadatahub.h"
 #include "digikam_debug.h"
 #include "maintenancedata.h"
@@ -74,6 +75,7 @@ void MetadataTask::setMaintenanceData(MaintenanceData* const data)
 void MetadataTask::run()
 {
     // While we have data (using this as check for non-null)
+
     while (d->data)
     {
         if (m_cancel)
@@ -84,6 +86,7 @@ void MetadataTask::run()
         ItemInfo item = d->data->getItemInfo();
 
         // If the item is null, we are done.
+
         if (item.isNull())
         {
             break;
@@ -91,19 +94,23 @@ void MetadataTask::run()
 
         if (d->direction == MetadataSynchronizer::WriteFromDatabaseToFile)
         {
-            MetadataHub fileHub;
+            MetadataHub hub;
 
             // read in from database
-            fileHub.load(item);
+
+            hub.load(item);
 
             // write out to file DMetadata
+
             if (d->tagsOnly)
             {
-                fileHub.writeTags(item.filePath());
+                ScanController::FileMetadataWrite writeScope(item);
+                writeScope.changed(hub.writeToMetadata(item, MetadataHub::WRITE_TAGS, true));
             }
             else
             {
-                fileHub.write(item.filePath(), MetadataHub::WRITE_ALL, true);
+                ScanController::FileMetadataWrite writeScope(item);
+                writeScope.changed(hub.writeToMetadata(item, MetadataHub::WRITE_ALL, true));
             }
         }
         else // MetadataSynchronizer::ReadFromFileToDatabase

@@ -400,7 +400,7 @@ bool DFileOperations::copyFolderRecursively(const QString& srcPath,
             return false;
         }
 
-        if (!copyFile(fileInfo.filePath(), copyPath))
+        if (!copyFile(fileInfo.filePath(), copyPath, cancel))
         {
             return false;
         }
@@ -514,20 +514,66 @@ bool DFileOperations::renameFile(const QString& srcFile,
 }
 
 bool DFileOperations::copyFile(const QString& srcFile,
-                               const QString& dstFile)
+                               const QString& dstFile,
+                               bool* const cancel)
 {
+    bool ret = true;
     QString tmpFile(dstFile);
     tmpFile += QLatin1String(".digikamtempfile.tmp");
 
-    bool ret = QFile::copy(srcFile, tmpFile);
+    QFile sFile(srcFile);
+    QFile dFile(tmpFile);
 
-    if (ret && !(ret = QFile::rename(tmpFile, dstFile)))
+    if (!sFile.open(QIODevice::ReadOnly))
+    {
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to open source file for reading:" << srcFile;
+
+        return false;
+    }
+
+    if (!dFile.open(QIODevice::WriteOnly | QIODevice::Unbuffered))
+    {
+        sFile.close();
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to open destination file for writing:" << tmpFile;
+
+        return false;
+    }
+
+    const int  MAX_IPC_SIZE = (1024 * 32);
+    QByteArray buffer(MAX_IPC_SIZE, '\0');
+    qint64     len;
+
+    while (((len = sFile.read(buffer.data(), MAX_IPC_SIZE)) != 0))
+    {
+        if ((cancel && *cancel) || (len == -1) || (dFile.write(buffer.data(), len) != len))
+        {
+            sFile.close();
+            dFile.close();
+
+            ret = false;
+
+            break;
+        }
+    }
+
+    sFile.close();
+    dFile.close();
+
+    if (ret)
+    {
+        ret = QFile::rename(tmpFile, dstFile);
+    }
+
+    if (!ret)
     {
         QFile::remove(tmpFile);
     }
 
     if (ret)
     {
+        QFile::Permissions permissions = QFile::permissions(srcFile);
+        QFile::setPermissions(dstFile, permissions);
+
         copyModificationTime(srcFile, dstFile);
     }
 

@@ -81,6 +81,8 @@ public:
     bool                                    qualitySort;
     /// Mode to assign Pick Labels to items.
     int                                     qualityScanMode;
+    /// Type of quality settings selected.
+    int                                     qualitySettingsSelected;
     /// Image Quality Sorting Settings.
     ImageQualityContainer                   quality;
 

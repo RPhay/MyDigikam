@@ -274,6 +274,7 @@ public Q_SLOTS:
     void slotNewDuplicatesSearch(const QList<TAlbum*>& albums);
     void slotImageFindSimilar();
     void slotImageScanForFaces();
+    void slotImageRecognizeFaces();
     //@}
 
     // ----------------------------------------------------------------------------------------

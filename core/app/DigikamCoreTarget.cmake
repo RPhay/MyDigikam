@@ -13,6 +13,7 @@ set(DIGIKAMCORE_OBJECTS
             ${CMAKE_CURRENT_SOURCE_DIR}/utils/digikam_version.cpp
 
             $<TARGET_OBJECTS:core_dimg_obj>
+            $<TARGET_OBJECTS:core_imgqsort_obj>
             $<TARGET_OBJECTS:core_dragdrop_obj>
             $<TARGET_OBJECTS:core_dmetadata_obj>
             $<TARGET_OBJECTS:core_onlineversion_obj>

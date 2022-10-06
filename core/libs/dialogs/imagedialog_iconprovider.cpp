@@ -61,17 +61,17 @@ QIcon ImageDialogIconProvider::icon(const QFileInfo& info) const
         QString path    = info.absoluteFilePath();
         qCDebug(DIGIKAM_GENERAL_LOG) << "request thumb icon for " << path;
 
-        QMimeType mtype = QMimeDatabase().mimeTypeForFile(path);
-        QString suffix  = info.suffix().toUpper();
+        QString mimeType = QMimeDatabase().mimeTypeForFile(path).name();
+        QString suffix   = info.suffix().toUpper();
 
-        if (mtype.name().startsWith(QLatin1String("image/")) ||
-            (suffix == QLatin1String("PGF"))                 ||
-            (suffix == QLatin1String("JXL"))                 ||
-            (suffix == QLatin1String("AVIF"))                ||
-            (suffix == QLatin1String("KRA"))                 ||
-            (suffix == QLatin1String("CR3"))                 ||
-            (suffix == QLatin1String("HIF"))                 ||
-            (suffix == QLatin1String("HEIC"))                ||
+        if (mimeType.startsWith(QLatin1String("image/")) ||
+            (suffix == QLatin1String("PGF"))             ||
+            (suffix == QLatin1String("JXL"))             ||
+            (suffix == QLatin1String("AVIF"))            ||
+            (suffix == QLatin1String("KRA"))             ||
+            (suffix == QLatin1String("CR3"))             ||
+            (suffix == QLatin1String("HIF"))             ||
+            (suffix == QLatin1String("HEIC"))            ||
             (suffix == QLatin1String("HEIF")))
         {
             // --- Critical section.
@@ -90,7 +90,9 @@ QIcon ImageDialogIconProvider::icon(const QFileInfo& info) const
                     // resize and center pixmap on target icon.
 
                     QPixmap pix = QPixmap::fromImage(images.first());
-                    pix         = pix.scaled(QSize(256, 256), Qt::KeepAspectRatio, Qt::FastTransformation);
+                    pix         = pix.scaled(QSize(256, 256),
+                                             Qt::KeepAspectRatio,
+                                             Qt::FastTransformation);
 
                     QPixmap icon(QSize(256, 256));
                     icon.fill(Qt::transparent);

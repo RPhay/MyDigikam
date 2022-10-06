@@ -52,6 +52,7 @@
 #include "previewloadthread.h"
 #include "mediawikiwidget.h"
 #include "mediawikitalker.h"
+#include "dfileoperations.h"
 
 using namespace MediaWiki;
 
@@ -227,7 +228,7 @@ bool MediaWikiWindow::prepareImageForUpload(const QString& imgPath)
     else
     {
         // file is copied with its embedded metadata
-        if (!QFile::copy(imgPath, d->tmpPath))
+        if (!DFileOperations::copyFile(imgPath, d->tmpPath))
         {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "File copy error from:" << imgPath << "to" << d->tmpPath;
             return false;

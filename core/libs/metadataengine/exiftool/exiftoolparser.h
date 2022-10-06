@@ -93,11 +93,10 @@ public:
     /// Constructor, Destructor, and Configuration Accessors. See exiftoolparser.cpp for details.
     //@{
 
-    explicit ExifToolParser(QObject* const parent);
+    explicit ExifToolParser(QObject* const parent, bool async = false);
     ~ExifToolParser();
 
     void setExifToolProgram(const QString& path);
-    void setExifToolAsync(bool async);
 
     QString      currentPath()        const;
     ExifToolData currentData()        const;
@@ -202,21 +201,20 @@ public:
     /// ExifTool Output Management Methods. See exiftoolparser_output.cpp for details
     //@{
 
-    void cmdCompleted(int cmdId,
-                      int cmdAction,
-                      int execTime,
-                      const QByteArray& cmdOutputChannel,
-                      const QByteArray& cmdErrorChannel);
+public Q_SLOTS:
 
-    void cmdErrorOccurred(int cmdId,
+    void slotCmdCompleted(int cmdId,
                           int cmdAction,
-                          QProcess::ProcessError error,
-                          const QString& description);
+                          int execTime,
+                          const QByteArray& cmdOutputChannel,
+                          const QByteArray& cmdErrorChannel);
 
-    void cmdFinished(int cmdId,
-                     int cmdAction,
-                     int exitCode,
-                     QProcess::ExitStatus exitStatus);
+    void slotErrorOccurred(int cmdId,
+                           int cmdAction,
+                           QProcess::ProcessError error,
+                           const QString& description);
+
+    void slotFinished(int cmdId);
 
     //@}
 

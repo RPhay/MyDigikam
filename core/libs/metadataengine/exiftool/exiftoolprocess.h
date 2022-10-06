@@ -23,7 +23,6 @@
 #include <QProcess>
 #include <QPointer>
 #include <QString>
-#include <QMutex>
 
 // Local includes
 
@@ -95,6 +94,40 @@ public:
         TRANS_ALL_EXIF      = 0x04                  ///< Translate all existing Tags from source file to Exif.
     };
 
+    /**
+     * Command result state.
+     */
+    enum ResultState
+    {
+        COMMAND_RESULT      = 0,
+        FINISH_RESULT,
+        ERROR_RESULT,
+        EXIT_RESULT
+    };
+
+public:
+
+    class Result
+    {
+    public:
+
+        Result()
+          : cmdWaitError (false),
+            commandState (ExifToolProcess::COMMAND_RESULT),
+            cmdRunAction (ExifToolProcess::NO_ACTION),
+            cmdRunResult (0),
+            elapsedTimer (0)
+        {
+        }
+
+        bool       cmdWaitError;
+        int        commandState;
+        int        cmdRunAction;
+        int        cmdRunResult;
+        int        elapsedTimer;
+        QByteArray outputBuffer;
+    };
+
 public:
 
     /**
@@ -129,45 +162,65 @@ public:
      */
     void setExifToolProgram(const QString& etExePath);
 
-    QString getExifToolProgram()                 const;
+    QString getExifToolProgram()                    const;
 
 public:
 
     /**
      * Returns true if ExifToolProcess is available (process state == Running)
      */
-    bool                   exifToolAvailable()   const;
+    bool                    exifToolAvailable()     const;
 
     /**
      * Returns true if a command is running.
      */
-    bool                   exifToolIsBusy()      const;
+    bool                    exifToolIsBusy()        const;
 
     /**
      * Returns the type of error that occurred last.
      */
-    QProcess::ProcessError exifToolError()       const;
+    QProcess::ProcessError  exifToolError()         const;
 
     /**
      * Returns an error message.
      */
-    QString                exifToolErrorString() const;
+    QString                 exifToolErrorString()   const;
+
+    /**
+     * Returns the ExifToolProcess result.
+     */
+    ExifToolProcess::Result getExifToolResult()     const;
+
+    /**
+     * WatCondition for the ExifToolParser class.
+     * Returns the ExifToolProcess result.
+     */
+    ExifToolProcess::Result waitForExifToolResult() const;
 
     /**
      * Send a command to exiftool process.
      * This function can be called from another thread.
      * Return 0: ExitTool not running, write channel is closed or args is empty.
      */
-    int command(const QByteArrayList& args, Action ac, ExifToolParser* const parser);
+    int command(const QByteArrayList& args, Action ac);
 
 Q_SIGNALS:
 
     void signalStarted(int cmdId,
                        int cmdAction);
 
-    void signalStateChanged(int cmdId,
+    void signalCmdCompleted(int cmdId,
                             int cmdAction,
-                            QProcess::ProcessState newState);
+                            int execTime,
+                            const QByteArray& cmdOutputChannel,
+                            const QByteArray& cmdErrorChannel);
+
+    void signalErrorOccurred(int cmdId,
+                             int cmdAction,
+                             QProcess::ProcessError error,
+                             const QString& description);
+
+    void signalFinished(int cmdId);
 
 private:
 
@@ -212,7 +265,6 @@ private Q_SLOTS:
     void slotReadyReadStandardOutput();
     void slotChangeProgram(const QString& etExePath);
     void slotErrorOccurred(QProcess::ProcessError error);
-    void slotStateChanged(QProcess::ProcessState newState);
     void slotFinished(int exitCode, QProcess::ExitStatus exitStatus);
 
 private:

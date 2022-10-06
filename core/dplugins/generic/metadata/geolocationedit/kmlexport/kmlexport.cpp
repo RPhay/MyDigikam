@@ -36,6 +36,7 @@
 
 #include "digikam_debug.h"
 #include "dmessagebox.h"
+#include "dfileoperations.h"
 
 namespace DigikamGenericGeolocationEditPlugin
 {
@@ -567,7 +568,7 @@ bool KmlExport::copyDir(const QString& srcFilePath, const QString& dstFilePath)
             }
         }
 
-        if (!QFile::copy(srcFilePath, dstFilePath))
+        if (!DFileOperations::copyFile(srcFilePath, dstFilePath))
         {
             return false;
         }
