@@ -45,6 +45,8 @@ QTAV_TESTS_BUILD(qrc.cpp)
 QTAV_TESTS_BUILD(subtitle.cpp)
 QTAV_TESTS_BUILD(transcode.cpp)
 
+add_custom_target(print-codecs ALL DEPENDS ${CMAKE_BINARY_DIR}/bin/qtav-codecslist_cli COMMAND ${CMAKE_BINARY_DIR}/bin/qtav-codecslist_cli)
+
 # -------------------------------------------------
 
 add_executable(qtav-audiopipeline_cli ${CMAKE_CURRENT_SOURCE_DIR}/examples/audiopipeline/main.cpp)
