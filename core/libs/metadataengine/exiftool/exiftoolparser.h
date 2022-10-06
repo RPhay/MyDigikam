@@ -17,13 +17,13 @@
 
 // Qt Core
 
-#include <QFileInfo>
-#include <QVariant>
 #include <QHash>
 #include <QObject>
 #include <QString>
-#include <QByteArray>
+#include <QVariant>
 #include <QProcess>
+#include <QFileInfo>
+#include <QByteArray>
 
 // Local includes
 

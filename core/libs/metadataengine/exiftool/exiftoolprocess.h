@@ -20,9 +20,9 @@
 
 // Qt includes
 
+#include <QString>
 #include <QProcess>
 #include <QPointer>
-#include <QString>
 
 // Local includes
 

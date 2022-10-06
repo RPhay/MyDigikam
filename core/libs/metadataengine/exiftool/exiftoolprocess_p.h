@@ -24,11 +24,9 @@
 
 #include <QFile>
 #include <QList>
-#include <QTimer>
 #include <QMutex>
 #include <QFileInfo>
 #include <QByteArray>
-#include <QApplication>
 #include <QElapsedTimer>
 #include <QStandardPaths>
 #include <QWaitCondition>
@@ -42,7 +40,6 @@
 #include "digikam_debug.h"
 #include "digikam_globals.h"
 #include "metaenginesettings.h"
-#include "exiftoolparser.h"
 
 #define CMD_ID_MIN 1
 #define CMD_ID_MAX 2000000000
