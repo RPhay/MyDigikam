@@ -58,10 +58,11 @@ public:
     bool       startProcess(const QByteArrayList& cmdArgs, ExifToolProcess::Action cmdAction);
     QByteArray filePathEncoding(const QFileInfo& fi) const;
 
+    void       jumpToResultCommand(const ExifToolProcess::Result& result);
     /**
      * Returns a string for an action.
      */
-    QString actionString(int cmdAction) const;
+    QString    actionString(int cmdAction) const;
 
 public:
 

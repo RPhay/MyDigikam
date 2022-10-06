@@ -58,11 +58,11 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifTo
 
     if (!async)
     {
-        ExifToolProcess::Result result = proc->getExifToolResult();
+        ExifToolProcess::Result result = proc->getExifToolResult(cmdRunning);
 
-        while ((result.cmdRunResult != cmdRunning) && (result.commandState != ExifToolProcess::EXIT_RESULT))
+        while ((result.cmdRunResult != cmdRunning))
         {
-            result = proc->waitForExifToolResult();
+            result = proc->waitForExifToolResult(cmdRunning);
 
             if ((result.cmdRunResult == cmdRunning) && result.cmdWaitError)
             {
@@ -72,38 +72,7 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifTo
             }
         }
 
-        switch (result.commandState)
-        {
-            case ExifToolProcess::COMMAND_RESULT:
-            {
-                pp->slotCmdCompleted(result.cmdRunResult,
-                                     result.cmdRunAction,
-                                     result.elapsedTimer,
-                                     result.outputBuffer,
-                                     QByteArray());
-                break;
-            }
-
-            case ExifToolProcess::FINISH_RESULT:
-            {
-                pp->slotFinished(result.cmdRunResult);
-                break;
-            }
-
-            case ExifToolProcess::ERROR_RESULT:
-            {
-                pp->slotErrorOccurred(result.cmdRunResult,
-                                      result.cmdRunAction,
-                                      proc->exifToolError(),
-                                      proc->exifToolErrorString());
-                break;
-            }
-
-            case ExifToolProcess::EXIT_RESULT:
-            {
-                return false;
-            }
-        }
+        jumpToResultCommand(result);
 
         if (currentPath.isEmpty())
         {
@@ -121,6 +90,37 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifTo
 QByteArray ExifToolParser::Private::filePathEncoding(const QFileInfo& fi) const
 {
     return (QDir::toNativeSeparators(fi.filePath()).toUtf8());
+}
+
+void ExifToolParser::Private::jumpToResultCommand(const ExifToolProcess::Result& result)
+{
+    switch (result.commandState)
+    {
+        case ExifToolProcess::COMMAND_RESULT:
+        {
+            pp->cmdCompleted(result.cmdRunResult,
+                             result.cmdRunAction,
+                             result.elapsedTimer,
+                             result.outputBuffer,
+                             QByteArray());
+            break;
+        }
+
+        case ExifToolProcess::ERROR_RESULT:
+        {
+            pp->errorOccurred(result.cmdRunResult,
+                              result.cmdRunAction,
+                              proc->exifToolError(),
+                              proc->exifToolErrorString());
+            break;
+        }
+
+        case ExifToolProcess::FINISH_RESULT:
+        {
+            pp->finished(result.cmdRunResult);
+            break;
+        }
+    }
 }
 
 QString ExifToolParser::Private::actionString(int cmdAction) const

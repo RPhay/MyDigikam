@@ -86,32 +86,31 @@ public Q_SLOTS:
 
 public:
 
-    ExifToolProcess*        pp;
-    QString                 etExePath;
-    QString                 perlExePath;
+    ExifToolProcess*                   pp;
+    QString                            etExePath;
+    QString                            perlExePath;
 
-    QElapsedTimer           execTimer;
-    QList<Command>          cmdQueue;
-    int                     cmdRunning;
-    ExifToolProcess::Action cmdAction;
+    QElapsedTimer                      execTimer;
+    QList<Command>                     cmdQueue;
+    int                                cmdRunning;
+    ExifToolProcess::Action            cmdAction;
+    QMap<int, ExifToolProcess::Result> resultMap;
 
-    int                     outAwait[2];             ///< [0] StandardOutput | [1] ErrorOutput
-    bool                    outReady[2];             ///< [0] StandardOutput | [1] ErrorOutput
-    QByteArray              outBuff[2];              ///< [0] StandardOutput | [1] ErrorOutput
+    int                                outAwait[2];             ///< [0] StandardOutput | [1] ErrorOutput
+    bool                               outReady[2];             ///< [0] StandardOutput | [1] ErrorOutput
+    QByteArray                         outBuff[2];              ///< [0] StandardOutput | [1] ErrorOutput
 
-    bool                    writeChannelIsClosed;
+    bool                               writeChannelIsClosed;
 
-    QProcess::ProcessError  processError;
-    QString                 errorString;
+    QProcess::ProcessError             processError;
+    QString                            errorString;
 
-    int                     nextCmdId;               ///< Unique identifier, even in a multi-instances or multi-thread environment
+    int                                nextCmdId;               ///< Unique identifier, even in a multi-instances or multi-thread environment
 
-    ExifToolProcess::Result cmdResult;
+    QMutex                             cmdMutex;
 
-    QMutex                  cmdMutex;
-
-    QMutex                  mutex;
-    QWaitCondition          condVar;
+    QMutex                             mutex;
+    QWaitCondition                     condVar;
 };
 
 } // namespace Digikam

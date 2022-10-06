@@ -42,16 +42,8 @@ ExifToolParser::ExifToolParser(QObject* const parent, bool async)
 
     if (d->async)
     {
-        connect(d->proc, &ExifToolProcess::signalCmdCompleted,
-                this, &ExifToolParser::slotCmdCompleted,
-                Qt::QueuedConnection);
-
-        connect(d->proc, &ExifToolProcess::signalErrorOccurred,
-                this, &ExifToolParser::slotErrorOccurred,
-                Qt::QueuedConnection);
-
-        connect(d->proc, &ExifToolProcess::signalFinished,
-                this, &ExifToolParser::slotFinished,
+        connect(d->proc, &ExifToolProcess::signalExifToolResult,
+                this, &ExifToolParser::slotExifToolResult,
                 Qt::QueuedConnection);
     }
 }
