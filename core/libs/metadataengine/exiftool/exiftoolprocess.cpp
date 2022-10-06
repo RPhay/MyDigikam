@@ -35,15 +35,6 @@ ExifToolProcess::~ExifToolProcess()
 
     terminateExifTool();
 
-    QMutexLocker locker(&d->mutex);
-
-    Q_FOREACH (int cmdId, d->resultMap.keys())
-    {
-        d->resultMap[cmdId].commandState = FINISH_RESULT;
-    }
-
-    d->condVar.wakeAll();
-
     delete d;
 }
 
@@ -330,7 +321,14 @@ void ExifToolProcess::slotFinished(int exitCode, QProcess::ExitStatus exitStatus
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool process finished with code:"
                                     << exitCode << "and status" << exitStatus;
 
-    d->setCommandResult(FINISH_RESULT);
+    QMutexLocker locker(&d->mutex);
+
+    Q_FOREACH (int cmdId, d->resultMap.keys())
+    {
+        d->resultMap[cmdId].commandState = FINISH_RESULT;
+    }
+
+    d->condVar.wakeAll();
 }
 
 void ExifToolProcess::slotErrorOccurred(QProcess::ProcessError error)

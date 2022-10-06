@@ -60,7 +60,7 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifTo
     {
         ExifToolProcess::Result result = proc->getExifToolResult(cmdRunning);
 
-        while ((result.cmdRunResult != cmdRunning))
+        while ((result.cmdRunResult != cmdRunning) && (result.commandState != ExifToolProcess::FINISH_RESULT))
         {
             result = proc->waitForExifToolResult(cmdRunning);
 
