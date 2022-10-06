@@ -27,35 +27,35 @@
 
 // Local includes
 
+#include <iostream>
 #include "digikam_debug.h"
 
 using namespace QtAV;
 
+void printList(const char* header, const QStringList& list)
+{
+    std::cout << header << "\n";
+    for(auto item : list)
+    {
+        std::cout << "  " << item.toUtf8().constData() << ", ";
+    }
+    std::cout << "\n\n";
+}
+
+
 int main(int /*argc*/, char** /*argv*/)
 {
-    qCDebug(DIGIKAM_TESTS_LOG) << "--- Available Video Decoder Codecs ---";
-    qCDebug(DIGIKAM_TESTS_LOG) << VideoDecoder::supportedCodecs();
+    printList("--- Available Video Decoder Codecs ---", VideoDecoder::supportedCodecs());
+    printList("--- Available Audio Decoder Codecs ---", AudioDecoder::supportedCodecs());
+    
+    printList("--- Available Video Encoder Codecs ---", VideoEncoder::supportedCodecs());
+    printList("--- Available Audio Encoder Codecs ---", AudioEncoder::supportedCodecs());
 
-    qCDebug(DIGIKAM_TESTS_LOG) << "--- Available Audio Decoder Codecs ---";
-    qCDebug(DIGIKAM_TESTS_LOG) << AudioDecoder::supportedCodecs();
+    printList("--- Available Media Formats ---", AVMuxer::supportedFormats());
+    printList("--- Available Media Extensions ---", AVMuxer::supportedExtensions());
 
-    qCDebug(DIGIKAM_TESTS_LOG) << "--- Available Video Encoder Codecs ---";
-    qCDebug(DIGIKAM_TESTS_LOG) << VideoEncoder::supportedCodecs();
-
-    qCDebug(DIGIKAM_TESTS_LOG) << "--- Available Audio Encoder Codecs ---";
-    qCDebug(DIGIKAM_TESTS_LOG) << AudioEncoder::supportedCodecs();
-
-    qCDebug(DIGIKAM_TESTS_LOG) << "--- Available Media Formats ---";
-    qCDebug(DIGIKAM_TESTS_LOG) << AVMuxer::supportedFormats();
-
-    qCDebug(DIGIKAM_TESTS_LOG) << "--- Available Media Extensions ---";
-    qCDebug(DIGIKAM_TESTS_LOG) << AVMuxer::supportedExtensions();
-
-    qCDebug(DIGIKAM_TESTS_LOG) << "--- Available Video Filters ---";
-    qCDebug(DIGIKAM_TESTS_LOG) << LibAVFilter::videoFilters();
-
-    qCDebug(DIGIKAM_TESTS_LOG) << "--- Available Audio Filters ---";
-    qCDebug(DIGIKAM_TESTS_LOG) << LibAVFilter::audioFilters();
+    printList("--- Available Video Filters ---", LibAVFilter::videoFilters());
+    printList("--- Available Audio Filters ---", LibAVFilter::audioFilters());
 
     return 0;
 }
