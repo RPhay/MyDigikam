@@ -205,9 +205,6 @@ public:
 
 Q_SIGNALS:
 
-    void signalStarted(int cmdId,
-                       int cmdAction);
-
     void signalExifToolResult(int cmdId);
 
 private:

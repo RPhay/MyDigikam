@@ -56,10 +56,6 @@ ExifToolProcess* ExifToolProcess::instance()
 void ExifToolProcess::setExifToolProgram(const QString& etExePath)
 {
     Q_EMIT signalChangeProgram(etExePath);
-
-    qApp->processEvents();
-
-    waitForStarted(1000);
 }
 
 QString ExifToolProcess::getExifToolProgram() const
@@ -312,8 +308,6 @@ int ExifToolProcess::command(const QByteArrayList& args, Action ac)
 void ExifToolProcess::slotStarted()
 {
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool process started";
-
-    Q_EMIT signalStarted(d->cmdRunning, d->cmdAction);
 }
 
 void ExifToolProcess::slotFinished(int exitCode, QProcess::ExitStatus exitStatus)
@@ -438,7 +432,7 @@ void ExifToolProcess::initExifTool()
 
     connect(this, &ExifToolProcess::signalChangeProgram,
             this, &ExifToolProcess::slotChangeProgram,
-            Qt::QueuedConnection);
+            Qt::BlockingQueuedConnection);
 
     connect(MetaEngineSettings::instance(), SIGNAL(signalSettingsChanged()),
             this, SLOT(slotApplySettingsAndStart()),
