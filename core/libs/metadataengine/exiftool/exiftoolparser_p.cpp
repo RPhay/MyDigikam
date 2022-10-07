@@ -45,6 +45,24 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifTo
 {
     // Send command to ExifToolProcess
 
+    if (async)
+    {
+        QMutexLocker locker(&mutex);
+
+        int cmdId = proc->command(cmdArgs, cmdAction);
+
+        if (cmdId == 0)
+        {
+            qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool cannot be sent:" << actionString(cmdAction);
+
+            return false;
+        }
+
+        asyncRunning << cmdId;
+
+        return true;
+    }
+
     cmdRunning = proc->command(cmdArgs, cmdAction);
 
     if (cmdRunning == 0)
@@ -56,32 +74,29 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifTo
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool" << actionString(cmdAction) << cmdArgs.join(QByteArray(" "));
 
-    if (!async)
+    ExifToolProcess::Result result = proc->getExifToolResult(cmdRunning);
+
+    while ((result.cmdRunResult != cmdRunning) && (result.commandState != ExifToolProcess::FINISH_RESULT))
     {
-        ExifToolProcess::Result result = proc->getExifToolResult(cmdRunning);
+        result = proc->waitForExifToolResult(cmdRunning);
 
-        while ((result.cmdRunResult != cmdRunning) && (result.commandState != ExifToolProcess::FINISH_RESULT))
+        if ((result.cmdRunResult == cmdRunning) && result.cmdWaitError)
         {
-            result = proc->waitForExifToolResult(cmdRunning);
+            qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool timed out:" << actionString(cmdAction);
 
-            if ((result.cmdRunResult == cmdRunning) && result.cmdWaitError)
-            {
-                qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool timed out:" << actionString(cmdAction);
-
-                return false;
-            }
+            return false;
         }
+    }
 
-        jumpToResultCommand(result);
+    jumpToResultCommand(result);
 
-        if (currentPath.isEmpty())
-        {
-            qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction);
-        }
-        else
-        {
-            qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction) << "for" << currentPath;
-        }
+    if (currentPath.isEmpty())
+    {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction);
+    }
+    else
+    {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction) << "for" << currentPath;
     }
 
     return true;

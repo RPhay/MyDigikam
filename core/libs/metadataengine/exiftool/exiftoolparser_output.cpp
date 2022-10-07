@@ -417,9 +417,16 @@ void ExifToolParser::finished(int cmdId)
 
 void ExifToolParser::slotExifToolResult(int cmdId)
 {
-    if (cmdId != d->cmdRunning)
     {
-        return;
+        QMutexLocker locker(&d->mutex);
+
+        if (!d->asyncRunning.contains(cmdId))
+        {
+            return;
+        }
+
+        d->asyncRunning.removeAll(cmdId);
+        d->cmdRunning = cmdId;
     }
 
     d->jumpToResultCommand(d->proc->getExifToolResult(cmdId));
