@@ -75,7 +75,7 @@ public:
     void readOutput(const QProcess::ProcessChannel channel);
     void setProcessErrorAndEmit(QProcess::ProcessError error,
                                 const QString& description);
-    void setCommandResult(int cmdState);
+    void setCommandResult(int cmdStatus);
 
 public Q_SLOTS:
 
@@ -89,7 +89,7 @@ public:
 
     QElapsedTimer                      execTimer;
     QList<Command>                     cmdQueue;
-    int                                cmdRunning;
+    int                                cmdNumber;
     ExifToolProcess::Action            cmdAction;
     QMap<int, ExifToolProcess::Result> resultMap;
 

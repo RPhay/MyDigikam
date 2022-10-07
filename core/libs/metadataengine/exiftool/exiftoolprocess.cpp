@@ -113,12 +113,12 @@ bool ExifToolProcess::startExifTool()
     // Clear queue before start
 
     d->cmdQueue.clear();
-    d->cmdRunning           = 0;
-    d->cmdAction            = NO_ACTION;
+    d->cmdNumber    = 0;
+    d->cmdAction    = NO_ACTION;
 
     // Clear errors
 
-    d->processError         = QProcess::UnknownError;
+    d->processError = QProcess::UnknownError;
     d->errorString.clear();
 
     // Start ExifTool process
@@ -197,7 +197,7 @@ bool ExifToolProcess::exifToolAvailable() const
 
 bool ExifToolProcess::exifToolIsBusy() const
 {
-    return (d->cmdRunning ? true : false);
+    return (d->cmdNumber ? true : false);
 }
 
 QProcess::ProcessError ExifToolProcess::exifToolError() const
@@ -224,11 +224,11 @@ ExifToolProcess::Result ExifToolProcess::waitForExifToolResult(int cmdId) const
 {
     QMutexLocker locker(&d->mutex);
 
-    bool ret            = d->condVar.wait(&d->mutex, 10000);
+    bool ret         = d->condVar.wait(&d->mutex, 10000);
 
     ExifToolProcess::Result result;
-    result              = d->resultMap.take(cmdId);
-    result.cmdWaitError = !ret;
+    result           = d->resultMap.take(cmdId);
+    result.waitError = !ret;
 
     return result;
 }
@@ -319,7 +319,7 @@ void ExifToolProcess::slotFinished(int exitCode, QProcess::ExitStatus exitStatus
 
     Q_FOREACH (int cmdId, d->resultMap.keys())
     {
-        d->resultMap[cmdId].commandState = FINISH_RESULT;
+        d->resultMap[cmdId].cmdStatus = FINISH_RESULT;
     }
 
     d->condVar.wakeAll();

@@ -97,7 +97,7 @@ public:
     /**
      * Command result state.
      */
-    enum ResultState
+    enum ResultStatus
     {
         COMMAND_RESULT      = 0,
         FINISH_RESULT,
@@ -111,20 +111,20 @@ public:
     public:
 
         Result()
-          : cmdWaitError (false),
-            commandState (ExifToolProcess::COMMAND_RESULT),
-            cmdRunAction (ExifToolProcess::NO_ACTION),
-            cmdRunResult (0),
-            elapsedTimer (0)
+          : waitError (false),
+            cmdStatus (ExifToolProcess::COMMAND_RESULT),
+            cmdAction (ExifToolProcess::NO_ACTION),
+            cmdNumber (0),
+            elapsed   (0)
         {
         }
 
-        bool       cmdWaitError;
-        int        commandState;
-        int        cmdRunAction;
-        int        cmdRunResult;
-        int        elapsedTimer;
-        QByteArray outputBuffer;
+        bool       waitError;
+        int        cmdStatus;
+        int        cmdAction;
+        int        cmdNumber;
+        int        elapsed;
+        QByteArray output;
     };
 
 public:

@@ -75,11 +75,11 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifTo
 
     ExifToolProcess::Result result = proc->getExifToolResult(cmdId);
 
-    while ((result.cmdRunResult != cmdId) && (result.commandState != ExifToolProcess::FINISH_RESULT))
+    while ((result.cmdNumber != cmdId) && (result.cmdStatus != ExifToolProcess::FINISH_RESULT))
     {
         result = proc->waitForExifToolResult(cmdId);
 
-        if ((result.cmdRunResult == cmdId) && result.cmdWaitError)
+        if ((result.cmdNumber == cmdId) && result.waitError)
         {
             qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool timed out:" << actionString(cmdAction);
 
@@ -108,12 +108,12 @@ QByteArray ExifToolParser::Private::filePathEncoding(const QFileInfo& fi) const
 
 void ExifToolParser::Private::jumpToResultCommand(const ExifToolProcess::Result& result, int cmdId)
 {
-    if (result.cmdRunResult != cmdId)
+    if (result.cmdNumber != cmdId)
     {
         return;
     }
 
-    switch (result.commandState)
+    switch (result.cmdStatus)
     {
         case ExifToolProcess::COMMAND_RESULT:
         {
