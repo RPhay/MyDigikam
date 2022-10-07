@@ -159,7 +159,7 @@ BUGFIXES:
 121 ==> 432369 - Wrong time for mp4 in _almost_ all places, metadata differs from filesystem/other apps. DB issues?
 122 ==> 438960 - Add support for searching images created in a time interval.
 123 ==> 458082 - MP4 video failed to update metadata timestamp.
-124 ==> 460091 - Original batch still present after modification.
+124 ==> 
 125 ==> 
 126 ==> 
 127 ==> 
