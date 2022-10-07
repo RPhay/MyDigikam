@@ -29,29 +29,20 @@ void ExifToolParser::printExifToolOutput(const QByteArray& stdOut)
     qCDebug(DIGIKAM_METAENGINE_LOG) << "---";
 }
 
-void ExifToolParser::cmdCompleted(int cmdId,
-                                  int cmdAction,
-                                  int execTime,
-                                  const QByteArray& stdOut,
-                                  const QByteArray& /*stdErr*/)
+void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
 {
-    if (cmdId != d->cmdRunning)
-    {
-        return;
-    }
-
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete command for action"
-                                    << d->actionString(cmdAction)
+                                    << d->actionString(result.cmdRunAction)
                                     << "with elasped time (ms):"
-                                    << execTime;
+                                    << result.elapsedTimer;
 
-    switch (cmdAction)
+    switch (result.cmdRunAction)
     {
         case ExifToolProcess::LOAD_METADATA:
         {
             // Convert JSON array as QVariantMap
 
-            QJsonDocument jsonDoc     = QJsonDocument::fromJson(stdOut);
+            QJsonDocument jsonDoc     = QJsonDocument::fromJson(result.outputBuffer);
             QJsonArray    jsonArray   = jsonDoc.array();
 
             qCDebug(DIGIKAM_METAENGINE_LOG) << "Json Array size:" << jsonArray.size();
@@ -171,33 +162,33 @@ void ExifToolParser::cmdCompleted(int cmdId,
 
         case ExifToolProcess::LOAD_CHUNKS:
         {
-            qCDebug(DIGIKAM_METAENGINE_LOG) << "EXV chunk size:" << stdOut.size();
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "EXV chunk size:" << result.outputBuffer.size();
 
-            d->exifToolData.insert(QLatin1String("EXV"), QVariantList() << stdOut);     // Exv chunk as bytearray.
+            d->exifToolData.insert(QLatin1String("EXV"), QVariantList() << result.outputBuffer);     // Exv chunk as bytearray.
             break;
         }
 
         case ExifToolProcess::APPLY_CHANGES:
         {
-            printExifToolOutput(stdOut);
+            printExifToolOutput(result.outputBuffer);
             break;
         }
 
         case ExifToolProcess::APPLY_CHANGES_EXV:
         {
-            printExifToolOutput(stdOut);
+            printExifToolOutput(result.outputBuffer);
             break;
         }
 
         case ExifToolProcess::COPY_TAGS:
         {
-            printExifToolOutput(stdOut);
+            printExifToolOutput(result.outputBuffer);
             break;
         }
 
         case ExifToolProcess::TRANS_TAGS:
         {
-            printExifToolOutput(stdOut);
+            printExifToolOutput(result.outputBuffer);
 
             if (!d->argsFile.isOpen() && d->argsFile.exists())
             {
@@ -211,7 +202,7 @@ void ExifToolParser::cmdCompleted(int cmdId,
         {
             // Remove first line
 
-            QString out       = QString::fromUtf8(stdOut).section(QLatin1Char('\n'), 1, -1);
+            QString out       = QString::fromUtf8(result.outputBuffer).section(QLatin1Char('\n'), 1, -1);
 
             // Get extensions and descriptions as pair of strings
 
@@ -236,7 +227,7 @@ void ExifToolParser::cmdCompleted(int cmdId,
         {
             // Remove first line
 
-            QString out       = QString::fromUtf8(stdOut).section(QLatin1Char('\n'), 1, -1);
+            QString out       = QString::fromUtf8(result.outputBuffer).section(QLatin1Char('\n'), 1, -1);
 
             // Get extensions and descriptions as pair of strings
 
@@ -260,7 +251,7 @@ void ExifToolParser::cmdCompleted(int cmdId,
         {
             // Remove first line
 
-            QString out       = QString::fromUtf8(stdOut).section(QLatin1Char('\n'), 1, -1);
+            QString out       = QString::fromUtf8(result.outputBuffer).section(QLatin1Char('\n'), 1, -1);
 
             // Get i18n list
 
@@ -278,7 +269,7 @@ void ExifToolParser::cmdCompleted(int cmdId,
 
         case ExifToolProcess::TAGS_DATABASE:
         {
-            QString xml = QString::fromUtf8(stdOut);
+            QString xml = QString::fromUtf8(result.outputBuffer);
 
             QDomDocument doc;
 
@@ -364,7 +355,7 @@ void ExifToolParser::cmdCompleted(int cmdId,
 
         case ExifToolProcess::VERSION_STRING:
         {
-            QString out       = QString::fromUtf8(stdOut);
+            QString out       = QString::fromUtf8(result.outputBuffer);
             QStringList lines = out.split(QLatin1Char('\n'), QT_SKIP_EMPTY_PARTS);
 
             if (!lines.isEmpty())
@@ -381,23 +372,18 @@ void ExifToolParser::cmdCompleted(int cmdId,
         }
     }
 
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool parsed command for action" << d->actionString(cmdAction);
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool parsed command for action" << d->actionString(result.cmdRunAction);
     qCDebug(DIGIKAM_METAENGINE_LOG) << d->exifToolData.count() << "properties decoded";
 
     Q_EMIT signalExifToolDataAvailable();
 }
 
-void ExifToolParser::errorOccurred(int cmdId,
-                                   int cmdAction,
+void ExifToolParser::errorOccurred(const ExifToolProcess::Result& result,
                                    QProcess::ProcessError error,
                                    const QString& description)
 {
-    if (cmdId != d->cmdRunning)
-    {
-        return;
-    }
-
-    qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool process for action" << d->actionString(cmdAction)
+    qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool process for action"
+                                      << d->actionString(result.cmdRunAction)
                                       << "exited with error:" << error;
 
     d->errorString = description;
@@ -405,13 +391,8 @@ void ExifToolParser::errorOccurred(int cmdId,
     Q_EMIT signalExifToolDataAvailable();
 }
 
-void ExifToolParser::finished(int cmdId)
+void ExifToolParser::finished()
 {
-    if (cmdId != d->cmdRunning)
-    {
-        return;
-    }
-
     Q_EMIT signalExifToolDataAvailable();
 }
 
@@ -426,17 +407,21 @@ void ExifToolParser::slotExifToolResult(int cmdId)
         }
 
         d->asyncRunning.removeAll(cmdId);
-        d->cmdRunning = cmdId;
     }
 
-    d->jumpToResultCommand(d->proc->getExifToolResult(cmdId));
+    d->jumpToResultCommand(d->proc->getExifToolResult(cmdId), cmdId);
 }
 
 void ExifToolParser::setOutputStream(int cmdAction,
                                      const QByteArray& cmdOutputChannel,
-                                     const QByteArray& cmdErrorChannel)
+                                     const QByteArray& /*cmdErrorChannel*/)
 {
-    cmdCompleted(d->cmdRunning, cmdAction, 0, cmdOutputChannel, cmdErrorChannel);
+    ExifToolProcess::Result result;
+
+    result.cmdRunAction = cmdAction;
+    result.outputBuffer = cmdOutputChannel;
+
+    cmdCompleted(result);
 }
 
 } // namespace Digikam

@@ -59,7 +59,8 @@ public:
     bool       startProcess(const QByteArrayList& cmdArgs, ExifToolProcess::Action cmdAction);
     QByteArray filePathEncoding(const QFileInfo& fi) const;
 
-    void       jumpToResultCommand(const ExifToolProcess::Result& result);
+    void       jumpToResultCommand(const ExifToolProcess::Result& result, int cmdId);
+
     /**
      * Returns a string for an action.
      */
@@ -78,7 +79,6 @@ public:
 
     bool                           async;
     QList<int>                     asyncRunning;
-    int                            cmdRunning;
 };
 
 } // namespace Digikam

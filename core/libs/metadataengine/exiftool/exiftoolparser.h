@@ -201,18 +201,13 @@ public:
     /// ExifTool Output Management Methods. See exiftoolparser_output.cpp for details
     //@{
 
-    void cmdCompleted(int cmdId,
-                      int cmdAction,
-                      int execTime,
-                      const QByteArray& cmdOutputChannel,
-                      const QByteArray& cmdErrorChannel);
+    void cmdCompleted(const ExifToolProcess::Result& result);
 
-    void errorOccurred(int cmdId,
-                       int cmdAction,
+    void errorOccurred(const ExifToolProcess::Result& result,
                        QProcess::ProcessError error,
                        const QString& description);
 
-    void finished(int cmdId);
+    void finished();
 
 public Q_SLOTS:
 
