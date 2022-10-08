@@ -45,10 +45,10 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
             QJsonDocument jsonDoc     = QJsonDocument::fromJson(result.output);
             QJsonArray    jsonArray   = jsonDoc.array();
 
-            qCDebug(DIGIKAM_METAENGINE_LOG) << "Json Array size:" << jsonArray.size();
-
             if (jsonArray.size() == 0)
             {
+                qCDebug(DIGIKAM_METAENGINE_LOG) << "Json Array size is null";
+
                 Q_EMIT signalExifToolDataAvailable();
 
                 return;
@@ -377,8 +377,8 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
         }
     }
 
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool parsed command for action" << d->actionString(result.cmdAction);
-    qCDebug(DIGIKAM_METAENGINE_LOG) << d->exifToolData.count() << "properties decoded";
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool parsed command for action" << d->actionString(result.cmdAction)
+                                    << d->exifToolData.count() << "properties decoded";
 
     Q_EMIT signalExifToolDataAvailable();
 }
