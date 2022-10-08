@@ -40,63 +40,50 @@ void ExifToolParser::Private::prepareProcess()
     exifToolData.clear();
 }
 
-bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifToolProcess::Action cmdAction)
+bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs,
+                                           ExifToolProcess::Action cmdAction)
 {
     // Send command to ExifToolProcess
+
+    int cmdId = proc->command(cmdArgs, cmdAction);
+
+    if (cmdId == 0)
+    {
+        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool cannot be sent:"
+                                          << actionString(cmdAction);
+
+        return false;
+    }
+
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool" << actionString(cmdAction)
+                                    << cmdArgs.join(QByteArray(" "));
 
     if (async)
     {
         QMutexLocker locker(&mutex);
-
-        int cmdId = proc->command(cmdArgs, cmdAction);
-
-        if (cmdId == 0)
-        {
-            qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool cannot be sent:" << actionString(cmdAction);
-
-            return false;
-        }
 
         asyncRunning << cmdId;
 
         return true;
     }
 
-    int cmdId = proc->command(cmdArgs, cmdAction);
-
-    if (cmdId == 0)
-    {
-        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool cannot be sent:" << actionString(cmdAction);
-
-        return false;
-    }
-
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool" << actionString(cmdAction) << cmdArgs.join(QByteArray(" "));
-
     ExifToolProcess::Result result = proc->getExifToolResult(cmdId);
 
-    while ((result.cmdNumber != cmdId) && (result.cmdStatus != ExifToolProcess::FINISH_RESULT))
+    while ((result.cmdNumber != cmdId) &&
+           (result.cmdStatus != ExifToolProcess::FINISH_RESULT))
     {
         result = proc->waitForExifToolResult(cmdId);
 
         if ((result.cmdNumber == cmdId) && result.waitError)
         {
-            qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool timed out:" << actionString(cmdAction);
+            qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool timed out:"
+                                              << actionString(cmdAction);
 
             return false;
         }
     }
 
     jumpToResultCommand(result, cmdId);
-
-    if (currentPath.isEmpty())
-    {
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction);
-    }
-    else
-    {
-        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction) << "for" << currentPath;
-    }
 
     return true;
 }
@@ -134,6 +121,17 @@ void ExifToolParser::Private::jumpToResultCommand(const ExifToolProcess::Result&
             pp->finished();
             break;
         }
+    }
+
+    if (currentPath.isEmpty())
+    {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete"
+                                        << actionString(result.cmdAction);
+    }
+    else
+    {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete"
+                                        << actionString(result.cmdAction) << "for" << currentPath;
     }
 }
 
