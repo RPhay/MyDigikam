@@ -415,16 +415,13 @@ void ExifToolProcess::initExifTool()
 #endif
 
     connect(this, &QProcess::errorOccurred,
-            this, &ExifToolProcess::slotErrorOccurred,
-            Qt::QueuedConnection);
+            this, &ExifToolProcess::slotErrorOccurred);
 
     connect(this, &QProcess::readyReadStandardOutput,
-            this, &ExifToolProcess::slotReadyReadStandardOutput,
-            Qt::QueuedConnection);
+            this, &ExifToolProcess::slotReadyReadStandardOutput);
 
     connect(this, &QProcess::readyReadStandardError,
-            this, &ExifToolProcess::slotReadyReadStandardError,
-            Qt::QueuedConnection);
+            this, &ExifToolProcess::slotReadyReadStandardError);
 
     connect(this, &ExifToolProcess::signalExecNextCmd,
             d,    &ExifToolProcess::Private::slotExecNextCmd,
