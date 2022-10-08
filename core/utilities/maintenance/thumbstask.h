@@ -48,6 +48,11 @@ protected:
 
     void run() override;
 
+private Q_SLOTS:
+
+    void slotThumbnailLoaded(const LoadingDescription& loadingDescription,
+                             const QImage& image);
+
 private:
 
     // Disable
