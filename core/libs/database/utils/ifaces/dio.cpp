@@ -38,6 +38,7 @@
 #include "tagscache.h"
 #include "coredb.h"
 #include "coredbaccess.h"
+#include "coredbtransaction.h"
 #include "album.h"
 #include "dmetadata.h"
 #include "metaenginesettings.h"
@@ -604,6 +605,8 @@ void DIO::slotOneProccessed(const QUrl& url)
                 // Get all deleted albums
 
                 CoreDbAccess access;
+                CoreDbTransaction transaction(&access);
+
                 QList<int> albumsToDelete;
                 QList<qlonglong> imagesToRemove;
 
