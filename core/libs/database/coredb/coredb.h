@@ -1368,8 +1368,8 @@ public:
      * @param  dstName    the name of the destination file
      * @return the id of item added or -1 if it fails
      */
-    int copyItem(int srcAlbumID, const QString& srcName,
-                 int dstAlbumID, const QString& dstName);
+    qlonglong copyItem(int srcAlbumID, const QString& srcName,
+                       int dstAlbumID, const QString& dstName);
 
     /**
      * Copies all image-specific information, in all tables, from image srcId to destId.

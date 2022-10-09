@@ -23,7 +23,7 @@ namespace Digikam
 ExifToolProcess::Private::Private(ExifToolProcess* const q)
     : QObject             (q),
       pp                  (q),
-      cmdRunning          (0),
+      cmdNumber           (0),
       cmdAction           (ExifToolProcess::NO_ACTION),
       writeChannelIsClosed(true),
       processError        (QProcess::UnknownError),
@@ -46,7 +46,7 @@ void ExifToolProcess::Private::slotExecNextCmd()
 
     QMutexLocker locker(&cmdMutex);
 
-    if (cmdRunning || cmdQueue.isEmpty())
+    if (cmdNumber || cmdQueue.isEmpty())
     {
         return;
     }
@@ -70,7 +70,7 @@ void ExifToolProcess::Private::slotExecNextCmd()
     execTimer.start();
 
     Command command = cmdQueue.takeFirst();
-    cmdRunning      = command.id;
+    cmdNumber       = command.id;
     cmdAction       = command.ac;
 
     pp->write(command.argsStr);
@@ -78,9 +78,7 @@ void ExifToolProcess::Private::slotExecNextCmd()
 
 void ExifToolProcess::Private::readOutput(const QProcess::ProcessChannel channel)
 {
-    QMutexLocker locker(&mutex);
-
-    if (cmdRunning == 0)
+    if (cmdNumber == 0)
     {
         return;
     }
@@ -131,12 +129,12 @@ void ExifToolProcess::Private::readOutput(const QProcess::ProcessChannel channel
     }
 
     if (
-        (cmdRunning != outAwait[QProcess::StandardOutput]) ||
-        (cmdRunning != outAwait[QProcess::StandardError])
+        (cmdNumber != outAwait[QProcess::StandardOutput]) ||
+        (cmdNumber != outAwait[QProcess::StandardError])
        )
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::readOutput: Sync error between CmdID("
-                                           << cmdRunning
+                                           << cmdNumber
                                            << "), outChannel("
                                            << outAwait[0]
                                            << ") and errChannel("
@@ -144,48 +142,46 @@ void ExifToolProcess::Private::readOutput(const QProcess::ProcessChannel channel
                                            << ")";
 
         setProcessErrorAndEmit(QProcess::ReadError, i18n("Synchronization error between the channels"));
-
-        condVar.wakeAll();
     }
     else
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifToolProcess::readOutput(): ExifTool command completed";
 
-        Q_EMIT pp->signalCmdCompleted(cmdRunning,
-                                      cmdAction,
-                                      execTimer.elapsed(),
-                                      outBuff[QProcess::StandardOutput],
-                                      outBuff[QProcess::StandardError]);
-
         setCommandResult(ExifToolProcess::COMMAND_RESULT);
-
-        condVar.wakeAll();
     }
 
-    slotExecNextCmd(); // Exec next command
+    Q_EMIT pp->signalExecNextCmd(); // Exec next command
 }
 
 void ExifToolProcess::Private::setProcessErrorAndEmit(QProcess::ProcessError error, const QString& description)
 {
-    Q_EMIT pp->signalErrorOccurred(cmdRunning, cmdAction, error, description);
-
     processError = error;
     errorString  = description;
 
     setCommandResult(ExifToolProcess::ERROR_RESULT);
 }
 
-void ExifToolProcess::Private::setCommandResult(int cmdState)
+void ExifToolProcess::Private::setCommandResult(int cmdStatus)
 {
-    cmdResult.cmdWaitError = false;
-    cmdResult.commandState = cmdState;
-    cmdResult.cmdRunAction = cmdAction;
-    cmdResult.cmdRunResult = cmdRunning;
-    cmdResult.elapsedTimer = execTimer.elapsed();
-    cmdResult.outputBuffer = outBuff[QProcess::StandardOutput];
+    QMutexLocker locker(&mutex);
 
-    cmdRunning             = 0;
-    cmdAction              = ExifToolProcess::NO_ACTION;
+    ExifToolProcess::Result result;
+
+    result.waitError = false;
+    result.cmdStatus = cmdStatus;
+    result.cmdAction = cmdAction;
+    result.cmdNumber = cmdNumber;
+    result.elapsed   = execTimer.elapsed();
+    result.output    = outBuff[QProcess::StandardOutput];
+
+    resultMap.insert(cmdNumber, result);
+
+    Q_EMIT pp->signalExifToolResult(cmdNumber);
+
+    cmdNumber        = 0;
+    cmdAction        = ExifToolProcess::NO_ACTION;
+
+    condVar.wakeAll();
 }
 
 } // namespace Digikam

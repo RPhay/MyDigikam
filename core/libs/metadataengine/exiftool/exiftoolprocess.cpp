@@ -35,15 +35,6 @@ ExifToolProcess::~ExifToolProcess()
 
     terminateExifTool();
 
-    if (d->cmdRunning)
-    {
-        QMutexLocker locker(&d->mutex);
-
-        d->cmdResult.commandState = EXIT_RESULT;
-
-        d->condVar.wakeAll();
-    }
-
     delete d;
 }
 
@@ -65,10 +56,6 @@ ExifToolProcess* ExifToolProcess::instance()
 void ExifToolProcess::setExifToolProgram(const QString& etExePath)
 {
     Q_EMIT signalChangeProgram(etExePath);
-
-    qApp->processEvents();
-
-    waitForStarted(1000);
 }
 
 QString ExifToolProcess::getExifToolProgram() const
@@ -126,12 +113,12 @@ bool ExifToolProcess::startExifTool()
     // Clear queue before start
 
     d->cmdQueue.clear();
-    d->cmdRunning           = 0;
-    d->cmdAction            = NO_ACTION;
+    d->cmdNumber    = 0;
+    d->cmdAction    = NO_ACTION;
 
     // Clear errors
 
-    d->processError         = QProcess::UnknownError;
+    d->processError = QProcess::UnknownError;
     d->errorString.clear();
 
     // Start ExifTool process
@@ -210,7 +197,7 @@ bool ExifToolProcess::exifToolAvailable() const
 
 bool ExifToolProcess::exifToolIsBusy() const
 {
-    return (d->cmdRunning ? true : false);
+    return (d->cmdNumber ? true : false);
 }
 
 QProcess::ProcessError ExifToolProcess::exifToolError() const
@@ -223,21 +210,27 @@ QString ExifToolProcess::exifToolErrorString() const
     return d->errorString;
 }
 
-ExifToolProcess::Result ExifToolProcess::getExifToolResult() const
+ExifToolProcess::Result ExifToolProcess::getExifToolResult(int cmdId) const
 {
     QMutexLocker locker(&d->mutex);
 
-    return d->cmdResult;
+    ExifToolProcess::Result result;
+    result = d->resultMap.take(cmdId);
+
+    return result;
 }
 
-ExifToolProcess::Result ExifToolProcess::waitForExifToolResult() const
+ExifToolProcess::Result ExifToolProcess::waitForExifToolResult(int cmdId) const
 {
     QMutexLocker locker(&d->mutex);
 
-    bool ret = d->condVar.wait(&d->mutex, 10000);
-    d->cmdResult.cmdWaitError = !ret;
+    bool ret         = d->condVar.wait(&d->mutex, 10000);
 
-    return d->cmdResult;
+    ExifToolProcess::Result result;
+    result           = d->resultMap.take(cmdId);
+    result.waitError = !ret;
+
+    return result;
 }
 
 int ExifToolProcess::command(const QByteArrayList& args, Action ac)
@@ -315,31 +308,26 @@ int ExifToolProcess::command(const QByteArrayList& args, Action ac)
 void ExifToolProcess::slotStarted()
 {
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool process started";
-
-    Q_EMIT signalStarted(d->cmdRunning, d->cmdAction);
 }
 
 void ExifToolProcess::slotFinished(int exitCode, QProcess::ExitStatus exitStatus)
 {
-    QMutexLocker locker(&d->mutex);
-
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool process finished with code:"
                                     << exitCode << "and status" << exitStatus;
 
-    Q_EMIT signalFinished(d->cmdRunning);
+    QMutexLocker locker(&d->mutex);
 
-    d->setCommandResult(FINISH_RESULT);
+    Q_FOREACH (int cmdId, d->resultMap.keys())
+    {
+        d->resultMap[cmdId].cmdStatus = FINISH_RESULT;
+    }
 
     d->condVar.wakeAll();
 }
 
 void ExifToolProcess::slotErrorOccurred(QProcess::ProcessError error)
 {
-    QMutexLocker locker(&d->mutex);
-
     d->setProcessErrorAndEmit(error, errorString());
-
-    d->condVar.wakeAll();
 }
 
 void ExifToolProcess::slotReadyReadStandardOutput()
@@ -412,34 +400,28 @@ bool ExifToolProcess::checkExifToolProgram() const
 void ExifToolProcess::initExifTool()
 {
     connect(this, &QProcess::started,
-            this, &ExifToolProcess::slotStarted,
-            Qt::QueuedConnection);
+            this, &ExifToolProcess::slotStarted);
 
 #if QT_VERSION >= 0x060000
 
     connect(this, &QProcess::finished,
-            this, &ExifToolProcess::slotFinished,
-            Qt::QueuedConnection);
+            this, &ExifToolProcess::slotFinished);
 
 #else
 
     connect(this, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
-            this, &ExifToolProcess::slotFinished,
-            Qt::QueuedConnection);
+            this, &ExifToolProcess::slotFinished);
 
 #endif
 
     connect(this, &QProcess::errorOccurred,
-            this, &ExifToolProcess::slotErrorOccurred,
-            Qt::QueuedConnection);
+            this, &ExifToolProcess::slotErrorOccurred);
 
     connect(this, &QProcess::readyReadStandardOutput,
-            this, &ExifToolProcess::slotReadyReadStandardOutput,
-            Qt::QueuedConnection);
+            this, &ExifToolProcess::slotReadyReadStandardOutput);
 
     connect(this, &QProcess::readyReadStandardError,
-            this, &ExifToolProcess::slotReadyReadStandardError,
-            Qt::QueuedConnection);
+            this, &ExifToolProcess::slotReadyReadStandardError);
 
     connect(this, &ExifToolProcess::signalExecNextCmd,
             d,    &ExifToolProcess::Private::slotExecNextCmd,
@@ -447,7 +429,7 @@ void ExifToolProcess::initExifTool()
 
     connect(this, &ExifToolProcess::signalChangeProgram,
             this, &ExifToolProcess::slotChangeProgram,
-            Qt::QueuedConnection);
+            Qt::BlockingQueuedConnection);
 
     connect(MetaEngineSettings::instance(), SIGNAL(signalSettingsChanged()),
             this, SLOT(slotApplySettingsAndStart()),

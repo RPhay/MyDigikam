@@ -81,8 +81,7 @@ public:
         delegate         (nullptr),
         showToolTip      (false),
         scrollToItemId   (0),
-        delayedEnterTimer(nullptr),
-        currentMouseEvent(nullptr)
+        delayedEnterTimer(nullptr)
     {
     }
 
@@ -97,8 +96,6 @@ public:
     QUrl                  unknownCurrentUrl;
 
     QTimer*               delayedEnterTimer;
-
-    QMouseEvent*          currentMouseEvent;
 };
 
 // -------------------------------------------------------------------------------

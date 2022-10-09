@@ -20,9 +20,9 @@
 
 // Qt includes
 
+#include <QString>
 #include <QProcess>
 #include <QPointer>
-#include <QString>
 
 // Local includes
 
@@ -97,12 +97,11 @@ public:
     /**
      * Command result state.
      */
-    enum ResultState
+    enum ResultStatus
     {
         COMMAND_RESULT      = 0,
         FINISH_RESULT,
-        ERROR_RESULT,
-        EXIT_RESULT
+        ERROR_RESULT
     };
 
 public:
@@ -112,20 +111,20 @@ public:
     public:
 
         Result()
-          : cmdWaitError (false),
-            commandState (ExifToolProcess::COMMAND_RESULT),
-            cmdRunAction (ExifToolProcess::NO_ACTION),
-            cmdRunResult (0),
-            elapsedTimer (0)
+          : waitError (false),
+            cmdStatus (ExifToolProcess::COMMAND_RESULT),
+            cmdAction (ExifToolProcess::NO_ACTION),
+            cmdNumber (0),
+            elapsed   (0)
         {
         }
 
-        bool       cmdWaitError;
-        int        commandState;
-        int        cmdRunAction;
-        int        cmdRunResult;
-        int        elapsedTimer;
-        QByteArray outputBuffer;
+        bool       waitError;
+        int        cmdStatus;
+        int        cmdAction;
+        int        cmdNumber;
+        int        elapsed;
+        QByteArray output;
     };
 
 public:
@@ -162,40 +161,40 @@ public:
      */
     void setExifToolProgram(const QString& etExePath);
 
-    QString getExifToolProgram()                    const;
+    QString getExifToolProgram()                             const;
 
 public:
 
     /**
      * Returns true if ExifToolProcess is available (process state == Running)
      */
-    bool                    exifToolAvailable()     const;
+    bool                    exifToolAvailable()              const;
 
     /**
      * Returns true if a command is running.
      */
-    bool                    exifToolIsBusy()        const;
+    bool                    exifToolIsBusy()                 const;
 
     /**
      * Returns the type of error that occurred last.
      */
-    QProcess::ProcessError  exifToolError()         const;
+    QProcess::ProcessError  exifToolError()                  const;
 
     /**
      * Returns an error message.
      */
-    QString                 exifToolErrorString()   const;
+    QString                 exifToolErrorString()            const;
 
     /**
      * Returns the ExifToolProcess result.
      */
-    ExifToolProcess::Result getExifToolResult()     const;
+    ExifToolProcess::Result getExifToolResult(int cmdId)     const;
 
     /**
      * WatCondition for the ExifToolParser class.
      * Returns the ExifToolProcess result.
      */
-    ExifToolProcess::Result waitForExifToolResult() const;
+    ExifToolProcess::Result waitForExifToolResult(int cmdId) const;
 
     /**
      * Send a command to exiftool process.
@@ -206,21 +205,7 @@ public:
 
 Q_SIGNALS:
 
-    void signalStarted(int cmdId,
-                       int cmdAction);
-
-    void signalCmdCompleted(int cmdId,
-                            int cmdAction,
-                            int execTime,
-                            const QByteArray& cmdOutputChannel,
-                            const QByteArray& cmdErrorChannel);
-
-    void signalErrorOccurred(int cmdId,
-                             int cmdAction,
-                             QProcess::ProcessError error,
-                             const QString& description);
-
-    void signalFinished(int cmdId);
+    void signalExifToolResult(int cmdId);
 
 private:
 
@@ -246,9 +231,9 @@ private:
      */
     void killExifTool();
 
-    QString exifToolBin()                        const;
+    QString exifToolBin()                                    const;
 
-    bool checkExifToolProgram()                  const;
+    bool checkExifToolProgram()                              const;
 
     void changeExifToolProgram(const QString& etExePath);
 

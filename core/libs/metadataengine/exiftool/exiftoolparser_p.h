@@ -20,19 +20,20 @@
 // Qt includes
 
 #include <QDir>
+#include <QMutex>
 #include <QThread>
 #include <QLocale>
-#include <QStringList>
 #include <QVariant>
-#include <QJsonDocument>
-#include <QJsonArray>
-#include <QJsonObject>
-#include <QEventLoop>
 #include <QFileInfo>
-#include <QTemporaryFile>
-#include <QDomDocument>
+#include <QEventLoop>
+#include <QJsonArray>
+#include <QStringList>
 #include <QDomElement>
+#include <QJsonObject>
 #include <QApplication>
+#include <QDomDocument>
+#include <QJsonDocument>
+#include <QTemporaryFile>
 
 // KDE includes
 
@@ -58,10 +59,12 @@ public:
     bool       startProcess(const QByteArrayList& cmdArgs, ExifToolProcess::Action cmdAction);
     QByteArray filePathEncoding(const QFileInfo& fi) const;
 
+    void       jumpToResultCommand(const ExifToolProcess::Result& result, int cmdId);
+
     /**
      * Returns a string for an action.
      */
-    QString actionString(int cmdAction) const;
+    QString    actionString(int cmdAction) const;
 
 public:
 
@@ -72,8 +75,10 @@ public:
     ExifToolData                   exifToolData;    ///< Current ExifTool data (input or output depending of the called method.
     QTemporaryFile                 argsFile;        ///< Temporary file to store Exiftool arg config file.
 
+    QMutex                         mutex;
+
     bool                           async;
-    int                            cmdRunning;
+    QList<int>                     asyncRunning;
 };
 
 } // namespace Digikam

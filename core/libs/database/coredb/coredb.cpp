@@ -4369,8 +4369,8 @@ void CoreDB::moveItem(int srcAlbumID, const QString& srcName,
     d->db->recordChangeset(CollectionImageChangeset(imageId, srcAlbumID, CollectionImageChangeset::Removed));
 }
 
-int CoreDB::copyItem(int srcAlbumID, const QString& srcName,
-                     int dstAlbumID, const QString& dstName)
+qlonglong CoreDB::copyItem(int srcAlbumID, const QString& srcName,
+                           int dstAlbumID, const QString& dstName)
 {
     // find id of src image
 

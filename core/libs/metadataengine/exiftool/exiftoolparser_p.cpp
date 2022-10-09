@@ -20,8 +20,7 @@ namespace Digikam
 ExifToolParser::Private::Private(ExifToolParser* const q)
     : pp          (q),
       proc        (nullptr),
-      async       (false),
-      cmdRunning  (0)
+      async       (false)
 {
     argsFile.setAutoRemove(false);
 }
@@ -41,79 +40,50 @@ void ExifToolParser::Private::prepareProcess()
     exifToolData.clear();
 }
 
-bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifToolProcess::Action cmdAction)
+bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs,
+                                           ExifToolProcess::Action cmdAction)
 {
     // Send command to ExifToolProcess
 
-    cmdRunning = proc->command(cmdArgs, cmdAction);
+    int cmdId = proc->command(cmdArgs, cmdAction);
 
-    if (cmdRunning == 0)
+    if (cmdId == 0)
     {
-        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool cannot be sent:" << actionString(cmdAction);
+        qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool cannot be sent:"
+                                          << actionString(cmdAction);
 
         return false;
     }
 
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool" << actionString(cmdAction) << cmdArgs.join(QByteArray(" "));
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool" << actionString(cmdAction)
+                                    << cmdArgs.join(QByteArray(" "));
 
-    if (!async)
+    if (async)
     {
-        ExifToolProcess::Result result = proc->getExifToolResult();
+        QMutexLocker locker(&mutex);
 
-        while ((result.cmdRunResult != cmdRunning) && (result.commandState != ExifToolProcess::EXIT_RESULT))
+        asyncRunning << cmdId;
+
+        return true;
+    }
+
+    ExifToolProcess::Result result = proc->getExifToolResult(cmdId);
+
+    while ((result.cmdNumber != cmdId) &&
+           (result.cmdStatus != ExifToolProcess::FINISH_RESULT))
+    {
+        result = proc->waitForExifToolResult(cmdId);
+
+        if ((result.cmdNumber == cmdId) && result.waitError)
         {
-            result = proc->waitForExifToolResult();
+            qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool timed out:"
+                                              << actionString(cmdAction);
 
-            if ((result.cmdRunResult == cmdRunning) && result.cmdWaitError)
-            {
-                qCWarning(DIGIKAM_METAENGINE_LOG) << "ExifTool timed out:" << actionString(cmdAction);
-
-                return false;
-            }
-        }
-
-        switch (result.commandState)
-        {
-            case ExifToolProcess::COMMAND_RESULT:
-            {
-                pp->slotCmdCompleted(result.cmdRunResult,
-                                     result.cmdRunAction,
-                                     result.elapsedTimer,
-                                     result.outputBuffer,
-                                     QByteArray());
-                break;
-            }
-
-            case ExifToolProcess::FINISH_RESULT:
-            {
-                pp->slotFinished(result.cmdRunResult);
-                break;
-            }
-
-            case ExifToolProcess::ERROR_RESULT:
-            {
-                pp->slotErrorOccurred(result.cmdRunResult,
-                                      result.cmdRunAction,
-                                      proc->exifToolError(),
-                                      proc->exifToolErrorString());
-                break;
-            }
-
-            case ExifToolProcess::EXIT_RESULT:
-            {
-                return false;
-            }
-        }
-
-        if (currentPath.isEmpty())
-        {
-            qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction);
-        }
-        else
-        {
-            qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete" << actionString(cmdAction) << "for" << currentPath;
+            return false;
         }
     }
+
+    jumpToResultCommand(result, cmdId);
 
     return true;
 }
@@ -121,6 +91,48 @@ bool ExifToolParser::Private::startProcess(const QByteArrayList& cmdArgs, ExifTo
 QByteArray ExifToolParser::Private::filePathEncoding(const QFileInfo& fi) const
 {
     return (QDir::toNativeSeparators(fi.filePath()).toUtf8());
+}
+
+void ExifToolParser::Private::jumpToResultCommand(const ExifToolProcess::Result& result, int cmdId)
+{
+    if (result.cmdNumber != cmdId)
+    {
+        return;
+    }
+
+    switch (result.cmdStatus)
+    {
+        case ExifToolProcess::COMMAND_RESULT:
+        {
+            pp->cmdCompleted(result);
+            break;
+        }
+
+        case ExifToolProcess::ERROR_RESULT:
+        {
+            pp->errorOccurred(result,
+                              proc->exifToolError(),
+                              proc->exifToolErrorString());
+            break;
+        }
+
+        case ExifToolProcess::FINISH_RESULT:
+        {
+            pp->finished();
+            break;
+        }
+    }
+
+    if (currentPath.isEmpty())
+    {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete"
+                                        << actionString(result.cmdAction);
+    }
+    else
+    {
+        qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool complete"
+                                        << actionString(result.cmdAction) << "for" << currentPath;
+    }
 }
 
 QString ExifToolParser::Private::actionString(int cmdAction) const

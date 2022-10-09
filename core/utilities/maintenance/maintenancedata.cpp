@@ -16,7 +16,7 @@
 
 // Qt includes
 
-#include <QRecursiveMutex>
+#include <QMutex>
 
 // Local includes
 
@@ -34,16 +34,16 @@ public:
     {
     }
 
-    QList<qlonglong>              imageIdList;
-    QList<int>                    thumbnailIdList;
-    QList<QString>                imagePathList;
-    QList<ItemInfo>               imageInfoList;
-    QList<Identity>               identitiesList;
-    QList<qlonglong>              similarityImageIdList;
+    QList<qlonglong> imageIdList;
+    QList<int>       thumbnailIdList;
+    QList<QString>   imagePathList;
+    QList<ItemInfo>  imageInfoList;
+    QList<Identity>  identitiesList;
+    QList<qlonglong> similarityImageIdList;
 
-    bool                          rebuildAllFingerprints;
+    bool             rebuildAllFingerprints;
 
-    QRecursiveMutex               mutex;
+    QMutex           mutex;
 };
 
 MaintenanceData::MaintenanceData()
@@ -93,7 +93,8 @@ void MaintenanceData::setRebuildAllFingerprints(bool b)
 
 qlonglong MaintenanceData::getImageId() const
 {
-    d->mutex.lock();
+    QMutexLocker locker(&d->mutex);
+
     qlonglong id = -1;
 
     if (!d->imageIdList.isEmpty())
@@ -101,14 +102,13 @@ qlonglong MaintenanceData::getImageId() const
         id = d->imageIdList.takeFirst();
     }
 
-    d->mutex.unlock();
-
     return id;
 }
 
 int MaintenanceData::getThumbnailId() const
 {
-    d->mutex.lock();
+    QMutexLocker locker(&d->mutex);
+
     int id = -1;
 
     if (!d->thumbnailIdList.isEmpty())
@@ -116,14 +116,13 @@ int MaintenanceData::getThumbnailId() const
         id = d->thumbnailIdList.takeFirst();
     }
 
-    d->mutex.unlock();
-
     return id;
 }
 
 QString MaintenanceData::getImagePath() const
 {
-    d->mutex.lock();
+    QMutexLocker locker(&d->mutex);
+
     QString path;
 
     if (!d->imagePathList.isEmpty())
@@ -131,14 +130,13 @@ QString MaintenanceData::getImagePath() const
         path = d->imagePathList.takeFirst();
     }
 
-    d->mutex.unlock();
-
     return path;
 }
 
 ItemInfo MaintenanceData::getItemInfo() const
 {
-    d->mutex.lock();
+    QMutexLocker locker(&d->mutex);
+
     ItemInfo info;
 
     if (!d->imageInfoList.isEmpty())
@@ -146,14 +144,13 @@ ItemInfo MaintenanceData::getItemInfo() const
         info = d->imageInfoList.takeFirst();
     }
 
-    d->mutex.unlock();
-
     return info;
 }
 
 Identity MaintenanceData::getIdentity() const
 {
-    d->mutex.lock();
+    QMutexLocker locker(&d->mutex);
+
     Identity identity;
 
     if (!d->identitiesList.isEmpty())
@@ -161,22 +158,19 @@ Identity MaintenanceData::getIdentity() const
         identity = d->identitiesList.takeFirst();
     }
 
-    d->mutex.unlock();
-
     return identity;
 }
 
 qlonglong MaintenanceData::getSimilarityImageId() const
 {
-    d->mutex.lock();
+    QMutexLocker locker(&d->mutex);
+
     qlonglong id = -1;
 
     if (!d->similarityImageIdList.isEmpty())
     {
         id = d->similarityImageIdList.takeFirst();
     }
-
-    d->mutex.unlock();
 
     return id;
 }

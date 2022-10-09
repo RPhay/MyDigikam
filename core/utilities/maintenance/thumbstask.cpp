@@ -15,7 +15,8 @@
 #include "thumbstask.h"
 
 // Qt includes
-#include <QQueue>
+#include <QMutex>
+#include <QWaitCondition>
 
 // Local includes
 
@@ -32,14 +33,19 @@ class Q_DECL_HIDDEN ThumbsTask::Private
 public:
 
     explicit Private()
-        : catcher(nullptr),
+        : thread (nullptr),
           data   (nullptr)
     {
     }
 
-    ThumbnailImageCatcher* catcher;
+    ThumbnailLoadThread* thread;
 
-    MaintenanceData*       data;
+    MaintenanceData*     data;
+
+    QImage               image;
+
+    QMutex               mutex;
+    QWaitCondition       condVar;
 };
 
 // -------------------------------------------------------
@@ -48,21 +54,28 @@ ThumbsTask::ThumbsTask()
     : ActionJob(),
       d        (new Private)
 {
-    ThumbnailLoadThread* const thread = new ThumbnailLoadThread;
-    thread->setPixmapRequested(false);
-    thread->setThumbnailSize(ThumbnailLoadThread::maximumThumbnailSize());
-    d->catcher                        = new ThumbnailImageCatcher(thread, this);
+    d->thread = new ThumbnailLoadThread;
+    d->thread->setPixmapRequested(false);
+    d->thread->setThumbnailSize(ThumbnailLoadThread::maximumThumbnailSize());
+
+    connect(d->thread, SIGNAL(signalThumbnailLoaded(LoadingDescription,QImage)),
+            this, SLOT(slotThumbnailLoaded(LoadingDescription,QImage)),
+            Qt::DirectConnection);
 }
 
 ThumbsTask::~ThumbsTask()
 {
     cancel();
 
-    d->catcher->setActive(false);
-    d->catcher->thread()->stopAllTasks();
+    {
+        QMutexLocker locker(&d->mutex);
+        d->condVar.wakeAll();
+    }
 
-    delete d->catcher->thread();
-    delete d->catcher;
+    d->thread->stopAllTasks();
+    d->thread->wait();
+
+    delete d->thread;
     delete d;
 }
 
@@ -79,8 +92,6 @@ void ThumbsTask::run()
     {
         if (m_cancel)
         {
-            d->catcher->setActive(false);
-            d->catcher->thread()->stopAllTasks();
             return;
         }
 
@@ -91,19 +102,33 @@ void ThumbsTask::run()
             break;
         }
 
-        // TODO Should be improved by some update procedure
+        ItemInfo info = ItemInfo::fromLocalFile(path);
 
-        d->catcher->setActive(true);
-        d->catcher->thread()->deleteThumbnail(path);
-        d->catcher->thread()->find(ThumbnailIdentifier(path));
-        d->catcher->enqueue();
-        QList<QImage> images = d->catcher->waitForThumbnails();
-        d->catcher->setActive(false);
+        if (!m_cancel && !info.isNull())
+        {
+            d->thread->deleteThumbnail(info.filePath());
+            d->thread->find(info.thumbnailIdentifier());
 
-        Q_EMIT signalFinished(images.first());
+            if (!m_cancel && d->image.isNull())
+            {
+                QMutexLocker locker(&d->mutex);
+                d->condVar.wait(&d->mutex);
+            }
+
+            Q_EMIT signalFinished(d->image);
+            d->image = QImage();
+        }
     }
 
     Q_EMIT signalDone();
+}
+
+void ThumbsTask::slotThumbnailLoaded(const LoadingDescription&, const QImage& image)
+{
+    QMutexLocker locker(&d->mutex);
+
+    d->image = image;
+    d->condVar.wakeAll();
 }
 
 } // namespace Digikam

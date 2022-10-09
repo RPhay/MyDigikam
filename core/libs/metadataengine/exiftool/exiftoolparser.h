@@ -17,13 +17,13 @@
 
 // Qt Core
 
-#include <QFileInfo>
-#include <QVariant>
 #include <QHash>
 #include <QObject>
 #include <QString>
-#include <QByteArray>
+#include <QVariant>
 #include <QProcess>
+#include <QFileInfo>
+#include <QByteArray>
 
 // Local includes
 
@@ -201,20 +201,17 @@ public:
     /// ExifTool Output Management Methods. See exiftoolparser_output.cpp for details
     //@{
 
+    void cmdCompleted(const ExifToolProcess::Result& result);
+
+    void errorOccurred(const ExifToolProcess::Result& result,
+                       QProcess::ProcessError error,
+                       const QString& description);
+
+    void finished();
+
 public Q_SLOTS:
 
-    void slotCmdCompleted(int cmdId,
-                          int cmdAction,
-                          int execTime,
-                          const QByteArray& cmdOutputChannel,
-                          const QByteArray& cmdErrorChannel);
-
-    void slotErrorOccurred(int cmdId,
-                           int cmdAction,
-                           QProcess::ProcessError error,
-                           const QString& description);
-
-    void slotFinished(int cmdId);
+    void slotExifToolResult(int cmdId);
 
     //@}
 
