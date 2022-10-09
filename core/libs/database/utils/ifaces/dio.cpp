@@ -477,6 +477,26 @@ void DIO::slotOneProccessed(const QUrl& url)
 
     switch (operation)
     {
+        case IOJobData::CopyImage:
+        {
+            ItemInfo info = data->findItemInfo(url);
+
+            if (!info.isNull() && data->destAlbum())
+            {
+               QString destName = info.name();
+
+                if (!data->destUrl(url).fileName().isEmpty())
+                {
+                    destName = data->destUrl(url).fileName();
+                }
+
+                CoreDbAccess().db()->copyItem(info.albumId(), info.name(),
+                                              data->destAlbum()->id(), destName);
+            }
+
+            break;
+        }
+
         case IOJobData::MoveImage:
         {
             ItemInfo info = data->findItemInfo(url);
@@ -492,6 +512,77 @@ void DIO::slotOneProccessed(const QUrl& url)
 
                 CoreDbAccess().db()->moveItem(info.albumId(), info.name(),
                                               data->destAlbum()->id(), destName);
+            }
+
+            break;
+        }
+
+        case IOJobData::CopyFiles:
+        case IOJobData::MoveFiles:
+        {
+            if (data->destAlbum())
+            {
+                QString destName = url.fileName();
+
+                if (!data->destUrl(url).fileName().isEmpty())
+                {
+                    destName = data->destUrl(url).fileName();
+                }
+
+                QString newFile = data->destUrl().toLocalFile() + destName;
+                ScanController::instance()->scannedInfo(newFile);
+            }
+
+            break;
+
+        }
+
+        case IOJobData::CopyToExt:
+        {
+            CollectionLocation location = CollectionManager::instance()->locationForUrl(data->destUrl());
+            ItemInfo info               = data->findItemInfo(url);
+
+            if (!location.isNull() && !info.isNull())
+            {
+                QString newFile = data->destUrl().toLocalFile() + QLatin1Char('/') + info.name();
+                ScanController::instance()->scannedInfo(newFile);
+            }
+
+            break;
+        }
+
+        case IOJobData::CopyAlbum:
+        {
+            QString scanPath = data->destUrl().toLocalFile();
+            ScanController::instance()->scheduleCollectionScanRelaxed(scanPath);
+
+            break;
+        }
+
+        case IOJobData::MoveAlbum:
+        {
+            if (data->srcAlbum() && data->destAlbum())
+            {
+                CoreDbAccess access;
+                QList<int> albumsToMove;
+                QString basePath = data->srcAlbum()->albumPath();
+                QString destPath = data->destAlbum()->albumPath();
+
+                if (!destPath.endsWith(QLatin1Char('/')))
+                {
+                    destPath.append(QLatin1Char('/'));
+                }
+
+                addAlbumChildrenToList(albumsToMove, data->srcAlbum());
+
+                Q_FOREACH (int albumId, albumsToMove)
+                {
+                    QString relativePath = access.db()->getAlbumRelativePath(albumId);
+                    relativePath         = relativePath.section(basePath, 1, 1);
+                    relativePath         = destPath + data->srcAlbum()->title() + relativePath;
+
+                    CoreDbAccess().db()->renameAlbum(albumId, data->destAlbum()->albumRootId(), relativePath);
+                }
             }
 
             break;
@@ -627,63 +718,18 @@ void DIO::slotOneProccessed(const QUrl& url)
             break;
         }
 
+        case IOJobData::Restore:
+        {
+            QString scanPath = url.adjusted(QUrl::RemoveFilename).toLocalFile();
+            ScanController::instance()->scheduleCollectionScanRelaxed(scanPath);
+
+            break;
+        }
+
         default:
         {
             break;
         }
-    }
-
-    // Scan folders for changes
-
-    QStringList scanPaths;
-
-    if (operation == IOJobData::MoveAlbum)
-    {
-        PAlbum* const album = data->srcAlbum();
-
-        if (album)
-        {
-            PAlbum* const parent = dynamic_cast<PAlbum*>(album->parent());
-
-            if (parent)
-            {
-                scanPaths << parent->fileUrl().toLocalFile();
-            }
-        }
-
-        if (scanPaths.isEmpty())
-        {
-            scanPaths << url.adjusted(QUrl::RemoveFilename).toLocalFile();
-        }
-    }
-
-    if ((operation == IOJobData::CopyImage) ||
-        (operation == IOJobData::CopyAlbum) ||
-        (operation == IOJobData::CopyFiles) ||
-        (operation == IOJobData::MoveAlbum) ||
-        (operation == IOJobData::MoveFiles))
-    {
-        scanPaths << data->destUrl().toLocalFile();
-    }
-
-    if (operation == IOJobData::CopyToExt)
-    {
-        CollectionLocation location = CollectionManager::instance()->locationForUrl(data->destUrl());
-
-        if (!location.isNull())
-        {
-            scanPaths << data->destUrl().toLocalFile();
-        }
-    }
-
-    if (operation == IOJobData::Restore)
-    {
-        scanPaths << url.adjusted(QUrl::RemoveFilename).toLocalFile();
-    }
-
-    Q_FOREACH (const QString& scanPath, scanPaths)
-    {
-        ScanController::instance()->scheduleCollectionScanRelaxed(scanPath);
     }
 
     ProgressItem* const item = getProgressItem(data);
