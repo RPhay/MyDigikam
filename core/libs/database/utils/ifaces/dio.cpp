@@ -581,7 +581,7 @@ void DIO::slotOneProccessed(const QUrl& url)
                     relativePath         = relativePath.section(basePath, 1, 1);
                     relativePath         = destPath + data->srcAlbum()->title() + relativePath;
 
-                    CoreDbAccess().db()->renameAlbum(albumId, data->destAlbum()->albumRootId(), relativePath);
+                    access.db()->renameAlbum(albumId, data->destAlbum()->albumRootId(), relativePath);
                 }
             }
 
@@ -616,7 +616,7 @@ void DIO::slotOneProccessed(const QUrl& url)
 
                 Q_FOREACH (const qlonglong& removeId, imagesToRemove)
                 {
-                    const QList<qlonglong>& imageIds = CoreDbAccess().db()->
+                    const QList<qlonglong>& imageIds = access.db()->
                                                            getImagesRelatedFrom(removeId,
                                                                                 DatabaseRelation::DerivedFrom);
 
@@ -657,10 +657,9 @@ void DIO::slotOneProccessed(const QUrl& url)
 
                 if (!info.isNull())
                 {
-                    QList<qlonglong> imageIds = CoreDbAccess().db()->getImagesRelatedFrom(info.id(),
-                                                                                          DatabaseRelation::DerivedFrom);
-
                     CoreDbAccess access;
+                    QList<qlonglong> imageIds = access.db()->getImagesRelatedFrom(info.id(),
+                                                                                  DatabaseRelation::DerivedFrom);
 
                     Q_FOREACH (const qlonglong& id, imageIds)
                     {
