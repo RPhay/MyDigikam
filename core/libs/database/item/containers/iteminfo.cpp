@@ -236,7 +236,7 @@ ItemInfo ItemInfo::copyItem(int dstAlbumID, const QString& dstFileName)
         }
     }
 
-    int id = CoreDbAccess().db()->copyItem(m_data->albumId, m_data->name, dstAlbumID, dstFileName);
+    qlonglong id = CoreDbAccess().db()->copyItem(m_data->albumId, m_data->name, dstAlbumID, dstFileName);
 
     if (id == -1)
     {
