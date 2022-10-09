@@ -294,3 +294,12 @@ if(DIGIKAMSC_COMPILE_DOC)
     ECM_OPTIONAL_ADD_SUBDIRECTORY(doc)
     ECM_OPTIONAL_ADD_SUBDIRECTORY(doc-translated)
 endif()
+
+# Some unit tests require data from the external "Digikam Test Data" git repository.
+# Developers may choose to obtain the data using the "download-repos" script prior to running cmake.
+# For CI runners to run tests, the following custom target serves to perform the download automatically.
+# If the directory "test-data" has already been created, the target becomes a "no-op".
+#
+add_custom_command(OUTPUT ${CMAKE_SOURCE_DIR}/test-data 
+    COMMAND git ARGS clone https://invent.kde.org/graphics/digikam-test-data.git ${CMAKE_SOURCE_DIR}/test-data)
+add_custom_target(test-data ALL DEPENDS ${CMAKE_SOURCE_DIR}/test-data)
