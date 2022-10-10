@@ -161,5 +161,5 @@ BUGFIXES:
 123 ==> 458082 - MP4 video failed to update metadata timestamp.
 124 ==> 426612 - Highlighting Album in TreeView on mouse over.
 125 ==> 331167 - Import images from folder create date based folders from images Exif.
-126 ==> 
+126 ==> 361467 - Indicate (shade?) drop target when copying or moving images.
 127 ==> 
