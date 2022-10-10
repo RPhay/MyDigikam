@@ -463,8 +463,16 @@ void DIO::slotOneProccessed(const QUrl& url)
 
             if (!info.isNull() && data->destAlbum())
             {
-                CoreDbAccess().db()->copyItem(info.albumId(), info.name(),
-                                              data->destAlbum()->id(), data->destName(url));
+                CoreDbAccess access;
+                CoreDbTransaction transaction(&access);
+
+                qlonglong id = access.db()->copyItem(info.albumId(), info.name(),
+                                                     data->destAlbum()->id(), data->destName(url));
+
+                // Remove grouping for copied items.
+
+                access.db()->removeAllImageRelationsFrom(id, DatabaseRelation::Grouped);
+                access.db()->removeAllImageRelationsTo(id, DatabaseRelation::Grouped);
             }
 
             break;
