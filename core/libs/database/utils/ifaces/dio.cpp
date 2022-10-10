@@ -259,7 +259,8 @@ void DIO::processJob(IOJobData* const data)
 
         return;
     }
-    else if ((operation == IOJobData::Delete) || (operation == IOJobData::Trash))
+    else if ((operation == IOJobData::Trash) ||
+             (operation == IOJobData::Delete))
     {
         qCDebug(DIGIKAM_DATABASE_LOG) << "Number of files to be deleted:" << data->sourceUrls().count();
     }
@@ -275,7 +276,7 @@ void DIO::processJob(IOJobData* const data)
             {
                 data->setDestUrl(finder.localFiles.at(i),
                                  QUrl::fromLocalFile(data->destUrl().toLocalFile() +
-                                                         finder.localFileSuffixes.at(i)));
+                                                     finder.localFileSuffixes.at(i)));
             }
             else
             {
