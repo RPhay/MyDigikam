@@ -228,6 +228,8 @@ PAlbum* IOJobData::destAlbum() const
 
 QUrl IOJobData::destUrl(const QUrl& srcUrl) const
 {
+    QMutexLocker locker(&d->mutex);
+
     if (srcUrl.isEmpty())
     {
         return d->destUrl;
@@ -248,6 +250,20 @@ QUrl IOJobData::getNextUrl() const
     }
 
     return url;
+}
+
+QString IOJobData::destName(const QUrl& srcUrl) const
+{
+    QMutexLocker locker(&d->mutex);
+
+    QString newName = srcUrl.adjusted(QUrl::StripTrailingSlash).fileName();
+
+    if (d->changeDestMap.contains(srcUrl))
+    {
+        newName     = d->changeDestMap.value(srcUrl).fileName();
+    }
+
+    return newName;
 }
 
 QString IOJobData::getProgressId() const

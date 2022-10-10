@@ -123,7 +123,9 @@ void CopyOrMoveJob::run()
 
                 if (srcInfo.isDir())
                 {
-                    destenation = DFileOperations::getUniqueFolderUrl(destUrl).toLocalFile();
+                    QUrl renamed = DFileOperations::getUniqueFolderUrl(destUrl);
+                    destenation  = renamed.toLocalFile();
+                    m_data->setDestUrl(srcUrl, renamed);
                 }
                 else
                 {
