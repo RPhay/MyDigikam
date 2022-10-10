@@ -244,25 +244,15 @@ void DIO::processJob(IOJobData* const data)
 {
     const int operation = data->operation();
 
-    if      ((operation == IOJobData::CopyImage) || (operation == IOJobData::MoveImage))
+    if      ((operation == IOJobData::CopyImage) ||
+             (operation == IOJobData::MoveImage))
     {
         // this is a fast db operation, do here
 
         GroupedImagesFinder finder(data->itemInfos());
         data->setItemInfos(finder.infos);
-
-        QStringList      filenames;
-        QList<qlonglong> ids;
-
-        Q_FOREACH (const ItemInfo& info, data->itemInfos())
-        {
-            filenames << info.name();
-            ids << info.id();
-        }
-
-        ScanController::instance()->hintAtMoveOrCopyOfItems(ids, data->destAlbum(), filenames);
     }
-    else if ((operation == IOJobData::CopyAlbum) || (operation == IOJobData::MoveAlbum))
+    else if (operation == IOJobData::CopyAlbum)
     {
         ScanController::instance()->hintAtMoveOrCopyOfAlbum(data->srcAlbum(), data->destAlbum());
         createJob(data);
@@ -279,35 +269,23 @@ void DIO::processJob(IOJobData* const data)
 
     if (operation == IOJobData::Rename)
     {
-        if (!data->itemInfos().isEmpty())
+        for (int i = 0 ; i < finder.localFiles.size() ; ++i)
         {
-            ItemInfo info       = data->itemInfos().constFirst();
-            PAlbum* const album = AlbumManager::instance()->findPAlbum(info.albumId());
-
-            if (album)
+            if (finder.localFileModes.at(i))
             {
-                ScanController::instance()->hintAtMoveOrCopyOfItem(info.id(), album,
-                                                                   data->destUrl().fileName());
+                data->setDestUrl(finder.localFiles.at(i),
+                                 QUrl::fromLocalFile(data->destUrl().toLocalFile() +
+                                                         finder.localFileSuffixes.at(i)));
             }
-
-            for (int i = 0 ; i < finder.localFiles.length() ; ++i)
+            else
             {
-                if (finder.localFileModes.at(i))
-                {
-                    data->setDestUrl(finder.localFiles.at(i),
-                                     QUrl::fromLocalFile(data->destUrl().toLocalFile() +
-                                                         finder.localFileSuffixes.at(i)));
-                }
-                else
-                {
-                    QFileInfo basInfo(data->destUrl().toLocalFile());
+                QFileInfo basInfo(data->destUrl().toLocalFile());
 
-                    data->setDestUrl(finder.localFiles.at(i),
-                                     QUrl::fromLocalFile(basInfo.path()             +
-                                                         QLatin1Char('/')           +
-                                                         basInfo.completeBaseName() +
-                                                         finder.localFileSuffixes.at(i)));
-                }
+                data->setDestUrl(finder.localFiles.at(i),
+                                 QUrl::fromLocalFile(basInfo.path()             +
+                                                     QLatin1Char('/')           +
+                                                     basInfo.completeBaseName() +
+                                                     finder.localFileSuffixes.at(i)));
             }
         }
     }
