@@ -1,3 +1,17 @@
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2022-10-10
+ * Description : provides convenient access to test data directories and files
+ *
+ * SPDX-FileCopyrightText: 2022 Steve Robbins <steve at sumost dot ca>
+ *
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ *
+ * ============================================================ */
+
 #ifndef TEST_DATA_DIR_H
 #define TEST_DATA_DIR_H
 
