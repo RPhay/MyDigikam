@@ -163,8 +163,8 @@ BUGFIXES:
 125 ==> 331167 - Import images from folder create date based folders from images Exif.
 126 ==> 361467 - Indicate (shade?) drop target when copying or moving images.
 127 ==> 388011 - Suggested improvement of Drag&Drop images from one album to another.
-128 ==> 
-129 ==> 
+128 ==> 460251 - digiKam git build error.
+129 ==> 459027 - Creating large thumbnails issue with digiKam-8.0.0.
 130 ==> 
 131 ==> 
 132 ==> 

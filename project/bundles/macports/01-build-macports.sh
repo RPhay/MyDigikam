@@ -202,7 +202,6 @@ if [[ $CONTINUE_INSTALL == 0 ]]; then
 startupitem_type none
 startupitem_install no
 macosx_deployment_target $OSX_MIN_TARGET
-macosx_sdk_version $OSX_MIN_TARGET
 build_arch $ARCH_TARGET
 EOF
 
@@ -288,44 +287,35 @@ port install \
              lensfun \
              bison \
              py38-lxml \
-             libheif \
              x265 \
              aom \
              ffmpeg \
-             wget +ssl
-
-cd $DOWNLOAD_DIR
-git clone --single-branch https://github.com/macports/macports-ports.git
-cd macports-ports
-# Note Qt WebEngine @5.15.8
-git checkout 0a0dc2af4d50cd6b786aa81f9170dad21968bd78
-cd aqua/qt5
-
-port install subport=qt5-qtbase
-port install subport=qt5-qtdeclarative
-port install subport=qt5-qtmacextras
-port install subport=qt5-qtquickcontrols
-port install subport=qt5-qtxmlpatterns
-port install subport=qt5-qtsvg
-port install subport=qt5-qttools
-port install subport=qt5-qttranslations
-port install subport=qt5-qtimageformats
-port install subport=qt5-sqlite-plugin
-port install subport=qt5-mysql-plugin +mariadb10_5
+             wget +ssl \
+             qt5-qtbase \
+             qt5-qtdeclarative \
+             qt5-qtmacextras \
+             qt5-qtquickcontrols \
+             qt5-qtxmlpatterns \
+             qt5-qtsvg \
+             qt5-qttools \
+             qt5-qttranslations \
+             qt5-qtimageformats \
+             qt5-sqlite-plugin \
+             qt5-mysql-plugin +mariadb10_5
 
 port deactivate boost
 
 if [[ $DK_QTWEBENGINE = 1 ]] ; then
 
-    port install subport=qt5-qtwebengine
+    port install qt5-qtwebengine
 
 else
 
-    port install subport=qt5-qtwebkit
+    port install qt5-qtwebkit
 
 fi
 
-port reactivate boost
+port activate boost
 
 # port broken since a while. check later
 #             sane-backends \
