@@ -69,6 +69,8 @@ required_packages=("cmake"                   # To Compile Source Code
                    "libqt5widgets5"          # Qt 5 widget module
                    "libqt5network5"          # Qt 5 network module
                    "libqt5sql5"              # Qt 5 SQL module
+                   "libqt5sql5-mysql"        # Qt 5 SQL module
+                   "libqt5sql5-sqlite"       # Qt 5 SQL module
                    "libqt5xml5"              # Qt 5 XML module
                    "libqt5concurrent5"       # Qt 5 Concurrent module
                    "libqt5printsupport5"     # Qt 5 PrintSupport module
