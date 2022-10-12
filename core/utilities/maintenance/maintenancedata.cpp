@@ -16,7 +16,7 @@
 
 // Qt includes
 
-#include <QRecursiveMutex>
+#include <QMutex>
 
 // Local includes
 
@@ -34,16 +34,16 @@ public:
     {
     }
 
-    QList<qlonglong>              imageIdList;
-    QList<int>                    thumbnailIdList;
-    QList<QString>                imagePathList;
-    QList<ItemInfo>               imageInfoList;
-    QList<Identity>               identitiesList;
-    QList<qlonglong>              similarityImageIdList;
+    QList<qlonglong> imageIdList;
+    QList<int>       thumbnailIdList;
+    QList<QString>   imagePathList;
+    QList<ItemInfo>  imageInfoList;
+    QList<Identity>  identitiesList;
+    QList<qlonglong> similarityImageIdList;
 
-    bool                          rebuildAllFingerprints;
+    bool             rebuildAllFingerprints;
 
-    QRecursiveMutex               mutex;
+    QMutex           mutex;
 };
 
 MaintenanceData::MaintenanceData()

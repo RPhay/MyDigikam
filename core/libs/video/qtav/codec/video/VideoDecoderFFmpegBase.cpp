@@ -186,6 +186,7 @@ bool VideoDecoderFFmpegBase::decode(const Packet& packet)
 
     DPTR_D(VideoDecoderFFmpegBase);
 
+#ifndef HAVE_FFMPEG_VERSION5
     // some decoders might need other fields like flags&AV_PKT_FLAG_KEY
     // const AVPacket*: ffmpeg >= 1.0. no libav
 
@@ -199,40 +200,17 @@ bool VideoDecoderFFmpegBase::decode(const Packet& packet)
         eofpkt.data = nullptr;
         eofpkt.size = 0;
 
-#ifndef HAVE_FFMPEG_VERSION5
-
         ret         = avcodec_decode_video2(d.codec_ctx,
                                             d.frame,
                                             &got_frame_ptr,
                                             &eofpkt);
-
-#else // ffmpeg >= 5
-
-        ret           = avcodec_receive_frame(d.codec_ctx, d.frame);
-        got_frame_ptr = (ret == 0);
-        ret           = avcodec_send_packet(d.codec_ctx, &eofpkt);
-
-#endif
-
     }
     else
     {
-
-#ifndef HAVE_FFMPEG_VERSION5
-
         ret = avcodec_decode_video2(d.codec_ctx,
                                     d.frame,
                                     &got_frame_ptr,
                                     const_cast<AVPacket*>(packet.asAVPacket()));
-
-#else // ffmpeg >= 5
-
-        ret           = avcodec_receive_frame(d.codec_ctx, d.frame);
-        got_frame_ptr = (ret == 0);
-        ret           = avcodec_send_packet(d.codec_ctx, (AVPacket*)packet.asAVPacket());
-
-#endif
-
     }
 /*
     qCDebug(DIGIKAM_QTAV_LOG).noquote()
@@ -266,6 +244,41 @@ bool VideoDecoderFFmpegBase::decode(const Packet& packet)
         << QString::asprintf("codec %dx%d, frame %dx%d",
             d.codec_ctx->width, d.codec_ctx->height, d.frame->width, d.frame->height);
 */
+
+#else // ffmpeg >= 5
+
+    int ret;
+    d.undecoded_size = 0; // code below always consumes entire packet
+    
+    if (packet.isEOF())
+    {
+        AVPacket eofpkt;
+        if (av_new_packet(&eofpkt, 0) < 0) return false;
+        
+        eofpkt.data = nullptr;
+        eofpkt.size = 0;
+        ret = avcodec_send_packet(d.codec_ctx, &eofpkt);
+    }
+    else
+    {
+        ret = avcodec_send_packet(d.codec_ctx, packet.asAVPacket());
+    }
+
+    if (ret < 0 && ret != AVERROR_EOF)
+    {
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("[VideoDecoder] %s",
+                av_err2str(ret));
+        return false;
+    }    
+
+    ret = avcodec_receive_frame(d.codec_ctx, d.frame);
+    if (ret < 0 && ret != AVERROR(EAGAIN))
+    {
+        return false;
+    }
+#endif
+
     d.width  = d.frame->width; // TODO: remove? used in hwdec
     d.height = d.frame->height;
 /*

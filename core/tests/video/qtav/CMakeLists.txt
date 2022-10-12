@@ -6,8 +6,28 @@
 
 APPLY_COMMON_POLICIES()
 
-# -------------------------------------------------
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/tests/testdata_utest.cpp
+              ${CMAKE_CURRENT_SOURCE_DIR}/tests/checkconfig_utest.cpp
+              ${CMAKE_CURRENT_SOURCE_DIR}/tests/demux_utest.cpp
+              ${CMAKE_CURRENT_SOURCE_DIR}/tests/audiodecoder_utest.cpp
+              ${CMAKE_CURRENT_SOURCE_DIR}/tests/videodecoder_utest.cpp
 
+              NAME_PREFIX "qtav-"
+
+              LINK_LIBRARIES
+              digikamcore
+              ${COMMON_TEST_LINK}
+              ${MEDIAPLAYER_LIBRARIES}
+              TARGET_NAMES_VAR qtav_utest_targets
+    )
+
+foreach(target ${qtav_utest_targets})
+    target_include_directories(${target} PRIVATE ${CMAKE_SOURCE_DIR}/core/tests)
+    target_compile_definitions(${target} PRIVATE ${MEDIAPLAYER_DEFINITIONS})
+endforeach()
+
+# -------------------------------------------------
+# Macro for CLI-style test application
 macro(QTAV_TESTS_BUILD)
 
     set(_filename ${ARGV0})
@@ -165,19 +185,3 @@ target_compile_definitions(qtav-videowall_gui PRIVATE ${MEDIAPLAYER_DEFINITIONS}
 add_executable(qtav-window_cli ${CMAKE_CURRENT_SOURCE_DIR}/examples/window/main.cpp)
 target_link_libraries(qtav-window_cli digikamcore ${COMMON_TEST_LINK} ${MEDIAPLAYER_LIBRARIES})
 target_compile_definitions(qtav-window_cli PRIVATE ${MEDIAPLAYER_DEFINITIONS})
-
-#------------------------------------------------------------------------
-
-ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/tests/checkconfig_utest.cpp
-
-              NAME_PREFIX
-
-              "qtav-"
-
-              LINK_LIBRARIES
-
-              digikamcore
-              ${COMMON_TEST_LINK}
-              ${MEDIAPLAYER_LIBRARIES}
-)
-target_compile_definitions(checkconfig_utest PRIVATE ${MEDIAPLAYER_DEFINITIONS})

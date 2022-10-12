@@ -16,7 +16,7 @@
 
 // Qt includes
 
-#include <QRecursiveMutex>
+#include <QMutex>
 #include <QMutexLocker>
 
 // Local includes
@@ -37,8 +37,7 @@ public:
         fileConflict(Continue),
         srcAlbum    (nullptr),
         destAlbum   (nullptr),
-        jobTime     (QDateTime::currentDateTime()),
-        mutex       ()
+        jobTime     (QDateTime::currentDateTime())
     {
     }
 
@@ -58,7 +57,7 @@ public:
     QString            progressId;
     QDateTime          jobTime;
 
-    QRecursiveMutex    mutex;
+    QMutex             mutex;
 };
 
 IOJobData::IOJobData(int operation,
@@ -192,7 +191,7 @@ void IOJobData::setSourceUrls(const QList<QUrl>& urls)
 void IOJobData::setDestUrl(const QUrl& srcUrl,
                            const QUrl& destUrl)
 {
-    QMutexLocker lock(&d->mutex);
+    QMutexLocker locker(&d->mutex);
 
     d->changeDestMap.insert(srcUrl, destUrl);
 }
@@ -229,6 +228,8 @@ PAlbum* IOJobData::destAlbum() const
 
 QUrl IOJobData::destUrl(const QUrl& srcUrl) const
 {
+    QMutexLocker locker(&d->mutex);
+
     if (srcUrl.isEmpty())
     {
         return d->destUrl;
@@ -239,7 +240,7 @@ QUrl IOJobData::destUrl(const QUrl& srcUrl) const
 
 QUrl IOJobData::getNextUrl() const
 {
-    QMutexLocker lock(&d->mutex);
+    QMutexLocker locker(&d->mutex);
 
     QUrl url;
 
@@ -249,6 +250,20 @@ QUrl IOJobData::getNextUrl() const
     }
 
     return url;
+}
+
+QString IOJobData::destName(const QUrl& srcUrl) const
+{
+    QMutexLocker locker(&d->mutex);
+
+    QString newName = srcUrl.adjusted(QUrl::StripTrailingSlash).fileName();
+
+    if (d->changeDestMap.contains(srcUrl))
+    {
+        newName     = d->changeDestMap.value(srcUrl).fileName();
+    }
+
+    return newName;
 }
 
 QString IOJobData::getProgressId() const

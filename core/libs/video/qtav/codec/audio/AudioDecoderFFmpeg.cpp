@@ -114,6 +114,8 @@ bool AudioDecoderFFmpeg::decode(const Packet& packet)
 
     DPTR_D(AudioDecoderFFmpeg);
 
+#ifndef HAVE_FFMPEG_VERSION5
+
     d.decoded.clear();
     int got_frame_ptr = 0;
     int ret           = 0;
@@ -125,68 +127,17 @@ bool AudioDecoderFFmpeg::decode(const Packet& packet)
         eofpkt.data = nullptr;
         eofpkt.size = 0;
 
-#ifndef HAVE_FFMPEG_VERSION5
-
         ret         = avcodec_decode_audio4(d.codec_ctx,
                                             d.frame,
                                             &got_frame_ptr,
                                             &eofpkt);
-
-#else // ffmpeg >= 5
-
-        ret = avcodec_receive_frame(d.codec_ctx, d.frame);
-
-        if      (ret == AVERROR(EAGAIN))
-        {
-            return false;
-        }
-        else if (ret < 0)
-        {
-            qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-                << QString::asprintf("[AudioDecoder] %s", av_err2str(ret));
-
-            return false;
-        }
-
-        got_frame_ptr = (ret == 0);
-        ret           = avcodec_send_packet(d.codec_ctx, &eofpkt);
-
-#endif
-
     }
     else
     {
-
-#ifndef HAVE_FFMPEG_VERSION5
-
-        // const AVPacket*: ffmpeg >= 1.0. not libav
-
         ret = avcodec_decode_audio4(d.codec_ctx,
                                     d.frame,
                                     &got_frame_ptr,
                                     const_cast<AVPacket*>(packet.asAVPacket()));
-
-#else // ffmpeg >= 5
-
-    ret = avcodec_receive_frame(d.codec_ctx, d.frame);
-
-    if      (ret == AVERROR(EAGAIN))
-    {
-        return false;
-    }
-    else if (ret < 0)
-    {
-        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
-                << QString::asprintf("[AudioDecoder] %s", av_err2str(ret));
-
-        return false;
-    }
-
-    got_frame_ptr = (ret == 0);
-    ret           = avcodec_send_packet(d.codec_ctx, (AVPacket*)packet.asAVPacket());
-
-#endif
-
     }
 
     d.undecoded_size = qMin(packet.data.size() - ret, packet.data.size());
@@ -230,6 +181,42 @@ bool AudioDecoderFFmpeg::decode(const Packet& packet)
     d.decoded = d.resampler->outData();
 
     return true;  // return !d.decoded.isEmpty();
+    
+#else // ffmpeg >= 5
+
+    int ret;
+    d.undecoded_size = 0; // code below always consumes entire packet
+    
+    if (packet.isEOF())
+    {
+        AVPacket eofpkt;
+        if (av_new_packet(&eofpkt, 0) < 0) return false;
+        
+        eofpkt.data = nullptr;
+        eofpkt.size = 0;
+        ret = avcodec_send_packet(d.codec_ctx, &eofpkt);
+    }
+    else
+    {
+        ret = avcodec_send_packet(d.codec_ctx, packet.asAVPacket());
+    }
+
+    if (ret < 0 && ret != AVERROR_EOF)
+    {
+        qCWarning(DIGIKAM_QTAV_LOG_WARN).noquote()
+            << QString::asprintf("[AudioDecoder] %s",
+                av_err2str(ret));
+        return false;
+    }    
+
+    ret = avcodec_receive_frame(d.codec_ctx, d.frame);
+    if (ret < 0 && ret != AVERROR(EAGAIN))
+    {
+        return false;
+    }
+    
+    return true;
+#endif
 }
 
 AudioFrame AudioDecoderFFmpeg::frame()

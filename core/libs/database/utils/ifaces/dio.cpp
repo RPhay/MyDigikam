@@ -38,6 +38,7 @@
 #include "tagscache.h"
 #include "coredb.h"
 #include "coredbaccess.h"
+#include "coredbtransaction.h"
 #include "album.h"
 #include "dmetadata.h"
 #include "metaenginesettings.h"
@@ -243,32 +244,23 @@ void DIO::processJob(IOJobData* const data)
 {
     const int operation = data->operation();
 
-    if      ((operation == IOJobData::CopyImage) || (operation == IOJobData::MoveImage))
+    if      ((operation == IOJobData::CopyImage) ||
+             (operation == IOJobData::MoveImage))
     {
         // this is a fast db operation, do here
 
         GroupedImagesFinder finder(data->itemInfos());
         data->setItemInfos(finder.infos);
-
-        QStringList      filenames;
-        QList<qlonglong> ids;
-
-        Q_FOREACH (const ItemInfo& info, data->itemInfos())
-        {
-            filenames << info.name();
-            ids << info.id();
-        }
-
-        ScanController::instance()->hintAtMoveOrCopyOfItems(ids, data->destAlbum(), filenames);
     }
-    else if ((operation == IOJobData::CopyAlbum) || (operation == IOJobData::MoveAlbum))
+    else if (operation == IOJobData::CopyAlbum)
     {
         ScanController::instance()->hintAtMoveOrCopyOfAlbum(data->srcAlbum(), data->destAlbum());
         createJob(data);
 
         return;
     }
-    else if ((operation == IOJobData::Delete) || (operation == IOJobData::Trash))
+    else if ((operation == IOJobData::Trash) ||
+             (operation == IOJobData::Delete))
     {
         qCDebug(DIGIKAM_DATABASE_LOG) << "Number of files to be deleted:" << data->sourceUrls().count();
     }
@@ -278,35 +270,23 @@ void DIO::processJob(IOJobData* const data)
 
     if (operation == IOJobData::Rename)
     {
-        if (!data->itemInfos().isEmpty())
+        for (int i = 0 ; i < finder.localFiles.size() ; ++i)
         {
-            ItemInfo info       = data->itemInfos().constFirst();
-            PAlbum* const album = AlbumManager::instance()->findPAlbum(info.albumId());
-
-            if (album)
+            if (finder.localFileModes.at(i))
             {
-                ScanController::instance()->hintAtMoveOrCopyOfItem(info.id(), album,
-                                                                   data->destUrl().fileName());
+                data->setDestUrl(finder.localFiles.at(i),
+                                 QUrl::fromLocalFile(data->destUrl().toLocalFile() +
+                                                     finder.localFileSuffixes.at(i)));
             }
-
-            for (int i = 0 ; i < finder.localFiles.length() ; ++i)
+            else
             {
-                if (finder.localFileModes.at(i))
-                {
-                    data->setDestUrl(finder.localFiles.at(i),
-                                     QUrl::fromLocalFile(data->destUrl().toLocalFile() +
-                                                         finder.localFileSuffixes.at(i)));
-                }
-                else
-                {
-                    QFileInfo basInfo(data->destUrl().toLocalFile());
+                QFileInfo basInfo(data->destUrl().toLocalFile());
 
-                    data->setDestUrl(finder.localFiles.at(i),
-                                     QUrl::fromLocalFile(basInfo.path()             +
-                                                         QLatin1Char('/')           +
-                                                         basInfo.completeBaseName() +
-                                                         finder.localFileSuffixes.at(i)));
-                }
+                data->setDestUrl(finder.localFiles.at(i),
+                                 QUrl::fromLocalFile(basInfo.path()             +
+                                                     QLatin1Char('/')           +
+                                                     basInfo.completeBaseName() +
+                                                     finder.localFileSuffixes.at(i)));
             }
         }
     }
@@ -475,186 +455,252 @@ void DIO::slotOneProccessed(const QUrl& url)
     IOJobData* const data = jobThread->jobData();
     const int operation   = data->operation();
 
-    if      (operation == IOJobData::MoveImage)
+    switch (operation)
     {
-        ItemInfo info = data->findItemInfo(url);
-
-        if (!info.isNull() && data->destAlbum())
+        case IOJobData::CopyImage:
         {
-            QString destName = info.name();
+            ItemInfo info = data->findItemInfo(url);
 
-            if (!data->destUrl(url).fileName().isEmpty())
+            if (!info.isNull() && data->destAlbum())
             {
-                destName = data->destUrl(url).fileName();
+                CoreDbAccess access;
+                CoreDbTransaction transaction(&access);
+
+                qlonglong id = access.db()->copyItem(info.albumId(), info.name(),
+                                                     data->destAlbum()->id(), data->destName(url));
+
+                // Remove grouping for copied items.
+
+                access.db()->removeAllImageRelationsFrom(id, DatabaseRelation::Grouped);
+                access.db()->removeAllImageRelationsTo(id, DatabaseRelation::Grouped);
             }
 
-            CoreDbAccess().db()->moveItem(info.albumId(), info.name(),
-                                          data->destAlbum()->id(), destName);
+            break;
         }
-    }
-    else if (operation == IOJobData::Delete)
-    {
-        // Mark the images as obsolete and remove them
-        // from their album and from the grouped
 
-        PAlbum* const album = data->srcAlbum();
-
-        if (album && (album->fileUrl() == url))
+        case IOJobData::MoveImage:
         {
-            // get all deleted albums
+            ItemInfo info = data->findItemInfo(url);
 
-            CoreDbAccess access;
-            QList<int> albumsToDelete;
-            QList<qlonglong> imagesToRemove;
-
-            addAlbumChildrenToList(albumsToDelete, album);
-
-            Q_FOREACH (int albumId, albumsToDelete)
+            if (!info.isNull() && data->destAlbum())
             {
-                imagesToRemove << access.db()->getItemIDsInAlbum(albumId);
+                CoreDbAccess().db()->moveItem(info.albumId(), info.name(),
+                                              data->destAlbum()->id(), data->destName(url));
             }
 
-            Q_FOREACH (const qlonglong& imageId, imagesToRemove)
-            {
-                access.db()->removeAllImageRelationsFrom(imageId,
-                                                         DatabaseRelation::Grouped);
-            }
-
-            access.db()->removeItemsPermanently(imagesToRemove, albumsToDelete);
+            break;
         }
-        else
+
+        case IOJobData::CopyFiles:
+        case IOJobData::MoveFiles:
+        {
+            if (data->destAlbum())
+            {
+                QUrl newUrl     = data->destUrl().adjusted(QUrl::StripTrailingSlash);
+                QString newFile = newUrl.toLocalFile() + QLatin1Char('/') + data->destName(url);
+                ScanController::instance()->scannedInfo(newFile);
+            }
+
+            break;
+
+        }
+
+        case IOJobData::CopyToExt:
+        {
+            CollectionLocation location = CollectionManager::instance()->locationForUrl(data->destUrl());
+            ItemInfo info               = data->findItemInfo(url);
+
+            if (!location.isNull() && !info.isNull())
+            {
+                QUrl newUrl     = data->destUrl().adjusted(QUrl::StripTrailingSlash);
+                QString newFile = newUrl.toLocalFile() + QLatin1Char('/') + data->destName(url);
+                ScanController::instance()->scannedInfo(newFile);
+            }
+
+            break;
+        }
+
+        case IOJobData::CopyAlbum:
+        {
+            QString scanPath = data->destUrl().adjusted(QUrl::StripTrailingSlash).toLocalFile();
+            ScanController::instance()->scheduleCollectionScanRelaxed(scanPath);
+
+            break;
+        }
+
+        case IOJobData::MoveAlbum:
+        {
+            if (data->srcAlbum() && data->destAlbum())
+            {
+                CoreDbAccess access;
+                QList<int> albumsToMove;
+                QString newName  = data->destName(url);
+                QString basePath = data->srcAlbum()->albumPath();
+                QString destPath = data->destAlbum()->albumPath();
+
+                if (!destPath.endsWith(QLatin1Char('/')))
+                {
+                    destPath.append(QLatin1Char('/'));
+                }
+
+                addAlbumChildrenToList(albumsToMove, data->srcAlbum());
+
+                Q_FOREACH (int albumId, albumsToMove)
+                {
+                    QString relativePath = access.db()->getAlbumRelativePath(albumId);
+                    relativePath         = relativePath.section(basePath, 1, -1);
+                    relativePath         = destPath + newName + relativePath;
+                    access.db()->renameAlbum(albumId, data->destAlbum()->albumRootId(), relativePath);
+                }
+            }
+
+            break;
+        }
+
+        case IOJobData::Trash:
+        case IOJobData::Delete:
+        {
+            // Mark the images as obsolete and remove them
+            // from their album and from the grouped
+
+            int originalVersionTag = TagsCache::instance()->
+                getOrCreateInternalTag(InternalTagName::originalVersion());
+            int needTaggingTag     = TagsCache::instance()->
+                getOrCreateInternalTag(InternalTagName::needTaggingHistoryGraph());
+
+            PAlbum* const album    = data->srcAlbum();
+
+            if (album)
+            {
+                // Get all deleted albums
+
+                CoreDbAccess access;
+                CoreDbTransaction transaction(&access);
+
+                QList<int> albumsToDelete;
+                QList<qlonglong> imagesToRemove;
+
+                addAlbumChildrenToList(albumsToDelete, album);
+
+                Q_FOREACH (int albumId, albumsToDelete)
+                {
+                    imagesToRemove << access.db()->getItemIDsInAlbum(albumId);
+                }
+
+                Q_FOREACH (const qlonglong& removeId, imagesToRemove)
+                {
+                    const QList<qlonglong>& imageIds = access.db()->
+                          getImagesRelatedFrom(removeId, DatabaseRelation::DerivedFrom);
+
+                    Q_FOREACH (const qlonglong& id, imageIds)
+                    {
+                        access.db()->removeItemTag(id, originalVersionTag);
+                        access.db()->addItemTag(id, needTaggingTag);
+                    }
+
+                    access.db()->removeAllImageRelationsFrom(removeId,
+                                                             DatabaseRelation::Grouped);
+                }
+
+                if (operation == IOJobData::Trash)
+                {
+                    access.db()->removeItems(imagesToRemove, albumsToDelete);
+                }
+                else
+                {
+                    access.db()->removeItemsPermanently(imagesToRemove, albumsToDelete);
+                }
+
+                Q_FOREACH (int albumId, albumsToDelete)
+                {
+                    if (operation == IOJobData::Trash)
+                    {
+                        access.db()->makeStaleAlbum(albumId);
+                    }
+                    else
+                    {
+                        access.db()->deleteAlbum(albumId);
+                    }
+                }
+            }
+            else
+            {
+                ItemInfo info = data->findItemInfo(url);
+
+                if (!info.isNull())
+                {
+                    CoreDbAccess access;
+                    const QList<qlonglong>& imageIds = access.db()->
+                          getImagesRelatedFrom(info.id(), DatabaseRelation::DerivedFrom);
+
+                    Q_FOREACH (const qlonglong& id, imageIds)
+                    {
+                        access.db()->removeItemTag(id, originalVersionTag);
+                        access.db()->addItemTag(id, needTaggingTag);
+                    }
+
+                    access.db()->removeAllImageRelationsFrom(info.id(),
+                                                             DatabaseRelation::Grouped);
+
+                    if (operation == IOJobData::Trash)
+                    {
+                        access.db()->removeItems(QList<qlonglong>() << info.id(),
+                                                 QList<int>() << info.albumId());
+                    }
+                    else
+                    {
+                        access.db()->removeItemsPermanently(QList<qlonglong>() << info.id(),
+                                                            QList<int>() << info.albumId());
+                    }
+                }
+            }
+
+            break;
+        }
+
+        case IOJobData::Rename:
         {
             ItemInfo info = data->findItemInfo(url);
 
             if (!info.isNull())
             {
-                int originalVersionTag    = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::originalVersion());
-                int needTaggingTag        = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::needTaggingHistoryGraph());
-                QList<qlonglong> imageIds = CoreDbAccess().db()->getImagesRelatedFrom(info.id(), DatabaseRelation::DerivedFrom);
+                QString oldPath = url.toLocalFile();
+                QString newName = data->destUrl(url).fileName();
+                QString newPath = data->destUrl(url).toLocalFile();
 
-                CoreDbAccess access;
-
-                Q_FOREACH (const qlonglong& id, imageIds)
+                if (data->fileConflict() == IOJobData::Overwrite)
                 {
-                    access.db()->removeItemTag(id, originalVersionTag);
-                    access.db()->addItemTag(id, needTaggingTag);
+                    ThumbsDbAccess().db()->removeByFilePath(newPath);
+                    LoadingCacheInterface::fileChanged(newPath, false);
+                    CoreDbAccess().db()->deleteItem(info.albumId(), newName);
                 }
 
-                access.db()->removeAllImageRelationsFrom(info.id(),
-                                                         DatabaseRelation::Grouped);
+                ThumbsDbAccess().db()->renameByFilePath(oldPath, newPath);
 
-                access.db()->removeItemsPermanently(QList<qlonglong>() << info.id(),
-                                                    QList<int>() << info.albumId());
-            }
-        }
-    }
-    else if (operation == IOJobData::Trash)
-    {
-        ItemInfo info = data->findItemInfo(url);
+                // Remove old thumbnails and images from the cache
 
-        if (!info.isNull())
-        {
-            int originalVersionTag    = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::originalVersion());
-            int needTaggingTag        = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::needTaggingHistoryGraph());
-            QList<qlonglong> imageIds = CoreDbAccess().db()->getImagesRelatedFrom(info.id(), DatabaseRelation::DerivedFrom);
+                LoadingCacheInterface::fileChanged(oldPath, false);
 
-            CoreDbAccess access;
+                // Rename in ItemInfo and database
 
-            Q_FOREACH (const qlonglong& id, imageIds)
-            {
-                access.db()->removeItemTag(id, originalVersionTag);
-                access.db()->addItemTag(id, needTaggingTag);
+                info.setName(newName);
             }
 
-            access.db()->removeAllImageRelationsFrom(info.id(),
-                                                     DatabaseRelation::Grouped);
-
-            access.db()->removeItems(QList<qlonglong>() << info.id(),
-                                     QList<int>() << info.albumId());
+            break;
         }
-    }
-    else if (operation == IOJobData::Rename)
-    {
-        ItemInfo info = data->findItemInfo(url);
 
-        if (!info.isNull())
+        case IOJobData::Restore:
         {
-            QString oldPath = url.toLocalFile();
-            QString newName = data->destUrl(url).fileName();
-            QString newPath = data->destUrl(url).toLocalFile();
+            QString scanPath = url.adjusted(QUrl::RemoveFilename).toLocalFile();
+            ScanController::instance()->scheduleCollectionScanRelaxed(scanPath);
 
-            if (data->fileConflict() == IOJobData::Overwrite)
-            {
-                ThumbsDbAccess().db()->removeByFilePath(newPath);
-                LoadingCacheInterface::fileChanged(newPath, false);
-                CoreDbAccess().db()->deleteItem(info.albumId(), newName);
-            }
-
-            ThumbsDbAccess().db()->renameByFilePath(oldPath, newPath);
-
-            // Remove old thumbnails and images from the cache
-
-            LoadingCacheInterface::fileChanged(oldPath, false);
-
-            // Rename in ItemInfo and database
-
-            info.setName(newName);
+            break;
         }
-    }
 
-    // Scan folders for changes
-
-    QStringList scanPaths;
-
-    if ((operation == IOJobData::Trash)   ||
-        (operation == IOJobData::Delete)  ||
-        (operation == IOJobData::MoveAlbum))
-    {
-        PAlbum* const album = data->srcAlbum();
-
-        if (album)
+        default:
         {
-            PAlbum* const parent = dynamic_cast<PAlbum*>(album->parent());
-
-            if (parent)
-            {
-                scanPaths << parent->fileUrl().toLocalFile();
-            }
+            break;
         }
-
-        if (scanPaths.isEmpty())
-        {
-            scanPaths << url.adjusted(QUrl::RemoveFilename).toLocalFile();
-        }
-    }
-
-    if ((operation == IOJobData::CopyImage) ||
-        (operation == IOJobData::CopyAlbum) ||
-        (operation == IOJobData::CopyFiles) ||
-        (operation == IOJobData::MoveAlbum) ||
-        (operation == IOJobData::MoveFiles))
-    {
-        scanPaths << data->destUrl().toLocalFile();
-    }
-
-    if (operation == IOJobData::CopyToExt)
-    {
-        CollectionLocation location = CollectionManager::instance()->locationForUrl(data->destUrl());
-
-        if (!location.isNull())
-        {
-            scanPaths << data->destUrl().toLocalFile();
-        }
-    }
-
-    if (operation == IOJobData::Restore)
-    {
-        scanPaths << url.adjusted(QUrl::RemoveFilename).toLocalFile();
-    }
-
-    Q_FOREACH (const QString& scanPath, scanPaths)
-    {
-        ScanController::instance()->scheduleCollectionScanRelaxed(scanPath);
     }
 
     ProgressItem* const item = getProgressItem(data);
