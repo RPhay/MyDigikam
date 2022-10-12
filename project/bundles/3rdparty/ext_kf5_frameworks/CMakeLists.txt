@@ -196,7 +196,7 @@ InstallKF5Component(threadweaver        ${KF5_VERSION} "${Qt6CommonOptions}"    
 InstallKF5Component(kwindowsystem       ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
 InstallKF5Component(karchive            ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
 InstallKF5Component(kdbusaddons         ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
-InstallKF5Component(ki18n               ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
+InstallKF5Component(ki18n               ${KF5_VERSION} "${Qt6CommonOptions}"                       "ki18n-mingw.patch")
 InstallKF5Component(kcrash              ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
 InstallKF5Component(kcodecs             ${KF5_VERSION} "${Qt6CommonOptions}"                       "")
 InstallKF5Component(kauth               ${KF5_VERSION} "${Qt6CommonOptions};${MacosKauthBackend}"  "")
