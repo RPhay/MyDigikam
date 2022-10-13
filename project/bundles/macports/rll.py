@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2.7
 
 # Script to list recursive dylib dependencies for binaries/dylibs passed as arguments.
 # Modified from https://github.com/mixxxdj/mixxx/blob/master/build/osx/otool.py.
