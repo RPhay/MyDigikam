@@ -257,11 +257,7 @@ QString IOJobData::destName(const QUrl& srcUrl) const
     QMutexLocker locker(&d->mutex);
 
     QUrl url = srcUrl.adjusted(QUrl::StripTrailingSlash);
-
-    if (d->changeDestMap.contains(srcUrl))
-    {
-        url  = d->changeDestMap.value(srcUrl);
-    }
+    url      = d->changeDestMap.value(srcUrl, url);
 
     return url.fileName();
 }
