@@ -1,5 +1,5 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 1979aec..a8f997f 100644
+index ff7d3e9..a7e9f0d 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -50,13 +50,13 @@ find_package(KF5I18n ${KF5_VERSION} REQUIRED)
@@ -20,25 +20,25 @@ index 1979aec..a8f997f 100644
 +#    )
  
      # Check if sane API is available.
-     find_package(Sane REQUIRED)
+     find_package(KSaneCore "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}" REQUIRED)
 diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
-index 9daa4c5..cadac0b 100644
+index 9383997..5d9178b 100644
 --- a/src/CMakeLists.txt
 +++ b/src/CMakeLists.txt
-@@ -71,7 +71,7 @@ target_link_libraries(KF5Sane
- 
+@@ -51,7 +51,7 @@ target_link_libraries(KF5Sane
+     PRIVATE
          KF5::I18n
          KF5::WidgetsAddons
 -        KF5::TextWidgets
 +#        KF5::TextWidgets
+         KSane::Core
  )
  
- set_target_properties(KF5Sane
 diff --git a/src/widgets/labeledslider.cpp b/src/widgets/labeledslider.cpp
-index e907b62..7cb0610 100644
+index 9f71f90..486dfb4 100644
 --- a/src/widgets/labeledslider.cpp
 +++ b/src/widgets/labeledslider.cpp
-@@ -13,10 +13,11 @@
+@@ -10,10 +10,12 @@
  
  #include <QLabel>
  #include <QSlider>
@@ -47,11 +47,12 @@ index e907b62..7cb0610 100644
  // KDE includes
  
 -#include <KPluralHandlingSpinBox>
++//#include <KPluralHandlingSpinBox>
 +#include <klocalizedstring.h>
+ #include <Option>
  
  namespace KSaneIface
- {
-@@ -92,7 +93,7 @@ void LabeledSlider::initSlider(int minValue, int maxValue, int stepValue)
+@@ -90,7 +92,7 @@ void LabeledSlider::initSlider(int minValue, int maxValue, int stepValue)
      m_slider->setMaximum(maxValue);
      m_slider->setSingleStep(m_step);
  
@@ -60,7 +61,7 @@ index e907b62..7cb0610 100644
      m_spinb->setMinimum(minValue);
      m_spinb->setMaximum(maxValue);
      m_slider->setSingleStep(m_step);
-@@ -116,7 +117,7 @@ void LabeledSlider::initSlider(int minValue, int maxValue, int stepValue)
+@@ -114,7 +116,7 @@ void LabeledSlider::initSlider(int minValue, int maxValue, int stepValue)
  
  void LabeledSlider::setSuffix(const KLocalizedString &text)
  {
@@ -70,10 +71,10 @@ index e907b62..7cb0610 100644
  
  void LabeledSlider::setValue(const QVariant &val)
 diff --git a/src/widgets/labeledslider.h b/src/widgets/labeledslider.h
-index 7a6c434..6aa8e25 100644
+index fe1bd4c..b9f5460 100644
 --- a/src/widgets/labeledslider.h
 +++ b/src/widgets/labeledslider.h
-@@ -12,7 +12,8 @@
+@@ -10,7 +10,8 @@
  
  #include "ksaneoptionwidget.h"
  
@@ -83,7 +84,7 @@ index 7a6c434..6aa8e25 100644
  
  /**
    *@author Kåre Särs
-@@ -80,7 +81,7 @@ Q_SIGNALS:
+@@ -78,7 +79,7 @@ Q_SIGNALS:
  private:
      void initSlider(int minValue, int maxValue, int stepValue);
      QSlider   *m_slider;

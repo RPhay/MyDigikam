@@ -256,14 +256,14 @@ QString IOJobData::destName(const QUrl& srcUrl) const
 {
     QMutexLocker locker(&d->mutex);
 
-    QString newName = srcUrl.adjusted(QUrl::StripTrailingSlash).fileName();
+    QUrl url = srcUrl.adjusted(QUrl::StripTrailingSlash);
 
     if (d->changeDestMap.contains(srcUrl))
     {
-        newName     = d->changeDestMap.value(srcUrl).fileName();
+        url  = d->changeDestMap.value(srcUrl);
     }
 
-    return newName;
+    return url.fileName();
 }
 
 QString IOJobData::getProgressId() const

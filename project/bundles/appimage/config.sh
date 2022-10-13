@@ -44,11 +44,11 @@ DK_BUILDTEMP=$BUILDING_DIR/dktemp
 
 # KDE Application version.
 # See official release here: https://download.kde.org/stable/release-service/
-DK_KA_VERSION="22.04.3"
+DK_KA_VERSION="22.08.1"
 
 # KDE KF5 frameworks version.
 # See official release here: https://download.kde.org/stable/frameworks/
-DK_KF5_VERSION="5.96"
+DK_KF5_VERSION="5.99"
 
 # Installer will include or not digiKam debug symbols
 DK_DEBUG=1
