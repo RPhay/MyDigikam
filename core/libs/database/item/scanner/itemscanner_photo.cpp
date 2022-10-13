@@ -463,15 +463,10 @@ void ItemScanner::commitFaces()
 {
     FaceTagsEditor editor;
     QList<QRect> assignedRects;
-    QList<QRect> databaseRects;
     QMultiMap<QString, QVariant>::const_iterator it;
     QSize size                         = d->img.size();
     int orientation                    = d->img.orientation();
-
-    Q_FOREACH (const FaceTagsIface& face, editor.databaseFaces(d->scanInfo.id))
-    {
-        databaseRects << face.region().toRect();
-    }
+    QList<FaceTagsIface> databaseFaces = editor.databaseFaces(d->scanInfo.id);
 
     for (it = d->commit.metadataFacesMap.constBegin() ; it != d->commit.metadataFacesMap.constEnd() ; ++it)
     {
@@ -496,48 +491,37 @@ void ItemScanner::commitFaces()
 
         QRect rect = TagRegion::relativeToAbsolute(rectF, size);
         TagRegion::adjustToOrientation(rect, orientation, size);
+        TagRegion newRegion(rect);
 
         if (assignedRects.contains(rect))
         {
             continue;
         }
 
-        QList<QRect>::iterator it1;
+        assignedRects << rect;
+        QList<FaceTagsIface>::iterator it1;
 
-        for (it1 = databaseRects.begin() ; it1 != databaseRects.end() ; )
+        for (it1 = databaseFaces.begin() ; it1 != databaseFaces.end() ; )
         {
-            // Is the face rectangle located
-            // inside or outside completely?
+             double minOverlap = (*it1).isConfirmedName() ? 0.25 : 0.5;
 
-            if ((*it1).contains(rect) ||
-                rect.contains((*it1)))
+            if ((*it1).region().intersects(newRegion, minOverlap))
             {
-                QPoint point = (*it1).center() - rect.center();
-                int smax     = qMax(size.width(), size.height());
+                // Remove the duplicate face in the database.
 
-                // Check the percentage deviation from the center.
+                editor.removeFace((*it1));
+                it1 = databaseFaces.erase(it1);
 
-                if ((point.manhattanLength() * 100 / smax) <= 5)
-                {
-                    // Remove the duplicate face in the database.
-
-                    editor.removeFace(d->scanInfo.id, (*it1));
-                    it1 = databaseRects.erase(it1);
-
-                    continue;
-                }
+                continue;
             }
 
             ++it1;
         }
 
-        TagRegion region(rect);
-        assignedRects << rect;
-
         if (name.isEmpty())
         {
             int tagId = FaceTags::unknownPersonTagId();
-            FaceTagsIface face(FaceTagsIface::UnknownName, d->scanInfo.id, tagId, region);
+            FaceTagsIface face(FaceTagsIface::UnknownName, d->scanInfo.id, tagId, newRegion);
 
             editor.addManually(face);
         }
@@ -547,7 +531,7 @@ void ItemScanner::commitFaces()
 
             if (tagId)
             {
-                editor.add(d->scanInfo.id, tagId, region, false);
+                editor.add(d->scanInfo.id, tagId, newRegion, false);
             }
             else
             {
