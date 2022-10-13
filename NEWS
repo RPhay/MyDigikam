@@ -166,7 +166,7 @@ BUGFIXES:
 128 ==> 460251 - digiKam git build error.
 129 ==> 459027 - Creating large thumbnails issue with digiKam-8.0.0.
 130 ==> 460321 - Overlapping faces region.
-131 ==> 
+131 ==> 453840 - digiKam git build error with ffmpeg 5.
 132 ==> 
 133 ==> 
 134 ==> 
