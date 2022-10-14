@@ -691,8 +691,7 @@ void DIO::slotOneProccessed(const QUrl& url)
 
         case IOJobData::Restore:
         {
-            QString scanPath = url.adjusted(QUrl::RemoveFilename).toLocalFile();
-            ScanController::instance()->scheduleCollectionScanRelaxed(scanPath);
+            ScanController::instance()->scannedInfo(url.toLocalFile());
 
             break;
         }

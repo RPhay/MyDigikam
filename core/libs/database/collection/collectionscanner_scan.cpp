@@ -401,6 +401,11 @@ qlonglong CollectionScanner::scanFile(const QFileInfo& fi, int albumId, qlonglon
 {
     mainEntryPoint(false);
 
+    if (!d->nameFilters.contains(fi.suffix().toLower()))
+    {
+        return -1;
+    }
+
     if (imageId == -1)
     {
         switch (mode)
