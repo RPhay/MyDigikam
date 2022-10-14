@@ -496,9 +496,9 @@ void DIO::slotOneProccessed(const QUrl& url)
         {
             if (data->destAlbum())
             {
-                QUrl newUrl     = data->destUrl().adjusted(QUrl::StripTrailingSlash);
-                QString newFile = newUrl.toLocalFile() + QLatin1Char('/') + data->destName(url);
-                ScanController::instance()->scannedInfo(newFile);
+                QString filePath = data->destUrl().adjusted(QUrl::StripTrailingSlash).toLocalFile();
+                filePath        += QLatin1Char('/') + data->destName(url);
+                ScanController::instance()->scannedInfo(filePath);
             }
 
             break;
@@ -508,13 +508,14 @@ void DIO::slotOneProccessed(const QUrl& url)
         case IOJobData::CopyToExt:
         {
             CollectionLocation location = CollectionManager::instance()->locationForUrl(data->destUrl());
-            ItemInfo info               = data->findItemInfo(url);
 
-            if (!location.isNull() && !info.isNull())
+            // The target of the copy is within the digiKam collections?
+
+            if (!location.isNull())
             {
-                QUrl newUrl     = data->destUrl().adjusted(QUrl::StripTrailingSlash);
-                QString newFile = newUrl.toLocalFile() + QLatin1Char('/') + data->destName(url);
-                ScanController::instance()->scannedInfo(newFile);
+                QString filePath = data->destUrl().adjusted(QUrl::StripTrailingSlash).toLocalFile();
+                filePath        += QLatin1Char('/') + data->destName(url);
+                ScanController::instance()->scannedInfo(filePath);
             }
 
             break;
