@@ -29,6 +29,7 @@
 #include "dmetadata.h"
 #include "wstoolutils.h"
 #include "exiftoolparser.h"
+#include "dtestdatadir.h"
 
 #ifdef HAVE_IMAGE_MAGICK
 #   include <Magick++.h>
@@ -44,10 +45,12 @@ class AbstractUnitTest : public QObject
 public:
 
     AbstractUnitTest(QObject* const parent = nullptr)
-        : QObject              (parent),
-          m_hasExifTool        (false),
-          m_originalImageFolder(QFINDTESTDATA("data/")) ///< Original files come with source code.
+        : QObject      (parent),
+          m_hasExifTool(false)
     {
+        m_originalImageFolder = DTestDataDir::TestData(QString::fromUtf8("core/tests/metadataengine"))
+                                    .root().path() + QLatin1Char('/');
+        qCDebug(DIGIKAM_TESTS_LOG) << "Test Data Dir:" << m_originalImageFolder;
     }
 
 protected Q_SLOTS:
@@ -105,10 +108,10 @@ protected Q_SLOTS:
 
 protected:
 
-    QString       m_tempPath;               ///< The temporary path to store file to process un unit test.
-    QDir          m_tempDir;                ///< Same that previous as QDir object.
-    bool          m_hasExifTool;            ///< ExifTool is available in unit test.
-    const QString m_originalImageFolder;    ///< The path to original files to process by unit test, and copied to the temporary directory. Original files still in read only.
+    QString m_tempPath;               ///< The temporary path to store file to process un unit test.
+    QDir    m_tempDir;                ///< Same that previous as QDir object.
+    bool    m_hasExifTool;            ///< ExifTool is available in unit test.
+    QString m_originalImageFolder;    ///< The path to original files to process by unit test, and copied to the temporary directory. Original files still in read only.
 };
 
 #endif // DIGIKAM_ABSTRACT_UNIT_TEST_H
