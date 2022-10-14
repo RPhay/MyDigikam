@@ -39,7 +39,7 @@ void DatabaseFieldsTest::initTestCase()
 #define DECLARE_ITERATOR_TEST(Field)                    \
 {                                                       \
     Field i;                                            \
-    for (Field##Iterator it; !it.atEnd(); ++it)         \
+    for (Field##Iterator it ; !it.atEnd() ; ++it)       \
     {                                                   \
         i |= *it;                                       \
     }                                                   \
@@ -49,6 +49,7 @@ void DatabaseFieldsTest::initTestCase()
 void DatabaseFieldsTest::testIterators()
 {
     // test that the iterator iterates over all fields
+
     DECLARE_ITERATOR_TEST(Images)
     DECLARE_ITERATOR_TEST(ItemInformation)
     DECLARE_ITERATOR_TEST(ImageMetadata)
@@ -60,9 +61,9 @@ void DatabaseFieldsTest::testIterators()
 
 void DatabaseFieldsTest::testMetaInfo()
 {
+
 // Do not compile due to undefined reference to `Digikam::DatabaseFields::FieldMetaInfo<QFlags<Digikam::DatabaseFields::ImagesField> >::Last'
 // Happens even though file defining those libs/database/framework/databasefields.h is included and linking against digikamgui.
-
 
 /*
     QCOMPARE(FieldMetaInfo<Images>::Last, ImagesLast);
@@ -76,10 +77,10 @@ void DatabaseFieldsTest::testMetaInfo()
 }
 
 #define DECLARE_ITERATORSETONLY_TEST(Field)                                                 \
-    for (Field i = Field##None; i<=Field##All; i=Field(int(i)+1))                           \
+    for (Field i = Field##None ; i<=Field##All ; i=Field(int(i) + 1))                       \
     {                                                                                       \
         Field i2 = Field##None;                                                             \
-        for (DatabaseFieldsEnumIteratorSetOnly<Field> iOnly(i); !iOnly.atEnd(); ++iOnly)    \
+        for (DatabaseFieldsEnumIteratorSetOnly<Field> iOnly(i) ; !iOnly.atEnd() ; ++iOnly)  \
         {                                                                                   \
             i2 |= *iOnly;                                                                   \
         }                                                                                   \
@@ -114,37 +115,37 @@ SetHash SetHashAddSets(const SetHash& targetIn, const Set& bits)
 {
     SetHash target(targetIn);
 
-    for (DatabaseFieldsEnumIteratorSetOnly<Images> it(bits.getImages()); !it.atEnd(); ++it)
+    for (DatabaseFieldsEnumIteratorSetOnly<Images> it(bits.getImages()) ; !it.atEnd() ; ++it)
     {
         target.insertField(*it, Set(*it));
     }
 
-    for (DatabaseFieldsEnumIteratorSetOnly<ItemInformation> it(bits.getItemInformation()); !it.atEnd(); ++it)
+    for (DatabaseFieldsEnumIteratorSetOnly<ItemInformation> it(bits.getItemInformation()) ; !it.atEnd() ; ++it)
     {
         target.insertField(*it, Set(*it));
     }
 
-    for (DatabaseFieldsEnumIteratorSetOnly<ImageMetadata> it(bits.getImageMetadata()); !it.atEnd(); ++it)
+    for (DatabaseFieldsEnumIteratorSetOnly<ImageMetadata> it(bits.getImageMetadata()) ; !it.atEnd() ; ++it)
     {
         target.insertField(*it, Set(*it));
     }
 
-    for (DatabaseFieldsEnumIteratorSetOnly<VideoMetadata> it(bits.getVideoMetadata()); !it.atEnd(); ++it)
+    for (DatabaseFieldsEnumIteratorSetOnly<VideoMetadata> it(bits.getVideoMetadata()) ; !it.atEnd() ; ++it)
     {
         target.insertField(*it, Set(*it));
     }
 
-    for (DatabaseFieldsEnumIteratorSetOnly<ItemComments> it(bits.getItemComments()); !it.atEnd(); ++it)
+    for (DatabaseFieldsEnumIteratorSetOnly<ItemComments> it(bits.getItemComments()) ; !it.atEnd() ; ++it)
     {
         target.insertField(*it, Set(*it));
     }
 
-    for (DatabaseFieldsEnumIteratorSetOnly<ItemPositions> it(bits.getItemPositions()); !it.atEnd(); ++it)
+    for (DatabaseFieldsEnumIteratorSetOnly<ItemPositions> it(bits.getItemPositions()) ; !it.atEnd() ; ++it)
     {
         target.insertField(*it, Set(*it));
     }
 
-    for (DatabaseFieldsEnumIteratorSetOnly<ImageHistoryInfo> it(bits.getImageHistoryInfo()); !it.atEnd(); ++it)
+    for (DatabaseFieldsEnumIteratorSetOnly<ImageHistoryInfo> it(bits.getImageHistoryInfo()) ; !it.atEnd() ; ++it)
     {
         target.insertField(*it, Set(*it));
     }
@@ -169,6 +170,7 @@ void DatabaseFieldsTest::testSetHashAddSets()
     QCOMPARE(t.value(ImagesFirst).getImages(), ImagesFirst);
 
     // test insertion of or`ed values
+
     t = SetHashAddSets(t, DatabaseFields::Set(ItemInformationFirst | ItemInformationLast));
     itemCount+=2;
     QCOMPARE(t.size(), itemCount);
@@ -219,11 +221,13 @@ void DatabaseFieldsTest::testHashRemoveAll()
     const int c1 = t.size();
 
     // test regular remove
+
     SetHash t2(t);
     QCOMPARE(t2.remove(ImagesFirst), 1);
     QCOMPARE(t2.size(), c1-1);
 
     // test removeAllFields: First and Last are in the hash, None is not --> 2 entries should be removed
+
     SetHash t3(t);
     QCOMPARE(t3.removeAllFields(ImagesFirst | ImagesLast | ImagesNone), 2);
     QCOMPARE(t3.size(), c1-2);
@@ -232,7 +236,7 @@ void DatabaseFieldsTest::testHashRemoveAll()
 #define DECLARE_MINSIZE_TEST(FieldName)                                     \
     {                                                                       \
         const FieldMetaInfo<FieldName>::MinSizeType m = FieldName##All;     \
-        const FieldName v = FieldMetaInfo<FieldName>::fromMinSizeType(m);  \
+        const FieldName v = FieldMetaInfo<FieldName>::fromMinSizeType(m);   \
         QCOMPARE(v, FieldName##All);                                        \
     }
 

@@ -32,10 +32,9 @@
 #include "scancontroller.h"
 #include "thumbnailloadthread.h"
 #include "databaseserverstarter.h"
+#include "dtestdatadir.h"
 
 using namespace Digikam;
-
-const QString IMAGE_PATH(QFINDTESTDATA("data/"));
 
 QTEST_MAIN(DatabaseTagsTest)
 
@@ -56,6 +55,9 @@ DatabaseTagsTest::DatabaseTagsTest(QObject* const parent)
       talbumChild0Child1Root0(nullptr),
       talbumChild0Root1      (nullptr)
 {
+        filesPath = DTestDataDir::TestData(QString::fromUtf8("core/tests/database"))
+                       .root().path() + QLatin1Char('/');
+        qCDebug(DIGIKAM_TESTS_LOG) << "Test Data Dir:" << filesPath;
 }
 
 DatabaseTagsTest::~DatabaseTagsTest()
@@ -78,6 +80,7 @@ void DatabaseTagsTest::initTestCase()
     qCDebug(DIGIKAM_TESTS_LOG) << "Using database path for test: " << dbPath;
 
     // use a testing database
+
     AlbumManager::instance();
 
     AlbumManager::checkDatabaseDirsAfterFirstRun(QDir::temp().absoluteFilePath(
@@ -104,7 +107,9 @@ void DatabaseTagsTest::initTestCase()
     {
         if (a)
         {
-            qCDebug(DIGIKAM_TESTS_LOG) << " ==> Id : " << a->id() << " , is root : " << a->isRoot() << " , title : " << a->title();
+            qCDebug(DIGIKAM_TESTS_LOG) << " ==> Id : " << a->id()
+                                       << " , is root : " << a->isRoot()
+                                       << " , title : " << a->title();
         }
     }
 
@@ -231,7 +236,7 @@ void DatabaseTagsTest::init()
 
     // add some images for having date albums
 
-    QDir imageDir(IMAGE_PATH);
+    QDir imageDir(filesPath);
     imageDir.setNameFilters(QStringList() << QLatin1String("*.jpg"));
     QStringList imageFiles = imageDir.entryList();
 
@@ -240,7 +245,7 @@ void DatabaseTagsTest::init()
 
     Q_FOREACH (const QString& imageFile, imageFiles)
     {
-        QString src = IMAGE_PATH + QLatin1Char('/') + imageFile;
+        QString src = filesPath + QLatin1Char('/') + imageFile;
         QString dst = palbumChild0Root0->fileUrl().toLocalFile() + QLatin1Char('/') + imageFile;
         bool copied = QFile::copy(src, dst);
         QVERIFY2(copied, "Test images must be copied");

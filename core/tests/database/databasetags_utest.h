@@ -89,6 +89,8 @@ private:
     Digikam::TAlbum*     talbumChild0Root1;
 
     QList<int>           addedIds;
+
+    QString              filesPath;
 };
 
 #endif // DIGIKAM_DATABASE_TAGS_UTEST_H

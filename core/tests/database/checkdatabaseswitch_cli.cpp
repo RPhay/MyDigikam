@@ -37,10 +37,9 @@
 #include "dbengineparameters.h"
 #include "scancontroller.h"
 #include "digikam_version.h"
+#include "dtestdatadir.h"
 
 using namespace Digikam;
-
-const QString IMAGE_PATH(QFINDTESTDATA("data/testimages/"));
 
 int main(int argc, char** argv)
 {
@@ -52,6 +51,10 @@ int main(int argc, char** argv)
         qCDebug(DIGIKAM_TESTS_LOG) << "Usage: <sqliteToMysql | mysqlToSqlite>";
         return -1;
     }
+
+    QString filesPath = DTestDataDir::TestData(QString::fromUtf8("core/tests/database/testimages"))
+                           .root().path() + QLatin1Char('/');
+    qCDebug(DIGIKAM_TESTS_LOG) << "Test Data Dir:" << filesPath;
 
     KAboutData aboutData(QLatin1String("digikam"),
                          QLatin1String("digiKam"), // No need i18n here.
@@ -81,7 +84,7 @@ int main(int argc, char** argv)
         params.legacyAndDefaultChecks();
 
         qCDebug(DIGIKAM_TESTS_LOG) << "Initializing database...";
-        bool b = AlbumManager::instance()->setDatabase(params, false, IMAGE_PATH);
+        bool b = AlbumManager::instance()->setDatabase(params, false, filesPath);
 
         qCDebug(DIGIKAM_TESTS_LOG) << "Database initialization done: " << b;
 
@@ -189,7 +192,7 @@ int main(int argc, char** argv)
         params.legacyAndDefaultChecks();
 
         qCDebug(DIGIKAM_TESTS_LOG) << "Initializing database...";
-        bool b = AlbumManager::instance()->setDatabase(params, false, IMAGE_PATH);
+        bool b = AlbumManager::instance()->setDatabase(params, false, filesPath);
 
         qCDebug(DIGIKAM_TESTS_LOG) << "Database initialization done: " << b;
 

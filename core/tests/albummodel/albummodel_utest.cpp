@@ -34,10 +34,9 @@
 #include "scancontroller.h"
 #include "thumbnailloadthread.h"
 #include "modeltest.h"
+#include "dtestdatadir.h"
 
 using namespace Digikam;
-
-const QString IMAGE_PATH(QFINDTESTDATA("data/"));
 
 QTEST_MAIN(AlbumModelTest)
 
@@ -60,6 +59,9 @@ AlbumModelTest::AlbumModelTest(QObject* const parent)
       talbumChild0Root1(nullptr),
       startModel(nullptr)
 {
+        imagesPath = DTestDataDir::TestData(QString::fromUtf8("core/tests/albummodel"))
+                         .root().path() + QLatin1Char('/');
+        qCDebug(DIGIKAM_TESTS_LOG) << "Test Data Dir:" << imagesPath;
 }
 
 AlbumModelTest::~AlbumModelTest()
@@ -243,7 +245,7 @@ void AlbumModelTest::init()
 
     // add some images for having date albums
 
-    QDir imageDir(IMAGE_PATH);
+    QDir imageDir(imagesPath);
     imageDir.setNameFilters(QStringList() << QLatin1String("*.jpg"));
     QStringList imageFiles = imageDir.entryList();
 
@@ -252,7 +254,7 @@ void AlbumModelTest::init()
 
     Q_FOREACH (const QString& imageFile, imageFiles)
     {
-        QString src = IMAGE_PATH + QLatin1Char('/') + imageFile;
+        QString src = imagesPath + imageFile;
         QString dst = palbumChild0Root0->fileUrl().toLocalFile() + QLatin1Char('/') + imageFile;
         bool copied = QFile::copy(src, dst);
         QVERIFY2(copied, "Test images must be copied");

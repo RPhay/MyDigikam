@@ -58,9 +58,11 @@ private Q_SLOTS:
 private:
 
     // utilities
+
     int countTags();
 
     // debug tests
+
     void dumpTables();
     void dumpTags();
 
