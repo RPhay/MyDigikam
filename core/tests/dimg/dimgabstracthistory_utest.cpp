@@ -39,6 +39,7 @@
 #include "iccsettings.h"
 #include "imageiface.h"
 #include "iofilesettings.h"
+#include "dtestdatadir.h"
 
 DImgAbstractHistoryTest::DImgAbstractHistoryTest(QObject* const parent)
     : QObject(parent),
@@ -50,7 +51,11 @@ QString DImgAbstractHistoryTest::imagePath()
 {
     // NOTE: We will use same data dir than album model tests.
 
-    return QFINDTESTDATA("../albummodel/data/");
+    QString filesPath = DTestDataDir::TestData(QString::fromUtf8("core/tests/albummodel"))
+                           .root().path() + QLatin1Char('/');
+    qCDebug(DIGIKAM_TESTS_LOG) << "Test Data Dir:" << filesPath;
+
+    return filesPath;
 }
 
 QDebug operator<<(QDebug dbg, const HistoryImageId& id)

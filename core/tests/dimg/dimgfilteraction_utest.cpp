@@ -30,6 +30,7 @@
 #include "dimagehistory.h"
 #include "drawdecoding.h"
 #include "filteractionfilter.h"
+#include "dtestdatadir.h"
 
 QTEST_MAIN(DImgFilterActionTest)
 
@@ -165,5 +166,9 @@ QString DImgFilterActionTest::originalImage()
 
 QDir DImgFilterActionTest::imageDir()
 {
-    return QDir(QFINDTESTDATA("data/"));
+    QString filesPath = DTestDataDir::TestData(QString::fromUtf8("core/tests/dimg"))
+                           .root().path() + QLatin1Char('/');
+    qCDebug(DIGIKAM_TESTS_LOG) << "Test Data Dir:" << filesPath;
+
+    return filesPath;
 }
