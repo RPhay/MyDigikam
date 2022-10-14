@@ -14,3 +14,8 @@ The front of file name must describe the goal of the tests/tools.
 * No need to support translations in this area.
 
 * With command line tools, try to use QCoreApplication instead QApplication when possible.
+
+* All data test files must be hosted on this git LFS based repository:
+https://invent.kde.org/graphics/digikam-test-data
+
+See class from dtestdatadir.h to manage data test files at run-time, from developer computer and on CI VM.
