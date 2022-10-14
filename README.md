@@ -70,7 +70,10 @@ See [AUTHORS](AUTHORS) file for details.
 
 # Related URLs
 
-https://www.digikam.org
+* [digiKam project web site](https://www.digikam.org)
+* [digiKam handbook git repository](https://invent.kde.org/documentation/digikam-doc)
+* [digiKam web site git repository](https://invent.kde.org/websites/digikam-org)
+* [digiKam unit-test data git repository](https://invent.kde.org/graphics/digikam-test-data)
 
 # Contact
 
@@ -102,7 +105,6 @@ Extra Bugzilla servers for shared libs used by digiKam :
 * [Lensfun library](https://github.com/lensfun/lensfun/issues)
 * [GPhoto2 library](http://gphoto.org/bugs)
 * [Exiv2 library](https://github.com/Exiv2/exiv2/issues)
-* [QtAV library](https://github.com/wang-bin/QtAV/issues)
 
 # External Dependencies
 
