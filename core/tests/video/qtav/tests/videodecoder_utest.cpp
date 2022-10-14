@@ -27,7 +27,7 @@
 #include "VideoDecoder.h"
 #include "Packet.h"
 #include "digikam_debug.h"
-#include "QtAvTestDataDir.h"
+#include "qtavtestdatadir.h"
 
 using namespace QtAV;
 
@@ -37,9 +37,10 @@ class VideoDecoderTest : public QObject
     Q_OBJECT
 
 private:
-    QtAvTestDataDir _testDataDir;
-    QString testFile1() { return _testDataDir.mpeg2_mp4(); }
-    
+
+    QtAVTestDataDir m_testDataDir;
+    QString testFile1() { return m_testDataDir.mpeg2_mp4(); }
+
 private Q_SLOTS:
 
     void canConstruct()
@@ -47,8 +48,8 @@ private Q_SLOTS:
         auto decoder = VideoDecoder::create();
         QVERIFY(decoder != nullptr);
 
-        QCOMPARE(decoder->name(), QString::fromUtf8("FFmpeg"));        
-        QCOMPARE(decoder->id(), VideoDecoderId_FFmpeg);        
+        QCOMPARE(decoder->name(), QString::fromUtf8("FFmpeg"));
+        QCOMPARE(decoder->id(), VideoDecoderId_FFmpeg);
     }
 
     void readStream()
@@ -62,19 +63,21 @@ private Q_SLOTS:
 
         decoder->setCodecContext(demux.videoCodecContext());
         QVERIFY(decoder->open());
-        
-        int streamNum = demux.videoStream();
-        int frameCount = 0;
+
+        int streamNum        = demux.videoStream();
+        int frameCount       = 0;
         qreal last_timestamp = -1;
-        
+
         Packet pkt;
+
         while(!demux.atEnd())
         {
             if (!pkt.isValid())
             {
                 if (!demux.readFrame()) continue;
+
                 if (demux.stream() != streamNum) continue;
-                
+
                 pkt = demux.packet();
             }
 
@@ -86,18 +89,19 @@ private Q_SLOTS:
 
             pkt.data = QByteArray::fromRawData(pkt.data.constData() + pkt.data.size() - decoder->undecodedSize(), decoder->undecodedSize());
             VideoFrame frame(decoder->frame());
+
             if (!frame) continue;
-            
+
             ++frameCount;
-            //QVERIFY(frame.timestamp() >= last_timestamp);          
+            //QVERIFY(frame.timestamp() >= last_timestamp);
             last_timestamp = frame.timestamp();
-            
-            auto format = frame.format();
-            
+
+            auto format    = frame.format();
+
             QVERIFY(format.isValid());
             QVERIFY(format.isPlanar());
             QCOMPARE(format.planeCount(), 3);
-                       
+
             QCOMPARE(format.channels(), 3);
         }
 
@@ -109,4 +113,5 @@ private Q_SLOTS:
 };
 
 QTEST_MAIN(VideoDecoderTest)
+
 #include "videodecoder_utest.moc"

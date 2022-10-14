@@ -4,7 +4,8 @@
  * https://www.digikam.org
  *
  * Date        : 2022-10-10
- * Description : provides convenient access to test data directories and files
+ * Description : Common class to provides convenient access to digiKam
+ *               test data directories and files.
  *
  * SPDX-FileCopyrightText: 2022 Steve Robbins <steve at sumost dot ca>
  *
@@ -15,17 +16,19 @@
 #ifndef DIGIKAM_TEST_DATA_DIR_H
 #define DIGIKAM_TEST_DATA_DIR_H
 
+// Qt includes
+
 #include <QDir>
 
-/** 
- * \brief Class that provides convenient access to test data directories and files.
- * 
+/**
+ * \brief Class that provides convenient access to digiKam test data directories and files.
+ *
  * When instantiated, the test-data directory is located dynamically; this algorithm works as long as
  * the current directory is the source root directory or any sub-directory.  After construction,
  * the function \ref isValid returns true if the test data was successfully located.
  */
 
-class TestDataDir
+class DTestDataDir
 {
 public:
 
@@ -33,23 +36,23 @@ public:
      * True if the instance is correctly instantiated.
      * Valid means that the desired root directory was located.
      */
-    bool isValid()
+    bool isValid() const
     {
-        return _isValid;
+        return m_isValid;
     }
 
     /**
      * Root directory of test data hierarchy.
      */
-    QDir root()
+    QDir root() const
     {
-        return _testDataDir;
+        return m_testDataDir;
     }
 
     /**
      * Path to any test file or directory, specified using relative path from root.
      */
-    QString path(const QString& name)
+    QString path(const QString& name) const
     {
         return root().filePath(name);
     }
@@ -57,7 +60,7 @@ public:
     /**
      * Any test directory, specified using relative path from root.
      */
-    QDir dir(const QString& relPath)
+    QDir dir(const QString& relPath) const
     {
         return QDir(path(relPath));
     }
@@ -65,82 +68,92 @@ public:
     /**
      * Any test file, specified using relative path from root.
      */
-    QFile file(const QString& name)
+    QFile file(const QString& name) const
     {
         return QFile(path(name));
     }
 
     /**
-     * Returns TestDataDir for the Digikam Test Data root directory.
+     * Returns DTestDataDir for the digiKam Test Data root directory.
      * This provides access to all files in Digikam Test Data.
      */
-    static TestDataDir TestDataRoot()
+    static DTestDataDir TestDataRoot()
     {
-        return TestDataDir();
+        return DTestDataDir();
     }
 
     /**
-     * Returns TestDataDir for a sub-tree of the Digikam Test Data.
+     * Returns DTestDataDir for a sub-tree of the digiKam Test Data.
      * This provides access to files in the subtree.
      * 
      * \param subdirPath path of subdir, relative to the Digikam Test Data root
      */
-    static TestDataDir TestData(const QString& subdirPath)
+    static DTestDataDir TestData(const QString& subdirPath)
     {
-        return TestDataDir(subdirPath);
+        return DTestDataDir(subdirPath);
     }
 
 private:
 
-    QDir _testDataDir;
-    bool _isValid = false;
+    QDir m_testDataDir;
+    bool m_isValid = false;
 
 private:
 
-    static bool FindDirectoryUpwards(const QDir& dir, const QString& target, QDir& result)
+    static bool s_findDirectoryUpwards(const QDir& directory, const QString& target, QDir& result)
     {
+        QDir dir = directory;
+
         while (dir.exists(target) == false)
         {
             if (!dir.cdUp())
+            {
                 return false;
+            }
         }
 
         if (!dir.cd(target))
+        {
             return false;
+        }
 
         result = dir;
 
         return true;
     }
 
-    void Initialize()
+    void initialize()
     {
-        _isValid = FindDirectoryUpwards(QDir(), QString::fromUtf8("test-data"), _testDataDir);
+        m_isValid = s_findDirectoryUpwards(QDir(), QString::fromUtf8("test-data"), m_testDataDir);
     }
 
 protected:
 
     /**
-     * Create
+     * Constructor with internal instance creation.
      */
-    TestDataDir()
+    DTestDataDir()
     {
-        Initialize();
+        initialize();
     }
 
-    TestDataDir(QString subdirPath)
+    DTestDataDir(const QString& subdirPath)
     {
-        Initialize();
+        initialize();
 
-        if (!_isValid)
+        if (!m_isValid)
+        {
             return;
+        }
 
-        _isValid = _testDataDir.exists(subdirPath);
+        m_isValid = m_testDataDir.exists(subdirPath);
 
-        if (!_isValid)
+        if (!m_isValid)
+        {
             return;
+        }
 
-        _testDataDir.cd(subdirPath);
+        m_testDataDir.cd(subdirPath);
     }
 };
 

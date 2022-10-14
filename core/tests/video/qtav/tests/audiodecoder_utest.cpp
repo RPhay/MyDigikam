@@ -27,7 +27,7 @@
 #include "AudioDecoder.h"
 #include "Packet.h"
 #include "digikam_debug.h"
-#include "QtAvTestDataDir.h"
+#include "qtavtestdatadir.h"
 
 using namespace QtAV;
 
@@ -36,24 +36,24 @@ class AudioDecodeTest : public QObject
     Q_OBJECT
 
 private:
-    QtAvTestDataDir _testDataDir;
-    QString testFile1() { return _testDataDir.basemediav1_mp4(); }
 
-    
+    QtAVTestDataDir m_testDataDir;
+    QString testFile1() { return m_testDataDir.basemediav1_mp4(); }
+
 private Q_SLOTS:
 
     void testDirValid()
     {
-        QVERIFY(_testDataDir.isValid());
+        QVERIFY(m_testDataDir.isValid());
     }
-    
+
     void canConstruct()
     {
         auto decoder = AudioDecoder::create();
         QVERIFY(decoder != nullptr);
 
-        QCOMPARE(decoder->name(), QString::fromUtf8("FFmpeg"));        
-        QCOMPARE(decoder->id(), AudioDecoderId_FFmpeg);        
+        QCOMPARE(decoder->name(), QString::fromUtf8("FFmpeg"));
+        QCOMPARE(decoder->id(), AudioDecoderId_FFmpeg);
     }
 
     void readStream()
@@ -67,19 +67,21 @@ private Q_SLOTS:
 
         decoder->setCodecContext(demux.audioCodecContext());
         QVERIFY(decoder->open());
-        
+
         int audioStreamNum = demux.audioStream();
         int audioFrameCount = 0;
         qreal last_timestamp = -1;
-        
+
         Packet pkt;
+
         while(!demux.atEnd())
         {
             if (!pkt.isValid())
             {
                 if (!demux.readFrame()) continue;
+
                 if (demux.stream() != audioStreamNum) continue;
-                
+
                 pkt = demux.packet();
             }
 
@@ -91,35 +93,35 @@ private Q_SLOTS:
 
             pkt.data = QByteArray::fromRawData(pkt.data.constData() + pkt.data.size() - decoder->undecodedSize(), decoder->undecodedSize());
             AudioFrame frame(decoder->frame());
+
             if (!frame) continue;
-            
+
             ++audioFrameCount;
-            QVERIFY(frame.timestamp() > last_timestamp);          
+            QVERIFY(frame.timestamp() > last_timestamp);
             last_timestamp = frame.timestamp();
-            
+
             auto format = frame.format();
-            
+
             QVERIFY(format.isValid());
             QVERIFY(format.isFloat());
             QVERIFY(!format.isUnsigned());
             QVERIFY(format.isPlanar());
             QCOMPARE(format.planeCount(), 2);
-            
+
             QCOMPARE(format.sampleRate(), 48000);
-            
+
             QCOMPARE(format.channelLayoutFFmpeg(), 3);
             QCOMPARE(format.channelLayout(), AudioFormat::ChannelLayout::ChannelLayout_Stereo);
-            
+
             QCOMPARE(format.channels(), 2);
 
             QCOMPARE(format.sampleFormat(), AudioFormat::SampleFormat::SampleFormat_FloatPlanar);
             QCOMPARE(format.sampleFormatFFmpeg(), 8);
 
-            
             QCOMPARE(format.bytesPerFrame(), 8);
             QCOMPARE(format.bytesPerSample(), 4);
             QCOMPARE(format.sampleSize(), 4);
-            QCOMPARE(format.bitRate(), 48000*2*4*8);  // 2 channels, 4 bytes per sample, 8 bits/byte
+            QCOMPARE(format.bitRate(), 48000*2*4*8);       // 2 channels, 4 bytes per sample, 8 bits/byte
             QCOMPARE(format.bytesPerSecond(), 48000*2*4);  // 2 channels, 4 bytes per sample
         }
 
@@ -131,4 +133,5 @@ private Q_SLOTS:
 };
 
 QTEST_MAIN(AudioDecodeTest)
+
 #include "audiodecoder_utest.moc"
