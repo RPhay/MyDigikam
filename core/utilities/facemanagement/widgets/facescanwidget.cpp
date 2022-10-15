@@ -70,25 +70,15 @@ void FaceScanWidget::doLoadState()
     QString skipHandling = group.readEntry(entryName(d->configAlreadyScannedHandling),
                                            QString::fromLatin1("Skip"));
 
-    if      (skipHandling == QLatin1String("Rescan"))
-    {
-
-#ifdef ENABLE_DETECT_AND_RECOGNIZE
-
-        handling = FaceScanSettings::Rescan;
-
-#else
-
-        handling = FaceScanSettings::Skip;
-
-#endif
-
-    }
-    else if (skipHandling == QLatin1String("Merge"))
+    if      (skipHandling == QLatin1String("Merge"))
     {
         handling = FaceScanSettings::Merge;
     }
-    else // Skip
+    else if (skipHandling == QLatin1String("Rescan"))
+    {
+        handling = FaceScanSettings::Rescan;
+    }
+    else
     {
         handling = FaceScanSettings::Skip;
     }
@@ -141,15 +131,15 @@ void FaceScanWidget::doSaveState()
             break;
         }
 
-        case FaceScanSettings::Rescan:
-        {
-            handling = QLatin1String("Rescan");
-            break;
-        }
-
         case FaceScanSettings::Merge:
         {
             handling = QLatin1String("Merge");
+            break;
+        }
+
+        case FaceScanSettings::Rescan:
+        {
+            handling = QLatin1String("Rescan");
             break;
         }
     }
@@ -181,6 +171,7 @@ void FaceScanWidget::setupUi()
     d->alreadyScannedBox                = new SqueezedComboBox;
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Skip images already scanned"),          FaceScanSettings::Skip);
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Scan again and merge results"),         FaceScanSettings::Merge);
+    d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Clear unconfirmed results and rescan"), FaceScanSettings::Rescan);
 
     QString buttonText;
     d->helpButton = new QPushButton(QIcon::fromTheme(QLatin1String("help-browser")), buttonText);
@@ -195,15 +186,9 @@ void FaceScanWidget::setupUi()
     );
 
     scanOptionLayout->addWidget(d->alreadyScannedBox, 9);
-    scanOptionLayout->addWidget(d->helpButton, 1);
+    scanOptionLayout->addWidget(d->helpButton,        1);
 
     optionLayout->addLayout(scanOptionLayout);
-
-#ifdef ENABLE_DETECT_AND_RECOGNIZE
-
-    d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Clear unconfirmed results and rescan"), FaceScanSettings::Rescan);
-
-#endif
 
     d->alreadyScannedBox->setCurrentIndex(FaceScanSettings::Skip);
 
