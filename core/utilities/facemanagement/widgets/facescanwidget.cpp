@@ -67,21 +67,8 @@ void FaceScanWidget::doLoadState()
     }
 
     FaceScanSettings::AlreadyScannedHandling handling;
-    QString skipHandling = group.readEntry(entryName(d->configAlreadyScannedHandling),
-                                           QString::fromLatin1("Skip"));
-
-    if      (skipHandling == QLatin1String("Merge"))
-    {
-        handling = FaceScanSettings::Merge;
-    }
-    else if (skipHandling == QLatin1String("Rescan"))
-    {
-        handling = FaceScanSettings::Rescan;
-    }
-    else
-    {
-        handling = FaceScanSettings::Skip;
-    }
+    handling = (FaceScanSettings::AlreadyScannedHandling)group.readEntry(entryName(d->configAlreadyScannedHandling),
+                                                                         (int)FaceScanSettings::Skip);
 
     d->alreadyScannedBox->setCurrentIndex(d->alreadyScannedBox->findData(handling));
 
@@ -120,31 +107,8 @@ void FaceScanWidget::doSaveState()
     }
 
     group.writeEntry(entryName(d->configMainTask), mainTask);
-
-    QString handling;
-
-    switch ((FaceScanSettings::AlreadyScannedHandling)(d->alreadyScannedBox->itemData(d->alreadyScannedBox->currentIndex()).toInt()))
-    {
-        case FaceScanSettings::Skip:
-        {
-            handling = QLatin1String("Skip");
-            break;
-        }
-
-        case FaceScanSettings::Merge:
-        {
-            handling = QLatin1String("Merge");
-            break;
-        }
-
-        case FaceScanSettings::Rescan:
-        {
-            handling = QLatin1String("Rescan");
-            break;
-        }
-    }
-
-    group.writeEntry(entryName(d->configAlreadyScannedHandling), handling);
+    group.writeEntry(entryName(d->configAlreadyScannedHandling),
+                               d->alreadyScannedBox->itemData(d->alreadyScannedBox->currentIndex()).toInt());
 
     ApplicationSettings::instance()->setFaceDetectionAccuracy(double(d->accuracyInput->value()) / 100);
     d->albumSelectors->saveState();
