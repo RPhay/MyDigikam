@@ -27,11 +27,14 @@
 // Local includes
 
 #include "iojob.h"
+#include "digikam_debug.h"
+#include "dtestdatadir.h"
 
 using namespace Digikam;
 
 const QString testFileName   = QLatin1String("test.png");
-const QString filePath       = QFINDTESTDATA(testFileName);
+const QString filePath       = DTestDataDir::TestData(QString::fromUtf8("core/tests/iojobs"))
+                                   .root().path() + QLatin1Char('/') + testFileName;
 const QString srcFolderName  = QLatin1String("src");
 const QString dstFolderPath  = QLatin1String("dst");
 const QString testFolderName = QLatin1String("test");
