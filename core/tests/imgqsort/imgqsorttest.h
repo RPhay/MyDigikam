@@ -27,9 +27,11 @@
 
 #include "imgqsorttest_shared.h"
 #include "digikam_globals.h"
+#include "digikam_debug.h"
 #include "imagequalitycontainer.h"
 #include "exiftoolparser.h"
 #include "dpluginloader.h"
+#include "dtestdatadir.h"
 
 // Shared class for utest
 
@@ -54,8 +56,9 @@ protected:
 
     QDir imageDir() const
     {
-        QDir dir(QFINDTESTDATA("data/"));
-        qCDebug(DIGIKAM_TESTS_LOG) << "Images Directory:" << dir;
+        QDir dir = DTestDataDir::TestData(QString::fromUtf8("core/tests/imgqsort")).root();
+        qCDebug(DIGIKAM_TESTS_LOG) << "Test Data Dir:" << dir;
+
         return dir;
     }
 
