@@ -22,10 +22,11 @@
 
 // local includes
 
+#include "digikam_debug.h"
 #include "dmetadata.h"
 #include "gpsdatacontainer.h"
 #include "gpsitemcontainer.h"
-
+#include "dtestdatadir.h"
 
 using namespace Digikam;
 
@@ -45,7 +46,11 @@ void TestGPSItemContainer::cleanupTestCase()
  */
 QString GetTestDataDirectory()
 {
-    return QString(QFINDTESTDATA("data/"));
+    QString filesPath = DTestDataDir::TestData(QString::fromUtf8("core/tests/geolocation/editor"))
+                           .root().path() + QLatin1Char('/');
+    qCDebug(DIGIKAM_TESTS_LOG) << "Test Data Dir:" << filesPath;
+
+    return filesPath;
 }
 
 GPSItemContainer* ItemFromFile(const QUrl& url)

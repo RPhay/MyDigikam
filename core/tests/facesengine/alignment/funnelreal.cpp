@@ -168,7 +168,7 @@ FunnelReal::FunnelReal()
                            .root().path() + QLatin1Char('/');
     qCDebug(DIGIKAM_TESTS_LOG) << "Test Data Dir:" << filesPath;
 
-    QString trainingFile = filesPAth + QLatin1String("face-funnel.data")); ///< data model file
+    QString trainingFile = filesPath + QLatin1String("face-funnel.data"); ///< data model file
 
     if (!QFileInfo::exists(trainingFile))
     {

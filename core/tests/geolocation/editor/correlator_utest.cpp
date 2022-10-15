@@ -22,8 +22,10 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "trackreader.h"
 #include "track_correlator.h"
+#include "dtestdatadir.h"
 
 using namespace Digikam;
 
@@ -32,7 +34,11 @@ using namespace Digikam;
  */
 QString GetTestDataDirectory()
 {
-    return QString(QFINDTESTDATA("data/"));
+    QString filesPath = DTestDataDir::TestData(QString::fromUtf8("core/tests/geolocation/editor"))
+                           .root().path() + QLatin1Char('/');
+    qCDebug(DIGIKAM_TESTS_LOG) << "Test Data Dir:" << filesPath;
+
+    return filesPath;
 }
 
 /**

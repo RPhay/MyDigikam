@@ -25,6 +25,7 @@
 #include "digikam_debug.h"
 #include "trackmanager.h"
 #include "trackreader.h"
+#include "dtestdatadir.h"
 
 using namespace Digikam;
 
@@ -35,7 +36,11 @@ QTEST_GUILESS_MAIN(TestTracks)
  */
 QString GetTestDataDirectory()
 {
-    return QString(QFINDTESTDATA("data/"));
+    QString filesPath = DTestDataDir::TestData(QString::fromUtf8("core/tests/geolocation/geoiface"))
+                           .root().path() + QLatin1Char('/');
+    qCDebug(DIGIKAM_TESTS_LOG) << "Test Data Dir:" << filesPath;
+
+    return filesPath;
 }
 
 /**
