@@ -36,6 +36,8 @@
 #include "mediawiki_iface.h"
 #include "mediawiki_queryrevision.h"
 #include "mediawiki_revision.h"
+#include "dtestdatadir.h"
+#include "digikam_debug.h"
 
 using MediaWiki::Iface;
 using MediaWiki::QueryRevision;
@@ -770,7 +772,11 @@ private:
 
     QString queryRevisionTestBasePath()
     {
-        return QFINDTESTDATA("data/") + QLatin1String("queryrevisiontest");
+        const QString filePath = DTestDataDir::TestData(QString::fromUtf8("core/tests/mediawiki"))
+                                   .root().path() + QLatin1Char('/') + QLatin1String("queryrevisiontest");
+        qCDebug(DIGIKAM_TESTS_LOG) << "Test Data File:" << filePath;
+
+        return filePath;
     }
 
 private:
