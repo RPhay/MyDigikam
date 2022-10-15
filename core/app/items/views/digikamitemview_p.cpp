@@ -29,7 +29,6 @@ DigikamItemView::Private::Private(DigikamItemView* const qq)
       faceDelegate       (nullptr),
       overlaysActive     (false),
       fullscreenActive   (false),
-      runningFaceAction  (false),
       rotateLeftOverlay  (nullptr),
       rotateRightOverlay (nullptr),
       fullscreenOverlay  (nullptr),

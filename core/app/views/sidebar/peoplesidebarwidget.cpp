@@ -191,8 +191,6 @@ void PeopleSideBarWidget::slotScanForFaces()
         d->settingsWdg->setEnabled(false);
         d->rescanButton->setEnabled(false);
 
-        Q_EMIT signalRunningFaceAction(true);
-
         connect(tool, SIGNAL(signalComplete()),
                 this, SLOT(slotScanComplete()));
 
@@ -212,8 +210,6 @@ void PeopleSideBarWidget::slotScanComplete()
 {
     d->settingsWdg->setEnabled(true);
     d->rescanButton->setEnabled(true);
-
-    Q_EMIT signalRunningFaceAction(false);
 }
 
 const QIcon PeopleSideBarWidget::getIcon()

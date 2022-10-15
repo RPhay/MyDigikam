@@ -55,7 +55,6 @@ private Q_SLOTS:
 Q_SIGNALS:
 
     void requestFaceMode(bool on);
-    void signalRunningFaceAction(bool run);
     void signalFindDuplicates(const QList<TAlbum*>& albums);
 
 private:

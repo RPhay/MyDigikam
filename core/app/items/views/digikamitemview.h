@@ -65,7 +65,6 @@ public Q_SLOTS:
     void assignRating(const QList<QModelIndex>& index, int rating);
 
     void setFaceMode(bool on);
-    void setRunningFaceAction(bool run);
 
     /**
      * Confirm the face with a face tag (name) in the database.

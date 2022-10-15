@@ -167,7 +167,7 @@ BUGFIXES:
 129 ==> 459027 - Creating large thumbnails issue with digiKam-8.0.0.
 130 ==> 460321 - Overlapping faces region.
 131 ==> 453840 - digiKam git build error with ffmpeg 5.
-132 ==> 
+132 ==> 402322 - During face detection, the "People" / "Unconfirmed" (or "Unknown") tab content keeps jumping around.
 133 ==> 
 134 ==> 
 135 ==> 
