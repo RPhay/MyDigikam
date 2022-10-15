@@ -314,9 +314,9 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     QWidget* const space3  = new QWidget(hbox3);
     hbox3->setStretchFactor(space3, 10);
     d->faceScannedHandling = new QComboBox(hbox3);
-    d->faceScannedHandling->addItem(i18n("Skip images already scanned"),          FaceScanSettings::Skip);
-    d->faceScannedHandling->addItem(i18n("Scan again and merge results"),         FaceScanSettings::Merge);
-    d->faceScannedHandling->addItem(i18n("Clear unconfirmed results and rescan"), FaceScanSettings::Rescan);
+    d->faceScannedHandling->addItem(i18nc("@label:listbox", "Skip images already scanned"),          FaceScanSettings::Skip);
+    d->faceScannedHandling->addItem(i18nc("@label:listbox", "Scan again and merge results"),         FaceScanSettings::Merge);
+    d->faceScannedHandling->addItem(i18nc("@label:listbox", "Clear unconfirmed results and rescan"), FaceScanSettings::Rescan);
 
     d->retrainAllFaces    = new QCheckBox(d->vbox4);
     d->retrainAllFaces->setText(i18nc("@option:check", "Clear and rebuild all training data"));
