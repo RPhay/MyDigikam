@@ -451,6 +451,7 @@ void ItemPreviewView::slotShowContextMenu(QGraphicsSceneContextMenuEvent* event)
     // --------------------------------------------------------
 
     cmHelper.addAction(QLatin1String("image_scan_for_faces"));
+    cmHelper.addAction(QLatin1String("image_recognize_faces"));
     cmHelper.addAction(d->peopleToggleAction, true);
     cmHelper.addAction(d->addPersonAction,    true);
     cmHelper.addAction(d->forgetFacesAction,  true);

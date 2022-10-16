@@ -67,9 +67,18 @@ void ItemIconView::slotImageScanForFaces()
 
     settings.accuracy               = ApplicationSettings::instance()->getFaceDetectionAccuracy();
     settings.useYoloV3              = ApplicationSettings::instance()->getFaceDetectionYoloV3();
-    settings.task                   = FaceScanSettings::DetectAndRecognize;
+    settings.task                   = FaceScanSettings::Detect;
     settings.alreadyScannedHandling = FaceScanSettings::Rescan;
-    settings.infos                  = selectedInfoList(ApplicationSettings::Tools);
+
+    // Remove possible duplicate ItemInfos.
+
+    Q_FOREACH (const ItemInfo& info, selectedInfoList(ApplicationSettings::Tools))
+    {
+        if (!settings.infos.contains(info))
+        {
+            settings.infos << info;
+        }
+    }
 
     FacesDetector* const tool = new FacesDetector(settings);
 
@@ -89,19 +98,15 @@ void ItemIconView::slotImageRecognizeFaces()
     settings.useYoloV3 = ApplicationSettings::instance()->getFaceDetectionYoloV3();
     settings.task      = FaceScanSettings::RecognizeMarkedFaces;
 
-    ItemInfoList itemInfos;
-
     // Remove possible duplicate ItemInfos.
 
     Q_FOREACH (const ItemInfo& info, selectedInfoList(ApplicationSettings::Tools))
     {
-        if (!itemInfos.contains(info))
+        if (!settings.infos.contains(info))
         {
-            itemInfos << info;
+            settings.infos << info;
         }
     }
-
-    settings.infos     = itemInfos;
 
     FacesDetector* const tool = new FacesDetector(settings);
 

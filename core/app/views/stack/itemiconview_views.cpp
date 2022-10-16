@@ -284,14 +284,11 @@ void ItemIconView::slotShowContextMenuOnInfo(QContextMenuEvent* event, const Ite
 
     // --------------------------------------------------------
 
-    if (d->leftSideBar->getActiveTab() == d->peopleSideBar)
-    {
-        cmHelper.addAction(QLatin1String("image_recognize_faces"));
-    }
-    else
-    {
-        cmHelper.addAction(QLatin1String("image_scan_for_faces"));
-    }
+    cmHelper.addAction(QLatin1String("image_scan_for_faces"));
+    cmHelper.addAction(QLatin1String("image_recognize_faces"));
+    cmHelper.addSeparator();
+
+    // --------------------------------------------------------
 
     cmHelper.addAction(QLatin1String("image_find_similar"));
     cmHelper.addStandardActionLightTable();
