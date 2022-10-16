@@ -156,7 +156,6 @@ void AssignNameWidget::Private::checkWidgets()
                     if (!comboBox)
                     {
                         comboBox = new AddTagsComboBox(q);
-                        comboBox->setMinimumWidth(250);
                         setupAddTagsWidget(comboBox);
                     }
 
