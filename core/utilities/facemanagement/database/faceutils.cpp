@@ -395,7 +395,7 @@ void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
 
 void FaceUtils::removeNormalTags(qlonglong imageId, const QList<int>& tagIds)
 {
-    FaceTagsEditor::removeNormalTags(imageid, tagIds);
+    FaceTagsEditor::removeNormalTags(imageId, tagIds);
 
     ItemInfo info(imageId);
     MetadataHub hub;
