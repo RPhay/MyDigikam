@@ -28,16 +28,19 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "dtestdatadir.h"
 
 using namespace Digikam;
 
 QTEST_MAIN(AdvancedRenameTest)
 
-const QString imagesDir = QLatin1String("data/");
-
 QString createFilePath(const QString& file)
 {
-    return QString(QFINDTESTDATA(imagesDir) + file);
+    const QString filePath = DTestDataDir::TestData(QString::fromUtf8("core/tests/advancerename"))
+                                   .root().path() + QLatin1Char('/') + file;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Test Data File:" << filePath;
+
+    return filePath;
 }
 
 Q_DECLARE_METATYPE(QList<int>)
@@ -189,7 +192,9 @@ void AdvancedRenameTest::testDirectoryNameToken_data()
     // The main directory of digiKam can have different names, depending on how the
     // user named it. Therefore we have to detect the name here.
 
-    QDir dir(QFINDTESTDATA(imagesDir));
+    QDir dir = DTestDataDir::TestData(QString::fromUtf8("core/tests/advancerename")).root();
+    qCDebug(DIGIKAM_TESTS_LOG) << "Test Data Dir:" << dir;
+
     dir.cdUp();
     const QString dir2up = dir.path();
     QDir dir2            = dir;
@@ -202,7 +207,7 @@ void AdvancedRenameTest::testDirectoryNameToken_data()
 
     QTest::newRow("[dir]")
             << "[dir]"
-            << "data.jpg";
+            << "advancerename.jpg";
 
     QTest::newRow("[dir.]")
             << "[dir.]"
@@ -210,7 +215,7 @@ void AdvancedRenameTest::testDirectoryNameToken_data()
 
     QTest::newRow("[dir.]_[dir]")
             << "[dir.]_[dir]"
-            << QString::fromUtf8("%1_data.jpg").arg(digikamDir).toLatin1().constData();
+            << QString::fromUtf8("%1_advancerename.jpg").arg(digikamDir).toLatin1().constData();
 
     QTest::newRow("[dir......................................................................]")
             << "[dir......................................................................]"

@@ -27,14 +27,17 @@
 #include "parsesettings.h"
 #include "renamecustomizer.h"
 #include "digikam_debug.h"
+#include "dtestdatadir.h"
 
 using namespace Digikam;
 
-const QString imagesDir = QLatin1String("data/");
-
 QString createFilePath(const QString& file)
 {
-    return QString(QFINDTESTDATA(imagesDir) + file);
+    const QString filePath = DTestDataDir::TestData(QString::fromUtf8("core/tests/advancerename"))
+                                   .root().path() + QLatin1Char('/') + file;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Test Data File:" << filePath;
+
+    return filePath;
 }
 
 const QString fileName  = QLatin1String("advancedrename_testimage.jpg");
