@@ -168,6 +168,6 @@ BUGFIXES:
 130 ==> 460321 - Overlapping faces region.
 131 ==> 453840 - digiKam git build error with ffmpeg 5.
 132 ==> 402322 - During face detection, the "People" / "Unconfirmed" (or "Unknown") tab content keeps jumping around.
-133 ==> 
-134 ==> 
+133 ==> 457461 - Ability to ignore all faces except tag marked.
+134 ==> 460520 - [FEATURE REQUEST] Ignore rest of not tagged faces in picture.
 135 ==> 
