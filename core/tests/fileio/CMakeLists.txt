@@ -49,18 +49,6 @@ target_link_libraries(pgfscaled_cli
 
 #------------------------------------------------------------------------
 
-set(qtpgftest_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/qtpgftest_cli.cpp ${pgfutils_SRCS})
-add_executable(qtpgftest_cli ${qtpgftest_cli_SRCS})
-ecm_mark_nongui_executable(qtpgftest_cli)
-
-target_link_libraries(qtpgftest_cli
-                      digikamcore
-
-                      ${COMMON_TEST_LINK}
-)
-
-#------------------------------------------------------------------------
-
 set(loadsavethread_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/loadsavethread_cli.cpp)
 add_executable(loadsavethread_cli ${loadsavethread_cli_SRCS})
 ecm_mark_nongui_executable(loadsavethread_cli)
@@ -74,6 +62,21 @@ target_link_libraries(loadsavethread_cli
 #------------------------------------------------------------------------
 
 ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/loadpgfdata_utest.cpp
+
+              NAME_PREFIX
+
+              "digikam-"
+
+              LINK_LIBRARIES
+
+              digikamcore
+
+              ${COMMON_TEST_LINK}
+)
+
+#------------------------------------------------------------------------
+
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/qtpgf_utest.cpp
 
               NAME_PREFIX
 
