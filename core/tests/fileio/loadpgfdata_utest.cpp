@@ -59,7 +59,12 @@ void LoadPGFDataTest::testLoadData()
 
     QVERIFY2(PGFUtils::readPGFImageData(data, img), "Failed to read Raw PGF stream...");
 
-    QVERIFY2(img.save(file.fileName() + QString::fromUtf8("-converted.png"), "PNG"), "Cannot save Raw PGF stream with QImage");
+    qCDebug(DIGIKAM_TESTS_LOG) << "Raw PGF stream image size:"         << img.size();
+    qCDebug(DIGIKAM_TESTS_LOG) << "Raw PGF stream image color depth:"  << img.depth();
+    qCDebug(DIGIKAM_TESTS_LOG) << "Raw PGF stream image color format:" << img.format();
 
-    QFile().remove(file.fileName() + QString::fromUtf8("-converted.png"));
+    QVERIFY2(!img.isNull(), "Raw PGF stream image is null...");
+    QVERIFY2(img.size()  == QSize(256, 170), "Incorrect Raw PGF stream image size...");
+    QVERIFY2(img.depth() == 32, "Incorrect Raw PGF stream image color depth...");
+    QVERIFY2(img.format() == QImage::Format_ARGB32, "Incorrect Raw PGF stream image color format...");
 }
