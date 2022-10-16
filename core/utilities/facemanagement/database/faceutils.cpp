@@ -393,6 +393,18 @@ void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
     }
 }
 
+void FaceUtils::removeNormalTags(qlonglong imageId, const QList<int>& tagIds)
+{
+    FaceTagsEditor::removeNormalTags(imageid, tagIds);
+
+    ItemInfo info(imageId);
+    MetadataHub hub;
+    hub.load(info);
+
+    ScanController::FileMetadataWrite writeScope(info);
+    writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_TAGS));
+}
+
 // --- Utilities ---
 
 QSize FaceUtils::rotateFaces(qlonglong imageId,

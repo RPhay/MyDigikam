@@ -135,8 +135,9 @@ public:
 protected:
 
     // Reimplemented
-    void addNormalTag(qlonglong imageid, int tagId)                                           override;
-    void removeNormalTag(qlonglong imageid, int tagId)                                        override;
+    void addNormalTag(qlonglong imageId, int tagId)                                           override;
+    void removeNormalTag(qlonglong imageId, int tagId)                                        override;
+    void removeNormalTags(qlonglong imageId, const QList<int>& tagIds)                        override;
 
 private:
 
