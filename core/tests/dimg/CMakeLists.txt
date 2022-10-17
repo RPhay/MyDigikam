@@ -20,19 +20,6 @@ include_directories(
 
 #------------------------------------------------------------------------
 
-set(dimgloader_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/dimgloader_cli.cpp)
-add_executable(dimgloader_cli ${dimgloader_cli_SRCS})
-ecm_mark_nongui_executable(dimgloader_cli)
-
-target_link_libraries(dimgloader_cli
-
-                      digikamcore
-
-                      ${COMMON_TEST_LINK}
-)
-
-#------------------------------------------------------------------------
-
 set(equalizefilter_cli_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/equalizefilter_cli.cpp)
 add_executable(equalizefilter_cli ${equalizefilter_cli_SRCS})
 ecm_mark_nongui_executable(equalizefilter_cli)
@@ -106,7 +93,23 @@ ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/dimgfilteractionkeys_utest.cpp
 
         ${COMMON_TEST_LINK}
 )
-        
+
+#------------------------------------------------------------------------
+
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/dimgloader_utest.cpp
+
+        GUI
+
+        NAME_PREFIX
+
+        "digikam-"
+
+        LINK_LIBRARIES
+
+        digikamcore
+
+        ${COMMON_TEST_LINK}
+)
 
 #------------------------------------------------------------------------
 
