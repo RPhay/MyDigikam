@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2012-10-23
- * Description : a command line tool to test DImg image loader
+ * Description : unit test for DImg image loader with multithreading
  *
  * SPDX-FileCopyrightText: 2012-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -12,13 +12,13 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_LOAD_SAVE_THREAD_CLI_H
-#define DIGIKAM_LOAD_SAVE_THREAD_CLI_H
+#ifndef DIGIKAM_LOAD_SAVE_THREAD_UTEST_H
+#define DIGIKAM_LOAD_SAVE_THREAD_UTEST_H
 
 // Qt includes
 
 #include <QString>
-#include <QApplication>
+#include <QObject>
 
 // Local includes
 
@@ -28,15 +28,17 @@
 
 using namespace Digikam;
 
-class LoadSaveThreadTest : public QApplication
+class LoadSaveThreadTest : public QObject
 {
     Q_OBJECT
 
 public:
 
-    explicit LoadSaveThreadTest(int& argc, char** argv);
+    explicit LoadSaveThreadTest(QObject* const parent = nullptr);
 
 private Q_SLOTS:
+
+    void testLoadSaveThread();
 
     void slotImageLoaded(const LoadingDescription&, const DImg&);
     void slotImageSaved(const QString&, bool);
@@ -45,7 +47,13 @@ private Q_SLOTS:
 
 private:
 
-    LoadSaveThread* m_thread;
+    LoadSaveThread* m_thread         = nullptr;
+    QString         m_fname;
+    QString         m_outFilePath;
+    bool            m_loadedProgress = false;
+    bool            m_savedProgress  = false;
+    bool            m_loaded         = false;
+    bool            m_saved          = false;
 };
 
-#endif // DIGIKAM_LOAD_SAVE_THREAD_CLI_H
+#endif // DIGIKAM_LOAD_SAVE_THREAD_UTEST_H
