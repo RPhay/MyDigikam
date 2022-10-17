@@ -38,37 +38,32 @@ DImgLoaderTest::DImgLoaderTest(QObject* const parent)
 {
 }
 
-void DImgLoaderTest::testDimgLoader()
+void DImgLoaderTest::testDImgLoader()
 {
     MetaEngine::initializeExiv2();
     QDir dir(qApp->applicationDirPath());
     qputenv("DK_PLUGIN_PATH", dir.canonicalPath().toUtf8());
     DPluginLoader::instance()->init();
 
-    QVERIFY2(DPluginLoader::instance()->allPlugins().isEmpty(),
+    QVERIFY2(!DPluginLoader::instance()->allPlugins().isEmpty(),
              "Not able to found digiKam plugin in standard paths. Test is aborted...");
 
     QString fname = DTestDataDir::TestData(QString::fromUtf8("core/tests/dimg"))
-                  .root().path() + QLatin1String("/DSC00636.JPG");
+                    .root().path() + QLatin1String("/DSC00636.JPG");
     qCDebug(DIGIKAM_TESTS_LOG) << "Test Data File:" << fname;
 
-    LoadingDescription desc(m_fname, DRawDecoding(settings));
+    DRawDecoderSettings settings;
+    settings.halfSizeColorImage    = false;
+    settings.sixteenBitsImage      = false;
+    settings.RGBInterpolate4Colors = false;
+    settings.RAWQuality            = DRawDecoderSettings::BILINEAR;
 
-    m_thread->load(desc);
+    DImg img(fname, nullptr, DRawDecoding(settings));
 
-    int i = 0;
-
-    do
-    {
-        QTest::qWait(1000);
-        i++;
-    }
-    while ((i < 10) && !(m_loaded && m_saved));
-
-    QVERIFY2(m_loadedProgress, "Failed to progress image loading");
-    QVERIFY2(m_savedProgress,  "Failed to progress image saving");
-    QVERIFY2(m_loaded,         "Failed to load image");
-    QVERIFY2(m_saved,          "Failed to save image");
+    QVERIFY2(!img.isNull(), "Cannot load JPEG image with DImg plugin");
+    QVERIFY2(img.size() == QSize(100, 67), "Incorrect JPEG image size...");
+    QVERIFY2(img.save(fname + QLatin1String(".png"), QLatin1String("PNG")),
+             "Cannot save PNG image with DImg plugin");
 
     DPluginLoader::instance()->cleanUp();
 }
