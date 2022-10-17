@@ -19,7 +19,6 @@
 // Qt includes
 
 #include <QImage>
-#include <QTimer>
 
 // Local includes
 
@@ -321,34 +320,28 @@ void FaceUtils::addNormalTag(qlonglong imageId, int tagId)
     /**
      * Implementation for automatic assigning of face as
      * Tag Icon, if no icon exists currently.
-     * Utilising a QTimer to ensure that a new TAlbum
-     * is given time to be created, before assigning Icon.
      */
-    QTimer::singleShot(200, this, [=]()
+    if (
+        !FaceTags::isTheIgnoredPerson(tagId)  &&
+        !FaceTags::isTheUnknownPerson(tagId)  &&
+        !FaceTags::isTheUnconfirmedPerson(tagId)
+       )
+    {
+        TAlbum* const album = AlbumManager::instance()->findTAlbum(tagId);
+
+        // If Icon is NULL, set the newly added Face as the Icon.
+
+        if (album && (album->iconId() == 0))
         {
-            if (
-                !FaceTags::isTheIgnoredPerson(tagId)  &&
-                !FaceTags::isTheUnknownPerson(tagId)  &&
-                !FaceTags::isTheUnconfirmedPerson(tagId)
-               )
+            QString err;
+
+            if (!AlbumManager::instance()->updateTAlbumIcon(album, QString(),
+                                                            imageId, err))
             {
-                TAlbum* const album = AlbumManager::instance()->findTAlbum(tagId);
-
-                // If Icon is NULL, set the newly added Face as the Icon.
-
-                if (album && (album->iconId() == 0))
-                {
-                    QString err;
-
-                    if (!AlbumManager::instance()->updateTAlbumIcon(album, QString(),
-                                                                    imageId, err))
-                    {
-                        qCDebug(DIGIKAM_GENERAL_LOG) << err ;
-                    }
-                }
+                qCDebug(DIGIKAM_GENERAL_LOG) << err ;
             }
         }
-    );
+    }
 }
 
 void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
