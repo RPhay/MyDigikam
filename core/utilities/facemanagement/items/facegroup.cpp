@@ -366,6 +366,21 @@ void FaceGroup::rejectAll()
     clear();
 }
 
+void FaceGroup::markAllAsIgnored()
+{
+    Q_FOREACH (FaceItem* const item, d->items)
+    {
+        if (item->face().isUnknownName())
+        {
+            FaceTagsIface face = d->editPipeline.editTag(d->info, item->face(),
+                                                         FaceTags::ignoredPersonTagId());
+
+            item->setFace(face);
+            item->switchMode(AssignNameWidget::IgnoredMode);
+        }
+    }
+}
+
 void FaceGroup::slotAlbumsUpdated(int type)
 {
     if (type != Album::TAG)

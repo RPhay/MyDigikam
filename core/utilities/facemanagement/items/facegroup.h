@@ -114,6 +114,11 @@ public Q_SLOTS:
      */
     void rejectAll();
 
+    /**
+     * Mark all unknown faces as ignored on the current image
+     */
+    void markAllAsIgnored();
+
 protected:
 
     void load();

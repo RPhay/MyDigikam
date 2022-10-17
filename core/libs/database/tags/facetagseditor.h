@@ -175,9 +175,9 @@ protected:
     void addFaceAndTag(ItemTagPair& pair, const FaceTagsIface& face, const QStringList& properties, bool addTag);
     void removeFaceAndTag(ItemTagPair& pair, const FaceTagsIface& face, bool touchTags);
 
-    virtual void addNormalTag(qlonglong imageid, int tagId);
-    virtual void removeNormalTag(qlonglong imageid, int tagId);
-    virtual void removeNormalTags(qlonglong imageid, const QList<int>& tagId);
+    virtual void addNormalTag(qlonglong imageId, int tagId);
+    virtual void removeNormalTag(qlonglong imageId, int tagId);
+    virtual void removeNormalTags(qlonglong imageId, const QList<int>& tagIds);
 
 private:
 

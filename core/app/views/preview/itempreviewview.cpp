@@ -102,6 +102,7 @@ public:
         peopleToggleAction  (nullptr),
         addPersonAction     (nullptr),
         forgetFacesAction   (nullptr),
+        markAsIgnoredAction (nullptr),
         focusPointGroup     (nullptr),
         addFocusPointAction (nullptr),
         showFocusPointAction(nullptr),
@@ -130,6 +131,7 @@ public:
     QAction*               peopleToggleAction;
     QAction*               addPersonAction;
     QAction*               forgetFacesAction;
+    QAction*               markAsIgnoredAction;
 
     FocusPointGroup*       focusPointGroup;
     QAction*               addFocusPointAction;
@@ -201,6 +203,9 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
     d->forgetFacesAction        = new QAction(QIcon::fromTheme(QLatin1String("list-remove-user")),
                                               i18n("Clear all faces on this image"),  this);
 
+    d->markAsIgnoredAction      = new QAction(QIcon::fromTheme(QLatin1String("dialog-cancel")),
+                                              i18n("Mark all unknown faces as ignored"),  this);
+
     d->peopleToggleAction       = ac->action(QLatin1String("toggle_show_face_tags"));
 
     if (!d->peopleToggleAction)
@@ -263,6 +268,9 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
 
     connect(d->forgetFacesAction, SIGNAL(triggered()),
             d->faceGroup, SLOT(rejectAll()));
+
+    connect(d->markAsIgnoredAction, SIGNAL(triggered()),
+            d->faceGroup, SLOT(markAllAsIgnored()));
 
     connect(d->addFocusPointAction, SIGNAL(triggered()),
             d->focusPointGroup, SLOT(addPoint()));
@@ -396,10 +404,15 @@ bool ItemPreviewView::acceptsMouseClick(QMouseEvent* e)
 }
 
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
 void ItemPreviewView::enterEvent(QEnterEvent* e)
+
 #else
+
 void ItemPreviewView::enterEvent(QEvent* e)
+
 #endif
+
 {
     d->faceGroup->enterEvent(e);
 }
@@ -452,9 +465,10 @@ void ItemPreviewView::slotShowContextMenu(QGraphicsSceneContextMenuEvent* event)
 
     cmHelper.addAction(QLatin1String("image_scan_for_faces"));
     cmHelper.addAction(QLatin1String("image_recognize_faces"));
-    cmHelper.addAction(d->peopleToggleAction, true);
-    cmHelper.addAction(d->addPersonAction,    true);
-    cmHelper.addAction(d->forgetFacesAction,  true);
+    cmHelper.addAction(d->peopleToggleAction,  true);
+    cmHelper.addAction(d->addPersonAction,     true);
+    cmHelper.addAction(d->forgetFacesAction,   true);
+    cmHelper.addAction(d->markAsIgnoredAction, true);
     cmHelper.addSeparator();
 
     // -------------------------------------------------------

@@ -37,6 +37,8 @@
 #include "tagregion.h"
 #include "thumbnailloadthread.h"
 #include "albummanager.h"
+#include "scancontroller.h"
+#include "metadatahub.h"
 
 namespace Digikam
 {
@@ -309,6 +311,13 @@ void FaceUtils::addNormalTag(qlonglong imageId, int tagId)
 {
     FaceTagsEditor::addNormalTag(imageId, tagId);
 
+    ItemInfo info(imageId);
+    MetadataHub hub;
+    hub.load(info);
+
+    ScanController::FileMetadataWrite writeScope(info);
+    writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_TAGS));
+
     /**
      * Implementation for automatic assigning of face as
      * Tag Icon, if no icon exists currently.
@@ -346,6 +355,13 @@ void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
 {
     FaceTagsEditor::removeNormalTag(imageId, tagId);
 
+    ItemInfo info(imageId);
+    MetadataHub hub;
+    hub.load(info);
+
+    ScanController::FileMetadataWrite writeScope(info);
+    writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_TAGS));
+
     if (
         !FaceTags::isTheIgnoredPerson(tagId)  &&
         !FaceTags::isTheUnknownPerson(tagId)  &&
@@ -375,6 +391,18 @@ void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
             }
         }
     }
+}
+
+void FaceUtils::removeNormalTags(qlonglong imageId, const QList<int>& tagIds)
+{
+    FaceTagsEditor::removeNormalTags(imageId, tagIds);
+
+    ItemInfo info(imageId);
+    MetadataHub hub;
+    hub.load(info);
+
+    ScanController::FileMetadataWrite writeScope(info);
+    writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_TAGS));
 }
 
 // --- Utilities ---

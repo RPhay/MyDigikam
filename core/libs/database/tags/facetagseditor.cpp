@@ -513,12 +513,14 @@ FaceTagsIface FaceTagsEditor::changeTag(const FaceTagsIface& face, int newTagId,
      * it's important to remove the association between
      * the face and the old tagId.
      *
-     * If the face is being ignored and it was an unconfirmed face,
-     * don't remove a possible tag. See bug 449142
+     * If the face is being ignored and it was an unconfirmed or
+     * unknown face don't remove a possible tag. See bug 449142
      */
 
-    bool touchTags = !(FaceTags::isTheIgnoredPerson(newTagId)        &&
-                       (face.type() == FaceTagsIface::UnconfirmedName));
+    bool touchTags = !(
+                       FaceTags::isTheIgnoredPerson(newTagId)     &&
+                       (face.type() != FaceTagsIface::ConfirmedName)
+                      );
 
     removeFace(face, touchTags);
 
@@ -529,16 +531,8 @@ FaceTagsIface FaceTagsEditor::changeTag(const FaceTagsIface& face, int newTagId,
     ItemTagPair newPair(newFace.imageId(), newFace.tagId());
 
     /**
-     * NOTE: Ignored Tag is being associated with the Images.
-     * This is to allow storing Ignored information in the metadata
-     * of the image.
-     * We store metadata of FaceTags, if it's a confirmed
-     * or ignored person.
+     * We store metadata of FaceTags, if it's a confirmed person.
      */
-/*
-    bool isConfirmedOrIgnored = !FaceTags::isTheUnknownPerson(newTagId) &&
-                                !FaceTags::isTheUnconfirmedPerson(newTagId);
-*/
 
     bool isConfirmed = (
                         !FaceTags::isTheIgnoredPerson(newTagId)  &&
