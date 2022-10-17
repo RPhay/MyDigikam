@@ -138,6 +138,14 @@ public:
     void setTag(int albumID,
                 DisjointMetadataDataFields::Status status = DisjointMetadataDataFields::MetadataAvailable);
 
+    /**
+     * Special case if the metadata of color, pick or rating has already been changed outside.
+     * Replace with current values as if there is no change.
+     */
+    void replaceColorLabel(int colorId);
+    void replacePickLabel(int pickId);
+    void replaceRating(int rating);
+
     //@}
 
     /**

@@ -412,7 +412,7 @@ void ItemPropertiesSideBarDB::slotImageChangeDatabase(const ImageChangeset& chan
             return;
         }
 
-        if ((tab == m_propertiesStackedView)
+        if      ((tab == m_propertiesStackedView)
 
 #ifdef HAVE_MARBLE
 
@@ -459,6 +459,20 @@ void ItemPropertiesSideBarDB::slotImageChangeDatabase(const ImageChangeset& chan
                 }
             }
         }
+        else if (tab == d->desceditTab)
+        {
+            ItemInfo& info = d->currentInfos.first();
+
+            if (changeset.ids().contains(info.id()))
+            {
+                DatabaseFields::Set set = changeset.changes();
+
+                if (set & DatabaseFields::Rating)
+                {
+                    d->desceditTab->replaceRating(info.rating());
+                }
+            }
+        }
     }
 }
 
@@ -473,7 +487,7 @@ void ItemPropertiesSideBarDB::slotImageTagChanged(const ImageTagChangeset& chang
             return;
         }
 
-        if (tab == m_propertiesStackedView)
+        if      (tab == m_propertiesStackedView)
         {
             ItemInfo& info = d->currentInfos.first();
 
@@ -481,6 +495,34 @@ void ItemPropertiesSideBarDB::slotImageTagChanged(const ImageTagChangeset& chang
             {
                 m_dirtyPropertiesTab = false;
                 slotChangedTab(tab);
+            }
+        }
+        else if (tab == d->desceditTab)
+        {
+            ItemInfo& info = d->currentInfos.first();
+
+            if (changeset.ids().contains(info.id()))
+            {
+                QVector<int> colorLabelTags = TagsCache::instance()->colorLabelTags();
+                QVector<int> pickLabelTags  = TagsCache::instance()->pickLabelTags();
+
+                Q_FOREACH (int ctag, changeset.tags())
+                {
+                    if (colorLabelTags.contains(ctag))
+                    {
+                        d->desceditTab->replaceColorLabel(info.colorLabel());
+                        break;
+                    }
+                }
+
+                Q_FOREACH (int ptag, changeset.tags())
+                {
+                    if (pickLabelTags.contains(ptag))
+                    {
+                        d->desceditTab->replacePickLabel(info.pickLabel());
+                        break;
+                    }
+                }
             }
         }
     }

@@ -167,19 +167,37 @@ void ItemDescEditTab::slotRatingChanged(int rating)
     slotModified();
 }
 
-void ItemDescEditTab::assignPickLabel(int pickId)
-{
-    d->pickLabelSelector->setPickLabel((PickLabel)pickId);
-}
-
 void ItemDescEditTab::assignColorLabel(int colorId)
 {
     d->colorLabelSelector->setColorLabel((ColorLabel)colorId);
 }
 
+void ItemDescEditTab::assignPickLabel(int pickId)
+{
+    d->pickLabelSelector->setPickLabel((PickLabel)pickId);
+}
+
 void ItemDescEditTab::assignRating(int rating)
 {
     d->ratingWidget->setRating(rating);
+}
+
+void ItemDescEditTab::replaceColorLabel(int colorId)
+{
+    d->hub->replaceColorLabel(colorId);
+    updateColorLabel();
+}
+
+void ItemDescEditTab::replacePickLabel(int pickId)
+{
+    d->hub->replacePickLabel(pickId);
+    updatePickLabel();
+}
+
+void ItemDescEditTab::replaceRating(int rating)
+{
+    d->hub->replaceRating(rating);
+    updateRating();
 }
 
 void ItemDescEditTab::updateComments()

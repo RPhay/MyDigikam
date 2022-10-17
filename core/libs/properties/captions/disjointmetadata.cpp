@@ -282,6 +282,27 @@ void DisjointMetadata::setTag(int albumID, DisjointMetadataDataFields::Status st
     d->tagsChanged   = true;
 }
 
+void DisjointMetadata::replaceColorLabel(int colorId)
+{
+    d->colorLabelStatus  = DisjointMetadataDataFields::MetadataAvailable;
+    d->colorLabel        = colorId;
+    d->colorLabelChanged = false;
+}
+
+void DisjointMetadata::replacePickLabel(int pickId)
+{
+    d->pickLabelStatus  = DisjointMetadataDataFields::MetadataAvailable;
+    d->pickLabel        = pickId;
+    d->pickLabelChanged = false;
+}
+
+void DisjointMetadata::replaceRating(int rating)
+{
+    d->ratingStatus   = DisjointMetadataDataFields::MetadataAvailable;
+    d->rating         = rating;
+    d->ratingChanged  = false;
+}
+
 void DisjointMetadata::resetChanged()
 {
     d->dateTimeChanged   = false;

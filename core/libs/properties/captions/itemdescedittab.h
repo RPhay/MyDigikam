@@ -94,11 +94,15 @@ private Q_SLOTS:
 
 public:
 
-    void assignPickLabel(int pickId);
     void assignColorLabel(int colorId);
+    void assignPickLabel(int pickId);
     void assignRating(int rating);
     void setFocusToTitlesEdit();
     void setFocusToCommentsEdit();
+
+    void replaceColorLabel(int colorId);
+    void replacePickLabel(int pickId);
+    void replaceRating(int rating);
 
 private:
 
