@@ -269,10 +269,37 @@ void FacesDetector::slotStart()
         return;
     }
 
-    setLabel(i18n("Updating faces database."));
     setThumbnail(QIcon::fromTheme(QLatin1String("edit-image-face-show")).pixmap(22));
 
-    ProgressManager::addProgressItem(this);
+    // set label depending on settings
+    if (d->albumTodoList.size() > 0)
+    {
+        if (d->albumTodoList.size() == 1)
+        {
+            setLabel(i18n("Scan for faces in album: %1.", d->albumTodoList.first()->title()));
+        }
+        else
+        {
+            setLabel(i18n("Scan for faces in %1 albums.", d->albumTodoList.size()));
+        }
+    }
+    else if (d->infoTodoList.size() > 0)
+    {
+        if (d->infoTodoList.size() == 1)
+        {
+            setLabel(i18n("Scan for faces in image: %1.", d->infoTodoList.first().name()));
+        }
+        else
+        {
+            setLabel(i18n("Scan for faces in %1 images.", d->infoTodoList.size()));
+        }
+    }
+    else
+    {
+        setLabel(i18n("Updating faces database."));
+    }
+
+    ProgressManager::addProgressItem(this, nullptr, true);
 
     if      (d->source == FacesDetector::Infos)
     {

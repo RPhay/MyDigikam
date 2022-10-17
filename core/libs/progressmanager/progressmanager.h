@@ -69,6 +69,11 @@ public:
     ProgressItem* parent()                                  const;
 
     /**
+     * @return Set the parent of a ProgressItem.
+     */
+    void setParent(ProgressItem* const parent)              const;
+
+    /**
      * @return The user visible string to be used to represent this item.
      */
     const QString& label()                                  const;
@@ -158,6 +163,11 @@ public:
      * Recalculate progress according to total/completed items and update.
      */
     void updateProgress();
+
+    /**
+     * Recalculate progress according to total/completed items in all children and update.
+     */
+    void updateParentProgress();
 
     /**
      * Advance total items processed by n values and update percentage in progressbar.
@@ -364,9 +374,10 @@ public:
      *
      * @param t The process to add on manager.
      * @param parent Specify an already existing item as the parent of this one (can be null).
+     * @param allowMultiple Whether several elements of this ProgressItems can be there in parallel. Defaults to false.
      * @return true if ProgressItem have been added to manager, else false.
      */
-    static bool addProgressItem(ProgressItem* const t, ProgressItem* const parent = nullptr);
+    static bool addProgressItem(ProgressItem* const t, ProgressItem* const parent = nullptr, bool const allowMultiple = false);
 
     /**
      * Ask all listeners to show the progress dialog, because there is
