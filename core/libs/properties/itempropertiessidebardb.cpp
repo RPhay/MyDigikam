@@ -459,7 +459,7 @@ void ItemPropertiesSideBarDB::slotImageChangeDatabase(const ImageChangeset& chan
                 }
             }
         }
-        else if (tab == d->desceditTab)
+        else if ((tab == d->desceditTab) && d->desceditTab->isModified())
         {
             ItemInfo& info = d->currentInfos.first();
 
@@ -497,7 +497,7 @@ void ItemPropertiesSideBarDB::slotImageTagChanged(const ImageTagChangeset& chang
                 slotChangedTab(tab);
             }
         }
-        else if (tab == d->desceditTab)
+        else if ((tab == d->desceditTab) && d->desceditTab->isModified())
         {
             ItemInfo& info = d->currentInfos.first();
 

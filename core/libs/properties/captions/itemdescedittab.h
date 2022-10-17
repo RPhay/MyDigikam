@@ -57,6 +57,8 @@ public:
     void readSettings(KConfigGroup& group);
     void writeSettings(KConfigGroup& group);
 
+    bool isModified() const;
+
 Q_SIGNALS:
 
     void signalProgressMessageChanged(const QString& actionDescription);

@@ -183,6 +183,11 @@ bool ItemDescEditTab::eventFilter(QObject* o, QEvent* e)
     return DVBox::eventFilter(o, e);
 }
 
+bool ItemDescEditTab::isModified() const
+{
+    return d->modified;
+}
+
 void ItemDescEditTab::slotChangingItems()
 {
     if (!d->modified)
