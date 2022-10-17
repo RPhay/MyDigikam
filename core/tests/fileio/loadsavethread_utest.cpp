@@ -19,6 +19,7 @@
 #include <QTest>
 #include <QFileInfo>
 #include <QList>
+#include <QDir>
 
 // Local includes
 
@@ -39,6 +40,8 @@ LoadSaveThreadTest::LoadSaveThreadTest(QObject* const parent)
 void LoadSaveThreadTest::testLoadSaveThread()
 {
     MetaEngine::initializeExiv2();
+    QDir dir(qApp->applicationDirPath());
+    qputenv("DK_PLUGIN_PATH", dir.canonicalPath().toUtf8());
     DPluginLoader::instance()->init();
 
     if (DPluginLoader::instance()->allPlugins().isEmpty())
@@ -46,7 +49,6 @@ void LoadSaveThreadTest::testLoadSaveThread()
         // Temporary work around with the non available plugins found in standard path, aka with CI infrastructure.
 
         QWARN("Not able to found digiKam plugin in standard paths. Test is aborted...");
-
         return;
     }
 
@@ -81,7 +83,14 @@ void LoadSaveThreadTest::testLoadSaveThread()
 
     m_thread->load(desc);
 
-    QTest::qWait(5000);
+    int i = 0;
+
+    do
+    {
+        QTest::qWait(1000);
+        i++;
+    }
+    while ((i < 10) && !(m_loaded && m_saved));
 
     QVERIFY2(m_loadedProgress, "Failed to progress image loading");
     QVERIFY2(m_savedProgress,  "Failed to progress image saving");
