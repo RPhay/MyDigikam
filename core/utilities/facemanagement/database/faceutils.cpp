@@ -305,7 +305,7 @@ int FaceUtils::tagForIdentity(const Identity& identity) const
     return FaceTags::getOrCreateTagForIdentity(identity.attributesMap());
 }
 
-// --- Editing normal tags, reimplemented with FileActionMngr ---
+// --- Editing normal tags, reimplemented with MetadataHub ---
 
 void FaceUtils::addNormalTag(qlonglong imageId, int tagId)
 {
