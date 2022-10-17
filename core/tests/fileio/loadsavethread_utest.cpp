@@ -96,6 +96,8 @@ void LoadSaveThreadTest::testLoadSaveThread()
     QVERIFY2(m_savedProgress,  "Failed to progress image saving");
     QVERIFY2(m_loaded,         "Failed to load image");
     QVERIFY2(m_saved,          "Failed to save image");
+
+    DPluginLoader::instance()->cleanUp();
 }
 
 void LoadSaveThreadTest::slotLoadingProgress(const LoadingDescription& desc, float p)
