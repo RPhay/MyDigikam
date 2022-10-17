@@ -24,6 +24,7 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "addtagscombobox.h"
 #include "albummodel.h"
 #include "albumfiltermodel.h"
@@ -33,13 +34,12 @@
 #include "facepipeline.h"
 #include "faceitem.h"
 #include "facetags.h"
+#include "faceutils.h"
 #include "facetagseditor.h"
 #include "graphicsdimgview.h"
 #include "iteminfo.h"
-#include "metadatahub.h"
 #include "taggingaction.h"
-#include "digikam_debug.h"
-#include "scancontroller.h"
+#include "metaenginesettings.h"
 #include "itemvisibilitycontroller.h"
 
 namespace Digikam

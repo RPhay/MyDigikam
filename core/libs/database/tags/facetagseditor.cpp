@@ -548,6 +548,39 @@ FaceTagsIface FaceTagsEditor::changeTag(const FaceTagsIface& face, int newTagId,
     return newFace;
  }
 
+bool FaceTagsEditor::rotateFaces(qlonglong imageId, const QSize& size,
+                                 int oldOrientation, int newOrientation)
+{
+    bool hasConfirmed = false;
+
+    // Get all faces from database and rotate them
+
+    QList<FaceTagsIface> facesList = databaseFaces(imageId);
+
+    if (facesList.isEmpty())
+    {
+        return hasConfirmed;
+    }
+
+    QSize newSize = size;
+
+    Q_FOREACH (const FaceTagsIface& face, facesList)
+    {
+        hasConfirmed  |= face.isConfirmedName();
+        QRect faceRect = face.region().toRect();
+
+        TagRegion::reverseToOrientation(faceRect,
+                                        oldOrientation, size);
+
+        newSize = TagRegion::adjustToOrientation(faceRect,
+                                                 newOrientation, size);
+
+        changeRegion(face, TagRegion(faceRect));
+    }
+
+    return hasConfirmed;
+}
+
 // --- Editing normal tags ---
 
 void FaceTagsEditor::addNormalTag(qlonglong imageId, int tagId)

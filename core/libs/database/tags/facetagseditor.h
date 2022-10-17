@@ -165,6 +165,12 @@ public:
      */
     FaceTagsIface        changeTag(const FaceTagsIface& face, int newTagId, ItemInfo& info);
 
+    /**
+     * Rotate face tags
+     */
+    bool                 rotateFaces(qlonglong imageId, const QSize& size,
+                                     int oldOrientation, int newOrientation);
+
     // --- Utilities ---
 
     QList<FaceTagsIface> databaseFaces(qlonglong imageId, FaceTagsIface::TypeFlags flags)       const;

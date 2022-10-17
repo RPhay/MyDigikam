@@ -114,14 +114,6 @@ public:
                                          const QSize& fullSize)                         const;
 
     /**
-     * Rotate face tags
-     */
-    QSize                rotateFaces(qlonglong imageId,
-                                     const QSize& size,
-                                     int oldOrientation,
-                                     int newOrientation);
-
-    /**
      * For display, it may be desirable to display a slightly larger region than the strict
      * face rectangle. This returns a pixel margin commonly used to increase the rectangle size
      * in all four directions.

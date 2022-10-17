@@ -355,14 +355,7 @@ void FaceGroup::clear()
 
 void FaceGroup::rejectAll()
 {
-    FaceTagsEditor().removeAllFaces(d->info.id());
-
-    MetadataHub hub;
-    hub.load(d->info);
-
-    ScanController::FileMetadataWrite writeScope(d->info);
-    writeScope.changed(hub.writeToMetadata(d->info, MetadataHub::WRITE_TAGS));
-
+    FaceUtils().removeAllFaces(d->info.id());
     clear();
 }
 

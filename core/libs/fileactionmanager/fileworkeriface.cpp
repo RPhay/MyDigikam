@@ -32,7 +32,7 @@
 #include "iteminfotasksplitter.h"
 #include "filereadwritelock.h"
 #include "scancontroller.h"
-#include "faceutils.h"
+#include "facetagseditor.h"
 #include "jpegutils.h"
 #include "dimg.h"
 
@@ -319,12 +319,14 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
         ScanController::instance()->scannedInfo(filePath,
                                                 CollectionScanner::ModifiedScan);
 
-        // Adjust Faces in the DB and Metadata.
+        // Adjust faces in the DB
 
-        QSize newSize = FaceUtils().rotateFaces(info.id(), originalSize,
-                                                currentOrientation, finalOrientation);
+        bool confirmed = FaceTagsEditor().rotateFaces(info.id(), originalSize,
+                                                      currentOrientation, finalOrientation);
 
-        if (newSize.isValid())
+        // Write faces to metadata when confirmed names exists
+
+        if (confirmed)
         {
             MetadataHub hub;
             hub.load(info);

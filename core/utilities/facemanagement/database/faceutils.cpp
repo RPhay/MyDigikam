@@ -407,39 +407,6 @@ void FaceUtils::removeNormalTags(qlonglong imageId, const QList<int>& tagIds)
 
 // --- Utilities ---
 
-QSize FaceUtils::rotateFaces(qlonglong imageId,
-                             const QSize& size,
-                             int oldOrientation,
-                             int newOrientation)
-{
-    /**
-     *  Get all faces from database and rotate them
-     */
-    QList<FaceTagsIface> facesList = databaseFaces(imageId);
-
-    if (facesList.isEmpty())
-    {
-        return QSize();
-    }
-
-    QSize newSize = size;
-
-    Q_FOREACH (const FaceTagsIface& dface, facesList)
-    {
-        QRect faceRect = dface.region().toRect();
-
-        TagRegion::reverseToOrientation(faceRect,
-                                        oldOrientation, size);
-
-        newSize = TagRegion::adjustToOrientation(faceRect,
-                                                 newOrientation, size);
-
-        changeRegion(dface, TagRegion(faceRect));
-    }
-
-    return newSize;
-}
-
 int FaceUtils::faceRectDisplayMargin(const QRect& rect)
 {
     /*
