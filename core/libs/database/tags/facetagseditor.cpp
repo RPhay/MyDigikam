@@ -517,12 +517,7 @@ FaceTagsIface FaceTagsEditor::changeTag(const FaceTagsIface& face, int newTagId,
      * unknown face don't remove a possible tag. See bug 449142
      */
 
-    bool touchTags = !(
-                       FaceTags::isTheIgnoredPerson(newTagId)     &&
-                       (face.type() != FaceTagsIface::ConfirmedName)
-                      );
-
-    removeFace(face, touchTags);
+    removeFace(face, (face.type() == FaceTagsIface::ConfirmedName));
 
     FaceTagsIface newFace = face;
     newFace.setTagId(newTagId);
