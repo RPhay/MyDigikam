@@ -106,6 +106,12 @@ void DatabaseMysqlInitTest::testMysqlInit()
         return;
     }
 
+    if (!QSqlDatabase::isDriverAvailable(DbEngineParameters::MySQLDatabaseType()))
+    {
+        QWARN("Qt MySQL plugin is missing.");
+        return;
+    }
+
     DbEngineParameters params;
     QString defaultAkDir               = DbEngineParameters::internalServerPrivatePath();
     QString miscDir                    = QDir(defaultAkDir).absoluteFilePath(QLatin1String("db_misc"));

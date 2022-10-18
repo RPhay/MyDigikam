@@ -79,6 +79,12 @@ void DatabaseSqliteInitTest::testSqliteInit()
 {
     qCDebug(DIGIKAM_TESTS_LOG) << "Setup Sqlite Database...";
 
+    if (!QSqlDatabase::isDriverAvailable(DbEngineParameters::SQLiteDatabaseType()))
+    {
+        QWARN("Qt SQlite plugin is missing.");
+        return;
+    }
+
     DbEngineParameters params;
     params.databaseType = DbEngineParameters::SQLiteDatabaseType();
     params.setCoreDatabasePath(m_tempDir.path() + QLatin1String("/digikam-core-test.db"));
