@@ -81,6 +81,15 @@ int main(int argc, char** argv)
         return -1;
     }
 
+    if (!QSqlDatabase::isDriverAvailable(DbEngineParameters::SQLiteDatabaseType()) ||
+        !QSqlDatabase::isDriverAvailable(DbEngineParameters::MySQLDatabaseType()))
+    {
+        qCWarning(DIGIKAM_TESTS_LOG) << "One Qt SQL plugin is missing. "
+                                       "SQlite and Mysql drivers must be installed on your system.";
+        qCWarning(DIGIKAM_TESTS_LOG) << "Current Qt SQL plugins available:" << QSqlDatabase::drivers();
+        return -1;
+    }
+
     QString tempPath = QString::fromLatin1(QTest::currentAppName());
     tempPath.replace(QLatin1String("./"), QString());
     QDir tempDir     = WSToolUtils::makeTemporaryDir(tempPath.toLatin1().data());
