@@ -70,20 +70,24 @@ ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/databasesqliteinit_utest.cpp
 
 #------------------------------------------------------------------------
 
-ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/databasemysqlinit_utest.cpp
+if (ENABLE_MYSQLSUPPORT AND ENABLE_INTERNALMYSQL)
 
-              NAME_PREFIX
+    ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/databasemysqlinit_utest.cpp
 
-              "digikam-"
+                  NAME_PREFIX
 
-              LINK_LIBRARIES
+                  "digikam-"
 
-              digikamcore
-              digikamdatabase
-              digikamgui
+                  LINK_LIBRARIES
 
-              ${COMMON_TEST_LINK}
-)
+                  digikamcore
+                  digikamdatabase
+                  digikamgui
+
+                  ${COMMON_TEST_LINK}
+    )
+
+endif()
 
 #------------------------------------------------------------------------
 
