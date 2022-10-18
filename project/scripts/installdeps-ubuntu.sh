@@ -206,6 +206,7 @@ optional_packages=("ruby"                               # For i18n extraction
                    "exiftool"                           # For metadata processing
                    "bison"                              # For Qt build (>= 2.5.0)
                    "flex"                               # For compiling (>= 2.5.0)
+                   "mariadb-server"                     # Run-time: mysql internal server init
                    "curl"                               # For CI/CD
                    "wget"                               # For CI/CD
                    "coreutils"                          # For CI/CD
