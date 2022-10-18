@@ -41,6 +41,9 @@
 #include "digikam_version.h"
 #include "dtestdatadir.h"
 #include "wstoolutils.h"
+#include "mysqladminbinary.h"
+#include "mysqlinitbinary.h"
+#include "mysqlservbinary.h"
 
 using namespace Digikam;
 
@@ -78,6 +81,30 @@ void DatabaseMysqlInitTest::initTestCase()
 void DatabaseMysqlInitTest::testMysqlInit()
 {
     qCDebug(DIGIKAM_TESTS_LOG) << "Setup Mysql Database...";
+
+    MysqlInitBinary  mysqlInitBin;
+
+    if (!mysqlInitBin.recheckDirectories())
+    {
+        QWARN("Not able to found the Mysql Init binary program. Test is aborted...");
+        return;
+    }
+
+    MysqlAdminBinary mysqlAdminBin;
+
+    if (!mysqlAdminBin.recheckDirectories())
+    {
+        QWARN("Not able to found the Mysql Admin binary program. Test is aborted...");
+        return;
+    }
+
+    MysqlServBinary  mysqlServBin;
+
+    if (!mysqlServBin.recheckDirectories())
+    {
+        QWARN("Not able to found the Mysql Server binary program. Test is aborted...");
+        return;
+    }
 
     DbEngineParameters params;
     QString defaultAkDir               = DbEngineParameters::internalServerPrivatePath();
