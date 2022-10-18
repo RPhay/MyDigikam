@@ -174,37 +174,6 @@ bool DMetadata::setItemFacesMap(const QMultiMap<QString, QVariant>& facesPath, b
         return true;
     }
 
-    if (!size.isNull())
-    {
-        // Set tag AppliedToDimens, with xmp type struct
-
-        setXmpTagString(adimTagName.toLatin1().constData(),
-                        QString(),
-                        MetaEngine::StructureTag);
-
-        // Set stDim:w inside AppliedToDimens structure
-
-        setXmpTagString(adimwTagKey.toLatin1().constData(),
-                        QString::number(size.width()),
-                        MetaEngine::NormalTag);
-
-        // Set stDim:h inside AppliedToDimens structure
-
-        setXmpTagString(adimhTagKey.toLatin1().constData(),
-                        QString::number(size.height()),
-                        MetaEngine::NormalTag);
-
-        // Set stDim:unit inside AppliedToDimens structure as pixel
-
-        setXmpTagString(adimpixTagKey.toLatin1().constData(),
-                        QLatin1String("pixel"),
-                        MetaEngine::NormalTag);
-    }
-
-    setXmpTagString(qxmpTagName.toLatin1().constData(),
-                    QString(),
-                    MetaEngine::ArrayBagTag);
-
     setXmpTagString(winQxmpTagName.toLatin1().constData(),
                     QString(),
                     MetaEngine::ArrayBagTag);
@@ -213,6 +182,7 @@ bool DMetadata::setItemFacesMap(const QMultiMap<QString, QVariant>& facesPath, b
     int i                                           = 1;
     int j                                           = 1;
     bool ok                                         = true;
+    bool validFaces                                 = false;
 
     while (it != facesPath.constEnd())
     {
@@ -228,6 +198,42 @@ bool DMetadata::setItemFacesMap(const QMultiMap<QString, QVariant>& facesPath, b
             ++i;
 
             continue;
+        }
+
+        if (!validFaces)
+        {
+            if (!size.isNull())
+            {
+                // Set tag AppliedToDimens, with xmp type struct
+
+                setXmpTagString(adimTagName.toLatin1().constData(),
+                                QString(),
+                                MetaEngine::StructureTag);
+
+                // Set stDim:w inside AppliedToDimens structure
+
+                setXmpTagString(adimwTagKey.toLatin1().constData(),
+                                QString::number(size.width()),
+                                MetaEngine::NormalTag);
+
+                // Set stDim:h inside AppliedToDimens structure
+
+                setXmpTagString(adimhTagKey.toLatin1().constData(),
+                                QString::number(size.height()),
+                                MetaEngine::NormalTag);
+
+                // Set stDim:unit inside AppliedToDimens structure as pixel
+
+                setXmpTagString(adimpixTagKey.toLatin1().constData(),
+                                QLatin1String("pixel"),
+                                MetaEngine::NormalTag);
+            }
+
+            setXmpTagString(qxmpTagName.toLatin1().constData(),
+                            QString(),
+                            MetaEngine::ArrayBagTag);
+
+            validFaces = true;
         }
 
         qreal x, y, w, h;
