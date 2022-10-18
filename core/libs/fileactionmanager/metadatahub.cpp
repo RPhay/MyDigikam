@@ -569,15 +569,15 @@ bool MetadataHub::writeFaceTagsMap(const DMetadata& metadata, bool saveFaces)
 
     // Add confirmed face regions from the database.
 
-    Q_FOREACH (const FaceTagsIface& dface, d->facesList)
+    Q_FOREACH (const FaceTagsIface& face, d->facesList)
     {
-        if (!FaceTags::isSystemPersonTagId(dface.tagId()))
+        if (face.isConfirmedName())
         {
-            QString faceName = FaceTags::faceNameForTag(dface.tagId());
+            QString faceName = FaceTags::faceNameForTag(face.tagId());
 
             // Rotate face region back to the unaligned image.
 
-            QRect  tempRect  = dface.region().toRect();
+            QRect  tempRect  = face.region().toRect();
             TagRegion::reverseToOrientation(tempRect, orientation, size);
             QRectF faceRect  = TagRegion::absoluteToRelative(tempRect, size);
             faceTagsMap.insert(faceName, faceRect);
