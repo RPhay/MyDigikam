@@ -124,11 +124,11 @@ int main(int argc, char** argv)
         qCDebug(DIGIKAM_TESTS_LOG) << "Database initialization done: " << b;
 
         QTest::qWait(3000);
-
+/*
         qCDebug(DIGIKAM_TESTS_LOG) << "Shutting down database";
         ScanController::instance()->shutDown();
         AlbumManager::instance()->cleanUp();
-
+*/
         qCDebug(DIGIKAM_TESTS_LOG) << "Cleaning DB now";
         CoreDbAccess::cleanUpDatabase();
         ThumbsDbAccess::cleanUpDatabase();
@@ -164,8 +164,7 @@ int main(int argc, char** argv)
 
         qCDebug(DIGIKAM_TESTS_LOG) << "Database switch done";
 
-        QTimer::singleShot(5000, &app, SLOT(quit()));
-        app.exec();
+        QTest::qWait(5000);
 
         qCDebug(DIGIKAM_TESTS_LOG) << "Shutting down database";
         ScanController::instance()->shutDown();
@@ -185,21 +184,22 @@ int main(int argc, char** argv)
 
         qCDebug(DIGIKAM_TESTS_LOG) << "Setup mysql Database...";
 
-        QString defaultAkDir              = DbEngineParameters::internalServerPrivatePath();
-        QString miscDir                   = QDir(defaultAkDir).absoluteFilePath(QLatin1String("db_misc"));
-        params.databaseType               = DbEngineParameters::MySQLDatabaseType();
-        params.databaseNameCore           = QLatin1String("digikam");
-        params.databaseNameThumbnails     = QLatin1String("digikam");
-        params.databaseNameFace           = QLatin1String("digikam");
-        params.userName                   = QLatin1String("root");
-        params.password                   = QString();
-        params.internalServer             = true;
-        params.internalServerDBPath       = QDir::currentPath();
-        params.internalServerMysqlServCmd = DbEngineParameters::defaultMysqlServerCmd();
-        params.internalServerMysqlInitCmd = DbEngineParameters::defaultMysqlInitCmd();
-        params.hostName                   = QString();
-        params.port                       = -1;
-        params.connectOptions             = QString::fromLatin1("UNIX_SOCKET=%1/mysql.socket").arg(miscDir);
+        QString defaultAkDir               = DbEngineParameters::internalServerPrivatePath();
+        QString miscDir                    = QDir(defaultAkDir).absoluteFilePath(QLatin1String("db_misc"));
+        params.databaseType                = DbEngineParameters::MySQLDatabaseType();
+        params.databaseNameCore            = QLatin1String("digikam");
+        params.databaseNameThumbnails      = QLatin1String("digikam");
+        params.databaseNameFace            = QLatin1String("digikam");
+        params.userName                    = QLatin1String("root");
+        params.password                    = QString();
+        params.internalServer              = true;
+        params.internalServerDBPath        = tempDir.path();
+        params.internalServerMysqlServCmd  = DbEngineParameters::defaultMysqlServerCmd();
+        params.internalServerMysqlInitCmd  = DbEngineParameters::defaultMysqlInitCmd();
+        params.internalServerMysqlAdminCmd = DbEngineParameters::defaultMysqlAdminCmd();
+        params.hostName                    = QString();
+        params.port                        = -1;
+        params.connectOptions              = QString::fromLatin1("UNIX_SOCKET=%1/mysql.socket").arg(miscDir);
 
         // ------------------------------------------------------------------------------------
 
@@ -208,13 +208,12 @@ int main(int argc, char** argv)
 
         qCDebug(DIGIKAM_TESTS_LOG) << "Database switch done";
 
-        QTimer::singleShot(5000, &app, SLOT(quit()));
-        app.exec();
-
+        QTest::qWait(5000);
+/*
         qCDebug(DIGIKAM_TESTS_LOG) << "Shutting down database";
         ScanController::instance()->shutDown();
         AlbumManager::instance()->cleanUp();
-
+*/
         qCDebug(DIGIKAM_TESTS_LOG) << "Cleaning DB now";
         CoreDbAccess::cleanUpDatabase();
         ThumbsDbAccess::cleanUpDatabase();
@@ -237,9 +236,9 @@ int main(int argc, char** argv)
 
         QTest::qWait(3000);
 
-        //qCDebug(DIGIKAM_TESTS_LOG) << "Shutting down database";
-        //ScanController::instance()->shutDown();
-        //AlbumManager::instance()->cleanUp();
+        qCDebug(DIGIKAM_TESTS_LOG) << "Shutting down database";
+        ScanController::instance()->shutDown();
+        AlbumManager::instance()->cleanUp();
 
         qCDebug(DIGIKAM_TESTS_LOG) << "Cleaning DB now";
         CoreDbAccess::cleanUpDatabase();
