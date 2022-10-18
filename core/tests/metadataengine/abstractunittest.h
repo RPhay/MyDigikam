@@ -108,7 +108,7 @@ protected Q_SLOTS:
 
 protected:
 
-    QString m_tempPath;               ///< The temporary path to store file to process un unit test.
+    QString m_tempPath;               ///< The temporary path to store file to process unit test.
     QDir    m_tempDir;                ///< Same that previous as QDir object.
     bool    m_hasExifTool;            ///< ExifTool is available in unit test.
     QString m_originalImageFolder;    ///< The path to original files to process by unit test, and copied to the temporary directory. Original files still in read only.

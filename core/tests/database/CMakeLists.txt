@@ -34,19 +34,6 @@ target_link_libraries(checkdatabaseswitch_cli
 
 #------------------------------------------------------------------------
 
-add_executable(checkdatabaseinit_cli ${CMAKE_CURRENT_SOURCE_DIR}/checkdatabaseinit_cli.cpp)
-
-target_link_libraries(checkdatabaseinit_cli
-
-                      digikamcore
-                      digikamdatabase
-                      digikamgui
-
-                      ${COMMON_TEST_LINK}
-)
-
-#------------------------------------------------------------------------
-
 ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/databasefields_utest.cpp
 
               NAME_PREFIX
@@ -66,6 +53,40 @@ ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/databasefields_utest.cpp
 
 #------------------------------------------------------------------------
 
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/databasesqliteinit_utest.cpp
+
+              NAME_PREFIX
+
+              "digikam-"
+
+              LINK_LIBRARIES
+
+              digikamcore
+              digikamdatabase
+              digikamgui
+
+              ${COMMON_TEST_LINK}
+)
+
+#------------------------------------------------------------------------
+
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/databasemysqlinit_utest.cpp
+
+              NAME_PREFIX
+
+              "digikam-"
+
+              LINK_LIBRARIES
+
+              digikamcore
+              digikamdatabase
+              digikamgui
+
+              ${COMMON_TEST_LINK}
+)
+
+#------------------------------------------------------------------------
+
 add_executable(databasetags_utest ${CMAKE_CURRENT_SOURCE_DIR}/databasetags_utest.cpp)
 
 target_link_libraries(databasetags_utest
@@ -76,6 +97,8 @@ target_link_libraries(databasetags_utest
 
                       ${COMMON_TEST_LINK}
 )
+
+#------------------------------------------------------------------------
 
 # NOTE: this unit test fail to work as the temporary collection creation cannot be done in /tmp.
 #       we need to port code to use QTest directory, as it done with metadataengine unit-tests.
@@ -96,6 +119,8 @@ target_link_libraries(databasetags_utest
 #
 #              ${COMMON_TEST_LINK}
 #)
+
+#------------------------------------------------------------------------
 
 add_executable(tagscache_utest ${CMAKE_CURRENT_SOURCE_DIR}/tagscache_utest.cpp)
 

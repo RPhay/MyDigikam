@@ -1,0 +1,117 @@
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2010-06-21
+ * Description : unit test program for digiKam Mysql databse init
+ *
+ * SPDX-FileCopyrightText: 2013 by Michael G. Hansen <mike at mghansen dot de>
+ *
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ *
+ * ============================================================ */
+
+#include "databasemysqlinit_utest.h"
+
+// Qt includes
+
+#include <QApplication>
+#include <QDir>
+#include <QSqlDatabase>
+#include <QString>
+#include <QTimer>
+#include <QTest>
+#include <QCommandLineParser>
+
+// KDE includes
+
+#include <kaboutdata.h>
+
+// Local includes
+
+#include "digikam_debug.h"
+#include "daboutdata.h"
+#include "albummanager.h"
+#include "coredbaccess.h"
+#include "thumbsdbaccess.h"
+#include "facedbaccess.h"
+#include "dbengineparameters.h"
+#include "scancontroller.h"
+#include "digikam_version.h"
+#include "dtestdatadir.h"
+#include "wstoolutils.h"
+
+using namespace Digikam;
+
+QTEST_MAIN(DatabaseMysqlInitTest)
+
+void DatabaseMysqlInitTest::cleanupTestCase()
+{
+    WSToolUtils::removeTemporaryDir(m_tempPath.toLatin1().data());
+}
+
+void DatabaseMysqlInitTest::initTestCase()
+{
+    m_tempPath  = QString::fromLatin1(QTest::currentAppName());
+    m_tempPath.replace(QLatin1String("./"), QString());
+    m_tempDir   = WSToolUtils::makeTemporaryDir(m_tempPath.toLatin1().data());
+    qCDebug(DIGIKAM_TESTS_LOG) << "Database Dir:" << m_tempDir.path();
+
+    m_filesPath = DTestDataDir::TestData(QString::fromUtf8("core/tests/database/testimages"))
+                           .root().path() + QLatin1Char('/');
+    qCDebug(DIGIKAM_TESTS_LOG) << "Test Data Dir:" << m_filesPath;
+
+    KAboutData aboutData(QLatin1String("digikam"),
+                         QLatin1String("digiKam"), // No need i18n here.
+                         digiKamVersion());
+
+    QCommandLineParser parser;
+    KAboutData::setApplicationData(aboutData);
+    parser.addVersionOption();
+    parser.addHelpOption();
+    aboutData.setupCommandLine(&parser);
+    parser.process(*QCoreApplication::instance());
+    aboutData.processCommandLine(&parser);
+}
+
+void DatabaseMysqlInitTest::testMysqlInit()
+{
+    qCDebug(DIGIKAM_TESTS_LOG) << "Setup Mysql Database...";
+
+    DbEngineParameters params;
+    QString defaultAkDir               = DbEngineParameters::internalServerPrivatePath();
+    QString miscDir                    = QDir(defaultAkDir).absoluteFilePath(QLatin1String("db_misc"));
+    params.databaseType                = DbEngineParameters::MySQLDatabaseType();
+    params.databaseNameCore            = QLatin1String("digikam");
+    params.databaseNameThumbnails      = QLatin1String("digikam");
+    params.databaseNameFace            = QLatin1String("digikam");
+    params.databaseNameSimilarity      = QLatin1String("digikam");
+    params.userName                    = QLatin1String("root");
+    params.password                    = QString();
+    params.internalServer              = true;
+    params.internalServerDBPath        = m_tempDir.path();
+    params.internalServerMysqlServCmd  = DbEngineParameters::defaultMysqlServerCmd();
+    params.internalServerMysqlInitCmd  = DbEngineParameters::defaultMysqlInitCmd();
+    params.internalServerMysqlAdminCmd = DbEngineParameters::defaultMysqlAdminCmd();
+    params.hostName                    = QString();
+    params.port                        = -1;
+    params.connectOptions              = QString::fromLatin1("UNIX_SOCKET=%1/mysql.socket").arg(miscDir);
+
+    // ------------------------------------------------------------------------------------
+
+    qCDebug(DIGIKAM_TESTS_LOG) << "Initializing Mysql database...";
+    QVERIFY2(AlbumManager::instance()->setDatabase(params, false, m_filesPath),
+             "Cannot initialize Mysql database");
+
+    QTest::qWait(3000);
+
+    qCDebug(DIGIKAM_TESTS_LOG) << "Shutting down Mysql database";
+    ScanController::instance()->shutDown();
+    AlbumManager::instance()->cleanUp();
+
+    qCDebug(DIGIKAM_TESTS_LOG) << "Cleaning Mysql database";
+    CoreDbAccess::cleanUpDatabase();
+    ThumbsDbAccess::cleanUpDatabase();
+    FaceDbAccess::cleanUpDatabase();
+}
