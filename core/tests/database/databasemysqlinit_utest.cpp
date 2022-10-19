@@ -44,6 +44,7 @@
 #include "mysqladminbinary.h"
 #include "mysqlinitbinary.h"
 #include "mysqlservbinary.h"
+#include "databaseserverstarter.h"
 
 using namespace Digikam;
 
@@ -147,4 +148,6 @@ void DatabaseMysqlInitTest::testMysqlInit()
     CoreDbAccess::cleanUpDatabase();
     ThumbsDbAccess::cleanUpDatabase();
     FaceDbAccess::cleanUpDatabase();
+
+    DatabaseServerStarter::instance()->stopServerManagerProcess();
 }
