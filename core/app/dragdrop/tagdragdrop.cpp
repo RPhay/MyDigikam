@@ -208,15 +208,20 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
 
                 // here we set a new thumbnail
 
-                if      ((imageIDs.size() == 1) && (targetName == faceNames.first()))
+                if      ((imageIDs.size() == 1) && (destAlbum->id() == faceIds.first()))
                 {
                     bool set = false;
 
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
                     if (e->modifiers() == Qt::ControlModifier)
+
 #else
+
                     if (e->keyboardModifiers() == Qt::ControlModifier)
+
 #endif
+
                     {
                         set = true;
                     }
@@ -242,7 +247,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
 
                     return true;
                 }
-                else if (targetName != faceNames.first())
+                else if (destAlbum->id() != faceIds.first())
                 {
                     //here we move assign a new face tag to the selected faces
 
@@ -254,10 +259,15 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
                     bool assign = false;
 
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
                     if (e->modifiers() == Qt::ControlModifier)
+
 #else
+
                     if (e->keyboardModifiers() == Qt::ControlModifier)
+
 #endif
+
                     {
                         assign = true;
                     }
@@ -290,7 +300,8 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
                         }
                         else
                         {
-                            int tagId = FaceTags::getOrCreateTagForPerson(targetName, -1);
+                            int dstId = destAlbum->parent() ? destAlbum->parent()->id() : -1;
+                            int tagId = FaceTags::getOrCreateTagForPerson(targetName, dstId);
                             dview->confirmFaces(selectedIndexes, tagId);
                         }
                     }
@@ -311,10 +322,15 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
             bool set = false;
 
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
             if (e->modifiers() == Qt::ControlModifier)
+
 #else
+
             if (e->keyboardModifiers() == Qt::ControlModifier)
+
 #endif
+
             {
                 set = true;
             }
@@ -381,10 +397,15 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
         }
 
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
         if (e->modifiers() == Qt::ControlModifier)
+
 #else
+
         if (e->keyboardModifiers() == Qt::ControlModifier)
+
 #endif
+
         {
             assign = true;
         }
