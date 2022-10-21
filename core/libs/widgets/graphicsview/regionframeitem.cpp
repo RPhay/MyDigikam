@@ -389,14 +389,17 @@ RegionFrameItem::RegionFrameItem(QGraphicsItem* const item)
     d->hudTimer = new QTimer(this);
     d->hudTimer->setInterval(d->HUD_TIMER_ANIMATION_INTERVAL);
 
-    connect(d->hudTimer, SIGNAL(timeout()),
-            this, SLOT(moveHudWidget()));
+    connect(scene(), SIGNAL(sceneRectChanged(QRectF)),
+            this, SLOT(slotSizeChanged()));
+
+    connect(this, SIGNAL(sizeChanged()),
+            this, SLOT(slotSizeChanged()));
 
     connect(this, SIGNAL(positionChanged()),
             this, SLOT(slotPosChanged()));
 
-    connect(this, SIGNAL(sizeChanged()),
-            this, SLOT(slotSizeChanged()));
+    connect(d->hudTimer, SIGNAL(timeout()),
+            this, SLOT(moveHudWidget()));
 
     setFlags(GeometryEditable);
 
