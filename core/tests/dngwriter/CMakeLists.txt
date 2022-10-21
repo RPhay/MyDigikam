@@ -69,24 +69,24 @@ target_link_libraries(dngcompare_cli
                       ${JPEG_LIBRARIES}
                      )
 
-# =======================================================
-# raw to dng command line tool
+#------------------------------------------------------------------------
 
-set(raw2dng_cli_SRCS raw2dng_cli.cpp)
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/raw2dng_utest.cpp
 
-add_executable(raw2dng_cli ${raw2dng_cli_SRCS})
-ecm_mark_nongui_executable(raw2dng_cli)
+              GUI
 
-target_link_libraries(raw2dng_cli
+              NAME_PREFIX
 
-                      libdng
-                      digikamcore
+              "digikam-"
 
-                      ${COMMON_TEST_LINK}
+              LINK_LIBRARIES
 
-                      ${EXPAT_LIBRARY}
-                      ${CMAKE_THREAD_LIBS_INIT}
-                      ${TIFF_LIBRARIES}
-                      PNG::PNG                          # For zlib
-                      ${JPEG_LIBRARIES}
-                     )
+              digikamcore
+
+              ${COMMON_TEST_LINK}
+              ${EXPAT_LIBRARY}
+              ${CMAKE_THREAD_LIBS_INIT}
+              ${TIFF_LIBRARIES}
+              PNG::PNG                          # For zlib
+              ${JPEG_LIBRARIES}
+)
