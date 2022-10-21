@@ -21,19 +21,6 @@ endif()
 
 #------------------------------------------------------------------------
 
-add_executable(checkdatabaseswitch_cli ${CMAKE_CURRENT_SOURCE_DIR}/checkdatabaseswitch_cli.cpp)
-
-target_link_libraries(checkdatabaseswitch_cli
-
-                      digikamcore
-                      digikamdatabase
-                      digikamgui
-
-                      ${COMMON_TEST_LINK}
-)
-
-#------------------------------------------------------------------------
-
 ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/databasefields_utest.cpp
 
               NAME_PREFIX
@@ -71,6 +58,24 @@ ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/databasesqliteinit_utest.cpp
 #------------------------------------------------------------------------
 
 if (ENABLE_MYSQLSUPPORT AND ENABLE_INTERNALMYSQL)
+
+# TODO: do not work yet.
+#    ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/databaseswitch_utest.cpp
+
+#                  NAME_PREFIX
+
+#                  "digikam-"
+
+#                  LINK_LIBRARIES
+
+#                  digikamcore
+#                  digikamdatabase
+#                  digikamgui
+
+#                  ${COMMON_TEST_LINK}
+#    )
+
+    # ---
 
     ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/databasemysqlinit_utest.cpp
 
