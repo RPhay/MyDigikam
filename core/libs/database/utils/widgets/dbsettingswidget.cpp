@@ -92,9 +92,11 @@ void DatabaseSettingsWidget::setupMainArea()
     // --------------------------------------------------------
 
     d->dbPathLabel = new QLabel(i18n("<p>Set here the location where the database files will be stored on your system. "
-                                     "There are three databases: one for all collections properties, "
+                                     "There are four databases: "
+                                     "one for all collections properties, "
                                      "one to store compressed thumbnails, "
-                                     "and one to store faces recognition metadata.<br/>"
+                                     "one to store faces recognition metadata, "
+                                     "and one to store similarity finguerprints.<br/>"
                                      "Write access is required to be able to edit image properties.</p>"
                                      "<p>Databases are digiKam core engines. Take care to use a place hosted by fast "
                                      "hardware (as SSD) with enough free space especially for thumbnails database.</p>"
