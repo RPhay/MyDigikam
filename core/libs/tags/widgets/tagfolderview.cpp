@@ -76,12 +76,15 @@ TagFolderView::TagFolderView(QWidget* const parent, TagModel* const model)
 
     /// This ensures that the View appears sorted
 
-    connect(AlbumManager::instance(), &AlbumManager::signalFaceCountsDirty,
-            this, [=]()
-        {
-            filteredModel()->sort(0, filteredModel()->sortOrder());
-        }
-    );
+    if (model->isFaceTagModel())
+    {
+        connect(AlbumManager::instance(), &AlbumManager::signalFaceCountsDirty,
+                this, [=]()
+            {
+                filteredModel()->sort(0, filteredModel()->sortOrder());
+            }
+        );
+    }
 }
 
 TagFolderView::~TagFolderView()
