@@ -126,9 +126,9 @@ void DatabaseMysqlInitTest::testMysqlInit()
     params.password                    = QString();
     params.internalServer              = true;
     params.internalServerDBPath        = m_tempDir.path();
-    params.internalServerMysqlServCmd  = DbEngineParameters::defaultMysqlServerCmd();
-    params.internalServerMysqlInitCmd  = DbEngineParameters::defaultMysqlInitCmd();
-    params.internalServerMysqlAdminCmd = DbEngineParameters::defaultMysqlAdminCmd();
+    params.internalServerMysqlServCmd  = mysqlServBin.path();
+    params.internalServerMysqlInitCmd  = mysqlInitBin.path();
+    params.internalServerMysqlAdminCmd = mysqlAdminBin.path();
     params.hostName                    = QString();
     params.port                        = -1;
     params.connectOptions              = QString::fromLatin1("UNIX_SOCKET=%1/mysql.socket").arg(miscDir);

@@ -586,7 +586,7 @@ bool CoreDbSchemaUpdater::updateFilterSettings()
 
 bool CoreDbSchemaUpdater::createDatabase()
 {
-    if ( createTables() && createIndices() && createTriggers())
+    if (createTables() && createIndices() && createTriggers())
     {
         setLegacySettingEntries();
 

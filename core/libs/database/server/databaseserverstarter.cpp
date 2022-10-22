@@ -115,6 +115,7 @@ void DatabaseServerStarter::stopServerManagerProcess()
     sem.acquire();
 
     d->internalServer->stopDatabaseProcess();
+    d->internalServer = nullptr;
 
     sem.release();
 
