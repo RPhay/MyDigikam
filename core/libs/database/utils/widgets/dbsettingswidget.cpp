@@ -96,7 +96,7 @@ void DatabaseSettingsWidget::setupMainArea()
                                      "one for all collections properties, "
                                      "one to store compressed thumbnails, "
                                      "one to store faces recognition metadata, "
-                                     "and one to store similarity finguerprints.<br/>"
+                                     "and one to store similarity fingerprints.<br/>"
                                      "Write access is required to be able to edit image properties.</p>"
                                      "<p>Databases are digiKam core engines. Take care to use a place hosted by fast "
                                      "hardware (as SSD) with enough free space especially for thumbnails database.</p>"
