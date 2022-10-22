@@ -46,6 +46,7 @@ public:
 public:
 
     CoreDbWatch();
+    ~CoreDbWatch() override;
 
     void initializeRemote(DatabaseMode mode);
     void doAnyProcessing();
@@ -88,10 +89,6 @@ Q_SIGNALS:
     void tagChange(const TagChangeset& changeset);
     void albumRootChange(const AlbumRootChangeset& changeset);
     void searchChange(const SearchChangeset& changeset);
-
-protected:
-
-    ~CoreDbWatch() override;
 
 #ifdef HAVE_DBUS
 
