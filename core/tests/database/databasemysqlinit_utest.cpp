@@ -100,6 +100,7 @@ void DatabaseMysqlInitTest::testMysqlInit()
     }
 
     MysqlServBinary  mysqlServBin;
+    mysqlServBin.slotAddPossibleSearchDirectory(QLatin1String("/usr/sbin"));
 
     if (!mysqlServBin.recheckDirectories())
     {

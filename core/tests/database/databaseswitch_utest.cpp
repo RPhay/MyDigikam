@@ -147,6 +147,7 @@ void DatabaseSwitchTest::startStopMysql(const QDir& dbDir)
     }
 
     MysqlServBinary  mysqlServBin;
+    mysqlServBin.slotAddPossibleSearchDirectory(QLatin1String("/usr/sbin"));
 
     if (!mysqlServBin.recheckDirectories())
     {
