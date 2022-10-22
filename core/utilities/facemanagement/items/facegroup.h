@@ -82,6 +82,11 @@ public:
     void leaveEvent(QEvent*);
     void enterEvent(QEvent*);
 
+    /**
+     * Returns a boolean whether there is at least one unconfirmed face in the group or not.
+     */
+    bool hasUnconfirmed();
+
 public Q_SLOTS:
 
     /**

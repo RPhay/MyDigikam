@@ -467,8 +467,18 @@ void ItemPreviewView::slotShowContextMenu(QGraphicsSceneContextMenuEvent* event)
     cmHelper.addAction(QLatin1String("image_recognize_faces"));
     cmHelper.addAction(d->peopleToggleAction,  true);
     cmHelper.addAction(d->addPersonAction,     true);
-    cmHelper.addAction(d->forgetFacesAction,   true);
-    cmHelper.addAction(d->markAsIgnoredAction, true);
+
+    // if there is a face in the image, give the option to remove all faces
+    if (d->faceGroup->items().length() > 0)
+    {
+        cmHelper.addAction(d->forgetFacesAction,   true);
+    }
+
+    // if there is at least one unconfirmed face, give the option to ignore unconfirmed faces
+    if (d->faceGroup->hasUnconfirmed())
+    {
+        cmHelper.addAction(d->markAsIgnoredAction, true);
+    }
     cmHelper.addSeparator();
 
     // -------------------------------------------------------

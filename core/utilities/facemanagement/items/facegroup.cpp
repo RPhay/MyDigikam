@@ -297,6 +297,19 @@ void FaceGroup::enterEvent(QEvent*)
 {
 }
 
+bool FaceGroup::hasUnconfirmed()
+{
+    Q_FOREACH (FaceItem* const item, d->items)
+    {
+        if (item->face().isUnconfirmedType())
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 void FaceGroup::load()
 {
     if (d->state != NoFaces)
