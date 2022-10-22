@@ -36,6 +36,7 @@
 #include "coredbaccess.h"
 #include "thumbsdbaccess.h"
 #include "facedbaccess.h"
+#include "similaritydbaccess.h"
 #include "dbengineparameters.h"
 #include "scancontroller.h"
 #include "digikam_version.h"
@@ -149,6 +150,7 @@ void DatabaseMysqlInitTest::testMysqlInit()
     CoreDbAccess::cleanUpDatabase();
     ThumbsDbAccess::cleanUpDatabase();
     FaceDbAccess::cleanUpDatabase();
+    SimilarityDbAccess::cleanUpDatabase();
 
     DatabaseServerStarter::instance()->stopServerManagerProcess();
 }
