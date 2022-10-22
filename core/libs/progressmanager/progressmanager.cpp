@@ -110,12 +110,6 @@ bool ProgressItem::showAtStart() const
 
 void ProgressItem::setComplete()
 {
-
-    if (this->parent())
-    {
-        this->parent()->setComplete();
-    }
-
     if (d->children.isEmpty())
     {
         if (!d->canceled)
@@ -127,23 +121,7 @@ void ProgressItem::setComplete()
     }
     else
     {
-        QList<ProgressItem*> kids = d->children.keys();
-        QList<ProgressItem*>::Iterator it(kids.begin());
-        QList<ProgressItem*>::Iterator end(kids.end());
-
-        for ( ; it != end ; ++it)
-        {
-            ProgressItem* const kid = *it;
-
-            // if one of the kids is not finished -> we do not complete the parent.
-            if (kid->totalItems() != kid->completedItems())
-            {
-                d->waitingForKids = true;
-                return;
-            }
-        }
-        // if all kids are complete, we complete parent as well.
-        Q_EMIT progressItemCompleted(this);
+        d->waitingForKids = true;     
     }
 }
 
@@ -248,32 +226,8 @@ void ProgressItem::setProgress(unsigned int v)
 
 void ProgressItem::updateProgress()
 {
-    if (this->parent())
-    {
-        this->parent()->updateParentProgress();
-    }
-
     int total = d->total;
     setProgress(total? d->completed * 100 / total : 0);
-}
-
-void ProgressItem::updateParentProgress()
-{
-    int total = 0;
-    int completed = 0;
-    QList<ProgressItem*> kids = d->children.keys();
-    QList<ProgressItem*>::Iterator it(kids.begin());
-    QList<ProgressItem*>::Iterator end(kids.end());
-
-    for ( ; it != end ; ++it)
-    {
-        ProgressItem* const kid = *it;
-
-        total += kid->totalItems();
-        completed += kid->completedItems();
-    }
-
-    setProgress(total? completed * 100 / total : 0);
 }
 
 bool ProgressItem::advance(unsigned int v)
@@ -336,11 +290,6 @@ const QString& ProgressItem::id() const
 ProgressItem* ProgressItem::parent() const
 {
     return d->parent;
-}
-
-void ProgressItem::setParent(ProgressItem* const parent) const
-{
-    d->parent = parent;
 }
 
 const QString& ProgressItem::label() const
@@ -517,34 +466,8 @@ ProgressItem* ProgressManager::createProgressItemImpl(const QString& parent,
     return createProgressItemImpl(p, id, label, status, canBeCanceled, hasThumb);
 }
 
-bool ProgressManager::addProgressItem(ProgressItem* const t, ProgressItem* const parent, bool allowMultiple)
+bool ProgressManager::addProgressItem(ProgressItem* const t, ProgressItem* const parent)
 {
-    // If we allow multiple ProgressItems of one kind, we use a wrapper progress to visualize the overall progress.
-    if (allowMultiple)
-    {
-        QString wrapperName = i18n("%1_wrapper", t->id());
-        QString label = t->id();
-        ProgressItem* wrapper = nullptr;
-
-        if (!instance()->findItembyId(wrapperName))
-        {
-            // If there is no wrapper, create it
-            wrapper = instance()->createProgressItemImpl(nullptr, wrapperName, t->label(), QString(), true, false);
-            label = t->label();
-            qCWarning(DIGIKAM_GENERAL_LOG) << "Create new wrapper for : "<< t->id();
-        }
-        else
-        {
-            // If there is a wrapper, use it
-            wrapper = instance()->findItembyId(wrapperName);
-        }
-        t->setParent(wrapper);
-        wrapper->addChild(t);
-        wrapper->setLabel(label);
-
-        return true;
-    }
-
     if (!instance()->findItembyId(t->id()))
     {
         instance()->addProgressItemImpl(t, parent);

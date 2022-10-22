@@ -299,7 +299,7 @@ void FacesDetector::slotStart()
         setLabel(i18n("Updating faces database."));
     }
 
-    ProgressManager::addProgressItem(this, nullptr, true);
+    ProgressManager::addProgressItem(this);
 
     if      (d->source == FacesDetector::Infos)
     {
