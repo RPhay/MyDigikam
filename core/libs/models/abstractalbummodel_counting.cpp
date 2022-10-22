@@ -105,18 +105,9 @@ void AbstractCountingAlbumModel::setCountHash(const QHash<int, int>& idCountHash
     }
 }
 
-void AbstractCountingAlbumModel::updateCount(Album* album)
+void AbstractCountingAlbumModel::updateCount(Album* const album)
 {
     if (!album)
-    {
-        return;
-    }
-
-    // if the model does not contain the album, do nothing.
-
-    QModelIndex index = indexForAlbum(album);
-
-    if (!index.isValid())
     {
         return;
     }
@@ -158,7 +149,14 @@ void AbstractCountingAlbumModel::updateCount(Album* album)
 
     if (changed)
     {
-        Q_EMIT dataChanged(index, index);
+        // update only if the model contains the album
+
+        QModelIndex index = indexForAlbum(album);
+
+        if (index.isValid())
+        {
+            Q_EMIT dataChanged(index, index);
+        }
     }
 }
 

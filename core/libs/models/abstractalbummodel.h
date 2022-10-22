@@ -340,7 +340,7 @@ protected Q_SLOTS:
 
 private:
 
-    void updateCount(Album* album);
+    void updateCount(Album* const album);
 
 private:
 

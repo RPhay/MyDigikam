@@ -172,7 +172,7 @@ BUGFIXES:
 134 ==> 460520 - [FEATURE REQUEST] Ignore rest of not tagged faces in picture.
 135 ==> 460568 - Star rating not saved.
 136 ==> 460761 - Recent regression Cannot any more reassign faces by dragging them on the left sidebar items.
-137 ==> 
-138 ==> 
+137 ==> 460786 - Freeze for 3-4 seconds after assigning tag to an image.
+138 ==> 446616 - digiKam lags for about 2 - 3 seconds when I assign a Tag.
 139 ==> 
 140 ==> 
