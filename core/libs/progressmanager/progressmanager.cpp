@@ -121,7 +121,7 @@ void ProgressItem::setComplete()
     }
     else
     {
-        d->waitingForKids = true;     
+        d->waitingForKids = true;
     }
 }
 
