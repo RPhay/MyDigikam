@@ -558,7 +558,7 @@ bool AlbumManager::updatePAlbumIcon(PAlbum* album, qlonglong iconID, QString& er
     return true;
 }
 
-QMap<int, int> AlbumManager::getPAlbumsCount() const
+QHash<int, int> AlbumManager::getPAlbumsCount() const
 {
     return d->pAlbumsCount;
 }

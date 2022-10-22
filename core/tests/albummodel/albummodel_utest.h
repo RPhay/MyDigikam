@@ -18,7 +18,7 @@
 // Qt includes
 
 #include <QObject>
-#include <QMap>
+#include <QHash>
 #include <QAbstractItemModel>
 
 namespace Digikam
@@ -57,7 +57,7 @@ private Q_SLOTS:
 
     void deletePAlbum(Digikam::PAlbum* album);
 
-    void setLastPAlbumCountMap(const QMap<int, int> &map);
+    void setLastPAlbumCountHash(const QHash<int, int>& hash);
 
     /**
      * slots for ensuring signal order while scanning albums.
@@ -92,7 +92,7 @@ private:
     Digikam::TAlbum*     talbumChild0Child1Root0;
     Digikam::TAlbum*     talbumChild0Root1;
 
-    QMap<int, int>       palbumCountMap;
+    QHash<int, int>       palbumCountHash;
 
     /**
      * This model is used to ensure that adding and changing signals are emitted

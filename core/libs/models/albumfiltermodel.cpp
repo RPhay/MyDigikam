@@ -439,9 +439,9 @@ bool AlbumFilterModel::lessThan(const QModelIndex& left, const QModelIndex& righ
 
         if (sourceAlbumModel() && sourceAlbumModel()->isFaceTagModel())
         {
-            QMap<int, int> unconfirmedFaceCount = AlbumManager::instance()->getUnconfirmedFaceCount();
-            int leftFaceCount                   = unconfirmedFaceCount.value(leftAlbum->id(), 0);
-            int rightFaceCount                  = unconfirmedFaceCount.value(rightAlbum->id(), 0);
+            QHash<int, int> unconfirmedFaceCount = AlbumManager::instance()->getUnconfirmedFaceCount();
+            int leftFaceCount                    = unconfirmedFaceCount.value(leftAlbum->id(), 0);
+            int rightFaceCount                   = unconfirmedFaceCount.value(rightAlbum->id(), 0);
 
             if ((leftFaceCount != 0) || (rightFaceCount != 0))
             {
@@ -470,21 +470,32 @@ bool AlbumFilterModel::lessThan(const QModelIndex& left, const QModelIndex& righ
     }
 
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
     if ((valLeft.typeId() == QVariant::String) && (valRight.typeId() == QVariant::String))
+
 #else
+
     if ((valLeft.type() == QVariant::String) && (valRight.type() == QVariant::String))
+
 #endif
+
     {
         ItemSortCollator* const sorter = ItemSortCollator::instance();
         bool natural                   = ApplicationSettings::instance()->isStringTypeNatural();
 
         return (sorter->albumCompare(valLeft.toString(), valRight.toString(), sortCaseSensitivity(), natural) < 0);
     }
+
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
     else if ((valLeft.typeId() == QVariant::Date) && (valRight.typeId() == QVariant::Date))
+
 #else
+
     else if ((valLeft.type() == QVariant::Date) && (valRight.type() == QVariant::Date))
+
 #endif
+
     {
         return (compareByOrder(valLeft.toDate(), valRight.toDate(), Qt::AscendingOrder) < 0);
     }

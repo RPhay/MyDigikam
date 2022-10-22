@@ -25,10 +25,10 @@ TagModel::TagModel(RootAlbumBehavior rootBehavior, QObject* const parent)
     m_columnHeader = i18nc("@title", "Tags");
     setupThumbnailLoading();
 
-    connect(AlbumManager::instance(), SIGNAL(signalTAlbumsDirty(QMap<int,int>)),
-            this, SLOT(setCountMap(QMap<int,int>)));
+    connect(AlbumManager::instance(), SIGNAL(signalTAlbumsDirty(QHash<int,int>)),
+            this, SLOT(setCountHash(QHash<int,int>)));
 
-    setCountMap(AlbumManager::instance()->getTAlbumsCount());
+    setCountHash(AlbumManager::instance()->getTAlbumsCount());
 }
 
 void TagModel::setColumnHeader(const QString& header)
@@ -116,15 +116,15 @@ Album* TagModel::albumForId(int id) const
 
 void TagModel::activateFaceTagModel()
 {
-    disconnect(AlbumManager::instance(), SIGNAL(signalTAlbumsDirty(QMap<int,int>)),
-               this, SLOT(setCountMap(QMap<int,int>)));
+    disconnect(AlbumManager::instance(), SIGNAL(signalTAlbumsDirty(QHash<int,int>)),
+               this, SLOT(setCountHash(QHash<int,int>)));
 
     connect(AlbumManager::instance(), &AlbumManager::signalFaceCountsDirty,
-            this, [=](const QMap<int, int>& faceCount,
-                      const QMap<int, int>& uFaceCount,
+            this, [=](const QHash<int, int>& faceCount,
+                      const QHash<int, int>& uFaceCount,
                       const QList<int>& toUpdatedFaces)
         {
-            setCountMap(faceCount);
+            setCountHash(faceCount);
             m_unconfirmedFaceCount = uFaceCount;
 
             Q_FOREACH (int id, toUpdatedFaces)
@@ -149,7 +149,7 @@ void TagModel::activateFaceTagModel()
     );
 
     setFaceTagModel(true);
-    setCountMap(AlbumManager::instance()->getFaceCount());
+    setCountHash(AlbumManager::instance()->getFaceCount());
 }
 
 bool TagModel::setData(const QModelIndex& index, const QVariant& value, int role)

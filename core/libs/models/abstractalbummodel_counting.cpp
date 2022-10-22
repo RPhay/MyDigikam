@@ -29,7 +29,7 @@ public:
     }
 
     bool            showCount;
-    QMap<int, int>  countMap;
+    QHash<int, int> countHash;
     QHash<int, int> countHashReady;
     QSet<int>       includeChildrenAlbums;
 };
@@ -94,12 +94,12 @@ void AbstractCountingAlbumModel::includeChildrenCount(const QModelIndex& index)
     updateCount(album);
 }
 
-void AbstractCountingAlbumModel::setCountMap(const QMap<int, int>& idCountMap)
+void AbstractCountingAlbumModel::setCountHash(const QHash<int, int>& idCountHash)
 {
-    d->countMap                       = idCountMap;
-    QMap<int, int>::const_iterator it = d->countMap.constBegin();
+    d->countHash                       = idCountHash;
+    QHash<int, int>::const_iterator it = d->countHash.constBegin();
 
-    for ( ; it != d->countMap.constEnd() ; ++it)
+    for ( ; it != d->countHash.constEnd() ; ++it)
     {
         updateCount(albumForId(it.key()));
     }
@@ -126,7 +126,7 @@ void AbstractCountingAlbumModel::updateCount(Album* album)
 
     // get count for album without children
 
-    int count                           = d->countMap.value(album->id());
+    int count                           = d->countHash.value(album->id());
 
     // if wanted, add up children's counts
 
@@ -136,7 +136,7 @@ void AbstractCountingAlbumModel::updateCount(Album* album)
 
         while (it.current())
         {
-            count += d->countMap.value((*it)->id());
+            count += d->countHash.value((*it)->id());
             ++it;
         }
     }
@@ -238,7 +238,7 @@ void AbstractCountingAlbumModel::albumCleared(Album* album)
 {
     if (!AlbumManager::instance()->isMovingAlbum(album))
     {
-        d->countMap.remove(album->id());
+        d->countHash.remove(album->id());
         d->countHashReady.remove(album->id());
         d->includeChildrenAlbums.remove(album->id());
     }
@@ -246,7 +246,7 @@ void AbstractCountingAlbumModel::albumCleared(Album* album)
 
 void AbstractCountingAlbumModel::allAlbumsCleared()
 {
-    d->countMap.clear();
+    d->countHash.clear();
     d->countHashReady.clear();
     d->includeChildrenAlbums.clear();
 }
@@ -255,7 +255,7 @@ void AbstractCountingAlbumModel::slotAlbumMoved(Album*)
 {
     // need to update counts of all parents
 
-    setCountMap(d->countMap);
+    setCountHash(d->countHash);
 }
 
 } // namespace Digikam

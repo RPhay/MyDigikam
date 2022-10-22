@@ -19,12 +19,12 @@
 namespace Digikam
 {
 
-QMap<int, int> AlbumManager::getFaceCount() const
+QHash<int, int> AlbumManager::getFaceCount() const
 {
     return d->fAlbumsCount;
 }
 
-QMap<int, int> AlbumManager::getUnconfirmedFaceCount() const
+QHash<int, int> AlbumManager::getUnconfirmedFaceCount() const
 {
     return d->uAlbumsCount;
 }
@@ -45,8 +45,8 @@ void AlbumManager::personItemsCount()
     connect(d->personListJob, SIGNAL(finished()),
             this, SLOT(slotPeopleJobResult()));
 
-    connect(d->personListJob, SIGNAL(faceFoldersData(QMap<QString,QMap<int,int> >)),    // krazy:exclude=normalize
-            this, SLOT(slotPeopleJobData(QMap<QString,QMap<int,int> >)));               // krazy:exclude=normalize
+    connect(d->personListJob, SIGNAL(faceFoldersData(QMap<QString,QHash<int,int> >)),    // krazy:exclude=normalize
+            this, SLOT(slotPeopleJobData(QMap<QString,QHash<int,int> >)));               // krazy:exclude=normalize
 }
 
 void AlbumManager::slotPeopleJobResult()
@@ -69,9 +69,9 @@ void AlbumManager::slotPeopleJobResult()
     d->personListJob = nullptr;
 }
 
-void AlbumManager::slotPeopleJobData(const QMap<QString, QMap<int, int> >& facesStatMap)
+void AlbumManager::slotPeopleJobData(const QMap<QString, QHash<int, int> >& facesStatHash)
 {
-    if (facesStatMap.isEmpty())
+    if (facesStatHash.isEmpty())
     {
         return;
     }
@@ -82,20 +82,20 @@ void AlbumManager::slotPeopleJobData(const QMap<QString, QMap<int, int> >& faces
     // Why autodetectedFace have all autodetected tags?
     // They should be in autodetectedPerson
 
-    if (facesStatMap.contains(ImageTagPropertyName::autodetectedFace()))                // autodetectedPerson
+    if (facesStatHash.contains(ImageTagPropertyName::autodetectedFace()))                // autodetectedPerson
     {
-        d->uAlbumsCount = *facesStatMap.find(ImageTagPropertyName::autodetectedFace()); // autodetectedPerson
+        d->uAlbumsCount = *facesStatHash.find(ImageTagPropertyName::autodetectedFace()); // autodetectedPerson
     }
 
     d->fAlbumsCount.clear();
 
     if (ApplicationSettings::instance()->getShowFolderTreeViewItemsCount())
     {
-        typedef QMap<int, int> IntIntMap;
+        typedef QHash<int, int> IntIntHash;
 
-        Q_FOREACH (const IntIntMap& counts, facesStatMap)
+        Q_FOREACH (const IntIntHash& counts, facesStatHash)
         {
-            QMap<int, int>::const_iterator it;
+            QHash<int, int>::const_iterator it;
 
             for (it = counts.begin() ; it != counts.end() ; ++it)
             {

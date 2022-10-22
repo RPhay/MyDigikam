@@ -249,7 +249,7 @@ private:
 private Q_SLOTS:
 
     void slotAlbumsJobResult();
-    void slotAlbumsJobData(const QMap<int, int>& albumsStatMap);
+    void slotAlbumsJobData(const QHash<int, int>& albumsStatHash);
     void slotAlbumChange(const AlbumChangeset& changeset);
     void getAlbumItemsCount();
 
@@ -343,7 +343,7 @@ public:
 private Q_SLOTS:
 
     void slotDatesJobResult();
-    void slotDatesJobData(const QHash<QDateTime, int>& datesStatMap);
+    void slotDatesJobData(const QHash<QDateTime, int>& datesStatHash);
 
     /**
      * Scan dates from the database and updates the DAlbums.
@@ -400,7 +400,7 @@ public:
      *
      * @return count map for PAlbums
      */
-    QMap<int, int> getPAlbumsCount()        const;
+    QHash<int, int> getPAlbumsCount()        const;
 
     void removeWatchedPAlbums(const PAlbum* const album);
 
@@ -487,7 +487,7 @@ private Q_SLOTS:
 
 Q_SIGNALS:
 
-    void signalPAlbumsDirty(const QMap<int, int>&);
+    void signalPAlbumsDirty(const QHash<int, int>&);
 
     //@}
 
@@ -529,7 +529,7 @@ public:
      *
      * @return count map for TAlbums
      */
-    QMap<int, int> getTAlbumsCount()             const;
+    QHash<int, int> getTAlbumsCount()             const;
 
     /**
      * Create a new TAlbum with supplied properties as a child of the parent
@@ -687,7 +687,7 @@ private Q_SLOTS:
     void scanTAlbums();
 
     void slotTagsJobResult();
-    void slotTagsJobData(const QMap<int, int>& tagsStatMap);
+    void slotTagsJobData(const QHash<int, int>& tagsStatHash);
     void slotTagChange(const TagChangeset& changeset);
     void slotImageTagChange(const ImageTagChangeset& changeset);
 
@@ -696,7 +696,7 @@ private Q_SLOTS:
 
 Q_SIGNALS:
 
-    void signalTAlbumsDirty(const QMap<int, int>&);
+    void signalTAlbumsDirty(const QHash<int, int>&);
     void signalTagPropertiesChanged(TAlbum* album);
 
     //@}
@@ -807,7 +807,7 @@ public:
      *
      * @return count map for faces (confirmed and unconfirmed combined)
      */
-    QMap<int, int> getFaceCount()            const;
+    QHash<int, int> getFaceCount()            const;
 
     /**
      * Returns the latest count for unconfirmed faces only
@@ -815,19 +815,19 @@ public:
      *
      * @return count map for unconfirmed faces only
      */
-    QMap<int, int> getUnconfirmedFaceCount() const;
+    QHash<int, int> getUnconfirmedFaceCount() const;
 
 private Q_SLOTS:
 
     void slotPeopleJobResult();
     void slotPeopleJobData(const QMap<QString,
-                           QMap<int, int> >& facesStatMap);
+                           QHash<int, int> >& facesStatHash);
     void personItemsCount();
 
 Q_SIGNALS:
 
-    void signalFaceCountsDirty(const QMap<int, int>& faceCount,
-                               const QMap<int, int>& uFaceCount,
+    void signalFaceCountsDirty(const QHash<int, int>& faceCount,
+                               const QHash<int, int>& uFaceCount,
                                const QList<int>& toUpdatedFaces);
 
     //@}

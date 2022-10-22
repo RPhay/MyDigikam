@@ -303,7 +303,7 @@ public Q_SLOTS:
      * If an album is not contained, no count is displayed. To display a count of 0,
      * there must be an entry album id -> 0.
      */
-    void setCountMap(const QMap<int, int>& idCountMap);
+    void setCountHash(const QHash<int, int>& idCountHash);
 
     /**
      * Displays only the count of the album, without adding child albums' counts.
@@ -320,7 +320,7 @@ public Q_SLOTS:
 
 protected:
 
-    /// If you do not use setCountMap, excludeChildrenCount and includeChildrenCount, you can set a count here.
+    /// If you do not use setCountHash, excludeChildrenCount and includeChildrenCount, you can set a count here.
     void setCount(Album* album, int count);
 
     /// need to implement in subclass

@@ -313,8 +313,8 @@ void FacesDetector::slotStart()
 
     // get total count, cached by AlbumManager
 
-    QMap<int, int> palbumCounts;
-    QMap<int, int> talbumCounts;
+    QHash<int, int> palbumCounts;
+    QHash<int, int> talbumCounts;
     bool hasPAlbums = false;
     bool hasTAlbums = false;
 

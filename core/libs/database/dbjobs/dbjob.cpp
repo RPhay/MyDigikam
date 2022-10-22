@@ -53,9 +53,9 @@ void AlbumsJob::run()
 {
     if (m_jobInfo.isFoldersJob())
     {
-        QMap<int, int> albumNumberMap = CoreDbAccess().db()->getNumberOfImagesInAlbums();
+        const QHash<int, int>& albumNumberHash = CoreDbAccess().db()->getNumberOfImagesInAlbums();
 
-        Q_EMIT foldersData(albumNumberMap);
+        Q_EMIT foldersData(albumNumberHash);
     }
     else
     {
@@ -201,17 +201,17 @@ void TagsJob::run()
 {
     if      (m_jobInfo.isFoldersJob())
     {
-        QMap<int, int> tagNumberMap = CoreDbAccess().db()->getNumberOfImagesInTags();
+        const QHash<int, int>& tagNumberHash = CoreDbAccess().db()->getNumberOfImagesInTags();
 
-        //qCDebug(DIGIKAM_DBJOB_LOG) << tagNumberMap;
+        //qCDebug(DIGIKAM_DBJOB_LOG) << tagNumberHash;
 
-        Q_EMIT foldersData(tagNumberMap);
+        Q_EMIT foldersData(tagNumberHash);
     }
     else if (m_jobInfo.isFaceFoldersJob())
     {
         QString property;
-        QMap<int, int> counts;
-        QMap<QString, QMap<int, int> > facesNumberMap;
+        QHash<int, int> counts;
+        QMap<QString, QHash<int, int> > facesNumberMap;
 
         property = ImageTagPropertyName::autodetectedFace();
         counts   = CoreDbAccess().db()->getNumberOfImagesInTagProperties(property);

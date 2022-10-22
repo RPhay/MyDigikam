@@ -131,16 +131,16 @@ void AlbumManager::slotAlbumsJobResult()
     d->albumListJob = nullptr;
 }
 
-void AlbumManager::slotAlbumsJobData(const QMap<int, int>& albumsStatMap)
+void AlbumManager::slotAlbumsJobData(const QHash<int, int>& albumsStatHash)
 {
-    if (albumsStatMap.isEmpty())
+    if (albumsStatHash.isEmpty())
     {
         return;
     }
 
-    d->pAlbumsCount = albumsStatMap;
+    d->pAlbumsCount = albumsStatHash;
 
-    Q_EMIT signalPAlbumsDirty(albumsStatMap);
+    Q_EMIT signalPAlbumsDirty(albumsStatHash);
 }
 
 void AlbumManager::updateAlbumPathHash()
@@ -227,8 +227,8 @@ void AlbumManager::getAlbumItemsCount()
     connect(d->albumListJob, SIGNAL(finished()),
             this, SLOT(slotAlbumsJobResult()));
 
-    connect(d->albumListJob, SIGNAL(foldersData(QMap<int,int>)),
-            this, SLOT(slotAlbumsJobData(QMap<int,int>)));
+    connect(d->albumListJob, SIGNAL(foldersData(QHash<int,int>)),
+            this, SLOT(slotAlbumsJobData(QHash<int,int>)));
 }
 
 void AlbumManager::slotAlbumChange(const AlbumChangeset& changeset)

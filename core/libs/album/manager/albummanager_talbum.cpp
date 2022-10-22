@@ -201,8 +201,8 @@ void AlbumManager::tagItemsCount()
     connect(d->tagListJob, SIGNAL(finished()),
             this, SLOT(slotTagsJobResult()));
 
-    connect(d->tagListJob, SIGNAL(foldersData(QMap<int,int>)),
-            this, SLOT(slotTagsJobData(QMap<int,int>)));
+    connect(d->tagListJob, SIGNAL(foldersData(QHash<int,int>)),
+            this, SLOT(slotTagsJobData(QHash<int,int>)));
 }
 
 AlbumList AlbumManager::allTAlbums() const
@@ -884,7 +884,7 @@ AlbumList AlbumManager::findTagsWithProperty(const QString& property, const QStr
     return list;
 }
 
-QMap<int, int> AlbumManager::getTAlbumsCount() const
+QHash<int, int> AlbumManager::getTAlbumsCount() const
 {
     return d->tAlbumsCount;
 }
@@ -974,15 +974,15 @@ void AlbumManager::slotTagsJobResult()
     d->tagListJob = nullptr;
 }
 
-void AlbumManager::slotTagsJobData(const QMap<int, int>& tagsStatMap)
+void AlbumManager::slotTagsJobData(const QHash<int, int>& tagsStatHash)
 {
-    if (tagsStatMap.isEmpty())
+    if (tagsStatHash.isEmpty())
     {
         return;
     }
 
-    d->tAlbumsCount = tagsStatMap;
-    Q_EMIT signalTAlbumsDirty(tagsStatMap);
+    d->tAlbumsCount = tagsStatHash;
+    Q_EMIT signalTAlbumsDirty(tagsStatHash);
 }
 
 void AlbumManager::slotTagChange(const TagChangeset& changeset)

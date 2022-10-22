@@ -91,8 +91,8 @@ void AlbumModelTest::initTestCase()
 
     // catch palbum counts for waiting
 
-    connect(AlbumManager::instance(), SIGNAL(signalPAlbumsDirty(QMap<int,int>)),
-            this, SLOT(setLastPAlbumCountMap(QMap<int,int>)));
+    connect(AlbumManager::instance(), SIGNAL(signalPAlbumsDirty(QHash<int,int>)),
+            this, SLOT(setLastPAlbumCountHash(QHash<int,int>)));
 
     AlbumManager::checkDatabaseDirsAfterFirstRun(QDir::temp().absoluteFilePath(
                                                  tempSuffix), QDir::temp().absoluteFilePath(tempSuffix));
@@ -160,7 +160,7 @@ void AlbumModelTest::init()
 {
     qCDebug(DIGIKAM_TESTS_LOG) << "Start AlbumModelTest::init()";
 
-    palbumCountMap.clear();
+    palbumCountHash.clear();
 
     // create a model to check that model work is done correctly while scanning
 
@@ -336,16 +336,16 @@ void AlbumModelTest::ensureItemCounts()
     dAlbumLoop.exec();
     qCDebug(DIGIKAM_TESTS_LOG) << "DAlbums were created";
 
-    while (palbumCountMap.size() < 8)
+    while (palbumCountHash.size() < 8)
     {
         QEventLoop pAlbumLoop;
 
-        connect(AlbumManager::instance(), SIGNAL(signalPAlbumsDirty(QMap<int,int>)),
+        connect(AlbumManager::instance(), SIGNAL(signalPAlbumsDirty(QHash<int,int>)),
                 &pAlbumLoop, SLOT(quit()));
 
-        qCDebug(DIGIKAM_TESTS_LOG) << "Waiting for first PAlbum count map";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Waiting for first PAlbum count hash";
         pAlbumLoop.exec();
-        qCDebug(DIGIKAM_TESTS_LOG) << "Got new PAlbum count map";
+        qCDebug(DIGIKAM_TESTS_LOG) << "Got new PAlbum count hash";
     }
 }
 
@@ -397,10 +397,10 @@ void AlbumModelTest::deletePAlbum(PAlbum* album)
     dir.removeRecursively();
 }
 
-void AlbumModelTest::setLastPAlbumCountMap(const QMap<int, int> &map)
+void AlbumModelTest::setLastPAlbumCountHash(const QHash<int, int> &hash)
 {
-    qCDebug(DIGIKAM_TESTS_LOG) << "Receiving new count map "<< map;
-    palbumCountMap = map;
+    qCDebug(DIGIKAM_TESTS_LOG) << "Receiving new count hash" << hash;
+    palbumCountHash = hash;
 }
 
 void AlbumModelTest::cleanup()
@@ -466,7 +466,7 @@ void AlbumModelTest::testDisablePAlbumCount()
     qCDebug(DIGIKAM_TESTS_LOG) << "Start AlbumModelTest::testDisablePAlbumCount()";
 
     AlbumModel albumModel;
-    albumModel.setCountMap(palbumCountMap);
+    albumModel.setCountHash(palbumCountHash);
     albumModel.setShowCount(true);
 
     QRegularExpression countRegEx(QRegularExpression::anchoredPattern(QLatin1String(".+ \\(\\d+\\)")));

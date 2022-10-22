@@ -39,7 +39,8 @@ AlbumManager::AlbumManager()
 {
     qRegisterMetaType<QHash<QDateTime,int>>("QHash<QDateTime,int>");
     qRegisterMetaType<QMap<int,int>>("QMap<int,int>");
-    qRegisterMetaType<QMap<QString,QMap<int,int> >>("QMap<QString,QMap<int,int> >");
+    qRegisterMetaType<QHash<int,int>>("QHash<int,int>");
+    qRegisterMetaType<QMap<QString,QHash<int,int> >>("QMap<QString,QHash<int,int> >");
 
     internalInstance = this;
     d->albumWatch    = new AlbumWatch(this);

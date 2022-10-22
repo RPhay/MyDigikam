@@ -77,7 +77,7 @@ protected:
 
 private:
 
-    QMap<int, int> m_unconfirmedFaceCount;
+    QHash<int, int> m_unconfirmedFaceCount;
 };
 
 // ------------------------------------------------------------------

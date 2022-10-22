@@ -96,8 +96,8 @@ public:
 
 Q_SIGNALS:
 
-    void foldersData(const QMap<int, int>&);
-    void faceFoldersData(const QMap<QString, QMap<int, int> >&);
+    void foldersData(const QHash<int, int>&);
+    void faceFoldersData(const QMap<QString, QHash<int, int> >&);
 };
 
 // ---------------------------------------------
@@ -119,8 +119,8 @@ public:
 
 Q_SIGNALS:
 
-    void foldersData(const QMap<int, int>&);
-    void faceFoldersData(const QMap<QString, QMap<int, int> >&);
+    void foldersData(const QHash<int, int>&);
+    void faceFoldersData(const QMap<QString, QHash<int, int> >&);
 };
 
 // ---------------------------------------------

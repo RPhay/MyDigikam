@@ -3374,10 +3374,10 @@ int CoreDB::getNumberOfItemsInAlbum(int albumID) const
     return values.first().toInt();
 }
 
-QMap<int, int> CoreDB::getNumberOfImagesInAlbums() const
+QHash<int, int> CoreDB::getNumberOfImagesInAlbums() const
 {
     QList<QVariant> values, allAbumIDs;
-    QMap<int, int>  albumsStatMap;
+    QHash<int, int> albumsStatHash;
     int             albumID, count;
 
     // initialize allAbumIDs with all existing albums from db to prevent
@@ -3389,7 +3389,7 @@ QMap<int, int> CoreDB::getNumberOfImagesInAlbums() const
     for (QList<QVariant>::const_iterator it = allAbumIDs.constBegin() ; it != allAbumIDs.constEnd() ; ++it)
     {
         albumID = (*it).toInt();
-        albumsStatMap.insert(albumID, 0);
+        albumsStatHash.insert(albumID, 0);
     }
 
     d->db->execSql(QString::fromUtf8("SELECT album, COUNT(*) FROM Images "
@@ -3403,16 +3403,16 @@ QMap<int, int> CoreDB::getNumberOfImagesInAlbums() const
         count   = (*it).toInt();
         ++it;
 
-        albumsStatMap[albumID] = count;
+        albumsStatHash[albumID] = count;
     }
 
-    return albumsStatMap;
+    return albumsStatHash;
 }
 
-QMap<int, int> CoreDB::getNumberOfImagesInTags() const
+QHash<int, int> CoreDB::getNumberOfImagesInTags() const
 {
     QList<QVariant> values, allTagIDs;
-    QMap<int, int>  tagsStatMap;
+    QHash<int, int> tagsStatHash;
     int             tagID, count;
 
     // initialize allTagIDs with all existing tags from db to prevent
@@ -3424,7 +3424,7 @@ QMap<int, int> CoreDB::getNumberOfImagesInTags() const
     for (QList<QVariant>::const_iterator it = allTagIDs.constBegin() ; it != allTagIDs.constEnd() ; ++it)
     {
         tagID = (*it).toInt();
-        tagsStatMap.insert(tagID, 0);
+        tagsStatHash.insert(tagID, 0);
     }
 
     d->db->execSql(QString::fromUtf8("SELECT tagid, COUNT(*) FROM ImageTags "
@@ -3439,16 +3439,16 @@ QMap<int, int> CoreDB::getNumberOfImagesInTags() const
         count = (*it).toInt();
         ++it;
 
-        tagsStatMap[tagID] = count;
+        tagsStatHash[tagID] = count;
     }
 
-    return tagsStatMap;
+    return tagsStatHash;
 }
 
-QMap<int, int> CoreDB::getNumberOfImagesInTagProperties(const QString& property) const
+QHash<int, int> CoreDB::getNumberOfImagesInTagProperties(const QString& property) const
 {
     QList<QVariant> values;
-    QMap<int, int>  tagsStatMap;
+    QHash<int, int> tagsStatHash;
     int             tagID, count;
 
     d->db->execSql(QString::fromUtf8("SELECT tagid, COUNT(*) FROM ImageTagProperties "
@@ -3464,10 +3464,10 @@ QMap<int, int> CoreDB::getNumberOfImagesInTagProperties(const QString& property)
         count = (*it).toInt();
         ++it;
 
-        tagsStatMap[tagID] = count;
+        tagsStatHash[tagID] = count;
     }
 
-    return tagsStatMap;
+    return tagsStatHash;
 }
 
 int CoreDB::getNumberOfImagesInTagProperties(int tagId, const QString& property) const

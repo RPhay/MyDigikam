@@ -78,8 +78,8 @@ void AlbumsDBJobsThread::albumsListing(const AlbumsDBJobInfo& info)
 
     if (info.isFoldersJob())
     {
-        connect(j, SIGNAL(foldersData(QMap<int,int>)),
-                this, SIGNAL(foldersData(QMap<int,int>)));
+        connect(j, SIGNAL(foldersData(QHash<int,int>)),
+                this, SIGNAL(foldersData(QHash<int,int>)));
     }
     else
     {
@@ -112,13 +112,13 @@ void TagsDBJobsThread::tagsListing(const TagsDBJobInfo& info)
 
     if (info.isFoldersJob())
     {
-        connect(j, SIGNAL(foldersData(QMap<int,int>)),
-                this, SIGNAL(foldersData(QMap<int,int>)));
+        connect(j, SIGNAL(foldersData(QHash<int,int>)),
+                this, SIGNAL(foldersData(QHash<int,int>)));
     }
     else if (info.isFaceFoldersJob())
     {
-        connect(j, SIGNAL(faceFoldersData(QMap<QString,QMap<int,int> >)),       // krazy:exclude=normalize
-                this, SIGNAL(faceFoldersData(QMap<QString,QMap<int,int> >)));   // krazy:exclude=normalize
+        connect(j, SIGNAL(faceFoldersData(QMap<QString,QHash<int,int> >)),       // krazy:exclude=normalize
+                this, SIGNAL(faceFoldersData(QMap<QString,QHash<int,int> >)));   // krazy:exclude=normalize
     }
     else
     {

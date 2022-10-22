@@ -378,10 +378,10 @@ public:
     QMap<QString, QDateTime> getAlbumModificationMap(int albumRootId)                                               const;
 
     /**
-     * Returns a QMap<int, int> of album id -> count of items
+     * Returns a QHash<int, int> of album id -> count of items
      * in the album
      */
-    QMap<int, int> getNumberOfImagesInAlbums()                                                                      const;
+    QHash<int, int> getNumberOfImagesInAlbums()                                                                      const;
 
     // ----------- Operations on TAlbums -----------
 
@@ -1307,16 +1307,16 @@ public:
     QList<int> getItemCommonTagIDs(const QList<qlonglong>& imageIDList)                                             const;
 
     /**
-     * Returns a QMap<int,int> of tag id -> count of items
+     * Returns a QHash<int, int> of tag id -> count of items
      * with the tag
      */
-    QMap<int, int> getNumberOfImagesInTags()                                                                        const;
+    QHash<int, int> getNumberOfImagesInTags()                                                                        const;
 
     /**
-     * Returns a QMap<int,int> of tag id -> count of items
+     * Returns a QHash<int, int> of tag id -> count of items
      * with the given tag property
      */
-    QMap<int, int> getNumberOfImagesInTagProperties(const QString& property)                                        const;
+    QHash<int, int> getNumberOfImagesInTagProperties(const QString& property)                                        const;
 
     /**
      * Returns the count of images that have a tag property for the given tag.

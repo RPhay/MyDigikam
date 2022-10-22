@@ -185,12 +185,12 @@ public:
     QTimer*                     tagItemCountTimer;
     QSet<int>                   changedPAlbums;
 
-    QMap<int, int>              pAlbumsCount;
-    QMap<int, int>              tAlbumsCount;
+    QHash<int, int>             pAlbumsCount;
+    QHash<int, int>             tAlbumsCount;
+    QHash<int, int>             fAlbumsCount;
     QMap<YearMonth, int>        dAlbumsCount;
-    QMap<int, int>              fAlbumsCount;
     /// Unconfirmed face counts
-    QMap<int, int>              uAlbumsCount;
+    QHash<int, int>             uAlbumsCount;
     QList<int>                  toUpdatedFaces;
 
 public:

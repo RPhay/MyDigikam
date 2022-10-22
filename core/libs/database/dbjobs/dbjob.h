@@ -65,7 +65,7 @@ protected:
 
 Q_SIGNALS:
 
-    void foldersData(const QMap<int, int>&);
+    void foldersData(const QHash<int, int>&);
 
 private:
 
@@ -152,8 +152,8 @@ protected:
 
 Q_SIGNALS:
 
-    void foldersData(const QMap<int, int>& data);
-    void faceFoldersData(const QMap<QString, QMap<int, int> >& data);
+    void foldersData(const QHash<int, int>& data);
+    void faceFoldersData(const QMap<QString, QHash<int, int> >& data);
 
 private:
 
