@@ -463,9 +463,8 @@ void ItemPreviewView::slotShowContextMenu(QGraphicsSceneContextMenuEvent* event)
 
     // --------------------------------------------------------
 
-    cmHelper.addAction(QLatin1String("image_scan_for_faces"));
-    cmHelper.addAction(QLatin1String("image_recognize_faces"));
     cmHelper.addAction(d->peopleToggleAction,  true);
+    cmHelper.addAction(QLatin1String("image_scan_for_faces"));
     cmHelper.addAction(d->addPersonAction,     true);
 
     // if there is a face in the image, give the option to remove all faces
@@ -474,9 +473,12 @@ void ItemPreviewView::slotShowContextMenu(QGraphicsSceneContextMenuEvent* event)
         cmHelper.addAction(d->forgetFacesAction,   true);
     }
 
-    // if there is at least one unconfirmed face, give the option to ignore unconfirmed faces
+    // if there is at least one unconfirmed face
     if (d->faceGroup->hasUnconfirmed())
     {
+        // give the option to recognize faces
+        cmHelper.addAction(QLatin1String("image_recognize_faces"));
+        // give the option to ignore unconfirmed faces
         cmHelper.addAction(d->markAsIgnoredAction, true);
     }
     cmHelper.addSeparator();
