@@ -50,14 +50,10 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 
     d->changed = true;
 
-    ScanController::instance()->restart();
-
-    QApplication::setOverrideCursor(Qt::WaitCursor);
-
-    DatabaseServerStarter::instance()->stopServerManagerProcess();
-
     // Shutdown possibly running collection scans.
     // Must call resumeCollectionScan further down.
+
+    QApplication::setOverrideCursor(Qt::WaitCursor);
 
     ScanController::instance()->cancelAllAndSuspendCollectionScan();
 
@@ -667,6 +663,10 @@ void AlbumManager::changeDatabase(const DbEngineParameters& newParams)
             }
         }
     }
+
+    DatabaseServerStarter::instance()->stopServerManagerProcess();
+
+    ScanController::instance()->restart();
 
     if (setDatabase(newParams, false))
     {
