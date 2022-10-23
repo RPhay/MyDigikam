@@ -846,8 +846,7 @@
             </statement></dbaction>
 
             <dbaction name="Migrate_Read_Settings"><statement mode="query">
-                SELECT keyword, value FROM Settings
-                WHERE  keyword = 'Locale';
+                SELECT keyword, value FROM Settings WHERE  keyword != 'Locale';
             </statement></dbaction>
             <dbaction name="Migrate_Write_Settings"><statement mode="query">
                 INSERT OR IGNORE INTO Settings (keyword, value) VALUES (:keyword, :value);
@@ -2046,8 +2045,7 @@
             </statement></dbaction>
 
             <dbaction name="Migrate_Read_Settings"><statement mode="query">
-                SELECT keyword, value FROM Settings
-                WHERE  keyword = 'Locale';
+                SELECT keyword, value FROM Settings WHERE  keyword != 'Locale';
             </statement></dbaction>
             <dbaction name="Migrate_Write_Settings" mode="transaction"><statement mode="query">
                 INSERT IGNORE INTO Settings (keyword, value) VALUES (:keyword, :value);
