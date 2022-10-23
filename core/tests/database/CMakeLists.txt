@@ -60,20 +60,20 @@ ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/databasesqliteinit_utest.cpp
 if (ENABLE_MYSQLSUPPORT AND ENABLE_INTERNALMYSQL)
 
 # TODO: do not work yet.
-#    ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/databaseswitch_utest.cpp
+    ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/databaseswitch_utest.cpp
 
-#                  NAME_PREFIX
+                  NAME_PREFIX
 
-#                  "digikam-"
+                  "digikam-"
 
-#                  LINK_LIBRARIES
+                  LINK_LIBRARIES
 
-#                  digikamcore
-#                  digikamdatabase
-#                  digikamgui
+                  digikamcore
+                  digikamdatabase
+                  digikamgui
 
-#                  ${COMMON_TEST_LINK}
-#    )
+                  ${COMMON_TEST_LINK}
+    )
 
     # ---
 

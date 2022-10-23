@@ -188,18 +188,18 @@ void DatabaseSwitchTest::startStopMysql(const QDir& dbDir)
              "Cannot initialize Mysql database");
 
     QTest::qWait(3000);
-/*
+
     qCDebug(DIGIKAM_TESTS_LOG) << "Shutting down Mysql database";
     ScanController::instance()->shutDown();
-    AlbumManager::instance()->cleanUp();
-*/
+
     qCDebug(DIGIKAM_TESTS_LOG) << "Cleaning Mysql database";
+
     CoreDbAccess::cleanUpDatabase();
     ThumbsDbAccess::cleanUpDatabase();
     FaceDbAccess::cleanUpDatabase();
     SimilarityDbAccess::cleanUpDatabase();
 
-//    DatabaseServerStarter::instance()->stopServerManagerProcess();
+    DatabaseServerStarter::instance()->stopServerManagerProcess();
 }
 
 void DatabaseSwitchTest::testFromSqliteToMysql()
@@ -258,4 +258,5 @@ void DatabaseSwitchTest::testFromMysqlToSqlite()
     CoreDbAccess::cleanUpDatabase();
     ThumbsDbAccess::cleanUpDatabase();
     FaceDbAccess::cleanUpDatabase();
+    SimilarityDbAccess::cleanUpDatabase();
 }

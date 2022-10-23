@@ -48,12 +48,18 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
         return true;
     }
 
-    // shutdown possibly running collection scans. Must call resumeCollectionScan further down.
+    d->changed = true;
 
-    ScanController::instance()->cancelAllAndSuspendCollectionScan();
+    ScanController::instance()->restart();
+
     QApplication::setOverrideCursor(Qt::WaitCursor);
 
-    d->changed = true;
+    DatabaseServerStarter::instance()->stopServerManagerProcess();
+
+    // Shutdown possibly running collection scans.
+    // Must call resumeCollectionScan further down.
+
+    ScanController::instance()->cancelAllAndSuspendCollectionScan();
 
     disconnect(CollectionManager::instance(), nullptr, this, nullptr);
     CollectionManager::instance()->setWatchDisabled();
@@ -62,8 +68,6 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
     {
         disconnect(CoreDbAccess::databaseWatch(), nullptr, this, nullptr);
     }
-
-    DatabaseServerStarter::instance()->stopServerManagerProcess();
 
     d->albumWatch->clear();
 
@@ -496,6 +500,8 @@ void AlbumManager::checkDatabaseDirsAfterFirstRun(const QString& dbPath, const Q
 
 void AlbumManager::changeDatabase(const DbEngineParameters& newParams)
 {
+    ScanController::instance()->shutDown();
+
     // if there is no file at the new place, copy old one
 
     DbEngineParameters params = CoreDbAccess::parameters();
@@ -504,7 +510,6 @@ void AlbumManager::changeDatabase(const DbEngineParameters& newParams)
 
     if (newParams.isSQLite())
     {
-        DatabaseServerStarter::instance()->stopServerManagerProcess();
         bool walModeChanged = ((params.walMode != newParams.walMode)                                     &&
                                (params.getCoreDatabaseNameOrDir() == newParams.getCoreDatabaseNameOrDir()));
 

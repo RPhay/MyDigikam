@@ -19,6 +19,18 @@
 namespace Digikam
 {
 
+void ScanController::restart()
+{
+    if (isRunning())
+    {
+        return;
+    }
+
+    d->running       = true;
+    d->scanSuspended = 0;
+    start();
+}
+
 ScanController::Advice ScanController::databaseInitialization()
 {
     d->advice = Success;

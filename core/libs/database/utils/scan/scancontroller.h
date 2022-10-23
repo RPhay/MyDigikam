@@ -129,6 +129,11 @@ private:
 public:
 
     /**
+     * Restart thread after shutdown.
+     */
+    void restart();
+
+    /**
      * Calls CoreDbAccess::checkReadyForUse(), providing progress
      * feedback if schema updating occurs.
      * Synchronous, returns when ready.
