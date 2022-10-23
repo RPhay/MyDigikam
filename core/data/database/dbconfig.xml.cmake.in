@@ -1890,7 +1890,7 @@
 
             <!-- Note Albums with an icon set are setup after population of the Images table. -->
             <dbaction name="Migrate_Read_Albums"><statement mode="query">
-                SELECT id, albumRoot, relativePath, date, caption, collection, modificationDate FROM Albums
+                SELECT id, albumRoot, relativePath COLLATE utf8_general_ci, date, caption, collection, modificationDate FROM Albums
                 WHERE  albumRoot IN (SELECT id FROM AlbumRoots);
             </statement></dbaction>
             <dbaction name="Migrate_Write_Albums" mode="transaction"><statement mode="query">
@@ -1906,7 +1906,7 @@
             </statement></dbaction>
 
             <dbaction name="Migrate_Read_Images"><statement mode="query">
-                SELECT id, album, name, status, category, modificationDate, fileSize, uniqueHash, manualOrder FROM Images
+                SELECT id, album, name COLLATE utf8_general_ci, status, category, modificationDate, fileSize, uniqueHash, manualOrder FROM Images
                 WHERE  album IN (SELECT id FROM Albums);
             </statement></dbaction>
             <dbaction name="Migrate_Write_Images" mode="transaction"><statement mode="query">
