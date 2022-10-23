@@ -476,10 +476,10 @@ void ItemPreviewView::slotShowContextMenu(QGraphicsSceneContextMenuEvent* event)
     // if there is at least one unconfirmed face
     if (d->faceGroup->hasUnconfirmed())
     {
-        // give the option to recognize faces
-        cmHelper.addAction(QLatin1String("image_recognize_faces"));
         // give the option to ignore unconfirmed faces
         cmHelper.addAction(d->markAsIgnoredAction, true);
+        // give the option to recognize faces
+        cmHelper.addAction(QLatin1String("image_recognize_faces"));
     }
     cmHelper.addSeparator();
 
