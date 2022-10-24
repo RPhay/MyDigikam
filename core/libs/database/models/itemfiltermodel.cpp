@@ -1192,7 +1192,9 @@ void ItemFilterModel::slotImageTagChange(const ImageTagChangeset& changeset)
 
     if (!d->versionFilter.isFilteringByTags() &&
         !d->filter.isFilteringByTags()        &&
-        !d->filter.isFilteringByText())
+        !d->filter.isFilteringByText()        &&
+        !d->filter.isFilteringByPickLabels()  &&
+        !d->filter.isFilteringByColorLabels())
     {
         return;
     }
