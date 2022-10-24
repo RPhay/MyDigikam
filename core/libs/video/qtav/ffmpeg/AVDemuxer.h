@@ -102,25 +102,23 @@ public:
     bool isLoaded()           const;
 
     /*!
-     * \brief readFrame
-     * Read a packet from 1 of the streams. use packet() to get the result packet.
-     * packet() returns last valid packet.
-     * So do not use packet() if readFrame() failed.
-     * Call readFrame() and seek() in the same thread.
-     * \return true if no error. false if error occurs, eof reaches,
-     * interrupted by user or time out(getInterruptTimeout())
+     * \brief read the next packet from input media.
+     * Use packet() to get the resulting packet; only valid if this function returns true.
+     * Call readPacket() and seek() in the same thread.
+     *
+     * \return true read successful; else false
      */
-    bool readFrame(); // TODO: rename int readPacket(), return stream number
+    bool readPacket(); // TODO: return stream number (useful?  existing code already uses stream())
 
     /*!
      * \brief packet
-     * return the packet read by demuxer. packet is invalid if readFrame() returns false.
+     * \return the last packet read by demuxer; only valid if readPacket() returned true
      */
     Packet packet()     const;
 
     /*!
-     * \brief stream
-     * Current readFrame() readed stream index.
+     * \brief current stream
+     * \return stream index; only valid if readPacket() returned true
      */
     int stream()        const;
 

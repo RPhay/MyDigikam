@@ -190,7 +190,7 @@ qint64 FrameReader::Private::seekInternal(qint64 value)
 
     while (!demuxer.atEnd())
     {
-        if (!demuxer.readFrame())
+        if (!demuxer.readPacket())
             continue;
 
         if (demuxer.stream() != vstream)
@@ -300,7 +300,7 @@ qint64 FrameReader::Private::seekInternal(qint64 value)
 
     while (!demuxer.atEnd())
     {
-        if (!demuxer.readFrame())
+        if (!demuxer.readPacket())
             continue;
 
         if (demuxer.stream() != vstream)
@@ -517,7 +517,7 @@ void FrameReader::readMoreInternal()
 
     while (!d->demuxer.atEnd())
     {
-        if (!d->demuxer.readFrame())
+        if (!d->demuxer.readPacket())
         {
 /*
             qCDebug(DIGIKAM_QTAV_LOG).noquote()

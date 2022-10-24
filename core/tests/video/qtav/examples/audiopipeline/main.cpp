@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
         {
             // continue to decode previous undecoded data
 
-            if (!demuxer.readFrame() || (demuxer.stream() != astream))
+            if (!demuxer.readPacket() || (demuxer.stream() != astream))
                 continue;
 
             pkt = demuxer.packet();

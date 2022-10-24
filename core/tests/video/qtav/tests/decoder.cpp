@@ -105,7 +105,7 @@ int main(int argc, char* argv[])
 
     while (!demux.atEnd())
     {
-        if (!demux.readFrame())
+        if (!demux.readPacket())
             continue;
 
         if (demux.stream() != vstream)

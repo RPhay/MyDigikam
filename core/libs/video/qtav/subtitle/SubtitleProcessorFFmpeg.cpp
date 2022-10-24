@@ -661,7 +661,7 @@ bool SubtitleProcessorFFmpeg::processSubtitle()
 
     while (!m_reader.atEnd())
     {
-        if (!m_reader.readFrame())
+        if (!m_reader.readPacket())
         {
             // EOF or other errors
 

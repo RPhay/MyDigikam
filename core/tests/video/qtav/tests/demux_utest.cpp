@@ -58,7 +58,7 @@ private:
         int audioFrameCount = 0;
         int videoFrameCount = 0;
 
-        while(demux.readFrame())
+        while(demux.readPacket())
         {
             std::stringstream ss;
 

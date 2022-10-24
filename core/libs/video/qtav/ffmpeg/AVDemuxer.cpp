@@ -662,7 +662,7 @@ MediaStatus AVDemuxer::mediaStatus() const
     return d->media_status;
 }
 
-bool AVDemuxer::readFrame()
+bool AVDemuxer::readPacket()
 {
     QMutexLocker lock(&d->mutex);
     Q_UNUSED(lock);

@@ -78,7 +78,7 @@ private Q_SLOTS:
         {
             if (!pkt.isValid())
             {
-                if (!demux.readFrame()) continue;
+                if (!demux.readPacket()) continue;
 
                 if (demux.stream() != audioStreamNum) continue;
 

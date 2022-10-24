@@ -143,7 +143,7 @@ public:
 
             while (t < -pts)
             {
-                demux_thread->demuxer->readFrame();
+                demux_thread->demuxer->readPacket();
 
                 if (demux_thread->demuxer->stream() != demux_thread->demuxer->videoStream())
                     continue;
@@ -1049,7 +1049,7 @@ void AVDemuxThread::run()
 
         updateBufferState();
 
-        if (!demuxer->readFrame())
+        if (!demuxer->readPacket())
         {
             continue;
         }
@@ -1076,7 +1076,7 @@ void AVDemuxThread::run()
 
                 if (aqueue && (!aqueue->isFull() || aqueue->isBuffering()))
                 {
-                    if (ademuxer->readFrame())
+                    if (ademuxer->readPacket())
                     {
                         if (ademuxer->stream() == ademuxer->audioStream())
                         {

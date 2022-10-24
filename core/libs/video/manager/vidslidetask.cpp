@@ -187,7 +187,7 @@ AudioFrame VidSlideTask::Private::nextAudioFrame(const AudioFormat& afmt)
     {
         if (!apkt.isValid())
         {
-            if (!demuxer.readFrame() || (demuxer.stream() != astream))
+            if (!demuxer.readPacket() || (demuxer.stream() != astream))
             {
                 continue;
             }

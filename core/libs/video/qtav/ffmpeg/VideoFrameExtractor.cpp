@@ -349,7 +349,7 @@ public:
                 return false;
             }
 
-            if (!demuxer.readFrame())
+            if (!demuxer.readPacket())
                 continue;
 
             if (demuxer.stream() != vstream)
@@ -486,7 +486,7 @@ public:
                 return false;
             }
 
-            if (!demuxer.readFrame())
+            if (!demuxer.readPacket())
                 continue;
 
             if (demuxer.stream() != vstream)
