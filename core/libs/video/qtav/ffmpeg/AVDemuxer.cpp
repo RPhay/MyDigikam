@@ -800,6 +800,8 @@ bool AVDemuxer::atEnd() const
     if (d->format_ctx->pb)
     {
         AVIOContext* const pb = d->format_ctx->pb;
+
+        if (pb->eof_reached) return true;
 /*
         qCDebug(DIGIKAM_QTAV_LOG).noquote()
             << QString::asprintf("pb->error: %#x, eof: %d, pos: %lld, bufptr: %p",
