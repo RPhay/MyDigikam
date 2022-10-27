@@ -25,9 +25,12 @@
 
 #include "digikam_debug.h"
 #include "metaengine.h"
-#include "dtestdatadir.h"
+#include "dimg.h"
 #include "dngwriter.h"
 #include "wstoolutils.h"
+#include "dpluginloader.h"
+#include "dtestdatadir.h"
+#include "drawdecoding.h"
 
 using namespace Digikam;
 
@@ -41,6 +44,12 @@ Raw2DngTest::Raw2DngTest(QObject* const parent)
 void Raw2DngTest::testRaw2Dng()
 {
     MetaEngine::initializeExiv2();
+    QDir dir(qApp->applicationDirPath());
+    qputenv("DK_PLUGIN_PATH", dir.canonicalPath().toUtf8());
+    DPluginLoader::instance()->init();
+
+    QVERIFY2(!DPluginLoader::instance()->allPlugins().isEmpty(),
+             "Not able to found digiKam plugin in standard paths. Test is aborted...");
 
     QString fname = DTestDataDir::TestData(QString::fromUtf8("core/tests/metadataengine"))
                     .root().path() + QLatin1String("/IMG_2520.CR2");
@@ -54,6 +63,29 @@ void Raw2DngTest::testRaw2Dng()
     DNGWriter dngProcessor;
     dngProcessor.setInputFile(fname);
     QString path = tmpDir.filePath(QFileInfo(fname).fileName().trimmed());
-    dngProcessor.setOutputFile(tmpDir.path() + QString::fromLatin1("/%1").arg(path));
-    QVERIFY2(dngProcessor.convert(), "Cannot convert RAW to DNG");
+    dngProcessor.setOutputFile(QString::fromLatin1("%1.dng").arg(path));
+    QVERIFY2(!dngProcessor.convert(), "Cannot convert RAW to DNG");
+
+    qCDebug(DIGIKAM_TESTS_LOG) << "Loading DNG file with DImg:" << dngProcessor.outputFile();
+
+    DRawDecoderSettings settings;
+    settings.halfSizeColorImage    = false;
+    settings.sixteenBitsImage      = true;
+    settings.RGBInterpolate4Colors = false;
+    settings.RAWQuality            = DRawDecoderSettings::BILINEAR;
+
+    DImg img;
+
+    QVERIFY2(img.load(dngProcessor.outputFile(), nullptr, DRawDecoding(settings)), "Cannot load DNG file");
+
+    qCDebug(DIGIKAM_TESTS_LOG) << "DNG image size:"         << img.size();
+    qCDebug(DIGIKAM_TESTS_LOG) << "DNG image bits depth:"   << img.bitsDepth();
+    qCDebug(DIGIKAM_TESTS_LOG) << "DNG image format:"       << img.format();
+
+    QVERIFY2(!img.isNull(), "DNG image is null...");
+    QVERIFY2(img.size()  == QSize(6264, 4180), "Incorrect DNG image size...");
+    QVERIFY2(img.bitsDepth() == 16, "Incorrect DNG image bits depth...");
+    QVERIFY2(img.format() == QLatin1String("RAW"), "Incorrect DNG image format...");
+
+    DPluginLoader::instance()->cleanUp();
 }
