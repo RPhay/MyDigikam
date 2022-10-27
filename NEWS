@@ -176,7 +176,7 @@ BUGFIXES:
 138 ==> 446616 - digiKam lags for about 2 - 3 seconds when I assign a Tag.
 139 ==> 461069 - Set album date for new albums to earliest picture date.
 140 ==> 461065 - When user mouse over tag list which have been cut off (...) on image thumbnail display all tags in mouse over text.
-141 ==> 
+141 ==> 405690 - Album date changing automatically without any reason.
 142 ==> 
 143 ==> 
 144 ==> 
