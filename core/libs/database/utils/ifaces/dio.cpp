@@ -425,14 +425,36 @@ void DIO::slotResult()
     }
 
     IOJobData* const data = jobThread->jobData();
+    const int operation   = data->operation();
 
-    if (jobThread->hasErrors() && data->operation() != IOJobData::Rename)
+    if      (jobThread->hasErrors() && operation != IOJobData::Rename)
     {
         // Pop-up a message about the error.
 
         QString errors = jobThread->errorsList().join(QLatin1Char('\n'));
         DNotificationWrapper(QString(), errors, DigikamApp::instance(),
                              DigikamApp::instance()->windowTitle());
+    }
+    else
+    {
+        if ((operation == IOJobData::CopyImage) ||
+            (operation == IOJobData::MoveImage))
+        {
+            if (data->destAlbum())
+            {
+                updateAlbumDate(data->destAlbum()->id());
+            }
+        }
+
+        if ((operation == IOJobData::Trash)  ||
+            (operation == IOJobData::Delete) ||
+            (operation == IOJobData::MoveImage))
+        {
+            Q_FOREACH (int albumID, data->srcAlbumIds())
+            {
+                updateAlbumDate(albumID);
+            }
+        }
     }
 
     if (m_processingCount)
@@ -708,6 +730,30 @@ void DIO::slotOneProccessed(const QUrl& url)
     if (item)
     {
         item->advance(1);
+    }
+}
+
+void DIO::updateAlbumDate(int albumID)
+{
+    QDate newAlbumDate;
+    MetaEngineSettingsContainer settings = MetaEngineSettings::instance()->settings();
+
+    if      (settings.albumDateFrom == MetaEngineSettingsContainer::OldestItemDate)
+    {
+        newAlbumDate = CoreDbAccess().db()->getAlbumLowestDate(albumID);
+    }
+    else if (settings.albumDateFrom == MetaEngineSettingsContainer::NewestItemDate)
+    {
+        newAlbumDate = CoreDbAccess().db()->getAlbumHighestDate(albumID);
+    }
+    else if (settings.albumDateFrom == MetaEngineSettingsContainer::AverageDate)
+    {
+        newAlbumDate = CoreDbAccess().db()->getAlbumAverageDate(albumID);
+    }
+
+    if (newAlbumDate.isValid())
+    {
+        CoreDbAccess().db()->setAlbumDate(albumID, newAlbumDate);
     }
 }
 

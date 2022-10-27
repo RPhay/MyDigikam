@@ -51,6 +51,7 @@ public:
     QMap<QUrl, QUrl>   changeDestMap;
     QList<ItemInfo>    itemInfosList;
     QList<QUrl>        sourceUrlList;
+    QList<int>         sourceAlbumIds;
 
     QUrl               destUrl;
 
@@ -176,10 +177,16 @@ void IOJobData::setItemInfos(const QList<ItemInfo>& infos)
     d->itemInfosList = infos;
 
     d->sourceUrlList.clear();
+    d->sourceAlbumIds.clear();
 
     Q_FOREACH (const ItemInfo& info, d->itemInfosList)
     {
         d->sourceUrlList << info.fileUrl();
+
+        if (!d->sourceAlbumIds.contains(info.albumId()))
+        {
+            d->sourceAlbumIds << info.albumId();
+        }
     }
 }
 
@@ -283,6 +290,11 @@ ItemInfo IOJobData::findItemInfo(const QUrl& url) const
     }
 
     return ItemInfo();
+}
+
+QList<int> IOJobData::srcAlbumIds() const
+{
+    return d->sourceAlbumIds;
 }
 
 QList<QUrl> IOJobData::sourceUrls() const

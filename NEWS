@@ -174,5 +174,5 @@ BUGFIXES:
 136 ==> 460761 - Recent regression Cannot any more reassign faces by dragging them on the left sidebar items.
 137 ==> 460786 - Freeze for 3-4 seconds after assigning tag to an image.
 138 ==> 446616 - digiKam lags for about 2 - 3 seconds when I assign a Tag.
-139 ==> 
+139 ==> 461069 - Set album date for new albums to earliest picture date.
 140 ==> 
