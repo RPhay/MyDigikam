@@ -102,6 +102,7 @@ private:
     void processJob(IOJobData* const data);
     void createJob(IOJobData* const data);
 
+    void updateAlbumDate(int albumID);
     QString getItemString(IOJobData* const data)         const;
     ProgressItem* getProgressItem(IOJobData* const data) const;
     void addAlbumChildrenToList(QList<int>& list, Album* const album);

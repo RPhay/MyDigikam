@@ -174,5 +174,15 @@ BUGFIXES:
 136 ==> 460761 - Recent regression Cannot any more reassign faces by dragging them on the left sidebar items.
 137 ==> 460786 - Freeze for 3-4 seconds after assigning tag to an image.
 138 ==> 446616 - digiKam lags for about 2 - 3 seconds when I assign a Tag.
-139 ==> 
-140 ==> 
+139 ==> 461069 - Set album date for new albums to earliest picture date.
+140 ==> 461065 - When user mouse over tag list which have been cut off (...) on image thumbnail display all tags in mouse over text.
+141 ==> 405690 - Album date changing automatically without any reason.
+142 ==> 416934 - Tags & data disappear after moving images to new folder.
+143 ==> 389655 - Sort multiple albums by exif date (not last modified).
+144 ==> 196672 - Add new option to setup global preference about default album dating.
+145 ==> 
+146 ==> 
+147 ==> 
+148 ==> 
+149 ==> 
+150 ==> 

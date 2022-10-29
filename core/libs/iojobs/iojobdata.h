@@ -119,6 +119,7 @@ public:
 
     ItemInfo           findItemInfo(const QUrl& url)        const;
 
+    QList<int>         srcAlbumIds()                        const;
     QList<QUrl>        sourceUrls()                         const;
     QList<ItemInfo>    itemInfos()                          const;
 
