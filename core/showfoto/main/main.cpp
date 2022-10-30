@@ -22,6 +22,7 @@
 #include <QFile>
 #include <QMessageBox>
 #include <QApplication>
+#include <QImageReader>
 #include <QStandardPaths>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
@@ -95,6 +96,10 @@ extern "C" MAIN_EXPORT int MAIN_FN(int argc, char** argv)
     {
         QCoreApplication::setAttribute(Qt::AA_DisableHighDpiScaling);
     }
+
+#else
+
+    QImageReader::setAllocationLimit(0);
 
 #endif
 
