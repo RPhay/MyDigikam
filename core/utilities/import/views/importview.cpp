@@ -108,7 +108,6 @@ public:
     FIXME
     FilterSideBarWidget*               filterWidget;
 */
-    QString                            optionAlbumViewPrefix;
 };
 
 void ImportView::Private::addPageUpDownActions(ImportView* const q, QWidget* const w)

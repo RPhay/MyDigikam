@@ -154,7 +154,6 @@ public:
         leftSideBar             (nullptr),
         rightSideBar            (nullptr),
         filterWidget            (nullptr),
-        optionAlbumViewPrefix   (QLatin1String("AlbumView")),
         modelCollection         (nullptr),
         labelsSearchHandler     (nullptr),
         errorWidget             (nullptr)
@@ -253,8 +252,6 @@ public:
     ItemPropertiesSideBarDB*      rightSideBar;
 
     FilterSideBarWidget*          filterWidget;
-
-    QString                       optionAlbumViewPrefix;
 
     QList<SidebarWidget*>         leftSideBarWidgets;
 
