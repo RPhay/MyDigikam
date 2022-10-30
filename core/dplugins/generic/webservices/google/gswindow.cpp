@@ -584,7 +584,13 @@ void GSWindow::slotStartTransfer()
 
                 // Google Photo doesn't support image titles. Include it in descriptions if needed.
 
-                QStringList descriptions = QStringList() << info.title() << info.comment();
+                QStringList descriptions({info.title()});
+
+                if (info.title() != info.comment())
+                {
+                    descriptions << info.comment();
+                }
+
                 descriptions.removeAll(QLatin1String(""));
                 temp.description         = descriptions.join(QLatin1String("\n\n"));
                 temp.description.replace(QLatin1Char('"'), QLatin1String("\\\""));
