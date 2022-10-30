@@ -25,8 +25,8 @@ namespace Digikam
 
 void ItemIconView::slotEditor()
 {
-    const ItemInfoList imageInfoList = selectedInfoList(ApplicationSettings::Tools);
-    ItemInfo singleInfo              = currentInfo();
+    const ItemInfoList& imageInfoList = selectedInfoList(ApplicationSettings::Tools);
+    ItemInfo singleInfo               = currentInfo();
 
     if (singleInfo.isNull() && !imageInfoList.isEmpty())
     {
@@ -44,25 +44,25 @@ void ItemIconView::slotFileWithDefaultApplication()
 
 void ItemIconView::slotLightTable()
 {
-    bool grouping                   = selectedNeedGroupResolving(ApplicationSettings::LightTable);
-    const ItemInfoList selectedList = selectedInfoList(false, grouping);
+    bool grouping                    = selectedNeedGroupResolving(ApplicationSettings::LightTable);
+    const ItemInfoList& selectedList = selectedInfoList(false, grouping);
 
     if (selectedList.isEmpty())
     {
         grouping = allNeedGroupResolving(ApplicationSettings::LightTable);
     }
 
-    const ItemInfoList allInfoList = allInfo(grouping);
-    const ItemInfo currentItemInfo = currentInfo();
+    const ItemInfoList& allInfoList = allInfo(grouping);
+    const ItemInfo currentItemInfo  = currentInfo();
 
     d->utilities->insertToLightTableAuto(allInfoList, selectedList, currentItemInfo);
 }
 
 void ItemIconView::slotQueueMgr()
 {
-    bool grouping              = selectedNeedGroupResolving(ApplicationSettings::BQM);
-    ItemInfoList imageInfoList = selectedInfoList(false, grouping);
-    ItemInfo     singleInfo    = currentInfo();
+    bool grouping                     = selectedNeedGroupResolving(ApplicationSettings::BQM);
+    const ItemInfoList& imageInfoList = selectedInfoList(false, grouping);
+    ItemInfo singleInfo                = currentInfo();
 
     if (singleInfo.isNull() && !imageInfoList.isEmpty())
     {
@@ -71,8 +71,8 @@ void ItemIconView::slotQueueMgr()
 
     if (singleInfo.isNull())
     {
-        grouping                    = allNeedGroupResolving(ApplicationSettings::BQM);
-        const ItemInfoList allItems = allInfo(grouping);
+        grouping                     = allNeedGroupResolving(ApplicationSettings::BQM);
+        const ItemInfoList& allItems = allInfo(grouping);
 
         if (!allItems.isEmpty())
         {
@@ -92,8 +92,8 @@ void ItemIconView::slotImageEdit()
 
 void ItemIconView::slotImageLightTable()
 {
-    const ItemInfoList selectedList = selectedInfoList(ApplicationSettings::LightTable);
-    const ItemInfo currentItemInfo  = currentInfo();
+    const ItemInfoList& selectedList = selectedInfoList(ApplicationSettings::LightTable);
+    const ItemInfo currentItemInfo   = currentInfo();
 
     // replace images in light table
 
@@ -102,8 +102,8 @@ void ItemIconView::slotImageLightTable()
 
 void ItemIconView::slotImageAddToLightTable()
 {
-    const ItemInfoList selectedList = selectedInfoList(ApplicationSettings::LightTable);
-    const ItemInfo currentItemInfo  = currentInfo();
+    const ItemInfoList& selectedList = selectedInfoList(ApplicationSettings::LightTable);
+    const ItemInfo currentItemInfo   = currentInfo();
 
     // add to images in light table
 
@@ -112,27 +112,27 @@ void ItemIconView::slotImageAddToLightTable()
 
 void ItemIconView::slotImageAddToCurrentQueue()
 {
-    const ItemInfoList selectedList = selectedInfoList(ApplicationSettings::BQM);
-    const ItemInfo currentItemInfo  = currentInfo();
+    const ItemInfoList& selectedList = selectedInfoList(ApplicationSettings::BQM);
+    const ItemInfo currentItemInfo   = currentInfo();
 
     d->utilities->insertToQueueManager(selectedList, currentItemInfo, false);
 }
 
 void ItemIconView::slotImageAddToNewQueue()
 {
-    const bool newQueue             = QueueMgrWindow::queueManagerWindowCreated() &&
+    const bool newQueue              = QueueMgrWindow::queueManagerWindowCreated() &&
                     !QueueMgrWindow::queueManagerWindow()->queuesMap().isEmpty();
 
-    const ItemInfoList selectedList = selectedInfoList(ApplicationSettings::BQM);
-    const ItemInfo currentItemInfo  = currentInfo();
+    const ItemInfoList& selectedList = selectedInfoList(ApplicationSettings::BQM);
+    const ItemInfo currentItemInfo   = currentInfo();
 
     d->utilities->insertToQueueManager(selectedList, currentItemInfo, newQueue);
 }
 
 void ItemIconView::slotImageAddToExistingQueue(int queueid)
 {
-    const ItemInfoList selectedList = selectedInfoList(ApplicationSettings::BQM);
-    const ItemInfo currentItemInfo  = currentInfo();
+    const ItemInfoList& selectedList = selectedInfoList(ApplicationSettings::BQM);
+    const ItemInfo currentItemInfo   = currentInfo();
 
     if (!selectedList.isEmpty())
     {

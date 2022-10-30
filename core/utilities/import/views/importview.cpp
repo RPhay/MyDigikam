@@ -456,8 +456,8 @@ void ImportView::slotDispatchImageSelected()
     // since the iconView tracks the changes also while we are in map widget mode,
     // we can still pull the data from the iconView
 
-    const CamItemInfoList list      = d->iconView->selectedCamItemInfosCurrentFirst();
-    const CamItemInfoList allImages = d->iconView->camItemInfos();
+    const CamItemInfoList& list      = d->iconView->selectedCamItemInfosCurrentFirst();
+    const CamItemInfoList& allImages = d->iconView->camItemInfos();
 
     if (list.isEmpty())
     {

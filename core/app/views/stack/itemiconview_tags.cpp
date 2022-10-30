@@ -31,7 +31,7 @@ void ItemIconView::setRecurseTags(bool recursive)
 void ItemIconView::toggleTag(int tagID)
 {
     ItemInfoList tagToRemove, tagToAssign;
-    const ItemInfoList selectedList = selectedInfoList(ApplicationSettings::Metadata);
+    const ItemInfoList& selectedList = selectedInfoList(ApplicationSettings::Metadata);
 
     Q_FOREACH (const ItemInfo& info, selectedList)
     {

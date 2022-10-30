@@ -145,8 +145,8 @@ void ItemIconView::slotDispatchImageSelected()
     // the list of ItemInfos of currently selected items, currentItem first
     ApplicationSettings::ApplyToEntireGroup applyAll =
         ApplicationSettings::instance()->getGroupingOperateOnAll(ApplicationSettings::Metadata);
-    const ItemInfoList list      = selectedInfoList(true, (applyAll == ApplicationSettings::Yes));
-    const ItemInfoList allImages = allInfo(true);
+    const ItemInfoList& list      = selectedInfoList(true, (applyAll == ApplicationSettings::Yes));
+    const ItemInfoList& allImages = allInfo(true);
 
     if (list.isEmpty())
     {
@@ -187,14 +187,14 @@ void ItemIconView::slotDispatchImageSelected()
 
 void ItemIconView::slotImageWriteMetadata()
 {
-    const ItemInfoList selected      = selectedInfoList(ApplicationSettings::Metadata);
+    const ItemInfoList& selected     = selectedInfoList(ApplicationSettings::Metadata);
     MetadataSynchronizer* const tool = new MetadataSynchronizer(selected, MetadataSynchronizer::WriteFromDatabaseToFile);
     tool->start();
 }
 
 void ItemIconView::slotImageReadMetadata()
 {
-    const ItemInfoList selected      = selectedInfoList(ApplicationSettings::Metadata);
+    const ItemInfoList& selected     = selectedInfoList(ApplicationSettings::Metadata);
     MetadataSynchronizer* const tool = new MetadataSynchronizer(selected, MetadataSynchronizer::ReadFromFileToDatabase);
     tool->setUseMultiCoreCPU(false);
     tool->start();
