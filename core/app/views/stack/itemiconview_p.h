@@ -114,8 +114,7 @@ class Q_DECL_HIDDEN ItemIconView::Private
 public:
 
     explicit Private()
-      : needDispatchSelection   (false),
-        useAlbumHistory         (false),
+      : useAlbumHistory         (false),
         initialAlbumID          (0),
         thumbSize               (ThumbnailSize::Medium),
         dockArea                (nullptr),
@@ -202,7 +201,6 @@ public:
 
 public:
 
-    bool                          needDispatchSelection;
     bool                          useAlbumHistory;
 
     int                           initialAlbumID;

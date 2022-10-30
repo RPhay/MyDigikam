@@ -53,14 +53,13 @@ class Q_DECL_HIDDEN ImportView::Private
 public:
 
     explicit Private()
-      : needDispatchSelection(false),
-        thumbSize(ThumbnailSize::Medium),
-        dockArea(nullptr),
-        splitter(nullptr),
+      : thumbSize     (ThumbnailSize::Medium),
+        dockArea      (nullptr),
+        splitter      (nullptr),
         selectionTimer(nullptr),
         thumbSizeTimer(nullptr),
-        parent(nullptr),
-        iconView(nullptr),
+        parent        (nullptr),
+        iconView      (nullptr),
 
 #ifdef HAVE_MARBLE
 
@@ -80,8 +79,6 @@ public:
     void addPageUpDownActions(ImportView* const q, QWidget* const w);
 
 public:
-
-    bool                               needDispatchSelection;
 
     int                                thumbSize;
 
@@ -163,6 +160,7 @@ ImportView::ImportView(ImportUI* const ui, QWidget* const parent)
     d->selectionTimer = new QTimer(this);
     d->selectionTimer->setSingleShot(true);
     d->selectionTimer->setInterval(75);
+
     d->thumbSizeTimer = new QTimer(this);
     d->thumbSizeTimer->setSingleShot(true);
     d->thumbSizeTimer->setInterval(300);
@@ -448,52 +446,45 @@ void ImportView::slotImageSelected()
 {
     // delay to slotDispatchImageSelected
 
-    d->needDispatchSelection = true;
     d->selectionTimer->start();
     Q_EMIT signalSelectionChanged(d->iconView->numberOfSelectedIndexes());
 }
 
 void ImportView::slotDispatchImageSelected()
 {
-    if (d->needDispatchSelection)
+    // the list of CamItemInfos of currently selected items, currentItem first
+    // since the iconView tracks the changes also while we are in map widget mode,
+    // we can still pull the data from the iconView
+
+    const CamItemInfoList list      = d->iconView->selectedCamItemInfosCurrentFirst();
+    const CamItemInfoList allImages = d->iconView->camItemInfos();
+
+    if (list.isEmpty())
     {
-        // the list of CamItemInfos of currently selected items, currentItem first
-        // since the iconView tracks the changes also while we are in map widget mode,
-        // we can still pull the data from the iconView
+        d->stackedView->setPreviewItem();
+        Q_EMIT signalImageSelected(list, allImages);
+        Q_EMIT signalNewSelection(false);
+        Q_EMIT signalNoCurrentItem();
+    }
+    else
+    {
+        CamItemInfo previousInfo;
+        CamItemInfo nextInfo;
 
-        const CamItemInfoList list = d->iconView->selectedCamItemInfosCurrentFirst();
-
-        const CamItemInfoList allImages = d->iconView->camItemInfos();
-
-        if (list.isEmpty())
+        if (d->stackedView->viewMode() != ImportStackedView::MapWidgetMode)
         {
-            d->stackedView->setPreviewItem();
-            Q_EMIT signalImageSelected(list, allImages);
-            Q_EMIT signalNewSelection(false);
-            Q_EMIT signalNoCurrentItem();
-        }
-        else
-        {
-            CamItemInfo previousInfo;
-            CamItemInfo nextInfo;
-
-            if (d->stackedView->viewMode() != ImportStackedView::MapWidgetMode)
-            {
-                previousInfo = d->iconView->previousInfo(list.first());
-                nextInfo     = d->iconView->nextInfo(list.first());
-            }
-
-            if ((d->stackedView->viewMode() != ImportStackedView::PreviewCameraMode) &&
-                (d->stackedView->viewMode() != ImportStackedView::MapWidgetMode))
-            {
-                d->stackedView->setPreviewItem(list.first(), previousInfo, nextInfo);
-            }
-
-            Q_EMIT signalImageSelected(list, allImages);
-            Q_EMIT signalNewSelection(true);
+            previousInfo = d->iconView->previousInfo(list.first());
+            nextInfo     = d->iconView->nextInfo(list.first());
         }
 
-        d->needDispatchSelection = false;
+        if ((d->stackedView->viewMode() != ImportStackedView::PreviewCameraMode) &&
+            (d->stackedView->viewMode() != ImportStackedView::MapWidgetMode))
+        {
+            d->stackedView->setPreviewItem(list.first(), previousInfo, nextInfo);
+        }
+
+        Q_EMIT signalImageSelected(list, allImages);
+        Q_EMIT signalNewSelection(true);
     }
 }
 

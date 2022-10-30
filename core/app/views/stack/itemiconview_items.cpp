@@ -116,7 +116,6 @@ void ItemIconView::slotImageSelected()
 {
     // delay to slotDispatchImageSelected
 
-    d->needDispatchSelection = true;
     d->selectionTimer->start();
 
     switch (viewMode())
@@ -143,51 +142,46 @@ void ItemIconView::slotDispatchImageSelected()
         return;
     }
 
-    if (d->needDispatchSelection)
-    {
-        // the list of ItemInfos of currently selected items, currentItem first
-        ApplicationSettings::ApplyToEntireGroup applyAll =
-            ApplicationSettings::instance()->getGroupingOperateOnAll(ApplicationSettings::Metadata);
-        const ItemInfoList list      = selectedInfoList(true, (applyAll == ApplicationSettings::Yes));
-        const ItemInfoList allImages = allInfo(true);
+    // the list of ItemInfos of currently selected items, currentItem first
+    ApplicationSettings::ApplyToEntireGroup applyAll =
+        ApplicationSettings::instance()->getGroupingOperateOnAll(ApplicationSettings::Metadata);
+    const ItemInfoList list      = selectedInfoList(true, (applyAll == ApplicationSettings::Yes));
+    const ItemInfoList allImages = allInfo(true);
 
-        if (list.isEmpty())
+    if (list.isEmpty())
+    {
+        d->stackedview->setPreviewItem();
+        Q_EMIT signalImageSelected(list, allImages);
+        Q_EMIT signalNoCurrentItem();
+    }
+    else
+    {
+        d->rightSideBar->itemChanged(list, allImages);
+
+        ItemInfo previousInfo;
+        ItemInfo nextInfo;
+
+        if (viewMode() == StackedView::TableViewMode)
         {
-            d->stackedview->setPreviewItem();
-            Q_EMIT signalImageSelected(list, allImages);
-            Q_EMIT signalNoCurrentItem();
+            previousInfo = d->tableView->previousInfo();
+            nextInfo     = d->tableView->nextInfo();
         }
         else
         {
-            d->rightSideBar->itemChanged(list, allImages);
-
-            ItemInfo previousInfo;
-            ItemInfo nextInfo;
-
-            if (viewMode() == StackedView::TableViewMode)
-            {
-                previousInfo = d->tableView->previousInfo();
-                nextInfo     = d->tableView->nextInfo();
-            }
-            else
-            {
-                previousInfo = d->iconView->previousInfo(list.first());
-                nextInfo     = d->iconView->nextInfo(list.first());
-            }
-
-            if (
-                (viewMode() != StackedView::IconViewMode)  &&
-                (viewMode() != StackedView::MapWidgetMode) &&
-                (viewMode() != StackedView::TableViewMode)
-               )
-            {
-                d->stackedview->setPreviewItem(list.first(), previousInfo, nextInfo);
-            }
-
-            Q_EMIT signalImageSelected(list, allImages);
+            previousInfo = d->iconView->previousInfo(list.first());
+            nextInfo     = d->iconView->nextInfo(list.first());
         }
 
-        d->needDispatchSelection = false;
+        if (
+            (viewMode() != StackedView::IconViewMode)  &&
+            (viewMode() != StackedView::MapWidgetMode) &&
+            (viewMode() != StackedView::TableViewMode)
+           )
+        {
+            d->stackedview->setPreviewItem(list.first(), previousInfo, nextInfo);
+        }
+
+        Q_EMIT signalImageSelected(list, allImages);
     }
 }
 
