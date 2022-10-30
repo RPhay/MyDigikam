@@ -94,13 +94,12 @@ cp $DOWNLOAD_DIR/lensfun_manifest.txt $ORIG_WD/data/
 
 # Clean up previous install (see bug #459276)
 
-cd "$MXE_BUILDROOT"
-FILES=$(find . | grep -E '(digikam|showfoto|avplayer)')
+FILES=$(find "$MXE_BUILDROOT" -name \* | grep -E '(digikam|showfoto)')
 
 for FILE in $FILES ; do
-    if [[ -f ${FILE} || -d ${FILE} ]] ; then
-        echo -e "   ==> $MXE_BUILDROOT/${FILE} will be removed from previous install"
-        rm -fr $MXE_BUILDROOT/${FILE}
+    if [[ -f $FILE || -d $FILE ]] ; then
+        echo -e "   ==> $MXE_BUILDROOT/$FILE will be removed from previous install"
+        rm -fr $MXE_BUILDROOT/$FILE
     fi
 done
 
