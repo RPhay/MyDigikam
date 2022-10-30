@@ -180,7 +180,7 @@ BUGFIXES:
 142 ==> 416934 - Tags & data disappear after moving images to new folder.
 143 ==> 389655 - Sort multiple albums by exif date (not last modified).
 144 ==> 196672 - Add new option to setup global preference about default album dating.
-145 ==> 
+145 ==> 435925 - Cursor in annotations or comments field jumps around while face detection is running.
 146 ==> 
 147 ==> 
 148 ==> 

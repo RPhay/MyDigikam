@@ -177,17 +177,19 @@ void ItemPropertiesSideBarDB::itemChanged(const ItemInfoList& infos,
                                           DImg* const img,
                                           const DImageHistory& history)
 {
+    bool changedInfos    = (d->currentInfos == infos);
+    m_dirtyPropertiesTab = (changedInfos && (d->allInfos == allInfos));
+    m_dirtyMetadataTab   = changedInfos;
+    m_dirtyColorTab      = (changedInfos && (m_image == img) && (m_currentRect == rect));
+    m_dirtyGpsTab        = changedInfos;
+    m_dirtyHistoryTab    = (changedInfos && (d->currentHistory == history));
+    d->dirtyDesceditTab  = changedInfos;
+
     m_currentRect        = rect;
     m_image              = img;
     d->currentHistory    = history;
     d->currentInfos      = infos;
     d->allInfos          = allInfos;
-    m_dirtyPropertiesTab = false;
-    m_dirtyMetadataTab   = false;
-    m_dirtyColorTab      = false;
-    m_dirtyGpsTab        = false;
-    m_dirtyHistoryTab    = false;
-    d->dirtyDesceditTab  = false;
 
     // slotChangedTab only handles the active tab.
     // Any tab that holds information reset above shall be reset here,
