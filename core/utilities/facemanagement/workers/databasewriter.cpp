@@ -131,7 +131,7 @@ void DatabaseWriter::process(FacePipelineExtendedPackage::Ptr package)
                 {
                     // Change Tag operation.
 
-                    add << FacePipelineFaceTagsIface(utils.changeTag(*it, it->assignedTagId, package->info));
+                    add << FacePipelineFaceTagsIface(utils.changeTag(*it, it->assignedTagId));
                 }
                 else
                 {

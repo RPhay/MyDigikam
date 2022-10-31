@@ -25,6 +25,7 @@
 // Local includes
 
 #include "templatemanager.h"
+#include "facetagseditor.h"
 #include "tagscache.h"
 #include "coredbaccess.h"
 #include "itemcomments.h"

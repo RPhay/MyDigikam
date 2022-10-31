@@ -501,7 +501,7 @@ FaceTagsIface FaceTagsEditor::changeRegion(const FaceTagsIface& face, const TagR
     // todo: the Training entry is cleared.
 }
 
-FaceTagsIface FaceTagsEditor::changeTag(const FaceTagsIface& face, int newTagId, ItemInfo& /*info*/)
+FaceTagsIface FaceTagsEditor::changeTag(const FaceTagsIface& face, int newTagId)
 {
     if (face.isNull() || (face.tagId() == newTagId) || !FaceTags::isPerson(newTagId))
     {

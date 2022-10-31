@@ -181,7 +181,7 @@ BUGFIXES:
 143 ==> 389655 - Sort multiple albums by exif date (not last modified).
 144 ==> 196672 - Add new option to setup global preference about default album dating.
 145 ==> 435925 - Cursor in annotations or comments field jumps around while face detection is running.
-146 ==> 
+146 ==> 461228 - Face region is removed when people tag is removed via tag panel.
 147 ==> 
 148 ==> 
 149 ==> 

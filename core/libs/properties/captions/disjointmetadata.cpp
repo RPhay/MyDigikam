@@ -431,6 +431,19 @@ bool DisjointMetadata::write(ItemInfo info, WriteMode writeMode)
 
             if (d->tags.value(key) == DisjointMetadataDataFields::DisjointMetadataDataFields::MetadataInvalid)
             {
+                if (FaceTags::isPerson(key))
+                {
+                    FaceTagsEditor editor;
+
+                    Q_FOREACH (const FaceTagsIface& face, editor.databaseFaces(info.id()))
+                    {
+                        if (face.tagId() == key)
+                        {
+                            editor.changeTag(face, FaceTags::unknownPersonTagId());
+                        }
+                    }
+                }
+
                 info.removeTag(key);
                 changed = true;
             }
