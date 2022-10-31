@@ -191,6 +191,7 @@ optional_packages=("ruby"                               # For i18n extraction
                    "intltool"                           # For MXE build
                    "libc6-dev-i386"                     # For MXE build
                    "libgdk-pixbuf2.0-dev"               # For MXE build
+                   "gtk-doc-tools"                      # For MXE build
                    "libltdl-dev"                        # For MXE build
                    "libgl-dev"                          # For MXE build
                    "libssl-dev"                         # For MXE build
