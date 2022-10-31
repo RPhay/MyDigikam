@@ -291,7 +291,7 @@ void DFileOperations::openInFileManager(const QList<QUrl>& urls)
     QString path = fileUrls.first().toLocalFile();
 
 #ifdef Q_OS_WIN
-
+/*
     QStringList args;
     QFileInfo info(path);
 
@@ -306,7 +306,7 @@ void DFileOperations::openInFileManager(const QList<QUrl>& urls)
     {
         return;
     }
-
+*/
 #elif defined Q_OS_MACOS
 
     QStringList args;
