@@ -191,7 +191,7 @@ void ItemPropertiesSideBarDB::itemChanged(const ItemInfoList& infos,
     d->currentInfos      = infos;
     d->allInfos          = allInfos;
 
-    // slotChangedTab only handles the active tab.
+    // changedTab only handles the active tab.
     // Any tab that holds information reset above shall be reset here,
     // unless it is the active tab.
 
@@ -200,7 +200,7 @@ void ItemPropertiesSideBarDB::itemChanged(const ItemInfoList& infos,
         d->desceditTab->setItem();
     }
 
-    slotChangedTab(getActiveTab());
+    changedTab(getActiveTab());
 }
 
 void ItemPropertiesSideBarDB::slotNoCurrentItem()
@@ -208,7 +208,7 @@ void ItemPropertiesSideBarDB::slotNoCurrentItem()
     ItemPropertiesSideBar::slotNoCurrentItem();
 
     // All tabs that store the ItemInfo list and access it after selection change
-    // must release the image info here. slotChangedTab only handles the active tab!
+    // must release the image info here. changedTab only handles the active tab!
 
     d->desceditTab->setItem();
     d->currentInfos.clear();
@@ -221,6 +221,18 @@ void ItemPropertiesSideBarDB::populateTags()
 }
 
 void ItemPropertiesSideBarDB::slotChangedTab(QWidget* tab)
+{
+    m_dirtyPropertiesTab = false;
+    m_dirtyMetadataTab   = false;
+    m_dirtyColorTab      = false;
+    m_dirtyGpsTab        = false;
+    m_dirtyHistoryTab    = false;
+    d->dirtyDesceditTab  = false;
+
+    changedTab(tab);
+}
+
+void ItemPropertiesSideBarDB::changedTab(QWidget* const tab)
 {
     setCursor(Qt::WaitCursor);
 
@@ -396,9 +408,9 @@ void ItemPropertiesSideBarDB::slotFileMetadataChanged(const QUrl& url)
 
         if (getActiveTab() == m_metadataTab)
         {
-            // update now - reuse code form slotChangedTab
+            // update now - reuse code form changedTab
 
-            slotChangedTab(getActiveTab());
+            changedTab(getActiveTab());
         }
     }
 }
@@ -455,9 +467,9 @@ void ItemPropertiesSideBarDB::slotImageChangeDatabase(const ImageChangeset& chan
 
                    )
                 {
-                    // update now - reuse code form slotChangedTab
+                    // update now - reuse code form changedTab
 
-                    slotChangedTab(tab);
+                    changedTab(tab);
                 }
             }
         }
@@ -496,7 +508,7 @@ void ItemPropertiesSideBarDB::slotImageTagChanged(const ImageTagChangeset& chang
             if (changeset.ids().contains(info.id()))
             {
                 m_dirtyPropertiesTab = false;
-                slotChangedTab(tab);
+                changedTab(tab);
             }
         }
         else if ((tab == d->desceditTab) && d->desceditTab->isModified())
