@@ -174,14 +174,45 @@ optional_packages=("ruby"                               # For i18n extraction
                    "gzip"                               # For CI/CD
                    "unzip"                              # For CI/CD
                    "unrar"                              # For CI/CD
+                   "autoconf"                           # For MXE build
+                   "automake"                           # For MXE build
                    "autopoint"                          # For MXE build
-                   "libtool"                            # For MXE build
-                   "gperf"                              # For MXE build
-                   "intltool"                           # For MXE build
-                   "scons"                              # For MXE build
-                   "icoutils"                           # For MXE build
+                   "bash"                               # For MXE build
+                   "bison"                              # For MXE build
+                   "bzip2"                              # For MXE build
+                   "flex"                               # For MXE build
                    "gcc-mingw-w64"                      # For MXE build
+                   "g++"                                # For MXE build
+                   "g++-multilib"                       # For MXE build
+                   "gettext"                            # For MXE build
+                   "git"                                # For MXE build
+                   "gperf"                              # For MXE build
+                   "icoutils"                           # For MXE build
+                   "intltool"                           # For MXE build
+                   "libc6-dev-i386"                     # For MXE build
+                   "libgdk-pixbuf2.0-dev"               # For MXE build
+                   "libltdl-dev"                        # For MXE build
+                   "libgl-dev"                          # For MXE build
+                   "libssl-dev"                         # For MXE build
+                   "libtool"                            # For MXE build
+                   "libtool-bin"                        # For MXE build
+                   "libxml-parser-perl"                 # For MXE build
+                   "lzip"                               # For MXE build
+                   "make"                               # For MXE build
+                   "openssl"                            # For MXE build
+                   "p7zip-full"                         # For MXE build
+                   "patch"                              # For MXE build
+                   "perl"                               # For MXE build
+                   "python3"                            # For MXE build
                    "python3-mako"                       # For MXE build
+                   "python3-pkg-resources"              # For MXE build
+                   "python-is-python3"                  # For MXE build
+                   "ruby"                               # For MXE build
+                   "scons"                              # For MXE build
+                   "sed"                                # For MXE build
+                   "unzip"                              # For MXE build
+                   "wget"                               # For MXE build
+                   "xz-utils"                           # For MXE build
                    "python3-pygments"                   # For Cppcheck static analysis
                    "python3-bs4"                        # For Clazy static analysis
                    "python3-soupsieve"                  # For Clazy static analisys
