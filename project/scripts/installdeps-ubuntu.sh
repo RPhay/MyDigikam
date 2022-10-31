@@ -174,6 +174,8 @@ optional_packages=("ruby"                               # For i18n extraction
                    "gzip"                               # For CI/CD
                    "unzip"                              # For CI/CD
                    "unrar"                              # For CI/CD
+                   "autopoint"                          # For MXE build
+                   "libtool"                            # For MXE build
                    "gperf"                              # For MXE build
                    "intltool"                           # For MXE build
                    "scons"                              # For MXE build
