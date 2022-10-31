@@ -33,11 +33,13 @@
 #include <QProcess>
 #include <QDir>
 #include <QFile>
+#include <QFileInfo>
+#include <QSettings>
 #include <QMimeType>
 #include <QMimeDatabase>
 #include <QDesktopServices>
-#include <QFileInfo>
 #include <QDirIterator>
+#include <QStandardPaths>
 #include <qplatformdefs.h>
 #include <QRegularExpression>
 
@@ -688,6 +690,31 @@ bool DFileOperations::setModificationTime(const QString& srcFile,
     }
 
     return true;
+}
+
+QString DFileOperations::findExecutable(const QString& name)
+{
+    QString path;
+    QString program = name;
+
+#ifdef Q_OS_WIN
+
+    program.append(QLatin1String(".exe"));
+
+    QSettings settings(QString::fromUtf8("HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\"
+                                         "CurrentVersion\\App Paths\\%1").arg(program),
+                                         QSettings::NativeFormat);
+
+    path = settings.value(QLatin1String("Default"), QString()).toString();
+
+#endif
+
+    if (path.isEmpty())
+    {
+        path = QStandardPaths::findExecutable(program);
+    }
+
+    return path;
 }
 
 } // namespace Digikam

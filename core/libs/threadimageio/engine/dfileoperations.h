@@ -105,6 +105,13 @@ public:
      */
     static bool setModificationTime(const QString& srcFile,
                                     const QDateTime& dateTime);
+    /**
+     * Returns the path to a program under Windows by searching
+     * in the Windows registry.
+     * If the path is empty, QStandardPaths::findExecutable()
+     * is used as under Linux and macOS.
+     */
+    static QString findExecutable(const QString& name);
 };
 
 } // namespace Digikam

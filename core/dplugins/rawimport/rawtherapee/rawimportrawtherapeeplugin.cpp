@@ -31,10 +31,10 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "digikam_config.h"
 #include "digikam_globals_p.h"      // For KF6::Ki18n deprecated
 #include "dimg.h"
 #include "filteraction.h"
+#include "dfileoperations.h"
 #include "loadingdescription.h"
 
 namespace DigikamRawImportRawTherapeePlugin
@@ -133,21 +133,7 @@ bool RawTherapeeRawImportPlugin::run(const QString& filePath, const DRawDecoding
 
     // --------
 
-#ifdef Q_OS_WIN
-
-    QSettings settings(QLatin1String("HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\"
-                                     "CurrentVersion\\App Paths\\rawtherapee.exe"),
-                                     QSettings::NativeFormat);
-
-    QString binary = settings.value(QLatin1String("Default"), QString()).toString();
-
-#else
-
-    QString binary = QLatin1String("rawtherapee");
-
-#endif
-
-    d->rawtherapee->setProgram(binary);
+    d->rawtherapee->setProgram(DFileOperations::findExecutable(QLatin1String("rawtherapee")));
     d->rawtherapee->setArguments(QStringList() << QLatin1String("-gimp") // Special mode used initially as Gimp plugin
                                                << filePath               // Input file
                                                << d->tempName);          // Output file
