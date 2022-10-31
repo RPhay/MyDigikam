@@ -307,8 +307,7 @@ void DFileOperations::openInFileManager(const QList<QUrl>& urls)
             if (dopusrt.exists())
             {
                 QStringList args;
-                args << QLatin1String("/CMD");
-                args << QLatin1String("Go");
+                args << QLatin1String("/CMD Go");
                 args << QDir::toNativeSeparators(path);
 
                 if (QProcess::startDetached(dopusrt.filePath(), args))
