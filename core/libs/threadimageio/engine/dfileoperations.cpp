@@ -287,7 +287,7 @@ void DFileOperations::openInFileManager(const QList<QUrl>& urls)
     }
     else
     {
-        fileUrls = QList<QUrl>() << urls.first();
+        fileUrls << urls.first();
     }
 
     QString path = fileUrls.first().toLocalFile();
