@@ -214,6 +214,7 @@ optional_packages=("ruby"                               # For i18n extraction
                    "unzip"                              # For MXE build
                    "wget"                               # For MXE build
                    "xz-utils"                           # For MXE build
+                   "nsis"                               # For MXE build
                    "python3-pygments"                   # For Cppcheck static analysis
                    "python3-bs4"                        # For Clazy static analysis
                    "python3-soupsieve"                  # For Clazy static analisys
