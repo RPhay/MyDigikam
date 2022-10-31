@@ -294,22 +294,27 @@ void DFileOperations::openInFileManager(const QList<QUrl>& urls)
 
 #ifdef Q_OS_WIN
 
-    QFileInfo dopus(findExecutable(QLatin1String("DOpus")));
+    QString dopusPath = findExecutable(QLatin1String("DOpus"));
 
-    if (dopus.exists())
+    if (!dopusPath.isEmpty())
     {
-        QFileInfo dopusrt(dopus.dir(), QLatin1String("dopusrt.exe"));
+        QFileInfo dopus(dopusPath);
 
-        if (dopusrt.exists())
+        if (dopus.exists())
         {
-            QStringList args;
-            args << QLatin1String("/CMD");
-            args << QLatin1String("Go");
-            args << QDir::toNativeSeparators(path);
+            QFileInfo dopusrt(dopus.dir(), QLatin1String("dopusrt.exe"));
 
-            if (QProcess::startDetached(dopusrt.filePath(), args))
+            if (dopusrt.exists())
             {
-                return;
+                QStringList args;
+                args << QLatin1String("/CMD");
+                args << QLatin1String("Go");
+                args << QDir::toNativeSeparators(path);
+
+                if (QProcess::startDetached(dopusrt.filePath(), args))
+                {
+                    return;
+                }
             }
         }
     }
