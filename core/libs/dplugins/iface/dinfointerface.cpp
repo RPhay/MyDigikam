@@ -442,26 +442,26 @@ void DItemInfo::setCaptions(const CaptionsMap& map)
     m_info.insert(QLatin1String("captions"), QVariant::fromValue(map));
 }
 
-DMetadata::AltLangMap DItemInfo::copyrights() const
+MetaEngine::AltLangMap DItemInfo::copyrights() const
 {
     QVariant val = parseInfoMap(QLatin1String("copyrights"));
 
-    return (!val.isNull() ? qvariant_cast<DMetadata::AltLangMap>(val) : DMetadata::AltLangMap());
+    return (!val.isNull() ? qvariant_cast<MetaEngine::AltLangMap>(val) : MetaEngine::AltLangMap());
 }
 
-void DItemInfo::setCopyrights(const DMetadata::AltLangMap& map)
+void DItemInfo::setCopyrights(const MetaEngine::AltLangMap& map)
 {
     m_info.insert(QLatin1String("copyrights"), QVariant::fromValue(map));
 }
 
-DMetadata::AltLangMap DItemInfo::copyrightNotices() const
+MetaEngine::AltLangMap DItemInfo::copyrightNotices() const
 {
     QVariant val = parseInfoMap(QLatin1String("copyrightnotices"));
 
-    return (!val.isNull() ? qvariant_cast<DMetadata::AltLangMap>(val) : DMetadata::AltLangMap());
+    return (!val.isNull() ? qvariant_cast<MetaEngine::AltLangMap>(val) : MetaEngine::AltLangMap());
 }
 
-void DItemInfo::setCopyrightNotices(const DMetadata::AltLangMap& map)
+void DItemInfo::setCopyrightNotices(const MetaEngine::AltLangMap& map)
 {
     m_info.insert(QLatin1String("copyrightnotices"), QVariant::fromValue(map));
 }

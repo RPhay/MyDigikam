@@ -36,7 +36,7 @@
 #include "digikam_export.h"
 #include "digikam_config.h"
 #include "captionvalues.h"
-#include "dmetadata.h"
+#include "metaengine.h"
 
 #ifdef HAVE_MARBLE
 #   include "gpsitemcontainer.h"
@@ -214,10 +214,10 @@ public:
     CaptionsMap        captions()                                                   const;
     void               setCaptions(const CaptionsMap&);
 
-    DMetadata::AltLangMap   copyrights()                                            const;
-    void                    setCopyrights(const DMetadata::AltLangMap& map);
-    DMetadata::AltLangMap   copyrightNotices()                                      const;
-    void                    setCopyrightNotices(const DMetadata::AltLangMap& map);
+    MetaEngine::AltLangMap  copyrights()                                            const;
+    void                    setCopyrights(const MetaEngine::AltLangMap& map);
+    MetaEngine::AltLangMap  copyrightNotices()                                      const;
+    void                    setCopyrightNotices(const MetaEngine::AltLangMap& map);
 
     int                albumId()                                                    const;
     int                orientation()                                                const;

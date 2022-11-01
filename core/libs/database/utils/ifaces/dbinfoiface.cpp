@@ -515,10 +515,10 @@ DBInfoIface::DInfoMap DBInfoIface::itemInfo(const QUrl& url) const
         CaptionsMap captions  = comments.toCaptionsMap(DatabaseComment::Comment);
         map.insert(QLatin1String("captions"),           QVariant::fromValue(captions));
 
-        Template tpl                     = info.metadataTemplate();
-        DMetadata::AltLangMap copyrights = tpl.copyright();
+        Template tpl                      = info.metadataTemplate();
+        MetaEngine::AltLangMap copyrights = tpl.copyright();
         map.insert(QLatin1String("copyrights"),         QVariant::fromValue(copyrights));
-        DMetadata::AltLangMap notices    = tpl.rightUsageTerms();
+        MetaEngine::AltLangMap notices    = tpl.rightUsageTerms();
         map.insert(QLatin1String("copyrightnotices"),   QVariant::fromValue(notices));
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Database Info populated for" << url;
@@ -595,7 +595,7 @@ void DBInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
     if (map.contains(QLatin1String("copyrights")))
     {
         Template tpl = info.metadataTemplate();
-        tpl.setCopyright(qvariant_cast<DMetadata::AltLangMap>(map[QLatin1String("copyrights")]));
+        tpl.setCopyright(qvariant_cast<MetaEngine::AltLangMap>(map[QLatin1String("copyrights")]));
         info.setMetadataTemplate(tpl);
         keys.removeAll(QLatin1String("copyrights"));
     }
@@ -603,7 +603,7 @@ void DBInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
     if (map.contains(QLatin1String("copyrightnotices")))
     {
         Template tpl = info.metadataTemplate();
-        tpl.setRightUsageTerms(qvariant_cast<DMetadata::AltLangMap>(map[QLatin1String("copyrightnotices")]));
+        tpl.setRightUsageTerms(qvariant_cast<MetaEngine::AltLangMap>(map[QLatin1String("copyrightnotices")]));
         info.setMetadataTemplate(tpl);
         keys.removeAll(QLatin1String("copyrightnotices"));
     }
