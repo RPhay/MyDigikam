@@ -94,7 +94,7 @@ cp $DOWNLOAD_DIR/lensfun_manifest.txt $ORIG_WD/data/
 
 # Clean up previous install (see bug #459276)
 
-FILES=$(find "$MXE_BUILDROOT" -name \* | grep -E '(digikam|showfoto)')
+FILES=$(find "$MXE_BUILDROOT" -name \* | grep -E '(digikam|showfoto)') || true
 
 for FILE in $FILES ; do
     if [[ -f $FILE || -d $FILE ]] ; then
