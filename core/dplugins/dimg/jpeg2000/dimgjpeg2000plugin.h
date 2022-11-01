@@ -60,7 +60,12 @@ public:
     int         canWrite(const QString& format)                                             const override;
     DImgLoader* loader(DImg* const image, const DRawDecoding& rawSettings = DRawDecoding()) const override;
 
+    void cleanUp()                                                                                override;
     DImgLoaderSettings* exportWidget(const QString& format)                                 const override;
+
+private:
+
+    bool m_initJasper;
 };
 
 } // namespace DigikamJPEG2000DImgPlugin

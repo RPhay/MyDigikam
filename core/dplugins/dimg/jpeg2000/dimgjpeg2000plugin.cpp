@@ -30,16 +30,81 @@
 #include "dimgjpeg2000loader.h"
 #include "dimgjpeg2000exportsettings.h"
 
+// Jasper includes
+
+#ifndef Q_CC_MSVC
+extern "C"
+{
+#endif
+
+#if defined(Q_OS_DARWIN) && defined(Q_CC_CLANG)
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wshift-negative-value"
+#endif
+
+#include <jasper/jasper.h>
+#include <jasper/jas_version.h>
+
+#if defined(Q_OS_DARWIN) && defined(Q_CC_CLANG)
+#   pragma clang diagnostic pop
+#endif
+
+#ifndef Q_CC_MSVC
+}
+#endif
+
 namespace DigikamJPEG2000DImgPlugin
 {
 
 DImgJPEG2000Plugin::DImgJPEG2000Plugin(QObject* const parent)
-    : DPluginDImg(parent)
+    : DPluginDImg(parent),
+      m_initJasper(false)
 {
+
+#if JAS_VERSION_MAJOR >= 3
+
+    size_t max_mem = jas_get_total_mem_size();
+
+    if (max_mem)
+    {
+        max_mem = 0.90 * max_mem;
+    }
+    else
+    {
+        max_mem = (size_t)1024 * 1024 * 1024;
+    }
+
+    jas_conf_clear();
+    jas_conf_set_debug_level(0);
+    jas_conf_set_multithread(1);
+    jas_conf_set_max_mem_usage(max_mem);
+
+    if (!jas_init_library())
+    {
+        if (!jas_init_thread())
+        {
+            m_initJasper = true;
+        }
+    }
+
+#endif
+
 }
 
 DImgJPEG2000Plugin::~DImgJPEG2000Plugin()
 {
+}
+
+void DImgJPEG2000Plugin::cleanUp()
+{
+
+#if JAS_VERSION_MAJOR >= 3
+
+    jas_cleanup_thread();
+    jas_cleanup_library();
+
+#endif
+
 }
 
 QString DImgJPEG2000Plugin::name() const
@@ -127,6 +192,11 @@ QString DImgJPEG2000Plugin::typeMimes() const
 
 int DImgJPEG2000Plugin::canRead(const QFileInfo& fileInfo, bool magic) const
 {
+    if (!m_initJasper)
+    {
+        return 0;
+    }
+
     QString filePath = fileInfo.filePath();
     QString format   = fileInfo.suffix().toUpper();
 
@@ -173,6 +243,11 @@ int DImgJPEG2000Plugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
 int DImgJPEG2000Plugin::canWrite(const QString& format) const
 {
+    if (!m_initJasper)
+    {
+        return 0;
+    }
+
     return typeMimes().contains(format.toUpper()) ? 10 : 0;
 }
 
