@@ -86,15 +86,13 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
     jas_matrix_t*        pixels[4]         = { nullptr };
     jas_image_cmptparm_t component_info[4];
 
-    int init                               = 0;
-
 #if JAS_VERSION_MAJOR < 3
 
-    init = jas_init();
+    int init = jas_init();
 
 #else
 
-    init = jas_init_thread();
+    int init = jas_init_thread();
 
 #endif
 
