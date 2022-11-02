@@ -183,6 +183,6 @@ BUGFIXES:
 145 ==> 435925 - Cursor in annotations or comments field jumps around while face detection is running.
 146 ==> 461228 - Face region is removed when people tag is removed via tag panel.
 147 ==> 459157 - Open in a File Manager.
-148 ==> 
+148 ==> 461336 - Exiftool panel metadata values get duplicated when applying changes to file metadata.
 149 ==> 
 150 ==> 
