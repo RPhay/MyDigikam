@@ -300,6 +300,7 @@ port install \
              qt5-qttools \
              qt5-qttranslations \
              qt5-qtimageformats \
+             qt5-qtnetworkauth \
              qt5-sqlite-plugin \
              qt5-mysql-plugin +mariadb10_5
 
