@@ -276,7 +276,8 @@ Setup::Setup(QWidget* const parent)
         QRect srect = screen->availableGeometry();
         int height  = qRound(log10(srect.height() / 60) * 600);
         int width   = qRound(log10(srect.width()  / 80) * 800);
-        resize(width, height);
+        resize(width  > srect.width()  ? srect.width()  : width,
+               height > srect.height() ? srect.height() : height);
     }
 }
 
