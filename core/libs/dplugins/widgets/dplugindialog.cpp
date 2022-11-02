@@ -14,6 +14,10 @@
 
 #include "dplugindialog.h"
 
+// C++ includes
+
+#include <cmath>
+
 // Qt includes
 
 #include <QApplication>
@@ -101,8 +105,9 @@ void DPluginDialog::restoreDialogSize()
         }
 
         QRect srect = screen->availableGeometry();
-        resize(800 <= srect.width()  ? 800 : srect.width(),
-               750 <= srect.height() ? 750 : srect.height());
+        int height  = qRound(log10(srect.height() / 60) * 600);
+        int width   = qRound(log10(srect.width()  / 80) * 800);
+        resize(width, height);
     }
 }
 
