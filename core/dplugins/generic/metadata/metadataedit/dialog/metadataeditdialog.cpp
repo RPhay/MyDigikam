@@ -174,7 +174,6 @@ MetadataEditDialog::MetadataEditDialog(QWidget* const parent, DInfoInterface* co
 
     //----------------------------------------------------------
 
-    adjustSize();
     readSettings();
     slotItemChanged();
 }
