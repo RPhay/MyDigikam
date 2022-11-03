@@ -64,7 +64,7 @@ else
 
     # Centos like distro
 
-    eval `SSH_ASKPASS=/usr/libexec/openssh/x11-ssh-askpass /usr/bin/keychain -q --eval --noask --agents ssh ~/.ssh/id_rsa`
+    eval `SSH_ASKPASS=/usr/libexec/openssh/ssh-askpass /usr/bin/keychain -q --eval --noask --agents ssh ~/.ssh/id_rsa`
 
 fi
 
