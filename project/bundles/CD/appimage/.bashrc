@@ -8,6 +8,8 @@ if [ -f /etc/bashrc ]; then
 fi
 
 alias ll='ls -al'
+alias d='digikam'
+alias s='showfoto'
 alias n='ninja -j4'
 alias m='make -j4'
 alias f='sudo make install/fast'
@@ -32,8 +34,18 @@ function t() { tar -cjvf $1.tar.bz2 $1; }
 # Check OS name and version.
 
 OS_NAME=$(awk '/DISTRIB_ID=/' /etc/*-release | sed 's/DISTRIB_ID=//' | sed 's/\"//' | sed 's/\"//' | tr '[:upper:]' '[:lower:]')
+
+if [[ $OS_NAME == "" ]] ; then
+    OS_NAME=$(lsb_release -a | grep 'Distributor ID:' | sed 's/Distributor ID://' | xargs | tr '[:upper:]' '[:lower:]')
+fi
+
 OS_ARCH=$(uname -m | sed 's/x86_//;s/i[3-6]86/32/')
+
 OS_VERSION=$(awk '/DISTRIB_RELEASE=/' /etc/*-release | sed 's/DISTRIB_RELEASE=//' | sed 's/[.]0/./')
+
+if [[ $OS_VERSION == "" ]] ; then
+    OS_VERSION=$(lsb_release -a | grep 'Release:' | sed 's/Release://' | xargs | tr '[:upper:]' '[:lower:]')
+fi
 
 echo "$OS_NAME - $OS_ARCH - $OS_VERSION"
 
@@ -48,7 +60,9 @@ if   [[ "$OS_NAME" == "ubuntu" ]] ; then
         ssh-add "$HOME/.ssh/id_rsa" &
     fi
 
-elif [[ "$OS_NAME" != "mageia" ]] ; then
+else
+
+    # Centos like distro
 
     eval `SSH_ASKPASS=/usr/libexec/openssh/x11-ssh-askpass /usr/bin/keychain -q --eval --noask --agents ssh ~/.ssh/id_rsa`
 
@@ -57,8 +71,6 @@ fi
 export GITSLAVE=.gitslave
 export SVN_EDITOR=mcedit
 export QT_LOGGING_RULES="digikam*=true"
-export DKCoverityToken=ZDkme4CZ
-export DKCoverityEmail=caulier.gilles@gmail.com
 
 PATH=$PATH:~/Documents/scripts:/opt/cov-analysis-linux64-2021.12.1/bin:/opt/krazy/bin
 export PATH
