@@ -218,6 +218,7 @@ public Q_SLOTS:
 Q_SIGNALS:
 
     void signalExifToolDataAvailable();
+    void signalExifToolAsyncData(const ExifToolParser::ExifToolData& map);
 
 public:
 

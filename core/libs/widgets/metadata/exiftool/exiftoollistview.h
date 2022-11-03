@@ -62,12 +62,11 @@ public Q_SLOTS:
 
 private Q_SLOTS:
 
-    void slotExifToolDataAvailable();
+    void slotExifToolAsyncData(const ExifToolParser::ExifToolData& map);
     void slotSelectionChanged(QTreeWidgetItem*, int);
 
 private:
 
-    void setMetadata(const ExifToolParser::ExifToolData& map);
     ExifToolListViewGroup* findGroup(const QString& group);
 
 private:

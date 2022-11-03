@@ -36,6 +36,8 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
                                     << "with elasped time (ms):"
                                     << result.elapsed;
 
+    ExifToolData exifToolData;
+
     switch (result.cmdAction)
     {
         case ExifToolProcess::LOAD_METADATA:
@@ -50,6 +52,11 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
                 qCDebug(DIGIKAM_METAENGINE_LOG) << "Json Array size is null";
 
                 Q_EMIT signalExifToolDataAvailable();
+
+                if (d->async)
+                {
+                    Q_EMIT signalExifToolAsyncData(exifToolData);
+                }
 
                 return;
             }
@@ -146,15 +153,15 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
                     data.remove(QLatin1Char('('));
                 }
 
-                if (d->exifToolData.contains(tagNameExifTool))
+                if (exifToolData.contains(tagNameExifTool))
                 {
-                    QString existData = d->exifToolData[tagNameExifTool][0].toString();
+                    QString existData = exifToolData[tagNameExifTool][0].toString();
                     existData        += QLatin1String(", ") + data;
-                    d->exifToolData[tagNameExifTool][0] = existData;
+                    exifToolData[tagNameExifTool][0] = existData;
                 }
                 else
                 {
-                    d->exifToolData.insert(tagNameExifTool, QVariantList()
+                    exifToolData.insert(tagNameExifTool, QVariantList()
                                                             << data        // ExifTool Raw data as string.
                                                             << tagType     // ExifTool data type.
                                                             << desc        // ExifTool tag description.
@@ -169,7 +176,7 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "EXV chunk size:" << result.output.size();
 
-            d->exifToolData.insert(QLatin1String("EXV"), QVariantList() << result.output);     // Exv chunk as bytearray.
+            exifToolData.insert(QLatin1String("EXV"), QVariantList() << result.output);     // Exv chunk as bytearray.
             break;
         }
 
@@ -224,7 +231,7 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
             }
 
 
-            d->exifToolData.insert(QLatin1String("READ_FORMATS"), QVariantList() << lst);
+            exifToolData.insert(QLatin1String("READ_FORMATS"), QVariantList() << lst);
             break;
         }
 
@@ -248,7 +255,7 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
                 lst << ext << desc;
             }
 
-            d->exifToolData.insert(QLatin1String("WRITE_FORMATS"), QVariantList() << lst);
+            exifToolData.insert(QLatin1String("WRITE_FORMATS"), QVariantList() << lst);
             break;
         }
 
@@ -268,7 +275,7 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
                 lst << ln.simplified().section(QLatin1String(" - "), 0, 0);
             }
 
-            d->exifToolData.insert(QLatin1String("TRANSLATIONS_LIST"), QVariantList() << lst);
+            exifToolData.insert(QLatin1String("TRANSLATIONS_LIST"), QVariantList() << lst);
             break;
         }
 
@@ -342,11 +349,11 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
                                         }
                                     }
 
-                                    d->exifToolData.insert(tag,
-                                                           QVariantList()
-                                                                << QString::fromLatin1("%1 - %2").arg(mainDesc).arg(desc)
-                                                                << type
-                                                                << writable
+                                    exifToolData.insert(tag,
+                                                        QVariantList()
+                                                            << QString::fromLatin1("%1 - %2").arg(mainDesc).arg(desc)
+                                                            << type
+                                                            << writable
                                     );
                                 }
                             }
@@ -365,7 +372,7 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
 
             if (!lines.isEmpty())
             {
-                d->exifToolData.insert(QLatin1String("VERSION_STRING"), QVariantList() << lines.first());
+                exifToolData.insert(QLatin1String("VERSION_STRING"), QVariantList() << lines.first());
             }
 
             break;
@@ -378,9 +385,16 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
     }
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "ExifTool parsed command for action" << d->actionString(result.cmdAction)
-                                    << d->exifToolData.count() << "properties decoded";
+                                    << exifToolData.count() << "properties decoded";
+
+    d->exifToolData = exifToolData;
 
     Q_EMIT signalExifToolDataAvailable();
+
+    if (d->async)
+    {
+        Q_EMIT signalExifToolAsyncData(exifToolData);
+    }
 }
 
 void ExifToolParser::errorOccurred(const ExifToolProcess::Result& result,

@@ -66,10 +66,10 @@ ExifToolListView::ExifToolListView(QWidget* const parent)
     header()->setSectionResizeMode(QHeaderView::Stretch);
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
-    d->parser = new ExifToolParser(this);
+    d->parser = new ExifToolParser(this, true);
 
-    connect(d->parser, SIGNAL(signalExifToolDataAvailable()),
-            this, SLOT(slotExifToolDataAvailable()));
+    connect(d->parser, SIGNAL(signalExifToolAsyncData(ExifToolParser::ExifToolData)),
+            this, SLOT(slotExifToolAsyncData(ExifToolParser::ExifToolData)));
 
     connect(this, SIGNAL(itemClicked(QTreeWidgetItem*,int)),
             this, SLOT(slotSelectionChanged(QTreeWidgetItem*,int)));
@@ -109,11 +109,10 @@ QString ExifToolListView::errorString() const
     return d->lastError;
 }
 
-void ExifToolListView::slotExifToolDataAvailable()
+void ExifToolListView::slotExifToolAsyncData(const ExifToolParser::ExifToolData& map)
 {
+    d->map       = map;
     d->lastError = d->parser->currentErrorString();
-
-    setMetadata(d->parser->currentData());
 
     Q_EMIT signalLoadingResult(d->lastError.isEmpty());
 }
@@ -249,11 +248,6 @@ void ExifToolListView::slotSelectionChanged(QTreeWidgetItem* item, int)
                             "<b>Value: </b><p>%2</p>"
                             "<b>Description: </b><p>%3</p>",
                             tagTitle, tagValue, tagDesc));
-}
-
-void ExifToolListView::setMetadata(const ExifToolParser::ExifToolData& map)
-{
-    d->map = map;
 }
 
 void ExifToolListView::setGroupList(const QStringList& tagsFilter, const QStringList& keysFilter)
