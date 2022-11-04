@@ -321,6 +321,7 @@ void FaceUtils::addNormalTag(qlonglong imageId, int tagId)
      * Implementation for automatic assigning of face as
      * Tag Icon, if no icon exists currently.
      */
+/*
     if (
         !FaceTags::isTheIgnoredPerson(tagId)  &&
         !FaceTags::isTheUnknownPerson(tagId)  &&
@@ -342,6 +343,7 @@ void FaceUtils::addNormalTag(qlonglong imageId, int tagId)
             }
         }
     }
+*/
 }
 
 void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
