@@ -37,18 +37,25 @@ echo "CPU Cores to use : $CPU_CORES"
 }
 
 ########################################################################
-# Check Linux OS release ID
+# Check OS name and version.
 CheckSystemReleaseID()
 {
-if   [[ $(grep -r "Mageia release 6" /etc/release) ]] ; then
-    OS_VERSION=6
-elif [[ $(grep -r "Mageia release 7" /etc/release) ]] ; then
-    OS_VERSION=7
-elif [[ $(grep -r "Mageia release 8" /etc/release) ]] ; then
-    OS_VERSION=8
+
+OS_NAME=$(awk '/DISTRIB_ID=/' /etc/*-release | sed 's/DISTRIB_ID=//' | sed 's/\"//' | sed 's/\"//' | tr '[:upper:]' '[:lower:]')
+
+if [[ $OS_NAME == "" ]] ; then
+    OS_NAME=$(lsb_release -a | grep 'Distributor ID:' | sed 's/Distributor ID://' | xargs | tr '[:upper:]' '[:lower:]')
 fi
 
-echo "Mageia Release : $OS_VERSION"
+OS_ARCH=$(uname -m | sed 's/x86_//;s/i[3-6]86/32/')
+
+OS_VERSION=$(awk '/DISTRIB_RELEASE=/' /etc/*-release | sed 's/DISTRIB_RELEASE=//' | sed 's/[.]0/./')
+
+if [[ $OS_VERSION == "" ]] ; then
+    OS_VERSION=$(lsb_release -a | grep 'Release:' | sed 's/Release://' | xargs | tr '[:upper:]' '[:lower:]')
+fi
+
+echo "Linux: $OS_NAME - $OS_ARCH - $OS_VERSION"
 
 }
 
