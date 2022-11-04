@@ -4134,7 +4134,8 @@ qlonglong CoreDB::getFirstItemWithFaceTag(int tagId) const
     QList<QVariant> values;
 
     d->db->execSql(QString::fromUtf8("SELECT imageid FROM ImageTagProperties "
-                                     " WHERE tagid=? AND property=?;"),
+                                     "LEFT JOIN Images ON Images.id=ImageTagProperties.imageid "
+                                     " WHERE tagid=? AND property=? AND images.status=1 LIMIT 1;"),
                    tagId, ImageTagPropertyName::tagRegion(), &values);
 
     if (values.isEmpty())
