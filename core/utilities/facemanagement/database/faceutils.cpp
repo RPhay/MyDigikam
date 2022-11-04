@@ -338,7 +338,7 @@ void FaceUtils::addNormalTag(qlonglong imageId, int tagId)
             if (!AlbumManager::instance()->updateTAlbumIcon(album, QString(),
                                                             imageId, err))
             {
-                qCDebug(DIGIKAM_GENERAL_LOG) << err ;
+                qCDebug(DIGIKAM_GENERAL_LOG) << err;
             }
         }
     }

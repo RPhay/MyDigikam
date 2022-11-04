@@ -184,5 +184,5 @@ BUGFIXES:
 146 ==> 461228 - Face region is removed when people tag is removed via tag panel.
 147 ==> 459157 - Open in a File Manager.
 148 ==> 461336 - Exiftool panel metadata values get duplicated when applying changes to file metadata.
-149 ==> 
+149 ==> 461366 - Missing face thumbnails/icons on people are not assigned automatically.
 150 ==> 

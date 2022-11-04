@@ -1196,6 +1196,11 @@ public:
      */
     QStringList getItemsURLsWithTag(int tagId)                                                                      const;
 
+    /**
+     * Returns the first item that has a confirmed face with the tag.
+     */
+    qlonglong getFirstItemWithFaceTag(int tagId)                                                                    const;
+
     // ----------- Items and their tags -----------
 
     /**

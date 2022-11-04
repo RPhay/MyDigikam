@@ -28,9 +28,12 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "album.h"
 #include "albummanager.h"
 #include "applicationsettings.h"
+#include "coredb.h"
+#include "coredbaccess.h"
 #include "iteminfo.h"
 #include "metaenginesettings.h"
 #include "thumbnailloadthread.h"
@@ -320,6 +323,25 @@ QPixmap AlbumThumbnailLoader::getFaceThumbnailDirectly(TAlbum* const album)
         QPixmap pixmap = loadIcon(album->icon(), d->faceSize);
 
         return pixmap;
+    }
+    else if (!album->iconId() && !FaceTags::isSystemPersonTagId(album->id()))
+    {
+        qlonglong firstItemId = CoreDbAccess().db()->getFirstItemWithFaceTag(album->id());
+
+        if (firstItemId > 0)
+        {
+            QString err;
+
+            if (!AlbumManager::instance()->updateTAlbumIcon(album, QString(),
+                                                            firstItemId, err))
+            {
+               qCDebug(DIGIKAM_GENERAL_LOG) << err;
+            }
+            else
+            {
+                addUrl(album, firstItemId);
+            }
+        }
     }
 
     return getStandardFaceIcon(album);

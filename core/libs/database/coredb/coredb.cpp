@@ -4129,6 +4129,22 @@ QList<qlonglong> CoreDB::getItemIDsInTag(int tagID, bool recursive) const
     return itemIDs;
 }
 
+qlonglong CoreDB::getFirstItemWithFaceTag(int tagId) const
+{
+    QList<QVariant> values;
+
+    d->db->execSql(QString::fromUtf8("SELECT imageid FROM ImageTagProperties "
+                                     " WHERE tagid=? AND property=?;"),
+                   tagId, ImageTagPropertyName::tagRegion(), &values);
+
+    if (values.isEmpty())
+    {
+        return 0;
+    }
+
+    return values.first().toLongLong();
+}
+
 QString CoreDB::getAlbumRelativePath(int albumID) const
 {
     QList<QVariant> values;
