@@ -316,34 +316,6 @@ void FaceUtils::addNormalTag(qlonglong imageId, int tagId)
 
     ScanController::FileMetadataWrite writeScope(info);
     writeScope.changed(hub.writeToMetadata(info, MetadataHub::WRITE_TAGS));
-
-    /**
-     * Implementation for automatic assigning of face as
-     * Tag Icon, if no icon exists currently.
-     */
-/*
-    if (
-        !FaceTags::isTheIgnoredPerson(tagId)  &&
-        !FaceTags::isTheUnknownPerson(tagId)  &&
-        !FaceTags::isTheUnconfirmedPerson(tagId)
-       )
-    {
-        TAlbum* const album = AlbumManager::instance()->findTAlbum(tagId);
-
-        // If Icon is NULL, set the newly added Face as the Icon.
-
-        if (album && (album->iconId() == 0))
-        {
-            QString err;
-
-            if (!AlbumManager::instance()->updateTAlbumIcon(album, QString(),
-                                                            imageId, err))
-            {
-                qCDebug(DIGIKAM_GENERAL_LOG) << err;
-            }
-        }
-    }
-*/
 }
 
 void FaceUtils::removeNormalTag(qlonglong imageId, int tagId)
