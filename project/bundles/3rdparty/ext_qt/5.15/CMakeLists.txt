@@ -1,9 +1,9 @@
 # Script to build Qt for digiKam bundle.
 #
-# SPDX-FileCopyrightText: 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
-# SPDX-License-Identifier: BSD-3-Clause
-#
+# Redistribution and use is allowed according to the terms of the BSD license.
+# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 
 SET(EXTPREFIX_qt "${EXTPREFIX}")
@@ -21,8 +21,8 @@ ENDIF()
 ExternalProject_Add(ext_qt
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
-    URL https://download.qt.io/official_releases/qt/5.15/5.15.5/single/qt-everywhere-opensource-src-5.15.5.tar.xz
-    URL_MD5 0fbcde36556a366df8ecf24a7ea1f7ec
+    URL https://download.qt.io/official_releases/qt/5.15/5.15.7/single/qt-everywhere-opensource-src-5.15.7.tar.xz
+    URL_MD5 b30147f4fd91c8dc1b7e61cbc7e6b8a6
 
     PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-appimage-support.patch
                && ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-appimage-openssl-linked.patch
