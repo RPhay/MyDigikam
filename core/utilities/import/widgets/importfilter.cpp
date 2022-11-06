@@ -163,7 +163,13 @@ bool Filter::matchesCurrentFilter(const CamItemInfo& item)
     {
         if (!match(pathFilter, folder))
         {
-            return false;
+            folder.replace(QLatin1Char('/'),
+                           QLatin1Char(' '));
+
+            if (!match(pathFilter, folder))
+            {
+                return false;
+            }
         }
     }
 

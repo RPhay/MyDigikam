@@ -186,7 +186,7 @@ BUGFIXES:
 148 ==> 461336 - Exiftool panel metadata values get duplicated when applying changes to file metadata.
 149 ==> 461366 - Missing face thumbnails/icons on people are not assigned automatically.
 150 ==> 461469 - Import file filter not working.
-151 ==> 
+151 ==> 426786 - Filter with a specific path does not work.
 152 ==> 
 153 ==> 
 154 ==> 
