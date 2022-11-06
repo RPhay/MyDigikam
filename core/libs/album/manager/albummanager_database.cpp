@@ -745,13 +745,17 @@ bool AlbumManager::showDatabaseSetupPage(const QString& error, bool priority, co
     QPointer<QDialog> setup                  = new QDialog(qApp->activeWindow());
     QVBoxLayout* const layout                = new QVBoxLayout(setup);
     DatabaseSettingsWidget* const dbsettings = new DatabaseSettingsWidget(setup);
-    QDialogButtonBox* const buttons          = new QDialogButtonBox(QDialogButtonBox::Ok |
+    QDialogButtonBox* const buttons          = new QDialogButtonBox(QDialogButtonBox::Ok    |
+                                                                    QDialogButtonBox::Reset |
                                                                     QDialogButtonBox::Cancel, setup);
+    buttons->button(QDialogButtonBox::Reset)->setText(i18nc("@action:button", "New database"));
     buttons->button(QDialogButtonBox::Ok)->setDefault(true);
 
     layout->addWidget(dbsettings);
     layout->addStretch(10);
     layout->addWidget(buttons);
+
+    bool* const newDatabase = new bool(false);
 
     connect(buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
             setup, SLOT(accept()));
@@ -759,11 +763,20 @@ bool AlbumManager::showDatabaseSetupPage(const QString& error, bool priority, co
     connect(buttons->button(QDialogButtonBox::Cancel), SIGNAL(clicked()),
             setup, SLOT(reject()));
 
+    connect(buttons->button(QDialogButtonBox::Reset), &QPushButton::clicked,
+            this, [=]()
+            {
+                *newDatabase = true;
+                setup->accept();
+            }
+    );
+
     ApplicationSettings* const settings = ApplicationSettings::instance();
     dbsettings->setParametersFromSettings(settings);
 
     if (setup->exec() != QDialog::Accepted)
     {
+        delete newDatabase;
         delete setup;
 
         return false;
@@ -774,6 +787,20 @@ bool AlbumManager::showDatabaseSetupPage(const QString& error, bool priority, co
     settings->saveSettings();
 
     delete setup;
+
+    if (newDatabase)
+    {
+        CoreDbAccess::setParameters(dbParams);
+
+        if (!CoreDbAccess::checkReadyForUse())
+        {
+            delete newDatabase;
+
+            return false;
+        }
+    }
+
+    delete newDatabase;
 
     return (setDatabase(dbParams, priority, suggestedAlbumRoot));
 }

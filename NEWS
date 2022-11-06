@@ -187,7 +187,7 @@ BUGFIXES:
 149 ==> 461366 - Missing face thumbnails/icons on people are not assigned automatically.
 150 ==> 461469 - Import file filter not working.
 151 ==> 426786 - Filter with a specific path does not work.
-152 ==> 
+152 ==> 461504 - Make it possible to create new database without having to delete digikam.rc.
 153 ==> 
 154 ==> 
 155 ==> 
