@@ -46,9 +46,19 @@ class Q_DECL_HIDDEN ImportFilterComboBox::Private
 public:
 
     explicit Private()
+      : currentFilter(0)
+    {
+        createFilters();
+    }
+
+    void createFilters()
     {
         KSharedConfig::Ptr config = KSharedConfig::openConfig();
         KConfigGroup group        = config->group(QLatin1String("Import Filters"));
+        QString ignoreNames       = group.readEntry(QLatin1String("IgnoreNames"),
+                                                    defaultIgnoreNames).toLower();
+        QString ignoreExtensions  = group.readEntry(QLatin1String("IgnoreExtensions"),
+                                                    defaultIgnoreExtensions).toLower();
 
         for (int i = 0 ; true ; ++i)
         {
@@ -58,6 +68,9 @@ public:
             {
                 break;
             }
+
+            filter.append(QLatin1Char('|') + ignoreNames);
+            filter.append(QLatin1Char('|') + ignoreExtensions);
 
             Filter* const f = new Filter;
             f->fromString(filter);
@@ -73,10 +86,8 @@ public:
         qDeleteAll(filters);
     }
 
-    int                         currentFilter;
-    QList<Filter*>              filters;
-    QHash<QString, QRegExp>     filterHash;
-    QHash<QString, QStringList> mimeHash;
+    int            currentFilter;
+    QList<Filter*> filters;
 };
 
 // -------------------------------------------------------
@@ -166,6 +177,15 @@ void ImportFilterComboBox::saveSettings()
     KConfigGroup group        = config->group(QLatin1String("Import Filters"));
 
     group.writeEntry(QLatin1String("CurrentFilter"), d->currentFilter);
+}
+
+void ImportFilterComboBox::updateFilter()
+{
+    qDeleteAll(d->filters);
+    d->filters.clear();
+
+    d->createFilters();
+    fillCombo();
 }
 
 } // namespace Digikam

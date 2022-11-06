@@ -20,6 +20,11 @@
 #include <QMimeType>
 #include <QMimeDatabase>
 
+// Local includes
+
+#include "digikam_debug.h"
+#include "digikam_globals.h"
+
 namespace Digikam
 {
 
@@ -63,6 +68,16 @@ void Filter::fromString(const QString& filter)
     if (!s.value(4).isEmpty())
     {
         mimeFilter = s.value(4);
+    }
+
+    if (!s.value(5).isEmpty())
+    {
+        ignoreNames = s.value(5).split(QLatin1Char(' '), QT_SKIP_EMPTY_PARTS);
+    }
+
+    if (!s.value(6).isEmpty())
+    {
+        ignoreExtensions = s.value(6).split(QLatin1Char(' '), QT_SKIP_EMPTY_PARTS);
     }
 }
 
@@ -157,6 +172,25 @@ bool Filter::matchesCurrentFilter(const CamItemInfo& item)
         if (!match(mimeWildcards(mimeFilter), name))
         {
             return false;
+        }
+    }
+
+    if (!ignoreNames.isEmpty())
+    {
+        if (match(ignoreNames, name))
+        {
+            return false;
+        }
+    }
+
+    if (!ignoreExtensions.isEmpty())
+    {
+        Q_FOREACH (const QString& ext, ignoreExtensions)
+        {
+            if (name.endsWith(QLatin1Char('.') + ext))
+            {
+                return false;
+            }
         }
     }
 

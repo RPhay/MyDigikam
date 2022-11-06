@@ -51,6 +51,8 @@ public:
     bool                        onlyNew;
     QStringList                 fileFilter;
     QStringList                 pathFilter;
+    QStringList                 ignoreNames;
+    QStringList                 ignoreExtensions;
     QString                     mimeFilter;
     QHash<QString, QRegExp>     filterHash;
     QHash<QString, QStringList> mimeHash;

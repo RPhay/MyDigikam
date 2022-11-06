@@ -2714,6 +2714,8 @@ void ImportUI::toogleShowBar()
 
 void ImportUI::slotSetupChanged()
 {
+    d->filterComboBox->updateFilter();
+    setFilter(d->filterComboBox->currentFilter());
     d->view->importFilterModel()->setStringTypeNatural(ApplicationSettings::instance()->isStringTypeNatural());
 
     // Load full-screen options
