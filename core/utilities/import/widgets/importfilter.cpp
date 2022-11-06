@@ -81,12 +81,12 @@ void Filter::fromString(const QString& filter)
     }
 }
 
-const QRegExp& Filter::regexp(const QString& wildcard)
+const QRegularExpression& Filter::regexp(const QString& wildcard)
 {
     if (!filterHash.contains(wildcard))
     {
-        QRegExp rx(wildcard.toLower());
-        rx.setPatternSyntax(QRegExp::Wildcard);
+        QRegularExpression rx(QRegularExpression::wildcardToRegularExpression(wildcard));
+        rx.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
         filterHash[wildcard] = rx;
     }
 
@@ -99,7 +99,7 @@ bool Filter::match(const QStringList& wildcards, const QString& name)
 
     Q_FOREACH (const QString& wildcard, wildcards)
     {
-        match = regexp(wildcard).exactMatch(name);
+        match = regexp(wildcard).match(name).hasMatch();
 /*
         qCDebug(DIGIKAM_IMPORTUI_LOG) << "**" << wildcard << name << match;
 */

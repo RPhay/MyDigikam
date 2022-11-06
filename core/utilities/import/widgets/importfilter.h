@@ -22,7 +22,7 @@
 #include <QString>
 #include <QList>
 #include <QStringList>
-#include <QRegExp>
+#include <QRegularExpression>
 
 // Local includes
 
@@ -41,21 +41,21 @@ public:
     QString toString();
     void    fromString(const QString& filter);
     bool    match(const QStringList& wildcards, const QString& name);
-    const   QRegExp& regexp(const QString& wildcard);
+    const   QRegularExpression& regexp(const QString& wildcard);
     const   QStringList& mimeWildcards(const QString& mime);
     bool    matchesCurrentFilter(const CamItemInfo& item);
 
 public:
 
-    QString                     name;
-    bool                        onlyNew;
-    QStringList                 fileFilter;
-    QStringList                 pathFilter;
-    QStringList                 ignoreNames;
-    QStringList                 ignoreExtensions;
-    QString                     mimeFilter;
-    QHash<QString, QRegExp>     filterHash;
-    QHash<QString, QStringList> mimeHash;
+    QString                            name;
+    bool                               onlyNew;
+    QStringList                        fileFilter;
+    QStringList                        pathFilter;
+    QStringList                        ignoreNames;
+    QStringList                        ignoreExtensions;
+    QString                            mimeFilter;
+    QHash<QString, QRegularExpression> filterHash;
+    QHash<QString, QStringList>        mimeHash;
 };
 
 typedef QList<Filter*> FilterList;
