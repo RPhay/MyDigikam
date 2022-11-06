@@ -790,6 +790,18 @@ bool AlbumManager::showDatabaseSetupPage(const QString& error, bool priority, co
 
     if (*newDatabase)
     {
+        if (dbParams.internalServer)
+        {
+            DatabaseServerError result = DatabaseServerStarter::instance()->startServerManagerProcess(dbParams);
+
+            if (result.getErrorType() != DatabaseServerError::NoErrors)
+            {
+                delete newDatabase;
+
+                return false;
+            }
+        }
+
         CoreDbAccess::setParameters(dbParams);
 
         if (!CoreDbAccess::checkReadyForUse())
