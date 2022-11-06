@@ -181,10 +181,12 @@ void ImportFilterComboBox::saveSettings()
 
 void ImportFilterComboBox::updateFilter()
 {
+    int lastCurrent  = d->currentFilter;
     qDeleteAll(d->filters);
     d->filters.clear();
-
     d->createFilters();
+
+    d->currentFilter = lastCurrent;
     fillCombo();
 }
 
