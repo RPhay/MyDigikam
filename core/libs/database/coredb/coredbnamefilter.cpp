@@ -29,15 +29,15 @@ namespace Digikam
 
 CoreDbNameFilter::CoreDbNameFilter(const QString& filter)
 {
-    if ( filter.isEmpty() )
+    if (filter.isEmpty())
     {
         return;
     }
 
     QLatin1Char sep(';');
-    int i = filter.indexOf( sep );
+    int i = filter.indexOf(sep);
 
-    if ( i == -1 && filter.indexOf(QLatin1Char(' ')) != -1)
+    if ((i == -1) && (filter.indexOf(QLatin1Char(' ')) != -1))
     {
         sep = QLatin1Char(' ');
     }
@@ -45,7 +45,7 @@ CoreDbNameFilter::CoreDbNameFilter(const QString& filter)
     QStringList list               = filter.split(sep, QT_SKIP_EMPTY_PARTS);
     QStringList::const_iterator it = list.constBegin();
 
-    while ( it != list.constEnd() )
+    while (it != list.constEnd())
     {
         QString pattern = QRegularExpression::anchoredPattern((*it).trimmed());
         QRegularExpression wildcard(QRegularExpression::wildcardToRegularExpression(pattern));
@@ -59,9 +59,9 @@ bool CoreDbNameFilter::matches(const QString& name)
 {
     QList<QRegularExpression>::const_iterator rit = m_filterList.constBegin();
 
-    while ( rit != m_filterList.constEnd() )
+    while (rit != m_filterList.constEnd())
     {
-        if ( (*rit).match(name).hasMatch() )
+        if ((*rit).match(name).hasMatch())
         {
             return true;
         }
