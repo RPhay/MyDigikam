@@ -788,7 +788,7 @@ bool AlbumManager::showDatabaseSetupPage(const QString& error, bool priority, co
 
     delete setup;
 
-    if (newDatabase)
+    if (*newDatabase)
     {
         CoreDbAccess::setParameters(dbParams);
 
