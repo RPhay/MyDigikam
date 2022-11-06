@@ -423,10 +423,14 @@ SetupCamera::SetupCamera(QWidget* const parent)
     QLabel* const label               = new QLabel(groupBox);
     verticalLayout->addWidget(label);
     d->ignoreNamesEdit                = new QLineEdit(groupBox);
+    d->ignoreNamesEdit->setToolTip(i18n("Use a space as a separator to specify "
+                                        "multiple file names to ignore."));
     verticalLayout->addWidget(d->ignoreNamesEdit);
     QLabel* const label2              = new QLabel(groupBox);
     verticalLayout->addWidget(label2);
     d->ignoreExtensionsEdit           = new QLineEdit(groupBox);
+    d->ignoreExtensionsEdit->setToolTip(i18n("Use a space as a separator to specify "
+                                             "multiple file extensions to ignore."));
     verticalLayout->addWidget(d->ignoreExtensionsEdit);
 
     groupBox->setTitle(i18n("Always ignore"));
