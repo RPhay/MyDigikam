@@ -1,6 +1,6 @@
 RESUME
 ------
-These scripts build a binary digiKam AppImage bundle for Linux using Mageia 64 bits.
+These scripts build a binary digiKam AppImage bundle for Linux using Ubuntu 64 bits.
 
 
 AUTHORS
@@ -70,21 +70,20 @@ Note : the bundle is rellocable.
 REQUIREMENTS
 ------------
 
-- For technical reasons about compatibility with libc, Mageia 7 is used to be compatible
+- For technical reasons about compatibility with libc, Ubuntu 18.04 is used to be compatible
   at run-time under other Linux distributions. NOTE: we have tested Centos in the pass but
   this distribution is really a puzzle to group all required multimedia packages.
 
-- Create a fresh Mageia 7 environment in a Virtual Machine:
-  Install the distribution using official ISO from http://distrib-coffee.ipsl.jussieu.fr/pub/linux/Mageia/iso/
+- Create a fresh XUbuntu 18.04 environment in a Virtual Machine:
+  Install the distribution using official ISO from http://ftp.free.fr/mirrors/ftp.xubuntu.com/releases/18.04.5/release/
   or another mirror.
   Use a static 80Gb virtual disk with separated partitions as 50Gb for /, 8Gb for swap, and 23Gb for /home.
-- Install the customized group of packages (no Plasma or Gnome desktop) with development tools.
-  Install the light XFCE desktop (not Qt5 based desktop).
+- Using XUbuntu allow to not use Plasma or Gnome desktop. Light XFCE desktop is not Qt5 based desktop.
   Setup the Internet repositories and install update.
 - Install the minimum requirement to checkout the code:
-  urpmi git openssh-askpass
+  apt install git openssh-askpass
   git clone https://invent.kde.org/graphics/digikam.git DK
-  cd DK/project/appimage.mageia/
+  cd DK/project/appimage/
 
 - Customize the config.sh file:
   Setup the digiKam git tags to checkout right source code in bundle.
