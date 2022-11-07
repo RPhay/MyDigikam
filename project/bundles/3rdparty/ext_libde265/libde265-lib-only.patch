@@ -1,17 +1,8 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index b339f899..28c0524c 100644
+index bd786d53..6d6f7ac4 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -20,7 +20,7 @@ include (${CMAKE_ROOT}/Modules/CheckIncludeFile.cmake)
- include(GNUInstallDirs)
- include(CheckFunctionExists)
- 
--find_package(SDL)
-+#find_package(SDL)
- find_package(Threads REQUIRED)
- 
- CHECK_INCLUDE_FILE(malloc.h HAVE_MALLOC_H)
-@@ -64,5 +64,5 @@ if(MSVC)
+@@ -69,5 +69,5 @@ if(MSVC)
  endif()
  
  add_subdirectory (libde265)
