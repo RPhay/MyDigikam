@@ -319,15 +319,15 @@ bool CoreDbAccess::checkReadyForUse(InitializationObserver* const observer)
 
     d->initializing = true;
 
-    // Check or set WAL mode for SQLite database from DbEngineParameters
-
-    d->backend->checkOrSetWALMode();
-
     // Update schema
 
     CoreDbSchemaUpdater updater(access.db(), access.backend(), access.parameters());
     updater.setCoreDbAccess(&access);
     updater.setObserver(observer);
+
+    // Check or set WAL mode for SQLite database from DbEngineParameters
+
+    d->backend->checkOrSetWALMode();
 
     if (!d->backend->initSchema(&updater))
     {

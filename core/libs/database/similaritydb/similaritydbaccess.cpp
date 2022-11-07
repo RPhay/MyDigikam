@@ -243,14 +243,14 @@ bool SimilarityDbAccess::checkReadyForUse(InitializationObserver* const observer
 
     d->initializing = true;
 
-    // Check or set WAL mode for SQLite database from DbEngineParameters
-
-    d->backend->checkOrSetWALMode();
-
     // Update schema
 
     SimilarityDbSchemaUpdater updater(&access);
     updater.setObserver(observer);
+
+    // Check or set WAL mode for SQLite database from DbEngineParameters
+
+    d->backend->checkOrSetWALMode();
 
     if (!d->backend->initSchema(&updater))
     {
