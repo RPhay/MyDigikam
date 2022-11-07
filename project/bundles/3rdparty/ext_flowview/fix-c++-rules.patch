@@ -1,0 +1,12 @@
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index d2fe367..f50c3a7 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -4,7 +4,6 @@
+ # Redistribution and use is allowed according to the terms of the BSD license.
+ # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+ 
+-set(CMAKE_CXX_STANDARD 20)
+ set(CMAKE_AUTOMOC ON)
+ 
+ # set QT_VERSION_MAJOR
