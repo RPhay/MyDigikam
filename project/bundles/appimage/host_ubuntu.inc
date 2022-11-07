@@ -191,6 +191,7 @@ optional_packages=("ruby"                               # For i18n extraction
                    "libtheora-dev"
                    "libvorbis-dev"
                    "libopencore-amrnb-dev"
+                   "libopencore-amrwb-dev"
                    "librtmp-dev"
                    "libopus-dev"
                    "libspeex-dev"
