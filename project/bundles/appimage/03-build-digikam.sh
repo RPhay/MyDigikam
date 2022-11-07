@@ -71,7 +71,7 @@ cp $DOWNLOAD_DIR/lensfun_manifest.txt $ORIG_WD/data/
 
 # Clean up previous install (see bug #459276)
 
-FILES=$(find /usr | grep -E '(digikam|showfoto|avplayer)')
+FILES=$(find /usr | { grep -E '(digikam|showfoto|avplayer)' || true; })
 
 for FILE in $FILES ; do
     if [[ -f ${FILE} || -d ${FILE} ]] ; then
