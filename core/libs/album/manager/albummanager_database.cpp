@@ -755,7 +755,7 @@ bool AlbumManager::showDatabaseSetupPage(const QString& error, bool priority, co
     layout->addStretch(10);
     layout->addWidget(buttons);
 
-    bool* const newDatabase = new bool(false);
+    bool newDatabase = false;
 
     connect(buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
             setup, SLOT(accept()));
@@ -764,9 +764,9 @@ bool AlbumManager::showDatabaseSetupPage(const QString& error, bool priority, co
             setup, SLOT(reject()));
 
     connect(buttons->button(QDialogButtonBox::Reset), &QPushButton::clicked,
-            this, [=]()
+            this, [&]()
             {
-                *newDatabase = true;
+                newDatabase = true;
                 setup->accept();
             }
     );
@@ -776,7 +776,6 @@ bool AlbumManager::showDatabaseSetupPage(const QString& error, bool priority, co
 
     if (setup->exec() != QDialog::Accepted)
     {
-        delete newDatabase;
         delete setup;
 
         return false;
@@ -788,7 +787,7 @@ bool AlbumManager::showDatabaseSetupPage(const QString& error, bool priority, co
 
     delete setup;
 
-    if (*newDatabase)
+    if (newDatabase)
     {
         if (dbParams.internalServer)
         {
@@ -796,8 +795,6 @@ bool AlbumManager::showDatabaseSetupPage(const QString& error, bool priority, co
 
             if (result.getErrorType() != DatabaseServerError::NoErrors)
             {
-                delete newDatabase;
-
                 return false;
             }
         }
@@ -806,13 +803,9 @@ bool AlbumManager::showDatabaseSetupPage(const QString& error, bool priority, co
 
         if (!CoreDbAccess::checkReadyForUse())
         {
-            delete newDatabase;
-
             return false;
         }
     }
-
-    delete newDatabase;
 
     return (setDatabase(dbParams, priority, suggestedAlbumRoot));
 }
