@@ -589,7 +589,8 @@ void MainWindow::setupUi()
             d->pVOAction = voa;
     }
 
-    d->pVOAction->setChecked(true);
+    if (d->pVOAction)
+        d->pVOAction->setChecked(true);
     d->VOActions                       = subMenu->actions();
 
     mainLayout->addLayout(d->pPlayerLayout);
