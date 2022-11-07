@@ -1,10 +1,10 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index c2790ab..003dee8 100644
+index 533815d2..1f384297 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -71,23 +71,23 @@ endif()
- 
- set(WARNINGS_AS_ERRORS_DEFAULT false)
+@@ -94,35 +94,35 @@ endif()
+ get_property(SHARED_LIBS_SUPPORTED GLOBAL PROPERTY TARGET_SUPPORTS_SHARED_LIBS)
+ option(BUILD_SHARED_LIBS "Build shared libraries instead of static ones" ${SHARED_LIBS_SUPPORTED})
  
 -set(JPEGXL_ENABLE_FUZZERS ${ENABLE_FUZZERS_DEFAULT} CACHE BOOL
 +set(JPEGXL_ENABLE_FUZZERS false CACHE BOOL
@@ -14,6 +14,9 @@ index c2790ab..003dee8 100644
 -set(JPEGXL_ENABLE_TOOLS true CACHE BOOL
 +set(JPEGXL_ENABLE_TOOLS false CACHE BOOL
      "Build JPEGXL user tools: cjxl and djxl.")
+-set(JPEGXL_ENABLE_DOXYGEN true CACHE BOOL
++set(JPEGXL_ENABLE_DOXYGEN false CACHE BOOL
+     "Generate C API documentation using Doxygen.")
 -set(JPEGXL_ENABLE_MANPAGES true CACHE BOOL
 +set(JPEGXL_ENABLE_MANPAGES false CACHE BOOL
      "Build and install man pages for the command-line tools.")
@@ -23,6 +26,9 @@ index c2790ab..003dee8 100644
 -set(JPEGXL_ENABLE_EXAMPLES true CACHE BOOL
 +set(JPEGXL_ENABLE_EXAMPLES false CACHE BOOL
      "Build JPEGXL library usage examples.")
+-set(JPEGXL_BUNDLE_LIBPNG ${BUNDLE_LIBPNG_DEFAULT} CACHE BOOL
++set(JPEGXL_BUNDLE_LIBPNG false CACHE BOOL
+     "Build libpng from source and link it statically.")
 -set(JPEGXL_ENABLE_JNI true CACHE BOOL
 +set(JPEGXL_ENABLE_JNI false CACHE BOOL
      "Build JPEGXL JNI Java wrapper, if Java dependencies are installed.")
@@ -32,9 +38,11 @@ index c2790ab..003dee8 100644
 -set(JPEGXL_ENABLE_OPENEXR true CACHE BOOL
 +set(JPEGXL_ENABLE_OPENEXR false CACHE BOOL
      "Build JPEGXL with support for OpenEXR if available.")
- set(JPEGXL_ENABLE_SKCMS true CACHE BOOL
+-set(JPEGXL_ENABLE_SKCMS true CACHE BOOL
++set(JPEGXL_ENABLE_SKCMS false CACHE BOOL
      "Build with skcms instead of lcms2.")
-@@ -95,7 +95,7 @@ set(JPEGXL_BUNDLE_SKCMS true CACHE BOOL
+-set(JPEGXL_BUNDLE_SKCMS true CACHE BOOL
++set(JPEGXL_BUNDLE_SKCMS false CACHE BOOL
      "When building with skcms, bundle it into libjxl.a.")
  set(JPEGXL_ENABLE_VIEWERS false CACHE BOOL
      "Build JPEGXL viewer tools for evaluation.")
@@ -42,8 +50,8 @@ index c2790ab..003dee8 100644
 +set(JPEGXL_ENABLE_TCMALLOC false CACHE BOOL
      "Build JPEGXL using gperftools (tcmalloc) allocator.")
  set(JPEGXL_ENABLE_PLUGINS false CACHE BOOL
-     "Build third-party plugings to support JPEG XL in other applications.")
-@@ -109,7 +109,7 @@ set(JPEGXL_ENABLE_TRANSCODE_JPEG true CACHE BOOL
+     "Build third-party plugins to support JPEG XL in other applications.")
+@@ -138,7 +138,7 @@ set(JPEGXL_ENABLE_TRANSCODE_JPEG true CACHE BOOL
   (default enabled)")
  set(JPEGXL_STATIC false CACHE BOOL
      "Build tools as static binaries.")
@@ -52,7 +60,7 @@ index c2790ab..003dee8 100644
      "Treat warnings as errors during compilation.")
  set(JPEGXL_DEP_LICENSE_DIR "" CACHE STRING
      "Directory where to search for system dependencies \"copyright\" files.")
-@@ -382,4 +382,4 @@ add_subdirectory(plugins)
+@@ -469,4 +469,4 @@ add_subdirectory(plugins)
  endif ()
  
  # Binary tools
