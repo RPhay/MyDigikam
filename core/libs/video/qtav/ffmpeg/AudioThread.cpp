@@ -500,8 +500,6 @@ void AudioThread::run()
         if (!pkt.isEOF())
             pkt.skip(pkt.data.size() - dec->undecodedSize());
 
-#if USE_AUDIO_FRAME
-
         AudioFrame frame(dec->frame());
 
         if (!frame)
@@ -553,12 +551,6 @@ void AudioThread::run()
         }
 
         QByteArray decoded(frame.data());
-
-#else
-
-        QByteArray decoded(dec->data());
-
-#endif
 
         int decodedSize       = decoded.size();
         int decodedPos        = 0;

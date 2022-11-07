@@ -165,22 +165,7 @@ bool AudioDecoderFFmpeg::decode(const Packet& packet)
         return !packet.isEOF();
     }
 
-#if USE_AUDIO_FRAME
-
     return true;
-
-#endif
-
-    d.resampler->setInSampesPerChannel(d.frame->nb_samples);
-
-    if (!d.resampler->convert((const quint8**)d.frame->extended_data))
-    {
-        return false;
-    }
-
-    d.decoded = d.resampler->outData();
-
-    return true;  // return !d.decoded.isEmpty();
     
 #else // ffmpeg >= 5
 

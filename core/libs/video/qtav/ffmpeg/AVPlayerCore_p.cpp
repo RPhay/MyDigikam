@@ -686,17 +686,6 @@ bool AVPlayerCore::Private::setupAudioThread(AVPlayerCore* player)
 */
     adec->resampler()->setOutAudioFormat(ao->audioFormat());
 
-    // no need to set resampler if AudioFrame is used
-
-#if !USE_AUDIO_FRAME
-
-    adec->resampler()->inAudioFormat().setSampleFormatFFmpeg(avctx->sample_fmt);
-    adec->resampler()->inAudioFormat().setSampleRate(avctx->sample_rate);
-    adec->resampler()->inAudioFormat().setChannels(avctx->channels);
-    adec->resampler()->inAudioFormat().setChannelLayoutFFmpeg(avctx->channel_layout);
-
-#endif
-
     if (audio_track < 0)
         return true;
 

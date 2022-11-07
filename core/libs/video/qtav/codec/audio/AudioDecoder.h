@@ -25,8 +25,6 @@
 #include "AVDecoder.h"
 #include "AudioFrame.h"
 
-#define USE_AUDIO_FRAME 1
-
 // TODO: decoder.in/outAudioFormat()?
 
 namespace QtAV
