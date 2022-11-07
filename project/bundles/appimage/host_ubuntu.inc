@@ -209,6 +209,7 @@ optional_packages=("ruby"                               # For i18n extraction
                    "libxcb-res0-dev"
                    "libxcb-record0-dev"
                    "libdbus-1-dev"
+                   "libmount-dev"
                    "curl"
                   )
 
