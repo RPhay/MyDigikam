@@ -51,23 +51,15 @@ DK_KA_VERSION="22.08.1"
 DK_KF5_VERSION="5.99"
 
 # Installer will include or not digiKam debug symbols
-DK_DEBUG=1
+DK_DEBUG=0
 
 # Qt version to use in bundle. Possible values:
 # - 5.15:     stable Qt5 release.
 # - 5.15-LTS: rolling release version 5 (can be not stbilized)
 # - 6.3.1:    stable Qt6 release.
 
-if [ "$OS_VERSION" == "8" ] ; then
-
-    DK_QTVERSION="6.3.1"
-
-else
-
-    DK_QTVERSION="5.15"
-    #DK_QTVERSION="5.15-LTS"
-
-fi
+#DK_QTVERSION="6.3.1"
+DK_QTVERSION="5.15"
 
 # QtWebEngine version to use in bundle when 5.15-LTS is used.
 DK_QTWEBENGINEVERSION="5.15.9"
@@ -82,6 +74,6 @@ DK_QTWEBENGINE=1
 DK_SIGN=0
 
 # Upload automatically bundle to files.kde.org (pre-release only).
-DK_UPLOAD=0
+DK_UPLOAD=1
 DK_UPLOADURL="digikam@deino.kde.org"
 DK_UPLOADDIR="/srv/archives/files/digikam/"
