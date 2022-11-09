@@ -972,11 +972,15 @@ bool MetaEngine::convertFromGPSCoordinateString(const QString& gpsString,
 
         *denominatorDegrees = 1;
         *denominatorMinutes = 1;
-        *denominatorSeconds = 1;
+        *denominatorSeconds = 1000000;
 
         *numeratorDegrees   = parts[0].toLong();
         *numeratorMinutes   = parts[1].toLong();
-        *numeratorSeconds   = parts[2].toLong();
+
+        double seconds      = parts[2].toDouble();
+        seconds            *= 1000000;
+
+        *numeratorSeconds   = (long)round(seconds);
 
         return true;
     }
