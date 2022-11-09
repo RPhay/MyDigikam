@@ -1017,7 +1017,7 @@ bool MetaEngine::convertFromGPSCoordinateString(const QString& gpsString, double
 
         *degrees  = parts[0].toLong();
         *degrees += parts[1].toLong() / 60.0;
-        *degrees += parts[2].toLong() / 3600.0;
+        *degrees += parts[2].toDouble() / 3600.0;
 
         if ((directionReference == 'W') || (directionReference == 'S'))
         {
