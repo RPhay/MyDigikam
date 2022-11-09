@@ -3,10 +3,9 @@
 # Script to bundle data using previously-built KF5 with digiKam installation
 # and create a Linux AppImage bundle file.
 #
-# Copyright (c) 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
-# Redistribution and use is allowed according to the terms of the BSD license.
-# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+# SPDX-License-Identifier: BSD-3-Clause
 #
 
 # Halt and catch errors
@@ -200,8 +199,10 @@ echo -e "---------- Copy digiKam icons files\n"
 FILES=$(cat $ORIG_WD/logs/build-digikam.full.log | grep /usr/share/icons/ | cut -d' ' -f3)
 
 for FILE in $FILES ; do
-    echo $FILE
-    cp --parents $FILE ./
+    if [[ $FILE != "touch:" ]] ; then
+        echo $FILE
+        cp --parents $FILE ./
+    fi
 done
 
 echo -e "---------- Copy Marble data and plugins files\n"
