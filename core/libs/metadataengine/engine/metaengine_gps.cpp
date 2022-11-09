@@ -1062,7 +1062,7 @@ bool MetaEngine::convertToUserPresentableNumbers(const QString& gpsString,
 
         *degrees = parts[0].toInt();
         *minutes = parts[1].toInt();
-        *seconds = (double)parts[2].toInt();
+        *seconds = parts[2].toDouble();
 
         return true;
     }
