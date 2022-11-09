@@ -51,7 +51,7 @@ DK_KA_VERSION="22.08.1"
 DK_KF5_VERSION="5.99"
 
 # Installer will include or not digiKam debug symbols
-DK_DEBUG=0
+DK_DEBUG=1
 
 # Qt version to use in bundle. Possible values:
 # - 5.15:     stable Qt5 release.
