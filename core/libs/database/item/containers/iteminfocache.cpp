@@ -120,9 +120,9 @@ void ItemInfoCache::cacheByName(const QExplicitlySharedDataPointer<ItemInfoData>
 
     // Called in a context where we can assume that the entry is not yet cached by name (newly created data)
 
-    m_nameHash.remove(m_dataHash.value(infoPtr), infoPtr);
+    m_nameHash.remove(m_dataHash.value(infoPtr->id), infoPtr);
+    m_dataHash.insert(infoPtr->id, infoPtr->name);
     m_nameHash.insert(infoPtr->name, infoPtr);
-    m_dataHash.insert(infoPtr, infoPtr->name);
 }
 
 QExplicitlySharedDataPointer<ItemInfoData> ItemInfoCache::infoForPath(int albumRootId,
@@ -169,18 +169,18 @@ void ItemInfoCache::dropInfo(const QExplicitlySharedDataPointer<ItemInfoData>& i
 
     ItemInfoWriteLocker lock;
 
-    // When we have the last ItemInfoData, the reference counter is at 4.
-    // Because 3 QExplicitlySharedDataPointers are in cache and 1 is held by m_data.
+    // When we have the last ItemInfoData, the reference counter is at 3.
+    // Because 2 QExplicitlySharedDataPointers are in cache and 1 is held by m_data.
 
-    if (infoPtr.data()->ref > 4)
+    if (infoPtr.data()->ref > 3)
     {
         return;
     }
 
-    m_nameHash.remove(m_dataHash.value(infoPtr), infoPtr);
+    m_nameHash.remove(m_dataHash.value(infoPtr->id), infoPtr);
     m_nameHash.remove(infoPtr->name, infoPtr);
     m_infoHash.remove(infoPtr->id);
-    m_dataHash.remove(infoPtr);
+    m_dataHash.remove(infoPtr->id);
 }
 
 QList<AlbumShortInfo>::const_iterator ItemInfoCache::findAlbum(int id)
