@@ -103,13 +103,13 @@ private:
 
 private:
 
-    QMultiHash<QString, ItemInfoData*> m_nameHash;
-    QHash<qlonglong, ItemInfoData*>    m_infoHash;
-    QHash<ItemInfoData*, QString>      m_dataHash;
-    volatile bool                      m_needUpdateAlbums;
-    volatile bool                      m_needUpdateGrouped;
-    QList<qlonglong>                   m_grouped;
-    QList<AlbumShortInfo>              m_albums;
+    QMultiHash<QString, QExplicitlySharedDataPointer<ItemInfoData> > m_nameHash;
+    QHash<qlonglong, QExplicitlySharedDataPointer<ItemInfoData> >    m_infoHash;
+    QHash<QExplicitlySharedDataPointer<ItemInfoData>, QString>       m_dataHash;
+    volatile bool                                                    m_needUpdateAlbums;
+    volatile bool                                                    m_needUpdateGrouped;
+    QList<qlonglong>                                                 m_grouped;
+    QList<AlbumShortInfo>                                            m_albums;
 };
 
 } // namespace Digikam

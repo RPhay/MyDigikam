@@ -65,6 +65,7 @@ void ItemInfoCache::checkAlbums()
     if (m_needUpdateAlbums)
     {
         // list comes sorted from db
+
         QList<AlbumShortInfo> infos = CoreDbAccess().db()->getAlbumShortInfos();
 
         ItemInfoWriteLocker lock;
@@ -112,35 +113,38 @@ void ItemInfoCache::cacheByName(const QExplicitlySharedDataPointer<ItemInfoData>
 {
     // Called with Write lock
 
-    ItemInfoData* const data = infoPtr.data();
-
-    if (!data || (data->id == -1) || data->name.isEmpty())
+    if (!infoPtr || (infoPtr->id == -1) || infoPtr->name.isEmpty())
     {
         return;
     }
 
     // Called in a context where we can assume that the entry is not yet cached by name (newly created data)
-    m_nameHash.remove(m_dataHash.value(data), data);
-    m_nameHash.insert(data->name, data);
-    m_dataHash.insert(data, data->name);
+
+    m_nameHash.remove(m_dataHash.value(infoPtr), infoPtr);
+    m_nameHash.insert(infoPtr->name, infoPtr);
+    m_dataHash.insert(infoPtr, infoPtr->name);
 }
 
 QExplicitlySharedDataPointer<ItemInfoData> ItemInfoCache::infoForPath(int albumRootId,
                                                                       const QString& relativePath, const QString& name)
 {
     ItemInfoReadLocker lock;
+
     // We check all entries in the multi hash with matching file name
-    QMultiHash<QString, ItemInfoData*>::const_iterator it;
+
+    QMultiHash<QString, QExplicitlySharedDataPointer<ItemInfoData> >::const_iterator it;
 
     for (it = m_nameHash.constFind(name) ; (it != m_nameHash.constEnd()) && (it.key() == name) ; ++it)
     {
         // first check that album root matches
+
         if (it.value()->albumRootId != albumRootId)
         {
             continue;
         }
 
         // check that relativePath matches. We get relativePath from entry's id and compare to given name.
+
         QList<AlbumShortInfo>::const_iterator albumIt = findAlbum(it.value()->albumId);
 
         if ((albumIt == m_albums.constEnd()) || (albumIt->relativePath != relativePath))
@@ -149,7 +153,8 @@ QExplicitlySharedDataPointer<ItemInfoData> ItemInfoCache::infoForPath(int albumR
         }
 
         // we have now a match by name, albumRootId and relativePath
-        return QExplicitlySharedDataPointer<ItemInfoData>(it.value());
+
+        return it.value();
     }
 
     return QExplicitlySharedDataPointer<ItemInfoData>();
@@ -163,25 +168,30 @@ void ItemInfoCache::dropInfo(const QExplicitlySharedDataPointer<ItemInfoData>& i
     }
 
     ItemInfoWriteLocker lock;
-    ItemInfoData* const data = infoPtr.data();
 
-    if (!data || (data->ref > 1))
+    // When we have the last ItemInfoData, the reference counter is at 4.
+    // Because 3 QExplicitlySharedDataPointers are in cache and 1 is held by m_data.
+
+    if (infoPtr.data()->ref > 4)
     {
         return;
     }
 
-    m_nameHash.remove(m_dataHash.value(data), data);
-    m_nameHash.remove(data->name, data);
-    m_infoHash.remove(data->id);
-    m_dataHash.remove(data);
+    m_nameHash.remove(m_dataHash.value(infoPtr), infoPtr);
+    m_nameHash.remove(infoPtr->name, infoPtr);
+    m_infoHash.remove(infoPtr->id);
+    m_dataHash.remove(infoPtr);
 }
 
 QList<AlbumShortInfo>::const_iterator ItemInfoCache::findAlbum(int id)
 {
     // Called with read lock
+
     AlbumShortInfo info;
     info.id = id;
+
     // we use the fact that d->infos is sorted by id
+
     QList<AlbumShortInfo>::const_iterator it;
     it = std::lower_bound(m_albums.constBegin(),
                           m_albums.constEnd(), info,
@@ -212,7 +222,7 @@ QString ItemInfoCache::albumRelativePath(int albumId)
 void ItemInfoCache::invalidate()
 {
     ItemInfoWriteLocker lock;
-    QHash<qlonglong, ItemInfoData*>::iterator it;
+    QHash<qlonglong, QExplicitlySharedDataPointer<ItemInfoData> >::iterator it;
 
     for (it = m_infoHash.begin() ; it != m_infoHash.end() ; ++it)
     {
@@ -235,11 +245,12 @@ void ItemInfoCache::slotImageChanged(const ImageChangeset& changeset)
 
     Q_FOREACH (const qlonglong& imageId, changeset.ids())
     {
-        QHash<qlonglong, ItemInfoData*>::iterator it = m_infoHash.find(imageId);
+        QHash<qlonglong, QExplicitlySharedDataPointer<ItemInfoData> >::iterator it = m_infoHash.find(imageId);
 
         if (it != m_infoHash.end())
         {
             // invalidate the relevant field. It will be lazy-loaded at first access.
+
             DatabaseFields::Set changes = changeset.changes();
 
             if (changes & DatabaseFields::ItemCommentsAll)
@@ -349,7 +360,7 @@ void ItemInfoCache::slotImageTagChanged(const ImageTagChangeset& changeset)
 
         Q_FOREACH (const qlonglong& imageId, changeset.ids())
         {
-            QHash<qlonglong, ItemInfoData*>::iterator it = m_infoHash.find(imageId);
+            QHash<qlonglong, QExplicitlySharedDataPointer<ItemInfoData> >::iterator it = m_infoHash.find(imageId);
 
             if (it != m_infoHash.end())
             {
@@ -366,7 +377,7 @@ void ItemInfoCache::slotImageTagChanged(const ImageTagChangeset& changeset)
 
     Q_FOREACH (const qlonglong& imageId, changeset.ids())
     {
-        QHash<qlonglong, ItemInfoData*>::iterator it = m_infoHash.find(imageId);
+        QHash<qlonglong, QExplicitlySharedDataPointer<ItemInfoData> >::iterator it = m_infoHash.find(imageId);
 
         if (it != m_infoHash.end())
         {
