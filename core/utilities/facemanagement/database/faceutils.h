@@ -90,20 +90,20 @@ public:
      * If requested, the faces will be scaled to the given (fixed) size.
      */
 /*
-    void                fillImageInFaces(ThumbnailImageCatcher* const catcher,
-                                         const QString& filePath,
-                                         QList<Face>& faceList,
-                                         const QSize& scaleSize = QSize())              const;
+    void                 fillImageInFaces(ThumbnailImageCatcher* const catcher,
+                                          const QString& filePath,
+                                          QList<Face>& faceList,
+                                          const QSize& scaleSize = QSize())             const;
 */
 
     /**
      * Store the needed thumbnails for the given faces. This can be a huge optimization
      * when the has already been loaded anyway.
      */
-    void                storeThumbnails(ThumbnailLoadThread* const thread,
-                                        const QString& filePath,
-                                        const QList<FaceTagsIface>& databaseFaces,
-                                        const DImg& image);
+    void                 storeThumbnails(ThumbnailLoadThread* const thread,
+                                         const QString& filePath,
+                                         const QList<FaceTagsIface>& databaseFaces,
+                                         const DImg& image);
 
     /**
      * Conversion
@@ -118,7 +118,7 @@ public:
      * face rectangle. This returns a pixel margin commonly used to increase the rectangle size
      * in all four directions.
      */
-    static int          faceRectDisplayMargin(const QRect& rect);
+    static QRect         faceRectToDisplayRect(const QRect& rect);
 
     // TODO: investigate this method
     Identity identityForTag(int tagId, FacialRecognitionWrapper& recognizer)            const;

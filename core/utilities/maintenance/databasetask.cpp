@@ -345,11 +345,9 @@ void DatabaseTask::run()
                     Q_FOREACH (const FaceTagsIface& face, faces)
                     {
                         QList<QRect> rects;
-                        QRect orgRect    = face.region().toRect();
-                        const int margin = FaceUtils::faceRectDisplayMargin(orgRect);
-
+                        QRect orgRect = face.region().toRect();
                         rects << orgRect;
-                        rects << orgRect.adjusted(-margin, -margin, margin, margin);
+                        rects << FaceUtils::faceRectToDisplayRect(orgRect);
 
                         Q_FOREACH (const QRect& rect, rects)
                         {

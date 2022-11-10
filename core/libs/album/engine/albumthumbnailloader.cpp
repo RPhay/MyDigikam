@@ -35,10 +35,10 @@
 #include "coredb.h"
 #include "coredbaccess.h"
 #include "iteminfo.h"
+#include "faceutils.h"
 #include "metaenginesettings.h"
 #include "thumbnailloadthread.h"
 #include "thumbnailsize.h"
-#include "facetagseditor.h"
 #include "thumbnailcreator.h"
 
 namespace Digikam
@@ -414,8 +414,8 @@ void AlbumThumbnailLoader::addUrl(Album* const album, qlonglong id)
         {
             if (face.tagId() == album->id())
             {
-                // cppcheck-suppress useStlAlgorithm
-                faceRect = face.region().toRect();
+                faceRect = FaceUtils::faceRectToDisplayRect(face.region().toRect());
+                break;
             }
         }
     }

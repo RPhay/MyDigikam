@@ -130,11 +130,9 @@ void FaceUtils::storeThumbnails(ThumbnailLoadThread* const thread,
     Q_FOREACH (const FaceTagsIface& face, databaseFaces)
     {
         QList<QRect> rects;
-        QRect orgRect    = face.region().toRect();
-        const int margin = faceRectDisplayMargin(orgRect);
-
+        QRect orgRect = face.region().toRect();
         rects << orgRect;
-        rects << orgRect.adjusted(-margin, -margin, margin, margin);
+        rects << faceRectToDisplayRect(orgRect);
 
         Q_FOREACH (const QRect& rect, rects)
         {
@@ -374,7 +372,7 @@ void FaceUtils::removeNormalTags(qlonglong imageId, const QList<int>& tagIds)
 
 // --- Utilities ---
 
-int FaceUtils::faceRectDisplayMargin(const QRect& rect)
+QRect FaceUtils::faceRectToDisplayRect(const QRect& rect)
 {
     /*
      * Do not change that value unless you know what you do.
@@ -384,7 +382,7 @@ int FaceUtils::faceRectDisplayMargin(const QRect& rect)
     int margin = qMax(rect.width(), rect.height());
     margin    /= 10;
 
-    return margin;
+    return rect.adjusted(-margin, -margin, margin, margin);
 }
 
 } // Namespace Digikam
