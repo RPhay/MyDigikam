@@ -81,6 +81,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     png_uint_32  w32, h32;
     int          width, height;
     int          bit_depth, color_type, interlace_type;
+    double       file_gamma;
     FILE*        f          = nullptr;
     png_structp  png_ptr    = nullptr;
     png_infop    info_ptr   = nullptr;
@@ -322,6 +323,10 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
                  &interlace_type,
                  nullptr,
                  nullptr);
+
+    png_get_gAMA(png_ptr,
+                 info_ptr,
+                 &file_gamma);
 
     width  = (int)w32;
     height = (int)h32;
@@ -606,6 +611,46 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
         cleanupData->freeLines();
 
+        if (file_gamma > 0)
+        {
+            qCDebug(DIGIKAM_DIMG_LOG_PNG) << "Apply PNG file gamma" << file_gamma;
+
+            if (m_sixteenBit)
+            {
+                int map16[65536];
+
+                for (int i = 0 ; i < 65536 ; ++i)
+                {
+                    map16[i] = lround(pow(((double)i / 65535.0), (1.0 / file_gamma)) * 65535.0);
+                }
+
+                ushort* data16 = reinterpret_cast<ushort*>(data);
+
+                for (uint p = 0 ; p < width * height * 4 ; p += 4)
+                {
+                    data16[  p  ] = CLAMP065535(map16[data16[  p  ]]);
+                    data16[p + 1] = CLAMP065535(map16[data16[p + 1]]);
+                    data16[p + 2] = CLAMP065535(map16[data16[p + 2]]);
+                }
+            }
+            else
+            {
+                int map[256];
+
+                for (int i = 0 ; i < 256 ; ++i)
+                {
+                    map[i] = lround(pow(((double)i / 255.0), (1.0 / file_gamma)) * 255.0);
+                }
+
+                for (uint p = 0 ; p < width * height * 4 ; p += 4)
+                {
+                    data[  p  ] = CLAMP0255(map[data[  p  ]]);
+                    data[p + 1] = CLAMP0255(map[data[p + 1]]);
+                    data[p + 2] = CLAMP0255(map[data[p + 2]]);
+                }
+            }
+        }
+
         if (QSysInfo::ByteOrder == QSysInfo::LittleEndian)
         {
             // Swap bytes in 16 bits/color/pixel for DImg
@@ -614,11 +659,11 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
             {
                 uchar ptr[8];   // One pixel to swap
 
-                for (int p = 0 ; p < width * height * 8 ; p += 8)
+                for (uint p = 0 ; p < width * height * 8 ; p += 8)
                 {
                     memcpy(&ptr[0], &data[p], 8);   // Current pixel
 
-                    data[  p  ] = ptr[1];  // Blue
+                    data[  p  ] = ptr[1]; // Blue
                     data[p + 1] = ptr[0];
                     data[p + 2] = ptr[3]; // Green
                     data[p + 3] = ptr[2];
