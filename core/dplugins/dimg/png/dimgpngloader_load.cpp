@@ -611,6 +611,30 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
         cleanupData->freeLines();
 
+        if (QSysInfo::ByteOrder == QSysInfo::LittleEndian)
+        {
+            // Swap bytes in 16 bits/color/pixel for DImg
+
+            if (m_sixteenBit)
+            {
+                uchar ptr[8];   // One pixel to swap
+
+                for (uint p = 0 ; p < (uint)width * height * 8 ; p += 8)
+                {
+                    memcpy(&ptr[0], &data[p], 8);   // Current pixel
+
+                    data[  p  ] = ptr[1]; // Blue
+                    data[p + 1] = ptr[0];
+                    data[p + 2] = ptr[3]; // Green
+                    data[p + 3] = ptr[2];
+                    data[p + 4] = ptr[5]; // Red
+                    data[p + 5] = ptr[4];
+                    data[p + 6] = ptr[7]; // Alpha
+                    data[p + 7] = ptr[6];
+                }
+            }
+        }
+
         if (file_gamma > 0)
         {
             qCDebug(DIGIKAM_DIMG_LOG_PNG) << "Apply PNG file gamma" << file_gamma;
@@ -647,30 +671,6 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
                     data[  p  ] = CLAMP0255(map[data[  p  ]]);
                     data[p + 1] = CLAMP0255(map[data[p + 1]]);
                     data[p + 2] = CLAMP0255(map[data[p + 2]]);
-                }
-            }
-        }
-
-        if (QSysInfo::ByteOrder == QSysInfo::LittleEndian)
-        {
-            // Swap bytes in 16 bits/color/pixel for DImg
-
-            if (m_sixteenBit)
-            {
-                uchar ptr[8];   // One pixel to swap
-
-                for (uint p = 0 ; p < (uint)width * height * 8 ; p += 8)
-                {
-                    memcpy(&ptr[0], &data[p], 8);   // Current pixel
-
-                    data[  p  ] = ptr[1]; // Blue
-                    data[p + 1] = ptr[0];
-                    data[p + 2] = ptr[3]; // Green
-                    data[p + 3] = ptr[2];
-                    data[p + 4] = ptr[5]; // Red
-                    data[p + 5] = ptr[4];
-                    data[p + 6] = ptr[7]; // Alpha
-                    data[p + 7] = ptr[6];
                 }
             }
         }
