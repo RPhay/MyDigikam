@@ -621,12 +621,12 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
                 for (int i = 0 ; i < 65536 ; ++i)
                 {
-                    map16[i] = lround(pow(((double)i / 65535.0), (1.0 / file_gamma)) * 65535.0);
+                    map16[i] = lround(pow(((double)i / 65535.0), (1.0 / (file_gamma + 0.02))) * 65535.0);
                 }
 
                 ushort* data16 = reinterpret_cast<ushort*>(data);
 
-                for (uint p = 0 ; p < width * height * 4 ; p += 4)
+                for (uint p = 0 ; p < (uint)width * height * 4 ; p += 4)
                 {
                     data16[  p  ] = CLAMP065535(map16[data16[  p  ]]);
                     data16[p + 1] = CLAMP065535(map16[data16[p + 1]]);
@@ -639,10 +639,10 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
                 for (int i = 0 ; i < 256 ; ++i)
                 {
-                    map[i] = lround(pow(((double)i / 255.0), (1.0 / file_gamma)) * 255.0);
+                    map[i] = lround(pow(((double)i / 255.0), (1.0 / (file_gamma + 0.02))) * 255.0);
                 }
 
-                for (uint p = 0 ; p < width * height * 4 ; p += 4)
+                for (uint p = 0 ; p < (uint)width * height * 4 ; p += 4)
                 {
                     data[  p  ] = CLAMP0255(map[data[  p  ]]);
                     data[p + 1] = CLAMP0255(map[data[p + 1]]);
@@ -659,7 +659,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
             {
                 uchar ptr[8];   // One pixel to swap
 
-                for (uint p = 0 ; p < width * height * 8 ; p += 8)
+                for (uint p = 0 ; p < (uint)width * height * 8 ; p += 8)
                 {
                     memcpy(&ptr[0], &data[p], 8);   // Current pixel
 
