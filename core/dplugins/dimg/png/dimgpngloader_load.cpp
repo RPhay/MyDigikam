@@ -81,7 +81,6 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     png_uint_32  w32, h32;
     int          width, height;
     int          bit_depth, color_type, interlace_type;
-    double       file_gamma = 0.0;
     FILE*        f          = nullptr;
     png_structp  png_ptr    = nullptr;
     png_infop    info_ptr   = nullptr;
@@ -324,10 +323,6 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
                  nullptr,
                  nullptr);
 
-    png_get_gAMA(png_ptr,
-                 info_ptr,
-                 &file_gamma);
-
     width  = (int)w32;
     height = (int)h32;
 
@@ -522,6 +517,15 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
             png_set_tRNS_to_alpha(png_ptr);
         }
 
+        double file_gamma;
+
+        if (png_get_gAMA(png_ptr, info_ptr, &file_gamma))
+        {
+            qCDebug(DIGIKAM_DIMG_LOG_PNG) << "Apply PNG file gamma" << file_gamma;
+
+            png_set_gamma(png_ptr, 2.2, file_gamma);
+        }
+
         png_set_bgr(png_ptr);
 
         //png_set_swap_alpha(png_ptr);
@@ -631,46 +635,6 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
                     data[p + 5] = ptr[4];
                     data[p + 6] = ptr[7]; // Alpha
                     data[p + 7] = ptr[6];
-                }
-            }
-        }
-
-        if (file_gamma > 0)
-        {
-            qCDebug(DIGIKAM_DIMG_LOG_PNG) << "Apply PNG file gamma" << file_gamma;
-
-            if (m_sixteenBit)
-            {
-                int map16[65536];
-
-                for (int i = 0 ; i < 65536 ; ++i)
-                {
-                    map16[i] = lround(pow(((double)i / 65535.0), (1.0 / (file_gamma + 0.02))) * 65535.0);
-                }
-
-                ushort* data16 = reinterpret_cast<ushort*>(data);
-
-                for (uint p = 0 ; p < (uint)width * height * 4 ; p += 4)
-                {
-                    data16[  p  ] = CLAMP065535(map16[data16[  p  ]]);
-                    data16[p + 1] = CLAMP065535(map16[data16[p + 1]]);
-                    data16[p + 2] = CLAMP065535(map16[data16[p + 2]]);
-                }
-            }
-            else
-            {
-                int map[256];
-
-                for (int i = 0 ; i < 256 ; ++i)
-                {
-                    map[i] = lround(pow(((double)i / 255.0), (1.0 / (file_gamma + 0.02))) * 255.0);
-                }
-
-                for (uint p = 0 ; p < (uint)width * height * 4 ; p += 4)
-                {
-                    data[  p  ] = CLAMP0255(map[data[  p  ]]);
-                    data[p + 1] = CLAMP0255(map[data[p + 1]]);
-                    data[p + 2] = CLAMP0255(map[data[p + 2]]);
                 }
             }
         }
