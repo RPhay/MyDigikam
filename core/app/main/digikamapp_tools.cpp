@@ -105,6 +105,9 @@ void DigikamApp::slotScanNewItems()
     connect(tool, SIGNAL(signalComplete()),
             this, SLOT(slotMaintenanceDone()));
 
+    connect(tool, SIGNAL(signalCanceled()),
+            this, SLOT(slotMaintenanceDone()));
+
     if (ApplicationSettings::instance()->getDetectFacesInNewImages())
     {
         connect(tool, SIGNAL(signalComplete()),
