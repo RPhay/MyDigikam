@@ -54,6 +54,7 @@ QList<TAlbum*> PickLabelFilter::getCheckedPickLabelTags()
     {
         tagId = TagsCache::instance()->tagForPickLabel(pl);
         tag   = AlbumManager::instance()->findTAlbum(tagId);
+
         if (tagId)
         {
             list.append(tag);

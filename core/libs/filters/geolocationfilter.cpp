@@ -25,9 +25,9 @@ namespace Digikam
 GeolocationFilter::GeolocationFilter(QWidget* const parent)
     : QComboBox(parent)
 {
-    addItem( i18n("No geo filtering"),           QVariant::fromValue(ItemFilterSettings::GeolocationNoFilter) );
-    addItem( i18n("Images with coordinates"),    QVariant::fromValue(ItemFilterSettings::GeolocationHasCoordinates) );
-    addItem( i18n("Images without coordinates"), QVariant::fromValue(ItemFilterSettings::GeolocationNoCoordinates) );
+    addItem(i18n("No geo filtering"),           QVariant::fromValue(ItemFilterSettings::GeolocationNoFilter));
+    addItem(i18n("Images with coordinates"),    QVariant::fromValue(ItemFilterSettings::GeolocationHasCoordinates));
+    addItem(i18n("Images without coordinates"), QVariant::fromValue(ItemFilterSettings::GeolocationNoCoordinates));
 
     setToolTip(i18n("Filter by geolocation"));
     setWhatsThis(i18n("Select how geolocation should affect the images which are shown."));
@@ -47,9 +47,10 @@ void GeolocationFilter::setGeolocationFilter(const ItemFilterSettings::Geolocati
     // findData does not seem to work...
 //     const int newIndex = findData(QVariant::fromValue<ItemFilterSettings::GeolocationCondition>(condition));
 
-    for (int i=0; i<count(); ++i)
+    for (int i = 0 ; i < count() ; ++i)
     {
         const ItemFilterSettings::GeolocationCondition currentdata = itemData(i).value<ItemFilterSettings::GeolocationCondition>();
+
         if (currentdata == condition)
         {
             setCurrentIndex(i);

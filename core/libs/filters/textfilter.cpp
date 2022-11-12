@@ -32,19 +32,19 @@ class Q_DECL_HIDDEN TextFilter::Private
 public:
 
     explicit Private()
+      : itemNameAction       (nullptr),
+        itemTitleAction      (nullptr),
+        itemCommentAction    (nullptr),
+        tagNameAction        (nullptr),
+        albumNameAction      (nullptr),
+        itemAspectRatioAction(nullptr),
+        itemPixelSizeAction  (nullptr),
+        clearAllAction       (nullptr),
+        selAllAction         (nullptr),
+        optionsBtn           (nullptr),
+        optionsMenu          (nullptr),
+        searchTextBar        (nullptr)
     {
-        itemNameAction        = nullptr;
-        itemTitleAction       = nullptr;
-        itemCommentAction     = nullptr;
-        tagNameAction         = nullptr;
-        albumNameAction       = nullptr;
-        optionsBtn            = nullptr;
-        optionsMenu           = nullptr;
-        searchTextBar         = nullptr;
-        itemAspectRatioAction = nullptr;
-        itemPixelSizeAction   = nullptr;
-        clearAllAction        = nullptr;
-        selAllAction          = nullptr;
     }
 
     QAction*       itemNameAction;

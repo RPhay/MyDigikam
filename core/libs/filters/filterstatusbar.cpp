@@ -47,11 +47,11 @@ public:
 public:
 
     explicit Private()
+      : status     (None),
+        info       (nullptr),
+        resetBtn   (nullptr),
+        settingsBtn(nullptr)
     {
-        status      = None;
-        info        = nullptr;
-        resetBtn    = nullptr;
-        settingsBtn = nullptr;
     }
 
     int               status;
