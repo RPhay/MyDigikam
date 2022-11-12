@@ -65,7 +65,9 @@ void ItemIconView::slotImageScanForFaces()
 
     if (ProgressManager::instance()->findItembyId(i18n("FacesDetector")))
     {
-        QString message = i18n("A face recognition task is already running. Only one task can be running at a time. Please wait until it is finished.");
+        QString message = i18n("A face recognition task is already running. "
+                               "Only one task can be running at a time. "
+                               "Please wait until it is finished.");
         d->errorWidget->setMessageType(DNotificationWidget::Information);
         d->errorWidget->setText(message);
         d->errorWidget->animatedShowTemporized(5000);
@@ -105,7 +107,9 @@ void ItemIconView::slotImageRecognizeFaces()
 
     if (ProgressManager::instance()->findItembyId(i18n("FacesDetector")))
     {
-        QString message = i18n("A face recognition task is already running. Only one task can be running at a time. Please wait until it is finished.");
+        QString message = i18n("A face recognition task is already running. "
+                               "Only one task can be running at a time. "
+                               "Please wait until it is finished.");
         d->errorWidget->setMessageType(DNotificationWidget::Information);
         d->errorWidget->setText(message);
         d->errorWidget->animatedShowTemporized(5000);
