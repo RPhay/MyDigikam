@@ -81,7 +81,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     png_uint_32  w32, h32;
     int          width, height;
     int          bit_depth, color_type, interlace_type;
-    double       file_gamma;
+    double       file_gamma = 0.0;
     FILE*        f          = nullptr;
     png_structp  png_ptr    = nullptr;
     png_infop    info_ptr   = nullptr;
