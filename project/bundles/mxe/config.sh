@@ -7,11 +7,13 @@
 
 ########################################################################
 
+MXE_ROOT_DIR=/mnt/data
+
 # Absolute path where are downloaded all tarballs to compile.
-DOWNLOAD_DIR="`pwd`/temp.dwnld"
+DOWNLOAD_DIR="$MXE_ROOT_DIR/temp.dwnld"
 
 # Absolute path where are compiled all tarballs
-BUILDING_DIR="`pwd`/temp.build"
+BUILDING_DIR="$MXE_ROOT_DIR/temp.build"
 
 #-------------------------------------------------------------------------------------------
 
@@ -27,11 +29,11 @@ MXE_ARCHBITS=64
 if [[ $MXE_ARCHBITS == 32 ]]; then
     # Windows 32 bits shared
     MXE_BUILD_TARGETS="i686-w64-mingw32.shared"
-    MXE_BUILDROOT="`pwd`/build.win32"
+    MXE_BUILDROOT="$MXE_ROOT_DIR/build.win32"
 elif [[ $MXE_ARCHBITS == 64 ]]; then
     # Windows 64 bits shared
     MXE_BUILD_TARGETS="x86_64-w64-mingw32.shared"
-    MXE_BUILDROOT="`pwd`/build.win64"
+    MXE_BUILDROOT="$MXE_ROOT_DIR/build.win64"
 else
     echo "Unsupported or wrong target Windows architecture: $MXE_ARCHBITS bits."
     exit -1

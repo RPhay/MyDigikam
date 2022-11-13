@@ -188,6 +188,9 @@ if [ ! -d $DOWNLOAD_DIR ] ; then
     mkdir -p $DOWNLOAD_DIR
 fi
 
+# For legacy compatibility with bootstrap.mxe
+ln -s $MXE_ROOT_DIR $ORIG_WD/build.win64
+
 cd $BUILDING_DIR
 rm -rf $BUILDING_DIR/* || true
 
