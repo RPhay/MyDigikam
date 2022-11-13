@@ -835,7 +835,7 @@ void AdjustLevelsTool::preparePreview()
 {
     LevelsContainer settings;
 
-    for (int i=0 ; i<5 ; ++i)
+    for (int i = 0 ; i < 5 ; ++i)
     {
         settings.lInput[i]  = d->levels->getLevelLowInputValue(i);
         settings.hInput[i]  = d->levels->getLevelHighInputValue(i);
@@ -864,7 +864,7 @@ void AdjustLevelsTool::prepareFinal()
 {
     LevelsContainer settings;
 
-    for (int i=0 ; i<5 ; ++i)
+    for (int i = 0 ; i < 5 ; ++i)
     {
         settings.lInput[i]  = d->levels->getLevelLowInputValue(i);
         settings.hInput[i]  = d->levels->getLevelHighInputValue(i);

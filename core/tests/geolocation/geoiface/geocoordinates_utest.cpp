@@ -68,9 +68,9 @@ void TestGeoCoordinates::testMovable()
 //     {
 //         const int benchSize = 100;
 //         GeoCoordinates::List benchList;
-//         for (int i=0; i<benchSize; ++i)
+//         for (int i = 0 ; i < benchSize ; ++i)
 //         {
-//             for (int j=0; j<benchSize; ++j)
+//             for (int j = 0; j < benchSize ; ++j)
 //             {
 //                 benchList << GeoCoordinates(double(i)/50.0, double(j)/50.0);
 //             }
@@ -78,7 +78,7 @@ void TestGeoCoordinates::testMovable()
 //
 // //         QBENCHMARK
 //         {
-//             for (int i=0; i<benchSize*10; ++i)
+//             for (int i = 0 ; i < benchSize * 10 ; ++i)
 //             {
 //                 GeoCoordinates::List benchListCopied = benchList;
 //

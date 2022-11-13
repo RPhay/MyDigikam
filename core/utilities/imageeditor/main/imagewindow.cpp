@@ -990,7 +990,7 @@ void ImageWindow::slotCollectionImageChange(const CollectionImageChangeset& chan
     {
         case CollectionImageChangeset::Removed:
 
-            for (int i=0; i<d->imageInfoList.size(); ++i)
+            for (int i = 0 ; i < d->imageInfoList.size() ; ++i)
             {
                 if (changeset.containsImage(d->imageInfoList[i].id()))
                 {
@@ -1016,7 +1016,7 @@ void ImageWindow::slotCollectionImageChange(const CollectionImageChangeset& chan
 
         case CollectionImageChangeset::RemovedAll:
 
-            for (int i=0; i<d->imageInfoList.size(); ++i)
+            for (int i = 0 ; i < d->imageInfoList.size() ; ++i)
             {
                 if (changeset.containsAlbum(d->imageInfoList[i].albumId()))
                 {
@@ -1097,7 +1097,7 @@ void ImageWindow::dropEvent(QDropEvent* e)
         }
 
         loadItemInfos(imageInfoList, imageInfoList.first(),
-                       i18n("Album \"%1\"", ATitle));
+                      i18n("Album \"%1\"", ATitle));
         e->accept();
     }
     else if (DAlbumDrag::decode(e->mimeData(), urls, albumID))
@@ -1122,7 +1122,7 @@ void ImageWindow::dropEvent(QDropEvent* e)
         }
 
         loadItemInfos(imageInfoList, imageInfoList.first(),
-                       i18n("Album \"%1\"", ATitle));
+                      i18n("Album \"%1\"", ATitle));
         e->accept();
     }
     else if (DTagListDrag::canDecode(e->mimeData()))
@@ -1154,7 +1154,7 @@ void ImageWindow::dropEvent(QDropEvent* e)
         }
 
         loadItemInfos(imageInfoList, imageInfoList.first(),
-                       i18n("Album \"%1\"", ATitle));
+                      i18n("Album \"%1\"", ATitle));
         e->accept();
     }
     else

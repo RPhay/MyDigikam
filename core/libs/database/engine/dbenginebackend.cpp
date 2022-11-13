@@ -946,7 +946,7 @@ bool BdEngineBackend::execSql(const QString& sql, QStringList* const values)
 
     while (query.next())
     {
-        for (int i=0; i<count; ++i)
+        for (int i = 0 ; i < count ; ++i)
         {
             (*values) << query.value(i).toString();
         }

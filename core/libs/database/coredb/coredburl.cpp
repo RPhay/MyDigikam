@@ -45,9 +45,13 @@ CoreDbUrl CoreDbUrl::fromFileUrl(const QUrl& fileUrl,
 {
     CoreDbUrl url;
     url.setScheme(QLatin1String("digikamalbums"));
+
     // get album root path without trailing slash
+
     QString albumRootPath = albumRoot.adjusted(QUrl::StripTrailingSlash).toLocalFile();
+
     // get the hierarchy below the album root
+
     QString pathUnderRoot = fileUrl.toLocalFile().remove(albumRootPath);
     url.setPath(pathUnderRoot);
 
@@ -143,7 +147,7 @@ CoreDbUrl CoreDbUrl::fromDateForMonth(const QDate& date, const DbEngineParameter
     QDate firstDayOfMonth(date.year(), date.month(), 1);
     QDate firstDayOfNextMonth = firstDayOfMonth.addMonths(1);
 
-    return ( fromDateRange(firstDayOfMonth, firstDayOfNextMonth, parameters) );
+    return (fromDateRange(firstDayOfMonth, firstDayOfNextMonth, parameters));
 }
 
 CoreDbUrl CoreDbUrl::fromDateForYear(const QDate& date, const DbEngineParameters& parameters)
@@ -151,7 +155,7 @@ CoreDbUrl CoreDbUrl::fromDateForYear(const QDate& date, const DbEngineParameters
     QDate firstDayOfYear(date.year(), 1, 1);
     QDate firstDayOfNextYear = firstDayOfYear.addYears(1);
 
-    return ( fromDateRange(firstDayOfYear, firstDayOfNextYear, parameters) );
+    return (fromDateRange(firstDayOfYear, firstDayOfNextYear, parameters));
 }
 
 CoreDbUrl CoreDbUrl::fromDateRange(const QDate& startDate,
@@ -272,27 +276,27 @@ void CoreDbUrl::setParameters(const DbEngineParameters& parameters)
 
 bool CoreDbUrl::isAlbumUrl() const
 {
-    return ( scheme() == QLatin1String("digikamalbums") );
+    return (scheme() == QLatin1String("digikamalbums"));
 }
 
 bool CoreDbUrl::isTagUrl() const
 {
-    return ( scheme() == QLatin1String("digikamtags") );
+    return (scheme() == QLatin1String("digikamtags"));
 }
 
 bool CoreDbUrl::isDateUrl() const
 {
-    return ( scheme() == QLatin1String("digikamdates") );
+    return (scheme() == QLatin1String("digikamdates"));
 }
 
 bool CoreDbUrl::isMapImagesUrl() const
 {
-    return ( scheme() == QLatin1String("digikammapimages") );
+    return (scheme() == QLatin1String("digikammapimages"));
 }
 
 bool CoreDbUrl::isSearchUrl() const
 {
-    return ( scheme() == QLatin1String("digikamsearch") );
+    return (scheme() == QLatin1String("digikamsearch"));
 }
 
 // --- Album URL ----------------------------------------------------------------------------
@@ -311,21 +315,22 @@ QUrl CoreDbUrl::albumRoot() const
 
 QString CoreDbUrl::albumRootPath() const
 {
-    return ( QUrlQuery(*this).queryItemValue(QLatin1String("albumRoot")));
+    return (QUrlQuery(*this).queryItemValue(QLatin1String("albumRoot")));
 }
 
 int CoreDbUrl::albumRootId() const
 {
-    return ( QUrlQuery(*this).queryItemValue(QLatin1String("albumRootId")).toInt() );
+    return (QUrlQuery(*this).queryItemValue(QLatin1String("albumRootId")).toInt());
 }
 
 QString CoreDbUrl::album() const
 {
     // obey trailing slash in the path - albums have a trailing slash
     // get result without trailing slash
+
     QUrl url = adjusted(QUrl::RemoveFilename);
 
-    return ( url.adjusted(QUrl::StripTrailingSlash).path() );
+    return (url.adjusted(QUrl::StripTrailingSlash).path());
 }
 
 QString CoreDbUrl::name() const
@@ -348,7 +353,7 @@ int CoreDbUrl::tagId() const
         return (-1);
     }
 
-    return ( fileName().toInt() );
+    return (fileName().toInt());
 }
 
 QList<int> CoreDbUrl::tagIds() const
@@ -356,7 +361,7 @@ QList<int> CoreDbUrl::tagIds() const
     QList<int>  ids;
     QStringList stringIds = path().split(QLatin1Char('/'), QT_SKIP_EMPTY_PARTS);
 
-    for (int i=0; i<stringIds.count(); ++i)
+    for (int i = 0 ; i < stringIds.count() ; ++i)
     {
         ids << stringIds.at(i).toInt();
     }

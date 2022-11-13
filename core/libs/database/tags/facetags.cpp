@@ -80,7 +80,7 @@ void FaceTagsHelper::makeFaceTag(int tagId, const QString& fullName)
     QString faceEngineName  = fullName;
     /*
      *    // find a unique FacesEngineId
-     *    for (int i=0; d->findFirstTagWithProperty(TagPropertyName::FacesEngineId(), FacesEngineId); ++i)
+     *    for (int i = 0 ; d->findFirstTagWithProperty(TagPropertyName::FacesEngineId(), FacesEngineId) ; ++i)
      *    {
      *        FacesEngineId = fullName + QString::fromUtf8(" (%1)").arg(i);
      *    }
