@@ -189,7 +189,7 @@ BUGFIXES:
 151 ==> 426786 - Filter with a specific path does not work.
 152 ==> 461504 - Make it possible to create new database without having to delete digikam.rc.
 153 ==> 461710 - Extra click required to confirm faces when face tagging a picture.
-154 ==> 
+154 ==> 461799 - No progress is shown for second face recognition process.
 155 ==> 
 156 ==> 
 157 ==> 
