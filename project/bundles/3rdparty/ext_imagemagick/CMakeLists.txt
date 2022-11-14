@@ -1,9 +1,9 @@
 # Script to build imagemagick for digiKam bundle.
 #
-# SPDX-FileCopyrightText: 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+# Copyright (c) 2015-2022 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
-# SPDX-License-Identifier: BSD-3-Clause
-#
+# Redistribution and use is allowed according to the terms of the BSD license.
+# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 
 set(PREFIX_ext_imagemagick "${EXTPREFIX}")
@@ -85,7 +85,7 @@ ExternalProject_Add(ext_imagemagick
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
     GIT_REPOSITORY https://github.com/ImageMagick/ImageMagick.git
-    GIT_TAG 7.1.0-52
+    GIT_TAG 7.1.0-51
 
     PATCH_COMMAND ${Magick_Patch}
 
