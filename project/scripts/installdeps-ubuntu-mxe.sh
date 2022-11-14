@@ -62,8 +62,9 @@ echo "-------------------------------------------------------------------"
 required_packages=("cmake"                   # To Compile Source Code
                    "ninja-build"             # To Compile Source Code
                    "build-essential"         # To Compile Source Code
-                    )
-
+                   "extra-cmake-modules"
+                   "qtbase5-dev"
+                  )
 
 for pkg in ${required_packages[@]}; do
 

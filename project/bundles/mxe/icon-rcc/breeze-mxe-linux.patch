@@ -1,19 +1,19 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 10164bc0..76fd3fc2 100644
+index 22a16fcf..5abf8a0d 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -1,4 +1,4 @@
 -cmake_minimum_required(VERSION 3.16)
-+cmake_minimum_required(VERSION 3.14)
++cmake_minimum_required(VERSION 3.10)
  
- set(KF_VERSION "5.89.0") # handled by release scripts
+ set(KF_VERSION "5.99.0") # handled by release scripts
  project(BreezeIcons VERSION ${KF_VERSION})
 @@ -10,7 +10,7 @@ endif()
  
  # ECM setup
  include(FeatureSummary)
 -find_package(ECM 5.99.0  NO_MODULE)
-+find_package(ECM 5.50.0  NO_MODULE)
++find_package(ECM 5.40.0  NO_MODULE)
  set_package_properties(ECM PROPERTIES TYPE REQUIRED DESCRIPTION "Extra CMake Modules." URL "https://commits.kde.org/extra-cmake-modules")
  feature_summary(WHAT REQUIRED_PACKAGES_NOT_FOUND FATAL_ON_MISSING_REQUIRED_PACKAGES)
  
@@ -54,7 +54,14 @@ index 10164bc0..76fd3fc2 100644
                      ${RESOURCE_FILE}
          DEPENDS ${RESOURCE_FILE}
          WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-@@ -138,4 +146,4 @@ add_subdirectory(icons-dark)
+@@ -132,10 +140,10 @@ if(NOT WIN32 AND NOT CMAKE_CROSSCOMPILING)
+ endif()
+ 
+ 
+-add_subdirectory(autotests)
++#add_subdirectory(autotests)
+ add_subdirectory(icons)
+ add_subdirectory(icons-dark)
  
  feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES INCLUDE_QUIET_PACKAGES)
  
