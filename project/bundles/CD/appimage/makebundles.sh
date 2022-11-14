@@ -20,9 +20,11 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 ORIG_WD="`pwd`"
 
 cd $ORIG_WD/7.x/project/bundles/appimage
+git pull
 ./update.sh
 
 cd $ORIG_WD/8.x/project/bundles/appimage
+git pull
 ./update.sh
 
 cd $ORIG_WD
