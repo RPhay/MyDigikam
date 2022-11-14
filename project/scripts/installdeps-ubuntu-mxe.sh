@@ -33,6 +33,7 @@ echo "-------------------------------------------------------------------"
 
 sudo apt-get update
 sudo apt-get upgrade
+sudo apt install software-properties-common
 
 # benefit from a higher version of certain software , update the key
 
@@ -128,6 +129,11 @@ for pkg in ${required_packages[@]}; do
 
 done
 
+# install Python 3.7
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt install -y python3.7
+ln -s /usr/bin/python3 /usr/bin/python3.7
+
 # Install optional dependencies to Compile And Link Source Code
 
 optional_packages=("ruby"                               # For i18n extraction
@@ -170,8 +176,9 @@ optional_packages=("ruby"                               # For i18n extraction
                    "perl"                               # For MXE build
                    "python3"                            # For MXE build
                    "python3-mako"                       # For MXE build
-                   "python-mako"                        # For MXE build
                    "python3-pkg-resources"              # For MXE build
+                   "python-mako"                        # For MXE build
+                   "python-pkg-resources"              # For MXE build
                    "python-is-python3"                  # For MXE build
                    "ruby"                               # For MXE build
                    "scons"                              # For MXE build
