@@ -163,7 +163,8 @@ make MXE_TARGETS=$MXE_BUILD_TARGETS \
      openal \
      fftw \
      libltdl \
-     openexr
+     openexr \
+     nsis
 
 #     libical \
 

@@ -187,7 +187,6 @@ optional_packages=("ruby"                               # For i18n extraction
                    "unzip"                              # For MXE build
                    "wget"                               # For MXE build
                    "xz-utils"                           # For MXE build
-                   "nsis"                               # For MXE build
                    "ccache"                             # For compiling
                    "bison"                              # For Qt build (>= 2.5.0)
                    "flex"                               # For compiling (>= 2.5.0)

@@ -39,7 +39,7 @@ RegisterRemoteServers
 #################################################################################################
 # Check if NSIS CLI tools is installed
 
-if ! which makensis ; then
+if ! which ${MXE_BUILDROOT}/usr/bin/x86_64-w64-mingw32.shared-makensis ; then
     echo "NSIS CLI tool is not installed"
     echo "See http://nsis.sourceforge.net/ for details."
     exit 1
@@ -295,7 +295,7 @@ fi
 
 cd $ORIG_WD/installer
 
-makensis -DVERSION=$DK_RELEASEID -DBUNDLEPATH=$BUNDLEDIR -DTARGETARCH=$MXE_ARCHBITS -DOUTPUT=$ORIG_WD/bundle/$TARGET_INSTALLER ./digikam.nsi
+${MXE_BUILDROOT}/usr/bin/x86_64-w64-mingw32.shared-makensis -DVERSION=$DK_RELEASEID -DBUNDLEPATH=$BUNDLEDIR -DTARGETARCH=$MXE_ARCHBITS -DOUTPUT=$ORIG_WD/bundle/$TARGET_INSTALLER ./digikam.nsi
 
 cd $ORIG_WD
 tar cf - `basename $BUNDLEDIR` --transform s/temp/digiKam/ | xz -4e > $ORIG_WD/bundle/$PORTABLE_FILE

@@ -7,7 +7,7 @@
  ; Description : Functions to check if reboot is required.
  ;               Note: NSIS >= 3 is required to be compatible with Windows 10.
  ;
-; SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ ; SPDX-FileCopyrightText: 2010-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
  ;
  ; SPDX-License-Identifier: GPL-2.0-or-later
  ;
@@ -55,9 +55,6 @@ Function NotifyIfRebootRequired
 
 FunctionEnd
 
-;-------------------------------------------------------------------------------------
-;This function require Registry plugin (http://nsis.sourceforge.net/Registry_plug-in)
-
 Function IsRebootRequired
 
     Push $0
@@ -65,8 +62,7 @@ Function IsRebootRequired
     Push $2
     Push $3
 
-    ${registry::Read} "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager" "PendingFileRenameOperations" $0 $1
-    ${registry::Unload}
+    ReadRegStr $0 HKLM "SYSTEM\CurrentControlSet\Control\Session Manager" "PendingFileRenameOperations"
 
     ${If} $0 != ""
 
