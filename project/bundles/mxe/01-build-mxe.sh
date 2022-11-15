@@ -139,6 +139,7 @@ make MXE_TARGETS=$MXE_BUILD_TARGETS \
      libgphoto2 \
      icu4c \
      qtbase qtbase_CONFIGURE_OPTS=-icu \
+     qtnetworkauth \
      qttranslations \
      qtimageformats \
      qtnetworkauth \
