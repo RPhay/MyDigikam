@@ -28,8 +28,8 @@
 
 // Local includes
 
-#include "metaenginesettings.h"
 #include "dexpanderbox.h"
+#include "metaenginesettings.h"
 
 namespace Digikam
 {
@@ -38,23 +38,16 @@ class Q_DECL_HIDDEN MetadataStatusBar::Private
 {
 public:
 
-    enum FilterStatus
-    {
-        None = 0,
-        Match,
-        NotMatch
-    };
-
-public:
-
     explicit Private()
-      : status(None),
-        info(nullptr),
+      : number  (0),
+        enabled (true),
+        info    (nullptr),
         applyBtn(nullptr)
     {
     }
 
-    int               status;
+    int               number;
+    bool              enabled;
 
     DAdjustableLabel* info;
     QToolButton*      applyBtn;
@@ -97,6 +90,12 @@ MetadataStatusBar::MetadataStatusBar(QWidget* const parent)
     connect(MetadataHubMngr::instance(), SIGNAL(signalPendingMetadata(int)),
             this, SLOT(slotSetPendingItems(int)));
 
+    connect(ProgressManager::instance(), SIGNAL(progressItemAdded(ProgressItem*)),
+            this, SLOT(slotAddedProgressItem(ProgressItem*)));
+
+    connect(ProgressManager::instance(), SIGNAL(progressItemCompleted(ProgressItem*)),
+            this, SLOT(slotCompletedProgressItem(ProgressItem*)));
+
     if (MetaEngineSettings::instance()->settings().useLazySync)
     {
         show();
@@ -126,7 +125,9 @@ void MetadataStatusBar::slotSettingsChanged()
 
 void MetadataStatusBar::slotSetPendingItems(int number)
 {
-    if (number == 0)
+    d->number = number;
+
+    if (d->number == 0)
     {
         d->info->setAdjustedText(i18n("No pending metadata synchronization"));
         d->applyBtn->setDisabled(true);
@@ -135,8 +136,28 @@ void MetadataStatusBar::slotSetPendingItems(int number)
     {
         d->info->setAdjustedText(i18np("1 file awaits synchronization",
                                        "%1 files await synchronization",
-                                       number));
-        d->applyBtn->setDisabled(false);
+                                       d->number));
+        d->applyBtn->setEnabled(d->enabled);
+    }
+}
+
+void MetadataStatusBar::slotAddedProgressItem(ProgressItem* item)
+{
+    if (item->id() == QLatin1String("MetadataSynchronizer"))
+    {
+        d->applyBtn->setEnabled(false);
+        d->info->setEnabled(false);
+        d->enabled = false;
+    }
+}
+
+void MetadataStatusBar::slotCompletedProgressItem(ProgressItem* item)
+{
+    if (item->id() == QLatin1String("MetadataSynchronizer"))
+    {
+        d->applyBtn->setEnabled(d->number > 0);
+        d->info->setEnabled(true);
+        d->enabled = true;
     }
 }
 

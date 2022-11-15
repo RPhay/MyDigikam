@@ -22,6 +22,7 @@
 // Local includes
 
 #include "metadatahubmngr.h"
+#include "progressmanager.h"
 
 namespace Digikam
 {
@@ -39,6 +40,8 @@ public Q_SLOTS:
 
     void slotSettingsChanged();
     void slotSetPendingItems(int number);
+    void slotAddedProgressItem(ProgressItem* item);
+    void slotCompletedProgressItem(ProgressItem* item);
 
 private:
 
