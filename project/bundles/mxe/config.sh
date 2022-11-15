@@ -65,7 +65,7 @@ DK_GITURL="git@invent.kde.org:graphics/digikam.git"
 DK_URL="http://download.kde.org/stable/digikam"
 
 # Location to build source code.
-DK_BUILDTEMP=$BUILDING_DIR/dktemp
+DK_BUILDTEMP=$MXE_ROOT_DIR/dktemp
 
 # KDE Application version.
 DK_KA_VERSION="22.08.1"
