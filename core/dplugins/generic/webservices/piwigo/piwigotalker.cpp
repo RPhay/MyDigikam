@@ -495,6 +495,7 @@ void PiwigoTalker::parseResponseGetVersion(const QByteArray& data)
     QXmlStreamReader ts(data);
     QString line;
     QRegularExpression verrx(QRegularExpression::anchoredPattern(QLatin1String(".*?(\\d+)\\.(\\d+).*")));
+    verrx.setPatternOptions(QRegularExpression::DotMatchesEverythingOption);
 
     bool foundResponse = false;
 
@@ -512,7 +513,6 @@ void PiwigoTalker::parseResponseGetVersion(const QByteArray& data)
                 (ts.attributes().value(QLatin1String("stat")) == QLatin1String("ok")))
             {
                 QString v                     = ts.readElementText();
-                v.remove(QLatin1Char('\n'));
                 QRegularExpressionMatch match = verrx.match(v);
 
                 if (match.hasMatch())
