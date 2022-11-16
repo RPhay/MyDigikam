@@ -191,7 +191,7 @@ BUGFIXES:
 153 ==> 461710 - Extra click required to confirm faces when face tagging a picture.
 154 ==> 461799 - No progress is shown for second face recognition process.
 155 ==> 461888 - Writing metadata to file fails while database sync process is running.
-156 ==> 
+156 ==> 461853 - MS People Tags with no face region are not read when image contains face rectangles with no names associated.
 157 ==> 
 158 ==> 
 159 ==> 
