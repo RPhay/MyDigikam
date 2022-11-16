@@ -393,7 +393,6 @@ libk5crypto.so.3 \
 libkrb5.so.26 \
 libkrb5.so.3 \
 libkrb5support.so.0 \
-libpcre.so.3 \
 libroken.so.18 \
 libsasl2.so.2 \
 libwind.so.0 \
