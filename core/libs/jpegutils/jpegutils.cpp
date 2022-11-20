@@ -513,7 +513,9 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
 
             if (!QFile::rename(sidecarTemp, sidecarDest))
             {
-                qCDebug(DIGIKAM_GENERAL_LOG) << "Renaming sidecar file" << sidecarTemp << "to" << sidecarDest << "failed";
+                qCDebug(DIGIKAM_GENERAL_LOG) << "Renaming sidecar file" << sidecarTemp
+                                             << "to" << sidecarDest << "failed";
+
                 removeLater << sidecarTemp;
                 break;
             }
@@ -528,7 +530,9 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
 
         if (!QFile::rename(tempFile, dest))
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Renaming" << tempFile << "to" << dest << "failed";
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Renaming" << tempFile
+                                         << "to" << dest << "failed";
+
             removeLater << tempFile;
             break;
         }
