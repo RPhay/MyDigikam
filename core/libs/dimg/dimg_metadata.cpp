@@ -157,7 +157,7 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
     // Refuse preview creation for images with transparency
     // as long as we have no format to support this. See bug 286127
 
-    if (flags & CreateNewMetadataPreview && !hasTransparentPixels())
+    if ((flags & CreateNewMetadataPreview) && !hasTransparentPixels())
     {
         const QSize standardPreviewSize(1280, 1280);
         QSize previewSize = size();
