@@ -128,7 +128,7 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
 
     qCDebug(DIGIKAM_DIMG_LOG) << "Prepare Metadata to save for" << intendedDestPath;
 
-    if (flags & RemoveOldMetadataPreviews || flags & CreateNewMetadataPreview)
+    if ((flags & RemoveOldMetadataPreviews) || (flags & CreateNewMetadataPreview))
     {
         // Clear IPTC preview
 
