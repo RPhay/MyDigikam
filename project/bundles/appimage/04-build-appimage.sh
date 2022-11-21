@@ -307,7 +307,7 @@ for FILE in $FILES ; do
     CopyReccursiveDependencies ${FILE} ./usr/lib
 done
 
-FILES=$(ls /usr/plugins/digikam/*.so)
+FILES=$(find /usr/plugins/digikam -name "*.so")
 
 for FILE in $FILES ; do
     CopyReccursiveDependencies ${FILE} ./usr/lib
