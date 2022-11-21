@@ -422,10 +422,14 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
         return true;
     }
 
+    bool        ret  = false;
     QString     dest = m_destFile;
     QString     src  = m_file;
     QString     dir  = fi.path();
     QStringList removeLater;
+
+    MetaEngineSettingsContainer::RotationBehaviorFlags behavior;
+    behavior = MetaEngineSettings::instance()->settings().rotationBehavior;
 
     for (int i = 0 ; i < actions.size() ; ++i)
     {
@@ -443,22 +447,23 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "JPEG lossless transform failed for" << src;
 
-            // See bug 320107 : if lossless transform cannot be achieve, do lossy transform.
+            // See bug 320107 : if lossless transform cannot be achieve,
+            // do lossy transform if enabled in the settings.
+
+            if (!(behavior & MetaEngineSettingsContainer::RotateByLossyRotation))
+            {
+                removeLater << tempFile;
+                break;
+            }
 
             DImg srcImg;
 
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Trying lossy transform for " << src;
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Trying lossy transform for" << src;
 
             if (!srcImg.load(src))
             {
                 removeLater << tempFile;
-
-                Q_FOREACH (const QString& temp, removeLater)
-                {
-                    QFile::remove(temp);
-                }
-
-                return false;
+                break;
             }
 
             if (actions[i] != MetaEngineRotation::NoTransformation)
@@ -473,16 +478,10 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
                 qCDebug(DIGIKAM_GENERAL_LOG) << "Lossy transform failed for" << src;
 
                 removeLater << tempFile;
-
-                Q_FOREACH (const QString& temp, removeLater)
-                {
-                    QFile::remove(temp);
-                }
-
-                return false;
+                break;
             }
 
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Lossy transform done for " << src;
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Lossy transform done for" << src;
         }
 
         if (i + 1 != actions.size())
@@ -514,7 +513,9 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
 
             if (!QFile::rename(sidecarTemp, sidecarDest))
             {
-                qCDebug(DIGIKAM_GENERAL_LOG) << "Renaming sidecar file" << sidecarTemp << "to" << sidecarDest << "failed";
+                qCDebug(DIGIKAM_GENERAL_LOG) << "Renaming sidecar file" << sidecarTemp
+                                             << "to" << sidecarDest << "failed";
+
                 removeLater << sidecarTemp;
                 break;
             }
@@ -529,9 +530,15 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
 
         if (!QFile::rename(tempFile, dest))
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Renaming" << tempFile << "to" << dest << "failed";
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Renaming" << tempFile
+                                         << "to" << dest << "failed";
+
             removeLater << tempFile;
             break;
+        }
+        else
+        {
+            ret = true;
         }
     }
 
@@ -540,7 +547,7 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
         QFile::remove(temp);
     }
 
-    return true;
+    return ret;
 }
 
 void JpegRotator::updateMetadata(const QString& fileName, const MetaEngineRotation &matrix)

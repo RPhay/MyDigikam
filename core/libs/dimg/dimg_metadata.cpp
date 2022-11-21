@@ -128,7 +128,7 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
 
     qCDebug(DIGIKAM_DIMG_LOG) << "Prepare Metadata to save for" << intendedDestPath;
 
-    if (flags & RemoveOldMetadataPreviews || flags & CreateNewMetadataPreview)
+    if ((flags & RemoveOldMetadataPreviews) || (flags & CreateNewMetadataPreview))
     {
         // Clear IPTC preview
 
@@ -154,18 +154,13 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
         meta->removeXmpTag("Xmp.digiKam.Preview");
     }
 
-    bool createNewPreview    = false;
-    QSize previewSize;
-
     // Refuse preview creation for images with transparency
     // as long as we have no format to support this. See bug 286127
 
-    bool skipPreviewCreation = hasTransparentPixels();
-
-    if (flags & CreateNewMetadataPreview && !skipPreviewCreation)
+    if ((flags & CreateNewMetadataPreview) && !hasTransparentPixels())
     {
         const QSize standardPreviewSize(1280, 1280);
-        previewSize = size();
+        QSize previewSize = size();
 
         // Scale to standard preview size. Only scale down, not up
 
@@ -176,14 +171,12 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
 
         // Only store a new preview if it is worth it - the original should be significantly larger than the preview
 
-        createNewPreview = (2 * (uint)previewSize.width() <= width());
-    }
+        bool storeNewPreview = (2 * (uint)previewSize.width() <= width());
 
-    if (createNewPreview)
-    {
-        // Create the preview QImage
+        // Create the preview and thumb QImage
 
         QImage preview;
+        QImage thumb;
         {
             if (!IccManager::isSRGB(*this))
             {
@@ -195,7 +188,9 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
                 }
                 else
                 {
-                    previewDImg = smoothScale(previewSize.width(), previewSize.height(), Qt::IgnoreAspectRatio);
+                    previewDImg = smoothScale(previewSize.width(),
+                                              previewSize.height(),
+                                              Qt::IgnoreAspectRatio);
                 }
 
                 IccManager manager(previewDImg);
@@ -212,9 +207,14 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
                 }
                 else
                 {
-                    preview = smoothScale(previewSize.width(), previewSize.height(), Qt::IgnoreAspectRatio).copyQImage();
+                    preview = smoothScale(previewSize.width(),
+                                          previewSize.height(),
+                                          Qt::IgnoreAspectRatio).copyQImage();
                 }
             }
+
+            thumb = preview.scaled(160, 120, Qt::KeepAspectRatio,
+                                             Qt::SmoothTransformation);
         }
 
         // Update IPTC preview.
@@ -224,9 +224,11 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
         // There is no limitation with TIFF and PNG about IPTC byte array size.
         // So for a JPEG file, we don't store the IPTC preview.
 
-        if (((destMimeType.toUpper() != QLatin1String("JPG"))  &&
-             (destMimeType.toUpper() != QLatin1String("JPEG")) &&
-             (destMimeType.toUpper() != QLatin1String("JPE")))
+        if (
+            storeNewPreview                                   &&
+            (destMimeType.toUpper() != QLatin1String("JPG"))  &&
+            (destMimeType.toUpper() != QLatin1String("JPE"))  &&
+            (destMimeType.toUpper() != QLatin1String("JPEG"))
            )
         {
             // Non JPEG file, we update IPTC and XMP preview
@@ -234,20 +236,20 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
             meta->setItemPreview(preview);
         }
 
-        if ((destMimeType.toUpper() == QLatin1String("TIFF")) ||
-            (destMimeType.toUpper() == QLatin1String("TIF")))
+        if (
+            (destMimeType.toUpper() == QLatin1String("TIFF")) ||
+            (destMimeType.toUpper() == QLatin1String("TIF"))
+           )
         {
             // With TIFF file, we don't store JPEG thumbnail, we even need to erase it and store
             // a thumbnail at a special location. See bug #211758
 
-            QImage thumb = preview.scaled(160, 120, Qt::KeepAspectRatio, Qt::SmoothTransformation);
             meta->setTiffThumbnail(thumb);
         }
         else
         {
             // Update Exif thumbnail.
 
-            QImage thumb = preview.scaled(160, 120, Qt::KeepAspectRatio, Qt::SmoothTransformation);
             meta->setExifThumbnail(thumb);
         }
     }
