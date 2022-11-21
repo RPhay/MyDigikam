@@ -322,8 +322,11 @@ echo -e "---------- Clean-up Bundle Directory Contents\n"
 
 # This list is taken from linuxdeplotqt
 # [https://github.com/probonopd/linuxdeployqt/blob/master/tools/linuxdeployqt/excludelist.h]
-# NOTE: libglapi is included explicitly in Krita exclude list.
-# NOTE: with the transition from Mageia6 to 7 to build AppImage libnss* must be included in the bundle (see bug #440689)
+# NOTES:
+#   Libglapi is included explicitly in Krita exclude list.
+#   With the transition from Mageia6 to 7 to build AppImage libnss* must be included in the bundle (see bug #440689)
+#   With the transition from Mageia7 to Ubuntu 18.04 to build AppImage libnsl* must be included in the bundle (see bug #455922)
+
 EXCLUDE_FILES="\
 ld-linux.so.2 \
 ld-linux-x86-64.so.2 \
@@ -352,7 +355,6 @@ libICE.so.6 \
 libjack.so.0 \
 libm.so.6 \
 libmvec.so.1 \
-libnsl.so.1 \
 libp11-kit.so.0 \
 libpangocairo-1.0.so.0 \
 libpthread.so.0 \
