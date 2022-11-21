@@ -192,7 +192,7 @@ BUGFIXES:
 154 ==> 461799 - No progress is shown for second face recognition process.
 155 ==> 461888 - Writing metadata to file fails while database sync process is running.
 156 ==> 461853 - MS People Tags with no face region are not read when image contains face rectangles with no names associated.
-157 ==> 
+157 ==> 446458 - Tags end up appearing withing another hierarchy where they don't belong.
 158 ==> 
 159 ==> 
 160 ==> 
