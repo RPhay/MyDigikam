@@ -1,6 +1,6 @@
 /* -*- C++ -*-
  * File: libraw_fuji_compressed.cpp
- * SPDX-FileCopyrightText: 2016-2019 Alexey Danilchenko
+ * Copyright (C) 2016-2019 Alexey Danilchenko
  *
  * Adopted to LibRaw by Alex Tutubalin, lexa@lexa.ru
  * LibRaw Fujifilm/compressed decoder

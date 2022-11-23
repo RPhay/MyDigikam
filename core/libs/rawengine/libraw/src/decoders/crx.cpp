@@ -1,7 +1,7 @@
 /* -*- C++ -*-
  * File: libraw_crxdec.cpp
- * SPDX-FileCopyrightText: 2018-2019 Alexey Danilchenko
- * SPDX-FileCopyrightText: 2019 Alex Tutubalin, LibRaw LLC
+ * Copyright (C) 2018-2019 Alexey Danilchenko
+ * Copyright (C) 2019 Alex Tutubalin, LibRaw LLC
  *
    Canon CR3 file decoder
 
