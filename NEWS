@@ -194,5 +194,11 @@ BUGFIXES:
 156 ==> 461853 - MS People Tags with no face region are not read when image contains face rectangles with no names associated.
 157 ==> 446458 - Tags end up appearing withing another hierarchy where they don't belong.
 158 ==> 460463 - Scroll position in Faces view keeps jumping back & forth during face recognition/detection.
-159 ==> 
-160 ==> 
+159 ==> 440909 - Import's "Auto-creation of Albums" using file modified date rather than date taken.
+160 ==> 402322 - During face detection, the "People" / "Unconfirmed" (or "Unknown") tab content keeps jumping around.
+161 ==> 438988 - Index shift while Scanning for faces.
+162 ==> 436930 - Visualization of tracks in the Map tab.
+163 ==> 
+164 ==> 
+165 ==> 
+
