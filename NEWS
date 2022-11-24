@@ -204,6 +204,6 @@ BUGFIXES:
 166 ==> 436711 - Thumbnail re-ordering / -inserting makes focus change while entering person tag.
 167 ==> 389814 - Date-based Sub-albums uses modification date instead of metadata date.
 168 ==> 381845 - Import tool creates wrong folder names.
-169 ==> 
+169 ==> 291189 - GPS Track viewer.
 170 ==> 
 171 ==> 
