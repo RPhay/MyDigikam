@@ -198,7 +198,12 @@ BUGFIXES:
 160 ==> 402322 - During face detection, the "People" / "Unconfirmed" (or "Unknown") tab content keeps jumping around.
 161 ==> 438988 - Index shift while Scanning for faces.
 162 ==> 436930 - Visualization of tracks in the Map tab.
-163 ==> 
-164 ==> 
-165 ==> 
-
+163 ==> 425369 - Imported photo in album other than date taken.
+164 ==> 429888 - Show GPS track on map view when GPX in the same folder.
+165 ==> 433952 - Face confirmation UX.
+166 ==> 436711 - Thumbnail re-ordering / -inserting makes focus change while entering person tag.
+167 ==> 
+168 ==> 
+169 ==> 
+170 ==> 
+171 ==> 
