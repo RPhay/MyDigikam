@@ -193,6 +193,6 @@ BUGFIXES:
 155 ==> 461888 - Writing metadata to file fails while database sync process is running.
 156 ==> 461853 - MS People Tags with no face region are not read when image contains face rectangles with no names associated.
 157 ==> 446458 - Tags end up appearing withing another hierarchy where they don't belong.
-158 ==> 
+158 ==> 460463 - Scroll position in Faces view keeps jumping back & forth during face recognition/detection.
 159 ==> 
 160 ==> 
