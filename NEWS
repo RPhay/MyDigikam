@@ -202,8 +202,8 @@ BUGFIXES:
 164 ==> 429888 - Show GPS track on map view when GPX in the same folder.
 165 ==> 433952 - Face confirmation UX.
 166 ==> 436711 - Thumbnail re-ordering / -inserting makes focus change while entering person tag.
-167 ==> 
-168 ==> 
+167 ==> 389814 - Date-based Sub-albums uses modification date instead of metadata date.
+168 ==> 381845 - Import tool creates wrong folder names.
 169 ==> 
 170 ==> 
 171 ==> 
