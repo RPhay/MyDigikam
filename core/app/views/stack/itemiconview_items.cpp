@@ -582,7 +582,14 @@ void ItemIconView::slotCopySelectionTo()
 
 void ItemIconView::slotEmptyMessageTimer()
 {
-    Album* const album = d->albumManager->currentAlbums().constFirst();
+    QList<Album*> albumList = AlbumManager::instance()->currentAlbums();
+
+    if (albumList.isEmpty())
+    {
+        return;
+    }
+
+   Album* const album = albumList.first();
 
     if (!album || album->isRoot() || (album->type() != Album::SEARCH))
     {
