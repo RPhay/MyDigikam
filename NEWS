@@ -206,4 +206,5 @@ BUGFIXES:
 168 ==> 381845 - Import tool creates wrong folder names.
 169 ==> 291189 - GPS Track viewer.
 170 ==> 462258 - Cannot preview and play .avi video.
-171 ==> 
+171 ==> 462071 - Last tag cannot be removed if only using xmp.lr and xmp.dc.
+172 ==> 

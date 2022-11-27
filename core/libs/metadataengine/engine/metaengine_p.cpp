@@ -400,6 +400,38 @@ bool MetaEngine::Private::saveUsingExiv2(const QFileInfo& finfo, Exiv2::Image::A
 #ifdef _XMP_SUPPORT_
 
             image->setXmpData(xmpMetadata());
+
+            if (image->imageType() == Exiv2::ImageType::xmp)
+            {
+                QList<QPair<QString, QString> > pairedTags;
+                typedef QPair<QString, QString> StringPair;
+
+                // We have XMP tags interacting with IPTC tags when writing to sidecar files.
+                // If an XMP tag does not exist remove the corresponding IPTC tag as well.
+                // See: https://exiv2.org/conversion.html
+                // See: BUG 462071
+
+                pairedTags << qMakePair(QLatin1String("Xmp.dc.subject"),
+                                        QLatin1String("Iptc.Application2.Keywords"));
+
+                Q_FOREACH (const StringPair& pair, pairedTags)
+                {
+                    Exiv2::XmpKey xmpKey(pair.first.toLatin1().constData());
+                    Exiv2::XmpData::const_iterator it1 = image->xmpData().findKey(xmpKey);
+
+                    if (it1 == image->xmpData().end())
+                    {
+                        Exiv2::IptcKey iptcKey(pair.second.toLatin1().constData());
+                        Exiv2::IptcData::iterator it2 = image->iptcData().findKey(iptcKey);
+
+                        if (it2 != image->iptcData().end())
+                        {
+                            image->iptcData().erase(it2);
+                        }
+                    }
+                }
+            }
+
             wroteXMP = true;
 
 #endif
