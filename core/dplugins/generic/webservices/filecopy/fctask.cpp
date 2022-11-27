@@ -127,9 +127,8 @@ void FCTask::run()
         }
         else
         {
-            deleteTargetFile(dest.toLocalFile());
             ok = DFileOperations::copyFile(d->srcUrl.toLocalFile(),
-                                           dest.toLocalFile());
+                                           getFileOrDelete(dest.toLocalFile()));
         }
     }
     else if (ok                                                     &&
@@ -145,19 +144,16 @@ void FCTask::run()
 
         if (d->settings.behavior == FCContainer::FullSymLink)
         {
-            deleteTargetFile(dest.toLocalFile());
             ok = QFile::link(d->srcUrl.toLocalFile(),
-                             dest.toLocalFile());
+                             getFileOrDelete(dest.toLocalFile()));
         }
         else
         {
             QDir dir(d->settings.destUrl.toLocalFile());
             QString path = dir.relativeFilePath(d->srcUrl.toLocalFile());
             QUrl srcUrl  = QUrl::fromLocalFile(path);
-
-            deleteTargetFile(dest.toLocalFile());
             ok           = QFile::link(srcUrl.toLocalFile(),
-                                       dest.toLocalFile());
+                                       getFileOrDelete(dest.toLocalFile()));
         }
     }
 
@@ -223,11 +219,9 @@ bool FCTask::imageResize(const QString& orgPath, const QString& destPath)
         if (d->settings.imageFormat == FCContainer::JPEG)
         {
             destFile.append(QLatin1String(".jpg"));
-            deleteTargetFile(destFile);
-
             img.setAttribute(QLatin1String("quality"), d->settings.imageCompression);
 
-            if (!img.save(destFile, QLatin1String("JPEG")))
+            if (!img.save(getFileOrDelete(destFile), QLatin1String("JPEG")))
             {
                 qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Cannot save resized image (JPEG)";
                 return false;
@@ -236,9 +230,8 @@ bool FCTask::imageResize(const QString& orgPath, const QString& destPath)
         else if (d->settings.imageFormat == FCContainer::PNG)
         {
             destFile.append(QLatin1String(".png"));
-            deleteTargetFile(destFile);
 
-            if (!img.save(destFile, QLatin1String("PNG")))
+            if (!img.save(getFileOrDelete(destFile), QLatin1String("PNG")))
             {
                 qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Cannot save resized image (PNG)";
                 return false;
@@ -278,12 +271,16 @@ bool FCTask::imageResize(const QString& orgPath, const QString& destPath)
     return false;
 }
 
-void FCTask::deleteTargetFile(const QString& filePath)
+QString FCTask::getFileOrDelete(const QString& filePath) const
 {
     if (d->settings.overwrite && QFile::exists(filePath))
     {
         QFile::remove(filePath);
+
+        return filePath;
     }
+
+    return DFileOperations::getUniqueFileUrl(QUrl::fromLocalFile(filePath)).toLocalFile();
 }
 
 } // namespace DigikamGenericFileCopyPlugin
