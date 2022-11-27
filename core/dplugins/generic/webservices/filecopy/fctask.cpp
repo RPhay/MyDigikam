@@ -227,7 +227,7 @@ bool FCTask::imageResize(const QString& orgPath, QUrl& destUrl)
             img.setAttribute(QLatin1String("quality"), d->settings.imageCompression);
             img.setAttribute(QLatin1String("metadataWritingMode"), (int)DMetadata::WRITE_TO_FILE_ONLY);
 
-            if (!img.save(destFile, QLatin1String("JPEG")))
+            if (!img.save(destFile, DImg::JPEG))
             {
                 qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Cannot save resized image (JPEG)";
                 return false;
@@ -240,7 +240,7 @@ bool FCTask::imageResize(const QString& orgPath, QUrl& destUrl)
 
             img.setAttribute(QLatin1String("metadataWritingMode"), (int)DMetadata::WRITE_TO_FILE_ONLY);
 
-            if (!img.save(destFile, QLatin1String("PNG")))
+            if (!img.save(destFile, DImg::PNG))
             {
                 qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Cannot save resized image (PNG)";
                 return false;
