@@ -225,6 +225,7 @@ bool FCTask::imageResize(const QString& orgPath, QUrl& destUrl)
             destFile = getUrlOrDelete(QUrl::fromLocalFile(destFile)).toLocalFile();
 
             img.setAttribute(QLatin1String("quality"), d->settings.imageCompression);
+            img.setAttribute(QLatin1String("metadataWritingMode"), (int)DMetadata::WRITE_TO_FILE_ONLY);
 
             if (!img.save(destFile, QLatin1String("JPEG")))
             {
@@ -236,6 +237,8 @@ bool FCTask::imageResize(const QString& orgPath, QUrl& destUrl)
         {
             destFile.append(QLatin1String(".png"));
             destFile = getUrlOrDelete(QUrl::fromLocalFile(destFile)).toLocalFile();
+
+            img.setAttribute(QLatin1String("metadataWritingMode"), (int)DMetadata::WRITE_TO_FILE_ONLY);
 
             if (!img.save(destFile, QLatin1String("PNG")))
             {
