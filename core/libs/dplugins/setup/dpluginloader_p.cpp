@@ -51,7 +51,6 @@ DPluginLoader::Private::Private()
     DKBlacklist << QLatin1String("Generic_DNGConverter_Plugin");
     blacklist   << QLatin1String("Generic_YandexFotki_Plugin");
     blacklist   << QLatin1String("Generic_VKontakte_Plugin");
-    blacklist   << QLatin1String("Generic_PicFlowView_Plugin");
 }
 
 DPluginLoader::Private::~Private()
