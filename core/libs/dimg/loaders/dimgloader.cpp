@@ -234,7 +234,13 @@ bool DImgLoader::saveMetadata(const QString& filePath)
     QScopedPointer<DMetadata> metaDataToFile(new DMetadata(filePath));
     metaDataToFile->setData(m_image->getMetadata());
 
-    if (metaDataToFile->metadataWritingMode() == (int)DMetadata::WRITE_TO_SIDECAR_ONLY)
+    QVariant writingMode = imageGetAttribute(QLatin1String("metadataWritingMode"));
+
+    if      (writingMode.isValid())
+    {
+        metaDataToFile->setMetadataWritingMode(writingMode.toInt());
+    }
+    else if (metaDataToFile->metadataWritingMode() == (int)DMetadata::WRITE_TO_SIDECAR_ONLY)
     {
         metaDataToFile->setMetadataWritingMode((int)DMetadata::WRITE_TO_SIDECAR_AND_FILE);
     }

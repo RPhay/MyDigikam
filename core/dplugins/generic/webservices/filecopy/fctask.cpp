@@ -123,12 +123,13 @@ void FCTask::run()
             )
            )
         {
-            ok = imageResize(d->srcUrl.toLocalFile(), dest.toLocalFile());
+            ok = imageResize(d->srcUrl.toLocalFile(), dest);
         }
         else
         {
-            ok = DFileOperations::copyFile(d->srcUrl.toLocalFile(),
-                                           getFileOrDelete(dest.toLocalFile()));
+            dest = getUrlOrDelete(dest);
+            ok   = DFileOperations::copyFile(d->srcUrl.toLocalFile(),
+                                             dest.toLocalFile());
         }
     }
     else if (ok                                                     &&
@@ -142,10 +143,12 @@ void FCTask::run()
 
 #endif
 
+        dest = getUrlOrDelete(dest);
+
         if (d->settings.behavior == FCContainer::FullSymLink)
         {
             ok = QFile::link(d->srcUrl.toLocalFile(),
-                             getFileOrDelete(dest.toLocalFile()));
+                             dest.toLocalFile());
         }
         else
         {
@@ -153,7 +156,7 @@ void FCTask::run()
             QString path = dir.relativeFilePath(d->srcUrl.toLocalFile());
             QUrl srcUrl  = QUrl::fromLocalFile(path);
             ok           = QFile::link(srcUrl.toLocalFile(),
-                                       getFileOrDelete(dest.toLocalFile()));
+                                       dest.toLocalFile());
         }
     }
 
@@ -165,7 +168,7 @@ void FCTask::run()
     Q_EMIT signalDone();
 }
 
-bool FCTask::imageResize(const QString& orgPath, const QString& destPath)
+bool FCTask::imageResize(const QString& orgPath, QUrl& destUrl)
 {
     QFileInfo fi(orgPath);
 
@@ -176,7 +179,7 @@ bool FCTask::imageResize(const QString& orgPath, const QString& destPath)
         return false;
     }
 
-    QFileInfo destInfo(destPath);
+    QFileInfo destInfo(destUrl.toLocalFile());
     QFileInfo tmpDir(destInfo.dir().absolutePath());
 
     if (!tmpDir.exists() || !tmpDir.isWritable())
@@ -219,9 +222,12 @@ bool FCTask::imageResize(const QString& orgPath, const QString& destPath)
         if (d->settings.imageFormat == FCContainer::JPEG)
         {
             destFile.append(QLatin1String(".jpg"));
-            img.setAttribute(QLatin1String("quality"), d->settings.imageCompression);
+            destFile = getUrlOrDelete(QUrl::fromLocalFile(destFile)).toLocalFile();
 
-            if (!img.save(getFileOrDelete(destFile), QLatin1String("JPEG")))
+            img.setAttribute(QLatin1String("quality"), d->settings.imageCompression);
+            img.setAttribute(QLatin1String("metadataWritingMode"), (int)DMetadata::WRITE_TO_FILE_ONLY);
+
+            if (!img.save(destFile, DImg::JPEG))
             {
                 qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Cannot save resized image (JPEG)";
                 return false;
@@ -230,8 +236,11 @@ bool FCTask::imageResize(const QString& orgPath, const QString& destPath)
         else if (d->settings.imageFormat == FCContainer::PNG)
         {
             destFile.append(QLatin1String(".png"));
+            destFile = getUrlOrDelete(QUrl::fromLocalFile(destFile)).toLocalFile();
 
-            if (!img.save(getFileOrDelete(destFile), QLatin1String("PNG")))
+            img.setAttribute(QLatin1String("metadataWritingMode"), (int)DMetadata::WRITE_TO_FILE_ONLY);
+
+            if (!img.save(destFile, DImg::PNG))
             {
                 qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Cannot save resized image (PNG)";
                 return false;
@@ -264,6 +273,7 @@ bool FCTask::imageResize(const QString& orgPath, const QString& destPath)
         }
 
         DFileOperations::copyModificationTime(orgPath, destFile);
+        destUrl = QUrl::fromLocalFile(destFile);
 
         return true;
     }
@@ -271,16 +281,17 @@ bool FCTask::imageResize(const QString& orgPath, const QString& destPath)
     return false;
 }
 
-QString FCTask::getFileOrDelete(const QString& filePath) const
+QUrl FCTask::getUrlOrDelete(const QUrl& fileUrl) const
 {
-    if (d->settings.overwrite && QFile::exists(filePath))
+    if (d->settings.overwrite              &&
+        QFile::exists(fileUrl.toLocalFile()))
     {
-        QFile::remove(filePath);
+        QFile::remove(fileUrl.toLocalFile());
 
-        return filePath;
+        return fileUrl;
     }
 
-    return DFileOperations::getUniqueFileUrl(QUrl::fromLocalFile(filePath)).toLocalFile();
+    return DFileOperations::getUniqueFileUrl(fileUrl);
 }
 
 } // namespace DigikamGenericFileCopyPlugin
