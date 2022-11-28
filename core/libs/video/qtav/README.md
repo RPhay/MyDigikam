@@ -116,16 +116,19 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
         - All FFMPEG 5 API are wrapped with pre-processor rules like this:
 
         #ifndef HAVE_FFMPEG_VERSION5
-            // FFMpeg version 4 codes.
-        #else // ffmpeg >= 5
-            // FFMpeg version 5 codes.
+            /* FFMpeg version 4 codes. */
+        #else
+            /* FFMpeg version 5 codes. */
         #endif
 
         - FFMPEG 4 API codes still unchanged.
 
+    - Add config widgets to setup video and audio backends.
+
 * Under Progress:
 
     - Apply fixes for Clazy static analyzer.
+    - Perform regression tests with FFMPEG 5.
 
 * TODO:
 
@@ -135,8 +138,6 @@ Code review with plenty of fixes and improvements. See the list of tasks below.
     - FFMPEG 5 API and CUDA support : FFMPEG4::AVBitStreamFilterContext struct is removed
                                       (aka FFMPEG4::FF_API_OLD_BSF define). Port to new API.
 
-    - Perform regression tests with FFMPEG 5.
-    - Add config widgets to setup video and audio backends.
 
 * Unmaintained Features:
 
