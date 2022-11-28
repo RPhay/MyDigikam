@@ -3,13 +3,7 @@ doc
 test-data
 
 # Ignore unit-test files
-tests/databases/*/*.db
-core/tests/facesengine/data/
 Testing/
-
-# Ignore packaging dirs
-doc/digikam
-/po/
 
 # Ignore local swap
 *.kate-swp
