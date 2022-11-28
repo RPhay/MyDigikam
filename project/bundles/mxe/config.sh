@@ -94,5 +94,5 @@ DK_SIGN=0
 
 # Upload automatically bundle to files.kde.org (pre-release only).
 DK_UPLOAD=1
-DK_UPLOADURL="digikam@deino.kde.org"
+DK_UPLOADURL="digikam@tinami.kde.org"
 DK_UPLOADDIR="/srv/archives/files/digikam/unstable"

@@ -195,19 +195,13 @@ void SlideVideo::setCurrentUrl(const QUrl& url)
 {
     d->player->stop();
 
-    int orientation     = 0;
-    bool supportedCodec = true;
+    int orientation = 0;
 
     if (d->iface)
     {
         DItemInfo info(d->iface->itemInfo(url));
 
         orientation = info.orientation();
-
-        if (info.videoCodec() == QLatin1String("none"))
-        {
-            supportedCodec = false;
-        }
     }
 
     switch (orientation)
@@ -231,16 +225,8 @@ void SlideVideo::setCurrentUrl(const QUrl& url)
             break;
     }
 
-    if (supportedCodec)
-    {
-        d->player->setFile(url.toLocalFile());
-        play();
-    }
-    else
-    {
-        d->player->setFile(QString());
-        Q_EMIT signalVideoLoaded(false);
-    }
+    d->player->setFile(url.toLocalFile());
+    play();
 
     showIndicator(false);
 }

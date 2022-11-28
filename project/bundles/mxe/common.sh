@@ -61,7 +61,7 @@ RegisterRemoteServers()
 
 SERVER_LIST="\
 invent.kde.org \
-deino.kde.org \
+tinami.kde.org \
 "
 
 if [[ ! -f ~/.ssh/known_hosts ]] ; then

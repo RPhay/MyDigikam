@@ -56,8 +56,8 @@ private:
 
 private:
 
-    bool imageResize(const QString& orgPath, const QString& destPath);
-    void deleteTargetFile(const QString& filePath);
+    bool imageResize(const QString& orgPath, QUrl& destUrl);
+    QUrl getUrlOrDelete(const QUrl& fileUrl) const;
 
 private:
 

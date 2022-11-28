@@ -597,19 +597,13 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
 
     d->player->stop();
 
-    int orientation     = 0;
-    bool supportedCodec = true;
+    int orientation = 0;
 
     if (d->iface)
     {
         DItemInfo info(d->iface->itemInfo(url));
 
         orientation = info.orientation();
-
-        if (info.videoCodec() == QLatin1String("none"))
-        {
-            supportedCodec = false;
-        }
     }
 
     switch (orientation)
@@ -633,18 +627,10 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
             break;
     }
 
-    if (supportedCodec)
-    {
-        d->player->setFile(d->currentItem.toLocalFile());
-        setPreviewMode(Private::PlayerView);
-        play();
-    }
-    else
-    {
-        d->currentItem = QUrl();
-        d->player->setFile(QString());
-        setPreviewMode(Private::ErrorView);
-    }
+    d->player->setFile(d->currentItem.toLocalFile());
+    setPreviewMode(Private::PlayerView);
+    d->player->setPosition(10);
+    play();
 }
 
 void MediaPlayerView::slotPositionChanged(qint64 position)
