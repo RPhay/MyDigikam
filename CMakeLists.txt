@@ -5,7 +5,7 @@
 #
 
 set(CMAKE_MIN_VERSION   "3.16")
-set(ECM_MIN_VERSION     "5.92.0")
+set(ECM_MIN_VERSION     "5.55.0")
 
 cmake_minimum_required(VERSION ${CMAKE_MIN_VERSION})
 
