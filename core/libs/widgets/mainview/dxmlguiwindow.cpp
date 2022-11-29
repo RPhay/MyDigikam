@@ -28,6 +28,8 @@ DXmlGuiWindow::DXmlGuiWindow(QWidget* const parent, Qt::WindowFlags f)
 
 DXmlGuiWindow::~DXmlGuiWindow()
 {
+    saveWindowSize();
+
     delete d;
 }
 
@@ -208,12 +210,77 @@ void DXmlGuiWindow::openHandbook()
 
 void DXmlGuiWindow::restoreWindowSize(QWindow* const win, const KConfigGroup& group)
 {
+
+#ifdef Q_OS_WIN
+
+    QString s = QString::fromLatin1("%1x%2").arg(win->screen()->size().width())
+                                            .arg(win->screen()->size().height());
+
+    int w     = group.readEntry(QString::fromLatin1("DK Width %1").arg(s),     win->width());
+    int h     = group.readEntry(QString::fromLatin1("DK Height %1").arg(s),    win->height());
+    int x     = group.readEntry(QString::fromLatin1("DK PositionX %1").arg(s), win->geometry().x());
+    int y     = group.readEntry(QString::fromLatin1("DK PositionY %1").arg(s), win->geometry().y());
+
+    win->setPosition(x, y);
+    win->resize(w, h);
+
+#else
+
     KWindowConfig::restoreWindowSize(win, group);
+
+#endif
+
 }
 
 void DXmlGuiWindow::saveWindowSize(QWindow* const win, KConfigGroup& group)
 {
+
+#ifdef Q_OS_WIN
+
+    QString s = QString::fromLatin1("%1x%2").arg(win->screen()->size().width())
+                                            .arg(win->screen()->size().height());
+
+    group.writeEntry(QString::fromLatin1("DK Width %1").arg(s),     win->width());
+    group.writeEntry(QString::fromLatin1("DK Height %1").arg(s),    win->height());
+    group.writeEntry(QString::fromLatin1("DK PositionX %1").arg(s), win->geometry().x());
+    group.writeEntry(QString::fromLatin1("DK PositionY %1").arg(s), win->geometry().y());
+
+#else
+
     KWindowConfig::saveWindowSize(win, group);
+
+#endif
+
+}
+
+void DXmlGuiWindow::restoreWindowSize()
+{
+
+#ifdef Q_OS_WIN
+
+    winId();
+
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(configGroupName());
+
+    restoreWindowSize(windowHandle(), group);
+
+#endif
+
+}
+
+void DXmlGuiWindow::saveWindowSize()
+{
+
+#ifdef Q_OS_WIN
+
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(configGroupName());
+
+    saveWindowSize(windowHandle(), group);
+
+#endif
+
 }
 
 void DXmlGuiWindow::slotRawCameraList()

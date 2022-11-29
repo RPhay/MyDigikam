@@ -100,6 +100,9 @@ public:
     void setConfigGroupName(const QString& name);
     QString configGroupName() const;
 
+    void restoreWindowSize();
+    void saveWindowSize();
+
     /**
      * Create common actions to setup all digiKam main windows.
      */

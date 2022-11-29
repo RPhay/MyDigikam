@@ -89,6 +89,8 @@ ImageWindow::ImageWindow()
     d->rightSideBar->populateTags();
 
     slotSetupChanged();
+
+    restoreWindowSize();
 }
 
 ImageWindow::~ImageWindow()

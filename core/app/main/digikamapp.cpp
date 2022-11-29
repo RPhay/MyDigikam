@@ -217,6 +217,8 @@ DigikamApp::DigikamApp()
     LoadSaveThread::setInfoProvider(new DatabaseLoadSaveFileInfoProvider);
 
     setupSelectToolsAction();
+
+    restoreWindowSize();
 }
 
 DigikamApp::~DigikamApp()
