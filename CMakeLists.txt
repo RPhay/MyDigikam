@@ -156,23 +156,10 @@ option(DIGIKAMSC_COMPILE_DIGIKAM         "Build digiKam core (default=ON)"      
 
 #######################################################################################################################
 
-if(DIGIKAMSC_CHECKOUT_PO OR DIGIKAMSC_CHECKOUT_DOC)
+if(DIGIKAMSC_CHECKOUT_DOC)
 
     find_package(Ruby)
     find_package(Subversion)
-
-    if(RUBY_EXECUTABLE AND Subversion_FOUND)
-
-        if(DIGIKAMSC_CHECKOUT_PO)
-
-            message(STATUS "Extract application translation files from git repositories. Please wait, it can take a while...")
-
-            execute_process(COMMAND ${RUBY_EXECUTABLE} "${CMAKE_SOURCE_DIR}/project/release/fetch_l10n_po.rb"
-                            WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}")
-
-            message(STATUS "Application translation files extraction done.")
-
-        endif()
 
         if(DIGIKAMSC_CHECKOUT_DOC)
 
@@ -197,10 +184,6 @@ endif()
 if(DIGIKAMSC_COMPILE_PO AND NOT EXISTS ${CMAKE_SOURCE_DIR}/po/)
 
     message(STATUS "Application translations directory is missing. Compilation of application translations is disabled...")
-
-    if(NOT DIGIKAMSC_CHECKOUT_PO)
-        message(STATUS "You can use DIGIKAMSC_CHECKOUT_PO option to extract GUI i18n files from git repositories.")
-    endif()
 
     set(DIGIKAMSC_COMPILE_PO OFF)
 
@@ -243,12 +226,6 @@ if(DIGIKAMSC_COMPILE_DIGIKAM)
     endif()
 else()
     message(STATUS     "${PROJECT_NAME} will be compiled....................... NO")
-endif()
-
-if(DIGIKAMSC_CHECKOUT_PO)
-    message(STATUS "Extract application translations files......... YES")
-else()
-    message(STATUS "Extract application translations files......... NO")
 endif()
 
 if(DIGIKAMSC_CHECKOUT_DOC)
