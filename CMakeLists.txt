@@ -5,7 +5,7 @@
 #
 
 set(CMAKE_MIN_VERSION   "3.16")
-set(ECM_MIN_VERSION     "5.55.0")
+set(ECM_MIN_VERSION     "5.92.0")
 
 cmake_minimum_required(VERSION ${CMAKE_MIN_VERSION})
 
@@ -265,7 +265,8 @@ if(DIGIKAMSC_COMPILE_PO OR DIGIKAMSC_COMPILE_DOC)
 endif()
 
 if(DIGIKAMSC_COMPILE_PO)
-    add_subdirectory(po)
+    find_package(KF5I18n NO_MODULE)
+    ki18n_install(po)
 endif()
 
 if(DIGIKAMSC_COMPILE_DOC)
