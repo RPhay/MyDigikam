@@ -326,7 +326,7 @@ echo -e "---------- Clean-up Bundle Directory Contents\n"
 
 # The following are assumed to be part of the base system
 
-# This list is taken from linuxdeplotqt
+# This list is taken from linuxdeployqt
 # [https://github.com/probonopd/linuxdeployqt/blob/master/tools/linuxdeployqt/excludelist.h]
 # NOTES:
 #   Libglapi is included explicitly in Krita exclude list.
