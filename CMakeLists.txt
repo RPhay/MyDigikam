@@ -161,6 +161,8 @@ if(DIGIKAMSC_CHECKOUT_DOC)
     find_package(Ruby)
     find_package(Subversion)
 
+    if(RUBY_EXECUTABLE AND Subversion_FOUND)
+
         if(DIGIKAMSC_CHECKOUT_DOC)
 
             message(STATUS "Extract documentation translation files from git repositories. Please wait, it can take a while...")
