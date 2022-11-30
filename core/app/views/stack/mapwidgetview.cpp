@@ -20,6 +20,7 @@
 
 #include <QWidget>
 #include <QVBoxLayout>
+#include <QApplication>
 #include <QItemSelectionModel>
 #include <QAbstractItemModel>
 #include <QPersistentModelIndex>
@@ -154,8 +155,17 @@ MapWidgetView::MapWidgetView(QItemSelectionModel* const selectionModel,
 
     QVBoxLayout* const vBoxLayout              = new QVBoxLayout(this);
     d->mapWidget                               = new MapWidget(this);
-    d->mapWidget->setAvailableMouseModes(MouseModePan|MouseModeZoomIntoGroup|MouseModeSelectThumbnail);
-    d->mapWidget->setVisibleMouseModes(MouseModePan|MouseModeZoomIntoGroup|MouseModeSelectThumbnail);
+    d->mapWidget->setAvailableMouseModes(MouseModePan | MouseModeZoomIntoGroup | MouseModeSelectThumbnail);
+    d->mapWidget->setVisibleMouseModes(MouseModePan | MouseModeZoomIntoGroup | MouseModeSelectThumbnail);
+
+    if (d->application == ApplicationDigikam)
+    {
+        d->mapWidget->setVisibleExtraActions(ExtraLoadTracks);
+
+        connect(d->mapWidget, &MapWidget::signalLoadTracksFromAlbums,
+                this, &MapWidgetView::slotLoadTracksFromAlbums);
+    }
+
     ItemMarkerTiler* const geoifaceMarkerModel = new ItemMarkerTiler(d->mapViewModelHelper, this);
     d->mapWidget->setGroupedModel(geoifaceMarkerModel);
     d->mapWidget->setBackend(QLatin1String("marble"));
@@ -288,46 +298,13 @@ void MapWidgetView::slotModelChanged()
     {
         case ApplicationDigikam:
         {
-            QList<QUrl> fileUrls;
-
             Q_FOREACH (const ItemInfo& info, d->imageModel->imageInfos())
             {
                 if (info.hasCoordinates())
                 {
-                    QUrl url = info.fileUrl().adjusted(QUrl::RemoveFilename |
-                                                       QUrl::StripTrailingSlash);
-
-                    if (!fileUrls.contains(url))
-                    {
-                        fileUrls << url;
-                    }
+                    hasCoordinates = true;
+                    break;
                 }
-            }
-
-            hasCoordinates = (!fileUrls.isEmpty());
-
-            if (!hasCoordinates)
-            {
-                break;
-            }
-
-            QList<QUrl> gpxList;
-            const QStringList filter({QLatin1String("*.gpx")});
-
-            Q_FOREACH (const QUrl& url, fileUrls)
-            {
-                QDir dir(url.toLocalFile());
-
-                Q_FOREACH (const QFileInfo& finfo, dir.entryInfoList(filter, QDir::Files))
-                {
-                    gpxList << QUrl::fromLocalFile(finfo.filePath());
-                }
-            }
-
-            if (!gpxList.isEmpty())
-            {
-                d->trackManager->loadTrackFiles(gpxList);
-                d->trackManager->setVisibility(true);
             }
 
             break;
@@ -365,6 +342,58 @@ void MapWidgetView::slotModelChanged()
     }
 
     d->boundariesShouldBeAdjusted = false;
+}
+
+void MapWidgetView::slotLoadTracksFromAlbums()
+{
+    QApplication::setOverrideCursor(Qt::WaitCursor);
+
+    d->trackManager->setVisibility(false);
+    d->trackManager->clear();
+
+    QList<QUrl> fileUrls;
+
+    Q_FOREACH (const ItemInfo& info, d->imageModel->imageInfos())
+    {
+        if (info.hasCoordinates())
+        {
+            QUrl url = info.fileUrl().adjusted(QUrl::RemoveFilename |
+                                               QUrl::StripTrailingSlash);
+
+            if (!fileUrls.contains(url))
+            {
+                fileUrls << url;
+            }
+        }
+    }
+
+    if (fileUrls.isEmpty())
+    {
+        QApplication::restoreOverrideCursor();
+
+        return;
+    }
+
+    QList<QUrl> gpxList;
+    const QStringList filter({QLatin1String("*.gpx")});
+
+    Q_FOREACH (const QUrl& url, fileUrls)
+    {
+        QDir dir(url.toLocalFile());
+
+        Q_FOREACH (const QFileInfo& finfo, dir.entryInfoList(filter, QDir::Files))
+        {
+            gpxList << QUrl::fromLocalFile(finfo.filePath());
+        }
+    }
+
+    QApplication::restoreOverrideCursor();
+
+    if (!gpxList.isEmpty())
+    {
+        d->trackManager->loadTrackFiles(gpxList);
+        d->trackManager->setVisibility(true);
+    }
 }
 
 //-------------------------------------------------------------------------------------------------------------

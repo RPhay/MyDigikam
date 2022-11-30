@@ -125,6 +125,7 @@ public:
         actionSetFilterMode                     (nullptr),
         actionRemoveFilter                      (nullptr),
         actionSetSelectThumbnailMode            (nullptr),
+        actionLoadTracksFromAlbums              (nullptr),
         setPanModeButton                        (nullptr),
         setSelectionModeButton                  (nullptr),
         removeCurrentSelectionButton            (nullptr),
@@ -133,6 +134,7 @@ public:
         setFilterModeButton                     (nullptr),
         removeFilterModeButton                  (nullptr),
         setSelectThumbnailMode                  (nullptr),
+        loadTracksFromAlbums                    (nullptr),
         thumbnailTimer                          (nullptr),
         thumbnailTimerCount                     (0),
         thumbnailsHaveBeenLoaded                (false),
@@ -183,6 +185,7 @@ public:
     QAction*                actionSetFilterMode;
     QAction*                actionRemoveFilter;
     QAction*                actionSetSelectThumbnailMode;
+    QAction*                actionLoadTracksFromAlbums;
     QToolButton*            setPanModeButton;
     QToolButton*            setSelectionModeButton;
     QToolButton*            removeCurrentSelectionButton;
@@ -191,6 +194,7 @@ public:
     QToolButton*            setFilterModeButton;
     QToolButton*            removeFilterModeButton;
     QToolButton*            setSelectThumbnailMode;
+    QToolButton*            loadTracksFromAlbums;
 
     QTimer*                 thumbnailTimer;
     int                     thumbnailTimerCount;
@@ -338,6 +342,10 @@ void MapWidget::createActions()
     d->actionStickyMode->setCheckable(true);
     d->actionStickyMode->setToolTip(i18n("Lock the map position"));
 
+    d->actionLoadTracksFromAlbums = new QAction(this);
+    d->actionLoadTracksFromAlbums->setToolTip(i18n("Load tracks from albums"));
+    d->actionLoadTracksFromAlbums->setIcon(QIcon::fromTheme(QLatin1String("draw-polyline")));
+
     connect(d->actionStickyMode, &QAction::triggered,
             this, &MapWidget::slotStickyModeChanged);
 
@@ -364,6 +372,9 @@ void MapWidget::createActions()
 
     connect(d->actionRemoveCurrentRegionSelection, &QAction::triggered,
             this, &MapWidget::slotRemoveCurrentRegionSelection);
+
+    connect(d->actionLoadTracksFromAlbums, &QAction::triggered,
+            this, &MapWidget::signalLoadTracksFromAlbums);
 }
 
 void MapWidget::createActionsForBackendSelection()
@@ -874,6 +885,10 @@ QWidget* MapWidget::getControlWidget()
         QHBoxLayout *hBoxForAdditionalControlWidgetItemsHBoxLayout = new QHBoxLayout(d->hBoxForAdditionalControlWidgetItems);
         hBoxForAdditionalControlWidgetItemsHBoxLayout->setContentsMargins(QMargins());
         controlWidgetHBoxLayout->addWidget(d->hBoxForAdditionalControlWidgetItems);
+
+        d->loadTracksFromAlbums = new QToolButton(d->controlWidget);
+        hBoxForAdditionalControlWidgetItemsHBoxLayout->addWidget(d->loadTracksFromAlbums);
+        d->loadTracksFromAlbums->setDefaultAction(d->actionLoadTracksFromAlbums);
 
         setVisibleMouseModes(s->visibleMouseModes);
         setVisibleExtraActions(d->visibleExtraActions);
@@ -2289,6 +2304,11 @@ void MapWidget::setVisibleExtraActions(const GeoExtraActions actions)
     if (d->buttonStickyMode)
     {
         d->buttonStickyMode->setVisible(actions.testFlag(ExtraActionSticky));
+    }
+
+    if (d->loadTracksFromAlbums)
+    {
+        d->loadTracksFromAlbums->setVisible(actions.testFlag(ExtraLoadTracks));
     }
 
     slotUpdateActionsEnabled();

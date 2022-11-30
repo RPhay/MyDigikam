@@ -167,6 +167,7 @@ Q_SIGNALS:
     void signalRemoveCurrentFilter();
     void signalStickyModeChanged();
     void signalMouseModeChanged(const Digikam::GeoMouseModes& currentMouseMode);
+    void signalLoadTracksFromAlbums();
 
 public:
 

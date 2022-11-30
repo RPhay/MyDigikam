@@ -40,7 +40,8 @@ Q_DECLARE_FLAGS(GeoMouseModes, GeoMouseMode)
 
 enum GeoExtraAction
 {
-    ExtraActionSticky = 1
+    ExtraActionSticky = 1,
+    ExtraLoadTracks   = 2
 };
 
 Q_DECLARE_FLAGS(GeoExtraActions, GeoExtraAction)
