@@ -268,8 +268,6 @@
 
 \subsection depstrans Dependencies To Process Translations Files (optional)
 
- - Ruby       http://www.ruby-lang.org             (to extract translations files from remote repositories)
- - Subversion https://subversion.apache.org/       (to extract translations files from remote repositories)
  - Gettext    https://www.gnu.org/software/gettext (including Msgfmt to compile po files to mo files)
 
 
