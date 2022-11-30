@@ -241,7 +241,8 @@ void AVPlayerConfigMngr::reload()
     // ---
 
     KConfigGroup group2       = config->group(QLatin1String("MediaPlayer Decoder Video"));
-    setDecoderPriorityNames(group2.readEntry(QLatin1String("priority"),        QStringList() << QLatin1String("HW FFmpeg")));  // HW is ignored);
+    setDecoderPriorityNames(group2.readEntry(QLatin1String("priority"),        QStringList() << QLatin1String("FFmpeg")
+                                                                                             << QLatin1String("HW FFmpeg")));  // HW is ignored);
     setZeroCopy(group2.readEntry(QLatin1String("zeroCopy"),                    true));
 
     // ---

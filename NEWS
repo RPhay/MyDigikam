@@ -208,7 +208,7 @@ BUGFIXES:
 170 ==> 462258 - Cannot preview and play .avi video.
 171 ==> 462071 - Last tag cannot be removed if only using xmp.lr and xmp.dc.
 172 ==> 462368 - QTAV-library has been removed from unstable.
-173 ==> 
+173 ==> 462464 - Cannot play video files: "An error has occurred with the media player...".
 174 ==> 
 175 ==> 
 
