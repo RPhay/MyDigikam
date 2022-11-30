@@ -268,10 +268,7 @@
             "buildsystem": "cmake-ninja",
             "config-opts": [
                 "-DDIGIKAMSC_COMPILE_DIGIKAM=ON",
-                "-DDIGIKAMSC_COMPILE_DOC=OFF",
                 "-DDIGIKAMSC_COMPILE_PO=ON",
-                "-DDIGIKAMSC_CHECKOUT_DOC=OFF",
-                "-DDIGIKAMSC_CHECKOUT_PO=ON",
                 "-DBUILD_TESTING=OFF",
                 "-DENABLE_KFILEMETADATASUPPORT=OFF",
                 "-DENABLE_AKONADICONTACTSUPPORT=OFF",
