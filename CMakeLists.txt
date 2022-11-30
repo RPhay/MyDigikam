@@ -148,7 +148,6 @@ set_property(GLOBAL PROPERTY AUTOGEN_TARGETS_FOLDER "Generated")
 
 # doc and translations options
 
-option(DIGIKAMSC_CHECKOUT_PO             "Checkout application translations files from git repositories (default=OFF)"            OFF)
 option(DIGIKAMSC_CHECKOUT_DOC            "Checkout documentation translations files from git repositories (default=OFF)"          OFF)
 option(DIGIKAMSC_COMPILE_PO              "Build translations files (default=ON)"                                                  ON)
 option(DIGIKAMSC_COMPILE_DOC             "Build handbook files (default=ON)"                                                      ON)

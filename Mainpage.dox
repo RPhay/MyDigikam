@@ -442,10 +442,9 @@ There are two configuration sections : the top level and the core.
  - Packaging options:
 
   - \b DIGIKAMSC_COMPILE_DIGIKAM             : Build digiKam core (default=ON).
-  - \b DIGIKAMSC_CHECKOUT_PO                 : Extract application translation files from remote repositories (default=ON).
-  - \b DIGIKAMSC_CHECKOUT_DOC                : Extract documentation translation files from remote repositories (default=ON).
-  - \b DIGIKAMSC_COMPILE_DOC                 : Build handbook i18n files. It require to checkout documentation translations files before from remote repositories (default=ON).
-  - \b DIGIKAMSC_COMPILE_PO                  : Build GUI i18n files. It require to checkout application translations files before from remote repositories (default=ON).
+  - \b DIGIKAMSC_CHECKOUT_DOC                : Extract documentation translation files from remote repositories (default=OFF).
+  - \b DIGIKAMSC_COMPILE_DOC                 : Build handbook i18n files. It require to checkout documentation translations files before from remote repositories (default=OFF).
+  - \b DIGIKAMSC_COMPILE_PO                  : Build application translations files. (default=OFF).
 
  - Developers only options:
 
