@@ -216,13 +216,25 @@ void DXmlGuiWindow::restoreWindowSize(QWindow* const win, const KConfigGroup& gr
     QString s = QString::fromLatin1("%1x%2").arg(win->screen()->size().width())
                                             .arg(win->screen()->size().height());
 
-    int w     = group.readEntry(QString::fromLatin1("DK Width %1").arg(s),     win->width());
-    int h     = group.readEntry(QString::fromLatin1("DK Height %1").arg(s),    win->height());
-    int x     = group.readEntry(QString::fromLatin1("DK PositionX %1").arg(s), win->geometry().x());
-    int y     = group.readEntry(QString::fromLatin1("DK PositionY %1").arg(s), win->geometry().y());
+    int  w    = group.readEntry(QString::fromLatin1("DK Width %1").arg(s),     win->width());
+    int  h    = group.readEntry(QString::fromLatin1("DK Height %1").arg(s),    win->height());
+    int  x    = group.readEntry(QString::fromLatin1("DK PositionX %1").arg(s), win->geometry().x());
+    int  y    = group.readEntry(QString::fromLatin1("DK PositionY %1").arg(s), win->geometry().y());
+    bool max  = group.readEntry(QString::fromLatin1("DK Maximized %1").arg(s), (bool)(win->windowState() &
+                                                                                      Qt::WindowMaximized));
+    if (max)
+    {
+        win->setWindowState(Qt::WindowMaximized);
+    }
+    else
+    {
+        if (win->screen()->availableVirtualGeometry().contains(QRect(x, y, w, h)))
+        {
+            win->setPosition(x, y);
+        }
 
-    win->setPosition(x, y);
-    win->resize(w, h);
+        win->resize(w, h);
+    }
 
 #else
 
@@ -244,6 +256,8 @@ void DXmlGuiWindow::saveWindowSize(QWindow* const win, KConfigGroup& group)
     group.writeEntry(QString::fromLatin1("DK Height %1").arg(s),    win->height());
     group.writeEntry(QString::fromLatin1("DK PositionX %1").arg(s), win->geometry().x());
     group.writeEntry(QString::fromLatin1("DK PositionY %1").arg(s), win->geometry().y());
+    group.writeEntry(QString::fromLatin1("DK Maximized %1").arg(s), (bool)(win->windowState() &
+                                                                           Qt::WindowMaximized));
 
 #else
 
