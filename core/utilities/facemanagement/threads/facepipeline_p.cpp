@@ -149,7 +149,7 @@ void FacePipeline::Private::finishProcess(FacePipelineExtendedPackage::Ptr packa
     --packagesOnTheRoad;
 
     Q_EMIT q->processed(*package);
-    Q_EMIT q->progressValueChanged(float(packagesOnTheRoad + delayedPackages.size()) / totalPackagesAdded);
+    Q_EMIT q->progressValueChanged(1.0F - (float(packagesOnTheRoad + delayedPackages.size()) / totalPackagesAdded));
 
     package = nullptr;
 
