@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-30 00:45+0000\n"
+"POT-Creation-Date: 2022-12-01 00:44+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -55414,92 +55414,98 @@ msgid ""
 "File is a GPX file, but no track points with valid timestamps were found."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:238
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:242
 #, kde-format
 msgid "Zoom in"
 msgstr "ขยายขนาด"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:245
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:249
 #, kde-format
 msgid "Zoom out"
 msgstr "ลดขนาด"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:251
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:255
 #, kde-format
 msgid "Switch between markers and thumbnails."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:269
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:273
 #, fuzzy, kde-format
 msgid "Preview single items"
 msgstr "ภาพก่อน"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:272
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:276
 #, fuzzy, kde-format
 msgid "Preview grouped items"
 msgstr "จัดก&ลุ่มรูปภาพ"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:275
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:279
 #, kde-format
 msgid "Show numbers"
 msgstr "แสดงตัวเลขต่าง ๆ"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:281
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:285
 #, fuzzy, kde-format
 msgid "Increase the thumbnail size on the map"
 msgstr "ขนาดภาพตัวอย่างในมุมมองผังต้นไม้:"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:284
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:288
 #, fuzzy, kde-format
 msgid "Decrease the thumbnail size on the map"
 msgstr "ขนาดภาพตัวอย่างในมุมมองผังต้นไม้:"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:291
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:295
 #, fuzzy, kde-format
 msgid "Remove the current region selection"
 msgstr "ล้างการเลือกปัจจุบัน"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:299
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:303
 #, fuzzy, kde-format
 msgid "Select images by drawing a rectangle"
 msgstr "&บันทึกระดับความชื่นชอบเป็นป้ายกำกับ"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:304
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:308
 #, kde-format
 msgid "Pan mode"
 msgstr "โหมดการแพน"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:311
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:315
 #, kde-format
 msgid "Zoom into a group"
 msgstr "ปรับการย่อ/ขยายให้เข้ากับกลุ่ม"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:317
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:321
 #, kde-format
 msgid "Create a region selection from a thumbnail"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:323
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:327
 #, kde-format
 msgid "Filter images"
 msgstr "กรองภาพต่าง ๆ"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:328
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:332
 #, fuzzy, kde-format
 msgid "Remove the current filter"
 msgstr "ลบคลังภาพ"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:333
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:337
 #, fuzzy, kde-format
 msgid "Select images"
 msgstr "เลือกภาพต่าง ๆ "
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:339
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:343
 #, fuzzy, kde-format
 msgid "Lock the map position"
 msgstr "ซ่อมแซมภาพถ่าย"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:789
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:346
+#, fuzzy, kde-format
+#| msgid "Load playlist from a file."
+msgid "Load tracks from albums"
+msgstr "โหลดรายการเล่นขึ้นมาจากแฟ้ม"
+
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:800
 #, kde-format
 msgid "Map settings"
 msgstr "ตั้งค่าต่าง ๆ ของแผนที่"

@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-30 00:45+0000\n"
+"POT-Creation-Date: 2022-12-01 00:44+0000\n"
 "PO-Revision-Date: 2022-11-11 09:17+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -54364,92 +54364,98 @@ msgid ""
 msgstr ""
 "Skráin er GPX-skrá, en engir leiðarpunktar með gildum tímamerkjum fundust."
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:238
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:242
 #, kde-format
 msgid "Zoom in"
 msgstr "Renna að"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:245
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:249
 #, kde-format
 msgid "Zoom out"
 msgstr "Renna frá"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:251
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:255
 #, kde-format
 msgid "Switch between markers and thumbnails."
 msgstr "Skipta milli merkja og smámynda"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:269
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:273
 #, kde-format
 msgid "Preview single items"
 msgstr "Forskoða stök atriði"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:272
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:276
 #, kde-format
 msgid "Preview grouped items"
 msgstr "Forskoða hópuð atriði"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:275
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:279
 #, kde-format
 msgid "Show numbers"
 msgstr "Sýna númer"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:281
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:285
 #, kde-format
 msgid "Increase the thumbnail size on the map"
 msgstr "Auka stærð smámynda á kortinu"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:284
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:288
 #, kde-format
 msgid "Decrease the thumbnail size on the map"
 msgstr "Minnka stærð smámynda á kortinu"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:291
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:295
 #, kde-format
 msgid "Remove the current region selection"
 msgstr "Fjarlægja núverandi svæðisval"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:299
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:303
 #, kde-format
 msgid "Select images by drawing a rectangle"
 msgstr "Veldu myndir með því að draga rétthyrning"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:304
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:308
 #, kde-format
 msgid "Pan mode"
 msgstr "Hliðrunarhamur"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:311
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:315
 #, kde-format
 msgid "Zoom into a group"
 msgstr "Renna inn að hópi"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:317
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:321
 #, kde-format
 msgid "Create a region selection from a thumbnail"
 msgstr "Búa til svæðisval út frá smámynd"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:323
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:327
 #, kde-format
 msgid "Filter images"
 msgstr "Sía myndir"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:328
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:332
 #, kde-format
 msgid "Remove the current filter"
 msgstr "Fjarlægja núverandi síu"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:333
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:337
 #, kde-format
 msgid "Select images"
 msgstr "Veldu myndir"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:339
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:343
 #, kde-format
 msgid "Lock the map position"
 msgstr "Læsa hnattstöðu"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:789
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:346
+#, fuzzy, kde-format
+#| msgid "Load playlist from a file."
+msgid "Load tracks from albums"
+msgstr "Hlaða spilunarlista inn úr skrá."
+
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:800
 #, kde-format
 msgid "Map settings"
 msgstr "Stillingar landakorts"

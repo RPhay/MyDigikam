@@ -32,7 +32,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-30 00:45+0000\n"
+"POT-Creation-Date: 2022-12-01 00:44+0000\n"
 "PO-Revision-Date: 2020-02-15 19:57+0800\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
@@ -56860,92 +56860,98 @@ msgid ""
 "File is a GPX file, but no track points with valid timestamps were found."
 msgstr "檔案是 GPX 檔，但是找不到資料點。"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:238
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:242
 #, kde-format
 msgid "Zoom in"
 msgstr "放大"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:245
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:249
 #, kde-format
 msgid "Zoom out"
 msgstr "縮小"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:251
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:255
 #, kde-format
 msgid "Switch between markers and thumbnails."
 msgstr "在標記與縮圖間切換"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:269
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:273
 #, kde-format
 msgid "Preview single items"
 msgstr "預覽單一項目"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:272
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:276
 #, kde-format
 msgid "Preview grouped items"
 msgstr "預覽群組項目"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:275
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:279
 #, kde-format
 msgid "Show numbers"
 msgstr "顯示編號"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:281
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:285
 #, kde-format
 msgid "Increase the thumbnail size on the map"
 msgstr "在地圖上遞增縮圖大小"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:284
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:288
 #, kde-format
 msgid "Decrease the thumbnail size on the map"
 msgstr "在地圖上遞減縮圖大小"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:291
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:295
 #, kde-format
 msgid "Remove the current region selection"
 msgstr "移除目前選取的區域"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:299
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:303
 #, kde-format
 msgid "Select images by drawing a rectangle"
 msgstr "畫個矩形來選擇影像"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:304
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:308
 #, kde-format
 msgid "Pan mode"
 msgstr "瀏覽模式"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:311
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:315
 #, kde-format
 msgid "Zoom into a group"
 msgstr "放大到群組"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:317
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:321
 #, kde-format
 msgid "Create a region selection from a thumbnail"
 msgstr "從縮圖建立選取區域"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:323
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:327
 #, kde-format
 msgid "Filter images"
 msgstr "過濾影像"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:328
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:332
 #, kde-format
 msgid "Remove the current filter"
 msgstr "移除目前的過濾器"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:333
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:337
 #, kde-format
 msgid "Select images"
 msgstr "選擇影像"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:339
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:343
 #, kde-format
 msgid "Lock the map position"
 msgstr "鎖定地圖位置"
 
-#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:789
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:346
+#, fuzzy, kde-format
+#| msgid "Load playlist from a file."
+msgid "Load tracks from albums"
+msgstr "從檔案載入播放清單。"
+
+#: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:800
 #, kde-format
 msgid "Map settings"
 msgstr "地圖設定值"
