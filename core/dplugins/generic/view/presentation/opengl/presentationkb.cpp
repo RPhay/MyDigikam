@@ -281,7 +281,7 @@ PresentationKB::PresentationKB(PresentationContainer* const sharedData)
 
     d->playbackWidget = new PresentationAudioWidget(this, d->sharedData->soundtrackUrls, d->sharedData);
     d->playbackWidget->hide();
-    d->playbackWidget->move(d->deskX, d->deskY);
+    d->playbackWidget->move(0, 0);
 
 #endif
 
@@ -726,8 +726,8 @@ void PresentationKB::mouseMoveEvent(QMouseEvent* e)
 
     QPoint pos(e->pos());
 
-    if ((pos.y() > (d->deskY + 20)) &&
-        (pos.y() < (d->deskY + d->deskHeight - 20 - 1)))
+    if ((pos.y() > 20)                     &&
+        (pos.y() < (d->deskHeight - 20 - 1)))
     {
         if (d->playbackWidget->isHidden())
         {
@@ -755,8 +755,8 @@ void PresentationKB::slotMouseMoveTimeOut()
 {
     QPoint pos(QCursor::pos());
 
-    if ((pos.y() < (d->deskY + 20)) ||
-        (pos.y() > (d->deskY + d->deskHeight - 20 - 1))
+    if ((pos.y() < 20)                    ||
+        (pos.y() > (d->deskHeight - 20 - 1))
 
 #ifdef HAVE_MEDIAPLAYER
 

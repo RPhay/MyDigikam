@@ -655,7 +655,7 @@ void PresentationWidget::showOverlays()
     if (d->slideCtrlWidget->isHidden())
     {
         int w = d->slideCtrlWidget->width() - 1;
-        d->slideCtrlWidget->move(d->deskX + d->deskWidth - w, d->deskY);
+        d->slideCtrlWidget->move(d->deskWidth - w, 0);
         d->slideCtrlWidget->show();
     }
 
@@ -663,7 +663,7 @@ void PresentationWidget::showOverlays()
 
     if (d->playbackWidget->isHidden())
     {
-        d->playbackWidget->move(d->deskX, d->deskY);
+        d->playbackWidget->move(0, 0);
         d->playbackWidget->show();
     }
 
@@ -740,8 +740,8 @@ void PresentationWidget::mouseMoveEvent(QMouseEvent* e)
 
     QPoint pos(e->pos());
 
-    if ((pos.y() > (d->deskY + 20)) &&
-        (pos.y() < (d->deskY + d->deskHeight - 20 - 1)))
+    if ((pos.y() > 20)                     &&
+        (pos.y() < (d->deskHeight - 20 - 1)))
     {
         if (!d->slideCtrlWidget->canHide()
 
@@ -798,9 +798,9 @@ void PresentationWidget::slotMouseMoveTimeOut()
 {
     QPoint pos(QCursor::pos());
 
-    if ((pos.y() < (d->deskY + 20))                     ||
-        (pos.y() > (d->deskY + d->deskHeight - 20 - 1)) ||
-        !d->timer->isActive()                           ||
+    if ((pos.y() < 20)                       ||
+        (pos.y() > (d->deskHeight - 20 - 1)) ||
+        !d->timer->isActive()                ||
         d->slideCtrlWidget->underMouse()
 
 #ifdef HAVE_MEDIAPLAYER
