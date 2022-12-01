@@ -19,6 +19,7 @@ namespace Digikam
 
 DXmlGuiWindow::DXmlGuiWindow(QWidget* const parent, Qt::WindowFlags f)
     : KXmlGuiWindow(parent, f),
+      m_winLoaded  (false),
       d            (new Private)
 {
     m_animLogo = nullptr;
@@ -41,6 +42,13 @@ void DXmlGuiWindow::setConfigGroupName(const QString& name)
 QString DXmlGuiWindow::configGroupName() const
 {
     return d->configGroupName;
+}
+
+void DXmlGuiWindow::showEvent(QShowEvent* e)
+{
+    KXmlGuiWindow::showEvent(e);
+
+    restoreWindowSize();
 }
 
 void DXmlGuiWindow::closeEvent(QCloseEvent* e)
@@ -213,26 +221,27 @@ void DXmlGuiWindow::restoreWindowSize(QWindow* const win, const KConfigGroup& gr
 
 #ifdef Q_OS_WIN
 
-    QString s = QString::fromLatin1("%1x%2").arg(win->screen()->size().width())
-                                            .arg(win->screen()->size().height());
+    int  w   = group.readEntry(QString::fromLatin1("DK Width"),     win->width());
+    int  h   = group.readEntry(QString::fromLatin1("DK Height"),    win->height());
+    int  x   = group.readEntry(QString::fromLatin1("DK PositionX"), win->geometry().x());
+    int  y   = group.readEntry(QString::fromLatin1("DK PositionY"), win->geometry().y());
+    bool max = group.readEntry(QString::fromLatin1("DK Maximized"), (bool)(win->windowState() &
+                                                                           Qt::WindowMaximized));
 
-    int  w    = group.readEntry(QString::fromLatin1("DK Width %1").arg(s),     win->width());
-    int  h    = group.readEntry(QString::fromLatin1("DK Height %1").arg(s),    win->height());
-    int  x    = group.readEntry(QString::fromLatin1("DK PositionX %1").arg(s), win->geometry().x());
-    int  y    = group.readEntry(QString::fromLatin1("DK PositionY %1").arg(s), win->geometry().y());
-    bool max  = group.readEntry(QString::fromLatin1("DK Maximized %1").arg(s), (bool)(win->windowState() &
-                                                                                      Qt::WindowMaximized));
+    if (win->screen()->availableVirtualGeometry().contains(QRect(x, y, w, h)))
+    {
+        win->setPosition(x, y);
+    }
+
     if (max)
     {
+        // we don't use showMaximized() because it also calls
+        // setVisible() it would create an infinite loop.
+
         win->setWindowState(Qt::WindowMaximized);
     }
     else
     {
-        if (win->screen()->availableVirtualGeometry().contains(QRect(x, y, w, h)))
-        {
-            win->setPosition(x, y);
-        }
-
         win->resize(w, h);
     }
 
@@ -249,15 +258,12 @@ void DXmlGuiWindow::saveWindowSize(QWindow* const win, KConfigGroup& group)
 
 #ifdef Q_OS_WIN
 
-    QString s = QString::fromLatin1("%1x%2").arg(win->screen()->size().width())
-                                            .arg(win->screen()->size().height());
-
-    group.writeEntry(QString::fromLatin1("DK Width %1").arg(s),     win->width());
-    group.writeEntry(QString::fromLatin1("DK Height %1").arg(s),    win->height());
-    group.writeEntry(QString::fromLatin1("DK PositionX %1").arg(s), win->geometry().x());
-    group.writeEntry(QString::fromLatin1("DK PositionY %1").arg(s), win->geometry().y());
-    group.writeEntry(QString::fromLatin1("DK Maximized %1").arg(s), (bool)(win->windowState() &
-                                                                           Qt::WindowMaximized));
+    group.writeEntry(QString::fromLatin1("DK Width"),     win->width());
+    group.writeEntry(QString::fromLatin1("DK Height"),    win->height());
+    group.writeEntry(QString::fromLatin1("DK PositionX"), win->geometry().x());
+    group.writeEntry(QString::fromLatin1("DK PositionY"), win->geometry().y());
+    group.writeEntry(QString::fromLatin1("DK Maximized"), (bool)(win->windowState() &
+                                                                 Qt::WindowMaximized));
 
 #else
 
@@ -272,7 +278,14 @@ void DXmlGuiWindow::restoreWindowSize()
 
 #ifdef Q_OS_WIN
 
+    if (m_winLoaded)
+    {
+        return;
+    }
+
     winId();
+
+    m_winLoaded               = true;
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(configGroupName());
