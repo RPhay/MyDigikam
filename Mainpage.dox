@@ -17,15 +17,12 @@
 |├── bootstrap.local                                          | Configuration script to compile a local version under Linux             |
 |├── bootstrap.macports                                       | Configuration script to compile under macOS with Macports               |
 |├── bootstrap.mxe                                            | Configuration script to cross-compile for Windows under Linux with MXE  |
+|├── bootstrap.tarball                                        | Script to build the release tarball                                     |
 |├── build                                                    | Temporary directory created by bootstrap script to host compiled files  |
-|├── ChangeLog                                                | Complete list of source code changes since the project origin           |
+|├── ChangeLog                                                | Note about how to list source code changes since the project origin     |
 |├── CMakeLists.txt                                           | Main Cmake script including lead compilation rules for the project      |
-|├── COPYING                                                  | Main project license                                                    |
-|├── COPYING-CMAKE-SCRIPTS                                    | Cmake files license                                                     |
-|├── COPYING.LIB                                              | Internal shared libraries license                                       |
-|├── download-repos                                           | Script to download all source code including extra repositories         |
-|├── gits                                                     | Script to perform git in recursive mode over multiple repositories      |
-|├── gitup                                                    | Script to perform git pull --rebase in recursive mode                   |
+|├── COPYING                                                  | Link to main project license                                            |
+|├── LICENSES                                                 | All licenses used in the project                                        |
 |├── Mainpage.dox                                             | API documentation main page based on Doxygen                            |
 |├── Messages.sh                                              | Script to extract strings for translators                               |
 |├── NEWS                                                     | Notice to resume all project changes done at release time               |
@@ -241,11 +238,7 @@
 |│       │   ├── editor                                       | Image Editor configuration views                                        |
 |│       │   └── metadata                                     | Metadata configuration views                                            |
 |│       └── slideshow                                        | The simple slideshow tool                                               |
-|├── doc                                                      | Handbooks directory                                                     |
-|│   ├── digikam                                              | digiKam manual                                                          |
-|│   ├── project                                              | Extra files for the documentation                                       |
-|│   └── showfoto                                             | Showfoto manual                                                         |
-|├── extra                                                    | Optional extra libraries to compile advanced features                   |
+|├── po                                                       | Program translations                                                    |
 |└── project                                                  | Extra project parts                                                     |
 |    ├── bundles                                              | Bundles build scripts                                                   |
 |    │   ├── 3rdparty                                         | External components required to build bundles                           |
@@ -255,7 +248,6 @@
 |    │   ├── macports                                         | macOS package                                                           |
 |    │   └── mxe                                              | Windows installer                                                       |
 |    ├── documents                                            | Project documentations                                                  |
-|    ├── release                                              | Release scripts                                                         |
 |    ├── reports                                              | Static analyzers report scripts for Continuous Integration              |
 |    └── scripts                                              | 3rdparty source code management scripts                                 |
 
