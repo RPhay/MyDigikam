@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-01 00:44+0000\n"
+"POT-Creation-Date: 2022-12-02 00:43+0000\n"
 "PO-Revision-Date: 2022-09-09 23:39+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: \n"
@@ -1002,9 +1002,9 @@ msgstr ""
 "<p>رجاء اختر الألبوم المقصد من مكتبة «دِجي‌كام» لنقل الصّور المحدّدة إليه.</p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:364
-#: core/utilities/imageeditor/main/imagewindow.cpp:1102
-#: core/utilities/imageeditor/main/imagewindow.cpp:1127
-#: core/utilities/imageeditor/main/imagewindow.cpp:1159
+#: core/utilities/imageeditor/main/imagewindow.cpp:1100
+#: core/utilities/imageeditor/main/imagewindow.cpp:1125
+#: core/utilities/imageeditor/main/imagewindow.cpp:1157
 #, kde-format
 msgid "Album \"%1\""
 msgstr "الألبوم ”%1“"
@@ -1370,7 +1370,7 @@ msgstr "يقرأ قاعدة البيانات..."
 msgid "Loading albums..."
 msgstr "الإعراب الكل"
 
-#: core/app/main/digikamapp.cpp:337
+#: core/app/main/digikamapp.cpp:335
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1380,7 +1380,7 @@ msgstr ""
 "<p>يبدو مجلّد لاحات ICC غير صالحًا.</p><p>إن أردت تجريب ضبطه مجدّدًا، فاختر "
 "”نعم“، وإلّا فاختر ”لا“، وستُعطّل ميزة ”إدارة الألوان“ حتّى تحلّ هذه المشكلة.</p>"
 
-#: core/app/main/digikamapp.cpp:618 core/app/views/stack/trashview.cpp:428
+#: core/app/main/digikamapp.cpp:616 core/app/views/stack/trashview.cpp:428
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -1391,7 +1391,7 @@ msgstr[3] "لا عناصر محدّدة (%1 عناصر)"
 msgstr[4] "لا عناصر محدّدة (%1 عنصرًا)"
 msgstr[5] "لا عناصر محدّدة (%1 عنصر)"
 
-#: core/app/main/digikamapp.cpp:624
+#: core/app/main/digikamapp.cpp:622
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1404,7 +1404,7 @@ msgstr[3] "لا عناصر محدّدة (%1 عناصر)"
 msgstr[4] "لا عناصر محدّدة (%1 عنصرًا)"
 msgstr[5] "لا عناصر محدّدة (%1 عنصر)"
 
-#: core/app/main/digikamapp.cpp:629
+#: core/app/main/digikamapp.cpp:627
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1417,7 +1417,7 @@ msgstr[3] "لا عناصر محدّدة (%1 عناصر)"
 msgstr[4] "لا عناصر محدّدة (%1 عنصرًا)"
 msgstr[5] "لا عناصر محدّدة (%1 عنصر)"
 
-#: core/app/main/digikamapp.cpp:640
+#: core/app/main/digikamapp.cpp:638
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1430,7 +1430,7 @@ msgstr[3] "<b>%1</b> عناصر محدّدة."
 msgstr[4] "%2/%1 عنصرًا محدّدًا"
 msgstr[5] "<b>%1</b> عنصر محدّد."
 
-#: core/app/main/digikamapp.cpp:653
+#: core/app/main/digikamapp.cpp:651
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1443,7 +1443,7 @@ msgstr[3] "<b>%1</b> عناصر محدّدة."
 msgstr[4] "%2/%1 عنصرًا محدّدًا"
 msgstr[5] "<b>%1</b> عنصر محدّد."
 
-#: core/app/main/digikamapp.cpp:661
+#: core/app/main/digikamapp.cpp:659
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1456,7 +1456,7 @@ msgstr[3] "لا عناصر محدّدة (%1 عناصر)"
 msgstr[4] "لا عناصر محدّدة (%1 عنصرًا)"
 msgstr[5] "لا عناصر محدّدة (%1 عنصر)"
 
-#: core/app/main/digikamapp.cpp:669
+#: core/app/main/digikamapp.cpp:667
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1469,7 +1469,7 @@ msgstr[3] "%2/%1 عناصر محدّدة"
 msgstr[4] "%2/%1 عنصرًا محدّدًا"
 msgstr[5] "%2/%1 عنصر محدّد"
 
-#: core/app/main/digikamapp.cpp:678
+#: core/app/main/digikamapp.cpp:676
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1482,23 +1482,23 @@ msgstr[3] "لا عناصر محدّدة (%1 عناصر)"
 msgstr[4] "لا عناصر محدّدة (%1 عنصرًا)"
 msgstr[5] "لا عناصر محدّدة (%1 عنصر)"
 
-#: core/app/main/digikamapp.cpp:709
+#: core/app/main/digikamapp.cpp:707
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 من %2)"
 
-#: core/app/main/digikamapp.cpp:723
+#: core/app/main/digikamapp.cpp:721
 #, fuzzy, kde-format
 #| msgid " (%1 of %2)"
 msgid " (%1 of %2 [%3] )"
 msgstr "%1 من %2"
 
-#: core/app/main/digikamapp.cpp:727
+#: core/app/main/digikamapp.cpp:725
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:738
+#: core/app/main/digikamapp.cpp:736
 #, fuzzy, kde-format
 #| msgid "1 item"
 #| msgid_plural "%1 items"
@@ -1511,7 +1511,7 @@ msgstr[3] "%1 عناصر"
 msgstr[4] "%1 عنصرًا"
 msgstr[5] "%1 عنصر"
 
-#: core/app/main/digikamapp.cpp:788
+#: core/app/main/digikamapp.cpp:786
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
@@ -1522,7 +1522,7 @@ msgstr[3] "اكتب البيانات الوصفيّة في الملفات الم
 msgstr[4] "اكتب البيانات الوصفيّة في الملفات المحددة"
 msgstr[5] "اكتب البيانات الوصفيّة في الملفات المحددة"
 
-#: core/app/main/digikamapp.cpp:790
+#: core/app/main/digikamapp.cpp:788
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -3102,8 +3102,8 @@ msgid "no item"
 msgstr "لا عناصر"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:431
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:440
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:466
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:438
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:464
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
@@ -21488,7 +21488,7 @@ msgstr "شغّل"
 #. i18n: ectx: property (text), widget (QPushButton, m_stopButton)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:36
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:39
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:288
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:286
 #, kde-format
 msgid "Stop"
 msgstr "أوقف"
@@ -31848,7 +31848,7 @@ msgid "Remove Black Frame"
 msgstr "أسود"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:263
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:342
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:340
 #, kde-format
 msgid "Clear List"
 msgstr "امسح القائمة"
@@ -38624,7 +38624,7 @@ msgstr "الطّاولة الضّوئيّة"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:427
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:53
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:191
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:189
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "مدير الطّوابير بدفعات"
@@ -42861,7 +42861,7 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "تطوير (٢٠٠٤)"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:91
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:99
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -49772,7 +49772,7 @@ msgid "Unknown"
 msgstr "مجهولة"
 
 #: core/showfoto/main/showfoto.cpp:265
-#: core/utilities/imageeditor/main/imagewindow.cpp:493
+#: core/utilities/imageeditor/main/imagewindow.cpp:491
 #, fuzzy, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
 msgid "%1 (%2 of %3)"
@@ -49799,8 +49799,8 @@ msgid "Remote file handling is not supported"
 msgstr "التّعامل مع الملفّات البعيدة غير مدعوم"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:102
-#: core/utilities/imageeditor/main/imagewindow.cpp:576
-#: core/utilities/imageeditor/main/imagewindow.cpp:691
+#: core/utilities/imageeditor/main/imagewindow.cpp:574
+#: core/utilities/imageeditor/main/imagewindow.cpp:689
 #, kde-format
 msgid "Image saved successfully"
 msgstr "حُفظت الصّورة بنجاح"
@@ -51160,7 +51160,7 @@ msgid "<b>Renaming images. Please wait...</b>"
 msgstr "<b>يعيد تسمية الصّور. رجاء انتظر...</b>"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:86
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:907
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:905
 #, kde-format
 msgid "Processing..."
 msgstr "يعالج..."
@@ -55426,33 +55426,33 @@ msgctxt "@action: open with desktop application"
 msgid "Open With..."
 msgstr "افتح ب‍..."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:185
+#: core/utilities/imageeditor/main/imagewindow.cpp:183
 #, kde-format
 msgid "Image Editor - %1"
 msgstr "محرّر الصّور - %1"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:189
+#: core/utilities/imageeditor/main/imagewindow.cpp:187
 #, kde-format
 msgid "Image Editor"
 msgstr "محرّر الصّور"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:362
+#: core/utilities/imageeditor/main/imagewindow.cpp:360
 #, kde-format
 msgctxt "@title: unknown image dimension"
 msgid "Unknown"
 msgstr "مجهول"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:363
+#: core/utilities/imageeditor/main/imagewindow.cpp:361
 #, kde-format
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1×%2 (%3م.بكسل)"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:932
+#: core/utilities/imageeditor/main/imagewindow.cpp:930
 #, kde-format
 msgid "No Image in Current Album"
 msgstr "لا صور في الألبوم الحاليّ"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:933
+#: core/utilities/imageeditor/main/imagewindow.cpp:931
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
@@ -55461,13 +55461,13 @@ msgstr ""
 "لا صور لعرضها في الألبوم الحاليّز\n"
 "سيُغلق محرّر الصّور."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1204
+#: core/utilities/imageeditor/main/imagewindow.cpp:1202
 #, kde-format
 msgctxt "@title"
 msgid "File Not Available"
 msgstr "الملفّ غير متوفّر"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1205
+#: core/utilities/imageeditor/main/imagewindow.cpp:1203
 #, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"
@@ -57228,7 +57228,7 @@ msgstr "امسح الكلّ"
 msgid "Drag and drop images here"
 msgstr "اسحب صورًا وأسقطها هنا"
 
-#: core/utilities/lighttable/lighttablewindow.cpp:194
+#: core/utilities/lighttable/lighttablewindow.cpp:192
 #, kde-format
 msgid "%1 item on Light Table"
 msgid_plural "%1 items on Light Table"
@@ -57770,105 +57770,105 @@ msgstr ""
 msgid "Thumbs"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:122
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:120
 #, kde-format
 msgid "Queues"
 msgstr "الطّوابير"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:131
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:129
 #, kde-format
 msgid "Queue Settings"
 msgstr "إعدادات الطّابور"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:140
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:138
 #, kde-format
 msgid "Control Panel"
 msgstr "لوحة التّحكّم"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:149
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:147
 #, kde-format
 msgid "Assigned Tools"
 msgstr "الأدوات المسندة"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:158
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:156
 #, kde-format
 msgid "Tool Settings"
 msgstr "إعدادات الأداة"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:275
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:273
 #, kde-format
 msgid "Run"
 msgstr "شغّل"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:282
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:280
 #, kde-format
 msgid "Run all"
 msgstr "شغّل الكلّ"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:294
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:292
 #, kde-format
 msgid "New Queue"
 msgstr "طابور جديد"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:298
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:296
 #, kde-format
 msgid "Remove Queue"
 msgstr "أزل الطّابور"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:304
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:302
 #, kde-format
 msgid "Save Workflow"
 msgstr "احفظ سير العمل"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:308
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:306
 #, kde-format
 msgid "Remove items"
 msgstr "أزل العناصر"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:314
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:312
 #, kde-format
 msgid "Remove processed items"
 msgstr "أزل العناصر المعالجة"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:319
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:317
 #, kde-format
 msgid "Clear Queue"
 msgstr "امسح الطّابور"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:330
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:328
 #, kde-format
 msgid "Move up"
 msgstr "انقل لأعلى"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:334
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:332
 #, kde-format
 msgid "Move down"
 msgstr "انقل لأسفل"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:338
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:336
 #, kde-format
 msgid "Remove tool"
 msgstr "أزل الأداة"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:431
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:429
 #, kde-format
 msgid "Current Queue: "
 msgstr "الطّابور الحاليّ: "
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:436
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:462
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:434
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:460
 #, kde-format
 msgid "No items"
 msgstr "لا عناصر"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:449
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:475
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:447
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:473
 #, kde-format
 msgid "No tasks"
 msgstr "لا مهامّ"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:453
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:479
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:451
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:477
 #, kde-format
 msgid "1 task"
 msgid_plural "%1 tasks"
@@ -57879,96 +57879,96 @@ msgstr[3] "%1 مهامّ"
 msgstr[4] "%1 مهمّة"
 msgstr[5] "%1 مهمّة"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:457
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:455
 #, kde-format
 msgctxt "#info: total number of items to process"
 msgid "Total: "
 msgstr "الإجمالي: "
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:487
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:485
 #, kde-format
 msgctxt "batch queue manager is ready to use"
 msgid "Ready"
 msgstr "جاهز"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:525
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:523
 #, kde-format
 msgid "Processing under progress"
 msgstr "المعالجة جارية"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:526
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:524
 #, kde-format
 msgid "Batch Queue Manager is running. Do you want to cancel current job?"
 msgstr "مدير الطّوابير بدفعات يعمل. أتريد إلغاء المهمّة الحاليّة؟"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:625
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:623
 #, kde-format
 msgid "There is no queue to be run."
 msgstr "لا طابور لتشغيله."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:629
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:627
 #, kde-format
 msgid "There is no item to process in the current queue (%1)."
 msgstr "لا عناصر لمعالجتها في الطّابور الحاليّ (%1)."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:635
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:633
 #, fuzzy, kde-format
 msgid "Custom renaming rule is invalid for current queue (%1). Please fix it."
 msgstr "قاعدة التّسمية المخصّصة غير صالحة للطّابور الحاليّ (%1). رجاء أصلحها."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:640
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:638
 #, kde-format
 msgid ""
 "Assigned batch tools list is empty for current queue (%1). Please assign "
 "tools."
 msgstr "أدوات الدّفعات المسندة فارغة للطّابور الحاليّ (%1). رجاء أسند أدوات."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:672
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:670
 #, kde-format
 msgid "There are no items to process in the queues."
 msgstr "لا عناصر لمعالجتها في الطّوابير."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:843
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:853
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:841
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:851
 #, kde-format
 msgid "Processed items album settings"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:844
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:842
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not set. Please select "
 "one from Queue Settings panel."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:854
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:852
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not available or not "
 "writable. Please set another one from Queue Settings panel."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:932
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:930
 #, kde-format
 msgid "Failed to process item..."
 msgstr "فشلت معالجة العنصر..."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:945
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:943
 #, kde-format
 msgid "Process Cancelled..."
 msgstr "أُلغيت المعالجة..."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:965
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:963
 #, fuzzy, kde-format
 msgid "Item \"%1\" from queue \"%2\": %3"
 msgstr "العنصر ”%1“ من الطّابور ”%2“: %3"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:994
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:992
 #, kde-format
 msgid "Batch queue finished"
 msgstr "اكتملت الطّوابير بدفعات"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:998
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:996
 #, kde-format
 msgid "All batch queues finished"
 msgstr ""

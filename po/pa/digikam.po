@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-01 00:44+0000\n"
+"POT-Creation-Date: 2022-12-02 00:43+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -1049,9 +1049,9 @@ msgid ""
 msgstr "<p>ਡਿਜਿਕੈਮ ਲਾਇਬਰੇਰੀ ਵਿੱਚੋਂ ਟਿਕਾਣਾ ਐਲਬਮ ਚੁਣੋ, ਜਿਸ ਵਿੱਚ ਚੁਣੇ ਚਿੱਤਰਾਂ ਨੂੰ ਭੇਜਣਾ ਹੈ।</p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:364
-#: core/utilities/imageeditor/main/imagewindow.cpp:1102
-#: core/utilities/imageeditor/main/imagewindow.cpp:1127
-#: core/utilities/imageeditor/main/imagewindow.cpp:1159
+#: core/utilities/imageeditor/main/imagewindow.cpp:1100
+#: core/utilities/imageeditor/main/imagewindow.cpp:1125
+#: core/utilities/imageeditor/main/imagewindow.cpp:1157
 #, kde-format
 msgid "Album \"%1\""
 msgstr "ਐਲਬਮ \"%1\""
@@ -1421,7 +1421,7 @@ msgstr "...ਡਾਟਾਬੇਸ ਪੜ੍ਹਿਆ ਜਾ ਰਿਹਾ ਹੈ"
 msgid "Loading albums..."
 msgstr "ਸਭ ਐਲਬਮ ਪਾਰਸ ਕੀਤੀਆਂ ਜਾ ਰਹੀਆਂ ਹਨ"
 
-#: core/app/main/digikamapp.cpp:337
+#: core/app/main/digikamapp.cpp:335
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1429,14 +1429,14 @@ msgid ""
 "\"Color Management\" feature will be disabled until you solve this issue.</p>"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:618 core/app/views/stack/trashview.cpp:428
+#: core/app/main/digikamapp.cpp:616 core/app/views/stack/trashview.cpp:428
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮ)"
 msgstr[1] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮਾਂ)"
 
-#: core/app/main/digikamapp.cpp:624
+#: core/app/main/digikamapp.cpp:622
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1445,7 +1445,7 @@ msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮ)"
 msgstr[1] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮਾਂ)"
 
-#: core/app/main/digikamapp.cpp:629
+#: core/app/main/digikamapp.cpp:627
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1454,7 +1454,7 @@ msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮ)"
 msgstr[1] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮਾਂ)"
 
-#: core/app/main/digikamapp.cpp:640
+#: core/app/main/digikamapp.cpp:638
 #, fuzzy, kde-format
 #| msgid "%1/%2 items selected"
 msgid "1/%2 item selected (%3/%4)"
@@ -1462,7 +1462,7 @@ msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "%2/%1 ਆਈਟਮਾਂ ਚੁਣੀਆਂ"
 msgstr[1] "%2/%1 ਆਈਟਮਾਂ ਚੁਣੀਆਂ"
 
-#: core/app/main/digikamapp.cpp:653
+#: core/app/main/digikamapp.cpp:651
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1471,7 +1471,7 @@ msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "%2/%1 ਆਈਟਮ ਚੁਣੀ"
 msgstr[1] "%2/%1 ਆਈਟਮ ਚੁਣੀ"
 
-#: core/app/main/digikamapp.cpp:661
+#: core/app/main/digikamapp.cpp:659
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1480,7 +1480,7 @@ msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮ)"
 msgstr[1] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮਾਂ)"
 
-#: core/app/main/digikamapp.cpp:669
+#: core/app/main/digikamapp.cpp:667
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1489,7 +1489,7 @@ msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "%2/%1 ਆਈਟਮ ਚੁਣੀ"
 msgstr[1] "%2/%1 ਆਈਟਮ ਚੁਣੀ"
 
-#: core/app/main/digikamapp.cpp:678
+#: core/app/main/digikamapp.cpp:676
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1498,23 +1498,23 @@ msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮ)"
 msgstr[1] "ਕੋਈ ਆਈਟਮ ਨਹੀਂ ਚੁਣੀ (%1 ਆਈਟਮਾਂ)"
 
-#: core/app/main/digikamapp.cpp:709
+#: core/app/main/digikamapp.cpp:707
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%2 ਵਿੱਚੋਂ %1)"
 
-#: core/app/main/digikamapp.cpp:723
+#: core/app/main/digikamapp.cpp:721
 #, fuzzy, kde-format
 #| msgid " (%1 of %2 [%3])"
 msgid " (%1 of %2 [%3] )"
 msgstr " (%2 ਵਿੱਚੋਂ %1 [%3])"
 
-#: core/app/main/digikamapp.cpp:727
+#: core/app/main/digikamapp.cpp:725
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:738
+#: core/app/main/digikamapp.cpp:736
 #, fuzzy, kde-format
 #| msgid "1 item"
 #| msgid_plural "%1 items"
@@ -1523,7 +1523,7 @@ msgid_plural "%1 items hidden"
 msgstr[0] "੧ ਬਿੱਟ"
 msgstr[1] "%1 ਬਿੱਟ"
 
-#: core/app/main/digikamapp.cpp:788
+#: core/app/main/digikamapp.cpp:786
 #, fuzzy, kde-format
 #| msgid "Write Metadata to Image"
 #| msgid_plural "Write Metadata to Selected Images"
@@ -1532,7 +1532,7 @@ msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "ਚਿੱਤਰ ਲਈ ਮੇਟਾਡਾਟਾ ਲਿਖੋ"
 msgstr[1] "ਚੁਣੇ ਚਿੱਤਰਾਂ ਲਈ ਮੇਟਾਡਾਟਾ ਲਿਖੋ"
 
-#: core/app/main/digikamapp.cpp:790
+#: core/app/main/digikamapp.cpp:788
 #, fuzzy, kde-format
 #| msgid "Reread Metadata From Image"
 #| msgid_plural "Reread Metadata From Selected Images"
@@ -3229,8 +3229,8 @@ msgid "no item"
 msgstr "ਆਈਟਮਾਂ ਨਹੀਂ"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:431
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:440
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:466
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:438
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:464
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
@@ -21684,7 +21684,7 @@ msgstr "ਚਲਾਓ"
 #. i18n: ectx: property (text), widget (QPushButton, m_stopButton)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:36
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:39
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:288
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:286
 #, kde-format
 msgid "Stop"
 msgstr "ਰੋਕੋ"
@@ -32031,7 +32031,7 @@ msgid "Remove Black Frame"
 msgstr "ਕਾਲਾ ਫਰੇਮ..."
 
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:263
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:342
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:340
 #, kde-format
 msgid "Clear List"
 msgstr "ਲਿਸਟ ਸਾਫ਼ ਕਰੋ"
@@ -38990,7 +38990,7 @@ msgstr "ਰੋਸ਼ਨੀ ਟੇਬਲ"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:427
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:53
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:191
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:189
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr ""
@@ -43250,7 +43250,7 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "ਡਿਵੈਲਪਰ (2004)"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:91
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:99
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -50412,7 +50412,7 @@ msgid "Unknown"
 msgstr "ਅਣਜਾਣ"
 
 #: core/showfoto/main/showfoto.cpp:265
-#: core/utilities/imageeditor/main/imagewindow.cpp:493
+#: core/utilities/imageeditor/main/imagewindow.cpp:491
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
 msgid "%1 (%2 of %3)"
@@ -50439,8 +50439,8 @@ msgid "Remote file handling is not supported"
 msgstr "ਦਿੱਤਾ ਕੈਮਰਾ (\"%1\") ਸਹਾਇਕ ਨਹੀਂ ਹੈ।"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:102
-#: core/utilities/imageeditor/main/imagewindow.cpp:576
-#: core/utilities/imageeditor/main/imagewindow.cpp:691
+#: core/utilities/imageeditor/main/imagewindow.cpp:574
+#: core/utilities/imageeditor/main/imagewindow.cpp:689
 #, kde-format
 msgid "Image saved successfully"
 msgstr "ਚਿੱਤਰ ਠੀਕ ਤਰ੍ਹਾਂ ਸੰਭਾਲਿਆ ਗਿਆ"
@@ -51820,7 +51820,7 @@ msgid "<b>Renaming images. Please wait...</b>"
 msgstr "ਤਸਵੀਰਾਂ ਤੋਂ ਟੈਗ ਹਟਾਏ ਜਾ ਰਹੇ ਹਨ। ਉਡੀਕੋ ਜੀ..."
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:86
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:907
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:905
 #, kde-format
 msgid "Processing..."
 msgstr "ਕਾਰਵਾਈ ਜਾਰੀ..."
@@ -56002,34 +56002,34 @@ msgctxt "@action: open with desktop application"
 msgid "Open With..."
 msgstr "...ਨਾਲ ਖੋਲ੍ਹੋ"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:185
+#: core/utilities/imageeditor/main/imagewindow.cpp:183
 #, kde-format
 msgid "Image Editor - %1"
 msgstr "ਚਿੱਤਰ ਐਡੀਟਰ - %1"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:189
+#: core/utilities/imageeditor/main/imagewindow.cpp:187
 #, kde-format
 msgid "Image Editor"
 msgstr "ਚਿੱਤਰ ਐਡੀਟਰ"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:362
+#: core/utilities/imageeditor/main/imagewindow.cpp:360
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@title: unknown image dimension"
 msgid "Unknown"
 msgstr "ਅਣਜਾਣ"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:363
+#: core/utilities/imageeditor/main/imagewindow.cpp:361
 #, kde-format
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:932
+#: core/utilities/imageeditor/main/imagewindow.cpp:930
 #, kde-format
 msgid "No Image in Current Album"
 msgstr "ਮੌਜੂਦਾ ਐਲਬਮ ਵਿੱਚ ਕੋਈ ਚਿੱਤਰ ਨਹੀਂ"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:933
+#: core/utilities/imageeditor/main/imagewindow.cpp:931
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
@@ -56038,13 +56038,13 @@ msgstr ""
 "ਮੌਜੂਦਾ ਐਲਬਮ 'ਚ ਵੇਖਾਉਣ ਲਈ ਕੋਈ ਚਿੱਤਰ ਨਹੀਂ ਹੈ।\n"
 "ਚਿੱਤਰ ਐਡੀਟਰ ਨੂੰ ਬੰਦ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕੇਗਾ।"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1204
+#: core/utilities/imageeditor/main/imagewindow.cpp:1202
 #, kde-format
 msgctxt "@title"
 msgid "File Not Available"
 msgstr "ਫਾਇਲ ਉਪਲੱਬਧ ਨਹੀਂ"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1205
+#: core/utilities/imageeditor/main/imagewindow.cpp:1203
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"
@@ -57781,7 +57781,7 @@ msgstr "ਸਭ ਸਾਫ਼"
 msgid "Drag and drop images here"
 msgstr "ਇੱਥੇ ਚਿੱਤਰ ਚੁੱਕ ਕੇ ਸੁੱਟੋ"
 
-#: core/utilities/lighttable/lighttablewindow.cpp:194
+#: core/utilities/lighttable/lighttablewindow.cpp:192
 #, kde-format
 msgid "%1 item on Light Table"
 msgid_plural "%1 items on Light Table"
@@ -58313,202 +58313,202 @@ msgstr "ਨਵੀਂ ਸੁਰਖੀ ਸ਼ਾਮਲ"
 msgid "Thumbs"
 msgstr "ਥੰਮ"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:122
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:120
 #, kde-format
 msgid "Queues"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:131
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:129
 #, kde-format
 msgid "Queue Settings"
 msgstr "ਕਤਾਰ ਸੈਟਿੰਗ"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:140
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:138
 #, kde-format
 msgid "Control Panel"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:149
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:147
 #, kde-format
 msgid "Assigned Tools"
 msgstr "ਜਾਰੀ ਕੀਤੇ ਟੂਲ"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:158
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:156
 #, kde-format
 msgid "Tool Settings"
 msgstr "ਟੂਲ ਸੈਟਿੰਗ"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:275
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:273
 #, kde-format
 msgid "Run"
 msgstr "ਚਲਾਓ"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:282
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:280
 #, kde-format
 msgid "Run all"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:294
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:292
 #, kde-format
 msgid "New Queue"
 msgstr "ਨਵੀਂ ਕਤਾਰ"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:298
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:296
 #, kde-format
 msgid "Remove Queue"
 msgstr "ਕਤਾਰ ਹਟਾਓ"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:304
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:302
 #, kde-format
 msgid "Save Workflow"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:308
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:306
 #, kde-format
 msgid "Remove items"
 msgstr "ਆਈਟਮਾਂ ਹਟਾਓ"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:314
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:312
 #, fuzzy, kde-format
 msgid "Remove processed items"
 msgstr "ਆਈਟਮ ਹਟਾਓ"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:319
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:317
 #, kde-format
 msgid "Clear Queue"
 msgstr "ਕਤਾਰ ਸਾਫ਼ ਕਰੋ"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:330
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:328
 #, kde-format
 msgid "Move up"
 msgstr "ਉੱਤੇ ਭੇਜੋ"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:334
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:332
 #, kde-format
 msgid "Move down"
 msgstr "ਹੇਠਾਂ ਭੇਜੋ"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:338
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:336
 #, kde-format
 msgid "Remove tool"
 msgstr "ਟੂਲ ਹਟਾਓ"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:431
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:429
 #, kde-format
 msgid "Current Queue: "
 msgstr "ਮੌਜੂਦਾ ਕਤਾਰ:"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:436
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:462
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:434
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:460
 #, kde-format
 msgid "No items"
 msgstr "ਆਈਟਮਾਂ ਨਹੀਂ"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:449
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:475
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:447
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:473
 #, kde-format
 msgid "No tasks"
 msgstr "ਟਾਸਕ ਨਹੀਂ"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:453
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:479
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:451
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:477
 #, kde-format
 msgid "1 task"
 msgid_plural "%1 tasks"
 msgstr[0] "੧ ਬਿੱਟ"
 msgstr[1] "%1 ਬਿੱਟ"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:457
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:455
 #, fuzzy, kde-format
 msgctxt "#info: total number of items to process"
 msgid "Total: "
 msgstr "ਕੁੱਲ: %1 (%)"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:487
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:485
 #, fuzzy, kde-format
 #| msgid "Ready"
 msgctxt "batch queue manager is ready to use"
 msgid "Ready"
 msgstr "ਤਿਆਰ"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:525
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:523
 #, kde-format
 msgid "Processing under progress"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:526
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:524
 #, kde-format
 msgid "Batch Queue Manager is running. Do you want to cancel current job?"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:625
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:623
 #, fuzzy, kde-format
 msgid "There is no queue to be run."
 msgstr "ਇਹ ਫੋਲਡਰ 'ਚ ਕੋਈ ਤਸਵੀਰ ਨਹੀਂ ਹੈ।"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:629
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:627
 #, fuzzy, kde-format
 msgid "There is no item to process in the current queue (%1)."
 msgstr "ਇਹ ਫੋਲਡਰ 'ਚ ਕੋਈ ਤਸਵੀਰ ਨਹੀਂ ਹੈ।"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:635
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:633
 #, kde-format
 msgid "Custom renaming rule is invalid for current queue (%1). Please fix it."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:640
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:638
 #, kde-format
 msgid ""
 "Assigned batch tools list is empty for current queue (%1). Please assign "
 "tools."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:672
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:670
 #, fuzzy, kde-format
 msgid "There are no items to process in the queues."
 msgstr "ਇਹ ਫੋਲਡਰ 'ਚ ਕੋਈ ਤਸਵੀਰ ਨਹੀਂ ਹੈ।"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:843
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:853
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:841
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:851
 #, kde-format
 msgid "Processed items album settings"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:844
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:842
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not set. Please select "
 "one from Queue Settings panel."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:854
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:852
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not available or not "
 "writable. Please set another one from Queue Settings panel."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:932
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:930
 #, fuzzy, kde-format
 msgid "Failed to process item..."
 msgstr "ਫਾਇਲ \"%1\" ਲਈ ਲਾਕ ਬਦਲਣ ਲਈ ਫੇਲ੍ਹ ਹੈ।"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:945
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:943
 #, kde-format
 msgid "Process Cancelled..."
 msgstr "ਕਾਰਵਾਈ ਰੱਦ ਕੀਤੀ..."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:965
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:963
 #, kde-format
 msgid "Item \"%1\" from queue \"%2\": %3"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:994
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:992
 #, kde-format
 msgid "Batch queue finished"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:998
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:996
 #, kde-format
 msgid "All batch queues finished"
 msgstr ""

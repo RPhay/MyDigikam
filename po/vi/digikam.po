@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-01 00:44+0000\n"
+"POT-Creation-Date: 2022-12-02 00:43+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -958,9 +958,9 @@ msgstr ""
 "của máy ảnh.</p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:364
-#: core/utilities/imageeditor/main/imagewindow.cpp:1102
-#: core/utilities/imageeditor/main/imagewindow.cpp:1127
-#: core/utilities/imageeditor/main/imagewindow.cpp:1159
+#: core/utilities/imageeditor/main/imagewindow.cpp:1100
+#: core/utilities/imageeditor/main/imagewindow.cpp:1125
+#: core/utilities/imageeditor/main/imagewindow.cpp:1157
 #, kde-format
 msgid "Album \"%1\""
 msgstr "Tập « %1 »"
@@ -1327,7 +1327,7 @@ msgstr "Tạo thư mục ?"
 msgid "Loading albums..."
 msgstr "Đang phân tách mọi tập ảnh"
 
-#: core/app/main/digikamapp.cpp:337
+#: core/app/main/digikamapp.cpp:335
 #, fuzzy, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1339,82 +1339,82 @@ msgstr ""
 "hợp này, tính năng « Quản lí màu » bị tắt đến khi bạn giải quyết vấn đề này."
 "</p></qt>"
 
-#: core/app/main/digikamapp.cpp:618 core/app/views/stack/trashview.cpp:428
+#: core/app/main/digikamapp.cpp:616 core/app/views/stack/trashview.cpp:428
 #, fuzzy, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Chưa chọn mục"
 
-#: core/app/main/digikamapp.cpp:624
+#: core/app/main/digikamapp.cpp:622
 #, fuzzy, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "Chưa chọn mục"
 
-#: core/app/main/digikamapp.cpp:629
+#: core/app/main/digikamapp.cpp:627
 #, fuzzy, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "Chưa chọn mục"
 
-#: core/app/main/digikamapp.cpp:640
+#: core/app/main/digikamapp.cpp:638
 #, fuzzy, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "%1 mục đã chọn"
 
-#: core/app/main/digikamapp.cpp:653
+#: core/app/main/digikamapp.cpp:651
 #, fuzzy, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "%1 mục đã chọn"
 
-#: core/app/main/digikamapp.cpp:661
+#: core/app/main/digikamapp.cpp:659
 #, fuzzy, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "Chưa chọn mục"
 
-#: core/app/main/digikamapp.cpp:669
+#: core/app/main/digikamapp.cpp:667
 #, fuzzy, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "%1 mục đã chọn"
 
-#: core/app/main/digikamapp.cpp:678
+#: core/app/main/digikamapp.cpp:676
 #, fuzzy, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "Chưa chọn mục"
 
-#: core/app/main/digikamapp.cpp:709
+#: core/app/main/digikamapp.cpp:707
 #, fuzzy, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 of %2)"
 
-#: core/app/main/digikamapp.cpp:723
+#: core/app/main/digikamapp.cpp:721
 #, fuzzy, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 of %2)"
 
-#: core/app/main/digikamapp.cpp:727
+#: core/app/main/digikamapp.cpp:725
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:738
+#: core/app/main/digikamapp.cpp:736
 #, fuzzy, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "16 bit"
 
-#: core/app/main/digikamapp.cpp:788
+#: core/app/main/digikamapp.cpp:786
 #, fuzzy, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Ghi siêu dữ liệu vào mỗi tệp"
 
-#: core/app/main/digikamapp.cpp:790
+#: core/app/main/digikamapp.cpp:788
 #, fuzzy, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -3019,8 +3019,8 @@ msgid "no item"
 msgstr "Chưa có ngày"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:431
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:440
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:466
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:438
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:464
 #, fuzzy, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
@@ -21129,7 +21129,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QPushButton, m_stopButton)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:36
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:39
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:288
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:286
 #, fuzzy, kde-format
 msgid "Stop"
 msgstr "Đá"
@@ -31330,7 +31330,7 @@ msgid "Remove Black Frame"
 msgstr "Khung khối..."
 
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:263
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:342
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:340
 #, fuzzy, kde-format
 msgid "Clear List"
 msgstr "Danh sách máy ảnh"
@@ -38094,7 +38094,7 @@ msgstr "Bảng ánh sáng"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:427
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:53
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:191
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:189
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr ""
@@ -42283,7 +42283,7 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "Nhà phát triển"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:91
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:99
 #, fuzzy, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -48808,7 +48808,7 @@ msgid "Unknown"
 msgstr "Không rõ"
 
 #: core/showfoto/main/showfoto.cpp:265
-#: core/utilities/imageeditor/main/imagewindow.cpp:493
+#: core/utilities/imageeditor/main/imagewindow.cpp:491
 #, fuzzy, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
 msgid "%1 (%2 of %3)"
@@ -48835,8 +48835,8 @@ msgid "Remote file handling is not supported"
 msgstr "Định dạng tệp ảnh đích « %1 » không được hỗ trợ."
 
 #: core/showfoto/main/showfoto_iofiles.cpp:102
-#: core/utilities/imageeditor/main/imagewindow.cpp:576
-#: core/utilities/imageeditor/main/imagewindow.cpp:691
+#: core/utilities/imageeditor/main/imagewindow.cpp:574
+#: core/utilities/imageeditor/main/imagewindow.cpp:689
 #, fuzzy, kde-format
 msgid "Image saved successfully"
 msgstr "Đang tải về tệp %1..."
@@ -50175,7 +50175,7 @@ msgid "<b>Renaming images. Please wait...</b>"
 msgstr "Đang gỡ bỏ các thẻ ảnh. Hãy đời..."
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:86
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:907
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:905
 #, fuzzy, kde-format
 msgid "Processing..."
 msgstr "Thuộc tính"
@@ -54298,34 +54298,34 @@ msgctxt "@action: open with desktop application"
 msgid "Open With..."
 msgstr "Mở bằng"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:185
+#: core/utilities/imageeditor/main/imagewindow.cpp:183
 #, kde-format
 msgid "Image Editor - %1"
 msgstr "Bộ sửa ảnh — %1"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:189
+#: core/utilities/imageeditor/main/imagewindow.cpp:187
 #, kde-format
 msgid "Image Editor"
 msgstr "Bộ sửa ảnh"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:362
+#: core/utilities/imageeditor/main/imagewindow.cpp:360
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@title: unknown image dimension"
 msgid "Unknown"
 msgstr "Không rõ"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:363
+#: core/utilities/imageeditor/main/imagewindow.cpp:361
 #, kde-format
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:932
+#: core/utilities/imageeditor/main/imagewindow.cpp:930
 #, kde-format
 msgid "No Image in Current Album"
 msgstr "Không có ảnh trong tập ảnh hiện có"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:933
+#: core/utilities/imageeditor/main/imagewindow.cpp:931
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
@@ -54334,13 +54334,13 @@ msgstr ""
 "Không có ảnh cần hiển thị trong tập ảnh hiện có.\n"
 "Như thế thì bộ sửa ảnh sẽ đóng."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1204
+#: core/utilities/imageeditor/main/imagewindow.cpp:1202
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "File Not Available"
 msgstr "Không có sẵn hồ sơ..."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1205
+#: core/utilities/imageeditor/main/imagewindow.cpp:1203
 #, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"
@@ -56110,7 +56110,7 @@ msgstr "Xoá hết"
 msgid "Drag and drop images here"
 msgstr "Kéo và thả ảnh vào đây"
 
-#: core/utilities/lighttable/lighttablewindow.cpp:194
+#: core/utilities/lighttable/lighttablewindow.cpp:192
 #, fuzzy, kde-format
 msgid "%1 item on Light Table"
 msgid_plural "%1 items on Light Table"
@@ -56627,201 +56627,201 @@ msgstr "Theo tập hợp"
 msgid "Thumbs"
 msgstr "Hiện các ảnh mẫu"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:122
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:120
 #, fuzzy, kde-format
 msgid "Queues"
 msgstr "Quique"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:131
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:129
 #, fuzzy, kde-format
 msgid "Queue Settings"
 msgstr "Thiết lập chung"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:140
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:138
 #, kde-format
 msgid "Control Panel"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:149
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:147
 #, fuzzy, kde-format
 msgid "Assigned Tools"
 msgstr "Thẻ đã gán"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:158
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:156
 #, fuzzy, kde-format
 msgid "Tool Settings"
 msgstr "Thiết lập cục bộ"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:275
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:273
 #, fuzzy, kde-format
 msgid "Run"
 msgstr "Mặt trời"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:282
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:280
 #, kde-format
 msgid "Run all"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:294
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:292
 #, kde-format
 msgid "New Queue"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:298
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:296
 #, fuzzy, kde-format
 msgid "Remove Queue"
 msgstr "Gỡ bỏ mục"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:304
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:302
 #, kde-format
 msgid "Save Workflow"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:308
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:306
 #, fuzzy, kde-format
 msgid "Remove items"
 msgstr "Gỡ bỏ mục"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:314
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:312
 #, fuzzy, kde-format
 msgid "Remove processed items"
 msgstr "Gỡ bỏ mục"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:319
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:317
 #, fuzzy, kde-format
 msgid "Clear Queue"
 msgstr "Chuẩn"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:330
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:328
 #, fuzzy, kde-format
 msgid "Move up"
 msgstr "Chuyển"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:334
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:332
 #, fuzzy, kde-format
 msgid "Move down"
 msgstr "Chuyển"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:338
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:336
 #, fuzzy, kde-format
 msgid "Remove tool"
 msgstr "Gỡ bỏ mục"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:431
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:429
 #, fuzzy, kde-format
 msgid "Current Queue: "
 msgstr "Xoá tìm kiếm"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:436
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:462
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:434
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:460
 #, fuzzy, kde-format
 msgid "No items"
 msgstr "Chưa có ngày"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:449
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:475
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:447
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:473
 #, fuzzy, kde-format
 msgid "No tasks"
 msgstr "16 bit"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:453
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:479
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:451
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:477
 #, fuzzy, kde-format
 msgid "1 task"
 msgid_plural "%1 tasks"
 msgstr[0] "16 bit"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:457
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:455
 #, fuzzy, kde-format
 msgctxt "#info: total number of items to process"
 msgid "Total: "
 msgstr "%1 (%2)"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:487
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:485
 #, fuzzy, kde-format
 #| msgid "Ready"
 msgctxt "batch queue manager is ready to use"
 msgid "Ready"
 msgstr "Sẵn sàng"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:525
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:523
 #, fuzzy, kde-format
 msgid "Processing under progress"
 msgstr "Đang xử lí ảnh mẫu lớn"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:526
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:524
 #, kde-format
 msgid "Batch Queue Manager is running. Do you want to cancel current job?"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:625
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:623
 #, fuzzy, kde-format
 msgid "There is no queue to be run."
 msgstr "Không có ảnh nào trong thư mục này."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:629
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:627
 #, fuzzy, kde-format
 msgid "There is no item to process in the current queue (%1)."
 msgstr "Không có ảnh nào trong thư mục này."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:635
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:633
 #, kde-format
 msgid "Custom renaming rule is invalid for current queue (%1). Please fix it."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:640
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:638
 #, kde-format
 msgid ""
 "Assigned batch tools list is empty for current queue (%1). Please assign "
 "tools."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:672
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:670
 #, fuzzy, kde-format
 msgid "There are no items to process in the queues."
 msgstr "Không có ảnh nào trong thư mục này."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:843
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:853
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:841
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:851
 #, kde-format
 msgid "Processed items album settings"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:844
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:842
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not set. Please select "
 "one from Queue Settings panel."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:854
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:852
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not available or not "
 "writable. Please set another one from Queue Settings panel."
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:932
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:930
 #, fuzzy, kde-format
 msgid "Failed to process item..."
 msgstr "Lỗi bật/tắt tệp khoá « %1 »."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:945
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:943
 #, fuzzy, kde-format
 msgid "Process Cancelled..."
 msgstr "Thuộc tính"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:965
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:963
 #, kde-format
 msgid "Item \"%1\" from queue \"%2\": %3"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:994
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:992
 #, fuzzy, kde-format
 msgid "Batch queue finished"
 msgstr "Tiến trình liệt kê các thư mục đã chạy xong."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:998
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:996
 #, fuzzy, kde-format
 msgid "All batch queues finished"
 msgstr "Tiến trình liệt kê các thư mục đã chạy xong."

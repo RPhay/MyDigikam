@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-01 00:44+0000\n"
+"POT-Creation-Date: 2022-12-02 00:43+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -1065,9 +1065,9 @@ msgstr ""
 "flyttes.</p>"
 
 #: core/app/items/utils/itemviewutilities.cpp:364
-#: core/utilities/imageeditor/main/imagewindow.cpp:1102
-#: core/utilities/imageeditor/main/imagewindow.cpp:1127
-#: core/utilities/imageeditor/main/imagewindow.cpp:1159
+#: core/utilities/imageeditor/main/imagewindow.cpp:1100
+#: core/utilities/imageeditor/main/imagewindow.cpp:1125
+#: core/utilities/imageeditor/main/imagewindow.cpp:1157
 #, kde-format
 msgid "Album \"%1\""
 msgstr "Album \"%1\""
@@ -1437,7 +1437,7 @@ msgstr "Læser database..."
 msgid "Loading albums..."
 msgstr "Indlæser albummer %v%"
 
-#: core/app/main/digikamapp.cpp:337
+#: core/app/main/digikamapp.cpp:335
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1448,14 +1448,14 @@ msgstr ""
 "hvis du vil prøve at indstille den igen. Ellers vælges \"Nej\". Funktionen "
 "\"farvehåndtering\" deaktiveres indtil du løser dette problem.</p>"
 
-#: core/app/main/digikamapp.cpp:618 core/app/views/stack/trashview.cpp:428
+#: core/app/main/digikamapp.cpp:616 core/app/views/stack/trashview.cpp:428
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Intet element valgt (%1 element)"
 msgstr[1] "Ingen elementer valgt (%1 elementer)"
 
-#: core/app/main/digikamapp.cpp:624
+#: core/app/main/digikamapp.cpp:622
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1464,7 +1464,7 @@ msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "Intet element valgt (%1 element)"
 msgstr[1] "Ingen elementer valgt (%1 elementer)"
 
-#: core/app/main/digikamapp.cpp:629
+#: core/app/main/digikamapp.cpp:627
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1473,7 +1473,7 @@ msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] "Intet element valgt (%1 element)"
 msgstr[1] "Ingen elementer valgt (%1 elementer)"
 
-#: core/app/main/digikamapp.cpp:640
+#: core/app/main/digikamapp.cpp:638
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1482,7 +1482,7 @@ msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "%2/%1 elementer valgt"
 msgstr[1] "%2/%1 elementer valgt"
 
-#: core/app/main/digikamapp.cpp:653
+#: core/app/main/digikamapp.cpp:651
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1491,7 +1491,7 @@ msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "%2/%1 elementer valgt"
 msgstr[1] "%2/%1 elementer valgt"
 
-#: core/app/main/digikamapp.cpp:661
+#: core/app/main/digikamapp.cpp:659
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1500,7 +1500,7 @@ msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "Intet element valgt (%1 element)"
 msgstr[1] "Ingen elementer valgt (%1 elementer)"
 
-#: core/app/main/digikamapp.cpp:669
+#: core/app/main/digikamapp.cpp:667
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1509,7 +1509,7 @@ msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "%2/%1 elementer valgt"
 msgstr[1] "%2/%1 elementer valgt"
 
-#: core/app/main/digikamapp.cpp:678
+#: core/app/main/digikamapp.cpp:676
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1518,23 +1518,23 @@ msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "Intet element valgt (%1 element)"
 msgstr[1] "Ingen elementer valgt (%1 elementer)"
 
-#: core/app/main/digikamapp.cpp:709
+#: core/app/main/digikamapp.cpp:707
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 af %2)"
 
-#: core/app/main/digikamapp.cpp:723
+#: core/app/main/digikamapp.cpp:721
 #, fuzzy, kde-format
 #| msgid " (%1 of %2)"
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 af %2)"
 
-#: core/app/main/digikamapp.cpp:727
+#: core/app/main/digikamapp.cpp:725
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:738
+#: core/app/main/digikamapp.cpp:736
 #, fuzzy, kde-format
 #| msgid "1 item"
 #| msgid_plural "%1 items"
@@ -1543,7 +1543,7 @@ msgid_plural "%1 items hidden"
 msgstr[0] "1 element"
 msgstr[1] "%1 elementer"
 
-#: core/app/main/digikamapp.cpp:788
+#: core/app/main/digikamapp.cpp:786
 #, fuzzy, kde-format
 #| msgid "Write Metadata to Image"
 #| msgid_plural "Write Metadata to Selected Images"
@@ -1552,7 +1552,7 @@ msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Skriv metadata til fil"
 msgstr[1] "Skriv metadata til markerede billeder"
 
-#: core/app/main/digikamapp.cpp:790
+#: core/app/main/digikamapp.cpp:788
 #, fuzzy, kde-format
 #| msgid "Reread Metadata From Image"
 #| msgid_plural "Reread Metadata From Selected Images"
@@ -3322,8 +3322,8 @@ msgid "no item"
 msgstr "intet element"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:431
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:440
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:466
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:438
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:464
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
@@ -22990,7 +22990,7 @@ msgstr "Afspil"
 #. i18n: ectx: property (text), widget (QPushButton, m_stopButton)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:36
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.ui:39
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:288
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:286
 #, kde-format
 msgid "Stop"
 msgstr "Stop"
@@ -33954,7 +33954,7 @@ msgid "Remove Black Frame"
 msgstr "Sort ramme..."
 
 #: core/libs/dimg/filters/hotpixels/blackframelistview.cpp:263
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:342
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:340
 #, kde-format
 msgid "Clear List"
 msgstr "Ryd listen"
@@ -41300,7 +41300,7 @@ msgstr "Lysbord"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:427
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:53
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:191
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:189
 #, kde-format
 msgid "Batch Queue Manager"
 msgstr "Håndtering af batch-kø"
@@ -45848,7 +45848,7 @@ msgstr "Ralf Holzer"
 msgid "Developer (2004)"
 msgstr "Udvikler (2004)"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:91
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:99
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -53237,7 +53237,7 @@ msgid "Unknown"
 msgstr "Ukendt"
 
 #: core/showfoto/main/showfoto.cpp:265
-#: core/utilities/imageeditor/main/imagewindow.cpp:493
+#: core/utilities/imageeditor/main/imagewindow.cpp:491
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
 msgid "%1 (%2 of %3)"
@@ -53265,8 +53265,8 @@ msgid "Remote file handling is not supported"
 msgstr "Filteridentifikator eller -version er ikke understøttet"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:102
-#: core/utilities/imageeditor/main/imagewindow.cpp:576
-#: core/utilities/imageeditor/main/imagewindow.cpp:691
+#: core/utilities/imageeditor/main/imagewindow.cpp:574
+#: core/utilities/imageeditor/main/imagewindow.cpp:689
 #, kde-format
 msgid "Image saved successfully"
 msgstr "Billedet blev gemt"
@@ -54748,7 +54748,7 @@ msgid "<b>Renaming images. Please wait...</b>"
 msgstr "<b>Omdøber billeder. Vent venligst...</b>"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:86
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:907
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:905
 #, kde-format
 msgid "Processing..."
 msgstr "Behandler..."
@@ -59240,34 +59240,34 @@ msgctxt "@action: open with desktop application"
 msgid "Open With..."
 msgstr "Åbn med..."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:185
+#: core/utilities/imageeditor/main/imagewindow.cpp:183
 #, kde-format
 msgid "Image Editor - %1"
 msgstr "Billededitor - %1"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:189
+#: core/utilities/imageeditor/main/imagewindow.cpp:187
 #, kde-format
 msgid "Image Editor"
 msgstr "Billededitor"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:362
+#: core/utilities/imageeditor/main/imagewindow.cpp:360
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@title: unknown image dimension"
 msgid "Unknown"
 msgstr "Ukendt"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:363
+#: core/utilities/imageeditor/main/imagewindow.cpp:361
 #, kde-format
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:932
+#: core/utilities/imageeditor/main/imagewindow.cpp:930
 #, kde-format
 msgid "No Image in Current Album"
 msgstr "Ingen billeder i det nuværende album"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:933
+#: core/utilities/imageeditor/main/imagewindow.cpp:931
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
@@ -59276,13 +59276,13 @@ msgstr ""
 "Der er ingen billeder at vise i det nuværende album.\n"
 "Billededitoren lukkes."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1204
+#: core/utilities/imageeditor/main/imagewindow.cpp:1202
 #, kde-format
 msgctxt "@title"
 msgid "File Not Available"
 msgstr "Filen er ikke tilgængelig"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1205
+#: core/utilities/imageeditor/main/imagewindow.cpp:1203
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"
@@ -61215,7 +61215,7 @@ msgstr "Ryd alt"
 msgid "Drag and drop images here"
 msgstr "Træk og slip billeder her"
 
-#: core/utilities/lighttable/lighttablewindow.cpp:194
+#: core/utilities/lighttable/lighttablewindow.cpp:192
 #, kde-format
 msgid "%1 item on Light Table"
 msgid_plural "%1 items on Light Table"
@@ -61776,146 +61776,146 @@ msgstr "Find nye elementer"
 msgid "Thumbs"
 msgstr "Miniaturer"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:122
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:120
 #, kde-format
 msgid "Queues"
 msgstr "Køer"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:131
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:129
 #, kde-format
 msgid "Queue Settings"
 msgstr "Kø-indstillinger"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:140
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:138
 #, kde-format
 msgid "Control Panel"
 msgstr "Kontrolpanel"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:149
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:147
 #, kde-format
 msgid "Assigned Tools"
 msgstr "Tildelte værktøjer"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:158
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:156
 #, kde-format
 msgid "Tool Settings"
 msgstr "Værktøjsindstillinger"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:275
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:273
 #, kde-format
 msgid "Run"
 msgstr "Kør"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:282
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:280
 #, kde-format
 msgid "Run all"
 msgstr ""
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:294
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:292
 #, kde-format
 msgid "New Queue"
 msgstr "Ny kø"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:298
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:296
 #, kde-format
 msgid "Remove Queue"
 msgstr "Fjern kø"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:304
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:302
 #, kde-format
 msgid "Save Workflow"
 msgstr "Gem arbejdsgang"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:308
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:306
 #, kde-format
 msgid "Remove items"
 msgstr "Fjern elementer"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:314
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:312
 #, kde-format
 msgid "Remove processed items"
 msgstr "Fjern behandlede elementer"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:319
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:317
 #, kde-format
 msgid "Clear Queue"
 msgstr "Ryd kø"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:330
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:328
 #, kde-format
 msgid "Move up"
 msgstr "Flyt op"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:334
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:332
 #, kde-format
 msgid "Move down"
 msgstr "Flyt ned"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:338
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:336
 #, kde-format
 msgid "Remove tool"
 msgstr "Fjern værktøj"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:431
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:429
 #, kde-format
 msgid "Current Queue: "
 msgstr "Aktuel kø: "
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:436
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:462
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:434
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:460
 #, kde-format
 msgid "No items"
 msgstr "Ingen elementer"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:449
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:475
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:447
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:473
 #, kde-format
 msgid "No tasks"
 msgstr "Ingen opgaver"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:453
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:479
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:451
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:477
 #, kde-format
 msgid "1 task"
 msgid_plural "%1 tasks"
 msgstr[0] "1 opgave"
 msgstr[1] "%1 opgaver"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:457
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:455
 #, fuzzy, kde-format
 #| msgid " - Total: "
 msgctxt "#info: total number of items to process"
 msgid "Total: "
 msgstr "i alt"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:487
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:485
 #, kde-format
 msgctxt "batch queue manager is ready to use"
 msgid "Ready"
 msgstr "Klar"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:525
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:523
 #, kde-format
 msgid "Processing under progress"
 msgstr "Behandlingen er i gang"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:526
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:524
 #, kde-format
 msgid "Batch Queue Manager is running. Do you want to cancel current job?"
 msgstr "Håndtering af batch-kø kører. Vil du annullere det aktuelle job?"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:625
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:623
 #, fuzzy, kde-format
 msgid "There is no queue to be run."
 msgstr "Der er ingen elementer at behandle i køerne."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:629
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:627
 #, fuzzy, kde-format
 #| msgid "There are no items to process in the queues."
 msgid "There is no item to process in the current queue (%1)."
 msgstr "Der er ingen elementer at behandle i køerne."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:635
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:633
 #, fuzzy, kde-format
 #| msgid ""
 #| "Custom renaming rules are invalid for Queues listed below. Please fix "
@@ -61925,7 +61925,7 @@ msgstr ""
 "Brugertilpassede omdøbningsregler er ugyldige for de køer der er oplistet "
 "nedenfor. Ret dem venligst."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:640
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:638
 #, fuzzy, kde-format
 #| msgid ""
 #| "Assigned batch tools list is empty for Queues listed below. Please assign "
@@ -61937,18 +61937,18 @@ msgstr ""
 "Listen over tildelte batch-værktøjer er tom for de køer der oplistet "
 "nedenfor. Tildel venligst værkøjer."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:672
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:670
 #, kde-format
 msgid "There are no items to process in the queues."
 msgstr "Der er ingen elementer at behandle i køerne."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:843
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:853
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:841
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:851
 #, kde-format
 msgid "Processed items album settings"
 msgstr "Indstilling af album til behandlede elementer"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:844
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:842
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not set. Please select "
@@ -61957,7 +61957,7 @@ msgstr ""
 "Det album der skal indeholde behandlede elementer fra køen \"%1\" er ikke "
 "valgt. Vælg venligst et fra panelet med kø-indstillinger."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:854
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:852
 #, kde-format
 msgid ""
 "Album to host processed items from queue \"%1\" is not available or not "
@@ -61967,27 +61967,27 @@ msgstr ""
 "tilgængeligt eller skrivebeskyttet. Vælg venligst et andet fra panelet med "
 "kø-indstillinger."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:932
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:930
 #, kde-format
 msgid "Failed to process item..."
 msgstr "Kunne ikke behandle element..."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:945
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:943
 #, kde-format
 msgid "Process Cancelled..."
 msgstr "Proces annulleret..."
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:965
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:963
 #, kde-format
 msgid "Item \"%1\" from queue \"%2\": %3"
 msgstr "Elementet \"%1\" fra køen \"%2\": %3"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:994
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:992
 #, kde-format
 msgid "Batch queue finished"
 msgstr "Batch-kø gennemført"
 
-#: core/utilities/queuemanager/main/queuemgrwindow.cpp:998
+#: core/utilities/queuemanager/main/queuemgrwindow.cpp:996
 #, fuzzy, kde-format
 #| msgid "Batch queue finished"
 msgid "All batch queues finished"
