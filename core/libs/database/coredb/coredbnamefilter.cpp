@@ -47,8 +47,9 @@ CoreDbNameFilter::CoreDbNameFilter(const QString& filter)
 
     while (it != list.constEnd())
     {
-        QRegularExpression wildcard(QRegularExpression::wildcardToRegularExpression((*it).trimmed()));
-        wildcard.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
+        QString pattern = QRegularExpression::wildcardToRegularExpression((*it).trimmed());
+        pattern.replace(QLatin1String("[^/]"), QLatin1String("."));
+        QRegularExpression wildcard(pattern, QRegularExpression::CaseInsensitiveOption);
         m_filterList << wildcard;
         ++it;
     }
