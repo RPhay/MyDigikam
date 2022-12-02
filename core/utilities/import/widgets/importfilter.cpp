@@ -85,8 +85,9 @@ const QRegularExpression& Filter::regexp(const QString& wildcard)
 {
     if (!filterHash.contains(wildcard))
     {
-        QRegularExpression rx(QRegularExpression::wildcardToRegularExpression(wildcard));
-        rx.setPatternOptions(QRegularExpression::CaseInsensitiveOption);
+        QString pattern = QRegularExpression::wildcardToRegularExpression(wildcard);
+        pattern.replace(QLatin1String("[^/]"), QLatin1String("."));
+        QRegularExpression rx(pattern, QRegularExpression::CaseInsensitiveOption);
         filterHash[wildcard] = rx;
     }
 
