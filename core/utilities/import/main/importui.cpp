@@ -89,8 +89,6 @@ ImportUI::ImportUI(const QString& cameraTitle, const QString& model,
 
     // try to connect in the end, this allows us not to block the UI to show up..
     QTimer::singleShot(0, d->controller, SLOT(slotConnect()));
-
-    restoreWindowSize();
 }
 
 ImportUI::~ImportUI()
