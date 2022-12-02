@@ -209,6 +209,6 @@ BUGFIXES:
 171 ==> 462071 - Last tag cannot be removed if only using xmp.lr and xmp.dc.
 172 ==> 462368 - QTAV-library has been removed from unstable.
 173 ==> 462464 - Cannot play video files: "An error has occurred with the media player...".
-174 ==> 
+174 ==> 462542 - HTML Gallery behaves oddly.
 175 ==> 
 
