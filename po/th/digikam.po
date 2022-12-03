@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-02 00:43+0000\n"
+"POT-Creation-Date: 2022-12-03 00:44+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -37685,7 +37685,7 @@ msgid "Description"
 msgstr "รายละเอียด"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1887
+#: core/utilities/import/main/importui.cpp:1885
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@title"
@@ -56262,7 +56262,7 @@ msgstr ""
 "ตั้งค่าตัวเลือกนี้เพื่อใช้แสดงส่วนค่าสีขาวที่สว่างจัดบนภาพ ซึ่งจะช่วยให้คุณได้ปรับแก้ภาพที่สว่างมากเกินไป"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:468
-#: core/utilities/import/main/importui.cpp:490
+#: core/utilities/import/main/importui.cpp:488
 #, fuzzy, kde-format
 #| msgid "Color-Managed View"
 msgctxt "@action"
@@ -56333,8 +56333,8 @@ msgid "Rotate Right"
 msgstr "หมุนภาพไปทางขวา"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:557
-#: core/utilities/import/main/importui.cpp:532
-#: core/utilities/import/main/importui.cpp:769
+#: core/utilities/import/main/importui.cpp:530
+#: core/utilities/import/main/importui.cpp:767
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Previous Image"
@@ -56972,7 +56972,7 @@ msgstr "ล้มเหลวในการอัปโหลดแฟ้ม \"
 
 #: core/utilities/import/backend/cameracontroller.cpp:629
 #: core/utilities/import/backend/cameracontroller.cpp:952
-#: core/utilities/import/main/importui.cpp:2397
+#: core/utilities/import/main/importui.cpp:2395
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to download file \"%1\"."
 msgid "Failed to download <filename>%1</filename>"
@@ -57312,401 +57312,401 @@ msgctxt "@info:tooltip"
 msgid "This item has already been downloaded"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:148
+#: core/utilities/import/main/importui.cpp:146
 #, fuzzy, kde-format
 #| msgid "Set how digiKam will rename files as they are downloaded."
 msgctxt "@info"
 msgid "Set how digiKam will rename files as they are downloaded."
 msgstr "ตั้งค่าวิธีการที่จะให้ digiKam เปลี่ยนชื่อแฟ้มภาพเมื่อถูกดาวน์โหลดมาแล้ว"
 
-#: core/utilities/import/main/importui.cpp:149
+#: core/utilities/import/main/importui.cpp:147
 #, fuzzy, kde-format
 #| msgid "File Renaming Options"
 msgctxt "@item"
 msgid "File Renaming Options"
 msgstr "ตัวเลือกการเปลี่ยนชื่อแฟ้ม"
 
-#: core/utilities/import/main/importui.cpp:155
+#: core/utilities/import/main/importui.cpp:153
 #, fuzzy, kde-format
 #| msgid "Auto-creation of Albums"
 msgctxt "@item"
 msgid "Auto-creation of Albums"
 msgstr "สร้างอัลบั้มให้โดยอัตโนมัติ"
 
-#: core/utilities/import/main/importui.cpp:161
+#: core/utilities/import/main/importui.cpp:159
 #, fuzzy, kde-format
 #| msgid "On the Fly Operations (JPEG only)"
 msgctxt "@item"
 msgid "On the Fly Operations (JPEG only)"
 msgstr "ปรับเปลี่ยนระหว่างทำงาน (ภาพประเภท JPEG เท่านั้น)"
 
-#: core/utilities/import/main/importui.cpp:167
+#: core/utilities/import/main/importui.cpp:165
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "DNG Convert Options"
 msgstr "ตั้งค่าต่าง ๆ ของการครอบตัด"
 
-#: core/utilities/import/main/importui.cpp:173
+#: core/utilities/import/main/importui.cpp:171
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "Scripting"
 msgstr "ความนุ่มนวล:"
 
-#: core/utilities/import/main/importui.cpp:177
+#: core/utilities/import/main/importui.cpp:175
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@title"
 msgid "Settings"
 msgstr "ตั้งค่าต่าง ๆ"
 
-#: core/utilities/import/main/importui.cpp:192
+#: core/utilities/import/main/importui.cpp:190
 #, fuzzy, kde-format
 msgctxt "@action Cancel process"
 msgid "Cancel"
 msgstr "ยกเลิก"
 
-#: core/utilities/import/main/importui.cpp:199
+#: core/utilities/import/main/importui.cpp:197
 #, fuzzy, kde-format
 msgctxt "@action Information about camera"
 msgid "Information"
 msgstr "ข้อมูลรายละเอียด"
 
-#: core/utilities/import/main/importui.cpp:206
+#: core/utilities/import/main/importui.cpp:204
 #, fuzzy, kde-format
 msgctxt "@action Capture photo from camera"
 msgid "Capture"
 msgstr "จับภาพ"
 
-#: core/utilities/import/main/importui.cpp:218
+#: core/utilities/import/main/importui.cpp:216
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Select All"
 msgstr "เลือกทั้งหมด"
 
-#: core/utilities/import/main/importui.cpp:226
+#: core/utilities/import/main/importui.cpp:224
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Select None"
 msgstr "ไม่เลือกเลย"
 
-#: core/utilities/import/main/importui.cpp:234
+#: core/utilities/import/main/importui.cpp:232
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Invert Selection"
 msgstr "กลับค่าการเลือก"
 
-#: core/utilities/import/main/importui.cpp:242
+#: core/utilities/import/main/importui.cpp:240
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Select New Items"
 msgstr "เลือกรายการใหม่"
 
-#: core/utilities/import/main/importui.cpp:249
+#: core/utilities/import/main/importui.cpp:247
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Select Locked Items"
 msgstr "เลือกรายการที่ถูกล็อค"
 
-#: core/utilities/import/main/importui.cpp:257
+#: core/utilities/import/main/importui.cpp:255
 #, fuzzy, kde-format
 msgctxt "@title:menu"
 msgid "Download"
 msgstr "ดาวน์โหลด"
 
-#: core/utilities/import/main/importui.cpp:262
+#: core/utilities/import/main/importui.cpp:260
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download New"
 msgstr "ดาวน์โหลด"
 
-#: core/utilities/import/main/importui.cpp:272
+#: core/utilities/import/main/importui.cpp:270
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download Selected"
 msgstr "ดาวน์โหลดที่เลือกไว้"
 
-#: core/utilities/import/main/importui.cpp:279
+#: core/utilities/import/main/importui.cpp:277
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download All"
 msgstr "ดาวน์โหลดทั้งหมด"
 
-#: core/utilities/import/main/importui.cpp:287
+#: core/utilities/import/main/importui.cpp:285
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download && Delete New"
 msgstr "ดาวน์โหลดทั้งหมดแล้วลบ"
 
-#: core/utilities/import/main/importui.cpp:295
+#: core/utilities/import/main/importui.cpp:293
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download && Delete Selected"
 msgstr "ดาวน์โหลดที่เลือกไว้แล้วลบ"
 
-#: core/utilities/import/main/importui.cpp:303
+#: core/utilities/import/main/importui.cpp:301
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download && Delete All"
 msgstr "ดาวน์โหลดทั้งหมดแล้วลบ"
 
-#: core/utilities/import/main/importui.cpp:310
+#: core/utilities/import/main/importui.cpp:308
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Upload..."
 msgstr "อัปโหลด..."
 
-#: core/utilities/import/main/importui.cpp:318
+#: core/utilities/import/main/importui.cpp:316
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Toggle Lock"
 msgstr "ล็อค/ปลดล็อค"
 
-#: core/utilities/import/main/importui.cpp:326
+#: core/utilities/import/main/importui.cpp:324
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Mark as downloaded"
 msgstr "ทำเครื่องหมายว่าดาวน์โหลดแล้ว"
 
-#: core/utilities/import/main/importui.cpp:333
+#: core/utilities/import/main/importui.cpp:331
 #, fuzzy, kde-format
 msgctxt "@title:menu"
 msgid "Delete"
 msgstr "ลบ"
 
-#: core/utilities/import/main/importui.cpp:338
+#: core/utilities/import/main/importui.cpp:336
 #, fuzzy, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete Selected"
 msgstr "ลบที่เลือกไว้"
 
-#: core/utilities/import/main/importui.cpp:346
+#: core/utilities/import/main/importui.cpp:344
 #, fuzzy, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete All"
 msgstr "ลบทั้งหมด"
 
-#: core/utilities/import/main/importui.cpp:352
+#: core/utilities/import/main/importui.cpp:350
 #, fuzzy, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete New"
 msgstr "ลบแฟ้ม"
 
-#: core/utilities/import/main/importui.cpp:360
+#: core/utilities/import/main/importui.cpp:358
 #, fuzzy, kde-format
 msgctxt "@title:group"
 msgid "Views"
 msgstr "แสดงภาพ"
 
-#: core/utilities/import/main/importui.cpp:364
+#: core/utilities/import/main/importui.cpp:362
 #, fuzzy, kde-format
 msgctxt "@action Go to thumbnails (icon) view"
 msgid "Thumbnails"
 msgstr "ภาพตัวอย่าง"
 
-#: core/utilities/import/main/importui.cpp:371
+#: core/utilities/import/main/importui.cpp:369
 #, fuzzy, kde-format
 msgctxt "@action View the selected image"
 msgid "Preview Item"
 msgstr "ภาพก่อน"
 
-#: core/utilities/import/main/importui.cpp:380
+#: core/utilities/import/main/importui.cpp:378
 #, kde-format
 msgctxt "@action Switch to map view"
 msgid "Map"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:391
+#: core/utilities/import/main/importui.cpp:389
 #, fuzzy, kde-format
 msgctxt "@title:menu"
 msgid "&Sort Items"
 msgstr "จัดเ&รียงรูปภาพ"
 
-#: core/utilities/import/main/importui.cpp:392
+#: core/utilities/import/main/importui.cpp:390
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid "The value by which the items are sorted in the thumbnail view"
 msgstr "ค่าของวิธีการจัดเรียงภาพต่าง ๆ ในหนึ่งอัลบั้มในมุมมองภาพตัวอย่าง"
 
-#: core/utilities/import/main/importui.cpp:396
+#: core/utilities/import/main/importui.cpp:394
 #, fuzzy, kde-format
 #| msgid "By Name"
 msgctxt "@item:inmenu Sort by"
 msgid "By Name"
 msgstr "ตามชื่อ"
 
-#: core/utilities/import/main/importui.cpp:397
+#: core/utilities/import/main/importui.cpp:395
 #, fuzzy, kde-format
 #| msgid "By Path"
 msgctxt "@item:inmenu Sort by"
 msgid "By Path"
 msgstr "ตามตำแหน่งที่เก็บภาพ"
 
-#: core/utilities/import/main/importui.cpp:398
+#: core/utilities/import/main/importui.cpp:396
 #, fuzzy, kde-format
 #| msgid "By Date"
 msgctxt "@item:inmenu Sort by"
 msgid "By Date"
 msgstr "ตามวันที่"
 
-#: core/utilities/import/main/importui.cpp:399
+#: core/utilities/import/main/importui.cpp:397
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Size"
 msgstr "ตามขนาดแฟ้ม"
 
-#: core/utilities/import/main/importui.cpp:400
+#: core/utilities/import/main/importui.cpp:398
 #, fuzzy, kde-format
 #| msgid "By Rating"
 msgctxt "@item:inmenu Sort by"
 msgid "By Rating"
 msgstr "ตามระดับความชื่นชอบ"
 
-#: core/utilities/import/main/importui.cpp:401
+#: core/utilities/import/main/importui.cpp:399
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Download State"
 msgstr "ดาวน์โหลดที่เลือกไว้"
 
-#: core/utilities/import/main/importui.cpp:425
+#: core/utilities/import/main/importui.cpp:423
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Item Sorting &Order"
 msgstr "การเรียงลำดับรูปภาพ"
 
-#: core/utilities/import/main/importui.cpp:426
+#: core/utilities/import/main/importui.cpp:424
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid "Defines whether items are sorted in ascending or descending manner."
 msgstr "กำหนดว่าจะให้ภาพถูกเรียงลำดับแบบจากน้อยไปหามากหรือจากมากไปหาน้อย"
 
-#: core/utilities/import/main/importui.cpp:430
+#: core/utilities/import/main/importui.cpp:428
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Ascending"
 msgstr "จากมากไปหาน้อย"
 
-#: core/utilities/import/main/importui.cpp:432
+#: core/utilities/import/main/importui.cpp:430
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Descending"
 msgstr "จากน้อยไปหามาก"
 
-#: core/utilities/import/main/importui.cpp:444
+#: core/utilities/import/main/importui.cpp:442
 #, fuzzy, kde-format
 msgctxt "@title:menu"
 msgid "&Group Items"
 msgstr "จัดก&ลุ่มรูปภาพ"
 
-#: core/utilities/import/main/importui.cpp:445
+#: core/utilities/import/main/importui.cpp:443
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid "The categories in which the items in the thumbnail view are displayed"
 msgstr "หมวดหมู่ของภาพต่าง ๆ ในมุมมองภาพตัวอย่างที่ถูกแสดง"
 
-#: core/utilities/import/main/importui.cpp:449
+#: core/utilities/import/main/importui.cpp:447
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "Flat List"
 msgstr "ไม่ต้องจัดกลุ่ม"
 
-#: core/utilities/import/main/importui.cpp:450
+#: core/utilities/import/main/importui.cpp:448
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Folder"
 msgstr "ตามโฟลเดอร์"
 
-#: core/utilities/import/main/importui.cpp:451
+#: core/utilities/import/main/importui.cpp:449
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Format"
 msgstr "ตามประเภทของรูปภาพ"
 
-#: core/utilities/import/main/importui.cpp:452
+#: core/utilities/import/main/importui.cpp:450
 #, fuzzy, kde-format
 #| msgid "By Date"
 msgctxt "@item:inmenu Group Items"
 msgid "By Date"
 msgstr "ตามวันที่"
 
-#: core/utilities/import/main/importui.cpp:478
+#: core/utilities/import/main/importui.cpp:476
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Fit to &Window"
 msgstr "พอดีกับหน้าต่าง"
 
-#: core/utilities/import/main/importui.cpp:483
+#: core/utilities/import/main/importui.cpp:481
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Zoom to 100%"
 msgstr "ปรับขนาดการดูเป็น 100%"
 
-#: core/utilities/import/main/importui.cpp:501
+#: core/utilities/import/main/importui.cpp:499
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Show History"
 msgstr "แสดงประวัติ"
 
-#: core/utilities/import/main/importui.cpp:507
+#: core/utilities/import/main/importui.cpp:505
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Show Thumbbar"
 msgstr "แสดงแถบภาพตัวอย่าง"
 
-#: core/utilities/import/main/importui.cpp:539
+#: core/utilities/import/main/importui.cpp:537
 #, fuzzy, kde-format
 msgctxt "@action Connection failed, try again?"
 msgid "Retry"
 msgstr "ลองใหม่"
 
-#: core/utilities/import/main/importui.cpp:758
+#: core/utilities/import/main/importui.cpp:756
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Exit Preview Mode"
 msgstr "ออกจากการแสดงตัวอย่าง"
 
-#: core/utilities/import/main/importui.cpp:763
+#: core/utilities/import/main/importui.cpp:761
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Next Image"
 msgstr "ภาพถัดไป"
 
-#: core/utilities/import/main/importui.cpp:775
+#: core/utilities/import/main/importui.cpp:773
 #, fuzzy, kde-format
 msgctxt "@action Go to first image"
 msgid "First Image"
 msgstr "ภาพแรกสุด"
 
-#: core/utilities/import/main/importui.cpp:780
+#: core/utilities/import/main/importui.cpp:778
 #, fuzzy, kde-format
 msgctxt "@action Go to last image"
 msgid "Last Image"
 msgstr "ภาพสุดท้าย"
 
-#: core/utilities/import/main/importui.cpp:862
+#: core/utilities/import/main/importui.cpp:860
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "Canceling current operation, please wait..."
 msgstr "กำลังยกเลิกปฏิบัติการที่ทำอยู่ โปรดรอสักครู่..."
 
-#: core/utilities/import/main/importui.cpp:917
+#: core/utilities/import/main/importui.cpp:915
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Do you want to close the dialog and cancel the current operation?"
 msgstr "คุณต้องการที่จะปิดกล่องนี้ และยกเลิกปฏิบัติการที่ทำอยู่หรือไม่ ?"
 
-#: core/utilities/import/main/importui.cpp:927
+#: core/utilities/import/main/importui.cpp:925
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "Disconnecting from camera, please wait..."
 msgstr "กำลังเลิกการเชื่อมต่อกับกล้อง โปรดรอสักครู่..."
 
-#: core/utilities/import/main/importui.cpp:1002
+#: core/utilities/import/main/importui.cpp:1000
 #, fuzzy, kde-format
 msgctxt "@info:status busy state"
 msgid "Ready"
 msgstr "พร้อม"
 
-#: core/utilities/import/main/importui.cpp:1059
+#: core/utilities/import/main/importui.cpp:1057
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -57717,13 +57717,13 @@ msgstr ""
 "คุณได้เชื่อมต่ออุปกรณ์และเปิดอุปกรณ์ไว้แล้วหรือไม่ \n"
 "ต้องการจะลองใหม่อีกครั้งหรือไม่ ?"
 
-#: core/utilities/import/main/importui.cpp:1153
+#: core/utilities/import/main/importui.cpp:1151
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Image to Upload"
 msgstr "เลือกภาพที่จะทำการอัปโหลด"
 
-#: core/utilities/import/main/importui.cpp:1188
+#: core/utilities/import/main/importui.cpp:1186
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -57737,7 +57737,7 @@ msgstr ""
 "พื้นที่ที่ต้องการ: %1\n"
 "พื้นที่ว่างที่มีอยู่: %2"
 
-#: core/utilities/import/main/importui.cpp:1243
+#: core/utilities/import/main/importui.cpp:1241
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -57747,13 +57747,13 @@ msgstr ""
 "โฟลเดอร์ <b>%1</b> ของกล้อง มีรายการ <b>%2</b> อยู่แล้ว<br/> โปรดป้อนชื่อแฟ้มใหม่ "
 "(โดยไม่ต้องใส่นามสกุลแฟ้ม):"
 
-#: core/utilities/import/main/importui.cpp:1247
+#: core/utilities/import/main/importui.cpp:1245
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "File already exists"
 msgstr "มีแฟ้มอยู่แล้ว"
 
-#: core/utilities/import/main/importui.cpp:1314
+#: core/utilities/import/main/importui.cpp:1312
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57761,7 +57761,7 @@ msgid ""
 "settings..."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1353
+#: core/utilities/import/main/importui.cpp:1351
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57770,7 +57770,7 @@ msgid ""
 "configuration dialog."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1362
+#: core/utilities/import/main/importui.cpp:1360
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57778,7 +57778,7 @@ msgid ""
 "available. Please select another one from camera configuration dialog."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1387
+#: core/utilities/import/main/importui.cpp:1385
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -57786,19 +57786,19 @@ msgid ""
 "camera pictures into."
 msgstr "<p>โปรดเลือกอัลบั้มปลายทางจากคลังของ digiKam เพื่อนำเข้าภาพจากกล้อง</p>"
 
-#: core/utilities/import/main/importui.cpp:1450
+#: core/utilities/import/main/importui.cpp:1448
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "ล้มเหลวในการอัปโหลดแฟ้ม \"%1\""
 
-#: core/utilities/import/main/importui.cpp:1457
+#: core/utilities/import/main/importui.cpp:1455
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "ล้มเหลวในการอัปโหลดแฟ้ม \"%1\""
 
-#: core/utilities/import/main/importui.cpp:1884
+#: core/utilities/import/main/importui.cpp:1882
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -57810,7 +57810,7 @@ msgstr ""
 "ซึ่งจะทำให้ไม่สามารถลบรายการเหล่านี้ได้ หากคุณต้องการจะลบรายการเหล่านี้ "
 "โปรดปลดล็อครพวกมันก่อนแล้วลองใหม่อีกครั้ง"
 
-#: core/utilities/import/main/importui.cpp:1895
+#: core/utilities/import/main/importui.cpp:1893
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -57826,20 +57826,20 @@ msgstr[0] ""
 "ภาพที่ถูกลบไปแล้วจะไม่สามารถกู้กลับคืนมาได้ \n"
 "คุณแน่ใจหรือไม่ที่จะทำการลบภาพเหล่านี้ ?"
 
-#: core/utilities/import/main/importui.cpp:1905
+#: core/utilities/import/main/importui.cpp:1903
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "แจ้งเตือน"
 
-#: core/utilities/import/main/importui.cpp:1949
+#: core/utilities/import/main/importui.cpp:1947
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "มีพื้นที่ว่างของดิสก์ไม่เพียงพอ"
 
-#: core/utilities/import/main/importui.cpp:1950
+#: core/utilities/import/main/importui.cpp:1948
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -57857,15 +57857,15 @@ msgstr ""
 "พื้นที่ที่ต้องการโดยประมาณ: %1\n"
 "พื้นที่ว่างที่มีอยู่: %2"
 
-#: core/utilities/import/main/importui.cpp:2215
-#: core/utilities/import/main/importui.cpp:2243
+#: core/utilities/import/main/importui.cpp:2213
+#: core/utilities/import/main/importui.cpp:2241
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "ยังไม่มีการเลือกรายการใด ๆ"
 
-#: core/utilities/import/main/importui.cpp:2235
+#: core/utilities/import/main/importui.cpp:2233
 #, fuzzy, kde-format
 #| msgctxt "<Image file name> (<Image number> of <Images in album>)"
 #| msgid "%1 (%2 of %3)"
@@ -57873,32 +57873,32 @@ msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "แฟ้ม %1 (ภาพที่ %2 จาก %3 ภาพ)"
 
-#: core/utilities/import/main/importui.cpp:2254
+#: core/utilities/import/main/importui.cpp:2252
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
 msgid_plural "%2/%1 items selected"
 msgstr[0] "เลือกไว้ %2/%1 รายการ"
 
-#: core/utilities/import/main/importui.cpp:2332
+#: core/utilities/import/main/importui.cpp:2330
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Skipped file <filename>%1</filename>"
 msgstr "ล้มเหลวในการอัปโหลดแฟ้ม \"%1\""
 
-#: core/utilities/import/main/importui.cpp:2354
+#: core/utilities/import/main/importui.cpp:2352
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Rename file to <filename>%1</filename>"
 msgstr "ล้มเหลวในการอัปโหลดแฟ้ม \"%1\""
 
-#: core/utilities/import/main/importui.cpp:2377
+#: core/utilities/import/main/importui.cpp:2375
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "ล้มเหลวในการอัปโหลดแฟ้ม \"%1\""
 
-#: core/utilities/import/main/importui.cpp:2451
+#: core/utilities/import/main/importui.cpp:2449
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -57906,19 +57906,19 @@ msgid ""
 "are auto-rotated"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2459
+#: core/utilities/import/main/importui.cpp:2457
 #, fuzzy, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "ทำเครื่องหมายว่าดาวน์โหลดแล้ว"
 
-#: core/utilities/import/main/importui.cpp:2485
+#: core/utilities/import/main/importui.cpp:2483
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "มีแฟ้มชื่อเดียวกันอยู่แล้ว (%1) ภายในโฟลเดอร์ %2"
 
-#: core/utilities/import/main/importui.cpp:2498
+#: core/utilities/import/main/importui.cpp:2496
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."

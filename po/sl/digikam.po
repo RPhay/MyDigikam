@@ -37,18 +37,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-02 00:43+0000\n"
-"PO-Revision-Date: 2022-11-16 15:19+0100\n"
+"POT-Creation-Date: 2022-12-03 00:44+0000\n"
+"PO-Revision-Date: 2022-12-02 06:21+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "Translator: Martin Srebotnjak <miles@filmsi.net>\n"
-"X-Generator: Lokalize 22.08.2\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -37413,7 +37413,7 @@ msgid "Description"
 msgstr "Opis"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1887
+#: core/utilities/import/main/importui.cpp:1885
 #, kde-format
 msgctxt "@title"
 msgid "Information"
@@ -54691,10 +54691,9 @@ msgid "Lock the map position"
 msgstr "Zakleni položaj zemljevida"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:346
-#, fuzzy, kde-format
-#| msgid "Load playlist from a file."
+#, kde-format
 msgid "Load tracks from albums"
-msgstr "Naloži seznam predvajanja iz datoteke."
+msgstr "Naloži sledi iz albumov"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:800
 #, kde-format
@@ -55445,7 +55444,7 @@ msgstr ""
 "pomagalo, da se izognete preko-osvetljevanju slike."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:468
-#: core/utilities/import/main/importui.cpp:490
+#: core/utilities/import/main/importui.cpp:488
 #, kde-format
 msgctxt "@action"
 msgid "Color-Managed View"
@@ -55506,8 +55505,8 @@ msgid "Rotate Right"
 msgstr "Zavrti v desno"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:557
-#: core/utilities/import/main/importui.cpp:532
-#: core/utilities/import/main/importui.cpp:769
+#: core/utilities/import/main/importui.cpp:530
+#: core/utilities/import/main/importui.cpp:767
 #, kde-format
 msgctxt "@action"
 msgid "Previous Image"
@@ -56089,7 +56088,7 @@ msgstr "Ni bilo mogoče pridobiti metapodatkov za <filename>%1</filename>"
 
 #: core/utilities/import/backend/cameracontroller.cpp:629
 #: core/utilities/import/backend/cameracontroller.cpp:952
-#: core/utilities/import/main/importui.cpp:2397
+#: core/utilities/import/main/importui.cpp:2395
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "Ni bilo mogoče prejeti <filename>%1</filename>"
@@ -56418,391 +56417,391 @@ msgctxt "@info:tooltip"
 msgid "This item has already been downloaded"
 msgstr "Ta predmet je že bil prejet"
 
-#: core/utilities/import/main/importui.cpp:148
+#: core/utilities/import/main/importui.cpp:146
 #, kde-format
 msgctxt "@info"
 msgid "Set how digiKam will rename files as they are downloaded."
 msgstr "Nastavitev kako bo digiKam preimenoval datoteke med prejemanjem."
 
-#: core/utilities/import/main/importui.cpp:149
+#: core/utilities/import/main/importui.cpp:147
 #, kde-format
 msgctxt "@item"
 msgid "File Renaming Options"
 msgstr "Možnosti za preimenovanja datotek"
 
-#: core/utilities/import/main/importui.cpp:155
+#: core/utilities/import/main/importui.cpp:153
 #, kde-format
 msgctxt "@item"
 msgid "Auto-creation of Albums"
 msgstr "Samodejno ustvarjanje albumov"
 
-#: core/utilities/import/main/importui.cpp:161
+#: core/utilities/import/main/importui.cpp:159
 #, kde-format
 msgctxt "@item"
 msgid "On the Fly Operations (JPEG only)"
 msgstr "Sprotne operacije (samo JPEG)"
 
-#: core/utilities/import/main/importui.cpp:167
+#: core/utilities/import/main/importui.cpp:165
 #, kde-format
 msgctxt "@item"
 msgid "DNG Convert Options"
 msgstr "Možnosti pretvorbe DNG"
 
-#: core/utilities/import/main/importui.cpp:173
+#: core/utilities/import/main/importui.cpp:171
 #, kde-format
 msgctxt "@item"
 msgid "Scripting"
 msgstr "Izvajanje skriptov"
 
-#: core/utilities/import/main/importui.cpp:177
+#: core/utilities/import/main/importui.cpp:175
 #, kde-format
 msgctxt "@title"
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: core/utilities/import/main/importui.cpp:192
+#: core/utilities/import/main/importui.cpp:190
 #, kde-format
 msgctxt "@action Cancel process"
 msgid "Cancel"
 msgstr "Prekliči"
 
-#: core/utilities/import/main/importui.cpp:199
+#: core/utilities/import/main/importui.cpp:197
 #, kde-format
 msgctxt "@action Information about camera"
 msgid "Information"
 msgstr "Podrobnosti"
 
-#: core/utilities/import/main/importui.cpp:206
+#: core/utilities/import/main/importui.cpp:204
 #, kde-format
 msgctxt "@action Capture photo from camera"
 msgid "Capture"
 msgstr "Zajemi"
 
-#: core/utilities/import/main/importui.cpp:218
+#: core/utilities/import/main/importui.cpp:216
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select All"
 msgstr "Izberi vse"
 
-#: core/utilities/import/main/importui.cpp:226
+#: core/utilities/import/main/importui.cpp:224
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select None"
 msgstr "Odstrani izbor"
 
-#: core/utilities/import/main/importui.cpp:234
+#: core/utilities/import/main/importui.cpp:232
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Invert Selection"
 msgstr "Obrni izbiro"
 
-#: core/utilities/import/main/importui.cpp:242
+#: core/utilities/import/main/importui.cpp:240
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select New Items"
 msgstr "Izberi nove predmete"
 
-#: core/utilities/import/main/importui.cpp:249
+#: core/utilities/import/main/importui.cpp:247
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select Locked Items"
 msgstr "Izberi zaklenjene predmete"
 
-#: core/utilities/import/main/importui.cpp:257
+#: core/utilities/import/main/importui.cpp:255
 #, kde-format
 msgctxt "@title:menu"
 msgid "Download"
 msgstr "Prejmi"
 
-#: core/utilities/import/main/importui.cpp:262
+#: core/utilities/import/main/importui.cpp:260
 #, kde-format
 msgctxt "@action"
 msgid "Download New"
 msgstr "Prejmi nove"
 
-#: core/utilities/import/main/importui.cpp:272
+#: core/utilities/import/main/importui.cpp:270
 #, kde-format
 msgctxt "@action"
 msgid "Download Selected"
 msgstr "Prejmi izbrane"
 
-#: core/utilities/import/main/importui.cpp:279
+#: core/utilities/import/main/importui.cpp:277
 #, kde-format
 msgctxt "@action"
 msgid "Download All"
 msgstr "Prejmi vse"
 
-#: core/utilities/import/main/importui.cpp:287
+#: core/utilities/import/main/importui.cpp:285
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete New"
 msgstr "Prejmi in izbriši nove"
 
-#: core/utilities/import/main/importui.cpp:295
+#: core/utilities/import/main/importui.cpp:293
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete Selected"
 msgstr "Prejmi in izbriši izbrane"
 
-#: core/utilities/import/main/importui.cpp:303
+#: core/utilities/import/main/importui.cpp:301
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete All"
 msgstr "Prejmi in izbriši vse"
 
-#: core/utilities/import/main/importui.cpp:310
+#: core/utilities/import/main/importui.cpp:308
 #, kde-format
 msgctxt "@action"
 msgid "Upload..."
 msgstr "Pošlji ..."
 
-#: core/utilities/import/main/importui.cpp:318
+#: core/utilities/import/main/importui.cpp:316
 #, kde-format
 msgctxt "@action"
 msgid "Toggle Lock"
 msgstr "Preklopi zaklep"
 
-#: core/utilities/import/main/importui.cpp:326
+#: core/utilities/import/main/importui.cpp:324
 #, kde-format
 msgctxt "@action"
 msgid "Mark as downloaded"
 msgstr "Označi kot prejeto"
 
-#: core/utilities/import/main/importui.cpp:333
+#: core/utilities/import/main/importui.cpp:331
 #, kde-format
 msgctxt "@title:menu"
 msgid "Delete"
 msgstr "Izbriši"
 
-#: core/utilities/import/main/importui.cpp:338
+#: core/utilities/import/main/importui.cpp:336
 #, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete Selected"
 msgstr "Izbriši izbrane"
 
-#: core/utilities/import/main/importui.cpp:346
+#: core/utilities/import/main/importui.cpp:344
 #, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete All"
 msgstr "Izbriši vse"
 
-#: core/utilities/import/main/importui.cpp:352
+#: core/utilities/import/main/importui.cpp:350
 #, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete New"
 msgstr "Izbriši nove"
 
-#: core/utilities/import/main/importui.cpp:360
+#: core/utilities/import/main/importui.cpp:358
 #, kde-format
 msgctxt "@title:group"
 msgid "Views"
 msgstr "Prikazi"
 
-#: core/utilities/import/main/importui.cpp:364
+#: core/utilities/import/main/importui.cpp:362
 #, kde-format
 msgctxt "@action Go to thumbnails (icon) view"
 msgid "Thumbnails"
 msgstr "Sličice"
 
-#: core/utilities/import/main/importui.cpp:371
+#: core/utilities/import/main/importui.cpp:369
 #, kde-format
 msgctxt "@action View the selected image"
 msgid "Preview Item"
 msgstr "Predogled predmeta"
 
-#: core/utilities/import/main/importui.cpp:380
+#: core/utilities/import/main/importui.cpp:378
 #, kde-format
 msgctxt "@action Switch to map view"
 msgid "Map"
 msgstr "Zemljevid"
 
-#: core/utilities/import/main/importui.cpp:391
+#: core/utilities/import/main/importui.cpp:389
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Sort Items"
 msgstr "Razvr&sti predmete"
 
-#: core/utilities/import/main/importui.cpp:392
+#: core/utilities/import/main/importui.cpp:390
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "The value by which the items are sorted in the thumbnail view"
 msgstr "Vrednost po kateri so predmeti razvrščeni v prikazu sličic"
 
-#: core/utilities/import/main/importui.cpp:396
+#: core/utilities/import/main/importui.cpp:394
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Name"
 msgstr "Po imenu"
 
-#: core/utilities/import/main/importui.cpp:397
+#: core/utilities/import/main/importui.cpp:395
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Path"
 msgstr "Po poti"
 
-#: core/utilities/import/main/importui.cpp:398
+#: core/utilities/import/main/importui.cpp:396
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Date"
 msgstr "Po datumu"
 
-#: core/utilities/import/main/importui.cpp:399
+#: core/utilities/import/main/importui.cpp:397
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Size"
 msgstr "Po velikosti"
 
-#: core/utilities/import/main/importui.cpp:400
+#: core/utilities/import/main/importui.cpp:398
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Rating"
 msgstr "Po oceni"
 
-#: core/utilities/import/main/importui.cpp:401
+#: core/utilities/import/main/importui.cpp:399
 #, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Download State"
 msgstr "Po stanju prejema"
 
-#: core/utilities/import/main/importui.cpp:425
+#: core/utilities/import/main/importui.cpp:423
 #, kde-format
 msgctxt "@action"
 msgid "Item Sorting &Order"
 msgstr "Vrstni red razvrščanja predmetov"
 
-#: core/utilities/import/main/importui.cpp:426
+#: core/utilities/import/main/importui.cpp:424
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Defines whether items are sorted in ascending or descending manner."
 msgstr "Določa ali so predmeti razvrščeni naraščajoče ali padajoče."
 
-#: core/utilities/import/main/importui.cpp:430
+#: core/utilities/import/main/importui.cpp:428
 #, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Ascending"
 msgstr "Naraščajoče"
 
-#: core/utilities/import/main/importui.cpp:432
+#: core/utilities/import/main/importui.cpp:430
 #, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Descending"
 msgstr "Padajoče"
 
-#: core/utilities/import/main/importui.cpp:444
+#: core/utilities/import/main/importui.cpp:442
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Group Items"
 msgstr "Združi predmete"
 
-#: core/utilities/import/main/importui.cpp:445
+#: core/utilities/import/main/importui.cpp:443
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "The categories in which the items in the thumbnail view are displayed"
 msgstr "Kategorije v katerih so prikazani predmeti v prikazu sličic"
 
-#: core/utilities/import/main/importui.cpp:449
+#: core/utilities/import/main/importui.cpp:447
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "Flat List"
 msgstr "Ploski seznam"
 
-#: core/utilities/import/main/importui.cpp:450
+#: core/utilities/import/main/importui.cpp:448
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Folder"
 msgstr "Po mapi"
 
-#: core/utilities/import/main/importui.cpp:451
+#: core/utilities/import/main/importui.cpp:449
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Format"
 msgstr "Po vrsti"
 
-#: core/utilities/import/main/importui.cpp:452
+#: core/utilities/import/main/importui.cpp:450
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Date"
 msgstr "Po datumu"
 
-#: core/utilities/import/main/importui.cpp:478
+#: core/utilities/import/main/importui.cpp:476
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Fit to &Window"
 msgstr "Prilagodi oknu"
 
-#: core/utilities/import/main/importui.cpp:483
+#: core/utilities/import/main/importui.cpp:481
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Zoom to 100%"
 msgstr "Približaj na 100 %"
 
-#: core/utilities/import/main/importui.cpp:501
+#: core/utilities/import/main/importui.cpp:499
 #, kde-format
 msgctxt "@option:check"
 msgid "Show History"
 msgstr "Pokaži zgodovino"
 
-#: core/utilities/import/main/importui.cpp:507
+#: core/utilities/import/main/importui.cpp:505
 #, kde-format
 msgctxt "@option:check"
 msgid "Show Thumbbar"
 msgstr "Pokaži vrstico s sličicami"
 
-#: core/utilities/import/main/importui.cpp:539
+#: core/utilities/import/main/importui.cpp:537
 #, kde-format
 msgctxt "@action Connection failed, try again?"
 msgid "Retry"
 msgstr "Poskusi znova"
 
-#: core/utilities/import/main/importui.cpp:758
+#: core/utilities/import/main/importui.cpp:756
 #, kde-format
 msgctxt "@action"
 msgid "Exit Preview Mode"
 msgstr "Končaj način predogleda"
 
-#: core/utilities/import/main/importui.cpp:763
+#: core/utilities/import/main/importui.cpp:761
 #, kde-format
 msgctxt "@action"
 msgid "Next Image"
 msgstr "Naslednja slika"
 
-#: core/utilities/import/main/importui.cpp:775
+#: core/utilities/import/main/importui.cpp:773
 #, kde-format
 msgctxt "@action Go to first image"
 msgid "First Image"
 msgstr "Prva slika"
 
-#: core/utilities/import/main/importui.cpp:780
+#: core/utilities/import/main/importui.cpp:778
 #, kde-format
 msgctxt "@action Go to last image"
 msgid "Last Image"
 msgstr "Zadnja slika"
 
-#: core/utilities/import/main/importui.cpp:862
+#: core/utilities/import/main/importui.cpp:860
 #, kde-format
 msgctxt "@info:status"
 msgid "Canceling current operation, please wait..."
 msgstr "Poteka preklic trenutnega opravila, počakajte..."
 
-#: core/utilities/import/main/importui.cpp:917
+#: core/utilities/import/main/importui.cpp:915
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to close the dialog and cancel the current operation?"
 msgstr "Ali želite zapreti pogovorno okno in preklicati trenutno opravilo?"
 
-#: core/utilities/import/main/importui.cpp:927
+#: core/utilities/import/main/importui.cpp:925
 #, kde-format
 msgctxt "@info:status"
 msgid "Disconnecting from camera, please wait..."
 msgstr "Prekinjanje povezave s fotoaparatom, počakajte..."
 
-#: core/utilities/import/main/importui.cpp:1002
+#: core/utilities/import/main/importui.cpp:1000
 #, kde-format
 msgctxt "@info:status busy state"
 msgid "Ready"
 msgstr "Pripravljen"
 
-#: core/utilities/import/main/importui.cpp:1059
+#: core/utilities/import/main/importui.cpp:1057
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56812,13 +56811,13 @@ msgstr ""
 "Ni se bilo mogoče povezati s fotoaparatom. Prepričajte se, da je pravilno "
 "povezan in vklopljen."
 
-#: core/utilities/import/main/importui.cpp:1153
+#: core/utilities/import/main/importui.cpp:1151
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image to Upload"
 msgstr "Izberite sliko za pošiljanje"
 
-#: core/utilities/import/main/importui.cpp:1188
+#: core/utilities/import/main/importui.cpp:1186
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56833,7 +56832,7 @@ msgstr ""
 "Zahtevan prostor: %1\n"
 "Razpoložljiv neporabljen prostor: %2"
 
-#: core/utilities/import/main/importui.cpp:1243
+#: core/utilities/import/main/importui.cpp:1241
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56843,13 +56842,13 @@ msgstr ""
 "Mapa fotoaparata \"%1\" že vsebuje predmet \"%2\".\n"
 "Vnesite novo ime datoteke (brez pripone):"
 
-#: core/utilities/import/main/importui.cpp:1247
+#: core/utilities/import/main/importui.cpp:1245
 #, kde-format
 msgctxt "@title:window"
 msgid "File already exists"
 msgstr "Datoteka že obstaja"
 
-#: core/utilities/import/main/importui.cpp:1314
+#: core/utilities/import/main/importui.cpp:1312
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56858,7 +56857,7 @@ msgid ""
 msgstr ""
 "Vaša oblika datuma albuma po meri ni veljavna. Preverite vaše nastavitve ..."
 
-#: core/utilities/import/main/importui.cpp:1353
+#: core/utilities/import/main/importui.cpp:1351
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56870,7 +56869,7 @@ msgstr ""
 "obdelavo prejema iz vašega fotoaparata, ni na voljo. Izberite novo iz "
 "pogovornega okna nastavitev fotoaparata."
 
-#: core/utilities/import/main/importui.cpp:1362
+#: core/utilities/import/main/importui.cpp:1360
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56881,7 +56880,7 @@ msgstr ""
 "fotoaparata, ni na voljo. Izberite novega iz pogovornega okna nastavitev "
 "fotoaparata."
 
-#: core/utilities/import/main/importui.cpp:1387
+#: core/utilities/import/main/importui.cpp:1385
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56891,17 +56890,17 @@ msgstr ""
 "Izberite ciljni album iz knjižnice digiKam, da vanj uvozite slike iz "
 "fotoaparata."
 
-#: core/utilities/import/main/importui.cpp:1450
+#: core/utilities/import/main/importui.cpp:1448
 #, kde-kuit-format
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "Ni bilo mogoče preseliti priklopne datoteke za <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1457
+#: core/utilities/import/main/importui.cpp:1455
 #, kde-kuit-format
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "Ni bilo mogoče preseliti datoteke za <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1884
+#: core/utilities/import/main/importui.cpp:1882
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56913,7 +56912,7 @@ msgstr ""
 "predmeti ne bodo izbrisani. Če jih resnično želite izbrisati, jih odklenite "
 "in poskusite znova."
 
-#: core/utilities/import/main/importui.cpp:1895
+#: core/utilities/import/main/importui.cpp:1893
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56941,19 +56940,19 @@ msgstr[3] ""
 "Izbrisanih datotek ni mogoče obnoviti.\n"
 "Ali ste prepričani?"
 
-#: core/utilities/import/main/importui.cpp:1905
+#: core/utilities/import/main/importui.cpp:1903
 #, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Opozorilo"
 
-#: core/utilities/import/main/importui.cpp:1949
+#: core/utilities/import/main/importui.cpp:1947
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "Ni dovolj prostora"
 
-#: core/utilities/import/main/importui.cpp:1950
+#: core/utilities/import/main/importui.cpp:1948
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -56973,8 +56972,8 @@ msgstr ""
 "\n"
 "Poskusim vseeno?"
 
-#: core/utilities/import/main/importui.cpp:2215
-#: core/utilities/import/main/importui.cpp:2243
+#: core/utilities/import/main/importui.cpp:2213
+#: core/utilities/import/main/importui.cpp:2241
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -56984,13 +56983,13 @@ msgstr[1] "Ni izbranih predmetov (%1 predmet)"
 msgstr[2] "Ni izbranih predmetov (%1 predmeta)"
 msgstr[3] "Ni izbranih predmetov (%1 predmeti)"
 
-#: core/utilities/import/main/importui.cpp:2235
+#: core/utilities/import/main/importui.cpp:2233
 #, kde-format
 msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "\"%1\" (%2 od %3)"
 
-#: core/utilities/import/main/importui.cpp:2254
+#: core/utilities/import/main/importui.cpp:2252
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -57000,22 +56999,22 @@ msgstr[1] "%2/%1 izbran predmet"
 msgstr[2] "%2/%1 izbrana predmeta"
 msgstr[3] "%2/%1 izbrani predmeti"
 
-#: core/utilities/import/main/importui.cpp:2332
+#: core/utilities/import/main/importui.cpp:2330
 #, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Datoteka <filename>%1</filename> preskočena"
 
-#: core/utilities/import/main/importui.cpp:2354
+#: core/utilities/import/main/importui.cpp:2352
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Preimenujem datoteko v <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2377
+#: core/utilities/import/main/importui.cpp:2375
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "Ni bilo mogoče shraniti priklopne datoteke za <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2451
+#: core/utilities/import/main/importui.cpp:2449
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -57025,19 +57024,19 @@ msgstr ""
 "Prejem slik je zaključen. Sedaj lahko odklopite kamero, medtem ko bodo slike "
 "samodejno zasukane"
 
-#: core/utilities/import/main/importui.cpp:2459
+#: core/utilities/import/main/importui.cpp:2457
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Prejem slik je zaključen"
 
-#: core/utilities/import/main/importui.cpp:2485
+#: core/utilities/import/main/importui.cpp:2483
 #, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "Datoteka z enakim imenom (\"%1\") že obstaja v mapi \"%2\"."
 
-#: core/utilities/import/main/importui.cpp:2498
+#: core/utilities/import/main/importui.cpp:2496
 #, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."

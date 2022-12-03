@@ -32,7 +32,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-02 00:43+0000\n"
+"POT-Creation-Date: 2022-12-03 00:44+0000\n"
 "PO-Revision-Date: 2020-02-15 19:57+0800\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
@@ -38719,7 +38719,7 @@ msgid "Description"
 msgstr "描述"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1887
+#: core/utilities/import/main/importui.cpp:1885
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@title"
@@ -57701,7 +57701,7 @@ msgid ""
 msgstr "設定這個選項會在影像上顯示白色層疊。這會幫助您避免影像曝光過度。"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:468
-#: core/utilities/import/main/importui.cpp:490
+#: core/utilities/import/main/importui.cpp:488
 #, fuzzy, kde-format
 #| msgid "Color-Managed View"
 msgctxt "@action"
@@ -57770,8 +57770,8 @@ msgid "Rotate Right"
 msgstr "向右旋轉"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:557
-#: core/utilities/import/main/importui.cpp:532
-#: core/utilities/import/main/importui.cpp:769
+#: core/utilities/import/main/importui.cpp:530
+#: core/utilities/import/main/importui.cpp:767
 #, kde-format
 msgctxt "@action"
 msgid "Previous Image"
@@ -58390,7 +58390,7 @@ msgstr "刪除檔案 <filename>%1</filename> 失敗。"
 
 #: core/utilities/import/backend/cameracontroller.cpp:629
 #: core/utilities/import/backend/cameracontroller.cpp:952
-#: core/utilities/import/main/importui.cpp:2397
+#: core/utilities/import/main/importui.cpp:2395
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to download file <filename>%1</filename>."
 msgid "Failed to download <filename>%1</filename>"
@@ -58734,170 +58734,170 @@ msgctxt "@info:tooltip"
 msgid "This item has already been downloaded"
 msgstr "此項目的下載狀態為已下載"
 
-#: core/utilities/import/main/importui.cpp:148
+#: core/utilities/import/main/importui.cpp:146
 #, fuzzy, kde-format
 #| msgid "Set how digiKam will rename files as they are downloaded."
 msgctxt "@info"
 msgid "Set how digiKam will rename files as they are downloaded."
 msgstr "設定檔案下載後 digiKam 將檔案重新命名的方式。"
 
-#: core/utilities/import/main/importui.cpp:149
+#: core/utilities/import/main/importui.cpp:147
 #, fuzzy, kde-format
 #| msgid "File Renaming Options"
 msgctxt "@item"
 msgid "File Renaming Options"
 msgstr "檔案重新命名選項"
 
-#: core/utilities/import/main/importui.cpp:155
+#: core/utilities/import/main/importui.cpp:153
 #, fuzzy, kde-format
 #| msgid "Auto-creation of Albums"
 msgctxt "@item"
 msgid "Auto-creation of Albums"
 msgstr "相簿的自動建立"
 
-#: core/utilities/import/main/importui.cpp:161
+#: core/utilities/import/main/importui.cpp:159
 #, fuzzy, kde-format
 #| msgid "On the Fly Operations (JPEG only)"
 msgctxt "@item"
 msgid "On the Fly Operations (JPEG only)"
 msgstr "即時操作 (只有 JPEG)"
 
-#: core/utilities/import/main/importui.cpp:167
+#: core/utilities/import/main/importui.cpp:165
 #, fuzzy, kde-format
 #| msgid "More options"
 msgctxt "@item"
 msgid "DNG Convert Options"
 msgstr "更多選項"
 
-#: core/utilities/import/main/importui.cpp:173
+#: core/utilities/import/main/importui.cpp:171
 #, fuzzy, kde-format
 #| msgid "Scripting"
 msgctxt "@item"
 msgid "Scripting"
 msgstr "文稿"
 
-#: core/utilities/import/main/importui.cpp:177
+#: core/utilities/import/main/importui.cpp:175
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@title"
 msgid "Settings"
 msgstr "設定值"
 
-#: core/utilities/import/main/importui.cpp:192
+#: core/utilities/import/main/importui.cpp:190
 #, kde-format
 msgctxt "@action Cancel process"
 msgid "Cancel"
 msgstr "取消"
 
-#: core/utilities/import/main/importui.cpp:199
+#: core/utilities/import/main/importui.cpp:197
 #, kde-format
 msgctxt "@action Information about camera"
 msgid "Information"
 msgstr "資訊"
 
-#: core/utilities/import/main/importui.cpp:206
+#: core/utilities/import/main/importui.cpp:204
 #, kde-format
 msgctxt "@action Capture photo from camera"
 msgid "Capture"
 msgstr "擷取"
 
-#: core/utilities/import/main/importui.cpp:218
+#: core/utilities/import/main/importui.cpp:216
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select All"
 msgstr "全部選取"
 
-#: core/utilities/import/main/importui.cpp:226
+#: core/utilities/import/main/importui.cpp:224
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select None"
 msgstr "全部不選"
 
-#: core/utilities/import/main/importui.cpp:234
+#: core/utilities/import/main/importui.cpp:232
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Invert Selection"
 msgstr "反相選擇"
 
-#: core/utilities/import/main/importui.cpp:242
+#: core/utilities/import/main/importui.cpp:240
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select New Items"
 msgstr "選擇新的項目"
 
-#: core/utilities/import/main/importui.cpp:249
+#: core/utilities/import/main/importui.cpp:247
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select Locked Items"
 msgstr "選擇鎖定的項目"
 
-#: core/utilities/import/main/importui.cpp:257
+#: core/utilities/import/main/importui.cpp:255
 #, kde-format
 msgctxt "@title:menu"
 msgid "Download"
 msgstr "下載"
 
-#: core/utilities/import/main/importui.cpp:262
+#: core/utilities/import/main/importui.cpp:260
 #, kde-format
 msgctxt "@action"
 msgid "Download New"
 msgstr "下載新項目"
 
-#: core/utilities/import/main/importui.cpp:272
+#: core/utilities/import/main/importui.cpp:270
 #, kde-format
 msgctxt "@action"
 msgid "Download Selected"
 msgstr "下載選擇的項目"
 
-#: core/utilities/import/main/importui.cpp:279
+#: core/utilities/import/main/importui.cpp:277
 #, kde-format
 msgctxt "@action"
 msgid "Download All"
 msgstr "全部下載"
 
-#: core/utilities/import/main/importui.cpp:287
+#: core/utilities/import/main/importui.cpp:285
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete New"
 msgstr "下載並刪除新項目"
 
-#: core/utilities/import/main/importui.cpp:295
+#: core/utilities/import/main/importui.cpp:293
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete Selected"
 msgstr "下載並刪除選擇的項目"
 
-#: core/utilities/import/main/importui.cpp:303
+#: core/utilities/import/main/importui.cpp:301
 #, kde-format
 msgctxt "@action"
 msgid "Download && Delete All"
 msgstr "下載並刪除全部"
 
-#: core/utilities/import/main/importui.cpp:310
+#: core/utilities/import/main/importui.cpp:308
 #, kde-format
 msgctxt "@action"
 msgid "Upload..."
 msgstr "上傳..."
 
-#: core/utilities/import/main/importui.cpp:318
+#: core/utilities/import/main/importui.cpp:316
 #, kde-format
 msgctxt "@action"
 msgid "Toggle Lock"
 msgstr "切換鎖定"
 
-#: core/utilities/import/main/importui.cpp:326
+#: core/utilities/import/main/importui.cpp:324
 #, kde-format
 msgctxt "@action"
 msgid "Mark as downloaded"
 msgstr "標記為已下載"
 
-#: core/utilities/import/main/importui.cpp:333
+#: core/utilities/import/main/importui.cpp:331
 #, kde-format
 msgctxt "@title:menu"
 msgid "Delete"
 msgstr "刪除"
 
-#: core/utilities/import/main/importui.cpp:338
+#: core/utilities/import/main/importui.cpp:336
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Delete Selected"
@@ -58905,7 +58905,7 @@ msgctxt "@action:inmenu delete item"
 msgid "Delete Selected"
 msgstr "刪除選擇的項目"
 
-#: core/utilities/import/main/importui.cpp:346
+#: core/utilities/import/main/importui.cpp:344
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Delete All"
@@ -58913,7 +58913,7 @@ msgctxt "@action:inmenu delete item"
 msgid "Delete All"
 msgstr "刪除全部"
 
-#: core/utilities/import/main/importui.cpp:352
+#: core/utilities/import/main/importui.cpp:350
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Delete New"
@@ -58921,64 +58921,64 @@ msgctxt "@action:inmenu delete item"
 msgid "Delete New"
 msgstr "刪除新項目"
 
-#: core/utilities/import/main/importui.cpp:360
+#: core/utilities/import/main/importui.cpp:358
 #, kde-format
 msgctxt "@title:group"
 msgid "Views"
 msgstr "檢視"
 
-#: core/utilities/import/main/importui.cpp:364
+#: core/utilities/import/main/importui.cpp:362
 #, kde-format
 msgctxt "@action Go to thumbnails (icon) view"
 msgid "Thumbnails"
 msgstr "縮圖"
 
-#: core/utilities/import/main/importui.cpp:371
+#: core/utilities/import/main/importui.cpp:369
 #, kde-format
 msgctxt "@action View the selected image"
 msgid "Preview Item"
 msgstr "預覽項目"
 
-#: core/utilities/import/main/importui.cpp:380
+#: core/utilities/import/main/importui.cpp:378
 #, kde-format
 msgctxt "@action Switch to map view"
 msgid "Map"
 msgstr "地圖"
 
-#: core/utilities/import/main/importui.cpp:391
+#: core/utilities/import/main/importui.cpp:389
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Sort Items"
 msgstr "項目排序(&S)"
 
-#: core/utilities/import/main/importui.cpp:392
+#: core/utilities/import/main/importui.cpp:390
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "The value by which the items are sorted in the thumbnail view"
 msgstr "此數值用於縮圖檢視中項目的排序方式"
 
-#: core/utilities/import/main/importui.cpp:396
+#: core/utilities/import/main/importui.cpp:394
 #, fuzzy, kde-format
 #| msgid "By Name"
 msgctxt "@item:inmenu Sort by"
 msgid "By Name"
 msgstr "依名稱"
 
-#: core/utilities/import/main/importui.cpp:397
+#: core/utilities/import/main/importui.cpp:395
 #, fuzzy, kde-format
 #| msgid "By Path"
 msgctxt "@item:inmenu Sort by"
 msgid "By Path"
 msgstr "依路徑"
 
-#: core/utilities/import/main/importui.cpp:398
+#: core/utilities/import/main/importui.cpp:396
 #, fuzzy, kde-format
 #| msgid "By Date"
 msgctxt "@item:inmenu Sort by"
 msgid "By Date"
 msgstr "依日期"
 
-#: core/utilities/import/main/importui.cpp:399
+#: core/utilities/import/main/importui.cpp:397
 #, fuzzy, kde-format
 #| msgctxt "item:inmenu Sort by"
 #| msgid "By Size"
@@ -58986,14 +58986,14 @@ msgctxt "@item:inmenu Sort by"
 msgid "By Size"
 msgstr "依大小"
 
-#: core/utilities/import/main/importui.cpp:400
+#: core/utilities/import/main/importui.cpp:398
 #, fuzzy, kde-format
 #| msgid "By Rating"
 msgctxt "@item:inmenu Sort by"
 msgid "By Rating"
 msgstr "依評等"
 
-#: core/utilities/import/main/importui.cpp:401
+#: core/utilities/import/main/importui.cpp:399
 #, fuzzy, kde-format
 #| msgctxt "item:inmenu Sort by"
 #| msgid "By Download State"
@@ -59001,7 +59001,7 @@ msgctxt "@item:inmenu Sort by"
 msgid "By Download State"
 msgstr "依下載狀態"
 
-#: core/utilities/import/main/importui.cpp:425
+#: core/utilities/import/main/importui.cpp:423
 #, fuzzy, kde-format
 #| msgctxt "@title:inmenu"
 #| msgid "Item Sorting &Order"
@@ -59009,133 +59009,133 @@ msgctxt "@action"
 msgid "Item Sorting &Order"
 msgstr "項目排列順序(&O)"
 
-#: core/utilities/import/main/importui.cpp:426
+#: core/utilities/import/main/importui.cpp:424
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Defines whether items are sorted in ascending or descending manner."
 msgstr "定義是否用遞增或遞減方式排列項目。"
 
-#: core/utilities/import/main/importui.cpp:430
+#: core/utilities/import/main/importui.cpp:428
 #, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Ascending"
 msgstr "遞增"
 
-#: core/utilities/import/main/importui.cpp:432
+#: core/utilities/import/main/importui.cpp:430
 #, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Descending"
 msgstr "遞減"
 
-#: core/utilities/import/main/importui.cpp:444
+#: core/utilities/import/main/importui.cpp:442
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Group Items"
 msgstr "群組項目(&G)"
 
-#: core/utilities/import/main/importui.cpp:445
+#: core/utilities/import/main/importui.cpp:443
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "The categories in which the items in the thumbnail view are displayed"
 msgstr "顯示於縮圖檢視中的項目分類"
 
-#: core/utilities/import/main/importui.cpp:449
+#: core/utilities/import/main/importui.cpp:447
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "Flat List"
 msgstr "展開清單"
 
-#: core/utilities/import/main/importui.cpp:450
+#: core/utilities/import/main/importui.cpp:448
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Folder"
 msgstr "依資料夾"
 
-#: core/utilities/import/main/importui.cpp:451
+#: core/utilities/import/main/importui.cpp:449
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Format"
 msgstr "依格式"
 
-#: core/utilities/import/main/importui.cpp:452
+#: core/utilities/import/main/importui.cpp:450
 #, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Date"
 msgstr "依日期"
 
-#: core/utilities/import/main/importui.cpp:478
+#: core/utilities/import/main/importui.cpp:476
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Fit to &Window"
 msgstr "符合視窗(&W)"
 
-#: core/utilities/import/main/importui.cpp:483
+#: core/utilities/import/main/importui.cpp:481
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Zoom to 100%"
 msgstr "縮放為 100%"
 
-#: core/utilities/import/main/importui.cpp:501
+#: core/utilities/import/main/importui.cpp:499
 #, kde-format
 msgctxt "@option:check"
 msgid "Show History"
 msgstr "顯示歷史"
 
-#: core/utilities/import/main/importui.cpp:507
+#: core/utilities/import/main/importui.cpp:505
 #, kde-format
 msgctxt "@option:check"
 msgid "Show Thumbbar"
 msgstr "顯示縮圖列"
 
-#: core/utilities/import/main/importui.cpp:539
+#: core/utilities/import/main/importui.cpp:537
 #, kde-format
 msgctxt "@action Connection failed, try again?"
 msgid "Retry"
 msgstr "重試"
 
-#: core/utilities/import/main/importui.cpp:758
+#: core/utilities/import/main/importui.cpp:756
 #, kde-format
 msgctxt "@action"
 msgid "Exit Preview Mode"
 msgstr "離開預覽模式"
 
-#: core/utilities/import/main/importui.cpp:763
+#: core/utilities/import/main/importui.cpp:761
 #, kde-format
 msgctxt "@action"
 msgid "Next Image"
 msgstr "下一張影像"
 
-#: core/utilities/import/main/importui.cpp:775
+#: core/utilities/import/main/importui.cpp:773
 #, kde-format
 msgctxt "@action Go to first image"
 msgid "First Image"
 msgstr "第一張影像"
 
-#: core/utilities/import/main/importui.cpp:780
+#: core/utilities/import/main/importui.cpp:778
 #, kde-format
 msgctxt "@action Go to last image"
 msgid "Last Image"
 msgstr "最後一張影像"
 
-#: core/utilities/import/main/importui.cpp:862
+#: core/utilities/import/main/importui.cpp:860
 #, kde-format
 msgctxt "@info:status"
 msgid "Canceling current operation, please wait..."
 msgstr "正在取消目前的操作。請稍候..."
 
-#: core/utilities/import/main/importui.cpp:917
+#: core/utilities/import/main/importui.cpp:915
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to close the dialog and cancel the current operation?"
 msgstr "您是否要關閉對話框並取消目前操作？"
 
-#: core/utilities/import/main/importui.cpp:927
+#: core/utilities/import/main/importui.cpp:925
 #, kde-format
 msgctxt "@info:status"
 msgid "Disconnecting from camera, please wait..."
 msgstr "正在從相機中斷連線，請稍候..."
 
-#: core/utilities/import/main/importui.cpp:1002
+#: core/utilities/import/main/importui.cpp:1000
 #, fuzzy, kde-format
 #| msgctxt "@info:status"
 #| msgid "Ready"
@@ -59143,7 +59143,7 @@ msgctxt "@info:status busy state"
 msgid "Ready"
 msgstr "已就緒"
 
-#: core/utilities/import/main/importui.cpp:1059
+#: core/utilities/import/main/importui.cpp:1057
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59151,13 +59151,13 @@ msgid ""
 "and turned on."
 msgstr "連線到相機失敗。請確定相機已正確連線且已開啟。"
 
-#: core/utilities/import/main/importui.cpp:1153
+#: core/utilities/import/main/importui.cpp:1151
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image to Upload"
 msgstr "選擇要更新的影像"
 
-#: core/utilities/import/main/importui.cpp:1188
+#: core/utilities/import/main/importui.cpp:1186
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59171,7 +59171,7 @@ msgstr ""
 "需要空間：%1\n"
 "可用的剩餘空間：%2"
 
-#: core/utilities/import/main/importui.cpp:1243
+#: core/utilities/import/main/importui.cpp:1241
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -59181,13 +59181,13 @@ msgstr ""
 "相機資料夾 <resource>%1</resource> 已經含有此項目 <resource>%2</resource>。"
 "<br/>請輸入一個新的檔名 (不含副檔名)："
 
-#: core/utilities/import/main/importui.cpp:1247
+#: core/utilities/import/main/importui.cpp:1245
 #, kde-format
 msgctxt "@title:window"
 msgid "File already exists"
 msgstr "檔案已存在"
 
-#: core/utilities/import/main/importui.cpp:1314
+#: core/utilities/import/main/importui.cpp:1312
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59195,7 +59195,7 @@ msgid ""
 "settings..."
 msgstr "您自訂的目標相簿日期格式不合法。請檢查您的設定。"
 
-#: core/utilities/import/main/importui.cpp:1353
+#: core/utilities/import/main/importui.cpp:1351
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59206,7 +59206,7 @@ msgstr ""
 "無法取得您要從相機裝置下載時的預設目標相簿的收藏。請在相機設定裡選擇另一個收"
 "藏。"
 
-#: core/utilities/import/main/importui.cpp:1362
+#: core/utilities/import/main/importui.cpp:1360
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59215,7 +59215,7 @@ msgid ""
 msgstr ""
 "無法取得您要從相機裝置下載時的預設目標相簿。請在相機設定裡選擇另一個相簿。"
 
-#: core/utilities/import/main/importui.cpp:1387
+#: core/utilities/import/main/importui.cpp:1385
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -59227,19 +59227,19 @@ msgid ""
 "camera pictures into."
 msgstr "<p>請選擇要匯入相機圖片到 digiKam 相簿櫃之目的相簿。</p>"
 
-#: core/utilities/import/main/importui.cpp:1450
+#: core/utilities/import/main/importui.cpp:1448
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file <filename>%1</filename>."
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "上傳檔案 <filename>%1</filename> 失敗。"
 
-#: core/utilities/import/main/importui.cpp:1457
+#: core/utilities/import/main/importui.cpp:1455
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file <filename>%1</filename>."
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "上傳檔案 <filename>%1</filename> 失敗。"
 
-#: core/utilities/import/main/importui.cpp:1884
+#: core/utilities/import/main/importui.cpp:1882
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59250,7 +59250,7 @@ msgstr ""
 "下面列出的項目已被相機鎖定 (只能讀取)。這些項目不會被刪除。如果您想要刪除這些"
 "項目，請將它們解除鎖定後重試一次。"
 
-#: core/utilities/import/main/importui.cpp:1895
+#: core/utilities/import/main/importui.cpp:1893
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -59264,20 +59264,20 @@ msgid_plural ""
 msgstr[0] ""
 "將要刪除 %1 張影像。<warning>刪除的檔案無法復原</warning>。您確定嗎？"
 
-#: core/utilities/import/main/importui.cpp:1905
+#: core/utilities/import/main/importui.cpp:1903
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "警告"
 
-#: core/utilities/import/main/importui.cpp:1949
+#: core/utilities/import/main/importui.cpp:1947
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "磁碟空間不足"
 
-#: core/utilities/import/main/importui.cpp:1950
+#: core/utilities/import/main/importui.cpp:1948
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -59294,15 +59294,15 @@ msgstr ""
 "估計的需要空間：%1\n"
 "可用的剩餘空間：%2"
 
-#: core/utilities/import/main/importui.cpp:2215
-#: core/utilities/import/main/importui.cpp:2243
+#: core/utilities/import/main/importui.cpp:2213
+#: core/utilities/import/main/importui.cpp:2241
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "沒有選擇任何項目（共 %1 個項目）"
 
-#: core/utilities/import/main/importui.cpp:2235
+#: core/utilities/import/main/importui.cpp:2233
 #, fuzzy, kde-format
 #| msgctxt "<Image file name> (<Image number> of <Images in album>)"
 #| msgid "%1 (%2 of %3)"
@@ -59310,32 +59310,32 @@ msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "%1 (第 %2 張，共 %3 張)"
 
-#: core/utilities/import/main/importui.cpp:2254
+#: core/utilities/import/main/importui.cpp:2252
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
 msgid_plural "%2/%1 items selected"
 msgstr[0] "%2/%1 個項目已選擇"
 
-#: core/utilities/import/main/importui.cpp:2332
+#: core/utilities/import/main/importui.cpp:2330
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file <filename>%1</filename>."
 msgid "Skipped file <filename>%1</filename>"
 msgstr "上傳檔案 <filename>%1</filename> 失敗。"
 
-#: core/utilities/import/main/importui.cpp:2354
+#: core/utilities/import/main/importui.cpp:2352
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file <filename>%1</filename>."
 msgid "Rename file to <filename>%1</filename>"
 msgstr "上傳檔案 <filename>%1</filename> 失敗。"
 
-#: core/utilities/import/main/importui.cpp:2377
+#: core/utilities/import/main/importui.cpp:2375
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file <filename>%1</filename>."
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "上傳檔案 <filename>%1</filename> 失敗。"
 
-#: core/utilities/import/main/importui.cpp:2451
+#: core/utilities/import/main/importui.cpp:2449
 #, fuzzy, kde-format
 #| msgctxt "@info Popup notification"
 #| msgid ""
@@ -59347,13 +59347,13 @@ msgid ""
 "are auto-rotated"
 msgstr "影像已下載完成，您可以取下您的相機。影像將會自動旋轉"
 
-#: core/utilities/import/main/importui.cpp:2459
+#: core/utilities/import/main/importui.cpp:2457
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "影像已下載"
 
-#: core/utilities/import/main/importui.cpp:2485
+#: core/utilities/import/main/importui.cpp:2483
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
@@ -59361,7 +59361,7 @@ msgstr ""
 "在資料夾 <resource>%2</resource> 中已經存在相同名稱的檔案 (<filename>%1</"
 "filename>)。"
 
-#: core/utilities/import/main/importui.cpp:2498
+#: core/utilities/import/main/importui.cpp:2496
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."

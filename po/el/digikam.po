@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-02 00:43+0000\n"
+"POT-Creation-Date: 2022-12-03 00:44+0000\n"
 "PO-Revision-Date: 2017-10-16 18:16+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -39850,7 +39850,7 @@ msgid "Description"
 msgstr "Περιγραφή"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1887
+#: core/utilities/import/main/importui.cpp:1885
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@title"
@@ -59248,7 +59248,7 @@ msgstr ""
 "υπερέκθεση της εικόνας."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:468
-#: core/utilities/import/main/importui.cpp:490
+#: core/utilities/import/main/importui.cpp:488
 #, fuzzy, kde-format
 #| msgid "Color-Managed View"
 msgctxt "@action"
@@ -59319,8 +59319,8 @@ msgid "Rotate Right"
 msgstr "Περιστροφή δεξιά"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:557
-#: core/utilities/import/main/importui.cpp:532
-#: core/utilities/import/main/importui.cpp:769
+#: core/utilities/import/main/importui.cpp:530
+#: core/utilities/import/main/importui.cpp:767
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Previous Image"
@@ -59969,7 +59969,7 @@ msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου
 
 #: core/utilities/import/backend/cameracontroller.cpp:629
 #: core/utilities/import/backend/cameracontroller.cpp:952
-#: core/utilities/import/main/importui.cpp:2397
+#: core/utilities/import/main/importui.cpp:2395
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to download <filename>%1</filename>"
@@ -60313,7 +60313,7 @@ msgctxt "@info:tooltip"
 msgid "This item has already been downloaded"
 msgstr "Αυτό το αντικείμενο κατάστασης λήψης έχει ληφθεί"
 
-#: core/utilities/import/main/importui.cpp:148
+#: core/utilities/import/main/importui.cpp:146
 #, fuzzy, kde-format
 #| msgid "Set how digiKam will rename files as they are downloaded."
 msgctxt "@info"
@@ -60322,211 +60322,211 @@ msgstr ""
 "Καθορίστε εδώ όλες τις επιλογές μετονομασίας αρχείων εικόνων του digiKam "
 "κατά τη λήψη τους."
 
-#: core/utilities/import/main/importui.cpp:149
+#: core/utilities/import/main/importui.cpp:147
 #, fuzzy, kde-format
 #| msgid "File Renaming Options"
 msgctxt "@item"
 msgid "File Renaming Options"
 msgstr "Επιλογές μετονομασίας αρχείων"
 
-#: core/utilities/import/main/importui.cpp:155
+#: core/utilities/import/main/importui.cpp:153
 #, fuzzy, kde-format
 #| msgid "Auto-creation of Albums"
 msgctxt "@item"
 msgid "Auto-creation of Albums"
 msgstr "Αυτόματη δημιουργία λευκωμάτων"
 
-#: core/utilities/import/main/importui.cpp:161
+#: core/utilities/import/main/importui.cpp:159
 #, fuzzy, kde-format
 #| msgid "On the Fly Operations (JPEG only)"
 msgctxt "@item"
 msgid "On the Fly Operations (JPEG only)"
 msgstr "Άμεσες λειτουργίες (μόνο JPEG)"
 
-#: core/utilities/import/main/importui.cpp:167
+#: core/utilities/import/main/importui.cpp:165
 #, fuzzy, kde-format
 #| msgid "More options"
 msgctxt "@item"
 msgid "DNG Convert Options"
 msgstr "Περισσότερες επιλογές"
 
-#: core/utilities/import/main/importui.cpp:173
+#: core/utilities/import/main/importui.cpp:171
 #, fuzzy, kde-format
 #| msgid "Scripting"
 msgctxt "@item"
 msgid "Scripting"
 msgstr "Γραφή σεναρίου"
 
-#: core/utilities/import/main/importui.cpp:177
+#: core/utilities/import/main/importui.cpp:175
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@title"
 msgid "Settings"
 msgstr "Ρυθμίσεις"
 
-#: core/utilities/import/main/importui.cpp:192
+#: core/utilities/import/main/importui.cpp:190
 #, fuzzy, kde-format
 msgctxt "@action Cancel process"
 msgid "Cancel"
 msgstr "Ακύρωση"
 
-#: core/utilities/import/main/importui.cpp:199
+#: core/utilities/import/main/importui.cpp:197
 #, fuzzy, kde-format
 msgctxt "@action Information about camera"
 msgid "Information"
 msgstr "Πληροφορίες"
 
-#: core/utilities/import/main/importui.cpp:206
+#: core/utilities/import/main/importui.cpp:204
 #, fuzzy, kde-format
 msgctxt "@action Capture photo from camera"
 msgid "Capture"
 msgstr "Σύλληψη"
 
-#: core/utilities/import/main/importui.cpp:218
+#: core/utilities/import/main/importui.cpp:216
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Select All"
 msgstr "Επιλογή όλων"
 
-#: core/utilities/import/main/importui.cpp:226
+#: core/utilities/import/main/importui.cpp:224
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Select None"
 msgstr "Χωρίς επιλογή"
 
-#: core/utilities/import/main/importui.cpp:234
+#: core/utilities/import/main/importui.cpp:232
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Invert Selection"
 msgstr "Αντιστροφή επιλογής"
 
-#: core/utilities/import/main/importui.cpp:242
+#: core/utilities/import/main/importui.cpp:240
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Select New Items"
 msgstr "Επιλογή νέων αντικειμένων"
 
-#: core/utilities/import/main/importui.cpp:249
+#: core/utilities/import/main/importui.cpp:247
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Select Locked Items"
 msgstr "Επιλογή κλειδωμένων αντικειμένων"
 
-#: core/utilities/import/main/importui.cpp:257
+#: core/utilities/import/main/importui.cpp:255
 #, fuzzy, kde-format
 msgctxt "@title:menu"
 msgid "Download"
 msgstr "Λήψη"
 
-#: core/utilities/import/main/importui.cpp:262
+#: core/utilities/import/main/importui.cpp:260
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download New"
 msgstr "Λήψη νέου"
 
-#: core/utilities/import/main/importui.cpp:272
+#: core/utilities/import/main/importui.cpp:270
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download Selected"
 msgstr "Λήψη επιλεγμένων"
 
-#: core/utilities/import/main/importui.cpp:279
+#: core/utilities/import/main/importui.cpp:277
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download All"
 msgstr "Λήψη όλων"
 
-#: core/utilities/import/main/importui.cpp:287
+#: core/utilities/import/main/importui.cpp:285
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download && Delete New"
 msgstr "Λήψη/διαγραφή νέου"
 
-#: core/utilities/import/main/importui.cpp:295
+#: core/utilities/import/main/importui.cpp:293
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download && Delete Selected"
 msgstr "Λήψη/διαγραφή επιλεγμένων"
 
-#: core/utilities/import/main/importui.cpp:303
+#: core/utilities/import/main/importui.cpp:301
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Download && Delete All"
 msgstr "Λήψη/διαγραφή όλων"
 
-#: core/utilities/import/main/importui.cpp:310
+#: core/utilities/import/main/importui.cpp:308
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Upload..."
 msgstr "Αποστολή..."
 
-#: core/utilities/import/main/importui.cpp:318
+#: core/utilities/import/main/importui.cpp:316
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Toggle Lock"
 msgstr "Εναλλαγή κλειδώματος"
 
-#: core/utilities/import/main/importui.cpp:326
+#: core/utilities/import/main/importui.cpp:324
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Mark as downloaded"
 msgstr "Σημειωμένο ως ληφθέν"
 
-#: core/utilities/import/main/importui.cpp:333
+#: core/utilities/import/main/importui.cpp:331
 #, fuzzy, kde-format
 msgctxt "@title:menu"
 msgid "Delete"
 msgstr "Διαγραφή"
 
-#: core/utilities/import/main/importui.cpp:338
+#: core/utilities/import/main/importui.cpp:336
 #, fuzzy, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete Selected"
 msgstr "Διαγραφή επιλεγμένων"
 
-#: core/utilities/import/main/importui.cpp:346
+#: core/utilities/import/main/importui.cpp:344
 #, fuzzy, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete All"
 msgstr "Διαγραφή όλων"
 
-#: core/utilities/import/main/importui.cpp:352
+#: core/utilities/import/main/importui.cpp:350
 #, fuzzy, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete New"
 msgstr "Διαγραφή νέου"
 
-#: core/utilities/import/main/importui.cpp:360
+#: core/utilities/import/main/importui.cpp:358
 #, fuzzy, kde-format
 msgctxt "@title:group"
 msgid "Views"
 msgstr "Προβολές"
 
-#: core/utilities/import/main/importui.cpp:364
+#: core/utilities/import/main/importui.cpp:362
 #, kde-format
 msgctxt "@action Go to thumbnails (icon) view"
 msgid "Thumbnails"
 msgstr "Εικόνες επισκόπησης"
 
-#: core/utilities/import/main/importui.cpp:371
+#: core/utilities/import/main/importui.cpp:369
 #, fuzzy, kde-format
 msgctxt "@action View the selected image"
 msgid "Preview Item"
 msgstr "Προεπισκόπηση αντικειμένου"
 
-#: core/utilities/import/main/importui.cpp:380
+#: core/utilities/import/main/importui.cpp:378
 #, kde-format
 msgctxt "@action Switch to map view"
 msgid "Map"
 msgstr "Χάρτης"
 
-#: core/utilities/import/main/importui.cpp:391
+#: core/utilities/import/main/importui.cpp:389
 #, fuzzy, kde-format
 msgctxt "@title:menu"
 msgid "&Sort Items"
 msgstr "&Ταξινόμηση αντικειμένων"
 
-#: core/utilities/import/main/importui.cpp:392
+#: core/utilities/import/main/importui.cpp:390
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid "The value by which the items are sorted in the thumbnail view"
@@ -60534,53 +60534,53 @@ msgstr ""
 "Η τιμή με την οποία τα αντικείμενα ταξινομούνται στην προβολή εικόνων "
 "επισκόπησης"
 
-#: core/utilities/import/main/importui.cpp:396
+#: core/utilities/import/main/importui.cpp:394
 #, fuzzy, kde-format
 #| msgid "By Name"
 msgctxt "@item:inmenu Sort by"
 msgid "By Name"
 msgstr "Με όνομα"
 
-#: core/utilities/import/main/importui.cpp:397
+#: core/utilities/import/main/importui.cpp:395
 #, fuzzy, kde-format
 #| msgid "By Path"
 msgctxt "@item:inmenu Sort by"
 msgid "By Path"
 msgstr "Με διαδρομή"
 
-#: core/utilities/import/main/importui.cpp:398
+#: core/utilities/import/main/importui.cpp:396
 #, fuzzy, kde-format
 #| msgid "By Date"
 msgctxt "@item:inmenu Sort by"
 msgid "By Date"
 msgstr "Κατά ημερομηνία"
 
-#: core/utilities/import/main/importui.cpp:399
+#: core/utilities/import/main/importui.cpp:397
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Size"
 msgstr "Κατά μέγεθος"
 
-#: core/utilities/import/main/importui.cpp:400
+#: core/utilities/import/main/importui.cpp:398
 #, fuzzy, kde-format
 #| msgid "By Rating"
 msgctxt "@item:inmenu Sort by"
 msgid "By Rating"
 msgstr "Με αξιολόγηση"
 
-#: core/utilities/import/main/importui.cpp:401
+#: core/utilities/import/main/importui.cpp:399
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Download State"
 msgstr "Κατά κατάσταση λήψης"
 
-#: core/utilities/import/main/importui.cpp:425
+#: core/utilities/import/main/importui.cpp:423
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Item Sorting &Order"
 msgstr "Τάξη μεγέθους &ταξινόμησης αντικειμένου"
 
-#: core/utilities/import/main/importui.cpp:426
+#: core/utilities/import/main/importui.cpp:424
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid "Defines whether items are sorted in ascending or descending manner."
@@ -60588,25 +60588,25 @@ msgstr ""
 "Καθορίζει αν η τάξη μεγέθους ταξινόμησης των αντικειμένων θα είναι αύξουσα ή "
 "φθίνουσα."
 
-#: core/utilities/import/main/importui.cpp:430
+#: core/utilities/import/main/importui.cpp:428
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Ascending"
 msgstr "Αύξουσα"
 
-#: core/utilities/import/main/importui.cpp:432
+#: core/utilities/import/main/importui.cpp:430
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Sorting Order"
 msgid "Descending"
 msgstr "Φθίνουσα"
 
-#: core/utilities/import/main/importui.cpp:444
+#: core/utilities/import/main/importui.cpp:442
 #, fuzzy, kde-format
 msgctxt "@title:menu"
 msgid "&Group Items"
 msgstr "Ομα&δοποίηση αντικειμένων"
 
-#: core/utilities/import/main/importui.cpp:445
+#: core/utilities/import/main/importui.cpp:443
 #, fuzzy, kde-format
 msgctxt "@info:whatsthis"
 msgid "The categories in which the items in the thumbnail view are displayed"
@@ -60614,111 +60614,111 @@ msgstr ""
 "Οι κατηγορίες κάτω από τις οποίες εμφανίζονται τα αντικείμενα στην προβολή "
 "εικόνων επισκόπησης"
 
-#: core/utilities/import/main/importui.cpp:449
+#: core/utilities/import/main/importui.cpp:447
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "Flat List"
 msgstr "Επίπεδη λίστα"
 
-#: core/utilities/import/main/importui.cpp:450
+#: core/utilities/import/main/importui.cpp:448
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Folder"
 msgstr "Κατά φάκελο"
 
-#: core/utilities/import/main/importui.cpp:451
+#: core/utilities/import/main/importui.cpp:449
 #, fuzzy, kde-format
 msgctxt "@item:inmenu Group Items"
 msgid "By Format"
 msgstr "Ανά τύπο αρχειοθέτησης"
 
-#: core/utilities/import/main/importui.cpp:452
+#: core/utilities/import/main/importui.cpp:450
 #, fuzzy, kde-format
 #| msgid "By Date"
 msgctxt "@item:inmenu Group Items"
 msgid "By Date"
 msgstr "Κατά ημερομηνία"
 
-#: core/utilities/import/main/importui.cpp:478
+#: core/utilities/import/main/importui.cpp:476
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Fit to &Window"
 msgstr "Προσαρμογή στο &παράθυρο"
 
-#: core/utilities/import/main/importui.cpp:483
+#: core/utilities/import/main/importui.cpp:481
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Zoom to 100%"
 msgstr "Εστίαση στο 100%"
 
-#: core/utilities/import/main/importui.cpp:501
+#: core/utilities/import/main/importui.cpp:499
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Show History"
 msgstr "Εμφάνιση ιστορικού"
 
-#: core/utilities/import/main/importui.cpp:507
+#: core/utilities/import/main/importui.cpp:505
 #, fuzzy, kde-format
 msgctxt "@option:check"
 msgid "Show Thumbbar"
 msgstr "Εμφάνιση γραμμής επισκόπησης"
 
-#: core/utilities/import/main/importui.cpp:539
+#: core/utilities/import/main/importui.cpp:537
 #, fuzzy, kde-format
 msgctxt "@action Connection failed, try again?"
 msgid "Retry"
 msgstr "Ξαναπροσπάθησε"
 
-#: core/utilities/import/main/importui.cpp:758
+#: core/utilities/import/main/importui.cpp:756
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Exit Preview Mode"
 msgstr "Έξοδος από λειτουργία προεπισκόπησης"
 
-#: core/utilities/import/main/importui.cpp:763
+#: core/utilities/import/main/importui.cpp:761
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Next Image"
 msgstr "Επόμενη εικόνα"
 
-#: core/utilities/import/main/importui.cpp:775
+#: core/utilities/import/main/importui.cpp:773
 #, fuzzy, kde-format
 msgctxt "@action Go to first image"
 msgid "First Image"
 msgstr "Πρώτη εικόνα"
 
-#: core/utilities/import/main/importui.cpp:780
+#: core/utilities/import/main/importui.cpp:778
 #, fuzzy, kde-format
 msgctxt "@action Go to last image"
 msgid "Last Image"
 msgstr "Τελευταία εικόνα"
 
-#: core/utilities/import/main/importui.cpp:862
+#: core/utilities/import/main/importui.cpp:860
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "Canceling current operation, please wait..."
 msgstr "Ακύρωση της τρέχουσας λειτουργίας, παρακαλώ περιμένετε..."
 
-#: core/utilities/import/main/importui.cpp:917
+#: core/utilities/import/main/importui.cpp:915
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Do you want to close the dialog and cancel the current operation?"
 msgstr ""
 "Θέλετε να κλείσετε το διάλογο και να ακυρώσετε την τρέχουσα λειτουργία;"
 
-#: core/utilities/import/main/importui.cpp:927
+#: core/utilities/import/main/importui.cpp:925
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "Disconnecting from camera, please wait..."
 msgstr "Αποσύνδεση από τη φωτογραφική, παρακαλώ περιμένετε..."
 
-#: core/utilities/import/main/importui.cpp:1002
+#: core/utilities/import/main/importui.cpp:1000
 #, fuzzy, kde-format
 msgctxt "@info:status busy state"
 msgid "Ready"
 msgstr "Έτοιμο"
 
-#: core/utilities/import/main/importui.cpp:1059
+#: core/utilities/import/main/importui.cpp:1057
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -60728,13 +60728,13 @@ msgstr ""
 "Αποτυχία σύνδεσης με τη φωτογραφική μηχανή. Παρακαλώ σιγουρευτείτε ότι είναι "
 "συνδεδεμένη κανονικά και ανοικτή. Θέλετε να ξαναπροσπαθήσετε;"
 
-#: core/utilities/import/main/importui.cpp:1153
+#: core/utilities/import/main/importui.cpp:1151
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Image to Upload"
 msgstr "Επιλογή εικόνας για αποστολή"
 
-#: core/utilities/import/main/importui.cpp:1188
+#: core/utilities/import/main/importui.cpp:1186
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -60749,7 +60749,7 @@ msgstr ""
 "Απαιτούμενος χώρος: %1\n"
 "Διαθέσιμος ελεύθερος χώρος: %2"
 
-#: core/utilities/import/main/importui.cpp:1243
+#: core/utilities/import/main/importui.cpp:1241
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -60759,13 +60759,13 @@ msgstr ""
 "Ο φάκελος φωτογραφικής <b>%1</b> περιέχει ήδη το αντικείμενο <b>%2</b><br/> "
 "Παρακαλώ, εισάγετε ένα νέο όνομα (χωρίς επέκταση):"
 
-#: core/utilities/import/main/importui.cpp:1247
+#: core/utilities/import/main/importui.cpp:1245
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "File already exists"
 msgstr "Το αρχείο υπάρχει ήδη"
 
-#: core/utilities/import/main/importui.cpp:1314
+#: core/utilities/import/main/importui.cpp:1312
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -60775,7 +60775,7 @@ msgstr ""
 "Η μορφή ημερομηνίας του προσαρμοσμένου λευκώματος δεν είναι έγκυρη. Ελέγξτε "
 "τις ρυθμίσεις σας..."
 
-#: core/utilities/import/main/importui.cpp:1353
+#: core/utilities/import/main/importui.cpp:1351
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -60787,7 +60787,7 @@ msgstr ""
 "από τη φωτογραφική μηχανή δεν είναι διαθέσιμη. Επιλέξτε κάποια άλλη από το "
 "διάλογο διαμόρφωσης της φωτογραφικής μηχανής."
 
-#: core/utilities/import/main/importui.cpp:1362
+#: core/utilities/import/main/importui.cpp:1360
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -60798,7 +60798,7 @@ msgstr ""
 "μηχανή δεν είναι διαθέσιμο. Επιλέξτε ένα άλλο από το διάλογο διαμόρφωσης της "
 "φωτογραφικής μηχανής."
 
-#: core/utilities/import/main/importui.cpp:1387
+#: core/utilities/import/main/importui.cpp:1385
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -60808,19 +60808,19 @@ msgstr ""
 "<p>Παρακαλώ, επιλέξτε το λεύκωμα προορισμού από τη βιβλιοθήκη digiKam για "
 "την εισαγωγή σε αυτό φωτογραφιών από τη φωτογραφική μηχανή.</p>"
 
-#: core/utilities/import/main/importui.cpp:1450
+#: core/utilities/import/main/importui.cpp:1448
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1457
+#: core/utilities/import/main/importui.cpp:1455
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1884
+#: core/utilities/import/main/importui.cpp:1882
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -60833,7 +60833,7 @@ msgstr ""
 "επιθυμείτε πραγματικά τη διαγραφή τους, παρακαλώ ξεκλειδώστε τα πρώτα και "
 "ξαναπροσπαθήστε."
 
-#: core/utilities/import/main/importui.cpp:1895
+#: core/utilities/import/main/importui.cpp:1893
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -60851,20 +60851,20 @@ msgstr[1] ""
 "Αυτές οι %1 εικόνες πρόκειται να διαγραφούν. Η διαγραφή αρχείων είναι "
 "οριστική. Είστε σίγουροι;"
 
-#: core/utilities/import/main/importui.cpp:1905
+#: core/utilities/import/main/importui.cpp:1903
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Προειδοποίηση"
 
-#: core/utilities/import/main/importui.cpp:1949
+#: core/utilities/import/main/importui.cpp:1947
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "Μη επαρκής χώρος στο δίσκο"
 
-#: core/utilities/import/main/importui.cpp:1950
+#: core/utilities/import/main/importui.cpp:1948
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -60882,8 +60882,8 @@ msgstr ""
 "Εκτιμώμενος απαιτούμενος χώρος: %1\n"
 "Διαθέσιμος ελεύθερος χώρος: %2"
 
-#: core/utilities/import/main/importui.cpp:2215
-#: core/utilities/import/main/importui.cpp:2243
+#: core/utilities/import/main/importui.cpp:2213
+#: core/utilities/import/main/importui.cpp:2241
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -60891,7 +60891,7 @@ msgid_plural "No item selected (%1 items)"
 msgstr[0] "Κανένα επιλεγμένο αντικείμενο (%1 αντικείμενο)"
 msgstr[1] "Κανένα επιλεγμένο αντικείμενο (%1 αντικείμενα)"
 
-#: core/utilities/import/main/importui.cpp:2235
+#: core/utilities/import/main/importui.cpp:2233
 #, fuzzy, kde-format
 #| msgctxt "<Image file name> (<Image number> of <Images in album>)"
 #| msgid "%1 (%2 of %3)"
@@ -60899,7 +60899,7 @@ msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "%1 (%2 από %3)"
 
-#: core/utilities/import/main/importui.cpp:2254
+#: core/utilities/import/main/importui.cpp:2252
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -60907,25 +60907,25 @@ msgid_plural "%2/%1 items selected"
 msgstr[0] "%2/1 αντικείμενο επιλεγμένο"
 msgstr[1] "%2/%1 αντικείμενα επιλεγμένα"
 
-#: core/utilities/import/main/importui.cpp:2332
+#: core/utilities/import/main/importui.cpp:2330
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2354
+#: core/utilities/import/main/importui.cpp:2352
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2377
+#: core/utilities/import/main/importui.cpp:2375
 #, fuzzy, kde-kuit-format
 #| msgid "Could not open dbconfig.xml file <filename>%1</filename>"
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "Αδυναμία ανοίγματος του dbconfig.xml αρχείου <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2451
+#: core/utilities/import/main/importui.cpp:2449
 #, fuzzy, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -60935,19 +60935,19 @@ msgstr ""
 "Η λήψη εικόνων ολοκληρώθηκε, τώρα μπορείτε να αποσυνδέσετε την κάμερα καθώς "
 "θα πραγματοποιείται η αυτόματη περιστροφή των εικόνων"
 
-#: core/utilities/import/main/importui.cpp:2459
+#: core/utilities/import/main/importui.cpp:2457
 #, fuzzy, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Η λήψη εικόνων ολοκληρώθηκε"
 
-#: core/utilities/import/main/importui.cpp:2485
+#: core/utilities/import/main/importui.cpp:2483
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "Ένα αρχείο με το ίδιο όνομα (%1) υπάρχει ήδη στο φάκελο %2."
 
-#: core/utilities/import/main/importui.cpp:2498
+#: core/utilities/import/main/importui.cpp:2496
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
