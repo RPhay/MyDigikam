@@ -915,47 +915,106 @@ QString GPSItemContainer::saveChanges()
             }
         }
 
-        if (m_saveTags && !m_tagList.isEmpty() && m_writeXmpTags)
+        if (m_saveTags && !m_tagList.isEmpty() && (m_writeXmpTags || m_writeMetaLoc))
         {
-            QStringList tagSeq = meta->getXmpTagStringSeq("Xmp.digiKam.TagsList", false);
-
-            for (int i = 0 ; i < m_tagList.count() ; ++i)
+            if (m_writeXmpTags)
             {
-                QList<TagData> currentTagList = m_tagList[i];
-                QString tag;
+                QStringList tagSeq = meta->getXmpTagStringSeq("Xmp.digiKam.TagsList", false);
 
-                for (int j = 0 ; j < currentTagList.count() ; ++j)
+                for (int i = 0 ; i < m_tagList.count() ; ++i)
                 {
-                    tag.append(QLatin1Char('/') + currentTagList[j].tagName);
+                    QList<TagData> currentTagList = m_tagList[i];
+                    QString tag;
+
+                    for (int j = 0 ; j < currentTagList.count() ; ++j)
+                    {
+                        tag.append(QLatin1Char('/') + currentTagList[j].tagName);
+                    }
+
+                    tag.remove(0, 1);
+
+                    if (!tagSeq.contains(tag))
+                    {
+                        tagSeq.append(tag);
+                    }
                 }
 
-                tag.remove(0, 1);
+                bool success2 = meta->setXmpTagStringSeq("Xmp.digiKam.TagsList", tagSeq);
 
-                if (!tagSeq.contains(tag))
+                if (!success2)
                 {
-                    tagSeq.append(tag);
+                    returnString = i18n("Failed to save tags to file.");
+                }
+
+                success2 = meta->setXmpTagStringSeq("Xmp.dc.subject", tagSeq);
+
+                if (!success2)
+                {
+                    returnString = i18n("Failed to save tags to file.");
                 }
             }
 
-            bool success2 = meta->setXmpTagStringSeq("Xmp.digiKam.TagsList", tagSeq);
-
-            if (!success2)
+            if (m_writeMetaLoc)
             {
-                returnString = i18n("Failed to save tags to file.");
-            }
+                IptcCoreLocationInfo locMap;
 
-            success2 = meta->setXmpTagStringSeq("Xmp.dc.subject", tagSeq);
+                for (int i = 0 ; i < m_tagList.count() ; ++i)
+                {
+                    QList<TagData> currentTagList = m_tagList[i];
+                    QString tag;
 
-            if (!success2)
-            {
-                returnString = i18n("Failed to save tags to file.");
+                    for (int j = 0 ; j < currentTagList.count() ; ++j)
+                    {
+                        QString tipName = currentTagList[j].tipName;
+                        QString tagName = currentTagList[j].tagName;
+
+                        if      (tipName == QLatin1String("{Country}"))
+                        {
+                            locMap.country       = tagName;
+                        }
+                        else if (tipName == QLatin1String("{State}"))
+                        {
+                            locMap.provinceState = tagName;
+                        }
+                        else if (locMap.provinceState.isEmpty() &&
+                                 (tipName == QLatin1String("{State district}")))
+                        {
+                            locMap.provinceState = tagName;
+                        }
+                        else if (tipName == QLatin1String("{County}"))
+                        {
+                            locMap.location      = tagName;
+                        }
+                        else if (tipName == QLatin1String("{City}"))
+                        {
+                            locMap.city          = tagName;
+                        }
+                        else if (locMap.city.isEmpty() &&
+                                 (tipName == QLatin1String("{Town}")))
+                        {
+                            locMap.city          = tagName;
+                        }
+                        else if (locMap.city.isEmpty() &&
+                                 (tipName == QLatin1String("{Village}")))
+                        {
+                            locMap.city          = tagName;
+                        }
+                    }
+                }
+
+                bool success3 = meta->setIptcCoreLocation(locMap);
+
+                if (!success3)
+                {
+                    returnString = i18n("Failed to save tags to file.");
+                }
             }
         }
     }
 
     if (success1)
     {
-        if (m_saveGPS || (m_saveTags && !m_tagList.isEmpty() && m_writeXmpTags))
+        if (m_saveGPS || (m_saveTags && !m_tagList.isEmpty() && (m_writeXmpTags || m_writeMetaLoc)))
         {
             success1 = meta->save(m_url.toLocalFile());
         }

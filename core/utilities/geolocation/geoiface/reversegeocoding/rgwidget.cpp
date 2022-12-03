@@ -91,9 +91,8 @@ public:
           requestedRGCount                  (0),
           receivedRGCount                   (0),
           buttonHideOptions                 (nullptr),
-          iptc                              (nullptr),
-          xmpLoc                            (nullptr),
-          xmpKey                            (nullptr),
+          tagsLoc                           (nullptr),
+          metaLoc                           (nullptr),
           UGridContainer                    (nullptr),
           LGridContainer                    (nullptr),
           serviceLabel                      (nullptr),
@@ -143,9 +142,8 @@ public:
     int                  requestedRGCount;
     int                  receivedRGCount;
     QPushButton*         buttonHideOptions;
-    QCheckBox*           iptc;
-    QCheckBox*           xmpLoc;
-    QCheckBox*           xmpKey;
+    QCheckBox*           tagsLoc;
+    QCheckBox*           metaLoc;
     QWidget*             UGridContainer;
     QWidget*             LGridContainer;
     QLabel*              serviceLabel;
@@ -293,9 +291,11 @@ RGWidget::RGWidget(GPSItemModel* const imageModel, QItemSelectionModel* const se
     vBoxLayout->addWidget(d->LGridContainer);
     QGridLayout* const LGridLayout = new QGridLayout(d->LGridContainer);
 
-    d->xmpLoc = new QCheckBox(i18n("Write tags to XMP"), d->LGridContainer);
+    d->tagsLoc = new QCheckBox(i18n("Write tags to XMP"), d->LGridContainer);
+    d->metaLoc = new QCheckBox(i18n("Write locations metadata"), d->LGridContainer);
 
-    LGridLayout->addWidget(d->xmpLoc, 0, 0, 1, 3);
+    LGridLayout->addWidget(d->tagsLoc, 0, 0, 1, 3);
+    LGridLayout->addWidget(d->metaLoc, 1, 0, 1, 3);
 
     d->LGridContainer->setLayout(LGridLayout);
 
@@ -410,7 +410,8 @@ void RGWidget::updateUIState()
     d->languageLabel->setEnabled(d->UIEnabled);
     d->languageEdit->setEnabled(d->UIEnabled);
     d->buttonHideOptions->setEnabled(d->UIEnabled);
-    d->xmpLoc->setEnabled(d->UIEnabled);
+    d->tagsLoc->setEnabled(d->UIEnabled);
+    d->metaLoc->setEnabled(d->UIEnabled);
 }
 
 /**
@@ -450,7 +451,8 @@ void RGWidget::slotButtonRGSelected()
 
         photoList << photoObj;
 
-        selectedItem->writeTagsToXmp(d->xmpLoc->isChecked());
+        selectedItem->writeTagsToXmp(d->tagsLoc->isChecked());
+        selectedItem->writeLocations(d->metaLoc->isChecked());
     }
 
     if (!photoList.isEmpty())
@@ -675,10 +677,11 @@ bool RGWidget::eventFilter(QObject* watched, QEvent* event)
  */
 void RGWidget::saveSettingsToGroup(KConfigGroup* const group)
 {
-    group->writeEntry("RG Backend",   d->serviceComboBox->currentIndex());
-    group->writeEntry("Language",     d->languageEdit->currentIndex());
-    group->writeEntry("Hide options", d->hideOptions);
-    group->writeEntry("XMP location", d->xmpLoc->isChecked());
+    group->writeEntry("RG Backend",        d->serviceComboBox->currentIndex());
+    group->writeEntry("Language",          d->languageEdit->currentIndex());
+    group->writeEntry("Hide options",      d->hideOptions);
+    group->writeEntry("XMP location",      d->tagsLoc->isChecked());
+    group->writeEntry("Metadata location", d->metaLoc->isChecked());
 
     QList<QList<TagData> > currentSpacerList = d->tagModel->getSpacers();
     const int spacerCount                    = currentSpacerList.count();
@@ -768,12 +771,13 @@ void RGWidget::readSettingsFromGroup(const KConfigGroup* const group)
     d->tagModel->readdNewTags(spacersList);
 
     d->serviceComboBox->setCurrentIndex(group->readEntry("RG Backend", 0));
-    d->languageEdit->setCurrentIndex(group->readEntry("Language", 0));
+    d->languageEdit->setCurrentIndex(group->readEntry("Language",      0));
 
-    d->hideOptions = !(group->readEntry("Hide options", false));
+    d->hideOptions = !(group->readEntry("Hide options",                false));
     slotHideOptions();
 
-    d->xmpLoc->setChecked(group->readEntry("XMP location", false));
+    d->tagsLoc->setChecked(group->readEntry("XMP location",            false));
+    d->metaLoc->setChecked(group->readEntry("Metadata location",       false));
 }
 
 /**

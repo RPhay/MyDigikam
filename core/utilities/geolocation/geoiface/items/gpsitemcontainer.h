@@ -162,6 +162,11 @@ public:
      * Writes the current tags to XMP metadata.
      */
     void writeTagsToXmp(const bool writeXmpTags) { m_writeXmpTags = writeXmpTags; }
+
+   /**
+     * Writes the current tags to the metadata location fields.
+     */
+    void writeLocations(const bool writeMetaLoc) { m_writeMetaLoc = writeMetaLoc; }
     //@}
 
 protected:
@@ -188,6 +193,7 @@ protected:
     QList<QList<TagData> > m_tagList;
     QList<QList<TagData> > m_savedTagList;
     bool                   m_writeXmpTags;
+    bool                   m_writeMetaLoc;
 
     bool                   m_saveTags;
     bool                   m_saveGPS;
