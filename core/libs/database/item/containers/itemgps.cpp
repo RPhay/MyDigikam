@@ -98,7 +98,7 @@ QString ItemGPS::saveChanges()
 
     pos.apply();
 
-    if (!m_tagList.isEmpty())
+    if (!m_tagList.isEmpty() && (m_writeXmpTags || m_writeMetaLoc))
     {
         QMap<QString, QVariant> attributes;
         IptcCoreLocationInfo locationInfo;
@@ -112,11 +112,14 @@ QString ItemGPS::saveChanges()
 
             for (int j = 0 ; j < currentTagPath.count() ; ++j)
             {
-                singleTagPath.append(QLatin1Char('/') + currentTagPath[j].tagName);
-
-                if (j == 0)
+                if (currentTagPath[j].tipName != QLatin1String("{Country code}"))
                 {
-                    singleTagPath.remove(0, 1);
+                    singleTagPath.append(QLatin1Char('/') + currentTagPath[j].tagName);
+
+                    if (j == 0)
+                    {
+                        singleTagPath.remove(0, 1);
+                    }
                 }
 
                 setLocationInfo(currentTagPath[j], locationInfo);
@@ -125,11 +128,17 @@ QString ItemGPS::saveChanges()
             tagsPath.append(singleTagPath);
         }
 
-        QList<int> tagIds = TagsCache::instance()->getOrCreateTags(tagsPath);
-        CoreDbAccess().db()->addTagsToItems(QList<qlonglong>() << m_info.id(), tagIds);
+        if (m_writeXmpTags)
+        {
+            QList<int> tagIds = TagsCache::instance()->getOrCreateTags(tagsPath);
+            CoreDbAccess().db()->addTagsToItems(QList<qlonglong>() << m_info.id(), tagIds);
+        }
 
-        ItemExtendedProperties ep(m_info.id());
-        ep.setLocation(locationInfo);
+        if (m_writeMetaLoc)
+        {
+            ItemExtendedProperties ep(m_info.id());
+            ep.setLocation(locationInfo);
+        }
     }
 
     // Save info to file.

@@ -186,9 +186,9 @@ QMap<QString, QString> BackendGeonamesUSRG::makeQMapFromXML(const QString& xmlDa
 
         if (!e.isNull())
         {
-            if ((e.tagName().compare(QLatin1String("adminName2")) == 0) ||
-                (e.tagName().compare(QLatin1String("adminName1")) == 0) ||
-                (e.tagName().compare(QLatin1String("placename"))  == 0))
+            if ((e.tagName() == QLatin1String("adminName2")) ||
+                (e.tagName() == QLatin1String("adminName1")) ||
+                (e.tagName() == QLatin1String("placename")))
             {
                 mappedData.insert(e.tagName(), e.text());
                 resultString.append(e.tagName() + QLatin1Char(':') + e.text() + QLatin1Char('\n'));

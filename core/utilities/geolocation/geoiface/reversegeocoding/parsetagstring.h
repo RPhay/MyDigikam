@@ -24,7 +24,7 @@
 namespace Digikam
 {
 
-QStringList makeTagString(const RGInfo& info,const QString& inputFormat,const QString& backendName)
+QStringList makeTagString(const RGInfo& info, const QString& inputFormat,const QString& backendName)
 {
     QString auxReturnedFormat = inputFormat;
     QString returnedAddress   = inputFormat;
@@ -51,6 +51,15 @@ QStringList makeTagString(const RGInfo& info,const QString& inputFormat,const QS
                 {
                     result    = info.rgData[QLatin1String("country")];
                     returnedFormat.append(QLatin1String("/{Country}"));
+                    dataAdded = true;
+                }
+            }
+            else if (humanTag == QLatin1String("Country code"))
+            {
+                if (!info.rgData[QLatin1String("country_code")].isEmpty())
+                {
+                    result    = info.rgData[QLatin1String("country_code")];
+                    returnedFormat.append(QLatin1String("/{Country code}"));
                     dataAdded = true;
                 }
             }
@@ -168,7 +177,6 @@ QStringList makeTagString(const RGInfo& info,const QString& inputFormat,const QS
 
         else if (backendName == QLatin1String("GeonamesUS"))
         {
-
             if      (humanTag.compare(QLatin1String("LAU2")) == 0)
             {
                 if (!info.rgData[QLatin1String("adminName2")].isEmpty())
@@ -178,8 +186,7 @@ QStringList makeTagString(const RGInfo& info,const QString& inputFormat,const QS
                     dataAdded = true;
                 }
             }
-
-           else if (humanTag == QLatin1String("LAU1"))
+            else if (humanTag == QLatin1String("LAU1"))
             {
                 if (!info.rgData[QLatin1String("adminName1")].isEmpty())
                 {
@@ -188,7 +195,6 @@ QStringList makeTagString(const RGInfo& info,const QString& inputFormat,const QS
                     dataAdded = true;
                 }
             }
-
             else if (humanTag == QLatin1String("City"))
             {
                 if (!info.rgData[QLatin1String("placename")].isEmpty())
@@ -224,7 +230,15 @@ QStringList makeTagString(const RGInfo& info,const QString& inputFormat,const QS
                     dataAdded = true;
                 }
             }
-
+            else if (humanTag.compare(QLatin1String("Country code")) == 0)
+            {
+                if (!info.rgData[QLatin1String("countryCode")].isEmpty())
+                {
+                    result    = info.rgData[QLatin1String("countryCode")];
+                    returnedFormat.append(QLatin1String("/{Country code}"));
+                    dataAdded = true;
+                }
+            }
             else if (humanTag == QLatin1String("Place"))
             {
                 if (!info.rgData[QLatin1String("name")].isEmpty())

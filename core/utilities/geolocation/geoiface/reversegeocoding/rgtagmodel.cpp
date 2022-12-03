@@ -928,6 +928,11 @@ void RGTagModel::readdTag(TreeBranch*& currentBranch,
         return;
     }
 
+    if (tagAddressElements[currentAddressElementIndex].tipName == QLatin1String("{Country code}"))
+    {
+        return;
+    }
+
     if (tagAddressElements[currentAddressElementIndex].tagType == TypeSpacer)
     {
         for (int i = 0 ; i < currentBranch->spacerChildren.count() ; ++i)
@@ -960,7 +965,7 @@ void RGTagModel::readdTag(TreeBranch*& currentBranch,
                 currentIndex = createIndex(currentRow, 0, currentBranch);
             }
 
-            addSpacerTag(currentIndex,tagAddressElements[currentAddressElementIndex].tagName);
+            addSpacerTag(currentIndex, tagAddressElements[currentAddressElementIndex].tagName);
 
             if ((tagAddressElements.count() - 1) > currentAddressElementIndex)
             {
@@ -1035,7 +1040,7 @@ void RGTagModel::readdTag(TreeBranch*& currentBranch,
         if (found2)
         {
             readdTag(currentBranch->oldChildren[foundIndex],
-                     foundIndex+currentBranch->spacerChildren.count() + currentBranch->newChildren.count(),
+                     foundIndex + currentBranch->spacerChildren.count() + currentBranch->newChildren.count(),
                      tagAddressElements, currentAddressElementIndex + 1);
             return;
         }
@@ -1052,14 +1057,14 @@ void RGTagModel::readdTag(TreeBranch*& currentBranch,
                 currentIndex = createIndex(currentRow, 0, currentBranch);
             }
 
-            addSpacerTag(currentIndex,tagAddressElements[currentAddressElementIndex].tagName);
+            addSpacerTag(currentIndex, tagAddressElements[currentAddressElementIndex].tagName);
 
             if ((tagAddressElements.count() - 1) > currentAddressElementIndex)
             {
                 readdTag(currentBranch->spacerChildren[currentBranch->spacerChildren.count() - 1],
                          currentBranch->spacerChildren.count() - 1,
                          tagAddressElements,
-                         currentAddressElementIndex+1);
+                         currentAddressElementIndex + 1);
             }
         }
     }

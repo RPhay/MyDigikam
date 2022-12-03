@@ -185,6 +185,7 @@ QMap<QString, QString> BackendOsmRG::makeQMapFromXML(const QString& xmlData)
         if (!e.isNull())
         {
             if ((e.tagName() == QLatin1String("country"))         ||
+                (e.tagName() == QLatin1String("country_code"))    ||
                 (e.tagName() == QLatin1String("state"))           ||
                 (e.tagName() == QLatin1String("state_district"))  ||
                 (e.tagName() == QLatin1String("county"))          ||

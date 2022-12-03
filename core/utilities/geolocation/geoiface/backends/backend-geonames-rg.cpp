@@ -183,8 +183,9 @@ QMap<QString, QString> BackendGeonamesRG::makeQMapFromXML(const QString& xmlData
 
         if (!e.isNull())
         {
-            if ((e.tagName().compare(QLatin1String("countryName")) == 0) ||
-                (e.tagName().compare(QLatin1String("name"))        == 0))
+            if ((e.tagName() == QLatin1String("countryName")) ||
+                (e.tagName() == QLatin1String("countryCode")) ||
+                (e.tagName() == QLatin1String("name")))
             {
                 mappedData.insert(e.tagName(), e.text());
                 resultString.append(e.tagName() + QLatin1Char(':') + e.text() + QLatin1Char('\n'));

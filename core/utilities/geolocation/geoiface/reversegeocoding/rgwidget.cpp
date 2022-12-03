@@ -291,7 +291,7 @@ RGWidget::RGWidget(GPSItemModel* const imageModel, QItemSelectionModel* const se
     vBoxLayout->addWidget(d->LGridContainer);
     QGridLayout* const LGridLayout = new QGridLayout(d->LGridContainer);
 
-    d->tagsLoc = new QCheckBox(i18n("Write tags to XMP"), d->LGridContainer);
+    d->tagsLoc = new QCheckBox(i18n("Write locations as tags"), d->LGridContainer);
     d->metaLoc = new QCheckBox(i18n("Write locations metadata"), d->LGridContainer);
 
     LGridLayout->addWidget(d->tagsLoc, 0, 0, 1, 3);
@@ -527,10 +527,15 @@ void RGWidget::slotRGReady(QList<RGInfo>& returnedRGList)
             }
             else
             {
-                addressElementsWantedFormat.append(QLatin1String("/{Country}/{State}/{State district}/{County}/{City}/{City district}/{Suburb}/{Town}/{Village}/{Hamlet}/{Street}/{House number}"));
+                addressElementsWantedFormat.append(QLatin1String("/{Country}/{Country code}/{State}/{State district}"
+                                                                 "/{County}/{City}/{City district}/{Suburb}/{Town}"
+                                                                 "/{Village}/{Hamlet}/{Street}/{House number}"));
             }
 
-            QStringList combinedResult = makeTagString(returnedRGList[i], addressElementsWantedFormat, d->currentBackend->backendName());
+            QStringList combinedResult = makeTagString(returnedRGList[i],
+                                                       addressElementsWantedFormat,
+                                                       d->currentBackend->backendName());
+
             QString addressFormat      = combinedResult[0];
             QString addressElements    = combinedResult[1];
 
@@ -548,16 +553,27 @@ void RGWidget::slotRGReady(QList<RGInfo>& returnedRGList)
             for (int j = 0 ; j < listAddressElementsWantedFormat.count() ; ++j)
             {
                 QString currentAddressFormat = listAddressElementsWantedFormat.at(j);
-                int currentIndexFormat       = listAddressFormat.indexOf(currentAddressFormat, 0);
+                int currentIndexFormat       = listAddressFormat.indexOf(currentAddressFormat);
 
                 if (currentIndexFormat != -1)
                 {
-                    elements<<currentAddressFormat;
-                    resultedData<<listAddressElements.at(currentIndexFormat);
+                    elements << currentAddressFormat;
+                    resultedData << listAddressElements.at(currentIndexFormat);
                 }
             }
 
             QList<QList<TagData> > returnedTags = d->tagModel->addNewData(elements, resultedData);
+
+            int countryCodeIndex = listAddressFormat.indexOf(QLatin1String("{Country code}"));
+
+            if (countryCodeIndex != -1)
+            {
+                TagData countryCode;
+                countryCode.tagName = listAddressElements.at(countryCodeIndex);
+                countryCode.tipName = QLatin1String("{Country code}");
+                returnedTags << (QList<TagData>() << countryCode);
+            }
+
             GPSItemContainer* const currentItem = d->imageModel->itemFromIndex(currentImageIndex);
 
             GPSUndoCommand::UndoInfo undoInfo(currentImageIndex);
@@ -680,7 +696,7 @@ void RGWidget::saveSettingsToGroup(KConfigGroup* const group)
     group->writeEntry("RG Backend",        d->serviceComboBox->currentIndex());
     group->writeEntry("Language",          d->languageEdit->currentIndex());
     group->writeEntry("Hide options",      d->hideOptions);
-    group->writeEntry("XMP location",      d->tagsLoc->isChecked());
+    group->writeEntry("Tags location",     d->tagsLoc->isChecked());
     group->writeEntry("Metadata location", d->metaLoc->isChecked());
 
     QList<QList<TagData> > currentSpacerList = d->tagModel->getSpacers();
@@ -776,7 +792,7 @@ void RGWidget::readSettingsFromGroup(const KConfigGroup* const group)
     d->hideOptions = !(group->readEntry("Hide options",                false));
     slotHideOptions();
 
-    d->tagsLoc->setChecked(group->readEntry("XMP location",            false));
+    d->tagsLoc->setChecked(group->readEntry("Tags location",           false));
     d->metaLoc->setChecked(group->readEntry("Metadata location",       false));
 }
 

@@ -928,7 +928,10 @@ QString GPSItemContainer::saveChanges()
 
                     for (int j = 0 ; j < currentTagList.count() ; ++j)
                     {
-                        tag.append(QLatin1Char('/') + currentTagList[j].tagName);
+                        if (currentTagList[j].tipName != QLatin1String("{Country code}"))
+                        {
+                            tag.append(QLatin1Char('/') + currentTagList[j].tagName);
+                        }
                     }
 
                     tag.remove(0, 1);
@@ -1118,6 +1121,10 @@ void GPSItemContainer::setLocationInfo(const TagData& tagData, IptcCoreLocationI
     if      (tagData.tipName == QLatin1String("{Country}"))
     {
         locationInfo.country       = tagData.tagName;
+    }
+    else if (tagData.tipName == QLatin1String("{Country code}"))
+    {
+        //locationInfo.countryCode   = tagData.tagName;
     }
     else if (tagData.tipName == QLatin1String("{State}"))
     {
