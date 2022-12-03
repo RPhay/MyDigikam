@@ -27,6 +27,7 @@
 #include "geoifacetypes.h"
 #include "digikam_export.h"
 #include "gpsdatacontainer.h"
+#include "metadatainfo.h"
 #include "rginfo.h"
 
 namespace Digikam
@@ -168,6 +169,10 @@ public:
      */
     void writeLocations(const bool writeMetaLoc) { m_writeMetaLoc = writeMetaLoc; }
     //@}
+
+protected:
+
+    void setLocationInfo(const TagData& tagData, IptcCoreLocationInfo& locationInfo);
 
 protected:
 

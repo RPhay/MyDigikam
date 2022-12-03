@@ -956,7 +956,7 @@ QString GPSItemContainer::saveChanges()
 
             if (m_writeMetaLoc)
             {
-                IptcCoreLocationInfo locMap;
+                IptcCoreLocationInfo locationInfo;
 
                 for (int i = 0 ; i < m_tagList.count() ; ++i)
                 {
@@ -965,44 +965,11 @@ QString GPSItemContainer::saveChanges()
 
                     for (int j = 0 ; j < currentTagList.count() ; ++j)
                     {
-                        QString tipName = currentTagList[j].tipName;
-                        QString tagName = currentTagList[j].tagName;
-
-                        if      (tipName == QLatin1String("{Country}"))
-                        {
-                            locMap.country       = tagName;
-                        }
-                        else if (tipName == QLatin1String("{State}"))
-                        {
-                            locMap.provinceState = tagName;
-                        }
-                        else if (locMap.provinceState.isEmpty() &&
-                                 (tipName == QLatin1String("{State district}")))
-                        {
-                            locMap.provinceState = tagName;
-                        }
-                        else if (tipName == QLatin1String("{County}"))
-                        {
-                            locMap.location      = tagName;
-                        }
-                        else if (tipName == QLatin1String("{City}"))
-                        {
-                            locMap.city          = tagName;
-                        }
-                        else if (locMap.city.isEmpty() &&
-                                 (tipName == QLatin1String("{Town}")))
-                        {
-                            locMap.city          = tagName;
-                        }
-                        else if (locMap.city.isEmpty() &&
-                                 (tipName == QLatin1String("{Village}")))
-                        {
-                            locMap.city          = tagName;
-                        }
+                        setLocationInfo(currentTagList[j], locationInfo);
                     }
                 }
 
-                bool success3 = meta->setIptcCoreLocation(locMap);
+                bool success3 = meta->setIptcCoreLocation(locationInfo);
 
                 if (!success3)
                 {
@@ -1144,6 +1111,41 @@ bool GPSItemContainer::isTagListDirty() const
 QList<QList<TagData> > GPSItemContainer::getTagList() const
 {
     return m_tagList;
+}
+
+void GPSItemContainer::setLocationInfo(const TagData& tagData, IptcCoreLocationInfo& locationInfo)
+{
+    if      (tagData.tipName == QLatin1String("{Country}"))
+    {
+        locationInfo.country       = tagData.tagName;
+    }
+    else if (tagData.tipName == QLatin1String("{State}"))
+    {
+        locationInfo.provinceState = tagData.tagName;
+    }
+    else if (locationInfo.provinceState.isEmpty() &&
+             (tagData.tipName == QLatin1String("{State district}")))
+    {
+        locationInfo.provinceState = tagData.tagName;
+    }
+    else if (tagData.tipName == QLatin1String("{County}"))
+    {
+        locationInfo.location      = tagData.tagName;
+    }
+    else if (tagData.tipName == QLatin1String("{City}"))
+    {
+        locationInfo.city          = tagData.tagName;
+    }
+    else if (locationInfo.city.isEmpty() &&
+             (tagData.tipName == QLatin1String("{Town}")))
+    {
+        locationInfo.city          = tagData.tagName;
+    }
+    else if (locationInfo.city.isEmpty() &&
+             (tagData.tipName == QLatin1String("{Village}")))
+    {
+        locationInfo.city          = tagData.tagName;
+    }
 }
 
 } // namespace Digikam

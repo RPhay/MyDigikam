@@ -17,10 +17,11 @@
 
 // Local includes
 
-#include "metaenginesettings.h"
-#include "itemposition.h"
 #include "coredb.h"
 #include "tagscache.h"
+#include "itemposition.h"
+#include "metaenginesettings.h"
+#include "itemextendedproperties.h"
 
 namespace Digikam
 {
@@ -100,6 +101,7 @@ QString ItemGPS::saveChanges()
     if (!m_tagList.isEmpty())
     {
         QMap<QString, QVariant> attributes;
+        IptcCoreLocationInfo locationInfo;
         QStringList tagsPath;
 
         for (int i = 0 ; i < m_tagList.count() ; ++i)
@@ -116,6 +118,8 @@ QString ItemGPS::saveChanges()
                 {
                     singleTagPath.remove(0, 1);
                 }
+
+                setLocationInfo(currentTagPath[j], locationInfo);
             }
 
             tagsPath.append(singleTagPath);
@@ -123,6 +127,9 @@ QString ItemGPS::saveChanges()
 
         QList<int> tagIds = TagsCache::instance()->getOrCreateTags(tagsPath);
         CoreDbAccess().db()->addTagsToItems(QList<qlonglong>() << m_info.id(), tagIds);
+
+        ItemExtendedProperties ep(m_info.id());
+        ep.setLocation(locationInfo);
     }
 
     // Save info to file.
