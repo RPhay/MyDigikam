@@ -82,6 +82,8 @@
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=digikam</url>
   <url type="donation">https://www.digikam.org/donation</url>
   <releases>
+    <release date="2022-12-04" version="7.9.0"/>
+    <release date="2022-09-04" version="7.8.0"/>
     <release date="2022-06-26" version="7.7.0"/>
     <release date="2022-03-06" version="7.6.0"/>
     <release date="2022-01-16" version="7.5.0"/>
