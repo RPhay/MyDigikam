@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-03 00:44+0000\n"
+"POT-Creation-Date: 2022-12-04 00:43+0000\n"
 "PO-Revision-Date: 2022-05-12 10:31+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -24802,7 +24802,7 @@ msgstr "Nahradiť:"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:114
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:537
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:477
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:479
 #, kde-format
 msgid "More options"
 msgstr "Viac možností"
@@ -55116,8 +55116,9 @@ msgstr "Ukladanie GPS informácií do obrázka skončilo s chybou."
 msgid "Failed to remove GPS info from image"
 msgstr "Odstraňovanie GPS informácií z obrázka skončilo s chybou."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:944
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:951
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:949
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:956
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:979
 #, fuzzy, kde-format
 msgid "Failed to save tags to file."
 msgstr ""
@@ -55126,7 +55127,7 @@ msgstr ""
 "do\n"
 "„%2“."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:965
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:994
 #, fuzzy, kde-format
 msgid "Unable to save changes to file"
 msgstr "Nie je možné načítať/uložiť súbor."
@@ -55319,178 +55320,186 @@ msgctxt "Local administrative area 2"
 msgid "{LAU2}"
 msgstr "{LAU2}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:224
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:222
 #, kde-format
 msgid "Add country tag"
 msgstr "Pridať štítok krajiny"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:226
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:224
 #, kde-format
 msgid "Add state tag"
 msgstr "Pridať štítok štátu"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:228
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:226
 #, fuzzy, kde-format
 msgid "Add state district tag"
 msgstr "Nepodarilo sa pridať štítok do databázy"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:230
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:228
 #, fuzzy, kde-format
 msgid "Add county tag"
 msgstr "Pridať nový tag"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:232
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:230
 #, kde-format
 msgid "Add city tag"
 msgstr "Pridať štítok mesta"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:234
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:232
 #, fuzzy, kde-format
 msgid "Add city district tag"
 msgstr "Nepodarilo sa pridať štítok do databázy"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:236
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:234
 #, fuzzy, kde-format
 msgid "Add suburb tag"
 msgstr "Pridať nový tag"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:238
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:236
 #, fuzzy, kde-format
 msgid "Add town tag"
 msgstr "Pridať nový tag"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:240
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:238
 #, fuzzy, kde-format
 msgid "Add village tag"
 msgstr "Pridať nový tag"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:242
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:240
 #, fuzzy, kde-format
 msgid "Add hamlet tag"
 msgstr "Pridať nový tag"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:244
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:242
 #, kde-format
 msgid "Add street"
 msgstr "Pridať ulicu"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:246
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:244
 #, fuzzy, kde-format
 msgid "Add house number tag"
 msgstr "Nepodarilo sa pridať štítok do databázy"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:248
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:246
 #, kde-format
 msgid "Add place"
 msgstr "Pridať miesto"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:250
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:248
 #, fuzzy, kde-format
 msgid "Add Local Administrative Area 2"
 msgstr "Pridať lokálnu tému do zoznamu."
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:252
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:250
 #, fuzzy, kde-format
 msgid "Add Local Administrative Area 1"
 msgstr "Pridať lokálnu tému do zoznamu."
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:254
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:252
 #, kde-format
 msgid "Add new tag"
 msgstr "Pridať nový tag"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:255
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:253
 #, kde-format
 msgid "Remove selected tag"
 msgstr "Odstrániť vybranú značku"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:256
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:254
 #, kde-format
 msgid "Remove all control tags below this tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:259
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:257
 #, kde-format
 msgid "Add all address elements"
 msgstr "Pridať všetky časti adresy"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:262
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:260
 #, kde-format
 msgid "Select language:"
 msgstr "Vyberte jazyk:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:272
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:270
 #, kde-format
 msgid "Select service:"
 msgstr "Vyberte službu:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:275
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:273
 #, kde-format
 msgid "Open Street Map"
 msgstr "Open Street Map"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:276
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:274
 #, kde-format
 msgid "Geonames.org place name (non-US)"
 msgstr "Názov miesta geonames.org (mimo USA)"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:277
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:275
 #, kde-format
 msgid "Geonames.org full address (US only)"
 msgstr "Plná adresa geonames.org (iba USA)"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:289
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:483
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:287
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:485
 #, kde-format
 msgid "Less options"
 msgstr "Menej možností"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:296
-#, kde-format
-msgid "Write tags to XMP"
-msgstr "Zapísať štítky do XMP"
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:294
+#, fuzzy, kde-format
+#| msgid "Pr&int captions "
+msgid "Write locations as tags"
+msgstr "&Tlačiť titulky "
+
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:295
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Write flag to metadata if possible"
+msgid "Write locations metadata"
+msgstr "Zapísať príznak do metadát, ak je to možné"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:302
 #, fuzzy, kde-format
 msgid "Process reverse geocoding"
 msgstr "Paralelne vertikálne obrátene"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:427
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:428
 #, kde-format
 msgid "Image tags are changed."
 msgstr "Upravili ste štítky obrázka."
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:462
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:464
 #, fuzzy, kde-format
 msgid "Retrieving RG info -"
 msgstr "Dr. Geo Info"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:821
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:841
 #, kde-format
 msgctxt "@title:window"
 msgid "Add new tag:"
 msgstr "Pridať novú značku:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:822
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:842
 #, kde-format
 msgid "Select a name for the new tag:"
 msgstr "Vyberte názov nového štítku:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:965
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:985
 #, kde-format
 msgid ""
 "%1 out of %2 images have been reverse geocoded. Would you like to keep the "
 "tags which were already obtained?"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:972
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:992
 #, kde-format
 msgid ""
 "1 image have been reverse geocoded. Would you like to keep the tags which "
 "were already obtained?"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:978
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:998
 #, fuzzy, kde-format
 msgid "Abort reverse geocoding?"
 msgstr "Paralelne vertikálne obrátene"
@@ -65164,6 +65173,9 @@ msgstr "Obnoviť vetky nastavenia na predvolené hodnoty."
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Obnoviť vetky nastavenia na predvolené hodnoty."
+
+#~ msgid "Write tags to XMP"
+#~ msgstr "Zapísať štítky do XMP"
 
 #~ msgid "Skip images already scanned"
 #~ msgstr "Preskočiť už prehľadané obrázky"

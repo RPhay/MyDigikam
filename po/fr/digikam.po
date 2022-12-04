@@ -67,7 +67,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-03 00:44+0000\n"
+"POT-Creation-Date: 2022-12-04 00:43+0000\n"
 "PO-Revision-Date: 2022-11-08 13:24+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -25332,7 +25332,7 @@ msgstr "Lieu :"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:114
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:537
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:477
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:479
 #, kde-format
 msgid "More options"
 msgstr "Plus d'options"
@@ -54983,13 +54983,14 @@ msgstr "Impossible d'ajouter des informations GPS à une image."
 msgid "Failed to remove GPS info from image"
 msgstr "Impossible de supprimer des informations GPS depuis une image"
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:944
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:951
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:949
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:956
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:979
 #, kde-format
 msgid "Failed to save tags to file."
 msgstr "Impossible d'enregistrer des étiquettes dans un fichier."
 
-#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:965
+#: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:994
 #, kde-format
 msgid "Unable to save changes to file"
 msgstr "Impossible d'enregistrer les changements dans un fichier"
@@ -55183,164 +55184,172 @@ msgctxt "Local administrative area 2"
 msgid "{LAU2}"
 msgstr "{LAU2}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:224
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:222
 #, kde-format
 msgid "Add country tag"
 msgstr "Ajouter un étiquette de pays"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:226
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:224
 #, kde-format
 msgid "Add state tag"
 msgstr "Ajouter une étiquette d'état"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:228
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:226
 #, kde-format
 msgid "Add state district tag"
 msgstr "Ajouter une étiquette de district d'état"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:230
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:228
 #, kde-format
 msgid "Add county tag"
 msgstr "Ajouter une étiquette de comté"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:232
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:230
 #, kde-format
 msgid "Add city tag"
 msgstr "Ajouter une étiquette de cité"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:234
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:232
 #, kde-format
 msgid "Add city district tag"
 msgstr "Ajouter une étiquette de quartier"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:236
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:234
 #, kde-format
 msgid "Add suburb tag"
 msgstr "Ajouter une étiquette de faubourg"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:238
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:236
 #, kde-format
 msgid "Add town tag"
 msgstr "Ajouter une étiquette de ville"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:240
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:238
 #, kde-format
 msgid "Add village tag"
 msgstr "Ajouter une étiquette de village"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:242
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:240
 #, kde-format
 msgid "Add hamlet tag"
 msgstr "Ajouter une étiquette de hameau"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:244
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:242
 #, kde-format
 msgid "Add street"
 msgstr "Ajouter une rue"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:246
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:244
 #, kde-format
 msgid "Add house number tag"
 msgstr "Ajouter une étiquette de numéro de maison"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:248
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:246
 #, kde-format
 msgid "Add place"
 msgstr "Ajouter une place"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:250
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:248
 #, kde-format
 msgid "Add Local Administrative Area 2"
 msgstr "Ajouter une zone administrative locale 2"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:252
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:250
 #, kde-format
 msgid "Add Local Administrative Area 1"
 msgstr "Ajouter une zone administrative locale 1"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:254
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:252
 #, kde-format
 msgid "Add new tag"
 msgstr "Ajouter une nouvelle étiquette"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:255
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:253
 #, kde-format
 msgid "Remove selected tag"
 msgstr "Supprimer l'étiquette sélectionnée"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:256
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:254
 #, kde-format
 msgid "Remove all control tags below this tag"
 msgstr "Supprimer toutes les étiquettes de contrôle sous cette étiquette"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:259
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:257
 #, kde-format
 msgid "Add all address elements"
 msgstr "Ajouter tous les éléments d'adresse"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:262
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:260
 #, kde-format
 msgid "Select language:"
 msgstr "Sélectionnez une langue :"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:272
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:270
 #, kde-format
 msgid "Select service:"
 msgstr "Sélectionnez un service :"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:275
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:273
 #, kde-format
 msgid "Open Street Map"
 msgstr "Ouvrir Street Map"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:276
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:274
 #, kde-format
 msgid "Geonames.org place name (non-US)"
 msgstr "Nom de l'emplacement de Geonames.org (hors États-Unis)"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:277
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:275
 #, kde-format
 msgid "Geonames.org full address (US only)"
 msgstr "Adresse complète de Geonames.org (États-Unis uniquement)"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:289
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:483
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:287
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:485
 #, kde-format
 msgid "Less options"
 msgstr "Moins d'options"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:296
-#, kde-format
-msgid "Write tags to XMP"
-msgstr "Écrire les étiquettes en XMP"
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:294
+#, fuzzy, kde-format
+#| msgid "Pr&int captions "
+msgid "Write locations as tags"
+msgstr "Affi&cher les légendes"
+
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:295
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Write flag to metadata if possible"
+msgid "Write locations metadata"
+msgstr "Écrire un indicateur dans les métadonnées si possible"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:302
 #, kde-format
 msgid "Process reverse geocoding"
 msgstr "Traiter la géocodage inversée"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:427
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:428
 #, kde-format
 msgid "Image tags are changed."
 msgstr "Les étiquettes des images sont changées."
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:462
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:464
 #, kde-format
 msgid "Retrieving RG info -"
 msgstr "Extraction des informations de géocodage inverse - "
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:821
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:841
 #, kde-format
 msgctxt "@title:window"
 msgid "Add new tag:"
 msgstr "Ajouter une nouvelle étiquette :"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:822
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:842
 #, kde-format
 msgid "Select a name for the new tag:"
 msgstr "Choisissez un nom pour la nouvelle étiquette :"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:965
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:985
 #, kde-format
 msgid ""
 "%1 out of %2 images have been reverse geocoded. Would you like to keep the "
@@ -55349,7 +55358,7 @@ msgstr ""
 "%1 sur %2 images ont fait l'objet d'un géocodage inversé. Voulez-vous "
 "conserver les étiquettes déjà obtenues ?"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:972
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:992
 #, kde-format
 msgid ""
 "1 image have been reverse geocoded. Would you like to keep the tags which "
@@ -55358,7 +55367,7 @@ msgstr ""
 "Une image a fait l'objet d'un géocodage inversé. Voulez-vous vraiment "
 "conserver les étiquettes déjà obtenues ?"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:978
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:998
 #, kde-format
 msgid "Abort reverse geocoding?"
 msgstr "Interrompre le géocodage inversé ?"
@@ -65245,6 +65254,9 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
 "Voulez-vous réinitialiser tous les paramètres de vidéos à leurs valeurs par "
 "défaut ?"
+
+#~ msgid "Write tags to XMP"
+#~ msgstr "Écrire les étiquettes en XMP"
 
 #~ msgid "Skip images already scanned"
 #~ msgstr "Ignorer les images déjà analysées"
