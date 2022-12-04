@@ -3,14 +3,13 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
-
 # digiKam exported API for external DPlugins based projects.
 #
 # Note: all headers must export only Qt5 dependencies.
 # No KF5 dependencies are permitted: all external DPlugin based projects do not depend explicitly to KF5 API.
 # External DPlugins demo code can be found in this project: https://github.com/cgilles/digikamplugins-demo
+#
 
-# -----------------------------------------------------------------------------------
 # Headers to install
 
 install(FILES
@@ -84,6 +83,7 @@ install(FILES
               ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/engine/metaengine.h
               ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/engine/metaengine_data.h
               ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/containers/photoinfocontainer.h
+              ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/containers/metadatainfo.h
               ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/containers/captionvalues.h
 
               ${CMAKE_SOURCE_DIR}/core/libs/rawengine/drawdecoder.h
