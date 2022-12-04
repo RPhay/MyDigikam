@@ -105,7 +105,7 @@ protected:
 
 private:
 
-    void createContryCodeMap();
+    void createCountryCodeMap();
 
 private:
 

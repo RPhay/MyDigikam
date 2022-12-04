@@ -310,7 +310,7 @@ RGWidget::RGWidget(GPSItemModel* const imageModel, QItemSelectionModel* const se
 
     d->tagTreeView->installEventFilter(this);
 
-    createContryCodeMap();
+    createCountryCodeMap();
 
     updateUIState();
 
@@ -1058,7 +1058,7 @@ void RGWidget::slotRGCanceled()
     Q_EMIT signalSetUIEnabled(true);
 }
 
-void RGWidget::createContryCodeMap()
+void RGWidget::createCountryCodeMap()
 {
     d->countryCode.insert(QLatin1String("AF"), QLatin1String("AFG"));
     d->countryCode.insert(QLatin1String("AL"), QLatin1String("ALB"));
