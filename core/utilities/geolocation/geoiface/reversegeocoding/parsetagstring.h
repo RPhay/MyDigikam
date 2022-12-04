@@ -24,7 +24,7 @@
 namespace Digikam
 {
 
-QStringList makeTagString(const RGInfo& info, const QString& inputFormat,const QString& backendName)
+QStringList makeTagString(const RGInfo& info, const QString& inputFormat, const QString& backendName)
 {
     QString auxReturnedFormat = inputFormat;
     QString returnedAddress   = inputFormat;
