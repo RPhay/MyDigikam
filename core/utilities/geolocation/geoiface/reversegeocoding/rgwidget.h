@@ -105,6 +105,10 @@ protected:
 
 private:
 
+    void createContryCodesMap();
+
+private:
+
     class Private;
     Private* const d;
 };

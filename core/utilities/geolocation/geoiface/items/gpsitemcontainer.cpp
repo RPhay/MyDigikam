@@ -1124,7 +1124,7 @@ void GPSItemContainer::setLocationInfo(const TagData& tagData, IptcCoreLocationI
     }
     else if (tagData.tipName == QLatin1String("{Country code}"))
     {
-        //locationInfo.countryCode   = tagData.tagName;
+        locationInfo.countryCode   = tagData.tagName;
     }
     else if (tagData.tipName == QLatin1String("{State}"))
     {
@@ -1140,6 +1140,11 @@ void GPSItemContainer::setLocationInfo(const TagData& tagData, IptcCoreLocationI
         locationInfo.location      = tagData.tagName;
     }
     else if (tagData.tipName == QLatin1String("{City}"))
+    {
+        locationInfo.city          = tagData.tagName;
+    }
+    else if (locationInfo.city.isEmpty() &&
+             (tagData.tipName == QLatin1String("{Place}")))
     {
         locationInfo.city          = tagData.tagName;
     }
