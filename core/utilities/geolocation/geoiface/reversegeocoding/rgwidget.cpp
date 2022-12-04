@@ -1060,8 +1060,9 @@ void RGWidget::slotRGCanceled()
 
 void RGWidget::createCountryCodeMap()
 {
-    // All ISO 3166-1 language code to convert alpha2 to alpha3
+    // All ISO 3166-1 country codes to convert alpha2 to alpha3
     // https://en.wikipedia.org/wiki/ISO_3166-1
+    // https://www.iban.com/country-codes
 
     d->countryCode.insert(QLatin1String("AF"), QLatin1String("AFG"));
     d->countryCode.insert(QLatin1String("AL"), QLatin1String("ALB"));
