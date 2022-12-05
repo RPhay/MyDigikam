@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-04 00:43+0000\n"
+"POT-Creation-Date: 2022-12-05 00:44+0000\n"
 "PO-Revision-Date: 2022-10-15 21:32+0200\n"
 "Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -25421,7 +25421,7 @@ msgstr "Ort:"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:114
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:537
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:479
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:483
 #, kde-format
 msgid "More options"
 msgstr "Weitere Optionen"
@@ -38379,7 +38379,7 @@ msgstr "Eigenschaften"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:93
 #: core/libs/settings/applicationsettings_miscs.cpp:421
-#: core/showfoto/setup/showfotosetup.cpp:111
+#: core/showfoto/setup/showfotosetup.cpp:116
 #, kde-format
 msgid "Metadata"
 msgstr "Metadaten"
@@ -44239,7 +44239,7 @@ msgid "Francisco J. Cruz"
 msgstr "Francisco J. Cruz"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:328
-#: core/showfoto/setup/showfotosetup.cpp:129
+#: core/showfoto/setup/showfotosetup.cpp:134
 #, kde-format
 msgid "Color Management"
 msgstr "Farbverwaltung"
@@ -51687,17 +51687,17 @@ msgstr "&Dekorieren"
 msgid "Effec&ts"
 msgstr "Effek&te"
 
-#: core/showfoto/setup/showfotosetup.cpp:98
+#: core/showfoto/setup/showfotosetup.cpp:103
 #, kde-format
 msgid "Configure"
 msgstr "Einrichten"
 
-#: core/showfoto/setup/showfotosetup.cpp:105
+#: core/showfoto/setup/showfotosetup.cpp:110
 #, kde-format
 msgid "Editor Window"
 msgstr "Editorfenster"
 
-#: core/showfoto/setup/showfotosetup.cpp:106
+#: core/showfoto/setup/showfotosetup.cpp:111
 #, kde-format
 msgid ""
 "<qt>Editor Window Settings<br/><i>Customize editor window behavior</i></qt>"
@@ -51705,7 +51705,7 @@ msgstr ""
 "<qt>Einstellungen des Bearbeitungsfenster<br/><i>Verhalten des "
 "Bearbeitungsfensters anpassen</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:112
+#: core/showfoto/setup/showfotosetup.cpp:117
 #, kde-format
 msgid ""
 "<qt>Embedded Image Information Management<br/><i>Setup relations between "
@@ -51714,12 +51714,12 @@ msgstr ""
 "<qt>Verwaltung der eingebetteten Informationen<br/><i>Beziehungen zwischen "
 "Bildern und Metadaten definieren</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:117
+#: core/showfoto/setup/showfotosetup.cpp:122
 #, kde-format
 msgid "Tool Tip"
 msgstr "Kurzinfo"
 
-#: core/showfoto/setup/showfotosetup.cpp:118
+#: core/showfoto/setup/showfotosetup.cpp:123
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Thumbbar Items Tool-Tip Settings<br/><i>Customize information in tool-"
@@ -51731,12 +51731,12 @@ msgstr ""
 "<qt>Einstellungen für die Kurzinfos der Vorschauleiste<br/><i>Informationen "
 "der Kurzinfos anpassen</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:123
+#: core/showfoto/setup/showfotosetup.cpp:128
 #, kde-format
 msgid "RAW Decoding"
 msgstr "RAW-Entwicklung"
 
-#: core/showfoto/setup/showfotosetup.cpp:124
+#: core/showfoto/setup/showfotosetup.cpp:129
 #, kde-format
 msgid ""
 "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
@@ -51745,7 +51745,7 @@ msgstr ""
 "<qt>RAW-Datei Entwicklungseinstellungen<br/><i>Standardeinstellungen für die "
 "RAW-Entwicklung anpassen</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:130
+#: core/showfoto/setup/showfotosetup.cpp:135
 #, kde-format
 msgid ""
 "<qt>Settings for Color Management<br/><i>Customize color management "
@@ -51754,12 +51754,12 @@ msgstr ""
 "<qt>Einstellungen der Farbverwaltung<br/><i>Einstellungen der Farbverwaltung "
 "anpassen</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:135
+#: core/showfoto/setup/showfotosetup.cpp:140
 #, kde-format
 msgid "Save Images"
 msgstr "Bilder speichern"
 
-#: core/showfoto/setup/showfotosetup.cpp:136
+#: core/showfoto/setup/showfotosetup.cpp:141
 #, kde-format
 msgid ""
 "<qt>Settings for Saving Image Files<br/><i>Set default configuration used to "
@@ -51768,12 +51768,12 @@ msgstr ""
 "<qt>Einstellungen zum Speichern der Bilddateien<br/><i>Standardkonfiguration "
 "zum Speichern von Bildern anpassen</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:141
+#: core/showfoto/setup/showfotosetup.cpp:146
 #, kde-format
 msgid "Plugins"
 msgstr "Zusatzmodule"
 
-#: core/showfoto/setup/showfotosetup.cpp:142
+#: core/showfoto/setup/showfotosetup.cpp:147
 #, kde-format
 msgid ""
 "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
@@ -51782,13 +51782,13 @@ msgstr ""
 "<qt>Einstellungen Zusatzmodule<br/><i>Bestimmen Sie hier, welche "
 "Zusatzmodule vom Programm aus verfügbar sein sollen</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:147
+#: core/showfoto/setup/showfotosetup.cpp:152
 #, kde-format
 msgctxt "@title: misc setup options page"
 msgid "Miscellaneous"
 msgstr "Verschiedenes"
 
-#: core/showfoto/setup/showfotosetup.cpp:148
+#: core/showfoto/setup/showfotosetup.cpp:153
 #, kde-format
 msgid ""
 "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts of "
@@ -55995,172 +55995,172 @@ msgctxt "Local administrative area 2"
 msgid "{LAU2}"
 msgstr "{Verwaltungsbezirk 2}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:222
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:224
 #, kde-format
 msgid "Add country tag"
 msgstr "Stichwort für Land hinzufügen"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:224
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:226
 #, kde-format
 msgid "Add state tag"
 msgstr "Stichwort für Bundesland/Kanton hinzufügen"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:226
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:228
 #, kde-format
 msgid "Add state district tag"
 msgstr "Stichwort für Landkreis hinzufügen"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:228
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:230
 #, kde-format
 msgid "Add county tag"
 msgstr "Stichwort für Bezirk hinzufügen"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:230
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:232
 #, kde-format
 msgid "Add city tag"
 msgstr "Stichwort für Stadt hinzufügen"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:232
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:234
 #, kde-format
 msgid "Add city district tag"
 msgstr "Stichwort für Stadtteil hinzufügen"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:234
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:236
 #, kde-format
 msgid "Add suburb tag"
 msgstr "Stichwort für Vorort hinzufügen"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:236
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:238
 #, kde-format
 msgid "Add town tag"
 msgstr "Stichwort für Ort hinzufügen"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:238
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:240
 #, kde-format
 msgid "Add village tag"
 msgstr "Stichwort für Dorf hinzufügen"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:240
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:242
 #, kde-format
 msgid "Add hamlet tag"
 msgstr "Stichwort für Siedlung hinzufügen"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:242
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:244
 #, kde-format
 msgid "Add street"
 msgstr "Stichwort für Straße hinzufügen"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:244
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:246
 #, kde-format
 msgid "Add house number tag"
 msgstr "Stichwort für Hausnummer hinzufügen"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:246
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:248
 #, kde-format
 msgid "Add place"
 msgstr "Stichwort für Standort hinzufügen"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:248
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:250
 #, kde-format
 msgid "Add Local Administrative Area 2"
 msgstr "Stichwort für lokalen Verwaltungsbereich 2 hinzufügen"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:250
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:252
 #, kde-format
 msgid "Add Local Administrative Area 1"
 msgstr "Stichwort für lokalen Verwaltungsbereich 1 hinzufügen"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:252
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:254
 #, kde-format
 msgid "Add new tag"
 msgstr "Neues Stichwort hinzufügen "
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:253
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:255
 #, kde-format
 msgid "Remove selected tag"
 msgstr "Ausgewähltes Stichwort entfernen"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:254
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:256
 #, kde-format
 msgid "Remove all control tags below this tag"
 msgstr "Alle Stichwörter unterhalb diese Stichworts entfernen"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:257
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:259
 #, kde-format
 msgid "Add all address elements"
 msgstr "Alle Adresselemente hinzufügen"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:260
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:262
 #, kde-format
 msgid "Select language:"
 msgstr "Sprache auswählen:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:270
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:272
 #, kde-format
 msgid "Select service:"
 msgstr "Dienst wählen:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:273
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:275
 #, kde-format
 msgid "Open Street Map"
 msgstr "Open Street Map"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:274
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:276
 #, kde-format
 msgid "Geonames.org place name (non-US)"
 msgstr "Ortsnamen von Geonames.org (nicht US)"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:275
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:277
 #, kde-format
 msgid "Geonames.org full address (US only)"
 msgstr "Ortsnamen von Geonames.org (nur US)"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:287
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:485
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:289
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:489
 #, kde-format
 msgid "Less options"
 msgstr "Weniger Optionen"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:294
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:296
 #, fuzzy, kde-format
 #| msgid "Pr&int captions "
 msgid "Write locations as tags"
 msgstr "Beschr&iftungen"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:295
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:297
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Write flag to metadata if possible"
 msgid "Write locations metadata"
 msgstr "Kennzeichen in Metadaten schreiben, wenn möglich"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:302
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:304
 #, kde-format
 msgid "Process reverse geocoding"
 msgstr "Inverse Geokodierung durchführen"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:428
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:432
 #, kde-format
 msgid "Image tags are changed."
 msgstr "Bild-Stichwörter wurden geändert."
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:464
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:468
 #, kde-format
 msgid "Retrieving RG info -"
 msgstr "RG-Info wird empfangen - "
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:841
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, kde-format
 msgctxt "@title:window"
 msgid "Add new tag:"
 msgstr "Neues Stichwort hinzufügen:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:842
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:846
 #, kde-format
 msgid "Select a name for the new tag:"
 msgstr "Wählen Sie einen Namen für das neue Stichwort:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:985
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:989
 #, kde-format
 msgid ""
 "%1 out of %2 images have been reverse geocoded. Would you like to keep the "
@@ -56169,7 +56169,7 @@ msgstr ""
 "%1 von %2 Bilder wurden durch die umgekehrte Geolokalisierung lokalisiert. "
 "Möchten Sie die bereits ermittelten Stichwörter behalten?"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:992
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:996
 #, fuzzy, kde-format
 #| msgid ""
 #| "%1 out of %2 images have been reverse geocoded. Would you like to keep "
@@ -56181,7 +56181,7 @@ msgstr ""
 "%1 von %2 Bilder wurden durch die umgekehrte Geolokalisierung lokalisiert. "
 "Möchten Sie die bereits ermittelten Stichwörter behalten?"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:998
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
 #, kde-format
 msgid "Abort reverse geocoding?"
 msgstr "Umgekehrte Geolokalisierung abbrechen?"

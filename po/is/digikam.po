@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-04 00:43+0000\n"
+"POT-Creation-Date: 2022-12-05 00:44+0000\n"
 "PO-Revision-Date: 2022-11-11 09:17+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -24804,7 +24804,7 @@ msgstr "Staður:"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:114
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:537
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:479
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:483
 #, kde-format
 msgid "More options"
 msgstr "Fleiri valkostir"
@@ -37408,7 +37408,7 @@ msgstr "Eiginleikar"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:93
 #: core/libs/settings/applicationsettings_miscs.cpp:421
-#: core/showfoto/setup/showfotosetup.cpp:111
+#: core/showfoto/setup/showfotosetup.cpp:116
 #, kde-format
 msgid "Metadata"
 msgstr "Lýsigögn"
@@ -43150,7 +43150,7 @@ msgid "Francisco J. Cruz"
 msgstr "Francisco J. Cruz"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:328
-#: core/showfoto/setup/showfotosetup.cpp:129
+#: core/showfoto/setup/showfotosetup.cpp:134
 #, kde-format
 msgid "Color Management"
 msgstr "Litastýring"
@@ -49955,17 +49955,17 @@ msgstr "S&kreyting"
 msgid "Effec&ts"
 msgstr "Sjón&hverfingar"
 
-#: core/showfoto/setup/showfotosetup.cpp:98
+#: core/showfoto/setup/showfotosetup.cpp:103
 #, kde-format
 msgid "Configure"
 msgstr "Stilla"
 
-#: core/showfoto/setup/showfotosetup.cpp:105
+#: core/showfoto/setup/showfotosetup.cpp:110
 #, kde-format
 msgid "Editor Window"
 msgstr "Myndvinnslugluggi"
 
-#: core/showfoto/setup/showfotosetup.cpp:106
+#: core/showfoto/setup/showfotosetup.cpp:111
 #, kde-format
 msgid ""
 "<qt>Editor Window Settings<br/><i>Customize editor window behavior</i></qt>"
@@ -49973,7 +49973,7 @@ msgstr ""
 "<qt>Stillingar myndvinnsluglugga<br/><i>Sérsniðin hegðun "
 "myndvinnsluforrritsins</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:112
+#: core/showfoto/setup/showfotosetup.cpp:117
 #, kde-format
 msgid ""
 "<qt>Embedded Image Information Management<br/><i>Setup relations between "
@@ -49982,12 +49982,12 @@ msgstr ""
 "<qt>Stjórnun ígræddra myndupplýsinga<br/><i>Setur upp vensl milli mynda og "
 "lýsigagna (lýsigagna)</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:117
+#: core/showfoto/setup/showfotosetup.cpp:122
 #, kde-format
 msgid "Tool Tip"
 msgstr "Vísbendingar verkfæra"
 
-#: core/showfoto/setup/showfotosetup.cpp:118
+#: core/showfoto/setup/showfotosetup.cpp:123
 #, kde-format
 msgid ""
 "<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br/><i>Customize "
@@ -49996,12 +49996,12 @@ msgstr ""
 "<qt>Stillingar vísbendinga á atriðum á smámyndastiku og möppusýn<br/"
 "><i>Sérsníður upplýsingar sem birtast í vísbendingum</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:123
+#: core/showfoto/setup/showfotosetup.cpp:128
 #, kde-format
 msgid "RAW Decoding"
 msgstr "RAW afkóðun"
 
-#: core/showfoto/setup/showfotosetup.cpp:124
+#: core/showfoto/setup/showfotosetup.cpp:129
 #, kde-format
 msgid ""
 "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
@@ -50010,7 +50010,7 @@ msgstr ""
 "<qt>Stillingar afkóðunar RAW-skráa<br/><i>Sérsníða stillingar við afkóðun "
 "RAW-skráa</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:130
+#: core/showfoto/setup/showfotosetup.cpp:135
 #, kde-format
 msgid ""
 "<qt>Settings for Color Management<br/><i>Customize color management "
@@ -50019,12 +50019,12 @@ msgstr ""
 "<qt>Stillingar litastýringar<br/><i>Sérsníða stillingar litastýringar</i></"
 "qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:135
+#: core/showfoto/setup/showfotosetup.cpp:140
 #, kde-format
 msgid "Save Images"
 msgstr "Vista myndir"
 
-#: core/showfoto/setup/showfotosetup.cpp:136
+#: core/showfoto/setup/showfotosetup.cpp:141
 #, kde-format
 msgid ""
 "<qt>Settings for Saving Image Files<br/><i>Set default configuration used to "
@@ -50033,12 +50033,12 @@ msgstr ""
 "<qt>Stillingar fyrir vistun myndskráa<br/><i>Setur sjálfgefnar stillingar "
 "sem notaðar eru við vistun myndskráa</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:141
+#: core/showfoto/setup/showfotosetup.cpp:146
 #, kde-format
 msgid "Plugins"
 msgstr "Viðbætur"
 
-#: core/showfoto/setup/showfotosetup.cpp:142
+#: core/showfoto/setup/showfotosetup.cpp:147
 #, kde-format
 msgid ""
 "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
@@ -50047,13 +50047,13 @@ msgstr ""
 "<qt>Stillingar viðbóta í aðalviðmóti<br/><i>Stilltu hvaða viðbætur eru "
 "aðgengilegar úr forritinu</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:147
+#: core/showfoto/setup/showfotosetup.cpp:152
 #, kde-format
 msgctxt "@title: misc setup options page"
 msgid "Miscellaneous"
 msgstr "Ýmislegt"
 
-#: core/showfoto/setup/showfotosetup.cpp:148
+#: core/showfoto/setup/showfotosetup.cpp:153
 #, kde-format
 msgid ""
 "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts of "
@@ -54163,172 +54163,172 @@ msgctxt "Local administrative area 2"
 msgid "{LAU2}"
 msgstr "{LAU2}"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:222
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:224
 #, kde-format
 msgid "Add country tag"
 msgstr "Bæta við merki fyrir land"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:224
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:226
 #, kde-format
 msgid "Add state tag"
 msgstr "Bæta við merki fyrir hérað/fylki"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:226
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:228
 #, kde-format
 msgid "Add state district tag"
 msgstr "Bæta við merki fyrir landssvæði"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:228
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:230
 #, kde-format
 msgid "Add county tag"
 msgstr "Bæta við merki fyrir sveitarfélag"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:230
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:232
 #, kde-format
 msgid "Add city tag"
 msgstr "Bæta við merki fyrir borg"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:232
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:234
 #, kde-format
 msgid "Add city district tag"
 msgstr "Bæta við merki fyrir hverfi"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:234
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:236
 #, kde-format
 msgid "Add suburb tag"
 msgstr "Bæta við merki fyrir úthverfi"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:236
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:238
 #, kde-format
 msgid "Add town tag"
 msgstr "Bæta við merki fyrir bæjarfélag"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:238
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:240
 #, kde-format
 msgid "Add village tag"
 msgstr "Bæta við merki fyrir þorp"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:240
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:242
 #, kde-format
 msgid "Add hamlet tag"
 msgstr "Bæta við merki fyrir byggðakjarna"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:242
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:244
 #, kde-format
 msgid "Add street"
 msgstr "Bæta við merki fyrir land"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:244
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:246
 #, kde-format
 msgid "Add house number tag"
 msgstr "Bæta við merki fyrir húsnúmer"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:246
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:248
 #, kde-format
 msgid "Add place"
 msgstr "Bæta við merki fyrir stað"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:248
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:250
 #, kde-format
 msgid "Add Local Administrative Area 2"
 msgstr "Bæta við merki fyrir stjórnsýslustig 2"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:250
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:252
 #, kde-format
 msgid "Add Local Administrative Area 1"
 msgstr "Bæta við merki fyrir stjórnsýslustig 1"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:252
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:254
 #, kde-format
 msgid "Add new tag"
 msgstr "Bæta við nýju merki"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:253
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:255
 #, kde-format
 msgid "Remove selected tag"
 msgstr "Fjarlægja valið merki"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:254
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:256
 #, kde-format
 msgid "Remove all control tags below this tag"
 msgstr "Fjarlæja öll auðkennismerki fyrir neðan þetta merki"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:257
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:259
 #, kde-format
 msgid "Add all address elements"
 msgstr "Bæta við öllum upplýsingum varðandi heimilisfang"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:260
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:262
 #, kde-format
 msgid "Select language:"
 msgstr "Veldu tungumál:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:270
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:272
 #, kde-format
 msgid "Select service:"
 msgstr "Veldu þjónustu:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:273
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:275
 #, kde-format
 msgid "Open Street Map"
 msgstr "Open Street Map"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:274
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:276
 #, kde-format
 msgid "Geonames.org place name (non-US)"
 msgstr "Geonames.org staðarheiti (utan-BNA)"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:275
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:277
 #, kde-format
 msgid "Geonames.org full address (US only)"
 msgstr "Geonames.org fullt heimilisfang (aðeins BNA)"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:287
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:485
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:289
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:489
 #, kde-format
 msgid "Less options"
 msgstr "Færri valkostir"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:294
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:296
 #, fuzzy, kde-format
 #| msgid "Pr&int captions "
 msgid "Write locations as tags"
 msgstr "B&irta skýringatexta "
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:295
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:297
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Write flag to metadata if possible"
 msgid "Write locations metadata"
 msgstr "Skrifa stefnumerki í lýsigögn ef hægt er"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:302
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:304
 #, kde-format
 msgid "Process reverse geocoding"
 msgstr "Vinna viðsnúna staðsetningarkóðun"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:428
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:432
 #, kde-format
 msgid "Image tags are changed."
 msgstr "Myndamerki hafa breyst."
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:464
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:468
 #, kde-format
 msgid "Retrieving RG info -"
 msgstr "Næ í upplýsingar frá viðsnúinni staðsetningarkóðun -"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:841
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, kde-format
 msgctxt "@title:window"
 msgid "Add new tag:"
 msgstr "Bæta við nýju merki:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:842
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:846
 #, kde-format
 msgid "Select a name for the new tag:"
 msgstr "Veldu nafn á nýja merkið:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:985
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:989
 #, kde-format
 msgid ""
 "%1 out of %2 images have been reverse geocoded. Would you like to keep the "
@@ -54337,7 +54337,7 @@ msgstr ""
 "%1 af %2 myndum hafa verið meðhöndlaðar með viðsnúinni staðsetningarkóðun. "
 "Viltu halda þeim merkjum sem þegar hafa verið búin til?"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:992
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:996
 #, kde-format
 msgid ""
 "1 image have been reverse geocoded. Would you like to keep the tags which "
@@ -54346,7 +54346,7 @@ msgstr ""
 "1 mynd hefur verið meðhöndlaðar með viðsnúinni staðsetningarkóðun. Viltu "
 "halda þeim merkjum sem þegar hafa verið búin til?"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:998
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
 #, kde-format
 msgid "Abort reverse geocoding?"
 msgstr "Hætta við viðsnúna staðsetningarkóðun?"

@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-04 00:43+0000\n"
+"POT-Creation-Date: 2022-12-05 00:44+0000\n"
 "PO-Revision-Date: 2022-09-17 08:41+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -23649,7 +23649,7 @@ msgstr "Замяна:"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:114
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:537
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:479
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:483
 #, fuzzy, kde-format
 msgid "More options"
 msgstr "Настройки на интерфейса"
@@ -35679,7 +35679,7 @@ msgstr "Настройки"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:93
 #: core/libs/settings/applicationsettings_miscs.cpp:421
-#: core/showfoto/setup/showfotosetup.cpp:111
+#: core/showfoto/setup/showfotosetup.cpp:116
 #, kde-format
 msgid "Metadata"
 msgstr "Метаданни"
@@ -41117,7 +41117,7 @@ msgid "Francisco J. Cruz"
 msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:328
-#: core/showfoto/setup/showfotosetup.cpp:129
+#: core/showfoto/setup/showfotosetup.cpp:134
 #, kde-format
 msgid "Color Management"
 msgstr "Управление на цветовете"
@@ -47897,91 +47897,91 @@ msgstr "Описание"
 msgid "Effec&ts"
 msgstr "Дълбочина на цвета:"
 
-#: core/showfoto/setup/showfotosetup.cpp:98
+#: core/showfoto/setup/showfotosetup.cpp:103
 #, kde-format
 msgid "Configure"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:105
+#: core/showfoto/setup/showfotosetup.cpp:110
 #, kde-format
 msgid "Editor Window"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:106
+#: core/showfoto/setup/showfotosetup.cpp:111
 #, kde-format
 msgid ""
 "<qt>Editor Window Settings<br/><i>Customize editor window behavior</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:112
+#: core/showfoto/setup/showfotosetup.cpp:117
 #, kde-format
 msgid ""
 "<qt>Embedded Image Information Management<br/><i>Setup relations between "
 "images and metadata</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:117
+#: core/showfoto/setup/showfotosetup.cpp:122
 #, kde-format
 msgid "Tool Tip"
 msgstr "Подсказка"
 
-#: core/showfoto/setup/showfotosetup.cpp:118
+#: core/showfoto/setup/showfotosetup.cpp:123
 #, kde-format
 msgid ""
 "<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br/><i>Customize "
 "information in tool-tips</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:123
+#: core/showfoto/setup/showfotosetup.cpp:128
 #, fuzzy, kde-format
 msgid "RAW Decoding"
 msgstr "Проявяване на RAW"
 
-#: core/showfoto/setup/showfotosetup.cpp:124
+#: core/showfoto/setup/showfotosetup.cpp:129
 #, kde-format
 msgid ""
 "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
 "settings</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:130
+#: core/showfoto/setup/showfotosetup.cpp:135
 #, kde-format
 msgid ""
 "<qt>Settings for Color Management<br/><i>Customize color management "
 "settings</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:135
+#: core/showfoto/setup/showfotosetup.cpp:140
 #, kde-format
 msgid "Save Images"
 msgstr "Запазване на снимките"
 
-#: core/showfoto/setup/showfotosetup.cpp:136
+#: core/showfoto/setup/showfotosetup.cpp:141
 #, kde-format
 msgid ""
 "<qt>Settings for Saving Image Files<br/><i>Set default configuration used to "
 "save images</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:141
+#: core/showfoto/setup/showfotosetup.cpp:146
 #, fuzzy, kde-format
 msgid "Plugins"
 msgstr "Приставки Kipi"
 
-#: core/showfoto/setup/showfotosetup.cpp:142
+#: core/showfoto/setup/showfotosetup.cpp:147
 #, kde-format
 msgid ""
 "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
 "accessible from application</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:147
+#: core/showfoto/setup/showfotosetup.cpp:152
 #, fuzzy, kde-format
 msgctxt "@title: misc setup options page"
 msgid "Miscellaneous"
 msgstr "Други настройки"
 
-#: core/showfoto/setup/showfotosetup.cpp:148
+#: core/showfoto/setup/showfotosetup.cpp:153
 #, kde-format
 msgid ""
 "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts of "
@@ -51810,183 +51810,183 @@ msgctxt "Local administrative area 2"
 msgid "{LAU2}"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:222
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:224
 #, fuzzy, kde-format
 msgid "Add country tag"
 msgstr "Моите етикети"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:224
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:226
 #, fuzzy, kde-format
 msgid "Add state tag"
 msgstr "Добавяне на нов етикет..."
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:226
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:228
 #, fuzzy, kde-format
 msgid "Add state district tag"
 msgstr "Име на файл за нова снимка"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:228
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:230
 #, fuzzy, kde-format
 msgid "Add county tag"
 msgstr "Моите етикети"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:230
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:232
 #, fuzzy, kde-format
 msgid "Add city tag"
 msgstr "Добавяне на нов етикет..."
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:232
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:234
 #, fuzzy, kde-format
 msgid "Add city district tag"
 msgstr "Име на файл за нова снимка"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:234
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:236
 #, kde-format
 msgid "Add suburb tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:236
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:238
 #, fuzzy, kde-format
 msgid "Add town tag"
 msgstr "Осветеност"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:238
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:240
 #, fuzzy, kde-format
 msgid "Add village tag"
 msgstr "Настройки..."
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:240
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:242
 #, fuzzy, kde-format
 msgid "Add hamlet tag"
 msgstr "Добавяне на нов етикет..."
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:242
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:244
 #, kde-format
 msgid "Add street"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:244
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:246
 #, fuzzy, kde-format
 msgid "Add house number tag"
 msgstr "Добавяне на пореден номер"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:246
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:248
 #, fuzzy, kde-format
 msgid "Add place"
 msgstr "Добавяне на нов етикет..."
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:248
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:250
 #, kde-format
 msgid "Add Local Administrative Area 2"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:250
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:252
 #, kde-format
 msgid "Add Local Administrative Area 1"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:252
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:254
 #, fuzzy, kde-format
 msgid "Add new tag"
 msgstr "Добавяне на нов етикет..."
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:253
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:255
 #, fuzzy, kde-format
 msgid "Remove selected tag"
 msgstr "Възстановяване иконата на етикета"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:254
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:256
 #, kde-format
 msgid "Remove all control tags below this tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:257
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:259
 #, kde-format
 msgid "Add all address elements"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:260
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:262
 #, fuzzy, kde-format
 msgid "Select language:"
 msgstr "Избиране на снимка за добавяне"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:270
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:272
 #, fuzzy, kde-format
 msgid "Select service:"
 msgstr "Избор на изображения"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:273
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:275
 #, fuzzy, kde-format
 msgid "Open Street Map"
 msgstr "OpenStreetMap"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:274
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:276
 #, kde-format
 msgid "Geonames.org place name (non-US)"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:275
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:277
 #, kde-format
 msgid "Geonames.org full address (US only)"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:287
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:485
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:289
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:489
 #, fuzzy, kde-format
 msgid "Less options"
 msgstr "Настройки на интерфейса"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:294
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:296
 #, fuzzy, kde-format
 msgid "Write locations as tags"
 msgstr "Заглавие на снимката"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:295
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:297
 #, fuzzy, kde-format
 msgid "Write locations metadata"
 msgstr "Запазване на метаданните във всеки файл"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:302
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:304
 #, fuzzy, kde-format
 msgid "Process reverse geocoding"
 msgstr "Проявяване на RAW"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:428
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:432
 #, fuzzy, kde-format
 msgid "Image tags are changed."
 msgstr "Настройки на фотоапарат"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:464
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:468
 #, kde-format
 msgid "Retrieving RG info -"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:841
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Add new tag:"
 msgstr "Добавяне на нов етикет..."
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:842
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:846
 #, kde-format
 msgid "Select a name for the new tag:"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:985
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:989
 #, kde-format
 msgid ""
 "%1 out of %2 images have been reverse geocoded. Would you like to keep the "
 "tags which were already obtained?"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:992
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:996
 #, kde-format
 msgid ""
 "1 image have been reverse geocoded. Would you like to keep the tags which "
 "were already obtained?"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:998
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
 #, kde-format
 msgid "Abort reverse geocoding?"
 msgstr ""

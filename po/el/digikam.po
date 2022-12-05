@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-04 00:43+0000\n"
+"POT-Creation-Date: 2022-12-05 00:44+0000\n"
 "PO-Revision-Date: 2017-10-16 18:16+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -26623,7 +26623,7 @@ msgstr "Αντικατάσταση:"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:114
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:537
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:479
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:483
 #, kde-format
 msgid "More options"
 msgstr "Περισσότερες επιλογές"
@@ -40033,7 +40033,7 @@ msgstr "Ιδιότητες"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:93
 #: core/libs/settings/applicationsettings_miscs.cpp:421
-#: core/showfoto/setup/showfotosetup.cpp:111
+#: core/showfoto/setup/showfotosetup.cpp:116
 #, kde-format
 msgid "Metadata"
 msgstr "Μεταδεδομένα"
@@ -46187,7 +46187,7 @@ msgid "Francisco J. Cruz"
 msgstr "Francisco J. Cruz"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:328
-#: core/showfoto/setup/showfotosetup.cpp:129
+#: core/showfoto/setup/showfotosetup.cpp:134
 #, kde-format
 msgid "Color Management"
 msgstr "Διαχείριση χρωμάτων"
@@ -53725,17 +53725,17 @@ msgstr "&Διακόσμηση"
 msgid "Effec&ts"
 msgstr "Ε&φέ"
 
-#: core/showfoto/setup/showfotosetup.cpp:98
+#: core/showfoto/setup/showfotosetup.cpp:103
 #, kde-format
 msgid "Configure"
 msgstr "Διαμόρφωση"
 
-#: core/showfoto/setup/showfotosetup.cpp:105
+#: core/showfoto/setup/showfotosetup.cpp:110
 #, kde-format
 msgid "Editor Window"
 msgstr "Παράθυρο επεξεργαστή"
 
-#: core/showfoto/setup/showfotosetup.cpp:106
+#: core/showfoto/setup/showfotosetup.cpp:111
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Image Editor Window Settings<br/><i>Customize the image editor "
@@ -53746,7 +53746,7 @@ msgstr ""
 "<qt>Ρυθμίσεις παραθύρου επεξεργαστή εικόνων<br/><i>Προσαρμογή του παραθύρου "
 "του επεξεργαστή εικόνων</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:112
+#: core/showfoto/setup/showfotosetup.cpp:117
 #, kde-format
 msgid ""
 "<qt>Embedded Image Information Management<br/><i>Setup relations between "
@@ -53755,12 +53755,12 @@ msgstr ""
 "<qt>Διαχείριση ενσωματωμένης πληροφορίας εικόνας<br/><i>Ρύθμιση σχέσεων "
 "μεταξύ των μεταδεδομένων και των εικόνων</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:117
+#: core/showfoto/setup/showfotosetup.cpp:122
 #, kde-format
 msgid "Tool Tip"
 msgstr "Υπόδειξη"
 
-#: core/showfoto/setup/showfotosetup.cpp:118
+#: core/showfoto/setup/showfotosetup.cpp:123
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Thumbbar Items Tool-Tip Settings<br/><i>Customize information in tool-"
@@ -53772,12 +53772,12 @@ msgstr ""
 "<qt>Ρυθμίσεις υποδείξεων αντικειμένων γραμμής επισκόπησης<br/><i>Προσαρμογή "
 "πληροφοριών στις υποδείξεις</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:123
+#: core/showfoto/setup/showfotosetup.cpp:128
 #, kde-format
 msgid "RAW Decoding"
 msgstr "Αποκωδικοποίηση RAW"
 
-#: core/showfoto/setup/showfotosetup.cpp:124
+#: core/showfoto/setup/showfotosetup.cpp:129
 #, kde-format
 msgid ""
 "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
@@ -53786,7 +53786,7 @@ msgstr ""
 "<qt>Ρυθμίσεις αποκωδικοποίησης αρχείων RAW<br/><i>Προσαρμογή των "
 "προκαθορισμένων ρυθμίσεων αποκωδικοποίησης αρχείων RAW</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:130
+#: core/showfoto/setup/showfotosetup.cpp:135
 #, kde-format
 msgid ""
 "<qt>Settings for Color Management<br/><i>Customize color management "
@@ -53795,12 +53795,12 @@ msgstr ""
 "<qt>Ρυθμίσεις διαχείρισης χρωμάτων<br/><i>Προσαρμογή των ρυθμίσεων "
 "διαχείρισης χρωμάτων</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:135
+#: core/showfoto/setup/showfotosetup.cpp:140
 #, kde-format
 msgid "Save Images"
 msgstr "Αποθήκευση εικόνων"
 
-#: core/showfoto/setup/showfotosetup.cpp:136
+#: core/showfoto/setup/showfotosetup.cpp:141
 #, kde-format
 msgid ""
 "<qt>Settings for Saving Image Files<br/><i>Set default configuration used to "
@@ -53809,13 +53809,13 @@ msgstr ""
 "<qt>Ρυθμίσεις αποθήκευσης αρχείων εικόνας<br/><i>Ορισμός της προκαθορισμένης "
 "διαμόρφωσης για την αποθήκευση των εικόνων</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:141
+#: core/showfoto/setup/showfotosetup.cpp:146
 #, fuzzy, kde-format
 #| msgid "Kipi-Plugins"
 msgid "Plugins"
 msgstr "Πρόσθετα Kipi"
 
-#: core/showfoto/setup/showfotosetup.cpp:142
+#: core/showfoto/setup/showfotosetup.cpp:147
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
@@ -53827,14 +53827,14 @@ msgstr ""
 "<qt>Ρυθμίσεις πρόσθετου του κύριου περιβάλλοντος<br/><i>Ορισμός των "
 "πρόσθετων του κύριου γραφικού περιβάλλοντος</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:147
+#: core/showfoto/setup/showfotosetup.cpp:152
 #, fuzzy, kde-format
 #| msgid "Miscellaneous"
 msgctxt "@title: misc setup options page"
 msgid "Miscellaneous"
 msgstr "Διάφορα"
 
-#: core/showfoto/setup/showfotosetup.cpp:148
+#: core/showfoto/setup/showfotosetup.cpp:153
 #, kde-format
 msgid ""
 "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts of "
@@ -58161,174 +58161,174 @@ msgctxt "Local administrative area 2"
 msgid "{LAU2}"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:222
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:224
 #, kde-format
 msgid "Add country tag"
 msgstr "Προσθήκη ετικέτας χώρας"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:224
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:226
 #, kde-format
 msgid "Add state tag"
 msgstr "Προσθήκη ετικέτας πολιτείας"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:226
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:228
 #, kde-format
 msgid "Add state district tag"
 msgstr "Προσθήκη ετικέτας περιφέρειας"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:228
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:230
 #, kde-format
 msgid "Add county tag"
 msgstr "Προσθήκη ετικέτας επαρχίας"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:230
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:232
 #, kde-format
 msgid "Add city tag"
 msgstr "Προσθήκη ετικέτας δήμου"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:232
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:234
 #, kde-format
 msgid "Add city district tag"
 msgstr "Προσθήκη ετικέτας δημοτικού διαμερίσματος"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:234
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:236
 #, kde-format
 msgid "Add suburb tag"
 msgstr "Προσθήκη ετικέτας προαστίου"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:236
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:238
 #, kde-format
 msgid "Add town tag"
 msgstr "Προσθήκη ετικέτας κωμόπολης"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:238
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:240
 #, kde-format
 msgid "Add village tag"
 msgstr "Προσθήκη ετικέτας χωριού"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:240
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:242
 #, kde-format
 msgid "Add hamlet tag"
 msgstr "Προσθήκη ετικέτας οικισμού"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:242
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:244
 #, kde-format
 msgid "Add street"
 msgstr "Προσθήκη οδού"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:244
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:246
 #, kde-format
 msgid "Add house number tag"
 msgstr "Προσθήκη ετικέτας αριθμού κατοικίας"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:246
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:248
 #, kde-format
 msgid "Add place"
 msgstr "Προσθήκη χώρου"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:248
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:250
 #, kde-format
 msgid "Add Local Administrative Area 2"
 msgstr "Προσθήκη περιοχής τοπικής αυτοδιοικητικής περιοχής 2"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:250
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:252
 #, kde-format
 msgid "Add Local Administrative Area 1"
 msgstr "Προσθήκη περιοχής τοπικής αυτοδιοικητικής περιοχής 1"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:252
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:254
 #, kde-format
 msgid "Add new tag"
 msgstr "Προσθήκη νέας ετικέτας"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:253
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:255
 #, kde-format
 msgid "Remove selected tag"
 msgstr "Αφαίρεση επιλεγμένης ετικέτας"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:254
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:256
 #, kde-format
 msgid "Remove all control tags below this tag"
 msgstr "Αφαίρεση όλων των ετικετών ελέγχου κάτω από αυτήν την ετικέτα"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:257
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:259
 #, kde-format
 msgid "Add all address elements"
 msgstr "Προσθήκη όλων των στοιχείων διεύθυνσης"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:260
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:262
 #, kde-format
 msgid "Select language:"
 msgstr "Επιλογή γλώσσας:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:270
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:272
 #, kde-format
 msgid "Select service:"
 msgstr "Επιλογή υπηρεσίας:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:273
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:275
 #, kde-format
 msgid "Open Street Map"
 msgstr "Άνοιγμα οδικού χάρτη"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:274
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:276
 #, kde-format
 msgid "Geonames.org place name (non-US)"
 msgstr "Geonames.org τοπωνύμια (εκτός ΗΠΑ)"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:275
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:277
 #, kde-format
 msgid "Geonames.org full address (US only)"
 msgstr "Geonames.org τοπωνύμια (μόνο ΗΠΑ)"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:287
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:485
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:289
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:489
 #, kde-format
 msgid "Less options"
 msgstr "Λιγότερες επιλογές"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:294
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:296
 #, fuzzy, kde-format
 #| msgid "Photo caption"
 msgid "Write locations as tags"
 msgstr "Τίτλος φωτογραφίας"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:295
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:297
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Write flag to metadata if possible"
 msgid "Write locations metadata"
 msgstr "Εγγραφή ένδειξης στα μεταδεδομένα αν γίνεται"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:302
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:304
 #, fuzzy, kde-format
 #| msgid "Abort reverse geocoding?"
 msgid "Process reverse geocoding"
 msgstr "Εγκατάλειψη αντεστραμμένης γεωκωδικοποίησης;"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:428
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:432
 #, kde-format
 msgid "Image tags are changed."
 msgstr "Οι ετικέτες εικόνων άλλαξαν."
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:464
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:468
 #, fuzzy, kde-format
 #| msgid "Retrieving RG info - %p%"
 msgid "Retrieving RG info -"
 msgstr "Ανάκτηση RG πληροφοριών -%p"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:841
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Add new tag:"
 msgstr "Προσθήκη νέας ετικέτας:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:842
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:846
 #, kde-format
 msgid "Select a name for the new tag:"
 msgstr "Επιλέξτε όνομα για την νέα ετικέτα:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:985
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:989
 #, fuzzy, kde-format
 #| msgid ""
 #| "%1 out of %2 images have been reverse geocoded. Would you like to keep "
@@ -58340,7 +58340,7 @@ msgstr ""
 "%1 από %2 εικόνες έχουν έχουν αντεστραμμένη γεωκωδικοποίηση. Προτιμάτε να "
 "διατηρήσετε τις ετικέτες που έχουν ήδη αποκτηθεί ή να τις απορρίψετε;"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:992
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:996
 #, fuzzy, kde-format
 #| msgid ""
 #| "%1 out of %2 images have been reverse geocoded. Would you like to keep "
@@ -58352,7 +58352,7 @@ msgstr ""
 "%1 από %2 εικόνες έχουν έχουν αντεστραμμένη γεωκωδικοποίηση. Προτιμάτε να "
 "διατηρήσετε τις ετικέτες που έχουν ήδη αποκτηθεί ή να τις απορρίψετε;"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:998
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
 #, kde-format
 msgid "Abort reverse geocoding?"
 msgstr "Εγκατάλειψη αντεστραμμένης γεωκωδικοποίησης;"

@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-04 00:43+0000\n"
+"POT-Creation-Date: 2022-12-05 00:44+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -26576,7 +26576,7 @@ msgstr "Zamijeni:"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:114
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:537
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:479
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:483
 #, kde-format
 msgid "More options"
 msgstr "Više opcija"
@@ -39945,7 +39945,7 @@ msgstr "Svojstva"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:93
 #: core/libs/settings/applicationsettings_miscs.cpp:421
-#: core/showfoto/setup/showfotosetup.cpp:111
+#: core/showfoto/setup/showfotosetup.cpp:116
 #, kde-format
 msgid "Metadata"
 msgstr "Metapodaci"
@@ -45977,7 +45977,7 @@ msgid "Francisco J. Cruz"
 msgstr "Francisco J. Cruz"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:328
-#: core/showfoto/setup/showfotosetup.cpp:129
+#: core/showfoto/setup/showfotosetup.cpp:134
 #, kde-format
 msgid "Color Management"
 msgstr "Upravljanje bojama"
@@ -53636,17 +53636,17 @@ msgstr "&Dekoriši"
 msgid "Effec&ts"
 msgstr "Efek&ti"
 
-#: core/showfoto/setup/showfotosetup.cpp:98
+#: core/showfoto/setup/showfotosetup.cpp:103
 #, kde-format
 msgid "Configure"
 msgstr "Podesi"
 
-#: core/showfoto/setup/showfotosetup.cpp:105
+#: core/showfoto/setup/showfotosetup.cpp:110
 #, kde-format
 msgid "Editor Window"
 msgstr "Uređivački prozor"
 
-#: core/showfoto/setup/showfotosetup.cpp:106
+#: core/showfoto/setup/showfotosetup.cpp:111
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Image Editor Window Settings<br/><i>Customize the image editor "
@@ -53657,7 +53657,7 @@ msgstr ""
 "<qt>Postavke prozora za uređivanje slika<br/><i>Prilagodite prozor za "
 "uređivanje slika</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:112
+#: core/showfoto/setup/showfotosetup.cpp:117
 #, kde-format
 msgid ""
 "<qt>Embedded Image Information Management<br/><i>Setup relations between "
@@ -53666,12 +53666,12 @@ msgstr ""
 "<qt>Upravljanje informacijama ubačene slike<br/><i>Postavljanje odnosa "
 "između slike i metapodataka</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:117
+#: core/showfoto/setup/showfotosetup.cpp:122
 #, kde-format
 msgid "Tool Tip"
 msgstr "Savjet"
 
-#: core/showfoto/setup/showfotosetup.cpp:118
+#: core/showfoto/setup/showfotosetup.cpp:123
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Thumbbar Items Tool-Tip Settings<br/><i>Customize information in tool-"
@@ -53683,12 +53683,12 @@ msgstr ""
 "<qt>Postavke opisa alata datoteka u traci sa umanjenim slikama<br/"
 "><i>Prilagodite informacije u opisu alata</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:123
+#: core/showfoto/setup/showfotosetup.cpp:128
 #, kde-format
 msgid "RAW Decoding"
 msgstr "RAW dekodiranje"
 
-#: core/showfoto/setup/showfotosetup.cpp:124
+#: core/showfoto/setup/showfotosetup.cpp:129
 #, kde-format
 msgid ""
 "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
@@ -53697,7 +53697,7 @@ msgstr ""
 "<qt>Postavke dekodiranja RAW datoteka<br/><i>Prilagodite podrazumijevane "
 "postavke RAW dekodiranja</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:130
+#: core/showfoto/setup/showfotosetup.cpp:135
 #, kde-format
 msgid ""
 "<qt>Settings for Color Management<br/><i>Customize color management "
@@ -53706,12 +53706,12 @@ msgstr ""
 "<qt>Postavke za upravljanje bojama<br/><i>Prilagodite opcije za upravljanje "
 "bojama</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:135
+#: core/showfoto/setup/showfotosetup.cpp:140
 #, kde-format
 msgid "Save Images"
 msgstr "Snimi slike"
 
-#: core/showfoto/setup/showfotosetup.cpp:136
+#: core/showfoto/setup/showfotosetup.cpp:141
 #, kde-format
 msgid ""
 "<qt>Settings for Saving Image Files<br/><i>Set default configuration used to "
@@ -53720,13 +53720,13 @@ msgstr ""
 "<qt>Postavke za spremanje slikovnih datoteka<br/><i>Postavi podrazumijevanu "
 "konfiguraciju korištenu za spremanje slika</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:141
+#: core/showfoto/setup/showfotosetup.cpp:146
 #, fuzzy, kde-format
 #| msgid "Kipi-Plugins"
 msgid "Plugins"
 msgstr "Kipi priključci"
 
-#: core/showfoto/setup/showfotosetup.cpp:142
+#: core/showfoto/setup/showfotosetup.cpp:147
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
@@ -53738,14 +53738,14 @@ msgstr ""
 "<qt>Opcije glavnog dodatka za povezivanje<br/><i>Postavite koji će dodaci "
 "biti dostupni sa glavnog sučelja</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:147
+#: core/showfoto/setup/showfotosetup.cpp:152
 #, fuzzy, kde-format
 #| msgid "Miscellaneous"
 msgctxt "@title: misc setup options page"
 msgid "Miscellaneous"
 msgstr "Razno"
 
-#: core/showfoto/setup/showfotosetup.cpp:148
+#: core/showfoto/setup/showfotosetup.cpp:153
 #, kde-format
 msgid ""
 "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts of "
@@ -58051,173 +58051,173 @@ msgctxt "Local administrative area 2"
 msgid "{LAU2}"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:222
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:224
 #, kde-format
 msgid "Add country tag"
 msgstr "Dodaj oznaku zemlje"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:224
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:226
 #, kde-format
 msgid "Add state tag"
 msgstr "Dodaj oznaku države"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:226
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:228
 #, kde-format
 msgid "Add state district tag"
 msgstr "Dodaj oznake regije države"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:228
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:230
 #, kde-format
 msgid "Add county tag"
 msgstr "Dodaj oznaku zemlje"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:230
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:232
 #, kde-format
 msgid "Add city tag"
 msgstr "Dodaj oznaku grada"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:232
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:234
 #, kde-format
 msgid "Add city district tag"
 msgstr "Dodaj oznaku podučja grada"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:234
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:236
 #, kde-format
 msgid "Add suburb tag"
 msgstr "Dodaj oznaku predgrađa"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:236
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:238
 #, kde-format
 msgid "Add town tag"
 msgstr "Dodaj oznaku grada"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:238
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:240
 #, kde-format
 msgid "Add village tag"
 msgstr "Dodaj oznaku sela"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:240
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:242
 #, kde-format
 msgid "Add hamlet tag"
 msgstr "Dodaj oznaku zaseoka"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:242
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:244
 #, kde-format
 msgid "Add street"
 msgstr "Dodaj ulicu"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:244
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:246
 #, kde-format
 msgid "Add house number tag"
 msgstr "Dodaj oznaku broja kuće"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:246
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:248
 #, kde-format
 msgid "Add place"
 msgstr "Dodaj mjesto"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:248
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:250
 #, kde-format
 msgid "Add Local Administrative Area 2"
 msgstr "Dodaj oblast lokalne administracije 2"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:250
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:252
 #, kde-format
 msgid "Add Local Administrative Area 1"
 msgstr "Dodaj oblast lokalne administracije 1"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:252
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:254
 #, kde-format
 msgid "Add new tag"
 msgstr "Dodaj novu oznaku"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:253
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:255
 #, kde-format
 msgid "Remove selected tag"
 msgstr "Ukloni odabranu oznaku"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:254
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:256
 #, kde-format
 msgid "Remove all control tags below this tag"
 msgstr "Ukloni sve kontrolne oznake ispod ove oznake"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:257
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:259
 #, kde-format
 msgid "Add all address elements"
 msgstr "Dodaj sve elemente adrese"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:260
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:262
 #, kde-format
 msgid "Select language:"
 msgstr "Odaberi jezik:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:270
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:272
 #, kde-format
 msgid "Select service:"
 msgstr "Izaberite servis:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:273
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:275
 #, kde-format
 msgid "Open Street Map"
 msgstr "Otvori uličnu mapu"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:274
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:276
 #, kde-format
 msgid "Geonames.org place name (non-US)"
 msgstr "Geonames.org naziv mjesta (izvan SAD)"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:275
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:277
 #, kde-format
 msgid "Geonames.org full address (US only)"
 msgstr "Geonames.org cijela adresa (samo SAD)"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:287
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:485
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:289
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:489
 #, kde-format
 msgid "Less options"
 msgstr "Manje opcija"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:294
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:296
 #, fuzzy, kde-format
 msgid "Write locations as tags"
 msgstr "Opcije pregleda"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:295
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:297
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Write flag to metadata if possible"
 msgid "Write locations metadata"
 msgstr "Napišite zastavu metapodataka ako je moguće"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:302
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:304
 #, fuzzy, kde-format
 #| msgid "Abort reverse geocoding?"
 msgid "Process reverse geocoding"
 msgstr "Zaustavi reverzno geokodiranje?"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:428
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:432
 #, kde-format
 msgid "Image tags are changed."
 msgstr "Oznake slike su promijenjene."
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:464
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:468
 #, fuzzy, kde-format
 #| msgid "Retrieving RG info - %p%"
 msgid "Retrieving RG info -"
 msgstr "Dohvaćanje RG informacija - %p%"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:841
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Add new tag:"
 msgstr "Dodaj novu oznaku:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:842
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:846
 #, kde-format
 msgid "Select a name for the new tag:"
 msgstr "Odaberi ime za novu oznaku:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:985
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:989
 #, fuzzy, kde-format
 #| msgid ""
 #| "%1 out of %2 images have been reverse geocoded. Would you like to keep "
@@ -58229,7 +58229,7 @@ msgstr ""
 "%1 od %2 slika su reverzno geokodirane. Želite li sačuvati oznake koje "
 "trenutno postoje ili ih želite poništiti?"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:992
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:996
 #, fuzzy, kde-format
 #| msgid ""
 #| "%1 out of %2 images have been reverse geocoded. Would you like to keep "
@@ -58241,7 +58241,7 @@ msgstr ""
 "%1 od %2 slika su reverzno geokodirane. Želite li sačuvati oznake koje "
 "trenutno postoje ili ih želite poništiti?"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:998
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
 #, kde-format
 msgid "Abort reverse geocoding?"
 msgstr "Zaustavi reverzno geokodiranje?"
