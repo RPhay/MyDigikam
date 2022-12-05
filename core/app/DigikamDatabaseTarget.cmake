@@ -6,8 +6,8 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
-
-### digiKam database shared library target ######################################################################################
+# digiKam database shared library target
+#
 
 add_library(digikamdatabase SHARED $<TARGET_OBJECTS:digikamdatabase_obj>)
 

@@ -4,8 +4,8 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
-
-### digiKam core object library #################################################################################################
+# digiKam core object library
+#
 
 set(DIGIKAMCORE_OBJECTS
 

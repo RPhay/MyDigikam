@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-04 00:43+0000\n"
-"PO-Revision-Date: 2022-11-08 03:56+0100\n"
+"POT-Creation-Date: 2022-12-05 00:44+0000\n"
+"PO-Revision-Date: 2022-12-04 06:58+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -9313,7 +9313,7 @@ msgstr ""
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:117
 #, kde-format
 msgid "Caricature"
-msgstr ""
+msgstr "კარიკატურა"
 
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:118
 #, kde-format
@@ -9603,7 +9603,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Raindrops"
-msgstr ""
+msgstr "წვიმის წვეთები"
 
 #: core/dplugins/editor/filters/raindrop/raindroptoolplugin.cpp:59
 #, kde-format
@@ -11662,7 +11662,7 @@ msgstr "სანიშნები"
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:274
 #, kde-format
 msgid "Search failed"
-msgstr ""
+msgstr "ძებნის შეცდომა"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:274
 #, kde-format
@@ -12861,12 +12861,12 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:88
 #, kde-format
 msgid "No flash"
-msgstr ""
+msgstr "განათების გარეშე"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:89
 #, kde-format
 msgid "Fired"
-msgstr ""
+msgstr "ჩაირთო"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:90
 #, kde-format
@@ -12881,7 +12881,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:92
 #, kde-format
 msgid "Yes, compulsory"
-msgstr ""
+msgstr "დიახ, იძულებით"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:93
 #, kde-format
@@ -12896,7 +12896,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:95
 #, kde-format
 msgid "No, compulsory"
-msgstr ""
+msgstr "არა, იძულებით"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:96
 #, kde-format
@@ -14755,7 +14755,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item: scene code"
 msgid "Symbolic"
-msgstr ""
+msgstr "სიმბოლური"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:84
 #, kde-format
@@ -20250,7 +20250,7 @@ msgstr "პარამეტრები"
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:177
 #, kde-format
 msgid "&Loop"
-msgstr ""
+msgstr "&მარყუჟი"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_playCheckBox)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:335
@@ -20632,7 +20632,7 @@ msgstr "დაწყება"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start Presentation"
-msgstr ""
+msgstr "პრეზენტაციის დაწყება"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:94
 #, kde-format
@@ -21159,7 +21159,7 @@ msgstr "სლაიდშოუ"
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:166
 #, kde-format
 msgid "Play All"
-msgstr ""
+msgstr "ყველას დაკვრა"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:175
 #, kde-format
@@ -21189,7 +21189,7 @@ msgstr ""
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:132
 #, kde-format
 msgid "Switch Screen"
-msgstr ""
+msgstr "ეკრანის გადართვა"
 
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:145
 #, kde-format
@@ -23385,7 +23385,7 @@ msgstr "ადგილი:"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:114
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:537
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:479
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:483
 #, kde-format
 msgid "More options"
 msgstr "მეტი პარამეტრი"
@@ -35138,7 +35138,7 @@ msgstr "პარამეტრები"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:93
 #: core/libs/settings/applicationsettings_miscs.cpp:421
-#: core/showfoto/setup/showfotosetup.cpp:111
+#: core/showfoto/setup/showfotosetup.cpp:116
 #, kde-format
 msgid "Metadata"
 msgstr "მეტამონაცემები"
@@ -35370,7 +35370,7 @@ msgstr "უცნობი"
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unchanged"
-msgstr ""
+msgstr "შეუცვლელი"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:395
 #: core/libs/properties/itempropertiessidebar.cpp:220
@@ -35473,7 +35473,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Count: "
-msgstr ""
+msgstr "რაოდენობა: "
 
 #: core/libs/properties/itempropertiescolorstab.cpp:185
 #, kde-format
@@ -35795,7 +35795,7 @@ msgstr "B"
 #: core/libs/properties/itemselectionpropertiestab.cpp:76
 #, kde-format
 msgid "Count: "
-msgstr ""
+msgstr "რაოდენობა: "
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:77
 #, kde-format
@@ -35962,7 +35962,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:slider"
 msgid "Pass:"
-msgstr ""
+msgstr "გადავლა:"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:341
 #, kde-kuit-format
@@ -40322,7 +40322,7 @@ msgstr "Aditya Bhatt"
 #: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:190
 #, kde-format
 msgid "Face Detection"
-msgstr ""
+msgstr "სახის ამოცნობა"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:225
 #, kde-format
@@ -40481,7 +40481,7 @@ msgid "Francisco J. Cruz"
 msgstr "Francisco J. Cruz"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:328
-#: core/showfoto/setup/showfotosetup.cpp:129
+#: core/showfoto/setup/showfotosetup.cpp:134
 #, kde-format
 msgid "Color Management"
 msgstr "ფერების მართვა"
@@ -41879,7 +41879,7 @@ msgstr "შეცდომის შეტყობინება: %1"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Default Language"
-msgstr ""
+msgstr "ნაგულისხმები ენა"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:43
 #, kde-format
@@ -45440,7 +45440,7 @@ msgstr "ზიმბაბვე"
 #, kde-format
 msgctxt "@info: country code"
 msgid "United Nations"
-msgstr ""
+msgstr "გაერთიანებული ერების ორგანიზაცია"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:288
 #, kde-format
@@ -45644,23 +45644,24 @@ msgstr ""
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:48
 #, kde-format
 msgid "Error: Unable to find Bing credentials in web version."
-msgstr ""
+msgstr "შეცდომა: ვებ ვერსიაში Bing-ის ავტორიზაციის დეტალები ვერ ვიპოვე."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:57
 #, kde-format
 msgid "Error: Unable to extract Bing key from web version."
-msgstr ""
+msgstr "შეცდომა: ვებ ვერსიიდან Bing-ის გასაღების გამოღება შეუძლებელია."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:67
 #, kde-format
 msgid "Error: Unable to extract Bing token from web version."
-msgstr ""
+msgstr "შეცდომა: ვებ ვერსიიდან Bing-ის კოდის გამოღება შეუძლებელია."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:77
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:87
 #, kde-format
 msgid "Error: Unable to extract additional Bing information from web version."
 msgstr ""
+"შეცდომა: ვებ ვერსიიდან Bing-ის დამატებითი ინფორმაციის გამოღება შეუძლებელია."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:145
 #: core/libs/widgets/text/donlinetranslator_google.cpp:88
@@ -45668,7 +45669,7 @@ msgstr ""
 #: core/libs/widgets/text/donlinetranslator_yandex.cpp:168
 #, kde-format
 msgid "Error: Unable to parse autodetected language"
-msgstr ""
+msgstr "შეცდომა: ავტომატურად აღმოჩენილი ენის დამუშავების შეცდომა"
 
 #: core/libs/widgets/text/donlinetranslator_google.cpp:53
 #: core/libs/widgets/text/donlinetranslator_google.cpp:70
@@ -46474,12 +46475,12 @@ msgstr ""
 #: core/libs/widgets/text/donlinetranslator_yandex.cpp:60
 #, kde-format
 msgid "Error: Unable to find Yandex SID in web version."
-msgstr ""
+msgstr "შეცდომა: ვების ვერსიაში Yandex SID ვერ ვიპოვე."
 
 #: core/libs/widgets/text/donlinetranslator_yandex.cpp:69
 #, kde-format
 msgid "Error: Unable to extract Yandex SID from web version."
-msgstr ""
+msgstr "შეცდომა: ვებ ვერსიიდან Yandex SID-ის ამოღების შეცდომა."
 
 #: core/libs/widgets/text/localizeconfig.cpp:58
 #, kde-format
@@ -47251,91 +47252,91 @@ msgstr ""
 msgid "Effec&ts"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:98
+#: core/showfoto/setup/showfotosetup.cpp:103
 #, kde-format
 msgid "Configure"
 msgstr "მორგება"
 
-#: core/showfoto/setup/showfotosetup.cpp:105
+#: core/showfoto/setup/showfotosetup.cpp:110
 #, kde-format
 msgid "Editor Window"
 msgstr "რედაქტორის ფანჯარა"
 
-#: core/showfoto/setup/showfotosetup.cpp:106
+#: core/showfoto/setup/showfotosetup.cpp:111
 #, kde-format
 msgid ""
 "<qt>Editor Window Settings<br/><i>Customize editor window behavior</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:112
+#: core/showfoto/setup/showfotosetup.cpp:117
 #, kde-format
 msgid ""
 "<qt>Embedded Image Information Management<br/><i>Setup relations between "
 "images and metadata</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:117
+#: core/showfoto/setup/showfotosetup.cpp:122
 #, kde-format
 msgid "Tool Tip"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:118
+#: core/showfoto/setup/showfotosetup.cpp:123
 #, kde-format
 msgid ""
 "<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br/><i>Customize "
 "information in tool-tips</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:123
+#: core/showfoto/setup/showfotosetup.cpp:128
 #, kde-format
 msgid "RAW Decoding"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:124
+#: core/showfoto/setup/showfotosetup.cpp:129
 #, kde-format
 msgid ""
 "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
 "settings</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:130
+#: core/showfoto/setup/showfotosetup.cpp:135
 #, kde-format
 msgid ""
 "<qt>Settings for Color Management<br/><i>Customize color management "
 "settings</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:135
+#: core/showfoto/setup/showfotosetup.cpp:140
 #, kde-format
 msgid "Save Images"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:136
+#: core/showfoto/setup/showfotosetup.cpp:141
 #, kde-format
 msgid ""
 "<qt>Settings for Saving Image Files<br/><i>Set default configuration used to "
 "save images</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:141
+#: core/showfoto/setup/showfotosetup.cpp:146
 #, kde-format
 msgid "Plugins"
 msgstr "დამატებები"
 
-#: core/showfoto/setup/showfotosetup.cpp:142
+#: core/showfoto/setup/showfotosetup.cpp:147
 #, kde-format
 msgid ""
 "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
 "accessible from application</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:147
+#: core/showfoto/setup/showfotosetup.cpp:152
 #, kde-format
 msgctxt "@title: misc setup options page"
 msgid "Miscellaneous"
 msgstr "სხვადასხვა"
 
-#: core/showfoto/setup/showfotosetup.cpp:148
+#: core/showfoto/setup/showfotosetup.cpp:153
 #, kde-format
 msgid ""
 "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts of "
@@ -50882,7 +50883,7 @@ msgstr "ხელმიუწვდომელია"
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:443
 #, kde-format
 msgid "DOP: %1"
-msgstr ""
+msgstr "DOP: %1"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:448
 #, kde-format
@@ -51120,184 +51121,183 @@ msgctxt "Local administrative area 2"
 msgid "{LAU2}"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:222
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:224
 #, kde-format
 msgid "Add country tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:224
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:226
 #, kde-format
 msgid "Add state tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:226
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:228
 #, kde-format
 msgid "Add state district tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:228
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:230
 #, kde-format
 msgid "Add county tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:230
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:232
 #, kde-format
 msgid "Add city tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:232
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:234
 #, kde-format
 msgid "Add city district tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:234
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:236
 #, kde-format
 msgid "Add suburb tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:236
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:238
 #, kde-format
 msgid "Add town tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:238
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:240
 #, kde-format
 msgid "Add village tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:240
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:242
 #, kde-format
 msgid "Add hamlet tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:242
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:244
 #, kde-format
 msgid "Add street"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:244
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:246
 #, kde-format
 msgid "Add house number tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:246
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:248
 #, kde-format
 msgid "Add place"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:248
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:250
 #, kde-format
 msgid "Add Local Administrative Area 2"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:250
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:252
 #, kde-format
 msgid "Add Local Administrative Area 1"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:252
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:254
 #, kde-format
 msgid "Add new tag"
 msgstr "ახალი ჭდეს დამატება"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:253
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:255
 #, kde-format
 msgid "Remove selected tag"
-msgstr ""
+msgstr "მონიშნული ჭდის წაშლა"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:254
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:256
 #, kde-format
 msgid "Remove all control tags below this tag"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:257
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:259
 #, kde-format
 msgid "Add all address elements"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:260
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:262
 #, kde-format
 msgid "Select language:"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:270
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:272
 #, kde-format
 msgid "Select service:"
 msgstr "აირჩიეთ სერვისი:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:273
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:275
 #, kde-format
 msgid "Open Street Map"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:274
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:276
 #, kde-format
 msgid "Geonames.org place name (non-US)"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:275
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:277
 #, kde-format
 msgid "Geonames.org full address (US only)"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:287
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:485
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:289
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:489
 #, kde-format
 msgid "Less options"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:294
-#, fuzzy, kde-format
-#| msgid "Write Options"
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:296
+#, kde-format
 msgid "Write locations as tags"
 msgstr "ჩაწერის პარამეტრები"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:295
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:297
 #, kde-format
 msgid "Write locations metadata"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:302
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:304
 #, kde-format
 msgid "Process reverse geocoding"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:428
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:432
 #, kde-format
 msgid "Image tags are changed."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:464
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:468
 #, kde-format
 msgid "Retrieving RG info -"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:841
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, kde-format
 msgctxt "@title:window"
 msgid "Add new tag:"
 msgstr "ახალი ჭდის დამატება:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:842
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:846
 #, kde-format
 msgid "Select a name for the new tag:"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:985
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:989
 #, kde-format
 msgid ""
 "%1 out of %2 images have been reverse geocoded. Would you like to keep the "
 "tags which were already obtained?"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:992
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:996
 #, kde-format
 msgid ""
 "1 image have been reverse geocoded. Would you like to keep the tags which "
 "were already obtained?"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:998
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
 #, kde-format
 msgid "Abort reverse geocoding?"
 msgstr ""
@@ -54131,7 +54131,7 @@ msgstr "ყველას გასუფთავება"
 #: core/utilities/lighttable/lighttablethumbbar.cpp:467
 #, kde-format
 msgid "Drag and drop images here"
-msgstr ""
+msgstr "გადმოათრიეთ და დაყარეთ სურათები აქ"
 
 #: core/utilities/lighttable/lighttablewindow.cpp:192
 #, kde-format
@@ -54652,7 +54652,7 @@ msgstr ""
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:129
 #, kde-format
 msgid "Queue Settings"
-msgstr ""
+msgstr "რიგის პარამეტრები"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:138
 #, kde-format

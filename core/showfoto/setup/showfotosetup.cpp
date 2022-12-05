@@ -14,8 +14,13 @@
 
 #include "showfotosetup.h"
 
+// C++ includes
+
+#include <cmath>
+
 // Qt includes
 
+#include <QScreen>
 #include <QPointer>
 #include <QPushButton>
 #include <QApplication>
@@ -190,9 +195,30 @@ ShowfotoSetup::ShowfotoSetup(QWidget* const parent, ShowfotoSetup::Page page)
         showPage((Page)group.readEntry(QLatin1String("Setup Page"), (int)EditorPage));
     }
 
-    winId();
-    Digikam::DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size());
+    if (group.exists())
+    {
+        winId();
+        DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
+        resize(windowHandle()->size());
+    }
+    else
+    {
+        QScreen* screen = qApp->primaryScreen();
+
+        if (QWidget* const widget = qApp->activeWindow())
+        {
+            if (QWindow* const window = widget->windowHandle())
+            {
+                screen = window->screen();
+            }
+        }
+
+        QRect srect = screen->availableGeometry();
+        int height  = qRound(log10(srect.height() / 60) * 600);
+        int width   = qRound(log10(srect.width()  / 80) * 800);
+        resize(width  > srect.width()  ? srect.width()  : width,
+               height > srect.height() ? srect.height() : height);
+    }
 }
 
 ShowfotoSetup::~ShowfotoSetup()

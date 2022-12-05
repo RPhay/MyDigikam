@@ -4,8 +4,7 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
-
-### digiKam GUI object library ##################################################################################################
+# digiKam GUI object library
 
 if(ENABLE_DBUS)
     qt_add_dbus_adaptor(digikamadaptor_SRCS

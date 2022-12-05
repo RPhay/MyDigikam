@@ -53,8 +53,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-04 00:43+0000\n"
-"PO-Revision-Date: 2022-11-24 16:59+0300\n"
+"POT-Creation-Date: 2022-12-05 00:44+0000\n"
+"PO-Revision-Date: 2022-12-04 14:34+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -18200,11 +18200,10 @@ msgstr ""
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:156
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:157
-#, fuzzy, kde-format
-#| msgid "Device detection under progress, please wait..."
+#, kde-format
 msgctxt "@info"
 msgid "Pre-processing is in progress, please wait."
-msgstr "Cihaz algılama devam ediyor, lütfen bekleyin..."
+msgstr "Ön işleme sürüyor, lütfen bekleyin."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:157
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:188
@@ -18950,15 +18949,7 @@ msgstr ""
 "ayarlayın."
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:168
-#, fuzzy, kde-format
-#| msgid ""
-#| "The media server permit to share items through the local network using <a "
-#| "href='https://en.wikipedia.org/wiki/"
-#| "Digital_Living_Network_Alliance'>DLNA</a> standard and <a href='https://"
-#| "en.wikipedia.org/wiki/Universal_Plug_and_Play'>UPNP</a> protocol. Many "
-#| "kind of electronic devices can support DLNA, as tablets, cellulars, TV, "
-#| "etc.<br>Note: depending of the network features and the configuration, "
-#| "the delay to discover the server on client devices can take a while."
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The media server allows to share items through the local network using %1 "
@@ -18968,14 +18959,13 @@ msgid ""
 "Note: depending of the network features and the configuration, the delay to "
 "discover the server on client devices can take a while."
 msgstr ""
-"<a href='https://en.wikipedia.org/wiki/"
-"Digital_Living_Network_Alliance'>DLNA</a> standardını ve <a href='https://en."
-"wikipedia.org/wiki/Universal_Plug_and_Play'>UPNP</a> protokolünü kullanarak "
-"yerel ağ üzerinden ögeleri paylaşmaya izin vere ortam sunucusu. Birçok "
-"elektronik cihaz, tabletler, hücreler, TV vs. gibi aygıtlar DLNA'yı "
-"destekleyebilir. Not: Ağ özelliklerinin ve yapılandırmasının durumuna bağlı "
-"olarak, istemci aygıtlarda sunucuyu keşfetmenin gecikmesi biraz zaman "
-"alabilir."
+"Ortam sunucusu, %1 standardını ve %2 protokolünü kullanarak yerel ağda "
+"dosyaları ve başka ögeleri paylaşmanıza izin verir. Birçok aygıt, DLNA "
+"protokolünü desteklemektedir; örneğin, tabletler, cep telefonları, "
+"televizyonlar vb.\n"
+"\n"
+"Not: Ağın özelliklerine ve yapılandırmasına bağlı olarak istemci "
+"aygıtlarında sunucuyu bulma gecikmesi biraz zaman alabilir."
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:226
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:301
@@ -20531,11 +20521,10 @@ msgstr ""
 "ufuk, son panoramadaki ufuk çizgisi olacaktır."
 
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:187
-#, fuzzy, kde-format
-#| msgid "Device detection under progress, please wait..."
+#, kde-format
 msgctxt "@info"
 msgid "Optimization is in progress, please wait."
-msgstr "Cihaz algılama devam ediyor, lütfen bekleyin..."
+msgstr "Eniyileme sürüyor, lütfen bekleyin."
 
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:221
 #, kde-format
@@ -25936,7 +25925,7 @@ msgstr "Değiştir:"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:114
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:537
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:479
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:483
 #, kde-format
 msgid "More options"
 msgstr "Daha fazla seçenek"
@@ -38541,13 +38530,15 @@ msgid "built on %1"
 msgstr ""
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:356
-#, fuzzy, kde-format
-#| msgid "Device detection under progress, please wait..."
+#, kde-format
 msgid ""
 "Downloading new %1\n"
 "%2\n"
 "in progress, please wait..."
-msgstr "Cihaz algılama devam ediyor, lütfen bekleyin..."
+msgstr ""
+"Yeni %1 %2\n"
+"indirilmesi sürüyor,\n"
+"lütfen bekleyin..."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:362
 #: core/libs/onlineversion/onlineversiondlg.cpp:404
@@ -38562,31 +38553,37 @@ msgid "version %1"
 msgstr "Sürüm %1"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:365
-#, fuzzy, kde-format
-#| msgid "Device detection under progress, please wait..."
+#, kde-format
 msgid ""
 "Downloading new %1\n"
 "version %2\n"
 "in progress, please wait..."
-msgstr "Cihaz algılama devam ediyor, lütfen bekleyin..."
+msgstr ""
+"Yeni %1, sürüm %2\n"
+"indirilmesi sürüyor,\n"
+"lütfen bekleyin..."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:398
-#, fuzzy, kde-format
-#| msgid "Device detection under progress, please wait..."
+#, kde-format
 msgid ""
 "Verify Checksum for new %1\n"
 "%2\n"
 "in progress, please wait..."
-msgstr "Cihaz algılama devam ediyor, lütfen bekleyin..."
+msgstr ""
+"Yeni %1 %2\n"
+"sağlama toplamı doğrulanıyor,\n"
+"lütfen bekleyin..."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:407
-#, fuzzy, kde-format
-#| msgid "Device detection under progress, please wait..."
+#, kde-format
 msgid ""
 "Verify checksum for %1\n"
 "version %2\n"
 "in progress, please wait..."
-msgstr "Cihaz algılama devam ediyor, lütfen bekleyin..."
+msgstr ""
+"%1 sürüm %2\n"
+"sağlama toplamı doğrulama sürüyor,\n"
+"lütfen bekleyin..."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:434
 #, kde-format
@@ -39225,7 +39222,7 @@ msgstr "Özellikler"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:93
 #: core/libs/settings/applicationsettings_miscs.cpp:421
-#: core/showfoto/setup/showfotosetup.cpp:111
+#: core/showfoto/setup/showfotosetup.cpp:116
 #, kde-format
 msgid "Metadata"
 msgstr "Metaveri"
@@ -44454,24 +44451,24 @@ msgid ""
 "colors be vivid and contrast well with each other rather than a specific "
 "color.</p></li></ul>"
 msgstr ""
-"<ul><li><p><b>Algısal amaç</b> resmin tüm gamının sıkıştırılmasına ya da "
-"hedef cihazın gamına uymak için genişletilmesine neden olur. Bu sayede gri "
+"<ul><li><p><b>Algısal amaç</b>, görselin tüm gamının sıkıştırılmasına ya da "
+"hedef aygıtın gamına uymak için genişletilmesine neden olur. Bu sayede gri "
 "dengesi korunmuş olur fakat renk doğruluğu her zaman sağlanamayabilir.</"
-"p><p>Diğer deyişle, resimde çıktı cihazının gerçekleyebileceği aralığın "
-"dışında renk var ise bu resmin renkleri cihazın gerçekleyebileceği aralığın "
-"içine gelecek şekilde ayarlanır, bu yapılırken mümkün olduğunca renkler "
-"arasındaki ilişki korunmaya çalışılır.</p><p>Fotoğraf ve resimleri "
+"p><p>Diğer deyişle, görselde çıktı aygıtının gerçekleyebileceği aralığın "
+"dışında renk var ise bu resmin renkleri aygıtın gerçekleyebileceği aralığın "
+"içine gelecek şekilde ayarlanır, bu yapılırken olabildiğince renkler "
+"arasındaki ilişki korunmaya çalışılır.</p><p>Fotoğraf ve görselleri "
 "gösterirken bu amaç en uygunudur, varsayılan amaçtır.</p></"
-"li><li><p><b>Mutlak Renkölçer amaç</b> çıktı cihazının renk aralığının "
+"li><li><p><b>Mutlak Renkölçer amaç</b> çıktı aygıtının renk aralığının "
 "dışında kalan renkleri olabilecek en yakın renge ayarlar, kalan renkler "
 "değiştirilmez.</p><p> Bu amaç beyaz noktaları korur ve spot renkler için en "
 "uygunudur. (Pantone, TruMatch, logo renkleri, ....)</p></"
-"li><li><p><b>Göreceli Renkölçer amaç</b> çıktı cihazının renk aralığının "
+"li><li><p><b>Göreceli Renkölçer amaç</b> çıktı aygıtının renk aralığının "
 "dışında kalan renkleri olabilecek en yakın renge ayarlar. Beyaz noktaları "
 "korumaz.</p></li><li><p><b>Doygunluk amacı</b> renklerin doygunluğunu korur. "
 "Bunu yaparken ışık ve tonunu kullanır.</p><p>Bu amacın gerçekleştirilmesi "
 "biraz sorunludur ve ICC hala istenen efekti yakalamak için olabilecek "
-"yöntemler üzerinde çalışıyor.</p><p>Bu amaç çizelgeler gibi renklerin bellib "
+"yöntemler üzerinde çalışıyor.</p><p>Bu amaç çizelgeler gibi renklerin belli "
 "bir renk yerine, canlı ve parlak olması gereken iş grafikleri için en "
 "uygunudur.</p></li></ul>"
 
@@ -45295,7 +45292,7 @@ msgid "Francisco J. Cruz"
 msgstr "Francisco J. Cruz"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:328
-#: core/showfoto/setup/showfotosetup.cpp:129
+#: core/showfoto/setup/showfotosetup.cpp:134
 #, kde-format
 msgid "Color Management"
 msgstr "Renk Yönetimi"
@@ -52318,17 +52315,17 @@ msgstr "&Süsle"
 msgid "Effec&ts"
 msgstr "Efek&tler"
 
-#: core/showfoto/setup/showfotosetup.cpp:98
+#: core/showfoto/setup/showfotosetup.cpp:103
 #, kde-format
 msgid "Configure"
 msgstr "Yapılandır"
 
-#: core/showfoto/setup/showfotosetup.cpp:105
+#: core/showfoto/setup/showfotosetup.cpp:110
 #, kde-format
 msgid "Editor Window"
 msgstr "Düzenleyici Penceresi"
 
-#: core/showfoto/setup/showfotosetup.cpp:106
+#: core/showfoto/setup/showfotosetup.cpp:111
 #, kde-format
 msgid ""
 "<qt>Editor Window Settings<br/><i>Customize editor window behavior</i></qt>"
@@ -52336,7 +52333,7 @@ msgstr ""
 "<qt>Düzenleyici Pencere Ayarları<br/><i>Düzenleyici pencere ayarlarını "
 "özelleştirin</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:112
+#: core/showfoto/setup/showfotosetup.cpp:117
 #, kde-format
 msgid ""
 "<qt>Embedded Image Information Management<br/><i>Setup relations between "
@@ -52345,12 +52342,12 @@ msgstr ""
 "<qt>Gömülü Resim Bilgisi Yönetimi<br/><i>Resimler ve üstveri arasındaki "
 "ilişkiyi düzenleyin</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:117
+#: core/showfoto/setup/showfotosetup.cpp:122
 #, kde-format
 msgid "Tool Tip"
 msgstr "İpucu"
 
-#: core/showfoto/setup/showfotosetup.cpp:118
+#: core/showfoto/setup/showfotosetup.cpp:123
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Thumbbar Items Tool-Tip Settings<br/><i>Customize information in tool-"
@@ -52362,12 +52359,12 @@ msgstr ""
 "<qt>Küçük Resim Çubuğu Ögeleri Araç İpucu Ayarları<br/><i>Araç ipuçlarındaki "
 "bilgiyi özelleştirin</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:123
+#: core/showfoto/setup/showfotosetup.cpp:128
 #, kde-format
 msgid "RAW Decoding"
 msgstr "RAW Kod Çözme"
 
-#: core/showfoto/setup/showfotosetup.cpp:124
+#: core/showfoto/setup/showfotosetup.cpp:129
 #, kde-format
 msgid ""
 "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
@@ -52376,7 +52373,7 @@ msgstr ""
 "<qt>RAW Dosya Kod Çözme Ayaları<br/><i>Öntanımlı RAW kod çözme ayarlarını "
 "özelleştirin</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:130
+#: core/showfoto/setup/showfotosetup.cpp:135
 #, kde-format
 msgid ""
 "<qt>Settings for Color Management<br/><i>Customize color management "
@@ -52385,12 +52382,12 @@ msgstr ""
 "<qt>Renk Yönetimi Ayarları<br/><i>Renk yönetimi ayarlarını özelleştirin</i></"
 "qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:135
+#: core/showfoto/setup/showfotosetup.cpp:140
 #, kde-format
 msgid "Save Images"
 msgstr "Resimler Kaydet"
 
-#: core/showfoto/setup/showfotosetup.cpp:136
+#: core/showfoto/setup/showfotosetup.cpp:141
 #, kde-format
 msgid ""
 "<qt>Settings for Saving Image Files<br/><i>Set default configuration used to "
@@ -52399,12 +52396,12 @@ msgstr ""
 "<qt>Resim Dosyalarını Kaydetme Ayarları<br/><i>Resimleri kaydetmek için "
 "kullanılan öntanımlı yapılanımı belirleyin</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:141
+#: core/showfoto/setup/showfotosetup.cpp:146
 #, kde-format
 msgid "Plugins"
 msgstr "Eklentiler"
 
-#: core/showfoto/setup/showfotosetup.cpp:142
+#: core/showfoto/setup/showfotosetup.cpp:147
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
@@ -52416,13 +52413,13 @@ msgstr ""
 "<qt>Ana Arayüz Eklenti Ayarları<br/><i>Ana arayüzden hangi eklentilerin "
 "erişilebileceğini seçin</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:147
+#: core/showfoto/setup/showfotosetup.cpp:152
 #, kde-format
 msgctxt "@title: misc setup options page"
 msgid "Miscellaneous"
 msgstr "Çeşitli"
 
-#: core/showfoto/setup/showfotosetup.cpp:148
+#: core/showfoto/setup/showfotosetup.cpp:153
 #, kde-format
 msgid ""
 "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts of "
@@ -56694,173 +56691,173 @@ msgctxt "Local administrative area 2"
 msgid "{LAU2}"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:222
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:224
 #, kde-format
 msgid "Add country tag"
 msgstr "Ülke etiketi ekle"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:224
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:226
 #, kde-format
 msgid "Add state tag"
 msgstr "Durum etiketi ekle"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:226
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:228
 #, kde-format
 msgid "Add state district tag"
 msgstr "Bölge etiketi ekle"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:228
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:230
 #, kde-format
 msgid "Add county tag"
 msgstr "İlçe etiketi ekle"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:230
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:232
 #, kde-format
 msgid "Add city tag"
 msgstr "Şehir etiketi ekle"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:232
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:234
 #, kde-format
 msgid "Add city district tag"
 msgstr "Şehir bölgesi etiketi ekle"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:234
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:236
 #, kde-format
 msgid "Add suburb tag"
 msgstr "Mahalle etiketi ekle"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:236
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:238
 #, kde-format
 msgid "Add town tag"
 msgstr "Kasaba etiketi ekle"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:238
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:240
 #, kde-format
 msgid "Add village tag"
 msgstr "Köy etiketi ekle"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:240
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:242
 #, kde-format
 msgid "Add hamlet tag"
 msgstr "Mezra etiketi ekle"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:242
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:244
 #, kde-format
 msgid "Add street"
 msgstr "Sokak ekle"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:244
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:246
 #, kde-format
 msgid "Add house number tag"
 msgstr "Ev numarası etiketi ekle"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:246
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:248
 #, kde-format
 msgid "Add place"
 msgstr "Konum ekle"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:248
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:250
 #, kde-format
 msgid "Add Local Administrative Area 2"
 msgstr "Yerel Yönetim Bölgesi 2 Ekle"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:250
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:252
 #, kde-format
 msgid "Add Local Administrative Area 1"
 msgstr "Yerel Yönetim Bölgesi 1 Ekle"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:252
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:254
 #, kde-format
 msgid "Add new tag"
 msgstr "Yeni etiket ekle"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:253
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:255
 #, kde-format
 msgid "Remove selected tag"
 msgstr "Seçilen etiketleri sil"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:254
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:256
 #, kde-format
 msgid "Remove all control tags below this tag"
 msgstr "Bu etiket altındaki tüm denetim etiketlerini kaldır"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:257
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:259
 #, kde-format
 msgid "Add all address elements"
 msgstr "Tüm adres elemanlarını ekle"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:260
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:262
 #, kde-format
 msgid "Select language:"
 msgstr "Dil seçin:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:270
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:272
 #, kde-format
 msgid "Select service:"
 msgstr "Servisi seç:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:273
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:275
 #, kde-format
 msgid "Open Street Map"
 msgstr "Açık Sokak Haritaları"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:274
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:276
 #, kde-format
 msgid "Geonames.org place name (non-US)"
 msgstr "Geonames.org konum adı (ABD dışı)"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:275
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:277
 #, kde-format
 msgid "Geonames.org full address (US only)"
 msgstr "Geonames.org tam adres (sadece ABD)"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:287
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:485
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:289
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:489
 #, kde-format
 msgid "Less options"
 msgstr "Daha az seçenek"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:294
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:296
 #, fuzzy, kde-format
 #| msgid "Pr&int captions "
 msgid "Write locations as tags"
 msgstr "Başlıkları &yazdır "
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:295
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:297
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Write flag to metadata if possible"
 msgid "Write locations metadata"
 msgstr "Mümkünse bayrağı metaveriye yaz"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:302
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:304
 #, fuzzy, kde-format
 #| msgid "Abort reverse geocoding?"
 msgid "Process reverse geocoding"
 msgstr "Ters konumlanmayı iptal et?"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:428
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:432
 #, kde-format
 msgid "Image tags are changed."
 msgstr "Resim etiketleri değiştirildi."
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:464
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:468
 #, kde-format
 msgid "Retrieving RG info -"
 msgstr "RG bilgisi geri alınıyor -"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:841
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, kde-format
 msgctxt "@title:window"
 msgid "Add new tag:"
 msgstr "Yeni etiket ekle:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:842
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:846
 #, kde-format
 msgid "Select a name for the new tag:"
 msgstr "Yeni etiket için bir isim seçin:"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:985
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:989
 #, fuzzy, kde-format
 #| msgid ""
 #| "%1 out of %2 images have been reverse geocoded. Would you like to keep "
@@ -56872,7 +56869,7 @@ msgstr ""
 "%1/%2 resim ters konumlandırma işi tamamlandı. Elde edilen etiketleri "
 "korumak mı yoksa silmek mi istersiniz?"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:992
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:996
 #, fuzzy, kde-format
 #| msgid ""
 #| "%1 out of %2 images have been reverse geocoded. Would you like to keep "
@@ -56884,7 +56881,7 @@ msgstr ""
 "%1/%2 resim ters konumlandırma işi tamamlandı. Elde edilen etiketleri "
 "korumak mı yoksa silmek mi istersiniz?"
 
-#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:998
+#: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:1002
 #, kde-format
 msgid "Abort reverse geocoding?"
 msgstr "Ters konumlanmayı iptal et?"
@@ -59255,8 +59252,8 @@ msgid ""
 "camera device is not available. Please select another one from camera "
 "configuration dialog."
 msgstr ""
-"Kamera cihazından indirilecek öntanımlı hedef albümün olduğu koleksiyon "
-"mevcut değil. Lütfen kamera yapılandırma penceresinden başka bir tane seçin."
+"Kamera aygıtından indirilecek öntanımlı hedef albümün olduğu koleksiyon yok. "
+"Lütfen kamera yapılandırma penceresinden başka bir tane seçin."
 
 #: core/utilities/import/main/importui.cpp:1360
 #, kde-format
@@ -59265,8 +59262,8 @@ msgid ""
 "Your default target album set to process download from camera device is not "
 "available. Please select another one from camera configuration dialog."
 msgstr ""
-"Kamera cihazından indirilecek öntanımlı hedef albüm mevcut değil. Lütfen "
-"kamera yapılandırma penceresinden başka bir tane seçin."
+"Kamera aygıtından indirilecek öntanımlı hedef albüm yok. Lütfen kamera "
+"yapılandırma penceresinden başka bir tane seçin."
 
 #: core/utilities/import/main/importui.cpp:1385
 #, fuzzy, kde-format
@@ -63502,13 +63499,13 @@ msgid ""
 "No default target album have been selected to process download from camera "
 "device. Please select one."
 msgstr ""
-"Kamera cihazından indirmek için seçilmiş öntanımlı hedef albüm yok. Lütfen "
+"Kamera aygıtından indirmek için seçilmiş öntanımlı hedef albüm yok. Lütfen "
 "bir tane seçin."
 
 #: core/utilities/setup/camera/setupcamera.cpp:919
 #, kde-format
 msgid "Device detection under progress, please wait..."
-msgstr "Cihaz algılama devam ediyor, lütfen bekleyin..."
+msgstr "Aygıt algılama sürüyor, lütfen bekleyin..."
 
 #: core/utilities/setup/camera/setupcamera.cpp:930
 #, kde-format
@@ -66390,10 +66387,10 @@ msgid ""
 "conversion of RAW images in 16bit. Some of the options about loading "
 "behavior above refer to this profile.</p>"
 msgstr ""
-"<p>Bu, girdi cihazınız (kameranız - ya da tarayıcınız) için varsayılan renk "
-"profili .RAW resimlerinin 16 bite doğru bir şekilde dönüştürülmesi için "
-"kamera girdi profili tavsiye edilmektedir. Davranış yükleme hakkındaki "
-"üstteki ayarların bir kısmı bu profile dayanmaktadır.</p>"
+"<p>Bu, girdi aygıtınız (kameranız - ya da tarayıcınız) için öntanımlı renk "
+"profilidir. RAW görsellerin 16 bite düzgünce dönüştürülmesi için kamera "
+"girdi profili tavsiye edilmektedir. Davranış yükleme hakkındaki üstteki "
+"ayarların bir kısmı bu profile dayanmaktadır.</p>"
 
 #: core/utilities/setup/setupicc.cpp:412
 #, kde-format
