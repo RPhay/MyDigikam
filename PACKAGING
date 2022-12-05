@@ -37,7 +37,7 @@ Notice to make release tarballs from GIT
 
        Source code tarball compressed as tar.xz.
        The archive signature is done with gpg.
-       The checksums of files.
+       The SHA-256 checksums of files.
 
     Note: if .sig files are not generated with GPG, you can process signature computation with the command line
     below. In this example, the GPG key is installed to ~/.gnupg/dkorg-gpg-pwd.txt.
@@ -60,7 +60,7 @@ Notice to make release tarballs from GIT
 
         Destination: stable/digikam/X.Y.Z/
         ...
-        List of sha256 + file names
+        List of SHA-256 + file names
         ...
 
     Note: for beta release, destination is "unstable/digikam/"
