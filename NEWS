@@ -214,7 +214,7 @@ BUGFIXES:
 176 ==> 410425 - Wishlist: Reverse geocoding to IPTC/XMP location fields.
 177 ==> 231114 - TEMPLATE : Empty (unset) fields of template overwrite existing used fields when applying template.
 178 ==> 449754 - Empty metadata XMP values are created when applying template.
-179 ==> 
+179 ==> 395094 - Add new option to dissociate rights, locations, contacts and subjects.
 180 ==> 
 
 
