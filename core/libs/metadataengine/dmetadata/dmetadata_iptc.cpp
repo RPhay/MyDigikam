@@ -72,44 +72,68 @@ bool DMetadata::setCreatorContactInfo(const IptcCoreContactInfo& info) const
         return false;
     }
 
-    if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrCity", info.city))
+    if (!info.city.isEmpty())
     {
-        return false;
+        if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrCity", info.city))
+        {
+            return false;
+        }
     }
 
-    if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrCtry", info.country))
+    if (!info.country.isEmpty())
     {
-        return false;
+        if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrCtry", info.country))
+        {
+            return false;
+        }
     }
 
-    if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrExtadr", info.address))
+    if (!info.address.isEmpty())
     {
-        return false;
+        if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrExtadr", info.address))
+        {
+            return false;
+        }
     }
 
-    if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrPcode", info.postalCode))
+    if (!info.postalCode.isEmpty())
     {
-        return false;
+        if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrPcode", info.postalCode))
+        {
+            return false;
+        }
     }
 
-    if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrRegion", info.provinceState))
+    if (!info.provinceState.isEmpty())
     {
-        return false;
+        if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiAdrRegion", info.provinceState))
+        {
+            return false;
+        }
     }
 
-    if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiEmailWork", info.email))
+    if (!info.email.isEmpty())
     {
-        return false;
+        if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiEmailWork", info.email))
+        {
+            return false;
+        }
     }
 
-    if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiTelWork", info.phone))
+    if (!info.phone.isEmpty())
     {
-        return false;
+        if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiTelWork", info.phone))
+        {
+            return false;
+        }
     }
 
-    if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiUrlWork", info.webUrl))
+    if (!info.webUrl.isEmpty())
     {
-        return false;
+        if (!setXmpTagString("Xmp.iptc.CreatorContactInfo/Iptc4xmpCore:CiUrlWork", info.webUrl))
+        {
+            return false;
+        }
     }
 
     return true;
@@ -144,55 +168,85 @@ bool DMetadata::setIptcCoreLocation(const IptcCoreLocationInfo& location) const
 {
     if (supportXmp())
     {
-        if (!setXmpTagString("Xmp.photoshop.Country", location.country))
+        if (!location.country.isEmpty())
         {
-            return false;
+            if (!setXmpTagString("Xmp.photoshop.Country", location.country))
+            {
+                return false;
+            }
         }
 
-        if (!setXmpTagString("Xmp.iptc.CountryCode", location.countryCode))
+        if (!location.countryCode.isEmpty())
         {
-            return false;
+            if (!setXmpTagString("Xmp.iptc.CountryCode", location.countryCode))
+            {
+                return false;
+            }
         }
 
-        if (!setXmpTagString("Xmp.photoshop.City", location.city))
+        if (!location.city.isEmpty())
         {
-            return false;
+            if (!setXmpTagString("Xmp.photoshop.City", location.city))
+            {
+                return false;
+            }
         }
 
-        if (!setXmpTagString("Xmp.iptc.Location", location.location))
+        if (!location.location.isEmpty())
         {
-            return false;
+            if (!setXmpTagString("Xmp.iptc.Location", location.location))
+            {
+                return false;
+            }
         }
 
-        if (!setXmpTagString("Xmp.photoshop.State", location.provinceState))
+        if (!location.provinceState.isEmpty())
+        {
+            if (!setXmpTagString("Xmp.photoshop.State", location.provinceState))
+            {
+                return false;
+            }
+        }
+    }
+
+    if (!location.country.isEmpty())
+    {
+        if (!setIptcTag(location.country,       64,  "Country",        "Iptc.Application2.CountryName"))
         {
             return false;
         }
     }
 
-    if (!setIptcTag(location.country,       64,  "Country",        "Iptc.Application2.CountryName"))
+    if (!location.countryCode.isEmpty())
     {
-        return false;
+        if (!setIptcTag(location.countryCode,    3,  "Country Code",   "Iptc.Application2.CountryCode"))
+        {
+            return false;
+        }
     }
 
-    if (!setIptcTag(location.countryCode,    3,  "Country Code",   "Iptc.Application2.CountryCode"))
+    if (!location.city.isEmpty())
     {
-        return false;
+        if (!setIptcTag(location.city,          32,  "City",           "Iptc.Application2.City"))
+        {
+            return false;
+        }
     }
 
-    if (!setIptcTag(location.city,          32,  "City",           "Iptc.Application2.City"))
+    if (!location.location.isEmpty())
     {
-        return false;
+        if (!setIptcTag(location.location,      32,  "SubLocation",    "Iptc.Application2.SubLocation"))
+        {
+            return false;
+        }
     }
 
-    if (!setIptcTag(location.location,      32,  "SubLocation",    "Iptc.Application2.SubLocation"))
+    if (!location.provinceState.isEmpty())
     {
-        return false;
-    }
-
-    if (!setIptcTag(location.provinceState, 32,  "Province/State", "Iptc.Application2.ProvinceState"))
-    {
-        return false;
+        if (!setIptcTag(location.provinceState, 32,  "Province/State", "Iptc.Application2.ProvinceState"))
+        {
+            return false;
+        }
     }
 
     return true;

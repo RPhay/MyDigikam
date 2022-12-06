@@ -47,8 +47,25 @@ void ItemDescEditTab::initInformationView()
 
 void ItemDescEditTab::slotTemplateSelected()
 {
-    d->hub->setMetadataTemplate(d->templateSelector->getTemplate());
-    d->templateViewer->setTemplate(d->templateSelector->getTemplate());
+    Template s = d->templateSelector->getTemplate();
+    Template t = d->hub->metadataTemplate();
+
+    if (s.isNull())
+    {
+        return;
+    }
+
+    if (s.templateTitle() == Template::removeTemplateTitle())
+    {
+        t = s;
+    }
+    else
+    {
+        t.merge(s);
+    }
+
+    d->hub->setMetadataTemplate(t);
+    d->templateViewer->setTemplate(t);
     d->setMetadataWidgetStatus(d->hub->templateStatus(), d->templateSelector);
     slotModified();
 }

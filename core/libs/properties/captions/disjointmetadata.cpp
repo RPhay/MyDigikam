@@ -122,7 +122,7 @@ void DisjointMetadata::load(const ItemInfo& info)
         Template tref    = info.metadataTemplate();
         Template t       = TemplateManager::defaultManager()->findByContents(tref);
 /*
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Found Metadata Template: " << t.templateTitle();
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Found Metadata Template:" << t.templateTitle();
 */
         metadataTemplate = t.isNull() ? tref : t;
     }
@@ -400,16 +400,11 @@ bool DisjointMetadata::write(ItemInfo info, WriteMode writeMode)
     {
         QString title = d->metadataTemplate.templateTitle();
 
-        if (title == Template::removeTemplateTitle())
+        if      (title == Template::removeTemplateTitle())
         {
             info.removeMetadataTemplate();
         }
-
-        if (title.isEmpty())
-        {
-            // Nothing to do.
-        }
-        else
+        else if (!d->metadataTemplate.isEmpty())
         {
             info.setMetadataTemplate(d->metadataTemplate);
         }

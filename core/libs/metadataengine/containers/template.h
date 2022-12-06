@@ -51,6 +51,11 @@ public:
     bool isEmpty()                              const;
 
     /**
+     * Merge the metadata from another Template
+     */
+    void merge(const Template& t);
+
+    /**
      * Compare for metadata equality, not including "templateTitle" value.
      */
     bool operator==(const Template& t)          const;

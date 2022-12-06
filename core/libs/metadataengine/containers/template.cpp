@@ -73,6 +73,54 @@ bool Template::isEmpty() const
            );
 }
 
+void Template::merge(const Template& t)
+{
+    m_templateTitle = t.templateTitle();
+
+    if (!t.authors().isEmpty())
+    {
+        m_authors = t.authors();
+    }
+
+    if (!t.authorsPosition().isEmpty())
+    {
+        m_authorsPosition = t.authorsPosition();
+    }
+
+    if (!t.credit().isEmpty())
+    {
+        m_credit = t.credit();
+    }
+
+    if (!t.copyright().isEmpty())
+    {
+        m_copyright = t.copyright();
+    }
+
+    if (!t.rightUsageTerms().isEmpty())
+    {
+        m_rightUsageTerms = t.rightUsageTerms();
+    }
+
+    if (!t.source().isEmpty())
+    {
+        m_source = t.source();
+    }
+
+    if (!t.instructions().isEmpty())
+    {
+        m_instructions = t.instructions();
+    }
+
+    m_locationInfo.merge(t.locationInfo());
+    m_contactInfo.merge(t.contactInfo());
+
+    if (!t.IptcSubjects().isEmpty())
+    {
+        m_subjects = t.IptcSubjects();
+    }
+}
+
 void Template::setTemplateTitle(const QString& title)
 {
     m_templateTitle = title;

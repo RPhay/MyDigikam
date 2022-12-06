@@ -674,21 +674,21 @@ void CameraController::executeCommand(CameraCommand* const cmd)
                     applyChanges = true;
                 }
 
-                if (!templateTitle.isNull() && !templateTitle.isEmpty())
+                if (!templateTitle.isEmpty())
                 {
-                    qCDebug(DIGIKAM_IMPORTUI_LOG) << "Metadata template title : " << templateTitle;
+                    qCDebug(DIGIKAM_IMPORTUI_LOG) << "Metadata template title:" << templateTitle;
 
-                    TemplateManager* const tm = TemplateManager::defaultManager();
-
-                    if (tm && templateTitle == Template::removeTemplateTitle())
+                    if (templateTitle == Template::removeTemplateTitle())
                     {
                         metadata->removeMetadataTemplate();
                         applyChanges = true;
                     }
-                    else if (tm)
+                    else
                     {
-                        metadata->removeMetadataTemplate();
-                        metadata->setMetadataTemplate(tm->findByTitle(templateTitle));
+                        Template t = metadata->getMetadataTemplate();
+                        t.merge(TemplateManager::defaultManager()->findByTitle(templateTitle));
+
+                        metadata->setMetadataTemplate(t);
                         applyChanges = true;
                     }
                 }

@@ -33,7 +33,7 @@ namespace Digikam
 
 bool DMetadata::setMetadataTemplate(const Template& t) const
 {
-    if (t.isNull())
+    if (t.isEmpty())
     {
         return false;
     }
@@ -52,89 +52,128 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
 
     if (supportXmp())
     {
-        if (!setXmpTagStringSeq("Xmp.dc.creator", authors))
+        if (!authors.isEmpty())
         {
-            return false;
+            if (!setXmpTagStringSeq("Xmp.dc.creator", authors))
+            {
+                return false;
+            }
+
+            if (!setXmpTagStringSeq("Xmp.tiff.Artist", authors))
+            {
+                return false;
+            }
         }
 
-        if (!setXmpTagStringSeq("Xmp.tiff.Artist", authors))
+        if (!authorsPosition.isEmpty())
         {
-            return false;
+            if (!setXmpTagString("Xmp.photoshop.AuthorsPosition", authorsPosition))
+            {
+                return false;
+            }
         }
 
-        if (!setXmpTagString("Xmp.photoshop.AuthorsPosition", authorsPosition))
+        if (!credit.isEmpty())
         {
-            return false;
+            if (!setXmpTagString("Xmp.photoshop.Credit", credit))
+            {
+                return false;
+            }
         }
 
-        if (!setXmpTagString("Xmp.photoshop.Credit", credit))
+        if (!source.isEmpty())
         {
-            return false;
+            if (!setXmpTagString("Xmp.photoshop.Source", source))
+            {
+                return false;
+            }
+
+            if (!setXmpTagString("Xmp.dc.source", source))
+            {
+                return false;
+            }
         }
 
-        if (!setXmpTagString("Xmp.photoshop.Source", source))
+        if (!copyright.isEmpty())
         {
-            return false;
+            if (!setXmpTagStringListLangAlt("Xmp.dc.rights", copyright))
+            {
+                return false;
+            }
+
+            if (!setXmpTagStringListLangAlt("Xmp.tiff.Copyright", copyright))
+            {
+                return false;
+            }
         }
 
-        if (!setXmpTagString("Xmp.dc.source", source))
+        if (!rightUsage.isEmpty())
         {
-            return false;
+            if (!setXmpTagStringListLangAlt("Xmp.xmpRights.UsageTerms", rightUsage))
+            {
+                return false;
+            }
         }
 
-        if (!setXmpTagStringListLangAlt("Xmp.dc.rights", copyright))
+        if (!instructions.isEmpty())
         {
-            return false;
-        }
-
-        if (!setXmpTagStringListLangAlt("Xmp.tiff.Copyright", copyright))
-        {
-            return false;
-        }
-
-        if (!setXmpTagStringListLangAlt("Xmp.xmpRights.UsageTerms", rightUsage))
-        {
-            return false;
-        }
-
-        if (!setXmpTagString("Xmp.photoshop.Instructions", instructions))
-        {
-            return false;
+            if (!setXmpTagString("Xmp.photoshop.Instructions", instructions))
+            {
+                return false;
+            }
         }
     }
 
     // Set IPTC tags.
 
-    if (!setIptcTagsStringList("Iptc.Application2.Byline", 32,
-                               getIptcTagsStringList("Iptc.Application2.Byline"),
-                               authors))
+    if (!authors.isEmpty())
     {
-        return false;
+        if (!setIptcTagsStringList("Iptc.Application2.Byline", 32,
+                                   getIptcTagsStringList("Iptc.Application2.Byline"),
+                                   authors))
+        {
+            return false;
+        }
     }
 
-    if (!setIptcTag(authorsPosition,        32,  "Authors Title", "Iptc.Application2.BylineTitle"))
+    if (!authorsPosition.isEmpty())
     {
-        return false;
+        if (!setIptcTag(authorsPosition,        32,  "Authors Title", "Iptc.Application2.BylineTitle"))
+        {
+            return false;
+        }
     }
 
-    if (!setIptcTag(credit,                 32,  "Credit",        "Iptc.Application2.Credit"))
+    if (!credit.isEmpty())
     {
-        return false;
+        if (!setIptcTag(credit,                 32,  "Credit",        "Iptc.Application2.Credit"))
+        {
+            return false;
+        }
     }
 
-    if (!setIptcTag(source,                 32,  "Source",        "Iptc.Application2.Source"))
+    if (!source.isEmpty())
     {
-        return false;
+        if (!setIptcTag(source,                 32,  "Source",        "Iptc.Application2.Source"))
+        {
+            return false;
+        }
     }
 
-    if (!setIptcTag(copyright[QLatin1String("x-default")], 128, "Copyright",     "Iptc.Application2.Copyright"))
+    if (!copyright[QLatin1String("x-default")].isEmpty())
     {
-        return false;
+        if (!setIptcTag(copyright[QLatin1String("x-default")], 128, "Copyright",     "Iptc.Application2.Copyright"))
+        {
+            return false;
+        }
     }
 
-    if (!setIptcTag(instructions,           256, "Instructions",  "Iptc.Application2.SpecialInstructions"))
+    if (!instructions.isEmpty())
     {
-        return false;
+        if (!setIptcTag(instructions,           256, "Instructions",  "Iptc.Application2.SpecialInstructions"))
+        {
+            return false;
+        }
     }
 
     if (!setIptcCoreLocation(t.locationInfo()))
@@ -149,30 +188,36 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
 
     if (supportXmp())
     {
-        if (!setXmpSubjects(t.IptcSubjects()))
+        if (!t.IptcSubjects().isEmpty())
         {
-            return false;
+            if (!setXmpSubjects(t.IptcSubjects()))
+            {
+                return false;
+            }
         }
     }
 
     // Synchronize Iptc subjects tags with Xmp subjects tags.
 
-    QStringList list = t.IptcSubjects();
-    QStringList newList;
-
-    Q_FOREACH (QString str, list) // krazy:exclude=foreach
+    if (!t.IptcSubjects().isEmpty())
     {
-        if (str.startsWith(QLatin1String("XMP")))
+        QStringList list = t.IptcSubjects();
+        QStringList newList;
+
+        Q_FOREACH (QString str, list) // krazy:exclude=foreach
         {
-            str.replace(0, 3, QLatin1String("IPTC"));
+            if (str.startsWith(QLatin1String("XMP")))
+            {
+                str.replace(0, 3, QLatin1String("IPTC"));
+            }
+
+            newList.append(str);
         }
 
-        newList.append(str);
-    }
-
-    if (!setIptcSubjects(getIptcSubjects(), newList))
-    {
-        return false;
+        if (!setIptcSubjects(getIptcSubjects(), newList))
+        {
+            return false;
+        }
     }
 
     return true;

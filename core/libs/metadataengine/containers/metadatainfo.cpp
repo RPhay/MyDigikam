@@ -62,6 +62,49 @@ bool IptcCoreContactInfo::operator==(const IptcCoreContactInfo& t) const
     return (b1 && b2 && b3 && b4 && b5 && b6 && b7 && b8);
 }
 
+void IptcCoreContactInfo::merge(const IptcCoreContactInfo& t)
+{
+    if (!t.city.isEmpty())
+    {
+        city = t.city;
+    }
+
+    if (!t.country.isEmpty())
+    {
+        country = t.country;
+    }
+
+    if (!t.address.isEmpty())
+    {
+        address = t.address;
+    }
+
+    if (!t.postalCode.isEmpty())
+    {
+        postalCode = t.postalCode;
+    }
+
+    if (!t.provinceState.isEmpty())
+    {
+        provinceState = t.provinceState;
+    }
+
+    if (!t.email.isEmpty())
+    {
+        email = t.email;
+    }
+
+    if (!t.phone.isEmpty())
+    {
+        phone = t.phone;
+    }
+
+    if (!t.country.isEmpty())
+    {
+        webUrl = t.webUrl;
+    }
+}
+
 QDebug operator<<(QDebug dbg, const IptcCoreContactInfo& inf)
 {
     dbg.nospace() << "IptcCoreContactInfo::city: "
@@ -117,6 +160,34 @@ bool IptcCoreLocationInfo::operator==(const IptcCoreLocationInfo& t) const
     bool b5 = (location      == t.location);
 
     return (b1 && b2 && b3 && b4 && b5);
+}
+
+void IptcCoreLocationInfo::merge(const IptcCoreLocationInfo& t)
+{
+    if (!t.country.isEmpty())
+    {
+        country = t.country;
+    }
+
+    if (!t.countryCode.isEmpty())
+    {
+        countryCode = t.countryCode;
+    }
+
+    if (!t.provinceState.isEmpty())
+    {
+        provinceState = t.provinceState;
+    }
+
+    if (!t.city.isEmpty())
+    {
+        city = t.city;
+    }
+
+    if (!t.location.isEmpty())
+    {
+        location = t.location;
+    }
 }
 
 QDebug operator<<(QDebug dbg, const IptcCoreLocationInfo& inf)

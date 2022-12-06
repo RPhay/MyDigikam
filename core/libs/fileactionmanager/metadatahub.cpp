@@ -135,18 +135,13 @@ void MetadataHub::load(const ItemInfo& info)
         titleMap              = comments.toCaptionsMap(DatabaseComment::Title);
     }
 
-    Template tref = info.metadataTemplate();
-    Template t    = TemplateManager::defaultManager()->findByContents(tref);
-/*
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Found Metadata Template: " << t.templateTitle();
-*/
     load(info.dateTime(),
          titleMap,
          commentMap,
          info.colorLabel(),
          info.pickLabel(),
          info.rating(),
-         t.isNull() ? tref : t);
+         info.metadataTemplate());
 
     QList<int> tagIds = info.tagIds();
     loadTags(tagIds);
@@ -331,21 +326,14 @@ bool MetadataHub::write(DMetadata& metadata,
 
     if (saveTemplate)
     {
-        QString title = d->metadataTemplate.templateTitle();
-
-        if (title == Template::removeTemplateTitle())
+        if (d->metadataTemplate.isEmpty())
         {
             dirty |= metadata.removeMetadataTemplate();
-        }
-        else if (title.isEmpty())
-        {
-            // Nothing to do.
         }
         else
         {
             // Store metadata template as XMP tag.
 
-            dirty |= metadata.removeMetadataTemplate();
             dirty |= metadata.setMetadataTemplate(d->metadataTemplate);
         }
     }

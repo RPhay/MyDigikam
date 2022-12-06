@@ -212,8 +212,8 @@ BUGFIXES:
 174 ==> 462542 - HTML Gallery behaves oddly.
 175 ==> 366286 - Feature request: improved reverse geolocation.
 176 ==> 410425 - Wishlist: Reverse geocoding to IPTC/XMP location fields.
-177 ==> 
-178 ==> 
+177 ==> 231114 - TEMPLATE : Empty (unset) fields of template overwrite existing used fields when applying template.
+178 ==> 449754 - Empty metadata XMP values are created when applying template.
 179 ==> 
 180 ==> 
 

@@ -125,14 +125,11 @@ bool AssignTemplate::toolOperations()
     {
         meta->removeMetadataTemplate();
     }
-    else if (title.isEmpty())
+    else if (!title.isEmpty())
     {
-        // Nothing to do.
-    }
-    else
-    {
-        Template t = TemplateManager::defaultManager()->findByTitle(title);
-        meta->removeMetadataTemplate();
+        Template t = meta->getMetadataTemplate();
+        t.merge(TemplateManager::defaultManager()->findByTitle(title));
+
         meta->setMetadataTemplate(t);
     }
 
