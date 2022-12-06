@@ -38,15 +38,15 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-05 00:44+0000\n"
-"PO-Revision-Date: 2022-12-02 06:21+0100\n"
+"PO-Revision-Date: 2022-12-05 06:34+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "X-Generator: Poedit 3.1.1\n"
 
@@ -54530,17 +54530,14 @@ msgid "Less options"
 msgstr "Manj možnosti"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:296
-#, fuzzy, kde-format
-#| msgid "Pr&int captions "
+#, kde-format
 msgid "Write locations as tags"
-msgstr "Tiskaj napise "
+msgstr "Zapiši lokacije kot oznake"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:297
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Write flag to metadata if possible"
+#, kde-format
 msgid "Write locations metadata"
-msgstr "Če je mogoče, zapiši zastavico v metapodatke"
+msgstr "Zapiši metapodatke lokacije"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:304
 #, kde-format
@@ -58146,7 +58143,7 @@ msgstr ""
 #: core/utilities/maintenance/maintenancemngr.cpp:376
 #, kde-format
 msgid "digiKam Maintenance"
-msgstr "Vzdrževanje digiKam"
+msgstr "Vzdrževanje digiKama"
 
 #: core/utilities/maintenance/maintenancetool.cpp:100
 #, kde-format
