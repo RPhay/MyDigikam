@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-05 00:44+0000\n"
+"POT-Creation-Date: 2022-12-07 00:44+0000\n"
 "PO-Revision-Date: 2013-09-08 07:04+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -34973,582 +34973,582 @@ msgctxt "@info"
 msgid "Flash with red-eye reduction mode"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:273
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:421
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:327
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:475
 #, kde-format
 msgctxt "@info: country code"
 msgid "Afar"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:274
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:422
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:328
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:476
 #, kde-format
 msgctxt "@info: country code"
 msgid "Abkhazian"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:275
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:423
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:329
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:477
 #, kde-format
 msgctxt "@info: country code"
 msgid "Afrikaans"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:276
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:424
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:330
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:478
 #, kde-format
 msgctxt "@info: country code"
 msgid "Amharic"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:277
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:425
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:331
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:479
 #, fuzzy, kde-format
 #| msgid "Arabic"
 msgctxt "@info: country code"
 msgid "Arabic"
 msgstr "ئەرەبچە"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:278
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:426
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:332
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:480
 #, fuzzy, kde-format
 #| msgid "Assamese"
 msgctxt "@info: country code"
 msgid "Assamese"
 msgstr "ئاسسامچە"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:279
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:427
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:333
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:481
 #, kde-format
 msgctxt "@info: country code"
 msgid "Aymara"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:280
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:428
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:334
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:482
 #, fuzzy, kde-format
 msgctxt "@info: country code"
 msgid "Azerbaijani"
 msgstr "ئەزەربەيجان"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:281
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:429
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:335
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:483
 #, kde-format
 msgctxt "@info: country code"
 msgid "Bashkir"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:282
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:430
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:336
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:484
 #, fuzzy, kde-format
 #| msgid "Byelorussian"
 msgctxt "@info: country code"
 msgid "Byelorussian"
 msgstr "بېلارۇسچە"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:283
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:431
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:337
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:485
 #, fuzzy, kde-format
 #| msgid "Bulgarian"
 msgctxt "@info: country code"
 msgid "Bulgarian"
 msgstr "بۇلغارچە"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:284
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:432
-#, kde-format
-msgctxt "@info: country code"
-msgid "Bihari"
-msgstr ""
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:285
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:433
-#, kde-format
-msgctxt "@info: country code"
-msgid "Bislama"
-msgstr ""
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:286
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:434
-#, fuzzy, kde-format
-msgctxt "@info: country code"
-msgid "Bengali;Bangla"
-msgstr "بېنگالچە"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:287
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:435
-#, kde-format
-msgctxt "@info: country code"
-msgid "Tibetan"
-msgstr ""
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:288
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:436
-#, kde-format
-msgctxt "@info: country code"
-msgid "Breton"
-msgstr ""
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:289
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:437
-#, fuzzy, kde-format
-msgctxt "@info: country code"
-msgid "Catalan"
-msgstr "كاتالوگ"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:290
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:438
-#, fuzzy, kde-format
-#| msgid "French (France)"
-msgctxt "@info: country code"
-msgid "Corsican"
-msgstr "فىرانسۇزچە (فىرانسىيە)"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:291
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:439
-#, fuzzy, kde-format
-#| msgid "Czech"
-msgctxt "@info: country code"
-msgid "Czech"
-msgstr "چېخچە"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:292
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:440
-#, kde-format
-msgctxt "@info: country code"
-msgid "Welsh"
-msgstr ""
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:293
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:441
-#, fuzzy, kde-format
-msgctxt "@info: country code"
-msgid "Danish"
-msgstr "ئىسپانچە"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:294
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:442
-#, fuzzy, kde-format
-#| msgid "German"
-msgctxt "@info: country code"
-msgid "German"
-msgstr "گېرمانچە"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:295
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:443
-#, kde-format
-msgctxt "@info: country code"
-msgid "Dzongkha"
-msgstr ""
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:296
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:444
-#, fuzzy, kde-format
-#| msgid "Greek"
-msgctxt "@info: country code"
-msgid "Greek"
-msgstr "گىرېكچە"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:297
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:445
-#, fuzzy, kde-format
-#| msgid "English"
-msgctxt "@info: country code"
-msgid "English"
-msgstr "ئىنگلىزچە"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:298
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:446
-#, kde-format
-msgctxt "@info: country code"
-msgid "Esperanto"
-msgstr ""
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:299
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:447
-#, fuzzy, kde-format
-#| msgid "Spanish"
-msgctxt "@info: country code"
-msgid "Spanish"
-msgstr "ئىسپانچە"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:300
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:448
-#, fuzzy, kde-format
-#| msgid "Estonian"
-msgctxt "@info: country code"
-msgid "Estonian"
-msgstr "ئېستونچە"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:301
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:449
-#, kde-format
-msgctxt "@info: country code"
-msgid "Basque"
-msgstr ""
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:302
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:450
-#, fuzzy, kde-format
-#| msgid "German (Germany)"
-msgctxt "@info: country code"
-msgid "Persian(farsi)"
-msgstr "گېرمانچە (گېرمانىيە)"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:303
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:451
-#, fuzzy, kde-format
-#| msgid "Finnish"
-msgctxt "@info: country code"
-msgid "Finnish"
-msgstr "فىنچە"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:304
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:452
-#, kde-format
-msgctxt "@info: country code"
-msgid "Fijan"
-msgstr ""
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:305
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:453
-#, kde-format
-msgctxt "@info: country code"
-msgid "Faroese"
-msgstr ""
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:306
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:454
-#, fuzzy, kde-format
-#| msgid "French"
-msgctxt "@info: country code"
-msgid "French"
-msgstr "فىرانسۇزچە"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:307
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:455
-#, kde-format
-msgctxt "@info: country code"
-msgid "Frisian"
-msgstr ""
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:308
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:456
-#, kde-format
-msgctxt "@info: country code"
-msgid "Irish"
-msgstr ""
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:309
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:457
-#, kde-format
-msgctxt "@info: country code"
-msgid "Scotsgaelic"
-msgstr ""
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:310
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:458
-#, fuzzy, kde-format
-#| msgid "Italian (Italy)"
-msgctxt "@info: country code"
-msgid "Galician"
-msgstr "ئىتاليانچە (ئىتالىيە)"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:311
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:459
-#, kde-format
-msgctxt "@info: country code"
-msgid "Guarani"
-msgstr ""
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:312
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:460
-#, fuzzy, kde-format
-msgctxt "@info: country code"
-msgid "Gujarati"
-msgstr "كۋادرات"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:313
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:461
-#, kde-format
-msgctxt "@info: country code"
-msgid "Hausa"
-msgstr ""
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:314
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:462
-#, fuzzy, kde-format
-#| msgid "Hebrew"
-msgctxt "@info: country code"
-msgid "Hebrew"
-msgstr "ئىبرانىچە"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:315
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:463
-#, fuzzy, kde-format
-#| msgid "Hindi"
-msgctxt "@info: country code"
-msgid "Hindi"
-msgstr "ھىندىچە"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:316
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:464
-#, fuzzy, kde-format
-#| msgid "Croatian"
-msgctxt "@info: country code"
-msgid "Croatian"
-msgstr "خورۋاتچە"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:317
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:465
-#, fuzzy, kde-format
-#| msgid "Hungarian"
-msgctxt "@info: country code"
-msgid "Hungarian"
-msgstr "ماجارچە"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:318
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:466
-#, fuzzy, kde-format
-msgctxt "@info: country code"
-msgid "Armenian"
-msgstr "ئەرمېنىيە"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:319
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:467
-#, fuzzy, kde-format
-msgctxt "@info: country code"
-msgid "Interlingua"
-msgstr "تولۇقلاش"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:320
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:468
-#, fuzzy, kde-format
-msgctxt "@info: country code"
-msgid "Interlingue"
-msgstr "تولۇقلاش"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:321
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:469
-#, kde-format
-msgctxt "@info: country code"
-msgid "Inupiak"
-msgstr ""
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:322
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:470
-#, fuzzy, kde-format
-#| msgid "Indonesian"
-msgctxt "@info: country code"
-msgid "Indonesian"
-msgstr "ھىندونېزىيەچە"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:323
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:471
-#, fuzzy, kde-format
-#| msgid "Icelandic"
-msgctxt "@info: country code"
-msgid "Icelandic"
-msgstr "ئىسلاندچە"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:324
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:472
-#, fuzzy, kde-format
-#| msgid "Italian"
-msgctxt "@info: country code"
-msgid "Italian"
-msgstr "ئىتاليانچە"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:325
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:473
-#, kde-format
-msgctxt "@info: country code"
-msgid "Inuktitut"
-msgstr ""
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:326
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:474
-#, fuzzy, kde-format
-#| msgid "Japanese"
-msgctxt "@info: country code"
-msgid "Japanese"
-msgstr "ياپونچە"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:327
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:475
-#, fuzzy, kde-format
-msgctxt "@info: country code"
-msgid "Javanese"
-msgstr "ياپونچە"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:328
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:476
-#, fuzzy, kde-format
-#| msgid "Georgian"
-msgctxt "@info: country code"
-msgid "Georgian"
-msgstr "گىرۇزىنچە"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:329
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:477
-#, fuzzy, kde-format
-msgctxt "@info: country code"
-msgid "Kazakh"
-msgstr "قازاقىستان"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:330
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:478
-#, fuzzy, kde-format
-msgctxt "@info: country code"
-msgid "Greenlandic"
-msgstr "گىرېنلاند"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:331
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:479
-#, fuzzy, kde-format
-msgctxt "@info: country code"
-msgid "Cambodian"
-msgstr "كامبودژا"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:332
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:480
-#, fuzzy, kde-format
-msgctxt "@info: country code"
-msgid "Kannada"
-msgstr "كانادا"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:333
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:481
-#, fuzzy, kde-format
-#| msgid "Korean"
-msgctxt "@info: country code"
-msgid "Korean"
-msgstr "كورېيەچە"
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:334
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:482
-#, kde-format
-msgctxt "@info: country code"
-msgid "Kashmiri"
-msgstr ""
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:335
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:483
-#, kde-format
-msgctxt "@info: country code"
-msgid "Kurdish"
-msgstr ""
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:336
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:484
-#, kde-format
-msgctxt "@info: country code"
-msgid "Kirghiz"
-msgstr ""
-
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:337
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:485
-#, fuzzy, kde-format
-msgctxt "@info: country code"
-msgid "Latin"
-msgstr "باھالاش"
-
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:338
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:486
 #, kde-format
 msgctxt "@info: country code"
-msgid "Lingala"
+msgid "Bihari"
 msgstr ""
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:339
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:487
 #, kde-format
 msgctxt "@info: country code"
-msgid "Laothian"
+msgid "Bislama"
 msgstr ""
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:340
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:488
+#, fuzzy, kde-format
+msgctxt "@info: country code"
+msgid "Bengali;Bangla"
+msgstr "بېنگالچە"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:341
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:489
+#, kde-format
+msgctxt "@info: country code"
+msgid "Tibetan"
+msgstr ""
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:342
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:490
+#, kde-format
+msgctxt "@info: country code"
+msgid "Breton"
+msgstr ""
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:343
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:491
+#, fuzzy, kde-format
+msgctxt "@info: country code"
+msgid "Catalan"
+msgstr "كاتالوگ"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:344
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:492
+#, fuzzy, kde-format
+#| msgid "French (France)"
+msgctxt "@info: country code"
+msgid "Corsican"
+msgstr "فىرانسۇزچە (فىرانسىيە)"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:345
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:493
+#, fuzzy, kde-format
+#| msgid "Czech"
+msgctxt "@info: country code"
+msgid "Czech"
+msgstr "چېخچە"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:346
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:494
+#, kde-format
+msgctxt "@info: country code"
+msgid "Welsh"
+msgstr ""
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:347
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:495
+#, fuzzy, kde-format
+msgctxt "@info: country code"
+msgid "Danish"
+msgstr "ئىسپانچە"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:348
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:496
+#, fuzzy, kde-format
+#| msgid "German"
+msgctxt "@info: country code"
+msgid "German"
+msgstr "گېرمانچە"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:349
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:497
+#, kde-format
+msgctxt "@info: country code"
+msgid "Dzongkha"
+msgstr ""
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:350
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:498
+#, fuzzy, kde-format
+#| msgid "Greek"
+msgctxt "@info: country code"
+msgid "Greek"
+msgstr "گىرېكچە"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:351
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:499
+#, fuzzy, kde-format
+#| msgid "English"
+msgctxt "@info: country code"
+msgid "English"
+msgstr "ئىنگلىزچە"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:352
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:500
+#, kde-format
+msgctxt "@info: country code"
+msgid "Esperanto"
+msgstr ""
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:353
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:501
+#, fuzzy, kde-format
+#| msgid "Spanish"
+msgctxt "@info: country code"
+msgid "Spanish"
+msgstr "ئىسپانچە"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:354
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:502
+#, fuzzy, kde-format
+#| msgid "Estonian"
+msgctxt "@info: country code"
+msgid "Estonian"
+msgstr "ئېستونچە"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:355
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:503
+#, kde-format
+msgctxt "@info: country code"
+msgid "Basque"
+msgstr ""
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:356
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:504
+#, fuzzy, kde-format
+#| msgid "German (Germany)"
+msgctxt "@info: country code"
+msgid "Persian(farsi)"
+msgstr "گېرمانچە (گېرمانىيە)"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:357
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:505
+#, fuzzy, kde-format
+#| msgid "Finnish"
+msgctxt "@info: country code"
+msgid "Finnish"
+msgstr "فىنچە"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:358
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:506
+#, kde-format
+msgctxt "@info: country code"
+msgid "Fijan"
+msgstr ""
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:359
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:507
+#, kde-format
+msgctxt "@info: country code"
+msgid "Faroese"
+msgstr ""
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:360
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:508
+#, fuzzy, kde-format
+#| msgid "French"
+msgctxt "@info: country code"
+msgid "French"
+msgstr "فىرانسۇزچە"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:361
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:509
+#, kde-format
+msgctxt "@info: country code"
+msgid "Frisian"
+msgstr ""
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:362
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:510
+#, kde-format
+msgctxt "@info: country code"
+msgid "Irish"
+msgstr ""
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:363
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:511
+#, kde-format
+msgctxt "@info: country code"
+msgid "Scotsgaelic"
+msgstr ""
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:364
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:512
+#, fuzzy, kde-format
+#| msgid "Italian (Italy)"
+msgctxt "@info: country code"
+msgid "Galician"
+msgstr "ئىتاليانچە (ئىتالىيە)"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:365
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:513
+#, kde-format
+msgctxt "@info: country code"
+msgid "Guarani"
+msgstr ""
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:366
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:514
+#, fuzzy, kde-format
+msgctxt "@info: country code"
+msgid "Gujarati"
+msgstr "كۋادرات"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:367
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:515
+#, kde-format
+msgctxt "@info: country code"
+msgid "Hausa"
+msgstr ""
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:368
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:516
+#, fuzzy, kde-format
+#| msgid "Hebrew"
+msgctxt "@info: country code"
+msgid "Hebrew"
+msgstr "ئىبرانىچە"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:369
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:517
+#, fuzzy, kde-format
+#| msgid "Hindi"
+msgctxt "@info: country code"
+msgid "Hindi"
+msgstr "ھىندىچە"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:370
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:518
+#, fuzzy, kde-format
+#| msgid "Croatian"
+msgctxt "@info: country code"
+msgid "Croatian"
+msgstr "خورۋاتچە"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:371
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:519
+#, fuzzy, kde-format
+#| msgid "Hungarian"
+msgctxt "@info: country code"
+msgid "Hungarian"
+msgstr "ماجارچە"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:372
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:520
+#, fuzzy, kde-format
+msgctxt "@info: country code"
+msgid "Armenian"
+msgstr "ئەرمېنىيە"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:373
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:521
+#, fuzzy, kde-format
+msgctxt "@info: country code"
+msgid "Interlingua"
+msgstr "تولۇقلاش"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:374
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:522
+#, fuzzy, kde-format
+msgctxt "@info: country code"
+msgid "Interlingue"
+msgstr "تولۇقلاش"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:375
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:523
+#, kde-format
+msgctxt "@info: country code"
+msgid "Inupiak"
+msgstr ""
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:376
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:524
+#, fuzzy, kde-format
+#| msgid "Indonesian"
+msgctxt "@info: country code"
+msgid "Indonesian"
+msgstr "ھىندونېزىيەچە"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:377
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:525
+#, fuzzy, kde-format
+#| msgid "Icelandic"
+msgctxt "@info: country code"
+msgid "Icelandic"
+msgstr "ئىسلاندچە"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:378
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:526
+#, fuzzy, kde-format
+#| msgid "Italian"
+msgctxt "@info: country code"
+msgid "Italian"
+msgstr "ئىتاليانچە"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:379
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:527
+#, kde-format
+msgctxt "@info: country code"
+msgid "Inuktitut"
+msgstr ""
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:380
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:528
+#, fuzzy, kde-format
+#| msgid "Japanese"
+msgctxt "@info: country code"
+msgid "Japanese"
+msgstr "ياپونچە"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:381
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:529
+#, fuzzy, kde-format
+msgctxt "@info: country code"
+msgid "Javanese"
+msgstr "ياپونچە"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:382
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:530
+#, fuzzy, kde-format
+#| msgid "Georgian"
+msgctxt "@info: country code"
+msgid "Georgian"
+msgstr "گىرۇزىنچە"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:383
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:531
+#, fuzzy, kde-format
+msgctxt "@info: country code"
+msgid "Kazakh"
+msgstr "قازاقىستان"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:384
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:532
+#, fuzzy, kde-format
+msgctxt "@info: country code"
+msgid "Greenlandic"
+msgstr "گىرېنلاند"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:385
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:533
+#, fuzzy, kde-format
+msgctxt "@info: country code"
+msgid "Cambodian"
+msgstr "كامبودژا"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:386
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:534
+#, fuzzy, kde-format
+msgctxt "@info: country code"
+msgid "Kannada"
+msgstr "كانادا"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:387
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:535
+#, fuzzy, kde-format
+#| msgid "Korean"
+msgctxt "@info: country code"
+msgid "Korean"
+msgstr "كورېيەچە"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:388
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:536
+#, kde-format
+msgctxt "@info: country code"
+msgid "Kashmiri"
+msgstr ""
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:389
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:537
+#, kde-format
+msgctxt "@info: country code"
+msgid "Kurdish"
+msgstr ""
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:390
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:538
+#, kde-format
+msgctxt "@info: country code"
+msgid "Kirghiz"
+msgstr ""
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:391
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:539
+#, fuzzy, kde-format
+msgctxt "@info: country code"
+msgid "Latin"
+msgstr "باھالاش"
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:392
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:540
+#, kde-format
+msgctxt "@info: country code"
+msgid "Lingala"
+msgstr ""
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:393
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:541
+#, kde-format
+msgctxt "@info: country code"
+msgid "Laothian"
+msgstr ""
+
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:394
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:542
 #, fuzzy, kde-format
 #| msgid "Lithuanian"
 msgctxt "@info: country code"
 msgid "Lithuanian"
 msgstr "لىتۋاچە"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:341
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:489
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:395
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:543
 #, kde-format
 msgctxt "@info: country code"
 msgid "Latvian;Lettish"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:342
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:490
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:396
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:544
 #, fuzzy, kde-format
 msgctxt "@info: country code"
 msgid "Malagasy"
 msgstr "ماداغاسقار"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:343
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:491
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:397
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:545
 #, kde-format
 msgctxt "@info: country code"
 msgid "Maori"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:344
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:492
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:398
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:546
 #, fuzzy, kde-format
 #| msgid "Macedonian"
 msgctxt "@info: country code"
 msgid "Macedonian"
 msgstr "ماكېدونچە"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:345
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:493
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:399
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:547
 #, fuzzy, kde-format
 msgctxt "@info: country code"
 msgid "Malayalam"
 msgstr "مالايشىيا"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:346
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:494
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:400
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:548
 #, fuzzy, kde-format
 #| msgid "Mongolian"
 msgctxt "@info: country code"
 msgid "Mongolian"
 msgstr "موڭغۇلچە"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:347
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:495
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:401
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:549
 #, fuzzy, kde-format
 msgctxt "@info: country code"
 msgid "Marathi"
 msgstr "كۋادرات"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:348
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:496
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:402
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:550
 #, fuzzy, kde-format
 msgctxt "@info: country code"
 msgid "Malay"
 msgstr "مالايشىيا"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:349
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:497
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:403
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:551
 #, fuzzy, kde-format
 msgctxt "@info: country code"
 msgid "Maltese"
 msgstr "مالتا"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:350
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:498
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:404
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:552
 #, kde-format
 msgctxt "@info: country code"
 msgid "Burmese"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:351
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:499
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:405
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:553
 #: core/libs/widgets/metadata/utils/countryselector.cpp:195
 #, fuzzy, kde-format
 #| msgid "Nauru"
@@ -35556,304 +35556,304 @@ msgctxt "@info: country code"
 msgid "Nauru"
 msgstr "ناۋرۇ"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:352
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:500
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:406
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:554
 #, fuzzy, kde-format
 #| msgid "Nepali"
 msgctxt "@info: country code"
 msgid "Nepali"
 msgstr "نېپالچە"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:353
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:501
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:407
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:555
 #, fuzzy, kde-format
 #| msgid "Dutch"
 msgctxt "@info: country code"
 msgid "Dutch"
 msgstr "گوللاندىيەچە"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:354
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:502
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:408
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:556
 #, fuzzy, kde-format
 msgctxt "@info: country code"
 msgid "Norwegian"
 msgstr "گىرۇزىنچە"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:355
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:503
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:409
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:557
 #, fuzzy, kde-format
 #| msgid "French (France)"
 msgctxt "@info: country code"
 msgid "Occitan"
 msgstr "فىرانسۇزچە (فىرانسىيە)"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:356
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:504
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:410
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:558
 #, kde-format
 msgctxt "@info: country code"
 msgid "Oromo"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:357
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:505
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:411
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:559
 #, kde-format
 msgctxt "@info: country code"
 msgid "Oriya"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:358
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:506
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:412
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:560
 #, fuzzy, kde-format
 #| msgid "Bengali (India)"
 msgctxt "@info: country code"
 msgid "Punjabi"
 msgstr "بېنگالچە (ھىندىستان)"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:359
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:507
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:413
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:561
 #, fuzzy, kde-format
 #| msgid "Polish"
 msgctxt "@info: country code"
 msgid "Polish"
 msgstr "پولەكچە"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:360
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:508
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:414
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:562
 #, kde-format
 msgctxt "@info: country code"
 msgid "Pashto;Pushto"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:361
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:509
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:415
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:563
 #, fuzzy, kde-format
 #| msgid "Portuguese"
 msgctxt "@info: country code"
 msgid "Portuguese"
 msgstr "پورتۇگالچە"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:362
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:510
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:416
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:564
 #, kde-format
 msgctxt "@info: country code"
 msgid "Quechua"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:363
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:511
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:417
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:565
 #, kde-format
 msgctxt "@info: country code"
 msgid "Rhaeto-romance"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:364
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:512
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:418
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:566
 #, fuzzy, kde-format
 msgctxt "@info: country code"
 msgid "Kurundi"
 msgstr "بۇرۇندى"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:365
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:513
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:419
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:567
 #, fuzzy, kde-format
 #| msgid "Romanian"
 msgctxt "@info: country code"
 msgid "Romanian"
 msgstr "رۇمىنىيەچە"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:366
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:514
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:420
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:568
 #, fuzzy, kde-format
 #| msgid "Russian"
 msgctxt "@info: country code"
 msgid "Russian"
 msgstr "رۇسچە"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:367
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:515
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:421
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:569
 #, fuzzy, kde-format
 msgctxt "@info: country code"
 msgid "Kinyarwanda"
 msgstr "كىنيارۋانداچە (رىۋاندا)"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:368
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:516
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:422
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:570
 #, fuzzy, kde-format
 #| msgid "Bengali (India)"
 msgctxt "@info: country code"
 msgid "Sanskrit"
 msgstr "بېنگالچە (ھىندىستان)"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:369
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:517
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:423
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:571
 #, kde-format
 msgctxt "@info: country code"
 msgid "Sindhi"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:370
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:518
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:424
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:572
 #, kde-format
 msgctxt "@info: country code"
 msgid "Sangho"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:371
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:519
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:425
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:573
 #, fuzzy, kde-format
 msgctxt "@info: country code"
 msgid "Singhalese"
 msgstr "يەككە"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:372
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:520
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:426
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:574
 #, fuzzy, kde-format
 #| msgid "Slovak"
 msgctxt "@info: country code"
 msgid "Slovak"
 msgstr "سىلوۋاكچە"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:373
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:521
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:427
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:575
 #, fuzzy, kde-format
 #| msgid "Slovenian"
 msgctxt "@info: country code"
 msgid "Slovenian"
 msgstr "سىلوۋېنىيەچە"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:374
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:522
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:428
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:576
 #, fuzzy, kde-format
 #| msgid "Samoan"
 msgctxt "@info: country code"
 msgid "Samoan"
 msgstr "ساموئاچە"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:375
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:523
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:429
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:577
 #, kde-format
 msgctxt "@info: country code"
 msgid "Shona"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:376
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:524
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:430
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:578
 #, fuzzy, kde-format
 msgctxt "@info: country code"
 msgid "Somali"
 msgstr "سومالى"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:377
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:525
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:431
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:579
 #, fuzzy, kde-format
 msgctxt "@info: country code"
 msgid "Albanian"
 msgstr "ئالبانىيە"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:378
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:526
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:432
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:580
 #, fuzzy, kde-format
 #| msgid "Serbian"
 msgctxt "@info: country code"
 msgid "Serbian"
 msgstr "سېربچە"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:379
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:527
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:433
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:581
 #, kde-format
 msgctxt "@info: country code"
 msgid "Siswati"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:380
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:528
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:434
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:582
 #, fuzzy, kde-format
 msgctxt "@info: country code"
 msgid "Sesotho"
 msgstr "لېسوتو"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:381
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:529
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:435
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:583
 #, kde-format
 msgctxt "@info: country code"
 msgid "Sundanese"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:382
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:530
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:436
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:584
 #, fuzzy, kde-format
 #| msgid "Swedish"
 msgctxt "@info: country code"
 msgid "Swedish"
 msgstr "شۋېدچە"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:383
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:531
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:437
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:585
 #, fuzzy, kde-format
 msgctxt "@info: country code"
 msgid "Swahili"
 msgstr "سۋاھىلىچە (كېنىيە)"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:384
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:532
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:438
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:586
 #, kde-format
 msgctxt "@info: country code"
 msgid "Tamil"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:385
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:533
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:439
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:587
 #, fuzzy, kde-format
 #| msgid "Urdu (India)"
 msgctxt "@info: country code"
 msgid "Telugu"
 msgstr "ئۇردوچە (ھىندىستان)"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:386
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:534
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:440
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:588
 #, fuzzy, kde-format
 msgctxt "@info: country code"
 msgid "Tajik"
 msgstr "تاجىكىستان"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:387
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:535
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:441
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:589
 #, fuzzy, kde-format
 #| msgid "Thai"
 msgctxt "@info: country code"
 msgid "Thai"
 msgstr "تايلاندچە"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:388
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:536
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:442
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:590
 #, kde-format
 msgctxt "@info: country code"
 msgid "Tigrinya"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:389
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:537
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:443
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:591
 #, fuzzy, kde-format
 msgctxt "@info: country code"
 msgid "Turkmen"
 msgstr "تۈركىيە"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:390
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:538
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:444
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:592
 #, fuzzy, kde-format
 msgctxt "@info: country code"
 msgid "Tagalog"
 msgstr "كاتالوگ"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:391
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:539
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:445
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:593
 #, fuzzy, kde-format
 msgctxt "@info: country code"
 msgid "Setswana"
 msgstr "بوتسۋانا"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:392
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:540
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:446
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:594
 #: core/libs/widgets/metadata/utils/countryselector.cpp:262
 #, fuzzy, kde-format
 #| msgid "Tonga"
@@ -35861,124 +35861,124 @@ msgctxt "@info: country code"
 msgid "Tonga"
 msgstr "تونگا"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:393
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:541
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:447
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:595
 #, fuzzy, kde-format
 #| msgid "Turkish"
 msgctxt "@info: country code"
 msgid "Turkish"
 msgstr "تۈركچە"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:394
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:542
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:448
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:596
 #, fuzzy, kde-format
 msgctxt "@info: country code"
 msgid "Tsonga"
 msgstr "تونگا"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:395
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:543
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:449
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:597
 #, fuzzy, kde-format
 msgctxt "@info: country code"
 msgid "Tatar"
 msgstr "قاتار"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:396
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:544
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:450
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:598
 #, fuzzy, kde-format
 msgctxt "@info: country code"
 msgid "Twi"
 msgstr "ئىككى"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:397
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:545
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:451
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:599
 #, kde-format
 msgctxt "@info: country code"
 msgid "Uigur"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:398
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:546
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:452
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:600
 #, fuzzy, kde-format
 #| msgid "Ukrainian"
 msgctxt "@info: country code"
 msgid "Ukrainian"
 msgstr "ئۇكرائىنچە"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:399
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:547
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:453
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:601
 #, kde-format
 msgctxt "@info: country code"
 msgid "Urdu"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:400
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:548
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:454
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:602
 #, fuzzy, kde-format
 msgctxt "@info: country code"
 msgid "Uzbek"
 msgstr "ئۆزبېكىستان"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:401
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:549
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:455
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:603
 #, fuzzy, kde-format
 #| msgid "Vietnamese"
 msgctxt "@info: country code"
 msgid "Vietnamese"
 msgstr "ۋىيېتنامچە"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:402
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:550
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:456
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:604
 #, kde-format
 msgctxt "@info: country code"
 msgid "Volapuk"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:403
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:551
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:457
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:605
 #, kde-format
 msgctxt "@info: country code"
 msgid "Wolof"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:404
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:552
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:458
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:606
 #, kde-format
 msgctxt "@info: country code"
 msgid "Xhosa"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:405
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:553
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:459
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:607
 #, kde-format
 msgctxt "@info: country code"
 msgid "Yiddish"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:406
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:554
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:460
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:608
 #, fuzzy, kde-format
 msgctxt "@info: country code"
 msgid "Yoruba"
 msgstr "ئارۇبا"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:407
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:555
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:461
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:609
 #, kde-format
 msgctxt "@info: country code"
 msgid "Zhuang"
 msgstr ""
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:408
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:556
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:462
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:610
 #, fuzzy, kde-format
 #| msgid "Chinese"
 msgctxt "@info: country code"
 msgid "Chinese"
 msgstr "خەنزۇچە"
 
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:409
-#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:557
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:463
+#: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:611
 #, kde-format
 msgctxt "@info: country code"
 msgid "Zulu"
