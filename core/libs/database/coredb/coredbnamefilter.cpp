@@ -22,6 +22,7 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "digikam_globals.h"
 
 namespace Digikam
@@ -48,6 +49,7 @@ CoreDbNameFilter::CoreDbNameFilter(const QString& filter)
     while (it != list.constEnd())
     {
         QString pattern = QRegularExpression::wildcardToRegularExpression((*it).trimmed());
+        qCDebug(DIGIKAM_DATABASE_LOG) << "QRegularExpression pattern:" << pattern;
         pattern.replace(QLatin1String("[^/]"), QLatin1String("."));
         QRegularExpression wildcard(pattern, QRegularExpression::CaseInsensitiveOption);
         m_filterList << wildcard;
@@ -61,6 +63,8 @@ bool CoreDbNameFilter::matches(const QString& name)
 
     while (rit != m_filterList.constEnd())
     {
+        qCDebug(DIGIKAM_DATABASE_LOG) << "QRegularExpression match:" << (*rit) << (*rit).match(name).hasMatch();
+
         if ((*rit).match(name).hasMatch())
         {
             return true;
