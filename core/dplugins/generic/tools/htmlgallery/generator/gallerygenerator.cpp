@@ -210,8 +210,6 @@ public:
                     imageList = info->m_iface->albumsItems(DInfoInterface::DAlbumIDs() << id);
                 }
 
-                qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "GalleryGenerator album image list:" << imageList;
-
                 if (!processImages(xmlWriter, imageList, title, destDir))
                 {
                     return false;
