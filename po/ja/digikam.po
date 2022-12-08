@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:44+0000\n"
+"POT-Creation-Date: 2022-12-08 00:43+0000\n"
 "PO-Revision-Date: 2021-05-02 20:46-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -17907,7 +17907,7 @@ msgctxt "@info"
 msgid "Could not create gallery.xml"
 msgstr "データベースサーバを開始できませんでした。"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:278
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:280
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "When rotating a file"
@@ -17915,7 +17915,7 @@ msgctxt "@info"
 msgid "Generating files for \"%1\""
 msgstr "ファイルを回転させるとき"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:313
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:315
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "When rotating a file"
@@ -17923,27 +17923,27 @@ msgctxt "@info"
 msgid "Generating HTML files"
 msgstr "ファイルを回転させるとき"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:321
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:323
 #, fuzzy, kde-format
 #| msgid "Failed to save tags to file."
 msgctxt "@info"
 msgid "Could not load XSL file '%1'"
 msgstr "タグをファイルに保存できませんでした。"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:330
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:332
 #, fuzzy, kde-format
 #| msgid "Failed to save tags to file."
 msgctxt "@info"
 msgid "Could not load XML file '%1'"
 msgstr "タグをファイルに保存できませんでした。"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:366
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:368
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Error processing XML file"
 msgstr "画像 <filename>%1</filename> の読み込みエラー"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:375
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:377
 #, fuzzy, kde-format
 #| msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgctxt "@info"
@@ -17951,14 +17951,14 @@ msgid "Could not open '%1' for writing"
 msgstr ""
 "フォルダ <filename>%1</filename> の一時ファイルを開けませんでした: %2 (%3)"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:402
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:404
 #, fuzzy, kde-format
 #| msgid "Downloaded: "
 msgctxt "@info"
 msgid "Downloading remote files for \"%1\""
 msgstr "ダウンロード: "
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:419
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:421
 #, fuzzy, kde-format
 #| msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgctxt "@info"
@@ -17966,44 +17966,44 @@ msgid "Could not open temporary file"
 msgstr ""
 "フォルダ <filename>%1</filename> の一時ファイルを開けませんでした: %2 (%3)"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:434
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:436
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Could not download %1"
 msgstr "画像 “%1” の読み込みに失敗しました"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:453
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:455
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Previous"
 msgstr "前へ"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:454
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:456
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Next"
 msgstr "次へ"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:455
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:457
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@info: xslt param"
 msgid "Album List"
 msgstr "アルバム"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:456
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:458
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Original Image"
 msgstr "オリジナル"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:457
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:459
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Go Up"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:459
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:461
 #, fuzzy, kde-format
 #| msgctxt "camera make"
 #| msgid "Make:"
@@ -18011,115 +18011,115 @@ msgctxt "@info: xslt param"
 msgid "Make"
 msgstr "メーカー:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:460
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:462
 #, fuzzy, kde-format
 #| msgid "Model"
 msgctxt "@info: Camera Model"
 msgid "Model"
 msgstr "モデル"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:461
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:463
 #, fuzzy, kde-format
 #| msgid "Image orientation"
 msgctxt "@info: xslt param"
 msgid "Image Orientation"
 msgstr "画像の向き"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:462
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:464
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Image X Resolution"
 msgstr "画像のピクセル寸法 (画素数) を表示"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:463
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Y Resolution"
 msgstr "画像のピクセル寸法 (画素数) を表示"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:464
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Resolution Unit"
 msgstr "画像のピクセル寸法 (画素数) を表示"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
 #, fuzzy, kde-format
 #| msgid "Date & Time"
 msgctxt "@info: xslt param"
 msgid "Image Date Time"
 msgstr "日付と時間"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
 #, fuzzy, kde-format
 #| msgid "Position:"
 msgctxt "@info: xslt param"
 msgid "YCBCR Positioning"
 msgstr "位置:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
 #, fuzzy, kde-format
 #| msgid "Exposure time"
 msgctxt "@info: xslt param"
 msgid "Exposure Time"
 msgstr "露出時間"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
 #, fuzzy, kde-format
 #| msgid "Number:"
 msgctxt "@info: xslt param"
 msgid "F Number"
 msgstr "数:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
 #, fuzzy, kde-format
 #| msgid "Exposure mode"
 msgctxt "@info: xslt param"
 msgid "Exposure Index"
 msgstr "露出モード"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
 #, fuzzy, kde-format
 #| msgid "Imported ratings"
 msgctxt "@info: xslt param"
 msgid "ISO Speed Ratings"
 msgstr "評価をインポートしました"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Shutter Speed Value"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
 #, fuzzy, kde-format
 #| msgid "Aperture: "
 msgctxt "@info: xslt param"
 msgid "Aperture Value"
 msgstr "絞り: "
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
 #, fuzzy, kde-format
 #| msgid "Focal length"
 msgctxt "@info: xslt param"
 msgid "Focal Length"
 msgstr "焦点距離"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
 #, fuzzy, kde-format
 #| msgid "Altitude"
 msgctxt "@info: xslt param"
 msgid "GPS Altitude"
 msgstr "高度"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
 #, fuzzy, kde-format
 #| msgid "Latitude"
 msgctxt "@info: xslt param"
 msgid "GPS Latitude"
 msgstr "緯度"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
 #, fuzzy, kde-format
 #| msgid "Longitude"
 msgctxt "@info: xslt param"

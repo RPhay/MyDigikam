@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:44+0000\n"
+"POT-Creation-Date: 2022-12-08 00:43+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -18956,223 +18956,223 @@ msgctxt "@info"
 msgid "Could not create gallery.xml"
 msgstr "Faili gallery.xml loomine nurjus"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:278
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:280
 #, fuzzy, kde-format
 #| msgid "Generating files for \"%1\""
 msgctxt "@info"
 msgid "Generating files for \"%1\""
 msgstr "\"%1\" failide genereerimine"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:313
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:315
 #, fuzzy, kde-format
 #| msgid "Generating HTML files"
 msgctxt "@info"
 msgid "Generating HTML files"
 msgstr "HTML-failide genereerimine"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:321
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:323
 #, fuzzy, kde-format
 #| msgid "Could not load XSL file '%1'"
 msgctxt "@info"
 msgid "Could not load XSL file '%1'"
 msgstr "XSL-faili \"%1\" laadimine nurjus"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:330
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:332
 #, fuzzy, kde-format
 #| msgid "Could not load XML file '%1'"
 msgctxt "@info"
 msgid "Could not load XML file '%1'"
 msgstr "XSL-faili \"%1\" laadimine nurjus"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:366
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:368
 #, fuzzy, kde-format
 #| msgid "Error processing XML file"
 msgctxt "@info"
 msgid "Error processing XML file"
 msgstr "Tõrge XML-faili töötlemisel"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:375
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:377
 #, fuzzy, kde-format
 #| msgid "Could not open '%1' for writing"
 msgctxt "@info"
 msgid "Could not open '%1' for writing"
 msgstr "\"%1\" avamine kirjutamiseks nurjus"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:402
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:404
 #, fuzzy, kde-format
 #| msgid "Downloading remote files for \"%1\""
 msgctxt "@info"
 msgid "Downloading remote files for \"%1\""
 msgstr "\"%1\" võrgufailide allalaadimine"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:419
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:421
 #, fuzzy, kde-format
 #| msgid "Could not open temporary file"
 msgctxt "@info"
 msgid "Could not open temporary file"
 msgstr "Ajutise faili avamine nurjus"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:434
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:436
 #, fuzzy, kde-format
 #| msgid "Could not download %1"
 msgctxt "@info"
 msgid "Could not download %1"
 msgstr "%1 allalaadimine nurjus"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:453
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:455
 #, fuzzy, kde-format
 #| msgid "Previous"
 msgctxt "@info: xslt param"
 msgid "Previous"
 msgstr "Eelmine"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:454
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:456
 #, fuzzy, kde-format
 #| msgid "Next"
 msgctxt "@info: xslt param"
 msgid "Next"
 msgstr "Järgmine"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:455
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:457
 #, fuzzy, kde-format
 #| msgid "Album List"
 msgctxt "@info: xslt param"
 msgid "Album List"
 msgstr "Albumiloend"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:456
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:458
 #, fuzzy, kde-format
 #| msgid "Original Image"
 msgctxt "@info: xslt param"
 msgid "Original Image"
 msgstr "Originaalpilt"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:457
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:459
 #, fuzzy, kde-format
 #| msgid "Go Up"
 msgctxt "@info: xslt param"
 msgid "Go Up"
 msgstr "Üles"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:459
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:461
 #, fuzzy, kde-format
 #| msgid "Make"
 msgctxt "@info: xslt param"
 msgid "Make"
 msgstr "Valmistaja:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:460
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:462
 #, fuzzy, kde-format
 #| msgid "Model"
 msgctxt "@info: Camera Model"
 msgid "Model"
 msgstr "Mudel"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:461
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:463
 #, fuzzy, kde-format
 #| msgid "Image Orientation"
 msgctxt "@info: xslt param"
 msgid "Image Orientation"
 msgstr "Pildi orientatsioon"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:462
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:464
 #, fuzzy, kde-format
 #| msgid "Image X Resolution"
 msgctxt "@info: xslt param"
 msgid "Image X Resolution"
 msgstr "Pildi X-lahutus"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:463
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
 #, fuzzy, kde-format
 #| msgid "Image Y Resolution"
 msgctxt "@info: xslt param"
 msgid "Image Y Resolution"
 msgstr "Pildi Y-lahutus"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:464
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
 #, fuzzy, kde-format
 #| msgid "Image Resolution Unit"
 msgctxt "@info: xslt param"
 msgid "Image Resolution Unit"
 msgstr "Pildi lahutuse ühik"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
 #, fuzzy, kde-format
 #| msgid "Image Date Time"
 msgctxt "@info: xslt param"
 msgid "Image Date Time"
 msgstr "Pildi kuupäev ja kellaaeg"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
 #, fuzzy, kde-format
 #| msgid "Position:"
 msgctxt "@info: xslt param"
 msgid "YCBCR Positioning"
 msgstr "Amet:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
 #, fuzzy, kde-format
 #| msgid "Exposure Time"
 msgctxt "@info: xslt param"
 msgid "Exposure Time"
 msgstr "Säritusaeg"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
 #, fuzzy, kde-format
 #| msgid "F Number"
 msgctxt "@info: xslt param"
 msgid "F Number"
 msgstr "F-arv"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
 #, fuzzy, kde-format
 #| msgid "Exposure Index"
 msgctxt "@info: xslt param"
 msgid "Exposure Index"
 msgstr "Säriindeks"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
 #, fuzzy, kde-format
 #| msgid "ISO Speed Ratings"
 msgctxt "@info: xslt param"
 msgid "ISO Speed Ratings"
 msgstr "ISO kiiruse hinnang"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Shutter Speed Value"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
 #, fuzzy, kde-format
 #| msgid "Aperture Value"
 msgctxt "@info: xslt param"
 msgid "Aperture Value"
 msgstr "Ava väärtus"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
 #, fuzzy, kde-format
 #| msgid "Focal Length"
 msgctxt "@info: xslt param"
 msgid "Focal Length"
 msgstr "Fookuskaugus"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
 #, fuzzy, kde-format
 #| msgid "GPS Altitude"
 msgctxt "@info: xslt param"
 msgid "GPS Altitude"
 msgstr "GPS-i kõrgus"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
 #, fuzzy, kde-format
 #| msgid "GPS Latitude"
 msgctxt "@info: xslt param"
 msgid "GPS Latitude"
 msgstr "GPS-i laiuskraad"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
 #, fuzzy, kde-format
 #| msgid "GPS Longitude"
 msgctxt "@info: xslt param"
