@@ -263,6 +263,13 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->videoWidget->setMouseTracking(true);
     d->player->setRenderer(d->videoWidget);
 
+    d->player->setBufferMode(QtAV::BufferPackets);
+    d->player->setBufferValue(AVPlayerConfigMngr::instance().bufferValue());
+    d->player->setFrameRate(AVPlayerConfigMngr::instance().forceFrameRate());
+    d->player->setInterruptOnTimeout(AVPlayerConfigMngr::instance().abortOnTimeout());
+    d->player->setInterruptTimeout(AVPlayerConfigMngr::instance().timeout() * 1000.0);
+    d->player->setPriority(DecoderConfigPage::idsFromNames(AVPlayerConfigMngr::instance().decoderPriorityNames()));
+
     d->playerView->setFrameStyle(QFrame::StyledPanel | QFrame::Plain);
     d->playerView->setLineWidth(1);
 
@@ -292,7 +299,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     d->player->audio()->setVolume((qreal)volume / 100.0);
     d->volume->setValue(volume);
-    //d->player->audio()->close();
+    d->player->audio()->close();
 
     // --------------------------------------------------------------------------
 
@@ -409,7 +416,7 @@ void MediaPlayerView::slotMediaStatusChanged(QtAV::MediaStatus status)
 void MediaPlayerView::escapePreview()
 {
     d->player->stop();
-    //d->player->audio()->close();
+    d->player->audio()->close();
     d->player->setFile(QString());
 }
 
@@ -583,7 +590,7 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
     {
         d->player->stop();
         d->currentItem = url;
-        //d->player->audio()->close();
+        d->player->audio()->close();
 
         return;
     }
@@ -705,14 +712,14 @@ void MediaPlayerView::slotHandlePlayerError(const QtAV::AVError& err)
 
 void MediaPlayerView::play()
 {
+/*
     d->player->setFrameRate(AVPlayerConfigMngr::instance().forceFrameRate());
     d->player->setInterruptOnTimeout(AVPlayerConfigMngr::instance().abortOnTimeout());
     d->player->setInterruptTimeout(AVPlayerConfigMngr::instance().timeout() * 1000.0);
     d->player->setBufferMode(QtAV::BufferPackets);
     d->player->setBufferValue(AVPlayerConfigMngr::instance().bufferValue());
     d->player->setPriority(DecoderConfigPage::idsFromNames(AVPlayerConfigMngr::instance().decoderPriorityNames()));
-
-    //d->player->audio()->open();
+*/
     d->player->play();
 }
 
