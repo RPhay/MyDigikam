@@ -712,6 +712,7 @@ void MediaPlayerView::play()
     d->player->setBufferValue(AVPlayerConfigMngr::instance().bufferValue());
     d->player->setPriority(DecoderConfigPage::idsFromNames(AVPlayerConfigMngr::instance().decoderPriorityNames()));
 
+    d->player->audio()->open();
     d->player->play();
 }
 
