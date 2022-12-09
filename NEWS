@@ -215,6 +215,9 @@ BUGFIXES:
 177 ==> 231114 - TEMPLATE : Empty (unset) fields of template overwrite existing used fields when applying template.
 178 ==> 449754 - Empty metadata XMP values are created when applying template.
 179 ==> 395094 - Add new option to dissociate rights, locations, contacts and subjects.
-180 ==> 
-
-
+180 ==> 462807 - How to show GPS-Tracks in addition to geotagged photos in Maps view.
+181 ==> 
+182 ==> 
+183 ==> 
+184 ==>.
+185 ==>.
