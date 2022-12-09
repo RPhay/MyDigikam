@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-08 00:43+0000\n"
+"POT-Creation-Date: 2022-12-09 00:44+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -17159,202 +17159,202 @@ msgctxt "@info"
 msgid "Could not create gallery.xml"
 msgstr "Không thể tính số trung bình."
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:280
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:278
 #, fuzzy, kde-format
 #| msgid "Deleting file %1..."
 msgctxt "@info"
 msgid "Generating files for \"%1\""
 msgstr "Đang xoá tệp %1..."
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:315
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:313
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Generating HTML files"
 msgstr "Đang xoay EXIF tệp %1..."
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:323
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:321
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Could not load XSL file '%1'"
 msgstr "Độ sâu màu :"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:332
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:330
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Could not load XML file '%1'"
 msgstr "Độ sâu màu :"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:368
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:366
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Error processing XML file"
 msgstr "Gặp lỗi khi lưu tệp"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:377
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:375
 #, fuzzy, kde-format
 #| msgid "Failed to list files in %1"
 msgctxt "@info"
 msgid "Could not open '%1' for writing"
 msgstr "Lỗi liệt kê tệp nằm trong %1"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:404
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:402
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
 msgctxt "@info"
 msgid "Downloading remote files for \"%1\""
 msgstr "Đang tải về tệp %1..."
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:421
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:419
 #, fuzzy, kde-format
 #| msgid "Failed to delete file \"%1\"."
 msgctxt "@info"
 msgid "Could not open temporary file"
 msgstr "Lỗi xoá tệp « %1 »."
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:436
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:434
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Could not download %1"
 msgstr "Độ sâu màu :"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:455
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:453
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Previous"
 msgstr "Ảnh trước"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:456
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:454
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Next"
 msgstr "T&uần qua"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:457
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:455
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@info: xslt param"
 msgid "Album List"
 msgstr "Tập"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:458
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:456
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Original Image"
 msgstr "Gốc"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:459
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:457
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Go Up"
 msgstr ""
 
 # Name: don't translate/Tên: đừng dịch
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:461
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:459
 #, fuzzy, kde-format
 #| msgid "Make:"
 msgctxt "@info: xslt param"
 msgid "Make"
 msgstr "Make:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:462
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:460
 #, fuzzy, kde-format
 #| msgid "Model"
 msgctxt "@info: Camera Model"
 msgid "Model"
 msgstr "Mô hình"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:463
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:461
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Orientation"
 msgstr "Vị trí ảnh:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:464
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:462
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Image X Resolution"
 msgstr "Hiện các chiếu ảnh"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:463
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Y Resolution"
 msgstr "Hiện các chiếu ảnh"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:464
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Resolution Unit"
 msgstr "Hiện các chiếu ảnh"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:465
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Image Date Time"
 msgstr "Thêm Ngày và Giờ"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:466
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "YCBCR Positioning"
 msgstr "Độ xói mòn:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:467
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Time"
 msgstr "Tự động phơi nắng"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:468
 #, fuzzy, kde-format
 #| msgid "Number:"
 msgctxt "@info: xslt param"
 msgid "F Number"
 msgstr "Số :"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:469
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Exposure Index"
 msgstr "Tự động phơi nắng"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:470
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "ISO Speed Ratings"
 msgstr "Lần lặp lại:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:471
 #, kde-format
 msgctxt "@info: xslt param"
 msgid "Shutter Speed Value"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:472
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Aperture Value"
 msgstr "Độ mở/Tiêu :"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:473
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "Focal Length"
 msgstr "Thiết lập cục bộ"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:474
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Altitude"
 msgstr "<b>Độ mở</b>:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:475
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Latitude"
 msgstr "<b>Độ mở</b>:"
 
-#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:478
+#: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:476
 #, fuzzy, kde-format
 msgctxt "@info: xslt param"
 msgid "GPS Longitude"
