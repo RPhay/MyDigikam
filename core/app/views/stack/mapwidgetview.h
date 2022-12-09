@@ -68,6 +68,7 @@ public:
 private Q_SLOTS:
 
     void slotModelChanged();
+    void slotAllTrackFilesReady();
     void slotLoadTracksFromAlbums();
 
 protected:

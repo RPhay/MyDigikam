@@ -176,6 +176,9 @@ MapWidgetView::MapWidgetView(QItemSelectionModel* const selectionModel,
     d->trackManager                            = new TrackManager(this);
     d->mapWidget->setTrackManager(d->trackManager);
 
+    connect(d->trackManager, &TrackManager::signalAllTrackFilesReady,
+            this, &MapWidgetView::slotAllTrackFilesReady);
+
     vBoxLayout->addWidget(d->mapWidget);
     vBoxLayout->addWidget(d->mapWidget->getControlWidget());
     vBoxLayout->setContentsMargins(QMargins());
@@ -342,6 +345,22 @@ void MapWidgetView::slotModelChanged()
     }
 
     d->boundariesShouldBeAdjusted = false;
+}
+
+void MapWidgetView::slotAllTrackFilesReady()
+{
+    if (d->trackManager->getTrackList().isEmpty())
+    {
+        return;
+    }
+
+    const TrackManager::Track& track = d->trackManager->getTrackList().constFirst();
+
+    if ((track.id != 0) && (track.points.size() > 0))
+    {
+        d->mapWidget->setCenter(track.points.at(0).coordinates);
+        d->mapWidget->setZoom(QLatin1String("marble:2220"));
+    }
 }
 
 void MapWidgetView::slotLoadTracksFromAlbums()
