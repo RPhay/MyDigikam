@@ -235,7 +235,6 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     d->playerView     = new QFrame(this);
     d->videoWidget    = new WidgetRenderer(this);
-    d->player         = new AVPlayerCore(this);
 
     DHBox* const hbox = new DHBox(this);
     d->slider         = new QSlider(Qt::Horizontal, hbox);
@@ -261,14 +260,6 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     d->videoWidget->setOutAspectRatioMode(QtAV::VideoAspectRatio);
     d->videoWidget->setMouseTracking(true);
-    d->player->setRenderer(d->videoWidget);
-
-    d->player->setBufferMode(QtAV::BufferPackets);
-    d->player->setBufferValue(AVPlayerConfigMngr::instance().bufferValue());
-    d->player->setFrameRate(AVPlayerConfigMngr::instance().forceFrameRate());
-    d->player->setInterruptOnTimeout(AVPlayerConfigMngr::instance().abortOnTimeout());
-    d->player->setInterruptTimeout(AVPlayerConfigMngr::instance().timeout() * 1000.0);
-    d->player->setPriority(DecoderConfigPage::idsFromNames(AVPlayerConfigMngr::instance().decoderPriorityNames()));
 
     d->playerView->setFrameStyle(QFrame::StyledPanel | QFrame::Plain);
     d->playerView->setLineWidth(1);
@@ -295,13 +286,15 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group("Media Player Settings");
-    int volume                = group.readEntry("Volume", 50);
 
-    d->player->audio()->setVolume((qreal)volume / 100.0);
-    d->volume->setValue(volume);
-    d->player->audio()->close();
+    d->volume->setValue(group.readEntry("Volume", 50));
+
+    slotPlayerConfigChanged();
 
     // --------------------------------------------------------------------------
+
+    connect(&AVPlayerConfigMngr::instance(), SIGNAL(changed()),
+            this, SLOT(slotPlayerConfigChanged()));
 
     connect(ThemeManager::instance(), SIGNAL(signalThemeChanged()),
             this, SLOT(slotThemeChanged()));
@@ -375,7 +368,7 @@ void MediaPlayerView::reload()
 {
     d->player->stop();
     d->player->setFile(d->currentItem.toLocalFile());
-    play();
+    d->player->play();
 }
 
 void MediaPlayerView::slotPlayerStateChanged(QtAV::AVPlayerCore::State state)
@@ -469,7 +462,7 @@ void MediaPlayerView::slotPausePlay()
 {
     if (!d->player->isPlaying())
     {
-        play();
+        d->player->play();
         return;
     }
 
@@ -637,7 +630,7 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
     d->player->setFile(d->currentItem.toLocalFile());
     setPreviewMode(Private::PlayerView);
     d->player->setPosition(10);
-    play();
+    d->player->play();
 }
 
 void MediaPlayerView::slotPositionChanged(qint64 position)
@@ -710,17 +703,26 @@ void MediaPlayerView::slotHandlePlayerError(const QtAV::AVError& err)
     qCDebug(DIGIKAM_GENERAL_LOG) << "Error: " << err.string();
 }
 
-void MediaPlayerView::play()
+void MediaPlayerView::slotPlayerConfigChanged()
 {
-/*
+    if (d->player)
+    {
+        d->player->stop();
+        delete d->player;
+    }
+
+    d->player = new AVPlayerCore(this);
+    d->player->setRenderer(d->videoWidget);
+
+    d->player->setBufferMode(QtAV::BufferPackets);
+    d->player->setBufferValue(AVPlayerConfigMngr::instance().bufferValue());
     d->player->setFrameRate(AVPlayerConfigMngr::instance().forceFrameRate());
     d->player->setInterruptOnTimeout(AVPlayerConfigMngr::instance().abortOnTimeout());
     d->player->setInterruptTimeout(AVPlayerConfigMngr::instance().timeout() * 1000.0);
-    d->player->setBufferMode(QtAV::BufferPackets);
-    d->player->setBufferValue(AVPlayerConfigMngr::instance().bufferValue());
     d->player->setPriority(DecoderConfigPage::idsFromNames(AVPlayerConfigMngr::instance().decoderPriorityNames()));
-*/
-    d->player->play();
+
+    d->player->audio()->setVolume((qreal)d->volume->value() / 100.0);
+    d->player->audio()->close();
 }
 
 } // namespace Digikam

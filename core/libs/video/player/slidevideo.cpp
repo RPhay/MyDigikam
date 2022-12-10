@@ -115,6 +115,13 @@ SlideVideo::SlideVideo(QWidget* const parent)
     d->player         = new AVPlayerCore(this);
     d->player->setRenderer(d->videoWidget);
 
+    d->player->setBufferMode(QtAV::BufferPackets);
+    d->player->setBufferValue(AVPlayerConfigMngr::instance().bufferValue());
+    d->player->setFrameRate(AVPlayerConfigMngr::instance().forceFrameRate());
+    d->player->setInterruptOnTimeout(AVPlayerConfigMngr::instance().abortOnTimeout());
+    d->player->setInterruptTimeout(AVPlayerConfigMngr::instance().timeout() * 1000.0);
+    d->player->setPriority(DecoderConfigPage::idsFromNames(AVPlayerConfigMngr::instance().decoderPriorityNames()));
+
     d->indicator      = new DHBox(this);
     d->slider         = new QSlider(Qt::Horizontal, d->indicator);
     d->slider->setStyle(new SlideVideoStyle());
@@ -226,7 +233,7 @@ void SlideVideo::setCurrentUrl(const QUrl& url)
     }
 
     d->player->setFile(url.toLocalFile());
-    play();
+    d->player->play();
 
     showIndicator(false);
 }
@@ -280,7 +287,7 @@ void SlideVideo::pause(bool b)
 {
     if (!b && !d->player->isPlaying())
     {
-        play();
+        d->player->play();
         return;
     }
 
@@ -333,18 +340,6 @@ void SlideVideo::slotPosition(int position)
 void SlideVideo::slotHandlePlayerError(const QtAV::AVError& err)
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "Error: " << err.string();
-}
-
-void SlideVideo::play()
-{
-    d->player->setFrameRate(AVPlayerConfigMngr::instance().forceFrameRate());
-    d->player->setInterruptOnTimeout(AVPlayerConfigMngr::instance().abortOnTimeout());
-    d->player->setInterruptTimeout(AVPlayerConfigMngr::instance().timeout() * 1000.0);
-    d->player->setBufferMode(QtAV::BufferPackets);
-    d->player->setBufferValue(AVPlayerConfigMngr::instance().bufferValue());
-    d->player->setPriority(DecoderConfigPage::idsFromNames(AVPlayerConfigMngr::instance().decoderPriorityNames()));
-
-    d->player->play();
 }
 
 } // namespace Digikam

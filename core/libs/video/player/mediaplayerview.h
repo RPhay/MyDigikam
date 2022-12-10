@@ -64,11 +64,12 @@ public Q_SLOTS:
 
 private Q_SLOTS:
 
-    void slotThemeChanged();
     void slotPlayerStateChanged(QtAV::AVPlayerCore::State state);
     void slotMediaStatusChanged(QtAV::MediaStatus status);
     void slotHandlePlayerError(const QtAV::AVError& err);
     void slotImageCaptured(const QImage& image);
+    void slotPlayerConfigChanged();
+    void slotThemeChanged();
 
     /// Slidebar slots
     void slotPositionChanged(qint64 position);
@@ -81,7 +82,6 @@ private Q_SLOTS:
 
 private:
 
-    void play();
     int  previewMode();
     void setPreviewMode(int mode);
 
