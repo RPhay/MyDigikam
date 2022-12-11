@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-09 00:44+0000\n"
+"POT-Creation-Date: 2022-12-11 00:44+0000\n"
 "PO-Revision-Date: 2020-01-12 12:23+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -44919,7 +44919,7 @@ msgstr "Capturar"
 msgid "An error has occurred with the media player..."
 msgstr "Ocorreu un erro co reprodutor multimedia…"
 
-#: core/libs/video/player/mediaplayerview.cpp:249
+#: core/libs/video/player/mediaplayerview.cpp:248
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr ""

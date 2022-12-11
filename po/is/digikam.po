@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-09 00:44+0000\n"
+"POT-Creation-Date: 2022-12-11 00:44+0000\n"
 "PO-Revision-Date: 2022-11-11 09:17+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -41293,7 +41293,7 @@ msgstr "Upptaka"
 msgid "An error has occurred with the media player..."
 msgstr "Villa kom upp með margmiðlunarspilarann..."
 
-#: core/libs/video/player/mediaplayerview.cpp:249
+#: core/libs/video/player/mediaplayerview.cpp:248
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Víxla endurtekinni spilun af/á"

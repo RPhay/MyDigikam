@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-09 00:44+0000\n"
+"POT-Creation-Date: 2022-12-11 00:44+0000\n"
 "PO-Revision-Date: 2017-05-16 06:48-0400\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: American English <kde-i18n-he@kde.org>\n"
@@ -39512,7 +39512,7 @@ msgstr "לכידה"
 msgid "An error has occurred with the media player..."
 msgstr "תקלה נגרמה בעת השימוש בנגן הסרטים"
 
-#: core/libs/video/player/mediaplayerview.cpp:249
+#: core/libs/video/player/mediaplayerview.cpp:248
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr ""

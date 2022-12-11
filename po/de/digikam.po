@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-09 00:44+0000\n"
+"POT-Creation-Date: 2022-12-11 00:44+0000\n"
 "PO-Revision-Date: 2022-10-15 21:32+0200\n"
 "Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -42298,7 +42298,7 @@ msgstr "Videobild aufnehmen"
 msgid "An error has occurred with the media player..."
 msgstr "Mit dem Medienspieler ist ein Fehler aufgetreten ..."
 
-#: core/libs/video/player/mediaplayerview.cpp:249
+#: core/libs/video/player/mediaplayerview.cpp:248
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Abspielen in Endlosschleife"

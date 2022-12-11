@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-09 00:44+0000\n"
+"POT-Creation-Date: 2022-12-11 00:44+0000\n"
 "PO-Revision-Date: 2022-02-16 11:32+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -41251,7 +41251,7 @@ msgstr "Capturează"
 msgid "An error has occurred with the media player..."
 msgstr "S-a produs o eroare cu lectorul multimedia..."
 
-#: core/libs/video/player/mediaplayerview.cpp:249
+#: core/libs/video/player/mediaplayerview.cpp:248
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr ""

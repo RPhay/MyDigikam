@@ -53,8 +53,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-09 00:44+0000\n"
-"PO-Revision-Date: 2022-12-04 14:34+0300\n"
+"POT-Creation-Date: 2022-12-11 00:44+0000\n"
+"PO-Revision-Date: 2022-12-10 18:22+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2544,7 +2544,7 @@ msgstr "İçeriye Aktar"
 #: core/app/main/digikamui5.rc:7
 #, kde-format
 msgid "&Browse"
-msgstr "&Gözat"
+msgstr "&Göz At"
 
 #. i18n: ectx: Menu (Album)
 #: core/app/main/digikamui5.rc:25
@@ -43350,7 +43350,7 @@ msgstr "Yakala"
 msgid "An error has occurred with the media player..."
 msgstr "Ortam oynatıcısında bir hata oluştu..."
 
-#: core/libs/video/player/mediaplayerview.cpp:249
+#: core/libs/video/player/mediaplayerview.cpp:248
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr ""
@@ -43605,10 +43605,9 @@ msgid "AVFormat"
 msgstr "Biçim"
 
 #: core/libs/video/qtav/config/CaptureConfigPage.cpp:58
-#, fuzzy, kde-format
-#| msgid "&Browse"
+#, kde-format
 msgid "Browse"
-msgstr "&Gözat"
+msgstr "Göz At"
 
 #: core/libs/video/qtav/config/CaptureConfigPage.cpp:64
 #: core/libs/video/qtav/config/CaptureConfigPage.cpp:126
@@ -44109,7 +44108,7 @@ msgstr "Değiştir"
 #: core/libs/widgets/files/dfileselector.cpp:58
 #, kde-format
 msgid "Browse..."
-msgstr "Gözat..."
+msgstr "Göz At..."
 
 #: core/libs/widgets/files/filesaveconflictbox.cpp:66
 #, kde-format
