@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-11 00:44+0000\n"
-"PO-Revision-Date: 2022-11-11 09:17+0000\n"
+"PO-Revision-Date: 2022-12-11 09:33+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -54290,17 +54290,14 @@ msgid "Less options"
 msgstr "Færri valkostir"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:296
-#, fuzzy, kde-format
-#| msgid "Pr&int captions "
+#, kde-format
 msgid "Write locations as tags"
-msgstr "B&irta skýringatexta "
+msgstr "Skrifa staðsetningar sem merki"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:297
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Write flag to metadata if possible"
+#, kde-format
 msgid "Write locations metadata"
-msgstr "Skrifa stefnumerki í lýsigögn ef hægt er"
+msgstr "Skrifa staðsetningarmerki í lýsigögn"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:304
 #, kde-format
@@ -54459,10 +54456,9 @@ msgid "Lock the map position"
 msgstr "Læsa hnattstöðu"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:346
-#, fuzzy, kde-format
-#| msgid "Load playlist from a file."
+#, kde-format
 msgid "Load tracks from albums"
-msgstr "Hlaða spilunarlista inn úr skrá."
+msgstr "Hlaða lögum inn úr hljómplötum"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:800
 #, kde-format
