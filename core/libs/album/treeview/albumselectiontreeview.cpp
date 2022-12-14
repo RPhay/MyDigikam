@@ -145,42 +145,17 @@ public:
             return;
         }
 
-        if (album->isAlbumRoot())
-        {
-            cmh.addActionNewAlbum(d->albumModificationHelper, album);
-            cmh.addAction(QLatin1String("album_openinfilemanager"));
-            cmh.addSeparator();
-
-            // --------------------------------------------------------
-
-            cmh.addActionResetAlbumIcon(d->albumModificationHelper, album);
-            cmh.addSeparator();
-
-            // --------------------------------------------------------
-
-            cmh.addAction(d->expandSelected);
-            cmh.addAction(d->collapseSelected);
-            cmh.addAction(d->expandAllAlbums);
-            cmh.addAction(d->collapseAllAlbums);
-            cmh.addSeparator();
-
-            // --------------------------------------------------------
-
-            cmh.addAction(d->rebuildThumbsAction);
-            d->albumModificationHelper->bindAlbum(d->rebuildThumbsAction, album);
-
-            return;
-        }
-
-        // --------------------------------------------------------
-
         cmh.addActionNewAlbum(d->albumModificationHelper, album);
         cmh.addAction(QLatin1String("album_openinfilemanager"));
         cmh.addSeparator();
 
         // --------------------------------------------------------
 
-        cmh.addActionRenameAlbum(d->albumModificationHelper, album);
+        if (!album->isAlbumRoot())
+        {
+            cmh.addActionRenameAlbum(d->albumModificationHelper, album);
+        }
+
         cmh.addActionResetAlbumIcon(d->albumModificationHelper, album);
         cmh.addSeparator();
 
@@ -208,16 +183,19 @@ public:
 
         cmh.addAction(d->repairHiddenAction);
         d->albumModificationHelper->bindAlbum(d->repairHiddenAction, album);
-        cmh.addSeparator();
 
         // --------------------------------------------------------
 
-        cmh.addActionDeleteAlbum(d->albumModificationHelper, album);
-        cmh.addSeparator();
+        if (!album->isAlbumRoot())
+        {
+            cmh.addSeparator();
+            cmh.addActionDeleteAlbum(d->albumModificationHelper, album);
+            cmh.addSeparator();
 
-        // --------------------------------------------------------
+            // --------------------------------------------------------
 
-        cmh.addActionEditAlbum(d->albumModificationHelper, album);
+            cmh.addActionEditAlbum(d->albumModificationHelper, album);
+        }
     }
 
 public:
