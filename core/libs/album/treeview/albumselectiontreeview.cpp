@@ -153,6 +153,11 @@ public:
 
             // --------------------------------------------------------
 
+            cmh.addActionResetAlbumIcon(d->albumModificationHelper, album);
+            cmh.addSeparator();
+
+            // --------------------------------------------------------
+
             cmh.addAction(d->expandSelected);
             cmh.addAction(d->collapseSelected);
             cmh.addAction(d->expandAllAlbums);
