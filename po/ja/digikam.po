@@ -65830,9 +65830,3 @@ msgstr "すべての設定を標準の値に戻します。"
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "すべての設定を標準の値に戻します。"
-
-#~ msgid "Write tags to XMP"
-#~ msgstr "タグを XMP に書き込み"
-
-#~ msgid "Skip images already scanned"
-#~ msgstr "スキャン済みの画像をスキップ"
