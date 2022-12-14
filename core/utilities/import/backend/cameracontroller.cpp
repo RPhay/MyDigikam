@@ -620,9 +620,9 @@ void CameraController::executeCommand(CameraCommand* const cmd)
 
             qCDebug(DIGIKAM_IMPORTUI_LOG) << "Downloading: " << file << " using " << tempFile;
 
-            bool result  = d->camera->downloadItem(folder, file, tempFile);
+            bool result = d->camera->downloadItem(folder, file, tempFile);
 
-            if      (!result)
+            if      (!result || d->canceled)
             {
                 QFile::remove(tempFile);
 
