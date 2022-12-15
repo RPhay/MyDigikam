@@ -67,7 +67,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-11 00:44+0000\n"
+"POT-Creation-Date: 2022-12-15 00:45+0000\n"
 "PO-Revision-Date: 2022-12-05 19:17+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -2903,7 +2903,7 @@ msgstr "Afficher en plein écran"
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:140
 #: core/libs/album/engine/album.cpp:500
 #: core/libs/album/manager/albummanager.cpp:157
-#: core/libs/album/treeview/albumselectiontreeview.cpp:286
+#: core/libs/album/treeview/albumselectiontreeview.cpp:269
 #: core/libs/album/widgets/albumselecttabs.cpp:191
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:64
 #: core/libs/models/albummodel.cpp:25
@@ -28193,7 +28193,7 @@ msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "Album d'étiquettes"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:236
+#: core/libs/album/treeview/albumselectiontreeview.cpp:219
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
 #: core/libs/tags/manager/tagsmanager.cpp:723
 #: core/libs/tags/widgets/tagfolderview.cpp:135
@@ -28201,46 +28201,46 @@ msgstr "Album d'étiquettes"
 msgid "Expand Selected Nodes"
 msgstr "Développer les notes sélectionnées"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:239
+#: core/libs/album/treeview/albumselectiontreeview.cpp:222
 #, kde-format
 msgid "Expand all Albums"
 msgstr "Déplier toutes les albums"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:242
+#: core/libs/album/treeview/albumselectiontreeview.cpp:225
 #: core/libs/tags/widgets/tagfolderview.cpp:140
 #: core/libs/tags/widgets/tagfolderview.cpp:243
 #, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "Réduire la sélection récursivement"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:245
+#: core/libs/album/treeview/albumselectiontreeview.cpp:228
 #, kde-format
 msgid "Collapse all Albums"
 msgstr "Réduire tous les albums"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:248
+#: core/libs/album/treeview/albumselectiontreeview.cpp:231
 #: core/libs/tags/widgets/tagfolderview.cpp:71
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "Chercher des doublons…"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:251
-#: core/libs/album/treeview/albumselectiontreeview.cpp:322
+#: core/libs/album/treeview/albumselectiontreeview.cpp:234
+#: core/libs/album/treeview/albumselectiontreeview.cpp:305
 #, kde-format
 msgid "Scan for Faces"
 msgstr "Chercher des visages"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:254
+#: core/libs/album/treeview/albumselectiontreeview.cpp:237
 #, kde-format
 msgid "Repair hidden Items"
 msgstr "Réparer les éléments masqués"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:257
+#: core/libs/album/treeview/albumselectiontreeview.cpp:240
 #, kde-format
 msgid "Refresh"
 msgstr "Rafraîchir"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:323
+#: core/libs/album/treeview/albumselectiontreeview.cpp:306
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr "Voulez-vous aussi analyser les sous-albums ?"

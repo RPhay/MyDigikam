@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-11 00:44+0000\n"
+"POT-Creation-Date: 2022-12-15 00:45+0000\n"
 "PO-Revision-Date: 2022-11-24 05:00+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -2855,7 +2855,7 @@ msgstr "Erakutsi pantaila osoan"
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:140
 #: core/libs/album/engine/album.cpp:500
 #: core/libs/album/manager/albummanager.cpp:157
-#: core/libs/album/treeview/albumselectiontreeview.cpp:286
+#: core/libs/album/treeview/albumselectiontreeview.cpp:269
 #: core/libs/album/widgets/albumselecttabs.cpp:191
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:64
 #: core/libs/models/albummodel.cpp:25
@@ -28330,7 +28330,7 @@ msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "Etiketen albuma"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:236
+#: core/libs/album/treeview/albumselectiontreeview.cpp:219
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
 #: core/libs/tags/manager/tagsmanager.cpp:723
 #: core/libs/tags/widgets/tagfolderview.cpp:135
@@ -28338,49 +28338,49 @@ msgstr "Etiketen albuma"
 msgid "Expand Selected Nodes"
 msgstr "Bat ere ez hautatu"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:239
+#: core/libs/album/treeview/albumselectiontreeview.cpp:222
 #, fuzzy, kde-format
 #| msgid "Parsing all albums"
 msgid "Expand all Albums"
 msgstr "Album guztiak analizatzen"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:242
+#: core/libs/album/treeview/albumselectiontreeview.cpp:225
 #: core/libs/tags/widgets/tagfolderview.cpp:140
 #: core/libs/tags/widgets/tagfolderview.cpp:243
 #, fuzzy, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "Ez da albumik hautatu"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:245
+#: core/libs/album/treeview/albumselectiontreeview.cpp:228
 #, fuzzy, kde-format
 #| msgid "Parsing all albums"
 msgid "Collapse all Albums"
 msgstr "Album guztiak analizatzen"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:248
+#: core/libs/album/treeview/albumselectiontreeview.cpp:231
 #: core/libs/tags/widgets/tagfolderview.cpp:71
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "Bilatu bikoizketak..."
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:251
-#: core/libs/album/treeview/albumselectiontreeview.cpp:322
+#: core/libs/album/treeview/albumselectiontreeview.cpp:234
+#: core/libs/album/treeview/albumselectiontreeview.cpp:305
 #, kde-format
 msgid "Scan for Faces"
 msgstr "Aztertu irudien bila"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:254
+#: core/libs/album/treeview/albumselectiontreeview.cpp:237
 #, fuzzy, kde-format
 #| msgid "Separate Items"
 msgid "Repair hidden Items"
 msgstr "Bereizi elementuak"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:257
+#: core/libs/album/treeview/albumselectiontreeview.cpp:240
 #, kde-format
 msgid "Refresh"
 msgstr "Freskatu"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:323
+#: core/libs/album/treeview/albumselectiontreeview.cpp:306
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr ""

@@ -32,7 +32,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-11 00:44+0000\n"
+"POT-Creation-Date: 2022-12-15 00:45+0000\n"
 "PO-Revision-Date: 2020-02-15 19:57+0800\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
@@ -3070,7 +3070,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:140
 #: core/libs/album/engine/album.cpp:500
 #: core/libs/album/manager/albummanager.cpp:157
-#: core/libs/album/treeview/albumselectiontreeview.cpp:286
+#: core/libs/album/treeview/albumselectiontreeview.cpp:269
 #: core/libs/album/widgets/albumselecttabs.cpp:191
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:64
 #: core/libs/models/albummodel.cpp:25
@@ -28774,7 +28774,7 @@ msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "新增相簿"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:236
+#: core/libs/album/treeview/albumselectiontreeview.cpp:219
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
 #: core/libs/tags/manager/tagsmanager.cpp:723
 #: core/libs/tags/widgets/tagfolderview.cpp:135
@@ -28782,51 +28782,51 @@ msgstr "新增相簿"
 msgid "Expand Selected Nodes"
 msgstr "展開選取的節點"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:239
+#: core/libs/album/treeview/albumselectiontreeview.cpp:222
 #, fuzzy, kde-format
 #| msgid "Copy Albums..."
 msgid "Expand all Albums"
 msgstr "複製相簿..."
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:242
+#: core/libs/album/treeview/albumselectiontreeview.cpp:225
 #: core/libs/tags/widgets/tagfolderview.cpp:140
 #: core/libs/tags/widgets/tagfolderview.cpp:243
 #, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "遞迴折疊選取的項目"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:245
+#: core/libs/album/treeview/albumselectiontreeview.cpp:228
 #, fuzzy, kde-format
 #| msgid "Copy Albums..."
 msgid "Collapse all Albums"
 msgstr "複製相簿..."
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:248
+#: core/libs/album/treeview/albumselectiontreeview.cpp:231
 #: core/libs/tags/widgets/tagfolderview.cpp:71
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "尋找重複檔..."
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:251
-#: core/libs/album/treeview/albumselectiontreeview.cpp:322
+#: core/libs/album/treeview/albumselectiontreeview.cpp:234
+#: core/libs/album/treeview/albumselectiontreeview.cpp:305
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for Faces"
 msgstr "掃描新增的影像"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:254
+#: core/libs/album/treeview/albumselectiontreeview.cpp:237
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
 #| msgid "&Sort Items"
 msgid "Repair hidden Items"
 msgstr "項目排序(&S)"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:257
+#: core/libs/album/treeview/albumselectiontreeview.cpp:240
 #, kde-format
 msgid "Refresh"
 msgstr "重新整理"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:323
+#: core/libs/album/treeview/albumselectiontreeview.cpp:306
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr ""

@@ -131,7 +131,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-11 00:44+0000\n"
+"POT-Creation-Date: 2022-12-15 00:45+0000\n"
 "PO-Revision-Date: 2012-01-13 15:00+0330\n"
 "Last-Translator: Mohammad Reza Mirdamadi <mohi@ubuntu.ir>\n"
 "Language-Team: Farsi (Persian) <>\n"
@@ -3213,7 +3213,7 @@ msgstr "ویرایش حالت تمام پرده‌"
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:140
 #: core/libs/album/engine/album.cpp:500
 #: core/libs/album/manager/albummanager.cpp:157
-#: core/libs/album/treeview/albumselectiontreeview.cpp:286
+#: core/libs/album/treeview/albumselectiontreeview.cpp:269
 #: core/libs/album/widgets/albumselecttabs.cpp:191
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:64
 #: core/libs/models/albummodel.cpp:25
@@ -27484,7 +27484,7 @@ msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "آلبوم جدید"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:236
+#: core/libs/album/treeview/albumselectiontreeview.cpp:219
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
 #: core/libs/tags/manager/tagsmanager.cpp:723
 #: core/libs/tags/widgets/tagfolderview.cpp:135
@@ -27492,49 +27492,49 @@ msgstr "آلبوم جدید"
 msgid "Expand Selected Nodes"
 msgstr "برگزیدن هیچ‌کدام"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:239
+#: core/libs/album/treeview/albumselectiontreeview.cpp:222
 #, fuzzy, kde-format
 #| msgid "My Albums"
 msgid "Expand all Albums"
 msgstr "آلبومهای من"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:242
+#: core/libs/album/treeview/albumselectiontreeview.cpp:225
 #: core/libs/tags/widgets/tagfolderview.cpp:140
 #: core/libs/tags/widgets/tagfolderview.cpp:243
 #, fuzzy, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "%1 فقره برگزیده شد"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:245
+#: core/libs/album/treeview/albumselectiontreeview.cpp:228
 #, fuzzy, kde-format
 #| msgid "My Albums"
 msgid "Collapse all Albums"
 msgstr "آلبومهای من"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:248
+#: core/libs/album/treeview/albumselectiontreeview.cpp:231
 #: core/libs/tags/widgets/tagfolderview.cpp:71
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "جستجو برای تکراری‌ها..."
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:251
-#: core/libs/album/treeview/albumselectiontreeview.cpp:322
+#: core/libs/album/treeview/albumselectiontreeview.cpp:234
+#: core/libs/album/treeview/albumselectiontreeview.cpp:305
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for Faces"
 msgstr "پویش برای تصاویر جدید"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:254
+#: core/libs/album/treeview/albumselectiontreeview.cpp:237
 #, fuzzy, kde-format
 msgid "Repair hidden Items"
 msgstr "&مرتب‌سازی تصاویر‌"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:257
+#: core/libs/album/treeview/albumselectiontreeview.cpp:240
 #, kde-format
 msgid "Refresh"
 msgstr "بازآوری"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:323
+#: core/libs/album/treeview/albumselectiontreeview.cpp:306
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr ""

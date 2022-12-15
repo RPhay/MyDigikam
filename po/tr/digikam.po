@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-11 00:44+0000\n"
+"POT-Creation-Date: 2022-12-15 00:45+0000\n"
 "PO-Revision-Date: 2022-12-11 14:30+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -2866,7 +2866,7 @@ msgstr "Tam Ekran Göster"
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:140
 #: core/libs/album/engine/album.cpp:500
 #: core/libs/album/manager/albummanager.cpp:157
-#: core/libs/album/treeview/albumselectiontreeview.cpp:286
+#: core/libs/album/treeview/albumselectiontreeview.cpp:269
 #: core/libs/album/widgets/albumselecttabs.cpp:191
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:64
 #: core/libs/models/albummodel.cpp:25
@@ -28860,7 +28860,7 @@ msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "Albümü Etiketler"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:236
+#: core/libs/album/treeview/albumselectiontreeview.cpp:219
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
 #: core/libs/tags/manager/tagsmanager.cpp:723
 #: core/libs/tags/widgets/tagfolderview.cpp:135
@@ -28868,51 +28868,51 @@ msgstr "Albümü Etiketler"
 msgid "Expand Selected Nodes"
 msgstr "Seçili Düğümleri Genişlet"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:239
+#: core/libs/album/treeview/albumselectiontreeview.cpp:222
 #, fuzzy, kde-format
 #| msgid "By Album"
 msgid "Expand all Albums"
 msgstr "Albüme Göre"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:242
+#: core/libs/album/treeview/albumselectiontreeview.cpp:225
 #: core/libs/tags/widgets/tagfolderview.cpp:140
 #: core/libs/tags/widgets/tagfolderview.cpp:243
 #, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "Yinelemeli Olarak Seçilenleri Daralt"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:245
+#: core/libs/album/treeview/albumselectiontreeview.cpp:228
 #, fuzzy, kde-format
 #| msgid "By Album"
 msgid "Collapse all Albums"
 msgstr "Albüme Göre"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:248
+#: core/libs/album/treeview/albumselectiontreeview.cpp:231
 #: core/libs/tags/widgets/tagfolderview.cpp:71
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "Aynısı Olanları Bul..."
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:251
-#: core/libs/album/treeview/albumselectiontreeview.cpp:322
+#: core/libs/album/treeview/albumselectiontreeview.cpp:234
+#: core/libs/album/treeview/albumselectiontreeview.cpp:305
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Scanning faces"
 msgid "Scan for Faces"
 msgstr "Yüzler taranıyor"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:254
+#: core/libs/album/treeview/albumselectiontreeview.cpp:237
 #, fuzzy, kde-format
 #| msgid "Separate Items"
 msgid "Repair hidden Items"
 msgstr "Ögeleri Ayır"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:257
+#: core/libs/album/treeview/albumselectiontreeview.cpp:240
 #, kde-format
 msgid "Refresh"
 msgstr "Yenile"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:323
+#: core/libs/album/treeview/albumselectiontreeview.cpp:306
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr ""
