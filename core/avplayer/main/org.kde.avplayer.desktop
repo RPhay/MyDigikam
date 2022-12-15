@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=AVPlayer
+Name[bg]=AVPlayer
 Name[ca]=AVPlayer
 Name[ca@valencia]=AVPlayer
 Name[de]=AVPlayer
@@ -21,6 +22,7 @@ Name[uk]=AVPlayer
 Name[x-test]=xxAVPlayerxx
 Name[zh_CN]=AVPlayer
 GenericName=Audio and Video Player
+GenericName[bg]=Аудио и видео плеър
 GenericName[ca]=Reproductor d'àudio i vídeo
 GenericName[ca@valencia]=Reproductor d'àudio i vídeo
 GenericName[de]=Audio- und Videoabspieler

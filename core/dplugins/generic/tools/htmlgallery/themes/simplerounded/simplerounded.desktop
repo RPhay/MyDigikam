@@ -101,6 +101,7 @@ Url=mailto:enaut.w@googlemail.com
 Name=Title Bar
 Name[ar]=شريط العنوان
 Name[be]=Панэль назвы
+Name[bg]=Заглавна лента
 Name[ca]=Barra de títol
 Name[ca@valencia]=Barra de títol
 Name[cs]=Titulkový pruh
@@ -176,6 +177,7 @@ Max=75
 [X-HTMLGallery Parameter homepage]
 Name=Name of the Homepage
 Name[be]=Назва хатняй старонкі
+Name[bg]=Име на началната страница
 Name[ca]=Nom de la pàgina web
 Name[ca@valencia]=Nom de la pàgina web
 Name[cs]=Název domovské stránky
@@ -212,6 +214,7 @@ Default[de]=
 [X-HTMLGallery Parameter homepageUrl]
 Name=Url to the Homepage
 Name[be]=Адрас хатняй старонкі
+Name[bg]=Адрес на началната страница
 Name[ca]=URL de la pàgina web
 Name[ca@valencia]=URL de la pàgina web
 Name[cs]=URL na domovskou stránku
@@ -248,6 +251,7 @@ Default[de]=
 [X-HTMLGallery Parameter background]
 Name=Background
 Name[be]=Фон
+Name[bg]=Фон
 Name[ca]=Fons
 Name[ca@valencia]=Fons
 Name[cs]=Pozadí
@@ -423,6 +427,7 @@ Default=#41696d
 [X-HTMLGallery Parameter urlColor]
 Name=Links
 Name[be]=Спасылкі
+Name[bg]=Връзки
 Name[ca]=Enllaços
 Name[ca@valencia]=Enllaços
 Name[cs]=Links
