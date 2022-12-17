@@ -581,30 +581,30 @@ void DMetadataSettingsContainer::defaultCommentValues()
 
 void DMetadataSettingsContainer::defaultColorLabelValues()
 {
-    NamespaceEntry commNs1;
-    commNs1.namespaceName   = QLatin1String("Xmp.digiKam.ColorLabel");
-    commNs1.nsType          = NamespaceEntry::COLORLABEL;
-    commNs1.specialOpts     = NamespaceEntry::NO_OPTS;
-    commNs1.index           = 0;
-    commNs1.subspace        = NamespaceEntry::XMP;
+    NamespaceEntry colorNs1;
+    colorNs1.namespaceName   = QLatin1String("Xmp.digiKam.ColorLabel");
+    colorNs1.nsType          = NamespaceEntry::COLORLABEL;
+    colorNs1.specialOpts     = NamespaceEntry::NO_OPTS;
+    colorNs1.index           = 0;
+    colorNs1.subspace        = NamespaceEntry::XMP;
 
-    NamespaceEntry commNs2;
-    commNs2.namespaceName   = QLatin1String("Xmp.xmp.Label");
-    commNs2.nsType          = NamespaceEntry::COLORLABEL;
-    commNs2.specialOpts     = NamespaceEntry::NO_OPTS;
-    commNs2.index           = 1;
-    commNs2.subspace        = NamespaceEntry::XMP;
+    NamespaceEntry colorNs2;
+    colorNs2.namespaceName   = QLatin1String("Xmp.xmp.Label");
+    colorNs2.nsType          = NamespaceEntry::COLORLABEL;
+    colorNs2.specialOpts     = NamespaceEntry::NO_OPTS;
+    colorNs2.index           = 1;
+    colorNs2.subspace        = NamespaceEntry::XMP;
 
-    NamespaceEntry commNs3;
-    commNs3.namespaceName   = QLatin1String("Xmp.photoshop.Urgency");
-    commNs3.nsType          = NamespaceEntry::COLORLABEL;
-    commNs3.specialOpts     = NamespaceEntry::NO_OPTS;
-    commNs3.index           = 2;
-    commNs3.subspace        = NamespaceEntry::XMP;
+    NamespaceEntry colorNs3;
+    colorNs3.namespaceName   = QLatin1String("Xmp.photoshop.Urgency");
+    colorNs3.nsType          = NamespaceEntry::COLORLABEL;
+    colorNs3.specialOpts     = NamespaceEntry::NO_OPTS;
+    colorNs3.index           = 2;
+    colorNs3.subspace        = NamespaceEntry::XMP;
 
-    getReadMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER()) << commNs1
-                                                              << commNs2
-                                                              << commNs3;
+    getReadMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER()) << colorNs1
+                                                              << colorNs2
+                                                              << colorNs3;
 
     d->writeMappings[NamespaceEntry::DM_COLORLABEL_CONTAINER()]
         = QList<NamespaceEntry>(getReadMapping(NamespaceEntry::DM_COLORLABEL_CONTAINER()));
