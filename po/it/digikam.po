@@ -25,15 +25,15 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-15 00:45+0000\n"
-"PO-Revision-Date: 2022-12-04 17:24+0100\n"
-"Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
+"PO-Revision-Date: 2022-12-09 19:47+0100\n"
+"Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.08.3\n"
+"X-Generator: Lokalize 22.11.90\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -54976,17 +54976,14 @@ msgid "Less options"
 msgstr "Meno opzioni"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:296
-#, fuzzy, kde-format
-#| msgid "Pr&int captions "
+#, kde-format
 msgid "Write locations as tags"
-msgstr "Stampa d&idascalie"
+msgstr "Registra le posizioni come tag"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:297
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Write flag to metadata if possible"
+#, kde-format
 msgid "Write locations metadata"
-msgstr "Scrivi il contrassegno nei metadati, se possibile"
+msgstr "Registra i metadati delle posizioni"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:304
 #, kde-format
