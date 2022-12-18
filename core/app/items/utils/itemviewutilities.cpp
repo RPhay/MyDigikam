@@ -27,7 +27,6 @@
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <kwindowsystem.h>
 #include <ksharedconfig.h>
 #include <kconfiggroup.h>
 
@@ -286,10 +285,10 @@ void ItemViewUtilities::insertToLightTable(const QList<ItemInfo>& list,
 
     if (ltview->isMinimized())
     {
-        KWindowSystem::unminimizeWindow(ltview->winId());
+        ltview->setWindowState(Qt::WindowNoState);
     }
 
-    KWindowSystem::activateWindow(ltview->winId());
+    ltview->setWindowState(Qt::WindowActive);
 }
 
 void ItemViewUtilities::insertToQueueManager(const QList<ItemInfo>& list, const ItemInfo& current, bool newQueue)
@@ -305,10 +304,10 @@ void ItemViewUtilities::insertToQueueManager(const QList<ItemInfo>& list, const 
 
     if (bqmview->isMinimized())
     {
-        KWindowSystem::unminimizeWindow(bqmview->winId());
+        bqmview->setWindowState(Qt::WindowNoState);
     }
 
-    KWindowSystem::activateWindow(bqmview->winId());
+    bqmview->setWindowState(Qt::WindowActive);
 
     if (newQueue)
     {
@@ -371,10 +370,10 @@ void ItemViewUtilities::openInfos(const ItemInfo& info,
 
     if (imview->isMinimized())
     {
-        KWindowSystem::unminimizeWindow(imview->winId());
+        imview->setWindowState(Qt::WindowNoState);
     }
 
-    KWindowSystem::activateWindow(imview->winId());
+    imview->setWindowState(Qt::WindowActive);
 }
 
 void ItemViewUtilities::openInfosWithDefaultApplication(const QList<ItemInfo>& infos)

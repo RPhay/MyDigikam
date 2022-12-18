@@ -1189,7 +1189,7 @@ bool EditorWindow::promptUserSave(const QUrl& url, SaveAskMode mode, bool allowC
 
         if (isMinimized())
         {
-            KWindowSystem::unminimizeWindow(winId());
+            setWindowState(Qt::WindowNoState);
         }
 
         bool shallSave    = true;
@@ -1372,7 +1372,7 @@ bool EditorWindow::promptUserDelete(const QUrl& url)
 
         if (isMinimized())
         {
-            KWindowSystem::unminimizeWindow(winId());
+            setWindowState(Qt::WindowNoState);
         }
 
         QString boxMessage = i18nc("@info",
