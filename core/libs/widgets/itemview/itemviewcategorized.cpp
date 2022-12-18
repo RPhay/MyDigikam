@@ -118,7 +118,9 @@ ItemViewCategorized::ItemViewCategorized(QWidget* const parent)
 
     // important optimization for layouting
 
+    setBatchSize(100);
     setUniformItemSizes(true);
+    setLayoutMode(QListView::Batched);
 
     // disable "feature" from DCategorizedView
 
