@@ -217,7 +217,7 @@ BUGFIXES:
 179 ==> 395094 - Add new option to dissociate rights, locations, contacts and subjects.
 180 ==> 462807 - How to show GPS-Tracks in addition to geotagged photos in Maps view.
 181 ==> 462916 - Different renaming behaviors for video files depending of the device.
-182 ==> 
+182 ==> 463180 - Reread Metadata From File doesn't cleanup Tags.
 183 ==> 
 184 ==>.
 185 ==>.
