@@ -518,12 +518,7 @@ void DigikamApp::openSolidCamera(const QString& udi, const QString& cameraLabel)
 
         if (ui && !ui->isClosed())
         {
-            if (ui->isMinimized())
-            {
-                KWindowSystem::unminimizeWindow(ui->winId());
-            }
-
-            KWindowSystem::activateWindow(ui->winId());
+            ui->unminimizeAndActivateWindow();
 
             return;
         }
@@ -592,12 +587,7 @@ void DigikamApp::openSolidUsmDevice(const QString& udi, const QString& givenLabe
 
         if (ui && !ui->isClosed())
         {
-            if (ui->isMinimized())
-            {
-                KWindowSystem::unminimizeWindow(ui->winId());
-            }
-
-            KWindowSystem::activateWindow(ui->winId());
+            ui->unminimizeAndActivateWindow();
 
             return;
         }

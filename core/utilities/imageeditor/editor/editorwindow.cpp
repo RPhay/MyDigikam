@@ -1187,10 +1187,7 @@ bool EditorWindow::promptUserSave(const QUrl& url, SaveAskMode mode, bool allowC
     {
         // if window is minimized, show it
 
-        if (isMinimized())
-        {
-            KWindowSystem::unminimizeWindow(winId());
-        }
+        unminimizeAndActivateWindow();
 
         bool shallSave    = true;
         bool shallDiscard = false;
@@ -1370,10 +1367,7 @@ bool EditorWindow::promptUserDelete(const QUrl& url)
     {
         // if window is minimized, show it
 
-        if (isMinimized())
-        {
-            KWindowSystem::unminimizeWindow(winId());
-        }
+        unminimizeAndActivateWindow();
 
         QString boxMessage = i18nc("@info",
                                    "The image \"%1\" has been modified.\n"

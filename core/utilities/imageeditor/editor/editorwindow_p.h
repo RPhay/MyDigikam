@@ -75,7 +75,6 @@
 #include <kactioncategory.h>
 #include <kactioncollection.h>
 #include <ktoolbarpopupaction.h>
-#include <kwindowsystem.h>
 #include <kxmlguifactory.h>
 #include <kconfiggroup.h>
 #include <kservice.h>

@@ -196,10 +196,7 @@ void ImageWindow::slotLoadItemInfosStage2()
 {
     // if window is minimized, show it
 
-    if (isMinimized())
-    {
-        KWindowSystem::unminimizeWindow(winId());
-    }
+    unminimizeAndActivateWindow();
 
     slotLoadCurrent();
 }

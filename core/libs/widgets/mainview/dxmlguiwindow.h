@@ -166,6 +166,10 @@ public:
 
 public:
 
+    void unminimizeAndActivateWindow();
+
+public:
+
     static void openHandbook();
     static void restoreWindowSize(QWindow* const win, const KConfigGroup& group);
     static void saveWindowSize(QWindow* const win, KConfigGroup& group);

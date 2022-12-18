@@ -216,6 +216,16 @@ void DXmlGuiWindow::openHandbook()
 
 }
 
+void DXmlGuiWindow::unminimizeAndActivateWindow()
+{
+    if (isMinimized())
+    {
+        setWindowState(windowState() & ~Qt::WindowMinimized);
+    }
+
+    setWindowState(windowState() | Qt::WindowActive);
+}
+
 void DXmlGuiWindow::restoreWindowSize(QWindow* const win, const KConfigGroup& group)
 {
 
