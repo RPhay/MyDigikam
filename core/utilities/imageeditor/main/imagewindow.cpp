@@ -198,7 +198,7 @@ void ImageWindow::slotLoadItemInfosStage2()
 
     if (isMinimized())
     {
-        setWindowState(Qt::WindowNoState);
+        KWindowSystem::unminimizeWindow(winId());
     }
 
     slotLoadCurrent();

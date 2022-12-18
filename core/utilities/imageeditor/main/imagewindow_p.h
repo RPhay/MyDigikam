@@ -61,6 +61,7 @@
 
 #include <kactioncollection.h>
 #include <klocalizedstring.h>
+#include <kwindowsystem.h>
 #include <kconfiggroup.h>
 #include <ksharedconfig.h>
 

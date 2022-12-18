@@ -58,6 +58,7 @@
 #include <kactioncollection.h>
 #include <ktoolbar.h>
 #include <ktoolbarpopupaction.h>
+#include <kwindowsystem.h>
 #include <kselectaction.h>
 #include <ksharedconfig.h>
 

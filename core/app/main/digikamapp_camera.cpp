@@ -150,10 +150,10 @@ void DigikamApp::slotOpenManualCamera(QAction* action)
 
             if (ctype->currentImportUI()->isMinimized())
             {
-                ctype->currentImportUI()->setWindowState(Qt::WindowNoState);
+                KWindowSystem::unminimizeWindow(ctype->currentImportUI()->winId());
             }
 
-            ctype->currentImportUI()->setWindowState(Qt::WindowActive);
+            KWindowSystem::activateWindow(ctype->currentImportUI()->winId());
         }
         else
         {
@@ -243,10 +243,10 @@ void DigikamApp::downloadImages(const QString& folder)
 
         if (isMinimized())
         {
-            setWindowState(Qt::WindowNoState);
+            KWindowSystem::unminimizeWindow(winId());
         }
 
-        setWindowState(Qt::WindowActive);
+        KWindowSystem::activateWindow(winId());
 
         Q_EMIT queuedOpenCameraUiFromPath(folder);
     }
@@ -258,10 +258,10 @@ void DigikamApp::cameraAutoDetect()
 
     if (isMinimized())
     {
-        setWindowState(Qt::WindowNoState);
+        KWindowSystem::unminimizeWindow(winId());
     }
 
-    setWindowState(Qt::WindowActive);
+    KWindowSystem::activateWindow(winId());
 
     slotCameraAutoDetect();
 }
