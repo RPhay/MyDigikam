@@ -217,7 +217,6 @@ int DMetadata::getItemRating(const DMetadataSettingsContainer& settings) const
         // so we try to approximate it
 
         if ((index == -1)                         &&
-            (entry.convertRatio.size() > 0)       &&
             (rating > entry.convertRatio.first()) &&
             (rating < entry.convertRatio.last()))
         {
