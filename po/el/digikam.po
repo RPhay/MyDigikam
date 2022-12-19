@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-15 00:45+0000\n"
+"POT-Creation-Date: 2022-12-19 00:44+0000\n"
 "PO-Revision-Date: 2017-10-16 18:16+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1071,13 +1071,13 @@ msgctxt "Month String - Year String"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/app/items/utils/itemviewutilities.cpp:204
+#: core/app/items/utils/itemviewutilities.cpp:203
 #, fuzzy, kde-format
 #| msgid "Select None"
 msgid "Select target folder"
 msgstr "Χωρίς επιλογή"
 
-#: core/app/items/utils/itemviewutilities.cpp:230
+#: core/app/items/utils/itemviewutilities.cpp:229
 #, kde-format
 msgid ""
 "<p>Please select the destination album from the digiKam library to move the "
@@ -1086,10 +1086,10 @@ msgstr ""
 "<p>Παρακαλώ, επιλέξτε το λεύκωμα προορισμού από τη βιβλιοθήκη digiKam για τη "
 "μετακίνηση των επιλεγμένων εικόνων σε αυτό.</p>"
 
-#: core/app/items/utils/itemviewutilities.cpp:364
-#: core/utilities/imageeditor/main/imagewindow.cpp:1100
-#: core/utilities/imageeditor/main/imagewindow.cpp:1125
-#: core/utilities/imageeditor/main/imagewindow.cpp:1157
+#: core/app/items/utils/itemviewutilities.cpp:353
+#: core/utilities/imageeditor/main/imagewindow.cpp:1097
+#: core/utilities/imageeditor/main/imagewindow.cpp:1122
+#: core/utilities/imageeditor/main/imagewindow.cpp:1154
 #, kde-format
 msgid "Album \"%1\""
 msgstr "Λεύκωμα \"%1\""
@@ -1629,7 +1629,7 @@ msgstr "Προσθήκη φακέλων..."
 msgid "Adds new folders to Album library."
 msgstr "Προσθήκη νέων φακέλων στη βιβλιοθήκη των λευκωμάτων."
 
-#: core/app/main/digikamapp_camera.cpp:229
+#: core/app/main/digikamapp_camera.cpp:224
 #, kde-format
 msgid "Images found in %1"
 msgstr "Βρέθηκαν εικόνες στο %1"
@@ -2772,22 +2772,22 @@ msgctxt "device label etc... (<formatted byte size>)"
 msgid " (%1)"
 msgstr "(%1)"
 
-#: core/app/main/digikamapp_solid.cpp:646
+#: core/app/main/digikamapp_solid.cpp:636
 #, kde-format
 msgid "Cannot access the storage device.\n"
 msgstr "Αδυναμία πρόσβασης στη συσκευή αποθήκευσης.\n"
 
-#: core/app/main/digikamapp_solid.cpp:677
+#: core/app/main/digikamapp_solid.cpp:667
 #, kde-format
 msgid "Images on %1"
 msgstr "Εικόνες στο %1"
 
-#: core/app/main/digikamapp_solid.cpp:710
+#: core/app/main/digikamapp_solid.cpp:700
 #, kde-format
 msgid "The specified device (\"%1\") is not valid."
 msgstr "Η καθορισμένη συσκευή (\"%1\") δεν είναι έγκυρη."
 
-#: core/app/main/digikamapp_solid.cpp:723
+#: core/app/main/digikamapp_solid.cpp:713
 #, kde-format
 msgid "The specified camera (\"%1\") is not supported."
 msgstr "Η καθορισμένη φωτογραφική μηχανή (\"%1\") δεν υποστηρίζεται."
@@ -2799,21 +2799,21 @@ msgid "Main Tools"
 msgstr "Κύρια εργαλεία"
 
 #: core/app/main/digikamapp_tools.cpp:38
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2603
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2597
 #, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "Μετα-επεξεργασία"
 
 #: core/app/main/digikamapp_tools.cpp:50
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2620
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2614
 #, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "Εξαγωγή"
 
 #: core/app/main/digikamapp_tools.cpp:57
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2627
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2621
 #, kde-format
 msgctxt "@title Import Tools"
 msgid "Import"
@@ -53599,7 +53599,7 @@ msgid "Unknown"
 msgstr "Άγνωστο"
 
 #: core/showfoto/main/showfoto.cpp:265
-#: core/utilities/imageeditor/main/imagewindow.cpp:491
+#: core/utilities/imageeditor/main/imagewindow.cpp:488
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
 msgid "%1 (%2 of %3)"
@@ -53627,8 +53627,8 @@ msgid "Remote file handling is not supported"
 msgstr "Αναγνωριστικό ή έκδοση φίλτρου δεν υποστηρίζονται."
 
 #: core/showfoto/main/showfoto_iofiles.cpp:102
-#: core/utilities/imageeditor/main/imagewindow.cpp:574
-#: core/utilities/imageeditor/main/imagewindow.cpp:689
+#: core/utilities/imageeditor/main/imagewindow.cpp:571
+#: core/utilities/imageeditor/main/imagewindow.cpp:686
 #, kde-format
 msgid "Image saved successfully"
 msgstr "Επιτυχής αποθήκευση εικόνας"
@@ -59390,7 +59390,7 @@ msgctxt "@title; warning while saving progress"
 msgid "Warning"
 msgstr "Προειδοποίηση"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1225
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1222
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -59400,7 +59400,7 @@ msgstr ""
 "Η εικόνα <filename>%1</filename> τροποποιήθηκε.<nl/>Θέλετε να την "
 "αποθηκεύσετε;"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1379
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1373
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -59410,28 +59410,28 @@ msgstr ""
 "Η εικόνα <filename>%1</filename> τροποποιήθηκε.<nl/>Θέλετε να την "
 "αποθηκεύσετε;"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1457
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1451
 #, fuzzy, kde-format
 #| msgid "No selection"
 msgctxt "@info"
 msgid "No selection"
 msgstr "Καμία επιλογή"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1477
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1471
 #, fuzzy, kde-format
 #| msgid "Loading: "
 msgctxt "@label"
 msgid "Loading:"
 msgstr "Φόρτωση: "
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1505
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1499
 #, fuzzy, kde-format
 #| msgid "Cannot load page %1"
 msgctxt "@info"
 msgid "Cannot load \"%1\""
 msgstr "Αδυναμία φόρτωσης της σελίδας %1"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1547
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1541
 #, fuzzy, kde-format
 #| msgid ""
 #| "Cannot open the specified working space profile (\"%1\"). No color "
@@ -59447,14 +59447,14 @@ msgstr ""
 "(\"%1\"). Κανένας μετασχηματισμός δεν θα εφαρμοστεί. Παρακαλώ διορθώστε τη "
 "διαμόρφωση στη διαχείριση χρωμάτων του digiKam."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1604
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1598
 #, fuzzy, kde-format
 #| msgid "Saving: "
 msgctxt "@label: saving progress on status bar"
 msgid "Saving:"
 msgstr "Αποθήκευση: "
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1626
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1620
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to save file\n"
@@ -59473,21 +59473,21 @@ msgstr ""
 "στο\n"
 "\"%2\"."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1759
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1753
 #, fuzzy, kde-format
 #| msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgctxt "@info"
 msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgstr "Αδυναμία ανοίγματος προσωρινού αρχείου στο φάκελο \"%1\": %2 (%3)"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1809
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1803
 #, fuzzy, kde-format
 #| msgid "New Image File Name"
 msgctxt "@title"
 msgid "New Image File Name"
 msgstr "Νέο όνομα αρχείου εικόνας"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1955
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1949
 #, fuzzy, kde-format
 #| msgid "Unable to determine the format to save the target image with."
 msgctxt "@info"
@@ -59496,7 +59496,7 @@ msgstr ""
 "Αδυναμία προσδιορισμού του τύπου αρχειοθέτησης για την αποθήκευση της "
 "εικόνας προορισμού."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1962
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1956
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Cannot Save: Found file path \"%1\" is invalid."
@@ -59504,7 +59504,7 @@ msgstr ""
 "Αδυναμία αποθήκευσης: Η ευρεθείσα διαδρομή αρχείου <filename>%1</filename> "
 "δεν είναι έγκυρη."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2209
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2203
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
@@ -59512,15 +59512,15 @@ msgstr ""
 "Αδυναμία αποθήκευσης του αρχείου <filename>%1</filename> στην προτεινόμενη "
 "έκδοση ονόματος αρχείου <filename>%2</filename>"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2283
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2302
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2277
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2296
 #, fuzzy, kde-format
 #| msgid "Overwrite File?"
 msgctxt "@title"
 msgid "Overwrite File?"
 msgstr "Αντικατάσταση αρχείου;"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2284
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2278
 #, fuzzy, kde-format
 #| msgid ""
 #| "You do not have write permissions for the file named \"%1\". Are you sure "
@@ -59533,7 +59533,7 @@ msgstr ""
 "Δεν έχετε άδεια εγγραφής στο αρχείο με όνομα \"%1\". Σίγουρα θέλετε να "
 "αντικατασταθεί;"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2303
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2297
 #, fuzzy, kde-format
 #| msgid ""
 #| "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
@@ -59543,35 +59543,35 @@ msgid ""
 msgstr ""
 "Ένα αρχείο με όνομα \"%1\" υπάρχει ήδη. Σίγουρα θέλετε να αντικατασταθεί;"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2329
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2323
 #, fuzzy, kde-format
 #| msgid "Error Saving File"
 msgctxt "@title"
 msgid "Error Saving File"
 msgstr "Σφάλμα αποθήκευσης αρχείου"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2330
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2324
 #, fuzzy, kde-format
 #| msgid "Failed to overwrite original file"
 msgctxt "@info"
 msgid "Failed to overwrite original file"
 msgstr "Αποτυχία αντικατάστασης του αρχικού αρχείου"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2409
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2403
 #, fuzzy, kde-format
 #| msgid "Color-Managed View is enabled."
 msgctxt "@info"
 msgid "Color-Managed View is enabled."
 msgstr "Η προβολή με διαχείριση χρωμάτων ενεργοποιήθηκε."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2413
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2407
 #, fuzzy, kde-format
 #| msgid "Color-Managed View is disabled."
 msgctxt "@info"
 msgid "Color-Managed View is disabled."
 msgstr "Η προβολή με διαχείριση χρωμάτων απενεργοποιήθηκε."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2418
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2412
 #, fuzzy, kde-format
 #| msgid ""
 #| "Color Management is not configured, so the Color-Managed View is not "
@@ -59584,84 +59584,84 @@ msgstr ""
 "Η διαχείριση χρωμάτων δεν έχει διαμορφωθεί, οπότε η προβολή με χρήση "
 "διαχείρισης χρωμάτων δεν είναι διαθέσιμη."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2454
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2448
 #, fuzzy, kde-format
 #| msgid "Under-Exposure indicator is enabled"
 msgctxt "@info"
 msgid "Under-Exposure indicator is enabled"
 msgstr "Η ένδειξη υποέκθεσης είναι ενεργοποιημένη"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2455
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2449
 #, fuzzy, kde-format
 #| msgid "Under-Exposure indicator is disabled"
 msgctxt "@info"
 msgid "Under-Exposure indicator is disabled"
 msgstr "Η ένδειξη υποέκθεσης είναι απενεργοποιημένη"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2469
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2463
 #, fuzzy, kde-format
 #| msgid "Over-Exposure indicator is enabled"
 msgctxt "@info"
 msgid "Over-Exposure indicator is enabled"
 msgstr "Η ένδειξη υπερέκθεσης είναι ενεργοποιημένη"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2470
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2464
 #, fuzzy, kde-format
 #| msgid "Over-Exposure indicator is disabled"
 msgctxt "@info"
 msgid "Over-Exposure indicator is disabled"
 msgstr "Η ένδειξη υπερέκθεσης είναι απενεργοποιημένη"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2561
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2555
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr "Μετασχηματισμός"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2575
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2569
 #, fuzzy, kde-format
 #| msgid "Decorate"
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr "Διακόσμηση"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2582
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2576
 #, fuzzy, kde-format
 #| msgid "Effects"
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr "Εφέ"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2589
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2583
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr "Χρώματα"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2596
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2590
 #, fuzzy, kde-format
 #| msgid "Enhance"
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "Βελτίωση"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2759
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2753
 #, fuzzy, kde-format
 #| msgid "Open With"
 msgctxt "@action"
 msgid "Open With"
 msgstr "Άνοιγμα με"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2773
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2767
 #, fuzzy, kde-format
 #| msgid "Other..."
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr "Άλλο..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2782
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2776
 #, fuzzy, kde-format
 #| msgid "Open With..."
 msgctxt "@action: open with desktop application"
@@ -59678,24 +59678,24 @@ msgstr "Επεξεργαστής εικόνας - %1"
 msgid "Image Editor"
 msgstr "Επεξεργαστής εικόνας"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:360
+#: core/utilities/imageeditor/main/imagewindow.cpp:357
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@title: unknown image dimension"
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:361
+#: core/utilities/imageeditor/main/imagewindow.cpp:358
 #, kde-format
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:930
+#: core/utilities/imageeditor/main/imagewindow.cpp:927
 #, kde-format
 msgid "No Image in Current Album"
 msgstr "Χωρίς εικόνα στο τρέχον λεύκωμα"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:931
+#: core/utilities/imageeditor/main/imagewindow.cpp:928
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
@@ -59704,13 +59704,13 @@ msgstr ""
 "Δεν υπάρχει καμία εικόνα για εμφάνιση στο τρέχον λεύκωμα.\n"
 "Ο επεξεργαστής εικόνας θα κλείσει."
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1202
+#: core/utilities/imageeditor/main/imagewindow.cpp:1199
 #, kde-format
 msgctxt "@title"
 msgid "File Not Available"
 msgstr "Το αρχείο δεν είναι διαθέσιμο"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1203
+#: core/utilities/imageeditor/main/imagewindow.cpp:1200
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"

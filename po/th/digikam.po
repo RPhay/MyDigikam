@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-15 00:45+0000\n"
+"POT-Creation-Date: 2022-12-19 00:44+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -988,13 +988,13 @@ msgctxt "Month String - Year String"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/app/items/utils/itemviewutilities.cpp:204
+#: core/app/items/utils/itemviewutilities.cpp:203
 #, fuzzy, kde-format
 #| msgid "Select None"
 msgid "Select target folder"
 msgstr "ไม่เลือกเลย"
 
-#: core/app/items/utils/itemviewutilities.cpp:230
+#: core/app/items/utils/itemviewutilities.cpp:229
 #, kde-format
 msgid ""
 "<p>Please select the destination album from the digiKam library to move the "
@@ -1002,10 +1002,10 @@ msgid ""
 msgstr ""
 "<p>โปรดเลือกอัลบั้มปลายทางจากคลังภาพของ 'ดิจิแคม' เพื่อย้ายภาพต่าง ๆ ที่เลือกไปเก็บไว้</p>"
 
-#: core/app/items/utils/itemviewutilities.cpp:364
-#: core/utilities/imageeditor/main/imagewindow.cpp:1100
-#: core/utilities/imageeditor/main/imagewindow.cpp:1125
-#: core/utilities/imageeditor/main/imagewindow.cpp:1157
+#: core/app/items/utils/itemviewutilities.cpp:353
+#: core/utilities/imageeditor/main/imagewindow.cpp:1097
+#: core/utilities/imageeditor/main/imagewindow.cpp:1122
+#: core/utilities/imageeditor/main/imagewindow.cpp:1154
 #, kde-format
 msgid "Album \"%1\""
 msgstr "อัลบั้ม \"%1\""
@@ -1524,7 +1524,7 @@ msgstr "เพิ่มโฟลเดอร์..."
 msgid "Adds new folders to Album library."
 msgstr "เพิ่มโฟลเดอร์ใหม่ ๆ ไปยังคลังอัลบั้ม"
 
-#: core/app/main/digikamapp_camera.cpp:229
+#: core/app/main/digikamapp_camera.cpp:224
 #, kde-format
 msgid "Images found in %1"
 msgstr "พบภาพใน %1"
@@ -2601,22 +2601,22 @@ msgctxt "device label etc... (<formatted byte size>)"
 msgid " (%1)"
 msgstr "%1 (%2)"
 
-#: core/app/main/digikamapp_solid.cpp:646
+#: core/app/main/digikamapp_solid.cpp:636
 #, kde-format
 msgid "Cannot access the storage device.\n"
 msgstr "ไม่สามารถเข้าใช้งานอุปกรณ์จัดเก็บข้อมูลได้\n"
 
-#: core/app/main/digikamapp_solid.cpp:677
+#: core/app/main/digikamapp_solid.cpp:667
 #, kde-format
 msgid "Images on %1"
 msgstr "พบภาพใน %1"
 
-#: core/app/main/digikamapp_solid.cpp:710
+#: core/app/main/digikamapp_solid.cpp:700
 #, kde-format
 msgid "The specified device (\"%1\") is not valid."
 msgstr "อุปกรณ์ที่ระบุ (\"%1\") ไม่ถูกต้อง"
 
-#: core/app/main/digikamapp_solid.cpp:723
+#: core/app/main/digikamapp_solid.cpp:713
 #, kde-format
 msgid "The specified camera (\"%1\") is not supported."
 msgstr "ยังไม่รองรับกล้องที่ระบุ (\"%1\")"
@@ -2629,7 +2629,7 @@ msgid "Main Tools"
 msgstr "แถบเครื่องมือหลัก"
 
 #: core/app/main/digikamapp_tools.cpp:38
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2603
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2597
 #, fuzzy, kde-format
 #| msgid "Post Processing"
 msgctxt "@title Post Processing Tools"
@@ -2637,7 +2637,7 @@ msgid "Post-Processing"
 msgstr "กำลังประมวลผลหลังการกระทำ"
 
 #: core/app/main/digikamapp_tools.cpp:50
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2620
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2614
 #, fuzzy, kde-format
 #| msgid "Export"
 msgctxt "@title Export Tools"
@@ -2645,7 +2645,7 @@ msgid "Export"
 msgstr "ส่งออก"
 
 #: core/app/main/digikamapp_tools.cpp:57
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2627
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2621
 #, fuzzy, kde-format
 #| msgid "Import"
 msgctxt "@title Import Tools"
@@ -50918,7 +50918,7 @@ msgid "Unknown"
 msgstr "ไม่ทราบ"
 
 #: core/showfoto/main/showfoto.cpp:265
-#: core/utilities/imageeditor/main/imagewindow.cpp:491
+#: core/utilities/imageeditor/main/imagewindow.cpp:488
 #, kde-format
 msgctxt "<Image file name> (<Image number> of <Images in album>)"
 msgid "%1 (%2 of %3)"
@@ -50945,8 +50945,8 @@ msgid "Remote file handling is not supported"
 msgstr "ยังไม่รองรับกล้องที่ระบุ (\"%1\")"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:102
-#: core/utilities/imageeditor/main/imagewindow.cpp:574
-#: core/utilities/imageeditor/main/imagewindow.cpp:689
+#: core/utilities/imageeditor/main/imagewindow.cpp:571
+#: core/utilities/imageeditor/main/imagewindow.cpp:686
 #, fuzzy, kde-format
 msgid "Image saved successfully"
 msgstr "รายการถูกประมวลผลเสร็จเรียบร้อยแล้ว..."
@@ -56399,7 +56399,7 @@ msgctxt "@title; warning while saving progress"
 msgid "Warning"
 msgstr "แจ้งเตือน"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1225
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1222
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -56409,7 +56409,7 @@ msgstr ""
 "แฟ้มภาพ '%1' ถูกแก้ไข\n"
 "คุณต้องการบันทึกมันก่อนหรือไม่ ?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1379
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1373
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -56419,21 +56419,21 @@ msgstr ""
 "แฟ้มภาพ '%1' ถูกแก้ไข\n"
 "คุณต้องการบันทึกมันก่อนหรือไม่ ?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1457
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1451
 #, fuzzy, kde-format
 #| msgid "No selection"
 msgctxt "@info"
 msgid "No selection"
 msgstr "ยังไม่มีการเลือกพื้นที่ใด ๆ"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1477
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1471
 #, fuzzy, kde-format
 #| msgid "Loading: "
 msgctxt "@label"
 msgid "Loading:"
 msgstr "กำลังโหลด: "
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1505
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1499
 #, fuzzy, kde-format
 #| msgid ""
 #| "Cannot display image\n"
@@ -56444,7 +56444,7 @@ msgstr ""
 "ไม่สามารถแสดงภาพ\n"
 "\"%1\" ได้"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1547
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1541
 #, fuzzy, kde-format
 #| msgid ""
 #| "Cannot open the specified working space profile (\"%1\"). No color "
@@ -56460,14 +56460,14 @@ msgstr ""
 "ดังนั้นจะไม่มีการแปลงค่าสีใด ๆ เกิดขึ้น โปรดตรวจสอบ "
 "การปรับแต่งการจัดการระบบสีของคุณในการตั้งค่าของดิจิแคม"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1604
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1598
 #, fuzzy, kde-format
 #| msgid "Saving: "
 msgctxt "@label: saving progress on status bar"
 msgid "Saving:"
 msgstr "กำลังบันทึก: "
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1626
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1620
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to save file\n"
@@ -56486,48 +56486,48 @@ msgstr ""
 "ไปยัง\n"
 "\"%2\""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1759
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1753
 #, fuzzy, kde-format
 #| msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgctxt "@info"
 msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgstr "ไม่สามารถเปิดแฟ้มชั่วคราวในโฟลเดอร์ \"%1\" ได้: %2 (%3)"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1809
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1803
 #, fuzzy, kde-format
 #| msgid "New Image File Name"
 msgctxt "@title"
 msgid "New Image File Name"
 msgstr "ชื่อใหม่ของแฟ้มภาพ"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1955
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1949
 #, fuzzy, kde-format
 #| msgid "Unable to determine the format to save the target image with."
 msgctxt "@info"
 msgid "Unable to determine the format to save the target image with."
 msgstr "ไม่สามารถจำแนกรูปแบบเพื่อทำการบันทึกไปยังภาพเป้าหมายได้"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1962
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1956
 #, kde-format
 msgctxt "@info"
 msgid "Cannot Save: Found file path \"%1\" is invalid."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2209
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2203
 #, kde-format
 msgctxt "@info"
 msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2283
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2302
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2277
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2296
 #, fuzzy, kde-format
 #| msgid "Overwrite File?"
 msgctxt "@title"
 msgid "Overwrite File?"
 msgstr "จะให้เขียนทับแฟ้มหรือไม่ ?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2284
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2278
 #, fuzzy, kde-format
 #| msgid ""
 #| "You do not have write permissions for the file named \"%1\". Are you sure "
@@ -56540,7 +56540,7 @@ msgstr ""
 "คุณยังไม่มีสิทธิ์ในการเขียนแฟ้มที่ชื่อ \"%1\" \n"
 "คุณแน่ใจหรือว่าต้องการจะเขียนทับมัน ?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2303
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2297
 #, fuzzy, kde-format
 #| msgid ""
 #| "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
@@ -56551,35 +56551,35 @@ msgstr ""
 "มีแฟ้มชื่อ \"%1\" อยู่ก่อนแล้ว\n"
 "คุณต้องการที่จะเขียนทับมันหรือไม่ ?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2329
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2323
 #, fuzzy, kde-format
 #| msgid "Error Saving File"
 msgctxt "@title"
 msgid "Error Saving File"
 msgstr "ล้มเหลวในการบันทึกแฟ้ม"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2330
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2324
 #, fuzzy, kde-format
 #| msgid "Failed to overwrite original file"
 msgctxt "@info"
 msgid "Failed to overwrite original file"
 msgstr "ล้มเหลวในการเขียนทับแฟ้มต้นฉบับ"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2409
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2403
 #, fuzzy, kde-format
 #| msgid "Color-Managed View is enabled."
 msgctxt "@info"
 msgid "Color-Managed View is enabled."
 msgstr "การแสดงผลร่วมกับการจัดการระบบสีถูกเปิดใช้งาน"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2413
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2407
 #, fuzzy, kde-format
 #| msgid "Color-Managed View is disabled."
 msgctxt "@info"
 msgid "Color-Managed View is disabled."
 msgstr "การแสดงผลร่วมกับการจัดการระบบสีถูกปิดการใช้งาน"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2418
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2412
 #, fuzzy, kde-format
 #| msgid ""
 #| "Color Management is not configured, so the Color-Managed View is not "
@@ -56592,83 +56592,83 @@ msgstr ""
 "การจัดการระบบสียังไม่มีการปรับแต่งค่า ดังนั้นการแสดงผลร่วมกับการจัดการระบบสี "
 "จะยังไม่สามารถใช้ได้"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2454
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2448
 #, fuzzy, kde-format
 #| msgid "Under-Exposure indicator is enabled"
 msgctxt "@info"
 msgid "Under-Exposure indicator is enabled"
 msgstr "เปิดใช้งานการแสดงตำแหน่งค่าแสงมืดจัด"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2455
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2449
 #, fuzzy, kde-format
 #| msgid "Under-Exposure indicator is disabled"
 msgctxt "@info"
 msgid "Under-Exposure indicator is disabled"
 msgstr "ปิดการใช้งานการแสดงตำแหน่งค่าแสงมืดจัด"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2469
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2463
 #, fuzzy, kde-format
 #| msgid "Over-Exposure indicator is enabled"
 msgctxt "@info"
 msgid "Over-Exposure indicator is enabled"
 msgstr "เปิดใช้งานการแสดงตำแหน่งค่าแสงสว่างจัด"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2470
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2464
 #, fuzzy, kde-format
 #| msgid "Over-Exposure indicator is disabled"
 msgctxt "@info"
 msgid "Over-Exposure indicator is disabled"
 msgstr "ปิดการใช้งานการแสดงตำแหน่งค่าแสงสว่างจัด"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2561
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2555
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr "แปลงภาพ"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2575
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2569
 #, fuzzy, kde-format
 #| msgid "Decorate"
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr "ตกแต่งภาพ"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2582
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2576
 #, fuzzy, kde-format
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr "ทำภาพเบลอ"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2589
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2583
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr "สี"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2596
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2590
 #, fuzzy, kde-format
 #| msgid "Enhance"
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "ปรับแก้ภาพ"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2759
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2753
 #, fuzzy, kde-format
 #| msgid "Open With"
 msgctxt "@action"
 msgid "Open With"
 msgstr "เปิดด้วย"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2773
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2767
 #, fuzzy, kde-format
 #| msgid "Other..."
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr "อื่น ๆ ..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2782
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2776
 #, fuzzy, kde-format
 #| msgid "Open With..."
 msgctxt "@action: open with desktop application"
@@ -56685,24 +56685,24 @@ msgstr "เครื่องมือแก้ไขภาพ - %1"
 msgid "Image Editor"
 msgstr "เครื่องมือแก้ไขภาพ"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:360
+#: core/utilities/imageeditor/main/imagewindow.cpp:357
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@title: unknown image dimension"
 msgid "Unknown"
 msgstr "ไม่ทราบ"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:361
+#: core/utilities/imageeditor/main/imagewindow.cpp:358
 #, kde-format
 msgid "%1x%2 (%3Mpx)"
 msgstr "%1 x %2 (%3 ล้านพิกเซล)"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:930
+#: core/utilities/imageeditor/main/imagewindow.cpp:927
 #, kde-format
 msgid "No Image in Current Album"
 msgstr "ยังไม่มีภาพใด ๆ ในอัลบั้มปัจจุบัน"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:931
+#: core/utilities/imageeditor/main/imagewindow.cpp:928
 #, kde-format
 msgid ""
 "There is no image to show in the current album.\n"
@@ -56711,13 +56711,13 @@ msgstr ""
 "ไม่มีภาพที่แสดงอยู่ในอัลบั้มปัจจุบัน\n"
 "เครื่องมือแก้ไขภาพจะถูกปิด"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1202
+#: core/utilities/imageeditor/main/imagewindow.cpp:1199
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "File Not Available"
 msgstr "ไม่มีโพรไฟล์ใด ๆ ให้เลือกใช้งาน"
 
-#: core/utilities/imageeditor/main/imagewindow.cpp:1203
+#: core/utilities/imageeditor/main/imagewindow.cpp:1200
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "<qt>The original file (<b>%1</b>) is currently not available</qt>"
