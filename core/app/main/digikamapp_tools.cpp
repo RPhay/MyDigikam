@@ -149,7 +149,7 @@ void DigikamApp::slotDetectFaces()
     settings.accuracy               = ApplicationSettings::instance()->getFaceDetectionAccuracy();
     settings.useYoloV3              = ApplicationSettings::instance()->getFaceDetectionYoloV3();
     settings.task                   = FaceScanSettings::DetectAndRecognize;
-    settings.alreadyScannedHandling = FaceScanSettings::Rescan;
+    settings.alreadyScannedHandling = FaceScanSettings::Skip;
     settings.infos                  = newImages;
 
     FacesDetector* const tool       = new FacesDetector(settings);
