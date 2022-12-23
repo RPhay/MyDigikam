@@ -43,10 +43,6 @@ public:
 
     explicit Private()
     {
-        QVariantMap params;
-        params[QLatin1String("accuracy")]  = 0.8;
-        params[QLatin1String("useyolov3")] = true;
-        facedetector.setParameters(params);
     }
 
     FaceDetector                   facedetector;
@@ -153,8 +149,20 @@ void RedEyeCorrectionFilter::filterImage()
         gray.convertTo(gray, CV_8UC1, 1 / 256.0);
     }
 
-    QList<QRectF> qrectfdets         = d->facedetector.detectFaces(m_orgImage);
-    const RedEye::ShapePredictor& sp = *(d->sp);
+    QVariantMap params;
+    params[QLatin1String("accuracy")]  = 0.8;
+    params[QLatin1String("useyolov3")] = false;
+    d->facedetector.setParameters(params);
+    const RedEye::ShapePredictor& sp   = *(d->sp);
+
+    QList<QRectF> qrectfdets           = d->facedetector.detectFaces(m_orgImage);
+
+    if (qrectfdets.isEmpty())
+    {
+        params[QLatin1String("useyolov3")] = true;
+        d->facedetector.setParameters(params);
+        qrectfdets                         = d->facedetector.detectFaces(m_orgImage);
+    }
 
     if (runningFlag() && (qrectfdets.size() != 0))
     {
@@ -166,7 +174,7 @@ void RedEyeCorrectionFilter::filterImage()
 
         for (unsigned int i = 0 ; runningFlag() && (i < dets.size()) ; ++i)
         {
-            FullObjectDetection object = sp(gray,dets[i]);
+            FullObjectDetection object = sp(gray, dets[i]);
             std::vector<cv::Rect> eyes = getEyes(object);
 
             for (unsigned int j = 0 ; runningFlag() && (j < eyes.size()) ; ++j)
@@ -210,9 +218,9 @@ void RedEyeCorrectionFilter::correctRedEye(uchar* data, int type,
     {
         for (int j = eyerect.x ; j < eyerect.x + eyerect.width ; ++j)
         {
-            int pixelindex = (i*imgRect.width + j) * pixeldepth;
-            onebytedata    = &(reinterpret_cast<uchar*> (data)[pixelindex]);
-            twobytedata    = &(reinterpret_cast<ushort*>(data)[pixelindex]);
+            uint pixelindex = (i*imgRect.width + j) * pixeldepth;
+            onebytedata     = &(reinterpret_cast<uchar*> (data)[pixelindex]);
+            twobytedata     = &(reinterpret_cast<ushort*>(data)[pixelindex]);
 
             if (sixteendepth)
             {
