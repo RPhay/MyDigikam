@@ -220,4 +220,10 @@ BUGFIXES:
 182 ==> 463180 - Reread Metadata From File doesn't cleanup Tags.
 183 ==> 379251 - Add a section to recommend hardware to use digiKam.
 184 ==> 461236 - Inpainting documentation doesn't correspond at any enhancement tool.
-185 ==> 
+185 ==> 412650 - Can't uninstall and reinstall digikam properly on macOS - preferences remain, no first run dialog.
+186 ==> 
+187 ==> 
+188 ==> 
+189 ==> 
+190 ==> 
+191 ==> 
