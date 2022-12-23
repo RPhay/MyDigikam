@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-19 00:44+0000\n"
+"POT-Creation-Date: 2022-12-23 00:44+0000\n"
 "PO-Revision-Date: 2022-12-04 12:01+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -1347,27 +1347,27 @@ msgstr "<i>Datos binarios</i>"
 msgid "Initializing..."
 msgstr "Inicializando..."
 
-#: core/app/main/digikamapp.cpp:132 core/showfoto/main/showfoto.cpp:95
+#: core/app/main/digikamapp.cpp:135 core/showfoto/main/showfoto.cpp:95
 #, kde-format
 msgid "Load Plugins..."
 msgstr "Cargar complementos..."
 
-#: core/app/main/digikamapp.cpp:157 core/showfoto/main/showfoto.cpp:77
+#: core/app/main/digikamapp.cpp:160 core/showfoto/main/showfoto.cpp:77
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "Verificando el repositorio ICC..."
 
-#: core/app/main/digikamapp.cpp:169
+#: core/app/main/digikamapp.cpp:172
 #, kde-format
 msgid "Clean up Database..."
 msgstr "Limpiar la base de datos..."
 
-#: core/app/main/digikamapp.cpp:187
+#: core/app/main/digikamapp.cpp:190
 #, kde-format
 msgid "Loading albums..."
 msgstr "Cargando álbumes..."
 
-#: core/app/main/digikamapp.cpp:335
+#: core/app/main/digikamapp.cpp:338
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1379,21 +1379,21 @@ msgstr ""
 "la función de «gestión de color» no se activará hasta que resuelva este "
 "problema.</p>"
 
-#: core/app/main/digikamapp.cpp:616 core/app/views/stack/trashview.cpp:428
+#: core/app/main/digikamapp.cpp:619 core/app/views/stack/trashview.cpp:428
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "No se ha seleccionado ningún elemento (%1 elemento)"
 msgstr[1] "No se ha seleccionado ningún elemento (%1 elementos)"
 
-#: core/app/main/digikamapp.cpp:622
+#: core/app/main/digikamapp.cpp:625
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "No se ha seleccionado ningún elemento (%1 [%2] elemento)"
 msgstr[1] "No se ha seleccionado ningún elemento (%1 [%2] elementos)"
 
-#: core/app/main/digikamapp.cpp:627
+#: core/app/main/digikamapp.cpp:630
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1404,71 +1404,71 @@ msgstr[1] ""
 "No se ha seleccionado ningún elemento (%1 elementos. Con elementos "
 "agrupados: %2)"
 
-#: core/app/main/digikamapp.cpp:638
+#: core/app/main/digikamapp.cpp:641
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "1/%2 elemento seleccionado (%3/%4)"
 msgstr[1] "%1/%2 elementos seleccionados (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:651
+#: core/app/main/digikamapp.cpp:654
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "1/%2 [%3] elemento seleccionado (%4/%5)"
 msgstr[1] "%1/%2 [%3] elementos seleccionados (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:659
+#: core/app/main/digikamapp.cpp:662
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "1/%2 elemento seleccionado. Total con elementos agrupados: %3"
 msgstr[1] "%1/%2 elementos seleccionados. Total con elementos agrupados: %3"
 
-#: core/app/main/digikamapp.cpp:667
+#: core/app/main/digikamapp.cpp:670
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "1/%2 [%3/%4] elemento seleccionado (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] elementos seleccionados (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:676
+#: core/app/main/digikamapp.cpp:679
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "1/%2 elemento seleccionado. Con elementos agrupados: %3/%4"
 msgstr[1] "%1/%2 elementos seleccionados. Con elementos agrupados: %3/%4"
 
-#: core/app/main/digikamapp.cpp:707
+#: core/app/main/digikamapp.cpp:710
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 de %2)"
 
-#: core/app/main/digikamapp.cpp:721
+#: core/app/main/digikamapp.cpp:724
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 de %2 [%3] )"
 
-#: core/app/main/digikamapp.cpp:725
+#: core/app/main/digikamapp.cpp:728
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 de %2. Total con elementos agrupados: %3)"
 
-#: core/app/main/digikamapp.cpp:736
+#: core/app/main/digikamapp.cpp:739
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "%1 elemento oculto"
 msgstr[1] "%1 elementos ocultos"
 
-#: core/app/main/digikamapp.cpp:786
+#: core/app/main/digikamapp.cpp:789
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Escribir metadatos en el archivo"
 msgstr[1] "Escribir metadatos en los archivos seleccionados"
 
-#: core/app/main/digikamapp.cpp:788
+#: core/app/main/digikamapp.cpp:791
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"

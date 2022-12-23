@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-19 00:44+0000\n"
+"POT-Creation-Date: 2022-12-23 00:44+0000\n"
 "PO-Revision-Date: 2019-03-17 17:31+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -1423,30 +1423,30 @@ msgstr "<i>Dvejetainiai duomenys</i>"
 msgid "Initializing..."
 msgstr "Paleidžiama..."
 
-#: core/app/main/digikamapp.cpp:132 core/showfoto/main/showfoto.cpp:95
+#: core/app/main/digikamapp.cpp:135 core/showfoto/main/showfoto.cpp:95
 #, fuzzy, kde-format
 #| msgid "Loading KIPI Plugins..."
 msgid "Load Plugins..."
 msgstr "Įkeliami Kipi papildiniai..."
 
-#: core/app/main/digikamapp.cpp:157 core/showfoto/main/showfoto.cpp:77
+#: core/app/main/digikamapp.cpp:160 core/showfoto/main/showfoto.cpp:77
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:169
+#: core/app/main/digikamapp.cpp:172
 #, fuzzy, kde-format
 #| msgid "Reading database..."
 msgid "Clean up Database..."
 msgstr "Skaitoma duomenų bazė..."
 
-#: core/app/main/digikamapp.cpp:187
+#: core/app/main/digikamapp.cpp:190
 #, fuzzy, kde-format
 #| msgid "Loading cameras..."
 msgid "Loading albums..."
 msgstr "Įkeliami fotoaparatai..."
 
-#: core/app/main/digikamapp.cpp:335
+#: core/app/main/digikamapp.cpp:338
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1454,7 +1454,7 @@ msgid ""
 "\"Color Management\" feature will be disabled until you solve this issue.</p>"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:616 core/app/views/stack/trashview.cpp:428
+#: core/app/main/digikamapp.cpp:619 core/app/views/stack/trashview.cpp:428
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -1463,7 +1463,7 @@ msgstr[1] "Nepažymėti elementai (%1 elementai)"
 msgstr[2] "Nepažymėti elementai (%1 elementų)"
 msgstr[3] "Nepažymėti elementai (%1 elementas)"
 
-#: core/app/main/digikamapp.cpp:622
+#: core/app/main/digikamapp.cpp:625
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1474,7 +1474,7 @@ msgstr[1] "Nepažymėti elementai (%1 elementai)"
 msgstr[2] "Nepažymėti elementai (%1 elementų)"
 msgstr[3] "Nepažymėti elementai (%1 elementas)"
 
-#: core/app/main/digikamapp.cpp:627
+#: core/app/main/digikamapp.cpp:630
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1485,7 +1485,7 @@ msgstr[1] "Nepažymėti elementai (%1 elementai)"
 msgstr[2] "Nepažymėti elementai (%1 elementų)"
 msgstr[3] "Nepažymėti elementai (%1 elementas)"
 
-#: core/app/main/digikamapp.cpp:638
+#: core/app/main/digikamapp.cpp:641
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1496,7 +1496,7 @@ msgstr[1] "Pažymėtas %2/%1 objektas"
 msgstr[2] "Pažymėtas %2/%1 objektas"
 msgstr[3] "Pažymėtas %2/%1 objektas"
 
-#: core/app/main/digikamapp.cpp:651
+#: core/app/main/digikamapp.cpp:654
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1507,7 +1507,7 @@ msgstr[1] "Pažymėtas %2/%1 objektas"
 msgstr[2] "Pažymėtas %2/%1 objektas"
 msgstr[3] "Pažymėtas %2/%1 objektas"
 
-#: core/app/main/digikamapp.cpp:659
+#: core/app/main/digikamapp.cpp:662
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1518,7 +1518,7 @@ msgstr[1] "Nepažymėti elementai (%1 elementai)"
 msgstr[2] "Nepažymėti elementai (%1 elementų)"
 msgstr[3] "Nepažymėti elementai (%1 elementas)"
 
-#: core/app/main/digikamapp.cpp:667
+#: core/app/main/digikamapp.cpp:670
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -1529,7 +1529,7 @@ msgstr[1] "Pažymėtas %2/%1 objektas"
 msgstr[2] "Pažymėtas %2/%1 objektas"
 msgstr[3] "Pažymėtas %2/%1 objektas"
 
-#: core/app/main/digikamapp.cpp:676
+#: core/app/main/digikamapp.cpp:679
 #, fuzzy, kde-format
 #| msgid "No item selected (%1 item)"
 #| msgid_plural "No item selected (%1 items)"
@@ -1540,23 +1540,23 @@ msgstr[1] "Nepažymėti elementai (%1 elementai)"
 msgstr[2] "Nepažymėti elementai (%1 elementų)"
 msgstr[3] "Nepažymėti elementai (%1 elementas)"
 
-#: core/app/main/digikamapp.cpp:707
+#: core/app/main/digikamapp.cpp:710
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 iš %2)"
 
-#: core/app/main/digikamapp.cpp:721
+#: core/app/main/digikamapp.cpp:724
 #, fuzzy, kde-format
 #| msgid " (%1 of %2)"
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 iš %2)"
 
-#: core/app/main/digikamapp.cpp:725
+#: core/app/main/digikamapp.cpp:728
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:736
+#: core/app/main/digikamapp.cpp:739
 #, fuzzy, kde-format
 #| msgid "1 item"
 #| msgid_plural "%1 items"
@@ -1567,7 +1567,7 @@ msgstr[1] "%1 objektai"
 msgstr[2] "%1 objektų"
 msgstr[3] "%1 objektas"
 
-#: core/app/main/digikamapp.cpp:786
+#: core/app/main/digikamapp.cpp:789
 #, fuzzy, kde-format
 #| msgid "Write Metadata to Image"
 #| msgid_plural "Write Metadata to Selected Images"
@@ -1578,7 +1578,7 @@ msgstr[1] "Rašyti metaduomenis į pažymėtus paveikslėlius"
 msgstr[2] "Rašyti metaduomenis į pažymėtus paveikslėlius"
 msgstr[3] "Rašyti metaduomenis į pažymėtus paveikslėlius"
 
-#: core/app/main/digikamapp.cpp:788
+#: core/app/main/digikamapp.cpp:791
 #, fuzzy, kde-format
 #| msgid "Reread Metadata From Image"
 #| msgid_plural "Reread Metadata From Selected Images"

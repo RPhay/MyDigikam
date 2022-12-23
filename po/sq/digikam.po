@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-19 00:44+0000\n"
+"POT-Creation-Date: 2022-12-23 00:44+0000\n"
 "PO-Revision-Date: 2009-07-18 03:38+0000\n"
 "Last-Translator: Vilson Gjeci <vilsongjeci@gmail.com>\n"
 "Language-Team: Albanian <sq@li.org>\n"
@@ -1358,27 +1358,27 @@ msgstr ""
 msgid "Initializing..."
 msgstr "Duke Nisur..."
 
-#: core/app/main/digikamapp.cpp:132 core/showfoto/main/showfoto.cpp:95
+#: core/app/main/digikamapp.cpp:135 core/showfoto/main/showfoto.cpp:95
 #, fuzzy, kde-format
 msgid "Load Plugins..."
 msgstr "Duke u ngarkuar: "
 
-#: core/app/main/digikamapp.cpp:157 core/showfoto/main/showfoto.cpp:77
+#: core/app/main/digikamapp.cpp:160 core/showfoto/main/showfoto.cpp:77
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:169
+#: core/app/main/digikamapp.cpp:172
 #, fuzzy, kde-format
 msgid "Clean up Database..."
 msgstr "Mënyrë ngjyre: "
 
-#: core/app/main/digikamapp.cpp:187
+#: core/app/main/digikamapp.cpp:190
 #, fuzzy, kde-format
 msgid "Loading albums..."
 msgstr "Duke u ngarkuar: "
 
-#: core/app/main/digikamapp.cpp:335
+#: core/app/main/digikamapp.cpp:338
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1386,28 +1386,28 @@ msgid ""
 "\"Color Management\" feature will be disabled until you solve this issue.</p>"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:616 core/app/views/stack/trashview.cpp:428
+#: core/app/main/digikamapp.cpp:619 core/app/views/stack/trashview.cpp:428
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/main/digikamapp.cpp:622
+#: core/app/main/digikamapp.cpp:625
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/main/digikamapp.cpp:627
+#: core/app/main/digikamapp.cpp:630
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/main/digikamapp.cpp:638
+#: core/app/main/digikamapp.cpp:641
 #, fuzzy, kde-format
 #| msgid "Invert Selection"
 msgid "1/%2 item selected (%3/%4)"
@@ -1415,7 +1415,7 @@ msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "Ndërro Zgjedhjen"
 msgstr[1] "Ndërro Zgjedhjen"
 
-#: core/app/main/digikamapp.cpp:651
+#: core/app/main/digikamapp.cpp:654
 #, fuzzy, kde-format
 #| msgid "Invert Selection"
 msgid "1/%2 [%3] item selected (%4/%5)"
@@ -1423,7 +1423,7 @@ msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "Ndërro Zgjedhjen"
 msgstr[1] "Ndërro Zgjedhjen"
 
-#: core/app/main/digikamapp.cpp:659
+#: core/app/main/digikamapp.cpp:662
 #, fuzzy, kde-format
 #| msgid "Invert Selection"
 msgid "1/%2 item selected. Total with grouped items: %3"
@@ -1431,7 +1431,7 @@ msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "Ndërro Zgjedhjen"
 msgstr[1] "Ndërro Zgjedhjen"
 
-#: core/app/main/digikamapp.cpp:667
+#: core/app/main/digikamapp.cpp:670
 #, fuzzy, kde-format
 #| msgid "Invert Selection"
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
@@ -1439,7 +1439,7 @@ msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "Ndërro Zgjedhjen"
 msgstr[1] "Ndërro Zgjedhjen"
 
-#: core/app/main/digikamapp.cpp:676
+#: core/app/main/digikamapp.cpp:679
 #, fuzzy, kde-format
 #| msgid "Invert Selection"
 msgid "1/%2 item selected. With grouped items: %3/%4"
@@ -1447,24 +1447,24 @@ msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "Ndërro Zgjedhjen"
 msgstr[1] "Ndërro Zgjedhjen"
 
-#: core/app/main/digikamapp.cpp:707
+#: core/app/main/digikamapp.cpp:710
 #, kde-format
 msgid " (%1 of %2)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:721
+#: core/app/main/digikamapp.cpp:724
 #, fuzzy, kde-format
 #| msgctxt "<Image file name> (<Image number> of <Images in album>)"
 #| msgid "%1 (%2 of %3)"
 msgid " (%1 of %2 [%3] )"
 msgstr "%1 (%2 nga %3)"
 
-#: core/app/main/digikamapp.cpp:725
+#: core/app/main/digikamapp.cpp:728
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:736
+#: core/app/main/digikamapp.cpp:739
 #, fuzzy, kde-format
 #| msgid "Invert Selection"
 msgid "%1 item hidden"
@@ -1472,14 +1472,14 @@ msgid_plural "%1 items hidden"
 msgstr[0] "Ndërro Zgjedhjen"
 msgstr[1] "Ndërro Zgjedhjen"
 
-#: core/app/main/digikamapp.cpp:786
+#: core/app/main/digikamapp.cpp:789
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/main/digikamapp.cpp:788
+#: core/app/main/digikamapp.cpp:791
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
