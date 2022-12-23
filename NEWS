@@ -219,5 +219,5 @@ BUGFIXES:
 181 ==> 462916 - Different renaming behaviors for video files depending of the device.
 182 ==> 463180 - Reread Metadata From File doesn't cleanup Tags.
 183 ==> 379251 - Add a section to recommend hardware to use digiKam.
-184 ==>.
-185 ==>.
+184 ==> 461236 - Inpainting documentation doesn't correspond at any enhancement tool.
+185 ==> 
