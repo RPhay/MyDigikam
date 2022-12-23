@@ -218,6 +218,6 @@ BUGFIXES:
 180 ==> 462807 - How to show GPS-Tracks in addition to geotagged photos in Maps view.
 181 ==> 462916 - Different renaming behaviors for video files depending of the device.
 182 ==> 463180 - Reread Metadata From File doesn't cleanup Tags.
-183 ==> 
+183 ==> 379251 - Add a section to recommend hardware to use digiKam.
 184 ==>.
 185 ==>.
