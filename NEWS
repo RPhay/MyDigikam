@@ -222,7 +222,7 @@ BUGFIXES:
 184 ==> 461236 - Inpainting documentation doesn't correspond at any enhancement tool.
 185 ==> 412650 - Can't uninstall and reinstall digikam properly on macOS - preferences remain, no first run dialog.
 186 ==> 272779 - Color editing tools: example images are not marked as before/after.
-187 ==> 
+187 ==> 459483 - Update documentation to explain how Digikam links metadata to images.
 188 ==> 
 189 ==> 
 190 ==> 
