@@ -231,8 +231,8 @@ BUGFIXES:
 191 ==> 441521 - Where to find package called digikam-doc?
 192 ==> 404613 - Docs are missing.
 193 ==> 254434 - Application fail to build without handbook ("wrong doc dir specified" error).
-194 ==> 203022 - digiKam is not listed as IPTC-compatible software.
-195 ==> 
+194 ==> 463422 - Multiple selection of tags in left tags bar cant be converted into face tags, only first.
+195 ==> 203022 - digiKam is not listed as IPTC-compatible software.
 196 ==> 
 197 ==> 
 198 ==> 
