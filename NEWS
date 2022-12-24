@@ -234,7 +234,7 @@ BUGFIXES:
 194 ==> 463422 - Multiple selection of tags in left tags bar cant be converted into face tags, only first.
 195 ==> 203022 - digiKam is not listed as IPTC-compatible software.
 196 ==> 282869 - Provide a list of CMake configuration options.
-197 ==> 
+197 ==> 126164 - Link application Help entry to new online handbook based on Sphinx/ReStructuredText.
 198 ==> 
 199 ==> 
 200 ==> 
