@@ -230,7 +230,7 @@ BUGFIXES:
 190 ==> 112147 - digiKam tarballs missing documentation.
 191 ==> 441521 - Where to find package called digikam-doc?
 192 ==> 404613 - Docs are missing.
-193 ==> 
+193 ==> 254434 - Application fail to build without handbook ("wrong doc dir specified" error).
 194 ==> 
 195 ==> 
 196 ==> 
