@@ -233,7 +233,7 @@ BUGFIXES:
 193 ==> 254434 - Application fail to build without handbook ("wrong doc dir specified" error).
 194 ==> 463422 - Multiple selection of tags in left tags bar cant be converted into face tags, only first.
 195 ==> 203022 - digiKam is not listed as IPTC-compatible software.
-196 ==> 
+196 ==> 282869 - Provide a list of CMake configuration options.
 197 ==> 
 198 ==> 
 199 ==> 
