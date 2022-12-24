@@ -200,8 +200,7 @@ void DXmlGuiWindow::slotHelpContents()
 
 void DXmlGuiWindow::openHandbook()
 {
-    QUrl url(QString::fromUtf8("https://docs.kde.org/?application=%1&branch=trunk5")
-             .arg(QApplication::applicationName()));
+    QUrl url(QString::fromUtf8("https://docs.digikam.org/en/index.html"));
 
 #ifdef HAVE_QWEBENGINE
 

@@ -91,8 +91,7 @@ FaceManagementHelpDlg::FaceManagementHelpDlg(QWidget* const parent)
 
     // Link to digiKam documentation
 
-    QString documentationLink = i18n(
-            "https://docs.kde.org/?application=digikam&branch=trunk5&path=using-digikam.html#using-mainwindow-peopleview");
+    QString documentationLink = QLatin1String("https://docs.digikam.org/en/main_window/people_view.html");
 
     QLabel* const footerText = new QLabel(infoPage);
     footerText->setOpenExternalLinks(true);
