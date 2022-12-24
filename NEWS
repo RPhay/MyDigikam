@@ -32,6 +32,8 @@ Maintenance    : Add Aesthetic Detection to classify images using deep learning 
 QueueManager   : Add new tool to assign pick label automatically by parsing image quality.
 QueueManager   : Add new tool to assign rating, pick, and color labels in batch.
 QueueManager   : Add new tool to assign titles and captions in batch.
+Documentation  : Rewrite handbook from DocBook to Sphinx/ReStructuredText framework.
+                 https://docs.digikam.org/en/index.html
 
 *****************************************************************************************************
 BUGFIXES:
