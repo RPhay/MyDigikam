@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-23 00:44+0000\n"
+"POT-Creation-Date: 2022-12-24 00:47+0000\n"
 "PO-Revision-Date: 2021-05-02 20:46-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -33802,7 +33802,7 @@ msgstr "ノイズ低減設定ファイルに設定を保存できません。"
 msgid "Raw Conversion"
 msgstr "カラースペースの変換"
 
-#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:100
+#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:96
 #, fuzzy, kde-format
 #| msgid "Red-Eye Correction Tool"
 msgid "RedEye Correction Filter"

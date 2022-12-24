@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-23 00:44+0000\n"
+"POT-Creation-Date: 2022-12-24 00:47+0000\n"
 "PO-Revision-Date: 2022-05-12 10:31+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -33119,7 +33119,7 @@ msgstr ""
 msgid "Raw Conversion"
 msgstr "Prevod do RAW"
 
-#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:100
+#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:96
 #, kde-format
 msgid "RedEye Correction Filter"
 msgstr "Nástroj korekcie červených očí"

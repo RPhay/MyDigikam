@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-23 00:44+0000\n"
+"POT-Creation-Date: 2022-12-24 00:47+0000\n"
 "PO-Revision-Date: 2022-12-11 14:30+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -34527,7 +34527,7 @@ msgstr "Ayarlar Fotoğraf Gürültü Azaltma yazı dosyasına kaydedilemiyor."
 msgid "Raw Conversion"
 msgstr "Ham Dönüştürme"
 
-#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:100
+#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:96
 #, kde-format
 msgid "RedEye Correction Filter"
 msgstr "Kırmızı Göz Düzeltme Aracı"

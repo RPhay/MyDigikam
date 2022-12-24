@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-23 00:44+0000\n"
+"POT-Creation-Date: 2022-12-24 00:47+0000\n"
 "PO-Revision-Date: 2007-06-27 10:27-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -33457,7 +33457,7 @@ msgstr ""
 msgid "Raw Conversion"
 msgstr ""
 
-#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:100
+#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:96
 #, fuzzy, kde-format
 #| msgid "Noise Reduction Filter"
 msgid "RedEye Correction Filter"

@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-23 00:44+0000\n"
+"POT-Creation-Date: 2022-12-24 00:47+0000\n"
 "PO-Revision-Date: 2022-09-28 20:47+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -33584,7 +33584,7 @@ msgstr "Nie mogę zapisać ustawień do tekstowego pliku redukcji szumów."
 msgid "Raw Conversion"
 msgstr "Przekształcenie Raw"
 
-#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:100
+#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:96
 #, kde-format
 msgid "RedEye Correction Filter"
 msgstr "Filtr usuwający czerwone oczy"

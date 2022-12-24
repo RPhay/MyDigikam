@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-23 00:44+0000\n"
+"POT-Creation-Date: 2022-12-24 00:47+0000\n"
 "PO-Revision-Date: 2022-10-04 15:13+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -33576,7 +33576,7 @@ msgstr "Не удалось сохранить параметры подавле
 msgid "Raw Conversion"
 msgstr "Преобразование «цифрового негатива»"
 
-#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:100
+#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:96
 #, kde-format
 msgid "RedEye Correction Filter"
 msgstr "Инструмент удаления эффекта «красных глаз»"
