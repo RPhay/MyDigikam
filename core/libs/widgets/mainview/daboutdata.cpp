@@ -6,7 +6,7 @@
  * Date        : 2008-07-30
  * Description : digiKam about data.
  *
- * SPDX-FileCopyrightText: 2008-2022 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2008-2023 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -65,7 +65,7 @@ const QString DAboutData::digiKamFamily()
 
 const QString DAboutData::copyright()
 {
-    return i18n("(c) 2001-2022, digiKam developers team");
+    return i18n("(c) 2001-2023, digiKam developers team");
 }
 
 const QUrl DAboutData::webProjectUrl()
