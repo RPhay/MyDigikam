@@ -257,14 +257,20 @@ void TagFolderView::setContexMenuItems(ContextMenuHelper& cmh, const QList<TAlbu
 
         // If one of the selected tags is no face tag, add the action to mark them as face tags.
 
+        QList<TAlbum*> toFaceTags;
+
         Q_FOREACH (TAlbum* const tag, albums)
         {
             if (!FaceTags::isPerson(tag->id()))
-            {   // cppcheck-suppress useStlAlgorithm
-                cmh.addSeparator();
-                cmh.addActionTagToFaceTag(tagModificationHelper(), tag);
-                break;
+            {
+                toFaceTags << tag;
             }
+        }
+
+        if (!toFaceTags.isEmpty())
+        {
+            cmh.addSeparator();
+            cmh.addActionTagsToFaceTags(tagModificationHelper(), toFaceTags);
         }
     }
 

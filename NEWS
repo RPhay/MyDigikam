@@ -231,7 +231,7 @@ BUGFIXES:
 191 ==> 441521 - Where to find package called digikam-doc?
 192 ==> 404613 - Docs are missing.
 193 ==> 254434 - Application fail to build without handbook ("wrong doc dir specified" error).
-194 ==> 
+194 ==> 463422 - Multiple selection of tags in left tags bar cant be converted into face tags, only first.
 195 ==> 
 196 ==> 
 197 ==> 
