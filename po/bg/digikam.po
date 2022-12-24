@@ -33,8 +33,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-23 00:44+0000\n"
-"PO-Revision-Date: 2022-12-22 19:01+0100\n"
+"POT-Creation-Date: 2022-12-24 00:47+0000\n"
+"PO-Revision-Date: 2022-12-23 18:15+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -3549,7 +3549,7 @@ msgstr "Добре дошли в digiKam %1!"
 #: core/app/views/stack/welcomepageview.cpp:272
 #, kde-format
 msgid "Background Image Credits"
-msgstr "Списък на фоновите изображения"
+msgstr "Информация за изображението на фона"
 
 #: core/app/views/stack/welcomepageview.cpp:275
 #, kde-format
@@ -6504,7 +6504,7 @@ msgstr "Автоматична корекция на обектива"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to fix automatically lens artifacts"
-msgstr ""
+msgstr "Инструмент за автоматично поправяне на артефакти на обектива"
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:66
 #, kde-kuit-format
@@ -6526,7 +6526,7 @@ msgstr "Местен контраст"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to emulate tone mapping"
-msgstr ""
+msgstr "Инструмент за емулиране на тонално картографиране"
 
 #: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:66
 #, kde-kuit-format
@@ -6548,7 +6548,7 @@ msgstr "Намаляване на шума"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to remove photograph noise using wavelets"
-msgstr ""
+msgstr "Инструмент за отстраняване на фотографски шум с помощта на wavelet-и"
 
 #: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:66
 #, kde-kuit-format
@@ -6582,7 +6582,7 @@ msgstr ""
 #: core/dplugins/editor/transform/resize/resizetool.cpp:398
 #, kde-format
 msgid "Visit CImg library website"
-msgstr ""
+msgstr "Посетете уебсайта на библиотеката CImg"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:64
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:146
@@ -6663,7 +6663,7 @@ msgstr "Цветни ефекти"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to apply color effects"
-msgstr ""
+msgstr "Инструмент за прилагане на цветови ефекти"
 
 #: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:66
 #, kde-kuit-format
@@ -6684,7 +6684,7 @@ msgstr "Филмова зърнистост"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to add film grain"
-msgstr ""
+msgstr "Инструмент за добавяне на ефект филмова зърнистост"
 
 #: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:66
 #, kde-kuit-format
@@ -6715,7 +6715,7 @@ msgstr "Надписи:"
 #, kde-format
 msgctxt "@info"
 msgid "Enter caption text here."
-msgstr ""
+msgstr "Въведете текста на заглавието тук."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:112
 #, kde-format
@@ -6730,6 +6730,9 @@ msgid ""
 "replaced by the new values,\n"
 "else old values will be merged with new values."
 msgstr ""
+"Ако включите тази опция, заглавията и надписите ще бъдат изчистени и "
+"заменени с новите стойности,\n"
+"в противен случай старите стойности ще бъдат обединени с новите стойности."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:46
 #, kde-format
@@ -6741,7 +6744,7 @@ msgstr "Присвояване на надписи"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to assign captions metadata to images"
-msgstr ""
+msgstr "Инструмент за задаване на метаданни за надписи към изображения"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:66
 #, kde-kuit-format
@@ -6776,7 +6779,7 @@ msgstr "Присвояване на етикети"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to assign labels metadata to images"
-msgstr ""
+msgstr "Инструмент за присвояване на метаданни за етикети към изображения"
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:66
 #, kde-kuit-format
@@ -6796,7 +6799,7 @@ msgstr "Задаване на тагове"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to assign tags metadata to images"
-msgstr ""
+msgstr "Инструмент за задаване на метаданни за тагове към изображения"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:66
 #, kde-kuit-format
@@ -6816,7 +6819,7 @@ msgstr "Прилагане на шаблона за метаданни"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to apply metadata template to images"
-msgstr ""
+msgstr "Инструмент за прилагане на шаблон за метаданни към изображения"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:66
 #, kde-kuit-format
@@ -6964,7 +6967,7 @@ msgstr "Надпис, коментар и описание"
 #, kde-format
 msgctxt "@info"
 msgid "Remove Metadata: Not the last tool in the list."
-msgstr ""
+msgstr "Премахване на метаданни: Не е последният инструмент в списъка."
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadataplugin.cpp:46
 #, kde-format
@@ -6994,7 +6997,7 @@ msgstr "Настройка на времето"
 #: core/dplugins/bqm/metadata/timeadjust/timeadjust.cpp:44
 #, kde-format
 msgid "Adjust Date Time Stamp of Image"
-msgstr ""
+msgstr "Настройване на датата и часа на изображението"
 
 #: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:46
 #: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:43
@@ -7007,7 +7010,7 @@ msgstr "Настройка на времето"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust date and time-stamp from images"
-msgstr ""
+msgstr "Инструмент за настройване на клеймото за дата и час от изображения"
 
 #: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:66
 #, kde-kuit-format
@@ -7061,7 +7064,7 @@ msgstr "Превод на метаданни"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to translate strings from image metadata"
-msgstr ""
+msgstr "Инструмент за превеждане на низове от метаданни на изображения"
 
 #: core/dplugins/bqm/metadata/translate/translateplugin.cpp:66
 #, kde-kuit-format
@@ -7102,13 +7105,13 @@ msgstr ""
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:368
 #, kde-format
 msgid "Set here the width selection for cropping."
-msgstr ""
+msgstr "Задайте тук избора на ширина за изрязване."
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:120
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:380
 #, kde-format
 msgid "Set here the height selection for cropping."
-msgstr ""
+msgstr "Задайте тук избора на височина за изрязване."
 
 #: core/dplugins/bqm/transform/crop/cropplugin.cpp:46
 #, kde-format
@@ -7120,7 +7123,7 @@ msgstr "Изрязване"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to crop images to a region"
-msgstr ""
+msgstr "Инструмент за изрязване на изображения до определена област"
 
 #: core/dplugins/bqm/transform/crop/cropplugin.cpp:66
 #, kde-kuit-format
@@ -7156,7 +7159,7 @@ msgstr "Обръщане"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to flip images horizontally or vertically"
-msgstr ""
+msgstr "Инструмент за обръщане на изображенията по хоризонтала или вертикала"
 
 #: core/dplugins/bqm/transform/flip/flipplugin.cpp:66
 #, kde-kuit-format
@@ -7216,7 +7219,7 @@ msgstr[1] "Много голяма (%1 пиксела)"
 #: core/dplugins/bqm/transform/resize/resize.cpp:159
 #, kde-format
 msgid "Not enlarge small images"
-msgstr ""
+msgstr "Да не се уголемяват малки изображения"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:160
 #, kde-format
@@ -7245,6 +7248,7 @@ msgstr "Преоразмеряване"
 msgctxt "@info"
 msgid "A tool to resize images with a customized length"
 msgstr ""
+"Инструмент за промяна на размера на изображенията с персонализирана дължина"
 
 #: core/dplugins/bqm/transform/resize/resizeplugin.cpp:66
 #, kde-kuit-format
@@ -7343,13 +7347,13 @@ msgstr "Зареждане на HEIF"
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libheif codec"
-msgstr ""
+msgstr "Инструмент за зареждане на изображения, базиран на кодека Libheif"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:67
 #, kde-format
 msgctxt "@info"
 msgid "This library is not present on your system."
-msgstr ""
+msgstr "Тази библиотека не присъства във вашата система."
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:75
 #, kde-format
@@ -7391,7 +7395,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "High efficiency image coding"
-msgstr ""
+msgstr "Високоефективно кодиране на изображения"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:118
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:128
@@ -7458,7 +7462,7 @@ msgstr "Стартер на ImageMagick"
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on ImageMagick coders"
-msgstr ""
+msgstr "Програма за зареждане на изображения, базирана на ImageMagick"
 
 #: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:94
 #, kde-kuit-format
@@ -7551,7 +7555,7 @@ msgstr "Зареждане на JPEG"
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libjpeg codec"
-msgstr ""
+msgstr "Програма за зареждане на изображения, базирана на кодека Libjpeg"
 
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:67
 #, kde-kuit-format
@@ -7614,7 +7618,7 @@ msgstr "Зареждане на JPEG-2000"
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libjasper codec"
-msgstr ""
+msgstr "Програма за зареждане на изображения, базирана на кодека Libjasper"
 
 #: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:136
 #, kde-kuit-format
@@ -7648,7 +7652,7 @@ msgstr "Поток JPEG-2000"
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 verification model"
-msgstr ""
+msgstr "Модел за проверка на JPEG-2000"
 
 #: core/dplugins/dimg/pgf/dimgpgfexportsettings.cpp:68
 #, kde-format
@@ -7690,7 +7694,7 @@ msgstr "Зареждане на PGF"
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libpgf codec"
-msgstr ""
+msgstr "Програма за зареждане на изображения, базирана на кодека Libpgf"
 
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:67
 #, kde-kuit-format
@@ -7742,7 +7746,7 @@ msgstr "Зареждане на  PNG"
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libpng codec"
-msgstr ""
+msgstr "Програма за зареждане на изображения, базирана на кодека Libpng"
 
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:67
 #, kde-kuit-format
@@ -7760,7 +7764,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Portable Network Graphic"
-msgstr ""
+msgstr "Portable Network Graphic"
 
 #: core/dplugins/dimg/qimage/dimgavifexportsettings.cpp:68
 #, kde-format
@@ -7826,7 +7830,7 @@ msgstr "Зареждане на QImage"
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on QImage plugins"
-msgstr ""
+msgstr "Програма за зареждане на изображения, базирана на приставки QImage"
 
 #: core/dplugins/dimg/qimage/dimgqimageplugin.cpp:70
 #, kde-kuit-format
@@ -7877,7 +7881,7 @@ msgstr "Зареждане на RAW"
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libraw codec"
-msgstr ""
+msgstr "Програма за зареждане на изображения, базирана на кодека Libraw"
 
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:67
 #, kde-kuit-format
@@ -7929,7 +7933,7 @@ msgstr "Зареждане на TIFF"
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libtiff codec"
-msgstr ""
+msgstr "Програма за зареждане на изображения, базирана на кодека Libtiff"
 
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:67
 #, kde-kuit-format
@@ -7986,7 +7990,7 @@ msgstr ""
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:200
 #, kde-format
 msgid "Select the input intensity of the histogram here."
-msgstr ""
+msgstr "Тук изберете входния интензитет на хистограмата."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:201
 #, kde-format
@@ -8011,7 +8015,7 @@ msgstr ""
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:216
 #, kde-format
 msgid "Minimal input intensity."
-msgstr ""
+msgstr "Минимална интензивност на въвеждане."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:222
 #: core/dplugins/editor/colors/film/filmtool.cpp:275
@@ -8022,12 +8026,12 @@ msgstr "Входна стойност на гама."
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:223
 #, kde-format
 msgid "Select the gamma input value here."
-msgstr ""
+msgstr "Тук изберете входната стойност на гама."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:228
 #, kde-format
 msgid "Maximal input intensity."
-msgstr ""
+msgstr "Максимална интензивност на въвеждане."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:229
 #, kde-format
@@ -8037,7 +8041,7 @@ msgstr ""
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:234
 #, kde-format
 msgid "Minimal output intensity."
-msgstr ""
+msgstr "Минимален изходен интензитет."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:235
 #, kde-format
@@ -8047,7 +8051,7 @@ msgstr ""
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:240
 #, kde-format
 msgid "Maximal output intensity."
-msgstr ""
+msgstr "Максимален изходен интензитет."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:241
 #, kde-format
@@ -8058,7 +8062,7 @@ msgstr ""
 #: core/libs/dimg/filters/curves/curvesbox.cpp:177
 #, kde-format
 msgid "All channels shadow tone color picker"
-msgstr ""
+msgstr "Избор на цвят на тона на сянката на всички канали"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:251
 #, kde-format
@@ -8075,7 +8079,7 @@ msgstr ""
 #: core/libs/dimg/filters/curves/curvesbox.cpp:185
 #, kde-format
 msgid "All channels middle tone color picker"
-msgstr ""
+msgstr "Избор на цвят на средния тон на всички канали"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:259
 #, kde-format
@@ -8092,7 +8096,7 @@ msgstr ""
 #: core/libs/dimg/filters/curves/curvesbox.cpp:193
 #, kde-format
 msgid "All channels highlight tone color picker"
-msgstr ""
+msgstr "Избор на цвят на светлия тон за всички канали"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:267
 #, kde-format
@@ -8108,7 +8112,7 @@ msgstr ""
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:290
 #, kde-format
 msgid "Adjust all levels automatically."
-msgstr ""
+msgstr "Автоматично регулиране на всички нива."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:291
 #, kde-format
@@ -8127,7 +8131,7 @@ msgstr "&Възстановяване"
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:296
 #, kde-format
 msgid "Reset current channel levels' values."
-msgstr ""
+msgstr "Нулиране на текущите стойности на нивата на каналите."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:297
 #, kde-format
@@ -8144,22 +8148,22 @@ msgstr "Регулиране на нивата"
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:890
 #, kde-format
 msgid "Select Gimp Levels File to Load"
-msgstr ""
+msgstr "Изберете файл с нива на Gimp за зареждане"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:902
 #, kde-format
 msgid "Cannot load from the Gimp levels text file."
-msgstr ""
+msgstr "Не може да се зареди от текстовия файл с нива на Gimp."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:917
 #, kde-format
 msgid "Gimp Levels File to Save"
-msgstr ""
+msgstr "Файл с нива на Gimp за запазване"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:929
 #, kde-format
 msgid "Cannot save to the Gimp levels text file."
-msgstr ""
+msgstr "Не може да се запише в текстов файл с нива на Gimp."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:44
 #, kde-format
@@ -8171,7 +8175,7 @@ msgstr "Регулиране на нивата"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust color levels"
-msgstr ""
+msgstr "Инструмент за регулиране на нивата на цветовете"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:64
 #, kde-format
@@ -8241,12 +8245,12 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Color Auto-Correction..."
-msgstr ""
+msgstr "Автоматична корекция на цветовете..."
 
 #: core/dplugins/editor/colors/bcg/bcgtool.cpp:169
 #, kde-format
 msgid "Brightness / Contrast / Gamma"
-msgstr ""
+msgstr "Яркост / Контраст / Гама"
 
 #: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:64
 #, kde-format
@@ -8259,12 +8263,12 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Brightness/Contrast/Gamma..."
-msgstr ""
+msgstr "Яркост/Контраст/Гама..."
 
 #: core/dplugins/editor/colors/bwsepia/bwsepiatool.cpp:187
 #, kde-format
 msgid "Convert to Black and White"
-msgstr ""
+msgstr "Конвертиране в черно-бяло"
 
 #: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:44
 #, kde-format
@@ -8371,17 +8375,17 @@ msgstr "Цветен негативен филм"
 #: core/dplugins/editor/colors/film/filmtool.cpp:193
 #, kde-format
 msgid "Input range of red color channel."
-msgstr ""
+msgstr "Входящ обхват на червения цветови канал."
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:198
 #, kde-format
 msgid "Input range of green color channel."
-msgstr ""
+msgstr "Входящ диапазон на зеления цветови канал."
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:203
 #, kde-format
 msgid "Input range of blue color channel."
-msgstr ""
+msgstr "Входящ диапазон на синия цветови канал."
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:224
 #, kde-format
@@ -8393,7 +8397,7 @@ msgstr ""
 #: core/dplugins/editor/colors/film/filmtool.cpp:232
 #, kde-format
 msgid "White point color picker"
-msgstr ""
+msgstr "Избор на цвят на бялата точка"
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:233
 #, kde-format
@@ -8417,7 +8421,7 @@ msgstr ""
 #: core/dplugins/editor/colors/film/filmtool.cpp:246
 #, kde-format
 msgid "Adjust white point automatically."
-msgstr ""
+msgstr "Автоматично настройване на бялата точка."
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:247
 #, kde-format
@@ -8463,7 +8467,7 @@ msgstr "Цветен негативен филм"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to emulate color negative film"
-msgstr ""
+msgstr "Инструмент за имитация на цветен негативен филм"
 
 #: core/dplugins/editor/colors/film/filmtoolplugin.cpp:64
 #, kde-format
@@ -8538,7 +8542,7 @@ msgstr "Конвертиране на цветови профил"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to convert image to a color space"
-msgstr ""
+msgstr "Инструмент за преобразуване на изображение в цветово пространство"
 
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:70
 #, kde-format
@@ -8556,19 +8560,19 @@ msgstr "Цветни пространства"
 #, kde-format
 msgctxt "@action"
 msgid "Color Space Converter..."
-msgstr ""
+msgstr "Конвертор на цветовото пространство..."
 
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:126
 #, kde-format
 msgctxt "@info"
 msgid "This image is not color managed."
-msgstr ""
+msgstr "Управляването на цветовете в това изображение не е възможно."
 
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:143
 #, kde-format
 msgctxt "@action"
 msgid "Color Management is disabled..."
-msgstr ""
+msgstr "Управлението на цветовете е деактивирано..."
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:80
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:207
@@ -8599,7 +8603,7 @@ msgstr "Добавяне на граница"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to add a border around image"
-msgstr ""
+msgstr "Инструмент за добавяне на рамка около изображението"
 
 #: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:64
 #, kde-format
@@ -8628,7 +8632,7 @@ msgstr ""
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:151
 #, kde-format
 msgid "Here you can choose the font to be used."
-msgstr ""
+msgstr "Тук можете да изберете шрифта, който да се използва."
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:164
 #, kde-format
@@ -8674,7 +8678,7 @@ msgstr "270 градуса"
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:201
 #, kde-format
 msgid "Select the text rotation to use here."
-msgstr ""
+msgstr "Тук можете да изберете ротацията на текста."
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:205
 #, kde-format
@@ -8685,7 +8689,7 @@ msgstr "Цвят:"
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:208
 #, kde-format
 msgid "Set here the font color to use."
-msgstr ""
+msgstr "Задайте тук цвета на шрифта, който да се използва."
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:212
 #, kde-format
@@ -8696,7 +8700,7 @@ msgstr "Непрозрачност:"
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:217
 #, kde-format
 msgid "Select the text opacity to use here."
-msgstr ""
+msgstr "Изберете непрозрачността на текста, която да използвате тук."
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:221
 #, kde-format
@@ -8718,7 +8722,7 @@ msgstr "Полупрозрачен"
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:225
 #, kde-format
 msgid "Use semi-transparent text background under image"
-msgstr ""
+msgstr "Използване на полупрозрачен фон на текста под изображението"
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:317
 #, kde-format
@@ -8745,7 +8749,7 @@ msgstr "Вмъкване на текст"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to insert text over an image"
-msgstr ""
+msgstr "Инструмент за вмъкване на текст върху изображение"
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttoolplugin.cpp:64
 #, kde-format
@@ -8774,7 +8778,7 @@ msgstr "Текстура"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to apply a texture over an image"
-msgstr ""
+msgstr "Инструмент за нанасяне на текстура върху изображение"
 
 #: core/dplugins/editor/decorate/texture/texturetoolplugin.cpp:64
 #, kde-format
@@ -8804,7 +8808,7 @@ msgstr "Коригиране на винетирането"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to correct vignetting"
-msgstr ""
+msgstr "Инструмент за коригиране на винетирането"
 
 #: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:64
 #, kde-format
@@ -8816,7 +8820,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Vignetting Correction..."
-msgstr ""
+msgstr "Корекция на винетирането..."
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:157
 #, kde-format
@@ -8840,6 +8844,7 @@ msgstr "Инструмент за размазване на изображени
 msgctxt "@info"
 msgid "This Image Editor tool can blur an image."
 msgstr ""
+"Този инструмент за редактиране на изображения може да замъгли изображението."
 
 #: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:83
 #, kde-format
@@ -8960,7 +8965,7 @@ msgstr "Инструмент за изцеление на клониране"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to fix image artifacts"
-msgstr ""
+msgstr "Инструмент за коригиране на артефакти в изображението"
 
 #: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:65
 #, kde-format
@@ -9068,7 +9073,7 @@ msgstr "Мащаб:"
 #: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:143
 #, kde-format
 msgid "This value rescales the overall image size."
-msgstr ""
+msgstr "Тази стойност променя общия размер на изображението."
 
 #: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:147
 #, kde-format
@@ -9095,7 +9100,7 @@ msgstr "Изкривяване на обектива"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust lens distortions"
-msgstr ""
+msgstr "Инструмент за коригиране на изкривяванията на обектива"
 
 #: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:64
 #, kde-format
@@ -9137,6 +9142,8 @@ msgstr "Намаляване на шума"
 msgctxt "@info"
 msgid "This Image Editor tool can reduce noise in image."
 msgstr ""
+"Този инструмент за редактиране на изображения може да намали шума в "
+"изображението."
 
 #: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:80
 #, kde-format
@@ -9217,7 +9224,7 @@ msgstr "Възстановяване"
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:344
 #, kde-format
 msgid "Photograph Restoration Settings File to Load"
-msgstr ""
+msgstr "Файл с настройки за възстановяване на снимка за зареждане"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:360
 #, kde-format
@@ -9232,7 +9239,7 @@ msgstr ""
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:383
 #, kde-format
 msgid "Photograph Restoration Settings File to Save"
-msgstr ""
+msgstr "Файл с настройки за възстановяване на снимки за запазване"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:401
 #, kde-format
@@ -9286,13 +9293,14 @@ msgstr "Изостряне"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to sharp an image"
-msgstr ""
+msgstr "Инструмент за изостряне на изображение"
 
 #: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:64
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can sharp an image."
 msgstr ""
+"Този инструмент за редактиране на изображения може да изостри изображението."
 
 #: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:80
 #, kde-format
@@ -9308,7 +9316,7 @@ msgstr "Отпечатване на изображението"
 #: core/dplugins/editor/file/print/printoptionspage.cpp:90
 #, kde-format
 msgid "Use Color Management for Printing"
-msgstr ""
+msgstr "Използване на управление на цветовете за отпечатване"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:92
 #: core/libs/imgqsort/imagequalityconfselector.cpp:78
@@ -9418,13 +9426,14 @@ msgstr "Отпечатване на изображението"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to print an image"
-msgstr ""
+msgstr "Инструмент за отпечатване на изображение"
 
 #: core/dplugins/editor/file/print/printplugin.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can print an image."
 msgstr ""
+"Този инструмент за редактиране на изображения може да отпечатва изображение."
 
 #: core/dplugins/editor/file/print/printplugin.cpp:84
 #, kde-format
@@ -9521,7 +9530,7 @@ msgstr "Разстояние:"
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:148
 #, kde-format
 msgid "Set here the blur distance in pixels."
-msgstr ""
+msgstr "Задайте тук разстоянието на размазване в пиксели."
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:150
 #, kde-format
@@ -9549,7 +9558,7 @@ msgstr "Замъглени ефекти"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to apply blur effects to an image"
-msgstr ""
+msgstr "Инструмент за прилагане на ефекти на размазване на изображението"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtoolplugin.cpp:64
 #, kde-format
@@ -9601,7 +9610,7 @@ msgstr "Скица с въглени"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to emulate charcoal drawing"
-msgstr ""
+msgstr "Инструмент за имитиране на рисуване с въглен"
 
 #: core/dplugins/editor/filters/charcoal/charcoaltoolplugin.cpp:64
 #, kde-format
@@ -9619,7 +9628,7 @@ msgstr "Скица с въглени..."
 #, kde-format
 msgctxt "@info"
 msgid "This is the color effects preview"
-msgstr ""
+msgstr "Това е инструментът за преглед на цветовите ефекти"
 
 #: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:207
 #, kde-format
@@ -9655,7 +9664,7 @@ msgstr "Lut3D"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to apply color effects to an image"
-msgstr ""
+msgstr "Инструмент за прилагане на цветови ефекти към изображение"
 
 #: core/dplugins/editor/filters/colorfx/colorfxtoolplugin.cpp:64
 #, kde-format
@@ -9789,7 +9798,7 @@ msgstr "Ниво:"
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:158
 #, kde-format
 msgid "Set here the level of the effect."
-msgstr ""
+msgstr "Тук задайте нивото на ефекта."
 
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:160
 #, kde-format
@@ -9817,7 +9826,7 @@ msgstr "Ефекти на изкривяване"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to apply distortion effects to an image"
-msgstr ""
+msgstr "Инструмент за прилагане на ефекти на изкривяване на изображението"
 
 #: core/dplugins/editor/filters/distortionfx/distortionfxtoolplugin.cpp:64
 #, kde-format
@@ -9839,7 +9848,7 @@ msgstr "Дълбочина:"
 #: core/dplugins/editor/filters/emboss/embosstool.cpp:84
 #, kde-format
 msgid "Set here the depth of the embossing image effect."
-msgstr ""
+msgstr "Задайте тук дълбочината на ефекта за релефно изображение."
 
 #: core/dplugins/editor/filters/emboss/embosstool.cpp:167
 #, kde-format
@@ -9856,13 +9865,15 @@ msgstr "Щамповане"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to emboss an image"
-msgstr ""
+msgstr "Инструмент за релефно изображение"
 
 #: core/dplugins/editor/filters/emboss/embosstoolplugin.cpp:64
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can emboss an image."
 msgstr ""
+"Този инструмент за редактиране на изображения може да създава релефно "
+"изображение."
 
 #: core/dplugins/editor/filters/emboss/embosstoolplugin.cpp:83
 #, kde-format
@@ -9879,7 +9890,7 @@ msgstr "Филмово зърно"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to add film grain over an image"
-msgstr ""
+msgstr "Инструмент за добавяне на филмово зърнистост на изображение"
 
 #: core/dplugins/editor/filters/filmgrain/filmgraintoolplugin.cpp:64
 #, kde-format
@@ -9930,7 +9941,7 @@ msgstr "Маслена картина"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to emulate oil painting"
-msgstr ""
+msgstr "Инструмент за имитиране на маслена живопис"
 
 #: core/dplugins/editor/filters/oilpaint/oilpainttoolplugin.cpp:64
 #, kde-format
@@ -9965,7 +9976,7 @@ msgstr "Размер на капка:"
 #: core/dplugins/editor/filters/raindrop/raindroptool.cpp:106
 #, kde-format
 msgid "Set here the raindrops' size."
-msgstr ""
+msgstr "Задайте тук размера на дъждовните капки."
 
 #: core/dplugins/editor/filters/raindrop/raindroptool.cpp:110
 #, kde-format
@@ -10002,7 +10013,7 @@ msgstr "Дъждовни капки"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to add rain drops over an image"
-msgstr ""
+msgstr "Инструмент за добавяне на дъждовни капки в изображение"
 
 #: core/dplugins/editor/filters/raindrop/raindroptoolplugin.cpp:64
 #, kde-format
@@ -10026,7 +10037,7 @@ msgstr "Автоматично изрязване"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to auto-crop an image"
-msgstr ""
+msgstr "Инструмент за автоматично изрязване на изображение"
 
 #: core/dplugins/editor/transform/autocrop/autocroptoolplugin.cpp:64
 #, kde-format
@@ -10069,7 +10080,7 @@ msgstr "Широчина (px):"
 #: core/dplugins/editor/transform/resize/resizetool.cpp:360
 #, kde-format
 msgid "Set here the new image width in pixels."
-msgstr ""
+msgstr "Задайте тук новата ширина на изображението в пиксели."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:204
 #, kde-format
@@ -10079,7 +10090,7 @@ msgstr "Височина (px):"
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:209
 #, kde-format
 msgid "Set here the new image height in pixels."
-msgstr ""
+msgstr "Задайте тук новата височина на изображението в пиксели."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:211
 #: core/dplugins/editor/transform/resize/resizetool.cpp:371
@@ -10122,7 +10133,7 @@ msgstr ""
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:265
 #, kde-format
 msgid "Suppression weight mask:"
-msgstr ""
+msgstr "Маска за потискане на теглото:"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:270
 #, kde-format
@@ -10140,12 +10151,12 @@ msgstr ""
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:277
 #, kde-format
 msgid "Preservation weight mask:"
-msgstr ""
+msgstr "Съхраняваща маска:"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:281
 #, kde-format
 msgid "Draw a preservation mask"
-msgstr ""
+msgstr "Очертаване на съхраняваща маска"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:282
 #, kde-format
@@ -10177,12 +10188,12 @@ msgstr ""
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:321
 #, kde-format
 msgid "Norm of brightness gradient"
-msgstr ""
+msgstr "Норма на градиента на яркостта"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:322
 #, kde-format
 msgid "Sum of absolute values of brightness gradients"
-msgstr ""
+msgstr "Сума от абсолютните стойности на градиентите на яркостта"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:323
 #, kde-format
@@ -10197,12 +10208,12 @@ msgstr "Норма на градиента на лума"
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:325
 #, kde-format
 msgid "Sum of absolute values of luma gradients"
-msgstr ""
+msgstr "Сума от абсолютните стойности на градиентите на яркостта"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:326
 #, kde-format
 msgid "Absolute value of luma gradient"
-msgstr ""
+msgstr "Абсолютна стойност на градиента на яркостта"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:329
 #, kde-format
@@ -10225,7 +10236,7 @@ msgstr ""
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:347
 #, kde-format
 msgid "Overall rigidity of the seams:"
-msgstr ""
+msgstr "Обща твърдост на шевовете:"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:351
 #, kde-format
@@ -10238,11 +10249,19 @@ msgid ""
 "coordinate between each two successive points, elevated to the power of 1.5, "
 "and summed up for the whole seam."
 msgstr ""
+"Използвайте тази стойност, за да предадете отрицателно отклонение на "
+"шевовете, които не са прави. Може да е полезно за предотвратяване на "
+"изкривявания в някои ситуации или за избягване на артефакти от прескачане на "
+"пиксели (в такъв случай е по-добре да се използват ниски стойности). Тази "
+"настройка се прилага за целия избран слой, ако не е използвана маска за "
+"твърдост. Забележка: изкривяването е пропорционално на разликата в "
+"напречната координата между всеки две последователни точки, увеличена до "
+"степен 1,5, и се сумира за целия шев."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:360
 #, kde-format
 msgid "Maximum number of transversal steps:"
-msgstr ""
+msgstr "Максимален брой напречни стъпки:"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:364
 #, kde-format
@@ -10256,6 +10275,15 @@ msgid ""
 "artifacts. In order to balance the situation, you can use the rigidity "
 "setting."
 msgstr ""
+"Тази опция ви позволява да изберете максималната напречна стъпка, която "
+"могат да направят пикселите в шевовете. В стандартния алгоритъм, "
+"съответстващ на стойността по подразбиране step = 1, всеки пиксел в шева "
+"може да бъде изместен с най-много един пиксел спрямо съседните му. Това "
+"означава, че шевовете могат да образуват ъгъл от най-много 45 градуса по "
+"отношение на основната си линия. Увеличаването на стойността на стъпката ви "
+"позволява да преодолеете това ограничение, но може да доведе до появата на "
+"артефакти. За да балансирате ситуацията, можете да използвате настройката за "
+"твърдост."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:374
 #, kde-format
@@ -10275,6 +10303,16 @@ msgid ""
 "switched automatically during rescaling, at the cost of slightly worse "
 "performance."
 msgstr ""
+"По време на процеса на изрязване на всяка стъпка се избира оптималният шев, "
+"който да бъде изрязан, въз основа на стойността на релевантност за всеки "
+"пиксел. Въпреки това, в случай че два шева са равностойни (което може да се "
+"случи, например, когато големи части от изображението имат един и същ цвят), "
+"алгоритъмът винаги избира шевовете от едната страна.  В някои случаи това "
+"може да създаде проблеми, например обект, центриран в оригиналното "
+"изображение, може да не е центриран в полученото изображение. За да се "
+"преодолее този ефект, тази настройка позволява предпочитаната страна да се "
+"превключва автоматично по време на премащабиране, за сметка на малко по-лоша "
+"производителност."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:390
 #, kde-format
@@ -10305,7 +10343,7 @@ msgstr "Целеви размер"
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:416
 #, kde-format
 msgid "Content-aware rescale percentage"
-msgstr ""
+msgstr "Процент на промяна на мащаба, съобразена със съдържанието"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:418
 #, kde-format
@@ -10339,6 +10377,7 @@ msgstr "Избирателно мащабиране"
 msgctxt "@info"
 msgid "A tool to resize an image with content analysis"
 msgstr ""
+"Инструмент за промяна на размера на изображение с анализ на съдържанието"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetoolplugin.cpp:64
 #, kde-format
@@ -10454,7 +10493,7 @@ msgstr "Свободно въртене"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to rotate an image"
-msgstr ""
+msgstr "Инструмент за завъртане на изображение"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:66
 #, kde-format
@@ -10472,19 +10511,19 @@ msgstr "Свободно въртене..."
 #, kde-format
 msgctxt "@action"
 msgid "Free Rotation Set Point 1"
-msgstr ""
+msgstr "Зададена точка на свободно въртене 1"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:100
 #, kde-format
 msgctxt "@action"
 msgid "Free Rotation Set Point 2"
-msgstr ""
+msgstr "Зададена точка на свободно въртене 2"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:106
 #, kde-format
 msgctxt "@action"
 msgid "Free Rotation Auto Adjust"
-msgstr ""
+msgstr "Автоматична настройка на свободното завъртане"
 
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:106
 #, kde-format
@@ -10521,7 +10560,7 @@ msgstr "  Долу вдясно:"
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:145
 #, kde-format
 msgid "Draw preview while moving"
-msgstr ""
+msgstr "Предварителен преглед по време на преместване"
 
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:146
 #, kde-format
@@ -10543,7 +10582,7 @@ msgstr "Перспектива"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust perspective"
-msgstr ""
+msgstr "Инструмент за регулиране на перспективата"
 
 #: core/dplugins/editor/transform/perspective/perspectivetoolplugin.cpp:64
 #, kde-format
@@ -10555,7 +10594,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Perspective Adjustment..."
-msgstr ""
+msgstr "Настройка на перспективата..."
 
 #: core/dplugins/editor/transform/perspective/perspectivewidget.cpp:317
 #, kde-format
@@ -10691,7 +10730,7 @@ msgstr "Портрет"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:327
 #, kde-format
 msgid "Select constrained aspect ratio orientation."
-msgstr ""
+msgstr "Избор на ориентация с ограничено съотношение на страните."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:330
 #, kde-format
@@ -10721,12 +10760,12 @@ msgstr ""
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:377
 #, kde-format
 msgid "Set width position to center."
-msgstr ""
+msgstr "Задайте позиция на ширината до центъра."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:389
 #, kde-format
 msgid "Set height position to center."
-msgstr ""
+msgstr "Задайте позиция за височината до центъра."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:415
 #, kde-format
@@ -10780,7 +10819,7 @@ msgstr "Златни сечения"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:435
 #, kde-format
 msgid "Enable this option to show golden sections."
-msgstr ""
+msgstr "Активирайте тази опция за показване на златните секции."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:437
 #, kde-format
@@ -10800,7 +10839,7 @@ msgstr "Златна спирала"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:441
 #, kde-format
 msgid "Enable this option to show a golden spiral guide."
-msgstr ""
+msgstr "Активирайте тази опция за показване на златен спираловиден водач."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:443
 #, kde-format
@@ -10810,7 +10849,7 @@ msgstr "Златни триъгълници"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:444
 #, kde-format
 msgid "Enable this option to show golden triangles."
-msgstr ""
+msgstr "Разрешете тази опция за показване на златни триъгълници."
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:446
 #, kde-format
@@ -10868,7 +10907,7 @@ msgstr "Изрязване със запазване на съотношение
 #, kde-format
 msgctxt "@info"
 msgid "A tool to crop an image with ratio"
-msgstr ""
+msgstr "Инструмент за изрязване на изображение със съотношение"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptoolplugin.cpp:64
 #, kde-format
@@ -11032,7 +11071,7 @@ msgstr "Височина:"
 #: core/dplugins/editor/transform/resize/resizetool.cpp:369
 #, kde-format
 msgid "New image height in pixels (px)."
-msgstr ""
+msgstr "Нова височина на изображението в пиксели (px)."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:377
 #, kde-format
@@ -11052,7 +11091,7 @@ msgstr " Пиксел/Инч"
 #: core/dplugins/editor/transform/resize/resizetool.cpp:393
 #, kde-format
 msgid "New image resolution in pixels/inch."
-msgstr ""
+msgstr "Нова разделителна способност на изображението в пиксели/инч."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:400
 #, kde-format
@@ -11110,7 +11149,7 @@ msgstr "Преоразмеряване"
 #: core/dplugins/editor/transform/resize/resizetool.cpp:918
 #, kde-format
 msgid "Photograph Resizing Settings File to Load"
-msgstr ""
+msgstr "Файл с настройки за промяна на размера на снимката за зареждане"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:934
 #, kde-format
@@ -11125,7 +11164,7 @@ msgstr ""
 #: core/dplugins/editor/transform/resize/resizetool.cpp:951
 #, kde-format
 msgid "Photograph Resizing Settings File to Save"
-msgstr ""
+msgstr "Файл с настройки за промяна на размера на фотографията за запазване"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:969
 #, kde-format
@@ -11142,13 +11181,15 @@ msgstr "&Преоразмеряване на изображението"
 #, kde-format
 msgctxt "@action"
 msgid "A tool to resize an image"
-msgstr ""
+msgstr "Инструмент за промяна на размера на изображението"
 
 #: core/dplugins/editor/transform/resize/resizetoolplugin.cpp:64
 #, kde-format
 msgctxt "@action"
 msgid "This Image Editor tool can resize an image."
 msgstr ""
+"Този инструмент за редактиране на изображения може да променя размера на "
+"изображение."
 
 #: core/dplugins/editor/transform/resize/resizetoolplugin.cpp:80
 #, kde-format
@@ -11238,13 +11279,14 @@ msgstr "Наклоняване на изображение"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to shear an image"
-msgstr ""
+msgstr "Инструмент за наклоняване на изображение"
 
 #: core/dplugins/editor/transform/shear/sheartoolplugin.cpp:64
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can shear an image."
 msgstr ""
+"Този инструмент за редактиране на изображения може да наклонява изображение."
 
 #: core/dplugins/editor/transform/shear/sheartoolplugin.cpp:80
 #, kde-format
@@ -11260,7 +11302,7 @@ msgstr "Дигитален скенер"
 #: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:70
 #, kde-format
 msgid "A tool to acquire images with a digital scanner"
-msgstr ""
+msgstr "Инструмент за получаване на изображения с цифров скенер"
 
 #: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:75
 #, kde-format
@@ -11371,7 +11413,7 @@ msgstr "Редактор на геолокация"
 #, kde-format
 msgctxt "@info"
 msgid "Display bookmarked positions on the map."
-msgstr ""
+msgstr "Показване на позициите с отметки върху картата."
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:315
 #, kde-format
@@ -11493,7 +11535,7 @@ msgstr "Грешка"
 #, kde-format
 msgctxt "@info"
 msgid "Failed to save some information:"
-msgstr ""
+msgstr "Част от информацията не можа да се запази:"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:1022
 #, kde-format
@@ -11562,7 +11604,7 @@ msgstr "Редактиране на геолокацията"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to edit items geolocation"
-msgstr ""
+msgstr "Инструмент за редактиране на геолокацията на елементи"
 
 #: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:63
 #, kde-format
@@ -11681,7 +11723,7 @@ msgstr "Преместете %1 в крайна директория %2"
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:521
 #, kde-format
 msgid "Cannot move data to destination directory"
-msgstr ""
+msgstr "Не може да се преместят данните в директорията на местоназначението"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:531
 #, kde-format
@@ -11719,12 +11761,12 @@ msgstr "Тип на целта"
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:67
 #, kde-format
 msgid "&Local or web target used by GoogleEarth"
-msgstr ""
+msgstr "&Локална или мрежова цел, използвана от GoogleEarth"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:70
 #, kde-format
 msgid "Web target used by GoogleMaps"
-msgstr ""
+msgstr "Мрежова цел, използвана от GoogleMaps"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:71
 #, kde-format
@@ -12034,7 +12076,7 @@ msgstr "Търсене"
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:169
 #, kde-format
 msgid "Clear the search results."
-msgstr ""
+msgstr "Изчистване на резултатите от търсенето."
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:177
 #, kde-format
@@ -12055,17 +12097,17 @@ msgstr "Копиране на  координати"
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:191
 #, kde-format
 msgid "Move selected images to this position"
-msgstr ""
+msgstr "Преместване на избрани изображения в тази позиция"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:193
 #, kde-format
 msgid "Remove from results list"
-msgstr ""
+msgstr "Премахване от списъка с резултати"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:197
 #, kde-format
 msgid "Select which service you would like to use."
-msgstr ""
+msgstr "Изберете коя услуга искате да използвате."
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:221
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:141
@@ -12160,7 +12202,7 @@ msgstr "Замяна на избраната стойност от списък�
 #: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:101
 #, kde-format
 msgid " This field is limited to:"
-msgstr ""
+msgstr " Това поле е ограничено до:"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:103
 #, kde-format
@@ -12191,7 +12233,7 @@ msgstr "Атрибут:"
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:103
 #, kde-format
 msgid "Select here the editorial attribute of content."
-msgstr ""
+msgstr "Изберете тук редакционния атрибут на съдържанието."
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:104
 #, kde-format
@@ -12263,13 +12305,13 @@ msgstr "Профил"
 #, kde-format
 msgctxt "Content type"
 msgid "Results Listings & Table"
-msgstr ""
+msgstr "Списъци с резултати и таблица"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:116
 #, kde-format
 msgctxt "Content type"
 msgid "Side bar & Supporting information"
-msgstr ""
+msgstr "Странична лента и помощна информация"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:117
 #, kde-format
@@ -12333,7 +12375,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:136
 #, kde-format
 msgid " This field is limited to "
-msgstr ""
+msgstr " Това поле е ограничено до "
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:138
 #, kde-format
@@ -12345,7 +12387,7 @@ msgstr[1] "%1 символа."
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:145
 #, kde-format
 msgid "Set here the editorial description"
-msgstr ""
+msgstr "Задайте тук редакционното описание"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifadjust.cpp:85
 #, kde-format
@@ -12528,7 +12570,7 @@ msgstr "Име (*):"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:101
 #, kde-format
 msgid "Set here the original document name."
-msgstr ""
+msgstr "Задайте тук името на оригиналния документ."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:102
 #, kde-format
@@ -12546,7 +12588,7 @@ msgstr "Описание (*):"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:111
 #, kde-format
 msgid "Set here the image description."
-msgstr ""
+msgstr "\"Задайте тук описанието на изображението."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:112
 #, kde-format
@@ -12561,7 +12603,7 @@ msgstr "Автор (*):"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:120
 #, kde-format
 msgid "Set here the author's name."
-msgstr ""
+msgstr "Задайте тук името на автора."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:121
 #, kde-format
@@ -12578,7 +12620,7 @@ msgstr "Авторско право (*):"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:129
 #, kde-format
 msgid "Set here the copyright owner."
-msgstr ""
+msgstr "Задайте тук собственика на авторските права."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:130
 #, kde-format
@@ -12596,7 +12638,7 @@ msgstr "Заглавие:"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:138
 #, kde-format
 msgid "Set here the image's caption."
-msgstr ""
+msgstr "Задайте тук надписа на изображението."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:139
 #, kde-format
@@ -12685,7 +12727,7 @@ msgstr "Оригинална подсекунда"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:155
 #, kde-format
 msgid "Set original date to today"
-msgstr ""
+msgstr "Задаване на оригиналната дата на днешна дата"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:157
 #, kde-format
@@ -12737,12 +12779,12 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:123
 #, kde-format
 msgid "Device manufacturer (*):"
-msgstr ""
+msgstr "Производител на устройството (*):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:127
 #, kde-format
 msgid "Set here the manufacturer name"
-msgstr ""
+msgstr "Задайте тук името на производителя"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:128
 #, kde-format
@@ -12781,7 +12823,7 @@ msgstr "Филмов скенер"
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:146
 #, kde-format
 msgid "Reflection print scanner"
-msgstr ""
+msgstr "Скенер за отпечатъци от отражения"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:147
 #, kde-format
@@ -12899,7 +12941,7 @@ msgstr "Ръчна"
 #, kde-format
 msgctxt "exposure mode"
 msgid "Auto bracket"
-msgstr "Клин"
+msgstr "Автоматичен клин"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:202
 #, kde-format
@@ -13157,19 +13199,19 @@ msgstr "Информация за надписи"
 #, kde-format
 msgctxt "@title"
 msgid "Record technical descriptions"
-msgstr ""
+msgstr "Запис на техническите описания"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:188
 #, kde-format
 msgctxt "@title"
 msgid "Date and Time Information"
-msgstr ""
+msgstr "Информация за дата и час"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:189
 #, kde-format
 msgctxt "@title"
 msgid "Record camera time-stamp properties"
-msgstr ""
+msgstr "Запис на свойствата на времевия печат на камерата"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:193
 #, kde-format
@@ -13181,7 +13223,7 @@ msgstr "Настройки на обектива"
 #, kde-format
 msgctxt "@title"
 msgid "Record lens details used with camera"
-msgstr ""
+msgstr "Запис на данните за обектива, използван с фотоапарата"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:198
 #, kde-format
@@ -13199,13 +13241,13 @@ msgstr "Запис на условията за снимане, използва
 #, kde-format
 msgctxt "@title"
 msgid "Light Source Information"
-msgstr ""
+msgstr "Информация за източника на светлина"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:204
 #, kde-format
 msgctxt "@title"
 msgid "Record ambient condition captured by camera"
-msgstr ""
+msgstr "Запис на състоянието на околната среда, заснето от камерата"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:208
 #, kde-format
@@ -13217,7 +13259,7 @@ msgstr "Настройки на изображенията"
 #, kde-format
 msgctxt "@title"
 msgid "Record technical details used by camera"
-msgstr ""
+msgstr "Запис на техническите подробности, използвани от камерата"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:143
 #, kde-format
@@ -13266,7 +13308,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:185
 #, kde-format
 msgid "Max. lens aperture (f-number):"
-msgstr ""
+msgstr "Максимална бленда на обектива (f-число):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:188
 #, kde-format
@@ -13288,12 +13330,12 @@ msgstr "Със светкавица"
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:90
 #, kde-format
 msgid "Fired, no strobe return light"
-msgstr ""
+msgstr "Да, без рефлексия на светлината"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:91
 #, kde-format
 msgid "Fired, strobe return light"
-msgstr ""
+msgstr "Да, с рефлексия на светлината"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:92
 #, kde-format
@@ -13303,12 +13345,12 @@ msgstr "Да, принудително"
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:93
 #, kde-format
 msgid "Yes, compulsory, no return light"
-msgstr ""
+msgstr "Да, принудително, без рефлексия на светлината"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:94
 #, kde-format
 msgid "Yes, compulsory, return light"
-msgstr ""
+msgstr "Да, принудително, с рефлексия на на светлината"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:95
 #, kde-format
@@ -13328,7 +13370,7 @@ msgstr "Да, автоматично"
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:98
 #, kde-format
 msgid "Yes, auto, no return light"
-msgstr ""
+msgstr "Да, автоматично, без рефлексия на светлината"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:99
 #, kde-format
@@ -13348,27 +13390,27 @@ msgstr "Да, корекция \"червени очи\""
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:102
 #, kde-format
 msgid "Yes, red-eye, no return light"
-msgstr ""
+msgstr "Да, червени-очи, без рефлексия на светлина"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:103
 #, kde-format
 msgid "Yes, red-eye, return light"
-msgstr ""
+msgstr "Да, червени-очи, с рефлексия на светлина"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:104
 #, kde-format
 msgid "Yes, compulsory, red-eye"
-msgstr ""
+msgstr "Да, задължително, червени очи"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:105
 #, kde-format
 msgid "Yes, compulsory, red-eye, no return light"
-msgstr ""
+msgstr "Да, принудително, червени-очи, без рефлексия на светлина"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:106
 #, kde-format
 msgid "Yes, compulsory, red-eye, return light"
-msgstr ""
+msgstr "Да, принудително, червени-очи, без рефлексия на светлина"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:107
 #, kde-format
@@ -13378,12 +13420,12 @@ msgstr "Да, автоматично, корекция \"червени очи\"
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:108
 #, kde-format
 msgid "Yes, auto, red-eye, no return light"
-msgstr ""
+msgstr "Да, автоматично, червени-очи, без рефлексия на светлина"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:109
 #, kde-format
 msgid "Yes, auto, red-eye, return light"
-msgstr ""
+msgstr "Да, автоматично, червени-очи, с рефлексия на светлина"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:139
 #, kde-format
@@ -13575,13 +13617,13 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:78
 #, kde-format
 msgid "Identify subject of content (3 chars max):"
-msgstr ""
+msgstr "Идентифицирайте предмета на съдържанието (максимум 3 символа):"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:84
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:82
 #, kde-format
 msgid "Set here the category ID"
-msgstr ""
+msgstr "Задайте тук идентификатора на категорията"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:85
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:83
@@ -13600,7 +13642,7 @@ msgstr "Допълнителни категории:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:90
 #, kde-format
 msgid "Set here the extra category"
-msgstr ""
+msgstr "Задайте тук допълнителната категория"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:94
 #, kde-format
@@ -13661,7 +13703,7 @@ msgstr "Заглавие:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:81
 #, kde-format
 msgid "Set here the content synopsis"
-msgstr ""
+msgstr "Задайте тук резюмето на съдържанието"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:82
 #, kde-format
@@ -13684,7 +13726,7 @@ msgstr "Синхронизиране с Exif данни за коментар"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:97
 #, kde-format
 msgid "Set here the content description"
-msgstr ""
+msgstr "Задайте тук съдържанието на определението"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:98
 #, kde-format
@@ -13701,7 +13743,7 @@ msgstr "Автор на заглавието:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:104
 #, kde-format
 msgid "Enter the name of the caption author."
-msgstr ""
+msgstr "Въведете тук името на автора на хадписа."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:78
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:110
@@ -13714,7 +13756,7 @@ msgstr "Авторски права:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:81
 #, kde-format
 msgid "Set here the copyright notice."
-msgstr ""
+msgstr "Задайте тук бележката за авторските права."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:82
 #, kde-format
@@ -13732,7 +13774,7 @@ msgstr "Автор:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:112
 #, kde-format
 msgid "Set here the name of content creator."
-msgstr ""
+msgstr "Задайте тук името на автора на съдържанието."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:93
 #, kde-format
@@ -13743,7 +13785,7 @@ msgstr "Титла на автора:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:119
 #, kde-format
 msgid "Set here the title of content creator."
-msgstr ""
+msgstr "Задайте тук титлата на създателя на съдържанието."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:99
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:192
@@ -13757,7 +13799,7 @@ msgstr "Благодарности:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:194
 #, kde-format
 msgid "Set here the content provider."
-msgstr ""
+msgstr "Задайте тук доставчика на съдържание."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:103
 #, kde-format
@@ -13774,7 +13816,7 @@ msgstr "Източник:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:111
 #, kde-format
 msgid "Set here the content owner."
-msgstr ""
+msgstr "Задайте тук собственика на съдържанието."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:112
 #, kde-format
@@ -13791,7 +13833,7 @@ msgstr "Контакт:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:118
 #, kde-format
 msgid "Set here the person or organization to contact."
-msgstr ""
+msgstr "Задайте тук лицето или организацията, с която да се свържете."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:115
 #, kde-format
@@ -13859,7 +13901,7 @@ msgstr "Информация за съдържанието"
 #, kde-format
 msgctxt "@title"
 msgid "Describe the visual content of the item"
-msgstr ""
+msgstr "Опишете визуалното съдържание на елемента"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:220
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:218
@@ -13873,7 +13915,7 @@ msgstr "Информация за произхода"
 #, kde-format
 msgctxt "@title"
 msgid "Formal descriptive information about the item"
-msgstr ""
+msgstr "Формална описателна информация за елемента"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:225
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:223
@@ -13887,7 +13929,7 @@ msgstr "Кредитна информация"
 #, kde-format
 msgctxt "@title"
 msgid "Record copyright information about the item"
-msgstr ""
+msgstr "Запис на информация за авторските права на елемента"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:230
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:228
@@ -13901,7 +13943,7 @@ msgstr "Информация за темата"
 #, kde-format
 msgctxt "@title"
 msgid "Record subject information about the item"
-msgstr ""
+msgstr "Запис на информация за предмета на елемента"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:235
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:233
@@ -13915,7 +13957,7 @@ msgstr "Информация за ключови думи"
 #, kde-format
 msgctxt "@title"
 msgid "Record keywords relevant to the item"
-msgstr ""
+msgstr "Запис на ключови думи, свързани с предмета"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:240
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:238
@@ -13929,7 +13971,7 @@ msgstr "Информация за категорията"
 #, kde-format
 msgctxt "@title"
 msgid "Record categories relevant to the item"
-msgstr ""
+msgstr "Запис на категории, свързани с предмета"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:245
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:243
@@ -13943,7 +13985,7 @@ msgstr "Информация за състоянието"
 #, kde-format
 msgctxt "@title"
 msgid "Record workflow information"
-msgstr ""
+msgstr "Записване на информация за работния процес"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:250
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:248
@@ -13957,7 +13999,7 @@ msgstr "Свойства на състоянието"
 #, kde-format
 msgctxt "@title"
 msgid "Record workflow properties"
-msgstr ""
+msgstr "Запис на свойствата на работния процес"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:255
 #, kde-format
@@ -13969,7 +14011,7 @@ msgstr "Информация за плика"
 #, kde-format
 msgctxt "@title"
 msgid "Record editorial details"
-msgstr ""
+msgstr "Запис на редакционни данни"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:76
 #, kde-format
@@ -13999,7 +14041,7 @@ msgstr "IPTC-NAA Digital Newsphoto Parameter Record (version 4)"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:81
 #, kde-format
 msgid "IPTC7901 Recommended Message Format"
-msgstr ""
+msgstr "Препоръчителен формат на съобщението IPTC7901"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:82
 #, kde-format
@@ -14039,12 +14081,12 @@ msgstr "IPTC Unstructured Character Oriented File Format"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:89
 #, kde-format
 msgid "United Press International ANPA 1312 variant"
-msgstr ""
+msgstr "Вариант на United Press International ANPA 1312"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:90
 #, kde-format
 msgid "United Press International Down-Load Message"
-msgstr ""
+msgstr "Съобщение за сваляне от United Press International"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:91
 #, kde-format
@@ -14064,7 +14106,7 @@ msgstr "Microsoft Bit Mapped Graphics File [*.BMP]"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:94
 #, kde-format
 msgid "Digital Audio File [*.WAV]"
-msgstr ""
+msgstr "Цифров аудиофайл [*.WAV]"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:95
 #, kde-format
@@ -14134,7 +14176,7 @@ msgstr "Portable Document File [*.PDF] Adobe"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:108
 #, kde-format
 msgid "News Industry Text Format"
-msgstr ""
+msgstr "Текстов формат за новинарската индустрия"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:109
 #, kde-format
@@ -14164,7 +14206,7 @@ msgstr "Назначение:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:175
 #, kde-format
 msgid "Set here the envelope destination"
-msgstr ""
+msgstr "Задайте тук местоназначението на плика"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:176
 #, kde-format
@@ -14180,7 +14222,7 @@ msgstr "U.N.O ID:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:185
 #, kde-format
 msgid "Set here the Unique Name of Object identifier"
-msgstr ""
+msgstr "Задайте тук уникалното име на идентификатора на обекта"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:186
 #, kde-format
@@ -14197,7 +14239,7 @@ msgstr "Продукт ИД:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:195
 #, kde-format
 msgid "Set here the product identifier"
-msgstr ""
+msgstr "Задайте тук идентификатора на продукта"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:196
 #, kde-format
@@ -14213,7 +14255,7 @@ msgstr "Идентификатор на услугата:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:205
 #, kde-format
 msgid "Set here the service identifier"
-msgstr ""
+msgstr "Задайте тук идентификатора на услугата"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:206
 #, kde-format
@@ -14229,7 +14271,7 @@ msgstr "ID на плик:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:215
 #, kde-format
 msgid "Set here the envelope identifier"
-msgstr ""
+msgstr "Задайте тук идентификатора на плика"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:216
 #, kde-format
@@ -14277,7 +14319,7 @@ msgstr "9: Потребителски"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:233
 #, kde-format
 msgid "Select here the envelope priority."
-msgstr ""
+msgstr "Изберете тук приоритета на плика."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:237
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:85
@@ -14289,7 +14331,7 @@ msgstr "Формат:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:250
 #, kde-format
 msgid "Select here envelope file format."
-msgstr ""
+msgstr "Изберете тук формат на файла на плика."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:254
 #, kde-format
@@ -14304,7 +14346,7 @@ msgstr "Час на изпращане:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:266
 #, kde-format
 msgid "Set envelope sent date to today"
-msgstr ""
+msgstr "Задаване на датата на изпращане на плика на днешна дата"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:268
 #, kde-format
@@ -14325,7 +14367,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:73
 #, kde-format
 msgid "Use information retrieval words:"
-msgstr ""
+msgstr "Използване на думи за извличане на информация:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:79
 #, kde-format
@@ -14363,7 +14405,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:137
 #, kde-format
 msgid "Set here the time zone of digital representation."
-msgstr ""
+msgstr "Задайте тук часовата зона на цифровото представяне."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:153
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:144
@@ -14398,7 +14440,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:177
 #, kde-format
 msgid "Set here the time zone of intellectual content."
-msgstr ""
+msgstr "Задайте тук часовата зона на интелектуалното съдържание."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:181
 #, kde-format
@@ -14419,7 +14461,7 @@ msgstr "Град:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:189
 #, kde-format
 msgid "Set here the city of the content"
-msgstr ""
+msgstr "Задайте тук града на съдържанието"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:190
 #, kde-format
@@ -14438,7 +14480,7 @@ msgstr "Подлокация:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:199
 #, kde-format
 msgid "Set here the content location"
-msgstr ""
+msgstr "Задайте тук местоположението на съдържанието"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:200
 #, kde-format
@@ -14460,7 +14502,7 @@ msgstr "Област:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:209
 #, kde-format
 msgid "Set here the Province or State of the content"
-msgstr ""
+msgstr "Задайте тук провинцията или държавата на съдържанието"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:210
 #, kde-format
@@ -14484,7 +14526,7 @@ msgstr "Държава:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:207
 #, kde-format
 msgid "Select here country name of content origin."
-msgstr ""
+msgstr "Изберете тук името на държавата на произход на съдържанието."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:131
 #, kde-format
@@ -14499,7 +14541,7 @@ msgstr "Час на публикуване"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:143
 #, kde-format
 msgid "Set release date to today"
-msgstr ""
+msgstr "Задаване на дата на издаване на днешна дата"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:145
 #, kde-format
@@ -14530,7 +14572,7 @@ msgstr "Час на изтичане"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:168
 #, kde-format
 msgid "Set expiration date to today"
-msgstr ""
+msgstr "Задаване на датата на изтичане на срока на валидност на днешна дата"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:170
 #, kde-format
@@ -14584,7 +14626,7 @@ msgstr "8: Нисък"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:207
 #, kde-format
 msgid "Select here the editorial urgency of content."
-msgstr ""
+msgstr "Изберете тук спешността за редактиране на съдържанието."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:211
 #, kde-format
@@ -14613,12 +14655,12 @@ msgstr "Вечер"
 #, kde-format
 msgctxt "@info"
 msgid "Select here the editorial cycle of content."
-msgstr ""
+msgstr "Изберете тук редакционния цикъл на съдържанието."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:223
 #, kde-format
 msgid "Set here the content type"
-msgstr ""
+msgstr "Задайте тук типа на съдържанието"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:226
 #, kde-format
@@ -14638,7 +14680,7 @@ msgstr "Консултативен"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:229
 #, kde-format
 msgid "Select here the editorial type of content."
-msgstr ""
+msgstr "Изберете тук редакционния тип на съдържанието."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:230
 #, kde-format
@@ -14655,7 +14697,7 @@ msgstr "Препратка:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:242
 #, kde-format
 msgid "Set here the content reference"
-msgstr ""
+msgstr "Задайте тук референцията на съдържанието"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:244
 #, kde-format
@@ -14673,7 +14715,7 @@ msgstr "Заглавие:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:77
 #, kde-format
 msgid "Set here the content title"
-msgstr ""
+msgstr "Задайте тук заглавието на съдържанието"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:78
 #, kde-format
@@ -14690,7 +14732,7 @@ msgstr "Състояние:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:86
 #, kde-format
 msgid "Set here the content status"
-msgstr ""
+msgstr "Задайте тук статуса на съдържанието"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:87
 #, kde-format
@@ -14724,7 +14766,7 @@ msgstr "Специални инструкции:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:104
 #, kde-format
 msgid "Set here the content instructions"
-msgstr ""
+msgstr "Задайте тук инструкции на съдържанието"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:105
 #, kde-format
@@ -14754,6 +14796,15 @@ msgid ""
 "standard reference code is used, these lists are the English language "
 "reference versions. This field is limited to 8 digit code."
 msgstr ""
+"Въведете тук референтния номер на обекта. Осигурява цифров код за посочване "
+"на името на обекта плюс незадължителни имена на предмета и подробности за "
+"предмета на езика на услугата. Референтният номер на субекта е номер от "
+"диапазона от 01000000 до 17999999 и представлява независима от езика "
+"международна референция към даден субект. Предметът се идентифицира чрез "
+"референтния си номер и съответните имена, взети от стандартни списъци, "
+"предоставени от IPTC/NAA. Ако се използва стандартен референтен код, тези "
+"списъци са референтните версии на английски език. Това поле е ограничено до "
+"8-цифрен код."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:59
 #, kde-format
@@ -14786,7 +14837,7 @@ msgstr "Редактиране на метаданни"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to edit items metadata"
-msgstr ""
+msgstr "Инструмент за редактиране на метаданни на елементи"
 
 #: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:63
 #, kde-format
@@ -14824,7 +14875,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:84
 #, kde-format
 msgid "Set here the content synopsis."
-msgstr ""
+msgstr "Задайте тук резюмето на съдържанието."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:88
 #, kde-format
@@ -14835,7 +14886,7 @@ msgstr "Надписи:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:89
 #, kde-format
 msgid "Set here the content descriptions."
-msgstr ""
+msgstr "Задайте тук определението на съдържанието."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:91
 #, kde-format
@@ -14845,12 +14896,12 @@ msgstr "Език по подразбиране за заглавията"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:106
 #, kde-format
 msgid "Set here the name of the caption author."
-msgstr ""
+msgstr "Задайте тук името на автора на заглавието."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:111
 #, kde-format
 msgid "Set here the necessary copyright notice."
-msgstr ""
+msgstr "Задайте тук необходимата бележка за авторски права."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:113
 #, kde-format
@@ -14900,7 +14951,7 @@ msgstr "Е-поща:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:129
 #, kde-format
 msgid "Set here the contact e-mail."
-msgstr ""
+msgstr "Задайте тук електронната поща за контакт."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:131
 #: core/libs/template/templatepanel.cpp:373
@@ -14912,7 +14963,7 @@ msgstr "URL-адрес:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:134
 #, kde-format
 msgid "Set here the contact URL."
-msgstr ""
+msgstr "Задайте тук URL адреса за контакт."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:136
 #: core/libs/template/templatepanel.cpp:363
@@ -14924,7 +14975,7 @@ msgstr "Телефон:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:139
 #, kde-format
 msgid "Set here the contact 'phone number."
-msgstr ""
+msgstr "Задайте тук телефонния номер за контакт."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:141
 #, kde-format
@@ -14935,7 +14986,7 @@ msgstr "Адрес:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:144
 #, kde-format
 msgid "Set here the contact address."
-msgstr ""
+msgstr "Задайте тук адреса за контакт."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:146
 #, kde-format
@@ -14945,27 +14996,27 @@ msgstr "Пощенски код:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:149
 #, kde-format
 msgid "Set here the contact postal code."
-msgstr ""
+msgstr "Задайте тук пощенския код за контакт."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:154
 #, kde-format
 msgid "Set here the contact city."
-msgstr ""
+msgstr "Задайте тук града за контакт."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:159
 #, kde-format
 msgid "Set here the contact state/province."
-msgstr ""
+msgstr "Задайте тук държавата/провинцията за контакт."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:164
 #, kde-format
 msgid "Set here the contact country."
-msgstr ""
+msgstr "Задайте тук държавата за контакт."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:200
 #, kde-format
 msgid "Set here the original owner of content."
-msgstr ""
+msgstr "Задайте тук първоначалния собственик на съдържанието."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:114
 #, kde-format
@@ -15034,17 +15085,17 @@ msgstr "Задаване на датата на видеото на днес"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:175
 #, kde-format
 msgid "Set here the video date of intellectual content."
-msgstr ""
+msgstr "Задайте тук датата на видеото на интелектуалното съдържание."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:187
 #, kde-format
 msgid "Set here the content's city of origin."
-msgstr ""
+msgstr "Задайте тук града на произход на съдържанието."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:194
 #, kde-format
 msgid "Set here the content's location within the city."
-msgstr ""
+msgstr "Задайте тук местоположението на съдържанието в рамките на града."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:201
 #, kde-format
@@ -15337,7 +15388,7 @@ msgstr "Сцена:"
 #, kde-format
 msgctxt "@info"
 msgid "Select here the scene type of the content."
-msgstr ""
+msgstr "Изберете тук типа на сцената на съдържанието."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:189
 #, kde-format
@@ -15349,7 +15400,7 @@ msgstr "Вид:"
 #, kde-format
 msgctxt "@info"
 msgid "Select here the editorial type of the content."
-msgstr ""
+msgstr "Изберете тук редакционния тип на съдържанието."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:205
 #, kde-format
@@ -15361,7 +15412,7 @@ msgstr "Атрибут:"
 #, kde-format
 msgctxt "@info"
 msgid "Set here the editorial attribute description"
-msgstr ""
+msgstr "Задайте тук описанието на редакционния атрибут"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:211
 #, kde-format
@@ -15445,13 +15496,13 @@ msgstr "Профил"
 #, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Results Listings & Table"
-msgstr ""
+msgstr "Списъци с резултати и таблица"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:226
 #, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Side bar & Supporting information"
-msgstr ""
+msgstr "Странична лента и помощна информация"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:227
 #, kde-format
@@ -15517,7 +15568,7 @@ msgstr "Препратка:"
 #, kde-format
 msgctxt "@info"
 msgid "Set here the content reference"
-msgstr ""
+msgstr "Задайте тук референцията на съдържанието"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:243
 #, kde-format
@@ -15534,7 +15585,7 @@ msgstr "Заглавие:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:73
 #, kde-format
 msgid "Set here a shorthand reference for the content."
-msgstr ""
+msgstr "Задайте тук съкратена референция за съдържанието."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:77
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:119
@@ -15545,12 +15596,12 @@ msgstr "Псевдоним:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:80
 #, kde-format
 msgid "Set here a short informal name"
-msgstr ""
+msgstr "Задайте тук кратко неофициално име"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:81
 #, kde-format
 msgid "A short informal name for the resource."
-msgstr ""
+msgstr "Кратко неофициално име на ресурса."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:85
 #, kde-format
@@ -15565,12 +15616,12 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:93
 #, kde-format
 msgid "Set here the editorial usage instructions"
-msgstr ""
+msgstr "Задайте тук редакционните инструкции за използване"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:94
 #, kde-format
 msgid "Enter the editorial usage instructions."
-msgstr ""
+msgstr "Въведете инструкциите за редакционна употреба."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpsubjects.cpp:46
 #, kde-format
@@ -15593,6 +15644,15 @@ msgid ""
 "standard reference code is used, these lists are the English language "
 "reference versions. This field is limited to 8 digit code."
 msgstr ""
+"Въведете тук референтния номер на предмета. Осигурява цифров код за "
+"посочване на името на обекта плюс незадължителни имена на предмета и "
+"подробности за предмета на езика на услугата. Референтният номер на предмета "
+"е номер от диапазона от 01000000 до 17999999 и представлява независима от "
+"езика международна референция към предмета. Предметът се идентифицира чрез "
+"референтния си номер и съответните имена, взети от стандартни списъци, "
+"предоставени от XMP/NAA. Ако се използва стандартен референтен код, тези "
+"списъци са референтните версии на английски език. Това поле е ограничено до "
+"8-цифрен код."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpsubjects.cpp:65
 #, kde-format
@@ -15631,7 +15691,7 @@ msgstr "&Прилагане"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
-msgstr ""
+msgstr "Въведете коригираните дата и час за всяко изображение"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:347
 #, kde-format
@@ -15659,7 +15719,7 @@ msgstr "Прекъсване"
 #, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
-msgstr ""
+msgstr "Отмяна на текущата операция"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:381
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:672
@@ -15698,12 +15758,12 @@ msgstr "Състояние"
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:73
 #, kde-format
 msgid "Failed to update metadata timestamp"
-msgstr ""
+msgstr "Неуспешно актуализиране на времевия печат на метаданните"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:78
 #, kde-format
 msgid "Failed to update file timestamp"
-msgstr ""
+msgstr "Неуспешно актуализиране на времевата марка на файла"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:88
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:481
@@ -15726,7 +15786,7 @@ msgstr "Моля, изчакайте ..."
 #, kde-format
 msgctxt "@info"
 msgid "A tool to adjust items date-time"
-msgstr ""
+msgstr "Инструмент за коригиране на датата и часа на елементите"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:63
 #, kde-format
@@ -15764,7 +15824,7 @@ msgstr "Създаване на календар"
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:58
 #, kde-format
 msgid "A tool to create calendar from images"
-msgstr ""
+msgstr "Инструмент за създаване на календар от изображения"
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:63
 #, kde-format
@@ -15888,7 +15948,7 @@ msgstr "Общо страници"
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:119
 #, kde-format
 msgid "Create Template for Calendar"
-msgstr ""
+msgstr "Създаване на шаблон за календар"
 
 #. i18n: ectx: property (title), widget (QGroupBox, previewGroupBox)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:26
@@ -16013,7 +16073,7 @@ msgstr ""
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:114
 #, kde-format
 msgid "Welcome to Calendar Tool"
-msgstr ""
+msgstr "Добре дошли в инструмента за календари"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:129
 #, kde-format
@@ -16042,7 +16102,7 @@ msgstr "Файл с календарни данни (*.ics)"
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:161
 #, kde-format
 msgid "Select Calendar Data File"
-msgstr ""
+msgstr "Избор на файл с данни за календара"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:220
 #, kde-format
@@ -16121,7 +16181,7 @@ msgstr "&Прекъсване"
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:428
 #, kde-format
 msgid "Abort the conversion of Raw files."
-msgstr ""
+msgstr "Прекъснете преобразуването на необработени файлове."
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:432
 #, kde-format
@@ -16197,6 +16257,7 @@ msgstr "Фотоапарат"
 msgctxt "@info"
 msgid "A tool to batch convert RAW camera images to DNG"
 msgstr ""
+"Инструмент за пакетно конвертиране на RAW изображения от фотоапарат в DNG"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:63
 #, kde-format
@@ -16225,7 +16286,7 @@ msgstr "DNG конвертор..."
 #: core/dplugins/generic/tools/dngconverter/dngconvertertask.cpp:113
 #, kde-format
 msgid "Cannot identify Raw image"
-msgstr ""
+msgstr "Не може да идентифицира Raw изображение"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:107
 #, kde-format
@@ -16358,7 +16419,7 @@ msgstr "Твърда маска"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Useful only for focus stack to improve sharpness."
-msgstr ""
+msgstr "Полезен само за подобряване на остротата."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:142
 #, kde-format
@@ -16373,7 +16434,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:slider Enfuse settings"
 msgid "Well-Exposedness Contribution:"
-msgstr ""
+msgstr "Принос за добра експонация:"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:152
 #, kde-format
@@ -16393,7 +16454,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:slider enfuse settings"
 msgid "High-Saturation Contribution:"
-msgstr ""
+msgstr "Принос за висока наситеност:"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:163
 #, kde-format
@@ -16413,7 +16474,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:slider enfuse settings"
 msgid "High-Contrast Contribution:"
-msgstr ""
+msgstr "Принос за висок контраст:"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:174
 #, kde-format
@@ -16454,6 +16515,12 @@ msgid ""
 "and default color blending algorithm is very slight, and will be most "
 "noticeable when you need to blend areas of different primary colors together."
 msgstr ""
+"Използвайте Color Appearance Modeling (CIECAM02), за да визуализирате "
+"детайлни цветове. Входните ви файлове трябва да имат вградени ICC профили. "
+"Ако не е наличен ICC профил, ще се приеме цветовото пространство sRGB. "
+"Разликата между използването на тази опция и алгоритъма за смесване на "
+"цветовете по подразбиране е много малка и ще бъде най-забележима, когато "
+"трябва да смесвате области с различни основни цветове."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusestack.cpp:181
 #, kde-format
@@ -16501,7 +16568,7 @@ msgstr "&Запазване"
 #, kde-format
 msgctxt "@info: tooltip"
 msgid "Process and save selected items."
-msgstr ""
+msgstr "Обработване и запазване на избраните елементи."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:142
 #, kde-format
@@ -16527,7 +16594,7 @@ msgstr "&По подразбиране"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Revert current settings to default values."
-msgstr ""
+msgstr "Връщане на текущите настройки към стойностите по подразбиране."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:156
 #, kde-format
@@ -16557,7 +16624,7 @@ msgstr "Шаблон за име на файл: "
 #, kde-format
 msgctxt "@title: window"
 msgid "Enfuse Processing Messages"
-msgstr ""
+msgstr "Съобщения на Enfuse"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:512
 #, kde-format
@@ -16569,31 +16636,31 @@ msgstr "Не успя да се запише изображение в %1."
 #, kde-format
 msgctxt "@info"
 msgid "Processing preview of bracketed images..."
-msgstr ""
+msgstr "Обработка на предварителен преглед на клин изображения..."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:562
 #, kde-format
 msgctxt "@info"
 msgid "Processing output of bracketed images..."
-msgstr ""
+msgstr "обработка на крайния резултат на клин изображения..."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:589
 #, kde-format
 msgctxt "@info"
 msgid "Failed to load processed image."
-msgstr ""
+msgstr "Неуспешно зареждане на обработено изображение."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:599
 #, kde-format
 msgctxt "@info"
 msgid "Failed to process preview of bracketed images."
-msgstr ""
+msgstr "Неуспешна обработка на предварителен преглед на клин изображения."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:610
 #, kde-format
 msgctxt "@info"
 msgid "Failed to process output of bracketed images."
-msgstr ""
+msgstr "Неуспешна обработка на крайния резултат на клин изображенията."
 
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:51
 #, kde-format
@@ -16603,7 +16670,7 @@ msgstr "Смесване на експозиция"
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:66
 #, kde-format
 msgid "A tool to blend bracketed images"
-msgstr ""
+msgstr "Инструмент за смесване на клин изображения"
 
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:71
 #, kde-format
@@ -16630,7 +16697,7 @@ msgstr "Автор и поддръжка"
 #, kde-format
 msgctxt "@action"
 msgid "Blend Stacked Images..."
-msgstr "Смесване на подредени изображения..."
+msgstr "Смесване на изображения за сливане..."
 
 #: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:328
 #, kde-format
@@ -16653,13 +16720,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome to Stacked Images Tool"
-msgstr ""
+msgstr "Добре дошли в инструмента за сливане на изображения"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:72
 #, kde-format
 msgctxt "@info"
 msgid "Welcome to Stacked Images Tool"
-msgstr ""
+msgstr "Добре дошли в инструмента за сливане на изображения"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:73
 #, kde-format
@@ -16697,7 +16764,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at"
-msgstr ""
+msgstr "За повече информация, моля, разгледайте"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:78
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:111
@@ -16710,13 +16777,13 @@ msgstr "тази страница"
 #, kde-format
 msgctxt "@title: group"
 msgid "Exposure Blending Binaries"
-msgstr ""
+msgstr "Бинарни файлове за смесване на експозицията"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:56
 #, kde-format
 msgctxt "@title:window"
 msgid "Set Bracketed Images"
-msgstr "Задаване на изображения в скоби"
+msgstr "Задаване на клин изображения"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:71
 #, kde-format
@@ -16737,13 +16804,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Do not mix images with different color depth."
-msgstr ""
+msgstr "Да не се смесват изображения с различна дълбочина на цвета."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:74
 #, kde-format
 msgctxt "@info"
 msgid "All images must have the same dimensions."
-msgstr ""
+msgstr "Всички изображения трябва да имат еднакви размери."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingitemspage.cpp:78
 #, kde-format
@@ -16755,13 +16822,13 @@ msgstr "Експозиция (EV)"
 #, kde-format
 msgctxt "@title:window"
 msgid "Pre-Processing is Complete"
-msgstr ""
+msgstr "Предварителната обработка е завършена"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:65
 #, kde-format
 msgctxt "@info"
 msgid "Bracketed Images Pre-Processing is Done"
-msgstr ""
+msgstr "Предварителната обработка на клин изображенията е завършена"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:66
 #, kde-format
@@ -16785,13 +16852,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title: window"
 msgid "Pre-Processing Bracketed Images"
-msgstr ""
+msgstr "Предварителна обработка на клин изображения"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:94
 #, kde-format
 msgctxt "@option: check"
 msgid "Align bracketed images"
-msgstr "Изравняване на изображенията в скоби"
+msgstr "Подравняване на клин изображенията"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:141
 #, kde-format
@@ -16822,13 +16889,14 @@ msgstr ""
 msgctxt "@info"
 msgid "Press the \"Next\" button to start pre-processing."
 msgstr ""
+"Натиснете бутона \"Следващ\", за да започнете предварителната обработка."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:156
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:157
 #, kde-format
 msgctxt "@info"
 msgid "Pre-processing is in progress, please wait."
-msgstr ""
+msgstr "Предварителната обработка е в ход, моля, изчакайте."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:157
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:188
@@ -16836,20 +16904,20 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "This can take a while..."
-msgstr ""
+msgstr "Това може да отнеме известно време..."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:216
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:301
 #, kde-format
 msgctxt "@info"
 msgid "Pre-processing has failed."
-msgstr ""
+msgstr "Предварителната обработка е неуспешна."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:217
 #, kde-format
 msgctxt "@info"
 msgid "Please check your bracketed images stack..."
-msgstr ""
+msgstr "Моля, проверете стека с клин изображения..."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:218
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:328
@@ -16857,13 +16925,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "See processing messages below."
-msgstr ""
+msgstr "Вижте съобщенията за обработка по-долу."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingwizard.cpp:62
 #, kde-format
 msgctxt "@title: window"
 msgid "Stacked Images Tool"
-msgstr "Инструмент за подредени изображения"
+msgstr "Инструмент за сливане на изображения"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:106
 #, kde-format
@@ -16925,7 +16993,7 @@ msgstr "Не можа да се копира тема"
 #, kde-format
 msgctxt "@info"
 msgid "Generate images and XML files"
-msgstr ""
+msgstr "Генериране на изображения и XML файлове"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:166
 #, kde-format
@@ -16961,7 +17029,7 @@ msgstr "Не може да се зареди XML файл '%1'"
 #, kde-format
 msgctxt "@info"
 msgid "Error processing XML file"
-msgstr ""
+msgstr "Грешка при обработката на XML файл"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:375
 #, kde-format
@@ -16979,7 +17047,7 @@ msgstr "Изтегляне на отдалечени файлове за \"%1\""
 #, kde-format
 msgctxt "@info"
 msgid "Could not open temporary file"
-msgstr ""
+msgstr "Не може да се отвори временен файл"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:434
 #, kde-format
@@ -17133,7 +17201,7 @@ msgstr "Html галерия"
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:58
 #, kde-format
 msgid "A tool to generate HTML gallery from images"
-msgstr ""
+msgstr "Инструмент за генериране на HTML галерия от изображения"
 
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:63
 #, kde-format
@@ -17147,7 +17215,7 @@ msgstr ""
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:74
 #, kde-format
 msgid "Former Author and Maintainer"
-msgstr ""
+msgstr "Бивш автор и поддържащ"
 
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:89
 #, kde-format
@@ -17168,7 +17236,7 @@ msgstr "Вътрешна грешка"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:115
 #, kde-format
 msgid "Starting to generate gallery..."
-msgstr ""
+msgstr "Начало на генериране на галерия..."
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:125
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:122
@@ -17192,7 +17260,7 @@ msgstr "Изходна папка: %1"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:154
 #, kde-format
 msgid "Gallery is completed, but some warnings occurred."
-msgstr ""
+msgstr "Галерията е завършена, но се появиха някои предупреждения."
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:159
 #, kde-format
@@ -17202,12 +17270,12 @@ msgstr "Галерията е завършена."
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:171
 #, kde-format
 msgid "Opening gallery with default desktop browser..."
-msgstr ""
+msgstr "Отваряне на галерията с браузъра по подразбиране на работния плот..."
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:180
 #, kde-format
 msgid "Opening gallery with internal browser..."
-msgstr ""
+msgstr "Отваряне на галерията с вътрешен браузър..."
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:74
 #, kde-format
@@ -17233,7 +17301,7 @@ msgstr "Максимален размер:"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:138
 #, kde-format
 msgid "Include full-size original images for download"
-msgstr ""
+msgstr "Включете оригинални изображения в пълен размер за изтегляне"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:152
 #, kde-format
@@ -17267,7 +17335,7 @@ msgstr ""
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:87
 #, kde-format
 msgid "&Choose image selection method:"
-msgstr ""
+msgstr "&Избиране на метод за избор на изображения:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:89
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:94
@@ -17342,7 +17410,7 @@ msgstr "може да бъде персонализиран"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:147
 #, kde-format
 msgid "no customization available"
-msgstr ""
+msgstr "няма налично персонализиране"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:150
 #, kde-format
@@ -17357,7 +17425,7 @@ msgstr "Създаване на HTML галерия"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:90
 #, kde-format
 msgid "Welcome to HTML Gallery Tool"
-msgstr ""
+msgstr "Добре дошли в инструмент за създаване на HTML галерия"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:91
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:82
@@ -17414,7 +17482,7 @@ msgstr "Неуспешно създаване на файловете за на�
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:165
 #, kde-format
 msgid "Launch jAlbum with new project files"
-msgstr ""
+msgstr "Стартиране на jAlbum с нови файлове на проекта"
 
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:43
 #, kde-format
@@ -17450,12 +17518,12 @@ msgstr "jAlbum Gallery Generator."
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:114
 #, kde-format
 msgid "Starting to generate jAlbum..."
-msgstr ""
+msgstr "Начало на генериране на jAlbum..."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:151
 #, kde-format
 msgid "Jalbum is completed, but some warnings occurred."
-msgstr ""
+msgstr "Jalbum е завършен, но се появиха някои предупреждения."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:156
 #, kde-format
@@ -17484,7 +17552,7 @@ msgstr "Заглавие на проект:"
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:74
 #, kde-format
 msgid "Set here the project title"
-msgstr ""
+msgstr "Задайте тук заглавието на проекта"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:81
 #, kde-format
@@ -17504,7 +17572,7 @@ msgstr "Създаване на jAlbum албум"
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
 #, kde-format
 msgid "Welcome to jAlbum Album Tool"
-msgstr ""
+msgstr "Добре дошли в инструмента за албуми jAlbum"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
 #, kde-format
@@ -17656,7 +17724,7 @@ msgstr "Стартиране на медиен сървър"
 #, kde-format
 msgctxt "@info"
 msgid "An error occurs while to start Media Server..."
-msgstr ""
+msgstr "Появи се грешка при стартиране на медийния сървър..."
 
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:54
 #, kde-format
@@ -17696,22 +17764,22 @@ msgstr "%1 медиен сървър"
 #: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:161
 #, kde-format
 msgid "Media Server have been started"
-msgstr ""
+msgstr "Медийният сървър е стартиран"
 
 #: core/dplugins/generic/tools/mediaserver/server/dmediaservermngr.cpp:162
 #, kde-format
 msgid "Media Server cannot be started!"
-msgstr ""
+msgstr "Медийният сървър не може да бъде стартиран!"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:178
 #, kde-format
 msgid "MJPEG Server have been started"
-msgstr ""
+msgstr "MJPEG сървър е стартиран"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegservermngr.cpp:179
 #, kde-format
 msgid "MJPEG Server cannot be started!"
-msgstr ""
+msgstr "MJPEG сървър не може да бъде стартиран!"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg.cpp:26
 #, kde-format
@@ -17838,7 +17906,7 @@ msgstr "Изчакване в секунди:"
 #, kde-format
 msgctxt "@info"
 msgid "The delay in seconds between images."
-msgstr ""
+msgstr "Забавянето в секунди между изображенията."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:167
 #, kde-format
@@ -17928,7 +17996,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Show image creation date"
-msgstr ""
+msgstr "Показване на датата на създаване на изображението"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:308
 #, kde-format
@@ -17940,7 +18008,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Show camera aperture and focal length"
-msgstr ""
+msgstr "Показване на блендата и фокусното разстояние на камерата"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:311
 #, kde-format
@@ -18006,13 +18074,13 @@ msgstr "Показване на заглавието на изображение
 #, kde-format
 msgctxt "@info"
 msgid "Show the image title at the bottom of the screen."
-msgstr ""
+msgstr "Показване на заглавието на изображението в долната част на екрана."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:328
 #, kde-format
 msgctxt "@option:check"
 msgid "Show image caption if it has not title"
-msgstr ""
+msgstr "Показване на  заглавието на изображението, ако то няма заглавие"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:329
 #, kde-format
@@ -18071,7 +18139,7 @@ msgstr "MJPEG Stream Server"
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:70
 #, kde-format
 msgid "A tool to export items as MJPEG Stream"
-msgstr ""
+msgstr "Инструмент за експортиране на елементи като MJPEG поток"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:76
 #, kde-format
@@ -18128,13 +18196,13 @@ msgstr "Споделяне като поток MJPEG..."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Orientation and script detection (OSD) only."
-msgstr ""
+msgstr "Само откриване на ориентация и текст (OSD)."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:49
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Automatic page segmentation with OSD."
-msgstr ""
+msgstr "Автоматично сегментиране на страници с OSD."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:50
 #, kde-format
@@ -18153,7 +18221,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Assume a single column of text of variable sizes."
-msgstr ""
+msgstr "Предполага се една колона с текст с променливи размери."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:53
 #, kde-format
@@ -18165,31 +18233,31 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Assume a single uniform block of text."
-msgstr ""
+msgstr "Предполага се единичен еднороден блок от текст."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:55
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single text line."
-msgstr ""
+msgstr "Третиране на изображението като единичен текстов ред."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single word."
-msgstr ""
+msgstr "Третиране на изображението като една дума."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:57
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single word in a circle."
-msgstr ""
+msgstr "Третиране на изображението като единична дума в кръг."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:58
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single character."
-msgstr ""
+msgstr "Третиране на изображението като единичен символ."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:59
 #, kde-format
@@ -18221,7 +18289,7 @@ msgstr "Legacy engine only."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Neural nets LSTM engine only."
-msgstr ""
+msgstr "Само невронни мрежи LSTM."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:73
 #, kde-format
@@ -18233,7 +18301,7 @@ msgstr "Legacy + LSTM engines."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Default, based on what is available."
-msgstr ""
+msgstr "Стандартно, основано на това, което се вижда"
 
 #: core/dplugins/generic/tools/ocrtextconverter/tesseractbinary.cpp:43
 #, kde-format
@@ -18350,7 +18418,7 @@ msgstr "&Прекъсване"
 #, kde-format
 msgctxt "@info"
 msgid "Abort OCR processing of Raw files."
-msgstr ""
+msgstr "Прекъсване на оптичното разпознаване на Raw файлове."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:676
 #, kde-format
@@ -18363,7 +18431,7 @@ msgstr "&Стартиране на оптично разпознаване на 
 #, kde-format
 msgctxt "@info"
 msgid "Start OCR using the current settings."
-msgstr ""
+msgstr "Стартиране на оптично разпознаване с текущите настройки."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:720
 #, kde-format
@@ -18372,6 +18440,8 @@ msgid ""
 "Tesseract program or language modules\n"
 "are not installed on your system."
 msgstr ""
+"Програма или езикови модули на Tesseract\n"
+"не са инсталирани на вашата система."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:753
 #, kde-format
@@ -18455,7 +18525,7 @@ msgstr "Режим на сегментиране:"
 #, kde-format
 msgctxt "@info"
 msgid "Specify page segmentation mode."
-msgstr ""
+msgstr "Задаване на режим на сегментиране на страницата."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:116
 #, kde-format
@@ -18467,7 +18537,7 @@ msgstr "Режим на енджина:"
 #, kde-format
 msgctxt "@info"
 msgid "Specify OCR engine mode."
-msgstr ""
+msgstr "Посочете режима на програмата за OCR."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:134
 #, kde-format
@@ -18479,7 +18549,7 @@ msgstr "Резолюция Dpi:"
 #, kde-format
 msgctxt "@info"
 msgid "Specify DPI for input image."
-msgstr ""
+msgstr "Задаване на DPI за входното изображение."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:143
 #, kde-format
@@ -18498,6 +18568,7 @@ msgstr "Текстов файл"
 msgctxt "@info"
 msgid "Store OCR result in separated text file"
 msgstr ""
+"Съхраняване на резултата от оптичното разпознаване в отделен текстов файл"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:148
 #, kde-format
@@ -18509,7 +18580,7 @@ msgstr "Метаданни"
 #, kde-format
 msgctxt "@info"
 msgid "Store OCR result in XMP metadata"
-msgstr ""
+msgstr "Съхраняване на резултата от оптичното разпознаване в метаданни XMP"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:155
 #, kde-format
@@ -18533,7 +18604,7 @@ msgstr "По подразбиране"
 #, kde-format
 msgctxt "@option: osd Tesseract mode"
 msgid "Orientation and Script Detection"
-msgstr ""
+msgstr "Ориентация и откриване на скрипт"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:314
 #, kde-format
@@ -18588,7 +18659,7 @@ msgstr ""
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:71
 #, kde-format
 msgid "Temporary panorama file does not exists."
-msgstr ""
+msgstr "Временният панорамен файл не съществува."
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:79
 #, kde-format
@@ -18598,7 +18669,7 @@ msgstr "Файл на панорама с име  <filename>%1</filename> веч
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:87
 #, kde-format
 msgid "Temporary project file does not exist."
-msgstr ""
+msgstr "Временният файл на проекта не съществува."
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:95
 #, kde-format
@@ -18646,7 +18717,7 @@ msgstr ""
 #: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:53
 #, kde-format
 msgid "Project file parsing failed."
-msgstr ""
+msgstr "Анализът на файла на проекта не е успешно."
 
 #: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:86
 #, kde-format
@@ -18661,24 +18732,24 @@ msgstr ""
 #: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:203
 #, kde-format
 msgid "Tiff image creation failed."
-msgstr ""
+msgstr "Създаването на Tiff изображение е неуспешно."
 
 #: core/dplugins/generic/tools/panorama/tasks/preprocesstask.cpp:232
 #, kde-format
 msgid "Raw file conversion failed."
-msgstr ""
+msgstr "Неуспешно конвертиране на Raw файл."
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:91
 #, kde-format
 msgctxt "@title: window"
 msgid "Welcome to Panorama Tool"
-msgstr ""
+msgstr "Добре дошли в инструмента за панорама"
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:106
 #, kde-format
 msgctxt "@info"
 msgid "Welcome to Panorama Tool"
-msgstr ""
+msgstr "Добре дошли в инструмента за панорама"
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:107
 #, kde-format
@@ -18700,13 +18771,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Images must be taken from the same point of view."
-msgstr ""
+msgstr "Изображенията трябва да са направени от една и съща гледна точка."
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:110
 #, kde-format
 msgctxt "@info"
 msgid "For more information, please take a look at "
-msgstr ""
+msgstr "За повече информация, моля, разгледайте "
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:116
 #, kde-format
@@ -18788,13 +18859,13 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Images are taken from the same point of view."
-msgstr ""
+msgstr "Изображенията трябва да са направени от една и съща гледна точка."
 
 #: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:72
 #, kde-format
 msgctxt "@info"
 msgid "Images are taken with the same camera (and lens)."
-msgstr ""
+msgstr "Изображенията са заснети със същия фотоапарат (и обектив)."
 
 #: core/dplugins/generic/tools/panorama/wizard/panoitemspage.cpp:74
 #, kde-format
@@ -18879,7 +18950,7 @@ msgstr "Предупреждение"
 #, kde-format
 msgctxt "@label"
 msgid "This file already exists"
-msgstr ""
+msgstr "Този файл вече съществува"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:222
 #, kde-format
@@ -18895,7 +18966,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Panorama Stitching is Done"
-msgstr ""
+msgstr "Съставянето на панорамата е готово"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:268
 #, kde-format
@@ -18907,7 +18978,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Your panorama will be created to the directory:"
-msgstr ""
+msgstr "Вашата панорама ще бъде създадена в директорията:"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:271
 #, kde-format
@@ -18960,7 +19031,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Optimization is in progress, please wait."
-msgstr ""
+msgstr "Оптимизацията е в ход, моля, изчакайте."
 
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:221
 #, kde-format
@@ -18988,13 +19059,13 @@ msgstr "За да извършите тази операция, ще се изп
 #, kde-format
 msgctxt "@info"
 msgid "Press the \"Next\" button to run the optimization."
-msgstr ""
+msgstr "Натиснете бутона \"Следващ\", за да стартирате оптимизацията."
 
 #: core/dplugins/generic/tools/panorama/wizard/panooptimizepage.cpp:327
 #, kde-format
 msgctxt "@info"
 msgid "Optimization has failed."
-msgstr ""
+msgstr "Оптимизацията се е провалила."
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:96
 #, kde-format
@@ -19058,7 +19129,7 @@ msgstr "Подробности..."
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:142
 #, kde-format
 msgid "Processing Panorama Preview..."
-msgstr ""
+msgstr "Обработка на предварителен преглед на панорама..."
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:221
 #, kde-format
@@ -19069,12 +19140,12 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Panorama Post-Processing"
-msgstr ""
+msgstr "Постпроцесинг на панорамата"
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:304
 #, kde-format
 msgid "Preview Processing Cancelled."
-msgstr ""
+msgstr "Обработката на визуализацията е отменена."
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:366
 #, kde-format
@@ -19350,7 +19421,7 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:145
 #, kde-format
 msgid "Enter here your customized caption string..."
-msgstr ""
+msgstr "Въведете тук персонализирания текст на надписа..."
 
 #. i18n: ectx: property (text), widget (QLabel, m_free_label)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:152
@@ -19414,7 +19485,7 @@ msgstr "Да не се изрязва"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:69
 #, kde-format
 msgid "Rotate photo to the left"
-msgstr ""
+msgstr "Завъртване на снимката наляво"
 
 #. i18n: ectx: property (text), widget (QPushButton, BtnCropRotateLeft)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:72
@@ -19428,7 +19499,7 @@ msgstr "Завъртане на&ляво"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:82
 #, kde-format
 msgid "Rotate photo to the right"
-msgstr ""
+msgstr "Завъртване на снимката надясно"
 
 #. i18n: ectx: property (text), widget (QPushButton, BtnCropRotateRight)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcroppage.ui:85
@@ -19485,7 +19556,7 @@ msgstr "Потребителско оформление"
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:49
 #, kde-format
 msgid "Fit as many as possible:"
-msgstr ""
+msgstr "Напасване на колкото е възможно повече:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:70
@@ -19648,13 +19719,13 @@ msgstr "Брой колони"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:39
 #, kde-format
 msgid "Insert number of columns"
-msgstr ""
+msgstr "Вмъкване на броя на колоните"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:41
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:42
 #, kde-format
 msgid "Choose to have a custom photo size album"
-msgstr ""
+msgstr "Изберете да имате албум с персонализиран размер на снимката"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintcustomdlg.cpp:43
 #, kde-format
@@ -19682,6 +19753,8 @@ msgid ""
 "Rotate photo automatically on layout accordingly with camera orientation "
 "information"
 msgstr ""
+"Автоматично завъртане на снимката върху оформлението съответно с "
+"информацията за ориентацията на камерата"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:142
 #, kde-format
@@ -19691,27 +19764,27 @@ msgstr "Няма страница за отпечатване..."
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:150
 #, kde-format
 msgid "Starting to pre-process files..."
-msgstr ""
+msgstr "Започва предварителна обработка на файловете..."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:188
 #, kde-format
 msgid "Printing process aborted..."
-msgstr ""
+msgstr "Процесът на отпечатване е прекъснат..."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:229
 #, kde-format
 msgid "Printing process is not completed"
-msgstr ""
+msgstr "Процесът на отпечатване не е завършен"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:234
 #, kde-format
 msgid "Printing process completed."
-msgstr ""
+msgstr "Процесът на отпечатване е завършен."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:242
 #, kde-format
 msgid "Open destination directory in file-browser."
-msgstr ""
+msgstr "Отваряне на директорията на местоназначението във файловия браузър."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:264
 #, kde-format
@@ -19725,7 +19798,7 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:293
 #, kde-format
 msgid "Could not remove the GIMP's temporary files."
-msgstr ""
+msgstr "Не можа да се премахнат временните файлове на GIMP."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:308
 #, kde-format
@@ -19807,7 +19880,7 @@ msgstr "Потребителска"
 #, kde-format
 msgctxt "@info"
 msgid "Select your preferred print output."
-msgstr ""
+msgstr "Изберете предпочитания изход за печат"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:492
 #, kde-format
@@ -19888,27 +19961,27 @@ msgstr "Страница %1 от %2"
 #: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:92
 #, kde-format
 msgid "Error opening input file"
-msgstr ""
+msgstr "Грешка при отваряне на входния файл"
 
 #: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:103
 #, kde-format
 msgid "Error opening temporary folder"
-msgstr ""
+msgstr "Грешка при отварянето на временната папка"
 
 #: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:126
 #, kde-format
 msgid "Cannot resize image. Aborting."
-msgstr ""
+msgstr "Не може да се преоразмери изображението. Прекъсване."
 
 #: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:139
 #, kde-format
 msgid "Cannot save resized image (JPEG). Aborting."
-msgstr ""
+msgstr "Не може да се запише изображение с променен размер (JPEG). Прекъсване."
 
 #: core/dplugins/generic/tools/sendbymail/manager/imageresizejob.cpp:147
 #, kde-format
 msgid "Cannot save resized image (PNG). Aborting."
-msgstr ""
+msgstr "Не може да се запише изображение с променен размер (PNG). Прекъсване."
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:114
 #, kde-format
@@ -19933,12 +20006,12 @@ msgstr "Неуспешно преоразмеряване на %1: %2"
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:236
 #, kde-format
 msgid "There are no files to send"
-msgstr ""
+msgstr "Няма файлове за изпращане"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:257
 #, kde-format
 msgid "Build images properties file"
-msgstr ""
+msgstr "Изграждане на файл със свойства на изображенията"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:273
 #, kde-format
@@ -19982,12 +20055,12 @@ msgstr "properties.txt"
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:302
 #, kde-format
 msgid "Image properties file cannot be opened"
-msgstr ""
+msgstr "Файлът със свойствата на изображението не може да бъде отворен"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:314
 #, kde-format
 msgid "Image properties file done"
-msgstr ""
+msgstr "Файлът със свойствата на изображението е готов"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:334
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:984
@@ -20002,6 +20075,8 @@ msgid ""
 "Some images cannot be resized.\n"
 "Do you want them to be added as attachments without resizing?"
 msgstr ""
+"Някои изображения не могат да бъдат преоразмерени.\n"
+"Искате ли те да бъдат добавени като прикачени файлове без промяна на размера?"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:405
 #, kde-format
@@ -20025,12 +20100,12 @@ msgstr "Стартиране на програмата \"%1\"..."
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:647
 #, kde-format
 msgid "After having sent your images by email..."
-msgstr ""
+msgstr "След като сте изпратили изображенията си по имейл..."
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:648
 #, kde-format
 msgid "Press 'Finish' button to clean up temporary files"
-msgstr ""
+msgstr "Натиснете бутона \"Завършване\", за да почистите временните файлове"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:114
 #, kde-format
@@ -20105,7 +20180,7 @@ msgstr "Изпращане по поща"
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:58
 #, kde-format
 msgid "A tool to send images by E-mail"
-msgstr ""
+msgstr "Инструмент за изпращане на изображения по електронна поща"
 
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:63
 #, kde-format
@@ -20157,7 +20232,7 @@ msgstr "Пощенски клиент на Mozilla Foundation."
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:128
 #, kde-format
 msgid "Preparing file to export by mail..."
-msgstr ""
+msgstr "Подготовка на файла за експортиране по електронна поща..."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailfinalpage.cpp:136
 #: core/dplugins/generic/webservices/unified/wizard/wsfinalpage.cpp:138
@@ -20198,7 +20273,7 @@ msgstr ""
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:118
 #, kde-format
 msgid "Attach a file with items properties"
-msgstr ""
+msgstr "Прикачване на файл със свойства на елементите"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:119
 #, kde-format
@@ -20215,7 +20290,7 @@ msgstr " MB"
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:131
 #, kde-format
 msgid "Maximum email size limit:"
-msgstr ""
+msgstr "Ограничение на максималния размер на електронната поща:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:136
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:134
@@ -20261,7 +20336,7 @@ msgstr "Дължина на изображението:"
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:127
 #, kde-format
 msgid "Select your preferred format to convert image."
-msgstr ""
+msgstr "Изберете предпочитания от вас формат за конвертиране на изображението."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:185
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:146
@@ -20331,7 +20406,7 @@ msgstr "Видео слайдшоу"
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:58
 #, kde-format
 msgid "A tool to create video slideshow from images"
-msgstr ""
+msgstr "Инструмент за създаване на видео слайдшоу от изображения"
 
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:63
 #, kde-format
@@ -20469,7 +20544,7 @@ msgstr ""
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
 #, kde-format
 msgid "Create a Video Slideshow"
-msgstr ""
+msgstr "Създаване на видео слайдшоу"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:87
 #, kde-format
@@ -20717,7 +20792,7 @@ msgstr "Зареждане на списък за изпълнение от фа
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:130
 #, kde-format
 msgid "Save playlist to a file."
-msgstr ""
+msgstr "Записване на списък за възпроизвеждане във файл."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:131
 #, kde-format
@@ -21345,7 +21420,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "A tool to render presentation"
-msgstr ""
+msgstr "Инструмент за визуализиране на презентация"
 
 #: core/dplugins/generic/view/presentation/presentationplugin.cpp:68
 #, kde-format
@@ -21514,7 +21589,7 @@ msgstr ""
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:130
 #, kde-format
 msgid "Slideshow runs in a loop"
-msgstr ""
+msgstr "Слайдшоуто се изпълнява в цикъл"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:131
 #, kde-format
@@ -21555,7 +21630,7 @@ msgstr ""
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
 #, kde-format
 msgid "Show image creation date"
-msgstr ""
+msgstr "Показване на датата на създаване на изображението"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:143
 #, kde-format
@@ -22224,7 +22299,7 @@ msgstr "Албумът е пълен."
 #: core/dplugins/generic/webservices/facebook/fbtalker_wizard.cpp:483
 #, kde-format
 msgid "Missing or invalid file."
-msgstr ""
+msgstr "Липсващ или невалиден файл."
 
 #: core/dplugins/generic/webservices/facebook/fbtalker.cpp:520
 #: core/dplugins/generic/webservices/facebook/fbtalker_wizard.cpp:486
@@ -22323,7 +22398,7 @@ msgstr "Създаване на символни връзки"
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:116
 #, kde-format
 msgid "Create relative symlinks"
-msgstr ""
+msgstr "Създаване на относителни символни връзки"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:118
 #, kde-format
@@ -22505,6 +22580,8 @@ msgstr "Прехвърляне на файл"
 msgctxt "@info"
 msgid "A tool to export and import items with a remote location"
 msgstr ""
+"Инструмент за експортиране и импортиране на елементи с отдалечено "
+"местоположение"
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:70
 #, kde-format
@@ -22663,7 +22740,7 @@ msgstr "Липсващ подпис"
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:744
 #, kde-format
 msgid "Login Failed / Invalid auth token"
-msgstr ""
+msgstr "Влизането в системата е неуспешно / Невалиден токен за автентичност"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:748
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:515
@@ -22742,7 +22819,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1210
 #, kde-format
 msgid "Failed to query photo information"
-msgstr ""
+msgstr "Неуспешна заявка за информация за снимка"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:33
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:49
@@ -22896,7 +22973,7 @@ msgstr "Видимо за приятели"
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:458
 #, kde-format
 msgid "More publication options"
-msgstr ""
+msgstr "Още опции за публикуване"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:180
 #, kde-format
@@ -23002,7 +23079,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:512
 #, kde-format
 msgid "Login failed / Invalid auth token"
-msgstr ""
+msgstr "Влизането в системата е неуспешно / Невалиден токен за автентичност"
 
 #: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:536
 #, kde-format
@@ -23061,7 +23138,7 @@ msgstr ""
 #, kde-format
 msgctxt "google photos album privacy"
 msgid "Sign-In Required to View"
-msgstr ""
+msgstr "Изисква се влизане, за да се види"
 
 #: core/dplugins/generic/webservices/google/gsnewalbumdlg.cpp:76
 #, kde-format
@@ -23727,7 +23804,7 @@ msgstr "Вход в системата"
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1507
 #, kde-format
 msgid "ERROR while creating observation"
-msgstr ""
+msgstr "ГРЕШКА при създаване на наблюдение"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1585
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1703
@@ -23738,7 +23815,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1815
 #, kde-format
 msgid "ERROR while deleting observation"
-msgstr ""
+msgstr "ГРЕШКА при изтриване на наблюдение"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1919
 #, kde-format
@@ -24033,7 +24110,7 @@ msgstr "Повече опции"
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:142
 #, kde-format
 msgid "Photos should be taken within"
-msgstr ""
+msgstr "Снимките трябва да бъдат направени в рамките на"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:135
 #, kde-format
@@ -24049,7 +24126,7 @@ msgstr "метри на наблюдение."
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:157
 #, kde-format
 msgid "Known observations should be within"
-msgstr ""
+msgstr "Известните наблюдения трябва да са в рамките на"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwidget.cpp:209
 #, kde-format
@@ -24744,7 +24821,7 @@ msgstr "Експортиране в Onedrive"
 #, kde-format
 msgctxt "@info"
 msgid "Start upload to Onedrive"
-msgstr ""
+msgstr "Стартиране на качването в Onedrive"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:288
 #, kde-format
@@ -25181,7 +25258,7 @@ msgstr "Качването на файла не е успешно"
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:244
 #, kde-format
 msgid "Unsupported file extension"
-msgstr ""
+msgstr "Неподдържано разширение на файла"
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:300
 #, kde-format
@@ -25486,7 +25563,7 @@ msgstr "Нов албум"
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:132
 #, kde-format
 msgid "Create new SmugMug album"
-msgstr ""
+msgstr "Създаване на нов албум в SmugMug"
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:135
 #, kde-format
@@ -25859,7 +25936,7 @@ msgstr ""
 #: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
 #, kde-format
 msgid "DarkTable Raw Conversion"
-msgstr ""
+msgstr "DarkTable Raw конвертиране"
 
 #: core/dplugins/rawimport/native/rawimport.cpp:65
 #, kde-format
@@ -26043,7 +26120,7 @@ msgstr ""
 #: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:214
 #, kde-format
 msgid "RawTherapee Raw Conversion"
-msgstr ""
+msgstr "RawTherapee Raw конвертиране"
 
 #: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:204
 #, kde-format
@@ -26622,7 +26699,7 @@ msgstr "Искате ли да обедините таг '%1' в таг '%2'?"
 #: core/libs/album/manager/albummanager_talbum.cpp:1112
 #, kde-format
 msgid "Don't ask again at this session"
-msgstr ""
+msgstr "Да не се пита отново в тази сесия"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:709
 #, kde-format
@@ -27060,7 +27137,7 @@ msgstr "Избран албум (по подразбиране)"
 #, kde-format
 msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
-msgstr ""
+msgstr "Основна папка на текущата колекция"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:348
 #, kde-format
@@ -27264,6 +27341,13 @@ msgid ""
 "please set a unique label on your CDs and DVDs if you intend to use them "
 "with digiKam."
 msgstr ""
+"Това е CD/DVD диск, който се идентифицира чрез етикета, който можете да "
+"зададете в приложението си за запис на компактдискове. Вече има друг запис "
+"със същия етикет. Двете ще бъдат разграничени по файловете в горната "
+"директория, така че, моля, не добавяйте файлове към компактдиска, защото в "
+"противен случай той няма да бъде разпознат. В бъдеще, моля, задавайте "
+"уникален етикет на вашите CD и DVD дискове, ако възнамерявате да ги "
+"използвате с digiKam."
 
 #: core/libs/database/collection/collectionmanager_location.cpp:347
 #, kde-format
@@ -27565,7 +27649,7 @@ msgstr ""
 #: core/libs/database/coredb/coredbschemaupdater.cpp:896
 #, kde-format
 msgid "Opened new database file"
-msgstr ""
+msgstr "Отворен нов файл с база данни"
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:995
 #, kde-format
@@ -27618,7 +27702,7 @@ msgstr "Импортирани албуми"
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1139
 #, kde-format
 msgid "Imported images information"
-msgstr ""
+msgstr "Информация за импортираните изображения"
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1169
 #, kde-format
@@ -27633,7 +27717,7 @@ msgstr ""
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1252
 #, kde-format
 msgid "Did the initial full scan"
-msgstr ""
+msgstr "Извършено първоначално пълно сканиране"
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:1276
 #, kde-format
@@ -28087,7 +28171,7 @@ msgstr "Изчистване на кошчето"
 #, kde-format
 msgctxt "@info"
 msgid "Initializing database..."
-msgstr ""
+msgstr "Иницииране на базата данни..."
 
 #: core/libs/database/utils/scan/scancontroller.cpp:144
 #, kde-format
@@ -28259,6 +28343,13 @@ msgid ""
 "before the changes are written to the database. This made database requests "
 "atomic and robust in extensive and critical use cases."
 msgstr ""
+"Write-Ahead Log (Дневник за запис напред) е режим за използване на дневник "
+"за запис напред, в който се записват транзакции, които са били извършени, но "
+"все още не са приложени към базите данни. При него се използва спомагателен "
+"журнален файл, в който се разполагат структури за транзакциите за "
+"възстановяване по време на срив. Промените първо се записват в дневника, "
+"преди да се запишат в базата данни. Това прави заявките към базите данни "
+"атомарни и надеждни в обширни и критични случаи на използване."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:131
 #, kde-format
@@ -28310,6 +28401,8 @@ msgid ""
 "Set the MySQL server connection options.\n"
 "For advanced users only."
 msgstr ""
+"Задаване на опциите за връзка със сървъра MySQL.\n"
+"Само за напреднали потребители."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:196
 #, kde-format
@@ -28534,7 +28627,7 @@ msgstr "Папка на базата данни за миниатюрите:"
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:599
 #, kde-format
 msgid "Database connection test"
-msgstr ""
+msgstr "Тест на връзката с базата данни"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:595
 #, kde-format
@@ -28594,7 +28687,7 @@ msgstr ""
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:852
 #, kde-format
 msgid "Database Connection Test"
-msgstr ""
+msgstr "Тест за свързване на база данни"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:853
 #, kde-format
@@ -29012,7 +29105,7 @@ msgstr "<i>Видео кодек:</i>"
 #: core/libs/dialogs/infodlg.cpp:68
 #, kde-format
 msgid "Shared Libraries and Components Information"
-msgstr ""
+msgstr "Информация за споделени библиотеки и компоненти"
 
 #: core/libs/dialogs/infodlg.cpp:74
 #: core/libs/progressmanager/dhistoryview.cpp:149
@@ -29036,7 +29129,7 @@ msgstr "Списък с елементи"
 #, kde-format
 msgctxt "@title"
 msgid "Shared Libraries and Components Information"
-msgstr ""
+msgstr "Информация за споделени библиотеки и компоненти"
 
 #: core/libs/dialogs/libsinfodlg.cpp:141
 #, kde-format
@@ -30123,7 +30216,7 @@ msgstr ""
 #: core/libs/dimg/filters/curves/curvessettings.cpp:263
 #, kde-format
 msgid "Gimp Curves File to Save"
-msgstr ""
+msgstr "Файл с криви на Gimp за запазване"
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:275
 #, kde-format
@@ -30139,7 +30232,7 @@ msgstr "Зареждане на снимка..."
 #: core/libs/dimg/filters/curves/curveswidget.cpp:198
 #, kde-format
 msgid "Histogram calculation..."
-msgstr ""
+msgstr "Изчисляване на хистограма..."
 
 #: core/libs/dimg/filters/curves/curveswidget.cpp:212
 #, kde-format
@@ -30762,7 +30855,7 @@ msgstr ""
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:172
 #, kde-format
 msgid "Photographic Distribution"
-msgstr ""
+msgstr "Фотографично разпределение"
 
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:173
 #, kde-format
@@ -31164,7 +31257,7 @@ msgstr ""
 #: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:225
 #, kde-format
 msgid "Select Black Frame Image"
-msgstr ""
+msgstr "Избор на черно изображение"
 
 #: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:231
 #, kde-format
@@ -31855,7 +31948,7 @@ msgstr "Зареждане на снимка..."
 #, kde-format
 msgctxt "@info: histogram"
 msgid "Histogram calculation..."
-msgstr ""
+msgstr "Изчисляване на хистограма..."
 
 #: core/libs/dimg/filters/levels/histogramwidget.cpp:520
 #, kde-format
@@ -32004,10 +32097,10 @@ msgstr ""
 msgid "Raw Conversion"
 msgstr "Raw конверсия"
 
-#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:100
+#: core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp:96
 #, kde-format
 msgid "RedEye Correction Filter"
-msgstr ""
+msgstr "Филтър за корекция на червени очи"
 
 #: core/libs/dimg/filters/redeye/redeyecorrectionsettings.cpp:71
 #, kde-format
@@ -32130,6 +32223,12 @@ msgid ""
 "will be very poor. A useful value is 0.01. Using a high value for the noise "
 "filter will reduce the sharpening effect of the tool."
 msgstr ""
+"Увеличаването на параметъра на филтъра за шум може да помогне за намаляване "
+"на артефактите. Филтърът за шум може да варира от 0 до 1, но стойности, по-"
+"високи от 0,1, рядко са полезни. Когато стойността на филтъра за шум е "
+"твърде ниска, напр. 0,0, качеството на изображението ще бъде много лошо. "
+"Полезна стойност е 0,01. Използването на висока стойност за филтъра за шум "
+"ще намали ефекта на изостряне на инструмента."
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:268
 #, kde-format
@@ -32145,6 +32244,11 @@ msgid ""
 "values, you will probably also have to increase the correlation and/or noise "
 "filter parameters."
 msgstr ""
+"Това е рязкостта за Гаусовата конволюция. Използвайте този параметър, когато "
+"размазването ви е от Гаусов тип. В повечето случаи трябва да зададете този "
+"параметър на 0, защото той предизвиква неприятни артефакти. Когато "
+"използвате стойности, различни от нула, вероятно ще трябва да увеличите и "
+"параметрите на корелационния и/или шумовия филтър."
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:278
 #, kde-format
@@ -32426,7 +32530,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item: WB settings"
 msgid "sunny daylight around noon"
-msgstr ""
+msgstr "слънчева дневна светлина около обяд"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:222
 #, kde-format
@@ -33212,7 +33316,7 @@ msgstr "Затваряне на прозореца"
 #: core/libs/dplugins/webservices/wstooldialog.cpp:112
 #, kde-format
 msgid "Cancel current operation"
-msgstr ""
+msgstr "Отмяна на текущата операция"
 
 #: core/libs/dplugins/widgets/ditemslist.cpp:93
 #, kde-format
@@ -33540,7 +33644,7 @@ msgstr ""
 #: core/libs/fileactionmanager/metadatastatusbar.cpp:132
 #, kde-format
 msgid "No pending metadata synchronization"
-msgstr ""
+msgstr "Няма чакащо синхронизиране на метаданни"
 
 #: core/libs/fileactionmanager/metadatastatusbar.cpp:74
 #, kde-format
@@ -33548,6 +33652,9 @@ msgid ""
 "If lazy synchronization is enabled in metadata settings, the status bar will "
 "display the number of items waiting for synchronization"
 msgstr ""
+"Ако в настройките на метаданните е разрешено мързеливо синхронизиране, в "
+"лентата на състоянието ще се показва броят на елементите, които чакат "
+"синхронизиране"
 
 #: core/libs/fileactionmanager/metadatastatusbar.cpp:137
 #, kde-format
@@ -35758,7 +35865,7 @@ msgstr "Грешка в контролните суми."
 #: core/libs/onlineversion/onlineversiondwnl.cpp:329
 #, kde-format
 msgid "Cannot open target file."
-msgstr ""
+msgstr "Не може да се отвори целеви файл."
 
 #: core/libs/progressmanager/dlogoaction.cpp:144
 #, kde-format
@@ -37683,7 +37790,7 @@ msgstr "Raw формат на изображения на дигитални к�
 #: core/libs/rawengine/drawfiles.cpp:133
 #, kde-format
 msgid "Samsung Raw Image Format"
-msgstr ""
+msgstr "Формат за Raw изображения на Samsung"
 
 #: core/libs/rawengine/drawfiles.cpp:138
 #, kde-format
@@ -37708,7 +37815,7 @@ msgstr ""
 #: core/libs/settings/applicationsettings_miscs.cpp:393
 #, kde-format
 msgid "Remember choice for this operation"
-msgstr ""
+msgstr "Запомняне на избора за тази операция"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:424
 #: core/utilities/lighttable/lighttablewindow.cpp:48
@@ -37747,6 +37854,7 @@ msgid ""
 "Operations related to metadata, labels, ratings, tags, geolocation and "
 "rotation"
 msgstr ""
+"Операции, свързани с метаданни, етикети, оценки, тагове, геолокация и ротация"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:454
 #, kde-format
@@ -38172,6 +38280,9 @@ msgid ""
 "This operation can take long time depending on collection size.\n"
 "Do you want to continue?"
 msgstr ""
+"Тази операция може да отнеме много време в зависимост от размера на "
+"колекцията.\n"
+"Искате ли да продължите?"
 
 #: core/libs/tags/manager/tagsmanager.cpp:549
 #, kde-format
@@ -38180,6 +38291,10 @@ msgid ""
 "To apply changes to files, you must choose write metadata to file later.\n"
 "Do you want to continue?"
 msgstr ""
+"Тази операция ще изтрие всички етикети само от базата данни.\n"
+"За да приложите промените към файловете, по-късно трябва да изберете запис "
+"на метаданни във файл.\n"
+"Искате ли да продължите?"
 
 #: core/libs/tags/manager/tagsmanager.cpp:613
 #, kde-format
@@ -38469,6 +38584,15 @@ msgid ""
 "standard reference code is used, these lists are the English language "
 "reference versions. This field is limited to 8 digit code."
 msgstr ""
+"Въведете референтния номер на обекта тук. Осигурява цифров код за посочване "
+"на името на обекта плюс незадължителни имена на предмета и подробности за "
+"предмета на езика на услугата. Subject Reference (Референтен номер на "
+"субекта) е номер от диапазона от 01000000 до 17999999 и представлява "
+"независима от езика международна референция към даден субект. Предметът се "
+"идентифицира чрез референтния си номер и съответните имена, взети от "
+"стандартни списъци, предоставени от XMP/NAA. Ако се използва стандартен "
+"референтен код, тези списъци са референтните версии на английски език. Това "
+"поле е ограничено до 8-цифрен код."
 
 #: core/libs/template/subjectedit.cpp:66
 #, kde-format
@@ -38926,7 +39050,7 @@ msgstr ""
 #: core/libs/timeadjust/clockphotodialog.cpp:189
 #, kde-format
 msgid "The clock date and time:"
-msgstr ""
+msgstr "Дата и час на часовника:"
 
 #: core/libs/timeadjust/clockphotodialog.cpp:241
 #, kde-format
@@ -39079,7 +39203,7 @@ msgstr "Без"
 #, kde-format
 msgctxt "Effect: KenBurnsZoomIn"
 msgid "Ken Burns - Camera Zoom In"
-msgstr ""
+msgstr "Кен Бърнс - Увеличаване на камерата"
 
 #: core/libs/transitionmngr/effectmngr.cpp:101
 #, kde-format
@@ -39816,7 +39940,7 @@ msgstr ""
 #: core/libs/video/player/mediaplayerview.cpp:248
 #, kde-format
 msgid "Toggle playing in a loop"
-msgstr ""
+msgstr "Превключване на възпроизвеждането в цикъл"
 
 #: core/libs/video/qtav/codec/AVDecoder.cpp:131
 #, kde-format
@@ -39979,7 +40103,7 @@ msgstr "IOSurface: macOS, no copy, fast"
 #: core/libs/video/qtav/codec/video/VideoDecoderVideoToolbox.cpp:226
 #, kde-format
 msgid "Auto: choose the fastest"
-msgstr ""
+msgstr "Автоматично: изберете най-бързото"
 
 #: core/libs/video/qtav/config/AVFilterConfigPage.cpp:47
 #, kde-format
@@ -40111,7 +40235,7 @@ msgstr "Декодер"
 #: core/libs/video/qtav/config/MiscPage.cpp:42
 #, kde-format
 msgid "Preview Over Time-Slider"
-msgstr ""
+msgstr "Предварителен преглед върху плъзгача за време"
 
 #: core/libs/video/qtav/config/MiscPage.cpp:48
 #, kde-format
@@ -40131,7 +40255,7 @@ msgstr "Игнориране"
 #: core/libs/video/qtav/config/MiscPage.cpp:70
 #, kde-format
 msgid "Progress update interval"
-msgstr ""
+msgstr "Интервал на актуализиране на напредъка"
 
 #: core/libs/video/qtav/config/MiscPage.cpp:75
 #, kde-format
@@ -40211,7 +40335,7 @@ msgstr "Допълнителен код на заглавната част"
 #, kde-format
 msgctxt "@label"
 msgid "Fragment shader texel sample function"
-msgstr ""
+msgstr "Fragment shader texel sample function"
 
 #: core/libs/video/qtav/config/ShaderPage.cpp:62
 #, kde-format
@@ -40359,7 +40483,7 @@ msgstr "Аудиокодекът не е намерен"
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:258
 #, kde-format
 msgid "Subtitle codec not found"
-msgstr ""
+msgstr "Не е намерен кодек за субтитри"
 
 #: core/libs/video/qtav/ffmpeg/AVError.cpp:265
 #, kde-format
@@ -40739,7 +40863,7 @@ msgstr "Грешка при зареждане на изображение"
 #: core/libs/widgets/graphicsview/paniconwidget.cpp:330
 #, kde-format
 msgid "Pan the image to a region"
-msgstr ""
+msgstr "Преместване на изображението в дадена област"
 
 #: core/libs/widgets/history/versionswidget.cpp:93
 #, kde-format
@@ -40759,7 +40883,7 @@ msgstr ""
 #: core/libs/widgets/iccprofiles/cietonguewidget.cpp:811
 #, kde-format
 msgid "Uncalibrated color space"
-msgstr ""
+msgstr "Некалибрирано цветово пространство"
 
 #: core/libs/widgets/iccprofiles/cietonguewidget.cpp:817
 #, kde-format
@@ -40844,7 +40968,7 @@ msgstr "Описание"
 #, kde-format
 msgctxt "@info: icc profile properties"
 msgid "The ICC profile product description"
-msgstr ""
+msgstr "Описание на ICC профил на продукта"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:132
 #, kde-format
@@ -41013,7 +41137,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title: icc profile properties"
 msgid "ICC Color Profile Information"
-msgstr ""
+msgstr "Информация за цветовия профил ICC"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:352
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:413
@@ -41370,7 +41494,7 @@ msgstr "Quốc Hưng Trần"
 #: core/libs/widgets/mainview/daboutdata.cpp:165
 #, kde-format
 msgid "MJPEGStream plugin, OCR text Converter plugin"
-msgstr ""
+msgstr "Плъгин за MJPEGStream, плъгин за конвертиране на текст OCR"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:170
 #, kde-format
@@ -42171,17 +42295,17 @@ msgstr "Аудиокнига на Audible"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:111
 #, kde-format
 msgid "Canon Camera Information"
-msgstr ""
+msgstr "Информация за камера Canon"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:115
 #, kde-format
 msgid "Canon Recipe Data Information"
-msgstr ""
+msgstr "Информация за Canon Recipe Data"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:119
 #, kde-format
 msgid "Derived Convenience Tags"
-msgstr ""
+msgstr "Производни тагове за удобство"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:123
 #, kde-format
@@ -42231,7 +42355,7 @@ msgstr ""
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:159
 #, kde-format
 msgid "FLIR Thermal Imaging Camera Information"
-msgstr ""
+msgstr "Информация за термовизионна камера FLIR"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:163
 #, kde-format
@@ -42241,7 +42365,7 @@ msgstr "Информация за файловата система"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:167
 #, kde-format
 msgid "Macromedia/Adobe Flash Information"
-msgstr ""
+msgstr "Информация за Macromedia/Adobe Flash"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:171
 #, kde-format
@@ -42256,7 +42380,7 @@ msgstr "Тагове за име на шрифт"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:179
 #, kde-format
 msgid "FotoWare FotoStation Information"
-msgstr ""
+msgstr "Информация за FotoWare FotoStation"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:183
 #, kde-format
@@ -42281,7 +42405,7 @@ msgstr "Тагове на GoPro"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:199
 #, kde-format
 msgid "H.264 Video Streams Information"
-msgstr ""
+msgstr "Информация за H.264 видеопотоци"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:203
 #, kde-format
@@ -42296,7 +42420,7 @@ msgstr ""
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:211
 #, kde-format
 msgid "ID3 And Lyrics3 information"
-msgstr ""
+msgstr "Информация за ID3 и Lyrics3"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:215
 #, kde-format
@@ -42341,7 +42465,7 @@ msgstr "Microsoft Shell Link"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:247
 #, kde-format
 msgid "Creo Leaf Capture Information"
-msgstr ""
+msgstr "Информация за Creo Leaf Capture"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:251
 #, kde-format
@@ -42356,12 +42480,12 @@ msgstr "MPEG-2 транспортен поток"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:259
 #, kde-format
 msgid "Meta Information Encapsulation"
-msgstr ""
+msgstr "Капсулиране на мета информация"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:263
 #, kde-format
 msgid "Magick Image File Format"
-msgstr ""
+msgstr "Формат на файлове с изображение Magick"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:267
 #, kde-format
@@ -42371,12 +42495,12 @@ msgstr ""
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:271
 #, kde-format
 msgid "JVC Canon and Panasonic Camcorders Information"
-msgstr ""
+msgstr "Информация за видеокамери JVC Canon и Panasonic"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:275
 #, kde-format
 msgid "Musepack Audio Information"
-msgstr ""
+msgstr "Информация за Musepack Audio"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:279
 #, kde-format
@@ -42391,7 +42515,7 @@ msgstr "CIPA Multi-Picture Format Specification"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:287
 #, kde-format
 msgid "Material Exchange Format"
-msgstr ""
+msgstr "Формат на Material Exchange "
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:291
 #, kde-format
@@ -42401,7 +42525,7 @@ msgstr "Информация за бележките на създателя"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:295
 #, kde-format
 msgid "Matroska Audio/Video/Subtitle Information"
-msgstr ""
+msgstr "Информация за аудио/видео/субтитри Matroska"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:299
 #, kde-format
@@ -42431,7 +42555,7 @@ msgstr "Adobe Portable Document Format"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:319
 #, kde-format
 msgid "Apple Picture Information"
-msgstr ""
+msgstr "Информация за картини на Apple"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:323
 #, kde-format
@@ -42446,23 +42570,25 @@ msgstr ""
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:331
 #, kde-format
 msgid "Paint Shop Pro Information"
-msgstr ""
+msgstr "Информация за Paint Shop Pro"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:335
 #, kde-format
 msgid ""
 "Palm database, Mobipocket electronic books, and Amazon Kindle Information"
 msgstr ""
+"Информация за базата данни Palm, електронните книги Mobipocket и Amazon "
+"Kindle"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:339
 #, kde-format
 msgid "Panasonic RAW 2 Information"
-msgstr ""
+msgstr "Информация за Panasonic RAW 2"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:343
 #, kde-format
 msgid "Streaming Parrot Drone Video Information"
-msgstr ""
+msgstr "Информация за стрийминг на видео от Parrot Drone"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:347
 #, kde-format
@@ -42492,17 +42618,17 @@ msgstr "Информация за PrintIM"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:367
 #, kde-format
 msgid "Apple QuickTime Movie Information"
-msgstr ""
+msgstr "Информация за Apple QuickTime Movie"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:371
 #, kde-format
 msgid "FujiFilm RAW Format Information"
-msgstr ""
+msgstr "Информация за формата RAW на FujiFilm"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:375
 #, kde-format
 msgid "Resource Interchange File Format Information"
-msgstr ""
+msgstr "Информация за файловия формат за обмен на ресурси"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:379
 #, kde-format
@@ -42522,17 +42648,17 @@ msgstr "RGBE High Dynamic-Range"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:391
 #, kde-format
 msgid "Rawzor Image Information"
-msgstr ""
+msgstr "Информация за изображенията Rawzor"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:395
 #, kde-format
 msgid "Real Media/Video Information"
-msgstr ""
+msgstr "Информация за Real Media/Video"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:399
 #, kde-format
 msgid "Redcode RAW Video Information"
-msgstr ""
+msgstr "Информация за Redcode RAW Video"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:403
 #, kde-format
@@ -42542,17 +42668,17 @@ msgstr "Мащабируемо векторно изображение"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:407
 #, kde-format
 msgid "Sigma/Foveon RAW Information"
-msgstr ""
+msgstr "Информация за Sigma/Foveon RAW"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:411
 #, kde-format
 msgid "Sony Cameras Information"
-msgstr ""
+msgstr "Информация за фотоапарати Sony"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:415
 #, kde-format
 msgid "Stereo Still Image Information"
-msgstr ""
+msgstr "Информация за стерео снимки"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:419
 #, kde-format
@@ -42562,7 +42688,7 @@ msgstr "Ogg Theora Video Specification"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:423
 #, kde-format
 msgid "BitTorrent Description Information"
-msgstr ""
+msgstr "Информация за описание на BitTorrent"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:427
 #, kde-format
@@ -42572,17 +42698,17 @@ msgstr "Информация за трейлър"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:431
 #, kde-format
 msgid "Virtual Card Information"
-msgstr ""
+msgstr "Информация за виртуални карти"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:435
 #, kde-format
 msgid "Ogg Vorbis Specification"
-msgstr ""
+msgstr "Спецификация на Ogg Vorbis"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:439
 #, kde-format
 msgid "Windows Recorded TV Show Information"
-msgstr ""
+msgstr "Информация за записано телевизионно предаване в Windows"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:443
 #, kde-format
@@ -42714,7 +42840,7 @@ msgstr "Име на файл: %1 (%2)"
 #, kde-format
 msgctxt "@title"
 msgid "Save ExifTool Information"
-msgstr ""
+msgstr "Запазване на информация за ExifTool"
 
 #: core/libs/widgets/metadata/exiv2/exifwidget.cpp:72
 #, kde-format
@@ -42822,7 +42948,7 @@ msgstr "Схема на digiKam"
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:97
 #, kde-format
 msgid "Exif-specific Properties"
-msgstr ""
+msgstr "Специфични за Exif свойства"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:101
 #, kde-format
@@ -47995,7 +48121,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info: folder-view path edit"
 msgid "Enter local path here..."
-msgstr ""
+msgstr "Въведете локалния път тук..."
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:286
 #, kde-format
@@ -48215,7 +48341,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title: window"
 msgid "Confirm Bookmark Deletion"
-msgstr ""
+msgstr "Потвърждаване на изтриването на отметките"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:260
 #, kde-format
@@ -48269,7 +48395,7 @@ msgstr "Showfoto"
 #, kde-format
 msgctxt "command line option"
 msgid "File(s) or folder(s) to open"
-msgstr ""
+msgstr "Файл(ове) или папка(и) за отваряне"
 
 #: core/showfoto/main/main.cpp:180
 #, kde-format
@@ -48331,7 +48457,7 @@ msgstr ""
 #: core/utilities/imageeditor/main/imagewindow.cpp:686
 #, kde-format
 msgid "Image saved successfully"
-msgstr ""
+msgstr "Изображението е записано успешно"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:185
 #, kde-format
@@ -48676,7 +48802,7 @@ msgstr "Проверка за нова версия:"
 #: core/utilities/setup/misc/setupmisc.cpp:121
 #, kde-format
 msgid "Only For Stable Releases"
-msgstr ""
+msgstr "Само за стабилни версии"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:196
 #: core/utilities/setup/misc/setupmisc.cpp:122
@@ -48893,6 +49019,13 @@ msgid ""
 "unless you know what you are doing.\n"
 "Do you want to continue?"
 msgstr ""
+"Опцията \"Проверка за нова версия\" ще провери предварителните версии.\n"
+"\"Предварителните версии\" се предлагат всяка седмица, за да се тестват "
+"бързо новите функции.\n"
+"Не се препоръчва да се използват предварителни версии в производството, тъй "
+"като може да има останали грешки,\n"
+"освен ако знаете какво правите.\n"
+"Искате ли да продължите?"
 
 #: core/showfoto/setup/showfotosetupplugins.cpp:68
 #, kde-format
@@ -49112,7 +49245,7 @@ msgstr "Йерархия:"
 #, kde-format
 msgctxt "@title"
 msgid "Favorite Item Properties"
-msgstr ""
+msgstr "Свойства на Предпочитан елемент"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:232
 #, kde-format
@@ -49743,7 +49876,7 @@ msgstr "Промяна на регистъра"
 #: core/utilities/advancedrename/parser/modifiers/casemodifier.cpp:29
 #, kde-format
 msgid "change the case of a renaming option"
-msgstr ""
+msgstr "промяна на регистъра на символите в настройка за преименуване"
 
 #: core/utilities/advancedrename/parser/modifiers/casemodifier.cpp:33
 #, kde-format
@@ -49827,7 +49960,7 @@ msgstr "Обхват..."
 #: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:64
 #, kde-format
 msgid "Add only a specific range of a renaming option"
-msgstr ""
+msgstr "Добавяне само на определен обхват в настройка за преименуване"
 
 #: core/utilities/advancedrename/parser/modifiers/rangemodifier.cpp:68
 #, kde-format
@@ -49877,7 +50010,7 @@ msgstr "Заместване..."
 #: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:53
 #, kde-format
 msgid "Replace text in a renaming option"
-msgstr ""
+msgstr "Замяна на текст в настройка за преименуване"
 
 #: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:57
 #, kde-format
@@ -49981,7 +50114,7 @@ msgstr ""
 #: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:76
 #, kde-format
 msgid "Add database information"
-msgstr ""
+msgstr "Добавяне на информация за база данни"
 
 #: core/utilities/advancedrename/parser/options/database/dbkeyselector.cpp:93
 #, kde-format
@@ -50022,7 +50155,7 @@ msgstr "Размер на файла на изображението"
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:58
 #, kde-format
 msgid "Format of the media file"
-msgstr ""
+msgstr "Формат на медийния файл"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:59
 #, kde-format
@@ -50032,12 +50165,12 @@ msgstr "Тип на медийния файл"
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:60
 #, kde-format
 msgid "Rating of the media file"
-msgstr ""
+msgstr "Оценка на медийния файл"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:61
 #, kde-format
 msgid "Height of the media file"
-msgstr ""
+msgstr "Височина на медийния файл"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:62
 #, kde-format
@@ -50057,7 +50190,7 @@ msgstr "Дълбочина на цвета (битове на канал)"
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:65
 #, kde-format
 msgid "Color model of the image"
-msgstr ""
+msgstr "Цветен модел на изображението"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:66
 #, kde-format
@@ -50218,17 +50351,17 @@ msgstr "Информация за местоположението (GPS)"
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:50
 #, kde-format
 msgid "Latitude in the format as described by the XMP specification"
-msgstr ""
+msgstr "Географска ширина във формат, описан в спецификацията XMP"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:51
 #, kde-format
 msgid "Longitude in the format as described by the XMP specification"
-msgstr ""
+msgstr "Географска дължина във формат, описан в спецификацията XMP"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:52
 #, kde-format
 msgid "Latitude as double value"
-msgstr ""
+msgstr "Географска ширина като двойна стойност"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:53
 #, kde-format
@@ -50350,7 +50483,7 @@ msgstr "Дата и час..."
 #, kde-format
 msgctxt "@info"
 msgid "Add date and time information"
-msgstr ""
+msgstr "Добавяне на информация за дата и час"
 
 #: core/utilities/advancedrename/parser/options/dateoption.cpp:258
 #, kde-format
@@ -50430,6 +50563,8 @@ msgid ""
 "File extension, prepend with a '.' character, to modify the real file "
 "extension"
 msgstr ""
+"Файлово разширение, предхождано от  \".\", за да се промени истинското "
+"файлово разширение"
 
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:48
 #, kde-format
@@ -50467,7 +50602,7 @@ msgstr "Метаданни..."
 #: core/utilities/advancedrename/parser/options/metadataoption.cpp:98
 #, kde-format
 msgid "Add metadata information"
-msgstr ""
+msgstr "Добавяне на информация за метаданни"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:55
 #, kde-format
@@ -50885,7 +51020,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
-msgstr ""
+msgstr "Изчистване на непотвърдените резултати и повторно сканиране"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
 #, kde-format
@@ -51099,7 +51234,7 @@ msgstr "Без действие"
 #: core/utilities/firstrun/metadatapage.cpp:79
 #, kde-format
 msgid "Add information to files"
-msgstr ""
+msgstr "Добавяне на информация към файловете"
 
 #: core/utilities/firstrun/metadatapage.cpp:89
 #, kde-format
@@ -51111,7 +51246,7 @@ msgstr ""
 #: core/utilities/firstrun/migratefromdigikam4page.cpp:66
 #, kde-format
 msgid "Migration from digiKam 4"
-msgstr ""
+msgstr "Миграция от digiKam 4"
 
 #: core/utilities/firstrun/migratefromdigikam4page.cpp:74
 #, kde-format
@@ -51577,7 +51712,7 @@ msgstr ""
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:54
 #, kde-format
 msgid "Undo last draw on sketch"
-msgstr ""
+msgstr "Отмяна на последното рисуване върху скицата"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:55
 #, kde-format
@@ -51587,7 +51722,7 @@ msgstr ""
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:61
 #, kde-format
 msgid "Redo last draw on sketch"
-msgstr ""
+msgstr "Повтаряне на последното рисуване върху скицата"
 
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:62
 #, kde-format
@@ -52269,17 +52404,17 @@ msgstr "Отметката е избрана"
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:688
 #, kde-format
 msgid "Remove coordinates information"
-msgstr ""
+msgstr "Премахване на информация за координати"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:693
 #, kde-format
 msgid "Remove altitude information"
-msgstr ""
+msgstr "Премахване на информация за надморската височина"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:699
 #, kde-format
 msgid "Remove uncertainty information"
-msgstr ""
+msgstr "Премахване на информация за неопределеност"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:764
 #, kde-format
@@ -52517,7 +52652,7 @@ msgstr "Записване на местоположението като таг
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:297
 #, kde-format
 msgid "Write locations metadata"
-msgstr ""
+msgstr "Записване на метаданни за местоположението"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:304
 #, kde-format
@@ -52581,7 +52716,7 @@ msgstr "Файлът е празен."
 #: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:274
 #, kde-format
 msgid "Probably not a GPX file."
-msgstr ""
+msgstr "Вероятно не е GPX файл."
 
 #: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:286
 #, kde-format
@@ -52746,6 +52881,8 @@ msgid ""
 "Search name already exists.\n"
 "Please enter a new name:"
 msgstr ""
+"Търсеното име вече съществува.\n"
+"Моля, въведете ново име:"
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:545
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:117
@@ -52782,7 +52919,7 @@ msgstr "Не знам"
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:115
 #, kde-format
 msgid "Take the safest and most appropriate action"
-msgstr ""
+msgstr "Предприемане на най-безопасното и подходящо действие"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:127
 #, kde-format
@@ -53291,7 +53428,7 @@ msgstr "Експортиране"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save the file in a folder outside your collection"
-msgstr ""
+msgstr "Запазете файла в папка извън вашата колекция"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:313
 #, kde-format
@@ -53370,7 +53507,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Under-Exposure Indicator"
-msgstr ""
+msgstr "Индикатор за недостатъчна експозиция"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:450
 #, kde-format
@@ -53405,7 +53542,7 @@ msgstr "Изглед с управление на цветовете"
 #, kde-format
 msgctxt "@action"
 msgid "Soft Proofing Options..."
-msgstr ""
+msgstr "Опции за проверка на цветово предаване"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:480
 #, kde-format
@@ -53471,7 +53608,7 @@ msgstr "Няма избрано"
 #, kde-format
 msgctxt "@info"
 msgid "Information about current image selection"
-msgstr ""
+msgstr "Информация за текущия избор на изображения"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:595
 #, kde-format
@@ -53928,7 +54065,7 @@ msgstr ""
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:147
 #, kde-format
 msgid "Preview vertical split with same image region"
-msgstr ""
+msgstr "Преглед с вертикалното разделяне със същата област на изображението"
 
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:155
 #, kde-format
@@ -53940,7 +54077,7 @@ msgstr ""
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:159
 #, kde-format
 msgid "Preview horizontal split with same image region"
-msgstr ""
+msgstr "Преглед с хоризонталното разделяне със същата област на изображението"
 
 #: core/utilities/imageeditor/widgets/previewtoolbar.cpp:167
 #, kde-format
@@ -54940,7 +55077,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
-msgstr ""
+msgstr "Изтеглянето на изображенията е завършено"
 
 #: core/utilities/import/main/importui.cpp:2483
 #, kde-format
@@ -55554,7 +55691,7 @@ msgstr "На дясно"
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:56
 #, kde-format
 msgid "Show item on right panel"
-msgstr ""
+msgstr "Показване на елемента в десния панел"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:67
 #: core/utilities/setup/camera/setupcamera.cpp:507
@@ -55649,7 +55786,7 @@ msgstr "Предишна снимка"
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:223
 #, kde-format
 msgid "Edit Titles on the Right"
-msgstr ""
+msgstr "Редактиране на заглавията в дясната част"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:228
 #, kde-format
@@ -56793,7 +56930,7 @@ msgstr "Модификация"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:112
 #, kde-format
 msgid "Return items modified between"
-msgstr ""
+msgstr "Връщане на елементи, променени между"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:113
 #, kde-format
@@ -56830,7 +56967,7 @@ msgstr ""
 #: core/utilities/searchwindow/searchfields_createfield.cpp:141
 #, kde-format
 msgid "Return items with labels"
-msgstr ""
+msgstr "Връщане на елементи с етикети"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:149
 #, kde-format
@@ -56846,7 +56983,7 @@ msgstr "най-много"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:158
 #, kde-format
 msgid "Return items created between"
-msgstr ""
+msgstr "Връщане на елементи, създадени между"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:159
 #, kde-format
@@ -56862,7 +56999,7 @@ msgstr "Дигитализация"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:167
 #, kde-format
 msgid "Return items digitized between"
-msgstr ""
+msgstr "Връщане на дигитализирани елементи между"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:168
 #, kde-format
@@ -56873,7 +57010,7 @@ msgstr "и"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:176
 #, kde-format
 msgid "Return items with created time between"
-msgstr ""
+msgstr "Връщане на елементи с време на създаване между"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:177
 #, kde-format
@@ -56894,7 +57031,7 @@ msgstr ""
 #: core/utilities/searchwindow/searchfields_createfield.cpp:201
 #, kde-format
 msgid "Find items with a width between"
-msgstr ""
+msgstr "Намиране на елементи с ширина между"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:202
 #, kde-format
@@ -56905,7 +57042,7 @@ msgstr "и"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:219
 #, kde-format
 msgid "Find items with a height between"
-msgstr ""
+msgstr "Намиране на елементи с височина между"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:220
 #, kde-format
@@ -57270,7 +57407,7 @@ msgstr "Размер на пикселите"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:710
 #, kde-format
 msgid "Value of (Width * Height) between"
-msgstr ""
+msgstr "Стойност на (Широчина*Височина) между"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:711
 #, kde-format
@@ -57770,7 +57907,7 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview.cpp:195
 #, kde-format
 msgid "Show fullscreen overlay button"
-msgstr ""
+msgstr "Показване на бутон за смяна на режим на цял екран"
 
 #: core/utilities/setup/album/setupalbumview.cpp:196
 #, kde-format
@@ -57839,6 +57976,7 @@ msgstr ""
 #, kde-format
 msgid "Use large thumbnail size for high screen resolution"
 msgstr ""
+"Използване на голям размер на миниатюрата при висока резолюция на екрана"
 
 #: core/utilities/setup/album/setupalbumview.cpp:214
 #, kde-format
@@ -58465,7 +58603,7 @@ msgstr "Игнорирани имена на файлове:"
 #: core/utilities/setup/camera/setupcamera.cpp:438
 #, kde-format
 msgid "Ignored file extensions:"
-msgstr ""
+msgstr "Игнорирани файлови разширения:"
 
 #: core/utilities/setup/camera/setupcamera.cpp:458
 #, kde-format
@@ -58722,12 +58860,12 @@ msgstr ""
 #: core/utilities/setup/collections/setupcollectionview.cpp:1487
 #, kde-format
 msgid "Choose the folder containing your collection"
-msgstr ""
+msgstr "Изберете папката, съдържаща вашата колекция"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:694
 #, kde-format
 msgid "Problem Appending Collection"
-msgstr ""
+msgstr "Проблем с прибавянето на колекция"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:695
 #, kde-format
@@ -58840,7 +58978,7 @@ msgstr ""
 #: core/utilities/setup/collections/setupcollectionview.cpp:1563
 #, kde-format
 msgid "Problem Adding Collection"
-msgstr ""
+msgstr "Проблем с добавянето на колекция"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1572
 #, kde-format
@@ -58892,6 +59030,7 @@ msgstr ""
 #, kde-format
 msgid "Disable face engine feature and don't ask again"
 msgstr ""
+"Деактивиране на функцията за лицево разпознаване и да не се пита отново"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:259
 #, kde-format
@@ -59034,7 +59173,7 @@ msgstr ""
 #: core/utilities/setup/editor/setupeditoriface.cpp:177
 #, kde-format
 msgid "Over-exposure percents: "
-msgstr ""
+msgstr "Проценти на преекспониране: "
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:183
 #, kde-format
@@ -59272,7 +59411,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "After each editing session"
-msgstr ""
+msgstr "След всяка сесия на редактиране"
 
 #: core/utilities/setup/editor/setupversioning.cpp:276
 #, kde-format
@@ -59608,6 +59747,12 @@ msgid ""
 "no longer be uniquely assigned and will be used for both images, which can "
 "lead to metadata problems."
 msgstr ""
+"Трябва да активирате тази опция само ако обменяте метаданни за изображения с "
+"програми, които използват страничния формат BASENAME.xmp. Ако имате "
+"изображения с едно и също базово име (напр. Image.CR2 и Image.JPG), тогава "
+"sidecar (съпътстващ файл с данни) вече не може да бъде уникално присвоен и "
+"ще се използва и за двете изображения, което може да доведе до проблеми с "
+"метаданните."
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:240
 #, kde-format
@@ -59879,7 +60024,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Use lazy synchronization"
-msgstr ""
+msgstr "Използване на мързеливо синхронизиране"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:137
 #, kde-format
@@ -60335,6 +60480,18 @@ msgid ""
 "and to plan\n"
 "a manual scan through the maintenance tool at the right moment."
 msgstr ""
+"Задайте тази опция, за да накарате digiKam да сканира всички колекции за "
+"нови елементи, които\n"
+"да се регистрират в базата данни. Сканирането се извършва във фонов режим с\n"
+"управление на напредъка в лентата на състоянието, когато се зарежда\n"
+" главният интерфейс на digiKam.\n"
+" Ако компютърът ви е достатъчно бърз, това няма да се отрази на "
+"използваемостта\n"
+"на digiKam по време на сканирането. Ако колекциите ви са много големи или "
+"ако използвате отдалечена база данни, \n"
+"това може да доведе до ниска латентност. Втези случаи се препоръчва да "
+"деактивирате тази опция и да планирате\n"
+"ръчно сканиране чрез инструмента за поддръжка в по-подходящ момент."
 
 #: core/utilities/setup/misc/setupmisc.cpp:76
 #, kde-format
@@ -60471,6 +60628,7 @@ msgstr ""
 #, kde-format
 msgid "Use pixmaps with high DPI resolution"
 msgstr ""
+"Използване на растерни изображения с висока разделителна способност DPI"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:77
 #, kde-format
@@ -60844,7 +61002,7 @@ msgstr ""
 #: core/utilities/setup/setupicc.cpp:257
 #, kde-format
 msgid "When an image has no color profile information"
-msgstr ""
+msgstr "Когато изображението няма информация за цветовия профил"
 
 #: core/utilities/setup/setupicc.cpp:265
 #, kde-format
@@ -60894,7 +61052,7 @@ msgstr ""
 #: core/utilities/setup/setupicc.cpp:326
 #, kde-format
 msgid "Automatic color correction"
-msgstr ""
+msgstr "Автоматична корекция на цветовете"
 
 #. i18n("<p></p>"));
 #.
