@@ -301,7 +301,19 @@ bool DMetadata::setItemTagsPath(const QStringList& tagsPath, const DMetadataSett
             {
                 if (entry.namespaceName == QLatin1String("Exif.Image.XPKeywords"))
                 {
-                    if (removeExifTag(nameSpace))
+                    if      (writeWithExifTool() && !newList.isEmpty())
+                    {
+                        QString xpKeywords = newList.join(QLatin1String(", "));
+                        QByteArray xpData  = QByteArray((char*)xpKeywords.utf16(), xpKeywords.size() * 2);
+                        xpData.append("\x00\x00");
+
+                        if (!setExifTagData(nameSpace, xpData))
+                        {
+                            qCDebug(DIGIKAM_METAENGINE_LOG) << "Setting image tags failed" << nameSpace;
+                            return false;
+                        }
+                    }
+                    else if (removeExifTag(nameSpace))
                     {
                         qCDebug(DIGIKAM_METAENGINE_LOG) << "Remove image tags" << nameSpace;
                     }

@@ -235,8 +235,11 @@ BUGFIXES:
 195 ==> 203022 - digiKam is not listed as IPTC-compatible software.
 196 ==> 282869 - Provide a list of CMake configuration options.
 197 ==> 126164 - Link application Help entry to new online handbook based on Sphinx/ReStructuredText.
-198 ==> 
-199 ==> 
-200 ==> 
-201 ==> 
-
+198 ==> 463378 - Applied Tags Don't Get Written To File?
+199 ==> 422242 - Cannot read write tags to files.
+200 ==> 421464 - XPkeywords not being updated with Exiv2 - Use ExifTool instead.
+201 ==> 450522 - No option to read/write XPTitle and XPComment metadata fields.
+202 ==> 
+203 ==> 
+204 ==> 
+205 ==> 

@@ -397,6 +397,7 @@ void DMetadataSettingsContainer::defaultTagValues()
     tagNs8.tagPaths         = NamespaceEntry::TAGPATH;
     tagNs8.separator        = QLatin1Char(';');
     tagNs8.nsType           = NamespaceEntry::TAGS;
+    tagNs8.isDisabled       = true;
     tagNs8.index            = 7;
     tagNs8.subspace         = NamespaceEntry::EXIF;
 
@@ -440,6 +441,7 @@ void DMetadataSettingsContainer::defaultTitleValues()
     titleNs4.namespaceName  = QLatin1String("Exif.Image.XPTitle");
     titleNs4.nsType         = NamespaceEntry::TITLE;
     titleNs4.specialOpts    = NamespaceEntry::NO_OPTS;
+    titleNs4.isDisabled     = true;
     titleNs4.index          = 3;
     titleNs4.subspace       = NamespaceEntry::EXIF;
 
@@ -571,6 +573,7 @@ void DMetadataSettingsContainer::defaultCommentValues()
     commNs8.namespaceName   = QLatin1String("Exif.Image.XPComment");
     commNs8.nsType          = NamespaceEntry::COMMENT;
     commNs8.specialOpts     = NamespaceEntry::NO_OPTS;
+    commNs8.isDisabled      = true;
     commNs8.index           = 7;
     commNs8.subspace        = NamespaceEntry::EXIF;
 

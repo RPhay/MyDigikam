@@ -345,7 +345,17 @@ bool DMetadata::setItemComments(const CaptionsMap& comments, const DMetadataSett
             {
                 if (entry.namespaceName == QLatin1String("Exif.Image.XPComment"))
                 {
-                    if (removeExifTag(nameSpace))
+                    if      (writeWithExifTool() && !defaultComment.isEmpty())
+                    {
+                        QByteArray xpData  = QByteArray((char*)defaultComment.utf16(), defaultComment.size() * 2);
+                        xpData.append("\x00\x00");
+
+                        if (!setExifTagData(nameSpace, xpData))
+                        {
+                            return false;
+                        }
+                    }
+                    else if (removeExifTag(nameSpace))
                     {
                         qCDebug(DIGIKAM_METAENGINE_LOG) << "Remove image comment" << nameSpace;
                     }
@@ -592,7 +602,17 @@ bool DMetadata::setItemTitles(const CaptionsMap& titles, const DMetadataSettings
             {
                 if (entry.namespaceName == QLatin1String("Exif.Image.XPTitle"))
                 {
-                    if (removeExifTag(nameSpace))
+                    if      (writeWithExifTool() && !defaultTitle.isEmpty())
+                    {
+                        QByteArray xpData  = QByteArray((char*)defaultTitle.utf16(), defaultTitle.size() * 2);
+                        xpData.append("\x00\x00");
+
+                        if (!setExifTagData(nameSpace, xpData))
+                        {
+                            return false;
+                        }
+                    }
+                    else if (removeExifTag(nameSpace))
                     {
                         qCDebug(DIGIKAM_METAENGINE_LOG) << "Remove image title" << nameSpace;
                     }
