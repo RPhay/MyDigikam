@@ -240,6 +240,6 @@ BUGFIXES:
 200 ==> 421464 - XPkeywords not being updated with Exiv2 - Use ExifTool instead.
 201 ==> 450522 - No option to read/write XPTitle and XPComment metadata fields.
 202 ==> 374783 - Window location is not restored correctly after restart.
-203 ==> 
+203 ==> 435863 - digiKam "looses" manually tagged faces.
 204 ==> 
 205 ==> 
