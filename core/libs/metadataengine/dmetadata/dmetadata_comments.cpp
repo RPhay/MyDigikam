@@ -343,7 +343,14 @@ bool DMetadata::setItemComments(const CaptionsMap& comments, const DMetadataSett
 
             case NamespaceEntry::EXIF:
             {
-                if (!setExifComment(defaultComment))
+                if (entry.namespaceName == QLatin1String("Exif.Image.XPComment"))
+                {
+                    if (removeExifTag(nameSpace))
+                    {
+                        qCDebug(DIGIKAM_METAENGINE_LOG) << "Remove image comment" << nameSpace;
+                    }
+                }
+                else if (!setExifComment(defaultComment))
                 {
                     return false;
                 }
@@ -382,6 +389,7 @@ CaptionsMap DMetadata::getItemTitles(const DMetadataSettingsContainer& settings)
 
     bool xmpSupported  = hasXmp();
     bool iptcSupported = hasIptc();
+    bool exivSupported = hasExif();
 
     Q_FOREACH (const NamespaceEntry& entry, settings.getReadMapping(NamespaceEntry::DM_TITLE_CONTAINER()))
     {
@@ -434,6 +442,16 @@ CaptionsMap DMetadata::getItemTitles(const DMetadataSettingsContainer& settings)
                 if (iptcSupported)
                 {
                     titleString = getIptcTagString(nameSpace, false);
+                }
+
+                break;
+            }
+
+            case NamespaceEntry::EXIF:
+            {
+                if (exivSupported)
+                {
+                    titleString = getExifTagString(nameSpace);
                 }
 
                 break;
@@ -565,6 +583,23 @@ bool DMetadata::setItemTitles(const CaptionsMap& titles, const DMetadataSettings
                             return false;
                         }
                     }
+                }
+
+                break;
+            }
+
+            case NamespaceEntry::EXIF:
+            {
+                if (entry.namespaceName == QLatin1String("Exif.Image.XPTitle"))
+                {
+                    if (removeExifTag(nameSpace))
+                    {
+                        qCDebug(DIGIKAM_METAENGINE_LOG) << "Remove image title" << nameSpace;
+                    }
+                }
+                else if (!setExifTagString(nameSpace, defaultTitle))
+                {
+                    return false;
                 }
 
                 break;

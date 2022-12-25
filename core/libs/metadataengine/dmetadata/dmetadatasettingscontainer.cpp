@@ -436,9 +436,17 @@ void DMetadataSettingsContainer::defaultTitleValues()
     titleNs3.index          = 2;
     titleNs3.subspace       = NamespaceEntry::IPTC;
 
+    NamespaceEntry titleNs4;
+    titleNs4.namespaceName  = QLatin1String("Exif.Image.XPTitle");
+    titleNs4.nsType         = NamespaceEntry::TITLE;
+    titleNs4.specialOpts    = NamespaceEntry::NO_OPTS;
+    titleNs4.index          = 3;
+    titleNs4.subspace       = NamespaceEntry::EXIF;
+
     getReadMapping(NamespaceEntry::DM_TITLE_CONTAINER()) << titleNs1
                                                          << titleNs2
-                                                         << titleNs3;
+                                                         << titleNs3
+                                                         << titleNs4;
 
     d->writeMappings[NamespaceEntry::DM_TITLE_CONTAINER()]
         = QList<NamespaceEntry>(getReadMapping(NamespaceEntry::DM_TITLE_CONTAINER()));
@@ -553,18 +561,18 @@ void DMetadataSettingsContainer::defaultCommentValues()
     commNs6.subspace        = NamespaceEntry::EXIF;
 
     NamespaceEntry commNs7;
-    commNs7.namespaceName   = QLatin1String("Exif.Image.XPComment");
+    commNs7.namespaceName   = QLatin1String("Iptc.Application2.Caption");
     commNs7.nsType          = NamespaceEntry::COMMENT;
     commNs7.specialOpts     = NamespaceEntry::NO_OPTS;
     commNs7.index           = 6;
-    commNs7.subspace        = NamespaceEntry::EXIF;
+    commNs7.subspace        = NamespaceEntry::IPTC;
 
     NamespaceEntry commNs8;
-    commNs8.namespaceName   = QLatin1String("Iptc.Application2.Caption");
+    commNs8.namespaceName   = QLatin1String("Exif.Image.XPComment");
     commNs8.nsType          = NamespaceEntry::COMMENT;
     commNs8.specialOpts     = NamespaceEntry::NO_OPTS;
     commNs8.index           = 7;
-    commNs8.subspace        = NamespaceEntry::IPTC;
+    commNs8.subspace        = NamespaceEntry::EXIF;
 
     getReadMapping(NamespaceEntry::DM_COMMENT_CONTAINER()) << commNs1
                                                            << commNs2
