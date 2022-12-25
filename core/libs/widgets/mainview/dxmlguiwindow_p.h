@@ -17,6 +17,10 @@
 
 #include "dxmlguiwindow.h"
 
+// C++ includes
+
+#include <cmath>
+
 // Qt includes
 
 #include <QString>

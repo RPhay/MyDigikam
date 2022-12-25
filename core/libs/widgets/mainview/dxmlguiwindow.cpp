@@ -319,6 +319,17 @@ void DXmlGuiWindow::saveWindowSize()
 
 }
 
+void DXmlGuiWindow::setGoodDefaultWindowSize(QWindow* const win)
+{
+    QScreen* const screen = win->screen();
+    QRect srect           = screen->availableGeometry();
+    int height            = qRound(log10(srect.height() / 60) * 600);
+    int width             = qRound(log10(srect.width()  / 80) * 800);
+
+    win->resize(width  > srect.width()  ? srect.width()  : width,
+                height > srect.height() ? srect.height() : height);
+}
+
 void DXmlGuiWindow::slotRawCameraList()
 {
     showRawCameraList();

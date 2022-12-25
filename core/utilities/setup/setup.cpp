@@ -15,13 +15,8 @@
 
 #include "setup.h"
 
-// C++ includes
-
-#include <cmath>
-
 // Qt includes
 
-#include <QScreen>
 #include <QPointer>
 #include <QApplication>
 #include <QMessageBox>
@@ -255,30 +250,10 @@ Setup::Setup(QWidget* const parent)
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("Setup Dialog"));
 
-    if (group.exists())
-    {
-        winId();
-        DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
-        resize(windowHandle()->size());
-    }
-    else
-    {
-        QScreen* screen = qApp->primaryScreen();
-
-        if (QWidget* const widget = qApp->activeWindow())
-        {
-            if (QWindow* const window = widget->windowHandle())
-            {
-                screen = window->screen();
-            }
-        }
-
-        QRect srect = screen->availableGeometry();
-        int height  = qRound(log10(srect.height() / 60) * 600);
-        int width   = qRound(log10(srect.width()  / 80) * 800);
-        resize(width  > srect.width()  ? srect.width()  : width,
-               height > srect.height() ? srect.height() : height);
-    }
+    winId();
+    DXmlGuiWindow::setGoodDefaultWindowSize(windowHandle());
+    DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size());
 }
 
 Setup::~Setup()

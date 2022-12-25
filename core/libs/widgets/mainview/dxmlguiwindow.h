@@ -173,6 +173,7 @@ public:
     static void openHandbook();
     static void restoreWindowSize(QWindow* const win, const KConfigGroup& group);
     static void saveWindowSize(QWindow* const win, KConfigGroup& group);
+    static void setGoodDefaultWindowSize(QWindow* const win);
 
     static QAction* buildStdAction(StdActionType type,
                                    const QObject* const recvr,
