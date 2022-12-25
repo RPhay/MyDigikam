@@ -387,14 +387,14 @@ void DMetadataSettingsContainer::defaultTagValues()
 
     NamespaceEntry tagNs7;
     tagNs7.namespaceName    = QLatin1String("Iptc.Application2.Keywords");
-    tagNs7.tagPaths         = NamespaceEntry::TAGPATH;
+    tagNs7.tagPaths         = NamespaceEntry::TAG;
     tagNs7.nsType           = NamespaceEntry::TAGS;
     tagNs7.index            = 6;
     tagNs7.subspace         = NamespaceEntry::IPTC;
 
     NamespaceEntry tagNs8;
     tagNs8.namespaceName    = QLatin1String("Exif.Image.XPKeywords");
-    tagNs8.tagPaths         = NamespaceEntry::TAGPATH;
+    tagNs8.tagPaths         = NamespaceEntry::TAG;
     tagNs8.separator        = QLatin1Char(';');
     tagNs8.nsType           = NamespaceEntry::TAGS;
     tagNs8.isDisabled       = true;

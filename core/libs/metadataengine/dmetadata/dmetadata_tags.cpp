@@ -231,7 +231,7 @@ bool DMetadata::setItemTagsPath(const QStringList& tagsPath, const DMetadataSett
                     continue;
                 }
 
-                if (entry.tagPaths != NamespaceEntry::TAG)
+                if (entry.tagPaths == NamespaceEntry::TAGPATH)
                 {
                     newList = tagsPath;
 
