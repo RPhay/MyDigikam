@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-24 00:47+0000\n"
+"POT-Creation-Date: 2022-12-25 00:47+0000\n"
 "PO-Revision-Date: 2022-11-26 13:40+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
@@ -3489,10 +3489,14 @@ msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li><li>%2</li>"
 
 #: core/app/views/stack/welcomepageview.cpp:218
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "digiKam has many powerful features which are described in the <a href="
+#| "\"https://docs.kde.org/?"
+#| "application=digikam&branch=trunk5\">documentation</a>"
 msgid ""
 "digiKam has many powerful features which are described in the <a href="
-"\"https://docs.kde.org/?application=digikam&branch=trunk5\">documentation</a>"
+"\"https://docs.digikam.org/en/index.html\">documentation</a>"
 msgstr ""
 "digiKam has many powerful features which are described in the <a href="
 "\"https://docs.kde.org/?application=digikam&branch=trunk5\">documentation</a>"
@@ -26730,7 +26734,7 @@ msgid "Luminosity Curve"
 msgstr "Luminosity Curve"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:311
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:120
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:119
 #, kde-format
 msgid "Info"
 msgstr "Info"
@@ -42630,8 +42634,9 @@ msgid "A KDE Family Project"
 msgstr "A KDE Family Project"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:68
-#, kde-format
-msgid "(c) 2001-2022, digiKam developers team"
+#, fuzzy, kde-format
+#| msgid "(c) 2001-2022, digiKam developers team"
+msgid "(c) 2001-2023, digiKam developers team"
 msgstr "(c) 2001-2022, digiKam developers team"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:80
@@ -42844,7 +42849,7 @@ msgid "Aditya Bhatt"
 msgstr "Aditya Bhatt"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:220
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:190
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:189
 #, kde-format
 msgid "Face Detection"
 msgstr "Face Detection"
@@ -42875,7 +42880,7 @@ msgid "Mahesh Hegde"
 msgstr "Mahesh Hegde"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:238
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:259
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:258
 #, kde-format
 msgid "Face Recognition"
 msgstr "Face Recognition"
@@ -52140,16 +52145,7 @@ msgstr "<b>Face Recognition</b>"
 msgid "Face Recognition will automatically recognize people in your images."
 msgstr "Face Recognition will automatically recognise people in your images."
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:95
-#, kde-format
-msgid ""
-"https://docs.kde.org/?application=digikam&branch=trunk5&path=using-digikam."
-"html#using-mainwindow-peopleview"
-msgstr ""
-"https://docs.kde.org/?application=digikam&branch=trunk5&path=using-digikam."
-"html#using-mainwindow-peopleview"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:101
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:100
 #, kde-format
 msgid ""
 "For additional information, read the %1 \n"
@@ -52158,7 +52154,7 @@ msgstr ""
 "For additional information, read the %1 \n"
 "To ask questions, use our mailing list: digikam-users@kde.org \n"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:136
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:135
 #, kde-format
 msgid ""
 "To run face detection, select the <u>Detect Faces</u> option in the Face "
@@ -52167,7 +52163,7 @@ msgstr ""
 "To run face detection, select the <u>Detect Faces</u> option in the Face "
 "Scan panel and then click on <u>Scan Collection for Faces</u>"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:140
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:139
 #, kde-format
 msgid ""
 "<b>Caution:</b> Running Face Detection for the first time can be fairly time "
@@ -52178,17 +52174,17 @@ msgstr ""
 "consuming. Make sure you use the <u>Search In</u> tab to restrict the target "
 "of the scan."
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:146
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:145
 #, kde-format
 msgid "digiKam offers two kinds of face detection scans: "
 msgstr "digiKam offers two kinds of face detection scans: "
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:151
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:150
 #, kde-format
 msgid "<b>Skip Images Already Scanned</b>"
 msgstr "<b>Skip Images Already Scanned</b>"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:155
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:154
 #, kde-format
 msgid ""
 "Choose this option if you haven't scanned yet or if the last scan yielded "
@@ -52197,12 +52193,12 @@ msgstr ""
 "Choose this option if you haven't scanned yet or if the last scan yielded "
 "good results but you would like to scan new images."
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:162
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:161
 #, kde-format
 msgid "<b>Scan Again and Merge</b>"
 msgstr "<b>Scan Again and Merge</b>"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:166
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:165
 #, kde-format
 msgid ""
 "Choose this option if the results of the previous scan weren't accurate. "
@@ -52211,7 +52207,7 @@ msgstr ""
 "Choose this option if the results of the previous scan weren't accurate. "
 "This would rescan all images again, and is time consuming."
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:172
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:171
 #, kde-format
 msgid ""
 "After the Face Scan is complete, you should see a new tag <u>Unknown</u> "
@@ -52222,7 +52218,7 @@ msgstr ""
 "where the results of the face scan will appear. You may now manually "
 "identify a few of these faces and then proceed for face recognition."
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:209
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:208
 #, kde-format
 msgid ""
 "To manually identify a face, hover on any Unknown face and use the text box "
@@ -52235,7 +52231,7 @@ msgstr ""
 "person of that name doesn't exist already. For best results identify 4-5 "
 "faces for each person you want the scan to recognise."
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:218
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:217
 #, kde-format
 msgid ""
 "Running face recognition is similar to detection, just select <u>Recognize "
@@ -52252,7 +52248,7 @@ msgstr ""
 "This leads to the creation of a new <u>Ignored</u> tag, you can later unmark "
 "the face if needed."
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:236
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:235
 #, kde-format
 msgid ""
 "You may select <u>Work on all processor cores</u>in order to increase the "
@@ -52267,7 +52263,7 @@ msgstr ""
 "recognition algorithm. A higher specificity implies higher accuracy, however "
 "this results in a smaller set of results."
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:275
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:274
 #, kde-format
 msgid ""
 "The results of facial recognition appear in the form of Unconfirmed results. "
@@ -52280,7 +52276,7 @@ msgstr ""
 "the person suggested for each face.\n"
 "Hovering over Unconfirmed faces will display a few options:\n"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:288
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:287
 #, kde-format
 msgid ""
 "The Confirm button allows you to confirm the suggestion. This would assign "
@@ -52289,7 +52285,7 @@ msgstr ""
 "The Confirm button allows you to confirm the suggestion. This would assign "
 "the suggested name to the face"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:298
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:297
 #, kde-format
 msgid ""
 "Use the Reject button, if the suggestion is incorrect. This would move the "
@@ -52298,7 +52294,7 @@ msgstr ""
 "Use the Reject button, if the suggestion is incorrect. This would move the "
 "face back to Unknown."
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:309
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:308
 #, kde-format
 msgid ""
 "Use the Delete button, if the suggestion is not a face. This will delete the "
@@ -52307,7 +52303,7 @@ msgstr ""
 "Use the Delete button, if the suggestion is not a face. This will delete the "
 "face region from the database."
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:315
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:314
 #, kde-format
 msgid ""
 "<b>Face Categorization and Sorting</b>\n"
@@ -52326,7 +52322,7 @@ msgstr ""
 "you may modify the sorting order within each category by going to <u>View -> "
 "Sort Items -> By Face Type</u>."
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:327
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:326
 #, kde-format
 msgid ""
 "<b>Improving Results of Face Recognition</b>\n"
@@ -52341,7 +52337,7 @@ msgstr ""
 "Tools -> Maintenance -> Detect and Recognise Faces -> Clear and rebuild all "
 "training data."
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:347
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:346
 #, kde-format
 msgid "Confirm Faces"
 msgstr "Confirm Faces"
@@ -63767,6 +63763,13 @@ msgstr "Press this button to reset all video settings to the default values."
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Do you want to reset all video settings to the default value?"
+
+#~ msgid ""
+#~ "https://docs.kde.org/?application=digikam&branch=trunk5&path=using-"
+#~ "digikam.html#using-mainwindow-peopleview"
+#~ msgstr ""
+#~ "https://docs.kde.org/?application=digikam&branch=trunk5&path=using-"
+#~ "digikam.html#using-mainwindow-peopleview"
 
 #~ msgid "Write tags to XMP"
 #~ msgstr "Write tags to XMP"

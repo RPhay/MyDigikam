@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-24 00:47+0000\n"
-"PO-Revision-Date: 2022-12-13 12:20\n"
+"POT-Creation-Date: 2022-12-25 00:47+0000\n"
+"PO-Revision-Date: 2022-12-24 11:42\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -3394,10 +3394,14 @@ msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li><li>%2</li>"
 
 #: core/app/views/stack/welcomepageview.cpp:218
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "digiKam has many powerful features which are described in the <a href="
+#| "\"https://docs.kde.org/?"
+#| "application=digikam&branch=trunk5\">documentation</a>"
 msgid ""
 "digiKam has many powerful features which are described in the <a href="
-"\"https://docs.kde.org/?application=digikam&branch=trunk5\">documentation</a>"
+"\"https://docs.digikam.org/en/index.html\">documentation</a>"
 msgstr ""
 "请访问 <a href=\"https://docs.kde.org/?"
 "application=digikam&branch=trunk5\">digiKam 在线文档</a> 了解软件的更多特性。"
@@ -26058,7 +26062,7 @@ msgid "Luminosity Curve"
 msgstr "亮度曲线"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:311
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:120
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:119
 #, kde-format
 msgid "Info"
 msgstr "信息"
@@ -41483,8 +41487,9 @@ msgid "A KDE Family Project"
 msgstr "KDE 社区软件项目"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:68
-#, kde-format
-msgid "(c) 2001-2022, digiKam developers team"
+#, fuzzy, kde-format
+#| msgid "(c) 2001-2022, digiKam developers team"
+msgid "(c) 2001-2023, digiKam developers team"
 msgstr "(c) 2001-2022, digiKam developers team"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:80
@@ -41692,7 +41697,7 @@ msgid "Aditya Bhatt"
 msgstr "Aditya Bhatt"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:220
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:190
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:189
 #, kde-format
 msgid "Face Detection"
 msgstr "人脸检测"
@@ -41723,7 +41728,7 @@ msgid "Mahesh Hegde"
 msgstr "Mahesh Hegde"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:238
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:259
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:258
 #, kde-format
 msgid "Face Recognition"
 msgstr "人脸识别"
@@ -50905,16 +50910,7 @@ msgstr "<b>人脸识别</b>"
 msgid "Face Recognition will automatically recognize people in your images."
 msgstr "人脸识别功能将自动识别出图像中的人物。"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:95
-#, kde-format
-msgid ""
-"https://docs.kde.org/?application=digikam&branch=trunk5&path=using-digikam."
-"html#using-mainwindow-peopleview"
-msgstr ""
-"https://docs.kde.org/?application=digikam&branch=trunk5&path=using-digikam."
-"html#using-mainwindow-peopleview"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:101
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:100
 #, kde-format
 msgid ""
 "For additional information, read the %1 \n"
@@ -50923,7 +50919,7 @@ msgstr ""
 "如需了解额外信息，请阅读 %1 \n"
 "如有问题，可通过我们的邮件列表提问：digikam-users@kde.org \n"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:136
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:135
 #, kde-format
 msgid ""
 "To run face detection, select the <u>Detect Faces</u> option in the Face "
@@ -50932,7 +50928,7 @@ msgstr ""
 "要执行人脸检测，请在人物面板的扫描流程选项卡选择<u>检测人脸</u>选项，然后点击"
 "<u>扫描相册集合中的所有人脸</u>按钮"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:140
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:139
 #, kde-format
 msgid ""
 "<b>Caution:</b> Running Face Detection for the first time can be fairly time "
@@ -50942,17 +50938,17 @@ msgstr ""
 "<b>提示：</b>首次执行人脸检测可能需要较长时间。请在<u>扫描范围</u>选项卡中显"
 "示扫描的目标范围。"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:146
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:145
 #, kde-format
 msgid "digiKam offers two kinds of face detection scans: "
 msgstr "digiKam 有两种人脸检测扫描方式："
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:151
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:150
 #, kde-format
 msgid "<b>Skip Images Already Scanned</b>"
 msgstr "<b>跳过已扫描图像</b>"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:155
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:154
 #, kde-format
 msgid ""
 "Choose this option if you haven't scanned yet or if the last scan yielded "
@@ -50961,12 +50957,12 @@ msgstr ""
 "如果您尚未进行过扫描，或者您对上次扫描的结果比较满意，只需扫描新增图像时，请"
 "选择此项。"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:162
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:161
 #, kde-format
 msgid "<b>Scan Again and Merge</b>"
 msgstr "<b>重新扫描并合并结果</b>"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:166
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:165
 #, kde-format
 msgid ""
 "Choose this option if the results of the previous scan weren't accurate. "
@@ -50975,7 +50971,7 @@ msgstr ""
 "如果您对上次扫描的结果不够满意，需要重新扫描所有图像时，请选择此项。这将耗费"
 "较长时间。"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:172
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:171
 #, kde-format
 msgid ""
 "After the Face Scan is complete, you should see a new tag <u>Unknown</u> "
@@ -50985,7 +50981,7 @@ msgstr ""
 "人脸扫描结束后，您将看到一个名为<u>未知</u>的新标签，人脸扫描的结果将显示在该"
 "标签下。请先手动识别这些人脸中的一小部分，然后再进行自动人脸识别。"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:209
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:208
 #, kde-format
 msgid ""
 "To manually identify a face, hover on any Unknown face and use the text box "
@@ -50997,7 +50993,7 @@ msgstr ""
 "它指定一个人名。如果该人名的人脸标签不存在，程序将创建该标签。为了提高自动识"
 "别的精确度，请为每位需要识别的人物手动指定 4 到 5 张人脸。"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:218
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:217
 #, kde-format
 msgid ""
 "Running face recognition is similar to detection, just select <u>Recognize "
@@ -51012,7 +51008,7 @@ msgstr ""
 "它们标记为忽略。\n"
 "这将创建<u>忽略</u>标签，您以后还可以取消标记忽略标签下的人脸。"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:236
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:235
 #, kde-format
 msgid ""
 "You may select <u>Work on all processor cores</u>in order to increase the "
@@ -51025,7 +51021,7 @@ msgstr ""
 "人脸识别精度拖动条可以控制人脸识别算法的精度。数值越大，精度越高，识别的匹配"
 "结果也越少。"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:275
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:274
 #, kde-format
 msgid ""
 "The results of facial recognition appear in the form of Unconfirmed results. "
@@ -51037,28 +51033,28 @@ msgstr ""
 "下。\n"
 "鼠标悬停在这些人脸上将显示下列选项：\n"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:288
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:287
 #, kde-format
 msgid ""
 "The Confirm button allows you to confirm the suggestion. This would assign "
 "the suggested name to the face"
 msgstr "点击确认按钮以确认该建议。这将把建议的人名标签指定给该人脸。"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:298
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:297
 #, kde-format
 msgid ""
 "Use the Reject button, if the suggestion is incorrect. This would move the "
 "face back to Unknown."
 msgstr "点击否决按钮以否决错误的建议。这将把该人脸移回未知标签。"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:309
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:308
 #, kde-format
 msgid ""
 "Use the Delete button, if the suggestion is not a face. This will delete the "
 "face region from the database."
 msgstr "点击删除按钮以移除并非人脸的项目。这将从数据库删除该人脸区域。"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:315
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:314
 #, kde-format
 msgid ""
 "<b>Face Categorization and Sorting</b>\n"
@@ -51076,7 +51072,7 @@ msgstr ""
 "示方式，请前往菜单栏的<u>视图 -> 项目排序 -> 按人脸类型</u>，更改每个分栏的排"
 "序方式。"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:327
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:326
 #, kde-format
 msgid ""
 "<b>Improving Results of Face Recognition</b>\n"
@@ -51089,7 +51085,7 @@ msgstr ""
 "除了设置选项卡外，您还可以通过重建训练数据来改善人脸识别的结果。请前往菜单栏"
 "的 工具 -> 系统维护 -> 检测与识别人脸 -> 清除并重建所有训练数据。"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:347
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:346
 #, kde-format
 msgid "Confirm Faces"
 msgstr "确认人脸"
@@ -62080,3 +62076,10 @@ msgstr "点击此按钮将所有视频设置重置为默认值。"
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "您想要重置所有视频设置为默认值吗？"
+
+#~ msgid ""
+#~ "https://docs.kde.org/?application=digikam&branch=trunk5&path=using-"
+#~ "digikam.html#using-mainwindow-peopleview"
+#~ msgstr ""
+#~ "https://docs.kde.org/?application=digikam&branch=trunk5&path=using-"
+#~ "digikam.html#using-mainwindow-peopleview"

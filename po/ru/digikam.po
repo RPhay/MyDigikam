@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-24 00:47+0000\n"
+"POT-Creation-Date: 2022-12-25 00:47+0000\n"
 "PO-Revision-Date: 2022-10-04 15:13+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -3613,13 +3613,18 @@ msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li><li>%2</li>"
 
 #: core/app/views/stack/welcomepageview.cpp:218
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "digiKam has many powerful features which are described in the <a href="
+#| "\"https://docs.kde.org/trunk5/en/extragear-graphics/digikam/index.html"
+#| "\">documentation</a>"
 msgid ""
 "digiKam has many powerful features which are described in the <a href="
-"\"https://docs.kde.org/?application=digikam&branch=trunk5\">documentation</a>"
+"\"https://docs.digikam.org/en/index.html\">documentation</a>"
 msgstr ""
 "digiKam обладает множеством мощных функций, которые описаны в <a href="
-"\"https://docs.kde.org/?application=digikam&branch=trunk5\">документации</a>"
+"\"https://docs.kde.org/trunk5/en/extragear-graphics/digikam/index.html"
+"\">документации</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:219
 #, kde-format
@@ -27213,7 +27218,7 @@ msgid "Luminosity Curve"
 msgstr "Кривая яркости"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:311
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:120
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:119
 #, kde-format
 msgid "Info"
 msgstr "Сведения"
@@ -43336,8 +43341,9 @@ msgid "A KDE Family Project"
 msgstr "Проект KDE"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:68
-#, kde-format
-msgid "(c) 2001-2022, digiKam developers team"
+#, fuzzy, kde-format
+#| msgid "(c) 2001-2022, digiKam developers team"
+msgid "(c) 2001-2023, digiKam developers team"
 msgstr "(c) 2001-2022, Команда разработчиков digiKam"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:80
@@ -43556,7 +43562,7 @@ msgid "Aditya Bhatt"
 msgstr "Aditya Bhatt"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:220
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:190
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:189
 #, kde-format
 msgid "Face Detection"
 msgstr "Определение лиц"
@@ -43587,7 +43593,7 @@ msgid "Mahesh Hegde"
 msgstr "Mahesh Hegde"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:238
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:259
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:258
 #, kde-format
 msgid "Face Recognition"
 msgstr "Распознавание лиц"
@@ -52915,16 +52921,7 @@ msgstr "<b>Распознавание лиц</b>"
 msgid "Face Recognition will automatically recognize people in your images."
 msgstr "Распознавание лиц автоматически распознает людей на фотографиях."
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:95
-#, kde-format
-msgid ""
-"https://docs.kde.org/?application=digikam&branch=trunk5&path=using-digikam."
-"html#using-mainwindow-peopleview"
-msgstr ""
-"https://docs.kde.org/?application=digikam&branch=trunk5&path=using-digikam."
-"html#using-mainwindow-peopleview"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:101
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:100
 #, kde-format
 msgid ""
 "For additional information, read the %1 \n"
@@ -52933,7 +52930,7 @@ msgstr ""
 "Для получения дополнительной информации обратитесь в %1 \n"
 "Задать вопросы возможно в нашем списке рассылки: digikam-users@kde.org \n"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:136
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:135
 #, kde-format
 msgid ""
 "To run face detection, select the <u>Detect Faces</u> option in the Face "
@@ -52942,7 +52939,7 @@ msgstr ""
 "Чтобы запустить процесс определения лиц, выберите опцию <u>Найти лица</u> на "
 "панели сканирования лиц и нажмите кнопку <u>Найти лица и коллекции</u>"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:140
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:139
 #, kde-format
 msgid ""
 "<b>Caution:</b> Running Face Detection for the first time can be fairly time "
@@ -52953,17 +52950,17 @@ msgstr ""
 "много времени. Убедитесь, что используется вкладка <u>Искать в</u>, "
 "позволяющая ограничить цели сканирования."
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:146
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:145
 #, kde-format
 msgid "digiKam offers two kinds of face detection scans: "
 msgstr "Возможно выбрать один из двух видов сканирования для поиска лиц:"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:151
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:150
 #, kde-format
 msgid "<b>Skip Images Already Scanned</b>"
 msgstr "Пропустить уже обработанные изображения"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:155
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:154
 #, kde-format
 msgid ""
 "Choose this option if you haven't scanned yet or if the last scan yielded "
@@ -52973,12 +52970,12 @@ msgstr ""
 "предыдущее сканирование было совершено, но требуется получить дополнительные "
 "результаты."
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:162
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:161
 #, kde-format
 msgid "<b>Scan Again and Merge</b>"
 msgstr "<b>Обработать снова и объединить результаты</b>"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:166
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:165
 #, kde-format
 msgid ""
 "Choose this option if the results of the previous scan weren't accurate. "
@@ -52988,7 +52985,7 @@ msgstr ""
 "неудовлетворительны. Это позволит заново отсканировать все изображения, но "
 "это потребует времени."
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:172
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:171
 #, kde-format
 msgid ""
 "After the Face Scan is complete, you should see a new tag <u>Unknown</u> "
@@ -52999,7 +52996,7 @@ msgstr ""
 "<u>Неизвестные</u> с результатами сканирования. Можно вручную указать "
 "несколько имён и продолжить процесс распознавания лиц."
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:209
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:208
 #, kde-format
 msgid ""
 "To manually identify a face, hover on any Unknown face and use the text box "
@@ -53012,7 +53009,7 @@ msgstr ""
 "базе данных, будет создана соответствующая метка с его именем. Для лучших "
 "результатов определите по 4-5 изображений с лицами нужных людей."
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:218
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:217
 #, kde-format
 msgid ""
 "Running face recognition is similar to detection, just select <u>Recognize "
@@ -53031,7 +53028,7 @@ msgstr ""
 "Это действие создаст новую метку <u>Игнорируемые</u>, которую впоследствии "
 "можно будет снять с требуемых лиц."
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:236
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:235
 #, kde-format
 msgid ""
 "You may select <u>Work on all processor cores</u>in order to increase the "
@@ -53046,7 +53043,7 @@ msgstr ""
 "Более высокие значения подразумевают более высокую точность, однако это "
 "приводит к меньшему количеству результатов."
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:275
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:274
 #, kde-format
 msgid ""
 "The results of facial recognition appear in the form of Unconfirmed results. "
@@ -53059,7 +53056,7 @@ msgstr ""
 "предполагаемого человека.\n"
 "Наведение курсора мыши вызовет всплывающее меню с несколькими опциями:\n"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:288
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:287
 #, kde-format
 msgid ""
 "The Confirm button allows you to confirm the suggestion. This would assign "
@@ -53068,7 +53065,7 @@ msgstr ""
 "Кнопка «Подтвердить» позволяет сохранить предложенный вариант. Это значит, "
 "что лицу будет присвоено предложенное имя"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:298
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:297
 #, kde-format
 msgid ""
 "Use the Reject button, if the suggestion is incorrect. This would move the "
@@ -53077,7 +53074,7 @@ msgstr ""
 "Если предложенные варианты некорректны, воспользуйтесь кнопкой «Отклонить». "
 "Это вернёт всем лицам метку «Неизвестные»."
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:309
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:308
 #, kde-format
 msgid ""
 "Use the Delete button, if the suggestion is not a face. This will delete the "
@@ -53086,7 +53083,7 @@ msgstr ""
 "Если предложенный вариант не является лицом, воспользуйтесь кнопкой "
 "«Удалить». Это удалит предложенный вариант из базы данных."
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:315
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:314
 #, kde-format
 msgid ""
 "<b>Face Categorization and Sorting</b>\n"
@@ -53105,7 +53102,7 @@ msgstr ""
 "поведение, воспользуйтесь меню <u>Вид -> Сортировать объекты ->По типу "
 "отметки лица</u>."
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:327
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:326
 #, kde-format
 msgid ""
 "<b>Improving Results of Face Recognition</b>\n"
@@ -53120,7 +53117,7 @@ msgstr ""
 "данных. Это возможно сделать через меню Сервимс -> Обслуживание -> Найти и "
 "распознать лица -> Очистить и повторно создать данные режима обучения."
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:347
+#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:346
 #, kde-format
 msgid "Confirm Faces"
 msgstr "Подтверждение меток лиц"
@@ -64740,6 +64737,22 @@ msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Сбросить все параметры видео до исходных значений?"
 
+#~ msgid ""
+#~ "digiKam has many powerful features which are described in the <a href="
+#~ "\"https://docs.kde.org/?"
+#~ "application=digikam&branch=trunk5\">documentation</a>"
+#~ msgstr ""
+#~ "digiKam обладает множеством мощных функций, которые описаны в <a href="
+#~ "\"https://docs.kde.org/?application=digikam&branch=trunk5\">документации</"
+#~ "a>"
+
+#~ msgid ""
+#~ "https://docs.kde.org/?application=digikam&branch=trunk5&path=using-"
+#~ "digikam.html#using-mainwindow-peopleview"
+#~ msgstr ""
+#~ "https://docs.kde.org/?application=digikam&branch=trunk5&path=using-"
+#~ "digikam.html#using-mainwindow-peopleview"
+
 #~ msgid "Write tags to XMP"
 #~ msgstr "Записать метки в XMP"
 
@@ -74924,15 +74937,6 @@ msgstr "Сбросить все параметры видео до исходн�
 
 #~ msgid "Update Slideshow to plugin."
 #~ msgstr "Перенос функции слайд-шоу в подключаемый модуль."
-
-#~ msgid ""
-#~ "digiKam has many powerful features which are described in the <a href="
-#~ "\"https://docs.kde.org/trunk5/en/extragear-graphics/digikam/index.html"
-#~ "\">documentation</a>"
-#~ msgstr ""
-#~ "digiKam обладает множеством мощных функций, которые описаны в <a href="
-#~ "\"https://docs.kde.org/trunk5/en/extragear-graphics/digikam/index.html"
-#~ "\">документации</a>"
 
 #~ msgid ""
 #~ "Enter the image author's name. This field is limited to ASCII characters."
