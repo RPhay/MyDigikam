@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-25 00:47+0000\n"
+"POT-Creation-Date: 2022-12-26 00:51+0000\n"
 "PO-Revision-Date: 2022-11-24 05:00+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -35607,7 +35607,7 @@ msgctxt "@title"
 msgid "User6"
 msgstr "Erabiltzailea:"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:70
+#: core/libs/dplugins/widgets/dplugindialog.cpp:65
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:59
 #, fuzzy, kde-format
 #| msgid "About"
@@ -38681,7 +38681,7 @@ msgstr "Propietateak"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:93
 #: core/libs/settings/applicationsettings_miscs.cpp:421
-#: core/showfoto/setup/showfotosetup.cpp:116
+#: core/showfoto/setup/showfotosetup.cpp:111
 #, kde-format
 msgid "Metadata"
 msgstr "Metadatuak"
@@ -44588,7 +44588,7 @@ msgid "Francisco J. Cruz"
 msgstr "Francisco J. Cruz"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:328
-#: core/showfoto/setup/showfotosetup.cpp:134
+#: core/showfoto/setup/showfotosetup.cpp:129
 #, kde-format
 msgid "Color Management"
 msgstr "Koloreen kudeaketa"
@@ -52074,17 +52074,17 @@ msgstr "&Apaindu"
 msgid "Effec&ts"
 msgstr "Lausotze-efektuak"
 
-#: core/showfoto/setup/showfotosetup.cpp:103
+#: core/showfoto/setup/showfotosetup.cpp:98
 #, kde-format
 msgid "Configure"
 msgstr "Konfiguratu"
 
-#: core/showfoto/setup/showfotosetup.cpp:110
+#: core/showfoto/setup/showfotosetup.cpp:105
 #, fuzzy, kde-format
 msgid "Editor Window"
 msgstr "Doitu &leihora"
 
-#: core/showfoto/setup/showfotosetup.cpp:111
+#: core/showfoto/setup/showfotosetup.cpp:106
 #, fuzzy, kde-format
 msgid ""
 "<qt>Editor Window Settings<br/><i>Customize editor window behavior</i></qt>"
@@ -52092,7 +52092,7 @@ msgstr ""
 "<qt>Irudi-editorearen ezarpenak<br/><i>Pertsonalizatu irudi-editorearen "
 "portaera</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:117
+#: core/showfoto/setup/showfotosetup.cpp:112
 #, kde-format
 msgid ""
 "<qt>Embedded Image Information Management<br/><i>Setup relations between "
@@ -52101,12 +52101,12 @@ msgstr ""
 "<qt>Kapsulatutako irudien informazioaren kudeaketa<br/><i>Konfiguratu "
 "irudiak eta metadatuen arteko erlazioak</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:122
+#: core/showfoto/setup/showfotosetup.cpp:117
 #, kde-format
 msgid "Tool Tip"
 msgstr "Argibidea"
 
-#: core/showfoto/setup/showfotosetup.cpp:123
+#: core/showfoto/setup/showfotosetup.cpp:118
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Thumbbar Items Tool-Tip Settings<br/><i>Customize information in tool-"
@@ -52118,12 +52118,12 @@ msgstr ""
 "<qt>KOadro txikien barrako elementuen argibideen ezarpenak<br/"
 "><i>Pertsonalizatu argibideen informazioa</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:128
+#: core/showfoto/setup/showfotosetup.cpp:123
 #, kde-format
 msgid "RAW Decoding"
 msgstr "RAW deskodetzea"
 
-#: core/showfoto/setup/showfotosetup.cpp:129
+#: core/showfoto/setup/showfotosetup.cpp:124
 #, kde-format
 msgid ""
 "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
@@ -52132,7 +52132,7 @@ msgstr ""
 "<qt>RAW fitxategiak deskodetzeko ezarpenak<br/><i>Pertsonalizatu RAW "
 "deskodetze lehenetsiaren ezarpenak</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:135
+#: core/showfoto/setup/showfotosetup.cpp:130
 #, kde-format
 msgid ""
 "<qt>Settings for Color Management<br/><i>Customize color management "
@@ -52141,12 +52141,12 @@ msgstr ""
 "<qt>Koloreen kudeaketaren ezarpenak<br/><i>Pertsonalizatu koloreen "
 "kudeaketaren ezarpenak</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:140
+#: core/showfoto/setup/showfotosetup.cpp:135
 #, kde-format
 msgid "Save Images"
 msgstr "Gorde irudiak"
 
-#: core/showfoto/setup/showfotosetup.cpp:141
+#: core/showfoto/setup/showfotosetup.cpp:136
 #, kde-format
 msgid ""
 "<qt>Settings for Saving Image Files<br/><i>Set default configuration used to "
@@ -52155,12 +52155,12 @@ msgstr ""
 "<qt>Irudien fitxategiak gordetzeko ezarpenak<br/><i>Ezarri konfigurazio "
 "lehenetsia irudiak gordetzean erabiltzeko.</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:146
+#: core/showfoto/setup/showfotosetup.cpp:141
 #, fuzzy, kde-format
 msgid "Plugins"
 msgstr "Pluginak"
 
-#: core/showfoto/setup/showfotosetup.cpp:147
+#: core/showfoto/setup/showfotosetup.cpp:142
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
@@ -52172,14 +52172,14 @@ msgstr ""
 "<qt>Interfaze nagusiaren pluginen ezarpenak<br/><i>Ezarri zer plugin egongo "
 "diren atzigarri interfaze nagusian</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:152
+#: core/showfoto/setup/showfotosetup.cpp:147
 #, fuzzy, kde-format
 #| msgid "Miscellaneous"
 msgctxt "@title: misc setup options page"
 msgid "Miscellaneous"
 msgstr "Hainbat"
 
-#: core/showfoto/setup/showfotosetup.cpp:153
+#: core/showfoto/setup/showfotosetup.cpp:148
 #, fuzzy, kde-format
 msgid ""
 "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts of "
@@ -64988,21 +64988,21 @@ msgid ""
 "Some settings are hardware dependent and may have no effect.</b>"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:147
+#: core/utilities/setup/setup.cpp:142
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@title"
 msgid "Configure"
 msgstr "Konfiguratu"
 
-#: core/utilities/setup/setup.cpp:154
+#: core/utilities/setup/setup.cpp:149
 #, fuzzy, kde-format
 #| msgid "Database"
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Datu-basea"
 
-#: core/utilities/setup/setup.cpp:155
+#: core/utilities/setup/setup.cpp:150
 #, fuzzy, kde-format
 #| msgid "<qt>Database Settings<br/><i>Customize database settings</i></qt>"
 msgctxt "@title"
@@ -65013,14 +65013,14 @@ msgstr ""
 "<qt>Datu-basearen ezarpenak<br/><i>Pertsonalizatu datu-basearen ezarpenak</"
 "i></qt>"
 
-#: core/utilities/setup/setup.cpp:159
+#: core/utilities/setup/setup.cpp:154
 #, fuzzy, kde-format
 #| msgid "Collections"
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Bildumak"
 
-#: core/utilities/setup/setup.cpp:160
+#: core/utilities/setup/setup.cpp:155
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Collections Settings<br/><i>Set root albums and database locations</"
@@ -65033,14 +65033,14 @@ msgstr ""
 "<qt>Bildumen ezarpenak<br/><i>Ezarri erroko albumak eta datu-basearen "
 "kokalekuak</i></qt>"
 
-#: core/utilities/setup/setup.cpp:164
+#: core/utilities/setup/setup.cpp:159
 #, fuzzy, kde-format
 #| msgid "Views"
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Ikuspegiak"
 
-#: core/utilities/setup/setup.cpp:165
+#: core/utilities/setup/setup.cpp:160
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Album View Settings<br/><i>Customize the look of the albums list</i></"
@@ -65053,14 +65053,14 @@ msgstr ""
 "<qt>Albumen ikuspegiaren ezarpenak<br/><i>Pertsonalizatu albumen zerrenden "
 "itxura</i></qt>"
 
-#: core/utilities/setup/setup.cpp:169
+#: core/utilities/setup/setup.cpp:164
 #, fuzzy, kde-format
 #| msgid "Tool-Tip"
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Argibidea"
 
-#: core/utilities/setup/setup.cpp:170
+#: core/utilities/setup/setup.cpp:165
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Album Items Tool-Tip Settings<br/><i>Customize information in tool-"
@@ -65073,7 +65073,7 @@ msgstr ""
 "<qt>Albumeko elementuen argibideen ezarpenak<br/><i>Pertsonalizatu "
 "argibideen informazioak</i></qt>"
 
-#: core/utilities/setup/setup.cpp:175
+#: core/utilities/setup/setup.cpp:170
 #, fuzzy, kde-format
 #| msgctxt "@item: xmp namespace"
 #| msgid "Video"
@@ -65081,7 +65081,7 @@ msgctxt "@title: settings section"
 msgid "Video"
 msgstr "Bideoa"
 
-#: core/utilities/setup/setup.cpp:176
+#: core/utilities/setup/setup.cpp:171
 #, fuzzy, kde-format
 #| msgid "<qt>Slide Show Settings<br/><i>Customize slideshow settings</i></qt>"
 msgctxt "@title"
@@ -65092,14 +65092,14 @@ msgstr ""
 "<qt>Diapositiba-aurkezpenaren ezarpenak<br/><i>Pertsonalizatu diapositiba-"
 "aurkezpenaren ezarpenak</i></qt>"
 
-#: core/utilities/setup/setup.cpp:181
+#: core/utilities/setup/setup.cpp:176
 #, fuzzy, kde-format
 #| msgid "Metadata"
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Metadatuak"
 
-#: core/utilities/setup/setup.cpp:182
+#: core/utilities/setup/setup.cpp:177
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Embedded Image Information Management<br/><i>Setup relations between "
@@ -65112,14 +65112,14 @@ msgstr ""
 "<qt>Kapsulatutako irudien informazioaren kudeaketa<br/><i>Konfiguratu "
 "irudiak eta metadatuen arteko erlazioak</i></qt>"
 
-#: core/utilities/setup/setup.cpp:186
+#: core/utilities/setup/setup.cpp:181
 #, fuzzy, kde-format
 #| msgid "Templates"
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Txantiloiak"
 
-#: core/utilities/setup/setup.cpp:187
+#: core/utilities/setup/setup.cpp:182
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Metadata templates<br/><i>Manage your collection of metadata "
@@ -65132,14 +65132,14 @@ msgstr ""
 "<qt>Metadatuen txantiloiak<br/><i>Kudeatu zure metadatuen txantiloien "
 "bilduma</i></qt>"
 
-#: core/utilities/setup/setup.cpp:191
+#: core/utilities/setup/setup.cpp:186
 #, fuzzy, kde-format
 #| msgid "Image Editor"
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Irudi editorea"
 
-#: core/utilities/setup/setup.cpp:192
+#: core/utilities/setup/setup.cpp:187
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Image Editor Settings<br/><i>Customize image editor behavior</i></qt>"
@@ -65151,14 +65151,14 @@ msgstr ""
 "<qt>Irudi-editorearen ezarpenak<br/><i>Pertsonalizatu irudi-editorearen "
 "portaera</i></qt>"
 
-#: core/utilities/setup/setup.cpp:196
+#: core/utilities/setup/setup.cpp:191
 #, fuzzy, kde-format
 #| msgid "Color Management"
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Koloreen kudeaketa"
 
-#: core/utilities/setup/setup.cpp:197
+#: core/utilities/setup/setup.cpp:192
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid ""
@@ -65168,14 +65168,14 @@ msgstr ""
 "<qt>Koloreen kudeaketaren ezarpenak<br/><i>Pertsonalizatu koloreen "
 "kudeaketaren ezarpenak</i></qt>"
 
-#: core/utilities/setup/setup.cpp:201
+#: core/utilities/setup/setup.cpp:196
 #, fuzzy, kde-format
 #| msgid "Light Table"
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Argi-mahaia"
 
-#: core/utilities/setup/setup.cpp:202
+#: core/utilities/setup/setup.cpp:197
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Light Table Settings<br/><i>Customize tool used to compare images</"
@@ -65188,14 +65188,14 @@ msgstr ""
 "<qt>Argi-mahaiaren ezarpenak<br/><i>Pertsonalizatu irudiak konparatzeko "
 "tresna</i></qt>"
 
-#: core/utilities/setup/setup.cpp:206
+#: core/utilities/setup/setup.cpp:201
 #, fuzzy, kde-format
 #| msgid "Image Quality Sorter"
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Irudi-kalitatearen sailkatzailea"
 
-#: core/utilities/setup/setup.cpp:207
+#: core/utilities/setup/setup.cpp:202
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Image Editor Settings<br/><i>Customize image editor behavior</i></qt>"
@@ -65207,14 +65207,14 @@ msgstr ""
 "<qt>Irudi-editorearen ezarpenak<br/><i>Pertsonalizatu irudi-editorearen "
 "portaera</i></qt>"
 
-#: core/utilities/setup/setup.cpp:211
+#: core/utilities/setup/setup.cpp:206
 #, fuzzy, kde-format
 #| msgid "Cameras"
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Kamerak"
 
-#: core/utilities/setup/setup.cpp:212
+#: core/utilities/setup/setup.cpp:207
 #, fuzzy, kde-format
 #| msgid "<qt>Camera Settings<br/><i>Manage your camera devices</i></qt>"
 msgctxt "@title"
@@ -65223,13 +65223,13 @@ msgid ""
 "Manage your camera devices"
 msgstr "<qt>Kameren ezarpenak<br/><i>Kudeatu kamerak</i></qt>"
 
-#: core/utilities/setup/setup.cpp:219
+#: core/utilities/setup/setup.cpp:214
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Pluginak"
 
-#: core/utilities/setup/setup.cpp:220
+#: core/utilities/setup/setup.cpp:215
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
@@ -65242,7 +65242,7 @@ msgstr ""
 "<qt>Interfaze nagusiaren pluginen ezarpenak<br/><i>Ezarri zer plugin egongo "
 "diren atzigarri interfaze nagusian</i></qt>"
 
-#: core/utilities/setup/setup.cpp:224
+#: core/utilities/setup/setup.cpp:219
 #, fuzzy, kde-format
 #| msgctxt "@item: album categories"
 #| msgid "Miscellaneous"
@@ -65250,7 +65250,7 @@ msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Hainbat"
 
-#: core/utilities/setup/setup.cpp:225
+#: core/utilities/setup/setup.cpp:220
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts "

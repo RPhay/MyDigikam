@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 86ff119b1606fcaa910d6b44fc14b611\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-25 00:47+0000\n"
+"POT-Creation-Date: 2022-12-26 00:51+0000\n"
 "PO-Revision-Date: 2022-09-09 12:18\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -32663,7 +32663,7 @@ msgctxt "@title"
 msgid "User6"
 msgstr "Карыстальніцкі 6"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:70
+#: core/libs/dplugins/widgets/dplugindialog.cpp:65
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:59
 #, kde-format
 msgctxt "@action: button"
@@ -35532,7 +35532,7 @@ msgstr "Уласцівасці"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:93
 #: core/libs/settings/applicationsettings_miscs.cpp:421
-#: core/showfoto/setup/showfotosetup.cpp:116
+#: core/showfoto/setup/showfotosetup.cpp:111
 #, kde-format
 msgid "Metadata"
 msgstr "Метаданыя"
@@ -40901,7 +40901,7 @@ msgid "Francisco J. Cruz"
 msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:328
-#: core/showfoto/setup/showfotosetup.cpp:134
+#: core/showfoto/setup/showfotosetup.cpp:129
 #, kde-format
 msgid "Color Management"
 msgstr ""
@@ -47671,91 +47671,91 @@ msgstr "&Аздабленне"
 msgid "Effec&ts"
 msgstr "&Эфекты"
 
-#: core/showfoto/setup/showfotosetup.cpp:103
+#: core/showfoto/setup/showfotosetup.cpp:98
 #, kde-format
 msgid "Configure"
 msgstr "Наладзіць"
 
-#: core/showfoto/setup/showfotosetup.cpp:110
+#: core/showfoto/setup/showfotosetup.cpp:105
 #, kde-format
 msgid "Editor Window"
 msgstr "Акно рэдактара"
 
-#: core/showfoto/setup/showfotosetup.cpp:111
+#: core/showfoto/setup/showfotosetup.cpp:106
 #, kde-format
 msgid ""
 "<qt>Editor Window Settings<br/><i>Customize editor window behavior</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:117
+#: core/showfoto/setup/showfotosetup.cpp:112
 #, kde-format
 msgid ""
 "<qt>Embedded Image Information Management<br/><i>Setup relations between "
 "images and metadata</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:122
+#: core/showfoto/setup/showfotosetup.cpp:117
 #, kde-format
 msgid "Tool Tip"
 msgstr "Падказкі"
 
-#: core/showfoto/setup/showfotosetup.cpp:123
+#: core/showfoto/setup/showfotosetup.cpp:118
 #, kde-format
 msgid ""
 "<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br/><i>Customize "
 "information in tool-tips</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:128
+#: core/showfoto/setup/showfotosetup.cpp:123
 #, kde-format
 msgid "RAW Decoding"
 msgstr "Дэкадаванне RAW"
 
-#: core/showfoto/setup/showfotosetup.cpp:129
+#: core/showfoto/setup/showfotosetup.cpp:124
 #, kde-format
 msgid ""
 "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
 "settings</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:135
+#: core/showfoto/setup/showfotosetup.cpp:130
 #, kde-format
 msgid ""
 "<qt>Settings for Color Management<br/><i>Customize color management "
 "settings</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:140
+#: core/showfoto/setup/showfotosetup.cpp:135
 #, kde-format
 msgid "Save Images"
 msgstr "Захаваць выявы"
 
-#: core/showfoto/setup/showfotosetup.cpp:141
+#: core/showfoto/setup/showfotosetup.cpp:136
 #, kde-format
 msgid ""
 "<qt>Settings for Saving Image Files<br/><i>Set default configuration used to "
 "save images</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:146
+#: core/showfoto/setup/showfotosetup.cpp:141
 #, kde-format
 msgid "Plugins"
 msgstr "Убудовы"
 
-#: core/showfoto/setup/showfotosetup.cpp:147
+#: core/showfoto/setup/showfotosetup.cpp:142
 #, kde-format
 msgid ""
 "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
 "accessible from application</i></qt>"
 msgstr ""
 
-#: core/showfoto/setup/showfotosetup.cpp:152
+#: core/showfoto/setup/showfotosetup.cpp:147
 #, kde-format
 msgctxt "@title: misc setup options page"
 msgid "Miscellaneous"
 msgstr "Рознае"
 
-#: core/showfoto/setup/showfotosetup.cpp:153
+#: core/showfoto/setup/showfotosetup.cpp:148
 #, kde-format
 msgid ""
 "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts of "
@@ -59476,19 +59476,19 @@ msgid ""
 "Some settings are hardware dependent and may have no effect.</b>"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:147
+#: core/utilities/setup/setup.cpp:142
 #, kde-format
 msgctxt "@title"
 msgid "Configure"
 msgstr "Наладжванне"
 
-#: core/utilities/setup/setup.cpp:154
+#: core/utilities/setup/setup.cpp:149
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "База даных"
 
-#: core/utilities/setup/setup.cpp:155
+#: core/utilities/setup/setup.cpp:150
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -59496,13 +59496,13 @@ msgid ""
 "Customize database settings"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:159
+#: core/utilities/setup/setup.cpp:154
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Калекцыі"
 
-#: core/utilities/setup/setup.cpp:160
+#: core/utilities/setup/setup.cpp:155
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -59510,13 +59510,13 @@ msgid ""
 "Set root albums locations"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:164
+#: core/utilities/setup/setup.cpp:159
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Рэжымы прагляду"
 
-#: core/utilities/setup/setup.cpp:165
+#: core/utilities/setup/setup.cpp:160
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -59524,13 +59524,13 @@ msgid ""
 "Customize the look of the views"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:169
+#: core/utilities/setup/setup.cpp:164
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Падказкі"
 
-#: core/utilities/setup/setup.cpp:170
+#: core/utilities/setup/setup.cpp:165
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -59538,13 +59538,13 @@ msgid ""
 "Customize information in item tool-tips"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:175
+#: core/utilities/setup/setup.cpp:170
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Video"
 msgstr "Відэа"
 
-#: core/utilities/setup/setup.cpp:176
+#: core/utilities/setup/setup.cpp:171
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -59552,13 +59552,13 @@ msgid ""
 "Customize settings to play video media"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:181
+#: core/utilities/setup/setup.cpp:176
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Метаданыя"
 
-#: core/utilities/setup/setup.cpp:182
+#: core/utilities/setup/setup.cpp:177
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -59566,13 +59566,13 @@ msgid ""
 "Setup relations between images and metadata"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:186
+#: core/utilities/setup/setup.cpp:181
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Шаблоны"
 
-#: core/utilities/setup/setup.cpp:187
+#: core/utilities/setup/setup.cpp:182
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -59580,13 +59580,13 @@ msgid ""
 "Manage your collection of metadata templates"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:191
+#: core/utilities/setup/setup.cpp:186
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Рэдактар выяў"
 
-#: core/utilities/setup/setup.cpp:192
+#: core/utilities/setup/setup.cpp:187
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -59594,13 +59594,13 @@ msgid ""
 "Customize the image editor settings"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:196
+#: core/utilities/setup/setup.cpp:191
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:197
+#: core/utilities/setup/setup.cpp:192
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -59608,13 +59608,13 @@ msgid ""
 "Customize the color management settings"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:201
+#: core/utilities/setup/setup.cpp:196
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Праявачны стол"
 
-#: core/utilities/setup/setup.cpp:202
+#: core/utilities/setup/setup.cpp:197
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -59622,13 +59622,13 @@ msgid ""
 "Customize tool used to compare images"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:206
+#: core/utilities/setup/setup.cpp:201
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:207
+#: core/utilities/setup/setup.cpp:202
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -59636,13 +59636,13 @@ msgid ""
 "Customize default settings to perform image triaging by quality"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:211
+#: core/utilities/setup/setup.cpp:206
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Камеры"
 
-#: core/utilities/setup/setup.cpp:212
+#: core/utilities/setup/setup.cpp:207
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -59650,13 +59650,13 @@ msgid ""
 "Manage your camera devices"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:219
+#: core/utilities/setup/setup.cpp:214
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Убудовы"
 
-#: core/utilities/setup/setup.cpp:220
+#: core/utilities/setup/setup.cpp:215
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -59664,13 +59664,13 @@ msgid ""
 "Set which plugins will be accessible from application"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:224
+#: core/utilities/setup/setup.cpp:219
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Рознае"
 
-#: core/utilities/setup/setup.cpp:225
+#: core/utilities/setup/setup.cpp:220
 #, kde-format
 msgctxt "@title"
 msgid ""
