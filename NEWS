@@ -241,5 +241,5 @@ BUGFIXES:
 201 ==> 450522 - No option to read/write XPTitle and XPComment metadata fields.
 202 ==> 374783 - Window location is not restored correctly after restart.
 203 ==> 435863 - digiKam "looses" manually tagged faces.
-204 ==> 
+204 ==> 463502 - Tags in captions sidebar are not sorted on image change when "Tags already asigned" option is enabled.
 205 ==> 

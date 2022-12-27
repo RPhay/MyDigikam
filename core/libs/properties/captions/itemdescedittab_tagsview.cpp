@@ -394,6 +394,10 @@ void ItemDescEditTab::slotAssignedTagsToggled(bool t)
         // Only after above change, do this.
 
         d->tagCheckView->expandMatches(d->tagCheckView->rootIndex());
+
+        // Force resort of the tag tree.
+
+        d->tagCheckView->setSortingEnabled(true);
    }
 }
 
