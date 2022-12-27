@@ -60,6 +60,7 @@ private Q_SLOTS:
 
     void slotMediaStateChanged(QtAV::MediaStatus);
     void slotPlayerError(const QtAV::AVError&);
+    void slotDurationChanged(qint64 duration);
 
 private:
 

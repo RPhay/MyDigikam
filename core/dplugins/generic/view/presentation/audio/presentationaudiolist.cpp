@@ -80,6 +80,9 @@ PresentationAudioListItem::PresentationAudioListItem(QListWidget* const parent, 
     connect(d->mediaObject, SIGNAL(mediaStatusChanged(QtAV::MediaStatus)),
             this, SLOT(slotMediaStateChanged(QtAV::MediaStatus)));
 
+    connect(d->mediaObject, SIGNAL(durationChanged(qint64)),
+            this, SLOT(slotDurationChanged(qint64)));
+
     connect(d->mediaObject, SIGNAL(error(QtAV::AVError)),
             this, SLOT(slotPlayerError(QtAV::AVError)));
 
@@ -133,16 +136,18 @@ void PresentationAudioListItem::slotMediaStateChanged(QtAV::MediaStatus status)
         showErrorDialog(i18n("No detail available"));
         return;
     }
+}
 
-    qint64 total = d->mediaObject->duration();
-    int hours      = (int)(total  / (long int)(60 * 60 * 1000));
-    int mins       = (int)((total / (long int)(60 * 1000 )) - (long int)(hours * 60));
-    int secs       = (int)((total / (long int)1000) - (long int)(hours * 60 * 60) - (long int)(mins * 60));
-    d->totalTime   = QTime(hours, mins, secs);
+void PresentationAudioListItem::slotDurationChanged(qint64 duration)
+{
+    int hours    = (int)(duration  / (long int)(60 * 60 * 1000));
+    int mins     = (int)((duration / (long int)(60 * 1000 )) - (long int)(hours * 60));
+    int secs     = (int)((duration / (long int)1000) - (long int)(hours * 60 * 60) - (long int)(mins * 60));
+    d->totalTime = QTime(hours, mins, secs);
 
     QHash<QString, QString> meta = d->mediaObject->statistics().metadata;
-    d->artist      = meta.value(QLatin1String("artist"));
-    d->title       = meta.value(QLatin1String("title"));
+    d->artist    = meta.value(QLatin1String("artist"));
+    d->title     = meta.value(QLatin1String("title"));
 
     if ( d->artist.isEmpty() && d->title.isEmpty() )
     {
