@@ -134,7 +134,6 @@ void PresentationAudioListItem::slotMediaStateChanged(QtAV::MediaStatus status)
     if (status == QtAV::InvalidMedia)
     {
         showErrorDialog(i18n("No detail available"));
-        return;
     }
 }
 
