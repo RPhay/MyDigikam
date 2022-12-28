@@ -243,4 +243,5 @@ BUGFIXES:
 203 ==> 435863 - digiKam "looses" manually tagged faces.
 204 ==> 463502 - Tags in captions sidebar are not sorted on image change when "Tags already asigned" option is enabled.
 205 ==> 430405 - Print and Print Assistant Missing From Item Menu.
-206 ==> 
+206 ==> 238802 - Port documentation from DocBook to modern Sphinx/RestructuredText framework and improve contents.
+207 ==> 
