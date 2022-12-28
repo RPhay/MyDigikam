@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-26 00:51+0000\n"
+"POT-Creation-Date: 2022-12-28 00:46+0000\n"
 "PO-Revision-Date: 2009-07-18 03:38+0000\n"
 "Last-Translator: Vilson Gjeci <vilsongjeci@gmail.com>\n"
 "Language-Team: Albanian <sq@li.org>\n"
@@ -20894,20 +20894,20 @@ msgstr "Diapozitivët"
 msgid "Soundtrack:"
 msgstr "Abstrakt"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:133
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:136
 #, fuzzy, kde-format
 #| msgid "No description available"
 msgid "No detail available"
 msgstr "Asnjë përshkrim në dispozicion"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:153
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:172
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:157
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:176
 #, kde-format
 msgctxt "artist - title"
 msgid "%1 - %2"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:162
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:386
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:374
@@ -20937,12 +20937,12 @@ msgstr ""
 msgid "Error"
 msgstr "Gabim"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:163
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:167
 #, kde-format
 msgid "%1 may not be playable."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:171
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:175
 #, kde-format
 msgid "This file may not be playable."
 msgstr ""

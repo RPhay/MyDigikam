@@ -32,7 +32,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-26 00:51+0000\n"
+"POT-Creation-Date: 2022-12-28 00:46+0000\n"
 "PO-Revision-Date: 2020-02-15 19:57+0800\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
@@ -22492,20 +22492,20 @@ msgstr "投影片放映"
 msgid "Soundtrack:"
 msgstr "音樂"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:133
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:136
 #, fuzzy, kde-format
 #| msgid "No tool available"
 msgid "No detail available"
 msgstr "沒有可用的工具"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:153
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:172
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:157
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:176
 #, fuzzy, kde-format
 msgctxt "artist - title"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:162
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:386
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:374
@@ -22535,13 +22535,13 @@ msgstr "%1 - %2"
 msgid "Error"
 msgstr "錯誤"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:163
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:167
 #, fuzzy, kde-format
 #| msgid "%1 is damaged and may not be playable."
 msgid "%1 may not be playable."
 msgstr "%1 是損壞的，可能無法播放。"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:171
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:175
 #, fuzzy, kde-format
 #| msgid "This file is damaged and may not be playable."
 msgid "This file may not be playable."

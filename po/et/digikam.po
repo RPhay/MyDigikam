@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-26 00:51+0000\n"
+"POT-Creation-Date: 2022-12-28 00:46+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -23242,19 +23242,19 @@ msgstr "Slaid:"
 msgid "Soundtrack:"
 msgstr "Heliriba:"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:133
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:136
 #, kde-format
 msgid "No detail available"
 msgstr "Ühtegi üksikasja pole saada"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:153
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:172
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:157
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:176
 #, kde-format
 msgctxt "artist - title"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:162
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:386
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:374
@@ -23284,12 +23284,12 @@ msgstr "%1 - %2"
 msgid "Error"
 msgstr "Tõrge"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:163
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:167
 #, kde-format
 msgid "%1 may not be playable."
 msgstr "%1 ei pruugi olla esitatav."
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:171
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:175
 #, kde-format
 msgid "This file may not be playable."
 msgstr "See fail ei pruugi olla esitatav."

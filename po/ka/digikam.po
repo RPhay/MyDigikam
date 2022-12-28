@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-26 00:51+0000\n"
-"PO-Revision-Date: 2022-12-14 18:01+0100\n"
+"POT-Creation-Date: 2022-12-28 00:46+0000\n"
+"PO-Revision-Date: 2022-12-27 08:41+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2716,7 +2716,7 @@ msgstr "სახის ჭდის დამატება"
 #: core/app/views/preview/itempreviewview.cpp:204
 #, kde-format
 msgid "Clear all faces on this image"
-msgstr ""
+msgstr "გამოსახულებიდან სახეების წაშლა"
 
 #: core/app/views/preview/itempreviewview.cpp:207
 #, kde-format
@@ -3363,7 +3363,7 @@ msgstr ""
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
-msgstr ""
+msgstr "მოგესალმებათ digiKam %1"
 
 #: core/app/views/stack/welcomepageview.cpp:272
 #, kde-format
@@ -3415,7 +3415,7 @@ msgstr "აუდიო/ვიდეო თვისებები"
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:86
 #, kde-format
 msgid "Audio bitrate"
-msgstr ""
+msgstr "აუდიოს ბიტური სიჩქარე"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:71
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:91
@@ -5085,7 +5085,7 @@ msgstr "ფერების ბალანსი"
 #: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:39
 #, kde-format
 msgid "Adjust color balance."
-msgstr ""
+msgstr "ფერთა ბალანსის დარეგულირება."
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalanceplugin.cpp:46
 #: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:44
@@ -6800,7 +6800,7 @@ msgstr "ვერტიკალური"
 #, kde-format
 msgctxt "@label"
 msgid "Flip:"
-msgstr ""
+msgstr "გადაბრუნება:"
 
 #: core/dplugins/bqm/transform/flip/flipplugin.cpp:46
 #, kde-format
@@ -20295,19 +20295,19 @@ msgstr ""
 msgid "Soundtrack:"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:133
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:136
 #, kde-format
 msgid "No detail available"
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:153
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:172
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:157
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:176
 #, kde-format
 msgctxt "artist - title"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:162
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:386
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:374
@@ -20337,12 +20337,12 @@ msgstr "%1 - %2"
 msgid "Error"
 msgstr "შედომა"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:163
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:167
 #, kde-format
 msgid "%1 may not be playable."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:171
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:175
 #, kde-format
 msgid "This file may not be playable."
 msgstr ""
@@ -50788,7 +50788,7 @@ msgstr ""
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:206
 #, kde-format
 msgid "Interpolate"
-msgstr ""
+msgstr "ინტერპოლაცია"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:207
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:218
@@ -54715,7 +54715,7 @@ msgstr "გაშვება"
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:280
 #, kde-format
 msgid "Run all"
-msgstr ""
+msgstr "ყველას გაშვება"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:292
 #, kde-format
@@ -56181,7 +56181,7 @@ msgstr "ჯგუფის წაშლა"
 #: core/utilities/searchwindow/searchgroup_label.cpp:202
 #, kde-format
 msgid "Hide Options"
-msgstr ""
+msgstr "პარამეტრების დამალვა"
 
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:75
 #, kde-format

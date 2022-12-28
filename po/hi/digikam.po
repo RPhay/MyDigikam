@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-26 00:51+0000\n"
+"POT-Creation-Date: 2022-12-28 00:46+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -20933,20 +20933,20 @@ msgstr "स्लाइड"
 msgid "Soundtrack:"
 msgstr "कैमरा तारीख दिखाएँ"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:133
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:136
 #, fuzzy, kde-format
 #| msgid "No options available"
 msgid "No detail available"
 msgstr "कोई विकल्प उपलब्ध नहीं हैं."
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:153
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:172
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:157
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:176
 #, fuzzy, kde-format
 msgctxt "artist - title"
 msgid "%1 - %2"
 msgstr "%1 %2"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:162
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:386
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:374
@@ -20976,12 +20976,12 @@ msgstr "%1 %2"
 msgid "Error"
 msgstr "त्रुटि"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:163
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:167
 #, kde-format
 msgid "%1 may not be playable."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:171
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:175
 #, kde-format
 msgid "This file may not be playable."
 msgstr ""

@@ -67,8 +67,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-26 00:51+0000\n"
-"PO-Revision-Date: 2022-12-05 19:17+0100\n"
+"POT-Creation-Date: 2022-12-28 00:46+0000\n"
+"PO-Revision-Date: 2022-12-27 10:08+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
 "Language: fr\n"
@@ -76,7 +76,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.11.90\n"
+"X-Generator: Lokalize 22.12.0\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -3604,18 +3604,13 @@ msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li> <li>%2</li>"
 
 #: core/app/views/stack/welcomepageview.cpp:218
-#, fuzzy, kde-format
-#| msgid ""
-#| "digiKam has many powerful features which are described in the <a href="
-#| "\"https://docs.kde.org/?"
-#| "application=digikam&branch=trunk5\">documentation</a>"
+#, kde-format
 msgid ""
 "digiKam has many powerful features which are described in the <a href="
 "\"https://docs.digikam.org/en/index.html\">documentation</a>"
 msgstr ""
-"DigiKam possède de nombreuses fonctionnalités pratiques, décrites dans la <a "
-"href=\"https://docs.kde.org/?"
-"application=digikam&branch=trunk5\">documentation</a>."
+"DigiKam possède un grand nombre de puissantes fonctionnalités, décrites dans "
+"sa <a href=\"https://docs.digikam.org/en/index.html\">documentation</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:219
 #, kde-format
@@ -22068,19 +22063,19 @@ msgstr "Diapo : "
 msgid "Soundtrack:"
 msgstr "Bande sonore :"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:133
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:136
 #, kde-format
 msgid "No detail available"
 msgstr "Pas de détail disponible"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:153
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:172
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:157
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:176
 #, kde-format
 msgctxt "artist - title"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:162
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:386
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:374
@@ -22110,12 +22105,12 @@ msgstr "%1 - %2"
 msgid "Error"
 msgstr "Erreur"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:163
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:167
 #, kde-format
 msgid "%1 may not be playable."
 msgstr "%1 peut ne pas être jouable."
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:171
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:175
 #, kde-format
 msgid "This file may not be playable."
 msgstr "Ce fichier peut ne pas être jouable."
@@ -43628,10 +43623,9 @@ msgid "A KDE Family Project"
 msgstr "Une projet de la famille KDE"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:68
-#, fuzzy, kde-format
-#| msgid "(c) 2001-2022, digiKam developers team"
+#, kde-format
 msgid "(c) 2001-2023, digiKam developers team"
-msgstr "(c) 2001 - 2022, L'équipe de développement de digiKam"
+msgstr "(c) 2001 - 2023, L'équipe de développement de digiKam"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:80
 #, kde-format
