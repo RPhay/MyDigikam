@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-28 00:46+0000\n"
-"PO-Revision-Date: 2022-12-04 10:10+0100\n"
+"PO-Revision-Date: 2022-12-25 09:34+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -3505,18 +3505,13 @@ msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li><li>%2</li>"
 
 #: core/app/views/stack/welcomepageview.cpp:218
-#, fuzzy, kde-format
-#| msgid ""
-#| "digiKam has many powerful features which are described in the <a href="
-#| "\"https://docs.kde.org/?"
-#| "application=digikam&branch=trunk5\">documentation</a>"
+#, kde-format
 msgid ""
 "digiKam has many powerful features which are described in the <a href="
 "\"https://docs.digikam.org/en/index.html\">documentation</a>"
 msgstr ""
 "digiKam disposa de moltes característiques de gran abast que es descriuen en "
-"la <a href=\"https://docs.kde.org/?"
-"application=digikam&branch=trunk5\">documentació</a>"
+"la <a href=\"https://docs.digikam.org/en/index.html\">documentació</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:219
 #, kde-format
@@ -43330,10 +43325,9 @@ msgid "A KDE Family Project"
 msgstr "Un projecte de la família KDE"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:68
-#, fuzzy, kde-format
-#| msgid "(c) 2001-2022, digiKam developers team"
+#, kde-format
 msgid "(c) 2001-2023, digiKam developers team"
-msgstr "(c) 2001-2022, L'equip de desenvolupadors de digiKam"
+msgstr "(c) 2001-2023, L'equip de desenvolupadors de digiKam"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:80
 #, kde-format
@@ -62608,7 +62602,7 @@ msgid ""
 msgstr ""
 "aporta la base per a gestionar de forma genèrica tota classe de metadades en "
 "l'escriptori KDE. Us permet etiquetar, puntuar i comentar els fitxers en les "
-"aplicacions de KDE com ara Dolphin. Establiu ací si voleu sincronitzar les "
+"aplicacions KDE com ara Dolphin. Establiu ací si voleu sincronitzar les "
 "metadades emmagatzemades per digiKam per a tot l'escriptori amb l'escriptori "
 "semàntic Baloo."
 
@@ -64764,10 +64758,3 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Voleu restablir tota la configuració als seus valors predeterminats?"
-
-#~ msgid ""
-#~ "https://docs.kde.org/?application=digikam&branch=trunk5&path=using-"
-#~ "digikam.html#using-mainwindow-peopleview"
-#~ msgstr ""
-#~ "https://docs.kde.org/?application=digikam&branch=trunk5&path=using-"
-#~ "digikam.html#using-mainwindow-peopleview"

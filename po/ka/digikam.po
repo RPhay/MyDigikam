@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-28 00:46+0000\n"
-"PO-Revision-Date: 2022-12-27 08:41+0100\n"
+"PO-Revision-Date: 2022-12-28 09:12+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -15429,9 +15429,9 @@ msgstr "მიმდინარე გვერდი"
 
 #. i18n: ectx: property (text), widget (QLabel, totalLabel)
 #: core/dplugins/generic/tools/calendar/ui/calprogress.ui:33
-#, kde-format
+#, fuzzy, kde-format
 msgid "Total Pages"
-msgstr ""
+msgstr "სულ გვერდები"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, CalTemplate)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:14
@@ -20389,7 +20389,7 @@ msgstr "დრო"
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:79
 #, kde-format
 msgid "Elapsed:"
-msgstr ""
+msgstr "გასული დრო:"
 
 #. i18n: ectx: property (text), widget (QLabel, m_elapsedTimeLabel)
 #. i18n: ectx: property (text), widget (QLabel, m_totalTimeLabel)
@@ -20397,7 +20397,7 @@ msgstr ""
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:100
 #, kde-format
 msgid "0:00:00"
-msgstr ""
+msgstr "0:00:00"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:93
@@ -20410,7 +20410,7 @@ msgstr "ჯამი:"
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:23
 #, kde-format
 msgid "&Interface"
-msgstr ""
+msgstr "&ინტერფეისი"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_useMillisecondsCheckBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:35
@@ -20422,7 +20422,7 @@ msgstr ""
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:51
 #, kde-format
 msgid "&Controls"
-msgstr ""
+msgstr "&მმართველები"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, m_enableMouseWheelCheckBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:63
@@ -20434,13 +20434,13 @@ msgstr ""
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:66
 #, kde-format
 msgid "Enable mouse &wheel "
-msgstr ""
+msgstr "თაგუნას &რგოლის ჩართვა "
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:76
 #, kde-format
 msgid "OpenGL effects"
-msgstr ""
+msgstr "OpenGL ეფექტები"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_openGlFullScale)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:82
@@ -20481,7 +20481,7 @@ msgstr ""
 #: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:17
 #, kde-format
 msgid "Select Font..."
-msgstr ""
+msgstr "აირჩიეთ ფონტი..."
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:35
@@ -20499,14 +20499,14 @@ msgstr "ფერები"
 #: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:120
 #, kde-format
 msgid "Outlined Text"
-msgstr ""
+msgstr "გამოკვეთილი ტექსტი"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:274
 #, kde-format
 msgid "%1 image [%2]"
 msgid_plural "%1 images [%2]"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 გამოსახულება [%2]"
+msgstr[1] "%1 images [%2]"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:278
 #, kde-format
@@ -20524,7 +20524,7 @@ msgstr ""
 #, kde-format
 msgctxt "Image number %1"
 msgid "Image #%1"
-msgstr ""
+msgstr "გამოსახულება #%1"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:453
 #: core/dplugins/generic/view/presentation/opengl/presentationkb.cpp:678
@@ -20651,7 +20651,7 @@ msgstr "პრეზენტაციის დაწყება"
 #, kde-format
 msgctxt "@title: main settings for the presentation"
 msgid "Main Settings"
-msgstr ""
+msgstr "მთავარი პარამეტრები"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:99
 #, kde-format
@@ -20944,9 +20944,9 @@ msgid "If this option is enabled, the Slideshow will run in random order"
 msgstr ""
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
-#, kde-format
+#, fuzzy, kde-format
 msgid "Show progress indicator"
-msgstr ""
+msgstr "მიმდინარეობის ინდიკატორის ჩვენება"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:137
 #, kde-format
@@ -21108,10 +21108,10 @@ msgid "Current Screen"
 msgstr "მიმდინარე ეკრანი"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:185
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@label:listbox The default screen for the presentation mode"
 msgid "Default Screen"
-msgstr ""
+msgstr "ნაგულისხმები ეკრანი"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:190
 #, kde-format
@@ -21646,18 +21646,18 @@ msgstr "Facebook -ის ვებსერვისში ატვირთვ
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:314
 #, kde-format
 msgid "Continue with Facebook"
-msgstr ""
+msgstr "Facebook-ით გაგრძელება"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:310
 #, kde-format
 msgid "Log Out of Facebook"
-msgstr ""
+msgstr "Facebook-დან გასვლა"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:325
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:355
 #, kde-format
 msgid "<i>auto create</i>"
-msgstr ""
+msgstr "<i>ავტომატური შექმნა</i>"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:330
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:350
@@ -21708,12 +21708,12 @@ msgstr ""
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:114
 #, kde-format
 msgid "Copy files"
-msgstr ""
+msgstr "ფაილების კოპირება"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:115
 #, kde-format
 msgid "Create symlinks"
-msgstr ""
+msgstr "სიმბმულების შექმნა"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:116
 #, kde-format
@@ -21777,7 +21777,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "File Copy"
-msgstr ""
+msgstr "ფაილის ასლი"
 
 #: core/dplugins/generic/webservices/filecopy/fcplugin.cpp:64
 #, kde-format
@@ -22945,7 +22945,7 @@ msgstr "დააკოპირე"
 #, kde-format
 msgctxt "@title"
 msgid "ImgUr"
-msgstr ""
+msgstr "ImgUr"
 
 #: core/dplugins/generic/webservices/imgur/imgurplugin.cpp:63
 #, kde-format
@@ -23051,7 +23051,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "iNaturalist"
-msgstr ""
+msgstr "iNaturalist"
 
 #: core/dplugins/generic/webservices/inaturalist/inatplugin.cpp:64
 #, kde-format
@@ -23099,7 +23099,7 @@ msgstr "არასწორი სახელი"
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:567
 #, kde-format
 msgid "iNaturalist"
-msgstr ""
+msgstr "iNaturalist"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:569
 #, kde-format
