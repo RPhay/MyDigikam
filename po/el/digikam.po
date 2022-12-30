@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-28 00:46+0000\n"
+"POT-Creation-Date: 2022-12-30 00:49+0000\n"
 "PO-Revision-Date: 2017-10-16 18:16+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1433,35 +1433,35 @@ msgstr "Τεχνικές παράμετροι"
 msgid "<i>Binary Data</i>"
 msgstr "<i>Δυαδικά δεδομένα</i>"
 
-#: core/app/main/digikamapp.cpp:70
+#: core/app/main/digikamapp.cpp:68
 #, kde-format
 msgid "Initializing..."
 msgstr "Αρχικοποίηση..."
 
-#: core/app/main/digikamapp.cpp:135 core/showfoto/main/showfoto.cpp:95
+#: core/app/main/digikamapp.cpp:133 core/showfoto/main/showfoto.cpp:95
 #, fuzzy, kde-format
 #| msgid "Loading KIPI Plugins..."
 msgid "Load Plugins..."
 msgstr "Φόρτωση πρόσθετων KIPI..."
 
-#: core/app/main/digikamapp.cpp:160 core/showfoto/main/showfoto.cpp:77
+#: core/app/main/digikamapp.cpp:158 core/showfoto/main/showfoto.cpp:77
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "Έλεγχος αποθετηρίου ICC..."
 
-#: core/app/main/digikamapp.cpp:172
+#: core/app/main/digikamapp.cpp:170
 #, fuzzy, kde-format
 #| msgid "Reading database..."
 msgid "Clean up Database..."
 msgstr "Ανάγνωση της βάσης δεδομένων..."
 
-#: core/app/main/digikamapp.cpp:190
+#: core/app/main/digikamapp.cpp:188
 #, fuzzy, kde-format
 #| msgid "Parsing all albums"
 msgid "Loading albums..."
 msgstr "Ανάλυση όλων των λευκωμάτων"
 
-#: core/app/main/digikamapp.cpp:338
+#: core/app/main/digikamapp.cpp:336
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1473,21 +1473,21 @@ msgstr ""
 "\"Όχι\" και το χαρακτηριστικό \"Διαχείριση χρωμάτων\" θα απενεργοποιηθεί "
 "μέχρι να διορθώσετε το πρόβλημα.</p>"
 
-#: core/app/main/digikamapp.cpp:619 core/app/views/stack/trashview.cpp:428
+#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:428
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Κανένα επιλεγμένο αντικείμενο (%1 αντικείμενο)"
 msgstr[1] "Κανένα επιλεγμένο αντικείμενο (%1 αντικείμενα)"
 
-#: core/app/main/digikamapp.cpp:625
+#: core/app/main/digikamapp.cpp:623
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "Κανένα επιλεγμένο αντικείμενο (%1 [%2] αντικείμενο)"
 msgstr[1] "Κανένα επιλεγμένο αντικείμενο (%1 [%2] αντικείμενα)"
 
-#: core/app/main/digikamapp.cpp:630
+#: core/app/main/digikamapp.cpp:628
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1498,7 +1498,7 @@ msgstr[1] ""
 "Κανένα επιλεγμένο αντικείμενο (%1 αντικείμενα. Με ομαδοποιημένα αντικείμενα: "
 "¨%2)"
 
-#: core/app/main/digikamapp.cpp:641
+#: core/app/main/digikamapp.cpp:639
 #, fuzzy, kde-format
 #| msgid "%1/%2 items selected"
 msgid "1/%2 item selected (%3/%4)"
@@ -1506,7 +1506,7 @@ msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "%1/%2 αντικείμενα επιλεγμένα"
 msgstr[1] "%1/%2 αντικείμενα επιλεγμένα"
 
-#: core/app/main/digikamapp.cpp:654
+#: core/app/main/digikamapp.cpp:652
 #, fuzzy, kde-format
 #| msgid "%1/%2 [%3] items selected"
 msgid "1/%2 [%3] item selected (%4/%5)"
@@ -1514,7 +1514,7 @@ msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "%1%2 [%3] αντικείμενα επιλεγμένα"
 msgstr[1] "%1%2 [%3] αντικείμενα επιλεγμένα"
 
-#: core/app/main/digikamapp.cpp:662
+#: core/app/main/digikamapp.cpp:660
 #, fuzzy, kde-format
 #| msgid "%1/%2 items selected. Total with grouped items: %3"
 msgid "1/%2 item selected. Total with grouped items: %3"
@@ -1524,7 +1524,7 @@ msgstr[0] ""
 msgstr[1] ""
 "%1/%2 αντικείμενα επιλεγμένα. Σύνολο με ομαδοποιημένα αντικείμενα: %3"
 
-#: core/app/main/digikamapp.cpp:670
+#: core/app/main/digikamapp.cpp:668
 #, fuzzy, kde-format
 #| msgid "%1/%2 [%3/%4] items selected"
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
@@ -1532,7 +1532,7 @@ msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "%1/%2 [%3/%4] αντικείμενα επιλεγμένα"
 msgstr[1] "%1/%2 [%3/%4] αντικείμενα επιλεγμένα"
 
-#: core/app/main/digikamapp.cpp:679
+#: core/app/main/digikamapp.cpp:677
 #, fuzzy, kde-format
 #| msgid "%1/%2 items selected. With grouped items: %3/%4"
 msgid "1/%2 item selected. With grouped items: %3/%4"
@@ -1540,23 +1540,23 @@ msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "%1/%2 αντικείμενα επιλεγμένα. Με ομαδοποιημένα αντικείμενα: %3/%4"
 msgstr[1] "%1/%2 αντικείμενα επιλεγμένα. Με ομαδοποιημένα αντικείμενα: %3/%4"
 
-#: core/app/main/digikamapp.cpp:710
+#: core/app/main/digikamapp.cpp:708
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 από %2)"
 
-#: core/app/main/digikamapp.cpp:724
+#: core/app/main/digikamapp.cpp:722
 #, fuzzy, kde-format
 #| msgid " (%1 of %2 [%3])"
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 από %2 [%3])"
 
-#: core/app/main/digikamapp.cpp:728
+#: core/app/main/digikamapp.cpp:726
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " %1 από %2. Σύνολο με ομαδοποιημένα αντικείμενα: %3)"
 
-#: core/app/main/digikamapp.cpp:739
+#: core/app/main/digikamapp.cpp:737
 #, fuzzy, kde-format
 #| msgid "1 item"
 #| msgid_plural "%1 items"
@@ -1565,7 +1565,7 @@ msgid_plural "%1 items hidden"
 msgstr[0] "1 αντικείμενο"
 msgstr[1] "%1 αντικείμενα"
 
-#: core/app/main/digikamapp.cpp:789
+#: core/app/main/digikamapp.cpp:787
 #, fuzzy, kde-format
 #| msgid "Write Metadata to Image"
 #| msgid_plural "Write Metadata to Selected Images"
@@ -1574,7 +1574,7 @@ msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Εγγραφή μεταδεδομένων σε εικόνα"
 msgstr[1] "Εγγραφή μεταδεδομένων σε επιλεγμένες εικόνες"
 
-#: core/app/main/digikamapp.cpp:791
+#: core/app/main/digikamapp.cpp:789
 #, fuzzy, kde-format
 #| msgid "Reread Metadata From Image"
 #| msgid_plural "Reread Metadata From Selected Images"

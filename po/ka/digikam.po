@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-28 00:46+0000\n"
-"PO-Revision-Date: 2022-12-28 09:12+0100\n"
+"POT-Creation-Date: 2022-12-30 00:49+0000\n"
+"PO-Revision-Date: 2022-12-29 02:47+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -265,7 +265,7 @@ msgstr "დააჯგუფეთ აქ და ალბომში გა�
 #: core/app/dragdrop/itemdragdrop.cpp:181
 #, kde-format
 msgid "Assign Tag to Dropped Items"
-msgstr ""
+msgstr "გადათრევადი ობიექტებისთვის ჭდის მინიჭება"
 
 #: core/app/dragdrop/itemdragdrop.cpp:614
 #, kde-format
@@ -287,18 +287,18 @@ msgstr "&შეწყვეტა"
 #: core/app/dragdrop/itemdragdrop.cpp:656
 #, kde-format
 msgid "Assign Tags to &Selected Items"
-msgstr ""
+msgstr "&მონიშნული ობიექტებისთვის ჭდის მინიჭება"
 
 #: core/app/dragdrop/itemdragdrop.cpp:664
 #: core/app/views/preview/itempreviewview.cpp:715
 #, kde-format
 msgid "Assign Tags to &This Item"
-msgstr ""
+msgstr "&ამ ობიექტის ჭდის მინიჭება"
 
 #: core/app/dragdrop/itemdragdrop.cpp:668
 #, kde-format
 msgid "Assign Tags to &All Items"
-msgstr ""
+msgstr "&ყველა ობიექტისთვის ჭდის მინიჭება"
 
 #: core/app/dragdrop/itemdragdrop.cpp:722
 #, kde-format
@@ -319,13 +319,13 @@ msgstr "ჭდის მინიატურად დაყენება"
 #, kde-format
 msgid "Change face name from '%2' to '%3'"
 msgid_plural "Change face names from '%2' to '%3'"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "სახის ჭდის '%2'-დან '%3'-ზე შეცვლა"
+msgstr[1] "სახის ჭდის '%2'-დან '%3'-ზე შეცვლა"
 
 #: core/app/dragdrop/tagdragdrop.cpp:416
 #, kde-format
 msgid "Assign Tag(s) '%1' to Items"
-msgstr ""
+msgstr "ობიექტებისთვის ჭდის '%1' მინიჭება"
 
 #: core/app/filters/filtersidebarwidget.cpp:143
 #, kde-format
@@ -350,12 +350,12 @@ msgstr "გამოსახულებები ჭდეების გა�
 #: core/app/filters/filtersidebarwidget.cpp:174
 #, kde-format
 msgid "Show images without a tag."
-msgstr ""
+msgstr "სახის ჭდის არმქონე გამოსახულებების ჩვენება."
 
 #: core/app/filters/filtersidebarwidget.cpp:177
 #, kde-format
 msgid "Tags Matching Condition"
-msgstr ""
+msgstr "ჭდის ძებნის მორგება"
 
 #: core/app/filters/filtersidebarwidget.cpp:180
 #: core/app/filters/filtersidebarwidget.cpp:230
@@ -385,12 +385,12 @@ msgstr "თაგების ფილტრი"
 #: core/app/filters/filtersidebarwidget.cpp:222
 #, kde-format
 msgid "Images Without Face tags"
-msgstr ""
+msgstr "გამოსახულებები სახის ჭდეების გარეშე"
 
 #: core/app/filters/filtersidebarwidget.cpp:224
 #, kde-format
 msgid "Show images without a face tag."
-msgstr ""
+msgstr "სახის ჭდის არმქონე გამოსახულებების ჩვენება."
 
 #: core/app/filters/filtersidebarwidget.cpp:227
 #, kde-format
@@ -400,7 +400,7 @@ msgstr ""
 #: core/app/filters/filtersidebarwidget.cpp:249
 #, kde-format
 msgid "Face Tags Filter"
-msgstr ""
+msgstr "სახის ჭდეების ფილტრი"
 
 #: core/app/filters/filtersidebarwidget.cpp:267
 #, kde-format
@@ -452,7 +452,7 @@ msgstr "არ უნდა ჰქონდეს ეს ჭდე"
 #: core/app/items/delegate/itemdelegate.cpp:359
 #, kde-format
 msgid "Reference Image"
-msgstr ""
+msgstr "ეტალონური გამოსახულება"
 
 #: core/app/items/overlays/facerejectionoverlay.cpp:51
 #, kde-format
@@ -1280,32 +1280,32 @@ msgstr "ტექნიკური პარამეტრები"
 msgid "<i>Binary Data</i>"
 msgstr "<i>მანქანური მონაცემები</i>"
 
-#: core/app/main/digikamapp.cpp:70
+#: core/app/main/digikamapp.cpp:68
 #, kde-format
 msgid "Initializing..."
 msgstr "ინიციალიზაცია..."
 
-#: core/app/main/digikamapp.cpp:135 core/showfoto/main/showfoto.cpp:95
+#: core/app/main/digikamapp.cpp:133 core/showfoto/main/showfoto.cpp:95
 #, kde-format
 msgid "Load Plugins..."
 msgstr "დამატებების ჩატვირთვა..."
 
-#: core/app/main/digikamapp.cpp:160 core/showfoto/main/showfoto.cpp:77
+#: core/app/main/digikamapp.cpp:158 core/showfoto/main/showfoto.cpp:77
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "ICC რეპოზიტორიის შემოწმება..."
 
-#: core/app/main/digikamapp.cpp:172
+#: core/app/main/digikamapp.cpp:170
 #, kde-format
 msgid "Clean up Database..."
 msgstr "ბაზის გასუფთავება..."
 
-#: core/app/main/digikamapp.cpp:190
+#: core/app/main/digikamapp.cpp:188
 #, kde-format
 msgid "Loading albums..."
 msgstr "ალბომების ჩატვირთვა..."
 
-#: core/app/main/digikamapp.cpp:338
+#: core/app/main/digikamapp.cpp:336
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1313,92 +1313,92 @@ msgid ""
 "\"Color Management\" feature will be disabled until you solve this issue.</p>"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:619 core/app/views/stack/trashview.cpp:428
+#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:428
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "მონიშნული ჩანაწერის გარეშე (%1 ჩანაწერი)"
 msgstr[1] "მონიშნული ჩანაწერის გარეშე (%1 ჩანაწერი)"
 
-#: core/app/main/digikamapp.cpp:625
+#: core/app/main/digikamapp.cpp:623
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "მონიშნული ჩანაწერის გარეშე (%1 [%2] ჩანაწერი)"
 msgstr[1] "მონიშნული ჩანაწერის გარეშე (%1 [%2] ჩანაწერი)"
 
-#: core/app/main/digikamapp.cpp:630
+#: core/app/main/digikamapp.cpp:628
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/main/digikamapp.cpp:641
+#: core/app/main/digikamapp.cpp:639
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "%1/%2 ჩანაწერი მონიშნულია (%3/%4)"
 msgstr[1] "%1/%2 ჩანაწერი მონიშნულია (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:654
+#: core/app/main/digikamapp.cpp:652
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "%1/%2 [%3] ჩანაწერი მონიშნულია (%4/%5)"
 msgstr[1] "%1/%2 [%3] ჩანაწერი მონიშნულია (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:662
+#: core/app/main/digikamapp.cpp:660
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/main/digikamapp.cpp:670
+#: core/app/main/digikamapp.cpp:668
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "%1/%2 [%3/%4] ჩანაწერი მონიშნულია (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] ჩანაწერი მონიშნულია (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:679
+#: core/app/main/digikamapp.cpp:677
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/app/main/digikamapp.cpp:710
+#: core/app/main/digikamapp.cpp:708
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 %2-დან)"
 
-#: core/app/main/digikamapp.cpp:724
+#: core/app/main/digikamapp.cpp:722
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 %2-დან [%3] )"
 
-#: core/app/main/digikamapp.cpp:728
+#: core/app/main/digikamapp.cpp:726
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:739
+#: core/app/main/digikamapp.cpp:737
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "1 ელემენტი დამალულია"
 msgstr[1] "%1 ელემენტი დამალულია"
 
-#: core/app/main/digikamapp.cpp:789
+#: core/app/main/digikamapp.cpp:787
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "მეტამონაცემების ფაილში ჩაწერა"
 msgstr[1] "მონიშნულ ფაილებში მეტამონაცემების ჩაწერა"
 
-#: core/app/main/digikamapp.cpp:791
+#: core/app/main/digikamapp.cpp:789
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -1719,13 +1719,13 @@ msgstr "გამოსახულებების რედაქტორ�
 #, kde-format
 msgctxt "@action: setup"
 msgid "Light Table"
-msgstr ""
+msgstr "სინათლის მაგიდა"
 
 #: core/app/main/digikamapp_setup.cpp:372
 #, kde-format
 msgctxt "@action: setup"
 msgid "Place onto Light Table"
-msgstr ""
+msgstr "სინათლის მაგიდაზე მოთავსება"
 
 #: core/app/main/digikamapp_setup.cpp:373
 #, kde-format
@@ -1737,7 +1737,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add to Light Table"
-msgstr ""
+msgstr "სინათლის მაგიდაზე დამატება"
 
 #: core/app/main/digikamapp_setup.cpp:380
 #, kde-format
@@ -2652,7 +2652,7 @@ msgstr "JPEG2000 გამოსახულება (*.jp2 *.j2k *.jpx *.pgx)"
 #: core/app/utils/digikam_globals.cpp:127
 #, kde-format
 msgid "Progressive Graphics file (*.pgf)"
-msgstr ""
+msgstr "პროგრესული გრაფიკის ფაილი (*.pgf)"
 
 #: core/app/utils/digikam_globals.cpp:132
 #, kde-format
@@ -2834,7 +2834,7 @@ msgstr "არსებული ჭდეები"
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:261
 #, kde-format
 msgid "No Tags Album"
-msgstr ""
+msgstr "ალბომი ჭდეების გარეშე"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:276
 #: core/libs/album/engine/album.cpp:573
@@ -2974,12 +2974,12 @@ msgstr ""
 #: core/app/views/stack/itemiconview_p.h:168
 #, kde-format
 msgid "Fuzzy Sketch Search"
-msgstr ""
+msgstr "მონახაზების არაზუსტი ძებნა"
 
 #: core/app/views/stack/itemiconview_p.h:172
 #, kde-format
 msgid "Fuzzy Image Search"
-msgstr ""
+msgstr "გამოსახულებების არაზუსტი ძებნა"
 
 #: core/app/views/stack/itemiconview_p.h:176
 #, kde-format
@@ -2996,7 +2996,7 @@ msgstr "ბოლო ძებნა"
 #: core/app/views/stack/itemiconview_search.cpp:108
 #, kde-format
 msgid "FacesDetector"
-msgstr ""
+msgstr "სახეების ამოცნობა"
 
 #: core/app/views/stack/itemiconview_search.cpp:68
 #: core/app/views/stack/itemiconview_search.cpp:110
@@ -4613,7 +4613,7 @@ msgstr "არხი"
 #, kde-format
 msgctxt "@action: channel option"
 msgid "As input"
-msgstr ""
+msgstr "ემთხვევა შეყვანილს"
 
 #: core/avplayer/main/MainWindow_setup.cpp:516
 #, kde-format
@@ -4625,7 +4625,7 @@ msgstr "სტერეო"
 #, kde-format
 msgctxt "@action: channel option"
 msgid "Mono (center)"
-msgstr ""
+msgstr "მონო (ცენტრალური)"
 
 #: core/avplayer/main/MainWindow_setup.cpp:518
 #, kde-format
@@ -5015,7 +5015,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "BCG Correction"
-msgstr ""
+msgstr "სიკაშკაშის/კონტრასტის/გამის მორგება"
 
 #: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:61
 #: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:59
@@ -5167,7 +5167,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Curves Adjust"
-msgstr ""
+msgstr "მრუდის მორგება"
 
 #: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:44
 #, kde-format
@@ -5243,7 +5243,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "HSL Correction"
-msgstr ""
+msgstr "HSL კორექცია"
 
 #: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:61
 #: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:59
@@ -5726,7 +5726,7 @@ msgstr "აბსოლუტური ზომების გამოყე�
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:197
 #, kde-format
 msgid "Watermark type:"
-msgstr ""
+msgstr "ჭვირნიშანი:"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:486
@@ -5747,12 +5747,12 @@ msgstr "გამოსახულების პარამეტრებ�
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:223
 #, kde-format
 msgid "Click to select watermark image."
-msgstr ""
+msgstr "აირჩიეთ ჭვირნიშნის სურათი."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:224
 #, kde-format
 msgid "Watermark image:"
-msgstr ""
+msgstr "ჭვირნიშნის სურათი:"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:233
 #, kde-format
@@ -5779,7 +5779,7 @@ msgstr ""
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:262
 #, kde-format
 msgid "Opacity of watermark"
-msgstr ""
+msgstr "ჭვირნიშნის გაუმჭვირვალობა"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:263
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:206
@@ -5795,12 +5795,12 @@ msgstr "ტექსტის მორგება"
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:275
 #, kde-format
 msgid "Enter your watermark string here."
-msgstr ""
+msgstr "შეიყვანეთ ჭვირნიშნის სტრიქონი."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:276
 #, kde-format
 msgid "Watermark text:"
-msgstr ""
+msgstr "ჭვირნიშნის ტექსტი:"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:283
 #, kde-format
@@ -6035,7 +6035,7 @@ msgstr "Y ზღვარი (%):"
 #, kde-format
 msgctxt "@title"
 msgid "Add Watermark"
-msgstr ""
+msgstr "ჭვირნიშნის დამატება"
 
 #: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:61
 #, kde-format
@@ -6075,7 +6075,7 @@ msgstr ""
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:77
 #, kde-format
 msgid "Smoothness:"
-msgstr ""
+msgstr "სიგლუვე"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:63
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:81
@@ -7594,13 +7594,13 @@ msgstr ""
 #: core/dplugins/editor/colors/adjustcurves/adjustcurvestool.cpp:256
 #, kde-format
 msgid "Adjust Curve"
-msgstr ""
+msgstr "მრუდის მორგება"
 
 #: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Adjust Curves"
-msgstr ""
+msgstr "მრუდის მორგება"
 
 #: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:64
 #, kde-format
@@ -7612,7 +7612,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Curves Adjust..."
-msgstr ""
+msgstr "მრუდის მორგება..."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:192
 #: core/dplugins/editor/colors/film/filmtool.cpp:183
@@ -8341,7 +8341,7 @@ msgstr ""
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:224
 #, kde-format
 msgid "Semi-transparent"
-msgstr ""
+msgstr "ნახევრად-გამჭვირვალე"
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:225
 #, kde-format
@@ -8414,7 +8414,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Apply Texture..."
-msgstr ""
+msgstr "ტექსტურის გადატარება"
 
 #: core/dplugins/editor/enhance/antivignetting/antivignettingtool.cpp:71
 #: core/dplugins/editor/enhance/antivignetting/antivignettingtool.cpp:159
@@ -8478,7 +8478,7 @@ msgstr "ბუნდოვნება..."
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:131
 #, kde-format
 msgid "Brush Radius:"
-msgstr ""
+msgstr "ფუნჯის რადიუსი:"
 
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:135
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:138
@@ -8735,7 +8735,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Local Contrast..."
-msgstr ""
+msgstr "ლოკალური კონტრასტი..."
 
 #: core/dplugins/editor/enhance/noisereduction/noisereductiontool.cpp:66
 #: core/dplugins/editor/enhance/noisereduction/noisereductiontool.cpp:140
@@ -8753,7 +8753,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Noise Reduction..."
-msgstr ""
+msgstr "ხმაურის შემცირება..."
 
 #: core/dplugins/editor/enhance/redeye/redeyetool.cpp:87
 #, kde-format
@@ -8867,7 +8867,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Restoration..."
-msgstr ""
+msgstr "აღდგენა..."
 
 #: core/dplugins/editor/enhance/sharpen/sharpentool.cpp:270
 #: core/libs/dimg/filters/sharp/sharpenfilter.cpp:88
@@ -9183,7 +9183,7 @@ msgstr "ნახშირი"
 #: core/dplugins/editor/filters/charcoal/charcoaltool.cpp:91
 #, kde-format
 msgid "Pencil size:"
-msgstr ""
+msgstr "ფანქრის ზომა:"
 
 #: core/dplugins/editor/filters/charcoal/charcoaltool.cpp:95
 #, kde-format
@@ -9206,13 +9206,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Charcoal Drawing"
-msgstr ""
+msgstr "ნახშირით ხატვა"
 
 #: core/dplugins/editor/filters/charcoal/charcoaltoolplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to emulate charcoal drawing"
-msgstr ""
+msgstr "ნახშირით ხატვის ეფექტი"
 
 #: core/dplugins/editor/filters/charcoal/charcoaltoolplugin.cpp:64
 #, kde-format
@@ -9224,7 +9224,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Charcoal Drawing..."
-msgstr ""
+msgstr "ნახშირით ხატვა..."
 
 #: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:89
 #, kde-format
@@ -9236,13 +9236,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title: filter"
 msgid "Solarize"
-msgstr ""
+msgstr "სოლარიზაცია"
 
 #: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:211
 #, kde-format
 msgctxt "@title: filter"
 msgid "Vivid"
-msgstr ""
+msgstr "კაშკაშა"
 
 #: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:215
 #, kde-format
@@ -9254,13 +9254,13 @@ msgstr "ნეონი"
 #, kde-format
 msgctxt "@title: filter"
 msgid "Find Edges"
-msgstr ""
+msgstr "კიდეების პოვნა"
 
 #: core/dplugins/editor/filters/colorfx/colorfxtool.cpp:223
 #, kde-format
 msgctxt "@title: filter"
 msgid "Lut3D"
-msgstr ""
+msgstr "Lut3D"
 
 #: core/dplugins/editor/filters/colorfx/colorfxtoolplugin.cpp:59
 #, kde-format
@@ -9288,7 +9288,7 @@ msgstr ""
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:112
 #, kde-format
 msgid "Fish Eyes"
-msgstr ""
+msgstr "თევზის თვალები"
 
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:113
 #, kde-format
@@ -9529,13 +9529,13 @@ msgstr ""
 #: core/dplugins/editor/filters/oilpaint/oilpainttool.cpp:190
 #, kde-format
 msgid "Oil Paint"
-msgstr ""
+msgstr "ზეთის საღებავი"
 
 #: core/dplugins/editor/filters/oilpaint/oilpainttoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Oil Paint"
-msgstr ""
+msgstr "ზეთის საღებავი"
 
 #: core/dplugins/editor/filters/oilpaint/oilpainttoolplugin.cpp:59
 #, kde-format
@@ -9553,7 +9553,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Oil Paint..."
-msgstr ""
+msgstr "ზეთის საღებავი..."
 
 #: core/dplugins/editor/filters/raindrop/raindroptool.cpp:83
 #, kde-format
@@ -9587,7 +9587,7 @@ msgstr ""
 #: core/dplugins/editor/filters/raindrop/raindroptool.cpp:118
 #, kde-format
 msgid "Fish eyes:"
-msgstr ""
+msgstr "თევზის თვალები:"
 
 #: core/dplugins/editor/filters/raindrop/raindroptool.cpp:122
 #, kde-format
@@ -10492,7 +10492,7 @@ msgstr ""
 #: core/dplugins/editor/transform/resize/resizetool.cpp:303
 #, kde-format
 msgid "New Size"
-msgstr ""
+msgstr "ახალი ზომა"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:305
 #, kde-format
@@ -10503,97 +10503,97 @@ msgstr ""
 #, kde-format
 msgctxt "Original (size)"
 msgid "Original (%1 x %2 pixels)"
-msgstr ""
+msgstr "ორიგინალი (%1 x %2 პიქსელი)"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:310
 #, kde-format
 msgctxt "Tiny (size)"
 msgid "Tiny (%1 x %2 pixels)"
-msgstr ""
+msgstr "ძალიან პატარა (%1 x %2 პიქსელი)"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:313
 #, kde-format
 msgctxt "Small (size)"
 msgid "Small (%1 x %2 pixels)"
-msgstr ""
+msgstr "პატარა (%1 x %2 პიქსელი)"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:316
 #, kde-format
 msgctxt "Medium (size)"
 msgid "Medium (%1 x %2 pixels)"
-msgstr ""
+msgstr "საშუალო (%1 x %2 პიქსელი)"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:319
 #, kde-format
 msgctxt "Big (size)"
 msgid "Big (%1 x %2 pixels)"
-msgstr ""
+msgstr "დიდი (%1 x %2 პიქსელი)"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:322
 #, kde-format
 msgctxt "Large (size)"
 msgid "Large (%1 x %2 pixels)"
-msgstr ""
+msgstr "ძალიან დიდი (%1 x %2 პიქსელი)"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:325
 #, kde-format
 msgctxt "Huge (size)"
 msgid "Huge (%1 x %2 pixels)"
-msgstr ""
+msgstr "უზარმაზარი (%1 x %2 პიქსელი)"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:328
 #, kde-format
 msgctxt "UHD4K (size)"
 msgid "UHD-4K (%1 x %2 pixels)"
-msgstr ""
+msgstr "UHD-4K (%1 x %2 პიქსელი)"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:331
 #, kde-format
 msgctxt "A3 (size)"
 msgid "A3 (297 x 420 mm)"
-msgstr ""
+msgstr "A3 (297 x 420 მმ)"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:332
 #, kde-format
 msgctxt "A4 (size)"
 msgid "A4 (210 x 297 mm)"
-msgstr ""
+msgstr "A4 (210 x 297 მმ)"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:333
 #, kde-format
 msgctxt "A6 (size)"
 msgid "A6 (105 x 148 mm)"
-msgstr ""
+msgstr "A6 (105 x 148 მმ)"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:334
 #, kde-format
 msgctxt "Letter (size)"
 msgid "Letter (8.5 x 11 in)"
-msgstr ""
+msgstr "წერილი (8.5 x 11 დუიმი)"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:335
 #, kde-format
 msgctxt "Print (size)"
 msgid "4 x 6 in"
-msgstr ""
+msgstr "4 x 6 დუიმი"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:336
 #, kde-format
 msgctxt "Print (size)"
 msgid "5 x 7 in"
-msgstr ""
+msgstr "5 x 7 დუიმი"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:337
 #, kde-format
 msgctxt "Print (size)"
 msgid "8 x 10 in"
-msgstr ""
+msgstr "8 x 10 დუიმი"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:338
 #, kde-format
 msgctxt "Print (size)"
 msgid "11 x 14 in"
-msgstr ""
+msgstr "11 x 14 დუიმი"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:342
 #, kde-format
@@ -10692,7 +10692,7 @@ msgstr "px"
 #, kde-format
 msgctxt "Inches"
 msgid "in"
-msgstr ""
+msgstr "დუიმი"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:641
 #, kde-format
@@ -10759,7 +10759,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "&Resize..."
-msgstr ""
+msgstr "&ზომის შეცვლა..."
 
 #: core/dplugins/editor/transform/shear/sheartool.cpp:100
 #, kde-format
@@ -10898,12 +10898,12 @@ msgstr ""
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:64
 #, kde-format
 msgid "Scan Image"
-msgstr ""
+msgstr "გამოსახულების სკანირება"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:72
 #, kde-format
 msgid "Scan Images"
-msgstr ""
+msgstr "გამოსახულებების სკანირება"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:167
 #, kde-format
@@ -10952,7 +10952,7 @@ msgstr ""
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:304
 #, kde-format
 msgid "File Not Saved"
-msgstr ""
+msgstr "ფაილი არ შენახულა"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:304
 #, kde-format
@@ -11132,12 +11132,12 @@ msgstr ""
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:150
 #, kde-format
 msgid "2-d"
-msgstr ""
+msgstr "2-d"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:151
 #, kde-format
 msgid "3-d"
-msgstr ""
+msgstr "3-d"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:154
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:594
@@ -11148,7 +11148,7 @@ msgstr "DOP"
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:439
 #, kde-format
 msgid "Details changed"
-msgstr ""
+msgstr "დეტალები შეიცვალა"
 
 #: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:43
 #, kde-format
@@ -15429,7 +15429,7 @@ msgstr "მიმდინარე გვერდი"
 
 #. i18n: ectx: property (text), widget (QLabel, totalLabel)
 #: core/dplugins/generic/tools/calendar/ui/calprogress.ui:33
-#, fuzzy, kde-format
+#, kde-format
 msgid "Total Pages"
 msgstr "სულ გვერდები"
 
@@ -20944,7 +20944,7 @@ msgid "If this option is enabled, the Slideshow will run in random order"
 msgstr ""
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:136
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show progress indicator"
 msgstr "მიმდინარეობის ინდიკატორის ჩვენება"
 
@@ -21108,7 +21108,7 @@ msgid "Current Screen"
 msgstr "მიმდინარე ეკრანი"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:185
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:listbox The default screen for the presentation mode"
 msgid "Default Screen"
 msgstr "ნაგულისხმები ეკრანი"
@@ -28046,7 +28046,7 @@ msgstr ""
 #: core/libs/dialogs/imagedialog.cpp:233
 #, kde-format
 msgid "Select an Item"
-msgstr ""
+msgstr "აირჩიეთ ელემენტი"
 
 #: core/libs/dialogs/imagedialog.cpp:247
 #, kde-format

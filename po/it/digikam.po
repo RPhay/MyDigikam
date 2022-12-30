@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-28 00:46+0000\n"
-"PO-Revision-Date: 2022-12-09 19:47+0100\n"
+"POT-Creation-Date: 2022-12-30 00:49+0000\n"
+"PO-Revision-Date: 2022-12-29 20:50+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.11.90\n"
+"X-Generator: Lokalize 22.12.0\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -1305,32 +1305,32 @@ msgstr "Parametri tecnici"
 msgid "<i>Binary Data</i>"
 msgstr "<i>Dati binari</i>"
 
-#: core/app/main/digikamapp.cpp:70
+#: core/app/main/digikamapp.cpp:68
 #, kde-format
 msgid "Initializing..."
 msgstr "Inizializzazione..."
 
-#: core/app/main/digikamapp.cpp:135 core/showfoto/main/showfoto.cpp:95
+#: core/app/main/digikamapp.cpp:133 core/showfoto/main/showfoto.cpp:95
 #, kde-format
 msgid "Load Plugins..."
 msgstr "Caricamento estensioni..."
 
-#: core/app/main/digikamapp.cpp:160 core/showfoto/main/showfoto.cpp:77
+#: core/app/main/digikamapp.cpp:158 core/showfoto/main/showfoto.cpp:77
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "Controllo del deposito ICC..."
 
-#: core/app/main/digikamapp.cpp:172
+#: core/app/main/digikamapp.cpp:170
 #, kde-format
 msgid "Clean up Database..."
 msgstr "Ripulisci la banca dati..."
 
-#: core/app/main/digikamapp.cpp:190
+#: core/app/main/digikamapp.cpp:188
 #, kde-format
 msgid "Loading albums..."
 msgstr "Caricamento degli album..."
 
-#: core/app/main/digikamapp.cpp:338
+#: core/app/main/digikamapp.cpp:336
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1342,21 +1342,21 @@ msgstr ""
 "funzionalità «Gestione del colore» sarà disabilitata fino a quando non "
 "risolverai questo problema.</p>"
 
-#: core/app/main/digikamapp.cpp:619 core/app/views/stack/trashview.cpp:428
+#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:428
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
 msgstr[0] "Nessun elemento selezionato (%1 elemento)"
 msgstr[1] "Nessun elemento selezionato (%1 elementi)"
 
-#: core/app/main/digikamapp.cpp:625
+#: core/app/main/digikamapp.cpp:623
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
 msgstr[0] "Nessun elemento selezionato (%1 [%2] elemento)"
 msgstr[1] "Nessun elemento selezionato (%1 [%2] elementi)"
 
-#: core/app/main/digikamapp.cpp:630
+#: core/app/main/digikamapp.cpp:628
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1365,71 +1365,71 @@ msgstr[0] ""
 msgstr[1] ""
 "Nessun elemento selezionato (%1 elementi. Con gli elementi raggruppati: %2)"
 
-#: core/app/main/digikamapp.cpp:641
+#: core/app/main/digikamapp.cpp:639
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
 msgstr[0] "1/%2 elemento selezionato (%3/%4)"
 msgstr[1] "%1/%2 elementi selezionati (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:654
+#: core/app/main/digikamapp.cpp:652
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
 msgstr[0] "1/%2 [%3] elemento selezionato (%4/%5)"
 msgstr[1] "%1/%2 [%3] elementi selezionati (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:662
+#: core/app/main/digikamapp.cpp:660
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
 msgstr[0] "1/%2 elemento selezionato. Totale con gli elementi raggruppati: %3"
 msgstr[1] "%1/%2 elementi selezionati. Totale con gli elementi raggruppati: %3"
 
-#: core/app/main/digikamapp.cpp:670
+#: core/app/main/digikamapp.cpp:668
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
 msgstr[0] "1/%2 [%3/%4] elemento selezionato (%5/%6)"
 msgstr[1] "%1/%2 [%3/%4] elementi selezionati (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:679
+#: core/app/main/digikamapp.cpp:677
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
 msgstr[0] "1/%2 elemento selezionato. Con gli elementi raggruppati: %3/%4"
 msgstr[1] "%1/%2 elementi selezionati. Con gli elementi raggruppati: %3/%4"
 
-#: core/app/main/digikamapp.cpp:710
+#: core/app/main/digikamapp.cpp:708
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 di %2)"
 
-#: core/app/main/digikamapp.cpp:724
+#: core/app/main/digikamapp.cpp:722
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 di %2 [%3])"
 
-#: core/app/main/digikamapp.cpp:728
+#: core/app/main/digikamapp.cpp:726
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 di %2. Totale con gli elementi raggruppati: %3)"
 
-#: core/app/main/digikamapp.cpp:739
+#: core/app/main/digikamapp.cpp:737
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
 msgstr[0] "Un elemento nascosto"
 msgstr[1] "%1 elementi nascosti"
 
-#: core/app/main/digikamapp.cpp:789
+#: core/app/main/digikamapp.cpp:787
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
 msgstr[0] "Scrivi i metadati nel file"
 msgstr[1] "Scrivi i metadati nei file selezionati"
 
-#: core/app/main/digikamapp.cpp:791
+#: core/app/main/digikamapp.cpp:789
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
@@ -3149,12 +3149,12 @@ msgstr "Elimina..."
 #: core/app/views/stack/trashview.cpp:120
 #, kde-format
 msgid "Selected Items Permanently"
-msgstr "Elementi selezionati permanentemente"
+msgstr "Elementi selezionati definitivamente"
 
 #: core/app/views/stack/trashview.cpp:121
 #, kde-format
 msgid "All Items Permanently"
-msgstr "Tutti gli elementi permanentemente"
+msgstr "Tutti gli elementi definitivamente"
 
 #: core/app/views/stack/trashview.cpp:241
 #, kde-format
@@ -3184,13 +3184,13 @@ msgstr "Conferma eliminazione"
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
-msgstr[0] "Vuoi davvero eliminare permanentemente %1 elemento?"
-msgstr[1] "Vuoi davvero eliminare permanentemente %1 elementi?"
+msgstr[0] "Vuoi davvero eliminare definitivamente %1 elemento?"
+msgstr[1] "Vuoi davvero eliminare definitivamente %1 elementi?"
 
 #: core/app/views/stack/trashview.cpp:346
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
-msgstr "Vuoi davvero eliminare permanentemente TUTTI gli elementi?"
+msgstr "Vuoi davvero eliminare definitivamente TUTTI gli elementi?"
 
 #: core/app/views/stack/trashview.cpp:435
 #, kde-format
@@ -3522,18 +3522,13 @@ msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li><li>%2</li>"
 
 #: core/app/views/stack/welcomepageview.cpp:218
-#, fuzzy, kde-format
-#| msgid ""
-#| "digiKam has many powerful features which are described in the <a href="
-#| "\"https://docs.kde.org/?"
-#| "application=digikam&branch=trunk5\">documentation</a>"
+#, kde-format
 msgid ""
 "digiKam has many powerful features which are described in the <a href="
 "\"https://docs.digikam.org/en/index.html\">documentation</a>"
 msgstr ""
 "digiKam possiede molte potenti funzionalità, descritte nella <a href="
-"\"https://docs.kde.org/?application=digikam&branch=trunk5\">documentazione</"
-"a>"
+"\"https://docs.digikam.org/en/index.html\">documentazione</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:219
 #, kde-format
@@ -29574,6 +29569,13 @@ msgid ""
 "before the changes are written to the database. This made database requests "
 "atomic and robust in extensive and critical use cases."
 msgstr ""
+"Write-Ahead Log è una modalità per utilizzare un diario roll-forward che "
+"registra le transazioni inviate ma non ancora applicate alle banche dati. "
+"Utilizza un file di journaling ausiliario per ospitare le strutture delle "
+"transazioni di recupero durante un blocco. Prima di essere scritte nella "
+"banca dati le modifiche vengono prima memorizzate nel registro. Questo ha "
+"permesso di ottenere richieste atomiche e robuste della banca dati in quei "
+"casi di utilizzo critico ed esteso."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:131
 #, kde-format
@@ -30183,7 +30185,7 @@ msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
 "Trash."
 msgstr ""
-"Se spuntata, i file saranno rimossi in modo permanente, anziché essere "
+"Se spuntata, i file saranno rimossi definitivamente, anziché essere "
 "cestinati."
 
 #: core/libs/dialogs/deletedialog.cpp:304
@@ -30193,9 +30195,9 @@ msgid ""
 "of being placed in the Trash.</p><p><em>Use this option with caution</em>: "
 "most filesystems are unable to undelete deleted items reliably.</p>"
 msgstr ""
-"<p>Se questa casella è spuntata, gli elementi saranno <b>rimossi in modo "
-"permanente</b>, anziché essere cestinati.</p><p><em>Usa questa opzione con "
-"cautela</em>: la maggior parte dei file system non sono in grado di "
+"<p>Se questa casella è spuntata, gli elementi saranno <b>rimossi "
+"definitivamente</b>, anziché essere cestinati.</p><p><em>Usa questa opzione "
+"con cautela</em>: la maggior parte dei file system non sono in grado di "
 "recuperare in modo affidabile gli elementi eliminati.</p>"
 
 #: core/libs/dialogs/deletedialog.cpp:310
@@ -30215,7 +30217,7 @@ msgid ""
 "and permanently deleted."
 msgstr ""
 "Se spuntata, questa finestra non sarà più mostrata e gli elementi saranno "
-"rimossi direttamente e permanentemente."
+"rimossi direttamente e definitivamente."
 
 #: core/libs/dialogs/deletedialog.cpp:378
 #, kde-format
@@ -30224,7 +30226,7 @@ msgid ""
 "be directly and permanently deleted."
 msgstr ""
 "Se questa casella è spuntata, questa finestra non sarà più mostrata e gli "
-"elementi saranno rimossi direttamente e permanentemente."
+"elementi saranno rimossi direttamente e definitivamente."
 
 #: core/libs/dialogs/deletedialog.cpp:383
 #, kde-format
@@ -30265,7 +30267,7 @@ msgstr[1] "<b>%1</b> elementi selezionati."
 #: core/libs/dialogs/deletedialog.cpp:418
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
-msgstr "Questi album saranno <b>eliminati permanentemente</b> dal disco fisso."
+msgstr "Questi album saranno <b>eliminati definitivamente</b> dal disco fisso."
 
 #: core/libs/dialogs/deletedialog.cpp:424
 #, kde-format
@@ -30287,8 +30289,8 @@ msgid ""
 "p><p>Note that <b>all subalbums</b> are included in this list and will be "
 "deleted permanently as well.</p>"
 msgstr ""
-"<p>Questi album saranno <b>eliminati permanentemente</b> dal disco fisso.</"
-"p><p>Nota che saranno eliminati permanentemente anche <b>tutti i sotto-"
+"<p>Questi album saranno <b>eliminati definitivamente</b> dal disco fisso.</"
+"p><p>Nota che saranno eliminati definitivamente anche <b>tutti i sotto-"
 "album</b> inclusi in questo elenco.</p>"
 
 #: core/libs/dialogs/deletedialog.cpp:448
@@ -43363,10 +43365,9 @@ msgid "A KDE Family Project"
 msgstr "Un progetto della famiglia KDE"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:68
-#, fuzzy, kde-format
-#| msgid "(c) 2001-2022, digiKam developers team"
+#, kde-format
 msgid "(c) 2001-2023, digiKam developers team"
-msgstr "(c) 2002-2022, la squadra degli sviluppatori di digiKam"
+msgstr "(c) 2001-2023, la squadra degli sviluppatori di digiKam"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:80
 #, kde-format
@@ -62158,12 +62159,12 @@ msgid ""
 "images.</para>"
 msgstr ""
 "<para>Se un'immagine è stata modificata, solo le <interface>versioni "
-"attuali</interface> verranno mostrate nella vista principale delle "
-"miniature. Dalla<interface>barra laterale destra</interface>, avrai sempre "
-"accesso a tutti i file nascosti. </para> <para>Con le opzioni qui presenti, "
-"puoi scegliere quali di questi file mostrare in modo permanente.</para> "
-"<para>Se attivi per la prima volta la modifica non distruttiva e la "
-"revisione, l'opzione funzionerà solo per le nuove immagini salvate.</para>"
+"attuali</interface> saranno mostrate nella vista principale delle miniature. "
+"Dalla<interface>barra laterale destra</interface>, avrai sempre accesso a "
+"tutti i file nascosti. </para> <para>Con le opzioni qui presenti, puoi "
+"scegliere quali di questi file mostrare in modo permanente.</para> <para>Se "
+"attivi per la prima volta la modifica non distruttiva e la revisione, "
+"l'opzione funzionerà solo per le nuove immagini salvate.</para>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:311
 #, kde-format
@@ -63356,7 +63357,7 @@ msgstr "Chiedi conferma quando si ces&tina qualcosa"
 #: core/utilities/setup/misc/setupmisc.cpp:65
 #, kde-format
 msgid "Confirm when permanently deleting items"
-msgstr "Chiedi conferma quando si eliminano gli elementi in modo permanente."
+msgstr "Chiedi conferma quando si eliminano gli elementi definitivamente."
 
 #: core/utilities/setup/misc/setupmisc.cpp:66
 #, kde-format

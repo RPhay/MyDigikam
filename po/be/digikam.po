@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 86ff119b1606fcaa910d6b44fc14b611\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-28 00:46+0000\n"
+"POT-Creation-Date: 2022-12-30 00:49+0000\n"
 "PO-Revision-Date: 2022-09-09 12:18\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -1312,32 +1312,32 @@ msgstr "Тэхнічныя параметры"
 msgid "<i>Binary Data</i>"
 msgstr "<i>Двайковыя даныя</i>"
 
-#: core/app/main/digikamapp.cpp:70
+#: core/app/main/digikamapp.cpp:68
 #, kde-format
 msgid "Initializing..."
 msgstr "Ініцыялізацыя..."
 
-#: core/app/main/digikamapp.cpp:135 core/showfoto/main/showfoto.cpp:95
+#: core/app/main/digikamapp.cpp:133 core/showfoto/main/showfoto.cpp:95
 #, kde-format
 msgid "Load Plugins..."
 msgstr "Загрузка ўбудоў..."
 
-#: core/app/main/digikamapp.cpp:160 core/showfoto/main/showfoto.cpp:77
+#: core/app/main/digikamapp.cpp:158 core/showfoto/main/showfoto.cpp:77
 #, kde-format
 msgid "Checking ICC repository..."
 msgstr "Праверка рэпазіторыя ІСС..."
 
-#: core/app/main/digikamapp.cpp:172
+#: core/app/main/digikamapp.cpp:170
 #, kde-format
 msgid "Clean up Database..."
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:190
+#: core/app/main/digikamapp.cpp:188
 #, kde-format
 msgid "Loading albums..."
 msgstr "Загрузка альбомаў..."
 
-#: core/app/main/digikamapp.cpp:338
+#: core/app/main/digikamapp.cpp:336
 #, kde-format
 msgid ""
 "<p>The ICC profiles folder seems to be invalid.</p><p>If you want to try "
@@ -1348,7 +1348,7 @@ msgstr ""
 "вызначыць яго нанова, абярыце \"Так\", у адваротным выпадку -\"Не\" (функцыя "
 "кіравання колерам будзе адключаная, пакуль праблема не вырашыцца).</p>"
 
-#: core/app/main/digikamapp.cpp:619 core/app/views/stack/trashview.cpp:428
+#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:428
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -1357,7 +1357,7 @@ msgstr[1] "Не абрана элементаў (%1 элементы)"
 msgstr[2] "Не абрана элементаў (%1 элементаў)"
 msgstr[3] "Не абрана элементаў (%1 элементы)"
 
-#: core/app/main/digikamapp.cpp:625
+#: core/app/main/digikamapp.cpp:623
 #, kde-format
 msgid "No item selected (%1 [%2] item)"
 msgid_plural "No item selected (%1 [%2] items)"
@@ -1366,7 +1366,7 @@ msgstr[1] "Не абрана элементаў (%1 [%2] элементы)"
 msgstr[2] "Не абрана элементаў (%1 [%2] элементаў)"
 msgstr[3] "Не абрана элементаў (%1 [%2] элементы)"
 
-#: core/app/main/digikamapp.cpp:630
+#: core/app/main/digikamapp.cpp:628
 #, kde-format
 msgid "No item selected (%1 item. With grouped items: %2)"
 msgid_plural "No item selected (%1 items. With grouped items: %2)"
@@ -1375,7 +1375,7 @@ msgstr[1] "Не абрана элементаў ( %1 элементы. Раза�
 msgstr[2] "Не абрана элементаў ( %1 элементаў. Разам са згрупаванымі: %2)"
 msgstr[3] "Не абрана элементаў ( %1 элементы. Разам са згрупаванымі: %2)"
 
-#: core/app/main/digikamapp.cpp:641
+#: core/app/main/digikamapp.cpp:639
 #, kde-format
 msgid "1/%2 item selected (%3/%4)"
 msgid_plural "%1/%2 items selected (%3/%4)"
@@ -1384,7 +1384,7 @@ msgstr[1] "Абрана %1/%2 элементы (%3/%4)"
 msgstr[2] "Абрана %1/%2 элементаў (%3/%4)"
 msgstr[3] "Абрана %1/%2 элементы (%3/%4)"
 
-#: core/app/main/digikamapp.cpp:654
+#: core/app/main/digikamapp.cpp:652
 #, kde-format
 msgid "1/%2 [%3] item selected (%4/%5)"
 msgid_plural "%1/%2 [%3] items selected (%4/%5)"
@@ -1393,7 +1393,7 @@ msgstr[1] "Абрана %1/%2 [%3] элементы (%4/%5)"
 msgstr[2] "Абрана %1/%2 [%3] элементаў (%4/%5)"
 msgstr[3] "Абрана %1/%2 [%3] элементы (%4/%5)"
 
-#: core/app/main/digikamapp.cpp:662
+#: core/app/main/digikamapp.cpp:660
 #, kde-format
 msgid "1/%2 item selected. Total with grouped items: %3"
 msgid_plural "%1/%2 items selected. Total with grouped items: %3"
@@ -1402,7 +1402,7 @@ msgstr[1] "Абрана %1/%2 элементы. Агулам са згрупав
 msgstr[2] "Абрана %1/%2 элементаў. Агулам са згрупаванымі: %3"
 msgstr[3] "Абрана %1/%2 элементы. Агулам са згрупаванымі: %3"
 
-#: core/app/main/digikamapp.cpp:670
+#: core/app/main/digikamapp.cpp:668
 #, kde-format
 msgid "1/%2 [%3/%4] item selected (%5/%6)"
 msgid_plural "%1/%2 [%3/%4] items selected (%5/%6)"
@@ -1411,7 +1411,7 @@ msgstr[1] "Абрана %1/%2 [%3/%4] элементы (%5/%6)"
 msgstr[2] "Абрана %1/%2 [%3/%4] элементаў (%5/%6)"
 msgstr[3] "Абрана %1/%2 [%3/%4] элементы (%5/%6)"
 
-#: core/app/main/digikamapp.cpp:679
+#: core/app/main/digikamapp.cpp:677
 #, kde-format
 msgid "1/%2 item selected. With grouped items: %3/%4"
 msgid_plural "%1/%2 items selected. With grouped items: %3/%4"
@@ -1420,22 +1420,22 @@ msgstr[1] "Абрана %1/%2 элементы. Разам са згрупава
 msgstr[2] "Абрана %1/%2 элементаў. Разам са згрупаванымі: %3/%4"
 msgstr[3] "Абрана %1/%2 элементы. Разам са згрупаванымі: %3/%4"
 
-#: core/app/main/digikamapp.cpp:710
+#: core/app/main/digikamapp.cpp:708
 #, kde-format
 msgid " (%1 of %2)"
 msgstr " (%1 з %2)"
 
-#: core/app/main/digikamapp.cpp:724
+#: core/app/main/digikamapp.cpp:722
 #, kde-format
 msgid " (%1 of %2 [%3] )"
 msgstr " (%1 з %2 [%3] )"
 
-#: core/app/main/digikamapp.cpp:728
+#: core/app/main/digikamapp.cpp:726
 #, kde-format
 msgid " (%1 of %2. Total with grouped items: %3)"
 msgstr " (%1 з %2. Агулам са згрупаванымі: %3)"
 
-#: core/app/main/digikamapp.cpp:739
+#: core/app/main/digikamapp.cpp:737
 #, kde-format
 msgid "%1 item hidden"
 msgid_plural "%1 items hidden"
@@ -1444,7 +1444,7 @@ msgstr[1] "Схавана %1 элементы"
 msgstr[2] "Схавана %1 элементаў"
 msgstr[3] "Схавана %1 элементы"
 
-#: core/app/main/digikamapp.cpp:789
+#: core/app/main/digikamapp.cpp:787
 #, kde-format
 msgid "Write Metadata to File"
 msgid_plural "Write Metadata to Selected Files"
@@ -1453,7 +1453,7 @@ msgstr[1] "Запісаць метаданыя ў абраныя файлы"
 msgstr[2] "Запісаць метаданыя ў абраныя файлы"
 msgstr[3] "Запісаць метаданыя ў абраныя файлы"
 
-#: core/app/main/digikamapp.cpp:791
+#: core/app/main/digikamapp.cpp:789
 #, kde-format
 msgid "Reread Metadata From File"
 msgid_plural "Reread Metadata From Selected Files"
