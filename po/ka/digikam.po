@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-30 00:49+0000\n"
-"PO-Revision-Date: 2022-12-29 02:47+0100\n"
+"PO-Revision-Date: 2022-12-30 06:09+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -6075,7 +6075,7 @@ msgstr ""
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:77
 #, kde-format
 msgid "Smoothness:"
-msgstr "სიგლუვე"
+msgstr "სიგლუვე:"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:63
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:81
@@ -8414,7 +8414,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Apply Texture..."
-msgstr "ტექსტურის გადატარება"
+msgstr "ტექსტურის გადატარება..."
 
 #: core/dplugins/editor/enhance/antivignetting/antivignettingtool.cpp:71
 #: core/dplugins/editor/enhance/antivignetting/antivignettingtool.cpp:159
@@ -23474,7 +23474,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1013
 #, kde-format
 msgid "observation"
-msgstr ""
+msgstr "დაკვირვება"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1019
 #, kde-format
@@ -29189,7 +29189,7 @@ msgstr ""
 #: core/libs/dimg/filters/curves/curvesfilter.cpp:71
 #, kde-format
 msgid "Adjust Curves"
-msgstr ""
+msgstr "მრუდის მორგება"
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:242
 #, kde-format
@@ -29657,13 +29657,13 @@ msgstr ""
 #, kde-format
 msgctxt "@item: color effect"
 msgid "Solarize"
-msgstr ""
+msgstr "სოლარიზაცია"
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:120
 #, kde-format
 msgctxt "@item: color effect"
 msgid "Vivid"
-msgstr ""
+msgstr "კაშკაშა"
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:121
 #, kde-format
@@ -29675,13 +29675,13 @@ msgstr "ნეონი"
 #, kde-format
 msgctxt "@item: color effect"
 msgid "Find Edges"
-msgstr ""
+msgstr "კიდეების პოვნა"
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:123
 #, kde-format
 msgctxt "@item: color effect"
 msgid "Lut3D"
-msgstr ""
+msgstr "Lut3D"
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:126
 #, kde-format
@@ -36679,7 +36679,7 @@ msgstr ""
 #: core/utilities/lighttable/lighttablewindow_tools.cpp:33
 #, kde-format
 msgid "Light Table"
-msgstr ""
+msgstr "სინათლის მაგიდა"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:427
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:53
@@ -59191,7 +59191,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
-msgstr ""
+msgstr "სინათლის მაგიდა"
 
 #: core/utilities/setup/setup.cpp:197
 #, kde-format
