@@ -245,4 +245,5 @@ BUGFIXES:
 205 ==> 430405 - Print and Print Assistant Missing From Item Menu.
 206 ==> 238802 - Port documentation from DocBook to modern Sphinx/RestructuredText framework and improve contents.
 207 ==> 426513 - Add "By Manual and Name" and "By Manual and Date" sort options for items in "Main Window Menu Descriptions" section.
-208 ==> 
+208 ==> 463605 - In case of heic images the scan for faces function adds new empty face tags for the persons already tagged.
+209 ==> 
