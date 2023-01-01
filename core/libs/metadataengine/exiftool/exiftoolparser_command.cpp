@@ -166,7 +166,7 @@ bool ExifToolParser::applyChanges(const QString& path, const QString& exvTempFil
     cmdArgs << d->filePathEncoding(QFileInfo(exvTempFile));
     cmdArgs << QByteArray("-all:all");
     cmdArgs << QByteArray("-TagsFromFile");
-    cmdArgs << d->filePathEncoding(fileInfo);
+    cmdArgs << QByteArray("@");
     cmdArgs << QByteArray("-makernotes");
     cmdArgs << QByteArray("-overwrite_original");
     cmdArgs << d->filePathEncoding(fileInfo);
