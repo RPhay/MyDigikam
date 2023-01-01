@@ -3818,8 +3818,7 @@ msgid "Background Image Credits"
 msgstr "Recoñecementos da imaxe de fondo"
 
 #: core/app/views/stack/welcomepageview.cpp:275
-#, fuzzy, kde-format
-#| msgid "Author:"
+#, kde-format
 msgid "Author:"
 msgstr "Autor:"
 
@@ -5334,7 +5333,8 @@ msgstr "Restabelecer"
 
 #: core/avplayer/utils/ConfigDialog.cpp:62
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:208
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ok"
 msgid "Ok"
 msgstr "Aceptar"
 
@@ -19138,9 +19138,7 @@ msgid "Exposure (EV)"
 msgstr "Exposición (EV)"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:51
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Pre-Processing is Complete"
+#, kde-format
 msgctxt "@title:window"
 msgid "Pre-Processing is Complete"
 msgstr "O pre-procesamento está completado"
@@ -45282,7 +45280,8 @@ msgid "Timeout"
 msgstr "Abrir o editor de imaxes."
 
 #: core/libs/video/qtav/config/MiscPage.cpp:81
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "s"
 msgid "s"
 msgstr "s"
 
@@ -58636,7 +58635,8 @@ msgstr ""
 "Estabelecer se a hora da imaxe está diante ou detrás da hora de seguimento."
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:206
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Interpolate"
 msgid "Interpolate"
 msgstr "Interpolar"
 

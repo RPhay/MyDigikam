@@ -54,7 +54,7 @@ msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-30 00:49+0000\n"
-"PO-Revision-Date: 2022-12-11 14:30+0300\n"
+"PO-Revision-Date: 2022-12-31 18:52+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -30710,15 +30710,7 @@ msgstr ""
 "değiştirdikten sonra).<br>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:300
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Note: with a Linux server, a database can be initialized following the "
-#| "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
-#| "-u root</p><p>...</p><p>Enter SQL code to Mysql prompt in order to init "
-#| "digiKam databases with grant privileges (see behind)</p><p>...</"
-#| "p><p>quit</p><p>NOTE: If you've an enormous collection, you should start "
-#| "MySQL server with mysql --max_allowed_packet=128M OR in my.ini or ~/.my."
-#| "cnf, change the settings</p>"
+#, kde-format
 msgid ""
 "<p>Note: with a Linux server, a database can be initialized following the "
 "commands below:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql -u "
@@ -30728,13 +30720,13 @@ msgid ""
 "with mysql --max_allowed_packet=128M OR in my.ini or ~/.my.cnf, change the "
 "settings</p>"
 msgstr ""
-"<p>Not: Bir Linux sunucu ile, veritabanını aşağıdaki komutlarla "
-"başlatabilirsiniz:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
-"-u root</p><p>...</p><p>digiKam veritabanlarını yetkilerle birlikte "
-"başlatmak (devamına bakın) için Mysql komut satırına SQL kodu girin</p><p>..."
-"</p><p>quit</p><p>NOT: Eğer devasa bir koleksiyonunuz varsa MySQL sunucusunu "
-"mysql --max_allowed_packet=128M şeklinde YA DA my.ini ya da ~/.my.cnf içinde "
-"ayarları değiştirerek başlatmalısınız</p>"
+"<p>Not: Bir Linux sunucusuyla, bir veritabanı aşağıdaki komutlarla "
+"ilklendirilebilir:</p><p># su</p><p># systemctl restart mysqld</p><p># mysql "
+"-u root</p><p>...</p><p>digiKam veritabanlarını ayrıcalıklarla ilklendirmek "
+"için MySQL istemine SQL kodunu girin (arkaya bak)</p><p>...</p><p>quit</"
+"p><p>NOT: Devasa bir koleksiyonunuz varsa my.ini'de veya ~/.my.cnf'de MySQL "
+"sunucusunu mysql --max_allowed_packet=128M OR ile başlatıp ayarları "
+"değiştirin</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:321
 #, kde-format
@@ -31032,10 +31024,9 @@ msgid "Face Db name"
 msgstr "Yüz Veritabanı adı"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:102
-#, fuzzy, kde-format
-#| msgid "Database Folder"
+#, kde-format
 msgid "Database locale"
-msgstr "Veritabanı Dizini"
+msgstr "Veritabanı yerel ayarı"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:143
 #, kde-format
@@ -31346,10 +31337,9 @@ msgid ""
 msgstr "<font size=\"5\">%1</font><br/><b>Sürüm %2</b><p>%3</p>"
 
 #: core/libs/dialogs/infodlg.cpp:117
-#, fuzzy, kde-format
-#| msgid "Images List"
+#, kde-format
 msgid "Items List"
-msgstr "Resim Listesi"
+msgstr "Ögeler Listesi"
 
 #: core/libs/dialogs/libsinfodlg.cpp:138
 #, fuzzy, kde-format
@@ -31371,36 +31361,28 @@ msgid "No"
 msgstr "Hayır"
 
 #: core/libs/dialogs/libsinfodlg.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Feature"
+#, kde-format
 msgctxt "@title"
 msgid "Features"
-msgstr "Özellik"
+msgstr "Özellikler"
 
 #: core/libs/dialogs/libsinfodlg.cpp:178
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "Library"
+#, kde-format
 msgctxt "@title"
 msgid "Libraries"
-msgstr "Kitaplık"
+msgstr "Kitaplıklar"
 
 #: core/libs/dialogs/libsinfodlg.cpp:273
-#, fuzzy, kde-format
-#| msgctxt "unknown / invalid image dimension"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@info: version"
 msgid "Unknown"
-msgstr "Bilinmeyen"
+msgstr "Bilinmiyor"
 
 #: core/libs/dialogs/libsinfodlg.cpp:354
-#, fuzzy, kde-format
-#| msgctxt "unknown / invalid image dimension"
-#| msgid "Unknown"
+#, kde-format
 msgctxt "@item: information about memory"
 msgid "Unknown"
-msgstr "Bilinmeyen"
+msgstr "Bilinmiyor"
 
 #: core/libs/dialogs/libsinfodlg.cpp:377
 #, kde-format
@@ -31474,11 +31456,10 @@ msgid "Hotplug Device Events"
 msgstr ""
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:117
-#, fuzzy, kde-format
-#| msgid "Devices"
+#, kde-format
 msgctxt "@title"
 msgid "Devices List"
-msgstr "Aygıtlar"
+msgstr "Aygıtlar Listesi"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:130
 #, kde-format
@@ -31518,19 +31499,17 @@ msgid "none"
 msgstr "hiçbiri"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:278
-#, fuzzy, kde-format
-#| msgid "Andorra"
+#, kde-format
 msgctxt "@item; device constructor"
 msgid "Vendor"
-msgstr "Andorra"
+msgstr "Üretici"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:281
 #: core/libs/dialogs/solidhardwaredlg.cpp:402
-#, fuzzy, kde-format
-#| msgid "Product ID:"
+#, kde-format
 msgctxt "@item: device name"
 msgid "Product"
-msgstr "Ürün Kimliği:"
+msgstr "Ürün"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:284
 #: core/libs/dialogs/solidhardwaredlg.cpp:405
@@ -31541,11 +31520,10 @@ msgstr "Açıklama"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:287
 #: core/libs/dialogs/solidhardwaredlg.cpp:408
-#, fuzzy, kde-format
-#| msgid "Status"
+#, kde-format
 msgctxt "@item: device status"
 msgid "States"
-msgstr "Durum"
+msgstr "Durumlar"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:294
 #, kde-format
@@ -31554,27 +31532,23 @@ msgid "Non-portable info"
 msgstr ""
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:386
-#, fuzzy, kde-format
-#| msgid "Device model (*):"
+#, kde-format
 msgctxt "@item"
 msgid "New Device Added"
-msgstr "Aygıt modeli (*):"
+msgstr "Yeni Aygıt Eklendi"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:396
 #: core/libs/dialogs/solidhardwaredlg.cpp:408
-#, fuzzy, kde-format
-#| msgctxt "none of the paths"
-#| msgid "none"
+#, kde-format
 msgctxt "@info: device property"
 msgid "none"
 msgstr "hiçbiri"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:399
-#, fuzzy, kde-format
-#| msgid "Andorra"
+#, kde-format
 msgctxt "@item: device constructor"
 msgid "Vendor"
-msgstr "Andorra"
+msgstr "Üretici"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:399
 #: core/libs/dialogs/solidhardwaredlg.cpp:402
@@ -31585,11 +31559,10 @@ msgid "empty"
 msgstr "boş"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:418
-#, fuzzy, kde-format
-#| msgid "Device model (*):"
+#, kde-format
 msgctxt "@item"
 msgid "Device Removed"
-msgstr "Aygıt modeli (*):"
+msgstr "Aygıt Kaldırıldı"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:421
 #, kde-format
@@ -32512,10 +32485,9 @@ msgid "Reset &Channel"
 msgstr "Değişiklikleri Geri Al"
 
 #: core/libs/dimg/filters/curves/curvesbox.cpp:224
-#, fuzzy, kde-format
-#| msgid "Reset"
+#, kde-format
 msgid "Reset &All"
-msgstr "Sıfırla"
+msgstr "&Tümünü Sıfırla"
 
 #: core/libs/dimg/filters/curves/curvesfilter.cpp:71
 #, kde-format
@@ -32887,10 +32859,9 @@ msgid "Rotate Right"
 msgstr "Sağa Döndür"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:392
-#, fuzzy, kde-format
-#| msgid "Rotated by 180 Degrees"
+#, kde-format
 msgid "Rotate 180 degrees"
-msgstr "180 Derece Döndürüldü"
+msgstr "180 derece döndür"
 
 #: core/libs/dimg/filters/dimgbuiltinfilter.cpp:397
 #, kde-format
