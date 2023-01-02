@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-30 00:49+0000\n"
-"PO-Revision-Date: 2022-12-30 06:09+0100\n"
+"PO-Revision-Date: 2023-01-01 07:55+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -6977,7 +6977,7 @@ msgstr ""
 #: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:77
 #, kde-format
 msgid "HEIF quality:"
-msgstr ""
+msgstr "HEIF ხარისხი:"
 
 #: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:79
 #, kde-format
@@ -7894,7 +7894,7 @@ msgstr ""
 #: core/dplugins/editor/colors/bwsepia/bwsepiatool.cpp:187
 #, kde-format
 msgid "Convert to Black and White"
-msgstr ""
+msgstr "შავთეთრში გადაყვანა"
 
 #: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:44
 #, kde-format
@@ -7912,7 +7912,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Black && White..."
-msgstr ""
+msgstr "შავი და თეთრი"
 
 #: core/dplugins/editor/colors/channelmixer/channelmixertool.cpp:170
 #, kde-format
@@ -7929,7 +7929,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Channel Mixer..."
-msgstr ""
+msgstr "არხების მიქსერი..."
 
 #: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:64
 #, kde-format
@@ -8110,7 +8110,7 @@ msgstr ""
 #: core/dplugins/editor/colors/hsl/hsltool.cpp:164
 #, kde-format
 msgid "HSL Adjustments"
-msgstr ""
+msgstr "HSL -ის სწორებები"
 
 #: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:64
 #, kde-format
@@ -9670,7 +9670,7 @@ msgstr ""
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:197
 #, kde-format
 msgid "Width (px):"
-msgstr ""
+msgstr "სიგანე (პქს):"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:202
 #: core/dplugins/editor/transform/resize/resizetool.cpp:360
@@ -9681,7 +9681,7 @@ msgstr ""
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:204
 #, kde-format
 msgid "Height (px):"
-msgstr ""
+msgstr "სიმაღლე (პქს):"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:209
 #, kde-format
@@ -9693,7 +9693,7 @@ msgstr ""
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:161
 #, kde-format
 msgid "Width (%):"
-msgstr ""
+msgstr "სიგანე (%):"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:216
 #, kde-format
@@ -9704,7 +9704,7 @@ msgstr ""
 #: core/dplugins/editor/transform/resize/resizetool.cpp:379
 #, kde-format
 msgid "Height (%):"
-msgstr ""
+msgstr "სიმაღლე (%):"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:223
 #, kde-format
@@ -9907,7 +9907,7 @@ msgstr ""
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:413
 #, kde-format
 msgid "Target size"
-msgstr ""
+msgstr "სამიზნის ზომა"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:416
 #, kde-format
@@ -9973,7 +9973,7 @@ msgstr ""
 #: core/dplugins/editor/transform/shear/sheartool.cpp:120
 #, kde-format
 msgid "New width:"
-msgstr ""
+msgstr "ახალი სიგანე:"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:116
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:120
@@ -9999,7 +9999,7 @@ msgstr " px"
 #: core/dplugins/editor/transform/shear/sheartool.cpp:124
 #, kde-format
 msgid "New height:"
-msgstr ""
+msgstr "ახალი სიმაღლე:"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:125
 #, kde-format
@@ -10108,22 +10108,22 @@ msgstr ""
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:133
 #, kde-format
 msgid "  Top left:"
-msgstr ""
+msgstr "  ზედა მარცხენა:"
 
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:135
 #, kde-format
 msgid "  Top right:"
-msgstr ""
+msgstr "  ზედა მარჯვენა:"
 
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:137
 #, kde-format
 msgid "  Bottom left:"
-msgstr ""
+msgstr "  ქვედა მარცხენა:"
 
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:139
 #, kde-format
 msgid "  Bottom right:"
-msgstr ""
+msgstr "  ქვედა მარჯვენა:"
 
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:145
 #, kde-format
@@ -34461,7 +34461,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info: download status"
 msgid "Received:"
-msgstr ""
+msgstr "მიღებული:"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:172
 #, kde-format
@@ -56994,7 +56994,7 @@ msgstr ""
 #: core/utilities/setup/camera/importfilterdlg.cpp:214
 #, kde-format
 msgid "Select Mime Types"
-msgstr ""
+msgstr "აირჩიეთ MIME ტიპები"
 
 #: core/utilities/setup/camera/setupcamera.cpp:296
 #, kde-format

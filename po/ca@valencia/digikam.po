@@ -3220,7 +3220,7 @@ msgstr ""
 msgid "add new batch queue manager tool to fix hot pixels from images."
 msgstr ""
 "Afig una eina del gestor de la cua per lots per a corregir els píxels "
-"cremats a les imatges."
+"cremats en les imatges."
 
 #: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
@@ -6448,7 +6448,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can fix hot pixels in images.</para>"
 msgstr ""
 "<para>Esta eina del gestor de la cua per lots pot corregir els píxels "
-"cremats a les imatges.</para>"
+"cremats en les imatges.</para>"
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:63
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:84
@@ -6547,7 +6547,7 @@ msgstr ""
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can reduce noise in images.</para>"
 msgstr ""
-"<para>Esta eina del gestor de la cua per lots pot reduir el soroll a les "
+"<para>Esta eina del gestor de la cua per lots pot reduir el soroll en les "
 "imatges.</para>"
 
 #: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:46
@@ -6572,7 +6572,7 @@ msgid ""
 "para>"
 msgstr ""
 "<para>Esta eina del gestor de la cua per lots pot reduir l'efecte de l'ull "
-"roig a les imatges.</para>"
+"roig en les imatges.</para>"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:60
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:141
@@ -6804,7 +6804,7 @@ msgid ""
 "label metadata values to images.</para>"
 msgstr ""
 "<para>Esta eina del gestor de la cua per lots assignarà valors de metadades "
-"de valoració, o color, o rètols de selecció a les imatges.</para>"
+"de valoració, rètols de color o de selecció a les imatges.</para>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:46
 #, kde-format
@@ -6816,7 +6816,7 @@ msgstr "Assignació d'etiquetes"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to assign tags metadata to images"
-msgstr "Una eina per a assignar metadades d'etiquetes a les imatges"
+msgstr "Una eina per a assignar etiquetes de metadades a les imatges"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:66
 #, kde-kuit-format
@@ -7045,7 +7045,7 @@ msgstr "Una eina per a ajustar la data i la marca de temps de les imatges"
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can adjust time in images.</para>"
 msgstr ""
-"<para>Esta eina del gestor de la cua per lots pot ajustar l'hora a les "
+"<para>Esta eina del gestor de la cua per lots pot ajustar l'hora en les "
 "imatges.</para>"
 
 #: core/dplugins/bqm/metadata/translate/translate.cpp:107
@@ -19728,7 +19728,7 @@ msgstr "Guarda el fitxer del projecte"
 msgctxt "@info:tooltip"
 msgid "Save the project file for further processing within Hugin GUI."
 msgstr ""
-"Guarda el fitxer del projecte per al seu posterior processament en la "
+"Guarda el fitxer del projecte per al seu posterior processament amb la "
 "interfície gràfica d'usuari Hugin."
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:113
@@ -28813,7 +28813,7 @@ msgstr ""
 "amb un volum d'emmagatzematge del sistema. Este problema pot indicar que hi "
 "ha un problema amb la instal·lació. Si esteu treballant en Linux, verifiqueu "
 "que HAL estiga instal·lat i executant-se. En qualsevol cas, podeu buscar "
-"consell a la llista de correu dels desenvolupadors de digiKam (vegeu www."
+"consell en la llista de correu dels desenvolupadors de digiKam (vegeu www."
 "digikam.org/support). El procés d'actualització de la base de dades ara "
 "s'interromprà perquè no es vol crear una base de dades nova basada en "
 "premisses falses a partir d'una instal·lació defectuosa."
@@ -30470,18 +30470,18 @@ msgstr "Llista de les càmeres RAW admeses"
 #, kde-format
 msgid "Using LibRaw version %2<br/>1 model on the list"
 msgid_plural "Using LibRaw version %2<br/>%1 models on the list"
-msgstr[0] "S'està utilitzant la LibRaw versió %2<br/>1 model a la llista"
-msgstr[1] "S'està utilitzant la LibRaw versió %2<br/>%1 models a la llista"
+msgstr[0] "S'està utilitzant la LibRaw versió %2<br/>1 model en la llista"
+msgstr[1] "S'està utilitzant la LibRaw versió %2<br/>%1 models en la llista"
 
 #: core/libs/dialogs/rawcameradlg.cpp:139
 #, kde-format
 msgid "Using LibRaw version %2<br/>1 model on the list (found: %3)"
 msgid_plural "Using LibRaw version %2<br/>%1 models on the list (found: %3)"
 msgstr[0] ""
-"S'està utilitzant la LibRaw versió %2<br/>1 model a la llista (s'han trobat: "
-"%3)"
+"S'està utilitzant la LibRaw versió %2<br/>1 model en la llista (s'han "
+"trobat: %3)"
 msgstr[1] ""
-"S'està utilitzant la LibRaw versió %2<br/>%1 models a la llista (s'han "
+"S'està utilitzant la LibRaw versió %2<br/>%1 models en la llista (s'han "
 "trobat: %3)"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:83
@@ -32648,7 +32648,7 @@ msgstr "Analitzador de marc negre"
 #, kde-format
 msgid "This black frame image is already present in the list of parsed items."
 msgstr ""
-"Esta imatge de marc negre ja està present a la llista d'elements analitzats."
+"Esta imatge de marc negre ja està present en la llista d'elements analitzats."
 
 #: core/libs/dimg/filters/hsl/hslfilter.cpp:82
 #, kde-format
@@ -33487,7 +33487,7 @@ msgid ""
 "remains in the image."
 msgstr ""
 "<b>Suavitzat</b>: açò ajusta el suavitzat de la busca del llindar (blana en "
-"oposició a busca dura). Com més alt siga el suavitzat més soroll quedarà a "
+"oposició a busca dura). Com més alt siga el suavitzat més soroll quedarà en "
 "la imatge."
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:118
@@ -35716,7 +35716,7 @@ msgstr "Detecta el difuminat"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
-msgstr "Detecta la quantitat de difuminat a les imatges"
+msgstr "Detecta la quantitat de difuminat en les imatges"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:208
 #: core/libs/imgqsort/imagequalitysettings.cpp:218
@@ -35742,7 +35742,7 @@ msgstr "Detecta el soroll"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
-msgstr "Detecta la quantitat de soroll a les imatges"
+msgstr "Detecta la quantitat de soroll en les imatges"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:223
 #, kde-format
@@ -35760,7 +35760,7 @@ msgstr "Detecta la compressió"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
-msgstr "Detecta la quantitat de compressió a les imatges"
+msgstr "Detecta la quantitat de compressió en les imatges"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:233
 #, kde-format
@@ -40168,7 +40168,7 @@ msgstr "Esborra totes les etiquetes només de la base de dades"
 #: core/libs/tags/manager/tagsmanager.cpp:816
 #, kde-format
 msgid "Write Tags Metadata to Image."
-msgstr "Escriu les metadades de les etiquetes a la imatge."
+msgstr "Escriu les etiquetes de metadades a la imatge."
 
 #: core/libs/tags/manager/tagsmanager.cpp:818
 #, kde-format
@@ -42888,7 +42888,7 @@ msgstr ""
 "renderitzable més proper, mentre que els altres colors romandran sense "
 "canvis. El propòsit de provatura no conserva el punt blanc.</p></"
 "li><li><p>El <b>propòsit de saturació</b> conserva la saturació dels colors "
-"a la imatge, possiblement sacrificant el to i la claredat.</p><p>La "
+"en la imatge, possiblement sacrificant el to i la claredat.</p><p>La "
 "implementació d'este propòsit és una mica problemàtica, i l'ICC encara està "
 "treballant en mètodes per a aconseguir els efectes desitjats.</p><p>Este "
 "propòsit és més adequat pels gràfics de negoci, com els diagrames, a on és "
@@ -43466,7 +43466,7 @@ msgid ""
 "plugins interface"
 msgstr ""
 "Implementació de la clusterització i millores per al Motor de cares, "
-"adaptació de l'eina de passe de diapositives en la interfície dels connectors"
+"adaptació de l'eina de passe de diapositives a la interfície de connectors"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:177
 #, kde-format
@@ -52916,7 +52916,7 @@ msgid ""
 "Face Detection allows digiKam to detect faces in your images. This step is "
 "required before being able to recognize faces."
 msgstr ""
-"La detecció de cares permet que digiKam detecte les cares a les imatges. Es "
+"La detecció de cares permet que digiKam detecte les cares en les imatges. Es "
 "requerix este pas abans de ser capaç de reconéixer-les."
 
 #: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:86
@@ -52928,7 +52928,7 @@ msgstr "<b>Reconeixement de cares</b>"
 #, kde-format
 msgid "Face Recognition will automatically recognize people in your images."
 msgstr ""
-"El reconeixement de cares reconeixerà automàticament les persones a les "
+"El reconeixement de cares reconeixerà automàticament les persones en les "
 "imatges."
 
 #: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:100
@@ -62602,7 +62602,7 @@ msgid ""
 msgstr ""
 "aporta la base per a gestionar de forma genèrica tota classe de metadades en "
 "l'escriptori KDE. Us permet etiquetar, puntuar i comentar els fitxers en les "
-"aplicacions KDE com ara Dolphin. Establiu ací si voleu sincronitzar les "
+"aplicacions de KDE com ara Dolphin. Establiu ací si voleu sincronitzar les "
 "metadades emmagatzemades per digiKam per a tot l'escriptori amb l'escriptori "
 "semàntic Baloo."
 
@@ -63380,7 +63380,7 @@ msgstr ""
 #: core/utilities/setup/misc/setupmisc.cpp:83
 #, kde-format
 msgid "Detect faces in newly added images"
-msgstr "Detecta les cares a les imatges afegides recentment"
+msgstr "Detecta les cares en les imatges afegides recentment"
 
 #: core/utilities/setup/misc/setupmisc.cpp:85
 #, kde-format
