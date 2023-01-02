@@ -605,7 +605,7 @@ bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo) const
             ut.actime  = st.st_atime;
         }
 
-        if (!parser->applyChanges(finfo.filePath(), exvPath))
+        if (!parser->applyChanges(finfo.filePath(), exvPath, parent->hasExif()))
         {
             qCWarning(DIGIKAM_METAENGINE_LOG) << "Cannot apply changes with ExifTool on" << finfo.filePath();
             QFile::remove(exvPath);
@@ -636,7 +636,7 @@ bool MetaEngine::Private::saveUsingExifTool(const QFileInfo& finfo) const
     }
     else
     {
-        if (!parser->applyChanges(finfo.filePath(), exvPath))
+        if (!parser->applyChanges(finfo.filePath(), exvPath, parent->hasExif()))
         {
             qCWarning(DIGIKAM_METAENGINE_LOG) << "Cannot apply changes with ExifTool on" << finfo.filePath();
             QFile::remove(exvPath);

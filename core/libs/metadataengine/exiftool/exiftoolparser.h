@@ -141,8 +141,9 @@ public:
      * Tags can already exists in target file or new ones can be created.
      * @param path is the target files to change.
      * @param exvTempFile is the list of changes embedded in EXV container.
+     * @param hasExif if the EXV container has Exif metadata restore MarkerNotes.
      */
-    bool applyChanges(const QString& path, const QString& exvTempFile);
+    bool applyChanges(const QString& path, const QString& exvTempFile, bool hasExif = true);
 
     /**
      * Return a list of readable file format extensions.
