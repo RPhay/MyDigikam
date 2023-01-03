@@ -47,12 +47,11 @@ SlideError::SlideError(QWidget* const parent)
     : QWidget(parent),
       d      (new Private)
 {
-    setAttribute(Qt::WA_DeleteOnClose);
     setMouseTracking(true);
     setAutoFillBackground(true);
 
     const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                   QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     QPalette palette;
     palette.setColor(backgroundRole(), Qt::black);

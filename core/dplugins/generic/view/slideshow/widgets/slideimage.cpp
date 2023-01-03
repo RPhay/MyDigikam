@@ -59,7 +59,6 @@ SlideImage::SlideImage(QWidget* const parent)
     : QWidget(parent),
       d      (new Private)
 {
-    setAttribute(Qt::WA_DeleteOnClose);
     setAttribute(Qt::WA_OpaquePaintEvent);
     setWindowFlags(Qt::FramelessWindowHint);
     setMouseTracking(true);

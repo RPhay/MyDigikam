@@ -104,7 +104,6 @@ SlideVideo::SlideVideo(QWidget* const parent)
     : QWidget(parent),
       d      (new Private)
 {
-    setAttribute(Qt::WA_DeleteOnClose);
     setMouseTracking(true);
 
     d->videoWidget    = new WidgetRenderer(this);
