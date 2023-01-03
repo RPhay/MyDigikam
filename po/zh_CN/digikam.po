@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-30 00:49+0000\n"
-"PO-Revision-Date: 2022-12-24 11:42\n"
+"PO-Revision-Date: 2023-01-02 07:11\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -1290,7 +1290,7 @@ msgstr "正在检查 ICC 特性文件..."
 #: core/app/main/digikamapp.cpp:170
 #, kde-format
 msgid "Clean up Database..."
-msgstr ""
+msgstr "清理数据库..."
 
 #: core/app/main/digikamapp.cpp:188
 #, kde-format
@@ -1794,7 +1794,7 @@ msgstr "扫描人脸"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Recognize Faces"
-msgstr ""
+msgstr "识别人脸"
 
 #: core/app/main/digikamapp_setup.cpp:450
 #, kde-format
@@ -2736,7 +2736,7 @@ msgstr "清除此图像的所有人脸标签"
 #: core/app/views/preview/itempreviewview.cpp:207
 #, kde-format
 msgid "Mark all unknown faces as ignored"
-msgstr ""
+msgstr "标记所有未知人脸为已忽略"
 
 #: core/app/views/preview/itempreviewview.cpp:214
 #, kde-format
@@ -3018,7 +3018,7 @@ msgstr "上次搜索"
 #: core/app/views/stack/itemiconview_search.cpp:108
 #, kde-format
 msgid "FacesDetector"
-msgstr ""
+msgstr "人脸检测程序"
 
 #: core/app/views/stack/itemiconview_search.cpp:68
 #: core/app/views/stack/itemiconview_search.cpp:110
@@ -3027,6 +3027,8 @@ msgid ""
 "A face recognition task is already running. Only one task can be running at "
 "a time. Please wait until it is finished."
 msgstr ""
+"已经有一个人脸识别任务正在运行。每次只能运行一个任务。请等待当前任务完成后重"
+"试。"
 
 #: core/app/views/stack/itemiconview_views.cpp:117
 #, kde-format
@@ -3394,17 +3396,13 @@ msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li><li>%2</li>"
 
 #: core/app/views/stack/welcomepageview.cpp:218
-#, fuzzy, kde-format
-#| msgid ""
-#| "digiKam has many powerful features which are described in the <a href="
-#| "\"https://docs.kde.org/?"
-#| "application=digikam&branch=trunk5\">documentation</a>"
+#, kde-format
 msgid ""
 "digiKam has many powerful features which are described in the <a href="
 "\"https://docs.digikam.org/en/index.html\">documentation</a>"
 msgstr ""
-"请访问 <a href=\"https://docs.kde.org/?"
-"application=digikam&branch=trunk5\">digiKam 在线文档</a> 了解软件的更多特性。"
+"请访问 <a href=\"https://docs.digikam.org/en/index.html\">digiKam 在线文档</"
+"a> 了解软件的更多特性。"
 
 #: core/app/views/stack/welcomepageview.cpp:219
 #, kde-format
@@ -6092,13 +6090,13 @@ msgstr "中心"
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Top center"
-msgstr ""
+msgstr "顶部中间"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:394
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Bottom center"
-msgstr ""
+msgstr "底部中间"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:396
 #, kde-format
@@ -6490,31 +6488,31 @@ msgstr "<para>用于添加胶片颗粒效果到图像的批处理工具。</para
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
 #, kde-format
 msgid "Titles:"
-msgstr ""
+msgstr "标题："
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:99
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:289
 #, kde-format
 msgctxt "@info"
 msgid "Enter title text here."
-msgstr ""
+msgstr "在此输入标题文字。"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:105
 #, kde-format
 msgid "Captions:"
-msgstr ""
+msgstr "说明："
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:107
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:294
 #, kde-format
 msgctxt "@info"
 msgid "Enter caption text here."
-msgstr ""
+msgstr "在此输入说明文字。"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:112
 #, kde-format
 msgid "Clean up and overwrite"
-msgstr ""
+msgstr "清空并覆盖"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:113
 #, kde-format
@@ -6524,18 +6522,20 @@ msgid ""
 "replaced by the new values,\n"
 "else old values will be merged with new values."
 msgstr ""
+"如果启用此选项，标题和说明文字将被清空并替换为新值，\n"
+"如果不启用，则旧值将与新值合并。"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:46
 #, kde-format
 msgctxt "@title"
 msgid "Assign Captions"
-msgstr ""
+msgstr "说明文字分配"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:61
 #, kde-format
 msgctxt "@info"
 msgid "A tool to assign captions metadata to images"
-msgstr ""
+msgstr "分配说明文字元数据到图像"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:66
 #, kde-kuit-format
@@ -6544,6 +6544,7 @@ msgid ""
 "<para>This Batch Queue Manager tool will assign title and description "
 "metadata alternative values to images.</para>"
 msgstr ""
+"<para>用于将标题和描述文字元数据的替代值分配给图像的批处理工具。</para>"
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:98
 #, kde-format
@@ -6564,13 +6565,13 @@ msgstr "评分："
 #, kde-format
 msgctxt "@title"
 msgid "Assign Labels"
-msgstr ""
+msgstr "分配标记"
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:61
 #, kde-format
 msgctxt "@info"
 msgid "A tool to assign labels metadata to images"
-msgstr ""
+msgstr "分配标记元数据到图像"
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:66
 #, kde-kuit-format
@@ -6579,18 +6580,19 @@ msgid ""
 "<para>This Batch Queue Manager tool will assign rating, or color, or pick "
 "label metadata values to images.</para>"
 msgstr ""
+"<para>用于将评分、颜色、挑选标记的元数据值分配给图像的批处理工具。</para>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:46
 #, kde-format
 msgctxt "@title"
 msgid "Assign Tags"
-msgstr ""
+msgstr "分配标签"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:61
 #, kde-format
 msgctxt "@info"
 msgid "A tool to assign tags metadata to images"
-msgstr ""
+msgstr "分配标签元数据到图像"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:66
 #, kde-kuit-format
@@ -6598,7 +6600,7 @@ msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool will assign keyword hierarchies metadata "
 "values to images.</para>"
-msgstr ""
+msgstr "<para>用于将关键词层级的元数据值分配给图像的批处理工具。</para>"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:46
 #, kde-format
@@ -6624,13 +6626,13 @@ msgstr "<para>用于应用元数据模板到图像的批处理工具。</para>"
 #, kde-format
 msgctxt "@title"
 msgid "Image Quality Sort"
-msgstr ""
+msgstr "图像品质分类"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:61
 #, kde-format
 msgctxt "@info"
 msgid "A tool to assign pick label metadata by image quality"
-msgstr ""
+msgstr "按照图像品质分配挑选标记元数据"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:66
 #, kde-kuit-format
@@ -6639,6 +6641,8 @@ msgid ""
 "<para>This Batch Queue Manager tool will assign a pick label metadata value "
 "by parsing image and estimate the quality.</para>"
 msgstr ""
+"<para>用于解析图像并评估其品质，然后为它们分配挑选标记元数据值的批处理工具。"
+"</para>"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:104
 #, kde-format
@@ -6813,49 +6817,49 @@ msgstr "<para>用于调整图像的日期和时间标记的批处理工具。</p
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Title"
-msgstr ""
+msgstr "标题"
 
 #: core/dplugins/bqm/metadata/translate/translate.cpp:108
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Caption"
-msgstr ""
+msgstr "说明"
 
 #: core/dplugins/bqm/metadata/translate/translate.cpp:109
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Copyrights"
-msgstr ""
+msgstr "版权信息"
 
 #: core/dplugins/bqm/metadata/translate/translate.cpp:110
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Usage Terms"
-msgstr ""
+msgstr "使用条款"
 
 #: core/dplugins/bqm/metadata/translate/translate.cpp:113
 #, kde-format
 msgctxt "@label"
 msgid "Translate to:"
-msgstr ""
+msgstr "翻译为："
 
 #: core/dplugins/bqm/metadata/translate/translate.cpp:151
 #, kde-format
 msgctxt "@label"
 msgid "Entries to Translate with %1:"
-msgstr ""
+msgstr "用 %1 翻译的条目："
 
 #: core/dplugins/bqm/metadata/translate/translateplugin.cpp:46
 #, kde-format
 msgctxt "@title"
 msgid "Translate Metadata"
-msgstr ""
+msgstr "翻译元数据"
 
 #: core/dplugins/bqm/metadata/translate/translateplugin.cpp:61
 #, kde-format
 msgctxt "@info"
 msgid "A tool to translate strings from image metadata"
-msgstr ""
+msgstr "翻译图像元数据的字符串"
 
 #: core/dplugins/bqm/metadata/translate/translateplugin.cpp:66
 #, kde-kuit-format
@@ -6863,7 +6867,7 @@ msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can translate alternative language "
 "strings in Xmp metadata from images.</para>"
-msgstr ""
+msgstr "<para>用于翻译图像 XMP 元数据的替代语言字符串的批处理工具。</para>"
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:92
 #, kde-format
@@ -12166,7 +12170,7 @@ msgstr "属性："
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:103
 #, kde-format
 msgid "Select here the editorial attribute of content."
-msgstr "在此选择内容的新闻属性。"
+msgstr "在此选择内容的编辑属性。"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:104
 #, kde-format
@@ -12303,7 +12307,7 @@ msgstr "通讯"
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:131
 #, kde-format
 msgid "Set here the editorial attribute description of content."
-msgstr "在此输入内容的新闻属性描述。"
+msgstr "在此输入内容的编辑属性描述。"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:136
 #, kde-format
@@ -13136,73 +13140,73 @@ msgstr "图像调整"
 #, kde-format
 msgctxt "@title"
 msgid "Caption Information"
-msgstr ""
+msgstr "说明信息"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:184
 #, kde-format
 msgctxt "@title"
 msgid "Record technical descriptions"
-msgstr ""
+msgstr "记录技术描述"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:188
 #, kde-format
 msgctxt "@title"
 msgid "Date and Time Information"
-msgstr ""
+msgstr "日期和时间信息"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:189
 #, kde-format
 msgctxt "@title"
 msgid "Record camera time-stamp properties"
-msgstr ""
+msgstr "记录相机时间戳属性"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:193
 #, kde-format
 msgctxt "@title"
 msgid "Lens Settings"
-msgstr ""
+msgstr "镜头设置信息"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:194
 #, kde-format
 msgctxt "@title"
 msgid "Record lens details used with camera"
-msgstr ""
+msgstr "记录相机镜头的详细信息"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:198
 #, kde-format
 msgctxt "@title"
 msgid "Capture Device Settings"
-msgstr ""
+msgstr "拍摄设备设置信息"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:199
 #, kde-format
 msgctxt "@title"
 msgid "Record shot conditions used by camera"
-msgstr ""
+msgstr "记录相机使用的拍摄条件"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:203
 #, kde-format
 msgctxt "@title"
 msgid "Light Source Information"
-msgstr ""
+msgstr "光源信息"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:204
 #, kde-format
 msgctxt "@title"
 msgid "Record ambient condition captured by camera"
-msgstr ""
+msgstr "记录相机拍摄的环境条件"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:208
 #, kde-format
 msgctxt "@title"
 msgid "Pictures Adjustments"
-msgstr ""
+msgstr "图像调整信息"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:209
 #, kde-format
 msgctxt "@title"
 msgid "Record technical details used by camera"
-msgstr ""
+msgstr "记录相机使用的技术详细信息"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:143
 #, kde-format
@@ -13846,124 +13850,124 @@ msgstr "信封"
 #, kde-format
 msgctxt "@title"
 msgid "Content Information"
-msgstr ""
+msgstr "内容信息"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:216
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:214
 #, kde-format
 msgctxt "@title"
 msgid "Describe the visual content of the item"
-msgstr ""
+msgstr "描述项目的视觉内容"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:220
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:218
 #, kde-format
 msgctxt "@title"
 msgid "Origin Information"
-msgstr ""
+msgstr "起源信息"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:221
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:219
 #, kde-format
 msgctxt "@title"
 msgid "Formal descriptive information about the item"
-msgstr ""
+msgstr "关于项目的正式描述信息"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:225
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:223
 #, kde-format
 msgctxt "@title"
 msgid "Credit Information"
-msgstr ""
+msgstr "版权信息"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:226
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:224
 #, kde-format
 msgctxt "@title"
 msgid "Record copyright information about the item"
-msgstr ""
+msgstr "记录项目的版权信息"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:230
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:228
 #, kde-format
 msgctxt "@title"
 msgid "Subject Information"
-msgstr ""
+msgstr "主题信息"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:231
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:229
 #, kde-format
 msgctxt "@title"
 msgid "Record subject information about the item"
-msgstr ""
+msgstr "记录项目的主题信息"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:235
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:233
 #, kde-format
 msgctxt "@title"
 msgid "Keyword Information"
-msgstr ""
+msgstr "关键词信息"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:236
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:234
 #, kde-format
 msgctxt "@title"
 msgid "Record keywords relevant to the item"
-msgstr ""
+msgstr "记录项目的关键词"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:240
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:238
 #, kde-format
 msgctxt "@title"
 msgid "Category Information"
-msgstr ""
+msgstr "分类信息"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:241
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:239
 #, kde-format
 msgctxt "@title"
 msgid "Record categories relevant to the item"
-msgstr ""
+msgstr "记录项目相关的分类"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:245
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:243
 #, kde-format
 msgctxt "@title"
 msgid "Status Information"
-msgstr ""
+msgstr "状态信息"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:246
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:244
 #, kde-format
 msgctxt "@title"
 msgid "Record workflow information"
-msgstr ""
+msgstr "记录工作流程信息"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:250
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:248
 #, kde-format
 msgctxt "@title"
 msgid "Status Properties"
-msgstr ""
+msgstr "状态属性"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:251
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:249
 #, kde-format
 msgctxt "@title"
 msgid "Record workflow properties"
-msgstr ""
+msgstr "记录工作流程属性"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:255
 #, kde-format
 msgctxt "@title"
 msgid "Envelope Information"
-msgstr ""
+msgstr "信封信息"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:256
 #, kde-format
 msgctxt "@title"
 msgid "Record editorial details"
-msgstr ""
+msgstr "记录编辑详细信息"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:76
 #, kde-format
@@ -14982,37 +14986,37 @@ msgstr "内容"
 #, kde-format
 msgctxt "@item"
 msgid "Origin"
-msgstr ""
+msgstr "起源"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:122
 #, kde-format
 msgctxt "@item"
 msgid "Credits"
-msgstr ""
+msgstr "版权"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:126
 #, kde-format
 msgctxt "@item"
 msgid "Subjects"
-msgstr ""
+msgstr "主题"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:130
 #, kde-format
 msgctxt "@item"
 msgid "Keywords"
-msgstr ""
+msgstr "关键词"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:134
 #, kde-format
 msgctxt "@item"
 msgid "Categories"
-msgstr ""
+msgstr "分类"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:138
 #, kde-format
 msgctxt "@item"
 msgid "Status"
-msgstr ""
+msgstr "状态"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:142
 #: core/libs/dialogs/solidhardwaredlg.cpp:294
@@ -18155,79 +18159,79 @@ msgstr "分享为 MJPEG 流..."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Orientation and script detection (OSD) only."
-msgstr ""
+msgstr "仅限方向和书写检测 (OSD)。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:49
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Automatic page segmentation with OSD."
-msgstr ""
+msgstr "自动分页，使用 OSD。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Automatic page segmentation, but no OSD, or OCR. (not implemented)"
-msgstr ""
+msgstr "自动分页，不使用 OSD、OCR (未实现)。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:51
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Fully automatic page segmentation, but no OSD. (Default)."
-msgstr ""
+msgstr "完整自动分页，不使用 OSD (默认)。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:52
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Assume a single column of text of variable sizes."
-msgstr ""
+msgstr "假设是一列大小不等的文字"
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:53
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Assume a single uniform block of vertically aligned text."
-msgstr ""
+msgstr "假设是一块间距均匀，垂直对齐的文字"
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:54
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Assume a single uniform block of text."
-msgstr ""
+msgstr "假设是一块间距均匀的文字"
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:55
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single text line."
-msgstr ""
+msgstr "将图像视作一行文字。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single word."
-msgstr ""
+msgstr "将图像视作一个单词。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:57
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single word in a circle."
-msgstr ""
+msgstr "将图像视作圈中的一个单词。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:58
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single character."
-msgstr ""
+msgstr "将图像视作一个字母。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:59
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Sparse text. Find as much text as possible in no particular order."
-msgstr ""
+msgstr "稀疏文本。以非特定顺序查找尽可能多的文字。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:60
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Sparse text with OSD."
-msgstr ""
+msgstr "稀疏文字 (使用 OSD)。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:61
 #, kde-format
@@ -18235,51 +18239,51 @@ msgctxt "@info:tooltip"
 msgid ""
 "Raw line. Treat the image as a single text line,bypassing hacks that are "
 "Tesseract-specific."
-msgstr ""
+msgstr "原始字行。将图像视作一行文字，绕过针对 Tesseract 的特殊调整。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:71
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Legacy engine only."
-msgstr ""
+msgstr "仅使用旧式引擎。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:72
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Neural nets LSTM engine only."
-msgstr ""
+msgstr "仅使用神经元网络 LSTM 引擎。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:73
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Legacy + LSTM engines."
-msgstr ""
+msgstr "同时使用旧式和 LSTM 引擎。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:74
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Default, based on what is available."
-msgstr ""
+msgstr "默认，基于可用的程序。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/tesseractbinary.cpp:43
 #, kde-format
 msgid ""
 "Tesseract is an optical character recognition engine for various operating "
 "systems."
-msgstr ""
+msgstr "Tesseract 是一款支持各种操作系统的光学字符识别引擎。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:122
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "OCR Text Converter"
-msgstr ""
+msgstr "OCR 文本转换器"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:132
 #, kde-format
 msgctxt "@action:button"
 msgid "&Start OCR"
-msgstr ""
+msgstr "开始 OCR(&S)"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:164
 #, kde-format
@@ -18289,12 +18293,14 @@ msgid ""
 "Recognition. Tesseract program and the desired languages modules must be "
 "installed on your system."
 msgstr ""
+"此工具使用 %1 开源引擎来进行光学字符识别。Tesseract 程序和所需的语言模块必须"
+"安装到本机系统中。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:212
 #, kde-format
 msgctxt "@title"
 msgid "Text Recognition"
-msgstr ""
+msgstr "文字识别"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:218
 #, kde-format
@@ -18304,55 +18310,57 @@ msgid ""
 "text here. You can review words and fix if necessary. Press the Save button "
 "to record your changes."
 msgstr ""
+"在识别处理完成后，双击一个项目即可在此显示识别到的文字。您可以检查识别到的单"
+"词并进行必要的修订。点击保存按钮以记录您的更改。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:227
 #, kde-format
 msgctxt "@action: button"
 msgid "Save"
-msgstr ""
+msgstr "保存"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:233
 #, kde-format
 msgctxt "@title"
 msgid "Text Review"
-msgstr ""
+msgstr "文字检查"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:383
 #, kde-format
 msgctxt "@info"
 msgid "Processing %1"
-msgstr ""
+msgstr "正在处理 %1"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:456
 #, kde-format
 msgctxt "@info"
 msgid "Process failed"
-msgstr ""
+msgstr "处理失败"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:462
 #, kde-format
 msgctxt "@info"
 msgid "Process canceled"
-msgstr ""
+msgstr "处理已取消"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:470
 #, kde-format
 msgctxt "@info"
 msgid "Internal error"
-msgstr ""
+msgstr "内部错误"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:521
 #, kde-format
 msgctxt "@info"
 msgid "Success"
-msgstr ""
+msgstr "成功"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:585
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:597
 #, kde-format
 msgctxt "@title"
 msgid "Text Converter"
-msgstr ""
+msgstr "文字转换程序"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:586
 #, kde-format
@@ -18360,32 +18368,32 @@ msgctxt "@info"
 msgid ""
 "The list does not contain any digital files to process. You need to select "
 "them."
-msgstr ""
+msgstr "列表中不包含任何要处理的数字文件。您需要选择它们。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:670
 #, kde-format
 msgctxt "@action"
 msgid "&Abort"
-msgstr ""
+msgstr "中止(&A)"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:671
 #, kde-format
 msgctxt "@info"
 msgid "Abort OCR processing of Raw files."
-msgstr ""
+msgstr "中止对原始文件进行 OCR 处理。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:676
 #, kde-format
 msgctxt "@action"
 msgid "&Start OCR"
-msgstr ""
+msgstr "开始 OCR(&S)"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:677
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:716
 #, kde-format
 msgctxt "@info"
 msgid "Start OCR using the current settings."
-msgstr ""
+msgstr "使用当前设置启动 OCR"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:720
 #, kde-format
@@ -18394,29 +18402,31 @@ msgid ""
 "Tesseract program or language modules\n"
 "are not installed on your system."
 msgstr ""
+"Tesseract 程序或所需的语言模块\n"
+"尚未安装到本机系统。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:753
 #, kde-format
 msgctxt "@action"
 msgid "Process All Items"
-msgstr ""
+msgstr "处理所有项目"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:755
 #, kde-format
 msgctxt "@action"
 msgid "Process Selected Items"
-msgstr ""
+msgstr "处理所选项目"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:91
 #, kde-format
 msgid "Words"
-msgstr ""
+msgstr "词数"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:59
 #, kde-format
 msgctxt "@info"
 msgid "A tool to batch convert documented images to text using OCR"
-msgstr ""
+msgstr "使用 OCR 将文档图像批量转换为文字"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:64
 #, kde-format
@@ -18431,18 +18441,24 @@ msgid ""
 "\n"
 "See details on %1 for more information on Tesseract"
 msgstr ""
+"此工具可以将文档图像的数据转换为文本格式。它使用一款名为 Tesseract 的开源光学"
+"字符识别引擎，该引擎最初由 HP 实验室开发，目前由 Google 赞助开发。\n"
+"\n"
+"它支持多种语言和书写方式 (包括从右到左书写的文字) 和页面布局分析功能。\n"
+"\n"
+"Tesseract 的详情请见 %1"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:84
 #, kde-format
 msgctxt "@action"
 msgid "OCR Text Converter..."
-msgstr ""
+msgstr "OCR 文本转换器..."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:85
 #, kde-format
 msgctxt "@label"
 msgid "Languages:"
-msgstr ""
+msgstr "语言："
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:89
 #, kde-format
@@ -18457,102 +18473,106 @@ msgid ""
 "You can use the Orientation and Script Detection mode instead or a specific "
 "languagemodule if available."
 msgstr ""
+"指定 OCR 使用的语言。在数字文字多语言的语言设置的默认模式下， \n"
+"Tesseract 可以自动识别使用拉丁字母的语言，例如英语、法语等，\n"
+"但它不兼容使用了象形文字的语言，例如中文、日语等。\n"
+"如果系统支持，您可以使用方向与书写检测模式或者特定的语言模块。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:98
 #, kde-format
 msgctxt "@label"
 msgid "Segmentation mode:"
-msgstr ""
+msgstr "分页模式："
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:112
 #, kde-format
 msgctxt "@info"
 msgid "Specify page segmentation mode."
-msgstr ""
+msgstr "指定分页模式。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:116
 #, kde-format
 msgctxt "@label"
 msgid "Engine mode:"
-msgstr ""
+msgstr "引擎模式："
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:130
 #, kde-format
 msgctxt "@info"
 msgid "Specify OCR engine mode."
-msgstr ""
+msgstr "指定 OCR 引擎模式。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:134
 #, kde-format
 msgctxt "@label"
 msgid "Resolution Dpi:"
-msgstr ""
+msgstr "分辨率 DPI："
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:137
 #, kde-format
 msgctxt "@info"
 msgid "Specify DPI for input image."
-msgstr ""
+msgstr "指定输入图像的 DPI。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:143
 #, kde-format
 msgctxt "@label"
 msgid "Store result in : "
-msgstr ""
+msgstr "结果存储为："
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:144
 #, kde-format
 msgctxt "@option:check"
 msgid "Text file"
-msgstr ""
+msgstr "文本文件"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:145
 #, kde-format
 msgctxt "@info"
 msgid "Store OCR result in separated text file"
-msgstr ""
+msgstr "保存 OCR 结果到一个独立的文本文件"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:148
 #, kde-format
 msgctxt "@option:check"
 msgid "Metadata"
-msgstr ""
+msgstr "元数据"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:149
 #, kde-format
 msgctxt "@info"
 msgid "Store OCR result in XMP metadata"
-msgstr ""
+msgstr "保存 OCR 结果到 XMP 元数据"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:155
 #, kde-format
 msgctxt "@option:check"
 msgid "Use Multi-cores"
-msgstr ""
+msgstr "使用多核处理。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:156
 #, kde-format
 msgctxt "@info"
 msgid "If this option is enabled, files will be processed in parallel"
-msgstr ""
+msgstr "如果启用此选项，文件将以多线程方式并行处理"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:289
 #, kde-format
 msgctxt "@option: default Tesseract mode"
 msgid "Default"
-msgstr ""
+msgstr "默认"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:295
 #, kde-format
 msgctxt "@option: osd Tesseract mode"
 msgid "Orientation and Script Detection"
-msgstr ""
+msgstr "方向和书写检测"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:314
 #, kde-format
 msgctxt "@label"
 msgid "Translate with %1:"
-msgstr ""
+msgstr "使用 %1 翻译："
 
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:51
 #, kde-format
@@ -26473,7 +26493,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "New database"
-msgstr ""
+msgstr "新建数据库"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:344
 #, kde-format
@@ -28255,6 +28275,13 @@ msgid ""
 "such as NFS, cannot be used here. For performance reasons, it is also "
 "recommended not to use removable media.</p><p></p>"
 msgstr ""
+"<p>请在此设置数据库文件的存储位置。digiKam 会建立 4 个数据库：一个用于存储所"
+"有相册集合的属性、一个用于存储压缩后的缩略图、一个用于存储人脸识别元数据、一"
+"个用于存储文件相似度指纹数据。<br/>注意：要编辑图像属性，必须具备写入权限。</"
+"p><p>数据库属于 digiKam 核心引擎的一部分，为了提高性能，请尽可能把数据库保存"
+"在高速存储设备上 (如固态硬盘)。为了保证缩略图数据库能正常工作，请预留足够的存"
+"储空间。</p><p>注意：为了避免性能低下，请不要将数据库保存在可移动存储媒介上，"
+"更不能保存到 NFS 等远程文件系统上。</p><p></p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
 #, kde-format
@@ -34014,31 +34041,31 @@ msgstr "全部选中"
 #, kde-format
 msgctxt "@option:radio"
 msgid "Use default settings"
-msgstr ""
+msgstr "使用默认设置"
 
 #: core/libs/imgqsort/imagequalityconfselector.cpp:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use the default quality sorting parameters configured in Setup dialog."
-msgstr ""
+msgstr "使用在设置对话框中配置的默认品质分类参数。"
 
 #: core/libs/imgqsort/imagequalityconfselector.cpp:82
 #, kde-format
 msgctxt "@option:radio"
 msgid "Use custom settings"
-msgstr ""
+msgstr "使用自定义设置"
 
 #: core/libs/imgqsort/imagequalityconfselector.cpp:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Use custom parameters to perform quality sorting instead default one."
-msgstr ""
+msgstr "使用自定义品质分类参数来执行品质分类，而不是默认参数。"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:124
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Rejected' Label to Low Quality Pictures"
-msgstr ""
+msgstr "指定“否决”标记到低品质图像"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:125
 #, kde-format
@@ -34046,13 +34073,13 @@ msgctxt "@info:tooltip"
 msgid ""
 "Low quality images detected by blur, noise, and compression analysis will be "
 "assigned to Rejected label."
-msgstr ""
+msgstr "通过模糊、噪点、压缩分析得到的低画质图像将被指定“否决”标记。"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:137
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Pending' Label to Medium Quality Pictures"
-msgstr ""
+msgstr "指定“待定”标记到中品质图像"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:138
 #, kde-format
@@ -34060,13 +34087,13 @@ msgctxt "@info:tooltip"
 msgid ""
 "Medium quality images detected by blur, noise, and compression analysis will "
 "be assigned to Pending label."
-msgstr ""
+msgstr "通过模糊、噪点、压缩分析得到的中画质图像将被指定“待定”标记。"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:150
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Accepted' Label to High Quality Pictures"
-msgstr ""
+msgstr "指定“接受”标记到高品质图像"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:151
 #, kde-format
@@ -34074,13 +34101,13 @@ msgctxt "@info:tooltip"
 msgid ""
 "High quality images detected by blur, noise, and compression analysis will "
 "be assigned to Accepted label."
-msgstr ""
+msgstr "通过模糊、噪点、压缩分析得到的高画质图像将被指定“接受”标记。"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:164
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Aesthetic Image using Deep Learning"
-msgstr ""
+msgstr "使用深度学习检测图像审美价值"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:166
 #, kde-format
@@ -34089,12 +34116,14 @@ msgid ""
 "Detect if the image has aesthetic value.\n"
 "The aesthetic detection engine use deep learning model to classify images"
 msgstr ""
+"检测图像是否具有审美价值。\n"
+"审美价值检测引擎使用深度学习模型来对图像进行分类"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:171
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Quality Using Basic Factors"
-msgstr ""
+msgstr "使用基本因素检测图像品质"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:173
 #, kde-format
@@ -34102,55 +34131,55 @@ msgctxt "@info:tooltip"
 msgid ""
 "Detect if the image is sabotaging by four basic factors (blur, noise, "
 "exposure, and compression)."
-msgstr ""
+msgstr "检测图像的四项基本品质因素 (模糊、噪点、曝光、压缩)。"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:184
 #, kde-format
 msgctxt "@label"
 msgid "Rejected threshold:"
-msgstr ""
+msgstr "否决阈值："
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:189
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
-msgstr ""
+msgstr "低于此阈值的所有图像将被指定“否决”标记。"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:191
 #, kde-format
 msgctxt "@label"
 msgid "Pending threshold:"
-msgstr ""
+msgstr "待定阈值："
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:196
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
-msgstr ""
+msgstr "低于此阈值的所有图像将被指定“待定”标记。"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:198
 #, kde-format
 msgctxt "@label"
 msgid "Accepted threshold:"
-msgstr ""
+msgstr "接受阈值："
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:203
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
-msgstr ""
+msgstr "高于此阈值的所有图像将被指定“接受”标记。"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:205
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Blur"
-msgstr ""
+msgstr "检测模糊"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:206
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
-msgstr ""
+msgstr "检测图像的模糊程度。"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:208
 #: core/libs/imgqsort/imagequalitysettings.cpp:218
@@ -34158,61 +34187,61 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Weight:"
-msgstr ""
+msgstr "权重："
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:213
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Blur Algorithm"
-msgstr ""
+msgstr "模糊检测算法的权重"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:215
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Noise"
-msgstr ""
+msgstr "检测噪点"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:216
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
-msgstr ""
+msgstr "检测图像的噪点数量。"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:223
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Noise Algorithm"
-msgstr ""
+msgstr "噪点检测算法的权重"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:225
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Compression"
-msgstr ""
+msgstr "检测压缩"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:226
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
-msgstr ""
+msgstr "检测图像的压缩级别。"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:233
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Compression Algorithm"
-msgstr ""
+msgstr "压缩检测算法的权重"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:235
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Under and Over Exposure"
-msgstr ""
+msgstr "检测曝光不足/过度"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:236
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect if the images are under-exposed or over-exposed"
-msgstr ""
+msgstr "检测图像是否曝光不足或者曝光过度。"
 
 #: core/libs/iojobs/iojob.cpp:70
 #, kde-format
@@ -34601,7 +34630,7 @@ msgstr "德语"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Dzongkha"
-msgstr ""
+msgstr "宗喀语"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:350
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:498
@@ -34664,7 +34693,7 @@ msgstr "芬兰语"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Fijan"
-msgstr ""
+msgstr "斐济语"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:359
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:507
@@ -35029,7 +35058,7 @@ msgstr "欧西坦语"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Oromo"
-msgstr ""
+msgstr "奥罗莫语"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:411
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:559
@@ -35458,7 +35487,7 @@ msgstr "Perl 不存在，或缺少执行权限"
 #: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:144
 #, kde-format
 msgid "Synchronization error between the channels"
-msgstr ""
+msgstr "色彩通道同步错误"
 
 #: core/libs/metadataengine/focuspoint/focuspoint.cpp:119
 #, kde-format
@@ -35927,165 +35956,165 @@ msgstr "在此输入说明文字作者姓名。"
 msgctxt "@info"
 msgid "You have edited the image caption. "
 msgid_plural "You have edited the captions of %1 images. "
-msgstr[0] ""
+msgstr[0] "您编辑了 %1 张图像的说明。"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:271
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the image title. "
 msgid_plural "You have edited the titles of %1 images. "
-msgstr[0] ""
+msgstr[0] "您编辑了 %1 张图像的标题。"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:277
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the date of the image. "
 msgid_plural "You have edited the date of %1 images. "
-msgstr[0] ""
+msgstr[0] "您编辑了 %1 张图像的日期。"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:283
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the pick label of the image. "
 msgid_plural "You have edited the pick label of %1 images. "
-msgstr[0] ""
+msgstr[0] "您编辑了 %1 张图像的挑选标记。"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:289
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the color label of the image. "
 msgid_plural "You have edited the color label of %1 images. "
-msgstr[0] ""
+msgstr[0] "您编辑了 %1 张图像的颜色标记。"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:295
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the rating of the image. "
 msgid_plural "You have edited the rating of %1 images. "
-msgstr[0] ""
+msgstr[0] "您编辑了 %1 张图像的评分。"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:301
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the tags of the image. "
 msgid_plural "You have edited the tags of %1 images. "
-msgstr[0] ""
+msgstr[0] "您编辑了 %1 张图像的标签。"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:306
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to apply your changes?"
-msgstr ""
+msgstr "您想要应用更改吗？"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:310
 #, kde-format
 msgctxt "@info"
 msgid "<p>You have edited the metadata of the image: </p>"
 msgid_plural "<p>You have edited the metadata of %1 images: </p>"
-msgstr[0] ""
+msgstr[0] "<p>您编辑了 %1 张图像的元数据：</p>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:318
 #, kde-format
 msgctxt "@info"
 msgid "<li>title</li>"
-msgstr ""
+msgstr "<li>标题</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:323
 #, kde-format
 msgctxt "@info"
 msgid "<li>caption</li>"
-msgstr ""
+msgstr "<li>说明</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:328
 #, kde-format
 msgctxt "@info"
 msgid "<li>date</li>"
-msgstr ""
+msgstr "<li>日期</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:333
 #, kde-format
 msgctxt "@info"
 msgid "<li>pick label</li>"
-msgstr ""
+msgstr "<li>挑选标记</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:338
 #, kde-format
 msgctxt "@info"
 msgid "<li>color label</li>"
-msgstr ""
+msgstr "<li>颜色标记</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:343
 #, kde-format
 msgctxt "@info"
 msgid "<li>rating</li>"
-msgstr ""
+msgstr "<li>评分</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:348
 #, kde-format
 msgctxt "@info"
 msgid "<li>tags</li>"
-msgstr ""
+msgstr "<li>标签</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:353
 #, kde-format
 msgctxt "@info"
 msgid "<p>Do you want to apply your changes?</p>"
-msgstr ""
+msgstr "<p>您想要应用更改吗？</p>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:356
 #, kde-format
 msgctxt "@action"
 msgid "Always apply changes without confirmation"
-msgstr ""
+msgstr "总是应用更改而无需确认"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:359
 #, kde-format
 msgctxt "@title"
 msgid "Apply changes?"
-msgstr ""
+msgstr "应用更改吗？"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:369
 #, kde-format
 msgctxt "@info"
 msgid "Apply changes?"
-msgstr ""
+msgstr "应用更改吗？"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:428
 #, kde-format
 msgctxt "@info"
 msgid "Reading metadata from files. Please wait..."
-msgstr ""
+msgstr "正在读取文件元数据。请稍候..."
 
 #: core/libs/properties/captions/itemdescedittab.cpp:460
 #, kde-format
 msgctxt "@info"
 msgid "Writing metadata to files. Please wait..."
-msgstr ""
+msgstr "正在写入元数据到文件。请稍候..."
 
 #: core/libs/properties/captions/itemdescedittab.cpp:503
 #, kde-format
 msgctxt "@action"
 msgid "Read metadata from file to database"
-msgstr ""
+msgstr "读取文件元数据到数据库"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:505
 #: core/libs/properties/captions/itemdescedittab.cpp:524
 #, kde-format
 msgctxt "@action"
 msgid "Write metadata to each file"
-msgstr ""
+msgstr "写入元数据到每个文件"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:521
 #, kde-format
 msgctxt "@action"
 msgid "Read metadata from each file to database"
-msgstr ""
+msgstr "读取每个文件的元数据到数据库"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:529
 #, kde-format
 msgctxt "@action"
 msgid "Unify tags of selected items"
-msgstr ""
+msgstr "选中项目的合并标签"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:36
 #, kde-format
@@ -36097,55 +36126,55 @@ msgstr "标题："
 #, kde-format
 msgctxt "@label"
 msgid "Date:"
-msgstr ""
+msgstr "日期："
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:47
 #, kde-format
 msgctxt "@label"
 msgid "Pick Label:"
-msgstr ""
+msgstr "挑选标记："
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:52
 #, kde-format
 msgctxt "@label"
 msgid "Color Label:"
-msgstr ""
+msgstr "颜色标记："
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:57
 #, kde-format
 msgctxt "@label"
 msgid "Rating:"
-msgstr ""
+msgstr "评分："
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:66
 #, kde-format
 msgctxt "@action"
 msgid "Apply"
-msgstr ""
+msgstr "应用"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:69
 #, kde-format
 msgctxt "@info"
 msgid "Apply all changes to images"
-msgstr ""
+msgstr "应用所有更改到图像"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:77
 #, kde-format
 msgctxt "@info"
 msgid "Revert all changes"
-msgstr ""
+msgstr "还原所有更改"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:80
 #, kde-format
 msgctxt "@action"
 msgid "Apply to all versions"
-msgstr ""
+msgstr "应用到所有版本"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:83
 #, kde-format
 msgctxt "@info"
 msgid "Apply all changes to all versions of this image"
-msgstr ""
+msgstr "应用所有更改到此图像的所有版本"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:85
 #, kde-format
@@ -36157,7 +36186,7 @@ msgstr "更多"
 #, kde-format
 msgctxt "@title"
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
 #: core/utilities/import/main/importui.cpp:1885
@@ -36170,21 +36199,21 @@ msgstr "信息"
 #, kde-format
 msgctxt "@info"
 msgid "Selected items have different text here."
-msgstr ""
+msgstr "选中的项目在此处有不同的文本。"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:41
 #: core/libs/properties/captions/tagsedit.cpp:106
 #, kde-format
 msgctxt "@action"
 msgid "Open Tag Manager"
-msgstr ""
+msgstr "打开标签管理器"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:47
 #: core/libs/properties/captions/tagsedit.cpp:112
 #, kde-format
 msgctxt "@info"
 msgid "Enter tag here."
-msgstr ""
+msgstr "在此输入标签。"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:48
 #: core/libs/properties/captions/tagsedit.cpp:113
@@ -36195,27 +36224,28 @@ msgid ""
 "hierarchy of tags. ',' can be used to create more than one hierarchy at the "
 "same time."
 msgstr ""
+"在此输入文字以创建标签。“/”可用于创建标签的层级结构，它可以用来创建多个层级。"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:64
 #: core/libs/properties/captions/tagsedit.cpp:130
 #, kde-format
 msgctxt "@info"
 msgid "Tags already assigned"
-msgstr ""
+msgstr "已指定标签"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:70
 #: core/libs/properties/captions/tagsedit.cpp:136
 #, kde-format
 msgctxt "@info"
 msgid "Recent Tags"
-msgstr ""
+msgstr "最近标签"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:298
 #: core/libs/properties/captions/tagsedit.cpp:294
 #, kde-format
 msgctxt "@action"
 msgid "No Recently Assigned Tags"
-msgstr ""
+msgstr "无最近指定标签"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:144
 #, kde-format
@@ -39221,17 +39251,17 @@ msgstr "XMP：创建时间"
 #: core/libs/timeadjust/timeadjustsettings.cpp:192
 #, kde-format
 msgid "EXIF: created (fuzzy)"
-msgstr ""
+msgstr "EXIF：创建日期 (模糊)"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:193
 #, kde-format
 msgid "EXIF: original (fuzzy)"
-msgstr ""
+msgstr "EXIF：原始日期 (模糊)"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:194
 #, kde-format
 msgid "EXIF: digitized (fuzzy)"
-msgstr ""
+msgstr "EXIF：数字化日期 (模糊)"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:204
 #, kde-format
@@ -41487,10 +41517,9 @@ msgid "A KDE Family Project"
 msgstr "KDE 社区软件项目"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:68
-#, fuzzy, kde-format
-#| msgid "(c) 2001-2022, digiKam developers team"
+#, kde-format
 msgid "(c) 2001-2023, digiKam developers team"
-msgstr "(c) 2001-2022, digiKam developers team"
+msgstr "(c) 2001-2023, digiKam developers team"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:80
 #, kde-format
@@ -41601,6 +41630,8 @@ msgid ""
 "Extraction, Aesthetic Detection to classify images using deep learning model,"
 "Slideshow and Presentation tools improvement"
 msgstr ""
+"重写图像品质分类算法和照片焦点信息提取功能、审美价值检测使用深度学习模型来判"
+"断图像的审美价值、幻灯片和演示工具也进行了改进"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:164
 #, kde-format
@@ -41610,7 +41641,7 @@ msgstr "Quốc Hưng Trần"
 #: core/libs/widgets/mainview/daboutdata.cpp:165
 #, kde-format
 msgid "MJPEGStream plugin, OCR text Converter plugin"
-msgstr ""
+msgstr "MJPEGStream 插件、OCR 文字转换程序插件"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:170
 #, kde-format
@@ -43253,19 +43284,19 @@ msgstr "在此选择项目语言。"
 #, kde-format
 msgctxt "@info"
 msgid "Switch to %1"
-msgstr ""
+msgstr "切换到 %1"
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:423
 #, kde-format
 msgctxt "@info"
 msgid "Failed to translate string with %1 Web-service"
-msgstr ""
+msgstr "使用 %1 在线翻译服务翻译字符串失败"
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:425
 #, kde-format
 msgctxt "@info"
 msgid "Error message: %1"
-msgstr ""
+msgstr "错误消息：%1"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:39
 #, kde-format
@@ -43289,7 +43320,7 @@ msgstr "阿姆哈拉语 (埃塞俄比亚)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "North Levantine Arabic (Turkey)"
-msgstr ""
+msgstr "北黎凡特阿拉伯语 (土耳其)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:46
 #, kde-format
@@ -43325,7 +43356,7 @@ msgstr "阿拉伯语 (伊拉克)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Arabic (Israel)"
-msgstr ""
+msgstr "阿拉伯语 (以色列)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:52
 #, kde-format
@@ -43361,13 +43392,13 @@ msgstr "阿拉伯语 (摩洛哥)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Arabic (Mauritania)"
-msgstr ""
+msgstr "阿拉伯语 (毛里塔尼亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:58
 #, kde-format
 msgctxt "@info: country code"
 msgid "Arabic (Palestinian West Bank and Gaza)"
-msgstr ""
+msgstr "阿拉伯语 (巴勒斯坦西岸和加沙地带)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:59
 #, kde-format
@@ -43391,13 +43422,13 @@ msgstr "阿拉伯语 (沙特阿拉伯)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Arabic (Sudan)"
-msgstr ""
+msgstr "阿拉伯语 (苏丹)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:63
 #, kde-format
 msgctxt "@info: country code"
 msgid "Arabic (Somalia)"
-msgstr ""
+msgstr "阿拉伯语 (索马里)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:64
 #, kde-format
@@ -43409,7 +43440,7 @@ msgstr "阿拉伯语 (叙利亚)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Arabic (Chad)"
-msgstr ""
+msgstr "阿拉伯语 (乍得)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:66
 #, kde-format
@@ -43433,7 +43464,7 @@ msgstr "阿萨姆语 (印度)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Azerbaijani (Republic of Azerbaijan)"
-msgstr ""
+msgstr "阿塞拜疆语 (阿塞拜疆共和国)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:70
 #, kde-format
@@ -43445,7 +43476,7 @@ msgstr "巴什基尔语 (俄罗斯)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Bengali (Bangladesh)"
-msgstr ""
+msgstr "孟加拉语 (孟加拉国)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:72
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:76
@@ -43458,7 +43489,7 @@ msgstr "孟加拉语 (印度)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Bengali (Singapore)"
-msgstr ""
+msgstr "孟加拉语 (新加坡)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:74
 #, kde-format
@@ -43483,7 +43514,7 @@ msgstr "藏语 (不丹)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Tibetan (People's Republic of China)"
-msgstr ""
+msgstr "藏语 (中华人民共和国)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:79
 #, kde-format
@@ -43495,7 +43526,7 @@ msgstr "布列塔尼语 (法国)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Bosnian (Bosnia and Herzegovina)"
-msgstr ""
+msgstr "波斯尼亚语 (波斯尼亚和黑塞哥维那)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:82
 #, kde-format
@@ -43519,19 +43550,19 @@ msgstr "加泰罗尼亚语 (法国)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Cebuano (Philippines)"
-msgstr ""
+msgstr "宿务语 (菲律宾)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:86
 #, kde-format
 msgctxt "@info: country code"
 msgid "Chamorro (Guam)"
-msgstr ""
+msgstr "查莫罗语 (关岛)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:87
 #, kde-format
 msgctxt "@info: country code"
 msgid "Chamorro (Northern Mariana Islands)"
-msgstr ""
+msgstr "查莫罗语 (北马里亚纳群岛)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:88
 #, kde-format
@@ -43561,7 +43592,7 @@ msgstr "丹麦语 (丹麦)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Danish (Greenland)"
-msgstr ""
+msgstr "丹麦语 (格陵兰)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:93
 #, kde-format
@@ -43585,7 +43616,7 @@ msgstr "德语 (德国)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "German (Denmark)"
-msgstr ""
+msgstr "德语 (丹麦)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:97
 #, kde-format
@@ -43603,7 +43634,7 @@ msgstr "德语 (卢森堡)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Greek (Cyprus)"
-msgstr ""
+msgstr "希腊语 (塞浦路斯)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:100
 #, kde-format
@@ -43615,19 +43646,19 @@ msgstr "希腊语 (希腊)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Antigua and Barbuda)"
-msgstr ""
+msgstr "英语 (安提瓜和巴布达)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:102
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Anguilla)"
-msgstr ""
+msgstr "英语 (安圭拉)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:103
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (American Samoa)"
-msgstr ""
+msgstr "英语 (美属萨摩亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:104
 #, kde-format
@@ -43639,31 +43670,31 @@ msgstr "英语 (澳大利亚)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Barbados)"
-msgstr ""
+msgstr "英语 (巴巴多斯)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:106
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Bermuda)"
-msgstr ""
+msgstr "英语 (百慕大)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:107
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Brunei)"
-msgstr ""
+msgstr "英语 (文莱)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:108
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Bahamas)"
-msgstr ""
+msgstr "英语 (巴哈马)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:109
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Botswana)"
-msgstr ""
+msgstr "英语 (博茨瓦纳)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:110
 #, kde-format
@@ -43687,49 +43718,49 @@ msgstr "英语 (加勒比海地区)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Cook Islands)"
-msgstr ""
+msgstr "英语 (库克群岛)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:114
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Cameroon)"
-msgstr ""
+msgstr "英语 (喀麦隆)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:115
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Dominica)"
-msgstr ""
+msgstr "英语 (多米尼加)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:116
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Eritrea)"
-msgstr ""
+msgstr "英语 (厄立特里亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:117
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Ethiopia)"
-msgstr ""
+msgstr "英语 (埃塞俄比亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:118
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Fiji)"
-msgstr ""
+msgstr "英语 (斐济)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:119
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Falkland Islands)"
-msgstr ""
+msgstr "英语 (福克兰群岛)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:120
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Micronesia)"
-msgstr ""
+msgstr "英语 (密克罗尼西亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:121
 #, kde-format
@@ -43741,37 +43772,37 @@ msgstr "英语 (英国)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Grenada)"
-msgstr ""
+msgstr "英语 (格林纳达)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:123
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Ghana)"
-msgstr ""
+msgstr "英语 (加纳)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:124
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Gibraltar)"
-msgstr ""
+msgstr "英语 (直布罗陀)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:125
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Gambia)"
-msgstr ""
+msgstr "英语 (冈比亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:126
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Guam)"
-msgstr ""
+msgstr "英语 (关岛)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:127
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Guyana)"
-msgstr ""
+msgstr "英语 (圭亚那)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:128
 #, kde-format
@@ -43783,7 +43814,7 @@ msgstr "英语 (爱尔兰)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Israel)"
-msgstr ""
+msgstr "英语 (以色列)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:130
 #, kde-format
@@ -43795,7 +43826,7 @@ msgstr "英语 (印度)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (British Indian Ocean Territ)"
-msgstr ""
+msgstr "英语 (英属印度洋领土)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:132
 #, kde-format
@@ -43807,73 +43838,73 @@ msgstr "英语 (牙买加)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Kenya)"
-msgstr ""
+msgstr "英语 (肯尼亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:134
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Kiribati)"
-msgstr ""
+msgstr "英语 (基里巴斯)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:135
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (St. Kitts-Nevis)"
-msgstr ""
+msgstr "英语 (圣基茨和尼维斯)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:136
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Cayman Islands)"
-msgstr ""
+msgstr "英语 (开曼群岛)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:137
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (St. Lucia)"
-msgstr ""
+msgstr "英语 (圣卢西亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:138
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Liberia)"
-msgstr ""
+msgstr "英语 (利比里亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:139
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Lesotho)"
-msgstr ""
+msgstr "英语 (莱索托)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:140
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Northern Mariana Islands)"
-msgstr ""
+msgstr "英语 (北马里亚纳群岛)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:141
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Montserrat)"
-msgstr ""
+msgstr "英语 (蒙特塞拉特)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:142
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Malta)"
-msgstr ""
+msgstr "英语 (马耳他)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:143
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Mauritius)"
-msgstr ""
+msgstr "英语 (毛里求斯)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:144
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Malawi)"
-msgstr ""
+msgstr "英语 (马拉维)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:145
 #, kde-format
@@ -43885,31 +43916,31 @@ msgstr "英语 (马来西亚)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Namibia)"
-msgstr ""
+msgstr "英语 (纳米比亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:147
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Norfolk Island)"
-msgstr ""
+msgstr "英语 (诺福克岛)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:148
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Nigeria)"
-msgstr ""
+msgstr "英语 (尼日利亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:149
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Nauru)"
-msgstr ""
+msgstr "英语 (瑙鲁)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:150
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Niue)"
-msgstr ""
+msgstr "英语 (纽埃)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:151
 #, kde-format
@@ -43921,7 +43952,7 @@ msgstr "英语 (新西兰)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Papua New Guinea)"
-msgstr ""
+msgstr "英语 (巴布亚新几内亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:153
 #, kde-format
@@ -43933,43 +43964,43 @@ msgstr "英语 (菲律宾)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Pakistan)"
-msgstr ""
+msgstr "英语 (巴基斯坦)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:155
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Pitcairn)"
-msgstr ""
+msgstr "英语 (皮特凯恩)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:156
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Puerto Rico)"
-msgstr ""
+msgstr "英语 (波多黎各)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:157
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Palau)"
-msgstr ""
+msgstr "英语 (帕劳)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:158
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Rwanda)"
-msgstr ""
+msgstr "英语 (卢旺达)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:159
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Solomon Islands)"
-msgstr ""
+msgstr "英语 (所罗门群岛)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:160
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Seychelles)"
-msgstr ""
+msgstr "英语 (塞舌尔)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:161
 #, kde-format
@@ -43981,43 +44012,43 @@ msgstr "英语 (新加坡)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (St. Helena)"
-msgstr ""
+msgstr "英语 (圣赫勒拿)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:163
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Sierra Leone)"
-msgstr ""
+msgstr "英语 (塞拉利昂)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:164
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Somalia)"
-msgstr ""
+msgstr "英语 (索马里)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:165
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Swaziland)"
-msgstr ""
+msgstr "英语 (斯威士兰)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:166
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Turks and Caicos Islands)"
-msgstr ""
+msgstr "英语 (特克斯和凯科斯群岛)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:167
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Tokelau)"
-msgstr ""
+msgstr "英语 (托克劳)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:168
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Tonga)"
-msgstr ""
+msgstr "英语 (汤加)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:169
 #, kde-format
@@ -44029,7 +44060,7 @@ msgstr "英语 (特立尼达)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Uganda)"
-msgstr ""
+msgstr "英语 (乌干达)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:171
 #, kde-format
@@ -44041,31 +44072,31 @@ msgstr "英语 (美国)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (St. Vincent and the Grenadi)"
-msgstr ""
+msgstr "英语 (圣文森特和格林纳丁斯)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:173
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (British Virgin Islands)"
-msgstr ""
+msgstr "英语 (属维尔京群岛)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:174
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (U.S. Virgin Islands)"
-msgstr ""
+msgstr "英语 (美属维尔京群岛)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:175
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Vanuatu)"
-msgstr ""
+msgstr "英语 (瓦努阿图)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:176
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Western Samoa)"
-msgstr ""
+msgstr "英语 (西萨摩亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:177
 #, kde-format
@@ -44077,7 +44108,7 @@ msgstr "英语 (南非)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Zambia)"
-msgstr ""
+msgstr "英语 (赞比亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:179
 #, kde-format
@@ -44089,7 +44120,7 @@ msgstr "英语 (津巴布韦)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Esperanto (France)"
-msgstr ""
+msgstr "世界语 (法国)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:181
 #, kde-format
@@ -44125,7 +44156,7 @@ msgstr "西班牙语 (哥斯达黎加)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Spanish (Cuba)"
-msgstr ""
+msgstr "西班牙语 (古巴)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:187
 #, kde-format
@@ -44149,7 +44180,7 @@ msgstr "西班牙语 (西班牙)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Spanish (Equatorial Guinea)"
-msgstr ""
+msgstr "西班牙语 (赤道几内亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:191
 #, kde-format
@@ -44251,13 +44282,13 @@ msgstr "芬兰语 (芬兰)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Filipino (Philippines)"
-msgstr ""
+msgstr "菲律宾语 (菲律宾)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:208
 #, kde-format
 msgctxt "@info: country code"
 msgid "Fijian (Fiji)"
-msgstr ""
+msgstr "斐济语 (斐济)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:209
 #, kde-format
@@ -44269,7 +44300,7 @@ msgstr "法罗语 (法罗群岛)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Andorra)"
-msgstr ""
+msgstr "法语 (安道尔)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:211
 #, kde-format
@@ -44281,19 +44312,19 @@ msgstr "法语 (比利时)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Burkina Faso)"
-msgstr ""
+msgstr "法语 (布基纳法索)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:213
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Burundi)"
-msgstr ""
+msgstr "法语 (布隆迪)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:214
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Benin)"
-msgstr ""
+msgstr "法语 (贝宁)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:215
 #, kde-format
@@ -44305,19 +44336,19 @@ msgstr "法语 (加拿大)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Democratic Republic of Congo)"
-msgstr ""
+msgstr "法语 (刚果民主共和国)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:217
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Central African Republic)"
-msgstr ""
+msgstr "法语 (中非共和国)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:218
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Congo)"
-msgstr ""
+msgstr "法国 (刚果)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:219
 #, kde-format
@@ -44329,19 +44360,19 @@ msgstr "法语 (瑞士)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Cote d'Ivoire)"
-msgstr ""
+msgstr "法语 (科特迪瓦)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:221
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Cameroon)"
-msgstr ""
+msgstr "法语 (喀麦隆)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:222
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Djibouti)"
-msgstr ""
+msgstr "法语 (吉布提)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:223
 #, kde-format
@@ -44353,55 +44384,55 @@ msgstr "法语 (法国)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Gabon)"
-msgstr ""
+msgstr "法语 (加蓬)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:225
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (United Kingdom)"
-msgstr ""
+msgstr "法语 (英国)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:226
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (French Guiana)"
-msgstr ""
+msgstr "法语 (法属圭亚那)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:227
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Guinea)"
-msgstr ""
+msgstr "法语 (几内亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:228
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Guadeloupe)"
-msgstr ""
+msgstr "法语 (瓜德罗普)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:229
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Haiti)"
-msgstr ""
+msgstr "法语 (海地)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:230
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Italy)"
-msgstr ""
+msgstr "法语 (意大利)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:231
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Comoros Islands)"
-msgstr ""
+msgstr "法语 (科摩罗群岛)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:232
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Lebanon)"
-msgstr ""
+msgstr "法语 (黎巴嫩)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:233
 #, kde-format
@@ -44419,85 +44450,85 @@ msgstr "法语 (摩纳哥)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Madagascar)"
-msgstr ""
+msgstr "法语 (马达加斯加)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:236
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Mali)"
-msgstr ""
+msgstr "法语 (马里)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:237
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Martinique)"
-msgstr ""
+msgstr "法语 (马提尼克)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:238
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (New Caledonia)"
-msgstr ""
+msgstr "法国 (新喀里多尼亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:239
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (French Polynesia)"
-msgstr ""
+msgstr "法语 (法属波利尼西亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:240
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (St. Pierre and Miquelon)"
-msgstr ""
+msgstr "法语 (圣皮埃尔和密克隆)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:241
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Reunion)"
-msgstr ""
+msgstr "法语 (留尼汪)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:242
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Rwanda)"
-msgstr ""
+msgstr "法语 (卢旺达)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:243
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Seychelles)"
-msgstr ""
+msgstr "法语 (塞舌尔)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:244
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Chad)"
-msgstr ""
+msgstr "法语 (乍得)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:245
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Togo)"
-msgstr ""
+msgstr "法语 (多哥)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:246
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Vanuatu)"
-msgstr ""
+msgstr "法语 (瓦努阿图)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:247
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Wallis and Futuna)"
-msgstr ""
+msgstr "法语 (瓦利斯和富图纳)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:248
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Mayotte)"
-msgstr ""
+msgstr "法语 (马约特)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:249
 #, kde-format
@@ -44509,7 +44540,7 @@ msgstr "法语 (荷兰)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Irish (United Kingdom)"
-msgstr ""
+msgstr "爱尔兰语 (英国)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:251
 #, kde-format
@@ -44521,7 +44552,7 @@ msgstr "爱尔兰语 (爱尔兰)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Gaelic (United Kingdom)"
-msgstr ""
+msgstr "盖尔语 (英国)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:253
 #, kde-format
@@ -44539,25 +44570,25 @@ msgstr "古吉拉特语 (印度)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Manx (United Kingdom)"
-msgstr ""
+msgstr "马恩语 (英国)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:256
 #, kde-format
 msgctxt "@info: country code"
 msgid "Hausa (Chad)"
-msgstr ""
+msgstr "豪萨语 (乍得)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:257
 #, kde-format
 msgctxt "@info: country code"
 msgid "Hawaiian (US state of Hawaii)"
-msgstr ""
+msgstr "夏威夷语 (美国夏威夷州)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:258
 #, kde-format
 msgctxt "@info: country code"
 msgid "Modern Hebrew (Israel)"
-msgstr ""
+msgstr "现代希伯来语 (以色列)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:259
 #, kde-format
@@ -44569,7 +44600,7 @@ msgstr "印地语 (印度)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Hmong (Laos)"
-msgstr ""
+msgstr "苗语 (老挝)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:261
 #, kde-format
@@ -44587,7 +44618,7 @@ msgstr "克罗地亚语 (克罗地亚)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Haitian Creole (France)"
-msgstr ""
+msgstr "海地克里奥尔语 (法国)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:264
 #, kde-format
@@ -44599,7 +44630,7 @@ msgstr "匈牙利语 (匈牙利)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Hungarian (Slovenia)"
-msgstr ""
+msgstr "匈牙利语 (斯洛文尼亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:266
 #, kde-format
@@ -44611,19 +44642,19 @@ msgstr "亚美尼亚语 (亚美尼亚)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Indonesian (Bahasa Indonesia)"
-msgstr ""
+msgstr "印度尼西亚语 (印度尼西亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:268
 #, kde-format
 msgctxt "@info: country code"
 msgid "Igbo (Nigeria)"
-msgstr ""
+msgstr "伊博语 (尼日利亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:269
 #, kde-format
 msgctxt "@info: country code"
 msgid "Sichuan Yi (People's Republic of China)"
-msgstr ""
+msgstr "彝语 (中华人民共和国)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:270
 #, kde-format
@@ -44641,7 +44672,7 @@ msgstr "意大利语 (瑞士)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Italian (Croatia)"
-msgstr ""
+msgstr "意大利语 (克罗地亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:273
 #, kde-format
@@ -44653,13 +44684,13 @@ msgstr "意大利语 (意大利)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Italian (Slovenia)"
-msgstr ""
+msgstr "意大利语 (斯洛文尼亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:275
 #, kde-format
 msgctxt "@info: country code"
 msgid "Italian (San Marino)"
-msgstr ""
+msgstr "意大利语 (圣马力诺)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:276
 #, kde-format
@@ -44677,13 +44708,13 @@ msgstr "日语 (日本)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Modern Javanese (Indonesia)"
-msgstr ""
+msgstr "现代爪哇语 (印度尼西亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:279
 #, kde-format
 msgctxt "@info: country code"
 msgid "Javanese (Indonesia)"
-msgstr ""
+msgstr "爪哇语 (印度尼西亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:280
 #, kde-format
@@ -44725,7 +44756,7 @@ msgstr "朝鲜语 (韩国)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Korean (North Korea)"
-msgstr ""
+msgstr "朝鲜语 (朝鲜)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:287
 #, kde-format
@@ -44737,19 +44768,19 @@ msgstr "吉尔吉斯语 (吉尔吉斯斯坦)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Cornish (United Kingdom)"
-msgstr ""
+msgstr "康沃尔语 (英国)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:289
 #, kde-format
 msgctxt "@info: country code"
 msgid "Kurdish (Iran)"
-msgstr ""
+msgstr "库尔德语 (伊朗)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:290
 #, kde-format
 msgctxt "@info: country code"
 msgid "Latin (Italy)"
-msgstr ""
+msgstr "拉丁语 (意大利)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:291
 #, kde-format
@@ -44761,13 +44792,13 @@ msgstr "卢森堡语 (卢森堡)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Lingala (Democratic Republic of Congo)"
-msgstr ""
+msgstr "林加拉语 (刚果民主共和国)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:293
 #, kde-format
 msgctxt "@info: country code"
 msgid "Lingala (Congo)"
-msgstr ""
+msgstr "林加拉语 (刚果)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:294
 #, kde-format
@@ -44791,13 +44822,13 @@ msgstr "拉脱维亚语 (拉脱维亚)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Malagasy (Madagascar)"
-msgstr ""
+msgstr "马尔加什语 (马达加斯加)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:298
 #, kde-format
 msgctxt "@info: country code"
 msgid "Meadow Mari (Russia)"
-msgstr ""
+msgstr "草原马里语 (俄罗斯)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:299
 #, kde-format
@@ -44821,7 +44852,7 @@ msgstr "马拉雅拉姆语 (印度)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Mongolian (People's Republic of China)"
-msgstr ""
+msgstr "蒙古语 (中华人民共和国)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:303
 #, kde-format
@@ -44839,7 +44870,7 @@ msgstr "马拉地语 (印度)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Hill Mari (Russia)"
-msgstr ""
+msgstr "山地马里语 (俄罗斯)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:306
 #, kde-format
@@ -44857,7 +44888,7 @@ msgstr "马来语 (马来西亚)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Malay (Singapore)"
-msgstr ""
+msgstr "马来语 (新加坡)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:309
 #, kde-format
@@ -44869,7 +44900,7 @@ msgstr "马耳他语 (马耳他)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Burmese (Myanmar)"
-msgstr ""
+msgstr "缅甸语 (缅甸)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:311
 #, kde-format
@@ -44887,13 +44918,13 @@ msgstr "尼泊尔语 (尼泊尔)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Dutch (Netherlands Antilles)"
-msgstr ""
+msgstr "荷兰语 (荷属安的列斯群岛)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:314
 #, kde-format
 msgctxt "@info: country code"
 msgid "Dutch (Aruba)"
-msgstr ""
+msgstr "荷兰语 (阿鲁巴)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:315
 #, kde-format
@@ -44911,13 +44942,13 @@ msgstr "荷兰语 (荷兰)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Dutch (Suriname)"
-msgstr ""
+msgstr "荷兰语 (苏里南)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:318
 #, kde-format
 msgctxt "@info: country code"
 msgid "Norwegian (Norway)"
-msgstr ""
+msgstr "挪威语 (挪威)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:319
 #, kde-format
@@ -44935,7 +44966,7 @@ msgstr "北索托语 (南非)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Chewa (Zambia)"
-msgstr ""
+msgstr "切瓦语 (赞比亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:322
 #, kde-format
@@ -44959,7 +44990,7 @@ msgstr "旁遮普语 (印度)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Papiamento (Aruba-Dutch Caribbean)"
-msgstr ""
+msgstr "帕皮阿门托语 (阿鲁巴-荷属加勒比岛屿)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:326
 #, kde-format
@@ -44977,7 +45008,7 @@ msgstr "普什图语 (阿富汗)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Portuguese (Angola)"
-msgstr ""
+msgstr "葡萄牙语 (安哥拉)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:329
 #, kde-format
@@ -44989,19 +45020,19 @@ msgstr "葡萄牙语 (巴西)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Portuguese (Cape Verde Islands)"
-msgstr ""
+msgstr "葡萄牙语 (佛得角群岛)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:331
 #, kde-format
 msgctxt "@info: country code"
 msgid "Portuguese (Guinea-Bissau)"
-msgstr ""
+msgstr "葡萄牙语 (几内亚比绍)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:332
 #, kde-format
 msgctxt "@info: country code"
 msgid "Portuguese (Mozambique)"
-msgstr ""
+msgstr "葡萄牙语 (莫桑比克)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:333
 #, kde-format
@@ -45013,13 +45044,13 @@ msgstr "葡萄牙语 (葡萄牙)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Portuguese (São Tomé e Principe)"
-msgstr ""
+msgstr "葡萄牙语 (圣多美普林西比)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:335
 #, kde-format
 msgctxt "@info: country code"
 msgid "Otomi Querétaro (Mexico)"
-msgstr ""
+msgstr "克雷塔罗奥托米语 (墨西哥)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:336
 #, kde-format
@@ -45055,13 +45086,13 @@ msgstr "梵语 (印度)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Sindhi (India)"
-msgstr ""
+msgstr "信德语 (印度)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:342
 #, kde-format
 msgctxt "@info: country code"
 msgid "Sindhi (Pakistan)"
-msgstr ""
+msgstr "信德语 (巴基斯坦)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:343
 #, kde-format
@@ -45103,19 +45134,19 @@ msgstr "斯洛文尼亚语 (斯洛文尼亚)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Samoan (Samoa)"
-msgstr ""
+msgstr "萨摩亚语 (萨摩亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:350
 #, kde-format
 msgctxt "@info: country code"
 msgid "Shona (Zimbabwe)"
-msgstr ""
+msgstr "绍纳语 (津巴布韦)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:351
 #, kde-format
 msgctxt "@info: country code"
 msgid "Somali  (Somalia)"
-msgstr ""
+msgstr "索马里语 (索马里)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:352
 #, kde-format
@@ -45127,49 +45158,49 @@ msgstr "阿尔巴尼亚语 (阿尔巴尼亚)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Serbian (Bosnia-Herzegovina)"
-msgstr ""
+msgstr "塞尔维亚语 (波斯尼亚和黑塞哥维那)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:354
 #, kde-format
 msgctxt "@info: country code"
 msgid "Serbian (Serbia)"
-msgstr ""
+msgstr "塞尔维亚语 (塞尔维亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:355
 #, kde-format
 msgctxt "@info: country code"
 msgid "Serbian (Serbia and Montenegro)"
-msgstr ""
+msgstr "塞尔维亚语 (塞尔维亚和黑山)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:356
 #, kde-format
 msgctxt "@info: country code"
 msgid "Serbian (Yugoslavia)"
-msgstr ""
+msgstr "塞尔维亚语 (南斯拉夫)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:357
 #, kde-format
 msgctxt "@info: country code"
 msgid "Swati (Swaziland)"
-msgstr ""
+msgstr "斯威士语 (斯威士兰)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:358
 #, kde-format
 msgctxt "@info: country code"
 msgid "Swati (South Africa)"
-msgstr ""
+msgstr "斯威士语 (南非)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:359
 #, kde-format
 msgctxt "@info: country code"
 msgid "Sotho (Lesotho)"
-msgstr ""
+msgstr "索托语 (莱索托)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:360
 #, kde-format
 msgctxt "@info: country code"
 msgid "Sundanese (Indonesia)"
-msgstr ""
+msgstr "巽他语 (印度尼西亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:361
 #, kde-format
@@ -45193,7 +45224,7 @@ msgstr "斯瓦希里语 (肯尼亚)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Swahili (Tanzania)"
-msgstr ""
+msgstr "斯瓦希里语 (坦桑尼亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:365
 #, kde-format
@@ -45205,7 +45236,7 @@ msgstr "泰米尔语 (印度)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Tamil (Singapore)"
-msgstr ""
+msgstr "泰米尔语 (新加坡)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:367
 #, kde-format
@@ -45217,7 +45248,7 @@ msgstr "泰卢固语 (印度)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Tajik (Tajikistan)"
-msgstr ""
+msgstr "塔吉克语 (塔吉克斯坦)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:369
 #, kde-format
@@ -45235,19 +45266,19 @@ msgstr "土库曼语 (土库曼斯坦)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Klingon (US state)"
-msgstr ""
+msgstr "克林贡语 (美国)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:372
 #, kde-format
 msgctxt "@info: country code"
 msgid "Tagalog (Philippines)"
-msgstr ""
+msgstr "他加禄语 (菲律宾)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:373
 #, kde-format
 msgctxt "@info: country code"
 msgid "Setswana Tswana (Botswana)"
-msgstr ""
+msgstr "茨瓦纳语 (博茨瓦纳)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:374
 #, kde-format
@@ -45259,19 +45290,19 @@ msgstr "塞茨瓦纳语 (南非)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Tongan (Tonga)"
-msgstr ""
+msgstr "汤加语 (汤加)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:376
 #, kde-format
 msgctxt "@info: country code"
 msgid "Turkish (Bulgaria)"
-msgstr ""
+msgstr "土耳其语 (保加利亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:377
 #, kde-format
 msgctxt "@info: country code"
 msgid "Turkish (Cyprus)"
-msgstr ""
+msgstr "土耳其语 (塞浦路斯)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:378
 #, kde-format
@@ -45289,19 +45320,19 @@ msgstr "鞑靼语 (俄罗斯)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Tahitian (French Polynesia)"
-msgstr ""
+msgstr "塔希提语 (法属波利尼西亚)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:381
 #, kde-format
 msgctxt "@info: country code"
 msgid "Udmurt (Russia)"
-msgstr ""
+msgstr "乌德穆尔特语 (俄罗斯)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:382
 #, kde-format
 msgctxt "@info: country code"
 msgid "Uighur (People's Republic of China)"
-msgstr ""
+msgstr "维吾尔语 (中华人民共和国)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:383
 #, kde-format
@@ -45325,7 +45356,7 @@ msgstr "乌尔都语 (巴基斯坦)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Uzbek (Uzbekistan)"
-msgstr ""
+msgstr "乌兹别克语 (乌兹别克斯坦)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:387
 #, kde-format
@@ -45343,13 +45374,13 @@ msgstr "沃洛夫语 (塞内加尔)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "IsiXhosa Xhosa (South Africa)"
-msgstr ""
+msgstr "科萨语 (南非)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:390
 #, kde-format
 msgctxt "@info: country code"
 msgid "Yiddish (Germany)"
-msgstr ""
+msgstr "意第绪语 (德国)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:391
 #, kde-format
@@ -45361,19 +45392,19 @@ msgstr "约鲁巴语 (尼日利亚)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Yucatec Maya (Mexico)"
-msgstr ""
+msgstr "玛雅语 (墨西哥)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:393
 #, kde-format
 msgctxt "@info: country code"
 msgid "Chinese (People's Republic of China)"
-msgstr ""
+msgstr "中文 (中华人民共和国)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:394
 #, kde-format
 msgctxt "@info: country code"
 msgid "Chinese (Hong Kong SAR, People's Republic of China)"
-msgstr ""
+msgstr "中文 (中华人民共和国香港特别行政区)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:395
 #, kde-format
@@ -45397,7 +45428,7 @@ msgstr "中文 (中国台湾)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Simplified Chinese (People's Republic of China)"
-msgstr ""
+msgstr "简体中文 (中华人民共和国)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:399
 #, kde-format
@@ -46934,31 +46965,31 @@ msgstr "使用自定义"
 #, kde-format
 msgctxt "@info"
 msgid "Set here the Informative Provider Reference"
-msgstr ""
+msgstr "在此设置信息提供者引用标识 (I.P.R)"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:181
 #, kde-format
 msgctxt "@info"
 msgid "Set here the Subject Reference Number"
-msgstr ""
+msgstr "在此设置主题引用码 (SRN)"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:192
 #, kde-format
 msgctxt "@info"
 msgid "Set here the Subject Name"
-msgstr ""
+msgstr "在此设置主题名称。"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:203
 #, kde-format
 msgctxt "@info"
 msgid "Set here the Subject Matter Name"
-msgstr ""
+msgstr "在此设置主题事项名称。"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:214
 #, kde-format
 msgctxt "@info"
 msgid "Set here the Subject Detail Name"
-msgstr ""
+msgstr "在此设置主题详情名称"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:226
 #, kde-format
@@ -47075,793 +47106,793 @@ msgstr "错误：引擎系统从本机连接的网络检测到可疑的流量，
 #, kde-format
 msgctxt "@info: language name"
 msgid "Automatically detect"
-msgstr ""
+msgstr "自动检测"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:106
 #, kde-format
 msgctxt "@info: language name"
 msgid "Afrikaans"
-msgstr ""
+msgstr "南非荷兰语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:109
 #, kde-format
 msgctxt "@info: language name"
 msgid "Albanian"
-msgstr ""
+msgstr "阿尔巴尼亚语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:112
 #, kde-format
 msgctxt "@info: language name"
 msgid "Amharic"
-msgstr ""
+msgstr "阿姆哈拉语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:115
 #, kde-format
 msgctxt "@info: language name"
 msgid "Arabic"
-msgstr ""
+msgstr "阿拉伯语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:118
 #, kde-format
 msgctxt "@info: language name"
 msgid "Armenian"
-msgstr ""
+msgstr "亚美尼亚语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:121
 #, kde-format
 msgctxt "@info: language name"
 msgid "Azeerbaijani"
-msgstr ""
+msgstr "阿塞拜疆语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:124
 #, kde-format
 msgctxt "@info: language name"
 msgid "Basque"
-msgstr ""
+msgstr "巴斯克语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:127
 #, kde-format
 msgctxt "@info: language name"
 msgid "Bashkir"
-msgstr ""
+msgstr "巴什基尔语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:130
 #, kde-format
 msgctxt "@info: language name"
 msgid "Belarusian"
-msgstr ""
+msgstr "白俄罗斯语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:133
 #, kde-format
 msgctxt "@info: language name"
 msgid "Bengali"
-msgstr ""
+msgstr "孟加拉语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:136
 #, kde-format
 msgctxt "@info: language name"
 msgid "Bosnian"
-msgstr ""
+msgstr "波斯尼亚语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:139
 #, kde-format
 msgctxt "@info: language name"
 msgid "Bulgarian"
-msgstr ""
+msgstr "保加利亚语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:142
 #, kde-format
 msgctxt "@info: language name"
 msgid "Catalan"
-msgstr ""
+msgstr "加泰罗尼亚语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:145
 #, kde-format
 msgctxt "@info: language name"
 msgid "Cantonese"
-msgstr ""
+msgstr "粤语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:148
 #, kde-format
 msgctxt "@info: language name"
 msgid "Cebuano"
-msgstr ""
+msgstr "宿务语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:151
 #, kde-format
 msgctxt "@info: language name"
 msgid "Chinese (Simplified)"
-msgstr ""
+msgstr "简体中文"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:154
 #, kde-format
 msgctxt "@info: language name"
 msgid "Chinese (Traditional)"
-msgstr ""
+msgstr "繁体中文"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:157
 #, kde-format
 msgctxt "@info: language name"
 msgid "Corsican"
-msgstr ""
+msgstr "科西嘉语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:160
 #, kde-format
 msgctxt "@info: language name"
 msgid "Croatian"
-msgstr ""
+msgstr "克罗地亚语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:163
 #, kde-format
 msgctxt "@info: language name"
 msgid "Czech"
-msgstr ""
+msgstr "捷克语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:166
 #, kde-format
 msgctxt "@info: language name"
 msgid "Danish"
-msgstr ""
+msgstr "丹麦语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:169
 #, kde-format
 msgctxt "@info: language name"
 msgid "Dutch"
-msgstr ""
+msgstr "荷兰语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:172
 #, kde-format
 msgctxt "@info: language name"
 msgid "English"
-msgstr ""
+msgstr "英语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:175
 #, kde-format
 msgctxt "@info: language name"
 msgid "Esperanto"
-msgstr ""
+msgstr "世界语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:178
 #, kde-format
 msgctxt "@info: language name"
 msgid "Estonian"
-msgstr ""
+msgstr "爱沙尼亚语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:181
 #, kde-format
 msgctxt "@info: language name"
 msgid "Fijian"
-msgstr ""
+msgstr "斐济语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:184
 #, kde-format
 msgctxt "@info: language name"
 msgid "Filipino"
-msgstr ""
+msgstr "菲律宾语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:187
 #, kde-format
 msgctxt "@info: language name"
 msgid "Finnish"
-msgstr ""
+msgstr "芬兰语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:190
 #, kde-format
 msgctxt "@info: language name"
 msgid "French"
-msgstr ""
+msgstr "法语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:193
 #, kde-format
 msgctxt "@info: language name"
 msgid "Frisian"
-msgstr ""
+msgstr "弗里西亚语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:196
 #, kde-format
 msgctxt "@info: language name"
 msgid "Galician"
-msgstr ""
+msgstr "加利西亚语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:199
 #, kde-format
 msgctxt "@info: language name"
 msgid "Georgian"
-msgstr ""
+msgstr "格鲁吉亚语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:202
 #, kde-format
 msgctxt "@info: language name"
 msgid "German"
-msgstr ""
+msgstr "德语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:205
 #, kde-format
 msgctxt "@info: language name"
 msgid "Greek"
-msgstr ""
+msgstr "希腊语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:208
 #, kde-format
 msgctxt "@info: language name"
 msgid "Gujarati"
-msgstr ""
+msgstr "古吉拉特语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:211
 #, kde-format
 msgctxt "@info: language name"
 msgid "Haitian Creole"
-msgstr ""
+msgstr "海地克里奥尔语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:214
 #, kde-format
 msgctxt "@info: language name"
 msgid "Hausa"
-msgstr ""
+msgstr "豪萨语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:217
 #, kde-format
 msgctxt "@info: language name"
 msgid "Hawaiian"
-msgstr ""
+msgstr "夏威夷语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:220
 #, kde-format
 msgctxt "@info: language name"
 msgid "Hebrew"
-msgstr ""
+msgstr "希伯来语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:223
 #, kde-format
 msgctxt "@info: language name"
 msgid "Hill Mari"
-msgstr ""
+msgstr "山地马里语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:226
 #, kde-format
 msgctxt "@info: language name"
 msgid "Hindi"
-msgstr ""
+msgstr "北印度语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:229
 #, kde-format
 msgctxt "@info: language name"
 msgid "Hmong"
-msgstr ""
+msgstr "苗语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:232
 #, kde-format
 msgctxt "@info: language name"
 msgid "Hungarian"
-msgstr ""
+msgstr "匈牙利语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:235
 #, kde-format
 msgctxt "@info: language name"
 msgid "Icelandic"
-msgstr ""
+msgstr "冰岛语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:238
 #, kde-format
 msgctxt "@info: language name"
 msgid "Igbo"
-msgstr ""
+msgstr "伊博语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:241
 #, kde-format
 msgctxt "@info: language name"
 msgid "Indonesian"
-msgstr ""
+msgstr "印度尼西亚语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:244
 #, kde-format
 msgctxt "@info: language name"
 msgid "Irish"
-msgstr ""
+msgstr "爱尔兰语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:247
 #, kde-format
 msgctxt "@info: language name"
 msgid "Italian"
-msgstr ""
+msgstr "意大利语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:250
 #, kde-format
 msgctxt "@info: language name"
 msgid "Japanese"
-msgstr ""
+msgstr "日语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:253
 #, kde-format
 msgctxt "@info: language name"
 msgid "Javanese"
-msgstr ""
+msgstr "爪哇语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:256
 #, kde-format
 msgctxt "@info: language name"
 msgid "Kannada"
-msgstr ""
+msgstr "坎那达语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:259
 #, kde-format
 msgctxt "@info: language name"
 msgid "Kazakh"
-msgstr ""
+msgstr "哈萨克语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:262
 #, kde-format
 msgctxt "@info: language name"
 msgid "Khmer"
-msgstr ""
+msgstr "高棉语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:265
 #, kde-format
 msgctxt "@info: language name"
 msgid "Kinyarwanda"
-msgstr ""
+msgstr "卢旺达语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:268
 #, kde-format
 msgctxt "@info: language name"
 msgid "Klingon"
-msgstr ""
+msgstr "克林贡语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:271
 #, kde-format
 msgctxt "@info: language name"
 msgid "Klingon (PlqaD)"
-msgstr ""
+msgstr "克林贡语 (PlqaD)"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:274
 #, kde-format
 msgctxt "@info: language name"
 msgid "Korean"
-msgstr ""
+msgstr "朝鲜语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:277
 #, kde-format
 msgctxt "@info: language name"
 msgid "Kurdish"
-msgstr ""
+msgstr "库尔德语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:280
 #, kde-format
 msgctxt "@info: language name"
 msgid "Kyrgyz"
-msgstr ""
+msgstr "吉尔吉斯语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:283
 #, kde-format
 msgctxt "@info: language name"
 msgid "Lao"
-msgstr ""
+msgstr "寮语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:286
 #, kde-format
 msgctxt "@info: language name"
 msgid "Latin"
-msgstr ""
+msgstr "拉丁语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:289
 #, kde-format
 msgctxt "@info: language name"
 msgid "Latvian"
-msgstr ""
+msgstr "拉脱维亚语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:292
 #, kde-format
 msgctxt "@info: language name"
 msgid "Levantine Arabic"
-msgstr ""
+msgstr "黎凡特阿拉伯语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:295
 #, kde-format
 msgctxt "@info: language name"
 msgid "Lithuanian"
-msgstr ""
+msgstr "立陶宛语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:298
 #, kde-format
 msgctxt "@info: language name"
 msgid "Luxembourgish"
-msgstr ""
+msgstr "卢森堡语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:301
 #, kde-format
 msgctxt "@info: language name"
 msgid "Macedonian"
-msgstr ""
+msgstr "马其顿语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:304
 #, kde-format
 msgctxt "@info: language name"
 msgid "Malagasy"
-msgstr ""
+msgstr "马尔加什语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:307
 #, kde-format
 msgctxt "@info: language name"
 msgid "Malay"
-msgstr ""
+msgstr "马来语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:310
 #, kde-format
 msgctxt "@info: language name"
 msgid "Malayalam"
-msgstr ""
+msgstr "马拉雅拉姆语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:313
 #, kde-format
 msgctxt "@info: language name"
 msgid "Maltese"
-msgstr ""
+msgstr "马耳他语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:316
 #, kde-format
 msgctxt "@info: language name"
 msgid "Maori"
-msgstr ""
+msgstr "毛利语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:319
 #, kde-format
 msgctxt "@info: language name"
 msgid "Marathi"
-msgstr ""
+msgstr "马拉地语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:322
 #, kde-format
 msgctxt "@info: language name"
 msgid "Mari"
-msgstr ""
+msgstr "马里语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:325
 #, kde-format
 msgctxt "@info: language name"
 msgid "Mongolian"
-msgstr ""
+msgstr "蒙古语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:328
 #, kde-format
 msgctxt "@info: language name"
 msgid "Myanmar"
-msgstr ""
+msgstr "缅甸语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:331
 #, kde-format
 msgctxt "@info: language name"
 msgid "Nepali"
-msgstr ""
+msgstr "尼泊尔语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:334
 #, kde-format
 msgctxt "@info: language name"
 msgid "Norwegian"
-msgstr ""
+msgstr "挪威语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:337
 #, kde-format
 msgctxt "@info: language name"
 msgid "Oriya"
-msgstr ""
+msgstr "奥里亚语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:340
 #, kde-format
 msgctxt "@info: language name"
 msgid "Chichewa"
-msgstr ""
+msgstr "齐切瓦语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:343
 #, kde-format
 msgctxt "@info: language name"
 msgid "Papiamento"
-msgstr ""
+msgstr "帕皮阿门托语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:346
 #, kde-format
 msgctxt "@info: language name"
 msgid "Pashto"
-msgstr ""
+msgstr "普什图语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:349
 #, kde-format
 msgctxt "@info: language name"
 msgid "Persian"
-msgstr ""
+msgstr "波斯语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:352
 #, kde-format
 msgctxt "@info: language name"
 msgid "Polish"
-msgstr ""
+msgstr "波兰语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:355
 #, kde-format
 msgctxt "@info: language name"
 msgid "Portuguese"
-msgstr ""
+msgstr "葡萄牙语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:358
 #, kde-format
 msgctxt "@info: language name"
 msgid "Punjabi"
-msgstr ""
+msgstr "旁遮普语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:361
 #, kde-format
 msgctxt "@info: language name"
 msgid "Queretaro Otomi"
-msgstr ""
+msgstr "克雷塔罗奥托米语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:364
 #, kde-format
 msgctxt "@info: language name"
 msgid "Romanian"
-msgstr ""
+msgstr "罗马尼亚语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:367
 #, kde-format
 msgctxt "@info: language name"
 msgid "Russian"
-msgstr ""
+msgstr "俄语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:370
 #, kde-format
 msgctxt "@info: language name"
 msgid "Samoan"
-msgstr ""
+msgstr "萨摩亚语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:373
 #, kde-format
 msgctxt "@info: language name"
 msgid "Scots Gaelic"
-msgstr ""
+msgstr "苏格兰盖尔语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:376
 #, kde-format
 msgctxt "@info: language name"
 msgid "Serbian (Cyrillic)"
-msgstr ""
+msgstr "塞尔维亚语 (西里尔字母)"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:379
 #, kde-format
 msgctxt "@info: language name"
 msgid "Serbian (Latin)"
-msgstr ""
+msgstr "塞尔维亚语 (拉丁字母)"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:382
 #, kde-format
 msgctxt "@info: language name"
 msgid "Sesotho"
-msgstr ""
+msgstr "塞索托语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:385
 #, kde-format
 msgctxt "@info: language name"
 msgid "Shona"
-msgstr ""
+msgstr "绍纳语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:388
 #, kde-format
 msgctxt "@info: language name"
 msgid "Sindhi"
-msgstr ""
+msgstr "信德语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:391
 #, kde-format
 msgctxt "@info: language name"
 msgid "Sinhala"
-msgstr ""
+msgstr "僧伽罗语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:394
 #, kde-format
 msgctxt "@info: language name"
 msgid "Slovak"
-msgstr ""
+msgstr "斯洛伐克语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:397
 #, kde-format
 msgctxt "@info: language name"
 msgid "Slovenian"
-msgstr ""
+msgstr "斯洛文尼亚语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:400
 #, kde-format
 msgctxt "@info: language name"
 msgid "Somali"
-msgstr ""
+msgstr "索马里语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:403
 #, kde-format
 msgctxt "@info: language name"
 msgid "Spanish"
-msgstr ""
+msgstr "西班牙语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:406
 #, kde-format
 msgctxt "@info: language name"
 msgid "Sundanese"
-msgstr ""
+msgstr "巽他语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:409
 #, kde-format
 msgctxt "@info: language name"
 msgid "Swahili"
-msgstr ""
+msgstr "斯瓦希里语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:412
 #, kde-format
 msgctxt "@info: language name"
 msgid "Swedish"
-msgstr ""
+msgstr "瑞典语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:415
 #, kde-format
 msgctxt "@info: language name"
 msgid "Tagalog"
-msgstr ""
+msgstr "他加禄语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:418
 #, kde-format
 msgctxt "@info: language name"
 msgid "Tahitian"
-msgstr ""
+msgstr "塔希提语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:421
 #, kde-format
 msgctxt "@info: language name"
 msgid "Tajik"
-msgstr ""
+msgstr "塔吉克语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:424
 #, kde-format
 msgctxt "@info: language name"
 msgid "Tamil"
-msgstr ""
+msgstr "泰米尔语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:427
 #, kde-format
 msgctxt "@info: language name"
 msgid "Tatar"
-msgstr ""
+msgstr "鞑靼语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:430
 #, kde-format
 msgctxt "@info: language name"
 msgid "Telugu"
-msgstr ""
+msgstr "泰卢固语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:433
 #, kde-format
 msgctxt "@info: language name"
 msgid "Thai"
-msgstr ""
+msgstr "泰语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:436
 #, kde-format
 msgctxt "@info: language name"
 msgid "Tongan"
-msgstr ""
+msgstr "汤加语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:439
 #, kde-format
 msgctxt "@info: language name"
 msgid "Turkish"
-msgstr ""
+msgstr "土耳其语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:442
 #, kde-format
 msgctxt "@info: language name"
 msgid "Turkmen"
-msgstr ""
+msgstr "土库曼语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:445
 #, kde-format
 msgctxt "@info: language name"
 msgid "Udmurt"
-msgstr ""
+msgstr "乌德穆尔特语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:448
 #, kde-format
 msgctxt "@info: language name"
 msgid "Uighur"
-msgstr ""
+msgstr "维吾尔语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:451
 #, kde-format
 msgctxt "@info: language name"
 msgid "Ukrainian"
-msgstr ""
+msgstr "乌克兰语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:454
 #, kde-format
 msgctxt "@info: language name"
 msgid "Urdu"
-msgstr ""
+msgstr "乌尔都语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:457
 #, kde-format
 msgctxt "@info: language name"
 msgid "Uzbek"
-msgstr ""
+msgstr "乌兹别克语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:460
 #, kde-format
 msgctxt "@info: language name"
 msgid "Vietnamese"
-msgstr ""
+msgstr "越南语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:463
 #, kde-format
 msgctxt "@info: language name"
 msgid "Welsh"
-msgstr ""
+msgstr "威尔士语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:466
 #, kde-format
 msgctxt "@info: language name"
 msgid "Xhosa"
-msgstr ""
+msgstr "科萨语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:469
 #, kde-format
 msgctxt "@info: language name"
 msgid "Yiddish"
-msgstr ""
+msgstr "意第绪语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:472
 #, kde-format
 msgctxt "@info: language name"
 msgid "Yoruba"
-msgstr ""
+msgstr "约鲁巴语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:475
 #, kde-format
 msgctxt "@info: language name"
 msgid "Yucatec Maya"
-msgstr ""
+msgstr "玛雅语"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:478
 #, kde-format
 msgctxt "@info: language name"
 msgid "Zulu"
-msgstr ""
+msgstr "祖鲁语"
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:48
 #, kde-format
 msgctxt "@info"
 msgid "Selected engine %1 does not support voice settings"
-msgstr ""
+msgstr "所选引擎 %1 不支持语音设置"
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "Selected engine %1 does not support emotion settings"
-msgstr ""
+msgstr "所选引擎 %1 不支持表情符号设置"
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:154
 #, kde-format
 msgctxt "@info"
 msgid "%1 engine does not support TTS"
-msgstr ""
+msgstr "%1 引擎不支持 TTS"
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:252
 #, kde-format
 msgctxt "@info"
 msgid "Selected language %1 is not supported for %2"
-msgstr ""
+msgstr "所选语言 %1 不支持 %2"
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:271
 #, kde-format
 msgctxt "@info"
 msgid "Selected voice %1 is not supported for %2"
-msgstr ""
+msgstr "所选语音 %1 不支持 %2"
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:290
 #, kde-format
 msgctxt "@info"
 msgid "Selected emotion %1 is not supported for %2"
-msgstr ""
+msgstr "所选表情符号 %1 不支持 %2"
 
 #: core/libs/widgets/text/donlinetranslator_yandex.cpp:60
 #, kde-format
@@ -47877,7 +47908,7 @@ msgstr "错误：无法从网页版本中提取 Yandex SID。"
 #, kde-format
 msgctxt "@title: translator language code"
 msgid "Code (Language-Country)"
-msgstr ""
+msgstr "代码 (语言-国家)"
 
 #: core/libs/widgets/text/localizeconfig.cpp:59
 #, kde-format
@@ -47889,25 +47920,25 @@ msgstr "语言名称"
 #, kde-format
 msgctxt "@info"
 msgid "Enter here a string to search in languages list..."
-msgstr ""
+msgstr "在此输入一个字符串以在语言列表中搜索..."
 
 #: core/libs/widgets/text/localizeconfig.cpp:147
 #, kde-format
 msgctxt "@info"
 msgid "Show only selected items (%1/%2)"
-msgstr ""
+msgstr "仅显示所选项目 (%1/%2)"
 
 #: core/libs/widgets/text/localizeconfig.cpp:228
 #, kde-format
 msgctxt "@title"
 msgid "Select Alternative Languages To Edit Text"
-msgstr ""
+msgstr "选择其他语言编辑文本"
 
 #: core/libs/widgets/text/localizeconfig.cpp:233
 #, kde-format
 msgctxt "@label"
 msgid "Online Translator:"
-msgstr ""
+msgstr "在线翻译服务："
 
 #: core/libs/widgets/text/localizeconfig.cpp:235
 #, kde-format
@@ -47927,24 +47958,28 @@ msgid ""
 "translator engine depending of desired target language, as not all world-"
 "wide languages are supported by online Web-services.</para>"
 msgstr ""
+"<para>翻译引擎是一种用于将文字从一种语言翻译为另一种语言的在线网络服务。此功"
+"能在元数据选项中可用，该选项支持备选语言，例如标题、说明文字等。翻译流程是全"
+"自动的，需要使用互联网连接。</para><para>由于并非每种在线翻译服务都能支持所有"
+"语言，用户应按照目标语言选择适合自己的翻译引擎。</para>"
 
 #: core/libs/widgets/text/localizeconfig.cpp:330
 #, kde-format
 msgctxt "@title"
 msgid "Available Translator Languages (%1/%2)"
-msgstr ""
+msgstr "可用翻译服务语言 (%1/%2)"
 
 #: core/libs/widgets/text/localizeselector.cpp:111
 #, kde-format
 msgctxt "@info"
 msgid "Open localize setup"
-msgstr ""
+msgstr "打开本地化设置"
 
 #: core/libs/widgets/text/localizeselector.cpp:150
 #, kde-format
 msgctxt "@info"
 msgid "Translate to %1"
-msgstr ""
+msgstr "翻译为 %1"
 
 #: core/libs/widgets/text/localizeselector.cpp:163
 #, kde-format
@@ -47956,13 +47991,13 @@ msgstr "选择要通过 %1 翻译的语言"
 #, kde-format
 msgctxt "@action"
 msgid "Remove this entry"
-msgstr ""
+msgstr "删除此条目"
 
 #: core/libs/widgets/text/localizeselector.cpp:263
 #, kde-format
 msgctxt "@action"
 msgid "Clear List"
-msgstr ""
+msgstr "清空列表"
 
 #: core/libs/widgets/text/searchtextbar.cpp:86
 #, kde-format
@@ -47994,12 +48029,17 @@ msgid ""
 "depends of open-source backends, including necessary dictionaries, to "
 "operate sentence analysis in desired languages.</para>"
 msgstr ""
+"<para>启用此项后将对说明、标题、以及其他文本框中输入的内容进行背景拼写检查。"
+"拼写检查功能会自动检测输入框中的当前语言并在拼写出错时提出修改建议。</"
+"para><para>对于可以指定替代语言的条目，上下文语言将被用于解析文本。拼写检查需"
+"要使用自由开源的第三方后端程序以及所需的词典才能在目标语言中进行语句分析。</"
+"para>"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:108
 #, kde-format
 msgctxt "@title"
 msgid "Available Language Dictionaries"
-msgstr ""
+msgstr "可用语言词典"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:121
 #, kde-format
@@ -48017,43 +48057,43 @@ msgstr "语言名称"
 #, kde-format
 msgctxt "@title"
 msgid "Available Backends"
-msgstr ""
+msgstr "可用后端程序"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:148
 #, kde-format
 msgctxt "@title"
 msgid "Ignored Words"
-msgstr ""
+msgstr "忽略的单词"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:154
 #, kde-format
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
-msgstr ""
+msgstr "在此设置拼写检查时要忽略的新单词"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:157
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove words to ignore while spell-checking operations."
-msgstr ""
+msgstr "您可以添加或者移除在拼写检查时要忽略的单词。"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:162
 #, kde-format
 msgctxt "@action"
 msgid "&Add..."
-msgstr ""
+msgstr "添加(&A)..."
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:163
 #, kde-format
 msgctxt "@action"
 msgid "&Remove"
-msgstr ""
+msgstr "移除(&R)"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:164
 #, kde-format
 msgctxt "@action"
 msgid "&Replace"
-msgstr ""
+msgstr "替换(&R)"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:106
 #, kde-format
@@ -52810,12 +52850,12 @@ msgstr "更少选项"
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:296
 #, kde-format
 msgid "Write locations as tags"
-msgstr ""
+msgstr "将位置作为标签写入"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:297
 #, kde-format
 msgid "Write locations metadata"
-msgstr ""
+msgstr "写入位置元数据"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:304
 #, kde-format
@@ -52971,7 +53011,7 @@ msgstr "锁定地图位置"
 #: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:346
 #, kde-format
 msgid "Load tracks from albums"
-msgstr ""
+msgstr "从相册中加载曲目"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:800
 #, kde-format
@@ -53067,7 +53107,7 @@ msgstr "未知"
 msgid ""
 "The free disk space in the path \"%1\" for the undo cache file is less than "
 "to 2 GiB! Undo cache is now disabled!"
-msgstr ""
+msgstr "撤销缓存文件路径“%1”的可用存储空间低于 2 GiB。撤销缓存已禁用。"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:114
 #, kde-format
@@ -56067,27 +56107,27 @@ msgstr "查找重复项目"
 #: core/utilities/maintenance/facesdetector.cpp:280
 #, kde-format
 msgid "Scan for faces in album: %1"
-msgstr ""
+msgstr "扫描相册中的人脸：%1"
 
 #: core/utilities/maintenance/facesdetector.cpp:284
 #, kde-format
 msgid "Scan for faces in %1 albums"
-msgstr ""
+msgstr "扫描 %1 个相册中的人脸"
 
 #: core/utilities/maintenance/facesdetector.cpp:291
 #, kde-format
 msgid "Scan for faces in image: %1"
-msgstr ""
+msgstr "扫描图像中的人脸：%1"
 
 #: core/utilities/maintenance/facesdetector.cpp:295
 #, kde-format
 msgid "Scan for faces in %1 images"
-msgstr ""
+msgstr "扫描 %1 张图像中的人脸"
 
 #: core/utilities/maintenance/facesdetector.cpp:300
 #, kde-format
 msgid "Updating faces database"
-msgstr ""
+msgstr "正在更新人脸数据库"
 
 #: core/utilities/maintenance/fingerprintsgenerator.cpp:101
 #, kde-format
@@ -56945,7 +56985,7 @@ msgstr "编辑工作流程"
 #, kde-format
 msgctxt "@action"
 msgid "Update Workflow"
-msgstr ""
+msgstr "更新工作流程"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:272
 #, kde-format
@@ -58786,13 +58826,13 @@ msgstr "此表列出了导入对话框中可用的各种筛选器。"
 #: core/utilities/setup/camera/setupcamera.cpp:426
 #, kde-format
 msgid "Use a space as a separator to specify multiple file names to ignore."
-msgstr ""
+msgstr "使用空格符作为分隔符来指定要忽略的多个文件名。"
 
 #: core/utilities/setup/camera/setupcamera.cpp:432
 #, kde-format
 msgid ""
 "Use a space as a separator to specify multiple file extensions to ignore."
-msgstr ""
+msgstr "使用空格符作为分隔符来指定要忽略的多个扩展名。"
 
 #: core/utilities/setup/camera/setupcamera.cpp:436
 #, kde-format
@@ -60363,13 +60403,13 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Note: see %1 of ExifTool backend."
-msgstr ""
+msgstr "提示：查看 ExifTool 后端程序的 %1。"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:228
 #, kde-format
 msgctxt "@label"
 msgid "write limitations"
-msgstr ""
+msgstr "写入限制"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:235
 #, kde-format
@@ -60377,13 +60417,13 @@ msgctxt "@label"
 msgid ""
 "Note: these options depends of %1 availability. Check in the ExifTool tab "
 "for details."
-msgstr ""
+msgstr "提示：这些选项取决于 %1 的可用情况。详情请检查 ExifTool 标签。"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:238
 #, kde-format
 msgctxt "@label"
 msgid "ExifTool backend"
-msgstr ""
+msgstr "ExifTool 后端程序"
 
 #: core/utilities/setup/metadata/setupmetadata_display.cpp:28
 #, kde-format
@@ -61116,7 +61156,7 @@ msgctxt "@title"
 msgid ""
 "Image Quality Sorter Settings\n"
 "Customize default settings to perform image triaging by quality"
-msgstr ""
+msgstr "图像品质分类器设置"
 
 #: core/utilities/setup/setup.cpp:206
 #, kde-format
@@ -61586,12 +61626,19 @@ msgid ""
 "deep learning is an end-to-end solution, it doesn’t require hyper-parameter "
 "settings, and make this feature easier to use."
 msgstr ""
+"这些设置将决定图像的品质并将其转换为一个分数，保存在挑选标记的属性中。可以通"
+"过两种方式来进行评估图像品质：使用图像品质劣化的四大因素 (模糊、噪点、曝光、"
+"压缩)，或者使用神经网络深度学习引擎。第一种方式可以帮助用户确定以图像品质劣化"
+"的四大基本因素确定的图像品质，但需要用户进行许多微调，而且无法配合美学价值检"
+"测引擎使用。第二种方式使用一种基于 AI 的方式来检测，基于 %1 模型来预测图像的"
+"品质评分。因为深度学习是一套端到端解决方案，它不需要进行许多设置，因此更易于"
+"使用。"
 
 #: core/utilities/setup/setupimagequalitysorter.cpp:64
 #, kde-format
 msgctxt "@label"
 msgid "aesthetic image quality"
-msgstr ""
+msgstr "图像美学价值"
 
 #: core/utilities/setup/setuplighttable.cpp:91
 #, kde-format
@@ -62076,10 +62123,3 @@ msgstr "点击此按钮将所有视频设置重置为默认值。"
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "您想要重置所有视频设置为默认值吗？"
-
-#~ msgid ""
-#~ "https://docs.kde.org/?application=digikam&branch=trunk5&path=using-"
-#~ "digikam.html#using-mainwindow-peopleview"
-#~ msgstr ""
-#~ "https://docs.kde.org/?application=digikam&branch=trunk5&path=using-"
-#~ "digikam.html#using-mainwindow-peopleview"

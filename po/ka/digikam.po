@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-30 00:49+0000\n"
-"PO-Revision-Date: 2023-01-01 07:55+0100\n"
+"PO-Revision-Date: 2023-01-02 04:49+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1480,7 +1480,7 @@ msgstr "აირჩიეთ დასამუშავებელი სა�
 #: core/app/main/digikamapp_import.cpp:101
 #, kde-format
 msgid "Select folders to import into album"
-msgstr ""
+msgstr "აირჩიეთ საქაღალდეები ალბომში შემოსატანად"
 
 #: core/app/main/digikamapp_import.cpp:143
 #, kde-format
@@ -1535,7 +1535,7 @@ msgstr "&ახალი..."
 #, kde-format
 msgctxt "@info: setup"
 msgid "Creates a new empty Album in the collection."
-msgstr ""
+msgstr "კოლექციაში ახალი ცარიელი ალბომის შექმნა"
 
 #: core/app/main/digikamapp_setup.cpp:200
 #, kde-format
@@ -3055,8 +3055,8 @@ msgstr "დაადასტურეთ გაუქმება"
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "დარწმუნებული ბრძანდებით, რომ გნებავთ, აღადგინოთ %1 ჩანაწერი?"
+msgstr[1] "დარწმუნებული ბრძანდებით, რომ გნებავთ, აღადგინოთ %1 ჩანაწერი?"
 
 #: core/app/views/stack/trashview.cpp:266
 #, kde-format
@@ -3084,7 +3084,7 @@ msgstr ""
 #: core/app/views/stack/trashview.cpp:435
 #, kde-format
 msgid "%1/%2 items selected"
-msgstr ""
+msgstr "მონიშნულია ჩანაწერი %1/%2"
 
 #: core/app/views/stack/welcomepageview.cpp:140
 #, kde-format
@@ -7912,7 +7912,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Black && White..."
-msgstr "შავი და თეთრი"
+msgstr "შავი და თეთრი..."
 
 #: core/dplugins/editor/colors/channelmixer/channelmixertool.cpp:170
 #, kde-format

@@ -51,7 +51,7 @@
 # Marta Rybczyńska <kde-i18n@rybczynska.net>, 2008, 2010.
 # Mateusz "Święty" Pogorzelski <vlogical@o2.pl>, 2009.
 # Marta Rybczynska <kde-i18n@rybczynska.net>, 2009.
-# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011, 2012, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011, 2012, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Grzesiek11 <grzesiek.jedenastka@outlook.com>, 2021.
 # Marcin Stanclik <mstanclik@yahoo.com>, 2021.
 # Ignacy Kajdan <ignacy.kajdan@gmail.com>, 2021.
@@ -60,14 +60,14 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-30 00:49+0000\n"
-"PO-Revision-Date: 2022-09-28 20:47+0200\n"
+"PO-Revision-Date: 2023-01-02 20:50+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.04.1\n"
+"X-Generator: Lokalize 22.12.0\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
@@ -1350,7 +1350,7 @@ msgstr "Parametry techniczne"
 #: core/app/items/utils/tooltipfiller.cpp:727
 #, kde-format
 msgid "<i>Binary Data</i>"
-msgstr "<i>Dane binarne</i>"
+msgstr "<i>Dane dwójkowe</i>"
 
 #: core/app/main/digikamapp.cpp:68
 #, kde-format

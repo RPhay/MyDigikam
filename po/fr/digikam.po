@@ -63,14 +63,15 @@
 #
 # Gilles Caulier <caulier dot gilles at free dot fr>, 2004.
 # Xavier Verne <xavier dot verne at free.fr>, 2005, 2012.
+# Xavier BESNARD <xavier.besnard]neuf.fr>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-30 00:49+0000\n"
-"PO-Revision-Date: 2022-12-27 10:08+0100\n"
-"Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
-"Language-Team: French <kde-francophone@kde.org>\n"
+"PO-Revision-Date: 2023-01-02 15:52+0100\n"
+"Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
+"Language-Team: fr\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -4508,7 +4509,7 @@ msgstr "Flèche vers le haut / bas : + / - pour le volume\n"
 #, kde-format
 msgctxt "@info"
 msgid "Ctrl+Up/Down: speed +/-\n"
-msgstr "CTRL + Flèche vers le haut / bas :  + / - pour la vitesse\n"
+msgstr "CTRL + Flèche vers le haut / bas : + / - pour la vitesse\n"
 
 #: core/avplayer/filters/EventFilter.cpp:124
 #, kde-format
@@ -4581,13 +4582,13 @@ msgstr "Erreur du lecteur"
 #, kde-format
 msgctxt "@info: media loading"
 msgid "No media"
-msgstr "Aucun media"
+msgstr "Aucun média"
 
 #: core/avplayer/main/MainWindow_io.cpp:731
 #, kde-format
 msgctxt "@info: media loading"
 msgid "Invalid media"
-msgstr "Media non valable"
+msgstr "Média non valable"
 
 #: core/avplayer/main/MainWindow_io.cpp:738
 #, kde-format
@@ -4970,7 +4971,7 @@ msgstr "Impossible d'utiliser ce moteur de rendu"
 msgctxt "@info"
 msgid "Use Ctrl/Shift + Click to select multiple items"
 msgstr ""
-"Utiliser « CTRL » / « Maj » + un clic  pour sélectionner plusieurs éléments."
+"Utiliser « CTRL » / « Maj » + un clic pour sélectionner plusieurs éléments."
 
 #: core/avplayer/playlist/PlayList.cpp:63
 #, kde-format
@@ -5171,7 +5172,7 @@ msgstr "Taille de trames"
 #, kde-format
 msgctxt "@title"
 msgid "Media info"
-msgstr "Informations sur le media"
+msgstr "Informations sur le média"
 
 #: core/avplayer/utils/StatisticsView.cpp:147
 #, kde-format
@@ -18784,8 +18785,8 @@ msgctxt "@info"
 msgid ""
 "Press this button to preview the stream on your computer with your browser."
 msgstr ""
-"Appuyez sur ce bouton pour pré-afficher le flux sur votre ordinateur avec "
-"votre navigateur."
+"Appuyez sur ce bouton pour afficher un aperçu du flux sur votre ordinateur "
+"avec votre navigateur."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:111
 #, kde-format
@@ -19107,7 +19108,7 @@ msgstr ""
 "un standard permettant à des clients sur un réseau d'être connectés sans "
 "module supplémentaire. La plupart des principaux navigateurs Internet et "
 "lecteurs prennent en charge les flux « MJPEG ». </p><p>Pour accéder à un "
-"flux à partir de votre navigateur, veuillez utiliser l'URL http://addresse : "
+"flux à partir de votre navigateur, veuillez utiliser l'URL http://adresse : "
 "port, où le paramètre « adresse » se réfère à l'adresse « MJPEG » et le "
 "paramètre « port » est le port « MJPEG » défini dans la boîte de dialogue de "
 "configuration. Plusieurs ordinateurs peuvent être connectés en même temps, "
@@ -19491,7 +19492,7 @@ msgstr ""
 "mais il n'est pas compatible avec les langues utilisant des glyphes comme le "
 "chinois ou le japonais.\n"
 "Vous pouvez utiliser le mode « Détection d'orientation et de scripts » à la "
-"place ou un module de langue spécifique , si disponible."
+"place ou un module de langue spécifique, si disponible."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:98
 #, kde-format
@@ -27637,13 +27638,13 @@ msgstr ""
 "La base de données de jeu de caractères a été modifiée depuis la dernière "
 "ouverture de cet album.\n"
 "Ancien jeu de caractères  : %1, nouveau jeu de caractères  : %2\n"
-"Si vous avez récemment modifié votre base de données de jeu de caractères , "
+"Si vous avez récemment modifié votre base de données de jeu de caractères, "
 "vous n'avez pas à vous en préoccuper.\n"
 "Veuillez noter que si vous avez basculé vers une base de données de jeu de "
 "caractères ne prenant pas en charge certains des noms de fichiers présents "
 "dans votre collection, ces fichiers risquent d'être introuvables dans la "
 "collection. Si vous voulez vraiment continuer, cliquez sur « Oui ». Sinon, "
-"cliquez sur « Non » et corrigez votre base de données de jeu de caractères  "
+"cliquez sur « Non » et corrigez votre base de données de jeu de caractères "
 "avant de redémarrer digiKam."
 
 #: core/libs/album/manager/albummanager_database.cpp:298
@@ -29728,7 +29729,7 @@ msgstr ""
 "pour la base de données des vignettes.</p><p>Remarque : il n'est pas "
 "possible d'utiliser un système de fichiers distant comme « NFS » ici. Pour "
 "des raisons de performances, il est déconseillé d'utiliser un périphérique "
-"amovible« .</p><p></p>"
+"amovible.</p><p></p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
 #, kde-format
@@ -29758,9 +29759,9 @@ msgstr ""
 "enregistrant les transactions demandées mais non encore appliquées aux bases "
 "de données. Il utilise un fichier journalisé auxiliaire pour héberger les "
 "structures pour les transactions de récupération suite à un plantage. Les "
-"modifications sont d’abord enregistrées dans le journal, avant que les "
+"modifications sont d'abord enregistrées dans le journal, avant que les "
 "modifications ne soient écrites dans la base de données. Cela a rend des "
-"demandes de base de données atomiques et robustes dans les cas d’utilisation "
+"demandes de base de données atomiques et robustes dans les cas d'utilisation "
 "intensives et critiques."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:131
@@ -50113,11 +50114,11 @@ msgid ""
 "wide languages are supported by online Web-services.</para>"
 msgstr ""
 "<p>Le moteur de traduction est un service Internet en ligne utilisé pour "
-"traduire du texte d’une langue à une autre. Cette fonctionnalité est "
-"disponible sur l’option de métadonnées où le langage alternatif est pris en "
+"traduire du texte d'une langue à une autre. Cette fonctionnalité est "
+"disponible sur l'option de métadonnées où le langage alternatif est pris en "
 "charge, comme pour un titre, une légende, etc. Le processus de traduction "
 "est totalement automatisé, mais il nécessite une connexion à Internet pour "
-"fonctionner. </p><p>L’utilisateur peut sélectionner le moteur de traduction "
+"fonctionner. </p><p>L'utilisateur peut sélectionner le moteur de traduction "
 "le plus approprié en fonction de la langue cible souhaitée, car toutes les "
 "langues du monde ne sont pas prises en charge par les services Internet en "
 "ligne. </p>"
@@ -57721,7 +57722,7 @@ msgstr ""
 #: core/utilities/import/main/importui.cpp:1455
 #, kde-kuit-format
 msgid "Failed to move file for <filename>%1</filename>"
-msgstr "Impossible de déplacer le fichier « <filename>%1</filename>"
+msgstr "Impossible de déplacer le fichier <filename>%1</filename>"
 
 #: core/utilities/import/main/importui.cpp:1882
 #, kde-format
@@ -64718,9 +64719,9 @@ msgstr ""
 "inconvénients, comme la nécessité d'un réglage fin de la part de "
 "l'utilisateur, et elle ne peut pas fonctionner dans le cadre du traitement "
 "esthétique des images. La seconde utilise une approche d'intelligence "
-"artificielle, reposant   sur le modèle %1 pour prédire le score. "
-"L'apprentissage profond étant une solution de bout en bout, il ne nécessite  "
-"aucun  configuration hyper-paramétriques, ce qui rend cette fonction plus "
+"artificielle, reposant sur le modèle %1 pour prédire le score. "
+"L'apprentissage profond étant une solution de bout en bout, il ne nécessite "
+"aucun configuration hyper-paramétriques, ce qui rend cette fonction plus "
 "facile à utiliser."
 
 #: core/utilities/setup/setupimagequalitysorter.cpp:64

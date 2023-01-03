@@ -25,13 +25,13 @@
 # Copyright (C) 2009 This_file_is_part_of_KDE
 # This file is distributed under the same license as the digikam package.
 #
-# Sveinn í Felli <sv1@fellsnet.is>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# Sveinn í Felli <sv1@fellsnet.is>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-30 00:49+0000\n"
-"PO-Revision-Date: 2022-12-11 09:33+0000\n"
+"PO-Revision-Date: 2023-01-02 13:45+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -3489,18 +3489,13 @@ msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li><li>%2</li>"
 
 #: core/app/views/stack/welcomepageview.cpp:218
-#, fuzzy, kde-format
-#| msgid ""
-#| "digiKam has many powerful features which are described in the <a href="
-#| "\"https://docs.kde.org/?"
-#| "application=digikam&branch=trunk5\">documentation</a>"
+#, kde-format
 msgid ""
 "digiKam has many powerful features which are described in the <a href="
 "\"https://docs.digikam.org/en/index.html\">documentation</a>"
 msgstr ""
 "digiKam er með marga öfluga eiginleika, sem lýst er nánar í <a href="
-"\"https://docs.kde.org/?application=digikam&branch=trunk5\">hjálparskjölum</"
-"a>"
+"\"https://docs.digikam.org/en/index.html\">hjálparskjölunum</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:219
 #, kde-format
@@ -42776,10 +42771,9 @@ msgid "A KDE Family Project"
 msgstr "Verkefni frá KDE-fjölskyldunni"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:68
-#, fuzzy, kde-format
-#| msgid "(c) 2001-2022, digiKam developers team"
+#, kde-format
 msgid "(c) 2001-2023, digiKam developers team"
-msgstr "(c) 2002-2022, digiKam þróunarteymið"
+msgstr "(c) 2002-2023, digiKam þróunarteymið"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:80
 #, kde-format
