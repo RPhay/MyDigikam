@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-30 00:49+0000\n"
+"POT-Creation-Date: 2023-01-04 00:45+0000\n"
 "PO-Revision-Date: 2022-11-24 05:00+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -23060,7 +23060,7 @@ msgstr "Hautapena"
 msgid "Play With Sub-Albums"
 msgstr "Azpi-album guztiekin"
 
-#: core/dplugins/generic/view/slideshow/widgets/slideend.cpp:70
+#: core/dplugins/generic/view/slideshow/widgets/slideend.cpp:69
 #, kde-format
 msgid ""
 "Slideshow Completed.\n"
@@ -23071,7 +23071,7 @@ msgstr ""
 "Klik egin irteteko\n"
 "edo sakatu Ihes..."
 
-#: core/dplugins/generic/view/slideshow/widgets/slideerror.cpp:81
+#: core/dplugins/generic/view/slideshow/widgets/slideerror.cpp:80
 #, kde-format
 msgid ""
 "An error has occurred to show item\n"

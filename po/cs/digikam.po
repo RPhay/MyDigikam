@@ -3,22 +3,22 @@
 # Zdeněk Pech <zdpech@seznam.cz>, 2010.
 # Vít Pelčák <vit@pelcak.org>, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012, 2013.
-# Vit Pelcak <vpelcak@suse.cz>, 2021, 2022.
+# Vit Pelcak <vit@pelcak.org>, 2021, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-30 00:49+0000\n"
-"PO-Revision-Date: 2022-09-21 19:06+0200\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"POT-Creation-Date: 2023-01-04 00:45+0000\n"
+"PO-Revision-Date: 2023-01-03 15:42+0100\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.08.1\n"
+"X-Generator: Lokalize 22.12.0\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -1315,7 +1315,7 @@ msgstr "Kontroluje se repozitář ICC..."
 #: core/app/main/digikamapp.cpp:170
 #, kde-format
 msgid "Clean up Database..."
-msgstr ""
+msgstr "Vyčistit databázi..."
 
 #: core/app/main/digikamapp.cpp:188
 #, kde-format
@@ -1844,7 +1844,7 @@ msgstr "Vyhledat obličeje"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Recognize Faces"
-msgstr ""
+msgstr "Rozpoznávat obličeje"
 
 #: core/app/main/digikamapp_setup.cpp:450
 #, kde-format
@@ -2782,7 +2782,7 @@ msgstr "Smazat všechny obličeje na tomto obrázku"
 #: core/app/views/preview/itempreviewview.cpp:207
 #, kde-format
 msgid "Mark all unknown faces as ignored"
-msgstr ""
+msgstr "Označit všechny neznámé obličeje jako ignorované"
 
 #: core/app/views/preview/itempreviewview.cpp:214
 #, kde-format
@@ -3066,8 +3066,7 @@ msgstr "Poslední hledání"
 
 #: core/app/views/stack/itemiconview_search.cpp:66
 #: core/app/views/stack/itemiconview_search.cpp:108
-#, fuzzy, kde-format
-#| msgid "Face Detection"
+#, kde-format
 msgid "FacesDetector"
 msgstr "Detekce obličeje"
 
@@ -3439,17 +3438,11 @@ msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li><li>%2</li>"
 
 #: core/app/views/stack/welcomepageview.cpp:218
-#, fuzzy, kde-format
-#| msgid ""
-#| "digiKam has many powerful features which are described in the <a href="
-#| "\"https://docs.kde.org/?"
-#| "application=digikam&branch=trunk5\">documentation</a>"
+#, kde-format
 msgid ""
 "digiKam has many powerful features which are described in the <a href="
 "\"https://docs.digikam.org/en/index.html\">documentation</a>"
 msgstr ""
-"digiKam má spousty užitečných funkcí, které jsou popsány <a href=\"https://"
-"docs.kde.org/?application=digikam&branch=trunk5\">v dokumentaci</a>"
 
 #: core/app/views/stack/welcomepageview.cpp:219
 #, kde-format
@@ -4990,7 +4983,7 @@ msgstr "Kanály"
 #, kde-format
 msgctxt "@option: audio"
 msgid "Channel layout"
-msgstr ""
+msgstr "Rozložení kanálů"
 
 #: core/avplayer/utils/StatisticsView.cpp:78
 #, kde-format
@@ -18314,7 +18307,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action: button"
 msgid "Save"
-msgstr ""
+msgstr "Uložit"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:233
 #, kde-format
@@ -18326,38 +18319,38 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Processing %1"
-msgstr ""
+msgstr "Zpracování %1"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:456
 #, kde-format
 msgctxt "@info"
 msgid "Process failed"
-msgstr ""
+msgstr "Proces selhal"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:462
 #, kde-format
 msgctxt "@info"
 msgid "Process canceled"
-msgstr ""
+msgstr "Proces zrušen"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:470
 #, kde-format
 msgctxt "@info"
 msgid "Internal error"
-msgstr ""
+msgstr "Vnitřní chyba"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:521
 #, kde-format
 msgctxt "@info"
 msgid "Success"
-msgstr ""
+msgstr "Úspěch"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:585
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:597
 #, kde-format
 msgctxt "@title"
 msgid "Text Converter"
-msgstr ""
+msgstr "Převod textu"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:586
 #, kde-format
@@ -18371,7 +18364,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "&Abort"
-msgstr ""
+msgstr "&Přerušit"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:671
 #, kde-format
@@ -18383,7 +18376,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "&Start OCR"
-msgstr ""
+msgstr "&Spustit OCR"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:677
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:716
@@ -18447,7 +18440,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Languages:"
-msgstr ""
+msgstr "Jazyky:"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:89
 #, kde-format
@@ -18479,7 +18472,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Engine mode:"
-msgstr ""
+msgstr "Režim nástroje:"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:130
 #, kde-format
@@ -18509,7 +18502,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Text file"
-msgstr ""
+msgstr "Textový soubor"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:145
 #, kde-format
@@ -18521,7 +18514,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Metadata"
-msgstr ""
+msgstr "Metadata"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:149
 #, kde-format
@@ -18545,7 +18538,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option: default Tesseract mode"
 msgid "Default"
-msgstr ""
+msgstr "Výchozí"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:295
 #, kde-format
@@ -21774,7 +21767,7 @@ msgstr ""
 msgid "Play With Sub-Albums"
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/widgets/slideend.cpp:70
+#: core/dplugins/generic/view/slideshow/widgets/slideend.cpp:69
 #, kde-format
 msgid ""
 "Slideshow Completed.\n"
@@ -21785,7 +21778,7 @@ msgstr ""
 "Klikněte pro ukončení\n"
 "nebo stiskněte ESC..."
 
-#: core/dplugins/generic/view/slideshow/widgets/slideerror.cpp:81
+#: core/dplugins/generic/view/slideshow/widgets/slideerror.cpp:80
 #, kde-format
 msgid ""
 "An error has occurred to show item\n"
@@ -26357,11 +26350,10 @@ msgstr ""
 "(\"%2\"). Bude vytvořena prázdná databáze."
 
 #: core/libs/album/manager/albummanager_database.cpp:751
-#, fuzzy, kde-format
-#| msgid "New database folder"
+#, kde-format
 msgctxt "@action:button"
 msgid "New database"
-msgstr "Nová složka databáze"
+msgstr ""
 
 #: core/libs/album/manager/albummanager_palbum.cpp:344
 #, kde-format
@@ -28146,17 +28138,7 @@ msgid ""
 msgstr ""
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Set here the location where the database files will be stored on your "
-#| "system. There are three databases: one for all collections properties, "
-#| "one to store compressed thumbnails, and one to store faces recognition "
-#| "metadata.<br/>Write access is required to be able to edit image "
-#| "properties.</p><p>Databases are digiKam core engines. Take care to use a "
-#| "place hosted by fast hardware (as SSD) with enough free space especially "
-#| "for thumbnails database.</p><p>Note: a remote file system such as NFS, "
-#| "cannot be used here. For performance reasons, it is also recommended not "
-#| "to use removable media.</p><p></p>"
+#, kde-format
 msgid ""
 "<p>Set here the location where the database files will be stored on your "
 "system. There are four databases: one for all collections properties, one to "
@@ -28168,15 +28150,6 @@ msgid ""
 "such as NFS, cannot be used here. For performance reasons, it is also "
 "recommended not to use removable media.</p><p></p>"
 msgstr ""
-"<p>Zvolte si umístění, kde budou uloženy soubory databáze. Budou celkem tři "
-"databáze: jedna pro uložení všech vlastností sbírek, jedna pro uložení "
-"komprimovaných náhledů a jedna pro uložení metadat rozpoznávání obličejů.<br/"
-">Aby bylo možné upravovat vlastnosti obrázků, je vyžadováno právo zápisu.</"
-"p><p>Databáze jsou nejdůležitější soubory digiKamu. Zvolte umístění na "
-"rychlém disku (například SSD) s dostatkem místa - obzvláště pro databázi "
-"náhledů.</p><p>Poznámka: Nelze použít vzdálený systém souborů (například "
-"NFS). Zároveň z výkonových důvodů není vhodné používat výměnná média.</"
-"p><p></p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
 #, kde-format
@@ -34090,7 +34063,7 @@ msgstr "Vybrat vše"
 #, kde-format
 msgctxt "@option:radio"
 msgid "Use default settings"
-msgstr ""
+msgstr "Použít výchozí nastavení"
 
 #: core/libs/imgqsort/imagequalityconfselector.cpp:75
 #, kde-format
@@ -34102,7 +34075,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:radio"
 msgid "Use custom settings"
-msgstr ""
+msgstr "Použít vlastní nastavení"
 
 #: core/libs/imgqsort/imagequalityconfselector.cpp:83
 #, kde-format
@@ -34114,7 +34087,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Rejected' Label to Low Quality Pictures"
-msgstr ""
+msgstr "Přiřadit nekvalitním obrázkům štítek 'Odmítnuto'"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:125
 #, kde-format
@@ -34123,12 +34096,14 @@ msgid ""
 "Low quality images detected by blur, noise, and compression analysis will be "
 "assigned to Rejected label."
 msgstr ""
+"Obrázky vyhodnocené na základě analýzy rozmazání, šumu a komprese jako "
+"nekvalitní budou označené štítkem 'Odmítnuto'."
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:137
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Pending' Label to Medium Quality Pictures"
-msgstr ""
+msgstr "Přiřadit středně kvalitním obrázkům štítek 'Čeká se'"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:138
 #, kde-format
@@ -34137,12 +34112,14 @@ msgid ""
 "Medium quality images detected by blur, noise, and compression analysis will "
 "be assigned to Pending label."
 msgstr ""
+"Obrázky vyhodnocené na základě analýzy rozmazání, šumu a komprese jako "
+"středně kvalitní budou označené štítkem 'Čeká se'."
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:150
 #, kde-format
 msgctxt "@option:check"
 msgid "Assign 'Accepted' Label to High Quality Pictures"
-msgstr ""
+msgstr "Přiřadit kvalitním obrázkům štítek 'Přijato'"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:151
 #, kde-format
@@ -34151,6 +34128,8 @@ msgid ""
 "High quality images detected by blur, noise, and compression analysis will "
 "be assigned to Accepted label."
 msgstr ""
+"Obrázky vyhodnocené na základě analýzy rozmazání, šumu a komprese jako "
+"kvalitní budou označené štítkem 'Přijato'."
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:164
 #, kde-format
@@ -34184,49 +34163,49 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Rejected threshold:"
-msgstr ""
+msgstr "Odmítnutý práh:"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:189
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Rejected Label"
-msgstr ""
+msgstr "Prahová hodnota, pod níž budou obrázky označeny jako odmítnuté"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:191
 #, kde-format
 msgctxt "@label"
 msgid "Pending threshold:"
-msgstr ""
+msgstr "Práh čekání:"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:196
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold below which all pictures are assigned Pending Label"
-msgstr ""
+msgstr "Prahová hodnota, pod níž budou obrázky označeny jako 'Čeká se'"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:198
 #, kde-format
 msgctxt "@label"
 msgid "Accepted threshold:"
-msgstr ""
+msgstr "Přijatý práh:"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:203
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Threshold above which all pictures are assigned Accepted Label"
-msgstr ""
+msgstr "Prahová hodnota, nad níž budou obrázky označeny jako 'Přijato'"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:205
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Blur"
-msgstr ""
+msgstr "Detekovat rozmazání"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:206
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of blur in the images passed to it"
-msgstr ""
+msgstr "Detekovat množství rozmazání v předaných obrázcích"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:208
 #: core/libs/imgqsort/imagequalitysettings.cpp:218
@@ -34234,49 +34213,49 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Weight:"
-msgstr ""
+msgstr "Váha:"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:213
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Blur Algorithm"
-msgstr ""
+msgstr "Váha přiřazena kritériu rozmazání"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:215
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Noise"
-msgstr ""
+msgstr "Detekovat šum"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:216
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of noise in the images passed to it"
-msgstr ""
+msgstr "Detekovat množství šumu v předaných obrázcích"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:223
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Noise Algorithm"
-msgstr ""
+msgstr "Váha přiřazena kritériu šum"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:225
 #, kde-format
 msgctxt "@option:check"
 msgid "Detect Compression"
-msgstr ""
+msgstr "Detekovat kompresi"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:226
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Detect the amount of compression in the images passed to it"
-msgstr ""
+msgstr "Detekovat množství komprese v předaných obrázcích"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:233
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Weight to assign to Compression Algorithm"
-msgstr ""
+msgstr "Váha přiřazena kritériu komprese"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:235
 #, kde-format
@@ -34669,12 +34648,13 @@ msgctxt "@info: country code"
 msgid "German"
 msgstr "Němčina"
 
+# TO
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:349
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:497
 #, kde-format
 msgctxt "@info: country code"
 msgid "Dzongkha"
-msgstr ""
+msgstr "Dzongkha"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:350
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:498
@@ -35104,7 +35084,7 @@ msgstr "Okcitánština"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Oromo"
-msgstr ""
+msgstr "Oromo"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:411
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:559
@@ -35942,175 +35922,175 @@ msgstr "Sem zadejte popisek jméno autora."
 msgctxt "@info"
 msgid "You have edited the image caption. "
 msgid_plural "You have edited the captions of %1 images. "
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Byl změněn popisek obrázku. "
+msgstr[1] "Byl změněn popisek %1 obrázků. "
+msgstr[2] "Byl změněn popisek %1 obrázků. "
 
 #: core/libs/properties/captions/itemdescedittab.cpp:271
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the image title. "
 msgid_plural "You have edited the titles of %1 images. "
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Byl změněn název obrázku. "
+msgstr[1] "Byl změněn název %1 obrázků. "
+msgstr[2] "Byl změněn název %1 obrázků. "
 
 #: core/libs/properties/captions/itemdescedittab.cpp:277
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the date of the image. "
 msgid_plural "You have edited the date of %1 images. "
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Bylo změněno datum obrázku. "
+msgstr[1] "Bylo změněno datum %1 obrázků. "
+msgstr[2] "Bylo změněno datum %1 obrázků. "
 
 #: core/libs/properties/captions/itemdescedittab.cpp:283
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the pick label of the image. "
 msgid_plural "You have edited the pick label of %1 images. "
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Byl změněn štítek výběru obrázku. "
+msgstr[1] "Byly změněny štítky výběru %1 obrázků. "
+msgstr[2] "Byly změněny štítky výběru %1 obrázků. "
 
 #: core/libs/properties/captions/itemdescedittab.cpp:289
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the color label of the image. "
 msgid_plural "You have edited the color label of %1 images. "
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Byl změněn barevný štítek obrázku. "
+msgstr[1] "Byly změněny barevné štítky %1 obrázků. "
+msgstr[2] "Byly změněny barevné štítky %1 obrázků. "
 
 #: core/libs/properties/captions/itemdescedittab.cpp:295
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the rating of the image. "
 msgid_plural "You have edited the rating of %1 images. "
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Bylo změněno hodnocení obrázku. "
+msgstr[1] "Bylo změněno hodnocení %1 obrázků. "
+msgstr[2] "Bylo změněno hodnocení %1 obrázků. "
 
 #: core/libs/properties/captions/itemdescedittab.cpp:301
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the tags of the image. "
 msgid_plural "You have edited the tags of %1 images. "
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Byly změněny značky obrázku. "
+msgstr[1] "Byly změněny značky %1 obrázků. "
+msgstr[2] "Byly změněny značky %1 obrázků. "
 
 #: core/libs/properties/captions/itemdescedittab.cpp:306
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to apply your changes?"
-msgstr ""
+msgstr "Přejete si uplatnit změny?"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:310
 #, kde-format
 msgctxt "@info"
 msgid "<p>You have edited the metadata of the image: </p>"
 msgid_plural "<p>You have edited the metadata of %1 images: </p>"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "<p>Byla změněna metadata obrázku: </p>"
+msgstr[1] "<p>Byla změněna metadata %1 obrázků: </p>"
+msgstr[2] "<p>Byla změněna metadata %1 obrázků: </p>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:318
 #, kde-format
 msgctxt "@info"
 msgid "<li>title</li>"
-msgstr ""
+msgstr "<li>Název</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:323
 #, kde-format
 msgctxt "@info"
 msgid "<li>caption</li>"
-msgstr ""
+msgstr "<li>titulek</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:328
 #, kde-format
 msgctxt "@info"
 msgid "<li>date</li>"
-msgstr ""
+msgstr "<li>Datum</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:333
 #, kde-format
 msgctxt "@info"
 msgid "<li>pick label</li>"
-msgstr ""
+msgstr "<li>štítek výběru</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:338
 #, kde-format
 msgctxt "@info"
 msgid "<li>color label</li>"
-msgstr ""
+msgstr "<li>barevný štítek</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:343
 #, kde-format
 msgctxt "@info"
 msgid "<li>rating</li>"
-msgstr ""
+msgstr "<li>hodnocení</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:348
 #, kde-format
 msgctxt "@info"
 msgid "<li>tags</li>"
-msgstr ""
+msgstr "<li>značky</li>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:353
 #, kde-format
 msgctxt "@info"
 msgid "<p>Do you want to apply your changes?</p>"
-msgstr ""
+msgstr "<p>Přejete si provést změny?</p>"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:356
 #, kde-format
 msgctxt "@action"
 msgid "Always apply changes without confirmation"
-msgstr ""
+msgstr "Vždy provádět změny bez potvrzení"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:359
 #, kde-format
 msgctxt "@title"
 msgid "Apply changes?"
-msgstr ""
+msgstr "Provést změny?"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:369
 #, kde-format
 msgctxt "@info"
 msgid "Apply changes?"
-msgstr ""
+msgstr "Provést změny?"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:428
 #, kde-format
 msgctxt "@info"
 msgid "Reading metadata from files. Please wait..."
-msgstr ""
+msgstr "Načítání metadat ze souborů. Prosím, čekejte..."
 
 #: core/libs/properties/captions/itemdescedittab.cpp:460
 #, kde-format
 msgctxt "@info"
 msgid "Writing metadata to files. Please wait..."
-msgstr ""
+msgstr "Zapisuji do souborů metadata. Prosím, čekejte..."
 
 #: core/libs/properties/captions/itemdescedittab.cpp:503
 #, kde-format
 msgctxt "@action"
 msgid "Read metadata from file to database"
-msgstr ""
+msgstr "Načíst metadata ze souboru do databáze"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:505
 #: core/libs/properties/captions/itemdescedittab.cpp:524
 #, kde-format
 msgctxt "@action"
 msgid "Write metadata to each file"
-msgstr ""
+msgstr "Zapsat metadata do každého souboru"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:521
 #, kde-format
 msgctxt "@action"
 msgid "Read metadata from each file to database"
-msgstr ""
+msgstr "Načíst metadata z každého souboru do databáze"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:529
 #, kde-format
@@ -36128,55 +36108,55 @@ msgstr "Název:"
 #, kde-format
 msgctxt "@label"
 msgid "Date:"
-msgstr ""
+msgstr "Datum:"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:47
 #, kde-format
 msgctxt "@label"
 msgid "Pick Label:"
-msgstr ""
+msgstr "Štítek výběru:"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:52
 #, kde-format
 msgctxt "@label"
 msgid "Color Label:"
-msgstr ""
+msgstr "Barevný štítek:"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:57
 #, kde-format
 msgctxt "@label"
 msgid "Rating:"
-msgstr ""
+msgstr "Hodnocení:"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:66
 #, kde-format
 msgctxt "@action"
 msgid "Apply"
-msgstr ""
+msgstr "Použít"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:69
 #, kde-format
 msgctxt "@info"
 msgid "Apply all changes to images"
-msgstr ""
+msgstr "Provést všechny změny obrázků"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:77
 #, kde-format
 msgctxt "@info"
 msgid "Revert all changes"
-msgstr ""
+msgstr "Vrátit všechny změny"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:80
 #, kde-format
 msgctxt "@action"
 msgid "Apply to all versions"
-msgstr ""
+msgstr "Uplatnit na všechny verze"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:83
 #, kde-format
 msgctxt "@info"
 msgid "Apply all changes to all versions of this image"
-msgstr ""
+msgstr "Uplatnit všechny změny na všechny verze tohoto obrázku"
 
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:85
 #, kde-format
@@ -36208,14 +36188,14 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Open Tag Manager"
-msgstr ""
+msgstr "Otevřít správce značek"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:47
 #: core/libs/properties/captions/tagsedit.cpp:112
 #, kde-format
 msgctxt "@info"
 msgid "Enter tag here."
-msgstr ""
+msgstr "Zadejte novou značku."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:48
 #: core/libs/properties/captions/tagsedit.cpp:113
@@ -36226,27 +36206,29 @@ msgid ""
 "hierarchy of tags. ',' can be used to create more than one hierarchy at the "
 "same time."
 msgstr ""
+"Zde zadejte text pro vytvoření značek. '/' lze použít pro vytvoření "
+"hierarchie značek. ',' lze použít pro vytvoření více značek najednou."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:64
 #: core/libs/properties/captions/tagsedit.cpp:130
 #, kde-format
 msgctxt "@info"
 msgid "Tags already assigned"
-msgstr ""
+msgstr "Značky již přiřazené"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:70
 #: core/libs/properties/captions/tagsedit.cpp:136
 #, kde-format
 msgctxt "@info"
 msgid "Recent Tags"
-msgstr ""
+msgstr "Nedávné značky"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:298
 #: core/libs/properties/captions/tagsedit.cpp:294
 #, kde-format
 msgctxt "@action"
 msgid "No Recently Assigned Tags"
-msgstr ""
+msgstr "Žádné nedávno přidělené značky"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:144
 #, kde-format
@@ -41602,10 +41584,9 @@ msgid "A KDE Family Project"
 msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:68
-#, fuzzy, kde-format
-#| msgid "(c) 2001-2022, digiKam developers team"
+#, kde-format
 msgid "(c) 2001-2023, digiKam developers team"
-msgstr "(c) 2001-2022, team vývojářů digiKam"
+msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:80
 #, kde-format
@@ -43353,7 +43334,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Switch to %1"
-msgstr ""
+msgstr "Přepnout na %1"
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:423
 #, kde-format
@@ -43365,7 +43346,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Error message: %1"
-msgstr ""
+msgstr "Chybové hlášení: %1"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:39
 #, kde-format
@@ -47175,379 +47156,380 @@ msgstr ""
 #, kde-format
 msgctxt "@info: language name"
 msgid "Automatically detect"
-msgstr ""
+msgstr "Automaticky zjistit"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:106
 #, kde-format
 msgctxt "@info: language name"
 msgid "Afrikaans"
-msgstr ""
+msgstr "Afrikánština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:109
 #, kde-format
 msgctxt "@info: language name"
 msgid "Albanian"
-msgstr ""
+msgstr "Albánština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:112
 #, kde-format
 msgctxt "@info: language name"
 msgid "Amharic"
-msgstr ""
+msgstr "Amharština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:115
 #, kde-format
 msgctxt "@info: language name"
 msgid "Arabic"
-msgstr ""
+msgstr "Arabština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:118
 #, kde-format
 msgctxt "@info: language name"
 msgid "Armenian"
-msgstr ""
+msgstr "Arménština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:121
 #, kde-format
 msgctxt "@info: language name"
 msgid "Azeerbaijani"
-msgstr ""
+msgstr "Ázerbájdžánština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:124
 #, kde-format
 msgctxt "@info: language name"
 msgid "Basque"
-msgstr ""
+msgstr "Baskičtina"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:127
 #, kde-format
 msgctxt "@info: language name"
 msgid "Bashkir"
-msgstr ""
+msgstr "Baškirština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:130
 #, kde-format
 msgctxt "@info: language name"
 msgid "Belarusian"
-msgstr ""
+msgstr "Běloruština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:133
 #, kde-format
 msgctxt "@info: language name"
 msgid "Bengali"
-msgstr ""
+msgstr "Bengálština"
 
+# BJ
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:136
 #, kde-format
 msgctxt "@info: language name"
 msgid "Bosnian"
-msgstr ""
+msgstr "Bosenština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:139
 #, kde-format
 msgctxt "@info: language name"
 msgid "Bulgarian"
-msgstr ""
+msgstr "Bulharština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:142
 #, kde-format
 msgctxt "@info: language name"
 msgid "Catalan"
-msgstr ""
+msgstr "Katalánština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:145
 #, kde-format
 msgctxt "@info: language name"
 msgid "Cantonese"
-msgstr ""
+msgstr "Kantonská čínština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:148
 #, kde-format
 msgctxt "@info: language name"
 msgid "Cebuano"
-msgstr ""
+msgstr "Cebuánština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:151
 #, kde-format
 msgctxt "@info: language name"
 msgid "Chinese (Simplified)"
-msgstr ""
+msgstr "Zjednodušená čínština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:154
 #, kde-format
 msgctxt "@info: language name"
 msgid "Chinese (Traditional)"
-msgstr ""
+msgstr "Tradiční čínština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:157
 #, kde-format
 msgctxt "@info: language name"
 msgid "Corsican"
-msgstr ""
+msgstr "Korsičtina"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:160
 #, kde-format
 msgctxt "@info: language name"
 msgid "Croatian"
-msgstr ""
+msgstr "Chorvatština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:163
 #, kde-format
 msgctxt "@info: language name"
 msgid "Czech"
-msgstr ""
+msgstr "Čeština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:166
 #, kde-format
 msgctxt "@info: language name"
 msgid "Danish"
-msgstr ""
+msgstr "Dánština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:169
 #, kde-format
 msgctxt "@info: language name"
 msgid "Dutch"
-msgstr ""
+msgstr "Holandština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:172
 #, kde-format
 msgctxt "@info: language name"
 msgid "English"
-msgstr ""
+msgstr "Angličtina"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:175
 #, kde-format
 msgctxt "@info: language name"
 msgid "Esperanto"
-msgstr ""
+msgstr "Esperanto"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:178
 #, kde-format
 msgctxt "@info: language name"
 msgid "Estonian"
-msgstr ""
+msgstr "Estonština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:181
 #, kde-format
 msgctxt "@info: language name"
 msgid "Fijian"
-msgstr ""
+msgstr "Fidžijština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:184
 #, kde-format
 msgctxt "@info: language name"
 msgid "Filipino"
-msgstr ""
+msgstr "Filipínština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:187
 #, kde-format
 msgctxt "@info: language name"
 msgid "Finnish"
-msgstr ""
+msgstr "Finština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:190
 #, kde-format
 msgctxt "@info: language name"
 msgid "French"
-msgstr ""
+msgstr "Francouzština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:193
 #, kde-format
 msgctxt "@info: language name"
 msgid "Frisian"
-msgstr ""
+msgstr "Fríština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:196
 #, kde-format
 msgctxt "@info: language name"
 msgid "Galician"
-msgstr ""
+msgstr "Galicijština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:199
 #, kde-format
 msgctxt "@info: language name"
 msgid "Georgian"
-msgstr ""
+msgstr "Gruzínština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:202
 #, kde-format
 msgctxt "@info: language name"
 msgid "German"
-msgstr ""
+msgstr "Němčina"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:205
 #, kde-format
 msgctxt "@info: language name"
 msgid "Greek"
-msgstr ""
+msgstr "Řečtina"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:208
 #, kde-format
 msgctxt "@info: language name"
 msgid "Gujarati"
-msgstr ""
+msgstr "Gudžarátština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:211
 #, kde-format
 msgctxt "@info: language name"
 msgid "Haitian Creole"
-msgstr ""
+msgstr "Haitská Kreolština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:214
 #, kde-format
 msgctxt "@info: language name"
 msgid "Hausa"
-msgstr ""
+msgstr "Hausa"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:217
 #, kde-format
 msgctxt "@info: language name"
 msgid "Hawaiian"
-msgstr ""
+msgstr "Havajština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:220
 #, kde-format
 msgctxt "@info: language name"
 msgid "Hebrew"
-msgstr ""
+msgstr "Hebrejština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:223
 #, kde-format
 msgctxt "@info: language name"
 msgid "Hill Mari"
-msgstr ""
+msgstr "Hill Mari"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:226
 #, kde-format
 msgctxt "@info: language name"
 msgid "Hindi"
-msgstr ""
+msgstr "Hindština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:229
 #, kde-format
 msgctxt "@info: language name"
 msgid "Hmong"
-msgstr ""
+msgstr "Hmong"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:232
 #, kde-format
 msgctxt "@info: language name"
 msgid "Hungarian"
-msgstr ""
+msgstr "Maďarština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:235
 #, kde-format
 msgctxt "@info: language name"
 msgid "Icelandic"
-msgstr ""
+msgstr "Islandština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:238
 #, kde-format
 msgctxt "@info: language name"
 msgid "Igbo"
-msgstr ""
+msgstr "Igbo"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:241
 #, kde-format
 msgctxt "@info: language name"
 msgid "Indonesian"
-msgstr ""
+msgstr "Indonéština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:244
 #, kde-format
 msgctxt "@info: language name"
 msgid "Irish"
-msgstr ""
+msgstr "Irština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:247
 #, kde-format
 msgctxt "@info: language name"
 msgid "Italian"
-msgstr ""
+msgstr "Italština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:250
 #, kde-format
 msgctxt "@info: language name"
 msgid "Japanese"
-msgstr ""
+msgstr "Japonština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:253
 #, kde-format
 msgctxt "@info: language name"
 msgid "Javanese"
-msgstr ""
+msgstr "Jávština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:256
 #, kde-format
 msgctxt "@info: language name"
 msgid "Kannada"
-msgstr ""
+msgstr "Kannada"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:259
 #, kde-format
 msgctxt "@info: language name"
 msgid "Kazakh"
-msgstr ""
+msgstr "Kazachština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:262
 #, kde-format
 msgctxt "@info: language name"
 msgid "Khmer"
-msgstr ""
+msgstr "Khmérské"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:265
 #, kde-format
 msgctxt "@info: language name"
 msgid "Kinyarwanda"
-msgstr ""
+msgstr "Kinyarwanda"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:268
 #, kde-format
 msgctxt "@info: language name"
 msgid "Klingon"
-msgstr ""
+msgstr "Klingonština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:271
 #, kde-format
 msgctxt "@info: language name"
 msgid "Klingon (PlqaD)"
-msgstr ""
+msgstr "Klingonština (PlqaD)"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:274
 #, kde-format
 msgctxt "@info: language name"
 msgid "Korean"
-msgstr ""
+msgstr "Korejština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:277
 #, kde-format
 msgctxt "@info: language name"
 msgid "Kurdish"
-msgstr ""
+msgstr "Kurdština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:280
 #, kde-format
 msgctxt "@info: language name"
 msgid "Kyrgyz"
-msgstr ""
+msgstr "Kyrgyzština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:283
 #, kde-format
 msgctxt "@info: language name"
 msgid "Lao"
-msgstr ""
+msgstr "Laoština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:286
 #, kde-format
 msgctxt "@info: language name"
 msgid "Latin"
-msgstr ""
+msgstr "Latina"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:289
 #, kde-format
 msgctxt "@info: language name"
 msgid "Latvian"
-msgstr ""
+msgstr "Lotyština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:292
 #, kde-format
@@ -47559,361 +47541,364 @@ msgstr ""
 #, kde-format
 msgctxt "@info: language name"
 msgid "Lithuanian"
-msgstr ""
+msgstr "Litevština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:298
 #, kde-format
 msgctxt "@info: language name"
 msgid "Luxembourgish"
-msgstr ""
+msgstr "Lucemburština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:301
 #, kde-format
 msgctxt "@info: language name"
 msgid "Macedonian"
-msgstr ""
+msgstr "Makedonština"
 
+# MG
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:304
 #, kde-format
 msgctxt "@info: language name"
 msgid "Malagasy"
-msgstr ""
+msgstr "Malgaština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:307
 #, kde-format
 msgctxt "@info: language name"
 msgid "Malay"
-msgstr ""
+msgstr "Malajština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:310
 #, kde-format
 msgctxt "@info: language name"
 msgid "Malayalam"
-msgstr ""
+msgstr "Malayalam"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:313
 #, kde-format
 msgctxt "@info: language name"
 msgid "Maltese"
-msgstr ""
+msgstr "Maltština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:316
 #, kde-format
 msgctxt "@info: language name"
 msgid "Maori"
-msgstr ""
+msgstr "Maurština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:319
 #, kde-format
 msgctxt "@info: language name"
 msgid "Marathi"
-msgstr ""
+msgstr "Maráthí"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:322
 #, kde-format
 msgctxt "@info: language name"
 msgid "Mari"
-msgstr ""
+msgstr "Mari"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:325
 #, kde-format
 msgctxt "@info: language name"
 msgid "Mongolian"
-msgstr ""
+msgstr "Mongolština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:328
 #, kde-format
 msgctxt "@info: language name"
 msgid "Myanmar"
-msgstr ""
+msgstr "Myanmarština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:331
 #, kde-format
 msgctxt "@info: language name"
 msgid "Nepali"
-msgstr ""
+msgstr "Nepálština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:334
 #, kde-format
 msgctxt "@info: language name"
 msgid "Norwegian"
-msgstr ""
+msgstr "Norština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:337
 #, kde-format
 msgctxt "@info: language name"
 msgid "Oriya"
-msgstr ""
+msgstr "Oriya"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:340
 #, kde-format
 msgctxt "@info: language name"
 msgid "Chichewa"
-msgstr ""
+msgstr "Chichewa"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:343
 #, kde-format
 msgctxt "@info: language name"
 msgid "Papiamento"
-msgstr ""
+msgstr "Papiamento"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:346
 #, kde-format
 msgctxt "@info: language name"
 msgid "Pashto"
-msgstr ""
+msgstr "Paštunština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:349
 #, kde-format
 msgctxt "@info: language name"
 msgid "Persian"
-msgstr ""
+msgstr "Perština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:352
 #, kde-format
 msgctxt "@info: language name"
 msgid "Polish"
-msgstr ""
+msgstr "Polština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:355
 #, kde-format
 msgctxt "@info: language name"
 msgid "Portuguese"
-msgstr ""
+msgstr "Portugalština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:358
 #, kde-format
 msgctxt "@info: language name"
 msgid "Punjabi"
-msgstr ""
+msgstr "Pandžábština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:361
 #, kde-format
 msgctxt "@info: language name"
 msgid "Queretaro Otomi"
-msgstr ""
+msgstr "Queretaro Otomi"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:364
 #, kde-format
 msgctxt "@info: language name"
 msgid "Romanian"
-msgstr ""
+msgstr "Rumunština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:367
 #, kde-format
 msgctxt "@info: language name"
 msgid "Russian"
-msgstr ""
+msgstr "Ruština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:370
 #, kde-format
 msgctxt "@info: language name"
 msgid "Samoan"
-msgstr ""
+msgstr "Samojština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:373
 #, kde-format
 msgctxt "@info: language name"
 msgid "Scots Gaelic"
-msgstr ""
+msgstr "Skotská gaelština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:376
 #, kde-format
 msgctxt "@info: language name"
 msgid "Serbian (Cyrillic)"
-msgstr ""
+msgstr "Srbština (azbuka)"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:379
 #, kde-format
 msgctxt "@info: language name"
 msgid "Serbian (Latin)"
-msgstr ""
+msgstr "Srbština (latinka)"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:382
 #, kde-format
 msgctxt "@info: language name"
 msgid "Sesotho"
-msgstr ""
+msgstr "Sesotho"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:385
 #, kde-format
 msgctxt "@info: language name"
 msgid "Shona"
-msgstr ""
+msgstr "Šonština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:388
 #, kde-format
 msgctxt "@info: language name"
 msgid "Sindhi"
-msgstr ""
+msgstr "Sindhština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:391
 #, kde-format
 msgctxt "@info: language name"
 msgid "Sinhala"
-msgstr ""
+msgstr "Sinhala"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:394
 #, kde-format
 msgctxt "@info: language name"
 msgid "Slovak"
-msgstr ""
+msgstr "Slovenština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:397
 #, kde-format
 msgctxt "@info: language name"
 msgid "Slovenian"
-msgstr ""
+msgstr "Slovinština"
 
+# SO
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:400
 #, kde-format
 msgctxt "@info: language name"
 msgid "Somali"
-msgstr ""
+msgstr "Somálština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:403
 #, kde-format
 msgctxt "@info: language name"
 msgid "Spanish"
-msgstr ""
+msgstr "Španělština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:406
 #, kde-format
 msgctxt "@info: language name"
 msgid "Sundanese"
-msgstr ""
+msgstr "Sundánština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:409
 #, kde-format
 msgctxt "@info: language name"
 msgid "Swahili"
-msgstr ""
+msgstr "Svahilština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:412
 #, kde-format
 msgctxt "@info: language name"
 msgid "Swedish"
-msgstr ""
+msgstr "Švédština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:415
 #, kde-format
 msgctxt "@info: language name"
 msgid "Tagalog"
-msgstr ""
+msgstr "Tagalog"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:418
 #, kde-format
 msgctxt "@info: language name"
 msgid "Tahitian"
-msgstr ""
+msgstr "Tahitština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:421
 #, kde-format
 msgctxt "@info: language name"
 msgid "Tajik"
-msgstr ""
+msgstr "Tádžičtina"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:424
 #, kde-format
 msgctxt "@info: language name"
 msgid "Tamil"
-msgstr ""
+msgstr "Tamilština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:427
 #, kde-format
 msgctxt "@info: language name"
 msgid "Tatar"
-msgstr ""
+msgstr "Tatarština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:430
 #, kde-format
 msgctxt "@info: language name"
 msgid "Telugu"
-msgstr ""
+msgstr "Telugu"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:433
 #, kde-format
 msgctxt "@info: language name"
 msgid "Thai"
-msgstr ""
+msgstr "Thajština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:436
 #, kde-format
 msgctxt "@info: language name"
 msgid "Tongan"
-msgstr ""
+msgstr "Tonžština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:439
 #, kde-format
 msgctxt "@info: language name"
 msgid "Turkish"
-msgstr ""
+msgstr "Turečtina"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:442
 #, kde-format
 msgctxt "@info: language name"
 msgid "Turkmen"
-msgstr ""
+msgstr "Turkmenština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:445
 #, kde-format
 msgctxt "@info: language name"
 msgid "Udmurt"
-msgstr ""
+msgstr "Udmurt"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:448
 #, kde-format
 msgctxt "@info: language name"
 msgid "Uighur"
-msgstr ""
+msgstr "Ujgurština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:451
 #, kde-format
 msgctxt "@info: language name"
 msgid "Ukrainian"
-msgstr ""
+msgstr "Ukrajinština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:454
 #, kde-format
 msgctxt "@info: language name"
 msgid "Urdu"
-msgstr ""
+msgstr "Urdština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:457
 #, kde-format
 msgctxt "@info: language name"
 msgid "Uzbek"
-msgstr ""
+msgstr "Uzbečtina"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:460
 #, kde-format
 msgctxt "@info: language name"
 msgid "Vietnamese"
-msgstr ""
+msgstr "Vietnamština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:463
 #, kde-format
 msgctxt "@info: language name"
 msgid "Welsh"
-msgstr ""
+msgstr "Velština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:466
 #, kde-format
 msgctxt "@info: language name"
 msgid "Xhosa"
-msgstr ""
+msgstr "Xhosa"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:469
 #, kde-format
 msgctxt "@info: language name"
 msgid "Yiddish"
-msgstr ""
+msgstr "Jidiš"
 
+# AW
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:472
 #, kde-format
 msgctxt "@info: language name"
 msgid "Yoruba"
-msgstr ""
+msgstr "Jarubština"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:475
 #, kde-format
@@ -47925,7 +47910,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info: language name"
 msgid "Zulu"
-msgstr ""
+msgstr "Zulu"
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:48
 #, kde-format
@@ -52942,17 +52927,14 @@ msgid "Less options"
 msgstr "Méně možností"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:296
-#, fuzzy, kde-format
-#| msgid "Pr&int captions "
+#, kde-format
 msgid "Write locations as tags"
-msgstr "Zobraz&it popisky"
+msgstr ""
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:297
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Write flag to metadata if possible"
+#, kde-format
 msgid "Write locations metadata"
-msgstr "Pokud možno, zapsat příznak do metadat"
+msgstr ""
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:304
 #, kde-format
@@ -53106,10 +53088,9 @@ msgid "Lock the map position"
 msgstr "Uzamknout polohu mapy"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:346
-#, fuzzy, kde-format
-#| msgid "Load playlist from a file."
+#, kde-format
 msgid "Load tracks from albums"
-msgstr "Načíst seznam skladeb ze souboru."
+msgstr ""
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:800
 #, kde-format
@@ -56283,36 +56264,29 @@ msgid "Find duplicates items"
 msgstr "Najít duplicitní položky"
 
 #: core/utilities/maintenance/facesdetector.cpp:280
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in albums:"
+#, kde-format
 msgid "Scan for faces in album: %1"
-msgstr "Hledat v albech:"
+msgstr ""
 
 #: core/utilities/maintenance/facesdetector.cpp:284
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in albums:"
+#, kde-format
 msgid "Scan for faces in %1 albums"
-msgstr "Hledat v albech:"
+msgstr ""
 
 #: core/utilities/maintenance/facesdetector.cpp:291
-#, fuzzy, kde-format
-#| msgid "Scan for Faces"
+#, kde-format
 msgid "Scan for faces in image: %1"
-msgstr "Vyhledat obličeje"
+msgstr ""
 
 #: core/utilities/maintenance/facesdetector.cpp:295
-#, fuzzy, kde-format
-#| msgid "Scan for Faces"
+#, kde-format
 msgid "Scan for faces in %1 images"
-msgstr "Vyhledat obličeje"
+msgstr ""
 
 #: core/utilities/maintenance/facesdetector.cpp:300
-#, fuzzy, kde-format
-#| msgid "Updating faces database."
+#, kde-format
 msgid "Updating faces database"
-msgstr "Aktualizuje se databáze obličejů."
+msgstr ""
 
 #: core/utilities/maintenance/fingerprintsgenerator.cpp:101
 #, kde-format
@@ -62423,15 +62397,3 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
-
-#~ msgid "Write tags to XMP"
-#~ msgstr "Zapsat metadata značek do XMP"
-
-#~ msgid "Skip images already scanned"
-#~ msgstr "Vynechat již prohledané obrázky"
-
-#~ msgid "Scan again and merge results"
-#~ msgstr "Znovu prohledat a výsledky sloučit"
-
-#~ msgid "Clear unconfirmed results and rescan"
-#~ msgstr "Vymazat nepotvrzené výsledky a znovu prohledat"

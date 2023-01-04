@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-30 00:49+0000\n"
+"POT-Creation-Date: 2023-01-04 00:45+0000\n"
 "PO-Revision-Date: 2019-03-17 17:31+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -23010,7 +23010,7 @@ msgstr "Pažymėjimas"
 msgid "Play With Sub-Albums"
 msgstr "Su visais vidiniais albumais"
 
-#: core/dplugins/generic/view/slideshow/widgets/slideend.cpp:70
+#: core/dplugins/generic/view/slideshow/widgets/slideend.cpp:69
 #, fuzzy, kde-format
 msgid ""
 "Slideshow Completed.\n"
@@ -23018,7 +23018,7 @@ msgid ""
 "or press ESC..."
 msgstr "Skaidrių peržiūra baigta."
 
-#: core/dplugins/generic/view/slideshow/widgets/slideerror.cpp:81
+#: core/dplugins/generic/view/slideshow/widgets/slideerror.cpp:80
 #, kde-format
 msgid ""
 "An error has occurred to show item\n"

@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-30 00:49+0000\n"
+"POT-Creation-Date: 2023-01-04 00:45+0000\n"
 "PO-Revision-Date: 2022-12-25 13:28+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -22841,7 +22841,7 @@ msgstr "Selectie van afspelen"
 msgid "Play With Sub-Albums"
 msgstr "Met subalbums afspelen"
 
-#: core/dplugins/generic/view/slideshow/widgets/slideend.cpp:70
+#: core/dplugins/generic/view/slideshow/widgets/slideend.cpp:69
 #, kde-format
 msgid ""
 "Slideshow Completed.\n"
@@ -22852,7 +22852,7 @@ msgstr ""
 "Klik om te eindigen\n"
 "of druk op ESC..."
 
-#: core/dplugins/generic/view/slideshow/widgets/slideerror.cpp:81
+#: core/dplugins/generic/view/slideshow/widgets/slideerror.cpp:80
 #, kde-format
 msgid ""
 "An error has occurred to show item\n"

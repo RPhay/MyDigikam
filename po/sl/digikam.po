@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-30 00:49+0000\n"
+"POT-Creation-Date: 2023-01-04 00:45+0000\n"
 "PO-Revision-Date: 2022-12-26 07:43+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -22623,7 +22623,7 @@ msgstr "Predvajaj izbrano"
 msgid "Play With Sub-Albums"
 msgstr "Predvajaj s pod-albumi"
 
-#: core/dplugins/generic/view/slideshow/widgets/slideend.cpp:70
+#: core/dplugins/generic/view/slideshow/widgets/slideend.cpp:69
 #, kde-format
 msgid ""
 "Slideshow Completed.\n"
@@ -22634,7 +22634,7 @@ msgstr ""
 "Kliknite za izhod\n"
 "ali pritisnite ESC ..."
 
-#: core/dplugins/generic/view/slideshow/widgets/slideerror.cpp:81
+#: core/dplugins/generic/view/slideshow/widgets/slideerror.cpp:80
 #, kde-format
 msgid ""
 "An error has occurred to show item\n"

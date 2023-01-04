@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-30 00:49+0000\n"
+"POT-Creation-Date: 2023-01-04 00:45+0000\n"
 "PO-Revision-Date: 2023-01-02 07:11\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -21841,7 +21841,7 @@ msgstr "放映选中项"
 msgid "Play With Sub-Albums"
 msgstr "放映含子相册项"
 
-#: core/dplugins/generic/view/slideshow/widgets/slideend.cpp:70
+#: core/dplugins/generic/view/slideshow/widgets/slideend.cpp:69
 #, kde-format
 msgid ""
 "Slideshow Completed.\n"
@@ -21852,7 +21852,7 @@ msgstr ""
 "点击或按 ESC 键\n"
 "退出放映。"
 
-#: core/dplugins/generic/view/slideshow/widgets/slideerror.cpp:81
+#: core/dplugins/generic/view/slideshow/widgets/slideerror.cpp:80
 #, kde-format
 msgid ""
 "An error has occurred to show item\n"

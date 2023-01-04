@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-30 00:49+0000\n"
-"PO-Revision-Date: 2023-01-02 04:49+0100\n"
+"POT-Creation-Date: 2023-01-04 00:45+0000\n"
+"PO-Revision-Date: 2023-01-03 07:03+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -395,7 +395,7 @@ msgstr "სახის ჭდის არმქონე გამოსახ
 #: core/app/filters/filtersidebarwidget.cpp:227
 #, kde-format
 msgid "Face tags Matching Condition"
-msgstr ""
+msgstr "სახის ჭდის ძებნის პირობა"
 
 #: core/app/filters/filtersidebarwidget.cpp:249
 #, kde-format
@@ -666,7 +666,7 @@ msgstr "მონიშნულების ფაილი სახელი�
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Group Selected By Timelapse / Burst"
-msgstr ""
+msgstr "მონიშნულების დროით ან სერიით დალაგება"
 
 #: core/app/items/utils/contextmenuhelper_groups.cpp:175
 #, kde-format
@@ -740,7 +740,7 @@ msgstr "თვისებები..."
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Unmark Tag As Face"
-msgstr ""
+msgstr "ჭდის, როგორც სახის მოცილება"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:95
 #, kde-format
@@ -754,7 +754,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Unmark Tags As Face"
-msgstr ""
+msgstr "ჭდეების, როგორც სახის მოცილება"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:109
 #, kde-format
@@ -1535,7 +1535,7 @@ msgstr "&ახალი..."
 #, kde-format
 msgctxt "@info: setup"
 msgid "Creates a new empty Album in the collection."
-msgstr "კოლექციაში ახალი ცარიელი ალბომის შექმნა"
+msgstr "კოლექციაში ახალი ცარიელი ალბომის შექმნა."
 
 #: core/app/main/digikamapp_setup.cpp:200
 #, kde-format
@@ -2265,25 +2265,25 @@ msgstr ""
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Horiz. Flipped"
-msgstr ""
+msgstr "მარჯვნივ შემობრუნებული / ჰორიზონტალურად გადაბრუნებული"
 
 #: core/app/main/digikamapp_setup.cpp:962
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right"
-msgstr ""
+msgstr "მარჯვნივ შემობრუნებული"
 
 #: core/app/main/digikamapp_setup.cpp:964
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Right / Vert. Flipped"
-msgstr ""
+msgstr "მარჯვნივ შემობრუნებული / ვერტიკალურად გადაბრუნებული"
 
 #: core/app/main/digikamapp_setup.cpp:966
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Left"
-msgstr ""
+msgstr "მარცხნივ შემობრუნებული"
 
 #: core/app/main/digikamapp_setup.cpp:1027
 #, kde-format
@@ -4238,7 +4238,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Up/Down: volume +/-\n"
-msgstr ""
+msgstr "მაღლა/დაბლა: ხმის სიმაღლე +-\n"
 
 #: core/avplayer/filters/EventFilter.cpp:123
 #, kde-format
@@ -4709,7 +4709,7 @@ msgstr "სუფთა ცა"
 #, kde-format
 msgctxt "@info"
 msgid "Remove selected items"
-msgstr ""
+msgstr "Მონიშნული ელემენტების წაშლა"
 
 #: core/avplayer/playlist/PlayList.cpp:259
 #, kde-format
@@ -4993,7 +4993,7 @@ msgstr "ფილტრი:"
 #, kde-format
 msgctxt "@title"
 msgid "Color Auto-Correction"
-msgstr ""
+msgstr "ფერის ავტოკორექცია"
 
 #: core/dplugins/bqm/colors/autocorrection/autocorrectionplugin.cpp:61
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:59
@@ -5625,27 +5625,27 @@ msgstr ""
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:198
 #, kde-format
 msgid "User Script: No script."
-msgstr ""
+msgstr "მომხმარებლის სკრიპტი: სკრიპტის გარეშე."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:259
 #, kde-format
 msgid "User Script: Timeout from script."
-msgstr ""
+msgstr "მომხმარებლის სკრიპტი: სკრიპტის მოლოდინის დრო გავიდა."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:267
 #, kde-format
 msgid "User Script: Failed to start script."
-msgstr ""
+msgstr "მომხმარებლის სკრიპტი: სკრიპტის გაშვების შეცდომა."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:273
 #, kde-format
 msgid "User Script: Script process crashed."
-msgstr ""
+msgstr "მომხმარებლის სკრიპტი: სკრიპტის პროცესი მოულოდნელად დასრულდა."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:279
 #, kde-format
 msgid "User Script: Command not found."
-msgstr ""
+msgstr "მომხმარებლის სკრიპტი: ბრძანება ვერ ვიპოვე."
 
 #: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:46
 #, kde-format
@@ -21184,7 +21184,7 @@ msgstr ""
 msgid "Play With Sub-Albums"
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/widgets/slideend.cpp:70
+#: core/dplugins/generic/view/slideshow/widgets/slideend.cpp:69
 #, kde-format
 msgid ""
 "Slideshow Completed.\n"
@@ -21192,7 +21192,7 @@ msgid ""
 "or press ESC..."
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/widgets/slideerror.cpp:81
+#: core/dplugins/generic/view/slideshow/widgets/slideerror.cpp:80
 #, kde-format
 msgid ""
 "An error has occurred to show item\n"
