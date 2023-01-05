@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-04 00:45+0000\n"
-"PO-Revision-Date: 2023-01-03 07:03+0100\n"
+"PO-Revision-Date: 2023-01-04 06:50+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1749,7 +1749,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action: setup"
 msgid "Batch Queue Manager"
-msgstr ""
+msgstr "პაკეტური დამუშავების მმართველი"
 
 #: core/app/main/digikamapp_setup.cpp:394
 #, kde-format
@@ -1882,7 +1882,7 @@ msgstr "თარიღით"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Album Sub-Tree"
-msgstr ""
+msgstr "ჩალაგებული ალბომის შემცველობის ჩვენება"
 
 #: core/app/main/digikamapp_setup.cpp:538
 #, kde-format
@@ -1894,7 +1894,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Tag Sub-Tree"
-msgstr ""
+msgstr "ჩალაგებული ჭდის შემცველობის ჩვენება"
 
 #: core/app/main/digikamapp_setup.cpp:545
 #, kde-format
@@ -2103,7 +2103,7 @@ msgstr "მონიშვნის ინვერსია"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Thumbbar"
-msgstr ""
+msgstr "მინიატურის პანელის დამატება"
 
 #: core/app/main/digikamapp_setup.cpp:750
 #, kde-format
@@ -2121,7 +2121,7 @@ msgstr "ფანჯარაში ჩატევა"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Color-Managed View"
-msgstr ""
+msgstr "ფერით-მართული ხედი"
 
 #: core/app/main/digikamapp_setup.cpp:789
 #, kde-format
@@ -2157,13 +2157,13 @@ msgstr "შეკეთების რეჟიმი..."
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for new Items"
-msgstr ""
+msgstr "ახალი ობიექტების მოძებნა"
 
 #: core/app/main/digikamapp_setup.cpp:837
 #, kde-format
 msgctxt "@action: setup"
 msgid "Add Camera Manually..."
-msgstr ""
+msgstr "კამერის ხელით დამატება..."
 
 #: core/app/main/digikamapp_setup.cpp:848
 #, kde-format
@@ -2235,7 +2235,7 @@ msgstr "მინიჭებული ჭდეების ჩვენებ�
 #, kde-format
 msgctxt "@action: setup"
 msgid "Adjust Exif Orientation Tag"
-msgstr ""
+msgstr "Exif-ის ორიენტაციის ჭდის მორგება"
 
 #: core/app/main/digikamapp_setup.cpp:952
 #, kde-format
@@ -2247,19 +2247,19 @@ msgstr "ჩვეულებრივი"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Horizontally"
-msgstr ""
+msgstr "ჰორიზონტალურად გადატრიალებული"
 
 #: core/app/main/digikamapp_setup.cpp:956
 #, kde-format
 msgctxt "@action: setup"
 msgid "Rotated Upside Down"
-msgstr ""
+msgstr "ზემოდან ქვემოთ გადაბრუნებული"
 
 #: core/app/main/digikamapp_setup.cpp:958
 #, kde-format
 msgctxt "@action: setup"
 msgid "Flipped Vertically"
-msgstr ""
+msgstr "ვერტიკალურად გადატრიალებული"
 
 #: core/app/main/digikamapp_setup.cpp:960
 #, kde-format
