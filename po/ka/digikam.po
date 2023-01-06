@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-04 00:45+0000\n"
-"PO-Revision-Date: 2023-01-04 06:50+0100\n"
+"PO-Revision-Date: 2023-01-05 05:17+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -850,7 +850,7 @@ msgstr "გატანის პროგრამა არ არსებო
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Batch Queue Manager"
-msgstr ""
+msgstr "პაკეტური დამუშავების მმართველი"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:139
 #, kde-format
@@ -29787,7 +29787,7 @@ msgstr "ტოკიო"
 #, kde-format
 msgctxt "@info: effect type"
 msgid "Vintage"
-msgstr ""
+msgstr "მოსავალი"
 
 #: core/libs/dimg/filters/fx/colorfxsettings.cpp:412
 #, kde-format
@@ -33262,7 +33262,7 @@ msgstr "ჩვეულებრივი"
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Flipped Horizontally"
-msgstr ""
+msgstr "ჰორიზონტალურად გადატრიალებული"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:817
 #, kde-format
@@ -33274,7 +33274,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Flipped Vertically"
-msgstr ""
+msgstr "ვერტიკალურად გადატრიალებული"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:827
 #, kde-format
@@ -33286,7 +33286,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Rotated Left"
-msgstr ""
+msgstr "მარცხნივ შემობრუნებული"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:837
 #, kde-format
@@ -33298,7 +33298,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info: rotation"
 msgid "Rotated Right"
-msgstr ""
+msgstr "მარჯვნივ შემობრუნებული"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:847
 #, kde-format
@@ -36686,7 +36686,7 @@ msgstr "სინათლის მაგიდა"
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:189
 #, kde-format
 msgid "Batch Queue Manager"
-msgstr ""
+msgstr "პაკეტური დამუშავების მმართველი"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:433
 #, kde-format
@@ -40131,7 +40131,7 @@ msgstr ""
 #: core/libs/widgets/layout/thumbbardock.cpp:174
 #, kde-format
 msgid "Show Thumbbar"
-msgstr ""
+msgstr "მინიატურის პანელის დამატება"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:47
 #, kde-format
@@ -45981,7 +45981,7 @@ msgstr "ინდური"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Hmong"
-msgstr ""
+msgstr "Hmong"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:232
 #, kde-format
@@ -52169,7 +52169,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Color-Managed View"
-msgstr ""
+msgstr "ფერით-მართული ხედი"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:475
 #, kde-format
@@ -53390,7 +53390,7 @@ msgstr "ისტორიის ჩვენება"
 #, kde-format
 msgctxt "@option:check"
 msgid "Show Thumbbar"
-msgstr ""
+msgstr "მინიატურის პანელის დამატება"
 
 #: core/utilities/import/main/importui.cpp:537
 #, kde-format
@@ -54292,7 +54292,7 @@ msgstr "ფანჯარაში ჩატევა"
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:184
 #, kde-format
 msgid "Color-Managed View"
-msgstr ""
+msgstr "ფერით-მართული ხედი"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:214
 #, kde-format
@@ -55261,7 +55261,7 @@ msgstr "აღწერა"
 #, kde-format
 msgctxt "@title"
 msgid "Batch Queue Manager"
-msgstr ""
+msgstr "პაკეტური დამუშავების მმართველი"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:116
 #, kde-format
@@ -59701,7 +59701,7 @@ msgstr "გამოსახულებების რედაქტორ�
 #, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Batch Queue Manager"
-msgstr ""
+msgstr "პაკეტური დამუშავების მმართველი"
 
 #: core/utilities/setup/setupplugins.cpp:91
 #, kde-format
