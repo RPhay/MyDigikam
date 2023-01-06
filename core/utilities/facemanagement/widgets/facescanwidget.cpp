@@ -139,13 +139,12 @@ void FaceScanWidget::setupUi()
 
     QString buttonText;
     d->helpButton = new QPushButton(QIcon::fromTheme(QLatin1String("help-browser")), buttonText);
-    d->helpButton->setToolTip(i18nc("@info","Help"));
+    d->helpButton->setToolTip(i18nc("@info", "Help"));
 
     connect(d->helpButton, &QPushButton::clicked,
             this, []()
         {
-            FaceManagementHelpDlg* const helpBox = new FaceManagementHelpDlg(qApp->activeWindow());
-            helpBox->show();
+            DXmlGuiWindow::openHandbook(QLatin1String("main_window"), QLatin1String("people_view"));
         }
     );
 

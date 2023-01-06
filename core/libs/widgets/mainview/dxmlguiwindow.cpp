@@ -198,9 +198,32 @@ void DXmlGuiWindow::slotHelpContents()
     openHandbook();
 }
 
-void DXmlGuiWindow::openHandbook()
+void DXmlGuiWindow::openHandbook(const QString& section, const QString& chapter, const QString& reference)
 {
-    QUrl url(QString::fromUtf8("https://docs.digikam.org/en/index.html"));
+    QUrl url;
+
+    if (section.isEmpty())
+    {
+        url = QUrl(QString::fromUtf8("https://docs.digikam.org/en/index.html"));
+    }
+    else
+    {
+        if (chapter.isEmpty())
+        {
+            url = QUrl(QString::fromUtf8("https://docs.digikam.org/en/%1.html").arg(section));
+        }
+        else
+        {
+            if (reference.isEmpty())
+            {
+                url = QUrl(QString::fromUtf8("https://docs.digikam.org/en/%1/%2.html").arg(section).arg(chapter));
+            }
+            else
+            {
+                url = QUrl(QString::fromUtf8("https://docs.digikam.org/en/%1/%2.html#%3").arg(section).arg(chapter).arg(reference));
+            }
+        }
+    }
 
 #ifdef HAVE_QWEBENGINE
 

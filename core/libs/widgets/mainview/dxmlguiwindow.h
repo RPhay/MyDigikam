@@ -170,7 +170,16 @@ public:
 
 public:
 
-    static void openHandbook();
+    /**
+     * Open online handbook at the section/chapter/reference page.
+     *
+     * if section and chapter and reference are empty, fromt page is open.  (https://en.wikipedia.org/wiki/Matrix_(protocol)#Bridges)
+     * if only chapter and reference are empty, section page is open.       (as: https://docs.digikam.org/en/main_window.html)
+     * if only reference is empty, chapter from section page is open.       (as: https://docs.digikam.org/en/main_window/people_view.html)
+     * else reference at chapter from section page is open.                 (as: https://docs.digikam.org/en/main_window/people_view.html#face-recognition)
+     */
+    static void openHandbook(const QString& section = QString(), const QString& chapter = QString(), const QString& reference = QString());
+
     static void restoreWindowSize(QWindow* const win, const KConfigGroup& group);
     static void saveWindowSize(QWindow* const win, KConfigGroup& group);
     static void setGoodDefaultWindowSize(QWindow* const win);
