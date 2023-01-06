@@ -137,55 +137,48 @@ void WelcomePageView::slotUrlOpen(const QUrl& url)
 QStringList WelcomePageView::featuresTabContent() const
 {
     QStringList newFeatures;
-    newFeatures << i18n("More than 1300 user-reports closed on bugzilla.");
-    newFeatures << i18n("New Neural Network engine based on OpenCV Deep Learning module to detect and recognize faces.");
-    newFeatures << i18n("Update Slideshow to plugin with new shuffle mode.");
-    newFeatures << i18n("Add new theme Html5Responsive for HtmlGallery plugin.");
-    newFeatures << i18n("New plugin ImageMosaicWall to create an image based on a bunch of other photos.");
-    newFeatures << i18n("add new batch queue manager tool to fix hot pixels from images.");
-    newFeatures << i18n("add new batch queue manager tool to apply texture over images.");
-    newFeatures << i18n("Face Scan dialog contents is now simplified and embedded into left sidebar.");
-    newFeatures << i18n("Add support for Gimp XCF files >= 2.10.");
-    newFeatures << i18n("Add Flatpak bundle support for Linux platforms.");
-    newFeatures << i18n("Table-view is now able to show digiKam Tag-Paths properties.");
-    newFeatures << i18n("Add option to write geolocation information in file metadata.");
-    newFeatures << i18n("Add color label support for advanced metadata settings.");
-    newFeatures << i18n("Add Exif, Iptc, and Xmp read support for HEIF images.");
-    newFeatures << i18n("Improved support for UNC network paths under Windows.");
-    newFeatures << i18n("Improved support for Unicode paths under Windows.");
-    newFeatures << i18n("Apple bundle is now relocatable and compatible with macOS BigSur.");
-    newFeatures << i18n("New online version checker and downloader to automate upgrade under Windows and macOS.");
-    newFeatures << i18n("Better support of astro FITS image format including metadata extraction support to populate the database.");
-    newFeatures << i18n("Use last Exiv2 0.27.5 in all bundles with Base Media File metadata read and write support (HEIF, AVIF).");
-    newFeatures << i18n("Find duplicates items is now process in parallel using multi-cores.");
-    newFeatures << i18n("New tool to export items to iNaturalist web service.");
-    newFeatures << i18n("New metadata viewer based on ExifTool.");
-    newFeatures << i18n("MacOS package, Windows installer, and AppImage bundle use KF5 5.89 and KAPPS 21.12.0 frameworks.");
-    newFeatures << i18n("AppImage Linux bundle now support <a href=\"https://fcitx-im.org/wiki/Fcitx_5\">Platform Input Context FCITX</a>.");
-    newFeatures << i18n("Improve RTL translations support.");
-    newFeatures << i18n("GUI internationalization and localization updates with more than 50 languages available.");
-    newFeatures << i18n("Add OpenWith contextual menu support under MacOS.");
-    newFeatures << i18n("Integration of Google Summer of Code project 2021 "
-                        "<a href=\"https://community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE\">Image Quality Sorter</a>.");
-    newFeatures << i18n("New tool to share items on the network with a Motion JPEG stream server.");
-    newFeatures << i18n("Showfoto has a new left sidebar hosting a folder-view to quickly explore images from local file system.");
-    newFeatures << i18n("Update internal RAW engine to last Libraw 0.20.2 (snapshot 20210827) including Canon CR3 and Sony A7R4 support.");
-    newFeatures << i18n("New camera supported: "
-                        "Canon CR3, PowerShot G5 X Mark II, G7 X Mark III, SX70 HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS M200, EOS 1DX Mark III (lossless files only) "
-                        "DJI Mavic Air, Air2, Osmo Action, "
-                        "FujiFilm Fujifilm compressed/16bit, GFX 100, X-A7, X-Pro3, X100V, X-T4, X-T200, "
-                        "GoPro Fusion, HERO5, HERO6, HERO7, HERO8, "
-                        "Hasselblad L1D-20c, X1D II 50C, "
-                        "Leica D-LUX7, Q-P, Q2, V-LUX5, C-Lux / CAM-DC25, SL2, M10 Monochrom, "
-                        "Nikon D780, Z50, P950, "
-                        "Olympus TG-6, E-M5 Mark III, E-PL10, E-M1 Mark III, "
-                        "Panasonic Panasonic 14-bit, DC-FZ1000 II, DC-G90, DC-S1, DC-S1R, DC-S1H, DC-TZ95, "
-                        "PhaseOne IQ4 150MP, "
-                        "Rapsberry Pi RAW+JPEG format, "
-                        "Ricoh GR III, "
-                        "Sony A7R IV, A9 II, ILCE-6100, ILCE-6600, RX0 II, RX100 VII, "
-                        "Zenit M, "
-                        "also multiple modern smartphones.");
+    newFeatures << i18n("More than 200 user-reports closed on bugzilla.");
+    newFeatures << i18n("Port code to Qt6 framework (code still compatible with Qt5 API).");
+    newFeatures << i18n("Add JPEG-XL, WEBP, and AVIF export settings everywhere.");
+    newFeatures << i18n("Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera.");
+    newFeatures << i18n("Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager.");
+    newFeatures << i18n("Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store versionned images in editor.");
+    newFeatures << i18n("Add hamburger menu to tool-bar if main menu is hidden.");
+    newFeatures << i18n("Add new option to write metadata to files with ExifTool backend.");
+    newFeatures << i18n("Optional write metadata operations to DNG and RAW files are now always delegated to ExifTool Backend.");
+    newFeatures << i18n("Optimize layout of Metadata Edit plugin for a better usability.");
+    newFeatures << i18n("Add increment file counter to sequence numbering with option [c] or [c,step].");
+    newFeatures << i18n("Add random text sequence numbering with option [r].");
+    newFeatures << i18n("Add configurable first character for the unique modifier with {unique:n,c}.");
+    newFeatures << i18n("Add search for items by number of face regions.");
+    newFeatures << i18n("Add search for items without face regions.");
+    newFeatures << i18n("Add support for cross-platform network paths.");
+    newFeatures << i18n("Add support for SQLite WAL (Write-Ahead-Logging) mode.");
+    newFeatures << i18n("Add spell-checking support in caption text widget using KF5::Sonnet component.");
+    newFeatures << i18n("Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto.");
+    newFeatures << i18n("Add online translations support to Alternative Language text editor widget.");
+    newFeatures << i18n("Add Localize config panel in Setup/Misc for digiKam and Showfoto.");
+    newFeatures << i18n("Add settings to list prefered alternative/translated languages in text edit widget.");
+    newFeatures << i18n("Allow to use Global or Customized Image Quality Sorting settings everywhere.");
+    newFeatures << i18n("Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/QuocHungTran\">to perform OCR over scanned text</a>.");
+    newFeatures << i18n("Add <a href=\"https://community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe\">Aesthetic Detection to classify images using deep learning model</a>.");
+    newFeatures << i18n("Add new tool to assign pick label automatically by parsing image quality.");
+    newFeatures << i18n("Add new tool to assign rating, pick, and color labels in batch.");
+    newFeatures << i18n("Add new tool to assign titles and captions in batch.");
+    newFeatures << i18n("<a href=\" https://docs.digikam.org/en/index.html\">Rewrite handbook</a> from DocBook to Sphinx/ReStructuredText framework.");
+    newFeatures << i18n("Update internal RAW engine to last stable Libraw 0.21.1.");
+    newFeatures << i18n("New RAW features: "
+                        "Phase One/Leaf IIQ-S v2 support "
+                        "Canon CR3 filmrolls/RawBurst "
+                        "Canon CRM (movie) files "
+                        "Tiled bit-packed (and 16-bit unpacked) DNGs "
+                        "(non-standard) Deflate-compressed integer DNG files are allowed "
+                        "Canon EOS R3, R7 and R10 "
+                        "Fujifilm X-H2S, X-T30 II "
+                        "OM System OM-1 "
+                        "Leica M11 "
+                        "Sony A7-IV (ILCE-7M4) "
+                        "DJI Mavic 3");
 
     // Add new features here...
 
