@@ -781,7 +781,7 @@ void DigikamApp::setupActions()
 
     // -----------------------------------------------------------
 
-    createHelpActions();
+    createHelpActions(QLatin1String("main_window"));
 
     // -----------------------------------------------------------
 

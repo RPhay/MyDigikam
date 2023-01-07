@@ -195,7 +195,7 @@ bool DXmlGuiWindow::thumbbarVisibility() const
 
 void DXmlGuiWindow::slotHelpContents()
 {
-    openHandbook();
+    openHandbook(d->handbookSection);
 }
 
 void DXmlGuiWindow::openHandbook(const QString& section, const QString& chapter, const QString& reference)

@@ -351,7 +351,7 @@ void QueueMgrWindow::setupActions()
 
     // Standard 'Help' menu actions
 
-    createHelpActions();
+    createHelpActions(QLatin1String("batch_queue"));
 
     // Provides a menu entry that allows showing/hiding the toolbar(s)
 

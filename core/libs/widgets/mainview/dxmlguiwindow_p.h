@@ -129,7 +129,9 @@ public:
         about                   (nullptr),
 
 #if KCONFIGWIDGETS_VERSION > QT_VERSION_CHECK(5, 80, 0)
+
         hamburgerMenu           (nullptr),
+
 #endif
         anim                    (nullptr)
     {
@@ -210,12 +212,16 @@ public:
     DAboutData*              about;
 
 #if KCONFIGWIDGETS_VERSION > QT_VERSION_CHECK(5, 80, 0)
+
     KHamburgerMenu*          hamburgerMenu;
+
 #endif
 
     DLogoAction*             anim;
 
     QString                  configGroupName;
+
+    QString                  handbookSection;
 };
 
 } // namespace Digikam

@@ -514,7 +514,7 @@ void ImportUI::setupActions()
     ThemeManager::instance()->registerThemeActions(this);
 
     // Standard 'Help' menu actions
-    createHelpActions();
+    createHelpActions(QLatin1String("camera_import"));
 
     // Provides a menu entry that allows showing/hiding the toolbar(s)
     setStandardToolBarMenuEnabled(true);
