@@ -66,6 +66,16 @@ QString GeolocationEditPlugin::details() const
                  "Finally, this tool is able to read a GPS trace from a device to synchronize geo-location of items if you camera do not have an embedded GPS device.");
 }
 
+QString GeolocationEditPlugin::handbookSection() const
+{
+    return QLatin1String("geolocation_editor");
+}
+
+QString GeolocationEditPlugin::handbookChapter() const
+{
+    return QLatin1String("geoeditor_overview");
+}
+
 QList<DPluginAuthor> GeolocationEditPlugin::authors() const
 {
     return QList<DPluginAuthor>()

@@ -76,6 +76,16 @@ QString MediaServerPlugin::details() const
                 "<p>Many kind of electronic devices can support DLNA, as tablets, cellulars, TV, etc.</p>");
 }
 
+QString MediaServerPlugin::handbookSection() const
+{
+    return QLatin1String("post_processing");
+}
+
+QString MediaServerPlugin::handbookChapter() const
+{
+    return QLatin1String("media_server");
+}
+
 QList<DPluginAuthor> MediaServerPlugin::authors() const
 {
     return QList<DPluginAuthor>()

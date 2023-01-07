@@ -65,6 +65,16 @@ QString HtmlGalleryPlugin::details() const
                 "<p>Themable HTML template with different layout can be used to assemble files on a gallery.</p>");
 }
 
+QString HtmlGalleryPlugin::handbookSection() const
+{
+    return QLatin1String("post_processing");
+}
+
+QString HtmlGalleryPlugin::handbookChapter() const
+{
+    return QLatin1String("html_gallery");
+}
+
 QList<DPluginAuthor> HtmlGalleryPlugin::authors() const
 {
     return QList<DPluginAuthor>()

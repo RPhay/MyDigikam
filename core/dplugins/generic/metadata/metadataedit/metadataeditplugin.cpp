@@ -65,6 +65,16 @@ QString MetadataEditPlugin::details() const
                  "For photo agencies, pre-configured subjects can be used to describe the items contents based on Iptc reference codes.");
 }
 
+QString MetadataEditPlugin::handbookSection() const
+{
+    return QLatin1String("post_processing");
+}
+
+QString MetadataEditPlugin::handbookChapter() const
+{
+    return QLatin1String("metadata_editor");
+}
+
 QList<DPluginAuthor> MetadataEditPlugin::authors() const
 {
     return QList<DPluginAuthor>()
