@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-04 00:45+0000\n"
+"POT-Creation-Date: 2023-01-07 00:46+0000\n"
 "PO-Revision-Date: 2022-05-15 22:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -959,7 +959,7 @@ msgstr "이름:"
 
 #: core/app/items/utils/tooltipfiller.cpp:83
 #: core/app/items/utils/tooltipfiller.cpp:595
-#: core/app/views/stack/welcomepageview.cpp:277
+#: core/app/views/stack/welcomepageview.cpp:270
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:70
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:170
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -2555,7 +2555,7 @@ msgstr "도움말(&H)"
 msgid "Main Toolbar"
 msgstr "주 도구 모음"
 
-#: core/app/main/main.cpp:165 core/app/views/stack/welcomepageview.cpp:261
+#: core/app/main/main.cpp:165 core/app/views/stack/welcomepageview.cpp:254
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
@@ -3136,260 +3136,208 @@ msgid "%1/%2 items selected"
 msgstr "항목 %1/%2개 선택됨"
 
 #: core/app/views/stack/welcomepageview.cpp:140
-#, kde-format
-msgid "More than 1300 user-reports closed on bugzilla."
+#, fuzzy, kde-format
+#| msgid "More than 1300 user-reports closed on bugzilla."
+msgid "More than 200 user-reports closed on bugzilla."
 msgstr "BugZilla 항목 1300개 이상을 닫았습니다."
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
-msgid ""
-"New Neural Network engine based on OpenCV Deep Learning module to detect and "
-"recognize faces."
+msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
 msgstr ""
-"OpenCV 딥 러닝 모듈을 사용하는 새로운 신경망 네트워크 엔진으로 얼굴을 감지하"
-"고 인식합니다."
 
 #: core/app/views/stack/welcomepageview.cpp:142
 #, kde-format
-msgid "Update Slideshow to plugin with new shuffle mode."
-msgstr "새로운 무순서 모드로 슬라이드 쇼 플러그인을 업데이트했습니다."
+msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
-msgid "Add new theme Html5Responsive for HtmlGallery plugin."
-msgstr "HtmlGallery 플러그인의 새로운 테마인 Html5Responsive를 추가했습니다."
+msgid ""
+"Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
-msgid ""
-"New plugin ImageMosaicWall to create an image based on a bunch of other "
-"photos."
+msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr ""
-"새로운 플러그인: ImageMosaicWall 플러그인은 여러 이미지를 합성하여 새로운 이"
-"미지를 만듭니다."
 
 #: core/app/views/stack/welcomepageview.cpp:145
 #, kde-format
-msgid "add new batch queue manager tool to fix hot pixels from images."
-msgstr "이미지의 핫 픽셀을 수정하는 일괄 작업 대기열 관리자를 추가했습니다."
+msgid ""
+"Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store "
+"versionned images in editor."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
-msgid "add new batch queue manager tool to apply texture over images."
-msgstr "이미지에 텍스처를 적용하는 일괄 작업 대기열 관리자를 추가했습니다."
+msgid "Add hamburger menu to tool-bar if main menu is hidden."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:147
-#, kde-format
-msgid ""
-"Face Scan dialog contents is now simplified and embedded into left sidebar."
-msgstr "이제 얼굴 스캔 대화 상자 내용이 단순화되어 왼쪽 사이드바에 내장됩니다."
+#, fuzzy, kde-format
+msgid "Add new option to write metadata to files with ExifTool backend."
+msgstr "<qt><p>그림 %1개의 캡션을 편집했습니다. "
 
 #: core/app/views/stack/welcomepageview.cpp:148
 #, kde-format
-msgid "Add support for Gimp XCF files >= 2.10."
-msgstr "김프 >= 2.10에서 생성한 XCF 파일 지원을 추가했습니다."
+msgid ""
+"Optional write metadata operations to DNG and RAW files are now always "
+"delegated to ExifTool Backend."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:149
 #, kde-format
-msgid "Add Flatpak bundle support for Linux platforms."
-msgstr "리눅스 플랫폼에서 Flatpak 번들 지원을 추가했습니다."
+msgid "Optimize layout of Metadata Edit plugin for a better usability."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
-msgid "Table-view is now able to show digiKam Tag-Paths properties."
-msgstr "테이블 보기에서 digiKam 태그 경로 속성을 표시할 수 있습니다."
+msgid ""
+"Add increment file counter to sequence numbering with option [c] or [c,step]."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:151
 #, kde-format
-msgid "Add option to write geolocation information in file metadata."
-msgstr "지리적 위치 정보를 파일 메타데이터에 기록하는 옵션을 추가했습니다."
+msgid "Add random text sequence numbering with option [r]."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:152
 #, kde-format
-msgid "Add color label support for advanced metadata settings."
-msgstr "고급 메타데이터 설정에 색상 레이블 지원을 추가했습니다."
+msgid ""
+"Add configurable first character for the unique modifier with {unique:n,c}."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:153
-#, kde-format
-msgid "Add Exif, Iptc, and Xmp read support for HEIF images."
-msgstr "HEIF 이미지의 Exif, IPTC, XMP 읽기 지원을 추가했습니다."
+#, fuzzy, kde-format
+msgid "Add search for items by number of face regions."
+msgstr "선택 반전"
 
 #: core/app/views/stack/welcomepageview.cpp:154
-#, kde-format
-msgid "Improved support for UNC network paths under Windows."
-msgstr "Windows의 UNC 네트워크 경로 지원을 향상했습니다."
+#, fuzzy, kde-format
+#| msgid "Return items with tag"
+msgid "Add search for items without face regions."
+msgstr "태그가 있는 항목 반환"
 
 #: core/app/views/stack/welcomepageview.cpp:155
 #, kde-format
-msgid "Improved support for Unicode paths under Windows."
-msgstr "Windows의 유니코드 경로 지원을 향상했습니다."
+msgid "Add support for cross-platform network paths."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:156
 #, kde-format
-msgid "Apple bundle is now relocatable and compatible with macOS BigSur."
-msgstr "Apple 번들이 이제 재배치 가능하며 macOS Big Sur와 호환됩니다."
+msgid "Add support for SQLite WAL (Write-Ahead-Logging) mode."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:157
-#, fuzzy, kde-format
-#| msgid ""
-#| "New online version checker and downloader to automatize upgrade under "
-#| "Windows and macOS."
+#, kde-format
 msgid ""
-"New online version checker and downloader to automate upgrade under Windows "
-"and macOS."
+"Add spell-checking support in caption text widget using KF5::Sonnet "
+"component."
 msgstr ""
-"Windows와 macOS에서의 자동 업그레이드를 위하여 새로운 온라인 버전 검사 및 다"
-"운로드 도구가 추가되었습니다."
 
 #: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
-msgid ""
-"Better support of astro FITS image format including metadata extraction "
-"support to populate the database."
+msgid "Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto."
 msgstr ""
-"데이터베이스 입력을 위한 메타데이터 추출 등 천문학 FITS 이미지 지원이 개선되"
-"었습니다."
 
 #: core/app/views/stack/welcomepageview.cpp:159
-#, fuzzy, kde-format
-#| msgid ""
-#| "Use last Exiv2 0.27.4 in all bundles with Base Media File metadata read "
-#| "and write support (HEIF, AVIF)."
+#, kde-format
 msgid ""
-"Use last Exiv2 0.27.5 in all bundles with Base Media File metadata read and "
-"write support (HEIF, AVIF)."
+"Add online translations support to Alternative Language text editor widget."
 msgstr ""
-"모든 번들에서 기본 미디어 파일 메타데이터 읽기 및 쓰기 지원(HEIF, AVIF)이 활"
-"성화된 Exiv2 0.27.4 버전을 사용합니다."
 
 #: core/app/views/stack/welcomepageview.cpp:160
 #, kde-format
-msgid "Find duplicates items is now process in parallel using multi-cores."
-msgstr "중복 항목 찾기를 멀티코어를 사용하여 병렬로 수행합니다."
+msgid "Add Localize config panel in Setup/Misc for digiKam and Showfoto."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:161
-#, fuzzy, kde-format
-#| msgid "New tool to export items to iNaturatist web service."
-msgid "New tool to export items to iNaturalist web service."
-msgstr "iNaturatist 웹 서비스로 항목을 내보내는 새로운 도구가 추가되었습니다."
+#, kde-format
+msgid ""
+"Add settings to list prefered alternative/translated languages in text edit "
+"widget."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:162
 #, kde-format
-msgid "New metadata viewer based on ExifTool."
-msgstr "ExifTool 기반 새로운 메타데이터 뷰어가 추가되었습니다."
+msgid ""
+"Allow to use Global or Customized Image Quality Sorting settings everywhere."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:163
 #, kde-format
 msgid ""
-"MacOS package, Windows installer, and AppImage bundle use KF5 5.89 and KAPPS "
-"21.12.0 frameworks."
+"Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
+"QuocHungTran\">to perform OCR over scanned text</a>."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:164
 #, kde-format
 msgid ""
-"AppImage Linux bundle now support <a href=\"https://fcitx-im.org/wiki/"
-"Fcitx_5\">Platform Input Context FCITX</a>."
+"Add <a href=\"https://community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe"
+"\">Aesthetic Detection to classify images using deep learning model</a>."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:165
-#, kde-format
-msgid "Improve RTL translations support."
-msgstr ""
+#, fuzzy, kde-format
+msgid ""
+"Add new tool to assign pick label automatically by parsing image quality."
+msgstr "<qt><p>그림 %1개의 캡션을 편집했습니다. "
 
 #: core/app/views/stack/welcomepageview.cpp:166
 #, kde-format
-msgid ""
-"GUI internationalization and localization updates with more than 50 "
-"languages available."
+msgid "Add new tool to assign rating, pick, and color labels in batch."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:167
-#, kde-format
-msgid "Add OpenWith contextual menu support under MacOS."
-msgstr ""
+#, fuzzy, kde-format
+msgid "Add new tool to assign titles and captions in batch."
+msgstr "<qt><p>그림 %1개의 캡션을 편집했습니다. "
 
 #: core/app/views/stack/welcomepageview.cpp:168
 #, kde-format
 msgid ""
-"Integration of Google Summer of Code project 2021 <a href=\"https://"
-"community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE\">Image Quality "
-"Sorter</a>."
+"<a href=\" https://docs.digikam.org/en/index.html\">Rewrite handbook</a> "
+"from DocBook to Sphinx/ReStructuredText framework."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:169
+#, kde-format
+msgid "Update internal RAW engine to last stable Libraw 0.21.1."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:170
-#, fuzzy, kde-format
-#| msgid "A tool to export items to web-services"
-msgid ""
-"New tool to share items on the network with a Motion JPEG stream server."
-msgstr "웹 서비스로 항목을 내보내는 도구"
-
-#: core/app/views/stack/welcomepageview.cpp:171
 #, kde-format
 msgid ""
-"Showfoto has a new left sidebar hosting a folder-view to quickly explore "
-"images from local file system."
+"New RAW features: Phase One/Leaf IIQ-S v2 support Canon CR3 filmrolls/"
+"RawBurst Canon CRM (movie) files Tiled bit-packed (and 16-bit unpacked) DNGs "
+"(non-standard) Deflate-compressed integer DNG files are allowed Canon EOS "
+"R3, R7 and R10 Fujifilm X-H2S, X-T30 II OM System OM-1 Leica M11 Sony A7-IV "
+"(ILCE-7M4) DJI Mavic 3"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:172
-#, fuzzy, kde-format
-#| msgid ""
-#| "Update internal RAW engine to last Libraw 0.20.0 release including Canon "
-#| "CR3 and Sony A7R4 support."
-msgid ""
-"Update internal RAW engine to last Libraw 0.20.2 (snapshot 20210827) "
-"including Canon CR3 and Sony A7R4 support."
-msgstr ""
-"내장 RAW 엔진을 libraw 0.20.0 릴리스 기반으로 업데이트하여 캐논 CR3 및 소니 "
-"A7R4 지원을 추가했습니다."
-
-#: core/app/views/stack/welcomepageview.cpp:173
-#, kde-format
-msgid ""
-"New camera supported: Canon CR3, PowerShot G5 X Mark II, G7 X Mark III, SX70 "
-"HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS M200, EOS "
-"1DX Mark III (lossless files only) DJI Mavic Air, Air2, Osmo Action, "
-"FujiFilm Fujifilm compressed/16bit, GFX 100, X-A7, X-Pro3, X100V, X-T4, X-"
-"T200, GoPro Fusion, HERO5, HERO6, HERO7, HERO8, Hasselblad L1D-20c, X1D II "
-"50C, Leica D-LUX7, Q-P, Q2, V-LUX5, C-Lux / CAM-DC25, SL2, M10 Monochrom, "
-"Nikon D780, Z50, P950, Olympus TG-6, E-M5 Mark III, E-PL10, E-M1 Mark III, "
-"Panasonic Panasonic 14-bit, DC-FZ1000 II, DC-G90, DC-S1, DC-S1R, DC-S1H, DC-"
-"TZ95, PhaseOne IQ4 150MP, Rapsberry Pi RAW+JPEG format, Ricoh GR III, Sony "
-"A7R IV, A9 II, ILCE-6100, ILCE-6600, RX0 II, RX100 VII, Zenit M, also "
-"multiple modern smartphones."
-msgstr ""
-"새 카메라 지원: 캐논 CR3, PowerShot G5 X Mark II, G7 X Mark III, SX70 HS, "
-"EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS M200, EOS 1DX "
-"Mark III(무손실 파일만), DJI Mavic Air, Air2, Osmo Action, 후지필름 후지필름 "
-"합축/16비트, GFX 100, X-A7, X-Pro3, X100V, X-T4, X-T200, GoPro Fusion, "
-"HERO5, HERO6, HERO7, HERO8, Hasselblad L1D-20c, X1D II 50C, Leica D-LUX7, Q-"
-"P, Q2, V-LUX5, C-Lux / CAM-DC25, SL2, M10 Monochrom, 니콘 D780, Z50, P950, 올"
-"림푸스 TG-6, E-M5 Mark III, E-PL10, E-M1 Mark III, 파나소닉 파나소닉 14비트, "
-"DC-FZ1000 II, DC-G90, DC-S1, DC-S1R, DC-S1H, DC-TZ95, PhaseOne IQ4 150MP, "
-"Raspberry Pi RAW+JPEG 형식, 리코 GR III, 소니 A7R IV, A9 II, ILCE-6100, "
-"ILCE-6600, RX0 II, RX100 VII, Zenit M 및 다양한 스마트폰."
-
-#: core/app/views/stack/welcomepageview.cpp:192
+#: core/app/views/stack/welcomepageview.cpp:185
 #, kde-format
 msgid "...and much more."
 msgstr "...이외 더 많은 기능."
 
-#: core/app/views/stack/welcomepageview.cpp:198
+#: core/app/views/stack/welcomepageview.cpp:191
 #, kde-format
 msgid "<li>%1</li>\n"
 msgstr "<li>%1</li>\n"
 
-#: core/app/views/stack/welcomepageview.cpp:201
+#: core/app/views/stack/welcomepageview.cpp:194
 #, kde-format
 msgid "New Features"
 msgstr "새로운 기능"
 
-#: core/app/views/stack/welcomepageview.cpp:203
+#: core/app/views/stack/welcomepageview.cpp:196
 #, kde-format
 msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:204
+#: core/app/views/stack/welcomepageview.cpp:197
 #, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
@@ -3398,17 +3346,17 @@ msgstr ""
 "이 버전의 digiKam에서 추가된 기능 중 일부는 다음과 같습니다(digiKam 6.x 기"
 "준):"
 
-#: core/app/views/stack/welcomepageview.cpp:212
+#: core/app/views/stack/welcomepageview.cpp:205
 #, kde-format
 msgid "About"
 msgstr "정보"
 
-#: core/app/views/stack/welcomepageview.cpp:214
+#: core/app/views/stack/welcomepageview.cpp:207
 #, kde-format
 msgid "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 msgstr "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:215
+#: core/app/views/stack/welcomepageview.cpp:208
 #, kde-format
 msgid ""
 "digiKam is an open source photo management program designed to import, "
@@ -3418,7 +3366,7 @@ msgstr ""
 "digiKam은 오픈 소스 사진 관리 프로그램입니다. 컴퓨터에 저장된 이미지를 가져오"
 "고, 정리하고, 보정하고, 검색하고 내보낼 수 있습니다."
 
-#: core/app/views/stack/welcomepageview.cpp:216
+#: core/app/views/stack/welcomepageview.cpp:209
 #, kde-format
 msgid ""
 "Currently, you are in the Album view mode of digiKam. Albums are the places "
@@ -3428,12 +3376,12 @@ msgstr ""
 "지금 보이는 화면은 digiKam의 앨범 보기 모드입니다. 앨범에는 개인 파일이 저장"
 "되며 하드 디스크의 폴더와 동일합니다."
 
-#: core/app/views/stack/welcomepageview.cpp:217
+#: core/app/views/stack/welcomepageview.cpp:210
 #, kde-format
 msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li><li>%2</li>"
 
-#: core/app/views/stack/welcomepageview.cpp:218
+#: core/app/views/stack/welcomepageview.cpp:211
 #, fuzzy, kde-format
 #| msgid ""
 #| "digiKam has many powerful features which are described in the <a href="
@@ -3445,7 +3393,7 @@ msgstr ""
 "digiKam의 강력한 기능을 알아 보려면 <a href=\"https://docs.kde.org/?"
 "application=digikam\">문서</a>를 참조하십시오."
 
-#: core/app/views/stack/welcomepageview.cpp:219
+#: core/app/views/stack/welcomepageview.cpp:212
 #, kde-format
 msgid ""
 "The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides "
@@ -3454,36 +3402,36 @@ msgstr ""
 "<a href=\"https://www.digikam.org\">digiKam 홈페이지</a>에는 digiKam의 새로"
 "운 버전에 대한 정보가 올라옵니다."
 
-#: core/app/views/stack/welcomepageview.cpp:269
+#: core/app/views/stack/welcomepageview.cpp:262
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "digiKam %1에 오신 것을 환영합니다"
 
-#: core/app/views/stack/welcomepageview.cpp:272
+#: core/app/views/stack/welcomepageview.cpp:265
 #, kde-format
 msgid "Background Image Credits"
 msgstr "배경 그림 제작자"
 
-#: core/app/views/stack/welcomepageview.cpp:275
+#: core/app/views/stack/welcomepageview.cpp:268
 #, fuzzy, kde-format
 #| msgid "Author:"
 msgid "Author:"
 msgstr "작성자:"
 
-#: core/app/views/stack/welcomepageview.cpp:276
+#: core/app/views/stack/welcomepageview.cpp:269
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:180
 #, kde-format
 msgid "Location:"
 msgstr "위치:"
 
-#: core/app/views/stack/welcomepageview.cpp:278
+#: core/app/views/stack/welcomepageview.cpp:271
 #, fuzzy, kde-format
 #| msgid "Camera"
 msgid "Camera:"
 msgstr "카메라"
 
-#: core/app/views/stack/welcomepageview.cpp:279
+#: core/app/views/stack/welcomepageview.cpp:272
 #, fuzzy, kde-format
 #| msgid "Lens"
 msgid "Lens:"
@@ -27499,7 +27447,6 @@ msgid "Luminosity Curve"
 msgstr ""
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:311
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:119
 #, kde-format
 msgid "Info"
 msgstr "정보"
@@ -30392,7 +30339,6 @@ msgid "Copy to Clipboard"
 msgstr "클립보드에 복사"
 
 #: core/libs/dialogs/infodlg.cpp:96
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:60
 #, kde-format
 msgid ""
 "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p><p><i>%4</i></p>"
@@ -43451,7 +43397,6 @@ msgid "Aditya Bhatt"
 msgstr "Aditya Bhatt"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:220
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:189
 #, kde-format
 msgid "Face Detection"
 msgstr "얼굴 감지"
@@ -43482,7 +43427,6 @@ msgid "Mahesh Hegde"
 msgstr "Mahesh Hegde"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:238
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:258
 #, kde-format
 msgid "Face Recognition"
 msgstr "얼굴 인식"
@@ -53433,189 +53377,6 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr "이 제안 거부"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:45
-#, fuzzy, kde-format
-#| msgid "Face Management in DigiKam"
-msgid "Face Management in digiKam"
-msgstr "digiKam 얼굴 관리"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:70
-#, kde-format
-msgid ""
-"The Face Workflow allows you to Detect and Recognize people in your "
-"photographs."
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:76
-#, kde-format
-msgid "<b>Face Detection</b>"
-msgstr "<b>얼굴 감지</b>"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:80
-#, kde-format
-msgid ""
-"Face Detection allows digiKam to detect faces in your images. This step is "
-"required before being able to recognize faces."
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:86
-#, kde-format
-msgid "<b>Face Recognition</b>"
-msgstr "<b>얼굴 인식</b>"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:90
-#, kde-format
-msgid "Face Recognition will automatically recognize people in your images."
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:100
-#, kde-format
-msgid ""
-"For additional information, read the %1 \n"
-"To ask questions, use our mailing list: digikam-users@kde.org \n"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:135
-#, kde-format
-msgid ""
-"To run face detection, select the <u>Detect Faces</u> option in the Face "
-"Scan panel and then click on <u>Scan Collection for Faces</u>"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:139
-#, kde-format
-msgid ""
-"<b>Caution:</b> Running Face Detection for the first time can be fairly time "
-"consuming. Make sure you use the <u>Search In</u> tab to restrict the target "
-"of the scan."
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:145
-#, kde-format
-msgid "digiKam offers two kinds of face detection scans: "
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:150
-#, fuzzy, kde-format
-#| msgid "<b>Skip Images Already Scanned"
-msgid "<b>Skip Images Already Scanned</b>"
-msgstr "<b>이미 스캔한 이미지 건너뛰기"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:154
-#, kde-format
-msgid ""
-"Choose this option if you haven't scanned yet or if the last scan yielded "
-"good results but you would like to scan new images."
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:161
-#, fuzzy, kde-format
-#| msgid "<b>Scan Again and Merge"
-msgid "<b>Scan Again and Merge</b>"
-msgstr "<b>다시 스캔 및 결과 병합"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:165
-#, kde-format
-msgid ""
-"Choose this option if the results of the previous scan weren't accurate. "
-"This would rescan all images again, and is time consuming."
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:171
-#, kde-format
-msgid ""
-"After the Face Scan is complete, you should see a new tag <u>Unknown</u> "
-"where the results of the face scan will appear. You may now manually "
-"identify a few of these faces and then proceed for face recognition."
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:208
-#, kde-format
-msgid ""
-"To manually identify a face, hover on any Unknown face and use the text box "
-"to give it a name. This will lead to the creation of a face tag in case a "
-"person of that name doesn't exist already. For best results identify 4-5 "
-"faces for each person you want the scan to recognize."
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:217
-#, kde-format
-msgid ""
-"Running face recognition is similar to detection, just select <u>Recognize "
-"Faces</u> from the Face Scan panel this time.\n"
-"Face recognition will work on all Unknown faces. In case there's a face you "
-"don't wish to be recognized, you can mark it as ignored.\n"
-"This leads to the creation of a new <u>Ignored</u> tag, you can later unmark "
-"the face if needed."
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:235
-#, kde-format
-msgid ""
-"You may select <u>Work on all processor cores</u>in order to increase the "
-"speed of Face Recognition \n"
-"The Face Accuracy slider allows you to control the accuracy of the "
-"recognition algorithm. A higher specificity implies higher accuracy, however "
-"this results in a smaller set of results."
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:274
-#, kde-format
-msgid ""
-"The results of facial recognition appear in the form of Unconfirmed results. "
-"These results will show up in the Unconfirmed tag, as well as in the tag of "
-"the person suggested for each face.\n"
-"Hovering over Unconfirmed faces will display a few options:\n"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:287
-#, kde-format
-msgid ""
-"The Confirm button allows you to confirm the suggestion. This would assign "
-"the suggested name to the face"
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:297
-#, kde-format
-msgid ""
-"Use the Reject button, if the suggestion is incorrect. This would move the "
-"face back to Unknown."
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:308
-#, kde-format
-msgid ""
-"Use the Delete button, if the suggestion is not a face. This will delete the "
-"face region from the database."
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:314
-#, kde-format
-msgid ""
-"<b>Face Categorization and Sorting</b>\n"
-"By default, faces will appear categorized based on their name. You may "
-"change this behaviour, by going to <u>View -> Separate Items</u>.\n"
-"Note that using a different categorization order will lead to Confirmed and "
-"Unconfirmed faces appearing mixed with one another. To change this behaviour "
-"you may modify the sorting order within each category by going to <u>View -> "
-"Sort Items -> By Face Type</u>."
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:326
-#, kde-format
-msgid ""
-"<b>Improving Results of Face Recognition</b>\n"
-"Apart from using the settings mentioned in the last page, face results may "
-"also be improved by rebuilding the training data. This may be done through "
-"Tools -> Maintenance -> Detect and Recognize Faces -> Clear and rebuild all "
-"training data."
-msgstr ""
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:346
-#, kde-format
-msgid "Confirm Faces"
-msgstr "얼굴 확인"
-
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
@@ -53652,25 +53413,25 @@ msgctxt "@info"
 msgid "Help"
 msgstr "도움말"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:158
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect faces"
 msgstr "얼굴 감지"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:160
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
 #, kde-format
 msgctxt "@info"
 msgid "Find all faces in your photos"
 msgstr "내 사진에 나온 모든 얼굴 찾기"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:164
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:163
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect and recognize faces"
 msgstr "얼굴 감지 및 인식"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:165
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:164
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -53680,13 +53441,13 @@ msgstr ""
 "사진에서 모든 얼굴을 찾아\n"
 "누가 찍혀 있는지 알아 봅니다"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:168
 #, kde-format
 msgctxt "@option:radio"
 msgid "Recognize faces"
 msgstr "얼굴 인식"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:170
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -53696,19 +53457,19 @@ msgstr ""
 "찍힌 사람 중에서 표시되었지만 확인되지\n"
 "않은 얼굴을 인식하려면 다시 시도하십시오."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:193
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:192
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "작업 흐름"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:198
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:197
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "다음에서 검색"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
 #, fuzzy, kde-format
 #| msgctxt "@groupbox"
 #| msgid "Face Accuracy"
@@ -53716,19 +53477,19 @@ msgctxt "@label"
 msgid "Face Accuracy"
 msgstr "얼굴 정확도"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:207
 #, kde-format
 msgctxt "@label left extremities of a scale"
 msgid "Sensitivity"
 msgstr "민감도"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:210
 #, kde-format
 msgctxt "@label right extremities of a scale"
 msgid "Specificity"
 msgstr "특이성"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:218
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:217
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53741,26 +53502,26 @@ msgstr ""
 "더 적게 인식됩니다\n"
 "(사전 태그가 지정된 얼굴과 매우 유사한 얼굴만 인식됨)."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:228
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
 #, kde-format
 msgctxt "@option:check"
 msgid "Use YOLO v3 detection model"
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:229
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Face detection with YOLO v3 data model. Better results but slower."
 msgstr ""
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:233
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:232
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:236
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "모든 프로세서 코어에서 작업"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53772,7 +53533,7 @@ msgstr ""
 "시스템의 모든 프로세서 코어를 사용할지, 아니면 한 코어에서만\n"
 "백그라운드에서 작업할지를 선택할 수 있습니다."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -64458,6 +64219,173 @@ msgstr "모든 항목을 기본값으로 초기화합니다."
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "모든 항목을 기본값으로 초기화합니다."
+
+#~ msgid ""
+#~ "New Neural Network engine based on OpenCV Deep Learning module to detect "
+#~ "and recognize faces."
+#~ msgstr ""
+#~ "OpenCV 딥 러닝 모듈을 사용하는 새로운 신경망 네트워크 엔진으로 얼굴을 감지"
+#~ "하고 인식합니다."
+
+#~ msgid "Update Slideshow to plugin with new shuffle mode."
+#~ msgstr "새로운 무순서 모드로 슬라이드 쇼 플러그인을 업데이트했습니다."
+
+#~ msgid "Add new theme Html5Responsive for HtmlGallery plugin."
+#~ msgstr ""
+#~ "HtmlGallery 플러그인의 새로운 테마인 Html5Responsive를 추가했습니다."
+
+#~ msgid ""
+#~ "New plugin ImageMosaicWall to create an image based on a bunch of other "
+#~ "photos."
+#~ msgstr ""
+#~ "새로운 플러그인: ImageMosaicWall 플러그인은 여러 이미지를 합성하여 새로운 "
+#~ "이미지를 만듭니다."
+
+#~ msgid "add new batch queue manager tool to fix hot pixels from images."
+#~ msgstr "이미지의 핫 픽셀을 수정하는 일괄 작업 대기열 관리자를 추가했습니다."
+
+#~ msgid "add new batch queue manager tool to apply texture over images."
+#~ msgstr "이미지에 텍스처를 적용하는 일괄 작업 대기열 관리자를 추가했습니다."
+
+#~ msgid ""
+#~ "Face Scan dialog contents is now simplified and embedded into left "
+#~ "sidebar."
+#~ msgstr ""
+#~ "이제 얼굴 스캔 대화 상자 내용이 단순화되어 왼쪽 사이드바에 내장됩니다."
+
+#~ msgid "Add support for Gimp XCF files >= 2.10."
+#~ msgstr "김프 >= 2.10에서 생성한 XCF 파일 지원을 추가했습니다."
+
+#~ msgid "Add Flatpak bundle support for Linux platforms."
+#~ msgstr "리눅스 플랫폼에서 Flatpak 번들 지원을 추가했습니다."
+
+#~ msgid "Table-view is now able to show digiKam Tag-Paths properties."
+#~ msgstr "테이블 보기에서 digiKam 태그 경로 속성을 표시할 수 있습니다."
+
+#~ msgid "Add option to write geolocation information in file metadata."
+#~ msgstr "지리적 위치 정보를 파일 메타데이터에 기록하는 옵션을 추가했습니다."
+
+#~ msgid "Add color label support for advanced metadata settings."
+#~ msgstr "고급 메타데이터 설정에 색상 레이블 지원을 추가했습니다."
+
+#~ msgid "Add Exif, Iptc, and Xmp read support for HEIF images."
+#~ msgstr "HEIF 이미지의 Exif, IPTC, XMP 읽기 지원을 추가했습니다."
+
+#~ msgid "Improved support for UNC network paths under Windows."
+#~ msgstr "Windows의 UNC 네트워크 경로 지원을 향상했습니다."
+
+#~ msgid "Improved support for Unicode paths under Windows."
+#~ msgstr "Windows의 유니코드 경로 지원을 향상했습니다."
+
+#~ msgid "Apple bundle is now relocatable and compatible with macOS BigSur."
+#~ msgstr "Apple 번들이 이제 재배치 가능하며 macOS Big Sur와 호환됩니다."
+
+#, fuzzy
+#~| msgid ""
+#~| "New online version checker and downloader to automatize upgrade under "
+#~| "Windows and macOS."
+#~ msgid ""
+#~ "New online version checker and downloader to automate upgrade under "
+#~ "Windows and macOS."
+#~ msgstr ""
+#~ "Windows와 macOS에서의 자동 업그레이드를 위하여 새로운 온라인 버전 검사 및 "
+#~ "다운로드 도구가 추가되었습니다."
+
+#~ msgid ""
+#~ "Better support of astro FITS image format including metadata extraction "
+#~ "support to populate the database."
+#~ msgstr ""
+#~ "데이터베이스 입력을 위한 메타데이터 추출 등 천문학 FITS 이미지 지원이 개선"
+#~ "되었습니다."
+
+#, fuzzy
+#~| msgid ""
+#~| "Use last Exiv2 0.27.4 in all bundles with Base Media File metadata read "
+#~| "and write support (HEIF, AVIF)."
+#~ msgid ""
+#~ "Use last Exiv2 0.27.5 in all bundles with Base Media File metadata read "
+#~ "and write support (HEIF, AVIF)."
+#~ msgstr ""
+#~ "모든 번들에서 기본 미디어 파일 메타데이터 읽기 및 쓰기 지원(HEIF, AVIF)이 "
+#~ "활성화된 Exiv2 0.27.4 버전을 사용합니다."
+
+#~ msgid "Find duplicates items is now process in parallel using multi-cores."
+#~ msgstr "중복 항목 찾기를 멀티코어를 사용하여 병렬로 수행합니다."
+
+#, fuzzy
+#~| msgid "New tool to export items to iNaturatist web service."
+#~ msgid "New tool to export items to iNaturalist web service."
+#~ msgstr ""
+#~ "iNaturatist 웹 서비스로 항목을 내보내는 새로운 도구가 추가되었습니다."
+
+#~ msgid "New metadata viewer based on ExifTool."
+#~ msgstr "ExifTool 기반 새로운 메타데이터 뷰어가 추가되었습니다."
+
+#, fuzzy
+#~| msgid "A tool to export items to web-services"
+#~ msgid ""
+#~ "New tool to share items on the network with a Motion JPEG stream server."
+#~ msgstr "웹 서비스로 항목을 내보내는 도구"
+
+#, fuzzy
+#~| msgid ""
+#~| "Update internal RAW engine to last Libraw 0.20.0 release including Canon "
+#~| "CR3 and Sony A7R4 support."
+#~ msgid ""
+#~ "Update internal RAW engine to last Libraw 0.20.2 (snapshot 20210827) "
+#~ "including Canon CR3 and Sony A7R4 support."
+#~ msgstr ""
+#~ "내장 RAW 엔진을 libraw 0.20.0 릴리스 기반으로 업데이트하여 캐논 CR3 및 소"
+#~ "니 A7R4 지원을 추가했습니다."
+
+#~ msgid ""
+#~ "New camera supported: Canon CR3, PowerShot G5 X Mark II, G7 X Mark III, "
+#~ "SX70 HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS "
+#~ "M200, EOS 1DX Mark III (lossless files only) DJI Mavic Air, Air2, Osmo "
+#~ "Action, FujiFilm Fujifilm compressed/16bit, GFX 100, X-A7, X-Pro3, X100V, "
+#~ "X-T4, X-T200, GoPro Fusion, HERO5, HERO6, HERO7, HERO8, Hasselblad "
+#~ "L1D-20c, X1D II 50C, Leica D-LUX7, Q-P, Q2, V-LUX5, C-Lux / CAM-DC25, "
+#~ "SL2, M10 Monochrom, Nikon D780, Z50, P950, Olympus TG-6, E-M5 Mark III, E-"
+#~ "PL10, E-M1 Mark III, Panasonic Panasonic 14-bit, DC-FZ1000 II, DC-G90, DC-"
+#~ "S1, DC-S1R, DC-S1H, DC-TZ95, PhaseOne IQ4 150MP, Rapsberry Pi RAW+JPEG "
+#~ "format, Ricoh GR III, Sony A7R IV, A9 II, ILCE-6100, ILCE-6600, RX0 II, "
+#~ "RX100 VII, Zenit M, also multiple modern smartphones."
+#~ msgstr ""
+#~ "새 카메라 지원: 캐논 CR3, PowerShot G5 X Mark II, G7 X Mark III, SX70 HS, "
+#~ "EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS M200, EOS "
+#~ "1DX Mark III(무손실 파일만), DJI Mavic Air, Air2, Osmo Action, 후지필름 후"
+#~ "지필름 합축/16비트, GFX 100, X-A7, X-Pro3, X100V, X-T4, X-T200, GoPro "
+#~ "Fusion, HERO5, HERO6, HERO7, HERO8, Hasselblad L1D-20c, X1D II 50C, Leica "
+#~ "D-LUX7, Q-P, Q2, V-LUX5, C-Lux / CAM-DC25, SL2, M10 Monochrom, 니콘 D780, "
+#~ "Z50, P950, 올림푸스 TG-6, E-M5 Mark III, E-PL10, E-M1 Mark III, 파나소닉 "
+#~ "파나소닉 14비트, DC-FZ1000 II, DC-G90, DC-S1, DC-S1R, DC-S1H, DC-TZ95, "
+#~ "PhaseOne IQ4 150MP, Raspberry Pi RAW+JPEG 형식, 리코 GR III, 소니 A7R IV, "
+#~ "A9 II, ILCE-6100, ILCE-6600, RX0 II, RX100 VII, Zenit M 및 다양한 스마트"
+#~ "폰."
+
+#, fuzzy
+#~| msgid "Face Management in DigiKam"
+#~ msgid "Face Management in digiKam"
+#~ msgstr "digiKam 얼굴 관리"
+
+#~ msgid "<b>Face Detection</b>"
+#~ msgstr "<b>얼굴 감지</b>"
+
+#~ msgid "<b>Face Recognition</b>"
+#~ msgstr "<b>얼굴 인식</b>"
+
+#, fuzzy
+#~| msgid "<b>Skip Images Already Scanned"
+#~ msgid "<b>Skip Images Already Scanned</b>"
+#~ msgstr "<b>이미 스캔한 이미지 건너뛰기"
+
+#, fuzzy
+#~| msgid "<b>Scan Again and Merge"
+#~ msgid "<b>Scan Again and Merge</b>"
+#~ msgstr "<b>다시 스캔 및 결과 병합"
+
+#~ msgid "Confirm Faces"
+#~ msgstr "얼굴 확인"
 
 #, fuzzy
 #~ msgid "Write tags to XMP"

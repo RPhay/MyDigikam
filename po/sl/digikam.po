@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-04 00:45+0000\n"
+"POT-Creation-Date: 2023-01-07 00:46+0000\n"
 "PO-Revision-Date: 2022-12-26 07:43+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1024,7 +1024,7 @@ msgstr "Ime:"
 
 #: core/app/items/utils/tooltipfiller.cpp:83
 #: core/app/items/utils/tooltipfiller.cpp:595
-#: core/app/views/stack/welcomepageview.cpp:277
+#: core/app/views/stack/welcomepageview.cpp:270
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:70
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:170
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -2650,7 +2650,7 @@ msgstr "Pomoč"
 msgid "Main Toolbar"
 msgstr "Glavna orodna vrstica"
 
-#: core/app/main/main.cpp:165 core/app/views/stack/welcomepageview.cpp:261
+#: core/app/main/main.cpp:165 core/app/views/stack/welcomepageview.cpp:254
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
@@ -3237,270 +3237,228 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 izbranih predmetov"
 
 #: core/app/views/stack/welcomepageview.cpp:140
-#, kde-format
-msgid "More than 1300 user-reports closed on bugzilla."
+#, fuzzy, kde-format
+#| msgid "More than 1300 user-reports closed on bugzilla."
+msgid "More than 200 user-reports closed on bugzilla."
 msgstr "Več kot 1300 zaprtih poročil o napakah na bugzilli."
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
-msgid ""
-"New Neural Network engine based on OpenCV Deep Learning module to detect and "
-"recognize faces."
+msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
 msgstr ""
-"Nov program za nevronske mreže, ki temelji na modulu OpenCV Deep Learning za "
-"odkrivanje in prepoznavo obraza."
 
 #: core/app/views/stack/welcomepageview.cpp:142
 #, kde-format
-msgid "Update Slideshow to plugin with new shuffle mode."
-msgstr "Posodobi slikovno predstavitev z vtičnikom v novem mešalnem načinu."
+msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
-msgid "Add new theme Html5Responsive for HtmlGallery plugin."
-msgstr "Dodaj novo temo Html5Responsive za vtičnik HtmlGallery."
+msgid ""
+"Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
-msgid ""
-"New plugin ImageMosaicWall to create an image based on a bunch of other "
-"photos."
+msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr ""
-"Nov vtičnik ImageMosaicWall za ustvarjanje slike, ki temelji na kopici "
-"drugih fotografij."
 
 #: core/app/views/stack/welcomepageview.cpp:145
 #, kde-format
-msgid "add new batch queue manager tool to fix hot pixels from images."
+msgid ""
+"Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store "
+"versionned images in editor."
 msgstr ""
-"dodaj novo orodje upravitelja paketov čakalnih vrst za popravilo vročih "
-"slikovni točk s slik."
 
 #: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
-msgid "add new batch queue manager tool to apply texture over images."
+msgid "Add hamburger menu to tool-bar if main menu is hidden."
 msgstr ""
-"dodaj novo orodje upravitelja paketov čakalnih vrst za uveljavljanje tekstur "
-"prek slik."
 
 #: core/app/views/stack/welcomepageview.cpp:147
-#, kde-format
-msgid ""
-"Face Scan dialog contents is now simplified and embedded into left sidebar."
-msgstr ""
-"Vsebina pogovornega okna za skeniranje obrazov je zdaj poenostavljena in je "
-"vdelana v levo stransko orodno letvico."
+#, fuzzy, kde-format
+#| msgctxt "@info:whatsthis"
+#| msgid "Turn on this option to write metadata into DNG files."
+msgid "Add new option to write metadata to files with ExifTool backend."
+msgstr "Vklopite to možnost, da zapišete metapodatke v datoteke DNG."
 
 #: core/app/views/stack/welcomepageview.cpp:148
-#, kde-format
-msgid "Add support for Gimp XCF files >= 2.10."
-msgstr "Dodana podpora za datoteke Gimp XCF >= 2.10."
+#, fuzzy, kde-format
+#| msgctxt "@info:whatsthis"
+#| msgid ""
+#| "Turn on this option to write metadata into RAW files. This feature is "
+#| "delegate to ExifTool backend and is disabled by default."
+msgid ""
+"Optional write metadata operations to DNG and RAW files are now always "
+"delegated to ExifTool Backend."
+msgstr ""
+"Vklopite možnost zapisovanja metapodatkov v surove datoteke RAW. Ta zmožnost "
+"dodeli nalogo pisanja programu ExifTool v ozadju in je privzeto onemogočena."
 
 #: core/app/views/stack/welcomepageview.cpp:149
 #, kde-format
-msgid "Add Flatpak bundle support for Linux platforms."
-msgstr "Dodana podpora za Flatpak za računalnike Linux."
+msgid "Optimize layout of Metadata Edit plugin for a better usability."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
-msgid "Table-view is now able to show digiKam Tag-Paths properties."
-msgstr "Pogled v tabeli zdaj lahko prikazuje lastnosti digiKam poti značk."
+msgid ""
+"Add increment file counter to sequence numbering with option [c] or [c,step]."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:151
 #, kde-format
-msgid "Add option to write geolocation information in file metadata."
-msgstr "Dodaj možnost za vpis geokodiranih podatkov metapodatke."
+msgid "Add random text sequence numbering with option [r]."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:152
 #, kde-format
-msgid "Add color label support for advanced metadata settings."
-msgstr "Dodaj podporo barvnih oznak za napredne nastavitve metapodatkov."
+msgid ""
+"Add configurable first character for the unique modifier with {unique:n,c}."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:153
-#, kde-format
-msgid "Add Exif, Iptc, and Xmp read support for HEIF images."
-msgstr "Dodaj podporo branja Exif, IPTC ali Xmp iz slik HEIF."
+#, fuzzy, kde-format
+#| msgid "Return items by number of face regions"
+msgid "Add search for items by number of face regions."
+msgstr "Vrni predmete po število regij obrazov"
 
 #: core/app/views/stack/welcomepageview.cpp:154
-#, kde-format
-msgid "Improved support for UNC network paths under Windows."
-msgstr "Izboljšana podpora za poti UNC pod Windowsi."
+#, fuzzy, kde-format
+#| msgid "Return items without face regions"
+msgid "Add search for items without face regions."
+msgstr "Vrni postavke brez regij obrazov"
 
 #: core/app/views/stack/welcomepageview.cpp:155
 #, kde-format
-msgid "Improved support for Unicode paths under Windows."
-msgstr "Izboljšana podpora za poti Unicode pod Windowsi."
+msgid "Add support for cross-platform network paths."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:156
 #, kde-format
-msgid "Apple bundle is now relocatable and compatible with macOS BigSur."
+msgid "Add support for SQLite WAL (Write-Ahead-Logging) mode."
 msgstr ""
-"Apple sveženj je zdaj mogoče prestaviti in je združljiv z macOS BigSur."
 
 #: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format
 msgid ""
-"New online version checker and downloader to automate upgrade under Windows "
-"and macOS."
+"Add spell-checking support in caption text widget using KF5::Sonnet "
+"component."
 msgstr ""
-"Novi program za preverjanje verzij in prenos programa za avtomatizacijo "
-"prenosa datotek za nadgradnje programa pod Windows in macOS."
 
 #: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
-msgid ""
-"Better support of astro FITS image format including metadata extraction "
-"support to populate the database."
+msgid "Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto."
 msgstr ""
-"Boljša podpora formatu slike astro FITS, vključno z ekstrakcijo metapodatkov "
-"za podporo popolnitvi baze podatkov."
 
 #: core/app/views/stack/welcomepageview.cpp:159
 #, kde-format
 msgid ""
-"Use last Exiv2 0.27.5 in all bundles with Base Media File metadata read and "
-"write support (HEIF, AVIF)."
+"Add online translations support to Alternative Language text editor widget."
 msgstr ""
-"Uporabi zadnji Exiv2 0.27.5 v vseh svežnjih z metapodatki s podporo za "
-"branje in pisanje osnovnih medijskih datotek (HEIF, AVIF)."
 
 #: core/app/views/stack/welcomepageview.cpp:160
 #, kde-format
-msgid "Find duplicates items is now process in parallel using multi-cores."
+msgid "Add Localize config panel in Setup/Misc for digiKam and Showfoto."
 msgstr ""
-"Iskanje podvojenih elementov se zdaj vzporedno obdeluje z uporabo več jeder."
 
 #: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
-msgid "New tool to export items to iNaturalist web service."
-msgstr "Novo orodje za izvoz predmetov v spletno storitev iNaturatist."
+msgid ""
+"Add settings to list prefered alternative/translated languages in text edit "
+"widget."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:162
 #, kde-format
-msgid "New metadata viewer based on ExifTool."
-msgstr "Nov pregledovalnik metapodatkov na osnovi orodja ExifTool."
+msgid ""
+"Allow to use Global or Customized Image Quality Sorting settings everywhere."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:163
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Integration of Google Summer of Code project 2021 <a href=\"https://"
+#| "community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE\">Image Quality "
+#| "Sorter</a>."
 msgid ""
-"MacOS package, Windows installer, and AppImage bundle use KF5 5.89 and KAPPS "
-"21.12.0 frameworks."
-msgstr ""
-"Paket MacOS, namestilnik Windows, in skupek AppImage uporabljajo KF5 5.89 in "
-"KAPPS ogrodja 21.12.0."
-
-#: core/app/views/stack/welcomepageview.cpp:164
-#, kde-format
-msgid ""
-"AppImage Linux bundle now support <a href=\"https://fcitx-im.org/wiki/"
-"Fcitx_5\">Platform Input Context FCITX</a>."
-msgstr ""
-"Skupek AppImage Linux zdaj podpira <a href=\"https://fcitx-im.org/wiki/"
-"Fcitx_5\">Platform Input Context FCITX</a>."
-
-#: core/app/views/stack/welcomepageview.cpp:165
-#, kde-format
-msgid "Improve RTL translations support."
-msgstr "Izboljšaj podporo prevodov RTL."
-
-#: core/app/views/stack/welcomepageview.cpp:166
-#, kde-format
-msgid ""
-"GUI internationalization and localization updates with more than 50 "
-"languages available."
-msgstr ""
-"Na voljo so mednarodne prilagoditve in posodobitve za lokalizacijo za več "
-"kot 50 jezikov."
-
-#: core/app/views/stack/welcomepageview.cpp:167
-#, kde-format
-msgid "Add OpenWith contextual menu support under MacOS."
-msgstr "Dodaj podporo kontekstnega menija OpenWith pod MacOS."
-
-#: core/app/views/stack/welcomepageview.cpp:168
-#, kde-format
-msgid ""
-"Integration of Google Summer of Code project 2021 <a href=\"https://"
-"community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE\">Image Quality "
-"Sorter</a>."
+"Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
+"QuocHungTran\">to perform OCR over scanned text</a>."
 msgstr ""
 "Integracija Google Summer of Code project 2021 <a href=\"https://community."
 "kde.org/GSoC/2021/StatusReports/PhuocKhanhLE\"> Razvrščevalnik kakovosti "
 "slik</a>."
 
+#: core/app/views/stack/welcomepageview.cpp:164
+#, kde-format
+msgid ""
+"Add <a href=\"https://community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe"
+"\">Aesthetic Detection to classify images using deep learning model</a>."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:165
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "A tool to assign pick label metadata by image quality"
+msgid ""
+"Add new tool to assign pick label automatically by parsing image quality."
+msgstr "Orodje za dodeljevanje oznak glede na kakovost slik"
+
+#: core/app/views/stack/welcomepageview.cpp:166
+#, kde-format
+msgid "Add new tool to assign rating, pick, and color labels in batch."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:167
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "A tool to assign labels metadata to images"
+msgid "Add new tool to assign titles and captions in batch."
+msgstr "Orodje za dodeljevanje oznak iz metapodatkov v slike"
+
+#: core/app/views/stack/welcomepageview.cpp:168
+#, kde-format
+msgid ""
+"<a href=\" https://docs.digikam.org/en/index.html\">Rewrite handbook</a> "
+"from DocBook to Sphinx/ReStructuredText framework."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:169
+#, kde-format
+msgid "Update internal RAW engine to last stable Libraw 0.21.1."
+msgstr ""
+
 #: core/app/views/stack/welcomepageview.cpp:170
 #, kde-format
 msgid ""
-"New tool to share items on the network with a Motion JPEG stream server."
-msgstr "Novo orodje za skupno rabo predmetov na mrežnem strežniku Motion JPEG."
-
-#: core/app/views/stack/welcomepageview.cpp:171
-#, kde-format
-msgid ""
-"Showfoto has a new left sidebar hosting a folder-view to quickly explore "
-"images from local file system."
+"New RAW features: Phase One/Leaf IIQ-S v2 support Canon CR3 filmrolls/"
+"RawBurst Canon CRM (movie) files Tiled bit-packed (and 16-bit unpacked) DNGs "
+"(non-standard) Deflate-compressed integer DNG files are allowed Canon EOS "
+"R3, R7 and R10 Fujifilm X-H2S, X-T30 II OM System OM-1 Leica M11 Sony A7-IV "
+"(ILCE-7M4) DJI Mavic 3"
 msgstr ""
-"Showfoto ima novo lestvico na levi, ki gosti pogled v mapo za hitri pregled "
-"slik na lokalnem datotečnem sistemu."
 
-#: core/app/views/stack/welcomepageview.cpp:172
-#, kde-format
-msgid ""
-"Update internal RAW engine to last Libraw 0.20.2 (snapshot 20210827) "
-"including Canon CR3 and Sony A7R4 support."
-msgstr ""
-"Posodobitev notranjega obdelovalnika surovih (RAW) slik na zadnjo izdajo "
-"Libraw 0.20.2 (stanje 20210827) , ki vključuje podporo za Canon CR3 in "
-"podporo za Sony A7R4."
-
-#: core/app/views/stack/welcomepageview.cpp:173
-#, kde-format
-msgid ""
-"New camera supported: Canon CR3, PowerShot G5 X Mark II, G7 X Mark III, SX70 "
-"HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS M200, EOS "
-"1DX Mark III (lossless files only) DJI Mavic Air, Air2, Osmo Action, "
-"FujiFilm Fujifilm compressed/16bit, GFX 100, X-A7, X-Pro3, X100V, X-T4, X-"
-"T200, GoPro Fusion, HERO5, HERO6, HERO7, HERO8, Hasselblad L1D-20c, X1D II "
-"50C, Leica D-LUX7, Q-P, Q2, V-LUX5, C-Lux / CAM-DC25, SL2, M10 Monochrom, "
-"Nikon D780, Z50, P950, Olympus TG-6, E-M5 Mark III, E-PL10, E-M1 Mark III, "
-"Panasonic Panasonic 14-bit, DC-FZ1000 II, DC-G90, DC-S1, DC-S1R, DC-S1H, DC-"
-"TZ95, PhaseOne IQ4 150MP, Rapsberry Pi RAW+JPEG format, Ricoh GR III, Sony "
-"A7R IV, A9 II, ILCE-6100, ILCE-6600, RX0 II, RX100 VII, Zenit M, also "
-"multiple modern smartphones."
-msgstr ""
-"Podpora novih kamer: Canon CR3, PowerShot G5 X Mark II, G7 X Mark III, SX70 "
-"HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS M200, EOS "
-"1DX Mark III (samo datoteke brez izgub) DJI Mavic Air, Air2, Osmo Action, "
-"FujiFilm Fujifilm stisnjene/16bit, GFX 100, X-A7, X-Pro3, X100V, X-T4, X-"
-"T200, GoPro Fusion, HERO5, HERO6, HERO7, HERO8, Hasselblad L1D-20c, X1D II "
-"50C, Leica D-LUX7, Q-P, Q2, V-LUX5, C-Lux / CAM-DC25, SL2, M10 Monochrom, "
-"Nikon D780, Z50, P950, Olympus TG-6, E-M5 Mark III, E-PL10, E-M1 Mark III, "
-"Panasonic Panasonic 14-bit, DC-FZ1000 II, DC-G90, DC-S1, DC-S1R, DC-S1H, DC-"
-"TZ95, PhaseOne IQ4 150MP, Rapsberry Pi RAW+JPEG format, Ricoh GR III, Sony "
-"A7R IV, A9 II, ILCE-6100, ILCE-6600, RX0 II, RX100 VII, Zenit M, in tudi več "
-"modernih pametnih telefonov."
-
-#: core/app/views/stack/welcomepageview.cpp:192
+#: core/app/views/stack/welcomepageview.cpp:185
 #, kde-format
 msgid "...and much more."
 msgstr "... in še veliko več."
 
-#: core/app/views/stack/welcomepageview.cpp:198
+#: core/app/views/stack/welcomepageview.cpp:191
 #, kde-format
 msgid "<li>%1</li>\n"
 msgstr "<li>%1</li>\n"
 
-#: core/app/views/stack/welcomepageview.cpp:201
+#: core/app/views/stack/welcomepageview.cpp:194
 #, kde-format
 msgid "New Features"
 msgstr "Nove zmožnosti"
 
-#: core/app/views/stack/welcomepageview.cpp:203
+#: core/app/views/stack/welcomepageview.cpp:196
 #, kde-format
 msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:204
+#: core/app/views/stack/welcomepageview.cpp:197
 #, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
@@ -3509,17 +3467,17 @@ msgstr ""
 "Nekatere nove zmožnosti v tej izdaji programa digiKam vključujejo (v "
 "primerjavi z digiKam 6.x):"
 
-#: core/app/views/stack/welcomepageview.cpp:212
+#: core/app/views/stack/welcomepageview.cpp:205
 #, kde-format
 msgid "About"
 msgstr "O programu"
 
-#: core/app/views/stack/welcomepageview.cpp:214
+#: core/app/views/stack/welcomepageview.cpp:207
 #, kde-format
 msgid "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 msgstr "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:215
+#: core/app/views/stack/welcomepageview.cpp:208
 #, kde-format
 msgid ""
 "digiKam is an open source photo management program designed to import, "
@@ -3530,7 +3488,7 @@ msgstr ""
 "uvažanje, organiziranje, izboljšanje, iskanje po in izvažanje/uvažanje vaših "
 "digitalnih fotografij."
 
-#: core/app/views/stack/welcomepageview.cpp:216
+#: core/app/views/stack/welcomepageview.cpp:209
 #, kde-format
 msgid ""
 "Currently, you are in the Album view mode of digiKam. Albums are the places "
@@ -3540,12 +3498,12 @@ msgstr ""
 "Trenutno ste v digiKamovem pogledu albuma. Albumi so mesta, kjer so "
 "shranjene vaše datoteke in so enakovredni mapam na vašem trdem disku."
 
-#: core/app/views/stack/welcomepageview.cpp:217
+#: core/app/views/stack/welcomepageview.cpp:210
 #, kde-format
 msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li><li>%2</li>"
 
-#: core/app/views/stack/welcomepageview.cpp:218
+#: core/app/views/stack/welcomepageview.cpp:211
 #, kde-format
 msgid ""
 "digiKam has many powerful features which are described in the <a href="
@@ -3554,7 +3512,7 @@ msgstr ""
 "digiKam ima veliko zmožnosti, ki so opisane v <<a href=\"https://docs."
 "digikam.org/en/index.html\">dokumentaciji</a>"
 
-#: core/app/views/stack/welcomepageview.cpp:219
+#: core/app/views/stack/welcomepageview.cpp:212
 #, kde-format
 msgid ""
 "The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides "
@@ -3563,34 +3521,34 @@ msgstr ""
 "Na <a href=\"https://www.digikam.org\">spletišču programa digiKam</a> boste "
 "našli podrobnosti o novih različicah programa digiKam."
 
-#: core/app/views/stack/welcomepageview.cpp:269
+#: core/app/views/stack/welcomepageview.cpp:262
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "Dobrodošli v digiKam %1"
 
-#: core/app/views/stack/welcomepageview.cpp:272
+#: core/app/views/stack/welcomepageview.cpp:265
 #, kde-format
 msgid "Background Image Credits"
 msgstr "Slike v ozadju"
 
-#: core/app/views/stack/welcomepageview.cpp:275
+#: core/app/views/stack/welcomepageview.cpp:268
 #, kde-format
 msgid "Author:"
 msgstr "Avtor:"
 
-#: core/app/views/stack/welcomepageview.cpp:276
+#: core/app/views/stack/welcomepageview.cpp:269
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:180
 #, kde-format
 msgid "Location:"
 msgstr "Mesto:"
 
-#: core/app/views/stack/welcomepageview.cpp:278
+#: core/app/views/stack/welcomepageview.cpp:271
 #, kde-format
 msgid "Camera:"
 msgstr "Fotoaparat:"
 
-#: core/app/views/stack/welcomepageview.cpp:279
+#: core/app/views/stack/welcomepageview.cpp:272
 #, kde-format
 msgid "Lens:"
 msgstr "Objektiv:"
@@ -26911,7 +26869,6 @@ msgid "Luminosity Curve"
 msgstr "Krivulja svetilnosti"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:311
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:119
 #, kde-format
 msgid "Info"
 msgstr "Podrobnosti"
@@ -30101,7 +30058,6 @@ msgid "Copy to Clipboard"
 msgstr "Kopiraj v odložišče"
 
 #: core/libs/dialogs/infodlg.cpp:96
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:60
 #, kde-format
 msgid ""
 "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p><p><i>%4</i></p>"
@@ -43192,7 +43148,6 @@ msgid "Aditya Bhatt"
 msgstr "Aditya Bhatt"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:220
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:189
 #, kde-format
 msgid "Face Detection"
 msgstr "Zaznava obrazov"
@@ -43223,7 +43178,6 @@ msgid "Mahesh Hegde"
 msgstr "Mahesh Hegde"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:238
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:258
 #, kde-format
 msgid "Face Recognition"
 msgstr "Prepoznavanje obrazov"
@@ -52483,245 +52437,6 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr "Zavrni ta predlog"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:45
-#, kde-format
-msgid "Face Management in digiKam"
-msgstr "Upravljanje obrazov v digiKamu"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:70
-#, kde-format
-msgid ""
-"The Face Workflow allows you to Detect and Recognize people in your "
-"photographs."
-msgstr ""
-"Potek dela z obrazi vam omogoča zaznavanje in prepoznavanje oseb v vaših "
-"fotografijah."
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:76
-#, kde-format
-msgid "<b>Face Detection</b>"
-msgstr "<b>Zaznava obrazov</b>"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:80
-#, kde-format
-msgid ""
-"Face Detection allows digiKam to detect faces in your images. This step is "
-"required before being able to recognize faces."
-msgstr ""
-"Face Detection omogoča digiKamu, da zazna obraze na vaših slikah. Ta korak "
-"je nujen preden prepoznava obraze."
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:86
-#, kde-format
-msgid "<b>Face Recognition</b>"
-msgstr "<b>Prepoznavanje obrazov</b>"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:90
-#, kde-format
-msgid "Face Recognition will automatically recognize people in your images."
-msgstr "Prepoznavanje obrazov bo samodejno prepoznalo ljudi na vaših slikah."
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:100
-#, kde-format
-msgid ""
-"For additional information, read the %1 \n"
-"To ask questions, use our mailing list: digikam-users@kde.org \n"
-msgstr ""
-"Za dodatne informacije preberite %1\n"
-"Če želite postavljati vprašanja, uporabite naš poštni seznam: digikam-"
-"users@kde.org\n"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:135
-#, kde-format
-msgid ""
-"To run face detection, select the <u>Detect Faces</u> option in the Face "
-"Scan panel and then click on <u>Scan Collection for Faces</u>"
-msgstr ""
-"Če želite zagnati prepoznavanje obrazov, izberite možnost <u>Prepoznaj "
-"obraze </u> v kontrolni plošči Pregled obrazov in kliknite <u>Preglej zbirko "
-"obrazov</u>"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:139
-#, kde-format
-msgid ""
-"<b>Caution:</b> Running Face Detection for the first time can be fairly time "
-"consuming. Make sure you use the <u>Search In</u> tab to restrict the target "
-"of the scan."
-msgstr ""
-"<b>Pozor:</b> Prvi zagon zaznavanja obrazov je lahko precej zamuden. "
-"Uporabite zavihek <u>Iskanje v</u>, da omejite cilj pregledovanja."
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:145
-#, kde-format
-msgid "digiKam offers two kinds of face detection scans: "
-msgstr "digiKam ponuja dve vrsti zaznavanja obrazov: "
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:150
-#, kde-format
-msgid "<b>Skip Images Already Scanned</b>"
-msgstr "<b>Preskoči že preiskane slike</b>"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:154
-#, kde-format
-msgid ""
-"Choose this option if you haven't scanned yet or if the last scan yielded "
-"good results but you would like to scan new images."
-msgstr ""
-"Izberite to možnost, če še niste optično prebrali ali če ste dobili dobre "
-"rezultate zadnjega skeniranja, vendar bi radi optično prebrali nove slike."
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:161
-#, kde-format
-msgid "<b>Scan Again and Merge</b>"
-msgstr "<b>Skeniraj znova in zlij</b>"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:165
-#, kde-format
-msgid ""
-"Choose this option if the results of the previous scan weren't accurate. "
-"This would rescan all images again, and is time consuming."
-msgstr ""
-"Izberite to možnost, če rezultati prejšnjega skeniranja niso bili točni. To "
-"bi znova optično prebralo vse slike in je zamudno."
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:171
-#, kde-format
-msgid ""
-"After the Face Scan is complete, you should see a new tag <u>Unknown</u> "
-"where the results of the face scan will appear. You may now manually "
-"identify a few of these faces and then proceed for face recognition."
-msgstr ""
-"Po končanem skeniranju obraza bi morali videti novo oznako <u>Neznano</u>, "
-"kjer bodo prikazani rezultati skeniranja obraza. Zdaj lahko ročno "
-"prepoznajte nekaj teh obrazov in nato nadaljujte s prepoznavanjem obrazov."
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:208
-#, kde-format
-msgid ""
-"To manually identify a face, hover on any Unknown face and use the text box "
-"to give it a name. This will lead to the creation of a face tag in case a "
-"person of that name doesn't exist already. For best results identify 4-5 "
-"faces for each person you want the scan to recognize."
-msgstr ""
-"Če želite ročno prepoznati obraz, premaknite miškin kazalec nad kateri koli "
-"neznan obraz in uporabite besedilno polje da mu daste ime. To bo privedlo do "
-"ustvarjanja obrazne oznake, če oseba s tem imenom še ne obstaja. Za "
-"najboljše rezultate navedite 4-5 obrazov za vsako osebo, za katero želite, "
-"da jo skeniranje prepozna."
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:217
-#, kde-format
-msgid ""
-"Running face recognition is similar to detection, just select <u>Recognize "
-"Faces</u> from the Face Scan panel this time.\n"
-"Face recognition will work on all Unknown faces. In case there's a face you "
-"don't wish to be recognized, you can mark it as ignored.\n"
-"This leads to the creation of a new <u>Ignored</u> tag, you can later unmark "
-"the face if needed."
-msgstr ""
-"Poganjanje prepoznavanja obrazov je podobno zaznavanju, samo izberite "
-"<u>Prepoznaj obraze</u> tokrat s podokna Skeniranje obrazov.\n"
-"Prepoznavanje obrazov bo delovalo na vseh Neznanih obrazih. V primeru, da "
-"obstaja obraz, za katerega želite, da ne bi bil prepoznan, ga lahko označite "
-"kot prezrtega.\n"
-"To vodi do ustvarjanja nove oznake <u>Prezrti</u>, kamor lahko pozneje po "
-"potrebi odstranite oznako obraza."
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:235
-#, kde-format
-msgid ""
-"You may select <u>Work on all processor cores</u>in order to increase the "
-"speed of Face Recognition \n"
-"The Face Accuracy slider allows you to control the accuracy of the "
-"recognition algorithm. A higher specificity implies higher accuracy, however "
-"this results in a smaller set of results."
-msgstr ""
-"Izberete lahko <u>Delaj na vseh procesorskih jedrih</u>, da povečate hitrost "
-"prepoznavanja obrazov \n"
-"Drsnik za natančnost obraza vam omogoča nadzor natančnosti algoritma "
-"prepoznavanja. Večja specifičnost pomeni večja natančnost, vendar to "
-"povzroči manjši nabor rezultatov."
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:274
-#, kde-format
-msgid ""
-"The results of facial recognition appear in the form of Unconfirmed results. "
-"These results will show up in the Unconfirmed tag, as well as in the tag of "
-"the person suggested for each face.\n"
-"Hovering over Unconfirmed faces will display a few options:\n"
-msgstr ""
-"Rezultati prepoznavanja obraza so prikazani v obliki Nepotrjenih rezultatov. "
-"Ti rezultati bodo prikazani v oznaki Nepotrjeno in v oznaki oseba, "
-"predlagana za vsak obraz.\n"
-"Če je miška nad Nepotrjenimi obrazi se bo prikazalo nekaj možnosti:\n"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:287
-#, kde-format
-msgid ""
-"The Confirm button allows you to confirm the suggestion. This would assign "
-"the suggested name to the face"
-msgstr ""
-"Gumb za potrditev omogoča potrditev predloga. To bi dodelilo predlagano ime "
-"na obraz"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:297
-#, kde-format
-msgid ""
-"Use the Reject button, if the suggestion is incorrect. This would move the "
-"face back to Unknown."
-msgstr ""
-"Če je predlog napačen, uporabite gumb Zavrni. To bi premaknilo obraz nazaj "
-"med Neznane."
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:308
-#, kde-format
-msgid ""
-"Use the Delete button, if the suggestion is not a face. This will delete the "
-"face region from the database."
-msgstr ""
-"Če predlog ni obraz, uporabite gumb Delete. S tem boste izbrisali območje "
-"obraza iz baze podatkov."
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:314
-#, kde-format
-msgid ""
-"<b>Face Categorization and Sorting</b>\n"
-"By default, faces will appear categorized based on their name. You may "
-"change this behaviour, by going to <u>View -> Separate Items</u>.\n"
-"Note that using a different categorization order will lead to Confirmed and "
-"Unconfirmed faces appearing mixed with one another. To change this behaviour "
-"you may modify the sorting order within each category by going to <u>View -> "
-"Sort Items -> By Face Type</u>."
-msgstr ""
-"<b>Kategorizacija in razvrščanje obrazov</b>\n"
-"Privzeto se prikažejo obrazi razvrščeni po njihovih imenih. To vedenje lahko "
-"spremenite tako, da obiščete <u>Pogled -> Ločeni elementi</u>.\n"
-"Upoštevajte, da bo uporaba drugačne kategorizacije vrstnega reda povzročila, "
-"da se bodo potrjeni in nepotrjeni obrazi prikazali pomešani eni z drugim. Če "
-"želite spremeniti to vedenje, lahko spremenite vrstni red razvrščanja "
-"znotraj vsake kategorije tako, da odprete <u>Pogled -> Razvrsti elemente -> "
-"Po vrsti obraza</u>."
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:326
-#, kde-format
-msgid ""
-"<b>Improving Results of Face Recognition</b>\n"
-"Apart from using the settings mentioned in the last page, face results may "
-"also be improved by rebuilding the training data. This may be done through "
-"Tools -> Maintenance -> Detect and Recognize Faces -> Clear and rebuild all "
-"training data."
-msgstr ""
-"<b>Izboljšanje rezultatov prepoznavanja obrazov</b>\n"
-"Poleg uporabe nastavitve, omenjene na zadnji strani, lahko rezultate obraza "
-"izboljša tudi ponovno izgradnjo podatkov o učenju. To lahko storite z orodji "
-"-> Vzdrževanje -> Zaznaj in prepoznaj obraze -> Počisti in obnovi vse učne "
-"podatke."
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:346
-#, kde-format
-msgid "Confirm Faces"
-msgstr "Potrdite obraze"
-
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
@@ -52761,25 +52476,25 @@ msgctxt "@info"
 msgid "Help"
 msgstr "Pomoč"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:158
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect faces"
 msgstr "Zaznaj obraze"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:160
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
 #, kde-format
 msgctxt "@info"
 msgid "Find all faces in your photos"
 msgstr "Najde vse obraze v vaših fotografijah"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:164
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:163
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect and recognize faces"
 msgstr "Zaznaj in prepoznaj obraze"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:165
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:164
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52789,13 +52504,13 @@ msgstr ""
 "Najde vse obraze v vaših fotografijah in poskuša prepoznati, katera oseba je "
 "upodobljena"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:168
 #, kde-format
 msgctxt "@option:radio"
 msgid "Recognize faces"
 msgstr "Prepoznaj obraze"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:170
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52805,37 +52520,37 @@ msgstr ""
 "Znova poskusi prepoznati upodobljene ljudi\n"
 "na označenih, ampak še ne potrjenih obrazih."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:193
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:192
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Potek dela"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:198
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:197
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Išči v"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
 #, kde-format
 msgctxt "@label"
 msgid "Face Accuracy"
 msgstr "Natančnost obraza"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:207
 #, kde-format
 msgctxt "@label left extremities of a scale"
 msgid "Sensitivity"
 msgstr "Občutljivost"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:210
 #, kde-format
 msgctxt "@label right extremities of a scale"
 msgid "Specificity"
 msgstr "Specifičnost"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:218
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:217
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52848,13 +52563,13 @@ msgstr ""
 "natančnost prepoznave obrazov, vendar bo prepoznanih obrazov manj\n"
 "(prepoznani bodo samo obrazi, ki so zelo podobni vnaprej označenim obrazom)."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:228
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
 #, kde-format
 msgctxt "@option:check"
 msgid "Use YOLO v3 detection model"
 msgstr "Uporabi model razpoznavanja YOLO v3"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:229
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Face detection with YOLO v3 data model. Better results but slower."
@@ -52862,14 +52577,14 @@ msgstr ""
 "Razpoznavanje obrazov s podatkovnim modelom YOLO v3. Boljši rezultati a "
 "počasneje."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:233
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:232
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:236
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Delaj na vseh procesorskih jedrih"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -52881,7 +52596,7 @@ msgstr ""
 "na vseh procesorskih jedrih na vašem sistemu ali pa, da se opravilo\n"
 "izvaja v ozadju na le enem jedru."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -64214,6 +63929,365 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Ali želite ponovno nastaviti vse nastavitve na privzete vrednosti?"
+
+#~ msgid ""
+#~ "New Neural Network engine based on OpenCV Deep Learning module to detect "
+#~ "and recognize faces."
+#~ msgstr ""
+#~ "Nov program za nevronske mreže, ki temelji na modulu OpenCV Deep Learning "
+#~ "za odkrivanje in prepoznavo obraza."
+
+#~ msgid "Update Slideshow to plugin with new shuffle mode."
+#~ msgstr "Posodobi slikovno predstavitev z vtičnikom v novem mešalnem načinu."
+
+#~ msgid "Add new theme Html5Responsive for HtmlGallery plugin."
+#~ msgstr "Dodaj novo temo Html5Responsive za vtičnik HtmlGallery."
+
+#~ msgid ""
+#~ "New plugin ImageMosaicWall to create an image based on a bunch of other "
+#~ "photos."
+#~ msgstr ""
+#~ "Nov vtičnik ImageMosaicWall za ustvarjanje slike, ki temelji na kopici "
+#~ "drugih fotografij."
+
+#~ msgid "add new batch queue manager tool to fix hot pixels from images."
+#~ msgstr ""
+#~ "dodaj novo orodje upravitelja paketov čakalnih vrst za popravilo vročih "
+#~ "slikovni točk s slik."
+
+#~ msgid "add new batch queue manager tool to apply texture over images."
+#~ msgstr ""
+#~ "dodaj novo orodje upravitelja paketov čakalnih vrst za uveljavljanje "
+#~ "tekstur prek slik."
+
+#~ msgid ""
+#~ "Face Scan dialog contents is now simplified and embedded into left "
+#~ "sidebar."
+#~ msgstr ""
+#~ "Vsebina pogovornega okna za skeniranje obrazov je zdaj poenostavljena in "
+#~ "je vdelana v levo stransko orodno letvico."
+
+#~ msgid "Add support for Gimp XCF files >= 2.10."
+#~ msgstr "Dodana podpora za datoteke Gimp XCF >= 2.10."
+
+#~ msgid "Add Flatpak bundle support for Linux platforms."
+#~ msgstr "Dodana podpora za Flatpak za računalnike Linux."
+
+#~ msgid "Table-view is now able to show digiKam Tag-Paths properties."
+#~ msgstr "Pogled v tabeli zdaj lahko prikazuje lastnosti digiKam poti značk."
+
+#~ msgid "Add option to write geolocation information in file metadata."
+#~ msgstr "Dodaj možnost za vpis geokodiranih podatkov metapodatke."
+
+#~ msgid "Add color label support for advanced metadata settings."
+#~ msgstr "Dodaj podporo barvnih oznak za napredne nastavitve metapodatkov."
+
+#~ msgid "Add Exif, Iptc, and Xmp read support for HEIF images."
+#~ msgstr "Dodaj podporo branja Exif, IPTC ali Xmp iz slik HEIF."
+
+#~ msgid "Improved support for UNC network paths under Windows."
+#~ msgstr "Izboljšana podpora za poti UNC pod Windowsi."
+
+#~ msgid "Improved support for Unicode paths under Windows."
+#~ msgstr "Izboljšana podpora za poti Unicode pod Windowsi."
+
+#~ msgid "Apple bundle is now relocatable and compatible with macOS BigSur."
+#~ msgstr ""
+#~ "Apple sveženj je zdaj mogoče prestaviti in je združljiv z macOS BigSur."
+
+#~ msgid ""
+#~ "New online version checker and downloader to automate upgrade under "
+#~ "Windows and macOS."
+#~ msgstr ""
+#~ "Novi program za preverjanje verzij in prenos programa za avtomatizacijo "
+#~ "prenosa datotek za nadgradnje programa pod Windows in macOS."
+
+#~ msgid ""
+#~ "Better support of astro FITS image format including metadata extraction "
+#~ "support to populate the database."
+#~ msgstr ""
+#~ "Boljša podpora formatu slike astro FITS, vključno z ekstrakcijo "
+#~ "metapodatkov za podporo popolnitvi baze podatkov."
+
+#~ msgid ""
+#~ "Use last Exiv2 0.27.5 in all bundles with Base Media File metadata read "
+#~ "and write support (HEIF, AVIF)."
+#~ msgstr ""
+#~ "Uporabi zadnji Exiv2 0.27.5 v vseh svežnjih z metapodatki s podporo za "
+#~ "branje in pisanje osnovnih medijskih datotek (HEIF, AVIF)."
+
+#~ msgid "Find duplicates items is now process in parallel using multi-cores."
+#~ msgstr ""
+#~ "Iskanje podvojenih elementov se zdaj vzporedno obdeluje z uporabo več "
+#~ "jeder."
+
+#~ msgid "New tool to export items to iNaturalist web service."
+#~ msgstr "Novo orodje za izvoz predmetov v spletno storitev iNaturatist."
+
+#~ msgid "New metadata viewer based on ExifTool."
+#~ msgstr "Nov pregledovalnik metapodatkov na osnovi orodja ExifTool."
+
+#~ msgid ""
+#~ "MacOS package, Windows installer, and AppImage bundle use KF5 5.89 and "
+#~ "KAPPS 21.12.0 frameworks."
+#~ msgstr ""
+#~ "Paket MacOS, namestilnik Windows, in skupek AppImage uporabljajo KF5 5.89 "
+#~ "in KAPPS ogrodja 21.12.0."
+
+#~ msgid ""
+#~ "AppImage Linux bundle now support <a href=\"https://fcitx-im.org/wiki/"
+#~ "Fcitx_5\">Platform Input Context FCITX</a>."
+#~ msgstr ""
+#~ "Skupek AppImage Linux zdaj podpira <a href=\"https://fcitx-im.org/wiki/"
+#~ "Fcitx_5\">Platform Input Context FCITX</a>."
+
+#~ msgid "Improve RTL translations support."
+#~ msgstr "Izboljšaj podporo prevodov RTL."
+
+#~ msgid ""
+#~ "GUI internationalization and localization updates with more than 50 "
+#~ "languages available."
+#~ msgstr ""
+#~ "Na voljo so mednarodne prilagoditve in posodobitve za lokalizacijo za več "
+#~ "kot 50 jezikov."
+
+#~ msgid "Add OpenWith contextual menu support under MacOS."
+#~ msgstr "Dodaj podporo kontekstnega menija OpenWith pod MacOS."
+
+#~ msgid ""
+#~ "New tool to share items on the network with a Motion JPEG stream server."
+#~ msgstr ""
+#~ "Novo orodje za skupno rabo predmetov na mrežnem strežniku Motion JPEG."
+
+#~ msgid ""
+#~ "Showfoto has a new left sidebar hosting a folder-view to quickly explore "
+#~ "images from local file system."
+#~ msgstr ""
+#~ "Showfoto ima novo lestvico na levi, ki gosti pogled v mapo za hitri "
+#~ "pregled slik na lokalnem datotečnem sistemu."
+
+#~ msgid ""
+#~ "Update internal RAW engine to last Libraw 0.20.2 (snapshot 20210827) "
+#~ "including Canon CR3 and Sony A7R4 support."
+#~ msgstr ""
+#~ "Posodobitev notranjega obdelovalnika surovih (RAW) slik na zadnjo izdajo "
+#~ "Libraw 0.20.2 (stanje 20210827) , ki vključuje podporo za Canon CR3 in "
+#~ "podporo za Sony A7R4."
+
+#~ msgid ""
+#~ "New camera supported: Canon CR3, PowerShot G5 X Mark II, G7 X Mark III, "
+#~ "SX70 HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS "
+#~ "M200, EOS 1DX Mark III (lossless files only) DJI Mavic Air, Air2, Osmo "
+#~ "Action, FujiFilm Fujifilm compressed/16bit, GFX 100, X-A7, X-Pro3, X100V, "
+#~ "X-T4, X-T200, GoPro Fusion, HERO5, HERO6, HERO7, HERO8, Hasselblad "
+#~ "L1D-20c, X1D II 50C, Leica D-LUX7, Q-P, Q2, V-LUX5, C-Lux / CAM-DC25, "
+#~ "SL2, M10 Monochrom, Nikon D780, Z50, P950, Olympus TG-6, E-M5 Mark III, E-"
+#~ "PL10, E-M1 Mark III, Panasonic Panasonic 14-bit, DC-FZ1000 II, DC-G90, DC-"
+#~ "S1, DC-S1R, DC-S1H, DC-TZ95, PhaseOne IQ4 150MP, Rapsberry Pi RAW+JPEG "
+#~ "format, Ricoh GR III, Sony A7R IV, A9 II, ILCE-6100, ILCE-6600, RX0 II, "
+#~ "RX100 VII, Zenit M, also multiple modern smartphones."
+#~ msgstr ""
+#~ "Podpora novih kamer: Canon CR3, PowerShot G5 X Mark II, G7 X Mark III, "
+#~ "SX70 HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS "
+#~ "M200, EOS 1DX Mark III (samo datoteke brez izgub) DJI Mavic Air, Air2, "
+#~ "Osmo Action, FujiFilm Fujifilm stisnjene/16bit, GFX 100, X-A7, X-Pro3, "
+#~ "X100V, X-T4, X-T200, GoPro Fusion, HERO5, HERO6, HERO7, HERO8, Hasselblad "
+#~ "L1D-20c, X1D II 50C, Leica D-LUX7, Q-P, Q2, V-LUX5, C-Lux / CAM-DC25, "
+#~ "SL2, M10 Monochrom, Nikon D780, Z50, P950, Olympus TG-6, E-M5 Mark III, E-"
+#~ "PL10, E-M1 Mark III, Panasonic Panasonic 14-bit, DC-FZ1000 II, DC-G90, DC-"
+#~ "S1, DC-S1R, DC-S1H, DC-TZ95, PhaseOne IQ4 150MP, Rapsberry Pi RAW+JPEG "
+#~ "format, Ricoh GR III, Sony A7R IV, A9 II, ILCE-6100, ILCE-6600, RX0 II, "
+#~ "RX100 VII, Zenit M, in tudi več modernih pametnih telefonov."
+
+#~ msgid "Face Management in digiKam"
+#~ msgstr "Upravljanje obrazov v digiKamu"
+
+#~ msgid ""
+#~ "The Face Workflow allows you to Detect and Recognize people in your "
+#~ "photographs."
+#~ msgstr ""
+#~ "Potek dela z obrazi vam omogoča zaznavanje in prepoznavanje oseb v vaših "
+#~ "fotografijah."
+
+#~ msgid "<b>Face Detection</b>"
+#~ msgstr "<b>Zaznava obrazov</b>"
+
+#~ msgid ""
+#~ "Face Detection allows digiKam to detect faces in your images. This step "
+#~ "is required before being able to recognize faces."
+#~ msgstr ""
+#~ "Face Detection omogoča digiKamu, da zazna obraze na vaših slikah. Ta "
+#~ "korak je nujen preden prepoznava obraze."
+
+#~ msgid "<b>Face Recognition</b>"
+#~ msgstr "<b>Prepoznavanje obrazov</b>"
+
+#~ msgid "Face Recognition will automatically recognize people in your images."
+#~ msgstr ""
+#~ "Prepoznavanje obrazov bo samodejno prepoznalo ljudi na vaših slikah."
+
+#~ msgid ""
+#~ "For additional information, read the %1 \n"
+#~ "To ask questions, use our mailing list: digikam-users@kde.org \n"
+#~ msgstr ""
+#~ "Za dodatne informacije preberite %1\n"
+#~ "Če želite postavljati vprašanja, uporabite naš poštni seznam: digikam-"
+#~ "users@kde.org\n"
+
+#~ msgid ""
+#~ "To run face detection, select the <u>Detect Faces</u> option in the Face "
+#~ "Scan panel and then click on <u>Scan Collection for Faces</u>"
+#~ msgstr ""
+#~ "Če želite zagnati prepoznavanje obrazov, izberite možnost <u>Prepoznaj "
+#~ "obraze </u> v kontrolni plošči Pregled obrazov in kliknite <u>Preglej "
+#~ "zbirko obrazov</u>"
+
+#~ msgid ""
+#~ "<b>Caution:</b> Running Face Detection for the first time can be fairly "
+#~ "time consuming. Make sure you use the <u>Search In</u> tab to restrict "
+#~ "the target of the scan."
+#~ msgstr ""
+#~ "<b>Pozor:</b> Prvi zagon zaznavanja obrazov je lahko precej zamuden. "
+#~ "Uporabite zavihek <u>Iskanje v</u>, da omejite cilj pregledovanja."
+
+#~ msgid "digiKam offers two kinds of face detection scans: "
+#~ msgstr "digiKam ponuja dve vrsti zaznavanja obrazov: "
+
+#~ msgid "<b>Skip Images Already Scanned</b>"
+#~ msgstr "<b>Preskoči že preiskane slike</b>"
+
+#~ msgid ""
+#~ "Choose this option if you haven't scanned yet or if the last scan yielded "
+#~ "good results but you would like to scan new images."
+#~ msgstr ""
+#~ "Izberite to možnost, če še niste optično prebrali ali če ste dobili dobre "
+#~ "rezultate zadnjega skeniranja, vendar bi radi optično prebrali nove slike."
+
+#~ msgid "<b>Scan Again and Merge</b>"
+#~ msgstr "<b>Skeniraj znova in zlij</b>"
+
+#~ msgid ""
+#~ "Choose this option if the results of the previous scan weren't accurate. "
+#~ "This would rescan all images again, and is time consuming."
+#~ msgstr ""
+#~ "Izberite to možnost, če rezultati prejšnjega skeniranja niso bili točni. "
+#~ "To bi znova optično prebralo vse slike in je zamudno."
+
+#~ msgid ""
+#~ "After the Face Scan is complete, you should see a new tag <u>Unknown</u> "
+#~ "where the results of the face scan will appear. You may now manually "
+#~ "identify a few of these faces and then proceed for face recognition."
+#~ msgstr ""
+#~ "Po končanem skeniranju obraza bi morali videti novo oznako <u>Neznano</"
+#~ "u>, kjer bodo prikazani rezultati skeniranja obraza. Zdaj lahko ročno "
+#~ "prepoznajte nekaj teh obrazov in nato nadaljujte s prepoznavanjem obrazov."
+
+#~ msgid ""
+#~ "To manually identify a face, hover on any Unknown face and use the text "
+#~ "box to give it a name. This will lead to the creation of a face tag in "
+#~ "case a person of that name doesn't exist already. For best results "
+#~ "identify 4-5 faces for each person you want the scan to recognize."
+#~ msgstr ""
+#~ "Če želite ročno prepoznati obraz, premaknite miškin kazalec nad kateri "
+#~ "koli neznan obraz in uporabite besedilno polje da mu daste ime. To bo "
+#~ "privedlo do ustvarjanja obrazne oznake, če oseba s tem imenom še ne "
+#~ "obstaja. Za najboljše rezultate navedite 4-5 obrazov za vsako osebo, za "
+#~ "katero želite, da jo skeniranje prepozna."
+
+#~ msgid ""
+#~ "Running face recognition is similar to detection, just select "
+#~ "<u>Recognize Faces</u> from the Face Scan panel this time.\n"
+#~ "Face recognition will work on all Unknown faces. In case there's a face "
+#~ "you don't wish to be recognized, you can mark it as ignored.\n"
+#~ "This leads to the creation of a new <u>Ignored</u> tag, you can later "
+#~ "unmark the face if needed."
+#~ msgstr ""
+#~ "Poganjanje prepoznavanja obrazov je podobno zaznavanju, samo izberite "
+#~ "<u>Prepoznaj obraze</u> tokrat s podokna Skeniranje obrazov.\n"
+#~ "Prepoznavanje obrazov bo delovalo na vseh Neznanih obrazih. V primeru, da "
+#~ "obstaja obraz, za katerega želite, da ne bi bil prepoznan, ga lahko "
+#~ "označite kot prezrtega.\n"
+#~ "To vodi do ustvarjanja nove oznake <u>Prezrti</u>, kamor lahko pozneje po "
+#~ "potrebi odstranite oznako obraza."
+
+#~ msgid ""
+#~ "You may select <u>Work on all processor cores</u>in order to increase the "
+#~ "speed of Face Recognition \n"
+#~ "The Face Accuracy slider allows you to control the accuracy of the "
+#~ "recognition algorithm. A higher specificity implies higher accuracy, "
+#~ "however this results in a smaller set of results."
+#~ msgstr ""
+#~ "Izberete lahko <u>Delaj na vseh procesorskih jedrih</u>, da povečate "
+#~ "hitrost prepoznavanja obrazov \n"
+#~ "Drsnik za natančnost obraza vam omogoča nadzor natančnosti algoritma "
+#~ "prepoznavanja. Večja specifičnost pomeni večja natančnost, vendar to "
+#~ "povzroči manjši nabor rezultatov."
+
+#~ msgid ""
+#~ "The results of facial recognition appear in the form of Unconfirmed "
+#~ "results. These results will show up in the Unconfirmed tag, as well as in "
+#~ "the tag of the person suggested for each face.\n"
+#~ "Hovering over Unconfirmed faces will display a few options:\n"
+#~ msgstr ""
+#~ "Rezultati prepoznavanja obraza so prikazani v obliki Nepotrjenih "
+#~ "rezultatov. Ti rezultati bodo prikazani v oznaki Nepotrjeno in v oznaki "
+#~ "oseba, predlagana za vsak obraz.\n"
+#~ "Če je miška nad Nepotrjenimi obrazi se bo prikazalo nekaj možnosti:\n"
+
+#~ msgid ""
+#~ "The Confirm button allows you to confirm the suggestion. This would "
+#~ "assign the suggested name to the face"
+#~ msgstr ""
+#~ "Gumb za potrditev omogoča potrditev predloga. To bi dodelilo predlagano "
+#~ "ime na obraz"
+
+#~ msgid ""
+#~ "Use the Reject button, if the suggestion is incorrect. This would move "
+#~ "the face back to Unknown."
+#~ msgstr ""
+#~ "Če je predlog napačen, uporabite gumb Zavrni. To bi premaknilo obraz "
+#~ "nazaj med Neznane."
+
+#~ msgid ""
+#~ "Use the Delete button, if the suggestion is not a face. This will delete "
+#~ "the face region from the database."
+#~ msgstr ""
+#~ "Če predlog ni obraz, uporabite gumb Delete. S tem boste izbrisali območje "
+#~ "obraza iz baze podatkov."
+
+#~ msgid ""
+#~ "<b>Face Categorization and Sorting</b>\n"
+#~ "By default, faces will appear categorized based on their name. You may "
+#~ "change this behaviour, by going to <u>View -> Separate Items</u>.\n"
+#~ "Note that using a different categorization order will lead to Confirmed "
+#~ "and Unconfirmed faces appearing mixed with one another. To change this "
+#~ "behaviour you may modify the sorting order within each category by going "
+#~ "to <u>View -> Sort Items -> By Face Type</u>."
+#~ msgstr ""
+#~ "<b>Kategorizacija in razvrščanje obrazov</b>\n"
+#~ "Privzeto se prikažejo obrazi razvrščeni po njihovih imenih. To vedenje "
+#~ "lahko spremenite tako, da obiščete <u>Pogled -> Ločeni elementi</u>.\n"
+#~ "Upoštevajte, da bo uporaba drugačne kategorizacije vrstnega reda "
+#~ "povzročila, da se bodo potrjeni in nepotrjeni obrazi prikazali pomešani "
+#~ "eni z drugim. Če želite spremeniti to vedenje, lahko spremenite vrstni "
+#~ "red razvrščanja znotraj vsake kategorije tako, da odprete <u>Pogled -> "
+#~ "Razvrsti elemente -> Po vrsti obraza</u>."
+
+#~ msgid ""
+#~ "<b>Improving Results of Face Recognition</b>\n"
+#~ "Apart from using the settings mentioned in the last page, face results "
+#~ "may also be improved by rebuilding the training data. This may be done "
+#~ "through Tools -> Maintenance -> Detect and Recognize Faces -> Clear and "
+#~ "rebuild all training data."
+#~ msgstr ""
+#~ "<b>Izboljšanje rezultatov prepoznavanja obrazov</b>\n"
+#~ "Poleg uporabe nastavitve, omenjene na zadnji strani, lahko rezultate "
+#~ "obraza izboljša tudi ponovno izgradnjo podatkov o učenju. To lahko "
+#~ "storite z orodji -> Vzdrževanje -> Zaznaj in prepoznaj obraze -> Počisti "
+#~ "in obnovi vse učne podatke."
+
+#~ msgid "Confirm Faces"
+#~ msgstr "Potrdite obraze"
 
 #~ msgid ""
 #~ "https://docs.kde.org/?application=digikam&branch=trunk5&path=using-"

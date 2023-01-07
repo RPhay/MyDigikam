@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-04 00:45+0000\n"
+"POT-Creation-Date: 2023-01-07 00:46+0000\n"
 "PO-Revision-Date: 2022-10-03 20:07+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1008,7 +1008,7 @@ msgstr "Namn:"
 
 #: core/app/items/utils/tooltipfiller.cpp:83
 #: core/app/items/utils/tooltipfiller.cpp:595
-#: core/app/views/stack/welcomepageview.cpp:277
+#: core/app/views/stack/welcomepageview.cpp:270
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:70
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:170
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -2614,7 +2614,7 @@ msgstr "&Hjälp"
 msgid "Main Toolbar"
 msgstr "Huvudverktygsrad"
 
-#: core/app/main/main.cpp:165 core/app/views/stack/welcomepageview.cpp:261
+#: core/app/main/main.cpp:165 core/app/views/stack/welcomepageview.cpp:254
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
@@ -3197,276 +3197,230 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 objekt markerade"
 
 #: core/app/views/stack/welcomepageview.cpp:140
-#, kde-format
-msgid "More than 1300 user-reports closed on bugzilla."
+#, fuzzy, kde-format
+#| msgid "More than 1300 user-reports closed on bugzilla."
+msgid "More than 200 user-reports closed on bugzilla."
 msgstr "Mer än 1300 rapporter stängda på bugzilla."
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
-msgid ""
-"New Neural Network engine based on OpenCV Deep Learning module to detect and "
-"recognize faces."
+msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
 msgstr ""
-"Nytt neuralt nätverksgränssnitt baserat på modulen OpenCV Deep Learning för "
-"att detektera och känna igen ansikten."
 
 #: core/app/views/stack/welcomepageview.cpp:142
 #, kde-format
-msgid "Update Slideshow to plugin with new shuffle mode."
-msgstr "Uppdatera bildspel till insticksprogram med nytt blandningsläge."
+msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
-msgid "Add new theme Html5Responsive for HtmlGallery plugin."
+msgid ""
+"Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera."
 msgstr ""
-"Tillägg av nytt tema HTML5 Responsive för insticksprogrammet HTML-galleri."
 
 #: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
-msgid ""
-"New plugin ImageMosaicWall to create an image based on a bunch of other "
-"photos."
+msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr ""
-"Nytt insticksprogram ImageMosaicWall för att skapa en bild baserad på ett "
-"antal andra foton."
 
 #: core/app/views/stack/welcomepageview.cpp:145
 #, kde-format
-msgid "add new batch queue manager tool to fix hot pixels from images."
+msgid ""
+"Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store "
+"versionned images in editor."
 msgstr ""
-"Tillägg av nytt hanteringsverktyget för bakgrundskö för att rätta heta "
-"bildpunkter på bilder."
 
 #: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
-msgid "add new batch queue manager tool to apply texture over images."
+msgid "Add hamburger menu to tool-bar if main menu is hidden."
 msgstr ""
-"Tillägg av nytt hanteringsverktyget för bakgrundskö kan applicera en "
-"struktur på bilder."
 
 #: core/app/views/stack/welcomepageview.cpp:147
-#, kde-format
-msgid ""
-"Face Scan dialog contents is now simplified and embedded into left sidebar."
-msgstr ""
-"Innehållet i dialogrutan för ansiktssökning är nu förenklad och inbäddad i "
-"vänster sidorad."
+#, fuzzy, kde-format
+#| msgctxt "@info:whatsthis"
+#| msgid "Turn on this option to write metadata into DNG files."
+msgid "Add new option to write metadata to files with ExifTool backend."
+msgstr "Aktivera alternativet för att skriva metadata i DNG-filer."
 
 #: core/app/views/stack/welcomepageview.cpp:148
-#, kde-format
-msgid "Add support for Gimp XCF files >= 2.10."
-msgstr "Tillägg av stöd för Gimp XCF files ≥ 2.10."
+#, fuzzy, kde-format
+#| msgctxt "@info:whatsthis"
+#| msgid ""
+#| "Turn on this option to write metadata into RAW files. This feature is "
+#| "delegate to ExifTool backend and is disabled by default."
+msgid ""
+"Optional write metadata operations to DNG and RAW files are now always "
+"delegated to ExifTool Backend."
+msgstr ""
+"Aktivera alternativet för att skriva metadata i obehandlade filer. "
+"Funktionen är delegerad till gränssnittet ExifTool och är normalt "
+"inaktiverad."
 
 #: core/app/views/stack/welcomepageview.cpp:149
 #, kde-format
-msgid "Add Flatpak bundle support for Linux platforms."
-msgstr "Tillägg av stöd för Flatpak-packe i Linux-plattformar."
+msgid "Optimize layout of Metadata Edit plugin for a better usability."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
-msgid "Table-view is now able to show digiKam Tag-Paths properties."
-msgstr "Tabellvyn kan nu visa Digikam etikettsökvägsegenskaper."
+msgid ""
+"Add increment file counter to sequence numbering with option [c] or [c,step]."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:151
 #, kde-format
-msgid "Add option to write geolocation information in file metadata."
+msgid "Add random text sequence numbering with option [r]."
 msgstr ""
-"Tillägg av alternativ för att spara geografisk lokaliseringsinformation i "
-"filernas metadata."
 
 #: core/app/views/stack/welcomepageview.cpp:152
 #, kde-format
-msgid "Add color label support for advanced metadata settings."
-msgstr "Tillägg av stöd för avancerade metadatainställningar."
+msgid ""
+"Add configurable first character for the unique modifier with {unique:n,c}."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:153
-#, kde-format
-msgid "Add Exif, Iptc, and Xmp read support for HEIF images."
-msgstr "Lägg till stöd för att läsa EXIF, IPTC och XMP för HEIF-bilder."
+#, fuzzy, kde-format
+#| msgid "Return items by number of face regions"
+msgid "Add search for items by number of face regions."
+msgstr "Returnera objekt enligt antal ansiktsområden"
 
 #: core/app/views/stack/welcomepageview.cpp:154
-#, kde-format
-msgid "Improved support for UNC network paths under Windows."
-msgstr "Förbättrat stöd för UNC-nätverkssökvägar på Windows."
+#, fuzzy, kde-format
+#| msgid "Return items without face regions"
+msgid "Add search for items without face regions."
+msgstr "Returnera objekt utan ansiktsområden"
 
 #: core/app/views/stack/welcomepageview.cpp:155
 #, kde-format
-msgid "Improved support for Unicode paths under Windows."
-msgstr "Förbättrat stöd för Unicode-sökvägar på Windows."
+msgid "Add support for cross-platform network paths."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:156
 #, kde-format
-msgid "Apple bundle is now relocatable and compatible with macOS BigSur."
-msgstr "Packe för Apple är nu relokerbar och kompatibel med macOS BigSur."
+msgid "Add support for SQLite WAL (Write-Ahead-Logging) mode."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format
 msgid ""
-"New online version checker and downloader to automate upgrade under Windows "
-"and macOS."
+"Add spell-checking support in caption text widget using KF5::Sonnet "
+"component."
 msgstr ""
-"Ny nätbaserad versionskontroll och nerladdning för att automatiskt "
-"uppgradera på Windows och macOS."
 
 #: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
-msgid ""
-"Better support of astro FITS image format including metadata extraction "
-"support to populate the database."
+msgid "Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto."
 msgstr ""
-"Bättre stöd för astronomiska bildformatet FITS inklusive stöd för att "
-"extrahera metadata för att befolka databasen."
 
 #: core/app/views/stack/welcomepageview.cpp:159
 #, kde-format
 msgid ""
-"Use last Exiv2 0.27.5 in all bundles with Base Media File metadata read and "
-"write support (HEIF, AVIF)."
+"Add online translations support to Alternative Language text editor widget."
 msgstr ""
-"Använd senaste Exiv2 0.27.5 i alla packar med stöd för metadataläsning och "
-"skrivning för basmediafiler (HEIF, AVIF)."
 
 #: core/app/views/stack/welcomepageview.cpp:160
 #, kde-format
-msgid "Find duplicates items is now process in parallel using multi-cores."
+msgid "Add Localize config panel in Setup/Misc for digiKam and Showfoto."
 msgstr ""
-"Sökning efter duplicerade objekt behandlas nu i parallel med användning av "
-"flera kärnor."
 
 #: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
-msgid "New tool to export items to iNaturalist web service."
-msgstr "Nytt verktyg för att exportera till webbtjänsten iNaturalist."
+msgid ""
+"Add settings to list prefered alternative/translated languages in text edit "
+"widget."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:162
 #, kde-format
-msgid "New metadata viewer based on ExifTool."
-msgstr "Ny metadatavisning baserad på ExifTool."
+msgid ""
+"Allow to use Global or Customized Image Quality Sorting settings everywhere."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:163
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Integration of Google Summer of Code project 2021 <a href=\"https://"
+#| "community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE\">Image Quality "
+#| "Sorter</a>."
 msgid ""
-"MacOS package, Windows installer, and AppImage bundle use KF5 5.89 and KAPPS "
-"21.12.0 frameworks."
-msgstr ""
-"MacOS-paket, Windows installationsverktyg och AppImage-packe använder KF5 "
-"5.89 och KAPPS 21.12.0 ramverk."
-
-#: core/app/views/stack/welcomepageview.cpp:164
-#, kde-format
-msgid ""
-"AppImage Linux bundle now support <a href=\"https://fcitx-im.org/wiki/"
-"Fcitx_5\">Platform Input Context FCITX</a>."
-msgstr ""
-"AppImage Linux-packe stöder nu <a href=\"https://fcitx-im.org/wiki/"
-"Fcitx_5\">Plattformsinmatningssammanhang FCITX</a>."
-
-#: core/app/views/stack/welcomepageview.cpp:165
-#, kde-format
-msgid "Improve RTL translations support."
-msgstr "Förbättrat stöd för höger-till-vänster översättning."
-
-#: core/app/views/stack/welcomepageview.cpp:166
-#, kde-format
-msgid ""
-"GUI internationalization and localization updates with more than 50 "
-"languages available."
-msgstr ""
-"Uppdateringar av internationalisering och lokalisering av det grafiska "
-"användargränssnittet med fler än 50 språk tillgängliga."
-
-#: core/app/views/stack/welcomepageview.cpp:167
-#, kde-format
-msgid "Add OpenWith contextual menu support under MacOS."
-msgstr ""
-"Tillägg av stöd för sammanhangsberoende menyalternativ Öppna med i MacOS."
-
-#: core/app/views/stack/welcomepageview.cpp:168
-#, kde-format
-msgid ""
-"Integration of Google Summer of Code project 2021 <a href=\"https://"
-"community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE\">Image Quality "
-"Sorter</a>."
+"Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
+"QuocHungTran\">to perform OCR over scanned text</a>."
 msgstr ""
 "Integrering av Google Summer of Code-projekt 2021 <a href=\"https://"
 "community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE"
 "\">Bildkvalitetssortering</a>."
 
+#: core/app/views/stack/welcomepageview.cpp:164
+#, kde-format
+msgid ""
+"Add <a href=\"https://community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe"
+"\">Aesthetic Detection to classify images using deep learning model</a>."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:165
+#, kde-format
+msgid ""
+"Add new tool to assign pick label automatically by parsing image quality."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:166
+#, kde-format
+msgid "Add new tool to assign rating, pick, and color labels in batch."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:167
+#, fuzzy, kde-format
+#| msgid ""
+#| "Enable this option to assign automatically Pick Labels based on image "
+#| "quality."
+msgid "Add new tool to assign titles and captions in batch."
+msgstr ""
+"Aktivera alternativet för att automatiskt välja beteckning baserat på "
+"bildkvalitet."
+
+#: core/app/views/stack/welcomepageview.cpp:168
+#, kde-format
+msgid ""
+"<a href=\" https://docs.digikam.org/en/index.html\">Rewrite handbook</a> "
+"from DocBook to Sphinx/ReStructuredText framework."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:169
+#, kde-format
+msgid "Update internal RAW engine to last stable Libraw 0.21.1."
+msgstr ""
+
 #: core/app/views/stack/welcomepageview.cpp:170
 #, kde-format
 msgid ""
-"New tool to share items on the network with a Motion JPEG stream server."
+"New RAW features: Phase One/Leaf IIQ-S v2 support Canon CR3 filmrolls/"
+"RawBurst Canon CRM (movie) files Tiled bit-packed (and 16-bit unpacked) DNGs "
+"(non-standard) Deflate-compressed integer DNG files are allowed Canon EOS "
+"R3, R7 and R10 Fujifilm X-H2S, X-T30 II OM System OM-1 Leica M11 Sony A7-IV "
+"(ILCE-7M4) DJI Mavic 3"
 msgstr ""
-"Nytt verktyg för att dela objekt på nätverket med en Motion JPEG-"
-"strömningsserver."
 
-#: core/app/views/stack/welcomepageview.cpp:171
-#, kde-format
-msgid ""
-"Showfoto has a new left sidebar hosting a folder-view to quickly explore "
-"images from local file system."
-msgstr ""
-"Showfoto har en ny sidorad som innehåller en katalogvy för att snabbt "
-"utforska bilder från det lokala filsystemet."
-
-#: core/app/views/stack/welcomepageview.cpp:172
-#, kde-format
-msgid ""
-"Update internal RAW engine to last Libraw 0.20.2 (snapshot 20210827) "
-"including Canon CR3 and Sony A7R4 support."
-msgstr ""
-"Uppdatering av internt gränssnitt för obehandlade bilder Libraw till senaste "
-"utgåva 0.20.2 (från 20210827) som inkluderar stöd för Canon CR3 och Sony "
-"A7R4."
-
-#: core/app/views/stack/welcomepageview.cpp:173
-#, kde-format
-msgid ""
-"New camera supported: Canon CR3, PowerShot G5 X Mark II, G7 X Mark III, SX70 "
-"HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS M200, EOS "
-"1DX Mark III (lossless files only) DJI Mavic Air, Air2, Osmo Action, "
-"FujiFilm Fujifilm compressed/16bit, GFX 100, X-A7, X-Pro3, X100V, X-T4, X-"
-"T200, GoPro Fusion, HERO5, HERO6, HERO7, HERO8, Hasselblad L1D-20c, X1D II "
-"50C, Leica D-LUX7, Q-P, Q2, V-LUX5, C-Lux / CAM-DC25, SL2, M10 Monochrom, "
-"Nikon D780, Z50, P950, Olympus TG-6, E-M5 Mark III, E-PL10, E-M1 Mark III, "
-"Panasonic Panasonic 14-bit, DC-FZ1000 II, DC-G90, DC-S1, DC-S1R, DC-S1H, DC-"
-"TZ95, PhaseOne IQ4 150MP, Rapsberry Pi RAW+JPEG format, Ricoh GR III, Sony "
-"A7R IV, A9 II, ILCE-6100, ILCE-6600, RX0 II, RX100 VII, Zenit M, also "
-"multiple modern smartphones."
-msgstr ""
-"Stöd för nya kameror: Canon CR3, PowerShot G5 X Mark II, G7 X Mark III, SX70 "
-"HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS M200, EOS "
-"1DX Mark III (lossless files only) DJI Mavic Air, Air2, Osmo Action, "
-"FujiFilm Fujifilm compressed/16bit, GFX 100, X-A7, X-Pro3, X100V, X-T4, X-"
-"T200, GoPro Fusion, HERO5, HERO6, HERO7, HERO8, Hasselblad L1D-20c, X1D II "
-"50C, Leica D-LUX7, Q-P, Q2, V-LUX5, C-Lux / CAM-DC25, SL2, M10 Monochrom, "
-"Nikon D780, Z50, P950, Olympus TG-6, E-M5 Mark III, E-PL10, E-M1 Mark III, "
-"Panasonic Panasonic 14-bit, DC-FZ1000 II, DC-G90, DC-S1, DC-S1R, DC-S1H, DC-"
-"TZ95, PhaseOne IQ4 150MP, Rapsberry Pi RAW+JPEG format, Ricoh GR III, Sony "
-"A7R IV, A9 II, ILCE-6100, ILCE-6600, RX0 II, RX100 VII, Zenit M, även "
-"flertalet moderna smarttelefoner."
-
-#: core/app/views/stack/welcomepageview.cpp:192
+#: core/app/views/stack/welcomepageview.cpp:185
 #, kde-format
 msgid "...and much more."
 msgstr "... och mycket mer."
 
-#: core/app/views/stack/welcomepageview.cpp:198
+#: core/app/views/stack/welcomepageview.cpp:191
 #, kde-format
 msgid "<li>%1</li>\n"
 msgstr "<li>%1</li>\n"
 
-#: core/app/views/stack/welcomepageview.cpp:201
+#: core/app/views/stack/welcomepageview.cpp:194
 #, kde-format
 msgid "New Features"
 msgstr "Nya funktioner"
 
-#: core/app/views/stack/welcomepageview.cpp:203
+#: core/app/views/stack/welcomepageview.cpp:196
 #, kde-format
 msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:204
+#: core/app/views/stack/welcomepageview.cpp:197
 #, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
@@ -3475,17 +3429,17 @@ msgstr ""
 "Vissa av de nya funktionerna i den här utgåvan av Digikam omfattar (jämfört "
 "med Digikam 6.x):"
 
-#: core/app/views/stack/welcomepageview.cpp:212
+#: core/app/views/stack/welcomepageview.cpp:205
 #, kde-format
 msgid "About"
 msgstr "Om"
 
-#: core/app/views/stack/welcomepageview.cpp:214
+#: core/app/views/stack/welcomepageview.cpp:207
 #, kde-format
 msgid "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 msgstr "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:215
+#: core/app/views/stack/welcomepageview.cpp:208
 #, kde-format
 msgid ""
 "digiKam is an open source photo management program designed to import, "
@@ -3496,7 +3450,7 @@ msgstr ""
 "imporera, organisera, förbättra, söka och exportera digitala bilder till och "
 "från datorer."
 
-#: core/app/views/stack/welcomepageview.cpp:216
+#: core/app/views/stack/welcomepageview.cpp:209
 #, kde-format
 msgid ""
 "Currently, you are in the Album view mode of digiKam. Albums are the places "
@@ -3506,12 +3460,12 @@ msgstr ""
 "För närvarande är du i Digikams albumvisning. Album är platser där filerna "
 "lagras, och är identiska med kataloger på hårdisken."
 
-#: core/app/views/stack/welcomepageview.cpp:217
+#: core/app/views/stack/welcomepageview.cpp:210
 #, kde-format
 msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li><li>%2</li>"
 
-#: core/app/views/stack/welcomepageview.cpp:218
+#: core/app/views/stack/welcomepageview.cpp:211
 #, fuzzy, kde-format
 #| msgid ""
 #| "digiKam has many powerful features which are described in the <a href="
@@ -3524,7 +3478,7 @@ msgstr ""
 "Digikam har många kraftfulla funktioner som beskrivs i <a href=\"https://"
 "docs.kde.org/?application=digikam&branch=trunk5\">dokumentationen</a>."
 
-#: core/app/views/stack/welcomepageview.cpp:219
+#: core/app/views/stack/welcomepageview.cpp:212
 #, kde-format
 msgid ""
 "The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides "
@@ -3533,34 +3487,34 @@ msgstr ""
 "<a href=\"https://www.digikam.org\">Digikams hemsida</a> tillhandahåller "
 "information om nya versioner av Digikam."
 
-#: core/app/views/stack/welcomepageview.cpp:269
+#: core/app/views/stack/welcomepageview.cpp:262
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "Välkommen till Digikam %1"
 
-#: core/app/views/stack/welcomepageview.cpp:272
+#: core/app/views/stack/welcomepageview.cpp:265
 #, kde-format
 msgid "Background Image Credits"
 msgstr "Erkännanden för bakgrundsbild"
 
-#: core/app/views/stack/welcomepageview.cpp:275
+#: core/app/views/stack/welcomepageview.cpp:268
 #, kde-format
 msgid "Author:"
 msgstr "Upphovsman:"
 
-#: core/app/views/stack/welcomepageview.cpp:276
+#: core/app/views/stack/welcomepageview.cpp:269
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:180
 #, kde-format
 msgid "Location:"
 msgstr "Plats:"
 
-#: core/app/views/stack/welcomepageview.cpp:278
+#: core/app/views/stack/welcomepageview.cpp:271
 #, kde-format
 msgid "Camera:"
 msgstr "Kamera:"
 
-#: core/app/views/stack/welcomepageview.cpp:279
+#: core/app/views/stack/welcomepageview.cpp:272
 #, kde-format
 msgid "Lens:"
 msgstr "Lins:"
@@ -27040,7 +26994,6 @@ msgid "Luminosity Curve"
 msgstr "Ljusstyrkekurva"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:311
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:119
 #, kde-format
 msgid "Info"
 msgstr "Information"
@@ -30200,7 +30153,6 @@ msgid "Copy to Clipboard"
 msgstr "Kopiera till klippbordet"
 
 #: core/libs/dialogs/infodlg.cpp:96
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:60
 #, kde-format
 msgid ""
 "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p><p><i>%4</i></p>"
@@ -43290,7 +43242,6 @@ msgid "Aditya Bhatt"
 msgstr "Aditya Bhatt"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:220
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:189
 #, kde-format
 msgid "Face Detection"
 msgstr "Ansiktsdetektering"
@@ -43321,7 +43272,6 @@ msgid "Mahesh Hegde"
 msgstr "Mahesh Hegde"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:238
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:258
 #, kde-format
 msgid "Face Recognition"
 msgstr "Ansiktsigenkänning"
@@ -53157,243 +53107,6 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr "Avslå förslaget"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:45
-#, kde-format
-msgid "Face Management in digiKam"
-msgstr "Ansiktshantering i Digikam"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:70
-#, kde-format
-msgid ""
-"The Face Workflow allows you to Detect and Recognize people in your "
-"photographs."
-msgstr ""
-"Ansiktsarbetsflödet låter dig detektera och känna igen personer på dina "
-"fotografier."
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:76
-#, kde-format
-msgid "<b>Face Detection</b>"
-msgstr "<b>Ansiktsdetektering</b>"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:80
-#, kde-format
-msgid ""
-"Face Detection allows digiKam to detect faces in your images. This step is "
-"required before being able to recognize faces."
-msgstr ""
-"Ansiktsdetektering låter Digikam detektera ansikten på dina bilder. Steget "
-"krävs innan ansikten kan kännas igen."
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:86
-#, kde-format
-msgid "<b>Face Recognition</b>"
-msgstr "<b>Ansiktsigenkänning</b>"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:90
-#, kde-format
-msgid "Face Recognition will automatically recognize people in your images."
-msgstr "Ansiktsigenkänning känner automatiskt igen personer på dina bilder."
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:100
-#, kde-format
-msgid ""
-"For additional information, read the %1 \n"
-"To ask questions, use our mailing list: digikam-users@kde.org \n"
-msgstr ""
-"För ytterligare information läs %1 \n"
-"Använd vår sändlista för att ställa frågor: digikam-users@kde.org \n"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:135
-#, kde-format
-msgid ""
-"To run face detection, select the <u>Detect Faces</u> option in the Face "
-"Scan panel and then click on <u>Scan Collection for Faces</u>"
-msgstr ""
-"Välj alternativet <u>Detektera ansikten</u> i ansiktssökningspanelen och "
-"klicka på  <u>Sök igenom samlingen efter ansikten</u>"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:139
-#, kde-format
-msgid ""
-"<b>Caution:</b> Running Face Detection for the first time can be fairly time "
-"consuming. Make sure you use the <u>Search In</u> tab to restrict the target "
-"of the scan."
-msgstr ""
-"<b>Varning:</b> Att köra ansiktsdetektering för första gången kan ta ganska "
-"lång tid. Säkerställ att du använder fliken <u>Sök i</u> för att begränsa "
-"sökningens omfattning."
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:145
-#, kde-format
-msgid "digiKam offers two kinds of face detection scans: "
-msgstr "Digikam erbjuder två sorters ansiktsdetekteringssökningar:"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:150
-#, kde-format
-msgid "<b>Skip Images Already Scanned</b>"
-msgstr "<b>Hoppa över redan genomsökta bilder</b>"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:154
-#, kde-format
-msgid ""
-"Choose this option if you haven't scanned yet or if the last scan yielded "
-"good results but you would like to scan new images."
-msgstr ""
-"Välj alternativet om du inte har sökt ännu, eller om den senaste sökningen "
-"gav goda resultat med du vill söka efter nya bilder."
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:161
-#, kde-format
-msgid "<b>Scan Again and Merge</b>"
-msgstr "<b>Sök igen och sammanfoga</b>"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:165
-#, kde-format
-msgid ""
-"Choose this option if the results of the previous scan weren't accurate. "
-"This would rescan all images again, and is time consuming."
-msgstr ""
-"Använd alternativet om resultatet av föregående sökning inte var "
-"tillfredsställande. Det söker om alla bilder igen, och tar lång tid."
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:171
-#, kde-format
-msgid ""
-"After the Face Scan is complete, you should see a new tag <u>Unknown</u> "
-"where the results of the face scan will appear. You may now manually "
-"identify a few of these faces and then proceed for face recognition."
-msgstr ""
-"Efter ansiktssökningen är färdig, ska du se en ny etikett <u>Okända</u> där "
-"resultatet av ansiktssökningen visas. Du kan nu manuellt identifiera några "
-"av ansiktena och sedan gå vidare till ansiktsigenkänning."
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:208
-#, kde-format
-msgid ""
-"To manually identify a face, hover on any Unknown face and use the text box "
-"to give it a name. This will lead to the creation of a face tag in case a "
-"person of that name doesn't exist already. For best results identify 4-5 "
-"faces for each person you want the scan to recognize."
-msgstr ""
-"För att identifiera ett ansikte manuellt, håll musen över vilket okänt "
-"ansikte som helst och använd textrutan för att ge det ett namn. Det leder "
-"till att en ansiktsetikett skapas om personen med det namnet inte redan "
-"finns. För bästa resultat, identifiera 4-5 ansikten för varje person som du "
-"vill att sökningen ska känna igen."
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:217
-#, kde-format
-msgid ""
-"Running face recognition is similar to detection, just select <u>Recognize "
-"Faces</u> from the Face Scan panel this time.\n"
-"Face recognition will work on all Unknown faces. In case there's a face you "
-"don't wish to be recognized, you can mark it as ignored.\n"
-"This leads to the creation of a new <u>Ignored</u> tag, you can later unmark "
-"the face if needed."
-msgstr ""
-"Att utföra ansiktsigenkänning liknar detektering, välj bara <u>Känn igen "
-"ansikten</u> i ansiktssökningspanelen den här gången.\n"
-"Ansiktsigenkänning arbetar med alla okända ansikten. I fallet då det finns "
-"ett ansikte som du inte vill ska kännas igen, kan det markeras som "
-"ignorerat.\n"
-"Det leder till att en ny etikett skapas, <u>Ignorerade</u>. Du kan senare ta "
-"bort markeringen från ansiktet om det behövs."
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:235
-#, kde-format
-msgid ""
-"You may select <u>Work on all processor cores</u>in order to increase the "
-"speed of Face Recognition \n"
-"The Face Accuracy slider allows you to control the accuracy of the "
-"recognition algorithm. A higher specificity implies higher accuracy, however "
-"this results in a smaller set of results."
-msgstr ""
-"Du kan välja <u>Använd alla processorkärnor</u> för att öka "
-"ansiktsigenkänningens hastighet.\n"
-"Skjutreglaget Ansiktsnoggrannhet låter dig styra igenkänningsalgoritmens "
-"noggrannhet. En högre specificitet leder till högre noggrannhet, men ger "
-"dock en mindre mängd resultat."
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:274
-#, kde-format
-msgid ""
-"The results of facial recognition appear in the form of Unconfirmed results. "
-"These results will show up in the Unconfirmed tag, as well as in the tag of "
-"the person suggested for each face.\n"
-"Hovering over Unconfirmed faces will display a few options:\n"
-msgstr ""
-"Resultaten av ansiktsigenkänning visas i form av obekräftade resultat. "
-"Resultaten visas under etiketten Obekräftade, samt under etiketten för "
-"personen som föreslås för varje ansikte.\n"
-"Att hålla musen över obekräftade ansikten visar några alternativ:\n"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:287
-#, kde-format
-msgid ""
-"The Confirm button allows you to confirm the suggestion. This would assign "
-"the suggested name to the face"
-msgstr ""
-"Knappen Bekräfta låter dig bekräfta förslaget. Det tilldelar föreslaget namn "
-"till ansiktet."
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:297
-#, kde-format
-msgid ""
-"Use the Reject button, if the suggestion is incorrect. This would move the "
-"face back to Unknown."
-msgstr ""
-"Använd knappen Avslå om förslaget är felaktigt. Det flyttar tillbaka "
-"ansiktet till okänt."
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:308
-#, kde-format
-msgid ""
-"Use the Delete button, if the suggestion is not a face. This will delete the "
-"face region from the database."
-msgstr ""
-"Använd knappen Ta bort om förslaget inte är ett ansikte. Det tar bort "
-"ansiktsområdet från databasen."
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:314
-#, kde-format
-msgid ""
-"<b>Face Categorization and Sorting</b>\n"
-"By default, faces will appear categorized based on their name. You may "
-"change this behaviour, by going to <u>View -> Separate Items</u>.\n"
-"Note that using a different categorization order will lead to Confirmed and "
-"Unconfirmed faces appearing mixed with one another. To change this behaviour "
-"you may modify the sorting order within each category by going to <u>View -> "
-"Sort Items -> By Face Type</u>."
-msgstr ""
-"<b>Ansiktskategorisering och sortering</b>\n"
-"Normalt visas ansikten kategoriserade enligt namn. Du kan ändra beteendet "
-"genom att gå till <u>Visa -> Separera objekt</u>.\n"
-"Observera att användning av en annan kategoriseringsordning leder till att "
-"bekräftade och obekräftade ansikten visas blandade med varandra. För att "
-"ändra beteendet kan sorteringsordningen inom varje kategori ändras genom att "
-"gå till <u>Visa -> Sortera objekt -> Enligt ansiktstyp</u>."
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:326
-#, kde-format
-msgid ""
-"<b>Improving Results of Face Recognition</b>\n"
-"Apart from using the settings mentioned in the last page, face results may "
-"also be improved by rebuilding the training data. This may be done through "
-"Tools -> Maintenance -> Detect and Recognize Faces -> Clear and rebuild all "
-"training data."
-msgstr ""
-"<b>Förbättra resultat av ansiktsigenkänning</b>\n"
-"Förutom att använda inställningarna som nämns på föregående sida, kan "
-"ansiktsresultaten också förbättras genom att skapa om inlärningsdata. Det "
-"kan göras via Verktyg -> Underhåll -> Detektera och känn igen ansikten -> "
-"Rensa och bygg om all inlärningsdata."
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:346
-#, kde-format
-msgid "Confirm Faces"
-msgstr "Bekräfta ansikten"
-
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
@@ -53433,25 +53146,25 @@ msgctxt "@info"
 msgid "Help"
 msgstr "Hjälp"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:158
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect faces"
 msgstr "Detektera ansikten"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:160
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
 #, kde-format
 msgctxt "@info"
 msgid "Find all faces in your photos"
 msgstr "Sök efter ansikten i foton"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:164
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:163
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect and recognize faces"
 msgstr "Detektera och känn igen ansikten"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:165
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:164
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -53461,13 +53174,13 @@ msgstr ""
 "Hitta alla ansikten i dina bilder och\n"
 "försök känna igen personen som avbildas"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:168
 #, kde-format
 msgctxt "@option:radio"
 msgid "Recognize faces"
 msgstr "Känn igen ansikten"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:170
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -53477,37 +53190,37 @@ msgstr ""
 "Försök på nytt känna igen personer som avbildas\n"
 "för markerade men ännu obekräftade ansikten."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:193
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:192
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "Arbetsflöde"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:198
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:197
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "Sök i"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
 #, kde-format
 msgctxt "@label"
 msgid "Face Accuracy"
 msgstr "Ansiktsnoggrannhet"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:207
 #, kde-format
 msgctxt "@label left extremities of a scale"
 msgid "Sensitivity"
 msgstr "Känslighet"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:210
 #, kde-format
 msgctxt "@label right extremities of a scale"
 msgid "Specificity"
 msgstr "Specificitet"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:218
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:217
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53520,27 +53233,27 @@ msgstr ""
 "igenkänningen av ansikten, men färre ansikten känns igen\n"
 "(bara ansikten som är mycket lika tidigare etiketterade ansikten känns igen)."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:228
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
 #, kde-format
 msgctxt "@option:check"
 msgid "Use YOLO v3 detection model"
 msgstr "Använd YOLO v3-detekteringsmodell"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:229
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Face detection with YOLO v3 data model. Better results but slower."
 msgstr ""
 "Ansiktsdetektering med YOLO v3 datamodell. Bättre resultat men långsammare."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:233
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:232
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:236
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "Använd alla processorkärnor"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -53552,7 +53265,7 @@ msgstr ""
 "Du kan välja om du vill använda alla processor-kärnor\n"
 "i systemet eller arbeta i bakgrunden med bara en kärna."
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -64890,6 +64603,366 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Vill du återställa alla videoinställningar till förvalda värden?"
+
+#~ msgid ""
+#~ "New Neural Network engine based on OpenCV Deep Learning module to detect "
+#~ "and recognize faces."
+#~ msgstr ""
+#~ "Nytt neuralt nätverksgränssnitt baserat på modulen OpenCV Deep Learning "
+#~ "för att detektera och känna igen ansikten."
+
+#~ msgid "Update Slideshow to plugin with new shuffle mode."
+#~ msgstr "Uppdatera bildspel till insticksprogram med nytt blandningsläge."
+
+#~ msgid "Add new theme Html5Responsive for HtmlGallery plugin."
+#~ msgstr ""
+#~ "Tillägg av nytt tema HTML5 Responsive för insticksprogrammet HTML-galleri."
+
+#~ msgid ""
+#~ "New plugin ImageMosaicWall to create an image based on a bunch of other "
+#~ "photos."
+#~ msgstr ""
+#~ "Nytt insticksprogram ImageMosaicWall för att skapa en bild baserad på ett "
+#~ "antal andra foton."
+
+#~ msgid "add new batch queue manager tool to fix hot pixels from images."
+#~ msgstr ""
+#~ "Tillägg av nytt hanteringsverktyget för bakgrundskö för att rätta heta "
+#~ "bildpunkter på bilder."
+
+#~ msgid "add new batch queue manager tool to apply texture over images."
+#~ msgstr ""
+#~ "Tillägg av nytt hanteringsverktyget för bakgrundskö kan applicera en "
+#~ "struktur på bilder."
+
+#~ msgid ""
+#~ "Face Scan dialog contents is now simplified and embedded into left "
+#~ "sidebar."
+#~ msgstr ""
+#~ "Innehållet i dialogrutan för ansiktssökning är nu förenklad och inbäddad "
+#~ "i vänster sidorad."
+
+#~ msgid "Add support for Gimp XCF files >= 2.10."
+#~ msgstr "Tillägg av stöd för Gimp XCF files ≥ 2.10."
+
+#~ msgid "Add Flatpak bundle support for Linux platforms."
+#~ msgstr "Tillägg av stöd för Flatpak-packe i Linux-plattformar."
+
+#~ msgid "Table-view is now able to show digiKam Tag-Paths properties."
+#~ msgstr "Tabellvyn kan nu visa Digikam etikettsökvägsegenskaper."
+
+#~ msgid "Add option to write geolocation information in file metadata."
+#~ msgstr ""
+#~ "Tillägg av alternativ för att spara geografisk lokaliseringsinformation i "
+#~ "filernas metadata."
+
+#~ msgid "Add color label support for advanced metadata settings."
+#~ msgstr "Tillägg av stöd för avancerade metadatainställningar."
+
+#~ msgid "Add Exif, Iptc, and Xmp read support for HEIF images."
+#~ msgstr "Lägg till stöd för att läsa EXIF, IPTC och XMP för HEIF-bilder."
+
+#~ msgid "Improved support for UNC network paths under Windows."
+#~ msgstr "Förbättrat stöd för UNC-nätverkssökvägar på Windows."
+
+#~ msgid "Improved support for Unicode paths under Windows."
+#~ msgstr "Förbättrat stöd för Unicode-sökvägar på Windows."
+
+#~ msgid "Apple bundle is now relocatable and compatible with macOS BigSur."
+#~ msgstr "Packe för Apple är nu relokerbar och kompatibel med macOS BigSur."
+
+#~ msgid ""
+#~ "New online version checker and downloader to automate upgrade under "
+#~ "Windows and macOS."
+#~ msgstr ""
+#~ "Ny nätbaserad versionskontroll och nerladdning för att automatiskt "
+#~ "uppgradera på Windows och macOS."
+
+#~ msgid ""
+#~ "Better support of astro FITS image format including metadata extraction "
+#~ "support to populate the database."
+#~ msgstr ""
+#~ "Bättre stöd för astronomiska bildformatet FITS inklusive stöd för att "
+#~ "extrahera metadata för att befolka databasen."
+
+#~ msgid ""
+#~ "Use last Exiv2 0.27.5 in all bundles with Base Media File metadata read "
+#~ "and write support (HEIF, AVIF)."
+#~ msgstr ""
+#~ "Använd senaste Exiv2 0.27.5 i alla packar med stöd för metadataläsning "
+#~ "och skrivning för basmediafiler (HEIF, AVIF)."
+
+#~ msgid "Find duplicates items is now process in parallel using multi-cores."
+#~ msgstr ""
+#~ "Sökning efter duplicerade objekt behandlas nu i parallel med användning "
+#~ "av flera kärnor."
+
+#~ msgid "New tool to export items to iNaturalist web service."
+#~ msgstr "Nytt verktyg för att exportera till webbtjänsten iNaturalist."
+
+#~ msgid "New metadata viewer based on ExifTool."
+#~ msgstr "Ny metadatavisning baserad på ExifTool."
+
+#~ msgid ""
+#~ "MacOS package, Windows installer, and AppImage bundle use KF5 5.89 and "
+#~ "KAPPS 21.12.0 frameworks."
+#~ msgstr ""
+#~ "MacOS-paket, Windows installationsverktyg och AppImage-packe använder KF5 "
+#~ "5.89 och KAPPS 21.12.0 ramverk."
+
+#~ msgid ""
+#~ "AppImage Linux bundle now support <a href=\"https://fcitx-im.org/wiki/"
+#~ "Fcitx_5\">Platform Input Context FCITX</a>."
+#~ msgstr ""
+#~ "AppImage Linux-packe stöder nu <a href=\"https://fcitx-im.org/wiki/"
+#~ "Fcitx_5\">Plattformsinmatningssammanhang FCITX</a>."
+
+#~ msgid "Improve RTL translations support."
+#~ msgstr "Förbättrat stöd för höger-till-vänster översättning."
+
+#~ msgid ""
+#~ "GUI internationalization and localization updates with more than 50 "
+#~ "languages available."
+#~ msgstr ""
+#~ "Uppdateringar av internationalisering och lokalisering av det grafiska "
+#~ "användargränssnittet med fler än 50 språk tillgängliga."
+
+#~ msgid "Add OpenWith contextual menu support under MacOS."
+#~ msgstr ""
+#~ "Tillägg av stöd för sammanhangsberoende menyalternativ Öppna med i MacOS."
+
+#~ msgid ""
+#~ "New tool to share items on the network with a Motion JPEG stream server."
+#~ msgstr ""
+#~ "Nytt verktyg för att dela objekt på nätverket med en Motion JPEG-"
+#~ "strömningsserver."
+
+#~ msgid ""
+#~ "Showfoto has a new left sidebar hosting a folder-view to quickly explore "
+#~ "images from local file system."
+#~ msgstr ""
+#~ "Showfoto har en ny sidorad som innehåller en katalogvy för att snabbt "
+#~ "utforska bilder från det lokala filsystemet."
+
+#~ msgid ""
+#~ "Update internal RAW engine to last Libraw 0.20.2 (snapshot 20210827) "
+#~ "including Canon CR3 and Sony A7R4 support."
+#~ msgstr ""
+#~ "Uppdatering av internt gränssnitt för obehandlade bilder Libraw till "
+#~ "senaste utgåva 0.20.2 (från 20210827) som inkluderar stöd för Canon CR3 "
+#~ "och Sony A7R4."
+
+#~ msgid ""
+#~ "New camera supported: Canon CR3, PowerShot G5 X Mark II, G7 X Mark III, "
+#~ "SX70 HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS "
+#~ "M200, EOS 1DX Mark III (lossless files only) DJI Mavic Air, Air2, Osmo "
+#~ "Action, FujiFilm Fujifilm compressed/16bit, GFX 100, X-A7, X-Pro3, X100V, "
+#~ "X-T4, X-T200, GoPro Fusion, HERO5, HERO6, HERO7, HERO8, Hasselblad "
+#~ "L1D-20c, X1D II 50C, Leica D-LUX7, Q-P, Q2, V-LUX5, C-Lux / CAM-DC25, "
+#~ "SL2, M10 Monochrom, Nikon D780, Z50, P950, Olympus TG-6, E-M5 Mark III, E-"
+#~ "PL10, E-M1 Mark III, Panasonic Panasonic 14-bit, DC-FZ1000 II, DC-G90, DC-"
+#~ "S1, DC-S1R, DC-S1H, DC-TZ95, PhaseOne IQ4 150MP, Rapsberry Pi RAW+JPEG "
+#~ "format, Ricoh GR III, Sony A7R IV, A9 II, ILCE-6100, ILCE-6600, RX0 II, "
+#~ "RX100 VII, Zenit M, also multiple modern smartphones."
+#~ msgstr ""
+#~ "Stöd för nya kameror: Canon CR3, PowerShot G5 X Mark II, G7 X Mark III, "
+#~ "SX70 HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS "
+#~ "M200, EOS 1DX Mark III (lossless files only) DJI Mavic Air, Air2, Osmo "
+#~ "Action, FujiFilm Fujifilm compressed/16bit, GFX 100, X-A7, X-Pro3, X100V, "
+#~ "X-T4, X-T200, GoPro Fusion, HERO5, HERO6, HERO7, HERO8, Hasselblad "
+#~ "L1D-20c, X1D II 50C, Leica D-LUX7, Q-P, Q2, V-LUX5, C-Lux / CAM-DC25, "
+#~ "SL2, M10 Monochrom, Nikon D780, Z50, P950, Olympus TG-6, E-M5 Mark III, E-"
+#~ "PL10, E-M1 Mark III, Panasonic Panasonic 14-bit, DC-FZ1000 II, DC-G90, DC-"
+#~ "S1, DC-S1R, DC-S1H, DC-TZ95, PhaseOne IQ4 150MP, Rapsberry Pi RAW+JPEG "
+#~ "format, Ricoh GR III, Sony A7R IV, A9 II, ILCE-6100, ILCE-6600, RX0 II, "
+#~ "RX100 VII, Zenit M, även flertalet moderna smarttelefoner."
+
+#~ msgid "Face Management in digiKam"
+#~ msgstr "Ansiktshantering i Digikam"
+
+#~ msgid ""
+#~ "The Face Workflow allows you to Detect and Recognize people in your "
+#~ "photographs."
+#~ msgstr ""
+#~ "Ansiktsarbetsflödet låter dig detektera och känna igen personer på dina "
+#~ "fotografier."
+
+#~ msgid "<b>Face Detection</b>"
+#~ msgstr "<b>Ansiktsdetektering</b>"
+
+#~ msgid ""
+#~ "Face Detection allows digiKam to detect faces in your images. This step "
+#~ "is required before being able to recognize faces."
+#~ msgstr ""
+#~ "Ansiktsdetektering låter Digikam detektera ansikten på dina bilder. "
+#~ "Steget krävs innan ansikten kan kännas igen."
+
+#~ msgid "<b>Face Recognition</b>"
+#~ msgstr "<b>Ansiktsigenkänning</b>"
+
+#~ msgid "Face Recognition will automatically recognize people in your images."
+#~ msgstr "Ansiktsigenkänning känner automatiskt igen personer på dina bilder."
+
+#~ msgid ""
+#~ "For additional information, read the %1 \n"
+#~ "To ask questions, use our mailing list: digikam-users@kde.org \n"
+#~ msgstr ""
+#~ "För ytterligare information läs %1 \n"
+#~ "Använd vår sändlista för att ställa frågor: digikam-users@kde.org \n"
+
+#~ msgid ""
+#~ "To run face detection, select the <u>Detect Faces</u> option in the Face "
+#~ "Scan panel and then click on <u>Scan Collection for Faces</u>"
+#~ msgstr ""
+#~ "Välj alternativet <u>Detektera ansikten</u> i ansiktssökningspanelen och "
+#~ "klicka på  <u>Sök igenom samlingen efter ansikten</u>"
+
+#~ msgid ""
+#~ "<b>Caution:</b> Running Face Detection for the first time can be fairly "
+#~ "time consuming. Make sure you use the <u>Search In</u> tab to restrict "
+#~ "the target of the scan."
+#~ msgstr ""
+#~ "<b>Varning:</b> Att köra ansiktsdetektering för första gången kan ta "
+#~ "ganska lång tid. Säkerställ att du använder fliken <u>Sök i</u> för att "
+#~ "begränsa sökningens omfattning."
+
+#~ msgid "digiKam offers two kinds of face detection scans: "
+#~ msgstr "Digikam erbjuder två sorters ansiktsdetekteringssökningar:"
+
+#~ msgid "<b>Skip Images Already Scanned</b>"
+#~ msgstr "<b>Hoppa över redan genomsökta bilder</b>"
+
+#~ msgid ""
+#~ "Choose this option if you haven't scanned yet or if the last scan yielded "
+#~ "good results but you would like to scan new images."
+#~ msgstr ""
+#~ "Välj alternativet om du inte har sökt ännu, eller om den senaste "
+#~ "sökningen gav goda resultat med du vill söka efter nya bilder."
+
+#~ msgid "<b>Scan Again and Merge</b>"
+#~ msgstr "<b>Sök igen och sammanfoga</b>"
+
+#~ msgid ""
+#~ "Choose this option if the results of the previous scan weren't accurate. "
+#~ "This would rescan all images again, and is time consuming."
+#~ msgstr ""
+#~ "Använd alternativet om resultatet av föregående sökning inte var "
+#~ "tillfredsställande. Det söker om alla bilder igen, och tar lång tid."
+
+#~ msgid ""
+#~ "After the Face Scan is complete, you should see a new tag <u>Unknown</u> "
+#~ "where the results of the face scan will appear. You may now manually "
+#~ "identify a few of these faces and then proceed for face recognition."
+#~ msgstr ""
+#~ "Efter ansiktssökningen är färdig, ska du se en ny etikett <u>Okända</u> "
+#~ "där resultatet av ansiktssökningen visas. Du kan nu manuellt identifiera "
+#~ "några av ansiktena och sedan gå vidare till ansiktsigenkänning."
+
+#~ msgid ""
+#~ "To manually identify a face, hover on any Unknown face and use the text "
+#~ "box to give it a name. This will lead to the creation of a face tag in "
+#~ "case a person of that name doesn't exist already. For best results "
+#~ "identify 4-5 faces for each person you want the scan to recognize."
+#~ msgstr ""
+#~ "För att identifiera ett ansikte manuellt, håll musen över vilket okänt "
+#~ "ansikte som helst och använd textrutan för att ge det ett namn. Det leder "
+#~ "till att en ansiktsetikett skapas om personen med det namnet inte redan "
+#~ "finns. För bästa resultat, identifiera 4-5 ansikten för varje person som "
+#~ "du vill att sökningen ska känna igen."
+
+#~ msgid ""
+#~ "Running face recognition is similar to detection, just select "
+#~ "<u>Recognize Faces</u> from the Face Scan panel this time.\n"
+#~ "Face recognition will work on all Unknown faces. In case there's a face "
+#~ "you don't wish to be recognized, you can mark it as ignored.\n"
+#~ "This leads to the creation of a new <u>Ignored</u> tag, you can later "
+#~ "unmark the face if needed."
+#~ msgstr ""
+#~ "Att utföra ansiktsigenkänning liknar detektering, välj bara <u>Känn igen "
+#~ "ansikten</u> i ansiktssökningspanelen den här gången.\n"
+#~ "Ansiktsigenkänning arbetar med alla okända ansikten. I fallet då det "
+#~ "finns ett ansikte som du inte vill ska kännas igen, kan det markeras som "
+#~ "ignorerat.\n"
+#~ "Det leder till att en ny etikett skapas, <u>Ignorerade</u>. Du kan senare "
+#~ "ta bort markeringen från ansiktet om det behövs."
+
+#~ msgid ""
+#~ "You may select <u>Work on all processor cores</u>in order to increase the "
+#~ "speed of Face Recognition \n"
+#~ "The Face Accuracy slider allows you to control the accuracy of the "
+#~ "recognition algorithm. A higher specificity implies higher accuracy, "
+#~ "however this results in a smaller set of results."
+#~ msgstr ""
+#~ "Du kan välja <u>Använd alla processorkärnor</u> för att öka "
+#~ "ansiktsigenkänningens hastighet.\n"
+#~ "Skjutreglaget Ansiktsnoggrannhet låter dig styra igenkänningsalgoritmens "
+#~ "noggrannhet. En högre specificitet leder till högre noggrannhet, men ger "
+#~ "dock en mindre mängd resultat."
+
+#~ msgid ""
+#~ "The results of facial recognition appear in the form of Unconfirmed "
+#~ "results. These results will show up in the Unconfirmed tag, as well as in "
+#~ "the tag of the person suggested for each face.\n"
+#~ "Hovering over Unconfirmed faces will display a few options:\n"
+#~ msgstr ""
+#~ "Resultaten av ansiktsigenkänning visas i form av obekräftade resultat. "
+#~ "Resultaten visas under etiketten Obekräftade, samt under etiketten för "
+#~ "personen som föreslås för varje ansikte.\n"
+#~ "Att hålla musen över obekräftade ansikten visar några alternativ:\n"
+
+#~ msgid ""
+#~ "The Confirm button allows you to confirm the suggestion. This would "
+#~ "assign the suggested name to the face"
+#~ msgstr ""
+#~ "Knappen Bekräfta låter dig bekräfta förslaget. Det tilldelar föreslaget "
+#~ "namn till ansiktet."
+
+#~ msgid ""
+#~ "Use the Reject button, if the suggestion is incorrect. This would move "
+#~ "the face back to Unknown."
+#~ msgstr ""
+#~ "Använd knappen Avslå om förslaget är felaktigt. Det flyttar tillbaka "
+#~ "ansiktet till okänt."
+
+#~ msgid ""
+#~ "Use the Delete button, if the suggestion is not a face. This will delete "
+#~ "the face region from the database."
+#~ msgstr ""
+#~ "Använd knappen Ta bort om förslaget inte är ett ansikte. Det tar bort "
+#~ "ansiktsområdet från databasen."
+
+#~ msgid ""
+#~ "<b>Face Categorization and Sorting</b>\n"
+#~ "By default, faces will appear categorized based on their name. You may "
+#~ "change this behaviour, by going to <u>View -> Separate Items</u>.\n"
+#~ "Note that using a different categorization order will lead to Confirmed "
+#~ "and Unconfirmed faces appearing mixed with one another. To change this "
+#~ "behaviour you may modify the sorting order within each category by going "
+#~ "to <u>View -> Sort Items -> By Face Type</u>."
+#~ msgstr ""
+#~ "<b>Ansiktskategorisering och sortering</b>\n"
+#~ "Normalt visas ansikten kategoriserade enligt namn. Du kan ändra beteendet "
+#~ "genom att gå till <u>Visa -> Separera objekt</u>.\n"
+#~ "Observera att användning av en annan kategoriseringsordning leder till "
+#~ "att bekräftade och obekräftade ansikten visas blandade med varandra. För "
+#~ "att ändra beteendet kan sorteringsordningen inom varje kategori ändras "
+#~ "genom att gå till <u>Visa -> Sortera objekt -> Enligt ansiktstyp</u>."
+
+#~ msgid ""
+#~ "<b>Improving Results of Face Recognition</b>\n"
+#~ "Apart from using the settings mentioned in the last page, face results "
+#~ "may also be improved by rebuilding the training data. This may be done "
+#~ "through Tools -> Maintenance -> Detect and Recognize Faces -> Clear and "
+#~ "rebuild all training data."
+#~ msgstr ""
+#~ "<b>Förbättra resultat av ansiktsigenkänning</b>\n"
+#~ "Förutom att använda inställningarna som nämns på föregående sida, kan "
+#~ "ansiktsresultaten också förbättras genom att skapa om inlärningsdata. Det "
+#~ "kan göras via Verktyg -> Underhåll -> Detektera och känn igen ansikten -> "
+#~ "Rensa och bygg om all inlärningsdata."
+
+#~ msgid "Confirm Faces"
+#~ msgstr "Bekräfta ansikten"
 
 #~ msgid ""
 #~ "https://docs.kde.org/?application=digikam&branch=trunk5&path=using-"

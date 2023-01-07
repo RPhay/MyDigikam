@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-04 00:45+0000\n"
+"POT-Creation-Date: 2023-01-07 00:46+0000\n"
 "PO-Revision-Date: 2023-01-02 07:11\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -954,7 +954,7 @@ msgstr "名称："
 
 #: core/app/items/utils/tooltipfiller.cpp:83
 #: core/app/items/utils/tooltipfiller.cpp:595
-#: core/app/views/stack/welcomepageview.cpp:277
+#: core/app/views/stack/welcomepageview.cpp:270
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:70
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:170
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -2540,7 +2540,7 @@ msgstr "帮助(&H)"
 msgid "Main Toolbar"
 msgstr "主工具栏"
 
-#: core/app/main/main.cpp:165 core/app/views/stack/welcomepageview.cpp:261
+#: core/app/main/main.cpp:165 core/app/views/stack/welcomepageview.cpp:254
 #: core/libs/album/manager/albummanager_album.cpp:128
 #: core/libs/album/manager/albummanager_dalbum.cpp:94
 #: core/libs/album/manager/albummanager_falbum.cpp:66
@@ -3109,267 +3109,244 @@ msgid "%1/%2 items selected"
 msgstr "已选中 %1 项，共 %2 项"
 
 #: core/app/views/stack/welcomepageview.cpp:140
-#, kde-format
-msgid "More than 1300 user-reports closed on bugzilla."
+#, fuzzy, kde-format
+#| msgid "More than 1300 user-reports closed on bugzilla."
+msgid "More than 200 user-reports closed on bugzilla."
 msgstr "解决了 1300 多个用户上报的程序缺陷。"
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
-msgid ""
-"New Neural Network engine based on OpenCV Deep Learning module to detect and "
-"recognize faces."
-msgstr "基于 OpenCV 深度学习模块的全新神经网络引擎，用于进行人脸识别。"
+msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:142
 #, kde-format
-msgid "Update Slideshow to plugin with new shuffle mode."
-msgstr "更新幻灯片功能为插件，新增随机播放模式。"
+msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
-msgid "Add new theme Html5Responsive for HtmlGallery plugin."
-msgstr "HtmlGallery 插件新增响应式 HTML5 主题。"
+msgid ""
+"Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
-msgid ""
-"New plugin ImageMosaicWall to create an image based on a bunch of other "
-"photos."
-msgstr "新增插件 ImageMosaicWall，可以使用一组照片拼贴成一张特定图像。"
+msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:145
 #, kde-format
-msgid "add new batch queue manager tool to fix hot pixels from images."
-msgstr "新增批处理队列管理器工具，用于修复图像中的热像素。"
+msgid ""
+"Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store "
+"versionned images in editor."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
-msgid "add new batch queue manager tool to apply texture over images."
-msgstr "新增批处理队列管理器工具，用于为图像应用纹理。"
+msgid "Add hamburger menu to tool-bar if main menu is hidden."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:147
-#, kde-format
-msgid ""
-"Face Scan dialog contents is now simplified and embedded into left sidebar."
-msgstr "简化人脸识别扫描对话框，并将其嵌入左侧栏。"
+#, fuzzy, kde-format
+#| msgctxt "@info:whatsthis"
+#| msgid "Turn on this option to write metadata into DNG files."
+msgid "Add new option to write metadata to files with ExifTool backend."
+msgstr "勾选此项后可将元数据写入 DNG 文件。"
 
 #: core/app/views/stack/welcomepageview.cpp:148
-#, kde-format
-msgid "Add support for Gimp XCF files >= 2.10."
-msgstr "新增对 GIMP 2.10 以上版本的 XCF 文件支持。"
+#, fuzzy, kde-format
+#| msgctxt "@info:whatsthis"
+#| msgid ""
+#| "Turn on this option to write metadata into RAW files. This feature is "
+#| "delegate to ExifTool backend and is disabled by default."
+msgid ""
+"Optional write metadata operations to DNG and RAW files are now always "
+"delegated to ExifTool Backend."
+msgstr ""
+"启用此选项后，元数据将被写入 RAW 文件。此功能通过 ExifTool 后端程序实现，默认"
+"禁用。"
 
 #: core/app/views/stack/welcomepageview.cpp:149
 #, kde-format
-msgid "Add Flatpak bundle support for Linux platforms."
-msgstr "新增 Linux 平台 Flatpak 软件包支持。"
+msgid "Optimize layout of Metadata Edit plugin for a better usability."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
-msgid "Table-view is now able to show digiKam Tag-Paths properties."
-msgstr "详情视图可以显示 digiKam 标签路径属性。"
+msgid ""
+"Add increment file counter to sequence numbering with option [c] or [c,step]."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:151
 #, kde-format
-msgid "Add option to write geolocation information in file metadata."
-msgstr "新增用于将地理位置信息写入文件元数据的选项。"
+msgid "Add random text sequence numbering with option [r]."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:152
 #, kde-format
-msgid "Add color label support for advanced metadata settings."
-msgstr "高级元数据设置新增颜色标记支持。"
+msgid ""
+"Add configurable first character for the unique modifier with {unique:n,c}."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:153
-#, kde-format
-msgid "Add Exif, Iptc, and Xmp read support for HEIF images."
-msgstr "增加 HEIF 图像的 EXIF、IPTC 和 XMP 读取支持。"
+#, fuzzy, kde-format
+#| msgid "Return items by number of face regions"
+msgid "Add search for items by number of face regions."
+msgstr "人脸区域数量"
 
 #: core/app/views/stack/welcomepageview.cpp:154
-#, kde-format
-msgid "Improved support for UNC network paths under Windows."
-msgstr "改善在 Windows 下对 UNC 网络路径的支持。"
+#, fuzzy, kde-format
+#| msgid "Return items without face regions"
+msgid "Add search for items without face regions."
+msgstr "无人脸区域"
 
 #: core/app/views/stack/welcomepageview.cpp:155
 #, kde-format
-msgid "Improved support for Unicode paths under Windows."
-msgstr "改善在 Windows 下对 Unicode 路径的支持。"
+msgid "Add support for cross-platform network paths."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:156
 #, kde-format
-msgid "Apple bundle is now relocatable and compatible with macOS BigSur."
-msgstr "macOS 版软件包现在可以迁移位置，并兼容 macOS BigSur。"
+msgid "Add support for SQLite WAL (Write-Ahead-Logging) mode."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format
 msgid ""
-"New online version checker and downloader to automate upgrade under Windows "
-"and macOS."
+"Add spell-checking support in caption text widget using KF5::Sonnet "
+"component."
 msgstr ""
-"新增在线新版检测与下载功能，可以自动升级 Windows 和 macOS 版软件到最新版。"
 
 #: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
-msgid ""
-"Better support of astro FITS image format including metadata extraction "
-"support to populate the database."
-msgstr "改善对 FITS 天文图像格式的支持，支持提取元数据到数据库。"
+msgid "Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:159
 #, kde-format
 msgid ""
-"Use last Exiv2 0.27.5 in all bundles with Base Media File metadata read and "
-"write support (HEIF, AVIF)."
+"Add online translations support to Alternative Language text editor widget."
 msgstr ""
-"使用 Exiv2 最新版本 0.27.5 构建所有软件包，提供基础媒体文件元数据读写支持 "
-"(HEIF、AVIF)。"
 
 #: core/app/views/stack/welcomepageview.cpp:160
 #, kde-format
-msgid "Find duplicates items is now process in parallel using multi-cores."
-msgstr "查找重复项目现已支持多线程。"
+msgid "Add Localize config panel in Setup/Misc for digiKam and Showfoto."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
-msgid "New tool to export items to iNaturalist web service."
-msgstr "新增 iNaturalist 网络服务导出支持工具。"
+msgid ""
+"Add settings to list prefered alternative/translated languages in text edit "
+"widget."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:162
 #, kde-format
-msgid "New metadata viewer based on ExifTool."
-msgstr "基于 ExifTools 的新版元数据查看器。"
+msgid ""
+"Allow to use Global or Customized Image Quality Sorting settings everywhere."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:163
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Integration of Google Summer of Code project 2021 <a href=\"https://"
+#| "community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE\">Image Quality "
+#| "Sorter</a>."
 msgid ""
-"MacOS package, Windows installer, and AppImage bundle use KF5 5.89 and KAPPS "
-"21.12.0 frameworks."
-msgstr ""
-"macOS 软件包、Windows 安装程序和 AppImage 软件包使用 KF5 5.89 和 KAPPS "
-"21.12.0 程序框架构建。"
-
-#: core/app/views/stack/welcomepageview.cpp:164
-#, kde-format
-msgid ""
-"AppImage Linux bundle now support <a href=\"https://fcitx-im.org/wiki/"
-"Fcitx_5\">Platform Input Context FCITX</a>."
-msgstr ""
-"AppImage Linux 软件包现已支持<a href=\"https://fcitx-im.org/wiki/Fcitx_5\"> "
-"fcitx 输入平台</a>。"
-
-#: core/app/views/stack/welcomepageview.cpp:165
-#, kde-format
-msgid "Improve RTL translations support."
-msgstr "改进了从右到左文字系统的翻译支持。"
-
-#: core/app/views/stack/welcomepageview.cpp:166
-#, kde-format
-msgid ""
-"GUI internationalization and localization updates with more than 50 "
-"languages available."
-msgstr "图形界面的国际化支持和本地化翻译得到了更新，支持 50 种以上语言。"
-
-#: core/app/views/stack/welcomepageview.cpp:167
-#, kde-format
-msgid "Add OpenWith contextual menu support under MacOS."
-msgstr "macOS 版实现了打开方式右键菜单支持。"
-
-#: core/app/views/stack/welcomepageview.cpp:168
-#, kde-format
-msgid ""
-"Integration of Google Summer of Code project 2021 <a href=\"https://"
-"community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE\">Image Quality "
-"Sorter</a>."
+"Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
+"QuocHungTran\">to perform OCR over scanned text</a>."
 msgstr ""
 "整合了谷歌编程之夏 2021 的<a href=\"https://community.kde.org/GSoC/2021/"
 "StatusReports/PhuocKhanhLE\">图像品质分类器</a>工程。"
 
+#: core/app/views/stack/welcomepageview.cpp:164
+#, kde-format
+msgid ""
+"Add <a href=\"https://community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe"
+"\">Aesthetic Detection to classify images using deep learning model</a>."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:165
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "A tool to assign pick label metadata by image quality"
+msgid ""
+"Add new tool to assign pick label automatically by parsing image quality."
+msgstr "按照图像品质分配挑选标记元数据"
+
+#: core/app/views/stack/welcomepageview.cpp:166
+#, kde-format
+msgid "Add new tool to assign rating, pick, and color labels in batch."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:167
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "A tool to assign labels metadata to images"
+msgid "Add new tool to assign titles and captions in batch."
+msgstr "分配标记元数据到图像"
+
+#: core/app/views/stack/welcomepageview.cpp:168
+#, kde-format
+msgid ""
+"<a href=\" https://docs.digikam.org/en/index.html\">Rewrite handbook</a> "
+"from DocBook to Sphinx/ReStructuredText framework."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview.cpp:169
+#, kde-format
+msgid "Update internal RAW engine to last stable Libraw 0.21.1."
+msgstr ""
+
 #: core/app/views/stack/welcomepageview.cpp:170
 #, kde-format
 msgid ""
-"New tool to share items on the network with a Motion JPEG stream server."
-msgstr "通过 MJPEG 流服务器在网络上分享项目的全新工具。"
-
-#: core/app/views/stack/welcomepageview.cpp:171
-#, kde-format
-msgid ""
-"Showfoto has a new left sidebar hosting a folder-view to quickly explore "
-"images from local file system."
+"New RAW features: Phase One/Leaf IIQ-S v2 support Canon CR3 filmrolls/"
+"RawBurst Canon CRM (movie) files Tiled bit-packed (and 16-bit unpacked) DNGs "
+"(non-standard) Deflate-compressed integer DNG files are allowed Canon EOS "
+"R3, R7 and R10 Fujifilm X-H2S, X-T30 II OM System OM-1 Leica M11 Sony A7-IV "
+"(ILCE-7M4) DJI Mavic 3"
 msgstr ""
-"Showfoto 新增了一个新的文件夹视图左侧栏，可在本机文件系统中快速浏览图像。"
 
-#: core/app/views/stack/welcomepageview.cpp:172
-#, kde-format
-msgid ""
-"Update internal RAW engine to last Libraw 0.20.2 (snapshot 20210827) "
-"including Canon CR3 and Sony A7R4 support."
-msgstr ""
-"更新内建 RAW 图像引擎为 Libraw 0.20.2 (snapshot 20210827)，包括 Canon CR3 和 "
-"Sony A7R4 支持。"
-
-#: core/app/views/stack/welcomepageview.cpp:173
-#, kde-format
-msgid ""
-"New camera supported: Canon CR3, PowerShot G5 X Mark II, G7 X Mark III, SX70 "
-"HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS M200, EOS "
-"1DX Mark III (lossless files only) DJI Mavic Air, Air2, Osmo Action, "
-"FujiFilm Fujifilm compressed/16bit, GFX 100, X-A7, X-Pro3, X100V, X-T4, X-"
-"T200, GoPro Fusion, HERO5, HERO6, HERO7, HERO8, Hasselblad L1D-20c, X1D II "
-"50C, Leica D-LUX7, Q-P, Q2, V-LUX5, C-Lux / CAM-DC25, SL2, M10 Monochrom, "
-"Nikon D780, Z50, P950, Olympus TG-6, E-M5 Mark III, E-PL10, E-M1 Mark III, "
-"Panasonic Panasonic 14-bit, DC-FZ1000 II, DC-G90, DC-S1, DC-S1R, DC-S1H, DC-"
-"TZ95, PhaseOne IQ4 150MP, Rapsberry Pi RAW+JPEG format, Ricoh GR III, Sony "
-"A7R IV, A9 II, ILCE-6100, ILCE-6600, RX0 II, RX100 VII, Zenit M, also "
-"multiple modern smartphones."
-msgstr ""
-"新增支持相机型号：Canon CR3, PowerShot G5 X Mark II, G7 X Mark III, SX70 HS, "
-"EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS M200, EOS 1DX "
-"Mark III (lossless files only) DJI Mavic Air, Air2, Osmo Action, FujiFilm "
-"Fujifilm compressed/16bit, GFX 100, X-A7, X-Pro3, X100V, X-T4, X-T200, GoPro "
-"Fusion, HERO5, HERO6, HERO7, HERO8, Hasselblad L1D-20c, X1D II 50C, Leica D-"
-"LUX7, Q-P, Q2, V-LUX5, C-Lux / CAM-DC25, SL2, M10 Monochrom, Nikon D780, "
-"Z50, P950, Olympus TG-6, E-M5 Mark III, E-PL10, E-M1 Mark III, Panasonic "
-"Panasonic 14-bit, DC-FZ1000 II, DC-G90, DC-S1, DC-S1R, DC-S1H, DC-TZ95, "
-"PhaseOne IQ4 150MP, Rapsberry Pi RAW+JPEG format, Ricoh GR III, Sony A7R IV, "
-"A9 II, ILCE-6100, ILCE-6600, RX0 II, RX100 VII, Zenit M, 还有多款新型智能手"
-"机。"
-
-#: core/app/views/stack/welcomepageview.cpp:192
+#: core/app/views/stack/welcomepageview.cpp:185
 #, kde-format
 msgid "...and much more."
 msgstr "...更多详情请访问 digiKam 官方网站查看。"
 
-#: core/app/views/stack/welcomepageview.cpp:198
+#: core/app/views/stack/welcomepageview.cpp:191
 #, kde-format
 msgid "<li>%1</li>\n"
 msgstr "<li>%1</li>\n"
 
-#: core/app/views/stack/welcomepageview.cpp:201
+#: core/app/views/stack/welcomepageview.cpp:194
 #, kde-format
 msgid "New Features"
 msgstr "新版特性"
 
-#: core/app/views/stack/welcomepageview.cpp:203
+#: core/app/views/stack/welcomepageview.cpp:196
 #, kde-format
 msgid "<h3>%1</h3><ul>%2</ul>"
 msgstr "<h3>%1</h3><ul>%2</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:204
+#: core/app/views/stack/welcomepageview.cpp:197
 #, kde-format
 msgid ""
 "Some of the new features in this release of digiKam include (compared to "
 "digiKam 6.x):"
 msgstr "此版 digiKam 的主要更新包括 (与 digiKam 6.x 相比)："
 
-#: core/app/views/stack/welcomepageview.cpp:212
+#: core/app/views/stack/welcomepageview.cpp:205
 #, kde-format
 msgid "About"
 msgstr "软件简介"
 
-#: core/app/views/stack/welcomepageview.cpp:214
+#: core/app/views/stack/welcomepageview.cpp:207
 #, kde-format
 msgid "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 msgstr "<h3>%1</h3><h3>%2</h3><ul>%3</ul>"
 
-#: core/app/views/stack/welcomepageview.cpp:215
+#: core/app/views/stack/welcomepageview.cpp:208
 #, kde-format
 msgid ""
 "digiKam is an open source photo management program designed to import, "
@@ -3379,7 +3356,7 @@ msgstr ""
 "digiKam 是一款自由开源的专业照片管理程序，它可以对数字图像进行导入导出、组织"
 "整理、修改润色、标记搜索等工作。"
 
-#: core/app/views/stack/welcomepageview.cpp:216
+#: core/app/views/stack/welcomepageview.cpp:209
 #, kde-format
 msgid ""
 "Currently, you are in the Album view mode of digiKam. Albums are the places "
@@ -3390,12 +3367,12 @@ msgstr ""
 "置，您可以把它看成是计算机存储设备中的文件夹。您现在位于相册集合的根目录。请"
 "点击左侧栏的“相册”选项卡，在树形图中选择一个相册文件夹，即可开始浏览图像。"
 
-#: core/app/views/stack/welcomepageview.cpp:217
+#: core/app/views/stack/welcomepageview.cpp:210
 #, kde-format
 msgid "<li>%1</li><li>%2</li>"
 msgstr "<li>%1</li><li>%2</li>"
 
-#: core/app/views/stack/welcomepageview.cpp:218
+#: core/app/views/stack/welcomepageview.cpp:211
 #, kde-format
 msgid ""
 "digiKam has many powerful features which are described in the <a href="
@@ -3404,7 +3381,7 @@ msgstr ""
 "请访问 <a href=\"https://docs.digikam.org/en/index.html\">digiKam 在线文档</"
 "a> 了解软件的更多特性。"
 
-#: core/app/views/stack/welcomepageview.cpp:219
+#: core/app/views/stack/welcomepageview.cpp:212
 #, kde-format
 msgid ""
 "The <a href=\"https://www.digikam.org\">digiKam homepage</a> provides "
@@ -3413,34 +3390,34 @@ msgstr ""
 "请访问 <a href=\"https://www.digikam.org\">digiKam 官方网站</a> 了解新版软件"
 "信息。"
 
-#: core/app/views/stack/welcomepageview.cpp:269
+#: core/app/views/stack/welcomepageview.cpp:262
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "欢迎使用 digiKam %1"
 
-#: core/app/views/stack/welcomepageview.cpp:272
+#: core/app/views/stack/welcomepageview.cpp:265
 #, kde-format
 msgid "Background Image Credits"
 msgstr "背景作者"
 
-#: core/app/views/stack/welcomepageview.cpp:275
+#: core/app/views/stack/welcomepageview.cpp:268
 #, kde-format
 msgid "Author:"
 msgstr "作者："
 
-#: core/app/views/stack/welcomepageview.cpp:276
+#: core/app/views/stack/welcomepageview.cpp:269
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:180
 #, kde-format
 msgid "Location:"
 msgstr "位置："
 
-#: core/app/views/stack/welcomepageview.cpp:278
+#: core/app/views/stack/welcomepageview.cpp:271
 #, kde-format
 msgid "Camera:"
 msgstr "相机："
 
-#: core/app/views/stack/welcomepageview.cpp:279
+#: core/app/views/stack/welcomepageview.cpp:272
 #, kde-format
 msgid "Lens:"
 msgstr "镜头："
@@ -26082,7 +26059,6 @@ msgid "Luminosity Curve"
 msgstr "亮度曲线"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:311
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:119
 #, kde-format
 msgid "Info"
 msgstr "信息"
@@ -29115,7 +29091,6 @@ msgid "Copy to Clipboard"
 msgstr "复制到剪贴板"
 
 #: core/libs/dialogs/infodlg.cpp:96
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:60
 #, kde-format
 msgid ""
 "<font size=\"5\">%1</font><br/><b>Version %2</b><p>%3</p><p><i>%4</i></p>"
@@ -41728,7 +41703,6 @@ msgid "Aditya Bhatt"
 msgstr "Aditya Bhatt"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:220
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:189
 #, kde-format
 msgid "Face Detection"
 msgstr "人脸检测"
@@ -41759,7 +41733,6 @@ msgid "Mahesh Hegde"
 msgstr "Mahesh Hegde"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:238
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:258
 #, kde-format
 msgid "Face Recognition"
 msgstr "人脸识别"
@@ -50914,222 +50887,6 @@ msgctxt "@info:tooltip"
 msgid "Reject this suggestion"
 msgstr "否决此次建议"
 
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:45
-#, kde-format
-msgid "Face Management in digiKam"
-msgstr "digiKam 人脸管理"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:70
-#, kde-format
-msgid ""
-"The Face Workflow allows you to Detect and Recognize people in your "
-"photographs."
-msgstr "人脸管理扫描流程可在您的照片中检测并识别出人物。"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:76
-#, kde-format
-msgid "<b>Face Detection</b>"
-msgstr "<b>人脸检测</b>"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:80
-#, kde-format
-msgid ""
-"Face Detection allows digiKam to detect faces in your images. This step is "
-"required before being able to recognize faces."
-msgstr ""
-"digiKam 通过人脸检测功能检测您图像中的人脸。在进行人脸识别之前必须执行此步"
-"骤。"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:86
-#, kde-format
-msgid "<b>Face Recognition</b>"
-msgstr "<b>人脸识别</b>"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:90
-#, kde-format
-msgid "Face Recognition will automatically recognize people in your images."
-msgstr "人脸识别功能将自动识别出图像中的人物。"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:100
-#, kde-format
-msgid ""
-"For additional information, read the %1 \n"
-"To ask questions, use our mailing list: digikam-users@kde.org \n"
-msgstr ""
-"如需了解额外信息，请阅读 %1 \n"
-"如有问题，可通过我们的邮件列表提问：digikam-users@kde.org \n"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:135
-#, kde-format
-msgid ""
-"To run face detection, select the <u>Detect Faces</u> option in the Face "
-"Scan panel and then click on <u>Scan Collection for Faces</u>"
-msgstr ""
-"要执行人脸检测，请在人物面板的扫描流程选项卡选择<u>检测人脸</u>选项，然后点击"
-"<u>扫描相册集合中的所有人脸</u>按钮"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:139
-#, kde-format
-msgid ""
-"<b>Caution:</b> Running Face Detection for the first time can be fairly time "
-"consuming. Make sure you use the <u>Search In</u> tab to restrict the target "
-"of the scan."
-msgstr ""
-"<b>提示：</b>首次执行人脸检测可能需要较长时间。请在<u>扫描范围</u>选项卡中显"
-"示扫描的目标范围。"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:145
-#, kde-format
-msgid "digiKam offers two kinds of face detection scans: "
-msgstr "digiKam 有两种人脸检测扫描方式："
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:150
-#, kde-format
-msgid "<b>Skip Images Already Scanned</b>"
-msgstr "<b>跳过已扫描图像</b>"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:154
-#, kde-format
-msgid ""
-"Choose this option if you haven't scanned yet or if the last scan yielded "
-"good results but you would like to scan new images."
-msgstr ""
-"如果您尚未进行过扫描，或者您对上次扫描的结果比较满意，只需扫描新增图像时，请"
-"选择此项。"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:161
-#, kde-format
-msgid "<b>Scan Again and Merge</b>"
-msgstr "<b>重新扫描并合并结果</b>"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:165
-#, kde-format
-msgid ""
-"Choose this option if the results of the previous scan weren't accurate. "
-"This would rescan all images again, and is time consuming."
-msgstr ""
-"如果您对上次扫描的结果不够满意，需要重新扫描所有图像时，请选择此项。这将耗费"
-"较长时间。"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:171
-#, kde-format
-msgid ""
-"After the Face Scan is complete, you should see a new tag <u>Unknown</u> "
-"where the results of the face scan will appear. You may now manually "
-"identify a few of these faces and then proceed for face recognition."
-msgstr ""
-"人脸扫描结束后，您将看到一个名为<u>未知</u>的新标签，人脸扫描的结果将显示在该"
-"标签下。请先手动识别这些人脸中的一小部分，然后再进行自动人脸识别。"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:208
-#, kde-format
-msgid ""
-"To manually identify a face, hover on any Unknown face and use the text box "
-"to give it a name. This will lead to the creation of a face tag in case a "
-"person of that name doesn't exist already. For best results identify 4-5 "
-"faces for each person you want the scan to recognize."
-msgstr ""
-"要手动识别一张人脸，请将鼠标悬停于未知标签下的任意一张人脸，然后在输入框中为"
-"它指定一个人名。如果该人名的人脸标签不存在，程序将创建该标签。为了提高自动识"
-"别的精确度，请为每位需要识别的人物手动指定 4 到 5 张人脸。"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:217
-#, kde-format
-msgid ""
-"Running face recognition is similar to detection, just select <u>Recognize "
-"Faces</u> from the Face Scan panel this time.\n"
-"Face recognition will work on all Unknown faces. In case there's a face you "
-"don't wish to be recognized, you can mark it as ignored.\n"
-"This leads to the creation of a new <u>Ignored</u> tag, you can later unmark "
-"the face if needed."
-msgstr ""
-"人脸识别和人脸检测的过程类似，请在人脸扫描面板选择<u>识别人脸</u>。\n"
-"人脸识别功能将处理所有未知标签下的人脸。如果您不需要识别其中的某些人脸，可将"
-"它们标记为忽略。\n"
-"这将创建<u>忽略</u>标签，您以后还可以取消标记忽略标签下的人脸。"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:235
-#, kde-format
-msgid ""
-"You may select <u>Work on all processor cores</u>in order to increase the "
-"speed of Face Recognition \n"
-"The Face Accuracy slider allows you to control the accuracy of the "
-"recognition algorithm. A higher specificity implies higher accuracy, however "
-"this results in a smaller set of results."
-msgstr ""
-"勾选<u>使用全部处理器核心</u>可以提高人脸识别的处理速度。\n"
-"人脸识别精度拖动条可以控制人脸识别算法的精度。数值越大，精度越高，识别的匹配"
-"结果也越少。"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:274
-#, kde-format
-msgid ""
-"The results of facial recognition appear in the form of Unconfirmed results. "
-"These results will show up in the Unconfirmed tag, as well as in the tag of "
-"the person suggested for each face.\n"
-"Hovering over Unconfirmed faces will display a few options:\n"
-msgstr ""
-"人脸识别的处理结果会被显示在未确认标签下，它们同时也会显示在建议的人物标签"
-"下。\n"
-"鼠标悬停在这些人脸上将显示下列选项：\n"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:287
-#, kde-format
-msgid ""
-"The Confirm button allows you to confirm the suggestion. This would assign "
-"the suggested name to the face"
-msgstr "点击确认按钮以确认该建议。这将把建议的人名标签指定给该人脸。"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:297
-#, kde-format
-msgid ""
-"Use the Reject button, if the suggestion is incorrect. This would move the "
-"face back to Unknown."
-msgstr "点击否决按钮以否决错误的建议。这将把该人脸移回未知标签。"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:308
-#, kde-format
-msgid ""
-"Use the Delete button, if the suggestion is not a face. This will delete the "
-"face region from the database."
-msgstr "点击删除按钮以移除并非人脸的项目。这将从数据库删除该人脸区域。"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:314
-#, kde-format
-msgid ""
-"<b>Face Categorization and Sorting</b>\n"
-"By default, faces will appear categorized based on their name. You may "
-"change this behaviour, by going to <u>View -> Separate Items</u>.\n"
-"Note that using a different categorization order will lead to Confirmed and "
-"Unconfirmed faces appearing mixed with one another. To change this behaviour "
-"you may modify the sorting order within each category by going to <u>View -> "
-"Sort Items -> By Face Type</u>."
-msgstr ""
-"<b>人脸分类和排序</b>\n"
-"默认情况下，人脸将按人名分栏显示。要更改分栏方式，请前往菜单栏的<u>视图 -> 项"
-"目分栏</u>。\n"
-"提示：更改分栏显示方式可能导致已确认和未确认人脸被混杂到一起显示。要更改此显"
-"示方式，请前往菜单栏的<u>视图 -> 项目排序 -> 按人脸类型</u>，更改每个分栏的排"
-"序方式。"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:326
-#, kde-format
-msgid ""
-"<b>Improving Results of Face Recognition</b>\n"
-"Apart from using the settings mentioned in the last page, face results may "
-"also be improved by rebuilding the training data. This may be done through "
-"Tools -> Maintenance -> Detect and Recognize Faces -> Clear and rebuild all "
-"training data."
-msgstr ""
-"<b>改善人脸识别结果</b>\n"
-"除了设置选项卡外，您还可以通过重建训练数据来改善人脸识别的结果。请前往菜单栏"
-"的 工具 -> 系统维护 -> 检测与识别人脸 -> 清除并重建所有训练数据。"
-
-#: core/utilities/facemanagement/widgets/facemanagementhelpdlg.cpp:346
-#, kde-format
-msgid "Confirm Faces"
-msgstr "确认人脸"
-
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
@@ -51169,25 +50926,25 @@ msgctxt "@info"
 msgid "Help"
 msgstr "帮助"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:158
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect faces"
 msgstr "检测人脸"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:160
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:159
 #, kde-format
 msgctxt "@info"
 msgid "Find all faces in your photos"
 msgstr "查找照片中所有的人脸。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:164
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:163
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect and recognize faces"
 msgstr "检测与识别人脸"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:165
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:164
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51197,13 +50954,13 @@ msgstr ""
 "查找照片中所有的人脸，\n"
 "并尝试识别人脸所属的人物"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:168
 #, kde-format
 msgctxt "@option:radio"
 msgid "Recognize faces"
 msgstr "识别人脸"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:170
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:169
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51213,37 +50970,37 @@ msgstr ""
 "尝试重新识别\n"
 "已标记但未确认人物的人脸。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:193
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:192
 #, kde-format
 msgctxt "@title:tab"
 msgid "Workflow"
 msgstr "扫描流程"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:198
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:197
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
 msgstr "扫描范围"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:205
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:204
 #, kde-format
 msgctxt "@label"
 msgid "Face Accuracy"
 msgstr "人脸识别精度"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:208
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:207
 #, kde-format
 msgctxt "@label left extremities of a scale"
 msgid "Sensitivity"
 msgstr "宽泛"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:211
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:210
 #, kde-format
 msgctxt "@label right extremities of a scale"
 msgid "Specificity"
 msgstr "精准"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:218
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:217
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51256,26 +51013,26 @@ msgstr ""
 "数值越高，识别精确度越高，匹配的人脸也越少。\n"
 "(只有与同一人物标签的已有人脸高度相似的人脸才会被识别)。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:228
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:227
 #, kde-format
 msgctxt "@option:check"
 msgid "Use YOLO v3 detection model"
 msgstr "使用 YOLO v3 检测模型"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:230
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:229
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Face detection with YOLO v3 data model. Better results but slower."
 msgstr "人脸检测功能将使用 YOLO v3 数据模型。精确度更高，速度也更慢。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:233
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:232
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:236
 #, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores"
 msgstr "使用全部处理器核心"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:235
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:234
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -51287,7 +51044,7 @@ msgstr ""
 "您可以选择使用系统的所有处理器内核以提升速度，\n"
 "或者选择在后台使用单一处理器内核以减少卡顿。"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:245
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:244
 #, kde-format
 msgctxt "@title:tab"
 msgid "Settings"
@@ -62123,3 +61880,317 @@ msgstr "点击此按钮将所有视频设置重置为默认值。"
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "您想要重置所有视频设置为默认值吗？"
+
+#~ msgid ""
+#~ "New Neural Network engine based on OpenCV Deep Learning module to detect "
+#~ "and recognize faces."
+#~ msgstr "基于 OpenCV 深度学习模块的全新神经网络引擎，用于进行人脸识别。"
+
+#~ msgid "Update Slideshow to plugin with new shuffle mode."
+#~ msgstr "更新幻灯片功能为插件，新增随机播放模式。"
+
+#~ msgid "Add new theme Html5Responsive for HtmlGallery plugin."
+#~ msgstr "HtmlGallery 插件新增响应式 HTML5 主题。"
+
+#~ msgid ""
+#~ "New plugin ImageMosaicWall to create an image based on a bunch of other "
+#~ "photos."
+#~ msgstr "新增插件 ImageMosaicWall，可以使用一组照片拼贴成一张特定图像。"
+
+#~ msgid "add new batch queue manager tool to fix hot pixels from images."
+#~ msgstr "新增批处理队列管理器工具，用于修复图像中的热像素。"
+
+#~ msgid "add new batch queue manager tool to apply texture over images."
+#~ msgstr "新增批处理队列管理器工具，用于为图像应用纹理。"
+
+#~ msgid ""
+#~ "Face Scan dialog contents is now simplified and embedded into left "
+#~ "sidebar."
+#~ msgstr "简化人脸识别扫描对话框，并将其嵌入左侧栏。"
+
+#~ msgid "Add support for Gimp XCF files >= 2.10."
+#~ msgstr "新增对 GIMP 2.10 以上版本的 XCF 文件支持。"
+
+#~ msgid "Add Flatpak bundle support for Linux platforms."
+#~ msgstr "新增 Linux 平台 Flatpak 软件包支持。"
+
+#~ msgid "Table-view is now able to show digiKam Tag-Paths properties."
+#~ msgstr "详情视图可以显示 digiKam 标签路径属性。"
+
+#~ msgid "Add option to write geolocation information in file metadata."
+#~ msgstr "新增用于将地理位置信息写入文件元数据的选项。"
+
+#~ msgid "Add color label support for advanced metadata settings."
+#~ msgstr "高级元数据设置新增颜色标记支持。"
+
+#~ msgid "Add Exif, Iptc, and Xmp read support for HEIF images."
+#~ msgstr "增加 HEIF 图像的 EXIF、IPTC 和 XMP 读取支持。"
+
+#~ msgid "Improved support for UNC network paths under Windows."
+#~ msgstr "改善在 Windows 下对 UNC 网络路径的支持。"
+
+#~ msgid "Improved support for Unicode paths under Windows."
+#~ msgstr "改善在 Windows 下对 Unicode 路径的支持。"
+
+#~ msgid "Apple bundle is now relocatable and compatible with macOS BigSur."
+#~ msgstr "macOS 版软件包现在可以迁移位置，并兼容 macOS BigSur。"
+
+#~ msgid ""
+#~ "New online version checker and downloader to automate upgrade under "
+#~ "Windows and macOS."
+#~ msgstr ""
+#~ "新增在线新版检测与下载功能，可以自动升级 Windows 和 macOS 版软件到最新版。"
+
+#~ msgid ""
+#~ "Better support of astro FITS image format including metadata extraction "
+#~ "support to populate the database."
+#~ msgstr "改善对 FITS 天文图像格式的支持，支持提取元数据到数据库。"
+
+#~ msgid ""
+#~ "Use last Exiv2 0.27.5 in all bundles with Base Media File metadata read "
+#~ "and write support (HEIF, AVIF)."
+#~ msgstr ""
+#~ "使用 Exiv2 最新版本 0.27.5 构建所有软件包，提供基础媒体文件元数据读写支持 "
+#~ "(HEIF、AVIF)。"
+
+#~ msgid "Find duplicates items is now process in parallel using multi-cores."
+#~ msgstr "查找重复项目现已支持多线程。"
+
+#~ msgid "New tool to export items to iNaturalist web service."
+#~ msgstr "新增 iNaturalist 网络服务导出支持工具。"
+
+#~ msgid "New metadata viewer based on ExifTool."
+#~ msgstr "基于 ExifTools 的新版元数据查看器。"
+
+#~ msgid ""
+#~ "MacOS package, Windows installer, and AppImage bundle use KF5 5.89 and "
+#~ "KAPPS 21.12.0 frameworks."
+#~ msgstr ""
+#~ "macOS 软件包、Windows 安装程序和 AppImage 软件包使用 KF5 5.89 和 KAPPS "
+#~ "21.12.0 程序框架构建。"
+
+#~ msgid ""
+#~ "AppImage Linux bundle now support <a href=\"https://fcitx-im.org/wiki/"
+#~ "Fcitx_5\">Platform Input Context FCITX</a>."
+#~ msgstr ""
+#~ "AppImage Linux 软件包现已支持<a href=\"https://fcitx-im.org/wiki/"
+#~ "Fcitx_5\"> fcitx 输入平台</a>。"
+
+#~ msgid "Improve RTL translations support."
+#~ msgstr "改进了从右到左文字系统的翻译支持。"
+
+#~ msgid ""
+#~ "GUI internationalization and localization updates with more than 50 "
+#~ "languages available."
+#~ msgstr "图形界面的国际化支持和本地化翻译得到了更新，支持 50 种以上语言。"
+
+#~ msgid "Add OpenWith contextual menu support under MacOS."
+#~ msgstr "macOS 版实现了打开方式右键菜单支持。"
+
+#~ msgid ""
+#~ "New tool to share items on the network with a Motion JPEG stream server."
+#~ msgstr "通过 MJPEG 流服务器在网络上分享项目的全新工具。"
+
+#~ msgid ""
+#~ "Showfoto has a new left sidebar hosting a folder-view to quickly explore "
+#~ "images from local file system."
+#~ msgstr ""
+#~ "Showfoto 新增了一个新的文件夹视图左侧栏，可在本机文件系统中快速浏览图像。"
+
+#~ msgid ""
+#~ "Update internal RAW engine to last Libraw 0.20.2 (snapshot 20210827) "
+#~ "including Canon CR3 and Sony A7R4 support."
+#~ msgstr ""
+#~ "更新内建 RAW 图像引擎为 Libraw 0.20.2 (snapshot 20210827)，包括 Canon CR3 "
+#~ "和 Sony A7R4 支持。"
+
+#~ msgid ""
+#~ "New camera supported: Canon CR3, PowerShot G5 X Mark II, G7 X Mark III, "
+#~ "SX70 HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS "
+#~ "M200, EOS 1DX Mark III (lossless files only) DJI Mavic Air, Air2, Osmo "
+#~ "Action, FujiFilm Fujifilm compressed/16bit, GFX 100, X-A7, X-Pro3, X100V, "
+#~ "X-T4, X-T200, GoPro Fusion, HERO5, HERO6, HERO7, HERO8, Hasselblad "
+#~ "L1D-20c, X1D II 50C, Leica D-LUX7, Q-P, Q2, V-LUX5, C-Lux / CAM-DC25, "
+#~ "SL2, M10 Monochrom, Nikon D780, Z50, P950, Olympus TG-6, E-M5 Mark III, E-"
+#~ "PL10, E-M1 Mark III, Panasonic Panasonic 14-bit, DC-FZ1000 II, DC-G90, DC-"
+#~ "S1, DC-S1R, DC-S1H, DC-TZ95, PhaseOne IQ4 150MP, Rapsberry Pi RAW+JPEG "
+#~ "format, Ricoh GR III, Sony A7R IV, A9 II, ILCE-6100, ILCE-6600, RX0 II, "
+#~ "RX100 VII, Zenit M, also multiple modern smartphones."
+#~ msgstr ""
+#~ "新增支持相机型号：Canon CR3, PowerShot G5 X Mark II, G7 X Mark III, SX70 "
+#~ "HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS M200, "
+#~ "EOS 1DX Mark III (lossless files only) DJI Mavic Air, Air2, Osmo Action, "
+#~ "FujiFilm Fujifilm compressed/16bit, GFX 100, X-A7, X-Pro3, X100V, X-T4, X-"
+#~ "T200, GoPro Fusion, HERO5, HERO6, HERO7, HERO8, Hasselblad L1D-20c, X1D "
+#~ "II 50C, Leica D-LUX7, Q-P, Q2, V-LUX5, C-Lux / CAM-DC25, SL2, M10 "
+#~ "Monochrom, Nikon D780, Z50, P950, Olympus TG-6, E-M5 Mark III, E-PL10, E-"
+#~ "M1 Mark III, Panasonic Panasonic 14-bit, DC-FZ1000 II, DC-G90, DC-S1, DC-"
+#~ "S1R, DC-S1H, DC-TZ95, PhaseOne IQ4 150MP, Rapsberry Pi RAW+JPEG format, "
+#~ "Ricoh GR III, Sony A7R IV, A9 II, ILCE-6100, ILCE-6600, RX0 II, RX100 "
+#~ "VII, Zenit M, 还有多款新型智能手机。"
+
+#~ msgid "Face Management in digiKam"
+#~ msgstr "digiKam 人脸管理"
+
+#~ msgid ""
+#~ "The Face Workflow allows you to Detect and Recognize people in your "
+#~ "photographs."
+#~ msgstr "人脸管理扫描流程可在您的照片中检测并识别出人物。"
+
+#~ msgid "<b>Face Detection</b>"
+#~ msgstr "<b>人脸检测</b>"
+
+#~ msgid ""
+#~ "Face Detection allows digiKam to detect faces in your images. This step "
+#~ "is required before being able to recognize faces."
+#~ msgstr ""
+#~ "digiKam 通过人脸检测功能检测您图像中的人脸。在进行人脸识别之前必须执行此步"
+#~ "骤。"
+
+#~ msgid "<b>Face Recognition</b>"
+#~ msgstr "<b>人脸识别</b>"
+
+#~ msgid "Face Recognition will automatically recognize people in your images."
+#~ msgstr "人脸识别功能将自动识别出图像中的人物。"
+
+#~ msgid ""
+#~ "For additional information, read the %1 \n"
+#~ "To ask questions, use our mailing list: digikam-users@kde.org \n"
+#~ msgstr ""
+#~ "如需了解额外信息，请阅读 %1 \n"
+#~ "如有问题，可通过我们的邮件列表提问：digikam-users@kde.org \n"
+
+#~ msgid ""
+#~ "To run face detection, select the <u>Detect Faces</u> option in the Face "
+#~ "Scan panel and then click on <u>Scan Collection for Faces</u>"
+#~ msgstr ""
+#~ "要执行人脸检测，请在人物面板的扫描流程选项卡选择<u>检测人脸</u>选项，然后"
+#~ "点击<u>扫描相册集合中的所有人脸</u>按钮"
+
+#~ msgid ""
+#~ "<b>Caution:</b> Running Face Detection for the first time can be fairly "
+#~ "time consuming. Make sure you use the <u>Search In</u> tab to restrict "
+#~ "the target of the scan."
+#~ msgstr ""
+#~ "<b>提示：</b>首次执行人脸检测可能需要较长时间。请在<u>扫描范围</u>选项卡中"
+#~ "显示扫描的目标范围。"
+
+#~ msgid "digiKam offers two kinds of face detection scans: "
+#~ msgstr "digiKam 有两种人脸检测扫描方式："
+
+#~ msgid "<b>Skip Images Already Scanned</b>"
+#~ msgstr "<b>跳过已扫描图像</b>"
+
+#~ msgid ""
+#~ "Choose this option if you haven't scanned yet or if the last scan yielded "
+#~ "good results but you would like to scan new images."
+#~ msgstr ""
+#~ "如果您尚未进行过扫描，或者您对上次扫描的结果比较满意，只需扫描新增图像时，"
+#~ "请选择此项。"
+
+#~ msgid "<b>Scan Again and Merge</b>"
+#~ msgstr "<b>重新扫描并合并结果</b>"
+
+#~ msgid ""
+#~ "Choose this option if the results of the previous scan weren't accurate. "
+#~ "This would rescan all images again, and is time consuming."
+#~ msgstr ""
+#~ "如果您对上次扫描的结果不够满意，需要重新扫描所有图像时，请选择此项。这将耗"
+#~ "费较长时间。"
+
+#~ msgid ""
+#~ "After the Face Scan is complete, you should see a new tag <u>Unknown</u> "
+#~ "where the results of the face scan will appear. You may now manually "
+#~ "identify a few of these faces and then proceed for face recognition."
+#~ msgstr ""
+#~ "人脸扫描结束后，您将看到一个名为<u>未知</u>的新标签，人脸扫描的结果将显示"
+#~ "在该标签下。请先手动识别这些人脸中的一小部分，然后再进行自动人脸识别。"
+
+#~ msgid ""
+#~ "To manually identify a face, hover on any Unknown face and use the text "
+#~ "box to give it a name. This will lead to the creation of a face tag in "
+#~ "case a person of that name doesn't exist already. For best results "
+#~ "identify 4-5 faces for each person you want the scan to recognize."
+#~ msgstr ""
+#~ "要手动识别一张人脸，请将鼠标悬停于未知标签下的任意一张人脸，然后在输入框中"
+#~ "为它指定一个人名。如果该人名的人脸标签不存在，程序将创建该标签。为了提高自"
+#~ "动识别的精确度，请为每位需要识别的人物手动指定 4 到 5 张人脸。"
+
+#~ msgid ""
+#~ "Running face recognition is similar to detection, just select "
+#~ "<u>Recognize Faces</u> from the Face Scan panel this time.\n"
+#~ "Face recognition will work on all Unknown faces. In case there's a face "
+#~ "you don't wish to be recognized, you can mark it as ignored.\n"
+#~ "This leads to the creation of a new <u>Ignored</u> tag, you can later "
+#~ "unmark the face if needed."
+#~ msgstr ""
+#~ "人脸识别和人脸检测的过程类似，请在人脸扫描面板选择<u>识别人脸</u>。\n"
+#~ "人脸识别功能将处理所有未知标签下的人脸。如果您不需要识别其中的某些人脸，可"
+#~ "将它们标记为忽略。\n"
+#~ "这将创建<u>忽略</u>标签，您以后还可以取消标记忽略标签下的人脸。"
+
+#~ msgid ""
+#~ "You may select <u>Work on all processor cores</u>in order to increase the "
+#~ "speed of Face Recognition \n"
+#~ "The Face Accuracy slider allows you to control the accuracy of the "
+#~ "recognition algorithm. A higher specificity implies higher accuracy, "
+#~ "however this results in a smaller set of results."
+#~ msgstr ""
+#~ "勾选<u>使用全部处理器核心</u>可以提高人脸识别的处理速度。\n"
+#~ "人脸识别精度拖动条可以控制人脸识别算法的精度。数值越大，精度越高，识别的匹"
+#~ "配结果也越少。"
+
+#~ msgid ""
+#~ "The results of facial recognition appear in the form of Unconfirmed "
+#~ "results. These results will show up in the Unconfirmed tag, as well as in "
+#~ "the tag of the person suggested for each face.\n"
+#~ "Hovering over Unconfirmed faces will display a few options:\n"
+#~ msgstr ""
+#~ "人脸识别的处理结果会被显示在未确认标签下，它们同时也会显示在建议的人物标签"
+#~ "下。\n"
+#~ "鼠标悬停在这些人脸上将显示下列选项：\n"
+
+#~ msgid ""
+#~ "The Confirm button allows you to confirm the suggestion. This would "
+#~ "assign the suggested name to the face"
+#~ msgstr "点击确认按钮以确认该建议。这将把建议的人名标签指定给该人脸。"
+
+#~ msgid ""
+#~ "Use the Reject button, if the suggestion is incorrect. This would move "
+#~ "the face back to Unknown."
+#~ msgstr "点击否决按钮以否决错误的建议。这将把该人脸移回未知标签。"
+
+#~ msgid ""
+#~ "Use the Delete button, if the suggestion is not a face. This will delete "
+#~ "the face region from the database."
+#~ msgstr "点击删除按钮以移除并非人脸的项目。这将从数据库删除该人脸区域。"
+
+#~ msgid ""
+#~ "<b>Face Categorization and Sorting</b>\n"
+#~ "By default, faces will appear categorized based on their name. You may "
+#~ "change this behaviour, by going to <u>View -> Separate Items</u>.\n"
+#~ "Note that using a different categorization order will lead to Confirmed "
+#~ "and Unconfirmed faces appearing mixed with one another. To change this "
+#~ "behaviour you may modify the sorting order within each category by going "
+#~ "to <u>View -> Sort Items -> By Face Type</u>."
+#~ msgstr ""
+#~ "<b>人脸分类和排序</b>\n"
+#~ "默认情况下，人脸将按人名分栏显示。要更改分栏方式，请前往菜单栏的<u>视图 -"
+#~ "> 项目分栏</u>。\n"
+#~ "提示：更改分栏显示方式可能导致已确认和未确认人脸被混杂到一起显示。要更改此"
+#~ "显示方式，请前往菜单栏的<u>视图 -> 项目排序 -> 按人脸类型</u>，更改每个分"
+#~ "栏的排序方式。"
+
+#~ msgid ""
+#~ "<b>Improving Results of Face Recognition</b>\n"
+#~ "Apart from using the settings mentioned in the last page, face results "
+#~ "may also be improved by rebuilding the training data. This may be done "
+#~ "through Tools -> Maintenance -> Detect and Recognize Faces -> Clear and "
+#~ "rebuild all training data."
+#~ msgstr ""
+#~ "<b>改善人脸识别结果</b>\n"
+#~ "除了设置选项卡外，您还可以通过重建训练数据来改善人脸识别的结果。请前往菜单"
+#~ "栏的 工具 -> 系统维护 -> 检测与识别人脸 -> 清除并重建所有训练数据。"
+
+#~ msgid "Confirm Faces"
+#~ msgstr "确认人脸"
