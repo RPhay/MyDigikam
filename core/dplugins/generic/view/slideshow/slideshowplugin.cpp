@@ -121,6 +121,16 @@ QString SlideShowPlugin::details() const
                 "</table>");
 }
 
+QString SlideShowPlugin::handbookSection() const
+{
+    return QLatin1String("slideshow_tools");
+}
+
+QString SlideShowPlugin::handbookChapter() const
+{
+    return QLatin1String("slide_tool");
+}
+
 QList<DPluginAuthor> SlideShowPlugin::authors() const
 {
     return QList<DPluginAuthor>()

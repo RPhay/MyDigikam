@@ -113,6 +113,16 @@ QString GLViewerPlugin::details() const
                 "</table>");
 }
 
+QString GLViewerPlugin::handbookSection() const
+{
+    return QLatin1String("slideshow_tools");
+}
+
+QString GLViewerPlugin::handbookChapter() const
+{
+    return QLatin1String("opengl_viewer");
+}
+
 QList<DPluginAuthor> GLViewerPlugin::authors() const
 {
     return QList<DPluginAuthor>()
