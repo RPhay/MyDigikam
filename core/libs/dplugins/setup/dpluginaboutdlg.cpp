@@ -42,12 +42,14 @@
 // Local includes
 
 #include "itempropertiestab.h"
+#include "dxmlguiwindow.h"
 
 namespace Digikam
 {
 
 DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
-    : QDialog(parent)
+    : QDialog(parent),
+      m_tool (tool)
 {
     setWindowFlags((windowFlags() & ~Qt::Dialog) |
                    Qt::Window                    |
@@ -57,7 +59,7 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
     setModal(true);
     setWindowTitle(i18nc("@title", "About %1 Plugin", tool->name()));
 
-    QDialogButtonBox* const buttons = new QDialogButtonBox(QDialogButtonBox::Ok, this);
+    QDialogButtonBox* const buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Help, this);
     buttons->button(QDialogButtonBox::Ok)->setDefault(true);
 
     QWidget* const page             = new QWidget(this);
@@ -189,11 +191,19 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
     connect(buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
             this, SLOT(accept()));
 
+    connect(buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
+            this, SLOT(slotOnlineHandbook()));
+
     resize(400, 500);
 }
 
 DPluginAboutDlg::~DPluginAboutDlg()
 {
+}
+
+void DPluginAboutDlg::slotOnlineHandbook()
+{
+    DXmlGuiWindow::openHandbook(m_tool->handbookSection());
 }
 
 } // namespace Digikam
