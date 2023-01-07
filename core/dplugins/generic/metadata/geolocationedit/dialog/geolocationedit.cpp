@@ -414,7 +414,7 @@ GeolocationEdit::GeolocationEdit(QWidget* const parent, DInfoInterface* const if
     d->detailsWidget    = new GPSItemDetails(d->stackedWidget, d->imageModel);
     d->stackedWidget->addWidget(d->detailsWidget);
 
-    d->correlatorWidget = new GPSCorrelatorWidget(d->stackedWidget, d->imageModel, d->trackManager);
+    d->correlatorWidget = new GPSCorrelatorWidget(d->stackedWidget, d->imageModel, d->selectionModel, d->trackManager);
     d->stackedWidget->addWidget(d->correlatorWidget);
 
     d->undoView         = new QUndoView(d->undoStack, d->stackedWidget);

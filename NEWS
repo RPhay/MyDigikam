@@ -247,4 +247,5 @@ BUGFIXES:
 207 ==> 426513 - Add "By Manual and Name" and "By Manual and Date" sort options for items in "Main Window Menu Descriptions" section.
 208 ==> 463605 - In case of heic images the scan for faces function adds new empty face tags for the persons already tagged.
 209 ==> 207882 - Manual: RAW decoder settings: 16 bit not clearly explained.
-210 ==> 
+210 ==> 463789 - All images are getting correlated although w/o considering selection.
+211 ==> 
