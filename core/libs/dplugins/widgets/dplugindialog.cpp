@@ -87,7 +87,7 @@ void DPluginDialog::slotAboutPlugin()
 
 void DPluginDialog::slotOnlineHandbook()
 {
-    DXmlGuiWindow::openHandbook(m_tool->handbookSection());
+    DXmlGuiWindow::openHandbook(m_tool->handbookSection(), m_tool->handbookChapter());
 }
 
 void DPluginDialog::restoreDialogSize()

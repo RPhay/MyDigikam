@@ -84,7 +84,7 @@ void DWizardDlg::slotAboutPlugin()
 
 void DWizardDlg::slotOnlineHandbook()
 {
-    DXmlGuiWindow::openHandbook(m_tool->handbookSection());
+    DXmlGuiWindow::openHandbook(m_tool->handbookSection(), m_tool->handbookChapter());
 }
 
 void DWizardDlg::restoreDialogSize()

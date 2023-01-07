@@ -98,4 +98,14 @@ bool DPlugin::hasVisibilityProperty() const
     return true;
 }
 
+QString DPlugin::handbookSection() const
+{
+    return QString();
+}
+
+QString DPlugin::handbookChapter() const
+{
+    return QString();
+}
+
 } // namespace Digikam
