@@ -110,6 +110,13 @@ public:
     virtual void cleanUp() {};
 
     /**
+     * Return the online handbook section corresponding to this plugin.
+     * It's used in plugin dailog Help button.
+     * By default, no section is defined. Root page of the documentation is loaded by Help Button.
+     */
+    virtual QString handbookSection() { return QString(); };
+
+    /**
      * Return true if plugin can be configured in setup dialog about the visibility property.
      * Default implementation return true.
      */

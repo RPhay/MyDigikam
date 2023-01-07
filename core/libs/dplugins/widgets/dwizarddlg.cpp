@@ -20,6 +20,9 @@
 #include <QApplication>
 #include <QPointer>
 #include <QScreen>
+#include <QPushButton>
+#include <QMenu>
+#include <QAction>
 
 // KDE includes
 
@@ -56,9 +59,18 @@ void DWizardDlg::setPlugin(DPlugin* const tool)
     if (m_tool)
     {
         setOption(QWizard::HaveHelpButton);
-        setButtonText(QWizard::HelpButton, i18nc("@action: button", "About..."));
+        setButtonText(QWizard::HelpButton, i18nc("@action: button", "Help"));
 
-        connect(button(QWizard::HelpButton), SIGNAL(clicked()),
+        QPushButton* const help       = reinterpret_cast<QPushButton*>(button(QWizard::HelpButton));
+        QMenu* const menu             = new QMenu(help);
+        QAction* const handbookAction = menu->addAction(i18n("Online Handbook..."));
+        QAction* const aboutAction    = menu->addAction(i18n("About..."));
+        help->setMenu(menu);
+
+        connect(handbookAction, SIGNAL(triggered()),
+                this, SLOT(slotOnlineHandbook()));
+
+        connect(aboutAction, SIGNAL(triggered()),
                 this, SLOT(slotAboutPlugin()));
     }
 }
@@ -68,6 +80,11 @@ void DWizardDlg::slotAboutPlugin()
     QPointer<DPluginAboutDlg> dlg = new DPluginAboutDlg(m_tool);
     dlg->exec();
     delete dlg;
+}
+
+void DWizardDlg::slotOnlineHandbook()
+{
+    DXmlGuiWindow::openHandbook(m_tool->handbookSection());
 }
 
 void DWizardDlg::restoreDialogSize()
