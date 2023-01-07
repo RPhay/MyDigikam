@@ -102,6 +102,8 @@ void FCTask::run()
         return;
     }
 
+    QUrl sidecarDest = DMetadata::sidecarUrl(dest);
+
     if      (ok && (d->settings.behavior == FCContainer::CopyFile))
     {
         QFileInfo srcInfo(d->srcUrl.toLocalFile());
@@ -130,6 +132,13 @@ void FCTask::run()
             dest = getUrlOrDelete(dest);
             ok   = DFileOperations::copyFile(d->srcUrl.toLocalFile(),
                                              dest.toLocalFile());
+
+            if (d->settings.sidecars && DMetadata::hasSidecar(d->srcUrl.toLocalFile()))
+            {
+                sidecarDest = getUrlOrDelete(sidecarDest);
+                DFileOperations::copyFile(DMetadata::sidecarUrl(d->srcUrl).toLocalFile(),
+                                          sidecarDest.toLocalFile());
+            }
         }
     }
     else if (ok                                                     &&
@@ -140,15 +149,23 @@ void FCTask::run()
 #ifdef Q_OS_WIN
 
         dest.setPath(dest.path() + QLatin1String(".lnk"));
+        sidecarDest.setPath(sidecarDest.path() + QLatin1String(".lnk"));
 
 #endif
 
-        dest = getUrlOrDelete(dest);
+        dest        = getUrlOrDelete(dest);
+        sidecarDest = getUrlOrDelete(sidecarDest);
 
         if (d->settings.behavior == FCContainer::FullSymLink)
         {
             ok = QFile::link(d->srcUrl.toLocalFile(),
                              dest.toLocalFile());
+
+            if (d->settings.sidecars && DMetadata::hasSidecar(d->srcUrl.toLocalFile()))
+            {
+                QFile::link(DMetadata::sidecarUrl(d->srcUrl).toLocalFile(),
+                            sidecarDest.toLocalFile());
+            }
         }
         else
         {
@@ -157,6 +174,12 @@ void FCTask::run()
             QUrl srcUrl  = QUrl::fromLocalFile(path);
             ok           = QFile::link(srcUrl.toLocalFile(),
                                        dest.toLocalFile());
+
+            if (d->settings.sidecars && DMetadata::hasSidecar(d->srcUrl.toLocalFile()))
+            {
+                QFile::link(DMetadata::sidecarUrl(srcUrl).toLocalFile(),
+                            sidecarDest.toLocalFile());
+            }
         }
     }
 
