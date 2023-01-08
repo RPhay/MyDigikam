@@ -203,7 +203,7 @@ DPluginAboutDlg::~DPluginAboutDlg()
 
 void DPluginAboutDlg::slotOnlineHandbook()
 {
-    DXmlGuiWindow::openHandbook(m_tool->handbookSection(), m_tool->handbookChapter());
+    DXmlGuiWindow::openHandbook(m_tool->handbookSection(), m_tool->handbookChapter(), m_tool->handbookReference());
 }
 
 } // namespace Digikam

@@ -108,4 +108,9 @@ QString DPlugin::handbookChapter() const
     return QString();
 }
 
+QString DPlugin::handbookReference() const
+{
+    return QString();
+}
+
 } // namespace Digikam
