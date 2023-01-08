@@ -179,7 +179,7 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
     grid->setRowStretch(2, 10);
     grid->setContentsMargins(QMargins());
     grid->setSpacing(qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
+                          QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing)));
 
     QVBoxLayout* const vbx = new QVBoxLayout(this);
     vbx->addWidget(page);
@@ -203,7 +203,7 @@ DPluginAboutDlg::~DPluginAboutDlg()
 
 void DPluginAboutDlg::slotOnlineHandbook()
 {
-    DXmlGuiWindow::openHandbook(m_tool->handbookSection());
+    DXmlGuiWindow::openHandbook(m_tool->handbookSection(), m_tool->handbookChapter());
 }
 
 } // namespace Digikam
