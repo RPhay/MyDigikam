@@ -249,4 +249,5 @@ BUGFIXES:
 209 ==> 207882 - Manual: RAW decoder settings: 16 bit not clearly explained.
 210 ==> 463789 - All images are getting correlated although w/o considering selection.
 211 ==> 463528 - XMP sidecars are excluded from local storage export.
-212 ==> 
+212 ==> 333348 - Audio track is zero length in Advanced Slideshow.
+213 ==> 
