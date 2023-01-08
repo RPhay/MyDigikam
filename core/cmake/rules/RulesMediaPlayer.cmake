@@ -28,7 +28,7 @@ if(ENABLE_MEDIAPLAYER)
     find_package(Portaudio  QUIET)
     find_package(PulseAudio QUIET)
     find_package(VAAPI      QUIET)
-    find_package(uchardet   QUIET)
+#    find_package(uchardet   QUIET)
     find_package(OpenSLES   QUIET)
 
     if(WIN32)
