@@ -68,6 +68,7 @@ public:
 
 private Q_SLOTS:
 
+    void slotHelp();
     void slotPerformCopy();
     void slotUnlockInputFields();
     void slotLockInputFields();
