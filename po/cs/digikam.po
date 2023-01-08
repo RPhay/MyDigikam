@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-07 00:46+0000\n"
+"POT-Creation-Date: 2023-01-08 00:56+0000\n"
 "PO-Revision-Date: 2023-01-03 15:42+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -10278,7 +10278,7 @@ msgstr "Nová šířka:"
 #: core/dplugins/editor/transform/shear/sheartool.cpp:319
 #: core/dplugins/editor/transform/shear/sheartool.cpp:320
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:151
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:148
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:152
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:112
 #, kde-format
 msgid " px"
@@ -11501,7 +11501,7 @@ msgid ""
 "geo-location of items if you camera do not have an embedded GPS device."
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:91
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:101
 #, kde-format
 msgctxt "@action"
 msgid "Edit Geolocation..."
@@ -11735,7 +11735,7 @@ msgid "GPX file:"
 msgstr "Soubor GPX:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:161
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:275
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:286
 #, kde-format
 msgid "GPS Exchange Format (*.gpx)"
 msgstr "Výměnný formát GPS (*.gpx)"
@@ -14823,7 +14823,7 @@ msgid ""
 "items contents based on Iptc reference codes."
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:100
 #, kde-format
 msgctxt "@action"
 msgid "Edit Metadata..."
@@ -15804,10 +15804,10 @@ msgid "Former Author"
 msgstr "Bývalý autor"
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:84
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:81
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:94
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:91
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:104
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:97
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:85
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:95
 #, kde-format
 msgid "Developer and Maintainer"
 msgstr "Vývojář a správce"
@@ -16641,7 +16641,7 @@ msgstr ""
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:90
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:74
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:88
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:80
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:90
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:77
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:79
 #, kde-format
@@ -17166,12 +17166,12 @@ msgid ""
 "with different layout can be used to assemble files on a gallery.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:74
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:84
 #, kde-format
 msgid "Former Author and Maintainer"
 msgstr "Bývalý autor a správce"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:89
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Create Html gallery..."
@@ -17693,7 +17693,7 @@ msgid ""
 "DLNA, as tablets, cellulars, TV, etc.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:102
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:112
 #, kde-format
 msgctxt "@action"
 msgid "Share with DLNA..."
@@ -19252,18 +19252,18 @@ msgid ""
 "can be used to process files.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:74
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:84
 #: core/utilities/searchwindow/searchfields_createfield.cpp:654
 #, kde-format
 msgid "Author"
 msgstr "Autor"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:81
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:91
 #, kde-format
 msgid "Contributor"
 msgstr "Spolupracovník"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:93
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Print Creator..."
@@ -19725,7 +19725,7 @@ msgstr "Volitelné spustitelné soubory GIMPu"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:82
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:162
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:160
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:164
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:123
 #, kde-format
 msgid "Image Format:"
@@ -20050,7 +20050,7 @@ msgid "Thunderbird"
 msgstr "Thunderbird"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:130
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:165
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:169
 #: core/libs/dplugins/webservices/wssettings.cpp:129
 #, kde-format
 msgctxt "Image format: JPEG"
@@ -20058,7 +20058,7 @@ msgid "Jpeg"
 msgstr "Jpeg"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:131
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:166
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:170
 #: core/libs/dplugins/webservices/wssettings.cpp:130
 #, kde-format
 msgctxt "Image format: PNG"
@@ -20085,7 +20085,7 @@ msgid ""
 "be used to process files on the network.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:88
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Send by Mail..."
@@ -20187,14 +20187,14 @@ msgid "Maximum email size limit:"
 msgstr "Maximální velikost e-mailu:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:136
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:134
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:138
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:97
 #, kde-format
 msgid "Adjust image properties"
 msgstr "Upravit vlastnosti obrázku"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:138
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:136
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:140
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:99
 #, kde-format
 msgid ""
@@ -20205,14 +20205,14 @@ msgstr ""
 "velikosti a rekompresi."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:142
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:142
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:146
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:103
 #, kde-format
 msgid "Image Properties"
 msgstr "Vlastnosti obrázku"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:152
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:149
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:153
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:113
 #, kde-format
 msgid ""
@@ -20221,14 +20221,14 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:153
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:157
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:116
 #, kde-format
 msgid "Image Length:"
 msgstr "Délka obrázku:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:166
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:164
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:168
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:127
 #, kde-format
 msgid "Select your preferred format to convert image."
@@ -20253,21 +20253,21 @@ msgstr ""
 "bez komprese</p>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:194
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:182
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:186
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:155
 #, kde-format
 msgid "Image quality:"
 msgstr "Kvalita obrázku:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:199
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:187
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:191
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:160
 #, kde-format
 msgid "Remove all metadata"
 msgstr "Odstranit všechna metadata"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:200
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:188
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:192
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:161
 #, kde-format
 msgid ""
@@ -20616,24 +20616,24 @@ msgid ""
 "table>"
 msgstr ""
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:132
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:142
 #, kde-format
 msgctxt "@action"
 msgid "OpenGL Image Viewer"
 msgstr ""
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:163
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:170
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
 #, kde-format
 msgid "OpenGL error"
 msgstr "Chyba OpenGL"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:163
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
 #, kde-format
 msgid "GL_ARB_texture_rectangle not supported"
 msgstr "GL_ARB_texture_rectangle nepodporován"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:170
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
 #, kde-format
 msgid "No OpenGL context found"
 msgstr "Nenalezen OpenGL kontext"
@@ -21327,7 +21327,7 @@ msgid ""
 "You can add a sound-track in background while your presentation."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/presentationplugin.cpp:98
+#: core/dplugins/generic/view/presentation/presentationplugin.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Presentation..."
@@ -21430,7 +21430,7 @@ msgid "Blobs"
 msgstr "Skvrny"
 
 #: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:120
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:160
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:170
 #: core/libs/settings/applicationsettings_miscs.cpp:430
 #, kde-format
 msgid "Slideshow"
@@ -21717,23 +21717,23 @@ msgid ""
 "td></tr></table>"
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:151
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:161
 #, kde-format
 msgctxt "@action"
 msgid "Slideshow"
 msgstr "Promítání"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:166
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:176
 #, kde-format
 msgid "Play All"
 msgstr "Přehrát vše"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:175
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:185
 #, kde-format
 msgid "Play Selection"
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:184
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:194
 #, kde-format
 msgid "Play With Sub-Albums"
 msgstr ""
@@ -22248,53 +22248,58 @@ msgstr ""
 msgid "Facebook Call Failed: %1"
 msgstr "Volání Facebook selhalo: %1"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:105
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:108
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:78
 #, kde-format
 msgid "Target location: "
 msgstr "Umístění cíle:"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:109
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:112
 #, kde-format
 msgid "Target Folder"
 msgstr "Cílová složka"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:110
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:113
 #, kde-format
 msgid "Sets the target address to copy the items to."
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:112
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:115
 #, kde-format
 msgid "Target File behavior:"
 msgstr "Chování cílového souboru:"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:114
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:117
 #, kde-format
 msgid "Copy files"
 msgstr "Kopírovat soubory"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:115
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:118
 #, kde-format
 msgid "Create symlinks"
 msgstr "Vytvořit symbolické odkazy"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:116
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:119
 #, kde-format
 msgid "Create relative symlinks"
 msgstr "Vytvořit relativní symbolické odkazy"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:118
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:121
+#, kde-format
+msgid "Include the sidecars of the items"
+msgstr ""
+
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:122
 #, kde-format
 msgid "Overwrite existing items in the target"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:119
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:123
 #, kde-format
 msgid "Use the album path of the items in the target"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:175
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:179
 #, kde-format
 msgid ""
 "<p>The new compression value of JPEG images to be sent:</p><p><b>1</b>: very "
@@ -22303,34 +22308,34 @@ msgid ""
 "no compression</p>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:213
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:217
 #, kde-format
 msgid "This is the list of items to copy to the specified target."
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:89
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:91
 #, kde-format
 msgid "Export to Local Storage"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:92
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:94
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:74
 #, kde-format
 msgid "Start export"
 msgstr "Spustit export"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:93
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:95
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:75
 #, kde-format
 msgid "Start export to the specified target"
 msgstr "Spustit export do zadaného cíle"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:213
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:217
 #, kde-format
 msgid "Copy not completed"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:214
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:218
 #, kde-format
 msgid ""
 "Some of the items have not been copied and are still in the list. You can "
@@ -22572,7 +22577,7 @@ msgid ""
 "See Flickr web site for details: %1"
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrplugin.cpp:98
+#: core/dplugins/generic/webservices/flickr/flickrplugin.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Flickr..."
@@ -28585,7 +28590,7 @@ msgstr ""
 "prosím jiné umístění.</p><p><b>%1</b></p>"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:45
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:95
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:97
 #, kde-format
 msgid "Database Statistics"
 msgstr "Statistika databáze"
@@ -32868,85 +32873,85 @@ msgctxt "@title"
 msgid "Type-Mimes"
 msgstr "MIME-typy"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:58
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:60
 #, kde-format
 msgctxt "@title"
 msgid "About %1 Plugin"
 msgstr "O modulu %1"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:79
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:81
 #, kde-format
 msgctxt "@label"
 msgid "Version"
 msgstr "Verze"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:95
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:97
 #, kde-format
 msgctxt "@title"
 msgid "Details"
 msgstr "Podrobnosti"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:120
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:122
 #, kde-format
 msgctxt "@title"
 msgid "Authors"
 msgstr "Autoři"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:131
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:133
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Name"
 msgstr "Název"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:132
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:134
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Value"
 msgstr "Hodnota"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:134
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:136
 #, kde-format
 msgctxt "@item"
 msgid "Interface ID"
 msgstr "ID rozhraní"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:135
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:137
 #, kde-format
 msgctxt "@item"
 msgid "Tool ID"
 msgstr ""
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:136
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:138
 #, kde-format
 msgctxt "@item"
 msgid "Library"
 msgstr "Knihovna"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:140
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:142
 #, kde-format
 msgctxt "@item"
 msgid "File Size"
 msgstr "Velikost souboru"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:141
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:143
 #, kde-format
 msgctxt "@item"
 msgid "File Date"
 msgstr "Datum souboru"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:142
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:144
 #, kde-format
 msgctxt "@item"
 msgid "File Owner"
 msgstr "Vlastník souboru"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:143
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:145
 #, kde-format
 msgctxt "@item"
 msgid "File Group"
 msgstr "Skupina souboru"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:145
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:147
 #, kde-format
 msgctxt "@title"
 msgid "Properties"
@@ -33437,10 +33442,27 @@ msgctxt "@title"
 msgid "User6"
 msgstr "Uživatel6"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:65
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:59
-#, kde-format
+#: core/libs/dplugins/widgets/dplugindialog.cpp:67
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Help"
 msgctxt "@action: button"
+msgid "Help"
+msgstr "Nápověda"
+
+#: core/libs/dplugins/widgets/dplugindialog.cpp:69
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:66
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:86
+#, kde-format
+msgid "Online Handbook..."
+msgstr "Online Příručka..."
+
+#: core/libs/dplugins/widgets/dplugindialog.cpp:70
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:67
+#, fuzzy, kde-format
+#| msgctxt "@action: button"
+#| msgid "About..."
 msgid "About..."
 msgstr "O aplikaci..."
 
@@ -42109,77 +42131,72 @@ msgctxt "general keyboard shortcuts"
 msgid "General"
 msgstr "Obecné"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:54
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:56
 #, kde-format
 msgid "Components Information"
 msgstr "Informace o komponentách"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:60
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:62
 #, kde-format
 msgid "Supported RAW Cameras"
 msgstr "Podporované RAW fotoaparáty"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:64
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:66
 #, kde-format
 msgid "List of Detected Hardware"
 msgstr "Seznam detekovaného hardwaru"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:68
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:70
 #, kde-format
 msgid "Donate..."
 msgstr "Přispějte..."
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:72
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:74
 #, kde-format
 msgid "Recipes Book..."
 msgstr "Kuchařka na digiKam..."
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:76
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:78
 #, kde-format
 msgid "Contribute..."
 msgstr "Přispívejte..."
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:80
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:82
 #, kde-format
 msgid "Check for New Version..."
 msgstr "Zkontrolovat novou verzi..."
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:84
-#, kde-format
-msgid "Online Handbook..."
-msgstr "Online Příručka..."
-
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:123
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:125
 #, kde-format
 msgid "Toggle Left Side-bar"
 msgstr "Přepnout levý postranní panel"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:128
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:130
 #, kde-format
 msgid "Toggle Right Side-bar"
 msgstr "Přepnout pravý postranní panel"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:133
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:135
 #, kde-format
 msgid "Previous Left Side-bar Tab"
 msgstr "Předchozí karta levého postranního panelu"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:138
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:140
 #, kde-format
 msgid "Next Left Side-bar Tab"
 msgstr "Následující karta levého postranního panelu"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:143
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:145
 #, kde-format
 msgid "Previous Right Side-bar Tab"
 msgstr "Předchozí karta pravého postranního panelu"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:148
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:150
 #, kde-format
 msgid "Next Right Side-bar Tab"
 msgstr "Následující karta pravého postranního panelu"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:172
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:174
 #, kde-format
 msgid "Show Statusbar"
 msgstr "Zobrazit stavový panel"
@@ -52149,27 +52166,40 @@ msgstr[0] "Přesunut 1 obrázek"
 msgstr[1] "Přesunuty %1 obrázky"
 msgstr[2] "Přesunuto %1 obrázků"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:151
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:157
 #, kde-format
 msgid "Load GPX files..."
 msgstr "Načíst soubory GPX..."
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:158
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:164
 #, kde-format
 msgid "Show tracks on Map"
 msgstr "Zobrazit trasy na mapě"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:159
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:165
 #, kde-format
 msgid "Set this option to show tracks on the Map"
 msgstr "Použijte tuto volbu pro zobrazení tras na mapě"
 
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:167
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox similarity album tag relation"
+#| msgid "Only selected tab"
+msgid "Only use selected images"
+msgstr "Pouze vybraná karta"
+
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:168
+#, fuzzy, kde-format
+#| msgid "Set this option to display the image type."
+msgid "Set this option to correlate selected images only"
+msgstr "Zde můžete nastavit zobrazení typu obrázku."
+
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:178
 #, kde-format
 msgid "Camera time zone:"
 msgstr "Časové pásmo fotoaparátu:"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:171
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:181
 #, kde-format
 msgid ""
 "<p>Sets the time zone the camera was set to during photo shooting, so that "
@@ -52182,35 +52212,35 @@ msgstr ""
 "časovým posunem GPS.</p><p>Pozn.: kladný posun znamená východně od nulové "
 "zeměpisné délky (GMT), kde jsou 's časem vpředu'.</p>"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:178
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:188
 #, kde-format
 msgid "Offset of pictures (hh:mm:ss):"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:180
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:190
 #, kde-format
 msgid ""
 "Sets the offset between picture times and track times. E.g. to correct wrong "
 "camera clock or different time zone."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:187
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:197
 #, kde-format
 msgid "Set whether picture time is ahead or behind the track time."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:206
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:216
 #, kde-format
 msgid "Interpolate"
 msgstr "Interpolovat"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:207
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:218
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:217
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:228
 #, kde-format
 msgid "Max. time gap (hh:mm:ss):"
 msgstr "Max. časová prodleva (hh:mm:ss):"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:211
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:221
 #, kde-format
 msgid ""
 "Sets the maximum time difference to interpolate GPX file points to image "
@@ -52220,12 +52250,12 @@ msgstr ""
 "Nastaví maximální rozdíl pro interpolaci mezi body souboru GPX a časovými "
 "údaji obrázku. Pokud rozdíl přesáhne tuto hodnotu, nebude shoda uznána."
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:217
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:227
 #, kde-format
 msgid "Match directly"
 msgstr "Přímo porovnat"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:222
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:232
 #, kde-format
 msgid ""
 "Sets the maximum time difference from a GPS track point to the image time to "
@@ -52235,18 +52265,18 @@ msgstr ""
 "Nastaví maximální časový rozdíl mezi sledovaným bodem GPS a odpovídajícím "
 "časem obrázku. Pokud rozdíl přesáhne tuto hodnotu, nebude shoda uznána."
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:241
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:251
 #, kde-format
 msgid "Correlate"
 msgstr "Korelovat"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:273
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:284
 #, kde-format
 msgctxt "@title:window"
 msgid "Select GPX File to Load"
 msgstr "Zvolit soubor GPX pro načtení"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:315
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:326
 #, kde-format
 msgid "The following GPX file could not be loaded:"
 msgid_plural "The following %1 GPX files could not be loaded:"
@@ -52254,7 +52284,7 @@ msgstr[0] "Následující soubor GPX nemůže být načten:"
 msgstr[1] "Následující %1 soubory GPX nemohou být načteny:"
 msgstr[2] "Následujících %1 souborů GPX nemůže být načteno:"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:319
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:330
 #, kde-format
 msgid "Error loading GPX file"
 msgid_plural "Error loading GPX files"
@@ -52262,29 +52292,29 @@ msgstr[0] "Chyba při načítání souboru GPX"
 msgstr[1] "Chyba při načítání souborů GPX"
 msgstr[2] "Chyba při načítání souborů GPX"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:411
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:435
 #, kde-format
 msgid "Correlating images -"
 msgstr "Korelace obrázků - "
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:493
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:517
 #, kde-format
 msgid "Correlation failed"
 msgstr "Korelace selhala"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:494
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:518
 #, kde-format
 msgid ""
 "Could not correlate any image - please make sure the offset and gap settings "
 "are correct."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:499
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:523
 #, kde-format
 msgid "Correlation succeeded"
 msgstr "Korelace byla úspěšná"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:500
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:524
 #, kde-format
 msgid ""
 "All images have been correlated. You can now check their position on the map."
@@ -52294,12 +52324,12 @@ msgstr ""
 
 #. i18np.
 #. See bug #376438 for details.
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:508
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:532
 #, kde-format
 msgid "Correlation finished"
 msgstr "Korelace byla dokončena"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:510
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:534
 #, kde-format
 msgid ""
 "One image out of %2 images have been correlated. Please check the offset and "
@@ -52311,7 +52341,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:527
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:551
 #, kde-format
 msgid "1 image correlated"
 msgid_plural "%1 images correlated"

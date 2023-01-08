@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-07 00:46+0000\n"
+"POT-Creation-Date: 2023-01-08 00:56+0000\n"
 "PO-Revision-Date: 2023-01-02 07:11\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -10313,7 +10313,7 @@ msgstr "新图像宽度："
 #: core/dplugins/editor/transform/shear/sheartool.cpp:319
 #: core/dplugins/editor/transform/shear/sheartool.cpp:320
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:151
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:148
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:152
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:112
 #, kde-format
 msgid " px"
@@ -11542,7 +11542,7 @@ msgstr ""
 "此工具还可以从设备读取 GPS 信息，并与没有内建 GPS 功能的相机拍摄的照片进行关"
 "联处理。"
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:91
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:101
 #, kde-format
 msgctxt "@action"
 msgid "Edit Geolocation..."
@@ -11774,7 +11774,7 @@ msgid "GPX file:"
 msgstr "GPX 文件："
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:161
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:275
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:286
 #, kde-format
 msgid "GPS Exchange Format (*.gpx)"
 msgstr "GPS 交换格式文件 (*.gpx)"
@@ -14796,7 +14796,7 @@ msgstr ""
 "\n"
 "通讯社机构还可以使用基于 IPTC 引用码的预设主题来描述项目。"
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:100
 #, kde-format
 msgctxt "@action"
 msgid "Edit Metadata..."
@@ -15783,10 +15783,10 @@ msgid "Former Author"
 msgstr "前任开发人员"
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:84
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:81
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:94
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:91
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:104
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:97
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:85
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:95
 #, kde-format
 msgid "Developer and Maintainer"
 msgstr "开发人员与项目负责人"
@@ -16632,7 +16632,7 @@ msgstr ""
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:90
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:74
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:88
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:80
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:90
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:77
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:79
 #, kde-format
@@ -17166,12 +17166,12 @@ msgstr ""
 "处理的项目可按张或者按组在相册中选择。</p><p>可以使用多种主题和布局方式来对图"
 "像文件进行汇编和排版。</p>"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:74
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:84
 #, kde-format
 msgid "Former Author and Maintainer"
 msgstr "前任开发人员和项目负责人"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:89
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Create Html gallery..."
@@ -17703,7 +17703,7 @@ msgstr ""
 "按组在相册中选择。</p><p>许多智能设备均支持 DLNA，例如平板电脑、智能手机、智"
 "能电视等。</p>"
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:102
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:112
 #, kde-format
 msgctxt "@action"
 msgid "Share with DLNA..."
@@ -19267,18 +19267,18 @@ msgstr ""
 "<p>用于在打印前对图像进行汇编和排版的工具。</p><p>要处理的项目可按张或者按组"
 "在相册中选择。</p><p>可以使用多种纸张尺寸预设和布局方式来处理图像文件。</p>"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:74
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:84
 #: core/utilities/searchwindow/searchfields_createfield.cpp:654
 #, kde-format
 msgid "Author"
 msgstr "开发人员"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:81
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:91
 #, kde-format
 msgid "Contributor"
 msgstr "贡献人员"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:93
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Print Creator..."
@@ -19757,7 +19757,7 @@ msgstr "可选的 GIMP 可执行程序"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:82
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:162
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:160
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:164
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:123
 #, kde-format
 msgid "Image Format:"
@@ -20078,7 +20078,7 @@ msgid "Thunderbird"
 msgstr "Thunderbird"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:130
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:165
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:169
 #: core/libs/dplugins/webservices/wssettings.cpp:129
 #, kde-format
 msgctxt "Image format: JPEG"
@@ -20086,7 +20086,7 @@ msgid "Jpeg"
 msgstr "JPEG"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:131
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:166
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:170
 #: core/libs/dplugins/webservices/wssettings.cpp:130
 #, kde-format
 msgctxt "Image format: PNG"
@@ -20116,7 +20116,7 @@ msgstr ""
 "按张或者按组在相册中选择。</p><p>可以使用多种电子邮件客户端来处理发送的图像文"
 "件。</p>"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:88
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Send by Mail..."
@@ -20221,14 +20221,14 @@ msgid "Maximum email size limit:"
 msgstr "电子邮件体积限制："
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:136
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:134
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:138
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:97
 #, kde-format
 msgid "Adjust image properties"
 msgstr "调整图像属性"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:138
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:136
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:140
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:99
 #, kde-format
 msgid ""
@@ -20237,14 +20237,14 @@ msgid ""
 msgstr "勾选此项后，可以对所有发送的图像进行尺寸调整和重新压缩。"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:142
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:142
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:146
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:103
 #, kde-format
 msgid "Image Properties"
 msgstr "图像属性"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:152
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:149
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:153
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:113
 #, kde-format
 msgid ""
@@ -20253,14 +20253,14 @@ msgid ""
 msgstr "设置要发送图像的边长上限，调整时将保持宽高比。"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:153
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:157
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:116
 #, kde-format
 msgid "Image Length:"
 msgstr "图像边长："
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:166
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:164
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:168
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:127
 #, kde-format
 msgid "Select your preferred format to convert image."
@@ -20284,21 +20284,21 @@ msgstr ""
 "<br/><b>75</b>：较低压缩率 (默认值)<br/><b>100</b>：无压缩</p>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:194
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:182
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:186
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:155
 #, kde-format
 msgid "Image quality:"
 msgstr "图像画质："
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:199
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:187
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:191
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:160
 #, kde-format
 msgid "Remove all metadata"
 msgstr "移除所有元数据"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:200
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:188
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:192
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:161
 #, kde-format
 msgid ""
@@ -20692,24 +20692,24 @@ msgstr ""
 "nobr></td></tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></"
 "table>"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:132
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:142
 #, kde-format
 msgctxt "@action"
 msgid "OpenGL Image Viewer"
 msgstr "OpenGL 图像查看器"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:163
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:170
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
 #, kde-format
 msgid "OpenGL error"
 msgstr "OpenGL 错误"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:163
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
 #, kde-format
 msgid "GL_ARB_texture_rectangle not supported"
 msgstr "GL_ARB_texture_rectangle 不支持"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:170
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
 #, kde-format
 msgid "No OpenGL context found"
 msgstr "未找到 OpenGL 环境"
@@ -21394,7 +21394,7 @@ msgstr ""
 "\n"
 "您还可以为幻灯片添加背景音乐。"
 
-#: core/dplugins/generic/view/presentation/presentationplugin.cpp:98
+#: core/dplugins/generic/view/presentation/presentationplugin.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Presentation..."
@@ -21497,7 +21497,7 @@ msgid "Blobs"
 msgstr "斑点"
 
 #: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:120
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:160
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:170
 #: core/libs/settings/applicationsettings_miscs.cpp:430
 #, kde-format
 msgid "Slideshow"
@@ -21797,23 +21797,23 @@ msgstr ""
 "他控制</h1></b></center></nobr></td></tr><tr><td>显示本帮助：</td><td>F1 键</"
 "td></tr></table>"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:151
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:161
 #, kde-format
 msgctxt "@action"
 msgid "Slideshow"
 msgstr "幻灯片"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:166
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:176
 #, kde-format
 msgid "Play All"
 msgstr "放映所有项"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:175
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:185
 #, kde-format
 msgid "Play Selection"
 msgstr "放映选中项"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:184
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:194
 #, kde-format
 msgid "Play With Sub-Albums"
 msgstr "放映含子相册项"
@@ -22338,53 +22338,58 @@ msgstr ""
 msgid "Facebook Call Failed: %1"
 msgstr "Facebook 调用失败：%1"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:105
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:108
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:78
 #, kde-format
 msgid "Target location: "
 msgstr "目标位置："
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:109
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:112
 #, kde-format
 msgid "Target Folder"
 msgstr "目标文件夹"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:110
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:113
 #, kde-format
 msgid "Sets the target address to copy the items to."
 msgstr "设置要复制项目的目标地址。"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:112
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:115
 #, kde-format
 msgid "Target File behavior:"
 msgstr "目标文件行为："
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:114
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:117
 #, kde-format
 msgid "Copy files"
 msgstr "复制文件"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:115
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:118
 #, kde-format
 msgid "Create symlinks"
 msgstr "创建符号链接"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:116
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:119
 #, kde-format
 msgid "Create relative symlinks"
 msgstr "创建相对符号链接"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:118
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:121
+#, kde-format
+msgid "Include the sidecars of the items"
+msgstr ""
+
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:122
 #, kde-format
 msgid "Overwrite existing items in the target"
 msgstr "覆盖目标位置的已有项目"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:119
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:123
 #, kde-format
 msgid "Use the album path of the items in the target"
 msgstr "使用目标项目的相册路径"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:175
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:179
 #, kde-format
 msgid ""
 "<p>The new compression value of JPEG images to be sent:</p><p><b>1</b>: very "
@@ -22397,34 +22402,34 @@ msgstr ""
 "><b>75</b>：较低压缩率，较好画质 (默认值)<br/><b>100</b>：最低压缩率，最好画"
 "质</p>"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:213
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:217
 #, kde-format
 msgid "This is the list of items to copy to the specified target."
 msgstr "要上传到指定目标位置的图像列表。"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:89
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:91
 #, kde-format
 msgid "Export to Local Storage"
 msgstr "导出到本地存储"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:92
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:94
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:74
 #, kde-format
 msgid "Start export"
 msgstr "开始导出"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:93
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:95
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:75
 #, kde-format
 msgid "Start export to the specified target"
 msgstr "开始导出到指定目标位置"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:213
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:217
 #, kde-format
 msgid "Copy not completed"
 msgstr "复制未完成"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:214
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:218
 #, kde-format
 msgid ""
 "Some of the items have not been copied and are still in the list. You can "
@@ -22661,7 +22666,7 @@ msgstr ""
 "\n"
 "请访问 Flickr 网站了解详情：%1"
 
-#: core/dplugins/generic/webservices/flickr/flickrplugin.cpp:98
+#: core/dplugins/generic/webservices/flickr/flickrplugin.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Flickr..."
@@ -28716,7 +28721,7 @@ msgstr ""
 "%1</b></p>"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:45
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:95
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:97
 #, kde-format
 msgid "Database Statistics"
 msgstr "数据库统计信息"
@@ -32881,85 +32886,85 @@ msgctxt "@title"
 msgid "Type-Mimes"
 msgstr "MIME 类型"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:58
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:60
 #, kde-format
 msgctxt "@title"
 msgid "About %1 Plugin"
 msgstr "关于 %1 插件"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:79
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:81
 #, kde-format
 msgctxt "@label"
 msgid "Version"
 msgstr "版本"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:95
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:97
 #, kde-format
 msgctxt "@title"
 msgid "Details"
 msgstr "详情"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:120
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:122
 #, kde-format
 msgctxt "@title"
 msgid "Authors"
 msgstr "作者"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:131
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:133
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Name"
 msgstr "名称"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:132
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:134
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Value"
 msgstr "数值"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:134
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:136
 #, kde-format
 msgctxt "@item"
 msgid "Interface ID"
 msgstr "界面 ID"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:135
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:137
 #, kde-format
 msgctxt "@item"
 msgid "Tool ID"
 msgstr "工具 ID"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:136
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:138
 #, kde-format
 msgctxt "@item"
 msgid "Library"
 msgstr "程序库"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:140
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:142
 #, kde-format
 msgctxt "@item"
 msgid "File Size"
 msgstr "文件体积"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:141
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:143
 #, kde-format
 msgctxt "@item"
 msgid "File Date"
 msgstr "文件日期"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:142
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:144
 #, kde-format
 msgctxt "@item"
 msgid "File Owner"
 msgstr "文件所有者"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:143
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:145
 #, kde-format
 msgctxt "@item"
 msgid "File Group"
 msgstr "文件组"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:145
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:147
 #, kde-format
 msgctxt "@title"
 msgid "Properties"
@@ -33441,10 +33446,27 @@ msgctxt "@title"
 msgid "User6"
 msgstr "用户 6"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:65
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:59
-#, kde-format
+#: core/libs/dplugins/widgets/dplugindialog.cpp:67
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Help"
 msgctxt "@action: button"
+msgid "Help"
+msgstr "帮助"
+
+#: core/libs/dplugins/widgets/dplugindialog.cpp:69
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:66
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:86
+#, kde-format
+msgid "Online Handbook..."
+msgstr "在线使用手册..."
+
+#: core/libs/dplugins/widgets/dplugindialog.cpp:70
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:67
+#, fuzzy, kde-format
+#| msgctxt "@action: button"
+#| msgid "About..."
 msgid "About..."
 msgstr "关于..."
 
@@ -42052,77 +42074,72 @@ msgctxt "general keyboard shortcuts"
 msgid "General"
 msgstr "常规"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:54
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:56
 #, kde-format
 msgid "Components Information"
 msgstr "程序组件信息"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:60
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:62
 #, kde-format
 msgid "Supported RAW Cameras"
 msgstr "支持的 RAW 相机格式"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:64
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:66
 #, kde-format
 msgid "List of Detected Hardware"
 msgstr "检测到的硬件列表"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:68
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:70
 #, kde-format
 msgid "Donate..."
 msgstr "捐款给 digiKam 项目..."
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:72
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:74
 #, kde-format
 msgid "Recipes Book..."
 msgstr "digiKam 教程电子书..."
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:76
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:78
 #, kde-format
 msgid "Contribute..."
 msgstr "参与 digiKam 开发协作..."
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:80
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:82
 #, kde-format
 msgid "Check for New Version..."
 msgstr "检查新版软件..."
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:84
-#, kde-format
-msgid "Online Handbook..."
-msgstr "在线使用手册..."
-
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:123
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:125
 #, kde-format
 msgid "Toggle Left Side-bar"
 msgstr "显示/隐藏左侧栏"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:128
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:130
 #, kde-format
 msgid "Toggle Right Side-bar"
 msgstr "显示/隐藏右侧栏"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:133
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:135
 #, kde-format
 msgid "Previous Left Side-bar Tab"
 msgstr "上一个左侧栏选项卡"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:138
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:140
 #, kde-format
 msgid "Next Left Side-bar Tab"
 msgstr "下一个左侧栏标签页选项卡"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:143
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:145
 #, kde-format
 msgid "Previous Right Side-bar Tab"
 msgstr "上一个右侧栏选项卡"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:148
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:150
 #, kde-format
 msgid "Next Right Side-bar Tab"
 msgstr "下一个右侧栏选项卡"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:172
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:174
 #, kde-format
 msgid "Show Statusbar"
 msgstr "显示状态栏"
@@ -52051,27 +52068,40 @@ msgid "1 image moved"
 msgid_plural "%1 images moved"
 msgstr[0] "%1 张图像已移动"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:151
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:157
 #, kde-format
 msgid "Load GPX files..."
 msgstr "加载 GPX 文件..."
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:158
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:164
 #, kde-format
 msgid "Show tracks on Map"
 msgstr "显示轨迹到地图"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:159
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:165
 #, kde-format
 msgid "Set this option to show tracks on the Map"
 msgstr "勾选此项以在地图上显示轨迹"
 
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:167
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox similarity album tag relation"
+#| msgid "Only selected tab"
+msgid "Only use selected images"
+msgstr "仅所选选项卡"
+
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:168
+#, fuzzy, kde-format
+#| msgid "Set this option to display the image type."
+msgid "Set this option to correlate selected images only"
+msgstr "勾选此项以显示图像文件类型。"
+
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:178
 #, kde-format
 msgid "Camera time zone:"
 msgstr "相机时区："
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:171
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:181
 #, kde-format
 msgid ""
 "<p>Sets the time zone the camera was set to during photo shooting, so that "
@@ -52083,35 +52113,35 @@ msgstr ""
 "间参考值。</p><p>提示：0 度经线 (GMT) 往东的偏移值为正 (之后)，往西的偏移值为"
 "负 (之前)。</p>"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:178
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:188
 #, kde-format
 msgid "Offset of pictures (hh:mm:ss):"
 msgstr "图像时间偏移 (hh:mm:ss)："
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:180
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:190
 #, kde-format
 msgid ""
 "Sets the offset between picture times and track times. E.g. to correct wrong "
 "camera clock or different time zone."
 msgstr "设置图像时间与轨迹时间的偏移量。例如用于校准相机时间偏差或者时区差异。"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:187
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:197
 #, kde-format
 msgid "Set whether picture time is ahead or behind the track time."
 msgstr "设置图像时间在轨迹时间之前还是之后。"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:206
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:216
 #, kde-format
 msgid "Interpolate"
 msgstr "插值"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:207
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:218
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:217
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:228
 #, kde-format
 msgid "Max. time gap (hh:mm:ss):"
 msgstr "最大时间差 (hh:mm:ss)："
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:211
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:221
 #, kde-format
 msgid ""
 "Sets the maximum time difference to interpolate GPX file points to image "
@@ -52121,12 +52151,12 @@ msgstr ""
 "设置解析 GPX 文件轨迹点到图像时间数据的最大时间差。如果时间差超出设定数值，将"
 "不进行关联。"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:217
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:227
 #, kde-format
 msgid "Match directly"
 msgstr "直接匹配"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:222
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:232
 #, kde-format
 msgid ""
 "Sets the maximum time difference from a GPS track point to the image time to "
@@ -52136,52 +52166,52 @@ msgstr ""
 "设置从 GPS 轨迹点匹配到图像时间的最大时间差。如果时间差超出设定数值，将不进行"
 "关联。"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:241
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:251
 #, kde-format
 msgid "Correlate"
 msgstr "建立关联"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:273
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:284
 #, kde-format
 msgctxt "@title:window"
 msgid "Select GPX File to Load"
 msgstr "选择要加载的 GPX 文件"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:315
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:326
 #, kde-format
 msgid "The following GPX file could not be loaded:"
 msgid_plural "The following %1 GPX files could not be loaded:"
 msgstr[0] "无法加载下列 %1 GPX 文件："
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:319
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:330
 #, kde-format
 msgid "Error loading GPX file"
 msgid_plural "Error loading GPX files"
 msgstr[0] "加载 GPX 文件时出错"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:411
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:435
 #, kde-format
 msgid "Correlating images -"
 msgstr "正在关联图像 -"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:493
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:517
 #, kde-format
 msgid "Correlation failed"
 msgstr "关联操作失败"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:494
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:518
 #, kde-format
 msgid ""
 "Could not correlate any image - please make sure the offset and gap settings "
 "are correct."
 msgstr "无法与任何图像建立关联 - 请检查时间偏移和时间差设置是否正确。"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:499
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:523
 #, kde-format
 msgid "Correlation succeeded"
 msgstr "关联操作成功"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:500
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:524
 #, kde-format
 msgid ""
 "All images have been correlated. You can now check their position on the map."
@@ -52189,12 +52219,12 @@ msgstr "所有图像均已建立关联。您现在可以在地图查看它们的
 
 #. i18np.
 #. See bug #376438 for details.
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:508
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:532
 #, kde-format
 msgid "Correlation finished"
 msgstr "关联操作结束"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:510
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:534
 #, kde-format
 msgid ""
 "One image out of %2 images have been correlated. Please check the offset and "
@@ -52206,7 +52236,7 @@ msgstr[0] ""
 "%2 张图像中的 %1 张图像已建立关联。如果您觉得建立关联的图像太少，请检查时间偏"
 "移和时间差设置是否正确。"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:527
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:551
 #, kde-format
 msgid "1 image correlated"
 msgid_plural "%1 images correlated"
