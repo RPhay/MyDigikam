@@ -159,8 +159,7 @@ void MetaEngine::Private::copyPrivateData(const Private* const other)
 
 bool MetaEngine::Private::saveToXMPSidecar(const QFileInfo& finfo) const
 {
-    QString xmpFile = MetaEngine::sidecarFilePathForFile(finfo.filePath(),
-                                                         useCompatibleFileName);
+    QString xmpFile = MetaEngine::sidecarFilePathForFile(finfo.filePath());
 
     if (xmpFile.isEmpty())
     {

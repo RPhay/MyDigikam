@@ -1,10 +1,10 @@
 # Translation of digikam.po to Catalan
-# Copyright (C) 2004-2022 This_file_is_part_of_KDE
+# Copyright (C) 2004-2023 This_file_is_part_of_KDE
 # This file is distributed under the same license as the digikam package.
 #
 # Albert Astals Cid <aacid@kde.org>, 2004, 2005, 2006.
 # Joan Sanz i Rabadan <joansanzrab@gmail.com>, 2005, 2006.
-# Josep M. Ferrer <txemaq@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# Josep M. Ferrer <txemaq@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Joan Maspons <joanmaspons@gmail.com>, 2009, 2010.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
 # Orestes Mas <orestes@tsc.upc.edu>, 2014.
@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-07 00:46+0000\n"
-"PO-Revision-Date: 2022-12-25 09:34+0100\n"
+"POT-Creation-Date: 2023-01-08 00:56+0000\n"
+"PO-Revision-Date: 2023-01-07 12:24+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -3183,31 +3183,36 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 elements seleccionats"
 
 #: core/app/views/stack/welcomepageview.cpp:140
-#, fuzzy, kde-format
-#| msgid "More than 1300 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 200 user-reports closed on bugzilla."
-msgstr "Més de 1.300 informes d'usuari tancats al Bugzilla."
+msgstr "Més de 200 informes d'usuari tancats al Bugzilla."
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
 msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
 msgstr ""
+"Adaptar el codi a l'entorn de treball de les Qt6 (codi encara compatible amb "
+"l'API de les Qt5)."
 
 #: core/app/views/stack/welcomepageview.cpp:142
 #, kde-format
 msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
 msgstr ""
+"Afegir la configuració d'exportació a JPEG-XL, WEBP i AVIF per tot arreu."
 
 #: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
 msgid ""
 "Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera."
 msgstr ""
+"Afegir la conversió a JPEG-XL, WEBP i AVIF sense pèrdua en importar des de "
+"la càmera."
 
 #: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
 msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr ""
+"Afegir el convertidors JPEG-XL, WEBP i AVIF al gestor de la cua de lots."
 
 #: core/app/views/stack/welcomepageview.cpp:145
 #, kde-format
@@ -3215,76 +3220,80 @@ msgid ""
 "Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store "
 "versionned images in editor."
 msgstr ""
+"Implementar els JPEG-XL, HEIF, WEBP i AVIF com a format d'imatge sense "
+"pèrdua per a emmagatzemar imatges versionades a l'editor."
 
 #: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
 msgid "Add hamburger menu to tool-bar if main menu is hidden."
 msgstr ""
+"Afegir el menú d'hamburguesa a la barra d'eines si el menú principal està "
+"ocult."
 
 #: core/app/views/stack/welcomepageview.cpp:147
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid "Turn on this option to write metadata into DNG files."
+#, kde-format
 msgid "Add new option to write metadata to files with ExifTool backend."
-msgstr "Activeu aquesta opció per a escriure les metadades als fitxers DNG."
+msgstr ""
+"Afegir una opció nova per a escriure les metadades als fitxers amb el dorsal "
+"ExifTool."
 
 #: core/app/views/stack/welcomepageview.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "Turn on this option to write metadata into RAW files. This feature is "
-#| "delegate to ExifTool backend and is disabled by default."
+#, kde-format
 msgid ""
 "Optional write metadata operations to DNG and RAW files are now always "
 "delegated to ExifTool Backend."
 msgstr ""
-"Activeu aquesta opció per a escriure les metadades en els fitxers RAW. "
-"Aquesta característica està delegada en el dorsal de l'ExifTool i està "
-"desactivada de manera predeterminada."
+"L'escriptura opcional d'operacions de metadades a fitxers DNG i RAW ara "
+"sempre està delegada en el dorsal de l'ExifTool."
 
 #: core/app/views/stack/welcomepageview.cpp:149
 #, kde-format
 msgid "Optimize layout of Metadata Edit plugin for a better usability."
 msgstr ""
+"Optimitzar la disposició del connector d'edició de metadades per a millor la "
+"usabilitat."
 
 #: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
 msgid ""
 "Add increment file counter to sequence numbering with option [c] or [c,step]."
 msgstr ""
+"Afegir un comptador d'increment de fitxer a la numeració de seqüència amb "
+"l'opció [c] o [c,pas]."
 
 #: core/app/views/stack/welcomepageview.cpp:151
 #, kde-format
 msgid "Add random text sequence numbering with option [r]."
-msgstr ""
+msgstr "Afegir un text aleatori de numeració de seqüència amb l'opció [r]."
 
 #: core/app/views/stack/welcomepageview.cpp:152
 #, kde-format
 msgid ""
 "Add configurable first character for the unique modifier with {unique:n,c}."
 msgstr ""
+"Afegir un primer caràcter configurable per al modificador únic amb {unique:n,"
+"c}."
 
 #: core/app/views/stack/welcomepageview.cpp:153
-#, fuzzy, kde-format
-#| msgid "Return items by number of face regions"
+#, kde-format
 msgid "Add search for items by number of face regions."
-msgstr "Retorna els elements per nombre de regions de cares"
+msgstr "Afegir una cerca d'elements per nombre de regions de cares."
 
 #: core/app/views/stack/welcomepageview.cpp:154
-#, fuzzy, kde-format
-#| msgid "Return items without face regions"
+#, kde-format
 msgid "Add search for items without face regions."
-msgstr "Retorna els elements sense regions de cares"
+msgstr "Afegir una cerca d'elements sense regions de cares."
 
 #: core/app/views/stack/welcomepageview.cpp:155
 #, kde-format
 msgid "Add support for cross-platform network paths."
-msgstr ""
+msgstr "Afegir la implementació per als camins de xarxa multiplataforma."
 
 #: core/app/views/stack/welcomepageview.cpp:156
 #, kde-format
 msgid "Add support for SQLite WAL (Write-Ahead-Logging) mode."
 msgstr ""
+"Afegir la implementació per al mode WAL (Write-Ahead-Logging) del SQLite."
 
 #: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format
@@ -3292,22 +3301,30 @@ msgid ""
 "Add spell-checking support in caption text widget using KF5::Sonnet "
 "component."
 msgstr ""
+"Afegir la implementació de verificació ortogràfica al giny de text de "
+"llegenda usant el component KF5::Sonnet."
 
 #: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
 msgid "Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto."
 msgstr ""
+"Afegir un plafó de configuració de la verificació ortogràfica a Configuració/"
+"Miscel·lània en el digiKam i el Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:159
 #, kde-format
 msgid ""
 "Add online translations support to Alternative Language text editor widget."
 msgstr ""
+"Afegir la implementació per a les traduccions en línia al giny de l'editor "
+"de text d'Idioma alternatiu."
 
 #: core/app/views/stack/welcomepageview.cpp:160
 #, kde-format
 msgid "Add Localize config panel in Setup/Misc for digiKam and Showfoto."
 msgstr ""
+"Afegir un plafó de configuració de traducció a Configuració/Miscel·lània en "
+"el digiKam i el Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
@@ -3315,26 +3332,26 @@ msgid ""
 "Add settings to list prefered alternative/translated languages in text edit "
 "widget."
 msgstr ""
+"Afegir paràmetres per a llistar els idiomes alternatius/traduïts preferits "
+"al giny d'edició de text."
 
 #: core/app/views/stack/welcomepageview.cpp:162
 #, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Sorting settings everywhere."
 msgstr ""
+"Permetre usar els paràmetres d'ordenació segons qualitat d'imatge global o "
+"personalitzada per tot arreu."
 
 #: core/app/views/stack/welcomepageview.cpp:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "Integration of Google Summer of Code project 2021 <a href=\"https://"
-#| "community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE\">Image Quality "
-#| "Sorter</a>."
+#, kde-format
 msgid ""
 "Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
 "QuocHungTran\">to perform OCR over scanned text</a>."
 msgstr ""
-"Integració del projecte Google Summer of Code 2021, <a href=\"https://"
-"community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE\">ordenació per la "
-"qualitat de la imatge</a>."
+"Afegir una eina nova <a href=\"https://community.kde.org/GSoC/2022/"
+"StatusReports/QuocHungTran\">per a portar a treme l'OCR de text escanejat</"
+"a>."
 
 #: core/app/views/stack/welcomepageview.cpp:164
 #, kde-format
@@ -3342,28 +3359,29 @@ msgid ""
 "Add <a href=\"https://community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe"
 "\">Aesthetic Detection to classify images using deep learning model</a>."
 msgstr ""
+"Afegir la <a href=\"https://community.kde.org/GSoc/2022/StatusReports/"
+"PhuocKhanhLe\">detecció estètica per a classificar imatges usant un model "
+"d'aprenentatge profund</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:165
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to assign pick label metadata by image quality"
+#, kde-format
 msgid ""
 "Add new tool to assign pick label automatically by parsing image quality."
 msgstr ""
-"Una eina per a assignar metadades de rètols de selecció segons la qualitat "
-"de la imatge"
+"Afegir una eina nova per a assignar automàticament rètols de selecció "
+"analitzant la qualitat de les imatges."
 
 #: core/app/views/stack/welcomepageview.cpp:166
 #, kde-format
 msgid "Add new tool to assign rating, pick, and color labels in batch."
 msgstr ""
+"Afegir una eina nova per a assignar valoracions, i etiquetes de selecció i "
+"color per lots."
 
 #: core/app/views/stack/welcomepageview.cpp:167
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to assign labels metadata to images"
+#, kde-format
 msgid "Add new tool to assign titles and captions in batch."
-msgstr "Una eina per a assignar metadades de rètols a les imatges"
+msgstr "Una eina nova per a assignar títols i llegendes per lots."
 
 #: core/app/views/stack/welcomepageview.cpp:168
 #, kde-format
@@ -3371,11 +3389,13 @@ msgid ""
 "<a href=\" https://docs.digikam.org/en/index.html\">Rewrite handbook</a> "
 "from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
+"<a href=\" https://docs.digikam.org/en/index.html\">Reescriptura del manual</"
+"a> des de DocBook a l'entorn de treball Sphinx/ReStructuredText."
 
 #: core/app/views/stack/welcomepageview.cpp:169
 #, kde-format
 msgid "Update internal RAW engine to last stable Libraw 0.21.1."
-msgstr ""
+msgstr "Actualitzar el motor RAW intern a la darrera Libraw estable 0.21.1."
 
 #: core/app/views/stack/welcomepageview.cpp:170
 #, kde-format
@@ -3386,6 +3406,11 @@ msgid ""
 "R3, R7 and R10 Fujifilm X-H2S, X-T30 II OM System OM-1 Leica M11 Sony A7-IV "
 "(ILCE-7M4) DJI Mavic 3"
 msgstr ""
+"Noves característiques RAW: Implementació de fitxers Phase One/Leaf IIQ-S v2 "
+"Canon CR3 filmrolls/RawBurst Canon CRM (pel·lícula) en format de mosaic de "
+"bits empaquetats (i de 16 bits no empaquetats) DNG (no estàndard) Es "
+"permeten fitxers DNG comprimits «deflate» Canon EOS R3, R7 i R10 Fujifilm X-"
+"H2S, X-T30 II OM System OM-1 Leica M11 Sony A7-IV (ILCE-7M4) DJI Mavic 3"
 
 #: core/app/views/stack/welcomepageview.cpp:185
 #, kde-format
@@ -10787,7 +10812,7 @@ msgstr "Amplada nova:"
 #: core/dplugins/editor/transform/shear/sheartool.cpp:319
 #: core/dplugins/editor/transform/shear/sheartool.cpp:320
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:151
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:148
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:152
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:112
 #, kde-format
 msgid " px"
@@ -12065,7 +12090,7 @@ msgstr ""
 "sincronitzar la geolocalització d'elements si la càmera no té cap dispositiu "
 "GPS incrustat."
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:91
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:101
 #, kde-format
 msgctxt "@action"
 msgid "Edit Geolocation..."
@@ -12301,7 +12326,7 @@ msgid "GPX file:"
 msgstr "Fitxer GPX:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:161
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:275
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:286
 #, kde-format
 msgid "GPS Exchange Format (*.gpx)"
 msgstr "Format d'intercanvi GPS (*.gpx)"
@@ -15471,7 +15496,7 @@ msgstr ""
 "Per a les agències de fotografia, es poden usar motius preconfigurats per a "
 "descriure el contingut dels elements basats en els codis IPTC de referència."
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:100
 #, kde-format
 msgctxt "@action"
 msgid "Edit Metadata..."
@@ -16469,10 +16494,10 @@ msgid "Former Author"
 msgstr "Autor antic"
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:84
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:81
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:94
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:91
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:104
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:97
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:85
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:95
 #, kde-format
 msgid "Developer and Maintainer"
 msgstr "Desenvolupador i mantenidor"
@@ -17356,7 +17381,7 @@ msgstr ""
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:90
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:74
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:88
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:80
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:90
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:77
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:79
 #, kde-format
@@ -17903,12 +17928,12 @@ msgstr ""
 "través d'una selecció d'àlbums.</p><p>La plantilla HTML es pot usar amb "
 "temes de disposicions diferents per a muntar els fitxers en una galeria.</p>"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:74
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:84
 #, kde-format
 msgid "Former Author and Maintainer"
 msgstr "Autor i mantenidor antic"
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:89
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Create Html gallery..."
@@ -18460,7 +18485,7 @@ msgstr ""
 "ha moltes classes de dispositius electrònics que permeten el DLNA, com les "
 "tauletes, mòbils, televisors, etc.</p>"
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:102
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:112
 #, kde-format
 msgctxt "@action"
 msgid "Share with DLNA..."
@@ -20129,18 +20154,18 @@ msgstr ""
 "utilitzar mides de paper predefinides i disposicions diferents per a "
 "processar els fitxers.</p>"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:74
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:84
 #: core/utilities/searchwindow/searchfields_createfield.cpp:654
 #, kde-format
 msgid "Author"
 msgstr "Autor"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:81
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:91
 #, kde-format
 msgid "Contributor"
 msgstr "Col·laborador"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:93
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Print Creator..."
@@ -20631,7 +20656,7 @@ msgstr "Executables opcionals del Gimp"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:82
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:162
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:160
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:164
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:123
 #, kde-format
 msgid "Image Format:"
@@ -20958,7 +20983,7 @@ msgid "Thunderbird"
 msgstr "Thunderbird"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:130
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:165
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:169
 #: core/libs/dplugins/webservices/wssettings.cpp:129
 #, kde-format
 msgctxt "Image format: JPEG"
@@ -20966,7 +20991,7 @@ msgid "Jpeg"
 msgstr "JPEG"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:131
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:166
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:170
 #: core/libs/dplugins/webservices/wssettings.cpp:130
 #, kde-format
 msgctxt "Image format: PNG"
@@ -20998,7 +21023,7 @@ msgstr ""
 "selecció d'àlbums.</p><p>Es poden utilitzar aplicacions de client de correu "
 "diferents per a processar els fitxers a la xarxa.</p>"
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:88
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Send by Mail..."
@@ -21107,14 +21132,14 @@ msgid "Maximum email size limit:"
 msgstr "Límit de la mida màxima del correu electrònic:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:136
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:134
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:138
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:97
 #, kde-format
 msgid "Adjust image properties"
 msgstr "Ajusta les propietats de les imatges"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:138
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:136
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:140
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:99
 #, kde-format
 msgid ""
@@ -21125,14 +21150,14 @@ msgstr ""
 "i tornar a comprimir."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:142
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:142
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:146
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:103
 #, kde-format
 msgid "Image Properties"
 msgstr "Propietats de la imatge"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:152
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:149
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:153
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:113
 #, kde-format
 msgid ""
@@ -21143,14 +21168,14 @@ msgstr ""
 "d'aspecte."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:153
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:157
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:116
 #, kde-format
 msgid "Image Length:"
 msgstr "Grandària de la imatge:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:166
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:164
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:168
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:127
 #, kde-format
 msgid "Select your preferred format to convert image."
@@ -21175,21 +21200,21 @@ msgstr ""
 "<br/><b>100</b>: sense compressió</p>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:194
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:182
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:186
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:155
 #, kde-format
 msgid "Image quality:"
 msgstr "Qualitat de la imatge:"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:199
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:187
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:191
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:160
 #, kde-format
 msgid "Remove all metadata"
 msgstr "Elimina totes les metadades"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:200
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:188
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:192
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:161
 #, kde-format
 msgid ""
@@ -21607,24 +21632,24 @@ msgstr ""
 "colspan=\"2\"><nobr><center><b><h1>Altres</h1></b></center></nobr></td></"
 "tr><tr><td>Mostra aquesta ajuda:</td><td>Tecla <i>F1</i></td></tr></table>"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:132
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:142
 #, kde-format
 msgctxt "@action"
 msgid "OpenGL Image Viewer"
 msgstr "Visualitzador d'imatges OpenGL"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:163
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:170
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
 #, kde-format
 msgid "OpenGL error"
 msgstr "Error de l'OpenGL"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:163
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
 #, kde-format
 msgid "GL_ARB_texture_rectangle not supported"
 msgstr "No s'accepta GL_ARB_texture_rectangle"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:170
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
 #, kde-format
 msgid "No OpenGL context found"
 msgstr "No s'ha trobat el context OpenGL"
@@ -22320,7 +22345,7 @@ msgstr ""
 "\n"
 "Podeu afegir una pista de so de fons a la presentació."
 
-#: core/dplugins/generic/view/presentation/presentationplugin.cpp:98
+#: core/dplugins/generic/view/presentation/presentationplugin.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Presentation..."
@@ -22423,7 +22448,7 @@ msgid "Blobs"
 msgstr "Bombolles"
 
 #: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:120
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:160
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:170
 #: core/libs/settings/applicationsettings_miscs.cpp:430
 #, kde-format
 msgid "Slideshow"
@@ -22759,23 +22784,23 @@ msgstr ""
 "\"2\"><nobr><center><b><h1>Altres</h1></b></center></nobr></td></"
 "tr><tr><td>Mostra aquesta ajuda:</td><td>Tecla <i>F1</i></td></tr></table>"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:151
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:161
 #, kde-format
 msgctxt "@action"
 msgid "Slideshow"
 msgstr "Passi de diapositives"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:166
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:176
 #, kde-format
 msgid "Play All"
 msgstr "Reprodueix-ho tot"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:175
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:185
 #, kde-format
 msgid "Play Selection"
 msgstr "Reprodueix la selecció"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:184
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:194
 #, kde-format
 msgid "Play With Sub-Albums"
 msgstr "Reprodueix amb els subàlbums"
@@ -23323,53 +23348,58 @@ msgstr ""
 msgid "Facebook Call Failed: %1"
 msgstr "La crida al Facebook ha fallat: %1"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:105
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:108
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:78
 #, kde-format
 msgid "Target location: "
 msgstr "Ubicació de la destinació: "
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:109
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:112
 #, kde-format
 msgid "Target Folder"
 msgstr "Carpeta de destinació"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:110
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:113
 #, kde-format
 msgid "Sets the target address to copy the items to."
 msgstr "Estableix l'adreça de destinació a on copiar els elements."
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:112
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:115
 #, kde-format
 msgid "Target File behavior:"
 msgstr "Comportament del fitxer de destinació:"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:114
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:117
 #, kde-format
 msgid "Copy files"
 msgstr "Copia fitxers"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:115
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:118
 #, kde-format
 msgid "Create symlinks"
 msgstr "Crea enllaços simbòlics"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:116
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:119
 #, kde-format
 msgid "Create relative symlinks"
 msgstr "Crea enllaços simbòlics relatius"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:118
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:121
+#, kde-format
+msgid "Include the sidecars of the items"
+msgstr ""
+
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:122
 #, kde-format
 msgid "Overwrite existing items in the target"
 msgstr "Sobreescriu els elements existents a la destinació"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:119
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:123
 #, kde-format
 msgid "Use the album path of the items in the target"
 msgstr "Usa el camí d'àlbum dels elements a la destinació"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:175
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:179
 #, kde-format
 msgid ""
 "<p>The new compression value of JPEG images to be sent:</p><p><b>1</b>: very "
@@ -23382,34 +23412,34 @@ msgstr ""
 "compressió mitjana<br/><b>75</b>: compressió baixa (valor predeterminat) <br/"
 "><b>100</b>: sense compressió</p>"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:213
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:217
 #, kde-format
 msgid "This is the list of items to copy to the specified target."
 msgstr "Aquesta és la llista d'elements a copiar a la destinació especificada."
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:89
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:91
 #, kde-format
 msgid "Export to Local Storage"
 msgstr "Exportació a un emmagatzematge local"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:92
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:94
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:74
 #, kde-format
 msgid "Start export"
 msgstr "Inicia l'exportació"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:93
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:95
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:75
 #, kde-format
 msgid "Start export to the specified target"
 msgstr "Inicia l'exportació a la destinació especificada"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:213
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:217
 #, kde-format
 msgid "Copy not completed"
 msgstr "No s'ha completat la còpia"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:214
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:218
 #, kde-format
 msgid ""
 "Some of the items have not been copied and are still in the list. You can "
@@ -23664,7 +23694,7 @@ msgstr ""
 "\n"
 "Per als detalls, vegeu el lloc web del Flickr per als detalls: %1"
 
-#: core/dplugins/generic/webservices/flickr/flickrplugin.cpp:98
+#: core/dplugins/generic/webservices/flickr/flickrplugin.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Flickr..."
@@ -29942,7 +29972,7 @@ msgstr ""
 "base de dades.<br/>Seleccioneu una ubicació diferent.</p><p><b>%1</b></p>"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:45
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:95
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:97
 #, kde-format
 msgid "Database Statistics"
 msgstr "Estadístiques de la base de dades"
@@ -34343,85 +34373,85 @@ msgctxt "@title"
 msgid "Type-Mimes"
 msgstr "Tipus MIME"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:58
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:60
 #, kde-format
 msgctxt "@title"
 msgid "About %1 Plugin"
 msgstr "Quant al connector %1"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:79
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:81
 #, kde-format
 msgctxt "@label"
 msgid "Version"
 msgstr "Versió"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:95
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:97
 #, kde-format
 msgctxt "@title"
 msgid "Details"
 msgstr "Detalls"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:120
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:122
 #, kde-format
 msgctxt "@title"
 msgid "Authors"
 msgstr "Autors"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:131
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:133
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Name"
 msgstr "Nom"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:132
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:134
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Value"
 msgstr "Valor"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:134
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:136
 #, kde-format
 msgctxt "@item"
 msgid "Interface ID"
 msgstr "ID de la interfície"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:135
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:137
 #, kde-format
 msgctxt "@item"
 msgid "Tool ID"
 msgstr "ID de l'eina"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:136
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:138
 #, kde-format
 msgctxt "@item"
 msgid "Library"
 msgstr "Biblioteca"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:140
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:142
 #, kde-format
 msgctxt "@item"
 msgid "File Size"
 msgstr "Mida del fitxer"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:141
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:143
 #, kde-format
 msgctxt "@item"
 msgid "File Date"
 msgstr "Data del fitxer"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:142
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:144
 #, kde-format
 msgctxt "@item"
 msgid "File Owner"
 msgstr "Propietari del fitxer"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:143
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:145
 #, kde-format
 msgctxt "@item"
 msgid "File Group"
 msgstr "Grup del fitxer"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:145
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:147
 #, kde-format
 msgctxt "@title"
 msgid "Properties"
@@ -34915,10 +34945,27 @@ msgctxt "@title"
 msgid "User6"
 msgstr "Usuari6"
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:65
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:59
-#, kde-format
+#: core/libs/dplugins/widgets/dplugindialog.cpp:67
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Help"
 msgctxt "@action: button"
+msgid "Help"
+msgstr "Ajuda"
+
+#: core/libs/dplugins/widgets/dplugindialog.cpp:69
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:66
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:86
+#, kde-format
+msgid "Online Handbook..."
+msgstr "Manual en línia..."
+
+#: core/libs/dplugins/widgets/dplugindialog.cpp:70
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:67
+#, fuzzy, kde-format
+#| msgctxt "@action: button"
+#| msgid "About..."
 msgid "About..."
 msgstr "Quant al..."
 
@@ -43843,77 +43890,72 @@ msgctxt "general keyboard shortcuts"
 msgid "General"
 msgstr "General"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:54
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:56
 #, kde-format
 msgid "Components Information"
 msgstr "Informació dels components"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:60
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:62
 #, kde-format
 msgid "Supported RAW Cameras"
 msgstr "Càmeres RAW admeses"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:64
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:66
 #, kde-format
 msgid "List of Detected Hardware"
 msgstr "Llista del maquinari detectat"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:68
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:70
 #, kde-format
 msgid "Donate..."
 msgstr "Donatius..."
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:72
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:74
 #, kde-format
 msgid "Recipes Book..."
 msgstr "Llibre de receptes..."
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:76
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:78
 #, kde-format
 msgid "Contribute..."
 msgstr "Col·labora..."
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:80
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:82
 #, kde-format
 msgid "Check for New Version..."
 msgstr "Comprova per a una versió nova..."
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:84
-#, kde-format
-msgid "Online Handbook..."
-msgstr "Manual en línia..."
-
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:123
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:125
 #, kde-format
 msgid "Toggle Left Side-bar"
 msgstr "Commuta la barra lateral esquerra"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:128
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:130
 #, kde-format
 msgid "Toggle Right Side-bar"
 msgstr "Commuta la barra lateral dreta"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:133
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:135
 #, kde-format
 msgid "Previous Left Side-bar Tab"
 msgstr "Pestanya anterior de la barra lateral esquerra"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:138
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:140
 #, kde-format
 msgid "Next Left Side-bar Tab"
 msgstr "Pestanya següent de la barra lateral esquerra"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:143
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:145
 #, kde-format
 msgid "Previous Right Side-bar Tab"
 msgstr "Pestanya anterior de la barra lateral dreta"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:148
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:150
 #, kde-format
 msgid "Next Right Side-bar Tab"
 msgstr "Pestanya següent de la barra lateral dreta"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:172
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:174
 #, kde-format
 msgid "Show Statusbar"
 msgstr "Mostra la barra d'estat"
@@ -54059,27 +54101,40 @@ msgid_plural "%1 images moved"
 msgstr[0] "S'ha mogut 1 imatge"
 msgstr[1] "S'han mogut %1 imatges"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:151
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:157
 #, kde-format
 msgid "Load GPX files..."
 msgstr "Carrega fitxers GPX..."
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:158
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:164
 #, kde-format
 msgid "Show tracks on Map"
 msgstr "Mostra els trajectes en el mapa"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:159
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:165
 #, kde-format
 msgid "Set this option to show tracks on the Map"
 msgstr "Activeu aquesta opció per a mostrar els trajectes en el mapa."
 
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:167
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox similarity album tag relation"
+#| msgid "Only selected tab"
+msgid "Only use selected images"
+msgstr "Només la pestanya seleccionada"
+
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:168
+#, fuzzy, kde-format
+#| msgid "Set this option to display the image type."
+msgid "Set this option to correlate selected images only"
+msgstr "Activeu aquesta opció per a mostrar el tipus d'imatge."
+
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:178
 #, kde-format
 msgid "Camera time zone:"
 msgstr "Zona horària de la càmera:"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:171
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:181
 #, kde-format
 msgid ""
 "<p>Sets the time zone the camera was set to during photo shooting, so that "
@@ -54093,12 +54148,12 @@ msgstr ""
 "desplaçaments positius compten cap a l'est des de la longitud zero (GMT), "
 "són «abans de l'hora».</p>"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:178
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:188
 #, kde-format
 msgid "Offset of pictures (hh:mm:ss):"
 msgstr "Desplaçament de les imatges (hh:mm:ss):"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:180
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:190
 #, kde-format
 msgid ""
 "Sets the offset between picture times and track times. E.g. to correct wrong "
@@ -54108,25 +54163,25 @@ msgstr ""
 "P. ex. per a corregir un rellotge incorrecte de la càmera o una zona horària "
 "diferent."
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:187
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:197
 #, kde-format
 msgid "Set whether picture time is ahead or behind the track time."
 msgstr ""
 "Determina si l'hora de la imatge està per davant o darrere de l'hora del "
 "trajecte."
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:206
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:216
 #, kde-format
 msgid "Interpolate"
 msgstr "Interpola"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:207
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:218
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:217
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:228
 #, kde-format
 msgid "Max. time gap (hh:mm:ss):"
 msgstr "Interval màx. de temps (hh:mm:ss):"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:211
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:221
 #, kde-format
 msgid ""
 "Sets the maximum time difference to interpolate GPX file points to image "
@@ -54137,12 +54192,12 @@ msgstr ""
 "GPX i l'hora de la imatge. Si la diferència de temps excedeix aquesta opció "
 "de configuració, es considera que no coincideixen."
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:217
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:227
 #, kde-format
 msgid "Match directly"
 msgstr "Coincideix directament"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:222
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:232
 #, kde-format
 msgid ""
 "Sets the maximum time difference from a GPS track point to the image time to "
@@ -54153,42 +54208,42 @@ msgstr ""
 "l'hora de la imatge per a aparellar-los. Si la diferència de temps excedeix "
 "aquesta opció de configuració, es considera que no són coincidents."
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:241
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:251
 #, kde-format
 msgid "Correlate"
 msgstr "Correlaciona"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:273
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:284
 #, kde-format
 msgctxt "@title:window"
 msgid "Select GPX File to Load"
 msgstr "Seleccioneu el fitxer GPX a carregar"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:315
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:326
 #, kde-format
 msgid "The following GPX file could not be loaded:"
 msgid_plural "The following %1 GPX files could not be loaded:"
 msgstr[0] "El fitxer GPX següent no s'ha pogut carregar:"
 msgstr[1] "Els %1 fitxers GPX següents no s'han pogut carregar:"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:319
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:330
 #, kde-format
 msgid "Error loading GPX file"
 msgid_plural "Error loading GPX files"
 msgstr[0] "Error en carregar el fitxer GPX"
 msgstr[1] "Error en carregar els fitxers GPX"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:411
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:435
 #, kde-format
 msgid "Correlating images -"
 msgstr "Les imatges s'estan correlacionant -"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:493
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:517
 #, kde-format
 msgid "Correlation failed"
 msgstr "La correlació ha fallat"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:494
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:518
 #, kde-format
 msgid ""
 "Could not correlate any image - please make sure the offset and gap settings "
@@ -54197,12 +54252,12 @@ msgstr ""
 "No s'ha pogut correlacionar cap imatge -comproveu que la configuració del "
 "desplaçament i l'interval siguin correctes-."
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:499
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:523
 #, kde-format
 msgid "Correlation succeeded"
 msgstr "La correlació ha estat correcta"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:500
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:524
 #, kde-format
 msgid ""
 "All images have been correlated. You can now check their position on the map."
@@ -54212,12 +54267,12 @@ msgstr ""
 
 #. i18np.
 #. See bug #376438 for details.
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:508
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:532
 #, kde-format
 msgid "Correlation finished"
 msgstr "La correlació ha acabat"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:510
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:534
 #, kde-format
 msgid ""
 "One image out of %2 images have been correlated. Please check the offset and "
@@ -54234,7 +54289,7 @@ msgstr[1] ""
 "desplaçament i l'interval siguin correctes si penseu que s'haurien de "
 "correlacionar més imatges."
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:527
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:551
 #, kde-format
 msgid "1 image correlated"
 msgid_plural "%1 images correlated"
@@ -64453,385 +64508,3 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Voleu restablir tota la configuració als seus valors predeterminats?"
-
-#~ msgid ""
-#~ "New Neural Network engine based on OpenCV Deep Learning module to detect "
-#~ "and recognize faces."
-#~ msgstr ""
-#~ "Motor de xarxa neuronal nou basat en el mòdul OpenCV Deep Learning per a "
-#~ "detectar i reconèixer cares."
-
-#~ msgid "Update Slideshow to plugin with new shuffle mode."
-#~ msgstr ""
-#~ "Actualitza el passi de diapositives al connector amb el mode de barreja "
-#~ "nou."
-
-#~ msgid "Add new theme Html5Responsive for HtmlGallery plugin."
-#~ msgstr "Afegeix temes nous «Html5Responsive» al connector «HtmlGallery»."
-
-#~ msgid ""
-#~ "New plugin ImageMosaicWall to create an image based on a bunch of other "
-#~ "photos."
-#~ msgstr ""
-#~ "Connector nou ImageMosaicWall per a crear una imatge basada en una pila "
-#~ "de fotos."
-
-#~ msgid "add new batch queue manager tool to fix hot pixels from images."
-#~ msgstr ""
-#~ "Afegeix una eina del gestor de la cua de lots per a corregir els píxels "
-#~ "cremats a les imatges."
-
-#~ msgid "add new batch queue manager tool to apply texture over images."
-#~ msgstr ""
-#~ "Afegeix una eina del gestor de la cua de lots per a aplicar una textura a "
-#~ "sobre de les imatges."
-
-#~ msgid ""
-#~ "Face Scan dialog contents is now simplified and embedded into left "
-#~ "sidebar."
-#~ msgstr ""
-#~ "El contingut del diàleg d'exploració de cares ara s'ha simplificat i "
-#~ "incrustat a la barra lateral esquerra."
-
-#~ msgid "Add support for Gimp XCF files >= 2.10."
-#~ msgstr "Afegeix la implementació per als fitxers XCF del Gimp >= 2.10."
-
-#~ msgid "Add Flatpak bundle support for Linux platforms."
-#~ msgstr ""
-#~ "Afegeix la implementació de l'empaquetament Flatpak per a les plataformes "
-#~ "Linux."
-
-#~ msgid "Table-view is now able to show digiKam Tag-Paths properties."
-#~ msgstr ""
-#~ "La vista de taula ara és capaç de mostrar les propietats Tag-Paths del "
-#~ "digiKam."
-
-#~ msgid "Add option to write geolocation information in file metadata."
-#~ msgstr ""
-#~ "Activeu aquesta opció a escriure la informació de geolocalització a les "
-#~ "metadades del fitxer."
-
-#~ msgid "Add color label support for advanced metadata settings."
-#~ msgstr ""
-#~ "Afegeix la implementació d'etiquetes de color per a la configuració "
-#~ "avançada de les metadades."
-
-#~ msgid "Add Exif, Iptc, and Xmp read support for HEIF images."
-#~ msgstr ""
-#~ "Afegeix la implementació de lectura d'Exif, Iptc i Xmp per a les imatges "
-#~ "HEIF."
-
-#~ msgid "Improved support for UNC network paths under Windows."
-#~ msgstr "Implementació millorada per als camins de xarxa UNC al Windows."
-
-#~ msgid "Improved support for Unicode paths under Windows."
-#~ msgstr "Implementació millorada per als camins Unicode al Windows."
-
-#~ msgid "Apple bundle is now relocatable and compatible with macOS BigSur."
-#~ msgstr "El paquet d'Apple ara és reubicable i compatible amb macOS BigSur."
-
-#~ msgid ""
-#~ "New online version checker and downloader to automate upgrade under "
-#~ "Windows and macOS."
-#~ msgstr ""
-#~ "Nou comprovador en línia i descarregador de versions per a automatitzar "
-#~ "l'actualització a Windows i macOS."
-
-#~ msgid ""
-#~ "Better support of astro FITS image format including metadata extraction "
-#~ "support to populate the database."
-#~ msgstr ""
-#~ "Millor suport del format d'imatge astrofotogràfica FITS, inclòs el suport "
-#~ "en l'extracció de les metadades per a completar la base de dades."
-
-#~ msgid ""
-#~ "Use last Exiv2 0.27.5 in all bundles with Base Media File metadata read "
-#~ "and write support (HEIF, AVIF)."
-#~ msgstr ""
-#~ "Usa l'últim Exiv2 0.27.5 en tots els paquets amb suport de lectura i "
-#~ "escriptura de les metadades en els fitxers de suports base (HEIF, AVIF)."
-
-#~ msgid "Find duplicates items is now process in parallel using multi-cores."
-#~ msgstr ""
-#~ "La cerca dels elements duplicats ara es processa en paral·lel usant "
-#~ "múltiples nuclis."
-
-#~ msgid "New tool to export items to iNaturalist web service."
-#~ msgstr "Una eina nova per a exportar elements al servei web iNaturalist."
-
-#~ msgid "New metadata viewer based on ExifTool."
-#~ msgstr "Visualitzador nou de metadades basat en l'ExifTool."
-
-#~ msgid ""
-#~ "MacOS package, Windows installer, and AppImage bundle use KF5 5.89 and "
-#~ "KAPPS 21.12.0 frameworks."
-#~ msgstr ""
-#~ "El paquet MacOS, l'instal·lador Windows, i el paquet AppImage usen KF5 "
-#~ "5.89 i els frameworks 21.12.0 de KAPPS."
-
-#~ msgid ""
-#~ "AppImage Linux bundle now support <a href=\"https://fcitx-im.org/wiki/"
-#~ "Fcitx_5\">Platform Input Context FCITX</a>."
-#~ msgstr ""
-#~ "El paquet AppImage de Linux ara permet <a href=\"https://fcitx-im.org/"
-#~ "wiki/Fcitx_5\">Platform Input Context FCITX</a>."
-
-#~ msgid "Improve RTL translations support."
-#~ msgstr "Millora la implementació de les traduccions RTL (dreta a esquerra)."
-
-#~ msgid ""
-#~ "GUI internationalization and localization updates with more than 50 "
-#~ "languages available."
-#~ msgstr ""
-#~ "Actualitzacions de la internacionalització i localització de la IGU amb "
-#~ "més de 50 idiomes disponibles."
-
-#~ msgid "Add OpenWith contextual menu support under MacOS."
-#~ msgstr ""
-#~ "Afegeix la implementació del menú contextual «Obre amb» en el MacOS."
-
-#~ msgid ""
-#~ "New tool to share items on the network with a Motion JPEG stream server."
-#~ msgstr ""
-#~ "Una eina nova per a compartir elements a la xarxa amb un servidor de flux "
-#~ "JPEG en moviment."
-
-#~ msgid ""
-#~ "Showfoto has a new left sidebar hosting a folder-view to quickly explore "
-#~ "images from local file system."
-#~ msgstr ""
-#~ "El ShowFoto té una barra lateral esquerra nova que organitza una vista de "
-#~ "carpetes per a explorar amb rapidesa les imatges del sistema de fitxers "
-#~ "local."
-
-# skip-rule: kct-snapshot
-#~ msgid ""
-#~ "Update internal RAW engine to last Libraw 0.20.2 (snapshot 20210827) "
-#~ "including Canon CR3 and Sony A7R4 support."
-#~ msgstr ""
-#~ "Actualització del motor RAW intern de la Libraw a la darrera publicació "
-#~ "0.20.2 (instantània 20210827) que inclou el suport per a la Canon CR3 i "
-#~ "la Sony A7R4."
-
-#~ msgid ""
-#~ "New camera supported: Canon CR3, PowerShot G5 X Mark II, G7 X Mark III, "
-#~ "SX70 HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS "
-#~ "M200, EOS 1DX Mark III (lossless files only) DJI Mavic Air, Air2, Osmo "
-#~ "Action, FujiFilm Fujifilm compressed/16bit, GFX 100, X-A7, X-Pro3, X100V, "
-#~ "X-T4, X-T200, GoPro Fusion, HERO5, HERO6, HERO7, HERO8, Hasselblad "
-#~ "L1D-20c, X1D II 50C, Leica D-LUX7, Q-P, Q2, V-LUX5, C-Lux / CAM-DC25, "
-#~ "SL2, M10 Monochrom, Nikon D780, Z50, P950, Olympus TG-6, E-M5 Mark III, E-"
-#~ "PL10, E-M1 Mark III, Panasonic Panasonic 14-bit, DC-FZ1000 II, DC-G90, DC-"
-#~ "S1, DC-S1R, DC-S1H, DC-TZ95, PhaseOne IQ4 150MP, Rapsberry Pi RAW+JPEG "
-#~ "format, Ricoh GR III, Sony A7R IV, A9 II, ILCE-6100, ILCE-6600, RX0 II, "
-#~ "RX100 VII, Zenit M, also multiple modern smartphones."
-#~ msgstr ""
-#~ "Càmeres admeses noves: Canon CR3, PowerShot G5 X Mark II, G7 X Mark III, "
-#~ "SX70 HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS "
-#~ "M200, EOS 1DX Mark III (només fitxers sense pèrdua), DJI Mavic Air, Air2, "
-#~ "Osmo Action, FujiFilm Fujifilm comprimit/16bit, GFX 100, X-A7, X-Pro3, "
-#~ "X100V, X-T4, X-T200, GoPro Fusion, HERO5, HERO6, HERO7, HERO8, Hasselblad "
-#~ "L1D-20c, X1D II 50C,Leica D-LUX7, Q-P, Q2, V-LUX5, C-Lux / CAM-DC25, SL2, "
-#~ "M10 Monochrom, Nikon D780, Z50, P950, Olympus TG-6, E-M5 Mark III, E-"
-#~ "PL10, E-M1 Mark III, Panasonic Panasonic 14-bit, DC-FZ1000 II, DC-G90, DC-"
-#~ "S1, DC-S1R, DC-S1H, DC-TZ95, PhaseOne IQ4 150MP, format Rapsberry Pi RAW"
-#~ "+JPEG, Ricoh GR III, Sony A7R IV, A9 II, ILCE-6100, ILCE-6600, RX0 II, "
-#~ "RX100 VII, Zenit M, i també diversos telèfons intel·ligents moderns."
-
-#~ msgid "Face Management in digiKam"
-#~ msgstr "Gestió de cares en el digiKam"
-
-#~ msgid ""
-#~ "The Face Workflow allows you to Detect and Recognize people in your "
-#~ "photographs."
-#~ msgstr ""
-#~ "El flux de treball de les cares permet detectar i reconèixer persones a "
-#~ "les fotografies."
-
-#~ msgid "<b>Face Detection</b>"
-#~ msgstr "<b>Detecció de cares</b>"
-
-#~ msgid ""
-#~ "Face Detection allows digiKam to detect faces in your images. This step "
-#~ "is required before being able to recognize faces."
-#~ msgstr ""
-#~ "La detecció de cares permet que el digiKam detecti les cares a les "
-#~ "imatges. Es requereix aquest pas abans de ser capaç de reconèixer-les."
-
-#~ msgid "<b>Face Recognition</b>"
-#~ msgstr "<b>Reconeixement de cares</b>"
-
-#~ msgid "Face Recognition will automatically recognize people in your images."
-#~ msgstr ""
-#~ "El reconeixement de cares reconeixerà automàticament les persones a les "
-#~ "imatges."
-
-#~ msgid ""
-#~ "For additional information, read the %1 \n"
-#~ "To ask questions, use our mailing list: digikam-users@kde.org \n"
-#~ msgstr ""
-#~ "Per a informació addicional, llegiu el %1 \n"
-#~ "Per a fer preguntes, useu la llista de correu (en anglès): digikam-"
-#~ "users@kde.org \n"
-
-#~ msgid ""
-#~ "To run face detection, select the <u>Detect Faces</u> option in the Face "
-#~ "Scan panel and then click on <u>Scan Collection for Faces</u>"
-#~ msgstr ""
-#~ "Per a executar la detecció de cares, seleccioneu l'opció <u>Detecta les "
-#~ "cares</u> al plafó d'exploració de cares i després feu clic a <u>Explora "
-#~ "la col·lecció cercant cares</u>"
-
-#~ msgid ""
-#~ "<b>Caution:</b> Running Face Detection for the first time can be fairly "
-#~ "time consuming. Make sure you use the <u>Search In</u> tab to restrict "
-#~ "the target of the scan."
-#~ msgstr ""
-#~ "<b>Precaució:</b> L'execució de la detecció de cares per primera vegada "
-#~ "pot trigar força. Assegureu-vos que useu la pestanya <u>Cerca a</u> per a "
-#~ "restringir la destinació de l'exploració."
-
-#~ msgid "digiKam offers two kinds of face detection scans: "
-#~ msgstr ""
-#~ "El digiKam ofereix dues classes d'exploració de la detecció de cares: "
-
-#~ msgid "<b>Skip Images Already Scanned</b>"
-#~ msgstr "<b>Omet les imatges que ja s'han explorat</b>"
-
-#~ msgid ""
-#~ "Choose this option if you haven't scanned yet or if the last scan yielded "
-#~ "good results but you would like to scan new images."
-#~ msgstr ""
-#~ "Trieu aquesta opció si encara no s'ha explorat o si la darrera exploració "
-#~ "va produir resultats bons però voleu explorar imatges noves."
-
-#~ msgid "<b>Scan Again and Merge</b>"
-#~ msgstr "<b>Torna a explorar i fusiona</b>"
-
-#~ msgid ""
-#~ "Choose this option if the results of the previous scan weren't accurate. "
-#~ "This would rescan all images again, and is time consuming."
-#~ msgstr ""
-#~ "Trieu aquesta opció si els resultats de l'exploració anterior no van ser "
-#~ "acurats. Això tornarà a explorar totes les imatges un altre cop, i triga "
-#~ "una estona."
-
-#~ msgid ""
-#~ "After the Face Scan is complete, you should see a new tag <u>Unknown</u> "
-#~ "where the results of the face scan will appear. You may now manually "
-#~ "identify a few of these faces and then proceed for face recognition."
-#~ msgstr ""
-#~ "Després de completar l'exploració de cares, hauríeu de veure l'etiqueta "
-#~ "nova <u>Desconeguda</u> a on apareixeran els resultats de l'exploració de "
-#~ "cares. Podreu identificar manualment diverses cares i després procedir al "
-#~ "reconeixement de cares."
-
-#~ msgid ""
-#~ "To manually identify a face, hover on any Unknown face and use the text "
-#~ "box to give it a name. This will lead to the creation of a face tag in "
-#~ "case a person of that name doesn't exist already. For best results "
-#~ "identify 4-5 faces for each person you want the scan to recognize."
-#~ msgstr ""
-#~ "Per a identificar manualment una cara, passeu per sobre de qualsevol cara "
-#~ "desconeguda i useu el quadre de text per a donar-li un nom. Això portarà "
-#~ "a la creació d'una etiqueta de cara en cas que una persona amb aquest nom "
-#~ "encara no existeixi. Per a millorar els resultats, identifiqueu 4-5 cares "
-#~ "per a cada persona que vulgueu reconèixer en explorar."
-
-#~ msgid ""
-#~ "Running face recognition is similar to detection, just select "
-#~ "<u>Recognize Faces</u> from the Face Scan panel this time.\n"
-#~ "Face recognition will work on all Unknown faces. In case there's a face "
-#~ "you don't wish to be recognized, you can mark it as ignored.\n"
-#~ "This leads to the creation of a new <u>Ignored</u> tag, you can later "
-#~ "unmark the face if needed."
-#~ msgstr ""
-#~ "Executar el reconeixement de cares és semblant a la detecció: aquesta "
-#~ "vegada seleccioneu <u>Reconeix les cares</u> des del plafó d'exploració "
-#~ "de cares.\n"
-#~ "El reconeixement de cares funcionarà amb totes les cares desconegudes. En "
-#~ "cas que hi hagi una cara que no vulgueu que es reconegui, la podeu marcar "
-#~ "com a ignorada.\n"
-#~ "Això portarà a la creació d'una etiqueta <u>Ignorada</u> nova, i més tard "
-#~ "podreu desmarcar la cara si cal."
-
-#~ msgid ""
-#~ "You may select <u>Work on all processor cores</u>in order to increase the "
-#~ "speed of Face Recognition \n"
-#~ "The Face Accuracy slider allows you to control the accuracy of the "
-#~ "recognition algorithm. A higher specificity implies higher accuracy, "
-#~ "however this results in a smaller set of results."
-#~ msgstr ""
-#~ "Podeu seleccionar <u>Treballa amb tots els nuclis dels processadors</u> "
-#~ "per tal d'incrementar la velocitat del reconeixement de cares \n"
-#~ "El control lliscant de precisió de les cares permet controlar la precisió "
-#~ "de l'algorisme de reconeixement. Una especificitat més alta implica una "
-#~ "precisió més alta, tanmateix això dona un conjunt més petit de resultats."
-
-#~ msgid ""
-#~ "The results of facial recognition appear in the form of Unconfirmed "
-#~ "results. These results will show up in the Unconfirmed tag, as well as in "
-#~ "the tag of the person suggested for each face.\n"
-#~ "Hovering over Unconfirmed faces will display a few options:\n"
-#~ msgstr ""
-#~ "Els resultats del reconeixement facial apareixen en la forma de resultats "
-#~ "no confirmats. Aquests resultats es mostraran a l'etiqueta Sense "
-#~ "confirmar, i també a l'etiqueta de la persona suggerida per cada cara.\n"
-#~ "En passar per sobre de les cares sense confirmar, es mostraran les "
-#~ "opcions següents:\n"
-
-#~ msgid ""
-#~ "The Confirm button allows you to confirm the suggestion. This would "
-#~ "assign the suggested name to the face"
-#~ msgstr ""
-#~ "El botó Confirma permet confirmar el suggeriment. Això assignarà el nom "
-#~ "suggerit a la cara."
-
-#~ msgid ""
-#~ "Use the Reject button, if the suggestion is incorrect. This would move "
-#~ "the face back to Unknown."
-#~ msgstr ""
-#~ "Useu el botó Rebutja si el suggeriment és incorrecte. Això mourà la cara "
-#~ "a desconeguda."
-
-#~ msgid ""
-#~ "Use the Delete button, if the suggestion is not a face. This will delete "
-#~ "the face region from the database."
-#~ msgstr ""
-#~ "Useu el botó Suprimeix si el suggeriment no és cap cara. Això suprimirà "
-#~ "la regió de la cara de la base de dades."
-
-#~ msgid ""
-#~ "<b>Face Categorization and Sorting</b>\n"
-#~ "By default, faces will appear categorized based on their name. You may "
-#~ "change this behaviour, by going to <u>View -> Separate Items</u>.\n"
-#~ "Note that using a different categorization order will lead to Confirmed "
-#~ "and Unconfirmed faces appearing mixed with one another. To change this "
-#~ "behaviour you may modify the sorting order within each category by going "
-#~ "to <u>View -> Sort Items -> By Face Type</u>."
-#~ msgstr ""
-#~ "<b>Categorització de les cares i ordenació</b>\n"
-#~ "De manera predeterminada, les cares apareixeran categoritzades en funció "
-#~ "del seu nom. Podeu canviar aquest comportament anant a <u>Vista -> Separa "
-#~ "els elements</u>.\n"
-#~ "Cal tenir en compte que usar un ordre diferent de categorització portarà "
-#~ "que les cares confirmades i sense confirmar apareixeran barrejades entre "
-#~ "elles. Per a canviar aquest comportament podeu modificar el sentit "
-#~ "d'ordenació de cada categoria anant a <u>Vista -> Ordena els elements -> "
-#~ "Per tipus de cara</u>."
-
-#~ msgid ""
-#~ "<b>Improving Results of Face Recognition</b>\n"
-#~ "Apart from using the settings mentioned in the last page, face results "
-#~ "may also be improved by rebuilding the training data. This may be done "
-#~ "through Tools -> Maintenance -> Detect and Recognize Faces -> Clear and "
-#~ "rebuild all training data."
-#~ msgstr ""
-#~ "<b>Millora dels resultats del reconeixement de cares</b>\n"
-#~ "A banda d'usar els paràmetres mencionats a la darrera pàgina, es poden "
-#~ "millorar els resultats de les cares reconstruint i entrenant les dades. "
-#~ "Això es pot fer a través d'«Eines -> Manteniment -> Detecta i reconeix "
-#~ "les cares -> Neteja i reconstrueix totes les dades d'entrenament»."
-
-#~ msgid "Confirm Faces"
-#~ msgstr "Confirmació de cares"

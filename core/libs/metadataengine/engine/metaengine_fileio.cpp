@@ -40,21 +40,20 @@ QString MetaEngine::getFilePath() const
     return d->filePath;
 }
 
-QString MetaEngine::sidecarFilePathForFile(const QString& path, bool useLR)
+QString MetaEngine::sidecarFilePathForFile(const QString& path)
 {
     if (path.isEmpty())
     {
         return QString();
     }
 
-    QFileInfo info(path);
-    QString pathForLR = path;
-    pathForLR.chop(info.suffix().size());
-    pathForLR.append(QLatin1String("xmp"));
-
-    if (useLR || QFileInfo::exists(pathForLR))
+    if (MetaEngineSettings::instance()->settings().useCompatibleFileName)
     {
-        return pathForLR;
+        QFileInfo info(path);
+        QString pathBaseXmp = path;
+        pathBaseXmp.chop(info.suffix().size());
+
+        return pathBaseXmp + QLatin1String("xmp");
     }
 
     return path + QLatin1String(".xmp");

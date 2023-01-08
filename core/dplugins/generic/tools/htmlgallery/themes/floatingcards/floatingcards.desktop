@@ -2,6 +2,7 @@
 Type=Theme
 Name=Floating Cards
 Name[be]=Выплыўныя карткі
+Name[bg]=Плаващи карти
 Name[ca]=Targetes flotants
 Name[ca@valencia]=Targetes flotants
 Name[cs]=Plovoucí karty
@@ -34,6 +35,7 @@ Name[x-test]=xxFloating Cardsxx
 Name[zh_CN]=浮动卡片
 Comment=A dark theme with floating thumbnail/description cards. Fast navigation through the gallery.
 Comment[be]=Цёмная тэма з выплыўнымі карткамі з мініяцюрамі альбо апісаннем, праз якія можна хутка перамяшчацца па галерэі.
+Comment[bg]=Тъмна тема с плаващи карти с миниатюри/описания. Бърза навигация из галерията.
 Comment[ca]=Un tema fosc amb targetes de miniatures/descripcions flotants. Navegació ràpida per la galeria.
 Comment[ca@valencia]=Un tema fosc amb targetes de miniatures/descripcions flotants. Navegació ràpida per la galeria.
 Comment[cs]=Tmavý motiv s plovoucími kartami s náhledem / popisem. Rychlé prohledávání sbírky.
@@ -104,6 +106,7 @@ Url=mailto:jiri@boha.cz
 [X-HTMLGallery Preview]
 Name=Floating Cards
 Name[be]=Выплыўныя карткі
+Name[bg]=Плаващи карти
 Name[ca]=Targetes flotants
 Name[ca@valencia]=Targetes flotants
 Name[cs]=Plovoucí karty
@@ -142,6 +145,7 @@ Allow-non-square-thumbnails=true
 [X-HTMLGallery Parameter keyboard_navigation]
 Name=Keyboard & swipe navigation
 Name[be]=Навігацыя клавіятурай і пракручваннем
+Name[bg]=Навигация с клавиатура и плъзгане
 Name[ca]=Navegació amb el teclat i lliscament
 Name[ca@valencia]=Navegació amb el teclat i lliscament
 Name[cs]=Animace posunem klávesnicí nebo táhnutím

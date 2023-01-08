@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-07 00:46+0000\n"
+"POT-Creation-Date: 2023-01-08 00:56+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -10738,7 +10738,7 @@ msgstr "ទទឹង​ថ្មី ៖"
 #: core/dplugins/editor/transform/shear/sheartool.cpp:319
 #: core/dplugins/editor/transform/shear/sheartool.cpp:320
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:151
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:148
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:152
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:112
 #, kde-format
 msgid " px"
@@ -12018,7 +12018,7 @@ msgid ""
 "geo-location of items if you camera do not have an embedded GPS device."
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:91
+#: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:101
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Edit Geolocation..."
@@ -12265,7 +12265,7 @@ msgid "GPX file:"
 msgstr "ទម្រង់"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:161
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:275
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:286
 #, fuzzy, kde-format
 msgid "GPS Exchange Format (*.gpx)"
 msgstr "%1|GPS ផ្លាស់ប្ដូរ​ទ្រង់ទ្រាយ​"
@@ -15539,7 +15539,7 @@ msgid ""
 "items contents based on Iptc reference codes."
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/metadataeditplugin.cpp:100
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Edit Metadata..."
@@ -16661,10 +16661,10 @@ msgid "Former Author"
 msgstr "អ្នក​និពន្ធ​"
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:84
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:81
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:94
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:91
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:104
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:97
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:85
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:95
 #, fuzzy, kde-format
 msgid "Developer and Maintainer"
 msgstr "អ្នក​សម្របសម្រួល និង​អ្នក​អភិវឌ្ឍន៍​ចម្បង"
@@ -17605,7 +17605,7 @@ msgstr ""
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:90
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:74
 #: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:88
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:80
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:90
 #: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:77
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:79
 #, kde-format
@@ -18182,12 +18182,12 @@ msgid ""
 "with different layout can be used to assemble files on a gallery.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:74
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:84
 #, kde-format
 msgid "Former Author and Maintainer"
 msgstr ""
 
-#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:89
+#: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:99
 #, fuzzy, kde-format
 #| msgid "Create Schema..."
 msgctxt "@action"
@@ -18751,7 +18751,7 @@ msgid ""
 "DLNA, as tablets, cellulars, TV, etc.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:102
+#: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:112
 #, kde-format
 msgctxt "@action"
 msgid "Share with DLNA..."
@@ -20370,19 +20370,19 @@ msgid ""
 "can be used to process files.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:74
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:84
 #: core/utilities/searchwindow/searchfields_createfield.cpp:654
 #, kde-format
 msgid "Author"
 msgstr "អ្នក​និពន្ធ​"
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:81
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:91
 #, fuzzy, kde-format
 #| msgid "Contribute..."
 msgid "Contributor"
 msgstr "ចូលរួម..."
 
-#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:93
+#: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:103
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@action"
@@ -20865,7 +20865,7 @@ msgstr "ទិដ្ឋភាព​ធំ​ទូលាយ​"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:82
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:162
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:160
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:164
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:123
 #, fuzzy, kde-format
 msgid "Image Format:"
@@ -21218,7 +21218,7 @@ msgid "Thunderbird"
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:130
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:165
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:169
 #: core/libs/dplugins/webservices/wssettings.cpp:129
 #, kde-format
 msgctxt "Image format: JPEG"
@@ -21226,7 +21226,7 @@ msgid "Jpeg"
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailsettings.cpp:131
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:166
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:170
 #: core/libs/dplugins/webservices/wssettings.cpp:130
 #, fuzzy, kde-format
 #| msgid "Posing"
@@ -21254,7 +21254,7 @@ msgid ""
 "be used to process files on the network.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:88
+#: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Send by Mail..."
@@ -21360,7 +21360,7 @@ msgid "Maximum email size limit:"
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:136
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:134
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:138
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:97
 #, fuzzy, kde-format
 #| msgid "File Properties"
@@ -21368,7 +21368,7 @@ msgid "Adjust image properties"
 msgstr "លក្ខណ​សម្បត្តិ​ឯកសារ"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:138
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:136
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:140
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:99
 #, kde-format
 msgid ""
@@ -21377,14 +21377,14 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:142
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:142
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:146
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:103
 #, fuzzy, kde-format
 msgid "Image Properties"
 msgstr "លក្ខណ​សម្បត្តិ​"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:152
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:149
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:153
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:113
 #, kde-format
 msgid ""
@@ -21393,7 +21393,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:155
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:153
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:157
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:116
 #, fuzzy, kde-format
 #| msgctxt "@title"
@@ -21402,7 +21402,7 @@ msgid "Image Length:"
 msgstr "ប្រវត្តិ​រូបភាព"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:166
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:164
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:168
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:127
 #, kde-format
 msgid "Select your preferred format to convert image."
@@ -21424,14 +21424,14 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:194
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:182
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:186
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:155
 #, fuzzy, kde-format
 msgid "Image quality:"
 msgstr "កម្មវិធី​កែសម្រួល​រូបភាព"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:199
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:187
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:191
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:160
 #, fuzzy, kde-format
 #| msgid "Remove Small Artifact"
@@ -21439,7 +21439,7 @@ msgid "Remove all metadata"
 msgstr "យក​វត្ថុ​បុរាណ​តូច​ចេញ"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:200
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:188
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:192
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:161
 #, kde-format
 msgid ""
@@ -21810,26 +21810,26 @@ msgid ""
 "table>"
 msgstr ""
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:132
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:142
 #, fuzzy, kde-format
 #| msgid "Scan Image"
 msgctxt "@action"
 msgid "OpenGL Image Viewer"
 msgstr "ស្កេន​រូបភាព"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:163
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:170
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
 #, fuzzy, kde-format
 #| msgid "Export"
 msgid "OpenGL error"
 msgstr "នាំចេញ"
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:163
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
 #, kde-format
 msgid "GL_ARB_texture_rectangle not supported"
 msgstr ""
 
-#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:170
+#: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
 #, kde-format
 msgid "No OpenGL context found"
 msgstr ""
@@ -22559,7 +22559,7 @@ msgid ""
 "You can add a sound-track in background while your presentation."
 msgstr ""
 
-#: core/dplugins/generic/view/presentation/presentationplugin.cpp:98
+#: core/dplugins/generic/view/presentation/presentationplugin.cpp:108
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Presentation..."
@@ -22668,7 +22668,7 @@ msgid "Blobs"
 msgstr "ស្នាម​ប្រឡាក់"
 
 #: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:120
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:160
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:170
 #: core/libs/settings/applicationsettings_miscs.cpp:430
 #, kde-format
 msgid "Slideshow"
@@ -22955,25 +22955,25 @@ msgid ""
 "td></tr></table>"
 msgstr ""
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:151
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:161
 #, fuzzy, kde-format
 #| msgid "Slideshow"
 msgctxt "@action"
 msgid "Slideshow"
 msgstr "ការ​បញ្ចាំង​ស្លាយ"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:166
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:176
 #, fuzzy, kde-format
 msgid "Play All"
 msgstr "ជ្រើស​ទាំងអស់"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:175
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:185
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgid "Play Selection"
 msgstr "ជម្រើស"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:184
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:194
 #, fuzzy, kde-format
 #| msgid "With All Sub-Albums"
 msgid "Play With Sub-Albums"
@@ -23500,58 +23500,63 @@ msgstr "ស្លាក '%2' ត្រូវ​បាន​កំណត់​ទ
 msgid "Facebook Call Failed: %1"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:105
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:108
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:78
 #, fuzzy, kde-format
 #| msgid "Image Position"
 msgid "Target location: "
 msgstr "ទីតាំង​រូបភាព"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:109
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:112
 #, fuzzy, kde-format
 #| msgid "By Folder"
 msgid "Target Folder"
 msgstr "តាម​ថត"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:110
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:113
 #, fuzzy, kde-format
 msgid "Sets the target address to copy the items to."
 msgstr "កំណត់​ជម្រើស​នេះ​ចំពោះ​ការ​កែ​រូបភាព​​ត្រូវ​បាន​អនុវត្ត ។"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:112
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:115
 #, fuzzy, kde-format
 #| msgid "If Target File Exists:"
 msgid "Target File behavior:"
 msgstr "ប្រសិនបើ​មាន​ឯកសារ​គោលដៅ​ ៖​"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:114
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:117
 #, fuzzy, kde-format
 #| msgid "&Copy Here"
 msgid "Copy files"
 msgstr "ចម្លង​​នៅ​ទីនេះ"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:115
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:118
 #, fuzzy, kde-format
 #| msgid "Created tables"
 msgid "Create symlinks"
 msgstr "បាន​បង្កើត​តារាង"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:116
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:119
 #, fuzzy, kde-format
 msgid "Create relative symlinks"
 msgstr "មិន​អើពើ​ស្លាក​នេះ"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:118
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:121
+#, kde-format
+msgid "Include the sidecars of the items"
+msgstr ""
+
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:122
 #, kde-format
 msgid "Overwrite existing items in the target"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:119
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:123
 #, kde-format
 msgid "Use the album path of the items in the target"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:175
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:179
 #, kde-format
 msgid ""
 "<p>The new compression value of JPEG images to be sent:</p><p><b>1</b>: very "
@@ -23560,37 +23565,37 @@ msgid ""
 "no compression</p>"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:213
+#: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:217
 #, fuzzy, kde-format
 #| msgid "Align text to the left"
 msgid "This is the list of items to copy to the specified target."
 msgstr "តម្រឹម​អត្ថបទ​ទៅ​ឆ្វេង​"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:89
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:91
 #, fuzzy, kde-format
 #| msgid "Import from Scanner..."
 msgid "Export to Local Storage"
 msgstr "នាំ​ចូល​ពី​ម៉ាស៊ីន​ស្កេន..."
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:92
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:94
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:74
 #, kde-format
 msgid "Start export"
 msgstr ""
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:93
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:95
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:75
 #, fuzzy, kde-format
 #| msgid "Align text to the left"
 msgid "Start export to the specified target"
 msgstr "តម្រឹម​អត្ថបទ​ទៅ​ឆ្វេង​"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:213
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:217
 #, fuzzy, kde-format
 msgid "Copy not completed"
 msgstr "ការ​បញ្ចាំង​ស្លាយ"
 
-#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:214
+#: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:218
 #, kde-format
 msgid ""
 "Some of the items have not been copied and are still in the list. You can "
@@ -23826,7 +23831,7 @@ msgid ""
 "See Flickr web site for details: %1"
 msgstr "នាំចេញ"
 
-#: core/dplugins/generic/webservices/flickr/flickrplugin.cpp:98
+#: core/dplugins/generic/webservices/flickr/flickrplugin.cpp:108
 #, fuzzy, kde-format
 #| msgid "Export"
 msgctxt "@action"
@@ -30078,7 +30083,7 @@ msgid ""
 msgstr ""
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:45
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:95
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:97
 #, kde-format
 msgid "Database Statistics"
 msgstr "ស្ថិតិ​មូលដ្ឋាន​ទិន្នន័យ"
@@ -34298,68 +34303,68 @@ msgctxt "@title"
 msgid "Type-Mimes"
 msgstr ""
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:58
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:60
 #, kde-format
 msgctxt "@title"
 msgid "About %1 Plugin"
 msgstr ""
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:79
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:81
 #, fuzzy, kde-format
 #| msgid "Images on %1"
 msgctxt "@label"
 msgid "Version"
 msgstr "រូបភាព​នៅ​លើ %1"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:95
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:97
 #, fuzzy, kde-format
 #| msgid "Details"
 msgctxt "@title"
 msgid "Details"
 msgstr "សេចក្ដី​លម្អិត​"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:120
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:122
 #, fuzzy, kde-format
 #| msgid "Author"
 msgctxt "@title"
 msgid "Authors"
 msgstr "អ្នក​និពន្ធ​"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:131
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:133
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "@title: DPlugin properties"
 msgid "Name"
 msgstr "ឈ្មោះ ៖"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:132
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:134
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Value"
 msgstr ""
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:134
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:136
 #, fuzzy, kde-format
 #| msgid "Interpolate"
 msgctxt "@item"
 msgid "Interface ID"
 msgstr "ថែម​ថយ"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:135
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:137
 #, fuzzy, kde-format
 #| msgid "Loading tools..."
 msgctxt "@item"
 msgid "Tool ID"
 msgstr "កំពុង​ផ្ទុក​ឧបករណ៍..."
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:136
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:138
 #, fuzzy, kde-format
 #| msgid "Gibraltar"
 msgctxt "@item"
 msgid "Library"
 msgstr "ជីបាល់តា"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:140
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:142
 #, fuzzy, kde-format
 #| msgctxt "embedded preview type in dng file"
 #| msgid "Full size"
@@ -34367,28 +34372,28 @@ msgctxt "@item"
 msgid "File Size"
 msgstr "ទំហំ​ពេញ​"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:141
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:143
 #, fuzzy, kde-format
 #| msgid "Filename"
 msgctxt "@item"
 msgid "File Date"
 msgstr "ឈ្មោះ​ឯកសារ​"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:142
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:144
 #, fuzzy, kde-format
 #| msgid "Filename"
 msgctxt "@item"
 msgid "File Owner"
 msgstr "ឈ្មោះ​ឯកសារ​"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:143
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:145
 #, fuzzy, kde-format
 #| msgid "Filename"
 msgctxt "@item"
 msgid "File Group"
 msgstr "ឈ្មោះ​ឯកសារ​"
 
-#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:145
+#: core/libs/dplugins/setup/dpluginaboutdlg.cpp:147
 #, fuzzy, kde-format
 #| msgid "Properties"
 msgctxt "@title"
@@ -34905,10 +34910,24 @@ msgctxt "@title"
 msgid "User6"
 msgstr ""
 
-#: core/libs/dplugins/widgets/dplugindialog.cpp:65
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:59
-#, fuzzy, kde-format
+#: core/libs/dplugins/widgets/dplugindialog.cpp:67
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:62
+#, kde-format
 msgctxt "@action: button"
+msgid "Help"
+msgstr ""
+
+#: core/libs/dplugins/widgets/dplugindialog.cpp:69
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:66
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:86
+#, fuzzy, kde-format
+#| msgid "Kipi Plugins Handbook"
+msgid "Online Handbook..."
+msgstr "សៀវភៅ​មគ្គុទ្ទេសក៍​កម្មវិធី​ជំនួយ ​​Kipi"
+
+#: core/libs/dplugins/widgets/dplugindialog.cpp:70
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:67
+#, fuzzy, kde-format
 msgid "About..."
 msgstr "ជីប៊ូទី"
 
@@ -43669,78 +43688,72 @@ msgctxt "general keyboard shortcuts"
 msgid "General"
 msgstr "ទូទៅ"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:54
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:56
 #, kde-format
 msgid "Components Information"
 msgstr "ព័ត៌មាន​សមាសភាគ"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:60
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:62
 #, kde-format
 msgid "Supported RAW Cameras"
 msgstr "បាន​គាំទ្រ​ម៉ាស៊ីន​ថតរូប​ដើម"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:64
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:66
 #, kde-format
 msgid "List of Detected Hardware"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:68
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:70
 #, kde-format
 msgid "Donate..."
 msgstr "ផ្ដល់..."
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:72
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:74
 #, kde-format
 msgid "Recipes Book..."
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:76
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:78
 #, kde-format
 msgid "Contribute..."
 msgstr "ចូលរួម..."
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:80
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:82
 #, kde-format
 msgid "Check for New Version..."
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:84
-#, fuzzy, kde-format
-#| msgid "Kipi Plugins Handbook"
-msgid "Online Handbook..."
-msgstr "សៀវភៅ​មគ្គុទ្ទេសក៍​កម្មវិធី​ជំនួយ ​​Kipi"
-
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:123
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:125
 #, kde-format
 msgid "Toggle Left Side-bar"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:128
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:130
 #, kde-format
 msgid "Toggle Right Side-bar"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:133
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:135
 #, kde-format
 msgid "Previous Left Side-bar Tab"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:138
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:140
 #, kde-format
 msgid "Next Left Side-bar Tab"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:143
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:145
 #, kde-format
 msgid "Previous Right Side-bar Tab"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:148
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:150
 #, kde-format
 msgid "Next Right Side-bar Tab"
 msgstr ""
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:172
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:174
 #, fuzzy, kde-format
 #| msgid "Show Thumbbar"
 msgid "Show Statusbar"
@@ -54477,27 +54490,38 @@ msgid "1 image moved"
 msgid_plural "%1 images moved"
 msgstr[0] "%1 រូបភាព​បាន​ផ្លាស់ទី​"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:151
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:157
 #, kde-format
 msgid "Load GPX files..."
 msgstr "ផ្ទុក​ឯកសារ​​ GPX ​...​"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:158
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:164
 #, kde-format
 msgid "Show tracks on Map"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:159
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:165
 #, kde-format
 msgid "Set this option to show tracks on the Map"
 msgstr ""
 
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:167
+#, fuzzy, kde-format
+#| msgid "Remove selected tag"
+msgid "Only use selected images"
+msgstr "យក​ស្លាក​ដែល​បាន​ជ្រើស​ចេញ​​"
+
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:168
+#, fuzzy, kde-format
+msgid "Set this option to correlate selected images only"
+msgstr "កំណត់​ជម្រើស​នេះ​ចំពោះ​ការ​កែ​រូបភាព​​ត្រូវ​បាន​អនុវត្ត ។"
+
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:178
 #, kde-format
 msgid "Camera time zone:"
 msgstr "តំបន់​ពេលវេលា​ម៉ាស៊ីន​ថត​រូប​ ៖​"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:171
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:181
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Sets the time zone the camera was set to during photo shooting, so "
@@ -54514,36 +54538,36 @@ msgstr ""
 "បាន​បម្លែង​ទៅជា​​ GMT ដើម្បី​ផ្គូផ្គង​សេចក្ដីយោង​ពេលវេលា​របស់​​ GPS  ។​</p><p>ចំណាំ​ ៖​​ ចំនួន​អុហ្វសិត​"
 "វិជ្ជមាន​ខាងកើត​​ពី​រយៈ​បណ្ដោយ​​សូន្យ (GMT) ពួកវា​ជា​​ 'ពេលវេលា​មុន​​' ។</p>"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:178
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:188
 #, kde-format
 msgid "Offset of pictures (hh:mm:ss):"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:180
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:190
 #, kde-format
 msgid ""
 "Sets the offset between picture times and track times. E.g. to correct wrong "
 "camera clock or different time zone."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:187
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:197
 #, kde-format
 msgid "Set whether picture time is ahead or behind the track time."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:206
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:216
 #, kde-format
 msgid "Interpolate"
 msgstr "ថែម​ថយ"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:207
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:218
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:217
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:228
 #, fuzzy, kde-format
 #| msgid "Max. time gap (sec.):"
 msgid "Max. time gap (hh:mm:ss):"
 msgstr "ពង្រីក​ចន្លោះ​ពេលវេលា​អតិបរមា​ (វិ.) ៖​"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:211
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:221
 #, fuzzy, kde-format
 #| msgid ""
 #| "Sets the maximum difference in seconds from a GPS track point to the "
@@ -54557,12 +54581,12 @@ msgstr ""
 "កំណត់​ភាព​ខុសគ្នា​អតិបរមា​គិត​ជា​វិនាទី​​ ពី​ចំណុច​ដាន​​ GPS ​ទៅកាន់​ពេលវេលា​រូបភាព​ ដែល​​ត្រូវ​​​ផ្គូផ្គង​ ។ ប្រសិនបើ​ "
 "ភាព​ខុសគ្នា​នៃ​ពេលវេលា​លើស​ការ​កំណត់​នេះ​​ គ្មាន​​ការ​ផ្គូផ្គង​​ត្រូវ​បាន​សាកល្បងទេ​ ។​​​"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:217
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:227
 #, kde-format
 msgid "Match directly"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:222
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:232
 #, fuzzy, kde-format
 #| msgid ""
 #| "Sets the maximum difference in seconds from a GPS track point to the "
@@ -54576,41 +54600,41 @@ msgstr ""
 "កំណត់​ភាព​ខុសគ្នា​អតិបរមា​គិត​ជា​វិនាទី​​ ពី​ចំណុច​ដាន​​ GPS ​ទៅកាន់​ពេលវេលា​រូបភាព​ ដែល​​ត្រូវ​​​ផ្គូផ្គង​ ។ ប្រសិនបើ​ "
 "ភាព​ខុសគ្នា​នៃ​ពេលវេលា​លើស​ការ​កំណត់​នេះ​​ គ្មាន​​ការ​ផ្គូផ្គង​​ត្រូវ​បាន​សាកល្បងទេ​ ។​​​"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:241
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:251
 #, kde-format
 msgid "Correlate"
 msgstr "ទាក់ទង​"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:273
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:284
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select GPX File to Load"
 msgstr "ជ្រើស​​ឯកសារ​ GPX ​ដើម្បី​ផ្ទុក​"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:315
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:326
 #, kde-format
 msgid "The following GPX file could not be loaded:"
 msgid_plural "The following %1 GPX files could not be loaded:"
 msgstr[0] "ឯកសារ​ %1 GPX ខាង​ក្រោម​មិន​អាច​ត្រូវ​បាន​ផ្ទុក​ឡើយ ៖"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:319
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:330
 #, kde-format
 msgid "Error loading GPX file"
 msgid_plural "Error loading GPX files"
 msgstr[0] "កំហុស​ផ្ទុក​ឯកសារ​រូបភាព GPX"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:411
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:435
 #, fuzzy, kde-format
 #| msgid "Correlating images - %p%"
 msgid "Correlating images -"
 msgstr "រូបភាព​ដែល​​ជាប់ទាក់ទង​ - %p%"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:493
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:517
 #, kde-format
 msgid "Correlation failed"
 msgstr "បាន​បរាជ័យ​ការ​​ជាប់​ទាក់ទង​"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:494
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:518
 #, fuzzy, kde-format
 #| msgid ""
 #| "Could not correlate any image - please make sure the timezone and gap "
@@ -54620,12 +54644,12 @@ msgid ""
 "are correct."
 msgstr "មិន​អាច​​​ភ្ជាប់​រូបភាព​មួយ​ចំនួន​បាន​ឡើយ  សូម​ប្រាកដ​ថា​ការ​កំណត់​​តំបន់​ពេលវេលា​ និង​ចន្លោះ​​ត្រឹមត្រូវ ។"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:499
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:523
 #, kde-format
 msgid "Correlation succeeded"
 msgstr "បាន​ជោគជ័យ​ការ​ជាប់ទាក់ទង​"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:500
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:524
 #, kde-format
 msgid ""
 "All images have been correlated. You can now check their position on the map."
@@ -54633,12 +54657,12 @@ msgstr "រូបភាព​ទាំងអស់​ត្រូវ​បាន
 
 #. i18np.
 #. See bug #376438 for details.
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:508
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:532
 #, kde-format
 msgid "Correlation finished"
 msgstr "បាន​បញ្ចប់​ការ​តភ្ជាប់"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:510
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:534
 #, fuzzy, kde-format
 #| msgid ""
 #| "%1 out of %2 images have been correlated. Please check the timezone and "
@@ -54653,7 +54677,7 @@ msgstr[0] ""
 "រូប​ភាព​ %1 ក្នុង​ចំណោម​ %2 ត្រូវ​បាន​ត​ភ្ជាប់​គ្នា​​ ។ សូម​ពិនិត្យ​មើល​ការ​កំណត់​តំបន់​ពេល​វេលា និង​ចន្លោះ បើ​សិន​ជា​"
 "អ្នក​គិត​ថា​អ្នក​ចង់​​ត​ភ្ជាប់​រូប​ភាព​មួយ​ចំនួន​ទៀត ។"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:527
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:551
 #, kde-format
 msgid "1 image correlated"
 msgid_plural "%1 images correlated"

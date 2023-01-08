@@ -2,6 +2,7 @@
 Type=Theme
 Comment=Yet another simple theme. Clean look with more image details.
 Comment[be]=Яшчэ адна простая тэма. Зручны прагляд з падрабязнай інфармацыяй пра выяву.
+Comment[bg]=Още една проста тема. Изчистен вид с повече подробности за изображенията.
 Comment[ca]=Un altre tema senzill. Un aspecte net amb més detalls per a les imatges.
 Comment[ca@valencia]=Un altre tema senzill. Un aspecte net amb més detalls per a les imatges.
 Comment[cs]=Ještě další jednoduchý motiv.Čistý vzhled s více detaily obrázku.
@@ -110,6 +111,7 @@ Url=mailto:g.urgese@jaone.it
 [X-HTMLGallery Preview]
 Name=Details screenshot
 Name[be]=Папярэдні прагляд падрабязнасцяў
+Name[bg]=Детайли на екрана
 Name[ca]=Captura de pantalla dels detalls
 Name[ca@valencia]=Captura de pantalla dels detalls
 Name[cs]=Snímek podrobností
@@ -144,6 +146,7 @@ Url=preview.png
 [X-HTMLGallery Parameter footer]
 Name=Footer information
 Name[be]=Змесціва ніжняга калонтытула
+Name[bg]=Информация в долния колонтитул
 Name[ca]=Informació del peu
 Name[ca@valencia]=Informació del peu
 Name[cs]=Informace v zápatí
