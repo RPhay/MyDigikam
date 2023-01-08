@@ -250,5 +250,4 @@ BUGFIXES:
 210 ==> 463789 - All images are getting correlated although w/o considering selection.
 211 ==> 463528 - XMP sidecars are excluded from local storage export.
 212 ==> 333348 - Audio track is zero length in Advanced Slideshow.
-213 ==> 462916 - Different renaming behaviors for video files depending of the device.
-214 ==> 
+213 ==> 
