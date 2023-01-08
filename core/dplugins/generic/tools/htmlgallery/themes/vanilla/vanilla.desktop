@@ -415,6 +415,7 @@ Default=25
 [X-HTMLGallery Parameter useLyteBox]
 Name=Use LyteBox
 Name[be]=Выкарыстоўваць LyteBox
+Name[bg]=Използвайте LyteBox
 Name[ca]=Usa el LyteBox
 Name[ca@valencia]=Utilitza LyteBox
 Name[cs]=Použít LyteBox
@@ -454,6 +455,7 @@ Caption-1=No
 [X-HTMLGallery Parameter slideInterval]
 Name=LyteBox Slideshow Interval
 Name[be]=Інтэрвал слайд-шоу LyteBox
+Name[bg]=LyteBox Slideshow Interval
 Name[ca]=Interval entre diapositives del LyteBox
 Name[ca@valencia]=Interval entre diapositives de LyteBox
 Name[da]=Interval for LyteBox-diasshow

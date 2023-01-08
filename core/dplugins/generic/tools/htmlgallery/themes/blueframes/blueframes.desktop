@@ -2,6 +2,7 @@
 Type=Theme
 Name=Blue Frames
 Name[be]=Сінія рамкі
+Name[bg]=Сини рамки
 Name[ca]=Marcs blaus
 Name[ca@valencia]=Marcs blaus
 Name[cs]=Modré rámce
@@ -34,6 +35,7 @@ Name[x-test]=xxBlue Framesxx
 Name[zh_CN]=蓝色型 Frames
 Comment=A theme variation based Frames theme
 Comment[be]=Тэма на аснове аздаблення з сінімі рамкамі
+Comment[bg]=Вариация на темата, базирана на темата "Рамки"
 Comment[ca]=Una variació del tema basat en el tema Marcs
 Comment[ca@valencia]=Una variació del tema basat en el tema Marcs
 Comment[da]=En temavariation baseret på Frames-temaet
@@ -103,6 +105,7 @@ Url=mailto:purplegamba@cox.net
 [X-HTMLGallery Preview]
 Name=Blue Frames
 Name[be]=Сінія рамкі
+Name[bg]=Сини рамки
 Name[ca]=Marcs blaus
 Name[ca@valencia]=Marcs blaus
 Name[cs]=Modré rámce
