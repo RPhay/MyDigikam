@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-08 00:56+0000\n"
+"POT-Creation-Date: 2023-01-09 00:53+0000\n"
 "PO-Revision-Date: 2023-01-02 20:50+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -2896,7 +2896,7 @@ msgstr "Wyświetl na całym ekranie"
 #: core/libs/album/manager/albummanager.cpp:157
 #: core/libs/album/treeview/albumselectiontreeview.cpp:269
 #: core/libs/album/widgets/albumselecttabs.cpp:191
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:64
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
 #, kde-format
 msgid "Albums"
@@ -2986,7 +2986,7 @@ msgstr "Brak albumu znaczników"
 #: core/libs/album/engine/album.cpp:573
 #: core/libs/album/manager/albummanager.cpp:160
 #: core/libs/album/widgets/albumselecttabs.cpp:192
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:69
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:107
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
@@ -5008,7 +5008,7 @@ msgstr "Ok"
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:260
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:676
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:261
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:140
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
 #: core/libs/dplugins/webservices/wstooldialog.cpp:110
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:199
 #, kde-format
@@ -11820,13 +11820,13 @@ msgstr ""
 "bibliotekę Sane</p><p>Docelowy obraz można przetworzyć poprzez przycięcie i "
 "obrót.</p>"
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:99
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:109
 #, kde-format
 msgctxt "@action"
 msgid "Import from Scanner..."
 msgstr "Zaimportuj ze skanera..."
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:122
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:132
 #, kde-format
 msgid ""
 "There is no scanner device available.\n"
@@ -11835,7 +11835,7 @@ msgstr ""
 "Nie ma dostępnego urządzenia skanera.\n"
 "Sprawdź swoje ustawienia"
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:131
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:141
 #, kde-format
 msgid ""
 "Cannot open scanner device \"%1\".\n"
@@ -18203,7 +18203,7 @@ msgstr "&Wybierz metodę zaznaczania obrazu:"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:91
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:90
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:50
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:51
 #, kde-format
 msgid "Images"
 msgstr "Obrazy"
@@ -29407,52 +29407,52 @@ msgstr "Skanowanie w poszukiwaniu usuniętych albumów..."
 msgid "Scanning images in individual albums..."
 msgstr "Skanowanie zdjęć w poszczególnych albumach..."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:139
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:140
 #, kde-format
 msgid "Migrate ->"
 msgstr "Przenieś ->"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:143
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:144
 #, kde-format
 msgid "Progress Information"
 msgstr "Informacje o postępie"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:152
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:153
 #, kde-format
 msgid "Step Progress"
 msgstr "Krok postępu"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:153
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:154
 #, kde-format
 msgid "Overall Progress"
 msgstr "Całkowity postęp"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:216
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:225
 #, kde-format
 msgid "Database type or location must be different!"
 msgstr "Rodzaj bazy danych lub położenie musi być inne!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:223
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:232
 #, kde-format
 msgid "Internal server can only be used once!"
 msgstr "Wewnętrznego serwera można użyć tylko raz!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:232
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:241
 #, kde-format
 msgid "Internal server is not used and is not active!"
 msgstr "Wewnętrzny serwer nie jest używany i nie jest aktywny!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:277
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:286
 #, kde-format
 msgid "Database copied successfully."
 msgstr "Pomyślnie skopiowano bazę danych."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:282
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:291
 #, kde-format
 msgid "Database conversion canceled."
 msgstr "Porzucono przekształcanie bazy danych."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:291
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:300
 #, kde-format
 msgid "Step Progress (%1)"
 msgstr "Krok postępu (%1)"
@@ -30015,104 +30015,104 @@ msgstr ""
 "katalogu do przechowywania pliku bazy danych.<br/>Wybierz inny katalog.</"
 "p><p><b>%1</b></p>"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:45
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:46
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:97
 #, kde-format
 msgid "Database Statistics"
 msgstr "Statystyki bazy danych"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:46
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:47
 #, kde-format
 msgid "Format"
 msgstr "Format"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:46
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:47
 #, kde-format
 msgid "Count"
 msgstr "Liczba"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:51
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:52
 #, kde-format
 msgid "Videos"
 msgstr "Filmy"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:52
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:53
 #, kde-format
 msgid "Audio"
 msgstr "Dźwięk"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:59
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:60
 #, kde-format
 msgid "Total Items"
 msgstr "Wszystkich elementów"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:76
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:77
 #, kde-format
 msgid "Database backend"
 msgstr "Silnik bazy danych"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:80
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:81
 #, kde-format
 msgid "Database Path"
 msgstr "Ścieżka bazy danych"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:86
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:87
 #, kde-format
 msgid "Database internal server"
 msgstr "Wewnętrzny serwer bazy danych"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:86
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:87
 #, kde-format
 msgctxt "@info: database server"
 msgid "Yes"
 msgstr "Tak"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:87
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:88
 #, kde-format
 msgid "Database internal server Path"
 msgstr "Ścieżka wewnętrznego serwera bazy danych"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:91
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:92
 #, kde-format
 msgid "Host Name"
 msgstr "Nazwa gospodarza"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:92
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:93
 #, kde-format
 msgid "Host Port"
 msgstr "Port gospodarza"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:93
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:94
 #, kde-format
 msgid "User account"
 msgstr "Konto użytkownika"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:94
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:95
 #, kde-format
 msgid "Connect options"
 msgstr "Opcje połączenia"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:95
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:96
 #, kde-format
 msgid "Core Db name"
 msgstr "Nazwa głównej BD"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:96
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:97
 #, kde-format
 msgid "Thumbs Db name"
 msgstr "Nazwa BD miniatur"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:97
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:98
 #, kde-format
 msgid "Face Db name"
 msgstr "Nazwa BD twarzy"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:102
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:103
 #, kde-format
 msgid "Database locale"
 msgstr "Język bazy danych"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:143
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:144
 #, kde-format
 msgctxt "@info: total number of items"
 msgid "total"

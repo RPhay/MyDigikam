@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-08 00:56+0000\n"
+"POT-Creation-Date: 2023-01-09 00:53+0000\n"
 "PO-Revision-Date: 2017-10-16 18:16+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -3172,7 +3172,7 @@ msgstr "Έμφάνιση πλήρους οθόνης"
 #: core/libs/album/manager/albummanager.cpp:157
 #: core/libs/album/treeview/albumselectiontreeview.cpp:269
 #: core/libs/album/widgets/albumselecttabs.cpp:191
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:64
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
 #, kde-format
 msgid "Albums"
@@ -3260,7 +3260,7 @@ msgstr "Λεύκωμα χωρίς ετικέτες"
 #: core/libs/album/engine/album.cpp:573
 #: core/libs/album/manager/albummanager.cpp:160
 #: core/libs/album/widgets/albumselecttabs.cpp:192
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:69
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:107
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
@@ -5356,7 +5356,7 @@ msgstr "Εντάξει"
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:260
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:676
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:261
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:140
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
 #: core/libs/dplugins/webservices/wstooldialog.cpp:110
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:199
 #, kde-format
@@ -12458,21 +12458,21 @@ msgid ""
 "p><p>Target image can be post processed as crop and rotate.</p>"
 msgstr ""
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:99
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:109
 #, fuzzy, kde-format
 #| msgid "Import from Scanner..."
 msgctxt "@action"
 msgid "Import from Scanner..."
 msgstr "Εισαγωγή από σαρωτή..."
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:122
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:132
 #, kde-format
 msgid ""
 "There is no scanner device available.\n"
 "Please check your configuration"
 msgstr ""
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:131
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:141
 #, kde-format
 msgid ""
 "Cannot open scanner device \"%1\".\n"
@@ -19285,7 +19285,7 @@ msgstr "Καμία επιλεγμένη εικόνα"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:91
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:90
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:50
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:51
 #, kde-format
 msgid "Images"
 msgstr "Εικόνες"
@@ -31055,52 +31055,52 @@ msgstr "Σάρωση για αφαιρεμένα λευκώματα..."
 msgid "Scanning images in individual albums..."
 msgstr "Σάρωση εικόνων για μεμονωμένα λευκώματα..."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:139
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:140
 #, kde-format
 msgid "Migrate ->"
 msgstr "Μετάβαση ->"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:143
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:144
 #, kde-format
 msgid "Progress Information"
 msgstr "Πληροφορίες προόδου"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:152
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:153
 #, kde-format
 msgid "Step Progress"
 msgstr "Βήμα προόδου"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:153
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:154
 #, kde-format
 msgid "Overall Progress"
 msgstr "Συνολική πρόοδος"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:216
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:225
 #, kde-format
 msgid "Database type or location must be different!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:223
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:232
 #, kde-format
 msgid "Internal server can only be used once!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:232
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:241
 #, kde-format
 msgid "Internal server is not used and is not active!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:277
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:286
 #, kde-format
 msgid "Database copied successfully."
 msgstr "Επιτυχής αντιγραφή της βάσης δεδομένων."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:282
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:291
 #, kde-format
 msgid "Database conversion canceled."
 msgstr "Η μετατροπή της βάσης δεδομένων ακυρώθηκε."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:291
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:300
 #, kde-format
 msgid "Step Progress (%1)"
 msgstr "Βήμα προόδου (%1)"
@@ -31723,106 +31723,106 @@ msgstr ""
 "δεδομένων.<br/> Παρακαλώ επιλέξτε μια διαφορετική τοποθεσία.</p><p><b>%1</"
 "b></p>"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:45
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:46
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:97
 #, kde-format
 msgid "Database Statistics"
 msgstr "Στατιστικά βάσης δεδομένων"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:46
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:47
 #, kde-format
 msgid "Format"
 msgstr "Τύπος αρχειοθέτησης"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:46
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:47
 #, kde-format
 msgid "Count"
 msgstr "Πλήθος"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:51
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:52
 #, kde-format
 msgid "Videos"
 msgstr "Βίντεο"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:52
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:53
 #, kde-format
 msgid "Audio"
 msgstr "Ήχος"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:59
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:60
 #, kde-format
 msgid "Total Items"
 msgstr "Σύνολο αντικειμένων"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:76
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:77
 #, kde-format
 msgid "Database backend"
 msgstr "Σύστημα υποστήριξης βάσης δεδομένων"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:80
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:81
 #, kde-format
 msgid "Database Path"
 msgstr "Διαδρομή βάσης δεδομένων"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:86
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:87
 #, kde-format
 msgid "Database internal server"
 msgstr "Εσωτερικός εξυπηρετητής βάσης δεδομένων"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:86
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:87
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: database server"
 msgid "Yes"
 msgstr "Ναι"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:87
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:88
 #, kde-format
 msgid "Database internal server Path"
 msgstr "Διαδρομή εσωτερικού εξυπηρετητή βάσης δεδομένων"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:91
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:92
 #, kde-format
 msgid "Host Name"
 msgstr "Όνομα υπολογιστή"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:92
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:93
 #, kde-format
 msgid "Host Port"
 msgstr "Θύρα υπολογιστή"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:93
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:94
 #, kde-format
 msgid "User account"
 msgstr "Λογαριασμός χρήστη"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:94
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:95
 #, kde-format
 msgid "Connect options"
 msgstr "Επιλογές σύνδεσης"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:95
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:96
 #, kde-format
 msgid "Core Db name"
 msgstr "Όνομα πυρήνα Db"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:96
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:97
 #, kde-format
 msgid "Thumbs Db name"
 msgstr "Όνομα Db επισκοπήσεων"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:97
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:98
 #, kde-format
 msgid "Face Db name"
 msgstr "Όνομα Db προσώπων"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:102
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:103
 #, fuzzy, kde-format
 #| msgid "Database Folder"
 msgid "Database locale"
 msgstr "Φάκελος βάσης δεδομένων"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:143
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:144
 #, fuzzy, kde-format
 #| msgid "total"
 msgctxt "@info: total number of items"

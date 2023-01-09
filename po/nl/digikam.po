@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-08 00:56+0000\n"
-"PO-Revision-Date: 2023-01-07 14:19+0100\n"
+"POT-Creation-Date: 2023-01-09 00:53+0000\n"
+"PO-Revision-Date: 2023-01-08 23:08+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -2873,7 +2873,7 @@ msgstr "Volledig scherm tonen"
 #: core/libs/album/manager/albummanager.cpp:157
 #: core/libs/album/treeview/albumselectiontreeview.cpp:269
 #: core/libs/album/widgets/albumselecttabs.cpp:191
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:64
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
 #, kde-format
 msgid "Albums"
@@ -2965,7 +2965,7 @@ msgstr "Geen album met tags"
 #: core/libs/album/engine/album.cpp:573
 #: core/libs/album/manager/albummanager.cpp:160
 #: core/libs/album/widgets/albumselecttabs.cpp:192
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:69
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:107
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
@@ -4926,7 +4926,7 @@ msgstr "OK"
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:260
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:676
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:261
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:140
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
 #: core/libs/dplugins/webservices/wstooldialog.cpp:110
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:199
 #, kde-format
@@ -11798,13 +11798,13 @@ msgstr ""
 "bibliotheek Sane.</p><p>Doelafbeelding kan daarna bewerkt worden met "
 "bijsnijden en draaien.</p>"
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:99
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:109
 #, kde-format
 msgctxt "@action"
 msgid "Import from Scanner..."
 msgstr "Vanaf scanner importeren..."
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:122
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:132
 #, kde-format
 msgid ""
 "There is no scanner device available.\n"
@@ -11813,7 +11813,7 @@ msgstr ""
 "Er is geen scannerapparaat beschikbaar.\n"
 "Controleer uw configuratie"
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:131
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:141
 #, kde-format
 msgid ""
 "Cannot open scanner device \"%1\".\n"
@@ -18089,7 +18089,7 @@ msgstr "&Kies de selectiemethode van afbeeldingen:"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:91
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:90
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:50
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:51
 #, kde-format
 msgid "Images"
 msgstr "Afbeeldingen"
@@ -23388,7 +23388,7 @@ msgstr "Relatieve symbolische koppelingen aanmaken"
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:121
 #, kde-format
 msgid "Include the sidecars of the items"
-msgstr ""
+msgstr "Neem de aanhangsels van de items mee"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:122
 #, kde-format
@@ -29353,52 +29353,52 @@ msgstr "Zoeken naar verwijderde albums..."
 msgid "Scanning images in individual albums..."
 msgstr "Zoeken naar afbeeldingen in individuele albums..."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:139
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:140
 #, kde-format
 msgid "Migrate ->"
 msgstr "Overplaatsen ->"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:143
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:144
 #, kde-format
 msgid "Progress Information"
 msgstr "Voortgangsinformatie"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:152
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:153
 #, kde-format
 msgid "Step Progress"
 msgstr "Voortgang per stap"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:153
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:154
 #, kde-format
 msgid "Overall Progress"
 msgstr "Totale voortgang"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:216
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:225
 #, kde-format
 msgid "Database type or location must be different!"
 msgstr "Type database of locatie moeten verschillen!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:223
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:232
 #, kde-format
 msgid "Internal server can only be used once!"
 msgstr "Interne server kan maar één keer worden gebruikt!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:232
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:241
 #, kde-format
 msgid "Internal server is not used and is not active!"
 msgstr "Interne server is niet in gebruik en is niet actief!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:277
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:286
 #, kde-format
 msgid "Database copied successfully."
 msgstr "Database met succes gekopieerd."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:282
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:291
 #, kde-format
 msgid "Database conversion canceled."
 msgstr "Databaseconversie geannuleerd."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:291
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:300
 #, kde-format
 msgid "Step Progress (%1)"
 msgstr "Voortgang per stap (%1)"
@@ -29972,104 +29972,104 @@ msgstr ""
 "<p>U hebt geen schrijftoegang tot de map voor uw databasebestand.<br/"
 ">Selecteer een andere locatie.</p><p><b>%1</b></p>"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:45
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:46
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:97
 #, kde-format
 msgid "Database Statistics"
 msgstr "Database statistieken"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:46
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:47
 #, kde-format
 msgid "Format"
 msgstr "Formaat"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:46
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:47
 #, kde-format
 msgid "Count"
 msgstr "Aantal"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:51
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:52
 #, kde-format
 msgid "Videos"
 msgstr "Video's"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:52
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:53
 #, kde-format
 msgid "Audio"
 msgstr "Geluid"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:59
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:60
 #, kde-format
 msgid "Total Items"
 msgstr "Totaal aantal"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:76
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:77
 #, kde-format
 msgid "Database backend"
 msgstr "Database-backend"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:80
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:81
 #, kde-format
 msgid "Database Path"
 msgstr "Pad naar database"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:86
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:87
 #, kde-format
 msgid "Database internal server"
 msgstr "Interne databaseserver"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:86
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:87
 #, kde-format
 msgctxt "@info: database server"
 msgid "Yes"
 msgstr "Ja"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:87
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:88
 #, kde-format
 msgid "Database internal server Path"
 msgstr "Pad naar interne databaseserver"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:91
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:92
 #, kde-format
 msgid "Host Name"
 msgstr "Hostnaam"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:92
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:93
 #, kde-format
 msgid "Host Port"
 msgstr "Host-poort"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:93
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:94
 #, kde-format
 msgid "User account"
 msgstr "Gebruikersaccount"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:94
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:95
 #, kde-format
 msgid "Connect options"
 msgstr "Verbindingsopties"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:95
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:96
 #, kde-format
 msgid "Core Db name"
 msgstr "Naam van kerndatabase"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:96
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:97
 #, kde-format
 msgid "Thumbs Db name"
 msgstr "Naam van miniaturendatabase"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:97
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:98
 #, kde-format
 msgid "Face Db name"
 msgstr "Naam van gezichtendatabase"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:102
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:103
 #, kde-format
 msgid "Database locale"
 msgstr "Taalcode voor database"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:143
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:144
 #, kde-format
 msgctxt "@info: total number of items"
 msgid "total"
@@ -34915,9 +34915,7 @@ msgstr "Gebruiker6"
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:67
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Help"
+#, kde-format
 msgctxt "@action: button"
 msgid "Help"
 msgstr "Help"
@@ -34931,9 +34929,7 @@ msgstr "Online handbook..."
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:70
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "About..."
+#, kde-format
 msgid "About..."
 msgstr "Info over..."
 
@@ -54033,17 +54029,14 @@ msgid "Set this option to show tracks on the Map"
 msgstr "Stel deze optie in om sporen op de kaart tonen"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:167
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox similarity album tag relation"
-#| msgid "Only selected tab"
+#, kde-format
 msgid "Only use selected images"
-msgstr "Alleen geselecteerd tabblad"
+msgstr "Alleen geselecteerd geselecteerde afbeeldingen gebruiken"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:168
-#, fuzzy, kde-format
-#| msgid "Set this option to display the image type."
+#, kde-format
 msgid "Set this option to correlate selected images only"
-msgstr "Activeer deze optie om het type van de afbeelding te tonen."
+msgstr "Activeer deze optie om alleen geselecteerde afbeeldingen te correleren"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:178
 #, kde-format
@@ -62757,7 +62750,7 @@ msgstr "Draaiing"
 #, kde-format
 msgctxt "@label"
 msgid "Reading and Writing to Sidecars"
-msgstr "Lezen en schrijven naar Sidecars"
+msgstr "Lezen en schrijven naar aanhangsels"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:36
 #, kde-format
@@ -62846,7 +62839,7 @@ msgid ""
 "on these sidecar files.\n"
 "Multiple extensions must be separated by a semicolon or a space."
 msgstr ""
-"Bestandstypen toevoegen om herkend te worden als sidecars.\n"
+"Bestandstypen toevoegen om herkend te worden als aanhangsels.\n"
 "digiKam schrijft (optioneel) metagegevens naar *.xmp sidecar-bestanden.\n"
 "Andere programma's kunnen andere typen gebruiken, die onderstaand\n"
 "gespecificeerd kunnen worden. digiKam zal deze niet tonen noch er in lezen\n"
@@ -62868,19 +62861,19 @@ msgid ""
 "the *.xyz and *.abc extensions. The internally\n"
 "used sidecars type *.xmp is always included."
 msgstr ""
-"Hier kunt u extra extensies van sidecars-bestanden\n"
+"Hier kunt u extra extensies van aanhanselbestanden\n"
 "toevoegen om bewerkt te worden naast reguliere items.\n"
 "Deze bestanden zullen niet zichtbaar zijn, maar beschouwd\n"
 "worden als een extensie van het hoofdbestand.\n"
 "Schrijf \"xyz abc\" om bestanden te ondersteunen met de\n"
-"extensies *.xyz en *.abc. Het intern gebruikte sidecarstype\n"
+"extensies *.xyz en *.abc. Het intern gebruikte aanhangseltype\n"
 "*.xmp wordt altijd meegenomen."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:105
 #, kde-format
 msgctxt "@info"
 msgid "Enter additional sidecars file extensions."
-msgstr "Extra extensies van sidecar-bestanden invoeren."
+msgstr "Extra extensies van aanhangselbestanden invoeren."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:108
 #, kde-format
@@ -62892,7 +62885,7 @@ msgstr "Extra extensies van sidecar-bestanden"
 #, kde-format
 msgctxt "@title:tab"
 msgid "Sidecars"
-msgstr "Sidecars"
+msgstr "Aanhangsels"
 
 #: core/utilities/setup/misc/setupmisc.cpp:39
 #, kde-format

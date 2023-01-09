@@ -32,21 +32,21 @@
 # Andrej Mernik <andrejm@ubuntu.si>, 2012, 2014.
 # Jure Repinc <jlp@holodeck1.com>, 2009, 2012.
 # Andrej Mernik <andrejm@ubuntu.si>, 2013, 2014, 2015, 2016.
-# Matjaž Jeran <matjaz.jeran@amis.net>, 2020, 2021, 2022.
+# Matjaž Jeran <matjaz.jeran@amis.net>, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-08 00:56+0000\n"
-"PO-Revision-Date: 2022-12-26 07:43+0100\n"
+"POT-Creation-Date: 2023-01-09 00:53+0000\n"
+"PO-Revision-Date: 2023-01-08 09:57+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "X-Generator: Poedit 3.2.2\n"
 
@@ -2878,7 +2878,7 @@ msgstr "Prikaži celozaslonsko"
 #: core/libs/album/manager/albummanager.cpp:157
 #: core/libs/album/treeview/albumselectiontreeview.cpp:269
 #: core/libs/album/widgets/albumselecttabs.cpp:191
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:64
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
 #, kde-format
 msgid "Albums"
@@ -2968,7 +2968,7 @@ msgstr "Album brez značk"
 #: core/libs/album/engine/album.cpp:573
 #: core/libs/album/manager/albummanager.cpp:160
 #: core/libs/album/widgets/albumselecttabs.cpp:192
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:69
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:107
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
@@ -3237,31 +3237,32 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 izbranih predmetov"
 
 #: core/app/views/stack/welcomepageview.cpp:140
-#, fuzzy, kde-format
-#| msgid "More than 1300 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 200 user-reports closed on bugzilla."
-msgstr "Več kot 1300 zaprtih poročil o napakah na bugzilli."
+msgstr "Več kot 200 zaprtih poročil uporabnikov na bugzilli."
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
 msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
-msgstr ""
+msgstr "Prenos kode na ogrodje Qt6 (koda je še vedno združljiva z api Qt5)."
 
 #: core/app/views/stack/welcomepageview.cpp:142
 #, kde-format
 msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
-msgstr ""
+msgstr "Povsod dodane nastavitve za JPEG-XL, WEBP in AVIF."
 
 #: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
 msgid ""
 "Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera."
 msgstr ""
+"Dodana konverzija brez izgub v JPEG-XL, WEBP in AVIF ob prenosu iz kamere."
 
 #: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
 msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr ""
+"Dodani prevajalniki za JPEG-XL, WEBP in AVIF v upravljalniku paketnih vrst."
 
 #: core/app/views/stack/welcomepageview.cpp:145
 #, kde-format
@@ -3269,75 +3270,75 @@ msgid ""
 "Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store "
 "versionned images in editor."
 msgstr ""
+"Podpora za JPEG-XL, WEBP in AVIF kot format slik brez izgub za za "
+"shranjevanje slik z različicami v urejevalniku."
 
 #: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
 msgid "Add hamburger menu to tool-bar if main menu is hidden."
-msgstr ""
+msgstr "Dodaj hamburger meni v orodno vrstico, če je glavni meni skrit."
 
 #: core/app/views/stack/welcomepageview.cpp:147
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid "Turn on this option to write metadata into DNG files."
+#, kde-format
 msgid "Add new option to write metadata to files with ExifTool backend."
-msgstr "Vklopite to možnost, da zapišete metapodatke v datoteke DNG."
+msgstr ""
+"Dodaj novo možnost zapisovanja metapodatkov v datoteke s programom ExifTool "
+"v ozadju."
 
 #: core/app/views/stack/welcomepageview.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "Turn on this option to write metadata into RAW files. This feature is "
-#| "delegate to ExifTool backend and is disabled by default."
+#, kde-format
 msgid ""
 "Optional write metadata operations to DNG and RAW files are now always "
 "delegated to ExifTool Backend."
 msgstr ""
-"Vklopite možnost zapisovanja metapodatkov v surove datoteke RAW. Ta zmožnost "
-"dodeli nalogo pisanja programu ExifTool v ozadju in je privzeto onemogočena."
+"Neobvezno zapisovanje metapodatkov v surove datoteke in datoteke DNG je "
+"vedno dodeljeno programu ExifTool v ozadju."
 
 #: core/app/views/stack/welcomepageview.cpp:149
 #, kde-format
 msgid "Optimize layout of Metadata Edit plugin for a better usability."
 msgstr ""
+"Optimiziraj videz vtičnika urejevalnika metapodatkov za boljšo uporabnost."
 
 #: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
 msgid ""
 "Add increment file counter to sequence numbering with option [c] or [c,step]."
 msgstr ""
+"Dodaj števec datotek za zaporedje štetja z možnostjo  [c] ali [c,step]."
 
 #: core/app/views/stack/welcomepageview.cpp:151
 #, kde-format
 msgid "Add random text sequence numbering with option [r]."
-msgstr ""
+msgstr "Dodaj slučajno zaporedje besedila z možnostjo [r]."
 
 #: core/app/views/stack/welcomepageview.cpp:152
 #, kde-format
 msgid ""
 "Add configurable first character for the unique modifier with {unique:n,c}."
-msgstr ""
+msgstr "Dodaj nastavljivi prvi znak za enolično spremenljivko z {unique:n,c}."
 
 #: core/app/views/stack/welcomepageview.cpp:153
-#, fuzzy, kde-format
-#| msgid "Return items by number of face regions"
+#, kde-format
 msgid "Add search for items by number of face regions."
-msgstr "Vrni predmete po število regij obrazov"
+msgstr "Dodaj iskanje za postavk po številu področij z obrazi."
 
 #: core/app/views/stack/welcomepageview.cpp:154
-#, fuzzy, kde-format
-#| msgid "Return items without face regions"
+#, kde-format
 msgid "Add search for items without face regions."
-msgstr "Vrni postavke brez regij obrazov"
+msgstr "Dodaj iskanje postavk brez področij obrazov."
 
 #: core/app/views/stack/welcomepageview.cpp:155
 #, kde-format
 msgid "Add support for cross-platform network paths."
-msgstr ""
+msgstr "Dodaj podporo za mrežne poti prečnih platform."
 
 #: core/app/views/stack/welcomepageview.cpp:156
 #, kde-format
 msgid "Add support for SQLite WAL (Write-Ahead-Logging) mode."
 msgstr ""
+"Dodaj podporo za način vnaprejšnjega beleženja SQLite WAL (Write-Ahead-"
+"Logging)."
 
 #: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format
@@ -3345,22 +3346,30 @@ msgid ""
 "Add spell-checking support in caption text widget using KF5::Sonnet "
 "component."
 msgstr ""
+"Dodaj podporo črkovanja v besedilih napisov z uporabo gradnika v komponenti "
+"KF5::Sonnet."
 
 #: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
 msgid "Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto."
 msgstr ""
+"Dodaj konfiguracijsko ploščo črkovalnika v nastavitvah/ostalo v digiKam in "
+"Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:159
 #, kde-format
 msgid ""
 "Add online translations support to Alternative Language text editor widget."
 msgstr ""
+"Dodaj sprotno podporo za prevajanje jezikov v gradnik urejevalnika "
+"alternativnih besedil."
 
 #: core/app/views/stack/welcomepageview.cpp:160
 #, kde-format
 msgid "Add Localize config panel in Setup/Misc for digiKam and Showfoto."
 msgstr ""
+"Dodaj konfiguracijsko ploščo za lokalizacijo v nastavitve/ostalo za digiKam "
+"in Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
@@ -3368,26 +3377,24 @@ msgid ""
 "Add settings to list prefered alternative/translated languages in text edit "
 "widget."
 msgstr ""
+"Dodaj nastavitve v seznam priljubljenih alternativnih/prevedenih jezikov v "
+"gradnik urejevalnika besedil."
 
 #: core/app/views/stack/welcomepageview.cpp:162
 #, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Sorting settings everywhere."
 msgstr ""
+"Povsod dovoli uporabo globalnih ali po meri razvrstitev slik po kakovosti."
 
 #: core/app/views/stack/welcomepageview.cpp:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "Integration of Google Summer of Code project 2021 <a href=\"https://"
-#| "community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE\">Image Quality "
-#| "Sorter</a>."
+#, kde-format
 msgid ""
 "Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
 "QuocHungTran\">to perform OCR over scanned text</a>."
 msgstr ""
-"Integracija Google Summer of Code project 2021 <a href=\"https://community."
-"kde.org/GSoC/2021/StatusReports/PhuocKhanhLE\"> Razvrščevalnik kakovosti "
-"slik</a>."
+"Dodaj novo orodje <a href=\"https://community.kde.org/GSoC/2022/"
+"StatusReports/QuocHungTran\">za izvajanje OCR na skeniranem besedilu</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:164
 #, kde-format
@@ -3395,26 +3402,29 @@ msgid ""
 "Add <a href=\"https://community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe"
 "\">Aesthetic Detection to classify images using deep learning model</a>."
 msgstr ""
+"Dodaj <a href=\"https://community.kde.org/GSoc/2022/StatusReports/"
+"PhuocKhanhLe\">Estetsko detekcijo za razvrščanje slik z uporabo modela "
+"globokega učenja</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:165
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to assign pick label metadata by image quality"
+#, kde-format
 msgid ""
 "Add new tool to assign pick label automatically by parsing image quality."
-msgstr "Orodje za dodeljevanje oznak glede na kakovost slik"
+msgstr ""
+"Dodaj novo orodje za samodejno dodeljevanje oznak s pregledovanjem kakovosti "
+"slik."
 
 #: core/app/views/stack/welcomepageview.cpp:166
 #, kde-format
 msgid "Add new tool to assign rating, pick, and color labels in batch."
 msgstr ""
+"Dodaj novo orodje za dodeljevanje ocen, pobiranje in dodeljevanja barvnih "
+"oznak v paketu."
 
 #: core/app/views/stack/welcomepageview.cpp:167
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to assign labels metadata to images"
+#, kde-format
 msgid "Add new tool to assign titles and captions in batch."
-msgstr "Orodje za dodeljevanje oznak iz metapodatkov v slike"
+msgstr "Dodaj novo orodje za dodeljevanje naslovov in napisov v paketu."
 
 #: core/app/views/stack/welcomepageview.cpp:168
 #, kde-format
@@ -3422,11 +3432,14 @@ msgid ""
 "<a href=\" https://docs.digikam.org/en/index.html\">Rewrite handbook</a> "
 "from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
+"<a href=\" https://docs.digikam.org/en/index.html\">Ponovno napiši priročnik "
+"</a> iz DocBook v ogrodje Sphinx/ReStructuredText."
 
 #: core/app/views/stack/welcomepageview.cpp:169
 #, kde-format
 msgid "Update internal RAW engine to last stable Libraw 0.21.1."
 msgstr ""
+"Posodobi notranjo kodo za surove slike v zadnjo stabilno Libraw 0.21.1."
 
 #: core/app/views/stack/welcomepageview.cpp:170
 #, kde-format
@@ -3437,6 +3450,11 @@ msgid ""
 "R3, R7 and R10 Fujifilm X-H2S, X-T30 II OM System OM-1 Leica M11 Sony A7-IV "
 "(ILCE-7M4) DJI Mavic 3"
 msgstr ""
+"Nove možnosti surovih formatov: Phase One/Leaf IIQ-S v2 podpora Canon CR3 "
+"zvitkov filmov/RawBurst Canon CRM datotek videov Tiled bitno-pakirane (in 16-"
+"bit nepakirane) DNG (nestandardne) datoteke Deflate-compressed celoštevilske "
+"DNG dovoljene so Canon EOS R3, R7 in R10 Fujifilm X-H2S, X-T30 II OM System "
+"OM-1 Leica M11 Sony A7-IV (ILCE-7M4) DJI Mavic 3"
 
 #: core/app/views/stack/welcomepageview.cpp:185
 #, kde-format
@@ -4908,7 +4926,7 @@ msgstr "V redu"
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:260
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:676
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:261
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:140
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
 #: core/libs/dplugins/webservices/wstooldialog.cpp:110
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:199
 #, kde-format
@@ -11662,13 +11680,13 @@ msgstr ""
 "branje.</p><p>Ciljno sliko je mogoče kasneje obdelovati kot npr. obrezovati "
 "in zasukati.</p>"
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:99
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:109
 #, kde-format
 msgctxt "@action"
 msgid "Import from Scanner..."
 msgstr "Uvozi iz optičnega bralnika..."
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:122
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:132
 #, kde-format
 msgid ""
 "There is no scanner device available.\n"
@@ -11677,7 +11695,7 @@ msgstr ""
 "Optičnega čitalnika ni na voljo.\n"
 "Preverite vašo sestavo"
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:131
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:141
 #, kde-format
 msgid ""
 "Cannot open scanner device \"%1\".\n"
@@ -17900,7 +17918,7 @@ msgstr "Izberite način izbire slike:"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:91
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:90
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:50
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:51
 #, kde-format
 msgid "Images"
 msgstr "Slike"
@@ -23143,7 +23161,7 @@ msgstr "Ustvari relativne simbolične povezave"
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:121
 #, kde-format
 msgid "Include the sidecars of the items"
-msgstr ""
+msgstr "Vključi priklopne datoteke postavkam"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:122
 #, kde-format
@@ -29049,52 +29067,52 @@ msgstr "Preiskovanje za odstranjenimi albumi ..."
 msgid "Scanning images in individual albums..."
 msgstr "Preiskovanje slik v individualnih albumih ..."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:139
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:140
 #, kde-format
 msgid "Migrate ->"
 msgstr "Preseli ->"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:143
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:144
 #, kde-format
 msgid "Progress Information"
 msgstr "Podrobnosti o napredku"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:152
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:153
 #, kde-format
 msgid "Step Progress"
 msgstr "Korak napredka"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:153
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:154
 #, kde-format
 msgid "Overall Progress"
 msgstr "Skupni napredek"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:216
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:225
 #, kde-format
 msgid "Database type or location must be different!"
 msgstr "Vrsta ali lokacija baze podatkov morata biti različni!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:223
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:232
 #, kde-format
 msgid "Internal server can only be used once!"
 msgstr "Notranji strežnik je mogoče uporabiti samo enkrat!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:232
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:241
 #, kde-format
 msgid "Internal server is not used and is not active!"
 msgstr "Notranji strežnik se ne uporablja in ni aktiven!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:277
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:286
 #, kde-format
 msgid "Database copied successfully."
 msgstr "Podatkovna zbirka je bila uspešno kopirana."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:282
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:291
 #, kde-format
 msgid "Database conversion canceled."
 msgstr "Pretvorba podatkovne zbirke je bila preklicana."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:291
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:300
 #, kde-format
 msgid "Step Progress (%1)"
 msgstr "Korak napredka (%1)"
@@ -29663,104 +29681,104 @@ msgstr ""
 "<p>Nimate dovoljenj za pisanje v mapo, v kateri bo datoteka podatkovne "
 "zbirke.<br/>Izberite drugo mesto.</p><p><b>%1</b></p>"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:45
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:46
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:97
 #, kde-format
 msgid "Database Statistics"
 msgstr "Statistika podatkovne zbirke"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:46
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:47
 #, kde-format
 msgid "Format"
 msgstr "Vrsta"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:46
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:47
 #, kde-format
 msgid "Count"
 msgstr "Število"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:51
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:52
 #, kde-format
 msgid "Videos"
 msgstr "Videi"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:52
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:53
 #, kde-format
 msgid "Audio"
 msgstr "Zvok"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:59
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:60
 #, kde-format
 msgid "Total Items"
 msgstr "Skupnih predmetov"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:76
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:77
 #, kde-format
 msgid "Database backend"
 msgstr "Zaledje podatkovne zbirke"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:80
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:81
 #, kde-format
 msgid "Database Path"
 msgstr "Pot podatkovne zbirke"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:86
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:87
 #, kde-format
 msgid "Database internal server"
 msgstr "Notranji strežnik podatkovne zbirke"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:86
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:87
 #, kde-format
 msgctxt "@info: database server"
 msgid "Yes"
 msgstr "Da"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:87
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:88
 #, kde-format
 msgid "Database internal server Path"
 msgstr "Pot notranjega strežnika podatkovne zbirke"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:91
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:92
 #, kde-format
 msgid "Host Name"
 msgstr "Ime gostitelja"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:92
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:93
 #, kde-format
 msgid "Host Port"
 msgstr "Vrata gostitelja"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:93
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:94
 #, kde-format
 msgid "User account"
 msgstr "Uporabniški račun"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:94
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:95
 #, kde-format
 msgid "Connect options"
 msgstr "Možnosti povezave"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:95
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:96
 #, kde-format
 msgid "Core Db name"
 msgstr "Ime jedrne PZ"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:96
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:97
 #, kde-format
 msgid "Thumbs Db name"
 msgstr "Ime PZ sličic"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:97
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:98
 #, kde-format
 msgid "Face Db name"
 msgstr "Ime PZ obrazov"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:102
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:103
 #, kde-format
 msgid "Database locale"
 msgstr "Lokacija podatkovne baze"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:143
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:144
 #, kde-format
 msgctxt "@info: total number of items"
 msgid "total"
@@ -34583,9 +34601,7 @@ msgstr "Uporabnik6"
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:67
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Help"
+#, kde-format
 msgctxt "@action: button"
 msgid "Help"
 msgstr "Pomoč"
@@ -34599,9 +34615,7 @@ msgstr "Sprotni priročnik..."
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:70
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "About..."
+#, kde-format
 msgid "About..."
 msgstr "O programu..."
 
@@ -53686,17 +53700,14 @@ msgid "Set this option to show tracks on the Map"
 msgstr "Nastavite to možnost, da prikažete sledi na zemljevidu"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:167
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox similarity album tag relation"
-#| msgid "Only selected tab"
+#, kde-format
 msgid "Only use selected images"
-msgstr "Samo izbrani zavihek"
+msgstr "Uporabi samo izbrane slike"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:168
-#, fuzzy, kde-format
-#| msgid "Set this option to display the image type."
+#, kde-format
 msgid "Set this option to correlate selected images only"
-msgstr "Nastavite to možnost, da prikažete vrsto slike."
+msgstr "Nastavite to možnost, da korelirate samo izbrane slike"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:178
 #, kde-format

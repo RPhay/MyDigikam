@@ -1,10 +1,10 @@
 # Translation of digikam.po to Catalan (Valencian)
-# Copyright (C) 2004-2022 This_file_is_part_of_KDE
+# Copyright (C) 2004-2023 This_file_is_part_of_KDE
 # This file is distributed under the same license as the digikam package.
 #
 # Albert Astals Cid <aacid@kde.org>, 2004, 2005, 2006.
 # Joan Sanz i Rabadan <joansanzrab@gmail.com>, 2005, 2006.
-# Josep M. Ferrer <txemaq@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# Josep M. Ferrer <txemaq@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Joan Maspons <joanmaspons@gmail.com>, 2009, 2010.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
 # Orestes Mas <orestes@tsc.upc.edu>, 2014.
@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-08 00:56+0000\n"
-"PO-Revision-Date: 2022-12-25 09:34+0100\n"
+"POT-Creation-Date: 2023-01-09 00:53+0000\n"
+"PO-Revision-Date: 2023-01-08 11:49+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -2825,7 +2825,7 @@ msgstr "Mostra a pantalla completa"
 #: core/libs/album/manager/albummanager.cpp:157
 #: core/libs/album/treeview/albumselectiontreeview.cpp:269
 #: core/libs/album/widgets/albumselecttabs.cpp:191
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:64
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
 #, kde-format
 msgid "Albums"
@@ -2916,7 +2916,7 @@ msgstr "Sense etiquetes d'àlbum"
 #: core/libs/album/engine/album.cpp:573
 #: core/libs/album/manager/albummanager.cpp:160
 #: core/libs/album/widgets/albumselecttabs.cpp:192
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:69
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/tags/widgets/tagfolderview.cpp:107
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:599
 #: core/utilities/searchwindow/searchfields_createfield.cpp:74
@@ -3182,31 +3182,36 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 elements seleccionats"
 
 #: core/app/views/stack/welcomepageview.cpp:140
-#, fuzzy, kde-format
-#| msgid "More than 1300 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 200 user-reports closed on bugzilla."
-msgstr "Més de 1.300 informes d'usuari tancats a Bugzilla."
+msgstr "Més de 200 informes d'usuari tancats a Bugzilla."
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
 msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
 msgstr ""
+"Adaptar el codi a l'entorn de treball de les Qt6 (codi encara compatible amb "
+"la API de les Qt5)."
 
 #: core/app/views/stack/welcomepageview.cpp:142
 #, kde-format
 msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
 msgstr ""
+"Afegir la configuració d'exportació a JPEG-XL, WEBP i AVIF per tot arreu."
 
 #: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
 msgid ""
 "Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera."
 msgstr ""
+"Afegir la conversió a JPEG-XL, WEBP i AVIF sense pèrdua en importar des de "
+"la càmera."
 
 #: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
 msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr ""
+"Afegir el convertidors JPEG-XL, WEBP i AVIF al gestor de la cua per lots."
 
 #: core/app/views/stack/welcomepageview.cpp:145
 #, kde-format
@@ -3214,76 +3219,80 @@ msgid ""
 "Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store "
 "versionned images in editor."
 msgstr ""
+"Implementar els JPEG-XL, HEIF, WEBP i AVIF com a format d'imatge sense "
+"pèrdua per a emmagatzemar imatges versionades a l'editor."
 
 #: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
 msgid "Add hamburger menu to tool-bar if main menu is hidden."
 msgstr ""
+"Afegir el menú d'hamburguesa a la barra d'eines si el menú principal està "
+"ocult."
 
 #: core/app/views/stack/welcomepageview.cpp:147
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid "Turn on this option to write metadata into DNG files."
+#, kde-format
 msgid "Add new option to write metadata to files with ExifTool backend."
-msgstr "Activeu esta opció per a escriure les metadades en els fitxers DNG."
+msgstr ""
+"Afegir una opció nova per a escriure les metadades en els fitxers amb el "
+"dorsal ExifTool."
 
 #: core/app/views/stack/welcomepageview.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "Turn on this option to write metadata into RAW files. This feature is "
-#| "delegate to ExifTool backend and is disabled by default."
+#, kde-format
 msgid ""
 "Optional write metadata operations to DNG and RAW files are now always "
 "delegated to ExifTool Backend."
 msgstr ""
-"Activeu esta opció per a escriure les metadades en els fitxers RAW. Esta "
-"característica està delegada en el dorsal d'ExifTool i està desactivada de "
-"manera predeterminada."
+"L'escriptura opcional d'operacions de metadades a fitxers DNG i RAW ara "
+"sempre està delegada en el dorsal d'ExifTool."
 
 #: core/app/views/stack/welcomepageview.cpp:149
 #, kde-format
 msgid "Optimize layout of Metadata Edit plugin for a better usability."
 msgstr ""
+"Optimitzar la disposició del connector d'edició de metadades per a millor la "
+"usabilitat."
 
 #: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
 msgid ""
 "Add increment file counter to sequence numbering with option [c] or [c,step]."
 msgstr ""
+"Afegir un comptador d'increment de fitxer a la numeració de seqüència amb "
+"l'opció [c] o [c,pas]."
 
 #: core/app/views/stack/welcomepageview.cpp:151
 #, kde-format
 msgid "Add random text sequence numbering with option [r]."
-msgstr ""
+msgstr "Afegir un text aleatori de numeració de seqüència amb l'opció [r]."
 
 #: core/app/views/stack/welcomepageview.cpp:152
 #, kde-format
 msgid ""
 "Add configurable first character for the unique modifier with {unique:n,c}."
 msgstr ""
+"Afegir un primer caràcter configurable per al modificador únic amb {unique:n,"
+"c}."
 
 #: core/app/views/stack/welcomepageview.cpp:153
-#, fuzzy, kde-format
-#| msgid "Return items by number of face regions"
+#, kde-format
 msgid "Add search for items by number of face regions."
-msgstr "Retorna els elements per nombre de regions de cares"
+msgstr "Afegir una busca d'elements per nombre de regions de cares."
 
 #: core/app/views/stack/welcomepageview.cpp:154
-#, fuzzy, kde-format
-#| msgid "Return items without face regions"
+#, kde-format
 msgid "Add search for items without face regions."
-msgstr "Retorna els elements sense regions de cares"
+msgstr "Afegir una busca d'elements sense regions de cares."
 
 #: core/app/views/stack/welcomepageview.cpp:155
 #, kde-format
 msgid "Add support for cross-platform network paths."
-msgstr ""
+msgstr "Afegir la implementació per als camins de xarxa multiplataforma."
 
 #: core/app/views/stack/welcomepageview.cpp:156
 #, kde-format
 msgid "Add support for SQLite WAL (Write-Ahead-Logging) mode."
 msgstr ""
+"Afegir la implementació per al mode WAL (Write-Ahead-Logging) de SQLite."
 
 #: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format
@@ -3291,22 +3300,30 @@ msgid ""
 "Add spell-checking support in caption text widget using KF5::Sonnet "
 "component."
 msgstr ""
+"Afegir la implementació de verificació ortogràfica en el giny de text de "
+"llegenda utilitzant el component KF5::Sonnet."
 
 #: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
 msgid "Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto."
 msgstr ""
+"Afegir un quadro de configuració de la verificació ortogràfica a "
+"Configuració/Miscel·lània en digiKam i Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:159
 #, kde-format
 msgid ""
 "Add online translations support to Alternative Language text editor widget."
 msgstr ""
+"Afegir la implementació per a les traduccions en línia en el giny de "
+"l'editor de text d'Idioma alternatiu."
 
 #: core/app/views/stack/welcomepageview.cpp:160
 #, kde-format
 msgid "Add Localize config panel in Setup/Misc for digiKam and Showfoto."
 msgstr ""
+"Afegir un quadro de configuració de traducció a Configuració/Miscel·lània en "
+"digiKam i Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
@@ -3314,26 +3331,25 @@ msgid ""
 "Add settings to list prefered alternative/translated languages in text edit "
 "widget."
 msgstr ""
+"Afegir paràmetres per a llistar els idiomes alternatius/traduïts preferits "
+"en el giny d'edició de text."
 
 #: core/app/views/stack/welcomepageview.cpp:162
 #, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Sorting settings everywhere."
 msgstr ""
+"Permetre utilitzar els paràmetres d'ordenació segons qualitat d'imatge "
+"global o personalitzada per tot arreu."
 
 #: core/app/views/stack/welcomepageview.cpp:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "Integration of Google Summer of Code project 2021 <a href=\"https://"
-#| "community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE\">Image Quality "
-#| "Sorter</a>."
+#, kde-format
 msgid ""
 "Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
 "QuocHungTran\">to perform OCR over scanned text</a>."
 msgstr ""
-"Integració del projecte Google Summer of Code 2021, <a href=\"https://"
-"community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE\">ordenació per la "
-"qualitat de la imatge</a>."
+"Afegir una eina nova <a href=\"https://community.kde.org/GSoC/2022/"
+"StatusReports/QuocHungTran\">per a portar a treme OCR de text escanejat</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:164
 #, kde-format
@@ -3341,28 +3357,29 @@ msgid ""
 "Add <a href=\"https://community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe"
 "\">Aesthetic Detection to classify images using deep learning model</a>."
 msgstr ""
+"Afegir la <a href=\"https://community.kde.org/GSoc/2022/StatusReports/"
+"PhuocKhanhLe\">detecció estètica per a classificar imatges utilitzant un "
+"model d'aprenentatge profund</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:165
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to assign pick label metadata by image quality"
+#, kde-format
 msgid ""
 "Add new tool to assign pick label automatically by parsing image quality."
 msgstr ""
-"Una eina per a assignar les metadades de rètols de selecció segons la "
-"qualitat de la imatge"
+"Afegir una eina nova per a assignar automàticament rètols de selecció "
+"analitzant la qualitat de les imatges."
 
 #: core/app/views/stack/welcomepageview.cpp:166
 #, kde-format
 msgid "Add new tool to assign rating, pick, and color labels in batch."
 msgstr ""
+"Afegir una eina nova per a assignar valoracions, i etiquetes de selecció i "
+"color per lots."
 
 #: core/app/views/stack/welcomepageview.cpp:167
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to assign labels metadata to images"
+#, kde-format
 msgid "Add new tool to assign titles and captions in batch."
-msgstr "Una eina per a assignar les metadades de rètols a les imatges"
+msgstr "Una eina nova per a assignar títols i llegendes per lots."
 
 #: core/app/views/stack/welcomepageview.cpp:168
 #, kde-format
@@ -3370,11 +3387,13 @@ msgid ""
 "<a href=\" https://docs.digikam.org/en/index.html\">Rewrite handbook</a> "
 "from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
+"<a href=\" https://docs.digikam.org/en/index.html\">Reescriptura del manual</"
+"a> des de DocBook a l'entorn de treball Sphinx/ReStructuredText."
 
 #: core/app/views/stack/welcomepageview.cpp:169
 #, kde-format
 msgid "Update internal RAW engine to last stable Libraw 0.21.1."
-msgstr ""
+msgstr "Actualitzar el motor RAW intern a l'última Libraw estable 0.21.1."
 
 #: core/app/views/stack/welcomepageview.cpp:170
 #, kde-format
@@ -3385,6 +3404,11 @@ msgid ""
 "R3, R7 and R10 Fujifilm X-H2S, X-T30 II OM System OM-1 Leica M11 Sony A7-IV "
 "(ILCE-7M4) DJI Mavic 3"
 msgstr ""
+"Noves característiques RAW: Implementació de fitxers Phase One/Leaf IIQ-S v2 "
+"Canon CR3 filmrolls/RawBurst Canon CRM (pel·lícula) en format de mosaic de "
+"bits empaquetats (i de 16 bits no empaquetats) DNG (no estàndard) Es "
+"permeten fitxers DNG comprimits «deflate» Canon EOS R3, R7 i R10 Fujifilm X-"
+"H2S, X-T30 II OM System OM-1 Leica M11 Sony A7-IV (ILCE-7M4) DJI Mavic 3"
 
 #: core/app/views/stack/welcomepageview.cpp:185
 #, kde-format
@@ -4857,7 +4881,7 @@ msgstr "D'acord"
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:260
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:676
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:261
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:140
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
 #: core/libs/dplugins/webservices/wstooldialog.cpp:110
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:199
 #, kde-format
@@ -11728,13 +11752,13 @@ msgstr ""
 "biblioteca Sane.</p><p>La imatge de destinació es pot processar amb "
 "l'escapçament i el gir.</p>"
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:99
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:109
 #, kde-format
 msgctxt "@action"
 msgid "Import from Scanner..."
 msgstr "Importa des de l'escàner..."
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:122
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:132
 #, kde-format
 msgid ""
 "There is no scanner device available.\n"
@@ -11743,7 +11767,7 @@ msgstr ""
 "No hi ha disponible cap dispositiu d'escàner.\n"
 "Comproveu la configuració"
 
-#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:131
+#: core/dplugins/generic/import/dscanner/dscannerplugin.cpp:141
 #, kde-format
 msgid ""
 "Cannot open scanner device \"%1\".\n"
@@ -18019,7 +18043,7 @@ msgstr "Es&colliu el mètode de selecció de la imatge:"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:91
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideintropage.cpp:90
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:50
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:51
 #, kde-format
 msgid "Images"
 msgstr "Imatges"
@@ -23345,7 +23369,7 @@ msgstr "Crea enllaços simbòlics relatius"
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:121
 #, kde-format
 msgid "Include the sidecars of the items"
-msgstr ""
+msgstr "Inclou els laterals dels elements"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:122
 #, kde-format
@@ -29313,52 +29337,52 @@ msgstr "S'estan explorant els àlbums eliminats..."
 msgid "Scanning images in individual albums..."
 msgstr "S'estan explorant les imatges en els àlbums individuals..."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:139
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:140
 #, kde-format
 msgid "Migrate ->"
 msgstr "Migra ->"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:143
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:144
 #, kde-format
 msgid "Progress Information"
 msgstr "Informació de l'evolució"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:152
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:153
 #, kde-format
 msgid "Step Progress"
 msgstr "Evolució del pas"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:153
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:154
 #, kde-format
 msgid "Overall Progress"
 msgstr "Evolució global"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:216
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:225
 #, kde-format
 msgid "Database type or location must be different!"
 msgstr "El tipus de la base de dades o la ubicació han de ser diferents!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:223
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:232
 #, kde-format
 msgid "Internal server can only be used once!"
 msgstr "El servidor intern només es pot utilitzar una vegada!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:232
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:241
 #, kde-format
 msgid "Internal server is not used and is not active!"
 msgstr "El servidor intern no s'utilitza i no està actiu!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:277
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:286
 #, kde-format
 msgid "Database copied successfully."
 msgstr "La base de dades s'ha copiat amb èxit."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:282
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:291
 #, kde-format
 msgid "Database conversion canceled."
 msgstr "S'ha cancel·lat la conversió de la base de dades."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:291
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:300
 #, kde-format
 msgid "Step Progress (%1)"
 msgstr "Evolució del pas (%1)"
@@ -29937,104 +29961,104 @@ msgstr ""
 "<p>No hi ha accés d'escriptura per a la carpeta que hostatja el fitxer de la "
 "base de dades.<br/>Seleccioneu una ubicació diferent.</p><p><b>%1</b></p>"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:45
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:46
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:97
 #, kde-format
 msgid "Database Statistics"
 msgstr "Estadístiques de la base de dades"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:46
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:47
 #, kde-format
 msgid "Format"
 msgstr "Format"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:46
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:47
 #, kde-format
 msgid "Count"
 msgstr "Compte"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:51
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:52
 #, kde-format
 msgid "Videos"
 msgstr "Vídeos"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:52
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:53
 #, kde-format
 msgid "Audio"
 msgstr "Àudio"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:59
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:60
 #, kde-format
 msgid "Total Items"
 msgstr "Elements totals"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:76
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:77
 #, kde-format
 msgid "Database backend"
 msgstr "Dorsal de la base de dades"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:80
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:81
 #, kde-format
 msgid "Database Path"
 msgstr "Camí de la base de dades"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:86
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:87
 #, kde-format
 msgid "Database internal server"
 msgstr "Servidor intern de la base de dades"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:86
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:87
 #, kde-format
 msgctxt "@info: database server"
 msgid "Yes"
 msgstr "Sí"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:87
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:88
 #, kde-format
 msgid "Database internal server Path"
 msgstr "Camí del servidor intern de base de dades"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:91
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:92
 #, kde-format
 msgid "Host Name"
 msgstr "Nom de la màquina"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:92
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:93
 #, kde-format
 msgid "Host Port"
 msgstr "Port de la màquina"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:93
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:94
 #, kde-format
 msgid "User account"
 msgstr "Compte d'usuari"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:94
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:95
 #, kde-format
 msgid "Connect options"
 msgstr "Opcions de connexió"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:95
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:96
 #, kde-format
 msgid "Core Db name"
 msgstr "Nom de la BD del nucli"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:96
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:97
 #, kde-format
 msgid "Thumbs Db name"
 msgstr "Nom de la BD de miniatures"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:97
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:98
 #, kde-format
 msgid "Face Db name"
 msgstr "Nom de la BD de cares"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:102
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:103
 #, kde-format
 msgid "Database locale"
 msgstr "Configuració regional de la base de dades"
 
-#: core/libs/database/utils/widgets/dbstatdlg.cpp:143
+#: core/libs/database/utils/widgets/dbstatdlg.cpp:144
 #, kde-format
 msgctxt "@info: total number of items"
 msgid "total"
@@ -34916,9 +34940,7 @@ msgstr "Usuari6"
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:67
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Help"
+#, kde-format
 msgctxt "@action: button"
 msgid "Help"
 msgstr "Ajuda"
@@ -34932,9 +34954,7 @@ msgstr "Manual en línia..."
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:70
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "About..."
+#, kde-format
 msgid "About..."
 msgstr "Quant a..."
 
@@ -54100,17 +54120,15 @@ msgid "Set this option to show tracks on the Map"
 msgstr "Activeu esta opció per a mostrar els trajectes en el mapa."
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:167
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox similarity album tag relation"
-#| msgid "Only selected tab"
+#, kde-format
 msgid "Only use selected images"
-msgstr "Només la pestanya seleccionada"
+msgstr "Utilitza només les imatges seleccionades"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:168
-#, fuzzy, kde-format
-#| msgid "Set this option to display the image type."
+#, kde-format
 msgid "Set this option to correlate selected images only"
-msgstr "Activeu esta opció per a mostrar el tipus d'imatge."
+msgstr ""
+"Establiu esta opció per a correlacionar només les imatges seleccionades."
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:178
 #, kde-format
@@ -64486,383 +64504,3 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Voleu restablir tota la configuració als seus valors predeterminats?"
-
-#~ msgid ""
-#~ "New Neural Network engine based on OpenCV Deep Learning module to detect "
-#~ "and recognize faces."
-#~ msgstr ""
-#~ "Motor de xarxa neuronal nou basat en el mòdul OpenCV Deep Learning per a "
-#~ "detectar i reconéixer cares."
-
-#~ msgid "Update Slideshow to plugin with new shuffle mode."
-#~ msgstr ""
-#~ "Actualitza el passe de diapositives al connector amb el mode de barreja "
-#~ "nou."
-
-#~ msgid "Add new theme Html5Responsive for HtmlGallery plugin."
-#~ msgstr "Afig temes nous «Html5Responsive» al connector «HtmlGallery»."
-
-#~ msgid ""
-#~ "New plugin ImageMosaicWall to create an image based on a bunch of other "
-#~ "photos."
-#~ msgstr ""
-#~ "Connector nou ImageMosaicWall per a crear una imatge basada en una pila "
-#~ "de fotos."
-
-#~ msgid "add new batch queue manager tool to fix hot pixels from images."
-#~ msgstr ""
-#~ "Afig una eina del gestor de la cua per lots per a corregir els píxels "
-#~ "cremats en les imatges."
-
-#~ msgid "add new batch queue manager tool to apply texture over images."
-#~ msgstr ""
-#~ "Afig una eina del gestor de la cua per lots per a aplicar una textura "
-#~ "damunt de les imatges."
-
-#~ msgid ""
-#~ "Face Scan dialog contents is now simplified and embedded into left "
-#~ "sidebar."
-#~ msgstr ""
-#~ "El contingut del diàleg d'exploració de cares ara s'ha simplificat i "
-#~ "incrustat a dins de la barra lateral esquerra."
-
-#~ msgid "Add support for Gimp XCF files >= 2.10."
-#~ msgstr "Afig la implementació per als fitxers XCF de Gimp >= 2.10."
-
-#~ msgid "Add Flatpak bundle support for Linux platforms."
-#~ msgstr ""
-#~ "Afig la implementació de l'empaquetament Flatpak per a les plataformes "
-#~ "Linux."
-
-#~ msgid "Table-view is now able to show digiKam Tag-Paths properties."
-#~ msgstr ""
-#~ "La vista de taula ara és capaç de mostrar les propietats Tag-Paths de "
-#~ "digiKam."
-
-#~ msgid "Add option to write geolocation information in file metadata."
-#~ msgstr ""
-#~ "Activeu esta opció per a escriure la informació de geolocalització en les "
-#~ "metadades del fitxer."
-
-#~ msgid "Add color label support for advanced metadata settings."
-#~ msgstr ""
-#~ "Afig la implementació d'etiquetes de color per a la configuració avançada "
-#~ "de les metadades."
-
-#~ msgid "Add Exif, Iptc, and Xmp read support for HEIF images."
-#~ msgstr ""
-#~ "Afig la implementació de lectura d'Exif, Iptc i Xmp per a les imatges "
-#~ "HEIF."
-
-#~ msgid "Improved support for UNC network paths under Windows."
-#~ msgstr "Implementació millorada per als camins de xarxa UNC a Windows."
-
-#~ msgid "Improved support for Unicode paths under Windows."
-#~ msgstr "Implementació millorada per als camins Unicode a Windows."
-
-#~ msgid "Apple bundle is now relocatable and compatible with macOS BigSur."
-#~ msgstr "El paquet d'Apple ara és reubicable i compatible amb macOS BigSur."
-
-#~ msgid ""
-#~ "New online version checker and downloader to automate upgrade under "
-#~ "Windows and macOS."
-#~ msgstr ""
-#~ "Nou comprovador en línia i descarregador de versions per a automatitzar "
-#~ "l'actualització a Windows i macOS."
-
-#~ msgid ""
-#~ "Better support of astro FITS image format including metadata extraction "
-#~ "support to populate the database."
-#~ msgstr ""
-#~ "Millor suport del format d'imatge astrofotogràfica FITS, inclòs el suport "
-#~ "en l'extracció de les metadades per a completar la base de dades."
-
-#~ msgid ""
-#~ "Use last Exiv2 0.27.5 in all bundles with Base Media File metadata read "
-#~ "and write support (HEIF, AVIF)."
-#~ msgstr ""
-#~ "Utilitza l'últim Exiv2 0.27.5 en tots els paquets amb suport de lectura i "
-#~ "escriptura de les metadades en els fitxers de suports base (HEIF, AVIF)."
-
-#~ msgid "Find duplicates items is now process in parallel using multi-cores."
-#~ msgstr ""
-#~ "La busca dels elements duplicats ara es processa en paral·lel utilitzant "
-#~ "múltiples nuclis."
-
-#~ msgid "New tool to export items to iNaturalist web service."
-#~ msgstr "Una eina nova per a exportar elements al servei web iNaturalist."
-
-#~ msgid "New metadata viewer based on ExifTool."
-#~ msgstr "Visor nou de metadades basat en ExifTool."
-
-#~ msgid ""
-#~ "MacOS package, Windows installer, and AppImage bundle use KF5 5.89 and "
-#~ "KAPPS 21.12.0 frameworks."
-#~ msgstr ""
-#~ "El paquet MacOS, l'instal·lador Windows, i el paquet AppImage utilitzen "
-#~ "KF5 5.89 i els frameworks 21.12.0 de KAPPS."
-
-#~ msgid ""
-#~ "AppImage Linux bundle now support <a href=\"https://fcitx-im.org/wiki/"
-#~ "Fcitx_5\">Platform Input Context FCITX</a>."
-#~ msgstr ""
-#~ "El paquet AppImage de Linux ara permet <a href=\"https://fcitx-im.org/"
-#~ "wiki/Fcitx_5\">Platform Input Context FCITX</a>."
-
-#~ msgid "Improve RTL translations support."
-#~ msgstr "Millora la implementació de les traduccions RTL (dreta a esquerra)."
-
-#~ msgid ""
-#~ "GUI internationalization and localization updates with more than 50 "
-#~ "languages available."
-#~ msgstr ""
-#~ "Actualitzacions de la internacionalització i localització de la IGU amb "
-#~ "més de 50 idiomes disponibles."
-
-#~ msgid "Add OpenWith contextual menu support under MacOS."
-#~ msgstr "Afig la implementació del menú contextual «Obri amb» a MacOS."
-
-#~ msgid ""
-#~ "New tool to share items on the network with a Motion JPEG stream server."
-#~ msgstr ""
-#~ "Una eina nova per a compartir elements en la xarxa amb un servidor de "
-#~ "flux JPEG en moviment."
-
-#~ msgid ""
-#~ "Showfoto has a new left sidebar hosting a folder-view to quickly explore "
-#~ "images from local file system."
-#~ msgstr ""
-#~ "El ShowFoto té una barra lateral esquerra nova que organitza una vista de "
-#~ "carpetes per a explorar amb rapidesa les imatges del sistema de fitxers "
-#~ "local."
-
-# skip-rule: kct-snapshot
-#~ msgid ""
-#~ "Update internal RAW engine to last Libraw 0.20.2 (snapshot 20210827) "
-#~ "including Canon CR3 and Sony A7R4 support."
-#~ msgstr ""
-#~ "Actualització del motor RAW intern de la Libraw a l'última publicació "
-#~ "0.20.2 (instantània 20210827) que inclou el suport per a la Canon CR3 i "
-#~ "la Sony A7R4."
-
-#~ msgid ""
-#~ "New camera supported: Canon CR3, PowerShot G5 X Mark II, G7 X Mark III, "
-#~ "SX70 HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS "
-#~ "M200, EOS 1DX Mark III (lossless files only) DJI Mavic Air, Air2, Osmo "
-#~ "Action, FujiFilm Fujifilm compressed/16bit, GFX 100, X-A7, X-Pro3, X100V, "
-#~ "X-T4, X-T200, GoPro Fusion, HERO5, HERO6, HERO7, HERO8, Hasselblad "
-#~ "L1D-20c, X1D II 50C, Leica D-LUX7, Q-P, Q2, V-LUX5, C-Lux / CAM-DC25, "
-#~ "SL2, M10 Monochrom, Nikon D780, Z50, P950, Olympus TG-6, E-M5 Mark III, E-"
-#~ "PL10, E-M1 Mark III, Panasonic Panasonic 14-bit, DC-FZ1000 II, DC-G90, DC-"
-#~ "S1, DC-S1R, DC-S1H, DC-TZ95, PhaseOne IQ4 150MP, Rapsberry Pi RAW+JPEG "
-#~ "format, Ricoh GR III, Sony A7R IV, A9 II, ILCE-6100, ILCE-6600, RX0 II, "
-#~ "RX100 VII, Zenit M, also multiple modern smartphones."
-#~ msgstr ""
-#~ "Càmeres admeses noves: Canon CR3, PowerShot G5 X Mark II, G7 X Mark III, "
-#~ "SX70 HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS "
-#~ "M200, EOS 1DX Mark III (només fitxers sense pèrdua), DJI Mavic Air, Air2, "
-#~ "Osmo Action, FujiFilm Fujifilm comprimit/16bit, GFX 100, X-A7, X-Pro3, "
-#~ "X100V, X-T4, X-T200, GoPro Fusion, HERO5, HERO6, HERO7, HERO8, Hasselblad "
-#~ "L1D-20c, X1D II 50C,Leica D-LUX7, Q-P, Q2, V-LUX5, C-Lux / CAM-DC25, SL2, "
-#~ "M10 Monochrom, Nikon D780, Z50, P950, Olympus TG-6, E-M5 Mark III, E-"
-#~ "PL10, E-M1 Mark III, Panasonic Panasonic 14-bit, DC-FZ1000 II, DC-G90, DC-"
-#~ "S1, DC-S1R, DC-S1H, DC-TZ95, PhaseOne IQ4 150MP, format Rapsberry Pi RAW"
-#~ "+JPEG, Ricoh GR III, Sony A7R IV, A9 II, ILCE-6100, ILCE-6600, RX0 II, "
-#~ "RX100 VII, Zenit M, i també diversos telèfons intel·ligents moderns."
-
-#~ msgid "Face Management in digiKam"
-#~ msgstr "Gestió de cares en digiKam"
-
-#~ msgid ""
-#~ "The Face Workflow allows you to Detect and Recognize people in your "
-#~ "photographs."
-#~ msgstr ""
-#~ "El flux de treball de les cares permet detectar i reconéixer persones a "
-#~ "les fotografies."
-
-#~ msgid "<b>Face Detection</b>"
-#~ msgstr "<b>Detecció de cares</b>"
-
-#~ msgid ""
-#~ "Face Detection allows digiKam to detect faces in your images. This step "
-#~ "is required before being able to recognize faces."
-#~ msgstr ""
-#~ "La detecció de cares permet que digiKam detecte les cares en les imatges. "
-#~ "Es requerix este pas abans de ser capaç de reconéixer-les."
-
-#~ msgid "<b>Face Recognition</b>"
-#~ msgstr "<b>Reconeixement de cares</b>"
-
-#~ msgid "Face Recognition will automatically recognize people in your images."
-#~ msgstr ""
-#~ "El reconeixement de cares reconeixerà automàticament les persones en les "
-#~ "imatges."
-
-#~ msgid ""
-#~ "For additional information, read the %1 \n"
-#~ "To ask questions, use our mailing list: digikam-users@kde.org \n"
-#~ msgstr ""
-#~ "Per a informació addicional, llegiu %1 \n"
-#~ "Per a fer preguntes, utilitzeu la llista de correu (en anglés): digikam-"
-#~ "users@kde.org \n"
-
-#~ msgid ""
-#~ "To run face detection, select the <u>Detect Faces</u> option in the Face "
-#~ "Scan panel and then click on <u>Scan Collection for Faces</u>"
-#~ msgstr ""
-#~ "Per a executar la detecció de cares, seleccioneu l'opció <u>Detecta les "
-#~ "cares</u> en el quadro d'exploració de cares i després feu clic en "
-#~ "<u>Explora la col·lecció buscant cares</u>"
-
-#~ msgid ""
-#~ "<b>Caution:</b> Running Face Detection for the first time can be fairly "
-#~ "time consuming. Make sure you use the <u>Search In</u> tab to restrict "
-#~ "the target of the scan."
-#~ msgstr ""
-#~ "<b>Precaució:</b> L'execució de la detecció de cares per primera vegada "
-#~ "pot tardar força. Assegureu-vos que utilitzeu la pestanya <u>Busca a</u> "
-#~ "per a restringir la destinació de l'exploració."
-
-#~ msgid "digiKam offers two kinds of face detection scans: "
-#~ msgstr "digiKam oferix dues classes d'exploració de la detecció de cares: "
-
-#~ msgid "<b>Skip Images Already Scanned</b>"
-#~ msgstr "<b>Omet les imatges que ja s'han explorat</b>"
-
-#~ msgid ""
-#~ "Choose this option if you haven't scanned yet or if the last scan yielded "
-#~ "good results but you would like to scan new images."
-#~ msgstr ""
-#~ "Seleccioneu esta opció si encara no s'ha explorat o si l'última "
-#~ "exploració va produir resultats bons però voleu explorar imatges noves."
-
-#~ msgid "<b>Scan Again and Merge</b>"
-#~ msgstr "<b>Torna a explorar i fusiona</b>"
-
-#~ msgid ""
-#~ "Choose this option if the results of the previous scan weren't accurate. "
-#~ "This would rescan all images again, and is time consuming."
-#~ msgstr ""
-#~ "Seleccioneu esta opció si els resultats de l'exploració anterior no van "
-#~ "ser acurats. Açò tornarà a explorar totes les imatges una altra vegada, i "
-#~ "tarda una estona."
-
-#~ msgid ""
-#~ "After the Face Scan is complete, you should see a new tag <u>Unknown</u> "
-#~ "where the results of the face scan will appear. You may now manually "
-#~ "identify a few of these faces and then proceed for face recognition."
-#~ msgstr ""
-#~ "Després de completar l'exploració de cares, hauríeu de veure l'etiqueta "
-#~ "nova <u>Desconeguda</u> a on apareixeran els resultats de l'exploració de "
-#~ "cares. Podreu identificar manualment diverses cares i després procedir al "
-#~ "reconeixement de cares."
-
-#~ msgid ""
-#~ "To manually identify a face, hover on any Unknown face and use the text "
-#~ "box to give it a name. This will lead to the creation of a face tag in "
-#~ "case a person of that name doesn't exist already. For best results "
-#~ "identify 4-5 faces for each person you want the scan to recognize."
-#~ msgstr ""
-#~ "Per a identificar manualment una cara, passeu per damunt de qualsevol "
-#~ "cara desconeguda i utilitzeu el quadro de text per a donar-li un nom. Açò "
-#~ "portarà a la creació d'una etiqueta de cara en cas que una persona amb "
-#~ "este nom encara no existisca. Per a millorar els resultats, identifiqueu "
-#~ "4-5 cares per a cada persona que vulgueu reconéixer en explorar."
-
-#~ msgid ""
-#~ "Running face recognition is similar to detection, just select "
-#~ "<u>Recognize Faces</u> from the Face Scan panel this time.\n"
-#~ "Face recognition will work on all Unknown faces. In case there's a face "
-#~ "you don't wish to be recognized, you can mark it as ignored.\n"
-#~ "This leads to the creation of a new <u>Ignored</u> tag, you can later "
-#~ "unmark the face if needed."
-#~ msgstr ""
-#~ "Executar el reconeixement de cares és pareixent a la detecció: esta "
-#~ "vegada seleccioneu <u>Reconeix les cares</u> des del quadro d'exploració "
-#~ "de cares.\n"
-#~ "El reconeixement de cares funcionarà amb totes les cares desconegudes. En "
-#~ "cas que hi haja una cara que no vulgueu que es reconega, la podeu marcar "
-#~ "com a ignorada.\n"
-#~ "Açò portarà a la creació d'una etiqueta <u>Ignorada</u> nova, i més tard "
-#~ "podreu desmarcar la cara si cal."
-
-#~ msgid ""
-#~ "You may select <u>Work on all processor cores</u>in order to increase the "
-#~ "speed of Face Recognition \n"
-#~ "The Face Accuracy slider allows you to control the accuracy of the "
-#~ "recognition algorithm. A higher specificity implies higher accuracy, "
-#~ "however this results in a smaller set of results."
-#~ msgstr ""
-#~ "Podeu seleccionar <u>Treballa amb tots els nuclis dels processadors</u> "
-#~ "per tal d'incrementar la velocitat del reconeixement de cares \n"
-#~ "El control lliscant de precisió de les cares permet controlar la precisió "
-#~ "de l'algorisme de reconeixement. Una especificitat més alta implica una "
-#~ "precisió més alta, tanmateix açò dona un conjunt més xicotet de resultats."
-
-#~ msgid ""
-#~ "The results of facial recognition appear in the form of Unconfirmed "
-#~ "results. These results will show up in the Unconfirmed tag, as well as in "
-#~ "the tag of the person suggested for each face.\n"
-#~ "Hovering over Unconfirmed faces will display a few options:\n"
-#~ msgstr ""
-#~ "Els resultats del reconeixement facial apareixen en la forma de resultats "
-#~ "no confirmats. Estos resultats es mostraran en l'etiqueta Sense "
-#~ "confirmar, i també en l'etiqueta de la persona suggerida per cada cara.\n"
-#~ "En passar per damunt de les cares sense confirmar, es mostraran les "
-#~ "opcions següents:\n"
-
-#~ msgid ""
-#~ "The Confirm button allows you to confirm the suggestion. This would "
-#~ "assign the suggested name to the face"
-#~ msgstr ""
-#~ "El botó Confirma permet confirmar el suggeriment. Açò assignarà el nom "
-#~ "suggerit a la cara."
-
-#~ msgid ""
-#~ "Use the Reject button, if the suggestion is incorrect. This would move "
-#~ "the face back to Unknown."
-#~ msgstr ""
-#~ "Utilitzeu el botó Rebutja si el suggeriment és incorrecte. Açò mourà la "
-#~ "cara a desconeguda."
-
-#~ msgid ""
-#~ "Use the Delete button, if the suggestion is not a face. This will delete "
-#~ "the face region from the database."
-#~ msgstr ""
-#~ "Utilitzeu el botó Suprimix si el suggeriment no és cap cara. Açò "
-#~ "suprimirà la regió de la cara de la base de dades."
-
-#~ msgid ""
-#~ "<b>Face Categorization and Sorting</b>\n"
-#~ "By default, faces will appear categorized based on their name. You may "
-#~ "change this behaviour, by going to <u>View -> Separate Items</u>.\n"
-#~ "Note that using a different categorization order will lead to Confirmed "
-#~ "and Unconfirmed faces appearing mixed with one another. To change this "
-#~ "behaviour you may modify the sorting order within each category by going "
-#~ "to <u>View -> Sort Items -> By Face Type</u>."
-#~ msgstr ""
-#~ "<b>Categorització de les cares i ordenació</b>\n"
-#~ "De manera predeterminada, les cares apareixeran categoritzades en funció "
-#~ "del seu nom. Podeu canviar este comportament anant a <u>Vista -> Separa "
-#~ "els elements</u>.\n"
-#~ "Cal tindre en compte que utilitzar un ordre diferent de categorització "
-#~ "portarà que les cares confirmades i sense confirmar apareixeran "
-#~ "barrejades entre elles. Per a canviar este comportament podeu modificar "
-#~ "el sentit d'ordenació de cada categoria anant a <u>Vista -> Ordena els "
-#~ "elements -> Per tipus de cara</u>."
-
-#~ msgid ""
-#~ "<b>Improving Results of Face Recognition</b>\n"
-#~ "Apart from using the settings mentioned in the last page, face results "
-#~ "may also be improved by rebuilding the training data. This may be done "
-#~ "through Tools -> Maintenance -> Detect and Recognize Faces -> Clear and "
-#~ "rebuild all training data."
-#~ msgstr ""
-#~ "<b>Millora dels resultats del reconeixement de cares</b>\n"
-#~ "A banda d'utilitzar els paràmetres mencionats a l'última pàgina, es poden "
-#~ "millorar els resultats de les cares reconstruint i entrenant les dades. "
-#~ "Açò es pot fer a través d'«Eines -> Manteniment -> Detecta i reconeix les "
-#~ "cares -> Neteja i reconstruïx totes les dades d'entrenament»."
-
-#~ msgid "Confirm Faces"
-#~ msgstr "Confirmació de cares"
