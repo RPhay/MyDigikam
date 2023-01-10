@@ -48,13 +48,13 @@
 # Volkan Gezer <volkangezer@gmail.com>, 2013.
 # obsoleteman <tulliana@gmail.com>, 2008-2009.
 # Volkan Gezer <volkangezer@gmail.com>, 2013-2014, 2017, 2019, 2021.
-# Emir SARI <emir_sari@icloud.com>, 2022.
+# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-09 00:53+0000\n"
-"PO-Revision-Date: 2022-12-31 18:52+0300\n"
+"PO-Revision-Date: 2023-01-09 20:51+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -38050,12 +38050,10 @@ msgstr "Zosa"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:459
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:607
-#, fuzzy, kde-format
-#| msgctxt "@info: contry code"
-#| msgid "Yiddish"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Yiddish"
-msgstr "Yiddish"
+msgstr "Yidçe"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:460
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:608
@@ -48733,7 +48731,7 @@ msgstr "İsiZosa Zosa (Güney Afrika)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Yiddish (Germany)"
-msgstr "Yidiş (Almanya)"
+msgstr "Yidçe (Almanya)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:391
 #, kde-format
@@ -50425,7 +50423,7 @@ msgstr "Hata: Web sürümünde Bing oturum açma bilgileri bulunamadı."
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:57
 #, kde-format
 msgid "Error: Unable to extract Bing key from web version."
-msgstr "Hata: Web sürümünden Bing çıkarılamadı."
+msgstr "Hata: Web sürümünden Bing anahtarı çıkarılamadı."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:67
 #, kde-format
@@ -50454,8 +50452,8 @@ msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
 "network. Please try your request again later."
 msgstr ""
-"Hata: İşletke sistemleri, sisteminizden kaynaklı kuşku uyandıran trafik "
-"algıladı. Lütfen, isteğinizi daha sonra yeniden deneyin."
+"Hata: İşletke sistemleri, bilgisayar ağınızdan kuşku uyandırıcı trafik "
+"algıladı. Lütfen, isteğinizi daha sonra yineleyin."
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:103
 #, kde-format
@@ -51193,7 +51191,7 @@ msgstr "Zosa"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Yiddish"
-msgstr "Yidiş"
+msgstr "Yidçe"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:472
 #, kde-format
@@ -51257,12 +51255,12 @@ msgstr "Uzaktan dosya işlemesi desteklenmiyor"
 #: core/libs/widgets/text/donlinetranslator_yandex.cpp:60
 #, kde-format
 msgid "Error: Unable to find Yandex SID in web version."
-msgstr ""
+msgstr "Hata: Web sürümünde Yandex SID bulunamadı."
 
 #: core/libs/widgets/text/donlinetranslator_yandex.cpp:69
 #, kde-format
 msgid "Error: Unable to extract Yandex SID from web version."
-msgstr ""
+msgstr "Hata: Web sürümünden Yandex SID çıkarılamadı."
 
 #: core/libs/widgets/text/localizeconfig.cpp:58
 #, fuzzy, kde-format

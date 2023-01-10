@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-09 00:53+0000\n"
-"PO-Revision-Date: 2023-01-07 08:40+0100\n"
+"PO-Revision-Date: 2023-01-09 07:41+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -5838,7 +5838,7 @@ msgstr "ფონის ფერი:"
 #: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:140
 #, kde-format
 msgid "Background opacity:"
-msgstr ""
+msgstr "ფონის გაუმჭვირვალობა:"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:327
 #, kde-format
@@ -13813,25 +13813,25 @@ msgstr "პრიორიტეტი:"
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "0: None"
-msgstr ""
+msgstr "0: არა"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:224
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "1: High"
-msgstr ""
+msgstr "1: მაღალი"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:228
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "5: Normal"
-msgstr ""
+msgstr "5: ნორმალური"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:231
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "8: Low"
-msgstr ""
+msgstr "8: დაბალი"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:232
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:206
@@ -14852,25 +14852,25 @@ msgstr "პრიორიტეტი:"
 #, kde-format
 msgctxt "@item: editorial urgency of content"
 msgid "0: None"
-msgstr ""
+msgstr "0: არა"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:161
 #, kde-format
 msgctxt "@item: editorial urgency of content"
 msgid "1: High"
-msgstr ""
+msgstr "1: მაღალი"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:165
 #, kde-format
 msgctxt "@item: editorial urgency of content"
 msgid "5: Normal"
-msgstr ""
+msgstr "5: ნორმალური"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:168
 #, kde-format
 msgctxt "@item: editorial urgency of content"
 msgid "8: Low"
-msgstr ""
+msgstr "8: დაბალი"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:169
 #, kde-format
@@ -23194,7 +23194,7 @@ msgstr ""
 #, kde-format
 msgctxt "taxonomic rank"
 msgid "family"
-msgstr ""
+msgstr "ოჯახი"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:175
 #, kde-format
@@ -23212,7 +23212,7 @@ msgstr ""
 #, kde-format
 msgctxt "taxonomic rank"
 msgid "tribe"
-msgstr ""
+msgstr "ტომი"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:187
 #, kde-format
@@ -28039,7 +28039,7 @@ msgstr "ჩანაწერების არჩევა"
 #: core/libs/dialogs/imagedialog_preview.cpp:265
 #, kde-format
 msgid "<i>Preview:</i>"
-msgstr ""
+msgstr "<i>მინიატურა:</i>"
 
 #: core/libs/dialogs/imagedialog_preview.cpp:271
 #, kde-format
@@ -28099,7 +28099,7 @@ msgstr ""
 #: core/libs/dialogs/imagedialog_preview.cpp:286
 #, kde-format
 msgid "<i>Duration:</i>"
-msgstr ""
+msgstr "<i>ხანგრძლივობა:</i>"
 
 #: core/libs/dialogs/imagedialog_preview.cpp:287
 #, kde-format
@@ -31859,7 +31859,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item"
 msgid "File Owner"
-msgstr ""
+msgstr "ფაილის მფლობელი"
 
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:145
 #, kde-format
@@ -32357,9 +32357,7 @@ msgstr "მომხმარებელი6"
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:67
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Help"
+#, kde-format
 msgctxt "@action: button"
 msgid "Help"
 msgstr "დახმარება"
@@ -32373,9 +32371,7 @@ msgstr ""
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:70
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "About..."
+#, kde-format
 msgid "About..."
 msgstr "შესახებ..."
 
@@ -33425,7 +33421,7 @@ msgstr "ბაშკირი"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Byelorussian"
-msgstr ""
+msgstr "ბელორუსული"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:337
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:485
@@ -33565,7 +33561,7 @@ msgstr "ბასკური"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Persian(farsi)"
-msgstr ""
+msgstr "სპარსული (ფარსი)"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:357
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:505
@@ -33579,7 +33575,7 @@ msgstr "ფინური"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Fijan"
-msgstr ""
+msgstr "ფიჯიური"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:359
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:507
@@ -33614,7 +33610,7 @@ msgstr "ირლანდიური"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Scotsgaelic"
-msgstr ""
+msgstr "შოტლანდიური"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:364
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:512
@@ -33761,7 +33757,7 @@ msgstr "ყაზახური"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Greenlandic"
-msgstr ""
+msgstr "გრენლანდიური"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:385
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:533
@@ -35283,7 +35279,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Model: "
-msgstr ""
+msgstr "მოდელი: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:247
 #: core/libs/properties/itempropertiestab.cpp:257
@@ -50567,11 +50563,9 @@ msgid "Set this option to show tracks on the Map"
 msgstr ""
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:167
-#, fuzzy, kde-format
-#| msgctxt "@info: setup"
-#| msgid "Open the selected item."
+#, kde-format
 msgid "Only use selected images"
-msgstr "მონიშნული ელემენტის გახსნა."
+msgstr "მხოლოდ მონიშნული გამოსახულებების გამოყენება"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:168
 #, kde-format
@@ -54027,7 +54021,7 @@ msgstr ""
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:54
 #, kde-format
 msgid "On right"
-msgstr ""
+msgstr "მარჯვნვ"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:56
 #, kde-format
