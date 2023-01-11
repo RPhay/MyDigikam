@@ -3201,11 +3201,9 @@ msgid "Add hamburger menu to tool-bar if main menu is hidden."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:147
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid "Turn on this option to write metadata into DNG files."
+#, kde-format
 msgid "Add new option to write metadata to files with ExifTool backend."
-msgstr "Zaškrtněte tuto volbu, aby byla matadata zapsána do souborů DNG."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:148
 #, kde-format
@@ -3242,10 +3240,9 @@ msgid "Add search for items by number of face regions."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:154
-#, fuzzy, kde-format
-#| msgid "Show images without a face tag."
+#, kde-format
 msgid "Add search for items without face regions."
-msgstr "Zobrazit obrázky bez značky obličeje."
+msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:155
 #, kde-format
@@ -33444,12 +33441,10 @@ msgstr "Uživatel6"
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:67
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Help"
+#, kde-format
 msgctxt "@action: button"
 msgid "Help"
-msgstr "Nápověda"
+msgstr ""
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:69
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:66
@@ -33460,9 +33455,7 @@ msgstr "Online Příručka..."
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:70
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "About..."
+#, kde-format
 msgid "About..."
 msgstr "O aplikaci..."
 
@@ -52182,17 +52175,14 @@ msgid "Set this option to show tracks on the Map"
 msgstr "Použijte tuto volbu pro zobrazení tras na mapě"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:167
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox similarity album tag relation"
-#| msgid "Only selected tab"
+#, kde-format
 msgid "Only use selected images"
-msgstr "Pouze vybraná karta"
+msgstr ""
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:168
-#, fuzzy, kde-format
-#| msgid "Set this option to display the image type."
+#, kde-format
 msgid "Set this option to correlate selected images only"
-msgstr "Zde můžete nastavit zobrazení typu obrázku."
+msgstr ""
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:178
 #, kde-format
@@ -62214,47 +62204,3 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
-
-#~ msgid "Add support for Gimp XCF files >= 2.10."
-#~ msgstr "Přidána podporu pro soubory Gimp XCF >= 2.10."
-
-#~ msgid "Add Flatpak bundle support for Linux platforms."
-#~ msgstr "Přidána podpora pro balíček Flatpak na Linuxu."
-
-#~ msgid ""
-#~ "New camera supported: Canon CR3, PowerShot G5 X Mark II, G7 X Mark III, "
-#~ "SX70 HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS "
-#~ "M200, EOS 1DX Mark III (lossless files only) DJI Mavic Air, Air2, Osmo "
-#~ "Action, FujiFilm Fujifilm compressed/16bit, GFX 100, X-A7, X-Pro3, X100V, "
-#~ "X-T4, X-T200, GoPro Fusion, HERO5, HERO6, HERO7, HERO8, Hasselblad "
-#~ "L1D-20c, X1D II 50C, Leica D-LUX7, Q-P, Q2, V-LUX5, C-Lux / CAM-DC25, "
-#~ "SL2, M10 Monochrom, Nikon D780, Z50, P950, Olympus TG-6, E-M5 Mark III, E-"
-#~ "PL10, E-M1 Mark III, Panasonic Panasonic 14-bit, DC-FZ1000 II, DC-G90, DC-"
-#~ "S1, DC-S1R, DC-S1H, DC-TZ95, PhaseOne IQ4 150MP, Rapsberry Pi RAW+JPEG "
-#~ "format, Ricoh GR III, Sony A7R IV, A9 II, ILCE-6100, ILCE-6600, RX0 II, "
-#~ "RX100 VII, Zenit M, also multiple modern smartphones."
-#~ msgstr ""
-#~ "Nové podporované fotoaparáty: Canon CR3, PowerShot G5 X Mark II, G7 X "
-#~ "Mark III, SX70 HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS "
-#~ "M50, EOS M200, EOS 1DX Mark III (pouze bezeztrátové soubory) DJI Mavic "
-#~ "Air, Air2, Osmo Action, FujiFilm Fujifilm compressed/16bit, GFX 100, X-"
-#~ "A7, X-Pro3, X100V, X-T4, X-T200, GoPro Fusion, HERO5, HERO6, HERO7, "
-#~ "HERO8, Hasselblad L1D-20c, X1D II 50C, Leica D-LUX7, Q-P, Q2, V-LUX5, C-"
-#~ "Lux / CAM-DC25, SL2, M10 Monochrom, Nikon D780, Z50, P950, Olympus TG-6, "
-#~ "E-M5 Mark III, E-PL10, E-M1 Mark III, Panasonic Panasonic 14-bit, DC-"
-#~ "FZ1000 II, DC-G90, DC-S1, DC-S1R, DC-S1H, DC-TZ95, PhaseOne IQ4 150MP, "
-#~ "Rapsberry Pi formát RAW+JPEG, Ricoh GR III, Sony A7R IV, A9 II, "
-#~ "ILCE-6100, ILCE-6600, RX0 II, RX100 VII, Zenit M, a rovněž spousta "
-#~ "moderních chytrých telefonů."
-
-#~ msgid "<b>Face Detection</b>"
-#~ msgstr "<b>Detekce obličeje</b>"
-
-#~ msgid "<b>Face Recognition</b>"
-#~ msgstr "<b>Rozpoznání obličeje</b>"
-
-#~ msgid "<b>Skip Images Already Scanned</b>"
-#~ msgstr "<b>Vynechat již prohledané obrázky</b>"
-
-#~ msgid "Confirm Faces"
-#~ msgstr "Potvrdit obličeje"

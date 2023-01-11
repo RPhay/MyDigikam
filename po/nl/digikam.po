@@ -63,14 +63,14 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-09 00:53+0000\n"
-"PO-Revision-Date: 2023-01-08 23:08+0100\n"
+"PO-Revision-Date: 2023-01-10 17:28+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/app/date/ddateedit.cpp:499
@@ -16882,7 +16882,7 @@ msgstr "Afbeelding opslaan is mislukt"
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:468
 #, kde-format
 msgid "Failed to move sidecar"
-msgstr "Sidecar verplaatsen is mislukt"
+msgstr "Aanhangsel-bestand verplaatsen is mislukt"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:474
 #, kde-format
@@ -23388,7 +23388,7 @@ msgstr "Relatieve symbolische koppelingen aanmaken"
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:121
 #, kde-format
 msgid "Include the sidecars of the items"
-msgstr "Neem de aanhangsels van de items mee"
+msgstr "Neem de aanhangsel-bestanden van de items mee"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:122
 #, kde-format
@@ -38464,7 +38464,7 @@ msgstr "Kleurmodus: "
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Sidecar: "
-msgstr "Sidecar: "
+msgstr "Aanhangsel-bestand: "
 
 #: core/libs/properties/itempropertiestab.cpp:248
 #, kde-format
@@ -53988,7 +53988,7 @@ msgstr "Bladwijzer toevoegen..."
 #: core/utilities/geolocation/geoiface/core/gpscommon.cpp:111
 #, kde-format
 msgid "Warning: Sidecar settings"
-msgstr "Waarschuwing: sidecar-instellingen"
+msgstr "Waarschuwing: aanhangsel-instellingen"
 
 #: core/utilities/geolocation/geoiface/core/gpscommon.cpp:112
 #, kde-format
@@ -53999,12 +53999,12 @@ msgid ""
 "Please enable reading of sidecar files in the host application or continue "
 "at your own risk."
 msgstr ""
-"U hebt schrijven in de sidecar-bestanden ingeschakeld voor opslag van "
+"U hebt schrijven in de aanhangsel-bestanden ingeschakeld voor opslag van "
 "metagegevens in de host-toepassing, maar niet voor lezen. Dit betekent dat "
-"alle metagegevens opgeslagen in de sidecar-bestanden hier overschreven "
+"alle metagegevens opgeslagen in de aanhangsel-bestanden hier overschreven "
 "zullen worden.\n"
-"Schakel het lezen van sidecar-bestanden in de host-toepassing in of ga door "
-"op eigen risico."
+"Schakel het lezen van aanhangsel-bestanden in de host-toepassing in of ga "
+"door op eigen risico."
 
 #: core/utilities/geolocation/geoiface/core/gpsgeoifacemodelhelper.cpp:210
 #, kde-format
@@ -56996,13 +56996,13 @@ msgstr ""
 #, kde-kuit-format
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr ""
-"Verplaatsen van sidecar-bestand voor <filename>%1</filename> is mislukt"
+"Verplaatsen van aanhangsel-bestand voor <filename>%1</filename> is mislukt"
 
 #: core/utilities/import/main/importui.cpp:1455
 #, kde-kuit-format
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr ""
-"Verplaatsen van sidecar-bestand voor <filename>%1</filename> is mislukt"
+"Verplaatsen van aanhangsel-bestand voor <filename>%1</filename> is mislukt"
 
 #: core/utilities/import/main/importui.cpp:1882
 #, kde-format
@@ -57104,7 +57104,7 @@ msgstr "Bestand hernoemen tot <filename>%1</filename>"
 #: core/utilities/import/main/importui.cpp:2375
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
-msgstr "Opslaan van sidecar-bestand voor <filename>%1</filename> is mislukt"
+msgstr "Opslaan van aanhangsel-bestand voor <filename>%1</filename> is mislukt"
 
 #: core/utilities/import/main/importui.cpp:2449
 #, kde-format
@@ -58574,7 +58574,7 @@ msgstr "Item bestaat en is overgeslagen"
 #: core/utilities/queuemanager/manager/task.cpp:289
 #, kde-format
 msgid "Failed to create sidecar file..."
-msgstr "Sidecar-bestand aanmaken is mislukt..."
+msgstr "Aanhangsel-bestand aanmaken is mislukt..."
 
 #: core/utilities/queuemanager/manager/task.cpp:298
 #, kde-format
@@ -62161,10 +62161,11 @@ msgid ""
 "lead to metadata problems."
 msgstr ""
 "U zou deze optie alleen moeten activeren als u metagegevens van afbeeldingen "
-"uitwisselt met programma's die het sidecar formaat BASENAME.xmp gebruiken. "
-"Als u afbeeldingen hebt met dezelfde basisnaam (bijv. Image.CR2 en Image."
-"JPG) dan kan de sidecar niet langer uniek toegekend worden en zal voor beide "
-"afbeeldingen gebruikt worden, wat tot problemen met metagegevens kan leiden."
+"uitwisselt met programma's die het aanhangsel-formaat BASENAME.xmp "
+"gebruiken. Als u afbeeldingen hebt met dezelfde basisnaam (bijv. Image.CR2 "
+"en Image.JPG) dan kan het aanhangsel-bestand niet langer uniek toegekend "
+"worden en zal voor beide afbeeldingen gebruikt worden, wat tot problemen met "
+"metagegevens kan leiden."
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:240
 #, kde-format
@@ -62750,13 +62751,13 @@ msgstr "Draaiing"
 #, kde-format
 msgctxt "@label"
 msgid "Reading and Writing to Sidecars"
-msgstr "Lezen en schrijven naar aanhangsels"
+msgstr "Lezen en schrijven naar aanhangsel-bestanden"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:36
 #, kde-format
 msgctxt "@option:check"
 msgid "Read from sidecar files"
-msgstr "Uit sidecar-bestanden lezen"
+msgstr "Uit aanhangsel-bestanden lezen"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:38
 #, kde-format
@@ -62765,14 +62766,14 @@ msgid ""
 "Turn on this option to read metadata from XMP sidecar files when reading "
 "metadata."
 msgstr ""
-"Schakel deze optie in om de metagegevens uit XMP-sidecar-bestanden te lezen "
-"bij het lezen van metagegevens."
+"Schakel deze optie in om de metagegevens uit XMP-aanhangsel-bestanden te "
+"lezen bij het lezen van metagegevens."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:42
 #, kde-format
 msgctxt "@option:check"
 msgid "Write to sidecar files"
-msgstr "Naar sidecar-bestanden schrijven"
+msgstr "Naar aanhangsel-bestanden schrijven"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:44
 #, kde-format
@@ -62780,38 +62781,39 @@ msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to save, as specified, metadata to XMP sidecar files."
 msgstr ""
-"Schakel deze optie in om metagegevens, zoals gespecificeerd, in XMP-sidecar-"
-"bestanden op te slaan."
+"Schakel deze optie in om metagegevens, zoals gespecificeerd, in XMP-"
+"aanhangsel-bestanden op te slaan."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:48
 #, kde-format
 msgctxt "@item"
 msgid "Write to XMP sidecar for read-only item only"
-msgstr "Alleen naar XMP-sidecar schrijven voor alleen-lezen item"
+msgstr "Alleen naar XMP-aanhangsel-bestanden schrijven voor alleen-lezen item"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:49
 #, kde-format
 msgctxt "@item"
 msgid "Write to XMP sidecar only"
-msgstr "Alleen naar XMP-sidecar schrijven"
+msgstr "Alleen naar XMP-aanhangsel-bestanden schrijven"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:50
 #, kde-format
 msgctxt "@item"
 msgid "Write to item and XMP Sidecar"
-msgstr "Naar item en XMP-sidecar schrijven"
+msgstr "Naar item en XMP-aanhangsel-bestand schrijven"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:51
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Specify the exact mode of XMP sidecar writing"
-msgstr "De exacte modus van het schrijven van XMP-sidecar specificeren"
+msgstr ""
+"De exacte modus van het schrijven van XMP-aanhangsel-bestand specificeren"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:55
 #, kde-format
 msgctxt "@option:check"
 msgid "Sidecar file names are compatible with commercial programs"
-msgstr "Sidecar-bestandsnamen zijn compatibel met commerciële programma's"
+msgstr "Aanhangsel-bestandsnamen zijn compatibel met commerciële programma's"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:57
 #, kde-format
@@ -62821,7 +62823,7 @@ msgid ""
 "name (BASENAME.xmp) used by many commercial programs. For Darktable do not "
 "enable this option."
 msgstr ""
-"Schakel deze optie in om de XMP-sidecar-bestanden aan te maken met een "
+"Schakel deze optie in om de XMP-aanhangsel-bestanden aan te maken met een "
 "compatibele bestandsnaam (BASENAME.xmp) in gebruik bij veel commerciële "
 "programma's. Deze optie niet inschakelen voor Darktable."
 
@@ -62840,13 +62842,13 @@ msgid ""
 "Multiple extensions must be separated by a semicolon or a space."
 msgstr ""
 "Bestandstypen toevoegen om herkend te worden als aanhangsels.\n"
-"digiKam schrijft (optioneel) metagegevens naar *.xmp sidecar-bestanden.\n"
+"digiKam schrijft (optioneel) metagegevens naar *.xmp aanhangsel-bestanden.\n"
 "Andere programma's kunnen andere typen gebruiken, die onderstaand\n"
 "gespecificeerd kunnen worden. digiKam zal deze niet tonen noch er in lezen\n"
 "of naar schrijven. Maar wanneer een overeenkomstig item van het album (e.g.\n"
 "\"afbeelding.dng\" voor \"afbeelding.dng.pp3\") wordt hernoemd, verplaatst,\n"
 "gekopieerd of verwijderd, zal dezelfde bewerking gedaan worden op deze\n"
-"sidecar-bestanden.\n"
+"aanhangsel-bestanden.\n"
 "Meerdere extensies moeten gescheiden worden door een puntkomma of een spatie."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:97
@@ -62861,31 +62863,31 @@ msgid ""
 "the *.xyz and *.abc extensions. The internally\n"
 "used sidecars type *.xmp is always included."
 msgstr ""
-"Hier kunt u extra extensies van aanhanselbestanden\n"
+"Hier kunt u extra extensies van aanhansel-bestanden\n"
 "toevoegen om bewerkt te worden naast reguliere items.\n"
 "Deze bestanden zullen niet zichtbaar zijn, maar beschouwd\n"
 "worden als een extensie van het hoofdbestand.\n"
 "Schrijf \"xyz abc\" om bestanden te ondersteunen met de\n"
-"extensies *.xyz en *.abc. Het intern gebruikte aanhangseltype\n"
+"extensies *.xyz en *.abc. Het intern gebruikte aanhangsel-type\n"
 "*.xmp wordt altijd meegenomen."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:105
 #, kde-format
 msgctxt "@info"
 msgid "Enter additional sidecars file extensions."
-msgstr "Extra extensies van aanhangselbestanden invoeren."
+msgstr "Extra extensies van aanhangsel-bestanden invoeren."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:108
 #, kde-format
 msgctxt "@info"
 msgid "Additional &sidecar file extensions"
-msgstr "Extra extensies van sidecar-bestanden"
+msgstr "Extra extensies van aanhangsel-bestanden"
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:123
 #, kde-format
 msgctxt "@title:tab"
 msgid "Sidecars"
-msgstr "Aanhangsels"
+msgstr "Aanhangsel-bestanden"
 
 #: core/utilities/setup/misc/setupmisc.cpp:39
 #, kde-format
