@@ -64,6 +64,21 @@ QString AdjustLevelsToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can adjust the color levels from image.");
 }
 
+QString AdjustLevelsToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString AdjustLevelsToolPlugin::handbookChapter() const
+{
+    return QLatin1String("color_tools");
+}
+
+QString AdjustLevelsToolPlugin::handbookReference() const
+{
+    return QLatin1String("color-levels");
+}
+
 QList<DPluginAuthor> AdjustLevelsToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

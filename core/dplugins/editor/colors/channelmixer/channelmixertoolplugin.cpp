@@ -64,6 +64,21 @@ QString ChannelMixerToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can mix color channels from image.");
 }
 
+QString ChannelMixerToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString ChannelMixerToolPlugin::handbookChapter() const
+{
+    return QLatin1String("color_tools");
+}
+
+QString ChannelMixerToolPlugin::handbookReference() const
+{
+    return QLatin1String("color-mixer");
+}
+
 QList<DPluginAuthor> ChannelMixerToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

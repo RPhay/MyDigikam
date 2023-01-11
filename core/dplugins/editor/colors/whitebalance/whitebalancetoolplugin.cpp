@@ -64,6 +64,21 @@ QString WhiteBalanceToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can adjust the white balance from image.");
 }
 
+QString WhiteBalanceToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString WhiteBalanceToolPlugin::handbookChapter() const
+{
+    return QLatin1String("color_tools");
+}
+
+QString WhiteBalanceToolPlugin::handbookReference() const
+{
+    return QLatin1String("color-wb");
+}
+
 QList<DPluginAuthor> WhiteBalanceToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

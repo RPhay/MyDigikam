@@ -64,6 +64,21 @@ QString BWSepiaToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can convert image to black and white.");
 }
 
+QString BWSepiaToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString BWSepiaToolPlugin::handbookChapter() const
+{
+    return QLatin1String("color_tools");
+}
+
+QString BWSepiaToolPlugin::handbookReference() const
+{
+    return QLatin1String("color-bw");
+}
+
 QList<DPluginAuthor> BWSepiaToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

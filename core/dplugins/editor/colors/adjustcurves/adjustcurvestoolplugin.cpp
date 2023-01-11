@@ -64,6 +64,21 @@ QString AdjustCurvesToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can adjust the color curves from image.");
 }
 
+QString AdjustCurvesToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString AdjustCurvesToolPlugin::handbookChapter() const
+{
+    return QLatin1String("color_tools");
+}
+
+QString AdjustCurvesToolPlugin::handbookReference() const
+{
+    return QLatin1String("color-curves");
+}
+
 QList<DPluginAuthor> AdjustCurvesToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

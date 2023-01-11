@@ -64,6 +64,21 @@ QString HSLToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can adjust Hue / Saturation / Lightness from image.");
 }
 
+QString HSLToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString HSLToolPlugin::handbookChapter() const
+{
+    return QLatin1String("color_tools");
+}
+
+QString HSLToolPlugin::handbookReference() const
+{
+    return QLatin1String("color-hsl");
+}
+
 QList<DPluginAuthor> HSLToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()
