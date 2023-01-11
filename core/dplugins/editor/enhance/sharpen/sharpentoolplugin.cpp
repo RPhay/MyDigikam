@@ -64,6 +64,21 @@ QString SharpenToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can sharp an image.");
 }
 
+QString SharpenToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString SharpenToolPlugin::handbookChapter() const
+{
+    return QLatin1String("enhancement_tools");
+}
+
+QString SharpenToolPlugin::handbookReference() const
+{
+    return QLatin1String("enhance-sharpen");
+}
+
 QList<DPluginAuthor> SharpenToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

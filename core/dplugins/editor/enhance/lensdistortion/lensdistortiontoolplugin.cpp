@@ -64,6 +64,21 @@ QString LensDistortionToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can adjust lens distortions from an image.");
 }
 
+QString LensDistortionToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString LensDistortionToolPlugin::handbookChapter() const
+{
+    return QLatin1String("enhancement_tools");
+}
+
+QString LensDistortionToolPlugin::handbookReference() const
+{
+    return QLatin1String("enhance-lensdistortion");
+}
+
 QList<DPluginAuthor> LensDistortionToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

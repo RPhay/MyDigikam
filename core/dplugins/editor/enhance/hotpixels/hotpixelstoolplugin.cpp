@@ -64,6 +64,21 @@ QString HotPixelsToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can fix hot pixels from an image.");
 }
 
+QString HotPixelsToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString HotPixelsToolPlugin::handbookChapter() const
+{
+    return QLatin1String("enhancement_tools");
+}
+
+QString HotPixelsToolPlugin::handbookReference() const
+{
+    return QLatin1String("enhance-hotpixels");
+}
+
 QList<DPluginAuthor> HotPixelsToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

@@ -64,6 +64,21 @@ QString AntiVignettingToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool correct vignetting from an image.");
 }
 
+QString AntiVignettingToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString AntiVignettingToolPlugin::handbookChapter() const
+{
+    return QLatin1String("enhancement_tools");
+}
+
+QString AntiVignettingToolPlugin::handbookReference() const
+{
+    return QLatin1String("enhance-vignetting");
+}
+
 QList<DPluginAuthor> AntiVignettingToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

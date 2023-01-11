@@ -64,6 +64,21 @@ QString LensAutoFixToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can fix automatically lens artifacts over an image.");
 }
 
+QString LensAutoFixToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString LensAutoFixToolPlugin::handbookChapter() const
+{
+    return QLatin1String("enhancement_tools");
+}
+
+QString LensAutoFixToolPlugin::handbookReference() const
+{
+    return QLatin1String("enhance-lensauto");
+}
+
 QList<DPluginAuthor> LensAutoFixToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()
