@@ -64,6 +64,21 @@ QString BorderToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can add decorative border around image.");
 }
 
+QString BorderToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString BorderToolPlugin::handbookChapter() const
+{
+    return QLatin1String("decorate_tools");
+}
+
+QString BorderToolPlugin::handbookReference() const
+{
+    return QLatin1String("decorate_border");
+}
+
 QList<DPluginAuthor> BorderToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()
