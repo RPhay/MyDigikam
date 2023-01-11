@@ -810,6 +810,10 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
     {
         sql += QString::fromUtf8(" (ImagePositions.latitudeNumber IS NULL AND ImagePositions.longitudeNumber IS NULL) ");
     }
+    else if (name == QLatin1String("country"))
+    {
+        fieldQuery.addChoiceStringField(QLatin1String("ImageProperties.value"));
+    }
     else if (name == QLatin1String("creator"))
     {
         sql += QString::fromUtf8(" (Images.id IN "

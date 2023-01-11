@@ -50,6 +50,7 @@ void ItemLister::listSearch(ItemListerReceiver* const receiver,
                "       LEFT JOIN ImageMetadata    ON Images.id=ImageMetadata.imageid "
                "       LEFT JOIN VideoMetadata    ON Images.id=VideoMetadata.imageid "
                "       LEFT JOIN ImagePositions   ON Images.id=ImagePositions.imageid "
+               "       LEFT JOIN ImageProperties  ON Images.id=ImageProperties.imageid "
                "       INNER JOIN Albums          ON Albums.id=Images.album "
                "WHERE Images.status=1 AND ( ");
 
