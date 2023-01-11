@@ -76,7 +76,7 @@ QString TextureToolPlugin::handbookChapter() const
 
 QString TextureToolPlugin::handbookReference() const
 {
-    return QLatin1String("decorate_texture");
+    return QLatin1String("decorate-texture");
 }
 
 QList<DPluginAuthor> TextureToolPlugin::authors() const

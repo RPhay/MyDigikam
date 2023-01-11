@@ -76,7 +76,7 @@ QString BorderToolPlugin::handbookChapter() const
 
 QString BorderToolPlugin::handbookReference() const
 {
-    return QLatin1String("decorate_border");
+    return QLatin1String("decorate-border");
 }
 
 QList<DPluginAuthor> BorderToolPlugin::authors() const

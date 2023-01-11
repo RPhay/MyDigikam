@@ -76,7 +76,7 @@ QString InsertTextToolPlugin::handbookChapter() const
 
 QString InsertTextToolPlugin::handbookReference() const
 {
-    return QLatin1String("decorate_inserttext");
+    return QLatin1String("decorate-inserttext");
 }
 
 QList<DPluginAuthor> InsertTextToolPlugin::authors() const
