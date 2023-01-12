@@ -64,6 +64,21 @@ QString EmbossToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can emboss an image.");
 }
 
+QString EmbossToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString EmbossToolPlugin::handbookChapter() const
+{
+    return QLatin1String("effects_tools");
+}
+
+QString EmbossToolPlugin::handbookReference() const
+{
+    return QLatin1String("effects-emboss");
+}
+
 QList<DPluginAuthor> EmbossToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

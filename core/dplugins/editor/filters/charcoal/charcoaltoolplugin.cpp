@@ -64,6 +64,21 @@ QString CharcoalToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can emulate charcoal drawing to an image.");
 }
 
+QString CharcoalToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString CharcoalToolPlugin::handbookChapter() const
+{
+    return QLatin1String("effects_tools");
+}
+
+QString CharcoalToolPlugin::handbookReference() const
+{
+    return QLatin1String("effects-charcoal");
+}
+
 QList<DPluginAuthor> CharcoalToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

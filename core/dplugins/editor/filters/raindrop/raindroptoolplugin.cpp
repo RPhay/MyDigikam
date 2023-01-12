@@ -64,6 +64,21 @@ QString RainDropToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can add rain drops over an image.");
 }
 
+QString RainDropToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString RainDropToolPlugin::handbookChapter() const
+{
+    return QLatin1String("effects_tools");
+}
+
+QString RainDropToolPlugin::handbookReference() const
+{
+    return QLatin1String("effects-raindrop");
+}
+
 QList<DPluginAuthor> RainDropToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

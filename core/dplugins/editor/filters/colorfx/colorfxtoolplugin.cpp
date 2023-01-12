@@ -64,6 +64,21 @@ QString ColorFXToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can apply color effects to an image.");
 }
 
+QString ColorFXToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString ColorFXToolPlugin::handbookChapter() const
+{
+    return QLatin1String("effects_tools");
+}
+
+QString ColorFXToolPlugin::handbookReference() const
+{
+    return QLatin1String("effects-color");
+}
+
 QList<DPluginAuthor> ColorFXToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

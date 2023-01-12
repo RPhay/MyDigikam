@@ -64,6 +64,21 @@ QString FilmGrainToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can add film grain over an image.");
 }
 
+QString FilmGrainToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString FilmGrainToolPlugin::handbookChapter() const
+{
+    return QLatin1String("effects_tools");
+}
+
+QString FilmGrainToolPlugin::handbookReference() const
+{
+    return QLatin1String("effects-filmgrain");
+}
+
 QList<DPluginAuthor> FilmGrainToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()
