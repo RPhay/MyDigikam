@@ -55,7 +55,7 @@ public:
 
     enum MaskTool
     {
-        redMask=0,
+        redMask = 0,
         greenMask,
         eraseMask
     };
@@ -169,8 +169,8 @@ ContentAwareResizeTool::ContentAwareResizeTool(QObject* const parent)
 
     d->gboxSettings = new EditorToolSettings(nullptr);
     d->gboxSettings->setButtons(EditorToolSettings::Default|
-                                EditorToolSettings::Ok|
-                                EditorToolSettings::Try|
+                                EditorToolSettings::Ok     |
+                                EditorToolSettings::Try    |
                                 EditorToolSettings::Cancel);
 
     QGridLayout* const grid = new QGridLayout(d->gboxSettings->plainPage());
@@ -259,12 +259,14 @@ ContentAwareResizeTool::ContentAwareResizeTool(QObject* const parent)
     d->weightMaskBox->setWhatsThis(i18n("Enable this option to add suppression and preservation masks."));
     d->weightMaskBox->setChecked(false);
 
-    d->maskGroup = new QButtonGroup(d->gboxSettings->plainPage());
+    d->maskGroup      = new QButtonGroup(d->gboxSettings->plainPage());
     d->maskGroup->setExclusive(true);
+    QPixmap btn(QSize(32, 32));
 
     QLabel* const labeRedMaskTool = new QLabel(i18n("Suppression weight mask:"), d->gboxSettings->plainPage());
-    d->redMaskTool          = new QToolButton(d->gboxSettings->plainPage());
-    d->redMaskTool->setIcon(QIcon(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/indicator-red.png"))));
+    d->redMaskTool                = new QToolButton(d->gboxSettings->plainPage());
+    btn.fill(QColor(255, 0, 0));
+    d->redMaskTool->setIcon(QIcon(btn));
     d->redMaskTool->setCheckable(true);
     d->redMaskTool->setChecked(true);
     d->redMaskTool->setToolTip(i18n("Draw a suppression mask"));
@@ -275,8 +277,9 @@ ContentAwareResizeTool::ContentAwareResizeTool(QObject* const parent)
     d->maskGroup->addButton(d->redMaskTool, Private::redMask);
 
     QLabel* const labeGreenMaskTool = new QLabel(i18n("Preservation weight mask:"), d->gboxSettings->plainPage());
-    d->greenMaskTool          = new QToolButton(d->gboxSettings->plainPage());
-    d->greenMaskTool->setIcon(QIcon(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/indicator-green.png"))));
+    d->greenMaskTool                = new QToolButton(d->gboxSettings->plainPage());
+    btn.fill(QColor(0, 255, 0));
+    d->greenMaskTool->setIcon(QIcon(btn));
     d->greenMaskTool->setCheckable(true);
     d->greenMaskTool->setToolTip(i18n("Draw a preservation mask"));
     d->greenMaskTool->setWhatsThis(i18n("Click on this button to draw zones marking which areas of the "
@@ -286,7 +289,8 @@ ContentAwareResizeTool::ContentAwareResizeTool(QObject* const parent)
 
     QLabel* const labeEraseMaskTool = new QLabel(i18n("Erase mask:"), d->gboxSettings->plainPage());
     d->eraseMaskTool          = new QToolButton(d->gboxSettings->plainPage());
-    d->eraseMaskTool->setIcon(QIcon(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("digikam/data/indicator-gray.png"))));
+    btn.fill(QColor(255, 255, 0));
+    d->eraseMaskTool->setIcon(QIcon(btn));
     d->eraseMaskTool->setCheckable(true);
     d->eraseMaskTool->setToolTip(i18n("Erase mask"));
     d->eraseMaskTool->setWhatsThis(i18n("Click on this button to erase mask regions."));
@@ -294,21 +298,21 @@ ContentAwareResizeTool::ContentAwareResizeTool(QObject* const parent)
     d->maskGroup->addButton(d->eraseMaskTool, Private::eraseMask);
 
     QLabel* const labelMaskPenSize = new QLabel(i18n("Brush size:"), d->gboxSettings->plainPage());
-    d->maskPenSize           = new DIntNumInput(d->gboxSettings->plainPage());
+    d->maskPenSize                 = new DIntNumInput(d->gboxSettings->plainPage());
     d->maskPenSize->setRange(3, 64, 1);
     d->maskPenSize->setDefaultValue(10);
     d->maskPenSize->setObjectName(QLatin1String("maskPenSize"));
     d->maskPenSize->setWhatsThis(i18n("Specify here the size of the brush used to paint masks."));
 
     maskSettingsLayout->addWidget(d->weightMaskBox,  1, 0, 1, -1);
-    maskSettingsLayout->addWidget(labeRedMaskTool,   2, 0, 1, 3);
-    maskSettingsLayout->addWidget(d->redMaskTool,    2, 2, 1, 1);
-    maskSettingsLayout->addWidget(labeGreenMaskTool, 3, 0, 1, 3);
-    maskSettingsLayout->addWidget(d->greenMaskTool,  3, 2, 1, 1);
-    maskSettingsLayout->addWidget(labeEraseMaskTool, 4, 0, 1, 3);
-    maskSettingsLayout->addWidget(d->eraseMaskTool,  4, 2, 1, 1);
-    maskSettingsLayout->addWidget(labelMaskPenSize,  5, 0, 1, 1);
-    maskSettingsLayout->addWidget(d->maskPenSize,    5, 1, 1, 4);
+    maskSettingsLayout->addWidget(labeRedMaskTool,   2, 0, 1,  3);
+    maskSettingsLayout->addWidget(d->redMaskTool,    2, 2, 1,  1);
+    maskSettingsLayout->addWidget(labeGreenMaskTool, 3, 0, 1,  3);
+    maskSettingsLayout->addWidget(d->greenMaskTool,  3, 2, 1,  1);
+    maskSettingsLayout->addWidget(labeEraseMaskTool, 4, 0, 1,  3);
+    maskSettingsLayout->addWidget(d->eraseMaskTool,  4, 2, 1,  1);
+    maskSettingsLayout->addWidget(labelMaskPenSize,  5, 0, 1,  1);
+    maskSettingsLayout->addWidget(d->maskPenSize,    5, 1, 1,  4);
 
     maskSettingsContainer->setLayout(maskSettingsLayout);
 
@@ -334,8 +338,8 @@ ContentAwareResizeTool::ContentAwareResizeTool(QObject* const parent)
                                             "close to a skin tone."));
     d->preserveSkinTones->setChecked(false);
 
-    energyFunctionsLayout->addWidget(d->funcInput,         1, 0, 1,-1);
-    energyFunctionsLayout->addWidget(d->preserveSkinTones, 2, 0, 1, 3);
+    energyFunctionsLayout->addWidget(d->funcInput,         1, 0, 1, -1);
+    energyFunctionsLayout->addWidget(d->preserveSkinTones, 2, 0, 1,  3);
 
     energyFunctionsContainer->setLayout(energyFunctionsLayout);
 
@@ -395,14 +399,14 @@ ContentAwareResizeTool::ContentAwareResizeTool(QObject* const parent)
     d->resizeOrderInput->setWhatsThis(i18n("Here you can set whether to resize horizontally first or "
                                            "vertically first."));
 
-    advancedSettingsLayout->addWidget(labelRigidity,       1, 0, 1, 4);
-    advancedSettingsLayout->addWidget(d->rigidityInput,    2, 0, 1,-1);
-    advancedSettingsLayout->addWidget(labelSteps,          3, 0, 1, 4);
-    advancedSettingsLayout->addWidget(d->stepInput,        4, 0, 1,-1);
-    advancedSettingsLayout->addWidget(labelSideSwitch,     5, 0, 1, 4);
-    advancedSettingsLayout->addWidget(d->sideSwitchInput,  6, 0, 1,-1);
-    advancedSettingsLayout->addWidget(labelResizeOrder,    7, 0, 1, 4);
-    advancedSettingsLayout->addWidget(d->resizeOrderInput, 8, 0, 1,-1);
+    advancedSettingsLayout->addWidget(labelRigidity,       1, 0, 1,  4);
+    advancedSettingsLayout->addWidget(d->rigidityInput,    2, 0, 1, -1);
+    advancedSettingsLayout->addWidget(labelSteps,          3, 0, 1,  4);
+    advancedSettingsLayout->addWidget(d->stepInput,        4, 0, 1, -1);
+    advancedSettingsLayout->addWidget(labelSideSwitch,     5, 0, 1,  4);
+    advancedSettingsLayout->addWidget(d->sideSwitchInput,  6, 0, 1, -1);
+    advancedSettingsLayout->addWidget(labelResizeOrder,    7, 0, 1,  4);
+    advancedSettingsLayout->addWidget(d->resizeOrderInput, 8, 0, 1, -1);
 
     advancedSettingsContainer->setLayout(advancedSettingsLayout);
 
@@ -472,6 +476,7 @@ void ContentAwareResizeTool::readSettings()
     blockWidgetSignals(true);
 
     // NOTE: size settings are not restored here because they depends of image size.
+
     d->stepInput->setValue(group.readEntry(d->configStepEntry,                      d->stepInput->defaultValue()));
     d->stepInput->setValue(group.readEntry(d->configSideSwitchEntry,                d->sideSwitchInput->defaultValue()));
     d->rigidityInput->setValue(group.readEntry(d->configRigidityEntry,              d->rigidityInput->defaultValue()));
@@ -494,6 +499,7 @@ void ContentAwareResizeTool::writeSettings()
     KConfigGroup group        = config->group(d->configGroupName);
 
     // NOTE: size settings are not saved here because they depends of image size.
+
     group.writeEntry(d->configStepEntry,              d->stepInput->value());
     group.writeEntry(d->configSideSwitchEntry,        d->sideSwitchInput->value());
     group.writeEntry(d->configRigidityEntry,          d->rigidityInput->value());
@@ -599,7 +605,7 @@ void ContentAwareResizeTool::slotValuesChanged()
 
 void ContentAwareResizeTool::enableMaskSettings(bool b)
 {
-    bool c = b && d->weightMaskBox->isChecked();
+    bool c = (b && d->weightMaskBox->isChecked());
     d->weightMaskBox->setEnabled(b);
     d->redMaskTool  ->setEnabled(c);
     d->greenMaskTool->setEnabled(c);
@@ -621,7 +627,7 @@ void ContentAwareResizeTool::enableContentAwareSettings(bool b)
 void ContentAwareResizeTool::slotMixedRescaleValueChanged()
 {
     blockWidgetSignals(true);
-    enableContentAwareSettings(d->mixedRescaleInput->value()>0.0);
+    enableContentAwareSettings(d->mixedRescaleInput->value() > 0.0);
     blockWidgetSignals(false);
 }
 
@@ -739,7 +745,7 @@ void ContentAwareResizeTool::setPreviewImage()
 
     QColor background = toolView()->backgroundRole();
     imDest.fill(DColor(background, filter()->getTargetImage().sixteenBit()));
-    imDest.bitBltImage(&imTemp, (w-imTemp.width())/2, (h-imTemp.height())/2);
+    imDest.bitBltImage(&imTemp, (w-imTemp.width()) / 2, (h-imTemp.height()) / 2);
 
     iface->setPreview(imDest.smoothScale(iface->previewSize()));
     d->previewWidget->updatePreview();
