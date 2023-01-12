@@ -49,6 +49,7 @@
 #include "dpluginaboutdlg.h"
 #include "dplugineditor.h"
 #include "editortool.h"
+#include "dxmlguiwindow.h"
 
 namespace Digikam
 {
@@ -66,6 +67,7 @@ public:
         plainPage       (nullptr),
         toolName        (nullptr),
         toolIcon        (nullptr),
+        toolHelp        (nullptr),
         toolAbout       (nullptr),
         guideBox        (nullptr),
         okBtn           (nullptr),
@@ -92,6 +94,7 @@ public:
 
     QLabel*              toolName;
     QLabel*              toolIcon;
+    QPushButton*         toolHelp;
     QPushButton*         toolAbout;
 
     DHBox*               guideBox;
@@ -143,6 +146,10 @@ EditorToolSettings::EditorToolSettings(QWidget* const parent)
     d->toolAbout->setIcon(QIcon::fromTheme(QLatin1String("help-about")));
     d->toolAbout->setToolTip(i18n("About this tool..."));
 
+    d->toolHelp                     = new QPushButton();
+    d->toolHelp->setIcon(QIcon::fromTheme(QLatin1String("globe")));
+    d->toolHelp->setToolTip(i18n("Tool online handbook..."));
+
     QString frameStyle = QString::fromLatin1("QFrame {"
                                              "color: %1;"
                                              "border: 1px solid %2;"
@@ -160,12 +167,14 @@ EditorToolSettings::EditorToolSettings(QWidget* const parent)
     toolDescriptor->setStyleSheet(frameStyle);
     d->toolName->setStyleSheet(noFrameStyle);
     d->toolIcon->setStyleSheet(noFrameStyle);
+    d->toolHelp->setStyleSheet(noFrameStyle);
     d->toolAbout->setStyleSheet(noFrameStyle);
 
     QGridLayout* const descrLayout = new QGridLayout();
     descrLayout->addWidget(d->toolIcon,  0, 0, 1, 1);
     descrLayout->addWidget(d->toolName,  0, 1, 1, 1);
-    descrLayout->addWidget(d->toolAbout, 0, 2, 1, 1);
+    descrLayout->addWidget(d->toolHelp,  0, 2, 1, 1);
+    descrLayout->addWidget(d->toolAbout, 0, 3, 1, 1);
     descrLayout->setColumnStretch(1, 10);
     toolDescriptor->setLayout(descrLayout);
 
@@ -276,6 +285,9 @@ EditorToolSettings::EditorToolSettings(QWidget* const parent)
 
     connect(d->toolAbout, SIGNAL(clicked()),
             this, SLOT(slotAboutPlugin()));
+
+    connect(d->toolHelp, SIGNAL(clicked()),
+            this, SLOT(slotHelpPlugin()));
 
     // --------------------------------------------------------
 
@@ -449,6 +461,19 @@ void EditorToolSettings::slotAboutPlugin()
             QPointer<DPluginAboutDlg> dlg = new DPluginAboutDlg(d->tool->plugin());
             dlg->exec();
             delete dlg;
+        }
+    }
+}
+
+void EditorToolSettings::slotHelpPlugin()
+{
+    if (d->tool)
+    {
+        if (d->tool->plugin())
+        {
+            DXmlGuiWindow::openHandbook(d->tool->plugin()->handbookSection(),
+                                        d->tool->plugin()->handbookChapter(),
+                                        d->tool->plugin()->handbookReference());
         }
     }
 }
