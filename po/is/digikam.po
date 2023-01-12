@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-09 00:53+0000\n"
+"POT-Creation-Date: 2023-01-12 00:53+0000\n"
 "PO-Revision-Date: 2023-01-02 13:45+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -3536,7 +3536,7 @@ msgstr "Tegund hljóðrásar"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:72
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:96
-#: core/utilities/searchwindow/searchfields_createfield.cpp:878
+#: core/utilities/searchwindow/searchfields_createfield.cpp:894
 #: core/utilities/setup/setuptooltip.cpp:319
 #, kde-format
 msgid "Audio Codec"
@@ -3544,7 +3544,7 @@ msgstr "Hljóðkóðun"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:73
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:101
-#: core/utilities/searchwindow/searchfields_createfield.cpp:738
+#: core/utilities/searchwindow/searchfields_createfield.cpp:754
 #, kde-format
 msgid "Duration"
 msgstr "Tímalengd"
@@ -8065,7 +8065,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can adjust the color curves from image."
 msgstr "Þetta myndvinnsluverkfæri getur lagað litferla í myndum."
 
-#: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:80
+#: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Curves Adjust..."
@@ -8279,7 +8279,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can adjust the color levels from image."
 msgstr "Þetta myndvinnsluverkfæri getur lagað litatíðnistig (levels) í myndum."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:80
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Levels Adjust..."
@@ -8356,7 +8356,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can adjust colors automatically from image."
 msgstr "Þetta myndvinnsluverkfæri getur sjálfvirkt aðlagað liti í myndum."
 
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:80
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Color Auto-Correction..."
@@ -8376,7 +8376,7 @@ msgstr ""
 "Þetta myndvinnsluverkfæri getur aðlagað birtustig / birtuskil / litróf í "
 "myndum."
 
-#: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:83
+#: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Brightness/Contrast/Gamma..."
@@ -8399,7 +8399,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can convert image to black and white."
 msgstr "Þetta myndvinnsluverkfæri getur umbreytt litmynd í svarthvíta mynd."
 
-#: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:83
+#: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Black && White..."
@@ -8416,7 +8416,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can mix color channels from image."
 msgstr "Þetta myndvinnsluverkfæri getur blandað litrásir í myndum."
 
-#: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:80
+#: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Channel Mixer..."
@@ -8428,7 +8428,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can adjust color balance from image."
 msgstr "Þetta myndvinnsluverkfæri getur lagað jafnvægi lita í myndum."
 
-#: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:80
+#: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Color Balance..."
@@ -8446,19 +8446,19 @@ msgctxt "@info"
 msgid "This Image Editor tool can convert image color depth to 8 bits."
 msgstr "Þetta myndvinnsluverkfæri getur umbreytt litadýpt mynda í 8 bita."
 
-#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:81
+#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Convert to 8 bits"
 msgstr "Umbreyta í 8 bita"
 
-#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:99
+#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:114
 #, kde-format
 msgctxt "@info"
 msgid "This image is already using a depth of 8 bits / color / pixel."
 msgstr "Þessi mynd notar nú þegar litadýpt með 8 bitum / lit / díl."
 
-#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:107
+#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:122
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -8473,13 +8473,13 @@ msgctxt "@info"
 msgid "This Image Editor tool can convert image color depth to 16 bits."
 msgstr "Þetta myndvinnsluverkfæri getur umbreytt litadýpt mynda í 16 bita."
 
-#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:80
+#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Convert to 16 bits"
 msgstr "Umbreyta í 16 bita"
 
-#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:97
+#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:112
 #, kde-format
 msgctxt "@info"
 msgid "This image is already using a depth of 16 bits / color / pixel."
@@ -8609,7 +8609,7 @@ msgid "This Image Editor tool can emulate color negative film from image."
 msgstr ""
 "Þetta myndvinnsluverkfæri getur líkt eftir negatívri litfilmu í myndum."
 
-#: core/dplugins/editor/colors/film/filmtoolplugin.cpp:80
+#: core/dplugins/editor/colors/film/filmtoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Color Negative..."
@@ -8629,7 +8629,7 @@ msgstr ""
 "Þetta myndvinnsluverkfæri getur aðlagað litblæ / litmettun / ljósleika í "
 "myndum."
 
-#: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:80
+#: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Hue/Saturation/Lightness..."
@@ -8641,13 +8641,13 @@ msgctxt "@info"
 msgid "This Image Editor tool can invert colors from image."
 msgstr "Þetta myndvinnsluverkfæri getur snúið við litum í myndum."
 
-#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:80
+#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Invert"
 msgstr "Umhverfa"
 
-#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:99
+#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:114
 #, kde-format
 msgctxt "@title"
 msgid "Invert"
@@ -8686,25 +8686,25 @@ msgctxt "@info"
 msgid "This Image Editor tool can convert image to a different color space."
 msgstr "Þetta myndvinnsluverkfæri getur umbreytt myndum í aðra litrýmd."
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:97
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:112
 #, kde-format
 msgctxt "@action"
 msgid "Color Spaces"
 msgstr "Litrýmdir"
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:105
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Color Space Converter..."
 msgstr "Umbreyting litrýmdar..."
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:126
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:141
 #, kde-format
 msgctxt "@info"
 msgid "This image is not color managed."
 msgstr "Þessi mynd er ekki litastýrð."
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:143
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:158
 #, kde-format
 msgctxt "@action"
 msgid "Color Management is disabled..."
@@ -8724,7 +8724,7 @@ msgid "This Image Editor tool can adjust the white balance from image."
 msgstr ""
 "Þetta myndvinnsluverkfæri getur lagað hvítvægi (white balance) í myndum."
 
-#: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:83
+#: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "White Balance..."
@@ -8750,7 +8750,7 @@ msgstr ""
 "Þetta myndvinnsluverkfæri getur sett ramma eða jaðar til skrauts í kringum "
 "myndir."
 
-#: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:83
+#: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Add Border..."
@@ -8896,7 +8896,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can insert text over an image."
 msgstr "Þetta myndvinnsluverkfæri getur sett texta yfir á mynd."
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttoolplugin.cpp:83
+#: core/dplugins/editor/decorate/inserttext/inserttexttoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Insert Text..."
@@ -8925,7 +8925,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can apply a texture over an image."
 msgstr "Þetta myndvinnsluverkfæri getur sett efnisáferð á mynd."
 
-#: core/dplugins/editor/decorate/texture/texturetoolplugin.cpp:83
+#: core/dplugins/editor/decorate/texture/texturetoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Apply Texture..."
@@ -8956,7 +8956,7 @@ msgid "This Image Editor tool correct vignetting from an image."
 msgstr ""
 "Þetta myndvinnsluverkfæri lagfærir hornskyggingu (vignetting) á myndum."
 
-#: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:83
+#: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Vignetting Correction..."
@@ -8985,7 +8985,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can blur an image."
 msgstr "Þetta myndvinnsluverkfæri getur afskerpt myndir."
 
-#: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:83
+#: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Blur..."
@@ -9127,13 +9127,13 @@ msgstr ""
 "Þetta myndvinnsluverkfæri getur sjálfvirkt lagað myndtruflanir með því að "
 "klóna fleti."
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:84
+#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Healing Clone..."
 msgstr "Viðgerðar-klónun..."
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:86
+#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:101
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -9158,7 +9158,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can fix hot pixels from an image."
 msgstr "Þetta myndvinnsluverkfæri getur lagað skemmda díla í myndum."
 
-#: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:83
+#: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Hot Pixels..."
@@ -9182,7 +9182,7 @@ msgid ""
 msgstr ""
 "Þetta myndvinnsluverkfæri getur sjálfvirkt lagað linsutruflanir í myndum."
 
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:83
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Lens Auto-Correction..."
@@ -9269,7 +9269,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can adjust lens distortions from an image."
 msgstr "Þetta myndvinnsluverkfæri getur lagað linsuskekkingar í myndum."
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:83
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Distortion..."
@@ -9288,7 +9288,7 @@ msgstr ""
 "Þetta myndvinnsluverkfæri getur líkt eftir litbrigðavörpun (tone mapping) í "
 "myndum."
 
-#: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:83
+#: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Local Contrast..."
@@ -9306,7 +9306,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can reduce noise in image."
 msgstr "Þetta myndvinnsluverkfæri getur minnkað truflanasuð í myndum."
 
-#: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:80
+#: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Noise Reduction..."
@@ -9337,13 +9337,13 @@ msgctxt "@info"
 msgid "This Image Editor tool can reduce red eye effect on image."
 msgstr "Þetta myndvinnsluverkfæri getur lagað rauð augu í myndum."
 
-#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:88
+#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Red Eye..."
 msgstr "Rauð augu..."
 
-#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:89
+#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:104
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -9433,7 +9433,7 @@ msgstr ""
 "Þetta myndvinnsluverkfæri getur hreinsað ljósmyndir með grátónasíun "
 "(Greystoration)."
 
-#: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:80
+#: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Restoration..."
@@ -9475,7 +9475,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can sharp an image."
 msgstr "Þetta myndvinnsluverkfæri getur skerpt myndir."
 
-#: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:80
+#: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Sharpen..."
@@ -19878,7 +19878,7 @@ msgstr ""
 "pappírsstærðir og mismunandi framsetning er í boði fyrir vinnslu skránna.</p>"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:84
-#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#: core/utilities/searchwindow/searchfields_createfield.cpp:670
 #, kde-format
 msgid "Author"
 msgstr "Höfundur"
@@ -51763,14 +51763,14 @@ msgid "Display Aspect Ratio"
 msgstr "Birta stærðarhlutföll"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:78
-#: core/utilities/searchwindow/searchfields_createfield.cpp:841
+#: core/utilities/searchwindow/searchfields_createfield.cpp:857
 #: core/utilities/setup/setuptooltip.cpp:313
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "Hljóðbitahraði"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:79
-#: core/utilities/searchwindow/searchfields_createfield.cpp:859
+#: core/utilities/searchwindow/searchfields_createfield.cpp:875
 #: core/utilities/setup/setuptooltip.cpp:316
 #, kde-format
 msgid "Audio Channel Type"
@@ -58815,266 +58815,277 @@ msgstr "Atriði er ekki með GPS-upplýsingar"
 msgid "Not Geo-located"
 msgstr "Ekki-hnattstaðsett"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:638
+#: core/utilities/searchwindow/searchfields_createfield.cpp:640
+#, fuzzy, kde-format
+#| msgid "Country:"
+msgid "Country"
+msgstr "Land:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:640
+#, kde-format
+msgid "Country of the location shown in the item"
+msgstr ""
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:654
 #, kde-format
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "Búið til af"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:638
+#: core/utilities/searchwindow/searchfields_createfield.cpp:654
 #, kde-format
 msgid "Return items created by"
 msgstr "Finna atriði með búin til af"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:646
+#: core/utilities/searchwindow/searchfields_createfield.cpp:662
 #, kde-format
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "Skýringatexti"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:646
+#: core/utilities/searchwindow/searchfields_createfield.cpp:662
 #, kde-format
 msgid "Return items whose comment contains"
 msgstr "Finna atriði með athugasemdum sem innihalda"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#: core/utilities/searchwindow/searchfields_createfield.cpp:670
 #, kde-format
 msgid "Return items commented by"
 msgstr "Finna atriði með athugasemdum frá"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:662
+#: core/utilities/searchwindow/searchfields_createfield.cpp:678
 #, kde-format
 msgid "Headline"
 msgstr "Fyrirsögn"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:662
+#: core/utilities/searchwindow/searchfields_createfield.cpp:678
 #, kde-format
 msgid "Return items with the IPTC headline"
 msgstr "Finna atriði með IPTC fyrirsögninni"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:670
+#: core/utilities/searchwindow/searchfields_createfield.cpp:686
 #, kde-format
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "Titill"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:670
+#: core/utilities/searchwindow/searchfields_createfield.cpp:686
 #, kde-format
 msgid "Return items with the IPTC title"
 msgstr "Finna atriði með IPTC titlinum"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:678
+#: core/utilities/searchwindow/searchfields_createfield.cpp:694
 #, kde-format
 msgid "Find items that have associated all these words:"
 msgstr "Finna atriði sem tengd eru öllum þessum orðum:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:686
+#: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, kde-format
 msgid "Empty Text"
 msgstr "Auður texti"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:686
+#: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, kde-format
 msgid "Return items without text in:"
 msgstr "Finna atriði án texta í:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#: core/utilities/searchwindow/searchfields_createfield.cpp:704
 #, kde-format
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "Búið til af"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:689
+#: core/utilities/searchwindow/searchfields_createfield.cpp:705
 #, kde-format
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "Skýringatexti"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:690
+#: core/utilities/searchwindow/searchfields_createfield.cpp:706
 #, kde-format
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "Höfundur"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:691
+#: core/utilities/searchwindow/searchfields_createfield.cpp:707
 #, kde-format
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "Fyrirsögn"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:692
+#: core/utilities/searchwindow/searchfields_createfield.cpp:708
 #, kde-format
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "Titill"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:702
-#: core/utilities/searchwindow/searchfields_createfield.cpp:721
+#: core/utilities/searchwindow/searchfields_createfield.cpp:718
+#: core/utilities/searchwindow/searchfields_createfield.cpp:737
 #, kde-format
 msgid "Aspect Ratio"
 msgstr "Stærðarhlutföll"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:702
+#: core/utilities/searchwindow/searchfields_createfield.cpp:718
 #, kde-format
 msgid "Return items with the aspect ratio"
 msgstr "Finna atriði með stærðarhlutfallinu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:710
+#: core/utilities/searchwindow/searchfields_createfield.cpp:726
 #, kde-format
 msgid "Pixel Size"
 msgstr "Stærð mynddíls"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:710
+#: core/utilities/searchwindow/searchfields_createfield.cpp:726
 #, kde-format
 msgid "Value of (Width * Height) between"
 msgstr "Gildi (breidd * hæð) á milli"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:711
+#: core/utilities/searchwindow/searchfields_createfield.cpp:727
 #, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "og"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:721
+#: core/utilities/searchwindow/searchfields_createfield.cpp:737
 #, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "Finna myndskeið með stærðarhlutfalli ramma"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:738
+#: core/utilities/searchwindow/searchfields_createfield.cpp:754
 #, kde-format
 msgid "Length of the video"
 msgstr "Lengd myndskeiðs"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:739
+#: core/utilities/searchwindow/searchfields_createfield.cpp:755
 #, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "og"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:740
+#: core/utilities/searchwindow/searchfields_createfield.cpp:756
 #, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr "sek"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:756
+#: core/utilities/searchwindow/searchfields_createfield.cpp:772
 #, kde-format
 msgid "Frame Rate"
 msgstr "Rammatíðni"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:756
+#: core/utilities/searchwindow/searchfields_createfield.cpp:772
 #, kde-format
 msgid "Return video with the frame rate"
 msgstr "Finna myndskeið með rammatíðni"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:757
+#: core/utilities/searchwindow/searchfields_createfield.cpp:773
 #, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "og"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:758
+#: core/utilities/searchwindow/searchfields_createfield.cpp:774
 #, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr "r/sek"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:773
+#: core/utilities/searchwindow/searchfields_createfield.cpp:789
 #, kde-format
 msgid "Codec"
 msgstr "Myndlyklun"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:773
+#: core/utilities/searchwindow/searchfields_createfield.cpp:789
 #, kde-format
 msgid "Return video codec"
 msgstr "Finna myndmerkislyklun"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:841
+#: core/utilities/searchwindow/searchfields_createfield.cpp:857
 #, kde-format
 msgid "Return Audio Bits Rate"
 msgstr "Skila hljóðbitahraða"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:842
+#: core/utilities/searchwindow/searchfields_createfield.cpp:858
 #, kde-format
 msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "og"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:843
+#: core/utilities/searchwindow/searchfields_createfield.cpp:859
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr "bás"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:859
+#: core/utilities/searchwindow/searchfields_createfield.cpp:875
 #, kde-format
 msgid "Return Audio Channel Type"
 msgstr "Skila tegund hljóðrásar"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:861
+#: core/utilities/searchwindow/searchfields_createfield.cpp:877
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr "Einóma"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:862
+#: core/utilities/searchwindow/searchfields_createfield.cpp:878
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr "Víðóma"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:863
+#: core/utilities/searchwindow/searchfields_createfield.cpp:879
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr "5.1 Surround hljóð"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:864
+#: core/utilities/searchwindow/searchfields_createfield.cpp:880
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr "7.1 Surround hljóð"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:865
+#: core/utilities/searchwindow/searchfields_createfield.cpp:881
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr "16 -rása runa"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:866
+#: core/utilities/searchwindow/searchfields_createfield.cpp:882
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "Önnur tegund hljóðrásar"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:878
+#: core/utilities/searchwindow/searchfields_createfield.cpp:894
 #, kde-format
 msgid "Return Audio Codec"
 msgstr "Skila hljóðkóðunarlyklun"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:976
-#: core/utilities/searchwindow/searchfields_createfield.cpp:986
+#: core/utilities/searchwindow/searchfields_createfield.cpp:992
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1002
 #, kde-format
 msgid "Faces"
 msgstr "Andlit"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:976
+#: core/utilities/searchwindow/searchfields_createfield.cpp:992
 #, kde-format
 msgid "Return items by number of face regions"
 msgstr "Finna atriði eftir fjölda andlitasvæða"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:977
+#: core/utilities/searchwindow/searchfields_createfield.cpp:993
 #, kde-format
 msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "og"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:986
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1002
 #, kde-format
 msgid "Return items without face regions"
 msgstr "Finna atriði án andlitasvæða"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:987
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1003
 #, kde-format
 msgid "No Face Regions"
 msgstr "Engin andlitasvæði"
@@ -59141,7 +59152,7 @@ msgstr "Fyrirsögn, athugasemd, titill"
 msgid "Geographic position"
 msgstr "Hnattstaða"
 
-#: core/utilities/searchwindow/searchgroup.cpp:204
+#: core/utilities/searchwindow/searchgroup.cpp:205
 #, kde-format
 msgid "Face regions"
 msgstr "Andlitasvæði"

@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-09 00:53+0000\n"
+"POT-Creation-Date: 2023-01-12 00:53+0000\n"
 "PO-Revision-Date: 2022-11-24 05:00+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -3566,7 +3566,7 @@ msgstr "Audio kanal mota"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:72
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:96
-#: core/utilities/searchwindow/searchfields_createfield.cpp:878
+#: core/utilities/searchwindow/searchfields_createfield.cpp:894
 #: core/utilities/setup/setuptooltip.cpp:319
 #, kde-format
 msgid "Audio Codec"
@@ -3574,7 +3574,7 @@ msgstr "Audio kodeka"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:73
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:101
-#: core/utilities/searchwindow/searchfields_createfield.cpp:738
+#: core/utilities/searchwindow/searchfields_createfield.cpp:754
 #, kde-format
 msgid "Duration"
 msgstr "Iraupena"
@@ -8013,7 +8013,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can adjust the color curves from image."
 msgstr "Irudiak editatzeko tresna honek irudiko kolore-kurbak doi ditzake."
 
-#: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:80
+#: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Curves Adjust..."
@@ -8227,7 +8227,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can adjust the color levels from image."
 msgstr "Irudi editore honek irudiko kolore-mailak doi ditzake."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:80
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Levels Adjust..."
@@ -8308,7 +8308,7 @@ msgstr ""
 "Irudiak editatzeko tresna honek irudi bateko koloreak automatikoki doi "
 "ditzake."
 
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:80
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Color Auto-Correction..."
@@ -8328,7 +8328,7 @@ msgstr ""
 "Irudiak editatzeko tresna honek irudiko Distira / Kontrastea / Gamma doitu "
 "dezake."
 
-#: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:83
+#: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Brightness/Contrast/Gamma..."
@@ -8351,7 +8351,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can convert image to black and white."
 msgstr "Irudiak editatzeko tresna honek irudiak zuri-beltzera bihur ditzake."
 
-#: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:83
+#: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Black && White..."
@@ -8368,7 +8368,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can mix color channels from image."
 msgstr "Irudien editore honek irudiko koloreen kanalak nahas ditzake."
 
-#: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:80
+#: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Channel Mixer..."
@@ -8380,7 +8380,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can adjust color balance from image."
 msgstr "Irudien editore honek irudiko kolore-oreka doitu dezake."
 
-#: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:80
+#: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Color Balance..."
@@ -8398,19 +8398,19 @@ msgctxt "@info"
 msgid "This Image Editor tool can convert image color depth to 8 bits."
 msgstr "Irudien editore honek irudien kolore sakonera 8 bitera bihur dezake."
 
-#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:81
+#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Convert to 8 bits"
 msgstr "Bihurtu 8 bitetara"
 
-#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:99
+#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:114
 #, kde-format
 msgctxt "@info"
 msgid "This image is already using a depth of 8 bits / color / pixel."
 msgstr "Irudi honek dagoeneko 8 biteko sakonera / kolorea / pixela darabil."
 
-#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:107
+#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:122
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -8426,13 +8426,13 @@ msgctxt "@info"
 msgid "This Image Editor tool can convert image color depth to 16 bits."
 msgstr "Irudien editore honek irudien kolore sakonera 16 bitera bihur dezake."
 
-#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:80
+#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Convert to 16 bits"
 msgstr "Bihurtu 16 bitetara"
 
-#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:97
+#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:112
 #, kde-format
 msgctxt "@info"
 msgid "This image is already using a depth of 16 bits / color / pixel."
@@ -8550,7 +8550,7 @@ msgid "This Image Editor tool can emulate color negative film from image."
 msgstr ""
 "Aukera hau irudiari unean hautatutako area arte zooma egiteko erabiliko da."
 
-#: core/dplugins/editor/colors/film/filmtoolplugin.cpp:80
+#: core/dplugins/editor/colors/film/filmtoolplugin.cpp:95
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Color Negative..."
@@ -8569,7 +8569,7 @@ msgid ""
 msgstr ""
 "Aukera hau irudiari unean hautatutako area arte zooma egiteko erabiliko da."
 
-#: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:80
+#: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:95
 #, fuzzy, kde-format
 #| msgid "Hue/Saturation/Lightness..."
 msgctxt "@action"
@@ -8583,14 +8583,14 @@ msgid "This Image Editor tool can invert colors from image."
 msgstr ""
 "Aukera hau irudiari unean hautatutako area arte zooma egiteko erabiliko da."
 
-#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:80
+#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:95
 #, fuzzy, kde-format
 #| msgid "Invert"
 msgctxt "@action"
 msgid "Invert"
 msgstr "Alderantzikatu"
 
-#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:99
+#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:114
 #, fuzzy, kde-format
 #| msgid "Invert"
 msgctxt "@title"
@@ -8631,28 +8631,28 @@ msgctxt "@info"
 msgid "This Image Editor tool can convert image to a different color space."
 msgstr "Zuri-beltzera bihurtzeko tresna."
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:97
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:112
 #, fuzzy, kde-format
 #| msgid "Color Space"
 msgctxt "@action"
 msgid "Color Spaces"
 msgstr "Kolore-espazioa"
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:105
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:120
 #, fuzzy, kde-format
 #| msgid "Color Space Conversion"
 msgctxt "@action"
 msgid "Color Space Converter..."
 msgstr "Kolore-espazioaren bihurketa"
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:126
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:141
 #, fuzzy, kde-format
 #| msgid "This image is not color managed."
 msgctxt "@info"
 msgid "This image is not color managed."
 msgstr "Irudi honek ez dauka kolore-kudeaketarik."
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:143
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:158
 #, fuzzy, kde-format
 #| msgid "Color Management is disabled..."
 msgctxt "@action"
@@ -8673,7 +8673,7 @@ msgid "This Image Editor tool can adjust the white balance from image."
 msgstr ""
 "Aukera hau irudiari unean hautatutako area arte zooma egiteko erabiliko da."
 
-#: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:83
+#: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:98
 #, fuzzy, kde-format
 #| msgid "White Balance..."
 msgctxt "@action"
@@ -8699,7 +8699,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can add decorative border around image."
 msgstr "Irudi honek ez dauka kolore-kudeaketarik."
 
-#: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:83
+#: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:98
 #, fuzzy, kde-format
 #| msgid "Add Border..."
 msgctxt "@action"
@@ -8851,7 +8851,7 @@ msgid "This Image Editor tool can insert text over an image."
 msgstr ""
 "Aukera hau irudiari unean hautatutako area arte zooma egiteko erabiliko da."
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttoolplugin.cpp:83
+#: core/dplugins/editor/decorate/inserttext/inserttexttoolplugin.cpp:98
 #, fuzzy, kde-format
 #| msgid "Insert Text..."
 msgctxt "@action"
@@ -8883,7 +8883,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can apply a texture over an image."
 msgstr "Irudi honek ez dauka kolore-kudeaketarik."
 
-#: core/dplugins/editor/decorate/texture/texturetoolplugin.cpp:83
+#: core/dplugins/editor/decorate/texture/texturetoolplugin.cpp:98
 #, fuzzy, kde-format
 #| msgid "Apply Texture..."
 msgctxt "@action"
@@ -8917,7 +8917,7 @@ msgctxt "@info"
 msgid "This Image Editor tool correct vignetting from an image."
 msgstr "Irudi honek ez dauka kolore-kudeaketarik."
 
-#: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:83
+#: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:98
 #, fuzzy, kde-format
 #| msgid "Vignetting Correction..."
 msgctxt "@action"
@@ -8950,7 +8950,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can blur an image."
 msgstr "Irudi honek ez dauka kolore-kudeaketarik."
 
-#: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:83
+#: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:98
 #, fuzzy, kde-format
 #| msgid "Blur..."
 msgctxt "@action"
@@ -9074,14 +9074,14 @@ msgid "This Image Editor tool can fix image artifacts by cloning area."
 msgstr ""
 "Aukera hau irudiari unean hautatutako area arte zooma egiteko erabiliko da."
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:84
+#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:99
 #, fuzzy, kde-format
 #| msgid "Close Tool"
 msgctxt "@action"
 msgid "Healing Clone..."
 msgstr "Itxi tresna"
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:86
+#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:101
 #, fuzzy, kde-format
 #| msgid ""
 #| "This filter can be used to in-paint a part in a photo. To use this "
@@ -9110,7 +9110,7 @@ msgid "This Image Editor tool can fix hot pixels from an image."
 msgstr ""
 "Irudiak editatzeko tresna honek irudiko pixel distiratsuak konpon ditzake."
 
-#: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:83
+#: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Hot Pixels..."
@@ -9134,7 +9134,7 @@ msgid ""
 msgstr ""
 "Aukera hau irudiari unean hautatutako area arte zooma egiteko erabiliko da."
 
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:83
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Lens Auto-Correction..."
@@ -9224,7 +9224,7 @@ msgstr ""
 "Irudia editatzeko tresna honek irudi bateko objektiboaren distortsioak doitu "
 "ditzake."
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:83
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Distortion..."
@@ -9242,7 +9242,7 @@ msgid "This Image Editor tool can emulate tone mapping over an image."
 msgstr ""
 "Aukera hau irudiari unean hautatutako area arte zooma egiteko erabiliko da."
 
-#: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:83
+#: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:98
 #, fuzzy, kde-format
 #| msgid "Local Contrast..."
 msgctxt "@action"
@@ -9262,7 +9262,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can reduce noise in image."
 msgstr "Irudi honek ez dauka kolore-kudeaketarik."
 
-#: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:80
+#: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Noise Reduction..."
@@ -9295,14 +9295,14 @@ msgctxt "@info"
 msgid "This Image Editor tool can reduce red eye effect on image."
 msgstr "Irudi honek ez dauka kolore-kudeaketarik."
 
-#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:88
+#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:103
 #, fuzzy, kde-format
 #| msgid "Red Eye..."
 msgctxt "@action"
 msgid "Red Eye..."
 msgstr "Begi gorriak..."
 
-#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:89
+#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:104
 #, fuzzy, kde-format
 #| msgid ""
 #| "This filter can be used to correct red eyes in a photo. Select a region "
@@ -9399,7 +9399,7 @@ msgid ""
 "This Image Editor tool can restore an image using Greystoration algorithm."
 msgstr "Irudi honek ez dauka kolore-kudeaketarik."
 
-#: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:80
+#: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:95
 #, fuzzy, kde-format
 #| msgid "Restoration..."
 msgctxt "@action"
@@ -9445,7 +9445,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can sharp an image."
 msgstr "Irudi honek ez dauka kolore-kudeaketarik."
 
-#: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:80
+#: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:95
 #, fuzzy, kde-format
 #| msgid "Sharpen..."
 msgctxt "@action"
@@ -20317,7 +20317,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:84
-#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#: core/utilities/searchwindow/searchfields_createfield.cpp:670
 #, kde-format
 msgid "Author"
 msgstr "Egilea"
@@ -53974,14 +53974,14 @@ msgid "Display Aspect Ratio"
 msgstr "Mantendu aspektu-erlazioa"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:78
-#: core/utilities/searchwindow/searchfields_createfield.cpp:841
+#: core/utilities/searchwindow/searchfields_createfield.cpp:857
 #: core/utilities/setup/setuptooltip.cpp:313
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "Audio bit-emaria"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:79
-#: core/utilities/searchwindow/searchfields_createfield.cpp:859
+#: core/utilities/searchwindow/searchfields_createfield.cpp:875
 #: core/utilities/setup/setuptooltip.cpp:316
 #, kde-format
 msgid "Audio Channel Type"
@@ -61181,202 +61181,213 @@ msgstr "Irudiak ez dauka etiketarik"
 msgid "Not Geo-located"
 msgstr "Bilatu bikoiztutakoak"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:638
+#: core/utilities/searchwindow/searchfields_createfield.cpp:640
+#, fuzzy, kde-format
+#| msgid "Country:"
+msgid "Country"
+msgstr "Herrialdea:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:640
+#, kde-format
+msgid "Country of the location shown in the item"
+msgstr ""
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:654
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "Sortzailea"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:638
+#: core/utilities/searchwindow/searchfields_createfield.cpp:654
 #, fuzzy, kde-format
 #| msgid "Return pictures commented by"
 msgid "Return items created by"
 msgstr "Itzuli irudiak haien iruzkinak honek idatzi baditu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:646
+#: core/utilities/searchwindow/searchfields_createfield.cpp:662
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "Irudi-testua"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:646
+#: core/utilities/searchwindow/searchfields_createfield.cpp:662
 #, fuzzy, kde-format
 #| msgid "Return pictures whose comment contains"
 msgid "Return items whose comment contains"
 msgstr "Itzuli irudiak haien iruzkinek hau badute"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#: core/utilities/searchwindow/searchfields_createfield.cpp:670
 #, fuzzy, kde-format
 #| msgid "Return pictures commented by"
 msgid "Return items commented by"
 msgstr "Itzuli irudiak haien iruzkinak honek idatzi baditu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:662
+#: core/utilities/searchwindow/searchfields_createfield.cpp:678
 #, kde-format
 msgid "Headline"
 msgstr "Goiburua"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:662
+#: core/utilities/searchwindow/searchfields_createfield.cpp:678
 #, fuzzy, kde-format
 #| msgid "Return pictures with the IPTC headline"
 msgid "Return items with the IPTC headline"
 msgstr "Itzuli irudiak honako IPTC goiburuarekin"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:670
+#: core/utilities/searchwindow/searchfields_createfield.cpp:686
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "Titulua"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:670
+#: core/utilities/searchwindow/searchfields_createfield.cpp:686
 #, fuzzy, kde-format
 #| msgid "Return pictures with the IPTC title"
 msgid "Return items with the IPTC title"
 msgstr "Itzuli irudiak honako IPTC tituluarekin"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:678
+#: core/utilities/searchwindow/searchfields_createfield.cpp:694
 #, fuzzy, kde-format
 #| msgid "Find pictures that have associated all these words:"
 msgid "Find items that have associated all these words:"
 msgstr "Bilatu irudiak honako hitzak esleituta dituztenak:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:686
+#: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, fuzzy, kde-format
 #| msgid "Trash"
 msgid "Empty Text"
 msgstr "Zakarrontzia"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:686
+#: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
 msgid "Return items without text in:"
 msgstr "Itzuli irudiak etiketekin"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#: core/utilities/searchwindow/searchfields_createfield.cpp:704
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "Sortzailea"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:689
+#: core/utilities/searchwindow/searchfields_createfield.cpp:705
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "Irudi-testua"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:690
+#: core/utilities/searchwindow/searchfields_createfield.cpp:706
 #, fuzzy, kde-format
 #| msgid "Author"
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "Egilea"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:691
+#: core/utilities/searchwindow/searchfields_createfield.cpp:707
 #, fuzzy, kde-format
 #| msgid "Headline"
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "Goiburua"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:692
+#: core/utilities/searchwindow/searchfields_createfield.cpp:708
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "Titulua"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:702
-#: core/utilities/searchwindow/searchfields_createfield.cpp:721
+#: core/utilities/searchwindow/searchfields_createfield.cpp:718
+#: core/utilities/searchwindow/searchfields_createfield.cpp:737
 #, fuzzy, kde-format
 msgid "Aspect Ratio"
 msgstr "Aspektu-erlazioa"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:702
+#: core/utilities/searchwindow/searchfields_createfield.cpp:718
 #, fuzzy, kde-format
 msgid "Return items with the aspect ratio"
 msgstr "Itzuli irudiak fitxategi-formatuarekin"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:710
+#: core/utilities/searchwindow/searchfields_createfield.cpp:726
 #, fuzzy, kde-format
 msgid "Pixel Size"
 msgstr "Fitxategi-tamaina"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:710
+#: core/utilities/searchwindow/searchfields_createfield.cpp:726
 #, fuzzy, kde-format
 msgid "Value of (Width * Height) between"
 msgstr "Bilatu irudiak hauen arteko altuerarekin"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:711
+#: core/utilities/searchwindow/searchfields_createfield.cpp:727
 #, fuzzy, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "eta"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:721
+#: core/utilities/searchwindow/searchfields_createfield.cpp:737
 #, fuzzy, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "Itzuli irudiak fitxategi-formatuarekin"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:738
+#: core/utilities/searchwindow/searchfields_createfield.cpp:754
 #, fuzzy, kde-format
 msgid "Length of the video"
 msgstr "Multimediaren fitxategiaren altuera"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:739
+#: core/utilities/searchwindow/searchfields_createfield.cpp:755
 #, fuzzy, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "eta"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:740
+#: core/utilities/searchwindow/searchfields_createfield.cpp:756
 #, fuzzy, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr "s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:756
+#: core/utilities/searchwindow/searchfields_createfield.cpp:772
 #, fuzzy, kde-format
 msgid "Frame Rate"
 msgstr "Fotograma-abiadura"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:756
+#: core/utilities/searchwindow/searchfields_createfield.cpp:772
 #, fuzzy, kde-format
 msgid "Return video with the frame rate"
 msgstr "Itzuli irudiak fitxategi-formatuarekin"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:757
+#: core/utilities/searchwindow/searchfields_createfield.cpp:773
 #, fuzzy, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "eta"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:758
+#: core/utilities/searchwindow/searchfields_createfield.cpp:774
 #, fuzzy, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr "f/s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:773
+#: core/utilities/searchwindow/searchfields_createfield.cpp:789
 #, fuzzy, kde-format
 msgid "Codec"
 msgstr "Codec"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:773
+#: core/utilities/searchwindow/searchfields_createfield.cpp:789
 #, fuzzy, kde-format
 msgid "Return video codec"
 msgstr "Audio-fitxategiak"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:841
+#: core/utilities/searchwindow/searchfields_createfield.cpp:857
 #, fuzzy, kde-format
 msgid "Return Audio Bits Rate"
 msgstr "Audio-fitxategiak"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:842
+#: core/utilities/searchwindow/searchfields_createfield.cpp:858
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -61384,73 +61395,73 @@ msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "eta"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:843
+#: core/utilities/searchwindow/searchfields_createfield.cpp:859
 #, fuzzy, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr "%1 b/s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:859
+#: core/utilities/searchwindow/searchfields_createfield.cpp:875
 #, fuzzy, kde-format
 msgid "Return Audio Channel Type"
 msgstr "Erakutsi irudi mota"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:861
+#: core/utilities/searchwindow/searchfields_createfield.cpp:877
 #, fuzzy, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr "Mono"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:862
+#: core/utilities/searchwindow/searchfields_createfield.cpp:878
 #, fuzzy, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr "Estereo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:863
+#: core/utilities/searchwindow/searchfields_createfield.cpp:879
 #, fuzzy, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr "surround soinua"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:864
+#: core/utilities/searchwindow/searchfields_createfield.cpp:880
 #, fuzzy, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr "surround soinua"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:865
+#: core/utilities/searchwindow/searchfields_createfield.cpp:881
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:866
+#: core/utilities/searchwindow/searchfields_createfield.cpp:882
 #, fuzzy, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "Alfa kanala: "
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:878
+#: core/utilities/searchwindow/searchfields_createfield.cpp:894
 #, fuzzy, kde-format
 msgid "Return Audio Codec"
 msgstr "Audio-fitxategiak"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:976
-#: core/utilities/searchwindow/searchfields_createfield.cpp:986
+#: core/utilities/searchwindow/searchfields_createfield.cpp:992
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1002
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "By Faces"
 msgid "Faces"
 msgstr "Aurpegien arabera"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:976
+#: core/utilities/searchwindow/searchfields_createfield.cpp:992
 #, fuzzy, kde-format
 #| msgid "Return pictures whose file name contains"
 msgid "Return items by number of face regions"
 msgstr "Itzuli irudiak, haien fitxategi-izenek hau badute"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:977
+#: core/utilities/searchwindow/searchfields_createfield.cpp:993
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -61458,13 +61469,13 @@ msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "eta"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:986
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1002
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
 msgid "Return items without face regions"
 msgstr "Itzuli irudiak etiketekin"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:987
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1003
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
 msgid "No Face Regions"
@@ -61533,7 +61544,7 @@ msgstr "Epigrafea, iruzkina, titulua"
 msgid "Geographic position"
 msgstr "Argazkiaren banaketa"
 
-#: core/utilities/searchwindow/searchgroup.cpp:204
+#: core/utilities/searchwindow/searchgroup.cpp:205
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
 msgid "Face regions"

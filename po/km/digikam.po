@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-09 00:53+0000\n"
+"POT-Creation-Date: 2023-01-12 00:53+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -3728,7 +3728,7 @@ msgstr ""
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:72
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:96
-#: core/utilities/searchwindow/searchfields_createfield.cpp:878
+#: core/utilities/searchwindow/searchfields_createfield.cpp:894
 #: core/utilities/setup/setuptooltip.cpp:319
 #, fuzzy, kde-format
 #| msgid "Audio Files"
@@ -3737,7 +3737,7 @@ msgstr "ឯកសារ​អូឌីយ៉ូ"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:73
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:101
-#: core/utilities/searchwindow/searchfields_createfield.cpp:738
+#: core/utilities/searchwindow/searchfields_createfield.cpp:754
 #, fuzzy, kde-format
 msgid "Duration"
 msgstr "ការ​ធ្វើ​សារ​ជា​ថ្មី ៖"
@@ -8195,7 +8195,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can adjust the color curves from image."
 msgstr "បើក​ជម្រើស​នេះ ដើម្បី​កំណត់​ទិស​ដោយ​ស្វ័យប្រវត្តិ ។"
 
-#: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:80
+#: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:95
 #, fuzzy, kde-format
 #| msgid "Curves Adjust..."
 msgctxt "@action"
@@ -8400,7 +8400,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can adjust the color levels from image."
 msgstr "បើក​ជម្រើស​នេះ ដើម្បី​កំណត់​ទិស​ដោយ​ស្វ័យប្រវត្តិ ។"
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:80
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:95
 #, fuzzy, kde-format
 #| msgid "Levels Adjust..."
 msgctxt "@action"
@@ -8473,7 +8473,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can adjust colors automatically from image."
 msgstr "បើក​ជម្រើស​នេះ ដើម្បី​កំណត់​ទិស​ដោយ​ស្វ័យប្រវត្តិ ។"
 
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:80
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:95
 #, fuzzy, kde-format
 #| msgid "Auto-Correction..."
 msgctxt "@action"
@@ -8492,7 +8492,7 @@ msgid ""
 "This Image Editor tool can adjust Brightness / Contrast / Gamma from image."
 msgstr "បើក​ជម្រើស​នេះ ដើម្បី​កំណត់​ទិស​ដោយ​ស្វ័យប្រវត្តិ ។"
 
-#: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:83
+#: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:98
 #, fuzzy, kde-format
 #| msgid "Brightness/Contrast/Gamma..."
 msgctxt "@action"
@@ -8518,7 +8518,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can convert image to black and white."
 msgstr "រូបភាព​នេះ​មិន​ត្រូវ​បាន​គ្រប់គ្រង​ពណ៌​ឡើយ ។"
 
-#: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:83
+#: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:98
 #, fuzzy, kde-format
 #| msgid "Black && White..."
 msgctxt "@action"
@@ -8536,7 +8536,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can mix color channels from image."
 msgstr "បើក​ជម្រើស​នេះ ដើម្បី​កំណត់​ទិស​ដោយ​ស្វ័យប្រវត្តិ ។"
 
-#: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:80
+#: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:95
 #, fuzzy, kde-format
 #| msgid "Channel Mixer..."
 msgctxt "@action"
@@ -8549,7 +8549,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can adjust color balance from image."
 msgstr "បើក​ជម្រើស​នេះ ដើម្បី​កំណត់​ទិស​ដោយ​ស្វ័យប្រវត្តិ ។"
 
-#: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:80
+#: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:95
 #, fuzzy, kde-format
 #| msgid "Color Balance..."
 msgctxt "@action"
@@ -8570,21 +8570,21 @@ msgctxt "@info"
 msgid "This Image Editor tool can convert image color depth to 8 bits."
 msgstr "រូបភាព​នេះ​មិន​ត្រូវ​បាន​គ្រប់គ្រង​ពណ៌​ឡើយ ។"
 
-#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:81
+#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:96
 #, fuzzy, kde-format
 #| msgid "Convert to Black and White"
 msgctxt "@action"
 msgid "Convert to 8 bits"
 msgstr "បម្លែង​ជា​ខ្មៅ និង​ស"
 
-#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:99
+#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:114
 #, fuzzy, kde-format
 #| msgid "This image is already using a depth of 8 bits / color / pixel."
 msgctxt "@info"
 msgid "This image is already using a depth of 8 bits / color / pixel."
 msgstr "រូបភាព​នេះ​ប្រើ​ជម្រៅ ៨ ប៊ីត / ពណ៌ / ភីសែល ។"
 
-#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:107
+#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:122
 #, fuzzy, kde-format
 #| msgid ""
 #| "Performing this operation will reduce image color quality. Do you want to "
@@ -8602,14 +8602,14 @@ msgctxt "@info"
 msgid "This Image Editor tool can convert image color depth to 16 bits."
 msgstr "រូបភាព​នេះ​មិន​ត្រូវ​បាន​គ្រប់គ្រង​ពណ៌​ឡើយ ។"
 
-#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:80
+#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:95
 #, fuzzy, kde-format
 #| msgid "Convert to Black and White"
 msgctxt "@action"
 msgid "Convert to 16 bits"
 msgstr "បម្លែង​ជា​ខ្មៅ និង​ស"
 
-#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:97
+#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:112
 #, fuzzy, kde-format
 #| msgid "This image is already using a depth of 16 bits / color / pixel."
 msgctxt "@info"
@@ -8729,7 +8729,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can emulate color negative film from image."
 msgstr "បើក​ជម្រើស​នេះ ដើម្បី​កំណត់​ទិស​ដោយ​ស្វ័យប្រវត្តិ ។"
 
-#: core/dplugins/editor/colors/film/filmtoolplugin.cpp:80
+#: core/dplugins/editor/colors/film/filmtoolplugin.cpp:95
 #, fuzzy, kde-format
 #| msgid "Color Negative..."
 msgctxt "@action"
@@ -8748,7 +8748,7 @@ msgid ""
 "This Image Editor tool can adjust Hue / Saturation / Lightness from image."
 msgstr "បើក​ជម្រើស​នេះ ដើម្បី​កំណត់​ទិស​ដោយ​ស្វ័យប្រវត្តិ ។"
 
-#: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:80
+#: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:95
 #, fuzzy, kde-format
 #| msgid "Hue/Saturation/Lightness..."
 msgctxt "@action"
@@ -8761,14 +8761,14 @@ msgctxt "@info"
 msgid "This Image Editor tool can invert colors from image."
 msgstr "បើក​ជម្រើស​នេះ ដើម្បី​កំណត់​ទិស​ដោយ​ស្វ័យប្រវត្តិ ។"
 
-#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:80
+#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:95
 #, fuzzy, kde-format
 #| msgid "Invert"
 msgctxt "@action"
 msgid "Invert"
 msgstr "ដាក់​បញ្ច្រាស"
 
-#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:99
+#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:114
 #, fuzzy, kde-format
 #| msgid "Invert"
 msgctxt "@title"
@@ -8809,28 +8809,28 @@ msgctxt "@info"
 msgid "This Image Editor tool can convert image to a different color space."
 msgstr "រូបភាព​នេះ​មិន​ត្រូវ​បាន​គ្រប់គ្រង​ពណ៌​ឡើយ ។"
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:97
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:112
 #, fuzzy, kde-format
 #| msgid "Color Balance"
 msgctxt "@action"
 msgid "Color Spaces"
 msgstr "តុល្យភាព​ពណ៌"
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:105
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:120
 #, fuzzy, kde-format
 #| msgid "Color Space Conversion"
 msgctxt "@action"
 msgid "Color Space Converter..."
 msgstr "ការ​បម្លែង​គំរូ​ពណ៌"
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:126
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:141
 #, fuzzy, kde-format
 #| msgid "This image is not color managed."
 msgctxt "@info"
 msgid "This image is not color managed."
 msgstr "រូបភាព​នេះ​មិន​ត្រូវ​បាន​គ្រប់គ្រង​ពណ៌​ឡើយ ។"
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:143
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:158
 #, fuzzy, kde-format
 #| msgid "Color Management is disabled..."
 msgctxt "@action"
@@ -8850,7 +8850,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can adjust the white balance from image."
 msgstr "បើក​ជម្រើស​នេះ ដើម្បី​កំណត់​ទិស​ដោយ​ស្វ័យប្រវត្តិ ។"
 
-#: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:83
+#: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:98
 #, fuzzy, kde-format
 #| msgid "White Balance..."
 msgctxt "@action"
@@ -8876,7 +8876,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can add decorative border around image."
 msgstr "រូបភាព​នេះ​មិន​ត្រូវ​បាន​គ្រប់គ្រង​ពណ៌​ឡើយ ។"
 
-#: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:83
+#: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:98
 #, fuzzy, kde-format
 #| msgid "Add Border..."
 msgctxt "@action"
@@ -9026,7 +9026,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can insert text over an image."
 msgstr "បើក​ជម្រើស​នេះ ដើម្បី​កំណត់​ទិស​ដោយ​ស្វ័យប្រវត្តិ ។"
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttoolplugin.cpp:83
+#: core/dplugins/editor/decorate/inserttext/inserttexttoolplugin.cpp:98
 #, fuzzy, kde-format
 #| msgid "Insert Text..."
 msgctxt "@action"
@@ -9058,7 +9058,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can apply a texture over an image."
 msgstr "រូបភាព​នេះ​មិន​ត្រូវ​បាន​គ្រប់គ្រង​ពណ៌​ឡើយ ។"
 
-#: core/dplugins/editor/decorate/texture/texturetoolplugin.cpp:83
+#: core/dplugins/editor/decorate/texture/texturetoolplugin.cpp:98
 #, fuzzy, kde-format
 #| msgid "Apply Texture..."
 msgctxt "@action"
@@ -9092,7 +9092,7 @@ msgctxt "@info"
 msgid "This Image Editor tool correct vignetting from an image."
 msgstr "រូបភាព​នេះ​មិន​ត្រូវ​បាន​គ្រប់គ្រង​ពណ៌​ឡើយ ។"
 
-#: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:83
+#: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:98
 #, fuzzy, kde-format
 #| msgid "Vignetting Correction..."
 msgctxt "@action"
@@ -9126,7 +9126,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can blur an image."
 msgstr "រូបភាព​នេះ​មិន​ត្រូវ​បាន​គ្រប់គ្រង​ពណ៌​ឡើយ ។"
 
-#: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:83
+#: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:98
 #, fuzzy, kde-format
 #| msgid "Blur..."
 msgctxt "@action"
@@ -9244,14 +9244,14 @@ msgctxt "@info"
 msgid "This Image Editor tool can fix image artifacts by cloning area."
 msgstr "បើក​ជម្រើស​នេះ ដើម្បី​កំណត់​ទិស​ដោយ​ស្វ័យប្រវត្តិ ។"
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:84
+#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:99
 #, fuzzy, kde-format
 #| msgid "Preparing slideshow"
 msgctxt "@action"
 msgid "Healing Clone..."
 msgstr "ការ​រៀបចំ​ការ​បញ្ចាំង​ស្លាយ"
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:86
+#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:101
 #, fuzzy, kde-format
 #| msgid ""
 #| "This filter can be used to in-paint a part in a photo. To use this "
@@ -9278,7 +9278,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can fix hot pixels from an image."
 msgstr "បើក​ជម្រើស​នេះ ដើម្បី​កំណត់​ទិស​ដោយ​ស្វ័យប្រវត្តិ ។"
 
-#: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:83
+#: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:98
 #, fuzzy, kde-format
 #| msgid "Hot Pixels..."
 msgctxt "@action"
@@ -9302,7 +9302,7 @@ msgid ""
 "This Image Editor tool can fix automatically lens artifacts over an image."
 msgstr "បើក​ជម្រើស​នេះ ដើម្បី​កំណត់​ទិស​ដោយ​ស្វ័យប្រវត្តិ ។"
 
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:83
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:98
 #, fuzzy, kde-format
 #| msgid "Lens Auto-Correction"
 msgctxt "@action"
@@ -9386,7 +9386,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can adjust lens distortions from an image."
 msgstr "បើក​ជម្រើស​នេះ ដើម្បី​កំណត់​ទិស​ដោយ​ស្វ័យប្រវត្តិ ។"
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:83
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:98
 #, fuzzy, kde-format
 #| msgid "Distortion..."
 msgctxt "@action"
@@ -9404,7 +9404,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can emulate tone mapping over an image."
 msgstr "បើក​ជម្រើស​នេះ ដើម្បី​កំណត់​ទិស​ដោយ​ស្វ័យប្រវត្តិ ។"
 
-#: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:83
+#: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:98
 #, fuzzy, kde-format
 #| msgid "Local Contrast..."
 msgctxt "@action"
@@ -9424,7 +9424,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can reduce noise in image."
 msgstr "រូបភាព​នេះ​មិន​ត្រូវ​បាន​គ្រប់គ្រង​ពណ៌​ឡើយ ។"
 
-#: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:80
+#: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:95
 #, fuzzy, kde-format
 #| msgid "Noise Reduction..."
 msgctxt "@action"
@@ -9457,14 +9457,14 @@ msgctxt "@info"
 msgid "This Image Editor tool can reduce red eye effect on image."
 msgstr "រូបភាព​នេះ​មិន​ត្រូវ​បាន​គ្រប់គ្រង​ពណ៌​ឡើយ ។"
 
-#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:88
+#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:103
 #, fuzzy, kde-format
 #| msgid "Red Eye..."
 msgctxt "@action"
 msgid "Red Eye..."
 msgstr "ភ្នែក​ក្រហម..."
 
-#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:89
+#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:104
 #, fuzzy, kde-format
 #| msgid ""
 #| "This filter can be used to correct red eyes in a photo. Select a region "
@@ -9554,7 +9554,7 @@ msgid ""
 "This Image Editor tool can restore an image using Greystoration algorithm."
 msgstr "រូបភាព​នេះ​មិន​ត្រូវ​បាន​គ្រប់គ្រង​ពណ៌​ឡើយ ។"
 
-#: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:80
+#: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:95
 #, fuzzy, kde-format
 #| msgid "Restoration..."
 msgctxt "@action"
@@ -9601,7 +9601,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can sharp an image."
 msgstr "រូបភាព​នេះ​មិន​ត្រូវ​បាន​គ្រប់គ្រង​ពណ៌​ឡើយ ។"
 
-#: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:80
+#: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:95
 #, fuzzy, kde-format
 #| msgid "Sharpen..."
 msgctxt "@action"
@@ -20371,7 +20371,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:84
-#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#: core/utilities/searchwindow/searchfields_createfield.cpp:670
 #, kde-format
 msgid "Author"
 msgstr "អ្នក​និពន្ធ​"
@@ -52893,14 +52893,14 @@ msgid "Display Aspect Ratio"
 msgstr "សមាមាត្រ ៖"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:78
-#: core/utilities/searchwindow/searchfields_createfield.cpp:841
+#: core/utilities/searchwindow/searchfields_createfield.cpp:857
 #: core/utilities/setup/setuptooltip.cpp:313
 #, fuzzy, kde-format
 msgid "Audio Bit Rate"
 msgstr "ឯកសារ​អូឌីយ៉ូ"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:79
-#: core/utilities/searchwindow/searchfields_createfield.cpp:859
+#: core/utilities/searchwindow/searchfields_createfield.cpp:875
 #: core/utilities/setup/setuptooltip.cpp:316
 #, kde-format
 msgid "Audio Channel Type"
@@ -59786,19 +59786,30 @@ msgstr ""
 msgid "Not Geo-located"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:638
+#: core/utilities/searchwindow/searchfields_createfield.cpp:640
+#, fuzzy, kde-format
+#| msgid "Country:"
+msgid "Country"
+msgstr "ប្រទេស​ ៖​"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:640
+#, kde-format
+msgid "Country of the location shown in the item"
+msgstr ""
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:654
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "ប្រតិទិន"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:638
+#: core/utilities/searchwindow/searchfields_createfield.cpp:654
 #, fuzzy, kde-format
 msgid "Return items created by"
 msgstr "សមាមាត្រ​បច្ចុប្បន្ន"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:646
+#: core/utilities/searchwindow/searchfields_createfield.cpp:662
 #, fuzzy, kde-format
 #| msgctxt "image caption"
 #| msgid "Caption"
@@ -59806,60 +59817,60 @@ msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "ចំណងជើង​"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:646
+#: core/utilities/searchwindow/searchfields_createfield.cpp:662
 #, fuzzy, kde-format
 msgid "Return items whose comment contains"
 msgstr "ធ្វើ​ឲ្យ​មាតិកា​របស់​អាល់ប៊ុម​បច្ចុប្បន្ន​ស្រស់ ។"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#: core/utilities/searchwindow/searchfields_createfield.cpp:670
 #, kde-format
 msgid "Return items commented by"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:662
+#: core/utilities/searchwindow/searchfields_createfield.cpp:678
 #, kde-format
 msgid "Headline"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:662
+#: core/utilities/searchwindow/searchfields_createfield.cpp:678
 #, fuzzy, kde-format
 msgid "Return items with the IPTC headline"
 msgstr "សមាមាត្រ​បច្ចុប្បន្ន"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:670
+#: core/utilities/searchwindow/searchfields_createfield.cpp:686
 #, fuzzy, kde-format
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "ចំណងជើង ៖"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:670
+#: core/utilities/searchwindow/searchfields_createfield.cpp:686
 #, fuzzy, kde-format
 msgid "Return items with the IPTC title"
 msgstr "សមាមាត្រ​បច្ចុប្បន្ន"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:678
+#: core/utilities/searchwindow/searchfields_createfield.cpp:694
 #, kde-format
 msgid "Find items that have associated all these words:"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:686
+#: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, kde-format
 msgid "Empty Text"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:686
+#: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, fuzzy, kde-format
 msgid "Return items without text in:"
 msgstr "សមាមាត្រ​បច្ចុប្បន្ន"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#: core/utilities/searchwindow/searchfields_createfield.cpp:704
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "ប្រតិទិន"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:689
+#: core/utilities/searchwindow/searchfields_createfield.cpp:705
 #, fuzzy, kde-format
 #| msgctxt "image caption"
 #| msgid "Caption"
@@ -59867,195 +59878,195 @@ msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "ចំណងជើង​"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:690
+#: core/utilities/searchwindow/searchfields_createfield.cpp:706
 #, fuzzy, kde-format
 #| msgid "Author"
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "អ្នក​និពន្ធ​"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:691
+#: core/utilities/searchwindow/searchfields_createfield.cpp:707
 #, fuzzy, kde-format
 #| msgid "Headline:"
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "ចំណងជើង​ ៖​"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:692
+#: core/utilities/searchwindow/searchfields_createfield.cpp:708
 #, fuzzy, kde-format
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "ចំណងជើង ៖"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:702
-#: core/utilities/searchwindow/searchfields_createfield.cpp:721
+#: core/utilities/searchwindow/searchfields_createfield.cpp:718
+#: core/utilities/searchwindow/searchfields_createfield.cpp:737
 #, fuzzy, kde-format
 msgid "Aspect Ratio"
 msgstr "សមាមាត្រ ៖"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:702
+#: core/utilities/searchwindow/searchfields_createfield.cpp:718
 #, fuzzy, kde-format
 msgid "Return items with the aspect ratio"
 msgstr "សមាមាត្រ​បច្ចុប្បន្ន"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:710
+#: core/utilities/searchwindow/searchfields_createfield.cpp:726
 #, fuzzy, kde-format
 msgid "Pixel Size"
 msgstr "ទំហំ​ថ្មី"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:710
+#: core/utilities/searchwindow/searchfields_createfield.cpp:726
 #, kde-format
 msgid "Value of (Width * Height) between"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:711
+#: core/utilities/searchwindow/searchfields_createfield.cpp:727
 #, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:721
+#: core/utilities/searchwindow/searchfields_createfield.cpp:737
 #, fuzzy, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "សមាមាត្រ​បច្ចុប្បន្ន"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:738
+#: core/utilities/searchwindow/searchfields_createfield.cpp:754
 #, kde-format
 msgid "Length of the video"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:739
+#: core/utilities/searchwindow/searchfields_createfield.cpp:755
 #, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:740
+#: core/utilities/searchwindow/searchfields_createfield.cpp:756
 #, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:756
+#: core/utilities/searchwindow/searchfields_createfield.cpp:772
 #, fuzzy, kde-format
 msgid "Frame Rate"
 msgstr "<i>បាន​បង្កើត ៖</i>"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:756
+#: core/utilities/searchwindow/searchfields_createfield.cpp:772
 #, fuzzy, kde-format
 msgid "Return video with the frame rate"
 msgstr "សមាមាត្រ​បច្ចុប្បន្ន"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:757
+#: core/utilities/searchwindow/searchfields_createfield.cpp:773
 #, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:758
+#: core/utilities/searchwindow/searchfields_createfield.cpp:774
 #, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:773
+#: core/utilities/searchwindow/searchfields_createfield.cpp:789
 #, kde-format
 msgid "Codec"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:773
+#: core/utilities/searchwindow/searchfields_createfield.cpp:789
 #, kde-format
 msgid "Return video codec"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:841
+#: core/utilities/searchwindow/searchfields_createfield.cpp:857
 #, fuzzy, kde-format
 msgid "Return Audio Bits Rate"
 msgstr "ឯកសារ​អូឌីយ៉ូ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:842
+#: core/utilities/searchwindow/searchfields_createfield.cpp:858
 #, fuzzy, kde-format
 #| msgid "Canada"
 msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "កាណាដា"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:843
+#: core/utilities/searchwindow/searchfields_createfield.cpp:859
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:859
+#: core/utilities/searchwindow/searchfields_createfield.cpp:875
 #, kde-format
 msgid "Return Audio Channel Type"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:861
+#: core/utilities/searchwindow/searchfields_createfield.cpp:877
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:862
+#: core/utilities/searchwindow/searchfields_createfield.cpp:878
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:863
+#: core/utilities/searchwindow/searchfields_createfield.cpp:879
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:864
+#: core/utilities/searchwindow/searchfields_createfield.cpp:880
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:865
+#: core/utilities/searchwindow/searchfields_createfield.cpp:881
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:866
+#: core/utilities/searchwindow/searchfields_createfield.cpp:882
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:878
+#: core/utilities/searchwindow/searchfields_createfield.cpp:894
 #, kde-format
 msgid "Return Audio Codec"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:976
-#: core/utilities/searchwindow/searchfields_createfield.cpp:986
+#: core/utilities/searchwindow/searchfields_createfield.cpp:992
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1002
 #, fuzzy, kde-format
 msgid "Faces"
 msgstr "ជ្រើស​គ្មាន"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:976
+#: core/utilities/searchwindow/searchfields_createfield.cpp:992
 #, fuzzy, kde-format
 msgid "Return items by number of face regions"
 msgstr "សមាមាត្រ​បច្ចុប្បន្ន"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:977
+#: core/utilities/searchwindow/searchfields_createfield.cpp:993
 #, fuzzy, kde-format
 #| msgid "Canada"
 msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "កាណាដា"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:986
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1002
 #, fuzzy, kde-format
 msgid "Return items without face regions"
 msgstr "សមាមាត្រ​បច្ចុប្បន្ន"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:987
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1003
 #, fuzzy, kde-format
 msgid "No Face Regions"
 msgstr "ការ​បង្វិល​សេរី"
@@ -60123,7 +60134,7 @@ msgstr ""
 msgid "Geographic position"
 msgstr ""
 
-#: core/utilities/searchwindow/searchgroup.cpp:204
+#: core/utilities/searchwindow/searchgroup.cpp:205
 #, fuzzy, kde-format
 msgid "Face regions"
 msgstr "ការ​បង្វិល​សេរី"

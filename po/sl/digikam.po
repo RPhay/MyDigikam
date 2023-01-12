@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-09 00:53+0000\n"
+"POT-Creation-Date: 2023-01-12 00:53+0000\n"
 "PO-Revision-Date: 2023-01-08 09:57+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -3605,7 +3605,7 @@ msgstr "Vrsta zvočnega kanala"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:72
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:96
-#: core/utilities/searchwindow/searchfields_createfield.cpp:878
+#: core/utilities/searchwindow/searchfields_createfield.cpp:894
 #: core/utilities/setup/setuptooltip.cpp:319
 #, kde-format
 msgid "Audio Codec"
@@ -3613,7 +3613,7 @@ msgstr "Avdio kodek"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:73
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:101
-#: core/utilities/searchwindow/searchfields_createfield.cpp:738
+#: core/utilities/searchwindow/searchfields_createfield.cpp:754
 #, kde-format
 msgid "Duration"
 msgstr "Trajanje"
@@ -8151,7 +8151,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can adjust the color curves from image."
 msgstr "To orodje za urejanje slik lahko prilagaja barvne krivulje slike."
 
-#: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:80
+#: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Curves Adjust..."
@@ -8363,7 +8363,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can adjust the color levels from image."
 msgstr "To orodje za urejanje slik lahko prilagaja ravni barv slike."
 
-#: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:80
+#: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Levels Adjust..."
@@ -8440,7 +8440,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can adjust colors automatically from image."
 msgstr "To orodje za urejanje slik lahko samodejno prilagaja barve s slike."
 
-#: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:80
+#: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Color Auto-Correction..."
@@ -8459,7 +8459,7 @@ msgid ""
 msgstr ""
 "To orodje za urejanje slik lahko prilagaja svetlost / kontrast / gamo slike."
 
-#: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:83
+#: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Brightness/Contrast/Gamma..."
@@ -8482,7 +8482,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can convert image to black and white."
 msgstr "To orodje za urejanje slik lahko pretvarja sliko v črno-belo."
 
-#: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:83
+#: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Black && White..."
@@ -8499,7 +8499,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can mix color channels from image."
 msgstr "To orodje za urejanje slik lahko meša barvne kanale slike."
 
-#: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:80
+#: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Channel Mixer..."
@@ -8511,7 +8511,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can adjust color balance from image."
 msgstr "To orodje za urejanje slik lahko prilagaja barvno ravnovesje slike."
 
-#: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:80
+#: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Color Balance..."
@@ -8530,19 +8530,19 @@ msgid "This Image Editor tool can convert image color depth to 8 bits."
 msgstr ""
 "To orodje za urejanje slik lahko pretvarja globino barve slike na 8 bitov."
 
-#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:81
+#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Convert to 8 bits"
 msgstr "Pretvori v 8 bitov"
 
-#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:99
+#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:114
 #, kde-format
 msgctxt "@info"
 msgid "This image is already using a depth of 8 bits / color / pixel."
 msgstr "Ta slika že uporablja globino 8 bitov / barv / slikovnih točk."
 
-#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:107
+#: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:122
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -8559,13 +8559,13 @@ msgid "This Image Editor tool can convert image color depth to 16 bits."
 msgstr ""
 "To orodje za urejanje slik lahko pretvarja globino barve slike v 16 bitov."
 
-#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:80
+#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Convert to 16 bits"
 msgstr "Pretvori v 16 bitov"
 
-#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:97
+#: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:112
 #, kde-format
 msgctxt "@info"
 msgid "This image is already using a depth of 16 bits / color / pixel."
@@ -8693,7 +8693,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can emulate color negative film from image."
 msgstr "To orodje za urejanje slik lahko posnema slike barvnega negativ filma."
 
-#: core/dplugins/editor/colors/film/filmtoolplugin.cpp:80
+#: core/dplugins/editor/colors/film/filmtoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Color Negative..."
@@ -8713,7 +8713,7 @@ msgstr ""
 "To orodje za urejanje slik lahko prilagodi odtenek / nasičenost / svetlost "
 "slike."
 
-#: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:80
+#: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Hue/Saturation/Lightness..."
@@ -8725,13 +8725,13 @@ msgctxt "@info"
 msgid "This Image Editor tool can invert colors from image."
 msgstr "To orodje za urejanje slik lahko obrne barve slike."
 
-#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:80
+#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Invert"
 msgstr "Obrni"
 
-#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:99
+#: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:114
 #, kde-format
 msgctxt "@title"
 msgid "Invert"
@@ -8770,25 +8770,25 @@ msgctxt "@info"
 msgid "This Image Editor tool can convert image to a different color space."
 msgstr "To orodje za urejanje slik lahko pretvori sliko v drug barvni prostor."
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:97
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:112
 #, kde-format
 msgctxt "@action"
 msgid "Color Spaces"
 msgstr "Barvni prostori"
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:105
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Color Space Converter..."
 msgstr "Pretvornik barvnega prostora..."
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:126
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:141
 #, kde-format
 msgctxt "@info"
 msgid "This image is not color managed."
 msgstr "Ta slika ni barvno upravljana."
 
-#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:143
+#: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:158
 #, kde-format
 msgctxt "@action"
 msgid "Color Management is disabled..."
@@ -8807,7 +8807,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can adjust the white balance from image."
 msgstr "To orodje za urejanje slik lahko prilagodi ravnovesje beline slike."
 
-#: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:83
+#: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "White Balance..."
@@ -8831,7 +8831,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can add decorative border around image."
 msgstr "To orodje za urejanje slik lahko doda dekorativne obrobe okoli slike."
 
-#: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:83
+#: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Add Border..."
@@ -8977,7 +8977,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can insert text over an image."
 msgstr "To orodje za urejanje slike lahko vstavi besedilo čez sliko."
 
-#: core/dplugins/editor/decorate/inserttext/inserttexttoolplugin.cpp:83
+#: core/dplugins/editor/decorate/inserttext/inserttexttoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Insert Text..."
@@ -9006,7 +9006,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can apply a texture over an image."
 msgstr "To orodje za urejanje slik lahko na sliko nanese teksturo."
 
-#: core/dplugins/editor/decorate/texture/texturetoolplugin.cpp:83
+#: core/dplugins/editor/decorate/texture/texturetoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Apply Texture..."
@@ -9036,7 +9036,7 @@ msgctxt "@info"
 msgid "This Image Editor tool correct vignetting from an image."
 msgstr "To orodje za urejanje popravlja vinjetiranje na sliki."
 
-#: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:83
+#: core/dplugins/editor/enhance/antivignetting/antivignettingtoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Vignetting Correction..."
@@ -9065,7 +9065,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can blur an image."
 msgstr "To orodje za urejanje slik lahko zamegli sliko."
 
-#: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:83
+#: core/dplugins/editor/enhance/blur/blurtoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Blur..."
@@ -9206,13 +9206,13 @@ msgid "This Image Editor tool can fix image artifacts by cloning area."
 msgstr ""
 "To orodje za urejanje slik lahko popravlja artifakte s kloniranjem območja."
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:84
+#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Healing Clone..."
 msgstr "Zdravljenje s kloniranjem..."
 
-#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:86
+#: core/dplugins/editor/enhance/healingclone/healingclonetoolplugin.cpp:101
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -9237,7 +9237,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can fix hot pixels from an image."
 msgstr "To orodje za urejanje slik lahko popravlja vroče točke slike."
 
-#: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:83
+#: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Hot Pixels..."
@@ -9262,7 +9262,7 @@ msgstr ""
 "To orodje za urejanje slik lahko avtomatsko popravlja artifakte objektiva na "
 "sliki."
 
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:83
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Lens Auto-Correction..."
@@ -9352,7 +9352,7 @@ msgstr ""
 "To orodje za urejanje slik lahko avtomatsko popravlja popačenja slike zaradi "
 "objektiva."
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:83
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Distortion..."
@@ -9369,7 +9369,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can emulate tone mapping over an image."
 msgstr "To orodje za urejanje slik lahko posnema spremembe odtenkov na sliki."
 
-#: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:83
+#: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Local Contrast..."
@@ -9387,7 +9387,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can reduce noise in image."
 msgstr "To orodje za urejanje slik lahko zmanjša šum na sliki."
 
-#: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:80
+#: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Noise Reduction..."
@@ -9418,13 +9418,13 @@ msgctxt "@info"
 msgid "This Image Editor tool can reduce red eye effect on image."
 msgstr "To orodje za urejanje slik lahko zmanjša efekt rdečih oči na sliki."
 
-#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:88
+#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Red Eye..."
 msgstr "Rdeče oči..."
 
-#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:89
+#: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:104
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -9518,7 +9518,7 @@ msgstr ""
 "To orodje za urejanje slik lahko obnovi sliko z uporabo algoritma "
 "Greystoration."
 
-#: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:80
+#: core/dplugins/editor/enhance/restoration/restorationtoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Restoration..."
@@ -9560,7 +9560,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can sharp an image."
 msgstr "To orodje za urejanje lahko izostri sliko."
 
-#: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:80
+#: core/dplugins/editor/enhance/sharpen/sharpentoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Sharpen..."
@@ -19975,7 +19975,7 @@ msgstr ""
 "različne vnaprej določene velikosti papirja in postavitve slik.</p>"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:84
-#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#: core/utilities/searchwindow/searchfields_createfield.cpp:670
 #, kde-format
 msgid "Author"
 msgstr "Avtor"
@@ -52005,14 +52005,14 @@ msgid "Display Aspect Ratio"
 msgstr "Prikaz razmerja"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:78
-#: core/utilities/searchwindow/searchfields_createfield.cpp:841
+#: core/utilities/searchwindow/searchfields_createfield.cpp:857
 #: core/utilities/setup/setuptooltip.cpp:313
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "Bitna hitrost zvoka"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:79
-#: core/utilities/searchwindow/searchfields_createfield.cpp:859
+#: core/utilities/searchwindow/searchfields_createfield.cpp:875
 #: core/utilities/setup/setuptooltip.cpp:316
 #, kde-format
 msgid "Audio Channel Type"
@@ -59075,266 +59075,277 @@ msgstr "Predmet nima podatkov GPS"
 msgid "Not Geo-located"
 msgstr "Nima zemljepisne lege"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:638
+#: core/utilities/searchwindow/searchfields_createfield.cpp:640
+#, fuzzy, kde-format
+#| msgid "Country:"
+msgid "Country"
+msgstr "Država:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:640
+#, kde-format
+msgid "Country of the location shown in the item"
+msgstr ""
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:654
 #, kde-format
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "Ustvarjalec"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:638
+#: core/utilities/searchwindow/searchfields_createfield.cpp:654
 #, kde-format
 msgid "Return items created by"
 msgstr "Vrni predmete, ki jih je ustvaril"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:646
+#: core/utilities/searchwindow/searchfields_createfield.cpp:662
 #, kde-format
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "Napis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:646
+#: core/utilities/searchwindow/searchfields_createfield.cpp:662
 #, kde-format
 msgid "Return items whose comment contains"
 msgstr "Vrni predmete, katerih opomba vsebuje"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#: core/utilities/searchwindow/searchfields_createfield.cpp:670
 #, kde-format
 msgid "Return items commented by"
 msgstr "Vrni predmete, ki vsebujejo opombo od"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:662
+#: core/utilities/searchwindow/searchfields_createfield.cpp:678
 #, kde-format
 msgid "Headline"
 msgstr "Naslov"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:662
+#: core/utilities/searchwindow/searchfields_createfield.cpp:678
 #, kde-format
 msgid "Return items with the IPTC headline"
 msgstr "Vrni predmete s časopisnim naslovom IPTC"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:670
+#: core/utilities/searchwindow/searchfields_createfield.cpp:686
 #, kde-format
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "Naslov"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:670
+#: core/utilities/searchwindow/searchfields_createfield.cpp:686
 #, kde-format
 msgid "Return items with the IPTC title"
 msgstr "Vrni predmete naslovom IPTC"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:678
+#: core/utilities/searchwindow/searchfields_createfield.cpp:694
 #, kde-format
 msgid "Find items that have associated all these words:"
 msgstr "Najdi predmete, ki so povezani z vsemi temi besedami:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:686
+#: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, kde-format
 msgid "Empty Text"
 msgstr "Prazno besedilo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:686
+#: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, kde-format
 msgid "Return items without text in:"
 msgstr "Vrni postavke brez besedila v:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#: core/utilities/searchwindow/searchfields_createfield.cpp:704
 #, kde-format
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "Ustvarjalec"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:689
+#: core/utilities/searchwindow/searchfields_createfield.cpp:705
 #, kde-format
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "Napis"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:690
+#: core/utilities/searchwindow/searchfields_createfield.cpp:706
 #, kde-format
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "Avtor"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:691
+#: core/utilities/searchwindow/searchfields_createfield.cpp:707
 #, kde-format
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "Naslov"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:692
+#: core/utilities/searchwindow/searchfields_createfield.cpp:708
 #, kde-format
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "Naslov"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:702
-#: core/utilities/searchwindow/searchfields_createfield.cpp:721
+#: core/utilities/searchwindow/searchfields_createfield.cpp:718
+#: core/utilities/searchwindow/searchfields_createfield.cpp:737
 #, kde-format
 msgid "Aspect Ratio"
 msgstr "Razmerje"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:702
+#: core/utilities/searchwindow/searchfields_createfield.cpp:718
 #, kde-format
 msgid "Return items with the aspect ratio"
 msgstr "Vrni predmete z razmerjem stranic"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:710
+#: core/utilities/searchwindow/searchfields_createfield.cpp:726
 #, kde-format
 msgid "Pixel Size"
 msgstr "Velikost slikovne točke"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:710
+#: core/utilities/searchwindow/searchfields_createfield.cpp:726
 #, kde-format
 msgid "Value of (Width * Height) between"
 msgstr "Vrednost (višina*širina) med"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:711
+#: core/utilities/searchwindow/searchfields_createfield.cpp:727
 #, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "in"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:721
+#: core/utilities/searchwindow/searchfields_createfield.cpp:737
 #, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "Vrni videe z razmerjem sličic"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:738
+#: core/utilities/searchwindow/searchfields_createfield.cpp:754
 #, kde-format
 msgid "Length of the video"
 msgstr "Trajanje videa"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:739
+#: core/utilities/searchwindow/searchfields_createfield.cpp:755
 #, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "in"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:740
+#: core/utilities/searchwindow/searchfields_createfield.cpp:756
 #, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr "s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:756
+#: core/utilities/searchwindow/searchfields_createfield.cpp:772
 #, kde-format
 msgid "Frame Rate"
 msgstr "Hitrost sličic"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:756
+#: core/utilities/searchwindow/searchfields_createfield.cpp:772
 #, kde-format
 msgid "Return video with the frame rate"
 msgstr "Vrni video s hitrostjo sličic"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:757
+#: core/utilities/searchwindow/searchfields_createfield.cpp:773
 #, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "in"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:758
+#: core/utilities/searchwindow/searchfields_createfield.cpp:774
 #, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr "fps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:773
+#: core/utilities/searchwindow/searchfields_createfield.cpp:789
 #, kde-format
 msgid "Codec"
 msgstr "Kodek"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:773
+#: core/utilities/searchwindow/searchfields_createfield.cpp:789
 #, kde-format
 msgid "Return video codec"
 msgstr "Vrni video kodek"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:841
+#: core/utilities/searchwindow/searchfields_createfield.cpp:857
 #, kde-format
 msgid "Return Audio Bits Rate"
 msgstr "Vrni zvočne posnetke z bitno hitrostjo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:842
+#: core/utilities/searchwindow/searchfields_createfield.cpp:858
 #, kde-format
 msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "in"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:843
+#: core/utilities/searchwindow/searchfields_createfield.cpp:859
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr "bit/s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:859
+#: core/utilities/searchwindow/searchfields_createfield.cpp:875
 #, kde-format
 msgid "Return Audio Channel Type"
 msgstr "Vrni avdio z vrsto zvočnega kanala"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:861
+#: core/utilities/searchwindow/searchfields_createfield.cpp:877
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr "Mono"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:862
+#: core/utilities/searchwindow/searchfields_createfield.cpp:878
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr "Stereo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:863
+#: core/utilities/searchwindow/searchfields_createfield.cpp:879
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr "5.1 Surround zvok"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:864
+#: core/utilities/searchwindow/searchfields_createfield.cpp:880
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr "7.1 Surround zvok"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:865
+#: core/utilities/searchwindow/searchfields_createfield.cpp:881
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr "16 kanalna sekvenca"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:866
+#: core/utilities/searchwindow/searchfields_createfield.cpp:882
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "Druga vrsta zvočnega kanala"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:878
+#: core/utilities/searchwindow/searchfields_createfield.cpp:894
 #, kde-format
 msgid "Return Audio Codec"
 msgstr "Vrni avdio kodek"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:976
-#: core/utilities/searchwindow/searchfields_createfield.cpp:986
+#: core/utilities/searchwindow/searchfields_createfield.cpp:992
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1002
 #, kde-format
 msgid "Faces"
 msgstr "Obrazi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:976
+#: core/utilities/searchwindow/searchfields_createfield.cpp:992
 #, kde-format
 msgid "Return items by number of face regions"
 msgstr "Vrni predmete po število regij obrazov"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:977
+#: core/utilities/searchwindow/searchfields_createfield.cpp:993
 #, kde-format
 msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "in"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:986
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1002
 #, kde-format
 msgid "Return items without face regions"
 msgstr "Vrni postavke brez regij obrazov"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:987
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1003
 #, kde-format
 msgid "No Face Regions"
 msgstr "Ni regij obrazov"
@@ -59401,7 +59412,7 @@ msgstr "Napis, opomba, naslov"
 msgid "Geographic position"
 msgstr "Geografski položaj"
 
-#: core/utilities/searchwindow/searchgroup.cpp:204
+#: core/utilities/searchwindow/searchgroup.cpp:205
 #, kde-format
 msgid "Face regions"
 msgstr "Regije obrazov"
