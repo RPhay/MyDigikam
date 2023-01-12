@@ -65,6 +65,21 @@ QString PrintToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can print an image.");
 }
 
+QString PrintToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString PrintToolPlugin::handbookChapter() const
+{
+    return QLatin1String("basic_operations");
+}
+
+QString PrintToolPlugin::handbookReference() const
+{
+    return QLatin1String("printing-images");
+}
+
 QList<DPluginAuthor> PrintToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()
