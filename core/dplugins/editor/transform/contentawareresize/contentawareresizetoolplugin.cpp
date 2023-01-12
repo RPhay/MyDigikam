@@ -76,7 +76,7 @@ QString ContentAwareResizeToolPlugin::handbookChapter() const
 
 QString ContentAwareResizeToolPlugin::handbookReference() const
 {
-    return QLatin1String("liquid-rescale");
+    return QLatin1String("transform-liquidrescale");
 }
 
 QList<DPluginAuthor> ContentAwareResizeToolPlugin::authors() const

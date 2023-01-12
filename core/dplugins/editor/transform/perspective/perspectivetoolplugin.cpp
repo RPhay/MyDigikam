@@ -76,7 +76,7 @@ QString PerspectiveToolPlugin::handbookChapter() const
 
 QString PerspectiveToolPlugin::handbookReference() const
 {
-    return QLatin1String("perspective-adjustment");
+    return QLatin1String("transform-perspective");
 }
 
 QList<DPluginAuthor> PerspectiveToolPlugin::authors() const

@@ -76,7 +76,7 @@ QString RatioCropToolPlugin::handbookChapter() const
 
 QString RatioCropToolPlugin::handbookReference() const
 {
-    return QLatin1String("proportional-crop");
+    return QLatin1String("transform-proportionalcrop");
 }
 
 QList<DPluginAuthor> RatioCropToolPlugin::authors() const

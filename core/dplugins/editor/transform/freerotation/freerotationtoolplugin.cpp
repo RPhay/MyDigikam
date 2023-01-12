@@ -78,7 +78,7 @@ QString FreeRotationToolPlugin::handbookChapter() const
 
 QString FreeRotationToolPlugin::handbookReference() const
 {
-    return QLatin1String("free-rotation");
+    return QLatin1String("transform-freerotation");
 }
 
 QList<DPluginAuthor> FreeRotationToolPlugin::authors() const

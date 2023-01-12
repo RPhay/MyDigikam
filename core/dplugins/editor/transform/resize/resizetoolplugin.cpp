@@ -76,7 +76,7 @@ QString ResizeToolPlugin::handbookChapter() const
 
 QString ResizeToolPlugin::handbookReference() const
 {
-    return QLatin1String("change-the-image-size");
+    return QLatin1String("transform-resize");
 }
 
 QList<DPluginAuthor> ResizeToolPlugin::authors() const

@@ -76,7 +76,7 @@ QString ShearToolPlugin::handbookChapter() const
 
 QString ShearToolPlugin::handbookReference() const
 {
-    return QLatin1String("shearing-image");
+    return QLatin1String("transform-shear");
 }
 
 QList<DPluginAuthor> ShearToolPlugin::authors() const

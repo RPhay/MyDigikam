@@ -77,7 +77,7 @@ QString AutoCropToolPlugin::handbookChapter() const
 
 QString AutoCropToolPlugin::handbookReference() const
 {
-    return QLatin1String("auto-crop");
+    return QLatin1String("transform-autocrop");
 }
 
 QList<DPluginAuthor> AutoCropToolPlugin::authors() const
