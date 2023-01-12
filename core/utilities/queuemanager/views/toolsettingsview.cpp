@@ -36,6 +36,7 @@
 #include "batchtoolsfactory.h"
 #include "dpluginbqm.h"
 #include "dpluginaboutdlg.h"
+#include "dxmlguiwindow.h"
 
 namespace Digikam
 {
@@ -58,6 +59,7 @@ public:
         settingsViewIcon (nullptr),
         settingsViewTitle(nullptr),
         settingsViewReset(nullptr),
+        settingsViewHelp (nullptr),
         settingsViewAbout(nullptr),
         settingsView     (nullptr),
         tool             (nullptr)
@@ -69,6 +71,7 @@ public:
     QLabel*      settingsViewTitle;
 
     QPushButton* settingsViewReset;
+    QPushButton* settingsViewHelp;
     QPushButton* settingsViewAbout;
 
     QScrollArea* settingsView;
@@ -104,6 +107,10 @@ ToolSettingsView::ToolSettingsView(QWidget* const parent)
     d->settingsViewReset->setIcon(QIcon::fromTheme(QLatin1String("document-revert")));
     d->settingsViewReset->setToolTip(i18n("Reset current tool settings to default values."));
 
+    d->settingsViewHelp = new QPushButton();
+    d->settingsViewHelp->setIcon(QIcon::fromTheme(QLatin1String("globe")));
+    d->settingsViewHelp->setToolTip(i18n("Tool online handbook..."));
+
     d->settingsViewAbout = new QPushButton();
     d->settingsViewAbout->setIcon(QIcon::fromTheme(QLatin1String("help-about")));
     d->settingsViewAbout->setToolTip(i18n("About this tool..."));
@@ -125,6 +132,7 @@ ToolSettingsView::ToolSettingsView(QWidget* const parent)
     d->settingsViewIcon->setStyleSheet(noFrameStyle);
     d->settingsViewTitle->setStyleSheet(noFrameStyle);
     d->settingsViewReset->setStyleSheet(noFrameStyle);
+    d->settingsViewHelp->setStyleSheet(noFrameStyle);
     d->settingsViewAbout->setStyleSheet(noFrameStyle);
     toolDescriptor->setStyleSheet(frameStyle);
 
@@ -135,7 +143,8 @@ ToolSettingsView::ToolSettingsView(QWidget* const parent)
     descrLayout->addWidget(d->settingsViewIcon,  0, 0, 1, 1);
     descrLayout->addWidget(d->settingsViewTitle, 0, 1, 1, 1);
     descrLayout->addWidget(d->settingsViewReset, 0, 2, 1, 1);
-    descrLayout->addWidget(d->settingsViewAbout, 0, 3, 1, 1);
+    descrLayout->addWidget(d->settingsViewHelp , 0, 3, 1, 1);
+    descrLayout->addWidget(d->settingsViewAbout, 0, 4, 1, 1);
     descrLayout->setColumnStretch(1, 10);
     toolDescriptor->setLayout(descrLayout);
 
@@ -159,6 +168,9 @@ ToolSettingsView::ToolSettingsView(QWidget* const parent)
 
     connect(d->settingsViewAbout, SIGNAL(clicked()),
             this, SLOT(slotAboutPlugin()));
+
+    connect(d->settingsViewHelp, SIGNAL(clicked()),
+            this, SLOT(slotHelpPlugin()));
 }
 
 ToolSettingsView::~ToolSettingsView()
@@ -180,6 +192,19 @@ void ToolSettingsView::slotAboutPlugin()
             QPointer<DPluginAboutDlg> dlg = new DPluginAboutDlg(dynamic_cast<DPlugin*>(d->tool->plugin()));
             dlg->exec();
             delete dlg;
+        }
+    }
+}
+
+void ToolSettingsView::slotHelpPlugin()
+{
+    if (d->tool)
+    {
+        if (d->tool->plugin())
+        {
+            DXmlGuiWindow::openHandbook(d->tool->plugin()->handbookSection(),
+                                        d->tool->plugin()->handbookChapter(),
+                                        d->tool->plugin()->handbookReference());
         }
     }
 }
