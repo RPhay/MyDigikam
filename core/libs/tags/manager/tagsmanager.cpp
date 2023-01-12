@@ -372,7 +372,7 @@ void TagsManager::slotDeleteAction()
                          JoinTagNamesToList(tagNames));
     }
 
-    const int result = QMessageBox::warning(this, i18npc("@title:window", "Delete tag", "Delete tags", tagNames.count()),
+    const int result = QMessageBox::warning(this, i18ncp("@title:window", "Delete tag", "Delete tags", tagNames.count()),
                                             message, QMessageBox::Yes | QMessageBox::Cancel);
 
     if (result == QMessageBox::Yes)

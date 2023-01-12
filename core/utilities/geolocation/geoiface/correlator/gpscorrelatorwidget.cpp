@@ -327,7 +327,7 @@ void GPSCorrelatorWidget::slotAllTrackFilesReady()
                                                "The following %1 GPX files could not be loaded:",
                                                invalidFiles.count());
 
-        const QString errorTitleString = i18npc("@title:window", "Error Loading GPX File",
+        const QString errorTitleString = i18ncp("@title:window", "Error Loading GPX File",
                                                "Error Loading GPX Files",
                                                invalidFiles.count());
 
