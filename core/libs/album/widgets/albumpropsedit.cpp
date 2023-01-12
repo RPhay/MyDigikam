@@ -114,7 +114,7 @@ AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
       d      (new Private)
 {
     setModal(true);
-    setWindowTitle(create ? i18nc("@title: album properties", "New Album") : i18nc("@title: album properties", "Edit Album"));
+    setWindowTitle(create ? i18nc("@title:window, album properties", "New Album") : i18nc("@title:window, album properties", "Edit Album"));
 
     d->buttons          = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
@@ -476,7 +476,7 @@ void AlbumPropsEdit::slotDateAverageButtonClicked()
     }
     else
     {
-        QMessageBox::critical(this, i18nc("@title: album properties", "Could Not Calculate Average"),
+        QMessageBox::critical(this, i18nc("@title:window, album properties", "Could not Calculate Average"),
                                     i18nc("@info: album properties", "Could not calculate date average for this album."));
     }
 }

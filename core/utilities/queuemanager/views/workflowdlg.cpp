@@ -65,7 +65,7 @@ WorkflowDlg::WorkflowDlg(const Workflow& wf, bool create)
       d      (new Private)
 {
     setModal(true);
-    setWindowTitle(create ? i18n("New Workflow") : i18n("Edit Workflow"));
+    setWindowTitle(create ? i18nc("@title:window", "New Workflow") : i18nc("@title:window", "Edit Workflow"));
 
     d->buttons = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);

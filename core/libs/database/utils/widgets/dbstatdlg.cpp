@@ -43,7 +43,7 @@ DBStatDlg::DBStatDlg(QWidget* const parent)
 {
     qApp->setOverrideCursor(Qt::WaitCursor);
 
-    setWindowTitle(i18n("Database Statistics"));
+    setWindowTitle(i18nc("@title:window", "Database Statistics"));
     listView()->setHeaderLabels(QStringList() << i18n("Format") << i18n("Count"));
 
     // get image format statistics

@@ -85,7 +85,7 @@ SearchWindow::SearchWindow()
     setLayout(layout);
 
     setVisible(false);
-    setWindowTitle(i18n("Advanced Search"));
+    setWindowTitle(i18nc("@title:window", "Advanced Search"));
 
     QScreen* screen = qApp->primaryScreen();
 

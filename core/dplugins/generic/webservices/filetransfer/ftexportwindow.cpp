@@ -68,11 +68,11 @@ FTExportWindow::FTExportWindow(DInfoInterface* const iface, QWidget* const /*par
 
     // -- Window setup ------------------------------------------------------
 
-    setWindowTitle(i18n("Export to Remote Storage"));
+    setWindowTitle(i18nc("@title:window", "Export to Remote Storage"));
     setModal(false);
 
-    startButton()->setText(i18n("Start export"));
-    startButton()->setToolTip(i18n("Start export to the specified target"));
+    startButton()->setText(i18nc("@action:button", "Start Export"));
+    startButton()->setToolTip(i18nc("@info:tooltip, button", "Start export to the specified target"));
 
     connect(startButton(), SIGNAL(clicked()),
             this, SLOT(slotUpload()));
@@ -183,7 +183,7 @@ void FTExportWindow::slotCopyingFinished(KJob* job)
 
     if (!d->exportWidget->imagesList()->imageUrls().isEmpty())
     {
-        QMessageBox::information(this, i18n("Upload not completed"),
+        QMessageBox::information(this, i18nc("@title:window", "Upload not Completed"),
                                  i18n("Some of the images have not been transferred "
                                       "and are still in the list. "
                                       "You can retry to export these images now."));

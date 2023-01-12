@@ -80,7 +80,7 @@ ClockPhotoDialog::ClockPhotoDialog(QWidget* const parent, const QUrl& defaultUrl
     // photo. For this third button, the User1 button from KDialog is used.
     // The Ok button is only enable when a photo is loaded.
 
-    setWindowTitle(i18n("Determine Time Difference With Clock Photo"));
+    setWindowTitle(i18nc("@title:window", "Determine Time Difference With Clock Photo"));
 
     d->buttons = new QDialogButtonBox(QDialogButtonBox::Apply | QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     d->buttons->button(QDialogButtonBox::Cancel)->setDefault(true);

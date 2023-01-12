@@ -577,7 +577,7 @@ void DItemsList::slotLoadItems()
                                                   QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)));
     QUrl loadLevelsFile;
     loadLevelsFile          = DFileDialog::getOpenFileUrl(this,
-                                                          i18nc("@info", "Select the image file list to load"), lastFileUrl,
+                                                          i18nc("@title:window", "Select the Image File List to Load"), lastFileUrl,
                                                           i18nc("@option", "All Files (*)"));
 
     if (loadLevelsFile.isEmpty())
@@ -658,7 +658,7 @@ void DItemsList::slotSaveItems()
                                                   QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)));
     QUrl saveLevelsFile;
     saveLevelsFile          = DFileDialog::getSaveFileUrl(this,
-                                                          i18nc("@info", "Select the image file list to save"),
+                                                          i18nc("@title:window", "Select the Image File List to Save"),
                                                           lastFileUrl,
                                                           i18nc("@option", "All Files (*)"));
 

@@ -38,7 +38,7 @@ PlayerWindow::PlayerWindow(QWidget* const parent)
       m_preview(nullptr)
 {
     QtAV::Widgets::registerRenderers();
-    setWindowTitle(QString::fromLatin1("QtAV simple player example"));
+    setWindowTitle(QString::fromLatin1("QtAV Simple Player Example"));
     m_player              = new AVPlayerCore(this);
     QVBoxLayout* const vl = new QVBoxLayout();
     setLayout(vl);

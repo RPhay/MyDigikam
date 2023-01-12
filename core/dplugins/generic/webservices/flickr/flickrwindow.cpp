@@ -145,7 +145,7 @@ FlickrWindow::FlickrWindow(DInfoInterface* const iface,
 {
     d->iface                = iface;
     d->serviceName          = serviceName;
-    setWindowTitle(i18n("Export to %1 Web Service", d->serviceName));
+    setWindowTitle(i18nc("@title:window", "Export to %1 Web Service", d->serviceName));
     setModal(false);
 
     KSharedConfigPtr config = KSharedConfig::openConfig();
@@ -184,7 +184,7 @@ FlickrWindow::FlickrWindow(DInfoInterface* const iface,
     d->userNameDisplayLabel      = d->widget->getUserNameLabel();
     d->imglst                    = d->widget->d->imglst;
 
-    startButton()->setText(i18n("Start Uploading"));
+    startButton()->setText(i18nc("@action:button", "Start Uploading"));
     startButton()->setToolTip(QString());
 
     setMainWidget(d->widget);
@@ -458,7 +458,7 @@ void FlickrWindow::slotBusy(bool val)
 
 void FlickrWindow::slotError(const QString& msg)
 {
-    QMessageBox::critical(this, i18n("Error"), msg);
+    QMessageBox::critical(this, i18nc("@title:window", "Error"), msg);
 }
 
 void FlickrWindow::slotUserChangeRequest()
@@ -846,13 +846,13 @@ void FlickrWindow::slotListPhotoSetsFailed(const QString& msg)
 void FlickrWindow::slotAddPhotoFailed(const QString& msg)
 {
     QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-                     i18nc("@title: dialog", "Warning"),
+                     i18nc("@title:window", "Warning"),
                      i18n("Failed to upload photo into %1. %2\nDo you want to continue?",
                           d->serviceName, msg),
                      QMessageBox::Yes | QMessageBox::No);
 
-    (warn->button(QMessageBox::Yes))->setText(i18n("Continue"));
-    (warn->button(QMessageBox::No))->setText(i18n("Cancel"));
+    (warn->button(QMessageBox::Yes))->setText(i18nc("@action:button", "Continue"));
+    (warn->button(QMessageBox::No))->setText(i18nc("@action:button", "Cancel"));
 
     if (warn->exec() != QMessageBox::Yes)
     {

@@ -40,10 +40,10 @@ RajceWindow::RajceWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
 
     setMainWidget(m_widget);
     setModal(false);
-    setWindowTitle(i18n("Export to Rajce.net"));
+    setWindowTitle(i18nc("@title:window", "Export to Rajce.net"));
 
-    startButton()->setText(i18n("Start Upload"));
-    startButton()->setToolTip(i18n("Start upload to Rajce.net"));
+    startButton()->setText(i18nc("@action:button", "Start Upload"));
+    startButton()->setToolTip(i18nc("@info:tooltip, button", "Start upload to Rajce.net"));
 
     m_widget->setMinimumSize(700, 500);
 

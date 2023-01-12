@@ -77,7 +77,7 @@ SoftProofDialog::SoftProofDialog(QWidget* const parent)
       d      (new Private)
 {
     setModal(true);
-    setWindowTitle(i18n("Soft Proofing Options"));
+    setWindowTitle(i18nc("@title:window", "Soft Proofing Options"));
 
     d->buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
@@ -222,7 +222,7 @@ void SoftProofDialog::slotProfileInfo()
 
     if (profile.isNull())
     {
-        QMessageBox::critical(this, i18n("Profile Error"), i18n("No profile is selected."));
+        QMessageBox::critical(this, i18nc("@title:window", "Profile Error"), i18n("No profile is selected."));
         return;
     }
 

@@ -88,11 +88,11 @@ FCExportWindow::FCExportWindow(DInfoInterface* const iface, QWidget* const /*par
 
     // -- Window setup ------------------------------------------------------
 
-    setWindowTitle(i18n("Export to Local Storage"));
+    setWindowTitle(i18nc("@title:window", "Export to Local Storage"));
     setModal(false);
 
-    startButton()->setText(i18n("Start export"));
-    startButton()->setToolTip(i18n("Start export to the specified target"));
+    startButton()->setText(i18nc("@action:button", "Start Export"));
+    startButton()->setToolTip(i18nc("@info:tooltip, button", "Start export to the specified target"));
 
     connect(startButton(), SIGNAL(clicked()),
             this, SLOT(slotCopy()));
@@ -214,7 +214,7 @@ void FCExportWindow::slotCopyingFinished()
 
     if (!d->exportWidget->imagesList()->imageUrls().isEmpty())
     {
-        QMessageBox::information(this, i18n("Copy not completed"),
+        QMessageBox::information(this, i18nc("@title:window", "Copy not Completed"),
                                  i18n("Some of the items have not been copied "
                                       "and are still in the list. "
                                       "You can retry to copy these items now."));

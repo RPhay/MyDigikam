@@ -212,7 +212,7 @@ void DBinaryIface::slotNavigateAndCheck()
 
     }
 
-    QString f   = DFileDialog::getOpenFileName(nullptr, i18n("Navigate to %1", m_binaryBaseName),
+    QString f   = DFileDialog::getOpenFileName(nullptr, i18nc("@title:window", "Navigate to %1", m_binaryBaseName),
                                                start.toLocalFile(),
                                                m_binaryBaseName);
 

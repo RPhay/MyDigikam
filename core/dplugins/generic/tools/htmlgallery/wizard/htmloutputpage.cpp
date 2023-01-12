@@ -79,10 +79,10 @@ HTMLOutputPage::HTMLOutputPage(QWizard* const dialog, const QString& title)
 
     QLabel* const textLabel1 = new QLabel(main);
     textLabel1->setWordWrap(false);
-    textLabel1->setText(i18nc("@label", "Destination Folder:"));
+    textLabel1->setText(i18nc("@label", "Destination folder:"));
 
     d->destUrl = new DFileSelector(main);
-    d->destUrl->setFileDlgTitle(i18nc("@title", "Destination Folder"));
+    d->destUrl->setFileDlgTitle(i18nc("@title:window", "Destination Folder"));
     d->destUrl->setFileDlgMode(QFileDialog::Directory);
     d->destUrl->setFileDlgOptions(QFileDialog::ShowDirsOnly);
     textLabel1->setBuddy(d->destUrl);

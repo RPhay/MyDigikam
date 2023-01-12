@@ -61,7 +61,7 @@ bool MjpegStreamDlg::setMjpegServerContents()
 
         if (map.isEmpty())
         {
-            QMessageBox::information(this, i18nc("@title", "Media Server Contents"),
+            QMessageBox::information(this, i18nc("@title:window", "Media Server Contents"),
                                      i18nc("@info", "There is no collection to share with the current selection..."));
             return false;
         }
@@ -74,7 +74,7 @@ bool MjpegStreamDlg::setMjpegServerContents()
 
         if (urls.isEmpty())
         {
-            QMessageBox::information(this, i18nc("@title", "Media Server Contents"),
+            QMessageBox::information(this, i18nc("@title:window", "Media Server Contents"),
                                      i18nc("@info", "There is no item to share with the current selection..."));
 
             return false;
@@ -102,7 +102,7 @@ bool MjpegStreamDlg::startMjpegServer()
 
     if (!d->mngr->startMjpegServer())
     {
-        QMessageBox::warning(this, i18nc("@title", "Starting Media Server"),
+        QMessageBox::warning(this, i18nc("@title:window", "Starting Media Server"),
                              i18nc("@info", "An error occurs while to start Media Server..."));
     }
     else

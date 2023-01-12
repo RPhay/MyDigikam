@@ -107,7 +107,7 @@ void FbPlugin::slotFaceBook()
 {
     if (!reactivateToolDialog(m_toolDlg))
     {
-        QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Information, i18n("Facebook"),
+        QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Information, i18nc("@title:window", "Facebook"),
                  i18n("<p>Currently, as an open source project, we are unable to meet "
                       "the Facebook requirements for reactivating this plugin.</p>"
                       "<p>For more information look here: "

@@ -59,7 +59,7 @@ void DWizardDlg::setPlugin(DPlugin* const tool)
     if (m_tool)
     {
         setOption(QWizard::HaveHelpButton);
-        setButtonText(QWizard::HelpButton, i18nc("@action: button", "Help"));
+        setButtonText(QWizard::HelpButton, i18nc("@action:button", "Help"));
 
         QPushButton* const help       = reinterpret_cast<QPushButton*>(button(QWizard::HelpButton));
         QMenu* const menu             = new QMenu(help);

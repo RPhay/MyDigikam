@@ -104,7 +104,7 @@ SetupSlideShowDialog::SetupSlideShowDialog(SlideShowSettings* const settings, QW
     : DPluginDialog(parent, QLatin1String("Slideshow Settings")),
       d            (new Private)
 {
-    setWindowTitle(i18n("Slideshow Settings"));
+    setWindowTitle(i18nc("@title:window", "Slideshow Settings"));
     setModal(false);
     setPlugin(settings->plugin);
 

@@ -60,12 +60,12 @@ FTImportWindow::FTImportWindow(DInfoInterface* const iface, QWidget* const /*par
 
     // window setup
 
-    setWindowTitle(i18n("Import from Remote Storage"));
+    setWindowTitle(i18nc("@title:window", "Import from Remote Storage"));
     setModal(false);
     startButton()->setEnabled(false);
 
-    startButton()->setText(i18n("Start import"));
-    startButton()->setToolTip(i18n("Start importing the specified images "
+    startButton()->setText(i18nc("@action:button", "Start Import"));
+    startButton()->setToolTip(i18nc("@info:tooltip, button", "Start importing the specified images "
                                    "into the currently selected album."));
 
     // connections
@@ -135,7 +135,7 @@ void FTImportWindow::slotCopyingFinished(KJob* job)
 
     if (!d->importWidget->imagesList()->imageUrls().isEmpty())
     {
-        QMessageBox::information(this, i18n("Import not completed"),
+        QMessageBox::information(this, i18nc("@title:window", "Import not Completed"),
                                  i18n("Some of the images have not been transferred "
                                       "and are still in the list. "
                                       "You can retry to import these images now."));

@@ -182,12 +182,12 @@ OnlineVersionDlg::OnlineVersionDlg(QWidget* const parent,
 
     if (d->preRelease)
     {
-        setWindowTitle(i18n("Online Version Checker - Pre-Release"));
+        setWindowTitle(i18nc("@title:window", "Online Version Checker - Pre-Release"));
         d->label->setText(i18n("Check for new pre-release version available, please wait..."));
     }
     else
     {
-        setWindowTitle(i18n("Online Version Checker - Stable Version"));
+        setWindowTitle(i18nc("@title:window", "Online Version Checker - Stable Version"));
         d->label->setText(i18n("Check for new stable version available, please wait..."));
     }
 

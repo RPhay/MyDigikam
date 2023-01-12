@@ -119,7 +119,7 @@ TextConverterDialog::TextConverterDialog(QWidget* const parent, DInfoInterface* 
     : DPluginDialog(parent, QLatin1String("Text Converter Dialog")),
       d            (new Private)
 {
-    setWindowTitle(i18nc("@title", "OCR Text Converter"));
+    setWindowTitle(i18nc("@title:window", "OCR Text Converter"));
     setModal(true);
 
     d->iface          = iface;
@@ -582,7 +582,7 @@ void TextConverterDialog::slotStartStop()
 
         if (d->fileList.empty())
         {
-            QMessageBox::information(this, i18nc("@title", "Text Converter"),
+            QMessageBox::information(this, i18nc("@title:window", "Text Converter"),
                                      i18nc("@info", "The list does not contain any digital files to process. "
                                            "You need to select them."));
             setBusy(false);

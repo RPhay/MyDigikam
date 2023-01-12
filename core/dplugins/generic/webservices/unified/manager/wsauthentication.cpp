@@ -392,7 +392,7 @@ void WSAuthentication::slotListAlbumsDone(int errCode, const QString& errMsg, co
     if (errCode != 0)
     {
         QMessageBox::critical(QApplication::activeWindow(),
-                              i18n("%1 Call Failed",  d->serviceName),
+                              i18nc("@title:window", "%1 Call Failed",  d->serviceName),
                               i18n("Code: %1. %2", errCode, errMsg));
         return;
     }
@@ -416,7 +416,7 @@ void WSAuthentication::slotAddPhotoDone(int errCode, const QString& errMsg)
     }
     else
     {
-        if (QMessageBox::question(d->wizard, i18n("Uploading Failed"),
+        if (QMessageBox::question(d->wizard, i18nc("@title:window", "Uploading Failed"),
                 i18n("Failed to upload photo: %1\n"
                 "Do you want to continue?", errMsg))
             != QMessageBox::Yes)

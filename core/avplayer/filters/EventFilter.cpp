@@ -68,7 +68,7 @@ EventFilter::~EventFilter()
 
 void EventFilter::openLocalFile()
 {
-    QString file = QFileDialog::getOpenFileName(nullptr, i18nc("@title", "Open a video"));
+    QString file = QFileDialog::getOpenFileName(nullptr, i18nc("@title:window", "Open a Video"));
 
     if (file.isEmpty())
         return;
@@ -80,7 +80,7 @@ void EventFilter::openLocalFile()
 void EventFilter::openUrl()
 {
     QString url = QInputDialog::getText(nullptr,
-                                        i18nc("@title", "Open an url"),
+                                        i18nc("@title:window", "Open an Url"),
                                         i18nc("@info", "Url"));
 
     if (url.isEmpty())
@@ -124,7 +124,7 @@ void EventFilter::help()
         i18nc("@info", "-&gt;/&lt;-: seek forward/backward\n")                                                             +
         QLatin1String("</qt>");
 
-    QMessageBox::about(nullptr, i18nc("@title", "Help"), help);
+    QMessageBox::about(nullptr, i18nc("@title:window", "Help"), help);
 }
 
 bool EventFilter::eventFilter(QObject* watched, QEvent* event)

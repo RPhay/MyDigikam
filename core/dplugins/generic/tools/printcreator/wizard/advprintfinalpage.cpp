@@ -351,7 +351,7 @@ bool AdvPrintFinalPage::print()
 
         auto pageSize = d->photoPage->printer()->pageLayout().pageSize().id();
         QPrintDialog* const dialog    = new QPrintDialog(d->photoPage->printer(), this);
-        dialog->setWindowTitle(i18n("Print Creator"));
+        dialog->setWindowTitle(i18nc("@title:window", "Print Creator"));
 
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "(2) paper page "
                                              << dialog->printer()->pageLayout().pageSize().id()

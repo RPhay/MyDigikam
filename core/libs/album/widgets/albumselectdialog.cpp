@@ -68,7 +68,7 @@ AlbumSelectDialog::AlbumSelectDialog(QWidget* const parent, PAlbum* const albumT
     : QDialog(parent),
       d      (new Private)
 {
-    setWindowTitle(i18n("Select Album"));
+    setWindowTitle(i18nc("@title:window", "Select Album"));
 
     d->buttons = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);

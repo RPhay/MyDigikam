@@ -53,7 +53,7 @@ RawCameraDlg::RawCameraDlg(QWidget* const parent)
     : InfoDlg(parent),
       d(new Private)
 {
-    setWindowTitle(i18n("List of supported RAW cameras"));
+    setWindowTitle(i18nc("@title:window", "List of Supported RAW Cameras"));
 
     QStringList list = DRawDecoder::supportedCamera();
 

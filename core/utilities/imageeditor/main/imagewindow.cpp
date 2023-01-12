@@ -924,7 +924,7 @@ void ImageWindow::removeCurrent()
     {
         // No image in the current Album -> Quit ImageEditor...
 
-        QMessageBox::information(this, i18n("No Image in Current Album"),
+        QMessageBox::information(this, i18nc("@title:window", "No Image in Current Album"),
                                  i18n("There is no image to show in the current album.\n"
                                       "The image editor will be closed."));
 
@@ -1196,7 +1196,7 @@ void ImageWindow::slotOpenOriginal()
     {
         //TODO: point to remote collection
 
-        QMessageBox::warning(this, i18nc("@title", "File Not Available"),
+        QMessageBox::warning(this, i18nc("@title:window", "File Not Available"),
                              i18nc("@info", "<qt>The original file (<b>%1</b>) is currently not available</qt>",
                                    originalId.m_fileName));
         return;

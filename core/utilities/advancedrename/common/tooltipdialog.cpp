@@ -50,7 +50,7 @@ TooltipDialog::TooltipDialog(QWidget* const parent)
     : QDialog(parent),
       d(new Private)
 {
-    setWindowTitle(i18n("Information"));
+    setWindowTitle(i18nc("@title:window", "Information"));
 
     d->buttons     = new QDialogButtonBox(QDialogButtonBox::Close, this);
     d->buttons->button(QDialogButtonBox::Close)->setDefault(true);

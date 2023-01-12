@@ -200,7 +200,7 @@ void ItemViewUtilities::copyItemsToExternalFolder(const QList<ItemInfo>& infos)
         startingPath = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
     }
 
-    QUrl url = DFileDialog::getExistingDirectoryUrl(m_widget, i18n("Select target folder"),
+    QUrl url = DFileDialog::getExistingDirectoryUrl(m_widget, i18nc("@title:window", "Select Target Folder"),
                                                     QUrl::fromLocalFile(startingPath));
 
     if (url.isEmpty() || !url.isLocalFile())

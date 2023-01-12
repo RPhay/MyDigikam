@@ -57,7 +57,7 @@ WSSelectUserDlg::WSSelectUserDlg(QWidget* const parent, const QString& serviceNa
 {
     d->serviceName = serviceName;
 
-    setWindowTitle(i18n("Account Selector"));
+    setWindowTitle(i18nc("@title:window", "Account Selector"));
     setModal(true);
 
     QDialogButtonBox* const buttonBox   = new QDialogButtonBox();

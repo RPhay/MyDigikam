@@ -169,7 +169,7 @@ bool FilesDownloader::checkDownloadFiles() const
 
 void FilesDownloader::startDownload()
 {
-    setWindowTitle(i18n("Download required files"));
+    setWindowTitle(i18nc("@title:window", "Download Required Files"));
     setMinimumHeight(250);
     setMinimumWidth(600);
 
@@ -265,7 +265,7 @@ void FilesDownloader::slotDownload()
     else
     {
         QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Critical,
-                 i18n("Download error"),
+                 i18nc("@title:window", "Download Error"),
                  i18n("An error occurred during the download.\n\n"
                       "File: %1\n\n%2\n\n"
                       "You can try again or continue the "
@@ -274,7 +274,7 @@ void FilesDownloader::slotDownload()
                  QMessageBox::Yes | QMessageBox::Cancel,
                  qApp->activeWindow());
 
-        msgBox->button(QMessageBox::Yes)->setText(i18n("Try again"));
+        msgBox->button(QMessageBox::Yes)->setText(i18nc("@action:button", "Try Again"));
         msgBox->button(QMessageBox::Yes)->setIcon(QIcon::fromTheme(QLatin1String("edit-download")));
 
         int result = msgBox->exec();

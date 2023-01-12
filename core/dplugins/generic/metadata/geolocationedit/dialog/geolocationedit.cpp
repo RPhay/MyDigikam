@@ -261,7 +261,7 @@ GeolocationEdit::GeolocationEdit(QWidget* const parent, DInfoInterface* const if
       d            (new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose, true);
-    setWindowTitle(i18nc("@title", "Geolocation Editor"));
+    setWindowTitle(i18nc("@title:window", "Geolocation Editor"));
     setMinimumSize(300, 400);
     setModal(true);
 
@@ -811,7 +811,7 @@ void GeolocationEdit::closeEvent(QCloseEvent *e)
 
         const int chosenAction = DMessageBox::showYesNo(QMessageBox::Warning,
                                                         this,
-                                                        i18nc("@title", "Unsaved changes"),
+                                                        i18nc("@title:window", "Unsaved Changes"),
                                                         i18nc("@info", "%1 Would you like to save the changes you made to them?", message)
                                                        );
 
@@ -987,7 +987,7 @@ void GeolocationEdit::slotFileChangesSaved(int beginIndex, int endIndex)
 
             DMessageBox::showInformationList(QMessageBox::Critical,
                                              this,
-                                             i18nc("@title", "Error"),
+                                             i18nc("@title:window", "Error"),
                                              i18nc("@info", "Failed to save some information:"),
                                              errorStrings);
         }

@@ -77,10 +77,10 @@ ODWindow::ODWindow(DInfoInterface* const iface,
 
     setMainWidget(d->widget);
     setModal(false);
-    setWindowTitle(i18nc("@title", "Export to Onedrive"));
+    setWindowTitle(i18nc("@title:window", "Export to Onedrive"));
 
-    startButton()->setText(i18nc("@action", "Start Upload"));
-    startButton()->setToolTip(i18nc("@info", "Start upload to Onedrive"));
+    startButton()->setText(i18nc("@action:button", "Start Upload"));
+    startButton()->setToolTip(i18nc("@info:tooltip, button", "Start upload to Onedrive"));
 
     d->widget->setMinimumSize(700, 500);
 
@@ -240,7 +240,7 @@ void ODWindow::slotStartTransfer()
 
     if (d->widget->imagesList()->imageUrls().isEmpty())
     {
-        QMessageBox::critical(this, i18nc("@title: window", "Error"),
+        QMessageBox::critical(this, i18nc("@title:window", "Error"),
                               i18nc("@info", "No image selected. Please select which images should be uploaded."));
         return;
     }
@@ -248,12 +248,12 @@ void ODWindow::slotStartTransfer()
     if (!(d->talker->authenticated()))
     {
         QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-                         i18nc("@title: window", "Warning"),
+                         i18nc("@title:window", "Warning"),
                          i18nc("@info", "Authentication failed. Click \"Continue\" to authenticate."),
                          QMessageBox::Yes | QMessageBox::No);
 
-        (warn->button(QMessageBox::Yes))->setText(i18nc("@action", "Continue"));
-        (warn->button(QMessageBox::No))->setText(i18nc("@action", "Cancel"));
+        (warn->button(QMessageBox::Yes))->setText(i18nc("@action:button", "Continue"));
+        (warn->button(QMessageBox::No))->setText(i18nc("@action:button", "Cancel"));
 
         if (warn->exec() == QMessageBox::Yes)
         {
@@ -321,7 +321,7 @@ void ODWindow::uploadNextPhoto()
 
 void ODWindow::slotAddPhotoFailed(const QString& msg)
 {
-    if (QMessageBox::question(this, i18nc("@title", "Uploading Failed"),
+    if (QMessageBox::question(this, i18nc("@title:window", "Uploading Failed"),
                               i18nc("@info", "Failed to upload photo to OneDrive."
                                     "\n%1\n"
                                     "Do you want to continue?", msg))
@@ -381,7 +381,7 @@ void ODWindow::slotSignalLinkingFailed()
     slotSetUserName(QLatin1String(""));
     d->widget->getAlbumsCoB()->clear();
 
-    if (QMessageBox::question(this, i18nc("@title", "Login Failed"),
+    if (QMessageBox::question(this, i18nc("@title:window", "Login Failed"),
                               i18nc("@info", "Authentication failed. Do you want to try again?"))
         == QMessageBox::Yes)
     {

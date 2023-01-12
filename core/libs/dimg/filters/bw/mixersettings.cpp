@@ -542,7 +542,7 @@ void MixerSettings::loadSettings()
     FILE*          fp = nullptr;
     MixerContainer settings;
 
-    loadGainsFileUrl = DFileDialog::getOpenFileUrl(qApp->activeWindow(), i18nc("@info", "Select Gimp Gains Mixer File to Load"),
+    loadGainsFileUrl = DFileDialog::getOpenFileUrl(qApp->activeWindow(), i18nc("@title:window", "Select Gimp Gains Mixer File to Load"),
                                                    QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)),
                                                    QLatin1String("*"));
 
@@ -632,7 +632,7 @@ void MixerSettings::saveAsSettings()
     QUrl  saveGainsFileUrl;
     FILE* fp = nullptr;
 
-    saveGainsFileUrl = DFileDialog::getSaveFileUrl(qApp->activeWindow(), i18nc("@info", "Gimp Gains Mixer File to Save"),
+    saveGainsFileUrl = DFileDialog::getSaveFileUrl(qApp->activeWindow(), i18nc("@title:window", "Gimp Gains Mixer File to Save"),
                                                    QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)),
                                                    QLatin1String("*"));
 

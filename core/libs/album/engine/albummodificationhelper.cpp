@@ -280,7 +280,7 @@ void AlbumModificationHelper::slotAlbumRename(PAlbum* album)
     QString oldTitle(album->title());
 
     QPointer<QInputDialog> textDlg = new QInputDialog(d->dialogParent);
-    textDlg->setWindowTitle(i18n("Rename Album (%1)", oldTitle));
+    textDlg->setWindowTitle(i18nc("@title:window", "Rename Album (%1)", oldTitle));
     textDlg->setLabelText(i18n("Enter new album name:"));
     textDlg->resize(450, textDlg->sizeHint().height());
     textDlg->setInputMode(QInputDialog::TextInput);

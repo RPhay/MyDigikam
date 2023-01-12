@@ -131,7 +131,7 @@ int main(int argc, char** argv)
 
     vo.widget()->show();
     vo.widget()->resize(800, 500);
-    vo.widget()->setWindowTitle(QLatin1String("GLSLFilter example"));
+    vo.widget()->setWindowTitle(QLatin1String("GLSLFilter Example"));
 
     AVPlayerCore player;
     player.setRenderer(&vo);

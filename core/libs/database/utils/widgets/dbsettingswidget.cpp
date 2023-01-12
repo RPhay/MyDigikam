@@ -591,12 +591,12 @@ void DatabaseSettingsWidget::slotCheckMysqlServerConnection()
 
     if (checkMysqlServerConnection(error))
     {
-        QMessageBox::information(qApp->activeWindow(), i18n("Database connection test"),
+        QMessageBox::information(qApp->activeWindow(), i18nc("@title:window", "Database Connection Test"),
                                  i18n("Database connection test successful."));
     }
     else
     {
-        QMessageBox::critical(qApp->activeWindow(), i18n("Database connection test"),
+        QMessageBox::critical(qApp->activeWindow(), i18nc("@title:window", "Database Connection Test"),
                               i18n("Database connection test was not successful. <p>Error was: %1</p>",
                                    error));
     }
@@ -840,7 +840,7 @@ bool DatabaseSettingsWidget::checkDatabaseSettings()
 
             if (!checkMysqlServerDbNamesConfig(error))
             {
-                QMessageBox::critical(qApp->activeWindow(), i18n("Database Configuration"),
+                QMessageBox::critical(qApp->activeWindow(), i18nc("@title:window", "Database Configuration"),
                                       i18n("The database names configuration is not valid. Error is <br/><p>%1</p><br/>"
                                            "Please check your configuration.",
                                            error));
@@ -849,7 +849,7 @@ bool DatabaseSettingsWidget::checkDatabaseSettings()
 
             if (!checkMysqlServerConnection(error))
             {
-                QMessageBox::critical(qApp->activeWindow(), i18n("Database Connection Test"),
+                QMessageBox::critical(qApp->activeWindow(), i18nc("@title:window", "Database Connection Test"),
                                       i18n("Testing database connection has failed with error<br/><p>%1</p><br/>"
                                            "Please check your configuration.",
                                            error));
@@ -878,7 +878,7 @@ bool DatabaseSettingsWidget::checkDatabasePath()
 
     if (!targetPath.exists())
     {
-        int rc = QMessageBox::question(qApp->activeWindow(), i18n("Create Database Folder?"),
+        int rc = QMessageBox::question(qApp->activeWindow(), i18nc("@title:window", "Create Database Folder?"),
                                     i18n("<p>The folder to put your database in does not seem to exist:</p>"
                                          "<p><b>%1</b></p>"
                                          "Would you like digiKam to create it for you?", dbFolder));
@@ -890,7 +890,7 @@ bool DatabaseSettingsWidget::checkDatabasePath()
 
         if (!targetPath.mkpath(dbFolder))
         {
-            QMessageBox::information(qApp->activeWindow(), i18n("Create Database Folder Failed"),
+            QMessageBox::information(qApp->activeWindow(), i18nc("@title:window", "Create Database Folder Failed"),
                                     i18n("<p>digiKam could not create the folder to host your database file.\n"
                                          "Please select a different location.</p>"
                                          "<p><b>%1</b></p>", dbFolder));
@@ -916,7 +916,7 @@ bool DatabaseSettingsWidget::checkDatabasePath()
 #endif
 
     {
-        QMessageBox::information(qApp->activeWindow(), i18n("No Database Write Access"),
+        QMessageBox::information(qApp->activeWindow(), i18nc("@title:window", "No Database Write Access"),
                                  i18n("<p>You do not seem to have write access "
                                       "for the folder to host the database file.<br/>"
                                       "Please select a different location.</p>"

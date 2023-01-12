@@ -323,7 +323,7 @@ void DIO::createJob(IOJobData* const data)
             if (dirList.contains(url.adjusted(QUrl::StripTrailingSlash).fileName(), caseSensitivity))
             {
                 QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Warning,
-                        i18n("File conflict"),
+                        i18nc("@title:window", "File Conflict"),
                         i18n("Files or folders with the same name already exist in the target folder.\n\n"
                              "What action is applied in the event of a file conflict?\n\n"
                              "Available options are:\n"
@@ -333,11 +333,11 @@ void DIO::createJob(IOJobData* const data)
                         QMessageBox::Yes | QMessageBox::No | QMessageBox::Ok | QMessageBox::Cancel,
                         qApp->activeWindow());
 
-                msgBox->button(QMessageBox::Yes)->setText(i18n("Rename automatically"));
+                msgBox->button(QMessageBox::Yes)->setText(i18nc("@action:button", "Rename Automatically"));
                 msgBox->button(QMessageBox::Yes)->setIcon(QIcon::fromTheme(QLatin1String("document-edit")));
-                msgBox->button(QMessageBox::No)->setText(i18n("Overwrite automatically"));
+                msgBox->button(QMessageBox::No)->setText(i18nc("@action:button", "Overwrite Automatically"));
                 msgBox->button(QMessageBox::No)->setIcon(QIcon::fromTheme(QLatin1String("edit-copy")));
-                msgBox->button(QMessageBox::Ok)->setText(i18n("Skip automatically"));
+                msgBox->button(QMessageBox::Ok)->setText(i18nc("@action:button", "Skip Automatically"));
                 msgBox->button(QMessageBox::Ok)->setIcon(QIcon::fromTheme(QLatin1String("go-next")));
 
                 if ((operation == IOJobData::CopyAlbum) || (operation == IOJobData::MoveAlbum))

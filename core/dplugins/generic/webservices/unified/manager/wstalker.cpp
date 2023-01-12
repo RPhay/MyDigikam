@@ -345,7 +345,7 @@ void WSTalker::authenticationDone(int errCode, const QString& errMsg)
     if (errCode != 0)
     {
         QMessageBox::critical(QApplication::activeWindow(),
-                              i18n("Error"),
+                              i18nc("@title:window", "Error"),
                               i18n("Code: %1. %2", errCode, errMsg));
     }
 

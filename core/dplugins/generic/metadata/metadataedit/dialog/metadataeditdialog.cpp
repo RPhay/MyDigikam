@@ -89,7 +89,7 @@ MetadataEditDialog::MetadataEditDialog(QWidget* const parent, DInfoInterface* co
 {
     d->iface = iface;
 
-    setWindowTitle(i18nc("@title", "Metadata Editor"));
+    setWindowTitle(i18nc("@title:window", "Metadata Editor"));
     setModal(true);
 
     ThumbnailLoadThread* const thread = new ThumbnailLoadThread;
@@ -308,7 +308,7 @@ void MetadataEditDialog::slotItemChanged()
     d->tabIptc->slotItemChanged();
     d->tabXmp->slotItemChanged();
 
-    setWindowTitle(i18nc("@title", "%1 (%2/%3) - Edit Metadata",
+    setWindowTitle(i18nc("@title:window", "%1 (%2/%3) - Edit Metadata",
         (*d->currItem).fileName(),
         d->urls.indexOf(*(d->currItem))+1,
         d->urls.count()));

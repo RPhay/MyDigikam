@@ -72,7 +72,7 @@ PresentationDlg::PresentationDlg(QWidget* const parent,
     : DPluginDialog(parent, QLatin1String("Presentation Settings")),
       d            (new Private)
 {
-    setWindowTitle(i18nc("@title", "Presentation"));
+    setWindowTitle(i18nc("@title:window", "Presentation"));
     setModal(false);
 
     d->sharedData = sharedData;

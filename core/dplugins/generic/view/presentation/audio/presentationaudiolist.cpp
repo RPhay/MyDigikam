@@ -163,7 +163,7 @@ void PresentationAudioListItem::slotDurationChanged(qint64 duration)
 void PresentationAudioListItem::showErrorDialog(const QString& err)
 {
     QPointer<QMessageBox> msgBox = new QMessageBox(QApplication::activeWindow());
-    msgBox->setWindowTitle(i18n("Error"));
+    msgBox->setWindowTitle(i18nc("@title:window", "Error"));
     msgBox->setText(i18n("%1 may not be playable.", d->url.fileName()));
     msgBox->setDetailedText(err);
     msgBox->setStandardButtons(QMessageBox::Ok);

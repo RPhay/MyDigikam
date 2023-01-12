@@ -109,10 +109,10 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     d->selector                 = new DFileSelector(hbox);
     d->selector->setFileDlgMode(QFileDialog::Directory);
     d->selector->setFileDlgOptions(QFileDialog::ShowDirsOnly);
-    d->selector->setFileDlgTitle(i18n("Target Folder"));
+    d->selector->setFileDlgTitle(i18nc("@title:window", "Target Folder"));
     d->selector->setWhatsThis(i18n("Sets the target address to copy the items to."));
 
-    QLabel* const targetLabel   = new QLabel(i18n("Target File behavior:"), this);
+    QLabel* const targetLabel   = new QLabel(i18n("Target file behavior:"), this);
     d->targetButtonGroup        = new QButtonGroup(this);
     d->fileCopyButton           = new QRadioButton(i18n("Copy files"), this);
     d->symLinkButton            = new QRadioButton(i18n("Create symlinks"), this);

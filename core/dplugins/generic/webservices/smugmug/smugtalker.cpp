@@ -743,7 +743,7 @@ void SmugTalker::slotFinished(QNetworkReply* reply)
         {
             Q_EMIT signalBusy(false);
             QMessageBox::critical(QApplication::activeWindow(),
-                                i18n("Error"), reply->errorString());
+                                i18nc("@title:window", "Error"), reply->errorString());
         }
 
         reply->deleteLater();

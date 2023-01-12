@@ -420,7 +420,7 @@ void AltLangStrEdit::slotTranslationFinished()
         qCDebug(DIGIKAM_WIDGETS_LOG) << "Translation Error       :" << d->trengine->error();
 
         QMessageBox::information(qApp->activeWindow(),
-                                 i18nc("@info", "Failed to translate string with %1 Web-service",
+                                 i18nc("@title:window", "Failed to Translate String with %1 Web-Service",
                                  DOnlineTranslator::engineName(LocalizeSettings::instance()->settings().translatorEngine)),
                                  i18nc("@info", "Error message: %1",
                                  d->trengine->errorString()));

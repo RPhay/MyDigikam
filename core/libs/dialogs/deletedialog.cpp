@@ -652,14 +652,14 @@ void DeleteDialog::setListMode(DeleteDialogMode::ListMode mode)
     {
         case DeleteDialogMode::Files:
         {
-            setWindowTitle(i18n("About to delete selected items"));
+            setWindowTitle(i18nc("@title:window", "About to Delete Selected Items"));
             break;
         }
 
         case DeleteDialogMode::Albums:
         case DeleteDialogMode::Subalbums:
         {
-            setWindowTitle(i18n("About to delete selected albums"));
+            setWindowTitle(i18nc("@title:window", "About to Delete Selected Albums"));
             break;
         }
     }

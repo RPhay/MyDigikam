@@ -23,7 +23,7 @@ MjpegStreamDlg::MjpegStreamDlg(QObject* const /*parent*/,
     : DPluginDialog(nullptr, MjpegServerMngr::instance()->configGroupName()),
       d            (new Private)
 {
-    setWindowTitle(i18nc("@title:window", "Share Files with MJPEG Stream Server"));
+    setWindowTitle(i18nc("@title:window", "Share Files With MJPEG Stream Server"));
     setModal(false);
     d->spacing               = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                                     QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
@@ -94,7 +94,7 @@ void MjpegStreamDlg::accept()
 
         if (!empty)
         {
-            int rc = QMessageBox::question(this, i18nc("@title", "MJPEG Server Contents"),
+            int rc = QMessageBox::question(this, i18nc("@title:window", "MJPEG Server Contents"),
                                            i18nc("@info", "The items list to share has changed. "
                                                  "Do you want to start now the MJPEG server with this contents?"));
             if (rc == QMessageBox::Yes)

@@ -401,7 +401,7 @@ void ODTalker::slotFinished(QNetworkReply* reply)
         {
             Q_EMIT signalTransferCancel();
             QMessageBox::critical(QApplication::activeWindow(),
-                                  i18n("Error"), reply->errorString());
+                                  i18nc("@title:window", "Error"), reply->errorString());
 
             reply->deleteLater();
             return;

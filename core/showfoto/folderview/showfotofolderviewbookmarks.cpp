@@ -242,7 +242,7 @@ void ShowfotoFolderViewBookmarks::slotAddBookmark(const QString& newBookmark)
     }
 
     QMessageBox::information(this,
-                             i18nc("@title: window", "Add New Bookmark"),
+                             i18nc("@title:window", "Add New Bookmark"),
                              i18nc("@info", "This bookmark referencing\n%1\nalready exists in the list with name \"%2\".",
                              item->path(), item->text(0)));
 }
@@ -256,7 +256,7 @@ void ShowfotoFolderViewBookmarks::slotDelBookmark()
         return;
     }
 
-    if (QMessageBox::question(this, i18nc("@title: window", "Confirm Bookmark Deletion"),
+    if (QMessageBox::question(this, i18nc("@title:window", "Confirm Bookmark Deletion"),
                               i18nc("@info", "Are you sure you want to remove the bookmark \"%1\"?", item->text(0)))
             != QMessageBox::Yes)
     {

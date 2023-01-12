@@ -139,7 +139,7 @@ Setup::Setup(QWidget* const parent)
                    Qt::WindowCloseButtonHint     |
                    Qt::WindowMinMaxButtonsHint);
 
-    setWindowTitle(i18nc("@title", "Configure"));
+    setWindowTitle(i18nc("@title:window", "Configure"));
     setStandardButtons(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
     button(QDialogButtonBox::Ok)->setDefault(true);
     setFaceType(List);

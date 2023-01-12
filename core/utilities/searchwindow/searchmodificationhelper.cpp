@@ -72,7 +72,7 @@ void SearchModificationHelper::slotSearchDelete(SAlbum* searchAlbum)
 
     // Make sure that a complicated search is not deleted accidentally
 
-    int result = QMessageBox::warning(d->dialogParent, i18n("Delete Search?"),
+    int result = QMessageBox::warning(d->dialogParent, i18nc("@title:window", "Delete Search?"),
                                       i18n("Are you sure you want to "
                                            "delete the selected search "
                                            "\"%1\"?", searchAlbum->displayTitle()),
@@ -114,7 +114,7 @@ bool SearchModificationHelper::checkName(QString& name)
                               "Please enter a new name:" );
         bool ok;
         QString newTitle = QInputDialog::getText(d->dialogParent,
-                                                 i18n("Name exists"),
+                                                 i18nc("@title:window", "Name Exists"),
                                                  label,
                                                  QLineEdit::Normal,
                                                  name,
@@ -142,7 +142,7 @@ void SearchModificationHelper::slotSearchRename(SAlbum* searchAlbum)
     QString oldName(searchAlbum->title());
     bool    ok;
     QString name = QInputDialog::getText(d->dialogParent,
-                                         i18n("Rename Album (%1)", oldName),
+                                         i18nc("@title:window", "Rename Album (%1)", oldName),
                                          i18n("Enter new album name:"),
                                          QLineEdit::Normal,
                                          oldName,

@@ -33,7 +33,7 @@ Widget::Widget(QWidget* const parent)
     : QWidget(parent)
 {
     QtAV::Widgets::registerRenderers();
-    setWindowTitle(QString::fromLatin1("A test for shared video renderer. QtAV %1")
+    setWindowTitle(QString::fromLatin1("A Test for Shared Video Renderer. QtAV %1")
                                        .arg(QtAV_Version_String_Long()));
 
     QVBoxLayout* main_layout = new QVBoxLayout;

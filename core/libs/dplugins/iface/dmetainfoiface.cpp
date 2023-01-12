@@ -264,7 +264,7 @@ QWidget* DMetaInfoIface::uploadWidget(QWidget* const parent) const
         d->dirSelector = new DFileSelector(parent);
         d->dirSelector->setFileDlgMode(QFileDialog::Directory);
         d->dirSelector->setFileDlgOptions(QFileDialog::ShowDirsOnly);
-        d->dirSelector->setFileDlgTitle(i18n("Destination Folder"));
+        d->dirSelector->setFileDlgTitle(i18nc("@title:window", "Destination Folder"));
         d->dirSelector->lineEdit()->setPlaceholderText(i18n("Output Destination Path"));
 
         connect(d->dirSelector, SIGNAL(signalUrlSelected(QUrl)),

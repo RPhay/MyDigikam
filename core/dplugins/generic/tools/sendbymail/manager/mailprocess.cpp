@@ -331,7 +331,7 @@ bool MailProcess::showFailedResizedImages() const
 
         QPointer<QMessageBox> mbox = new QMessageBox(QApplication::activeWindow());
         mbox->setIcon(QMessageBox::Warning);
-        mbox->setWindowTitle(i18n("Processing Failed"));
+        mbox->setWindowTitle(i18nc("@title:window", "Processing Failed"));
         mbox->setText(i18n("Some images cannot be resized.\n"
                            "Do you want them to be added as attachments without resizing?"));
         mbox->setStandardButtons(QMessageBox::StandardButtons(QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel));

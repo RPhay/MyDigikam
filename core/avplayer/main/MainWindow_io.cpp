@@ -99,7 +99,7 @@ void MainWindow::play(const QUrl& url)
 
 void MainWindow::openFile()
 {
-    QString file = QFileDialog::getOpenFileName(nullptr, i18nc("@title", "Open a media file"),
+    QString file = QFileDialog::getOpenFileName(nullptr, i18nc("@title:window", "Open a Media File"),
                                                 AVPlayerConfigMngr::instance().lastFile());
 
     if (file.isEmpty())
@@ -507,7 +507,7 @@ void MainWindow::about()
 
 void MainWindow::openUrl()
 {
-    QString url = QInputDialog::getText(nullptr, i18nc("@title", "Open an url"),
+    QString url = QInputDialog::getText(nullptr, i18nc("@title:window", "Open an Url"),
                                         i18nc("@info", "Url"));
 
     if (url.isEmpty())
@@ -699,7 +699,7 @@ void MainWindow::onTimeSliderLeave()
 
 void MainWindow::handleError(const AVError& e)
 {
-    QMessageBox::warning(nullptr, i18nc("@title", "Player error"), e.string());
+    QMessageBox::warning(nullptr, i18nc("@title:window", "Player Error"), e.string());
 }
 
 void MainWindow::onMediaStatusChanged()
@@ -795,7 +795,7 @@ void MainWindow::onBufferProgress(qreal percent)
     else
         s = QString::fromLatin1("%1B/s").arg(bs, 6, 'f', 1);
 
-    setWindowTitle(i18nc("@title: media loading state", "Buffering... %1% @%2 %3",
+    setWindowTitle(i18nc("@title:window, media loading state", "Buffering... %1% @%2 %3",
                    QString::fromLatin1("%1").arg(percent*100.0, 5, 'f', 1), s, d->Title));
 }
 
@@ -1015,7 +1015,7 @@ void MainWindow::toggleSubtitleAutoLoad(bool value)
 
 void MainWindow::openSubtitle()
 {
-    QString file = QFileDialog::getOpenFileName(nullptr, i18nc("@title", "Open a subtitle file"));
+    QString file = QFileDialog::getOpenFileName(nullptr, i18nc("@title:window", "Open a Subtitle File"));
 
     if (file.isEmpty())
         return;

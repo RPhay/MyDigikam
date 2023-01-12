@@ -95,7 +95,7 @@ DNGConverterDialog::DNGConverterDialog(QWidget* const parent, DInfoInterface* co
     : DPluginDialog(parent, QLatin1String("DNG Converter Dialog")),
       d            (new Private)
 {
-    setWindowTitle(i18nc("@title", "DNG Converter"));
+    setWindowTitle(i18nc("@title:window", "DNG Converter"));
     setMinimumSize(900, 500);
     setModal(true);
 
@@ -285,7 +285,7 @@ void DNGConverterDialog::slotStartStop()
 
         if (d->fileList.empty())
         {
-            QMessageBox::information(this, i18n("DNG Converter"), i18n("The list does not contain any Raw files to process."));
+            QMessageBox::information(this, i18nc("@title:window", "DNG Converter"), i18n("The list does not contain any Raw files to process."));
             busy(false);
             slotAborted();
             return;

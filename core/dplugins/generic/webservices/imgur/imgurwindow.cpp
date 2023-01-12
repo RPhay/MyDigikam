@@ -150,11 +150,11 @@ ImgurWindow::ImgurWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
     connect(this, &ImgurWindow::cancelClicked,
             this, &ImgurWindow::slotCancel);
 
-    setWindowTitle(i18n("Export to imgur.com"));
+    setWindowTitle(i18nc("@title:window", "Export to imgur.com"));
     setModal(false);
 
-    startButton()->setText(i18n("Upload"));
-    startButton()->setToolTip(i18n("Start upload to Imgur"));
+    startButton()->setText(i18nc("@action:button", "Upload"));
+    startButton()->setToolTip(i18nc("@info:tooltip, button", "Start upload to Imgur"));
     startButton()->setEnabled(true);
 
     // Only used if not overwritten by readSettings()
@@ -247,7 +247,7 @@ void ImgurWindow::slotApiAuthorized(bool success, const QString& username)
 void ImgurWindow::slotApiAuthError(const QString& msg)
 {
     QMessageBox::critical(this,
-                          i18n("Authorization Failed"),
+                          i18nc("@title:window", "Authorization Failed"),
                           i18n("Failed to log into Imgur: %1\n", msg));
 }
 
@@ -275,14 +275,14 @@ void ImgurWindow::slotApiError(const QString& msg, const ImgurTalkerAction& acti
     if (d->api->workQueueLength() <= 1)
     {
         QMessageBox::critical(this,
-                              i18n("Uploading Failed"),
+                              i18nc("@title:window", "Uploading Failed"),
                               i18n("Failed to upload photo to Imgur: %1\n", msg));
         return;
     }
 
     QMessageBox::StandardButton cont =
             QMessageBox::question(this,
-                                  i18n("Uploading Failed"),
+                                  i18nc("@title:window", "Uploading Failed"),
                                   i18n("Failed to upload photo to Imgur: %1\n"
                                        "Do you want to continue?", msg));
 

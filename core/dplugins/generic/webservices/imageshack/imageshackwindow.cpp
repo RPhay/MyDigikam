@@ -101,7 +101,7 @@ ImageShackWindow::ImageShackWindow(DInfoInterface* const iface,
     d->widget->setMinimumSize(700, 500);
 
     setMainWidget(d->widget);
-    setWindowTitle(i18n("Export to ImageShack"));
+    setWindowTitle(i18nc("@title:window", "Export to ImageShack"));
     setModal(false);
 
     d->albumDlg = new ImageShackNewAlbumDlg(this, QLatin1String("ImageShack"));
@@ -109,8 +109,8 @@ ImageShackWindow::ImageShackWindow(DInfoInterface* const iface,
     connect(d->widget->d->chgRegCodeBtn, SIGNAL(clicked(bool)),
             this, SLOT(slotChangeRegistrantionCode()));
 
-    startButton()->setText(i18n("Upload"));
-    startButton()->setToolTip(i18n("Start upload to ImageShack web service"));
+    startButton()->setText(i18nc("@action:button", "Upload"));
+    startButton()->setToolTip(i18nc("@info:tooltip, button", "Start upload to ImageShack web service"));
     startButton()->setEnabled(false);
 
     connect(d->widget->d->imgList, SIGNAL(signalImageListChanged()),
@@ -410,7 +410,7 @@ void ImageShackWindow::slotAddPhotoDone(int errCode, const QString& errMsg)
     }
     else
     {
-        if (QMessageBox::question(this, i18n("Uploading Failed"),
+        if (QMessageBox::question(this, i18nc("@title:window", "Uploading Failed"),
                                   i18n("Failed to upload photo into ImageShack: %1\n"
                                        "Do you want to continue?", errMsg))
             != QMessageBox::Yes)

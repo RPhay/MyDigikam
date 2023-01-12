@@ -865,7 +865,7 @@ void SetupICC::profileInfo(const IccProfile& profile)
 {
     if (profile.isNull())
     {
-        QMessageBox::critical(this, i18n("Profile Error"), i18n("No profile is selected."));
+        QMessageBox::critical(this, i18nc("@title:window", "Profile Error"), i18n("No profile is selected."));
         return;
     }
 

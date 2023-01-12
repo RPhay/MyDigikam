@@ -69,7 +69,7 @@ ProcessorDlg::ProcessorDlg(const QList<QUrl>& list, QWidget* const parent)
       d      (new Private)
 {
     setModal(false);
-    setWindowTitle(QString::fromUtf8("Convert RAW files To PNG"));
+    setWindowTitle(QString::fromUtf8("Convert RAW Files to PNG"));
 
     d->buttons               = new QDialogButtonBox(QDialogButtonBox::Apply | QDialogButtonBox::Close, this);
     d->thread                = new RAWToPNGConverterThread(this);

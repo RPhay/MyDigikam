@@ -369,7 +369,7 @@ void NRSettings::writeSettings(KConfigGroup& group)
 
 void NRSettings::loadSettings()
 {
-    QUrl loadRestorationFile = DFileDialog::getOpenFileUrl(qApp->activeWindow(), i18n("Photograph Noise Reduction Settings File to Load"),
+    QUrl loadRestorationFile = DFileDialog::getOpenFileUrl(qApp->activeWindow(), i18nc("@title:window", "Photograph Noise Reduction Settings File to Load"),
                                                            QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)),
                                                            QLatin1String("*"));
 
@@ -415,7 +415,7 @@ void NRSettings::loadSettings()
 
 void NRSettings::saveAsSettings()
 {
-    QUrl saveRestorationFile = DFileDialog::getSaveFileUrl(qApp->activeWindow(), i18n("Photograph Noise Reduction Settings File to Save"),
+    QUrl saveRestorationFile = DFileDialog::getSaveFileUrl(qApp->activeWindow(), i18nc("@title:window", "Photograph Noise Reduction Settings File to Save"),
                                                            QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)),
                                                            QLatin1String("*"));
 

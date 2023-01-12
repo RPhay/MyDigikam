@@ -327,8 +327,8 @@ void GPSCorrelatorWidget::slotAllTrackFilesReady()
                                                "The following %1 GPX files could not be loaded:",
                                                invalidFiles.count());
 
-        const QString errorTitleString = i18np("Error loading GPX file",
-                                               "Error loading GPX files",
+        const QString errorTitleString = i18npc("@title:window", "Error Loading GPX File",
+                                               "Error Loading GPX Files",
                                                invalidFiles.count());
 
         DMessageBox::showInformationList(QMessageBox::Critical,
@@ -514,13 +514,13 @@ void GPSCorrelatorWidget::slotAllItemsCorrelated()
 {
     if (d->correlationCorrelatedCount == 0)
     {
-        QMessageBox::warning(this, i18n("Correlation failed"),
+        QMessageBox::warning(this, i18nc("@title:window", "Correlation Failed"),
                              i18n("Could not correlate any image - please make "
                                   "sure the offset and gap settings are correct."));
     }
     else if (d->correlationCorrelatedCount == d->correlationTotalCount)
     {
-        QMessageBox::information(this, i18n("Correlation succeeded"),
+        QMessageBox::information(this, i18nc("@title:window", "Correlation Succeeded"),
                                  i18n("All images have been correlated. You "
                                       "can now check their position on the map."));
     }
@@ -529,7 +529,7 @@ void GPSCorrelatorWidget::slotAllItemsCorrelated()
         // NOTE: Even if the case of correlationTotalCount == 1 is covered in the other two cases, we need i18np.
         //       See bug #376438 for details.
 
-        QMessageBox::warning(this, i18n("Correlation finished"),
+        QMessageBox::warning(this, i18nc("@title:window", "Correlation Finished"),
                              i18np(
                                    "One image out of %2 images have been correlated. Please "
                                    "check the offset and gap settings if you think "

@@ -29,7 +29,7 @@ PlayerWindow::PlayerWindow(QWidget* const parent)
     : QWidget(parent)
 {
     m_unit                = 1000;
-    setWindowTitle(QString::fromLatin1("QtAV simple player example"));
+    setWindowTitle(QString::fromLatin1("QtAV Simple Player Example"));
     m_player              = new AVPlayerCore(this);
     QVBoxLayout* const vl = new QVBoxLayout();
     setLayout(vl);

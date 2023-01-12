@@ -81,7 +81,7 @@ ImportFilterDlg::ImportFilterDlg(QWidget* const parent)
     : QDialog(parent),
       d      (new Private)
 {
-    setWindowTitle(i18n("Edit Import Filters"));
+    setWindowTitle(i18nc("@title:window", "Edit Import Filters"));
 
     d->buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);

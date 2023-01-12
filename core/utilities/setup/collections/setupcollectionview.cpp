@@ -654,7 +654,7 @@ void SetupCollectionModel::slotAppendPressed(int mappedId)
     QString picPath = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
 
     QUrl curl       = DFileDialog::getExistingDirectoryUrl(m_dialogParentWidget,
-                                                           i18n("Choose the folder containing your collection"),
+                                                           i18nc("@title:window", "Choose the Folder Containing your Collection"),
                                                            QUrl::fromLocalFile(picPath));
 
     if (curl.isEmpty())
@@ -691,7 +691,7 @@ void SetupCollectionModel::slotAppendPressed(int mappedId)
 
     if (foundPath)
     {
-        QMessageBox::warning(m_dialogParentWidget, i18n("Problem Appending Collection"),
+        QMessageBox::warning(m_dialogParentWidget, i18nc("@title:window", "Problem Appending Collection"),
                                                    i18n("A collection with the path \"%1\" already exists.",
                                                         QDir::toNativeSeparators(curl.toLocalFile())));
 
@@ -851,7 +851,7 @@ void SetupCollectionModel::deleteCollection(int internalId)
     if (item.appended)
     {
         result = QMessageBox::warning(m_dialogParentWidget,
-                                      i18n("Remove Path from the Collection?"),
+                                      i18nc("@title:window", "Remove Path from the Collection?"),
                                       i18n("Do you want to remove the appended path \"%1\" from the collection \"%2\"?",
                                            item.path, label),
                                       QMessageBox::Yes | QMessageBox::No);
@@ -859,7 +859,7 @@ void SetupCollectionModel::deleteCollection(int internalId)
     else
     {
         result = QMessageBox::warning(m_dialogParentWidget,
-                                      i18n("Remove Collection?"),
+                                      i18nc("@title:window", "Remove Collection?"),
                                       i18n("Do you want to remove the collection \"%1\" from your list of collections?",
                                             label),
                                       QMessageBox::Yes | QMessageBox::No);
@@ -1484,7 +1484,7 @@ bool SetupCollectionModel::askForNewCollectionPath(int category, QString* const 
     }
 
     QUrl curl       = DFileDialog::getExistingDirectoryUrl(m_dialogParentWidget,
-                                                           i18n("Choose the folder containing your collection"),
+                                                           i18nc("@title:window", "Choose the Folder Containing your Collection"),
                                                            QUrl::fromLocalFile(picPath));
 
     if (curl.isEmpty())
@@ -1560,7 +1560,7 @@ bool SetupCollectionModel::askForNewCollectionPath(int category, QString* const 
         case CollectionManager::LocationNotAllowed:
         case CollectionManager::LocationInvalidCheck:
         {
-            QMessageBox::warning(m_dialogParentWidget, i18n("Problem Adding Collection"), messageFromManager);
+            QMessageBox::warning(m_dialogParentWidget, i18nc("@title:window", "Problem Adding Collection"), messageFromManager);
             // fail
             return false;
         }
@@ -1569,7 +1569,7 @@ bool SetupCollectionModel::askForNewCollectionPath(int category, QString* const 
     // Create a dialog that displays volume information and allows to change the name of the collection
 
     QDialog* const dialog     = new QDialog(m_dialogParentWidget);
-    dialog->setWindowTitle(i18n("Adding Collection"));
+    dialog->setWindowTitle(i18nc("@title:window", "Adding Collection"));
 
     QWidget* const mainWidget = new QWidget(dialog);
     QLabel* const nameLabel   = new QLabel;
@@ -1648,7 +1648,7 @@ bool SetupCollectionModel::askForNewCollectionCategory(int* const category)
     // Create a dialog that displays the category and allows to change the category of the collection
 
     QDialog* const dialog     = new QDialog(m_dialogParentWidget);
-    dialog->setWindowTitle(i18n("Select Category"));
+    dialog->setWindowTitle(i18nc("@title:window", "Select Category"));
 
     QWidget* const mainWidget = new QWidget(dialog);
     QLabel* const nameLabel   = new QLabel;

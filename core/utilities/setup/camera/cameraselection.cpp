@@ -101,7 +101,7 @@ CameraSelection::CameraSelection(QWidget* const parent)
 {
     qApp->setOverrideCursor(Qt::WaitCursor);
 
-    setWindowTitle(i18n("Camera Configuration"));
+    setWindowTitle(i18nc("@title:window", "Camera Configuration"));
     setModal(true);
 
     const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),

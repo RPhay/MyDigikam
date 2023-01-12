@@ -90,7 +90,7 @@ DMediaServerDlg::DMediaServerDlg(QObject* const /*parent*/,
     : DPluginDialog(nullptr, DMediaServerMngr::instance()->configGroupName()),
       d            (new Private)
 {
-    setWindowTitle(i18nc("@title:window", "Share Files with DLNA Media Server"));
+    setWindowTitle(i18nc("@title:window", "Share Files With DLNA Media Server"));
 
     d->iface                 = iface;
 
@@ -223,7 +223,7 @@ void DMediaServerDlg::accept()
 
         if (!empty)
         {
-            int rc = QMessageBox::question(this, i18nc("@title", "Media Server Contents"),
+            int rc = QMessageBox::question(this, i18nc("@title:window", "Media Server Contents"),
                                            i18nc("@info", "The items list to share has changed. "
                                                 "Do you want to start now the media server with this contents?"));
             if (rc == QMessageBox::Yes)
@@ -298,7 +298,7 @@ bool DMediaServerDlg::setMediaServerContents()
 
         if (map.isEmpty())
         {
-            QMessageBox::information(this, i18nc("@title", "Media Server Contents"),
+            QMessageBox::information(this, i18nc("@title:window", "Media Server Contents"),
                                      i18nc("@info", "There is no collection to share with the current selection..."));
             return false;
         }
@@ -311,7 +311,7 @@ bool DMediaServerDlg::setMediaServerContents()
 
         if (urls.isEmpty())
         {
-            QMessageBox::information(this, i18nc("@title", "Media Server Contents"),
+            QMessageBox::information(this, i18nc("@title:window", "Media Server Contents"),
                                      i18nc("@info", "There is no item to share with the current selection..."));
 
             return false;
@@ -337,7 +337,7 @@ void DMediaServerDlg::startMediaServer()
 
     if (!d->mngr->startMediaServer())
     {
-        QMessageBox::warning(this, i18nc("@title", "Starting Media Server"),
+        QMessageBox::warning(this, i18nc("@title:window", "Starting Media Server"),
                              i18nc("@info", "An error occurs while to start Media Server..."));
     }
     else

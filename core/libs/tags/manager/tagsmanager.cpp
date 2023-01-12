@@ -174,7 +174,7 @@ TagsManager* TagsManager::instance()
 void TagsManager::setupUi()
 {
      resize(970, 720);
-     setWindowTitle(i18n("Tags Manager"));
+     setWindowTitle(i18nc("@title:window", "Tags Manager"));
 
      d->tagPixmap   = new QLabel();
      d->tagPixmap->setText(QLatin1String("Tag Pixmap"));
@@ -372,7 +372,7 @@ void TagsManager::slotDeleteAction()
                          JoinTagNamesToList(tagNames));
     }
 
-    const int result = QMessageBox::warning(this, i18np("Delete tag", "Delete tags", tagNames.count()),
+    const int result = QMessageBox::warning(this, i18npc("@title:window", "Delete tag", "Delete tags", tagNames.count()),
                                             message, QMessageBox::Yes | QMessageBox::Cancel);
 
     if (result == QMessageBox::Yes)

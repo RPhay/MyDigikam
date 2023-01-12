@@ -98,10 +98,10 @@ MediaWikiWindow::MediaWikiWindow(DInfoInterface* const iface, QWidget* const /*p
 
     setMainWidget(d->widget);
     setModal(false);
-    setWindowTitle(i18n("Export to MediaWiki"));
+    setWindowTitle(i18nc("@title:window", "Export to MediaWiki"));
 
-    startButton()->setText(i18n("Start Upload"));
-    startButton()->setToolTip(i18n("Start upload to MediaWiki"));
+    startButton()->setText(i18nc("@action:button", "Start Upload"));
+    startButton()->setToolTip(i18nc("@info:tooltip, button", "Start upload to MediaWiki"));
 
     startButton()->setEnabled(false);
 
@@ -335,7 +335,7 @@ int MediaWikiWindow::slotLoginHandle(KJob* loginJob)
         d->login.clear();
         d->pass.clear();
         d->uploadTalker = nullptr;
-        QMessageBox::critical(this, i18n("Login Error"), i18n("Please check your credentials and try again."));
+        QMessageBox::critical(this, i18nc("@title:window", "Login Error"), i18n("Please check your credentials and try again."));
     }
     else
     {

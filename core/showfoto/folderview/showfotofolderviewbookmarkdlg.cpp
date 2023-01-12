@@ -96,11 +96,11 @@ ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewB
 
     if (d->create)
     {
-        setWindowTitle(i18nc("@title", "New Bookmark"));
+        setWindowTitle(i18nc("@title:window", "New Bookmark"));
     }
     else
     {
-        setWindowTitle(i18nc("@title", "Edit Bookmark"));
+        setWindowTitle(i18nc("@title:window", "Edit Bookmark"));
     }
 
     QWidget* const page      = new QWidget(this);

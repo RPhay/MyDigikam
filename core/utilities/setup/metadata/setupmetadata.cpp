@@ -268,7 +268,7 @@ void SetupMetadata::slotWriteRawFilesToggled(bool b)
                        "We strongly recommend not to enable this option."),
                  QMessageBox::Yes | QMessageBox::No, this);
 
-        msgBox1->button(QMessageBox::Yes)->setText(i18nc("@action", "Yes I understand"));
+        msgBox1->button(QMessageBox::Yes)->setText(i18nc("@action:button", "Yes I Understand"));
         msgBox1->setDefaultButton(QMessageBox::No);
 
         int result1 = msgBox1->exec();

@@ -82,7 +82,7 @@ HTMLWizard::HTMLWizard(QWidget* const parent, DInfoInterface* const iface)
       d         (new Private)
 {
     setOption(QWizard::NoCancelButtonOnLastPage);
-    setWindowTitle(i18n("Create HTML Gallery"));
+    setWindowTitle(i18nc("@title:window", "Create HTML Gallery"));
 
     d->info = new GalleryInfo(iface);
     d->info->load();

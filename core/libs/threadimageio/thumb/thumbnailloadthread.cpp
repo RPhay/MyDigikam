@@ -150,7 +150,7 @@ void ThumbnailLoadThread::initializeThumbnailDatabase(const DbEngineParameters& 
     }
     else
     {
-        QMessageBox::information(qApp->activeWindow(), i18n("Failed to initialize thumbnails database"),
+        QMessageBox::information(qApp->activeWindow(), i18nc("@title:window", "Failed to Initialize Thumbnails Database"),
                                  i18n("Error message: %1", ThumbsDbAccess().lastError()));
     }
 }

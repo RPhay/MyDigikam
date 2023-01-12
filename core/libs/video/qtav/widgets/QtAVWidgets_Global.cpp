@@ -212,7 +212,7 @@ void about()
     btnLayout->addWidget(qbtn);
     btn->setFocus();
     QDialog dialog;
-    dialog.setWindowTitle(i18n("About QtAV"));
+    dialog.setWindowTitle(i18nc("@title:window", "About QtAV"));
     QVBoxLayout* const layout      = new QVBoxLayout;
     dialog.setLayout(layout);
     layout->addWidget(tab);
@@ -229,12 +229,12 @@ void about()
 
 void aboutFFmpeg()
 {
-    QMessageBox::about(nullptr, i18n("About FFmpeg"), aboutFFmpeg_HTML());
+    QMessageBox::about(nullptr, i18nc("@title:window", "About FFmpeg"), aboutFFmpeg_HTML());
 }
 
 void aboutQtAV()
 {
-    QMessageBox::about(nullptr, i18n("About QtAV"), aboutQtAV_HTML());
+    QMessageBox::about(nullptr, i18nc("@title:window", "About QtAV"), aboutQtAV_HTML());
 }
 
 } // namespace QtAV

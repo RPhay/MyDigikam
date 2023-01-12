@@ -378,7 +378,7 @@ bool PresentationMainPage::updateUrlList()
 
         if (!QFile::exists(item->url().toLocalFile()))
         {
-            QMessageBox::critical(this, i18n("Error"), i18n("Cannot access file %1. Please check the path is correct.",
+            QMessageBox::critical(this, i18nc("@title:window", "Error"), i18n("Cannot access file %1. Please check the path is correct.",
                                                             item->url().toLocalFile()));
             return false;
         }

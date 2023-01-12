@@ -271,7 +271,7 @@ void SearchWidget::slotSearchCompleted()
 
     if (!errorString.isEmpty())
     {
-        QMessageBox::critical(this, i18n("Search failed"), i18n("Your search failed:\n%1", errorString));
+        QMessageBox::critical(this, i18nc("@title:window", "Search Failed"), i18n("Your search failed:\n%1", errorString));
         slotUpdateActionAvailability();
         return;
     }

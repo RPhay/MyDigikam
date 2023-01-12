@@ -98,7 +98,7 @@ AdvPrintWizard::AdvPrintWizard(QWidget* const parent, DInfoInterface* const ifac
     : DWizardDlg(parent, QLatin1String("PrintCreatorDialog")),
       d         (new Private)
 {
-    setWindowTitle(i18n("Print Creator"));
+    setWindowTitle(i18nc("@title:window", "Print Creator"));
 
     d->iface           = iface;
     d->settings        = new AdvPrintSettings;
