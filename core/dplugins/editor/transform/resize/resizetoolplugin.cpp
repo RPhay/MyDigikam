@@ -64,6 +64,21 @@ QString ResizeToolPlugin::details() const
     return i18nc("@action", "This Image Editor tool can resize an image.");
 }
 
+QString ResizeToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString ResizeToolPlugin::handbookChapter() const
+{
+    return QLatin1String("transform_tools");
+}
+
+QString ResizeToolPlugin::handbookReference() const
+{
+    return QLatin1String("change-the-image-size");
+}
+
 QList<DPluginAuthor> ResizeToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

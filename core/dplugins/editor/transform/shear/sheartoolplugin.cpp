@@ -64,6 +64,21 @@ QString ShearToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can shear an image.");
 }
 
+QString ShearToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString ShearToolPlugin::handbookChapter() const
+{
+    return QLatin1String("transform_tools");
+}
+
+QString ShearToolPlugin::handbookReference() const
+{
+    return QLatin1String("shearing-image");
+}
+
 QList<DPluginAuthor> ShearToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

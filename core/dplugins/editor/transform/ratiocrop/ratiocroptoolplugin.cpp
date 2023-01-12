@@ -64,6 +64,21 @@ QString RatioCropToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can crop an image with ratio.");
 }
 
+QString RatioCropToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString RatioCropToolPlugin::handbookChapter() const
+{
+    return QLatin1String("transform_tools");
+}
+
+QString RatioCropToolPlugin::handbookReference() const
+{
+    return QLatin1String("proportional-crop");
+}
+
 QList<DPluginAuthor> RatioCropToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()
