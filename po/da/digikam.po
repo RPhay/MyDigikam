@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-12 00:53+0000\n"
+"POT-Creation-Date: 2023-01-13 00:53+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -1052,7 +1052,8 @@ msgstr "%1 %2"
 #: core/app/items/utils/itemviewutilities.cpp:203
 #, fuzzy, kde-format
 #| msgid "Select target..."
-msgid "Select target folder"
+msgctxt "@title:window"
+msgid "Select Target Folder"
 msgstr "Vælg mål..."
 
 #: core/app/items/utils/itemviewutilities.cpp:229
@@ -1629,13 +1630,17 @@ msgid ""
 msgstr ""
 
 #: core/app/main/digikamapp_import.cpp:81
-#, kde-format
-msgid "Select folder to parse"
+#, fuzzy, kde-format
+#| msgid "Select folder to parse"
+msgctxt "@title:window"
+msgid "Select Folder to Parse"
 msgstr "Vælg mappe til analyse"
 
 #: core/app/main/digikamapp_import.cpp:101
-#, kde-format
-msgid "Select folders to import into album"
+#, fuzzy, kde-format
+#| msgid "Select folders to import into album"
+msgctxt "@title:window"
+msgid "Select Folders to Import into Album"
 msgstr "Vælg mapper at importere til album"
 
 #: core/app/main/digikamapp_import.cpp:143
@@ -4598,16 +4603,16 @@ msgstr "Ikke understøttet filendelse"
 #: core/avplayer/filters/EventFilter.cpp:71
 #, fuzzy, kde-format
 #| msgid "Open a preview"
-msgctxt "@title"
-msgid "Open a video"
+msgctxt "@title:window"
+msgid "Open a Video"
 msgstr "Åbn forhåndsvisning"
 
 #: core/avplayer/filters/EventFilter.cpp:83
 #: core/avplayer/main/MainWindow_io.cpp:510
 #, fuzzy, kde-format
 #| msgid "Open a preview"
-msgctxt "@title"
-msgid "Open an url"
+msgctxt "@title:window"
+msgid "Open an Url"
 msgstr "Åbn forhåndsvisning"
 
 #: core/avplayer/filters/EventFilter.cpp:84
@@ -4742,7 +4747,7 @@ msgstr ""
 #: core/avplayer/filters/EventFilter.cpp:127
 #, fuzzy, kde-format
 #| msgid "&Help"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Help"
 msgstr "&Hjælp"
 
@@ -4786,8 +4791,8 @@ msgstr ""
 #: core/avplayer/main/MainWindow_io.cpp:102
 #, fuzzy, kde-format
 #| msgid "Type of the media file"
-msgctxt "@title"
-msgid "Open a media file"
+msgctxt "@title:window"
+msgid "Open a Media File"
 msgstr "Type af mediefil"
 
 #: core/avplayer/main/MainWindow_io.cpp:568
@@ -4802,8 +4807,8 @@ msgstr "Aspektforhold"
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Network Error"
-msgctxt "@title"
-msgid "Player error"
+msgctxt "@title:window"
+msgid "Player Error"
 msgstr "Netværksfejl"
 
 #: core/avplayer/main/MainWindow_io.cpp:724
@@ -4858,7 +4863,7 @@ msgstr ""
 #: core/avplayer/main/MainWindow_io.cpp:798
 #, fuzzy, kde-format
 #| msgid "Aborting..."
-msgctxt "@title: media loading state"
+msgctxt "@title:window, media loading state"
 msgid "Buffering... %1% @%2 %3"
 msgstr "Afbryder..."
 
@@ -4876,8 +4881,8 @@ msgstr "Optag fra %1"
 #: core/avplayer/main/MainWindow_io.cpp:1018
 #, fuzzy, kde-format
 #| msgid "One active filter"
-msgctxt "@title"
-msgid "Open a subtitle file"
+msgctxt "@title:window"
+msgid "Open a Subtitle File"
 msgstr "Et aktivt filter"
 
 #: core/avplayer/main/MainWindow_setup.cpp:30
@@ -5235,8 +5240,8 @@ msgstr "OpenGL-understøttelse er ikke til rådighed på dette system."
 #: core/avplayer/main/MainWindow_setup.cpp:818
 #, fuzzy, kde-format
 #| msgid "Open in the editor"
-msgctxt "@title"
-msgid "Open an external audio track"
+msgctxt "@title:window"
+msgid "Open an External Audio Track"
 msgstr "Åbn i editor"
 
 #: core/avplayer/main/MainWindow_setup.cpp:864
@@ -5269,8 +5274,8 @@ msgstr "Fjern markeret mærke"
 #: core/avplayer/playlist/PlayList.cpp:259
 #, fuzzy, kde-format
 #| msgid "Select None"
-msgctxt "@title"
-msgid "Select files"
+msgctxt "@title:window"
+msgid "Select Files"
 msgstr "Vælg ingen"
 
 #: core/avplayer/utils/ConfigDialog.cpp:61
@@ -5289,13 +5294,9 @@ msgid "Ok"
 msgstr "O.k."
 
 #: core/avplayer/utils/ConfigDialog.cpp:63
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:855
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:260
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:676
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:261
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
 #: core/libs/dplugins/webservices/wstooldialog.cpp:110
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:199
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:208
 #, kde-format
 msgid "Cancel"
 msgstr "Annullér"
@@ -5477,8 +5478,8 @@ msgstr "Filstørrelse"
 #: core/avplayer/utils/StatisticsView.cpp:140
 #, fuzzy, kde-format
 #| msgid "Median:"
-msgctxt "@title"
-msgid "Media info"
+msgctxt "@title:window"
+msgid "Media Info"
 msgstr "Median:"
 
 #: core/avplayer/utils/StatisticsView.cpp:147
@@ -8761,7 +8762,9 @@ msgid "Adjust Levels"
 msgstr "Justér niveauer"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:890
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select Gimp Levels File to Load"
+msgctxt "@title:window"
 msgid "Select Gimp Levels File to Load"
 msgstr "Vælg Gimp niveau-fil til indlæsning"
 
@@ -8771,7 +8774,9 @@ msgid "Cannot load from the Gimp levels text file."
 msgstr "Kan ikke indlæse fra Gimp niveau-tekstfil."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:917
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Gimp Levels File to Save"
+msgctxt "@title:window"
 msgid "Gimp Levels File to Save"
 msgstr "Gimp niveaufil at gemme"
 
@@ -9950,7 +9955,9 @@ msgid "Restoration"
 msgstr "Restaurering"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:344
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Restoration Settings File to Load"
+msgctxt "@title:window"
 msgid "Photograph Restoration Settings File to Load"
 msgstr "Indstillingsfil til restaurering af fotos der skal indlæses"
 
@@ -9967,7 +9974,9 @@ msgstr ""
 "Kan ikke indlæse indstillinger fra tekstfilen for restaurering af fotografi."
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:383
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Restoration Settings File to Save"
+msgctxt "@title:window"
 msgid "Photograph Restoration Settings File to Save"
 msgstr "Indstillingsfil til restaurering af fotos der skal gemmes"
 
@@ -10044,7 +10053,9 @@ msgid "Sharpen..."
 msgstr "Skærp..."
 
 #: core/dplugins/editor/file/print/printhelper.cpp:168
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Print Image"
+msgctxt "@title:window"
 msgid "Print Image"
 msgstr "Udskriv billede"
 
@@ -10174,7 +10185,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can print an image."
 msgstr "Dette billede er ikke farvehåndteret."
 
-#: core/dplugins/editor/file/print/printplugin.cpp:84
+#: core/dplugins/editor/file/print/printplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Print Image..."
@@ -10330,7 +10341,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can apply blur effects to an image."
 msgstr "Dette billede er ikke farvehåndteret."
 
-#: core/dplugins/editor/filters/blurfx/blurfxtoolplugin.cpp:83
+#: core/dplugins/editor/filters/blurfx/blurfxtoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Blur Effects..."
@@ -10386,7 +10397,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can emulate charcoal drawing to an image."
 msgstr "Dette billede er ikke farvehåndteret."
 
-#: core/dplugins/editor/filters/charcoal/charcoaltoolplugin.cpp:80
+#: core/dplugins/editor/filters/charcoal/charcoaltoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Charcoal Drawing..."
@@ -10447,7 +10458,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can apply color effects to an image."
 msgstr "Anvend farveeffekter"
 
-#: core/dplugins/editor/filters/colorfx/colorfxtoolplugin.cpp:83
+#: core/dplugins/editor/filters/colorfx/colorfxtoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Color Effects..."
@@ -10634,7 +10645,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can apply distortion effects to an image."
 msgstr "Denne indstilling kan bruges til automatisk at beskære billedet."
 
-#: core/dplugins/editor/filters/distortionfx/distortionfxtoolplugin.cpp:83
+#: core/dplugins/editor/filters/distortionfx/distortionfxtoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Distortion Effects..."
@@ -10676,7 +10687,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can emboss an image."
 msgstr "Dette billede er ikke farvehåndteret."
 
-#: core/dplugins/editor/filters/emboss/embosstoolplugin.cpp:83
+#: core/dplugins/editor/filters/emboss/embosstoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Emboss..."
@@ -10701,14 +10712,14 @@ msgctxt "@info"
 msgid "This Image Editor tool can add film grain over an image."
 msgstr "Dette billede er ikke farvehåndteret."
 
-#: core/dplugins/editor/filters/filmgrain/filmgraintoolplugin.cpp:83
+#: core/dplugins/editor/filters/filmgrain/filmgraintoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Add Film Grain..."
 msgstr "Tilføj filmkorn..."
 
 #: core/dplugins/editor/filters/oilpaint/oilpainttool.cpp:88
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:296
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:300
 #, kde-format
 msgid "Brush size:"
 msgstr "Penselstørrelse:"
@@ -10756,7 +10767,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can emulate oil painting over an image."
 msgstr "Denne indstilling kan bruges til automatisk at beskære billedet."
 
-#: core/dplugins/editor/filters/oilpaint/oilpainttoolplugin.cpp:83
+#: core/dplugins/editor/filters/oilpaint/oilpainttoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Oil Paint..."
@@ -10831,7 +10842,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can add rain drops over an image."
 msgstr "Denne indstilling kan bruges til automatisk at beskære billedet."
 
-#: core/dplugins/editor/filters/raindrop/raindroptoolplugin.cpp:83
+#: core/dplugins/editor/filters/raindrop/raindroptoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Raindrops..."
@@ -10859,7 +10870,7 @@ msgid ""
 "black border, generated while panorama stitching for example."
 msgstr ""
 
-#: core/dplugins/editor/transform/autocrop/autocroptoolplugin.cpp:84
+#: core/dplugins/editor/transform/autocrop/autocroptoolplugin.cpp:99
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Auto-Crop"
@@ -10867,7 +10878,7 @@ msgctxt "@action"
 msgid "&Auto-Crop"
 msgstr "Auto-beskæring"
 
-#: core/dplugins/editor/transform/autocrop/autocroptoolplugin.cpp:86
+#: core/dplugins/editor/transform/autocrop/autocroptoolplugin.cpp:101
 #, fuzzy, kde-format
 #| msgid "This option can be used to crop automatically the image."
 msgctxt "@info"
@@ -10948,17 +10959,17 @@ msgid "Enable this option to add suppression and preservation masks."
 msgstr ""
 "Aktivér denne indstilling for at tilføje undertrykkelses- og bevaringsmasker."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:265
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:266
 #, kde-format
 msgid "Suppression weight mask:"
 msgstr "Vægtningsmaske for undertrykkelse:"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:270
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:272
 #, kde-format
 msgid "Draw a suppression mask"
 msgstr "Tegn en undertrykkelsesmaske"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:271
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:273
 #, kde-format
 msgid ""
 "Click on this button to draw zones marking which areas of the image are less "
@@ -10969,17 +10980,17 @@ msgstr ""
 "billeder der er mindre vigtige. Disse zoner vil blive slettet når billedet  "
 "reduceres, eller duplikerede når billedet forstørres."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:277
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:279
 #, kde-format
 msgid "Preservation weight mask:"
 msgstr "Vægtningsmaske for bevarelse:"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:281
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:284
 #, kde-format
 msgid "Draw a preservation mask"
 msgstr "Tegn en bevarelsesmaske"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:282
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:285
 #, kde-format
 msgid ""
 "Click on this button to draw zones marking which areas of the image you want "
@@ -10988,58 +10999,58 @@ msgstr ""
 "Tryk på denne knap for at tegne zoner der markerer hvilke områder af "
 "billedet du vil bevare."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:287
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:290
 #, kde-format
 msgid "Erase mask:"
 msgstr "Slet maske:"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:291
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:295
 #, kde-format
 msgid "Erase mask"
 msgstr "Slet maske"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:292
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:296
 #, kde-format
 msgid "Click on this button to erase mask regions."
 msgstr "Tryk på denne knap for at slette maskeområder."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:301
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:305
 #, kde-format
 msgid "Specify here the size of the brush used to paint masks."
 msgstr ""
 "Her kan du angive størrelsen på penslen der bruges til at tegne masker."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:321
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:325
 #, kde-format
 msgid "Norm of brightness gradient"
 msgstr "Norm for lysstyrkegradient"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:322
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:326
 #, kde-format
 msgid "Sum of absolute values of brightness gradients"
 msgstr "Summen af absolutte værdier for lysstyrkegradienter"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:323
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:327
 #, kde-format
 msgid "Absolute value of brightness gradient"
 msgstr "Absolut værdi for lysstyrkegradient"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:324
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:328
 #, kde-format
 msgid "Norm of luma gradient"
 msgstr "Norm for luma-gradient"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:325
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:329
 #, kde-format
 msgid "Sum of absolute values of luma gradients"
 msgstr "Summen af absolutte værdier for luma-gradienter"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:326
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:330
 #, kde-format
 msgid "Absolute value of luma gradient"
 msgstr "Absolut værdi for luma-gradient"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:329
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:333
 #, kde-format
 msgid ""
 "This option allows you to choose a gradient function. This function is used "
@@ -11048,12 +11059,12 @@ msgstr ""
 "Denne indstilling lader dig vælge en gradientfunktion. Denne funktion bruges "
 "til at bestemme hvilke pixels der skal fjernes eller beholdes."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:332
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:336
 #, kde-format
 msgid "Preserve Skin Tones"
 msgstr "Bevar hudnuancer"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:333
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:337
 #, kde-format
 msgid ""
 "Enable this option to preserve pixels whose color is close to a skin tone."
@@ -11061,12 +11072,12 @@ msgstr ""
 "Aktivér denne indstilling for at bevare pixels hvis farve er tæt på en "
 "hudnuance."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:347
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:351
 #, kde-format
 msgid "Overall rigidity of the seams:"
 msgstr "Overordnet rigiditet af sammenføjningerne:"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:351
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:355
 #, kde-format
 msgid ""
 "Use this value to give a negative bias to the seams which are not straight. "
@@ -11086,12 +11097,12 @@ msgstr ""
 "hinanden følgende punkter, løftet til en potens på 1,5 og opsummeret for "
 "hele sammenføjningen."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:360
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:364
 #, kde-format
 msgid "Maximum number of transversal steps:"
 msgstr "Maksimalt antal transversale trin:"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:364
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:368
 #, kde-format
 msgid ""
 "This option lets you choose the maximum transversal step that the pixels in "
@@ -11112,12 +11123,12 @@ msgstr ""
 "artefakter. Du kan bruge rigiditetsindstillingen til at balancere "
 "situationen."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:374
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:378
 #, kde-format
 msgid "Side switch frequency:"
 msgstr "Frekvens af sideskift:"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:378
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:382
 #, kde-format
 msgid ""
 "During the carving process, at each step the optimal seam to be carved is "
@@ -11140,54 +11151,54 @@ msgstr ""
 "indstilling den foretrukne side blive skiftet automatisk under genskalering, "
 "på bekostning af lidt dårligere ydelse."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:390
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:394
 #, kde-format
 msgid "Resize Order:"
 msgstr "Rækkefølge af størrelsesændring:"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:392
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:396
 #, kde-format
 msgid "Horizontally first"
 msgstr "Vandret først"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:393
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:397
 #, kde-format
 msgid "Vertically first"
 msgstr "Lodret først"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:395
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:399
 #, kde-format
 msgid ""
 "Here you can set whether to resize horizontally first or vertically first."
 msgstr "Her kan du vælge om størrelse skal ændres vandret eller lodret først."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:413
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:417
 #, kde-format
 msgid "Target size"
 msgstr "Målstørrelse"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:416
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:420
 #, kde-format
 msgid "Content-aware rescale percentage"
 msgstr "Indholdsbevidst genskaleringsprocent"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:418
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:422
 #, kde-format
 msgid "Mask Settings"
 msgstr "Maskeindstillinger"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:420
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:424
 #, kde-format
 msgid "Energy function"
 msgstr "Energifunktion"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:422
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:426
 #: core/utilities/setup/setupicc.cpp:480
 #, kde-format
 msgid "Advanced Settings"
 msgstr "Avancerede indstillinger"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:763
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:769
 #, kde-format
 msgid "Liquid Rescale"
 msgstr "Flydende genskalering"
@@ -11213,7 +11224,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can resize an image with content analysis."
 msgstr "Dette billede er ikke farvehåndteret."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetoolplugin.cpp:86
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetoolplugin.cpp:101
 #, kde-format
 msgctxt "@action"
 msgid "Liquid Rescale..."
@@ -11341,27 +11352,27 @@ msgctxt "@info"
 msgid "This Image Editor tool can rotate an image with an arbitrary angle."
 msgstr "Dette billede er ikke farvehåndteret."
 
-#: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:85
+#: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:100
 #, kde-format
 msgctxt "@action"
 msgid "Free Rotation..."
 msgstr "Fri rotation..."
 
-#: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:94
+#: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:109
 #, fuzzy, kde-format
 #| msgid "Free Rotation"
 msgctxt "@action"
 msgid "Free Rotation Set Point 1"
 msgstr "Fri rotation"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:100
+#: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:115
 #, fuzzy, kde-format
 #| msgid "Free Rotation"
 msgctxt "@action"
 msgid "Free Rotation Set Point 2"
 msgstr "Fri rotation"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:106
+#: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:121
 #, fuzzy, kde-format
 #| msgid "Free Rotation"
 msgctxt "@action"
@@ -11438,7 +11449,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can adjust perspective from an image."
 msgstr "Denne indstilling kan bruges til automatisk at beskære billedet."
 
-#: core/dplugins/editor/transform/perspective/perspectivetoolplugin.cpp:83
+#: core/dplugins/editor/transform/perspective/perspectivetoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Perspective Adjustment..."
@@ -11814,7 +11825,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can crop an image with ratio."
 msgstr "Dette billede er ikke farvehåndteret."
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptoolplugin.cpp:86
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptoolplugin.cpp:101
 #, kde-format
 msgctxt "@action"
 msgid "Aspect Ratio Crop..."
@@ -12065,7 +12076,9 @@ msgid "Resize"
 msgstr "Ændr størrelse"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:918
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Resizing Settings File to Load"
+msgctxt "@title:window"
 msgid "Photograph Resizing Settings File to Load"
 msgstr "Indstillingsfil til størrelsesændring af fotos der skal indlæses"
 
@@ -12083,7 +12096,9 @@ msgstr ""
 "fotografier."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:951
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Resizing Settings File to Save"
+msgctxt "@title:window"
 msgid "Photograph Resizing Settings File to Save"
 msgstr "Indstillingsfil til størrelsesændring af fotos der skal gemmes"
 
@@ -12115,7 +12130,7 @@ msgctxt "@action"
 msgid "This Image Editor tool can resize an image."
 msgstr "Dette billede er ikke farvehåndteret."
 
-#: core/dplugins/editor/transform/resize/resizetoolplugin.cpp:80
+#: core/dplugins/editor/transform/resize/resizetoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "&Resize..."
@@ -12224,7 +12239,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can shear an image."
 msgstr "Dette billede er ikke farvehåndteret."
 
-#: core/dplugins/editor/transform/shear/sheartoolplugin.cpp:80
+#: core/dplugins/editor/transform/shear/sheartoolplugin.cpp:95
 #, fuzzy, kde-format
 #| msgid "Shear..."
 msgctxt "@action"
@@ -12271,7 +12286,9 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:64
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scan Image"
+msgctxt "@title:window"
 msgid "Scan Image"
 msgstr "Scan billede"
 
@@ -12281,12 +12298,16 @@ msgid "Scan Images"
 msgstr "Scan billeder"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:167
-#, kde-format
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1803
+#, fuzzy, kde-format
+#| msgid "New Image File Name"
+msgctxt "@title:window"
 msgid "New Image File Name"
 msgstr "Nyt navn på billedfil"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:215
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr "Ikke understøttet format: %1"
 
@@ -12296,7 +12317,9 @@ msgid "The target image file format \"%1\" is unsupported."
 msgstr "Det ønskede billedformat \"%1\" er ikke understøttet."
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:228
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cannot Save File"
+msgctxt "@title:window"
 msgid "Cannot Save File"
 msgstr "Kan ikke gemme filen"
 
@@ -12312,7 +12335,11 @@ msgstr ""
 "\"%2\"."
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:244
-#, kde-format
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2277
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2296
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Overskriv fil?"
 
@@ -12330,6 +12357,7 @@ msgstr "Gemmer filen %1 -"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:304
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "File Not Saved"
 msgstr "Fil ikke gemt."
 
@@ -12339,8 +12367,9 @@ msgid "Cannot save \"%1\" file"
 msgstr "Kan ikke gemme \"%1\"-filen"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:264
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
 #, fuzzy, kde-format
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Geolocation Editor"
 msgstr "Geo-lokaliseringsfilter"
 
@@ -12462,8 +12491,8 @@ msgstr[1] "Du har %1 ændrede billeder."
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:814
 #, fuzzy, kde-format
 #| msgid "Unsaved changes"
-msgctxt "@title"
-msgid "Unsaved changes"
+msgctxt "@title:window"
+msgid "Unsaved Changes"
 msgstr "Ugemte ændringer"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:815
@@ -12481,9 +12510,46 @@ msgid "Saving changes -"
 msgstr "Gemmer ændringer - %p%"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:990
-#, fuzzy, kde-format
-#| msgid "Error"
-msgctxt "@title"
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
+#: core/dplugins/generic/webservices/box/boxtalker.cpp:386
+#: core/dplugins/generic/webservices/box/boxwindow.cpp:244
+#: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:374
+#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:244
+#: core/dplugins/generic/webservices/facebook/fbtalker.cpp:550
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:785
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:809
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:975
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:461
+#: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:279
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:542
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:569
+#: core/dplugins/generic/webservices/google/gswindow.cpp:362
+#: core/dplugins/generic/webservices/google/gswindow.cpp:403
+#: core/dplugins/generic/webservices/google/gswindow.cpp:429
+#: core/dplugins/generic/webservices/google/gswindow.cpp:490
+#: core/dplugins/generic/webservices/google/gswindow.cpp:992
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1201
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1218
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:608
+#: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:179
+#: core/dplugins/generic/webservices/onedrive/odtalker.cpp:404
+#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:243
+#: core/dplugins/generic/webservices/pinterest/ptalker.cpp:411
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:247
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:380
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:746
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:442
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:451
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:489
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:526
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1018
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:665
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:248
+#: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:348
+#: core/libs/dplugins/webservices/wslogindialog.cpp:164
+#, kde-format
+msgctxt "@title:window"
 msgid "Error"
 msgstr "Fejl"
 
@@ -12775,8 +12841,10 @@ msgid "Destination Directory:"
 msgstr "Målmappe:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:105
-#, kde-format
-msgid "Select a directory in which to save the kml file and pictures"
+#, fuzzy, kde-format
+#| msgid "Select a directory in which to save the kml file and pictures"
+msgctxt "@title:window"
+msgid "Select a Directory in Which to Save the KML File and Pictures"
 msgstr "Vælg en mappe hvori kml-filen og billederne skal gemmes"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:107
@@ -12826,7 +12894,9 @@ msgid "GPS Exchange Format (*.gpx)"
 msgstr "%1|GPS-udskiftningsformat"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:162
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:284
 #, kde-format
+msgctxt "@title:window"
 msgid "Select GPX File to Load"
 msgstr "Vælg GPX-fil at indlæse"
 
@@ -13094,8 +13164,10 @@ msgid "Bookmarks"
 msgstr "Bogmærker"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:274
-#, kde-format
-msgid "Search failed"
+#, fuzzy, kde-format
+#| msgid "Search failed"
+msgctxt "@title:window"
+msgid "Search Failed"
 msgstr "Søgning mislykkedes"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:274
@@ -13116,7 +13188,7 @@ msgstr[1] "%1 billeder flyttet til \"%2\""
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:92
 #, fuzzy, kde-format
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Metadata Editor"
 msgstr "Dialog til metadataredigering"
 
@@ -13159,7 +13231,7 @@ msgstr "Redigér XMP"
 #: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:311
 #, fuzzy, kde-format
 #| msgid "%1 (%2/%3) - Edit Metadata"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "%1 (%2/%3) - Edit Metadata"
 msgstr "%1 (%2/%3) - redigér metadata"
 
@@ -17160,7 +17232,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:102
 #, fuzzy, kde-format
 #| msgid "Add file properties"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Adjust Time & Date"
 msgstr "Tilføj filegenskaber"
 
@@ -17186,13 +17258,6 @@ msgstr "Justering:"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:375
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:679
-#: core/dplugins/generic/webservices/google/gswindow.cpp:511
-#: core/dplugins/generic/webservices/google/gswindow.cpp:536
-#: core/dplugins/generic/webservices/google/gswindow.cpp:950
-#: core/dplugins/generic/webservices/google/gswindow.cpp:971
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1020
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1262
-#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:256
 #: core/utilities/imageeditor/editor/editorwindow.cpp:571
 #, fuzzy, kde-format
 #| msgid "Cancel"
@@ -17307,7 +17372,6 @@ msgid "Adjust Time && Date..."
 msgstr "Justér hvidbalance."
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:43
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:111
 #, fuzzy, kde-format
 #| msgid "My Calendar"
 msgid "Create Calendar"
@@ -17584,6 +17648,13 @@ msgid ""
 "Icalendar'>iCalendar</a> formats.</p>"
 msgstr ""
 
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:111
+#, fuzzy, kde-format
+#| msgid "My Calendar"
+msgctxt "@title:window"
+msgid "Create Calendar"
+msgstr "Min kalender"
+
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:114
 #, fuzzy, kde-format
 #| msgid "Welcome to Exposure Blending Tool"
@@ -17596,7 +17667,6 @@ msgid "Choose events to show on the Calendar"
 msgstr "Vælg begivenheder der vises i kalenderen"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:140
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:289
 #, fuzzy, kde-format
 #| msgid "My Calendar"
 msgid "Print Calendar"
@@ -17621,6 +17691,7 @@ msgstr "%1|Kamera-RAW-filer"
 #, fuzzy, kde-format
 #| msgctxt "@title:window %1: name of the camera"
 #| msgid "%1 - Select Camera Folder"
+msgctxt "@title:window"
 msgid "Select Calendar Data File"
 msgstr "%1 - Vælg kameramappe"
 
@@ -17648,6 +17719,13 @@ msgstr ""
 "Tryk på Næste for at starte udskrift<br/><br/>Følgende måneder udskrives for "
 "året %1:<br/>"
 
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:289
+#, fuzzy, kde-format
+#| msgid "My Calendar"
+msgctxt "@title:window"
+msgid "Print Calendar"
+msgstr "Min kalender"
+
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:297
 #, fuzzy, kde-format
 #| msgid "Process Cancelled..."
@@ -17673,10 +17751,10 @@ msgid "Printing Complete"
 msgstr "Behandler billeder"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:98
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:43
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
 #, fuzzy, kde-format
 #| msgid "Convert"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "DNG Converter"
 msgstr "Konvertér"
 
@@ -17688,19 +17766,17 @@ msgid "&Convert"
 msgstr "Konvertér"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
+#, kde-format
+msgid "The list does not contain any Raw files to process."
+msgstr ""
+
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:297
 #, fuzzy, kde-format
 #| msgid "Convert"
 msgid "DNG Converter"
 msgstr "Konvertér"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
-#, kde-format
-msgid "The list does not contain any Raw files to process."
-msgstr ""
-
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:427
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
 #, kde-format
 msgid "&Abort"
 msgstr "&Afbryd"
@@ -17792,6 +17868,13 @@ msgstr "Målmappe"
 #, kde-format
 msgid "Camera"
 msgstr "Kamera"
+
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:43
+#, fuzzy, kde-format
+#| msgid "Convert"
+msgctxt "@title"
+msgid "DNG Converter"
+msgstr "Konvertér"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:58
 #, fuzzy, kde-format
@@ -18141,7 +18224,7 @@ msgstr "Ryd alt"
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:127
 #, fuzzy, kde-format
 #| msgid "Exposure time"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Exposure Blending"
 msgstr "Eksponeringstid"
 
@@ -18149,14 +18232,14 @@ msgstr "Eksponeringstid"
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "&Save"
-msgctxt "@action: button"
+msgctxt "@action:button"
 msgid "&Save"
 msgstr "&Gem"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:138
 #, fuzzy, kde-format
 #| msgid "Open the selected item."
-msgctxt "@info: tooltip"
+msgctxt "@info:tooltip, button"
 msgid "Process and save selected items."
 msgstr "Åbn det valgte element."
 
@@ -18164,14 +18247,14 @@ msgstr "Åbn det valgte element."
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "&Preview"
-msgctxt "@action: button"
+msgctxt "@action:button"
 msgid "&Preview"
 msgstr "&Forhåndsvisning"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:144
 #, fuzzy, kde-format
 #| msgid "Process a preview of bracketed images stack with current settings."
-msgctxt "@info: tooltip"
+msgctxt "@info:tooltip, button"
 msgid "Process a preview of bracketed images stack with current settings."
 msgstr ""
 "Behandl en forhåndsvisning af en stak billeder med bracket med nuværende "
@@ -18195,10 +18278,9 @@ msgid "Revert current settings to default values."
 msgstr "Nulstil aktuelle værktøjsindstillinger til standardværdier."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Details..."
-msgctxt "@action: button"
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:104
+#, kde-format
+msgctxt "@action:button"
 msgid "Details..."
 msgstr "Detaljer..."
 
@@ -18227,7 +18309,7 @@ msgstr "Filnavnsfilter:"
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Processing images"
-msgctxt "@title: window"
+msgctxt "@title:window"
 msgid "Enfuse Processing Messages"
 msgstr "Behandler billeder"
 
@@ -18559,7 +18641,7 @@ msgstr "Behandler billeder"
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingwizard.cpp:62
 #, fuzzy, kde-format
 #| msgid "Images Tools"
-msgctxt "@title: window"
+msgctxt "@title:window"
 msgid "Stacked Images Tool"
 msgstr "Billedværktøjer"
 
@@ -19049,13 +19131,16 @@ msgstr "Galleriets &titel"
 #, fuzzy, kde-format
 #| msgid "Destination:"
 msgctxt "@label"
-msgid "Destination Folder:"
+msgid "Destination folder:"
 msgstr "Målmappe"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:120
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:267
 #, fuzzy, kde-format
 #| msgid "Destination Folder"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Destination Folder"
 msgstr "Målmappe"
 
@@ -19122,6 +19207,7 @@ msgstr "Fotograf"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
 #, fuzzy, kde-format
 #| msgid "Created tables"
+msgctxt "@title:window"
 msgid "Create HTML Gallery"
 msgstr "Oprettede tabeller"
 
@@ -19278,18 +19364,20 @@ msgstr "Angiv her indholdsleverandøren."
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:81
 #, fuzzy, kde-format
 #| msgid "By Folder"
-msgid "Projects Folder:"
+msgid "Projects folder:"
 msgstr "Efter mappenavn"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:84
 #, fuzzy, kde-format
 #| msgid "By Folder"
+msgctxt "@title:window"
 msgid "Projects Folder"
 msgstr "Efter mappenavn"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:73
 #, fuzzy, kde-format
 #| msgid "Create New Album"
+msgctxt "@title:window"
 msgid "Create jAlbum Album"
 msgstr "Opret nyt album"
 
@@ -19315,7 +19403,7 @@ msgstr "Eksport af album"
 #, fuzzy, kde-format
 #| msgid "Start image editor"
 msgctxt "@title:window"
-msgid "Share Files with DLNA Media Server"
+msgid "Share Files With DLNA Media Server"
 msgstr "Start billededitor"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:150
@@ -19354,7 +19442,7 @@ msgstr ""
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:77
 #, fuzzy, kde-format
 #| msgid "Median: "
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Media Server Contents"
 msgstr "Median: "
 
@@ -19446,7 +19534,7 @@ msgstr "&Sortér elementer"
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:105
 #, fuzzy, kde-format
 #| msgid "Start image editor"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Starting Media Server"
 msgstr "Start billededitor"
 
@@ -19517,13 +19605,13 @@ msgstr "Mapper er blevet listet."
 #, fuzzy, kde-format
 #| msgid "Start image editor"
 msgctxt "@title:window"
-msgid "Share Files with MJPEG Stream Server"
+msgid "Share Files With MJPEG Stream Server"
 msgstr "Start billededitor"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg.cpp:97
 #, fuzzy, kde-format
 #| msgid "Median: "
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "MJPEG Server Contents"
 msgstr "Median: "
 
@@ -20064,10 +20152,9 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:122
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:44
 #, fuzzy, kde-format
 #| msgid "Convert"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "OCR Text Converter"
 msgstr "Konvertér"
 
@@ -20153,10 +20240,9 @@ msgid "Success"
 msgstr "Offentlig adgang"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:585
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:597
 #, fuzzy, kde-format
 #| msgid "Convert"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Text Converter"
 msgstr "Konvertér"
 
@@ -20167,6 +20253,13 @@ msgid ""
 "The list does not contain any digital files to process. You need to select "
 "them."
 msgstr ""
+
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:597
+#, fuzzy, kde-format
+#| msgid "Convert"
+msgctxt "@title"
+msgid "Text Converter"
+msgstr "Konvertér"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:670
 #, fuzzy, kde-format
@@ -20227,6 +20320,13 @@ msgstr "Behandl elementer"
 #| msgid "Keywords"
 msgid "Words"
 msgstr "Nøgleord"
+
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:44
+#, fuzzy, kde-format
+#| msgid "Convert"
+msgctxt "@title"
+msgid "OCR Text Converter"
+msgstr "Konvertér"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:59
 #, fuzzy, kde-format
@@ -20765,8 +20865,6 @@ msgstr ""
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:212
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:221
-#: core/dplugins/generic/webservices/box/boxwindow.cpp:252
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:849
 #, fuzzy, kde-format
 #| msgid "Warning"
 msgctxt "@title: dialog"
@@ -20995,12 +21093,6 @@ msgctxt "@title:window"
 msgid "<b>Preview and Post-Processing</b>"
 msgstr "<b>Forhåndsvisning og efterbehandling</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:104
-#, kde-format
-msgctxt "@action:button"
-msgid "Details..."
-msgstr "Detaljer..."
-
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:142
 #, fuzzy, kde-format
 #| msgid "Processing..."
@@ -21208,8 +21300,6 @@ msgid "Page %1 saved as %2"
 msgstr " (%1 af %2)"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:43
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:354
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
 #, fuzzy, kde-format
 #| msgid "My Calendar"
 msgid "Print Creator"
@@ -21436,7 +21526,6 @@ msgstr "Foto 0 af 0"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, AdvPrintCustomLayout)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:26
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1101
 #, kde-format
 msgid "Custom layout"
 msgstr "Tilpasset layout"
@@ -21507,7 +21596,7 @@ msgstr "Fotos pr. side"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:195
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:204
 #: core/utilities/maintenance/facesdetector.cpp:67
 #: core/utilities/searchwindow/searchutilities.cpp:633
 #, kde-format
@@ -21703,6 +21792,14 @@ msgstr ""
 "Kunne ikke oprette midlertidig mappe. Kontrollér at du har de fornødne "
 "rettigheder til denne mappe og prøv igen."
 
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:354
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
+#, fuzzy, kde-format
+#| msgid "My Calendar"
+msgctxt "@title:window"
+msgid "Print Creator"
+msgstr "Min kalender"
+
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:76
 #, kde-format
 msgid ""
@@ -21738,14 +21835,7 @@ msgstr "Sæt profilen for farverummet der skal konverteres til her."
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:115
 #, fuzzy, kde-format
 #| msgid "Destination:"
-msgid "Destination Folder:"
-msgstr "Målmappe"
-
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:120
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:267
-#, kde-format
-msgid "Destination Folder"
+msgid "Destination folder:"
 msgstr "Målmappe"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
@@ -21792,6 +21882,13 @@ msgstr "Tilføj igen"
 #, kde-format
 msgid "Remove"
 msgstr "Fjern"
+
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1101
+#, fuzzy, kde-format
+#| msgid "Custom layout"
+msgctxt "@title:window"
+msgid "Custom Layout"
+msgstr "Tilpasset layout"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1102
 #, kde-format
@@ -21970,7 +22067,9 @@ msgstr "Fil med billedeegenskaber færdig"
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:334
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:984
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:997
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Processing Failed"
+msgctxt "@title:window"
 msgid "Processing Failed"
 msgstr "Behandling mislykkedes"
 
@@ -22082,7 +22181,6 @@ msgid "Png"
 msgstr "PNG"
 
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:43
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:75
 #, kde-format
 msgid "Send by Email"
 msgstr "Send via e-mail"
@@ -22300,6 +22398,13 @@ msgid ""
 "removed."
 msgstr ""
 
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:75
+#, fuzzy, kde-format
+#| msgid "Send by Email"
+msgctxt "@title:window"
+msgid "Send by Email"
+msgstr "Send via e-mail"
+
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:84
 #, fuzzy, kde-format
 #| msgid "Welcome to Exposure Blending Tool"
@@ -22485,6 +22590,7 @@ msgstr ""
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
 #, fuzzy, kde-format
 #| msgid "Ignore grouping"
+msgctxt "@title:window"
 msgid "Create a Video Slideshow"
 msgstr "Ignorér gruppering"
 
@@ -22535,10 +22641,11 @@ msgstr "Eksportværktøjer"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_dbus.cpp:92
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_macos.cpp:64
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:68
 #, fuzzy, kde-format
 #| msgid "Convert image to a color space."
-msgctxt "@title: window"
-msgid "Error while to set image as wallpaper"
+msgctxt "@title:window"
+msgid "Error While to Set Image as Wallpaper"
 msgstr "Konvertér billeder til et farverum."
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_dbus.cpp:93
@@ -22565,13 +22672,6 @@ msgstr "Kan ikke gemme filen"
 #| msgid "Unknown error"
 msgid "Unknown Error %1"
 msgstr "Ukendt fejl"
-
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:68
-#, fuzzy, kde-format
-#| msgid "Convert image to a color space."
-msgctxt "@title:window"
-msgid "Error while to set image as wallpaper"
-msgstr "Konvertér billeder til et farverum."
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:69
 #, kde-format
@@ -22608,6 +22708,7 @@ msgstr ""
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:59
 #, fuzzy, kde-format
 #| msgid "Local Settings"
+msgctxt "@title:window"
 msgid "WallPaper Settings"
 msgstr "Lokale indstillinger"
 
@@ -22689,7 +22790,7 @@ msgstr "Skærp billede"
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
 #, fuzzy, kde-format
 #| msgid "Export Tools"
-msgid "OpenGL error"
+msgid "OpenGL Error"
 msgstr "Eksportværktøjer"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
@@ -22705,7 +22806,8 @@ msgstr ""
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
 #, fuzzy, kde-format
 #| msgid "Open a preview"
-msgid "Soundtrack preview"
+msgctxt "@title:window"
+msgid "Soundtrack Preview"
 msgstr "Åbn forhåndsvisning"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:104
@@ -22777,7 +22879,8 @@ msgstr ""
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:362
 #, fuzzy, kde-format
 #| msgid "Select None"
-msgid "Select sound files"
+msgctxt "@title:window"
+msgid "Select Sound Files"
 msgstr "Vælg ingen"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:430
@@ -22791,8 +22894,10 @@ msgid "You can only move files down one at a time."
 msgstr "Du kan kun flytte én fil nedad ad gangen."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:489
-#, kde-format
-msgid "Load playlist"
+#, fuzzy, kde-format
+#| msgid "Load playlist"
+msgctxt "@title:window"
+msgid "Load Playlist"
 msgstr "Indlæs spilleliste"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:490
@@ -22805,7 +22910,8 @@ msgstr "*.m3u|Spilleliste (*.m3u)"
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:548
 #, fuzzy, kde-format
 #| msgid "Save theme"
-msgid "Save playlist"
+msgctxt "@title:window"
+msgid "Save Playlist"
 msgstr "Gem tema"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:609
@@ -22930,36 +23036,6 @@ msgstr "Intet værktøj tilgængeligt"
 msgctxt "artist - title"
 msgid "%1 - %2"
 msgstr "%1 - %2"
-
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
-#: core/dplugins/generic/webservices/box/boxtalker.cpp:386
-#: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:374
-#: core/dplugins/generic/webservices/facebook/fbtalker.cpp:550
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:785
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:809
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:975
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:461
-#: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:279
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:569
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:608
-#: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:179
-#: core/dplugins/generic/webservices/onedrive/odtalker.cpp:404
-#: core/dplugins/generic/webservices/pinterest/ptalker.cpp:411
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:380
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:746
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:442
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:451
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:489
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:526
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1018
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:665
-#: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:348
-#: core/libs/database/utils/scan/scancontroller_progress.cpp:87
-#: core/libs/tags/widgets/tageditdlg.cpp:546
-#, kde-format
-msgid "Error"
-msgstr "Fejl"
 
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:167
 #, fuzzy, kde-format
@@ -23279,10 +23355,9 @@ msgid "Use Open&GL transitions"
 msgstr "Brug Exif-orientering"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:75
-#: core/dplugins/generic/view/presentation/presentationplugin.cpp:48
 #, fuzzy, kde-format
 #| msgid "Presentation"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Presentation"
 msgstr "Præsentation"
 
@@ -23420,6 +23495,13 @@ msgstr "Der er ingen billeder i denne mappe."
 msgid "OpenGL support is not available on your system."
 msgstr "OpenGL-understøttelse er ikke til rådighed på dette system."
 
+#: core/dplugins/generic/view/presentation/presentationplugin.cpp:48
+#, fuzzy, kde-format
+#| msgid "Presentation"
+msgctxt "@title"
+msgid "Presentation"
+msgstr "Præsentation"
+
 #: core/dplugins/generic/view/presentation/presentationplugin.cpp:63
 #, fuzzy, kde-format
 #| msgid "Create Schema..."
@@ -23449,7 +23531,8 @@ msgstr "Præsentation..."
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:267
 #, fuzzy, kde-format
 #| msgid "Ignore grouping"
-msgid "Specify delay for slide show"
+msgctxt "@title:window"
+msgid "Specify Delay for Slide Show"
 msgstr "Ignorér gruppering"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:228
@@ -23462,7 +23545,8 @@ msgstr ""
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:429
 #, fuzzy, kde-format
 #| msgid "Delete Tag"
-msgid "Delete image"
+msgctxt "@title:window"
+msgid "Delete Image"
 msgstr "Slet mærke"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:254
@@ -23547,9 +23631,9 @@ msgid "Blobs"
 msgstr "Blobs"
 
 #: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:120
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:170
-#: core/libs/settings/applicationsettings_miscs.cpp:430
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Slideshow"
+msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Diasshow"
 
@@ -23564,6 +23648,7 @@ msgstr "Giver et diasshow"
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:107
 #, fuzzy, kde-format
 #| msgid "Save Settings"
+msgctxt "@title:window"
 msgid "Slideshow Settings"
 msgstr "Gem indstillinger"
 
@@ -23857,6 +23942,12 @@ msgctxt "@action"
 msgid "Slideshow"
 msgstr "Diasshow"
 
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:170
+#: core/libs/settings/applicationsettings_miscs.cpp:430
+#, kde-format
+msgid "Slideshow"
+msgstr "Diasshow"
+
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:176
 #, fuzzy, kde-format
 #| msgid "Clear All"
@@ -23960,17 +24051,25 @@ msgstr "Kunne ikke opliste mapper"
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:80
 #, fuzzy, kde-format
 #| msgid "Export Tools"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Export to Box"
 msgstr "Eksportværktøjer"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:82
+#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:80
+#: core/dplugins/generic/webservices/facebook/fbwindow.cpp:117
 #: core/dplugins/generic/webservices/google/gswindow.cpp:142
 #: core/dplugins/generic/webservices/google/gswindow.cpp:189
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:103
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:82
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:82
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:232
+#: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:45
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:132
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:83
 #, fuzzy, kde-format
 #| msgid "Start Upload"
-msgctxt "@action"
+msgctxt "@action:button"
 msgid "Start Upload"
 msgstr "Start upload"
 
@@ -23978,22 +24077,9 @@ msgstr "Start upload"
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Select Image to Upload"
-msgctxt "@action"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to Box"
 msgstr "Markér billede til upload"
-
-#: core/dplugins/generic/webservices/box/boxwindow.cpp:244
-#: core/dplugins/generic/webservices/google/gswindow.cpp:403
-#: core/dplugins/generic/webservices/google/gswindow.cpp:490
-#: core/dplugins/generic/webservices/google/gswindow.cpp:992
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1201
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1218
-#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:243
-#, fuzzy, kde-format
-#| msgid "Error"
-msgctxt "@title: window"
-msgid "Error"
-msgstr "Fejl"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:245
 #: core/dplugins/generic/webservices/google/gswindow.cpp:491
@@ -24003,6 +24089,25 @@ msgstr "Fejl"
 msgctxt "@info"
 msgid "No image selected. Please select which images should be uploaded."
 msgstr "Intet billede valgt. Vælg hvilke billeder der skal uploades."
+
+#: core/dplugins/generic/webservices/box/boxwindow.cpp:252
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:849
+#: core/dplugins/generic/webservices/google/gswindow.cpp:506
+#: core/dplugins/generic/webservices/google/gswindow.cpp:531
+#: core/dplugins/generic/webservices/google/gswindow.cpp:944
+#: core/dplugins/generic/webservices/google/gswindow.cpp:965
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1013
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1063
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1256
+#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:670
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:256
+#, fuzzy, kde-format
+#| msgid "Warning"
+msgctxt "@title:window"
+msgid "Warning"
+msgstr "Advarsel"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:253
 #: core/dplugins/generic/webservices/google/gswindow.cpp:507
@@ -24015,16 +24120,38 @@ msgid "Authentication failed. Click \"Continue\" to authenticate."
 msgstr "Godkendelse mislykkedes. Klik \"Fortsæt\" for at autentificere."
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:256
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:854
+#: core/dplugins/generic/webservices/google/gswindow.cpp:510
+#: core/dplugins/generic/webservices/google/gswindow.cpp:535
+#: core/dplugins/generic/webservices/google/gswindow.cpp:949
+#: core/dplugins/generic/webservices/google/gswindow.cpp:970
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1019
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1261
+#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:255
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:259
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:675
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:260
 #, fuzzy, kde-format
 #| msgid "Continue"
-msgctxt "@action: button"
+msgctxt "@action:button"
 msgid "Continue"
 msgstr "Fortsæt"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:257
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:855
+#: core/dplugins/generic/webservices/google/gswindow.cpp:511
+#: core/dplugins/generic/webservices/google/gswindow.cpp:536
+#: core/dplugins/generic/webservices/google/gswindow.cpp:950
+#: core/dplugins/generic/webservices/google/gswindow.cpp:971
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1020
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1262
+#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:256
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:260
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:676
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:261
 #, fuzzy, kde-format
 #| msgid "Cancel"
-msgctxt "@action: button"
+msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Annullér"
 
@@ -24046,10 +24173,22 @@ msgid "Box export"
 msgstr "Startindeks:"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:325
+#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:317
+#: core/dplugins/generic/webservices/facebook/fbwindow.cpp:619
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:413
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:278
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:285
+#: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:226
+#: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:324
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:328
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:584
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
+#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
 #, fuzzy, kde-format
 #| msgid "Uploading Failed"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Uploading Failed"
 msgstr "Upload mislykkedes"
 
@@ -24063,10 +24202,15 @@ msgid ""
 msgstr "Kunne ikke uploade filen <filename>%1</filename>. Vil du fortsætte?"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:384
+#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:251
+#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:375
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:384
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:386
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:368
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:391
 #, fuzzy, kde-format
 #| msgid "Login Failed"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Login Failed"
 msgstr "Login mislykkedes"
 
@@ -24123,38 +24267,18 @@ msgid "Export to &Dropbox..."
 msgstr "Eksportér til &Dropbox..."
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:78
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to Dropbox"
+msgctxt "@title:window"
 msgid "Export to Dropbox"
 msgstr "Eksportér til Dropbox"
 
-#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:80
-#: core/dplugins/generic/webservices/facebook/fbwindow.cpp:117
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:103
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:82
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:232
-#: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:45
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:132
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:83
-#, kde-format
-msgid "Start Upload"
-msgstr "Start upload"
-
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:81
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start upload to Dropbox"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to Dropbox"
 msgstr "Start upload til Dropbox"
-
-#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:244
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:542
-#: core/dplugins/generic/webservices/google/gswindow.cpp:362
-#: core/dplugins/generic/webservices/google/gswindow.cpp:429
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:247
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:248
-#: core/libs/dplugins/webservices/wslogindialog.cpp:164
-#, kde-format
-msgctxt "@title:window"
-msgid "Error"
-msgstr "Fejl"
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:245
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:248
@@ -24162,15 +24286,6 @@ msgstr "Fejl"
 #, kde-format
 msgid "No image selected. Please select which images should be uploaded."
 msgstr "Intet billede valgt. Vælg hvilke billeder der skal uploades."
-
-#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:251
-#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:375
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:386
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:368
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:391
-#, kde-format
-msgid "Login Failed"
-msgstr "Login mislykkedes"
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:252
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:376
@@ -24195,22 +24310,6 @@ msgstr "%v / %m"
 #, kde-format
 msgid "Dropbox export"
 msgstr "Eksport til Dropbox"
-
-#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:317
-#: core/dplugins/generic/webservices/facebook/fbwindow.cpp:619
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:413
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:278
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:285
-#: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:226
-#: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:328
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:584
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
-#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
-#, kde-format
-msgid "Uploading Failed"
-msgstr "Upload mislykkedes"
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:318
 #, kde-format
@@ -24259,7 +24358,6 @@ msgid "Everyone"
 msgstr "Alle"
 
 #: core/dplugins/generic/webservices/facebook/fbplugin.cpp:49
-#: core/dplugins/generic/webservices/facebook/fbplugin.cpp:110
 #, kde-format
 msgid "Facebook"
 msgstr "Facebook"
@@ -24284,6 +24382,13 @@ msgstr "Sortér efter karakter"
 msgctxt "@action"
 msgid "Export to &Facebook..."
 msgstr "Eksportér til &Facebook..."
+
+#: core/dplugins/generic/webservices/facebook/fbplugin.cpp:110
+#, fuzzy, kde-format
+#| msgid "Facebook"
+msgctxt "@title:window"
+msgid "Facebook"
+msgstr "Facebook"
 
 #: core/dplugins/generic/webservices/facebook/fbplugin.cpp:111
 #, kde-format
@@ -24353,12 +24458,16 @@ msgid "Validate previous session..."
 msgstr "Validér foregående session..."
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:115
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to Facebook Web Service"
+msgctxt "@title:window"
 msgid "Export to Facebook Web Service"
 msgstr "Eksportér til Facebook-webtjeneste"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:118
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start upload to Facebook web service"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to Facebook web service"
 msgstr "Start upload til Facebook-webtjeneste"
 
@@ -24412,7 +24521,9 @@ msgid "Target location: "
 msgstr "Målplacering: "
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:112
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Target Folder"
+msgctxt "@title:window"
 msgid "Target Folder"
 msgstr "Målmappe"
 
@@ -24425,7 +24536,7 @@ msgstr "Aktivér denne indstilling for at vise elementets dato."
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:115
 #, fuzzy, kde-format
 #| msgid "If Target File Exists:"
-msgid "Target File behavior:"
+msgid "Target file behavior:"
 msgstr "Hvis målfilen findes:"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:117
@@ -24492,25 +24603,31 @@ msgstr "Dette er listen over billeder der skal batch-behandles."
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:91
 #, fuzzy, kde-format
 #| msgid "Import from Scanner..."
+msgctxt "@title:window"
 msgid "Export to Local Storage"
 msgstr "Importér fra scanner..."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:94
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:74
-#, kde-format
-msgid "Start export"
+#, fuzzy, kde-format
+#| msgid "Start export"
+msgctxt "@action:button"
+msgid "Start Export"
 msgstr "Start eksport"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:95
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:75
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start export to the specified target"
+msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
 msgstr "Start eksport til angivet mål"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:217
 #, fuzzy, kde-format
 #| msgid "Download is completed..."
-msgid "Copy not completed"
+msgctxt "@title:window"
+msgid "Copy not Completed"
 msgstr "Download gennemført..."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:218
@@ -24569,8 +24686,10 @@ msgid "This is the list of images to upload to the specified target."
 msgstr "Dette er listen over billeder der skal uploades til det angivne mål."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:162
-#, kde-format
-msgid "Select target..."
+#, fuzzy, kde-format
+#| msgid "Select target..."
+msgctxt "@title:window"
+msgid "Select Target..."
 msgstr "Vælg mål..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:163
@@ -24586,13 +24705,17 @@ msgid "<i>not selected</i>"
 msgstr "Ingen mærker valgt"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:71
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to Remote Storage"
+msgctxt "@title:window"
 msgid "Export to Remote Storage"
 msgstr "Eksportér til ekstern lagring"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:186
-#, kde-format
-msgid "Upload not completed"
+#, fuzzy, kde-format
+#| msgid "Upload not completed"
+msgctxt "@title:window"
+msgid "Upload not Completed"
 msgstr "Upload ikke gennemført"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:187
@@ -24617,27 +24740,37 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:99
 #, fuzzy, kde-format
-msgid "Select items to import..."
+msgctxt "@title:window"
+msgid "Select Items to Import..."
 msgstr "Vælg MIME-typer"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:63
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import from Remote Storage"
+msgctxt "@title:window"
 msgid "Import from Remote Storage"
 msgstr "Importér fra ekstern lagring"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:67
-#, kde-format
-msgid "Start import"
+#, fuzzy, kde-format
+#| msgid "Start import"
+msgctxt "@action:button"
+msgid "Start Import"
 msgstr "Start import"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:68
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Start importing the specified images into the currently selected album."
+msgctxt "@info:tooltip, button"
 msgid "Start importing the specified images into the currently selected album."
 msgstr "Start import af de angivne billeder til det aktuelt markerede album."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:138
-#, kde-format
-msgid "Import not completed"
+#, fuzzy, kde-format
+#| msgid "Import not completed"
+msgctxt "@title:window"
+msgid "Import not Completed"
 msgstr "Import ikke gennemført"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:139
@@ -25119,13 +25252,17 @@ msgid "Fewer tag options"
 msgstr "Færre mærkeindstillinger"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:148
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to %1 Web Service"
+msgctxt "@title:window"
 msgid "Export to %1 Web Service"
 msgstr "Eksportér til webtjenesten %1"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:187
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:240
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start Uploading"
+msgctxt "@action:button"
 msgid "Start Uploading"
 msgstr "Start upload"
 
@@ -25152,15 +25289,6 @@ msgid ""
 msgstr ""
 "Upload til %1 mislykkedes. %2\n"
 "Vil du fortsætte?"
-
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:854
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:259
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:675
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:260
-#: core/libs/dialogs/dmessagebox.cpp:155
-#, kde-format
-msgid "Continue"
-msgstr "Fortsæt"
 
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:417
 #, kde-format
@@ -25405,21 +25533,21 @@ msgstr "Byg en kombineret mærkestreng."
 #: core/dplugins/generic/webservices/google/gswindow.cpp:140
 #, fuzzy, kde-format
 #| msgid "Export to Google Drive"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Export to Google Drive"
 msgstr "Eksport til Google Drev"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:143
 #, fuzzy, kde-format
 #| msgid "Start upload to Google Drive"
-msgctxt "@info"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to Google Drive"
 msgstr "Start upload til Google Drev"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:187
 #, fuzzy, kde-format
 #| msgid "Import from Scanner..."
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Export to Google Photos Service"
 msgstr "Importér fra scanner..."
 
@@ -25427,21 +25555,22 @@ msgstr "Importér fra scanner..."
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Select Image to Upload"
-msgctxt "@info"
-msgid "Start upload to Google Photos Service"
+msgctxt "@info:tooltip, button"
+msgid "Start upload to Google Photos service"
 msgstr "Markér billede til upload"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:196
 #, fuzzy, kde-format
 #| msgid "Import from Scanner..."
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Import from Google Photos Service"
 msgstr "Importér fra scanner..."
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:198
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:123
 #, fuzzy, kde-format
 #| msgid "Start Download"
-msgctxt "@action"
+msgctxt "@action:button"
 msgid "Start Download"
 msgstr "Start download"
 
@@ -25449,7 +25578,7 @@ msgstr "Start download"
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Select Image to Upload"
-msgctxt "@info"
+msgctxt "@info:tooltip, button"
 msgid "Start download from Google Photos service"
 msgstr "Markér billede til upload"
 
@@ -25475,36 +25604,6 @@ msgid "Google Drive call failed: %1\n"
 msgstr ""
 "Kald til Google Drev mislykkedes:\n"
 "%1"
-
-#: core/dplugins/generic/webservices/google/gswindow.cpp:506
-#: core/dplugins/generic/webservices/google/gswindow.cpp:531
-#: core/dplugins/generic/webservices/google/gswindow.cpp:944
-#: core/dplugins/generic/webservices/google/gswindow.cpp:965
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1013
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1063
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1256
-#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:670
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:256
-#, fuzzy, kde-format
-#| msgid "Warning"
-msgctxt "@title: window"
-msgid "Warning"
-msgstr "Advarsel"
-
-#: core/dplugins/generic/webservices/google/gswindow.cpp:510
-#: core/dplugins/generic/webservices/google/gswindow.cpp:535
-#: core/dplugins/generic/webservices/google/gswindow.cpp:949
-#: core/dplugins/generic/webservices/google/gswindow.cpp:970
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1019
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1261
-#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:255
-#, fuzzy, kde-format
-#| msgid "Continue"
-msgctxt "@action"
-msgid "Continue"
-msgstr "Fortsæt"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:620
 #, fuzzy, kde-format
@@ -25579,12 +25678,9 @@ msgid ""
 msgstr "Kunne ikke uploade filen <filename>%1</filename>. Vil du fortsætte?"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1069
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
-#: core/utilities/imageeditor/editor/editorwindow.cpp:565
 #, fuzzy, kde-format
 #| msgid "OK"
-msgctxt "@action"
+msgctxt "@action:button"
 msgid "OK"
 msgstr "OK"
 
@@ -25702,18 +25798,22 @@ msgstr "Opret nyt galleri"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:104
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Export to ImageShack"
 msgstr "Eksportér til &Imageshack..."
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:112
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:156
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:123
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Upload"
+msgctxt "@action:button"
 msgid "Upload"
 msgstr "Upload"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:113
 #, fuzzy, kde-format
+msgctxt "@info:tooltip, button"
 msgid "Start upload to ImageShack web service"
 msgstr "Start upload til webtjenesten Imageshack"
 
@@ -25834,12 +25934,16 @@ msgid "Upload Anonymously"
 msgstr ""
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:153
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to imgur.com"
+msgctxt "@title:window"
 msgid "Export to imgur.com"
 msgstr "Eksportér til Imgur.com"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:157
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start upload to Imgur"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to Imgur"
 msgstr "Start upload til Imgur"
 
@@ -25852,6 +25956,7 @@ msgstr "Ikke mærket"
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:250
 #, fuzzy, kde-format
 #| msgid "Correlation failed"
+msgctxt "@title:window"
 msgid "Authorization Failed"
 msgstr "Godkendelse mislykkedes."
 
@@ -25962,21 +26067,26 @@ msgstr "Login:"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1345
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1507
-#, kde-format
-msgid "ERROR while creating observation"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Failed to upload photo"
+msgctxt "@title:window"
+msgid "ERROR While Creating Observation"
+msgstr "Kunne ikke uploade foto"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1585
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1703
 #, fuzzy, kde-format
 #| msgid "Failed to upload photo"
-msgid "ERROR while uploading photo"
+msgctxt "@title:window"
+msgid "ERROR While Uploading Photo"
 msgstr "Kunne ikke uploade foto"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1815
-#, kde-format
-msgid "ERROR while deleting observation"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Failed to upload photo"
+msgctxt "@title:window"
+msgid "ERROR While Deleting Observation"
+msgstr "Kunne ikke uploade foto"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1919
 #, kde-format
@@ -26341,6 +26451,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:186
 #, fuzzy, kde-format
 #| msgid "Export to %1 Web Service"
+msgctxt "@title:window"
 msgid "Export as %1 Observation"
 msgstr "Eksportér til webtjenesten %1"
 
@@ -26454,6 +26565,7 @@ msgstr "Eksportværktøjer"
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:120
 #, fuzzy, kde-format
 #| msgid "Export Tools"
+msgctxt "@title:window"
 msgid "Export to IPFS"
 msgstr "Eksportværktøjer"
 
@@ -26461,6 +26573,7 @@ msgstr "Eksportværktøjer"
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Select Image to Upload"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to IPFS"
 msgstr "Markér billede til upload"
 
@@ -27050,12 +27163,16 @@ msgid "Upload Settings"
 msgstr "Upload-indstillinger"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:101
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to MediaWiki"
+msgctxt "@title:window"
 msgid "Export to MediaWiki"
 msgstr "Eksportér til MediaWiki"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:104
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start upload to MediaWiki"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to MediaWiki"
 msgstr "Start upload til MediaWiki"
 
@@ -27065,7 +27182,9 @@ msgid "MediaWiki export"
 msgstr "Eksport til MediaWiki"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:338
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Login Error"
+msgctxt "@title:window"
 msgid "Login Error"
 msgstr "Login-fejl"
 
@@ -27113,7 +27232,7 @@ msgstr "Eksportværktøjer"
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:80
 #, fuzzy, kde-format
 #| msgid "Export Tools"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Export to Onedrive"
 msgstr "Eksportværktøjer"
 
@@ -27121,7 +27240,7 @@ msgstr "Eksportværktøjer"
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Select Image to Upload"
-msgctxt "@info"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to Onedrive"
 msgstr "Markér billede til upload"
 
@@ -27200,13 +27319,17 @@ msgstr "Kunne ikke slette filen <filename>%1</filename>."
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:80
 #, fuzzy, kde-format
 #| msgid "Export Tools"
+msgctxt "@title:window"
 msgid "Export to Pinterest"
 msgstr "Eksportværktøjer"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Select Image to Upload"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to Pinterest"
-msgstr ""
+msgstr "Markér billede til upload"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:256
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:257
@@ -27394,7 +27517,9 @@ msgid "Resized JPEG quality:"
 msgstr "JPEG-kvalitet med ændret størrelse:"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:227
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Piwigo Export"
+msgctxt "@title:window"
 msgid "Piwigo Export"
 msgstr "Eksport til Piwigo"
 
@@ -27605,12 +27730,16 @@ msgid "Adding photos %v%"
 msgstr "Tilføjer fotos %v%"
 
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to Rajce.net"
+msgctxt "@title:window"
 msgid "Export to Rajce.net"
 msgstr "Eksportér til Rajce.net"
 
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start upload to Rajce.net"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to Rajce.net"
 msgstr "Start upload til Rajce.net"
 
@@ -27903,27 +28032,30 @@ msgid "Maximum dimension:"
 msgstr "Maksimal dimension:"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:121
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import from SmugMug Web Service"
+msgctxt "@title:window"
 msgid "Import from SmugMug Web Service"
 msgstr "Importér fra SmugMug internet-tjeneste"
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:123
-#, kde-format
-msgid "Start Download"
-msgstr "Start download"
-
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:124
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start download from SmugMug web service"
+msgctxt "@info:tooltip, button"
 msgid "Start download from SmugMug web service"
 msgstr "Start download fra SmugMug internet-tjeneste"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:130
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to SmugMug Web Service"
+msgctxt "@title:window"
 msgid "Export to SmugMug Web Service"
 msgstr "Eksportér til SmugMug internet-tjeneste"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:133
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start upload to SmugMug web service"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to SmugMug web service"
 msgstr "Start upload til SmugMug internet-tjeneste"
 
@@ -27932,8 +28064,9 @@ msgstr "Start upload til SmugMug internet-tjeneste"
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:489
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:526
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1018
-#, kde-format
-msgid "SmugMug Call Failed: %1\n"
+#, fuzzy, kde-format
+#| msgid "SmugMug Call Failed: %1\n"
+msgid "SmugMug call failed: %1\n"
 msgstr "SmugMug-kald mislykkedes: %1\n"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:522
@@ -28055,6 +28188,7 @@ msgstr "Kunne ikke oprette fil..."
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:81
 #, fuzzy, kde-format
 #| msgid "Export Tools"
+msgctxt "@title:window"
 msgid "Export to Twitter"
 msgstr "Eksportværktøjer"
 
@@ -28062,6 +28196,7 @@ msgstr "Eksportværktøjer"
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Select Image to Upload"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to Twitter"
 msgstr "Markér billede til upload"
 
@@ -28101,6 +28236,7 @@ msgstr "Kan ikke gemme filen"
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:395
 #, fuzzy, kde-format
 #| msgid "All Files"
+msgctxt "@title:window"
 msgid "%1 Call Failed"
 msgstr "Alle filer"
 
@@ -28189,7 +28325,8 @@ msgstr ""
 #: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:310
 #, fuzzy, kde-format
 #| msgid "Create Root Album Folder Failed"
-msgid "%1 - Create album failed"
+msgctxt "@title:window"
+msgid "%1 - Create Album Failed"
 msgstr "Oprettelse af mappe til hovedalbum fejlede"
 
 #: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:85
@@ -28231,9 +28368,11 @@ msgid "&Choose account:"
 msgstr "Tilføj konto"
 
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:84
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to %1 Web Service"
+msgctxt "@title:window"
 msgid "Export to Web Services"
-msgstr ""
+msgstr "Eksportér til webtjenesten %1"
 
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:95
 #, fuzzy, kde-format
@@ -28527,7 +28666,9 @@ msgstr "Kunne ikke slette filen <filename>%1</filename>. Vil du fortsætte?"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:283
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:145
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Rename Album (%1)"
+msgctxt "@title:window"
 msgid "Rename Album (%1)"
 msgstr "Omdøb album (%1)"
 
@@ -28733,12 +28874,16 @@ msgstr ""
 "opsætningsdialogen"
 
 #: core/libs/album/manager/albummanager_database.cpp:357
-#, kde-format
-msgid "Collection not found"
+#, fuzzy, kde-format
+#| msgid "Collection not found"
+msgctxt "@title:window"
+msgid "Collection not Found"
 msgstr "Samling ikke fundet"
 
 #: core/libs/album/manager/albummanager_database.cpp:459
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Database Folder"
+msgctxt "@title:window"
 msgid "Database Folder"
 msgstr "Databasemappe"
 
@@ -28760,7 +28905,9 @@ msgstr ""
 #: core/libs/album/manager/albummanager_database.cpp:470
 #: core/libs/album/manager/albummanager_database.cpp:538
 #: core/libs/album/manager/albummanager_database.cpp:560
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Upgrade Database"
+msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "Opgradér database"
 
@@ -28768,7 +28915,9 @@ msgstr "Opgradér database"
 #: core/libs/album/manager/albummanager_database.cpp:540
 #: core/libs/album/manager/albummanager_database.cpp:562
 #: core/libs/album/manager/albummanager_database.cpp:610
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create New Database"
+msgctxt "@action:button"
 msgid "Create New Database"
 msgstr "Opret ny database"
 
@@ -28776,8 +28925,10 @@ msgstr "Opret ny database"
 #: core/libs/album/manager/albummanager_database.cpp:552
 #: core/libs/album/manager/albummanager_database.cpp:602
 #: core/libs/album/manager/albummanager_database.cpp:634
-#, kde-format
-msgid "New database folder"
+#, fuzzy, kde-format
+#| msgid "New database folder"
+msgctxt "@title:window"
+msgid "New Database Folder"
 msgstr "Ny database-mappe"
 
 #: core/libs/album/manager/albummanager_database.cpp:530
@@ -28797,7 +28948,9 @@ msgstr ""
 #: core/libs/album/manager/albummanager_database.cpp:542
 #: core/libs/album/manager/albummanager_database.cpp:612
 #: core/libs/album/manager/albummanager_database.cpp:643
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Copy Current Database"
+msgctxt "@action:button"
 msgid "Copy Current Database"
 msgstr "Kopiér nuværende database"
 
@@ -28847,7 +29000,9 @@ msgstr ""
 "denne placering?</p> "
 
 #: core/libs/album/manager/albummanager_database.cpp:645
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use Existing File"
+msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "Brug eksisterende fil"
 
@@ -29291,7 +29446,6 @@ msgid "Find Duplicates..."
 msgstr "Find duplikater..."
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:234
-#: core/libs/album/treeview/albumselectiontreeview.cpp:305
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for Faces"
@@ -29308,6 +29462,13 @@ msgstr "&Sortér elementer"
 #, kde-format
 msgid "Refresh"
 msgstr "Genopfrisk"
+
+#: core/libs/album/treeview/albumselectiontreeview.cpp:305
+#, fuzzy, kde-format
+#| msgid "Scan for New Images"
+msgctxt "@title:window"
+msgid "Scan for Faces"
+msgstr "Scan efter nye billeder"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:306
 #, kde-format
@@ -29449,14 +29610,14 @@ msgstr "Hvid"
 #: core/libs/album/widgets/albumpropsedit.cpp:117
 #, fuzzy, kde-format
 #| msgid "New Album"
-msgctxt "@title: album properties"
+msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "Nyt album"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:117
 #, fuzzy, kde-format
 #| msgid "Edit Album"
-msgctxt "@title: album properties"
+msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "Redigér album"
 
@@ -29613,8 +29774,8 @@ msgstr "Opret nyt album"
 #: core/libs/album/widgets/albumpropsedit.cpp:479
 #, fuzzy, kde-format
 #| msgid "Could Not Calculate Average"
-msgctxt "@title: album properties"
-msgid "Could Not Calculate Average"
+msgctxt "@title:window, album properties"
+msgid "Could not Calculate Average"
 msgstr "Kunne ikke beregne gennemsnit"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:480
@@ -29663,7 +29824,9 @@ msgstr[0] "1 album udeladt"
 msgstr[1] "%1 albummer udeladt"
 
 #: core/libs/album/widgets/albumselectdialog.cpp:71
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select Album"
+msgctxt "@title:window"
 msgid "Select Album"
 msgstr "Vælg album"
 
@@ -30612,7 +30775,8 @@ msgstr ""
 #: core/libs/database/utils/ifaces/dio.cpp:326
 #, fuzzy, kde-format
 #| msgid "File name filter:"
-msgid "File conflict"
+msgctxt "@title:window"
+msgid "File Conflict"
 msgstr "Filnavnsfilter:"
 
 #: core/libs/database/utils/ifaces/dio.cpp:327
@@ -30631,22 +30795,22 @@ msgstr ""
 #: core/libs/database/utils/ifaces/dio.cpp:336
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
-msgid "Rename automatically"
+msgctxt "@action:button"
+msgid "Rename Automatically"
 msgstr "Overskriv automatisk"
 
 #: core/libs/database/utils/ifaces/dio.cpp:338
-#: core/libs/widgets/files/filesaveconflictbox.cpp:71
-#: core/utilities/setup/camera/setupcamera.cpp:376
-#, kde-format
-msgid "Overwrite automatically"
+#, fuzzy, kde-format
+#| msgid "Overwrite automatically"
+msgctxt "@action:button"
+msgid "Overwrite Automatically"
 msgstr "Overskriv automatisk"
 
 #: core/libs/database/utils/ifaces/dio.cpp:340
-#: core/libs/widgets/files/filesaveconflictbox.cpp:72
-#: core/utilities/setup/camera/setupcamera.cpp:377
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
-msgid "Skip automatically"
+msgctxt "@action:button"
+msgid "Skip Automatically"
 msgstr "Overskriv automatisk"
 
 #: core/libs/database/utils/ifaces/dio.cpp:766
@@ -30736,6 +30900,12 @@ msgctxt "@info:status"
 msgid "Scanning collection"
 msgstr "Scanner samling"
 
+#: core/libs/database/utils/scan/scancontroller_progress.cpp:87
+#: core/libs/tags/widgets/tageditdlg.cpp:546
+#, kde-format
+msgid "Error"
+msgstr "Fejl"
+
 #: core/libs/database/utils/scan/scancontroller_start.cpp:206
 #, kde-format
 msgid "Preparing collection scan..."
@@ -30802,7 +30972,6 @@ msgid "Step Progress (%1)"
 msgstr "Fremgang for trin (%1)"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:43
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:843
 #, fuzzy, kde-format
 #| msgid "Database Migration..."
 msgid "Database Configuration"
@@ -31187,8 +31356,11 @@ msgstr "Miniaturer<br>Skemanavn"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:594
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:599
-#, kde-format
-msgid "Database connection test"
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:852
+#, fuzzy, kde-format
+#| msgid "Database Connection Test"
+msgctxt "@title:window"
+msgid "Database Connection Test"
 msgstr "Test af databaseforbindelse"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:595
@@ -31241,17 +31413,19 @@ msgstr "Angiv skrifttypefarven der skal bruges her"
 msgid "This path was set as a command lineoption (--database-directory)."
 msgstr ""
 
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:843
+#, fuzzy, kde-format
+#| msgid "Database Migration..."
+msgctxt "@title:window"
+msgid "Database Configuration"
+msgstr "Databasemigrering..."
+
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:844
 #, kde-format
 msgid ""
 "The database names configuration is not valid. Error is <br/><p>%1</p><br/"
 ">Please check your configuration."
 msgstr ""
-
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:852
-#, kde-format
-msgid "Database Connection Test"
-msgstr "Test af databaseforbindelse"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:853
 #, kde-format
@@ -31270,7 +31444,9 @@ msgstr ""
 "databasefil."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:881
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create Database Folder?"
+msgctxt "@title:window"
 msgid "Create Database Folder?"
 msgstr "Opret databasemappe?"
 
@@ -31284,7 +31460,9 @@ msgstr ""
 "p><p><b>%1</b></p>Skal digiKam oprette den for dig?"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:893
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create Database Folder Failed"
+msgctxt "@title:window"
 msgid "Create Database Folder Failed"
 msgstr "Oprettelse af databasemappe fejlede"
 
@@ -31298,7 +31476,9 @@ msgstr ""
 "Vælg en anden placering.</p><p><b>%1</b></p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:919
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "No Database Write Access"
+msgctxt "@title:window"
 msgid "No Database Write Access"
 msgstr "Ingen skriveadgang til database"
 
@@ -31312,8 +31492,9 @@ msgstr ""
 "databasefilen lagres.<br/>Vælg en anden placering.</p><p><b>%1</b></p>"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:46
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:97
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Database Statistics"
+msgctxt "@title:window"
 msgid "Database Statistics"
 msgstr "Databasestatistik"
 
@@ -31587,13 +31768,17 @@ msgid "&Move to Trash"
 msgstr "&Flyt til papirkurv"
 
 #: core/libs/dialogs/deletedialog.cpp:655
-#, kde-format
-msgid "About to delete selected items"
+#, fuzzy, kde-format
+#| msgid "About to delete selected items"
+msgctxt "@title:window"
+msgid "About to Delete Selected Items"
 msgstr "Skal til at slette de markerede elementer"
 
 #: core/libs/dialogs/deletedialog.cpp:662
-#, kde-format
-msgid "About to delete selected albums"
+#, fuzzy, kde-format
+#| msgid "About to delete selected albums"
+msgctxt "@title:window"
+msgid "About to Delete Selected Albums"
 msgstr "Skal til at slette de markerede albummer"
 
 #: core/libs/dialogs/dmessagebox.cpp:109
@@ -31601,18 +31786,27 @@ msgstr "Skal til at slette de markerede albummer"
 msgid "Do not show this message again"
 msgstr "Vis ikke denne besked igen"
 
+#: core/libs/dialogs/dmessagebox.cpp:155
+#, kde-format
+msgid "Continue"
+msgstr "Fortsæt"
+
 #: core/libs/dialogs/dmessagebox.cpp:166 core/libs/dialogs/dmessagebox.cpp:229
 #, kde-format
 msgid "Do not ask again"
 msgstr "Spørg ikke igen"
 
 #: core/libs/dialogs/filesaveoptionsdlg.cpp:34
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Settings for Saving Image File"
+msgctxt "@title:window"
 msgid "Settings for Saving Image File"
 msgstr "Indstillinger for gemning af billedfil"
 
 #: core/libs/dialogs/iccprofileinfodlg.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Color Profile Info - %1"
+msgctxt "@title:window"
 msgid "Color Profile Info - %1"
 msgstr "Farveprofil-info - %1"
 
@@ -31703,8 +31897,10 @@ msgstr "<i>Billedrate:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>Videocodec:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:68
-#, kde-format
+#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:138
+#, fuzzy, kde-format
+#| msgid "Shared Libraries and Components Information"
+msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
 msgstr "Information om komponenter og delte biblioteker"
 
@@ -31727,13 +31923,6 @@ msgstr "Version"
 #| msgid "Image History"
 msgid "Items List"
 msgstr "Billedhistorik"
-
-#: core/libs/dialogs/libsinfodlg.cpp:138
-#, fuzzy, kde-format
-#| msgid "Shared Libraries and Components Information"
-msgctxt "@title"
-msgid "Shared Libraries and Components Information"
-msgstr "Information om komponenter og delte biblioteker"
 
 #: core/libs/dialogs/libsinfodlg.cpp:141
 #, fuzzy, kde-format
@@ -31808,8 +31997,10 @@ msgid "Unknown"
 msgstr "Ukendt"
 
 #: core/libs/dialogs/rawcameradlg.cpp:56
-#, kde-format
-msgid "List of supported RAW cameras"
+#, fuzzy, kde-format
+#| msgid "List of supported RAW cameras"
+msgctxt "@title:window"
+msgid "List of Supported RAW Cameras"
 msgstr "Liste over understøttede RAW-kameraer"
 
 #: core/libs/dialogs/rawcameradlg.cpp:129
@@ -31836,8 +32027,8 @@ msgstr[1] ""
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:83
 #, kde-format
-msgctxt "@title"
-msgid "List of detected hardware"
+msgctxt "@title:window"
+msgid "List of Detected Hardware"
 msgstr ""
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:86
@@ -32567,7 +32758,9 @@ msgid "Luminosity"
 msgstr "Lysstyrke"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:529
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Black & White Settings File to Load"
+msgctxt "@title:window"
 msgid "Black & White Settings File to Load"
 msgstr "Indstillingsfil til sort-hvid som skal indlæses"
 
@@ -32582,7 +32775,9 @@ msgid "Cannot load settings from the Black & White text file."
 msgstr "Kan ikke indlæse indstillinger fra sort-hvid tekstfil."
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:600
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Black & White Settings File to Save"
+msgctxt "@title:window"
 msgid "Black & White Settings File to Save"
 msgstr "Indstillingsfil til sort-hvid som skal gemmes"
 
@@ -32752,7 +32947,7 @@ msgstr "I alt: %1 (%)"
 #: core/libs/dimg/filters/bw/mixersettings.cpp:545
 #, fuzzy, kde-format
 #| msgid "Select Gimp Gains Mixer File to Load"
-msgctxt "@info"
+msgctxt "@title:window"
 msgid "Select Gimp Gains Mixer File to Load"
 msgstr "Vælg Gimp forstærkningsblandingsfil at indlæse"
 
@@ -32767,7 +32962,7 @@ msgstr ""
 #: core/libs/dimg/filters/bw/mixersettings.cpp:635
 #, fuzzy, kde-format
 #| msgid "Gimp Gains Mixer File to Save"
-msgctxt "@info"
+msgctxt "@title:window"
 msgid "Gimp Gains Mixer File to Save"
 msgstr "Gimp forstærkningsblandingsfil at gemme"
 
@@ -32934,7 +33129,9 @@ msgid "Adjust Curves"
 msgstr "Justér kurver"
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:242
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select Gimp Curves File to Load"
+msgctxt "@title:window"
 msgid "Select Gimp Curves File to Load"
 msgstr "Vælg Gimp kurve-fil til indlæsning"
 
@@ -32944,7 +33141,9 @@ msgid "Cannot load from the Gimp curves text file."
 msgstr "Kan ikke indlæse fra Gimp kurve-tekstfil."
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:263
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Gimp Curves File to Save"
+msgctxt "@title:window"
 msgid "Gimp Curves File to Save"
 msgstr "Gimp kurvefil at gemme"
 
@@ -34051,6 +34250,7 @@ msgstr "Vælg billede med sort ramme"
 #: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:231
 #, fuzzy, kde-format
 #| msgid "Black Frame..."
+msgctxt "@title:window"
 msgid "Black Frame Parser"
 msgstr "Sort ramme..."
 
@@ -34281,7 +34481,9 @@ msgid "Stage 4"
 msgstr "Fase 4"
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:637
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Local Contrast Settings File to Load"
+msgctxt "@title:window"
 msgid "Photograph Local Contrast Settings File to Load"
 msgstr "Indstillingsfil til lokal kontrast af fotos der skal indlæses"
 
@@ -34298,7 +34500,9 @@ msgstr ""
 "Kan ikke indlæse indstillinger fra tekstfilen til refokusering af fotos."
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:691
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Local Contrast Settings File to Save"
+msgctxt "@title:window"
 msgid "Photograph Local Contrast Settings File to Save"
 msgstr "Indstillingsfil til lokal kontrast af fotos der skal gemmes"
 
@@ -34956,7 +35160,9 @@ msgid "Chrominance Red"
 msgstr "Rødkrominans"
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:372
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Noise Reduction Settings File to Load"
+msgctxt "@title:window"
 msgid "Photograph Noise Reduction Settings File to Load"
 msgstr "Indstillingsfil til støjreducering af fotos der skal indlæses"
 
@@ -34973,7 +35179,9 @@ msgstr ""
 "Kan ikke indlæse indstillinger fra tekstfilen for støjreducering af foto."
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:418
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Noise Reduction Settings File to Save"
+msgctxt "@title:window"
 msgid "Photograph Noise Reduction Settings File to Save"
 msgstr "Indstillingsfil til støjreducering af foto der skal gemmes"
 
@@ -35188,7 +35396,9 @@ msgstr ""
 "værdier for cirkulær eller Gaussisk skarphed."
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:515
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Refocus Settings File to Load"
+msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Load"
 msgstr "Indstillingsfil til refokusering af fotos der skal indlæses"
 
@@ -35205,7 +35415,9 @@ msgstr ""
 "Kan ikke indlæse indstillinger fra tekstfilen til refokusering af fotos."
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:564
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Refocus Settings File to Save"
+msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Save"
 msgstr "Indstillingsfil til refokusering af fotos der skal gemmes"
 
@@ -35688,7 +35900,7 @@ msgstr ""
 #: core/libs/dimg/filters/wb/wbsettings.cpp:522
 #, fuzzy, kde-format
 #| msgid "White Color Balance Settings File to Load"
-msgctxt "@info"
+msgctxt "@title:window"
 msgid "White Color Balance Settings File to Load"
 msgstr "Indstillingsfil til hvidbalance der skal indlæses"
 
@@ -35710,7 +35922,7 @@ msgstr ""
 #: core/libs/dimg/filters/wb/wbsettings.cpp:569
 #, fuzzy, kde-format
 #| msgid "White Color Balance Settings File to Save"
-msgctxt "@info"
+msgctxt "@title:window"
 msgid "White Color Balance Settings File to Save"
 msgstr "Indstillingsfil til hvidbalance der skal gemmes"
 
@@ -35893,7 +36105,7 @@ msgstr "Selen-filter"
 
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:60
 #, fuzzy, kde-format
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "About %1 Plugin"
 msgstr "Om pluginet"
 
@@ -36190,6 +36402,7 @@ msgstr "Beskrivelse af albummet der skal oprettes (valgfrit)."
 #: core/libs/dplugins/webservices/wsselectuserdlg.cpp:60
 #, fuzzy, kde-format
 #| msgid "Invert Selection"
+msgctxt "@title:window"
 msgid "Account Selector"
 msgstr "Invertér markering"
 
@@ -36378,7 +36591,7 @@ msgstr "JPEG-kvalitet:"
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "&Start"
-msgctxt "@action: button"
+msgctxt "@action:button"
 msgid "&Start"
 msgstr "&Start"
 
@@ -36452,8 +36665,8 @@ msgstr "Gem listen."
 #: core/libs/dplugins/widgets/ditemslist.cpp:580
 #, fuzzy, kde-format
 #| msgid "Select the image file list to load"
-msgctxt "@info"
-msgid "Select the image file list to load"
+msgctxt "@title:window"
+msgid "Select the Image File List to Load"
 msgstr "Vælg listen over billedfiler der skal indlæses"
 
 #: core/libs/dplugins/widgets/ditemslist.cpp:581
@@ -36467,8 +36680,8 @@ msgstr "Alle filer (*)"
 #: core/libs/dplugins/widgets/ditemslist.cpp:661
 #, fuzzy, kde-format
 #| msgid "Select the image file list to save"
-msgctxt "@info"
-msgid "Select the image file list to save"
+msgctxt "@title:window"
+msgid "Select the Image File List to Save"
 msgstr "Vælg listen over billedfiler der skal gemmes"
 
 #: core/libs/dplugins/widgets/ditemslist_view.cpp:40
@@ -36529,7 +36742,6 @@ msgid "User6"
 msgstr "Bruger6"
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:67
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:62
 #, fuzzy, kde-format
 #| msgid "&Help"
 msgctxt "@action: button"
@@ -36628,6 +36840,13 @@ msgstr ""
 "format. Dette genererer store filer uden kvalitetstab. Billedet komprimeres."
 "</p><p><b>PPM</b>: Lav det behandlede billede i PPM-format. Dette genererer "
 "de største filer, uden kvalitetstab. Billedet komprimeres ikke.</p>"
+
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:62
+#, fuzzy, kde-format
+#| msgid "&Help"
+msgctxt "@action:button"
+msgid "Help"
+msgstr "&Hjælp"
 
 #: core/libs/dtrash/dtrashitemmodel.cpp:259
 #, fuzzy, kde-format
@@ -38906,6 +39125,7 @@ msgstr ""
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:185
 #, kde-format
+msgctxt "@title:window"
 msgid "Online Version Checker - Pre-Release"
 msgstr ""
 
@@ -38918,6 +39138,7 @@ msgstr "Scanner efter nye filer. Vent venligst..."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:190
 #, kde-format
+msgctxt "@title:window"
 msgid "Online Version Checker - Stable Version"
 msgstr ""
 
@@ -39366,8 +39587,8 @@ msgstr "Anvend altid ændringer uden bekræftelse"
 #: core/libs/properties/captions/itemdescedittab.cpp:359
 #, fuzzy, kde-format
 #| msgid "Apply changes?"
-msgctxt "@title"
-msgid "Apply changes?"
+msgctxt "@title:window"
+msgid "Apply Changes?"
 msgstr "Anvend ændringer?"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:369
@@ -41476,7 +41697,9 @@ msgstr "Vil du slette mærket \"%1\"?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:294
 #: core/libs/tags/engine/tagmodificationhelper.cpp:407
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Tag"
+msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "Slet mærke"
 
@@ -41725,8 +41948,9 @@ msgid "Previous tags were changed. Save changes? "
 msgstr "Tidligere mærker blev ændret. Vil du gemme ændringer? "
 
 #: core/libs/tags/manager/tagsmanager.cpp:177
-#: core/libs/widgets/mainview/daboutdata.cpp:190
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Tags Manager"
+msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "Mærkehåndtering"
 
@@ -41766,7 +41990,10 @@ msgstr[0] "Slet mærket %2?"
 msgstr[1] "Slet mærkerne %2?"
 
 #: core/libs/tags/manager/tagsmanager.cpp:375
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete tag"
+#| msgid_plural "Delete tags"
+msgctxt "@title:window"
 msgid "Delete tag"
 msgid_plural "Delete tags"
 msgstr[0] "Slet mærke"
@@ -41968,12 +42195,16 @@ msgid "Both"
 msgstr "Begge"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:113
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "New Tag"
+msgctxt "@title:window"
 msgid "New Tag"
 msgstr "Nyt mærke"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:117
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit Tag"
+msgctxt "@title:window"
 msgid "Edit Tag"
 msgstr "Redigér mærke"
 
@@ -42034,8 +42265,10 @@ msgid "<b>Properties of Tag<br/>\"%1\"</b>"
 msgstr "<b>Mærkets egenskaber<br/>\"%1\"</b>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:529
-#, kde-format
-msgid "Tag creation Error"
+#, fuzzy, kde-format
+#| msgid "Tag creation Error"
+msgctxt "@title:window"
+msgid "Tag Creation Error"
 msgstr "Fejl under oprettelse af mærke"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:544
@@ -42706,7 +42939,8 @@ msgstr "Kan ikke oprette miniature for %1"
 #: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:153
 #, fuzzy, kde-format
 #| msgid "Failed to initialize thumbnail database"
-msgid "Failed to initialize thumbnails database"
+msgctxt "@title:window"
+msgid "Failed to Initialize Thumbnails Database"
 msgstr "Kunne ikke initialisere miniature-database."
 
 #: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:154
@@ -42716,6 +42950,7 @@ msgstr "Fejlmeddelelse: %1"
 
 #: core/libs/timeadjust/clockphotodialog.cpp:83
 #, kde-format
+msgctxt "@title:window"
 msgid "Determine Time Difference With Clock Photo"
 msgstr ""
 
@@ -43951,8 +44186,8 @@ msgstr "Optag"
 #: core/libs/video/qtav/config/DecoderConfigPage.cpp:214
 #, fuzzy, kde-format
 #| msgid "Video codec"
-msgctxt "@title"
-msgid "Video decoder config page"
+msgctxt "@title:window"
+msgid "Video Decoder Config Page"
 msgstr "Videocodec"
 
 #: core/libs/video/qtav/config/DecoderConfigPage.cpp:226
@@ -44328,13 +44563,16 @@ msgstr "Om"
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:237
 #, fuzzy, kde-format
 #| msgid "About"
+msgctxt "@title:window"
 msgid "About QtAV"
 msgstr "Om"
 
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:232
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "About"
+msgctxt "@title:window"
 msgid "About FFmpeg"
-msgstr ""
+msgstr "Om"
 
 #: core/libs/widgets/combo/dcombobox.cpp:61
 #: core/libs/widgets/range/dnuminput.cpp:71
@@ -44347,6 +44585,7 @@ msgstr "Nulstil til standardværdier"
 #: core/libs/widgets/files/dbinaryiface.cpp:215
 #, fuzzy, kde-format
 #| msgid "Rating equal to %1."
+msgctxt "@title:window"
 msgid "Navigate to %1"
 msgstr "Karakter lig med %1."
 
@@ -44420,6 +44659,19 @@ msgstr "Hvis målfilen findes:"
 #, kde-format
 msgid "Store as a different name"
 msgstr "Gem med et andet navn"
+
+#: core/libs/widgets/files/filesaveconflictbox.cpp:71
+#: core/utilities/setup/camera/setupcamera.cpp:376
+#, kde-format
+msgid "Overwrite automatically"
+msgstr "Overskriv automatisk"
+
+#: core/libs/widgets/files/filesaveconflictbox.cpp:72
+#: core/utilities/setup/camera/setupcamera.cpp:377
+#, fuzzy, kde-format
+#| msgid "Overwrite automatically"
+msgid "Skip automatically"
+msgstr "Overskriv automatisk"
 
 #: core/libs/widgets/files/filesaveoptionsbox.cpp:116
 #, kde-format
@@ -45463,6 +45715,11 @@ msgstr "Eksportværktøj til UPnP / DLNA og mentor"
 msgid "Veaceslav Munteanu"
 msgstr "Veaceslav Munteanu"
 
+#: core/libs/widgets/mainview/daboutdata.cpp:190
+#, kde-format
+msgid "Tags Manager"
+msgstr "Mærkehåndtering"
+
 #: core/libs/widgets/mainview/daboutdata.cpp:195
 #, kde-format
 msgid "Tarek Talaat"
@@ -45901,6 +46158,11 @@ msgstr "Bidrag..."
 #| msgid "Save New Version As..."
 msgid "Check for New Version..."
 msgstr "Gem ny version som..."
+
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:97
+#, kde-format
+msgid "Database Statistics"
+msgstr "Databasestatistik"
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:125
 #, kde-format
@@ -46849,7 +47111,7 @@ msgstr "Filnavn: %1 (%2)"
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:398
 #, fuzzy, kde-format
 #| msgid "Caption Information"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Save ExifTool Information"
 msgstr "Information om billedtekst"
 
@@ -47178,8 +47440,8 @@ msgstr "Karakter lig med %1."
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:423
 #, fuzzy, kde-format
 #| msgid "Failed to transform these files:"
-msgctxt "@info"
-msgid "Failed to translate string with %1 Web-service"
+msgctxt "@title:window"
+msgid "Failed to Translate String with %1 Web-Service"
 msgstr "Kunne ikke transformere disse filer:"
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:425
@@ -52989,14 +53251,14 @@ msgstr "Ikonstørrelse:"
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:99
 #, fuzzy, kde-format
 #| msgid "Bookmarks"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "New Bookmark"
 msgstr "Bogmærker"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:103
 #, fuzzy, kde-format
 #| msgid "Edit Bookmarks"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Edit Bookmark"
 msgstr "Redigér bogmærker"
 
@@ -53125,7 +53387,7 @@ msgstr "Fjern den markerede værdi fra listen"
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:245
 #, fuzzy, kde-format
 #| msgid "Bookmarks"
-msgctxt "@title: window"
+msgctxt "@title:window"
 msgid "Add New Bookmark"
 msgstr "Bogmærker"
 
@@ -53141,7 +53403,7 @@ msgstr ""
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:259
 #, fuzzy, kde-format
 #| msgid "Confirm Deletion"
-msgctxt "@title: window"
+msgctxt "@title:window"
 msgid "Confirm Bookmark Deletion"
 msgstr "Bekræft sletning"
 
@@ -53252,7 +53514,10 @@ msgid "Delete File"
 msgstr "Slet fil"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
-#, kde-format
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2323
+#, fuzzy, kde-format
+#| msgid "Error Saving File"
+msgctxt "@title:window"
 msgid "Error Saving File"
 msgstr "Fejl da fil skulle gemmes"
 
@@ -53290,8 +53555,10 @@ msgid "Cannot delete \"%1\""
 msgstr "Kan ikke slette rod-mærke"
 
 #: core/showfoto/main/showfoto_open.cpp:58
-#, kde-format
-msgid "Open Images From Folder"
+#, fuzzy, kde-format
+#| msgid "Open Images From Folder"
+msgctxt "@title:window"
+msgid "Open Images from Folder"
 msgstr "Åbn billeder fra mappe"
 
 #: core/showfoto/main/showfoto_open.cpp:299
@@ -53300,7 +53567,9 @@ msgid "There is no item to process."
 msgstr "Der er ingen elementer at behandle i køerne."
 
 #: core/showfoto/main/showfoto_open.cpp:321
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Error Loading File"
+msgctxt "@title:window"
 msgid "Error Loading File"
 msgstr "Fejl ved indlæsning af fil"
 
@@ -53365,8 +53634,10 @@ msgstr "&Dekorér"
 msgid "Effec&ts"
 msgstr "Effek&ter"
 
-#: core/showfoto/setup/showfotosetup.cpp:98
-#, kde-format
+#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:142
+#, fuzzy, kde-format
+#| msgid "Configure"
+msgctxt "@title:window"
 msgid "Configure"
 msgstr "Indstil"
 
@@ -54433,35 +54704,35 @@ msgstr[1] "GPX-fil:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:692
 #, fuzzy, kde-format
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "New Favorite Item"
 msgstr "Hovednyhed"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:696
 #, fuzzy, kde-format
 #| msgid "Edit Titles"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Edit Favorite Item"
 msgstr "Redigér titler"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:703
 #, fuzzy, kde-format
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "New Favorite Folder"
 msgstr "Hovednyhed"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:707
 #, fuzzy, kde-format
 #| msgid "Edit Titles"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Edit Favorite Folder"
 msgstr "Redigér titler"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:764
 #, fuzzy, kde-format
 #| msgid "Could Not Calculate Average"
-msgctxt "@title: favorite item properties"
-msgid "Could Not Calculate Average"
+msgctxt "@title:window, favorite item properties"
+msgid "Could not Calculate Average"
 msgstr "Kunne ikke beregne gennemsnit"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:765
@@ -54543,7 +54814,7 @@ msgstr "Scan efter nye elementer"
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:357
 #, fuzzy, kde-format
 #| msgid "Confirm Deletion"
-msgctxt "@title: window"
+msgctxt "@title:window"
 msgid "Confirm Item Deletion"
 msgstr "Bekræft sletning"
 
@@ -54750,6 +55021,13 @@ msgstr "Sortér billeder"
 msgid "<b>Renaming images. Please wait...</b>"
 msgstr "<b>Omdøber billeder. Vent venligst...</b>"
 
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
+#, fuzzy, kde-format
+#| msgid "&Abort"
+msgctxt "@action:button"
+msgid "&Abort"
+msgstr "&Afbryd"
+
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:86
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:905
 #, kde-format
@@ -54758,8 +55036,10 @@ msgstr "Behandler..."
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:87
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:160
-#, kde-format
-msgid "Renaming images"
+#, fuzzy, kde-format
+#| msgid "Renaming images"
+msgctxt "@title:window"
+msgid "Renaming Images"
 msgstr "Omdøbning af billeder"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:161
@@ -54777,11 +55057,14 @@ msgstr[1] ""
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:170
 #, fuzzy, kde-format
 #| msgid "File Renaming"
+msgctxt "@action:button"
 msgid "Rename Again"
 msgstr "Filomdøbning"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:172
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Overwrite"
+msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "Overskriv"
 
@@ -54867,7 +55150,9 @@ msgstr ""
 "sorteringskriterierne (kun i album-UI)."
 
 #: core/utilities/advancedrename/common/tooltipdialog.cpp:53
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Information"
+msgctxt "@title:window"
 msgid "Information"
 msgstr "Information"
 
@@ -55737,6 +56022,15 @@ msgstr "Ingen adressebogsindgange fundet"
 msgid "Applying face changes"
 msgstr "Anvendelse af ansigtsændringer"
 
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
+#: core/utilities/imageeditor/editor/editorwindow.cpp:565
+#, fuzzy, kde-format
+#| msgid "OK"
+msgctxt "@action"
+msgid "OK"
+msgstr "OK"
+
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:180
 #, kde-format
 msgctxt "@info:tooltip"
@@ -56024,7 +56318,9 @@ msgstr ""
 "billeder gemmes her."
 
 #: core/utilities/firstrun/collectionpage.cpp:179
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create Root Album Folder?"
+msgctxt "@title:window"
 msgid "Create Root Album Folder?"
 msgstr "Opret mappe til hovedalbum?"
 
@@ -56038,7 +56334,9 @@ msgstr ""
 "p>Skal digiKam oprette den for dig?"
 
 #: core/utilities/firstrun/collectionpage.cpp:192
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create Root Album Folder Failed"
+msgctxt "@title:window"
 msgid "Create Root Album Folder Failed"
 msgstr "Oprettelse af mappe til hovedalbum fejlede"
 
@@ -56908,10 +57206,6 @@ msgstr "Databasekonvertering annulleret."
 msgid "Unknown title"
 msgstr "Ukendt titel"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:89
-msgid "Add Bookmark"
-msgstr "Tilføj bogmærke"
-
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:94
 #, kde-format
 msgid ""
@@ -56932,6 +57226,7 @@ msgstr "Bogmærke valgt"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:210
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Edit Geolocation Bookmarks"
 msgstr "Geo-lokalisering"
 
@@ -57010,6 +57305,7 @@ msgstr "Kommentar"
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:944
 #, fuzzy, kde-format
 #| msgid "Bookmarks"
+msgctxt "@title:window"
 msgid "Loading Bookmark"
 msgstr "Bogmærker"
 
@@ -57022,7 +57318,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:931
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Open File"
+msgctxt "@title:window"
 msgid "Open File"
 msgstr "Åbn fil"
 
@@ -57039,7 +57337,9 @@ msgid "Imported %1"
 msgstr "Importerede <b>%1 - %2</b>"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:958
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save File"
+msgctxt "@title:window"
 msgid "Save File"
 msgstr "Gem fil"
 
@@ -57052,13 +57352,15 @@ msgstr "Bogmærker"
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:970
 #, fuzzy, kde-format
 #| msgid "Export Tools"
+msgctxt "@title:window"
 msgid "Export error"
 msgstr "Eksportværktøjer"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:970
-#, kde-format
-msgid "error saving bookmarks"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Bookmarks"
+msgid "Error saving bookmarks"
+msgstr "Bogmærker"
 
 #: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:145
 #, kde-format
@@ -57211,12 +57513,6 @@ msgstr ""
 msgid "Correlate"
 msgstr "Korrelér"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:284
-#, kde-format
-msgctxt "@title:window"
-msgid "Select GPX File to Load"
-msgstr "Vælg GPX-fil at indlæse"
-
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:326
 #, kde-format
 msgid "The following GPX file could not be loaded:"
@@ -57225,9 +57521,12 @@ msgstr[0] "Følgende GPX-fil kunne ikke indlæses:"
 msgstr[1] "Følgende %1 GPX-filer kunne ikke indlæses:"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:330
-#, kde-format
-msgid "Error loading GPX file"
-msgid_plural "Error loading GPX files"
+#, fuzzy, kde-format
+#| msgid "Error loading GPX file"
+#| msgid_plural "Error loading GPX files"
+msgctxt "@title:window"
+msgid "Error Loading GPX File"
+msgid_plural "Error Loading GPX Files"
 msgstr[0] "Fejl ved indlæsning af GPX-fil"
 msgstr[1] "Fejl ved indlæsning af GPX-filer"
 
@@ -57238,8 +57537,10 @@ msgid "Correlating images -"
 msgstr "Korrelation af billeder - %p%"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:517
-#, kde-format
-msgid "Correlation failed"
+#, fuzzy, kde-format
+#| msgid "Correlation failed"
+msgctxt "@title:window"
+msgid "Correlation Failed"
 msgstr "Korrelation mislykkedes"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:518
@@ -57255,8 +57556,10 @@ msgstr ""
 "-forskel er korrekt."
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:523
-#, kde-format
-msgid "Correlation succeeded"
+#, fuzzy, kde-format
+#| msgid "Correlation succeeded"
+msgctxt "@title:window"
+msgid "Correlation Succeeded"
 msgstr "Korrelation gennemført"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:524
@@ -57270,8 +57573,10 @@ msgstr ""
 #. i18np.
 #. See bug #376438 for details.
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:532
-#, kde-format
-msgid "Correlation finished"
+#, fuzzy, kde-format
+#| msgid "Correlation finished"
+msgctxt "@title:window"
+msgid "Correlation Finished"
 msgstr "Korrelation færdig"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:534
@@ -57421,7 +57726,9 @@ msgstr "Slå manglende højdeværdier op"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "GPS Sync"
+msgctxt "@title:window"
 msgid "GPS Sync"
 msgstr "GPS-synkronisering"
 
@@ -57433,11 +57740,6 @@ msgid ""
 msgstr ""
 "Fandt mere end ét punkt i udklipsholderen - kan kun tildele ét punkt ad "
 "gangen."
-
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
-#, fuzzy, kde-format
-msgid "Geolocation Editor"
-msgstr "Geo-lokaliseringsfilter"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:541
 #, kde-format
@@ -57734,10 +58036,11 @@ msgid "Retrieving RG info -"
 msgstr "Henter RG-info - %p%"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add New Tag..."
 msgctxt "@title:window"
-msgid "Add new tag:"
-msgstr "Tilføj nyt mærke:"
+msgid "Add New Tag:"
+msgstr "Tilføj nyt mærke..."
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:846
 #, kde-format
@@ -57965,8 +58268,10 @@ msgstr ""
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:545
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:117
 #: core/utilities/searchwindow/searchtabheader.cpp:586
-#, kde-format
-msgid "Name exists"
+#, fuzzy, kde-format
+#| msgid "Name exists"
+msgctxt "@title:window"
+msgid "Name Exists"
 msgstr "Navnet eksisterer"
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:660
@@ -58181,7 +58486,9 @@ msgid "<b>No Profile</b>"
 msgstr "<b>Ingen profil</b>"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:80
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Soft Proofing Options"
+msgctxt "@title:window"
 msgid "Soft Proofing Options"
 msgstr "Indstilling af soft-proofing"
 
@@ -58256,7 +58563,9 @@ msgstr "Fremhævningsfarve:"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:225
 #: core/utilities/setup/setupicc.cpp:868
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Profile Error"
+msgctxt "@title:window"
 msgid "Profile Error"
 msgstr "Profilfejl"
 
@@ -58337,69 +58646,76 @@ msgstr "(%1,%2) RGBA:%3,%4,%5,%6"
 msgid "Tools"
 msgstr "Værktøjer"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:144
-#: core/utilities/queuemanager/views/toolsettingsview.cpp:109
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:147
+#: core/utilities/queuemanager/views/toolsettingsview.cpp:116
 #, kde-format
 msgid "About this tool..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:174
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:151
+#: core/utilities/queuemanager/views/toolsettingsview.cpp:112
+#, fuzzy, kde-format
+#| msgid "Kipi Plugins Handbook"
+msgid "Tool online handbook..."
+msgstr "KIPI-plugin håndbog"
+
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
 #, kde-format
 msgid "Guide:"
 msgstr "Guide:"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:178
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:187
 #, kde-format
 msgid "Set here the color used to draw dashed guide lines."
 msgstr "Sæt farven på de stiplede hjælpelinjer her."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:192
 #, kde-format
 msgid "Set here the width in pixels used to draw dashed guide lines."
 msgstr "Sæt bredden (i pixels) anvendt på de stiplede hjælpelinjer her."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:191
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:200
 #, kde-format
 msgid "Defaults"
 msgstr "Standardindstillinger"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:193
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
 #, kde-format
 msgid "Reset all settings to their default values."
 msgstr "Nulstil alle indstillinger til deres standardværdier."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:210
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:219
 #, fuzzy, kde-format
 #| msgid "Load..."
 msgctxt "@action: load previously saved filter settings"
 msgid "Load..."
 msgstr "Indlæs..."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:212
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:221
 #, kde-format
 msgid "Load all parameters from settings text file."
 msgstr "Indlæs alle parametre fra tekstfil med indstillinger."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:214
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:223
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgctxt "@action: save current filter settings"
 msgid "Save As..."
 msgstr "Gem som..."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:216
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:225
 #, kde-format
 msgid "Save all parameters to settings text file."
 msgstr "Gem alle parametre i tekstfil med indstillinger."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:218
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:227
 #, fuzzy, kde-format
 #| msgid "Try"
 msgctxt "@action: try current filter settings"
 msgid "Try"
 msgstr "Prøv"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:220
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:229
 #, kde-format
 msgid "Try all settings."
 msgstr "Prøv alle indstillinger"
@@ -58767,8 +59083,8 @@ msgstr "Information om billedstørrelse"
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1085
 #, fuzzy, kde-format
 #| msgid "Saving image..."
-msgctxt "@title"
-msgid "Saving image..."
+msgctxt "@title:window"
+msgid "Saving Image..."
 msgstr "Gemmer billede..."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1086
@@ -58794,7 +59110,7 @@ msgstr ""
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1112
 #, fuzzy, kde-format
 #| msgid "Warning"
-msgctxt "@title; warning while saving progress"
+msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr "Advarsel"
 
@@ -58892,13 +59208,6 @@ msgctxt "@info"
 msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgstr "Kunne ikke åbne midlertidig fil i mappen \"%1\": %2 (%3)"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1803
-#, fuzzy, kde-format
-#| msgid "New Image File Name"
-msgctxt "@title"
-msgid "New Image File Name"
-msgstr "Nyt navn på billedfil"
-
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1949
 #, fuzzy, kde-format
 #| msgid "Unable to determine the format to save the target image with."
@@ -58919,14 +59228,6 @@ msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
 msgstr ""
 "Kan ikke gemme filen <filename>%1</filename> til det foreslåede "
 "versionsfilnavn <filename>%2</filename>"
-
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2277
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2296
-#, fuzzy, kde-format
-#| msgid "Overwrite File?"
-msgctxt "@title"
-msgid "Overwrite File?"
-msgstr "Overskriv fil?"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2278
 #, fuzzy, kde-format
@@ -58950,13 +59251,6 @@ msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr ""
 "En fil ved navn \"%1\" findes allerede. Vil du virkelig overskrive den?"
-
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2323
-#, fuzzy, kde-format
-#| msgid "Error Saving File"
-msgctxt "@title"
-msgid "Error Saving File"
-msgstr "Fejl da fil skulle gemmes"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2324
 #, fuzzy, kde-format
@@ -59094,7 +59388,9 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:927
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "No Image in Current Album"
+msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr "Ingen billeder i det nuværende album"
 
@@ -59108,8 +59404,10 @@ msgstr ""
 "Billededitoren lukkes."
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:1199
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "File Not Available"
+msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "Filen er ikke tilgængelig"
 
@@ -60174,9 +60472,11 @@ msgstr ""
 "%2</resource>.<nl>Angiv et nyt filnavn (uden filendelse):"
 
 #: core/utilities/import/main/importui.cpp:1245
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "File already exists"
 msgctxt "@title:window"
-msgid "File already exists"
+msgid "File Already Exists"
 msgstr "Filen findes allerede"
 
 #: core/utilities/import/main/importui.cpp:1312
@@ -61341,7 +61641,9 @@ msgid "Finger-prints"
 msgstr "Fingeraftryk"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:196
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Maintenance"
+msgctxt "@title:window"
 msgid "Maintenance"
 msgstr "Vedligeholdelse"
 
@@ -61726,8 +62028,10 @@ msgid "Ready"
 msgstr "Klar"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:523
-#, kde-format
-msgid "Processing under progress"
+#, fuzzy, kde-format
+#| msgid "Processing under progress"
+msgctxt "@title:window"
+msgid "Processing Under Progress"
 msgstr "Behandlingen er i gang"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:524
@@ -61775,8 +62079,10 @@ msgstr "Der er ingen elementer at behandle i køerne."
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:841
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:851
-#, kde-format
-msgid "Processed items album settings"
+#, fuzzy, kde-format
+#| msgid "Processed items album settings"
+msgctxt "@title:window"
+msgid "Processed Items Album Settings"
 msgstr "Indstilling af album til behandlede elementer"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:842
@@ -62089,7 +62395,7 @@ msgstr "Opførsel"
 msgid "Saving Images"
 msgstr "Gemning af billeder"
 
-#: core/utilities/queuemanager/views/toolsettingsview.cpp:105
+#: core/utilities/queuemanager/views/toolsettingsview.cpp:108
 #, kde-format
 msgid "Reset current tool settings to default values."
 msgstr "Nulstil aktuelle værktøjsindstillinger til standardværdier."
@@ -62189,13 +62495,16 @@ msgid "History"
 msgstr "Historik"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:68
-#: core/utilities/queuemanager/views/workflowdlg.cpp:137
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "New Workflow"
+msgctxt "@title:window"
 msgid "New Workflow"
 msgstr "Ny arbejdsgang"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:68
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit Workflow"
+msgctxt "@title:window"
 msgid "Edit Workflow"
 msgstr "Redigér arbejdsgang"
 
@@ -62221,6 +62530,11 @@ msgstr "&Titel:"
 msgid "Description:"
 msgstr "Beskrivelse:"
 
+#: core/utilities/queuemanager/views/workflowdlg.cpp:137
+#, kde-format
+msgid "New Workflow"
+msgstr "Ny arbejdsgang"
+
 #: core/utilities/queuemanager/views/workflowlist.cpp:90
 #, fuzzy, kde-format
 #| msgid "Title"
@@ -62245,7 +62559,7 @@ msgstr "Beskrivelse"
 #: core/utilities/queuemanager/views/workflowlist.cpp:115
 #, fuzzy, kde-format
 #| msgid "Batch Queue Manager"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Batch Queue Manager"
 msgstr "Håndtering af batch-kø"
 
@@ -62293,7 +62607,7 @@ msgstr "Slet arbejdsgang"
 #: core/utilities/queuemanager/views/workflowlist.cpp:313
 #, fuzzy, kde-format
 #| msgid "Delete Workflow?"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Delete Workflow?"
 msgstr "Slet arbejdsgang?"
 
@@ -63271,7 +63585,9 @@ msgid "Hide Options"
 msgstr "Skjul indstillinger <<"
 
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:75
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Search?"
+msgctxt "@title:window"
 msgid "Delete Search?"
 msgstr "Slet søgning?"
 
@@ -63369,7 +63685,9 @@ msgid "Try"
 msgstr "Prøv"
 
 #: core/utilities/searchwindow/searchwindow.cpp:88
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Advanced Search"
+msgctxt "@title:window"
 msgid "Advanced Search"
 msgstr "Avanceret søgning"
 
@@ -64087,7 +64405,9 @@ msgstr ""
 "at det er tændt. Vil du forsøge at finde det igen?"
 
 #: core/utilities/setup/camera/cameraselection.cpp:104
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Camera Configuration"
+msgctxt "@title:window"
 msgid "Camera Configuration"
 msgstr "Konfiguration af kamera"
 
@@ -64263,7 +64583,9 @@ msgstr ""
 "p>"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:84
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit Import Filters"
+msgctxt "@title:window"
 msgid "Edit Import Filters"
 msgstr "Redigér importfiltre"
 
@@ -64711,13 +65033,16 @@ msgstr "Det var ikke muligt at tilføje en samling til de følgende stier:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:657
 #: core/utilities/setup/collections/setupcollectionview.cpp:1487
-#, kde-format
-msgid "Choose the folder containing your collection"
+#, fuzzy, kde-format
+#| msgid "Choose the folder containing your collection"
+msgctxt "@title:window"
+msgid "Choose the Folder Containing your Collection"
 msgstr "Vælg mappen der indeholder din samling"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:694
 #, fuzzy, kde-format
 #| msgid "Problem Adding Collection"
+msgctxt "@title:window"
 msgid "Problem Appending Collection"
 msgstr "Problem med tilføjelse af samling"
 
@@ -64730,6 +65055,7 @@ msgstr "Et linket element findes allerede."
 #: core/utilities/setup/collections/setupcollectionview.cpp:854
 #, fuzzy, kde-format
 #| msgid "Remove Collection?"
+msgctxt "@title:window"
 msgid "Remove Path from the Collection?"
 msgstr "Fjern samling?"
 
@@ -64742,7 +65068,9 @@ msgid ""
 msgstr "Vil du fjerne samlingen \"%1\" fra din liste over samlinger?"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:862
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Remove Collection?"
+msgctxt "@title:window"
 msgid "Remove Collection?"
 msgstr "Fjern samling?"
 
@@ -64838,12 +65166,16 @@ msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "Du har tidligere tilføjet en samling der indeholder stien \"%1\"."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1563
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Problem Adding Collection"
+msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "Problem med tilføjelse af samling"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1572
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Adding Collection"
+msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "Tilføjer samling"
 
@@ -64855,6 +65187,7 @@ msgstr "Din nye samling vil blive oprettet med dette navn:"
 #: core/utilities/setup/collections/setupcollectionview.cpp:1651
 #, fuzzy, kde-format
 #| msgid "Select a year"
+msgctxt "@title:window"
 msgid "Select Category"
 msgstr "Vælg et år"
 
@@ -64867,7 +65200,8 @@ msgstr "Din nye samling vil blive oprettet med dette navn:"
 #: core/utilities/setup/downloader/filesdownloader.cpp:172
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
-msgid "Download required files"
+msgctxt "@title:window"
+msgid "Download Required Files"
 msgstr "Downloader filen %1..."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:200
@@ -64898,7 +65232,8 @@ msgstr "Download af %1 gennemført..."
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Download New"
-msgid "Download error"
+msgctxt "@title:window"
+msgid "Download Error"
 msgstr "Download ny"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:269
@@ -64916,7 +65251,8 @@ msgstr ""
 #: core/utilities/setup/downloader/filesdownloader.cpp:277
 #, fuzzy, kde-format
 #| msgid "Add again"
-msgid "Try again"
+msgctxt "@action:button"
+msgid "Try Again"
 msgstr "Tilføj igen"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:410
@@ -65458,7 +65794,7 @@ msgstr ""
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:135
 #, fuzzy, kde-format
 #| msgid "Warning"
-msgctxt "@title: reset to default warning dialog"
+msgctxt "@title:window, reset to default warning dialog"
 msgid "Warning"
 msgstr "Advarsel"
 
@@ -65529,13 +65865,15 @@ msgstr "Nulstil til standardværdier"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:144
 #, fuzzy, kde-format
-msgid "New Xmp Namespace"
+msgctxt "@title:window"
+msgid "New XMP Namespace"
 msgstr "Nyt navn"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:148
-#, kde-format
-msgid "Edit Xmp Namespace"
-msgstr ""
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Edit XMP Namespace"
+msgstr "Nyt navn"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:238
 #, fuzzy, kde-format
@@ -65707,8 +66045,8 @@ msgstr ""
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:271
 #, kde-format
-msgctxt "@action"
-msgid "Yes I understand"
+msgctxt "@action:button"
+msgid "Yes I Understand"
 msgstr ""
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:281
@@ -66717,13 +67055,6 @@ msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
 "Some settings are hardware dependent and may have no effect.</b>"
 msgstr ""
-
-#: core/utilities/setup/setup.cpp:142
-#, fuzzy, kde-format
-#| msgid "Configure"
-msgctxt "@title"
-msgid "Configure"
-msgstr "Indstil"
 
 #: core/utilities/setup/setup.cpp:149
 #, fuzzy, kde-format
@@ -68021,6 +68352,169 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr "Nulstil alle indstillinger til deres standardværdier."
 
 #, fuzzy
+#~ msgctxt "@title"
+#~ msgid "Geolocation Editor"
+#~ msgstr "Geo-lokaliseringsfilter"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "@title"
+#~ msgid "Error"
+#~ msgstr "Fejl"
+
+#~ msgid "Select GPX File to Load"
+#~ msgstr "Vælg GPX-fil at indlæse"
+
+#, fuzzy
+#~| msgid "Exposure time"
+#~ msgctxt "@title"
+#~ msgid "Exposure Blending"
+#~ msgstr "Eksponeringstid"
+
+#, fuzzy
+#~| msgctxt "@action:button"
+#~| msgid "Details..."
+#~ msgctxt "@action: button"
+#~ msgid "Details..."
+#~ msgstr "Detaljer..."
+
+#, fuzzy
+#~| msgid "Destination Folder"
+#~ msgctxt "@title"
+#~ msgid "Destination Folder"
+#~ msgstr "Målmappe"
+
+#, fuzzy
+#~| msgid "Convert image to a color space."
+#~ msgctxt "@title: window"
+#~ msgid "Error while to set image as wallpaper"
+#~ msgstr "Konvertér billeder til et farverum."
+
+#, fuzzy
+#~| msgid "Start Upload"
+#~ msgctxt "@action"
+#~ msgid "Start Upload"
+#~ msgstr "Start upload"
+
+#, fuzzy
+#~| msgid "Error"
+#~ msgctxt "@title: window"
+#~ msgid "Error"
+#~ msgstr "Fejl"
+
+#, fuzzy
+#~| msgid "Continue"
+#~ msgctxt "@action: button"
+#~ msgid "Continue"
+#~ msgstr "Fortsæt"
+
+#, fuzzy
+#~| msgid "Cancel"
+#~ msgctxt "@action: button"
+#~ msgid "Cancel"
+#~ msgstr "Annullér"
+
+#, fuzzy
+#~| msgid "Uploading Failed"
+#~ msgctxt "@title"
+#~ msgid "Uploading Failed"
+#~ msgstr "Upload mislykkedes"
+
+#, fuzzy
+#~| msgid "Login Failed"
+#~ msgctxt "@title"
+#~ msgid "Login Failed"
+#~ msgstr "Login mislykkedes"
+
+#, fuzzy
+#~| msgid "Start Download"
+#~ msgctxt "@action"
+#~ msgid "Start Download"
+#~ msgstr "Start download"
+
+#, fuzzy
+#~| msgid "Warning"
+#~ msgctxt "@title: window"
+#~ msgid "Warning"
+#~ msgstr "Advarsel"
+
+#, fuzzy
+#~| msgid "Continue"
+#~ msgctxt "@action"
+#~ msgid "Continue"
+#~ msgstr "Fortsæt"
+
+#, fuzzy
+#~| msgid "New Album"
+#~ msgctxt "@title: album properties"
+#~ msgid "New Album"
+#~ msgstr "Nyt album"
+
+#~ msgid "Database connection test"
+#~ msgstr "Test af databaseforbindelse"
+
+#, fuzzy
+#~| msgid "Shared Libraries and Components Information"
+#~ msgctxt "@title"
+#~ msgid "Shared Libraries and Components Information"
+#~ msgstr "Information om komponenter og delte biblioteker"
+
+#, fuzzy
+#~| msgid "Could Not Calculate Average"
+#~ msgctxt "@title: favorite item properties"
+#~ msgid "Could Not Calculate Average"
+#~ msgstr "Kunne ikke beregne gennemsnit"
+
+#~ msgid "Add Bookmark"
+#~ msgstr "Tilføj bogmærke"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add new tag:"
+#~ msgstr "Tilføj nyt mærke:"
+
+#, fuzzy
+#~| msgid "Warning"
+#~ msgctxt "@title; warning while saving progress"
+#~ msgid "Warning"
+#~ msgstr "Advarsel"
+
+#, fuzzy
+#~| msgid "New Image File Name"
+#~ msgctxt "@title"
+#~ msgid "New Image File Name"
+#~ msgstr "Nyt navn på billedfil"
+
+#, fuzzy
+#~| msgid "Overwrite File?"
+#~ msgctxt "@title"
+#~ msgid "Overwrite File?"
+#~ msgstr "Overskriv fil?"
+
+#, fuzzy
+#~| msgid "Error Saving File"
+#~ msgctxt "@title"
+#~ msgid "Error Saving File"
+#~ msgstr "Fejl da fil skulle gemmes"
+
+#, fuzzy
+#~| msgid "Batch Queue Manager"
+#~ msgctxt "@title"
+#~ msgid "Batch Queue Manager"
+#~ msgstr "Håndtering af batch-kø"
+
+#, fuzzy
+#~| msgid "Warning"
+#~ msgctxt "@title: reset to default warning dialog"
+#~ msgid "Warning"
+#~ msgstr "Advarsel"
+
+#, fuzzy
+#~| msgid "Configure"
+#~ msgctxt "@title"
+#~ msgid "Configure"
+#~ msgstr "Indstil"
+
+#, fuzzy
 #~ msgid "Update Slideshow to plugin with new shuffle mode."
 #~ msgstr "Diasshow"
 
@@ -68173,11 +68667,6 @@ msgstr "Nulstil alle indstillinger til deres standardværdier."
 #~| msgid "Select the image file list to load"
 #~ msgid "Detect if the image is aesthetic"
 #~ msgstr "Vælg listen over billedfiler der skal indlæses"
-
-#, fuzzy
-#~| msgid "Convert"
-#~ msgid "Text Converter"
-#~ msgstr "Konvertér"
 
 #, fuzzy
 #~ msgctxt "@info: country code"
@@ -71547,12 +72036,6 @@ msgstr "Nulstil alle indstillinger til deres standardværdier."
 #~| msgid "No Kipi plugin found"
 #~ msgid "No plugins loaded"
 #~ msgstr "Intet KIPI-plugin fundet"
-
-#, fuzzy
-#~| msgid "Warning"
-#~ msgctxt "@title:window"
-#~ msgid "Warning"
-#~ msgstr "Advarsel"
 
 #, fuzzy
 #~| msgid "Category:"
