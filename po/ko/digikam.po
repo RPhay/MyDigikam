@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-12 00:53+0000\n"
+"POT-Creation-Date: 2023-01-13 00:53+0000\n"
 "PO-Revision-Date: 2022-05-15 22:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -921,8 +921,10 @@ msgid "%1 %2"
 msgstr "%2 %1"
 
 #: core/app/items/utils/itemviewutilities.cpp:203
-#, kde-format
-msgid "Select target folder"
+#, fuzzy, kde-format
+#| msgid "Select target folder"
+msgctxt "@title:window"
+msgid "Select Target Folder"
 msgstr "대상 폴더 선택"
 
 #: core/app/items/utils/itemviewutilities.cpp:229
@@ -1471,13 +1473,17 @@ msgstr ""
 "digiKam을 다시 시작한 후에 사용할 수 있습니다."
 
 #: core/app/main/digikamapp_import.cpp:81
-#, kde-format
-msgid "Select folder to parse"
+#, fuzzy, kde-format
+#| msgid "Select folder to parse"
+msgctxt "@title:window"
+msgid "Select Folder to Parse"
 msgstr "해석할 폴더 선택"
 
 #: core/app/main/digikamapp_import.cpp:101
-#, kde-format
-msgid "Select folders to import into album"
+#, fuzzy, kde-format
+#| msgid "Select folders to import into album"
+msgctxt "@title:window"
+msgid "Select Folders to Import into Album"
 msgstr "앨범으로 가져올 폴더 선택"
 
 #: core/app/main/digikamapp_import.cpp:143
@@ -4200,16 +4206,16 @@ msgstr "지원되지 않는 파일 확장자"
 #: core/avplayer/filters/EventFilter.cpp:71
 #, fuzzy, kde-format
 #| msgid "Open a preview"
-msgctxt "@title"
-msgid "Open a video"
+msgctxt "@title:window"
+msgid "Open a Video"
 msgstr "미리 보기 열기"
 
 #: core/avplayer/filters/EventFilter.cpp:83
 #: core/avplayer/main/MainWindow_io.cpp:510
 #, fuzzy, kde-format
 #| msgid "Open a preview"
-msgctxt "@title"
-msgid "Open an url"
+msgctxt "@title:window"
+msgid "Open an Url"
 msgstr "미리 보기 열기"
 
 #: core/avplayer/filters/EventFilter.cpp:84
@@ -4347,7 +4353,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Help"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Help"
 msgstr "도움말"
 
@@ -4398,8 +4404,8 @@ msgstr ""
 #: core/avplayer/main/MainWindow_io.cpp:102
 #, fuzzy, kde-format
 #| msgid "Type of the media file"
-msgctxt "@title"
-msgid "Open a media file"
+msgctxt "@title:window"
+msgid "Open a Media File"
 msgstr "미디어 파일 종류"
 
 #: core/avplayer/main/MainWindow_io.cpp:568
@@ -4414,8 +4420,8 @@ msgstr "종횡 비율"
 #, fuzzy, kde-format
 #| msgctxt "@title: window"
 #| msgid "Network Error"
-msgctxt "@title"
-msgid "Player error"
+msgctxt "@title:window"
+msgid "Player Error"
 msgstr "네트워크 오류"
 
 #: core/avplayer/main/MainWindow_io.cpp:724
@@ -4469,7 +4475,7 @@ msgstr ""
 #: core/avplayer/main/MainWindow_io.cpp:798
 #, fuzzy, kde-format
 #| msgid "Aborting..."
-msgctxt "@title: media loading state"
+msgctxt "@title:window, media loading state"
 msgid "Buffering... %1% @%2 %3"
 msgstr "중단 중..."
 
@@ -4487,8 +4493,8 @@ msgstr "%1에서 캡처"
 #: core/avplayer/main/MainWindow_io.cpp:1018
 #, fuzzy, kde-format
 #| msgid "One active filter"
-msgctxt "@title"
-msgid "Open a subtitle file"
+msgctxt "@title:window"
+msgid "Open a Subtitle File"
 msgstr "활성 필터 1개"
 
 #: core/avplayer/main/MainWindow_setup.cpp:30
@@ -4849,8 +4855,8 @@ msgstr "시스템에서 OpenGL 지원을 사용할 수 없습니다."
 #: core/avplayer/main/MainWindow_setup.cpp:818
 #, fuzzy, kde-format
 #| msgid "Open in the editor"
-msgctxt "@title"
-msgid "Open an external audio track"
+msgctxt "@title:window"
+msgid "Open an External Audio Track"
 msgstr "편집기에서 열기"
 
 #: core/avplayer/main/MainWindow_setup.cpp:864
@@ -4883,8 +4889,8 @@ msgstr "선택한 태그 삭제"
 #: core/avplayer/playlist/PlayList.cpp:259
 #, fuzzy, kde-format
 #| msgid "Select sound files"
-msgctxt "@title"
-msgid "Select files"
+msgctxt "@title:window"
+msgid "Select Files"
 msgstr "사운드 파일 선택"
 
 #: core/avplayer/utils/ConfigDialog.cpp:61
@@ -4905,13 +4911,9 @@ msgid "Ok"
 msgstr "동의하기"
 
 #: core/avplayer/utils/ConfigDialog.cpp:63
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:855
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:260
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:676
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:261
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
 #: core/libs/dplugins/webservices/wstooldialog.cpp:110
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:199
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:208
 #, kde-format
 msgid "Cancel"
 msgstr "취소"
@@ -5094,8 +5096,8 @@ msgstr "파일 크기"
 #, fuzzy, kde-format
 #| msgctxt "@info: histogram properties"
 #| msgid "Median:"
-msgctxt "@title"
-msgid "Media info"
+msgctxt "@title:window"
+msgid "Media Info"
 msgstr "중간값:"
 
 #: core/avplayer/utils/StatisticsView.cpp:147
@@ -8572,7 +8574,9 @@ msgid "Adjust Levels"
 msgstr "레벨 조정"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:890
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select Gimp Levels File to Load"
+msgctxt "@title:window"
 msgid "Select Gimp Levels File to Load"
 msgstr "불러올 김프 레벨 파일 선택"
 
@@ -8582,7 +8586,9 @@ msgid "Cannot load from the Gimp levels text file."
 msgstr "김프 레벨 텍스트 파일에서 불러올 수 없습니다."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:917
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Gimp Levels File to Save"
+msgctxt "@title:window"
 msgid "Gimp Levels File to Save"
 msgstr "저장할 김프 레벨 파일"
 
@@ -9768,7 +9774,9 @@ msgid "Restoration"
 msgstr "복원"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:344
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Restoration Settings File to Load"
+msgctxt "@title:window"
 msgid "Photograph Restoration Settings File to Load"
 msgstr "불러올 사진 복원 설정 파일"
 
@@ -9783,7 +9791,9 @@ msgid "Cannot load settings from the Photograph Restoration text file."
 msgstr "사진 복원 설정 텍스트 파일에서 불러올 수 없습니다."
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:383
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Restoration Settings File to Save"
+msgctxt "@title:window"
 msgid "Photograph Restoration Settings File to Save"
 msgstr "저장할 사진 복원 설정 파일"
 
@@ -9860,7 +9870,9 @@ msgid "Sharpen..."
 msgstr "선명하게..."
 
 #: core/dplugins/editor/file/print/printhelper.cpp:168
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Print Image"
+msgctxt "@title:window"
 msgid "Print Image"
 msgstr "이미지 인쇄"
 
@@ -9990,7 +10002,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can print an image."
 msgstr "<p>이 이미지 편집기 도구로 이미지를 인쇄할 수 있습니다.</p>"
 
-#: core/dplugins/editor/file/print/printplugin.cpp:84
+#: core/dplugins/editor/file/print/printplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Print Image..."
@@ -10125,7 +10137,7 @@ msgid "This Image Editor tool can apply blur effects to an image."
 msgstr ""
 "<p>이 이미지 편집기 도구로 이미지에 흐림 효과를 적용할 수 있습니다.</p>"
 
-#: core/dplugins/editor/filters/blurfx/blurfxtoolplugin.cpp:83
+#: core/dplugins/editor/filters/blurfx/blurfxtoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Blur Effects..."
@@ -10181,7 +10193,7 @@ msgid "This Image Editor tool can emulate charcoal drawing to an image."
 msgstr ""
 "<p>이 이미지 편집기 도구로 이미지의 목탄화 그리기를 흉내낼 수 있습니다.</p>"
 
-#: core/dplugins/editor/filters/charcoal/charcoaltoolplugin.cpp:80
+#: core/dplugins/editor/filters/charcoal/charcoaltoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Charcoal Drawing..."
@@ -10241,7 +10253,7 @@ msgid "This Image Editor tool can apply color effects to an image."
 msgstr ""
 "<p>이 이미지 편집기 도구로 이미지에 색상 효과를 적용할 수 있습니다..</p>"
 
-#: core/dplugins/editor/filters/colorfx/colorfxtoolplugin.cpp:83
+#: core/dplugins/editor/filters/colorfx/colorfxtoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Color Effects..."
@@ -10408,7 +10420,7 @@ msgid "This Image Editor tool can apply distortion effects to an image."
 msgstr ""
 "<p>이 이미지 편집기 도구로 이미지에 왜곡 효과를 적용할 수 있습니다.</p>"
 
-#: core/dplugins/editor/filters/distortionfx/distortionfxtoolplugin.cpp:83
+#: core/dplugins/editor/filters/distortionfx/distortionfxtoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Distortion Effects..."
@@ -10450,7 +10462,7 @@ msgid "This Image Editor tool can emboss an image."
 msgstr ""
 "<p>이 이미지 편집기 도구로 이미지에 엠보스 효과를 적용할 수 있습니다.</p>"
 
-#: core/dplugins/editor/filters/emboss/embosstoolplugin.cpp:83
+#: core/dplugins/editor/filters/emboss/embosstoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Emboss..."
@@ -10476,14 +10488,14 @@ msgid "This Image Editor tool can add film grain over an image."
 msgstr ""
 "<p>이 이미지 편집기 도구로 이미지 위에 필름 그레인을 추가할 수 있습니다.</p>"
 
-#: core/dplugins/editor/filters/filmgrain/filmgraintoolplugin.cpp:83
+#: core/dplugins/editor/filters/filmgrain/filmgraintoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Add Film Grain..."
 msgstr "필름 그레인 추가..."
 
 #: core/dplugins/editor/filters/oilpaint/oilpainttool.cpp:88
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:296
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:300
 #, kde-format
 msgid "Brush size:"
 msgstr "브러시 크기:"
@@ -10529,7 +10541,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can emulate oil painting over an image."
 msgstr "<p>이 이미지 편집기 도구로 이미지에 유화를 흉내낼 수 있습니다.</p>"
 
-#: core/dplugins/editor/filters/oilpaint/oilpainttoolplugin.cpp:83
+#: core/dplugins/editor/filters/oilpaint/oilpainttoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Oil Paint..."
@@ -10599,7 +10611,7 @@ msgid "This Image Editor tool can add rain drops over an image."
 msgstr ""
 "<p>이 이미지 편집기 도구로 이미지 위에 빗방울을 추가할 수 있습니다.</p>"
 
-#: core/dplugins/editor/filters/raindrop/raindroptoolplugin.cpp:83
+#: core/dplugins/editor/filters/raindrop/raindroptoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Raindrops..."
@@ -10631,13 +10643,13 @@ msgstr ""
 "<p>이 이미지 편집기 도구로 이미지를 자동으로 자를 수 있습니다. 파노라마 이어 "
 "붙이기 등으로 생긴 내부의 검은 테두리를 사용합니다.</p>"
 
-#: core/dplugins/editor/transform/autocrop/autocroptoolplugin.cpp:84
+#: core/dplugins/editor/transform/autocrop/autocroptoolplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "&Auto-Crop"
 msgstr "자동 자르기(&A)"
 
-#: core/dplugins/editor/transform/autocrop/autocroptoolplugin.cpp:86
+#: core/dplugins/editor/transform/autocrop/autocroptoolplugin.cpp:101
 #, kde-format
 msgctxt "@info"
 msgid "This option can be used to crop automatically the image."
@@ -10714,17 +10726,17 @@ msgstr "가중치 마스크 추가"
 msgid "Enable this option to add suppression and preservation masks."
 msgstr "이 옵션을 활성화하면 억제 및 보존 마스크를 추가합니다."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:265
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:266
 #, kde-format
 msgid "Suppression weight mask:"
 msgstr "억제 가중치 마스크:"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:270
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:272
 #, kde-format
 msgid "Draw a suppression mask"
 msgstr "억제 가중치 마스크 그리기"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:271
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:273
 #, kde-format
 msgid ""
 "Click on this button to draw zones marking which areas of the image are less "
@@ -10735,17 +10747,17 @@ msgstr ""
 "습니다. 해당 구역은 이미지 크기를 축소할 때 삭제되거나, 확대할 때 복제될 수 "
 "있습니다."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:277
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:279
 #, kde-format
 msgid "Preservation weight mask:"
 msgstr "보존 가중치 마스크:"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:281
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:284
 #, kde-format
 msgid "Draw a preservation mask"
 msgstr "보존 가중치 마스크 그리기"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:282
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:285
 #, kde-format
 msgid ""
 "Click on this button to draw zones marking which areas of the image you want "
@@ -10753,57 +10765,57 @@ msgid ""
 msgstr ""
 "이 단추를 클릭하면 이미지에서 보존할 영역을 표현하는 구역을 그릴 수 있습니다."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:287
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:290
 #, kde-format
 msgid "Erase mask:"
 msgstr "마스크 지우기"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:291
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:295
 #, kde-format
 msgid "Erase mask"
 msgstr "마스크 지우기"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:292
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:296
 #, kde-format
 msgid "Click on this button to erase mask regions."
 msgstr "이 단추를 클릭하면 마스크 영역을 삭제합니다."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:301
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:305
 #, kde-format
 msgid "Specify here the size of the brush used to paint masks."
 msgstr "마스크를 칠할 때 사용할 브러시 크기를 지정하십시오."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:321
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:325
 #, kde-format
 msgid "Norm of brightness gradient"
 msgstr "밝기 그라디언트의 노름"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:322
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:326
 #, kde-format
 msgid "Sum of absolute values of brightness gradients"
 msgstr "밝기 그라디언트의 절댓값의 합계"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:323
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:327
 #, kde-format
 msgid "Absolute value of brightness gradient"
 msgstr "밝기 그라디언트의 절댓값"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:324
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:328
 #, kde-format
 msgid "Norm of luma gradient"
 msgstr "루마 그라디언트의 노름"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:325
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:329
 #, kde-format
 msgid "Sum of absolute values of luma gradients"
 msgstr "루마 그라디언트의 절댓값의 합계"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:326
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:330
 #, kde-format
 msgid "Absolute value of luma gradient"
 msgstr "루마 그라디언트의 절댓값"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:329
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:333
 #, kde-format
 msgid ""
 "This option allows you to choose a gradient function. This function is used "
@@ -10812,23 +10824,23 @@ msgstr ""
 "이 옵션을 사용하여 그라디언트 함수를 선택할 수 있습니다. 이 함수는 어떤 픽셀"
 "을 유지하고 삭제할지 결정합니다."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:332
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:336
 #, kde-format
 msgid "Preserve Skin Tones"
 msgstr "피부색 보존"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:333
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:337
 #, kde-format
 msgid ""
 "Enable this option to preserve pixels whose color is close to a skin tone."
 msgstr "이 옵션을 활성화하면 피부색에 가까운 색상의 픽셀을 유지합니다."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:347
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:351
 #, kde-format
 msgid "Overall rigidity of the seams:"
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:351
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:355
 #, kde-format
 msgid ""
 "Use this value to give a negative bias to the seams which are not straight. "
@@ -10840,12 +10852,12 @@ msgid ""
 "and summed up for the whole seam."
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:360
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:364
 #, kde-format
 msgid "Maximum number of transversal steps:"
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:364
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:368
 #, kde-format
 msgid ""
 "This option lets you choose the maximum transversal step that the pixels in "
@@ -10858,12 +10870,12 @@ msgid ""
 "setting."
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:374
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:378
 #, kde-format
 msgid "Side switch frequency:"
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:378
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:382
 #, kde-format
 msgid ""
 "During the carving process, at each step the optimal seam to be carved is "
@@ -10877,54 +10889,54 @@ msgid ""
 "performance."
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:390
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:394
 #, kde-format
 msgid "Resize Order:"
 msgstr "크기 조정 순서:"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:392
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:396
 #, kde-format
 msgid "Horizontally first"
 msgstr "수평 먼저"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:393
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:397
 #, kde-format
 msgid "Vertically first"
 msgstr "수직 먼저"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:395
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:399
 #, kde-format
 msgid ""
 "Here you can set whether to resize horizontally first or vertically first."
 msgstr "수평으로 먼저 혹은 수직으로 먼저 크기를 조절할지 선택할 수 있습니다."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:413
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:417
 #, kde-format
 msgid "Target size"
 msgstr "대상 크기"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:416
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:420
 #, kde-format
 msgid "Content-aware rescale percentage"
 msgstr "내용 맞춤 크기 조정 백분율"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:418
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:422
 #, kde-format
 msgid "Mask Settings"
 msgstr "마스크 설정"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:420
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:424
 #, kde-format
 msgid "Energy function"
 msgstr "에너지 함수"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:422
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:426
 #: core/utilities/setup/setupicc.cpp:480
 #, kde-format
 msgid "Advanced Settings"
 msgstr "고급 설정"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:763
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:769
 #, kde-format
 msgid "Liquid Rescale"
 msgstr "액체 크기 조절"
@@ -10951,7 +10963,7 @@ msgstr ""
 "<p>이 이미지 편집기 도구로 이미지 내용을 분석하여 크기를 조정할 수 있습니다."
 "</p>"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetoolplugin.cpp:86
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetoolplugin.cpp:101
 #, kde-format
 msgctxt "@action"
 msgid "Liquid Rescale..."
@@ -11079,27 +11091,27 @@ msgid "This Image Editor tool can rotate an image with an arbitrary angle."
 msgstr ""
 "<p>이 이미지 편집기 도구로 이미지를 임의 각도로 회전할 수 있습니다.</p>"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:85
+#: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:100
 #, kde-format
 msgctxt "@action"
 msgid "Free Rotation..."
 msgstr "자유 회전..."
 
-#: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:94
+#: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:109
 #, fuzzy, kde-format
 #| msgid "Free Rotation Set Point 1"
 msgctxt "@action"
 msgid "Free Rotation Set Point 1"
 msgstr "자유 회전 설정 지점 1"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:100
+#: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:115
 #, fuzzy, kde-format
 #| msgid "Free Rotation Set Point 2"
 msgctxt "@action"
 msgid "Free Rotation Set Point 2"
 msgstr "자유 회전 설정 지점 2"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:106
+#: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:121
 #, fuzzy, kde-format
 #| msgid "Free Rotation Auto Adjust"
 msgctxt "@action"
@@ -11176,7 +11188,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can adjust perspective from an image."
 msgstr "<p>이 이미지 편집기 도구로 이미지의 원근을 조정할 수 있습니다.</p>"
 
-#: core/dplugins/editor/transform/perspective/perspectivetoolplugin.cpp:83
+#: core/dplugins/editor/transform/perspective/perspectivetoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Perspective Adjustment..."
@@ -11524,7 +11536,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can crop an image with ratio."
 msgstr "<p>이 이미지 편집기 도구로 이미지를 비율에 따라 자를 수 있습니다.</p>"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptoolplugin.cpp:86
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptoolplugin.cpp:101
 #, kde-format
 msgctxt "@action"
 msgid "Aspect Ratio Crop..."
@@ -11758,7 +11770,9 @@ msgid "Resize"
 msgstr "크기 조정"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:918
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Resizing Settings File to Load"
+msgctxt "@title:window"
 msgid "Photograph Resizing Settings File to Load"
 msgstr "불러올 사진 크기 조정 설정 파일"
 
@@ -11773,7 +11787,9 @@ msgid "Cannot load settings from the Photograph Resizing text file."
 msgstr "사진 크기 조정 설정 텍스트 파일에서 불러올 수 없습니다."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:951
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Resizing Settings File to Save"
+msgctxt "@title:window"
 msgid "Photograph Resizing Settings File to Save"
 msgstr "저장할 사진 크기 조정 설정 파일"
 
@@ -11803,7 +11819,7 @@ msgctxt "@action"
 msgid "This Image Editor tool can resize an image."
 msgstr "<p>이 이미지 편집기 도구로 이미지 크기를 조정할 수 있습니다.</p>"
 
-#: core/dplugins/editor/transform/resize/resizetoolplugin.cpp:80
+#: core/dplugins/editor/transform/resize/resizetoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "&Resize..."
@@ -11905,7 +11921,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can shear an image."
 msgstr "<p>이 이미지 편집기 도구로 이미지를 기울일 수 있습니다.</p>"
 
-#: core/dplugins/editor/transform/shear/sheartoolplugin.cpp:80
+#: core/dplugins/editor/transform/shear/sheartoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "&Shear..."
@@ -11957,7 +11973,9 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:64
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scan Image"
+msgctxt "@title:window"
 msgid "Scan Image"
 msgstr "이미지 스캔"
 
@@ -11967,12 +11985,17 @@ msgid "Scan Images"
 msgstr "이미지 스캔"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:167
-#, kde-format
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1803
+#, fuzzy, kde-format
+#| msgid "New Image File Name"
+msgctxt "@title:window"
 msgid "New Image File Name"
 msgstr "새 이미지 파일 이름"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:215
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Unsupported Format"
+msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr "지원하지 않는 형식"
 
@@ -11982,7 +12005,9 @@ msgid "The target image file format \"%1\" is unsupported."
 msgstr "대상 그림 파일 형식 \"%1\"은(는) 지원하지 않습니다."
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:228
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cannot Save File"
+msgctxt "@title:window"
 msgid "Cannot Save File"
 msgstr "파일을 저장할 수 없음"
 
@@ -11998,7 +12023,11 @@ msgstr ""
 "저장할 수 없습니다."
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:244
-#, kde-format
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2277
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2296
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "파일을 덮어쓰시겠습니까?"
 
@@ -12014,7 +12043,9 @@ msgid "Saving file %1 -"
 msgstr "파일 %1 저장하는 중 - "
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:304
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "File Not Saved"
+msgctxt "@title:window"
 msgid "File Not Saved"
 msgstr "파일이 저장되지 않았음"
 
@@ -12025,9 +12056,10 @@ msgstr ""
 "파일 \"%1\"을(를) 저장할 수 없음|/|파일 \"%1\"$[을를 %1] 저장할 수 없음"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:264
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
 #, fuzzy, kde-format
 #| msgid "Geolocation Editor"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Geolocation Editor"
 msgstr "지리적 위치 편집기"
 
@@ -12132,9 +12164,11 @@ msgid_plural "You have %1 modified images."
 msgstr[0] "그림 %1개를 수정했습니다."
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:814
-#, kde-format
-msgctxt "@title"
-msgid "Unsaved changes"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Unsaved changes"
+msgctxt "@title:window"
+msgid "Unsaved Changes"
 msgstr "저장하지 않은 변경 사항"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:815
@@ -12150,8 +12184,46 @@ msgid "Saving changes -"
 msgstr "변경 사항 저장 -"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:990
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
+#: core/dplugins/generic/webservices/box/boxtalker.cpp:386
+#: core/dplugins/generic/webservices/box/boxwindow.cpp:244
+#: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:374
+#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:244
+#: core/dplugins/generic/webservices/facebook/fbtalker.cpp:550
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:785
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:809
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:975
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:461
+#: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:279
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:542
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:569
+#: core/dplugins/generic/webservices/google/gswindow.cpp:362
+#: core/dplugins/generic/webservices/google/gswindow.cpp:403
+#: core/dplugins/generic/webservices/google/gswindow.cpp:429
+#: core/dplugins/generic/webservices/google/gswindow.cpp:490
+#: core/dplugins/generic/webservices/google/gswindow.cpp:992
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1201
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1218
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:608
+#: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:179
+#: core/dplugins/generic/webservices/onedrive/odtalker.cpp:404
+#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:243
+#: core/dplugins/generic/webservices/pinterest/ptalker.cpp:411
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:247
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:380
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:746
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:442
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:451
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:489
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:526
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1018
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:665
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:248
+#: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:348
+#: core/libs/dplugins/webservices/wslogindialog.cpp:164
 #, kde-format
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Error"
 msgstr "오류"
 
@@ -12452,8 +12524,10 @@ msgid "Destination Directory:"
 msgstr "대상 디렉터리:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:105
-#, kde-format
-msgid "Select a directory in which to save the kml file and pictures"
+#, fuzzy, kde-format
+#| msgid "Select a directory in which to save the kml file and pictures"
+msgctxt "@title:window"
+msgid "Select a Directory in Which to Save the KML File and Pictures"
 msgstr "KML 파일과 사진을 저장할 디렉터리 선택"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:107
@@ -12503,7 +12577,9 @@ msgid "GPS Exchange Format (*.gpx)"
 msgstr "GPS 교환 형식 (*.gpx)"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:162
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:284
 #, kde-format
+msgctxt "@title:window"
 msgid "Select GPX File to Load"
 msgstr "불러올 GPX 파일 선택"
 
@@ -12766,8 +12842,10 @@ msgid "Bookmarks"
 msgstr "책갈피"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:274
-#, kde-format
-msgid "Search failed"
+#, fuzzy, kde-format
+#| msgid "Search failed"
+msgctxt "@title:window"
+msgid "Search Failed"
 msgstr "검색 실패함"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:274
@@ -12788,7 +12866,7 @@ msgstr[0] "이미지 %1개를 '%2'(으)로 이동함"
 #: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:92
 #, fuzzy, kde-format
 #| msgid "Metadata Editor"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Metadata Editor"
 msgstr "메타데이터 편집기"
 
@@ -12830,7 +12908,7 @@ msgstr "XMP 편집"
 #: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:311
 #, fuzzy, kde-format
 #| msgid "%1 (%2/%3) - Edit Metadata"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "%1 (%2/%3) - Edit Metadata"
 msgstr "%1 (%2/%3) - 메타데이터 편집"
 
@@ -16553,8 +16631,10 @@ msgstr ""
 "입력하십시오."
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:102
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Adjust Time & Date"
+msgctxt "@title:window"
 msgid "Adjust Time & Date"
 msgstr "날짜와 시간 조정"
 
@@ -16578,13 +16658,6 @@ msgstr "날짜와 시간 조정"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:375
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:679
-#: core/dplugins/generic/webservices/google/gswindow.cpp:511
-#: core/dplugins/generic/webservices/google/gswindow.cpp:536
-#: core/dplugins/generic/webservices/google/gswindow.cpp:950
-#: core/dplugins/generic/webservices/google/gswindow.cpp:971
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1020
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1262
-#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:256
 #: core/utilities/imageeditor/editor/editorwindow.cpp:571
 #, kde-format
 msgctxt "@action"
@@ -16695,7 +16768,6 @@ msgid "Adjust Time && Date..."
 msgstr "날짜와 시간 조정..."
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:43
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:111
 #, kde-format
 msgid "Create Calendar"
 msgstr "달력 만들기"
@@ -16962,6 +17034,13 @@ msgstr ""
 "더'>iCalendar</a> 형식 외부 데이터 이벤트 파일에 있는 특정 날짜 정보들 같이 "
 "인쇄할 수 있습니다.</p>"
 
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:111
+#, fuzzy, kde-format
+#| msgid "Create Calendar"
+msgctxt "@title:window"
+msgid "Create Calendar"
+msgstr "달력 만들기"
+
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:114
 #, kde-format
 msgid "Welcome to Calendar Tool"
@@ -16973,7 +17052,6 @@ msgid "Choose events to show on the Calendar"
 msgstr "달력에 표시할 이벤트 선택"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:140
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:289
 #, kde-format
 msgid "Print Calendar"
 msgstr "달력 인쇄"
@@ -16993,7 +17071,9 @@ msgstr "%1|달력 데이터 파일"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:157
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:161
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select Calendar Data File"
+msgctxt "@title:window"
 msgid "Select Calendar Data File"
 msgstr "달력 데이터 파일 선택"
 
@@ -17018,6 +17098,13 @@ msgid ""
 "year %1:<br/>"
 msgstr "다음을 클릭하여 인쇄 시작<br/><br/>%1년의 다음 달을 인쇄합니다:<br/>"
 
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:289
+#, fuzzy, kde-format
+#| msgid "Print Calendar"
+msgctxt "@title:window"
+msgid "Print Calendar"
+msgstr "달력 인쇄"
+
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:297
 #, kde-format
 msgid "Printing Cancelled"
@@ -17039,10 +17126,10 @@ msgid "Printing Complete"
 msgstr "인쇄 완료"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:98
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:43
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
 #, fuzzy, kde-format
 #| msgid "Convert"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "DNG Converter"
 msgstr "변환"
 
@@ -17053,19 +17140,17 @@ msgid "&Convert"
 msgstr "변환(&C)"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
+#, kde-format
+msgid "The list does not contain any Raw files to process."
+msgstr ""
+
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:297
 #, fuzzy, kde-format
 #| msgid "Convert"
 msgid "DNG Converter"
 msgstr "변환"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
-#, kde-format
-msgid "The list does not contain any Raw files to process."
-msgstr ""
-
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:427
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
 #, kde-format
 msgid "&Abort"
 msgstr "중단(&A)"
@@ -17154,6 +17239,13 @@ msgstr "대상 폴더"
 #, kde-format
 msgid "Camera"
 msgstr "카메라"
+
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:43
+#, fuzzy, kde-format
+#| msgid "Convert"
+msgctxt "@title"
+msgid "DNG Converter"
+msgstr "변환"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:58
 #, fuzzy, kde-format
@@ -17478,32 +17570,41 @@ msgid "Clear all"
 msgstr "모두 지우기"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:127
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgid "Exposure Blending"
+msgctxt "@title:window"
 msgid "Exposure Blending"
 msgstr "노출 혼합"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:136
-#, kde-format
-msgctxt "@action: button"
+#, fuzzy, kde-format
+#| msgctxt "@action: button"
+#| msgid "&Save"
+msgctxt "@action:button"
 msgid "&Save"
 msgstr "저장(&S)"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:138
-#, kde-format
-msgctxt "@info: tooltip"
+#, fuzzy, kde-format
+#| msgctxt "@info: tooltip"
+#| msgid "Process and save selected items."
+msgctxt "@info:tooltip, button"
 msgid "Process and save selected items."
 msgstr "선택한 항목을 처리하고 저장합니다."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:142
-#, kde-format
-msgctxt "@action: button"
+#, fuzzy, kde-format
+#| msgctxt "@action: button"
+#| msgid "&Preview"
+msgctxt "@action:button"
 msgid "&Preview"
 msgstr "미리 보기(&P)"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:144
-#, kde-format
-msgctxt "@info: tooltip"
+#, fuzzy, kde-format
+#| msgctxt "@info: tooltip"
+#| msgid "Process a preview of bracketed images stack with current settings."
+msgctxt "@info:tooltip, button"
 msgid "Process a preview of bracketed images stack with current settings."
 msgstr "현재 설정으로 브래킷된 이미지 스택의 미리 보기를 처리합니다."
 
@@ -17522,8 +17623,9 @@ msgid "Revert current settings to default values."
 msgstr "현재 설정을 기본값으로 되돌립니다."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:156
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:104
 #, kde-format
-msgctxt "@action: button"
+msgctxt "@action:button"
 msgid "Details..."
 msgstr "자세히..."
 
@@ -17553,7 +17655,7 @@ msgstr "파일 이름 템플릿: "
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Enfuse Processing Messages"
-msgctxt "@title: window"
+msgctxt "@title:window"
 msgid "Enfuse Processing Messages"
 msgstr "Enfuse 처리 메시지"
 
@@ -17887,7 +17989,7 @@ msgstr "RAW 그림"
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Stacked Images Tool"
-msgctxt "@title: window"
+msgctxt "@title:window"
 msgid "Stacked Images Tool"
 msgstr "스택된 이미지 도구"
 
@@ -18352,12 +18454,16 @@ msgstr "갤러리 제목:"
 #, fuzzy, kde-format
 #| msgid "Destination Folder:"
 msgctxt "@label"
-msgid "Destination Folder:"
+msgid "Destination folder:"
 msgstr "대상 폴더:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
-#, kde-format
-msgctxt "@title"
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:120
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:267
+#, fuzzy, kde-format
+#| msgid "Destination Folder"
+msgctxt "@title:window"
 msgid "Destination Folder"
 msgstr "대상 폴더"
 
@@ -18418,7 +18524,9 @@ msgid "Author: %1<br/><br/>"
 msgstr "작성자: %1<br/><br/>"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create HTML Gallery"
+msgctxt "@title:window"
 msgid "Create HTML Gallery"
 msgstr "HTML 갤러리 만들기"
 
@@ -18568,17 +18676,22 @@ msgid "Set here the project title"
 msgstr "콘텐츠 공급자를 설정하십시오."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:81
-#, kde-format
-msgid "Projects Folder:"
+#, fuzzy, kde-format
+#| msgid "Projects Folder:"
+msgid "Projects folder:"
 msgstr "프로젝트 폴더:"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:84
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Projects Folder"
+msgctxt "@title:window"
 msgid "Projects Folder"
 msgstr "프로젝트 폴더"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:73
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create jAlbum Album"
+msgctxt "@title:window"
 msgid "Create jAlbum Album"
 msgstr "jAlbum 앨범 만들기"
 
@@ -18598,9 +18711,11 @@ msgid "Generating jAlbum"
 msgstr "jAlbum 생성 중"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:93
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Share Files with DLNA Media Server"
 msgctxt "@title:window"
-msgid "Share Files with DLNA Media Server"
+msgid "Share Files With DLNA Media Server"
 msgstr "DLNA 미디어 서버로 파일 공유"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:150
@@ -18649,8 +18764,10 @@ msgstr ""
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:314
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:64
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:77
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Media Server Contents"
+msgctxt "@title:window"
 msgid "Media Server Contents"
 msgstr "미디어 서버 내용"
 
@@ -18733,8 +18850,10 @@ msgstr "공유된 항목"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:340
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:105
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Starting Media Server"
+msgctxt "@title:window"
 msgid "Starting Media Server"
 msgstr "미디어 서버 시작 중"
 
@@ -18810,13 +18929,13 @@ msgstr "미디어 서버를 시작할 수 없습니다!"
 #| msgctxt "@title:window"
 #| msgid "Share Files with DLNA Media Server"
 msgctxt "@title:window"
-msgid "Share Files with MJPEG Stream Server"
+msgid "Share Files With MJPEG Stream Server"
 msgstr "DLNA 미디어 서버로 파일 공유"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg.cpp:97
 #, fuzzy, kde-format
 #| msgid "Media Server Contents"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "MJPEG Server Contents"
 msgstr "미디어 서버 내용"
 
@@ -19364,10 +19483,9 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:122
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:44
 #, fuzzy, kde-format
 #| msgid "Convert"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "OCR Text Converter"
 msgstr "변환"
 
@@ -19454,10 +19572,9 @@ msgid "Success"
 msgstr "성공"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:585
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:597
 #, fuzzy, kde-format
 #| msgid "Convert"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Text Converter"
 msgstr "변환"
 
@@ -19468,6 +19585,13 @@ msgid ""
 "The list does not contain any digital files to process. You need to select "
 "them."
 msgstr ""
+
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:597
+#, fuzzy, kde-format
+#| msgid "Convert"
+msgctxt "@title"
+msgid "Text Converter"
+msgstr "변환"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:670
 #, fuzzy, kde-format
@@ -19526,6 +19650,13 @@ msgstr "최근 태그"
 #| msgid "Keywords"
 msgid "Words"
 msgstr "키워드"
+
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:44
+#, fuzzy, kde-format
+#| msgid "Convert"
+msgctxt "@title"
+msgid "OCR Text Converter"
+msgstr "변환"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:59
 #, fuzzy, kde-format
@@ -20050,8 +20181,6 @@ msgstr ""
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:212
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:221
-#: core/dplugins/generic/webservices/box/boxwindow.cpp:252
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:849
 #, kde-format
 msgctxt "@title: dialog"
 msgid "Warning"
@@ -20269,12 +20398,6 @@ msgctxt "@title:window"
 msgid "<b>Preview and Post-Processing</b>"
 msgstr "<b>미리 보기 및 후처리</b>"
 
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:104
-#, kde-format
-msgctxt "@action:button"
-msgid "Details..."
-msgstr "자세히..."
-
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:142
 #, kde-format
 msgid "Processing Panorama Preview..."
@@ -20460,8 +20583,6 @@ msgid "Page %1 saved as %2"
 msgstr "%1쪽을 %2(으)로 저장함"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:43
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:354
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
 #, kde-format
 msgid "Print Creator"
 msgstr "인쇄물 생성기"
@@ -20704,7 +20825,6 @@ msgstr "사진 0 중 0"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, AdvPrintCustomLayout)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:26
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1101
 #, kde-format
 msgid "Custom layout"
 msgstr "사용자 정의 레이아웃"
@@ -20773,7 +20893,7 @@ msgstr "쪽당 사진 수"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:195
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:204
 #: core/utilities/maintenance/facesdetector.cpp:67
 #: core/utilities/searchwindow/searchutilities.cpp:633
 #, kde-format
@@ -20963,6 +21083,14 @@ msgid ""
 msgstr ""
 "임시 폴더를 만들 수 없습니다. 권한이 있는지 확인한 다음 다시 시도하십시오."
 
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:354
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
+#, fuzzy, kde-format
+#| msgid "Print Creator"
+msgctxt "@title:window"
+msgid "Print Creator"
+msgstr "인쇄물 생성기"
+
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:76
 #, kde-format
 msgid ""
@@ -20997,16 +21125,10 @@ msgstr "인쇄물을 이미지로 내보낼 때 사용할 형식을 선택하십
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:115
-#, kde-format
-msgid "Destination Folder:"
+#, fuzzy, kde-format
+#| msgid "Destination Folder:"
+msgid "Destination folder:"
 msgstr "대상 폴더:"
-
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:120
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:267
-#, kde-format
-msgid "Destination Folder"
-msgstr "대상 폴더"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:121
@@ -21049,6 +21171,13 @@ msgstr "다시 추가"
 #, kde-format
 msgid "Remove"
 msgstr "삭제"
+
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1101
+#, fuzzy, kde-format
+#| msgid "Custom layout"
+msgctxt "@title:window"
+msgid "Custom Layout"
+msgstr "사용자 정의 레이아웃"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1102
 #, kde-format
@@ -21220,7 +21349,9 @@ msgstr "이미지 속성 파일 완료됨"
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:334
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:984
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:997
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Processing Failed"
+msgctxt "@title:window"
 msgid "Processing Failed"
 msgstr "처리 실패"
 
@@ -21326,7 +21457,6 @@ msgid "Png"
 msgstr "PNG"
 
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:43
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:75
 #, kde-format
 msgid "Send by Email"
 msgstr "이메일로 보내기"
@@ -21548,6 +21678,13 @@ msgid ""
 "removed."
 msgstr "이 옵션을 사용하면 Exif, IPTC, XMP 등 모든 메타데이터를 삭제합니다."
 
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:75
+#, fuzzy, kde-format
+#| msgid "Send by Email"
+msgctxt "@title:window"
+msgid "Send by Email"
+msgstr "이메일로 보내기"
+
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:84
 #, kde-format
 msgid "Welcome to Email Tool"
@@ -21736,7 +21873,9 @@ msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create a Video Slideshow"
+msgctxt "@title:window"
 msgid "Create a Video Slideshow"
 msgstr "비디오 슬라이드 쇼 만들기"
 
@@ -21781,9 +21920,10 @@ msgstr "배경 그림으로 설정"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_dbus.cpp:92
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_macos.cpp:64
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:68
 #, fuzzy, kde-format
-msgctxt "@title: window"
-msgid "Error while to set image as wallpaper"
+msgctxt "@title:window"
+msgid "Error While to Set Image as Wallpaper"
 msgstr "색상"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_dbus.cpp:93
@@ -21810,12 +21950,6 @@ msgstr "%1의 이미지를 열 수 없음\n"
 #| msgid "Unknown error"
 msgid "Unknown Error %1"
 msgstr "알 수 없는 오류"
-
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:68
-#, fuzzy, kde-format
-msgctxt "@title:window"
-msgid "Error while to set image as wallpaper"
-msgstr "색상"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:69
 #, kde-format
@@ -21852,6 +21986,7 @@ msgstr ""
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:59
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "WallPaper Settings"
 msgstr "RAW 그림"
 
@@ -21929,8 +22064,9 @@ msgstr "OpenGL 이미지 뷰어"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
-#, kde-format
-msgid "OpenGL error"
+#, fuzzy, kde-format
+#| msgid "OpenGL error"
+msgid "OpenGL Error"
 msgstr "OpenGL 오류"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
@@ -21944,8 +22080,10 @@ msgid "No OpenGL context found"
 msgstr "OpenGL 콘텍스트를 찾을 수 없음"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
-#, kde-format
-msgid "Soundtrack preview"
+#, fuzzy, kde-format
+#| msgid "Soundtrack preview"
+msgctxt "@title:window"
+msgid "Soundtrack Preview"
 msgstr "사운드트랙 미리 보기"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:104
@@ -22007,8 +22145,10 @@ msgstr ""
 "오."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:362
-#, kde-format
-msgid "Select sound files"
+#, fuzzy, kde-format
+#| msgid "Select sound files"
+msgctxt "@title:window"
+msgid "Select Sound Files"
 msgstr "사운드 파일 선택"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:430
@@ -22022,8 +22162,10 @@ msgid "You can only move files down one at a time."
 msgstr "한 번에 파일 하나씩만 아래로 이동할 수 있습니다."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:489
-#, kde-format
-msgid "Load playlist"
+#, fuzzy, kde-format
+#| msgid "Load playlist"
+msgctxt "@title:window"
+msgid "Load Playlist"
 msgstr "재생 목록 불러오기"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:490
@@ -22033,8 +22175,10 @@ msgid "Playlist (*.m3u)"
 msgstr "재생 목록 (*.m3u)"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:548
-#, kde-format
-msgid "Save playlist"
+#, fuzzy, kde-format
+#| msgid "Save playlist"
+msgctxt "@title:window"
+msgid "Save Playlist"
 msgstr "재생 목록 저장"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:609
@@ -22151,36 +22295,6 @@ msgstr "자세한 정보 없음"
 msgctxt "artist - title"
 msgid "%1 - %2"
 msgstr "%1 - %2"
-
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
-#: core/dplugins/generic/webservices/box/boxtalker.cpp:386
-#: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:374
-#: core/dplugins/generic/webservices/facebook/fbtalker.cpp:550
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:785
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:809
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:975
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:461
-#: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:279
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:569
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:608
-#: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:179
-#: core/dplugins/generic/webservices/onedrive/odtalker.cpp:404
-#: core/dplugins/generic/webservices/pinterest/ptalker.cpp:411
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:380
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:746
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:442
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:451
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:489
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:526
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1018
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:665
-#: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:348
-#: core/libs/database/utils/scan/scancontroller_progress.cpp:87
-#: core/libs/tags/widgets/tageditdlg.cpp:546
-#, kde-format
-msgid "Error"
-msgstr "오류"
 
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:167
 #, kde-format
@@ -22476,9 +22590,10 @@ msgid "Use Open&GL transitions"
 msgstr "OpenGL 전환 사용(&G)"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:75
-#: core/dplugins/generic/view/presentation/presentationplugin.cpp:48
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Presentation"
+msgctxt "@title:window"
 msgid "Presentation"
 msgstr "프레젠테이션"
 
@@ -22611,6 +22726,12 @@ msgstr "표시할 이미지가 없습니다."
 msgid "OpenGL support is not available on your system."
 msgstr "시스템에서 OpenGL 지원을 사용할 수 없습니다."
 
+#: core/dplugins/generic/view/presentation/presentationplugin.cpp:48
+#, kde-format
+msgctxt "@title"
+msgid "Presentation"
+msgstr "프레젠테이션"
+
 #: core/dplugins/generic/view/presentation/presentationplugin.cpp:63
 #, fuzzy, kde-format
 #| msgid "A tool to render presentation"
@@ -22640,7 +22761,8 @@ msgstr "프레젠테이션..."
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:267
 #, fuzzy, kde-format
 #| msgid "Video Slideshow"
-msgid "Specify delay for slide show"
+msgctxt "@title:window"
+msgid "Specify Delay for Slide Show"
 msgstr "비디오 슬라이드 쇼"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:228
@@ -22653,7 +22775,8 @@ msgstr ""
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:429
 #, fuzzy, kde-format
 #| msgid "Delete Tag"
-msgid "Delete image"
+msgctxt "@title:window"
+msgid "Delete Image"
 msgstr "태그 삭제"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:254
@@ -22735,9 +22858,9 @@ msgid "Blobs"
 msgstr "상자"
 
 #: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:120
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:170
-#: core/libs/settings/applicationsettings_miscs.cpp:430
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Slideshow"
+msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "슬라이드 쇼"
 
@@ -22750,7 +22873,9 @@ msgid "Giving a slideshow"
 msgstr "슬라이드 쇼 제공"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:107
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Slideshow Settings"
+msgctxt "@title:window"
 msgid "Slideshow Settings"
 msgstr "슬라이드 쇼 설정"
 
@@ -23022,6 +23147,12 @@ msgctxt "@action"
 msgid "Slideshow"
 msgstr "슬라이드 쇼"
 
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:170
+#: core/libs/settings/applicationsettings_miscs.cpp:430
+#, kde-format
+msgid "Slideshow"
+msgstr "슬라이드 쇼"
+
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:176
 #, kde-format
 msgid "Play All"
@@ -23127,37 +23258,34 @@ msgstr "폴더 목록을 가져올 수 없음"
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:80
 #, fuzzy, kde-format
 #| msgid "Export to Box"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Export to Box"
 msgstr "Box로 내보내기"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:82
+#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:80
+#: core/dplugins/generic/webservices/facebook/fbwindow.cpp:117
 #: core/dplugins/generic/webservices/google/gswindow.cpp:142
 #: core/dplugins/generic/webservices/google/gswindow.cpp:189
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:103
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:82
-#, kde-format
-msgctxt "@action"
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:82
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:232
+#: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:45
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:132
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:83
+#, fuzzy, kde-format
+#| msgid "Start Upload"
+msgctxt "@action:button"
 msgid "Start Upload"
 msgstr "업로드 시작"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:83
 #, fuzzy, kde-format
 #| msgid "Start upload to Box"
-msgctxt "@action"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to Box"
 msgstr "Box로 업로드 시작"
-
-#: core/dplugins/generic/webservices/box/boxwindow.cpp:244
-#: core/dplugins/generic/webservices/google/gswindow.cpp:403
-#: core/dplugins/generic/webservices/google/gswindow.cpp:490
-#: core/dplugins/generic/webservices/google/gswindow.cpp:992
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1201
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1218
-#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:243
-#, kde-format
-msgctxt "@title: window"
-msgid "Error"
-msgstr "오류"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:245
 #: core/dplugins/generic/webservices/google/gswindow.cpp:491
@@ -23167,6 +23295,25 @@ msgstr "오류"
 msgctxt "@info"
 msgid "No image selected. Please select which images should be uploaded."
 msgstr "이미지를 선택하지 않았습니다. 업로드할 이미지를 선택하십시오."
+
+#: core/dplugins/generic/webservices/box/boxwindow.cpp:252
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:849
+#: core/dplugins/generic/webservices/google/gswindow.cpp:506
+#: core/dplugins/generic/webservices/google/gswindow.cpp:531
+#: core/dplugins/generic/webservices/google/gswindow.cpp:944
+#: core/dplugins/generic/webservices/google/gswindow.cpp:965
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1013
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1063
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1256
+#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:670
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:256
+#, fuzzy, kde-format
+#| msgid "Morning"
+msgctxt "@title:window"
+msgid "Warning"
+msgstr "아침"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:253
 #: core/dplugins/generic/webservices/google/gswindow.cpp:507
@@ -23178,14 +23325,38 @@ msgid "Authentication failed. Click \"Continue\" to authenticate."
 msgstr "인증이 실패했습니다. \"계속\"을 클릭하여 인증하십시오."
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:256
-#, kde-format
-msgctxt "@action: button"
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:854
+#: core/dplugins/generic/webservices/google/gswindow.cpp:510
+#: core/dplugins/generic/webservices/google/gswindow.cpp:535
+#: core/dplugins/generic/webservices/google/gswindow.cpp:949
+#: core/dplugins/generic/webservices/google/gswindow.cpp:970
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1019
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1261
+#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:255
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:259
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:675
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:260
+#, fuzzy, kde-format
+#| msgid "Continue"
+msgctxt "@action:button"
 msgid "Continue"
 msgstr "계속"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:257
-#, kde-format
-msgctxt "@action: button"
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:855
+#: core/dplugins/generic/webservices/google/gswindow.cpp:511
+#: core/dplugins/generic/webservices/google/gswindow.cpp:536
+#: core/dplugins/generic/webservices/google/gswindow.cpp:950
+#: core/dplugins/generic/webservices/google/gswindow.cpp:971
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1020
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1262
+#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:256
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:260
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:676
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:261
+#, fuzzy, kde-format
+#| msgid "Cancel"
+msgctxt "@action:button"
 msgid "Cancel"
 msgstr "취소"
 
@@ -23206,9 +23377,22 @@ msgid "Box export"
 msgstr "Box 내보내기"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:325
+#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:317
+#: core/dplugins/generic/webservices/facebook/fbwindow.cpp:619
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:413
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:278
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:285
+#: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:226
+#: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:324
-#, kde-format
-msgctxt "@title"
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:328
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:584
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
+#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
+#, fuzzy, kde-format
+#| msgid "Uploading Failed"
+msgctxt "@title:window"
 msgid "Uploading Failed"
 msgstr "업로드 실패"
 
@@ -23225,9 +23409,15 @@ msgstr ""
 "계속 진행하시겠습니까?"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:384
+#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:251
+#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:375
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:384
-#, kde-format
-msgctxt "@title"
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:386
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:368
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:391
+#, fuzzy, kde-format
+#| msgid "Login Failed"
+msgctxt "@title:window"
 msgid "Login Failed"
 msgstr "로그인 실패"
 
@@ -23284,38 +23474,18 @@ msgid "Export to &Dropbox..."
 msgstr "Dropbox로 내보내기(&D)..."
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:78
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to Dropbox"
+msgctxt "@title:window"
 msgid "Export to Dropbox"
 msgstr "Dropbox로 내보내기"
 
-#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:80
-#: core/dplugins/generic/webservices/facebook/fbwindow.cpp:117
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:103
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:82
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:232
-#: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:45
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:132
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:83
-#, kde-format
-msgid "Start Upload"
-msgstr "업로드 시작"
-
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:81
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start upload to Dropbox"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to Dropbox"
 msgstr "Dropbox로 업로드 시작"
-
-#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:244
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:542
-#: core/dplugins/generic/webservices/google/gswindow.cpp:362
-#: core/dplugins/generic/webservices/google/gswindow.cpp:429
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:247
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:248
-#: core/libs/dplugins/webservices/wslogindialog.cpp:164
-#, kde-format
-msgctxt "@title:window"
-msgid "Error"
-msgstr "오류"
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:245
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:248
@@ -23323,15 +23493,6 @@ msgstr "오류"
 #, kde-format
 msgid "No image selected. Please select which images should be uploaded."
 msgstr "이미지를 선택하지 않았습니다. 업로드할 이미지를 선택하십시오."
-
-#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:251
-#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:375
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:386
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:368
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:391
-#, kde-format
-msgid "Login Failed"
-msgstr "로그인 실패"
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:252
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:376
@@ -23356,22 +23517,6 @@ msgstr "%v / %m"
 #, kde-format
 msgid "Dropbox export"
 msgstr "Dropbox 내보내기"
-
-#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:317
-#: core/dplugins/generic/webservices/facebook/fbwindow.cpp:619
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:413
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:278
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:285
-#: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:226
-#: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:328
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:584
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
-#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
-#, kde-format
-msgid "Uploading Failed"
-msgstr "업로드 실패"
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:318
 #, kde-format
@@ -23420,7 +23565,6 @@ msgid "Everyone"
 msgstr "누구나"
 
 #: core/dplugins/generic/webservices/facebook/fbplugin.cpp:49
-#: core/dplugins/generic/webservices/facebook/fbplugin.cpp:110
 #, kde-format
 msgid "Facebook"
 msgstr "Facebook"
@@ -23450,6 +23594,13 @@ msgstr ""
 msgctxt "@action"
 msgid "Export to &Facebook..."
 msgstr "Facebook으로 내보내기(&F)..."
+
+#: core/dplugins/generic/webservices/facebook/fbplugin.cpp:110
+#, fuzzy, kde-format
+#| msgid "Facebook"
+msgctxt "@title:window"
+msgid "Facebook"
+msgstr "Facebook"
 
 #: core/dplugins/generic/webservices/facebook/fbplugin.cpp:111
 #, kde-format
@@ -23517,12 +23668,16 @@ msgid "Validate previous session..."
 msgstr "이전 세션 검사 중..."
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:115
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to Facebook Web Service"
+msgctxt "@title:window"
 msgid "Export to Facebook Web Service"
 msgstr "Facebook 웹 서비스로 내보내기"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:118
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start upload to Facebook web service"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to Facebook web service"
 msgstr "Facebook 웹 서비스로 업로드 시작"
 
@@ -23576,7 +23731,9 @@ msgid "Target location: "
 msgstr "대상 위치: "
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:112
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Target Folder"
+msgctxt "@title:window"
 msgid "Target Folder"
 msgstr "대상 폴더"
 
@@ -23586,8 +23743,9 @@ msgid "Sets the target address to copy the items to."
 msgstr "항목을 복사할 대상 주소를 선택하십시오."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:115
-#, kde-format
-msgid "Target File behavior:"
+#, fuzzy, kde-format
+#| msgid "Target File behavior:"
+msgid "Target file behavior:"
 msgstr "대상 파일 행동:"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:117
@@ -23640,25 +23798,33 @@ msgid "This is the list of items to copy to the specified target."
 msgstr "지정한 대상 위치로 복사할 항목 목록입니다."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:91
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to Local Storage"
+msgctxt "@title:window"
 msgid "Export to Local Storage"
 msgstr "로컬 저장소로 내보내기"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:94
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:74
-#, kde-format
-msgid "Start export"
+#, fuzzy, kde-format
+#| msgid "Start export"
+msgctxt "@action:button"
+msgid "Start Export"
 msgstr "내보내기 시작"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:95
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:75
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start export to the specified target"
+msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
 msgstr "지정한 대상 위치로 내보내기 시작"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:217
-#, kde-format
-msgid "Copy not completed"
+#, fuzzy, kde-format
+#| msgid "Copy not completed"
+msgctxt "@title:window"
+msgid "Copy not Completed"
 msgstr "복사 완료되지 않음"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:218
@@ -23716,8 +23882,10 @@ msgid "This is the list of images to upload to the specified target."
 msgstr "지정한 대상 위치로 업로드할 사진 목록입니다."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:162
-#, kde-format
-msgid "Select target..."
+#, fuzzy, kde-format
+#| msgid "Select target..."
+msgctxt "@title:window"
+msgid "Select Target..."
 msgstr "대상 선택..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:163
@@ -23733,13 +23901,17 @@ msgid "<i>not selected</i>"
 msgstr "<선택하지 않음>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:71
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to Remote Storage"
+msgctxt "@title:window"
 msgid "Export to Remote Storage"
 msgstr "원격 저장소로 내보내기"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:186
-#, kde-format
-msgid "Upload not completed"
+#, fuzzy, kde-format
+#| msgid "Upload not completed"
+msgctxt "@title:window"
+msgid "Upload not Completed"
 msgstr "업로드 완료되지 않음"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:187
@@ -23762,28 +23934,39 @@ msgid "This is the list of images to import into the current album."
 msgstr "현재 앨범으로 가져올 수 있는 이미지 목록입니다."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:99
-#, kde-format
-msgid "Select items to import..."
+#, fuzzy, kde-format
+#| msgid "Select items to import..."
+msgctxt "@title:window"
+msgid "Select Items to Import..."
 msgstr "가져올 항목 선택..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:63
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import from Remote Storage"
+msgctxt "@title:window"
 msgid "Import from Remote Storage"
 msgstr "원격 저장소에서 가져오기"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:67
-#, kde-format
-msgid "Start import"
+#, fuzzy, kde-format
+#| msgid "Start import"
+msgctxt "@action:button"
+msgid "Start Import"
 msgstr "가져오기 시작"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:68
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Start importing the specified images into the currently selected album."
+msgctxt "@info:tooltip, button"
 msgid "Start importing the specified images into the currently selected album."
 msgstr "현재 선택한 앨범으로 선택한 이미지를 가져옵니다."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:138
-#, kde-format
-msgid "Import not completed"
+#, fuzzy, kde-format
+#| msgid "Import not completed"
+msgctxt "@title:window"
+msgid "Import not Completed"
 msgstr "가져오기 완료되지 않음"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:139
@@ -24264,13 +24447,17 @@ msgid "Fewer tag options"
 msgstr "태그 옵션 덜 보기"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:148
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to %1 Web Service"
+msgctxt "@title:window"
 msgid "Export to %1 Web Service"
 msgstr "%1 웹 서비스로 내보내기"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:187
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:240
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start Uploading"
+msgctxt "@action:button"
 msgid "Start Uploading"
 msgstr "업로드 시작"
 
@@ -24298,15 +24485,6 @@ msgid ""
 msgstr ""
 "%1에 사진을 업로드하지 못했습니다. %2\n"
 "계속 하시겠습니까?"
-
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:854
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:259
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:675
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:260
-#: core/libs/dialogs/dmessagebox.cpp:155
-#, kde-format
-msgid "Continue"
-msgstr "계속"
 
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:417
 #, kde-format
@@ -24549,44 +24727,58 @@ msgid "Build a combined tag string."
 msgstr "합쳐진 태그 문자열을 사용합니다."
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:140
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Export to Google Drive"
+msgctxt "@title:window"
 msgid "Export to Google Drive"
 msgstr "Google 드라이브로 내보내기"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:143
-#, kde-format
-msgctxt "@info"
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Start upload to Google Drive"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to Google Drive"
 msgstr "Google 드라이브로 업로드 시작"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:187
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Export to Google Photos Service"
+msgctxt "@title:window"
 msgid "Export to Google Photos Service"
 msgstr "Google 포토로 내보내기"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:190
-#, kde-format
-msgctxt "@info"
-msgid "Start upload to Google Photos Service"
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Start upload to Google Photos Service"
+msgctxt "@info:tooltip, button"
+msgid "Start upload to Google Photos service"
 msgstr "Google 포토 업로드 시작"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:196
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Import from Google Photos Service"
+msgctxt "@title:window"
 msgid "Import from Google Photos Service"
 msgstr "Google 포토에서 가져오기"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:198
-#, kde-format
-msgctxt "@action"
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:123
+#, fuzzy, kde-format
+#| msgid "Start Download"
+msgctxt "@action:button"
 msgid "Start Download"
 msgstr "다운로드 시작"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:199
-#, kde-format
-msgctxt "@info"
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Start download from Google Photos service"
+msgctxt "@info:tooltip, button"
 msgid "Start download from Google Photos service"
 msgstr "Google 포토 다운로드 시작"
 
@@ -24602,34 +24794,6 @@ msgstr "Google 포토 호출 실패: %1\n"
 msgctxt "@info"
 msgid "Google Drive call failed: %1\n"
 msgstr "Google 드라이브 호출 실패: %1\n"
-
-#: core/dplugins/generic/webservices/google/gswindow.cpp:506
-#: core/dplugins/generic/webservices/google/gswindow.cpp:531
-#: core/dplugins/generic/webservices/google/gswindow.cpp:944
-#: core/dplugins/generic/webservices/google/gswindow.cpp:965
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1013
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1063
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1256
-#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:670
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:256
-#, kde-format
-msgctxt "@title: window"
-msgid "Warning"
-msgstr "경고"
-
-#: core/dplugins/generic/webservices/google/gswindow.cpp:510
-#: core/dplugins/generic/webservices/google/gswindow.cpp:535
-#: core/dplugins/generic/webservices/google/gswindow.cpp:949
-#: core/dplugins/generic/webservices/google/gswindow.cpp:970
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1019
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1261
-#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:255
-#, kde-format
-msgctxt "@action"
-msgid "Continue"
-msgstr "계속"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:620
 #, kde-format
@@ -24693,11 +24857,9 @@ msgstr ""
 "그림을 표시할 수 없습니다"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1069
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
-#: core/utilities/imageeditor/editor/editorwindow.cpp:565
-#, kde-format
-msgctxt "@action"
+#, fuzzy, kde-format
+#| msgid "OK"
+msgctxt "@action:button"
 msgid "OK"
 msgstr "확인"
 
@@ -24812,19 +24974,25 @@ msgid "Create new gallery"
 msgstr "새 갤러리 만들기"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:104
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to ImageShack"
+msgctxt "@title:window"
 msgid "Export to ImageShack"
 msgstr "ImageShack으로 내보내기"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:112
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:156
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:123
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Upload"
+msgctxt "@action:button"
 msgid "Upload"
 msgstr "업로드"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:113
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start upload to ImageShack web service"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to ImageShack web service"
 msgstr "ImageShack 웹 서비스로 업로드"
 
@@ -24949,12 +25117,16 @@ msgid "Upload Anonymously"
 msgstr "익명 업로드"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:153
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to imgur.com"
+msgctxt "@title:window"
 msgid "Export to imgur.com"
 msgstr "imgur.com으로 내보내기"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:157
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start upload to Imgur"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to Imgur"
 msgstr "Imgur로 업로드 시작"
 
@@ -24965,7 +25137,9 @@ msgid "<i>Not logged in</i>"
 msgstr "<로그인되지 않음>"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:250
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Authorization Failed"
+msgctxt "@title:window"
 msgid "Authorization Failed"
 msgstr "인증 실패"
 
@@ -25077,21 +25251,26 @@ msgstr "로그인"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1345
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1507
-#, kde-format
-msgid "ERROR while creating observation"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Failed to upload photo"
+msgctxt "@title:window"
+msgid "ERROR While Creating Observation"
+msgstr "사진을 업로드할 수 없음"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1585
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1703
 #, fuzzy, kde-format
 #| msgid "Failed to upload photo"
-msgid "ERROR while uploading photo"
+msgctxt "@title:window"
+msgid "ERROR While Uploading Photo"
 msgstr "사진을 업로드할 수 없음"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1815
-#, kde-format
-msgid "ERROR while deleting observation"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Failed to upload photo"
+msgctxt "@title:window"
+msgid "ERROR While Deleting Observation"
+msgstr "사진을 업로드할 수 없음"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1919
 #, kde-format
@@ -25449,6 +25628,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:186
 #, fuzzy, kde-format
 #| msgid "Export to %1 Web Service"
+msgctxt "@title:window"
 msgid "Export as %1 Observation"
 msgstr "%1 웹 서비스로 내보내기"
 
@@ -25559,12 +25739,16 @@ msgid "Export to &Ipfs..."
 msgstr "IPFS로 내보내기(&I)..."
 
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:120
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to IPFS"
+msgctxt "@title:window"
 msgid "Export to IPFS"
 msgstr "IPFS로 내보내기"
 
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:124
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start upload to IPFS"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to IPFS"
 msgstr "IPFS로 업로드 시작"
 
@@ -26087,12 +26271,16 @@ msgid "Upload Settings"
 msgstr "업로드 설정"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:101
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to MediaWiki"
+msgctxt "@title:window"
 msgid "Export to MediaWiki"
 msgstr "미디어위키로 내보내기"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:104
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start upload to MediaWiki"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to MediaWiki"
 msgstr "미디어위키로 업로드 시작"
 
@@ -26102,7 +26290,9 @@ msgid "MediaWiki export"
 msgstr "미디어위키 내보내기"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:338
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Login Error"
+msgctxt "@title:window"
 msgid "Login Error"
 msgstr "로그인 오류"
 
@@ -26151,14 +26341,18 @@ msgid "Export to &Onedrive..."
 msgstr "OneDrive로 내보내기(&O)..."
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:80
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Export to Onedrive"
+msgctxt "@title:window"
 msgid "Export to Onedrive"
 msgstr "OneDrive로 내보내기"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:83
-#, kde-format
-msgctxt "@info"
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Start upload to Onedrive"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to Onedrive"
 msgstr "OneDrive로 업로드 시작"
 
@@ -26240,12 +26434,16 @@ msgstr ""
 "그림을 표시할 수 없습니다"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:80
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to Pinterest"
+msgctxt "@title:window"
 msgid "Export to Pinterest"
 msgstr "Pinterest로 내보내기"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start upload to Pinterest"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to Pinterest"
 msgstr "Pinterest로 업로드 시작"
 
@@ -26438,7 +26636,9 @@ msgid "Resized JPEG quality:"
 msgstr "크기 조정된 JPEG 품질:"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:227
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Piwigo Export"
+msgctxt "@title:window"
 msgid "Piwigo Export"
 msgstr "Piwigo 내보내기"
 
@@ -26653,12 +26853,16 @@ msgid "Adding photos %v%"
 msgstr "사진 추가 중 %v%"
 
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to Rajce.net"
+msgctxt "@title:window"
 msgid "Export to Rajce.net"
 msgstr "Rajce.net으로 내보내기"
 
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start upload to Rajce.net"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to Rajce.net"
 msgstr "Rajce.net으로 업로드 시작"
 
@@ -26953,27 +27157,30 @@ msgid "Maximum dimension:"
 msgstr "최대 크기:"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:121
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import from SmugMug Web Service"
+msgctxt "@title:window"
 msgid "Import from SmugMug Web Service"
 msgstr "SmugMug 웹 서비스에서 가져오기"
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:123
-#, kde-format
-msgid "Start Download"
-msgstr "다운로드 시작"
-
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:124
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start download from SmugMug web service"
+msgctxt "@info:tooltip, button"
 msgid "Start download from SmugMug web service"
 msgstr "SmugMug 웹 서비스에서 다운로드 시작"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:130
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to SmugMug Web Service"
+msgctxt "@title:window"
 msgid "Export to SmugMug Web Service"
 msgstr "SmugMug 웹 서비스로 내보내기"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:133
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start upload to SmugMug web service"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to SmugMug web service"
 msgstr "SmugMug 웹 서비스로 업로드 시작"
 
@@ -26982,8 +27189,9 @@ msgstr "SmugMug 웹 서비스로 업로드 시작"
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:489
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:526
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1018
-#, kde-format
-msgid "SmugMug Call Failed: %1\n"
+#, fuzzy, kde-format
+#| msgid "SmugMug Call Failed: %1\n"
+msgid "SmugMug call failed: %1\n"
 msgstr "SmugMug 호출 실패: %1\n"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:522
@@ -27102,12 +27310,16 @@ msgstr ""
 "그림을 표시할 수 없습니다"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:81
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to Twitter"
+msgctxt "@title:window"
 msgid "Export to Twitter"
 msgstr "트위터로 내보내기"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:84
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start upload to Twitter"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to Twitter"
 msgstr "트위터로 업로드 시작"
 
@@ -27143,7 +27355,9 @@ msgid "Cannot open image at %1\n"
 msgstr "%1의 이미지를 열 수 없음\n"
 
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:395
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "%1 Call Failed"
+msgctxt "@title:window"
 msgid "%1 Call Failed"
 msgstr "%1 호출 실패"
 
@@ -27231,7 +27445,8 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:310
 #, fuzzy, kde-format
-msgid "%1 - Create album failed"
+msgctxt "@title:window"
+msgid "%1 - Create Album Failed"
 msgstr "<b>만든 날짜</b>:"
 
 #: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:85
@@ -27273,7 +27488,9 @@ msgid "&Choose account:"
 msgstr "계정 선택(&C):"
 
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:84
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to Web Services"
+msgctxt "@title:window"
 msgid "Export to Web Services"
 msgstr "웹 서비스로 내보내기"
 
@@ -27560,9 +27777,11 @@ msgstr "<b>%1</b> 파일을 삭제하지 못했습니다. 계속 진행하시겠
 
 #: core/libs/album/engine/albummodificationhelper.cpp:283
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:145
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Album is full."
+msgctxt "@title:window"
 msgid "Rename Album (%1)"
-msgstr ""
+msgstr "앨범이 가득 찼습니다."
 
 #: core/libs/album/engine/albummodificationhelper.cpp:284
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:146
@@ -27702,13 +27921,15 @@ msgstr ""
 
 #: core/libs/album/manager/albummanager_database.cpp:357
 #, fuzzy, kde-format
-msgid "Collection not found"
+msgctxt "@title:window"
+msgid "Collection not Found"
 msgstr "선택 반전"
 
 #: core/libs/album/manager/albummanager_database.cpp:459
-#, kde-format
+#, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Database Folder"
-msgstr ""
+msgstr "<b>만든 날짜</b>:"
 
 #: core/libs/album/manager/albummanager_database.cpp:460
 #, kde-format
@@ -27724,6 +27945,7 @@ msgstr ""
 #: core/libs/album/manager/albummanager_database.cpp:538
 #: core/libs/album/manager/albummanager_database.cpp:560
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "<b>만든 날짜</b>:"
 
@@ -27732,6 +27954,7 @@ msgstr "<b>만든 날짜</b>:"
 #: core/libs/album/manager/albummanager_database.cpp:562
 #: core/libs/album/manager/albummanager_database.cpp:610
 #, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Create New Database"
 msgstr "<b>만든 날짜</b>:"
 
@@ -27739,9 +27962,11 @@ msgstr "<b>만든 날짜</b>:"
 #: core/libs/album/manager/albummanager_database.cpp:552
 #: core/libs/album/manager/albummanager_database.cpp:602
 #: core/libs/album/manager/albummanager_database.cpp:634
-#, kde-format
-msgid "New database folder"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Create Database Folder?"
+msgctxt "@title:window"
+msgid "New Database Folder"
+msgstr "데이터베이스 폴더를 만드시겠습니까?"
 
 #: core/libs/album/manager/albummanager_database.cpp:530
 #, kde-format
@@ -27756,9 +27981,10 @@ msgstr ""
 #: core/libs/album/manager/albummanager_database.cpp:542
 #: core/libs/album/manager/albummanager_database.cpp:612
 #: core/libs/album/manager/albummanager_database.cpp:643
-#, kde-format
+#, fuzzy, kde-format
+msgctxt "@action:button"
 msgid "Copy Current Database"
-msgstr ""
+msgstr "<b>만든 날짜</b>:"
 
 #: core/libs/album/manager/albummanager_database.cpp:553
 #, kde-format
@@ -27794,9 +28020,11 @@ msgid ""
 msgstr ""
 
 #: core/libs/album/manager/albummanager_database.cpp:645
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Existing Tags"
+msgctxt "@action:button"
 msgid "Use Existing File"
-msgstr ""
+msgstr "기존 태그"
 
 #: core/libs/album/manager/albummanager_database.cpp:700
 #, kde-format
@@ -28201,7 +28429,6 @@ msgid "Find Duplicates..."
 msgstr "중복 항목 찾기..."
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:234
-#: core/libs/album/treeview/albumselectiontreeview.cpp:305
 #, kde-format
 msgid "Scan for Faces"
 msgstr "얼굴 스캔"
@@ -28215,6 +28442,13 @@ msgstr "최근 태그"
 #, kde-format
 msgid "Refresh"
 msgstr "새로 고침"
+
+#: core/libs/album/treeview/albumselectiontreeview.cpp:305
+#, fuzzy, kde-format
+#| msgid "Scan for Faces"
+msgctxt "@title:window"
+msgid "Scan for Faces"
+msgstr "얼굴 스캔"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:306
 #, kde-format
@@ -28346,15 +28580,16 @@ msgid "White"
 msgstr "흰색"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:117
-#, kde-format
-msgctxt "@title: album properties"
+#, fuzzy, kde-format
+#| msgid "New Album"
+msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "새 앨범"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:117
 #, fuzzy, kde-format
 #| msgid "Edit Album"
-msgctxt "@title: album properties"
+msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "앨범 편집"
 
@@ -28487,8 +28722,8 @@ msgstr "<b>만든 날짜</b>:"
 #: core/libs/album/widgets/albumpropsedit.cpp:479
 #, fuzzy, kde-format
 #| msgid "Could not authorize"
-msgctxt "@title: album properties"
-msgid "Could Not Calculate Average"
+msgctxt "@title:window, album properties"
+msgid "Could not Calculate Average"
 msgstr "인증할 수 없음"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:480
@@ -28533,9 +28768,12 @@ msgid_plural "%1 Albums excluded"
 msgstr[0] "선택 반전"
 
 #: core/libs/album/widgets/albumselectdialog.cpp:71
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "Delete Album"
+msgctxt "@title:window"
 msgid "Select Album"
-msgstr ""
+msgstr "앨범 삭제"
 
 #: core/libs/album/widgets/albumselectors.cpp:136
 #: core/libs/album/widgets/albumselectors.cpp:492
@@ -29301,7 +29539,8 @@ msgstr ""
 
 #: core/libs/database/utils/ifaces/dio.cpp:326
 #, fuzzy, kde-format
-msgid "File conflict"
+msgctxt "@title:window"
+msgid "File Conflict"
 msgstr "최근 태그"
 
 #: core/libs/database/utils/ifaces/dio.cpp:327
@@ -29318,23 +29557,24 @@ msgid ""
 msgstr ""
 
 #: core/libs/database/utils/ifaces/dio.cpp:336
-#, kde-format
-msgid "Rename automatically"
+#, fuzzy, kde-format
+#| msgid "Rename automatically"
+msgctxt "@action:button"
+msgid "Rename Automatically"
 msgstr "자동으로 이름 바꾸기"
 
 #: core/libs/database/utils/ifaces/dio.cpp:338
-#: core/libs/widgets/files/filesaveconflictbox.cpp:71
-#: core/utilities/setup/camera/setupcamera.cpp:376
-#, kde-format
-msgid "Overwrite automatically"
+#, fuzzy, kde-format
+#| msgid "Overwrite automatically"
+msgctxt "@action:button"
+msgid "Overwrite Automatically"
 msgstr "자동으로 덮어쓰기"
 
 #: core/libs/database/utils/ifaces/dio.cpp:340
-#: core/libs/widgets/files/filesaveconflictbox.cpp:72
-#: core/utilities/setup/camera/setupcamera.cpp:377
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
-msgid "Skip automatically"
+msgctxt "@action:button"
+msgid "Skip Automatically"
 msgstr "자동으로 덮어 쓰기"
 
 #: core/libs/database/utils/ifaces/dio.cpp:766
@@ -29413,6 +29653,12 @@ msgctxt "@info:status"
 msgid "Scanning collection"
 msgstr "선택 반전"
 
+#: core/libs/database/utils/scan/scancontroller_progress.cpp:87
+#: core/libs/tags/widgets/tageditdlg.cpp:546
+#, kde-format
+msgid "Error"
+msgstr "오류"
+
 #: core/libs/database/utils/scan/scancontroller_start.cpp:206
 #, fuzzy, kde-format
 msgid "Preparing collection scan..."
@@ -29479,7 +29725,6 @@ msgid "Step Progress (%1)"
 msgstr ""
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:43
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:843
 #, fuzzy, kde-format
 msgid "Database Configuration"
 msgstr "RAW 그림"
@@ -29860,8 +30105,11 @@ msgstr "축소판 DB 이름:"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:594
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:599
-#, kde-format
-msgid "Database connection test"
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:852
+#, fuzzy, kde-format
+#| msgid "Database Connection Test"
+msgctxt "@title:window"
+msgid "Database Connection Test"
 msgstr "데이터베이스 연결 테스트"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:595
@@ -29909,17 +30157,18 @@ msgstr "유사성 데이터베이스 이름이 비어 있습니다"
 msgid "This path was set as a command lineoption (--database-directory)."
 msgstr "이 경로는 명령줄 옵션(--database-directory)으로 설정되었습니다."
 
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:843
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Database Configuration"
+msgstr "RAW 그림"
+
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:844
 #, kde-format
 msgid ""
 "The database names configuration is not valid. Error is <br/><p>%1</p><br/"
 ">Please check your configuration."
 msgstr ""
-
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:852
-#, kde-format
-msgid "Database Connection Test"
-msgstr "데이터베이스 연결 테스트"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:853
 #, kde-format
@@ -29936,7 +30185,9 @@ msgid ""
 msgstr ""
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:881
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create Database Folder?"
+msgctxt "@title:window"
 msgid "Create Database Folder?"
 msgstr "데이터베이스 폴더를 만드시겠습니까?"
 
@@ -29948,9 +30199,11 @@ msgid ""
 msgstr ""
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:893
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create Database Folder?"
+msgctxt "@title:window"
 msgid "Create Database Folder Failed"
-msgstr ""
+msgstr "데이터베이스 폴더를 만드시겠습니까?"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:894
 #, kde-format
@@ -29960,9 +30213,11 @@ msgid ""
 msgstr ""
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:919
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Database connection test successful."
+msgctxt "@title:window"
 msgid "No Database Write Access"
-msgstr ""
+msgstr "데이터베이스 연결 테스트가 성공했습니다."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:920
 #, kde-format
@@ -29972,10 +30227,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:46
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:97
-#, kde-format
+#, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Database Statistics"
-msgstr ""
+msgstr "RAW 그림"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:47
 #, kde-format
@@ -30218,18 +30473,25 @@ msgstr "휴지통으로 이동(&M)"
 
 #: core/libs/dialogs/deletedialog.cpp:655
 #, fuzzy, kde-format
-msgid "About to delete selected items"
+msgctxt "@title:window"
+msgid "About to Delete Selected Items"
 msgstr "선택 반전"
 
 #: core/libs/dialogs/deletedialog.cpp:662
-#, kde-format
-msgid "About to delete selected albums"
-msgstr ""
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "About to Delete Selected Albums"
+msgstr "선택 반전"
 
 #: core/libs/dialogs/dmessagebox.cpp:109
 #, kde-format
 msgid "Do not show this message again"
 msgstr "이 메시지를 다시 표시하지 않기"
+
+#: core/libs/dialogs/dmessagebox.cpp:155
+#, kde-format
+msgid "Continue"
+msgstr "계속"
 
 #: core/libs/dialogs/dmessagebox.cpp:166 core/libs/dialogs/dmessagebox.cpp:229
 #, kde-format
@@ -30237,14 +30499,18 @@ msgid "Do not ask again"
 msgstr "다시 묻지 않기"
 
 #: core/libs/dialogs/filesaveoptionsdlg.cpp:34
-#, kde-format
+#, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Settings for Saving Image File"
-msgstr ""
+msgstr "메타데이터"
 
 #: core/libs/dialogs/iccprofileinfodlg.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title: icc profile properties"
+#| msgid "ICC Color Profile Information"
+msgctxt "@title:window"
 msgid "Color Profile Info - %1"
-msgstr ""
+msgstr "ICC 색 프로필 정보"
 
 #: core/libs/dialogs/imagedialog.cpp:233
 #, kde-format
@@ -30332,8 +30598,10 @@ msgstr "<i>프레임 레이트:</i>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<i>비디오 코덱:</i>"
 
-#: core/libs/dialogs/infodlg.cpp:68
-#, kde-format
+#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:138
+#, fuzzy, kde-format
+#| msgid "Shared Libraries and Components Information"
+msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
 msgstr "공유 라이브러리와 구성 요소 정보"
 
@@ -30354,12 +30622,6 @@ msgstr "<font size=\"5\">%1</font><br/><b>버전 %2</b><p>%3</p><p><i>%4</i></p>
 #| msgid "Images List"
 msgid "Items List"
 msgstr "이미지 목록"
-
-#: core/libs/dialogs/libsinfodlg.cpp:138
-#, kde-format
-msgctxt "@title"
-msgid "Shared Libraries and Components Information"
-msgstr "공유 라이브러리와 구성 요소 정보"
 
 #: core/libs/dialogs/libsinfodlg.cpp:141
 #, fuzzy, kde-format
@@ -30434,8 +30696,10 @@ msgid "Unknown"
 msgstr "알 수 없음"
 
 #: core/libs/dialogs/rawcameradlg.cpp:56
-#, kde-format
-msgid "List of supported RAW cameras"
+#, fuzzy, kde-format
+#| msgid "List of supported RAW cameras"
+msgctxt "@title:window"
+msgid "List of Supported RAW Cameras"
 msgstr "지원하는 RAW 카메라 목록"
 
 #: core/libs/dialogs/rawcameradlg.cpp:129
@@ -30452,8 +30716,8 @@ msgstr[0] ""
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:83
 #, kde-format
-msgctxt "@title"
-msgid "List of detected hardware"
+msgctxt "@title:window"
+msgid "List of Detected Hardware"
 msgstr ""
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:86
@@ -31110,9 +31374,12 @@ msgid "Luminosity"
 msgstr "광도"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:529
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "White Color Balance Settings File to Load"
+msgctxt "@title:window"
 msgid "Black & White Settings File to Load"
-msgstr ""
+msgstr "불러올 화이트 밸런스 설정 파일"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:547
 #, kde-format
@@ -31125,9 +31392,11 @@ msgid "Cannot load settings from the Black & White text file."
 msgstr ""
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:600
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Black & White / Sepia Filter"
+msgctxt "@title:window"
 msgid "Black & White Settings File to Save"
-msgstr ""
+msgstr "흑백/세피아 필터"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:639
 #, kde-format
@@ -31259,7 +31528,7 @@ msgstr "전체: %1 (%)"
 #: core/libs/dimg/filters/bw/mixersettings.cpp:545
 #, fuzzy, kde-format
 #| msgid "Gimp Gains Mixer File to Save"
-msgctxt "@info"
+msgctxt "@title:window"
 msgid "Select Gimp Gains Mixer File to Load"
 msgstr "저장할 김프 게인 믹서 파일"
 
@@ -31271,8 +31540,10 @@ msgid "Cannot load settings from the Gains Mixer text file."
 msgstr "사진 크기 조정 설정 텍스트 파일에서 불러올 수 없습니다."
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:635
-#, kde-format
-msgctxt "@info"
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Gimp Gains Mixer File to Save"
+msgctxt "@title:window"
 msgid "Gimp Gains Mixer File to Save"
 msgstr "저장할 김프 게인 믹서 파일"
 
@@ -31426,9 +31697,11 @@ msgid "Adjust Curves"
 msgstr "곡선 조정"
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:242
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select Gimp Levels File to Load"
+msgctxt "@title:window"
 msgid "Select Gimp Curves File to Load"
-msgstr ""
+msgstr "불러올 김프 레벨 파일 선택"
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:254
 #, kde-format
@@ -31436,9 +31709,11 @@ msgid "Cannot load from the Gimp curves text file."
 msgstr ""
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:263
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Gimp Levels File to Save"
+msgctxt "@title:window"
 msgid "Gimp Curves File to Save"
-msgstr ""
+msgstr "저장할 김프 레벨 파일"
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:275
 #, kde-format
@@ -32481,7 +32756,9 @@ msgid "Select Black Frame Image"
 msgstr "검은 프레임 이미지 선택"
 
 #: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:231
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Black Frame Parser"
+msgctxt "@title:window"
 msgid "Black Frame Parser"
 msgstr "검은 프레임 파서"
 
@@ -32694,9 +32971,11 @@ msgid "Stage 4"
 msgstr ""
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:637
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Restoration Settings File to Load"
+msgctxt "@title:window"
 msgid "Photograph Local Contrast Settings File to Load"
-msgstr ""
+msgstr "불러올 사진 복원 설정 파일"
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:655
 #, kde-format
@@ -32709,9 +32988,11 @@ msgid "Cannot load settings from the Photograph Local Contrast text file."
 msgstr ""
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:691
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Restoration Settings File to Save"
+msgctxt "@title:window"
 msgid "Photograph Local Contrast Settings File to Save"
-msgstr ""
+msgstr "저장할 사진 복원 설정 파일"
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:727
 #, kde-format
@@ -33295,7 +33576,9 @@ msgid "Chrominance Red"
 msgstr ""
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:372
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Noise Reduction Settings File to Load"
+msgctxt "@title:window"
 msgid "Photograph Noise Reduction Settings File to Load"
 msgstr "불러올 잡음 감소 설정 파일"
 
@@ -33310,7 +33593,9 @@ msgid "Cannot load settings from the Photograph Noise Reduction text file."
 msgstr "사진 잡음 감소 설정 텍스트 파일에서 불러올 수 없습니다."
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:418
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Noise Reduction Settings File to Save"
+msgctxt "@title:window"
 msgid "Photograph Noise Reduction Settings File to Save"
 msgstr "저장할 잡음 감소 설정 파일"
 
@@ -33476,9 +33761,11 @@ msgid ""
 msgstr ""
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:515
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Resizing Settings File to Load"
+msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Load"
-msgstr ""
+msgstr "불러올 사진 크기 조정 설정 파일"
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:533
 #, kde-format
@@ -33491,9 +33778,11 @@ msgid "Cannot load settings from the Photograph Refocus text file."
 msgstr ""
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:564
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Resizing Settings File to Save"
+msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Save"
-msgstr ""
+msgstr "저장할 사진 크기 조정 설정 파일"
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:594
 #, kde-format
@@ -33916,8 +34205,10 @@ msgid ""
 msgstr "이 값(E.V 단위)은 기본 노출 보정 값에 미세 조정으로 더해집니다."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:522
-#, kde-format
-msgctxt "@info"
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "White Color Balance Settings File to Load"
+msgctxt "@title:window"
 msgid "White Color Balance Settings File to Load"
 msgstr "불러올 화이트 밸런스 설정 파일"
 
@@ -33934,8 +34225,10 @@ msgid "Cannot load settings from the White Color Balance text file."
 msgstr "화이트 밸런스 설정 텍스트 파일에서 불러올 수 없습니다."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:569
-#, kde-format
-msgctxt "@info"
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "White Color Balance Settings File to Save"
+msgctxt "@title:window"
 msgid "White Color Balance Settings File to Save"
 msgstr "저장할 화이트 밸런스 설정 파일"
 
@@ -34105,8 +34398,10 @@ msgid "Type-Mimes"
 msgstr "MIME 형식"
 
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:60
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "About %1 Plugin"
+msgctxt "@title:window"
 msgid "About %1 Plugin"
 msgstr "%1 플러그인 정보"
 
@@ -34363,7 +34658,9 @@ msgid "Location of the album that will be created (optional)."
 msgstr "생성할 앨범의 위치입니다(선택)."
 
 #: core/libs/dplugins/webservices/wsselectuserdlg.cpp:60
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Account Selector"
+msgctxt "@title:window"
 msgid "Account Selector"
 msgstr "계정 선택 도구"
 
@@ -34541,8 +34838,10 @@ msgid "JPEG Quality:"
 msgstr "JPEG 품질:"
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:60
-#, kde-format
-msgctxt "@action: button"
+#, fuzzy, kde-format
+#| msgctxt "@action: button"
+#| msgid "&Start"
+msgctxt "@action:button"
 msgid "&Start"
 msgstr "시작(&S)"
 
@@ -34607,9 +34906,11 @@ msgid "Save the list."
 msgstr "목록을 저장합니다."
 
 #: core/libs/dplugins/widgets/ditemslist.cpp:580
-#, kde-format
-msgctxt "@info"
-msgid "Select the image file list to load"
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Select the image file list to load"
+msgctxt "@title:window"
+msgid "Select the Image File List to Load"
 msgstr "불러올 사진 파일 목록 선택"
 
 #: core/libs/dplugins/widgets/ditemslist.cpp:581
@@ -34620,9 +34921,11 @@ msgid "All Files (*)"
 msgstr "모든 파일 (*)"
 
 #: core/libs/dplugins/widgets/ditemslist.cpp:661
-#, kde-format
-msgctxt "@info"
-msgid "Select the image file list to save"
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Select the image file list to save"
+msgctxt "@title:window"
+msgid "Select the Image File List to Save"
 msgstr "저장할 사진 파일 목록 선택"
 
 #: core/libs/dplugins/widgets/ditemslist_view.cpp:40
@@ -34682,7 +34985,6 @@ msgid "User6"
 msgstr "사용자6"
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:67
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:62
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Help"
@@ -34774,6 +35076,14 @@ msgstr ""
 "손실 없이 큰 파일을 생성하며, 무손실 압축을 수행합니다.</p><p><b>PPM</b>: 처"
 "리한 사진을 PPM 형식으로 저장합니다. 품질 손실 없이 가장 큰 파일을 생성하며, "
 "압축하지 않습니다.</p>"
+
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Help"
+msgctxt "@action:button"
+msgid "Help"
+msgstr "도움말"
 
 #: core/libs/dtrash/dtrashitemmodel.cpp:259
 #, kde-format
@@ -37094,6 +37404,7 @@ msgstr ""
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:185
 #, kde-format
+msgctxt "@title:window"
 msgid "Online Version Checker - Pre-Release"
 msgstr ""
 
@@ -37104,6 +37415,7 @@ msgstr "파일에 메타데이터를 쓰고 있습니다. 기다려 주십시오
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:190
 #, kde-format
+msgctxt "@title:window"
 msgid "Online Version Checker - Stable Version"
 msgstr ""
 
@@ -37545,8 +37857,8 @@ msgstr "항상 확인하지 않고 변경 사항 적용하기"
 #: core/libs/properties/captions/itemdescedittab.cpp:359
 #, fuzzy, kde-format
 #| msgid "Apply changes?"
-msgctxt "@title"
-msgid "Apply changes?"
+msgctxt "@title:window"
+msgid "Apply Changes?"
 msgstr "변경 사항을 적용하시겠습니까?"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:369
@@ -39636,7 +39948,9 @@ msgstr "'%1' 태그를 삭제하시겠습니까?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:294
 #: core/libs/tags/engine/tagmodificationhelper.cpp:407
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Tag"
+msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "태그 삭제"
 
@@ -39872,8 +40186,9 @@ msgid "Previous tags were changed. Save changes? "
 msgstr "이전 태그가 변경되었습니다. 저장하시겠습니까?"
 
 #: core/libs/tags/manager/tagsmanager.cpp:177
-#: core/libs/widgets/mainview/daboutdata.cpp:190
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Tags Manager"
+msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "태그 관리자"
 
@@ -39908,7 +40223,10 @@ msgid_plural "Delete tags %2?"
 msgstr[0] "%2 태그를 삭제하시겠습니까?"
 
 #: core/libs/tags/manager/tagsmanager.cpp:375
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete tag"
+#| msgid_plural "Delete tags"
+msgctxt "@title:window"
 msgid "Delete tag"
 msgid_plural "Delete tags"
 msgstr[0] "태그 삭제"
@@ -40082,12 +40400,16 @@ msgid "Both"
 msgstr "모두"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:113
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "New Tag"
+msgctxt "@title:window"
 msgid "New Tag"
 msgstr "새 태그"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:117
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit Tag"
+msgctxt "@title:window"
 msgid "Edit Tag"
 msgstr "태그 편집"
 
@@ -40140,9 +40462,11 @@ msgid "<b>Properties of Tag<br/>\"%1\"</b>"
 msgstr "<b>만든 날짜</b>:"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:529
-#, kde-format
-msgid "Tag creation Error"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Login Error"
+msgctxt "@title:window"
+msgid "Tag Creation Error"
+msgstr "로그인 오류"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:544
 #, kde-format
@@ -40653,7 +40977,8 @@ msgstr "%1의 축소판을 만들 수 없음"
 
 #: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:153
 #, fuzzy, kde-format
-msgid "Failed to initialize thumbnails database"
+msgctxt "@title:window"
+msgid "Failed to Initialize Thumbnails Database"
 msgstr ""
 "\"%1\"\n"
 "그림을 표시할 수 없습니다"
@@ -40664,7 +40989,9 @@ msgid "Error message: %1"
 msgstr "오류 메시지: %1"
 
 #: core/libs/timeadjust/clockphotodialog.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Determine Time Difference With Clock Photo"
+msgctxt "@title:window"
 msgid "Determine Time Difference With Clock Photo"
 msgstr "시계 사진과 시간 차이 계산"
 
@@ -41972,8 +42299,8 @@ msgstr "캡처"
 #: core/libs/video/qtav/config/DecoderConfigPage.cpp:214
 #, fuzzy, kde-format
 #| msgid "Video codec"
-msgctxt "@title"
-msgid "Video decoder config page"
+msgctxt "@title:window"
+msgid "Video Decoder Config Page"
 msgstr "비디오 코덱"
 
 #: core/libs/video/qtav/config/DecoderConfigPage.cpp:226
@@ -42353,13 +42680,16 @@ msgstr "정보"
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:237
 #, fuzzy, kde-format
 #| msgid "About"
+msgctxt "@title:window"
 msgid "About QtAV"
 msgstr "정보"
 
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:232
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "About"
+msgctxt "@title:window"
 msgid "About FFmpeg"
-msgstr ""
+msgstr "정보"
 
 #: core/libs/widgets/combo/dcombobox.cpp:61
 #: core/libs/widgets/range/dnuminput.cpp:71
@@ -42370,7 +42700,9 @@ msgid "Reset to default value"
 msgstr "기본값으로 초기화"
 
 #: core/libs/widgets/files/dbinaryiface.cpp:215
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Navigate to %1"
+msgctxt "@title:window"
 msgid "Navigate to %1"
 msgstr "%1(으)로 탐색"
 
@@ -42443,6 +42775,19 @@ msgstr "대상 파일이 존재하면:"
 #, kde-format
 msgid "Store as a different name"
 msgstr "다른 이름으로 저장하기"
+
+#: core/libs/widgets/files/filesaveconflictbox.cpp:71
+#: core/utilities/setup/camera/setupcamera.cpp:376
+#, kde-format
+msgid "Overwrite automatically"
+msgstr "자동으로 덮어쓰기"
+
+#: core/libs/widgets/files/filesaveconflictbox.cpp:72
+#: core/utilities/setup/camera/setupcamera.cpp:377
+#, fuzzy, kde-format
+#| msgid "Overwrite automatically"
+msgid "Skip automatically"
+msgstr "자동으로 덮어 쓰기"
 
 #: core/libs/widgets/files/filesaveoptionsbox.cpp:116
 #, kde-format
@@ -43371,6 +43716,11 @@ msgstr "UPNP/DLNA 내보내기 도구, 이미지 편집기의 힐링 복제 도�
 msgid "Veaceslav Munteanu"
 msgstr "Veaceslav Munteanu"
 
+#: core/libs/widgets/mainview/daboutdata.cpp:190
+#, kde-format
+msgid "Tags Manager"
+msgstr "태그 관리자"
+
 #: core/libs/widgets/mainview/daboutdata.cpp:195
 #, kde-format
 msgid "Tarek Talaat"
@@ -43803,6 +44153,11 @@ msgstr "기여..."
 #, fuzzy, kde-format
 msgid "Check for New Version..."
 msgstr "선택 반전"
+
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:97
+#, kde-format
+msgid "Database Statistics"
+msgstr ""
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:125
 #, kde-format
@@ -44733,7 +45088,7 @@ msgstr "파일 이름: %1 (%2)"
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:398
 #, fuzzy, kde-format
 #| msgid "Caption Information"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Save ExifTool Information"
 msgstr "캡션 정보"
 
@@ -45059,8 +45414,8 @@ msgstr "%1(으)로 탐색"
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:423
 #, fuzzy, kde-format
-msgctxt "@info"
-msgid "Failed to translate string with %1 Web-service"
+msgctxt "@title:window"
+msgid "Failed to Translate String with %1 Web-Service"
 msgstr ""
 "\"%1\"\n"
 "그림을 표시할 수 없습니다"
@@ -50714,14 +51069,18 @@ msgid "Icon Size: %1"
 msgstr "아이콘 크기:"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:99
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "New Bookmark"
+msgctxt "@title:window"
 msgid "New Bookmark"
 msgstr "새 책갈피"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:103
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Edit Bookmark"
+msgctxt "@title:window"
 msgid "Edit Bookmark"
 msgstr "책갈피 편집"
 
@@ -50842,8 +51201,10 @@ msgid "Edit current bookmark from the list"
 msgstr "목록에서 현재 선택한 값 삭제"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:245
-#, kde-format
-msgctxt "@title: window"
+#, fuzzy, kde-format
+#| msgctxt "@title: window"
+#| msgid "Add New Bookmark"
+msgctxt "@title:window"
 msgid "Add New Bookmark"
 msgstr "새 책갈피 추가"
 
@@ -50859,7 +51220,7 @@ msgstr ""
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:259
 #, fuzzy, kde-format
 #| msgid "Confirm Deletion"
-msgctxt "@title: window"
+msgctxt "@title:window"
 msgid "Confirm Bookmark Deletion"
 msgstr "삭제 확인"
 
@@ -50968,7 +51329,10 @@ msgid "Delete File"
 msgstr "파일 삭제"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
-#, kde-format
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2323
+#, fuzzy, kde-format
+#| msgid "Error Saving File"
+msgctxt "@title:window"
 msgid "Error Saving File"
 msgstr "파일 저장 오류"
 
@@ -51004,8 +51368,10 @@ msgid "Cannot delete \"%1\""
 msgstr "\"%1\"을(를) 삭제할 수 없음"
 
 #: core/showfoto/main/showfoto_open.cpp:58
-#, kde-format
-msgid "Open Images From Folder"
+#, fuzzy, kde-format
+#| msgid "Open Images From Folder"
+msgctxt "@title:window"
+msgid "Open Images from Folder"
 msgstr "폴더에서 이미지 열기"
 
 #: core/showfoto/main/showfoto_open.cpp:299
@@ -51015,7 +51381,9 @@ msgid "There is no item to process."
 msgstr "처리할 끌어다 놓은 항목이 없습니다."
 
 #: core/showfoto/main/showfoto_open.cpp:321
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Error Loading File"
+msgctxt "@title:window"
 msgid "Error Loading File"
 msgstr "파일 불러오는 중 오류"
 
@@ -51084,8 +51452,10 @@ msgstr "장식(&D)"
 msgid "Effec&ts"
 msgstr "효과(&T)"
 
-#: core/showfoto/setup/showfotosetup.cpp:98
-#, kde-format
+#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:142
+#, fuzzy, kde-format
+#| msgid "Configure"
+msgctxt "@title:window"
 msgid "Configure"
 msgstr "설정"
 
@@ -52058,36 +52428,36 @@ msgstr[0] "파일 %1개"
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:692
 #, fuzzy, kde-format
 #| msgid "New Features"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "New Favorite Item"
 msgstr "새로운 기능"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:696
 #, fuzzy, kde-format
 #| msgid "Edit Tag Title"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Edit Favorite Item"
 msgstr "태그 제목 편집"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:703
 #, fuzzy, kde-format
 #| msgid "New Features"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "New Favorite Folder"
 msgstr "새로운 기능"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:707
 #, fuzzy, kde-format
 #| msgid "Edit Tag Title"
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Edit Favorite Folder"
 msgstr "태그 제목 편집"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:764
 #, fuzzy, kde-format
 #| msgid "Could not authorize"
-msgctxt "@title: favorite item properties"
-msgid "Could Not Calculate Average"
+msgctxt "@title:window, favorite item properties"
+msgid "Could not Calculate Average"
 msgstr "인증할 수 없음"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:765
@@ -52165,7 +52535,7 @@ msgstr "찾기:"
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:357
 #, fuzzy, kde-format
 #| msgid "Confirm Deletion"
-msgctxt "@title: window"
+msgctxt "@title:window"
 msgid "Confirm Item Deletion"
 msgstr "삭제 확인"
 
@@ -52358,6 +52728,13 @@ msgstr "이미지 정렬"
 msgid "<b>Renaming images. Please wait...</b>"
 msgstr "<b>이미지 이름 바꾸는 중. 기다려 주십시오...</b>"
 
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
+#, fuzzy, kde-format
+#| msgid "&Abort"
+msgctxt "@action:button"
+msgid "&Abort"
+msgstr "중단(&A)"
+
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:86
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:905
 #, kde-format
@@ -52366,8 +52743,10 @@ msgstr "처리 중..."
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:87
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:160
-#, kde-format
-msgid "Renaming images"
+#, fuzzy, kde-format
+#| msgid "Renaming images"
+msgctxt "@title:window"
+msgid "Renaming Images"
 msgstr "이미지 이름 바꾸는 중"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:161
@@ -52385,12 +52764,16 @@ msgstr[0] ""
 "시겠습니까?"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:170
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Rename Again"
+msgctxt "@action:button"
 msgid "Rename Again"
 msgstr "다시 이름 바꾸기"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:172
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Overwrite"
+msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "덮어쓰기"
 
@@ -52473,7 +52856,9 @@ msgstr ""
 "렬 기준이 표시됩니다(앨범 UI만 해당)."
 
 #: core/utilities/advancedrename/common/tooltipdialog.cpp:53
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Information"
+msgctxt "@title:window"
 msgid "Information"
 msgstr "정보"
 
@@ -53327,6 +53712,14 @@ msgstr "주소록 항목을 찾을 수 없음"
 msgid "Applying face changes"
 msgstr "얼굴 변경 적용 중"
 
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
+#: core/utilities/imageeditor/editor/editorwindow.cpp:565
+#, kde-format
+msgctxt "@action"
+msgid "OK"
+msgstr "확인"
+
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:180
 #, kde-format
 msgctxt "@info:tooltip"
@@ -53598,7 +53991,9 @@ msgstr ""
 "더 아래에 저장합니다."
 
 #: core/utilities/firstrun/collectionpage.cpp:179
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create Root Album Folder?"
+msgctxt "@title:window"
 msgid "Create Root Album Folder?"
 msgstr "루트 앨범 폴더를 만드시겠습니까?"
 
@@ -53610,7 +54005,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/firstrun/collectionpage.cpp:192
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create Root Album Folder Failed"
+msgctxt "@title:window"
 msgid "Create Root Album Folder Failed"
 msgstr "루트 앨범 폴더 생성 실패"
 
@@ -54346,10 +54743,6 @@ msgstr "이 파일은 XBEL 버전 1.0 파일이 아닙니다."
 msgid "Unknown title"
 msgstr "알 수 없는 제목"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:89
-msgid "Add Bookmark"
-msgstr "책갈피 추가"
-
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:94
 #, kde-format
 msgid ""
@@ -54367,7 +54760,9 @@ msgid "Bookmark comment"
 msgstr "책갈피 설명"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:210
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit Geolocation Bookmarks"
+msgctxt "@title:window"
 msgid "Edit Geolocation Bookmarks"
 msgstr "지리적 위치 책갈피 편집"
 
@@ -54437,7 +54832,9 @@ msgstr "설명"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:809
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:944
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Loading Bookmark"
+msgctxt "@title:window"
 msgid "Loading Bookmark"
 msgstr "책갈피 불러오는 중"
 
@@ -54452,7 +54849,9 @@ msgstr ""
 "%3"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:931
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Open File"
+msgctxt "@title:window"
 msgid "Open File"
 msgstr "파일 열기"
 
@@ -54468,7 +54867,9 @@ msgid "Imported %1"
 msgstr "%1 가져옴"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:958
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save File"
+msgctxt "@title:window"
 msgid "Save File"
 msgstr "파일 저장"
 
@@ -54478,13 +54879,16 @@ msgid "%1 Bookmarks.xbel"
 msgstr "%1 책갈피.xbel"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:970
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export error"
+msgctxt "@title:window"
 msgid "Export error"
 msgstr "내보내기 오류"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:970
-#, kde-format
-msgid "error saving bookmarks"
+#, fuzzy, kde-format
+#| msgid "error saving bookmarks"
+msgid "Error saving bookmarks"
 msgstr "책갈피 저장하는 중 오류"
 
 #: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:145
@@ -54619,12 +55023,6 @@ msgstr ""
 msgid "Correlate"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:284
-#, kde-format
-msgctxt "@title:window"
-msgid "Select GPX File to Load"
-msgstr "불러올 GPX 파일 선택"
-
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:326
 #, kde-format
 msgid "The following GPX file could not be loaded:"
@@ -54632,9 +55030,12 @@ msgid_plural "The following %1 GPX files could not be loaded:"
 msgstr[0] ""
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:330
-#, kde-format
-msgid "Error loading GPX file"
-msgid_plural "Error loading GPX files"
+#, fuzzy, kde-format
+#| msgid "Error loading GPX file"
+#| msgid_plural "Error loading GPX files"
+msgctxt "@title:window"
+msgid "Error Loading GPX File"
+msgid_plural "Error Loading GPX Files"
 msgstr[0] "GPX 파일 불러오기 오류"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:435
@@ -54644,7 +55045,8 @@ msgstr "RAW 그림"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:517
 #, fuzzy, kde-format
-msgid "Correlation failed"
+msgctxt "@title:window"
+msgid "Correlation Failed"
 msgstr "연결 실패"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:518
@@ -54656,7 +55058,8 @@ msgstr ""
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:523
 #, fuzzy, kde-format
-msgid "Correlation succeeded"
+msgctxt "@title:window"
+msgid "Correlation Succeeded"
 msgstr "연결 실패"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:524
@@ -54669,7 +55072,8 @@ msgstr ""
 #. See bug #376438 for details.
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:532
 #, fuzzy, kde-format
-msgid "Correlation finished"
+msgctxt "@title:window"
+msgid "Correlation Finished"
 msgstr "연결 실패"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:534
@@ -54817,6 +55221,7 @@ msgstr ""
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
 #, kde-format
+msgctxt "@title:window"
 msgid "GPS Sync"
 msgstr ""
 
@@ -54826,11 +55231,6 @@ msgid ""
 "Found more than one point on the clipboard - can only assign one point at a "
 "time."
 msgstr ""
-
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
-#, kde-format
-msgid "Geolocation Editor"
-msgstr "지리적 위치 편집기"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:541
 #, kde-format
@@ -55119,10 +55519,11 @@ msgid "Retrieving RG info -"
 msgstr ""
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add New Tag..."
 msgctxt "@title:window"
-msgid "Add new tag:"
-msgstr "새 태그 추가:"
+msgid "Add New Tag:"
+msgstr "새 태그 추가..."
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:846
 #, kde-format
@@ -55334,7 +55735,8 @@ msgstr ""
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:117
 #: core/utilities/searchwindow/searchtabheader.cpp:586
 #, kde-format
-msgid "Name exists"
+msgctxt "@title:window"
+msgid "Name Exists"
 msgstr ""
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:660
@@ -55540,7 +55942,9 @@ msgid "<b>No Profile</b>"
 msgstr "<b>프로필 없음</b>"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:80
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Soft Proofing Options"
+msgctxt "@title:window"
 msgid "Soft Proofing Options"
 msgstr "소프트 프루핑 옵션"
 
@@ -55607,9 +56011,11 @@ msgstr ""
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:225
 #: core/utilities/setup/setupicc.cpp:868
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Color Profile Conversion"
+msgctxt "@title:window"
 msgid "Profile Error"
-msgstr ""
+msgstr "색 프로필 변환"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:225
 #: core/utilities/setup/setupicc.cpp:868
@@ -55683,68 +56089,75 @@ msgstr ""
 msgid "Tools"
 msgstr "도구"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:144
-#: core/utilities/queuemanager/views/toolsettingsview.cpp:109
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:147
+#: core/utilities/queuemanager/views/toolsettingsview.cpp:116
 #, kde-format
 msgid "About this tool..."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:174
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:151
+#: core/utilities/queuemanager/views/toolsettingsview.cpp:112
+#, fuzzy, kde-format
+#| msgid "Online Handbook..."
+msgid "Tool online handbook..."
+msgstr "온라인 도움말..."
+
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
 #, kde-format
 msgid "Guide:"
 msgstr "안내선:"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:178
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:187
 #, kde-format
 msgid "Set here the color used to draw dashed guide lines."
 msgstr "점선으로 된 안내선을 그릴 때 사용할 색상을 지정하십시오."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:192
 #, kde-format
 msgid "Set here the width in pixels used to draw dashed guide lines."
 msgstr "점선으로 된 안내선의 너비를 픽셀 단위로 지정하십시오."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:191
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:200
 #, kde-format
 msgid "Defaults"
 msgstr "기본값"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:193
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
 #, kde-format
 msgid "Reset all settings to their default values."
 msgstr "모든 항목을 기본값으로 초기화합니다."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:210
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:219
 #, fuzzy, kde-format
 #| msgid "Load..."
 msgctxt "@action: load previously saved filter settings"
 msgid "Load..."
 msgstr "불러오기..."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:212
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:221
 #, kde-format
 msgid "Load all parameters from settings text file."
 msgstr "설정 텍스트 파일에서 인자를 불러옵니다."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:214
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:223
 #, kde-format
 msgctxt "@action: save current filter settings"
 msgid "Save As..."
 msgstr "다른 이름으로 저장..."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:216
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:225
 #, kde-format
 msgid "Save all parameters to settings text file."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:218
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:227
 #, fuzzy, kde-format
 #| msgid "Try"
 msgctxt "@action: try current filter settings"
 msgid "Try"
 msgstr "시도하기"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:220
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:229
 #, kde-format
 msgid "Try all settings."
 msgstr "모든 설정을 시도합니다."
@@ -56090,8 +56503,8 @@ msgstr "파일에 정보 추가"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1085
 #, fuzzy, kde-format
-msgctxt "@title"
-msgid "Saving image..."
+msgctxt "@title:window"
+msgid "Saving Image..."
 msgstr "RAW 그림"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1086
@@ -56114,8 +56527,10 @@ msgstr ""
 "계속 진행하시겠습니까?"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1112
-#, kde-format
-msgctxt "@title; warning while saving progress"
+#, fuzzy, kde-format
+#| msgctxt "@title: dialog"
+#| msgid "Warning"
+msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr "경고"
 
@@ -56198,13 +56613,6 @@ msgctxt "@info"
 msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgstr "열 수 없음: %1"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1803
-#, fuzzy, kde-format
-#| msgid "New Image File Name"
-msgctxt "@title"
-msgid "New Image File Name"
-msgstr "새 이미지 파일 이름"
-
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1949
 #, kde-format
 msgctxt "@info"
@@ -56223,13 +56631,6 @@ msgctxt "@info"
 msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2277
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2296
-#, kde-format
-msgctxt "@title"
-msgid "Overwrite File?"
-msgstr "파일을 덮어쓰시겠습니까?"
-
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2278
 #, fuzzy, kde-format
 #| msgid ""
@@ -56246,12 +56647,6 @@ msgctxt "@info"
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "파일 \"%1\"이(가) 이미 존재합니다. 덮어쓰시겠습니까?"
-
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2323
-#, kde-format
-msgctxt "@title"
-msgid "Error Saving File"
-msgstr "파일 저장 오류"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2324
 #, fuzzy, kde-format
@@ -56378,7 +56773,9 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2(%3백만 화소)"
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:927
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "No Image in Current Album"
+msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr "현재 앨범에 이미지 없음"
 
@@ -56390,8 +56787,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:1199
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "File Not Available"
+msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "파일을 사용할 수 없음"
 
@@ -57387,9 +57786,11 @@ msgstr ""
 "(가) 포함되어 있습니다.<br/>새 파일 이름(확장자 없이)을 입력하십시오:</qt>"
 
 #: core/utilities/import/main/importui.cpp:1245
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "File already exists"
 msgctxt "@title:window"
-msgid "File already exists"
+msgid "File Already Exists"
 msgstr "파일이 이미 존재함"
 
 #: core/utilities/import/main/importui.cpp:1312
@@ -58395,7 +58796,9 @@ msgid "Finger-prints"
 msgstr ""
 
 #: core/utilities/maintenance/maintenancedlg.cpp:196
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Maintenance"
+msgctxt "@title:window"
 msgid "Maintenance"
 msgstr "관리"
 
@@ -58758,9 +59161,11 @@ msgid "Ready"
 msgstr "준비"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:523
-#, kde-format
-msgid "Processing under progress"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Printing in Progress"
+msgctxt "@title:window"
+msgid "Processing Under Progress"
+msgstr "인쇄 중"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:524
 #, kde-format
@@ -58796,9 +59201,10 @@ msgstr ""
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:841
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:851
-#, kde-format
-msgid "Processed items album settings"
-msgstr ""
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Processed Items Album Settings"
+msgstr "최근 태그"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:842
 #, kde-format
@@ -59086,7 +59492,7 @@ msgstr "동작"
 msgid "Saving Images"
 msgstr "RAW 그림"
 
-#: core/utilities/queuemanager/views/toolsettingsview.cpp:105
+#: core/utilities/queuemanager/views/toolsettingsview.cpp:108
 #, kde-format
 msgid "Reset current tool settings to default values."
 msgstr ""
@@ -59180,15 +59586,18 @@ msgid "History"
 msgstr "역사"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:68
-#: core/utilities/queuemanager/views/workflowdlg.cpp:137
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Workflow"
+msgctxt "@title:window"
 msgid "New Workflow"
-msgstr ""
+msgstr "작업 흐름"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:68
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Workflow"
+msgctxt "@title:window"
 msgid "Edit Workflow"
-msgstr ""
+msgstr "작업 흐름"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:81
 #, fuzzy, kde-format
@@ -59211,6 +59620,11 @@ msgstr "제목(&T):"
 msgid "Description:"
 msgstr "설명:"
 
+#: core/utilities/queuemanager/views/workflowdlg.cpp:137
+#, kde-format
+msgid "New Workflow"
+msgstr ""
+
 #: core/utilities/queuemanager/views/workflowlist.cpp:90
 #, fuzzy, kde-format
 #| msgid "Title"
@@ -59231,8 +59645,9 @@ msgid "Description"
 msgstr "설명"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:115
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgid "Batch Queue Manager"
+msgctxt "@title:window"
 msgid "Batch Queue Manager"
 msgstr "일괄 작업 대기열 관리자"
 
@@ -59273,7 +59688,7 @@ msgstr "삭제"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:313
 #, fuzzy, kde-format
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Delete Workflow?"
 msgstr "삭제"
 
@@ -60211,7 +60626,9 @@ msgid "Hide Options"
 msgstr "캡션:"
 
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:75
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Search?"
+msgctxt "@title:window"
 msgid "Delete Search?"
 msgstr "검색을 삭제하시겠습니까?"
 
@@ -60303,9 +60720,12 @@ msgid "Try"
 msgstr "시도하기"
 
 #: core/utilities/searchwindow/searchwindow.cpp:88
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action: setup"
+#| msgid "Advanced Search..."
+msgctxt "@title:window"
 msgid "Advanced Search"
-msgstr ""
+msgstr "고급 검색..."
 
 #: core/utilities/setup/album/setupalbumview.cpp:149
 #: core/utilities/setup/camera/setupcamera.cpp:469
@@ -60856,7 +61276,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/camera/cameraselection.cpp:104
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Camera Configuration"
+msgctxt "@title:window"
 msgid "Camera Configuration"
 msgstr "카메라 설정"
 
@@ -60993,9 +61415,11 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:84
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Filters"
+msgctxt "@title:window"
 msgid "Edit Import Filters"
-msgstr ""
+msgstr "필터 가져오기"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:101
 #, kde-format
@@ -61391,11 +61815,13 @@ msgstr ""
 #: core/utilities/setup/collections/setupcollectionview.cpp:657
 #: core/utilities/setup/collections/setupcollectionview.cpp:1487
 #, kde-format
-msgid "Choose the folder containing your collection"
+msgctxt "@title:window"
+msgid "Choose the Folder Containing your Collection"
 msgstr ""
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:694
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Problem Appending Collection"
 msgstr "선택 반전"
 
@@ -61407,6 +61833,7 @@ msgstr "링크된 항목이 이미 존재합니다."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:854
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Remove Path from the Collection?"
 msgstr "선택 반전"
 
@@ -61418,6 +61845,7 @@ msgstr "메타데이터"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:862
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Remove Collection?"
 msgstr "선택 반전"
 
@@ -61511,12 +61939,14 @@ msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr ""
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1563
-#, kde-format
+#, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Problem Adding Collection"
-msgstr ""
+msgstr "선택 반전"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1572
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "선택 반전"
 
@@ -61527,6 +61957,7 @@ msgstr ""
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1651
 #, fuzzy, kde-format
+msgctxt "@title:window"
 msgid "Select Category"
 msgstr "선택"
 
@@ -61538,7 +61969,8 @@ msgstr ""
 #: core/utilities/setup/downloader/filesdownloader.cpp:172
 #, fuzzy, kde-format
 #| msgid "Downloading remote files for \"%1\""
-msgid "Download required files"
+msgctxt "@title:window"
+msgid "Download Required Files"
 msgstr "\"%1\"의 원격 파일 다운로드 중"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:200
@@ -61568,7 +62000,8 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Download New"
-msgid "Download error"
+msgctxt "@title:window"
+msgid "Download Error"
 msgstr "새로운 항목 다운로드"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:269
@@ -61586,7 +62019,8 @@ msgstr ""
 #: core/utilities/setup/downloader/filesdownloader.cpp:277
 #, fuzzy, kde-format
 #| msgid "Add again"
-msgid "Try again"
+msgctxt "@action:button"
+msgid "Try Again"
 msgstr "다시 추가"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:410
@@ -62055,8 +62489,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:135
-#, kde-format
-msgctxt "@title: reset to default warning dialog"
+#, fuzzy, kde-format
+#| msgctxt "@title: dialog"
+#| msgid "Warning"
+msgctxt "@title:window, reset to default warning dialog"
 msgid "Warning"
 msgstr "경고"
 
@@ -62128,13 +62564,15 @@ msgstr "기본값으로 초기화"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:144
 #, fuzzy, kde-format
-msgid "New Xmp Namespace"
+msgctxt "@title:window"
+msgid "New XMP Namespace"
 msgstr "날짜:"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:148
-#, kde-format
-msgid "Edit Xmp Namespace"
-msgstr ""
+#, fuzzy, kde-format
+msgctxt "@title:window"
+msgid "Edit XMP Namespace"
+msgstr "날짜:"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:238
 #, fuzzy, kde-format
@@ -62300,8 +62738,8 @@ msgstr ""
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:271
 #, kde-format
-msgctxt "@action"
-msgid "Yes I understand"
+msgctxt "@action:button"
+msgid "Yes I Understand"
 msgstr ""
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:281
@@ -63138,13 +63576,6 @@ msgid ""
 "<b>Note: All changes to these settings only take effect after the restart. "
 "Some settings are hardware dependent and may have no effect.</b>"
 msgstr ""
-
-#: core/utilities/setup/setup.cpp:142
-#, fuzzy, kde-format
-#| msgid "Configure"
-msgctxt "@title"
-msgid "Configure"
-msgstr "설정"
 
 #: core/utilities/setup/setup.cpp:149
 #, fuzzy, kde-format
@@ -64259,6 +64690,128 @@ msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "모든 항목을 기본값으로 초기화합니다."
 
+#, fuzzy
+#~| msgid "Geolocation Editor"
+#~ msgctxt "@title"
+#~ msgid "Geolocation Editor"
+#~ msgstr "지리적 위치 편집기"
+
+#~ msgctxt "@title"
+#~ msgid "Error"
+#~ msgstr "오류"
+
+#~ msgid "Select GPX File to Load"
+#~ msgstr "불러올 GPX 파일 선택"
+
+#~ msgctxt "@title"
+#~ msgid "Exposure Blending"
+#~ msgstr "노출 혼합"
+
+#~ msgctxt "@action: button"
+#~ msgid "Details..."
+#~ msgstr "자세히..."
+
+#~ msgctxt "@title"
+#~ msgid "Destination Folder"
+#~ msgstr "대상 폴더"
+
+#, fuzzy
+#~ msgctxt "@title: window"
+#~ msgid "Error while to set image as wallpaper"
+#~ msgstr "색상"
+
+#~ msgctxt "@action"
+#~ msgid "Start Upload"
+#~ msgstr "업로드 시작"
+
+#~ msgctxt "@title: window"
+#~ msgid "Error"
+#~ msgstr "오류"
+
+#~ msgctxt "@action: button"
+#~ msgid "Continue"
+#~ msgstr "계속"
+
+#~ msgctxt "@action: button"
+#~ msgid "Cancel"
+#~ msgstr "취소"
+
+#~ msgctxt "@title"
+#~ msgid "Uploading Failed"
+#~ msgstr "업로드 실패"
+
+#~ msgctxt "@title"
+#~ msgid "Login Failed"
+#~ msgstr "로그인 실패"
+
+#~ msgctxt "@action"
+#~ msgid "Start Download"
+#~ msgstr "다운로드 시작"
+
+#~ msgctxt "@title: window"
+#~ msgid "Warning"
+#~ msgstr "경고"
+
+#~ msgctxt "@action"
+#~ msgid "Continue"
+#~ msgstr "계속"
+
+#~ msgctxt "@title: album properties"
+#~ msgid "New Album"
+#~ msgstr "새 앨범"
+
+#~ msgid "Database connection test"
+#~ msgstr "데이터베이스 연결 테스트"
+
+#~ msgctxt "@title"
+#~ msgid "Shared Libraries and Components Information"
+#~ msgstr "공유 라이브러리와 구성 요소 정보"
+
+#, fuzzy
+#~| msgid "Could not authorize"
+#~ msgctxt "@title: favorite item properties"
+#~ msgid "Could Not Calculate Average"
+#~ msgstr "인증할 수 없음"
+
+#~ msgid "Add Bookmark"
+#~ msgstr "책갈피 추가"
+
+#~ msgctxt "@title:window"
+#~ msgid "Add new tag:"
+#~ msgstr "새 태그 추가:"
+
+#~ msgctxt "@title; warning while saving progress"
+#~ msgid "Warning"
+#~ msgstr "경고"
+
+#, fuzzy
+#~| msgid "New Image File Name"
+#~ msgctxt "@title"
+#~ msgid "New Image File Name"
+#~ msgstr "새 이미지 파일 이름"
+
+#~ msgctxt "@title"
+#~ msgid "Overwrite File?"
+#~ msgstr "파일을 덮어쓰시겠습니까?"
+
+#~ msgctxt "@title"
+#~ msgid "Error Saving File"
+#~ msgstr "파일 저장 오류"
+
+#~ msgctxt "@title"
+#~ msgid "Batch Queue Manager"
+#~ msgstr "일괄 작업 대기열 관리자"
+
+#~ msgctxt "@title: reset to default warning dialog"
+#~ msgid "Warning"
+#~ msgstr "경고"
+
+#, fuzzy
+#~| msgid "Configure"
+#~ msgctxt "@title"
+#~ msgid "Configure"
+#~ msgstr "설정"
+
 #~ msgid ""
 #~ "New Neural Network engine based on OpenCV Deep Learning module to detect "
 #~ "and recognize faces."
@@ -64493,11 +65046,6 @@ msgstr "모든 항목을 기본값으로 초기화합니다."
 #~| msgid "Select the image file list to load"
 #~ msgid "Detect if the image is aesthetic"
 #~ msgstr "불러올 사진 파일 목록 선택"
-
-#, fuzzy
-#~| msgid "Convert"
-#~ msgid "Text Converter"
-#~ msgstr "변환"
 
 #, fuzzy
 #~| msgctxt "@info: contry code"
@@ -67075,11 +67623,6 @@ msgstr "모든 항목을 기본값으로 초기화합니다."
 #~ msgstr "속성"
 
 #, fuzzy
-#~ msgctxt "@title:tab"
-#~ msgid "Database Settings"
-#~ msgstr "RAW 그림"
-
-#, fuzzy
 #~ msgid "Remove Exif"
 #~ msgstr "최근 태그"
 
@@ -67242,12 +67785,6 @@ msgstr "모든 항목을 기본값으로 초기화합니다."
 #~| msgid "Invert Selection"
 #~ msgid "Application Behavior"
 #~ msgstr "선택 반전"
-
-#, fuzzy
-#~| msgid "Morning"
-#~ msgctxt "@title:window"
-#~ msgid "Warning"
-#~ msgstr "아침"
 
 #, fuzzy
 #~ msgctxt "new smug album dialog"

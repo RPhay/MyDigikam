@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-12 00:53+0000\n"
-"PO-Revision-Date: 2023-01-02 07:11\n"
+"POT-Creation-Date: 2023-01-13 00:53+0000\n"
+"PO-Revision-Date: 2023-01-12 10:29\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -918,8 +918,10 @@ msgid "%1 %2"
 msgstr "%2 年 %1"
 
 #: core/app/items/utils/itemviewutilities.cpp:203
-#, kde-format
-msgid "Select target folder"
+#, fuzzy, kde-format
+#| msgid "Select target folder"
+msgctxt "@title:window"
+msgid "Select Target Folder"
 msgstr "选择目标文件夹"
 
 #: core/app/items/utils/itemviewutilities.cpp:229
@@ -1460,13 +1462,17 @@ msgstr ""
 "效。"
 
 #: core/app/main/digikamapp_import.cpp:81
-#, kde-format
-msgid "Select folder to parse"
+#, fuzzy, kde-format
+#| msgid "Select folder to parse"
+msgctxt "@title:window"
+msgid "Select Folder to Parse"
 msgstr "选择要分析的文件夹"
 
 #: core/app/main/digikamapp_import.cpp:101
-#, kde-format
-msgid "Select folders to import into album"
+#, fuzzy, kde-format
+#| msgid "Select folders to import into album"
+msgctxt "@title:window"
+msgid "Select Folders to Import into Album"
 msgstr "选择要导入相册的文件夹"
 
 #: core/app/main/digikamapp_import.cpp:143
@@ -3109,31 +3115,30 @@ msgid "%1/%2 items selected"
 msgstr "已选中 %1 项，共 %2 项"
 
 #: core/app/views/stack/welcomepageview.cpp:140
-#, fuzzy, kde-format
-#| msgid "More than 1300 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 200 user-reports closed on bugzilla."
-msgstr "解决了 1300 多个用户上报的程序缺陷。"
+msgstr "解决了 200 多个用户上报的程序缺陷。"
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
 msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
-msgstr ""
+msgstr "程序的代码已经移植到 Qt6 程序框架 (代码仍兼容 Qt5 API)。"
 
 #: core/app/views/stack/welcomepageview.cpp:142
 #, kde-format
 msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
-msgstr ""
+msgstr "在程序各个相关位置添加 JPEG-XL、WebP、AVIF 导出设置。"
 
 #: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
 msgid ""
 "Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera."
-msgstr ""
+msgstr "添加从相机导入时转换到无损 JPEG-XL、WebP、AVIF 的功能。"
 
 #: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
 msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
-msgstr ""
+msgstr "在批处理管理器中添加 JPEG-XL、WebP、AVIF 转换插件。"
 
 #: core/app/views/stack/welcomepageview.cpp:145
 #, kde-format
@@ -3141,124 +3146,111 @@ msgid ""
 "Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store "
 "versionned images in editor."
 msgstr ""
+"图像编辑器支持 JPEG-XL、HEIF、WebP、AVIF 作为无损图像格式来存储多版本图像。"
 
 #: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
 msgid "Add hamburger menu to tool-bar if main menu is hidden."
-msgstr ""
+msgstr "添加汉堡菜单到工具栏，在主菜单隐藏时显示。"
 
 #: core/app/views/stack/welcomepageview.cpp:147
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid "Turn on this option to write metadata into DNG files."
+#, kde-format
 msgid "Add new option to write metadata to files with ExifTool backend."
-msgstr "勾选此项后可将元数据写入 DNG 文件。"
+msgstr "添加写入元数据到文件的新选项到 ExifTool 后端程序支持。"
 
 #: core/app/views/stack/welcomepageview.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "Turn on this option to write metadata into RAW files. This feature is "
-#| "delegate to ExifTool backend and is disabled by default."
+#, kde-format
 msgid ""
 "Optional write metadata operations to DNG and RAW files are now always "
 "delegated to ExifTool Backend."
-msgstr ""
-"启用此选项后，元数据将被写入 RAW 文件。此功能通过 ExifTool 后端程序实现，默认"
-"禁用。"
+msgstr "DNG 和 RAW 文件的可选元数据操作现在由 ExifTool 后端程序负责进行。"
 
 #: core/app/views/stack/welcomepageview.cpp:149
 #, kde-format
 msgid "Optimize layout of Metadata Edit plugin for a better usability."
-msgstr ""
+msgstr "优化元数据编辑插件的界面布局以提高易用性。"
 
 #: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
 msgid ""
 "Add increment file counter to sequence numbering with option [c] or [c,step]."
-msgstr ""
+msgstr "添加增量文件计数器为使用 [c] 或者 [c,step] 选项时的文件序列进行编号。"
 
 #: core/app/views/stack/welcomepageview.cpp:151
 #, kde-format
 msgid "Add random text sequence numbering with option [r]."
-msgstr ""
+msgstr "添加随机文字序列编号选项 [r]。"
 
 #: core/app/views/stack/welcomepageview.cpp:152
 #, kde-format
 msgid ""
 "Add configurable first character for the unique modifier with {unique:n,c}."
-msgstr ""
+msgstr "为使用了 {unique:n,c} 的唯一修饰符添加可配置第一个字符的功能。"
 
 #: core/app/views/stack/welcomepageview.cpp:153
-#, fuzzy, kde-format
-#| msgid "Return items by number of face regions"
+#, kde-format
 msgid "Add search for items by number of face regions."
-msgstr "人脸区域数量"
+msgstr "添加按照人脸区域数量搜索项目的功能。"
 
 #: core/app/views/stack/welcomepageview.cpp:154
-#, fuzzy, kde-format
-#| msgid "Return items without face regions"
+#, kde-format
 msgid "Add search for items without face regions."
-msgstr "无人脸区域"
+msgstr "添加搜索无人脸区域项目的功能。"
 
 #: core/app/views/stack/welcomepageview.cpp:155
 #, kde-format
 msgid "Add support for cross-platform network paths."
-msgstr ""
+msgstr "添加对跨平台网络路径的支持。"
 
 #: core/app/views/stack/welcomepageview.cpp:156
 #, kde-format
 msgid "Add support for SQLite WAL (Write-Ahead-Logging) mode."
-msgstr ""
+msgstr "添加对 SQLite WAL (记录日志前写入) 模式的支持。"
 
 #: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format
 msgid ""
 "Add spell-checking support in caption text widget using KF5::Sonnet "
 "component."
-msgstr ""
+msgstr "使用 KF5::Sonnet 组件在标题文字控件中添加拼写检查支持。"
 
 #: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
 msgid "Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto."
-msgstr ""
+msgstr "在 digiKam 和 ShowFoto 的其他设置页面添加拼写检查配置面板。"
 
 #: core/app/views/stack/welcomepageview.cpp:159
 #, kde-format
 msgid ""
 "Add online translations support to Alternative Language text editor widget."
-msgstr ""
+msgstr "为替代语言文字编辑器控件添加在线翻译服务支持。"
 
 #: core/app/views/stack/welcomepageview.cpp:160
 #, kde-format
 msgid "Add Localize config panel in Setup/Misc for digiKam and Showfoto."
-msgstr ""
+msgstr "在 digiKam 和 ShowFoto 的其他设置页面添加本地化配置面板。"
 
 #: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
 msgid ""
 "Add settings to list prefered alternative/translated languages in text edit "
 "widget."
-msgstr ""
+msgstr "为文字编辑控件的偏好替代语言/翻译语言列表添加设置。"
 
 #: core/app/views/stack/welcomepageview.cpp:162
 #, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Sorting settings everywhere."
-msgstr ""
+msgstr "允许在程序相关的各个位置使用全局或者自定义图像品质分类器设置。"
 
 #: core/app/views/stack/welcomepageview.cpp:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "Integration of Google Summer of Code project 2021 <a href=\"https://"
-#| "community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE\">Image Quality "
-#| "Sorter</a>."
+#, kde-format
 msgid ""
 "Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
 "QuocHungTran\">to perform OCR over scanned text</a>."
 msgstr ""
-"整合了谷歌编程之夏 2021 的<a href=\"https://community.kde.org/GSoC/2021/"
-"StatusReports/PhuocKhanhLE\">图像品质分类器</a>工程。"
+"添加用于<a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
+"QuocHungTran\">为扫描文本进行 OCR</a> 的新工具。"
 
 #: core/app/views/stack/welcomepageview.cpp:164
 #, kde-format
@@ -3266,26 +3258,24 @@ msgid ""
 "Add <a href=\"https://community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe"
 "\">Aesthetic Detection to classify images using deep learning model</a>."
 msgstr ""
+"添加基于深度学习模型的<a href=\"https://community.kde.org/GSoc/2022/"
+"StatusReports/PhuocKhanhLe\">美感检测</a>功能来对图像品质进行分类。"
 
 #: core/app/views/stack/welcomepageview.cpp:165
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to assign pick label metadata by image quality"
+#, kde-format
 msgid ""
 "Add new tool to assign pick label automatically by parsing image quality."
-msgstr "按照图像品质分配挑选标记元数据"
+msgstr "添加用于通过解析图像品质来自动分配挑选标记的新工具。"
 
 #: core/app/views/stack/welcomepageview.cpp:166
 #, kde-format
 msgid "Add new tool to assign rating, pick, and color labels in batch."
-msgstr ""
+msgstr "添加用于批量分配评分、挑选标记、颜色标记的新工具。"
 
 #: core/app/views/stack/welcomepageview.cpp:167
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to assign labels metadata to images"
+#, kde-format
 msgid "Add new tool to assign titles and captions in batch."
-msgstr "分配标记元数据到图像"
+msgstr "添加批量分配标题和说明文字的新工具。"
 
 #: core/app/views/stack/welcomepageview.cpp:168
 #, kde-format
@@ -3293,11 +3283,13 @@ msgid ""
 "<a href=\" https://docs.digikam.org/en/index.html\">Rewrite handbook</a> "
 "from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
+"<a href=\" https://docs.digikam.org/en/index.html\">重写 digiKam 使用手册</"
+"a>，文档框架从 DocBook 移植到了 Sphinx/ReStructuredText。"
 
 #: core/app/views/stack/welcomepageview.cpp:169
 #, kde-format
 msgid "Update internal RAW engine to last stable Libraw 0.21.1."
-msgstr ""
+msgstr "更新内建 RAW 引擎到最新稳定版本的 Libraw 0.21.1。"
 
 #: core/app/views/stack/welcomepageview.cpp:170
 #, kde-format
@@ -3308,6 +3300,11 @@ msgid ""
 "R3, R7 and R10 Fujifilm X-H2S, X-T30 II OM System OM-1 Leica M11 Sony A7-IV "
 "(ILCE-7M4) DJI Mavic 3"
 msgstr ""
+"全新 RAW 功能：Phase One/Leaf IIQ-S v2 支持、Canon CR3 filmrolls/RawBurst "
+"Canon CRM (影片) 文件支持、Tiled bit-packed (和 16-bit unpacked) DNG 文件 (非"
+"标准) 支持、允许 Deflate 压缩的整数 DNG 文件、支持 Canon EOS R3、R7、R10、"
+"Fujifilm X-H2S、X-T30 II、OM System、OM-1、Leica M11、Sony A7-IV (ILCE-7M4)、"
+"DJI Mavic 3"
 
 #: core/app/views/stack/welcomepageview.cpp:185
 #, kde-format
@@ -4150,16 +4147,20 @@ msgid "Supported Extensions"
 msgstr "支持的扩展名"
 
 #: core/avplayer/filters/EventFilter.cpp:71
-#, kde-format
-msgctxt "@title"
-msgid "Open a video"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Open a video"
+msgctxt "@title:window"
+msgid "Open a Video"
 msgstr "打开视频"
 
 #: core/avplayer/filters/EventFilter.cpp:83
 #: core/avplayer/main/MainWindow_io.cpp:510
-#, kde-format
-msgctxt "@title"
-msgid "Open an url"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Open an url"
+msgctxt "@title:window"
+msgid "Open an Url"
 msgstr "打开 URL"
 
 #: core/avplayer/filters/EventFilter.cpp:84
@@ -4284,8 +4285,10 @@ msgid "-&gt;/&lt;-: seek forward/backward\n"
 msgstr "&gt; 键/&lt; 键：向前/向后时移\n"
 
 #: core/avplayer/filters/EventFilter.cpp:127
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Help"
+msgctxt "@title:window"
 msgid "Help"
 msgstr "帮助"
 
@@ -4325,9 +4328,11 @@ msgstr ""
 "64 位版本的 AVPlayer 以获得更好的使用体验。</p>"
 
 #: core/avplayer/main/MainWindow_io.cpp:102
-#, kde-format
-msgctxt "@title"
-msgid "Open a media file"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Open a media file"
+msgctxt "@title:window"
+msgid "Open a Media File"
 msgstr "打开媒体文件"
 
 #: core/avplayer/main/MainWindow_io.cpp:568
@@ -4338,9 +4343,11 @@ msgid "Aspect ratio"
 msgstr "宽高比"
 
 #: core/avplayer/main/MainWindow_io.cpp:702
-#, kde-format
-msgctxt "@title"
-msgid "Player error"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Player error"
+msgctxt "@title:window"
+msgid "Player Error"
 msgstr "播放器错误"
 
 #: core/avplayer/main/MainWindow_io.cpp:724
@@ -4386,8 +4393,10 @@ msgid "Stalled"
 msgstr "已停滞"
 
 #: core/avplayer/main/MainWindow_io.cpp:798
-#, kde-format
-msgctxt "@title: media loading state"
+#, fuzzy, kde-format
+#| msgctxt "@title: media loading state"
+#| msgid "Buffering... %1% @%2 %3"
+msgctxt "@title:window, media loading state"
 msgid "Buffering... %1% @%2 %3"
 msgstr "正在缓冲... %1% @%2 %3"
 
@@ -4404,9 +4413,11 @@ msgstr ""
 "格式：%2"
 
 #: core/avplayer/main/MainWindow_io.cpp:1018
-#, kde-format
-msgctxt "@title"
-msgid "Open a subtitle file"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Open a subtitle file"
+msgctxt "@title:window"
+msgid "Open a Subtitle File"
 msgstr "打开字幕文件"
 
 #: core/avplayer/main/MainWindow_setup.cpp:30
@@ -4720,9 +4731,11 @@ msgid "not available on your platform!"
 msgstr "不支持本机的平台！"
 
 #: core/avplayer/main/MainWindow_setup.cpp:818
-#, kde-format
-msgctxt "@title"
-msgid "Open an external audio track"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Open an external audio track"
+msgctxt "@title:window"
+msgid "Open an External Audio Track"
 msgstr "打开外部音轨"
 
 #: core/avplayer/main/MainWindow_setup.cpp:864
@@ -4750,9 +4763,11 @@ msgid "Remove selected items"
 msgstr "移除选中项目"
 
 #: core/avplayer/playlist/PlayList.cpp:259
-#, kde-format
-msgctxt "@title"
-msgid "Select files"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Select files"
+msgctxt "@title:window"
+msgid "Select Files"
 msgstr "选择文件"
 
 #: core/avplayer/utils/ConfigDialog.cpp:61
@@ -4771,13 +4786,9 @@ msgid "Ok"
 msgstr "确定"
 
 #: core/avplayer/utils/ConfigDialog.cpp:63
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:855
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:260
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:676
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:261
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:141
 #: core/libs/dplugins/webservices/wstooldialog.cpp:110
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:199
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:208
 #, kde-format
 msgid "Cancel"
 msgstr "取消"
@@ -4933,9 +4944,11 @@ msgid "Frame size"
 msgstr "帧大小"
 
 #: core/avplayer/utils/StatisticsView.cpp:140
-#, kde-format
-msgctxt "@title"
-msgid "Media info"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Media info"
+msgctxt "@title:window"
+msgid "Media Info"
 msgstr "媒体信息"
 
 #: core/avplayer/utils/StatisticsView.cpp:147
@@ -7998,7 +8011,9 @@ msgid "Adjust Levels"
 msgstr "色阶调整"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:890
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select Gimp Levels File to Load"
+msgctxt "@title:window"
 msgid "Select Gimp Levels File to Load"
 msgstr "选择要加载的 GIMP 色阶文件"
 
@@ -8008,7 +8023,9 @@ msgid "Cannot load from the Gimp levels text file."
 msgstr "无法加载 GIMP 色阶文本文件。"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:917
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Gimp Levels File to Save"
+msgctxt "@title:window"
 msgid "Gimp Levels File to Save"
 msgstr "要保存的 Gimp 色阶文件"
 
@@ -9107,7 +9124,9 @@ msgid "Restoration"
 msgstr "照片修复"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:344
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Restoration Settings File to Load"
+msgctxt "@title:window"
 msgid "Photograph Restoration Settings File to Load"
 msgstr "要加载的照片修复设置文件"
 
@@ -9122,7 +9141,9 @@ msgid "Cannot load settings from the Photograph Restoration text file."
 msgstr "无法加载照片修复设置文本文件。"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:383
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Restoration Settings File to Save"
+msgctxt "@title:window"
 msgid "Photograph Restoration Settings File to Save"
 msgstr "要保存的照片修复设置文件"
 
@@ -9193,7 +9214,9 @@ msgid "Sharpen..."
 msgstr "锐化..."
 
 #: core/dplugins/editor/file/print/printhelper.cpp:168
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Print Image"
+msgctxt "@title:window"
 msgid "Print Image"
 msgstr "打印图像"
 
@@ -9319,7 +9342,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can print an image."
 msgstr "用于对图像进行打印的图像编辑器工具。"
 
-#: core/dplugins/editor/file/print/printplugin.cpp:84
+#: core/dplugins/editor/file/print/printplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Print Image..."
@@ -9463,7 +9486,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can apply blur effects to an image."
 msgstr "用于为图像应用各种模糊特效的图像编辑器工具。"
 
-#: core/dplugins/editor/filters/blurfx/blurfxtoolplugin.cpp:83
+#: core/dplugins/editor/filters/blurfx/blurfxtoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Blur Effects..."
@@ -9515,7 +9538,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can emulate charcoal drawing to an image."
 msgstr "用于模仿炭笔画的图像编辑器工具。"
 
-#: core/dplugins/editor/filters/charcoal/charcoaltoolplugin.cpp:80
+#: core/dplugins/editor/filters/charcoal/charcoaltoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Charcoal Drawing..."
@@ -9569,7 +9592,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can apply color effects to an image."
 msgstr "用于为图像应用各种色彩特效的图像编辑器工具。"
 
-#: core/dplugins/editor/filters/colorfx/colorfxtoolplugin.cpp:83
+#: core/dplugins/editor/filters/colorfx/colorfxtoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Color Effects..."
@@ -9743,7 +9766,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can apply distortion effects to an image."
 msgstr "用于为图像应用各种畸变特效的图像编辑器工具。"
 
-#: core/dplugins/editor/filters/distortionfx/distortionfxtoolplugin.cpp:83
+#: core/dplugins/editor/filters/distortionfx/distortionfxtoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Distortion Effects..."
@@ -9782,7 +9805,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can emboss an image."
 msgstr "用于对图像进行浮雕处理的图像编辑器工具。"
 
-#: core/dplugins/editor/filters/emboss/embosstoolplugin.cpp:83
+#: core/dplugins/editor/filters/emboss/embosstoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Emboss..."
@@ -9805,14 +9828,14 @@ msgctxt "@info"
 msgid "This Image Editor tool can add film grain over an image."
 msgstr "用于为图像添加胶片颗粒效果的图像编辑器工具。"
 
-#: core/dplugins/editor/filters/filmgrain/filmgraintoolplugin.cpp:83
+#: core/dplugins/editor/filters/filmgrain/filmgraintoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Add Film Grain..."
 msgstr "胶片颗粒..."
 
 #: core/dplugins/editor/filters/oilpaint/oilpainttool.cpp:88
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:296
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:300
 #, kde-format
 msgid "Brush size:"
 msgstr "笔刷大小："
@@ -9856,7 +9879,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can emulate oil painting over an image."
 msgstr "用于模仿油画的图像编辑器工具。"
 
-#: core/dplugins/editor/filters/oilpaint/oilpainttoolplugin.cpp:83
+#: core/dplugins/editor/filters/oilpaint/oilpainttoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Oil Paint..."
@@ -9927,7 +9950,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can add rain drops over an image."
 msgstr "用于为图像表面添加水滴效果的图像编辑器工具。"
 
-#: core/dplugins/editor/filters/raindrop/raindroptoolplugin.cpp:83
+#: core/dplugins/editor/filters/raindrop/raindroptoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Raindrops..."
@@ -9953,13 +9976,13 @@ msgid ""
 "black border, generated while panorama stitching for example."
 msgstr "用于自动检测并裁剪图像画面中的黑边，例如全景拼贴和旋转图像等的黑边。"
 
-#: core/dplugins/editor/transform/autocrop/autocroptoolplugin.cpp:84
+#: core/dplugins/editor/transform/autocrop/autocroptoolplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "&Auto-Crop"
 msgstr "自动裁剪"
 
-#: core/dplugins/editor/transform/autocrop/autocroptoolplugin.cpp:86
+#: core/dplugins/editor/transform/autocrop/autocroptoolplugin.cpp:101
 #, kde-format
 msgctxt "@info"
 msgid "This option can be used to crop automatically the image."
@@ -10036,17 +10059,17 @@ msgstr "添加权重蒙版"
 msgid "Enable this option to add suppression and preservation masks."
 msgstr "勾选此项后可以添加抑制和保护蒙版。"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:265
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:266
 #, kde-format
 msgid "Suppression weight mask:"
 msgstr "抑制权重蒙版："
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:270
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:272
 #, kde-format
 msgid "Draw a suppression mask"
 msgstr "绘制抑制蒙版"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:271
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:273
 #, kde-format
 msgid ""
 "Click on this button to draw zones marking which areas of the image are less "
@@ -10056,97 +10079,97 @@ msgstr ""
 "点击此按钮后即可在图像上标记不重要的区域。这些区域在缩小图像时将被删除，在放"
 "大图像时将被复制。"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:277
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:279
 #, kde-format
 msgid "Preservation weight mask:"
 msgstr "保护权重蒙版："
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:281
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:284
 #, kde-format
 msgid "Draw a preservation mask"
 msgstr "绘制保护蒙版"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:282
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:285
 #, kde-format
 msgid ""
 "Click on this button to draw zones marking which areas of the image you want "
 "to preserve."
 msgstr "点击此按钮后即可在图像上标记需要保护的区域。"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:287
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:290
 #, kde-format
 msgid "Erase mask:"
 msgstr "擦除蒙版："
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:291
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:295
 #, kde-format
 msgid "Erase mask"
 msgstr "擦除蒙版"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:292
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:296
 #, kde-format
 msgid "Click on this button to erase mask regions."
 msgstr "点击此按钮后即可擦除蒙版区域。"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:301
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:305
 #, kde-format
 msgid "Specify here the size of the brush used to paint masks."
 msgstr "设置用于绘制蒙版的笔刷大小。"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:321
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:325
 #, kde-format
 msgid "Norm of brightness gradient"
 msgstr "亮度渐变的范数"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:322
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:326
 #, kde-format
 msgid "Sum of absolute values of brightness gradients"
 msgstr "亮度渐变的绝对值的和"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:323
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:327
 #, kde-format
 msgid "Absolute value of brightness gradient"
 msgstr "亮度渐变的绝对值"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:324
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:328
 #, kde-format
 msgid "Norm of luma gradient"
 msgstr "光度渐变的范数"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:325
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:329
 #, kde-format
 msgid "Sum of absolute values of luma gradients"
 msgstr "光度渐变的绝对值的和"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:326
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:330
 #, kde-format
 msgid "Absolute value of luma gradient"
 msgstr "光度渐变的绝对值"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:329
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:333
 #, kde-format
 msgid ""
 "This option allows you to choose a gradient function. This function is used "
 "to determine which pixels should be removed or kept."
 msgstr "选择一种渐变函数，它将被用于判定像素点的移除和保留。"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:332
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:336
 #, kde-format
 msgid "Preserve Skin Tones"
 msgstr "保护肤色色调"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:333
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:337
 #, kde-format
 msgid ""
 "Enable this option to preserve pixels whose color is close to a skin tone."
 msgstr "勾选此项后将保护颜色接近肤色的像素。"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:347
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:351
 #, kde-format
 msgid "Overall rigidity of the seams:"
 msgstr "接缝整体硬度："
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:351
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:355
 #, kde-format
 msgid ""
 "Use this value to give a negative bias to the seams which are not straight. "
@@ -10162,12 +10185,12 @@ msgstr ""
 "情况下将对整个图层生效。提示：该负面反馈数值与两个连续点的横向坐标差值成正"
 "比，它将被求 1.5 次方，然后再求整条接缝上的和。"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:360
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:364
 #, kde-format
 msgid "Maximum number of transversal steps:"
 msgstr "最大横向步数："
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:364
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:368
 #, kde-format
 msgid ""
 "This option lets you choose the maximum transversal step that the pixels in "
@@ -10184,12 +10207,12 @@ msgstr ""
 "夹角。提高此数值虽然可以让夹角突破此限制，但可能会导致色块现象。要平衡最终效"
 "果，可以同时调整接缝整体硬度。"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:374
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:378
 #, kde-format
 msgid "Side switch frequency:"
 msgstr "接缝换边频率："
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:378
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:382
 #, kde-format
 msgid ""
 "During the carving process, at each step the optimal seam to be carved is "
@@ -10208,54 +10231,54 @@ msgstr ""
 "结果中偏移到了一边。为了克服此效应，此数值将允许被选中的接缝在缩放时自动切换"
 "为另一条，此处理将会造成轻微的性能下降。"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:390
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:394
 #, kde-format
 msgid "Resize Order:"
 msgstr "缩放顺序："
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:392
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:396
 #, kde-format
 msgid "Horizontally first"
 msgstr "水平优先"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:393
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:397
 #, kde-format
 msgid "Vertically first"
 msgstr "垂直优先"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:395
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:399
 #, kde-format
 msgid ""
 "Here you can set whether to resize horizontally first or vertically first."
 msgstr "选择先进行水平缩放还是先进行垂直缩放。"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:413
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:417
 #, kde-format
 msgid "Target size"
 msgstr "目标大小"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:416
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:420
 #, kde-format
 msgid "Content-aware rescale percentage"
 msgstr "内容感知缩放百分比"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:418
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:422
 #, kde-format
 msgid "Mask Settings"
 msgstr "蒙版设置"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:420
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:424
 #, kde-format
 msgid "Energy function"
 msgstr "能量函数"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:422
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:426
 #: core/utilities/setup/setupicc.cpp:480
 #, kde-format
 msgid "Advanced Settings"
 msgstr "高级设置"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:763
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:769
 #, kde-format
 msgid "Liquid Rescale"
 msgstr "内容感知缩放"
@@ -10278,7 +10301,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can resize an image with content analysis."
 msgstr "用于对图像进行内容感知缩放的图像编辑器工具。"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetoolplugin.cpp:86
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetoolplugin.cpp:101
 #, kde-format
 msgctxt "@action"
 msgid "Liquid Rescale..."
@@ -10396,25 +10419,25 @@ msgctxt "@info"
 msgid "This Image Editor tool can rotate an image with an arbitrary angle."
 msgstr "用于对图像进行指定角度旋转的图像编辑器工具。"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:85
+#: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:100
 #, kde-format
 msgctxt "@action"
 msgid "Free Rotation..."
 msgstr "自由旋转..."
 
-#: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:94
+#: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:109
 #, kde-format
 msgctxt "@action"
 msgid "Free Rotation Set Point 1"
 msgstr "自由旋转参考点 1"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:100
+#: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:115
 #, kde-format
 msgctxt "@action"
 msgid "Free Rotation Set Point 2"
 msgstr "自由旋转参考点 2"
 
-#: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:106
+#: core/dplugins/editor/transform/freerotation/freerotationtoolplugin.cpp:121
 #, kde-format
 msgctxt "@action"
 msgid "Free Rotation Auto Adjust"
@@ -10486,7 +10509,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can adjust perspective from an image."
 msgstr "用于对图像进行透视变形的图像编辑器工具。"
 
-#: core/dplugins/editor/transform/perspective/perspectivetoolplugin.cpp:83
+#: core/dplugins/editor/transform/perspective/perspectivetoolplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Perspective Adjustment..."
@@ -10826,7 +10849,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can crop an image with ratio."
 msgstr "用于按指定宽高比对图像进行裁剪的图像编辑器工具。"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptoolplugin.cpp:86
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptoolplugin.cpp:101
 #, kde-format
 msgctxt "@action"
 msgid "Aspect Ratio Crop..."
@@ -11058,7 +11081,9 @@ msgid "Resize"
 msgstr "调整尺寸"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:918
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Resizing Settings File to Load"
+msgctxt "@title:window"
 msgid "Photograph Resizing Settings File to Load"
 msgstr "要加载的照片缩放设置文件"
 
@@ -11073,7 +11098,9 @@ msgid "Cannot load settings from the Photograph Resizing text file."
 msgstr "无法加载照片缩放设置文本文件。"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:951
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Resizing Settings File to Save"
+msgctxt "@title:window"
 msgid "Photograph Resizing Settings File to Save"
 msgstr "要保存的照片缩放设置文件"
 
@@ -11100,7 +11127,7 @@ msgctxt "@action"
 msgid "This Image Editor tool can resize an image."
 msgstr "用于调整图像尺寸的图像编辑器工具。"
 
-#: core/dplugins/editor/transform/resize/resizetoolplugin.cpp:80
+#: core/dplugins/editor/transform/resize/resizetoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "&Resize..."
@@ -11198,7 +11225,7 @@ msgctxt "@info"
 msgid "This Image Editor tool can shear an image."
 msgstr "用于对图像进行斜切变形的图像编辑器工具。"
 
-#: core/dplugins/editor/transform/shear/sheartoolplugin.cpp:80
+#: core/dplugins/editor/transform/shear/sheartoolplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "&Shear..."
@@ -11249,7 +11276,9 @@ msgstr ""
 "请检查系统配置"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:64
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Scan Image"
+msgctxt "@title:window"
 msgid "Scan Image"
 msgstr "扫描图像"
 
@@ -11259,12 +11288,17 @@ msgid "Scan Images"
 msgstr "扫描图像"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:167
-#, kde-format
+#: core/utilities/imageeditor/editor/editorwindow.cpp:1803
+#, fuzzy, kde-format
+#| msgid "New Image File Name"
+msgctxt "@title:window"
 msgid "New Image File Name"
 msgstr "新图像文件名"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:215
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Unsupported Format"
+msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr "不支持的格式"
 
@@ -11274,7 +11308,9 @@ msgid "The target image file format \"%1\" is unsupported."
 msgstr "目标图像文件格式“%1”不受支持。"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:228
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cannot Save File"
+msgctxt "@title:window"
 msgid "Cannot Save File"
 msgstr "无法保存文件"
 
@@ -11290,7 +11326,11 @@ msgstr ""
 "“%2”。"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:244
-#, kde-format
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2277
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2296
+#, fuzzy, kde-format
+#| msgid "Overwrite File?"
+msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "覆盖文件吗？"
 
@@ -11306,7 +11346,9 @@ msgid "Saving file %1 -"
 msgstr "正在保存文件 %1 -"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:304
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "File Not Saved"
+msgctxt "@title:window"
 msgid "File Not Saved"
 msgstr "文件未保存"
 
@@ -11316,8 +11358,10 @@ msgid "Cannot save \"%1\" file"
 msgstr "无法保存“%1”文件"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:264
-#, kde-format
-msgctxt "@title"
+#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
+#, fuzzy, kde-format
+#| msgid "Geolocation Editor"
+msgctxt "@title:window"
 msgid "Geolocation Editor"
 msgstr "地理位置编辑器"
 
@@ -11419,9 +11463,11 @@ msgid_plural "You have %1 modified images."
 msgstr[0] "您有 %1 张已修改图像。"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:814
-#, kde-format
-msgctxt "@title"
-msgid "Unsaved changes"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Unsaved changes"
+msgctxt "@title:window"
+msgid "Unsaved Changes"
 msgstr "尚未保存的更改"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:815
@@ -11437,8 +11483,46 @@ msgid "Saving changes -"
 msgstr "正在保存更改 -"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:990
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
+#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
+#: core/dplugins/generic/webservices/box/boxtalker.cpp:386
+#: core/dplugins/generic/webservices/box/boxwindow.cpp:244
+#: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:374
+#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:244
+#: core/dplugins/generic/webservices/facebook/fbtalker.cpp:550
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:785
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:809
+#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:975
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:461
+#: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:279
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:542
+#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:569
+#: core/dplugins/generic/webservices/google/gswindow.cpp:362
+#: core/dplugins/generic/webservices/google/gswindow.cpp:403
+#: core/dplugins/generic/webservices/google/gswindow.cpp:429
+#: core/dplugins/generic/webservices/google/gswindow.cpp:490
+#: core/dplugins/generic/webservices/google/gswindow.cpp:992
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1201
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1218
+#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:608
+#: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:179
+#: core/dplugins/generic/webservices/onedrive/odtalker.cpp:404
+#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:243
+#: core/dplugins/generic/webservices/pinterest/ptalker.cpp:411
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:247
+#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:380
+#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:746
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:442
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:451
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:489
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:526
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1018
+#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:665
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:248
+#: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:348
+#: core/libs/dplugins/webservices/wslogindialog.cpp:164
 #, kde-format
-msgctxt "@title"
+msgctxt "@title:window"
 msgid "Error"
 msgstr "错误"
 
@@ -11729,8 +11813,10 @@ msgid "Destination Directory:"
 msgstr "目标目录："
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:105
-#, kde-format
-msgid "Select a directory in which to save the kml file and pictures"
+#, fuzzy, kde-format
+#| msgid "Select a directory in which to save the kml file and pictures"
+msgctxt "@title:window"
+msgid "Select a Directory in Which to Save the KML File and Pictures"
 msgstr "选择保存 KML 文件和图像的目录"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:107
@@ -11780,7 +11866,9 @@ msgid "GPS Exchange Format (*.gpx)"
 msgstr "GPS 交换格式文件 (*.gpx)"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:162
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:284
 #, kde-format
+msgctxt "@title:window"
 msgid "Select GPX File to Load"
 msgstr "选择要加载的 GPX 文件"
 
@@ -12033,8 +12121,10 @@ msgid "Bookmarks"
 msgstr "书签"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:274
-#, kde-format
-msgid "Search failed"
+#, fuzzy, kde-format
+#| msgid "Search failed"
+msgctxt "@title:window"
+msgid "Search Failed"
 msgstr "搜索失败"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:274
@@ -12053,8 +12143,10 @@ msgid_plural "%1 images moved to '%2'"
 msgstr[0] "%1 张图像已移动到“%2”"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:92
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Metadata Editor"
+msgctxt "@title:window"
 msgid "Metadata Editor"
 msgstr "元数据编辑器"
 
@@ -12089,8 +12181,10 @@ msgid "Edit XMP"
 msgstr "编辑 XMP"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:311
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "%1 (%2/%3) - Edit Metadata"
+msgctxt "@title:window"
 msgid "%1 (%2/%3) - Edit Metadata"
 msgstr "%1 (%2/%3) - 编辑元数据"
 
@@ -15616,8 +15710,10 @@ msgstr ""
 "不得输入超过 64 个字符。"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:102
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Adjust Time & Date"
+msgctxt "@title:window"
 msgid "Adjust Time & Date"
 msgstr "调整时间和日期"
 
@@ -15641,13 +15737,6 @@ msgstr "调整时间和日期"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:375
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:679
-#: core/dplugins/generic/webservices/google/gswindow.cpp:511
-#: core/dplugins/generic/webservices/google/gswindow.cpp:536
-#: core/dplugins/generic/webservices/google/gswindow.cpp:950
-#: core/dplugins/generic/webservices/google/gswindow.cpp:971
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1020
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1262
-#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:256
 #: core/utilities/imageeditor/editor/editorwindow.cpp:571
 #, kde-format
 msgctxt "@action"
@@ -15754,7 +15843,6 @@ msgid "Adjust Time && Date..."
 msgstr "调整时间和日期..."
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:43
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:111
 #, kde-format
 msgid "Create Calendar"
 msgstr "创建日历"
@@ -16013,6 +16101,13 @@ msgstr ""
 "en.wikipedia.org/wiki/VCalendar'>vCalendar</a> 和 <a href='https://en."
 "wikipedia.org/wiki/Icalendar'>iCalendar</a> 格式。</p>"
 
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:111
+#, fuzzy, kde-format
+#| msgid "Create Calendar"
+msgctxt "@title:window"
+msgid "Create Calendar"
+msgstr "创建日历"
+
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:114
 #, kde-format
 msgid "Welcome to Calendar Tool"
@@ -16024,7 +16119,6 @@ msgid "Choose events to show on the Calendar"
 msgstr "选择要在日历上显示的事件"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:140
-#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:289
 #, kde-format
 msgid "Print Calendar"
 msgstr "打印日历"
@@ -16043,7 +16137,9 @@ msgstr "日历数据文件 (*.ics)"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:157
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:161
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select Calendar Data File"
+msgctxt "@title:window"
 msgid "Select Calendar Data File"
 msgstr "选择日历数据文件"
 
@@ -16066,6 +16162,13 @@ msgid ""
 "year %1:<br/>"
 msgstr "点击下一步开始打印<br/><br/>以下月份将按照 %1 年进行打印：<br/>"
 
+#: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:289
+#, fuzzy, kde-format
+#| msgid "Print Calendar"
+msgctxt "@title:window"
+msgid "Print Calendar"
+msgstr "打印日历"
+
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:297
 #, kde-format
 msgid "Printing Cancelled"
@@ -16087,9 +16190,10 @@ msgid "Printing Complete"
 msgstr "打印完成"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:98
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:43
-#, kde-format
-msgctxt "@title"
+#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
+#, fuzzy, kde-format
+#| msgid "DNG Converter"
+msgctxt "@title:window"
 msgid "DNG Converter"
 msgstr "DNG 转换"
 
@@ -16100,18 +16204,16 @@ msgid "&Convert"
 msgstr "转换(&C)"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
+#, kde-format
+msgid "The list does not contain any Raw files to process."
+msgstr "列表中没有任何要处理的 RAW 文件。"
+
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:297
 #, kde-format
 msgid "DNG Converter"
 msgstr "DNG 转换"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
-#, kde-format
-msgid "The list does not contain any Raw files to process."
-msgstr "列表中没有任何要处理的 RAW 文件。"
-
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:427
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
 #, kde-format
 msgid "&Abort"
 msgstr "中止(&A)"
@@ -16189,6 +16291,12 @@ msgstr "目标文件"
 #, kde-format
 msgid "Camera"
 msgstr "相机"
+
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:43
+#, kde-format
+msgctxt "@title"
+msgid "DNG Converter"
+msgstr "DNG 转换"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:58
 #, kde-format
@@ -16495,32 +16603,41 @@ msgid "Clear all"
 msgstr "全部清除"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:127
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgid "Exposure Blending"
+msgctxt "@title:window"
 msgid "Exposure Blending"
 msgstr "曝光混合"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:136
-#, kde-format
-msgctxt "@action: button"
+#, fuzzy, kde-format
+#| msgctxt "@action: button"
+#| msgid "&Save"
+msgctxt "@action:button"
 msgid "&Save"
 msgstr "保存(&S)"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:138
-#, kde-format
-msgctxt "@info: tooltip"
+#, fuzzy, kde-format
+#| msgctxt "@info: tooltip"
+#| msgid "Process and save selected items."
+msgctxt "@info:tooltip, button"
 msgid "Process and save selected items."
 msgstr "处理并保存所选项目。"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:142
-#, kde-format
-msgctxt "@action: button"
+#, fuzzy, kde-format
+#| msgctxt "@action: button"
+#| msgid "&Preview"
+msgctxt "@action:button"
 msgid "&Preview"
 msgstr "预览(&P)"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:144
-#, kde-format
-msgctxt "@info: tooltip"
+#, fuzzy, kde-format
+#| msgctxt "@info: tooltip"
+#| msgid "Process a preview of bracketed images stack with current settings."
+msgctxt "@info:tooltip, button"
 msgid "Process a preview of bracketed images stack with current settings."
 msgstr "生成并显示当前设置的包围 (阶段) 曝光图像堆栈的预览。"
 
@@ -16539,8 +16656,9 @@ msgid "Revert current settings to default values."
 msgstr "重置当前设置为默认值。"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:156
+#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:104
 #, kde-format
-msgctxt "@action: button"
+msgctxt "@action:button"
 msgid "Details..."
 msgstr "详情..."
 
@@ -16563,8 +16681,10 @@ msgid "File Name Template: "
 msgstr "文件名模板："
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:317
-#, kde-format
-msgctxt "@title: window"
+#, fuzzy, kde-format
+#| msgctxt "@title: window"
+#| msgid "Enfuse Processing Messages"
+msgctxt "@title:window"
 msgid "Enfuse Processing Messages"
 msgstr "Enfuse 处理消息"
 
@@ -16879,8 +16999,10 @@ msgid "See processing messages below."
 msgstr "请查看下面的处理消息。"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingwizard.cpp:62
-#, kde-format
-msgctxt "@title: window"
+#, fuzzy, kde-format
+#| msgctxt "@title: window"
+#| msgid "Stacked Images Tool"
+msgctxt "@title:window"
 msgid "Stacked Images Tool"
 msgstr "多张图像混合工具"
 
@@ -17312,14 +17434,20 @@ msgid "Gallery Title:"
 msgstr "相册标题："
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Destination Folder:"
 msgctxt "@label"
-msgid "Destination Folder:"
+msgid "Destination folder:"
 msgstr "目标文件夹："
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
-#, kde-format
-msgctxt "@title"
+#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
+#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:120
+#: core/libs/dplugins/iface/dmetainfoiface.cpp:267
+#, fuzzy, kde-format
+#| msgid "Destination Folder"
+msgctxt "@title:window"
 msgid "Destination Folder"
 msgstr "目标文件夹"
 
@@ -17376,7 +17504,9 @@ msgid "Author: %1<br/><br/>"
 msgstr "作者：%1<br/><br/>"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create HTML Gallery"
+msgctxt "@title:window"
 msgid "Create HTML Gallery"
 msgstr "创建 HTML 相册"
 
@@ -17518,17 +17648,22 @@ msgid "Set here the project title"
 msgstr "在此设置项目标题"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:81
-#, kde-format
-msgid "Projects Folder:"
+#, fuzzy, kde-format
+#| msgid "Projects Folder:"
+msgid "Projects folder:"
 msgstr "工程文件夹："
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:84
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Projects Folder"
+msgctxt "@title:window"
 msgid "Projects Folder"
 msgstr "工程文件夹"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:73
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create jAlbum Album"
+msgctxt "@title:window"
 msgid "Create jAlbum Album"
 msgstr "创建 jAlbum 相册"
 
@@ -17548,9 +17683,11 @@ msgid "Generating jAlbum"
 msgstr "正在生成 jAlbum 相册"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:93
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Share Files with DLNA Media Server"
 msgctxt "@title:window"
-msgid "Share Files with DLNA Media Server"
+msgid "Share Files With DLNA Media Server"
 msgstr "使用 DLNA 媒体服务器共享文件"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:150
@@ -17589,8 +17726,10 @@ msgstr ""
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:314
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:64
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:77
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Media Server Contents"
+msgctxt "@title:window"
 msgid "Media Server Contents"
 msgstr "媒体服务器内容"
 
@@ -17669,8 +17808,10 @@ msgstr "已共享项目"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:340
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:105
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Starting Media Server"
+msgctxt "@title:window"
 msgid "Starting Media Server"
 msgstr "正在启动媒体服务器"
 
@@ -17735,14 +17876,18 @@ msgid "MJPEG Server cannot be started!"
 msgstr "MJPEG 服务器无法启动。"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg.cpp:26
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Share Files with MJPEG Stream Server"
 msgctxt "@title:window"
-msgid "Share Files with MJPEG Stream Server"
+msgid "Share Files With MJPEG Stream Server"
 msgstr "使用 MJPEG 流服务器共享文件"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg.cpp:97
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "MJPEG Server Contents"
+msgctxt "@title:window"
 msgid "MJPEG Server Contents"
 msgstr "MJPEG 服务器内容"
 
@@ -18250,9 +18395,10 @@ msgid ""
 msgstr "Tesseract 是一款支持各种操作系统的光学字符识别引擎。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:122
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:44
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "OCR Text Converter"
+msgctxt "@title:window"
 msgid "OCR Text Converter"
 msgstr "OCR 文本转换器"
 
@@ -18333,9 +18479,10 @@ msgid "Success"
 msgstr "成功"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:585
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:597
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Text Converter"
+msgctxt "@title:window"
 msgid "Text Converter"
 msgstr "文字转换程序"
 
@@ -18346,6 +18493,12 @@ msgid ""
 "The list does not contain any digital files to process. You need to select "
 "them."
 msgstr "列表中不包含任何要处理的数字文件。您需要选择它们。"
+
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:597
+#, kde-format
+msgctxt "@title"
+msgid "Text Converter"
+msgstr "文字转换程序"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:670
 #, kde-format
@@ -18398,6 +18551,12 @@ msgstr "处理所选项目"
 #, kde-format
 msgid "Words"
 msgstr "词数"
+
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:44
+#, kde-format
+msgctxt "@title"
+msgid "OCR Text Converter"
+msgstr "OCR 文本转换器"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:59
 #, kde-format
@@ -18872,8 +19031,6 @@ msgstr ""
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:212
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:221
-#: core/dplugins/generic/webservices/box/boxwindow.cpp:252
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:849
 #, kde-format
 msgctxt "@title: dialog"
 msgid "Warning"
@@ -19053,12 +19210,6 @@ msgstr ""
 msgctxt "@title:window"
 msgid "<b>Preview and Post-Processing</b>"
 msgstr "<b>预览和后期处理</b>"
-
-#: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:104
-#, kde-format
-msgctxt "@action:button"
-msgid "Details..."
-msgstr "详情..."
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:142
 #, kde-format
@@ -19245,8 +19396,6 @@ msgid "Page %1 saved as %2"
 msgstr "页面 %1 已保存为 %2"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:43
-#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:354
-#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
 #, kde-format
 msgid "Print Creator"
 msgstr "打印创建工具"
@@ -19481,7 +19630,6 @@ msgstr "第 0 张照片，共 0 张"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, AdvPrintCustomLayout)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:26
-#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1101
 #, kde-format
 msgid "Custom layout"
 msgstr "自定义布局"
@@ -19550,7 +19698,7 @@ msgstr "每页照片数"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcustomlayout.ui:388
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:195
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:204
 #: core/utilities/maintenance/facesdetector.cpp:67
 #: core/utilities/searchwindow/searchutilities.cpp:633
 #, kde-format
@@ -19737,6 +19885,14 @@ msgid ""
 "permissions to this folder and try again."
 msgstr "无法创建临时文件夹。请确保您具备此文件夹的相应权限然后重试。"
 
+#: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:354
+#: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
+#, fuzzy, kde-format
+#| msgid "Print Creator"
+msgctxt "@title:window"
+msgid "Print Creator"
+msgstr "打印创建工具"
+
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:76
 #, kde-format
 msgid ""
@@ -19770,16 +19926,10 @@ msgstr "选择想要导出打印结果图像的格式。"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:115
-#, kde-format
-msgid "Destination Folder:"
+#, fuzzy, kde-format
+#| msgid "Destination Folder:"
+msgid "Destination folder:"
 msgstr "目标文件夹："
-
-#: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
-#: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:120
-#: core/libs/dplugins/iface/dmetainfoiface.cpp:267
-#, kde-format
-msgid "Destination Folder"
-msgstr "目标文件夹"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:109
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:121
@@ -19820,6 +19970,13 @@ msgstr "再次添加"
 #, kde-format
 msgid "Remove"
 msgstr "移除"
+
+#: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1101
+#, fuzzy, kde-format
+#| msgid "Custom layout"
+msgctxt "@title:window"
+msgid "Custom Layout"
+msgstr "自定义布局"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1102
 #, kde-format
@@ -19989,7 +20146,9 @@ msgstr "图像属性文件完成处理"
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:334
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:984
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:997
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Processing Failed"
+msgctxt "@title:window"
 msgid "Processing Failed"
 msgstr "处理失败"
 
@@ -20094,7 +20253,6 @@ msgid "Png"
 msgstr "PNG"
 
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:43
-#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:75
 #, kde-format
 msgid "Send by Email"
 msgstr "通过电子邮件发送"
@@ -20306,6 +20464,13 @@ msgid ""
 "removed."
 msgstr "勾选此选项后，所有元数据包括 EXIF、IPTC、XMP 等将被移除。"
 
+#: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:75
+#, fuzzy, kde-format
+#| msgid "Send by Email"
+msgctxt "@title:window"
+msgid "Send by Email"
+msgstr "通过电子邮件发送"
+
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:84
 #, kde-format
 msgid "Welcome to Email Tool"
@@ -20484,7 +20649,9 @@ msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr "持续时间：每张 %1 秒，总计 %2 秒 (不计过渡时间)"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create a Video Slideshow"
+msgctxt "@title:window"
 msgid "Create a Video Slideshow"
 msgstr "创建视频幻灯片"
 
@@ -20531,9 +20698,12 @@ msgstr "设为壁纸"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_dbus.cpp:92
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_macos.cpp:64
-#, kde-format
-msgctxt "@title: window"
-msgid "Error while to set image as wallpaper"
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:68
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Error while to set image as wallpaper"
+msgctxt "@title:window"
+msgid "Error While to Set Image as Wallpaper"
 msgstr "设置图像为壁纸时出错"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_dbus.cpp:93
@@ -20564,12 +20734,6 @@ msgstr ""
 #, kde-format
 msgid "Unknown Error %1"
 msgstr "未知错误 %1"
-
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:68
-#, kde-format
-msgctxt "@title:window"
-msgid "Error while to set image as wallpaper"
-msgstr "设置图像为壁纸时出错"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:69
 #, kde-format
@@ -20609,7 +20773,9 @@ msgid "Cannot apply changes to desktop wallpaper."
 msgstr "无法应用更改到桌面壁纸。"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "WallPaper Settings"
+msgctxt "@title:window"
 msgid "WallPaper Settings"
 msgstr "壁纸设置"
 
@@ -20700,8 +20866,9 @@ msgstr "OpenGL 图像查看器"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
-#, kde-format
-msgid "OpenGL error"
+#, fuzzy, kde-format
+#| msgid "OpenGL error"
+msgid "OpenGL Error"
 msgstr "OpenGL 错误"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
@@ -20715,8 +20882,10 @@ msgid "No OpenGL context found"
 msgstr "未找到 OpenGL 环境"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
-#, kde-format
-msgid "Soundtrack preview"
+#, fuzzy, kde-format
+#| msgid "Soundtrack preview"
+msgctxt "@title:window"
+msgid "Soundtrack Preview"
 msgstr "背景音乐预览"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:104
@@ -20775,8 +20944,10 @@ msgid ""
 msgstr "幻灯片播放时间超过背景音乐播放时间。建议添加更多曲目。"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:362
-#, kde-format
-msgid "Select sound files"
+#, fuzzy, kde-format
+#| msgid "Select sound files"
+msgctxt "@title:window"
+msgid "Select Sound Files"
 msgstr "选择音频文件"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:430
@@ -20790,8 +20961,10 @@ msgid "You can only move files down one at a time."
 msgstr "您每次只能下移一张图像文件。"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:489
-#, kde-format
-msgid "Load playlist"
+#, fuzzy, kde-format
+#| msgid "Load playlist"
+msgctxt "@title:window"
+msgid "Load Playlist"
 msgstr "加载播放列表"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:490
@@ -20801,8 +20974,10 @@ msgid "Playlist (*.m3u)"
 msgstr "播放列表 (*.m3u)"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:548
-#, kde-format
-msgid "Save playlist"
+#, fuzzy, kde-format
+#| msgid "Save playlist"
+msgctxt "@title:window"
+msgid "Save Playlist"
 msgstr "保存播放列表"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:609
@@ -20918,36 +21093,6 @@ msgstr "无可用详情"
 msgctxt "artist - title"
 msgid "%1 - %2"
 msgstr "%1 - %2"
-
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:166
-#: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:381
-#: core/dplugins/generic/webservices/box/boxtalker.cpp:386
-#: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:374
-#: core/dplugins/generic/webservices/facebook/fbtalker.cpp:550
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:785
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:809
-#: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:975
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:461
-#: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:279
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:569
-#: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:608
-#: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:179
-#: core/dplugins/generic/webservices/onedrive/odtalker.cpp:404
-#: core/dplugins/generic/webservices/pinterest/ptalker.cpp:411
-#: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:380
-#: core/dplugins/generic/webservices/smugmug/smugtalker.cpp:746
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:442
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:451
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:489
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:526
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1018
-#: core/dplugins/generic/webservices/twitter/twittertalker.cpp:665
-#: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:348
-#: core/libs/database/utils/scan/scancontroller_progress.cpp:87
-#: core/libs/tags/widgets/tageditdlg.cpp:546
-#, kde-format
-msgid "Error"
-msgstr "错误"
 
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:167
 #, kde-format
@@ -21239,9 +21384,10 @@ msgid "Use Open&GL transitions"
 msgstr "使用 OpenGL 过渡 (&G)"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:75
-#: core/dplugins/generic/view/presentation/presentationplugin.cpp:48
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Presentation"
+msgctxt "@title:window"
 msgid "Presentation"
 msgstr "演示"
 
@@ -21371,6 +21517,12 @@ msgstr "没有要显示的图像。"
 msgid "OpenGL support is not available on your system."
 msgstr "OpenGL 支持在本机系统中不可用。"
 
+#: core/dplugins/generic/view/presentation/presentationplugin.cpp:48
+#, kde-format
+msgctxt "@title"
+msgid "Presentation"
+msgstr "演示"
+
 #: core/dplugins/generic/view/presentation/presentationplugin.cpp:63
 #, kde-format
 msgctxt "@info"
@@ -21402,8 +21554,10 @@ msgstr "演示..."
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:227
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:267
-#, kde-format
-msgid "Specify delay for slide show"
+#, fuzzy, kde-format
+#| msgid "Specify delay for slide show"
+msgctxt "@title:window"
+msgid "Specify Delay for Slide Show"
 msgstr "指定幻灯片放映延迟"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:228
@@ -21414,8 +21568,10 @@ msgstr "延迟："
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:253
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:429
-#, kde-format
-msgid "Delete image"
+#, fuzzy, kde-format
+#| msgid "Delete image"
+msgctxt "@title:window"
+msgid "Delete Image"
 msgstr "删除图像"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:254
@@ -21497,9 +21653,9 @@ msgid "Blobs"
 msgstr "斑点"
 
 #: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:120
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:170
-#: core/libs/settings/applicationsettings_miscs.cpp:430
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Slideshow"
+msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "幻灯片放映"
 
@@ -21512,7 +21668,9 @@ msgid "Giving a slideshow"
 msgstr "正在放映幻灯片"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:107
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Slideshow Settings"
+msgctxt "@title:window"
 msgid "Slideshow Settings"
 msgstr "幻灯片设置"
 
@@ -21803,6 +21961,12 @@ msgctxt "@action"
 msgid "Slideshow"
 msgstr "幻灯片"
 
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:170
+#: core/libs/settings/applicationsettings_miscs.cpp:430
+#, kde-format
+msgid "Slideshow"
+msgstr "幻灯片放映"
+
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:176
 #, kde-format
 msgid "Play All"
@@ -21905,37 +22069,38 @@ msgid "Failed to list folders"
 msgstr "无法列出文件夹"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:80
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Export to Box"
+msgctxt "@title:window"
 msgid "Export to Box"
 msgstr "导出到 Box"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:82
+#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:80
+#: core/dplugins/generic/webservices/facebook/fbwindow.cpp:117
 #: core/dplugins/generic/webservices/google/gswindow.cpp:142
 #: core/dplugins/generic/webservices/google/gswindow.cpp:189
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:103
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:82
-#, kde-format
-msgctxt "@action"
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:82
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:232
+#: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:45
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:132
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:83
+#, fuzzy, kde-format
+#| msgid "Start Upload"
+msgctxt "@action:button"
 msgid "Start Upload"
 msgstr "开始上传"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:83
-#, kde-format
-msgctxt "@action"
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Start upload to Box"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to Box"
 msgstr "开始上传到 Box"
-
-#: core/dplugins/generic/webservices/box/boxwindow.cpp:244
-#: core/dplugins/generic/webservices/google/gswindow.cpp:403
-#: core/dplugins/generic/webservices/google/gswindow.cpp:490
-#: core/dplugins/generic/webservices/google/gswindow.cpp:992
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1201
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1218
-#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:243
-#, kde-format
-msgctxt "@title: window"
-msgid "Error"
-msgstr "错误"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:245
 #: core/dplugins/generic/webservices/google/gswindow.cpp:491
@@ -21944,6 +22109,26 @@ msgstr "错误"
 msgctxt "@info"
 msgid "No image selected. Please select which images should be uploaded."
 msgstr "未选择图像。请选择要上传的图像。"
+
+#: core/dplugins/generic/webservices/box/boxwindow.cpp:252
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:849
+#: core/dplugins/generic/webservices/google/gswindow.cpp:506
+#: core/dplugins/generic/webservices/google/gswindow.cpp:531
+#: core/dplugins/generic/webservices/google/gswindow.cpp:944
+#: core/dplugins/generic/webservices/google/gswindow.cpp:965
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1013
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1063
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1256
+#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:670
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:256
+#, fuzzy, kde-format
+#| msgctxt "@title: dialog"
+#| msgid "Warning"
+msgctxt "@title:window"
+msgid "Warning"
+msgstr "警告"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:253
 #: core/dplugins/generic/webservices/google/gswindow.cpp:507
@@ -21955,14 +22140,38 @@ msgid "Authentication failed. Click \"Continue\" to authenticate."
 msgstr "身份验证失败。点击“继续”进行身份验证。"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:256
-#, kde-format
-msgctxt "@action: button"
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:854
+#: core/dplugins/generic/webservices/google/gswindow.cpp:510
+#: core/dplugins/generic/webservices/google/gswindow.cpp:535
+#: core/dplugins/generic/webservices/google/gswindow.cpp:949
+#: core/dplugins/generic/webservices/google/gswindow.cpp:970
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1019
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1261
+#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:255
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:259
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:675
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:260
+#, fuzzy, kde-format
+#| msgid "Continue"
+msgctxt "@action:button"
 msgid "Continue"
 msgstr "继续"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:257
-#, kde-format
-msgctxt "@action: button"
+#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:855
+#: core/dplugins/generic/webservices/google/gswindow.cpp:511
+#: core/dplugins/generic/webservices/google/gswindow.cpp:536
+#: core/dplugins/generic/webservices/google/gswindow.cpp:950
+#: core/dplugins/generic/webservices/google/gswindow.cpp:971
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1020
+#: core/dplugins/generic/webservices/google/gswindow.cpp:1262
+#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:256
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:260
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:676
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:261
+#, fuzzy, kde-format
+#| msgid "Cancel"
+msgctxt "@action:button"
 msgid "Cancel"
 msgstr "取消"
 
@@ -21982,9 +22191,22 @@ msgid "Box export"
 msgstr "Box 导出"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:325
+#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:317
+#: core/dplugins/generic/webservices/facebook/fbwindow.cpp:619
+#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:413
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:278
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:285
+#: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:226
+#: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:324
-#, kde-format
-msgctxt "@title"
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:328
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:584
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
+#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
+#, fuzzy, kde-format
+#| msgid "Uploading Failed"
+msgctxt "@title:window"
 msgid "Uploading Failed"
 msgstr "上传失败"
 
@@ -22001,9 +22223,15 @@ msgstr ""
 "您想要继续吗？"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:384
+#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:251
+#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:375
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:384
-#, kde-format
-msgctxt "@title"
+#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:386
+#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:368
+#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:391
+#, fuzzy, kde-format
+#| msgid "Login Failed"
+msgctxt "@title:window"
 msgid "Login Failed"
 msgstr "登录失败"
 
@@ -22056,38 +22284,18 @@ msgid "Export to &Dropbox..."
 msgstr "导出到 Dropbox(&D)..."
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:78
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to Dropbox"
+msgctxt "@title:window"
 msgid "Export to Dropbox"
 msgstr "导出到 Dropbox"
 
-#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:80
-#: core/dplugins/generic/webservices/facebook/fbwindow.cpp:117
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:103
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:82
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:232
-#: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:45
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:132
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:83
-#, kde-format
-msgid "Start Upload"
-msgstr "开始上传"
-
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:81
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start upload to Dropbox"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to Dropbox"
 msgstr "开始上传到 Dropbox"
-
-#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:244
-#: core/dplugins/generic/webservices/google/gphoto/gptalker.cpp:542
-#: core/dplugins/generic/webservices/google/gswindow.cpp:362
-#: core/dplugins/generic/webservices/google/gswindow.cpp:429
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:247
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:248
-#: core/libs/dplugins/webservices/wslogindialog.cpp:164
-#, kde-format
-msgctxt "@title:window"
-msgid "Error"
-msgstr "错误"
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:245
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:248
@@ -22095,15 +22303,6 @@ msgstr "错误"
 #, kde-format
 msgid "No image selected. Please select which images should be uploaded."
 msgstr "未选择图像。请选择要上传的图像。"
-
-#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:251
-#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:375
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:386
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:368
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:391
-#, kde-format
-msgid "Login Failed"
-msgstr "登录失败"
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:252
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:376
@@ -22128,22 +22327,6 @@ msgstr "%v / %m"
 #, kde-format
 msgid "Dropbox export"
 msgstr "Dropbox 导出"
-
-#: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:317
-#: core/dplugins/generic/webservices/facebook/fbwindow.cpp:619
-#: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:413
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:278
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:285
-#: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:226
-#: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:232
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:328
-#: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:584
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
-#: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
-#, kde-format
-msgid "Uploading Failed"
-msgstr "上传失败"
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:318
 #, kde-format
@@ -22192,7 +22375,6 @@ msgid "Everyone"
 msgstr "所有人"
 
 #: core/dplugins/generic/webservices/facebook/fbplugin.cpp:49
-#: core/dplugins/generic/webservices/facebook/fbplugin.cpp:110
 #, kde-format
 msgid "Facebook"
 msgstr "Facebook"
@@ -22217,6 +22399,13 @@ msgstr ""
 msgctxt "@action"
 msgid "Export to &Facebook..."
 msgstr "导出到 Facebook(&F)..."
+
+#: core/dplugins/generic/webservices/facebook/fbplugin.cpp:110
+#, fuzzy, kde-format
+#| msgid "Facebook"
+msgctxt "@title:window"
+msgid "Facebook"
+msgstr "Facebook"
 
 #: core/dplugins/generic/webservices/facebook/fbplugin.cpp:111
 #, kde-format
@@ -22287,12 +22476,16 @@ msgid "Validate previous session..."
 msgstr "验证上一次会话..."
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:115
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to Facebook Web Service"
+msgctxt "@title:window"
 msgid "Export to Facebook Web Service"
 msgstr "导出到 Facebook 在线服务"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:118
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start upload to Facebook web service"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to Facebook web service"
 msgstr "开始上传到 Facebook"
 
@@ -22345,7 +22538,9 @@ msgid "Target location: "
 msgstr "目标位置："
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:112
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Target Folder"
+msgctxt "@title:window"
 msgid "Target Folder"
 msgstr "目标文件夹"
 
@@ -22355,8 +22550,9 @@ msgid "Sets the target address to copy the items to."
 msgstr "设置要复制项目的目标地址。"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:115
-#, kde-format
-msgid "Target File behavior:"
+#, fuzzy, kde-format
+#| msgid "Target File behavior:"
+msgid "Target file behavior:"
 msgstr "目标文件行为："
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:117
@@ -22377,7 +22573,7 @@ msgstr "创建相对符号链接"
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:121
 #, kde-format
 msgid "Include the sidecars of the items"
-msgstr ""
+msgstr "包含项目的附带文件"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:122
 #, kde-format
@@ -22408,25 +22604,33 @@ msgid "This is the list of items to copy to the specified target."
 msgstr "要上传到指定目标位置的图像列表。"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:91
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to Local Storage"
+msgctxt "@title:window"
 msgid "Export to Local Storage"
 msgstr "导出到本地存储"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:94
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:74
-#, kde-format
-msgid "Start export"
+#, fuzzy, kde-format
+#| msgid "Start export"
+msgctxt "@action:button"
+msgid "Start Export"
 msgstr "开始导出"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:95
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:75
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start export to the specified target"
+msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
 msgstr "开始导出到指定目标位置"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:217
-#, kde-format
-msgid "Copy not completed"
+#, fuzzy, kde-format
+#| msgid "Copy not completed"
+msgctxt "@title:window"
+msgid "Copy not Completed"
 msgstr "复制未完成"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:218
@@ -22480,8 +22684,10 @@ msgid "This is the list of images to upload to the specified target."
 msgstr "要上传到指定目标位置的图像列表。"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:162
-#, kde-format
-msgid "Select target..."
+#, fuzzy, kde-format
+#| msgid "Select target..."
+msgctxt "@title:window"
+msgid "Select Target..."
 msgstr "选择目标位置..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:163
@@ -22496,13 +22702,17 @@ msgid "<i>not selected</i>"
 msgstr "<b>未选择</b>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:71
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to Remote Storage"
+msgctxt "@title:window"
 msgid "Export to Remote Storage"
 msgstr "导出到远程存储"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:186
-#, kde-format
-msgid "Upload not completed"
+#, fuzzy, kde-format
+#| msgid "Upload not completed"
+msgctxt "@title:window"
+msgid "Upload not Completed"
 msgstr "上传未完成"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:187
@@ -22523,28 +22733,39 @@ msgid "This is the list of images to import into the current album."
 msgstr "要导入至当前相册的图像列表。"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:99
-#, kde-format
-msgid "Select items to import..."
+#, fuzzy, kde-format
+#| msgid "Select items to import..."
+msgctxt "@title:window"
+msgid "Select Items to Import..."
 msgstr "选择要导入的项目..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:63
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import from Remote Storage"
+msgctxt "@title:window"
 msgid "Import from Remote Storage"
 msgstr "从远程存储导入"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:67
-#, kde-format
-msgid "Start import"
+#, fuzzy, kde-format
+#| msgid "Start import"
+msgctxt "@action:button"
+msgid "Start Import"
 msgstr "开始导入"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:68
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Start importing the specified images into the currently selected album."
+msgctxt "@info:tooltip, button"
 msgid "Start importing the specified images into the currently selected album."
 msgstr "开始将指定的图像导入到当前所选的相册。"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:138
-#, kde-format
-msgid "Import not completed"
+#, fuzzy, kde-format
+#| msgid "Import not completed"
+msgctxt "@title:window"
+msgid "Import not Completed"
 msgstr "导入未完成"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:139
@@ -23005,13 +23226,17 @@ msgid "Fewer tag options"
 msgstr "更少标签选项"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:148
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to %1 Web Service"
+msgctxt "@title:window"
 msgid "Export to %1 Web Service"
 msgstr "导出到 %1 在线服务"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:187
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:240
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start Uploading"
+msgctxt "@action:button"
 msgid "Start Uploading"
 msgstr "开始上传"
 
@@ -23038,15 +23263,6 @@ msgid ""
 msgstr ""
 "无法上传照片到 %1。%2\n"
 "您想要继续吗？"
-
-#: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:854
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:259
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:675
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:260
-#: core/libs/dialogs/dmessagebox.cpp:155
-#, kde-format
-msgid "Continue"
-msgstr "继续"
 
 #: core/dplugins/generic/webservices/google/gdrive/gdtalker.cpp:417
 #, kde-format
@@ -23281,44 +23497,58 @@ msgid "Build a combined tag string."
 msgstr "构建合并标签字符串。"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:140
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Export to Google Drive"
+msgctxt "@title:window"
 msgid "Export to Google Drive"
 msgstr "导出到 Google Drive"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:143
-#, kde-format
-msgctxt "@info"
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Start upload to Google Drive"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to Google Drive"
 msgstr "开始上传到 Google Drive"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:187
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Export to Google Photos Service"
+msgctxt "@title:window"
 msgid "Export to Google Photos Service"
 msgstr "导出到 Google Photos"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:190
-#, kde-format
-msgctxt "@info"
-msgid "Start upload to Google Photos Service"
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Start upload to Google Photos Service"
+msgctxt "@info:tooltip, button"
+msgid "Start upload to Google Photos service"
 msgstr "开始上传到 Google Photos"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:196
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Import from Google Photos Service"
+msgctxt "@title:window"
 msgid "Import from Google Photos Service"
 msgstr "从 Google Photos 导入"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:198
-#, kde-format
-msgctxt "@action"
+#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:123
+#, fuzzy, kde-format
+#| msgid "Start Download"
+msgctxt "@action:button"
 msgid "Start Download"
 msgstr "开始下载"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:199
-#, kde-format
-msgctxt "@info"
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Start download from Google Photos service"
+msgctxt "@info:tooltip, button"
 msgid "Start download from Google Photos service"
 msgstr "开始从 Google Photos 下载"
 
@@ -23334,34 +23564,6 @@ msgstr "Google Photos 调用失败：%1\n"
 msgctxt "@info"
 msgid "Google Drive call failed: %1\n"
 msgstr "Google Drive 调用失败： %1\n"
-
-#: core/dplugins/generic/webservices/google/gswindow.cpp:506
-#: core/dplugins/generic/webservices/google/gswindow.cpp:531
-#: core/dplugins/generic/webservices/google/gswindow.cpp:944
-#: core/dplugins/generic/webservices/google/gswindow.cpp:965
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1013
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1063
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1256
-#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:251
-#: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:670
-#: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:256
-#, kde-format
-msgctxt "@title: window"
-msgid "Warning"
-msgstr "警告"
-
-#: core/dplugins/generic/webservices/google/gswindow.cpp:510
-#: core/dplugins/generic/webservices/google/gswindow.cpp:535
-#: core/dplugins/generic/webservices/google/gswindow.cpp:949
-#: core/dplugins/generic/webservices/google/gswindow.cpp:970
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1019
-#: core/dplugins/generic/webservices/google/gswindow.cpp:1261
-#: core/dplugins/generic/webservices/onedrive/odwindow.cpp:255
-#, kde-format
-msgctxt "@action"
-msgid "Continue"
-msgstr "继续"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:620
 #, kde-format
@@ -23426,11 +23628,9 @@ msgstr ""
 "并未上传任何图像到您的账户。"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1069
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
-#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
-#: core/utilities/imageeditor/editor/editorwindow.cpp:565
-#, kde-format
-msgctxt "@action"
+#, fuzzy, kde-format
+#| msgid "OK"
+msgctxt "@action:button"
 msgid "OK"
 msgstr "确定"
 
@@ -23538,19 +23738,25 @@ msgid "Create new gallery"
 msgstr "创建新相册"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:104
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to ImageShack"
+msgctxt "@title:window"
 msgid "Export to ImageShack"
 msgstr "导出到 ImageShack"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:112
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:156
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:123
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Upload"
+msgctxt "@action:button"
 msgid "Upload"
 msgstr "上传"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:113
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start upload to ImageShack web service"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to ImageShack web service"
 msgstr "开始上传到 ImageShack"
 
@@ -23671,12 +23877,16 @@ msgid "Upload Anonymously"
 msgstr "匿名上传"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:153
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to imgur.com"
+msgctxt "@title:window"
 msgid "Export to imgur.com"
 msgstr "导出到 imgur.com"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:157
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start upload to Imgur"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to Imgur"
 msgstr "开始上传到 Imgur"
 
@@ -23686,7 +23896,9 @@ msgid "<i>Not logged in</i>"
 msgstr "<b>未登录</b>"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:250
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Authorization Failed"
+msgctxt "@title:window"
 msgid "Authorization Failed"
 msgstr "身份验证失败"
 
@@ -23785,19 +23997,25 @@ msgstr "登录"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1345
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1507
-#, kde-format
-msgid "ERROR while creating observation"
+#, fuzzy, kde-format
+#| msgid "ERROR while creating observation"
+msgctxt "@title:window"
+msgid "ERROR While Creating Observation"
 msgstr "创建观察记录时出错"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1585
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1703
-#, kde-format
-msgid "ERROR while uploading photo"
+#, fuzzy, kde-format
+#| msgid "ERROR while uploading photo"
+msgctxt "@title:window"
+msgid "ERROR While Uploading Photo"
 msgstr "上传照片时出错"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1815
-#, kde-format
-msgid "ERROR while deleting observation"
+#, fuzzy, kde-format
+#| msgid "ERROR while deleting observation"
+msgctxt "@title:window"
+msgid "ERROR While Deleting Observation"
 msgstr "删除观察记录时出错"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1919
@@ -24121,7 +24339,9 @@ msgstr ""
 "h2></b>"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:186
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export as %1 Observation"
+msgctxt "@title:window"
 msgid "Export as %1 Observation"
 msgstr "导出为 %1 观察记录"
 
@@ -24224,12 +24444,16 @@ msgid "Export to &Ipfs..."
 msgstr "导出到 IPFS(&I)..."
 
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:120
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to IPFS"
+msgctxt "@title:window"
 msgid "Export to IPFS"
 msgstr "导出到 IPFS"
 
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:124
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start upload to IPFS"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to IPFS"
 msgstr "开始上传到 IPFS"
 
@@ -24736,12 +24960,16 @@ msgid "Upload Settings"
 msgstr "上传设置"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:101
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to MediaWiki"
+msgctxt "@title:window"
 msgid "Export to MediaWiki"
 msgstr "导出到 MediaWiki"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:104
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start upload to MediaWiki"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to MediaWiki"
 msgstr "开始上传到 MediaWiki"
 
@@ -24751,7 +24979,9 @@ msgid "MediaWiki export"
 msgstr "MediaWiki 导出"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:338
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Login Error"
+msgctxt "@title:window"
 msgid "Login Error"
 msgstr "登录错误"
 
@@ -24796,14 +25026,18 @@ msgid "Export to &Onedrive..."
 msgstr "导出到 Onedrive(&O)..."
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:80
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Export to Onedrive"
+msgctxt "@title:window"
 msgid "Export to Onedrive"
 msgstr "导出到 OneDrive"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:83
-#, kde-format
-msgctxt "@info"
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Start upload to Onedrive"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to Onedrive"
 msgstr "开始上传到 Onedrive"
 
@@ -24877,12 +25111,16 @@ msgid "Failed to list boards"
 msgstr "无法列出板块"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:80
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to Pinterest"
+msgctxt "@title:window"
 msgid "Export to Pinterest"
 msgstr "导出到 Pinterest"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start upload to Pinterest"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to Pinterest"
 msgstr "开始上传到 Pinterest"
 
@@ -25067,7 +25305,9 @@ msgid "Resized JPEG quality:"
 msgstr "JPEG 缩放后画质："
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:227
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Piwigo Export"
+msgctxt "@title:window"
 msgid "Piwigo Export"
 msgstr "Piwigo 导出"
 
@@ -25276,12 +25516,16 @@ msgid "Adding photos %v%"
 msgstr "正在添加照片 %v%"
 
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to Rajce.net"
+msgctxt "@title:window"
 msgid "Export to Rajce.net"
 msgstr "导出到 Rajce.net"
 
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start upload to Rajce.net"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to Rajce.net"
 msgstr "开始上传到 Rajce.net"
 
@@ -25570,27 +25814,30 @@ msgid "Maximum dimension:"
 msgstr "最大尺寸："
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:121
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import from SmugMug Web Service"
+msgctxt "@title:window"
 msgid "Import from SmugMug Web Service"
 msgstr "从 SmugMug 在线服务导入"
 
-#: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:123
-#, kde-format
-msgid "Start Download"
-msgstr "开始下载"
-
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:124
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start download from SmugMug web service"
+msgctxt "@info:tooltip, button"
 msgid "Start download from SmugMug web service"
 msgstr "开始从 SmugMug 下载"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:130
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to SmugMug Web Service"
+msgctxt "@title:window"
 msgid "Export to SmugMug Web Service"
 msgstr "导出到 SmugMug 在线服务"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:133
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start upload to SmugMug web service"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to SmugMug web service"
 msgstr "开始上传到 SmugMug"
 
@@ -25599,8 +25846,9 @@ msgstr "开始上传到 SmugMug"
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:489
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:526
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1018
-#, kde-format
-msgid "SmugMug Call Failed: %1\n"
+#, fuzzy, kde-format
+#| msgid "SmugMug Call Failed: %1\n"
+msgid "SmugMug call failed: %1\n"
 msgstr "SmugMug 调用失败：%1\n"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:522
@@ -25711,12 +25959,16 @@ msgid "Failed to create tweet for photo uploaded"
 msgstr "无法为上传的照片创建推文"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:81
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to Twitter"
+msgctxt "@title:window"
 msgid "Export to Twitter"
 msgstr "导出到 Twitter"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:84
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Start upload to Twitter"
+msgctxt "@info:tooltip, button"
 msgid "Start upload to Twitter"
 msgstr "开始上传到 Twitter"
 
@@ -25752,7 +26004,9 @@ msgid "Cannot open image at %1\n"
 msgstr "无法在 %1 打开图像\n"
 
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:395
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "%1 Call Failed"
+msgctxt "@title:window"
 msgid "%1 Call Failed"
 msgstr "%1 调用失败"
 
@@ -25839,8 +26093,10 @@ msgid "<h3>This view lists user albums.</h3>"
 msgstr "<h3>此视图显示用户相册列表。</h3>"
 
 #: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:310
-#, kde-format
-msgid "%1 - Create album failed"
+#, fuzzy, kde-format
+#| msgid "%1 - Create album failed"
+msgctxt "@title:window"
+msgid "%1 - Create Album Failed"
 msgstr "%1 - 创建相册失败"
 
 #: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:85
@@ -25881,7 +26137,9 @@ msgid "&Choose account:"
 msgstr "选择账户(&C)："
 
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:84
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export to Web Services"
+msgctxt "@title:window"
 msgid "Export to Web Services"
 msgstr "导出到在线服务"
 
@@ -26175,7 +26433,9 @@ msgstr "<p>您想要删除的相册包含文件。</p><p>您想要继续吗？</
 
 #: core/libs/album/engine/albummodificationhelper.cpp:283
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:145
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Rename Album (%1)"
+msgctxt "@title:window"
 msgid "Rename Album (%1)"
 msgstr "重命名相册 (%1)"
 
@@ -26343,12 +26603,16 @@ msgid ""
 msgstr "现在不采取任何操作。我会在之后通过配置对话框解决此问题。"
 
 #: core/libs/album/manager/albummanager_database.cpp:357
-#, kde-format
-msgid "Collection not found"
+#, fuzzy, kde-format
+#| msgid "Collection not found"
+msgctxt "@title:window"
+msgid "Collection not Found"
 msgstr "相册集合未找到"
 
 #: core/libs/album/manager/albummanager_database.cpp:459
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Database Folder"
+msgctxt "@title:window"
 msgid "Database Folder"
 msgstr "数据库文件夹"
 
@@ -26368,7 +26632,9 @@ msgstr ""
 #: core/libs/album/manager/albummanager_database.cpp:470
 #: core/libs/album/manager/albummanager_database.cpp:538
 #: core/libs/album/manager/albummanager_database.cpp:560
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Upgrade Database"
+msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "升级数据库"
 
@@ -26376,7 +26642,9 @@ msgstr "升级数据库"
 #: core/libs/album/manager/albummanager_database.cpp:540
 #: core/libs/album/manager/albummanager_database.cpp:562
 #: core/libs/album/manager/albummanager_database.cpp:610
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create New Database"
+msgctxt "@action:button"
 msgid "Create New Database"
 msgstr "新建数据库"
 
@@ -26384,8 +26652,10 @@ msgstr "新建数据库"
 #: core/libs/album/manager/albummanager_database.cpp:552
 #: core/libs/album/manager/albummanager_database.cpp:602
 #: core/libs/album/manager/albummanager_database.cpp:634
-#, kde-format
-msgid "New database folder"
+#, fuzzy, kde-format
+#| msgid "New database folder"
+msgctxt "@title:window"
+msgid "New Database Folder"
 msgstr "新建数据库文件夹"
 
 #: core/libs/album/manager/albummanager_database.cpp:530
@@ -26404,7 +26674,9 @@ msgstr ""
 #: core/libs/album/manager/albummanager_database.cpp:542
 #: core/libs/album/manager/albummanager_database.cpp:612
 #: core/libs/album/manager/albummanager_database.cpp:643
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Copy Current Database"
+msgctxt "@action:button"
 msgid "Copy Current Database"
 msgstr "复制当前数据库"
 
@@ -26449,7 +26721,9 @@ msgstr ""
 "p> "
 
 #: core/libs/album/manager/albummanager_database.cpp:645
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use Existing File"
+msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "使用已有文件"
 
@@ -26855,7 +27129,6 @@ msgid "Find Duplicates..."
 msgstr "查找重复项..."
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:234
-#: core/libs/album/treeview/albumselectiontreeview.cpp:305
 #, kde-format
 msgid "Scan for Faces"
 msgstr "扫描人脸"
@@ -26869,6 +27142,13 @@ msgstr "修复隐藏项目"
 #, kde-format
 msgid "Refresh"
 msgstr "刷新"
+
+#: core/libs/album/treeview/albumselectiontreeview.cpp:305
+#, fuzzy, kde-format
+#| msgid "Scan for Faces"
+msgctxt "@title:window"
+msgid "Scan for Faces"
+msgstr "扫描人脸"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:306
 #, kde-format
@@ -26990,14 +27270,17 @@ msgid "White"
 msgstr "白"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:117
-#, kde-format
-msgctxt "@title: album properties"
+#, fuzzy, kde-format
+#| msgid "New Album"
+msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "新建相册"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:117
-#, kde-format
-msgctxt "@title: album properties"
+#, fuzzy, kde-format
+#| msgctxt "@title: album properties"
+#| msgid "Edit Album"
+msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "编辑相册"
 
@@ -27127,9 +27410,11 @@ msgstr ""
 "“%1”"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:479
-#, kde-format
-msgctxt "@title: album properties"
-msgid "Could Not Calculate Average"
+#, fuzzy, kde-format
+#| msgctxt "@title: album properties"
+#| msgid "Could Not Calculate Average"
+msgctxt "@title:window, album properties"
+msgid "Could not Calculate Average"
 msgstr "无法计算平均日期"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:480
@@ -27174,7 +27459,9 @@ msgid_plural "%1 Albums excluded"
 msgstr[0] "已排除 %1 个相册"
 
 #: core/libs/album/widgets/albumselectdialog.cpp:71
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select Album"
+msgctxt "@title:window"
 msgid "Select Album"
 msgstr "选择相册"
 
@@ -28005,8 +28292,10 @@ msgstr ""
 "请尝试新建一个空数据库以启动程序。"
 
 #: core/libs/database/utils/ifaces/dio.cpp:326
-#, kde-format
-msgid "File conflict"
+#, fuzzy, kde-format
+#| msgid "File conflict"
+msgctxt "@title:window"
+msgid "File Conflict"
 msgstr "文件冲突"
 
 #: core/libs/database/utils/ifaces/dio.cpp:327
@@ -28031,22 +28320,24 @@ msgstr ""
 "自动跳过：跳过冲突文件。"
 
 #: core/libs/database/utils/ifaces/dio.cpp:336
-#, kde-format
-msgid "Rename automatically"
+#, fuzzy, kde-format
+#| msgid "Rename automatically"
+msgctxt "@action:button"
+msgid "Rename Automatically"
 msgstr "自动重命名"
 
 #: core/libs/database/utils/ifaces/dio.cpp:338
-#: core/libs/widgets/files/filesaveconflictbox.cpp:71
-#: core/utilities/setup/camera/setupcamera.cpp:376
-#, kde-format
-msgid "Overwrite automatically"
+#, fuzzy, kde-format
+#| msgid "Overwrite automatically"
+msgctxt "@action:button"
+msgid "Overwrite Automatically"
 msgstr "自动覆盖"
 
 #: core/libs/database/utils/ifaces/dio.cpp:340
-#: core/libs/widgets/files/filesaveconflictbox.cpp:72
-#: core/utilities/setup/camera/setupcamera.cpp:377
-#, kde-format
-msgid "Skip automatically"
+#, fuzzy, kde-format
+#| msgid "Skip automatically"
+msgctxt "@action:button"
+msgid "Skip Automatically"
 msgstr "自动跳过"
 
 #: core/libs/database/utils/ifaces/dio.cpp:766
@@ -28125,6 +28416,12 @@ msgctxt "@info:status"
 msgid "Scanning collection"
 msgstr "正在扫描相册集合"
 
+#: core/libs/database/utils/scan/scancontroller_progress.cpp:87
+#: core/libs/tags/widgets/tageditdlg.cpp:546
+#, kde-format
+msgid "Error"
+msgstr "错误"
+
 #: core/libs/database/utils/scan/scancontroller_start.cpp:206
 #, kde-format
 msgid "Preparing collection scan..."
@@ -28191,7 +28488,6 @@ msgid "Step Progress (%1)"
 msgstr "当前阶段进度 (%1)"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:43
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:843
 #, kde-format
 msgid "Database Configuration"
 msgstr "数据库配置"
@@ -28603,8 +28899,11 @@ msgstr "缩略图数据库名文件夹："
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:594
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:599
-#, kde-format
-msgid "Database connection test"
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:852
+#, fuzzy, kde-format
+#| msgid "Database Connection Test"
+msgctxt "@title:window"
+msgid "Database Connection Test"
 msgstr "数据库连接测试"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:595
@@ -28652,17 +28951,19 @@ msgstr "相似性数据库名称为空"
 msgid "This path was set as a command lineoption (--database-directory)."
 msgstr "此路径已被设置为命令行选项 (--database-directory)。"
 
+#: core/libs/database/utils/widgets/dbsettingswidget.cpp:843
+#, fuzzy, kde-format
+#| msgid "Database Configuration"
+msgctxt "@title:window"
+msgid "Database Configuration"
+msgstr "数据库配置"
+
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:844
 #, kde-format
 msgid ""
 "The database names configuration is not valid. Error is <br/><p>%1</p><br/"
 ">Please check your configuration."
 msgstr "数据库名称配置无效。错误：<br/><p>%1</p><br/>请检查您的配置是否正确。"
-
-#: core/libs/database/utils/widgets/dbsettingswidget.cpp:852
-#, kde-format
-msgid "Database Connection Test"
-msgstr "数据库连接测试"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:853
 #, kde-format
@@ -28679,7 +28980,9 @@ msgid ""
 msgstr "您必须为 digiKam 选择一个文件夹，用于存储信息和元数据的数据库文件。"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:881
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create Database Folder?"
+msgctxt "@title:window"
 msgid "Create Database Folder?"
 msgstr "您想要创建数据库文件夹吗？"
 
@@ -28693,7 +28996,9 @@ msgstr ""
 "建它吗？"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:893
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create Database Folder Failed"
+msgctxt "@title:window"
 msgid "Create Database Folder Failed"
 msgstr "创建数据库文件夹失败"
 
@@ -28707,7 +29012,9 @@ msgstr ""
 " 请选择一个不同的位置。</p><p><b>%1</b></p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:919
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "No Database Write Access"
+msgctxt "@title:window"
 msgid "No Database Write Access"
 msgstr "不具备数据库写入权限"
 
@@ -28721,8 +29028,9 @@ msgstr ""
 "%1</b></p>"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:46
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:97
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Database Statistics"
+msgctxt "@title:window"
 msgid "Database Statistics"
 msgstr "数据库统计信息"
 
@@ -28970,13 +29278,17 @@ msgid "&Move to Trash"
 msgstr "移动到回收站(&M)"
 
 #: core/libs/dialogs/deletedialog.cpp:655
-#, kde-format
-msgid "About to delete selected items"
+#, fuzzy, kde-format
+#| msgid "About to delete selected items"
+msgctxt "@title:window"
+msgid "About to Delete Selected Items"
 msgstr "即将删除所选项"
 
 #: core/libs/dialogs/deletedialog.cpp:662
-#, kde-format
-msgid "About to delete selected albums"
+#, fuzzy, kde-format
+#| msgid "About to delete selected albums"
+msgctxt "@title:window"
+msgid "About to Delete Selected Albums"
 msgstr "即将删除所选相册"
 
 #: core/libs/dialogs/dmessagebox.cpp:109
@@ -28984,18 +29296,27 @@ msgstr "即将删除所选相册"
 msgid "Do not show this message again"
 msgstr "不再显示此对话框"
 
+#: core/libs/dialogs/dmessagebox.cpp:155
+#, kde-format
+msgid "Continue"
+msgstr "继续"
+
 #: core/libs/dialogs/dmessagebox.cpp:166 core/libs/dialogs/dmessagebox.cpp:229
 #, kde-format
 msgid "Do not ask again"
 msgstr "不再询问"
 
 #: core/libs/dialogs/filesaveoptionsdlg.cpp:34
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Settings for Saving Image File"
+msgctxt "@title:window"
 msgid "Settings for Saving Image File"
 msgstr "图像文件保存设置"
 
 #: core/libs/dialogs/iccprofileinfodlg.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Color Profile Info - %1"
+msgctxt "@title:window"
 msgid "Color Profile Info - %1"
 msgstr "色彩特性文件信息 - %1"
 
@@ -29084,8 +29405,10 @@ msgstr "<b>帧速率：</b>"
 msgid "<i>VideoCodec:</i>"
 msgstr "<b>视频编码：</b>"
 
-#: core/libs/dialogs/infodlg.cpp:68
-#, kde-format
+#: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:138
+#, fuzzy, kde-format
+#| msgid "Shared Libraries and Components Information"
+msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
 msgstr "共享程序库和组件信息"
 
@@ -29105,12 +29428,6 @@ msgstr "<font size=\"5\">%1</font><br/><b>版本 %2</b><p>%3</p><p><i>%4</i></p>
 #, kde-format
 msgid "Items List"
 msgstr "项目列表"
-
-#: core/libs/dialogs/libsinfodlg.cpp:138
-#, kde-format
-msgctxt "@title"
-msgid "Shared Libraries and Components Information"
-msgstr "共享程序库和组件信息"
 
 #: core/libs/dialogs/libsinfodlg.cpp:141
 #, kde-format
@@ -29173,8 +29490,10 @@ msgid "Unknown"
 msgstr "未知"
 
 #: core/libs/dialogs/rawcameradlg.cpp:56
-#, kde-format
-msgid "List of supported RAW cameras"
+#, fuzzy, kde-format
+#| msgid "List of supported RAW cameras"
+msgctxt "@title:window"
+msgid "List of Supported RAW Cameras"
 msgstr "支持的 RAW 相机列表"
 
 #: core/libs/dialogs/rawcameradlg.cpp:129
@@ -29190,9 +29509,10 @@ msgid_plural "Using LibRaw version %2<br/>%1 models on the list (found: %3)"
 msgstr[0] "正在使用 LibRaw 版本 %2<br/>列表中有 %1 种型号 (检测到：%3 种)"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:83
-#, kde-format
-msgctxt "@title"
-msgid "List of detected hardware"
+#, fuzzy, kde-format
+#| msgid "List of Detected Hardware"
+msgctxt "@title:window"
+msgid "List of Detected Hardware"
 msgstr "检测到的硬件列表"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:86
@@ -29870,7 +30190,9 @@ msgid "Luminosity"
 msgstr "亮度 (HSY' 光度)"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:529
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Black & White Settings File to Load"
+msgctxt "@title:window"
 msgid "Black & White Settings File to Load"
 msgstr "要加载的黑白照片设置文件"
 
@@ -29885,7 +30207,9 @@ msgid "Cannot load settings from the Black & White text file."
 msgstr "无法加载黑白照片设置文本文件。"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:600
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Black & White Settings File to Save"
+msgctxt "@title:window"
 msgid "Black & White Settings File to Save"
 msgstr "要保存的黑白照片设置文件"
 
@@ -30018,8 +30342,10 @@ msgid "Total: %1 (%)"
 msgstr "总计：%1 (%)"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:545
-#, kde-format
-msgctxt "@info"
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Select Gimp Gains Mixer File to Load"
+msgctxt "@title:window"
 msgid "Select Gimp Gains Mixer File to Load"
 msgstr "选择要加载的 GIMP 增益颜色混合文件"
 
@@ -30030,8 +30356,10 @@ msgid "Cannot load settings from the Gains Mixer text file."
 msgstr "无法加载 GIMP 增益颜色混合设置文本文件。"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:635
-#, kde-format
-msgctxt "@info"
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Gimp Gains Mixer File to Save"
+msgctxt "@title:window"
 msgid "Gimp Gains Mixer File to Save"
 msgstr "要保存的 GIMP 通道增益混合文件"
 
@@ -30187,7 +30515,9 @@ msgid "Adjust Curves"
 msgstr "曲线调整"
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:242
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select Gimp Curves File to Load"
+msgctxt "@title:window"
 msgid "Select Gimp Curves File to Load"
 msgstr "选择要加载的 GIMP 曲线文件"
 
@@ -30197,7 +30527,9 @@ msgid "Cannot load from the Gimp curves text file."
 msgstr "无法加载 GIMP 曲线文本文件。"
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:263
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Gimp Curves File to Save"
+msgctxt "@title:window"
 msgid "Gimp Curves File to Save"
 msgstr "要保存的 GIMP 曲线文件"
 
@@ -31240,7 +31572,9 @@ msgid "Select Black Frame Image"
 msgstr "选择黑帧图像"
 
 #: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:231
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Black Frame Parser"
+msgctxt "@title:window"
 msgid "Black Frame Parser"
 msgstr "黑帧解析器"
 
@@ -31464,7 +31798,9 @@ msgid "Stage 4"
 msgstr "阶段 4"
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:637
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Local Contrast Settings File to Load"
+msgctxt "@title:window"
 msgid "Photograph Local Contrast Settings File to Load"
 msgstr "要加载的局部对比度设置文件"
 
@@ -31479,7 +31815,9 @@ msgid "Cannot load settings from the Photograph Local Contrast text file."
 msgstr "无法加载照片局部对比度设置文本文件。"
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:691
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Local Contrast Settings File to Save"
+msgctxt "@title:window"
 msgid "Photograph Local Contrast Settings File to Save"
 msgstr "要保存的照片局部对比度设置文件"
 
@@ -32088,7 +32426,9 @@ msgid "Chrominance Red"
 msgstr "红色品"
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:372
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Noise Reduction Settings File to Load"
+msgctxt "@title:window"
 msgid "Photograph Noise Reduction Settings File to Load"
 msgstr "要加载的照片降噪设置文件"
 
@@ -32103,7 +32443,9 @@ msgid "Cannot load settings from the Photograph Noise Reduction text file."
 msgstr "无法加载照片降噪设置文本文件。"
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:418
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Noise Reduction Settings File to Save"
+msgctxt "@title:window"
 msgid "Photograph Noise Reduction Settings File to Save"
 msgstr "要保存的照片降噪设置文件"
 
@@ -32289,7 +32631,9 @@ msgstr ""
 "循环卷积和高斯卷积程度时。"
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:515
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Refocus Settings File to Load"
+msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Load"
 msgstr "要加载的照片重新对焦设置文件"
 
@@ -32304,7 +32648,9 @@ msgid "Cannot load settings from the Photograph Refocus text file."
 msgstr "无法加载照片重新对焦设置文本文件。"
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:564
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Photograph Refocus Settings File to Save"
+msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Save"
 msgstr "要保存的照片重新对焦设置文件"
 
@@ -32707,8 +33053,10 @@ msgid ""
 msgstr "此 E.V 数值将被添加到主要曝光补偿值中以对其进行微调。"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:522
-#, kde-format
-msgctxt "@info"
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "White Color Balance Settings File to Load"
+msgctxt "@title:window"
 msgid "White Color Balance Settings File to Load"
 msgstr "要加载的白平衡设置文件"
 
@@ -32725,8 +33073,10 @@ msgid "Cannot load settings from the White Color Balance text file."
 msgstr "无法加载白平衡设置文本文件。"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:569
-#, kde-format
-msgctxt "@info"
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "White Color Balance Settings File to Save"
+msgctxt "@title:window"
 msgid "White Color Balance Settings File to Save"
 msgstr "要保存的白平衡设置文件"
 
@@ -32887,8 +33237,10 @@ msgid "Type-Mimes"
 msgstr "MIME 类型"
 
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:60
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "About %1 Plugin"
+msgctxt "@title:window"
 msgid "About %1 Plugin"
 msgstr "关于 %1 插件"
 
@@ -33136,7 +33488,9 @@ msgid "Location of the album that will be created (optional)."
 msgstr "将要创建的相册的位置 (可选)。"
 
 #: core/libs/dplugins/webservices/wsselectuserdlg.cpp:60
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Account Selector"
+msgctxt "@title:window"
 msgid "Account Selector"
 msgstr "账户选择器"
 
@@ -33314,8 +33668,10 @@ msgid "JPEG Quality:"
 msgstr "JPEG 画质："
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:60
-#, kde-format
-msgctxt "@action: button"
+#, fuzzy, kde-format
+#| msgctxt "@action: button"
+#| msgid "&Start"
+msgctxt "@action:button"
 msgid "&Start"
 msgstr "开始(&S)"
 
@@ -33379,9 +33735,11 @@ msgid "Save the list."
 msgstr "保存列表。"
 
 #: core/libs/dplugins/widgets/ditemslist.cpp:580
-#, kde-format
-msgctxt "@info"
-msgid "Select the image file list to load"
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Select the image file list to load"
+msgctxt "@title:window"
+msgid "Select the Image File List to Load"
 msgstr "选择要加载的图像文件列表"
 
 #: core/libs/dplugins/widgets/ditemslist.cpp:581
@@ -33392,9 +33750,11 @@ msgid "All Files (*)"
 msgstr "全部文件 (*)"
 
 #: core/libs/dplugins/widgets/ditemslist.cpp:661
-#, kde-format
-msgctxt "@info"
-msgid "Select the image file list to save"
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Select the image file list to save"
+msgctxt "@title:window"
+msgid "Select the Image File List to Save"
 msgstr "选择要保存的图像文件列表"
 
 #: core/libs/dplugins/widgets/ditemslist_view.cpp:40
@@ -33447,10 +33807,7 @@ msgid "User6"
 msgstr "用户 6"
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:67
-#: core/libs/dplugins/widgets/dwizarddlg.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Help"
+#, kde-format
 msgctxt "@action: button"
 msgid "Help"
 msgstr "帮助"
@@ -33464,9 +33821,7 @@ msgstr "在线使用手册..."
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:70
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "About..."
+#, kde-format
 msgid "About..."
 msgstr "关于..."
 
@@ -33538,6 +33893,14 @@ msgstr ""
 "为 PNG 格式。此格式的文件体积较大，数据将被压缩，但不会影响画质。</"
 "p><p><b>PPM</b>：输出已处理图像为 PPM 格式。此格式的文件体积较大，数据不会被"
 "压缩，不会影响画质。</p>"
+
+#: core/libs/dplugins/widgets/dwizarddlg.cpp:62
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Help"
+msgctxt "@action:button"
+msgid "Help"
+msgstr "帮助"
 
 #: core/libs/dtrash/dtrashitemmodel.cpp:259
 #, kde-format
@@ -34104,7 +34467,7 @@ msgstr "通过模糊、噪点、压缩分析得到的高画质图像将被指定
 #, kde-format
 msgctxt "@option:radio"
 msgid "Detect Aesthetic Image using Deep Learning"
-msgstr "使用深度学习检测图像审美价值"
+msgstr "使用深度学习检测图像美感"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:166
 #, kde-format
@@ -34113,8 +34476,8 @@ msgid ""
 "Detect if the image has aesthetic value.\n"
 "The aesthetic detection engine use deep learning model to classify images"
 msgstr ""
-"检测图像是否具有审美价值。\n"
-"审美价值检测引擎使用深度学习模型来对图像进行分类"
+"检测图像是否具有美感。\n"
+"美感检测引擎使用深度学习模型来对图像进行分类"
 
 #: core/libs/imgqsort/imagequalitysettings.cpp:171
 #, kde-format
@@ -35591,7 +35954,9 @@ msgid "ETA:"
 msgstr "预计完成时间："
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:185
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Online Version Checker - Pre-Release"
+msgctxt "@title:window"
 msgid "Online Version Checker - Pre-Release"
 msgstr "在线更新检查程序 - 测试版本"
 
@@ -35601,7 +35966,9 @@ msgid "Check for new pre-release version available, please wait..."
 msgstr "正在检查最新测试版本软件，请稍候..."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:190
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Online Version Checker - Stable Version"
+msgctxt "@title:window"
 msgid "Online Version Checker - Stable Version"
 msgstr "在线更新检查程序 - 正式版本"
 
@@ -36065,9 +36432,11 @@ msgid "Always apply changes without confirmation"
 msgstr "总是应用更改而无需确认"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:359
-#, kde-format
-msgctxt "@title"
-msgid "Apply changes?"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Apply changes?"
+msgctxt "@title:window"
+msgid "Apply Changes?"
 msgstr "应用更改吗？"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:369
@@ -38099,7 +38468,9 @@ msgstr "删除标签“%1”吗？"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:294
 #: core/libs/tags/engine/tagmodificationhelper.cpp:407
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Tag"
+msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "删除标签"
 
@@ -38318,8 +38689,9 @@ msgid "Previous tags were changed. Save changes? "
 msgstr "原有标签已被更改。是否保存更改？ "
 
 #: core/libs/tags/manager/tagsmanager.cpp:177
-#: core/libs/widgets/mainview/daboutdata.cpp:190
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Tags Manager"
+msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "标签管理器"
 
@@ -38351,7 +38723,10 @@ msgid_plural "Delete tags %2?"
 msgstr[0] "删除标签 %2 吗？"
 
 #: core/libs/tags/manager/tagsmanager.cpp:375
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete tag"
+#| msgid_plural "Delete tags"
+msgctxt "@title:window"
 msgid "Delete tag"
 msgid_plural "Delete tags"
 msgstr[0] "删除标签"
@@ -38530,12 +38905,16 @@ msgid "Both"
 msgstr "两者"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:113
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "New Tag"
+msgctxt "@title:window"
 msgid "New Tag"
 msgstr "新建标签"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:117
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit Tag"
+msgctxt "@title:window"
 msgid "Edit Tag"
 msgstr "编辑标签"
 
@@ -38592,8 +38971,10 @@ msgid "<b>Properties of Tag<br/>\"%1\"</b>"
 msgstr "<b>标签<br/>“%1”的属性</b>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:529
-#, kde-format
-msgid "Tag creation Error"
+#, fuzzy, kde-format
+#| msgid "Tag creation Error"
+msgctxt "@title:window"
+msgid "Tag Creation Error"
 msgstr "标签创建错误"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:544
@@ -39144,8 +39525,10 @@ msgid "Cannot create thumbnail for %1"
 msgstr "无法创建 %1 的缩略图"
 
 #: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:153
-#, kde-format
-msgid "Failed to initialize thumbnails database"
+#, fuzzy, kde-format
+#| msgid "Failed to initialize thumbnails database"
+msgctxt "@title:window"
+msgid "Failed to Initialize Thumbnails Database"
 msgstr "无法初始化缩略图数据库"
 
 #: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:154
@@ -39154,7 +39537,9 @@ msgid "Error message: %1"
 msgstr "错误消息：%1"
 
 #: core/libs/timeadjust/clockphotodialog.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Determine Time Difference With Clock Photo"
+msgctxt "@title:window"
 msgid "Determine Time Difference With Clock Photo"
 msgstr "用时钟照片确定时间差异"
 
@@ -40338,9 +40723,11 @@ msgid "Capture"
 msgstr "捕获"
 
 #: core/libs/video/qtav/config/DecoderConfigPage.cpp:214
-#, kde-format
-msgctxt "@title"
-msgid "Video decoder config page"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Video decoder config page"
+msgctxt "@title:window"
+msgid "Video Decoder Config Page"
 msgstr "视频解码器配置页面"
 
 #: core/libs/video/qtav/config/DecoderConfigPage.cpp:226
@@ -40667,12 +41054,16 @@ msgstr "关于 Qt"
 
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:215
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:237
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "About QtAV"
+msgctxt "@title:window"
 msgid "About QtAV"
 msgstr "关于 QtAV"
 
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:232
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "About FFmpeg"
+msgctxt "@title:window"
 msgid "About FFmpeg"
 msgstr "关于 FFmpeg"
 
@@ -40685,7 +41076,9 @@ msgid "Reset to default value"
 msgstr "重置为默认值"
 
 #: core/libs/widgets/files/dbinaryiface.cpp:215
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Navigate to %1"
+msgctxt "@title:window"
 msgid "Navigate to %1"
 msgstr "定位到 %1"
 
@@ -40760,6 +41153,18 @@ msgstr "如果目标文件已存在："
 #, kde-format
 msgid "Store as a different name"
 msgstr "改名保存"
+
+#: core/libs/widgets/files/filesaveconflictbox.cpp:71
+#: core/utilities/setup/camera/setupcamera.cpp:376
+#, kde-format
+msgid "Overwrite automatically"
+msgstr "自动覆盖"
+
+#: core/libs/widgets/files/filesaveconflictbox.cpp:72
+#: core/utilities/setup/camera/setupcamera.cpp:377
+#, kde-format
+msgid "Skip automatically"
+msgstr "自动跳过"
 
 #: core/libs/widgets/files/filesaveoptionsbox.cpp:116
 #, kde-format
@@ -41627,8 +42032,8 @@ msgid ""
 "Extraction, Aesthetic Detection to classify images using deep learning model,"
 "Slideshow and Presentation tools improvement"
 msgstr ""
-"重写图像品质分类算法和照片焦点信息提取功能、审美价值检测使用深度学习模型来判"
-"断图像的审美价值、幻灯片和演示工具也进行了改进"
+"重写图像品质分类算法和照片焦点信息提取功能、美感检测使用深度学习模型来判断图"
+"像的美感好坏、幻灯片和演示工具改进"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:164
 #, kde-format
@@ -41676,6 +42081,11 @@ msgstr "UPnP/DLNA 导出工具、图像编辑器的仿制图章工具"
 #, kde-format
 msgid "Veaceslav Munteanu"
 msgstr "Veaceslav Munteanu"
+
+#: core/libs/widgets/mainview/daboutdata.cpp:190
+#, kde-format
+msgid "Tags Manager"
+msgstr "标签管理器"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:195
 #, kde-format
@@ -42108,6 +42518,11 @@ msgstr "参与 digiKam 开发协作..."
 #, kde-format
 msgid "Check for New Version..."
 msgstr "检查新版软件..."
+
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:97
+#, kde-format
+msgid "Database Statistics"
+msgstr "数据库统计信息"
 
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:125
 #, kde-format
@@ -42966,8 +43381,10 @@ msgid "File name: %1 (%2)"
 msgstr "文件名：%1 (%2)"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:398
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Save ExifTool Information"
+msgctxt "@title:window"
 msgid "Save ExifTool Information"
 msgstr "保存 ExifTool 信息"
 
@@ -43277,9 +43694,11 @@ msgid "Switch to %1"
 msgstr "切换到 %1"
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:423
-#, kde-format
-msgctxt "@info"
-msgid "Failed to translate string with %1 Web-service"
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Failed to translate string with %1 Web-service"
+msgctxt "@title:window"
+msgid "Failed to Translate String with %1 Web-Service"
 msgstr "使用 %1 在线翻译服务翻译字符串失败"
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:425
@@ -48332,14 +48751,18 @@ msgid "Icon Size: %1"
 msgstr "图标大小：%1"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:99
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "New Bookmark"
+msgctxt "@title:window"
 msgid "New Bookmark"
 msgstr "新建书签"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:103
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Edit Bookmark"
+msgctxt "@title:window"
 msgid "Edit Bookmark"
 msgstr "编辑书签"
 
@@ -48450,8 +48873,10 @@ msgid "Edit current bookmark from the list"
 msgstr "编辑列表中的当前书签"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:245
-#, kde-format
-msgctxt "@title: window"
+#, fuzzy, kde-format
+#| msgctxt "@title: window"
+#| msgid "Add New Bookmark"
+msgctxt "@title:window"
 msgid "Add New Bookmark"
 msgstr "添加新书签"
 
@@ -48468,8 +48893,10 @@ msgstr ""
 "已经存在于书签列表中的“%2”。"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:259
-#, kde-format
-msgctxt "@title: window"
+#, fuzzy, kde-format
+#| msgctxt "@title: window"
+#| msgid "Confirm Bookmark Deletion"
+msgctxt "@title:window"
 msgid "Confirm Bookmark Deletion"
 msgstr "确认删除书签"
 
@@ -48572,7 +48999,10 @@ msgid "Delete File"
 msgstr "删除文件"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
-#, kde-format
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2323
+#, fuzzy, kde-format
+#| msgid "Error Saving File"
+msgctxt "@title:window"
 msgid "Error Saving File"
 msgstr "保存文件出错"
 
@@ -48608,8 +49038,10 @@ msgid "Cannot delete \"%1\""
 msgstr "无法删除“%1”"
 
 #: core/showfoto/main/showfoto_open.cpp:58
-#, kde-format
-msgid "Open Images From Folder"
+#, fuzzy, kde-format
+#| msgid "Open Images From Folder"
+msgctxt "@title:window"
+msgid "Open Images from Folder"
 msgstr "从文件夹打开图像"
 
 #: core/showfoto/main/showfoto_open.cpp:299
@@ -48618,7 +49050,9 @@ msgid "There is no item to process."
 msgstr "没有要处理的项目。"
 
 #: core/showfoto/main/showfoto_open.cpp:321
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Error Loading File"
+msgctxt "@title:window"
 msgid "Error Loading File"
 msgstr "加载文件时出错"
 
@@ -48684,8 +49118,10 @@ msgstr "装饰(&D)"
 msgid "Effec&ts"
 msgstr "特效(&T)"
 
-#: core/showfoto/setup/showfotosetup.cpp:98
-#, kde-format
+#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:142
+#, fuzzy, kde-format
+#| msgid "Configure"
+msgctxt "@title:window"
 msgid "Configure"
 msgstr "配置"
 
@@ -49620,33 +50056,43 @@ msgid_plural "%1 files"
 msgstr[0] "%1 个文件"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:692
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "New Favorite Item"
+msgctxt "@title:window"
 msgid "New Favorite Item"
 msgstr "新建收藏图集项目"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:696
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Edit Favorite Item"
+msgctxt "@title:window"
 msgid "Edit Favorite Item"
 msgstr "编辑收藏图集项目"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:703
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "New Favorite Folder"
+msgctxt "@title:window"
 msgid "New Favorite Folder"
 msgstr "新建收藏图集文件夹"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:707
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Edit Favorite Folder"
+msgctxt "@title:window"
 msgid "Edit Favorite Folder"
 msgstr "编辑收藏图集文件夹"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:764
-#, kde-format
-msgctxt "@title: favorite item properties"
-msgid "Could Not Calculate Average"
+#, fuzzy, kde-format
+#| msgctxt "@title: album properties"
+#| msgid "Could Not Calculate Average"
+msgctxt "@title:window, favorite item properties"
+msgid "Could not Calculate Average"
 msgstr "无法计算平均日期"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:765
@@ -49717,8 +50163,10 @@ msgid "Search in Favorites..."
 msgstr "搜索收藏图集..."
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:357
-#, kde-format
-msgctxt "@title: window"
+#, fuzzy, kde-format
+#| msgctxt "@title: window"
+#| msgid "Confirm Item Deletion"
+msgctxt "@title:window"
 msgid "Confirm Item Deletion"
 msgstr "移除项目前确认"
 
@@ -49898,6 +50346,13 @@ msgstr "排序方式"
 msgid "<b>Renaming images. Please wait...</b>"
 msgstr "<b>正在重命名图像。请稍候...</b>"
 
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
+#, fuzzy, kde-format
+#| msgid "&Abort"
+msgctxt "@action:button"
+msgid "&Abort"
+msgstr "中止(&A)"
+
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:86
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:905
 #, kde-format
@@ -49906,8 +50361,10 @@ msgstr "正在处理..."
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:87
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:160
-#, kde-format
-msgid "Renaming images"
+#, fuzzy, kde-format
+#| msgid "Renaming images"
+msgctxt "@title:window"
+msgid "Renaming Images"
 msgstr "重命名图像"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:161
@@ -49924,12 +50381,16 @@ msgstr[0] ""
 "您想要重新调整这些图像的重命名模式，还是覆盖已有文件完成重命名？"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:170
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Rename Again"
+msgctxt "@action:button"
 msgid "Rename Again"
 msgstr "重新调整"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:172
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Overwrite"
+msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "覆盖"
 
@@ -50006,7 +50467,9 @@ msgid ""
 msgstr "文件列表可以排序，右键点击即可选择排序条件 (仅相册视图)"
 
 #: core/utilities/advancedrename/common/tooltipdialog.cpp:53
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Information"
+msgctxt "@title:window"
 msgid "Information"
 msgstr "信息"
 
@@ -50842,6 +51305,14 @@ msgstr "未找到地址簿条目"
 msgid "Applying face changes"
 msgstr "应用人脸更改"
 
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:179
+#: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:209
+#: core/utilities/imageeditor/editor/editorwindow.cpp:565
+#, kde-format
+msgctxt "@action"
+msgid "OK"
+msgstr "确定"
+
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:180
 #, kde-format
 msgctxt "@info:tooltip"
@@ -51109,7 +51580,9 @@ msgstr ""
 "下。"
 
 #: core/utilities/firstrun/collectionpage.cpp:179
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create Root Album Folder?"
+msgctxt "@title:window"
 msgid "Create Root Album Folder?"
 msgstr "创建根相册文件夹"
 
@@ -51123,7 +51596,9 @@ msgstr ""
 "吗？"
 
 #: core/utilities/firstrun/collectionpage.cpp:192
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create Root Album Folder Failed"
+msgctxt "@title:window"
 msgid "Create Root Album Folder Failed"
 msgstr "创建根相册文件夹失败"
 
@@ -51895,10 +52370,6 @@ msgstr "此文件并非 XBEL 版本 1.0 文件。"
 msgid "Unknown title"
 msgstr "未知名称"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:89
-msgid "Add Bookmark"
-msgstr "添加书签"
-
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:94
 #, kde-format
 msgid ""
@@ -51916,7 +52387,9 @@ msgid "Bookmark comment"
 msgstr "书签注释"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:210
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit Geolocation Bookmarks"
+msgctxt "@title:window"
 msgid "Edit Geolocation Bookmarks"
 msgstr "编辑地理位置书签"
 
@@ -51984,7 +52457,9 @@ msgstr "注释"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:809
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:944
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Loading Bookmark"
+msgctxt "@title:window"
 msgid "Loading Bookmark"
 msgstr "正在加载书签"
 
@@ -51999,7 +52474,9 @@ msgstr ""
 "%3"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:931
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Open File"
+msgctxt "@title:window"
 msgid "Open File"
 msgstr "打开文件"
 
@@ -52015,7 +52492,9 @@ msgid "Imported %1"
 msgstr "已导入 %1 个"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:958
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save File"
+msgctxt "@title:window"
 msgid "Save File"
 msgstr "保存文件"
 
@@ -52025,13 +52504,16 @@ msgid "%1 Bookmarks.xbel"
 msgstr "%1 书签.xbel"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:970
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Export error"
+msgctxt "@title:window"
 msgid "Export error"
 msgstr "导出错误"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:970
-#, kde-format
-msgid "error saving bookmarks"
+#, fuzzy, kde-format
+#| msgid "error saving bookmarks"
+msgid "Error saving bookmarks"
 msgstr "保存书签时出错"
 
 #: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:145
@@ -52084,17 +52566,14 @@ msgid "Set this option to show tracks on the Map"
 msgstr "勾选此项以在地图上显示轨迹"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:167
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox similarity album tag relation"
-#| msgid "Only selected tab"
+#, kde-format
 msgid "Only use selected images"
-msgstr "仅所选选项卡"
+msgstr "仅使用选中的图像"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:168
-#, fuzzy, kde-format
-#| msgid "Set this option to display the image type."
+#, kde-format
 msgid "Set this option to correlate selected images only"
-msgstr "勾选此项以显示图像文件类型。"
+msgstr "勾选此项时，将仅与选中的图像建立关联"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:178
 #, kde-format
@@ -52171,12 +52650,6 @@ msgstr ""
 msgid "Correlate"
 msgstr "建立关联"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:284
-#, kde-format
-msgctxt "@title:window"
-msgid "Select GPX File to Load"
-msgstr "选择要加载的 GPX 文件"
-
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:326
 #, kde-format
 msgid "The following GPX file could not be loaded:"
@@ -52184,9 +52657,12 @@ msgid_plural "The following %1 GPX files could not be loaded:"
 msgstr[0] "无法加载下列 %1 GPX 文件："
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:330
-#, kde-format
-msgid "Error loading GPX file"
-msgid_plural "Error loading GPX files"
+#, fuzzy, kde-format
+#| msgid "Error loading GPX file"
+#| msgid_plural "Error loading GPX files"
+msgctxt "@title:window"
+msgid "Error Loading GPX File"
+msgid_plural "Error Loading GPX Files"
 msgstr[0] "加载 GPX 文件时出错"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:435
@@ -52195,8 +52671,10 @@ msgid "Correlating images -"
 msgstr "正在关联图像 -"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:517
-#, kde-format
-msgid "Correlation failed"
+#, fuzzy, kde-format
+#| msgid "Correlation failed"
+msgctxt "@title:window"
+msgid "Correlation Failed"
 msgstr "关联操作失败"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:518
@@ -52207,8 +52685,10 @@ msgid ""
 msgstr "无法与任何图像建立关联 - 请检查时间偏移和时间差设置是否正确。"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:523
-#, kde-format
-msgid "Correlation succeeded"
+#, fuzzy, kde-format
+#| msgid "Correlation succeeded"
+msgctxt "@title:window"
+msgid "Correlation Succeeded"
 msgstr "关联操作成功"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:524
@@ -52220,8 +52700,10 @@ msgstr "所有图像均已建立关联。您现在可以在地图查看它们的
 #. i18np.
 #. See bug #376438 for details.
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:532
-#, kde-format
-msgid "Correlation finished"
+#, fuzzy, kde-format
+#| msgid "Correlation finished"
+msgctxt "@title:window"
+msgid "Correlation Finished"
 msgstr "关联操作结束"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:534
@@ -52360,7 +52842,9 @@ msgstr "查找缺失海拔"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "GPS Sync"
+msgctxt "@title:window"
 msgid "GPS Sync"
 msgstr "GPS 同步"
 
@@ -52370,11 +52854,6 @@ msgid ""
 "Found more than one point on the clipboard - can only assign one point at a "
 "time."
 msgstr "剪贴板中有多个轨迹点 - 一次只能指定单个轨迹点。"
-
-#: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
-#, kde-format
-msgid "Geolocation Editor"
-msgstr "地理位置编辑器"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:541
 #, kde-format
@@ -52660,10 +53139,11 @@ msgid "Retrieving RG info -"
 msgstr "正在获取 RG 信息 -"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add New Tag..."
 msgctxt "@title:window"
-msgid "Add new tag:"
-msgstr "新增标签："
+msgid "Add New Tag:"
+msgstr "添加新标签..."
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:846
 #, kde-format
@@ -52874,8 +53354,10 @@ msgstr ""
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:545
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:117
 #: core/utilities/searchwindow/searchtabheader.cpp:586
-#, kde-format
-msgid "Name exists"
+#, fuzzy, kde-format
+#| msgid "Name exists"
+msgctxt "@title:window"
+msgid "Name Exists"
 msgstr "名称已存在"
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:660
@@ -53083,7 +53565,9 @@ msgid "<b>No Profile</b>"
 msgstr "<b>无特性文件</b>"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:80
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Soft Proofing Options"
+msgctxt "@title:window"
 msgid "Soft Proofing Options"
 msgstr "色彩校样选项"
 
@@ -53152,7 +53636,9 @@ msgstr "突出显示颜色："
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:225
 #: core/utilities/setup/setupicc.cpp:868
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Profile Error"
+msgctxt "@title:window"
 msgid "Profile Error"
 msgstr "特性文件错误"
 
@@ -53229,66 +53715,73 @@ msgstr "(%1,%2) RGBA：%3,%4,%5,%6"
 msgid "Tools"
 msgstr "工具"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:144
-#: core/utilities/queuemanager/views/toolsettingsview.cpp:109
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:147
+#: core/utilities/queuemanager/views/toolsettingsview.cpp:116
 #, kde-format
 msgid "About this tool..."
 msgstr "关于此工具..."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:174
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:151
+#: core/utilities/queuemanager/views/toolsettingsview.cpp:112
+#, fuzzy, kde-format
+#| msgid "Online Handbook..."
+msgid "Tool online handbook..."
+msgstr "在线使用手册..."
+
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
 #, kde-format
 msgid "Guide:"
 msgstr "参考线："
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:178
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:187
 #, kde-format
 msgid "Set here the color used to draw dashed guide lines."
 msgstr "选择辅助线的颜色。"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:192
 #, kde-format
 msgid "Set here the width in pixels used to draw dashed guide lines."
 msgstr "选择辅助线的宽度，单位为像素。"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:191
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:200
 #, kde-format
 msgid "Defaults"
 msgstr "默认"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:193
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:202
 #, kde-format
 msgid "Reset all settings to their default values."
 msgstr "重置所有设置为默认值。"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:210
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:219
 #, kde-format
 msgctxt "@action: load previously saved filter settings"
 msgid "Load..."
 msgstr "加载..."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:212
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:221
 #, kde-format
 msgid "Load all parameters from settings text file."
 msgstr "加载设置文本文件中的所有参数。"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:214
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:223
 #, kde-format
 msgctxt "@action: save current filter settings"
 msgid "Save As..."
 msgstr "另存为..."
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:216
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:225
 #, kde-format
 msgid "Save all parameters to settings text file."
 msgstr "保存所有参数至设置文本文件。"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:218
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:227
 #, kde-format
 msgctxt "@action: try current filter settings"
 msgid "Try"
 msgstr "试用"
 
-#: core/utilities/imageeditor/editor/editortoolsettings.cpp:220
+#: core/utilities/imageeditor/editor/editortoolsettings.cpp:229
 #, kde-format
 msgid "Try all settings."
 msgstr "试用所有设置。"
@@ -53610,9 +54103,11 @@ msgid "Information about image size"
 msgstr "图像大小信息"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1085
-#, kde-format
-msgctxt "@title"
-msgid "Saving image..."
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Saving image..."
+msgctxt "@title:window"
+msgid "Saving Image..."
 msgstr "正在保存图像..."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1086
@@ -53632,8 +54127,10 @@ msgstr ""
 "您确定要覆盖吗？"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1112
-#, kde-format
-msgctxt "@title; warning while saving progress"
+#, fuzzy, kde-format
+#| msgctxt "@title: dialog"
+#| msgid "Warning"
+msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr "警告"
 
@@ -53712,12 +54209,6 @@ msgctxt "@info"
 msgid "Could not open a temporary file in the folder \"%1\": %2 (%3)"
 msgstr "无法打开文件夹“%1”中的临时文件：%2 (%3)"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:1803
-#, kde-format
-msgctxt "@title"
-msgid "New Image File Name"
-msgstr "新图像文件名"
-
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1949
 #, kde-format
 msgctxt "@info"
@@ -53736,13 +54227,6 @@ msgctxt "@info"
 msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
 msgstr "无法保存文件“%1”到建议的版本文件名“%2”"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2277
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2296
-#, kde-format
-msgctxt "@title"
-msgid "Overwrite File?"
-msgstr "要覆盖文件吗？"
-
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2278
 #, kde-format
 msgctxt "@info"
@@ -53757,12 +54241,6 @@ msgctxt "@info"
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "已经存在同名的文件“%1”，您确定要覆盖它吗？"
-
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2323
-#, kde-format
-msgctxt "@title"
-msgid "Error Saving File"
-msgstr "保存文件时出错"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2324
 #, kde-format
@@ -53884,7 +54362,9 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3M 像素)"
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:927
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "No Image in Current Album"
+msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr "当前相册不含图像"
 
@@ -53898,8 +54378,10 @@ msgstr ""
 "图像编辑器将关闭。"
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:1199
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "File Not Available"
+msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "文件不可用"
 
@@ -54902,9 +55384,11 @@ msgstr ""
 "请输入一个新的文件名称(不包含扩展名)："
 
 #: core/utilities/import/main/importui.cpp:1245
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "File already exists"
 msgctxt "@title:window"
-msgid "File already exists"
+msgid "File Already Exists"
 msgstr "文件已存在"
 
 #: core/utilities/import/main/importui.cpp:1312
@@ -55922,7 +56406,9 @@ msgid "Finger-prints"
 msgstr "图像指纹"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:196
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Maintenance"
+msgctxt "@title:window"
 msgid "Maintenance"
 msgstr "系统维护"
 
@@ -56283,8 +56769,10 @@ msgid "Ready"
 msgstr "待机"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:523
-#, kde-format
-msgid "Processing under progress"
+#, fuzzy, kde-format
+#| msgid "Processing under progress"
+msgctxt "@title:window"
+msgid "Processing Under Progress"
 msgstr "正在处理任务"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:524
@@ -56321,8 +56809,10 @@ msgstr "队列中没有要处理的项目。"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:841
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:851
-#, kde-format
-msgid "Processed items album settings"
+#, fuzzy, kde-format
+#| msgid "Processed items album settings"
+msgctxt "@title:window"
+msgid "Processed Items Album Settings"
 msgstr "已处理项目相册设置"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:842
@@ -56603,7 +57093,7 @@ msgstr "行为"
 msgid "Saving Images"
 msgstr "保存图像"
 
-#: core/utilities/queuemanager/views/toolsettingsview.cpp:105
+#: core/utilities/queuemanager/views/toolsettingsview.cpp:108
 #, kde-format
 msgid "Reset current tool settings to default values."
 msgstr "重置当前工具的设置为默认值。"
@@ -56693,13 +57183,16 @@ msgid "History"
 msgstr "历史记录"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:68
-#: core/utilities/queuemanager/views/workflowdlg.cpp:137
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "New Workflow"
+msgctxt "@title:window"
 msgid "New Workflow"
 msgstr "新工作流程"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:68
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit Workflow"
+msgctxt "@title:window"
 msgid "Edit Workflow"
 msgstr "编辑工作流程"
 
@@ -56724,6 +57217,11 @@ msgstr "标题(&T)："
 msgid "Description:"
 msgstr "描述："
 
+#: core/utilities/queuemanager/views/workflowdlg.cpp:137
+#, kde-format
+msgid "New Workflow"
+msgstr "新工作流程"
+
 #: core/utilities/queuemanager/views/workflowlist.cpp:90
 #, kde-format
 msgctxt "@title: batch workflow name"
@@ -56743,10 +57241,11 @@ msgid "Description"
 msgstr "描述"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:115
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgid "Batch Queue Manager"
+msgctxt "@title:window"
 msgid "Batch Queue Manager"
-msgstr "批处理管理器"
+msgstr "批处理管理"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:116
 #, kde-format
@@ -56781,8 +57280,10 @@ msgid "Delete Workflow"
 msgstr "删除工作流程"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:313
-#, kde-format
-msgctxt "@title"
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Delete Workflow?"
+msgctxt "@title:window"
 msgid "Delete Workflow?"
 msgstr "删除工作流程？"
 
@@ -57680,7 +58181,9 @@ msgid "Hide Options"
 msgstr "隐藏选项"
 
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:75
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Search?"
+msgctxt "@title:window"
 msgid "Delete Search?"
 msgstr "删除搜索记录？"
 
@@ -57770,7 +58273,9 @@ msgid "Try"
 msgstr "试用"
 
 #: core/utilities/searchwindow/searchwindow.cpp:88
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Advanced Search"
+msgctxt "@title:window"
 msgid "Advanced Search"
 msgstr "高级搜索"
 
@@ -58349,7 +58854,9 @@ msgid ""
 msgstr "无法自动检测到相机。请确保相机已经连接并且开机。您想要重新检测吗？"
 
 #: core/utilities/setup/camera/cameraselection.cpp:104
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Camera Configuration"
+msgctxt "@title:window"
 msgid "Camera Configuration"
 msgstr "相机配置"
 
@@ -58498,7 +59005,9 @@ msgstr ""
 "此页面地址获取</a>。</p>"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:84
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit Import Filters"
+msgctxt "@title:window"
 msgid "Edit Import Filters"
 msgstr "编辑导入筛选器"
 
@@ -58907,12 +59416,16 @@ msgstr "无法添加下列路径到相册集合："
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:657
 #: core/utilities/setup/collections/setupcollectionview.cpp:1487
-#, kde-format
-msgid "Choose the folder containing your collection"
+#, fuzzy, kde-format
+#| msgid "Choose the folder containing your collection"
+msgctxt "@title:window"
+msgid "Choose the Folder Containing your Collection"
 msgstr "选择包含相册集合的文件夹"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:694
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Problem Appending Collection"
+msgctxt "@title:window"
 msgid "Problem Appending Collection"
 msgstr "附加到相册集合时出错"
 
@@ -58922,7 +59435,9 @@ msgid "A collection with the path \"%1\" already exists."
 msgstr "已存在包含路径“%1”的相册集合。"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:854
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Remove Path from the Collection?"
+msgctxt "@title:window"
 msgid "Remove Path from the Collection?"
 msgstr "移除收藏集合中的此路径？"
 
@@ -58933,7 +59448,9 @@ msgid ""
 msgstr "您是否想要移除相册集合“%2”中的附加路径“%1”？"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:862
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Remove Collection?"
+msgctxt "@title:window"
 msgid "Remove Collection?"
 msgstr "移除相册集合"
 
@@ -59025,12 +59542,16 @@ msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "您已经添加过包含路径“%1”的相册集合。"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1563
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Problem Adding Collection"
+msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "添加相册集合时出错"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1572
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Adding Collection"
+msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "添加相册集合"
 
@@ -59040,7 +59561,9 @@ msgid "Your new collection will be created with this name:"
 msgstr "新相册集合将以此名称创建："
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1651
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select Category"
+msgctxt "@title:window"
 msgid "Select Category"
 msgstr "选择相册集合类型"
 
@@ -59050,8 +59573,10 @@ msgid "Your collection will use this category:"
 msgstr "该相册集合将被设为以下分类："
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:172
-#, kde-format
-msgid "Download required files"
+#, fuzzy, kde-format
+#| msgid "Download required files"
+msgctxt "@title:window"
+msgid "Download Required Files"
 msgstr "下载所需文件"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:200
@@ -59083,8 +59608,10 @@ msgid "All files were downloaded successfully."
 msgstr "已成功下载所有文件。"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:268
-#, kde-format
-msgid "Download error"
+#, fuzzy, kde-format
+#| msgid "Download error"
+msgctxt "@title:window"
+msgid "Download Error"
 msgstr "下载错误"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:269
@@ -59107,8 +59634,10 @@ msgstr ""
 "您可以现在重试，也可以在下次启动程序时继续下载。"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:277
-#, kde-format
-msgid "Try again"
+#, fuzzy, kde-format
+#| msgid "Try again"
+msgctxt "@action:button"
+msgid "Try Again"
 msgstr "重试"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:410
@@ -59613,8 +60142,10 @@ msgstr ""
 "的图像文件格式规范。它是一种开放、且无需版权费用的编码格式</item>"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:135
-#, kde-format
-msgctxt "@title: reset to default warning dialog"
+#, fuzzy, kde-format
+#| msgctxt "@title: dialog"
+#| msgid "Warning"
+msgctxt "@title:window, reset to default warning dialog"
 msgid "Warning"
 msgstr "警告"
 
@@ -59686,13 +60217,17 @@ msgid "Reset to Default"
 msgstr "重置默认"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:144
-#, kde-format
-msgid "New Xmp Namespace"
+#, fuzzy, kde-format
+#| msgid "New Xmp Namespace"
+msgctxt "@title:window"
+msgid "New XMP Namespace"
 msgstr "新建 XMP 命名空间"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:148
-#, kde-format
-msgid "Edit Xmp Namespace"
+#, fuzzy, kde-format
+#| msgid "Edit Xmp Namespace"
+msgctxt "@title:window"
+msgid "Edit XMP Namespace"
 msgstr "编辑 XMP 命名空间"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:238
@@ -59878,9 +60413,11 @@ msgstr ""
 "项。"
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:271
-#, kde-format
-msgctxt "@action"
-msgid "Yes I understand"
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Yes I understand"
+msgctxt "@action:button"
+msgid "Yes I Understand"
 msgstr "是，我已了解"
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:281
@@ -60796,12 +61333,6 @@ msgstr ""
 "<b>提示：所有这些设置必须在重新启动程序后生效。某些设置的生效与否取决于硬件配"
 "置。</b>"
 
-#: core/utilities/setup/setup.cpp:142
-#, kde-format
-msgctxt "@title"
-msgid "Configure"
-msgstr "配置"
-
 #: core/utilities/setup/setup.cpp:149
 #, kde-format
 msgctxt "@title: settings section"
@@ -61424,19 +61955,19 @@ msgid ""
 "deep learning is an end-to-end solution, it doesn’t require hyper-parameter "
 "settings, and make this feature easier to use."
 msgstr ""
-"这些设置将决定图像的品质并将其转换为一个分数，保存在挑选标记的属性中。可以通"
-"过两种方式来进行评估图像品质：使用图像品质劣化的四大因素 (模糊、噪点、曝光、"
-"压缩)，或者使用神经网络深度学习引擎。第一种方式可以帮助用户确定以图像品质劣化"
-"的四大基本因素确定的图像品质，但需要用户进行许多微调，而且无法配合美学价值检"
-"测引擎使用。第二种方式使用一种基于 AI 的方式来检测，基于 %1 模型来预测图像的"
-"品质评分。因为深度学习是一套端到端解决方案，它不需要进行许多设置，因此更易于"
-"使用。"
+"这些设置将决定图像的品质并将其转换为一个分值，并保存到挑选标记的属性中。"
+"digiKam 可以通过两种方式来评估图像品质：使用图像品质劣化的四大影响因素 (模"
+"糊、噪点、曝光、压缩)；或者使用神经网络深度学习引擎。第一种方式可以帮助用户按"
+"照图像品质劣化的四大基本影响因素来确定的图像品质，但需要用户进行许多微调，而"
+"且无法配合美感检测引擎使用。第二种方式使用一种基于 AI 的方式来进行检测，基于 "
+"%1 模型来预测图像的品质评分。因为深度学习是一套端到端解决方案，它无需进行太多"
+"设置，更易于使用。"
 
 #: core/utilities/setup/setupimagequalitysorter.cpp:64
 #, kde-format
 msgctxt "@label"
 msgid "aesthetic image quality"
-msgstr "图像美学价值"
+msgstr "图像美感"
 
 #: core/utilities/setup/setuplighttable.cpp:91
 #, kde-format
@@ -61922,316 +62453,119 @@ msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "您想要重置所有视频设置为默认值吗？"
 
-#~ msgid ""
-#~ "New Neural Network engine based on OpenCV Deep Learning module to detect "
-#~ "and recognize faces."
-#~ msgstr "基于 OpenCV 深度学习模块的全新神经网络引擎，用于进行人脸识别。"
+#~ msgctxt "@title"
+#~ msgid "Geolocation Editor"
+#~ msgstr "地理位置编辑器"
 
-#~ msgid "Update Slideshow to plugin with new shuffle mode."
-#~ msgstr "更新幻灯片功能为插件，新增随机播放模式。"
+#~ msgctxt "@title"
+#~ msgid "Error"
+#~ msgstr "错误"
 
-#~ msgid "Add new theme Html5Responsive for HtmlGallery plugin."
-#~ msgstr "HtmlGallery 插件新增响应式 HTML5 主题。"
+#~ msgid "Select GPX File to Load"
+#~ msgstr "选择要加载的 GPX 文件"
 
-#~ msgid ""
-#~ "New plugin ImageMosaicWall to create an image based on a bunch of other "
-#~ "photos."
-#~ msgstr "新增插件 ImageMosaicWall，可以使用一组照片拼贴成一张特定图像。"
+#~ msgctxt "@title"
+#~ msgid "Exposure Blending"
+#~ msgstr "曝光混合"
 
-#~ msgid "add new batch queue manager tool to fix hot pixels from images."
-#~ msgstr "新增批处理队列管理器工具，用于修复图像中的热像素。"
+#~ msgctxt "@action: button"
+#~ msgid "Details..."
+#~ msgstr "详情..."
 
-#~ msgid "add new batch queue manager tool to apply texture over images."
-#~ msgstr "新增批处理队列管理器工具，用于为图像应用纹理。"
+#~ msgctxt "@title"
+#~ msgid "Destination Folder"
+#~ msgstr "目标文件夹"
 
-#~ msgid ""
-#~ "Face Scan dialog contents is now simplified and embedded into left "
-#~ "sidebar."
-#~ msgstr "简化人脸识别扫描对话框，并将其嵌入左侧栏。"
+#~ msgctxt "@title: window"
+#~ msgid "Error while to set image as wallpaper"
+#~ msgstr "设置图像为壁纸时出错"
 
-#~ msgid "Add support for Gimp XCF files >= 2.10."
-#~ msgstr "新增对 GIMP 2.10 以上版本的 XCF 文件支持。"
+#~ msgctxt "@action"
+#~ msgid "Start Upload"
+#~ msgstr "开始上传"
 
-#~ msgid "Add Flatpak bundle support for Linux platforms."
-#~ msgstr "新增 Linux 平台 Flatpak 软件包支持。"
+#~ msgctxt "@title: window"
+#~ msgid "Error"
+#~ msgstr "错误"
 
-#~ msgid "Table-view is now able to show digiKam Tag-Paths properties."
-#~ msgstr "详情视图可以显示 digiKam 标签路径属性。"
+#~ msgctxt "@action: button"
+#~ msgid "Continue"
+#~ msgstr "继续"
 
-#~ msgid "Add option to write geolocation information in file metadata."
-#~ msgstr "新增用于将地理位置信息写入文件元数据的选项。"
+#~ msgctxt "@action: button"
+#~ msgid "Cancel"
+#~ msgstr "取消"
 
-#~ msgid "Add color label support for advanced metadata settings."
-#~ msgstr "高级元数据设置新增颜色标记支持。"
+#~ msgctxt "@title"
+#~ msgid "Uploading Failed"
+#~ msgstr "上传失败"
 
-#~ msgid "Add Exif, Iptc, and Xmp read support for HEIF images."
-#~ msgstr "增加 HEIF 图像的 EXIF、IPTC 和 XMP 读取支持。"
+#~ msgctxt "@title"
+#~ msgid "Login Failed"
+#~ msgstr "登录失败"
 
-#~ msgid "Improved support for UNC network paths under Windows."
-#~ msgstr "改善在 Windows 下对 UNC 网络路径的支持。"
+#~ msgctxt "@action"
+#~ msgid "Start Download"
+#~ msgstr "开始下载"
 
-#~ msgid "Improved support for Unicode paths under Windows."
-#~ msgstr "改善在 Windows 下对 Unicode 路径的支持。"
+#~ msgctxt "@title: window"
+#~ msgid "Warning"
+#~ msgstr "警告"
 
-#~ msgid "Apple bundle is now relocatable and compatible with macOS BigSur."
-#~ msgstr "macOS 版软件包现在可以迁移位置，并兼容 macOS BigSur。"
+#~ msgctxt "@action"
+#~ msgid "Continue"
+#~ msgstr "继续"
 
-#~ msgid ""
-#~ "New online version checker and downloader to automate upgrade under "
-#~ "Windows and macOS."
-#~ msgstr ""
-#~ "新增在线新版检测与下载功能，可以自动升级 Windows 和 macOS 版软件到最新版。"
+#~ msgctxt "@title: album properties"
+#~ msgid "New Album"
+#~ msgstr "新建相册"
 
-#~ msgid ""
-#~ "Better support of astro FITS image format including metadata extraction "
-#~ "support to populate the database."
-#~ msgstr "改善对 FITS 天文图像格式的支持，支持提取元数据到数据库。"
+#~ msgid "Database connection test"
+#~ msgstr "数据库连接测试"
 
-#~ msgid ""
-#~ "Use last Exiv2 0.27.5 in all bundles with Base Media File metadata read "
-#~ "and write support (HEIF, AVIF)."
-#~ msgstr ""
-#~ "使用 Exiv2 最新版本 0.27.5 构建所有软件包，提供基础媒体文件元数据读写支持 "
-#~ "(HEIF、AVIF)。"
+#~ msgctxt "@title"
+#~ msgid "Shared Libraries and Components Information"
+#~ msgstr "共享程序库和组件信息"
 
-#~ msgid "Find duplicates items is now process in parallel using multi-cores."
-#~ msgstr "查找重复项目现已支持多线程。"
+#~ msgctxt "@title"
+#~ msgid "List of detected hardware"
+#~ msgstr "检测到的硬件列表"
 
-#~ msgid "New tool to export items to iNaturalist web service."
-#~ msgstr "新增 iNaturalist 网络服务导出支持工具。"
+#~ msgctxt "@title: favorite item properties"
+#~ msgid "Could Not Calculate Average"
+#~ msgstr "无法计算平均日期"
 
-#~ msgid "New metadata viewer based on ExifTool."
-#~ msgstr "基于 ExifTools 的新版元数据查看器。"
+#~ msgid "Add Bookmark"
+#~ msgstr "添加书签"
 
-#~ msgid ""
-#~ "MacOS package, Windows installer, and AppImage bundle use KF5 5.89 and "
-#~ "KAPPS 21.12.0 frameworks."
-#~ msgstr ""
-#~ "macOS 软件包、Windows 安装程序和 AppImage 软件包使用 KF5 5.89 和 KAPPS "
-#~ "21.12.0 程序框架构建。"
+#~ msgctxt "@title:window"
+#~ msgid "Add new tag:"
+#~ msgstr "新增标签："
 
-#~ msgid ""
-#~ "AppImage Linux bundle now support <a href=\"https://fcitx-im.org/wiki/"
-#~ "Fcitx_5\">Platform Input Context FCITX</a>."
-#~ msgstr ""
-#~ "AppImage Linux 软件包现已支持<a href=\"https://fcitx-im.org/wiki/"
-#~ "Fcitx_5\"> fcitx 输入平台</a>。"
+#~ msgctxt "@title; warning while saving progress"
+#~ msgid "Warning"
+#~ msgstr "警告"
 
-#~ msgid "Improve RTL translations support."
-#~ msgstr "改进了从右到左文字系统的翻译支持。"
+#~ msgctxt "@title"
+#~ msgid "New Image File Name"
+#~ msgstr "新图像文件名"
 
-#~ msgid ""
-#~ "GUI internationalization and localization updates with more than 50 "
-#~ "languages available."
-#~ msgstr "图形界面的国际化支持和本地化翻译得到了更新，支持 50 种以上语言。"
+#~ msgctxt "@title"
+#~ msgid "Overwrite File?"
+#~ msgstr "要覆盖文件吗？"
 
-#~ msgid "Add OpenWith contextual menu support under MacOS."
-#~ msgstr "macOS 版实现了打开方式右键菜单支持。"
+#~ msgctxt "@title"
+#~ msgid "Error Saving File"
+#~ msgstr "保存文件时出错"
 
-#~ msgid ""
-#~ "New tool to share items on the network with a Motion JPEG stream server."
-#~ msgstr "通过 MJPEG 流服务器在网络上分享项目的全新工具。"
+#~ msgctxt "@title"
+#~ msgid "Batch Queue Manager"
+#~ msgstr "批处理管理器"
 
-#~ msgid ""
-#~ "Showfoto has a new left sidebar hosting a folder-view to quickly explore "
-#~ "images from local file system."
-#~ msgstr ""
-#~ "Showfoto 新增了一个新的文件夹视图左侧栏，可在本机文件系统中快速浏览图像。"
+#~ msgctxt "@title: reset to default warning dialog"
+#~ msgid "Warning"
+#~ msgstr "警告"
 
-#~ msgid ""
-#~ "Update internal RAW engine to last Libraw 0.20.2 (snapshot 20210827) "
-#~ "including Canon CR3 and Sony A7R4 support."
-#~ msgstr ""
-#~ "更新内建 RAW 图像引擎为 Libraw 0.20.2 (snapshot 20210827)，包括 Canon CR3 "
-#~ "和 Sony A7R4 支持。"
-
-#~ msgid ""
-#~ "New camera supported: Canon CR3, PowerShot G5 X Mark II, G7 X Mark III, "
-#~ "SX70 HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS "
-#~ "M200, EOS 1DX Mark III (lossless files only) DJI Mavic Air, Air2, Osmo "
-#~ "Action, FujiFilm Fujifilm compressed/16bit, GFX 100, X-A7, X-Pro3, X100V, "
-#~ "X-T4, X-T200, GoPro Fusion, HERO5, HERO6, HERO7, HERO8, Hasselblad "
-#~ "L1D-20c, X1D II 50C, Leica D-LUX7, Q-P, Q2, V-LUX5, C-Lux / CAM-DC25, "
-#~ "SL2, M10 Monochrom, Nikon D780, Z50, P950, Olympus TG-6, E-M5 Mark III, E-"
-#~ "PL10, E-M1 Mark III, Panasonic Panasonic 14-bit, DC-FZ1000 II, DC-G90, DC-"
-#~ "S1, DC-S1R, DC-S1H, DC-TZ95, PhaseOne IQ4 150MP, Rapsberry Pi RAW+JPEG "
-#~ "format, Ricoh GR III, Sony A7R IV, A9 II, ILCE-6100, ILCE-6600, RX0 II, "
-#~ "RX100 VII, Zenit M, also multiple modern smartphones."
-#~ msgstr ""
-#~ "新增支持相机型号：Canon CR3, PowerShot G5 X Mark II, G7 X Mark III, SX70 "
-#~ "HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS M200, "
-#~ "EOS 1DX Mark III (lossless files only) DJI Mavic Air, Air2, Osmo Action, "
-#~ "FujiFilm Fujifilm compressed/16bit, GFX 100, X-A7, X-Pro3, X100V, X-T4, X-"
-#~ "T200, GoPro Fusion, HERO5, HERO6, HERO7, HERO8, Hasselblad L1D-20c, X1D "
-#~ "II 50C, Leica D-LUX7, Q-P, Q2, V-LUX5, C-Lux / CAM-DC25, SL2, M10 "
-#~ "Monochrom, Nikon D780, Z50, P950, Olympus TG-6, E-M5 Mark III, E-PL10, E-"
-#~ "M1 Mark III, Panasonic Panasonic 14-bit, DC-FZ1000 II, DC-G90, DC-S1, DC-"
-#~ "S1R, DC-S1H, DC-TZ95, PhaseOne IQ4 150MP, Rapsberry Pi RAW+JPEG format, "
-#~ "Ricoh GR III, Sony A7R IV, A9 II, ILCE-6100, ILCE-6600, RX0 II, RX100 "
-#~ "VII, Zenit M, 还有多款新型智能手机。"
-
-#~ msgid "Face Management in digiKam"
-#~ msgstr "digiKam 人脸管理"
-
-#~ msgid ""
-#~ "The Face Workflow allows you to Detect and Recognize people in your "
-#~ "photographs."
-#~ msgstr "人脸管理扫描流程可在您的照片中检测并识别出人物。"
-
-#~ msgid "<b>Face Detection</b>"
-#~ msgstr "<b>人脸检测</b>"
-
-#~ msgid ""
-#~ "Face Detection allows digiKam to detect faces in your images. This step "
-#~ "is required before being able to recognize faces."
-#~ msgstr ""
-#~ "digiKam 通过人脸检测功能检测您图像中的人脸。在进行人脸识别之前必须执行此步"
-#~ "骤。"
-
-#~ msgid "<b>Face Recognition</b>"
-#~ msgstr "<b>人脸识别</b>"
-
-#~ msgid "Face Recognition will automatically recognize people in your images."
-#~ msgstr "人脸识别功能将自动识别出图像中的人物。"
-
-#~ msgid ""
-#~ "For additional information, read the %1 \n"
-#~ "To ask questions, use our mailing list: digikam-users@kde.org \n"
-#~ msgstr ""
-#~ "如需了解额外信息，请阅读 %1 \n"
-#~ "如有问题，可通过我们的邮件列表提问：digikam-users@kde.org \n"
-
-#~ msgid ""
-#~ "To run face detection, select the <u>Detect Faces</u> option in the Face "
-#~ "Scan panel and then click on <u>Scan Collection for Faces</u>"
-#~ msgstr ""
-#~ "要执行人脸检测，请在人物面板的扫描流程选项卡选择<u>检测人脸</u>选项，然后"
-#~ "点击<u>扫描相册集合中的所有人脸</u>按钮"
-
-#~ msgid ""
-#~ "<b>Caution:</b> Running Face Detection for the first time can be fairly "
-#~ "time consuming. Make sure you use the <u>Search In</u> tab to restrict "
-#~ "the target of the scan."
-#~ msgstr ""
-#~ "<b>提示：</b>首次执行人脸检测可能需要较长时间。请在<u>扫描范围</u>选项卡中"
-#~ "显示扫描的目标范围。"
-
-#~ msgid "digiKam offers two kinds of face detection scans: "
-#~ msgstr "digiKam 有两种人脸检测扫描方式："
-
-#~ msgid "<b>Skip Images Already Scanned</b>"
-#~ msgstr "<b>跳过已扫描图像</b>"
-
-#~ msgid ""
-#~ "Choose this option if you haven't scanned yet or if the last scan yielded "
-#~ "good results but you would like to scan new images."
-#~ msgstr ""
-#~ "如果您尚未进行过扫描，或者您对上次扫描的结果比较满意，只需扫描新增图像时，"
-#~ "请选择此项。"
-
-#~ msgid "<b>Scan Again and Merge</b>"
-#~ msgstr "<b>重新扫描并合并结果</b>"
-
-#~ msgid ""
-#~ "Choose this option if the results of the previous scan weren't accurate. "
-#~ "This would rescan all images again, and is time consuming."
-#~ msgstr ""
-#~ "如果您对上次扫描的结果不够满意，需要重新扫描所有图像时，请选择此项。这将耗"
-#~ "费较长时间。"
-
-#~ msgid ""
-#~ "After the Face Scan is complete, you should see a new tag <u>Unknown</u> "
-#~ "where the results of the face scan will appear. You may now manually "
-#~ "identify a few of these faces and then proceed for face recognition."
-#~ msgstr ""
-#~ "人脸扫描结束后，您将看到一个名为<u>未知</u>的新标签，人脸扫描的结果将显示"
-#~ "在该标签下。请先手动识别这些人脸中的一小部分，然后再进行自动人脸识别。"
-
-#~ msgid ""
-#~ "To manually identify a face, hover on any Unknown face and use the text "
-#~ "box to give it a name. This will lead to the creation of a face tag in "
-#~ "case a person of that name doesn't exist already. For best results "
-#~ "identify 4-5 faces for each person you want the scan to recognize."
-#~ msgstr ""
-#~ "要手动识别一张人脸，请将鼠标悬停于未知标签下的任意一张人脸，然后在输入框中"
-#~ "为它指定一个人名。如果该人名的人脸标签不存在，程序将创建该标签。为了提高自"
-#~ "动识别的精确度，请为每位需要识别的人物手动指定 4 到 5 张人脸。"
-
-#~ msgid ""
-#~ "Running face recognition is similar to detection, just select "
-#~ "<u>Recognize Faces</u> from the Face Scan panel this time.\n"
-#~ "Face recognition will work on all Unknown faces. In case there's a face "
-#~ "you don't wish to be recognized, you can mark it as ignored.\n"
-#~ "This leads to the creation of a new <u>Ignored</u> tag, you can later "
-#~ "unmark the face if needed."
-#~ msgstr ""
-#~ "人脸识别和人脸检测的过程类似，请在人脸扫描面板选择<u>识别人脸</u>。\n"
-#~ "人脸识别功能将处理所有未知标签下的人脸。如果您不需要识别其中的某些人脸，可"
-#~ "将它们标记为忽略。\n"
-#~ "这将创建<u>忽略</u>标签，您以后还可以取消标记忽略标签下的人脸。"
-
-#~ msgid ""
-#~ "You may select <u>Work on all processor cores</u>in order to increase the "
-#~ "speed of Face Recognition \n"
-#~ "The Face Accuracy slider allows you to control the accuracy of the "
-#~ "recognition algorithm. A higher specificity implies higher accuracy, "
-#~ "however this results in a smaller set of results."
-#~ msgstr ""
-#~ "勾选<u>使用全部处理器核心</u>可以提高人脸识别的处理速度。\n"
-#~ "人脸识别精度拖动条可以控制人脸识别算法的精度。数值越大，精度越高，识别的匹"
-#~ "配结果也越少。"
-
-#~ msgid ""
-#~ "The results of facial recognition appear in the form of Unconfirmed "
-#~ "results. These results will show up in the Unconfirmed tag, as well as in "
-#~ "the tag of the person suggested for each face.\n"
-#~ "Hovering over Unconfirmed faces will display a few options:\n"
-#~ msgstr ""
-#~ "人脸识别的处理结果会被显示在未确认标签下，它们同时也会显示在建议的人物标签"
-#~ "下。\n"
-#~ "鼠标悬停在这些人脸上将显示下列选项：\n"
-
-#~ msgid ""
-#~ "The Confirm button allows you to confirm the suggestion. This would "
-#~ "assign the suggested name to the face"
-#~ msgstr "点击确认按钮以确认该建议。这将把建议的人名标签指定给该人脸。"
-
-#~ msgid ""
-#~ "Use the Reject button, if the suggestion is incorrect. This would move "
-#~ "the face back to Unknown."
-#~ msgstr "点击否决按钮以否决错误的建议。这将把该人脸移回未知标签。"
-
-#~ msgid ""
-#~ "Use the Delete button, if the suggestion is not a face. This will delete "
-#~ "the face region from the database."
-#~ msgstr "点击删除按钮以移除并非人脸的项目。这将从数据库删除该人脸区域。"
-
-#~ msgid ""
-#~ "<b>Face Categorization and Sorting</b>\n"
-#~ "By default, faces will appear categorized based on their name. You may "
-#~ "change this behaviour, by going to <u>View -> Separate Items</u>.\n"
-#~ "Note that using a different categorization order will lead to Confirmed "
-#~ "and Unconfirmed faces appearing mixed with one another. To change this "
-#~ "behaviour you may modify the sorting order within each category by going "
-#~ "to <u>View -> Sort Items -> By Face Type</u>."
-#~ msgstr ""
-#~ "<b>人脸分类和排序</b>\n"
-#~ "默认情况下，人脸将按人名分栏显示。要更改分栏方式，请前往菜单栏的<u>视图 -"
-#~ "> 项目分栏</u>。\n"
-#~ "提示：更改分栏显示方式可能导致已确认和未确认人脸被混杂到一起显示。要更改此"
-#~ "显示方式，请前往菜单栏的<u>视图 -> 项目排序 -> 按人脸类型</u>，更改每个分"
-#~ "栏的排序方式。"
-
-#~ msgid ""
-#~ "<b>Improving Results of Face Recognition</b>\n"
-#~ "Apart from using the settings mentioned in the last page, face results "
-#~ "may also be improved by rebuilding the training data. This may be done "
-#~ "through Tools -> Maintenance -> Detect and Recognize Faces -> Clear and "
-#~ "rebuild all training data."
-#~ msgstr ""
-#~ "<b>改善人脸识别结果</b>\n"
-#~ "除了设置选项卡外，您还可以通过重建训练数据来改善人脸识别的结果。请前往菜单"
-#~ "栏的 工具 -> 系统维护 -> 检测与识别人脸 -> 清除并重建所有训练数据。"
-
-#~ msgid "Confirm Faces"
-#~ msgstr "确认人脸"
+#~ msgctxt "@title"
+#~ msgid "Configure"
+#~ msgstr "配置"
