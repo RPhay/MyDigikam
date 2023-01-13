@@ -842,7 +842,7 @@ void RGWidget::slotAddCustomizedSpacer()
     }
 
     bool ok            = false;
-    QString textString = QInputDialog::getText(this, i18nc("@title:window", "Add New Tag:"),
+    QString textString = QInputDialog::getText(this, i18nc("@title:window", "Add New Tag"),
                                                i18n("Select a name for the new tag:"),
                                                QLineEdit::Normal, QString(), &ok);
 
