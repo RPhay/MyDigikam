@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-14 00:54+0000\n"
-"PO-Revision-Date: 2023-01-13 22:33+0100\n"
+"PO-Revision-Date: 2023-01-14 11:55+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -54891,12 +54891,10 @@ msgid "Retrieving RG info -"
 msgstr "S'està recuperant la informació RG -"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add New Tag:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add New Tag"
-msgstr "Afegeix una etiqueta nova:"
+msgstr "Afegeix una etiqueta nova"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:846
 #, kde-format
