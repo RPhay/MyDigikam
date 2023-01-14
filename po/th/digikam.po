@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-13 00:53+0000\n"
+"POT-Creation-Date: 2023-01-14 00:54+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -55433,7 +55433,7 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Add New Tag..."
 msgctxt "@title:window"
-msgid "Add New Tag:"
+msgid "Add New Tag"
 msgstr "เพิ่มป้ายกำกับใหม่..."
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:846

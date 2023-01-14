@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-13 00:53+0000\n"
+"POT-Creation-Date: 2023-01-14 00:54+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -58039,7 +58039,7 @@ msgstr "Henter RG-info - %p%"
 #, fuzzy, kde-format
 #| msgid "Add New Tag..."
 msgctxt "@title:window"
-msgid "Add New Tag:"
+msgid "Add New Tag"
 msgstr "Tilføj nyt mærke..."
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:846

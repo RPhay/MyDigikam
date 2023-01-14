@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-13 00:53+0000\n"
+"POT-Creation-Date: 2023-01-14 00:54+0000\n"
 "PO-Revision-Date: 2023-01-02 15:52+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -20973,8 +20973,7 @@ msgstr "Choisissez le format d'image dans lequel exporter l'impression."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:115
-#, fuzzy, kde-format
-#| msgid "Destination Folder:"
+#, kde-format
 msgid "Destination folder:"
 msgstr "Dossier de destination :"
 
@@ -55527,7 +55526,7 @@ msgstr "Extraction des informations de géocodage inverse - "
 #, fuzzy, kde-format
 #| msgid "Add New Tag..."
 msgctxt "@title:window"
-msgid "Add New Tag:"
+msgid "Add New Tag"
 msgstr "Ajouter une nouvelle étiquette…"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:846

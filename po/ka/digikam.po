@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-13 00:53+0000\n"
-"PO-Revision-Date: 2023-01-09 07:41+0100\n"
+"POT-Creation-Date: 2023-01-14 00:54+0000\n"
+"PO-Revision-Date: 2023-01-13 09:14+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -926,11 +926,10 @@ msgid "%1 %2"
 msgstr "%1 %2"
 
 #: core/app/items/utils/itemviewutilities.cpp:203
-#, fuzzy, kde-format
-#| msgid "Select target folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Target Folder"
-msgstr "აირიეთ სამიზნე საქაღალდე"
+msgstr "აირჩიეთ სამიზნე საქაღალდე"
 
 #: core/app/items/utils/itemviewutilities.cpp:229
 #, kde-format
@@ -1475,15 +1474,13 @@ msgid ""
 msgstr ""
 
 #: core/app/main/digikamapp_import.cpp:81
-#, fuzzy, kde-format
-#| msgid "Select folder to parse"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Folder to Parse"
 msgstr "აირჩიეთ დასამუშავებელი საქაღალდე"
 
 #: core/app/main/digikamapp_import.cpp:101
-#, fuzzy, kde-format
-#| msgid "Select folders to import into album"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Folders to Import into Album"
 msgstr "აირჩიეთ საქაღალდეები ალბომში შემოსატანად"
@@ -4104,18 +4101,14 @@ msgid "Supported Extensions"
 msgstr "მხარდაჭერილი გაფართოებები"
 
 #: core/avplayer/filters/EventFilter.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open a video"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open a Video"
 msgstr "ვიდეოს გახსნა"
 
 #: core/avplayer/filters/EventFilter.cpp:83
 #: core/avplayer/main/MainWindow_io.cpp:510
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open an url"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open an Url"
 msgstr "URL-ის გახსნა"
@@ -4242,9 +4235,7 @@ msgid "-&gt;/&lt;-: seek forward/backward\n"
 msgstr ""
 
 #: core/avplayer/filters/EventFilter.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Help"
+#, kde-format
 msgctxt "@title:window"
 msgid "Help"
 msgstr "დახმარება"
@@ -4283,9 +4274,7 @@ msgid ""
 msgstr ""
 
 #: core/avplayer/main/MainWindow_io.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open a media file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open a Media File"
 msgstr "მედია ფაილის გახსნა"
@@ -4298,9 +4287,7 @@ msgid "Aspect ratio"
 msgstr "თანაფარდობა"
 
 #: core/avplayer/main/MainWindow_io.cpp:702
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Player error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Player Error"
 msgstr "დამკვრელის შეცდომა"
@@ -4348,9 +4335,7 @@ msgid "Stalled"
 msgstr "გაჭედილი"
 
 #: core/avplayer/main/MainWindow_io.cpp:798
-#, fuzzy, kde-format
-#| msgctxt "@title: media loading state"
-#| msgid "Buffering... %1% @%2 %3"
+#, kde-format
 msgctxt "@title:window, media loading state"
 msgid "Buffering... %1% @%2 %3"
 msgstr "ბუფერის შევსება... %1% @%2 %3"
@@ -4365,9 +4350,7 @@ msgid ""
 msgstr ""
 
 #: core/avplayer/main/MainWindow_io.cpp:1018
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open a subtitle file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open a Subtitle File"
 msgstr "სუბტიტრის ფაილის გახსნა"
@@ -4711,9 +4694,7 @@ msgid "Remove selected items"
 msgstr "Მონიშნული ელემენტების წაშლა"
 
 #: core/avplayer/playlist/PlayList.cpp:259
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Select files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Files"
 msgstr "მონიშნეთ ფაილები"
@@ -4892,12 +4873,10 @@ msgid "Frame size"
 msgstr "კადრის ზომა"
 
 #: core/avplayer/utils/StatisticsView.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Media info"
+#, kde-format
 msgctxt "@title:window"
 msgid "Media Info"
-msgstr "ინფორმაცია ფაილის შესახებ"
+msgstr "ინფორმაცია მედიის შესახებ"
 
 #: core/avplayer/utils/StatisticsView.cpp:147
 #, kde-format
@@ -7771,11 +7750,10 @@ msgid "Adjust Levels"
 msgstr "დონეების მორგება"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:890
-#, fuzzy, kde-format
-#| msgid "Select GPX File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Levels File to Load"
-msgstr "აირჩეთ ჩასატვირთი GPX ფაილი"
+msgstr "აირჩიეთ ჩასატვირთი Gimp-ის დონის ფაილი"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:902
 #, kde-format
@@ -8916,8 +8894,7 @@ msgid "Sharpen..."
 msgstr ""
 
 #: core/dplugins/editor/file/print/printhelper.cpp:168
-#, fuzzy, kde-format
-#| msgid "Print Image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print Image"
 msgstr "გამოსახულების დაბეჭდვა"
@@ -10240,7 +10217,7 @@ msgstr ""
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:862
 #, kde-format
 msgid "Golden Ratio"
-msgstr ""
+msgstr "ოქროს ფარდობა"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:292
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:863
@@ -10904,8 +10881,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:64
-#, fuzzy, kde-format
-#| msgid "Scan Image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Scan Image"
 msgstr "გამოსახულების სკანირება"
@@ -10917,18 +10893,16 @@ msgstr "გამოსახულებების სკანირებ�
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:167
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1803
-#, fuzzy, kde-format
-#| msgid "New Image File Name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Image File Name"
 msgstr "ახალი გამოსახულების ფაილის სახელი"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:215
-#, fuzzy, kde-format
-#| msgid "Unsupported Paper Size"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unsupported Format"
-msgstr "ქაღალდის მხარდაუჭერელი ზომა"
+msgstr "მხარდაუჭერელი ფორმატი"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:216
 #, kde-format
@@ -10936,11 +10910,10 @@ msgid "The target image file format \"%1\" is unsupported."
 msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:228
-#, fuzzy, kde-format
-#| msgid "Cannot open file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot Save File"
-msgstr "ფაილის გახსნის შეცდომა"
+msgstr "ფაილის შენახვის შეცდომა"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:229
 #, kde-format
@@ -10953,8 +10926,7 @@ msgstr ""
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:244
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2277
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2296
-#, fuzzy, kde-format
-#| msgid "Overwrite File?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "ჩავანაცვლო ფაილი?"
@@ -10971,8 +10943,7 @@ msgid "Saving file %1 -"
 msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:304
-#, fuzzy, kde-format
-#| msgid "File Not Saved"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Not Saved"
 msgstr "ფაილი არ შენახულა"
@@ -10984,11 +10955,10 @@ msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:264
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
-#, fuzzy, kde-format
-#| msgid "Geolocation Filter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
-msgstr "გეოლოკაციის ფილტრი"
+msgstr "გეოლოკაციის რედაქტორი"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:297
 #, kde-format
@@ -11089,9 +11059,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:814
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Unsaved changes"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "შეუნახავი ცვლილებები"
@@ -11426,8 +11394,7 @@ msgid "Destination Directory:"
 msgstr "სამიზნე საქაღალდე:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:105
-#, fuzzy, kde-format
-#| msgid "Select a directory in which to save the kml file and pictures"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select a Directory in Which to Save the KML File and Pictures"
 msgstr "KML ფაილისა და სურათების შესანახი საქაღალდის არჩევა"
@@ -11733,8 +11700,7 @@ msgid "Bookmarks"
 msgstr "სანიშნები"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:274
-#, fuzzy, kde-format
-#| msgid "Search failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Search Failed"
 msgstr "ძებნის შეცდომა"
@@ -11754,12 +11720,10 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:92
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Metadata Edit"
+#, kde-format
 msgctxt "@title:window"
 msgid "Metadata Editor"
-msgstr "მეტამონაცემების ჩასწორება"
+msgstr "მეტამონაცემების რედაქტორი"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:113
 #, kde-format
@@ -11792,12 +11756,10 @@ msgid "Edit XMP"
 msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:311
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Edit Metadata..."
+#, kde-format
 msgctxt "@title:window"
 msgid "%1 (%2/%3) - Edit Metadata"
-msgstr "მეტამონაცემების ჩასწორება..."
+msgstr "%1 (%2/%3) - მეტამონაცემების ჩასწორება"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:85
 #: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:83
@@ -15269,11 +15231,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:102
-#, fuzzy, kde-format
-#| msgid "Adjust image properties"
+#, kde-format
 msgctxt "@title:window"
 msgid "Adjust Time & Date"
-msgstr "გამოსახულების ზომების დაყენება"
+msgstr "დროისა და თარიღის გასწორება"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:110
 #, kde-format
@@ -15397,7 +15358,7 @@ msgstr ""
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:43
 #, kde-format
 msgid "Create Calendar"
-msgstr ""
+msgstr "კალენდარის შექმნა"
 
 #: core/dplugins/generic/tools/calendar/calendarplugin.cpp:58
 #, kde-format
@@ -15629,11 +15590,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:111
-#, fuzzy, kde-format
-#| msgid "Create calendar"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Calendar"
-msgstr "კალენდრის შექმნა"
+msgstr "კალენდარის შექმნა"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:114
 #, kde-format
@@ -15648,7 +15608,7 @@ msgstr ""
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:140
 #, kde-format
 msgid "Print Calendar"
-msgstr ""
+msgstr "კალენდარის დაბეჭდვა"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:148
 #, kde-format
@@ -15664,11 +15624,10 @@ msgstr ""
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:157
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:161
-#, fuzzy, kde-format
-#| msgid "Select an Item"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Calendar Data File"
-msgstr "აირჩიეთ ელემენტი"
+msgstr "აირჩიეთ კალენდარის მონაცემების ფაილი"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:220
 #, kde-format
@@ -15690,11 +15649,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:289
-#, fuzzy, kde-format
-#| msgid "Create calendar"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print Calendar"
-msgstr "კალენდრის შექმნა"
+msgstr "კალენდარის დაბეჭდვა"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:297
 #, kde-format
@@ -15718,11 +15676,10 @@ msgstr ""
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:98
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
-#, fuzzy, kde-format
-#| msgid "Text Converter"
+#, kde-format
 msgctxt "@title:window"
 msgid "DNG Converter"
-msgstr "ტექსტის გადამყვანი"
+msgstr "DNF-ში გადამყვანი"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:106
 #, kde-format
@@ -15738,7 +15695,7 @@ msgstr ""
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:297
 #, kde-format
 msgid "DNG Converter"
-msgstr ""
+msgstr "DNF-ში გადამყვანი"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:427
 #, kde-format
@@ -15823,7 +15780,7 @@ msgstr "კამერა"
 #, kde-format
 msgctxt "@title"
 msgid "DNG Converter"
-msgstr ""
+msgstr "DNF-ში გადამყვანი"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:58
 #, kde-format
@@ -16110,33 +16067,25 @@ msgid "Clear all"
 msgstr "ყველას გასუფთავება"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Exposure Index"
+#, kde-format
 msgctxt "@title:window"
 msgid "Exposure Blending"
-msgstr "ექსპოზიციის ინდექსი"
+msgstr "ექსპოზიციის შერევა"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:136
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "&Save"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Save"
 msgstr "&შენახვა"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:138
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Process Selected Items"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Process and save selected items."
-msgstr "მონიშნული ჩანაწერების დამუშავება"
+msgstr "მონიშნული ჩანაწერების დამუშავება და შენახვა."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:142
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "&Preview"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Preview"
 msgstr "&გადახედვა"
@@ -16187,11 +16136,10 @@ msgid "File Name Template: "
 msgstr "ფაილის სახელის შაბლონი: "
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:317
-#, fuzzy, kde-format
-#| msgid "Processing Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Enfuse Processing Messages"
-msgstr "დამუშავების შეცდომა"
+msgstr "დამუშავების შეტყობინებების არევა"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:512
 #, kde-format
@@ -16232,7 +16180,7 @@ msgstr ""
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:51
 #, kde-format
 msgid "Exposure Blending"
-msgstr ""
+msgstr "ექსპოზიციის შერევა"
 
 #: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:66
 #, kde-format
@@ -16494,12 +16442,10 @@ msgid "See processing messages below."
 msgstr ""
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingwizard.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Source Images"
+#, kde-format
 msgctxt "@title:window"
 msgid "Stacked Images Tool"
-msgstr "საწყისი გამოსახულებები"
+msgstr "გამოსახულებების დაწყობის პროგრამა"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:106
 #, kde-format
@@ -16922,9 +16868,7 @@ msgid "Gallery Title:"
 msgstr ""
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Destination Folder:"
+#, kde-format
 msgctxt "@label"
 msgid "Destination folder:"
 msgstr "სამიზნე საქაღალდე:"
@@ -16933,8 +16877,7 @@ msgstr "სამიზნე საქაღალდე:"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:120
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:267
-#, fuzzy, kde-format
-#| msgid "Destination Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Destination Folder"
 msgstr "სამიზნე საქაღალდე"
@@ -16992,12 +16935,10 @@ msgid "Author: %1<br/><br/>"
 msgstr ""
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox"
-#| msgid "Create new gallery"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create HTML Gallery"
-msgstr "ახალი გალერეის შექმნა"
+msgstr "HTML გალერეის შექმნა"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:90
 #, kde-format
@@ -17132,21 +17073,18 @@ msgid "Set here the project title"
 msgstr "აქ პროექტის სათაურის დაყენება შეგიძლიათ"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:81
-#, fuzzy, kde-format
-#| msgid "Projects Folder"
+#, kde-format
 msgid "Projects folder:"
-msgstr "პროექტების საქაღალდე"
+msgstr "პროექტების საქაღალდე:"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:84
-#, fuzzy, kde-format
-#| msgid "Projects Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Projects Folder"
 msgstr "პროექტების საქაღალდე"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:73
-#, fuzzy, kde-format
-#| msgid "Create New Album"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create jAlbum Album"
 msgstr "ახალი ალბომის შექმნა"
@@ -17204,12 +17142,10 @@ msgstr ""
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:314
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:64
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "MJPEG Server Contents"
+#, kde-format
 msgctxt "@title:window"
 msgid "Media Server Contents"
-msgstr "MJPEG სერვერის შემცველობა"
+msgstr "მედია სერვერის შემცველობა"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:227
 #, kde-format
@@ -17288,11 +17224,10 @@ msgstr "გაზიარებული ელემენტები"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:340
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:105
-#, fuzzy, kde-format
-#| msgid "%1 Media Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Starting Media Server"
-msgstr "%1 მედია სერვერი"
+msgstr "მედია სერვერის გაშვება"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:341
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:106
@@ -17352,16 +17287,13 @@ msgid "MJPEG Server cannot be started!"
 msgstr "MJPEG სერვერის გაშვების შეცდომა!"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg.cpp:26
-#, fuzzy, kde-format
-#| msgid "MJPEG Stream Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Share Files With MJPEG Stream Server"
-msgstr "MJPEG ნაკადის სერვერი"
+msgstr "ფაილების გაზიარება MJPEG ნაკადის სერვერთან"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "MJPEG Server Contents"
+#, kde-format
 msgctxt "@title:window"
 msgid "MJPEG Server Contents"
 msgstr "MJPEG სერვერის შემცველობა"
@@ -17854,12 +17786,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:122
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "OCR Text Converter"
+#, kde-format
 msgctxt "@title:window"
 msgid "OCR Text Converter"
-msgstr "ტექსტის გადამყვანი"
+msgstr "OCR ტექსტის გადამყვანი"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:132
 #, kde-format
@@ -17934,8 +17864,7 @@ msgid "Success"
 msgstr "წარმატება"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:585
-#, fuzzy, kde-format
-#| msgid "Text Converter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Text Converter"
 msgstr "ტექსტის გადამყვანი"
@@ -18814,7 +18743,7 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:43
 #, kde-format
 msgid "Print Creator"
-msgstr ""
+msgstr "ბეჭდვის შემქმნელი"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:58
 #, kde-format
@@ -19296,12 +19225,10 @@ msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:354
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
-#, fuzzy, kde-format
-#| msgctxt "@label: item creator"
-#| msgid "Creator"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print Creator"
-msgstr "შემქმნელი"
+msgstr "ბეჭდვის შემქმნელი"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:76
 #, kde-format
@@ -19333,8 +19260,7 @@ msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:115
-#, fuzzy, kde-format
-#| msgid "Destination Folder:"
+#, kde-format
 msgid "Destination folder:"
 msgstr "სამიზნე საქაღალდე:"
 
@@ -19379,8 +19305,7 @@ msgid "Remove"
 msgstr "წაშლა"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1101
-#, fuzzy, kde-format
-#| msgid "Custom layout"
+#, kde-format
 msgctxt "@title:window"
 msgid "Custom Layout"
 msgstr "ხელით განლაგება"
@@ -19554,8 +19479,7 @@ msgstr "სურათის თვისებების ფაილი დ
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:334
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:984
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:997
-#, fuzzy, kde-format
-#| msgid "Processing Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Processing Failed"
 msgstr "დამუშავების შეცდომა"
@@ -20042,11 +19966,10 @@ msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr ""
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
-#, fuzzy, kde-format
-#| msgid "Create directories"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create a Video Slideshow"
-msgstr "საქაღალდეების შექმნა"
+msgstr "ვიდეო სლაიდშოუს შექმნა"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:87
 #, kde-format
@@ -20150,11 +20073,10 @@ msgid "Cannot apply changes to desktop wallpaper."
 msgstr ""
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:59
-#, fuzzy, kde-format
-#| msgid "Page settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "WallPaper Settings"
-msgstr "გვერდის პარამეტრები"
+msgstr "ფონის სურათის მორგება"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:77
 #, kde-format
@@ -20225,10 +20147,9 @@ msgstr ""
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
-#, fuzzy, kde-format
-#| msgid "Open error"
+#, kde-format
 msgid "OpenGL Error"
-msgstr "გახსნის შეცდომა"
+msgstr "OpenGL-ის შეცდომა"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
 #, kde-format
@@ -20241,12 +20162,10 @@ msgid "No OpenGL context found"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "@title: soundtrack settings for the presentation"
-#| msgid "Soundtrack"
+#, kde-format
 msgctxt "@title:window"
 msgid "Soundtrack Preview"
-msgstr "საუნდტრეკი"
+msgstr "საუნდტრეკიის გადახედვა"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:104
 #, kde-format
@@ -20305,12 +20224,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:362
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Select files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Sound Files"
-msgstr "მონიშნეთ ფაილები"
+msgstr "მონიშნეთ ხმის ფაილები"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:430
 #, kde-format
@@ -20323,12 +20240,10 @@ msgid "You can only move files down one at a time."
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:489
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Play list"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Playlist"
-msgstr "დასაკრავი სია"
+msgstr "დასაკრავი სიის ჩატვირთვა"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:490
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:549
@@ -20337,12 +20252,10 @@ msgid "Playlist (*.m3u)"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:548
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Play list"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Playlist"
-msgstr "დასაკრავი სია"
+msgstr "დასაკრავი სიის შენახვა"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:609
 #, kde-format
@@ -20750,9 +20663,7 @@ msgid "Use Open&GL transitions"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:75
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Presentation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Presentation"
 msgstr "პრეზენტაცია"
@@ -20928,8 +20839,7 @@ msgstr "დაყოვნება:"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:253
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:429
-#, fuzzy, kde-format
-#| msgid "Delete image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Image"
 msgstr "გამოსახულების წაშლა"
@@ -21013,8 +20923,7 @@ msgid "Blobs"
 msgstr ""
 
 #: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:120
-#, fuzzy, kde-format
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "სლაიდშოუ"
@@ -21028,11 +20937,10 @@ msgid "Giving a slideshow"
 msgstr ""
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:107
-#, fuzzy, kde-format
-#| msgid "Video Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Slideshow Settings"
-msgstr "ვიდეოს პარამეტრები"
+msgstr "სლაიდშოუს მორგება"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
 #, kde-format
@@ -21402,11 +21310,10 @@ msgid "Failed to list folders"
 msgstr "საქაღალდეების სიის მიღების შეცდომა"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:80
-#, fuzzy, kde-format
-#| msgid "Export to Dropbox"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Box"
-msgstr "Dropbox-ზე გატანა"
+msgstr "Box-ზე გატანა"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:82
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:80
@@ -21420,18 +21327,16 @@ msgstr "Dropbox-ზე გატანა"
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:45
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:132
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:83
-#, fuzzy, kde-format
-#| msgid "Start Upload"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Upload"
 msgstr "ატვირთვის დაწყება"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:83
-#, fuzzy, kde-format
-#| msgid "Start upload to Dropbox"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Box"
-msgstr "Dropbox-ზე ატვირთვის დაწყება"
+msgstr "Box-ზე ატვირთვის დაწყება"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:245
 #: core/dplugins/generic/webservices/google/gswindow.cpp:491
@@ -21454,9 +21359,7 @@ msgstr "სურათი მონიშნული არაა. ასა�
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:670
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:256
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "გაფრთხილება"
@@ -21482,8 +21385,7 @@ msgstr "ავთენტიკაციის შეცდომა. თავ
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:259
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:675
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:260
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action:button"
 msgid "Continue"
 msgstr "გაგრძელება"
@@ -21500,8 +21402,7 @@ msgstr "გაგრძელება"
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:260
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:676
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:261
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
 msgstr "გაუქმება"
@@ -21535,8 +21436,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
-#, fuzzy, kde-format
-#| msgid "Uploading Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Uploading Failed"
 msgstr "ატვირთვის შეცდომა"
@@ -21557,8 +21457,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:386
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:368
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:391
-#, fuzzy, kde-format
-#| msgid "Login Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Login Failed"
 msgstr "შესვლის შეცდომა"
@@ -21607,15 +21506,13 @@ msgid "Export to &Dropbox..."
 msgstr "Dropbox-ზე &გატანა..."
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:78
-#, fuzzy, kde-format
-#| msgid "Export to Dropbox"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Dropbox"
 msgstr "Dropbox-ზე გატანა"
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:81
-#, fuzzy, kde-format
-#| msgid "Start upload to Dropbox"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Dropbox"
 msgstr "Dropbox-ზე ატვირთვის დაწყება"
@@ -21722,8 +21619,7 @@ msgid "Export to &Facebook..."
 msgstr "&Facebook-ში გატანა..."
 
 #: core/dplugins/generic/webservices/facebook/fbplugin.cpp:110
-#, fuzzy, kde-format
-#| msgid "Facebook"
+#, kde-format
 msgctxt "@title:window"
 msgid "Facebook"
 msgstr "Facebook"
@@ -21795,18 +21691,16 @@ msgid "Validate previous session..."
 msgstr "წინა სესიის გადამოწმება..."
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:115
-#, fuzzy, kde-format
-#| msgid "Export to Facebook Web Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Facebook Web Service"
-msgstr "Facebook -ის ვებსერვისში გატანა"
+msgstr "Facebook -ის ვებსერვისზე გატანა"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:118
-#, fuzzy, kde-format
-#| msgid "Start upload to Facebook web service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Facebook web service"
-msgstr "Facebook -ის ვებსერვისში ატვირთვის დაწყება"
+msgstr "Facebook -ის ვებსერვისზე ატვირთვის დაწყება"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:125
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:314
@@ -21857,8 +21751,7 @@ msgid "Target location: "
 msgstr "სამიზნე მდებარეობა: "
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:112
-#, fuzzy, kde-format
-#| msgid "Target Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Target Folder"
 msgstr "სამიზნე საქაღალდე"
@@ -21869,10 +21762,9 @@ msgid "Sets the target address to copy the items to."
 msgstr ""
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:115
-#, fuzzy, kde-format
-#| msgid "Tag path behavior :"
+#, kde-format
 msgid "Target file behavior:"
-msgstr "ჭდის ბილიკის ქცევა :"
+msgstr "სამიზნე ფაილის ქცევა:"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:117
 #, kde-format
@@ -21919,34 +21811,30 @@ msgid "This is the list of items to copy to the specified target."
 msgstr ""
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:91
-#, fuzzy, kde-format
-#| msgid "Export to Remote Storage"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Local Storage"
-msgstr "დაშორებულ საცავზე ატვირთვა"
+msgstr "ლოკალურ საცავზე გატანა"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:94
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:74
-#, fuzzy, kde-format
-#| msgid "Start export"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Export"
 msgstr "გატანის დაწყება"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:95
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:75
-#, fuzzy, kde-format
-#| msgid "Start export to the specified target"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
-msgstr "მითითებულ საცავზე ატვირთვის დაწყება"
+msgstr "მითითებულ სამიზნეზე ატვირთვის დაწყება"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:217
-#, fuzzy, kde-format
-#| msgid "Upload not completed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Copy not Completed"
-msgstr "ატვირთვა არ დასრულებულა"
+msgstr "კოპრირება არ დასრულებულა"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:218
 #, kde-format
@@ -22000,8 +21888,7 @@ msgid "This is the list of images to upload to the specified target."
 msgstr "ეს სურათების სიაა, რომელიც მითითებულ ადგილას აიტვირთება."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:162
-#, fuzzy, kde-format
-#| msgid "Select target..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Target..."
 msgstr "აირჩიეთ სამიზნე..."
@@ -22018,15 +21905,13 @@ msgid "<i>not selected</i>"
 msgstr ""
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:71
-#, fuzzy, kde-format
-#| msgid "Export to Remote Storage"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Remote Storage"
-msgstr "დაშორებულ საცავზე ატვირთვა"
+msgstr "დაშორებულ საცავზე გატანა"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:186
-#, fuzzy, kde-format
-#| msgid "Upload not completed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Upload not Completed"
 msgstr "ატვირთვა არ დასრულებულა"
@@ -22053,37 +21938,31 @@ msgstr ""
 "შემოტანილი."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Select Items"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Items to Import..."
-msgstr "ჩანაწერების არჩევა"
+msgstr "აირჩიეთ შემოსატანი ჩანაწერები..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:63
-#, fuzzy, kde-format
-#| msgid "Import from Remote Storage"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import from Remote Storage"
 msgstr "დაშორებული საცავიდან შემოტანა"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:67
-#, fuzzy, kde-format
-#| msgid "Start import"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Import"
 msgstr "შემოტანის დაწყება"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:68
-#, fuzzy, kde-format
-#| msgid ""
-#| "Start importing the specified images into the currently selected album."
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start importing the specified images into the currently selected album."
 msgstr "მითითებული სურათების ამჟამად მონიშნულ ალბომში შემოტანის დაწყება."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:138
-#, fuzzy, kde-format
-#| msgid "Import not completed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import not Completed"
 msgstr "შემოტანა არ დასრულებულა"
@@ -22548,16 +22427,14 @@ msgid "Fewer tag options"
 msgstr "ჭდეების ნაკლები პარამეტრი"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:148
-#, fuzzy, kde-format
-#| msgid "Export to %1 Web Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to %1 Web Service"
 msgstr "%1-ის ვებსერვისში გატანა"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:187
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:240
-#, fuzzy, kde-format
-#| msgid "Start Uploading"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Uploading"
 msgstr "ატვირთვის დაწყება"
@@ -22816,58 +22693,47 @@ msgid "Build a combined tag string."
 msgstr "კომბინირებული ჭდის სტრიქონის აგება."
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Export to Google Drive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Google Drive"
 msgstr "Google Drive-ზე გატანა"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:143
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Start upload to Google Drive"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Google Drive"
 msgstr "Google Drive-ზე ატვირთვის დაწყება"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Export to Google Drive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Google Photos Service"
-msgstr "Google Drive-ზე გატანა"
+msgstr "Google Photos -ზე გატანა"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:190
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Start upload to Google Drive"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Google Photos service"
-msgstr "Google Drive-ზე ატვირთვის დაწყება"
+msgstr "Google Photos -ზე ატვირთვის დაწყება"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:196
-#, fuzzy, kde-format
-#| msgid "Import from SmugMug Web Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import from Google Photos Service"
-msgstr "SmugMug  ვებსერვისიდან შემოტანა"
+msgstr "Google Photos ვებსერვისიდან შემოტანა"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:198
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:123
-#, fuzzy, kde-format
-#| msgid "Start Download"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Download"
 msgstr "გადმოწერის დაწყება"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:199
-#, fuzzy, kde-format
-#| msgid "Start download from SmugMug web service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start download from Google Photos service"
-msgstr "SmugMug ვებსერვისიდან გადმოწერის დაწყება"
+msgstr "Google Photos ვებსერვისიდან გადმოწერის დაწყება"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:363
 #: core/dplugins/generic/webservices/google/gswindow.cpp:430
@@ -22942,8 +22808,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1069
-#, fuzzy, kde-format
-#| msgid "OK"
+#, kde-format
 msgctxt "@action:button"
 msgid "OK"
 msgstr "დიახ"
@@ -23047,28 +22912,24 @@ msgid "Create new gallery"
 msgstr "ახალი გალერეის შექმნა"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:104
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Export to &Imageshack..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to ImageShack"
-msgstr "&ImageShack-ზე გატანა..."
+msgstr "&ImageShack-ზე გატანა"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:112
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:156
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:123
-#, fuzzy, kde-format
-#| msgid "Upload"
+#, kde-format
 msgctxt "@action:button"
 msgid "Upload"
 msgstr "ატვირთვა"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:113
-#, fuzzy, kde-format
-#| msgid "Start upload to Facebook web service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to ImageShack web service"
-msgstr "Facebook -ის ვებსერვისში ატვირთვის დაწყება"
+msgstr "Facebook -ის ვებსერვისზე ატვირთვის დაწყება"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:241
 #, kde-format
@@ -23180,18 +23041,16 @@ msgid "Upload Anonymously"
 msgstr "ანონიმურად ატვირთვა"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:153
-#, fuzzy, kde-format
-#| msgid "Export to imgur.com"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to imgur.com"
 msgstr "გატანა imgur.com-ზე"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:157
-#, fuzzy, kde-format
-#| msgid "Start upload to Imgur"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Imgur"
-msgstr "სურათების Imgur-ზე ატვირთვის დაწყება"
+msgstr "Imgur-ზე ატვირთვის დაწყება"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:243
 #, kde-format
@@ -23199,8 +23058,7 @@ msgid "<i>Not logged in</i>"
 msgstr ""
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:250
-#, fuzzy, kde-format
-#| msgid "Authorization Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Authorization Failed"
 msgstr "ავტორიზაციის შეცდომა"
@@ -23634,11 +23492,10 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:186
-#, fuzzy, kde-format
-#| msgid "Export to %1 Web Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export as %1 Observation"
-msgstr "%1-ის ვებსერვისში გატანა"
+msgstr "%1 დაკვირვების სახით გატანა"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:531
 #, kde-format
@@ -23736,15 +23593,13 @@ msgid "Export to &Ipfs..."
 msgstr ""
 
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:120
-#, fuzzy, kde-format
-#| msgid "Export to IPFS"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to IPFS"
 msgstr "IPFS-ზე გატანა"
 
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:124
-#, fuzzy, kde-format
-#| msgid "Start upload to IPFS"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to IPFS"
 msgstr "IPFS-ზე ატვირთვის დაწყება"
@@ -24251,15 +24106,13 @@ msgid "Upload Settings"
 msgstr "პარამეტრების ატვირთვა"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:101
-#, fuzzy, kde-format
-#| msgid "Export to MediaWiki"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to MediaWiki"
 msgstr "MediaWiki-ზე გატანა"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:104
-#, fuzzy, kde-format
-#| msgid "Start upload to MediaWiki"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to MediaWiki"
 msgstr "MediaWiki-ზე ატვირთვის დაწყება"
@@ -24270,8 +24123,7 @@ msgid "MediaWiki export"
 msgstr "MediaWiki-ზე გატანა"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:338
-#, fuzzy, kde-format
-#| msgid "Login Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Login Error"
 msgstr "შესვლის შეცდომა"
@@ -24314,20 +24166,16 @@ msgid "Export to &Onedrive..."
 msgstr ""
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Export to Google Drive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Onedrive"
-msgstr "Google Drive-ზე გატანა"
+msgstr "Onedrive-ზე გატანა"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:83
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Start upload to Google Drive"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Onedrive"
-msgstr "Google Drive-ზე ატვირთვის დაწყება"
+msgstr "Onedrive-ზე ატვირთვის დაწყება"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:288
 #, kde-format
@@ -24391,18 +24239,16 @@ msgid "Failed to list boards"
 msgstr ""
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:80
-#, fuzzy, kde-format
-#| msgid "Export to Rajce.net"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Pinterest"
-msgstr "Rajce.net -ზე გატანა"
+msgstr "Pinterest -ზე გატანა"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:83
-#, fuzzy, kde-format
-#| msgid "Start upload to Rajce.net"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Pinterest"
-msgstr "Rajce.net-ზე ატვირთვის დაწყება"
+msgstr "Pinterest-ზე ატვირთვის დაწყება"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:256
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:257
@@ -24580,8 +24426,7 @@ msgid "Resized JPEG quality:"
 msgstr "ზომაშეცვლილი JPEG ხარისხი:"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:227
-#, fuzzy, kde-format
-#| msgid "Piwigo Export"
+#, kde-format
 msgctxt "@title:window"
 msgid "Piwigo Export"
 msgstr "Piwigo -ზე გატანა"
@@ -24788,15 +24633,13 @@ msgid "Adding photos %v%"
 msgstr "%v% სურათების დამატება"
 
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:43
-#, fuzzy, kde-format
-#| msgid "Export to Rajce.net"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Rajce.net"
 msgstr "Rajce.net -ზე გატანა"
 
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:46
-#, fuzzy, kde-format
-#| msgid "Start upload to Rajce.net"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Rajce.net"
 msgstr "Rajce.net-ზე ატვირთვის დაწყება"
@@ -25087,29 +24930,25 @@ msgid "Maximum dimension:"
 msgstr "მაქსიმალური ზომა:"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:121
-#, fuzzy, kde-format
-#| msgid "Import from SmugMug Web Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import from SmugMug Web Service"
 msgstr "SmugMug  ვებსერვისიდან შემოტანა"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:124
-#, fuzzy, kde-format
-#| msgid "Start download from SmugMug web service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start download from SmugMug web service"
-msgstr "SmugMug ვებსერვისიდან გადმოწერის დაწყება"
+msgstr "Google Photos ვებსერვისიდან გადმოწერის დაწყება"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:130
-#, fuzzy, kde-format
-#| msgid "Export to SmugMug Web Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to SmugMug Web Service"
 msgstr "SmugMug ვებსერვისზე გატანა"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:133
-#, fuzzy, kde-format
-#| msgid "Start upload to SmugMug web service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to SmugMug web service"
 msgstr "SmugMug ვებსერვისზე ატვირთვის დაწყეება"
@@ -25119,8 +24958,7 @@ msgstr "SmugMug ვებსერვისზე ატვირთვის �
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:489
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:526
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1018
-#, fuzzy, kde-format
-#| msgid "SmugMug Call Failed: %1\n"
+#, kde-format
 msgid "SmugMug call failed: %1\n"
 msgstr "SmugMug -ის ფუნქციის შეცდომა: %1\n"
 
@@ -25226,18 +25064,16 @@ msgid "Failed to create tweet for photo uploaded"
 msgstr ""
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:81
-#, fuzzy, kde-format
-#| msgid "Export to imgur.com"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Twitter"
-msgstr "გატანა imgur.com-ზე"
+msgstr "Twitter-ზე გატანა"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:84
-#, fuzzy, kde-format
-#| msgid "Start upload to Imgur"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Twitter"
-msgstr "სურათების Imgur-ზე ატვირთვის დაწყება"
+msgstr "Twitter-ზე ატვირთვის დაწყება"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:293
 #, kde-format
@@ -25266,11 +25102,10 @@ msgid "Cannot open image at %1\n"
 msgstr ""
 
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:395
-#, fuzzy, kde-format
-#| msgid "Facebook Call Failed: %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "%1 Call Failed"
-msgstr "Facebook ის ფუნქციის შეცდომა: %1"
+msgstr "%1-ის გამოძახების შეცდომა"
 
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:396
 #: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:349
@@ -25348,8 +25183,7 @@ msgid "<h3>This view lists user albums.</h3>"
 msgstr ""
 
 #: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:310
-#, fuzzy, kde-format
-#| msgid "%1 - Create album failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "%1 - Create Album Failed"
 msgstr "%1 - ახალი ალბომის შექმნის შეცდომა"
@@ -25389,11 +25223,10 @@ msgid "&Choose account:"
 msgstr "&აირჩიეთ ანგარიში:"
 
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:84
-#, fuzzy, kde-format
-#| msgid "Export to %1 Web Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Web Services"
-msgstr "%1-ის ვებსერვისში გატანა"
+msgstr "ვებსერვისში გატანა"
 
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:95
 #, kde-format
@@ -25671,12 +25504,10 @@ msgstr ""
 
 #: core/libs/album/engine/albummodificationhelper.cpp:283
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:145
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Albums (%1)"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rename Album (%1)"
-msgstr "ალბომები (%1)"
+msgstr "ალბომის გადარქმევა (%1)"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:284
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:146
@@ -25815,15 +25646,13 @@ msgid ""
 msgstr ""
 
 #: core/libs/album/manager/albummanager_database.cpp:357
-#, fuzzy, kde-format
-#| msgid "Collection:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Collection not Found"
-msgstr "კოლექცია:"
+msgstr "კოლექცია ვერ ვიპოვე"
 
 #: core/libs/album/manager/albummanager_database.cpp:459
-#, fuzzy, kde-format
-#| msgid "Database Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Database Folder"
 msgstr "ბაზის საქაღალდე"
@@ -25841,8 +25670,7 @@ msgstr ""
 #: core/libs/album/manager/albummanager_database.cpp:470
 #: core/libs/album/manager/albummanager_database.cpp:538
 #: core/libs/album/manager/albummanager_database.cpp:560
-#, fuzzy, kde-format
-#| msgid "Upgrade Database"
+#, kde-format
 msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "ბაზის განახლება"
@@ -25851,18 +25679,16 @@ msgstr "ბაზის განახლება"
 #: core/libs/album/manager/albummanager_database.cpp:540
 #: core/libs/album/manager/albummanager_database.cpp:562
 #: core/libs/album/manager/albummanager_database.cpp:610
-#, fuzzy, kde-format
-#| msgid "Create Database Folder?"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create New Database"
-msgstr "შევქმნა ბაზის საქაღალდე?"
+msgstr "ახალი მონაცემთა ბაზის შექმნა"
 
 #: core/libs/album/manager/albummanager_database.cpp:529
 #: core/libs/album/manager/albummanager_database.cpp:552
 #: core/libs/album/manager/albummanager_database.cpp:602
 #: core/libs/album/manager/albummanager_database.cpp:634
-#, fuzzy, kde-format
-#| msgid "New database folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Database Folder"
 msgstr "ახალი ბაზის საქაღალდე"
@@ -25880,11 +25706,10 @@ msgstr ""
 #: core/libs/album/manager/albummanager_database.cpp:542
 #: core/libs/album/manager/albummanager_database.cpp:612
 #: core/libs/album/manager/albummanager_database.cpp:643
-#, fuzzy, kde-format
-#| msgid "Upgrade Database"
+#, kde-format
 msgctxt "@action:button"
 msgid "Copy Current Database"
-msgstr "ბაზის განახლება"
+msgstr "მიმდინარე მონაცემთა ბაზის კოპირება"
 
 #: core/libs/album/manager/albummanager_database.cpp:553
 #, kde-format
@@ -25920,8 +25745,7 @@ msgid ""
 msgstr ""
 
 #: core/libs/album/manager/albummanager_database.cpp:645
-#, fuzzy, kde-format
-#| msgid "Use Existing File"
+#, kde-format
 msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "არსებული ფაილის გამოყენება"
@@ -26330,8 +26154,7 @@ msgid "Refresh"
 msgstr "განახლება"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:305
-#, fuzzy, kde-format
-#| msgid "Scan for Faces"
+#, kde-format
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "სკანირება სახეების მოსაძებნად"
@@ -26456,18 +26279,16 @@ msgid "White"
 msgstr "თეთრი"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:117
-#, fuzzy, kde-format
-#| msgid "New Album"
+#, kde-format
 msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "ახალი ალბომი"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:117
-#, fuzzy, kde-format
-#| msgid "Album"
+#, kde-format
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
-msgstr "ალბომი"
+msgstr "ალბომის ჩასწორება"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:138
 #, kde-format
@@ -26591,11 +26412,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/album/widgets/albumpropsedit.cpp:479
-#, fuzzy, kde-format
-#| msgid "Could not authorize"
+#, kde-format
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
-msgstr "ავტორიზაციის შეცდომა"
+msgstr "საშუალოს გამოთვლის შეცდომა"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:480
 #, kde-format
@@ -26643,12 +26463,10 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: core/libs/album/widgets/albumselectdialog.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Delete Album"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Album"
-msgstr "ალბომის წაშლა"
+msgstr "ალბომის არჩევა"
 
 #: core/libs/album/widgets/albumselectors.cpp:136
 #: core/libs/album/widgets/albumselectors.cpp:492
@@ -27398,8 +27216,7 @@ msgid ""
 msgstr ""
 
 #: core/libs/database/utils/ifaces/dio.cpp:326
-#, fuzzy, kde-format
-#| msgid "File conflict"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "ფაილის კონფლიქტი"
@@ -27418,26 +27235,22 @@ msgid ""
 msgstr ""
 
 #: core/libs/database/utils/ifaces/dio.cpp:336
-#, fuzzy, kde-format
-#| msgid "Overwrite automatically"
+#, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
-msgstr "ავტომატურად გადაწერა"
+msgstr "ავტომატურად გადარქმევა"
 
 #: core/libs/database/utils/ifaces/dio.cpp:338
-#, fuzzy, kde-format
-#| msgid "Overwrite automatically"
+#, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "ავტომატურად გადაწერა"
 
 #: core/libs/database/utils/ifaces/dio.cpp:340
-#, fuzzy, kde-format
-#| msgctxt "@info: language name"
-#| msgid "Automatically detect"
+#, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
-msgstr "ავტომატური გამოცნობა"
+msgstr "ავტომატური გამოტოვება"
 
 #: core/libs/database/utils/ifaces/dio.cpp:766
 #, kde-format
@@ -27928,8 +27741,7 @@ msgstr ""
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:594
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:599
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:852
-#, fuzzy, kde-format
-#| msgid "Database Connection Test"
+#, kde-format
 msgctxt "@title:window"
 msgid "Database Connection Test"
 msgstr "ბაზასთან შეერთების შემოწმება"
@@ -27980,8 +27792,7 @@ msgid "This path was set as a command lineoption (--database-directory)."
 msgstr ""
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:843
-#, fuzzy, kde-format
-#| msgid "Database Configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Database Configuration"
 msgstr "ბაზის მორგება"
@@ -28008,8 +27819,7 @@ msgid ""
 msgstr ""
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:881
-#, fuzzy, kde-format
-#| msgid "Create Database Folder?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder?"
 msgstr "შევქმნა ბაზის საქაღალდე?"
@@ -28022,11 +27832,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:893
-#, fuzzy, kde-format
-#| msgid "Create Database Folder?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder Failed"
-msgstr "შევქმნა ბაზის საქაღალდე?"
+msgstr "ბაზის საქაღალდის შექმნის შეცდომა"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:894
 #, kde-format
@@ -28036,11 +27845,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:919
-#, fuzzy, kde-format
-#| msgid "Database Statistics"
+#, kde-format
 msgctxt "@title:window"
 msgid "No Database Write Access"
-msgstr "ბაზის სტატისტიკა"
+msgstr "ბაზაში ჩაწერის უფლების გარეშე"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:920
 #, kde-format
@@ -28050,8 +27858,7 @@ msgid ""
 msgstr ""
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:46
-#, fuzzy, kde-format
-#| msgid "Database Statistics"
+#, kde-format
 msgctxt "@title:window"
 msgid "Database Statistics"
 msgstr "ბაზის სტატისტიკა"
@@ -28296,20 +28103,16 @@ msgid "&Move to Trash"
 msgstr "&სანაგვე ყუთში გადატანა"
 
 #: core/libs/dialogs/deletedialog.cpp:655
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu delete item"
-#| msgid "Delete Selected"
+#, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
-msgstr "მონიშნულის წაშლა"
+msgstr "მონიშნული ჩანაწერები წაიშლება"
 
 #: core/libs/dialogs/deletedialog.cpp:662
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu delete item"
-#| msgid "Delete Selected"
+#, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"
-msgstr "მონიშნულის წაშლა"
+msgstr "მონიშნული ალბომები წაიშლება"
 
 #: core/libs/dialogs/dmessagebox.cpp:109
 #, kde-format
@@ -28333,11 +28136,10 @@ msgid "Settings for Saving Image File"
 msgstr ""
 
 #: core/libs/dialogs/iccprofileinfodlg.cpp:39
-#, fuzzy, kde-format
-#| msgid "Color Profile Conversion"
+#, kde-format
 msgctxt "@title:window"
 msgid "Color Profile Info - %1"
-msgstr "ფერის პროფილის გადაყვანა"
+msgstr "ფერის პროფილის ინფორმაცია - %1"
 
 #: core/libs/dialogs/imagedialog.cpp:233
 #, kde-format
@@ -28425,12 +28227,10 @@ msgid "<i>VideoCodec:</i>"
 msgstr ""
 
 #: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:138
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Date and Time Information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
-msgstr "თარიღისა და დროის ინფორმაცი"
+msgstr "გაზიარებული ბიბლიოთეკებისა და კომპონენტების ინფორმაცია"
 
 #: core/libs/dialogs/infodlg.cpp:74
 #: core/libs/progressmanager/dhistoryview.cpp:149
@@ -29326,11 +29126,10 @@ msgid "Total: %1 (%)"
 msgstr ""
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:545
-#, fuzzy, kde-format
-#| msgid "Select GPX File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Gains Mixer File to Load"
-msgstr "აირჩეთ ჩასატვირთი GPX ფაილი"
+msgstr "აირჩიეთ Gimp Gains მიქსერის ფაილი ჩატვირთვისთვის"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:625
 #, kde-format
@@ -29488,11 +29287,10 @@ msgid "Adjust Curves"
 msgstr "მრუდის მორგება"
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:242
-#, fuzzy, kde-format
-#| msgid "Select GPX File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Curves File to Load"
-msgstr "აირჩეთ ჩასატვირთი GPX ფაილი"
+msgstr "აირჩიეთ Gimp -ის მრუდების ფაილი ჩატვირთვისთვის"
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:254
 #, kde-format
@@ -32366,11 +32164,10 @@ msgid "Location of the album that will be created (optional)."
 msgstr "შესაქმნელი ალბომის მდებარეობა (არასავალდებულო)."
 
 #: core/libs/dplugins/webservices/wsselectuserdlg.cpp:60
-#, fuzzy, kde-format
-#| msgid "Invert Selection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Account Selector"
-msgstr "მონიშვნის ინვერსია"
+msgstr "ანგარიშის არჩევა"
 
 #: core/libs/dplugins/webservices/wsselectuserdlg.cpp:65
 #, kde-format
@@ -32549,9 +32346,7 @@ msgid "JPEG Quality:"
 msgstr "JPEG ხარისხი:"
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "&Start"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Start"
 msgstr "&გაშვება"
@@ -32616,9 +32411,7 @@ msgid "Save the list."
 msgstr "სიის შენახვა."
 
 #: core/libs/dplugins/widgets/ditemslist.cpp:580
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Select the image file list to load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Load"
 msgstr "აირჩიეთ ჩასატვირთი სურათების სია"
@@ -32631,12 +32424,10 @@ msgid "All Files (*)"
 msgstr "ყველა ფაილი (*)"
 
 #: core/libs/dplugins/widgets/ditemslist.cpp:661
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Select the image file list to save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Save"
-msgstr "აირჩიეთ შესანახი ფაილების სია"
+msgstr "აირჩიეთ შესანახი გამოსახულებების ფაილების სია"
 
 #: core/libs/dplugins/widgets/ditemslist_view.cpp:40
 #, kde-format
@@ -32779,9 +32570,7 @@ msgstr ""
 "შეკუმშული.</p>"
 
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Help"
+#, kde-format
 msgctxt "@action:button"
 msgid "Help"
 msgstr "დახმარება"
@@ -35233,11 +35022,10 @@ msgid "Always apply changes without confirmation"
 msgstr ""
 
 #: core/libs/properties/captions/itemdescedittab.cpp:359
-#, fuzzy, kde-format
-#| msgid "Title Change"
+#, kde-format
 msgctxt "@title:window"
 msgid "Apply Changes?"
-msgstr "სათაურის შეცვლა"
+msgstr "გადავატარო ცვლილებები?"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:369
 #, kde-format
@@ -35815,7 +35603,7 @@ msgstr "%1 ISO"
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Range:"
-msgstr ""
+msgstr "დიაპაზონი:"
 
 #: core/libs/properties/itempropertiescolorstab.cpp:159
 #, kde-format
@@ -37169,8 +36957,7 @@ msgstr ""
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:294
 #: core/libs/tags/engine/tagmodificationhelper.cpp:407
-#, fuzzy, kde-format
-#| msgid "Delete Tag"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "ჭდის წაშლა"
@@ -37390,8 +37177,7 @@ msgid "Previous tags were changed. Save changes? "
 msgstr ""
 
 #: core/libs/tags/manager/tagsmanager.cpp:177
-#, fuzzy, kde-format
-#| msgid "Tags Manager"
+#, kde-format
 msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "ჭდეების მმართველი"
@@ -37426,9 +37212,7 @@ msgstr[0] "წავშალო ჭდე %2?"
 msgstr[1] "წავშალო ჭდე %2?"
 
 #: core/libs/tags/manager/tagsmanager.cpp:375
-#, fuzzy, kde-format
-#| msgid "Delete tag"
-#| msgid_plural "Delete tags"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
 msgid_plural "Delete tags"
@@ -37602,15 +37386,13 @@ msgid "Both"
 msgstr "ორივე"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:113
-#, fuzzy, kde-format
-#| msgid "New Tag"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Tag"
 msgstr "ახალი ჭდე"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:117
-#, fuzzy, kde-format
-#| msgid "Edit Tag"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Tag"
 msgstr "ჭდის ჩასწორება"
@@ -37664,11 +37446,10 @@ msgid "<b>Properties of Tag<br/>\"%1\"</b>"
 msgstr ""
 
 #: core/libs/tags/widgets/tageditdlg.cpp:529
-#, fuzzy, kde-format
-#| msgid "Login Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Tag Creation Error"
-msgstr "შესვლის შეცდომა"
+msgstr "ჭდის შექმნის შეცდომა"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:544
 #, kde-format
@@ -39360,9 +39141,7 @@ msgid "Capture"
 msgstr "ჩაჭერა"
 
 #: core/libs/video/qtav/config/DecoderConfigPage.cpp:214
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Video decoder config page"
+#, kde-format
 msgctxt "@title:window"
 msgid "Video Decoder Config Page"
 msgstr "ვიდეო დეკოდერის მორგების გვერდი"
@@ -39691,15 +39470,13 @@ msgstr "Qt-ის შესახებ"
 
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:215
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:237
-#, fuzzy, kde-format
-#| msgid "About QtAV"
+#, kde-format
 msgctxt "@title:window"
 msgid "About QtAV"
 msgstr "QtAV-ის შესახებ"
 
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:232
-#, fuzzy, kde-format
-#| msgid "About FFmpeg"
+#, kde-format
 msgctxt "@title:window"
 msgid "About FFmpeg"
 msgstr "FFmpeg-ის შესახებ"
@@ -39713,9 +39490,7 @@ msgid "Reset to default value"
 msgstr "ნაგულისხმებ მნიშვნელობაზე დაბრუნება"
 
 #: core/libs/widgets/files/dbinaryiface.cpp:215
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Switch to %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Navigate to %1"
 msgstr "%1-ზე გადართვა"
@@ -41971,12 +41746,10 @@ msgid "File name: %1 (%2)"
 msgstr ""
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:398
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Caption Information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save ExifTool Information"
-msgstr "წარწერის ინფორმაცია"
+msgstr "ExifTool -ის ინფორმაციის შენახვა"
 
 #: core/libs/widgets/metadata/exiv2/exifwidget.cpp:72
 #, kde-format
@@ -42284,12 +42057,10 @@ msgid "Switch to %1"
 msgstr "%1-ზე გადართვა"
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:423
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Entries to Translate with %1:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to Translate String with %1 Web-Service"
-msgstr "%1-ით სათარგმნი ჩანაწერები:"
+msgstr "სტრიქონის ვებსერვისით %1 თარგმნა შეუძლებელია"
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:425
 #, kde-format
@@ -47335,17 +47106,13 @@ msgid "Icon Size: %1"
 msgstr ""
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "New Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Bookmark"
 msgstr "ახალი სანიშნე"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Edit Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Bookmark"
 msgstr "სანიშნის ჩასწორება"
@@ -47457,9 +47224,7 @@ msgid "Edit current bookmark from the list"
 msgstr ""
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:245
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Add New Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add New Bookmark"
 msgstr "ახალი სანიშნის დამატება"
@@ -47474,11 +47239,10 @@ msgid ""
 msgstr ""
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:259
-#, fuzzy, kde-format
-#| msgid "Confirm Deletion"
+#, kde-format
 msgctxt "@title:window"
 msgid "Confirm Bookmark Deletion"
-msgstr "წაშლის დადასტურება"
+msgstr "სანიშნის წაშლის დადასტურება"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:260
 #, kde-format
@@ -47576,11 +47340,10 @@ msgstr "ფაილის წაშლა"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2323
-#, fuzzy, kde-format
-#| msgid "Error loading image '%1'"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Saving File"
-msgstr "შეცდომა სურათის ჩატვირთვისას: %1"
+msgstr "ფაილის შენახვის შეცდომა"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:79
 #, kde-format
@@ -47612,11 +47375,10 @@ msgid "Cannot delete \"%1\""
 msgstr ""
 
 #: core/showfoto/main/showfoto_open.cpp:58
-#, fuzzy, kde-format
-#| msgid "Open folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open Images from Folder"
-msgstr "საქაღალდის გახსნა"
+msgstr "საქაღალდიდან გამოსახულებების გახსნა"
 
 #: core/showfoto/main/showfoto_open.cpp:299
 #, kde-format
@@ -47624,11 +47386,10 @@ msgid "There is no item to process."
 msgstr ""
 
 #: core/showfoto/main/showfoto_open.cpp:321
-#, fuzzy, kde-format
-#| msgid "Error loading image '%1'"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Loading File"
-msgstr "შეცდომა სურათის ჩატვირთვისას: %1"
+msgstr "ფაილის ჩატვირთვის შეცდომა"
 
 #: core/showfoto/main/showfoto_open.cpp:322
 #, kde-format
@@ -47691,8 +47452,7 @@ msgid "Effec&ts"
 msgstr ""
 
 #: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:142
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "მორგება"
@@ -48606,42 +48366,34 @@ msgstr[0] "%1 ფაილი"
 msgstr[1] "%1 ფაილი"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:692
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Separate Items"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Item"
-msgstr "ჩანაწერების გაცალკევება"
+msgstr "ახალი რჩეული ჩანაწერი"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:696
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Favorite"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Item"
-msgstr "რჩეულის დამატება"
+msgstr "რჩეულის ჩანაწერის ჩასწორება"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:703
-#, fuzzy, kde-format
-#| msgid "New Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Folder"
-msgstr "ახალი საქაღალდე"
+msgstr "ახალი რჩეული საქაღალდე"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:707
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Add Favorite"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Folder"
-msgstr "რჩეულის დამატება"
+msgstr "რჩეული საქაღალდის ჩასწორება"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:764
-#, fuzzy, kde-format
-#| msgid "Could not authorize"
+#, kde-format
 msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
-msgstr "ავტორიზაციის შეცდომა"
+msgstr "საშუალოს გამოთვლის შეცდომა"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:765
 #, kde-format
@@ -48711,11 +48463,10 @@ msgid "Search in Favorites..."
 msgstr ""
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:357
-#, fuzzy, kde-format
-#| msgid "Confirm Deletion"
+#, kde-format
 msgctxt "@title:window"
 msgid "Confirm Item Deletion"
-msgstr "წაშლის დადასტურება"
+msgstr "ჩანაწერის წაშლის დადასტურება"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:358
 #, kde-format
@@ -48891,8 +48642,7 @@ msgid "<b>Renaming images. Please wait...</b>"
 msgstr ""
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
-#, fuzzy, kde-format
-#| msgid "&Abort"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Abort"
 msgstr "გაუქმება"
@@ -48905,11 +48655,10 @@ msgstr "დამუშავება..."
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:87
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:160
-#, fuzzy, kde-format
-#| msgid "Saving Images"
+#, kde-format
 msgctxt "@title:window"
 msgid "Renaming Images"
-msgstr "გამოსახულებების შენახვა"
+msgstr "სურათების გადარქმევა"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:161
 #, kde-format
@@ -48924,15 +48673,13 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:170
-#, fuzzy, kde-format
-#| msgid "Renaming"
+#, kde-format
 msgctxt "@action:button"
 msgid "Rename Again"
-msgstr "გადარქმევა"
+msgstr "კიდევ გადარქმევა"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:172
-#, fuzzy, kde-format
-#| msgid "Overwrite"
+#, kde-format
 msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "თავზე გადაწერა"
@@ -49006,8 +48753,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/advancedrename/common/tooltipdialog.cpp:53
-#, fuzzy, kde-format
-#| msgid "Information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Information"
 msgstr "ინფორმაცია"
@@ -50095,11 +49841,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/firstrun/collectionpage.cpp:179
-#, fuzzy, kde-format
-#| msgid "Create Database Folder?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Root Album Folder?"
-msgstr "შევქმნა ბაზის საქაღალდე?"
+msgstr "შევქმნა ალბომის საწყისის საქაღალდე?"
 
 #: core/utilities/firstrun/collectionpage.cpp:180
 #, kde-format
@@ -50109,11 +49854,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/firstrun/collectionpage.cpp:192
-#, fuzzy, kde-format
-#| msgid "%1 - Create album failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Root Album Folder Failed"
-msgstr "%1 - ახალი ალბომის შექმნის შეცდომა"
+msgstr "ძირითადი ალბომის შექმნის შეცდომა"
 
 #: core/utilities/firstrun/collectionpage.cpp:193
 #, kde-format
@@ -50838,11 +50582,10 @@ msgid "Bookmark comment"
 msgstr ""
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:210
-#, fuzzy, kde-format
-#| msgid "Edit Bookmarks"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Geolocation Bookmarks"
-msgstr "სანიშნების ჩასწორება"
+msgstr "გეოლოკაციის სანიშნეების ჩასწორება"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:228
 #: core/utilities/setup/album/setupcategory.cpp:99
@@ -50908,12 +50651,10 @@ msgstr "კომენტარი"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:809
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:944
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Edit Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "Loading Bookmark"
-msgstr "სანიშნის ჩასწორება"
+msgstr "სანიშნეების ჩატვირთვა"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:810
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:945
@@ -50924,8 +50665,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:931
-#, fuzzy, kde-format
-#| msgid "Open File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "ფაილის გახსნა"
@@ -50942,8 +50682,7 @@ msgid "Imported %1"
 msgstr ""
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:958
-#, fuzzy, kde-format
-#| msgid "Save File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "ფაილის შენახვა"
@@ -50954,17 +50693,15 @@ msgid "%1 Bookmarks.xbel"
 msgstr ""
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:970
-#, fuzzy, kde-format
-#| msgid "Export error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export error"
 msgstr "გატანის შეცდომა"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:970
-#, fuzzy, kde-format
-#| msgid "Edit Bookmarks"
+#, kde-format
 msgid "Error saving bookmarks"
-msgstr "სანიშნების ჩასწორება"
+msgstr "სანიშნების შენახვის შეცდომა"
 
 #: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:145
 #, kde-format
@@ -51099,14 +50836,12 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:330
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Error processing XML file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Loading GPX File"
 msgid_plural "Error Loading GPX Files"
-msgstr[0] "XML ფაილის დამუშავების შეცდომა"
-msgstr[1] "XML ფაილის დამუშავების შეცდომა"
+msgstr[0] "GPX ფაილის ჩატვირთვის შეცდომა"
+msgstr[1] "GPX ფაილების ჩატვირთვის შეცდომა"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:435
 #, kde-format
@@ -51114,11 +50849,10 @@ msgid "Correlating images -"
 msgstr ""
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:517
-#, fuzzy, kde-format
-#| msgid "Authorization Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Correlation Failed"
-msgstr "ავტორიზაციის შეცდომა"
+msgstr "კორელაციის შეცდომა"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:518
 #, kde-format
@@ -51128,11 +50862,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:523
-#, fuzzy, kde-format
-#| msgid "Creation date"
+#, kde-format
 msgctxt "@title:window"
 msgid "Correlation Succeeded"
-msgstr "შექმნის თარიღი"
+msgstr "კორელაცია წარმატებულია"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:524
 #, kde-format
@@ -51143,11 +50876,10 @@ msgstr ""
 #. i18np.
 #. See bug #376438 for details.
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:532
-#, fuzzy, kde-format
-#| msgid "Creation time"
+#, kde-format
 msgctxt "@title:window"
 msgid "Correlation Finished"
-msgstr "შექმნის დრო"
+msgstr "კორელაცია დასრულდა"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:534
 #, kde-format
@@ -51580,10 +51312,11 @@ msgstr ""
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, fuzzy, kde-format
-#| msgid "Add New Tag..."
+#| msgctxt "@title:window"
+#| msgid "Add New Tag:"
 msgctxt "@title:window"
-msgid "Add New Tag:"
-msgstr "ახალი ჭდის დამატება..."
+msgid "Add New Tag"
+msgstr "ახალი ჭდის დამატება:"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:846
 #, kde-format
@@ -51998,11 +51731,10 @@ msgid "<b>No Profile</b>"
 msgstr ""
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:80
-#, fuzzy, kde-format
-#| msgid "Preview Options"
+#, kde-format
 msgctxt "@title:window"
 msgid "Soft Proofing Options"
-msgstr "მინიატურის მორგება"
+msgstr "ფერების პროგრამული დამუშავების მორგება"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:84
 #, kde-format
@@ -52067,12 +51799,10 @@ msgstr ""
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:225
 #: core/utilities/setup/setupicc.cpp:868
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Profile"
+#, kde-format
 msgctxt "@title:window"
 msgid "Profile Error"
-msgstr "პროფილი"
+msgstr "პროფილის შეცდომა"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:225
 #: core/utilities/setup/setupicc.cpp:868
@@ -52531,11 +52261,10 @@ msgid "Information about image size"
 msgstr ""
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1085
-#, fuzzy, kde-format
-#| msgid "Saving Images"
+#, kde-format
 msgctxt "@title:window"
 msgid "Saving Image..."
-msgstr "გამოსახულებების შენახვა"
+msgstr "სურათის შენახვა..."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1086
 #, kde-format
@@ -52552,9 +52281,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1112
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr "გაფრთხილება"
@@ -52790,11 +52517,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:1199
-#, fuzzy, kde-format
-#| msgid "Not available"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Not Available"
-msgstr "ხელმიუწვდომელია"
+msgstr "ფაილი ხელმიუწვდომელია"
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:1200
 #, kde-format
@@ -53746,9 +53472,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/import/main/importui.cpp:1245
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "File already exists"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Already Exists"
 msgstr "ფაილი უკვე არსებობს"
@@ -54716,8 +54440,7 @@ msgid "Finger-prints"
 msgstr ""
 
 #: core/utilities/maintenance/maintenancedlg.cpp:196
-#, fuzzy, kde-format
-#| msgid "Maintenance"
+#, kde-format
 msgctxt "@title:window"
 msgid "Maintenance"
 msgstr "შეკეთება"
@@ -55481,19 +55204,16 @@ msgid "History"
 msgstr "ისტორია"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:68
-#, fuzzy, kde-format
-#| msgid "Workflow"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Workflow"
-msgstr "პროექტის დინება"
+msgstr "ახალი პროექტის დინება"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Update Workflow"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Workflow"
-msgstr "სამუშაო პროცესის განახლება"
+msgstr "სამუშაო პროცესის ჩასწორება"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:81
 #, kde-format
@@ -55519,7 +55239,7 @@ msgstr "აღწერილობა:"
 #: core/utilities/queuemanager/views/workflowdlg.cpp:137
 #, kde-format
 msgid "New Workflow"
-msgstr ""
+msgstr "ახალი პროექტის დინება"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:90
 #, kde-format
@@ -55540,8 +55260,7 @@ msgid "Description"
 msgstr "აღწერა"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:115
-#, fuzzy, kde-format
-#| msgid "Batch Queue Manager"
+#, kde-format
 msgctxt "@title:window"
 msgid "Batch Queue Manager"
 msgstr "პაკეტური დამუშავების მმართველი"
@@ -55564,7 +55283,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Edit Workflow"
-msgstr ""
+msgstr "სამუშაო პროცესის ჩასწორება"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:271
 #, kde-format
@@ -55579,12 +55298,10 @@ msgid "Delete Workflow"
 msgstr ""
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:313
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Update Workflow"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Workflow?"
-msgstr "სამუშაო პროცესის განახლება"
+msgstr "წავშალო სამუშაო პროცესი?"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:314
 #, kde-format
@@ -56093,10 +55810,9 @@ msgid "Not Geo-located"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
-#, fuzzy, kde-format
-#| msgid "Country:"
+#, kde-format
 msgid "Country"
-msgstr "ქვეყანა:"
+msgstr "ქვეყანა"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
 #, kde-format
@@ -56480,12 +56196,10 @@ msgid "Hide Options"
 msgstr "პარამეტრების დამალვა"
 
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:75
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu delete item"
-#| msgid "Delete Selected"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Search?"
-msgstr "მონიშნულის წაშლა"
+msgstr "წავშალო ძებნა?"
 
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:76
 #, kde-format
@@ -56573,8 +56287,7 @@ msgid "Try"
 msgstr "ცდა"
 
 #: core/utilities/searchwindow/searchwindow.cpp:88
-#, fuzzy, kde-format
-#| msgid "Advanced Search"
+#, kde-format
 msgctxt "@title:window"
 msgid "Advanced Search"
 msgstr "გაფართოებული ძებნა"
@@ -57115,12 +56828,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/camera/cameraselection.cpp:104
-#, fuzzy, kde-format
-#| msgctxt "@item: component info"
-#| msgid "FFmpeg Configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Camera Configuration"
-msgstr "FFmpeg-ის მორგება"
+msgstr "კამერის მორგება"
 
 #. i18n!
 #: core/utilities/setup/camera/cameraselection.cpp:114
@@ -57255,11 +56966,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:84
-#, fuzzy, kde-format
-#| msgid "Import Filters"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Import Filters"
-msgstr "ფილტრების შემოტანა"
+msgstr "შემოტანის ფილტრების ჩასწორება"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:101
 #, kde-format
@@ -57664,11 +57374,10 @@ msgid "A collection with the path \"%1\" already exists."
 msgstr ""
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:854
-#, fuzzy, kde-format
-#| msgid "Remove collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Path from the Collection?"
-msgstr "კოლექციის წაშლა"
+msgstr "წავშალო ბილიკი კოლექციიდან?"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:855
 #, kde-format
@@ -57677,11 +57386,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:862
-#, fuzzy, kde-format
-#| msgid "Remove collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Collection?"
-msgstr "კოლექციის წაშლა"
+msgstr "წავშალო კოლექცია?"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:863
 #, kde-format
@@ -57777,11 +57485,10 @@ msgid "Problem Adding Collection"
 msgstr ""
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1572
-#, fuzzy, kde-format
-#| msgid "Collection:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Adding Collection"
-msgstr "კოლექცია:"
+msgstr "კოლექციის დამატება"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1576
 #, kde-format
@@ -57789,8 +57496,7 @@ msgid "Your new collection will be created with this name:"
 msgstr ""
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1651
-#, fuzzy, kde-format
-#| msgid "Select Category"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "აირჩიეთ კატეგორია"
@@ -57830,8 +57536,7 @@ msgid "All files were downloaded successfully."
 msgstr "ყველა ფაილი წარმატებით გადმოიწერა."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:268
-#, fuzzy, kde-format
-#| msgid "Download error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "გადმოწერის შეცდომა"
@@ -57849,8 +57554,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:277
-#, fuzzy, kde-format
-#| msgid "Try again"
+#, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "კიდევ სცადეთ"
@@ -58306,9 +58010,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:135
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title:window, reset to default warning dialog"
 msgid "Warning"
 msgstr "გაფრთხილება"
@@ -58376,11 +58078,10 @@ msgid "Reset to Default"
 msgstr "ნაგულისხმებ მნიშვნელობაზე დაბრუნება"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:144
-#, fuzzy, kde-format
-#| msgid "New Name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New XMP Namespace"
-msgstr "ახალი სახელი"
+msgstr "ახალი XMP სახელების სივრცე"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:148
 #, kde-format

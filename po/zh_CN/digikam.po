@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-13 00:53+0000\n"
+"POT-Creation-Date: 2023-01-14 00:54+0000\n"
 "PO-Revision-Date: 2023-01-12 10:29\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -53142,7 +53142,7 @@ msgstr "正在获取 RG 信息 -"
 #, fuzzy, kde-format
 #| msgid "Add New Tag..."
 msgctxt "@title:window"
-msgid "Add New Tag:"
+msgid "Add New Tag"
 msgstr "添加新标签..."
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:846
