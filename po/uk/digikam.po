@@ -262,8 +262,7 @@ msgstr "Вставити зображення тут"
 
 #: core/app/dragdrop/itemdragdrop.cpp:79
 #, kde-format
-msgctxt ""
-"@action:inmenu Group images with this item and move them to its album"
+msgctxt "@action:inmenu Group images with this item and move them to its album"
 msgid "Group here and move to album"
 msgstr "Згрупувати з цим і пересунути до альбому"
 
@@ -7192,8 +7191,7 @@ msgstr "Інструмент для обрізання зображень за �
 #: core/dplugins/bqm/transform/crop/cropplugin.cpp:66
 #, kde-kuit-format
 msgctxt "@info"
-msgid ""
-"<para>This Batch Queue Manager tool can crop images to a region.</para>"
+msgid "<para>This Batch Queue Manager tool can crop images to a region.</para>"
 msgstr ""
 "<para>За допомогою цього інструмента керування чергою пакетної обробки ви "
 "можете обрізати зображення до розмірів вказаної ділянки.</para>"
@@ -10104,8 +10102,7 @@ msgstr "Ефекти кольорів…"
 
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:97
 #, kde-format
-msgid ""
-"This is the preview of the distortion effect applied to the photograph."
+msgid "This is the preview of the distortion effect applied to the photograph."
 msgstr ""
 "Тут ви бачите попередній перегляд фотографії після застосування ефекту "
 "викривлення."
@@ -10379,8 +10376,7 @@ msgstr "Розмивання:"
 
 #: core/dplugins/editor/filters/oilpaint/oilpainttool.cpp:100
 #, kde-format
-msgid ""
-"This value controls the smoothing effect of the brush under the canvas."
+msgid "This value controls the smoothing effect of the brush under the canvas."
 msgstr "Це значення керує ефектом згладжування мазків пензля по полотну."
 
 #: core/dplugins/editor/filters/oilpaint/oilpainttool.cpp:190
@@ -10522,8 +10518,7 @@ msgstr "&Автообрізання"
 #, kde-format
 msgctxt "@info"
 msgid "This option can be used to crop automatically the image."
-msgstr ""
-"Цим пунктом можна скористатися для автоматичного обрізання зображення."
+msgstr "Цим пунктом можна скористатися для автоматичного обрізання зображення."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:193
 #: core/dplugins/editor/transform/resize/resizetool.cpp:349
@@ -13249,8 +13244,7 @@ msgstr "Тут ви можете встановити опис зображен�
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:112
 #, kde-format
-msgid ""
-"Enter the image description. This field is limited to ASCII characters."
+msgid "Enter the image description. This field is limited to ASCII characters."
 msgstr ""
 "Тут ви можете вказати опис зображення. У цьому полі можна використовувати "
 "лише символи з набору ASCII."
@@ -17738,8 +17732,7 @@ msgstr "Для виконання злиття буде використано �
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:68
 #, kde-format
 msgctxt "@info"
-msgid ""
-"Press \"Finish\" button to fuse your items and make a pseudo HDR image."
+msgid "Press \"Finish\" button to fuse your items and make a pseudo HDR image."
 msgstr ""
 "Натисніть кнопку «Завершити», щоб об'єднати вказані вами знімки і створити "
 "імітацію зображення високого динамічного діапазону (HDR)."
@@ -21623,8 +21616,7 @@ msgstr ""
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidevideopage.cpp:335
 #, kde-format
 msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
-msgstr ""
-"Тривалість: %1 секунд на зображення, загалом %2 секунд (без переходів)"
+msgstr "Тривалість: %1 секунд на зображення, загалом %2 секунд (без переходів)"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
 #, kde-format
@@ -23764,8 +23756,7 @@ msgstr "Почати імпорт"
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:68
 #, kde-format
 msgctxt "@info:tooltip, button"
-msgid ""
-"Start importing the specified images into the currently selected album."
+msgid "Start importing the specified images into the currently selected album."
 msgstr ""
 "Почати імпортування вказаних зображень до поточного позначеного альбому."
 
@@ -24521,8 +24512,7 @@ msgstr "Розділити мітки"
 #: core/dplugins/generic/webservices/google/gswidget.cpp:60
 #, kde-format
 msgid "Export the leaf tag and all ancestors as single tags."
-msgstr ""
-"Експортувати мітку листка та всі мітки верхніх рівнів як окремі мітки."
+msgstr "Експортувати мітку листка та всі мітки верхніх рівнів як окремі мітки."
 
 #: core/dplugins/generic/webservices/google/gswidget.cpp:61
 #, kde-format
@@ -26813,8 +26803,7 @@ msgstr "Пароль сайта:"
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:124
 #, kde-format
 msgid "Site-wide password for specified SmugMug nick/user."
-msgstr ""
-"Пароль для входу на сайт за вказаним псевдонімом/користувачем SmugMug."
+msgstr "Пароль для входу на сайт за вказаним псевдонімом/користувачем SmugMug."
 
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:125
 #, kde-format
@@ -27841,8 +27830,7 @@ msgstr "Нова база даних"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:344
 #, kde-format
-msgid ""
-"The collection location supplied is invalid or currently not available."
+msgid "The collection location supplied is invalid or currently not available."
 msgstr "Вказаної адреси збірки не існує або ця адреса зараз не є доступною."
 
 #: core/libs/album/manager/albummanager_palbum.cpp:352
@@ -29353,8 +29341,7 @@ msgstr ""
 #: core/libs/database/server/databaseserver.cpp:667
 #, kde-format
 msgid "Could not connect to Database after trying for 60 seconds."
-msgstr ""
-"Не вдалося встановити зв'язок із базою даних протягом 60 секунд спроб."
+msgstr "Не вдалося встановити зв'язок із базою даних протягом 60 секунд спроб."
 
 #: core/libs/database/server/databaseserver.cpp:698
 #, kde-format
@@ -30709,8 +30696,7 @@ msgid_plural "Using LibRaw version %2<br/>%1 models on the list"
 msgstr[0] "Використовуємо бібліотеку LibRaw версії %2<br/>У списку %1 модель"
 msgstr[1] "Використовуємо бібліотеку LibRaw версії %2<br/>У списку %1 моделі"
 msgstr[2] "Використовуємо бібліотеку LibRaw версії %2<br/>У списку %1 моделей"
-msgstr[3] ""
-"Використовуємо бібліотеку LibRaw версії %2<br/>У списку одна модель"
+msgstr[3] "Використовуємо бібліотеку LibRaw версії %2<br/>У списку одна модель"
 
 #: core/libs/dialogs/rawcameradlg.cpp:139
 #, kde-format
@@ -30876,8 +30862,7 @@ msgstr "Переглядач"
 #: core/libs/dialogs/webbrowserdlg.cpp:135
 #, kde-format
 msgid "Open Home page with default desktop Web browser"
-msgstr ""
-"Відкрити початкову сторінку у типовій програмі для перегляду інтернету"
+msgstr "Відкрити початкову сторінку у типовій програмі для перегляду інтернету"
 
 #: core/libs/dialogs/webbrowserdlg.cpp:249
 #, kde-format
@@ -31981,8 +31966,7 @@ msgstr ""
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:165
 #, kde-format
 msgid "Set here the border width as a percentage of the image size."
-msgstr ""
-"Тут ви можете вказати ширину рамки у відсотках від розміру зображення."
+msgstr "Тут ви можете вказати ширину рамки у відсотках від розміру зображення."
 
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:167
 #, kde-format
@@ -32544,8 +32528,7 @@ msgstr "Визначає вплив фільтрування на тіні."
 
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:237
 #, kde-format
-msgid ""
-"Set here the film sensitivity to use for simulating the CCD blue noise."
+msgid "Set here the film sensitivity to use for simulating the CCD blue noise."
 msgstr ""
 "Тут ви можете вказати світлочутливість плівки для імітації шуму ПЗЗ за "
 "каналом синього."
@@ -32920,8 +32903,7 @@ msgstr "Тут ви можете вибрати налаштування від�
 
 #: core/libs/dimg/filters/hsl/hslsettings.cpp:91
 #, kde-format
-msgid ""
-"You can see here a color preview of the hue and saturation adjustments."
+msgid "You can see here a color preview of the hue and saturation adjustments."
 msgstr ""
 "Тут ви можете бачити попередній перегляд кольору для налаштування відтінку і "
 "насиченості."
@@ -33158,8 +33140,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Local Contrast Settings File to Save"
-msgstr ""
-"Файл параметрів локальної контрастності фотографій, який слід зберегти"
+msgstr "Файл параметрів локальної контрастності фотографій, який слід зберегти"
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:727
 #, kde-format
@@ -34045,8 +34026,7 @@ msgstr "Файл параметрів зміни фокуса фотографі
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:594
 #, kde-format
 msgid "Cannot save settings to the Photograph Refocus text file."
-msgstr ""
-"Не вдалося зберегти текстовий файл параметрів зміни фокуса фотографії."
+msgstr "Не вдалося зберегти текстовий файл параметрів зміни фокуса фотографії."
 
 #: core/libs/dimg/filters/sharp/unsharpmaskfilter.cpp:72
 #, kde-format
@@ -34244,8 +34224,7 @@ msgstr "Жодного"
 #, kde-format
 msgctxt "@info: WB settings"
 msgid "Select the white balance color temperature preset to use."
-msgstr ""
-"Тут ви можете вказати налаштування температури кольору балансу білого."
+msgstr "Тут ви можете вказати налаштування температури кольору балансу білого."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:212
 #, kde-format
@@ -40040,10 +40019,8 @@ msgstr[3] ""
 msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
 msgstr[0] "Мітку «%2» призначено до %1 запису. Ви справді бажаєте продовжити?"
-msgstr[1] ""
-"Мітку «%2» призначено до %1 записів. Ви справді бажаєте продовжити?"
-msgstr[2] ""
-"Мітку «%2» призначено до %1 записів. Ви справді бажаєте продовжити?"
+msgstr[1] "Мітку «%2» призначено до %1 записів. Ви справді бажаєте продовжити?"
+msgstr[2] "Мітку «%2» призначено до %1 записів. Ви справді бажаєте продовжити?"
 msgstr[3] ""
 "Мітку «%2» призначено до одного запису. Ви справді бажаєте продовжити?"
 
@@ -40523,8 +40500,7 @@ msgstr "Записати метадані міток до зображень."
 
 #: core/libs/tags/manager/tagsmanager.cpp:818
 #, kde-format
-msgid ""
-"Read tags from Images into Database. Existing tags will not be affected"
+msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 "Прочитати мітки з зображень до бази даних. Наявні мітки змінено не буде."
 
@@ -41027,8 +41003,7 @@ msgstr "Введіть тут район, де було зроблено зні�
 msgid ""
 "<p>This field should contain the sublocation of the city where the "
 "photograph was taken.</p>"
-msgstr ""
-"<p>У цьому полі слід вказати район міста, де було зроблено знімок.</p>"
+msgstr "<p>У цьому полі слід вказати район міста, де було зроблено знімок.</p>"
 
 #: core/libs/template/templatepanel.cpp:262
 #, kde-format
@@ -44369,8 +44344,7 @@ msgstr "Приховати &бічні панелі"
 #: core/libs/widgets/mainview/fullscreensettings.cpp:74
 #, kde-format
 msgid "Hide all side-bars when window switch in full-screen mode."
-msgstr ""
-"Приховати всі бічні панелі після перемикання до повноекранного режиму."
+msgstr "Приховати всі бічні панелі після перемикання до повноекранного режиму."
 
 #: core/libs/widgets/mainview/fullscreensettings.cpp:76
 #, kde-format
@@ -53679,8 +53653,7 @@ msgstr "<b>Налаштування обробки цифрових негати
 
 #: core/utilities/firstrun/rawpage.cpp:65
 #, kde-format
-msgid ""
-"<qt><p>Set here how you want to open Raw images in the editor:</p></qt>"
+msgid "<qt><p>Set here how you want to open Raw images in the editor:</p></qt>"
 msgstr ""
 "<qt><p>Тут ви можете вказати спосіб, у який слід відкривати зображення "
 "цифрових негативів у редакторі:</p></qt>"
@@ -55138,8 +55111,6 @@ msgstr "Отримання даних зворотного геокодуван�
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
 #, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add New Tag:"
 msgctxt "@title:window"
 msgid "Add New Tag"
 msgstr "Додавання нової мітки"
@@ -56243,8 +56214,7 @@ msgstr "Не вдалося відкрити тимчасовий файл у т
 #, kde-format
 msgctxt "@info"
 msgid "Unable to determine the format to save the target image with."
-msgstr ""
-"Не вдалося визначити формат для збереження даних зміненого зображення."
+msgstr "Не вдалося визначити формат для збереження даних зміненого зображення."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1956
 #, kde-format
@@ -58913,8 +58883,7 @@ msgstr "Виконуємо обробку"
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:524
 #, kde-format
 msgid "Batch Queue Manager is running. Do you want to cancel current job?"
-msgstr ""
-"Запущено керування чергою обробки. Бажаєте скасувати поточне завдання?"
+msgstr "Запущено керування чергою обробки. Бажаєте скасувати поточне завдання?"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:623
 #, kde-format
@@ -59709,8 +59678,7 @@ msgstr "і"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:238
 #, kde-format
-msgctxt ""
-"Find items with any orientation / landscape / portrait orientation..."
+msgctxt "Find items with any orientation / landscape / portrait orientation..."
 msgid "Find items with"
 msgstr "Знайти записи з"
 
@@ -60396,8 +60364,7 @@ msgstr "Збереження поточного запиту"
 
 #: core/utilities/searchwindow/searchtabheader.cpp:289
 #, kde-format
-msgid ""
-"Enter a name for the current search to save it in the \"Searches\" view"
+msgid "Enter a name for the current search to save it in the \"Searches\" view"
 msgstr ""
 "Введіть назву поточних результатів пошуку, що зберегти їх у «Результатах "
 "пошуку»"
@@ -60559,8 +60526,7 @@ msgstr "Показувати &підписи digiKam"
 
 #: core/utilities/setup/album/setupalbumview.cpp:180
 #, kde-format
-msgid ""
-"Set this option to show the digiKam captions below the image thumbnail."
+msgid "Set this option to show the digiKam captions below the image thumbnail."
 msgstr ""
 "Позначте цей пункт, щоб під мініатюрою зображення було показано підпис "
 "digiKam."
@@ -62197,8 +62163,7 @@ msgstr "Увімкнути недеструктивне редагування �
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enable support for non-destructive editing and image versioning"
-msgstr ""
-"Увімкнути підтримку недеструктивного редагування та керування версіями"
+msgstr "Увімкнути підтримку недеструктивного редагування та керування версіями"
 
 #: core/utilities/setup/editor/setupversioning.cpp:119
 #, kde-kuit-format
@@ -63006,8 +62971,7 @@ msgstr "Запис і читання метаданих"
 #, kde-format
 msgctxt "@option:check"
 msgid "Delegate to ExifTool backend all operations to write metadata to files"
-msgstr ""
-"Передати усі дії із запису метаданих до файлів модулю обробки ExifTool"
+msgstr "Передати усі дії із запису метаданих до файлів модулю обробки ExifTool"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:116
 #, kde-format
@@ -64160,8 +64124,7 @@ msgstr ""
 #: core/utilities/setup/setupicc.cpp:269
 #, kde-format
 msgid "Assume it is using the sRGB color space (Internet standard)"
-msgstr ""
-"Припускати, що простором кольорів є sRGB (типовий простір у інтернеті)"
+msgstr "Припускати, що простором кольорів є sRGB (типовий простір у інтернеті)"
 
 #. i18n("<p></p>"));
 #.
