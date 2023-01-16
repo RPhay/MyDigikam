@@ -374,7 +374,7 @@ QWidget* ColorCorrectionDlg::createOptions() const
 {
     QGroupBox* const box = new QGroupBox;
 
-    if (d->mode == ProfileMismatch)
+    if      (d->mode == ProfileMismatch)
     {
         QVBoxLayout* const vbox  = new QVBoxLayout(box);
         d->keepProfile           = new QRadioButton(i18n("Keep the embedded profile, do not convert"));
@@ -465,7 +465,7 @@ QWidget* ColorCorrectionDlg::createAssumeOptions() const
 {
     QGroupBox* const box = new QGroupBox;
 
-    if (d->mode == ProfileMismatch)
+    if      (d->mode == ProfileMismatch)
     {
         // unused
     }
@@ -867,7 +867,7 @@ void ColorCorrectionDlg::setSettings()
 
 void ColorCorrectionDlg::slotHelp()
 {
-    DXmlGuiWindow::openHandbook();
+    DXmlGuiWindow::openHandbook("color_management", "working_space");
 }
 
 } // namespace Digikam
