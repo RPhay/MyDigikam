@@ -133,7 +133,7 @@ void VersioningPromptUserSaveDialog::slotButtonClicked(QAbstractButton* button)
     }
     else if (d->clicked == QDialogButtonBox::Help)
     {
-        DXmlGuiWindow::openHandbook(QLatin1String("setup_application"), QLatin1String("editor_settings"), QLatin1String("image-versioning-settings"));
+        DXmlGuiWindow::openHandbook(QLatin1String("setup_application"), QLatin1String("editor_settings"), QLatin1String("versioning-settings"));
 
         return;
     }
