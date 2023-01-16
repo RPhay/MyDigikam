@@ -627,7 +627,7 @@ void OnlineVersionDlg::slotOpenInFileManager()
 
 void OnlineVersionDlg::slotHelp()
 {
-    DXmlGuiWindow::openHandbook();
+    DXmlGuiWindow::openHandbook(QLatin1String("setup_application"), QLatin1String("miscs_settings"), QLatin1String("updates-settings"));
 }
 
 void OnlineVersionDlg::slotSetupUpdate()
