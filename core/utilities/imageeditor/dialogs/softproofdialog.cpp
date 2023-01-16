@@ -40,6 +40,7 @@
 #include "iccprofileinfodlg.h"
 #include "dexpanderbox.h"
 #include "dcolorselector.h"
+#include "dxmlguiwindow.h"
 
 namespace Digikam
 {
@@ -79,7 +80,7 @@ SoftProofDialog::SoftProofDialog(QWidget* const parent)
     setModal(true);
     setWindowTitle(i18nc("@title:window", "Soft Proofing Options"));
 
-    d->buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    d->buttons = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
     d->buttons->button(QDialogButtonBox::Ok)->setText(i18n("Soft Proofing On"));
     d->buttons->button(QDialogButtonBox::Ok)->setToolTip(i18n("Enable soft-proofing color managed view"));
@@ -167,6 +168,9 @@ SoftProofDialog::SoftProofDialog(QWidget* const parent)
     connect(d->buttons->button(QDialogButtonBox::Cancel), SIGNAL(clicked()),
             this, SLOT(reject()));
 
+    connect(d->buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
+            this, SLOT(slotHelp()));
+
     connect(d->infoProofProfiles, SIGNAL(clicked()),
             this, SLOT(slotProfileInfo()));
 
@@ -235,6 +239,11 @@ void SoftProofDialog::slotOk()
     d->switchOn = true;
     writeSettings();
     accept();
+}
+
+void SoftProofDialog::slotHelp()
+{
+    DXmlGuiWindow::openHandbook(QLatin1String("color_management"), QLatin1String("printer_profiles"));
 }
 
 } // namespace Digikam
