@@ -300,12 +300,6 @@ void AssignNameWidget::keyPressEvent(QKeyEvent* e)
         {
             return;
         }
-
-        case Qt::Key_Escape:
-        {
-            slotReject();
-            return;
-        }
     }
 
     QWidget::keyPressEvent(e);
