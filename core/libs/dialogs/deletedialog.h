@@ -173,6 +173,10 @@ protected Q_SLOTS:
     void slotUser1Clicked();
     void slotShouldDelete(bool);
 
+private Q_SLOTS:
+
+    void slotHelp();
+
 private:
 
     void keyPressEvent(QKeyEvent*)  override;
