@@ -170,7 +170,7 @@ PAlbum* AlbumSelectDialog::selectAlbum(QWidget* const parent, PAlbum* const albu
 
 void AlbumSelectDialog::slotHelp()
 {
-    DXmlGuiWindow::openHandbook();
+    DXmlGuiWindow::openHandbook(QLatin1String("main_window"), QLatin1String("albums_view"));
 }
 
 } // namespace Digikam

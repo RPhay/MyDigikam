@@ -483,7 +483,7 @@ void AlbumPropsEdit::slotDateAverageButtonClicked()
 
 void AlbumPropsEdit::slotHelp()
 {
-    DXmlGuiWindow::openHandbook();
+    DXmlGuiWindow::openHandbook(QLatin1String("main_window"), QLatin1String("albums_view"), QLatin1String("managing-albums"));
 }
 
 } // namespace Digikam
