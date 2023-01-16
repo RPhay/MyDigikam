@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-14 00:54+0000\n"
-"PO-Revision-Date: 2023-01-13 09:14+0100\n"
+"PO-Revision-Date: 2023-01-15 04:04+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1843,13 +1843,13 @@ msgstr "სამუდამოდ წაშლა"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Delete permanently without confirmation"
-msgstr ""
+msgstr "სამუდამოდ წაშლა დადასტურების გარეშე"
 
 #: core/app/main/digikamapp_setup.cpp:502
 #, kde-format
 msgctxt "@action: setup"
 msgid "Move to trash without confirmation"
-msgstr ""
+msgstr "ნაგავში გადატანა დადასტურების გარეშე"
 
 #: core/app/main/digikamapp_setup.cpp:509
 #, kde-format
@@ -3350,7 +3350,7 @@ msgstr "მოგესალმებათ digiKam %1"
 #: core/app/views/stack/welcomepageview.cpp:265
 #, kde-format
 msgid "Background Image Credits"
-msgstr ""
+msgstr "ფონის სურათის საავტორო უფლებები"
 
 #: core/app/views/stack/welcomepageview.cpp:268
 #, kde-format
@@ -6067,13 +6067,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Blur Image"
-msgstr ""
+msgstr "სურათის ბუნდოვნება"
 
 #: core/dplugins/bqm/enhance/blur/blurplugin.cpp:61
 #, kde-format
 msgctxt "@info"
 msgid "A tool to blur images"
-msgstr ""
+msgstr "სურათების გასაბუდოვნებელი პროგრამა"
 
 #: core/dplugins/bqm/enhance/blur/blurplugin.cpp:66
 #, kde-kuit-format
@@ -35790,7 +35790,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Uncalibrated"
-msgstr ""
+msgstr "კალიბრაციის გარეშე"
 
 #: core/libs/properties/itempropertiessidebar.cpp:263
 #: core/libs/properties/itempropertiessidebar.cpp:270
@@ -37921,7 +37921,7 @@ msgstr "მოცილდება"
 #: core/libs/template/templateselector.cpp:109
 #, kde-format
 msgid "Do not change"
-msgstr ""
+msgstr "არ შეცვალო"
 
 #: core/libs/template/templateviewer.cpp:143
 #, kde-format
@@ -37973,7 +37973,7 @@ msgstr ""
 #: core/libs/timeadjust/clockphotodialog.cpp:90
 #, kde-format
 msgid "Load different photo"
-msgstr ""
+msgstr "სხვა სურათის ჩატვირთვა"
 
 #: core/libs/timeadjust/clockphotodialog.cpp:98
 #, kde-format
@@ -38029,30 +38029,30 @@ msgstr ""
 #: core/libs/timeadjust/timeadjustsettings.cpp:272
 #, kde-format
 msgid "EXIF: created"
-msgstr ""
+msgstr "EXIF: შეიქმნა"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:188
 #: core/libs/timeadjust/timeadjustsettings.cpp:273
 #, kde-format
 msgid "EXIF: original"
-msgstr ""
+msgstr "EXIF: ორიგინალი"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:189
 #: core/libs/timeadjust/timeadjustsettings.cpp:274
 #, kde-format
 msgid "EXIF: digitized"
-msgstr ""
+msgstr "EXIF: გაციფრულებული"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:190
 #: core/libs/timeadjust/timeadjustsettings.cpp:276
 #, kde-format
 msgid "IPTC: created"
-msgstr ""
+msgstr "IPTC: შეიქმნა"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:191
 #, kde-format
 msgid "XMP: created"
-msgstr ""
+msgstr "XMP: შეიქმნა"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:192
 #, kde-format
@@ -38118,17 +38118,17 @@ msgstr ""
 #: core/libs/timeadjust/timeadjustsettings.cpp:270
 #, kde-format
 msgid "Update only existing timestamps"
-msgstr ""
+msgstr "მხოლოდ არსებული დროის შტამპების განახლება"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:275
 #, kde-format
 msgid "EXIF: Thumbnail"
-msgstr ""
+msgstr "EXIF: მინიატურა"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:277
 #, kde-format
 msgid "XMP: Video"
-msgstr ""
+msgstr "XMP: ვიდეო"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:303
 #, kde-format
@@ -39009,7 +39009,7 @@ msgstr ""
 #: core/libs/video/qtav/codec/video/VideoDecoderVAAPI.cpp:747
 #, kde-format
 msgid "VA API version %1.%2; Vendor: %3;"
-msgstr ""
+msgstr "VA API ვერსია %1.%2; მომწოდებელი: %3;"
 
 #: core/libs/video/qtav/codec/video/VideoDecoderVideoToolbox.cpp:217
 #, kde-format
@@ -48448,7 +48448,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Edit Item"
-msgstr ""
+msgstr "ჩანაწერის ჩასწორება"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:154
 #, kde-format
@@ -51311,12 +51311,10 @@ msgid "Retrieving RG info -"
 msgstr ""
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add New Tag:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add New Tag"
-msgstr "ახალი ჭდის დამატება:"
+msgstr "ახალი ჭდის დამატება"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:846
 #, kde-format

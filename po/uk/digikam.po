@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-14 00:54+0000\n"
-"PO-Revision-Date: 2023-01-14 08:28+0200\n"
+"PO-Revision-Date: 2023-01-15 15:47+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -10638,12 +10638,12 @@ msgstr ""
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:290
 #, kde-format
 msgid "Erase mask:"
-msgstr "Маска витирання:"
+msgstr "Витерти маску:"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:295
 #, kde-format
 msgid "Erase mask"
-msgstr "Маска витирання"
+msgstr "Витерти маску"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:296
 #, kde-format
@@ -63723,7 +63723,7 @@ msgstr "Увімкнути внутрішнє діагностичне веде�
 #: core/utilities/setup/misc/systemsettingswidget.cpp:80
 #, kde-format
 msgid "Download Face Engine Data..."
-msgstr "Отримуємо дані рушія розпізнавання облич…"
+msgstr "Отримати дані рушія розпізнавання облич…"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:88
 #, kde-format

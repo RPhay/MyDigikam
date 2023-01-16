@@ -17,7 +17,7 @@
 # Stefano Ferri <ferriste@gmail.com>, 2013.
 # Vincenzo Reale <smart2128vr@gmail.com>, 2014, 2022.
 # Luigi Toscano <luigi.toscano@tiscali.it>, 2015.
-# Valter Mura <valtermura@gmail.com>, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# Valter Mura <valtermura@gmail.com>, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 #
 #
 msgid ""
@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-14 00:54+0000\n"
-"PO-Revision-Date: 2022-12-29 20:50+0100\n"
+"PO-Revision-Date: 2023-01-08 20:44+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -3204,31 +3204,36 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 elementi selezionati"
 
 #: core/app/views/stack/welcomepageview.cpp:140
-#, fuzzy, kde-format
-#| msgid "More than 1300 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 200 user-reports closed on bugzilla."
-msgstr "Più di 1300 segnalazioni di errore di utenti chiuse in bugzilla."
+msgstr "Più di 200 segnalazioni di errore di utenti chiuse in Bugzilla."
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
 msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
 msgstr ""
+"Conversione del codice all'infrastruttura Qt6 (codice ancora compatibile con "
+"l'API di Qt5)."
 
 #: core/app/views/stack/welcomepageview.cpp:142
 #, kde-format
 msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
-msgstr ""
+msgstr "Aggiunte ovunque le impostazioni di esportazione JPEG-XL, WEBP e AVIF."
 
 #: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
 msgid ""
 "Add convert to lossless JPEG-XL, WEBP, and AVIF while importing from camera."
 msgstr ""
+"Aggiunta la conversione senza perdita di dati per JPEG-XL, WEBP e AVIF "
+"durante l'importazione dalla fotocamera."
 
 #: core/app/views/stack/welcomepageview.cpp:144
 #, kde-format
 msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr ""
+"Aggiunti i convertitori JPEG-XL, WEBP e AVIF nel Gestore elaborazione in "
+"serie."
 
 #: core/app/views/stack/welcomepageview.cpp:145
 #, kde-format
@@ -3236,76 +3241,79 @@ msgid ""
 "Support JPEG-XL, HEIF, WEBP, and AVIF as lossless image format to store "
 "versionned images in editor."
 msgstr ""
+"Supporto di JPEG-XL, HEIF, WEBP e AVIF come formato immagine senza perdita "
+"di dati per la memorizzazione di immagini con versione nell'editor."
 
 #: core/app/views/stack/welcomepageview.cpp:146
 #, kde-format
 msgid "Add hamburger menu to tool-bar if main menu is hidden."
 msgstr ""
+"Aggiunto il menu hamburger alla barra degli strumenti, se il menu principale "
+"è nascosto."
 
 #: core/app/views/stack/welcomepageview.cpp:147
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid "Turn on this option to write metadata into DNG files."
+#, kde-format
 msgid "Add new option to write metadata to files with ExifTool backend."
-msgstr "Abilita questa opzione per scrivere i metadati nei file DNG."
+msgstr ""
+"Aggiunta una nuova opzione per scrivere i metadati nei file col motore "
+"ExifTool."
 
 #: core/app/views/stack/welcomepageview.cpp:148
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "Turn on this option to write metadata into RAW files. This feature is "
-#| "delegate to ExifTool backend and is disabled by default."
+#, kde-format
 msgid ""
 "Optional write metadata operations to DNG and RAW files are now always "
 "delegated to ExifTool Backend."
 msgstr ""
-"Abilita questa opzione per scrivere i metadati nei file RAW. Questa "
-"funzionalità è delegata al motore ExifTool ed è disabilitata per "
-"impostazione predefinita."
+"Le operazioni facoltative di scrittura dei metadati nei file DNG e RAW ora "
+"sono sempre delegate al motore ExifTool."
 
 #: core/app/views/stack/welcomepageview.cpp:149
 #, kde-format
 msgid "Optimize layout of Metadata Edit plugin for a better usability."
 msgstr ""
+"Aspetto ottimizzato dell'estensione Modifica metadati al fine di migliorarne "
+"l'uso."
 
 #: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
 msgid ""
 "Add increment file counter to sequence numbering with option [c] or [c,step]."
 msgstr ""
+"Aggiunto un contatore incrementale di file per la numerazione in sequenza "
+"con opzione [c] o [c,step]."
 
 #: core/app/views/stack/welcomepageview.cpp:151
 #, kde-format
 msgid "Add random text sequence numbering with option [r]."
-msgstr ""
+msgstr "Aggiunta la numerazione in sequenza con testo casuale con opzione [r]."
 
 #: core/app/views/stack/welcomepageview.cpp:152
 #, kde-format
 msgid ""
 "Add configurable first character for the unique modifier with {unique:n,c}."
 msgstr ""
+"Aggiunto il primo carattere configurabile per il modificatore univoco con "
+"{unique:n,c}."
 
 #: core/app/views/stack/welcomepageview.cpp:153
-#, fuzzy, kde-format
-#| msgid "Return items by number of face regions"
+#, kde-format
 msgid "Add search for items by number of face regions."
-msgstr "Restituisci elementi per numero di regioni facciali"
+msgstr "Aggiunta ricerca degli elementi per numero di regioni facciali."
 
 #: core/app/views/stack/welcomepageview.cpp:154
-#, fuzzy, kde-format
-#| msgid "Return items without face regions"
+#, kde-format
 msgid "Add search for items without face regions."
-msgstr "Restituisci elementi senza regioni facciali"
+msgstr "Aggiunta ricerca degli elementi senza regioni facciali."
 
 #: core/app/views/stack/welcomepageview.cpp:155
 #, kde-format
 msgid "Add support for cross-platform network paths."
-msgstr ""
+msgstr "Aggiunto supporto per percorsi di rete multi-piattaforma."
 
 #: core/app/views/stack/welcomepageview.cpp:156
 #, kde-format
 msgid "Add support for SQLite WAL (Write-Ahead-Logging) mode."
-msgstr ""
+msgstr "Aggiunto supporto per la modalità SQLite WAL (Write-Ahead-Logging)."
 
 #: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format
@@ -3313,22 +3321,30 @@ msgid ""
 "Add spell-checking support in caption text widget using KF5::Sonnet "
 "component."
 msgstr ""
+"Aggiunto supporto di correzione ortografica nell'estensione per i testi "
+"delle didascalie tramite il componente KF5::Sonnet."
 
 #: core/app/views/stack/welcomepageview.cpp:158
 #, kde-format
 msgid "Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto."
 msgstr ""
+"Aggiunto pannello di configurazione correzione ortografica in Configurazione/"
+"Varie per digiKam e Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:159
 #, kde-format
 msgid ""
 "Add online translations support to Alternative Language text editor widget."
 msgstr ""
+"Aggiunto supporto per la traduzione in linea al widget dell'editor di testo "
+"Lingue alternative."
 
 #: core/app/views/stack/welcomepageview.cpp:160
 #, kde-format
 msgid "Add Localize config panel in Setup/Misc for digiKam and Showfoto."
 msgstr ""
+"Aggiunto pannello di configurazione localizzazione in Configurazione/Varie "
+"per digiKam e Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
@@ -3336,26 +3352,26 @@ msgid ""
 "Add settings to list prefered alternative/translated languages in text edit "
 "widget."
 msgstr ""
+"Aggiunte impostazioni per l'elencazione delle lingue tradotte/alternative "
+"preferite nell'oggetto di modifica del testo."
 
 #: core/app/views/stack/welcomepageview.cpp:162
 #, kde-format
 msgid ""
 "Allow to use Global or Customized Image Quality Sorting settings everywhere."
 msgstr ""
+"Consentito l'uso generalizzato delle impostazioni di Ordinamento qualità "
+"delle immagini globale o personalizzato."
 
 #: core/app/views/stack/welcomepageview.cpp:163
-#, fuzzy, kde-format
-#| msgid ""
-#| "Integration of Google Summer of Code project 2021 <a href=\"https://"
-#| "community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE\">Image Quality "
-#| "Sorter</a>."
+#, kde-format
 msgid ""
 "Add new tool <a href=\"https://community.kde.org/GSoC/2022/StatusReports/"
 "QuocHungTran\">to perform OCR over scanned text</a>."
 msgstr ""
-"Integrazione del progetto Google Summer of Code 2021 <a href=\"https://"
-"community.kde.org/GSoC/2021/StatusReports/PhuocKhanhLE\">Ordinamento qualità "
-"delle immagini</a>."
+"Aggiunto nuovo strumento <a href=\"https://community.kde.org/GSoC/2022/"
+"StatusReports/QuocHungTran\">per eseguire il riconoscimento ottico dei "
+"caratteri su un testo scansionato</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:164
 #, kde-format
@@ -3363,28 +3379,29 @@ msgid ""
 "Add <a href=\"https://community.kde.org/GSoc/2022/StatusReports/PhuocKhanhLe"
 "\">Aesthetic Detection to classify images using deep learning model</a>."
 msgstr ""
+"Aggiunto il <a href=\"https://community.kde.org/GSoc/2022/StatusReports/"
+"PhuocKhanhLe\">Rilevamento estetico per la classificazione delle immagini "
+"tramite il modello di apprendimento profondo</a>."
 
 #: core/app/views/stack/welcomepageview.cpp:165
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to assign pick label metadata by image quality"
+#, kde-format
 msgid ""
 "Add new tool to assign pick label automatically by parsing image quality."
 msgstr ""
-"Strumento per assegnare i metadati dell'etichetta di scelta in base alla "
-"qualità dell'immagine"
+"Aggiunto nuovo strumento per assegnare automaticamente l'etichetta di scelta "
+"in base all'analisi della qualità dell'immagine."
 
 #: core/app/views/stack/welcomepageview.cpp:166
 #, kde-format
 msgid "Add new tool to assign rating, pick, and color labels in batch."
 msgstr ""
+"Aggiunto nuovo strumento per assegnare valutazioni, scelta ed etichette di "
+"colore in serie."
 
 #: core/app/views/stack/welcomepageview.cpp:167
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to assign labels metadata to images"
+#, kde-format
 msgid "Add new tool to assign titles and captions in batch."
-msgstr "Strumento per assegnare i metadati delle etichette alle immagini"
+msgstr "Aggiunto nuovo strumento per assegnare titoli e didascalie in serie."
 
 #: core/app/views/stack/welcomepageview.cpp:168
 #, kde-format
@@ -3392,11 +3409,14 @@ msgid ""
 "<a href=\" https://docs.digikam.org/en/index.html\">Rewrite handbook</a> "
 "from DocBook to Sphinx/ReStructuredText framework."
 msgstr ""
+"<a href=\" https://docs.digikam.org/en/index.html\">Riscritto il manuale</a> "
+"dall'infrastruttura DocBook a quella Sphinx/ReStructuredText."
 
 #: core/app/views/stack/welcomepageview.cpp:169
 #, kde-format
 msgid "Update internal RAW engine to last stable Libraw 0.21.1."
 msgstr ""
+"Aggiornato il motore interno RAW all'ultimo rilascio stabile Libraw 0.21.1."
 
 #: core/app/views/stack/welcomepageview.cpp:170
 #, kde-format
@@ -3407,6 +3427,11 @@ msgid ""
 "R3, R7 and R10 Fujifilm X-H2S, X-T30 II OM System OM-1 Leica M11 Sony A7-IV "
 "(ILCE-7M4) DJI Mavic 3"
 msgstr ""
+"Nuove funzionalità RAW: Phase One/Leaf IIQ-S v2 support Canon CR3 filmrolls/"
+"RawBurst Canon CRM (movie) files Tiled bit-packed (and 16-bit unpacked) DNGs "
+"(non-standard) Deflate-compressed integer DNG files are allowed Canon EOS "
+"R3, R7 and R10 Fujifilm X-H2S, X-T30 II OM System OM-1 Leica M11 Sony A7-IV "
+"(ILCE-7M4) DJI Mavic 3"
 
 #: core/app/views/stack/welcomepageview.cpp:185
 #, kde-format
@@ -23600,7 +23625,7 @@ msgstr "Crea collegamenti simbolici relativi"
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:121
 #, kde-format
 msgid "Include the sidecars of the items"
-msgstr ""
+msgstr "Include i sidecar degli elementi"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:122
 #, kde-format
@@ -35329,9 +35354,7 @@ msgid "User6"
 msgstr "Utente6"
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Help"
+#, kde-format
 msgctxt "@action: button"
 msgid "Help"
 msgstr "Aiuto"
@@ -35345,9 +35368,7 @@ msgstr "Manuale in linea..."
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:70
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "About..."
+#, kde-format
 msgid "About..."
 msgstr "Informazioni su..."
 
@@ -54621,17 +54642,14 @@ msgid "Set this option to show tracks on the Map"
 msgstr "Abilita questa opzione per mostrare le tracce sulla mappa"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:167
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox similarity album tag relation"
-#| msgid "Only selected tab"
+#, kde-format
 msgid "Only use selected images"
-msgstr "Solo la scheda selezionata"
+msgstr "Usa solo le immagini selezionate"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:168
-#, fuzzy, kde-format
-#| msgid "Set this option to display the image type."
+#, kde-format
 msgid "Set this option to correlate selected images only"
-msgstr "Abilita questa opzione per visualizzare il tipo dell'immagine."
+msgstr "Imposta questa opzione per correlare solo le immagini selezionate"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:178
 #, kde-format
