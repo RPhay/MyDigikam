@@ -92,6 +92,7 @@ private Q_SLOTS:
 
     void reject() override;
     void slotDownload();
+    void slotHelp();
     void slotDownloaded(QNetworkReply* reply);
     void slotDownloadProgress(qint64 bytesReceived, qint64 bytesTotal);
 

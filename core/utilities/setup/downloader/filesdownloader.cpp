@@ -40,6 +40,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "dxmlguiwindow.h"
 #include "systemsettings.h"
 #include "itempropertiestab.h"
 
@@ -176,8 +177,10 @@ void FilesDownloader::startDownload()
     QWidget* const mainWidget = new QWidget(this);
     QVBoxLayout* const vBox   = new QVBoxLayout(mainWidget);
 
-    d->buttons                = new QDialogButtonBox(QDialogButtonBox::Ok |
-                                                     QDialogButtonBox::Cancel, mainWidget);
+    d->buttons                = new QDialogButtonBox(QDialogButtonBox::Help |
+                                                     QDialogButtonBox::Ok |
+                                                     QDialogButtonBox::Cancel,
+                                                     mainWidget);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
     d->buttons->button(QDialogButtonBox::Ok)->setText(i18n("Download"));
     d->buttons->button(QDialogButtonBox::Ok)->setIcon(QIcon::fromTheme(QLatin1String("edit-download")));
@@ -230,6 +233,9 @@ void FilesDownloader::startDownload()
 
     connect(d->buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
             this, SLOT(slotDownload()));
+
+    connect(d->buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
+            this, SLOT(slotHelp()));
 
     connect(d->buttons->button(QDialogButtonBox::Cancel), SIGNAL(clicked()),
             this, SLOT(reject()));
@@ -471,6 +477,11 @@ QString FilesDownloader::getFacesEnginePath() const
     appUrl.setPath(appUrl.path() + QLatin1String("digikam/facesengine"));
 
     return appUrl.toLocalFile();
+}
+
+void FilesDownloader::slotHelp()
+{
+    DXmlGuiWindow::openHandbook(QLatin1String("getting_started"), QLatin1String("quick_start"), QLatin1String("firstrun-downloads"));
 }
 
 //-----------------------------------------------------------------------------
