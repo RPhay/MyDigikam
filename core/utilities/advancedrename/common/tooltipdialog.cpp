@@ -28,6 +28,7 @@
 // Local includes
 
 #include "tooltipcreator.h"
+#include "dxmlguiwindow.h"
 
 namespace Digikam
 {
@@ -52,7 +53,7 @@ TooltipDialog::TooltipDialog(QWidget* const parent)
 {
     setWindowTitle(i18nc("@title:window", "Information"));
 
-    d->buttons     = new QDialogButtonBox(QDialogButtonBox::Close, this);
+    d->buttons     = new QDialogButtonBox(QDialogButtonBox::Close | QDialogButtonBox::Help, this);
     d->buttons->button(QDialogButtonBox::Close)->setDefault(true);
 
     d->textBrowser = new QTextBrowser(this);
@@ -67,6 +68,9 @@ TooltipDialog::TooltipDialog(QWidget* const parent)
 
     connect(d->buttons->button(QDialogButtonBox::Close), SIGNAL(clicked()),
             this, SLOT(accept()));
+
+    connect(d->buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
+            this, SLOT(slotHelp()));
 }
 
 TooltipDialog::~TooltipDialog()
@@ -89,6 +93,11 @@ void TooltipDialog::setTooltip(const QString& tooltip)
 void TooltipDialog::clearTooltip()
 {
     d->textBrowser->clear();
+}
+
+void TooltipDialog::slotHelp()
+{
+    DXmlGuiWindow::openHandbook(QLatin1String("main_window"), QLatin1String("image_view"), QLatin1String("renaming-photograph"));
 }
 
 } // namespace Digikam
