@@ -46,6 +46,7 @@
 #include "dbengineparameters.h"
 #include "coredbschemaupdater.h"
 #include "coredbcopymanager.h"
+#include "dxmlguiwindow.h"
 
 namespace Digikam
 {
@@ -130,7 +131,7 @@ DatabaseMigrationDialog::~DatabaseMigrationDialog()
 
 void DatabaseMigrationDialog::setupMainArea()
 {
-    d->buttons = new QDialogButtonBox(QDialogButtonBox::Close, this);
+    d->buttons = new QDialogButtonBox(QDialogButtonBox::Close | QDialogButtonBox::Help, this);
     d->buttons->button(QDialogButtonBox::Close)->setDefault(true);
 
     d->copyThread                      = new DatabaseCopyThread(this);
@@ -184,6 +185,9 @@ void DatabaseMigrationDialog::setupMainArea()
     connect(d->buttons->button(QDialogButtonBox::Close), SIGNAL(clicked()),
             this, SLOT(accept()));
 
+    connect(d->buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
+            this, SLOT(accept()));
+
     connect(d->migrateButton, SIGNAL(clicked()),
             this, SLOT(slotPerformCopy()));
 
@@ -203,6 +207,11 @@ void DatabaseMigrationDialog::setupMainArea()
 
     connect(d->cancelButton, SIGNAL(clicked()),
             &(d->copyThread->m_copyManager), SLOT(stopProcessing()));
+}
+
+void DatabaseMigrationDialog::slotHelp()
+{
+    DXmlGuiWindow::openHandbook(QLatin1String("setup_application"), QLatin1String("database_settings"), QLatin1String("database_migration"));
 }
 
 void DatabaseMigrationDialog::slotPerformCopy()

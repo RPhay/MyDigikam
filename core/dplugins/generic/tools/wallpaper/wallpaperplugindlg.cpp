@@ -56,7 +56,7 @@ WallpaperPluginDlg::WallpaperPluginDlg(DPlugin* const plugin, QWidget* const par
 {
     setPlugin(plugin);
     setWindowIcon(plugin->icon());
-    setWindowTitle(i18n("WallPaper Settings"));
+    setWindowTitle(i18nc("@title:window", "WallPaper Settings"));
 
     m_buttons->addButton(QDialogButtonBox::Cancel);
     m_buttons->addButton(QDialogButtonBox::Ok);

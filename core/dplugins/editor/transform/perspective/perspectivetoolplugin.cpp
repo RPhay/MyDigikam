@@ -64,6 +64,21 @@ QString PerspectiveToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can adjust perspective from an image.");
 }
 
+QString PerspectiveToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString PerspectiveToolPlugin::handbookChapter() const
+{
+    return QLatin1String("transform_tools");
+}
+
+QString PerspectiveToolPlugin::handbookReference() const
+{
+    return QLatin1String("transform-perspective");
+}
+
 QList<DPluginAuthor> PerspectiveToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

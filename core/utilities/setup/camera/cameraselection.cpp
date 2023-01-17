@@ -101,11 +101,11 @@ CameraSelection::CameraSelection(QWidget* const parent)
 {
     qApp->setOverrideCursor(Qt::WaitCursor);
 
-    setWindowTitle(i18n("Camera Configuration"));
+    setWindowTitle(i18nc("@title:window", "Camera Configuration"));
     setModal(true);
 
     const int spacing       = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
-                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
+                                   QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
 
     d->buttons              = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
@@ -700,7 +700,7 @@ void CameraSelection::slotSearchTextChanged(const SearchTextSettings& settings)
 
 void CameraSelection::slotHelp()
 {
-    DXmlGuiWindow::openHandbook();
+    DXmlGuiWindow::openHandbook(QLatin1String("setup_application"), QLatin1String("camera_settings"));
 }
 
 } // namespace Digikam

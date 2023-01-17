@@ -40,6 +40,10 @@ private:
     TooltipDialog(const TooltipDialog&)            = delete;
     TooltipDialog& operator=(const TooltipDialog&) = delete;
 
+private Q_SLOTS:
+
+    void slotHelp();
+
 private:
 
     class Private;

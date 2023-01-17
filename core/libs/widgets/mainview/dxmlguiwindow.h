@@ -111,7 +111,7 @@ public:
     /**
      * Create common actions from Help menu for all digiKam main windows.
      */
-    void createHelpActions(bool coreOptions = true);
+    void createHelpActions(const QString& handbookSection, bool coreOptions = true);
 
     /**
      * Cleanup unwanted actions from action collection.

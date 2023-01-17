@@ -211,7 +211,7 @@ private:
 DecoderConfigPage::DecoderConfigPage(QWidget* const parent, bool advOptVisible)
     : ConfigPageBase(parent)
 {
-    setWindowTitle(i18nc("@title", "Video decoder config page"));
+    setWindowTitle(i18nc("@title:window", "Video Decoder Config Page"));
     QVBoxLayout* const vbs                  = new QVBoxLayout(this);
     QSpacerItem* const horizontalSpacer     = new QSpacerItem(320, 0, QSizePolicy::Minimum, QSizePolicy::Minimum);
     vbs->addItem(horizontalSpacer);

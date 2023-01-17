@@ -52,6 +52,7 @@ public:
       : iface               (nullptr),
         selector            (nullptr),
         imageList           (nullptr),
+        sidecars            (nullptr),
         overwrite           (nullptr),
         albumPath           (nullptr),
         targetButtonGroup   (nullptr),
@@ -70,6 +71,8 @@ public:
     DInfoInterface* iface;
     DFileSelector*  selector;
     DItemsList*     imageList;
+
+    QCheckBox*      sidecars;
     QCheckBox*      overwrite;
     QCheckBox*      albumPath;
 
@@ -106,15 +109,16 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     d->selector                 = new DFileSelector(hbox);
     d->selector->setFileDlgMode(QFileDialog::Directory);
     d->selector->setFileDlgOptions(QFileDialog::ShowDirsOnly);
-    d->selector->setFileDlgTitle(i18n("Target Folder"));
+    d->selector->setFileDlgTitle(i18nc("@title:window", "Target Folder"));
     d->selector->setWhatsThis(i18n("Sets the target address to copy the items to."));
 
-    QLabel* const targetLabel   = new QLabel(i18n("Target File behavior:"), this);
+    QLabel* const targetLabel   = new QLabel(i18n("Target file behavior:"), this);
     d->targetButtonGroup        = new QButtonGroup(this);
     d->fileCopyButton           = new QRadioButton(i18n("Copy files"), this);
     d->symLinkButton            = new QRadioButton(i18n("Create symlinks"), this);
     d->relativeButton           = new QRadioButton(i18n("Create relative symlinks"), this);
 
+    d->sidecars                 = new QCheckBox(i18n("Include the sidecars of the items"), this);
     d->overwrite                = new QCheckBox(i18n("Overwrite existing items in the target"), this);
     d->albumPath                = new QCheckBox(i18n("Use the album path of the items in the target"), this);
 
@@ -221,6 +225,7 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     layout->addWidget(d->fileCopyButton);
     layout->addWidget(d->symLinkButton);
     layout->addWidget(d->relativeButton);
+    layout->addWidget(d->sidecars);
     layout->addWidget(d->overwrite);
     layout->addWidget(d->albumPath);
     layout->addWidget(d->imageList);
@@ -270,6 +275,7 @@ FCContainer FCExportWidget::getSettings() const
     settings.imageFormat           = d->imageFormat->currentIndex();
     settings.imageResize           = d->imageResize->value();
     settings.imageCompression      = d->imageCompression->value();
+    settings.sidecars              = d->sidecars->isChecked();
     settings.overwrite             = d->overwrite->isChecked();
     settings.albumPath             = d->albumPath->isChecked();
     settings.removeMetadata        = d->removeMetadataProp->isChecked();
@@ -292,6 +298,7 @@ void FCExportWidget::setSettings(const FCContainer& settings)
     d->imageFormat->setCurrentIndex(settings.imageFormat);
     d->imageResize->setValue(settings.imageResize);
     d->imageCompression->setValue(settings.imageCompression);
+    d->sidecars->setChecked(settings.sidecars);
     d->overwrite->setChecked(settings.overwrite);
     d->albumPath->setChecked(settings.albumPath);
     d->removeMetadataProp->setChecked(settings.removeMetadata);

@@ -34,6 +34,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "dxmlguiwindow.h"
 #include "searchgroup.h"
 #include "searchutilities.h"
 #include "searchwindow.h"
@@ -534,6 +535,11 @@ SearchViewBottomBar::SearchViewBottomBar(SearchViewThemedPartsCache* const cache
 
     m_mainLayout->addWidget(m_buttonBox);
 
+    QPushButton* const help = m_buttonBox->addButton(QDialogButtonBox::Help);
+
+    connect(help, SIGNAL(clicked()),
+            this, SLOT(slotHelp()));
+
     setLayout(m_mainLayout);
 }
 
@@ -543,6 +549,11 @@ void SearchViewBottomBar::paintEvent(QPaintEvent*)
 
     QPainter p(this);
     p.drawPixmap(0, 0, m_themeCache->bottomBarPixmap(width(), height()));
+}
+
+void SearchViewBottomBar::slotHelp()
+{
+    DXmlGuiWindow::openHandbook(QLatin1String("main_window"), QLatin1String("search_view"));
 }
 
 } // namespace Digikam

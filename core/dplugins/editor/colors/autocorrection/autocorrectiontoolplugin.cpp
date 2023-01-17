@@ -64,6 +64,21 @@ QString AutoCorrectionToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can adjust colors automatically from image.");
 }
 
+QString AutoCorrectionToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString AutoCorrectionToolPlugin::handbookChapter() const
+{
+    return QLatin1String("color_tools");
+}
+
+QString AutoCorrectionToolPlugin::handbookReference() const
+{
+    return QLatin1String("color-auto");
+}
+
 QList<DPluginAuthor> AutoCorrectionToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

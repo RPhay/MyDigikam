@@ -806,7 +806,7 @@ void BookmarksManager::load()
 
     if (reader.error() != QXmlStreamReader::NoError)
     {
-        QMessageBox::warning(nullptr, i18n("Loading Bookmark"),
+        QMessageBox::warning(nullptr, i18nc("@title:window", "Loading Bookmark"),
                              i18n("Error when loading bookmarks on line %1, column %2:\n%3",
                                   reader.lineNumber(),
                                   reader.columnNumber(),
@@ -928,7 +928,7 @@ QUndoStack* BookmarksManager::undoRedoStack() const
 
 void BookmarksManager::importBookmarks()
 {
-    QString fileName = DFileDialog::getOpenFileName(nullptr, i18n("Open File"),
+    QString fileName = DFileDialog::getOpenFileName(nullptr, i18nc("@title:window", "Open File"),
                                                     QString(),
                                                     i18n("XBEL (*.xbel *.xml)"));
     if (fileName.isEmpty())
@@ -941,7 +941,7 @@ void BookmarksManager::importBookmarks()
 
     if (reader.error() != QXmlStreamReader::NoError)
     {
-        QMessageBox::warning(nullptr, i18n("Loading Bookmark"),
+        QMessageBox::warning(nullptr, i18nc("@title:window", "Loading Bookmark"),
                              i18n("Error when loading bookmarks on line %1, column %2:\n%3",
                                   reader.lineNumber(),
                                   reader.columnNumber(),
@@ -955,7 +955,7 @@ void BookmarksManager::importBookmarks()
 
 void BookmarksManager::exportBookmarks()
 {
-    QString fileName = DFileDialog::getSaveFileName(nullptr, i18n("Save File"),
+    QString fileName = DFileDialog::getSaveFileName(nullptr, i18nc("@title:window", "Save File"),
                                                     i18n("%1 Bookmarks.xbel", QCoreApplication::applicationName()),
                                                     i18n("XBEL (*.xbel *.xml)"));
     if (fileName.isEmpty())
@@ -967,7 +967,7 @@ void BookmarksManager::exportBookmarks()
 
     if (!writer.write(fileName, d->bookmarkRootNode))
     {
-        QMessageBox::critical(nullptr, i18n("Export error"), i18n("error saving bookmarks"));
+        QMessageBox::critical(nullptr, i18nc("@title:window", "Export error"), i18n("Error saving bookmarks"));
     }
 }
 

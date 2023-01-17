@@ -64,6 +64,21 @@ QString LocalContrastToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can emulate tone mapping over an image.");
 }
 
+QString LocalContrastToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString LocalContrastToolPlugin::handbookChapter() const
+{
+    return QLatin1String("enhancement_tools");
+}
+
+QString LocalContrastToolPlugin::handbookReference() const
+{
+    return QLatin1String("enhance-localcontrast");
+}
+
 QList<DPluginAuthor> LocalContrastToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

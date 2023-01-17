@@ -42,7 +42,7 @@ int main(int argc, char* argv[])
     renderer[0].show();
     renderer[0].widget()->setWindowTitle(QString::fromLatin1("Test QFile"));
     renderer[1].show();
-    renderer[1].widget()->setWindowTitle(QString::fromLatin1("Test QBuffer. Play <= 1M video from memory"));
+    renderer[1].widget()->setWindowTitle(QString::fromLatin1("Test QBuffer. Play <= 1M Video from Memory"));
 
     AVPlayerCore player[2];
     player[0].addVideoRenderer(&renderer[0]);

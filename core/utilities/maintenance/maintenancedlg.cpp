@@ -193,7 +193,7 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
                    Qt::WindowCloseButtonHint     |
                    Qt::WindowMinMaxButtonsHint);
 
-    setWindowTitle(i18n("Maintenance"));
+    setWindowTitle(i18nc("@title:window", "Maintenance"));
     setModal(true);
 
     d->buttons = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
@@ -697,7 +697,7 @@ void MaintenanceDlg::slotQualitySetup()
 
 void MaintenanceDlg::slotHelp()
 {
-    DXmlGuiWindow::openHandbook();
+    DXmlGuiWindow::openHandbook(QLatin1String("maintenance_tools"));
 }
 
 } // namespace Digikam

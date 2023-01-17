@@ -117,7 +117,7 @@ SlideShowLoader::SlideShowLoader(SlideShowSettings* const settings)
     setContextMenuPolicy(Qt::PreventContextMenu);
     setWindowState(windowState() | Qt::WindowFullScreen);
 
-    setWindowTitle(i18n("Slideshow"));
+    setWindowTitle(i18nc("@title:window", "Slideshow"));
     setObjectName(QLatin1String("Slideshow"));
     setMouseTracking(true);
 

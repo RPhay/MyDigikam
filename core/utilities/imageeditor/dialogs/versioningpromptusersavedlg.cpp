@@ -31,6 +31,10 @@
 
 #include <klocalizedstring.h>
 
+// Local includes
+
+#include "dxmlguiwindow.h"
+
 namespace Digikam
 {
 
@@ -59,6 +63,7 @@ VersioningPromptUserSaveDialog::VersioningPromptUserSaveDialog(QWidget* const pa
     d->buttons = new QDialogButtonBox(QDialogButtonBox::Ok      |  // Save Changes
                                       QDialogButtonBox::Apply   |  // Save Changes as a New Version
                                       QDialogButtonBox::Discard |  // Discard Changes
+                                      QDialogButtonBox::Help    |  // Online doc
                                       QDialogButtonBox::Cancel,
                                       this);
 
@@ -120,9 +125,15 @@ void VersioningPromptUserSaveDialog::slotButtonClicked(QAbstractButton* button)
 {
     d->clicked = d->buttons->standardButton(button);
 
-    if (d->clicked == QDialogButtonBox::Cancel)
+    if      (d->clicked == QDialogButtonBox::Cancel)
     {
         reject();
+
+        return;
+    }
+    else if (d->clicked == QDialogButtonBox::Help)
+    {
+        DXmlGuiWindow::openHandbook(QLatin1String("setup_application"), QLatin1String("editor_settings"), QLatin1String("versioning-settings"));
 
         return;
     }

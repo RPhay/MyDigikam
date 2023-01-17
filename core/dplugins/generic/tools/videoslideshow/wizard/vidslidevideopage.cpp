@@ -339,7 +339,7 @@ void VidSlideVideoPage::slotSlideDuration()
 void VidSlideVideoPage::initializePage()
 {
     d->framesVal->setValue(d->settings->imgFrames);
-    d->typeVal->setCurrentIndex(d->settings->vType);
+    d->typeVal->setCurrentIndex(d->typeVal->findData(d->settings->vType));
     d->bitrateVal->setCurrentIndex(d->settings->vbitRate);
     d->stdVal->setCurrentIndex(d->settings->vStandard);
     d->codecVal->setCurrentIndex(d->codecVal->findData(d->settings->vCodec));
@@ -355,7 +355,7 @@ bool VidSlideVideoPage::validatePage()
     d->transPreview->stopPreview();
     d->effPreview->stopPreview();
     d->settings->imgFrames  = d->framesVal->value();
-    d->settings->vType      = (VidSlideSettings::VidType)d->typeVal->currentIndex();
+    d->settings->vType      = (VidSlideSettings::VidType)d->typeVal->currentData().toInt();
     d->settings->vbitRate   = (VidSlideSettings::VidBitRate)d->bitrateVal->currentIndex();
     d->settings->vStandard  = (VidSlideSettings::VidStd)d->stdVal->currentIndex();
     d->settings->vCodec     = (VidSlideSettings::VidCodec)d->codecVal->currentData().toInt();

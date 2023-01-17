@@ -356,7 +356,7 @@ void ItemDescEditTab::slotAskToApplyChanges(const QList<ItemInfo>& infos, Disjoi
     QCheckBox* const alwaysCBox  = new QCheckBox(i18nc("@action", "Always apply changes without confirmation"));
 
     QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Information,
-                                                   i18nc("@title", "Apply changes?"),
+                                                   i18nc("@title:window", "Apply Changes?"),
                                                    text,
                                                    QMessageBox::Yes | QMessageBox::No,
                                                    qApp->activeWindow());

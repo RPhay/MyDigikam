@@ -44,10 +44,13 @@ public:
 
     explicit Private()
       : welcomePage(nullptr),
-      
+
 #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+
         migrateFromDigikam4Page(nullptr),
+
 #endif
+
         collectionPage(nullptr),
         databasePage(nullptr),
         rawPage(nullptr),
@@ -62,7 +65,9 @@ public:
     WelcomePage*             welcomePage;
 
 #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
+
     MigrateFromDigikam4Page* migrateFromDigikam4Page;
+
 #endif
 
     CollectionPage*          collectionPage;
@@ -125,7 +130,7 @@ FirstRunDlg::~FirstRunDlg()
 
 void FirstRunDlg::slotHelp()
 {
-    DXmlGuiWindow::openHandbook();
+    DXmlGuiWindow::openHandbook(QLatin1String("getting_started"), QLatin1String("quick_start"));
 }
 
 QString FirstRunDlg::firstAlbumPath() const

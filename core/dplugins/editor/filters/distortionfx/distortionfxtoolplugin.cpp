@@ -64,6 +64,21 @@ QString DistortionFXToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can apply distortion effects to an image.");
 }
 
+QString DistortionFXToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString DistortionFXToolPlugin::handbookChapter() const
+{
+    return QLatin1String("effects_tools");
+}
+
+QString DistortionFXToolPlugin::handbookReference() const
+{
+    return QLatin1String("effects-distrotionfx");
+}
+
 QList<DPluginAuthor> DistortionFXToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

@@ -65,6 +65,16 @@ QString PrintCreatorPlugin::details() const
                 "<p>Different pre-defined paper sizes and layouts can be used to process files.</p>");
 }
 
+QString PrintCreatorPlugin::handbookSection() const
+{
+    return QLatin1String("post_processing");
+}
+
+QString PrintCreatorPlugin::handbookChapter() const
+{
+    return QLatin1String("print_creator");
+}
+
 QList<DPluginAuthor> PrintCreatorPlugin::authors() const
 {
     return QList<DPluginAuthor>()

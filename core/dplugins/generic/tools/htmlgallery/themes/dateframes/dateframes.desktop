@@ -2,6 +2,7 @@
 Type=Theme
 Name=Date Frames
 Name[be]=Рамкі даты
+Name[bg]=Рамки за дата
 Name[ca]=Marcs de la data
 Name[ca@valencia]=Marcs de la data
 Name[cs]=Rámce dat
@@ -34,6 +35,7 @@ Name[x-test]=xxDate Framesxx
 Name[zh_CN]=日期型 Frames
 Comment=A frame theme based on Ruediger Bente's frame theme
 Comment[be]=Тэма на аснове тэмы ад Ruediger Bente
+Comment[bg]=Тема за рамки, базирана на темата за рамки на Рюдигер Бенте
 Comment[ca]=Un tema de marcs basat en el tema de marcs del Ruediger Bente
 Comment[ca@valencia]=Un tema de marcs basat en el tema de marcs del Ruediger Bente
 Comment[cs]=Motiv rámce založený na motivu Ruediger Bente
@@ -106,6 +108,7 @@ Url=mailto:purplegamba@cox.net
 [X-HTMLGallery Preview]
 Name=Date Frames
 Name[be]=Рамкі даты
+Name[bg]=Рамки за дата
 Name[ca]=Marcs de la data
 Name[ca@valencia]=Marcs de la data
 Name[cs]=Rámce dat
@@ -141,6 +144,7 @@ Url=preview.png
 [X-HTMLGallery Parameter color1]
 Name=Thumbnail Background
 Name[be]=Фон мініяцюр
+Name[bg]=Фон на миниатюра
 Name[ca]=Fons de les miniatures
 Name[ca@valencia]=Fons de les miniatures
 Name[cs]=Pozadí náhledu
@@ -179,6 +183,7 @@ Default=#FFFFFF
 [X-HTMLGallery Parameter color2]
 Name=Image Background (contrasting)
 Name[be]=Фон выяў (кантрасны)
+Name[bg]=Фон на изображение (контрастен)
 Name[ca]=Fons de les imatges (amb contrast)
 Name[ca@valencia]=Fons de les imatges (amb contrast)
 Name[cs]=Pozadí obrázku (kontrastní)
@@ -216,6 +221,7 @@ Default=#000055
 [X-HTMLGallery Parameter color3]
 Name=Nav Bar Background (dark)
 Name[be]=Фон панэлі навігацыі (цёмны)
+Name[bg]=Фон на лентата за навигация (тъмен)
 Name[ca]=Fons de la barra de navegació (fosc)
 Name[ca@valencia]=Fons de la barra de navegació (fosc)
 Name[cs]=Pozadí navigačního panelu (tmavé)
@@ -252,6 +258,7 @@ Default=#000011
 [X-HTMLGallery Parameter intro]
 Name=Gallery Introduction
 Name[be]=Уводзіны ў галерэю
+Name[bg]=Въведение в галерията
 Name[ca]=Introducció a galeries
 Name[ca@valencia]=Introducció a galeries
 Name[cs]=Představení galerie
@@ -290,6 +297,7 @@ Default=Welcome to my web gallery!
 [X-HTMLGallery Parameter longformat]
 Name=Caption Date Format (see xsltsl.sourceforge.net/date-time.html)
 Name[be]=Фармат даты ў подпісах (глядзіце xsltsl.sourceforge.net/date-time.html)
+Name[bg]=Формат на датата на заглавието (вж. xsltsl.sourceforge.net/date-time.html)
 Name[ca]=Format de la data de la llegenda (vegeu xsltsl.sourceforge.net/date-time.html)
 Name[ca@valencia]=Format de la data de la llegenda (vegeu xsltsl.sourceforge.net/date-time.html)
 Name[cs]=Formát data titulku (viz xsltsl.sourceforge.net/date-time.html)
@@ -318,6 +326,7 @@ Type=string
 Default=%A, %b %e, %Y   %i:%M%P
 Comment=XSL Date Format String: Use the syntax given at xsltsl.sourceforge.net/date-time.html
 Comment[be]=Фармат даты радкоў XSL: выкарыстоўвайце сінтаксіс, апісанне якога можна знайсці па адрасе xsltsl.sourceforge.net/date-time.html
+Comment[bg]=Редица за формат на датата XSL: Използвайте синтаксиса, даден в xsltsl.sourceforge.net/date-time.html
 Comment[ca]=Cadena de format per a les dates en XSL: empreu la sintaxi indicada a xsltsl.sourceforge.net/date-time.html
 Comment[ca@valencia]=Cadena de format per a les dates en XSL: utilitzeu la sintaxi indicada a xsltsl.sourceforge.net/date-time.html
 Comment[cs]=Řetězec formátu data XSL: Použijte syntaxi určenou na xsltsl.sourceforge.net/date-time.html
@@ -346,6 +355,7 @@ Comment[zh_CN]=XSL 日期格式字符串：请使用 xsltsl.sourceforge.net/date
 [X-HTMLGallery Parameter shortformat]
 Name=Image List Date Format
 Name[be]=Фармат даты ў спісе выяў
+Name[bg]=Формат на датата на списъка с изображения
 Name[ca]=Format de la data per a la llista d'imatges
 Name[ca@valencia]=Format de la data per a la llista d'imatges
 Name[cs]=Formát data seznamu obrázků
@@ -380,6 +390,7 @@ Type=string
 Default=%m-%d-%Y
 Comment=XSL Date Format String: Use the syntax given at xsltsl.sourceforge.net/date-time.html
 Comment[be]=Фармат даты радкоў XSL: выкарыстоўвайце сінтаксіс, апісанне якога можна знайсці па адрасе xsltsl.sourceforge.net/date-time.html
+Comment[bg]=Редица за формат на датата XSL: Използвайте синтаксиса, даден в xsltsl.sourceforge.net/date-time.html
 Comment[ca]=Cadena de format per a les dates en XSL: empreu la sintaxi indicada a xsltsl.sourceforge.net/date-time.html
 Comment[ca@valencia]=Cadena de format per a les dates en XSL: utilitzeu la sintaxi indicada a xsltsl.sourceforge.net/date-time.html
 Comment[cs]=Řetězec formátu data XSL: Použijte syntaxi určenou na xsltsl.sourceforge.net/date-time.html

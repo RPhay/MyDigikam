@@ -408,7 +408,7 @@ void PTalker::slotFinished(QNetworkReply* reply)
         {
             Q_EMIT signalBusy(false);
             QMessageBox::critical(QApplication::activeWindow(),
-                                  i18n("Error"), reply->errorString());
+                                  i18nc("@title:window", "Error"), reply->errorString());
 /*
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Error content: " << reply->readAll();
 */

@@ -70,7 +70,7 @@ JAlbumWizard::JAlbumWizard(QWidget* const parent, DInfoInterface* const iface)
       d(new Private)
 {
     setOption(QWizard::NoCancelButtonOnLastPage);
-    setWindowTitle(i18n("Create jAlbum Album"));
+    setWindowTitle(i18nc("@title:window", "Create jAlbum Album"));
 
     d->settings          = new JAlbumSettings(iface);
 

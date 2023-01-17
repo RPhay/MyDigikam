@@ -68,7 +68,7 @@ AlbumSelectDialog::AlbumSelectDialog(QWidget* const parent, PAlbum* const albumT
     : QDialog(parent),
       d      (new Private)
 {
-    setWindowTitle(i18n("Select Album"));
+    setWindowTitle(i18nc("@title:window", "Select Album"));
 
     d->buttons = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
@@ -170,7 +170,7 @@ PAlbum* AlbumSelectDialog::selectAlbum(QWidget* const parent, PAlbum* const albu
 
 void AlbumSelectDialog::slotHelp()
 {
-    DXmlGuiWindow::openHandbook();
+    DXmlGuiWindow::openHandbook(QLatin1String("main_window"), QLatin1String("albums_view"));
 }
 
 } // namespace Digikam

@@ -307,7 +307,7 @@ void WSImagesPage::slotCreateAlbumDone(int errCode, const QString& errMsg, const
     if (errCode != 0)
     {
         QMessageBox::critical(QApplication::activeWindow(),
-                              i18n("%1 - Create album failed",  d->wsAuth->webserviceName()),
+                              i18nc("@title:window", "%1 - Create Album Failed",  d->wsAuth->webserviceName()),
                               i18n("Code: %1. %2", errCode, errMsg));
         return;
     }

@@ -351,7 +351,7 @@ void QueueMgrWindow::setupActions()
 
     // Standard 'Help' menu actions
 
-    createHelpActions();
+    createHelpActions(QLatin1String("batch_queue"));
 
     // Provides a menu entry that allows showing/hiding the toolbar(s)
 
@@ -520,7 +520,7 @@ bool QueueMgrWindow::queryClose()
 {
     if (isBusy())
     {
-        int result = QMessageBox::warning(this, i18n("Processing under progress"),
+        int result = QMessageBox::warning(this, i18nc("@title:window", "Processing Under Progress"),
                                           i18n("Batch Queue Manager is running. Do you want to cancel current job?"),
                                           QMessageBox::Yes | QMessageBox::No);
 
@@ -838,7 +838,7 @@ bool QueueMgrWindow::checkTargetAlbum(int queueId)
 
         if (processedItemsAlbumUrl.isEmpty())
         {
-            QMessageBox::critical(this, i18n("Processed items album settings"),
+            QMessageBox::critical(this, i18nc("@title:window", "Processed Items Album Settings"),
                                   i18n("Album to host processed items from queue \"%1\" is not set. "
                                        "Please select one from Queue Settings panel.", queueName));
             return false;
@@ -848,7 +848,7 @@ bool QueueMgrWindow::checkTargetAlbum(int queueId)
 
         if (!dir.exists() || !dir.isWritable())
         {
-            QMessageBox::critical(this, i18n("Processed items album settings"),
+            QMessageBox::critical(this, i18nc("@title:window", "Processed Items Album Settings"),
                                   i18n("Album to host processed items from queue \"%1\" "
                                        "is not available or not writable. "
                                        "Please set another one from Queue Settings panel.", queueName));

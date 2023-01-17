@@ -354,7 +354,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
         vbx->addWidget(widget);
         vbx->addWidget(buttons);
         dialog->setLayout(vbx);
-        dialog->setWindowTitle(i18n("Collection not found"));
+        dialog->setWindowTitle(i18nc("@title:window", "Collection not Found"));
 
         connect(buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
                 dialog, SLOT(accept()));
@@ -456,7 +456,7 @@ void AlbumManager::checkDatabaseDirsAfterFirstRun(const QString& dbPath, const Q
         if (digikam3DB.exists() || digikamVeryOldDB.exists())
         {
             QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Warning,
-                     i18n("Database Folder"),
+                     i18nc("@title:window", "Database Folder"),
                      i18n("<p>You have chosen the folder \"%1\" as the place to store the database. "
                           "A database file from an older version of digiKam is found in this folder.</p> "
                           "<p>Would you like to upgrade the old database file - confirming "
@@ -467,9 +467,9 @@ void AlbumManager::checkDatabaseDirsAfterFirstRun(const QString& dbPath, const Q
                       QMessageBox::Yes | QMessageBox::No,
                       qApp->activeWindow());
 
-            msgBox->button(QMessageBox::Yes)->setText(i18n("Upgrade Database"));
+            msgBox->button(QMessageBox::Yes)->setText(i18nc("@action:button", "Upgrade Database"));
             msgBox->button(QMessageBox::Yes)->setIcon(QIcon::fromTheme(QLatin1String("view-refresh")));
-            msgBox->button(QMessageBox::No)->setText(i18n("Create New Database"));
+            msgBox->button(QMessageBox::No)->setText(i18nc("@action:button", "Create New Database"));
             msgBox->button(QMessageBox::No)->setIcon(QIcon::fromTheme(QLatin1String("document-new")));
             msgBox->setDefaultButton(QMessageBox::Yes);
 
@@ -526,7 +526,7 @@ void AlbumManager::changeDatabase(const DbEngineParameters& newParams)
                 if (params.isSQLite())
                 {
                     QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Warning,
-                             i18n("New database folder"),
+                             i18nc("@title:window", "New Database Folder"),
                              i18n("<p>You have chosen the folder \"%1\" as the new place to store the database. "
                                   "A database file from an older version of digiKam is found in this folder.</p> "
                                   "<p>Would you like to upgrade the old database file, start with a new database, "
@@ -535,11 +535,11 @@ void AlbumManager::changeDatabase(const DbEngineParameters& newParams)
                              QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel,
                              qApp->activeWindow());
 
-                    msgBox->button(QMessageBox::Yes)->setText(i18n("Upgrade Database"));
+                    msgBox->button(QMessageBox::Yes)->setText(i18nc("@action:button", "Upgrade Database"));
                     msgBox->button(QMessageBox::Yes)->setIcon(QIcon::fromTheme(QLatin1String("view-refresh")));
-                    msgBox->button(QMessageBox::No)->setText(i18n("Create New Database"));
+                    msgBox->button(QMessageBox::No)->setText(i18nc("@action:button", "Create New Database"));
                     msgBox->button(QMessageBox::No)->setIcon(QIcon::fromTheme(QLatin1String("document-new")));
-                    msgBox->button(QMessageBox::Cancel)->setText(i18n("Copy Current Database"));
+                    msgBox->button(QMessageBox::Cancel)->setText(i18nc("@action:button", "Copy Current Database"));
                     msgBox->button(QMessageBox::Cancel)->setIcon(QIcon::fromTheme(QLatin1String("edit-copy")));
                     msgBox->setDefaultButton(QMessageBox::Yes);
 
@@ -549,7 +549,7 @@ void AlbumManager::changeDatabase(const DbEngineParameters& newParams)
                 else
                 {
                     QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Warning,
-                             i18n("New database folder"),
+                             i18nc("@title:window", "New Database Folder"),
                              i18n("<p>You have chosen the folder \"%1\" as the new place to store the database. "
                                   "A database file from an older version of digiKam is found in this folder.</p> "
                                   "<p>Would you like to upgrade the old database file or start with a new database?</p>",
@@ -557,9 +557,9 @@ void AlbumManager::changeDatabase(const DbEngineParameters& newParams)
                              QMessageBox::Yes | QMessageBox::No,
                              qApp->activeWindow());
 
-                    msgBox->button(QMessageBox::Yes)->setText(i18n("Upgrade Database"));
+                    msgBox->button(QMessageBox::Yes)->setText(i18nc("@action:button", "Upgrade Database"));
                     msgBox->button(QMessageBox::Yes)->setIcon(QIcon::fromTheme(QLatin1String("view-refresh")));
-                    msgBox->button(QMessageBox::No)->setText(i18n("Create New Database"));
+                    msgBox->button(QMessageBox::No)->setText(i18nc("@action:button", "Create New Database"));
                     msgBox->button(QMessageBox::No)->setIcon(QIcon::fromTheme(QLatin1String("document-new")));
                     msgBox->setDefaultButton(QMessageBox::Yes);
 
@@ -599,7 +599,7 @@ void AlbumManager::changeDatabase(const DbEngineParameters& newParams)
                 if (params.isSQLite())
                 {
                     QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Warning,
-                             i18n("New database folder"),
+                             i18nc("@title:window", "New Database Folder"),
                              i18n("<p>You have chosen the folder \"%1\" as the new place to store the database.</p>"
                                   "<p>Would you like to copy the current database to this location "
                                   "and continue using it, or start with a new database?</p> ",
@@ -607,9 +607,9 @@ void AlbumManager::changeDatabase(const DbEngineParameters& newParams)
                              QMessageBox::Yes | QMessageBox::No,
                              qApp->activeWindow());
 
-                    msgBox->button(QMessageBox::Yes)->setText(i18n("Create New Database"));
+                    msgBox->button(QMessageBox::Yes)->setText(i18nc("@action:button", "Create New Database"));
                     msgBox->button(QMessageBox::Yes)->setIcon(QIcon::fromTheme(QLatin1String("document-new")));
-                    msgBox->button(QMessageBox::No)->setText(i18n("Copy Current Database"));
+                    msgBox->button(QMessageBox::No)->setText(i18nc("@action:button", "Copy Current Database"));
                     msgBox->button(QMessageBox::No)->setIcon(QIcon::fromTheme(QLatin1String("edit-copy")));
                     msgBox->setDefaultButton(QMessageBox::Yes);
 
@@ -631,7 +631,7 @@ void AlbumManager::changeDatabase(const DbEngineParameters& newParams)
             if (params.isSQLite())
             {
                 QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Warning,
-                         i18n("New database folder"),
+                         i18nc("@title:window", "New Database Folder"),
                          i18n("<p>You have chosen the folder \"%1\" as the new place to store the database. "
                               "There is already a database file in this location.</p> "
                               "<p>Would you like to use this existing file as the new database, or remove it "
@@ -640,9 +640,9 @@ void AlbumManager::changeDatabase(const DbEngineParameters& newParams)
                          QMessageBox::Yes | QMessageBox::No,
                          qApp->activeWindow());
 
-                msgBox->button(QMessageBox::Yes)->setText(i18n("Copy Current Database"));
+                msgBox->button(QMessageBox::Yes)->setText(i18nc("@action:button", "Copy Current Database"));
                 msgBox->button(QMessageBox::Yes)->setIcon(QIcon::fromTheme(QLatin1String("edit-copy")));
-                msgBox->button(QMessageBox::No)->setText(i18n("Use Existing File"));
+                msgBox->button(QMessageBox::No)->setText(i18nc("@action:button", "Use Existing File"));
                 msgBox->button(QMessageBox::No)->setIcon(QIcon::fromTheme(QLatin1String("document-open")));
                 msgBox->setDefaultButton(QMessageBox::Yes);
 

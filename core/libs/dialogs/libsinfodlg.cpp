@@ -135,7 +135,7 @@ namespace Digikam
 LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
     : InfoDlg(parent)
 {
-    setWindowTitle(i18nc("@title", "Shared Libraries and Components Information"));
+    setWindowTitle(i18nc("@title:window", "Shared Libraries and Components Information"));
 
     static const char* CONTEXT         = "@item: Component information, see help->components";
     static const QString SUPPORTED_YES = i18nc("@item: component is supported/available",     "Yes");

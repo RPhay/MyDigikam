@@ -1037,6 +1037,8 @@ public:
     void removeImagePropertyByName(const QString& property);
     void removeAllImageProperties(qlonglong imageID);
 
+    QStringList getAllImagePropertiesByName(const QString& property)                                                const;
+
     /**
      * Returns the copyright properties of the specified image.
      * If property is not null, only the given property is returned.

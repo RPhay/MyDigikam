@@ -117,11 +117,11 @@ IpfsWindow::IpfsWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
             this, &IpfsWindow::slotCancel);
 
     setWindowIcon(QIcon::fromTheme(QString::fromLatin1("ipfs")));
-    setWindowTitle(i18n("Export to IPFS"));
+    setWindowTitle(i18nc("@title:window", "Export to IPFS"));
     setModal(false);
 
-    startButton()->setText(i18n("Upload"));
-    startButton()->setToolTip(i18n("Start upload to IPFS"));
+    startButton()->setText(i18nc("@action:button", "Upload"));
+    startButton()->setToolTip(i18nc("@info:tooltip, button", "Start upload to IPFS"));
     startButton()->setEnabled(true);
 
     // Only used if not overwritten by readSettings()
@@ -194,7 +194,7 @@ void IpfsWindow::apiAuthorized(bool success, const QString& username)
 void IpfsWindow::apiAuthError(const QString& msg)
 {
     QMessageBox::critical(this,
-                          i18n("Authorization Failed"),
+                          i18nc("@title:window", "Authorization Failed"),
                           i18n("Failed to log into IPFS: %1\n", msg));
 }
 */
@@ -223,13 +223,13 @@ void IpfsWindow::apiError(const QString& msg, const IpfsTalkerAction& action)
     if (d->api->workQueueLength() <= 1)
     {
         QMessageBox::critical(this,
-                              i18n("Uploading Failed"),
+                              i18nc("@title:window", "Uploading Failed"),
                               i18n("Failed to upload photo to IPFS: %1\n", msg));
         return;
     }
 
     QMessageBox::StandardButton cont = QMessageBox::question(this,
-                                           i18n("Uploading Failed"),
+                                           i18nc("@title:window", "Uploading Failed"),
                                            i18n("Failed to upload photo to IPFS: %1\n"
                                                 "Do you want to continue?", msg));
 

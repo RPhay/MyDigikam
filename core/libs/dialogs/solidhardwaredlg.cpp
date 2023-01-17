@@ -80,7 +80,7 @@ SolidHardwareDlg::SolidHardwareDlg(QWidget* const parent)
     : InfoDlg(parent),
       d      (new Private)
 {
-    setWindowTitle(i18nc("@title", "List of detected hardware"));
+    setWindowTitle(i18nc("@title:window", "List of Detected Hardware"));
 
     d->header     = new QLabel(this);
     d->header->setText(i18nc("@label", "%1 uses Solid framework version %2\n"

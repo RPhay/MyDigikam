@@ -96,7 +96,7 @@ void FTImportWidget::slotShowImportDialogClicked(bool checked)
 
     // TODO : store and restore previous session url from rc file
 
-    QPointer<DFileDialog> importDlg = new DFileDialog(this, i18n("Select items to import..."),
+    QPointer<DFileDialog> importDlg = new DFileDialog(this, i18nc("@title:window", "Select Items to Import..."),
                                                       QString(),
                                                       i18n("All Files (*)"));
     importDlg->setAcceptMode(QFileDialog::AcceptOpen);

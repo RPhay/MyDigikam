@@ -191,6 +191,10 @@ protected:
     QPushButton*                m_resetButton;
 
     SearchViewThemedPartsCache* m_themeCache;
+
+private Q_SLOTS:
+
+    void slotHelp();
 };
 
 } // namespace Digikam

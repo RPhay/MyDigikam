@@ -77,6 +77,7 @@ public:
         directMatchLimitLabel       (nullptr),
         directMatchLimitInput       (nullptr),
         showTracksOnMap             (nullptr),
+        selectedImages              (nullptr),
         correlateButton             (nullptr),
         trackManager                (nullptr),
         trackCorrelator             (nullptr),
@@ -84,6 +85,7 @@ public:
         uiEnabledInternal           (true),
         uiEnabledExternal           (true),
         imageModel                  (nullptr),
+        selectionModel              (nullptr),
         correlationTotalCount       (0),
         correlationCorrelatedCount  (0),
         correlationTriedCount       (0),
@@ -107,6 +109,7 @@ public:
     QLabel*                 directMatchLimitLabel;
     QTimeEdit*              directMatchLimitInput;
     QCheckBox*              showTracksOnMap;
+    QCheckBox*              selectedImages;
 
     QPushButton*            correlateButton;
 
@@ -116,6 +119,7 @@ public:
     bool                    uiEnabledInternal;
     bool                    uiEnabledExternal;
     GPSItemModel*           imageModel;
+    QItemSelectionModel*    selectionModel;
 
     int                     correlationTotalCount;
     int                     correlationCorrelatedCount;
@@ -125,11 +129,13 @@ public:
 
 GPSCorrelatorWidget::GPSCorrelatorWidget(QWidget* const parent,
                                          GPSItemModel* const imageModel,
+                                         QItemSelectionModel* const selectionModel,
                                          TrackManager* const trackManager)
     : QWidget(parent),
       d      (new Private())
 {
     d->imageModel      = imageModel;
+    d->selectionModel  = selectionModel;
     d->trackManager    = trackManager;
     d->trackCorrelator = new TrackCorrelator(d->trackManager, this);
     d->trackListModel  = new TrackListModel(d->trackManager, this);
@@ -157,6 +163,10 @@ GPSCorrelatorWidget::GPSCorrelatorWidget(QWidget* const parent,
 
     d->showTracksOnMap                = new QCheckBox(i18n("Show tracks on Map"), this);
     d->showTracksOnMap->setWhatsThis(i18n("Set this option to show tracks on the Map"));
+
+    d->selectedImages                 = new QCheckBox(i18n("Only use selected images"), this);
+    d->selectedImages->setWhatsThis(i18n("Set this option to correlate selected images only"));
+
     DLineWidget* const line           = new DLineWidget(Qt::Horizontal, this);
 
     connect(d->showTracksOnMap, SIGNAL(stateChanged(int)),
@@ -245,9 +255,10 @@ GPSCorrelatorWidget::GPSCorrelatorWidget(QWidget* const parent,
     settingsLayout->addWidget(d->gpxLoadFilesButton, 0, 0, 1, 1);
     settingsLayout->addWidget(d->gpxFileList,        1, 0, 1, 1);
     settingsLayout->addWidget(d->showTracksOnMap,    2, 0, 1, 1);
-    settingsLayout->addWidget(line,                  3, 0, 1, 1);
-    settingsLayout->addWidget(offsetWidget,          4, 0, 1, 1);
-    settingsLayout->addWidget(matchWidget,           5, 0, 4, 1);
+    settingsLayout->addWidget(d->selectedImages,     3, 0, 1, 1);
+    settingsLayout->addWidget(line,                  4, 0, 1, 1);
+    settingsLayout->addWidget(offsetWidget,          5, 0, 1, 1);
+    settingsLayout->addWidget(matchWidget,           6, 0, 4, 1);
     settingsLayout->addWidget(d->correlateButton,    9, 0, 1, 1);
     settingsLayout->setRowStretch(9, 100);
 
@@ -316,8 +327,8 @@ void GPSCorrelatorWidget::slotAllTrackFilesReady()
                                                "The following %1 GPX files could not be loaded:",
                                                invalidFiles.count());
 
-        const QString errorTitleString = i18np("Error loading GPX file",
-                                               "Error loading GPX files",
+        const QString errorTitleString = i18ncp("@title:window", "Error Loading GPX File",
+                                               "Error Loading GPX Files",
                                                invalidFiles.count());
 
         DMessageBox::showInformationList(QMessageBox::Critical,
@@ -383,12 +394,25 @@ void GPSCorrelatorWidget::slotCorrelate()
     // create a list of items to be correlated
 
     TrackCorrelator::Correlation::List itemList;
+    QList<QModelIndex> selectedIndices;
 
-    const int imageCount         = d->imageModel->rowCount();
+    if (d->selectedImages->isChecked())
+    {
+        selectedIndices = d->selectionModel->selectedRows();
+    }
+    else
+    {
+        for (int i = 0 ; i < d->imageModel->rowCount() ; ++i)
+        {
+            selectedIndices << d->imageModel->index(i, 0);
+        }
+    }
+
+    const int imageCount = selectedIndices.size();
 
     for (int i = 0 ; i < imageCount ; ++i)
     {
-        QPersistentModelIndex imageIndex  = d->imageModel->index(i, 0);
+        QPersistentModelIndex imageIndex  = selectedIndices.at(i);
         GPSItemContainer* const imageItem = d->imageModel->itemFromIndex(imageIndex);
 
         if (!imageItem)
@@ -490,13 +514,13 @@ void GPSCorrelatorWidget::slotAllItemsCorrelated()
 {
     if (d->correlationCorrelatedCount == 0)
     {
-        QMessageBox::warning(this, i18n("Correlation failed"),
+        QMessageBox::warning(this, i18nc("@title:window", "Correlation Failed"),
                              i18n("Could not correlate any image - please make "
                                   "sure the offset and gap settings are correct."));
     }
     else if (d->correlationCorrelatedCount == d->correlationTotalCount)
     {
-        QMessageBox::information(this, i18n("Correlation succeeded"),
+        QMessageBox::information(this, i18nc("@title:window", "Correlation Succeeded"),
                                  i18n("All images have been correlated. You "
                                       "can now check their position on the map."));
     }
@@ -505,7 +529,7 @@ void GPSCorrelatorWidget::slotAllItemsCorrelated()
         // NOTE: Even if the case of correlationTotalCount == 1 is covered in the other two cases, we need i18np.
         //       See bug #376438 for details.
 
-        QMessageBox::warning(this, i18n("Correlation finished"),
+        QMessageBox::warning(this, i18nc("@title:window", "Correlation Finished"),
                              i18np(
                                    "One image out of %2 images have been correlated. Please "
                                    "check the offset and gap settings if you think "
@@ -538,6 +562,7 @@ void GPSCorrelatorWidget::slotAllItemsCorrelated()
 void GPSCorrelatorWidget::saveSettingsToGroup(KConfigGroup* const group)
 {
     group->writeEntry("ShowTracksOnMap",              d->showTracksOnMap->isChecked());
+    group->writeEntry("SelectedImages",               d->selectedImages->isChecked());
     group->writeEntry("Interpolate",                  d->interpolateButton->isChecked());
     group->writeEntry("Max Inter Dist Time",          d->interpolateLimitInput->time().toString());
     group->writeEntry("Max Gap Time",                 d->directMatchLimitInput->time().toString());
@@ -549,13 +574,14 @@ void GPSCorrelatorWidget::saveSettingsToGroup(KConfigGroup* const group)
 
 void GPSCorrelatorWidget::readSettingsFromGroup(const KConfigGroup* const group)
 {
-    d->showTracksOnMap->setChecked(group->readEntry("ShowTracksOnMap", true));
-    d->interpolateButton->setChecked(group->readEntry("Interpolate", true));
+    d->showTracksOnMap->setChecked(group->readEntry("ShowTracksOnMap",                          true));
+    d->selectedImages->setChecked(group->readEntry("SelectedImages",                            false));
+    d->interpolateButton->setChecked(group->readEntry("Interpolate",                            true));
     d->interpolateLimitInput->setTime(QTime::fromString(group->readEntry("Max Inter Dist Time", "00:15:00")));
-    d->directMatchLimitInput->setTime(QTime::fromString(group->readEntry("Max Gap Time", "00:00:30")));
-    d->timeZoneCB->setCurrentIndex(group->readEntry("Time Zone", 13));  // +00:00
-    d->offsetSign->setCurrentIndex(group->readEntry("Offset Sign", 0));
-    d->offsetTime->setTime(QTime::fromString(group->readEntry("Offset Time", "00:00:00")));
+    d->directMatchLimitInput->setTime(QTime::fromString(group->readEntry("Max Gap Time",        "00:00:30")));
+    d->timeZoneCB->setCurrentIndex(group->readEntry("Time Zone",                                13));  // +00:00
+    d->offsetSign->setCurrentIndex(group->readEntry("Offset Sign",                              0));
+    d->offsetTime->setTime(QTime::fromString(group->readEntry("Offset Time",                    "00:00:00")));
     d->gpxFileOpenLastDirectory = group->readEntry("GPX File Open Last Directory",
                                                    QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation));
 

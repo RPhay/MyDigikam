@@ -78,7 +78,7 @@ void DigikamApp::updateQuickImportAction()
 void DigikamApp::slotImportAddImages()
 {
     QString startingPath = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
-    QUrl url             = DFileDialog::getExistingDirectoryUrl(this, i18n("Select folder to parse"),
+    QUrl url             = DFileDialog::getExistingDirectoryUrl(this, i18nc("@title:window", "Select Folder to Parse"),
                                                                 QUrl::fromLocalFile(startingPath));
 
     if (url.isEmpty() || !url.isLocalFile())
@@ -98,7 +98,7 @@ void DigikamApp::slotImportAddFolders()
     // Check Later Qt 5.4 if a new native Qt way have been introduced.
 
     QPointer<DFileDialog> dlg = new DFileDialog(this);
-    dlg->setWindowTitle(i18n("Select folders to import into album"));
+    dlg->setWindowTitle(i18nc("@title:window", "Select Folders to Import into Album"));
     dlg->setFileMode(QFileDialog::Directory);
     dlg->setOptions(QFileDialog::ShowDirsOnly);
 

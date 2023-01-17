@@ -110,11 +110,11 @@ TagEditDlg::TagEditDlg(QWidget* const parent, TAlbum* const album, bool create)
 
     if (create)
     {
-        setWindowTitle(i18n("New Tag"));
+        setWindowTitle(i18nc("@title:window", "New Tag"));
     }
     else
     {
-        setWindowTitle(i18n("Edit Tag"));
+        setWindowTitle(i18nc("@title:window", "Edit Tag"));
     }
 
     d->mainRootAlbum    = album;
@@ -517,7 +517,7 @@ void TagEditDlg::showtagsListCreationError(QWidget* const parent, const QMap<QSt
 
 void TagEditDlg::slotHelp()
 {
-    DXmlGuiWindow::openHandbook();
+    DXmlGuiWindow::openHandbook(QLatin1String("main_window"), QLatin1String("tags_view"), QLatin1String("managing-tags"));
 }
 
 // ------------------------------------------------------------------------------
@@ -526,7 +526,7 @@ TagsListCreationErrorDialog::TagsListCreationErrorDialog(QWidget* const parent, 
     : QDialog(parent)
 {
     setModal(true);
-    setWindowTitle(i18n("Tag creation Error"));
+    setWindowTitle(i18nc("@title:window", "Tag Creation Error"));
 
     const int spacing = qMin(style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                              style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));

@@ -256,7 +256,7 @@ void PlayList::addItems()
 {
     // TODO: add url
 
-    QStringList files = QFileDialog::getOpenFileNames(nullptr, i18nc("@title", "Select files"));
+    QStringList files = QFileDialog::getOpenFileNames(nullptr, i18nc("@title:window", "Select Files"));
 
     if (files.isEmpty())
         return;

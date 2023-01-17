@@ -2,6 +2,7 @@
 Type=Theme
 Name=Clean Frames
 Name[be]=Кампактная з рамкамі
+Name[bg]=Чисти рамки
 Name[ca]=Marcs nets
 Name[ca@valencia]=Marcs nets
 Name[cs]=Vyčistit rámce
@@ -36,6 +37,7 @@ Name[x-test]=xxClean Framesxx
 Name[zh_CN]=简洁型 Frames
 Comment=A frame theme based on Ruediger Bente's frame theme
 Comment[be]=Тэма на аснове тэмы ад Ruediger Bente
+Comment[bg]=Тема за рамки, базирана на темата за рамки на Рюдигер Бенте
 Comment[ca]=Un tema de marcs basat en el tema de marcs del Ruediger Bente
 Comment[ca@valencia]=Un tema de marcs basat en el tema de marcs del Ruediger Bente
 Comment[cs]=Motiv rámce založený na motivu Ruediger Bente
@@ -108,6 +110,7 @@ Url=mailto:purplegamba@cox.net
 [X-HTMLGallery Preview]
 Name=Clean Frames
 Name[be]=Кампактная з рамкамі
+Name[bg]=Чисти рамки
 Name[ca]=Marcs nets
 Name[ca@valencia]=Marcs nets
 Name[cs]=Vyčistit rámce

@@ -782,7 +782,7 @@ void FlickrTalker::slotError(const QString& error)
     };
 
     QMessageBox::critical(QApplication::activeWindow(),
-                          i18n("Error"),
+                          i18nc("@title:window", "Error"),
                           i18n("Error Occurred: %1\nCannot proceed any further.", transError));
 }
 
@@ -806,7 +806,7 @@ void FlickrTalker::slotFinished(QNetworkReply* reply)
         else
         {
             QMessageBox::critical(QApplication::activeWindow(),
-                                  i18n("Error"), reply->errorString());
+                                  i18nc("@title:window", "Error"), reply->errorString());
         }
 
         reply->deleteLater();
@@ -972,7 +972,7 @@ void FlickrTalker::parseResponseCreatePhotoSet(const QByteArray& data)
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Error code=" << code;
             QString msg  = node.toElement().attribute(QLatin1String("msg"));
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Msg=" << msg;
-            QMessageBox::critical(QApplication::activeWindow(), i18n("Error"), i18n("PhotoSet creation failed: ") + msg);
+            QMessageBox::critical(QApplication::activeWindow(), i18nc("@title:window", "Error"), i18n("PhotoSet creation failed: ") + msg);
         }
 
         node = node.nextSibling();

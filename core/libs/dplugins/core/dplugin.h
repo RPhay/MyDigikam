@@ -110,6 +110,29 @@ public:
     virtual void cleanUp() {};
 
     /**
+     * Return the online handbook section corresponding to this plugin.
+     * It's used in plugin dialog Help button.
+     * By default, no section is defined, and root page of the documentation is loaded by Help Button in this case.
+     */
+    virtual QString handbookSection() const;
+
+    /**
+     * Return the online handbook chapter from an handbook section corresponding to this plugin.
+     * It's used in plugin dialog Help button.
+     * By default, no chapter is defined, and root page of the section is loaded by Help Button in this case.
+     * Note: a chapter is always included in a section. See handbookSection() for details.
+     */
+    virtual QString handbookChapter() const;
+
+    /**
+     * Return the online handbook reference from an handbook chapter corresponding to this plugin.
+     * It's used in plugin dialog Help button.
+     * By default, no reference is defined, and root page of the chapter is loaded by Help Button in this case.
+     * Note: a reference is always included in a chapter. See handbookChapter() for details.
+     */
+    virtual QString handbookReference() const;
+
+    /**
      * Return true if plugin can be configured in setup dialog about the visibility property.
      * Default implementation return true.
      */

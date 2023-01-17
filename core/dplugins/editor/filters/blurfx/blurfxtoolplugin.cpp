@@ -64,6 +64,21 @@ QString BlurFXToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can apply blur effects to an image.");
 }
 
+QString BlurFXToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString BlurFXToolPlugin::handbookChapter() const
+{
+    return QLatin1String("effects_tools");
+}
+
+QString BlurFXToolPlugin::handbookReference() const
+{
+    return QLatin1String("effects-blurfx");
+}
+
 QList<DPluginAuthor> BlurFXToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

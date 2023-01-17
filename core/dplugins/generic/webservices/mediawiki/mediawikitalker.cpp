@@ -176,7 +176,7 @@ void MediaWikiTalker::slotUploadHandle(KJob* j)
 
         if (d->error.size() > 0)
         {
-            QMessageBox::critical(QApplication::activeWindow(), i18n("Error"), d->error);
+            QMessageBox::critical(QApplication::activeWindow(), i18nc("@title:window", "Error"), d->error);
         }
         else
         {

@@ -112,9 +112,13 @@ public:
     SetupCollections*        collectionsPage;
     SetupAlbumView*          albumViewPage;
     SetupToolTip*            tooltipPage;
+
 #ifdef HAVE_MEDIAPLAYER
+
     SetupVideo*              videoPage;
+
 #endif
+
     SetupMetadata*           metadataPage;
     SetupTemplate*           templatePage;
     SetupLightTable*         lighttablePage;
@@ -139,7 +143,7 @@ Setup::Setup(QWidget* const parent)
                    Qt::WindowCloseButtonHint     |
                    Qt::WindowMinMaxButtonsHint);
 
-    setWindowTitle(i18nc("@title", "Configure"));
+    setWindowTitle(i18nc("@title:window", "Configure"));
     setStandardButtons(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
     button(QDialogButtonBox::Ok)->setDefault(true);
     setFaceType(List);
@@ -166,10 +170,12 @@ Setup::Setup(QWidget* const parent)
     d->page_tooltip->setIcon(QIcon::fromTheme(QLatin1String("dialog-information")));
 
 #ifdef HAVE_MEDIAPLAYER
+
     d->videoPage  = new SetupVideo();
     d->page_video = addPage(d->videoPage, i18nc("@title: settings section", "Video"));
     d->page_video->setHeader(i18nc("@title", "Video Preview Settings\nCustomize settings to play video media"));
     d->page_video->setIcon(QIcon::fromTheme(QLatin1String("video-x-generic")));
+
 #endif
 
     d->metadataPage  = new SetupMetadata();
@@ -279,7 +285,7 @@ Setup::~Setup()
 
 void Setup::slotHelp()
 {
-    DXmlGuiWindow::openHandbook();
+    DXmlGuiWindow::openHandbook(QLatin1String("setup_application"));
 }
 
 void Setup::setTemplate(const Template& t)
@@ -519,9 +525,13 @@ void Setup::slotOkClicked()
     d->collectionsPage->applySettings();
     d->albumViewPage->applySettings();
     d->tooltipPage->applySettings();
+
 #ifdef HAVE_MEDIAPLAYER
+
     d->videoPage->applySettings();
+
 #endif
+
     d->metadataPage->applySettings();
     d->templatePage->applySettings();
     d->lighttablePage->applySettings();
@@ -546,9 +556,13 @@ void Setup::slotOkClicked()
 
 void Setup::slotCancelClicked()
 {
+
 #ifdef HAVE_MEDIAPLAYER
+
     d->videoPage->cancel();
+
 #endif
+
 }
 
 void Setup::showPage(Setup::Page page)
@@ -605,10 +619,12 @@ Setup::Page Setup::activePageIndex() const
     }
 
 #ifdef HAVE_MEDIAPLAYER
+
     if (cur == d->page_video)
     {
         return VideoPage;
     }
+
 #endif
 
     if (cur == d->page_metadata)
@@ -676,8 +692,10 @@ DConfigDlgWdgItem* Setup::Private::pageItem(Setup::Page page) const
             return page_tooltip;
 
 #ifdef HAVE_MEDIAPLAYER
+
         case Setup::VideoPage:
             return page_video;
+
 #endif
 
         case Setup::MetadataPage:

@@ -77,6 +77,16 @@ QString DigitalScannerPlugin::details() const
                 "<p>Target image can be post processed as crop and rotate.</p>");
 }
 
+QString DigitalScannerPlugin::handbookSection() const
+{
+    return QLatin1String("import_tools");
+}
+
+QString DigitalScannerPlugin::handbookChapter() const
+{
+    return QLatin1String("scanner_import");
+}
+
 QList<DPluginAuthor> DigitalScannerPlugin::authors() const
 {
     return QList<DPluginAuthor>()

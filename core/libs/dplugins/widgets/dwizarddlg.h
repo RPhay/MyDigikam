@@ -47,6 +47,7 @@ protected:
 private Q_SLOTS:
 
     void slotAboutPlugin();
+    void slotOnlineHandbook();
 
 private:
 

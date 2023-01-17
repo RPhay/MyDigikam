@@ -132,7 +132,7 @@ void AdvancedMetadataTab::slotResetToDefault()
 {
     const int result = DMessageBox::showContinueCancel(QMessageBox::Warning,
                                                        this,
-                                                       i18nc("@title: reset to default warning dialog", "Warning"),
+                                                       i18nc("@title:window, reset to default warning dialog", "Warning"),
                                                        i18nc("@info", "This option will reset configuration to default\n"
                                                                       "All your changes will be lost.\n "
                                                                       "Do you want to continue?"));

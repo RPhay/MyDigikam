@@ -1342,7 +1342,7 @@ public:
         else
         {
             QMessageBox::critical(QApplication::activeWindow(),
-                                  i18n("ERROR while creating observation"),
+                                  i18nc("@title:window", "ERROR While Creating Observation"),
                                   errorString);
         }
     }
@@ -1504,7 +1504,7 @@ public:
         else
         {
             QMessageBox::critical(QApplication::activeWindow(),
-                                  i18n("ERROR while creating observation"),
+                                  i18nc("@title:window", "ERROR While Creating Observation"),
                                   errorString);
         }
     }
@@ -1582,7 +1582,7 @@ public:
         else
         {
             QMessageBox::critical(QApplication::activeWindow(),
-                                  i18n("ERROR while uploading photo"),
+                                  i18nc("@title:window", "ERROR While Uploading Photo"),
                                   errorString);
         }
     }
@@ -1700,7 +1700,7 @@ public:
         else
         {
             QMessageBox::critical(QApplication::activeWindow(),
-                                  i18n("ERROR while uploading photo"),
+                                  i18nc("@title:window", "ERROR While Uploading Photo"),
                                   errorString);
         }
     }
@@ -1812,7 +1812,7 @@ public:
         else
         {
             QMessageBox::critical(QApplication::activeWindow(),
-                                  i18n("ERROR while deleting observation"),
+                                  i18nc("@title:window", "ERROR While Deleting Observation"),
                                   errorString);
         }
     }

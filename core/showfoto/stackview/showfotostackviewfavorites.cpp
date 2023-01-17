@@ -354,7 +354,7 @@ void ShowfotoStackViewFavorites::slotDelItem()
         return;
     }
 
-    if (QMessageBox::question(this, i18nc("@title: window", "Confirm Item Deletion"),
+    if (QMessageBox::question(this, i18nc("@title:window", "Confirm Item Deletion"),
                               i18nc("@info", "Are you sure you want to remove the item \"%1\"\n"
                                              "and all nested items if any?", fitem->name()))
             != QMessageBox::Yes)

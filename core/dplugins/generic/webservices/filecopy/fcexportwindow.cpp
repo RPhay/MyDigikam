@@ -50,6 +50,7 @@ public:
     }
 
     const static QString TARGET_URL_PROPERTY;
+    const static QString TARGET_SIDECARS;
     const static QString TARGET_OVERWRITE;
     const static QString TARGET_ALBUMPATH;
     const static QString TARGET_BEHAVIOR;
@@ -66,6 +67,7 @@ public:
 };
 
 const QString FCExportWindow::Private::TARGET_URL_PROPERTY     = QLatin1String("targetUrl");
+const QString FCExportWindow::Private::TARGET_SIDECARS         = QLatin1String("sidecars");
 const QString FCExportWindow::Private::TARGET_OVERWRITE        = QLatin1String("overwrite");
 const QString FCExportWindow::Private::TARGET_ALBUMPATH        = QLatin1String("albumPath");
 const QString FCExportWindow::Private::TARGET_BEHAVIOR         = QLatin1String("targetBehavior");
@@ -86,11 +88,11 @@ FCExportWindow::FCExportWindow(DInfoInterface* const iface, QWidget* const /*par
 
     // -- Window setup ------------------------------------------------------
 
-    setWindowTitle(i18n("Export to Local Storage"));
+    setWindowTitle(i18nc("@title:window", "Export to Local Storage"));
     setModal(false);
 
-    startButton()->setText(i18n("Start export"));
-    startButton()->setToolTip(i18n("Start export to the specified target"));
+    startButton()->setText(i18nc("@action:button", "Start Export"));
+    startButton()->setToolTip(i18nc("@info:tooltip, button", "Start export to the specified target"));
 
     connect(startButton(), SIGNAL(clicked()),
             this, SLOT(slotCopy()));
@@ -150,6 +152,7 @@ void FCExportWindow::restoreSettings()
     settings.imageFormat           = group.readEntry(d->IMAGE_FORMAT,            (int)FCContainer::JPEG);
     settings.imageResize           = group.readEntry(d->IMAGE_RESIZE,            1024);
     settings.imageCompression      = group.readEntry(d->IMAGE_COMPRESSION,       75);
+    settings.sidecars              = group.readEntry(d->TARGET_SIDECARS,         false);
     settings.overwrite             = group.readEntry(d->TARGET_OVERWRITE,        false);
     settings.albumPath             = group.readEntry(d->TARGET_ALBUMPATH,        false);
     settings.removeMetadata        = group.readEntry(d->REMOVE_METADATA,         false);
@@ -169,6 +172,7 @@ void FCExportWindow::saveSettings()
     group.writeEntry(d->IMAGE_FORMAT,            settings.imageFormat);
     group.writeEntry(d->IMAGE_RESIZE,            settings.imageResize);
     group.writeEntry(d->IMAGE_COMPRESSION,       settings.imageCompression);
+    group.writeEntry(d->TARGET_SIDECARS,         settings.sidecars);
     group.writeEntry(d->TARGET_OVERWRITE,        settings.overwrite);
     group.writeEntry(d->TARGET_ALBUMPATH,        settings.albumPath);
     group.writeEntry(d->REMOVE_METADATA,         settings.removeMetadata);
@@ -210,7 +214,7 @@ void FCExportWindow::slotCopyingFinished()
 
     if (!d->exportWidget->imagesList()->imageUrls().isEmpty())
     {
-        QMessageBox::information(this, i18n("Copy not completed"),
+        QMessageBox::information(this, i18nc("@title:window", "Copy not Completed"),
                                  i18n("Some of the items have not been copied "
                                       "and are still in the list. "
                                       "You can retry to copy these items now."));

@@ -64,6 +64,21 @@ QString CBToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can adjust color balance from image.");
 }
 
+QString CBToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString CBToolPlugin::handbookChapter() const
+{
+    return QLatin1String("color_tools");
+}
+
+QString CBToolPlugin::handbookReference() const
+{
+    return QLatin1String("color-balance");
+}
+
 QList<DPluginAuthor> CBToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

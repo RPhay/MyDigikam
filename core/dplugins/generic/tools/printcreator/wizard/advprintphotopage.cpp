@@ -1098,7 +1098,7 @@ void AdvPrintPhotoPage::slotListPhotoSizesSelected()
 
     if (!s)
     {
-        QMessageBox::warning(this, i18n("Custom layout"),
+        QMessageBox::warning(this, i18nc("@title:window", "Custom Layout"),
                              i18n("The selected custom photo size can "
                                   "not be applied to the paper size."));
 

@@ -112,10 +112,10 @@ FbWindow::FbWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
     setMainWidget(d->widget);
     setModal(false);
 
-    setWindowTitle(i18n("Export to Facebook Web Service"));
+    setWindowTitle(i18nc("@title:window", "Export to Facebook Web Service"));
 
-    startButton()->setText(i18n("Start Upload"));
-    startButton()->setToolTip(i18n("Start upload to Facebook web service"));
+    startButton()->setText(i18nc("@action:button", "Start Upload"));
+    startButton()->setToolTip(i18nc("@info:tooltip, button", "Start upload to Facebook web service"));
 
     d->widget->setMinimumSize(700, 500);
 
@@ -616,7 +616,7 @@ void FbWindow::slotAddPhotoDone(int errCode, const QString& errMsg)
     }
     else
     {
-        if (QMessageBox::question(this, i18n("Uploading Failed"),
+        if (QMessageBox::question(this, i18nc("@title:window", "Uploading Failed"),
                                   i18n("Failed to upload photo into Facebook: %1\n"
                                        "Do you want to continue?", errMsg))
             != QMessageBox::Yes)

@@ -64,6 +64,21 @@ QString ContentAwareResizeToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can resize an image with content analysis.");
 }
 
+QString ContentAwareResizeToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString ContentAwareResizeToolPlugin::handbookChapter() const
+{
+    return QLatin1String("transform_tools");
+}
+
+QString ContentAwareResizeToolPlugin::handbookReference() const
+{
+    return QLatin1String("transform-liquidrescale");
+}
+
 QList<DPluginAuthor> ContentAwareResizeToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

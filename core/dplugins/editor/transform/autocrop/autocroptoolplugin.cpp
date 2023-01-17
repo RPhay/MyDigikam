@@ -65,6 +65,21 @@ QString AutoCropToolPlugin::details() const
                           "generated while panorama stitching for example.");
 }
 
+QString AutoCropToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString AutoCropToolPlugin::handbookChapter() const
+{
+    return QLatin1String("transform_tools");
+}
+
+QString AutoCropToolPlugin::handbookReference() const
+{
+    return QLatin1String("transform-autocrop");
+}
+
 QList<DPluginAuthor> AutoCropToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

@@ -64,6 +64,21 @@ QString BlurToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can blur an image.");
 }
 
+QString BlurToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString BlurToolPlugin::handbookChapter() const
+{
+    return QLatin1String("enhancement_tools");
+}
+
+QString BlurToolPlugin::handbookReference() const
+{
+    return QLatin1String("enhance-blur");
+}
+
 QList<DPluginAuthor> BlurToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

@@ -64,6 +64,21 @@ QString InsertTextToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can insert text over an image.");
 }
 
+QString InsertTextToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString InsertTextToolPlugin::handbookChapter() const
+{
+    return QLatin1String("decorate_tools");
+}
+
+QString InsertTextToolPlugin::handbookReference() const
+{
+    return QLatin1String("decorate-inserttext");
+}
+
 QList<DPluginAuthor> InsertTextToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

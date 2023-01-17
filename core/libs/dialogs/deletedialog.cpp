@@ -45,6 +45,7 @@
 #include "digikam_debug.h"
 #include "applicationsettings.h"
 #include "coredburl.h"
+#include "dxmlguiwindow.h"
 
 namespace Digikam
 {
@@ -121,11 +122,11 @@ QString DeleteItem::fileUrl() const
 void DeleteItem::setThumb(const QPixmap& pix, bool hasThumb)
 {
     int iconSize = treeWidget()->iconSize().width();
-    QPixmap pixmap(iconSize+2, iconSize+2);
+    QPixmap pixmap(iconSize + 2, iconSize + 2);
     pixmap.fill(Qt::transparent);
     QPainter p(&pixmap);
-    p.drawPixmap((pixmap.width()/2)  - (pix.width()/2),
-                 (pixmap.height()/2) - (pix.height()/2), pix);
+    p.drawPixmap((pixmap.width()  / 2) - (pix.width()  / 2),
+                 (pixmap.height() / 2) - (pix.height() / 2), pix);
 
     QIcon icon = QIcon(pixmap);
 
@@ -489,7 +490,7 @@ DeleteDialog::DeleteDialog(QWidget* const parent)
 {
     setModal(true);
 
-    d->buttons             = new QDialogButtonBox(QDialogButtonBox::Apply | QDialogButtonBox::Cancel, this);
+    d->buttons             = new QDialogButtonBox(QDialogButtonBox::Apply | QDialogButtonBox::Cancel | QDialogButtonBox::Help, this);
     d->buttons->button(QDialogButtonBox::Apply)->setDefault(true);
 
     d->page                = new DeleteWidget(this);
@@ -513,6 +514,10 @@ DeleteDialog::DeleteDialog(QWidget* const parent)
 
     connect(d->buttons->button(QDialogButtonBox::Cancel), SIGNAL(clicked()),
             this, SLOT(reject()));
+
+    connect(d->buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
+            this, SLOT(slotHelp()));
+
 }
 
 DeleteDialog::~DeleteDialog()
@@ -652,14 +657,14 @@ void DeleteDialog::setListMode(DeleteDialogMode::ListMode mode)
     {
         case DeleteDialogMode::Files:
         {
-            setWindowTitle(i18n("About to delete selected items"));
+            setWindowTitle(i18nc("@title:window", "About to Delete Selected Items"));
             break;
         }
 
         case DeleteDialogMode::Albums:
         case DeleteDialogMode::Subalbums:
         {
-            setWindowTitle(i18n("About to delete selected albums"));
+            setWindowTitle(i18nc("@title:window", "About to Delete Selected Albums"));
             break;
         }
     }
@@ -687,6 +692,11 @@ void DeleteDialog::keyPressEvent(QKeyEvent* e)
     }
 
     QDialog::keyPressEvent(e);
+}
+
+void DeleteDialog::slotHelp()
+{
+    DXmlGuiWindow::openHandbook(QLatin1String("main_window"), QLatin1String("image_view"), QLatin1String("deleting-photograph"));
 }
 
 } // namespace Digikam

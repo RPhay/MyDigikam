@@ -113,6 +113,16 @@ QString GLViewerPlugin::details() const
                 "</table>");
 }
 
+QString GLViewerPlugin::handbookSection() const
+{
+    return QLatin1String("slideshow_tools");
+}
+
+QString GLViewerPlugin::handbookChapter() const
+{
+    return QLatin1String("opengl_viewer");
+}
+
 QList<DPluginAuthor> GLViewerPlugin::authors() const
 {
     return QList<DPluginAuthor>()
@@ -160,14 +170,14 @@ void GLViewerPlugin::slotGLViewer()
         case oglNoRectangularTexture:
         {
             qCCritical(DIGIKAM_DPLUGIN_GENERIC_LOG) << "GL_ARB_texture_rectangle not supported";
-            QMessageBox::critical(nullptr, i18n("OpenGL error"), i18n("GL_ARB_texture_rectangle not supported"));
+            QMessageBox::critical(nullptr, i18n("OpenGL Error"), i18n("GL_ARB_texture_rectangle not supported"));
             break;
         }
 
         case oglNoContext:
         {
             qCCritical(DIGIKAM_DPLUGIN_GENERIC_LOG) << "no OpenGL context found";
-            QMessageBox::critical(nullptr, i18n("OpenGL error"), i18n("No OpenGL context found"));
+            QMessageBox::critical(nullptr, i18n("OpenGL Error"), i18n("No OpenGL context found"));
             break;
         }
     }

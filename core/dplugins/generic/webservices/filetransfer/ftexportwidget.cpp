@@ -159,7 +159,7 @@ void FTExportWidget::slotShowTargetDialogClicked(bool checked)
 {
     Q_UNUSED(checked);
 
-    QPointer<DFileDialog> targetDialog = new DFileDialog(this, i18n("Select target..."),
+    QPointer<DFileDialog> targetDialog = new DFileDialog(this, i18nc("@title:window", "Select Target..."),
                                                          d->targetUrl.toString(), i18n("All Files (*)"));
     targetDialog->setAcceptMode(QFileDialog::AcceptSave);
     targetDialog->setFileMode(QFileDialog::Directory);

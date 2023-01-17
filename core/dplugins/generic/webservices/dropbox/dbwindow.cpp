@@ -75,10 +75,10 @@ DBWindow::DBWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
 
     setMainWidget(d->widget);
     setModal(false);
-    setWindowTitle(i18n("Export to Dropbox"));
+    setWindowTitle(i18nc("@title:window", "Export to Dropbox"));
 
-    startButton()->setText(i18n("Start Upload"));
-    startButton()->setToolTip(i18n("Start upload to Dropbox"));
+    startButton()->setText(i18nc("@action:button", "Start Upload"));
+    startButton()->setToolTip(i18nc("@info:tooltip, button", "Start upload to Dropbox"));
 
     d->widget->setMinimumSize(700, 500);
 
@@ -248,7 +248,7 @@ void DBWindow::slotStartTransfer()
 
     if (!(d->talker->authenticated()))
     {
-        if (QMessageBox::question(this, i18n("Login Failed"),
+        if (QMessageBox::question(this, i18nc("@title:window", "Login Failed"),
                                   i18n("Authentication failed. Do you want to try again?"))
             == QMessageBox::Yes)
         {
@@ -314,7 +314,7 @@ void DBWindow::uploadNextPhoto()
 
 void DBWindow::slotAddPhotoFailed(const QString& msg)
 {
-    if (QMessageBox::question(this, i18n("Uploading Failed"),
+    if (QMessageBox::question(this, i18nc("@title:window", "Uploading Failed"),
                               i18n("Failed to upload photo to Dropbox."
                                    "\n%1\n"
                                    "Do you want to continue?", msg))
@@ -372,7 +372,7 @@ void DBWindow::slotSignalLinkingFailed()
     slotSetUserName(QLatin1String(""));
     d->widget->getAlbumsCoB()->clear();
 
-    if (QMessageBox::question(this, i18n("Login Failed"),
+    if (QMessageBox::question(this, i18nc("@title:window", "Login Failed"),
                               i18n("Authentication failed. Do you want to try again?"))
         == QMessageBox::Yes)
     {

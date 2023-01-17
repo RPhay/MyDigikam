@@ -64,6 +64,21 @@ QString Convert8To16ToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can convert image color depth to 16 bits.");
 }
 
+QString Convert8To16ToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString Convert8To16ToolPlugin::handbookChapter() const
+{
+    return QLatin1String("color_tools");
+}
+
+QString Convert8To16ToolPlugin::handbookReference() const
+{
+    return QLatin1String("color-depth");
+}
+
 QList<DPluginAuthor> Convert8To16ToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

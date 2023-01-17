@@ -915,7 +915,7 @@ void ResizeTool::slotRestorationToggled(bool b)
 
 void ResizeTool::slotLoadSettings()
 {
-    QUrl loadBlowupFile = DFileDialog::getOpenFileUrl(qApp->activeWindow(), i18n("Photograph Resizing Settings File to Load"),
+    QUrl loadBlowupFile = DFileDialog::getOpenFileUrl(qApp->activeWindow(), i18nc("@title:window", "Photograph Resizing Settings File to Load"),
                                                       QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)),
                                                       QLatin1String("*"));
 
@@ -948,7 +948,7 @@ void ResizeTool::slotLoadSettings()
 
 void ResizeTool::slotSaveAsSettings()
 {
-    QUrl saveBlowupFile = DFileDialog::getSaveFileUrl(qApp->activeWindow(), i18n("Photograph Resizing Settings File to Save"),
+    QUrl saveBlowupFile = DFileDialog::getSaveFileUrl(qApp->activeWindow(), i18nc("@title:window", "Photograph Resizing Settings File to Save"),
                                                       QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)),
                                                       QLatin1String("*"));
 

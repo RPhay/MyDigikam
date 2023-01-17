@@ -19,14 +19,14 @@
 
 #include "dplugineditor.h"
 
-#define DPLUGIN_IID "org.kde.digikam.plugin.editor.LocalContrastTool"
+#define DPLUGIN_IID "org.kde.digikam.plugin.editor.NoiseReductionToolPlugin"
 
 using namespace Digikam;
 
 namespace DigikamEditorNoiseReductionToolPlugin
 {
 
-class LocalContrastToolPlugin : public DPluginEditor
+class NoiseReductionToolPlugin : public DPluginEditor
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID DPLUGIN_IID)
@@ -34,8 +34,8 @@ class LocalContrastToolPlugin : public DPluginEditor
 
 public:
 
-    explicit LocalContrastToolPlugin(QObject* const parent = nullptr);
-    ~LocalContrastToolPlugin()           override;
+    explicit NoiseReductionToolPlugin(QObject* const parent = nullptr);
+    ~NoiseReductionToolPlugin()           override;
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -43,6 +43,9 @@ public:
     QString details()              const override;
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
+    QString handbookSection()      const override;
+    QString handbookChapter()      const override;
+    QString handbookReference()    const override;
 
     void setup(QObject* const)           override;
 

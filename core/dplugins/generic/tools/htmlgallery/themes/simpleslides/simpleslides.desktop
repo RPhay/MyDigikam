@@ -2,6 +2,7 @@
 Type=Theme
 Name=Simple Slideshow
 Name[be]=Простае слайд-шоу
+Name[bg]=Обикновено слайдшоу
 Name[ca]=Passi de diapositives senzill
 Name[ca@valencia]=Passe de diapositives senzill
 Name[cs]=Jednoduché promítání
@@ -32,6 +33,7 @@ Name[x-test]=xxSimple Slideshowxx
 Name[zh_CN]=简洁幻灯片
 Comment=A slideshow designed for a kiosk-mode display. Generated from a simple template with javascript and css embedded into a single index.html file.
 Comment[be]=Слайд-шоу распрацоўвалася для паказу ў рэжыме кіёска. Створана па простым шаблоне з javascript і css, убудаванымі ў адзін файл index.html.
+Comment[bg]=Слайдшоу, предназначено за дисплей в киоск-режим. Генерира се от прост шаблон с javascript и css, вградени в един файл index.html.
 Comment[ca]=Un passi de diapositives dissenyat per a una pantalla en mode quiosc. Generat des d'una plantilla senzilla amb Javascript i CSS incrustat en un únic fitxer «index.html».
 Comment[ca@valencia]=Un passe de diapositives dissenyat per a una pantalla en mode quiosc. Generat des d'una plantilla senzilla amb Javascript i CSS incrustat en un únic fitxer «index.html».
 Comment[de]=Eine Diaschau entworfen für eine Anzeige im Kiosk-Modus. Sie wirdaus einer einfachen Vorlage mit JavaScript und CSS generiert.
@@ -95,6 +97,7 @@ Url=mailto:sjk281@iinet.net.au
 [X-HTMLGallery Parameter delay]
 Name=Time between slides (seconds)
 Name[be]=Інтэрвал паміж слайдамі ў секундах
+Name[bg]=Време между слайдовете (секунди)
 Name[ca]=Temps entre diapositives (segons)
 Name[ca@valencia]=Temps entre diapositives (segons)
 Name[cs]=Interval mezi obrázky (v sekundách)
@@ -172,6 +175,7 @@ Caption-2=None
 [X-HTMLGallery Preview]
 Name=Simple Slideshow
 Name[be]=Простае слайд-шоу
+Name[bg]=Обикновено слайдшоу
 Name[ca]=Passi de diapositives senzill
 Name[ca@valencia]=Passe de diapositives senzill
 Name[cs]=Jednoduché promítání

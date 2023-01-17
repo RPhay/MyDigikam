@@ -542,7 +542,7 @@ bool GPSSearchView::checkName(QString& name)
                              "Please enter a new name:");
         bool ok;
         QString newTitle = QInputDialog::getText(this,
-                                                 i18n("Name exists"),
+                                                 i18nc("@title:window", "Name Exists"),
                                                  label,
                                                  QLineEdit::Normal,
                                                  name,

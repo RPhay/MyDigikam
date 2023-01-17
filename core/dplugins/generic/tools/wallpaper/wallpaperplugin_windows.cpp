@@ -65,7 +65,7 @@ bool s_checkErrorCode(HRESULT status, const QString& path, const QString& contex
 
         QMessageBox::warning(nullptr,
                              i18nc("@title:window",
-                                   "Error while to set image as wallpaper"),
+                                   "Error While to Set Image as Wallpaper"),
                              i18n("Cannot change wallpaper image from current desktop with\n"
                                   "%1\n\nContext: %2\n\nError: %3",
                                   path,

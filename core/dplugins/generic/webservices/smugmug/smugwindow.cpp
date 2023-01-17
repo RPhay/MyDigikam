@@ -118,19 +118,19 @@ SmugWindow::SmugWindow(DInfoInterface* const iface,
 
     if (import)
     {
-        setWindowTitle(i18n("Import from SmugMug Web Service"));
+        setWindowTitle(i18nc("@title:window", "Import from SmugMug Web Service"));
 
-        startButton()->setText(i18n("Start Download"));
-        startButton()->setToolTip(i18n("Start download from SmugMug web service"));
+        startButton()->setText(i18nc("@action:button", "Start Download"));
+        startButton()->setToolTip(i18nc("@info:tooltip, button", "Start download from SmugMug web service"));
 
         d->widget->setMinimumSize(300, 400);
     }
     else
     {
-        setWindowTitle(i18n("Export to SmugMug Web Service"));
+        setWindowTitle(i18nc("@title:window", "Export to SmugMug Web Service"));
 
-        startButton()->setText(i18n("Start Upload"));
-        startButton()->setToolTip(i18n("Start upload to SmugMug web service"));
+        startButton()->setText(i18nc("@action:button", "Start Upload"));
+        startButton()->setToolTip(i18nc("@info:tooltip, button", "Start upload to SmugMug web service"));
 
         d->widget->setMinimumSize(700, 500);
     }
@@ -439,7 +439,7 @@ void SmugWindow::slotLoginDone(int errCode, const QString& errMsg)
     }
     else
     {
-        QMessageBox::critical(QApplication::activeWindow(), i18n("Error"), i18n("SmugMug Call Failed: %1\n", errMsg));
+        QMessageBox::critical(QApplication::activeWindow(), i18nc("@title:window", "Error"), i18n("SmugMug call failed: %1\n", errMsg));
     }
 }
 
@@ -448,7 +448,7 @@ void SmugWindow::slotListAlbumsDone(int errCode, const QString& errMsg,
 {
     if (errCode != 0)
     {
-        QMessageBox::critical(QApplication::activeWindow(), i18n("Error"), i18n("SmugMug Call Failed: %1\n", errMsg));
+        QMessageBox::critical(QApplication::activeWindow(), i18nc("@title:window", "Error"), i18n("SmugMug call failed: %1\n", errMsg));
         return;
     }
 
@@ -486,7 +486,7 @@ void SmugWindow::slotListPhotosDone(int errCode, const QString& errMsg,
 {
     if (errCode != 0)
     {
-        QMessageBox::critical(QApplication::activeWindow(), i18n("Error"), i18n("SmugMug Call Failed: %1\n", errMsg));
+        QMessageBox::critical(QApplication::activeWindow(), i18nc("@title:window", "Error"), i18n("SmugMug call failed: %1\n", errMsg));
         return;
     }
 
@@ -523,7 +523,7 @@ void SmugWindow::slotListAlbumTmplDone(int errCode, const QString& errMsg,
 
     if (errCode != 0)
     {
-        QMessageBox::critical(QApplication::activeWindow(), i18n("Error"), i18n("SmugMug Call Failed: %1\n", errMsg));
+        QMessageBox::critical(QApplication::activeWindow(), i18nc("@title:window", "Error"), i18n("SmugMug call failed: %1\n", errMsg));
         return;
     }
 
@@ -567,7 +567,7 @@ void SmugWindow::slotListCategoriesDone(int errCode,
 {
     if (errCode != 0)
     {
-        QMessageBox::critical(QApplication::activeWindow(), i18n("Error"), i18n("SmugMug Call Failed: %1\n", errMsg));
+        QMessageBox::critical(QApplication::activeWindow(), i18nc("@title:window", "Error"), i18n("SmugMug call failed: %1\n", errMsg));
         return;
     }
 
@@ -598,8 +598,8 @@ void SmugWindow::slotListSubCategoriesDone(int errCode,
 
     if (errCode != 0)
     {
-        QMessageBox::critical(QApplication::activeWindow(), i18n("Error"),
-                              i18n("SmugMug Call Failed: %1\n", errMsg));
+        QMessageBox::critical(QApplication::activeWindow(), i18nc("@title:window", "Error"),
+                              i18n("SmugMug call failed: %1\n", errMsg));
         return;
     }
 
@@ -667,13 +667,13 @@ void SmugWindow::slotUserChangeRequest(bool /*anonymous*/)
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Slot Change User Request";
 
     QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-                                                 i18nc("@title: window", "Warning"),
+                                                 i18nc("@title:window", "Warning"),
                                                  i18n("You will be logged out of your account, "
                                                  "click \"Continue\" to authenticate for another account."),
                                                  QMessageBox::Yes | QMessageBox::No);
 
-    (warn->button(QMessageBox::Yes))->setText(i18n("Continue"));
-    (warn->button(QMessageBox::No))->setText(i18n("Cancel"));
+    (warn->button(QMessageBox::Yes))->setText(i18nc("@action:button", "Continue"));
+    (warn->button(QMessageBox::No))->setText(i18nc("@action:button", "Cancel"));
 
     if (warn->exec() == QMessageBox::Yes)
     {
@@ -915,7 +915,7 @@ void SmugWindow::slotAddPhotoDone(int errCode, const QString& errMsg)
     }
     else
     {
-        if (QMessageBox::question(this, i18n("Uploading Failed"),
+        if (QMessageBox::question(this, i18nc("@title:window", "Uploading Failed"),
                               i18n("Failed to upload photo to SmugMug."
                                    "\n%1\n"
                                    "Do you want to continue?", errMsg))
@@ -981,7 +981,7 @@ void SmugWindow::slotGetPhotoDone(int errCode,
         }
         else
         {
-            if (QMessageBox::question(this, i18n("Processing Failed"),
+            if (QMessageBox::question(this, i18nc("@title:window", "Processing Failed"),
                                       i18n("Failed to save photo: %1\n"
                                            "Do you want to continue?", errText))
                 != QMessageBox::Yes)
@@ -994,7 +994,7 @@ void SmugWindow::slotGetPhotoDone(int errCode,
     }
     else
     {
-        if (QMessageBox::question(this, i18n("Processing Failed"),
+        if (QMessageBox::question(this, i18nc("@title:window", "Processing Failed"),
                                   i18n("Failed to download photo: %1\n"
                                        "Do you want to continue?", errMsg))
                 != QMessageBox::Yes)
@@ -1015,7 +1015,7 @@ void SmugWindow::slotCreateAlbumDone(int errCode,
 {
     if (errCode != 0)
     {
-        QMessageBox::critical(QApplication::activeWindow(), i18n("Error"), i18n("SmugMug Call Failed: %1\n", errMsg));
+        QMessageBox::critical(QApplication::activeWindow(), i18nc("@title:window", "Error"), i18n("SmugMug call failed: %1\n", errMsg));
         return;
     }
 

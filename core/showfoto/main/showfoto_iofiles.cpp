@@ -75,7 +75,7 @@ void Showfoto::moveFile()
     }
     else
     {
-        QMessageBox::critical(this, i18n("Error Saving File"),
+        QMessageBox::critical(this, i18nc("@title:window", "Error Saving File"),
                               i18n("Failed to save file: %1",
                               i18n("Remote file handling is not supported")));
     }

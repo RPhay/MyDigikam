@@ -264,7 +264,7 @@ void SlideToolBar::slotChangeDelayButtonPressed()
         d->playBtn->animateClick();
     }
 
-    delay = QInputDialog::getInt(this, i18n("Specify delay for slide show"),
+    delay = QInputDialog::getInt(this, i18nc("@title:window", "Specify Delay for Slide Show"),
                                        i18n("Delay:"), delay, 1, 3600, 1, &ok);
 
     if (ok)
@@ -426,7 +426,7 @@ void SlideToolBar::slotRemoveImage()
     }
 
     QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Question,
-             i18n("Delete image"),
+             i18nc("@title:window", "Delete Image"),
              i18n("Do you want to move this image to the trash?"),
              QMessageBox::Yes | QMessageBox::No, this);
 

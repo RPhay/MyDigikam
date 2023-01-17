@@ -342,7 +342,7 @@ public:
      * Return the XMP Sidecar file path for a item file path.
      * If item file path do not include a file name or is empty, this function return a null string.
      */
-    static QString sidecarFilePathForFile(const QString& path, bool useLR = false);
+    static QString sidecarFilePathForFile(const QString& path);
 
     /**
      * Like sidecarFilePathForFile(), but works for local file path.

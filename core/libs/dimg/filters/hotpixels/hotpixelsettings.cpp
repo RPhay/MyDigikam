@@ -228,7 +228,7 @@ void HotPixelSettings::slotAddBlackFrame()
     {
         if (d->blackFrameListView->contains(url))
         {
-            QMessageBox::information(this, i18n("Black Frame Parser"),
+            QMessageBox::information(this, i18nc("@title:window", "Black Frame Parser"),
                                      i18n("This black frame image is already present in the list of parsed items."));
 
             return;

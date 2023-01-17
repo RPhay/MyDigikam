@@ -54,6 +54,7 @@ public:
         imageFormat          (JPEG),
         imageResize          (1024),
         imageCompression     (75),
+        sidecars             (false),
         overwrite            (false),
         albumPath            (false),
         removeMetadata       (false),
@@ -77,6 +78,7 @@ public:
     int             imageResize;
     int             imageCompression;
 
+    bool            sidecars;
     bool            overwrite;
     bool            albumPath;
     bool            removeMetadata;

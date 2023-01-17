@@ -631,6 +631,22 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
 
         return field;
     }
+    else if (name == QLatin1String("country"))
+    {
+        // choice
+
+        SearchFieldChoice* const field = new SearchFieldChoice(parent);
+        field->setFieldName(name);
+        field->setText(i18n("Country"), i18n("Country of the location shown in the item"));
+
+        QStringList countries = CoreDbAccess().db()->getAllImagePropertiesByName(QLatin1String("country"));
+        countries            += countries;
+        countries.sort();
+
+        field->setChoice(countries);
+
+        return field;
+    }
     else if (name == QLatin1String("creator"))
     {
         SearchFieldText* const field = new SearchFieldText(parent);

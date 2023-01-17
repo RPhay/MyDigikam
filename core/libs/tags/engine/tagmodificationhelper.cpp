@@ -291,7 +291,7 @@ void TagModificationHelper::slotTagDelete(TAlbum* t)
         message = i18n("Delete '%1' tag?", tag->title());
     }
 
-    int result = QMessageBox::warning(qApp->activeWindow(), i18n("Delete Tag"),
+    int result = QMessageBox::warning(qApp->activeWindow(), i18nc("@title:window", "Delete Tag"),
                                       message,
                                       QMessageBox::Yes | QMessageBox::Cancel);
 
@@ -404,7 +404,7 @@ void TagModificationHelper::slotMultipleTagDel(const QList<TAlbum*>& tags)
         message = i18n("Delete '%1' tag(s)?", tagWithoutImages);
     }
 
-    int result = QMessageBox::warning(qApp->activeWindow(), i18n("Delete Tag"),
+    int result = QMessageBox::warning(qApp->activeWindow(), i18nc("@title:window", "Delete Tag"),
                                       message,
                                       QMessageBox::Yes | QMessageBox::Cancel);
 

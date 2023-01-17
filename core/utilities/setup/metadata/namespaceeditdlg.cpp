@@ -141,11 +141,11 @@ NamespaceEditDlg::NamespaceEditDlg(bool create,
 
     if (create)
     {
-        setWindowTitle(i18n("New Xmp Namespace"));
+        setWindowTitle(i18nc("@title:window", "New XMP Namespace"));
     }
     else
     {
-        setWindowTitle(i18n("Edit Xmp Namespace"));
+        setWindowTitle(i18nc("@title:window", "Edit XMP Namespace"));
     }
 
     d->create = create;
@@ -710,7 +710,7 @@ void NamespaceEditDlg::accept()
 
 void NamespaceEditDlg::slotHelp()
 {
-    DXmlGuiWindow::openHandbook();
+    DXmlGuiWindow::openHandbook(QLatin1String("setup_application"), QLatin1String("metadata_settings"), QLatin1String("metadata-advanced"));
 }
 
 } // namespace Digikam

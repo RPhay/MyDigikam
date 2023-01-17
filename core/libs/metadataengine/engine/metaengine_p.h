@@ -108,6 +108,7 @@
 // Local includes
 
 #include "metaengine_mergehelper.h"
+#include "metaenginesettings.h"
 
 namespace Digikam
 {

@@ -55,7 +55,7 @@ void Showfoto::slotOpenFolder()
         return;
     }
 
-    QUrl url = DFileDialog::getExistingDirectoryUrl(this, i18n("Open Images From Folder"),
+    QUrl url = DFileDialog::getExistingDirectoryUrl(this, i18nc("@title:window", "Open Images from Folder"),
                                                     d->lastOpenedDirectory);
     if (!url.isEmpty())
     {
@@ -318,7 +318,7 @@ void Showfoto::slotOpenUrl(const ShowfotoItemInfo& info)
     }
     else
     {
-        QMessageBox::critical(this, i18n("Error Loading File"),
+        QMessageBox::critical(this, i18nc("@title:window", "Error Loading File"),
                               i18n("Failed to load file: \"%1\"\n"
                                    "Remote file handling is not supported",
                                    info.url.fileName()));

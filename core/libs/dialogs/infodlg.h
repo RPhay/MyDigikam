@@ -49,7 +49,7 @@ public:
 
 private Q_SLOTS:
 
-    void slotHelp();
+    virtual void slotHelp();
     virtual void slotCopy2ClipBoard();
 
 private:

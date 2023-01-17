@@ -65,7 +65,7 @@ InfoDlg::InfoDlg(QWidget* const parent)
       d      (new Private)
 {
     setModal(false);
-    setWindowTitle(i18n("Shared Libraries and Components Information"));
+    setWindowTitle(i18nc("@title:window", "Shared Libraries and Components Information"));
 
     d->buttons = new QDialogButtonBox(QDialogButtonBox::Help  |
                                       QDialogButtonBox::Apply |

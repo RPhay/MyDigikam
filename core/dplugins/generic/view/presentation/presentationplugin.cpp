@@ -70,6 +70,16 @@ QString PresentationPlugin::details() const
                  "You can add a sound-track in background while your presentation.");
 }
 
+QString PresentationPlugin::handbookSection() const
+{
+    return QLatin1String("slideshow_tools");
+}
+
+QString PresentationPlugin::handbookChapter() const
+{
+    return QLatin1String("presentation_tool");
+}
+
 QList<DPluginAuthor> PresentationPlugin::authors() const
 {
     return QList<DPluginAuthor>()

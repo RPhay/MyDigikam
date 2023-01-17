@@ -814,8 +814,8 @@ void MainWindow::changeAudioTrack(QAction* action)
     if (track < 0)
     {
         QString f = QFileDialog::getOpenFileName(nullptr,
-                                                 i18nc("@title",
-                                                       "Open an external audio track"));
+                                                 i18nc("@title:window",
+                                                       "Open an External Audio Track"));
 
         if (f.isEmpty())
         {

@@ -61,7 +61,7 @@ ScanDialog::ScanDialog(KSaneWidget* const saneWdg, QWidget* const parent)
     : DPluginDialog(parent, QLatin1String("Scan Tool Dialog")),
       d            (new Private)
 {
-    setWindowTitle(i18n("Scan Image"));
+    setWindowTitle(i18nc("@title:window", "Scan Image"));
     setModal(false);
 
     d->saneWidget          = saneWdg;
@@ -164,7 +164,7 @@ void ScanDialog::slotSaveImage(const QImage& image_data)
     QLatin1String defaultMimeType("image/png");
     QLatin1String defaultFileName("image.png");
 
-    QPointer<DFileDialog> imageFileSaveDialog = new DFileDialog(nullptr, i18n("New Image File Name"), d->targetDir);
+    QPointer<DFileDialog> imageFileSaveDialog = new DFileDialog(nullptr, i18nc("@title:window", "New Image File Name"), d->targetDir);
     imageFileSaveDialog->setAcceptMode(QFileDialog::AcceptSave);
     imageFileSaveDialog->setMimeTypeFilters(writableMimetypes);
     imageFileSaveDialog->selectMimeTypeFilter(defaultMimeType);
@@ -212,7 +212,7 @@ void ScanDialog::slotSaveImage(const QImage& image_data)
 
         if (!imgExtList.contains(format.toLatin1()) && !imgExtList.contains(format.toLower().toLatin1()))
         {
-            QMessageBox::critical(nullptr, i18n("Unsupported Format"),
+            QMessageBox::critical(nullptr, i18nc("@title:window", "Unsupported Format"),
                                   i18n("The target image file format \"%1\" is unsupported.", format));
 
             qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "target image file format " << format << " is unsupported!";
@@ -225,7 +225,7 @@ void ScanDialog::slotSaveImage(const QImage& image_data)
 
     if (!newURL.isValid())
     {
-        QMessageBox::critical(nullptr, i18n("Cannot Save File"),
+        QMessageBox::critical(nullptr, i18nc("@title:window", "Cannot Save File"),
                               i18n("Failed to save file\n\"%1\" to\n\"%2\".",
                               newURL.fileName(),
                               QDir::toNativeSeparators(newURL.toLocalFile().section(QLatin1Char('/'), -2, -2))));
@@ -241,7 +241,7 @@ void ScanDialog::slotSaveImage(const QImage& image_data)
 
     if (fi.exists())
     {
-        int result = QMessageBox::warning(nullptr, i18n("Overwrite File?"),
+        int result = QMessageBox::warning(nullptr, i18nc("@title:window", "Overwrite File?"),
                                           i18n("A file named \"%1\" already "
                                                "exists. Are you sure you want "
                                                "to overwrite it?",
@@ -301,7 +301,7 @@ void ScanDialog::slotThreadDone(const QUrl& url, bool success)
 {
     if (!success)
     {
-        QMessageBox::critical(nullptr, i18n("File Not Saved"), i18n("Cannot save \"%1\" file", url.fileName()));
+        QMessageBox::critical(nullptr, i18nc("@title:window", "File Not Saved"), i18n("Cannot save \"%1\" file", url.fileName()));
     }
 
     d->progress->setProgressText(QString());

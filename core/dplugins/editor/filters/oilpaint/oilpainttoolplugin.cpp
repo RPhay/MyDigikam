@@ -64,6 +64,21 @@ QString OilPaintToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can emulate oil painting over an image.");
 }
 
+QString OilPaintToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString OilPaintToolPlugin::handbookChapter() const
+{
+    return QLatin1String("effects_tools");
+}
+
+QString OilPaintToolPlugin::handbookReference() const
+{
+    return QLatin1String("effects-oilpaint");
+}
+
 QList<DPluginAuthor> OilPaintToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

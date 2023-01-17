@@ -689,22 +689,22 @@ void ShowfotoStackViewFavoriteItemDlg::slotTypeActivated()
     {
         if (d->create)
         {
-            setWindowTitle(i18nc("@title", "New Favorite Item"));
+            setWindowTitle(i18nc("@title:window", "New Favorite Item"));
         }
         else
         {
-            setWindowTitle(i18nc("@title", "Edit Favorite Item"));
+            setWindowTitle(i18nc("@title:window", "Edit Favorite Item"));
         }
     }
     else
     {
         if (d->create)
         {
-            setWindowTitle(i18nc("@title", "New Favorite Folder"));
+            setWindowTitle(i18nc("@title:window", "New Favorite Folder"));
         }
         else
         {
-            setWindowTitle(i18nc("@title", "Edit Favorite Folder"));
+            setWindowTitle(i18nc("@title:window", "Edit Favorite Folder"));
         }
     }
 
@@ -761,7 +761,7 @@ void ShowfotoStackViewFavoriteItemDlg::slotDateAverageButtonClicked()
     }
     else
     {
-        QMessageBox::critical(this, i18nc("@title: favorite item properties", "Could Not Calculate Average"),
+        QMessageBox::critical(this, i18nc("@title:window, favorite item properties", "Could not Calculate Average"),
                                     i18nc("@info: favorite item properties",  "Could not calculate date average for this favorite item."));
     }
 }

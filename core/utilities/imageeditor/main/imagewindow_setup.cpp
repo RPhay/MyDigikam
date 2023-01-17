@@ -57,7 +57,7 @@ void ImageWindow::setupActions()
 
     // ---------------------------------------------------------------------------------
 
-    createHelpActions();
+    createHelpActions(QLatin1String("image_editor"));
 
     // Labels shortcuts must be registered here to be saved in XML GUI files if user customize it.
 

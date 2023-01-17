@@ -112,7 +112,7 @@ WorkflowList::WorkflowList(QWidget* const parent)
     {
         DMessageBox::showInformationList(QMessageBox::Information,
                                          qApp->activeWindow(),
-                                         i18nc("@title", "Batch Queue Manager"),
+                                         i18nc("@title:window", "Batch Queue Manager"),
                                          i18nc("@info", "Some Workflows cannot be loaded from your config file due to an incompatible "
                                                         "version of a tool."),
                                          failed);
@@ -310,7 +310,7 @@ void WorkflowList::slotContextMenu()
     else if (choice == delAction)
     {
         int result = QMessageBox::warning(qApp->activeWindow(),
-                                  i18nc("@title", "Delete Workflow?"),
+                                  i18nc("@title:window", "Delete Workflow?"),
                                   i18nc("@info", "Are you sure you want to "
                                                  "delete the selected workflow "
                                                  "\"%1\"?", item->title()),

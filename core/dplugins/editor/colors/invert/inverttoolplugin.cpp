@@ -64,6 +64,21 @@ QString InvertToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can invert colors from image.");
 }
 
+QString InvertToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString InvertToolPlugin::handbookChapter() const
+{
+    return QLatin1String("color_tools");
+}
+
+QString InvertToolPlugin::handbookReference() const
+{
+    return QLatin1String("color-invert");
+}
+
 QList<DPluginAuthor> InvertToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

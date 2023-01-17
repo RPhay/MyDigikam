@@ -49,6 +49,10 @@ private:
     RuleDialog(const RuleDialog&)            = delete;
     RuleDialog& operator=(const RuleDialog&) = delete;
 
+private Q_SLOTS:
+
+    void slotHelp();
+
 private:
 
     class Private;

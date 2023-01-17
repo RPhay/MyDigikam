@@ -109,6 +109,7 @@ Q_SIGNALS:
 private Q_SLOTS:
 
     void slotAboutPlugin();
+    void slotHelpPlugin();
 
 private:
 

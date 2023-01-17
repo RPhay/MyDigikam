@@ -65,6 +65,21 @@ QString HealingCloneToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can fix image artifacts by cloning area.");
 }
 
+QString HealingCloneToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString HealingCloneToolPlugin::handbookChapter() const
+{
+    return QLatin1String("enhancement_tools");
+}
+
+QString HealingCloneToolPlugin::handbookReference() const
+{
+    return QLatin1String("enhance-clone");
+}
+
 QList<DPluginAuthor> HealingCloneToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

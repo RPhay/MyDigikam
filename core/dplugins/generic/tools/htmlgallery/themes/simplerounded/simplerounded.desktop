@@ -2,6 +2,7 @@
 Type=Theme
 Name=Simple Rounded
 Name[be]=Простая са скругленнямі
+Name[bg]=Обикновено закръглени
 Name[ca]=Arrodonit senzill
 Name[ca@valencia]=Arredonit senzill
 Name[cs]=Jednoduchý zaoblený
@@ -33,6 +34,7 @@ Name[x-test]=xxSimple Roundedxx
 Name[zh_CN]=简易圆角
 Comment=A theme with rounded corners and page support on big galeries
 Comment[be]=Тэма са скругленымі вугламі і падтрымкай старонак для вялікіх галерэй
+Comment[bg]=Тема със заоблени ъгли и поддръжка на страници в големи галерии
 Comment[ca]=Un tema amb cantonades arrodonides que admet pàgines en galeries grans
 Comment[ca@valencia]=Un tema amb cantons arredonits que admet pàgines en galeries grans
 Comment[cs]=Motiv se zaoblenými rohy a podporou stránkování u velkých galerií
@@ -139,6 +141,7 @@ Default[de]=Galerie
 [X-HTMLGallery Parameter thumbnailsPerPage]
 Name=Images per page
 Name[be]=Выяў на старонцы
+Name[bg]=Изображения на страница
 Name[ca]=Imatges per pàgina
 Name[ca@valencia]=Imatges per pàgina
 Name[cs]=Obrázků na stránku
@@ -288,6 +291,7 @@ Default=#3e674c
 [X-HTMLGallery Parameter content-bgc]
 Name=Content background
 Name[be]=Фон змесціва
+Name[bg]=Фон на съдържанието
 Name[ca]=Fons pel contingut
 Name[ca@valencia]=Fons pel contingut
 Name[cs]=Pozadí obsahu
@@ -323,6 +327,7 @@ Default=#d8ffd3
 [X-HTMLGallery Parameter listBackground]
 Name=Icon background
 Name[be]=Фон значкоў
+Name[bg]=Фон на икони
 Name[ca]=Fons de les icones
 Name[ca@valencia]=Fons de les icones
 Name[cs]=Pozadí ikony
@@ -393,6 +398,7 @@ Default=#a7dccf
 [X-HTMLGallery Parameter thumbBorderColor]
 Name=Thumbnail border
 Name[be]=Рамкі мініяцюр
+Name[bg]=Рамка на миниатюра
 Name[ca]=Vora de les miniatures
 Name[ca@valencia]=Vora de les miniatures
 Name[cs]=Okraj náhledu
@@ -466,6 +472,7 @@ Default=#519e64
 [X-HTMLGallery Preview]
 Name=Simple Rounded Shapes
 Name[be]=Простая са скругленымі вугламі
+Name[bg]=Обикновени заоблени форми
 Name[ca]=Formes arrodonides senzilles
 Name[ca@valencia]=Formes arredonides senzilles
 Name[cs]=Jednoduché zaoblené tvary

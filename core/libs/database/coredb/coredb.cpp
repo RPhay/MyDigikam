@@ -2005,6 +2005,28 @@ void CoreDB::removeAllImageProperties(qlonglong imageID)
                    imageID);
 }
 
+QStringList CoreDB::getAllImagePropertiesByName(const QString& property) const
+{
+    QList<QVariant> values;
+    QStringList     imageProperties;
+
+    d->db->execSql(QString::fromUtf8("SELECT DISTINCT value FROM ImageProperties "
+                                     " WHERE property=?;"),
+                   property, &values);
+
+    for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; ++it)
+    {
+        QString str((*it).toString());
+
+        if (!str.isEmpty())
+        {
+            imageProperties << str;
+        }
+    }
+
+    return imageProperties;
+}
+
 QList<CopyrightInfo> CoreDB::getItemCopyright(qlonglong imageID, const QString& property) const
 {
     QList<CopyrightInfo> list;

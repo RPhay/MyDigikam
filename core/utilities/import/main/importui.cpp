@@ -514,7 +514,7 @@ void ImportUI::setupActions()
     ThemeManager::instance()->registerThemeActions(this);
 
     // Standard 'Help' menu actions
-    createHelpActions();
+    createHelpActions(QLatin1String("camera_import"));
 
     // Provides a menu entry that allows showing/hiding the toolbar(s)
     setStandardToolBarMenuEnabled(true);
@@ -1242,7 +1242,7 @@ void ImportUI::slotUploadItems(const QList<QUrl>& urls)
                               "Please enter a new filename (without extension):",
                               QDir::toNativeSeparators(cameraFolder), fi.fileName()));
             uploadInfo.name = QInputDialog::getText(this,
-                                                    i18nc("@title:window", "File already exists"),
+                                                    i18nc("@title:window", "File Already Exists"),
                                                     msg,
                                                     QLineEdit::Normal,
                                                     name,

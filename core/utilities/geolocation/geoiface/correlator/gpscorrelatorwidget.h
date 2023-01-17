@@ -21,6 +21,7 @@
 
 #include <QUrl>
 #include <QWidget>
+#include <QItemSelectionModel>
 
 // local includes
 
@@ -43,6 +44,7 @@ public:
 
     explicit GPSCorrelatorWidget(QWidget* const parent,
                                  GPSItemModel* const imageModel,
+                                 QItemSelectionModel* const selectionModel,
                                  TrackManager* const trackManager);
     ~GPSCorrelatorWidget() override;
 

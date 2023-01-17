@@ -221,9 +221,9 @@ bool AddTagsComboBox::eventFilter(QObject* object, QEvent* event)
                 QKeyEvent* const keyEvent = static_cast<QKeyEvent*>(event);
 
                 if (keyEvent && (
-                                 (keyEvent->key() == Qt::Key_Up)      ||
-                                 (keyEvent->key() == Qt::Key_Down)    ||
-                                 (keyEvent->key() == Qt::Key_Enter)   ||
+                                 (keyEvent->key() == Qt::Key_Up)    ||
+                                 (keyEvent->key() == Qt::Key_Down)  ||
+                                 (keyEvent->key() == Qt::Key_Enter) ||
                                  (keyEvent->key() == Qt::Key_Return))
                                 )
                 {
@@ -242,8 +242,9 @@ bool AddTagsComboBox::eventFilter(QObject* object, QEvent* event)
                 if      (popup->isVisible())
                 {
                     if (
-                        (keyEvent->key() == Qt::Key_Up) ||
-                        (keyEvent->key() == Qt::Key_Down)
+                        (keyEvent->key() == Qt::Key_Up)   ||
+                        (keyEvent->key() == Qt::Key_Down) ||
+                        (keyEvent->key() == Qt::Key_Escape)
                        )
                     {
                         event->accept();

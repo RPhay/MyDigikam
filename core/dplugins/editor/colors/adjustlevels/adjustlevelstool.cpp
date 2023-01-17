@@ -887,7 +887,7 @@ void AdjustLevelsTool::slotLoadSettings()
 {
     QUrl loadLevelsFile;
 
-    loadLevelsFile = DFileDialog::getOpenFileUrl(qApp->activeWindow(), i18n("Select Gimp Levels File to Load"),
+    loadLevelsFile = DFileDialog::getOpenFileUrl(qApp->activeWindow(), i18nc("@title:window", "Select Gimp Levels File to Load"),
                                                  QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)),
                                                  QLatin1String("*"));
 
@@ -914,7 +914,7 @@ void AdjustLevelsTool::slotSaveAsSettings()
 {
     QUrl saveLevelsFile;
 
-    saveLevelsFile = DFileDialog::getSaveFileUrl(qApp->activeWindow(), i18n("Gimp Levels File to Save"),
+    saveLevelsFile = DFileDialog::getSaveFileUrl(qApp->activeWindow(), i18nc("@title:window", "Gimp Levels File to Save"),
                                                  QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)),
                                                  QLatin1String("*"));
 

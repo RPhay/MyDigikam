@@ -31,7 +31,7 @@ namespace Digikam
 FileSaveOptionsDlg::FileSaveOptionsDlg(QWidget* const parent, FileSaveOptionsBox* const options)
     : QDialog(parent)
 {
-    setWindowTitle(i18n("Settings for Saving Image File"));
+    setWindowTitle(i18nc("@title:window", "Settings for Saving Image File"));
 
     QDialogButtonBox* const buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     buttons->button(QDialogButtonBox::Ok)->setDefault(true);

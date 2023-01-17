@@ -583,7 +583,7 @@ NewNamesList AdvancedRenameDialog::filterNewNames() const
 
 void AdvancedRenameDialog::slotHelp()
 {
-    DXmlGuiWindow::openHandbook();
+    DXmlGuiWindow::openHandbook(QLatin1String("main_window"), QLatin1String("image_view"), QLatin1String("renaming-photograph"));
 }
 
 } // namespace Digikam

@@ -51,6 +51,7 @@ protected Q_SLOTS:
 
 private Q_SLOTS:
 
+    void slotHelp();
     void slotOk();
     void slotProfileInfo();
 

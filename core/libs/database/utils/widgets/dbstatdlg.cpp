@@ -28,11 +28,12 @@
 
 // Local includes
 
+#include "digikam_config.h"
 #include "daboutdata.h"
 #include "coredb.h"
 #include "applicationsettings.h"
 #include "coredbaccess.h"
-#include "digikam_config.h"
+#include "dxmlguiwindow.h"
 
 namespace Digikam
 {
@@ -42,7 +43,7 @@ DBStatDlg::DBStatDlg(QWidget* const parent)
 {
     qApp->setOverrideCursor(Qt::WaitCursor);
 
-    setWindowTitle(i18n("Database Statistics"));
+    setWindowTitle(i18nc("@title:window", "Database Statistics"));
     listView()->setHeaderLabels(QStringList() << i18n("Format") << i18n("Count"));
 
     // get image format statistics
@@ -149,6 +150,11 @@ int DBStatDlg::generateItemsList(DatabaseItem::Category category, const QString&
     new QTreeWidgetItem(listView(), QStringList());
 
     return total;
+}
+
+void DBStatDlg::slotHelp()
+{
+    DXmlGuiWindow::openHandbook(QLatin1String("setup_application"), QLatin1String("database_settings"), QLatin1String("database_stats"));
 }
 
 } // namespace Digikam

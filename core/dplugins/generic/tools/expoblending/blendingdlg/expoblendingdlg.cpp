@@ -124,7 +124,7 @@ ExpoBlendingDlg::ExpoBlendingDlg(ExpoBlendingManager* const mngr, QWidget* const
     d->mngr = mngr;
 
     setModal(false);
-    setWindowTitle(i18nc("@title", "Exposure Blending"));
+    setWindowTitle(i18nc("@title:window", "Exposure Blending"));
 
     const int spacing                = qMin(QApplication::style()->pixelMetric(QStyle::PM_LayoutHorizontalSpacing),
                                             QApplication::style()->pixelMetric(QStyle::PM_LayoutVerticalSpacing));
@@ -133,15 +133,15 @@ ExpoBlendingDlg::ExpoBlendingDlg(ExpoBlendingManager* const mngr, QWidget* const
     d->buttonBox->button(QDialogButtonBox::Close)->setDefault(true);
 
     d->startButton                   = new QPushButton(this);
-    d->startButton->setText(i18nc("@action: button", "&Save"));
+    d->startButton->setText(i18nc("@action:button", "&Save"));
     d->startButton->setIcon(QIcon::fromTheme(QLatin1String("document-save")));
-    d->startButton->setToolTip(i18nc("@info: tooltip", "Process and save selected items."));
+    d->startButton->setToolTip(i18nc("@info:tooltip, button", "Process and save selected items."));
     d->buttonBox->addButton(d->startButton, QDialogButtonBox::ActionRole);
 
     d->previewButton                 = new QPushButton(this);
-    d->previewButton->setText(i18nc("@action: button", "&Preview"));
+    d->previewButton->setText(i18nc("@action:button", "&Preview"));
     d->previewButton->setIcon(QIcon::fromTheme(QLatin1String("system-run")));
-    d->previewButton->setToolTip(i18nc("@info: tooltip", "Process a preview of bracketed images stack with current settings."));
+    d->previewButton->setToolTip(i18nc("@info:tooltip, button", "Process a preview of bracketed images stack with current settings."));
     d->buttonBox->addButton(d->previewButton, QDialogButtonBox::ActionRole);
 
     QPushButton* const defaultButton = new QPushButton(this);
@@ -153,7 +153,7 @@ ExpoBlendingDlg::ExpoBlendingDlg(ExpoBlendingManager* const mngr, QWidget* const
     // ---------------------------------------------------------------
 
     d->previewWidget                 = new DPreviewManager(this);
-    d->previewWidget->setButtonText(i18nc("@action: button", "Details..."));
+    d->previewWidget->setButtonText(i18nc("@action:button", "Details..."));
 
     // ---------------------------------------------------------------
 
@@ -314,7 +314,7 @@ void ExpoBlendingDlg::slotPreviewButtonClicked()
     DMessageBox::showInformationList(QMessageBox::Information,
                                      qApp->activeWindow(),
                                      qApp->applicationName(),
-                                     i18nc("@title: window", "Enfuse Processing Messages"),
+                                     i18nc("@title:window", "Enfuse Processing Messages"),
                                      d->output.split(QLatin1Char('\n')));
 }
 

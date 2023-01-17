@@ -77,10 +77,10 @@ PWindow::PWindow(DInfoInterface* const iface,
 
     setMainWidget(d->widget);
     setModal(false);
-    setWindowTitle(i18n("Export to Pinterest"));
+    setWindowTitle(i18nc("@title:window", "Export to Pinterest"));
 
-    startButton()->setText(i18n("Start Upload"));
-    startButton()->setToolTip(i18n("Start upload to Pinterest"));
+    startButton()->setText(i18nc("@action:button", "Start Upload"));
+    startButton()->setToolTip(i18nc("@info:tooltip, button", "Start upload to Pinterest"));
 
     d->widget->setMinimumSize(700, 500);
 
@@ -252,12 +252,12 @@ void PWindow::slotStartTransfer()
     if (!(d->talker->authenticated()))
     {
         QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-            i18nc("@title: window", "Warning"),
+            i18nc("@title:window", "Warning"),
             i18n("Authentication failed. Click \"Continue\" to authenticate."),
             QMessageBox::Yes | QMessageBox::No);
 
-        warn->button(QMessageBox::Yes)->setText(i18n("Continue"));
-        warn->button(QMessageBox::No)->setText(i18n("Cancel"));
+        warn->button(QMessageBox::Yes)->setText(i18nc("@action:button", "Continue"));
+        warn->button(QMessageBox::No)->setText(i18nc("@action:button", "Cancel"));
 
         if (warn->exec() == QMessageBox::Yes)
         {
@@ -325,7 +325,7 @@ void PWindow::uploadNextPhoto()
 
 void PWindow::slotAddPinFailed(const QString& msg)
 {
-    if (QMessageBox::question(this, i18n("Uploading Failed"),
+    if (QMessageBox::question(this, i18nc("@title:window", "Uploading Failed"),
                               i18n("Failed to upload photo to Pinterest."
                                    "\n%1\n"
                                    "Do you want to continue?", msg))
@@ -383,7 +383,7 @@ void PWindow::slotSignalLinkingFailed()
     slotSetUserName(QLatin1String(""));
     d->widget->getAlbumsCoB()->clear();
 
-    if (QMessageBox::question(this, i18n("Login Failed"),
+    if (QMessageBox::question(this, i18nc("@title:window", "Login Failed"),
                               i18n("Authentication failed. Do you want to try again?"))
         == QMessageBox::Yes)
     {

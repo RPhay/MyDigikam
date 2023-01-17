@@ -64,6 +64,21 @@ QString RestoreToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can restore an image using Greystoration algorithm.");
 }
 
+QString RestoreToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString RestoreToolPlugin::handbookChapter() const
+{
+    return QLatin1String("enhancement_tools");
+}
+
+QString RestoreToolPlugin::handbookReference() const
+{
+    return QLatin1String("enhance-restoration");
+}
+
 QList<DPluginAuthor> RestoreToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

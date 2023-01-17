@@ -40,6 +40,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "dxmlguiwindow.h"
 #include "systemsettings.h"
 #include "itempropertiestab.h"
 
@@ -169,15 +170,17 @@ bool FilesDownloader::checkDownloadFiles() const
 
 void FilesDownloader::startDownload()
 {
-    setWindowTitle(i18n("Download required files"));
+    setWindowTitle(i18nc("@title:window", "Download Required Files"));
     setMinimumHeight(250);
     setMinimumWidth(600);
 
     QWidget* const mainWidget = new QWidget(this);
     QVBoxLayout* const vBox   = new QVBoxLayout(mainWidget);
 
-    d->buttons                = new QDialogButtonBox(QDialogButtonBox::Ok |
-                                                     QDialogButtonBox::Cancel, mainWidget);
+    d->buttons                = new QDialogButtonBox(QDialogButtonBox::Help |
+                                                     QDialogButtonBox::Ok |
+                                                     QDialogButtonBox::Cancel,
+                                                     mainWidget);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
     d->buttons->button(QDialogButtonBox::Ok)->setText(i18n("Download"));
     d->buttons->button(QDialogButtonBox::Ok)->setIcon(QIcon::fromTheme(QLatin1String("edit-download")));
@@ -231,6 +234,9 @@ void FilesDownloader::startDownload()
     connect(d->buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
             this, SLOT(slotDownload()));
 
+    connect(d->buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
+            this, SLOT(slotHelp()));
+
     connect(d->buttons->button(QDialogButtonBox::Cancel), SIGNAL(clicked()),
             this, SLOT(reject()));
 
@@ -265,7 +271,7 @@ void FilesDownloader::slotDownload()
     else
     {
         QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Critical,
-                 i18n("Download error"),
+                 i18nc("@title:window", "Download Error"),
                  i18n("An error occurred during the download.\n\n"
                       "File: %1\n\n%2\n\n"
                       "You can try again or continue the "
@@ -274,7 +280,7 @@ void FilesDownloader::slotDownload()
                  QMessageBox::Yes | QMessageBox::Cancel,
                  qApp->activeWindow());
 
-        msgBox->button(QMessageBox::Yes)->setText(i18n("Try again"));
+        msgBox->button(QMessageBox::Yes)->setText(i18nc("@action:button", "Try Again"));
         msgBox->button(QMessageBox::Yes)->setIcon(QIcon::fromTheme(QLatin1String("edit-download")));
 
         int result = msgBox->exec();
@@ -471,6 +477,11 @@ QString FilesDownloader::getFacesEnginePath() const
     appUrl.setPath(appUrl.path() + QLatin1String("digikam/facesengine"));
 
     return appUrl.toLocalFile();
+}
+
+void FilesDownloader::slotHelp()
+{
+    DXmlGuiWindow::openHandbook(QLatin1String("getting_started"), QLatin1String("quick_start"), QLatin1String("firstrun-downloads"));
 }
 
 //-----------------------------------------------------------------------------

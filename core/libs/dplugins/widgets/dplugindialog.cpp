@@ -19,6 +19,8 @@
 #include <QApplication>
 #include <QPushButton>
 #include <QPointer>
+#include <QMenu>
+#include <QAction>
 
 // KDE includes
 
@@ -61,10 +63,17 @@ void DPluginDialog::setPlugin(DPlugin* const tool)
 
     if (m_tool)
     {
-        QPushButton* const help = m_buttons->addButton(QDialogButtonBox::Help);
-        help->setText(i18nc("@action: button", "About..."));
+        QPushButton* const help       = m_buttons->addButton(QDialogButtonBox::Help);
+        help->setText(i18nc("@action: button", "Help"));
+        QMenu* const menu             = new QMenu(help);
+        QAction* const handbookAction = menu->addAction(i18n("Online Handbook..."));
+        QAction* const aboutAction    = menu->addAction(i18n("About..."));
+        help->setMenu(menu);
 
-        connect(help, SIGNAL(clicked()),
+        connect(handbookAction, SIGNAL(triggered()),
+                this, SLOT(slotOnlineHandbook()));
+
+        connect(aboutAction, SIGNAL(triggered()),
                 this, SLOT(slotAboutPlugin()));
     }
 }
@@ -74,6 +83,11 @@ void DPluginDialog::slotAboutPlugin()
     QPointer<DPluginAboutDlg> dlg = new DPluginAboutDlg(m_tool);
     dlg->exec();
     delete dlg;
+}
+
+void DPluginDialog::slotOnlineHandbook()
+{
+    DXmlGuiWindow::openHandbook(m_tool->handbookSection(), m_tool->handbookChapter(), m_tool->handbookReference());
 }
 
 void DPluginDialog::restoreDialogSize()

@@ -193,7 +193,7 @@ void LightTableWindow::setupActions()
 
     // Standard 'Help' menu actions
 
-    createHelpActions();
+    createHelpActions(QLatin1String("light_table"));
 
     // Provides a menu entry that allows showing/hiding the toolbar(s)
 

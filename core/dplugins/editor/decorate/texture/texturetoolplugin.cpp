@@ -64,6 +64,21 @@ QString TextureToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can apply a texture over an image.");
 }
 
+QString TextureToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString TextureToolPlugin::handbookChapter() const
+{
+    return QLatin1String("decorate_tools");
+}
+
+QString TextureToolPlugin::handbookReference() const
+{
+    return QLatin1String("decorate-texture");
+}
+
 QList<DPluginAuthor> TextureToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

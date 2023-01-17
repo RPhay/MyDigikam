@@ -34,6 +34,7 @@
 #include <QAction>
 #include <QMessageBox>
 #include <QMenu>
+#include <QIcon>
 
 // KDE includes
 
@@ -45,6 +46,7 @@
 #include "digikam_debug.h"
 #include "digikam_config.h"
 #include "dmessagebox.h"
+#include "dxmlguiwindow.h"
 #include "tagpropwidget.h"
 #include "tagmngrtreeview.h"
 #include "taglist.h"
@@ -174,7 +176,7 @@ TagsManager* TagsManager::instance()
 void TagsManager::setupUi()
 {
      resize(970, 720);
-     setWindowTitle(i18n("Tags Manager"));
+     setWindowTitle(i18nc("@title:window", "Tags Manager"));
 
      d->tagPixmap   = new QLabel();
      d->tagPixmap->setText(QLatin1String("Tag Pixmap"));
@@ -372,7 +374,7 @@ void TagsManager::slotDeleteAction()
                          JoinTagNamesToList(tagNames));
     }
 
-    const int result = QMessageBox::warning(this, i18np("Delete tag", "Delete tags", tagNames.count()),
+    const int result = QMessageBox::warning(this, i18ncp("@title:window", "Delete tag", "Delete tags", tagNames.count()),
                                             message, QMessageBox::Yes | QMessageBox::Cancel);
 
     if (result == QMessageBox::Yes)
@@ -838,6 +840,18 @@ void TagsManager::setupActions()
     d->mainToolbar->addAction(d->delAction);
     d->mainToolbar->addWidget(d->organizeButton);
     d->mainToolbar->addWidget(d->syncexportButton);
+
+    QPushButton* const helpButton = new QPushButton(QIcon::fromTheme(QLatin1String("help-browser")), QString());
+    helpButton->setToolTip(i18nc("@info", "Help"));
+
+    connect(helpButton, &QPushButton::clicked,
+            this, []()
+        {
+            DXmlGuiWindow::openHandbook(QLatin1String("main_window"), QLatin1String("tags_view"), QLatin1String("tags-manager"));
+        }
+    );
+
+    d->mainToolbar->addWidget(helpButton);
     d->mainToolbar->addAction(new DLogoAction(this));
     addToolBar(d->mainToolbar);
 

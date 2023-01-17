@@ -40,6 +40,7 @@
 #include "importfiltercombobox.h"
 #include "dexpanderbox.h"
 #include "dtextedit.h"
+#include "dxmlguiwindow.h"
 
 namespace Digikam
 {
@@ -81,9 +82,9 @@ ImportFilterDlg::ImportFilterDlg(QWidget* const parent)
     : QDialog(parent),
       d      (new Private)
 {
-    setWindowTitle(i18n("Edit Import Filters"));
+    setWindowTitle(i18nc("@title:window", "Edit Import Filters"));
 
-    d->buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    d->buttons = new QDialogButtonBox(QDialogButtonBox::Help |QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
 
     QWidget* const page               = new QWidget(this);
@@ -153,6 +154,9 @@ ImportFilterDlg::ImportFilterDlg(QWidget* const parent)
 
     connect(d->buttons->button(QDialogButtonBox::Cancel), SIGNAL(clicked()),
             this, SLOT(reject()));
+
+    connect(d->buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
+            this, SLOT(slotHelp()));
 
     connect(d->mimeCheckBox, SIGNAL(clicked(bool)),
             d->mimeButton, SLOT(setEnabled(bool)));
@@ -244,6 +248,11 @@ void ImportFilterDlg::getData(Filter* const filter)
     filter->fileFilter = d->fileNameEdit->text().split(QLatin1Char(';'), QT_SKIP_EMPTY_PARTS);
     filter->pathFilter = d->pathEdit->text().split(QLatin1Char(';'), QT_SKIP_EMPTY_PARTS);
     filter->onlyNew    = d->newFilesCheckBox->isChecked();
+}
+
+void ImportFilterDlg::slotHelp()
+{
+    DXmlGuiWindow::openHandbook(QLatin1String("setup_application"), QLatin1String("camera_settings"), QLatin1String("camera-filters"));
 }
 
 } // namespace Digikam

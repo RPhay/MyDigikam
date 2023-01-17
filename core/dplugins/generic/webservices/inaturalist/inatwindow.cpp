@@ -183,7 +183,7 @@ INatWindow::INatWindow(DInfoInterface* const iface,
 {
     d->iface       = iface;
     d->serviceName = serviceName;
-    setWindowTitle(i18n("Export as %1 Observation", d->serviceName));
+    setWindowTitle(i18nc("@title:window", "Export as %1 Observation", d->serviceName));
     setModal(false);
 
     KSharedConfigPtr config = KSharedConfig::openConfig();
@@ -237,7 +237,7 @@ INatWindow::INatWindow(DInfoInterface* const iface,
     d->dimensionSpinBox->setMaximum(MAX_DIMENSION);
     d->dimensionSpinBox->setValue(MAX_DIMENSION);
 
-    startButton()->setText(i18n("Start Uploading"));
+    startButton()->setText(i18nc("@action:button", "Start Uploading"));
     startButton()->setToolTip(QString());
 
     setMainWidget(d->widget);
@@ -605,7 +605,7 @@ void INatWindow::slotBusy(bool val)
 void INatWindow::slotError(const QString& msg)
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Error" << msg;
-    QMessageBox::critical(this, i18n("Error"), msg);
+    QMessageBox::critical(this, i18nc("@title:window", "Error"), msg);
 }
 
 void INatWindow::slotUserChangeRequest()

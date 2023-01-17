@@ -64,6 +64,21 @@ QString BCGToolPlugin::details() const
     return i18nc("@title", "This Image Editor tool can adjust Brightness / Contrast / Gamma from image.");
 }
 
+QString BCGToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString BCGToolPlugin::handbookChapter() const
+{
+    return QLatin1String("color_tools");
+}
+
+QString BCGToolPlugin::handbookReference() const
+{
+    return QLatin1String("color-bcg");
+}
+
 QList<DPluginAuthor> BCGToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

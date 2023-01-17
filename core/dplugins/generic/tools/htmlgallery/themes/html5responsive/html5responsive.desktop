@@ -2,6 +2,7 @@
 Type=Theme
 Name=HTML5 Responsive
 Name[be]=Адаптыўны HTML5
+Name[bg]=HTML5 Responsive
 Name[ca]=HTML5 responsiu
 Name[ca@valencia]=HTML5 responsiu
 Name[de]=HTML5 Responsive
@@ -29,6 +30,7 @@ Name[x-test]=xxHTML5 Responsivexx
 Name[zh_CN]=响应式 HTML5
 Comment=Generates a gallery using responsive HTML5 and CSS3 and UTF-8 encoding. Optionally uses PhotoSwipe by Dmitry Semenov to display the images.
 Comment[be]=Стварае галерэю з выкарыстаннем адаптыўнага HTML5, CSS3, UTF-8. Таксама мае магчымасць выкарыстання PhotoSwipe ад Dmitry Semenov для адлюстравання малюнкаў.
+Comment[bg]=Генерира галерия, като използва адаптивни HTML5 и CSS3 и кодиране UTF-8. По желание използва PhotoSwipe на Дмитрий Семенов за показване на изображенията.
 Comment[ca]=Genera una galeria usant HTML5 responsiu i CSS3 i codificació UTF-8. Opcionalment usa el PhotoSwipe del Dmitry Semenov per mostrar les imatges.
 Comment[ca@valencia]=Genera una galeria utilitzant HTML5 responsiu i CSS3 i codificació UTF-8. De manera opcional utilitza PhotoSwipe del Dmitry Semenov per a mostrar les imatges.
 Comment[de]=Erzeugt eine Responsive Galerie auf Basis HTML5 und CSS3. Sie verwendet optional PhotoSwipe von Dmitry Semenov zur Anzeige der Bilder.
@@ -57,6 +59,7 @@ Comment[zh_CN]=使用响应式 HTML5、CSS3 和 UTF-8 编码生成相册。可�
 [X-HTMLGallery Author]
 Name=Bobulous
 Name[be]=Bobulous
+Name[bg]=Bobulous
 Name[ca]=Bobulous
 Name[ca@valencia]=Bobulous
 Name[cs]=Bobulous
@@ -86,6 +89,7 @@ Url=https://www.bobulous.org.uk/
 [X-HTMLGallery Preview]
 Name=HTML5 Responsive
 Name[be]=Адаптыўны HTML5
+Name[bg]=HTML5 Responsive
 Name[ca]=HTML5 responsiu
 Name[ca@valencia]=HTML5 responsiu
 Name[de]=HTML5 Responsive
@@ -208,6 +212,7 @@ Caption-3=Brown Card
 [X-HTMLGallery Parameter pageSize]
 Name=Images per page
 Name[be]=Выяў на старонцы
+Name[bg]=Изображения на страница
 Name[ca]=Imatges per pàgina
 Name[ca@valencia]=Imatges per pàgina
 Name[cs]=Obrázků na stránku
@@ -244,6 +249,7 @@ Default=20
 [X-HTMLGallery Parameter paginationLocation]
 Name=Page links location
 Name[be]=Размяшчэнне спасылак на старонцы
+Name[bg]=Местоположение на връзките към страницата
 Name[ca]=La pàgina enllaça amb la ubicació
 Name[ca@valencia]=La pàgina enllaça amb la ubicació
 Name[da]=Placering af sidelinks
@@ -284,6 +290,7 @@ Caption-2=Both
 [X-HTMLGallery Parameter paginationModeTop]
 Name=Top pagination mode
 Name[be]=Рэжым верхняй нумарацыі
+Name[bg]=Режим на страниране в горната част
 Name[ca]=Mode de paginació de la part superior
 Name[ca@valencia]=Mode de paginació de la part superior
 Name[de]=Oberer Blättermodus
@@ -316,6 +323,7 @@ Caption-1=List all
 [X-HTMLGallery Parameter paginationModeBottom]
 Name=Bottom pagination mode
 Name[be]=Рэжым ніжняй нумарацыі
+Name[bg]=Режим на долно страниране
 Name[ca]=Mode de paginació de la part inferior
 Name[ca@valencia]=Mode de paginació de la part inferior
 Name[de]=Unterer Blättermodus
@@ -384,6 +392,7 @@ Caption-1=No
 [X-HTMLGallery Parameter photoSwipeBackgroundOpacity]
 Name=PhotoSwipe Background Opacity
 Name[be]=Непразрыстасць фону PhotoSwipe
+Name[bg]=Непрозрачност на фона на PhotoSwipe
 Name[ca]=Opacitat del fons del PhotoSwipe
 Name[ca@valencia]=Opacitat del fons de PhotoSwipe
 Name[de]=PhotoSwipe Deckkraft
@@ -417,6 +426,7 @@ Max=10
 [X-HTMLGallery Parameter photoSwipeShowSharingButton]
 Name=PhotoSwipe sharing button
 Name[be]=Кнопка абагульвання PhotoSwipe
+Name[bg]=Бутон за споделяне на PhotoSwipe
 Name[ca]=Botó de compartició del PhotoSwipe
 Name[ca@valencia]=Botó de compartició de PhotoSwipe
 Name[de]=Knopf für Bilder-Teilen
@@ -452,6 +462,7 @@ Caption-1=No
 [X-HTMLGallery Parameter addJiggle]
 Name=Add jiggle
 Name[be]=Дадаць хістанне
+Name[bg]=Добавяне на джигъл
 Name[ca]=Afegeix un sacseig
 Name[ca@valencia]=Afig un sacsament
 Name[de]=Wackeln hinzufügen
@@ -484,6 +495,7 @@ Caption-1=No
 [X-HTMLGallery Parameter showGPS]
 Name=Show GPS data
 Name[be]=Паказваць даныя GPS
+Name[bg]=Показване на GPS данни
 Name[ca]=Mostra les dades del GPS
 Name[ca@valencia]=Mostra les dades del GPS
 Name[cs]=Zobrazit data GPS

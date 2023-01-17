@@ -43,7 +43,7 @@ SoundtrackPreview::SoundtrackPreview(QWidget* const parent,
     : QDialog(parent)
 {
     setModal(true);
-    setWindowTitle(i18n("Soundtrack preview"));
+    setWindowTitle(i18nc("@title:window", "Soundtrack Preview"));
 
     m_playbackWidget                  = new PresentationAudioWidget(this, urls, sharedData);
     QDialogButtonBox* const buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
@@ -359,7 +359,7 @@ void PresentationAudioPage::slotAddDropItems(const QList<QUrl>& filesUrl)
 void PresentationAudioPage::slotSoundFilesButtonAdd()
 {
     QPointer<DFileDialog> dlg = new DFileDialog(this,
-                                                i18n("Select sound files"),
+                                                i18nc("@title:window", "Select Sound Files"),
                                                 d->sharedData->soundtrackPath.adjusted(QUrl::RemoveFilename).toLocalFile());
 
     QStringList atm;
@@ -486,7 +486,7 @@ void PresentationAudioPage::slotSoundFilesButtonDown()
 
 void PresentationAudioPage::slotSoundFilesButtonLoad()
 {
-    QPointer<DFileDialog> dlg = new DFileDialog(this, i18n("Load playlist"),
+    QPointer<DFileDialog> dlg = new DFileDialog(this, i18nc("@title:window", "Load Playlist"),
                                                 QString(), i18n("Playlist (*.m3u)"));
     dlg->setAcceptMode(QFileDialog::AcceptOpen);
     dlg->setFileMode(QFileDialog::ExistingFile);
@@ -545,7 +545,7 @@ void PresentationAudioPage::slotSoundFilesButtonLoad()
 
 void PresentationAudioPage::slotSoundFilesButtonSave()
 {
-    QPointer<DFileDialog> dlg = new DFileDialog(this, i18n("Save playlist"),
+    QPointer<DFileDialog> dlg = new DFileDialog(this, i18nc("@title:window", "Save Playlist"),
                                                 QString(), i18n("Playlist (*.m3u)"));
     dlg->setAcceptMode(QFileDialog::AcceptSave);
     dlg->setFileMode(QFileDialog::AnyFile);

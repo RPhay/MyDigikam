@@ -65,6 +65,16 @@ QString SendByMailPlugin::details() const
                 "<p>Different mail client application can be used to process files on the network.</p>");
 }
 
+QString SendByMailPlugin::handbookSection() const
+{
+    return QLatin1String("post_processing");
+}
+
+QString SendByMailPlugin::handbookChapter() const
+{
+    return QLatin1String("send_images");
+}
+
 QList<DPluginAuthor> SendByMailPlugin::authors() const
 {
     return QList<DPluginAuthor>()

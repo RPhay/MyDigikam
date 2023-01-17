@@ -49,8 +49,10 @@ void DXmlGuiWindow::registerPluginsActions()
     checkAmbiguousShortcuts();
 }
 
-void DXmlGuiWindow::createHelpActions(bool coreOptions)
+void DXmlGuiWindow::createHelpActions(const QString& handbookSection, bool coreOptions)
 {
+    d->handbookSection                  = handbookSection;
+
     d->libsInfoAction                   = new QAction(QIcon::fromTheme(QLatin1String("help-about")), i18n("Components Information"), this);
     connect(d->libsInfoAction, SIGNAL(triggered()), this, SLOT(slotComponentsInfo()));
     actionCollection()->addAction(QLatin1String("help_librariesinfo"), d->libsInfoAction);

@@ -224,12 +224,12 @@ PiwigoWindow::PiwigoWindow(DInfoInterface* const iface,
 {
     d->pPiwigo = new PiwigoSession();
 
-    setWindowTitle(i18n("Piwigo Export"));
+    setWindowTitle(i18nc("@title:window", "Piwigo Export"));
     setModal(false);
 
     // "Start Upload" button
 
-    startButton()->setText(i18n("Start Upload"));
+    startButton()->setText(i18nc("@action:button", "Start Upload"));
     startButton()->setEnabled(false);
 
     connect(startButton(), SIGNAL(clicked()),
@@ -365,7 +365,7 @@ void PiwigoWindow::slotDoLogin()
 
 void PiwigoWindow::slotLoginFailed(const QString& msg)
 {
-    if (QMessageBox::question(this, i18n("Login Failed"),
+    if (QMessageBox::question(this, i18nc("@title:window", "Login Failed"),
                               i18n("Failed to login into remote piwigo. ") + msg +
                               i18n("\nDo you want to check your settings and try again?"))
             != QMessageBox::Yes)
@@ -581,7 +581,7 @@ void PiwigoWindow::slotAddPhotoFailed(const QString& msg)
     d->progressDlg->reset();
     d->progressDlg->hide();
 
-    if (QMessageBox::question(this, i18n("Uploading Failed"),
+    if (QMessageBox::question(this, i18nc("@title:window", "Uploading Failed"),
                               i18n("Failed to upload media into remote Piwigo. ") + msg +
                               i18n("\nDo you want to continue?"))
             != QMessageBox::Yes)

@@ -99,7 +99,7 @@ TimeAdjustDialog::TimeAdjustDialog(QWidget* const parent, DInfoInterface* const 
     : DPluginDialog(parent, QLatin1String("Time Adjust Dialog")),
       d            (new Private)
 {
-    setWindowTitle(i18nc("@title", "Adjust Time & Date"));
+    setWindowTitle(i18nc("@title:window", "Adjust Time & Date"));
     setMinimumSize(900, 500);
     setModal(true);
 

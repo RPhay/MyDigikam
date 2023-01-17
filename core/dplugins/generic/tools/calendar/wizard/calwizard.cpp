@@ -108,7 +108,7 @@ CalWizard::CalWizard(QWidget* const parent, DInfoInterface* const iface)
     : DWizardDlg(parent, QLatin1String("Calendar Dialog")),
       d(new Private)
 {
-    setWindowTitle(i18n("Create Calendar"));
+    setWindowTitle(i18nc("@title:window", "Create Calendar"));
     d->iface         = iface;
     d->cSettings     = CalSettings::instance(this);
     d->introPage     = new CalIntroPage(this, i18n("Welcome to Calendar Tool"));
@@ -154,11 +154,11 @@ CalWizard::CalWizard(QWidget* const parent, DInfoInterface* const iface)
 #ifdef HAVE_KCALENDAR
 
     d->calEventsUI.ohUrlRequester->setFileDlgFilter(i18nc("@info: open file filters", "Calendar Data File (*.ics)"));
-    d->calEventsUI.ohUrlRequester->setFileDlgTitle(i18n("Select Calendar Data File"));
+    d->calEventsUI.ohUrlRequester->setFileDlgTitle(i18nc("@title:window", "Select Calendar Data File"));
     d->calEventsUI.ohUrlRequester->setFileDlgMode(QFileDialog::ExistingFile);
 
     d->calEventsUI.fhUrlRequester->setFileDlgFilter(i18nc("@info: open file filters", "Calendar Data File (*.ics)"));
-    d->calEventsUI.fhUrlRequester->setFileDlgTitle(i18n("Select Calendar Data File"));
+    d->calEventsUI.fhUrlRequester->setFileDlgTitle(i18nc("@title:window", "Select Calendar Data File"));
     d->calEventsUI.fhUrlRequester->setFileDlgMode(QFileDialog::ExistingFile);
 
 #endif
@@ -286,7 +286,7 @@ void CalWizard::slotPageSelected(int curr)
         d->printer->setPageSize(QPageSize(params.pageSize));
 
         QPrintDialog* const printDialog = new QPrintDialog(d->printer, this);
-        printDialog->setWindowTitle(i18n("Print Calendar"));
+        printDialog->setWindowTitle(i18nc("@title:window", "Print Calendar"));
 
         if (printDialog->exec() == QDialog::Accepted)
         {

@@ -119,9 +119,8 @@ bool AestheticDetector::s_loadModel()
     }
 
     QString appPath = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
-
     QUrl    appUrl  = QUrl::fromLocalFile(appPath).adjusted(QUrl::RemoveFilename);
-    appUrl.setPath(appUrl.path() + QLatin1String("digikam/aestheticdetector/"));
+    appUrl.setPath(appUrl.path() + QLatin1String("digikam/facesengine/"));
 
     QString nnmodel = appUrl.toLocalFile() + QLatin1String("weights_inceptionv3_299.pb");
 

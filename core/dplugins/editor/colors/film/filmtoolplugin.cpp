@@ -64,6 +64,21 @@ QString FilmToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can emulate color negative film from image.");
 }
 
+QString FilmToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString FilmToolPlugin::handbookChapter() const
+{
+    return QLatin1String("color_tools");
+}
+
+QString FilmToolPlugin::handbookReference() const
+{
+    return QLatin1String("color-negative");
+}
+
 QList<DPluginAuthor> FilmToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

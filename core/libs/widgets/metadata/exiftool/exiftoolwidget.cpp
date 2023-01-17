@@ -395,7 +395,7 @@ void ExifToolWidget::slotPrintMetadata()
 
 void ExifToolWidget::slotSaveMetadataToFile()
 {
-    QPointer<DFileDialog> fileSaveDialog = new DFileDialog(this, i18nc("@title", "Save ExifTool Information"),
+    QPointer<DFileDialog> fileSaveDialog = new DFileDialog(this, i18nc("@title:window", "Save ExifTool Information"),
                                                            QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation));
     fileSaveDialog->setAcceptMode(QFileDialog::AcceptSave);
     fileSaveDialog->setFileMode(QFileDialog::AnyFile);

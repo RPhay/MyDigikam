@@ -36,9 +36,17 @@ public:
     explicit DPluginAboutDlg(DPlugin* const tool, QWidget* const parent = nullptr);
     ~DPluginAboutDlg() override;
 
+private Q_SLOTS:
+
+    void slotOnlineHandbook();
+
 private:
 
     Q_DISABLE_COPY(DPluginAboutDlg)
+
+private:
+
+    DPlugin* m_tool = nullptr;
 };
 
 } // namespace Digikam

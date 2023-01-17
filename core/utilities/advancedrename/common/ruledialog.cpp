@@ -29,6 +29,7 @@
 // Local includes
 
 #include "rule.h"
+#include "dxmlguiwindow.h"
 
 namespace Digikam
 {
@@ -59,7 +60,7 @@ RuleDialog::RuleDialog(Rule* const parent)
     : QDialog(nullptr),
       d(new Private)
 {
-    d->buttons           = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    d->buttons           = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::Help, this);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
 
     d->dialogTitle       = new QLabel(this);
@@ -106,6 +107,9 @@ RuleDialog::RuleDialog(Rule* const parent)
 
     connect(d->buttons->button(QDialogButtonBox::Cancel), SIGNAL(clicked()),
             this, SLOT(reject()));
+
+    connect(d->buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
+            this, SLOT(slotHelp()));
 }
 
 RuleDialog::~RuleDialog()
@@ -145,6 +149,11 @@ void RuleDialog::setSettingsWidget(QWidget* const settingsWidget)
     l->setContentsMargins(QMargins());
     d->settingsWidget->setLayout(l);
     d->container->layout()->addWidget(d->settingsWidget);
+}
+
+void RuleDialog::slotHelp()
+{
+    DXmlGuiWindow::openHandbook(QLatin1String("main_window"), QLatin1String("image_view"), QLatin1String("renaming-photograph"));
 }
 
 } // namespace Digikam

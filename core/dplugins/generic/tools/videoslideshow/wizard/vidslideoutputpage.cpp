@@ -112,12 +112,12 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
 
     QLabel* const fileLabel = new QLabel(main);
     fileLabel->setWordWrap(false);
-    fileLabel->setText(i18n("Destination Folder:"));
+    fileLabel->setText(i18n("Destination folder:"));
 
     d->destUrl              = new DFileSelector(main);
     d->destUrl->setFileDlgMode(QFileDialog::Directory);
     d->destUrl->setFileDlgOptions(QFileDialog::ShowDirsOnly);
-    d->destUrl->setFileDlgTitle(i18n("Destination Folder"));
+    d->destUrl->setFileDlgTitle(i18nc("@title:window", "Destination Folder"));
     d->destUrl->lineEdit()->setPlaceholderText(i18n("Output Destination Path"));
     fileLabel->setBuddy(d->destUrl);
 

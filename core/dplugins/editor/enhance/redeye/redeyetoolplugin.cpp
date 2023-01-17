@@ -64,6 +64,21 @@ QString RedEyeToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can reduce red eye effect on image.");
 }
 
+QString RedEyeToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString RedEyeToolPlugin::handbookChapter() const
+{
+    return QLatin1String("enhancement_tools");
+}
+
+QString RedEyeToolPlugin::handbookReference() const
+{
+    return QLatin1String("enhance-redeyes");
+}
+
 QList<DPluginAuthor> RedEyeToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

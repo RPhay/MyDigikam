@@ -36,7 +36,7 @@ ICCProfileInfoDlg::ICCProfileInfoDlg(QWidget* const parent, const QString& profi
     : QDialog(parent)
 {
     setModal(true);
-    setWindowTitle(i18n("Color Profile Info - %1", profilePath));
+    setWindowTitle(i18nc("@title:window", "Color Profile Info - %1", profilePath));
 
     QDialogButtonBox* const buttons       = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Ok, this);
     buttons->button(QDialogButtonBox::Ok)->setDefault(true);
@@ -70,7 +70,7 @@ ICCProfileInfoDlg::~ICCProfileInfoDlg()
 
 void ICCProfileInfoDlg::slotHelp()
 {
-    DXmlGuiWindow::openHandbook();
+    DXmlGuiWindow::openHandbook(QLatin1String("color_management"));
 }
 
 } // namespace Digikam

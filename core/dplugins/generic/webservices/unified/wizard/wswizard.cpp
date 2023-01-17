@@ -81,7 +81,7 @@ WSWizard::WSWizard(DInfoInterface* const iface, QWidget* const parent)
       d(new Private)
 {
     setOptions(QWizard::NoBackButtonOnStartPage | QWizard::NoCancelButtonOnLastPage);
-    setWindowTitle(i18n("Export to Web Services"));
+    setWindowTitle(i18nc("@title:window", "Export to Web Services"));
 
     d->iface                = iface;
     d->settings             = new WSSettings(this);

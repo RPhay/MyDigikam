@@ -70,6 +70,16 @@ QString FlickrPlugin::details() const
                  QLatin1String("<a href='https://www.flickr.com/'>https://www.flickr.com/</a>"));
 }
 
+QString FlickrPlugin::handbookSection() const
+{
+    return QLatin1String("export_tools");
+}
+
+QString FlickrPlugin::handbookChapter() const
+{
+    return QLatin1String("flickr_export");
+}
+
 QList<DPluginAuthor> FlickrPlugin::authors() const
 {
     return QList<DPluginAuthor>()

@@ -137,7 +137,7 @@ StatisticsView::StatisticsView(QWidget* const parent)
       mpAudioBitRate(nullptr),
       mpVideoBitRate(nullptr)
 {
-    setWindowTitle(i18nc("@title", "Media info"));
+    setWindowTitle(i18nc("@title:window", "Media Info"));
     setModal(false);
     setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint);
     mpView                = new QTreeWidget();

@@ -82,9 +82,9 @@ AdvancedRenameProcessDialog::AdvancedRenameProcessDialog(const NewNamesList& lis
     setValue(0);
     setModal(true);
     setLabel(d->infoLabel);
-    setButtonText(i18n("&Abort"));
+    setButtonText(i18nc("@action:button", "&Abort"));
     setTitle(i18n("Processing..."));
-    setWindowTitle(i18n("Renaming images"));
+    setWindowTitle(i18nc("@title:window", "Renaming Images"));
 
     getNextThumbnail();
     setMaximum(d->newNameList.count());
@@ -157,7 +157,7 @@ void AdvancedRenameProcessDialog::slotRenameFinished()
         if (!d->failedList.isEmpty())
         {
             QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Warning,
-                     i18n("Renaming images"),
+                     i18nc("@title:window", "Renaming Images"),
                      i18np("An error occurred while renaming %1 image.\n"
                            "Do you want to rename this image again or "
                            "rename this image by overwriting?",
@@ -167,9 +167,9 @@ void AdvancedRenameProcessDialog::slotRenameFinished()
                            d->failedList.count()),
                      QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, this);
 
-            msgBox->button(QMessageBox::Yes)->setText(i18n("Rename Again"));
+            msgBox->button(QMessageBox::Yes)->setText(i18nc("@action:button", "Rename Again"));
             msgBox->button(QMessageBox::Yes)->setIcon(QIcon::fromTheme(QLatin1String("document-edit")));
-            msgBox->button(QMessageBox::No)->setText(i18n("Overwrite"));
+            msgBox->button(QMessageBox::No)->setText(i18nc("@action:button", "Overwrite"));
             msgBox->button(QMessageBox::No)->setIcon(QIcon::fromTheme(QLatin1String("edit-copy")));
 
             int result = msgBox->exec();

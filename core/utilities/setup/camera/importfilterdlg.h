@@ -46,6 +46,10 @@ protected Q_SLOTS:
     void mimeCheckBoxClicked();
     void mimeButtonClicked();
 
+private Q_SLOTS:
+
+    void slotHelp();
+
 private:
 
     class Private;

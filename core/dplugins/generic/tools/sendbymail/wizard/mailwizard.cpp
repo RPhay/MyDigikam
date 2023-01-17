@@ -72,7 +72,7 @@ MailWizard::MailWizard(QWidget* const parent, DInfoInterface* const iface)
       d(new Private)
 {
     setOption(QWizard::NoCancelButtonOnLastPage);
-    setWindowTitle(i18n("Send by Email"));
+    setWindowTitle(i18nc("@title:window", "Send by Email"));
 
     d->iface             = iface;
     d->settings          = new MailSettings;

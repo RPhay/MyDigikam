@@ -70,6 +70,21 @@ QString ProfileConversionToolPlugin::details() const
     return i18nc("@info", "This Image Editor tool can convert image to a different color space.");
 }
 
+QString ProfileConversionToolPlugin::handbookSection() const
+{
+    return QLatin1String("image_editor");
+}
+
+QString ProfileConversionToolPlugin::handbookChapter() const
+{
+    return QLatin1String("color_tools");
+}
+
+QString ProfileConversionToolPlugin::handbookReference() const
+{
+    return QLatin1String("color-cm");
+}
+
 QList<DPluginAuthor> ProfileConversionToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()

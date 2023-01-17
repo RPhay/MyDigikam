@@ -1082,7 +1082,7 @@ void EditorWindow::execSavingProgressDialog()
     }
 
     m_savingProgressDialog = new QProgressDialog(this);
-    m_savingProgressDialog->setWindowTitle(i18nc("@title", "Saving image..."));
+    m_savingProgressDialog->setWindowTitle(i18nc("@title:window", "Saving Image..."));
     m_savingProgressDialog->setLabelText(i18nc("@label", "Please wait for the image to be saved..."));
     m_savingProgressDialog->setAttribute(Qt::WA_DeleteOnClose);
     m_savingProgressDialog->setAutoClose(true);
@@ -1109,7 +1109,7 @@ bool EditorWindow::promptForOverWrite()
 
         return (DMessageBox::showContinueCancel(QMessageBox::Warning,
                                                 this,
-                                                i18nc("@title; warning while saving progress", "Warning"),
+                                                i18nc("@title:window, warning while saving progress", "Warning"),
                                                 warnMsg,
                                                 QLatin1String("editorWindowSaveOverwrite"))
                 ==  QMessageBox::Yes);
@@ -1800,7 +1800,7 @@ bool EditorWindow::showFileSaveDialog(const QUrl& initialUrl, QUrl& newURL)
     QString all;
     QStringList list                          = supportedImageMimeTypes(QIODevice::WriteOnly, all);
     QPointer<DFileDialog> imageFileSaveDialog = new DFileDialog(this);
-    imageFileSaveDialog->setWindowTitle(i18nc("@title", "New Image File Name"));
+    imageFileSaveDialog->setWindowTitle(i18nc("@title:window", "New Image File Name"));
     imageFileSaveDialog->setDirectoryUrl(initialUrl.adjusted(QUrl::RemoveFilename | QUrl::StripTrailingSlash));
     imageFileSaveDialog->setOption(QFileDialog::DontConfirmOverwrite);
     imageFileSaveDialog->setAcceptMode(QFileDialog::AcceptSave);
@@ -2274,7 +2274,7 @@ bool EditorWindow::checkPermissions(const QUrl& url)
 
     if (fi.exists() && !fi.isWritable())
     {
-        int result = QMessageBox::warning(this, i18nc("@title", "Overwrite File?"),
+        int result = QMessageBox::warning(this, i18nc("@title:window", "Overwrite File?"),
                                           i18nc("@info", "You do not have write permissions "
                                                 "for the file named \"%1\". "
                                                 "Are you sure you want "
@@ -2293,7 +2293,7 @@ bool EditorWindow::checkPermissions(const QUrl& url)
 
 bool EditorWindow::checkOverwrite(const QUrl& url)
 {
-    int result = QMessageBox::warning(this, i18nc("@title", "Overwrite File?"),
+    int result = QMessageBox::warning(this, i18nc("@title:window", "Overwrite File?"),
                                       i18nc("@info", "A file named \"%1\" already "
                                             "exists. Are you sure you want "
                                             "to overwrite it?",
@@ -2320,7 +2320,7 @@ bool EditorWindow::moveLocalFile(const QString& org, const QString& dst)
 
     if (!DFileOperations::localFileRename(source, org, dst))
     {
-        QMessageBox::critical(this, i18nc("@title", "Error Saving File"),
+        QMessageBox::critical(this, i18nc("@title:window", "Error Saving File"),
                               i18nc("@info", "Failed to overwrite original file"));
         return false;
     }

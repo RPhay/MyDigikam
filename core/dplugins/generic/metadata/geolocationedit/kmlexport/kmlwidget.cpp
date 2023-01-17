@@ -102,7 +102,7 @@ KmlWidget::KmlWidget(GeolocationEdit* const dlg,
     DestinationDirectory_      = new DFileSelector(TargetPreferenceGroupBox);
     DestinationDirectory_->setFileDlgMode(QFileDialog::Directory);
     DestinationDirectory_->setFileDlgOptions(QFileDialog::ShowDirsOnly);
-    DestinationDirectory_->setFileDlgTitle(i18n("Select a directory in which to save the kml file and pictures"));
+    DestinationDirectory_->setFileDlgTitle(i18nc("@title:window", "Select a Directory in Which to Save the KML File and Pictures"));
 
     DestinationUrlLabel_       = new QLabel(i18n("Destination Path:"), TargetPreferenceGroupBox);
     DestinationUrl_            = new QLineEdit(TargetPreferenceGroupBox);
@@ -159,7 +159,7 @@ KmlWidget::KmlWidget(GeolocationEdit* const dlg,
 
     GPXFileUrlRequester_ = new DFileSelector(GPXTracksGroupBox);
     GPXFileUrlRequester_->setFileDlgFilter(i18n("GPS Exchange Format (*.gpx)"));
-    GPXFileUrlRequester_->setFileDlgTitle(i18n("Select GPX File to Load"));
+    GPXFileUrlRequester_->setFileDlgTitle(i18nc("@title:window", "Select GPX File to Load"));
     GPXFileUrlRequester_->setFileDlgMode(QFileDialog::ExistingFile);
 
     timeZoneLabel_ = new QLabel(i18n("Time Zone:"), GPXTracksGroupBox);
