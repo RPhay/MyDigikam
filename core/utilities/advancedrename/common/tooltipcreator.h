@@ -40,10 +40,10 @@ public:
 
     QString tooltip(Parser* parser);
 
-    QString getInfoIconResourceName();
-    QIcon getInfoIcon();
-
 private:
+
+    QIcon getInfoIcon()         const;
+    QString getInfoIconBase64() const;
 
     /// common methods
 

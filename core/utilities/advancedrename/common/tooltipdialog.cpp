@@ -82,11 +82,6 @@ void TooltipDialog::setTooltip(const QString& tooltip)
 {
     clearTooltip();
 
-    // set image resources
-
-    d->textBrowser->document()->addResource(QTextDocument::ImageResource,
-                                            QUrl::fromLocalFile(TooltipCreator::getInstance().getInfoIconResourceName()),
-                                            TooltipCreator::getInstance().getInfoIcon());
     d->textBrowser->setHtml(tooltip);
 }
 
