@@ -93,6 +93,7 @@ AlbumSelectDialog::AlbumSelectDialog(QWidget* const parent, PAlbum* const albumT
     grid->addWidget(logo,        0, 0, 1, 1);
     grid->addWidget(message,     1, 0, 1, 1);
     grid->addWidget(d->albumSel, 0, 1, 3, 1);
+    grid->setColumnStretch(0, 2);
     grid->setColumnStretch(1, 10);
     grid->setRowStretch(2, 10);
     grid->setContentsMargins(QMargins());
