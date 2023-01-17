@@ -244,7 +244,7 @@ void AdvancedRenameWidget::registerParserControls()
                                      qMin(style()->pixelMetric(QStyle::PM_LayoutTopMargin),
                                           qMin(style()->pixelMetric(QStyle::PM_LayoutRightMargin),
                                                style()->pixelMetric(QStyle::PM_LayoutBottomMargin))));
-            
+
             DynamicLayout* const layout = new DynamicLayout(cmargin, cmargin);
 
             Q_FOREACH (Rule* const p, d->parser->options())

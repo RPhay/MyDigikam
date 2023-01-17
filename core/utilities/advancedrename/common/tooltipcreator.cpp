@@ -20,6 +20,10 @@
 #include <QPalette>
 #include <QApplication>
 #include <QIcon>
+#include <QImage>
+#include <QBuffer>
+#include <QByteArray>
+
 
 // KDE includes
 
@@ -54,8 +58,7 @@ QString TooltipCreator::additionalInformation()
     information += QString::fromUtf8("<div style='margin-top:20px;'");
 
     information += tableStart(90);
-    information += QString::fromUtf8("<tr><td style='vertical-align:top;'><img src='") + getInfoIconResourceName() +
-                                                                                         QString::fromUtf8("' /></td>");
+    information += QString::fromUtf8("<tr><td style='vertical-align:top;'>") + getInfoIconResourceName() + QString::fromUtf8("</td>");
     information += QString::fromUtf8("<td><ol>");
 
     Q_FOREACH (const QString& infoItem, infoItems)
@@ -75,7 +78,13 @@ QString TooltipCreator::additionalInformation()
 
 QString TooltipCreator::getInfoIconResourceName()
 {
-    return QLatin1String("mydata://info.png");
+    QIcon info = QIcon::fromTheme(QLatin1String("dialog-information")); // image-stack-open
+    QImage img = info.pixmap(QSize(48, 48)).toImage();
+    QByteArray byteArray;
+    QBuffer    buffer(&byteArray);
+    img.save(&buffer, "PNG");
+
+    return (QString::fromLatin1("<img src=\"data:image/png;base64,%1\">").arg(QString::fromLatin1(byteArray.toBase64().data())));
 }
 
 QIcon TooltipCreator::getInfoIcon()
