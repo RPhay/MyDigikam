@@ -230,3 +230,4 @@ echo -e "---------- Clean-up Old Packages\n"
 
 # Remove system based devel package to prevent conflict with new one.
 sudo apt remove -y libqt5core5a || true
+sudo apt remove -y libavfilter6 || true
