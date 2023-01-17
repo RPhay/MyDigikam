@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-14 00:54+0000\n"
+"POT-Creation-Date: 2023-01-17 00:54+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -3926,7 +3926,7 @@ msgstr "ਫਾਇਲ ਨਾਂ"
 
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
-#: core/libs/dialogs/deletedialog.cpp:176
+#: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
 msgid "Path"
 msgstr "ਮਾਰਗ"
@@ -5095,7 +5095,7 @@ msgstr "ਕੋਈ ਨਾ ਚੁਣੋ"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:263
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:315
 #: core/libs/tags/widgets/tageditdlg.cpp:193
-#: core/utilities/searchwindow/searchview.cpp:509
+#: core/utilities/searchwindow/searchview.cpp:510
 #, kde-format
 msgid "Reset"
 msgstr "ਮੁੜ-ਸੈੱਟ"
@@ -14126,7 +14126,7 @@ msgstr "ਸ਼ਾਮਲ(&A)"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:87
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:97
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:83
-#: core/libs/dialogs/deletedialog.cpp:594
+#: core/libs/dialogs/deletedialog.cpp:599
 #, kde-format
 msgid "&Delete"
 msgstr "ਹਟਾਓ(&D)"
@@ -27820,7 +27820,7 @@ msgstr "ਨਵੀਂ ਐਲਬਮ"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:219
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
-#: core/libs/tags/manager/tagsmanager.cpp:723
+#: core/libs/tags/manager/tagsmanager.cpp:725
 #: core/libs/tags/widgets/tagfolderview.cpp:135
 #, fuzzy, kde-format
 msgid "Expand Selected Nodes"
@@ -29812,29 +29812,29 @@ msgid ""
 "This binary file is used to start a dedicated instance of MariaDB server."
 msgstr ""
 
-#: core/libs/dialogs/deletedialog.cpp:176
+#: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
 msgid "Thumb"
 msgstr "ਥੰਮ"
 
-#: core/libs/dialogs/deletedialog.cpp:179
+#: core/libs/dialogs/deletedialog.cpp:180
 #, fuzzy, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "ਫਾਇਲਾਂ ਦੀ ਲਿਸਟ, ਜਿਨ੍ਹਾਂ ਨੂੰ ਹਟਾਇਆ ਜਾਣਾ ਹੈ।"
 
-#: core/libs/dialogs/deletedialog.cpp:180
+#: core/libs/dialogs/deletedialog.cpp:181
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "ਇਹ ਉਹਨਾਂ ਆਈਟਮਾਂ ਦੀ ਲਿਸਟ ਹੈ, ਜਿੰਨ੍ਹਾਂ ਨੂੰ ਹਟਾਇਆ ਜਾਣਾ ਹੈ।"
 
-#: core/libs/dialogs/deletedialog.cpp:302
+#: core/libs/dialogs/deletedialog.cpp:303
 #, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
 "Trash."
 msgstr "ਜੇਕਰ ਚੋਣ ਕੀਤੀ ਗਈ ਤਾਂ ਫਾਇਲਾਂ ਨੂੰ ਰੱਦੀ 'ਚ ਰੱਖਣ ਦੀ ਬਜਾਏ ਹਮੇਸ਼ਾਂ ਲਈ ਹਟਾ ਦਿੱਤਾ ਜਾਵੇਗਾ।"
 
-#: core/libs/dialogs/deletedialog.cpp:304
+#: core/libs/dialogs/deletedialog.cpp:305
 #, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -29842,17 +29842,17 @@ msgid ""
 "most filesystems are unable to undelete deleted items reliably.</p>"
 msgstr ""
 
-#: core/libs/dialogs/deletedialog.cpp:310
+#: core/libs/dialogs/deletedialog.cpp:311
 #, fuzzy, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "ਫਾਇਲਾਂ ਨੂੰ ਰੱਦੀ ਵਿੱਚ ਭੇਜਣ ਦੀ ਬਜਾਏ ਹਟਾ ਦਿਓ(&D)"
 
-#: core/libs/dialogs/deletedialog.cpp:317
+#: core/libs/dialogs/deletedialog.cpp:318
 #, kde-format
 msgid "Do not &ask again"
 msgstr "ਮੁੜ ਨਾ ਪੁੱਛੋ(&a)"
 
-#: core/libs/dialogs/deletedialog.cpp:376
+#: core/libs/dialogs/deletedialog.cpp:377
 #, fuzzy, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -29861,7 +29861,7 @@ msgstr ""
 "ਜੇ ਇਹ ਚੋਣ ਕੀਤੀ ਗਈ ਤਾਂ ਇਹ ਡਾਈਲਾਗ ਨਹੀਂ ਵੇਖਾਇਆ ਜਾਵੇਗਾ ਅਤੇ ਫਾਇਲਾਂ ਨੂੰ ਸਿੱਧਾ ਰੱਦੀ ਵਿੱਚ  ਭੇਜਿਆ "
 "ਜਾਵੇਗਾ।"
 
-#: core/libs/dialogs/deletedialog.cpp:378
+#: core/libs/dialogs/deletedialog.cpp:379
 #, fuzzy, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -29870,7 +29870,7 @@ msgstr ""
 "ਜੇ ਇਹ ਬਕਸਾ ਚੁਣਿਆ ਗਿਆ ਤਾਂ ਇਹ ਡਾਈਲਾਗ ਫੇਰ ਨਹੀਂ ਵੇਖਾਇਆ ਜਾਵੇਗਾ, ਅਤੇ ਫਾਇਲਾਂ ਨੂੰ ਸਿੱਧਾ ਹੀ ਰੱਦੀ "
 "ਵਿੱਚ ਭੇਜਿਆ ਜਾਵੇਗਾ।"
 
-#: core/libs/dialogs/deletedialog.cpp:383
+#: core/libs/dialogs/deletedialog.cpp:384
 #, fuzzy, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -29879,7 +29879,7 @@ msgstr ""
 "ਜੇ ਇਹ ਚੋਣ ਕੀਤੀ ਗਈ ਤਾਂ ਇਹ ਡਾਈਲਾਗ ਨਹੀਂ ਵੇਖਾਇਆ ਜਾਵੇਗਾ ਅਤੇ ਫਾਇਲਾਂ ਨੂੰ ਸਿੱਧਾ ਰੱਦੀ ਵਿੱਚ  ਭੇਜਿਆ "
 "ਜਾਵੇਗਾ।"
 
-#: core/libs/dialogs/deletedialog.cpp:385
+#: core/libs/dialogs/deletedialog.cpp:386
 #, fuzzy, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -29888,42 +29888,42 @@ msgstr ""
 "ਜੇ ਇਹ ਬਕਸਾ ਚੁਣਿਆ ਗਿਆ ਤਾਂ ਇਹ ਡਾਈਲਾਗ ਫੇਰ ਨਹੀਂ ਵੇਖਾਇਆ ਜਾਵੇਗਾ, ਅਤੇ ਫਾਇਲਾਂ ਨੂੰ ਸਿੱਧਾ ਹੀ ਰੱਦੀ "
 "ਵਿੱਚ ਭੇਜਿਆ ਜਾਵੇਗਾ।"
 
-#: core/libs/dialogs/deletedialog.cpp:397
+#: core/libs/dialogs/deletedialog.cpp:398
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr "ਇਹ ਆਈਟਮਾਂ ਨੂੰ ਤੁਹਾਡੀ ਹਾਰਡ ਡਿਸਕ ਤੋਂ <b>ਹਮੇਸ਼ਾ ਲਈ ਹਟਾ ਦਿੱਤਾ</b> ਜਾਵੇਗਾ।"
 
-#: core/libs/dialogs/deletedialog.cpp:403
+#: core/libs/dialogs/deletedialog.cpp:404
 #, kde-format
 msgid "These items will be moved to Trash."
 msgstr "ਇਨ੍ਹਾਂ ਐਲਬਮਾਂ ਨੂੰ ਰੱਦੀ ਟੋਕਰੀ 'ਚ ਭੇਜਿਆ ਜਾਵੇਗਾ।"
 
-#: core/libs/dialogs/deletedialog.cpp:405
+#: core/libs/dialogs/deletedialog.cpp:406
 #, fuzzy, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
 msgstr[0] "<b>1</b> ਫਾਇਲ ਚੁਣੀ।"
 msgstr[1] "<b>%1</b> ਫਾਇਲਾਂ ਚੁਣੀਆਂ।"
 
-#: core/libs/dialogs/deletedialog.cpp:418
+#: core/libs/dialogs/deletedialog.cpp:419
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr "ਇਹ ਐਲਬਮਾਂ ਨੂੰ ਤੁਹਾਡੀ ਹਾਰਡ ਡਿਸਕ ਤੋਂ <b>ਹਮੇਸ਼ਾਂ ਲਈ ਹਟਾ</b> ਦਿੱਤਾ ਜਾਵੇਗਾ।"
 
-#: core/libs/dialogs/deletedialog.cpp:424
+#: core/libs/dialogs/deletedialog.cpp:425
 #, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "ਇਹ ਐਲਬਮਾਂ ਨੂੰ ਰੱਦੀ ਵਿੱਚ ਭੇਜਿਆ ਜਾਵੇਗਾ।"
 
-#: core/libs/dialogs/deletedialog.cpp:428
-#: core/libs/dialogs/deletedialog.cpp:455
+#: core/libs/dialogs/deletedialog.cpp:429
+#: core/libs/dialogs/deletedialog.cpp:456
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
 msgstr[0] "<b>1</b> ਐਲਬਮ ਚੁਣੀ ਗਈ।"
 msgstr[1] "<b>%1</b> ਐਲਬਮਾਂ ਚੁਣੀਆਂ ਗਈਆਂ।"
 
-#: core/libs/dialogs/deletedialog.cpp:439
+#: core/libs/dialogs/deletedialog.cpp:440
 #, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -29934,7 +29934,7 @@ msgstr ""
 "ਇਸ ਲਿਸਟ ਵਿੱਚ ਮੌਜੂਦ <b>ਸਭ ਸਬ-ਐਲਬਮਾਂ</b> ਵੀ ਸ਼ਾਮਲ ਹਨ ਅਤੇ ਉਹ ਵੀ ਪੱਕੇ ਤੌਰ ਉੱਤੇ ਹਟਾਈਆਂ ਜਾਣਗੀਆਂ।"
 "</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:448
+#: core/libs/dialogs/deletedialog.cpp:449
 #, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -29943,18 +29943,18 @@ msgstr ""
 "<p>ਇਹ ਐਲਬਮਾਂ ਨੂੰ ਰੱਦੀ ਵਿੱਚ ਭੇਜਿਆ ਜਾਵੇਗਾ।</p><p>ਯਾਦ ਰੱਖੋ ਕਿ ਇਸ ਲਿਸਟ ਵਿੱਚ <b>ਸਭ ਸਬ-"
 "ਐਲਬਮਾਂ</b> ਨੂੰ ਸ਼ਾਮਲ ਕੀਤਾ ਗਿਆ ਹੈ ਅਤੇ ਉਨ੍ਹਾਂ ਨੂੰ ਵੀ ਰੱਦੀ ਵਿੱਚ ਭੇਜਿਆ ਜਾਵੇਗਾ।</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:595
+#: core/libs/dialogs/deletedialog.cpp:600
 #, kde-format
 msgid "&Move to Trash"
 msgstr "ਰੱਦੀ ਵਿੱਚ ਭੇਜੋ(&M)"
 
-#: core/libs/dialogs/deletedialog.cpp:655
+#: core/libs/dialogs/deletedialog.cpp:660
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "ਚੁਣੀਆਂ ਫਾਇਲਾਂ ਹਟਾਉਣ ਬਾਰੇ"
 
-#: core/libs/dialogs/deletedialog.cpp:662
+#: core/libs/dialogs/deletedialog.cpp:667
 #, fuzzy, kde-format
 #| msgid "About to delete selected albums"
 msgctxt "@title:window"
@@ -36844,7 +36844,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr ""
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:182
+#: core/utilities/setup/downloader/filesdownloader.cpp:185
 #, fuzzy, kde-format
 msgid "Download"
 msgstr "ਡਾਊਨਲੋਡ"
@@ -39474,39 +39474,39 @@ msgid "Delete Tags"
 msgstr "ਟੈਗ ਹਟਾਓ"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:146
-#: core/libs/tags/manager/tagsmanager.cpp:707
+#: core/libs/tags/manager/tagsmanager.cpp:709
 #, fuzzy, kde-format
 msgid "Edit Tag Title"
 msgstr "ਚਿੱਤਰ ਟਾਈਟਲ"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:150
-#: core/libs/tags/manager/tagsmanager.cpp:711
+#: core/libs/tags/manager/tagsmanager.cpp:713
 #: core/libs/tags/widgets/tagfolderview.cpp:70
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "ਟੈਗ ਆਈਕਾਨ ਮੁੜ-ਸੈੱਟ"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
-#: core/libs/tags/manager/tagsmanager.cpp:720
+#: core/libs/tags/manager/tagsmanager.cpp:722
 #, kde-format
 msgid "Invert Selection"
 msgstr "ਉਲਟ ਚੋਣ"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
-#: core/libs/tags/manager/tagsmanager.cpp:726
+#: core/libs/tags/manager/tagsmanager.cpp:728
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr ""
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:162
-#: core/libs/tags/manager/tagsmanager.cpp:729
+#: core/libs/tags/manager/tagsmanager.cpp:731
 #, fuzzy, kde-format
 #| msgid "My Albums"
 msgid "Collapse Tag Tree"
 msgstr "ਮੇਰੀਆਂ ਐਲਬਮਾਂ"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:165
-#: core/libs/tags/manager/tagsmanager.cpp:732
+#: core/libs/tags/manager/tagsmanager.cpp:734
 #, fuzzy, kde-format
 msgid "Remove Tag from Images"
 msgstr "ਚਿੱਤਰ ਤੋਂ ਮੇਟਾਡਾਟਾ ਮੁੜ-ਪੜ੍ਹੋ"
@@ -39584,14 +39584,14 @@ msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:177
+#: core/libs/tags/manager/tagsmanager.cpp:179
 #, fuzzy, kde-format
 #| msgid "Tags Manager"
 msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "ਟੈਗ ਮੈਨੇਜਰ"
 
-#: core/libs/tags/manager/tagsmanager.cpp:336
+#: core/libs/tags/manager/tagsmanager.cpp:338
 #, fuzzy, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -39607,7 +39607,7 @@ msgstr[1] ""
 "ਮੇਟਾਡਾਟੇ ਡਾਟਾਬੇਸ ਨਾਲ ਸਮਕਾਲੀ ਕਰਨ ਉੱਤੇ ਸਮਾਂ ਲੱਗੇਗਾ।\n"
 "ਕੀ ਤੁਸੀਂ ਜਾਰੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:359
+#: core/libs/tags/manager/tagsmanager.cpp:361
 #, fuzzy, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -39620,7 +39620,7 @@ msgstr[1] ""
 "ਮੇਟਾਡਾਟੇ ਡਾਟਾਬੇਸ ਨਾਲ ਸਮਕਾਲੀ ਕਰਨ ਉੱਤੇ ਸਮਾਂ ਲੱਗੇਗਾ।\n"
 "ਕੀ ਤੁਸੀਂ ਜਾਰੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:369
+#: core/libs/tags/manager/tagsmanager.cpp:371
 #, fuzzy, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
@@ -39628,7 +39628,7 @@ msgid_plural "Delete tags %2?"
 msgstr[0] "ਟੈਗ ਹਟਾਓ"
 msgstr[1] "ਟੈਗ ਹਟਾਓ"
 
-#: core/libs/tags/manager/tagsmanager.cpp:375
+#: core/libs/tags/manager/tagsmanager.cpp:377
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
@@ -39636,7 +39636,7 @@ msgid_plural "Delete tags"
 msgstr[0] "ਟੈਗ ਹਟਾਓ"
 msgstr[1] "ਟੈਗ ਹਟਾਓ"
 
-#: core/libs/tags/manager/tagsmanager.cpp:498
+#: core/libs/tags/manager/tagsmanager.cpp:500
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -39644,15 +39644,15 @@ msgid ""
 "Tags from Image).<br/> Do you want to continue?</qt>"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:510
-#: core/libs/tags/manager/tagsmanager.cpp:529
+#: core/libs/tags/manager/tagsmanager.cpp:512
+#: core/libs/tags/manager/tagsmanager.cpp:531
 #, fuzzy, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
 "Do you want to continue?"
 msgstr "ਇਹ ਕਾਰਵਾਈ ਕਰਨ ਨਾਲ ਚਿੱਤਰ ਦੀ ਕੁਆਲਟੀ ਘੱਟ ਜਾਵੇਗੀ! ਕੀ ਤੁਸੀਂ ਜਾਰੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:549
+#: core/libs/tags/manager/tagsmanager.cpp:551
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -39660,120 +39660,128 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:613
+#: core/libs/tags/manager/tagsmanager.cpp:615
 #, fuzzy, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
 msgstr[0] "ਕੀ ਤੁਸੀਂ ਆਪਣੀ ਭੰਡਾਰ ਲਿਸਟ ਤੋਂ \"%1\" ਭੰਡਾਰ ਨੂੰ ਹਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 msgstr[1] "ਕੀ ਤੁਸੀਂ ਆਪਣੀ ਭੰਡਾਰ ਲਿਸਟ ਤੋਂ \"%1\" ਭੰਡਾਰ ਨੂੰ ਹਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:694
+#: core/libs/tags/manager/tagsmanager.cpp:696
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:697
+#: core/libs/tags/manager/tagsmanager.cpp:699
 #, fuzzy, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "ਐਕਸਪੋਰਟ(&E)"
 
-#: core/libs/tags/manager/tagsmanager.cpp:714
+#: core/libs/tags/manager/tagsmanager.cpp:716
 #, fuzzy, kde-format
 msgid "Create Tag from Address Book"
 msgstr "ਐਡਰੈੱਸ ਬੁੱਕ ਤੋਂ ਟੈਗ ਬਣਾਓ"
 
-#: core/libs/tags/manager/tagsmanager.cpp:717
+#: core/libs/tags/manager/tagsmanager.cpp:719
 #, fuzzy, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "ਤਾਜ਼ਾ ਜਾਰੀ ਕੀਤੇ ਟੈਗ"
 
-#: core/libs/tags/manager/tagsmanager.cpp:737
+#: core/libs/tags/manager/tagsmanager.cpp:739
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:740
+#: core/libs/tags/manager/tagsmanager.cpp:742
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
 "the root tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:744
+#: core/libs/tags/manager/tagsmanager.cpp:746
 #, fuzzy, kde-format
 msgid "Edit title from selected tag."
 msgstr "ਪਾਠ ਨੂੰ ਖੱਬੇ ਰੱਖੋ"
 
-#: core/libs/tags/manager/tagsmanager.cpp:746
+#: core/libs/tags/manager/tagsmanager.cpp:748
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:751
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:751
+#: core/libs/tags/manager/tagsmanager.cpp:753
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:754
+#: core/libs/tags/manager/tagsmanager.cpp:756
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:756
+#: core/libs/tags/manager/tagsmanager.cpp:758
 #, fuzzy, kde-format
 #| msgid "Download is completed..."
 msgid "Expand tag tree completely"
 msgstr "ਡਾਊਨਲੋਡ ਮੁਕੰਮਲ..."
 
-#: core/libs/tags/manager/tagsmanager.cpp:758
+#: core/libs/tags/manager/tagsmanager.cpp:760
 #, fuzzy, kde-format
 #| msgid "Download is completed..."
 msgid "Collapse tag tree completely"
 msgstr "ਡਾਊਨਲੋਡ ਮੁਕੰਮਲ..."
 
-#: core/libs/tags/manager/tagsmanager.cpp:760
+#: core/libs/tags/manager/tagsmanager.cpp:762
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:808
+#: core/libs/tags/manager/tagsmanager.cpp:810
 #, fuzzy, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "ਚਿੱਤਰ ਲਈ ਮੇਟਾਡਾਟਾ ਲਿਖੋ"
 
-#: core/libs/tags/manager/tagsmanager.cpp:811
+#: core/libs/tags/manager/tagsmanager.cpp:813
 #, fuzzy, kde-format
 msgid "Read Tags from Image"
 msgstr "ਚਿੱਤਰ ਤੋਂ ਮੇਟਾਡਾਟਾ ਪੜ੍ਹੋ"
 
-#: core/libs/tags/manager/tagsmanager.cpp:814
+#: core/libs/tags/manager/tagsmanager.cpp:816
 #, fuzzy, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "ਚਿੱਤਰ ਲਈ ਮੇਟਾਡਾਟਾ ਲਿਖੋ"
 
-#: core/libs/tags/manager/tagsmanager.cpp:816
+#: core/libs/tags/manager/tagsmanager.cpp:818
 #, fuzzy, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "ਚਿੱਤਰ ਲਈ ਮੇਟਾਡਾਟਾ ਲਿਖੋ"
 
-#: core/libs/tags/manager/tagsmanager.cpp:818
+#: core/libs/tags/manager/tagsmanager.cpp:820
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager.cpp:821
+#: core/libs/tags/manager/tagsmanager.cpp:823
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
 "caution."
 msgstr ""
+
+#: core/libs/tags/manager/tagsmanager.cpp:845
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
+#, fuzzy, kde-format
+#| msgid "&Help"
+msgctxt "@info"
+msgid "Help"
+msgstr "ਮਦਦ(&H)"
 
 #: core/libs/tags/widgets/tagcheckview.cpp:82
 #, kde-format
@@ -50753,7 +50761,7 @@ msgstr "ਸਜਾਵਟ(&D)"
 msgid "Effec&ts"
 msgstr "ਪਰਭਾਵ(&t)"
 
-#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:142
+#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:146
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@title:window"
@@ -52153,7 +52161,7 @@ msgid ""
 "(album UI only)."
 msgstr ""
 
-#: core/utilities/advancedrename/common/tooltipdialog.cpp:53
+#: core/utilities/advancedrename/common/tooltipdialog.cpp:54
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@title:window"
@@ -53109,13 +53117,6 @@ msgstr ""
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr ""
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
-#, fuzzy, kde-format
-#| msgid "&Help"
-msgctxt "@info"
-msgid "Help"
-msgstr "ਮਦਦ(&H)"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:158
 #, fuzzy, kde-format
@@ -55237,43 +55238,43 @@ msgstr "ਪਰੋਫਾਇਲ ਦਿਓ"
 msgid "<b>No Profile</b>"
 msgstr "<b>ਕੋਈ ਪਰੋਫਾਇਲ ਨਹੀਂ</b>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:80
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:81
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Soft Proofing Options"
 msgstr "ਸਾਫਟ ਪਰੂਫ਼ਿੰਗ"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:84
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:85
 #, fuzzy, kde-format
 msgid "Soft Proofing On"
 msgstr "ਸਾਫਟ ਪਰੂਫ਼ਿੰਗ"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:85
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:86
 #, kde-format
 msgid "Enable soft-proofing color managed view"
 msgstr ""
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:86
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:87
 #, fuzzy, kde-format
 msgid "Soft Proofing Off"
 msgstr "ਸਾਫਟ ਪਰੂਫ਼ਿੰਗ"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:87
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:88
 #, kde-format
 msgid "Disable soft-proofing color managed view"
 msgstr ""
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:94
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:95
 #, fuzzy, kde-format
 msgid "<b>Configure the Soft Proofing View</b>"
 msgstr "<b>ਝਲਕ ਰਵੱਈਆ ਸੰਰਚਨਾ</b>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:102
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:103
 #, kde-format
 msgid "Profile of the output device to simulate:"
 msgstr ""
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:105
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:106
 #: core/utilities/setup/setupicc.cpp:431
 #, kde-format
 msgid ""
@@ -55282,7 +55283,7 @@ msgid ""
 "an image will be rendered via an output device.</p>"
 msgstr ""
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:111
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:112
 #, fuzzy, kde-format
 msgid ""
 "<p>Press this button to get detailed information about the selected proofing "
@@ -55291,22 +55292,22 @@ msgstr ""
 "<p>ਤੁਸੀਂ ਇਸ ਬਟਨ ਨੂੰ ਚੁਣੇ ਸਾਫਟ ਪਰੂਫ਼ ਪਰੋਫਾਇਲ ਬਾਰੇ ਪੂਰੇ ਵੇਰਵੇ ਸਣੇ ਜਾਣਕਾਰੀ ਵੇਖਣ ਲਈ ਵਰਤ ਸਕਦੇ ਹੋ।</"
 "p>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:127
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:128
 #, fuzzy, kde-format
 msgid "Rendering intent:"
 msgstr "ਪੇਸ਼ਕਾਰੀ ਭਾਗ:"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:132
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:133
 #, kde-format
 msgid "Highlight out-of-gamut colors"
 msgstr ""
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:133
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:134
 #, kde-format
 msgid "Highlighting color:"
 msgstr "ਹਾਈਲਾਈਟਿੰਗ ਰੰਗ:"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:225
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:229
 #: core/utilities/setup/setupicc.cpp:868
 #, fuzzy, kde-format
 #| msgid "Profile Error"
@@ -55314,38 +55315,38 @@ msgctxt "@title:window"
 msgid "Profile Error"
 msgstr "ਪਰੋਫਾਇਲ ਗਲਤੀ"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:225
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:229
 #: core/utilities/setup/setupicc.cpp:868
 #, kde-format
 msgid "No profile is selected."
 msgstr "ਕੋਈ ਪਰੋਫਾਇਲ ਨਹੀਂ ਚੁਣਿਆ।"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:57
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:61
 #, kde-format
 msgctxt "@title:window"
 msgid "Save?"
 msgstr "ਸੰਭਾਲਣਾ ਹੈ?"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:67
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Save Changes"
 msgstr "ਬਦਲਾਅ ਸੰਭਾਲੋ"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:70
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Save the current changes. Note: The original image will never be overwritten."
 msgstr ""
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:72
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:77
 #, kde-format
 msgctxt "@action:button"
 msgid "Save Changes as a New Version"
 msgstr "ਬਦਲਾਅ ਨਵੇਂ ਵਰਜਨ ਵਜੋਂ ਸੰਭਾਲੋ"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:75
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -55353,19 +55354,19 @@ msgid ""
 "unchanged, a new file will be created."
 msgstr ""
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:78
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:83
 #, kde-format
 msgctxt "@action:button"
 msgid "Discard Changes"
 msgstr ""
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:81
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:86
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard the changes applied to the image during this editing session."
 msgstr ""
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:95
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:100
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid ""
@@ -60070,12 +60071,12 @@ msgstr "ਸੰਭਾਲੀ ਖੋਜ ਸੋਧ"
 msgid "Edit..."
 msgstr "ਸੋਧ..."
 
-#: core/utilities/searchwindow/searchview.cpp:501
+#: core/utilities/searchwindow/searchview.cpp:502
 #, kde-format
 msgid "Add Search Group"
 msgstr "ਖੋਜ ਗਰੁੱਪ ਸ਼ਾਮਲ"
 
-#: core/utilities/searchwindow/searchview.cpp:530
+#: core/utilities/searchwindow/searchview.cpp:531
 #, kde-format
 msgid "Try"
 msgstr "ਕੋਸ਼ਿਸ ਕਰੋ"
@@ -60642,7 +60643,7 @@ msgstr ""
 "<p>ਇਹ ਇਕਸਟੈਨਸ਼ਨ ਵਾਲੀਆਂ ਫਾਇਲਾਂ ਨੂੰ ਆਡੀਓ ਫਾਇਲਾਂ ਵਜੋਂ ਪਛਾਣਿਆ ਜਾਵੇਗਾ ਅਤੇ ਡਾਟਾਬੇਸ ਵਿੱਚ ਸ਼ਾਮਲ "
 "ਕੀਤਾ ਜਾਵੇਗਾ:<br/> <code>%1</code></p>"
 
-#: core/utilities/setup/camera/cameralist.cpp:283
+#: core/utilities/setup/camera/cameralist.cpp:289
 #, kde-format
 msgid ""
 "Failed to auto-detect camera; please make sure it is connected properly and "
@@ -60815,50 +60816,50 @@ msgid ""
 "href='https://www.figuiere.net/digicam/'>this URL</a>.</p>"
 msgstr ""
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:84
+#: core/utilities/setup/camera/importfilterdlg.cpp:85
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Edit Import Filters"
 msgstr "ਆਡੀਓ ਫਾਇਲਾਂ"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:101
+#: core/utilities/setup/camera/importfilterdlg.cpp:102
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "@label: name of items filter"
 msgid "Name:"
 msgstr "ਨਾਂ:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:108
+#: core/utilities/setup/camera/importfilterdlg.cpp:109
 #, fuzzy, kde-format
 msgid "Mime filter:"
 msgstr "ਨੋਵਾਇਸ ਫਿਲਟਰ:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:116
+#: core/utilities/setup/camera/importfilterdlg.cpp:117
 #, fuzzy, kde-format
 msgid "Select Type Mime..."
 msgstr "ਚਿੱਤਰ ਚੁਣੋ"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:121
+#: core/utilities/setup/camera/importfilterdlg.cpp:122
 #, fuzzy, kde-format
 msgid "File name filter:"
 msgstr "ਫਾਇਲ ਨਾਂ"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:131
+#: core/utilities/setup/camera/importfilterdlg.cpp:132
 #, fuzzy, kde-format
 msgid "Path filter:"
 msgstr "ਕੋਈ ਐਕਟਿਵ ਫਿਲਟਰ ਨਹੀਂ"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:141
+#: core/utilities/setup/camera/importfilterdlg.cpp:142
 #, kde-format
 msgid "Show only new files"
 msgstr "ਕੇਵਲ ਨਵੀਆਂ ਫਾਇਲਾਂ ਹੀ ਵੇਖਾਓ"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:212
+#: core/utilities/setup/camera/importfilterdlg.cpp:216
 #, kde-format
 msgid "Select the MimeTypes you want for this filter."
 msgstr ""
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:214
+#: core/utilities/setup/camera/importfilterdlg.cpp:218
 #, fuzzy, kde-format
 msgid "Select Mime Types"
 msgstr "ਚਿੱਤਰ ਚੁਣੋ"
@@ -61400,14 +61401,14 @@ msgstr "ਸਾਲ ਚੁਣੋ"
 msgid "Your collection will use this category:"
 msgstr "ਤੁਹਾਡਾ ਨਵਾਂ ਭੰਡਾਰ ਇਸੇ ਨਾਂ ਨਾਲ ਬਣਾਇਆ ਜਾਵੇਗਾ:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:172
+#: core/utilities/setup/downloader/filesdownloader.cpp:173
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "%1 ਫਾਇਲ ਡਾਊਨਲੋਡ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:200
+#: core/utilities/setup/downloader/filesdownloader.cpp:203
 #, kde-format
 msgctxt "%1: folder path, %2: disk size with unit"
 msgid ""
@@ -61420,24 +61421,24 @@ msgid ""
 "have to restart digiKam.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:212
+#: core/utilities/setup/downloader/filesdownloader.cpp:215
 #, kde-format
 msgid "Disable face engine feature and don't ask again"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:259
+#: core/utilities/setup/downloader/filesdownloader.cpp:265
 #, fuzzy, kde-format
 #| msgid "Download successfully %1..."
 msgid "All files were downloaded successfully."
 msgstr "%1 ਠੀਕ ਤਰ੍ਹਾਂ ਡਾਊਨਲੋਡ..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:268
+#: core/utilities/setup/downloader/filesdownloader.cpp:274
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "ਨਵੇਂ ਡਾਊਨਲੋਡ ਕਰੋ"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:269
+#: core/utilities/setup/downloader/filesdownloader.cpp:275
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -61449,29 +61450,29 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:277
+#: core/utilities/setup/downloader/filesdownloader.cpp:283
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "ਫਿਲਮ ਗਰੇਨ ਸ਼ਾਮਲ..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:410
+#: core/utilities/setup/downloader/filesdownloader.cpp:416
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:434
+#: core/utilities/setup/downloader/filesdownloader.cpp:440
 #, kde-format
 msgid "File write error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:441
+#: core/utilities/setup/downloader/filesdownloader.cpp:447
 #, fuzzy, kde-format
 #| msgid "Export Tools"
 msgid "File open error."
 msgstr "ਐਕਸਪੋਰਟ ਟੂਲ"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:456
+#: core/utilities/setup/downloader/filesdownloader.cpp:462
 #, kde-format
 msgid "File on the server is too large."
 msgstr ""
@@ -63002,14 +63003,14 @@ msgid ""
 "Some settings are hardware dependent and may have no effect.</b>"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:149
+#: core/utilities/setup/setup.cpp:153
 #, fuzzy, kde-format
 #| msgid "Database"
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "ਡਾਟਾਬੇਸ"
 
-#: core/utilities/setup/setup.cpp:150
+#: core/utilities/setup/setup.cpp:154
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid ""
@@ -63017,14 +63018,14 @@ msgid ""
 "Customize database settings"
 msgstr "<qt>ਸਲਾਈਡ ਸ਼ੋ ਸੈਟਿੰਗ<br/><i>ਸਲਾਈਡ-ਸ਼ੋ ਸੈਟਿੰਗ ਪਸੰਦ</i></qt>"
 
-#: core/utilities/setup/setup.cpp:154
+#: core/utilities/setup/setup.cpp:158
 #, fuzzy, kde-format
 #| msgid "Collections"
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "ਭੰਡਾਰ"
 
-#: core/utilities/setup/setup.cpp:155
+#: core/utilities/setup/setup.cpp:159
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Collections Settings<br/><i>Set root albums and database locations</"
@@ -63035,14 +63036,14 @@ msgid ""
 "Set root albums locations"
 msgstr "<qt>ਭੰਡਾਰ ਸੈਟਿੰਗ<br/><i>ਰੂਟ ਐਲਬਮ ਅਤੇ ਡਾਟਾਬੇਸ ਟਿਕਾਣਾ ਸੈੱਟ ਕਰੋ।</i></qt>"
 
-#: core/utilities/setup/setup.cpp:159
+#: core/utilities/setup/setup.cpp:163
 #, fuzzy, kde-format
 #| msgid "Views"
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "ਵੇਖੋ"
 
-#: core/utilities/setup/setup.cpp:160
+#: core/utilities/setup/setup.cpp:164
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Album View Settings<br/><i>Customize the look of the albums list</i></"
@@ -63053,14 +63054,14 @@ msgid ""
 "Customize the look of the views"
 msgstr "<qt>ਐਲਬਮ ਵੇਖਣ ਸੈਟਿੰਗ<br/><i>ਐਲਬਮ ਲਿਸਟ ਦੀ ਦਿੱਖ ਲਈ ਪਸੰਦ ਦਿਓ</i></qt>"
 
-#: core/utilities/setup/setup.cpp:164
+#: core/utilities/setup/setup.cpp:168
 #, fuzzy, kde-format
 #| msgid "Tool-Tip"
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "ਟੂਲ ਟਿੱਪ"
 
-#: core/utilities/setup/setup.cpp:165
+#: core/utilities/setup/setup.cpp:169
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Album Items Tool-Tip Settings<br/><i>Customize information in tool-"
@@ -63071,14 +63072,14 @@ msgid ""
 "Customize information in item tool-tips"
 msgstr "<qt>ਐਲਬਮ ਆਈਟਮ ਟੂਲ-ਟਿੱਪ ਸੈਟਿੰਗ<br/><i>ਟੂਲ-ਟਿੱਪ ਵਿੱਚ ਪਸੰਦੀਦਾ ਜਾਣਕਾਰੀ</i></qt>"
 
-#: core/utilities/setup/setup.cpp:170
+#: core/utilities/setup/setup.cpp:175
 #, fuzzy, kde-format
 #| msgid "Videos"
 msgctxt "@title: settings section"
 msgid "Video"
 msgstr "ਵੀਡੀਓ"
 
-#: core/utilities/setup/setup.cpp:171
+#: core/utilities/setup/setup.cpp:176
 #, fuzzy, kde-format
 #| msgid "<qt>Slide Show Settings<br/><i>Customize slideshow settings</i></qt>"
 msgctxt "@title"
@@ -63087,14 +63088,14 @@ msgid ""
 "Customize settings to play video media"
 msgstr "<qt>ਸਲਾਈਡ ਸ਼ੋ ਸੈਟਿੰਗ<br/><i>ਸਲਾਈਡ-ਸ਼ੋ ਸੈਟਿੰਗ ਪਸੰਦ</i></qt>"
 
-#: core/utilities/setup/setup.cpp:176
+#: core/utilities/setup/setup.cpp:182
 #, fuzzy, kde-format
 #| msgid "Metadata"
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "ਮੈਟਾ-ਡਾਟਾ"
 
-#: core/utilities/setup/setup.cpp:177
+#: core/utilities/setup/setup.cpp:183
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Embedded Image Information Management<br/><i>Setup relations between "
@@ -63105,14 +63106,14 @@ msgid ""
 "Setup relations between images and metadata"
 msgstr "<qt>ਇੰਬੈੱਡ ਚਿੱਤਰ ਜਾਣਕਾਰੀ ਪਰਬੰਧ<br/><i>ਚਿੱਤਰ ਅਤੇ ਮੇਟਾ-ਡਾਟੇ ਵਿੱਚ ਸਬੰਧ ਸੈੱਟਅੱਪ</i></qt>"
 
-#: core/utilities/setup/setup.cpp:181
+#: core/utilities/setup/setup.cpp:187
 #, fuzzy, kde-format
 #| msgid "Templates"
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "ਟੈਪਲੇਟ"
 
-#: core/utilities/setup/setup.cpp:182
+#: core/utilities/setup/setup.cpp:188
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid ""
@@ -63120,14 +63121,14 @@ msgid ""
 "Manage your collection of metadata templates"
 msgstr "<qt>ਡਿਫਾਲਟ ਪਛਾਣ ਜਾਣਕਾਰੀ<br/><i>ਆਪਣੀ ਨਿੱਜੀ ਜਾਣਕਾਰੀ ਸੋਧੋ</i></qt>"
 
-#: core/utilities/setup/setup.cpp:186
+#: core/utilities/setup/setup.cpp:192
 #, fuzzy, kde-format
 #| msgid "Image Editor"
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "ਚਿੱਤਰ ਐਡੀਟਰ"
 
-#: core/utilities/setup/setup.cpp:187
+#: core/utilities/setup/setup.cpp:193
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Image Editor Settings<br/><i>Customize image editor behavior</i></qt>"
@@ -63137,14 +63138,14 @@ msgid ""
 "Customize the image editor settings"
 msgstr "<qt>ਚਿੱਤਰ ਐਡੀਟਰ ਸੈਟਿੰਗ<br/><i>ਚਿੱਤਰ ਐਡੀਟਰ ਰਵੱਈਏ ਲਈ ਪਸੰਦ ਦਿਓ</i></qt>"
 
-#: core/utilities/setup/setup.cpp:191
+#: core/utilities/setup/setup.cpp:197
 #, fuzzy, kde-format
 #| msgid "Color Management"
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "ਰੰਗ ਇੰਤਜ਼ਾਮ"
 
-#: core/utilities/setup/setup.cpp:192
+#: core/utilities/setup/setup.cpp:198
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid ""
@@ -63152,14 +63153,14 @@ msgid ""
 "Customize the color management settings"
 msgstr "<qt>ਚਿੱਤਰ ਐਡੀਟਰ ਸੈਟਿੰਗ<br/><i>ਚਿੱਤਰ ਐਡੀਟਰ ਰਵੱਈਏ ਲਈ ਪਸੰਦ ਦਿਓ</i></qt>"
 
-#: core/utilities/setup/setup.cpp:196
+#: core/utilities/setup/setup.cpp:202
 #, fuzzy, kde-format
 #| msgid "Light Table"
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "ਰੋਸ਼ਨੀ ਟੇਬਲ"
 
-#: core/utilities/setup/setup.cpp:197
+#: core/utilities/setup/setup.cpp:203
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Light Table Settings<br/><i>Customize tool used to compare images</"
@@ -63170,13 +63171,13 @@ msgid ""
 "Customize tool used to compare images"
 msgstr "<qt>ਲਾਈਟ ਟੇਬਲ ਸੈਟਿੰਗ<br/><i>ਚਿੱਤਰਾਂ ਦੀ ਤੁਲਨਾ ਕਰਨ ਲਈ ਪਸੰਦੀਦਾ ਟੂਲ ਵਰਤੋਂ</i></qt>"
 
-#: core/utilities/setup/setup.cpp:201
+#: core/utilities/setup/setup.cpp:207
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "ਚਿੱਤਰ ਐਡੀਟਰ"
 
-#: core/utilities/setup/setup.cpp:202
+#: core/utilities/setup/setup.cpp:208
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Image Editor Settings<br/><i>Customize image editor behavior</i></qt>"
@@ -63186,14 +63187,14 @@ msgid ""
 "Customize default settings to perform image triaging by quality"
 msgstr "<qt>ਚਿੱਤਰ ਐਡੀਟਰ ਸੈਟਿੰਗ<br/><i>ਚਿੱਤਰ ਐਡੀਟਰ ਰਵੱਈਏ ਲਈ ਪਸੰਦ ਦਿਓ</i></qt>"
 
-#: core/utilities/setup/setup.cpp:206
+#: core/utilities/setup/setup.cpp:212
 #, fuzzy, kde-format
 #| msgid "Cameras"
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "ਕੈਮਰੇ"
 
-#: core/utilities/setup/setup.cpp:207
+#: core/utilities/setup/setup.cpp:213
 #, fuzzy, kde-format
 #| msgid "<qt>Camera Settings<br/><i>Manage your camera devices</i></qt>"
 msgctxt "@title"
@@ -63202,14 +63203,14 @@ msgid ""
 "Manage your camera devices"
 msgstr "<qt>ਕੈਮਰਾ ਸੈਟਿੰਗ<br/><i>ਆਪਣੇ ਕੈਮਰਾ ਜੰਤਰ ਦੀ ਸੰਭਾਲ ਕਰੋ</i></qt>"
 
-#: core/utilities/setup/setup.cpp:214
+#: core/utilities/setup/setup.cpp:220
 #, fuzzy, kde-format
 #| msgid "Kipi-Plugins"
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "ਕਿਪਿ-ਪਲੱਗਇਨ"
 
-#: core/utilities/setup/setup.cpp:215
+#: core/utilities/setup/setup.cpp:221
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid ""
@@ -63219,14 +63220,14 @@ msgstr ""
 "<qt>ਮੇਨ ਇੰਟਰਫੇਸ ਪਲੱਗਇਨ ਸੈਟਿੰਗ<br/><i>ਸੈੱਟ ਕਰੋ ਕਿ ਕਿਹੜੀਆਂ ਪਲੱਗਇਨ ਨੂੰ ਮੁੱਖ ਇੰਟਰਫੇਸ ਤੋਂ ਵਰਤਿਆ ਜਾ "
 "ਸਕੇ।</i></qt>"
 
-#: core/utilities/setup/setup.cpp:219
+#: core/utilities/setup/setup.cpp:225
 #, fuzzy, kde-format
 #| msgid "Miscellaneous"
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "ਫੁਟਕਲ"
 
-#: core/utilities/setup/setup.cpp:220
+#: core/utilities/setup/setup.cpp:226
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts "

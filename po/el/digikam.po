@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-14 00:54+0000\n"
+"POT-Creation-Date: 2023-01-17 00:54+0000\n"
 "PO-Revision-Date: 2017-10-16 18:16+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -4135,7 +4135,7 @@ msgstr "Όνομα αρχείου"
 
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
-#: core/libs/dialogs/deletedialog.cpp:176
+#: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
 msgid "Path"
 msgstr "Διαδρομή"
@@ -5345,7 +5345,7 @@ msgstr "Χωρίς επιλογή"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:263
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:315
 #: core/libs/tags/widgets/tageditdlg.cpp:193
-#: core/utilities/searchwindow/searchview.cpp:509
+#: core/utilities/searchwindow/searchview.cpp:510
 #, kde-format
 msgid "Reset"
 msgstr "Επαναφορά"
@@ -15101,7 +15101,7 @@ msgstr "&Προσθήκη"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:87
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:97
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:83
-#: core/libs/dialogs/deletedialog.cpp:594
+#: core/libs/dialogs/deletedialog.cpp:599
 #, kde-format
 msgid "&Delete"
 msgstr "&Διαγραφή"
@@ -29701,7 +29701,7 @@ msgstr "Τίτλοι λευκώματος"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:219
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
-#: core/libs/tags/manager/tagsmanager.cpp:723
+#: core/libs/tags/manager/tagsmanager.cpp:725
 #: core/libs/tags/widgets/tagfolderview.cpp:135
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -32015,22 +32015,22 @@ msgstr ""
 "Αυτό το δυαδικό αρχείο χρησιμεύει για την εκκίνηση μιας διεργασίας "
 "εξυπηρετητή MariaDB."
 
-#: core/libs/dialogs/deletedialog.cpp:176
+#: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
 msgid "Thumb"
 msgstr "Επισκόπηση"
 
-#: core/libs/dialogs/deletedialog.cpp:179
+#: core/libs/dialogs/deletedialog.cpp:180
 #, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "Λίστα αντικειμένων που πρόκειται να διαγραφούν."
 
-#: core/libs/dialogs/deletedialog.cpp:180
+#: core/libs/dialogs/deletedialog.cpp:181
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "Αυτή είναι η λίστα αντικειμένων που πρόκειται να διαγραφούν."
 
-#: core/libs/dialogs/deletedialog.cpp:302
+#: core/libs/dialogs/deletedialog.cpp:303
 #, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
@@ -32039,7 +32039,7 @@ msgstr ""
 "Αν ενεργοποιηθεί, τα αρχεία θα αφαιρεθούν οριστικά αντί να μεταφερθούν στα "
 "απορρίμματα."
 
-#: core/libs/dialogs/deletedialog.cpp:304
+#: core/libs/dialogs/deletedialog.cpp:305
 #, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -32052,17 +32052,17 @@ msgstr ""
 "συστήματα αρχείων δεν είναι ικανά να αναιρέσουν με αξιοπιστία τη διαγραφή "
 "αντικειμένων.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:310
+#: core/libs/dialogs/deletedialog.cpp:311
 #, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "Να &διαγραφούν τα αντικείμενα αντί να μετακινηθούν στα απορρίμματα"
 
-#: core/libs/dialogs/deletedialog.cpp:317
+#: core/libs/dialogs/deletedialog.cpp:318
 #, kde-format
 msgid "Do not &ask again"
 msgstr "Να μη γίνει ε&ρώτηση ξανά"
 
-#: core/libs/dialogs/deletedialog.cpp:376
+#: core/libs/dialogs/deletedialog.cpp:377
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -32071,7 +32071,7 @@ msgstr ""
 "Αν ενεργοποιηθεί, ο διάλογος αυτός δεν θα εμφανίζεται πλέον και τα "
 "αντικείμενα θα διαγράφονται άμεσα και μόνιμα."
 
-#: core/libs/dialogs/deletedialog.cpp:378
+#: core/libs/dialogs/deletedialog.cpp:379
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -32080,7 +32080,7 @@ msgstr ""
 "Αν αυτό το πλαίσιο ενεργοποιηθεί, ο διάλογος αυτός δεν θα εμφανίζεται πλέον "
 "και τα αντικείμενα θα διαγράφονται άμεσα και μόνιμα."
 
-#: core/libs/dialogs/deletedialog.cpp:383
+#: core/libs/dialogs/deletedialog.cpp:384
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -32089,7 +32089,7 @@ msgstr ""
 "Αν ενεργοποιηθεί, ο διάλογος αυτός δεν θα εμφανίζεται πλέον και τα "
 "αντικείμενα θα μεταφέρονται απευθείας στα απορρίμματα."
 
-#: core/libs/dialogs/deletedialog.cpp:385
+#: core/libs/dialogs/deletedialog.cpp:386
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -32098,44 +32098,44 @@ msgstr ""
 "Αν αυτό το πλαίσιο ενεργοποιηθεί, ο διάλογος αυτός δεν θα εμφανίζεται πλέον "
 "και τα αντικείμενα θα μεταφέρονται απευθείας στα απορρίμματα."
 
-#: core/libs/dialogs/deletedialog.cpp:397
+#: core/libs/dialogs/deletedialog.cpp:398
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr ""
 "Τα αντικείμενα αυτά θα <b>διαγραφούν οριστικά</b> από το σκληρό σας δίσκο."
 
-#: core/libs/dialogs/deletedialog.cpp:403
+#: core/libs/dialogs/deletedialog.cpp:404
 #, kde-format
 msgid "These items will be moved to Trash."
 msgstr "Τα αντικείμενα αυτά θα μεταφερθούν στον κάδο απορριμμάτων."
 
-#: core/libs/dialogs/deletedialog.cpp:405
+#: core/libs/dialogs/deletedialog.cpp:406
 #, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
 msgstr[0] "<b>1</b> αντικείμενο επιλέχθηκε."
 msgstr[1] "<b>%1</b> αντικείμενα επιλέχθηκαν."
 
-#: core/libs/dialogs/deletedialog.cpp:418
+#: core/libs/dialogs/deletedialog.cpp:419
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr ""
 "Τα λευκώματα αυτά θα <b>διαγραφούν οριστικά</b> από το σκληρό σας δίσκο."
 
-#: core/libs/dialogs/deletedialog.cpp:424
+#: core/libs/dialogs/deletedialog.cpp:425
 #, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "Τα λευκώματα αυτά θα μεταφερθούν στον κάδο απορριμμάτων."
 
-#: core/libs/dialogs/deletedialog.cpp:428
-#: core/libs/dialogs/deletedialog.cpp:455
+#: core/libs/dialogs/deletedialog.cpp:429
+#: core/libs/dialogs/deletedialog.cpp:456
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
 msgstr[0] "Επιλέχθηκε <b>1</b> λεύκωμα."
 msgstr[1] "Επιλέχθηκαν <b>%1</b> λευκώματα."
 
-#: core/libs/dialogs/deletedialog.cpp:439
+#: core/libs/dialogs/deletedialog.cpp:440
 #, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -32146,7 +32146,7 @@ msgstr ""
 "p> <p>Σημειώστε ότι <b>όλα τα υπολευκώματα</b> που περιέχονται στη λίστα θα "
 "διαγραφούν οριστικά και αυτά.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:448
+#: core/libs/dialogs/deletedialog.cpp:449
 #, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -32156,19 +32156,19 @@ msgstr ""
 "ότι <b>όλα τα υπολευκώματα</b> που περιέχονται στη λίστα θα μεταφερθούν στον "
 "κάδο απορριμμάτων και αυτά.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:595
+#: core/libs/dialogs/deletedialog.cpp:600
 #, kde-format
 msgid "&Move to Trash"
 msgstr "&Μετακίνηση στα απορρίμματα"
 
-#: core/libs/dialogs/deletedialog.cpp:655
+#: core/libs/dialogs/deletedialog.cpp:660
 #, fuzzy, kde-format
 #| msgid "About to delete selected items"
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "Πρόκειται να διαγραφούν τα επιλεγμένα αντικείμενα"
 
-#: core/libs/dialogs/deletedialog.cpp:662
+#: core/libs/dialogs/deletedialog.cpp:667
 #, fuzzy, kde-format
 #| msgid "About to delete selected albums"
 msgctxt "@title:window"
@@ -39487,7 +39487,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr ""
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:182
+#: core/utilities/setup/downloader/filesdownloader.cpp:185
 #, fuzzy, kde-format
 msgid "Download"
 msgstr "Λήψη"
@@ -42298,39 +42298,39 @@ msgid "Delete Tags"
 msgstr "Διαγραφή ετικετών"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:146
-#: core/libs/tags/manager/tagsmanager.cpp:707
+#: core/libs/tags/manager/tagsmanager.cpp:709
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Επεξεργασία τίτλου ετικέτας"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:150
-#: core/libs/tags/manager/tagsmanager.cpp:711
+#: core/libs/tags/manager/tagsmanager.cpp:713
 #: core/libs/tags/widgets/tagfolderview.cpp:70
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Επαναφορά εικονιδίου ετικέτας"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
-#: core/libs/tags/manager/tagsmanager.cpp:720
+#: core/libs/tags/manager/tagsmanager.cpp:722
 #, kde-format
 msgid "Invert Selection"
 msgstr "Αντιστροφή επιλογής"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
-#: core/libs/tags/manager/tagsmanager.cpp:726
+#: core/libs/tags/manager/tagsmanager.cpp:728
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Επέκταση δέντρου ετικετών"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:162
-#: core/libs/tags/manager/tagsmanager.cpp:729
+#: core/libs/tags/manager/tagsmanager.cpp:731
 #, fuzzy, kde-format
 #| msgid "Copy Albums..."
 msgid "Collapse Tag Tree"
 msgstr "Αντιγραφή λευκωμάτων..."
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:165
-#: core/libs/tags/manager/tagsmanager.cpp:732
+#: core/libs/tags/manager/tagsmanager.cpp:734
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Διαγραφή ετικέτας από τις εικόνες"
@@ -42418,14 +42418,14 @@ msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr "Οι προηγούμενες ετικέτες άλλαξαν. Να αποθηκευθούν οι αλλαγές;"
 
-#: core/libs/tags/manager/tagsmanager.cpp:177
+#: core/libs/tags/manager/tagsmanager.cpp:179
 #, fuzzy, kde-format
 #| msgid "Tags Manager"
 msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "Διαχειριστής ετικετών"
 
-#: core/libs/tags/manager/tagsmanager.cpp:336
+#: core/libs/tags/manager/tagsmanager.cpp:338
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -42441,7 +42441,7 @@ msgstr[1] ""
 "Οι ετικέτες %2 έχουν μία ή περισσότερες υποετικέτες. Με τη διαγραφή των "
 "ετικετών θα διαγραφούν και οι υποετικέτες. Επιθυμείτε να συνεχίσετε;"
 
-#: core/libs/tags/manager/tagsmanager.cpp:359
+#: core/libs/tags/manager/tagsmanager.cpp:361
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -42454,7 +42454,7 @@ msgstr[1] ""
 "Οι ετικέτες %2 έχουν οριστεί σε ένα ή περισσότερα αντικείμενα. Θέλετε να τις "
 "διαγράψετε;"
 
-#: core/libs/tags/manager/tagsmanager.cpp:369
+#: core/libs/tags/manager/tagsmanager.cpp:371
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
@@ -42462,7 +42462,7 @@ msgid_plural "Delete tags %2?"
 msgstr[0] "Να διαγραφεί η ετικέτα %2;"
 msgstr[1] "Να διαγραφούν οι ετικέτες %2;"
 
-#: core/libs/tags/manager/tagsmanager.cpp:375
+#: core/libs/tags/manager/tagsmanager.cpp:377
 #, fuzzy, kde-format
 #| msgid "Delete tag"
 #| msgid_plural "Delete tags"
@@ -42472,7 +42472,7 @@ msgid_plural "Delete tags"
 msgstr[0] "Διαγραφή ετικέτας"
 msgstr[1] "Διαγραφή ετικετών"
 
-#: core/libs/tags/manager/tagsmanager.cpp:498
+#: core/libs/tags/manager/tagsmanager.cpp:500
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>digiKam will clean up tag metadata before setting tags from database."
@@ -42488,8 +42488,8 @@ msgstr ""
 "τις αναγνώσατε προηγουμένως (καλώντας το Ανάγνωση ετικετών από εικόνα).<br> "
 "Θέλετε να συνεχίσετε;<qt>"
 
-#: core/libs/tags/manager/tagsmanager.cpp:510
-#: core/libs/tags/manager/tagsmanager.cpp:529
+#: core/libs/tags/manager/tagsmanager.cpp:512
+#: core/libs/tags/manager/tagsmanager.cpp:531
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -42499,7 +42499,7 @@ msgstr ""
 "συλλογής.\n"
 "Θέλετε να συνεχίσετε;"
 
-#: core/libs/tags/manager/tagsmanager.cpp:549
+#: core/libs/tags/manager/tagsmanager.cpp:551
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -42511,7 +42511,7 @@ msgstr ""
 "ετεροχρονισμένα η εγγραφή μεταδεδομένων στο αρχείο.\n"
 "Θέλετε να συνεχίσετε;"
 
-#: core/libs/tags/manager/tagsmanager.cpp:613
+#: core/libs/tags/manager/tagsmanager.cpp:615
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -42520,7 +42520,7 @@ msgstr[0] ""
 msgstr[1] ""
 "Επιθυμείτε την αφαίρεση των επιλεγμένων ετικετών από όλες τις εικόνες;"
 
-#: core/libs/tags/manager/tagsmanager.cpp:694
+#: core/libs/tags/manager/tagsmanager.cpp:696
 #, fuzzy, kde-format
 #| msgctxt "@title:menu"
 #| msgid "Organize"
@@ -42528,32 +42528,32 @@ msgctxt "@action: button"
 msgid "Organize"
 msgstr "Οργάνωση"
 
-#: core/libs/tags/manager/tagsmanager.cpp:697
+#: core/libs/tags/manager/tagsmanager.cpp:699
 #, fuzzy, kde-format
 #| msgid "Sync &Export"
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "Συγχρονισμένη &εξαγωγή"
 
-#: core/libs/tags/manager/tagsmanager.cpp:714
+#: core/libs/tags/manager/tagsmanager.cpp:716
 #, kde-format
 msgid "Create Tag from Address Book"
 msgstr "Δημιουργία ετικέτας από το βιβλίο διευθύνσεων"
 
-#: core/libs/tags/manager/tagsmanager.cpp:717
+#: core/libs/tags/manager/tagsmanager.cpp:719
 #, fuzzy, kde-format
 #| msgid "Delete Unassigned Tags"
 msgid "Mark Unassigned Tags"
 msgstr "Δισγρσφή μη αντιστοιχισμένων ετικετών"
 
-#: core/libs/tags/manager/tagsmanager.cpp:737
+#: core/libs/tags/manager/tagsmanager.cpp:739
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Προσθήκη νέας ετικέτας στην τρέχουσα. Η τρέχουσα είναι εκείνη στην οποία "
 "έγινε κλικ πιο πρόσφατα."
 
-#: core/libs/tags/manager/tagsmanager.cpp:740
+#: core/libs/tags/manager/tagsmanager.cpp:742
 #, fuzzy, kde-format
 #| msgid ""
 #| "Delete selected items. Also work with multiple items, but won't delete "
@@ -42565,19 +42565,19 @@ msgstr ""
 "Διαγραφή επιλεγμένων αντικειμένων. Λειτουργεί και με πολλαπλά αντικείμενα, "
 "αλλά δεν θα διαγράψει τη ριζική ετικέτα."
 
-#: core/libs/tags/manager/tagsmanager.cpp:744
+#: core/libs/tags/manager/tagsmanager.cpp:746
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "Επεξεργασία τίτλου από επιλεγμένη ετικέτα."
 
-#: core/libs/tags/manager/tagsmanager.cpp:746
+#: core/libs/tags/manager/tagsmanager.cpp:748
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 "Επαναφορά εικονιδίου στις επιλεγμένες ετικέτες. Λειτουργεί με πολλαπλή "
 "επιλογή."
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:751
 #, fuzzy, kde-format
 #| msgid "Delete all tags that are not assigned to images. Use with caution."
 msgid "Mark all tags that are not assigned to images."
@@ -42585,55 +42585,55 @@ msgstr ""
 "Διαγραφή όλων των ετικετών που δεν αντιστοιχούν σε εικόνες. Χρησιμοποιήστε "
 "το με προσοχή."
 
-#: core/libs/tags/manager/tagsmanager.cpp:751
+#: core/libs/tags/manager/tagsmanager.cpp:753
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Αντιστροφή επιλογής. Μόνο ορατά αντικείμενα θα επιλεγούν"
 
-#: core/libs/tags/manager/tagsmanager.cpp:754
+#: core/libs/tags/manager/tagsmanager.cpp:756
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Τα επιλεγμένα αντικείμενα θα επεκταθούν"
 
-#: core/libs/tags/manager/tagsmanager.cpp:756
+#: core/libs/tags/manager/tagsmanager.cpp:758
 #, fuzzy, kde-format
 #| msgid "Expand tag tree by one level"
 msgid "Expand tag tree completely"
 msgstr "Επέκταση του δέντρου ετικετών κατά ένα επίπεδο"
 
-#: core/libs/tags/manager/tagsmanager.cpp:758
+#: core/libs/tags/manager/tagsmanager.cpp:760
 #, fuzzy, kde-format
 #| msgid "Download is completed..."
 msgid "Collapse tag tree completely"
 msgstr "Η λήψη ολοκληρώθηκε..."
 
-#: core/libs/tags/manager/tagsmanager.cpp:760
+#: core/libs/tags/manager/tagsmanager.cpp:762
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 "Διαγραφή επιλεγμένων ετικετών από εικόνες. Λειτουργεί με πολλαπλή επιλογή."
 
-#: core/libs/tags/manager/tagsmanager.cpp:808
+#: core/libs/tags/manager/tagsmanager.cpp:810
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Εγγραφή ετικετών από τη βάση δεδομένων σε εικόνα"
 
-#: core/libs/tags/manager/tagsmanager.cpp:811
+#: core/libs/tags/manager/tagsmanager.cpp:813
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Ανάγνωση ετικετών από εικόνα"
 
-#: core/libs/tags/manager/tagsmanager.cpp:814
+#: core/libs/tags/manager/tagsmanager.cpp:816
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Καθαρισμός όλων των ετικετών από τη βάση δεδομένων μόνο"
 
-#: core/libs/tags/manager/tagsmanager.cpp:816
+#: core/libs/tags/manager/tagsmanager.cpp:818
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Εγγραφή μεταδεδομένων ετικετών σε εικόνα."
 
-#: core/libs/tags/manager/tagsmanager.cpp:818
+#: core/libs/tags/manager/tagsmanager.cpp:820
 #, fuzzy, kde-format
 #| msgid "Read tags from Images into Database. Existing tags won't be affected"
 msgid "Read tags from Images into Database. Existing tags will not be affected"
@@ -42641,7 +42641,7 @@ msgstr ""
 "Ανάγνωση ετικετών από εικόνες στη βάση δεδομένων. Οι υπάρχουσες ετικέτες δεν "
 "θα επηρεαστούν"
 
-#: core/libs/tags/manager/tagsmanager.cpp:821
+#: core/libs/tags/manager/tagsmanager.cpp:823
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -42649,6 +42649,14 @@ msgid ""
 msgstr ""
 "Διαγραφή όλων των ετικετών από τη βάση δεδομένων μόνο. Δεν θα γίνει "
 "συγχρονισμός με αρχεία. Προχωρήστε με προσοχή."
+
+#: core/libs/tags/manager/tagsmanager.cpp:845
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
+#, fuzzy, kde-format
+#| msgid "&Help"
+msgctxt "@info"
+msgid "Help"
+msgstr "&Βοήθεια"
 
 #: core/libs/tags/widgets/tagcheckview.cpp:82
 #, kde-format
@@ -53964,7 +53972,7 @@ msgstr "&Διακόσμηση"
 msgid "Effec&ts"
 msgstr "Ε&φέ"
 
-#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:142
+#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:146
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@title:window"
@@ -55508,7 +55516,7 @@ msgstr ""
 "Η λίστα αρχείων μπορεί να ταξινομηθεί, απλά κάνετε δεξί κλικ πάνω της για να "
 "δείτε τα κριτήρια ταξινόμησης (περιβάλλον χρήσης λευκώματος μόνο)."
 
-#: core/utilities/advancedrename/common/tooltipdialog.cpp:53
+#: core/utilities/advancedrename/common/tooltipdialog.cpp:54
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@title:window"
@@ -56494,13 +56502,6 @@ msgstr "Σάρωση ξανά και συγχώνευση αποτελεσμάτ
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "Καθαρισμός ανεπιβεβαίωτων αποτελεσμάτων και επανάληψη σάρωσης"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
-#, fuzzy, kde-format
-#| msgid "&Help"
-msgctxt "@info"
-msgid "Help"
-msgstr "&Βοήθεια"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:158
 #, fuzzy, kde-format
@@ -58861,44 +58862,44 @@ msgstr "Καθορισμένο χρωματικού προφίλ:"
 msgid "<b>No Profile</b>"
 msgstr "<b>Χωρίς προφίλ</b>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:80
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:81
 #, fuzzy, kde-format
 #| msgid "Soft Proofing Options"
 msgctxt "@title:window"
 msgid "Soft Proofing Options"
 msgstr "Επιλογές ομαλής διόρθωσης εκτύπωσης"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:84
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:85
 #, kde-format
 msgid "Soft Proofing On"
 msgstr "Ομαλή διόρθωση εκτύπωσης ενεργή"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:85
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:86
 #, kde-format
 msgid "Enable soft-proofing color managed view"
 msgstr "Ενεργοποίηση προβολής ομαλής διόρθωσης εκτύπωσης"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:86
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:87
 #, kde-format
 msgid "Soft Proofing Off"
 msgstr "Ομαλή διόρθωση εκτύπωσης ανενεργή"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:87
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:88
 #, kde-format
 msgid "Disable soft-proofing color managed view"
 msgstr "Απενεργοποίηση προβολής ομαλής διόρθωσης εκτύπωσης"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:94
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:95
 #, kde-format
 msgid "<b>Configure the Soft Proofing View</b>"
 msgstr "<b>Διαμόρφωση προβολής ομαλής διόρθωσης εκτύπωσης</b>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:102
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:103
 #, kde-format
 msgid "Profile of the output device to simulate:"
 msgstr "Προφίλ της συσκευής εξόδου για προσομοίωση:"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:105
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:106
 #: core/utilities/setup/setupicc.cpp:431
 #, kde-format
 msgid ""
@@ -58911,7 +58912,7 @@ msgstr ""
 "εκτύπωσης, έτσι ώστε να είναι δυνατή η προεπισκόπηση της αποτύπωσης μιας "
 "εικόνας σε μια συσκευή εξόδου.</p>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:111
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:112
 #, fuzzy, kde-format
 #| msgid ""
 #| "Press this button to get detailed information about the selected proofing "
@@ -58923,22 +58924,22 @@ msgstr ""
 "<p>Πιέστε αυτό το κουμπί για να λάβετε περισσότερες πληροφορίες σχετικά με "
 "το επιλεγμένο προφίλ ομαλής διόρθωσης εκτύπωσης.</p>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:127
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:128
 #, kde-format
 msgid "Rendering intent:"
 msgstr "Ένταση αποτύπωσης:"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:132
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:133
 #, kde-format
 msgid "Highlight out-of-gamut colors"
 msgstr "Υπογράμμιση χρωμάτων εκτός γκάμας"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:133
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:134
 #, kde-format
 msgid "Highlighting color:"
 msgstr "Υπογράμμιση χρώματος:"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:225
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:229
 #: core/utilities/setup/setupicc.cpp:868
 #, fuzzy, kde-format
 #| msgid "Profile Error"
@@ -58946,25 +58947,25 @@ msgctxt "@title:window"
 msgid "Profile Error"
 msgstr "Σφάλμα προφίλ"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:225
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:229
 #: core/utilities/setup/setupicc.cpp:868
 #, kde-format
 msgid "No profile is selected."
 msgstr "Δεν επιλέχθηκε κανένα προφίλ."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:57
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:61
 #, kde-format
 msgctxt "@title:window"
 msgid "Save?"
 msgstr "Αποθήκευση;"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:67
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Save Changes"
 msgstr "Αποθήκευση αλλαγών"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:70
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -58973,13 +58974,13 @@ msgstr ""
 "Αποθήκευση τρεχουσών αλλαγών. Σημείωση: Η αρχική εικόνα δεν θα "
 "αντικατασταθεί ποτέ."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:72
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:77
 #, kde-format
 msgctxt "@action:button"
 msgid "Save Changes as a New Version"
 msgstr "Αποθήκευση αλλαγών ως νέα έκδοση"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:75
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -58989,20 +58990,20 @@ msgstr ""
 "Αποθήκευση των τρεχουσών αλλαγών ως νέα έκδοση. Το αρχείο που φορτώθηκε θα "
 "παραμείνει απαράλλαχτο, ένα νέο αρχείο θα δημιουργηθεί."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:78
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:83
 #, kde-format
 msgctxt "@action:button"
 msgid "Discard Changes"
 msgstr "Απόρριψη αλλαγών"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:81
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:86
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard the changes applied to the image during this editing session."
 msgstr ""
 "Απόρριψη των αλλαγών που εφαρμόστηκαν στην εικόνα κατά την επεξεργασία."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:95
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:100
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid ""
@@ -64032,12 +64033,12 @@ msgstr "Επεξεργασία αποθηκευμένης αναζήτησης"
 msgid "Edit..."
 msgstr "Επεξεργασία..."
 
-#: core/utilities/searchwindow/searchview.cpp:501
+#: core/utilities/searchwindow/searchview.cpp:502
 #, kde-format
 msgid "Add Search Group"
 msgstr "Προσθήκη ομάδας αναζήτησης"
 
-#: core/utilities/searchwindow/searchview.cpp:530
+#: core/utilities/searchwindow/searchview.cpp:531
 #, kde-format
 msgid "Try"
 msgstr "Δοκιμή"
@@ -64742,7 +64743,7 @@ msgstr ""
 "<p>Αρχεία με αυτές τις επεκτάσεις θα αναγνωρίζονται ως ήχοι και θα "
 "συμπεριληφθούν στη βάση δεδομένων:<br/> <code>%1</code></p>"
 
-#: core/utilities/setup/camera/cameralist.cpp:283
+#: core/utilities/setup/camera/cameralist.cpp:289
 #, kde-format
 msgid ""
 "Failed to auto-detect camera; please make sure it is connected properly and "
@@ -64934,51 +64935,51 @@ msgstr ""
 "μηχανών,<br/>ρίξτε μια ματιά σε <a href='http://www.teaser.fr/~hfiguiere/"
 "linux/digicam.html'>εδώ</a>.</p>"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:84
+#: core/utilities/setup/camera/importfilterdlg.cpp:85
 #, fuzzy, kde-format
 #| msgid "Edit Import Filters"
 msgctxt "@title:window"
 msgid "Edit Import Filters"
 msgstr "Επεξεργασία φίλτρων εισαγωγής"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:101
+#: core/utilities/setup/camera/importfilterdlg.cpp:102
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "@label: name of items filter"
 msgid "Name:"
 msgstr "Όνομα:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:108
+#: core/utilities/setup/camera/importfilterdlg.cpp:109
 #, kde-format
 msgid "Mime filter:"
 msgstr "Φίλτρο mime:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:116
+#: core/utilities/setup/camera/importfilterdlg.cpp:117
 #, fuzzy, kde-format
 msgid "Select Type Mime..."
 msgstr "Επιλογή τύπων mime"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:121
+#: core/utilities/setup/camera/importfilterdlg.cpp:122
 #, kde-format
 msgid "File name filter:"
 msgstr "Φίλτρο ονόματος αρχείου:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:131
+#: core/utilities/setup/camera/importfilterdlg.cpp:132
 #, kde-format
 msgid "Path filter:"
 msgstr "Φίλτρο διαδρομής:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:141
+#: core/utilities/setup/camera/importfilterdlg.cpp:142
 #, kde-format
 msgid "Show only new files"
 msgstr "Εμφάνιση νέων αρχείων μόνο"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:212
+#: core/utilities/setup/camera/importfilterdlg.cpp:216
 #, kde-format
 msgid "Select the MimeTypes you want for this filter."
 msgstr "Επιλέξτε τους τύπους Mime που θέλετε για αυτό το φίλτρο."
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:214
+#: core/utilities/setup/camera/importfilterdlg.cpp:218
 #, kde-format
 msgid "Select Mime Types"
 msgstr "Επιλογή τύπων mime"
@@ -65562,14 +65563,14 @@ msgstr "Επιλέξτε έτος"
 msgid "Your collection will use this category:"
 msgstr "Η νέα συλλογή σας θα δημιουργηθεί με αυτό το όνομα:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:172
+#: core/utilities/setup/downloader/filesdownloader.cpp:173
 #, fuzzy, kde-format
 #| msgid "Downloading file %1..."
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Λήψη αρχείου %1..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:200
+#: core/utilities/setup/downloader/filesdownloader.cpp:203
 #, kde-format
 msgctxt "%1: folder path, %2: disk size with unit"
 msgid ""
@@ -65582,24 +65583,24 @@ msgid ""
 "have to restart digiKam.</b></p>"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:212
+#: core/utilities/setup/downloader/filesdownloader.cpp:215
 #, kde-format
 msgid "Disable face engine feature and don't ask again"
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:259
+#: core/utilities/setup/downloader/filesdownloader.cpp:265
 #, fuzzy, kde-format
 #| msgid "Download successfully %1..."
 msgid "All files were downloaded successfully."
 msgstr "Επιτυχής λήψη %1..."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:268
+#: core/utilities/setup/downloader/filesdownloader.cpp:274
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Λήψη νέου"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:269
+#: core/utilities/setup/downloader/filesdownloader.cpp:275
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -65611,30 +65612,30 @@ msgid ""
 "You can try again or continue the download at the next start."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:277
+#: core/utilities/setup/downloader/filesdownloader.cpp:283
 #, fuzzy, kde-format
 #| msgid "Add film grain"
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Προσθήκη κόκκων στο φιλμ"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:410
+#: core/utilities/setup/downloader/filesdownloader.cpp:416
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:434
+#: core/utilities/setup/downloader/filesdownloader.cpp:440
 #, kde-format
 msgid "File write error."
 msgstr ""
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:441
+#: core/utilities/setup/downloader/filesdownloader.cpp:447
 #, fuzzy, kde-format
 #| msgid "Export Tools"
 msgid "File open error."
 msgstr "Εργαλεία εξαγωγής"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:456
+#: core/utilities/setup/downloader/filesdownloader.cpp:462
 #, fuzzy, kde-format
 #| msgid "Failed to save tags to file."
 msgid "File on the server is too large."
@@ -67430,14 +67431,14 @@ msgid ""
 "Some settings are hardware dependent and may have no effect.</b>"
 msgstr ""
 
-#: core/utilities/setup/setup.cpp:149
+#: core/utilities/setup/setup.cpp:153
 #, fuzzy, kde-format
 #| msgid "Database"
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Βάση δεδομένων"
 
-#: core/utilities/setup/setup.cpp:150
+#: core/utilities/setup/setup.cpp:154
 #, fuzzy, kde-format
 #| msgid "<qt>Database Settings<br/><i>Customize database settings</i></qt>"
 msgctxt "@title"
@@ -67448,14 +67449,14 @@ msgstr ""
 "<qt>Ρυθμίσεις βάσης δεδομένων<br/><i>Προσαρμογή των ρυθμίσεων βάσης "
 "δεδομένων</i></qt>"
 
-#: core/utilities/setup/setup.cpp:154
+#: core/utilities/setup/setup.cpp:158
 #, fuzzy, kde-format
 #| msgid "Collections"
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Συλλογές"
 
-#: core/utilities/setup/setup.cpp:155
+#: core/utilities/setup/setup.cpp:159
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Collections Settings<br/><i>Set root albums and database locations</"
@@ -67468,14 +67469,14 @@ msgstr ""
 "<qt>Ρυθμίσεις συλλογών<br/><i>Καθορισμός των ριζικών λευκωμάτων και των "
 "θέσεων της βάσης δεδομένων</i></qt>"
 
-#: core/utilities/setup/setup.cpp:159
+#: core/utilities/setup/setup.cpp:163
 #, fuzzy, kde-format
 #| msgid "Views"
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Προβολές"
 
-#: core/utilities/setup/setup.cpp:160
+#: core/utilities/setup/setup.cpp:164
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Album View Settings<br/><i>Customize the look of the albums list</i></"
@@ -67488,14 +67489,14 @@ msgstr ""
 "<qt>Ρυθμίσεις προβολής λευκώματος<br/><i>Προσαρμογή των συστατικών της "
 "προβολής λευκώματος</i></qt>"
 
-#: core/utilities/setup/setup.cpp:164
+#: core/utilities/setup/setup.cpp:168
 #, fuzzy, kde-format
 #| msgid "Tool-Tip"
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Υπόδειξη"
 
-#: core/utilities/setup/setup.cpp:165
+#: core/utilities/setup/setup.cpp:169
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Album Items Tool-Tip Settings<br/><i>Customize information in tool-"
@@ -67508,14 +67509,14 @@ msgstr ""
 "<qt>Ρυθμίσεις υποδείξεων αντικειμένων λευκώματος<br/><i>Προσαρμογή των "
 "περιεχομένων των υποδείξεων</i></qt>"
 
-#: core/utilities/setup/setup.cpp:170
+#: core/utilities/setup/setup.cpp:175
 #, fuzzy, kde-format
 #| msgid "Videos"
 msgctxt "@title: settings section"
 msgid "Video"
 msgstr "Βίντεο"
 
-#: core/utilities/setup/setup.cpp:171
+#: core/utilities/setup/setup.cpp:176
 #, fuzzy, kde-format
 #| msgid "<qt>Slide Show Settings<br/><i>Customize slideshow settings</i></qt>"
 msgctxt "@title"
@@ -67526,14 +67527,14 @@ msgstr ""
 "<qt>Ρυθμίσεις παρουσίασης διαφανειών<br/><i>Προσαρμογή των ρυθμίσεων της "
 "παρουσίασης διαφανειών</i></qt>"
 
-#: core/utilities/setup/setup.cpp:176
+#: core/utilities/setup/setup.cpp:182
 #, fuzzy, kde-format
 #| msgid "Metadata"
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Μεταδεδομένα"
 
-#: core/utilities/setup/setup.cpp:177
+#: core/utilities/setup/setup.cpp:183
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Embedded Image Information Management<br/><i>Setup relations between "
@@ -67546,14 +67547,14 @@ msgstr ""
 "<qt>Διαχείριση ενσωματωμένης πληροφορίας εικόνας<br/><i>Ρύθμιση σχέσεων "
 "μεταξύ των μεταδεδομένων και των εικόνων</i></qt>"
 
-#: core/utilities/setup/setup.cpp:181
+#: core/utilities/setup/setup.cpp:187
 #, fuzzy, kde-format
 #| msgid "Templates"
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Πρότυπα"
 
-#: core/utilities/setup/setup.cpp:182
+#: core/utilities/setup/setup.cpp:188
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Metadata templates<br/><i>Manage your collection of metadata "
@@ -67566,14 +67567,14 @@ msgstr ""
 "<qt>Πρότυπα μεταδεδομένων<br/><i>Διαχειριστείτε τη συλλογή σας προτύπων "
 "μεταδεδομένων</i></qt>"
 
-#: core/utilities/setup/setup.cpp:186
+#: core/utilities/setup/setup.cpp:192
 #, fuzzy, kde-format
 #| msgid "Image Editor"
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Επεξεργαστής εικόνας"
 
-#: core/utilities/setup/setup.cpp:187
+#: core/utilities/setup/setup.cpp:193
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Image Editor Settings<br/><i>Customize image editor behavior</i></qt>"
@@ -67585,14 +67586,14 @@ msgstr ""
 "<qt>Ρυθμίσεις επεξεργαστή εικόνων<br/><i>Προσαρμογή της συμπεριφοράς του "
 "επεξεργαστή εικόνων</i></qt>"
 
-#: core/utilities/setup/setup.cpp:191
+#: core/utilities/setup/setup.cpp:197
 #, fuzzy, kde-format
 #| msgid "Color Management"
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Διαχείριση χρωμάτων"
 
-#: core/utilities/setup/setup.cpp:192
+#: core/utilities/setup/setup.cpp:198
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Settings for Color Management<br/><i>Customize the color management "
@@ -67605,14 +67606,14 @@ msgstr ""
 "<qt>Ρυθμίσεις διαχείρισης χρωμάτων<br/><i>Προσαρμογή των ρυθμίσεων "
 "διαχείρισης χρωμάτων</i></qt>"
 
-#: core/utilities/setup/setup.cpp:196
+#: core/utilities/setup/setup.cpp:202
 #, fuzzy, kde-format
 #| msgid "Light Table"
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Φωτεινός πίνακας"
 
-#: core/utilities/setup/setup.cpp:197
+#: core/utilities/setup/setup.cpp:203
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Light Table Settings<br/><i>Customize tool used to compare images</"
@@ -67625,13 +67626,13 @@ msgstr ""
 "<qt>Ρυθμίσεις φωτεινού πίνακα<br/><i>Προσαρμογή του εργαλείου σύγκρισης των "
 "εικόνων</i></qt>"
 
-#: core/utilities/setup/setup.cpp:201
+#: core/utilities/setup/setup.cpp:207
 #, fuzzy, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Επεξεργαστής εικόνας"
 
-#: core/utilities/setup/setup.cpp:202
+#: core/utilities/setup/setup.cpp:208
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Image Editor Settings<br/><i>Customize image editor behavior</i></qt>"
@@ -67643,14 +67644,14 @@ msgstr ""
 "<qt>Ρυθμίσεις επεξεργαστή εικόνων<br/><i>Προσαρμογή της συμπεριφοράς του "
 "επεξεργαστή εικόνων</i></qt>"
 
-#: core/utilities/setup/setup.cpp:206
+#: core/utilities/setup/setup.cpp:212
 #, fuzzy, kde-format
 #| msgid "Cameras"
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Φωτογραφικές μηχανές"
 
-#: core/utilities/setup/setup.cpp:207
+#: core/utilities/setup/setup.cpp:213
 #, fuzzy, kde-format
 #| msgid "<qt>Camera Settings<br/><i>Manage your camera devices</i></qt>"
 msgctxt "@title"
@@ -67661,14 +67662,14 @@ msgstr ""
 "<qt>Ρυθμίσεις φωτογραφικής<br/><i>Διαχείριση των φωτογραφικών σας μηχανών</"
 "i></qt>"
 
-#: core/utilities/setup/setup.cpp:214
+#: core/utilities/setup/setup.cpp:220
 #, fuzzy, kde-format
 #| msgid "Kipi-Plugins"
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Πρόσθετα Kipi"
 
-#: core/utilities/setup/setup.cpp:215
+#: core/utilities/setup/setup.cpp:221
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
@@ -67681,14 +67682,14 @@ msgstr ""
 "<qt>Ρυθμίσεις πρόσθετου του κύριου περιβάλλοντος<br/><i>Ορισμός των "
 "πρόσθετων του κύριου γραφικού περιβάλλοντος</i></qt>"
 
-#: core/utilities/setup/setup.cpp:219
+#: core/utilities/setup/setup.cpp:225
 #, fuzzy, kde-format
 #| msgid "Miscellaneous"
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Διάφορα"
 
-#: core/utilities/setup/setup.cpp:220
+#: core/utilities/setup/setup.cpp:226
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts "

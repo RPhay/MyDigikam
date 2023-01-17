@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-14 00:54+0000\n"
+"POT-Creation-Date: 2023-01-17 00:54+0000\n"
 "PO-Revision-Date: 2023-01-15 15:47+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -3813,7 +3813,7 @@ msgstr "Назва файла"
 
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
-#: core/libs/dialogs/deletedialog.cpp:176
+#: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
 msgid "Path"
 msgstr "Шлях"
@@ -4917,7 +4917,7 @@ msgstr "Вибір файлів"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:263
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:315
 #: core/libs/tags/widgets/tageditdlg.cpp:193
-#: core/utilities/searchwindow/searchview.cpp:509
+#: core/utilities/searchwindow/searchview.cpp:510
 #, kde-format
 msgid "Reset"
 msgstr "Скинути"
@@ -14391,7 +14391,7 @@ msgstr "&Додати"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:87
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:97
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:83
-#: core/libs/dialogs/deletedialog.cpp:594
+#: core/libs/dialogs/deletedialog.cpp:599
 #, kde-format
 msgid "&Delete"
 msgstr "&Вилучити"
@@ -28177,7 +28177,7 @@ msgstr "Альбом з позначками"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:219
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
-#: core/libs/tags/manager/tagsmanager.cpp:723
+#: core/libs/tags/manager/tagsmanager.cpp:725
 #: core/libs/tags/widgets/tagfolderview.cpp:135
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -30329,22 +30329,22 @@ msgstr ""
 "Цей виконуваний файл використовується для запуску спеціального екземпляра "
 "сервера MariaDB."
 
-#: core/libs/dialogs/deletedialog.cpp:176
+#: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
 msgid "Thumb"
 msgstr "Мініатюра"
 
-#: core/libs/dialogs/deletedialog.cpp:179
+#: core/libs/dialogs/deletedialog.cpp:180
 #, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "Список записів, які зараз буде вилучено."
 
-#: core/libs/dialogs/deletedialog.cpp:180
+#: core/libs/dialogs/deletedialog.cpp:181
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "Це список записів, які зараз буде вилучено."
 
-#: core/libs/dialogs/deletedialog.cpp:302
+#: core/libs/dialogs/deletedialog.cpp:303
 #, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
@@ -30352,7 +30352,7 @@ msgid ""
 msgstr ""
 "Якщо увімкнено, файли буде вилучено остаточно, а не пересунуто в смітник."
 
-#: core/libs/dialogs/deletedialog.cpp:304
+#: core/libs/dialogs/deletedialog.cpp:305
 #, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -30364,17 +30364,17 @@ msgstr ""
 "em>: Більшість файлових систем не можуть гарантовано відновити вилучені "
 "записи.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:310
+#: core/libs/dialogs/deletedialog.cpp:311
 #, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "&Вилучати записи замість пересування у смітник"
 
-#: core/libs/dialogs/deletedialog.cpp:317
+#: core/libs/dialogs/deletedialog.cpp:318
 #, kde-format
 msgid "Do not &ask again"
 msgstr "Н&е запитувати знову"
 
-#: core/libs/dialogs/deletedialog.cpp:376
+#: core/libs/dialogs/deletedialog.cpp:377
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -30383,7 +30383,7 @@ msgstr ""
 "Якщо увімкнено, це вікно вже не буде показано, а записи буде безпосередньо і "
 "остаточно вилучено."
 
-#: core/libs/dialogs/deletedialog.cpp:378
+#: core/libs/dialogs/deletedialog.cpp:379
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -30392,7 +30392,7 @@ msgstr ""
 "Якщо позначено цей пункт, це вікно вже не буде показано, а записи буде "
 "безпосередньо і остаточно вилучено."
 
-#: core/libs/dialogs/deletedialog.cpp:383
+#: core/libs/dialogs/deletedialog.cpp:384
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -30401,7 +30401,7 @@ msgstr ""
 "Якщо увімкнено, це вікно вже не буде показано, а записи буде безпосередньо "
 "пересунуто в смітник."
 
-#: core/libs/dialogs/deletedialog.cpp:385
+#: core/libs/dialogs/deletedialog.cpp:386
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -30410,17 +30410,17 @@ msgstr ""
 "Якщо позначено цей пункт, це вікно вже не буде показано, а записи буде "
 "безпосередньо пересунуто в смітник."
 
-#: core/libs/dialogs/deletedialog.cpp:397
+#: core/libs/dialogs/deletedialog.cpp:398
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr "Ці записи буде <b>назавжди вилучено</b> з вашого жорсткого диска."
 
-#: core/libs/dialogs/deletedialog.cpp:403
+#: core/libs/dialogs/deletedialog.cpp:404
 #, kde-format
 msgid "These items will be moved to Trash."
 msgstr "Ці записи буде пересунуто до смітника."
 
-#: core/libs/dialogs/deletedialog.cpp:405
+#: core/libs/dialogs/deletedialog.cpp:406
 #, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
@@ -30429,18 +30429,18 @@ msgstr[1] "Вибрано <b>%1</b> записи."
 msgstr[2] "Вибрано <b>%1</b> записів."
 msgstr[3] "Вибрано <b>1</b> запис."
 
-#: core/libs/dialogs/deletedialog.cpp:418
+#: core/libs/dialogs/deletedialog.cpp:419
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr "Ці альбоми буде <b>назавжди вилучено</b> з вашого жорсткого диска."
 
-#: core/libs/dialogs/deletedialog.cpp:424
+#: core/libs/dialogs/deletedialog.cpp:425
 #, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "Ці альбоми буде пересунуто до смітника."
 
-#: core/libs/dialogs/deletedialog.cpp:428
-#: core/libs/dialogs/deletedialog.cpp:455
+#: core/libs/dialogs/deletedialog.cpp:429
+#: core/libs/dialogs/deletedialog.cpp:456
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
@@ -30449,7 +30449,7 @@ msgstr[1] "Вибрано <b>%1</b> альбоми."
 msgstr[2] "Вибрано <b>%1</b> альбомів."
 msgstr[3] "Вибрано <b>1</b> альбом."
 
-#: core/libs/dialogs/deletedialog.cpp:439
+#: core/libs/dialogs/deletedialog.cpp:440
 #, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -30460,7 +30460,7 @@ msgstr ""
 "p><p>Примітка: <b>всі підальбоми</b> включаються в цей список і їх також "
 "буде назавжди вилучено.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:448
+#: core/libs/dialogs/deletedialog.cpp:449
 #, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -30470,18 +30470,18 @@ msgstr ""
 "підальбоми</b> включаються в цей список, їх також буде пересунуто до "
 "смітника.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:595
+#: core/libs/dialogs/deletedialog.cpp:600
 #, kde-format
 msgid "&Move to Trash"
 msgstr "&Пересунути до смітника"
 
-#: core/libs/dialogs/deletedialog.cpp:655
+#: core/libs/dialogs/deletedialog.cpp:660
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "Буде вилучено вибрані записи"
 
-#: core/libs/dialogs/deletedialog.cpp:662
+#: core/libs/dialogs/deletedialog.cpp:667
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"
@@ -37431,7 +37431,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr "Відкрити сторінку вікна налаштовування для налаштовування оновлень."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:182
+#: core/utilities/setup/downloader/filesdownloader.cpp:185
 #, kde-format
 msgid "Download"
 msgstr "Отримати"
@@ -40178,38 +40178,38 @@ msgid "Delete Tags"
 msgstr "Вилучити мітки"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:146
-#: core/libs/tags/manager/tagsmanager.cpp:707
+#: core/libs/tags/manager/tagsmanager.cpp:709
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Редагувати заголовок мітки"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:150
-#: core/libs/tags/manager/tagsmanager.cpp:711
+#: core/libs/tags/manager/tagsmanager.cpp:713
 #: core/libs/tags/widgets/tagfolderview.cpp:70
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Скинути піктограму мітки"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
-#: core/libs/tags/manager/tagsmanager.cpp:720
+#: core/libs/tags/manager/tagsmanager.cpp:722
 #, kde-format
 msgid "Invert Selection"
 msgstr "Інвертувати вибір"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
-#: core/libs/tags/manager/tagsmanager.cpp:726
+#: core/libs/tags/manager/tagsmanager.cpp:728
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Розгорнути ієрархію міток"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:162
-#: core/libs/tags/manager/tagsmanager.cpp:729
+#: core/libs/tags/manager/tagsmanager.cpp:731
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "Згорнути ієрархію міток"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:165
-#: core/libs/tags/manager/tagsmanager.cpp:732
+#: core/libs/tags/manager/tagsmanager.cpp:734
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Вилучити мітку з зображень"
@@ -40285,13 +40285,13 @@ msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr "До міток було внесено зміни. Зберегти ці зміни?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:177
+#: core/libs/tags/manager/tagsmanager.cpp:179
 #, kde-format
 msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "Керування мітками"
 
-#: core/libs/tags/manager/tagsmanager.cpp:336
+#: core/libs/tags/manager/tagsmanager.cpp:338
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -40313,7 +40313,7 @@ msgstr[3] ""
 "Мітка %2 містить одну або декілька підміток. Вилучення мітки призведе до "
 "вилучення підміток. Продовжити виконання дії?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:359
+#: core/libs/tags/manager/tagsmanager.cpp:361
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -40332,7 +40332,7 @@ msgstr[3] ""
 "Мітку %2 призначено до одного або декількох зображень. Продовжити виконання "
 "дії?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:369
+#: core/libs/tags/manager/tagsmanager.cpp:371
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
@@ -40342,7 +40342,7 @@ msgstr[1] "Вилучити мітки %2?"
 msgstr[2] "Вилучити мітки %2?"
 msgstr[3] "Вилучити мітку %2?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:375
+#: core/libs/tags/manager/tagsmanager.cpp:377
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
@@ -40352,7 +40352,7 @@ msgstr[1] "Вилучення міток"
 msgstr[2] "Вилучення міток"
 msgstr[3] "Вилучення мітки"
 
-#: core/libs/tags/manager/tagsmanager.cpp:498
+#: core/libs/tags/manager/tagsmanager.cpp:500
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -40365,8 +40365,8 @@ msgstr ""
 "«Прочитати мітки» з меню «Зображення»).<br/> Виконати встановлення міток на "
 "основі бази даних?</qt>"
 
-#: core/libs/tags/manager/tagsmanager.cpp:510
-#: core/libs/tags/manager/tagsmanager.cpp:529
+#: core/libs/tags/manager/tagsmanager.cpp:512
+#: core/libs/tags/manager/tagsmanager.cpp:531
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -40375,7 +40375,7 @@ msgstr ""
 "Виконання цієї дії може бути тривалим у великих збірках.\n"
 "Хочете продовжити?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:549
+#: core/libs/tags/manager/tagsmanager.cpp:551
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -40387,7 +40387,7 @@ msgstr ""
 "програми записати метадані до файлів.\n"
 "Продовжити виконання цієї дії?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:613
+#: core/libs/tags/manager/tagsmanager.cpp:615
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -40396,36 +40396,36 @@ msgstr[1] "Ви справді хочете вилучити позначені 
 msgstr[2] "Ви справді хочете вилучити позначені мітки з усіх зображень?"
 msgstr[3] "Ви справді хочете вилучити позначену мітку з усіх зображень?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:694
+#: core/libs/tags/manager/tagsmanager.cpp:696
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "Впорядкувати"
 
-#: core/libs/tags/manager/tagsmanager.cpp:697
+#: core/libs/tags/manager/tagsmanager.cpp:699
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "Синхронізувати &експортовані дані"
 
-#: core/libs/tags/manager/tagsmanager.cpp:714
+#: core/libs/tags/manager/tagsmanager.cpp:716
 #, kde-format
 msgid "Create Tag from Address Book"
 msgstr "Створити мітку з адресної книги"
 
-#: core/libs/tags/manager/tagsmanager.cpp:717
+#: core/libs/tags/manager/tagsmanager.cpp:719
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "Позначити непризначені мітки"
 
-#: core/libs/tags/manager/tagsmanager.cpp:737
+#: core/libs/tags/manager/tagsmanager.cpp:739
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Додати нову мітку до поточної мітки. Поточною є мітка, яку було натиснуто "
 "останньою."
 
-#: core/libs/tags/manager/tagsmanager.cpp:740
+#: core/libs/tags/manager/tagsmanager.cpp:742
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
@@ -40434,77 +40434,77 @@ msgstr ""
 "Вилучити позначені записи. Працює для декількох записів, але не зможе "
 "вилучити кореневу мітку."
 
-#: core/libs/tags/manager/tagsmanager.cpp:744
+#: core/libs/tags/manager/tagsmanager.cpp:746
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "Редагувати заголовок з позначеної мітки."
 
-#: core/libs/tags/manager/tagsmanager.cpp:746
+#: core/libs/tags/manager/tagsmanager.cpp:748
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 "Відновити типову піктограму для позначених міток. Цю дію можна виконувати "
 "над декількома мітками одночасно."
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:751
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr "Позначити усі мітки, які не пов'язано із зображеннями."
 
-#: core/libs/tags/manager/tagsmanager.cpp:751
+#: core/libs/tags/manager/tagsmanager.cpp:753
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Інвертувати позначення. Буде позначено лише видимі записи."
 
-#: core/libs/tags/manager/tagsmanager.cpp:754
+#: core/libs/tags/manager/tagsmanager.cpp:756
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Позначені пункти буде розгорнуто"
 
-#: core/libs/tags/manager/tagsmanager.cpp:756
+#: core/libs/tags/manager/tagsmanager.cpp:758
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr "Розгорнути ієрархію міток повністю"
 
-#: core/libs/tags/manager/tagsmanager.cpp:758
+#: core/libs/tags/manager/tagsmanager.cpp:760
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr "Згорнути ієрархію міток повністю"
 
-#: core/libs/tags/manager/tagsmanager.cpp:760
+#: core/libs/tags/manager/tagsmanager.cpp:762
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 "Вилучити позначені мітки з зображень. Цю дію можна виконувати над декількома "
 "зображенням одночасно."
 
-#: core/libs/tags/manager/tagsmanager.cpp:808
+#: core/libs/tags/manager/tagsmanager.cpp:810
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Записати мітки з бази даних до зображень"
 
-#: core/libs/tags/manager/tagsmanager.cpp:811
+#: core/libs/tags/manager/tagsmanager.cpp:813
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Прочитати мітки з файлів зображень"
 
-#: core/libs/tags/manager/tagsmanager.cpp:814
+#: core/libs/tags/manager/tagsmanager.cpp:816
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Витерти усі мітки лише з бази даних"
 
-#: core/libs/tags/manager/tagsmanager.cpp:816
+#: core/libs/tags/manager/tagsmanager.cpp:818
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Записати метадані міток до зображень."
 
-#: core/libs/tags/manager/tagsmanager.cpp:818
+#: core/libs/tags/manager/tagsmanager.cpp:820
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 "Прочитати мітки з зображень до бази даних. Наявні мітки змінено не буде."
 
-#: core/libs/tags/manager/tagsmanager.cpp:821
+#: core/libs/tags/manager/tagsmanager.cpp:823
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -40512,6 +40512,13 @@ msgid ""
 msgstr ""
 "Вилучити усі мітки лише з бази даних. Синхронізація з файлами не "
 "виконуватиметься. Будьте обережні!"
+
+#: core/libs/tags/manager/tagsmanager.cpp:845
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
+#, kde-format
+msgctxt "@info"
+msgid "Help"
+msgstr "Довідка"
 
 #: core/libs/tags/widgets/tagcheckview.cpp:82
 #, kde-format
@@ -50871,7 +50878,7 @@ msgstr "Дек&орування"
 msgid "Effec&ts"
 msgstr "Е&фекти"
 
-#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:142
+#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:146
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -52312,7 +52319,7 @@ msgstr ""
 "Список файлів може бути впорядковано. Достатньо клацнути правою кнопкою, щоб "
 "переглянути список критеріїв впорядкування (лише інтерфейс альбомів)."
 
-#: core/utilities/advancedrename/common/tooltipdialog.cpp:53
+#: core/utilities/advancedrename/common/tooltipdialog.cpp:54
 #, kde-format
 msgctxt "@title:window"
 msgid "Information"
@@ -53264,12 +53271,6 @@ msgstr "Пересканувати і об'єднати результати"
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "Вилучити непідтверджені результати і виконати пересканування"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
-#, kde-format
-msgctxt "@info"
-msgid "Help"
-msgstr "Довідка"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:158
 #, kde-format
@@ -55552,43 +55553,43 @@ msgstr "Призначений профіль кольорів:"
 msgid "<b>No Profile</b>"
 msgstr "<b>Без профілю</b>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:80
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:81
 #, kde-format
 msgctxt "@title:window"
 msgid "Soft Proofing Options"
 msgstr "Параметри проби кольорів"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:84
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:85
 #, kde-format
 msgid "Soft Proofing On"
 msgstr "Пробу увімкнено"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:85
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:86
 #, kde-format
 msgid "Enable soft-proofing color managed view"
 msgstr "Увімкнути перегляд проби з керуванням кольорами"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:86
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:87
 #, kde-format
 msgid "Soft Proofing Off"
 msgstr "Пробу вимкнено"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:87
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:88
 #, kde-format
 msgid "Disable soft-proofing color managed view"
 msgstr "Вимкнути перегляд проби з керуванням кольорами"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:94
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:95
 #, kde-format
 msgid "<b>Configure the Soft Proofing View</b>"
 msgstr "<b>Налаштування перегляду проби</b>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:102
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:103
 #, kde-format
 msgid "Profile of the output device to simulate:"
 msgstr "Імітувати за профілем вихідного пристрою:"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:105
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:106
 #: core/utilities/setup/setupicc.cpp:431
 #, kde-format
 msgid ""
@@ -55600,7 +55601,7 @@ msgstr ""
 "принтера). Цей профіль буде використано для програмної перевірки, отже, ви "
 "зможете бачити, яким чином зображення виглядатиме на пристрої виводу.</p>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:111
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:112
 #, kde-format
 msgid ""
 "<p>Press this button to get detailed information about the selected proofing "
@@ -55609,47 +55610,47 @@ msgstr ""
 "<p>Натисніть цю кнопку, щоб ознайомитися з докладними відомостями щодо "
 "вибраного профілю проби.</p>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:127
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:128
 #, kde-format
 msgid "Rendering intent:"
 msgstr "Відтворення кольорів:"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:132
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:133
 #, kde-format
 msgid "Highlight out-of-gamut colors"
 msgstr "Підсвітити кольори поза палітрою"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:133
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:134
 #, kde-format
 msgid "Highlighting color:"
 msgstr "Колір підсвічування:"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:225
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:229
 #: core/utilities/setup/setupicc.cpp:868
 #, kde-format
 msgctxt "@title:window"
 msgid "Profile Error"
 msgstr "Помилка профілю"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:225
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:229
 #: core/utilities/setup/setupicc.cpp:868
 #, kde-format
 msgid "No profile is selected."
 msgstr "Не вибрано жодного профілю."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:57
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:61
 #, kde-format
 msgctxt "@title:window"
 msgid "Save?"
 msgstr "Зберегти?"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:67
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Save Changes"
 msgstr "Зберегти зміни"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:70
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -55658,13 +55659,13 @@ msgstr ""
 "Зберегти поточні зміни. Зауваження: програма ніколи не перезаписуватиме "
 "початкове зображення."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:72
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:77
 #, kde-format
 msgctxt "@action:button"
 msgid "Save Changes as a New Version"
 msgstr "Зберегти зміни до нової версії"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:75
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -55674,20 +55675,20 @@ msgstr ""
 "Зберегти дані з внесеними змінами до файла нової версії. Зміни не "
 "вноситимуться до завантаженого файла, програма створить новий файл."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:78
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:83
 #, kde-format
 msgctxt "@action:button"
 msgid "Discard Changes"
 msgstr "Відкинути зміни"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:81
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:86
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard the changes applied to the image during this editing session."
 msgstr ""
 "Відкинути зміни, внесені до зображення під час цього сеансу редагування."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:95
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:100
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -60395,12 +60396,12 @@ msgstr "Змінити запит"
 msgid "Edit..."
 msgstr "Змінити…"
 
-#: core/utilities/searchwindow/searchview.cpp:501
+#: core/utilities/searchwindow/searchview.cpp:502
 #, kde-format
 msgid "Add Search Group"
 msgstr "Додати групу пошуку"
 
-#: core/utilities/searchwindow/searchview.cpp:530
+#: core/utilities/searchwindow/searchview.cpp:531
 #, kde-format
 msgid "Try"
 msgstr "Спробувати"
@@ -61059,7 +61060,7 @@ msgstr ""
 "<p>Файли з цими суфіксами будуть вважатися звуковими файлами і додаватися у "
 "базу даних:<br/> <code>%1</code></p>"
 
-#: core/utilities/setup/camera/cameralist.cpp:283
+#: core/utilities/setup/camera/cameralist.cpp:289
 #, kde-format
 msgid ""
 "Failed to auto-detect camera; please make sure it is connected properly and "
@@ -61236,49 +61237,49 @@ msgstr ""
 ">доступний за <a href='https://www.figuiere.net/digicam/'>цією адресою</a>.</"
 "p>"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:84
+#: core/utilities/setup/camera/importfilterdlg.cpp:85
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Import Filters"
 msgstr "Редагування фільтрів імпортування"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:101
+#: core/utilities/setup/camera/importfilterdlg.cpp:102
 #, kde-format
 msgctxt "@label: name of items filter"
 msgid "Name:"
 msgstr "Назва:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:108
+#: core/utilities/setup/camera/importfilterdlg.cpp:109
 #, kde-format
 msgid "Mime filter:"
 msgstr "Фільтр MIME:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:116
+#: core/utilities/setup/camera/importfilterdlg.cpp:117
 #, kde-format
 msgid "Select Type Mime..."
 msgstr "Виберіть тип MIME…"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:121
+#: core/utilities/setup/camera/importfilterdlg.cpp:122
 #, kde-format
 msgid "File name filter:"
 msgstr "Фільтр назв файлів:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:131
+#: core/utilities/setup/camera/importfilterdlg.cpp:132
 #, kde-format
 msgid "Path filter:"
 msgstr "Фільтр шляху:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:141
+#: core/utilities/setup/camera/importfilterdlg.cpp:142
 #, kde-format
 msgid "Show only new files"
 msgstr "Показувати лише нові файли"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:212
+#: core/utilities/setup/camera/importfilterdlg.cpp:216
 #, kde-format
 msgid "Select the MimeTypes you want for this filter."
 msgstr "Виберіть типи MIME для цього фільтра."
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:214
+#: core/utilities/setup/camera/importfilterdlg.cpp:218
 #, kde-format
 msgid "Select Mime Types"
 msgstr "Виберіть типи MIME"
@@ -61837,13 +61838,13 @@ msgstr "Виберіть категорію"
 msgid "Your collection will use this category:"
 msgstr "Для вашої збірки буде використано таку категорію:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:172
+#: core/utilities/setup/downloader/filesdownloader.cpp:173
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Отримання потрібних файлів"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:200
+#: core/utilities/setup/downloader/filesdownloader.cpp:203
 #, kde-format
 msgctxt "%1: folder path, %2: disk size with unit"
 msgid ""
@@ -61865,23 +61866,23 @@ msgstr ""
 "для їхнього зберігання. <b>Після успішно отримання даних вам слід "
 "перезапустити digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:212
+#: core/utilities/setup/downloader/filesdownloader.cpp:215
 #, kde-format
 msgid "Disable face engine feature and don't ask again"
 msgstr "Вимкнути можливість розпізнавання облич і більше не питати"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:259
+#: core/utilities/setup/downloader/filesdownloader.cpp:265
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Усі файли було успішно отримано."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:268
+#: core/utilities/setup/downloader/filesdownloader.cpp:274
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Помилка під час отримання"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:269
+#: core/utilities/setup/downloader/filesdownloader.cpp:275
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -61901,28 +61902,28 @@ msgstr ""
 "Ви можете повторити спробу або продовжити отримання даних під час наступного "
 "запуску."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:277
+#: core/utilities/setup/downloader/filesdownloader.cpp:283
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Спробувати ще раз"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:410
+#: core/utilities/setup/downloader/filesdownloader.cpp:416
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Неправильна контрольна сума."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:434
+#: core/utilities/setup/downloader/filesdownloader.cpp:440
 #, kde-format
 msgid "File write error."
 msgstr "Помилка запису до файла."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:441
+#: core/utilities/setup/downloader/filesdownloader.cpp:447
 #, kde-format
 msgid "File open error."
 msgstr "Помилка під час спроби відкрити файл."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:456
+#: core/utilities/setup/downloader/filesdownloader.cpp:462
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Файл на сервері є надто великим."
@@ -63735,13 +63736,13 @@ msgstr ""
 "перезапуску програми. Працездатність деяких параметрів залежить від "
 "використаного обладнання.</b>"
 
-#: core/utilities/setup/setup.cpp:149
+#: core/utilities/setup/setup.cpp:153
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "База даних"
 
-#: core/utilities/setup/setup.cpp:150
+#: core/utilities/setup/setup.cpp:154
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63751,13 +63752,13 @@ msgstr ""
 "Параметри бази даних\n"
 "Налаштуйте параметри бази даних"
 
-#: core/utilities/setup/setup.cpp:154
+#: core/utilities/setup/setup.cpp:158
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Збірки"
 
-#: core/utilities/setup/setup.cpp:155
+#: core/utilities/setup/setup.cpp:159
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63767,13 +63768,13 @@ msgstr ""
 "Параметри збірки\n"
 "За допомогою цієї панелі ви зможете налаштувати шляхи до кореневих альбомів"
 
-#: core/utilities/setup/setup.cpp:159
+#: core/utilities/setup/setup.cpp:163
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Режими перегляду"
 
-#: core/utilities/setup/setup.cpp:160
+#: core/utilities/setup/setup.cpp:164
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63783,13 +63784,13 @@ msgstr ""
 "Параметри панелей перегляду програми\n"
 "За допомогою цієї панелі ви зможете налаштувати компоненти панелей перегляду"
 
-#: core/utilities/setup/setup.cpp:164
+#: core/utilities/setup/setup.cpp:168
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Підказки"
 
-#: core/utilities/setup/setup.cpp:165
+#: core/utilities/setup/setup.cpp:169
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63799,13 +63800,13 @@ msgstr ""
 "Параметри підказок записів\n"
 "За допомогою цієї панелі ви зможете налаштувати вміст підказок записів"
 
-#: core/utilities/setup/setup.cpp:170
+#: core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Video"
 msgstr "відео"
 
-#: core/utilities/setup/setup.cpp:171
+#: core/utilities/setup/setup.cpp:176
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63815,13 +63816,13 @@ msgstr ""
 "Параметри перегляду відео\n"
 "Налаштуйте параметри відтворення відеоданих"
 
-#: core/utilities/setup/setup.cpp:176
+#: core/utilities/setup/setup.cpp:182
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Метадані"
 
-#: core/utilities/setup/setup.cpp:177
+#: core/utilities/setup/setup.cpp:183
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63832,13 +63833,13 @@ msgstr ""
 "За допомогою цієї панелі ви можете вказати дії, які буде виконано з "
 "метаданими зображень"
 
-#: core/utilities/setup/setup.cpp:181
+#: core/utilities/setup/setup.cpp:187
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Шаблони"
 
-#: core/utilities/setup/setup.cpp:182
+#: core/utilities/setup/setup.cpp:188
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63848,13 +63849,13 @@ msgstr ""
 "Шаблони метаданих\n"
 "Керуйте вашою збіркою шаблонів метаданих"
 
-#: core/utilities/setup/setup.cpp:186
+#: core/utilities/setup/setup.cpp:192
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Редактор зображень"
 
-#: core/utilities/setup/setup.cpp:187
+#: core/utilities/setup/setup.cpp:193
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63864,13 +63865,13 @@ msgstr ""
 "Параметри редактора зображень\n"
 "За допомогою цієї панелі ви зможете налаштувати поведінку редактора зображень"
 
-#: core/utilities/setup/setup.cpp:191
+#: core/utilities/setup/setup.cpp:197
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Керування кольорами"
 
-#: core/utilities/setup/setup.cpp:192
+#: core/utilities/setup/setup.cpp:198
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63880,13 +63881,13 @@ msgstr ""
 "Параметри керування кольорами\n"
 "За допомогою цієї панелі ви зможете налаштувати параметри керування кольорами"
 
-#: core/utilities/setup/setup.cpp:196
+#: core/utilities/setup/setup.cpp:202
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Стіл з підсвічуванням"
 
-#: core/utilities/setup/setup.cpp:197
+#: core/utilities/setup/setup.cpp:203
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63897,13 +63898,13 @@ msgstr ""
 "За допомогою цієї панелі ви зможете налаштувати поведінку стола з "
 "підсвічуванням"
 
-#: core/utilities/setup/setup.cpp:201
+#: core/utilities/setup/setup.cpp:207
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Впорядковування зображень за якістю"
 
-#: core/utilities/setup/setup.cpp:202
+#: core/utilities/setup/setup.cpp:208
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63913,13 +63914,13 @@ msgstr ""
 "Параметри засобу упорядковування за якістю\n"
 "Налаштування типовий параметрів для визначення якості зображень"
 
-#: core/utilities/setup/setup.cpp:206
+#: core/utilities/setup/setup.cpp:212
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Фотоапарати"
 
-#: core/utilities/setup/setup.cpp:207
+#: core/utilities/setup/setup.cpp:213
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63929,13 +63930,13 @@ msgstr ""
 "Параметри фотоапаратів\n"
 "За допомогою цієї панелі ви зможете вказати нові пристрої цифрових фотокамер"
 
-#: core/utilities/setup/setup.cpp:214
+#: core/utilities/setup/setup.cpp:220
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Додатки"
 
-#: core/utilities/setup/setup.cpp:215
+#: core/utilities/setup/setup.cpp:221
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63945,13 +63946,13 @@ msgstr ""
 "Параметри додатків\n"
 "Встановлення переліку доступних для програми додатків"
 
-#: core/utilities/setup/setup.cpp:219
+#: core/utilities/setup/setup.cpp:225
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Різне"
 
-#: core/utilities/setup/setup.cpp:220
+#: core/utilities/setup/setup.cpp:226
 #, kde-format
 msgctxt "@title"
 msgid ""

@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-14 00:54+0000\n"
+"POT-Creation-Date: 2023-01-17 00:54+0000\n"
 "PO-Revision-Date: 2023-01-13 09:08+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -3810,7 +3810,7 @@ msgstr "Ime datoteke"
 
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
-#: core/libs/dialogs/deletedialog.cpp:176
+#: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
 msgid "Path"
 msgstr "Pot"
@@ -4913,7 +4913,7 @@ msgstr "Izberi datoteke"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:263
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:315
 #: core/libs/tags/widgets/tageditdlg.cpp:193
-#: core/utilities/searchwindow/searchview.cpp:509
+#: core/utilities/searchwindow/searchview.cpp:510
 #, kde-format
 msgid "Reset"
 msgstr "Ponastavi"
@@ -14193,7 +14193,7 @@ msgstr "Dodaj"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:87
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:97
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:83
-#: core/libs/dialogs/deletedialog.cpp:594
+#: core/libs/dialogs/deletedialog.cpp:599
 #, kde-format
 msgid "&Delete"
 msgstr "Izbriši"
@@ -27779,7 +27779,7 @@ msgstr "Album z oznakami"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:219
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
-#: core/libs/tags/manager/tagsmanager.cpp:723
+#: core/libs/tags/manager/tagsmanager.cpp:725
 #: core/libs/tags/widgets/tagfolderview.cpp:135
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -29914,22 +29914,22 @@ msgstr ""
 "Ta binarna datoteka se uporablja za zagon namenskega pojavka strežnika "
 "MariaDB."
 
-#: core/libs/dialogs/deletedialog.cpp:176
+#: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
 msgid "Thumb"
 msgstr "Sličica"
 
-#: core/libs/dialogs/deletedialog.cpp:179
+#: core/libs/dialogs/deletedialog.cpp:180
 #, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "Seznam predmetov, ki bodo pravkar izbrisani."
 
-#: core/libs/dialogs/deletedialog.cpp:180
+#: core/libs/dialogs/deletedialog.cpp:181
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "To je seznam predmetov, ki bodo pravkar izbrisani."
 
-#: core/libs/dialogs/deletedialog.cpp:302
+#: core/libs/dialogs/deletedialog.cpp:303
 #, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
@@ -29938,7 +29938,7 @@ msgstr ""
 "Če to označite, bodo datoteke trajno odstranjene, namesto da bi bile "
 "prestavljene v Smeti."
 
-#: core/libs/dialogs/deletedialog.cpp:304
+#: core/libs/dialogs/deletedialog.cpp:305
 #, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -29950,17 +29950,17 @@ msgstr ""
 "večina datotečnih sistemov ne more zanesljivo obnoviti izbrisanih datotek.</"
 "p>"
 
-#: core/libs/dialogs/deletedialog.cpp:310
+#: core/libs/dialogs/deletedialog.cpp:311
 #, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "Izbriši predmete, namesto premikanja v Smeti"
 
-#: core/libs/dialogs/deletedialog.cpp:317
+#: core/libs/dialogs/deletedialog.cpp:318
 #, kde-format
 msgid "Do not &ask again"
 msgstr "Ne vpr&ašaj več"
 
-#: core/libs/dialogs/deletedialog.cpp:376
+#: core/libs/dialogs/deletedialog.cpp:377
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -29969,7 +29969,7 @@ msgstr ""
 "Če to označite, bo to pogovorno okno v prihodnje skrito, predmeti pa bodo "
 "neposredno in trajno izbrisani."
 
-#: core/libs/dialogs/deletedialog.cpp:378
+#: core/libs/dialogs/deletedialog.cpp:379
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -29978,7 +29978,7 @@ msgstr ""
 "Če to označite, bo to pogovorno okno v prihodnje skrito, predmeti pa bodo "
 "neposredno in trajno izbrisani."
 
-#: core/libs/dialogs/deletedialog.cpp:383
+#: core/libs/dialogs/deletedialog.cpp:384
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -29987,7 +29987,7 @@ msgstr ""
 "Če to označite, bo to pogovorno okno v prihodnje skrito, predmeti pa bodo "
 "neposredno premaknjeni v Smeti."
 
-#: core/libs/dialogs/deletedialog.cpp:385
+#: core/libs/dialogs/deletedialog.cpp:386
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -29996,17 +29996,17 @@ msgstr ""
 "Če to označite, bo to pogovorno okno v prihodnje skrito, predmeti pa bodo "
 "neposredno premaknjeni v Smeti."
 
-#: core/libs/dialogs/deletedialog.cpp:397
+#: core/libs/dialogs/deletedialog.cpp:398
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr "Ti predmeti bodo <b>trajno izbrisani</b> s trdega diska."
 
-#: core/libs/dialogs/deletedialog.cpp:403
+#: core/libs/dialogs/deletedialog.cpp:404
 #, kde-format
 msgid "These items will be moved to Trash."
 msgstr "Ti predmeti bodo premaknjeni v Smeti."
 
-#: core/libs/dialogs/deletedialog.cpp:405
+#: core/libs/dialogs/deletedialog.cpp:406
 #, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
@@ -30015,18 +30015,18 @@ msgstr[1] "<b>%1</b> izbran predmet."
 msgstr[2] "<b>%1</b> izbrana predmeta."
 msgstr[3] "<b>%1</b> izbrani predmeti."
 
-#: core/libs/dialogs/deletedialog.cpp:418
+#: core/libs/dialogs/deletedialog.cpp:419
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr "Ti albumi bodo <b>trajno izbrisani</b> s trdega diska."
 
-#: core/libs/dialogs/deletedialog.cpp:424
+#: core/libs/dialogs/deletedialog.cpp:425
 #, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "Ti albumi bodo premaknjeni v Smeti."
 
-#: core/libs/dialogs/deletedialog.cpp:428
-#: core/libs/dialogs/deletedialog.cpp:455
+#: core/libs/dialogs/deletedialog.cpp:429
+#: core/libs/dialogs/deletedialog.cpp:456
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
@@ -30035,7 +30035,7 @@ msgstr[1] "<b>%1</b> izbran album."
 msgstr[2] "<b>%1</b> izbrana albuma."
 msgstr[3] "<b>%1</b> izbrani albumi."
 
-#: core/libs/dialogs/deletedialog.cpp:439
+#: core/libs/dialogs/deletedialog.cpp:440
 #, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -30045,7 +30045,7 @@ msgstr ""
 "<p>Ti albumi bodo <b>trajno zbrisani</b> z vašega trdega diska.</p><p>Prav "
 "tako bodo trajno zbrisani tudi <b>vsi pod-albumi</b> albumov na seznamu.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:448
+#: core/libs/dialogs/deletedialog.cpp:449
 #, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -30054,18 +30054,18 @@ msgstr ""
 "<p>Ti albumi bodo premaknjeni v Smeti.</p><p>Prav tako bodo premaknjeni v "
 "Smeti <b>vsi pod-albumi</b> albumov na seznamu.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:595
+#: core/libs/dialogs/deletedialog.cpp:600
 #, kde-format
 msgid "&Move to Trash"
 msgstr "Pre&makni v Smeti"
 
-#: core/libs/dialogs/deletedialog.cpp:655
+#: core/libs/dialogs/deletedialog.cpp:660
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "Izbrani predmeti bodo pravkar izbrisani"
 
-#: core/libs/dialogs/deletedialog.cpp:662
+#: core/libs/dialogs/deletedialog.cpp:667
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"
@@ -36941,7 +36941,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr "Odpri pogovorno okno nastavitev za nastavljanje posodobitev."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:182
+#: core/utilities/setup/downloader/filesdownloader.cpp:185
 #, kde-format
 msgid "Download"
 msgstr "Prenesi sem"
@@ -39671,38 +39671,38 @@ msgid "Delete Tags"
 msgstr "Izbriši značke"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:146
-#: core/libs/tags/manager/tagsmanager.cpp:707
+#: core/libs/tags/manager/tagsmanager.cpp:709
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Uredi imena značk"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:150
-#: core/libs/tags/manager/tagsmanager.cpp:711
+#: core/libs/tags/manager/tagsmanager.cpp:713
 #: core/libs/tags/widgets/tagfolderview.cpp:70
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Ponastavi ikono značke"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
-#: core/libs/tags/manager/tagsmanager.cpp:720
+#: core/libs/tags/manager/tagsmanager.cpp:722
 #, kde-format
 msgid "Invert Selection"
 msgstr "Obrni izbiro"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
-#: core/libs/tags/manager/tagsmanager.cpp:726
+#: core/libs/tags/manager/tagsmanager.cpp:728
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Razširi drevo značk"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:162
-#: core/libs/tags/manager/tagsmanager.cpp:729
+#: core/libs/tags/manager/tagsmanager.cpp:731
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "Strni drevo oznak"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:165
-#: core/libs/tags/manager/tagsmanager.cpp:732
+#: core/libs/tags/manager/tagsmanager.cpp:734
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Odstrani značko iz slik"
@@ -39777,13 +39777,13 @@ msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr "Predhodne oznake so bile spremenjene. Ali želite shraniti spremembe? "
 
-#: core/libs/tags/manager/tagsmanager.cpp:177
+#: core/libs/tags/manager/tagsmanager.cpp:179
 #, kde-format
 msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "Upravljalnik oznak"
 
-#: core/libs/tags/manager/tagsmanager.cpp:336
+#: core/libs/tags/manager/tagsmanager.cpp:338
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -39805,7 +39805,7 @@ msgstr[3] ""
 "Značke %2 imajo eno ali več pod-značk. Z brisanjem teh značk boste izbrisali "
 "tudi vse njihove pod-značke. Ali želite nadaljevati?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:359
+#: core/libs/tags/manager/tagsmanager.cpp:361
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -39820,7 +39820,7 @@ msgstr[2] ""
 msgstr[3] ""
 "Značke %2 so dodeljene enemu ali več predmetom. Ali želite nadaljevati?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:369
+#: core/libs/tags/manager/tagsmanager.cpp:371
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
@@ -39830,7 +39830,7 @@ msgstr[1] "Izbrišem znački %2?"
 msgstr[2] "Izbrišem značke %2?"
 msgstr[3] "Izbrišem značke %2?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:375
+#: core/libs/tags/manager/tagsmanager.cpp:377
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
@@ -39840,7 +39840,7 @@ msgstr[1] "Izbriši oznaki"
 msgstr[2] "Izbriši oznake"
 msgstr[3] "Izbriši oznake"
 
-#: core/libs/tags/manager/tagsmanager.cpp:498
+#: core/libs/tags/manager/tagsmanager.cpp:500
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -39852,8 +39852,8 @@ msgstr ""
 "oznake iz slike), lahko pride do <b>izgube oznak</b>.<br/>Ali želite "
 "nadaljevati?</qt>"
 
-#: core/libs/tags/manager/tagsmanager.cpp:510
-#: core/libs/tags/manager/tagsmanager.cpp:529
+#: core/libs/tags/manager/tagsmanager.cpp:512
+#: core/libs/tags/manager/tagsmanager.cpp:531
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -39862,7 +39862,7 @@ msgstr ""
 "Če je vaša zbirka velika, lahko to opravilo traja dlje časa.\n"
 "Ali želite nadaljevati?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:549
+#: core/libs/tags/manager/tagsmanager.cpp:551
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -39874,7 +39874,7 @@ msgstr ""
 "metapodatkov v datoteke.\n"
 "Ali želite nadaljevati?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:613
+#: core/libs/tags/manager/tagsmanager.cpp:615
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -39883,36 +39883,36 @@ msgstr[1] "Ali resnično želite iz vseh slik odstraniti izbrani znački?"
 msgstr[2] "Ali resnično želite iz vseh slik odstraniti izbrane značke?"
 msgstr[3] "Ali resnično želite iz vseh slik odstraniti izbrane značke?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:694
+#: core/libs/tags/manager/tagsmanager.cpp:696
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "Organiziraj"
 
-#: core/libs/tags/manager/tagsmanager.cpp:697
+#: core/libs/tags/manager/tagsmanager.cpp:699
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "Sinhroniziraj izvoz"
 
-#: core/libs/tags/manager/tagsmanager.cpp:714
+#: core/libs/tags/manager/tagsmanager.cpp:716
 #, kde-format
 msgid "Create Tag from Address Book"
 msgstr "Ustvari značko iz mape"
 
-#: core/libs/tags/manager/tagsmanager.cpp:717
+#: core/libs/tags/manager/tagsmanager.cpp:719
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "Označi nedodeljene značke"
 
-#: core/libs/tags/manager/tagsmanager.cpp:737
+#: core/libs/tags/manager/tagsmanager.cpp:739
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Dodaj novo značko k trenutni. Trenutna značka je tista, ki ste jo nazadnje "
 "kliknili."
 
-#: core/libs/tags/manager/tagsmanager.cpp:740
+#: core/libs/tags/manager/tagsmanager.cpp:742
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
@@ -39921,74 +39921,74 @@ msgstr ""
 "Izbriši izbrane predmete. To deluje tudi z več predmeti, ampak ne bo "
 "izbrisalo korenske značke."
 
-#: core/libs/tags/manager/tagsmanager.cpp:744
+#: core/libs/tags/manager/tagsmanager.cpp:746
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "Odstrani ime izbrane značke."
 
-#: core/libs/tags/manager/tagsmanager.cpp:746
+#: core/libs/tags/manager/tagsmanager.cpp:748
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr "Ponastavi ikono izbranih značk. Deluje tudi z več izbirami."
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:751
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr "Označi vse značke, ki niso dodeljene slikam."
 
-#: core/libs/tags/manager/tagsmanager.cpp:751
+#: core/libs/tags/manager/tagsmanager.cpp:753
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Obrni izbor. Izbrani bodo samo vidni predmeti"
 
-#: core/libs/tags/manager/tagsmanager.cpp:754
+#: core/libs/tags/manager/tagsmanager.cpp:756
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Izbrani predmeti bodo razširjeni"
 
-#: core/libs/tags/manager/tagsmanager.cpp:756
+#: core/libs/tags/manager/tagsmanager.cpp:758
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr "Razširi drevo oznak v celoti"
 
-#: core/libs/tags/manager/tagsmanager.cpp:758
+#: core/libs/tags/manager/tagsmanager.cpp:760
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr "Strni drevo oznak v celoti"
 
-#: core/libs/tags/manager/tagsmanager.cpp:760
+#: core/libs/tags/manager/tagsmanager.cpp:762
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr "Izbriši izbrane značke iz slik. Deluje tudi z več izbirami."
 
-#: core/libs/tags/manager/tagsmanager.cpp:808
+#: core/libs/tags/manager/tagsmanager.cpp:810
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Zapiši značke iz podatkovne zbirke v sliko"
 
-#: core/libs/tags/manager/tagsmanager.cpp:811
+#: core/libs/tags/manager/tagsmanager.cpp:813
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Preberi značke iz slike"
 
-#: core/libs/tags/manager/tagsmanager.cpp:814
+#: core/libs/tags/manager/tagsmanager.cpp:816
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Izbriši vse značke, ampak le iz podatkovne zbirke"
 
-#: core/libs/tags/manager/tagsmanager.cpp:816
+#: core/libs/tags/manager/tagsmanager.cpp:818
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Zapiši značke metapodatkov v sliko."
 
-#: core/libs/tags/manager/tagsmanager.cpp:818
+#: core/libs/tags/manager/tagsmanager.cpp:820
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 "Preberi značke iz slik v podatkovno zbirko. Obstoječe značke ne bodo "
 "spremenjene"
 
-#: core/libs/tags/manager/tagsmanager.cpp:821
+#: core/libs/tags/manager/tagsmanager.cpp:823
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -39996,6 +39996,13 @@ msgid ""
 msgstr ""
 "Izbriši vse značke, ampak le iz podatkovne zbirke. Uskladitve z datotekami "
 "ne bo. Priporočamo previdnost."
+
+#: core/libs/tags/manager/tagsmanager.cpp:845
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
+#, kde-format
+msgctxt "@info"
+msgid "Help"
+msgstr "Pomoč"
 
 #: core/libs/tags/widgets/tagcheckview.cpp:82
 #, kde-format
@@ -50330,7 +50337,7 @@ msgstr "Okrasi"
 msgid "Effec&ts"
 msgstr "Učinki"
 
-#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:142
+#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:146
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -51736,7 +51743,7 @@ msgstr ""
 "Seznam datotek lahko razvrstite tako, da nanj kliknete z desno (samo "
 "uporabniški vmesnik albuma)."
 
-#: core/utilities/advancedrename/common/tooltipdialog.cpp:53
+#: core/utilities/advancedrename/common/tooltipdialog.cpp:54
 #, kde-format
 msgctxt "@title:window"
 msgid "Information"
@@ -52684,12 +52691,6 @@ msgstr "Preišči znova in združi rezultate"
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "Počisti nepotrjene rezultate in znova preišči"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
-#, kde-format
-msgctxt "@info"
-msgid "Help"
-msgstr "Pomoč"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:158
 #, kde-format
@@ -54921,43 +54922,43 @@ msgstr "Dodeljen barvni profil:"
 msgid "<b>No Profile</b>"
 msgstr "<b>Brez profila</b>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:80
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:81
 #, kde-format
 msgctxt "@title:window"
 msgid "Soft Proofing Options"
 msgstr "Možnosti mehkega preverjanja"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:84
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:85
 #, kde-format
 msgid "Soft Proofing On"
 msgstr "Mehko preverjanje vključeno"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:85
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:86
 #, kde-format
 msgid "Enable soft-proofing color managed view"
 msgstr "Omogoči upravljan pregled za mehko preverjanje barv"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:86
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:87
 #, kde-format
 msgid "Soft Proofing Off"
 msgstr "Mehko preverjanje izključeno"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:87
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:88
 #, kde-format
 msgid "Disable soft-proofing color managed view"
 msgstr "Onemogoči upravljan pregled za mehko preverjanje barv"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:94
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:95
 #, kde-format
 msgid "<b>Configure the Soft Proofing View</b>"
 msgstr "<b>Nastavi pogled mehkega preverjanja</b>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:102
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:103
 #, kde-format
 msgid "Profile of the output device to simulate:"
 msgstr "Profil na izhodni napravi, ki bo simuliran:"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:105
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:106
 #: core/utilities/setup/setupicc.cpp:431
 #, kde-format
 msgid ""
@@ -54969,7 +54970,7 @@ msgstr ""
 "Ta profil bo uporabljen za mehko preverjanje, da boste lahko videli kako bo "
 "slika izrisana na izhodni napravi.</p>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:111
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:112
 #, kde-format
 msgid ""
 "<p>Press this button to get detailed information about the selected proofing "
@@ -54978,47 +54979,47 @@ msgstr ""
 "<p>Kliknite ta gumb, da dobite več podrobnosti o izbranem profilu "
 "preverjanja.</p>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:127
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:128
 #, kde-format
 msgid "Rendering intent:"
 msgstr "Namen upodobitve:"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:132
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:133
 #, kde-format
 msgid "Highlight out-of-gamut colors"
 msgstr "Poudari barve izven lestvice"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:133
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:134
 #, kde-format
 msgid "Highlighting color:"
 msgstr "Datoteka poudarjanja:"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:225
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:229
 #: core/utilities/setup/setupicc.cpp:868
 #, kde-format
 msgctxt "@title:window"
 msgid "Profile Error"
 msgstr "Napaka profila"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:225
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:229
 #: core/utilities/setup/setupicc.cpp:868
 #, kde-format
 msgid "No profile is selected."
 msgstr "Izbran ni noben profil."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:57
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:61
 #, kde-format
 msgctxt "@title:window"
 msgid "Save?"
 msgstr "Shranim?"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:67
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Save Changes"
 msgstr "Shrani spremembe"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:70
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -55026,13 +55027,13 @@ msgid ""
 msgstr ""
 "Shrani trenutne spremembe. Opomba: izvorna slika ne bo nikoli prepisana."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:72
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:77
 #, kde-format
 msgctxt "@action:button"
 msgid "Save Changes as a New Version"
 msgstr "Shrani spremembe kot novo različico"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:75
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -55042,19 +55043,19 @@ msgstr ""
 "Shrani trenutne spremembe kot novo različico. Naložena datoteka bo ostala "
 "nespremenjena, ustvarjena bo nova datoteka."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:78
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:83
 #, kde-format
 msgctxt "@action:button"
 msgid "Discard Changes"
 msgstr "Zavrzi spremembe"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:81
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:86
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard the changes applied to the image during this editing session."
 msgstr "Zavrzi spremembe uveljavljene na sliki med to sejo urejanja."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:95
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:100
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -59727,12 +59728,12 @@ msgstr "Uredi shranjeno iskanje"
 msgid "Edit..."
 msgstr "Uredi ..."
 
-#: core/utilities/searchwindow/searchview.cpp:501
+#: core/utilities/searchwindow/searchview.cpp:502
 #, kde-format
 msgid "Add Search Group"
 msgstr "Dodaj iskalno skupino"
 
-#: core/utilities/searchwindow/searchview.cpp:530
+#: core/utilities/searchwindow/searchview.cpp:531
 #, kde-format
 msgid "Try"
 msgstr "Poskusi"
@@ -60355,7 +60356,7 @@ msgstr ""
 "<p>Datoteke s temi priponami bodo prepoznane kot zvočne datoteke in "
 "vključene v podatkovno zbirko:<br/> <code>%1</code></p>"
 
-#: core/utilities/setup/camera/cameralist.cpp:283
+#: core/utilities/setup/camera/cameralist.cpp:289
 #, kde-format
 msgid ""
 "Failed to auto-detect camera; please make sure it is connected properly and "
@@ -60532,49 +60533,49 @@ msgstr ""
 "<p>Celoten seznam nastavitev fotoaparatov se nahaja na<br/><a href='https://"
 "www.figuiere.net/digicam/'>tem spletnem naslovu</a>.</p>"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:84
+#: core/utilities/setup/camera/importfilterdlg.cpp:85
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Import Filters"
 msgstr "Uredi filtre za uvoz"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:101
+#: core/utilities/setup/camera/importfilterdlg.cpp:102
 #, kde-format
 msgctxt "@label: name of items filter"
 msgid "Name:"
 msgstr "Ime:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:108
+#: core/utilities/setup/camera/importfilterdlg.cpp:109
 #, kde-format
 msgid "Mime filter:"
 msgstr "Filter MIME:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:116
+#: core/utilities/setup/camera/importfilterdlg.cpp:117
 #, kde-format
 msgid "Select Type Mime..."
 msgstr "Izberite vrsto MIME ..."
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:121
+#: core/utilities/setup/camera/importfilterdlg.cpp:122
 #, kde-format
 msgid "File name filter:"
 msgstr "Filter imen datotek:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:131
+#: core/utilities/setup/camera/importfilterdlg.cpp:132
 #, kde-format
 msgid "Path filter:"
 msgstr "Filter poti:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:141
+#: core/utilities/setup/camera/importfilterdlg.cpp:142
 #, kde-format
 msgid "Show only new files"
 msgstr "Pokaži samo nove datoteke"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:212
+#: core/utilities/setup/camera/importfilterdlg.cpp:216
 #, kde-format
 msgid "Select the MimeTypes you want for this filter."
 msgstr "Izberite vrste MIME, ki bi jih želeli za ta filter."
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:214
+#: core/utilities/setup/camera/importfilterdlg.cpp:218
 #, kde-format
 msgid "Select Mime Types"
 msgstr "Izberite vrste MIME"
@@ -61117,13 +61118,13 @@ msgstr "Izberite kategorijo"
 msgid "Your collection will use this category:"
 msgstr "Vaša nova zbirka bo uporabljala to kategorijo:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:172
+#: core/utilities/setup/downloader/filesdownloader.cpp:173
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Prejemanje zahtevanih datotek"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:200
+#: core/utilities/setup/downloader/filesdownloader.cpp:203
 #, kde-format
 msgctxt "%1: folder path, %2: disk size with unit"
 msgid ""
@@ -61143,23 +61144,23 @@ msgstr ""
 "p><p>Datoteke bodo prenesene v %1. Prepričajte se, da je na voljo približno "
 "%2. <b>Po uspešnem prenosu morate znova zagnati digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:212
+#: core/utilities/setup/downloader/filesdownloader.cpp:215
 #, kde-format
 msgid "Disable face engine feature and don't ask again"
 msgstr "Onemogoči zmožnost prepoznave obrazov in ne sprašuj več"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:259
+#: core/utilities/setup/downloader/filesdownloader.cpp:265
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Vse datoteke so bile uspešno prenesene."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:268
+#: core/utilities/setup/downloader/filesdownloader.cpp:274
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Napaka prenosa"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:269
+#: core/utilities/setup/downloader/filesdownloader.cpp:275
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -61178,28 +61179,28 @@ msgstr ""
 "\n"
 "Lahko ponovite ali nadaljujete prenos po novem zagonu."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:277
+#: core/utilities/setup/downloader/filesdownloader.cpp:283
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Poskusite znova"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:410
+#: core/utilities/setup/downloader/filesdownloader.cpp:416
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Kontrolna vsota ni pravilna."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:434
+#: core/utilities/setup/downloader/filesdownloader.cpp:440
 #, kde-format
 msgid "File write error."
 msgstr "Napaka pri pisanju datoteke."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:441
+#: core/utilities/setup/downloader/filesdownloader.cpp:447
 #, kde-format
 msgid "File open error."
 msgstr "Napaka pri odpiranju datoteke."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:456
+#: core/utilities/setup/downloader/filesdownloader.cpp:462
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Datoteka na strežniku je prevelika."
@@ -62979,13 +62980,13 @@ msgstr ""
 "zagonu. Nekatere nastavitve so odvisne od strojne opreme in morda nimajo "
 "nobenega učinka.</b>"
 
-#: core/utilities/setup/setup.cpp:149
+#: core/utilities/setup/setup.cpp:153
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Podatkovna zbirka"
 
-#: core/utilities/setup/setup.cpp:150
+#: core/utilities/setup/setup.cpp:154
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -62995,13 +62996,13 @@ msgstr ""
 "Nastavitve podatkovne zbirke\n"
 "Prilagodi nastavitve podatkovne zbirke"
 
-#: core/utilities/setup/setup.cpp:154
+#: core/utilities/setup/setup.cpp:158
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Zbirke"
 
-#: core/utilities/setup/setup.cpp:155
+#: core/utilities/setup/setup.cpp:159
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63011,13 +63012,13 @@ msgstr ""
 "Nastavitve zbirk\n"
 "Nastavite mesta korenskih albumov"
 
-#: core/utilities/setup/setup.cpp:159
+#: core/utilities/setup/setup.cpp:163
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Pogledi"
 
-#: core/utilities/setup/setup.cpp:160
+#: core/utilities/setup/setup.cpp:164
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63027,13 +63028,13 @@ msgstr ""
 "Nastavitve pogledov aplikacije\n"
 "Prilagodite izgled pogledov"
 
-#: core/utilities/setup/setup.cpp:164
+#: core/utilities/setup/setup.cpp:168
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Orodni namig"
 
-#: core/utilities/setup/setup.cpp:165
+#: core/utilities/setup/setup.cpp:169
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63043,13 +63044,13 @@ msgstr ""
 "Nastavitve orodnih namigov\n"
 "Prilagodi informacije v orodnih namigih"
 
-#: core/utilities/setup/setup.cpp:170
+#: core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Video"
 msgstr "Video"
 
-#: core/utilities/setup/setup.cpp:171
+#: core/utilities/setup/setup.cpp:176
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63059,13 +63060,13 @@ msgstr ""
 "Nastavitve predogledov videov\n"
 "Prilagodi nastavitve predvajanja video medijev"
 
-#: core/utilities/setup/setup.cpp:176
+#: core/utilities/setup/setup.cpp:182
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Metapodatki"
 
-#: core/utilities/setup/setup.cpp:177
+#: core/utilities/setup/setup.cpp:183
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63075,13 +63076,13 @@ msgstr ""
 "Upravljanje podatkov vgrajenih v sliko\n"
 "Nastavite povezave med slikami in metapodatki"
 
-#: core/utilities/setup/setup.cpp:181
+#: core/utilities/setup/setup.cpp:187
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Predloge"
 
-#: core/utilities/setup/setup.cpp:182
+#: core/utilities/setup/setup.cpp:188
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63091,13 +63092,13 @@ msgstr ""
 "Predloge metapodatkov\n"
 "Upravljajte z vašo zbirko predlog metapodatkov"
 
-#: core/utilities/setup/setup.cpp:186
+#: core/utilities/setup/setup.cpp:192
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Urejevalnik slik"
 
-#: core/utilities/setup/setup.cpp:187
+#: core/utilities/setup/setup.cpp:193
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63107,13 +63108,13 @@ msgstr ""
 "Nastavitve urejevalnika slik\n"
 "Prilagodi nastavitve urejevalnika slik"
 
-#: core/utilities/setup/setup.cpp:191
+#: core/utilities/setup/setup.cpp:197
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Upravljanje barv"
 
-#: core/utilities/setup/setup.cpp:192
+#: core/utilities/setup/setup.cpp:198
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63123,13 +63124,13 @@ msgstr ""
 "Nastavitve za upravljanje barv\n"
 "Prilagodi nastavitve upravljanja barv"
 
-#: core/utilities/setup/setup.cpp:196
+#: core/utilities/setup/setup.cpp:202
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Osvetlitvena miza"
 
-#: core/utilities/setup/setup.cpp:197
+#: core/utilities/setup/setup.cpp:203
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63139,13 +63140,13 @@ msgstr ""
 "Nastavitve osvetlitvene mize\n"
 "Prilagodi orodje za primerjavo slik"
 
-#: core/utilities/setup/setup.cpp:201
+#: core/utilities/setup/setup.cpp:207
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Razvrščevalnik slik po kakovosti"
 
-#: core/utilities/setup/setup.cpp:202
+#: core/utilities/setup/setup.cpp:208
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63155,13 +63156,13 @@ msgstr ""
 "Nastavitve razvrščevalnika slik po kakovosti\n"
 "Prilagodi privzete nastavitve za izvedbo razvrščanja slik po kakovosti"
 
-#: core/utilities/setup/setup.cpp:206
+#: core/utilities/setup/setup.cpp:212
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Kamere"
 
-#: core/utilities/setup/setup.cpp:207
+#: core/utilities/setup/setup.cpp:213
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63171,13 +63172,13 @@ msgstr ""
 "Nastavitve kamere\n"
 "Upravljaj vaše kamere"
 
-#: core/utilities/setup/setup.cpp:214
+#: core/utilities/setup/setup.cpp:220
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Vtičniki"
 
-#: core/utilities/setup/setup.cpp:215
+#: core/utilities/setup/setup.cpp:221
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63187,13 +63188,13 @@ msgstr ""
 "Nastavitve vstavkov\n"
 "Nastavi kateri vtičniki bodo dostopni iz aplikacije"
 
-#: core/utilities/setup/setup.cpp:219
+#: core/utilities/setup/setup.cpp:225
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Razno"
 
-#: core/utilities/setup/setup.cpp:220
+#: core/utilities/setup/setup.cpp:226
 #, kde-format
 msgctxt "@title"
 msgid ""

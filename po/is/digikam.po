@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-14 00:54+0000\n"
-"PO-Revision-Date: 2023-01-02 13:45+0000\n"
+"POT-Creation-Date: 2023-01-17 00:54+0000\n"
+"PO-Revision-Date: 2023-01-16 21:39+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -955,8 +955,7 @@ msgid "%1 %2"
 msgstr "%1 %2"
 
 #: core/app/items/utils/itemviewutilities.cpp:203
-#, fuzzy, kde-format
-#| msgid "Select target folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Target Folder"
 msgstr "Veldu úttaksmöppu"
@@ -1513,15 +1512,13 @@ msgstr ""
 "Táknmyndaþeman verður tiltæk eftir að digiKam hefur verið endurræst."
 
 #: core/app/main/digikamapp_import.cpp:81
-#, fuzzy, kde-format
-#| msgid "Select folder to parse"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Folder to Parse"
 msgstr "Veldu möppu til að vinna með"
 
 #: core/app/main/digikamapp_import.cpp:101
-#, fuzzy, kde-format
-#| msgid "Select folders to import into album"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Folders to Import into Album"
 msgstr "Veldu skrár til að flytja inn í albúm"
@@ -3190,10 +3187,9 @@ msgid "%1/%2 items selected"
 msgstr "%1/%2 atriði valin"
 
 #: core/app/views/stack/welcomepageview.cpp:140
-#, fuzzy, kde-format
-#| msgid "More than 1300 user-reports closed on bugzilla."
+#, kde-format
 msgid "More than 200 user-reports closed on bugzilla."
-msgstr "Meira en 1300 villuskýrslum notenda lokað á bugzilla."
+msgstr "Meira en 200 villuskýrslum notenda lokað á bugzilla."
 
 #: core/app/views/stack/welcomepageview.cpp:141
 #, kde-format
@@ -3744,7 +3740,7 @@ msgstr "Skráarheiti"
 
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
-#: core/libs/dialogs/deletedialog.cpp:176
+#: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
 msgid "Path"
 msgstr "Slóð"
@@ -4236,18 +4232,14 @@ msgid "Supported Extensions"
 msgstr "Studdar skráarending"
 
 #: core/avplayer/filters/EventFilter.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open a video"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open a Video"
 msgstr "Opna myndskeið"
 
 #: core/avplayer/filters/EventFilter.cpp:83
 #: core/avplayer/main/MainWindow_io.cpp:510
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open an url"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open an Url"
 msgstr "Opna vefslóð"
@@ -4374,9 +4366,7 @@ msgid "-&gt;/&lt;-: seek forward/backward\n"
 msgstr "-&gt;/&lt;-: leita áfram/afturábak\n"
 
 #: core/avplayer/filters/EventFilter.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Help"
+#, kde-format
 msgctxt "@title:window"
 msgid "Help"
 msgstr "Hjálp"
@@ -4418,9 +4408,7 @@ msgstr ""
 "AVPlayer á að virka.</p>"
 
 #: core/avplayer/main/MainWindow_io.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open a media file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open a Media File"
 msgstr "Opna margmiðlunarskrá"
@@ -4433,9 +4421,7 @@ msgid "Aspect ratio"
 msgstr "Stærðarhlutföll"
 
 #: core/avplayer/main/MainWindow_io.cpp:702
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Player error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Player Error"
 msgstr "Villa í spilara"
@@ -4483,9 +4469,7 @@ msgid "Stalled"
 msgstr "Stöðvað"
 
 #: core/avplayer/main/MainWindow_io.cpp:798
-#, fuzzy, kde-format
-#| msgctxt "@title: media loading state"
-#| msgid "Buffering... %1% @%2 %3"
+#, kde-format
 msgctxt "@title:window, media loading state"
 msgid "Buffering... %1% @%2 %3"
 msgstr "Hleð í biðminni... %1% @%2 %3"
@@ -4503,9 +4487,7 @@ msgstr ""
 "Snið: %2"
 
 #: core/avplayer/main/MainWindow_io.cpp:1018
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open a subtitle file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open a Subtitle File"
 msgstr "Opna skjátextaskrá"
@@ -4821,9 +4803,7 @@ msgid "not available on your platform!"
 msgstr "er ekki tiltækt á kerfinu þínu."
 
 #: core/avplayer/main/MainWindow_setup.cpp:818
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open an external audio track"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open an External Audio Track"
 msgstr "Opna utanaðkomandi hljóðspor"
@@ -4853,9 +4833,7 @@ msgid "Remove selected items"
 msgstr "Fjarlægja valin atriði"
 
 #: core/avplayer/playlist/PlayList.cpp:259
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Select files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Files"
 msgstr "Veldu skrár"
@@ -4864,7 +4842,7 @@ msgstr "Veldu skrár"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:263
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:315
 #: core/libs/tags/widgets/tageditdlg.cpp:193
-#: core/utilities/searchwindow/searchview.cpp:509
+#: core/utilities/searchwindow/searchview.cpp:510
 #, kde-format
 msgid "Reset"
 msgstr "Frumstilla"
@@ -5034,9 +5012,7 @@ msgid "Frame size"
 msgstr "Stærð ramma"
 
 #: core/avplayer/utils/StatisticsView.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Media info"
+#, kde-format
 msgctxt "@title:window"
 msgid "Media Info"
 msgstr "Upplýsingar um gagnamiðil"
@@ -8264,11 +8240,10 @@ msgid "Adjust Levels"
 msgstr "Laga littíðnistig"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:890
-#, fuzzy, kde-format
-#| msgid "Select Gimp Levels File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Levels File to Load"
-msgstr "Veldu Gimp littíðnistigaskrá til að hlaða inn"
+msgstr "Veldu Gimp-littaíðniskrá til að hlaða inn"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:902
 #, kde-format
@@ -8276,11 +8251,10 @@ msgid "Cannot load from the Gimp levels text file."
 msgstr "Get ekki hlaðið inn littíðnistigum úr Gimp textaskrá."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:917
-#, fuzzy, kde-format
-#| msgid "Gimp Levels File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Gimp Levels File to Save"
-msgstr "Gimp littíðnistigaskrá sem á að vista"
+msgstr "Gimp-litatíðniskrá sem á að vista"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:929
 #, kde-format
@@ -9420,8 +9394,7 @@ msgid "Restoration"
 msgstr "Viðgerðir"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:344
-#, fuzzy, kde-format
-#| msgid "Photograph Restoration Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Restoration Settings File to Load"
 msgstr "Stillingaskrá ljósmyndaviðgerða til að hlaða inn"
@@ -9437,8 +9410,7 @@ msgid "Cannot load settings from the Photograph Restoration text file."
 msgstr "Get ekki hlaðið inn stillingum úr textaskrá ljósmyndaviðgerða."
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:383
-#, fuzzy, kde-format
-#| msgid "Photograph Restoration Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Restoration Settings File to Save"
 msgstr "Stillingaskrá ljósmyndaviðgerða til að vista"
@@ -9512,8 +9484,7 @@ msgid "Sharpen..."
 msgstr "Skerpa..."
 
 #: core/dplugins/editor/file/print/printhelper.cpp:168
-#, fuzzy, kde-format
-#| msgid "Print Image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print Image"
 msgstr "Prenta mynd"
@@ -11454,8 +11425,7 @@ msgid "Resize"
 msgstr "Breyta stærð"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:918
-#, fuzzy, kde-format
-#| msgid "Photograph Resizing Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Resizing Settings File to Load"
 msgstr "Stillingaskrá stærðarbreytingar til að hlaða inn"
@@ -11471,8 +11441,7 @@ msgid "Cannot load settings from the Photograph Resizing text file."
 msgstr "Get ekki hlaðið inn stillingum úr textaskrá stærðarbreytinga."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:951
-#, fuzzy, kde-format
-#| msgid "Photograph Resizing Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Resizing Settings File to Save"
 msgstr "Stillingaskrá stærðarbreytingar til að vista"
@@ -11658,8 +11627,7 @@ msgstr ""
 "Athugaðu uppsetninguna þína"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:64
-#, fuzzy, kde-format
-#| msgid "Scan Image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Scan Image"
 msgstr "Skanna mynd"
@@ -11671,15 +11639,13 @@ msgstr "Skanna myndir"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:167
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1803
-#, fuzzy, kde-format
-#| msgid "New Image File Name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Image File Name"
-msgstr "Heiti nýrrar myndar"
+msgstr "Heiti nýrrar myndskráar"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:215
-#, fuzzy, kde-format
-#| msgid "Unsupported Format"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr "Óstutt myndsnið"
@@ -11690,8 +11656,7 @@ msgid "The target image file format \"%1\" is unsupported."
 msgstr "Stuðningur við úttakssnið skrárinnar \"%1\" er ekki fyrir hendi."
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:228
-#, fuzzy, kde-format
-#| msgid "Cannot Save File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot Save File"
 msgstr "Gat ekki vistað skrá"
@@ -11710,11 +11675,10 @@ msgstr ""
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:244
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2277
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2296
-#, fuzzy, kde-format
-#| msgid "Overwrite File?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
-msgstr "Yfirskrifa skrá?"
+msgstr "Skrifa yfir skrá?"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:245
 #, kde-format
@@ -11730,8 +11694,7 @@ msgid "Saving file %1 -"
 msgstr "Vista skrá %1 - "
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:304
-#, fuzzy, kde-format
-#| msgid "File Not Saved"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Not Saved"
 msgstr "Skrá ekki vistuð"
@@ -11743,8 +11706,7 @@ msgstr "Gat ekki vistað \"%1\" skrána"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:264
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
-#, fuzzy, kde-format
-#| msgid "Geolocation Editor"
+#, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
 msgstr "Hnattstaðsetningarritill"
@@ -11848,9 +11810,7 @@ msgstr[0] "1 mynd hefur verið breytt."
 msgstr[1] "%1 myndum hefur verið breytt."
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:814
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Unsaved changes"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "Óvistaðar breytingar"
@@ -12202,11 +12162,10 @@ msgid "Destination Directory:"
 msgstr "Móttökumappa:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:105
-#, fuzzy, kde-format
-#| msgid "Select a directory in which to save the kml file and pictures"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select a Directory in Which to Save the KML File and Pictures"
-msgstr "Veldu möppu til að vista í kml skrána og myndirnar"
+msgstr "Veldu möppu til að vista í KML-skrána og myndirnar"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:107
 #, kde-format
@@ -12514,8 +12473,7 @@ msgid "Bookmarks"
 msgstr "Bókmerki"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:274
-#, fuzzy, kde-format
-#| msgid "Search failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Search Failed"
 msgstr "Leit mistókst"
@@ -14136,7 +14094,7 @@ msgstr "Bæt&a við"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:87
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:97
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:83
-#: core/libs/dialogs/deletedialog.cpp:594
+#: core/libs/dialogs/deletedialog.cpp:599
 #, kde-format
 msgid "&Delete"
 msgstr "&Eyða"
@@ -27857,7 +27815,7 @@ msgstr "Merkingaalbúm"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:219
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
-#: core/libs/tags/manager/tagsmanager.cpp:723
+#: core/libs/tags/manager/tagsmanager.cpp:725
 #: core/libs/tags/widgets/tagfolderview.cpp:135
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -29989,22 +29947,22 @@ msgid ""
 msgstr ""
 "Þessi tvíundaskrá er notuð til að ræsa sérstakt tilvik af MariaDB-þjóninum."
 
-#: core/libs/dialogs/deletedialog.cpp:176
+#: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
 msgid "Thumb"
 msgstr "Smámynd"
 
-#: core/libs/dialogs/deletedialog.cpp:179
+#: core/libs/dialogs/deletedialog.cpp:180
 #, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "Listi yfir atriði sem verður eytt."
 
-#: core/libs/dialogs/deletedialog.cpp:180
+#: core/libs/dialogs/deletedialog.cpp:181
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "Þetta er listi yfir skrár sem er verið að fara að eyða."
 
-#: core/libs/dialogs/deletedialog.cpp:302
+#: core/libs/dialogs/deletedialog.cpp:303
 #, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
@@ -30013,7 +29971,7 @@ msgstr ""
 "Ef hakað er í þennan kassa, verður hlutum endanlega eytt í stað þess að fara "
 "fyrst í rusladallinn."
 
-#: core/libs/dialogs/deletedialog.cpp:304
+#: core/libs/dialogs/deletedialog.cpp:305
 #, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -30024,17 +29982,17 @@ msgstr ""
 "vera færðar í ruslið.</p><p><em>Notist með varúð.</em>: flest skráakerfi "
 "geta ekki endurheimt eyddar skrár með góðu móti.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:310
+#: core/libs/dialogs/deletedialog.cpp:311
 #, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "Eyða hlutum en&danlega í stað þess að færa fyrst í ruslið"
 
-#: core/libs/dialogs/deletedialog.cpp:317
+#: core/libs/dialogs/deletedialog.cpp:318
 #, kde-format
 msgid "Do not &ask again"
 msgstr "Ekki spyrja &aftur"
 
-#: core/libs/dialogs/deletedialog.cpp:376
+#: core/libs/dialogs/deletedialog.cpp:377
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -30043,7 +30001,7 @@ msgstr ""
 "Sé þetta valið, mun þessi gluggi hætta að birtast og skrám verður þá  eytt "
 "beint og endanlega."
 
-#: core/libs/dialogs/deletedialog.cpp:378
+#: core/libs/dialogs/deletedialog.cpp:379
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -30052,7 +30010,7 @@ msgstr ""
 "Sé hakað í þennan reit, mun þessi gluggi hætta að birtast og skrám verður "
 "þá  eytt beint og endanlega."
 
-#: core/libs/dialogs/deletedialog.cpp:383
+#: core/libs/dialogs/deletedialog.cpp:384
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -30061,7 +30019,7 @@ msgstr ""
 "Sé þetta valið, mun þessi gluggi hætta að birtast og skrár færast þá beint í "
 "ruslið."
 
-#: core/libs/dialogs/deletedialog.cpp:385
+#: core/libs/dialogs/deletedialog.cpp:386
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -30070,42 +30028,42 @@ msgstr ""
 "Sé þetta valið, mun þessi gluggi hætta að birtast og skrár færast þá beint í "
 "ruslið."
 
-#: core/libs/dialogs/deletedialog.cpp:397
+#: core/libs/dialogs/deletedialog.cpp:398
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr "Þessum hlutum verður <b>eytt óendurkvæmt</b> af harða disknum."
 
-#: core/libs/dialogs/deletedialog.cpp:403
+#: core/libs/dialogs/deletedialog.cpp:404
 #, kde-format
 msgid "These items will be moved to Trash."
 msgstr "Þessir hlutir verða fluttir í ruslið."
 
-#: core/libs/dialogs/deletedialog.cpp:405
+#: core/libs/dialogs/deletedialog.cpp:406
 #, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
 msgstr[0] "<b>1</b> atriði valið."
 msgstr[1] "<b>%1</b> atriði valin."
 
-#: core/libs/dialogs/deletedialog.cpp:418
+#: core/libs/dialogs/deletedialog.cpp:419
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr "Þessum hlutum verður <b>eytt óendurkvæmt</b> af harða disknum."
 
-#: core/libs/dialogs/deletedialog.cpp:424
+#: core/libs/dialogs/deletedialog.cpp:425
 #, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "Þessir hlutir verða fluttir í ruslið."
 
-#: core/libs/dialogs/deletedialog.cpp:428
-#: core/libs/dialogs/deletedialog.cpp:455
+#: core/libs/dialogs/deletedialog.cpp:429
+#: core/libs/dialogs/deletedialog.cpp:456
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
 msgstr[0] "<b>1</b>albúm valið."
 msgstr[1] "<b>%1</b> albúm valin."
 
-#: core/libs/dialogs/deletedialog.cpp:439
+#: core/libs/dialogs/deletedialog.cpp:440
 #, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -30116,7 +30074,7 @@ msgstr ""
 "p><p>Athugaðu að <b>öllum undiralbúmum</b> verður einnig eytt, þar sem þau "
 "eru einnig á listanum.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:448
+#: core/libs/dialogs/deletedialog.cpp:449
 #, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -30125,19 +30083,19 @@ msgstr ""
 "<p>Þessi albúm verða færð í ruslafötuna. </p><p>Athugaðu að <b>öll "
 "undiralbúm</b> eru einnig á listanum og fara því líka í ruslið.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:595
+#: core/libs/dialogs/deletedialog.cpp:600
 #, kde-format
 msgid "&Move to Trash"
 msgstr "Setja í &ruslið"
 
-#: core/libs/dialogs/deletedialog.cpp:655
+#: core/libs/dialogs/deletedialog.cpp:660
 #, fuzzy, kde-format
 #| msgid "About to delete selected items"
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "Um það bil að eyða völdum atriðum"
 
-#: core/libs/dialogs/deletedialog.cpp:662
+#: core/libs/dialogs/deletedialog.cpp:667
 #, fuzzy, kde-format
 #| msgid "About to delete selected albums"
 msgctxt "@title:window"
@@ -34664,9 +34622,7 @@ msgid "JPEG Quality:"
 msgstr "JPEG gæði:"
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "&Start"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Start"
 msgstr "&Byrja"
@@ -37022,7 +36978,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr "Opna uppsetningarglugga til að stilla uppfærslur."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:182
+#: core/utilities/setup/downloader/filesdownloader.cpp:185
 #, kde-format
 msgid "Download"
 msgstr "Sækja"
@@ -39706,38 +39662,38 @@ msgid "Delete Tags"
 msgstr "Eyða merkjum"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:146
-#: core/libs/tags/manager/tagsmanager.cpp:707
+#: core/libs/tags/manager/tagsmanager.cpp:709
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Breyta heiti merkis"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:150
-#: core/libs/tags/manager/tagsmanager.cpp:711
+#: core/libs/tags/manager/tagsmanager.cpp:713
 #: core/libs/tags/widgets/tagfolderview.cpp:70
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Endurstilla táknmynd merkis"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
-#: core/libs/tags/manager/tagsmanager.cpp:720
+#: core/libs/tags/manager/tagsmanager.cpp:722
 #, kde-format
 msgid "Invert Selection"
 msgstr "Umhverfa vali"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
-#: core/libs/tags/manager/tagsmanager.cpp:726
+#: core/libs/tags/manager/tagsmanager.cpp:728
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Útliða merkjagrein"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:162
-#: core/libs/tags/manager/tagsmanager.cpp:729
+#: core/libs/tags/manager/tagsmanager.cpp:731
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "Fella saman merkjagreinar"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:165
-#: core/libs/tags/manager/tagsmanager.cpp:732
+#: core/libs/tags/manager/tagsmanager.cpp:734
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Fjarlægja merki af myndum"
@@ -39811,14 +39767,14 @@ msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr "Fyrri merkjum var breytt. Viltu vista breytingar?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:177
+#: core/libs/tags/manager/tagsmanager.cpp:179
 #, fuzzy, kde-format
 #| msgid "Tags Manager"
 msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "Merkjastjórnun"
 
-#: core/libs/tags/manager/tagsmanager.cpp:336
+#: core/libs/tags/manager/tagsmanager.cpp:338
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -39834,7 +39790,7 @@ msgstr[1] ""
 "Merkin %2 hafa eitt eða fleiri undirmerki. Að eyða þeim eyðir líka "
 "undirmerkjunum. Ertu viss um að þú viljir halda áfram?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:359
+#: core/libs/tags/manager/tagsmanager.cpp:361
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -39847,7 +39803,7 @@ msgstr[1] ""
 "Merkjunum %2 hefur verið úthlutað á eitt eða fleiri atriði. Ertu viss um að "
 "þú viljir eyða þeim?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:369
+#: core/libs/tags/manager/tagsmanager.cpp:371
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
@@ -39855,7 +39811,7 @@ msgid_plural "Delete tags %2?"
 msgstr[0] "Eyða merki %2?"
 msgstr[1] "Eyða merkjum %2?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:375
+#: core/libs/tags/manager/tagsmanager.cpp:377
 #, fuzzy, kde-format
 #| msgid "Delete tag"
 #| msgid_plural "Delete tags"
@@ -39865,7 +39821,7 @@ msgid_plural "Delete tags"
 msgstr[0] "Eyða merki"
 msgstr[1] "Eyða merkjum"
 
-#: core/libs/tags/manager/tagsmanager.cpp:498
+#: core/libs/tags/manager/tagsmanager.cpp:500
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -39877,8 +39833,8 @@ msgstr ""
 "lesa inn merki í myndum (með því að nota 'Lesa merki úr myndum').<br/> Viltu "
 "halda áfram?</qt>"
 
-#: core/libs/tags/manager/tagsmanager.cpp:510
-#: core/libs/tags/manager/tagsmanager.cpp:529
+#: core/libs/tags/manager/tagsmanager.cpp:512
+#: core/libs/tags/manager/tagsmanager.cpp:531
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -39887,7 +39843,7 @@ msgstr ""
 "Að framkvæma þessa aðgerð getur tekið langan tíma ef safnið er stórt. Viltu "
 "halda áfram?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:549
+#: core/libs/tags/manager/tagsmanager.cpp:551
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -39899,42 +39855,42 @@ msgstr ""
 "lýsigögn í skrár.\n"
 "Viltu halda áfram?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:613
+#: core/libs/tags/manager/tagsmanager.cpp:615
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
 msgstr[0] "Viltu fjarlægja valda merkið af öllum myndum?"
 msgstr[1] "Viltu fjarlægja völdu merkin af öllum myndum?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:694
+#: core/libs/tags/manager/tagsmanager.cpp:696
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "Skipuleggja"
 
-#: core/libs/tags/manager/tagsmanager.cpp:697
+#: core/libs/tags/manager/tagsmanager.cpp:699
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "S&amstilling útflutnings"
 
-#: core/libs/tags/manager/tagsmanager.cpp:714
+#: core/libs/tags/manager/tagsmanager.cpp:716
 #, kde-format
 msgid "Create Tag from Address Book"
 msgstr "Gera merki úr vistfangaskrá"
 
-#: core/libs/tags/manager/tagsmanager.cpp:717
+#: core/libs/tags/manager/tagsmanager.cpp:719
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "Merkja óúthlutuð merki"
 
-#: core/libs/tags/manager/tagsmanager.cpp:737
+#: core/libs/tags/manager/tagsmanager.cpp:739
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Bæta nýju merki við núverandi merki. Það er merkið sem síðast var smellt á."
 
-#: core/libs/tags/manager/tagsmanager.cpp:740
+#: core/libs/tags/manager/tagsmanager.cpp:742
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
@@ -39943,75 +39899,75 @@ msgstr ""
 "Eyða völdum atriðum. Virkar einnig með fjölvali, en mun ekki eyða "
 "grunnmerkinu."
 
-#: core/libs/tags/manager/tagsmanager.cpp:744
+#: core/libs/tags/manager/tagsmanager.cpp:746
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "Breyta heiti á völdu merki."
 
-#: core/libs/tags/manager/tagsmanager.cpp:746
+#: core/libs/tags/manager/tagsmanager.cpp:748
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr "Endurstilla táknmynd á völdum merkjum. Virkar með fjölvali."
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:751
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr ""
 "Merkja öll merki sem ekki er úthlutað á neinar myndir. Notist með varúð."
 
-#: core/libs/tags/manager/tagsmanager.cpp:751
+#: core/libs/tags/manager/tagsmanager.cpp:753
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Umhverfa vali. Aðeins sýnileg merki verða valin"
 
-#: core/libs/tags/manager/tagsmanager.cpp:754
+#: core/libs/tags/manager/tagsmanager.cpp:756
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Valin atriði verða útliðuð"
 
-#: core/libs/tags/manager/tagsmanager.cpp:756
+#: core/libs/tags/manager/tagsmanager.cpp:758
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr "Útliða merkjagreinar alveg"
 
-#: core/libs/tags/manager/tagsmanager.cpp:758
+#: core/libs/tags/manager/tagsmanager.cpp:760
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr "Fella alveg saman merkjagreinar"
 
-#: core/libs/tags/manager/tagsmanager.cpp:760
+#: core/libs/tags/manager/tagsmanager.cpp:762
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr "Eyða merkjum af myndum. Virkar með fjölvali."
 
-#: core/libs/tags/manager/tagsmanager.cpp:808
+#: core/libs/tags/manager/tagsmanager.cpp:810
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Skrifa merki úr gagnagrunni yfir í mynd"
 
-#: core/libs/tags/manager/tagsmanager.cpp:811
+#: core/libs/tags/manager/tagsmanager.cpp:813
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Les merki úr mynd"
 
-#: core/libs/tags/manager/tagsmanager.cpp:814
+#: core/libs/tags/manager/tagsmanager.cpp:816
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Hreinsa öll merki aðeins úr gagnagrunni"
 
-#: core/libs/tags/manager/tagsmanager.cpp:816
+#: core/libs/tags/manager/tagsmanager.cpp:818
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Skrifa lýsigögn merkja í mynd."
 
-#: core/libs/tags/manager/tagsmanager.cpp:818
+#: core/libs/tags/manager/tagsmanager.cpp:820
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 "Les merki úr myndum yfir í gagnagrunn. Ekki er átt við merki sem þegar eru "
 "til staðar."
 
-#: core/libs/tags/manager/tagsmanager.cpp:821
+#: core/libs/tags/manager/tagsmanager.cpp:823
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -40019,6 +39975,13 @@ msgid ""
 msgstr ""
 "Hreinsa öll merki aðeins úr gagnagrunni. Verður ekki samræmt við skrár. "
 "Notist með varúð."
+
+#: core/libs/tags/manager/tagsmanager.cpp:845
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
+#, kde-format
+msgctxt "@info"
+msgid "Help"
+msgstr "Hjálp"
 
 #: core/libs/tags/widgets/tagcheckview.cpp:82
 #, kde-format
@@ -42281,18 +42244,16 @@ msgstr "Um Qt"
 
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:215
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:237
-#, fuzzy, kde-format
-#| msgid "About QtAV"
+#, kde-format
 msgctxt "@title:window"
 msgid "About QtAV"
 msgstr "Um QtAV"
 
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:232
-#, fuzzy, kde-format
-#| msgid "About FFmpeg"
+#, kde-format
 msgctxt "@title:window"
 msgid "About FFmpeg"
-msgstr "Um FFmpeg hugbúnaðinn"
+msgstr "Um FFmpeg-hugbúnaðinn"
 
 #: core/libs/widgets/combo/dcombobox.cpp:61
 #: core/libs/widgets/range/dnuminput.cpp:71
@@ -42303,8 +42264,7 @@ msgid "Reset to default value"
 msgstr "Frumstilla í sjálfgefin gildi"
 
 #: core/libs/widgets/files/dbinaryiface.cpp:215
-#, fuzzy, kde-format
-#| msgid "Navigate to %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Navigate to %1"
 msgstr "Fara í %1"
@@ -50375,9 +50335,8 @@ msgstr "S&kreyting"
 msgid "Effec&ts"
 msgstr "Sjón&hverfingar"
 
-#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:142
-#, fuzzy, kde-format
-#| msgid "Configure"
+#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:146
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "Stilla"
@@ -51789,7 +51748,7 @@ msgstr ""
 "Hægt er að raða skráalistanum, hægri-smelltu á hann til að sjá "
 "röðunarmöguleikana (eingöngu möppuviðmót)."
 
-#: core/utilities/advancedrename/common/tooltipdialog.cpp:53
+#: core/utilities/advancedrename/common/tooltipdialog.cpp:54
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@title:window"
@@ -52739,12 +52698,6 @@ msgstr "Skanna aftur og sameina niðurstöður"
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "Hreinsa óstaðfestar niðurstöður og endurskanna"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
-#, kde-format
-msgctxt "@info"
-msgid "Help"
-msgstr "Hjálp"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:158
 #, kde-format
@@ -54988,44 +54941,44 @@ msgstr "Úthlutað litasnið:"
 msgid "<b>No Profile</b>"
 msgstr "<b>Ekkert litasnið</b>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:80
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:81
 #, fuzzy, kde-format
 #| msgid "Soft Proofing Options"
 msgctxt "@title:window"
 msgid "Soft Proofing Options"
 msgstr "Valkostir fyrir sýndarpróförk"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:84
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:85
 #, kde-format
 msgid "Soft Proofing On"
 msgstr "Sýndarpróförk virk"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:85
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:86
 #, kde-format
 msgid "Enable soft-proofing color managed view"
 msgstr "Virkja sýndarpróförk í litastýrðri sýn"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:86
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:87
 #, kde-format
 msgid "Soft Proofing Off"
 msgstr "Sýndarpróförk óvirk"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:87
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:88
 #, kde-format
 msgid "Disable soft-proofing color managed view"
 msgstr "Afvirkja sýndarpróförk í litastýrðri sýn"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:94
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:95
 #, kde-format
 msgid "<b>Configure the Soft Proofing View</b>"
 msgstr "<b>Stilla sýn sýndarprófarkar</b>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:102
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:103
 #, kde-format
 msgid "Profile of the output device to simulate:"
 msgstr "Snið úttakstækis sem á að líkja eftir:"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:105
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:106
 #: core/utilities/setup/setupicc.cpp:431
 #, kde-format
 msgid ""
@@ -55037,7 +54990,7 @@ msgstr ""
 "þinn). Þetta litasnið verður notað til að gera sýndarprófun, svo hægt sé að "
 "forskoða hvernig myndin muni koma út á úttakstæki.</p>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:111
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:112
 #, kde-format
 msgid ""
 "<p>Press this button to get detailed information about the selected proofing "
@@ -55046,22 +54999,22 @@ msgstr ""
 "<p>Þú getur notað þennan hnapp til að fá ítarlegri upplýsingar um viðkomandi "
 "litasnið fyrir sýndarprófun.</p>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:127
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:128
 #, kde-format
 msgid "Rendering intent:"
 msgstr "Myndgerðarmarkmið:"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:132
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:133
 #, kde-format
 msgid "Highlight out-of-gamut colors"
 msgstr "Ljóma liti sem eru utan litrófs"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:133
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:134
 #, kde-format
 msgid "Highlighting color:"
 msgstr "Ljómunarlitur:"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:225
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:229
 #: core/utilities/setup/setupicc.cpp:868
 #, fuzzy, kde-format
 #| msgid "Profile Error"
@@ -55069,25 +55022,25 @@ msgctxt "@title:window"
 msgid "Profile Error"
 msgstr "Galli í litasniði"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:225
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:229
 #: core/utilities/setup/setupicc.cpp:868
 #, kde-format
 msgid "No profile is selected."
 msgstr "Ekkert litasnið er valið."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:57
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:61
 #, kde-format
 msgctxt "@title:window"
 msgid "Save?"
 msgstr "Vista?"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:67
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Save Changes"
 msgstr "Vista breytingar"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:70
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -55096,13 +55049,13 @@ msgstr ""
 "Viltu vista núverandi breytingar. Atugaðu: aldrei verður skrifað yfir "
 "upprunalega mynd."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:72
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:77
 #, kde-format
 msgctxt "@action:button"
 msgid "Save Changes as a New Version"
 msgstr "Vista breytingar sem nýja útgáfu"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:75
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -55112,13 +55065,13 @@ msgstr ""
 "Vista breytingar sem nýja útgáfu. Innhlaðin mynd breytist ekki, ný skrá "
 "verður búin til."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:78
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:83
 #, kde-format
 msgctxt "@action:button"
 msgid "Discard Changes"
 msgstr "Henda breytingum"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:81
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:86
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard the changes applied to the image during this editing session."
@@ -55126,7 +55079,7 @@ msgstr ""
 "Henda öllum breytingum sem gerðar hafa verið á skránni í þessari "
 "myndvinnslusetu."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:95
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:100
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -55810,11 +55763,10 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:927
-#, fuzzy, kde-format
-#| msgid "No Image in Current Album"
+#, kde-format
 msgctxt "@title:window"
 msgid "No Image in Current Album"
-msgstr "Engin mynd í núverandi albúmi"
+msgstr "Engin mynd í fyrirliggjandi albúmi"
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:928
 #, kde-format
@@ -55826,9 +55778,7 @@ msgstr ""
 "Myndvinnsluham verður lokað."
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:1199
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Not Available"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "Skrá ekki tiltæk"
@@ -56851,9 +56801,7 @@ msgstr ""
 "Settu inn nýtt nafn (án skráarendingar):"
 
 #: core/utilities/import/main/importui.cpp:1245
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "File already exists"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Already Exists"
 msgstr "Skráin er þegar til"
@@ -57911,8 +57859,7 @@ msgid "Finger-prints"
 msgstr "Fingraför"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:196
-#, fuzzy, kde-format
-#| msgid "Maintenance"
+#, kde-format
 msgctxt "@title:window"
 msgid "Maintenance"
 msgstr "Viðhald"
@@ -58281,8 +58228,7 @@ msgid "Ready"
 msgstr "Tilbúið"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:523
-#, fuzzy, kde-format
-#| msgid "Processing under progress"
+#, kde-format
 msgctxt "@title:window"
 msgid "Processing Under Progress"
 msgstr "Vinnsla í gangi"
@@ -58324,8 +58270,7 @@ msgstr "Það eru engir hlutir í biðröðum til að vinna með."
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:841
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:851
-#, fuzzy, kde-format
-#| msgid "Processed items album settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Processed Items Album Settings"
 msgstr "Stillingar á albúmi fyrir unna hluti"
@@ -58717,15 +58662,13 @@ msgid "History"
 msgstr "Ferill"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:68
-#, fuzzy, kde-format
-#| msgid "New Workflow"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Workflow"
 msgstr "Nýtt vinnuferli"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:68
-#, fuzzy, kde-format
-#| msgid "Edit Workflow"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Workflow"
 msgstr "Breyta vinnuferli"
@@ -58775,8 +58718,7 @@ msgid "Description"
 msgstr "Lýsing"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:115
-#, fuzzy, kde-format
-#| msgid "Batch Queue Manager"
+#, kde-format
 msgctxt "@title:window"
 msgid "Batch Queue Manager"
 msgstr "Magnvinnslustjóri"
@@ -58816,9 +58758,7 @@ msgid "Delete Workflow"
 msgstr "Eyða vinnuferli"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:313
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Workflow?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Workflow?"
 msgstr "Eyða vinnuferli?"
@@ -59330,10 +59270,9 @@ msgid "Not Geo-located"
 msgstr "Ekki-hnattstaðsett"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
-#, fuzzy, kde-format
-#| msgid "Country:"
+#, kde-format
 msgid "Country"
-msgstr "Land:"
+msgstr "Land"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
 #, kde-format
@@ -59719,8 +59658,7 @@ msgid "Hide Options"
 msgstr "Fela valkosti"
 
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:75
-#, fuzzy, kde-format
-#| msgid "Delete Search?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Search?"
 msgstr "Eyða leit?"
@@ -59803,19 +59741,18 @@ msgstr "Breyta geymdri leit"
 msgid "Edit..."
 msgstr "Breyta..."
 
-#: core/utilities/searchwindow/searchview.cpp:501
+#: core/utilities/searchwindow/searchview.cpp:502
 #, kde-format
 msgid "Add Search Group"
 msgstr "Bæta við leitarhóp"
 
-#: core/utilities/searchwindow/searchview.cpp:530
+#: core/utilities/searchwindow/searchview.cpp:531
 #, kde-format
 msgid "Try"
 msgstr "Prófa"
 
 #: core/utilities/searchwindow/searchwindow.cpp:88
-#, fuzzy, kde-format
-#| msgid "Advanced Search"
+#, kde-format
 msgctxt "@title:window"
 msgid "Advanced Search"
 msgstr "Ítarleg leit"
@@ -60436,7 +60373,7 @@ msgstr ""
 "<p>Skrár með þessum endingum verða þekktar sem hljóðskrár og skráðar í "
 "gagnagrunninn:<br/> <code>%1</code></p>"
 
-#: core/utilities/setup/camera/cameralist.cpp:283
+#: core/utilities/setup/camera/cameralist.cpp:289
 #, kde-format
 msgid ""
 "Failed to auto-detect camera; please make sure it is connected properly and "
@@ -60446,8 +60383,7 @@ msgstr ""
 "það sé kveikt á henni. Viltu reyna aftur?"
 
 #: core/utilities/setup/camera/cameraselection.cpp:104
-#, fuzzy, kde-format
-#| msgid "Camera Configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Camera Configuration"
 msgstr "Stillingar myndavélar"
@@ -60608,50 +60544,49 @@ msgstr ""
 "<p>Allar stillingar fyrir uppsetningu myndavéla<br/> má skoða nánar á <a "
 "href='https://www.figuiere.net/digicam/'>þessari slóð</a>.</p>"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:84
-#, fuzzy, kde-format
-#| msgid "Edit Import Filters"
+#: core/utilities/setup/camera/importfilterdlg.cpp:85
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Import Filters"
 msgstr "Breyta innflutningssíum"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:101
+#: core/utilities/setup/camera/importfilterdlg.cpp:102
 #, kde-format
 msgctxt "@label: name of items filter"
 msgid "Name:"
 msgstr "Heiti:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:108
+#: core/utilities/setup/camera/importfilterdlg.cpp:109
 #, kde-format
 msgid "Mime filter:"
 msgstr "MIME-tegundasía:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:116
+#: core/utilities/setup/camera/importfilterdlg.cpp:117
 #, kde-format
 msgid "Select Type Mime..."
 msgstr "Veldu MIME-tegund..."
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:121
+#: core/utilities/setup/camera/importfilterdlg.cpp:122
 #, kde-format
 msgid "File name filter:"
 msgstr "Skráheitissía:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:131
+#: core/utilities/setup/camera/importfilterdlg.cpp:132
 #, kde-format
 msgid "Path filter:"
 msgstr "Slóðasía:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:141
+#: core/utilities/setup/camera/importfilterdlg.cpp:142
 #, kde-format
 msgid "Show only new files"
 msgstr "Sýna einungis nýjar skrár"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:212
+#: core/utilities/setup/camera/importfilterdlg.cpp:216
 #, kde-format
 msgid "Select the MimeTypes you want for this filter."
 msgstr "Veldu MIME-tegundirnar sem þú vilt nota með þessari síu."
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:214
+#: core/utilities/setup/camera/importfilterdlg.cpp:218
 #, kde-format
 msgid "Select Mime Types"
 msgstr "Veldu MIME-tegundir"
@@ -61049,15 +60984,13 @@ msgstr "Ekki var hægt að bæta við myndasafni á eftirfarandi slóðum:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:657
 #: core/utilities/setup/collections/setupcollectionview.cpp:1487
-#, fuzzy, kde-format
-#| msgid "Choose the folder containing your collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Choose the Folder Containing your Collection"
 msgstr "Veldu möppu sem inniheldur myndasafnið þitt"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:694
-#, fuzzy, kde-format
-#| msgid "Problem Appending Collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Problem Appending Collection"
 msgstr "Vandamál við að bæta við myndasafni"
@@ -61068,8 +61001,7 @@ msgid "A collection with the path \"%1\" already exists."
 msgstr "Myndasafn með slóðinni \"%1\" er þegar til staðar."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:854
-#, fuzzy, kde-format
-#| msgid "Remove Path from the Collection?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Path from the Collection?"
 msgstr "Fjarlægja slóð úr myndasafni?"
@@ -61081,8 +61013,7 @@ msgid ""
 msgstr "Viltu fjarlægja viðbættu slóðina \"%1\" úr myndasafninu \"%2\"?"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:862
-#, fuzzy, kde-format
-#| msgid "Remove Collection?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Collection?"
 msgstr "Fjarlægja myndasafn?"
@@ -61175,15 +61106,13 @@ msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "Þú hefur áður bætt við myndasafni sem inniheldur slóðina \"%1\"."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1563
-#, fuzzy, kde-format
-#| msgid "Problem Adding Collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "Vandamál við að bæta við myndasafni"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1572
-#, fuzzy, kde-format
-#| msgid "Adding Collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "Bæti við myndasafni"
@@ -61194,8 +61123,7 @@ msgid "Your new collection will be created with this name:"
 msgstr "Nýja myndasafnið verður búið til með þessu heiti:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1651
-#, fuzzy, kde-format
-#| msgid "Select Category"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "Veldu flokk"
@@ -61205,14 +61133,13 @@ msgstr "Veldu flokk"
 msgid "Your collection will use this category:"
 msgstr "Myndasafnið mun nota þennan flokk:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:172
-#, fuzzy, kde-format
-#| msgid "Download required files"
+#: core/utilities/setup/downloader/filesdownloader.cpp:173
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Sækja nauðsynlegar skrár"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:200
+#: core/utilities/setup/downloader/filesdownloader.cpp:203
 #, kde-format
 msgctxt "%1: folder path, %2: disk size with unit"
 msgid ""
@@ -61232,24 +61159,23 @@ msgstr ""
 "niðurhalaðar í %1. Gakktu úr skugga um að u.þ.b. %2 séu tiltæk. <b>Eftir að "
 "búið er að sækja skrárnar þarftu að endurræsa digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:212
+#: core/utilities/setup/downloader/filesdownloader.cpp:215
 #, kde-format
 msgid "Disable face engine feature and don't ask again"
 msgstr "Dera andlitakerfið óvirkt og ekki spyrja aftur"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:259
+#: core/utilities/setup/downloader/filesdownloader.cpp:265
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Tókst að hlaða inn öllum skrám."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:268
-#, fuzzy, kde-format
-#| msgid "Download error"
+#: core/utilities/setup/downloader/filesdownloader.cpp:274
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Villa við að sækja gögn"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:269
+#: core/utilities/setup/downloader/filesdownloader.cpp:275
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -61268,29 +61194,28 @@ msgstr ""
 "\n"
 "Þú getur prófað aftur eða haldið áfram í næstu ræsingu."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:277
-#, fuzzy, kde-format
-#| msgid "Try again"
+#: core/utilities/setup/downloader/filesdownloader.cpp:283
+#, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Reyna aftur"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:410
+#: core/utilities/setup/downloader/filesdownloader.cpp:416
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Gátsumma er ógild."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:434
+#: core/utilities/setup/downloader/filesdownloader.cpp:440
 #, kde-format
 msgid "File write error."
 msgstr "Villa við að skrifa í skrá."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:441
+#: core/utilities/setup/downloader/filesdownloader.cpp:447
 #, kde-format
 msgid "File open error."
 msgstr "Villa  við að opna skrá."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:456
+#: core/utilities/setup/downloader/filesdownloader.cpp:462
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Skrá á netþjóni er of stór."
@@ -61805,9 +61730,7 @@ msgstr ""
 "kóðunarsnið. </item>"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:135
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title:window, reset to default warning dialog"
 msgid "Warning"
 msgstr "Aðvörun"
@@ -61882,18 +61805,16 @@ msgid "Reset to Default"
 msgstr "Frumstilla á sjálfgefið"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:144
-#, fuzzy, kde-format
-#| msgid "New Xmp Namespace"
+#, kde-format
 msgctxt "@title:window"
 msgid "New XMP Namespace"
 msgstr "Nýtt XMP-nafnsvið"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:148
-#, fuzzy, kde-format
-#| msgid "Edit Xmp Namespace"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit XMP Namespace"
-msgstr "Breyta XMP-nafnsviðum"
+msgstr "Breyta XMP-nafnsviði"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:238
 #, kde-format
@@ -62087,9 +62008,7 @@ msgstr ""
 "Við mælum eindregið gegn því að þú gerir þetta virkt."
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:271
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Yes I understand"
+#, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Jú, ég skil"
@@ -63072,13 +62991,13 @@ msgstr ""
 "endurræsinguna. Sumar stillingar eru háðar vélbúnaði og gætu haft engin "
 "áhrif.</b>"
 
-#: core/utilities/setup/setup.cpp:149
+#: core/utilities/setup/setup.cpp:153
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Gagnagrunnur"
 
-#: core/utilities/setup/setup.cpp:150
+#: core/utilities/setup/setup.cpp:154
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63088,13 +63007,13 @@ msgstr ""
 "Stillingar gagnagrunns\n"
 "Sérsníddu stillingar gagnagrunnsins"
 
-#: core/utilities/setup/setup.cpp:154
+#: core/utilities/setup/setup.cpp:158
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Söfn"
 
-#: core/utilities/setup/setup.cpp:155
+#: core/utilities/setup/setup.cpp:159
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63104,13 +63023,13 @@ msgstr ""
 "Stillingar myndasafna\n"
 "Stilltu staðsetningu á grunnmöppum"
 
-#: core/utilities/setup/setup.cpp:159
+#: core/utilities/setup/setup.cpp:163
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Skoðun"
 
-#: core/utilities/setup/setup.cpp:160
+#: core/utilities/setup/setup.cpp:164
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63120,13 +63039,13 @@ msgstr ""
 "Stillingar albúmasýna\n"
 "Sérsníddu útlit sýnanna"
 
-#: core/utilities/setup/setup.cpp:164
+#: core/utilities/setup/setup.cpp:168
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Vísbendingar verkfæra"
 
-#: core/utilities/setup/setup.cpp:165
+#: core/utilities/setup/setup.cpp:169
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63136,13 +63055,13 @@ msgstr ""
 "Stillingar verkfæravísbendinga í albúmum\n"
 "Sérsníddu upplýsingar í vísbendingum verkfæra"
 
-#: core/utilities/setup/setup.cpp:170
+#: core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Video"
 msgstr "Myndskeið"
 
-#: core/utilities/setup/setup.cpp:171
+#: core/utilities/setup/setup.cpp:176
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63152,13 +63071,13 @@ msgstr ""
 "Stillingar forskoðun myndskeiða\n"
 "Sérsníddu stillingar fyrir afspilun myndskeiðaskráa"
 
-#: core/utilities/setup/setup.cpp:176
+#: core/utilities/setup/setup.cpp:182
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Lýsigögn"
 
-#: core/utilities/setup/setup.cpp:177
+#: core/utilities/setup/setup.cpp:183
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63168,13 +63087,13 @@ msgstr ""
 "Stjórnun ígræddra myndupplýsinga\n"
 "Setur upp vensl milli mynda og lýsigagna (metadata)"
 
-#: core/utilities/setup/setup.cpp:181
+#: core/utilities/setup/setup.cpp:187
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Sniðskrár"
 
-#: core/utilities/setup/setup.cpp:182
+#: core/utilities/setup/setup.cpp:188
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63184,13 +63103,13 @@ msgstr ""
 "Sniðmát lýsigagna\n"
 "Sýsla með forsniðin sniðmát fyrir lýsigagnaupplýsingar"
 
-#: core/utilities/setup/setup.cpp:186
+#: core/utilities/setup/setup.cpp:192
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Myndvinnsluforrit"
 
-#: core/utilities/setup/setup.cpp:187
+#: core/utilities/setup/setup.cpp:193
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63200,13 +63119,13 @@ msgstr ""
 "Stillingar myndvinnsluforrits\n"
 "Sérsníddu hegðun myndvinnsluforritsins"
 
-#: core/utilities/setup/setup.cpp:191
+#: core/utilities/setup/setup.cpp:197
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Litastýring"
 
-#: core/utilities/setup/setup.cpp:192
+#: core/utilities/setup/setup.cpp:198
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63216,13 +63135,13 @@ msgstr ""
 "Stillingar litastýringar\n"
 "Sérsníddu stillingar litastýringar"
 
-#: core/utilities/setup/setup.cpp:196
+#: core/utilities/setup/setup.cpp:202
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Ljósaborð"
 
-#: core/utilities/setup/setup.cpp:197
+#: core/utilities/setup/setup.cpp:203
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63232,13 +63151,13 @@ msgstr ""
 "Stillingar ljósaborðs\n"
 "Sérsníddu verkfærið sem notað er til að bera saman ljósmyndir"
 
-#: core/utilities/setup/setup.cpp:201
+#: core/utilities/setup/setup.cpp:207
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Myndgæðaröðun"
 
-#: core/utilities/setup/setup.cpp:202
+#: core/utilities/setup/setup.cpp:208
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63248,13 +63167,13 @@ msgstr ""
 "Stillingar myndgæðaröðunar\n"
 "Sérsníddu sjálfgefnar stillingar til röðunar á myndum eftir gæðum þeirra"
 
-#: core/utilities/setup/setup.cpp:206
+#: core/utilities/setup/setup.cpp:212
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Myndavélar"
 
-#: core/utilities/setup/setup.cpp:207
+#: core/utilities/setup/setup.cpp:213
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63264,13 +63183,13 @@ msgstr ""
 "Myndavélastillingar\n"
 "Sýslaðu með myndavélarnar þínar"
 
-#: core/utilities/setup/setup.cpp:214
+#: core/utilities/setup/setup.cpp:220
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Viðbætur"
 
-#: core/utilities/setup/setup.cpp:215
+#: core/utilities/setup/setup.cpp:221
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63280,13 +63199,13 @@ msgstr ""
 "Stillingar viðbóta\n"
 "Stilltu hvaða viðbætur séu aðgengilegar úr aðalviðmótinu"
 
-#: core/utilities/setup/setup.cpp:219
+#: core/utilities/setup/setup.cpp:225
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Ýmislegt"
 
-#: core/utilities/setup/setup.cpp:220
+#: core/utilities/setup/setup.cpp:226
 #, kde-format
 msgctxt "@title"
 msgid ""

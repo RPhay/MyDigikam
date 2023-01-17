@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-14 00:54+0000\n"
-"PO-Revision-Date: 2023-01-13 10:43+0100\n"
+"POT-Creation-Date: 2023-01-17 00:54+0000\n"
+"PO-Revision-Date: 2023-01-16 12:16+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -3811,7 +3811,7 @@ msgstr "Bestandsnaam"
 
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
-#: core/libs/dialogs/deletedialog.cpp:176
+#: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
 msgid "Path"
 msgstr "Pad"
@@ -4913,7 +4913,7 @@ msgstr "Bestanden selecteren"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:263
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:315
 #: core/libs/tags/widgets/tageditdlg.cpp:193
-#: core/utilities/searchwindow/searchview.cpp:509
+#: core/utilities/searchwindow/searchview.cpp:510
 #, kde-format
 msgid "Reset"
 msgstr "Opnieuw instellen"
@@ -5387,7 +5387,7 @@ msgstr "Kanaal:"
 #, kde-format
 msgctxt "@item: colcor properties"
 msgid "Luminosity"
-msgstr "Lichtsterkte"
+msgstr "Lichtkracht"
 
 #: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:66
 #, kde-format
@@ -14311,7 +14311,7 @@ msgstr "&Toevoegen"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:87
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:97
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:83
-#: core/libs/dialogs/deletedialog.cpp:594
+#: core/libs/dialogs/deletedialog.cpp:599
 #, kde-format
 msgid "&Delete"
 msgstr "Verwij&deren"
@@ -28053,7 +28053,7 @@ msgstr "Album met labels"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:219
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
-#: core/libs/tags/manager/tagsmanager.cpp:723
+#: core/libs/tags/manager/tagsmanager.cpp:725
 #: core/libs/tags/widgets/tagfolderview.cpp:135
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -30206,23 +30206,23 @@ msgstr ""
 "Dit binaire bestand wordt gebruikt om een specifiek exemplaar van de MariaDB "
 "server te starten."
 
-#: core/libs/dialogs/deletedialog.cpp:176
+#: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
 msgid "Thumb"
 msgstr "Miniatuur"
 
-#: core/libs/dialogs/deletedialog.cpp:179
+#: core/libs/dialogs/deletedialog.cpp:180
 #, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "Lijst met items die op het punt staan verwijderd te worden."
 
-#: core/libs/dialogs/deletedialog.cpp:180
+#: core/libs/dialogs/deletedialog.cpp:181
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr ""
 "Dit is de lijst met bestanden die op het punt staan verwijderd te worden."
 
-#: core/libs/dialogs/deletedialog.cpp:302
+#: core/libs/dialogs/deletedialog.cpp:303
 #, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
@@ -30231,7 +30231,7 @@ msgstr ""
 "Bij geactiveerd worden de bestanden verwijderd in plaats van verplaatst naar "
 "de prullenbak."
 
-#: core/libs/dialogs/deletedialog.cpp:304
+#: core/libs/dialogs/deletedialog.cpp:305
 #, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -30243,17 +30243,17 @@ msgstr ""
 "voorzichtig</em>: de meeste bestandssystemen zijn niet in staat om "
 "betrouwbaar verwijderde items terug te halen.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:310
+#: core/libs/dialogs/deletedialog.cpp:311
 #, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "Verwij&der items in plaats van naar de prullenbak verplaatsen"
 
-#: core/libs/dialogs/deletedialog.cpp:317
+#: core/libs/dialogs/deletedialog.cpp:318
 #, kde-format
 msgid "Do not &ask again"
 msgstr "Niet opnieuw vr&agen"
 
-#: core/libs/dialogs/deletedialog.cpp:376
+#: core/libs/dialogs/deletedialog.cpp:377
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -30262,7 +30262,7 @@ msgstr ""
 "Indien geactiveerd zal dit dialoogvenster niet langer getoond worden en "
 "zullen items direct en permanent verwijderd worden."
 
-#: core/libs/dialogs/deletedialog.cpp:378
+#: core/libs/dialogs/deletedialog.cpp:379
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -30271,7 +30271,7 @@ msgstr ""
 "Als dit vakje is geactiveerd zal dit dialoogvenster niet langer getoond "
 "worden en zullen items direct en permanent verwijderd worden."
 
-#: core/libs/dialogs/deletedialog.cpp:383
+#: core/libs/dialogs/deletedialog.cpp:384
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -30280,7 +30280,7 @@ msgstr ""
 "Indien geactiveerd zal dit dialoogvenster niet langer getoond worden en "
 "zullen items direct naar de prullenbak gaan."
 
-#: core/libs/dialogs/deletedialog.cpp:385
+#: core/libs/dialogs/deletedialog.cpp:386
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -30289,44 +30289,44 @@ msgstr ""
 "Als dit vakje is geactiveerd zal dit dialoogvenster niet langer getoond "
 "worden en zullen items direct naar de prullenbak gaan."
 
-#: core/libs/dialogs/deletedialog.cpp:397
+#: core/libs/dialogs/deletedialog.cpp:398
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr ""
 "Deze items zullen <b>blijvend verwijderd</b> worden van uw harde schijf."
 
-#: core/libs/dialogs/deletedialog.cpp:403
+#: core/libs/dialogs/deletedialog.cpp:404
 #, kde-format
 msgid "These items will be moved to Trash."
 msgstr "Deze albums worden naar de Prullenbak verplaatst."
 
-#: core/libs/dialogs/deletedialog.cpp:405
+#: core/libs/dialogs/deletedialog.cpp:406
 #, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
 msgstr[0] "<b>1</b> item geselecteerd."
 msgstr[1] "<b>%1</b> items geselecteerd."
 
-#: core/libs/dialogs/deletedialog.cpp:418
+#: core/libs/dialogs/deletedialog.cpp:419
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr ""
 "Deze albums zullen <b>blijvend verwijderd</b> worden van uw harde schijf."
 
-#: core/libs/dialogs/deletedialog.cpp:424
+#: core/libs/dialogs/deletedialog.cpp:425
 #, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "Deze albums worden naar de prullenbak verplaatst."
 
-#: core/libs/dialogs/deletedialog.cpp:428
-#: core/libs/dialogs/deletedialog.cpp:455
+#: core/libs/dialogs/deletedialog.cpp:429
+#: core/libs/dialogs/deletedialog.cpp:456
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
 msgstr[0] "<b>1</b> album geselecteerd."
 msgstr[1] "<b>%1</b> albums geselecteerd."
 
-#: core/libs/dialogs/deletedialog.cpp:439
+#: core/libs/dialogs/deletedialog.cpp:440
 #, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -30337,7 +30337,7 @@ msgstr ""
 "p><p>Let op dat <b>alle subalbums</b> ook in deze lijst begrepen zijn en dus "
 "ook blijvend verwijderd worden.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:448
+#: core/libs/dialogs/deletedialog.cpp:449
 #, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -30347,18 +30347,18 @@ msgstr ""
 "<b>alle subalbums</b> in deze lijst zijn begrepen en ook naar de prullenbak "
 "gaan.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:595
+#: core/libs/dialogs/deletedialog.cpp:600
 #, kde-format
 msgid "&Move to Trash"
 msgstr "Naar prullenbak &verplaatsen"
 
-#: core/libs/dialogs/deletedialog.cpp:655
+#: core/libs/dialogs/deletedialog.cpp:660
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "Op het punt om de geselecteerde items te verwijderen"
 
-#: core/libs/dialogs/deletedialog.cpp:662
+#: core/libs/dialogs/deletedialog.cpp:667
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"
@@ -37261,7 +37261,7 @@ msgid "Open setup dialog page to configure updates."
 msgstr "De pagina instellingendialoog openen om bijwerken te configureren."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:182
+#: core/utilities/setup/downloader/filesdownloader.cpp:185
 #, kde-format
 msgid "Download"
 msgstr "Downloaden"
@@ -39953,38 +39953,38 @@ msgid "Delete Tags"
 msgstr "Tags verwijderen"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:146
-#: core/libs/tags/manager/tagsmanager.cpp:707
+#: core/libs/tags/manager/tagsmanager.cpp:709
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "De tag Titel bewerken"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:150
-#: core/libs/tags/manager/tagsmanager.cpp:711
+#: core/libs/tags/manager/tagsmanager.cpp:713
 #: core/libs/tags/widgets/tagfolderview.cpp:70
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Tagpictogram terugzetten"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
-#: core/libs/tags/manager/tagsmanager.cpp:720
+#: core/libs/tags/manager/tagsmanager.cpp:722
 #, kde-format
 msgid "Invert Selection"
 msgstr "Selectie omkeren"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
-#: core/libs/tags/manager/tagsmanager.cpp:726
+#: core/libs/tags/manager/tagsmanager.cpp:728
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Boomstructuur van tags uitvouwen"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:162
-#: core/libs/tags/manager/tagsmanager.cpp:729
+#: core/libs/tags/manager/tagsmanager.cpp:731
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "Boomstructuur tags invouwen"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:165
-#: core/libs/tags/manager/tagsmanager.cpp:732
+#: core/libs/tags/manager/tagsmanager.cpp:734
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Tags van afbeeldingen verwijderen"
@@ -40060,13 +40060,13 @@ msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr "Voorgaande tags zijn gewijzigd. Wijzigingen opslaan? "
 
-#: core/libs/tags/manager/tagsmanager.cpp:177
+#: core/libs/tags/manager/tagsmanager.cpp:179
 #, kde-format
 msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "Beheerder van tags"
 
-#: core/libs/tags/manager/tagsmanager.cpp:336
+#: core/libs/tags/manager/tagsmanager.cpp:338
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -40082,7 +40082,7 @@ msgstr[1] ""
 "Tags %2 hebben één of meer subtags. Als u deze verwijdert zullen ook de "
 "subtags worden verwijderd. Wilt u doorgaan?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:359
+#: core/libs/tags/manager/tagsmanager.cpp:361
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -40093,7 +40093,7 @@ msgstr[0] ""
 msgstr[1] ""
 "Tags %2 zijn toegevoegd aan één of meer items. Wilt u deze verwijderen?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:369
+#: core/libs/tags/manager/tagsmanager.cpp:371
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
@@ -40101,7 +40101,7 @@ msgid_plural "Delete tags %2?"
 msgstr[0] "Tag %2 verwijderen?"
 msgstr[1] "Tags %2 verwijderen?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:375
+#: core/libs/tags/manager/tagsmanager.cpp:377
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
@@ -40109,7 +40109,7 @@ msgid_plural "Delete tags"
 msgstr[0] "Tag verwijderen"
 msgstr[1] "Tags verwijderen"
 
-#: core/libs/tags/manager/tagsmanager.cpp:498
+#: core/libs/tags/manager/tagsmanager.cpp:500
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -40121,8 +40121,8 @@ msgstr ""
 "ingelezen (door Tags lezen uit afbeelding aan te roepen).<br/> Wilt u "
 "doorgaan?</qt>"
 
-#: core/libs/tags/manager/tagsmanager.cpp:510
-#: core/libs/tags/manager/tagsmanager.cpp:529
+#: core/libs/tags/manager/tagsmanager.cpp:512
+#: core/libs/tags/manager/tagsmanager.cpp:531
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -40132,7 +40132,7 @@ msgstr ""
 "verzameling.\n"
 "Wilt u doorgaan?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:549
+#: core/libs/tags/manager/tagsmanager.cpp:551
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -40144,43 +40144,43 @@ msgstr ""
 "later kiezen Metagegevens wegschrijven.\n"
 "Wilt u doorgaan?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:613
+#: core/libs/tags/manager/tagsmanager.cpp:615
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
 msgstr[0] "Wilt u de geselecteerde tag verwijderen uit alle afbeeldingen?"
 msgstr[1] "Wilt u de geselecteerde tags verwijderen uit alle afbeeldingen?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:694
+#: core/libs/tags/manager/tagsmanager.cpp:696
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "Organiseren"
 
-#: core/libs/tags/manager/tagsmanager.cpp:697
+#: core/libs/tags/manager/tagsmanager.cpp:699
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "&Exporteren synchroniseren"
 
-#: core/libs/tags/manager/tagsmanager.cpp:714
+#: core/libs/tags/manager/tagsmanager.cpp:716
 #, kde-format
 msgid "Create Tag from Address Book"
 msgstr "Tag vanuit adresboek aanmaken"
 
-#: core/libs/tags/manager/tagsmanager.cpp:717
+#: core/libs/tags/manager/tagsmanager.cpp:719
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "Niet toegewezen tags markeren"
 
-#: core/libs/tags/manager/tagsmanager.cpp:737
+#: core/libs/tags/manager/tagsmanager.cpp:739
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Nieuwe tag aan huidige tag toevoegen. Huidige tag is de tag waarop het "
 "laatst is geklikt."
 
-#: core/libs/tags/manager/tagsmanager.cpp:740
+#: core/libs/tags/manager/tagsmanager.cpp:742
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
@@ -40189,77 +40189,77 @@ msgstr ""
 "Geselecteerde items verwijderen. Werkt ook met meerdere items, maar "
 "verwijdert niet de basistag."
 
-#: core/libs/tags/manager/tagsmanager.cpp:744
+#: core/libs/tags/manager/tagsmanager.cpp:746
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "De titel van de geselecteerde tag bewerken"
 
-#: core/libs/tags/manager/tagsmanager.cpp:746
+#: core/libs/tags/manager/tagsmanager.cpp:748
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 "Pictogram herstellen naar geselecteerd tags. Werkt met meervoudige selectie."
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:751
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr "Alle tags die niet zijn toegewezen aan afbeeldingen markeren."
 
-#: core/libs/tags/manager/tagsmanager.cpp:751
+#: core/libs/tags/manager/tagsmanager.cpp:753
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Selectie omdraaien. Alleen zichtbare items zullen geselecteerd worden"
 
-#: core/libs/tags/manager/tagsmanager.cpp:754
+#: core/libs/tags/manager/tagsmanager.cpp:756
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Geselecteerde items zullen uitgevouwen worden"
 
-#: core/libs/tags/manager/tagsmanager.cpp:756
+#: core/libs/tags/manager/tagsmanager.cpp:758
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr "Boomstructuur van tags volledig uitvouwen"
 
-#: core/libs/tags/manager/tagsmanager.cpp:758
+#: core/libs/tags/manager/tagsmanager.cpp:760
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr "Boomstructuur van tags volledig invouwen"
 
-#: core/libs/tags/manager/tagsmanager.cpp:760
+#: core/libs/tags/manager/tagsmanager.cpp:762
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 "Geselecteerd tag(s) verwijderen van afbeeldingen. Werkt met meervoudige "
 "selectie."
 
-#: core/libs/tags/manager/tagsmanager.cpp:808
+#: core/libs/tags/manager/tagsmanager.cpp:810
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Tags uit database naar afbeelding schrijven"
 
-#: core/libs/tags/manager/tagsmanager.cpp:811
+#: core/libs/tags/manager/tagsmanager.cpp:813
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Tags uit afbeelding lezen"
 
-#: core/libs/tags/manager/tagsmanager.cpp:814
+#: core/libs/tags/manager/tagsmanager.cpp:816
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Alle tags alleen uit de database wissen"
 
-#: core/libs/tags/manager/tagsmanager.cpp:816
+#: core/libs/tags/manager/tagsmanager.cpp:818
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Metagegevens van tags naar afbeelding schrijven."
 
-#: core/libs/tags/manager/tagsmanager.cpp:818
+#: core/libs/tags/manager/tagsmanager.cpp:820
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 "Tags uit afbeeldingen lezen naar de database. Bestaande tags zullen niet "
 "veranderen"
 
-#: core/libs/tags/manager/tagsmanager.cpp:821
+#: core/libs/tags/manager/tagsmanager.cpp:823
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -40267,6 +40267,13 @@ msgid ""
 msgstr ""
 "Alle tags alleen uit de database verwijderen. Dit wordt niet "
 "gesynchroniseerd met de bestanden. Wees voorzichtig."
+
+#: core/libs/tags/manager/tagsmanager.cpp:845
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
+#, kde-format
+msgctxt "@info"
+msgid "Help"
+msgstr "Help"
 
 #: core/libs/tags/widgets/tagcheckview.cpp:82
 #, kde-format
@@ -50624,7 +50631,7 @@ msgstr "&Decoratie"
 msgid "Effec&ts"
 msgstr "Effec&ten"
 
-#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:142
+#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:146
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
@@ -52042,7 +52049,7 @@ msgstr ""
 "De bestandslijst kan worden gesorteerd, klik er met rechts op om de "
 "sorteercriteria te zien (alleen gebruikersinterface van album)."
 
-#: core/utilities/advancedrename/common/tooltipdialog.cpp:53
+#: core/utilities/advancedrename/common/tooltipdialog.cpp:54
 #, kde-format
 msgctxt "@title:window"
 msgid "Information"
@@ -52996,12 +53003,6 @@ msgstr "Opnieuw scannen en resultaten samenvoegen"
 msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "Niet bevestigde resultaten wissen en opnieuw scannen"
-
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
-#, kde-format
-msgctxt "@info"
-msgid "Help"
-msgstr "Help"
 
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:158
 #, kde-format
@@ -55245,43 +55246,43 @@ msgstr "Toegewezen kleurprofiel:"
 msgid "<b>No Profile</b>"
 msgstr "<b>Geen profiel</b>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:80
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:81
 #, kde-format
 msgctxt "@title:window"
 msgid "Soft Proofing Options"
 msgstr "Opties voor soft-proofing"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:84
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:85
 #, kde-format
 msgid "Soft Proofing On"
 msgstr "Soft-proofing ingeschakeld"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:85
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:86
 #, kde-format
 msgid "Enable soft-proofing color managed view"
 msgstr "Beeld van soft-proofingkleurbeheer inschakelen"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:86
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:87
 #, kde-format
 msgid "Soft Proofing Off"
 msgstr "Soft-proofing uitgeschakeld"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:87
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:88
 #, kde-format
 msgid "Disable soft-proofing color managed view"
 msgstr "Beeld van soft-proofingkleurbeheer uitschakelen"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:94
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:95
 #, kde-format
 msgid "<b>Configure the Soft Proofing View</b>"
 msgstr "<b>Overzicht van Soft-Proofing instellen</b>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:102
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:103
 #, kde-format
 msgid "Profile of the output device to simulate:"
 msgstr "Profiel van het te simuleren uitvoerapparaat:"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:105
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:106
 #: core/utilities/setup/setupicc.cpp:431
 #, kde-format
 msgid ""
@@ -55294,7 +55295,7 @@ msgstr ""
 "zodat u vooraf kunt zien hoe een afbeelding zal worden weergegeven op een "
 "uitvoerapparaat.</p>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:111
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:112
 #, kde-format
 msgid ""
 "<p>Press this button to get detailed information about the selected proofing "
@@ -55303,47 +55304,47 @@ msgstr ""
 "<p>Deze knop gebruiken om meer gedetailleerde informatie over het gekozen "
 "proefdrukprofiel te verkrijgen.</p>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:127
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:128
 #, kde-format
 msgid "Rendering intent:"
 msgstr "Renderingmethode:"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:132
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:133
 #, kde-format
 msgid "Highlight out-of-gamut colors"
 msgstr "Laat kleuren buiten het kleurengamma oplichten"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:133
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:134
 #, kde-format
 msgid "Highlighting color:"
 msgstr "Kleur voor oplichten:"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:225
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:229
 #: core/utilities/setup/setupicc.cpp:868
 #, kde-format
 msgctxt "@title:window"
 msgid "Profile Error"
 msgstr "Profielfout"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:225
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:229
 #: core/utilities/setup/setupicc.cpp:868
 #, kde-format
 msgid "No profile is selected."
 msgstr "Geen profiel geselecteerd."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:57
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:61
 #, kde-format
 msgctxt "@title:window"
 msgid "Save?"
 msgstr "Opslaan?"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:67
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Save Changes"
 msgstr "Wijzigingen opslaan"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:70
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -55352,13 +55353,13 @@ msgstr ""
 "De huidige wijzigingen opslaan. Opmerking: de oorspronkelijke afbeelding "
 "nooit overschrijven,"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:72
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:77
 #, kde-format
 msgctxt "@action:button"
 msgid "Save Changes as a New Version"
 msgstr "Wijzigingen als een nieuwe versie opslaan"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:75
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -55368,13 +55369,13 @@ msgstr ""
 "De huidige wijzigingen als een nieuwe versie opslaan. Het geladen bestand "
 "blijft ongewijzigd, er wordt een nieuw bestand aangemaakt."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:78
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:83
 #, kde-format
 msgctxt "@action:button"
 msgid "Discard Changes"
 msgstr "Wijzigingen verwerpen"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:81
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:86
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard the changes applied to the image during this editing session."
@@ -55382,7 +55383,7 @@ msgstr ""
 "De wijzigingen die in de afbeelding zijn aangebracht tijdens deze "
 "bewerkingssessie verwerpen."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:95
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:100
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -60079,12 +60080,12 @@ msgstr "Opgeslagen zoekopdracht bewerken"
 msgid "Edit..."
 msgstr "Bewerken..."
 
-#: core/utilities/searchwindow/searchview.cpp:501
+#: core/utilities/searchwindow/searchview.cpp:502
 #, kde-format
 msgid "Add Search Group"
 msgstr "Voeg zoekgroep toe"
 
-#: core/utilities/searchwindow/searchview.cpp:530
+#: core/utilities/searchwindow/searchview.cpp:531
 #, kde-format
 msgid "Try"
 msgstr "Proberen"
@@ -60737,7 +60738,7 @@ msgstr ""
 "<p>Bestanden met deze extensies zullen worden herkend als audiobestanden en "
 "ingevoegd worden in de database:<br/><code>%1</code></p>"
 
-#: core/utilities/setup/camera/cameralist.cpp:283
+#: core/utilities/setup/camera/cameralist.cpp:289
 #, kde-format
 msgid ""
 "Failed to auto-detect camera; please make sure it is connected properly and "
@@ -60911,49 +60912,49 @@ msgstr ""
 "<p>Voor een complete lijst van camera instellingen,<br/>kijk op <a "
 "href='https://www.figuiere.net/digicam/'>deze URL</a>.</p>"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:84
+#: core/utilities/setup/camera/importfilterdlg.cpp:85
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Import Filters"
 msgstr "Importfilters bewerken"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:101
+#: core/utilities/setup/camera/importfilterdlg.cpp:102
 #, kde-format
 msgctxt "@label: name of items filter"
 msgid "Name:"
 msgstr "Naam:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:108
+#: core/utilities/setup/camera/importfilterdlg.cpp:109
 #, kde-format
 msgid "Mime filter:"
 msgstr "Mime-filter:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:116
+#: core/utilities/setup/camera/importfilterdlg.cpp:117
 #, kde-format
 msgid "Select Type Mime..."
 msgstr "Mime-type selecteren..."
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:121
+#: core/utilities/setup/camera/importfilterdlg.cpp:122
 #, kde-format
 msgid "File name filter:"
 msgstr "Bestandsnaamfilter:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:131
+#: core/utilities/setup/camera/importfilterdlg.cpp:132
 #, kde-format
 msgid "Path filter:"
 msgstr "Padfilter:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:141
+#: core/utilities/setup/camera/importfilterdlg.cpp:142
 #, kde-format
 msgid "Show only new files"
 msgstr "Alleen nieuwe bestanden tonen"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:212
+#: core/utilities/setup/camera/importfilterdlg.cpp:216
 #, kde-format
 msgid "Select the MimeTypes you want for this filter."
 msgstr "De Mime-types waarvoor u dit filter wil gebruiken selecteren."
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:214
+#: core/utilities/setup/camera/importfilterdlg.cpp:218
 #, kde-format
 msgid "Select Mime Types"
 msgstr "Mime-typen selecteren"
@@ -61513,13 +61514,13 @@ msgstr "Categorie selecteren"
 msgid "Your collection will use this category:"
 msgstr "Uw verzameling zal deze categorie gebruiken:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:172
+#: core/utilities/setup/downloader/filesdownloader.cpp:173
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
 msgstr "Vereiste bestanden downloaden"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:200
+#: core/utilities/setup/downloader/filesdownloader.cpp:203
 #, kde-format
 msgctxt "%1: folder path, %2: disk size with unit"
 msgid ""
@@ -61540,23 +61541,23 @@ msgstr ""
 "ongeveer %2 beschikbaar is. <b>Na het succes van het downloaden moet u "
 "digiKam opnieuw opstarten.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:212
+#: core/utilities/setup/downloader/filesdownloader.cpp:215
 #, kde-format
 msgid "Disable face engine feature and don't ask again"
 msgstr "Functie gezichten-engine uitschakelen en niet meer vragen"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:259
+#: core/utilities/setup/downloader/filesdownloader.cpp:265
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Alle bestanden zijn met succes gedownload."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:268
+#: core/utilities/setup/downloader/filesdownloader.cpp:274
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Fout bij downloaden"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:269
+#: core/utilities/setup/downloader/filesdownloader.cpp:275
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -61576,28 +61577,28 @@ msgstr ""
 "U kunt het opnieuw proberen of doorgaan met downloaden bij de volgende keer "
 "starten."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:277
+#: core/utilities/setup/downloader/filesdownloader.cpp:283
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
 msgstr "Opnieuw proberen"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:410
+#: core/utilities/setup/downloader/filesdownloader.cpp:416
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "Controlesom is onjuist."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:434
+#: core/utilities/setup/downloader/filesdownloader.cpp:440
 #, kde-format
 msgid "File write error."
 msgstr "Schrijffout bestand."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:441
+#: core/utilities/setup/downloader/filesdownloader.cpp:447
 #, kde-format
 msgid "File open error."
 msgstr "Fout bij openen van bestand."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:456
+#: core/utilities/setup/downloader/filesdownloader.cpp:462
 #, kde-format
 msgid "File on the server is too large."
 msgstr "Bestand op de server is te groot."
@@ -63408,13 +63409,13 @@ msgstr ""
 "na de herstart. Sommige instellingen zijn afhankelijk van hardware en kunnen "
 "geen effect hebben.</b>"
 
-#: core/utilities/setup/setup.cpp:149
+#: core/utilities/setup/setup.cpp:153
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Database"
 
-#: core/utilities/setup/setup.cpp:150
+#: core/utilities/setup/setup.cpp:154
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63424,13 +63425,13 @@ msgstr ""
 "Database-instellingen\n"
 "Pas de database-instellingen aan"
 
-#: core/utilities/setup/setup.cpp:154
+#: core/utilities/setup/setup.cpp:158
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Verzamelingen"
 
-#: core/utilities/setup/setup.cpp:155
+#: core/utilities/setup/setup.cpp:159
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63440,13 +63441,13 @@ msgstr ""
 "Instellingen voor verzamelingen\n"
 "Stel de locaties in van hoofdalbums"
 
-#: core/utilities/setup/setup.cpp:159
+#: core/utilities/setup/setup.cpp:163
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Weergaven"
 
-#: core/utilities/setup/setup.cpp:160
+#: core/utilities/setup/setup.cpp:164
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63456,13 +63457,13 @@ msgstr ""
 "Instellingen voor weergave in de applicatie\n"
 "Pas het uiterlijk aan van weergaven"
 
-#: core/utilities/setup/setup.cpp:164
+#: core/utilities/setup/setup.cpp:168
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Tekstballon"
 
-#: core/utilities/setup/setup.cpp:165
+#: core/utilities/setup/setup.cpp:169
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63472,13 +63473,13 @@ msgstr ""
 "Instellingen voor tekstballonnen\n"
 "Pas informatie in tekstballonnen van items aan"
 
-#: core/utilities/setup/setup.cpp:170
+#: core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Video"
 msgstr "Video"
 
-#: core/utilities/setup/setup.cpp:171
+#: core/utilities/setup/setup.cpp:176
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63488,13 +63489,13 @@ msgstr ""
 "Instellingen voor het videovoorbeeld\n"
 "Pas de instellingen aan voor afspelen van videomedia"
 
-#: core/utilities/setup/setup.cpp:176
+#: core/utilities/setup/setup.cpp:182
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Metagegevens"
 
-#: core/utilities/setup/setup.cpp:177
+#: core/utilities/setup/setup.cpp:183
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63504,13 +63505,13 @@ msgstr ""
 "Beheer van ingebedde informatie in afbeeldingen\n"
 "Stel relaties in tussen afbeeldingen en metagegevens"
 
-#: core/utilities/setup/setup.cpp:181
+#: core/utilities/setup/setup.cpp:187
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Sjablonen"
 
-#: core/utilities/setup/setup.cpp:182
+#: core/utilities/setup/setup.cpp:188
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63520,13 +63521,13 @@ msgstr ""
 "Metagegevenssjablonen\n"
 "Beheer uw verzameling metagegevenssjablonen"
 
-#: core/utilities/setup/setup.cpp:186
+#: core/utilities/setup/setup.cpp:192
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Afbeeldingsbewerker"
 
-#: core/utilities/setup/setup.cpp:187
+#: core/utilities/setup/setup.cpp:193
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63536,13 +63537,13 @@ msgstr ""
 "instellingen voor afbeeldingsbewerker\n"
 "Pas de instellingen van de afbeeldingsbewerker aan"
 
-#: core/utilities/setup/setup.cpp:191
+#: core/utilities/setup/setup.cpp:197
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Kleurbeheer"
 
-#: core/utilities/setup/setup.cpp:192
+#: core/utilities/setup/setup.cpp:198
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63552,13 +63553,13 @@ msgstr ""
 "Instellingen voor kleurbeheer\n"
 "Pas de instellingen voor kleurbeheer aan"
 
-#: core/utilities/setup/setup.cpp:196
+#: core/utilities/setup/setup.cpp:202
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Lichttafel"
 
-#: core/utilities/setup/setup.cpp:197
+#: core/utilities/setup/setup.cpp:203
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63568,13 +63569,13 @@ msgstr ""
 "Lichttafelinstellingen\n"
 "Pas het hulpmiddel aan voor het vergelijken van afbeeldingen"
 
-#: core/utilities/setup/setup.cpp:201
+#: core/utilities/setup/setup.cpp:207
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Sorteerder op kwaliteit van afbeeldingen"
 
-#: core/utilities/setup/setup.cpp:202
+#: core/utilities/setup/setup.cpp:208
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63584,13 +63585,13 @@ msgstr ""
 "Instellingen voor sorteren op kwaliteit\n"
 "Pas de standaard instellingen aan om de kwaliteit te beoordelen"
 
-#: core/utilities/setup/setup.cpp:206
+#: core/utilities/setup/setup.cpp:212
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Camera's"
 
-#: core/utilities/setup/setup.cpp:207
+#: core/utilities/setup/setup.cpp:213
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63600,13 +63601,13 @@ msgstr ""
 "Camera-instellingen\n"
 "Beheer uw camera's"
 
-#: core/utilities/setup/setup.cpp:214
+#: core/utilities/setup/setup.cpp:220
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Plug-ins"
 
-#: core/utilities/setup/setup.cpp:215
+#: core/utilities/setup/setup.cpp:221
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63616,13 +63617,13 @@ msgstr ""
 "Instellingen voor plug-in\n"
 "Stel in welke plug-ins toegankelijk zijn vanuit toepassing"
 
-#: core/utilities/setup/setup.cpp:219
+#: core/utilities/setup/setup.cpp:225
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Diversen"
 
-#: core/utilities/setup/setup.cpp:220
+#: core/utilities/setup/setup.cpp:226
 #, kde-format
 msgctxt "@title"
 msgid ""

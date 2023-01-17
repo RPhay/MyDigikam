@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-14 00:54+0000\n"
-"PO-Revision-Date: 2023-01-12 16:25+0100\n"
+"POT-Creation-Date: 2023-01-17 00:54+0000\n"
+"PO-Revision-Date: 2023-01-14 11:55+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -940,8 +940,7 @@ msgid "%1 %2"
 msgstr "%1 %2"
 
 #: core/app/items/utils/itemviewutilities.cpp:203
-#, fuzzy, kde-format
-#| msgid "Select target folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Target Folder"
 msgstr "Seleccioneu la carpeta de destinació"
@@ -1499,15 +1498,13 @@ msgstr ""
 "El tema d'icones serà disponible després de reiniciar digiKam."
 
 #: core/app/main/digikamapp_import.cpp:81
-#, fuzzy, kde-format
-#| msgid "Select folder to parse"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Folder to Parse"
 msgstr "Seleccioneu la carpeta que s'ha d'analitzar"
 
 #: core/app/main/digikamapp_import.cpp:101
-#, fuzzy, kde-format
-#| msgid "Select folders to import into album"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Folders to Import into Album"
 msgstr "Seleccioneu les carpetes per a importar a dins de l'àlbum"
@@ -3010,8 +3007,8 @@ msgstr ""
 msgid ""
 "Enter the name of the current dates search to save in the \"Searches\" view"
 msgstr ""
-"Introduïu el nom de la busca actual per dates per a guardar-la en la vista "
-"de «Busques»"
+"Introduïu el nom de la busca actual per dates per que es guardarà-la a la "
+"vista de «Busques»"
 
 #: core/app/views/sidebar/timelinesidebarwidget.cpp:215
 #, kde-format
@@ -3768,7 +3765,7 @@ msgstr "Nom del fitxer"
 
 #: core/app/views/tableview/tableview_column_file.cpp:56
 #: core/app/views/tableview/tableview_column_file.cpp:85
-#: core/libs/dialogs/deletedialog.cpp:176
+#: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
 msgid "Path"
 msgstr "Camí"
@@ -4227,7 +4224,7 @@ msgstr "Servidor intern de la base de dades"
 #, kde-format
 msgctxt "@item: component info"
 msgid "FFmpeg Configuration"
-msgstr "Configuració de FFmpeg"
+msgstr "Configureu FFmpeg"
 
 #: core/app/views/utils/componentsinfodlg.cpp:211
 #, kde-format
@@ -4260,21 +4257,17 @@ msgid "Supported Extensions"
 msgstr "Extensions admeses"
 
 #: core/avplayer/filters/EventFilter.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open a video"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open a Video"
-msgstr "Obri un vídeo"
+msgstr "Obriu un vídeo"
 
 #: core/avplayer/filters/EventFilter.cpp:83
 #: core/avplayer/main/MainWindow_io.cpp:510
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open an url"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open an Url"
-msgstr "Obri un URL"
+msgstr "Obriu un URL"
 
 #: core/avplayer/filters/EventFilter.cpp:84
 #: core/avplayer/main/MainWindow_io.cpp:511
@@ -4399,9 +4392,7 @@ msgid "-&gt;/&lt;-: seek forward/backward\n"
 msgstr "-&gt;/&lt;-: busca avant/arrere\n"
 
 #: core/avplayer/filters/EventFilter.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Help"
+#, kde-format
 msgctxt "@title:window"
 msgid "Help"
 msgstr "Ajuda"
@@ -4443,12 +4434,10 @@ msgstr ""
 "experiència millor.</p>"
 
 #: core/avplayer/main/MainWindow_io.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open a media file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open a Media File"
-msgstr "Obri un fitxer multimèdia"
+msgstr "Obriu un fitxer multimèdia"
 
 #: core/avplayer/main/MainWindow_io.cpp:568
 #: core/avplayer/main/MainWindow_setup.cpp:529
@@ -4458,9 +4447,7 @@ msgid "Aspect ratio"
 msgstr "Relació d'aspecte"
 
 #: core/avplayer/main/MainWindow_io.cpp:702
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Player error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Player Error"
 msgstr "S'ha produït un error del reproductor"
@@ -4508,12 +4495,10 @@ msgid "Stalled"
 msgstr "Estancat"
 
 #: core/avplayer/main/MainWindow_io.cpp:798
-#, fuzzy, kde-format
-#| msgctxt "@title: media loading state"
-#| msgid "Buffering... %1% @%2 %3"
+#, kde-format
 msgctxt "@title:window, media loading state"
 msgid "Buffering... %1% @%2 %3"
-msgstr "S'està omplint la memòria intermèdia... %1% @%2 %3"
+msgstr "Càrrega de la memòria intermèdia... %1% @%2 %3"
 
 #: core/avplayer/main/MainWindow_io.cpp:905
 #, kde-format
@@ -4528,12 +4513,10 @@ msgstr ""
 "Format: %2"
 
 #: core/avplayer/main/MainWindow_io.cpp:1018
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open a subtitle file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open a Subtitle File"
-msgstr "Obri un fitxer de subtítols"
+msgstr "Obriu un fitxer de subtítols"
 
 #: core/avplayer/main/MainWindow_setup.cpp:30
 #, kde-format
@@ -4846,12 +4829,10 @@ msgid "not available on your platform!"
 msgstr "no està disponible en esta plataforma!"
 
 #: core/avplayer/main/MainWindow_setup.cpp:818
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open an external audio track"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open an External Audio Track"
-msgstr "Obri una pista d'àudio externa"
+msgstr "Obriu una pista d'àudio externa"
 
 #: core/avplayer/main/MainWindow_setup.cpp:864
 #, kde-format
@@ -4878,9 +4859,7 @@ msgid "Remove selected items"
 msgstr "Elimina els elements seleccionats"
 
 #: core/avplayer/playlist/PlayList.cpp:259
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Select files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Files"
 msgstr "Seleccioneu els fitxers"
@@ -4889,7 +4868,7 @@ msgstr "Seleccioneu els fitxers"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:263
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:315
 #: core/libs/tags/widgets/tageditdlg.cpp:193
-#: core/utilities/searchwindow/searchview.cpp:509
+#: core/utilities/searchwindow/searchview.cpp:510
 #, kde-format
 msgid "Reset"
 msgstr "Reinicia"
@@ -5059,9 +5038,7 @@ msgid "Frame size"
 msgstr "Mida del fotograma"
 
 #: core/avplayer/utils/StatisticsView.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Media info"
+#, kde-format
 msgctxt "@title:window"
 msgid "Media Info"
 msgstr "Informació multimèdia"
@@ -6076,7 +6053,7 @@ msgstr "Opacitat (%):"
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:267
 #, kde-format
 msgid "Text settings"
-msgstr "Configuració del text"
+msgstr "Configureu el text"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:275
 #, kde-format
@@ -8100,7 +8077,7 @@ msgid ""
 msgstr ""
 "<p>Canvia la compressió d'imatges TIFF.</p><p>Si esta opció està activada, "
 "la mida final de la imatge TIFF es reduirà. S'utilitza un format de "
-"compressió sense pèrdua (Deflate) per a guardar el fitxer.</p>"
+"compressió sense pèrdua (Deflate) per que es guardarà el fitxer.</p>"
 
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:47
 #, kde-format
@@ -8340,11 +8317,10 @@ msgid "Adjust Levels"
 msgstr "Ajust de nivells"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:890
-#, fuzzy, kde-format
-#| msgid "Select Gimp Levels File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Levels File to Load"
-msgstr "Seleccioneu el fitxer que es carregarà per als nivells de Gimp"
+msgstr "Seleccioneu el fitxer de nivells de Gimp que es carregarà"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:902
 #, kde-format
@@ -8352,11 +8328,10 @@ msgid "Cannot load from the Gimp levels text file."
 msgstr "No s'ha pogut carregar el fitxer de text de nivells de Gimp."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:917
-#, fuzzy, kde-format
-#| msgid "Gimp Levels File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Gimp Levels File to Save"
-msgstr "Fitxer que es guardarà amb els nivells de Gimp"
+msgstr "Fitxer de nivells de Gimp que s'ha de guardar"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:929
 #, kde-format
@@ -9529,13 +9504,11 @@ msgid "Restoration"
 msgstr "Restauració"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:344
-#, fuzzy, kde-format
-#| msgid "Photograph Restoration Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Restoration Settings File to Load"
 msgstr ""
-"Fitxer que es carregarà amb la configuració de la restauració de la "
-"fotografia"
+"Fitxer de configuració de la restauració de la fotografia que es carregarà"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:360
 #, kde-format
@@ -9552,12 +9525,10 @@ msgstr ""
 "restauració de la fotografia."
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:383
-#, fuzzy, kde-format
-#| msgid "Photograph Restoration Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Restoration Settings File to Save"
-msgstr ""
-"Fitxer que es guardarà amb la configuració de la restauració de la fotografia"
+msgstr "Fitxer de configuració de la restauració de fotografia que es guardarà"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:401
 #, kde-format
@@ -9631,11 +9602,10 @@ msgid "Sharpen..."
 msgstr "Aguditza..."
 
 #: core/dplugins/editor/file/print/printhelper.cpp:168
-#, fuzzy, kde-format
-#| msgid "Print Image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print Image"
-msgstr "Imprimix la imatge"
+msgstr "Imprimiu la imatge"
 
 #: core/dplugins/editor/file/print/printoptionspage.cpp:90
 #, kde-format
@@ -10754,7 +10724,7 @@ msgstr "Percentatge del canvi d'escala segons el contingut"
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:422
 #, kde-format
 msgid "Mask Settings"
-msgstr "Configuració de la màscara"
+msgstr "Configureu la màscara"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:424
 #, kde-format
@@ -11218,7 +11188,7 @@ msgstr "Establiu la posició d'alçària per a centrar."
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:415
 #, kde-format
 msgid "Crop Settings"
-msgstr "Configuració de l'escapçat"
+msgstr "Configureu l'escapçat"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:422
 #, kde-format
@@ -11600,12 +11570,11 @@ msgid "Resize"
 msgstr "Redimensiona"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:918
-#, fuzzy, kde-format
-#| msgid "Photograph Resizing Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Resizing Settings File to Load"
 msgstr ""
-"Fitxer que es carregarà amb la configuració de la redimensió de la fotografia"
+"Fitxer de configuració de la redimensió de la fotografia que es carregarà"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:934
 #, kde-format
@@ -11622,12 +11591,11 @@ msgstr ""
 "redimensió de la fotografia."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:951
-#, fuzzy, kde-format
-#| msgid "Photograph Resizing Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Resizing Settings File to Save"
 msgstr ""
-"Fitxer que es guardarà amb la configuració de la redimensió de la fotografia"
+"Fitxer de configuració de la redimensió de la fotografia que es guardarà"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:969
 #, kde-format
@@ -11813,8 +11781,7 @@ msgstr ""
 "Comproveu la configuració"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:64
-#, fuzzy, kde-format
-#| msgid "Scan Image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Scan Image"
 msgstr "Escaneig d'imatges"
@@ -11826,15 +11793,13 @@ msgstr "Escaneig d'imatges"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:167
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1803
-#, fuzzy, kde-format
-#| msgid "New Image File Name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Image File Name"
 msgstr "Nom nou del fitxer d'imatge"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:215
-#, fuzzy, kde-format
-#| msgid "Unsupported Format"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr "Format no admés"
@@ -11845,8 +11810,7 @@ msgid "The target image file format \"%1\" is unsupported."
 msgstr "El format de fitxer de la imatge de destinació «%1» no està admés."
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:228
-#, fuzzy, kde-format
-#| msgid "Cannot Save File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot Save File"
 msgstr "No s'ha pogut guardar el fitxer"
@@ -11865,8 +11829,7 @@ msgstr ""
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:244
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2277
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2296
-#, fuzzy, kde-format
-#| msgid "Overwrite File?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Voleu sobreescriure el fitxer?"
@@ -11883,8 +11846,7 @@ msgid "Saving file %1 -"
 msgstr "S'està guardant el fitxer %1 -"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:304
-#, fuzzy, kde-format
-#| msgid "File Not Saved"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Not Saved"
 msgstr "Fitxer sense guardar"
@@ -11896,11 +11858,10 @@ msgstr "No s'ha pogut guardar el fitxer «%1»"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:264
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
-#, fuzzy, kde-format
-#| msgid "Geolocation Editor"
+#, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
-msgstr "Editor de la geolocalització"
+msgstr "Editor de geolocalització"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:297
 #, kde-format
@@ -12001,9 +11962,7 @@ msgstr[0] "Hi ha 1 imatge modificada."
 msgstr[1] "Hi ha %1 imatges modificades."
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:814
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Unsaved changes"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
 msgstr "Canvis sense guardar"
@@ -12074,7 +12033,7 @@ msgstr "No s'ha pogut guardar alguna informació:"
 #, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
-msgstr "Edició de la geolocalització"
+msgstr "Editeu la geolocalització"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:124
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:590
@@ -12131,7 +12090,7 @@ msgstr "Els detalls han canviat"
 #, kde-format
 msgctxt "@title"
 msgid "Geolocation Edit"
-msgstr "Edició de la geolocalització"
+msgstr "Editeu la geolocalització"
 
 #: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:58
 #, kde-format
@@ -12201,12 +12160,12 @@ msgstr "No s'ha pogut guardar la imatge «%1» a «%2»"
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:220
 #, kde-format
 msgid "Creation of picture '%1'"
-msgstr "Creació de la imatge «%1»"
+msgstr "Creeu la imatge «%1»"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:322
 #, kde-format
 msgid "Creation of placemark '%1'"
-msgstr "Creació de la marca de lloc «%1»"
+msgstr "Creeu la marca de lloc «%1»"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:331
 #, kde-format
@@ -12216,7 +12175,7 @@ msgstr "No s'ha pogut guardar la icona per a la imatge «%1» a «%2»"
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:335
 #, kde-format
 msgid "Creation of icon '%1'"
-msgstr "Creació de la icona «%1»"
+msgstr "Creeu la icona «%1»"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:362
 #, kde-format
@@ -12359,11 +12318,10 @@ msgid "Destination Directory:"
 msgstr "Directori de destinació:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:105
-#, fuzzy, kde-format
-#| msgid "Select a directory in which to save the kml file and pictures"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select a Directory in Which to Save the KML File and Pictures"
-msgstr "Selecciona un directori on guardar el fitxer KML i les imatges"
+msgstr "Seleccioneu un directori on guardar el fitxer KML i les imatges"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:107
 #, kde-format
@@ -12674,8 +12632,7 @@ msgid "Bookmarks"
 msgstr "Punts d'interés"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:274
-#, fuzzy, kde-format
-#| msgid "Search failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Search Failed"
 msgstr "La busca ha fallat"
@@ -12697,9 +12654,7 @@ msgstr[0] "S'ha mogut 1 imatge a «%2»"
 msgstr[1] "S'han mogut %1 imatges a «%2»"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:92
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Metadata Editor"
+#, kde-format
 msgctxt "@title:window"
 msgid "Metadata Editor"
 msgstr "Editor de metadades"
@@ -12735,9 +12690,7 @@ msgid "Edit XMP"
 msgstr "Edita l'XMP"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:311
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "%1 (%2/%3) - Edit Metadata"
+#, kde-format
 msgctxt "@title:window"
 msgid "%1 (%2/%3) - Edit Metadata"
 msgstr "%1 (%2/%3) - Edició de les metadades"
@@ -13231,7 +13184,7 @@ msgid ""
 "used to save the text."
 msgstr ""
 "Introduïu la llegenda de la imatge. Este camp no està limitat. S'utilitzarà "
-"la codificació UTF8 per a guardar el text."
+"la codificació UTF8 per que es guardarà el text."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:143
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:94
@@ -13851,7 +13804,7 @@ msgstr "Grava les propietats de la marca horària de la càmera"
 #, kde-format
 msgctxt "@title"
 msgid "Lens Settings"
-msgstr "Configuració de la lent"
+msgstr "Configureu la lent"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:194
 #, kde-format
@@ -13863,7 +13816,7 @@ msgstr "Grava els detalls de la lent utilitzada amb la càmera"
 #, kde-format
 msgctxt "@title"
 msgid "Capture Device Settings"
-msgstr "Configuració del dispositiu de captura"
+msgstr "Configureu el dispositiu de captura"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:199
 #, kde-format
@@ -14322,7 +14275,7 @@ msgstr "Afi&g"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:87
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:97
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:83
-#: core/libs/dialogs/deletedialog.cpp:594
+#: core/libs/dialogs/deletedialog.cpp:599
 #, kde-format
 msgid "&Delete"
 msgstr "Sup&rimix"
@@ -16405,12 +16358,10 @@ msgstr ""
 "seleccioneu un codi de referència XMP/NAA estàndard."
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Adjust Time & Date"
+#, kde-format
 msgctxt "@title:window"
 msgid "Adjust Time & Date"
-msgstr "Ajusta la data i l'hora"
+msgstr "Ajust de la data i l'hora"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:110
 #, kde-format
@@ -16773,7 +16724,7 @@ msgstr "Any:"
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:234
 #, kde-format
 msgid "Select Images"
-msgstr "Selecció d'imatges"
+msgstr "Seleccioneu les imatges"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:243
@@ -16809,11 +16760,10 @@ msgstr ""
 "href='https://en.wikipedia.org/wiki/Icalendar'>iCalendar</a>.</p>"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:111
-#, fuzzy, kde-format
-#| msgid "Create Calendar"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Calendar"
-msgstr "Crea un calendari"
+msgstr "Creeu un calendari"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:114
 #, kde-format
@@ -16844,11 +16794,10 @@ msgstr "Fitxer de dades de calendari (*.ics)"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:157
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:161
-#, fuzzy, kde-format
-#| msgid "Select Calendar Data File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Calendar Data File"
-msgstr "Selecciona un fitxer de dades de calendari"
+msgstr "Seleccioneu un fitxer de dades de calendari"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:220
 #, kde-format
@@ -16876,11 +16825,10 @@ msgstr ""
 "següents de l'any %1:<br/>"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:289
-#, fuzzy, kde-format
-#| msgid "Print Calendar"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print Calendar"
-msgstr "Imprimix el calendari"
+msgstr "Imprimiu el calendari"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:297
 #, kde-format
@@ -16904,8 +16852,7 @@ msgstr "Ha finalitzat la impressió"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:98
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
-#, fuzzy, kde-format
-#| msgid "DNG Converter"
+#, kde-format
 msgctxt "@title:window"
 msgid "DNG Converter"
 msgstr "Convertidor DNG"
@@ -17333,40 +17280,31 @@ msgid "Clear all"
 msgstr "Neteja-ho tot"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:127
-#, fuzzy, kde-format
-#| msgid "Exposure Blending"
+#, kde-format
 msgctxt "@title:window"
 msgid "Exposure Blending"
-msgstr "Barreja de l'exposició"
+msgstr "Barreja d'exposició"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:136
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "&Save"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Save"
 msgstr "Guar&da"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:138
-#, fuzzy, kde-format
-#| msgctxt "@info: tooltip"
-#| msgid "Process and save selected items."
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Process and save selected items."
 msgstr "Processa i guarda els elements seleccionats."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:142
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "&Preview"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Preview"
 msgstr "Vista &prèvia"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:144
-#, fuzzy, kde-format
-#| msgctxt "@info: tooltip"
-#| msgid "Process a preview of bracketed images stack with current settings."
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Process a preview of bracketed images stack with current settings."
 msgstr ""
@@ -17398,7 +17336,7 @@ msgstr "Detalls..."
 #, kde-format
 msgctxt "@title"
 msgid "Enfuse Settings"
-msgstr "Configuració d'«Enfuse»"
+msgstr "Configureu «Enfuse»"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:186
 #, kde-format
@@ -17413,12 +17351,10 @@ msgid "File Name Template: "
 msgstr "Plantilla de nom de fitxer: "
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:317
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Enfuse Processing Messages"
+#, kde-format
 msgctxt "@title:window"
 msgid "Enfuse Processing Messages"
-msgstr "Missatges del procés de «Enfuse»"
+msgstr "Missatges del procés d'«Enfuse»"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:512
 #, kde-format
@@ -17745,12 +17681,10 @@ msgid "See processing messages below."
 msgstr "Vegeu els missatges del procés davall."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingwizard.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Stacked Images Tool"
+#, kde-format
 msgctxt "@title:window"
 msgid "Stacked Images Tool"
-msgstr "Eina per a les imatges apilades"
+msgstr "Eina d'imatges apilades"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/galleryelementfunctor.cpp:106
 #, kde-format
@@ -18186,9 +18120,7 @@ msgid "Gallery Title:"
 msgstr "Títol de la galeria:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Destination Folder:"
+#, kde-format
 msgctxt "@label"
 msgid "Destination folder:"
 msgstr "Carpeta de destinació:"
@@ -18197,8 +18129,7 @@ msgstr "Carpeta de destinació:"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:120
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:267
-#, fuzzy, kde-format
-#| msgid "Destination Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Destination Folder"
 msgstr "Carpeta de destinació"
@@ -18258,8 +18189,7 @@ msgid "Author: %1<br/><br/>"
 msgstr "Autoria: %1<br/><br/>"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
-#, fuzzy, kde-format
-#| msgid "Create HTML Gallery"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create HTML Gallery"
 msgstr "Crea una galeria HTML"
@@ -18273,7 +18203,7 @@ msgstr "Us donem la benvinguda a l'eina de galeries HTML"
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:82
 #, kde-format
 msgid "Items Selection"
-msgstr "Selecció d'elements"
+msgstr "Seleccioneu els elements"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:92
 #, kde-format
@@ -18289,7 +18219,7 @@ msgstr "Paràmetres del tema"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:91
 #, kde-format
 msgid "Output Settings"
-msgstr "Configuració de l'eixida"
+msgstr "Configureu l'eixida"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:96
 #, kde-format
@@ -18309,7 +18239,7 @@ msgstr "No s'ha pogut crear la carpeta «%1»"
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:126
 #, kde-format
 msgid "Create jAlbum project files"
-msgstr "Crea els fitxers de projecte jAlbum"
+msgstr "Crea els fitxers de projecte «jAlbum»"
 
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:134
 #, kde-format
@@ -18324,17 +18254,17 @@ msgstr "No s'ha pogut crear el fitxer de configuració"
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:165
 #, kde-format
 msgid "Launch jAlbum with new project files"
-msgstr "Inicia jAlbum amb fitxers de projecte nou"
+msgstr "Inicia «jAlbum» amb fitxers de projecte nou"
 
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:43
 #, kde-format
 msgid "jAlbum Export"
-msgstr "Exporta a jAlbum"
+msgstr "Exporta cap a «jAlbum»"
 
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:58
 #, kde-format
 msgid "A tool to export images to jAlbum gallery generator"
-msgstr "Una eina per a exportar imatges al generador de galeries jAlbum"
+msgstr "Una eina per a exportar imatges al generador de galeries «jAlbum»"
 
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:63
 #, kde-format
@@ -18345,37 +18275,37 @@ msgid ""
 "layout. See the jAlbum web-site for details: https://jalbum.net/.</p>"
 msgstr ""
 "<p>Esta eina permet als usuaris exportar elements a un generador de galeries "
-"HTML jAlbum.</p><p>Els elements que es processaran es poden seleccionar d'un "
-"en un o per grups a través d'una selecció d'àlbums.</p><p>jAlbum es pot "
-"decorar amb temes de plantilles i disposicions diferents. Per als detalls, "
-"vegeu el lloc web de jAlbum: https://jalbum.net/.</p>"
+"HTML «jAlbum».</p><p>Els elements que es processaran es poden seleccionar "
+"d'un en un o per grups a través d'una selecció d'àlbums.</p><p>«jAlbum» es "
+"pot decorar amb temes de plantilles i disposicions diferents. Per als "
+"detalls, vegeu el lloc web de «jAlbum»: https://jalbum.net/.</p>"
 
 #: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:82
 #, kde-format
 msgctxt "@action"
 msgid "Create jAlbum Gallery..."
-msgstr "Crea una galeria jAlbum..."
+msgstr "Crea una galeria «jAlbum»..."
 
 #: core/dplugins/generic/tools/jalbum/tools/jalbumjar.cpp:38
 #: core/dplugins/generic/tools/jalbum/tools/jalbumjava.cpp:31
 #, kde-format
 msgid "jAlbum Gallery Generator."
-msgstr "Generador de galeries jAlbum."
+msgstr "Generador de galeries «jAlbum»."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:114
 #, kde-format
 msgid "Starting to generate jAlbum..."
-msgstr "S'està començant a generar la jAlbum..."
+msgstr "S'està començant a generar la «jAlbum»..."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:151
 #, kde-format
 msgid "Jalbum is completed, but some warnings occurred."
-msgstr "S'ha completat la jAlbum, però hi ha hagut algun avís."
+msgstr "S'ha completat la «jAlbum», però hi ha hagut algun avís."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:156
 #, kde-format
 msgid "Jalbum completed."
-msgstr "S'ha completat la jAlbum."
+msgstr "S'ha completat la «jAlbum»."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:82
 #, kde-format
@@ -18384,15 +18314,15 @@ msgid ""
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
-"<qt><p><h1><b>Us donem la benvinguda a l'eina d'àlbum jAlbum</b></h1></"
+"<qt><p><h1><b>Us donem la benvinguda a l'eina d'àlbum «jAlbum»</b></h1></"
 "p><p>Este assistent vos guiarà per a exportar ràpidament</p><p></p><p>les "
-"imatges com un projecte de jAlbum.</p></qt>"
+"imatges com un projecte de «jAlbum».</p></qt>"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:102
 #, kde-format
 msgctxt "@title:group"
 msgid "jAlbum Binaries"
-msgstr "Executables de jAlbum"
+msgstr "Executables de «jAlbum»"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:70
 #, kde-format
@@ -18405,47 +18335,42 @@ msgid "Set here the project title"
 msgstr "Establiu ací el títol del projecte"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:81
-#, fuzzy, kde-format
-#| msgid "Projects Folder:"
+#, kde-format
 msgid "Projects folder:"
 msgstr "Carpeta dels projectes:"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:84
-#, fuzzy, kde-format
-#| msgid "Projects Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Projects Folder"
-msgstr "Carpeta dels projectes"
+msgstr "Carpeta de projectes"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:73
-#, fuzzy, kde-format
-#| msgid "Create jAlbum Album"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create jAlbum Album"
-msgstr "Crea un àlbum jAlbum"
+msgstr "Crea un àlbum «jAlbum»"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
 #, kde-format
 msgid "Welcome to jAlbum Album Tool"
-msgstr "Us donem la benvinguda a l'eina d'àlbum jAlbum"
+msgstr "Us donem la benvinguda a l'eina d'àlbum «jAlbum»"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:83
 #, kde-format
 msgid "Paths Selection"
-msgstr "Selecció dels camins"
+msgstr "Seleccioneu els camins"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:84
 #, kde-format
 msgid "Generating jAlbum"
-msgstr "Generació de la jAlbum"
+msgstr "Generació de la «jAlbum»"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Share Files with DLNA Media Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Share Files With DLNA Media Server"
-msgstr "Compartiu fitxers amb el servidor multimèdia DLNA"
+msgstr "Compartició de fitxers amb el servidor multimèdia DLNA"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:150
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:68
@@ -18489,9 +18414,7 @@ msgstr ""
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:314
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:64
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Media Server Contents"
+#, kde-format
 msgctxt "@title:window"
 msgid "Media Server Contents"
 msgstr "Contingut del servidor multimèdia"
@@ -18576,12 +18499,10 @@ msgstr "Elements compartits"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:340
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Starting Media Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Starting Media Server"
-msgstr "S'està iniciant el servidor multimèdia"
+msgstr "Inici del servidor multimèdia"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:341
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:106
@@ -18593,7 +18514,7 @@ msgstr "S'ha produït un error en iniciar el servidor multimèdia..."
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:54
 #, kde-format
 msgid "DLNA Export"
-msgstr "Exportació a DLNA"
+msgstr "Exporteu cap a DLNA"
 
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:69
 #, kde-format
@@ -18646,17 +18567,13 @@ msgid "MJPEG Server cannot be started!"
 msgstr "No s'ha pogut iniciar el servidor de MJPEG!"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Share Files with MJPEG Stream Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Share Files With MJPEG Stream Server"
-msgstr "Compartiu fitxers amb el servidor de flux MJPEG"
+msgstr "Compartició de fitxers amb el servidor de flux MJPEG"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "MJPEG Server Contents"
+#, kde-format
 msgctxt "@title:window"
 msgid "MJPEG Server Contents"
 msgstr "Contingut del servidor MJPEG"
@@ -19211,9 +19128,7 @@ msgstr ""
 "sistemes operatius."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:122
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "OCR Text Converter"
+#, kde-format
 msgctxt "@title:window"
 msgid "OCR Text Converter"
 msgstr "Convertidor de text OCR"
@@ -19297,9 +19212,7 @@ msgid "Success"
 msgstr "Correcte"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:585
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Text Converter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Text Converter"
 msgstr "Convertidor de text"
@@ -20615,7 +20528,7 @@ msgstr "Ranures buides:"
 #: core/dplugins/generic/tools/printcreator/ui/advprintphotopage.ui:184
 #, kde-format
 msgid "Page settings"
-msgstr "Configuració de la pàgina"
+msgstr "Configureu la pàgina"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: core/dplugins/generic/tools/printcreator/ui/advprintphotopage.ui:218
@@ -20772,8 +20685,7 @@ msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:354
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
-#, fuzzy, kde-format
-#| msgid "Print Creator"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print Creator"
 msgstr "Creador d'impressió"
@@ -20814,8 +20726,7 @@ msgstr "Seleccioneu el format preferit en exportar la impressió com a imatge."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:115
-#, fuzzy, kde-format
-#| msgid "Destination Folder:"
+#, kde-format
 msgid "Destination folder:"
 msgstr "Carpeta de destinació:"
 
@@ -20860,8 +20771,7 @@ msgid "Remove"
 msgstr "Elimina"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1101
-#, fuzzy, kde-format
-#| msgid "Custom layout"
+#, kde-format
 msgctxt "@title:window"
 msgid "Custom Layout"
 msgstr "Disposició personalitzada"
@@ -20893,7 +20803,7 @@ msgstr "Us donem la benvinguda al creador d'impressió"
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:97
 #, kde-format
 msgid "Albums Selection"
-msgstr "Selecció d'àlbums"
+msgstr "Seleccioneu àlbums"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:113
 #, kde-format
@@ -20903,7 +20813,7 @@ msgstr "Seleccioneu la disposició de la pàgina"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:114
 #, kde-format
 msgid "Caption Settings"
-msgstr "Configuració de la llegenda"
+msgstr "Configureu la llegenda"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:115
 #, kde-format
@@ -20913,7 +20823,7 @@ msgstr "Escapça i gira les fotografies"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:116
 #, kde-format
 msgid "Images Output Settings"
-msgstr "Configuració de l'eixida d'imatges"
+msgstr "Configureu l'eixida de les imatges"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:117
 #, kde-format
@@ -21038,11 +20948,10 @@ msgstr "S'ha creat el fitxer de propietats de les imatges"
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:334
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:984
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:997
-#, fuzzy, kde-format
-#| msgid "Processing Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Processing Failed"
-msgstr "Ha fallat el processament"
+msgstr "Fallada del processament"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:335
 #, kde-format
@@ -21374,11 +21283,10 @@ msgstr ""
 "s'eliminaran."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:75
-#, fuzzy, kde-format
-#| msgid "Send by Email"
+#, kde-format
 msgctxt "@title:window"
 msgid "Send by Email"
-msgstr "Envia per correu electrònic"
+msgstr "Enviament per correu electrònic"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:84
 #, kde-format
@@ -21395,7 +21303,7 @@ msgstr "Llista d'imatges"
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:87
 #, kde-format
 msgid "Email Settings"
-msgstr "Configuració del correu electrònic"
+msgstr "Configureu el correu electrònic"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:88
 #, kde-format
@@ -21570,11 +21478,10 @@ msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr "Duració: %1 segons per element, total %2 segons (sense transicions)"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
-#, fuzzy, kde-format
-#| msgid "Create a Video Slideshow"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create a Video Slideshow"
-msgstr "Crea un vídeo de passe de diapositives"
+msgstr "Creeu un vídeo de passe de diapositives"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:87
 #, kde-format
@@ -21584,7 +21491,7 @@ msgstr "Us donem la benvinguda a l'eina de vídeo de passe de diapositives"
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:90
 #, kde-format
 msgid "Video Settings"
-msgstr "Configuració del vídeo"
+msgstr "Configureu el vídeo"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:92
 #, kde-format
@@ -21622,9 +21529,7 @@ msgstr "Establix com a fons de pantalla"
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_dbus.cpp:92
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_macos.cpp:64
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error while to set image as wallpaper"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error While to Set Image as Wallpaper"
 msgstr "S'ha produït un error en establir la imatge com a fons de pantalla"
@@ -21699,11 +21604,10 @@ msgid "Cannot apply changes to desktop wallpaper."
 msgstr "No s'han pogut aplicar els canvis al fons de pantalla de l'escriptori."
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:59
-#, fuzzy, kde-format
-#| msgid "WallPaper Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "WallPaper Settings"
-msgstr "Configuració del fons de pantalla"
+msgstr "Configureu el fons de pantalla"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:77
 #, kde-format
@@ -21797,8 +21701,7 @@ msgstr "Visor d'imatges OpenGL"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
-#, fuzzy, kde-format
-#| msgid "OpenGL error"
+#, kde-format
 msgid "OpenGL Error"
 msgstr "S'ha produït un error d'OpenGL"
 
@@ -21813,8 +21716,7 @@ msgid "No OpenGL context found"
 msgstr "No s'ha trobat el context OpenGL"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
-#, fuzzy, kde-format
-#| msgid "Soundtrack preview"
+#, kde-format
 msgctxt "@title:window"
 msgid "Soundtrack Preview"
 msgstr "Vista prèvia de la pista de so"
@@ -21880,8 +21782,7 @@ msgstr ""
 "Suggeriment: afegiu més fitxers de so."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:362
-#, fuzzy, kde-format
-#| msgid "Select sound files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Sound Files"
 msgstr "Seleccioneu els fitxers de so"
@@ -21897,11 +21798,10 @@ msgid "You can only move files down one at a time."
 msgstr "Només podeu moure cap avall un fitxer d'imatge a la vegada."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:489
-#, fuzzy, kde-format
-#| msgid "Load playlist"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Playlist"
-msgstr "Carrega una llista de reproducció"
+msgstr "Càrrega de llista de reproducció"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:490
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:549
@@ -21910,11 +21810,10 @@ msgid "Playlist (*.m3u)"
 msgstr "Llista de reproducció (*.m3u)"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:548
-#, fuzzy, kde-format
-#| msgid "Save playlist"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Playlist"
-msgstr "Guarda la llista de reproducció"
+msgstr "Guardeu la llista de reproducció"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:609
 #, kde-format
@@ -22323,9 +22222,7 @@ msgid "Use Open&GL transitions"
 msgstr "Utilitza les transicions Open&GL"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:75
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Presentation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Presentation"
 msgstr "Presentació"
@@ -22495,11 +22392,10 @@ msgstr "Presentació..."
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:227
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:267
-#, fuzzy, kde-format
-#| msgid "Specify delay for slide show"
+#, kde-format
 msgctxt "@title:window"
 msgid "Specify Delay for Slide Show"
-msgstr "Especifica el retard per a un passe de diapositives"
+msgstr "Especificar un retard per al passe de diapositives"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:228
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:268
@@ -22509,11 +22405,10 @@ msgstr "Retard:"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:253
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:429
-#, fuzzy, kde-format
-#| msgid "Delete image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Image"
-msgstr "Suprimix la imatge"
+msgstr "Supressió d'imatge"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:254
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:430
@@ -22594,8 +22489,7 @@ msgid "Blobs"
 msgstr "Bambolles"
 
 #: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:120
-#, fuzzy, kde-format
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Passe de diapositives"
@@ -22609,11 +22503,10 @@ msgid "Giving a slideshow"
 msgstr "Efectuant un passe de diapositives"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:107
-#, fuzzy, kde-format
-#| msgid "Slideshow Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Slideshow Settings"
-msgstr "Configuració del passe de diapositives"
+msgstr "Configureu el passe de diapositives"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
 #, kde-format
@@ -22918,7 +22811,7 @@ msgstr ""
 "td></tr><tr><td></td><td>Tecla <i>Av Pàg</i></td></tr><tr><td></td><td>Tecla "
 "<i>Fletxa dreta</i></td></tr><tr><td></td><td>Roda del ratolí avall</td></"
 "tr><tr><td></td><td>Botó dret del ratolí</td></tr><tr><td>Pausa/Inici:</"
-"td><td>Tecla <i>Espai</i></td></tr><tr><td>Configuració del passe de "
+"td><td>Tecla <i>Espai</i></td></tr><tr><td>Configureu el passe de "
 "diapositives:</td><td>Tecla <i>F2</i></td></tr><tr><td>Oculta/mostra les "
 "propietats:</td><td>Tecla <i>F4</i></td></tr><tr><td>Ix:</td><td>Tecla "
 "<i>Esc</i></td></tr><tr><td colspan=\"2\"><nobr><center><b><h1>Propietats "
@@ -23019,7 +22912,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Box..."
-msgstr "Exporta a &Box..."
+msgstr "Exporta cap a &Box..."
 
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:432
 #: core/dplugins/generic/webservices/dropbox/dbtalker.cpp:417
@@ -23048,12 +22941,10 @@ msgstr "No s'han pogut llistar les carpetes"
 
 # skip-rule: kct-dropdown
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Export to Box"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Box"
-msgstr "Exportació a Box"
+msgstr "Exporteu cap a Box"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:82
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:80
@@ -23067,17 +22958,14 @@ msgstr "Exportació a Box"
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:45
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:132
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:83
-#, fuzzy, kde-format
-#| msgid "Start Upload"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Upload"
 msgstr "Comença la pujada"
 
 # skip-rule: kct-dropdown
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:83
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Start upload to Box"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Box"
 msgstr "Comença la pujada a Box"
@@ -23105,9 +22993,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:670
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:256
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Warning"
 msgstr "Avís"
@@ -23134,8 +23020,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:259
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:675
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:260
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action:button"
 msgid "Continue"
 msgstr "Continua"
@@ -23152,8 +23037,7 @@ msgstr "Continua"
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:260
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:676
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:261
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Cancel·la"
@@ -23172,7 +23056,7 @@ msgstr "%v / %m"
 #, kde-format
 msgctxt "@info"
 msgid "Box export"
-msgstr "Exporta a Box"
+msgstr "Exporta cap a Box"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:325
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:317
@@ -23188,8 +23072,7 @@ msgstr "Exporta a Box"
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
-#, fuzzy, kde-format
-#| msgid "Uploading Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Uploading Failed"
 msgstr "Ha fallat la pujada"
@@ -23214,8 +23097,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:386
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:368
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:391
-#, fuzzy, kde-format
-#| msgid "Login Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Login Failed"
 msgstr "No s'ha pogut fer l'inici de la sessió"
@@ -23271,20 +23153,18 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Dropbox..."
-msgstr "Exporta a &Dropbox..."
+msgstr "Exporta cap a &Dropbox..."
 
 # skip-rule: kct-dropdown
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:78
-#, fuzzy, kde-format
-#| msgid "Export to Dropbox"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Dropbox"
-msgstr "Exporta a Dropbox"
+msgstr "Exporteu cap a Dropbox"
 
 # skip-rule: kct-dropdown
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:81
-#, fuzzy, kde-format
-#| msgid "Start upload to Dropbox"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Dropbox"
 msgstr "Comença la pujada a Dropbox"
@@ -23321,7 +23201,7 @@ msgstr "%v / %m"
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:280
 #, kde-format
 msgid "Dropbox export"
-msgstr "Exportació a Dropbox"
+msgstr "Exporteu cap a Dropbox"
 
 # skip-rule: kct-dropdown
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:318
@@ -23396,11 +23276,10 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Facebook..."
-msgstr "Exporta a &Facebook..."
+msgstr "Exporta cap a &Facebook..."
 
 #: core/dplugins/generic/webservices/facebook/fbplugin.cpp:110
-#, fuzzy, kde-format
-#| msgid "Facebook"
+#, kde-format
 msgctxt "@title:window"
 msgid "Facebook"
 msgstr "Facebook"
@@ -23477,15 +23356,13 @@ msgid "Validate previous session..."
 msgstr "Valida la sessió anterior..."
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:115
-#, fuzzy, kde-format
-#| msgid "Export to Facebook Web Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Facebook Web Service"
-msgstr "Exporta al servei web Facebook"
+msgstr "Exporteu cap al servei web Facebook"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:118
-#, fuzzy, kde-format
-#| msgid "Start upload to Facebook web service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Facebook web service"
 msgstr "Comença la pujada al servei web Facebook"
@@ -23516,7 +23393,7 @@ msgstr "La crida a Facebook ha fallat: %1\n"
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:485
 #, kde-format
 msgid "Facebook export"
-msgstr "Exportació a Facebook"
+msgstr "Exporteu cap a Facebook"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:620
 #, kde-format
@@ -23539,8 +23416,7 @@ msgid "Target location: "
 msgstr "Ubicació de la destinació: "
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:112
-#, fuzzy, kde-format
-#| msgid "Target Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Target Folder"
 msgstr "Carpeta de destinació"
@@ -23551,8 +23427,7 @@ msgid "Sets the target address to copy the items to."
 msgstr "Establix l'adreça de destinació a on s'han de copiar els elements."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:115
-#, fuzzy, kde-format
-#| msgid "Target File behavior:"
+#, kde-format
 msgid "Target file behavior:"
 msgstr "Comportament del fitxer de destinació:"
 
@@ -23606,31 +23481,27 @@ msgstr ""
 "Esta és la llista d'elements que es copiarà a la destinació especificada."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:91
-#, fuzzy, kde-format
-#| msgid "Export to Local Storage"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Local Storage"
-msgstr "Exportació a un emmagatzematge local"
+msgstr "Exporteu cap a un emmagatzematge local"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:94
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:74
-#, fuzzy, kde-format
-#| msgid "Start export"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Export"
 msgstr "Inicia l'exportació"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:95
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:75
-#, fuzzy, kde-format
-#| msgid "Start export to the specified target"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
 msgstr "Inicia l'exportació cap a la destinació especificada"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:217
-#, fuzzy, kde-format
-#| msgid "Copy not completed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Copy not Completed"
 msgstr "No s'ha completat la còpia"
@@ -23691,8 +23562,7 @@ msgstr ""
 "Esta és la llista de les imatges que es pujaran a la destinació especificada."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:162
-#, fuzzy, kde-format
-#| msgid "Select target..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Target..."
 msgstr "Seleccioneu el destí..."
@@ -23709,15 +23579,13 @@ msgid "<i>not selected</i>"
 msgstr "<i>no seleccionada</i>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:71
-#, fuzzy, kde-format
-#| msgid "Export to Remote Storage"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Remote Storage"
-msgstr "Exportació a un emmagatzematge remot"
+msgstr "Exporteu cap a un emmagatzematge remot"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:186
-#, fuzzy, kde-format
-#| msgid "Upload not completed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Upload not Completed"
 msgstr "No s'ha completat la pujada"
@@ -23742,30 +23610,25 @@ msgid "This is the list of images to import into the current album."
 msgstr "Esta és la llista de les imatges que s'importaran a l'àlbum actual."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Select items to import..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Items to Import..."
-msgstr "Selecciona els elements que s'han d'importar..."
+msgstr "Seleccioneu els elements que s'han d'importar..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:63
-#, fuzzy, kde-format
-#| msgid "Import from Remote Storage"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import from Remote Storage"
 msgstr "Importació des d'un emmagatzematge remot"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:67
-#, fuzzy, kde-format
-#| msgid "Start import"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Import"
 msgstr "Inicia la importació"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:68
-#, fuzzy, kde-format
-#| msgid ""
-#| "Start importing the specified images into the currently selected album."
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start importing the specified images into the currently selected album."
 msgstr ""
@@ -23773,8 +23636,7 @@ msgstr ""
 "seleccionat."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:138
-#, fuzzy, kde-format
-#| msgid "Import not completed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import not Completed"
 msgstr "No s'ha completat la importació"
@@ -23911,7 +23773,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Flickr..."
-msgstr "Exporta a &Flickr..."
+msgstr "Exporta cap a &Flickr..."
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:340
 #, kde-format
@@ -24236,7 +24098,7 @@ msgid ""
 "<b><h2><a href='https://www.flickr.com'><font color=\"#0065DE\">flick</"
 "font><font color=\"#FF0084\">r</font></a> Export</h2></b>"
 msgstr ""
-"<b><h2>Exportació a <a href='https://www.flickr.com'><font color=\"#0065DE"
+"<b><h2>Exporteu cap a <a href='https://www.flickr.com'><font color=\"#0065DE"
 "\">flick</font><font color=\"#FF0084\">r</font></a></h2></b>"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:454
@@ -24250,19 +24112,17 @@ msgid "Fewer tag options"
 msgstr "Menys opcions d'etiquetes"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:148
-#, fuzzy, kde-format
-#| msgid "Export to %1 Web Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to %1 Web Service"
-msgstr "Exporta al servei web %1"
+msgstr "Exporteu cap al servei web %1"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:187
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:240
-#, fuzzy, kde-format
-#| msgid "Start Uploading"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Uploading"
-msgstr "Inici de la pujada"
+msgstr "Inicia la pujada"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:614
 #, kde-format
@@ -24272,7 +24132,7 @@ msgstr "Només per al Photostream"
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:807
 #, kde-format
 msgid "Flickr Export"
-msgstr "Exportació a Flickr"
+msgstr "Exporteu cap a Flickr"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:842
 #, kde-format
@@ -24418,7 +24278,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Google Photos..."
-msgstr "Exporta a &Google Photos..."
+msgstr "Exporta cap a &Google Photos..."
 
 #: core/dplugins/generic/webservices/google/gsplugin.cpp:110
 #, kde-format
@@ -24430,7 +24290,7 @@ msgstr "Importa des de &Google Photos..."
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Google Drive..."
-msgstr "Exporta a &Google Drive..."
+msgstr "Exporta cap a &Google Drive..."
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:106
 #, kde-format
@@ -24533,57 +24393,44 @@ msgid "Build a combined tag string."
 msgstr "Construïx una cadena d'etiquetes combinades."
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Export to Google Drive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Google Drive"
-msgstr "Exporta a Google Drive"
+msgstr "Exporteu cap a Google Drive"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:143
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Start upload to Google Drive"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Google Drive"
 msgstr "Comença la pujada a Google Drive"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Export to Google Photos Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Google Photos Service"
-msgstr "Exporta al servei web de Google Photos"
+msgstr "Exporteu cap al servei web Google Photos"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:190
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Start upload to Google Photos Service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Google Photos service"
-msgstr "Comença la pujada al servei web de Google Photos"
+msgstr "Comença la pujada al servei web Google Photos"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:196
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Import from Google Photos Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import from Google Photos Service"
-msgstr "Importa des del servei web de Google Photos"
+msgstr "Importeu des del servei web Google Photos"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:198
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:123
-#, fuzzy, kde-format
-#| msgid "Start Download"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Download"
 msgstr "Comença la baixada"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:199
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Start download from Google Photos service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start download from Google Photos service"
 msgstr "Comença la baixada des del servei web de Google Photos"
@@ -24605,13 +24452,13 @@ msgstr "Ha fallat la crida a Google Drive: %1\n"
 #, kde-format
 msgctxt "@info"
 msgid "Google Drive export"
-msgstr "Exportació a Google Drive"
+msgstr "Exporteu cap a Google Drive"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:626
 #, kde-format
 msgctxt "@info"
 msgid "Google Photo export"
-msgstr "Exportació a Google Photo"
+msgstr "Exporteu cap a Google Photo"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:945
 #, kde-format
@@ -24664,8 +24511,7 @@ msgstr ""
 "No s'ha pujat cap imatge al vostre compte."
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1069
-#, fuzzy, kde-format
-#| msgid "OK"
+#, kde-format
 msgctxt "@action:button"
 msgid "OK"
 msgstr "D'acord"
@@ -24776,24 +24622,21 @@ msgid "Create new gallery"
 msgstr "Crea una galeria nova"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:104
-#, fuzzy, kde-format
-#| msgid "Export to ImageShack"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to ImageShack"
-msgstr "Exporta a ImageShack"
+msgstr "Exporteu cap a ImageShack"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:112
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:156
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:123
-#, fuzzy, kde-format
-#| msgid "Upload"
+#, kde-format
 msgctxt "@action:button"
 msgid "Upload"
 msgstr "Puja"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:113
-#, fuzzy, kde-format
-#| msgid "Start upload to ImageShack web service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to ImageShack web service"
 msgstr "Comença la pujada al servei web ImageShack"
@@ -24801,7 +24644,7 @@ msgstr "Comença la pujada al servei web ImageShack"
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:241
 #, kde-format
 msgid "Image Shack Export"
-msgstr "Exportació a l'Image Shack"
+msgstr "Exporteu cap a Image Shack"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:269
 #, kde-format
@@ -24915,15 +24758,13 @@ msgid "Upload Anonymously"
 msgstr "Puja anònimament"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:153
-#, fuzzy, kde-format
-#| msgid "Export to imgur.com"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to imgur.com"
-msgstr "Exporta a imgur.com"
+msgstr "Exporteu cap a imgur.com"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:157
-#, fuzzy, kde-format
-#| msgid "Start upload to Imgur"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Imgur"
 msgstr "Comença la pujada a Imgur"
@@ -24934,8 +24775,7 @@ msgid "<i>Not logged in</i>"
 msgstr "<i>No connectat</i>"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:250
-#, fuzzy, kde-format
-#| msgid "Authorization Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Authorization Failed"
 msgstr "No s'ha pogut fer l'autorització"
@@ -25035,23 +24875,20 @@ msgstr "Inici de sessió"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1345
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1507
-#, fuzzy, kde-format
-#| msgid "ERROR while creating observation"
+#, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Creating Observation"
 msgstr "ERROR en crear l'observació"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1585
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1703
-#, fuzzy, kde-format
-#| msgid "ERROR while uploading photo"
+#, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
 msgstr "ERROR en pujar la fotografia"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1815
-#, fuzzy, kde-format
-#| msgid "ERROR while deleting observation"
+#, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
 msgstr "ERROR en suprimir l'observació"
@@ -25379,15 +25216,14 @@ msgid ""
 "<b><h2><a href=\"%1\"><font color=\"#74ac00\">iNaturalist</font></a> Export</"
 "h2></b>"
 msgstr ""
-"<b><h2>Exportació a <a href=\"%1\"><font color=\"#74ac00\">iNaturalist</"
+"<b><h2>Exporteu cap a <a href=\"%1\"><font color=\"#74ac00\">iNaturalist</"
 "font></a></h2></b>"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:186
-#, fuzzy, kde-format
-#| msgid "Export as %1 Observation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export as %1 Observation"
-msgstr "Exporta com a observació %1"
+msgstr "Exportació com a observació %1"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:531
 #, kde-format
@@ -25412,7 +25248,7 @@ msgstr "<i>identificació no vàlida</i>"
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:762
 #, kde-format
 msgid "iNaturalist Export"
-msgstr "Exportació a l'iNaturalist"
+msgstr "Exporteu cap a l'iNaturalist"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1013
 #, kde-format
@@ -25487,17 +25323,14 @@ msgctxt "@action"
 msgid "Export to &Ipfs..."
 msgstr "Exporta a l'&Ipfs..."
 
-# skip-rule: kct-dropdown
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:120
-#, fuzzy, kde-format
-#| msgid "Export to IPFS"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to IPFS"
-msgstr "Exporta a IPFS"
+msgstr "Exporteu cap a IPFS"
 
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:124
-#, fuzzy, kde-format
-#| msgid "Start upload to IPFS"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to IPFS"
 msgstr "Comença la pujada a IPFS"
@@ -25553,7 +25386,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to MediaWiki..."
-msgstr "Exporta a MediaWiki..."
+msgstr "Exporta cap a MediaWiki..."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikitalker.cpp:116
 #, kde-format
@@ -25596,7 +25429,8 @@ msgstr "Esta és la llista de les imatges que es pujaran al wiki."
 #, kde-format
 msgctxt "@info"
 msgid "This is the login form to your account on the chosen wiki."
-msgstr "Este és el formulari de connexió al vostre compte al wiki escollit."
+msgstr ""
+"Este és el formulari de connexió amb el vostre compte al wiki escollit."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:229
 #, kde-format
@@ -25644,7 +25478,7 @@ msgstr "Compte"
 #, kde-format
 msgctxt "@info"
 msgid "This is the login form to your MediaWiki account."
-msgstr "Este és el formulari de connexió al vostre compte de MediaWiki."
+msgstr "Este és el formulari de connexió amb el vostre compte de MediaWiki."
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:276
 #, kde-format
@@ -26017,18 +25851,16 @@ msgstr "Propietats dels elements"
 #, kde-format
 msgctxt "@item"
 msgid "Upload Settings"
-msgstr "Configuració de la pujada"
+msgstr "Configureu la pujada"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:101
-#, fuzzy, kde-format
-#| msgid "Export to MediaWiki"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to MediaWiki"
-msgstr "Exporta a MediaWiki"
+msgstr "Exporteu cap a MediaWiki"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:104
-#, fuzzy, kde-format
-#| msgid "Start upload to MediaWiki"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to MediaWiki"
 msgstr "Comença la pujada a MediaWiki"
@@ -26036,11 +25868,10 @@ msgstr "Comença la pujada a MediaWiki"
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:302
 #, kde-format
 msgid "MediaWiki export"
-msgstr "Exportació a MediaWiki"
+msgstr "Exporteu cap a MediaWiki"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:338
-#, fuzzy, kde-format
-#| msgid "Login Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Login Error"
 msgstr "S'ha produït un error en iniciar la sessió"
@@ -26086,17 +25917,13 @@ msgid "Export to &Onedrive..."
 msgstr "Exporta a &Onedrive..."
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Export to Onedrive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Onedrive"
-msgstr "Exportació a Onedrive"
+msgstr "Exporteu cap a Onedrive"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:83
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Start upload to Onedrive"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Onedrive"
 msgstr "Comença la pujada a Onedrive"
@@ -26159,7 +25986,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Pinterest..."
-msgstr "Exporta a &Pinterest..."
+msgstr "Exporta cap a &Pinterest..."
 
 #: core/dplugins/generic/webservices/pinterest/ptalker.cpp:498
 #, kde-format
@@ -26172,15 +25999,13 @@ msgid "Failed to list boards"
 msgstr "No s'han pogut llistar les taules"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:80
-#, fuzzy, kde-format
-#| msgid "Export to Pinterest"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Pinterest"
-msgstr "Exporta a Pinterest"
+msgstr "Exporteu cap a Pinterest"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:83
-#, fuzzy, kde-format
-#| msgid "Start upload to Pinterest"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Pinterest"
 msgstr "Comença la pujada a Pinterest"
@@ -26195,7 +26020,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:292
 #, kde-format
 msgid "Pinterest export"
-msgstr "Exportació a Pinterest"
+msgstr "Exporteu cap a Pinterest"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:329
 #, kde-format
@@ -26262,7 +26087,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Piwigo..."
-msgstr "Exporta a &Piwigo..."
+msgstr "Exporta cap a &Piwigo..."
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:337
 #, kde-format
@@ -26369,11 +26194,10 @@ msgid "Resized JPEG quality:"
 msgstr "Canvia de mida amb la qualitat de JPEG:"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:227
-#, fuzzy, kde-format
-#| msgid "Piwigo Export"
+#, kde-format
 msgctxt "@title:window"
 msgid "Piwigo Export"
-msgstr "Exportació a Piwigo"
+msgstr "Exporteu cap a Piwigo"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:260
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:378
@@ -26485,7 +26309,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Rajce..."
-msgstr "Exporta a &Rajce..."
+msgstr "Exporta cap a &Rajce..."
 
 #: core/dplugins/generic/webservices/rajce/rajcewidget.cpp:163
 #, kde-format
@@ -26580,15 +26404,13 @@ msgid "Adding photos %v%"
 msgstr "S'estan afegint les fotografies %v%"
 
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:43
-#, fuzzy, kde-format
-#| msgid "Export to Rajce.net"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Rajce.net"
-msgstr "Exporta a Rajce.net"
+msgstr "Exporteu cap a Rajce.net"
 
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:46
-#, fuzzy, kde-format
-#| msgid "Start upload to Rajce.net"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Rajce.net"
 msgstr "Comença la pujada a Rajce.net"
@@ -26721,7 +26543,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &SmugMug..."
-msgstr "Exporta a &SmugMug..."
+msgstr "Exporta cap a &SmugMug..."
 
 #: core/dplugins/generic/webservices/smugmug/smugplugin.cpp:108
 #, kde-format
@@ -26889,29 +26711,25 @@ msgid "Maximum dimension:"
 msgstr "Dimensió màxima:"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:121
-#, fuzzy, kde-format
-#| msgid "Import from SmugMug Web Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import from SmugMug Web Service"
-msgstr "Importa des del servei web de SmugMug"
+msgstr "Importeu des del servei web SmugMug"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:124
-#, fuzzy, kde-format
-#| msgid "Start download from SmugMug web service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start download from SmugMug web service"
 msgstr "Comença la baixada des del servei web de SmugMug"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:130
-#, fuzzy, kde-format
-#| msgid "Export to SmugMug Web Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to SmugMug Web Service"
-msgstr "Exporta al servei web de SmugMug"
+msgstr "Exporteu cap al servei web SmugMug"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:133
-#, fuzzy, kde-format
-#| msgid "Start upload to SmugMug web service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to SmugMug web service"
 msgstr "Comença la pujada al servei web de SmugMug"
@@ -26921,8 +26739,7 @@ msgstr "Comença la pujada al servei web de SmugMug"
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:489
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:526
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1018
-#, fuzzy, kde-format
-#| msgid "SmugMug Call Failed: %1\n"
+#, kde-format
 msgid "SmugMug call failed: %1\n"
 msgstr "La crida a SmugMug ha fallat: %1\n"
 
@@ -26948,7 +26765,7 @@ msgstr "Importació a SmugMug"
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:799
 #, kde-format
 msgid "SmugMug Export"
-msgstr "Exportació a SmugMug"
+msgstr "Exporteu cap a SmugMug"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:919
 #, kde-format
@@ -27007,7 +26824,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Twitter..."
-msgstr "Exporta a &Twitter..."
+msgstr "Exporta cap a &Twitter..."
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:471
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:483
@@ -27036,15 +26853,13 @@ msgid "Failed to create tweet for photo uploaded"
 msgstr "No s'ha pogut crear el tweet de la fotografia pujada"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:81
-#, fuzzy, kde-format
-#| msgid "Export to Twitter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Twitter"
-msgstr "Exporta a Twitter"
+msgstr "Exporteu cap a Twitter"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:84
-#, fuzzy, kde-format
-#| msgid "Start upload to Twitter"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Twitter"
 msgstr "Comença la pujada a Twitter"
@@ -27052,7 +26867,7 @@ msgstr "Comença la pujada a Twitter"
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:293
 #, kde-format
 msgid "Twitter export"
-msgstr "Exportació a Twitter"
+msgstr "Exporteu cap a Twitter"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:329
 #, kde-format
@@ -27082,8 +26897,7 @@ msgid "Cannot open image at %1\n"
 msgstr "No s'ha pogut obrir la imatge a %1\n"
 
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:395
-#, fuzzy, kde-format
-#| msgid "%1 Call Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "%1 Call Failed"
 msgstr "La crida a %1 ha fallat"
@@ -27173,11 +26987,10 @@ msgid "<h3>This view lists user albums.</h3>"
 msgstr "<h3>Esta vista llista tots els elements de l'usuari.</h3>"
 
 #: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:310
-#, fuzzy, kde-format
-#| msgid "%1 - Create album failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "%1 - Create Album Failed"
-msgstr "%1: No s'ha pogut crear l'àlbum"
+msgstr "%1 - No s'ha pogut crear l'àlbum"
 
 #: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:85
 #, kde-format
@@ -27219,11 +27032,10 @@ msgid "&Choose account:"
 msgstr "Sele&cciona un compte:"
 
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:84
-#, fuzzy, kde-format
-#| msgid "Export to Web Services"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Web Services"
-msgstr "Exporta als serveis web"
+msgstr "Exporteu cap a serveis web"
 
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:95
 #, kde-format
@@ -27238,7 +27050,7 @@ msgstr "Diàleg d'autenticació"
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:99
 #, kde-format
 msgid "Web Service Settings"
-msgstr "Configuració del servei web"
+msgstr "Configureu el servei web"
 
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:100
 #, kde-format
@@ -27524,8 +27336,7 @@ msgstr "<p>L'àlbum que voleu suprimir no està buit.</p><p>Voleu continuar?</p>
 
 #: core/libs/album/engine/albummodificationhelper.cpp:283
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:145
-#, fuzzy, kde-format
-#| msgid "Rename Album (%1)"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rename Album (%1)"
 msgstr "Canvia el nom de l'àlbum (%1)"
@@ -27716,15 +27527,13 @@ msgstr ""
 "el diàleg de configuració"
 
 #: core/libs/album/manager/albummanager_database.cpp:357
-#, fuzzy, kde-format
-#| msgid "Collection not found"
+#, kde-format
 msgctxt "@title:window"
 msgid "Collection not Found"
 msgstr "No s'ha trobat la col·lecció"
 
 #: core/libs/album/manager/albummanager_database.cpp:459
-#, fuzzy, kde-format
-#| msgid "Database Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Database Folder"
 msgstr "Carpeta de la base de dades"
@@ -27747,8 +27556,7 @@ msgstr ""
 #: core/libs/album/manager/albummanager_database.cpp:470
 #: core/libs/album/manager/albummanager_database.cpp:538
 #: core/libs/album/manager/albummanager_database.cpp:560
-#, fuzzy, kde-format
-#| msgid "Upgrade Database"
+#, kde-format
 msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "Actualitza la base de dades"
@@ -27757,8 +27565,7 @@ msgstr "Actualitza la base de dades"
 #: core/libs/album/manager/albummanager_database.cpp:540
 #: core/libs/album/manager/albummanager_database.cpp:562
 #: core/libs/album/manager/albummanager_database.cpp:610
-#, fuzzy, kde-format
-#| msgid "Create New Database"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create New Database"
 msgstr "Crea una base de dades nova"
@@ -27767,8 +27574,7 @@ msgstr "Crea una base de dades nova"
 #: core/libs/album/manager/albummanager_database.cpp:552
 #: core/libs/album/manager/albummanager_database.cpp:602
 #: core/libs/album/manager/albummanager_database.cpp:634
-#, fuzzy, kde-format
-#| msgid "New database folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Database Folder"
 msgstr "Carpeta nova de base de dades"
@@ -27791,8 +27597,7 @@ msgstr ""
 #: core/libs/album/manager/albummanager_database.cpp:542
 #: core/libs/album/manager/albummanager_database.cpp:612
 #: core/libs/album/manager/albummanager_database.cpp:643
-#, fuzzy, kde-format
-#| msgid "Copy Current Database"
+#, kde-format
 msgctxt "@action:button"
 msgid "Copy Current Database"
 msgstr "Copia la base de dades actual"
@@ -27844,8 +27649,7 @@ msgstr ""
 "l'elimine i copie la base de dades actual en este lloc?</p> "
 
 #: core/libs/album/manager/albummanager_database.cpp:645
-#, fuzzy, kde-format
-#| msgid "Use Existing File"
+#, kde-format
 msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "Utilitza el fitxer existent"
@@ -28228,7 +28032,7 @@ msgstr "Retola l'àlbum"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:219
 #: core/libs/tags/manager/tagmngrtreeview.cpp:156
-#: core/libs/tags/manager/tagsmanager.cpp:723
+#: core/libs/tags/manager/tagsmanager.cpp:725
 #: core/libs/tags/widgets/tagfolderview.cpp:135
 #, kde-format
 msgid "Expand Selected Nodes"
@@ -28273,8 +28077,7 @@ msgid "Refresh"
 msgstr "Actualitza"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:305
-#, fuzzy, kde-format
-#| msgid "Scan for Faces"
+#, kde-format
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "Exploració de cares"
@@ -28399,19 +28202,16 @@ msgid "White"
 msgstr "Blanc"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:117
-#, fuzzy, kde-format
-#| msgid "New Album"
+#, kde-format
 msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "Àlbum nou"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:117
-#, fuzzy, kde-format
-#| msgctxt "@title: album properties"
-#| msgid "Edit Album"
+#, kde-format
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
-msgstr "Edita l'àlbum"
+msgstr "Editeu l'àlbum"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:138
 #, kde-format
@@ -28545,9 +28345,7 @@ msgstr ""
 "«%1»"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:479
-#, fuzzy, kde-format
-#| msgctxt "@title: album properties"
-#| msgid "Could Not Calculate Average"
+#, kde-format
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "No s'ha pogut calcular la mitjana"
@@ -28598,11 +28396,10 @@ msgstr[0] "S'ha exclòs 1 àlbum"
 msgstr[1] "S'han exclòs %1 àlbums"
 
 #: core/libs/album/widgets/albumselectdialog.cpp:71
-#, fuzzy, kde-format
-#| msgid "Select Album"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Album"
-msgstr "Seleccioneu l'àlbum"
+msgstr "Seleccioneu un àlbum"
 
 #: core/libs/album/widgets/albumselectors.cpp:136
 #: core/libs/album/widgets/albumselectors.cpp:492
@@ -28737,7 +28534,7 @@ msgstr ""
 "Este és un CD/DVD que s'identificarà amb l'etiqueta que heu indicat en "
 "l'aplicació de gravació de CD. Ja hi ha una altra entrada amb la mateixa "
 "etiqueta. Els dos es distingiran pels fitxers del directori principal, de "
-"manera que no afegiu fitxers al CD, o no es reconeixerà. En el futur, "
+"manera que no annexeu fitxers al CD, o no es reconeixerà. En el futur, "
 "establiu una etiqueta inequívoca en els CD i DVD si teniu la intenció "
 "d'utilitzar-los amb digiKam."
 
@@ -29496,8 +29293,7 @@ msgstr ""
 "actual. Proveu d'iniciar amb una base de dades buida. "
 
 #: core/libs/database/utils/ifaces/dio.cpp:326
-#, fuzzy, kde-format
-#| msgid "File conflict"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Conflicte de fitxers"
@@ -29524,22 +29320,19 @@ msgstr ""
 "Omet automàticament: s'ometran els fitxers en conflicte."
 
 #: core/libs/database/utils/ifaces/dio.cpp:336
-#, fuzzy, kde-format
-#| msgid "Rename automatically"
+#, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Canvia el nom automàticament"
 
 #: core/libs/database/utils/ifaces/dio.cpp:338
-#, fuzzy, kde-format
-#| msgid "Overwrite automatically"
+#, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Sobreescriu automàticament"
 
 #: core/libs/database/utils/ifaces/dio.cpp:340
-#, fuzzy, kde-format
-#| msgid "Skip automatically"
+#, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Omet automàticament"
@@ -29696,7 +29489,7 @@ msgstr "Evolució del pas (%1)"
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:43
 #, kde-format
 msgid "Database Configuration"
-msgstr "Configuració de la base de dades"
+msgstr "Configureu la base de dades"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:54
 #, kde-format
@@ -29993,8 +29786,8 @@ msgid ""
 "This one can use quickly a lots of space, especially\n"
 "if you a lots of image with people faces detected and tagged."
 msgstr ""
-"digiKam utilitza la base de dades de cares per a guardar els histogrames "
-"d'imatges dedicades al procés de reconeixement de cares.\n"
+"digiKam utilitza la base de dades de cares per que es guardarà els "
+"histogrames d'imatges dedicades al procés de reconeixement de cares.\n"
 "Açò pot utilitzar ràpidament molt espai, especialment si hi ha moltes "
 "imatges amb cares de persones detectades i etiquetades."
 
@@ -30033,7 +29826,7 @@ msgstr ""
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:281
 #, kde-format
 msgid "Remote Server Settings"
-msgstr "Configuració del servidor remot"
+msgstr "Configureu el servidor remot"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:285
 #, kde-format
@@ -30139,8 +29932,7 @@ msgstr "Nom de la carpeta de BD de miniatures:"
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:594
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:599
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:852
-#, fuzzy, kde-format
-#| msgid "Database Connection Test"
+#, kde-format
 msgctxt "@title:window"
 msgid "Database Connection Test"
 msgstr "Prova de connexió amb la base de dades"
@@ -30195,11 +29987,10 @@ msgstr ""
 "directory)."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:843
-#, fuzzy, kde-format
-#| msgid "Database Configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Database Configuration"
-msgstr "Configuració de la base de dades"
+msgstr "Configureu la base de dades"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:844
 #, kde-format
@@ -30229,8 +30020,7 @@ msgstr ""
 "en un fitxer de base de dades."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:881
-#, fuzzy, kde-format
-#| msgid "Create Database Folder?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder?"
 msgstr "Voleu crear la carpeta base de dades?"
@@ -30245,8 +30035,7 @@ msgstr ""
 "p><p><b>%1</b></p>Voleu que la cree digiKam?"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:893
-#, fuzzy, kde-format
-#| msgid "Create Database Folder Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder Failed"
 msgstr "No s'ha pogut crear la carpeta de la base de dades"
@@ -30262,8 +30051,7 @@ msgstr ""
 "Seleccioneu una ubicació diferent.</p><p><b>%1</b></p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:919
-#, fuzzy, kde-format
-#| msgid "No Database Write Access"
+#, kde-format
 msgctxt "@title:window"
 msgid "No Database Write Access"
 msgstr "No hi ha accés d'escriptura a la base de dades"
@@ -30278,8 +30066,7 @@ msgstr ""
 "base de dades.<br/>Seleccioneu una ubicació diferent.</p><p><b>%1</b></p>"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:46
-#, fuzzy, kde-format
-#| msgid "Database Statistics"
+#, kde-format
 msgctxt "@title:window"
 msgid "Database Statistics"
 msgstr "Estadístiques de la base de dades"
@@ -30406,22 +30193,22 @@ msgstr ""
 "Este fitxer executable s'utilitza per a iniciar una instància dedicada del "
 "servidor MariaDB."
 
-#: core/libs/dialogs/deletedialog.cpp:176
+#: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
 msgid "Thumb"
 msgstr "Miniatura"
 
-#: core/libs/dialogs/deletedialog.cpp:179
+#: core/libs/dialogs/deletedialog.cpp:180
 #, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "Llista d'elements que estan a punt de ser suprimits."
 
-#: core/libs/dialogs/deletedialog.cpp:180
+#: core/libs/dialogs/deletedialog.cpp:181
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "Esta és la llista d'elements que estan a punt de ser suprimits."
 
-#: core/libs/dialogs/deletedialog.cpp:302
+#: core/libs/dialogs/deletedialog.cpp:303
 #, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
@@ -30430,7 +30217,7 @@ msgstr ""
 "Si està activada, els fitxers s'eliminaran definitivament en lloc de "
 "moure'ls a la paperera."
 
-#: core/libs/dialogs/deletedialog.cpp:304
+#: core/libs/dialogs/deletedialog.cpp:305
 #, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -30442,17 +30229,17 @@ msgstr ""
 "esta opció amb compte</em>: la majoria de sistemes de fitxers no poden "
 "recuperar amb fiabilitat els elements suprimits.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:310
+#: core/libs/dialogs/deletedialog.cpp:311
 #, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "Sup&rimix els elements en lloc de moure'ls a la paperera"
 
-#: core/libs/dialogs/deletedialog.cpp:317
+#: core/libs/dialogs/deletedialog.cpp:318
 #, kde-format
 msgid "Do not &ask again"
 msgstr "No ho tornes &a preguntar"
 
-#: core/libs/dialogs/deletedialog.cpp:376
+#: core/libs/dialogs/deletedialog.cpp:377
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -30461,7 +30248,7 @@ msgstr ""
 "Si està activada, no es tornarà a mostrar este diàleg i els elements se "
 "suprimiran directament i permanentment."
 
-#: core/libs/dialogs/deletedialog.cpp:378
+#: core/libs/dialogs/deletedialog.cpp:379
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -30470,7 +30257,7 @@ msgstr ""
 "Si esta casella està activada, no es tornarà a mostrar este diàleg i els "
 "elements se suprimiran directament i permanentment."
 
-#: core/libs/dialogs/deletedialog.cpp:383
+#: core/libs/dialogs/deletedialog.cpp:384
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -30479,7 +30266,7 @@ msgstr ""
 "Si està activada, no es tornarà a mostrar este diàleg i els elements es "
 "mouran directament a la paperera."
 
-#: core/libs/dialogs/deletedialog.cpp:385
+#: core/libs/dialogs/deletedialog.cpp:386
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -30488,42 +30275,42 @@ msgstr ""
 "Si esta casella està activada, no es tornarà a mostrar este diàleg i els "
 "elements es mouran directament a la paperera."
 
-#: core/libs/dialogs/deletedialog.cpp:397
+#: core/libs/dialogs/deletedialog.cpp:398
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr "Estos elements <b>se suprimiran permanentment</b> del disc dur."
 
-#: core/libs/dialogs/deletedialog.cpp:403
+#: core/libs/dialogs/deletedialog.cpp:404
 #, kde-format
 msgid "These items will be moved to Trash."
 msgstr "Estos àlbums es mouran a la paperera."
 
-#: core/libs/dialogs/deletedialog.cpp:405
+#: core/libs/dialogs/deletedialog.cpp:406
 #, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
 msgstr[0] "S'ha seleccionat <b>1</b> element."
 msgstr[1] "S'han seleccionat <b>%1</b> elements."
 
-#: core/libs/dialogs/deletedialog.cpp:418
+#: core/libs/dialogs/deletedialog.cpp:419
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr "Estos àlbums <b>se suprimiran permanentment</b> del disc dur."
 
-#: core/libs/dialogs/deletedialog.cpp:424
+#: core/libs/dialogs/deletedialog.cpp:425
 #, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "Estos àlbums es mouran a la paperera."
 
-#: core/libs/dialogs/deletedialog.cpp:428
-#: core/libs/dialogs/deletedialog.cpp:455
+#: core/libs/dialogs/deletedialog.cpp:429
+#: core/libs/dialogs/deletedialog.cpp:456
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
 msgstr[0] "S'ha seleccionat <b>1</b> àlbum."
 msgstr[1] "S'han seleccionat <b>%1</b> àlbums."
 
-#: core/libs/dialogs/deletedialog.cpp:439
+#: core/libs/dialogs/deletedialog.cpp:440
 #, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -30534,7 +30321,7 @@ msgstr ""
 "tindre en compte que <b>tots els subàlbums</b> inclosos en esta llista també "
 "se suprimiran definitivament.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:448
+#: core/libs/dialogs/deletedialog.cpp:449
 #, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -30544,21 +30331,19 @@ msgstr ""
 "<b>tots els subàlbums</b> inclosos en esta llista també es mouran a la "
 "paperera.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:595
+#: core/libs/dialogs/deletedialog.cpp:600
 #, kde-format
 msgid "&Move to Trash"
 msgstr "&Mou a la paperera"
 
-#: core/libs/dialogs/deletedialog.cpp:655
-#, fuzzy, kde-format
-#| msgid "About to delete selected items"
+#: core/libs/dialogs/deletedialog.cpp:660
+#, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "Esteu a punt de suprimir els elements seleccionats"
 
-#: core/libs/dialogs/deletedialog.cpp:662
-#, fuzzy, kde-format
-#| msgid "About to delete selected albums"
+#: core/libs/dialogs/deletedialog.cpp:667
+#, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"
 msgstr "Esteu a punt de suprimir els àlbums seleccionats"
@@ -30579,15 +30364,13 @@ msgid "Do not ask again"
 msgstr "No ho tornes a preguntar"
 
 #: core/libs/dialogs/filesaveoptionsdlg.cpp:34
-#, fuzzy, kde-format
-#| msgid "Settings for Saving Image File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings for Saving Image File"
-msgstr "Configuració per a guardar fitxers d'imatge"
+msgstr "Configuració per que es guardarà fitxers d'imatge"
 
 #: core/libs/dialogs/iccprofileinfodlg.cpp:39
-#, fuzzy, kde-format
-#| msgid "Color Profile Info - %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Color Profile Info - %1"
 msgstr "Informació del perfil de color - %1"
@@ -30678,8 +30461,7 @@ msgid "<i>VideoCodec:</i>"
 msgstr "<i>Còdec de vídeo:</i>"
 
 #: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:138
-#, fuzzy, kde-format
-#| msgid "Shared Libraries and Components Information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
 msgstr "Informació de les biblioteques compartides i components"
@@ -30763,8 +30545,7 @@ msgid "Unknown"
 msgstr "Desconegut"
 
 #: core/libs/dialogs/rawcameradlg.cpp:56
-#, fuzzy, kde-format
-#| msgid "List of supported RAW cameras"
+#, kde-format
 msgctxt "@title:window"
 msgid "List of Supported RAW Cameras"
 msgstr "Llista de les càmeres RAW admeses"
@@ -30788,8 +30569,7 @@ msgstr[1] ""
 "trobat: %3)"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:83
-#, fuzzy, kde-format
-#| msgid "List of Detected Hardware"
+#, kde-format
 msgctxt "@title:window"
 msgid "List of Detected Hardware"
 msgstr "Llista del maquinari detectat"
@@ -31520,8 +31300,7 @@ msgid "Luminosity"
 msgstr "Lluminositat"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:529
-#, fuzzy, kde-format
-#| msgid "Black & White Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Black & White Settings File to Load"
 msgstr "Fitxer que es carregarà amb la configuració del blanc i negre"
@@ -31539,8 +31318,7 @@ msgstr ""
 "negre."
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:600
-#, fuzzy, kde-format
-#| msgid "Black & White Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Black & White Settings File to Save"
 msgstr "Fitxer que es guardarà amb la configuració del blanc i negre"
@@ -31682,9 +31460,7 @@ msgid "Total: %1 (%)"
 msgstr "Total: %1 (%)"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:545
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Select Gimp Gains Mixer File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Gains Mixer File to Load"
 msgstr "Seleccioneu el fitxer que es carregarà per als guanys de Gimp"
@@ -31698,9 +31474,7 @@ msgstr ""
 "de guanys."
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:635
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Gimp Gains Mixer File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Gimp Gains Mixer File to Save"
 msgstr "Fitxer que es guardarà amb la mescla de guanys de Gimp"
@@ -31863,8 +31637,7 @@ msgid "Adjust Curves"
 msgstr "Ajust de les corbes"
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:242
-#, fuzzy, kde-format
-#| msgid "Select Gimp Curves File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Curves File to Load"
 msgstr "Seleccioneu el fitxer que es carregarà per a les corbes de Gimp"
@@ -31875,8 +31648,7 @@ msgid "Cannot load from the Gimp curves text file."
 msgstr "No s'ha pogut carregar el fitxer de text de les corbes de Gimp."
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:263
-#, fuzzy, kde-format
-#| msgid "Gimp Curves File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Gimp Curves File to Save"
 msgstr "Fitxer que es guardarà amb les corbes de Gimp"
@@ -32956,8 +32728,7 @@ msgid "Select Black Frame Image"
 msgstr "Seleccioneu una imatge amb un marc negre"
 
 #: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:231
-#, fuzzy, kde-format
-#| msgid "Black Frame Parser"
+#, kde-format
 msgctxt "@title:window"
 msgid "Black Frame Parser"
 msgstr "Analitzador de marc negre"
@@ -33189,8 +32960,7 @@ msgid "Stage 4"
 msgstr "Etapa 4"
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:637
-#, fuzzy, kde-format
-#| msgid "Photograph Local Contrast Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Local Contrast Settings File to Load"
 msgstr ""
@@ -33212,8 +32982,7 @@ msgstr ""
 "local de la fotografia."
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:691
-#, fuzzy, kde-format
-#| msgid "Photograph Local Contrast Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Local Contrast Settings File to Save"
 msgstr ""
@@ -33857,8 +33626,7 @@ msgid "Chrominance Red"
 msgstr "Roig de crominància"
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:372
-#, fuzzy, kde-format
-#| msgid "Photograph Noise Reduction Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Noise Reduction Settings File to Load"
 msgstr ""
@@ -33880,8 +33648,7 @@ msgstr ""
 "del soroll de la fotografia."
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:418
-#, fuzzy, kde-format
-#| msgid "Photograph Noise Reduction Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Noise Reduction Settings File to Save"
 msgstr ""
@@ -34087,8 +33854,7 @@ msgstr ""
 "gaussiana."
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:515
-#, fuzzy, kde-format
-#| msgid "Photograph Refocus Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Load"
 msgstr ""
@@ -34109,8 +33875,7 @@ msgstr ""
 "reenfocament de la fotografia."
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:564
-#, fuzzy, kde-format
-#| msgid "Photograph Refocus Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Save"
 msgstr ""
@@ -34503,7 +34268,7 @@ msgstr "Principal:"
 #, kde-format
 msgctxt "@info: WB settings"
 msgid "Auto exposure adjustments"
-msgstr "Configuració de l'exposició automàtica"
+msgstr "Configureu l'exposició automàtica"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:289
 #, kde-format
@@ -34538,9 +34303,7 @@ msgstr ""
 "per a establir l'ajust fi de l'exposició."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:522
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "White Color Balance Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "White Color Balance Settings File to Load"
 msgstr "Fitxer que es carregarà amb la configuració del balanç del color blanc"
@@ -34561,9 +34324,7 @@ msgstr ""
 "color blanc."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:569
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "White Color Balance Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "White Color Balance Settings File to Save"
 msgstr "Fitxer que es guardarà amb la configuració del balanç del color blanc"
@@ -34727,9 +34488,7 @@ msgid "Type-Mimes"
 msgstr "Tipus MIME"
 
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "About %1 Plugin"
+#, kde-format
 msgctxt "@title:window"
 msgid "About %1 Plugin"
 msgstr "Quant al connector %1"
@@ -34981,8 +34740,7 @@ msgid "Location of the album that will be created (optional)."
 msgstr "Ubicació de l'àlbum que es crearà (opcional)."
 
 #: core/libs/dplugins/webservices/wsselectuserdlg.cpp:60
-#, fuzzy, kde-format
-#| msgid "Account Selector"
+#, kde-format
 msgctxt "@title:window"
 msgid "Account Selector"
 msgstr "Selector de comptes"
@@ -35169,9 +34927,7 @@ msgid "JPEG Quality:"
 msgstr "Qualitat JPEG:"
 
 #: core/libs/dplugins/webservices/wstooldialog.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "&Start"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Start"
 msgstr "&Inicia"
@@ -35236,12 +34992,10 @@ msgid "Save the list."
 msgstr "Guarda la llista."
 
 #: core/libs/dplugins/widgets/ditemslist.cpp:580
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Select the image file list to load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Load"
-msgstr "Seleccioneu la llista de fitxers d'imatge que s'ha de carregar"
+msgstr "Seleccioneu la llista de fitxers d'imatge que es carregarà"
 
 #: core/libs/dplugins/widgets/ditemslist.cpp:581
 #: core/libs/dplugins/widgets/ditemslist.cpp:663
@@ -35251,12 +35005,10 @@ msgid "All Files (*)"
 msgstr "Tots els fitxers (*)"
 
 #: core/libs/dplugins/widgets/ditemslist.cpp:661
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Select the image file list to save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Save"
-msgstr "Seleccioneu la llista de fitxers d'imatge que s'ha de guardar"
+msgstr "Seleccioneu la llista de fitxers d'imatge que es guardarà"
 
 #: core/libs/dplugins/widgets/ditemslist_view.cpp:40
 #, kde-format
@@ -35400,9 +35152,7 @@ msgstr ""
 "imatge no està comprimida.</p>"
 
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Help"
+#, kde-format
 msgctxt "@action:button"
 msgid "Help"
 msgstr "Ajuda"
@@ -35932,7 +35682,7 @@ msgctxt "@info:tooltip"
 msgid "Use the default quality sorting parameters configured in Setup dialog."
 msgstr ""
 "Utilitza els paràmetres predeterminats d'ordenació de qualitat configurats "
-"en el diàleg d'Configuració."
+"en el diàleg de Configuració."
 
 #: core/libs/imgqsort/imagequalityconfselector.cpp:82
 #, kde-format
@@ -37503,8 +37253,7 @@ msgid "ETA:"
 msgstr "ETA:"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:185
-#, fuzzy, kde-format
-#| msgid "Online Version Checker - Pre-Release"
+#, kde-format
 msgctxt "@title:window"
 msgid "Online Version Checker - Pre-Release"
 msgstr "Comprovador de versions en línia - prellançament"
@@ -37517,8 +37266,7 @@ msgstr ""
 "moment..."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:190
-#, fuzzy, kde-format
-#| msgid "Online Version Checker - Stable Version"
+#, kde-format
 msgctxt "@title:window"
 msgid "Online Version Checker - Stable Version"
 msgstr "Comprovador de versions en línia - versió estable"
@@ -37543,7 +37291,7 @@ msgstr ""
 "actualitzacions."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:273
-#: core/utilities/setup/downloader/filesdownloader.cpp:182
+#: core/utilities/setup/downloader/filesdownloader.cpp:185
 #, kde-format
 msgid "Download"
 msgstr "Baixa"
@@ -37996,9 +37744,7 @@ msgid "Always apply changes without confirmation"
 msgstr "Aplica sempre els canvis sense confirmació"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:359
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Apply changes?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Apply Changes?"
 msgstr "Voleu aplicar els canvis?"
@@ -40109,11 +39855,10 @@ msgstr "Voleu suprimir l'etiqueta «%1»?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:294
 #: core/libs/tags/engine/tagmodificationhelper.cpp:407
-#, fuzzy, kde-format
-#| msgid "Delete Tag"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Tag"
-msgstr "Suprimix l'etiqueta"
+msgstr "Supressió d'etiqueta"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:381
 #, kde-format
@@ -40242,38 +39987,38 @@ msgid "Delete Tags"
 msgstr "Suprimix les etiquetes"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:146
-#: core/libs/tags/manager/tagsmanager.cpp:707
+#: core/libs/tags/manager/tagsmanager.cpp:709
 #, kde-format
 msgid "Edit Tag Title"
 msgstr "Edita el títol de l'etiqueta"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:150
-#: core/libs/tags/manager/tagsmanager.cpp:711
+#: core/libs/tags/manager/tagsmanager.cpp:713
 #: core/libs/tags/widgets/tagfolderview.cpp:70
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Reinicia la icona de l'etiqueta"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
-#: core/libs/tags/manager/tagsmanager.cpp:720
+#: core/libs/tags/manager/tagsmanager.cpp:722
 #, kde-format
 msgid "Invert Selection"
 msgstr "Invertix la selecció"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
-#: core/libs/tags/manager/tagsmanager.cpp:726
+#: core/libs/tags/manager/tagsmanager.cpp:728
 #, kde-format
 msgid "Expand Tag Tree"
 msgstr "Desplega l'arbre d'etiquetes"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:162
-#: core/libs/tags/manager/tagsmanager.cpp:729
+#: core/libs/tags/manager/tagsmanager.cpp:731
 #, kde-format
 msgid "Collapse Tag Tree"
 msgstr "Reduïx l'arbre d'etiquetes"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:165
-#: core/libs/tags/manager/tagsmanager.cpp:732
+#: core/libs/tags/manager/tagsmanager.cpp:734
 #, kde-format
 msgid "Remove Tag from Images"
 msgstr "Elimina les etiquetes de les imatges"
@@ -40349,14 +40094,13 @@ msgctxt "@info"
 msgid "Previous tags were changed. Save changes? "
 msgstr "Les etiquetes anteriors han canviat. Voleu guardar els canvis? "
 
-#: core/libs/tags/manager/tagsmanager.cpp:177
-#, fuzzy, kde-format
-#| msgid "Tags Manager"
+#: core/libs/tags/manager/tagsmanager.cpp:179
+#, kde-format
 msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "Gestor d'etiquetes"
 
-#: core/libs/tags/manager/tagsmanager.cpp:336
+#: core/libs/tags/manager/tagsmanager.cpp:338
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid ""
@@ -40372,7 +40116,7 @@ msgstr[1] ""
 "Les etiquetes %2 tenen una o més subetiquetes. La seua supressió també "
 "suprimirà les subetiquetes. Voleu continuar?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:359
+#: core/libs/tags/manager/tagsmanager.cpp:361
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Tag %2 is assigned to one or more items. Do you want to delete it?"
@@ -40383,7 +40127,7 @@ msgstr[0] ""
 msgstr[1] ""
 "Les etiquetes %2 estan assignades a un o més elements. Les voleu suprimir?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:369
+#: core/libs/tags/manager/tagsmanager.cpp:371
 #, kde-format
 msgctxt "%2 is a comma separated list of tags to be deleted."
 msgid "Delete tag %2?"
@@ -40391,17 +40135,15 @@ msgid_plural "Delete tags %2?"
 msgstr[0] "Voleu suprimir l'etiqueta %2?"
 msgstr[1] "Voleu suprimir les etiquetes %2?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:375
-#, fuzzy, kde-format
-#| msgid "Delete tag"
-#| msgid_plural "Delete tags"
+#: core/libs/tags/manager/tagsmanager.cpp:377
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
 msgid_plural "Delete tags"
-msgstr[0] "Suprimix l'etiqueta"
-msgstr[1] "Suprimix les etiquetes"
+msgstr[0] "Supressió d'etiqueta"
+msgstr[1] "Supressió d'etiquetes"
 
-#: core/libs/tags/manager/tagsmanager.cpp:498
+#: core/libs/tags/manager/tagsmanager.cpp:500
 #, kde-format
 msgid ""
 "<qt>digiKam will clean up tag metadata before setting tags from database.<br/"
@@ -40413,8 +40155,8 @@ msgstr ""
 "llegiu abans (crideu «Llig les etiquetes de la imatge»).<br/>Voleu continuar?"
 "</qt>"
 
-#: core/libs/tags/manager/tagsmanager.cpp:510
-#: core/libs/tags/manager/tagsmanager.cpp:529
+#: core/libs/tags/manager/tagsmanager.cpp:512
+#: core/libs/tags/manager/tagsmanager.cpp:531
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -40423,7 +40165,7 @@ msgstr ""
 "Esta operació pot tardar molt de temps segons la mida de la col·lecció.\n"
 "Voleu continuar?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:549
+#: core/libs/tags/manager/tagsmanager.cpp:551
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -40435,7 +40177,7 @@ msgstr ""
 "les metadades en el fitxer.\n"
 "Voleu continuar?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:613
+#: core/libs/tags/manager/tagsmanager.cpp:615
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -40444,36 +40186,36 @@ msgstr[0] ""
 msgstr[1] ""
 "Segur que voleu eliminar les etiquetes seleccionades de totes les imatges?"
 
-#: core/libs/tags/manager/tagsmanager.cpp:694
+#: core/libs/tags/manager/tagsmanager.cpp:696
 #, kde-format
 msgctxt "@action: button"
 msgid "Organize"
 msgstr "Organitza"
 
-#: core/libs/tags/manager/tagsmanager.cpp:697
+#: core/libs/tags/manager/tagsmanager.cpp:699
 #, kde-format
 msgctxt "@action: button"
 msgid "Sync &Export"
 msgstr "Sincronitza l'&exportació"
 
-#: core/libs/tags/manager/tagsmanager.cpp:714
+#: core/libs/tags/manager/tagsmanager.cpp:716
 #, kde-format
 msgid "Create Tag from Address Book"
 msgstr "Crea una etiqueta a partir de la llibreta d'adreces"
 
-#: core/libs/tags/manager/tagsmanager.cpp:717
+#: core/libs/tags/manager/tagsmanager.cpp:719
 #, kde-format
 msgid "Mark Unassigned Tags"
 msgstr "Marca les etiquetes sense assignar"
 
-#: core/libs/tags/manager/tagsmanager.cpp:737
+#: core/libs/tags/manager/tagsmanager.cpp:739
 #, kde-format
 msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgstr ""
 "Afig una etiqueta nova a l'etiqueta actual. L'etiqueta actual és l'última "
 "etiqueta clicada."
 
-#: core/libs/tags/manager/tagsmanager.cpp:740
+#: core/libs/tags/manager/tagsmanager.cpp:742
 #, kde-format
 msgid ""
 "Delete selected items. Also work with multiple items, but will not delete "
@@ -40482,78 +40224,78 @@ msgstr ""
 "Suprimix els elements seleccionats. També funciona amb elements múltiples, "
 "però no suprimix l'etiqueta arrel."
 
-#: core/libs/tags/manager/tagsmanager.cpp:744
+#: core/libs/tags/manager/tagsmanager.cpp:746
 #, kde-format
 msgid "Edit title from selected tag."
 msgstr "Edita el títol de l'etiqueta seleccionada."
 
-#: core/libs/tags/manager/tagsmanager.cpp:746
+#: core/libs/tags/manager/tagsmanager.cpp:748
 #, kde-format
 msgid "Reset icon to selected tags. Works with multiple selection."
 msgstr ""
 "Reinicia la icona de les etiquetes seleccionades. Funciona amb selecció "
 "múltiple."
 
-#: core/libs/tags/manager/tagsmanager.cpp:749
+#: core/libs/tags/manager/tagsmanager.cpp:751
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
 msgstr "Marca totes les etiquetes no assignades a les imatges."
 
-#: core/libs/tags/manager/tagsmanager.cpp:751
+#: core/libs/tags/manager/tagsmanager.cpp:753
 #, kde-format
 msgid "Invert selection. Only visible items will be selected"
 msgstr "Invertix la selecció. Només se seleccionaran els elements visibles"
 
-#: core/libs/tags/manager/tagsmanager.cpp:754
+#: core/libs/tags/manager/tagsmanager.cpp:756
 #, kde-format
 msgid "Selected items will be expanded"
 msgstr "Els elements seleccionats es desplegaran"
 
-#: core/libs/tags/manager/tagsmanager.cpp:756
+#: core/libs/tags/manager/tagsmanager.cpp:758
 #, kde-format
 msgid "Expand tag tree completely"
 msgstr "Desplega l'arbre d'etiquetes completament"
 
-#: core/libs/tags/manager/tagsmanager.cpp:758
+#: core/libs/tags/manager/tagsmanager.cpp:760
 #, kde-format
 msgid "Collapse tag tree completely"
 msgstr "Reduïx l'arbre d'etiquetes completament"
 
-#: core/libs/tags/manager/tagsmanager.cpp:760
+#: core/libs/tags/manager/tagsmanager.cpp:762
 #, kde-format
 msgid "Delete selected tag(s) from images. Works with multiple selection."
 msgstr ""
 "Suprimix les etiquetes seleccionades de les imatges. Funciona amb selecció "
 "múltiple."
 
-#: core/libs/tags/manager/tagsmanager.cpp:808
+#: core/libs/tags/manager/tagsmanager.cpp:810
 #, kde-format
 msgid "Write Tags from Database to Image"
 msgstr "Escriu les etiquetes de la base de dades a la imatge"
 
-#: core/libs/tags/manager/tagsmanager.cpp:811
+#: core/libs/tags/manager/tagsmanager.cpp:813
 #, kde-format
 msgid "Read Tags from Image"
 msgstr "Llig les etiquetes de la imatge"
 
-#: core/libs/tags/manager/tagsmanager.cpp:814
+#: core/libs/tags/manager/tagsmanager.cpp:816
 #, kde-format
 msgid "Wipe all tags from Database only"
 msgstr "Esborra totes les etiquetes només de la base de dades"
 
-#: core/libs/tags/manager/tagsmanager.cpp:816
+#: core/libs/tags/manager/tagsmanager.cpp:818
 #, kde-format
 msgid "Write Tags Metadata to Image."
 msgstr "Escriu les etiquetes de metadades a la imatge."
 
-#: core/libs/tags/manager/tagsmanager.cpp:818
+#: core/libs/tags/manager/tagsmanager.cpp:820
 #, kde-format
 msgid "Read tags from Images into Database. Existing tags will not be affected"
 msgstr ""
 "Llig les etiquetes de la imatge cap a la base de dades. Les etiquetes "
 "existents no quedaran afectades"
 
-#: core/libs/tags/manager/tagsmanager.cpp:821
+#: core/libs/tags/manager/tagsmanager.cpp:823
 #, kde-format
 msgid ""
 "Delete all tags from database only. Will not sync with files. Proceed with "
@@ -40561,6 +40303,13 @@ msgid ""
 msgstr ""
 "Suprimix totes les etiquetes només de la base de dades. No se sincronitzarà "
 "amb els fitxers. Procediu amb precaució."
+
+#: core/libs/tags/manager/tagsmanager.cpp:845
+#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
+#, kde-format
+msgctxt "@info"
+msgid "Help"
+msgstr "Ajuda"
 
 #: core/libs/tags/widgets/tagcheckview.cpp:82
 #, kde-format
@@ -40592,18 +40341,16 @@ msgid "Both"
 msgstr "Ambdós"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:113
-#, fuzzy, kde-format
-#| msgid "New Tag"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Tag"
 msgstr "Etiqueta nova"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:117
-#, fuzzy, kde-format
-#| msgid "Edit Tag"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Tag"
-msgstr "Edita etiqueta"
+msgstr "Editeu l'etiqueta"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:141
 #, kde-format
@@ -40662,8 +40409,7 @@ msgid "<b>Properties of Tag<br/>\"%1\"</b>"
 msgstr "<b>Propietats de l'etiqueta<br/>«%1»</b>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:529
-#, fuzzy, kde-format
-#| msgid "Tag creation Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Tag Creation Error"
 msgstr "S'ha produït un error en la creació de l'etiqueta"
@@ -41281,8 +41027,7 @@ msgid "Cannot create thumbnail for %1"
 msgstr "No s'ha pogut crear la miniatura per a %1"
 
 #: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:153
-#, fuzzy, kde-format
-#| msgid "Failed to initialize thumbnails database"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to Initialize Thumbnails Database"
 msgstr "No s'ha pogut restablir la base de dades de miniatures"
@@ -41293,8 +41038,7 @@ msgid "Error message: %1"
 msgstr "Missatge d'error: %1"
 
 #: core/libs/timeadjust/clockphotodialog.cpp:83
-#, fuzzy, kde-format
-#| msgid "Determine Time Difference With Clock Photo"
+#, kde-format
 msgctxt "@title:window"
 msgid "Determine Time Difference With Clock Photo"
 msgstr "Determina la diferència horària amb el rellotge d'una fotografia"
@@ -41469,7 +41213,7 @@ msgstr "XMP: Vídeo"
 #: core/libs/timeadjust/timeadjustsettings.cpp:303
 #, kde-format
 msgid "Timestamp Adjustments"
-msgstr "Configuració de la marca de temps"
+msgstr "Configureu la marca de temps"
 
 #: core/libs/transitionmngr/effectmngr.cpp:99
 #, kde-format
@@ -42497,9 +42241,7 @@ msgid "Capture"
 msgstr "Captura"
 
 #: core/libs/video/qtav/config/DecoderConfigPage.cpp:214
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Video decoder config page"
+#, kde-format
 msgctxt "@title:window"
 msgid "Video Decoder Config Page"
 msgstr "Pàgina de configuració del descodificador de vídeo"
@@ -42830,15 +42572,13 @@ msgstr "Quant a les Qt"
 
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:215
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:237
-#, fuzzy, kde-format
-#| msgid "About QtAV"
+#, kde-format
 msgctxt "@title:window"
 msgid "About QtAV"
 msgstr "Quant a QtAV"
 
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:232
-#, fuzzy, kde-format
-#| msgid "About FFmpeg"
+#, kde-format
 msgctxt "@title:window"
 msgid "About FFmpeg"
 msgstr "Quant a FFmpeg"
@@ -42852,11 +42592,10 @@ msgid "Reset to default value"
 msgstr "Restablix als valors predeterminats"
 
 #: core/libs/widgets/files/dbinaryiface.cpp:215
-#, fuzzy, kde-format
-#| msgid "Navigate to %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Navigate to %1"
-msgstr "Navega a %1"
+msgstr "Navegació a %1"
 
 #: core/libs/widgets/files/dbinarysearch.cpp:62
 #, kde-format
@@ -45216,9 +44955,7 @@ msgid "File name: %1 (%2)"
 msgstr "Nom de fitxer: %1 (%2)"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:398
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Save ExifTool Information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save ExifTool Information"
 msgstr "Guardeu la informació d'ExifTool"
@@ -45384,12 +45121,12 @@ msgstr "Multimèdia dinàmic"
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:141
 #, kde-format
 msgid "Media Management "
-msgstr "Gestió dels fitxers multimèdia "
+msgstr "Gestioneu els fitxers multimèdia "
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:145
 #, kde-format
 msgid "Rights Management"
-msgstr "Gestió dels drets"
+msgstr "Gestioneu els drets"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:149
 #, kde-format
@@ -45529,9 +45266,7 @@ msgid "Switch to %1"
 msgstr "Canvia a %1"
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:423
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to translate string with %1 Web-service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to Translate String with %1 Web-Service"
 msgstr "No s'ha pogut traduir la cadena amb el servei web %1"
@@ -50619,20 +50354,16 @@ msgid "Icon Size: %1"
 msgstr "Mida de la icona: %1"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "New Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Bookmark"
-msgstr "Punts d'interés nou"
+msgstr "Punt d'interés nou"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Edit Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Bookmark"
-msgstr "Edita el punt d'interés"
+msgstr "Editeu el punt d'interés"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:119
 #, kde-format
@@ -50741,9 +50472,7 @@ msgid "Edit current bookmark from the list"
 msgstr "Edita el punt d'interés actual de la llista"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:245
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Add New Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add New Bookmark"
 msgstr "Afig un punt d'interés nou"
@@ -50761,9 +50490,7 @@ msgstr ""
 "ja existix en la llista amb el nom «%2»."
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:259
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Confirm Bookmark Deletion"
+#, kde-format
 msgctxt "@title:window"
 msgid "Confirm Bookmark Deletion"
 msgstr "Confirmeu la supressió del punt d'interés"
@@ -50871,8 +50598,7 @@ msgstr "Suprimix el fitxer"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2323
-#, fuzzy, kde-format
-#| msgid "Error Saving File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Saving File"
 msgstr "S'ha produït un error en guardar el fitxer"
@@ -50909,11 +50635,10 @@ msgid "Cannot delete \"%1\""
 msgstr "No s'ha pogut suprimir «%1»"
 
 #: core/showfoto/main/showfoto_open.cpp:58
-#, fuzzy, kde-format
-#| msgid "Open Images From Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open Images from Folder"
-msgstr "Obri imatges des de carpeta"
+msgstr "Obriu les imatges des de carpeta"
 
 #: core/showfoto/main/showfoto_open.cpp:299
 #, kde-format
@@ -50921,8 +50646,7 @@ msgid "There is no item to process."
 msgstr "No hi ha cap element per a processar."
 
 #: core/showfoto/main/showfoto_open.cpp:321
-#, fuzzy, kde-format
-#| msgid "Error Loading File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Loading File"
 msgstr "S'ha produït un error en carregar el fitxer"
@@ -50989,12 +50713,11 @@ msgstr "&Decora"
 msgid "Effec&ts"
 msgstr "Efec&tes"
 
-#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:142
-#, fuzzy, kde-format
-#| msgid "Configure"
+#: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:146
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure"
-msgstr "Configura"
+msgstr "Configuració"
 
 #: core/showfoto/setup/showfotosetup.cpp:105
 #, kde-format
@@ -51006,8 +50729,8 @@ msgstr "Finestra de l'editor"
 msgid ""
 "<qt>Editor Window Settings<br/><i>Customize editor window behavior</i></qt>"
 msgstr ""
-"<qt>Configuració de la finestra de l'editor<br/><i>Personalitza el "
-"comportament de la finestra de l'editor</i></qt>"
+"<qt>Configureu la finestra de l'editor<br/><i>Personalitza el comportament "
+"de la finestra de l'editor</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:112
 #, kde-format
@@ -51015,7 +50738,7 @@ msgid ""
 "<qt>Embedded Image Information Management<br/><i>Setup relations between "
 "images and metadata</i></qt>"
 msgstr ""
-"<qt>Gestió de la informació incrustada de la imatge<br/><i>Configura les "
+"<qt>Gestioneu la informació incrustada de la imatge<br/><i>Configura les "
 "relacions entre imatges i metadades</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:117
@@ -51029,8 +50752,8 @@ msgid ""
 "<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br/><i>Customize "
 "information in tool-tips</i></qt>"
 msgstr ""
-"<qt>Configuració dels consells d'eina de la barra de miniatures i la vista "
-"de carpetes<br/><i>Personalitza la informació en els consells d'eina</i></qt>"
+"<qt>Configureu els consells d'eina de la barra de miniatures i la vista de "
+"carpetes<br/><i>Personalitza la informació en els consells d'eina</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:123
 #, kde-format
@@ -51043,8 +50766,8 @@ msgid ""
 "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
 "settings</i></qt>"
 msgstr ""
-"<qt>Configuració de la descodificació dels fitxers RAW<br/><i>Personalitza "
-"la configuració predeterminada de la descodificació RAW</i></qt>"
+"<qt>Configureu la descodificació dels fitxers RAW<br/><i>Personalitza la "
+"configuració predeterminada de la descodificació RAW</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:130
 #, kde-format
@@ -51052,8 +50775,8 @@ msgid ""
 "<qt>Settings for Color Management<br/><i>Customize color management "
 "settings</i></qt>"
 msgstr ""
-"<qt>Configuració de la gestió del color<br/><i>Personalitza la configuració "
-"de la gestió del color</i></qt>"
+"<qt>Configureu la gestió del color<br/><i>Personalitza la configuració de la "
+"gestió del color</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:135
 #, kde-format
@@ -51066,8 +50789,8 @@ msgid ""
 "<qt>Settings for Saving Image Files<br/><i>Set default configuration used to "
 "save images</i></qt>"
 msgstr ""
-"<qt>Configuració per a guardar els fitxers d'imatge<br/><i>Establix la "
-"configuració predeterminada emprada per a guardar les imatges</i></qt>"
+"<qt>Configuració per que es guardarà els fitxers d'imatge<br/><i>Establix la "
+"configuració predeterminada emprada per que es guardarà les imatges</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:141
 #, kde-format
@@ -51080,8 +50803,8 @@ msgid ""
 "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
 "accessible from application</i></qt>"
 msgstr ""
-"<qt>Configuració dels connectors en la interfície principal<br/><i>Establix "
-"els connectors que seran accessibles des de l'aplicació</i></qt>"
+"<qt>Configureu els connectors en la interfície principal<br/><i>Establix els "
+"connectors que seran accessibles des de l'aplicació</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:147
 #, kde-format
@@ -52006,41 +51729,31 @@ msgstr[0] "%1 fitxer"
 msgstr[1] "%1 fitxers"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:692
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "New Favorite Item"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Item"
 msgstr "Element preferit nou"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:696
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Edit Favorite Item"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Item"
-msgstr "Edició de l'element preferit"
+msgstr "Editeu un element preferit"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:703
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "New Favorite Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Folder"
 msgstr "Carpeta preferida nova"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:707
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Edit Favorite Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Folder"
-msgstr "Edició de la carpeta preferida"
+msgstr "Editeu la carpeta preferida"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:764
-#, fuzzy, kde-format
-#| msgctxt "@title: album properties"
-#| msgid "Could Not Calculate Average"
+#, kde-format
 msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
 msgstr "No s'ha pogut calcular la mitjana"
@@ -52113,9 +51826,7 @@ msgid "Search in Favorites..."
 msgstr "Busca a les preferides..."
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:357
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Confirm Item Deletion"
+#, kde-format
 msgctxt "@title:window"
 msgid "Confirm Item Deletion"
 msgstr "Confirmeu la supressió de l'element"
@@ -52299,8 +52010,7 @@ msgid "<b>Renaming images. Please wait...</b>"
 msgstr "<b>S'estan canviant de nom les imatges. Espereu...</b>"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
-#, fuzzy, kde-format
-#| msgid "&Abort"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Abort"
 msgstr "&Interromp"
@@ -52313,8 +52023,7 @@ msgstr "Està processant..."
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:87
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:160
-#, fuzzy, kde-format
-#| msgid "Renaming images"
+#, kde-format
 msgctxt "@title:window"
 msgid "Renaming Images"
 msgstr "Canvi de nom d'imatges"
@@ -52338,15 +52047,13 @@ msgstr[1] ""
 "imatges sobreescrivint-les?"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:170
-#, fuzzy, kde-format
-#| msgid "Rename Again"
+#, kde-format
 msgctxt "@action:button"
 msgid "Rename Again"
 msgstr "Torna a canviar de nom"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:172
-#, fuzzy, kde-format
-#| msgid "Overwrite"
+#, kde-format
 msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "Sobreescriu"
@@ -52431,9 +52138,8 @@ msgstr ""
 "La llista de fitxers es pot ordenar, cliqueu-hi amb el botó dret per a veure "
 "el criteri d'ordenació (només la IU de l'àlbum)."
 
-#: core/utilities/advancedrename/common/tooltipdialog.cpp:53
-#, fuzzy, kde-format
-#| msgid "Information"
+#: core/utilities/advancedrename/common/tooltipdialog.cpp:54
+#, kde-format
 msgctxt "@title:window"
 msgid "Information"
 msgstr "Informació"
@@ -53389,12 +53095,6 @@ msgctxt "@label:listbox"
 msgid "Clear unconfirmed results and rescan"
 msgstr "Neteja els resultats no confirmats i torna a explorar"
 
-#: core/utilities/facemanagement/widgets/facescanwidget.cpp:142
-#, kde-format
-msgctxt "@info"
-msgid "Help"
-msgstr "Ajuda"
-
 #: core/utilities/facemanagement/widgets/facescanwidget.cpp:158
 #, kde-format
 msgctxt "@option:radio"
@@ -53565,8 +53265,7 @@ msgstr ""
 "principal. Totes les imatges aniran ací."
 
 #: core/utilities/firstrun/collectionpage.cpp:179
-#, fuzzy, kde-format
-#| msgid "Create Root Album Folder?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Root Album Folder?"
 msgstr "Voleu crear la carpeta de l'àlbum principal?"
@@ -53581,8 +53280,7 @@ msgstr ""
 "</p><p><b>%1</b></p>Voleu que digiKam la cree?"
 
 #: core/utilities/firstrun/collectionpage.cpp:192
-#, fuzzy, kde-format
-#| msgid "Create Root Album Folder Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Root Album Folder Failed"
 msgstr "No s'ha pogut crear la carpeta de l'àlbum principal"
@@ -54176,8 +53874,8 @@ msgid ""
 "Enter the name of the current similar image search to save in the "
 "\"Similarity Searches\" view."
 msgstr ""
-"Introduïu el nom de la busca actual per imatge similar per a guardar-la en "
-"la vista de «Busques per similitud»."
+"Introduïu el nom de la busca actual per imatge similar per que es guardarà-"
+"la a la vista de «Busques per similitud»."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_similar.cpp:90
 #, kde-format
@@ -54251,8 +53949,8 @@ msgid ""
 "Enter the name of the current sketch search to save in the \"Similarity "
 "Searches\" view."
 msgstr ""
-"Introduïu el nom de la busca actual per croquis per a guardar-la en la vista "
-"de «Busques per similitud»."
+"Introduïu el nom de la busca actual per croquis per que es guardarà-la a la "
+"vista de «Busques per similitud»."
 
 #: core/utilities/fuzzysearch/fuzzysearchview_sketch.cpp:116
 #, kde-format
@@ -54433,11 +54131,10 @@ msgid "Bookmark comment"
 msgstr "Comentari del punt"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:210
-#, fuzzy, kde-format
-#| msgid "Edit Geolocation Bookmarks"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Geolocation Bookmarks"
-msgstr "Edita els punts de geolocalització"
+msgstr "Editeu els punts de geolocalització"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:228
 #: core/utilities/setup/album/setupcategory.cpp:99
@@ -54503,11 +54200,10 @@ msgstr "Comentari"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:809
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:944
-#, fuzzy, kde-format
-#| msgid "Loading Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "Loading Bookmark"
-msgstr "Càrrega del punt"
+msgstr "Càrrega de punt"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:810
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:945
@@ -54520,11 +54216,10 @@ msgstr ""
 "%3"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:931
-#, fuzzy, kde-format
-#| msgid "Open File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open File"
-msgstr "Obri un fitxer"
+msgstr "Obriu un fitxer"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:933
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:960
@@ -54538,8 +54233,7 @@ msgid "Imported %1"
 msgstr "S'han importat %1"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:958
-#, fuzzy, kde-format
-#| msgid "Save File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Guarda el fitxer"
@@ -54550,17 +54244,15 @@ msgid "%1 Bookmarks.xbel"
 msgstr "%1 Bookmarks.xbel"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:970
-#, fuzzy, kde-format
-#| msgid "Export error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export error"
 msgstr "S'ha produït un error d'exportació"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:970
-#, fuzzy, kde-format
-#| msgid "error saving bookmarks"
+#, kde-format
 msgid "Error saving bookmarks"
-msgstr "error en guardar els punts"
+msgstr "S'ha produït un error en guardar els punts"
 
 #: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:145
 #, kde-format
@@ -54717,9 +54409,7 @@ msgstr[0] "El fitxer GPX següent no s'ha pogut carregar:"
 msgstr[1] "Els %1 fitxers GPX següents no s'han pogut carregar:"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:330
-#, fuzzy, kde-format
-#| msgid "Error loading GPX file"
-#| msgid_plural "Error loading GPX files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Loading GPX File"
 msgid_plural "Error Loading GPX Files"
@@ -54732,8 +54422,7 @@ msgid "Correlating images -"
 msgstr "Les imatges s'estan correlacionant -"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:517
-#, fuzzy, kde-format
-#| msgid "Correlation failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Correlation Failed"
 msgstr "La correlació ha fallat"
@@ -54748,8 +54437,7 @@ msgstr ""
 "desplaçament i l'interval siguen correctes-."
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:523
-#, fuzzy, kde-format
-#| msgid "Correlation succeeded"
+#, kde-format
 msgctxt "@title:window"
 msgid "Correlation Succeeded"
 msgstr "La correlació ha sigut correcta"
@@ -54765,8 +54453,7 @@ msgstr ""
 #. i18np.
 #. See bug #376438 for details.
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:532
-#, fuzzy, kde-format
-#| msgid "Correlation finished"
+#, kde-format
 msgctxt "@title:window"
 msgid "Correlation Finished"
 msgstr "La correlació ha acabat"
@@ -54915,8 +54602,7 @@ msgstr "Busca els valors d'altitud que falten"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
-#, fuzzy, kde-format
-#| msgid "GPS Sync"
+#, kde-format
 msgctxt "@title:window"
 msgid "GPS Sync"
 msgstr "Sincronització GPS"
@@ -55214,11 +54900,10 @@ msgid "Retrieving RG info -"
 msgstr "S'està recuperant la informació RG -"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
-#, fuzzy, kde-format
-#| msgid "Add New Tag..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Add New Tag"
-msgstr "Afig una etiqueta nova..."
+msgstr "Afig una etiqueta nova"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:846
 #, kde-format
@@ -55349,7 +55034,7 @@ msgstr "Elimina el filtre actual"
 #: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:337
 #, kde-format
 msgid "Select images"
-msgstr "Selecció d'imatges"
+msgstr "Seleccioneu les imatges"
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:343
 #, kde-format
@@ -55364,7 +55049,7 @@ msgstr "Carrega trajectes a partir d'àlbums"
 #: core/utilities/geolocation/geoiface/widgets/mapwidget.cpp:800
 #, kde-format
 msgid "Map settings"
-msgstr "Configuració del mapa"
+msgstr "Configureu el mapa"
 
 #: core/utilities/geolocation/geoiface/widgets/placeholderwidget.cpp:49
 #, kde-format
@@ -55397,7 +55082,7 @@ msgid ""
 "Enter the name of the current map search to save in the \"Map Searches\" "
 "view."
 msgstr ""
-"Introduïu ací el nom de la busca actual per mapa per a guardar-la en la "
+"Introduïu ací el nom de la busca actual per mapa per que es guardarà-la a la "
 "vista de «Busques per mapa»."
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:165
@@ -55438,8 +55123,7 @@ msgstr ""
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:545
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:117
 #: core/utilities/searchwindow/searchtabheader.cpp:586
-#, fuzzy, kde-format
-#| msgid "Name exists"
+#, kde-format
 msgctxt "@title:window"
 msgid "Name Exists"
 msgstr "Este nom ja existix"
@@ -55658,44 +55342,43 @@ msgstr "Perfil de color assignat:"
 msgid "<b>No Profile</b>"
 msgstr "<b>Cap perfil</b>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:80
-#, fuzzy, kde-format
-#| msgid "Soft Proofing Options"
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:81
+#, kde-format
 msgctxt "@title:window"
 msgid "Soft Proofing Options"
 msgstr "Opcions de la provatura suau"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:84
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:85
 #, kde-format
 msgid "Soft Proofing On"
 msgstr "Provatura suau activada"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:85
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:86
 #, kde-format
 msgid "Enable soft-proofing color managed view"
 msgstr "Activa la vista gestionada del color de la provatura suau"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:86
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:87
 #, kde-format
 msgid "Soft Proofing Off"
 msgstr "Provatura suau desactivada"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:87
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:88
 #, kde-format
 msgid "Disable soft-proofing color managed view"
 msgstr "Desactiva la vista gestionada del color de la provatura suau"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:94
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:95
 #, kde-format
 msgid "<b>Configure the Soft Proofing View</b>"
 msgstr "<b>Configura la vista de la provatura suau</b>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:102
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:103
 #, kde-format
 msgid "Profile of the output device to simulate:"
 msgstr "Perfil del dispositiu d'eixida que s'ha de simular:"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:105
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:106
 #: core/utilities/setup/setupicc.cpp:431
 #, kde-format
 msgid ""
@@ -55707,7 +55390,7 @@ msgstr ""
 "Este perfil s'utilitzarà per a fer una provatura suau, d'esta manera podreu "
 "previsualitzar com es renderitzarà una imatge en un dispositiu d'eixida.</p>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:111
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:112
 #, kde-format
 msgid ""
 "<p>Press this button to get detailed information about the selected proofing "
@@ -55716,48 +55399,47 @@ msgstr ""
 "<p>Premeu este botó per a aconseguir informació més detallada sobre el "
 "perfil de provatura seleccionat.</p>"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:127
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:128
 #, kde-format
 msgid "Rendering intent:"
 msgstr "Propòsit de la representació:"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:132
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:133
 #, kde-format
 msgid "Highlight out-of-gamut colors"
 msgstr "Llum intensa als colors fora de la gamma"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:133
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:134
 #, kde-format
 msgid "Highlighting color:"
 msgstr "Color ressaltat:"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:225
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:229
 #: core/utilities/setup/setupicc.cpp:868
-#, fuzzy, kde-format
-#| msgid "Profile Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Profile Error"
 msgstr "S'ha produït un error de perfil"
 
-#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:225
+#: core/utilities/imageeditor/dialogs/softproofdialog.cpp:229
 #: core/utilities/setup/setupicc.cpp:868
 #, kde-format
 msgid "No profile is selected."
 msgstr "No hi ha cap perfil seleccionat."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:57
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:61
 #, kde-format
 msgctxt "@title:window"
 msgid "Save?"
 msgstr "Voleu guardar?"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:67
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Save Changes"
 msgstr "Guarda els canvis"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:70
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -55765,13 +55447,13 @@ msgid ""
 msgstr ""
 "Guarda els canvis actuals. Nota: La imatge original mai se sobreescriurà."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:72
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:77
 #, kde-format
 msgctxt "@action:button"
 msgid "Save Changes as a New Version"
 msgstr "Guarda els canvis com una versió nova"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:75
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -55781,19 +55463,19 @@ msgstr ""
 "Guarda els canvis actuals com una versió nova. El fitxer carregat romandrà "
 "sense canvis, i es crearà un fitxer nou."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:78
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:83
 #, kde-format
 msgctxt "@action:button"
 msgid "Discard Changes"
 msgstr "Descarta els canvis"
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:81
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:86
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Discard the changes applied to the image during this editing session."
 msgstr "Descarta els canvis aplicats a la imatge durant esta sessió d'edició."
 
-#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:95
+#: core/utilities/imageeditor/dialogs/versioningpromptusersavedlg.cpp:100
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -55822,10 +55504,9 @@ msgstr "Quant a esta eina..."
 
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:151
 #: core/utilities/queuemanager/views/toolsettingsview.cpp:112
-#, fuzzy, kde-format
-#| msgid "Online Handbook..."
+#, kde-format
 msgid "Tool online handbook..."
-msgstr "Manual en línia..."
+msgstr "Eina de manual en línia..."
 
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
 #, kde-format
@@ -56214,9 +55895,7 @@ msgid "Information about image size"
 msgstr "Informació quant a la mida de la imatge"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1085
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Saving image..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Saving Image..."
 msgstr "Guardeu la imatge..."
@@ -56238,9 +55917,7 @@ msgstr ""
 "Esteu segur?"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1112
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr "Avís"
@@ -56480,8 +56157,7 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:927
-#, fuzzy, kde-format
-#| msgid "No Image in Current Album"
+#, kde-format
 msgctxt "@title:window"
 msgid "No Image in Current Album"
 msgstr "No hi ha cap imatge en este àlbum"
@@ -56496,9 +56172,7 @@ msgstr ""
 "Es tancarà l'editor."
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:1199
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Not Available"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "Fitxer no disponible"
@@ -57179,13 +56853,13 @@ msgstr "Invertix la selecció"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select New Items"
-msgstr "Selecció d'elements nous"
+msgstr "Seleccioneu els elements nous"
 
 #: core/utilities/import/main/importui.cpp:247
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Select Locked Items"
-msgstr "Selecció d'elements bloquejats"
+msgstr "Seleccioneu els elements bloquejats"
 
 #: core/utilities/import/main/importui.cpp:255
 #, kde-format
@@ -57524,9 +57198,7 @@ msgstr ""
 "Introduïu un nom de fitxer nou (sense extensió):"
 
 #: core/utilities/import/main/importui.cpp:1245
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "File already exists"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Already Exists"
 msgstr "El fitxer ja existix"
@@ -58597,8 +58269,7 @@ msgid "Finger-prints"
 msgstr "Empremtes digitals"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:196
-#, fuzzy, kde-format
-#| msgid "Maintenance"
+#, kde-format
 msgctxt "@title:window"
 msgid "Maintenance"
 msgstr "Manteniment"
@@ -58744,7 +58415,7 @@ msgstr "Busca els elements duplicats"
 #: core/utilities/maintenance/maintenancedlg.cpp:313
 #, kde-format
 msgid "Faces data management: "
-msgstr "Gestió de les dades de cares: "
+msgstr "Gestioneu les dades de cares: "
 
 #: core/utilities/maintenance/maintenancedlg.cpp:322
 #, kde-format
@@ -58860,7 +58531,7 @@ msgstr "Cues"
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:129
 #, kde-format
 msgid "Queue Settings"
-msgstr "Configuració de la cua"
+msgstr "Configureu la cua"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:138
 #, kde-format
@@ -58875,7 +58546,7 @@ msgstr "Eines assignades"
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:156
 #, kde-format
 msgid "Tool Settings"
-msgstr "Configuració de les eines"
+msgstr "Configureu les eines"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:273
 #, kde-format
@@ -58970,17 +58641,16 @@ msgid "Ready"
 msgstr "Preparat"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:523
-#, fuzzy, kde-format
-#| msgid "Processing under progress"
+#, kde-format
 msgctxt "@title:window"
 msgid "Processing Under Progress"
-msgstr "El processat està en curs"
+msgstr "El processament està en curs"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:524
 #, kde-format
 msgid "Batch Queue Manager is running. Do you want to cancel current job?"
 msgstr ""
-"S'està executant el gestor de cues per lots. Voleu cancel·lar el treball "
+"S'està executant el gestor de la cua per lots. Voleu cancel·lar el treball "
 "actual?"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:623
@@ -59016,11 +58686,10 @@ msgstr "No hi ha cap element per a processar en les cues."
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:841
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:851
-#, fuzzy, kde-format
-#| msgid "Processed items album settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Processed Items Album Settings"
-msgstr "Configuració dels àlbums dels elements processats"
+msgstr "Configureu els àlbums dels elements processats"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:842
 #, kde-format
@@ -59029,7 +58698,7 @@ msgid ""
 "one from Queue Settings panel."
 msgstr ""
 "No s'ha especificat cap àlbum per a hostatjar els elements processats de la "
-"cua «%1». Seleccioneu-ne un des del quadro de la Configuració de la cua."
+"cua «%1». Seleccioneu-ne un des del quadro de Configureu la cua."
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:852
 #, kde-format
@@ -59039,7 +58708,7 @@ msgid ""
 msgstr ""
 "L'àlbum per a hostatjar els elements processats de la cua «%1» no està "
 "disponible o no s'hi pot escriure. Especifiqueu-ne un altre des del quadro "
-"de la Configuració de la cua."
+"de Configureu la cua."
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:930
 #, kde-format
@@ -59294,8 +58963,8 @@ msgid ""
 "Turn on this option to save the current modifications to a new version of "
 "the file"
 msgstr ""
-"Activeu esta opció per a guardar les modificacions actuals a una versió nova "
-"del fitxer"
+"Activeu esta opció per que es guardarà les modificacions actuals a una "
+"versió nova del fitxer"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:237
 #, kde-format
@@ -59410,18 +59079,16 @@ msgid "History"
 msgstr "Historial"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:68
-#, fuzzy, kde-format
-#| msgid "New Workflow"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Workflow"
 msgstr "Flux de treball nou"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:68
-#, fuzzy, kde-format
-#| msgid "Edit Workflow"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Workflow"
-msgstr "Edita el flux de treball"
+msgstr "Editeu el flux de treball"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:81
 #, kde-format
@@ -59468,8 +59135,7 @@ msgid "Description"
 msgstr "Descripció"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:115
-#, fuzzy, kde-format
-#| msgid "Batch Queue Manager"
+#, kde-format
 msgctxt "@title:window"
 msgid "Batch Queue Manager"
 msgstr "Gestor de la cua per lots"
@@ -59509,9 +59175,7 @@ msgid "Delete Workflow"
 msgstr "Suprimix el flux de treball"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:313
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Workflow?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Workflow?"
 msgstr "Voleu suprimir el flux de treball?"
@@ -60411,8 +60075,7 @@ msgid "Hide Options"
 msgstr "Oculta les opcions"
 
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:75
-#, fuzzy, kde-format
-#| msgid "Delete Search?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Search?"
 msgstr "Voleu suprimir la busca?"
@@ -60468,7 +60131,7 @@ msgstr "Guarda la busca actual"
 #, kde-format
 msgid "Enter a name for the current search to save it in the \"Searches\" view"
 msgstr ""
-"Introduïu un nom per a la busca actual per a guardar-la en la vista de "
+"Introduïu un nom per a la busca actual per que es guardarà-la a la vista de "
 "«Busques»"
 
 #: core/utilities/searchwindow/searchtabheader.cpp:294
@@ -60496,19 +60159,18 @@ msgstr "Edita la busca emmagatzemada"
 msgid "Edit..."
 msgstr "Edita..."
 
-#: core/utilities/searchwindow/searchview.cpp:501
+#: core/utilities/searchwindow/searchview.cpp:502
 #, kde-format
 msgid "Add Search Group"
 msgstr "Afig un grup de busca"
 
-#: core/utilities/searchwindow/searchview.cpp:530
+#: core/utilities/searchwindow/searchview.cpp:531
 #, kde-format
 msgid "Try"
 msgstr "Prova"
 
 #: core/utilities/searchwindow/searchwindow.cpp:88
-#, fuzzy, kde-format
-#| msgid "Advanced Search"
+#, kde-format
 msgctxt "@title:window"
 msgid "Advanced Search"
 msgstr "Busca avançada"
@@ -61161,7 +60823,7 @@ msgstr ""
 "<p>Els fitxers amb estes extensions es reconeixeran com a fitxers d'àudio i "
 "s'inclouran a dins de la base de dades:<br/> <code>%1</code></p>"
 
-#: core/utilities/setup/camera/cameralist.cpp:283
+#: core/utilities/setup/camera/cameralist.cpp:289
 #, kde-format
 msgid ""
 "Failed to auto-detect camera; please make sure it is connected properly and "
@@ -61171,11 +60833,10 @@ msgstr ""
 "correctament connectada i encesa. Voleu provar-ho una altra vegada?"
 
 #: core/utilities/setup/camera/cameraselection.cpp:104
-#, fuzzy, kde-format
-#| msgid "Camera Configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Camera Configuration"
-msgstr "Configuració de la càmera"
+msgstr "Configureu la càmera"
 
 #. i18n!
 #: core/utilities/setup/camera/cameraselection.cpp:114
@@ -61338,50 +60999,49 @@ msgstr ""
 "<p>Hi ha una llista completa d'opcions de càmeres<br/>disponibles en <a "
 "href='https://www.figuiere.net/digicam/'>este URL</a>.</p>"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:84
-#, fuzzy, kde-format
-#| msgid "Edit Import Filters"
+#: core/utilities/setup/camera/importfilterdlg.cpp:85
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Import Filters"
-msgstr "Edita els filtres d'importació"
+msgstr "Editeu els filtres d'importació"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:101
+#: core/utilities/setup/camera/importfilterdlg.cpp:102
 #, kde-format
 msgctxt "@label: name of items filter"
 msgid "Name:"
 msgstr "Nom:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:108
+#: core/utilities/setup/camera/importfilterdlg.cpp:109
 #, kde-format
 msgid "Mime filter:"
 msgstr "Filtre MIME:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:116
+#: core/utilities/setup/camera/importfilterdlg.cpp:117
 #, kde-format
 msgid "Select Type Mime..."
 msgstr "Selecciona el tipus MIME..."
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:121
+#: core/utilities/setup/camera/importfilterdlg.cpp:122
 #, kde-format
 msgid "File name filter:"
 msgstr "Filtre de noms de fitxer:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:131
+#: core/utilities/setup/camera/importfilterdlg.cpp:132
 #, kde-format
 msgid "Path filter:"
 msgstr "Filtre de camí:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:141
+#: core/utilities/setup/camera/importfilterdlg.cpp:142
 #, kde-format
 msgid "Show only new files"
 msgstr "Mostra només els fitxers nous"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:212
+#: core/utilities/setup/camera/importfilterdlg.cpp:216
 #, kde-format
 msgid "Select the MimeTypes you want for this filter."
 msgstr "Seleccioneu els tipus MIME que voleu per a este filtre."
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:214
+#: core/utilities/setup/camera/importfilterdlg.cpp:218
 #, kde-format
 msgid "Select Mime Types"
 msgstr "Seleccioneu el tipus MIME"
@@ -61771,7 +61431,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Append a path to the collection."
-msgstr "Annexa un camí cap a la col·lecció."
+msgstr "Afig un camí cap a la col·lecció."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:114
 #, kde-format
@@ -61792,15 +61452,13 @@ msgstr "No ha sigut possible afegir una col·lecció en els camins següents:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:657
 #: core/utilities/setup/collections/setupcollectionview.cpp:1487
-#, fuzzy, kde-format
-#| msgid "Choose the folder containing your collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Choose the Folder Containing your Collection"
 msgstr "Seleccioneu la carpeta que conté la vostra col·lecció"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:694
-#, fuzzy, kde-format
-#| msgid "Problem Appending Collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Problem Appending Collection"
 msgstr "Problema en annexar una col·lecció"
@@ -61811,8 +61469,7 @@ msgid "A collection with the path \"%1\" already exists."
 msgstr "Ja existix una col·lecció amb el camí «%1»."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:854
-#, fuzzy, kde-format
-#| msgid "Remove Path from the Collection?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Path from the Collection?"
 msgstr "Voleu eliminar el camí de la col·lecció?"
@@ -61824,8 +61481,7 @@ msgid ""
 msgstr "Voleu eliminar el camí annexat «%1» de la col·lecció «%2»?"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:862
-#, fuzzy, kde-format
-#| msgid "Remove Collection?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Collection?"
 msgstr "Voleu eliminar la col·lecció?"
@@ -61918,15 +61574,13 @@ msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "Heu afegit prèviament una col·lecció que conté el camí «%1»."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1563
-#, fuzzy, kde-format
-#| msgid "Problem Adding Collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
-msgstr "Problema en afegir una col·lecció"
+msgstr "Problema en annexar una col·lecció"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1572
-#, fuzzy, kde-format
-#| msgid "Adding Collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "S'està afegint una col·lecció"
@@ -61937,8 +61591,7 @@ msgid "Your new collection will be created with this name:"
 msgstr "La nova col·lecció es crearà amb este nom:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1651
-#, fuzzy, kde-format
-#| msgid "Select Category"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "Seleccioneu la categoria"
@@ -61948,14 +61601,13 @@ msgstr "Seleccioneu la categoria"
 msgid "Your collection will use this category:"
 msgstr "La col·lecció utilitzarà esta categoria:"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:172
-#, fuzzy, kde-format
-#| msgid "Download required files"
+#: core/utilities/setup/downloader/filesdownloader.cpp:173
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
-msgstr "Baixa els fitxers necessaris"
+msgstr "Baixada dels fitxers necessaris"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:200
+#: core/utilities/setup/downloader/filesdownloader.cpp:203
 #, kde-format
 msgctxt "%1: folder path, %2: disk size with unit"
 msgid ""
@@ -61976,24 +61628,23 @@ msgstr ""
 "haja al voltant de %2 disponibles. <b>Una vegada finalitzada la baixada, "
 "haureu de reiniciar digiKam.</b></p>"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:212
+#: core/utilities/setup/downloader/filesdownloader.cpp:215
 #, kde-format
 msgid "Disable face engine feature and don't ask again"
 msgstr "Desactiva la característica del motor de cares i no tornes a preguntar"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:259
+#: core/utilities/setup/downloader/filesdownloader.cpp:265
 #, kde-format
 msgid "All files were downloaded successfully."
 msgstr "Tots els fitxers s'han descarregat correctament."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:268
-#, fuzzy, kde-format
-#| msgid "Download error"
+#: core/utilities/setup/downloader/filesdownloader.cpp:274
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "S'ha produït un error de baixada"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:269
+#: core/utilities/setup/downloader/filesdownloader.cpp:275
 #, kde-format
 msgid ""
 "An error occurred during the download.\n"
@@ -62012,29 +61663,28 @@ msgstr ""
 "\n"
 "Podeu intentar-ho de nou o continuar amb la descàrrega en el següent inici."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:277
-#, fuzzy, kde-format
-#| msgid "Try again"
+#: core/utilities/setup/downloader/filesdownloader.cpp:283
+#, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
-msgstr "Torneu-ho a provar"
+msgstr "Torna-ho a provar"
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:410
+#: core/utilities/setup/downloader/filesdownloader.cpp:416
 #, kde-format
 msgid "Checksum is incorrect."
 msgstr "La suma de verificació no és correcta."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:434
+#: core/utilities/setup/downloader/filesdownloader.cpp:440
 #, kde-format
 msgid "File write error."
 msgstr "S'ha produït un error d'escriptura en el fitxer."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:441
+#: core/utilities/setup/downloader/filesdownloader.cpp:447
 #, kde-format
 msgid "File open error."
 msgstr "S'ha produït un error en obrir el fitxer."
 
-#: core/utilities/setup/downloader/filesdownloader.cpp:456
+#: core/utilities/setup/downloader/filesdownloader.cpp:462
 #, kde-format
 msgid "File on the server is too large."
 msgstr "El fitxer que hi ha en el servidor és massa gran."
@@ -62352,7 +62002,7 @@ msgstr "En tancar l'editor"
 #, kde-format
 msgctxt "@option:radio"
 msgid "Always ask to save changes"
-msgstr "Pregunta sempre per a guardar els canvis"
+msgstr "Pregunta sempre per que es guardarà els canvis"
 
 #: core/utilities/setup/editor/setupversioning.cpp:221
 #, kde-format
@@ -62563,9 +62213,7 @@ msgstr ""
 "codificació obert i lliure de cànons. </item>"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:135
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title:window, reset to default warning dialog"
 msgid "Warning"
 msgstr "Avís"
@@ -62640,18 +62288,16 @@ msgid "Reset to Default"
 msgstr "Restablix als valors predeterminats"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:144
-#, fuzzy, kde-format
-#| msgid "New Xmp Namespace"
+#, kde-format
 msgctxt "@title:window"
 msgid "New XMP Namespace"
 msgstr "Espai de nom XMP nou"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:148
-#, fuzzy, kde-format
-#| msgid "Edit Xmp Namespace"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit XMP Namespace"
-msgstr "Edició de l'espai de nom XMP"
+msgstr "Editeu l'espai de nom XMP"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:238
 #, kde-format
@@ -62846,9 +62492,7 @@ msgstr ""
 "recomanem fermament no activar esta opció."
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:271
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Yes I understand"
+#, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
 msgstr "Sí, ho entenc"
@@ -63432,7 +63076,8 @@ msgstr "Escriu a fitxers laterals"
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to save, as specified, metadata to XMP sidecar files."
-msgstr "Activeu esta opció per a guardar les metadades a fitxers laterals XMP."
+msgstr ""
+"Activeu esta opció per que es guardarà les metadades a fitxers laterals XMP."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:48
 #, kde-format
@@ -63848,109 +63493,109 @@ msgstr ""
 "reiniciar. Alguns dels paràmetres depenen del maquinari i podrien no tindre "
 "cap efecte.</b>"
 
-#: core/utilities/setup/setup.cpp:149
+#: core/utilities/setup/setup.cpp:153
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Database"
 msgstr "Base de dades"
 
-#: core/utilities/setup/setup.cpp:150
+#: core/utilities/setup/setup.cpp:154
 #, kde-format
 msgctxt "@title"
 msgid ""
 "Database Settings\n"
 "Customize database settings"
 msgstr ""
-"Configuració de la base de dades\n"
+"Configureu la base de dades\n"
 "Personalitza la configuració de la base de dades"
 
-#: core/utilities/setup/setup.cpp:154
+#: core/utilities/setup/setup.cpp:158
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
 msgstr "Col·leccions"
 
-#: core/utilities/setup/setup.cpp:155
+#: core/utilities/setup/setup.cpp:159
 #, kde-format
 msgctxt "@title"
 msgid ""
 "Collections Settings\n"
 "Set root albums locations"
 msgstr ""
-"Configuració de les col·leccions\n"
+"Configureu les col·leccions\n"
 "Establix les ubicacions dels àlbums principals"
 
-#: core/utilities/setup/setup.cpp:159
+#: core/utilities/setup/setup.cpp:163
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Views"
 msgstr "Vistes"
 
-#: core/utilities/setup/setup.cpp:160
+#: core/utilities/setup/setup.cpp:164
 #, kde-format
 msgctxt "@title"
 msgid ""
 "Application Views Settings\n"
 "Customize the look of the views"
 msgstr ""
-"Configuració de les vistes de l'aplicació\n"
+"Configureu les vistes de l'aplicació\n"
 "Personalitza l'aspecte de les vistes"
 
-#: core/utilities/setup/setup.cpp:164
+#: core/utilities/setup/setup.cpp:168
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Tool-Tip"
 msgstr "Consells emergents"
 
-#: core/utilities/setup/setup.cpp:165
+#: core/utilities/setup/setup.cpp:169
 #, kde-format
 msgctxt "@title"
 msgid ""
 "Items Tool-Tip Settings\n"
 "Customize information in item tool-tips"
 msgstr ""
-"Configuració dels consells emergents\n"
+"Configureu els consells emergents\n"
 "Personalitza la informació dels consells d'eina dels elements"
 
-#: core/utilities/setup/setup.cpp:170
+#: core/utilities/setup/setup.cpp:175
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Video"
 msgstr "Vídeo"
 
-#: core/utilities/setup/setup.cpp:171
+#: core/utilities/setup/setup.cpp:176
 #, kde-format
 msgctxt "@title"
 msgid ""
 "Video Preview Settings\n"
 "Customize settings to play video media"
 msgstr ""
-"Configuració de la vista prèvia de vídeo\n"
+"Configureu la vista prèvia de vídeo\n"
 "Personalitza la configuració per a reproduir fitxers multimèdia de vídeo"
 
-#: core/utilities/setup/setup.cpp:176
+#: core/utilities/setup/setup.cpp:182
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Metadata"
 msgstr "Metadades"
 
-#: core/utilities/setup/setup.cpp:177
+#: core/utilities/setup/setup.cpp:183
 #, kde-format
 msgctxt "@title"
 msgid ""
 "Embedded Image Information Management\n"
 "Setup relations between images and metadata"
 msgstr ""
-"Gestió de la informació incrustada de les imatges\n"
+"Gestioneu la informació incrustada de les imatges\n"
 "Configura les relacions entre imatges i metadades"
 
-#: core/utilities/setup/setup.cpp:181
+#: core/utilities/setup/setup.cpp:187
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Templates"
 msgstr "Plantilles"
 
-#: core/utilities/setup/setup.cpp:182
+#: core/utilities/setup/setup.cpp:188
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -63960,110 +63605,110 @@ msgstr ""
 "Plantilles de metadades\n"
 "Gestiona la col·lecció de les plantilles de metadades"
 
-#: core/utilities/setup/setup.cpp:186
+#: core/utilities/setup/setup.cpp:192
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Editor"
 msgstr "Editor d'imatges"
 
-#: core/utilities/setup/setup.cpp:187
+#: core/utilities/setup/setup.cpp:193
 #, kde-format
 msgctxt "@title"
 msgid ""
 "Image Editor Settings\n"
 "Customize the image editor settings"
 msgstr ""
-"Configuració de l'editor d'imatges\n"
+"Configureu l'editor d'imatges\n"
 "Personalitza la configuració de l'editor d'imatges"
 
-#: core/utilities/setup/setup.cpp:191
+#: core/utilities/setup/setup.cpp:197
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Color Management"
 msgstr "Gestió del color"
 
-#: core/utilities/setup/setup.cpp:192
+#: core/utilities/setup/setup.cpp:198
 #, kde-format
 msgctxt "@title"
 msgid ""
 "Settings for Color Management\n"
 "Customize the color management settings"
 msgstr ""
-"Configuració de la gestió del color\n"
+"Configureu la gestió del color\n"
 "Personalitza la configuració de la gestió del color"
 
-#: core/utilities/setup/setup.cpp:196
+#: core/utilities/setup/setup.cpp:202
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Light Table"
 msgstr "Taula de llum"
 
-#: core/utilities/setup/setup.cpp:197
+#: core/utilities/setup/setup.cpp:203
 #, kde-format
 msgctxt "@title"
 msgid ""
 "Light Table Settings\n"
 "Customize tool used to compare images"
 msgstr ""
-"Configuració de la taula de llum\n"
+"Configureu la taula de llum\n"
 "Personalitza l'eina emprada en comparar les imatges"
 
-#: core/utilities/setup/setup.cpp:201
+#: core/utilities/setup/setup.cpp:207
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Image Quality Sorter"
 msgstr "Ordena les imatges segons la qualitat"
 
-#: core/utilities/setup/setup.cpp:202
+#: core/utilities/setup/setup.cpp:208
 #, kde-format
 msgctxt "@title"
 msgid ""
 "Image Quality Sorter Settings\n"
 "Customize default settings to perform image triaging by quality"
 msgstr ""
-"Configuració de l'ordenador d'imatges segons la qualitat\n"
+"Configureu l'ordenador d'imatges segons la qualitat\n"
 "Personalitza la configuració predeterminada per a realitzar el triatge "
 "d'imatges segons la qualitat"
 
-#: core/utilities/setup/setup.cpp:206
+#: core/utilities/setup/setup.cpp:212
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Cameras"
 msgstr "Càmeres"
 
-#: core/utilities/setup/setup.cpp:207
+#: core/utilities/setup/setup.cpp:213
 #, kde-format
 msgctxt "@title"
 msgid ""
 "Camera Settings\n"
 "Manage your camera devices"
 msgstr ""
-"Configuració de la càmera\n"
+"Configureu la càmera\n"
 "Gestiona els dispositius de càmera"
 
-#: core/utilities/setup/setup.cpp:214
+#: core/utilities/setup/setup.cpp:220
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Plugins"
 msgstr "Connectors"
 
-#: core/utilities/setup/setup.cpp:215
+#: core/utilities/setup/setup.cpp:221
 #, kde-format
 msgctxt "@title"
 msgid ""
 "Plug-in Settings\n"
 "Set which plugins will be accessible from application"
 msgstr ""
-"Configuració dels connectors\n"
+"Configureu els connectors\n"
 "Establix els connectors que seran accessibles des de l'aplicació"
 
-#: core/utilities/setup/setup.cpp:219
+#: core/utilities/setup/setup.cpp:225
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Miscellaneous"
 msgstr "Miscel·lània"
 
-#: core/utilities/setup/setup.cpp:220
+#: core/utilities/setup/setup.cpp:226
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -64776,13 +64421,13 @@ msgstr "Mode de la càmera i el programa"
 #: core/utilities/setup/setuptooltip.cpp:431
 #, kde-format
 msgid "Camera flash settings"
-msgstr "Configuració del flaix de la càmera"
+msgstr "Configureu el flaix de la càmera"
 
 #: core/utilities/setup/setuptooltip.cpp:262
 #: core/utilities/setup/setuptooltip.cpp:435
 #, kde-format
 msgid "Camera white balance settings"
-msgstr "Configuració del balanç de blancs de la càmera"
+msgstr "Configureu el balanç de blancs de la càmera"
 
 #: core/utilities/setup/setuptooltip.cpp:279
 #, kde-format
@@ -65061,120 +64706,3 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Voleu restablir tota la configuració als seus valors predeterminats?"
-
-#~ msgctxt "@title"
-#~ msgid "Geolocation Editor"
-#~ msgstr "Editor de la geolocalització"
-
-#~ msgctxt "@title"
-#~ msgid "Error"
-#~ msgstr "S'ha produït un error"
-
-#~ msgid "Select GPX File to Load"
-#~ msgstr "Seleccioneu el fitxer GPX que s'ha de carregar"
-
-#~ msgctxt "@title"
-#~ msgid "Exposure Blending"
-#~ msgstr "Barreja de l'exposició"
-
-#~ msgctxt "@action: button"
-#~ msgid "Details..."
-#~ msgstr "Detalls..."
-
-#~ msgctxt "@title"
-#~ msgid "Destination Folder"
-#~ msgstr "Carpeta de destinació"
-
-#~ msgctxt "@title: window"
-#~ msgid "Error while to set image as wallpaper"
-#~ msgstr "S'ha produït un error en establir la imatge com a fons de pantalla"
-
-#~ msgctxt "@action"
-#~ msgid "Start Upload"
-#~ msgstr "Comença la pujada"
-
-#~ msgctxt "@title: window"
-#~ msgid "Error"
-#~ msgstr "S'ha produït un error"
-
-#~ msgctxt "@action: button"
-#~ msgid "Continue"
-#~ msgstr "Continua"
-
-#~ msgctxt "@action: button"
-#~ msgid "Cancel"
-#~ msgstr "Cancel·la"
-
-#~ msgctxt "@title"
-#~ msgid "Uploading Failed"
-#~ msgstr "Ha fallat la pujada"
-
-#~ msgctxt "@title"
-#~ msgid "Login Failed"
-#~ msgstr "No s'ha pogut fer l'inici de la sessió"
-
-#~ msgctxt "@action"
-#~ msgid "Start Download"
-#~ msgstr "Comença la baixada"
-
-#~ msgctxt "@title: window"
-#~ msgid "Warning"
-#~ msgstr "Avís"
-
-#~ msgctxt "@action"
-#~ msgid "Continue"
-#~ msgstr "Continua"
-
-#~ msgctxt "@title: album properties"
-#~ msgid "New Album"
-#~ msgstr "Àlbum nou"
-
-#~ msgid "Database connection test"
-#~ msgstr "Prova de connexió amb la base de dades"
-
-#~ msgctxt "@title"
-#~ msgid "Shared Libraries and Components Information"
-#~ msgstr "Informació de les biblioteques compartides i components"
-
-#~ msgctxt "@title"
-#~ msgid "List of detected hardware"
-#~ msgstr "Llista del maquinari detectat"
-
-#~ msgctxt "@title: favorite item properties"
-#~ msgid "Could Not Calculate Average"
-#~ msgstr "No s'ha pogut calcular la mitjana"
-
-#~ msgid "Add Bookmark"
-#~ msgstr "Afig un punt"
-
-#~ msgctxt "@title:window"
-#~ msgid "Add new tag:"
-#~ msgstr "Afegiu una etiqueta nova:"
-
-#~ msgctxt "@title; warning while saving progress"
-#~ msgid "Warning"
-#~ msgstr "Avís"
-
-#~ msgctxt "@title"
-#~ msgid "New Image File Name"
-#~ msgstr "Nom nou del fitxer d'imatge"
-
-#~ msgctxt "@title"
-#~ msgid "Overwrite File?"
-#~ msgstr "Voleu sobreescriure el fitxer?"
-
-#~ msgctxt "@title"
-#~ msgid "Error Saving File"
-#~ msgstr "S'ha produït un error en guardar el fitxer"
-
-#~ msgctxt "@title"
-#~ msgid "Batch Queue Manager"
-#~ msgstr "Gestor de la cua per lots"
-
-#~ msgctxt "@title: reset to default warning dialog"
-#~ msgid "Warning"
-#~ msgstr "Avís"
-
-#~ msgctxt "@title"
-#~ msgid "Configure"
-#~ msgstr "Configura"
