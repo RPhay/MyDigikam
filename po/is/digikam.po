@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-17 00:54+0000\n"
-"PO-Revision-Date: 2023-01-16 21:39+0000\n"
+"POT-Creation-Date: 2023-01-18 00:55+0000\n"
+"PO-Revision-Date: 2023-01-17 23:21+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -3225,11 +3225,10 @@ msgid "Add hamburger menu to tool-bar if main menu is hidden."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:147
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid "Turn on this option to write metadata into DNG files."
+#, kde-format
 msgid "Add new option to write metadata to files with ExifTool backend."
-msgstr "Veldu þennan möguleika til að skrifa lýsigögn í DNG-skrár."
+msgstr ""
+"Bættu við möguleika til að skrifa lýsigögn í skrár með ExifTool-bakenda."
 
 #: core/app/views/stack/welcomepageview.cpp:148
 #, fuzzy, kde-format
@@ -3267,16 +3266,14 @@ msgid ""
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:153
-#, fuzzy, kde-format
-#| msgid "Return items by number of face regions"
+#, kde-format
 msgid "Add search for items by number of face regions."
-msgstr "Finna atriði eftir fjölda andlitasvæða"
+msgstr "Bættu við leit að atriðum eftir fjölda andlitasvæða."
 
 #: core/app/views/stack/welcomepageview.cpp:154
-#, fuzzy, kde-format
-#| msgid "Return items without face regions"
+#, kde-format
 msgid "Add search for items without face regions."
-msgstr "Finna atriði án andlitasvæða"
+msgstr "Bættu við leit að atriðum án andlitasvæða."
 
 #: core/app/views/stack/welcomepageview.cpp:155
 #, kde-format
@@ -3346,14 +3343,11 @@ msgid ""
 msgstr ""
 
 #: core/app/views/stack/welcomepageview.cpp:165
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to assign pick label metadata by image quality"
+#, kde-format
 msgid ""
 "Add new tool to assign pick label automatically by parsing image quality."
 msgstr ""
-"Virkjaðu þennan möguleika til að úthluta sérmerkingum sem byggjast á "
-"myndgæðum"
+"Bættu við nýju verkfæri til að úthluta sérmerkingum sem byggjast á myndgæðum."
 
 #: core/app/views/stack/welcomepageview.cpp:166
 #, kde-format
@@ -3377,7 +3371,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview.cpp:169
 #, kde-format
 msgid "Update internal RAW engine to last stable Libraw 0.21.1."
-msgstr ""
+msgstr "Uppfært innra RAW-kerfið í nýjustu Libraw 0.21.1."
 
 #: core/app/views/stack/welcomepageview.cpp:170
 #, kde-format
@@ -12495,9 +12489,7 @@ msgstr[0] "1 mynd færð í '%2'"
 msgstr[1] "%1 myndir færðar í '%2'"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:92
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Metadata Editor"
+#, kde-format
 msgctxt "@title:window"
 msgid "Metadata Editor"
 msgstr "Breytingaritill lýsigagna"
@@ -12533,9 +12525,7 @@ msgid "Edit XMP"
 msgstr "Breyta XMP"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:311
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "%1 (%2/%3) - Edit Metadata"
+#, kde-format
 msgctxt "@title:window"
 msgid "%1 (%2/%3) - Edit Metadata"
 msgstr "%1 (%2/%3) - Breyta lýsigögnum"
@@ -16165,9 +16155,7 @@ msgstr ""
 "notuð ef þú hefur valið að nota staðlaðan XMP/NAA tilvísanakóða."
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Adjust Time & Date"
+#, kde-format
 msgctxt "@title:window"
 msgid "Adjust Time & Date"
 msgstr "Breyta tíma & dagsetningu"
@@ -16568,8 +16556,7 @@ msgstr ""
 "wikipedia.org/wiki/Icalendar'>iCalendar</a> sniða.</p>"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:111
-#, fuzzy, kde-format
-#| msgid "Create Calendar"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Calendar"
 msgstr "Búa til dagatal"
@@ -16603,8 +16590,7 @@ msgstr "Dagatalsskrá (*.ics)"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:157
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:161
-#, fuzzy, kde-format
-#| msgid "Select Calendar Data File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Calendar Data File"
 msgstr "Veldu dagatalsskrá"
@@ -16635,8 +16621,7 @@ msgstr ""
 "prentaðir fyrir árið %1:<br/>"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:289
-#, fuzzy, kde-format
-#| msgid "Print Calendar"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print Calendar"
 msgstr "Prenta dagatal"
@@ -16663,8 +16648,7 @@ msgstr "Prentun lokið"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:98
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
-#, fuzzy, kde-format
-#| msgid "DNG Converter"
+#, kde-format
 msgctxt "@title:window"
 msgid "DNG Converter"
 msgstr "DNG-umbreyting"
@@ -17089,40 +17073,31 @@ msgid "Clear all"
 msgstr "Hreinsa allt"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:127
-#, fuzzy, kde-format
-#| msgid "Exposure Blending"
+#, kde-format
 msgctxt "@title:window"
 msgid "Exposure Blending"
-msgstr "Blöndun lýsingar"
+msgstr "Lýsingarblöndun"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:136
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "&Save"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Save"
 msgstr "Vi&sta"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:138
-#, fuzzy, kde-format
-#| msgctxt "@info: tooltip"
-#| msgid "Process and save selected items."
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Process and save selected items."
 msgstr "Vinna með og vista valin atriði."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:142
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "&Preview"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Preview"
-msgstr "&Forskoða"
+msgstr "&Forskoðun"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:144
-#, fuzzy, kde-format
-#| msgctxt "@info: tooltip"
-#| msgid "Process a preview of bracketed images stack with current settings."
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Process a preview of bracketed images stack with current settings."
 msgstr "Vinna forskoðun á myndaröðinni með núverandi stillingum"
@@ -17167,9 +17142,7 @@ msgid "File Name Template: "
 msgstr "Forsnið fyrir skráaheiti: "
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:317
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Enfuse Processing Messages"
+#, kde-format
 msgctxt "@title:window"
 msgid "Enfuse Processing Messages"
 msgstr "Skilaboð frá vinnslu með Enfuse"
@@ -17499,9 +17472,7 @@ msgid "See processing messages below."
 msgstr "Skoðaðu skilaboðin sem komu upp í vinnslunni hér fyrir neðan."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingwizard.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Stacked Images Tool"
+#, kde-format
 msgctxt "@title:window"
 msgid "Stacked Images Tool"
 msgstr "Myndstaflaverkfæri"
@@ -17937,9 +17908,7 @@ msgid "Gallery Title:"
 msgstr "Titill myndasafns:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Destination Folder:"
+#, kde-format
 msgctxt "@label"
 msgid "Destination folder:"
 msgstr "Móttökumappa:"
@@ -17948,8 +17917,7 @@ msgstr "Móttökumappa:"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:120
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:267
-#, fuzzy, kde-format
-#| msgid "Destination Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Destination Folder"
 msgstr "Móttökumappa"
@@ -18009,8 +17977,7 @@ msgid "Author: %1<br/><br/>"
 msgstr "Höfundur: %1<br/><br/>"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
-#, fuzzy, kde-format
-#| msgid "Create HTML Gallery"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create HTML Gallery"
 msgstr "Búa til HTML-myndasafn"
@@ -18156,21 +18123,18 @@ msgid "Set here the project title"
 msgstr "Settu hér inn titil verkefnisins."
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:81
-#, fuzzy, kde-format
-#| msgid "Projects Folder:"
+#, kde-format
 msgid "Projects folder:"
-msgstr "Mappa verkefnis"
+msgstr "Mappa verkefnis:"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:84
-#, fuzzy, kde-format
-#| msgid "Projects Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Projects Folder"
 msgstr "Mappa verkefnis"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:73
-#, fuzzy, kde-format
-#| msgid "Create jAlbum Album"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create jAlbum Album"
 msgstr "Búa til jAlbum-albúm"
@@ -18191,9 +18155,7 @@ msgid "Generating jAlbum"
 msgstr "Útbý jAlbum"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Share Files with DLNA Media Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Share Files With DLNA Media Server"
 msgstr "Deila skrám með DLNA-margmiðlunarþjóni"
@@ -18238,9 +18200,7 @@ msgstr ""
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:314
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:64
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Media Server Contents"
+#, kde-format
 msgctxt "@title:window"
 msgid "Media Server Contents"
 msgstr "Efni á margmiðlunarþjóni"
@@ -18324,9 +18284,7 @@ msgstr "Samnýtt (deild) atriði"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:340
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Starting Media Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Starting Media Server"
 msgstr "Ræsa margmiðlunarþjón"
@@ -18393,17 +18351,13 @@ msgid "MJPEG Server cannot be started!"
 msgstr "Ekki er hægt að ræsa MJPEG-þjón!"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Share Files with MJPEG Stream Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Share Files With MJPEG Stream Server"
 msgstr "Deila skrám með MJPEG-streymisþjóni"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "MJPEG Server Contents"
+#, kde-format
 msgctxt "@title:window"
 msgid "MJPEG Server Contents"
 msgstr "Efni á MJPEG-þjóni"
@@ -18939,9 +18893,7 @@ msgstr ""
 "Tesseract er kerfi fyrir ljóslestur (OCR) sem vinnur á mörgum stýrikerfum."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:122
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "OCR Text Converter"
+#, kde-format
 msgctxt "@title:window"
 msgid "OCR Text Converter"
 msgstr "Umbreyting texta með OCR-ljóslestri"
@@ -19022,8 +18974,7 @@ msgid "Success"
 msgstr "Tókst"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:585
-#, fuzzy, kde-format
-#| msgid "Text Converter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Text Converter"
 msgstr "Umbreyting texta"
@@ -20469,8 +20420,7 @@ msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:354
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
-#, fuzzy, kde-format
-#| msgid "Print Creator"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print Creator"
 msgstr "Prentstjórnun"
@@ -20510,8 +20460,7 @@ msgstr "Veldu hér kjörsniðið sem á að nota við að flytja prentun út sem
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:103
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:115
-#, fuzzy, kde-format
-#| msgid "Destination Folder:"
+#, kde-format
 msgid "Destination folder:"
 msgstr "Móttökumappa:"
 
@@ -20556,8 +20505,7 @@ msgid "Remove"
 msgstr "Fjarlægja"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1101
-#, fuzzy, kde-format
-#| msgid "Custom layout"
+#, kde-format
 msgctxt "@title:window"
 msgid "Custom Layout"
 msgstr "Sérsniðin framsetning"
@@ -20733,8 +20681,7 @@ msgstr "Skrá með eiginleikum mynda tókst"
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:334
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:984
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:997
-#, fuzzy, kde-format
-#| msgid "Processing Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Processing Failed"
 msgstr "Vinnsla mistókst"
@@ -21063,8 +21010,7 @@ msgstr ""
 "fjarlægð."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:75
-#, fuzzy, kde-format
-#| msgid "Send by Email"
+#, kde-format
 msgctxt "@title:window"
 msgid "Send by Email"
 msgstr "Senda með tölvupósti"
@@ -21256,8 +21202,7 @@ msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr "Tímalengd : %1 sekúndur á atriði, alls %2 sekúndur (án millifærslna)"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
-#, fuzzy, kde-format
-#| msgid "Create a Video Slideshow"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create a Video Slideshow"
 msgstr "Búa til myndskeiða-skyggnusýningu"
@@ -21307,9 +21252,7 @@ msgstr "Setja sem skjáborðsmynd"
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_dbus.cpp:92
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_macos.cpp:64
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error while to set image as wallpaper"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error While to Set Image as Wallpaper"
 msgstr "Villa við að setja mynd sem bakgrunn skjáborðsins"
@@ -21381,8 +21324,7 @@ msgid "Cannot apply changes to desktop wallpaper."
 msgstr "Get ekki beitt breytingum á bakgrunnsmynd skjáborðs."
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:59
-#, fuzzy, kde-format
-#| msgid "WallPaper Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "WallPaper Settings"
 msgstr "Stillingar á bakgrunnsmynd"
@@ -21478,8 +21420,7 @@ msgstr "OpenGL myndaskoðari"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
-#, fuzzy, kde-format
-#| msgid "OpenGL error"
+#, kde-format
 msgid "OpenGL Error"
 msgstr "OpenGL villa"
 
@@ -21494,8 +21435,7 @@ msgid "No OpenGL context found"
 msgstr "Ekkert OpenGL samhengi fannst"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
-#, fuzzy, kde-format
-#| msgid "Soundtrack preview"
+#, kde-format
 msgctxt "@title:window"
 msgid "Soundtrack Preview"
 msgstr "Sýnishorn af hljóðrás"
@@ -21560,8 +21500,7 @@ msgstr ""
 "Sýningartími skyggna er lengri en hljóðrásin. Tillaga: bættu við hljóðskrám."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:362
-#, fuzzy, kde-format
-#| msgid "Select sound files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Sound Files"
 msgstr "Velja hljóðskrár"
@@ -21577,11 +21516,10 @@ msgid "You can only move files down one at a time."
 msgstr "Þú getur aðeins fært niður eina mynd í einu."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:489
-#, fuzzy, kde-format
-#| msgid "Load playlist"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Playlist"
-msgstr "Hlaða spilunarlista"
+msgstr "Hlaða inn spilunarlista"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:490
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:549
@@ -21590,8 +21528,7 @@ msgid "Playlist (*.m3u)"
 msgstr "Spilunarlisti (*.m3u)"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:548
-#, fuzzy, kde-format
-#| msgid "Save playlist"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Playlist"
 msgstr "Vista spilunarlista"
@@ -21654,7 +21591,7 @@ msgstr "Forskoðun..."
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:159
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:154
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:389
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:98
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:107
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
 #: core/utilities/searchwindow/searchgroup_label.cpp:214
 #, kde-format
@@ -22002,9 +21939,7 @@ msgid "Use Open&GL transitions"
 msgstr "Nota Open&GL tilfærslur"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:75
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Presentation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Presentation"
 msgstr "Kynning"
@@ -22173,8 +22108,7 @@ msgstr "Kynning..."
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:227
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:267
-#, fuzzy, kde-format
-#| msgid "Specify delay for slide show"
+#, kde-format
 msgctxt "@title:window"
 msgid "Specify Delay for Slide Show"
 msgstr "Tilgreindu töf fyrir skyggnusýningu"
@@ -22187,8 +22121,7 @@ msgstr "Töf:"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:253
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:429
-#, fuzzy, kde-format
-#| msgid "Delete image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Image"
 msgstr "Eyða mynd"
@@ -22272,8 +22205,7 @@ msgid "Blobs"
 msgstr "Blöðrur"
 
 #: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:120
-#, fuzzy, kde-format
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Skyggnusýning"
@@ -22287,8 +22219,7 @@ msgid "Giving a slideshow"
 msgstr "Halda skyggnusýningu"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:107
-#, fuzzy, kde-format
-#| msgid "Slideshow Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Slideshow Settings"
 msgstr "Stillingar skyggnusýninga"
@@ -22697,9 +22628,7 @@ msgid "Failed to list folders"
 msgstr "Mistókst að gera möppulista"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Export to Box"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Box"
 msgstr "Flytja út á Box"
@@ -22716,16 +22645,13 @@ msgstr "Flytja út á Box"
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:45
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:132
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:83
-#, fuzzy, kde-format
-#| msgid "Start Upload"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Upload"
-msgstr "Hefja sendingu"
+msgstr "Hefja innsendingu"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:83
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Start upload to Box"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Box"
 msgstr "Hefja sendingu í Box"
@@ -22777,8 +22703,7 @@ msgstr "Auðkenning mistókst. Ýttu á 'Áfram' til að auðkenna."
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:259
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:675
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:260
-#, fuzzy, kde-format
-#| msgid "Continue"
+#, kde-format
 msgctxt "@action:button"
 msgid "Continue"
 msgstr "Halda áfram"
@@ -22795,8 +22720,7 @@ msgstr "Halda áfram"
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:260
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:676
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:261
-#, fuzzy, kde-format
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Hætta við"
@@ -22830,11 +22754,10 @@ msgstr "Box-útflutningur"
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
-#, fuzzy, kde-format
-#| msgid "Uploading Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Uploading Failed"
-msgstr "Upphleðsla mistókst"
+msgstr "Innsending mistókst"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:326
 #, kde-format
@@ -22855,8 +22778,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:386
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:368
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:391
-#, fuzzy, kde-format
-#| msgid "Login Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Login Failed"
 msgstr "Innskráning mistókst"
@@ -22910,15 +22832,13 @@ msgid "Export to &Dropbox..."
 msgstr "Flytja út á &Dropbox..."
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:78
-#, fuzzy, kde-format
-#| msgid "Export to Dropbox"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Dropbox"
 msgstr "Flytja út á Dropbox"
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:81
-#, fuzzy, kde-format
-#| msgid "Start upload to Dropbox"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Dropbox"
 msgstr "Hefja sendingu í Dropbox"
@@ -23028,8 +22948,7 @@ msgid "Export to &Facebook..."
 msgstr "Flytja út á &Facebook..."
 
 #: core/dplugins/generic/webservices/facebook/fbplugin.cpp:110
-#, fuzzy, kde-format
-#| msgid "Facebook"
+#, kde-format
 msgctxt "@title:window"
 msgid "Facebook"
 msgstr "Facebook"
@@ -23105,15 +23024,13 @@ msgid "Validate previous session..."
 msgstr "Fullgilda fyrri setu..."
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:115
-#, fuzzy, kde-format
-#| msgid "Export to Facebook Web Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Facebook Web Service"
 msgstr "Flytja út á Facebook vefþjónustu"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:118
-#, fuzzy, kde-format
-#| msgid "Start upload to Facebook web service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Facebook web service"
 msgstr "Hefja sendingu á Facebook vefþjónustu"
@@ -23167,8 +23084,7 @@ msgid "Target location: "
 msgstr "Úttaksstaðsetning: "
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:112
-#, fuzzy, kde-format
-#| msgid "Target Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Target Folder"
 msgstr "Úttaksmappa"
@@ -23179,8 +23095,7 @@ msgid "Sets the target address to copy the items to."
 msgstr "Veldu úttaksvistfangið sem senda á atriðin til."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:115
-#, fuzzy, kde-format
-#| msgid "Target File behavior:"
+#, kde-format
 msgid "Target file behavior:"
 msgstr "Hegðun úttaksskrár:"
 
@@ -23232,31 +23147,27 @@ msgid "This is the list of items to copy to the specified target."
 msgstr "Þetta er listi yfir þau atriði sem á að senda á tilgreint úttak."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:91
-#, fuzzy, kde-format
-#| msgid "Export to Local Storage"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Local Storage"
 msgstr "Flytja út á staðværa geymslu"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:94
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:74
-#, fuzzy, kde-format
-#| msgid "Start export"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Export"
 msgstr "Hefja útflutning"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:95
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:75
-#, fuzzy, kde-format
-#| msgid "Start export to the specified target"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
 msgstr "Hefja útflutning á tilgreint úttak"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:217
-#, fuzzy, kde-format
-#| msgid "Copy not completed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Copy not Completed"
 msgstr "Afritun er ekki lokið"
@@ -23315,8 +23226,7 @@ msgid "This is the list of images to upload to the specified target."
 msgstr "Þetta er listi yfir þær myndir sem á að senda á tilgreint úttak."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:162
-#, fuzzy, kde-format
-#| msgid "Select target..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Target..."
 msgstr "Veldu úttak..."
@@ -23333,15 +23243,13 @@ msgid "<i>not selected</i>"
 msgstr "<i>ekki valið</i>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:71
-#, fuzzy, kde-format
-#| msgid "Export to Remote Storage"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Remote Storage"
 msgstr "Flytja út á fjartengda geymslu"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:186
-#, fuzzy, kde-format
-#| msgid "Upload not completed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Upload not Completed"
 msgstr "Sendingu skráa er ekki lokið"
@@ -23366,37 +23274,31 @@ msgid "This is the list of images to import into the current album."
 msgstr "Þetta er listi yfir þær myndir sem á að senda í tilgreint albúm."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Select items to import..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Items to Import..."
 msgstr "Veldu atriði til að flytja inn..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:63
-#, fuzzy, kde-format
-#| msgid "Import from Remote Storage"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import from Remote Storage"
-msgstr "Flytja inn frá fjartengdum stað"
+msgstr "Flytja inn úr fjartengdri geymslu"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:67
-#, fuzzy, kde-format
-#| msgid "Start import"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Import"
 msgstr "Hefja innflutning"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:68
-#, fuzzy, kde-format
-#| msgid ""
-#| "Start importing the specified images into the currently selected album."
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start importing the specified images into the currently selected album."
 msgstr "Hefja innflutning á tilgreindum myndum inn í valið albúm."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:138
-#, fuzzy, kde-format
-#| msgid "Import not completed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import not Completed"
 msgstr "Innflutningi skráa er ekki lokið"
@@ -23870,16 +23772,14 @@ msgid "Fewer tag options"
 msgstr "Færri valkostir merkja"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:148
-#, fuzzy, kde-format
-#| msgid "Export to %1 Web Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to %1 Web Service"
 msgstr "Útflutningur á %1 vefþjónustu"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:187
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:240
-#, fuzzy, kde-format
-#| msgid "Start Uploading"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Uploading"
 msgstr "Byrja innsendingu"
@@ -24145,60 +24045,47 @@ msgid "Build a combined tag string."
 msgstr "Búa til samsettan merkjastreng."
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Export to Google Drive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Google Drive"
 msgstr "Flytja út á Google Drive"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:143
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Start upload to Google Drive"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Google Drive"
 msgstr "Hefja sendingu á Google Drive"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Export to Google Photos Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Google Photos Service"
 msgstr "Útflutningur á Google Photos vefþjónustu"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:190
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Start upload to Google Photos Service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Google Photos service"
-msgstr "Byrja sendingu á Google Photos vefþjónustu"
+msgstr "Hefja sendingu á Google Photos vefþjónustu"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:196
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Import from Google Photos Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import from Google Photos Service"
 msgstr "Flytja inn frá Google Photos vefþjónustu"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:198
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:123
-#, fuzzy, kde-format
-#| msgid "Start Download"
+#, kde-format
 msgctxt "@action:button"
 msgid "Start Download"
 msgstr "Hefja niðurhal"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:199
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Start download from Google Photos service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start download from Google Photos service"
-msgstr "Byrja niðurhal frá Google Photos vefþjónustu"
+msgstr "Hefja niðurhal frá Google Photos vefþjónustu"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:363
 #: core/dplugins/generic/webservices/google/gswindow.cpp:430
@@ -24276,8 +24163,7 @@ msgstr ""
 "Engin mynd var send inn á notandaaðganginn þinn."
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1069
-#, fuzzy, kde-format
-#| msgid "OK"
+#, kde-format
 msgctxt "@action:button"
 msgid "OK"
 msgstr "Í lagi"
@@ -24388,8 +24274,7 @@ msgid "Create new gallery"
 msgstr "Búa til nýtt myndasafn"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:104
-#, fuzzy, kde-format
-#| msgid "Export to ImageShack"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to ImageShack"
 msgstr "Flytja út á Imageshack"
@@ -24397,15 +24282,13 @@ msgstr "Flytja út á Imageshack"
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:112
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:156
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:123
-#, fuzzy, kde-format
-#| msgid "Upload"
+#, kde-format
 msgctxt "@action:button"
 msgid "Upload"
 msgstr "Senda inn"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:113
-#, fuzzy, kde-format
-#| msgid "Start upload to ImageShack web service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to ImageShack web service"
 msgstr "Hefja sendingu á Imageshack vefþjónustu"
@@ -24527,15 +24410,13 @@ msgid "Upload Anonymously"
 msgstr "Senda inn nafnlaust"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:153
-#, fuzzy, kde-format
-#| msgid "Export to imgur.com"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to imgur.com"
 msgstr "Flytja út á Imgur.com"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:157
-#, fuzzy, kde-format
-#| msgid "Start upload to Imgur"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Imgur"
 msgstr "Hefja sendingu á Imgur"
@@ -24546,8 +24427,7 @@ msgid "<i>Not logged in</i>"
 msgstr "<i>Ekki skráð(ur) inn</i>"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:250
-#, fuzzy, kde-format
-#| msgid "Authorization Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Authorization Failed"
 msgstr "Auðkenning brást"
@@ -24647,23 +24527,20 @@ msgstr "Innskráning"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1345
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1507
-#, fuzzy, kde-format
-#| msgid "ERROR while creating observation"
+#, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Creating Observation"
 msgstr "VILLA við að búa til athugun"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1585
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1703
-#, fuzzy, kde-format
-#| msgid "ERROR while uploading photo"
+#, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
 msgstr "VILLA við að senda inn ljósmynd"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1815
-#, fuzzy, kde-format
-#| msgid "ERROR while deleting observation"
+#, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
 msgstr "VILLA við að eyða athugun"
@@ -24991,8 +24868,7 @@ msgstr ""
 "útflutningur</h2></b>"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:186
-#, fuzzy, kde-format
-#| msgid "Export as %1 Observation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export as %1 Observation"
 msgstr "Flytja út sem %1 athugun"
@@ -25096,15 +24972,13 @@ msgid "Export to &Ipfs..."
 msgstr "Flytja út á &IPFS.."
 
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:120
-#, fuzzy, kde-format
-#| msgid "Export to IPFS"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to IPFS"
 msgstr "Flytja út á IPFS"
 
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:124
-#, fuzzy, kde-format
-#| msgid "Start upload to IPFS"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to IPFS"
 msgstr "Hefja sendingu á IPFS"
@@ -25627,15 +25501,13 @@ msgid "Upload Settings"
 msgstr "Sendistillingar"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:101
-#, fuzzy, kde-format
-#| msgid "Export to MediaWiki"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to MediaWiki"
 msgstr "Flytja út á MediaWiki"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:104
-#, fuzzy, kde-format
-#| msgid "Start upload to MediaWiki"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to MediaWiki"
 msgstr "Hefja sendingu á MediaWiki"
@@ -25646,8 +25518,7 @@ msgid "MediaWiki export"
 msgstr "MediaWiki útflutningur"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:338
-#, fuzzy, kde-format
-#| msgid "Login Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Login Error"
 msgstr "Villa við innskráningu"
@@ -25693,17 +25564,13 @@ msgid "Export to &Onedrive..."
 msgstr "Flytja út á &OneDrive..."
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Export to Onedrive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Onedrive"
 msgstr "Flytja út á OneDrive"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:83
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Start upload to Onedrive"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Onedrive"
 msgstr "Hefja sendingu á OneDrive"
@@ -25778,15 +25645,13 @@ msgid "Failed to list boards"
 msgstr "Mistókst að gera lista yfir borð"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:80
-#, fuzzy, kde-format
-#| msgid "Export to Pinterest"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Pinterest"
 msgstr "Flytja út á Pinterest"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:83
-#, fuzzy, kde-format
-#| msgid "Start upload to Pinterest"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Pinterest"
 msgstr "Hefja sendingu á Pinterest"
@@ -25975,8 +25840,7 @@ msgid "Resized JPEG quality:"
 msgstr "Gæði stærðarbreyttrar JPEG:"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:227
-#, fuzzy, kde-format
-#| msgid "Piwigo Export"
+#, kde-format
 msgctxt "@title:window"
 msgid "Piwigo Export"
 msgstr "Piwigo útflutningur"
@@ -26186,15 +26050,13 @@ msgid "Adding photos %v%"
 msgstr "Bæti við myndum %v%"
 
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:43
-#, fuzzy, kde-format
-#| msgid "Export to Rajce.net"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Rajce.net"
 msgstr "Flytja út á Rajce.net"
 
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:46
-#, fuzzy, kde-format
-#| msgid "Start upload to Rajce.net"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Rajce.net"
 msgstr "Hefja sendingu á Rajce.net"
@@ -26486,29 +26348,25 @@ msgid "Maximum dimension:"
 msgstr "Hámarksstærð:"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:121
-#, fuzzy, kde-format
-#| msgid "Import from SmugMug Web Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import from SmugMug Web Service"
 msgstr "Flytja inn frá SmugMug vefþjónustunni"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:124
-#, fuzzy, kde-format
-#| msgid "Start download from SmugMug web service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start download from SmugMug web service"
 msgstr "Hefja innflutning frá SmugMug vefþjónustu"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:130
-#, fuzzy, kde-format
-#| msgid "Export to SmugMug Web Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to SmugMug Web Service"
 msgstr "Flytja út á SmugMug vefþjónustuna"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:133
-#, fuzzy, kde-format
-#| msgid "Start upload to SmugMug web service"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to SmugMug web service"
 msgstr "Hefja sendingu á SmugMug vefþjónustu"
@@ -26518,8 +26376,7 @@ msgstr "Hefja sendingu á SmugMug vefþjónustu"
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:489
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:526
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1018
-#, fuzzy, kde-format
-#| msgid "SmugMug Call Failed: %1\n"
+#, kde-format
 msgid "SmugMug call failed: %1\n"
 msgstr "SmugMug skipun mistókst: %1\n"
 
@@ -26633,15 +26490,13 @@ msgid "Failed to create tweet for photo uploaded"
 msgstr "Mistókst að búa til tíst fyrir innsendu myndina"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:81
-#, fuzzy, kde-format
-#| msgid "Export to Twitter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Twitter"
 msgstr "Flytja út á Twitter"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:84
-#, fuzzy, kde-format
-#| msgid "Start upload to Twitter"
+#, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Twitter"
 msgstr "Hefja sendingu á Twitter"
@@ -26678,8 +26533,7 @@ msgid "Cannot open image at %1\n"
 msgstr "Get ekki opnað mynd á %1\n"
 
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:395
-#, fuzzy, kde-format
-#| msgid "%1 Call Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "%1 Call Failed"
 msgstr "%1 skipun mistókst"
@@ -26769,8 +26623,7 @@ msgid "<h3>This view lists user albums.</h3>"
 msgstr "<h3>Þetta birtir öll albúm notandans.</h3>"
 
 #: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:310
-#, fuzzy, kde-format
-#| msgid "%1 - Create album failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "%1 - Create Album Failed"
 msgstr "%1 - Mistókst að búa til albúm"
@@ -26815,8 +26668,7 @@ msgid "&Choose account:"
 msgstr "Veldu notandaað&gang:"
 
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:84
-#, fuzzy, kde-format
-#| msgid "Export to Web Services"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Web Services"
 msgstr "Útflutningur á vefþjónustur"
@@ -27120,8 +26972,7 @@ msgstr ""
 
 #: core/libs/album/engine/albummodificationhelper.cpp:283
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:145
-#, fuzzy, kde-format
-#| msgid "Rename Album (%1)"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rename Album (%1)"
 msgstr "Endurnefna albúm (%1)"
@@ -27309,15 +27160,13 @@ msgstr ""
 "uppsetningavalmyndina"
 
 #: core/libs/album/manager/albummanager_database.cpp:357
-#, fuzzy, kde-format
-#| msgid "Collection not found"
+#, kde-format
 msgctxt "@title:window"
 msgid "Collection not Found"
-msgstr "Myndasafnið fannst ekki"
+msgstr "Myndasafn fannst ekki"
 
 #: core/libs/album/manager/albummanager_database.cpp:459
-#, fuzzy, kde-format
-#| msgid "Database Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Database Folder"
 msgstr "Mappa fyrir gagnagrunn"
@@ -27340,8 +27189,7 @@ msgstr ""
 #: core/libs/album/manager/albummanager_database.cpp:470
 #: core/libs/album/manager/albummanager_database.cpp:538
 #: core/libs/album/manager/albummanager_database.cpp:560
-#, fuzzy, kde-format
-#| msgid "Upgrade Database"
+#, kde-format
 msgctxt "@action:button"
 msgid "Upgrade Database"
 msgstr "Uppfæra gagnagrunn"
@@ -27350,8 +27198,7 @@ msgstr "Uppfæra gagnagrunn"
 #: core/libs/album/manager/albummanager_database.cpp:540
 #: core/libs/album/manager/albummanager_database.cpp:562
 #: core/libs/album/manager/albummanager_database.cpp:610
-#, fuzzy, kde-format
-#| msgid "Create New Database"
+#, kde-format
 msgctxt "@action:button"
 msgid "Create New Database"
 msgstr "Búa til nýjan gagnagrunn"
@@ -27360,8 +27207,7 @@ msgstr "Búa til nýjan gagnagrunn"
 #: core/libs/album/manager/albummanager_database.cpp:552
 #: core/libs/album/manager/albummanager_database.cpp:602
 #: core/libs/album/manager/albummanager_database.cpp:634
-#, fuzzy, kde-format
-#| msgid "New database folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Database Folder"
 msgstr "Ný gagnagrunnsmappa"
@@ -27383,11 +27229,10 @@ msgstr ""
 #: core/libs/album/manager/albummanager_database.cpp:542
 #: core/libs/album/manager/albummanager_database.cpp:612
 #: core/libs/album/manager/albummanager_database.cpp:643
-#, fuzzy, kde-format
-#| msgid "Copy Current Database"
+#, kde-format
 msgctxt "@action:button"
 msgid "Copy Current Database"
-msgstr "Afrita núverandi gagnagrunnsskrá"
+msgstr "Afrita núverandi gagnagrunn"
 
 #: core/libs/album/manager/albummanager_database.cpp:553
 #, kde-format
@@ -27436,8 +27281,7 @@ msgstr ""
 "núgildandi gagnagrunn á þennan stað?</p> "
 
 #: core/libs/album/manager/albummanager_database.cpp:645
-#, fuzzy, kde-format
-#| msgid "Use Existing File"
+#, kde-format
 msgctxt "@action:button"
 msgid "Use Existing File"
 msgstr "Nota tiltæka skrá"
@@ -27860,8 +27704,7 @@ msgid "Refresh"
 msgstr "Endurlesa"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:305
-#, fuzzy, kde-format
-#| msgid "Scan for Faces"
+#, kde-format
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "Leita að andlitum"
@@ -27986,16 +27829,13 @@ msgid "White"
 msgstr "Hvítt"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:117
-#, fuzzy, kde-format
-#| msgid "New Album"
+#, kde-format
 msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "Nýtt albúm"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:117
-#, fuzzy, kde-format
-#| msgctxt "@title: album properties"
-#| msgid "Edit Album"
+#, kde-format
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "Breyta albúmi"
@@ -28128,9 +27968,7 @@ msgstr ""
 "\"%1\""
 
 #: core/libs/album/widgets/albumpropsedit.cpp:479
-#, fuzzy, kde-format
-#| msgctxt "@title: album properties"
-#| msgid "Could Not Calculate Average"
+#, kde-format
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "Gat ekki reiknað meðaltal"
@@ -28181,8 +28019,7 @@ msgstr[0] "1 albúm útilokað"
 msgstr[1] "%1 albúm útilokuð"
 
 #: core/libs/album/widgets/albumselectdialog.cpp:71
-#, fuzzy, kde-format
-#| msgid "Select Album"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Album"
 msgstr "Veldu albúm"
@@ -29056,8 +28893,7 @@ msgstr ""
 "með tómum gagnagrunni. "
 
 #: core/libs/database/utils/ifaces/dio.cpp:326
-#, fuzzy, kde-format
-#| msgid "File conflict"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Árekstrar milli skráa"
@@ -29084,22 +28920,19 @@ msgstr ""
 "Sleppa sjálfvirkt: skrám sem rekast á verður sleppt."
 
 #: core/libs/database/utils/ifaces/dio.cpp:336
-#, fuzzy, kde-format
-#| msgid "Rename automatically"
+#, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Endurnefna sjálfkrafa"
 
 #: core/libs/database/utils/ifaces/dio.cpp:338
-#, fuzzy, kde-format
-#| msgid "Overwrite automatically"
+#, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Skrifa yfir sjálfkrafa"
 
 #: core/libs/database/utils/ifaces/dio.cpp:340
-#, fuzzy, kde-format
-#| msgid "Skip automatically"
+#, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Sleppa henni sjálfkrafa"
@@ -29686,8 +29519,7 @@ msgstr "Mappa smámyndagagnagrunns:"
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:594
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:599
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:852
-#, fuzzy, kde-format
-#| msgid "Database Connection Test"
+#, kde-format
 msgctxt "@title:window"
 msgid "Database Connection Test"
 msgstr "Prófun gagnagrunnstengingar"
@@ -29738,8 +29570,7 @@ msgid "This path was set as a command lineoption (--database-directory)."
 msgstr "Þessi slóð var sett sem rofi á skipanalínu (--database-directory)."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:843
-#, fuzzy, kde-format
-#| msgid "Database Configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Database Configuration"
 msgstr "Uppsetning gagnagrunns"
@@ -29772,8 +29603,7 @@ msgstr ""
 "gagnagrunnsskrá."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:881
-#, fuzzy, kde-format
-#| msgid "Create Database Folder?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder?"
 msgstr "Búa til gagnagrunnsmöppu?"
@@ -29788,8 +29618,7 @@ msgstr ""
 "búi hana til fyrir þig?"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:893
-#, fuzzy, kde-format
-#| msgid "Create Database Folder Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder Failed"
 msgstr "Mistókst að búa til gagnagrunnsmöppu"
@@ -29804,11 +29633,10 @@ msgstr ""
 "<p><b>%1</b></p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:919
-#, fuzzy, kde-format
-#| msgid "No Database Write Access"
+#, kde-format
 msgctxt "@title:window"
 msgid "No Database Write Access"
-msgstr "Ekki skrifaðgangur í gagnagrunn"
+msgstr "Enginn skrifaðgangur í gagnagrunn"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:920
 #, kde-format
@@ -29820,8 +29648,7 @@ msgstr ""
 "gagnagrunnsskrána.<br/>Veldu aðra staðsetningu.</p><p><b>%1</b></p>"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:46
-#, fuzzy, kde-format
-#| msgid "Database Statistics"
+#, kde-format
 msgctxt "@title:window"
 msgid "Database Statistics"
 msgstr "Tölfræði gagnagrunns"
@@ -30089,15 +29916,13 @@ msgid "&Move to Trash"
 msgstr "Setja í &ruslið"
 
 #: core/libs/dialogs/deletedialog.cpp:660
-#, fuzzy, kde-format
-#| msgid "About to delete selected items"
+#, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "Um það bil að eyða völdum atriðum"
 
 #: core/libs/dialogs/deletedialog.cpp:667
-#, fuzzy, kde-format
-#| msgid "About to delete selected albums"
+#, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"
 msgstr "Um það bil að eyða völdum skrám"
@@ -30118,15 +29943,13 @@ msgid "Do not ask again"
 msgstr "Ekki spyrja aftur"
 
 #: core/libs/dialogs/filesaveoptionsdlg.cpp:34
-#, fuzzy, kde-format
-#| msgid "Settings for Saving Image File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings for Saving Image File"
-msgstr "Stillingar við vistun myndskráar"
+msgstr "Stillingar fyrir vistun myndskráar"
 
 #: core/libs/dialogs/iccprofileinfodlg.cpp:39
-#, fuzzy, kde-format
-#| msgid "Color Profile Info - %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Color Profile Info - %1"
 msgstr "Upplýsingar um litasnið - %1"
@@ -30217,8 +30040,7 @@ msgid "<i>VideoCodec:</i>"
 msgstr "<i>Myndmerkiskóðun:</i>"
 
 #: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:138
-#, fuzzy, kde-format
-#| msgid "Shared Libraries and Components Information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
 msgstr "Upplýsingar um sameiginleg forritasöfn og einingar"
@@ -30302,11 +30124,10 @@ msgid "Unknown"
 msgstr "Óþekkt"
 
 #: core/libs/dialogs/rawcameradlg.cpp:56
-#, fuzzy, kde-format
-#| msgid "List of supported RAW cameras"
+#, kde-format
 msgctxt "@title:window"
 msgid "List of Supported RAW Cameras"
-msgstr "Listi yfir studdar RAW myndavélar"
+msgstr "Listi yfir studdar RAW-myndavélar"
 
 #: core/libs/dialogs/rawcameradlg.cpp:129
 #, kde-format
@@ -30323,8 +30144,7 @@ msgstr[0] "Notar LibRaw útgáfu %2<br/>1 tegund á listanum (fann: %3)</p>"
 msgstr[1] "Notar LibRaw útgáfu %2<br/>%1 tegundir á listanum (fann: %3)</p>"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:83
-#, fuzzy, kde-format
-#| msgid "List of Detected Hardware"
+#, kde-format
 msgctxt "@title:window"
 msgid "List of Detected Hardware"
 msgstr "Listi yfir vélbúnað sem fannst"
@@ -31047,8 +30867,7 @@ msgid "Luminosity"
 msgstr "Birtustig"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:529
-#, fuzzy, kde-format
-#| msgid "Black & White Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Black & White Settings File to Load"
 msgstr "Stillingaskrá svarthvítra litastýringa til að hlaða inn"
@@ -31064,8 +30883,7 @@ msgid "Cannot load settings from the Black & White text file."
 msgstr "Get ekki hlaðið inn stillingum úr textaskrá svarthvítra litastýringa."
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:600
-#, fuzzy, kde-format
-#| msgid "Black & White Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Black & White Settings File to Save"
 msgstr "Stillingaskrá svarthvítra litastýringa til að vista"
@@ -31203,12 +31021,10 @@ msgid "Total: %1 (%)"
 msgstr "Alls: %1 (%)"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:545
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Select Gimp Gains Mixer File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Gains Mixer File to Load"
-msgstr "Gimp textaskrá með stillingum litblandara til að hlaða inn"
+msgstr "Gimp-textaskrá með stillingum litblandara til að hlaða inn"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:625
 #, kde-format
@@ -31217,12 +31033,10 @@ msgid "Cannot load settings from the Gains Mixer text file."
 msgstr "Get ekki hlaðið inn Gimp textaskrá með stillingum litblöndunar."
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:635
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Gimp Gains Mixer File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Gimp Gains Mixer File to Save"
-msgstr "Gimp textaskrá með stillingum litblandara til að vista"
+msgstr "Gimp-textaskrá með stillingum litblandara til að vista"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:714
 #, kde-format
@@ -31380,11 +31194,10 @@ msgid "Adjust Curves"
 msgstr "Laga litferla"
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:242
-#, fuzzy, kde-format
-#| msgid "Select Gimp Curves File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Curves File to Load"
-msgstr "Veldu Gimp litferlaskrá til að hlaða inn"
+msgstr "Veldu Gimp-litferlaskrá til að hlaða inn"
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:254
 #, kde-format
@@ -31392,11 +31205,10 @@ msgid "Cannot load from the Gimp curves text file."
 msgstr "Get ekki hlaðið inn litferlum úr Gimp textaskrá."
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:263
-#, fuzzy, kde-format
-#| msgid "Gimp Curves File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Gimp Curves File to Save"
-msgstr "Gimp litferlaskrá sem á að vista"
+msgstr "Gimp-litferlaskrá sem á að vista"
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:275
 #, kde-format
@@ -32460,8 +32272,7 @@ msgid "Select Black Frame Image"
 msgstr "Velja svartrammamynd"
 
 #: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:231
-#, fuzzy, kde-format
-#| msgid "Black Frame Parser"
+#, kde-format
 msgctxt "@title:window"
 msgid "Black Frame Parser"
 msgstr "Svartrammatúlkur"
@@ -32690,8 +32501,7 @@ msgid "Stage 4"
 msgstr "Stig 4"
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:637
-#, fuzzy, kde-format
-#| msgid "Photograph Local Contrast Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Local Contrast Settings File to Load"
 msgstr "Stillingaskrá staðværra birtuskila til að hlaða inn"
@@ -32707,8 +32517,7 @@ msgid "Cannot load settings from the Photograph Local Contrast text file."
 msgstr "Gat ekki hlaðið inn textaskrá með stillingum staðværra birtuskila."
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:691
-#, fuzzy, kde-format
-#| msgid "Photograph Local Contrast Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Local Contrast Settings File to Save"
 msgstr "Stillingaskrá staðværra birtuskila til að vista"
@@ -33344,8 +33153,7 @@ msgid "Chrominance Red"
 msgstr "Rautt litmegn"
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:372
-#, fuzzy, kde-format
-#| msgid "Photograph Noise Reduction Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Noise Reduction Settings File to Load"
 msgstr "Textaskrá með truflanasíustillingum til að hlaða inn"
@@ -33361,8 +33169,7 @@ msgid "Cannot load settings from the Photograph Noise Reduction text file."
 msgstr "Get ekki hlaðið inn stillingum úr textaskrá fyrir truflanasíu."
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:418
-#, fuzzy, kde-format
-#| msgid "Photograph Noise Reduction Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Noise Reduction Settings File to Save"
 msgstr "Textaskrá með truflanasíustillingum til að vista"
@@ -33560,11 +33367,10 @@ msgstr ""
 "gildi fyrir hringskerpingu eða Gauss-skerpingu."
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:515
-#, fuzzy, kde-format
-#| msgid "Photograph Refocus Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Load"
-msgstr "Endurfókus stillingaskrá til að hlaða"
+msgstr "Endurfókus stillingaskrá til að hlaða inn"
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:533
 #, kde-format
@@ -33577,8 +33383,7 @@ msgid "Cannot load settings from the Photograph Refocus text file."
 msgstr "Gat ekki hlaðið inn textaskrá endurfókus stillinga."
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:564
-#, fuzzy, kde-format
-#| msgid "Photograph Refocus Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Save"
 msgstr "Endurfókus stillingaskrá til að vista"
@@ -33998,9 +33803,7 @@ msgstr ""
 "Þessu gildi E.V. verður bætt við aðalgildið til að fínstilla lýsingartíma."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:522
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "White Color Balance Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "White Color Balance Settings File to Load"
 msgstr "Skrá með stillingum hvítvægis til að hlaða inn"
@@ -34018,9 +33821,7 @@ msgid "Cannot load settings from the White Color Balance text file."
 msgstr "Get ekki hlaðið inn textaskrá með stillingum hvítvægis."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:569
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "White Color Balance Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "White Color Balance Settings File to Save"
 msgstr "Vista textaskrá með stillingum hvítvægis"
@@ -34182,9 +33983,7 @@ msgid "Type-Mimes"
 msgstr "MIME-skráategundir"
 
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "About %1 Plugin"
+#, kde-format
 msgctxt "@title:window"
 msgid "About %1 Plugin"
 msgstr "Um %1 forritsviðbótina"
@@ -34436,8 +34235,7 @@ msgid "Location of the album that will be created (optional)."
 msgstr "Staðsetning albúmsins sem verður búið til (valkvætt)."
 
 #: core/libs/dplugins/webservices/wsselectuserdlg.cpp:60
-#, fuzzy, kde-format
-#| msgid "Account Selector"
+#, kde-format
 msgctxt "@title:window"
 msgid "Account Selector"
 msgstr "Val á aðgangi"
@@ -34687,9 +34485,7 @@ msgid "Save the list."
 msgstr "Vista listann."
 
 #: core/libs/dplugins/widgets/ditemslist.cpp:580
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Select the image file list to load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Load"
 msgstr "Veldu myndskráalista til að hlaða inn"
@@ -34702,9 +34498,7 @@ msgid "All Files (*)"
 msgstr "Allar skrár (*)"
 
 #: core/libs/dplugins/widgets/ditemslist.cpp:661
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Select the image file list to save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Save"
 msgstr "Veldu myndskráalista til að vista"
@@ -34759,9 +34553,7 @@ msgid "User6"
 msgstr "Notandi6"
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Help"
+#, kde-format
 msgctxt "@action: button"
 msgid "Help"
 msgstr "Hjálp"
@@ -34775,9 +34567,7 @@ msgstr "Handbók á netinu..."
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:70
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "About..."
+#, kde-format
 msgid "About..."
 msgstr "Um hugbúnaðinn..."
 
@@ -34853,9 +34643,7 @@ msgstr ""
 "þjöppuð.</p>"
 
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Help"
+#, kde-format
 msgctxt "@action:button"
 msgid "Help"
 msgstr "Hjálp"
@@ -36944,8 +36732,7 @@ msgid "ETA:"
 msgstr "Áætluð lok:"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:185
-#, fuzzy, kde-format
-#| msgid "Online Version Checker - Pre-Release"
+#, kde-format
 msgctxt "@title:window"
 msgid "Online Version Checker - Pre-Release"
 msgstr "Athugun útgáfu á netinu - Forútgáfa"
@@ -36956,8 +36743,7 @@ msgid "Check for new pre-release version available, please wait..."
 msgstr "Athuga með nýjar for-útgáfur, bíddu aðeins..."
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:190
-#, fuzzy, kde-format
-#| msgid "Online Version Checker - Stable Version"
+#, kde-format
 msgctxt "@title:window"
 msgid "Online Version Checker - Stable Version"
 msgstr "Athugun útgáfu á netinu - Stöðug útgáfa"
@@ -37435,9 +37221,7 @@ msgid "Always apply changes without confirmation"
 msgstr "Alltaf virkja breytingar án staðfestingar"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:359
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Apply changes?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Apply Changes?"
 msgstr "Virkja breytingar?"
@@ -39532,8 +39316,7 @@ msgstr "Eyða '%1' merki?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:294
 #: core/libs/tags/engine/tagmodificationhelper.cpp:407
-#, fuzzy, kde-format
-#| msgid "Delete Tag"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "Eyða merki"
@@ -39768,8 +39551,7 @@ msgid "Previous tags were changed. Save changes? "
 msgstr "Fyrri merkjum var breytt. Viltu vista breytingar?"
 
 #: core/libs/tags/manager/tagsmanager.cpp:179
-#, fuzzy, kde-format
-#| msgid "Tags Manager"
+#, kde-format
 msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "Merkjastjórnun"
@@ -39812,9 +39594,7 @@ msgstr[0] "Eyða merki %2?"
 msgstr[1] "Eyða merkjum %2?"
 
 #: core/libs/tags/manager/tagsmanager.cpp:377
-#, fuzzy, kde-format
-#| msgid "Delete tag"
-#| msgid_plural "Delete tags"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete tag"
 msgid_plural "Delete tags"
@@ -40013,15 +39793,13 @@ msgid "Both"
 msgstr "Bæði"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:113
-#, fuzzy, kde-format
-#| msgid "New Tag"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Tag"
 msgstr "Nýtt merki"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:117
-#, fuzzy, kde-format
-#| msgid "Edit Tag"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Tag"
 msgstr "Breyta merki"
@@ -40083,8 +39861,7 @@ msgid "<b>Properties of Tag<br/>\"%1\"</b>"
 msgstr "<b>Eiginleikar merkisins<br/>\"%1\"</b>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:529
-#, fuzzy, kde-format
-#| msgid "Tag creation Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Tag Creation Error"
 msgstr "Villa við gerð merkis"
@@ -40701,8 +40478,7 @@ msgid "Cannot create thumbnail for %1"
 msgstr "Get ekki búið til smámynd fyrir %1"
 
 #: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:153
-#, fuzzy, kde-format
-#| msgid "Failed to initialize thumbnails database"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to Initialize Thumbnails Database"
 msgstr "Mistókst að ræsa gagnagrunn smámynda"
@@ -40713,8 +40489,7 @@ msgid "Error message: %1"
 msgstr "Villukóði: %1"
 
 #: core/libs/timeadjust/clockphotodialog.cpp:83
-#, fuzzy, kde-format
-#| msgid "Determine Time Difference With Clock Photo"
+#, kde-format
 msgctxt "@title:window"
 msgid "Determine Time Difference With Clock Photo"
 msgstr "Ákvarða tímamismun miðað við klukku á mynd"
@@ -41913,9 +41688,7 @@ msgid "Capture"
 msgstr "Upptaka"
 
 #: core/libs/video/qtav/config/DecoderConfigPage.cpp:214
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Video decoder config page"
+#, kde-format
 msgctxt "@title:window"
 msgid "Video Decoder Config Page"
 msgstr "Stillingasíða myndmerkisafkóðara"
@@ -44601,9 +44374,7 @@ msgid "File name: %1 (%2)"
 msgstr "Skráarheiti: %1 (%2)"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:398
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Save ExifTool Information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save ExifTool Information"
 msgstr "Vista ExifTool-upplýsingar"
@@ -44914,12 +44685,10 @@ msgid "Switch to %1"
 msgstr "Skipta yfir í %1"
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:423
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to translate string with %1 Web-service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to Translate String with %1 Web-Service"
-msgstr "Mistókst að þýða streng með %1 vefþjónustunni"
+msgstr "Mistókst að þýða streng með %1-vefþjónustunni"
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:425
 #, kde-format
@@ -49966,17 +49735,13 @@ msgid "Icon Size: %1"
 msgstr "Stærð táknmynda: %1"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "New Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Bookmark"
 msgstr "Nýtt bókamerki"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Edit Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Bookmark"
 msgstr "Breyta bókamerki"
@@ -50088,9 +49853,7 @@ msgid "Edit current bookmark from the list"
 msgstr "Breyta þessu bókamerki úr listanum"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:245
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Add New Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add New Bookmark"
 msgstr "Bæta við nýju bókamerki"
@@ -50108,9 +49871,7 @@ msgstr ""
 "er þegar í listanum undir heitinu \"%2\"."
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:259
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Confirm Bookmark Deletion"
+#, kde-format
 msgctxt "@title:window"
 msgid "Confirm Bookmark Deletion"
 msgstr "Staðfesta eyðingu bókamerkis"
@@ -50217,11 +49978,10 @@ msgstr "Eyða skrá"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2323
-#, fuzzy, kde-format
-#| msgid "Error Saving File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Saving File"
-msgstr "Villa við vistun skjals"
+msgstr "Villa við vistun skráar"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:79
 #, kde-format
@@ -50255,8 +50015,7 @@ msgid "Cannot delete \"%1\""
 msgstr "Get ekki eytt \"%1\""
 
 #: core/showfoto/main/showfoto_open.cpp:58
-#, fuzzy, kde-format
-#| msgid "Open Images From Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open Images from Folder"
 msgstr "Opna myndir úr möppu"
@@ -50267,11 +50026,10 @@ msgid "There is no item to process."
 msgstr "Það eru engin atriði til að vinna með."
 
 #: core/showfoto/main/showfoto_open.cpp:321
-#, fuzzy, kde-format
-#| msgid "Error Loading File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Loading File"
-msgstr "Villa við hleðslu skráar"
+msgstr "Villa við innhleðslu skráar"
 
 #: core/showfoto/main/showfoto_open.cpp:322
 #, kde-format
@@ -51322,41 +51080,31 @@ msgstr[0] "%1 skrá"
 msgstr[1] "%1 skrár"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:692
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "New Favorite Item"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Item"
 msgstr "Nýtt eftirlætisatriði"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:696
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Edit Favorite Item"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Item"
 msgstr "Breyta eftirlætisatriði"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:703
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "New Favorite Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Folder"
 msgstr "Ný eftirlætismappa"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:707
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Edit Favorite Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Folder"
 msgstr "Breyta eftirlætismöppu"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:764
-#, fuzzy, kde-format
-#| msgctxt "@title: album properties"
-#| msgid "Could Not Calculate Average"
+#, kde-format
 msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
 msgstr "Gat ekki reiknað meðaltal"
@@ -51429,9 +51177,7 @@ msgid "Search in Favorites..."
 msgstr "Leita í eftirlætum..."
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:357
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Confirm Item Deletion"
+#, kde-format
 msgctxt "@title:window"
 msgid "Confirm Item Deletion"
 msgstr "Staðfesta eyðingu atriðis"
@@ -51616,8 +51362,7 @@ msgid "<b>Renaming images. Please wait...</b>"
 msgstr "<b>Endurnefni myndir. Bíddu aðeins...</b>"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
-#, fuzzy, kde-format
-#| msgid "&Abort"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Abort"
 msgstr "&Hætta við"
@@ -51630,11 +51375,10 @@ msgstr "Í vinnslu..."
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:87
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:160
-#, fuzzy, kde-format
-#| msgid "Renaming images"
+#, kde-format
 msgctxt "@title:window"
 msgid "Renaming Images"
-msgstr "Endurnefni myndir"
+msgstr "Endurnefning mynda"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:161
 #, kde-format
@@ -51655,18 +51399,16 @@ msgstr[1] ""
 "skrifa yfir þær?"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:170
-#, fuzzy, kde-format
-#| msgid "Rename Again"
+#, kde-format
 msgctxt "@action:button"
 msgid "Rename Again"
 msgstr "Endurnefna aftur"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:172
-#, fuzzy, kde-format
-#| msgid "Overwrite"
+#, kde-format
 msgctxt "@action:button"
 msgid "Overwrite"
-msgstr "Yfirskrifa"
+msgstr "Skrifa yfir"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:220
 #, kde-format
@@ -51691,7 +51433,7 @@ msgid "Show a list of all available options"
 msgstr "Birta lista með öllum tiltækum möguleikum"
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:354
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:99
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:108
 #, kde-format
 msgid "Modifiers"
 msgstr "Breytar"
@@ -51716,12 +51458,12 @@ msgstr "Valmöguleikar skráarendurnefninga"
 msgid "<p>Add renaming options to the parse string.</p>"
 msgstr "<p>Bæta valmöguleikum skráarendurnefninga við þáttunarstrenginn.</p>"
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:46
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:50
 #, kde-format
 msgid "Modifiers can be applied to every renaming option."
 msgstr "Það er hægt að úthluta breytum á hvern endurnefningarmöguleika."
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:47
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:51
 #, kde-format
 msgid ""
 "It is possible to assign multiple modifiers to an option, they are applied "
@@ -51730,7 +51472,7 @@ msgstr ""
 "Það er hægt að úthluta mörgum breytum á hvern möguleika, þeir eru virkjaðir "
 "í þeirri röð sem þú úthlutar þeim."
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:49
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:53
 #, kde-format
 msgid ""
 "Be sure to use the quick access buttons: They might provide additional "
@@ -51739,7 +51481,7 @@ msgstr ""
 "Notaðu flýtihnappana. Þeir gætu sýnt fleiri upplýsingar um möguleika á "
 "endurnefningum og breytum."
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:51
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:55
 #, kde-format
 msgid ""
 "The file list can be sorted, just right-click on it to see the sort criteria "
@@ -51749,8 +51491,7 @@ msgstr ""
 "röðunarmöguleikana (eingöngu möppuviðmót)."
 
 #: core/utilities/advancedrename/common/tooltipdialog.cpp:54
-#, fuzzy, kde-format
-#| msgid "Information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Information"
 msgstr "Upplýsingar"
@@ -52869,11 +52610,10 @@ msgstr ""
 "albúmasafnið."
 
 #: core/utilities/firstrun/collectionpage.cpp:179
-#, fuzzy, kde-format
-#| msgid "Create Root Album Folder?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Root Album Folder?"
-msgstr "Búa til möppufyrir grunnalbúm?"
+msgstr "Búa til möppu fyrir grunnalbúm?"
 
 #: core/utilities/firstrun/collectionpage.cpp:180
 #, kde-format
@@ -52885,8 +52625,7 @@ msgstr ""
 "digiKam búi hana til fyrir þig?"
 
 #: core/utilities/firstrun/collectionpage.cpp:192
-#, fuzzy, kde-format
-#| msgid "Create Root Album Folder Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Root Album Folder Failed"
 msgstr "Mistókst að búa til grunnmöppu"
@@ -53725,8 +53464,7 @@ msgid "Bookmark comment"
 msgstr "Athugasemd við bókamerki"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:210
-#, fuzzy, kde-format
-#| msgid "Edit Geolocation Bookmarks"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Geolocation Bookmarks"
 msgstr "Breyta bókamerkjum hnattstaðsetningar"
@@ -53795,8 +53533,7 @@ msgstr "Athugasemd"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:809
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:944
-#, fuzzy, kde-format
-#| msgid "Loading Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "Loading Bookmark"
 msgstr "Hleð inn bókamerkjum"
@@ -53812,8 +53549,7 @@ msgstr ""
 "%3"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:931
-#, fuzzy, kde-format
-#| msgid "Open File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "Opna skrá"
@@ -53830,8 +53566,7 @@ msgid "Imported %1"
 msgstr "Flutti inn %1"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:958
-#, fuzzy, kde-format
-#| msgid "Save File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Vista skrá"
@@ -53842,17 +53577,15 @@ msgid "%1 Bookmarks.xbel"
 msgstr "%1 Bókamerki.xbel"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:970
-#, fuzzy, kde-format
-#| msgid "Export error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export error"
 msgstr "Villa við útflutning"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:970
-#, fuzzy, kde-format
-#| msgid "error saving bookmarks"
+#, kde-format
 msgid "Error saving bookmarks"
-msgstr "villa við að vista bókamerki"
+msgstr "Villa við að vista bókamerki"
 
 #: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:145
 #, kde-format
@@ -53907,17 +53640,14 @@ msgid "Set this option to show tracks on the Map"
 msgstr "Veldu þetta til að birta ferla á kortinu"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:167
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox similarity album tag relation"
-#| msgid "Only selected tab"
+#, kde-format
 msgid "Only use selected images"
-msgstr "Aðeins valinn flipi"
+msgstr "Aðeins nota valdar myndir"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:168
-#, fuzzy, kde-format
-#| msgid "Set this option to display the image type."
+#, kde-format
 msgid "Set this option to correlate selected images only"
-msgstr "Veldu þetta til að sýna tegund myndskrár."
+msgstr "Veldu þetta til að para einungis valdar myndir"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:178
 #, kde-format
@@ -54005,13 +53735,11 @@ msgstr[0] "Ekki var hægt að hlaða inn eftirfarandi GPX skrá:"
 msgstr[1] "Ekki var hægt að hlaða inn eftirfarandi %1 GPX skrám:"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:330
-#, fuzzy, kde-format
-#| msgid "Error loading GPX file"
-#| msgid_plural "Error loading GPX files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Loading GPX File"
 msgid_plural "Error Loading GPX Files"
-msgstr[0] "Villa við hleðslu GPX skrár"
+msgstr[0] "Villa við hleðslu GPX skráar"
 msgstr[1] "Villa við hleðslu GPX skráa"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:435
@@ -54020,8 +53748,7 @@ msgid "Correlating images -"
 msgstr "Para staðsetningu við myndir -"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:517
-#, fuzzy, kde-format
-#| msgid "Correlation failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Correlation Failed"
 msgstr "Pörun mistókst"
@@ -54036,8 +53763,7 @@ msgstr ""
 "stillingar á tímabelti og frávikum séu réttar."
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:523
-#, fuzzy, kde-format
-#| msgid "Correlation succeeded"
+#, kde-format
 msgctxt "@title:window"
 msgid "Correlation Succeeded"
 msgstr "Pörun tókst"
@@ -54053,8 +53779,7 @@ msgstr ""
 #. i18np.
 #. See bug #376438 for details.
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:532
-#, fuzzy, kde-format
-#| msgid "Correlation finished"
+#, kde-format
 msgctxt "@title:window"
 msgid "Correlation Finished"
 msgstr "Pörun lokið"
@@ -54201,11 +53926,10 @@ msgstr "Fletta upp hæðarupplýsingum sem vantar"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
-#, fuzzy, kde-format
-#| msgid "GPS Sync"
+#, kde-format
 msgctxt "@title:window"
 msgid "GPS Sync"
-msgstr "GPS samræming"
+msgstr "GPS-samræming"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:440
 #, kde-format
@@ -54500,11 +54224,10 @@ msgid "Retrieving RG info -"
 msgstr "Næ í upplýsingar frá viðsnúinni staðsetningarkóðun -"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
-#, fuzzy, kde-format
-#| msgid "Add New Tag..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Add New Tag"
-msgstr "Bæta við nýju merki..."
+msgstr "Bæta við nýju merki"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:846
 #, kde-format
@@ -54724,8 +54447,7 @@ msgstr ""
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:545
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:117
 #: core/utilities/searchwindow/searchtabheader.cpp:586
-#, fuzzy, kde-format
-#| msgid "Name exists"
+#, kde-format
 msgctxt "@title:window"
 msgid "Name Exists"
 msgstr "Nafn er þegar til"
@@ -54942,8 +54664,7 @@ msgid "<b>No Profile</b>"
 msgstr "<b>Ekkert litasnið</b>"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:81
-#, fuzzy, kde-format
-#| msgid "Soft Proofing Options"
+#, kde-format
 msgctxt "@title:window"
 msgid "Soft Proofing Options"
 msgstr "Valkostir fyrir sýndarpróförk"
@@ -55016,8 +54737,7 @@ msgstr "Ljómunarlitur:"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:229
 #: core/utilities/setup/setupicc.cpp:868
-#, fuzzy, kde-format
-#| msgid "Profile Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Profile Error"
 msgstr "Galli í litasniði"
@@ -55108,10 +54828,9 @@ msgstr "Um þetta verkfæri..."
 
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:151
 #: core/utilities/queuemanager/views/toolsettingsview.cpp:112
-#, fuzzy, kde-format
-#| msgid "Online Handbook..."
+#, kde-format
 msgid "Tool online handbook..."
-msgstr "Handbók á netinu..."
+msgstr "Handbók verkfæris á netinu..."
 
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:183
 #, kde-format
@@ -55496,9 +55215,7 @@ msgid "Information about image size"
 msgstr "Upplýsingar um stærð myndar"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1085
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Saving image..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Saving Image..."
 msgstr "Vista mynd..."
@@ -55520,9 +55237,7 @@ msgstr ""
 "Ertu viss?"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1112
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr "Aðvörun"
@@ -57179,26 +56894,44 @@ msgstr ""
 "stuðningi við lýsigögn.</para>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:86
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "These expressions may be used to customize date format:\n"
+#| "\"d\": The day as a number without a leading zero (1 to 31)\n"
+#| "\"dd\": The day as a number with a leading zero (01 to 31)\n"
+#| "\"ddd\": The abbreviated localized day name (e.g. 'Mon' to 'Sun')\n"
+#| "\"dddd\": The long localized day name (e.g. 'Monday' to 'Sunday').\n"
+#| "\"M\": The month as a number without a leading zero (1 to 12)\n"
+#| "\"MM\": The month as a number with a leading zero (01 to 12)\n"
+#| "\"MMM\": The abbreviated localized month name (e.g. 'Jan' to 'Dec')\n"
+#| "\"MMMM\": The long localized month name (e.g. 'January' to 'December')\n"
+#| "\"yy\": The year as two digit number (eg. 00 to 99)\n"
+#| "\"yyyy\": The year as four digit number (eg. 2012)\n"
+#| "All other input characters will be treated as text. Any sequence of "
+#| "characters that are enclosed in singlequotes will be treated as text and "
+#| "not be used as an expression. Examples, if date is 20 July 1969:\n"
+#| "\"dd.MM.yyyy\" : 20.07.1969\n"
+#| "\"ddd MMMM d yy\" : Sun July 20 69\n"
+#| "\"'Photo shot on ' dddd\" : Photo shot on Sunday\n"
 msgctxt "@info"
 msgid ""
-"These expressions may be used to customize date format:\n"
-"\"d\": The day as a number without a leading zero (1 to 31)\n"
-"\"dd\": The day as a number with a leading zero (01 to 31)\n"
-"\"ddd\": The abbreviated localized day name (e.g. 'Mon' to 'Sun')\n"
-"\"dddd\": The long localized day name (e.g. 'Monday' to 'Sunday').\n"
-"\"M\": The month as a number without a leading zero (1 to 12)\n"
-"\"MM\": The month as a number with a leading zero (01 to 12)\n"
-"\"MMM\": The abbreviated localized month name (e.g. 'Jan' to 'Dec')\n"
-"\"MMMM\": The long localized month name (e.g. 'January' to 'December')\n"
-"\"yy\": The year as two digit number (eg. 00 to 99)\n"
-"\"yyyy\": The year as four digit number (eg. 2012)\n"
-"All other input characters will be treated as text. Any sequence of "
-"characters that are enclosed in singlequotes will be treated as text and not "
-"be used as an expression. Examples, if date is 20 July 1969:\n"
-"\"dd.MM.yyyy\" : 20.07.1969\n"
-"\"ddd MMMM d yy\" : Sun July 20 69\n"
-"\"'Photo shot on ' dddd\" : Photo shot on Sunday\n"
+"<p>These expressions may be used to customize date format:</p><p><b>d</b>: "
+"The day as a number without a leading zero (1 to 31)</p><p><b>dd</b>: The "
+"day as a number with a leading zero (01 to 31)</p><p><b>ddd</b>: The "
+"abbreviated localized day name (e.g. 'Mon' to 'Sun')</p><p><b>dddd</b>: The "
+"long localized day name (e.g. 'Monday' to 'Sunday').</p><p><b>M</b>: The "
+"month as a number without a leading zero (1 to 12)</p><p><b>MM</b>: The "
+"month as a number with a leading zero (01 to 12)</p><p><b>MMM</b>: The "
+"abbreviated localized month name (e.g. 'Jan' to 'Dec')</p><p><b>MMMM</b>: "
+"The long localized month name (e.g. 'January' to 'December')</p><p><b>yy</"
+"b>: The year as two digit number (eg. 00 to 99)</p><p><b>yyyy</b>: The year "
+"as four digit number (eg. 2012)</p><p>All other input characters will be "
+"treated as text. Any sequence of characters that are enclosed in "
+"singlequotes will be treated as text and not be used as an expression. "
+"Examples, if date is 20 July 1969:</p><p><b>dd.MM.yyyy</b> : 20.07.1969</"
+"p><p><b>ddd MMMM d yy</b> : Sun July 20 69</p><p><b>'Photo shot on ' dddd</"
+"b> : Photo shot on Sunday</p>"
 msgstr ""
 "Þessi tákn má nota til að skilgreina dagsetningu:\n"
 "\"d\": Dagurinn sem tala án '0' forskeytis (1 to 31)\n"

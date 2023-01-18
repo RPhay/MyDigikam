@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-17 00:54+0000\n"
+"POT-Creation-Date: 2023-01-18 00:55+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -20950,7 +20950,7 @@ msgstr "पूर्वावलोकन"
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:159
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:154
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:389
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:98
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:107
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
 #: core/utilities/searchwindow/searchgroup_label.cpp:214
 #, kde-format
@@ -50538,7 +50538,7 @@ msgid "Show a list of all available options"
 msgstr ""
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:354
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:99
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:108
 #, kde-format
 msgid "Modifiers"
 msgstr ""
@@ -50560,26 +50560,26 @@ msgstr ""
 msgid "<p>Add renaming options to the parse string.</p>"
 msgstr ""
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:46
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:50
 #, kde-format
 msgid "Modifiers can be applied to every renaming option."
 msgstr ""
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:47
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:51
 #, kde-format
 msgid ""
 "It is possible to assign multiple modifiers to an option, they are applied "
 "in the order you assign them."
 msgstr ""
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:49
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:53
 #, kde-format
 msgid ""
 "Be sure to use the quick access buttons: They might provide additional "
 "information about renaming and modifier options."
 msgstr ""
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:51
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:55
 #, kde-format
 msgid ""
 "The file list can be sorted, just right-click on it to see the sort criteria "
@@ -55736,23 +55736,22 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid ""
-"These expressions may be used to customize date format:\n"
-"\"d\": The day as a number without a leading zero (1 to 31)\n"
-"\"dd\": The day as a number with a leading zero (01 to 31)\n"
-"\"ddd\": The abbreviated localized day name (e.g. 'Mon' to 'Sun')\n"
-"\"dddd\": The long localized day name (e.g. 'Monday' to 'Sunday').\n"
-"\"M\": The month as a number without a leading zero (1 to 12)\n"
-"\"MM\": The month as a number with a leading zero (01 to 12)\n"
-"\"MMM\": The abbreviated localized month name (e.g. 'Jan' to 'Dec')\n"
-"\"MMMM\": The long localized month name (e.g. 'January' to 'December')\n"
-"\"yy\": The year as two digit number (eg. 00 to 99)\n"
-"\"yyyy\": The year as four digit number (eg. 2012)\n"
-"All other input characters will be treated as text. Any sequence of "
-"characters that are enclosed in singlequotes will be treated as text and not "
-"be used as an expression. Examples, if date is 20 July 1969:\n"
-"\"dd.MM.yyyy\" : 20.07.1969\n"
-"\"ddd MMMM d yy\" : Sun July 20 69\n"
-"\"'Photo shot on ' dddd\" : Photo shot on Sunday\n"
+"<p>These expressions may be used to customize date format:</p><p><b>d</b>: "
+"The day as a number without a leading zero (1 to 31)</p><p><b>dd</b>: The "
+"day as a number with a leading zero (01 to 31)</p><p><b>ddd</b>: The "
+"abbreviated localized day name (e.g. 'Mon' to 'Sun')</p><p><b>dddd</b>: The "
+"long localized day name (e.g. 'Monday' to 'Sunday').</p><p><b>M</b>: The "
+"month as a number without a leading zero (1 to 12)</p><p><b>MM</b>: The "
+"month as a number with a leading zero (01 to 12)</p><p><b>MMM</b>: The "
+"abbreviated localized month name (e.g. 'Jan' to 'Dec')</p><p><b>MMMM</b>: "
+"The long localized month name (e.g. 'January' to 'December')</p><p><b>yy</"
+"b>: The year as two digit number (eg. 00 to 99)</p><p><b>yyyy</b>: The year "
+"as four digit number (eg. 2012)</p><p>All other input characters will be "
+"treated as text. Any sequence of characters that are enclosed in "
+"singlequotes will be treated as text and not be used as an expression. "
+"Examples, if date is 20 July 1969:</p><p><b>dd.MM.yyyy</b> : 20.07.1969</"
+"p><p><b>ddd MMMM d yy</b> : Sun July 20 69</p><p><b>'Photo shot on ' dddd</"
+"b> : Photo shot on Sunday</p>"
 msgstr ""
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:107
