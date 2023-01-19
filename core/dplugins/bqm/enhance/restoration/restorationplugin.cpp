@@ -66,6 +66,21 @@ QString RestorationPlugin::details() const
     return xi18nc("@info", "<para>This Batch Queue Manager tool can restore images using Greystoration algorithm.</para>");
 }
 
+QString RestorationPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString RestorationPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString RestorationPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-enhancetools");
+}
+
 QList<DPluginAuthor> RestorationPlugin::authors() const
 {
     return QList<DPluginAuthor>()

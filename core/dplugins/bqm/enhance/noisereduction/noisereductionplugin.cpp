@@ -66,6 +66,21 @@ QString NoiseReductionPlugin::details() const
     return xi18nc("@info", "<para>This Batch Queue Manager tool can reduce noise in images.</para>");
 }
 
+QString NoiseReductionPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString NoiseReductionPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString NoiseReductionPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-enhancetools");
+}
+
 QList<DPluginAuthor> NoiseReductionPlugin::authors() const
 {
     return QList<DPluginAuthor>()

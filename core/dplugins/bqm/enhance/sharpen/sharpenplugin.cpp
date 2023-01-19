@@ -66,6 +66,21 @@ QString SharpenPlugin::details() const
     return xi18nc("@info", "<para>This Batch Queue Manager tool can sharp images.</para>");
 }
 
+QString SharpenPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString SharpenPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString SharpenPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-enhancetools");
+}
+
 QList<DPluginAuthor> SharpenPlugin::authors() const
 {
     return QList<DPluginAuthor>()
