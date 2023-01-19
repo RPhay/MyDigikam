@@ -66,6 +66,21 @@ QString RotatePlugin::details() const
     return xi18nc("@info", "<para>This Batch Queue Manager tool can rotate images.</para>");
 }
 
+QString RotatePlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString RotatePlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString RotatePlugin::handbookReference() const
+{
+    return QLatin1String("bqm-transformtools");
+}
+
 QList<DPluginAuthor> RotatePlugin::authors() const
 {
     return QList<DPluginAuthor>()

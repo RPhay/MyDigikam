@@ -66,6 +66,21 @@ QString ResizePlugin::details() const
     return xi18nc("@info", "<para>This Batch Queue Manager tool can resize images.</para>");
 }
 
+QString ResizePlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString ResizePlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString ResizePlugin::handbookReference() const
+{
+    return QLatin1String("bqm-transformtools");
+}
+
 QList<DPluginAuthor> ResizePlugin::authors() const
 {
     return QList<DPluginAuthor>()

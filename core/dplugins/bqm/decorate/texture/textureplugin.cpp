@@ -66,6 +66,21 @@ QString TexturePlugin::details() const
     return xi18nc("@info", "<para>This Batch Queue Manager tool can apply a texture over images.</para>");
 }
 
+QString TexturePlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString TexturePlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString TexturePlugin::handbookReference() const
+{
+    return QLatin1String("bqm-decoratetools");
+}
+
 QList<DPluginAuthor> TexturePlugin::authors() const
 {
     return QList<DPluginAuthor>()

@@ -66,6 +66,21 @@ QString WaterMarkPlugin::details() const
     return xi18nc("@info", "<para>This Batch Queue Manager tool can add a text watermark over images.</para>");
 }
 
+QString WaterMarkPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString WaterMarkPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString WaterMarkPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-decoratetools");
+}
+
 QList<DPluginAuthor> WaterMarkPlugin::authors() const
 {
     return QList<DPluginAuthor>()

@@ -66,6 +66,21 @@ QString FlipPlugin::details() const
     return xi18nc("@info", "<para>This Batch Queue Manager tool can run user shell script as workflow stage.</para>");
 }
 
+QString FlipPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString FlipPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString FlipPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-transformtools");
+}
+
 QList<DPluginAuthor> FlipPlugin::authors() const
 {
     return QList<DPluginAuthor>()
