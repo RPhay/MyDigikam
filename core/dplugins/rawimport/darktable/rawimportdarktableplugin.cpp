@@ -146,6 +146,21 @@ QString DarkTableRawImportPlugin::details() const
                              "<p>See DarkTable web site for details: <a href='https://www.darktable.org/'>https://www.darktable.org/</a></p>");
 }
 
+QString DarkTableRawImportPlugin::handbookSection() const
+{
+    return QLatin1String("setup_application");
+}
+
+QString DarkTableRawImportPlugin::handbookChapter() const
+{
+    return QLatin1String("editor_settings");
+}
+
+QString DarkTableRawImportPlugin::handbookReference() const
+{
+    return QLatin1String("setup-raw");
+}
+
 QList<DPluginAuthor> DarkTableRawImportPlugin::authors() const
 {
     return QList<DPluginAuthor>()

@@ -71,6 +71,21 @@ QString RawImportNativePlugin::details() const
                 "<p>See Libraw web site for details: <a href='https://www.libraw.org/'>https://www.libraw.org/</a></p>");
 }
 
+QString RawImportNativePlugin::handbookSection() const
+{
+    return QLatin1String("setup_application");
+}
+
+QString RawImportNativePlugin::handbookChapter() const
+{
+    return QLatin1String("editor_settings");
+}
+
+QString RawImportNativePlugin::handbookReference() const
+{
+    return QLatin1String("setup-raw");
+}
+
 QList<DPluginAuthor> RawImportNativePlugin::authors() const
 {
     return QList<DPluginAuthor>()

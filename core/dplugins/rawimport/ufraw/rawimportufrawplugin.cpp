@@ -93,6 +93,21 @@ QString UFRawRawImportPlugin::details() const
                              "<a href='http://ufraw.sourceforge.net/'>http://ufraw.sourceforge.net/</a></p>");  // krazy:exclude=insecurenet
 }
 
+QString UFRawRawImportPlugin::handbookSection() const
+{
+    return QLatin1String("setup_application");
+}
+
+QString UFRawRawImportPlugin::handbookChapter() const
+{
+    return QLatin1String("editor_settings");
+}
+
+QString UFRawRawImportPlugin::handbookReference() const
+{
+    return QLatin1String("setup-raw");
+}
+
 QList<DPluginAuthor> UFRawRawImportPlugin::authors() const
 {
     return QList<DPluginAuthor>()
