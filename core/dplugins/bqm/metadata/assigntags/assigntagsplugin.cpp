@@ -66,6 +66,21 @@ QString AssignTagsPlugin::details() const
     return xi18nc("@info", "<para>This Batch Queue Manager tool will assign keyword hierarchies metadata values to images.</para>");
 }
 
+QString AssignTagsPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString AssignTagsPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString AssignTagsPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-damtools");
+}
+
 QList<DPluginAuthor> AssignTagsPlugin::authors() const
 {
     return QList<DPluginAuthor>()

@@ -66,6 +66,21 @@ QString AssignLabelsPlugin::details() const
     return xi18nc("@info", "<para>This Batch Queue Manager tool will assign rating, or color, or pick label metadata values to images.</para>");
 }
 
+QString AssignLabelsPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString AssignLabelsPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString AssignLabelsPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-damtools");
+}
+
 QList<DPluginAuthor> AssignLabelsPlugin::authors() const
 {
     return QList<DPluginAuthor>()

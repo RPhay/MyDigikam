@@ -67,6 +67,21 @@ QString AssignCaptionsPlugin::details() const
                   "and description metadata alternative values to images.</para>");
 }
 
+QString AssignCaptionsPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString AssignCaptionsPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString AssignCaptionsPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-damtools");
+}
+
 QList<DPluginAuthor> AssignCaptionsPlugin::authors() const
 {
     return QList<DPluginAuthor>()

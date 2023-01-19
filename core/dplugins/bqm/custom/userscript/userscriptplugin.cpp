@@ -71,6 +71,21 @@ QString UserScriptPlugin::details() const
                   "and <b>$TAGSPATH</b> to handle digiKam properties.</para>");
 }
 
+QString UserScriptPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString UserScriptPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString UserScriptPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-damtools");
+}
+
 QList<DPluginAuthor> UserScriptPlugin::authors() const
 {
     return QList<DPluginAuthor>()

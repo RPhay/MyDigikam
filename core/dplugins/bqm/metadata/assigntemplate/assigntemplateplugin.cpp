@@ -66,6 +66,21 @@ QString AssignTemplatePlugin::details() const
     return xi18nc("@info", "<para>This Batch Queue Manager tool can apply metadata template over images.</para>");
 }
 
+QString AssignTemplatePlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString AssignTemplatePlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString AssignTemplatePlugin::handbookReference() const
+{
+    return QLatin1String("bqm-damtools");
+}
+
 QList<DPluginAuthor> AssignTemplatePlugin::authors() const
 {
     return QList<DPluginAuthor>()

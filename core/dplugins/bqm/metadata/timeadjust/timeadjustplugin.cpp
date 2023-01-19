@@ -66,6 +66,21 @@ QString TimeAdjustPlugin::details() const
     return xi18nc("@info", "<para>This Batch Queue Manager tool can adjust time in images.</para>");
 }
 
+QString TimeAdjustPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString TimeAdjustPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString TimeAdjustPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-damtools");
+}
+
 QList<DPluginAuthor> TimeAdjustPlugin::authors() const
 {
     return QList<DPluginAuthor>()
