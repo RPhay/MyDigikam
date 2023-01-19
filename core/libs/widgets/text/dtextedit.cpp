@@ -42,6 +42,7 @@ DTextEdit::DTextEdit(unsigned int lines, QWidget* const parent)
 
 DTextEdit::~DTextEdit()
 {
+    delete d->spellChecker;
     delete d;
 }
 
