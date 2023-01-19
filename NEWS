@@ -253,4 +253,5 @@ BUGFIXES:
 213 ==> 463234 - Move / delete item in Album, thumbnail does not go away.
 214 ==> 464354 - When typing in the Face Tag Box whilst in "Preview", esc should just exit the type box.
 215 ==> 464499 - digiKam git crash in Sonnet::SpellCheckDecorator.
-216 ==> 
+216 ==> 464420 - Folders not ignored.
+217 ==> 
