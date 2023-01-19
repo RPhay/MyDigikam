@@ -69,6 +69,21 @@ QString ConvertToAvifPlugin::details() const
                   "<para>See details about this format from <a href='https://en.wikipedia.org/wiki/AVIF'>this page</a>.</para>");
 }
 
+QString ConvertToAvifPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString ConvertToAvifPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString ConvertToAvifPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-converttools");
+}
+
 QList<DPluginAuthor> ConvertToAvifPlugin::authors() const
 {
     return QList<DPluginAuthor>()

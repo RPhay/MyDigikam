@@ -68,6 +68,21 @@ QString ConvertToJp2Plugin::details() const
                   "<para>See details about this format from <a href='https://en.wikipedia.org/wiki/JPEG_2000'>this page</a>.</para>");
 }
 
+QString ConvertToJp2Plugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString ConvertToJp2Plugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString ConvertToJp2Plugin::handbookReference() const
+{
+    return QLatin1String("bqm-converttools");
+}
+
 QList<DPluginAuthor> ConvertToJp2Plugin::authors() const
 {
     return QList<DPluginAuthor>()

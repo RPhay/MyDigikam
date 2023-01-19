@@ -68,6 +68,21 @@ QString ConvertToPngPlugin::details() const
                   "<para>See details about this format from <a href='https://en.wikipedia.org/wiki/Portable_Network_Graphics'>this page</a>.</para>");
 }
 
+QString ConvertToPngPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString ConvertToPngPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString ConvertToPngPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-converttools");
+}
+
 QList<DPluginAuthor> ConvertToPngPlugin::authors() const
 {
     return QList<DPluginAuthor>()

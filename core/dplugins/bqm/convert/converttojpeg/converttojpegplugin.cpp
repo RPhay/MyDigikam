@@ -68,6 +68,21 @@ QString ConvertToJpegPlugin::details() const
                   "<para>See details about this format from <a href='https://en.wikipedia.org/wiki/JPEG'>this page</a>.</para>");
 }
 
+QString ConvertToJpegPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString ConvertToJpegPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString ConvertToJpegPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-converttools");
+}
+
 QList<DPluginAuthor> ConvertToJpegPlugin::authors() const
 {
     return QList<DPluginAuthor>()

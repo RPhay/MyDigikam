@@ -74,6 +74,21 @@ QString ConvertToHeifPlugin::details() const
                   "High Efficiency Image File Format</a> for details.</para>");
 }
 
+QString ConvertToHeifPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString ConvertToHeifPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString ConvertToHeifPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-converttools");
+}
+
 QList<DPluginAuthor> ConvertToHeifPlugin::authors() const
 {
     return QList<DPluginAuthor>()
