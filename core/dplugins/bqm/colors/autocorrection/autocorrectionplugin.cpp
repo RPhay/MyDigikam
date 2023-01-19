@@ -66,6 +66,21 @@ QString AutoCorrectionPlugin::details() const
     return xi18nc("@info", "<para>This Batch Queue Manager tool can adjust colors automatically from images.</para>");
 }
 
+QString AutoCorrectionPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString AutoCorrectionPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString AutoCorrectionPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-colortools");
+}
+
 QList<DPluginAuthor> AutoCorrectionPlugin::authors() const
 {
     return QList<DPluginAuthor>()

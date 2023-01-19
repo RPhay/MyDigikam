@@ -66,6 +66,21 @@ QString IccConvertPlugin::details() const
     return xi18nc("@info", "<para>This Batch Queue Manager tool can convert images to a different color space.</para>");
 }
 
+QString IccConvertPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString IccConvertPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString IccConvertPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-colortools");
+}
+
 QList<DPluginAuthor> IccConvertPlugin::authors() const
 {
     return QList<DPluginAuthor>()

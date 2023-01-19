@@ -66,6 +66,21 @@ QString ColorBalancePlugin::details() const
     return xi18nc("@info", "<para>This Batch Queue Manager tool can adjust color balance from images.</para>");
 }
 
+QString ColorBalancePlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString ColorBalancePlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString ColorBalancePlugin::handbookReference() const
+{
+    return QLatin1String("bqm-colortools");
+}
+
 QList<DPluginAuthor> ColorBalancePlugin::authors() const
 {
     return QList<DPluginAuthor>()

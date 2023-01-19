@@ -66,6 +66,21 @@ QString InvertPlugin::details() const
     return xi18nc("@info", "<para>This Batch Queue Manager tool can invert colors from images.</para>");
 }
 
+QString InvertPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString InvertPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString InvertPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-colortools");
+}
+
 QList<DPluginAuthor> InvertPlugin::authors() const
 {
     return QList<DPluginAuthor>()

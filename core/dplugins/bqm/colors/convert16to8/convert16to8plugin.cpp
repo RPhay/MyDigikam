@@ -66,6 +66,21 @@ QString Convert16To8Plugin::details() const
     return xi18nc("@info", "<para>This Batch Queue Manager tool can convert image color depth to 8 bits.</para>");
 }
 
+QString Convert16To8Plugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString Convert16To8Plugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString Convert16To8Plugin::handbookReference() const
+{
+    return QLatin1String("bqm-colortools");
+}
+
 QList<DPluginAuthor> Convert16To8Plugin::authors() const
 {
     return QList<DPluginAuthor>()

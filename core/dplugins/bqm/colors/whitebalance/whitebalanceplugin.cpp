@@ -66,6 +66,21 @@ QString WhiteBalancePlugin::details() const
     return xi18nc("@info", "<para>This Batch Queue Manager tool can adjust the white balance from images.</para>");
 }
 
+QString WhiteBalancePlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString WhiteBalancePlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString WhiteBalancePlugin::handbookReference() const
+{
+    return QLatin1String("bqm-colortools");
+}
+
 QList<DPluginAuthor> WhiteBalancePlugin::authors() const
 {
     return QList<DPluginAuthor>()
