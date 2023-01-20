@@ -78,12 +78,7 @@ QString UserScriptPlugin::handbookSection() const
 
 QString UserScriptPlugin::handbookChapter() const
 {
-    return QLatin1String("base_tools");
-}
-
-QString UserScriptPlugin::handbookReference() const
-{
-    return QLatin1String("bqm-damtools");
+    return QLatin1String("custom_script");
 }
 
 QList<DPluginAuthor> UserScriptPlugin::authors() const
