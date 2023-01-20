@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-18 00:55+0000\n"
+"POT-Creation-Date: 2023-01-20 00:54+0000\n"
 "PO-Revision-Date: 2023-01-17 23:21+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -12569,8 +12569,8 @@ msgstr[1] "<p>%1 stafi.</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:378
-#: core/libs/widgets/text/dtextedit.cpp:378
+#: core/libs/widgets/text/dplaintextedit.cpp:379
+#: core/libs/widgets/text/dtextedit.cpp:379
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
@@ -26693,7 +26693,7 @@ msgstr "Stillingar vefþjónustu"
 msgid "Export by Web Service"
 msgstr "Flytja út með vefþjónustu"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:260
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
@@ -26703,7 +26703,7 @@ msgstr ""
 "Lokaðu þessum glugga til að hlaða inn RAW-mynd með innbyggða "
 "innflutningsverkfærinu"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:290
 #, kde-format
 msgid "DarkTable Raw Conversion"
 msgstr "RAW-umbreyting DarkTable"
@@ -26887,7 +26887,7 @@ msgstr ""
 "Nota almennar RAW afkóðunarstillingar til að hlaða þessari mynd inn í "
 "myndvinnsluforritið."
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:199
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:214
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
@@ -26897,12 +26897,12 @@ msgstr ""
 "Lokaðu þessum glugga til að hlaða inn RAW-mynd með innbyggða "
 "innflutningsverkfærinu"
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:214
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:229
 #, kde-format
 msgid "RawTherapee Raw Conversion"
 msgstr "RAW-umbreyting RawTherapee"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:204
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:219
 #, kde-format
 msgid ""
 "Error to import RAW image with UFRaw\n"
@@ -26912,7 +26912,7 @@ msgstr ""
 "Lokaðu þessum glugga til að hlaða inn RAW-mynd með innbyggða "
 "innflutningsverkfærinu"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:219
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:234
 #, kde-format
 msgid "UFRaw Raw Conversion"
 msgstr "RAW-umbreyting UFRaw"

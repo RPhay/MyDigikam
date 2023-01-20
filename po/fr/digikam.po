@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-18 00:55+0000\n"
+"POT-Creation-Date: 2023-01-20 00:54+0000\n"
 "PO-Revision-Date: 2023-01-02 15:52+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -12888,8 +12888,8 @@ msgstr[1] "<p>%1 caractères.</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:378
-#: core/libs/widgets/text/dtextedit.cpp:378
+#: core/libs/widgets/text/dplaintextedit.cpp:379
+#: core/libs/widgets/text/dtextedit.cpp:379
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
@@ -27415,7 +27415,7 @@ msgstr "Configuration du service web"
 msgid "Export by Web Service"
 msgstr "Export par le service web"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:260
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
@@ -27425,7 +27425,7 @@ msgstr ""
 "Veuillez fermer cette boîte de dialogue pour charger une image « Raw » avec "
 "l'outil d'importation natif."
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:290
 #, kde-format
 msgid "DarkTable Raw Conversion"
 msgstr "Conversion « DarkTable Raw »"
@@ -27611,7 +27611,7 @@ msgstr ""
 "Utilise les paramètres de décodage RAW généraux pour charger cette image "
 "dans un éditeur."
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:199
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:214
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
@@ -27621,12 +27621,12 @@ msgstr ""
 "Veuillez fermer cette boîte de dialogue pour charger une image « Raw » avec "
 "l'outil natif d'importation."
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:214
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:229
 #, kde-format
 msgid "RawTherapee Raw Conversion"
 msgstr "Conversion « RawTherapee Raw »"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:204
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:219
 #, kde-format
 msgid ""
 "Error to import RAW image with UFRaw\n"
@@ -27636,7 +27636,7 @@ msgstr ""
 "Veuillez fermer cette boîte de dialogue pour charger une image « Raw » avec "
 "l'outil natif d'importation."
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:219
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:234
 #, kde-format
 msgid "UFRaw Raw Conversion"
 msgstr "Conversion « UFRaw Raw »"

@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-18 00:55+0000\n"
-"PO-Revision-Date: 2023-01-13 09:08+0100\n"
+"POT-Creation-Date: 2023-01-20 00:54+0000\n"
+"PO-Revision-Date: 2023-01-19 09:02+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -48,7 +48,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Martin Srebotnjak <miles@filmsi.net>\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -12666,8 +12666,8 @@ msgstr[3] "<p>%1 znakov.</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:378
-#: core/libs/widgets/text/dtextedit.cpp:378
+#: core/libs/widgets/text/dplaintextedit.cpp:379
+#: core/libs/widgets/text/dtextedit.cpp:379
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
@@ -26811,7 +26811,7 @@ msgstr "Nastavitve spletnih storitev"
 msgid "Export by Web Service"
 msgstr "Izvoz na spletne storitve"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:260
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
@@ -26820,7 +26820,7 @@ msgstr ""
 "Napaka pri uvozu surove slike s programom DarkTable\n"
 "Zaprite to pogovorno okno, da naložite surovo sliko z orodjem za uvoz"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:290
 #, kde-format
 msgid "DarkTable Raw Conversion"
 msgstr "DarkTable pretvorba surove"
@@ -27003,7 +27003,7 @@ msgstr ""
 "Uporabi splošne nastavitve dekodiranja surovih slik za nalaganje te slike v "
 "urejevalnik."
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:199
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:214
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
@@ -27013,12 +27013,12 @@ msgstr ""
 "Zaprite to pogovorno okno, da naložite surovo sliko z izvornim orodjem za "
 "uvoz"
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:214
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:229
 #, kde-format
 msgid "RawTherapee Raw Conversion"
 msgstr "RawTherapee pretvorba surove"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:204
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:219
 #, kde-format
 msgid ""
 "Error to import RAW image with UFRaw\n"
@@ -27028,7 +27028,7 @@ msgstr ""
 "Zaprite to pogovorno okno, da naložite surovo sliko z izvornim orodjem za "
 "uvoz"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:219
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:234
 #, kde-format
 msgid "UFRaw Raw Conversion"
 msgstr "UFRaw pretvorba surove"
@@ -57164,26 +57164,7 @@ msgstr ""
 "podporo metapodatkov.</para>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "These expressions may be used to customize date format:\n"
-#| "\"d\": The day as a number without a leading zero (1 to 31)\n"
-#| "\"dd\": The day as a number with a leading zero (01 to 31)\n"
-#| "\"ddd\": The abbreviated localized day name (e.g. 'Mon' to 'Sun')\n"
-#| "\"dddd\": The long localized day name (e.g. 'Monday' to 'Sunday').\n"
-#| "\"M\": The month as a number without a leading zero (1 to 12)\n"
-#| "\"MM\": The month as a number with a leading zero (01 to 12)\n"
-#| "\"MMM\": The abbreviated localized month name (e.g. 'Jan' to 'Dec')\n"
-#| "\"MMMM\": The long localized month name (e.g. 'January' to 'December')\n"
-#| "\"yy\": The year as two digit number (eg. 00 to 99)\n"
-#| "\"yyyy\": The year as four digit number (eg. 2012)\n"
-#| "All other input characters will be treated as text. Any sequence of "
-#| "characters that are enclosed in singlequotes will be treated as text and "
-#| "not be used as an expression. Examples, if date is 20 July 1969:\n"
-#| "\"dd.MM.yyyy\" : 20.07.1969\n"
-#| "\"ddd MMMM d yy\" : Sun July 20 69\n"
-#| "\"'Photo shot on ' dddd\" : Photo shot on Sunday\n"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<p>These expressions may be used to customize date format:</p><p><b>d</b>: "
@@ -57203,23 +57184,21 @@ msgid ""
 "p><p><b>ddd MMMM d yy</b> : Sun July 20 69</p><p><b>'Photo shot on ' dddd</"
 "b> : Photo shot on Sunday</p>"
 msgstr ""
-"Za prilagoditev oblike datuma lahko uporabite naslednje izraze:\n"
-"\"d\": dan kot številka brez vodilne ničle (1 do 31)\n"
-"\"dd\": dan kot številka z vodilno ničlo (01 do 31)\n"
-"\"ddd\": okrajšano krajevno ime dneva ('Pon' do 'Ned')\n"
-"\"dddd\": dolgo krajevno ime dneva ('Ponedeljek' do 'Nedelja').\n"
-"\"M\": mesec kot številka brez vodilne ničle (1 do 12)\n"
-"\"MM\": mesec kot številka z vodilno ničlo (01 do 12)\n"
-"\"MMM\": okrajšano krajevno ime meseca ('Jan' do 'Dec')\n"
-"\"MMMM\": dolgo krajevno ime meseca ('Januar' do 'December')\n"
-"\"yy\": leto kot številka z dvema števkama (00 do 99)\n"
-"\"yyyy\": leto kot številka s štirimi števkami (2012)\n"
-"Vsi drugi vnosni znaki bodo obravnavani kot besedilo. Katerokoli zaporedje "
-"znakov, ki bo obdano z enojnimi narekovaji bo upoštevano kot besedilo in ne "
-"kot izraz. Primer, če je datum 20 julij 1969:\n"
-"\"dd.MM.yyyy\": 20.07.1969\n"
-"\"dddMMMM d yy\": Ned Julij 20 69\n"
-"\"'Fotografija zajeta ' dddd\" : Fotografija zajeta v nedeljo\n"
+"<p>Za prilagoditev oblike datuma lahko uporabite naslednje izraze:</"
+"p><p><b>d</b>: dan kot številka brez vodilne ničle (1 do 31)</p><p><b>dd</"
+"b>: dan kot številka z vodilno ničlo (01 do 31)</p><p><b>ddd</b>: okrajšano "
+"krajevno ime dneva ('Pon' do 'Ned')</p><p><b>dddd</b>: dolgo krajevno ime "
+"dneva ('ponedeljek' do 'nedelja').</p><p><b>M</b>: mesec kot število brez "
+"vodilne ničle (1 do 12)</p><p><b>MM</b>: mesec kot število z vodilno ničlo "
+"(01 do 12)</p><p><b>MMM</b>:  okrajšano krajevno ime meseca ('Jan' do "
+"'Dec')</p><p><b>MMMM</b>: dolgo krajevno ime meseca ('januar' do "
+"'december')</p><p><b>yy</b>: leto kot število z dvema števkama (00 do 99)</"
+"p><p><b>yyyy</b>: leto kot število s štirimi števkami (2012)</p><p>Vsi drugi "
+"vnosni znaki bodo obravnavani kot besedilo. Katerokoli zaporedje znakov, ki "
+"bo obdano z enojnimi narekovaji bo upoštevano kot besedilo in ne kot izraz. "
+"Primer, če je datum 20 julij 1969:</p><p><b>dd.MM.yyyy</b> : 20.07.1969</"
+"p><p><b>ddd d MMMM yy</b> : Ned 20 julij 1969/p><p><b>'Zajem fotografije "
+"'dddd</b> : Zajem fotografije nedelja</p>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:107
 #, kde-format

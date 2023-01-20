@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-18 00:55+0000\n"
-"PO-Revision-Date: 2023-01-18 17:04+0100\n"
+"POT-Creation-Date: 2023-01-20 00:54+0000\n"
+"PO-Revision-Date: 2023-01-19 12:51+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -10778,13 +10778,13 @@ msgstr "Geavanceerde instellingen"
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:769
 #, kde-format
 msgid "Liquid Rescale"
-msgstr "Liquid herschalen"
+msgstr "Vloeibaar herschalen"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetoolplugin.cpp:44
 #, kde-format
 msgctxt "@title"
 msgid "Liquid Rescale"
-msgstr "Liquid herschalen"
+msgstr "Vloeibaar herschalen"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetoolplugin.cpp:59
 #, kde-format
@@ -10806,7 +10806,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Liquid Rescale..."
-msgstr "Liquid-herschalen..."
+msgstr "Vloeibaar herschalen..."
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:97
 #, kde-format
@@ -12783,8 +12783,8 @@ msgstr[1] "<p>%1 tekens.</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:378
-#: core/libs/widgets/text/dtextedit.cpp:378
+#: core/libs/widgets/text/dplaintextedit.cpp:379
+#: core/libs/widgets/text/dtextedit.cpp:379
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
@@ -27083,7 +27083,7 @@ msgstr "Instellingen van de webservice"
 msgid "Export by Web Service"
 msgstr "Exporteren door webservice"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:260
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
@@ -27092,7 +27092,7 @@ msgstr ""
 "Fout bij importeren van RAW-afbeelding met DarkTable\n"
 "Deze dialoog sluiten om RAW-afbeelding met inheems importhulpmiddel te laden"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:290
 #, kde-format
 msgid "DarkTable Raw Conversion"
 msgstr "Rawconversie Darktable"
@@ -27278,7 +27278,7 @@ msgstr ""
 "Gebruiken algemene RAW-decodeerinstellingen om de afbeelding in de bewerker "
 "te laden."
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:199
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:214
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
@@ -27287,12 +27287,12 @@ msgstr ""
 "Error to import RAW image with RawTherapee\n"
 "Close this dialog to load RAW image with native import tool"
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:214
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:229
 #, kde-format
 msgid "RawTherapee Raw Conversion"
 msgstr "Rawconversie RawTherapee"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:204
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:219
 #, kde-format
 msgid ""
 "Error to import RAW image with UFRaw\n"
@@ -27301,7 +27301,7 @@ msgstr ""
 "Fout bij importeren van RAW-afbeelding met UFRaw\n"
 "Deze dialoog sluiten om RAW-afbeelding met inheems importhulpmiddel te laden"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:219
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:234
 #, kde-format
 msgid "UFRaw Raw Conversion"
 msgstr "Rawconversie UFRaw"

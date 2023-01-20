@@ -53,8 +53,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-18 00:55+0000\n"
-"PO-Revision-Date: 2023-01-18 22:41+0300\n"
+"POT-Creation-Date: 2023-01-20 00:54+0000\n"
+"PO-Revision-Date: 2023-01-19 22:40+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -8607,8 +8607,7 @@ msgstr ""
 "Bu Görüntü Düzenleyici aracı, görüntüden renk düzeylerini ayarlayabilir."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:95
-#, fuzzy, kde-format
-#| msgid "Levels Adjust..."
+#, kde-format
 msgctxt "@action"
 msgid "Levels Adjust..."
 msgstr "Düzeyleri Ayarla..."
@@ -8621,9 +8620,10 @@ msgid ""
 "values and adjusts the Red, Green, and Blue channels to a full histogram "
 "range.</p>"
 msgstr ""
-"<b>Otomatik Düzeyler</b>: <p>Bu seçenek Kırmızı, Yeşik ve Mavi kanallardaki "
-"tonlamayı en üst düzeye getirir. Resim gölgesini arar, limit değerlerini "
-"vurgular ve tam histogram aralığına Kırmızı, Yeşil, Mavi ekler.</p>"
+"<b>Otomatik Düzeyleri</b>:<p>Bu seçenek, Kırmızı, Yeşil ve Mavi kanallardaki "
+"ton aralığını en üst düzeye çıkarır. Görüntü gölge ve vurgu sınır "
+"değerlerini arar ve Kırmızı, Yeşil ve Mavi kanalları tam bir histogram "
+"aralığına ayarlar.</p>"
 
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:128
 #, kde-format
@@ -8633,11 +8633,10 @@ msgid ""
 "becomes as bright as possible without altering its hue. This is often a "
 "\"magic fix\" for images that are dim or washed out.</p>"
 msgstr ""
-"<b>Normaleştirme</b>:<p>Bu seçenek aktif görüntü üzerinden parlaklık "
-"değerlerini ölçekler. Böylece koyu noktalar siyaha dönüşür ve parlak "
-"noktalar renk özü ayarını değiştirmeden, mümkün olduğunca daha da "
-"parlaklaştırılır. Loş ya da solmuş resimler için bu bazı durumlarda "
-"\"sihirli düzeltme\" olabilir.</p>"
+"<b>Normalleştir</b>:<p>Bu seçenek, parlaklık değerlerini etkin görüntü "
+"boyunca ölçeklendirerek en koyu noktanın siyah olmasını ve en parlak "
+"noktanın tonunu değiştirmeden olabildiğince parlak olmasını sağlar. Bu, "
+"genellikle soluk veya soluk görüntüler için \"sihirli bir düzeltme\"dir.</p>"
 
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:138
 #, kde-format
@@ -8650,13 +8649,13 @@ msgid ""
 "gives garbage. It is a very powerful operation, which can either work "
 "miracles on an image or destroy it.</p>"
 msgstr ""
-"<b>Eşitleme</b>: <p>Bu seçenek aktif görüntü üzerinden renklerin "
-"parlaklığını ayarlar. Böylece değer kanalı için olan histogram mümkün "
-"olduğunca yassı olacaktır. Bu demektir ki her bir olası parlaklık değeri ile "
-"piksel sayısı birbirlerine yakın belirecektir. Bazen bu eşitleme bir "
-"görüntüdeki zıtlığı arttırmada mükemmel sonuç verir. Bazı durumlarda ise "
-"istenen sonuç alınamaz. Bu çok etkili işlem resim üzerinde harikalar meydana "
-"getirebildiği gibi aynı zamanda onu mahvedebilir.</p>"
+"<b>Eşitleştir</b>:<p>Bu seçenek, etkin görselin üzerindeki renklerin "
+"parlaklığını ayarlar; böylece değer kanalı için olan histogram olabildiğince "
+"düzdür ve her bir olası parlaklık değeri, diğer değerlerle yaklaşık olarak "
+"aynı piksel sayısında görünür. Bazen Eşitleştir, bir görseldeki karşıtlığı "
+"artırmada harika bir şekilde çalışır. Diğer zamanlarda o kadar iyi "
+"çalışmayabilir. Bu, bir görsel üzerinde mucizeler yaratabilen veya onu yok "
+"edebilen çok güçlü bir işlemdir.</p>"
 
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:150
 #, kde-format
@@ -8665,9 +8664,9 @@ msgid ""
 "of the RGB values of an image by stretching the lowest and highest values to "
 "their fullest range, adjusting everything in between.</p>"
 msgstr ""
-"<b>Zıtlığı Arttır</b>:<p>Bu seçenek resmin RGB değerlerini, kendi tam "
-"aralığında en düşük ve en yüksek değerlerini gerdirmek suretiyle zıtlık ve "
-"parlaklığını arttırır. Bütün değerleri bu aralıkta ayarlar.</p>"
+"<b>Karşıtlığı Ger</b>:<p>Bu seçenek, en düşük ve en yüksek değerleri tam "
+"aralığa genişleterek ve aradaki her şeyi ayarlayarak bir görselin RGB "
+"değerlerinin karşıtlığını ve parlaklığını artırır.</p>"
 
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:158
 #, kde-format
@@ -8676,9 +8675,9 @@ msgid ""
 "the RGB values of an image to calculate optimal exposition and black level "
 "using image histogram properties.</p>"
 msgstr ""
-"<b>Zıtlığı Arttır</b>:<p>Bu seçenek resmin RGB değerlerini, kendi tam "
-"aralığında en düşük ve en yüksek değerlerini gerdirmek suretiyle zıtlık ve "
-"parlaklığını arttırır. Bütün değerleri bu aralıkta ayarlar.</p>"
+"<b>Otomatik Pozlama</b>:<p>Bu seçenek, görüntü histogramı özelliklerini "
+"kullanarak en uygun açıklığı ve siyah düzeyini hesaplamak için görselin RGB "
+"değerlerinin karşıtlığını ve parlaklığını artırır.</p>"
 
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:64
 #, kde-format
@@ -13050,8 +13049,8 @@ msgstr[1] "<p>%1 karakter.</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:378
-#: core/libs/widgets/text/dtextedit.cpp:378
+#: core/libs/widgets/text/dplaintextedit.cpp:379
+#: core/libs/widgets/text/dtextedit.cpp:379
 #, fuzzy, kde-format
 #| msgid "<p>1 character.</p>"
 #| msgid_plural "<p>%1 characters.</p>"
@@ -17338,7 +17337,7 @@ msgstr ""
 "koleksiyonunuzdan belirlediğiniz resimlerle bir takvim oluşturma ve yazdırma "
 "konusunda yardımcı olacak. Bu araç aynı zamanda size özel tarihlerinizi "
 "takvimde belirlemek için <a href='http://en.wikipedia.org/wiki/"
-"VCalendar'>vCalendar</a>, ve <a href='http://en.wikipedia.org/wiki/"
+"VCalendar'>vCalendar</a> ve <a href='http://en.wikipedia.org/wiki/"
 "Icalendar'>iCalendar</a> biçemlerini kullanmanıza da izin verir.</p></qt>"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:111
@@ -17811,7 +17810,7 @@ msgid ""
 "Increasing this value makes pixels with high saturation contribute more to "
 "the final output."
 msgstr ""
-"Bu değeri arttırmak yüksek doygunluğa sahip pikselleri son çıktıya daha çok "
+"Bu değeri artırmak yüksek doygunluğa sahip pikselleri son çıktıya daha çok "
 "katkıda bulunur hale getirir."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:168
@@ -17835,8 +17834,8 @@ msgid ""
 "the final output. Particularly useful for focus stacks."
 msgstr ""
 "Yüksek kontrastlı piksellerin göreceli ağırlığını ayarlar. Bu ağırlığı "
-"arttırmak bitişik renkli pikselli pikselleri nihai çıktıya daha fazla "
-"katkıda bulunacak hale getirir. Odak yığınları için özellikle yararlıdır."
+"artırmak bitişik renkli pikselli pikselleri nihai çıktıya daha fazla katkıda "
+"bulunacak hale getirir. Odak yığınları için özellikle yararlıdır."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:180
 #, kde-format
@@ -22013,7 +22012,7 @@ msgid ""
 "If you enable this option, all metadata as Exif, Iptc, and Xmp will be "
 "removed."
 msgstr ""
-"Bu seçeneği etkinleştirirseniz Exif, Iptc, ve Xmp gibi tüm metaveriler "
+"Bu seçeneği etkinleştirirseniz Exif, Iptc ve Xmp gibi tüm metaveriler "
 "silinecektir."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:75
@@ -28029,14 +28028,14 @@ msgstr "Sunucu Ayarlarını Uzaktan Yönet"
 msgid "Export by Web Service"
 msgstr "Eposta ile dışa aktar"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:260
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:290
 #, fuzzy, kde-format
 #| msgid "Raw Conversion"
 msgid "DarkTable Raw Conversion"
@@ -28215,27 +28214,27 @@ msgid "Use general Raw decoding settings to load this image in editor."
 msgstr ""
 "Bu görüntüyü düzenleyiciye yüklerken genel Raw deşifreleme ayarlarını kullan."
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:199
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:214
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:214
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:229
 #, fuzzy, kde-format
 #| msgid "Raw Conversion"
 msgid "RawTherapee Raw Conversion"
 msgstr "Ham Dönüştürme"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:204
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:219
 #, kde-format
 msgid ""
 "Error to import RAW image with UFRaw\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:219
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:234
 #, fuzzy, kde-format
 #| msgid "Raw Conversion"
 msgid "UFRaw Raw Conversion"
@@ -32211,7 +32210,7 @@ msgid ""
 msgstr ""
 "<b>Sarı filtreleme ile Siyah & Beyaz</b>:<p>Sarı filtre kullanarak siyah "
 "beyaz film pozlandırmayı canlandırır. En doğal ton doğrulamasıdır ve "
-"zıtlığın arttırılmasında kullanılır. Kır fotoğrafları için idealdir.</p>"
+"zıtlığın artırılmasında kullanılır. Kır fotoğrafları için idealdir.</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:262
 #, kde-format
@@ -33925,8 +33924,8 @@ msgstr ""
 "<b>İşlev</b>: Bu işlev, orijinal RGB kanallarını doygun bulanık görüntü ile "
 "birleştirir. Bu işlev, ton eşleme aşamalarının her birinde kullanılır. "
 "Doğrusal veya güçlü olabilir. Temel olarak, bu işlev hem özgün hem de "
-"bulanık görüntü değerinin düşük olduğu değerleri arttırır ve yüksek "
-"değerleri tersini yapar."
+"bulanık görüntü değerinin düşük olduğu değerleri artırır ve yüksek değerleri "
+"tersini yapar."
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:174
 #, kde-format
@@ -40286,8 +40285,8 @@ msgstr ""
 "kullanılabilirdir: <emphasis strong='true'>İkili Doğrusal</emphasis>, "
 "<emphasis strong='true'>VNG</emphasis>, <emphasis strong='true'>PPG</"
 "emphasis>, <emphasis strong='true'>AHD</emphasis>, <emphasis "
-"strong='true'>DCB</emphasis>, ve <emphasis strong='true'>VCD & AHD</"
-"emphasis>.</para>"
+"strong='true'>DCB</emphasis> ve <emphasis strong='true'>VCD & AHD</emphasis>."
+"</para>"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:353
 #, kde-format
@@ -45074,7 +45073,7 @@ msgstr "Caulier Gilles"
 #: core/libs/widgets/mainview/daboutdata.cpp:81
 #, kde-format
 msgid "Coordinator, Developer, and Mentoring"
-msgstr "Koordinatör, Geliştirici, ve Danışmanlık"
+msgstr "Koordinatör, Geliştirici ve Danışmanlık"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:86
 #, kde-format
@@ -55303,7 +55302,7 @@ msgstr ""
 "daha hızlıdır, özellikle bir çekim serisini kontrol ediyorsanız. Fakat, "
 "resimleri önizleme modundayken düzeltemez ya da değiştiremezsiniz. Eğer ki "
 "resimleri hızlı bir şekilde karşılaştırmak istiyorsanız ışık masasını "
-"kullanmak genellikle daha iyidir: resimler yan yana görüntülenebilir, ve "
+"kullanmak genellikle daha iyidir: resimler yan yana görüntülenebilir ve "
 "senkronize yakınlaştırma ve sürükleme kullanılabilir.</p></qt>"
 
 #: core/utilities/firstrun/previewpage.cpp:56
@@ -55505,7 +55504,7 @@ msgstr ""
 "seçmelisiniz. İşleme başlamadan önce veritabanınızın yedeğini almanı tavsiye "
 "edilir.</p><p>Yapılandırma dosyaları için yeni konum %1 (eskisi %2). Eski "
 "yapılandırma dosyalarını yeniden kullanırken çözülmemiş problemler "
-"bildirildi, bu yüzden bunu şu an yapmanız tavsiye edilmek, ve sizin "
+"bildirildi, bu yüzden bunu şu an yapmanız tavsiye edilmek ve sizin "
 "sorumluluğunuzdadır.</p></qt>"
 
 #: core/utilities/fuzzysearch/findduplicatesalbum.cpp:68
@@ -56046,7 +56045,7 @@ msgstr "Bilinmeyen başlık"
 #, kde-format
 msgid ""
 "Type a name and a comment for the bookmark, and choose where to keep it."
-msgstr "Yer imi için isim ve bir yorum yaz, ve nerede saklanacağını seç."
+msgstr "Yer imi için isim ve bir yorum yaz ve nerede saklanacağını seç."
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:101
 #, kde-format
@@ -65711,7 +65710,7 @@ msgstr ""
 "kullanımı\n"
 "açısından br etkisi olmayacaktır. Eğer derlemeleriniz çok büyük ise ya da "
 "uzak bir veritabanı kullanıyor iseniz\n"
-"düşük gecikme meydana getirebilir, ve doğru zamanda bakım aracı aracılığı "
+"düşük gecikme meydana getirebilir ve doğru zamanda bakım aracı aracılığı "
 "ile\n"
 "manuel olarak bir tarama planlamak için bu seçeneği kapatmanız tavsiye "
 "edilir."

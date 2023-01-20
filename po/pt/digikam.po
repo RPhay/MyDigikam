@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-18 00:55+0000\n"
-"PO-Revision-Date: 2023-01-13 01:31+0000\n"
+"POT-Creation-Date: 2023-01-20 00:54+0000\n"
+"PO-Revision-Date: 2023-01-19 09:57+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
 "Language: pt\n"
@@ -1087,11 +1087,10 @@ msgid "%1 %2"
 msgstr "%1 %2"
 
 #: core/app/items/utils/itemviewutilities.cpp:203
-#, fuzzy, kde-format
-#| msgid "Select target folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Target Folder"
-msgstr "Seleccionar a pasta de destino"
+msgstr "Seleccionar a Pasta de Destino"
 
 #: core/app/items/utils/itemviewutilities.cpp:229
 #, kde-format
@@ -1646,18 +1645,16 @@ msgstr ""
 "claro. O tema de ícones fica disponível após reiniciar o digiKam."
 
 #: core/app/main/digikamapp_import.cpp:81
-#, fuzzy, kde-format
-#| msgid "Select folder to parse"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Folder to Parse"
-msgstr "Seleccione a pasta a processar"
+msgstr "Seleccione a Pasta a Processar"
 
 #: core/app/main/digikamapp_import.cpp:101
-#, fuzzy, kde-format
-#| msgid "Select folders to import into album"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Folders to Import into Album"
-msgstr "Seleccione as pastas a importar para o álbum"
+msgstr "Seleccionar as Pastas a Importar para o Álbum"
 
 #: core/app/main/digikamapp_import.cpp:143
 #, kde-format
@@ -4403,18 +4400,14 @@ msgid "Supported Extensions"
 msgstr "Extensões Suportadas"
 
 #: core/avplayer/filters/EventFilter.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open a video"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open a Video"
-msgstr "Abrir um vídeo"
+msgstr "Abrir um Vídeo"
 
 #: core/avplayer/filters/EventFilter.cpp:83
 #: core/avplayer/main/MainWindow_io.cpp:510
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open an url"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open an Url"
 msgstr "Abrir um URL"
@@ -4584,12 +4577,10 @@ msgstr ""
 "experiência com o AVPlayer.</p>"
 
 #: core/avplayer/main/MainWindow_io.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open a media file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open a Media File"
-msgstr "Abrir um ficheiro multimédia"
+msgstr "Abrir um Ficheiro Multimédia"
 
 #: core/avplayer/main/MainWindow_io.cpp:568
 #: core/avplayer/main/MainWindow_setup.cpp:529
@@ -4599,12 +4590,10 @@ msgid "Aspect ratio"
 msgstr "Proporções"
 
 #: core/avplayer/main/MainWindow_io.cpp:702
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Player error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Player Error"
-msgstr "Erro do leitor"
+msgstr "Erro do Leitor"
 
 #: core/avplayer/main/MainWindow_io.cpp:724
 #, kde-format
@@ -4649,12 +4638,10 @@ msgid "Stalled"
 msgstr "Parado"
 
 #: core/avplayer/main/MainWindow_io.cpp:798
-#, fuzzy, kde-format
-#| msgctxt "@title: media loading state"
-#| msgid "Buffering... %1% @%2 %3"
+#, kde-format
 msgctxt "@title:window, media loading state"
 msgid "Buffering... %1% @%2 %3"
-msgstr "A guardar em memória temporária... %1% @%2 %3"
+msgstr "A Guardar em Memória Temporária... %1% @%2 %3"
 
 #: core/avplayer/main/MainWindow_io.cpp:905
 #, kde-format
@@ -4669,12 +4656,10 @@ msgstr ""
 "Formato: %2"
 
 #: core/avplayer/main/MainWindow_io.cpp:1018
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open a subtitle file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open a Subtitle File"
-msgstr "Abrir um ficheiro de legendas"
+msgstr "Abrir um Ficheiro de Legendas"
 
 #: core/avplayer/main/MainWindow_setup.cpp:30
 #, kde-format
@@ -4987,12 +4972,10 @@ msgid "not available on your platform!"
 msgstr "não disponível na sua plataforma!"
 
 #: core/avplayer/main/MainWindow_setup.cpp:818
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open an external audio track"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open an External Audio Track"
-msgstr "Abrir uma faixa de áudio externo"
+msgstr "Abrir uma Faixa de Áudio Externo"
 
 #: core/avplayer/main/MainWindow_setup.cpp:864
 #, kde-format
@@ -5019,12 +5002,10 @@ msgid "Remove selected items"
 msgstr "Remover os itens seleccionados"
 
 #: core/avplayer/playlist/PlayList.cpp:259
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Select files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Files"
-msgstr "Seleccionar os ficheiros"
+msgstr "Seleccionar os Ficheiros"
 
 #: core/avplayer/utils/ConfigDialog.cpp:61
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:263
@@ -5200,12 +5181,10 @@ msgid "Frame size"
 msgstr "Tamanho das imagens"
 
 #: core/avplayer/utils/StatisticsView.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Media info"
+#, kde-format
 msgctxt "@title:window"
 msgid "Media Info"
-msgstr "Informação dos conteúdos"
+msgstr "Informação dos Conteúdos"
 
 #: core/avplayer/utils/StatisticsView.cpp:147
 #, kde-format
@@ -8474,8 +8453,7 @@ msgid "Adjust Levels"
 msgstr "Ajustar os Níveis"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:890
-#, fuzzy, kde-format
-#| msgid "Select Gimp Levels File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Levels File to Load"
 msgstr "Seleccione o Ficheiro de Níveis do Gimp a Carregar"
@@ -8486,8 +8464,7 @@ msgid "Cannot load from the Gimp levels text file."
 msgstr "Não foi possível carregar os níveis Gimp de um ficheiro de texto."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:917
-#, fuzzy, kde-format
-#| msgid "Gimp Levels File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Gimp Levels File to Save"
 msgstr "Ficheiro de Níveis do Gimp a Gravar"
@@ -9669,8 +9646,7 @@ msgid "Restoration"
 msgstr "Restauro"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:344
-#, fuzzy, kde-format
-#| msgid "Photograph Restoration Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Restoration Settings File to Load"
 msgstr "Ficheiro de Configuração do Restauro de Fotografias a Carregar"
@@ -9690,8 +9666,7 @@ msgstr ""
 "fotografias."
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:383
-#, fuzzy, kde-format
-#| msgid "Photograph Restoration Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Restoration Settings File to Save"
 msgstr "Ficheiro de Configuração do Restauro de Fotografias a Gravar"
@@ -11732,8 +11707,7 @@ msgid "Resize"
 msgstr "Dimensionar"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:918
-#, fuzzy, kde-format
-#| msgid "Photograph Resizing Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Resizing Settings File to Load"
 msgstr "Ficheiro de Configuração do Dimensionamento a Carregar"
@@ -11751,8 +11725,7 @@ msgstr ""
 "dimensionamento de fotografias."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:951
-#, fuzzy, kde-format
-#| msgid "Photograph Resizing Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Resizing Settings File to Save"
 msgstr "Ficheiro de Configuração do Dimensionamento a Gravar"
@@ -11941,8 +11914,7 @@ msgstr ""
 "Verifique por favor a sua configuração"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:64
-#, fuzzy, kde-format
-#| msgid "Scan Image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Scan Image"
 msgstr "Digitalizar a Imagem"
@@ -11954,15 +11926,13 @@ msgstr "Digitalizar as Imagens"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:167
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1803
-#, fuzzy, kde-format
-#| msgid "New Image File Name"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Image File Name"
 msgstr "Nome do Ficheiro da Nova Imagem"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:215
-#, fuzzy, kde-format
-#| msgid "Unsupported Format"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr "Formato Desconhecido"
@@ -11973,8 +11943,7 @@ msgid "The target image file format \"%1\" is unsupported."
 msgstr "O formato da imagem de destino \"%1\" não é suportado."
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:228
-#, fuzzy, kde-format
-#| msgid "Cannot Save File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot Save File"
 msgstr "Não é Possível Gravar o Ficheiro"
@@ -12906,8 +12875,8 @@ msgstr[1] "<p>%1 caracteres.</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:378
-#: core/libs/widgets/text/dtextedit.cpp:378
+#: core/libs/widgets/text/dplaintextedit.cpp:379
+#: core/libs/widgets/text/dtextedit.cpp:379
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
@@ -27283,7 +27252,7 @@ msgstr "Configuração do Serviço Web"
 msgid "Export by Web Service"
 msgstr "Exportar por Serviço Web"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:260
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
@@ -27293,7 +27262,7 @@ msgstr ""
 "Feche esta janela para carregar a imagem RAW com a ferramenta de importação "
 "nativa"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:290
 #, kde-format
 msgid "DarkTable Raw Conversion"
 msgstr "Conversão de RAW do DarkTable"
@@ -27477,7 +27446,7 @@ msgstr ""
 "Usar a configuração geral da descodificação RAW para carregar esta imagem no "
 "editor."
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:199
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:214
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
@@ -27487,12 +27456,12 @@ msgstr ""
 "Feche esta janela para carregar a imagem RAW com a ferramenta de importação "
 "nativa"
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:214
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:229
 #, kde-format
 msgid "RawTherapee Raw Conversion"
 msgstr "Conversão de RAW do RawTherapee"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:204
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:219
 #, kde-format
 msgid ""
 "Error to import RAW image with UFRaw\n"
@@ -27502,7 +27471,7 @@ msgstr ""
 "Feche esta janela para carregar a imagem RAW com a ferramenta de importação "
 "nativa"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:219
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:234
 #, kde-format
 msgid "UFRaw Raw Conversion"
 msgstr "Conversão de RAW do UFRaw"
@@ -64937,120 +64906,3 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Deseja repor todas as definições com os seus valores por omissão?"
-
-#~ msgctxt "@title"
-#~ msgid "Geolocation Editor"
-#~ msgstr "Editor de Geo-Localização"
-
-#~ msgctxt "@title"
-#~ msgid "Error"
-#~ msgstr "Erro"
-
-#~ msgid "Select GPX File to Load"
-#~ msgstr "Seleccione o Ficheiro GPX a Carregar"
-
-#~ msgctxt "@title"
-#~ msgid "Exposure Blending"
-#~ msgstr "Mistura da Exposição"
-
-#~ msgctxt "@action: button"
-#~ msgid "Details..."
-#~ msgstr "Detalhes..."
-
-#~ msgctxt "@title"
-#~ msgid "Destination Folder"
-#~ msgstr "Pasta de Destino"
-
-#~ msgctxt "@title: window"
-#~ msgid "Error while to set image as wallpaper"
-#~ msgstr "Erro na configuração da imagem como papel de parede"
-
-#~ msgctxt "@action"
-#~ msgid "Start Upload"
-#~ msgstr "Iniciar o Envio"
-
-#~ msgctxt "@title: window"
-#~ msgid "Error"
-#~ msgstr "Erro"
-
-#~ msgctxt "@action: button"
-#~ msgid "Continue"
-#~ msgstr "Continuar"
-
-#~ msgctxt "@action: button"
-#~ msgid "Cancel"
-#~ msgstr "Cancelar"
-
-#~ msgctxt "@title"
-#~ msgid "Uploading Failed"
-#~ msgstr "O Envio Foi Mal-Sucedido"
-
-#~ msgctxt "@title"
-#~ msgid "Login Failed"
-#~ msgstr "Autenticação sem Sucesso"
-
-#~ msgctxt "@action"
-#~ msgid "Start Download"
-#~ msgstr "Iniciar a Recepção"
-
-#~ msgctxt "@title: window"
-#~ msgid "Warning"
-#~ msgstr "Aviso"
-
-#~ msgctxt "@action"
-#~ msgid "Continue"
-#~ msgstr "Continuar"
-
-#~ msgctxt "@title: album properties"
-#~ msgid "New Album"
-#~ msgstr "Novo Álbum"
-
-#~ msgid "Database connection test"
-#~ msgstr "Teste de ligação à base de dados"
-
-#~ msgctxt "@title"
-#~ msgid "Shared Libraries and Components Information"
-#~ msgstr "Informação das Bibliotecas Dinâmicas e Componentes"
-
-#~ msgctxt "@title"
-#~ msgid "List of detected hardware"
-#~ msgstr "Lista do 'hardware' detectado"
-
-#~ msgctxt "@title: favorite item properties"
-#~ msgid "Could Not Calculate Average"
-#~ msgstr "Não Foi Possível Calcular a Média"
-
-#~ msgid "Add Bookmark"
-#~ msgstr "Adicionar aos Favoritos"
-
-#~ msgctxt "@title:window"
-#~ msgid "Add new tag:"
-#~ msgstr "Adicionar uma marca nova:"
-
-#~ msgctxt "@title; warning while saving progress"
-#~ msgid "Warning"
-#~ msgstr "Aviso"
-
-#~ msgctxt "@title"
-#~ msgid "New Image File Name"
-#~ msgstr "Nome do Ficheiro da Nova Imagem"
-
-#~ msgctxt "@title"
-#~ msgid "Overwrite File?"
-#~ msgstr "Sobrepor o Ficheiro?"
-
-#~ msgctxt "@title"
-#~ msgid "Error Saving File"
-#~ msgstr "Erro ao Gravar o Ficheiro"
-
-#~ msgctxt "@title"
-#~ msgid "Batch Queue Manager"
-#~ msgstr "Gestor da Fila de Lote"
-
-#~ msgctxt "@title: reset to default warning dialog"
-#~ msgid "Warning"
-#~ msgstr "Aviso"
-
-#~ msgctxt "@title"
-#~ msgid "Configure"
-#~ msgstr "Configurar"
