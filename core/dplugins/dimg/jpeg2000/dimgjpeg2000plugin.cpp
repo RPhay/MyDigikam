@@ -143,6 +143,21 @@ QString DImgJPEG2000Plugin::details() const
     );
 }
 
+QString DImgJPEG2000Plugin::handbookSection() const
+{
+    return QLatin1String("supported_materials");
+}
+
+QString DImgJPEG2000Plugin::handbookChapter() const
+{
+    return QLatin1String("image_formats");
+}
+
+QString DImgJPEG2000Plugin::handbookReference() const
+{
+    return QLatin1String("image-jpeg2000");
+}
+
 QList<DPluginAuthor> DImgJPEG2000Plugin::authors() const
 {
     return QList<DPluginAuthor>()

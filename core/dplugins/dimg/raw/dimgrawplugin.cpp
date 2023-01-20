@@ -77,6 +77,21 @@ QString DImgRAWPlugin::details() const
     );
 }
 
+QString DImgRAWPlugin::handbookSection() const
+{
+    return QLatin1String("supported_materials");
+}
+
+QString DImgRAWPlugin::handbookChapter() const
+{
+    return QLatin1String("image_formats");
+}
+
+QString DImgRAWPlugin::handbookReference() const
+{
+    return QLatin1String("image-raw");
+}
+
 QList<DPluginAuthor> DImgRAWPlugin::authors() const
 {
     return QList<DPluginAuthor>()

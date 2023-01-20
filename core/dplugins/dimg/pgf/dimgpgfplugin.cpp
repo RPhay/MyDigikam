@@ -62,6 +62,21 @@ QString DImgPGFPlugin::description() const
     return i18nc("@info", "An image loader based on Libpgf codec");
 }
 
+QString DImgPGFPlugin::handbookSection() const
+{
+    return QLatin1String("supported_materials");
+}
+
+QString DImgPGFPlugin::handbookChapter() const
+{
+    return QLatin1String("image_formats");
+}
+
+QString DImgPGFPlugin::handbookReference() const
+{
+    return QLatin1String("image-pgf");
+}
+
 QString DImgPGFPlugin::details() const
 {
     return xi18nc("@info", "<para>This plugin allows users to load and save image using Libpgf codec.</para>"

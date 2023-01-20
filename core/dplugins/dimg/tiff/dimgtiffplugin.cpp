@@ -75,6 +75,21 @@ QString DImgTIFFPlugin::details() const
     );
 }
 
+QString DImgTIFFPlugin::handbookSection() const
+{
+    return QLatin1String("supported_materials");
+}
+
+QString DImgTIFFPlugin::handbookChapter() const
+{
+    return QLatin1String("image_formats");
+}
+
+QString DImgTIFFPlugin::handbookReference() const
+{
+    return QLatin1String("image-tiff");
+}
+
 QList<DPluginAuthor> DImgTIFFPlugin::authors() const
 {
     return QList<DPluginAuthor>()

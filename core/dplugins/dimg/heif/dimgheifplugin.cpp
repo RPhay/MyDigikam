@@ -96,6 +96,21 @@ QString DImgHEIFPlugin::details() const
                   "High Efficiency Image File Format</a> for details.</para>", x265Notice);
 }
 
+QString DImgHEIFPlugin::handbookSection() const
+{
+    return QLatin1String("supported_materials");
+}
+
+QString DImgHEIFPlugin::handbookChapter() const
+{
+    return QLatin1String("image_formats");
+}
+
+QString DImgHEIFPlugin::handbookReference() const
+{
+    return QLatin1String("image-heif");
+}
+
 QList<DPluginAuthor> DImgHEIFPlugin::authors() const
 {
     return QList<DPluginAuthor>()
