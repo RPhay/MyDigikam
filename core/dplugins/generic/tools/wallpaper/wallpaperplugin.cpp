@@ -67,6 +67,16 @@ QString WallpaperPlugin::details() const
                 "<p>If no image is selected, the first one from current album will be used.</p>");
 }
 
+QString WallpaperPlugin::handbookSection() const
+{
+    return QLatin1String("post_processing");
+}
+
+QString WallpaperPlugin::handbookChapter() const
+{
+    return QLatin1String("wall_paper");
+}
+
 QList<DPluginAuthor> WallpaperPlugin::authors() const
 {
     return QList<DPluginAuthor>()

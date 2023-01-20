@@ -65,6 +65,16 @@ QString VideoSlideShowPlugin::details() const
                 "<p>Different visual effects can be applied to images to make transitions while to render target video.</p>");
 }
 
+QString VideoSlideShowPlugin::handbookSection() const
+{
+    return QLatin1String("post_processing");
+}
+
+QString VideoSlideShowPlugin::handbookChapter() const
+{
+    return QLatin1String("video_slideshow");
+}
+
 QList<DPluginAuthor> VideoSlideShowPlugin::authors() const
 {
     return QList<DPluginAuthor>()

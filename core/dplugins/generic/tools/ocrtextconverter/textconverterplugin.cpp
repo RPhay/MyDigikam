@@ -68,6 +68,16 @@ QString TextConverterPlugin::details() const
                  QLatin1String("<a href='https://github.com/tesseract-ocr/tesseract'>https://github.com/tesseract-ocr/tesseract</a>"));
 }
 
+QString TextConverterPlugin::handbookSection() const
+{
+    return QLatin1String("post_processing");
+}
+
+QString TextConverterPlugin::handbookChapter() const
+{
+    return QLatin1String("ocrtext_converter");
+}
+
 QList<DPluginAuthor> TextConverterPlugin::authors() const
 {
     return QList<DPluginAuthor>()

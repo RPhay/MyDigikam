@@ -70,6 +70,16 @@ QString MjpegStreamPlugin::description() const
     return i18n("A tool to export items as MJPEG Stream");
 }
 
+QString MjpegStreamPlugin::handbookSection() const
+{
+    return QLatin1String("post_processing");
+}
+
+QString MjpegStreamPlugin::handbookChapter() const
+{
+    return QLatin1String("mjpeg_stream");
+}
+
 QString MjpegStreamPlugin::details() const
 {
     return i18n(
