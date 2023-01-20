@@ -71,6 +71,16 @@ QString FTPlugin::details() const
                  "Many protocols can be used, as FTP, SFTP, SAMBA, etc.");
 }
 
+QString FTPlugin::handbookSection() const
+{
+    return QLatin1String("export_tools");
+}
+
+QString FTPlugin::handbookChapter() const
+{
+    return QLatin1String("file_transfert");
+}
+
 QList<DPluginAuthor> FTPlugin::authors() const
 {
     return QList<DPluginAuthor>()

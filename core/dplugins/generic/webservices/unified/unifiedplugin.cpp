@@ -65,6 +65,16 @@ QString UnifiedPlugin::details() const
                  "This is a unified tool, grouping many tools in one.");
 }
 
+QString UnifiedPlugin::handbookSection() const
+{
+    return QLatin1String("export_tools");
+}
+
+QString UnifiedPlugin::handbookChapter() const
+{
+    return QLatin1String("unified_tool");
+}
+
 QList<DPluginAuthor> UnifiedPlugin::authors() const
 {
     return QList<DPluginAuthor>()

@@ -73,6 +73,16 @@ QString INatPlugin::details() const
                                "https://www.inaturalist.org/</a>"));
 }
 
+QString INatPlugin::handbookSection() const
+{
+    return QLatin1String("export_tools");
+}
+
+QString INatPlugin::handbookChapter() const
+{
+    return QLatin1String("inaturalist_export");
+}
+
 QList<DPluginAuthor> INatPlugin::authors() const
 {
     return QList<DPluginAuthor>()

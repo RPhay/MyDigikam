@@ -70,6 +70,16 @@ QString TwitterPlugin::details() const
                  QLatin1String("<a href='https://twitter.com/'>https://twitter.com/</a>"));
 }
 
+QString TwitterPlugin::handbookSection() const
+{
+    return QLatin1String("export_tools");
+}
+
+QString TwitterPlugin::handbookChapter() const
+{
+    return QLatin1String("twitter_export");
+}
+
 QList<DPluginAuthor> TwitterPlugin::authors() const
 {
     return QList<DPluginAuthor>()

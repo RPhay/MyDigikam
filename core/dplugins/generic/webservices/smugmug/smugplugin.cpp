@@ -71,6 +71,16 @@ QString SmugPlugin::details() const
                  QLatin1String("<a href='https://www.smugmug.com'>https://www.smugmug.com</a></p>"));
 }
 
+QString SmugPlugin::handbookSection() const
+{
+    return QLatin1String("export_tools");
+}
+
+QString SmugPlugin::handbookChapter() const
+{
+    return QLatin1String("smugmug_export");
+}
+
 QList<DPluginAuthor> SmugPlugin::authors() const
 {
     return QList<DPluginAuthor>()

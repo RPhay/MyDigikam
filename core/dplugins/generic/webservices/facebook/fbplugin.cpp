@@ -70,6 +70,16 @@ QString FbPlugin::details() const
                 "<p>See Facebook web site for details: <a href='https://www.facebook.com/'>https://www.facebook.com/</a></p>");
 }
 
+QString FbPlugin::handbookSection() const
+{
+    return QLatin1String("export_tools");
+}
+
+QString FbPlugin::handbookChapter() const
+{
+    return QLatin1String("face_book");
+}
+
 QList<DPluginAuthor> FbPlugin::authors() const
 {
     return QList<DPluginAuthor>()

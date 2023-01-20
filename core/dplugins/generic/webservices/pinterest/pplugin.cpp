@@ -70,6 +70,16 @@ QString PPlugin::details() const
                  QLatin1String("<a href='https://www.pinterest.com/'>https://www.pinterest.com/</a>"));
 }
 
+QString PPlugin::handbookSection() const
+{
+    return QLatin1String("export_tools");
+}
+
+QString PPlugin::handbookChapter() const
+{
+    return QLatin1String("pinterest_export");
+}
+
 QList<DPluginAuthor> PPlugin::authors() const
 {
     return QList<DPluginAuthor>()

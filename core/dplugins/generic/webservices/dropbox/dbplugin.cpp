@@ -69,6 +69,16 @@ QString DBPlugin::details() const
                  "See Dropbox web site for details: %1", QLatin1String("<a href='https://www.dropbox.com/'>https://www.dropbox.com/</a>"));
 }
 
+QString DBPlugin::handbookSection() const
+{
+    return QLatin1String("export_tools");
+}
+
+QString DBPlugin::handbookChapter() const
+{
+    return QLatin1String("dropbox_export");
+}
+
 QList<DPluginAuthor> DBPlugin::authors() const
 {
     return QList<DPluginAuthor>()
