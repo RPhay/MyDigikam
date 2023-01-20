@@ -241,7 +241,7 @@ bool UserScript::toolOperations()
 
 #ifndef Q_OS_WIN
 
-    process.start(QLatin1String("/bin/sh"), QStringList() << QLatin1String("-c") << script);
+    process.start(QLatin1String("/bin/bash"), QStringList() << QLatin1String("-c") << script);
 
 #else
 
@@ -265,7 +265,11 @@ bool UserScript::toolOperations()
         ret = false;
     }
 
-    if      (process.exitCode() == -2)
+    if      (process.exitCode() == 0)
+    {
+        setErrorDescription(i18n("User Script: No error."));
+    }
+    else if (process.exitCode() == -2)
     {
         setErrorDescription(i18n("User Script: Failed to start script."));
 
@@ -283,9 +287,16 @@ bool UserScript::toolOperations()
 
         ret = false;
     }
+    else
+    {
+        setErrorDescription(i18n("User Script: Error code returned %1.", process.exitCode()));
 
-    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Script stdout" << process.readAllStandardOutput();
-    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Script stderr" << process.readAllStandardError();
+        ret = false;
+    }
+
+
+    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Script stdout"     << process.readAllStandardOutput();
+    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Script stderr"     << process.readAllStandardError();
     qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Script exit code:" << process.exitCode();
 
     return ret;
