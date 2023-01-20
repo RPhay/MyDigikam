@@ -79,7 +79,7 @@ QString QualitySortPlugin::handbookChapter() const
 
 QString QualitySortPlugin::handbookReference() const
 {
-    return QLatin1String("bqm-damtools");
+    return QLatin1String("bqm-metadatatools");
 }
 
 QList<DPluginAuthor> QualitySortPlugin::authors() const

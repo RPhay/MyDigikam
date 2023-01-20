@@ -78,7 +78,7 @@ QString RemoveMetadataPlugin::handbookChapter() const
 
 QString RemoveMetadataPlugin::handbookReference() const
 {
-    return QLatin1String("bqm-damtools");
+    return QLatin1String("bqm-metadatatools");
 }
 
 QList<DPluginAuthor> RemoveMetadataPlugin::authors() const

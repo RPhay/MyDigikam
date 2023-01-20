@@ -79,7 +79,7 @@ QString AssignCaptionsPlugin::handbookChapter() const
 
 QString AssignCaptionsPlugin::handbookReference() const
 {
-    return QLatin1String("bqm-damtools");
+    return QLatin1String("bqm-metadatatools");
 }
 
 QList<DPluginAuthor> AssignCaptionsPlugin::authors() const

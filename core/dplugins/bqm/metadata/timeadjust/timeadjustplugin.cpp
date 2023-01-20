@@ -78,7 +78,7 @@ QString TimeAdjustPlugin::handbookChapter() const
 
 QString TimeAdjustPlugin::handbookReference() const
 {
-    return QLatin1String("bqm-damtools");
+    return QLatin1String("bqm-metadatatools");
 }
 
 QList<DPluginAuthor> TimeAdjustPlugin::authors() const

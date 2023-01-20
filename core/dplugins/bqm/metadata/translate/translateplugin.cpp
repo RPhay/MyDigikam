@@ -78,7 +78,7 @@ QString TranslatePlugin::handbookChapter() const
 
 QString TranslatePlugin::handbookReference() const
 {
-    return QLatin1String("bqm-damtools");
+    return QLatin1String("bqm-metadatatools");
 }
 
 QList<DPluginAuthor> TranslatePlugin::authors() const

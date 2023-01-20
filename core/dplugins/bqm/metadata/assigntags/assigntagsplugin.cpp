@@ -78,7 +78,7 @@ QString AssignTagsPlugin::handbookChapter() const
 
 QString AssignTagsPlugin::handbookReference() const
 {
-    return QLatin1String("bqm-damtools");
+    return QLatin1String("bqm-metadatatools");
 }
 
 QList<DPluginAuthor> AssignTagsPlugin::authors() const
