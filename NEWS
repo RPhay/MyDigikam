@@ -256,4 +256,5 @@ BUGFIXES:
 216 ==> 464420 - Folders not ignored.
 217 ==> 099418 - Help button in dialog refers to wrong Section/Chapter in new Documentation based on Sphinx/RestructuredText.
 218 ==> 240220 - Help menu entry not working properly with new online Documentation based on Sphinx.
-219 ==> 
+219 ==> 393382 - Add documentation section about the BQM custom shell scripts tool.
+220 ==> 
