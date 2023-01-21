@@ -1259,8 +1259,6 @@ bool MetaEngine::getItemPreview(QImage& preview) const
 
         if (!imgData.isEmpty())
         {
-            qCDebug(DIGIKAM_METAENGINE_LOG) << "Found IPTC preview data:" << imgData;
-
             if (preview.loadFromData(imgData))
             {
                 return true;
@@ -1271,8 +1269,6 @@ bool MetaEngine::getItemPreview(QImage& preview) const
 
         if (!imgData.isEmpty())
         {
-            qCDebug(DIGIKAM_METAENGINE_LOG) << "Found XMP preview data:" << imgData;
-
             if (preview.loadFromData(imgData))
             {
                 return true;

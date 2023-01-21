@@ -258,4 +258,5 @@ BUGFIXES:
 218 ==> 240220 - Help menu entry not working properly with new online Documentation based on Sphinx.
 219 ==> 393382 - Add documentation section about the BQM custom shell scripts tool.
 220 ==> 464569 - Days highlighting in Dates view lost when moving files to trash.
-221 ==> 
+221 ==> 464567 - Freeze on thumbnail creation (git 8.0 version).
+222 ==> 
