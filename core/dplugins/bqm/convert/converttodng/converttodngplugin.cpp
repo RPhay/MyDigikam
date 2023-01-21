@@ -75,12 +75,7 @@ QString ConvertToDngPlugin::handbookSection() const
 
 QString ConvertToDngPlugin::handbookChapter() const
 {
-    return QLatin1String("base_tools");
-}
-
-QString ConvertToDngPlugin::handbookReference() const
-{
-    return QLatin1String("bqm-converttools");
+    return QLatin1String("dng_converter");
 }
 
 QList<DPluginAuthor> ConvertToDngPlugin::authors() const
