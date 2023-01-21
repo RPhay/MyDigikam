@@ -1255,14 +1255,28 @@ bool MetaEngine::getItemPreview(QImage& preview) const
     {
         // In first we trying to get from Iptc preview tag.
 
-        if (preview.loadFromData(getIptcTagData("Iptc.Application2.Preview")) )
+        QByteArray imgData = getIptcTagData("Iptc.Application2.Preview");
+
+        if (!imgData.isEmpty())
         {
-            return true;
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "Found IPTC preview data:" << imgData;
+
+            if (preview.loadFromData(imgData))
+            {
+                return true;
+            }
         }
 
-        if (preview.loadFromData(QByteArray::fromBase64(getXmpTagString("Xmp.digiKam.Preview", false).toUtf8())))
+        imgData = QByteArray::fromBase64(getXmpTagString("Xmp.digiKam.Preview", false).toUtf8());
+
+        if (!imgData.isEmpty())
         {
-            return true;
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "Found XMP preview data:" << imgData;
+
+            if (preview.loadFromData(imgData))
+            {
+                return true;
+            }
         }
 
         // TODO : Added here Makernotes preview extraction when Exiv2 will be fixed for that.
