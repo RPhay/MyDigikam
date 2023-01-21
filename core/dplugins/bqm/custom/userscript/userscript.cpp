@@ -236,11 +236,7 @@ bool UserScript::toolOperations()
 
     // call the shell script
 
-#ifndef Q_OS_WIN
-
-    process.start(QLatin1String("/bin/bash"), QStringList() << QLatin1String("-c") << script);
-
-#else
+#ifdef Q_OS_WIN
 
     QString dir                   = QDir::temp().path();
     SafeTemporaryFile* const temp = new SafeTemporaryFile(dir + QLatin1String("/UserScript-XXXXXX.cmd"));
@@ -270,7 +266,11 @@ bool UserScript::toolOperations()
 
     process.start(QLatin1String("cmd.exe"), QStringList() << QLatin1String("/C") << scriptPath);
 
-#endif // Q_OS_WIN
+#else
+
+    process.start(QLatin1String("/bin/bash"), QStringList() << QLatin1String("-c") << script);
+
+#endif
 
     bool ret = true;
 
