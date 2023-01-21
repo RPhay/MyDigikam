@@ -18,6 +18,7 @@
 // Qt includes
 
 #include <QDir>
+#include <QFile>
 #include <QLabel>
 #include <QWidget>
 #include <QProcess>
@@ -36,6 +37,7 @@
 #include "dmetadata.h"
 #include "tagscache.h"
 #include "dlayoutbox.h"
+#include "filereadwritelock.h"
 
 namespace DigikamBqmUserScriptPlugin
 {
@@ -203,17 +205,12 @@ bool UserScript::toolOperations()
 
     // Replace all occurrences of $INPUT and $OUTPUT in script to file names. Case sensitive.
 
-#ifndef Q_OS_WIN
-
-    script.replace(QLatin1String("$INPUT"),  QLatin1Char('"') + inputUrl().toLocalFile()  + QLatin1Char('"'));
-    script.replace(QLatin1String("$OUTPUT"), QLatin1Char('"') + outputUrl().toLocalFile() + QLatin1Char('"'));
-
-#else
-
-    script.replace(QLatin1String("$INPUT"),  QLatin1Char('"') + QDir::toNativeSeparators(inputUrl().toLocalFile())  + QLatin1Char('"'));
-    script.replace(QLatin1String("$OUTPUT"), QLatin1Char('"') + QDir::toNativeSeparators(outputUrl().toLocalFile()) + QLatin1Char('"'));
-
-#endif // Q_OS_WIN
+    script.replace(QLatin1String("$INPUT"),  QLatin1Char('"') +
+                                             QDir::toNativeSeparators(inputUrl().toLocalFile()) +
+                                             QLatin1Char('"'));
+    script.replace(QLatin1String("$OUTPUT"), QLatin1Char('"') +
+                                             QDir::toNativeSeparators(outputUrl().toLocalFile()) +
+                                             QLatin1Char('"'));
 
     // Empties d->image, not to pass it to the next tool in chain
 
@@ -245,11 +242,33 @@ bool UserScript::toolOperations()
 
 #else
 
-    script.replace(QLatin1Char('\n'), QLatin1String(" & "));
+    QString dir                   = QDir::temp().path();
+    SafeTemporaryFile* const temp = new SafeTemporaryFile(dir + QLatin1String("/UserScript-XXXXXX.cmd"));
+    temp->setAutoRemove(false);
+    temp->open();
+    QString scriptPath            = temp->safeFilePath();
 
-    process.setProgram(QLatin1String("cmd.exe"));
+    // Crash fix: a QTemporaryFile is not properly closed until its destructor is called.
 
-    process.setNativeArguments(QLatin1String("/C ") + script);
+    delete temp;
+
+    script.replace(QLatin1Char('\n'), QLatin1String("\r\n"));
+
+    QFile file(scriptPath);
+
+    if (file.open(QIODevice::WriteOnly))
+    {
+        file.write(script.toUtf8());
+        file.close();
+    }
+    else
+    {
+        setErrorDescription(i18n("User Script: File open error."));
+
+        return false;
+    }
+
+    process.start(QLatin1String("cmd.exe"), QStringList() << QLatin1String("/C") << scriptPath);
 
     process.start();
 
@@ -294,6 +313,11 @@ bool UserScript::toolOperations()
         ret = false;
     }
 
+#ifdef Q_OS_WIN
+
+    file.remove();
+
+#endif
 
     qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Script stdout"     << process.readAllStandardOutput();
     qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Script stderr"     << process.readAllStandardError();
