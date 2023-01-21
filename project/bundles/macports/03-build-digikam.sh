@@ -78,6 +78,10 @@ cp $DOWNLOAD_DIR/lensfun_manifest.txt $ORIG_WD/data/
 # Clean up previous install (see bug #459276)
 
 cd "$INSTALL_PREFIX"
+
+# This is odd: grep -E under macOS return an error if nothing is found
+touch digikam.txt
+
 FILES=$(find . | grep -E '(digikam|showfoto|avplayer)')
 
 for FILE in $FILES ; do
