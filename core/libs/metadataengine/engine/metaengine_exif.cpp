@@ -1043,9 +1043,20 @@ QImage MetaEngine::getExifThumbnail(bool fixOrientation) const
     {
         Exiv2::ExifThumbC thumb(d->exifMetadata());
         Exiv2::DataBuf const c1 = thumb.copy();
+
 #if EXIV2_TEST_VERSION(0,27,99)
+        if (c1.size() == 0)
+        {
+            return thumbnail;
+        }
+
         thumbnail.loadFromData(c1.c_data(), c1.size());
 #else
+        if (c1.size_ == 0)
+        {
+            return thumbnail;
+        }
+
         thumbnail.loadFromData(c1.pData_, c1.size_);
 #endif
 
