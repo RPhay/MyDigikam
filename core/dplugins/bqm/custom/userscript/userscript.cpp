@@ -270,8 +270,6 @@ bool UserScript::toolOperations()
 
     process.start(QLatin1String("cmd.exe"), QStringList() << QLatin1String("/C") << scriptPath);
 
-    process.start();
-
 #endif // Q_OS_WIN
 
     bool ret = true;
