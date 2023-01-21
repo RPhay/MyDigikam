@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-20 00:54+0000\n"
+"POT-Creation-Date: 2023-01-21 00:55+0000\n"
 "PO-Revision-Date: 2022-05-12 10:31+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -5853,41 +5853,41 @@ msgid ""
 "href='https://en.wikipedia.org/wiki/WebP'>this page</a>.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:90
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:91
 #, kde-format
 msgid "Output file type:"
 msgstr "Typ výstupného súboru:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:93
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:94
 #, kde-format
 msgid "Same as input"
 msgstr "Rovnaký ako vstup"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:94
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:95
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
 #, kde-format
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:95
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:96
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
 #, kde-format
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:96
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:97
 #, kde-format
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:100
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:101
 #, kde-format
 msgid "Shell Script:"
 msgstr "Shellový skript:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:103
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:104
 #, kde-format
 msgid ""
 "Enter script for execution. Use $INPUT and $OUTPUT for input / output "
@@ -5898,7 +5898,7 @@ msgstr ""
 "súborov použite $INPUT, resp. $OUTPUT (špeciálne znaky sú ošetrené). Tieto "
 "premenné shell pred spustením nahradí hodnotami."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:106
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:107
 #, kde-format
 msgid ""
 "<b>Note:</b> Environment variables TITLE, COMMENTS, COLORLABEL, PICKLABEL, "
@@ -5907,30 +5907,42 @@ msgstr ""
 "<b>Poznámka:</b> Sú dostupné premenné prostredia TITLE, COMMENTS, "
 "COLORLABEL, PICKLABEL, RATING a TAGSPATH (ako oddeľovač sa používa ;)."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:198
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:199
 #, kde-format
 msgid "User Script: No script."
 msgstr "Používateľský skript: Žiadny skript."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:259
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:262
 #, kde-format
 msgid "User Script: Timeout from script."
 msgstr "Používateľský skript: Čas vypršal."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:267
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:270
+#, fuzzy, kde-format
+#| msgid "User Script: No script."
+msgid "User Script: No error."
+msgstr "Používateľský skript: Žiadny skript."
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:274
 #, kde-format
 msgid "User Script: Failed to start script."
 msgstr "Používateľský skript: Skript sa nepodarilo spustiť."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:273
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:280
 #, kde-format
 msgid "User Script: Script process crashed."
 msgstr "Používateľský skript: Proces skriptu spadol."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:279
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:286
 #, kde-format
 msgid "User Script: Command not found."
 msgstr "Používateľský skript: Príkaz nebol nájdený."
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:292
+#, fuzzy, kde-format
+#| msgid "User Script: No script."
+msgid "User Script: Error code returned %1."
+msgstr "Používateľský skript: Žiadny skript."
 
 #: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:46
 #, fuzzy, kde-format
@@ -7436,29 +7448,29 @@ msgid ""
 "Efficiency Image File Format</a> for details.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:117
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:127
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:132
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:142
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "High efficiency image coding"
 msgstr "Nový formát obrázka"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:118
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:128
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:158
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:108
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:113
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:118
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:164
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:168
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:172
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:176
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:180
-#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:96
-#: core/dplugins/dimg/png/dimgpngplugin.cpp:104
-#: core/dplugins/dimg/raw/dimgrawplugin.cpp:105
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:109
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:113
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:143
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:173
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:183
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:187
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:191
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:195
+#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:111
+#: core/dplugins/dimg/png/dimgpngplugin.cpp:119
+#: core/dplugins/dimg/raw/dimgrawplugin.cpp:120
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:124
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:128
 #: core/libs/dplugins/core/dplugindimg.cpp:58
 #: core/libs/dplugins/core/dplugindimg.cpp:70
 #, fuzzy, kde-format
@@ -7468,21 +7480,21 @@ msgctxt "@info: can read file format"
 msgid "yes"
 msgstr "áno"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:120
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:130
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:161
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:109
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:114
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:119
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:165
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:169
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:173
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:177
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:181
-#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:97
-#: core/dplugins/dimg/png/dimgpngplugin.cpp:105
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:110
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:114
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:135
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:145
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:176
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:180
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:184
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:188
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:192
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:196
+#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:112
+#: core/dplugins/dimg/png/dimgpngplugin.cpp:120
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:125
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:129
 #: core/libs/dplugins/core/dplugindimg.cpp:61
 #: core/libs/dplugins/core/dplugindimg.cpp:73
 #, fuzzy, kde-format
@@ -7492,9 +7504,9 @@ msgctxt "@info: can write file format"
 msgid "yes"
 msgstr "áno"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:122
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:132
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:162
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:147
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:177
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
 #, fuzzy, kde-format
@@ -7528,7 +7540,7 @@ msgid ""
 "wiki/ImageMagick'>ImageMagick documentation</a> for details.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:159
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:174
 #: core/libs/dplugins/core/dplugindimg.cpp:59
 #: core/libs/dplugins/core/dplugindimg.cpp:71
 #, fuzzy, kde-format
@@ -7633,9 +7645,9 @@ msgid ""
 "Photographic Experts Group documentation</a> for details.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:107
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:112
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:117
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:122
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:127
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:132
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "JPEG image"
@@ -7702,23 +7714,23 @@ msgid ""
 "Group documentation</a> for details.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:163
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:167
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:178
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:182
 #, fuzzy, kde-format
 #| msgid "JPEG 2000 image"
 msgctxt "@title"
 msgid "JPEG-2000 image"
 msgstr "Obrázok JPEG 2000"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:171
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:175
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:186
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:190
 #, fuzzy, kde-format
 #| msgid "JPEG 2000 image"
 msgctxt "@title"
 msgid "JPEG-2000 stream"
 msgstr "Obrázok JPEG 2000"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:194
 #, fuzzy, kde-format
 #| msgid "JPEG 2000 image"
 msgctxt "@title"
@@ -7772,7 +7784,7 @@ msgctxt "@info"
 msgid "An image loader based on Libpgf codec"
 msgstr ""
 
-#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:67
+#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:82
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7786,7 +7798,7 @@ msgid ""
 "a> for details.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:95
+#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:110
 #, fuzzy, kde-format
 #| msgid "*.pgf|Progressive Graphics file"
 msgctxt "@title"
@@ -7838,7 +7850,7 @@ msgid ""
 "Network Graphics documentation</a> for details.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/png/dimgpngplugin.cpp:103
+#: core/dplugins/dimg/png/dimgpngplugin.cpp:118
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Portable Network Graphic"
@@ -8035,7 +8047,7 @@ msgid ""
 "details.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/raw/dimgrawplugin.cpp:106
+#: core/dplugins/dimg/raw/dimgrawplugin.cpp:121
 #, fuzzy, kde-format
 #| msgctxt "@info: gphoto backend feature"
 #| msgid "no"
@@ -8086,8 +8098,8 @@ msgid ""
 "TIFF'>Tagged Image File Format documentation</a> for details.</para>"
 msgstr ""
 
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:108
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:112
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:123
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:127
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Tagged Image Format"
@@ -16369,7 +16381,7 @@ msgid ""
 "can be an offset of time or a specific date."
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:93
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Adjust Time && Date..."
@@ -16395,21 +16407,21 @@ msgid ""
 "in a PDF file.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:74
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:84
 #, kde-format
 msgid "Former Author"
 msgstr "Predchádzajúci autor"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:84
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:94
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:91
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:104
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:97
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:107
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:95
 #, kde-format
 msgid "Developer and Maintainer"
 msgstr "Vývojár a správca"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:92
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:102
 #, kde-format
 msgctxt "@action"
 msgid "Create Calendar..."
@@ -16886,7 +16898,7 @@ msgid ""
 "See details on this wikipedia entry about this format: %1"
 msgstr ""
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:91
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:101
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "DNG Converter..."
@@ -17320,17 +17332,17 @@ msgid ""
 "for merging pixels by pixels.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:90
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:74
-#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:88
+#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:100
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:84
+#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:98
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:90
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:77
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:79
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:87
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:89
 #, kde-format
 msgid "Author and Maintainer"
 msgstr "Autor a správca"
 
-#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:98
+#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:108
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Blend Stacked Images..."
@@ -18187,7 +18199,7 @@ msgid ""
 "layout. See the jAlbum web-site for details: https://jalbum.net/.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:82
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:92
 #, kde-format
 msgctxt "@action"
 msgid "Create jAlbum Gallery..."
@@ -18854,7 +18866,7 @@ msgstr ""
 msgid "A tool to export items as MJPEG Stream"
 msgstr "Nástroj na export položiek do miestneho úložiska"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:76
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:86
 #, kde-format
 msgid ""
 "<p>This tool allows users to share items on the local network through a "
@@ -18870,7 +18882,7 @@ msgid ""
 "same time.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:93
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
 #: core/libs/dplugins/core/dpluginauthor.cpp:30
 #: core/libs/widgets/mainview/daboutdata.cpp:111
 #: core/libs/widgets/mainview/daboutdata.cpp:126
@@ -18887,7 +18899,7 @@ msgstr ""
 msgid "Developer"
 msgstr "Vývojár"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:105
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:115
 #, kde-format
 msgctxt "@action"
 msgid "Share as MJPEG Stream..."
@@ -19218,7 +19230,7 @@ msgid ""
 "See details on %1 for more information on Tesseract"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:84
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:94
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "OCR Text Converter..."
@@ -19373,7 +19385,7 @@ msgid ""
 "memory to be processed.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:96
+#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:106
 #, kde-format
 msgctxt "@action"
 msgid "Create panorama..."
@@ -21192,7 +21204,7 @@ msgid ""
 "to images to make transitions while to render target video.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:85
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Create video slideshow..."
@@ -21359,7 +21371,7 @@ msgid ""
 "image is selected, the first one from current album will be used.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:86
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Set as wallpaper"
@@ -22690,7 +22702,7 @@ msgid ""
 "See Box web site for details: %1"
 msgstr "Filtrovať podľa hodnotenia"
 
-#: core/dplugins/generic/webservices/box/boxplugin.cpp:85
+#: core/dplugins/generic/webservices/box/boxplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Box..."
@@ -22923,7 +22935,7 @@ msgid ""
 "See Dropbox web site for details: %1"
 msgstr "Filtrovať podľa hodnotenia"
 
-#: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:88
+#: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Dropbox..."
@@ -23034,20 +23046,20 @@ msgid ""
 "www.facebook.com/</a></p>"
 msgstr "Filtrovať podľa hodnotenia"
 
-#: core/dplugins/generic/webservices/facebook/fbplugin.cpp:95
+#: core/dplugins/generic/webservices/facebook/fbplugin.cpp:105
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Export to &Facebook..."
 msgstr "Externé nástroje"
 
-#: core/dplugins/generic/webservices/facebook/fbplugin.cpp:110
+#: core/dplugins/generic/webservices/facebook/fbplugin.cpp:120
 #, fuzzy, kde-format
 #| msgid "Facebook"
 msgctxt "@title:window"
 msgid "Facebook"
 msgstr "Facebook"
 
-#: core/dplugins/generic/webservices/facebook/fbplugin.cpp:111
+#: core/dplugins/generic/webservices/facebook/fbplugin.cpp:121
 #, kde-format
 msgid ""
 "<p>Currently, as an open source project, we are unable to meet the Facebook "
@@ -23308,7 +23320,7 @@ msgctxt "@info"
 msgid "This tool allows users to export items to a local storage."
 msgstr "Tento nástroj vám umožní exportovať položky do miestneho úložiska."
 
-#: core/dplugins/generic/webservices/filecopy/fcplugin.cpp:94
+#: core/dplugins/generic/webservices/filecopy/fcplugin.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Export to local storage..."
@@ -23452,13 +23464,13 @@ msgid ""
 "Many protocols can be used, as FTP, SFTP, SAMBA, etc."
 msgstr "Filtrovať podľa názvu"
 
-#: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:93
+#: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Export to remote storage..."
 msgstr "Exportovať do vzdialeného úložiska..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:105
+#: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:115
 #, kde-format
 msgctxt "@action"
 msgid "Import from remote storage..."
@@ -24041,19 +24053,19 @@ msgid ""
 "See Google web sites for details: %1"
 msgstr "Filtrovať podľa hodnotenia"
 
-#: core/dplugins/generic/webservices/google/gsplugin.cpp:98
+#: core/dplugins/generic/webservices/google/gsplugin.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Google Photos..."
 msgstr "Exportovať do Fotky &Google..."
 
-#: core/dplugins/generic/webservices/google/gsplugin.cpp:110
+#: core/dplugins/generic/webservices/google/gsplugin.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Import from &Google Photos..."
 msgstr "Importovať z &Fotky Google..."
 
-#: core/dplugins/generic/webservices/google/gsplugin.cpp:122
+#: core/dplugins/generic/webservices/google/gsplugin.cpp:132
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Google Drive..."
@@ -24337,7 +24349,7 @@ msgid ""
 "See ImageShack web site for details: %1"
 msgstr "Filtrovať podľa hodnotenia"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackplugin.cpp:86
+#: core/dplugins/generic/webservices/imageshack/imageshackplugin.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Imageshack..."
@@ -24492,7 +24504,7 @@ msgid ""
 "See ImgUr web site for details: %1"
 msgstr "Filtrovať podľa hodnotenia"
 
-#: core/dplugins/generic/webservices/imgur/imgurplugin.cpp:96
+#: core/dplugins/generic/webservices/imgur/imgurplugin.cpp:106
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Imgur..."
@@ -24599,7 +24611,7 @@ msgid ""
 "See iNaturalist web site for details: %1."
 msgstr "Filtrovať podľa hodnotenia"
 
-#: core/dplugins/generic/webservices/inaturalist/inatplugin.cpp:88
+#: core/dplugins/generic/webservices/inaturalist/inatplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Export to &iNaturalist..."
@@ -25110,7 +25122,7 @@ msgid ""
 "See IPFS web site for details: %1"
 msgstr "Filtrovať podľa hodnotenia"
 
-#: core/dplugins/generic/webservices/ipfs/ipfsplugin.cpp:86
+#: core/dplugins/generic/webservices/ipfs/ipfsplugin.cpp:96
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Export to &Ipfs..."
@@ -25170,7 +25182,7 @@ msgid ""
 "See MediaWiki web site for details: %1"
 msgstr "Filtrovať podľa hodnotenia"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiplugin.cpp:95
+#: core/dplugins/generic/webservices/mediawiki/mediawikiplugin.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Export to MediaWiki..."
@@ -25706,7 +25718,7 @@ msgid ""
 "See OneDrive web site for details: %1"
 msgstr "Filtrovať podľa hodnotenia"
 
-#: core/dplugins/generic/webservices/onedrive/odplugin.cpp:86
+#: core/dplugins/generic/webservices/onedrive/odplugin.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Onedrive..."
@@ -25774,7 +25786,7 @@ msgid ""
 "See Pinterest web site for details: %1"
 msgstr "Filtrovať podľa hodnotenia"
 
-#: core/dplugins/generic/webservices/pinterest/pplugin.cpp:86
+#: core/dplugins/generic/webservices/pinterest/pplugin.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Pinterest..."
@@ -25878,7 +25890,7 @@ msgstr ""
 "Tento nástroj vám umožní exportovať položky do webovej služby Piwigo. "
 "Podrobnosti nájdete na webovej stránke Piwigo: %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigoplugin.cpp:98
+#: core/dplugins/generic/webservices/piwigo/piwigoplugin.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Piwigo..."
@@ -26101,7 +26113,7 @@ msgid ""
 "See Rajce web site for details: %1"
 msgstr "Filtrovať podľa hodnotenia"
 
-#: core/dplugins/generic/webservices/rajce/rajceplugin.cpp:86
+#: core/dplugins/generic/webservices/rajce/rajceplugin.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Rajce..."
@@ -26333,13 +26345,13 @@ msgid ""
 "See SmugMug web site for details: %1"
 msgstr "Filtrovať podľa hodnotenia"
 
-#: core/dplugins/generic/webservices/smugmug/smugplugin.cpp:96
+#: core/dplugins/generic/webservices/smugmug/smugplugin.cpp:106
 #, kde-format
 msgctxt "@action"
 msgid "Export to &SmugMug..."
 msgstr "Exportovať do &SmugMug..."
 
-#: core/dplugins/generic/webservices/smugmug/smugplugin.cpp:108
+#: core/dplugins/generic/webservices/smugmug/smugplugin.cpp:118
 #, kde-format
 msgctxt "@action"
 msgid "Import from &SmugMug..."
@@ -26607,7 +26619,7 @@ msgid ""
 "See Twitter web site for details: %1"
 msgstr "Filtrovať podľa hodnotenia"
 
-#: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:89
+#: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Twitter..."
@@ -26722,7 +26734,7 @@ msgid ""
 "This is a unified tool, grouping many tools in one."
 msgstr "Filtrovať podľa hodnotenia"
 
-#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:87
+#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:97
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Export to Webservices..."
@@ -64900,14 +64912,21 @@ msgstr ""
 "systéme existujú a budú prehľadané tieto cesty:<ul><li>%3</li></ul>"
 
 #: core/utilities/setup/setupicc.cpp:918
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "On Mac OS X, the default search paths include <ul><li>/System/Library/"
+#| "ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/"
+#| "ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/share/"
+#| "color/icc</li><li>~/.local/share/color/icc/</li><li>~/.local/share/icc/</"
+#| "li><li>~/.color/icc/</li></ul>On your system, currently these paths exist "
+#| "and are scanned:<ul><li>%2</li></ul>"
 msgid ""
-"On Mac OS X, the default search paths include <ul><li>/System/Library/"
-"ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/"
-"ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/share/color/"
-"icc</li><li>~/.local/share/color/icc/</li><li>~/.local/share/icc/</li><li>~/."
-"color/icc/</li></ul>On your system, currently these paths exist and are "
-"scanned:<ul><li>%2</li></ul>"
+"On macOS, the default search paths include <ul><li>/System/Library/ColorSync/"
+"Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/ColorSync/"
+"Profiles</li><li>/opt/local/share/color/icc</li><li>%1/Contents/Resources/"
+"digikam/profiles/</li><li>~/.local/share/color/icc/</li><li>~/.local/share/"
+"icc/</li><li>~/.color/icc/</li></ul>On your system, currently these paths "
+"exist and are scanned:<ul><li>%2</li></ul>"
 msgstr ""
 "Na Mac OS X, predvolené cesty, ktoré sú prehľadávané, zahŕňajú <ul><li>/"
 "System/Library/ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</"

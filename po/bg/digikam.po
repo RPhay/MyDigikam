@@ -33,8 +33,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-20 00:54+0000\n"
-"PO-Revision-Date: 2023-01-16 15:46+0100\n"
+"POT-Creation-Date: 2023-01-21 00:55+0000\n"
+"PO-Revision-Date: 2023-01-18 14:05+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -5835,41 +5835,41 @@ msgstr ""
 "para> <para> Вижте подробности за този формат от <a href='https://en."
 "wikipedia.org/wiki/Webp'> това Страница </a>. </para>"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:90
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:91
 #, kde-format
 msgid "Output file type:"
 msgstr "Тип изходен файл:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:93
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:94
 #, kde-format
 msgid "Same as input"
 msgstr "Също като входа"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:94
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:95
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
 #, kde-format
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:95
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:96
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
 #, kde-format
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:96
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:97
 #, kde-format
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:100
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:101
 #, kde-format
 msgid "Shell Script:"
 msgstr "Скрипт на обвивката:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:103
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:104
 #, kde-format
 msgid ""
 "Enter script for execution. Use $INPUT and $OUTPUT for input / output "
@@ -5880,7 +5880,7 @@ msgstr ""
 "вход/изход (с пропускане на специални символи). Те ще бъдат заменени преди "
 "изпълнението на обвивката."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:106
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:107
 #, kde-format
 msgid ""
 "<b>Note:</b> Environment variables TITLE, COMMENTS, COLORLABEL, PICKLABEL, "
@@ -5890,30 +5890,42 @@ msgstr ""
 "COMMENTS (коментари), COLORLABEL (етикет на цвета), PICKLABEL (етикет на "
 "избора), RATING (оценка) и TAGSPATH (разделени с ;)."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:198
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:199
 #, kde-format
 msgid "User Script: No script."
 msgstr "Потребителски скрипт: Без скрипт."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:259
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:262
 #, kde-format
 msgid "User Script: Timeout from script."
 msgstr "Потребителски скрипт: Timeout от скрипта."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:267
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:270
+#, fuzzy, kde-format
+#| msgid "User Script: No script."
+msgid "User Script: No error."
+msgstr "Потребителски скрипт: Без скрипт."
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:274
 #, kde-format
 msgid "User Script: Failed to start script."
 msgstr "Потребителски скрипт: Неуспешно стартиране на скрипт."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:273
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:280
 #, kde-format
 msgid "User Script: Script process crashed."
 msgstr "Потребителски скрипт: Процесът на скрипт се срина."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:279
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:286
 #, kde-format
 msgid "User Script: Command not found."
 msgstr "Потребителски скрипт: Командата не е намерена."
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:292
+#, fuzzy, kde-format
+#| msgid "User Script: No script."
+msgid "User Script: Error code returned %1."
+msgstr "Потребителски скрипт: Без скрипт."
 
 #: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:46
 #, kde-format
@@ -7449,29 +7461,29 @@ msgstr ""
 "High_Efficiency_Image_File_Format'>High Efficiency Image File Format </a>за "
 "подробности. </para>"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:117
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:127
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:132
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:142
 #, kde-format
 msgctxt "@title"
 msgid "High efficiency image coding"
 msgstr "Високоефективно кодиране на изображения"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:118
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:128
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:158
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:108
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:113
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:118
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:164
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:168
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:172
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:176
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:180
-#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:96
-#: core/dplugins/dimg/png/dimgpngplugin.cpp:104
-#: core/dplugins/dimg/raw/dimgrawplugin.cpp:105
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:109
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:113
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:143
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:173
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:183
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:187
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:191
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:195
+#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:111
+#: core/dplugins/dimg/png/dimgpngplugin.cpp:119
+#: core/dplugins/dimg/raw/dimgrawplugin.cpp:120
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:124
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:128
 #: core/libs/dplugins/core/dplugindimg.cpp:58
 #: core/libs/dplugins/core/dplugindimg.cpp:70
 #, kde-format
@@ -7479,21 +7491,21 @@ msgctxt "@info: can read file format"
 msgid "yes"
 msgstr "да"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:120
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:130
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:161
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:109
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:114
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:119
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:165
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:169
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:173
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:177
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:181
-#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:97
-#: core/dplugins/dimg/png/dimgpngplugin.cpp:105
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:110
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:114
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:135
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:145
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:176
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:180
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:184
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:188
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:192
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:196
+#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:112
+#: core/dplugins/dimg/png/dimgpngplugin.cpp:120
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:125
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:129
 #: core/libs/dplugins/core/dplugindimg.cpp:61
 #: core/libs/dplugins/core/dplugindimg.cpp:73
 #, kde-format
@@ -7501,9 +7513,9 @@ msgctxt "@info: can write file format"
 msgid "yes"
 msgstr "да"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:122
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:132
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:162
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:147
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:177
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
 #, kde-format
@@ -7541,7 +7553,7 @@ msgstr ""
 "org/wiki/imagemagick'> документация на ImageMagick</a> за подробности.</"
 "para> "
 
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:159
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:174
 #: core/libs/dplugins/core/dplugindimg.cpp:59
 #: core/libs/dplugins/core/dplugindimg.cpp:71
 #, kde-format
@@ -7664,9 +7676,9 @@ msgstr ""
 "jpeg'>документация на Joint Photographic Experts Group </a>за подробности. </"
 "para> "
 
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:107
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:112
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:117
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:122
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:127
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:132
 #, kde-format
 msgctxt "@title"
 msgid "JPEG image"
@@ -7743,21 +7755,21 @@ msgstr ""
 "href='https://en.wikipedia.org/wiki/JPEG_2000'>Joint Photographic Experts "
 "Group</a> за подробности. </para> "
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:163
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:167
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:178
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:182
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 image"
 msgstr "Изображение JPEG-2000"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:171
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:175
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:186
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:190
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 stream"
 msgstr "Поток JPEG-2000"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:194
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 verification model"
@@ -7811,7 +7823,7 @@ msgctxt "@info"
 msgid "An image loader based on Libpgf codec"
 msgstr "Програма за зареждане на изображения, базирана на кодека Libpgf"
 
-#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:67
+#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:82
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7834,7 +7846,7 @@ msgstr ""
 "en.wikipedia.org/wiki/Progressive_Graphics_File'>документация за Progressive "
 "Graphics File  </a> за подробности. </para> "
 
-#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:95
+#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:110
 #, kde-format
 msgctxt "@title"
 msgid "Progressive Graphics File"
@@ -7891,7 +7903,7 @@ msgstr ""
 "org/wiki/Portable_Network_Graphics'>документацията на Portable Network "
 "Graphics </a> за подробности.</para>"
 
-#: core/dplugins/dimg/png/dimgpngplugin.cpp:103
+#: core/dplugins/dimg/png/dimgpngplugin.cpp:118
 #, kde-format
 msgctxt "@title"
 msgid "Portable Network Graphic"
@@ -8078,7 +8090,7 @@ msgstr ""
 "Raw_image_format '> Документация на файл с RAW изображения </a> за "
 "подробности. </para>"
 
-#: core/dplugins/dimg/raw/dimgrawplugin.cpp:106
+#: core/dplugins/dimg/raw/dimgrawplugin.cpp:121
 #, kde-format
 msgctxt "@info: can write file format"
 msgid "no"
@@ -8136,8 +8148,8 @@ msgstr ""
 "<a href='https://en.wikipedia.org/wiki/TIFF'>Tagged Image File Format "
 "документация</a>за подробности. </para>"
 
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:108
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:112
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:123
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:127
 #, kde-format
 msgctxt "@title"
 msgid "Tagged Image Format"
@@ -16542,7 +16554,7 @@ msgstr ""
 "Много времеви печати на метаданни могат да бъдат коригирани или оставени без "
 "промяна. Корекцията може да бъде изместване на часа или конкретна дата."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:93
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Adjust Time && Date..."
@@ -16573,21 +16585,21 @@ msgstr ""
 "подчертаете времето за празници.</p><p>И накрая, инструментът ще предложи да "
 "отпечатате резултата на вашия принтер или в PDF файл. </p> "
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:74
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:84
 #, kde-format
 msgid "Former Author"
 msgstr "Предишен автор"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:84
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:94
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:91
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:104
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:97
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:107
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:95
 #, kde-format
 msgid "Developer and Maintainer"
 msgstr "Разработка и поддръжка"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:92
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:102
 #, kde-format
 msgctxt "@action"
 msgid "Create Calendar..."
@@ -17041,7 +17053,7 @@ msgstr ""
 "\n"
 "Вижте подробности в този запис в Уикипедия за този формат: %1"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:91
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:101
 #, kde-format
 msgctxt "@action"
 msgid "DNG Converter..."
@@ -17480,17 +17492,17 @@ msgstr ""
 "изображения вместо JPEG, където дълбочината на цветовете е по-висока и са "
 "добре адаптирани за сливане на пиксел с пиксел.</p>"
 
-#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:90
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:74
-#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:88
+#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:100
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:84
+#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:98
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:90
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:77
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:79
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:87
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:89
 #, kde-format
 msgid "Author and Maintainer"
 msgstr "Автор и поддръжка"
 
-#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:98
+#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Blend Stacked Images..."
@@ -18344,7 +18356,7 @@ msgstr ""
 "p><p>jAlbum може да се използва с различни шаблони и оформление. Вижте "
 "уебсайта на jAlbum за подробности: https://jalbum.net/.</p>"
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:82
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:92
 #, kde-format
 msgctxt "@action"
 msgid "Create jAlbum Gallery..."
@@ -19010,7 +19022,7 @@ msgstr "MJPEG Stream Server"
 msgid "A tool to export items as MJPEG Stream"
 msgstr "Инструмент за експортиране на елементи като MJPEG поток"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:76
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:86
 #, kde-format
 msgid ""
 "<p>This tool allows users to share items on the local network through a "
@@ -19038,7 +19050,7 @@ msgstr ""
 "от един компютър може да бъде свързан към сървъра на MJPEG по едно и също "
 "време.</p>"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:93
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
 #: core/libs/dplugins/core/dpluginauthor.cpp:30
 #: core/libs/widgets/mainview/daboutdata.cpp:111
 #: core/libs/widgets/mainview/daboutdata.cpp:126
@@ -19055,7 +19067,7 @@ msgstr ""
 msgid "Developer"
 msgstr "Разработчик"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:105
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:115
 #, kde-format
 msgctxt "@action"
 msgid "Share as MJPEG Stream..."
@@ -19380,7 +19392,7 @@ msgstr ""
 "\n"
 "Вижте подробности на %1 за повече информация за Tesseract"
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:84
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "OCR Text Converter..."
@@ -19538,7 +19550,7 @@ msgstr ""
 "Обърнете внимание, че крайното изображение ще стане огромно и ще изисква "
 "много памет за да бъде обработено.</p>"
 
-#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:96
+#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:106
 #, kde-format
 msgctxt "@action"
 msgid "Create panorama..."
@@ -21396,7 +21408,7 @@ msgstr ""
 "визуални ефекти, за да се правятпреходи, докато се визуализира целевото "
 "видео.</p>"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:85
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Create video slideshow..."
@@ -21581,7 +21593,7 @@ msgstr ""
 "p><p>Ако не е избрано изображение, ще се използва първото оттекущия албум.</"
 "p>"
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:86
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Set as wallpaper"
@@ -22971,7 +22983,7 @@ msgstr ""
 "\n"
 "Вижте страницата на Box за подробности: %1"
 
-#: core/dplugins/generic/webservices/box/boxplugin.cpp:85
+#: core/dplugins/generic/webservices/box/boxplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Box..."
@@ -23204,7 +23216,7 @@ msgstr ""
 "\n"
 "Вижте страницата на Dropbox за подробности: %1"
 
-#: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:88
+#: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Dropbox..."
@@ -23322,19 +23334,19 @@ msgstr ""
 "услуга на Facebook.</p><p>Вижте уебсайта наFacebook за подробности: <a "
 "href='https://www.facebook.com/'>https://www.facebook.com/</a></p> "
 
-#: core/dplugins/generic/webservices/facebook/fbplugin.cpp:95
+#: core/dplugins/generic/webservices/facebook/fbplugin.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Facebook..."
 msgstr "Експортиране в &Facebook..."
 
-#: core/dplugins/generic/webservices/facebook/fbplugin.cpp:110
+#: core/dplugins/generic/webservices/facebook/fbplugin.cpp:120
 #, kde-format
 msgctxt "@title:window"
 msgid "Facebook"
 msgstr "Facebook"
 
-#: core/dplugins/generic/webservices/facebook/fbplugin.cpp:111
+#: core/dplugins/generic/webservices/facebook/fbplugin.cpp:121
 #, kde-format
 msgid ""
 "<p>Currently, as an open source project, we are unable to meet the Facebook "
@@ -23583,7 +23595,7 @@ msgstr ""
 "Този инструмент позволява на потребителите да експортират елементи в локално "
 "хранилище."
 
-#: core/dplugins/generic/webservices/filecopy/fcplugin.cpp:94
+#: core/dplugins/generic/webservices/filecopy/fcplugin.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Export to local storage..."
@@ -23725,13 +23737,13 @@ msgstr ""
 "\n"
 "Могат да се използват много протоколи, като FTP, SFTP, SAMBA и др."
 
-#: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:93
+#: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Export to remote storage..."
 msgstr "Експортиране в отдалечено хранилище..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:105
+#: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:115
 #, kde-format
 msgctxt "@action"
 msgid "Import from remote storage..."
@@ -24325,19 +24337,19 @@ msgstr ""
 "\n"
 "Вижте страницата на Google за подробности: %1"
 
-#: core/dplugins/generic/webservices/google/gsplugin.cpp:98
+#: core/dplugins/generic/webservices/google/gsplugin.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Google Photos..."
 msgstr "Експортиране в &Google Photos..."
 
-#: core/dplugins/generic/webservices/google/gsplugin.cpp:110
+#: core/dplugins/generic/webservices/google/gsplugin.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Import from &Google Photos..."
 msgstr "Импортиране от &Google Photos..."
 
-#: core/dplugins/generic/webservices/google/gsplugin.cpp:122
+#: core/dplugins/generic/webservices/google/gsplugin.cpp:132
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Google Drive..."
@@ -24623,7 +24635,7 @@ msgstr ""
 "\n"
 "Вижте страницата на ImageShack за подробности: %1"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackplugin.cpp:86
+#: core/dplugins/generic/webservices/imageshack/imageshackplugin.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Imageshack..."
@@ -24779,7 +24791,7 @@ msgstr ""
 "\n"
 "Вижте страницата на  ImgUr за подробности: %1"
 
-#: core/dplugins/generic/webservices/imgur/imgurplugin.cpp:96
+#: core/dplugins/generic/webservices/imgur/imgurplugin.cpp:106
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Imgur..."
@@ -24890,7 +24902,7 @@ msgstr ""
 "\n"
 "Вижте страницата на iNaturalist за подробности: %1."
 
-#: core/dplugins/generic/webservices/inaturalist/inatplugin.cpp:88
+#: core/dplugins/generic/webservices/inaturalist/inatplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Export to &iNaturalist..."
@@ -25370,7 +25382,7 @@ msgstr ""
 "\n"
 "Вижте страницата на IPFS за подробности: %1"
 
-#: core/dplugins/generic/webservices/ipfs/ipfsplugin.cpp:86
+#: core/dplugins/generic/webservices/ipfs/ipfsplugin.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Ipfs..."
@@ -25436,7 +25448,7 @@ msgstr ""
 "\n"
 "Вижте страницата на MediaWiki за подробности: %1"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiplugin.cpp:95
+#: core/dplugins/generic/webservices/mediawiki/mediawikiplugin.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Export to MediaWiki..."
@@ -25961,7 +25973,7 @@ msgstr ""
 "\n"
 "Вижте страницата на OneDrive за подробности: %1"
 
-#: core/dplugins/generic/webservices/onedrive/odplugin.cpp:86
+#: core/dplugins/generic/webservices/onedrive/odplugin.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Onedrive..."
@@ -26033,7 +26045,7 @@ msgstr ""
 "\n"
 "Вижте страницата на Pinterest за подробности: %1"
 
-#: core/dplugins/generic/webservices/pinterest/pplugin.cpp:86
+#: core/dplugins/generic/webservices/pinterest/pplugin.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Pinterest..."
@@ -26135,7 +26147,7 @@ msgstr ""
 "Този инструмент позволява на потребителите да експортират елементи към уеб "
 "услугата Piwigo. За подробности вижте уеб сайта на Piwigo: %1"
 
-#: core/dplugins/generic/webservices/piwigo/piwigoplugin.cpp:98
+#: core/dplugins/generic/webservices/piwigo/piwigoplugin.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Piwigo..."
@@ -26358,7 +26370,7 @@ msgstr ""
 "\n"
 "Вижте страницата на Rajce за подробности: %1"
 
-#: core/dplugins/generic/webservices/rajce/rajceplugin.cpp:86
+#: core/dplugins/generic/webservices/rajce/rajceplugin.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Rajce..."
@@ -26593,13 +26605,13 @@ msgstr ""
 "\n"
 "Вижте страницата на SmugMug за подробности: %1"
 
-#: core/dplugins/generic/webservices/smugmug/smugplugin.cpp:96
+#: core/dplugins/generic/webservices/smugmug/smugplugin.cpp:106
 #, kde-format
 msgctxt "@action"
 msgid "Export to &SmugMug..."
 msgstr "Експортиране в &SmugMug..."
 
-#: core/dplugins/generic/webservices/smugmug/smugplugin.cpp:108
+#: core/dplugins/generic/webservices/smugmug/smugplugin.cpp:118
 #, kde-format
 msgctxt "@action"
 msgid "Import from &SmugMug..."
@@ -26873,7 +26885,7 @@ msgstr ""
 "\n"
 "Вижте страницата на Twitter за подробности: %1"
 
-#: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:89
+#: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Twitter..."
@@ -26995,7 +27007,7 @@ msgstr ""
 "\n"
 "Това е обединен инструмент, който обединява много инструменти в един."
 
-#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:87
+#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:97
 #, kde-format
 msgctxt "@action"
 msgid "Export to Webservices..."
@@ -57594,26 +57606,7 @@ msgstr ""
 "преобразувано в контейнер без загуби с поддръжка на метаданни.</para>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "These expressions may be used to customize date format:\n"
-#| "\"d\": The day as a number without a leading zero (1 to 31)\n"
-#| "\"dd\": The day as a number with a leading zero (01 to 31)\n"
-#| "\"ddd\": The abbreviated localized day name (e.g. 'Mon' to 'Sun')\n"
-#| "\"dddd\": The long localized day name (e.g. 'Monday' to 'Sunday').\n"
-#| "\"M\": The month as a number without a leading zero (1 to 12)\n"
-#| "\"MM\": The month as a number with a leading zero (01 to 12)\n"
-#| "\"MMM\": The abbreviated localized month name (e.g. 'Jan' to 'Dec')\n"
-#| "\"MMMM\": The long localized month name (e.g. 'January' to 'December')\n"
-#| "\"yy\": The year as two digit number (eg. 00 to 99)\n"
-#| "\"yyyy\": The year as four digit number (eg. 2012)\n"
-#| "All other input characters will be treated as text. Any sequence of "
-#| "characters that are enclosed in singlequotes will be treated as text and "
-#| "not be used as an expression. Examples, if date is 20 July 1969:\n"
-#| "\"dd.MM.yyyy\" : 20.07.1969\n"
-#| "\"ddd MMMM d yy\" : Sun July 20 69\n"
-#| "\"'Photo shot on ' dddd\" : Photo shot on Sunday\n"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<p>These expressions may be used to customize date format:</p><p><b>d</b>: "
@@ -57633,27 +57626,23 @@ msgid ""
 "p><p><b>ddd MMMM d yy</b> : Sun July 20 69</p><p><b>'Photo shot on ' dddd</"
 "b> : Photo shot on Sunday</p>"
 msgstr ""
-"Тези изрази могат да се използват за персонализиране на формата на датата:\n"
-"\"d\": Денят като число без водеща нула (от 1 до 31)\n"
-"\"dd\": Денят като число с водеща нула (от 01 до 31)\n"
-"\"ddd\": Съкратеното локализирано име на деня (напр. от \"пон\" до \"нед\")\n"
-"\"dddd\": Дългото локализирано име на деня (например от \"понеделник\" до "
-"\"неделя\").\n"
-"\"M\": Месецът като число без водеща нула (от 1 до 12)\n"
-"\"MM\": Месецът като число с водеща нула (от 01 до 12)\n"
-"\"MMM\": Съкратеното локализирано име на месеца (напр. от \"ян\" до \"дек"
-"\")\n"
-"\"MMMM\": Дългото локализирано име на месеца (например от \"януари\" до "
-"\"декември\")\n"
-"\"yy\": годината като двуцифрено число (напр. 00 до 99)\n"
-"\"yyyy\": годината като четирицифрено число (напр. 2012)\n"
-"Всички други входни символи ще бъдат третирани като текст. Всяка "
+"<p>Тези изрази могат да се използват за персонализиране на формата на датата:"
+"</p><p><b>d</b>: Денят като число без водеща нула (от 1 до 31)</p><p><b>dd</"
+"b>: Денят като число с водеща нула (от 01 до 31)</p><p><b>ddd</b>: "
+"Съкратеното локализирано име на деня (напр. от \"пон\" до \"нед\")</"
+"p><p><b>dddd</b>: Дългото локализирано име на деня (например от \"понеделник"
+"\" до \"неделя\").</p><p><b>M</b>: Месецът като число без водеща нула (от 1 "
+"до 12)</p><p><b>MM</b>: Месецът като число с водеща нула (от 01 до 12)</"
+"p><p><b>MMM</b>: Съкратеното локализирано име на месеца (напр. от \"ян\" до "
+"\"дек\")</p><p><b>MMMM</b>: Дългото локализирано име на месеца (например от "
+"\"януари\" до \"декември\")</p><p><b>yy</b>: годината като двуцифрено число "
+"(напр. 00 до 99)</p><p><b>yyyy</b>: годината като четирицифрено число (напр. "
+"2012)</p><p>Всички други входни символи ще бъдат третирани като текст. Всяка "
 "последователност от символи, които са затворени в единични кавички, ще се "
-"третира като текст и няма да се използва като израз. Примери, ако датата е "
-"20 юли 1969 г.:\n"
-"\"dd.MM.yyyy\" : 20.07.1969 г.\n"
-"\"ddd MMMM d yy\" : Нед юли 20 69\n"
-"\"'Снимка, заснета на ' dddd\" : Снимка, заснета в неделя\n"
+"третира като текст и няма да се използва като израз. Например, ако датата е "
+"20 юли 1969 г.:</p><p><b>dd.MM.yyyy</b>: 20.07.1969 г.</p><p><b>ddd MMMM d "
+"yy</b>: Нед юли 20 69</p><p><b>Снимка, заснета на dddd</b> : Снимка, заснета "
+"в неделя</p>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:107
 #, kde-format
@@ -64180,14 +64169,21 @@ msgstr ""
 "и са сканирани:<ul><li>%3</li></ul>"
 
 #: core/utilities/setup/setupicc.cpp:918
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "On Mac OS X, the default search paths include <ul><li>/System/Library/"
+#| "ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/"
+#| "ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/share/"
+#| "color/icc</li><li>~/.local/share/color/icc/</li><li>~/.local/share/icc/</"
+#| "li><li>~/.color/icc/</li></ul>On your system, currently these paths exist "
+#| "and are scanned:<ul><li>%2</li></ul>"
 msgid ""
-"On Mac OS X, the default search paths include <ul><li>/System/Library/"
-"ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/"
-"ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/share/color/"
-"icc</li><li>~/.local/share/color/icc/</li><li>~/.local/share/icc/</li><li>~/."
-"color/icc/</li></ul>On your system, currently these paths exist and are "
-"scanned:<ul><li>%2</li></ul>"
+"On macOS, the default search paths include <ul><li>/System/Library/ColorSync/"
+"Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/ColorSync/"
+"Profiles</li><li>/opt/local/share/color/icc</li><li>%1/Contents/Resources/"
+"digikam/profiles/</li><li>~/.local/share/color/icc/</li><li>~/.local/share/"
+"icc/</li><li>~/.color/icc/</li></ul>On your system, currently these paths "
+"exist and are scanned:<ul><li>%2</li></ul>"
 msgstr ""
 "В Mac OS X стандартния път за търсене включва <ul><li>/System/Library/"
 "ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/"
