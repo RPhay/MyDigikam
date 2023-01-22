@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-21 00:55+0000\n"
+"POT-Creation-Date: 2023-01-22 00:54+0000\n"
 "PO-Revision-Date: 2023-01-19 09:02+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -5858,41 +5858,41 @@ msgstr ""
 "tem formatu na <a href='https://en.wikipedia.org/wiki/WebP'> tej strani</a>."
 "</para>"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:91
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:93
 #, kde-format
 msgid "Output file type:"
 msgstr "Vrsta izhodne datoteke:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:94
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:96
 #, kde-format
 msgid "Same as input"
 msgstr "Enako kot vhod"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:95
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:97
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
 #, kde-format
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:96
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:98
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
 #, kde-format
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:97
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:99
 #, kde-format
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:101
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:103
 #, kde-format
 msgid "Shell Script:"
 msgstr "Shellov skript:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:104
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:106
 #, kde-format
 msgid ""
 "Enter script for execution. Use $INPUT and $OUTPUT for input / output "
@@ -5903,7 +5903,7 @@ msgstr ""
 "$OUTPUT (z ubežnimi znaki pred posebnimi znaki). Te bi bile nadomeščenepred "
 "izvedbo skripta."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:107
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:109
 #, kde-format
 msgid ""
 "<b>Note:</b> Environment variables TITLE, COMMENTS, COLORLABEL, PICKLABEL, "
@@ -5912,38 +5912,44 @@ msgstr ""
 "<b>Opomba:</b> na voljo so spremenljivke okolja TITLE, COMMENTS, COLORLABEL, "
 "PICKLABEL, RATING in TAGSPATH (ločeno s ;)."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:199
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:201
 #, kde-format
 msgid "User Script: No script."
 msgstr "Uporabnikov skript: Ni skripta."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:262
+#, fuzzy, kde-format
+#| msgid "User Script: No script."
+msgid "User Script: File open error."
+msgstr "Uporabnikov skript: Ni skripta."
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:279
 #, kde-format
 msgid "User Script: Timeout from script."
 msgstr "Uporabnikov skript: Časovna omejitev skripta."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:270
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:287
 #, fuzzy, kde-format
 #| msgid "User Script: No script."
 msgid "User Script: No error."
 msgstr "Uporabnikov skript: Ni skripta."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:274
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:291
 #, kde-format
 msgid "User Script: Failed to start script."
 msgstr "Uporabnikov skript: Skript se ni uspel zagnati."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:280
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:297
 #, kde-format
 msgid "User Script: Script process crashed."
 msgstr "Uporabnikov skript: Proces skripta je izpadel."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:286
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:303
 #, kde-format
 msgid "User Script: Command not found."
 msgstr "Uporabnikov skript: Ukaz ni bil najden."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:292
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:309
 #, fuzzy, kde-format
 #| msgid "User Script: No script."
 msgid "User Script: Error code returned %1."
@@ -12678,8 +12684,8 @@ msgstr[3] "<p>%1 znakov.</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:379
-#: core/libs/widgets/text/dtextedit.cpp:379
+#: core/libs/widgets/text/dplaintextedit.cpp:385
+#: core/libs/widgets/text/dtextedit.cpp:385
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
@@ -36792,7 +36798,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "Barvna oznaka"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1356
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1367
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"

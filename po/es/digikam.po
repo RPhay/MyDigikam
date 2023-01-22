@@ -59,8 +59,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-21 00:55+0000\n"
-"PO-Revision-Date: 2023-01-18 14:43+0100\n"
+"POT-Creation-Date: 2023-01-22 00:54+0000\n"
+"PO-Revision-Date: 2023-01-21 05:02+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -5883,41 +5883,41 @@ msgstr ""
 "para><para>Puede consultar los detalles de este formato en <a href='https://"
 "es.wikipedia.org/wiki/WebP'>esta página</a>.</para>"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:91
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:93
 #, kde-format
 msgid "Output file type:"
 msgstr "Tipo de archivo de salida:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:94
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:96
 #, kde-format
 msgid "Same as input"
 msgstr "Igual que el de entrada"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:95
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:97
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
 #, kde-format
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:96
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:98
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
 #, kde-format
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:97
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:99
 #, kde-format
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:101
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:103
 #, kde-format
 msgid "Shell Script:"
 msgstr "Guion de consola:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:104
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:106
 #, kde-format
 msgid ""
 "Enter script for execution. Use $INPUT and $OUTPUT for input / output "
@@ -5929,7 +5929,7 @@ msgstr ""
 "escape). Estas variables se sustituirán con sus valores antes de ejecutar el "
 "guion."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:107
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:109
 #, kde-format
 msgid ""
 "<b>Note:</b> Environment variables TITLE, COMMENTS, COLORLABEL, PICKLABEL, "
@@ -5938,42 +5938,46 @@ msgstr ""
 "<b>Nota:</b> están disponibles las variables de entorno TITLE, COMMENTS, "
 "COLORLABEL, PICKLABEL, RATING y TAGSPATH (separadas por ;)."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:199
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:201
 #, kde-format
 msgid "User Script: No script."
 msgstr "Guion del usuario: ningún guion."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:262
+#, fuzzy, kde-format
+#| msgid "User Script: No error."
+msgid "User Script: File open error."
+msgstr "Guion del usuario: ningún error."
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:279
 #, kde-format
 msgid "User Script: Timeout from script."
 msgstr "Guion del usuario: se ha agotado el tiempo del guion."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:270
-#, fuzzy, kde-format
-#| msgid "User Script: No script."
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:287
+#, kde-format
 msgid "User Script: No error."
-msgstr "Guion del usuario: ningún guion."
+msgstr "Guion del usuario: ningún error."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:274
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:291
 #, kde-format
 msgid "User Script: Failed to start script."
 msgstr "Guion del usuario: el inicio del guion ha fallado."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:280
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:297
 #, kde-format
 msgid "User Script: Script process crashed."
 msgstr "Guion del usuario: el proceso del guion se ha bloqueado."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:286
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:303
 #, kde-format
 msgid "User Script: Command not found."
 msgstr "Guion del usuario: orden no encontrada."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:292
-#, fuzzy, kde-format
-#| msgid "User Script: No script."
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:309
+#, kde-format
 msgid "User Script: Error code returned %1."
-msgstr "Guion del usuario: ningún guion."
+msgstr "Guion del usuario: devuelto código de error %1."
 
 #: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:46
 #, kde-format
@@ -12818,8 +12822,8 @@ msgstr[1] "<p>%1 caracteres.</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:379
-#: core/libs/widgets/text/dtextedit.cpp:379
+#: core/libs/widgets/text/dplaintextedit.cpp:385
+#: core/libs/widgets/text/dtextedit.cpp:385
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
@@ -37188,7 +37192,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "Emblema de color"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1356
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1367
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
@@ -64185,14 +64189,7 @@ msgstr ""
 "en la actualidad y serán exploradas:<ul><li>%3</li></ul>"
 
 #: core/utilities/setup/setupicc.cpp:918
-#, fuzzy, kde-format
-#| msgid ""
-#| "On Mac OS X, the default search paths include <ul><li>/System/Library/"
-#| "ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/"
-#| "ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/share/"
-#| "color/icc</li><li>~/.local/share/color/icc/</li><li>~/.local/share/icc/</"
-#| "li><li>~/.color/icc/</li></ul>On your system, currently these paths exist "
-#| "and are scanned:<ul><li>%2</li></ul>"
+#, kde-format
 msgid ""
 "On macOS, the default search paths include <ul><li>/System/Library/ColorSync/"
 "Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/ColorSync/"
@@ -64201,12 +64198,12 @@ msgid ""
 "icc/</li><li>~/.color/icc/</li></ul>On your system, currently these paths "
 "exist and are scanned:<ul><li>%2</li></ul>"
 msgstr ""
-"En Mac OS X, las rutas de búsqueda por omisión incluyen <ul><li>/System/"
-"Library/ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/"
-"Library/ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/"
-"share/color/icc</li><li>~/.local/share/color/icc/</li><li>~/.local/share/icc/"
-"</li><li>~/.color/icc/</li></ul>Las siguientes rutas existen en su equipo en "
-"la actualidad y serán exploradas:<ul><li>%2</li></ul>"
+"En macOS, las rutas de búsqueda por omisión incluyen <ul><li>/System/Library/"
+"ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/"
+"ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/Contents/"
+"Resources/digikam/profiles/</li><li>~/.local/share/color/icc/</li><li>~/."
+"local/share/icc/</li><li>~/.color/icc/</li></ul>Las siguientes rutas existen "
+"en su equipo en la actualidad y serán exploradas:<ul><li>%2</li></ul>"
 
 #: core/utilities/setup/setupicc.cpp:937
 #, kde-format

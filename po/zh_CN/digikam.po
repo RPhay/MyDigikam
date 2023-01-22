@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-21 00:55+0000\n"
+"POT-Creation-Date: 2023-01-22 00:54+0000\n"
 "PO-Revision-Date: 2023-01-12 10:29\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -5676,41 +5676,41 @@ msgstr ""
 "损和无损压缩模式，还支持动图和透明度通道。</para><para>详情请见 <a "
 "href='https://en.wikipedia.org/wiki/WebP'>WebP 格式介绍页面</a>。</para>"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:91
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:93
 #, kde-format
 msgid "Output file type:"
 msgstr "输出文件类型："
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:94
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:96
 #, kde-format
 msgid "Same as input"
 msgstr "与输入文件一致"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:95
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:97
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
 #, kde-format
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:96
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:98
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
 #, kde-format
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:97
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:99
 #, kde-format
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:101
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:103
 #, kde-format
 msgid "Shell Script:"
 msgstr "Shell 脚本："
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:104
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:106
 #, kde-format
 msgid ""
 "Enter script for execution. Use $INPUT and $OUTPUT for input / output "
@@ -5720,7 +5720,7 @@ msgstr ""
 "输入要执行的脚本。$INPUT/$OUTPUT 分别对应输入/输出文件名 (支持特殊字符转义)。"
 "上述函数将在 shell 执行脚本之前被替换为实际文件名。"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:107
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:109
 #, kde-format
 msgid ""
 "<b>Note:</b> Environment variables TITLE, COMMENTS, COLORLABEL, PICKLABEL, "
@@ -5729,38 +5729,44 @@ msgstr ""
 "<b>注意：</b> 可用环境变量包括 TITLE、COMMENTS、COLORLABEL、PICKLABEL、"
 "RATING 和 TAGSPATH，以半角分号 (;) 进行分隔。"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:199
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:201
 #, kde-format
 msgid "User Script: No script."
 msgstr "用户脚本：无脚本。"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:262
+#, fuzzy, kde-format
+#| msgid "User Script: No script."
+msgid "User Script: File open error."
+msgstr "用户脚本：无脚本。"
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:279
 #, kde-format
 msgid "User Script: Timeout from script."
 msgstr "用户脚本：脚本超时。"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:270
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:287
 #, fuzzy, kde-format
 #| msgid "User Script: No script."
 msgid "User Script: No error."
 msgstr "用户脚本：无脚本。"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:274
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:291
 #, kde-format
 msgid "User Script: Failed to start script."
 msgstr "用户脚本：无法启动脚本。"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:280
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:297
 #, kde-format
 msgid "User Script: Script process crashed."
 msgstr "用户脚本：脚本进程崩溃。"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:286
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:303
 #, kde-format
 msgid "User Script: Command not found."
 msgstr "用户脚本：无法找到命令。"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:292
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:309
 #, fuzzy, kde-format
 #| msgid "User Script: No script."
 msgid "User Script: Error code returned %1."
@@ -12238,8 +12244,8 @@ msgstr[0] "<p>%1 个字符。</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:379
-#: core/libs/widgets/text/dtextedit.cpp:379
+#: core/libs/widgets/text/dplaintextedit.cpp:385
+#: core/libs/widgets/text/dtextedit.cpp:385
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
@@ -35840,7 +35846,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "颜色标记"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1356
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1367
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
