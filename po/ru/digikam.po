@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-22 00:54+0000\n"
-"PO-Revision-Date: 2023-01-08 17:23+0300\n"
+"PO-Revision-Date: 2023-01-22 17:23+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -1006,11 +1006,10 @@ msgid "%1 %2"
 msgstr "%1 %2"
 
 #: core/app/items/utils/itemviewutilities.cpp:203
-#, fuzzy, kde-format
-#| msgid "Select target folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Target Folder"
-msgstr "Выбрать конечную папку"
+msgstr "Выбор конечной папки"
 
 #: core/app/items/utils/itemviewutilities.cpp:229
 #, kde-format
@@ -1591,15 +1590,13 @@ msgstr ""
 "digiKam."
 
 #: core/app/main/digikamapp_import.cpp:81
-#, fuzzy, kde-format
-#| msgid "Select folder to parse"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Folder to Parse"
 msgstr "Выбор папки для анализа"
 
 #: core/app/main/digikamapp_import.cpp:101
-#, fuzzy, kde-format
-#| msgid "Select folders to import into album"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Folders to Import into Album"
 msgstr "Выбор папок для импорта в альбом"
@@ -4364,21 +4361,17 @@ msgid "Supported Extensions"
 msgstr "Поддерживаемые расширения"
 
 #: core/avplayer/filters/EventFilter.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open a video"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open a Video"
-msgstr "Открыть видео"
+msgstr "Открытие видео"
 
 #: core/avplayer/filters/EventFilter.cpp:83
 #: core/avplayer/main/MainWindow_io.cpp:510
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open an url"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open an Url"
-msgstr "Открыть URL"
+msgstr "Открытие URL"
 
 #: core/avplayer/filters/EventFilter.cpp:84
 #: core/avplayer/main/MainWindow_io.cpp:511
@@ -4504,9 +4497,7 @@ msgid "-&gt;/&lt;-: seek forward/backward\n"
 msgstr "-&gt;/&lt;-: прокрутить вперёд/назад\n"
 
 #: core/avplayer/filters/EventFilter.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Help"
+#, kde-format
 msgctxt "@title:window"
 msgid "Help"
 msgstr "Справка"
@@ -4547,12 +4538,10 @@ msgstr ""
 "<p>Рекомендуется использовать 64-битную версию приложения.</p>"
 
 #: core/avplayer/main/MainWindow_io.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open a media file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open a Media File"
-msgstr "Открыть медиафайл"
+msgstr "Открытие медиафайла"
 
 #: core/avplayer/main/MainWindow_io.cpp:568
 #: core/avplayer/main/MainWindow_setup.cpp:529
@@ -4562,9 +4551,7 @@ msgid "Aspect ratio"
 msgstr "Соотношение сторон"
 
 #: core/avplayer/main/MainWindow_io.cpp:702
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Player error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Player Error"
 msgstr "Ошибка проигрывателя"
@@ -4612,12 +4599,10 @@ msgid "Stalled"
 msgstr "Данные не передаются"
 
 #: core/avplayer/main/MainWindow_io.cpp:798
-#, fuzzy, kde-format
-#| msgctxt "@title: media loading state"
-#| msgid "Buffering... %1% @%2 %3"
+#, kde-format
 msgctxt "@title:window, media loading state"
 msgid "Buffering... %1% @%2 %3"
-msgstr "Буферизация... %1% @%2 %3"
+msgstr "Буферизация… %1% @%2 %3"
 
 #: core/avplayer/main/MainWindow_io.cpp:905
 #, kde-format
@@ -4632,12 +4617,10 @@ msgstr ""
 "Формат: %2"
 
 #: core/avplayer/main/MainWindow_io.cpp:1018
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open a subtitle file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open a Subtitle File"
-msgstr "Открыть файл субтитров"
+msgstr "Открытие файла субтитров"
 
 #: core/avplayer/main/MainWindow_setup.cpp:30
 #, kde-format
@@ -4951,12 +4934,10 @@ msgid "not available on your platform!"
 msgstr "недоступно на вашей платформе!"
 
 #: core/avplayer/main/MainWindow_setup.cpp:818
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Open an external audio track"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open an External Audio Track"
-msgstr "Открыть внешнюю аудиодорожку"
+msgstr "Открытие внешней аудиодорожки"
 
 #: core/avplayer/main/MainWindow_setup.cpp:864
 #, kde-format
@@ -4985,9 +4966,7 @@ msgid "Remove selected items"
 msgstr "Удаление выделенных элементов"
 
 #: core/avplayer/playlist/PlayList.cpp:259
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Select files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Files"
 msgstr "Выбор файлов"
@@ -5166,9 +5145,7 @@ msgid "Frame size"
 msgstr "Размер кадра"
 
 #: core/avplayer/utils/StatisticsView.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Media info"
+#, kde-format
 msgctxt "@title:window"
 msgid "Media Info"
 msgstr "Сведения о медиаданных"
@@ -6006,10 +5983,9 @@ msgid "User Script: No script."
 msgstr "Пользовательский сценарий: сценарий отсутствует."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:262
-#, fuzzy, kde-format
-#| msgid "User Script: No script."
+#, kde-format
 msgid "User Script: File open error."
-msgstr "Пользовательский сценарий: сценарий отсутствует."
+msgstr "Пользовательский сценарий: ошибка открытия файла."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:279
 #, kde-format
@@ -6038,10 +6014,9 @@ msgid "User Script: Command not found."
 msgstr "Пользовательский сценарий: команда не найдена."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:309
-#, fuzzy, kde-format
-#| msgid "User Script: No script."
+#, kde-format
 msgid "User Script: Error code returned %1."
-msgstr "Пользовательский сценарий: сценарий отсутствует."
+msgstr "Пользовательский сценарий: получен код ошибки %1."
 
 #: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:46
 #, kde-format
@@ -8466,11 +8441,10 @@ msgid "Adjust Levels"
 msgstr "Регулировка уровней"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:890
-#, fuzzy, kde-format
-#| msgid "Select Gimp Levels File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Levels File to Load"
-msgstr "Выберите файл с параметрами уровней GIMP"
+msgstr "Выбор файла с параметрами уровней GIMP"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:902
 #, kde-format
@@ -8478,11 +8452,10 @@ msgid "Cannot load from the Gimp levels text file."
 msgstr "Невозможно загрузить файл с параметрами уровней GIMP."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:917
-#, fuzzy, kde-format
-#| msgid "Gimp Levels File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Gimp Levels File to Save"
-msgstr "Сохранить файл с параметрами уровней GIMP"
+msgstr "Сохранение файла с параметрами уровней GIMP"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:929
 #, kde-format
@@ -9746,8 +9719,7 @@ msgid "Sharpen..."
 msgstr "Резкость..."
 
 #: core/dplugins/editor/file/print/printhelper.cpp:168
-#, fuzzy, kde-format
-#| msgid "Print Image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print Image"
 msgstr "Печать изображения"
@@ -11913,8 +11885,7 @@ msgstr ""
 "Проверьте параметры конфигурации"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:64
-#, fuzzy, kde-format
-#| msgid "Scan Image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Scan Image"
 msgstr "Сканирование изображений"
@@ -11933,8 +11904,7 @@ msgid "New Image File Name"
 msgstr "Новое имя файла изображения"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:215
-#, fuzzy, kde-format
-#| msgid "Unsupported Format"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unsupported Format"
 msgstr "Неподдерживаемый формат"
@@ -11945,11 +11915,10 @@ msgid "The target image file format \"%1\" is unsupported."
 msgstr "Формат целевого изображения «%1» не поддерживается."
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:228
-#, fuzzy, kde-format
-#| msgid "Cannot Save File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot Save File"
-msgstr "Не удалось сохранить файл"
+msgstr "Ошибка сохранения файла"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:229
 #, kde-format
@@ -11996,8 +11965,7 @@ msgstr "Не удалось сохранить файл «%1»"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:264
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:540
-#, fuzzy, kde-format
-#| msgid "Geolocation Editor"
+#, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
 msgstr "Редактор местоположения"
@@ -12103,12 +12071,10 @@ msgstr[2] "Имеется %1 изменённых изображений."
 msgstr[3] "Имеется %1 изменённое изображение."
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:814
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Unsaved changes"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unsaved Changes"
-msgstr "Несохранённые изменения"
+msgstr "Изменения не сохранены"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:815
 #, kde-format
@@ -12448,7 +12414,7 @@ msgid ""
 msgstr ""
 "<p> Выбор способа показа изображений<dl><dt>по уровню поверхности (по "
 "умолчанию)</dt><dd>Не учитывать значение высоты.</dd><dt>относительно "
-"поверхности</dt><dd>Устанавливает высоту элемента относительно фактической "
+"поверхности</dt><dd>Устанавливает высоту объекта относительно фактической "
 "высоты на местности.</dd><dt>абсолютная</dt><dd>Устанавливает высоту места "
 "относительно уровня моря, безотносительно фактической высоты суши под местом "
 "снимка.</dd></dl></p>"
@@ -12459,8 +12425,7 @@ msgid "Destination Directory:"
 msgstr "Каталог назначения:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:105
-#, fuzzy, kde-format
-#| msgid "Select a directory in which to save the kml file and pictures"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select a Directory in Which to Save the KML File and Pictures"
 msgstr "Выбор каталога для сохранения файла KML и изображений"
@@ -12695,7 +12660,7 @@ msgid ""
 msgstr ""
 "<p>Выбор способа показа точек<dl><dt>по уровню поверхности (по умолчанию)</"
 "dt><dd>Не учитывать значение высоты</dd><dt>относительно поверхности</"
-"dt><dd>SУстанавливает высоту элемента относительно фактической высоты на "
+"dt><dd>Устанавливает высоту объекта относительно фактической высоты на "
 "местности.</dd><dt>абсолютная</dt><dd>Устанавливает высоту места "
 "относительно уровня моря, безотносительно фактической высоты суши под местом "
 "снимка.</dd></dl></p>"
@@ -12775,11 +12740,10 @@ msgid "Bookmarks"
 msgstr "Закладки"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:274
-#, fuzzy, kde-format
-#| msgid "Search failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Search Failed"
-msgstr "Не удалось выполнить поиск"
+msgstr "Ошибка поиска"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:274
 #, kde-format
@@ -12800,9 +12764,7 @@ msgstr[2] "%1 изображений перемещено в «%2»"
 msgstr[3] "одно изображение перемещено в «%2»"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:92
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Metadata Editor"
+#, kde-format
 msgctxt "@title:window"
 msgid "Metadata Editor"
 msgstr "Редактор метаданных"
@@ -14699,7 +14661,7 @@ msgstr "Сведения о теме"
 #, kde-format
 msgctxt "@title"
 msgid "Record subject information about the item"
-msgstr "Запись информации о теме элемента"
+msgstr "Запись информации о теме объекта"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:235
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:233
@@ -16476,12 +16438,10 @@ msgstr ""
 "NAA, будет использоваться английский язык."
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Adjust Time & Date"
+#, kde-format
 msgctxt "@title:window"
 msgid "Adjust Time & Date"
-msgstr "Ко&ррекция времени и даты"
+msgstr "Коррекция времени и даты"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:110
 #, kde-format
@@ -16877,8 +16837,7 @@ msgstr ""
 "Icalendar'>iCalendar</a>.</p>"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:111
-#, fuzzy, kde-format
-#| msgid "Create Calendar"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Calendar"
 msgstr "Создание календаря"
@@ -16913,8 +16872,7 @@ msgstr "Файл данных календаря (*.ics)"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:157
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:161
-#, fuzzy, kde-format
-#| msgid "Select Calendar Data File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Calendar Data File"
 msgstr "Выбор файла календаря"
@@ -16942,8 +16900,7 @@ msgstr ""
 "напечатаны для %1 года:<br/>"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:289
-#, fuzzy, kde-format
-#| msgid "Print Calendar"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print Calendar"
 msgstr "Печать календаря"
@@ -16970,11 +16927,10 @@ msgstr "Печать завершена"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:98
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:288
-#, fuzzy, kde-format
-#| msgid "DNG Converter"
+#, kde-format
 msgctxt "@title:window"
 msgid "DNG Converter"
-msgstr "Преобразователь DNG"
+msgstr "Преобразование DNG"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:106
 #, kde-format
@@ -17402,8 +17358,7 @@ msgid "Clear all"
 msgstr "Убрать все"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:127
-#, fuzzy, kde-format
-#| msgid "Exposure Blending"
+#, kde-format
 msgctxt "@title:window"
 msgid "Exposure Blending"
 msgstr "Объединение экспозиций"
@@ -17819,9 +17774,7 @@ msgid "See processing messages below."
 msgstr "Просмотрите приведённые ниже сообщения."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingwizard.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Stacked Images Tool"
+#, kde-format
 msgctxt "@title:window"
 msgid "Stacked Images Tool"
 msgstr "Мастер объединения экспозиций"
@@ -18274,8 +18227,7 @@ msgstr "Папка назначения:"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslideoutputpage.cpp:120
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:267
-#, fuzzy, kde-format
-#| msgid "Destination Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Destination Folder"
 msgstr "Выбор папки назначения"
@@ -18336,8 +18288,7 @@ msgid "Author: %1<br/><br/>"
 msgstr "Автор: %1<br/><br/>"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
-#, fuzzy, kde-format
-#| msgid "Create HTML Gallery"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create HTML Gallery"
 msgstr "Создание галереи в формате HTML"
@@ -18489,18 +18440,16 @@ msgid "Projects folder:"
 msgstr "Папки проекта:"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:84
-#, fuzzy, kde-format
-#| msgid "Projects Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Projects Folder"
 msgstr "Папка проекта"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:73
-#, fuzzy, kde-format
-#| msgid "Create jAlbum Album"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create jAlbum Album"
-msgstr "Создать альбом jAlbum"
+msgstr "Создание альбома jAlbum"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:81
 #, kde-format
@@ -18518,12 +18467,10 @@ msgid "Generating jAlbum"
 msgstr "Создание jAlbum"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Share Files with DLNA Media Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Share Files With DLNA Media Server"
-msgstr "Опубликовать файлы по протоколу DLNA"
+msgstr "Публикация файлов по протоколу DLNA"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:150
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:68
@@ -18565,9 +18512,7 @@ msgstr ""
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:314
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:64
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Media Server Contents"
+#, kde-format
 msgctxt "@title:window"
 msgid "Media Server Contents"
 msgstr "Содержимое сервера DLNA"
@@ -18657,9 +18602,7 @@ msgstr "Опубликованные объекты"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:340
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Starting Media Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Starting Media Server"
 msgstr "Запуск медиасервера"
@@ -18728,17 +18671,13 @@ msgid "MJPEG Server cannot be started!"
 msgstr "Не удалось запустить сервер MJPEG."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg.cpp:26
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Share Files with MJPEG Stream Server"
+#, kde-format
 msgctxt "@title:window"
 msgid "Share Files With MJPEG Stream Server"
-msgstr "Опубликовать файлы на сервере потока MJPEG"
+msgstr "Публикация файлов на сервере потока MJPEG"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "MJPEG Server Contents"
+#, kde-format
 msgctxt "@title:window"
 msgid "MJPEG Server Contents"
 msgstr "Содержимое сервера MJPEG"
@@ -19276,9 +19215,7 @@ msgstr ""
 "операционных систем."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:122
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "OCR Text Converter"
+#, kde-format
 msgctxt "@title:window"
 msgid "OCR Text Converter"
 msgstr "Преобразователь распознанного текста"
@@ -19363,10 +19300,10 @@ msgid "Success"
 msgstr "Готово"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:585
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Text Converter"
-msgstr "Преобразователь DNG"
+msgstr "Преобразователь текста"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:586
 #, kde-format
@@ -20821,8 +20758,7 @@ msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:354
 #: core/dplugins/generic/tools/printcreator/wizard/advprintwizard.cpp:101
-#, fuzzy, kde-format
-#| msgid "Print Creator"
+#, kde-format
 msgctxt "@title:window"
 msgid "Print Creator"
 msgstr "Мастер печати"
@@ -20912,8 +20848,7 @@ msgid "Remove"
 msgstr "Удалить"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1101
-#, fuzzy, kde-format
-#| msgid "Custom layout"
+#, kde-format
 msgctxt "@title:window"
 msgid "Custom Layout"
 msgstr "Нестандартная компоновка"
@@ -21093,8 +21028,7 @@ msgstr "Файл со свойствами изображений создан"
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:334
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:984
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:997
-#, fuzzy, kde-format
-#| msgid "Processing Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Processing Failed"
 msgstr "Ошибка обработки"
@@ -21429,8 +21363,7 @@ msgid ""
 msgstr "Удалить из изображений все метаданные, такие как EXIF, IPTC и XMP."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:75
-#, fuzzy, kde-format
-#| msgid "Send by Email"
+#, kde-format
 msgctxt "@title:window"
 msgid "Send by Email"
 msgstr "Отправка по электронной почте"
@@ -21626,8 +21559,7 @@ msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr "Длительность : %1 сек. на объект, всего %2 сек. (без переходов)"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:78
-#, fuzzy, kde-format
-#| msgid "Create a Video Slideshow"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create a Video Slideshow"
 msgstr "Создание видео слайд-шоу"
@@ -21678,9 +21610,7 @@ msgstr "Сделать фоном рабочего стола"
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_dbus.cpp:92
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_macos.cpp:64
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Error while to set image as wallpaper"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error While to Set Image as Wallpaper"
 msgstr "Ошибка при назначении изображения фоном рабочего стола"
@@ -21751,8 +21681,7 @@ msgid "Cannot apply changes to desktop wallpaper."
 msgstr "Не удалось изменить фон рабочего стола."
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:59
-#, fuzzy, kde-format
-#| msgid "WallPaper Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "WallPaper Settings"
 msgstr "Параметры обоев рабочего стола"
@@ -21818,7 +21747,7 @@ msgid ""
 "nobr></td></tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></"
 "table>"
 msgstr ""
-"<p>Этот инструмент позволяет просматривать серию элементов с использованием "
+"<p>Этот инструмент позволяет просматривать серию объектов с использованием "
 "эффектов OpenGL.</p><p><u>Использование:</u></p><table><tr><td colspan="
 "\"2\"><nobr><center><b><h1>Навигация</h1></b></center></nobr></td></"
 "tr><tr><td>Назад:</td><td>Клавиша <i>Вверх</i></td></tr><tr><td></"
@@ -21867,8 +21796,7 @@ msgid "No OpenGL context found"
 msgstr "Не найден контекст OpenGL"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:46
-#, fuzzy, kde-format
-#| msgid "Soundtrack preview"
+#, kde-format
 msgctxt "@title:window"
 msgid "Soundtrack Preview"
 msgstr "Предварительное прослушивание звуковой дорожки"
@@ -21936,8 +21864,7 @@ msgstr ""
 "увеличьте количество звуковых файлов."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:362
-#, fuzzy, kde-format
-#| msgid "Select sound files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Sound Files"
 msgstr "Выбор звуковых файлов"
@@ -21953,8 +21880,7 @@ msgid "You can only move files down one at a time."
 msgstr "Можно перемещать вниз только по одному файлу за раз."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:489
-#, fuzzy, kde-format
-#| msgid "Load playlist"
+#, kde-format
 msgctxt "@title:window"
 msgid "Load Playlist"
 msgstr "Загрузка списка воспроизведения"
@@ -21966,8 +21892,7 @@ msgid "Playlist (*.m3u)"
 msgstr "Списки воспроизведения (*.m3u)"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:548
-#, fuzzy, kde-format
-#| msgid "Save playlist"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Playlist"
 msgstr "Сохранение списка воспроизведения"
@@ -22397,9 +22322,7 @@ msgid "Use Open&GL transitions"
 msgstr "Использовать переходы Open&GL"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:75
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Presentation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Presentation"
 msgstr "Презентация"
@@ -22571,11 +22494,10 @@ msgstr "Презентация..."
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:227
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:267
-#, fuzzy, kde-format
-#| msgid "Specify delay for slide show"
+#, kde-format
 msgctxt "@title:window"
 msgid "Specify Delay for Slide Show"
-msgstr "Указать время задержки для слайд-шоу"
+msgstr "Время задержки для слайд-шоу"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:228
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:268
@@ -22585,11 +22507,10 @@ msgstr "Задержка:"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:253
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:429
-#, fuzzy, kde-format
-#| msgid "Delete image"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Image"
-msgstr "Удалить изображение"
+msgstr "Удаление изображения"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:254
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:430
@@ -22670,8 +22591,7 @@ msgid "Blobs"
 msgstr "Капли"
 
 #: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:120
-#, fuzzy, kde-format
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Слайд-шоу"
@@ -22685,8 +22605,7 @@ msgid "Giving a slideshow"
 msgstr "Выполняется показ слайдов"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:107
-#, fuzzy, kde-format
-#| msgid "Slideshow Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Slideshow Settings"
 msgstr "Параметры слайд-шоу"
@@ -22963,10 +22882,10 @@ msgid ""
 "b></center></nobr></td></tr><tr><td>Show this help:</td><td><i>F1</i> key</"
 "td></tr></table>"
 msgstr ""
-"<p>Этот инструмент обрабатывает серию элементов как простое слайд-шоу.</"
-"p><p>Предусмотрено отображение свойств элемента в качестве наложения фона "
-"при отображении.</p><p>Этот инструмент может проигрывать содержимое альбома "
-"в обратном порядке вместе с дочерними альбомами при их наличии.</"
+"<p>Этот инструмент обрабатывает серию объектов как простое слайд-шоу.</"
+"p><p>Предусмотрено отображение свойств объекта в качестве наложения фона при "
+"отображении.</p><p>Этот инструмент может проигрывать содержимое альбома в "
+"обратном порядке вместе с дочерними альбомами при их наличии.</"
 "p><p><u>Использование:</u></p><table><tr><td colspan="
 "\"2\"><nobr><center><b><h1>Навигация</h1></b></center></nobr></td></"
 "tr><tr><td>Назад:</td><td>Клавиша <i>Вверх</i></td></tr><tr><td></"
@@ -23103,9 +23022,7 @@ msgid "Failed to list folders"
 msgstr "Не удалось получить список папок"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Export to Box"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Box"
 msgstr "Экспорт в Box"
@@ -23159,10 +23076,10 @@ msgstr ""
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:255
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:670
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:256
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Warning"
-msgstr "Внимание"
+msgstr "Предупреждение"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:253
 #: core/dplugins/generic/webservices/google/gswindow.cpp:507
@@ -23238,8 +23155,7 @@ msgstr "Экспорт в Box"
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:918
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:328
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:419
-#, fuzzy, kde-format
-#| msgid "Uploading Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Uploading Failed"
 msgstr "Ошибка передачи на сервер"
@@ -23263,11 +23179,10 @@ msgstr ""
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:386
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:368
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:391
-#, fuzzy, kde-format
-#| msgid "Login Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Login Failed"
-msgstr "Не удалось выполнить вход"
+msgstr "Ошибка входа"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:385
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:385
@@ -23318,8 +23233,7 @@ msgid "Export to &Dropbox..."
 msgstr "Экспорт в &Dropbox..."
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:78
-#, fuzzy, kde-format
-#| msgid "Export to Dropbox"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Dropbox"
 msgstr "Экспорт в Dropbox"
@@ -23437,8 +23351,7 @@ msgid "Export to &Facebook..."
 msgstr "Экспорт в &Facebook..."
 
 #: core/dplugins/generic/webservices/facebook/fbplugin.cpp:120
-#, fuzzy, kde-format
-#| msgid "Facebook"
+#, kde-format
 msgctxt "@title:window"
 msgid "Facebook"
 msgstr "Facebook"
@@ -23515,8 +23428,7 @@ msgid "Validate previous session..."
 msgstr "Проверка предыдущей сессии..."
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:115
-#, fuzzy, kde-format
-#| msgid "Export to Facebook Web Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Facebook Web Service"
 msgstr "Экспорт в Facebook"
@@ -23577,8 +23489,7 @@ msgid "Target location: "
 msgstr "Каталог назначения: "
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:112
-#, fuzzy, kde-format
-#| msgid "Target Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Target Folder"
 msgstr "Папка назначения"
@@ -23644,8 +23555,7 @@ msgid "This is the list of items to copy to the specified target."
 msgstr "Список изображений, которые будут скопированы в указанный каталог."
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:91
-#, fuzzy, kde-format
-#| msgid "Export to Local Storage"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Local Storage"
 msgstr "Экспорт в локальное хранилище"
@@ -23667,8 +23577,7 @@ msgid "Start export to the specified target"
 msgstr "Начать экспорт в указанный каталог"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:217
-#, fuzzy, kde-format
-#| msgid "Copy not completed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Copy not Completed"
 msgstr "Копирование не завершено"
@@ -23728,11 +23637,10 @@ msgid "This is the list of images to upload to the specified target."
 msgstr "Список изображений, которые будут загружены в указанный каталог."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:162
-#, fuzzy, kde-format
-#| msgid "Select target..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Target..."
-msgstr "Выбор папки"
+msgstr "Выбор папки…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:163
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:101
@@ -23746,15 +23654,13 @@ msgid "<i>not selected</i>"
 msgstr "<i>не выбрано</i>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:71
-#, fuzzy, kde-format
-#| msgid "Export to Remote Storage"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Remote Storage"
 msgstr "Экспорт в сетевое хранилище"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:186
-#, fuzzy, kde-format
-#| msgid "Upload not completed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Upload not Completed"
 msgstr "Загрузка не завершена"
@@ -23779,15 +23685,13 @@ msgid "This is the list of images to import into the current album."
 msgstr "Список изображений для импорта в текущий альбом."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Select items to import..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Items to Import..."
-msgstr "Выбор импортируемых объектов..."
+msgstr "Выбор импортируемых объектов…"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:63
-#, fuzzy, kde-format
-#| msgid "Import from Remote Storage"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import from Remote Storage"
 msgstr "Импорт из удалённого хранилища"
@@ -23808,8 +23712,7 @@ msgid "Start importing the specified images into the currently selected album."
 msgstr "Начать импорт указанных изображений в выбранный альбом."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:138
-#, fuzzy, kde-format
-#| msgid "Import not completed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import not Completed"
 msgstr "Импорт не завершён"
@@ -24288,11 +24191,10 @@ msgid "Fewer tag options"
 msgstr "Скрыть дополнительные параметры"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:148
-#, fuzzy, kde-format
-#| msgid "Export to %1 Web Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to %1 Web Service"
-msgstr "Экспорт в %1 веб-службу"
+msgstr "Экспорт в веб-службу %1"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:187
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:240
@@ -24568,9 +24470,7 @@ msgid "Build a combined tag string."
 msgstr "Создание комбинированного тега."
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Export to Google Drive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Google Drive"
 msgstr "Экспорт на Google Диск"
@@ -24584,9 +24484,7 @@ msgid "Start upload to Google Drive"
 msgstr "Начать загрузку на Google Диск"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Export to Google Photos Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Google Photos Service"
 msgstr "Экспорт в службу Google Фото"
@@ -24600,9 +24498,7 @@ msgid "Start upload to Google Photos service"
 msgstr "Начать загрузку в службу Google Фото"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:196
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Import from Google Photos Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import from Google Photos Service"
 msgstr "Импорт из службы Google Фото"
@@ -24812,8 +24708,7 @@ msgid "Create new gallery"
 msgstr "Создать галерею"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:104
-#, fuzzy, kde-format
-#| msgid "Export to ImageShack"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to ImageShack"
 msgstr "Экспорт в ImageShack"
@@ -24952,8 +24847,7 @@ msgid "Upload Anonymously"
 msgstr "Анонимная загрузка"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:153
-#, fuzzy, kde-format
-#| msgid "Export to imgur.com"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to imgur.com"
 msgstr "Экспорт в imgur.com"
@@ -24971,8 +24865,7 @@ msgid "<i>Not logged in</i>"
 msgstr "<i>Вход не выполнен</i>"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:250
-#, fuzzy, kde-format
-#| msgid "Authorization Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Authorization Failed"
 msgstr "Ошибка доступа"
@@ -25072,26 +24965,23 @@ msgstr "Вход в систему"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1345
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1507
-#, fuzzy, kde-format
-#| msgid "ERROR while creating observation"
+#, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Creating Observation"
-msgstr "ОШИБКА при создании записи наблюдения"
+msgstr "Ошибка создания записи наблюдения"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1585
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1703
-#, fuzzy, kde-format
-#| msgid "ERROR while uploading photo"
+#, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
 msgstr "Ошибка загрузки изображения"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1815
-#, fuzzy, kde-format
-#| msgid "ERROR while deleting observation"
+#, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
-msgstr "ОШИБКА при удалении записи наблюдения"
+msgstr "Ошибка удаления записи наблюдения"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1919
 #, kde-format
@@ -25526,8 +25416,7 @@ msgid "Export to &Ipfs..."
 msgstr "Экспорт в &IPFS..."
 
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:120
-#, fuzzy, kde-format
-#| msgid "Export to IPFS"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to IPFS"
 msgstr "Экспорт в IPFS"
@@ -26068,8 +25957,7 @@ msgid "Upload Settings"
 msgstr "Параметры передачи"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:101
-#, fuzzy, kde-format
-#| msgid "Export to MediaWiki"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to MediaWiki"
 msgstr "Экспорт в MediaWiki"
@@ -26087,8 +25975,7 @@ msgid "MediaWiki export"
 msgstr "Экспорт в MediaWiki"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:338
-#, fuzzy, kde-format
-#| msgid "Login Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Login Error"
 msgstr "Ошибка входа"
@@ -26134,9 +26021,7 @@ msgid "Export to &Onedrive..."
 msgstr "Экспорт в &OneDrive..."
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:80
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Export to Onedrive"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Onedrive"
 msgstr "Экспорт в OneDrive"
@@ -26220,8 +26105,7 @@ msgid "Failed to list boards"
 msgstr "Не удалось получить список досок"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:80
-#, fuzzy, kde-format
-#| msgid "Export to Pinterest"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Pinterest"
 msgstr "Экспорт в Pinterest"
@@ -26417,8 +26301,7 @@ msgid "Resized JPEG quality:"
 msgstr "Качество JPEG после изменения размера:"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:227
-#, fuzzy, kde-format
-#| msgid "Piwigo Export"
+#, kde-format
 msgctxt "@title:window"
 msgid "Piwigo Export"
 msgstr "Экспорт в Piwigo"
@@ -26630,8 +26513,7 @@ msgid "Adding photos %v%"
 msgstr "Добавление снимков %v%"
 
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:43
-#, fuzzy, kde-format
-#| msgid "Export to Rajce.net"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Rajce.net"
 msgstr "Экспорт в Rajce.net"
@@ -26932,8 +26814,7 @@ msgid "Maximum dimension:"
 msgstr "Длинная сторона:"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:121
-#, fuzzy, kde-format
-#| msgid "Import from SmugMug Web Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import from SmugMug Web Service"
 msgstr "Импорт из SmugMug"
@@ -26946,8 +26827,7 @@ msgid "Start download from SmugMug web service"
 msgstr "Начать загрузку из SmugMug"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:130
-#, fuzzy, kde-format
-#| msgid "Export to SmugMug Web Service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to SmugMug Web Service"
 msgstr "Экспорт в SmugMug"
@@ -27079,8 +26959,7 @@ msgid "Failed to create tweet for photo uploaded"
 msgstr "Не удалось создать твит для переданной фотографии"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:81
-#, fuzzy, kde-format
-#| msgid "Export to Twitter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Twitter"
 msgstr "Экспорт в Твиттер"
@@ -27124,11 +27003,10 @@ msgid "Cannot open image at %1\n"
 msgstr "Не удалось открыть файл «%1»\n"
 
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:395
-#, fuzzy, kde-format
-#| msgid "%1 Call Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "%1 Call Failed"
-msgstr "Не удалось выполнить вызов %1"
+msgstr "Ошибка вызова %1"
 
 #: core/dplugins/generic/webservices/unified/manager/wsauthentication.cpp:396
 #: core/dplugins/generic/webservices/unified/manager/wstalker.cpp:349
@@ -27218,11 +27096,10 @@ msgid "<h3>This view lists user albums.</h3>"
 msgstr "<h3>В этом списке представлены все альбомы.</h3>"
 
 #: core/dplugins/generic/webservices/unified/wizard/wsimagespage.cpp:310
-#, fuzzy, kde-format
-#| msgid "%1 - Create album failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "%1 - Create Album Failed"
-msgstr "%1: Не удалось создать альбом"
+msgstr "%1: Ошибка создания альбома"
 
 #: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:85
 #, kde-format
@@ -27263,8 +27140,7 @@ msgid "&Choose account:"
 msgstr "&Выбор учётной записи:"
 
 #: core/dplugins/generic/webservices/unified/wizard/wswizard.cpp:84
-#, fuzzy, kde-format
-#| msgid "Export to Web Services"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to Web Services"
 msgstr "Экспорт в веб-службы"
@@ -27573,8 +27449,7 @@ msgstr "<p>Удаляемый альбом не пустой.</p><p>Продол
 
 #: core/libs/album/engine/albummodificationhelper.cpp:283
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:145
-#, fuzzy, kde-format
-#| msgid "Rename Album (%1)"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rename Album (%1)"
 msgstr "Переименование альбома (%1)"
@@ -27762,15 +27637,13 @@ msgstr ""
 "настройки позже."
 
 #: core/libs/album/manager/albummanager_database.cpp:357
-#, fuzzy, kde-format
-#| msgid "Collection not found"
+#, kde-format
 msgctxt "@title:window"
 msgid "Collection not Found"
 msgstr "Коллекция не найдена"
 
 #: core/libs/album/manager/albummanager_database.cpp:459
-#, fuzzy, kde-format
-#| msgid "Database Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Database Folder"
 msgstr "Папка базы данных"
@@ -27812,11 +27685,10 @@ msgstr "Создать новую базу данных"
 #: core/libs/album/manager/albummanager_database.cpp:552
 #: core/libs/album/manager/albummanager_database.cpp:602
 #: core/libs/album/manager/albummanager_database.cpp:634
-#, fuzzy, kde-format
-#| msgid "New database folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Database Folder"
-msgstr "Новая папка для базы данных"
+msgstr "Создание папки базы данных"
 
 #: core/libs/album/manager/albummanager_database.cpp:530
 #, kde-format
@@ -28301,7 +28173,7 @@ msgstr "Найти повторяющиеся изображения..."
 #: core/libs/album/treeview/albumselectiontreeview.cpp:234
 #, kde-format
 msgid "Scan for Faces"
-msgstr "Поиск лиц"
+msgstr "Определить лица на фотографиях"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:237
 #, kde-format
@@ -28314,8 +28186,7 @@ msgid "Refresh"
 msgstr "Обновить"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:305
-#, fuzzy, kde-format
-#| msgid "Scan for Faces"
+#, kde-format
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "Поиск лиц"
@@ -28441,19 +28312,16 @@ msgid "White"
 msgstr "Белый"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:117
-#, fuzzy, kde-format
-#| msgid "New Album"
+#, kde-format
 msgctxt "@title:window, album properties"
 msgid "New Album"
-msgstr "Новый альбом"
+msgstr "Создание альбома"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:117
-#, fuzzy, kde-format
-#| msgctxt "@title: album properties"
-#| msgid "Edit Album"
+#, kde-format
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
-msgstr "Изменить альбом"
+msgstr "Изменение альбома"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:138
 #, kde-format
@@ -28583,9 +28451,7 @@ msgstr ""
 "«%1»"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:479
-#, fuzzy, kde-format
-#| msgctxt "@title: album properties"
-#| msgid "Could Not Calculate Average"
+#, kde-format
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "Не удалось вычислить среднее значение"
@@ -28644,11 +28510,10 @@ msgstr[2] "Исключено %1 альбомов"
 msgstr[3] "Исключён один альбом"
 
 #: core/libs/album/widgets/albumselectdialog.cpp:71
-#, fuzzy, kde-format
-#| msgid "Select Album"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Album"
-msgstr "Выберите альбом"
+msgstr "Выбор альбома"
 
 #: core/libs/album/widgets/albumselectors.cpp:136
 #: core/libs/album/widgets/albumselectors.cpp:492
@@ -29521,8 +29386,7 @@ msgstr ""
 "программу с пустой базой данных."
 
 #: core/libs/database/utils/ifaces/dio.cpp:326
-#, fuzzy, kde-format
-#| msgid "File conflict"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Конфликт файлов"
@@ -30163,8 +30027,7 @@ msgstr "Папка БД миниатюр:"
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:594
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:599
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:852
-#, fuzzy, kde-format
-#| msgid "Database Connection Test"
+#, kde-format
 msgctxt "@title:window"
 msgid "Database Connection Test"
 msgstr "Проверка подключения к базе данных"
@@ -30219,8 +30082,7 @@ msgstr ""
 "directory)."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:843
-#, fuzzy, kde-format
-#| msgid "Database Configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Database Configuration"
 msgstr "Параметры базы данных"
@@ -30253,11 +30115,10 @@ msgstr ""
 "метаданные в файле базы данных."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:881
-#, fuzzy, kde-format
-#| msgid "Create Database Folder?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder?"
-msgstr "Создать папку для баз данных?"
+msgstr "Создание папки баз данных"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:882
 #, kde-format
@@ -30269,11 +30130,10 @@ msgstr ""
 "b></p>Создать её?"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:893
-#, fuzzy, kde-format
-#| msgid "Create Database Folder Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder Failed"
-msgstr "Не удалось создать папку для баз данных"
+msgstr "Ошибка создания папки баз данных"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:894
 #, kde-format
@@ -30301,8 +30161,7 @@ msgstr ""
 "данных.<br/>Выберите другую папку.</p><p><b>%1</b></p>"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:46
-#, fuzzy, kde-format
-#| msgid "Database Statistics"
+#, kde-format
 msgctxt "@title:window"
 msgid "Database Statistics"
 msgstr "Статистика базы данных"
@@ -30575,15 +30434,13 @@ msgid "&Move to Trash"
 msgstr "У&далить в корзину"
 
 #: core/libs/dialogs/deletedialog.cpp:660
-#, fuzzy, kde-format
-#| msgid "About to delete selected items"
+#, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "Удаление выбранных объектов"
 
 #: core/libs/dialogs/deletedialog.cpp:667
-#, fuzzy, kde-format
-#| msgid "About to delete selected albums"
+#, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"
 msgstr "Удаление выбранных альбомов"
@@ -30604,18 +30461,16 @@ msgid "Do not ask again"
 msgstr "Больше &не показывать это сообщение"
 
 #: core/libs/dialogs/filesaveoptionsdlg.cpp:34
-#, fuzzy, kde-format
-#| msgid "Settings for Saving Image File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings for Saving Image File"
 msgstr "Параметры сохранения файлов изображений"
 
 #: core/libs/dialogs/iccprofileinfodlg.cpp:39
-#, fuzzy, kde-format
-#| msgid "Color Profile Info - %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Color Profile Info - %1"
-msgstr "О цветовом профиле — %1"
+msgstr "Сведения о цветовом профиле — %1"
 
 #: core/libs/dialogs/imagedialog.cpp:233
 #, kde-format
@@ -30703,8 +30558,7 @@ msgid "<i>VideoCodec:</i>"
 msgstr "<i>Видеокодек:</i>"
 
 #: core/libs/dialogs/infodlg.cpp:68 core/libs/dialogs/libsinfodlg.cpp:138
-#, fuzzy, kde-format
-#| msgid "Shared Libraries and Components Information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
 msgstr "Сведения о компонентах и совместно используемых библиотеках"
@@ -30790,8 +30644,7 @@ msgid "Unknown"
 msgstr "Неизвестно"
 
 #: core/libs/dialogs/rawcameradlg.cpp:56
-#, fuzzy, kde-format
-#| msgid "List of supported RAW cameras"
+#, kde-format
 msgctxt "@title:window"
 msgid "List of Supported RAW Cameras"
 msgstr "Список поддерживаемых камер для создания «цифровых негативов»"
@@ -30820,8 +30673,7 @@ msgstr[3] ""
 "Используется библиотека LibRaw версии %2<br/>в списке %1 модель (найдено: %3)"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:83
-#, fuzzy, kde-format
-#| msgid "List of Detected Hardware"
+#, kde-format
 msgctxt "@title:window"
 msgid "List of Detected Hardware"
 msgstr "Список определённого оборудования"
@@ -31551,8 +31403,7 @@ msgid "Luminosity"
 msgstr "Яркость"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:529
-#, fuzzy, kde-format
-#| msgid "Black & White Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Black & White Settings File to Load"
 msgstr "Загрузка параметров чёрно-белого фильтра"
@@ -31570,11 +31421,10 @@ msgstr ""
 "Не удалось загрузить параметры для чёрно-белого фильтра из текстового файла."
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:600
-#, fuzzy, kde-format
-#| msgid "Black & White Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Black & White Settings File to Save"
-msgstr "Сохранить файл с параметрами чёрно-белого фильтра"
+msgstr "Сохранение файла с параметрами чёрно-белого фильтра"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:639
 #, kde-format
@@ -32973,8 +32823,7 @@ msgid "Select Black Frame Image"
 msgstr "Выберите файл с темновым кадром"
 
 #: core/libs/dimg/filters/hotpixels/hotpixelsettings.cpp:231
-#, fuzzy, kde-format
-#| msgid "Black Frame Parser"
+#, kde-format
 msgctxt "@title:window"
 msgid "Black Frame Parser"
 msgstr "Анализатор темнового кадра"
@@ -34089,11 +33938,10 @@ msgid "Cannot load settings from the Photograph Refocus text file."
 msgstr "Не удалось загрузить параметры рефокусировки из текстового файла."
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:564
-#, fuzzy, kde-format
-#| msgid "Photograph Refocus Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Save"
-msgstr "Сохранить файл с параметрами рефокусировки"
+msgstr "Сохранение файла с параметрами рефокусировки"
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:594
 #, kde-format
@@ -34514,12 +34362,10 @@ msgstr ""
 "компенсации экспозиции для более точной регулировки."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:522
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "White Color Balance Settings File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "White Color Balance Settings File to Load"
-msgstr "Загрузить файл с параметрами баланса белого"
+msgstr "Загрузка файла с параметрами баланса белого"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:540
 #, kde-format
@@ -34534,12 +34380,10 @@ msgid "Cannot load settings from the White Color Balance text file."
 msgstr "Не удалось загрузить параметры баланса белого из текстового файла."
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:569
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "White Color Balance Settings File to Save"
+#, kde-format
 msgctxt "@title:window"
 msgid "White Color Balance Settings File to Save"
-msgstr "Сохранить файл с параметрами баланса белого"
+msgstr "Сохранение файла с параметрами баланса белого"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:596
 #, kde-format
@@ -34701,9 +34545,7 @@ msgid "Type-Mimes"
 msgstr "Типы MIME"
 
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "About %1 Plugin"
+#, kde-format
 msgctxt "@title:window"
 msgid "About %1 Plugin"
 msgstr "О модуле %1"
@@ -34962,8 +34804,7 @@ msgid "Location of the album that will be created (optional)."
 msgstr "Расположение нового альбома (необязательно)."
 
 #: core/libs/dplugins/webservices/wsselectuserdlg.cpp:60
-#, fuzzy, kde-format
-#| msgid "Account Selector"
+#, kde-format
 msgctxt "@title:window"
 msgid "Account Selector"
 msgstr "Выбор учётной записи"
@@ -40115,11 +39956,10 @@ msgstr "Удалить метку «%1»?"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:294
 #: core/libs/tags/engine/tagmodificationhelper.cpp:407
-#, fuzzy, kde-format
-#| msgid "Delete Tag"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Tag"
-msgstr "Удалить метку"
+msgstr "Удаление метки"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:381
 #, kde-format
@@ -40361,8 +40201,7 @@ msgid "Previous tags were changed. Save changes? "
 msgstr "Предыдущие метки были изменены. Сохранить изменения?"
 
 #: core/libs/tags/manager/tagsmanager.cpp:179
-#, fuzzy, kde-format
-#| msgid "Tags Manager"
+#, kde-format
 msgctxt "@title:window"
 msgid "Tags Manager"
 msgstr "Диспетчер меток"
@@ -40623,15 +40462,13 @@ msgid "Both"
 msgstr "Метки обоих уровней"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:113
-#, fuzzy, kde-format
-#| msgid "New Tag"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Tag"
 msgstr "Создание метки"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:117
-#, fuzzy, kde-format
-#| msgid "Edit Tag"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Tag"
 msgstr "Редактирование метки"
@@ -40693,11 +40530,10 @@ msgid "<b>Properties of Tag<br/>\"%1\"</b>"
 msgstr "<b>Свойства метки<br/>«%1»</b>"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:529
-#, fuzzy, kde-format
-#| msgid "Tag creation Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Tag Creation Error"
-msgstr "Ошибка при создании метки"
+msgstr "Ошибка создания метки"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:544
 #, kde-format
@@ -41293,11 +41129,10 @@ msgid "Cannot create thumbnail for %1"
 msgstr "Не удалось создать миниатюру для %1"
 
 #: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:153
-#, fuzzy, kde-format
-#| msgid "Failed to initialize thumbnails database"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to Initialize Thumbnails Database"
-msgstr "Не удалось инициализировать базу данных миниатюр"
+msgstr "Ошибка инициализации базы данных миниатюр"
 
 #: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:154
 #, kde-format
@@ -42840,15 +42675,13 @@ msgstr "О Qt"
 
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:215
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:237
-#, fuzzy, kde-format
-#| msgid "About QtAV"
+#, kde-format
 msgctxt "@title:window"
 msgid "About QtAV"
 msgstr "О QtAV"
 
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:232
-#, fuzzy, kde-format
-#| msgid "About FFmpeg"
+#, kde-format
 msgctxt "@title:window"
 msgid "About FFmpeg"
 msgstr "О наборе программ FFMpeg"
@@ -42862,11 +42695,10 @@ msgid "Reset to default value"
 msgstr "Сбросить к значению по умолчанию"
 
 #: core/libs/widgets/files/dbinaryiface.cpp:215
-#, fuzzy, kde-format
-#| msgid "Navigate to %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Navigate to %1"
-msgstr "Перейти к %1"
+msgstr "Переход к %1"
 
 #: core/libs/widgets/files/dbinarysearch.cpp:62
 #, kde-format
@@ -45232,12 +45064,10 @@ msgid "File name: %1 (%2)"
 msgstr "Имя файла: %1 (%2)"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:398
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Save ExifTool Information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save ExifTool Information"
-msgstr "Сохранить сведения ExifTool"
+msgstr "Сохранение сведений ExifTool"
 
 #: core/libs/widgets/metadata/exiv2/exifwidget.cpp:72
 #, kde-format
@@ -45549,12 +45379,10 @@ msgid "Switch to %1"
 msgstr "Переключиться на %1"
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:423
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Failed to translate string with %1 Web-service"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to Translate String with %1 Web-Service"
-msgstr "Не удалось перевести строку с помощью веб-сервиса %1"
+msgstr "Ошибка перевода строки с помощью веб-сервиса %1"
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:425
 #, kde-format
@@ -50626,20 +50454,16 @@ msgid "Icon Size: %1"
 msgstr "Размер значков: %1"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "New Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Bookmark"
-msgstr "Новая закладка"
+msgstr "Создание закладки"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Edit Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Bookmark"
-msgstr "Изменить закладку"
+msgstr "Редактирование закладки"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:119
 #, kde-format
@@ -50749,12 +50573,10 @@ msgid "Edit current bookmark from the list"
 msgstr "Изменить текущую закладку в списке"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:245
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Add New Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add New Bookmark"
-msgstr "Добавить закладку"
+msgstr "Создание закладки"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:246
 #, kde-format
@@ -50769,9 +50591,7 @@ msgstr ""
 "уже существует в списке «%2»."
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:259
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Confirm Bookmark Deletion"
+#, kde-format
 msgctxt "@title:window"
 msgid "Confirm Bookmark Deletion"
 msgstr "Подтверждение удаления закладки"
@@ -50878,11 +50698,10 @@ msgstr "Удалить файл"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2323
-#, fuzzy, kde-format
-#| msgid "Error Saving File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Saving File"
-msgstr "Ошибка при сохранении файла"
+msgstr "Ошибка сохранения файла"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:79
 #, kde-format
@@ -50917,11 +50736,10 @@ msgid "Cannot delete \"%1\""
 msgstr "Не удалось удалить «%1»"
 
 #: core/showfoto/main/showfoto_open.cpp:58
-#, fuzzy, kde-format
-#| msgid "Open Images From Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open Images from Folder"
-msgstr "Открыть изображения из папки"
+msgstr "Открытие изображений из папки"
 
 #: core/showfoto/main/showfoto_open.cpp:299
 #, kde-format
@@ -50929,11 +50747,10 @@ msgid "There is no item to process."
 msgstr "Отсутствуют объекты для обработки."
 
 #: core/showfoto/main/showfoto_open.cpp:321
-#, fuzzy, kde-format
-#| msgid "Error Loading File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Loading File"
-msgstr "Ошибка при загрузке файла"
+msgstr "Ошибка загрузки файла"
 
 #: core/showfoto/main/showfoto_open.cpp:322
 #, kde-format
@@ -50999,8 +50816,7 @@ msgid "Effec&ts"
 msgstr "Эффекты"
 
 #: core/showfoto/setup/showfotosetup.cpp:98 core/utilities/setup/setup.cpp:146
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "Настройка"
@@ -51743,7 +51559,7 @@ msgstr "Иерархия:"
 #, kde-format
 msgctxt "@title"
 msgid "Favorite Item Properties"
-msgstr "Свойства избранного элемента"
+msgstr "Свойства избранного объекта"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:232
 #, kde-format
@@ -51785,14 +51601,14 @@ msgstr "&Имя:"
 #, kde-format
 msgctxt "@info"
 msgid "Enter favorite entry name here..."
-msgstr "Введите здесь имя избранного элемента..."
+msgstr "Введите здесь название избранного объекта…"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:152
 #, kde-format
 msgctxt "@info"
 msgid "The favorite item name which must be unique and not empty"
 msgstr ""
-"Название избранного элемента, должно быть уникальным и не может быть пустым"
+"Название избранного объекта, должно быть уникальным и не может быть пустым"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:158
 #, kde-format
@@ -51804,7 +51620,7 @@ msgstr "Иерархия:"
 #, kde-format
 msgctxt "@info"
 msgid "The favorite entry hierarchy which must be unique in tree-view"
-msgstr "Иерархия избранного элемента, которая должна быть уникальна"
+msgstr "Иерархия избранного объекта, которая должна быть уникальна"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:166
 #, kde-format
@@ -51846,7 +51662,7 @@ msgstr "&Описание:"
 #, kde-format
 msgctxt "@info"
 msgid "Enter favorite item description here..."
-msgstr "Введите здесь описание избранного элемента..."
+msgstr "Введите здесь описание избранного объекта…"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:190
 #, kde-format
@@ -51888,7 +51704,9 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Select here the icon to use for this favorite item in tree-view."
-msgstr "Здесь возможно выбрать значок для избранного элемента в иерархии."
+msgstr ""
+"Здесь возможно выбрать значок, используемый для избранного объекта в "
+"иерархическом режиме просмотра"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:221
 #, kde-format
@@ -51987,41 +51805,31 @@ msgstr[2] "%1 файлов"
 msgstr[3] "%1 файл"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:692
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "New Favorite Item"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Item"
-msgstr "Новый избранный элемент"
+msgstr "Добавление объекта в избранное"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:696
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Edit Favorite Item"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Item"
-msgstr "Изменение избранного элемента"
+msgstr "Изменение избранного объекта"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:703
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "New Favorite Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Folder"
-msgstr "Новая избранная папка"
+msgstr "Создание папки избранного"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:707
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Edit Favorite Folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Folder"
 msgstr "Изменение избранной папки"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:764
-#, fuzzy, kde-format
-#| msgctxt "@title: album properties"
-#| msgid "Could Not Calculate Average"
+#, kde-format
 msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
 msgstr "Не удалось вычислить среднее значение"
@@ -52095,9 +51903,7 @@ msgid "Search in Favorites..."
 msgstr "Искать в избранном..."
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:357
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Confirm Item Deletion"
+#, kde-format
 msgctxt "@title:window"
 msgid "Confirm Item Deletion"
 msgstr "Подтверждение удаления"
@@ -52297,8 +52103,7 @@ msgstr "Обработка..."
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:87
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:160
-#, fuzzy, kde-format
-#| msgid "Renaming images"
+#, kde-format
 msgctxt "@title:window"
 msgid "Renaming Images"
 msgstr "Переименование изображений"
@@ -52421,8 +52226,7 @@ msgstr ""
 "выбрать критерий сортировки (только пользовательский интерфейс альбома)."
 
 #: core/utilities/advancedrename/common/tooltipdialog.cpp:54
-#, fuzzy, kde-format
-#| msgid "Information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Information"
 msgstr "Сведения"
@@ -53543,11 +53347,10 @@ msgstr ""
 "альбом. Все изображения будут помещаться туда."
 
 #: core/utilities/firstrun/collectionpage.cpp:179
-#, fuzzy, kde-format
-#| msgid "Create Root Album Folder?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Root Album Folder?"
-msgstr "Создать папку корневого альбома?"
+msgstr "Создание папки корневого альбома"
 
 #: core/utilities/firstrun/collectionpage.cpp:180
 #, kde-format
@@ -53559,11 +53362,10 @@ msgstr ""
 "%1</b></p>Создать её?"
 
 #: core/utilities/firstrun/collectionpage.cpp:192
-#, fuzzy, kde-format
-#| msgid "Create Root Album Folder Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Root Album Folder Failed"
-msgstr "Не удалось создать папку корневого альбома"
+msgstr "Ошибка создания папки корневого альбома"
 
 #: core/utilities/firstrun/collectionpage.cpp:193
 #, kde-format
@@ -54415,8 +54217,7 @@ msgid "Bookmark comment"
 msgstr "Описание закладки"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:210
-#, fuzzy, kde-format
-#| msgid "Edit Geolocation Bookmarks"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Geolocation Bookmarks"
 msgstr "Редактирование закладок местоположения"
@@ -54485,8 +54286,7 @@ msgstr "Комментарий"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:809
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:944
-#, fuzzy, kde-format
-#| msgid "Loading Bookmark"
+#, kde-format
 msgctxt "@title:window"
 msgid "Loading Bookmark"
 msgstr "Загрузка закладок"
@@ -54502,8 +54302,7 @@ msgstr ""
 "%3"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:931
-#, fuzzy, kde-format
-#| msgid "Open File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "Открытие файла"
@@ -54520,8 +54319,7 @@ msgid "Imported %1"
 msgstr "Импортировано %1"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:958
-#, fuzzy, kde-format
-#| msgid "Save File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Сохранение файла"
@@ -54532,8 +54330,7 @@ msgid "%1 Bookmarks.xbel"
 msgstr "Закладки %1.xbel"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:970
-#, fuzzy, kde-format
-#| msgid "Export error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export error"
 msgstr "Ошибка экспорта"
@@ -54704,9 +54501,7 @@ msgstr[2] "Не удалось загрузить %1 файлов GPX:"
 msgstr[3] "Не удалось загрузить следующий файл GPX:"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:330
-#, fuzzy, kde-format
-#| msgid "Error loading GPX file"
-#| msgid_plural "Error loading GPX files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error Loading GPX File"
 msgid_plural "Error Loading GPX Files"
@@ -54721,11 +54516,10 @@ msgid "Correlating images -"
 msgstr "Сопоставление изображений —"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:517
-#, fuzzy, kde-format
-#| msgid "Correlation failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Correlation Failed"
-msgstr "Не удалось выполнить сопоставление"
+msgstr "Ошибка сопоставления"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:518
 #, kde-format
@@ -54737,8 +54531,7 @@ msgstr ""
 "смещения и расхождения. "
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:523
-#, fuzzy, kde-format
-#| msgid "Correlation succeeded"
+#, kde-format
 msgctxt "@title:window"
 msgid "Correlation Succeeded"
 msgstr "Сопоставление выполнено успешно"
@@ -54754,8 +54547,7 @@ msgstr ""
 #. i18np.
 #. See bug #376438 for details.
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:532
-#, fuzzy, kde-format
-#| msgid "Correlation finished"
+#, kde-format
 msgctxt "@title:window"
 msgid "Correlation Finished"
 msgstr "Сопоставление завершено"
@@ -54912,8 +54704,7 @@ msgstr "Найти недостающие значения высот"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:439
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:816
-#, fuzzy, kde-format
-#| msgid "GPS Sync"
+#, kde-format
 msgctxt "@title:window"
 msgid "GPS Sync"
 msgstr "Синхронизация GPS-координат"
@@ -55217,11 +55008,10 @@ msgid "Retrieving RG info -"
 msgstr "Получение данных обратного геокодирования —"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:845
-#, fuzzy, kde-format
-#| msgid "Add New Tag..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Add New Tag"
-msgstr "Создать метку..."
+msgstr "Создание метки"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:846
 #, kde-format
@@ -55441,8 +55231,7 @@ msgstr ""
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:545
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:117
 #: core/utilities/searchwindow/searchtabheader.cpp:586
-#, fuzzy, kde-format
-#| msgid "Name exists"
+#, kde-format
 msgctxt "@title:window"
 msgid "Name Exists"
 msgstr "Это имя уже занято"
@@ -55659,8 +55448,7 @@ msgid "<b>No Profile</b>"
 msgstr "<b>Нет профиля</b>:"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:81
-#, fuzzy, kde-format
-#| msgid "Soft Proofing Options"
+#, kde-format
 msgctxt "@title:window"
 msgid "Soft Proofing Options"
 msgstr "Параметры мягкой цветопробы"
@@ -55734,8 +55522,7 @@ msgstr "Цвет подсветки:"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:229
 #: core/utilities/setup/setupicc.cpp:868
-#, fuzzy, kde-format
-#| msgid "Profile Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Profile Error"
 msgstr "Ошибка профиля"
@@ -56216,12 +56003,10 @@ msgid "Information about image size"
 msgstr "Информация о размере снимка"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1085
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Saving image..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Saving Image..."
-msgstr "Сохранение изображения..."
+msgstr "Сохранение изображения…"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1086
 #, kde-format
@@ -56240,9 +56025,7 @@ msgstr ""
 "Действительно перезаписать?"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1112
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
 msgstr "Предупреждение"
@@ -56479,11 +56262,10 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3 Мп)"
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:927
-#, fuzzy, kde-format
-#| msgid "No Image in Current Album"
+#, kde-format
 msgctxt "@title:window"
 msgid "No Image in Current Album"
-msgstr "Нет изображений в текущем альбоме"
+msgstr "В текущем альбоме изображения отсутствуют"
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:928
 #, kde-format
@@ -56495,9 +56277,7 @@ msgstr ""
 "Редактор изображений будет закрыт."
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:1199
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "File Not Available"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Not Available"
 msgstr "Файл недоступен"
@@ -57523,12 +57303,10 @@ msgstr ""
 "Укажите новое имя файла (без расширения):"
 
 #: core/utilities/import/main/importui.cpp:1245
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "File already exists"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Already Exists"
-msgstr "Такой файл уже существует"
+msgstr "Файл уже существует"
 
 #: core/utilities/import/main/importui.cpp:1312
 #, kde-format
@@ -58627,8 +58405,7 @@ msgid "Finger-prints"
 msgstr "Контрольные строки"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:196
-#, fuzzy, kde-format
-#| msgid "Maintenance"
+#, kde-format
 msgctxt "@title:window"
 msgid "Maintenance"
 msgstr "Обслуживание"
@@ -59449,18 +59226,16 @@ msgid "History"
 msgstr "Журнал"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:68
-#, fuzzy, kde-format
-#| msgid "New Workflow"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Workflow"
-msgstr "Новый профиль пакетной обработки"
+msgstr "Создание профиля пакетной обработки"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:68
-#, fuzzy, kde-format
-#| msgid "Edit Workflow"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Workflow"
-msgstr "Изменить профиль пакетной обработки"
+msgstr "Редактирование профиля пакетной обработки"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:81
 #, kde-format
@@ -59507,8 +59282,7 @@ msgid "Description"
 msgstr "Описание"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:115
-#, fuzzy, kde-format
-#| msgid "Batch Queue Manager"
+#, kde-format
 msgctxt "@title:window"
 msgid "Batch Queue Manager"
 msgstr "Управление очередями пакетной обработки"
@@ -59548,12 +59322,10 @@ msgid "Delete Workflow"
 msgstr "Удалить профиль пакетной обработки"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:313
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Delete Workflow?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Workflow?"
-msgstr "Удалить профиль пакетной обработки?"
+msgstr "Удаление профиля пакетной обработки"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:314
 #, kde-format
@@ -60453,11 +60225,10 @@ msgid "Hide Options"
 msgstr "Скрыть параметры"
 
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:75
-#, fuzzy, kde-format
-#| msgid "Delete Search?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Search?"
-msgstr "Удалить поисковый запрос?"
+msgstr "Удаление поискового запроса"
 
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:76
 #, kde-format
@@ -60549,8 +60320,7 @@ msgid "Try"
 msgstr "Применить"
 
 #: core/utilities/searchwindow/searchwindow.cpp:88
-#, fuzzy, kde-format
-#| msgid "Advanced Search"
+#, kde-format
 msgctxt "@title:window"
 msgid "Advanced Search"
 msgstr "Расширенный поиск"
@@ -61187,8 +60957,7 @@ msgstr ""
 "правильно. Попробовать снова?"
 
 #: core/utilities/setup/camera/cameraselection.cpp:104
-#, fuzzy, kde-format
-#| msgid "Camera Configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Camera Configuration"
 msgstr "Параметры камеры"
@@ -61351,11 +61120,10 @@ msgstr ""
 "net/digicam/'>по этому адресу</a>.</p>"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:85
-#, fuzzy, kde-format
-#| msgid "Edit Import Filters"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Import Filters"
-msgstr "Редактировать фильтры импорта"
+msgstr "Редактирование фильтров импорта"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:102
 #, kde-format
@@ -61796,8 +61564,7 @@ msgid "Choose the Folder Containing your Collection"
 msgstr "Выбрать каталог, в котором находится коллекция"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:694
-#, fuzzy, kde-format
-#| msgid "Problem Appending Collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Problem Appending Collection"
 msgstr "Проблема с добавлением коллекции"
@@ -61915,15 +61682,13 @@ msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "Коллекция, содержащая путь«%1», уже была добавлена ранее"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1563
-#, fuzzy, kde-format
-#| msgid "Problem Adding Collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
-msgstr "Проблема с добавлением коллекции"
+msgstr "Ошибка добавления коллекции"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1572
-#, fuzzy, kde-format
-#| msgid "Adding Collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "Добавление коллекции"
@@ -61934,8 +61699,7 @@ msgid "Your new collection will be created with this name:"
 msgstr "Новая коллекция будет создана с этим названием:"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1651
-#, fuzzy, kde-format
-#| msgid "Select Category"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "Выбор рубрики"
@@ -61946,11 +61710,10 @@ msgid "Your collection will use this category:"
 msgstr "Новая коллекция будет создана с этой рубрикой:"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:173
-#, fuzzy, kde-format
-#| msgid "Download required files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
-msgstr "Загрузить необходимые файлы"
+msgstr "Загрузка необходимых файлов"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:203
 #, kde-format
@@ -61982,8 +61745,7 @@ msgid "All files were downloaded successfully."
 msgstr "Все файлы успешно загружены."
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:274
-#, fuzzy, kde-format
-#| msgid "Download error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
 msgstr "Ошибка загрузки"
@@ -62559,9 +62321,7 @@ msgstr ""
 "royalty-free.</item>"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:135
-#, fuzzy, kde-format
-#| msgctxt "@title: dialog"
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title:window, reset to default warning dialog"
 msgid "Warning"
 msgstr "Предупреждение"
@@ -62636,15 +62396,13 @@ msgid "Reset to Default"
 msgstr "По умолчанию"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:144
-#, fuzzy, kde-format
-#| msgid "New Xmp Namespace"
+#, kde-format
 msgctxt "@title:window"
 msgid "New XMP Namespace"
 msgstr "Добавление пространства имён XMP"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:148
-#, fuzzy, kde-format
-#| msgid "Edit Xmp Namespace"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit XMP Namespace"
 msgstr "Редактирование пространства имён XMP"

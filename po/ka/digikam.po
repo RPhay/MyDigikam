@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-22 00:54+0000\n"
-"PO-Revision-Date: 2023-01-15 04:04+0100\n"
+"PO-Revision-Date: 2023-01-22 06:37+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -4178,7 +4178,7 @@ msgstr "Ctrl+O: ფაილის გახსნა\n"
 #, kde-format
 msgctxt "@info"
 msgid "O: On Screen Display\n"
-msgstr ""
+msgstr "O: ეკრანზე ჩვენება\n"
 
 #: core/avplayer/filters/EventFilter.cpp:116
 #, kde-format
@@ -4202,19 +4202,19 @@ msgstr "S: გაჩერება\n"
 #, kde-format
 msgctxt "@info"
 msgid "R: rotate 90 degrees"
-msgstr ""
+msgstr "R: 90 გრადუსით შებრუნება"
 
 #: core/avplayer/filters/EventFilter.cpp:120
 #, kde-format
 msgctxt "@info"
 msgid "M: mute on/off\n"
-msgstr ""
+msgstr "M: დადუმების ჩართ/გამორთ\n"
 
 #: core/avplayer/filters/EventFilter.cpp:121
 #, kde-format
 msgctxt "@info"
 msgid "C: capture video"
-msgstr ""
+msgstr "C: ვიდეოს გადაღება"
 
 #: core/avplayer/filters/EventFilter.cpp:122
 #, kde-format
@@ -4226,13 +4226,13 @@ msgstr "მაღლა/დაბლა: ხმის სიმაღლე +-\n
 #, kde-format
 msgctxt "@info"
 msgid "Ctrl+Up/Down: speed +/-\n"
-msgstr ""
+msgstr "Ctrl+მაღლა/დაბლა: სიჩქარის +/-\n"
 
 #: core/avplayer/filters/EventFilter.cpp:124
 #, kde-format
 msgctxt "@info"
 msgid "-&gt;/&lt;-: seek forward/backward\n"
-msgstr ""
+msgstr "-&gt;/&lt;-: წინ/უკან გადახვევა\n"
 
 #: core/avplayer/filters/EventFilter.cpp:127
 #, kde-format
@@ -5606,10 +5606,9 @@ msgid "User Script: No script."
 msgstr "მომხმარებლის სკრიპტი: სკრიპტის გარეშე."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:262
-#, fuzzy, kde-format
-#| msgid "User Script: No script."
+#, kde-format
 msgid "User Script: File open error."
-msgstr "მომხმარებლის სკრიპტი: სკრიპტის გარეშე."
+msgstr "მომხმარებლის სკრიპტი: ფაილის გახსნის შეცდომა."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:279
 #, kde-format
@@ -5617,10 +5616,9 @@ msgid "User Script: Timeout from script."
 msgstr "მომხმარებლის სკრიპტი: სკრიპტის მოლოდინის დრო გავიდა."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:287
-#, fuzzy, kde-format
-#| msgid "User Script: No script."
+#, kde-format
 msgid "User Script: No error."
-msgstr "მომხმარებლის სკრიპტი: სკრიპტის გარეშე."
+msgstr "მომხმარებლის სკრიპტი: შეცდომის გარეშე."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:291
 #, kde-format
@@ -5638,10 +5636,9 @@ msgid "User Script: Command not found."
 msgstr "მომხმარებლის სკრიპტი: ბრძანება ვერ ვიპოვე."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:309
-#, fuzzy, kde-format
-#| msgid "User Script: No script."
+#, kde-format
 msgid "User Script: Error code returned %1."
-msgstr "მომხმარებლის სკრიპტი: სკრიპტის გარეშე."
+msgstr "მომხმარებლის სკრიპტი: შეცდომის დაბრუნებული კოდია %1."
 
 #: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:46
 #, kde-format
@@ -6125,7 +6122,7 @@ msgstr ""
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:238
 #, kde-format
 msgid "Lens Auto-Correction"
-msgstr ""
+msgstr "ლინზის ავტოკორექცია"
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:64
 #, kde-format
@@ -6149,7 +6146,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Lens Auto-Correction"
-msgstr ""
+msgstr "ლინზის ავტოკორექცია"
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:61
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:59
@@ -6212,7 +6209,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Red Eye Correction"
-msgstr ""
+msgstr "თვალის წითელი კორექტირება"
 
 #: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:61
 #: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:59
@@ -6372,7 +6369,7 @@ msgstr "შეიყვანეთ აღწერის ტექსტი."
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:112
 #, kde-format
 msgid "Clean up and overwrite"
-msgstr ""
+msgstr "მოსუფთავება და თვზე გადაწერა"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:113
 #, kde-format
@@ -11930,7 +11927,7 @@ msgstr ""
 #, kde-format
 msgctxt "Content type"
 msgid "Interview"
-msgstr ""
+msgstr "ინტერვიუ"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:120
 #, kde-format
@@ -13656,7 +13653,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:84
 #, kde-format
 msgid "Illustrator"
-msgstr ""
+msgstr "ილუსტრატორი"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:85
 #, kde-format
@@ -15102,7 +15099,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Interview"
-msgstr ""
+msgstr "ინტერვიუ"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:230
 #, kde-format
@@ -17490,7 +17487,7 @@ msgstr "ეფექტი"
 #, kde-format
 msgctxt "@option:check"
 msgid "Show image file name"
-msgstr ""
+msgstr "გამოსახულების ფაილის სახელის ჩვენება"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:305
 #, kde-format
@@ -17502,7 +17499,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Show image creation date"
-msgstr ""
+msgstr "გამოსახულების შექნის თარიღის ჩვენება"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:308
 #, kde-format
@@ -17514,7 +17511,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Show camera aperture and focal length"
-msgstr ""
+msgstr "კამერის დიაფრაგმისა და ფოკალური სიგრძის ჩვენება"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:311
 #, kde-format
@@ -20057,7 +20054,7 @@ msgstr ""
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:63
 #, kde-format
 msgid "Unknown Error %1"
-msgstr ""
+msgstr "უცნობი შეცდომა %1"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:69
 #, kde-format
@@ -20073,17 +20070,17 @@ msgstr ""
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:95
 #, kde-format
 msgid "Cannot create desktop context."
-msgstr ""
+msgstr "სამუშაო მაგიდის კონტექსტის შექმნის შეცდომა."
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:129
 #, kde-format
 msgid "Cannot set wall paper image path."
-msgstr ""
+msgstr "ფონის სურათის ბილიკის დაყენების შეცდომა."
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:139
 #, kde-format
 msgid "Cannot set wallpaper properties."
-msgstr ""
+msgstr "ფონის სურათის თვისებების დაყენება შეუძლებელია."
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:149
 #, kde-format
@@ -20099,7 +20096,7 @@ msgstr "ფონის სურათის მორგება"
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:77
 #, kde-format
 msgid "Wallpaper Layout:"
-msgstr ""
+msgstr "ფონის სურათის განლაგება:"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:79
 #, kde-format
@@ -20215,25 +20212,25 @@ msgstr ""
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:129
 #, kde-format
 msgid "Load playlist from a file."
-msgstr ""
+msgstr "დასაკრავი სიის ფაილიდან ჩატვირთვა."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:130
 #, kde-format
 msgid "Save playlist to a file."
-msgstr ""
+msgstr "დასაკრავი სიის ფაილში შენახვა."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:131
 #, kde-format
 msgid "Clear the playlist."
-msgstr ""
+msgstr "დასაკრავი სიის გასუფთავება."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:264
 #, kde-format
 msgctxt "number of tracks and running time"
 msgid "1 track [%2]"
 msgid_plural "%1 tracks [%2]"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 ტრეკი [%2]"
+msgstr[1] "%1 ტრეკი [%2]"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:292
 #, kde-format
@@ -20267,7 +20264,7 @@ msgstr "დასაკრავი სიის ჩატვირთვა"
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:549
 #, kde-format
 msgid "Playlist (*.m3u)"
-msgstr ""
+msgstr "დასაკრავი სია (*.m3u)"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:548
 #, kde-format
@@ -20278,18 +20275,18 @@ msgstr "დასაკრავი სიის შენახვა"
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:609
 #, kde-format
 msgid "Cannot access file \"%1\". Please check the path is correct."
-msgstr ""
+msgstr "ფაილთან \"%1\" წვდომის შეცდომა. შეამოწმეთ, ბილიკი სწორია, თუ არა."
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:619
 #, kde-format
 msgid "Cannot create a preview of an empty file list."
-msgstr ""
+msgstr "ცარიელი ფაილების სიის მინიატურის შექმნა შეუძლებელია."
 
 #. i18n: ectx: property (title), widget (QGroupBox, m_selectionGroupBox)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:23
 #, kde-format
 msgid "Select audio files"
-msgstr ""
+msgstr "აირჩიეთ აუდიო ფაილები"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, m_SoundFilesButtonUp)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:76
@@ -20351,36 +20348,36 @@ msgstr "&მარყუჟი"
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:335
 #, kde-format
 msgid "&Auto play"
-msgstr ""
+msgstr "&ავტომატური დაკვრა"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_rememberSoundtrack)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:342
 #, kde-format
 msgid "Remember soundtrack"
-msgstr ""
+msgstr "საუნდტრეკის დამახსოვრება"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:365
 #, kde-format
 msgid "Time comparison"
-msgstr ""
+msgstr "დროის შედარებ"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:373
 #, kde-format
 msgid "Slide:"
-msgstr ""
+msgstr "სლაიდი:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:387
 #, kde-format
 msgid "Soundtrack:"
-msgstr ""
+msgstr "საუნდტრეკი:"
 
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:136
 #, kde-format
 msgid "No detail available"
-msgstr ""
+msgstr "დეტალები ხელმისაწვდომი არაა"
 
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:157
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:176
@@ -20392,12 +20389,12 @@ msgstr "%1 - %2"
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:167
 #, kde-format
 msgid "%1 may not be playable."
-msgstr ""
+msgstr "%1 შეიძლება დაკვრადი არ იყოს."
 
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:175
 #, kde-format
 msgid "This file may not be playable."
-msgstr ""
+msgstr "ეს შეიძლება დაკვრადი არ იყოს."
 
 #. i18n: ectx: property (text), widget (QPushButton, m_playButton)
 #: core/dplugins/generic/view/presentation/audio/presentationaudiowidget.ui:29
@@ -20624,25 +20621,25 @@ msgstr ""
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:124
 #, kde-format
 msgid "Content Rendering"
-msgstr ""
+msgstr "შემცველობის რენდერი"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_printNameCheckBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:132
 #, kde-format
 msgid "P&rint filename"
-msgstr ""
+msgstr "ფაილის სახელის &დაბეჭდვა"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_printCommentsCheckBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:141
 #, kde-format
 msgid "Pr&int captions "
-msgstr ""
+msgstr "&წარწერების დაბეჭდვა "
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_printProgressCheckBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:148
 #, kde-format
 msgid "Progress indicator"
-msgstr ""
+msgstr "მიმდინარეობის მაჩვენებელი"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:171
@@ -20908,13 +20905,13 @@ msgstr ""
 #, kde-format
 msgctxt "Filter Effect: Horizontal Lines"
 msgid "Horizontal Lines"
-msgstr ""
+msgstr "ჰორიზონტალური ხაზები"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1029
 #, kde-format
 msgctxt "Filter Effect: Vertical Lines"
 msgid "Vertical Lines"
-msgstr ""
+msgstr "ვერტიკალური ხაზები"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationwidget.cpp:1030
 #, kde-format
@@ -20963,17 +20960,17 @@ msgstr "სლაიდშოუს მორგება"
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
 #, kde-format
 msgid "Delay between images:"
-msgstr ""
+msgstr "დაყოვნება გამოსახულებებს შორის:"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:124
 #, kde-format
 msgid "The delay, in seconds, between images."
-msgstr ""
+msgstr "დაყოვნება გამოსახულებებს შორის, წამებში."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
 #, kde-format
 msgid "Start with current image"
-msgstr ""
+msgstr "მიმდინარე გამოსახულებით დაწყება"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:127
 #, kde-format
@@ -20995,7 +20992,7 @@ msgstr ""
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:133
 #, kde-format
 msgid "Shuffle images"
-msgstr ""
+msgstr "გამოსახულებების შემთხვევითობა"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:134
 #, kde-format
@@ -21016,7 +21013,7 @@ msgstr ""
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:139
 #, kde-format
 msgid "Show image file name"
-msgstr ""
+msgstr "გამოსახულების ფაილის სახელის ჩვენება"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:140
 #, kde-format
@@ -21026,7 +21023,7 @@ msgstr ""
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:142
 #, kde-format
 msgid "Show image creation date"
-msgstr ""
+msgstr "გამოსახულების შექნის თარიღის ჩვენება"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:143
 #, kde-format
@@ -21037,7 +21034,7 @@ msgstr ""
 #: core/showfoto/setup/showfotosetuptooltip.cpp:153
 #, kde-format
 msgid "Show camera aperture and focal length"
-msgstr ""
+msgstr "კამერის დიაფრაგმისა და ფოკალური სიგრძის ჩვენება"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:146
 #, kde-format
@@ -21142,7 +21139,7 @@ msgstr ""
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:175
 #, kde-format
 msgid "Caption font:"
-msgstr ""
+msgstr "წარწერის ფონტი:"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:176
 #, kde-format
@@ -21152,7 +21149,7 @@ msgstr ""
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:179
 #, kde-format
 msgid "Screen placement:"
-msgstr ""
+msgstr "ეკრანის განთავსება:"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:181
 #, kde-format
@@ -21188,7 +21185,7 @@ msgstr ""
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:54
 #, kde-format
 msgid "SlideShow"
-msgstr ""
+msgstr "სლაიდშოუ"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:69
 #, kde-format
@@ -21242,7 +21239,7 @@ msgstr "ყველას დაკვრა"
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:185
 #, kde-format
 msgid "Play Selection"
-msgstr ""
+msgstr "მონიშნულის დაკვრა"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:194
 #, kde-format
@@ -21920,7 +21917,7 @@ msgstr "ყველა ფაილი (*)"
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:187
 #, kde-format
 msgid "<i>not selected</i>"
-msgstr ""
+msgstr "<i>მონიშნული არაა</i>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:71
 #, kde-format
@@ -21946,7 +21943,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:56
 #, kde-format
 msgid "Select import location..."
-msgstr ""
+msgstr "აირჩიეთ შემოტანის მდებარეობა..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:67
 #, kde-format
@@ -22110,7 +22107,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Flickr..."
-msgstr ""
+msgstr "&Flickr-ზე გატანა..."
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:340
 #, kde-format
@@ -22433,6 +22430,8 @@ msgid ""
 "<b><h2><a href='https://www.flickr.com'><font color=\"#0065DE\">flick</"
 "font><font color=\"#FF0084\">r</font></a> Export</h2></b>"
 msgstr ""
+"<b><h2><a href='https://www.flickr.com'><font color=\"#0065DE\">flick</"
+"font><font color=\"#FF0084\">r</font></a>-ზე გატანა</h2></b>"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:454
 #, kde-format
@@ -22776,7 +22775,7 @@ msgstr "Google Drive -ზე გატანა"
 #, kde-format
 msgctxt "@info"
 msgid "Google Photo export"
-msgstr ""
+msgstr "Google Photo-ზე გატანა"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:945
 #, kde-format
@@ -22848,6 +22847,8 @@ msgid ""
 "Google Photos call failed:\n"
 "%1"
 msgstr ""
+"Google Photos-ის გამოძახების შეცდომა:\n"
+"%1"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:1257
 #, kde-format
@@ -23073,7 +23074,7 @@ msgstr "Imgur-ზე ატვირთვის დაწყება"
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:243
 #, kde-format
 msgid "<i>Not logged in</i>"
-msgstr ""
+msgstr "<i>შესული არ ბრძანდებით</i>"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:250
 #, kde-format
@@ -23110,7 +23111,7 @@ msgstr "საწყისი"
 #: core/libs/dialogs/webbrowserdlg.cpp:130
 #, kde-format
 msgid "Go back to Home page"
-msgstr ""
+msgstr "საწყის გვერდზე დაბრუნება"
 
 #: core/dplugins/generic/webservices/inaturalist/inatplugin.cpp:48
 #, kde-format
@@ -38254,13 +38255,13 @@ msgstr ""
 #, kde-format
 msgctxt "Transition: Horizontal Lines"
 msgid "Horizontal Lines"
-msgstr ""
+msgstr "ჰორიზონტალური ხაზები"
 
 #: core/libs/transitionmngr/transitionmngr.cpp:107
 #, kde-format
 msgctxt "Transition: Vertical Lines"
 msgid "Vertical Lines"
-msgstr ""
+msgstr "ვერტიკალური ხაზები"
 
 #: core/libs/transitionmngr/transitionmngr.cpp:108
 #, kde-format
@@ -39763,7 +39764,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info: font properties"
 msgid "The Quick Brown Fox Jumps Over The Lazy Dog"
-msgstr ""
+msgstr "ბაყაყი წყალში ყიყინებს"
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:488
 #, kde-format
@@ -39772,6 +39773,8 @@ msgid ""
 "This sample text illustrates the current settings. You may edit it to test "
 "special characters."
 msgstr ""
+"ეს ტექსტი მიმდინარე პარამეტრებს გამოხატავთ. შეგიძლიათ ჩაასწოროთ ის, "
+"სპეციალური სიმბოლოების დასატესტად."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:727
 #: core/libs/widgets/fonts/dfontproperties.cpp:767
@@ -41602,7 +41605,7 @@ msgstr ""
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:403
 #, kde-format
 msgid "Scalable Vector Graphics"
-msgstr ""
+msgstr "გადიდებადი ვექტორული გრაფიკა"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:407
 #, kde-format
@@ -46996,7 +46999,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info: folder-view"
 msgid "Stack Options"
-msgstr ""
+msgstr "დასტის მორგება"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:240
 #, kde-format
@@ -48157,7 +48160,7 @@ msgstr "სახელი:"
 #, kde-format
 msgctxt "@info: favorite folder hierarchy property"
 msgid "Hierarchy:"
-msgstr ""
+msgstr "იერარქია:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:230
 #, kde-format
@@ -48181,7 +48184,7 @@ msgstr "შექმნილია:"
 #, kde-format
 msgctxt "@info: favorite item hierarchy property"
 msgid "Hierarchy:"
-msgstr ""
+msgstr "იერარქია:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:241
 #, kde-format
@@ -48217,7 +48220,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label: favorite item hierarchy properties"
 msgid "Hierarchy:"
-msgstr ""
+msgstr "იერარქია:"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:161
 #, kde-format

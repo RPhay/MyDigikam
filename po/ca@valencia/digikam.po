@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-22 00:54+0000\n"
-"PO-Revision-Date: 2023-01-18 09:26+0100\n"
+"PO-Revision-Date: 2023-01-22 10:31+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -5875,10 +5875,9 @@ msgid "User Script: No script."
 msgstr "Script d'usuari: Sense script."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:262
-#, fuzzy, kde-format
-#| msgid "User Script: No script."
+#, kde-format
 msgid "User Script: File open error."
-msgstr "Script d'usuari: Sense script."
+msgstr "Script d'usuari: S'ha produït un error d'obertura de fitxer."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:279
 #, kde-format
@@ -5886,10 +5885,9 @@ msgid "User Script: Timeout from script."
 msgstr "Script d'usuari: Temps d'espera exhaurit des de l'script."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:287
-#, fuzzy, kde-format
-#| msgid "User Script: No script."
+#, kde-format
 msgid "User Script: No error."
-msgstr "Script d'usuari: Sense script."
+msgstr "Script d'usuari: Sense cap error."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:291
 #, kde-format
@@ -5907,10 +5905,9 @@ msgid "User Script: Command not found."
 msgstr "Script d'usuari: No s'ha trobat l'ordre."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:309
-#, fuzzy, kde-format
-#| msgid "User Script: No script."
+#, kde-format
 msgid "User Script: Error code returned %1."
-msgstr "Script d'usuari: Sense script."
+msgstr "Script d'usuari: Codi d'error retornat %1."
 
 #: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:46
 #, kde-format
@@ -64151,14 +64148,7 @@ msgstr ""
 "vostre sistema i s'han escanejat:<ul><li>%3</li></ul>"
 
 #: core/utilities/setup/setupicc.cpp:918
-#, fuzzy, kde-format
-#| msgid ""
-#| "On Mac OS X, the default search paths include <ul><li>/System/Library/"
-#| "ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/"
-#| "ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/share/"
-#| "color/icc</li><li>~/.local/share/color/icc/</li><li>~/.local/share/icc/</"
-#| "li><li>~/.color/icc/</li></ul>On your system, currently these paths exist "
-#| "and are scanned:<ul><li>%2</li></ul>"
+#, kde-format
 msgid ""
 "On macOS, the default search paths include <ul><li>/System/Library/ColorSync/"
 "Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/ColorSync/"
@@ -64167,12 +64157,12 @@ msgid ""
 "icc/</li><li>~/.color/icc/</li></ul>On your system, currently these paths "
 "exist and are scanned:<ul><li>%2</li></ul>"
 msgstr ""
-"A Mac OS X, els camins de busca predeterminats inclouen <ul><li>/System/"
-"Library/ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/"
-"Library/ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/"
-"share/color/icc/opt/</li><li>~/.local/share/color/icc/</li><li>~/.local/"
-"share/icc/</li><li>~/.color/icc/</li></ul>Actualment estos camins existixen "
-"al vostre sistema i s'han escanejat:<ul><li>%2</li></ul>"
+"A macOS, els camins de busca predeterminats inclouen <ul><li>/System/Library/"
+"ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/"
+"ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/Contents/"
+"Resources/digikam/profiles/</li><li>~/.local/share/color/icc/</li><li>~/."
+"local/share/icc/</li><li>~/.color/icc/</li></ul>Actualment estos camins "
+"existixen al vostre sistema i s'han escanejat:<ul><li>%2</li></ul>"
 
 #: core/utilities/setup/setupicc.cpp:937
 #, kde-format

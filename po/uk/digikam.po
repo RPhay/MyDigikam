@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-22 00:54+0000\n"
-"PO-Revision-Date: 2023-01-21 08:28+0200\n"
+"PO-Revision-Date: 2023-01-22 08:28+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -5932,10 +5932,9 @@ msgid "User Script: No script."
 msgstr "Скрипт користувача: немає."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:262
-#, fuzzy, kde-format
-#| msgid "User Script: No error."
+#, kde-format
 msgid "User Script: File open error."
-msgstr "Скрипт користувача: немає помилок."
+msgstr "Скрипт користувача: помилка при спробі відкрити файл."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:279
 #, kde-format
