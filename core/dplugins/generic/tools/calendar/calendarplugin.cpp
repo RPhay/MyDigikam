@@ -65,6 +65,16 @@ QString CalendarPlugin::details() const
                 "<p>Finally, the tool will propose to export the result to your printer or in a PDF file.</p>");
 }
 
+QString CalendarPlugin::handbookSection() const
+{
+    return QLatin1String("post_processing");
+}
+
+QString CalendarPlugin::handbookChapter() const
+{
+    return QLatin1String("calendar_tool");
+}
+
 QList<DPluginAuthor> CalendarPlugin::authors() const
 {
     return QList<DPluginAuthor>()

@@ -98,6 +98,21 @@ QString DImgImageMagickPlugin::details() const
     );
 }
 
+QString DImgImageMagickPlugin::handbookSection() const
+{
+    return QLatin1String("supported_materials");
+}
+
+QString DImgImageMagickPlugin::handbookChapter() const
+{
+    return QLatin1String("image_formats");
+}
+
+QString DImgImageMagickPlugin::handbookReference() const
+{
+    return QLatin1String("image-others");
+}
+
 QList<DPluginAuthor> DImgImageMagickPlugin::authors() const
 {
     return QList<DPluginAuthor>()

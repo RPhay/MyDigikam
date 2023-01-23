@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-17 00:54+0000\n"
+"POT-Creation-Date: 2023-01-22 00:54+0000\n"
 "PO-Revision-Date: 2022-05-15 22:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -5985,41 +5985,41 @@ msgstr ""
 "형식입니다.</p><p>형식에 대해서 더 자세히 알아 보려면 <a href='https://ko."
 "wikipedia.org/wiki/PNG'>이 페이지</a>를 참조하십시오.</p>"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:90
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:93
 #, kde-format
 msgid "Output file type:"
 msgstr "출력 파일 형식:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:93
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:96
 #, kde-format
 msgid "Same as input"
 msgstr "입력과 동일"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:94
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:97
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
 #, kde-format
 msgid "JPEG"
 msgstr "JPEG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:95
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:98
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:90
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:171
 #, kde-format
 msgid "PNG"
 msgstr "PNG"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:96
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:99
 #, kde-format
 msgid "TIFF"
 msgstr "TIFF"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:100
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:103
 #, kde-format
 msgid "Shell Script:"
 msgstr "셸 스크립트:"
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:103
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:106
 #, kde-format
 msgid ""
 "Enter script for execution. Use $INPUT and $OUTPUT for input / output "
@@ -6030,7 +6030,7 @@ msgstr ""
 "파일 이름으로 대체됩니다(특수 문자는 탈출 시퀀스가 적용됨). 셸 실행 전에 대체"
 "됩니다."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:106
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:109
 #, kde-format
 msgid ""
 "<b>Note:</b> Environment variables TITLE, COMMENTS, COLORLABEL, PICKLABEL, "
@@ -6039,30 +6039,48 @@ msgstr ""
 "<b>메모:</b> TITLE, COMMENTS, COLORLABEL, PICKLABEL, RATING, TAGSPATH 환경 변"
 "수(;으로 구분됨)를 사용할 수 있습니다."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:198
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:201
 #, kde-format
 msgid "User Script: No script."
 msgstr "사용자 스크립트: 스크립트 없음."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:259
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:262
+#, fuzzy, kde-format
+#| msgid "User Script: No script."
+msgid "User Script: File open error."
+msgstr "사용자 스크립트: 스크립트 없음."
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:279
 #, kde-format
 msgid "User Script: Timeout from script."
 msgstr "사용자 스크립트: 실행 시간 초과됨."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:267
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:287
+#, fuzzy, kde-format
+#| msgid "User Script: No script."
+msgid "User Script: No error."
+msgstr "사용자 스크립트: 스크립트 없음."
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:291
 #, kde-format
 msgid "User Script: Failed to start script."
 msgstr "사용자 스크립트: 스크립트를 시작할 수 없음."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:273
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:297
 #, kde-format
 msgid "User Script: Script process crashed."
 msgstr "사용자 스크립트: 스크립트 프로세스가 충돌함."
 
-#: core/dplugins/bqm/custom/userscript/userscript.cpp:279
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:303
 #, kde-format
 msgid "User Script: Command not found."
 msgstr "사용자 스크립트: 명령을 찾을 수 없음."
+
+#: core/dplugins/bqm/custom/userscript/userscript.cpp:309
+#, fuzzy, kde-format
+#| msgid "User Script: No script."
+msgid "User Script: Error code returned %1."
+msgstr "사용자 스크립트: 스크립트 없음."
 
 #: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:46
 #, fuzzy, kde-format
@@ -7689,30 +7707,30 @@ msgstr ""
 "wikipedia.org/wiki/고효율_이미지_파일_포맷'>고효율 이미지 파일 포맷</a> 페이"
 "지를 참조하십시오."
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:117
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:127
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:132
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:142
 #, fuzzy, kde-format
 #| msgid "High efficiency image coding"
 msgctxt "@title"
 msgid "High efficiency image coding"
 msgstr "고효율 이미지 코딩"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:118
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:128
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:158
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:108
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:113
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:118
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:164
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:168
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:172
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:176
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:180
-#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:96
-#: core/dplugins/dimg/png/dimgpngplugin.cpp:104
-#: core/dplugins/dimg/raw/dimgrawplugin.cpp:105
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:109
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:113
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:143
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:173
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:123
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:128
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:133
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:183
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:187
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:191
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:195
+#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:111
+#: core/dplugins/dimg/png/dimgpngplugin.cpp:119
+#: core/dplugins/dimg/raw/dimgrawplugin.cpp:120
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:124
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:128
 #: core/libs/dplugins/core/dplugindimg.cpp:58
 #: core/libs/dplugins/core/dplugindimg.cpp:70
 #, fuzzy, kde-format
@@ -7721,21 +7739,21 @@ msgctxt "@info: can read file format"
 msgid "yes"
 msgstr "예"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:120
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:130
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:161
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:109
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:114
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:119
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:165
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:169
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:173
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:177
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:181
-#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:97
-#: core/dplugins/dimg/png/dimgpngplugin.cpp:105
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:110
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:114
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:135
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:145
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:176
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:134
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:180
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:184
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:188
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:192
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:196
+#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:112
+#: core/dplugins/dimg/png/dimgpngplugin.cpp:120
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:125
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:129
 #: core/libs/dplugins/core/dplugindimg.cpp:61
 #: core/libs/dplugins/core/dplugindimg.cpp:73
 #, fuzzy, kde-format
@@ -7744,9 +7762,9 @@ msgctxt "@info: can write file format"
 msgid "yes"
 msgstr "예"
 
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:122
-#: core/dplugins/dimg/heif/dimgheifplugin.cpp:132
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:162
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:137
+#: core/dplugins/dimg/heif/dimgheifplugin.cpp:147
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:177
 #: core/libs/dplugins/core/dplugindimg.cpp:62
 #: core/libs/dplugins/core/dplugindimg.cpp:74
 #, fuzzy, kde-format
@@ -7791,7 +7809,7 @@ msgstr ""
 "니다.</p><p>자세한 정보를 보려면 <a href='https://ko.wikipedia.org/wiki/이미"
 "지매직'>이 페이지</a>를 참조하십시오.</p>"
 
-#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:159
+#: core/dplugins/dimg/imagemagick/dimgimagemagickplugin.cpp:174
 #: core/libs/dplugins/core/dplugindimg.cpp:59
 #: core/libs/dplugins/core/dplugindimg.cpp:71
 #, fuzzy, kde-format
@@ -7903,9 +7921,9 @@ msgstr ""
 "히 알아 보려면 <a href='https://ko.wikipedia.org/wiki/JPEG'>이 페이지</a>를 "
 "참조하십시오."
 
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:107
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:112
-#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:117
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:122
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:127
+#: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:132
 #, fuzzy, kde-format
 #| msgid "JPEG-2000 image"
 msgctxt "@title"
@@ -7983,23 +8001,23 @@ msgstr ""
 "href='https://ko.wikipedia.org/wiki/JPEG_2000'>이 페이지</a>를 참조하십시오."
 "</p>"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:163
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:167
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:178
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:182
 #, fuzzy, kde-format
 #| msgid "JPEG-2000 image"
 msgctxt "@title"
 msgid "JPEG-2000 image"
 msgstr "JPEG 2000 이미지"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:171
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:175
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:186
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:190
 #, fuzzy, kde-format
 #| msgid "JPEG-2000 stream"
 msgctxt "@title"
 msgid "JPEG-2000 stream"
 msgstr "JPEG 2000 스트림"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:179
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:194
 #, fuzzy, kde-format
 #| msgid "JPEG-2000 verification model"
 msgctxt "@title"
@@ -8047,7 +8065,7 @@ msgctxt "@info"
 msgid "An image loader based on Libpgf codec"
 msgstr "Libpgf 코덱을 사용하는 이미지 불러오기 도구"
 
-#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:67
+#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:82
 #, fuzzy, kde-kuit-format
 #| msgid ""
 #| "<p>This plugin permit to load and save image using Libpgf codec.</"
@@ -8078,7 +8096,7 @@ msgstr ""
 "href='https://ko.wikipedia.org/wiki/프로그레시브_그래픽스_파일'>이 페이지</a>"
 "를 참조하십시오.</p>"
 
-#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:95
+#: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:110
 #, fuzzy, kde-format
 #| msgid "Progressive Graphics File"
 msgctxt "@title"
@@ -8139,7 +8157,7 @@ msgstr ""
 "다.</p><p>형식에 대해서 더 자세히 알아 보려면 <a href='https://ko.wikipedia."
 "org/wiki/PNG'>이 페이지</a>를 참조하십시오.</p> "
 
-#: core/dplugins/dimg/png/dimgpngplugin.cpp:103
+#: core/dplugins/dimg/png/dimgpngplugin.cpp:118
 #, fuzzy, kde-format
 #| msgid "Raster Graphics"
 msgctxt "@title"
@@ -8317,7 +8335,7 @@ msgstr ""
 "습니다.</p><p>형식에 대해서 더 자세히 알아 보려면 <a href='https://ko."
 "wikipedia.org/wiki/Raw_이미지_포맷'>이 페이지</a>를 참조하십시오.</p>"
 
-#: core/dplugins/dimg/raw/dimgrawplugin.cpp:106
+#: core/dplugins/dimg/raw/dimgrawplugin.cpp:121
 #, fuzzy, kde-format
 #| msgid "no"
 msgctxt "@info: can write file format"
@@ -8380,8 +8398,8 @@ msgstr ""
 "식에 대해서 더 자세히 알아 보려면 <a href='https://ko.wikipedia.org/wiki/"
 "TIFF'>이 페이지</a>를 참조하십시오.</p>"
 
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:108
-#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:112
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:123
+#: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:127
 #, fuzzy, kde-format
 #| msgid "Image Format:"
 msgctxt "@title"
@@ -12950,8 +12968,8 @@ msgstr[0] "<p>%1글자.</p>"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:450
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:439
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:132
-#: core/libs/widgets/text/dplaintextedit.cpp:378
-#: core/libs/widgets/text/dtextedit.cpp:378
+#: core/libs/widgets/text/dplaintextedit.cpp:385
+#: core/libs/widgets/text/dtextedit.cpp:385
 #, kde-format
 msgid "%1 character left"
 msgid_plural "%1 characters left"
@@ -16761,7 +16779,7 @@ msgstr ""
 "p><p>메타데이터의 타임스탬프는 조정하거나 그대로 둘 수 있습니다. 특정한 시간"
 "이나 일 단위로 조정할 수 있습니다.</p>"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:93
+#: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Adjust Time && Date..."
@@ -16787,21 +16805,21 @@ msgid ""
 "in a PDF file.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:74
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:84
 #, kde-format
 msgid "Former Author"
 msgstr "이전 작성자"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:84
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:94
 #: core/dplugins/generic/tools/htmlgallery/htmlgalleryplugin.cpp:91
 #: core/dplugins/generic/tools/mediaserver/mediaserverplugin.cpp:104
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:97
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:107
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:95
 #, kde-format
 msgid "Developer and Maintainer"
 msgstr "개발자 및 관리자"
 
-#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:92
+#: core/dplugins/generic/tools/calendar/calendarplugin.cpp:102
 #, kde-format
 msgctxt "@action"
 msgid "Create Calendar..."
@@ -17274,7 +17292,7 @@ msgstr ""
 "지 형식입니다.</p><p>형식에 대해서 더 자세히 알아 보려면 <a href='https://ko."
 "wikipedia.org/wiki/디지털_네거티브'>이 페이지</a>를 참조하십시오.</p>"
 
-#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:91
+#: core/dplugins/generic/tools/dngconverter/dngconverterplugin.cpp:101
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Color Space Converter..."
@@ -17728,17 +17746,17 @@ msgstr ""
 "나은 결과를 얻으려면 JPEG 이미지 대신 RAW 이미지를 사용하십시오. 색 농도가 "
 "더 높고 픽셀 대 픽셀로 합치는 데 더 적합합니다.</p>"
 
-#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:90
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:74
-#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:88
+#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:100
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:84
+#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:98
 #: core/dplugins/generic/tools/sendbymail/sendbymailplugin.cpp:90
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:77
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:79
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:87
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:89
 #, kde-format
 msgid "Author and Maintainer"
 msgstr "작성자와 관리자"
 
-#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:98
+#: core/dplugins/generic/tools/expoblending/expoblendingplugin.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Blend Stacked Images..."
@@ -18620,7 +18638,7 @@ msgstr ""
 "p><p>jAlbum은 다양한 레이아웃의 HTML 템플릿에 테마를 적용할 수 있습니다. 자세"
 "한 정보는 jAlbum 웹사이트를 참조하십시오: https://jalbum.net</p>"
 
-#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:82
+#: core/dplugins/generic/tools/jalbum/jalbumplugin.cpp:92
 #, kde-format
 msgctxt "@action"
 msgid "Create jAlbum Gallery..."
@@ -19313,7 +19331,7 @@ msgstr ""
 msgid "A tool to export items as MJPEG Stream"
 msgstr "로컬 저장소로 항목을 내보내는 도구"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:76
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:86
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>This tool permit to share items on the local network through a DLNA "
@@ -19337,7 +19355,7 @@ msgstr ""
 "습니다.</p><p>개별 항목이나 여러 앨범을 선택하여 공유할 항목을 결정할 수 있습"
 "니다.</p><p>태블릿, 휴대폰, TV 등 다양한 장치에서 DLNA를 지원합니다.</p>"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:93
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:103
 #: core/libs/dplugins/core/dpluginauthor.cpp:30
 #: core/libs/widgets/mainview/daboutdata.cpp:111
 #: core/libs/widgets/mainview/daboutdata.cpp:126
@@ -19354,7 +19372,7 @@ msgstr ""
 msgid "Developer"
 msgstr "개발자"
 
-#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:105
+#: core/dplugins/generic/tools/mjpegstream/mjpegstreamplugin.cpp:115
 #, kde-format
 msgctxt "@action"
 msgid "Share as MJPEG Stream..."
@@ -19679,7 +19697,7 @@ msgid ""
 "See details on %1 for more information on Tesseract"
 msgstr ""
 
-#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:84
+#: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:94
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Color Space Converter..."
@@ -19848,7 +19866,7 @@ msgstr ""
 "평, 매트릭스로 촬영한 이미지를 이어 붙일 수 있습니다. 대상 이미지 크기는 매"
 "우 커질 수 있으며 처리하는 데 많은 메모리가 필요할 수도 있습니다.</p>"
 
-#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:96
+#: core/dplugins/generic/tools/panorama/panoramaplugin.cpp:106
 #, kde-format
 msgctxt "@action"
 msgid "Create panorama..."
@@ -21735,7 +21753,7 @@ msgstr ""
 "수 있습니다.</p><p>네트워크의 파일을 처리할 때 여러 종류의 이메일 클라이언트 "
 "프로그램을 사용할 수 있습니다.</p>"
 
-#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:85
+#: core/dplugins/generic/tools/videoslideshow/videoslideshowplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Create video slideshow..."
@@ -21912,7 +21930,7 @@ msgid ""
 "image is selected, the first one from current album will be used.</p>"
 msgstr ""
 
-#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:86
+#: core/dplugins/generic/tools/wallpaper/wallpaperplugin.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Set as wallpaper"
@@ -22240,7 +22258,7 @@ msgstr "미리 보기..."
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:159
 #: core/libs/dplugins/webservices/wssettingswidget.cpp:154
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:389
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:98
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:107
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:49
 #: core/utilities/searchwindow/searchgroup_label.cpp:214
 #, kde-format
@@ -23224,7 +23242,7 @@ msgstr ""
 "한 정보는 Box 웹 사이트를 참조하십시오: <a href='https://box.com/'>https://"
 "box.com/</a></p>"
 
-#: core/dplugins/generic/webservices/box/boxplugin.cpp:85
+#: core/dplugins/generic/webservices/box/boxplugin.cpp:95
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Box..."
@@ -23467,7 +23485,7 @@ msgstr ""
 "세한 정보는 Dropbox 웹 사이트를 참조하십시오: <a href='https://www.dropbox."
 "com/'>https://www.dropbox.com/</a></p>"
 
-#: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:88
+#: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:98
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Dropbox..."
@@ -23589,20 +23607,20 @@ msgstr ""
 "세한 정보는 Facebook 웹사이트를 참조하십시오: <a href='https://www.facebook."
 "com/'>https://www.facebook.com/</a></p>"
 
-#: core/dplugins/generic/webservices/facebook/fbplugin.cpp:95
+#: core/dplugins/generic/webservices/facebook/fbplugin.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Facebook..."
 msgstr "Facebook으로 내보내기(&F)..."
 
-#: core/dplugins/generic/webservices/facebook/fbplugin.cpp:110
+#: core/dplugins/generic/webservices/facebook/fbplugin.cpp:120
 #, fuzzy, kde-format
 #| msgid "Facebook"
 msgctxt "@title:window"
 msgid "Facebook"
 msgstr "Facebook"
 
-#: core/dplugins/generic/webservices/facebook/fbplugin.cpp:111
+#: core/dplugins/generic/webservices/facebook/fbplugin.cpp:121
 #, kde-format
 msgid ""
 "<p>Currently, as an open source project, we are unable to meet the Facebook "
@@ -23856,7 +23874,7 @@ msgctxt "@info"
 msgid "This tool allows users to export items to a local storage."
 msgstr "<p>이 도구를 사용하여 로컬 저장소로 항목을 내보낼 수 있습니다.</p>"
 
-#: core/dplugins/generic/webservices/filecopy/fcplugin.cpp:94
+#: core/dplugins/generic/webservices/filecopy/fcplugin.cpp:104
 #, kde-format
 msgctxt "@action"
 msgid "Export to local storage..."
@@ -24004,13 +24022,13 @@ msgstr ""
 "<p>이 도구를 사용하여 원격 위치로 항목을 가져오고 내보낼 수 있습니다.</"
 "p><p>FTP, SFTP, Samba 등 다양한 프로토콜을 사용할 수 있습니다.</p>"
 
-#: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:93
+#: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Export to remote storage..."
 msgstr "원격 저장소로 내보내기..."
 
-#: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:105
+#: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:115
 #, kde-format
 msgctxt "@action"
 msgid "Import from remote storage..."
@@ -24611,19 +24629,19 @@ msgstr ""
 "google.com</a> 및 <a href='https://www.google.com/drive/'>https://www.google."
 "com/drive/</a></p>"
 
-#: core/dplugins/generic/webservices/google/gsplugin.cpp:98
+#: core/dplugins/generic/webservices/google/gsplugin.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Google Photos..."
 msgstr "Google 포토로 내보내기(&G)..."
 
-#: core/dplugins/generic/webservices/google/gsplugin.cpp:110
+#: core/dplugins/generic/webservices/google/gsplugin.cpp:120
 #, kde-format
 msgctxt "@action"
 msgid "Import from &Google Photos..."
 msgstr "Google 포토에서 가져오기(&G)..."
 
-#: core/dplugins/generic/webservices/google/gsplugin.cpp:122
+#: core/dplugins/generic/webservices/google/gsplugin.cpp:132
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Google Drive..."
@@ -24921,7 +24939,7 @@ msgstr ""
 "자세한 정보는 ImageShack 웹 사이트를 참조하십시오: <a href='https://"
 "imageshack.us/'>https://imageshack.us/</a></p>"
 
-#: core/dplugins/generic/webservices/imageshack/imageshackplugin.cpp:86
+#: core/dplugins/generic/webservices/imageshack/imageshackplugin.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Imageshack..."
@@ -25084,7 +25102,7 @@ msgstr ""
 "ImgUr 웹 사이트를 참조하십시오: <a href='https://imgur.com/'>https://imgur."
 "com/</a></p>"
 
-#: core/dplugins/generic/webservices/imgur/imgurplugin.cpp:96
+#: core/dplugins/generic/webservices/imgur/imgurplugin.cpp:106
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Imgur..."
@@ -25205,7 +25223,7 @@ msgstr ""
 "자세한 정보는 Pinterest 웹 사이트를 참조하십시오: <a href='https://www."
 "pinterest.com/'>https://www.pinterest.com/</a></p>"
 
-#: core/dplugins/generic/webservices/inaturalist/inatplugin.cpp:88
+#: core/dplugins/generic/webservices/inaturalist/inatplugin.cpp:98
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Export to &Pinterest..."
@@ -25732,7 +25750,7 @@ msgstr ""
 "한 정보는 IPFS 웹 사이트를 참조하십시오: <a href='https://ipfs.io/'>https://"
 "ipfs.io/</a></p>"
 
-#: core/dplugins/generic/webservices/ipfs/ipfsplugin.cpp:86
+#: core/dplugins/generic/webservices/ipfs/ipfsplugin.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Ipfs..."
@@ -25801,7 +25819,7 @@ msgstr ""
 "자세한 정보는 미디어위키 웹 사이트를 참조하십시오: <a href='https://www."
 "mediawiki.org/'>https://www.mediawiki.org/</a></p>"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiplugin.cpp:95
+#: core/dplugins/generic/webservices/mediawiki/mediawikiplugin.cpp:105
 #, kde-format
 msgctxt "@action"
 msgid "Export to MediaWiki..."
@@ -26334,7 +26352,7 @@ msgstr ""
 "세한 정보는 OneDrive 웹 사이트를 참조하십시오: <a href='https://onedrive."
 "live.com/'>https://onedrive.live.com/</a></p>"
 
-#: core/dplugins/generic/webservices/onedrive/odplugin.cpp:86
+#: core/dplugins/generic/webservices/onedrive/odplugin.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Onedrive..."
@@ -26413,7 +26431,7 @@ msgstr ""
 "자세한 정보는 Pinterest 웹 사이트를 참조하십시오: <a href='https://www."
 "pinterest.com/'>https://www.pinterest.com/</a></p>"
 
-#: core/dplugins/generic/webservices/pinterest/pplugin.cpp:86
+#: core/dplugins/generic/webservices/pinterest/pplugin.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Pinterest..."
@@ -26524,7 +26542,7 @@ msgstr ""
 "한 정보는 Piwigo 웹 사이트를 참조하십시오: <a href='https://piwigo."
 "org/'>https://piwigo.org/</a></p>"
 
-#: core/dplugins/generic/webservices/piwigo/piwigoplugin.cpp:98
+#: core/dplugins/generic/webservices/piwigo/piwigoplugin.cpp:108
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Piwigo..."
@@ -26754,7 +26772,7 @@ msgstr ""
 "한 정보는 Rajce 웹 사이트를 참조하십시오: <a href='https://www.rajce.idnes."
 "cz/'>https://www.rajce.idnes.cz/</a></p>"
 
-#: core/dplugins/generic/webservices/rajce/rajceplugin.cpp:86
+#: core/dplugins/generic/webservices/rajce/rajceplugin.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Rajce..."
@@ -26989,13 +27007,13 @@ msgstr ""
 "세한 정보는 SmugMug 웹 사이트를 참조하십시오: <a href='https://www.smugmug."
 "com'>https://www.smugmug.com</a></p>"
 
-#: core/dplugins/generic/webservices/smugmug/smugplugin.cpp:96
+#: core/dplugins/generic/webservices/smugmug/smugplugin.cpp:106
 #, kde-format
 msgctxt "@action"
 msgid "Export to &SmugMug..."
 msgstr "SmugMug로 내보내기(&S)..."
 
-#: core/dplugins/generic/webservices/smugmug/smugplugin.cpp:108
+#: core/dplugins/generic/webservices/smugmug/smugplugin.cpp:118
 #, kde-format
 msgctxt "@action"
 msgid "Import from &SmugMug..."
@@ -27275,7 +27293,7 @@ msgstr ""
 "한 정보는 트위터 웹 사이트를 참조하십시오: <a href='https://twitter."
 "com/'>https://twitter.com/</a></p>"
 
-#: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:89
+#: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:99
 #, kde-format
 msgctxt "@action"
 msgid "Export to &Twitter..."
@@ -27403,7 +27421,7 @@ msgstr ""
 "<p>이 도구를 사용하여 다양한 웹 서비스로 항목을 내보낼 수 있습니다.</p><p>여"
 "러 도구를 하나로 합친 통합된 도구입니다.</p>"
 
-#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:87
+#: core/dplugins/generic/webservices/unified/unifiedplugin.cpp:97
 #, kde-format
 msgctxt "@action"
 msgid "Export to Webservices..."
@@ -27514,14 +27532,14 @@ msgstr "웹 서비스 설정"
 msgid "Export by Web Service"
 msgstr "웹 서비스에서 내보냄"
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:260
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
 #, kde-format
 msgid ""
 "Error to import RAW image with DarkTable\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
 
-#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:275
+#: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:290
 #, fuzzy, kde-format
 #| msgid "Raw Conversion"
 msgid "DarkTable Raw Conversion"
@@ -27698,27 +27716,27 @@ msgstr "기본값 사용"
 msgid "Use general Raw decoding settings to load this image in editor."
 msgstr ""
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:199
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:214
 #, kde-format
 msgid ""
 "Error to import RAW image with RawTherapee\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
 
-#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:214
+#: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:229
 #, fuzzy, kde-format
 #| msgid "Raw Conversion"
 msgid "RawTherapee Raw Conversion"
 msgstr "Raw 변환"
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:204
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:219
 #, kde-format
 msgid ""
 "Error to import RAW image with UFRaw\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
 
-#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:219
+#: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:234
 #, fuzzy, kde-format
 #| msgid "Raw Conversion"
 msgid "UFRaw Raw Conversion"
@@ -37261,7 +37279,7 @@ msgctxt "@title: xmp namespace for color-label container"
 msgid "Color label"
 msgstr "색상 레이블"
 
-#: core/libs/metadataengine/engine/metaengine_exif.cpp:1356
+#: core/libs/metadataengine/engine/metaengine_exif.cpp:1367
 #, kde-format
 msgctxt "info"
 msgid "Binary data %1 bytes"
@@ -52807,7 +52825,7 @@ msgid "Show a list of all available options"
 msgstr "사용 가능한 모든 옵션 목록 표시"
 
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:354
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:99
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:108
 #, kde-format
 msgid "Modifiers"
 msgstr "수정자"
@@ -52831,12 +52849,12 @@ msgstr "이름 바꾸기 옵션"
 msgid "<p>Add renaming options to the parse string.</p>"
 msgstr "<p>해석할 문자열에 이름 바꾸기 옵션을 추가합니다.</p>"
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:46
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:50
 #, kde-format
 msgid "Modifiers can be applied to every renaming option."
 msgstr "모든 이름 바꾸기 옵션에 수정자를 적용할 수 있습니다."
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:47
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:51
 #, kde-format
 msgid ""
 "It is possible to assign multiple modifiers to an option, they are applied "
@@ -52844,7 +52862,7 @@ msgid ""
 msgstr ""
 "옵션에 여러 수정자를 할당할 수 있으며, 수정자는 할당한 순서대로 적용됩니다."
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:49
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:53
 #, kde-format
 msgid ""
 "Be sure to use the quick access buttons: They might provide additional "
@@ -52853,7 +52871,7 @@ msgstr ""
 "빠른 접근 단추를 사용해 보십시오. 이름 바꾸기 및 수정자 옵션에 대한 추가 정보"
 "를 제공할 수도 있습니다."
 
-#: core/utilities/advancedrename/common/tooltipcreator.cpp:51
+#: core/utilities/advancedrename/common/tooltipcreator.cpp:55
 #, kde-format
 msgid ""
 "The file list can be sorted, just right-click on it to see the sort criteria "
@@ -58147,23 +58165,22 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid ""
-"These expressions may be used to customize date format:\n"
-"\"d\": The day as a number without a leading zero (1 to 31)\n"
-"\"dd\": The day as a number with a leading zero (01 to 31)\n"
-"\"ddd\": The abbreviated localized day name (e.g. 'Mon' to 'Sun')\n"
-"\"dddd\": The long localized day name (e.g. 'Monday' to 'Sunday').\n"
-"\"M\": The month as a number without a leading zero (1 to 12)\n"
-"\"MM\": The month as a number with a leading zero (01 to 12)\n"
-"\"MMM\": The abbreviated localized month name (e.g. 'Jan' to 'Dec')\n"
-"\"MMMM\": The long localized month name (e.g. 'January' to 'December')\n"
-"\"yy\": The year as two digit number (eg. 00 to 99)\n"
-"\"yyyy\": The year as four digit number (eg. 2012)\n"
-"All other input characters will be treated as text. Any sequence of "
-"characters that are enclosed in singlequotes will be treated as text and not "
-"be used as an expression. Examples, if date is 20 July 1969:\n"
-"\"dd.MM.yyyy\" : 20.07.1969\n"
-"\"ddd MMMM d yy\" : Sun July 20 69\n"
-"\"'Photo shot on ' dddd\" : Photo shot on Sunday\n"
+"<p>These expressions may be used to customize date format:</p><p><b>d</b>: "
+"The day as a number without a leading zero (1 to 31)</p><p><b>dd</b>: The "
+"day as a number with a leading zero (01 to 31)</p><p><b>ddd</b>: The "
+"abbreviated localized day name (e.g. 'Mon' to 'Sun')</p><p><b>dddd</b>: The "
+"long localized day name (e.g. 'Monday' to 'Sunday').</p><p><b>M</b>: The "
+"month as a number without a leading zero (1 to 12)</p><p><b>MM</b>: The "
+"month as a number with a leading zero (01 to 12)</p><p><b>MMM</b>: The "
+"abbreviated localized month name (e.g. 'Jan' to 'Dec')</p><p><b>MMMM</b>: "
+"The long localized month name (e.g. 'January' to 'December')</p><p><b>yy</"
+"b>: The year as two digit number (eg. 00 to 99)</p><p><b>yyyy</b>: The year "
+"as four digit number (eg. 2012)</p><p>All other input characters will be "
+"treated as text. Any sequence of characters that are enclosed in "
+"singlequotes will be treated as text and not be used as an expression. "
+"Examples, if date is 20 July 1969:</p><p><b>dd.MM.yyyy</b> : 20.07.1969</"
+"p><p><b>ddd MMMM d yy</b> : Sun July 20 69</p><p><b>'Photo shot on ' dddd</"
+"b> : Photo shot on Sunday</p>"
 msgstr ""
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:107
@@ -64170,12 +64187,12 @@ msgstr ""
 #: core/utilities/setup/setupicc.cpp:918
 #, kde-format
 msgid ""
-"On Mac OS X, the default search paths include <ul><li>/System/Library/"
-"ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/"
-"ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/share/color/"
-"icc</li><li>~/.local/share/color/icc/</li><li>~/.local/share/icc/</li><li>~/."
-"color/icc/</li></ul>On your system, currently these paths exist and are "
-"scanned:<ul><li>%2</li></ul>"
+"On macOS, the default search paths include <ul><li>/System/Library/ColorSync/"
+"Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/ColorSync/"
+"Profiles</li><li>/opt/local/share/color/icc</li><li>%1/Contents/Resources/"
+"digikam/profiles/</li><li>~/.local/share/color/icc/</li><li>~/.local/share/"
+"icc/</li><li>~/.color/icc/</li></ul>On your system, currently these paths "
+"exist and are scanned:<ul><li>%2</li></ul>"
 msgstr ""
 
 #: core/utilities/setup/setupicc.cpp:937

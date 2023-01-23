@@ -66,6 +66,21 @@ QString CurvesAdjustPlugin::details() const
     return xi18nc("@info", "<para>This Batch Queue Manager tool can adjust the color curves from images.</para>");
 }
 
+QString CurvesAdjustPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString CurvesAdjustPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString CurvesAdjustPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-colortools");
+}
+
 QList<DPluginAuthor> CurvesAdjustPlugin::authors() const
 {
     return QList<DPluginAuthor>()

@@ -68,6 +68,16 @@ QString ConvertToDngPlugin::details() const
                   "<para>See details about this format from <a href='https://en.wikipedia.org/wiki/Digital_Negative'>this page</a>.</para>");
 }
 
+QString ConvertToDngPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString ConvertToDngPlugin::handbookChapter() const
+{
+    return QLatin1String("dng_converter");
+}
+
 QList<DPluginAuthor> ConvertToDngPlugin::authors() const
 {
     return QList<DPluginAuthor>()

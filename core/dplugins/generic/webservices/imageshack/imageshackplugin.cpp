@@ -70,6 +70,16 @@ QString ImageShackPlugin::details() const
                  QLatin1String("<a href='https://imageshack.us/'>https://imageshack.us/</a>"));
 }
 
+QString ImageShackPlugin::handbookSection() const
+{
+    return QLatin1String("export_tools");
+}
+
+QString ImageShackPlugin::handbookChapter() const
+{
+    return QLatin1String("image_shack");
+}
+
 QList<DPluginAuthor> ImageShackPlugin::authors() const
 {
     return QList<DPluginAuthor>()

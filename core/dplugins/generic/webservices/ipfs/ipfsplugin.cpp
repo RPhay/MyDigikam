@@ -70,6 +70,16 @@ QString IpfsPlugin::details() const
                  QLatin1String("<a href='https://ipfs.io/'>https://ipfs.io/</a>"));
 }
 
+QString IpfsPlugin::handbookSection() const
+{
+    return QLatin1String("export_tools");
+}
+
+QString IpfsPlugin::handbookChapter() const
+{
+    return QLatin1String("ipfs_export");
+}
+
 QList<DPluginAuthor> IpfsPlugin::authors() const
 {
     return QList<DPluginAuthor>()

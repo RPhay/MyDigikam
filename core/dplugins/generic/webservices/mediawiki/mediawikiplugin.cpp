@@ -70,6 +70,16 @@ QString MediaWikiPlugin::details() const
                  QLatin1String("<a href='https://www.mediawiki.org/'>https://www.mediawiki.org/</a>"));
 }
 
+QString MediaWikiPlugin::handbookSection() const
+{
+    return QLatin1String("export_tools");
+}
+
+QString MediaWikiPlugin::handbookChapter() const
+{
+    return QLatin1String("media_wiki");
+}
+
 QList<DPluginAuthor> MediaWikiPlugin::authors() const
 {
     return QList<DPluginAuthor>()

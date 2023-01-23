@@ -75,6 +75,16 @@ QString ExpoBlendingPlugin::details() const
                 "colors depth is higher and are well adapted for merging pixels by pixels.</p>");
 }
 
+QString ExpoBlendingPlugin::handbookSection() const
+{
+    return QLatin1String("post_processing");
+}
+
+QString ExpoBlendingPlugin::handbookChapter() const
+{
+    return QLatin1String("expo_blending");
+}
+
 QList<DPluginAuthor> ExpoBlendingPlugin::authors() const
 {
     return QList<DPluginAuthor>()

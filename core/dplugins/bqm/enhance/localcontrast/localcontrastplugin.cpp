@@ -66,6 +66,21 @@ QString LocalContrastPlugin::details() const
     return xi18nc("@info", "<para>This Batch Queue Manager tool can emulate tone mapping over images.</para>");
 }
 
+QString LocalContrastPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString LocalContrastPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString LocalContrastPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-enhancetools");
+}
+
 QList<DPluginAuthor> LocalContrastPlugin::authors() const
 {
     return QList<DPluginAuthor>()

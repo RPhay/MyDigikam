@@ -290,7 +290,7 @@ QImage MetaEnginePreviews::image(int index)
     QByteArray previewData = data(index);
     QImage     image;
 
-    if (!image.loadFromData(previewData))
+    if (previewData.isEmpty() || !image.loadFromData(previewData))
     {
         return QImage();
     }

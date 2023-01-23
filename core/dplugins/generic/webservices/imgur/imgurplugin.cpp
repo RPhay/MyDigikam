@@ -71,6 +71,16 @@ QString ImgUrPlugin::details() const
                  QLatin1String("<a href='https://imgur.com/'>https://imgur.com/</a>"));
 }
 
+QString ImgUrPlugin::handbookSection() const
+{
+    return QLatin1String("export_tools");
+}
+
+QString ImgUrPlugin::handbookChapter() const
+{
+    return QLatin1String("imgur_export");
+}
+
 QList<DPluginAuthor> ImgUrPlugin::authors() const
 {
     return QList<DPluginAuthor>()

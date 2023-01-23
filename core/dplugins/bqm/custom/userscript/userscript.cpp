@@ -18,6 +18,7 @@
 // Qt includes
 
 #include <QDir>
+#include <QFile>
 #include <QLabel>
 #include <QWidget>
 #include <QProcess>
@@ -30,11 +31,13 @@
 // Local includes
 
 #include "digikam_globals.h"
+#include "digikam_debug.h"
 #include "dimg.h"
 #include "dcombobox.h"
 #include "dmetadata.h"
 #include "tagscache.h"
 #include "dlayoutbox.h"
+#include "filereadwritelock.h"
 
 namespace DigikamBqmUserScriptPlugin
 {
@@ -202,17 +205,12 @@ bool UserScript::toolOperations()
 
     // Replace all occurrences of $INPUT and $OUTPUT in script to file names. Case sensitive.
 
-#ifndef Q_OS_WIN
-
-    script.replace(QLatin1String("$INPUT"),  QLatin1Char('"') + inputUrl().toLocalFile()  + QLatin1Char('"'));
-    script.replace(QLatin1String("$OUTPUT"), QLatin1Char('"') + outputUrl().toLocalFile() + QLatin1Char('"'));
-
-#else
-
-    script.replace(QLatin1String("$INPUT"),  QLatin1Char('"') + QDir::toNativeSeparators(inputUrl().toLocalFile())  + QLatin1Char('"'));
-    script.replace(QLatin1String("$OUTPUT"), QLatin1Char('"') + QDir::toNativeSeparators(outputUrl().toLocalFile()) + QLatin1Char('"'));
-
-#endif // Q_OS_WIN
+    script.replace(QLatin1String("$INPUT"),  QLatin1Char('"') +
+                                             QDir::toNativeSeparators(inputUrl().toLocalFile()) +
+                                             QLatin1Char('"'));
+    script.replace(QLatin1String("$OUTPUT"), QLatin1Char('"') +
+                                             QDir::toNativeSeparators(outputUrl().toLocalFile()) +
+                                             QLatin1Char('"'));
 
     // Empties d->image, not to pass it to the next tool in chain
 
@@ -238,50 +236,92 @@ bool UserScript::toolOperations()
 
     // call the shell script
 
-#ifndef Q_OS_WIN
+#ifdef Q_OS_WIN
 
-    process.start(QLatin1String("/bin/sh"), QStringList() << QLatin1String("-c") << script);
+    QString dir                   = QDir::temp().path();
+    SafeTemporaryFile* const temp = new SafeTemporaryFile(dir + QLatin1String("/UserScript-XXXXXX.cmd"));
+    temp->setAutoRemove(false);
+    temp->open();
+    QString scriptPath            = temp->safeFilePath();
+
+    // Crash fix: a QTemporaryFile is not properly closed until its destructor is called.
+
+    delete temp;
+
+    script.replace(QLatin1Char('\n'), QLatin1String("\r\n"));
+
+    QFile file(scriptPath);
+
+    if (file.open(QIODevice::WriteOnly))
+    {
+        file.write(script.toUtf8());
+        file.close();
+    }
+    else
+    {
+        setErrorDescription(i18n("User Script: File open error."));
+
+        return false;
+    }
+
+    process.start(QLatin1String("cmd.exe"), QStringList() << QLatin1String("/C") << scriptPath);
 
 #else
 
-    script.replace(QLatin1Char('\n'), QLatin1String(" & "));
+    process.start(QLatin1String("/bin/bash"), QStringList() << QLatin1String("-c") << script);
 
-    process.setProgram(QLatin1String("cmd.exe"));
+#endif
 
-    process.setNativeArguments(QLatin1String("/C ") + script);
-
-    process.start();
-
-#endif // Q_OS_WIN
+    bool ret = true;
 
     if (!process.waitForFinished(60000))
     {
         setErrorDescription(i18n("User Script: Timeout from script."));
         process.kill();
 
-        return false;
+        ret = false;
     }
 
-    if      (process.exitCode() == -2)
+    if      (process.exitCode() == 0)
+    {
+        setErrorDescription(i18n("User Script: No error."));
+    }
+    else if (process.exitCode() == -2)
     {
         setErrorDescription(i18n("User Script: Failed to start script."));
 
-        return false;
+        ret = false;
     }
     else if (process.exitCode() == -1)
     {
         setErrorDescription(i18n("User Script: Script process crashed."));
 
-        return false;
+        ret = false;
     }
     else if (process.exitCode() == 127)
     {
         setErrorDescription(i18n("User Script: Command not found."));
 
-        return false;
+        ret = false;
+    }
+    else
+    {
+        setErrorDescription(i18n("User Script: Error code returned %1.", process.exitCode()));
+
+        ret = false;
     }
 
-    return true;
+#ifdef Q_OS_WIN
+
+    file.remove();
+
+#endif
+
+    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Script stdout"     << process.readAllStandardOutput();
+    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Script stderr"     << process.readAllStandardError();
+    qCDebug(DIGIKAM_DPLUGIN_BQM_LOG) << "Script exit code:" << process.exitCode();
+
+    return ret;
 }
 
 } // namespace DigikamBqmUserScriptPlugin

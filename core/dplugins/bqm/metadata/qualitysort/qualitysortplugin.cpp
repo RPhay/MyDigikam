@@ -67,6 +67,21 @@ QString QualitySortPlugin::details() const
                   "by parsing image and estimate the quality.</para>");
 }
 
+QString QualitySortPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString QualitySortPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString QualitySortPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-metadatatools");
+}
+
 QList<DPluginAuthor> QualitySortPlugin::authors() const
 {
     return QList<DPluginAuthor>()

@@ -66,6 +66,21 @@ QString BorderPlugin::details() const
     return xi18nc("@info", "<para>This Batch Queue Manager tool can add decorative border around images.</para>");
 }
 
+QString BorderPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString BorderPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString BorderPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-decoratetools");
+}
+
 QList<DPluginAuthor> BorderPlugin::authors() const
 {
     return QList<DPluginAuthor>()

@@ -70,6 +70,16 @@ QString PiwigoPlugin::details() const
                  QLatin1String("<a href='https://piwigo.org/'>https://piwigo.org/</a></p>"));
 }
 
+QString PiwigoPlugin::handbookSection() const
+{
+    return QLatin1String("export_tools");
+}
+
+QString PiwigoPlugin::handbookChapter() const
+{
+    return QLatin1String("piwigo_export");
+}
+
 QList<DPluginAuthor> PiwigoPlugin::authors() const
 {
     return QList<DPluginAuthor>()

@@ -915,13 +915,13 @@ void SetupICC::slotShowDefaultSearchPaths()
 
 #elif defined (Q_OS_MACOS)
 
-    QString text = i18n("On Mac OS X, the default search paths include "
+    QString text = i18n("On macOS, the default search paths include "
                         "<ul>"
                         "<li>/System/Library/ColorSync/Profiles</li>"
                         "<li>/Library/ColorSync/Profiles</li>"
                         "<li>~/Library/ColorSync/Profiles</li>"
                         "<li>/opt/local/share/color/icc</li>"
-                        "<li>%1/share/color/icc</li>"
+                        "<li>%1/Contents/Resources/digikam/profiles/</li>"
                         "<li>~/.local/share/color/icc/</li>"
                         "<li>~/.local/share/icc/</li>"
                         "<li>~/.color/icc/</li>"

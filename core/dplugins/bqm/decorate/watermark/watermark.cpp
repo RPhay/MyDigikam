@@ -536,7 +536,14 @@ void WaterMark::slotAssignSettings2Widget()
     d->useImageRadioButton->setChecked(settings()[QLatin1String("Use image")].toBool());
     d->useTextRadioButton->setChecked(!settings()[QLatin1String("Use image")].toBool());
     d->imageFileUrlRequester->setFileDlgPath(settings()[QLatin1String("Watermark image")].toString());
-    d->textEdit->setText(settings()[QLatin1String("Text")].toString());
+
+    QString txt       = settings()[QLatin1String("Text")].toString();
+
+    if (d->textEdit->text() != txt)
+    {
+        d->textEdit->setText(txt);
+    }
+
     d->extendedFontChooserWidget->setFont(qvariant_cast<QFont>(settings()[QLatin1String("Font")]));
     d->fontColorButton->setColor(settings()[QLatin1String("Color")].toString());
     d->textOpacity->setValue(settings()[QLatin1String("Text opacity")].toInt());

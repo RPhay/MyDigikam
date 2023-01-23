@@ -73,6 +73,16 @@ QString GSPlugin::details() const
                  QLatin1String("</ br><a href='https://photos.google.com'>https://photos.google.com</a></ br><a href='https://www.google.com/drive/'>https://www.google.com/drive/</a>"));
 }
 
+QString GSPlugin::handbookSection() const
+{
+    return QLatin1String("export_tools");
+}
+
+QString GSPlugin::handbookChapter() const
+{
+    return QLatin1String("google_export");
+}
+
 QList<DPluginAuthor> GSPlugin::authors() const
 {
     return QList<DPluginAuthor>()

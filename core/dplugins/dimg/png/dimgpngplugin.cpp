@@ -73,6 +73,21 @@ QString DImgPNGPlugin::details() const
     );
 }
 
+QString DImgPNGPlugin::handbookSection() const
+{
+    return QLatin1String("supported_materials");
+}
+
+QString DImgPNGPlugin::handbookChapter() const
+{
+    return QLatin1String("image_formats");
+}
+
+QString DImgPNGPlugin::handbookReference() const
+{
+    return QLatin1String("image-png");
+}
+
 QList<DPluginAuthor> DImgPNGPlugin::authors() const
 {
     return QList<DPluginAuthor>()

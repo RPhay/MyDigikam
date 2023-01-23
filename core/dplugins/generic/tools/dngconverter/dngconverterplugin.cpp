@@ -66,6 +66,16 @@ QString DNGConverterPlugin::details() const
                  QLatin1String("<a href='https://en.wikipedia.org/wiki/Digital_Negative'>https://en.wikipedia.org/wiki/Digital_Negative</a>"));
 }
 
+QString DNGConverterPlugin::handbookSection() const
+{
+    return QLatin1String("showfoto_editor");
+}
+
+QString DNGConverterPlugin::handbookChapter() const
+{
+    return QLatin1String("dng_converter");
+}
+
 QList<DPluginAuthor> DNGConverterPlugin::authors() const
 {
     return QList<DPluginAuthor>()

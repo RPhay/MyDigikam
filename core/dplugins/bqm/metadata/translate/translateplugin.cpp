@@ -66,6 +66,21 @@ QString TranslatePlugin::details() const
     return xi18nc("@info", "<para>This Batch Queue Manager tool can translate alternative language strings in Xmp metadata from images.</para>");
 }
 
+QString TranslatePlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString TranslatePlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString TranslatePlugin::handbookReference() const
+{
+    return QLatin1String("bqm-metadatatools");
+}
+
 QList<DPluginAuthor> TranslatePlugin::authors() const
 {
     return QList<DPluginAuthor>()

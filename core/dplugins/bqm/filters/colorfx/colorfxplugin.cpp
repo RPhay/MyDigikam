@@ -66,6 +66,21 @@ QString ColorFXPlugin::details() const
     return xi18nc("@info", "<para>This Batch Queue Manager tool can apply color effects over images.</para>");
 }
 
+QString ColorFXPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString ColorFXPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString ColorFXPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-effecttools");
+}
+
 QList<DPluginAuthor> ColorFXPlugin::authors() const
 {
     return QList<DPluginAuthor>()

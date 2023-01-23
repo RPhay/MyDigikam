@@ -76,6 +76,16 @@ QString PanoramaPlugin::details() const
                 "memory to be processed.</p>");
 }
 
+QString PanoramaPlugin::handbookSection() const
+{
+    return QLatin1String("post_processing");
+}
+
+QString PanoramaPlugin::handbookChapter() const
+{
+    return QLatin1String("panorama_tool");
+}
+
 QList<DPluginAuthor> PanoramaPlugin::authors() const
 {
     return QList<DPluginAuthor>()

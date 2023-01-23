@@ -66,6 +66,21 @@ QString HotPixelsPlugin::details() const
     return xi18nc("@info", "<para>This Batch Queue Manager tool can fix hot pixels in images.</para>");
 }
 
+QString HotPixelsPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString HotPixelsPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString HotPixelsPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-enhancetools");
+}
+
 QList<DPluginAuthor> HotPixelsPlugin::authors() const
 {
     return QList<DPluginAuthor>()

@@ -66,6 +66,21 @@ QString CropPlugin::details() const
     return xi18nc("@info", "<para>This Batch Queue Manager tool can crop images to a region.</para>");
 }
 
+QString CropPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString CropPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString CropPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-transformtools");
+}
+
 QList<DPluginAuthor> CropPlugin::authors() const
 {
     return QList<DPluginAuthor>()

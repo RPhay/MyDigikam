@@ -93,6 +93,21 @@ QString RawTherapeeRawImportPlugin::details() const
                              "<p>See RawTherapee web site for details: <a href='https://rawtherapee.com/'>https://rawtherapee.com/</a></p>");
 }
 
+QString RawTherapeeRawImportPlugin::handbookSection() const
+{
+    return QLatin1String("setup_application");
+}
+
+QString RawTherapeeRawImportPlugin::handbookChapter() const
+{
+    return QLatin1String("editor_settings");
+}
+
+QString RawTherapeeRawImportPlugin::handbookReference() const
+{
+    return QLatin1String("setup-raw");
+}
+
 QList<DPluginAuthor> RawTherapeeRawImportPlugin::authors() const
 {
     return QList<DPluginAuthor>()

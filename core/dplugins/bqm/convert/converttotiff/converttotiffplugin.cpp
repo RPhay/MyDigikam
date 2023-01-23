@@ -68,6 +68,21 @@ QString ConvertToTiffPlugin::details() const
                   "<para>See details about this format from <a href='https://en.wikipedia.org/wiki/TIFF'>this page</a>.</para>");
 }
 
+QString ConvertToTiffPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString ConvertToTiffPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString ConvertToTiffPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-converttools");
+}
+
 QList<DPluginAuthor> ConvertToTiffPlugin::authors() const
 {
     return QList<DPluginAuthor>()

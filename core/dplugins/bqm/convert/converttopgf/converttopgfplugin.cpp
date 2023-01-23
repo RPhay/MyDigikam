@@ -68,6 +68,21 @@ QString ConvertToPgfPlugin::details() const
                   "<para>See details about this format from <a href='https://en.wikipedia.org/wiki/Progressive_Graphics_File'>this page</a>.</para>");
 }
 
+QString ConvertToPgfPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString ConvertToPgfPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString ConvertToPgfPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-converttools");
+}
+
 QList<DPluginAuthor> ConvertToPgfPlugin::authors() const
 {
     return QList<DPluginAuthor>()

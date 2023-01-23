@@ -68,6 +68,21 @@ QString ConvertToWebpPlugin::details() const
                   "<para>See details about this format from <a href='https://en.wikipedia.org/wiki/WebP'>this page</a>.</para>");
 }
 
+QString ConvertToWebpPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString ConvertToWebpPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString ConvertToWebpPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-converttools");
+}
+
 QList<DPluginAuthor> ConvertToWebpPlugin::authors() const
 {
     return QList<DPluginAuthor>()

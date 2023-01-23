@@ -65,6 +65,16 @@ QString TimeAdjustPlugin::details() const
                  "Many metadata time-stamp can be adjusted or left untouched. The adjustment can be an offset of time or a specific date.");
 }
 
+QString TimeAdjustPlugin::handbookSection() const
+{
+    return QLatin1String("post_processing");
+}
+
+QString TimeAdjustPlugin::handbookChapter() const
+{
+    return QLatin1String("time_adjust");
+}
+
 QList<DPluginAuthor> TimeAdjustPlugin::authors() const
 {
     return QList<DPluginAuthor>()

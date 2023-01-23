@@ -66,6 +66,21 @@ QString HSLCorrectionPlugin::details() const
     return i18nc("@info", "<para>This Batch Queue Manager tool can adjust Hue / Saturation / Lightness from images.</para>");
 }
 
+QString HSLCorrectionPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString HSLCorrectionPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString HSLCorrectionPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-colortools");
+}
+
 QList<DPluginAuthor> HSLCorrectionPlugin::authors() const
 {
     return QList<DPluginAuthor>()

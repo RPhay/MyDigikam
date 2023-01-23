@@ -66,6 +66,21 @@ QString AntiVignettingPlugin::details() const
     return xi18nc("@info", "<para>This Batch Queue Manager tool remove or add vignettings to images.</para>");
 }
 
+QString AntiVignettingPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString AntiVignettingPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString AntiVignettingPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-enhancetools");
+}
+
 QList<DPluginAuthor> AntiVignettingPlugin::authors() const
 {
     return QList<DPluginAuthor>()

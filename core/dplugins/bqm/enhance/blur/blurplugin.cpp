@@ -66,6 +66,21 @@ QString BlurPlugin::details() const
     return xi18nc("@info", "<para>This Batch Queue Manager tool can blur images.</para>");
 }
 
+QString BlurPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString BlurPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString BlurPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-enhancetools");
+}
+
 QList<DPluginAuthor> BlurPlugin::authors() const
 {
     return QList<DPluginAuthor>()

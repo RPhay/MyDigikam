@@ -252,4 +252,11 @@ BUGFIXES:
 212 ==> 333348 - Audio track is zero length in Advanced Slideshow.
 213 ==> 463234 - Move / delete item in Album, thumbnail does not go away.
 214 ==> 464354 - When typing in the Face Tag Box whilst in "Preview", esc should just exit the type box.
-215 ==> 
+215 ==> 464499 - digiKam git crash in Sonnet::SpellCheckDecorator.
+216 ==> 464420 - Folders not ignored.
+217 ==> 099418 - Help button in dialog refers to wrong Section/Chapter in new Documentation based on Sphinx/RestructuredText.
+218 ==> 240220 - Help menu entry not working properly with new online Documentation based on Sphinx.
+219 ==> 393382 - Add documentation section about the BQM custom shell scripts tool.
+220 ==> 464569 - Days highlighting in Dates view lost when moving files to trash.
+221 ==> 464567 - Freeze on thumbnail creation (git 8.0 version).
+222 ==> 

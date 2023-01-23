@@ -42,6 +42,13 @@ DTextEdit::DTextEdit(unsigned int lines, QWidget* const parent)
 
 DTextEdit::~DTextEdit()
 {
+
+#ifdef HAVE_SONNET
+
+    delete d->spellChecker;
+
+#endif
+
     delete d;
 }
 

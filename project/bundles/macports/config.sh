@@ -45,7 +45,7 @@ if [[ $ARCH_TARGET = "x86_64" ]] ; then
     # 10.6  : SnowLeopard  : untested : ???
     #
     # Older values cannot be set as it do not support x86_64.
-    OSX_MIN_TARGET="10.13"
+    OSX_MIN_TARGET="10.15"
 
 elif [[ $ARCH_TARGET = "arm64" ]] ; then
 
@@ -89,10 +89,10 @@ DK_URL="http://download.kde.org/stable/digikam"
 DK_BUILDTEMP=~/dktemp
 
 # KDE Application version.
-DK_KA_VERSION="22.08.1"
+DK_KA_VERSION="22.12.1"
 
 # KDE KF5 frameworks version.
-DK_KF5_VERSION="5.99"
+DK_KF5_VERSION="5.102"
 
 # Qt version to use in bundle and provided by Macports.
 DK_QTVERSION="5.15"

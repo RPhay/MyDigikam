@@ -66,6 +66,21 @@ QString RedEyeCorrectionPlugin::details() const
     return xi18nc("@info", "<para>This Batch Queue Manager tool can reduce red eye effect on images.</para>");
 }
 
+QString RedEyeCorrectionPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString RedEyeCorrectionPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString RedEyeCorrectionPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-enhancetools");
+}
+
 QList<DPluginAuthor> RedEyeCorrectionPlugin::authors() const
 {
     return QList<DPluginAuthor>()

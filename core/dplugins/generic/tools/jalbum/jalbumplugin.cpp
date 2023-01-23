@@ -65,6 +65,16 @@ QString JAlbumPlugin::details() const
                 "<p>jAlbum is themable with different templates and layout. See the jAlbum web-site for details: https://jalbum.net/.</p>");
 }
 
+QString JAlbumPlugin::handbookSection() const
+{
+    return QLatin1String("post_processing");
+}
+
+QString JAlbumPlugin::handbookChapter() const
+{
+    return QLatin1String("jalbum_tool");
+}
+
 QList<DPluginAuthor> JAlbumPlugin::authors() const
 {
     return QList<DPluginAuthor>()

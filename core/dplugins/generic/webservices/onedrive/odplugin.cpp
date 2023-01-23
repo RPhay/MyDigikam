@@ -70,6 +70,16 @@ QString ODPlugin::details() const
                  QLatin1String("<a href='https://onedrive.live.com/'>https://onedrive.live.com/</a>"));
 }
 
+QString ODPlugin::handbookSection() const
+{
+    return QLatin1String("export_tools");
+}
+
+QString ODPlugin::handbookChapter() const
+{
+    return QLatin1String("one_drive");
+}
+
 QList<DPluginAuthor> ODPlugin::authors() const
 {
     return QList<DPluginAuthor>()

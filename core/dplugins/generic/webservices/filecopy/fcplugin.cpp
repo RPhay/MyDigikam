@@ -69,6 +69,16 @@ QString FCPlugin::details() const
     return i18nc("@info", "This tool allows users to export items to a local storage.");
 }
 
+QString FCPlugin::handbookSection() const
+{
+    return QLatin1String("export_tools");
+}
+
+QString FCPlugin::handbookChapter() const
+{
+    return QLatin1String("file_copy");
+}
+
 QList<DPluginAuthor> FCPlugin::authors() const
 {
     return QList<DPluginAuthor>()

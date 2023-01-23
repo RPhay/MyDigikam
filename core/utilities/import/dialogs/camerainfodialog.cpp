@@ -93,7 +93,7 @@ CameraInfoDialog::~CameraInfoDialog()
 
 void CameraInfoDialog::slotHelp()
 {
-    DXmlGuiWindow::openHandbook();
+    DXmlGuiWindow::openHandbook(QLatin1String("import_tools"), QLatin1String("camera_import"));
 }
 
 } // namespace Digikam

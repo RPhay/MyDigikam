@@ -481,18 +481,18 @@ void MonthWidget::updateDays()
         return;
     }
 
-    const int size = d->model->rowCount();
+    const int size = d->model->sourceItemModel()->rowCount();
 
     for (int i = 0 ; i < size ; ++i)
     {
-        QModelIndex index = d->model->index(i, 0);
+        QModelIndex index = d->model->sourceItemModel()->index(i, 0);
 
         if (!index.isValid())
         {
             continue;
         }
 
-        QDateTime dt = d->model->data(index, ItemModel::CreationDateRole).toDateTime();
+        QDateTime dt = d->model->sourceItemModel()->data(index, ItemModel::CreationDateRole).toDateTime();
 
         if (dt.isNull())
         {

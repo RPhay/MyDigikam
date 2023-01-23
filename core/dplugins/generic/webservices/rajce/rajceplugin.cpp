@@ -70,6 +70,16 @@ QString RajcePlugin::details() const
                  QLatin1String("<a href='https://www.rajce.idnes.cz/'>https://www.rajce.idnes.cz/</a>"));
 }
 
+QString RajcePlugin::handbookSection() const
+{
+    return QLatin1String("export_tools");
+}
+
+QString RajcePlugin::handbookChapter() const
+{
+    return QLatin1String("rajce_export");
+}
+
 QList<DPluginAuthor> RajcePlugin::authors() const
 {
     return QList<DPluginAuthor>()

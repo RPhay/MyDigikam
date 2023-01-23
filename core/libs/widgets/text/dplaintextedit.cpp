@@ -42,6 +42,13 @@ DPlainTextEdit::DPlainTextEdit(unsigned int lines, QWidget* const parent)
 
 DPlainTextEdit::~DPlainTextEdit()
 {
+
+#ifdef HAVE_SONNET
+
+    delete d->spellChecker;
+
+#endif
+
     delete d;
 }
 

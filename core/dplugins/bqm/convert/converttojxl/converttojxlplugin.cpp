@@ -68,6 +68,21 @@ QString ConvertToJxlPlugin::details() const
                   "<para>See details about this format from <a href='https://en.wikipedia.org/wiki/JPEG_XL'>this page</a>.</para>");
 }
 
+QString ConvertToJxlPlugin::handbookSection() const
+{
+    return QLatin1String("batch_queue");
+}
+
+QString ConvertToJxlPlugin::handbookChapter() const
+{
+    return QLatin1String("base_tools");
+}
+
+QString ConvertToJxlPlugin::handbookReference() const
+{
+    return QLatin1String("bqm-converttools");
+}
+
 QList<DPluginAuthor> ConvertToJxlPlugin::authors() const
 {
     return QList<DPluginAuthor>()
