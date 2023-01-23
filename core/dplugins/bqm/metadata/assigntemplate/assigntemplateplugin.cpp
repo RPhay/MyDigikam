@@ -73,12 +73,12 @@ QString AssignTemplatePlugin::handbookSection() const
 
 QString AssignTemplatePlugin::handbookChapter() const
 {
-    return QLatin1String("base_tools");
+    return QLatin1String("metadata_tools");
 }
 
 QString AssignTemplatePlugin::handbookReference() const
 {
-    return QLatin1String("bqm-metadatatools");
+    return QLatin1String("bqm-assigntemplate");
 }
 
 QList<DPluginAuthor> AssignTemplatePlugin::authors() const

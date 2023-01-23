@@ -73,12 +73,12 @@ QString AssignLabelsPlugin::handbookSection() const
 
 QString AssignLabelsPlugin::handbookChapter() const
 {
-    return QLatin1String("base_tools");
+    return QLatin1String("metadata_tools");
 }
 
 QString AssignLabelsPlugin::handbookReference() const
 {
-    return QLatin1String("bqm-metadatatools");
+    return QLatin1String("bqm-assignlabels");
 }
 
 QList<DPluginAuthor> AssignLabelsPlugin::authors() const

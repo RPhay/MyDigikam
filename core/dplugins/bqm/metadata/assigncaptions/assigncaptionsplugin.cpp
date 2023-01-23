@@ -74,12 +74,12 @@ QString AssignCaptionsPlugin::handbookSection() const
 
 QString AssignCaptionsPlugin::handbookChapter() const
 {
-    return QLatin1String("base_tools");
+    return QLatin1String("metadata_tools");
 }
 
 QString AssignCaptionsPlugin::handbookReference() const
 {
-    return QLatin1String("bqm-metadatatools");
+    return QLatin1String("bqm-assigncaptions");
 }
 
 QList<DPluginAuthor> AssignCaptionsPlugin::authors() const

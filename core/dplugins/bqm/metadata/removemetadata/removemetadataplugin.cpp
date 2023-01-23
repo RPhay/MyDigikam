@@ -73,12 +73,12 @@ QString RemoveMetadataPlugin::handbookSection() const
 
 QString RemoveMetadataPlugin::handbookChapter() const
 {
-    return QLatin1String("base_tools");
+    return QLatin1String("metadata_tools");
 }
 
 QString RemoveMetadataPlugin::handbookReference() const
 {
-    return QLatin1String("bqm-metadatatools");
+    return QLatin1String("bqm-removemetadata");
 }
 
 QList<DPluginAuthor> RemoveMetadataPlugin::authors() const

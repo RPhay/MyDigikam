@@ -74,12 +74,12 @@ QString QualitySortPlugin::handbookSection() const
 
 QString QualitySortPlugin::handbookChapter() const
 {
-    return QLatin1String("base_tools");
+    return QLatin1String("metadata_tools");
 }
 
 QString QualitySortPlugin::handbookReference() const
 {
-    return QLatin1String("bqm-metadatatools");
+    return QLatin1String("bqm-qualitysort");
 }
 
 QList<DPluginAuthor> QualitySortPlugin::authors() const
