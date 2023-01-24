@@ -50,6 +50,7 @@
 #include "collectionmanager.h"
 #include "newitemsfinder.h"
 #include "dtextedit.h"
+#include "dxmlguiwindow.h"
 
 namespace Digikam
 {
@@ -1613,8 +1614,10 @@ bool SetupCollectionModel::askForNewCollectionPath(int category, QString* const 
     mainWidget->setLayout(grid1);
 
     QVBoxLayout* const vbx          = new QVBoxLayout(dialog);
-    QDialogButtonBox* const buttons = new QDialogButtonBox(QDialogButtonBox::Ok |
-                                                           QDialogButtonBox::Cancel, dialog);
+    QDialogButtonBox* const buttons = new QDialogButtonBox(QDialogButtonBox::Ok   |
+                                                           QDialogButtonBox::Help |
+                                                           QDialogButtonBox::Cancel,
+                                                           dialog);
     vbx->addWidget(mainWidget);
     vbx->addWidget(buttons);
     dialog->setLayout(vbx);
@@ -1624,6 +1627,9 @@ bool SetupCollectionModel::askForNewCollectionPath(int category, QString* const 
 
     connect(buttons->button(QDialogButtonBox::Cancel), SIGNAL(clicked()),
             dialog, SLOT(reject()));
+
+    connect(buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
+            this, SLOT(slotHelp()));
 
     // default to directory name as collection name
 
@@ -1636,6 +1642,7 @@ bool SetupCollectionModel::askForNewCollectionPath(int category, QString* const 
         {
             *newLabel = nameEdit->text();
             *newPath  = path;
+
             return true;
         }
     }
@@ -1674,8 +1681,10 @@ bool SetupCollectionModel::askForNewCollectionCategory(int* const category)
     mainWidget->setLayout(grid1);
 
     QVBoxLayout* const vbx          = new QVBoxLayout(dialog);
-    QDialogButtonBox* const buttons = new QDialogButtonBox(QDialogButtonBox::Ok |
-                                                           QDialogButtonBox::Cancel, dialog);
+    QDialogButtonBox* const buttons = new QDialogButtonBox(QDialogButtonBox::Ok   |
+                                                           QDialogButtonBox::Help |
+                                                           QDialogButtonBox::Cancel,
+                                                           dialog);
     vbx->addWidget(mainWidget);
     vbx->addWidget(buttons);
     dialog->setLayout(vbx);
@@ -1685,6 +1694,9 @@ bool SetupCollectionModel::askForNewCollectionCategory(int* const category)
 
     connect(buttons->button(QDialogButtonBox::Cancel), SIGNAL(clicked()),
             dialog, SLOT(reject()));
+
+    connect(buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
+            this, SLOT(slotHelp()));
 
     // default to current category
 
@@ -1724,6 +1736,11 @@ int SetupCollectionModel::buttonMapId(const QModelIndex& index) const
     }
 
     return index.internalId();
+}
+
+void SetupCollectionModel::slotHelp()
+{
+    DXmlGuiWindow::openHandbook(QLatin1String("setup_application"), QLatin1String("collections_settings"));
 }
 
 } // namespace Digikam

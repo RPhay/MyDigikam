@@ -200,6 +200,10 @@ protected:
 
     QList<Item> m_collections;
     QWidget*    m_dialogParentWidget;
+
+private Q_SLOTS:
+
+    void slotHelp();
 };
 
 // -----------------------------------------------------------------------
