@@ -68,10 +68,10 @@ DK_URL="http://download.kde.org/stable/digikam"
 DK_BUILDTEMP=$MXE_ROOT_DIR/dktemp
 
 # KDE Application version.
-DK_KA_VERSION="22.08.1"
+DK_KA_VERSION="22.12.1"
 
 # KDE KF5 frameworks version.
-DK_KF5_VERSION="5.99"
+DK_KF5_VERSION="5.102"
 
 # Qt version to use in bundle and provided by MXE.
 DK_QTVERSION="5.15"
