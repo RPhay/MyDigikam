@@ -69,7 +69,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-22 00:54+0000\n"
-"PO-Revision-Date: 2023-01-22 17:32+0100\n"
+"PO-Revision-Date: 2023-01-22 19:44+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -3282,11 +3282,15 @@ msgstr "Plus de 1300 rapports de bogue fermés dans « bugzilla »."
 #, kde-format
 msgid "Port code to Qt6 framework (code still compatible with Qt5 API)."
 msgstr ""
+"Portage du code vers l'environnement Qt6 (Code toujours compatible avec "
+"l'API Qt5)"
 
 #: core/app/views/stack/welcomepageview.cpp:142
 #, kde-format
 msgid "Add JPEG-XL, WEBP, and AVIF export settings everywhere."
 msgstr ""
+"Ajouter à la totalité du système, la configuration d'exportation pour les "
+"formats « JPEG-XL », « WebP » et « AVIF »"
 
 #: core/app/views/stack/welcomepageview.cpp:143
 #, kde-format
@@ -3298,6 +3302,8 @@ msgstr ""
 #, kde-format
 msgid "Add JPEG-XL; WEBP, and AVIF converters in Batch Queue Manager."
 msgstr ""
+"Ajouter les convertisseurs pour les formats « JPEG-XL », « WebP » et "
+"« AVIF » dans le gestionnaire de file de travaux."
 
 #: core/app/views/stack/welcomepageview.cpp:145
 #, kde-format
@@ -3310,6 +3316,8 @@ msgstr ""
 #, kde-format
 msgid "Add hamburger menu to tool-bar if main menu is hidden."
 msgstr ""
+"Ajouter une barre d'outils avec un menu en hamburger dans le cas où le menu "
+"principal est masqué."
 
 #: core/app/views/stack/welcomepageview.cpp:147
 #, fuzzy, kde-format
@@ -3337,6 +3345,8 @@ msgstr ""
 #, kde-format
 msgid "Optimize layout of Metadata Edit plugin for a better usability."
 msgstr ""
+"Optimiser la disposition du module externe de modifications des métadonnées "
+"pour une plus grande facilité d'utilisation."
 
 #: core/app/views/stack/welcomepageview.cpp:150
 #, kde-format
@@ -3348,12 +3358,15 @@ msgstr ""
 #, kde-format
 msgid "Add random text sequence numbering with option [r]."
 msgstr ""
+"Ajouter une numérotation aléatoire des séquences de texte avec l'option [r]."
 
 #: core/app/views/stack/welcomepageview.cpp:152
 #, kde-format
 msgid ""
 "Add configurable first character for the unique modifier with {unique:n,c}."
 msgstr ""
+"Ajouter un premier caractère configurable pour un modificateur unique avec "
+"{unique:n, c}."
 
 #: core/app/views/stack/welcomepageview.cpp:153
 #, fuzzy, kde-format
@@ -3371,11 +3384,14 @@ msgstr "Retourner les éléments sans régions de visages"
 #, kde-format
 msgid "Add support for cross-platform network paths."
 msgstr ""
+"Ajouter la prise en charge des emplacements de réseau inter-plate-forme"
 
 #: core/app/views/stack/welcomepageview.cpp:156
 #, kde-format
 msgid "Add support for SQLite WAL (Write-Ahead-Logging) mode."
 msgstr ""
+"Ajouter la prise en charge du mode « WAL »  (Write-Ahead-Logging) pour "
+"SQLite."
 
 #: core/app/views/stack/welcomepageview.cpp:157
 #, kde-format
@@ -3388,6 +3404,8 @@ msgstr ""
 #, kde-format
 msgid "Add Spellcheck config panel in Setup/Misc for digiKam and Showfoto."
 msgstr ""
+"Ajouter un panneau de configuration pour la vérification orthographique dans "
+"Configuration / Divers pour les logiciels DigiKam et Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:159
 #, kde-format
@@ -3399,6 +3417,8 @@ msgstr ""
 #, kde-format
 msgid "Add Localize config panel in Setup/Misc for digiKam and Showfoto."
 msgstr ""
+"Ajouter un panneau de configuration pour la localisation dans "
+"Configuration / Divers pour les logiciels DigiKam et Showfoto."
 
 #: core/app/views/stack/welcomepageview.cpp:161
 #, kde-format
@@ -3448,6 +3468,8 @@ msgstr ""
 #, kde-format
 msgid "Add new tool to assign rating, pick, and color labels in batch."
 msgstr ""
+"Ajouter un nouvel outil pour attribuer des étiquettes de notation, de "
+"sélection et de couleurs par lot."
 
 #: core/app/views/stack/welcomepageview.cpp:167
 #, fuzzy, kde-format
@@ -3467,6 +3489,8 @@ msgstr ""
 #, kde-format
 msgid "Update internal RAW engine to last stable Libraw 0.21.1."
 msgstr ""
+"Mettre à jour le moteur interne « RAW » vers la dernière version stable de "
+"« Libraw » 0.21.1."
 
 #: core/app/views/stack/welcomepageview.cpp:170
 #, kde-format
@@ -60318,7 +60342,7 @@ msgstr "Pays"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:640
 #, kde-format
 msgid "Country of the location shown in the item"
-msgstr ""
+msgstr "Pays associé à l'emplacement affiché dans l'élément"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:654
 #, kde-format

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-22 00:54+0000\n"
-"PO-Revision-Date: 2023-01-22 06:37+0100\n"
+"PO-Revision-Date: 2023-01-23 06:06+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -5014,7 +5014,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Black and White Convert"
-msgstr ""
+msgstr "შავთეთრში გადაყვანა"
 
 #: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:61
 #: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:59
@@ -7555,7 +7555,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "TIFF loader"
-msgstr ""
+msgstr "TIFF-ს ჩამტვირთავი"
 
 #: core/dplugins/dimg/tiff/dimgtiffplugin.cpp:62
 #, kde-format
@@ -54205,7 +54205,7 @@ msgstr "&ბოლო"
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:47
 #, kde-format
 msgid "On left"
-msgstr ""
+msgstr "მარცხნივ"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:49
 #, kde-format

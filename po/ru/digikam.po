@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-22 00:54+0000\n"
-"PO-Revision-Date: 2023-01-22 17:23+0300\n"
+"PO-Revision-Date: 2023-01-22 17:26+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -62914,7 +62914,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "&Rescan file when files are modified"
-msgstr "&Повторно сканировать изменённые файлы"
+msgstr "&Перечитывать изменённые файлы"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:151
 #, kde-format
