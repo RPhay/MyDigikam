@@ -194,7 +194,7 @@ void WaterMark::registerSettingsWidget()
     useAbsoluteImageSizeGroupBoxLayout->addWidget(useAbsoluteSizeHBox);
 
     QLabel* const watermarkTypeLabel   = new QLabel(hbox);
-    watermarkTypeLabel->setText(i18n("Watermark type:"));
+    watermarkTypeLabel->setText(i18n("Watermark type: "));
 
     d->useImageRadioButton      = new QRadioButton(hbox);
     d->useImageRadioButton->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
@@ -224,7 +224,7 @@ void WaterMark::registerSettingsWidget()
     QLabel* const label          = new QLabel(imageSelectHBox);
     d->imageFileUrlRequester     = new DFileSelector(imageSelectHBox);
     d->imageFileUrlRequester->lineEdit()->setPlaceholderText(i18n("Click to select watermark image."));
-    label->setText(i18n("Watermark image:"));
+    label->setText(i18n("Watermark image: "));
     imageSettingsGroupBoxLayout->addWidget(imageSelectHBox);
 
     DHBox* const ignoreWatermarkAspectRatioHBox   = new DHBox();
@@ -262,7 +262,7 @@ void WaterMark::registerSettingsWidget()
     d->waterMarkOpacityPercent->setRange(0, 100, 1);
     d->waterMarkOpacityPercent->setDefaultValue(100);
     d->waterMarkOpacityPercent->setWhatsThis(i18n("Opacity of watermark"));
-    opacityLabel->setText(i18n("Opacity (%):"));
+    opacityLabel->setText(i18n("Opacity (%): "));
     imageSettingsGroupBoxLayout->addWidget(watermarkImageOpacityBox);
  
     // ---
@@ -277,7 +277,7 @@ void WaterMark::registerSettingsWidget()
     QLabel* const textEditLabel = new QLabel(vbox);
     d->textEdit                 = new DTextEdit(vbox);
     d->textEdit->setPlaceholderText(i18n("Enter your watermark string here."));
-    textEditLabel->setText(i18n("Watermark text:"));
+    textEditLabel->setText(i18n("Watermark text: "));
     textSettingsGroupBoxLayout->addWidget(textEditLabel);
     textSettingsGroupBoxLayout->addWidget(d->textEdit);
 
@@ -292,12 +292,12 @@ void WaterMark::registerSettingsWidget()
     d->fontColorButton   = new DColorSelector(fontColorBox);
     d->fontColorButton->setColor(Qt::black);
     d->fontColorButton->setWhatsThis(i18n("Set the font color to use here."));
-    label3->setText(i18n("Font color:"));
+    label3->setText(i18n("Font color: "));
     textSettingsGroupBoxLayout->addWidget(fontColorBox);
 
     DHBox* const fontOpacityBox    = new DHBox();
     QLabel* const textOpacityLabel = new QLabel(fontOpacityBox);
-    textOpacityLabel->setText(i18n("Text opacity:"));
+    textOpacityLabel->setText(i18n("Text opacity: "));
     d->textOpacity                 = new DIntNumInput(fontOpacityBox);
     d->textOpacity->setRange(0, 100, 1);
     d->textOpacity->setDefaultValue(100);
@@ -315,23 +315,23 @@ void WaterMark::registerSettingsWidget()
     useBackgroundLabel->setText(i18n("Use background"));
     textSettingsGroupBoxLayout->addWidget(useBackgroundHBox);
 
-    QLabel* const backgroundColorLabel = new QLabel();
-    d->backgroundColorButton           = new DColorSelector();
+    DHBox* const useBackgroundColorHBox = new DHBox();
+    QLabel* const backgroundColorLabel  = new QLabel(useBackgroundColorHBox);
+    d->backgroundColorButton            = new DColorSelector(useBackgroundColorHBox);
     d->backgroundColorButton->setColor(QColor(0xCC, 0xCC, 0xCC));
     d->backgroundColorButton->setWhatsThis(i18n("Choose the color of the watermark background."));
-    backgroundColorLabel ->setText(i18n("Background color:"));
-    textSettingsGroupBoxLayout->addWidget(backgroundColorLabel);
-    textSettingsGroupBoxLayout->addWidget(d->backgroundColorButton);
+    backgroundColorLabel ->setText(i18n("Background color: "));
+    textSettingsGroupBoxLayout->addWidget(useBackgroundColorHBox);
 
-    QLabel* const backgroundOpacityLabel = new QLabel();
-    backgroundOpacityLabel->setText(i18n("Background opacity:"));
-    d->backgroundOpacity                 = new DIntNumInput();
+    DHBox* const useBackgroundOpacityHBox  = new DHBox();
+    QLabel* const backgroundOpacityLabel   = new QLabel(useBackgroundOpacityHBox);
+    backgroundOpacityLabel->setText(i18n("Background opacity: "));
+    d->backgroundOpacity                   = new DIntNumInput(useBackgroundOpacityHBox);
     d->backgroundOpacity->setRange(0, 100, 1);
     d->backgroundOpacity->setDefaultValue(100);
     d->backgroundOpacity->setWhatsThis(i18n("Set the opacity of the watermark background. "
                                             "100 is fully opaque, 0 is fully transparent."));
-    textSettingsGroupBoxLayout->addWidget(backgroundOpacityLabel);
-    textSettingsGroupBoxLayout->addWidget(d->backgroundOpacity);
+    textSettingsGroupBoxLayout->addWidget(useBackgroundOpacityHBox);
 
     d->imageSettingsGroupBox->setVisible(true);
     d->textSettingsGroupBox->setVisible(false);
@@ -344,7 +344,7 @@ void WaterMark::registerSettingsWidget()
     d->placementTypeComboBox->insertItem(Private::SpecifiedLocation,    i18n("Specific Location"));
     d->placementTypeComboBox->insertItem(Private::SystematicRepetition, i18n("Systematic Repetition"));
     d->placementTypeComboBox->insertItem(Private::RandomRepetition,     i18n("Random Repetition"));
-    placementTypeLabel->setText(i18n("Placement Type:"));
+    placementTypeLabel->setText(i18n("Placement Type: "));
 
     DHBox* const placementHBox = new DHBox(vbox);
     placementHBox->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
@@ -388,7 +388,7 @@ void WaterMark::registerSettingsWidget()
                                            "repetition. The higher the value the sparser the watermarks get. "
                                            "Use floating point values, typically between 1.0 and 3.0. It can "
                                            "also be less than 1.0"));
-    sparsityFactorLabel->setText(i18n("Sparsity Factor:"));
+    sparsityFactorLabel->setText(i18n("Sparsity Factor: "));
 
     DHBox* const placementPositionHBox = new DHBox(vbox);
     QLabel* const label4         = new QLabel(placementPositionHBox);
@@ -401,7 +401,7 @@ void WaterMark::registerSettingsWidget()
     d->placementPositionComboBox->insertItem(Private::TopCenter,    i18nc("@item: placement position", "Top center"));
     d->placementPositionComboBox->insertItem(Private::BottomCenter, i18nc("@item: placement position", "Bottom center"));
 
-    label4->setText(i18n("Placement Position:"));
+    label4->setText(i18n("Placement Position: "));
 
     DHBox* const placementRotationHBox = new DHBox(vbox);
     QLabel* const labelRotation  = new QLabel(placementRotationHBox);
@@ -410,7 +410,7 @@ void WaterMark::registerSettingsWidget()
     d->rotationComboBox->insertItem(1, i18n("90 degrees CW"));
     d->rotationComboBox->insertItem(2, i18n("180 degrees"));
     d->rotationComboBox->insertItem(3, i18n("270 degrees CW"));
-    labelRotation->setText(i18n("Rotation:"));
+    labelRotation->setText(i18n("Rotation: "));
 
     DHBox* const placementSizeHBox = new DHBox(vbox);
     QLabel* const label5    = new QLabel(placementSizeHBox);
@@ -418,7 +418,7 @@ void WaterMark::registerSettingsWidget()
     d->waterMarkSizePercent->setRange(0, 100, 1);
     d->waterMarkSizePercent->setDefaultValue(30);
     d->waterMarkSizePercent->setWhatsThis(i18n("Size of watermark, as a percentage of the marked image."));
-    label5->setText(i18n("Size (%):"));
+    label5->setText(i18n("Size (%): "));
 
     DHBox* const placementXMarginHBox = new DHBox(vbox);
     QLabel* const label6 = new QLabel(placementXMarginHBox);
@@ -426,7 +426,7 @@ void WaterMark::registerSettingsWidget()
     d->xMarginInput->setRange(0, 100, 1);
     d->xMarginInput->setDefaultValue(2);
     d->xMarginInput->setWhatsThis(i18n("Margin from edge in X direction, as a percentage of the marked image."));
-    label6->setText(i18n("X margin (%):"));
+    label6->setText(i18n("X margin (%): "));
 
     DHBox* const placementYMarginHBox = new DHBox(vbox);
     QLabel* const label7 = new QLabel(placementYMarginHBox);
@@ -434,7 +434,7 @@ void WaterMark::registerSettingsWidget()
     d->yMarginInput->setRange(0, 100, 1);
     d->yMarginInput->setDefaultValue(2);
     d->yMarginInput->setWhatsThis(i18n("Margin from edge in Y direction, as a percentage of the marked image."));
-    label7->setText(i18n("Y margin (%):"));
+    label7->setText(i18n("Y margin (%): "));
 
     QLabel* const space = new QLabel(vbox);
     vbox->setStretchFactor(space, 10);
