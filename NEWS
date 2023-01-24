@@ -260,4 +260,5 @@ BUGFIXES:
 220 ==> 464569 - Days highlighting in Dates view lost when moving files to trash.
 221 ==> 464567 - Freeze on thumbnail creation (git 8.0 version).
 222 ==> 464721 - Set multiple root album paths for network albums using the GUI.
-223 ==> 
+223 ==> 464731 - JPEG XL (.jxl) support.
+224 ==> 
