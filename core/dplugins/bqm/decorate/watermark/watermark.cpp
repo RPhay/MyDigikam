@@ -211,6 +211,8 @@ void WaterMark::registerSettingsWidget()
     useTextLabel->setAlignment(Qt::AlignLeft);
     d->useImageRadioButton->setChecked(true);
 
+    // ---
+
     d->imageSettingsGroupBox                       = new QGroupBox(vbox);
     d->imageSettingsGroupBox->setTitle(i18n("Image settings"));
     QVBoxLayout* const imageSettingsGroupBoxLayout = new QVBoxLayout;
@@ -218,12 +220,12 @@ void WaterMark::registerSettingsWidget()
     imageSettingsGroupBoxLayout->addStretch(1);
     d->imageSettingsGroupBox->setLayout(imageSettingsGroupBoxLayout);
 
-    QLabel* const label      = new QLabel();
-    d->imageFileUrlRequester = new DFileSelector();
+    DHBox* const imageSelectHBox = new DHBox();
+    QLabel* const label          = new QLabel(imageSelectHBox);
+    d->imageFileUrlRequester     = new DFileSelector(imageSelectHBox);
     d->imageFileUrlRequester->lineEdit()->setPlaceholderText(i18n("Click to select watermark image."));
     label->setText(i18n("Watermark image:"));
-    imageSettingsGroupBoxLayout->addWidget(label);
-    imageSettingsGroupBoxLayout->addWidget(d->imageFileUrlRequester);
+    imageSettingsGroupBoxLayout->addWidget(imageSelectHBox);
 
     DHBox* const ignoreWatermarkAspectRatioHBox   = new DHBox();
     ignoreWatermarkAspectRatioHBox->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
@@ -251,7 +253,7 @@ void WaterMark::registerSettingsWidget()
     addTransparencyToWatermarkLabel->setText(i18n("Add transparency to watermark image"));
     imageSettingsGroupBoxLayout->addWidget(addTransparencyToWatermarkImageHBox);
 
-    DVBox* const watermarkImageOpacityBox = new DVBox();
+    DHBox* const watermarkImageOpacityBox = new DHBox();
     watermarkImageOpacityBox->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     watermarkImageOpacityBox->setSpacing(spacing);
 
@@ -263,6 +265,8 @@ void WaterMark::registerSettingsWidget()
     opacityLabel->setText(i18n("Opacity (%):"));
     imageSettingsGroupBoxLayout->addWidget(watermarkImageOpacityBox);
  
+    // ---
+
     d->textSettingsGroupBox                       = new QGroupBox(vbox);
     d->textSettingsGroupBox->setTitle(i18n("Text settings"));
     QVBoxLayout* const textSettingsGroupBoxLayout = new QVBoxLayout;
@@ -332,8 +336,11 @@ void WaterMark::registerSettingsWidget()
     d->imageSettingsGroupBox->setVisible(true);
     d->textSettingsGroupBox->setVisible(false);
 
-    QLabel* const placementTypeLabel = new QLabel(vbox);
-    d->placementTypeComboBox         = new QComboBox(vbox);
+    // ---
+
+    DHBox* const placementTypeHBox = new DHBox(vbox);
+    QLabel* const placementTypeLabel = new QLabel(placementTypeHBox);
+    d->placementTypeComboBox         = new QComboBox(placementTypeHBox);
     d->placementTypeComboBox->insertItem(Private::SpecifiedLocation,    i18n("Specific Location"));
     d->placementTypeComboBox->insertItem(Private::SystematicRepetition, i18n("Systematic Repetition"));
     d->placementTypeComboBox->insertItem(Private::RandomRepetition,     i18n("Random Repetition"));
@@ -383,8 +390,9 @@ void WaterMark::registerSettingsWidget()
                                            "also be less than 1.0"));
     sparsityFactorLabel->setText(i18n("Sparsity Factor:"));
 
-    QLabel* const label4         = new QLabel(vbox);
-    d->placementPositionComboBox = new QComboBox(vbox);
+    DHBox* const placementPositionHBox = new DHBox(vbox);
+    QLabel* const label4         = new QLabel(placementPositionHBox);
+    d->placementPositionComboBox = new QComboBox(placementPositionHBox);
     d->placementPositionComboBox->insertItem(Private::TopLeft,      i18nc("@item: placement position", "Top left"));
     d->placementPositionComboBox->insertItem(Private::TopRight,     i18nc("@item: placement position", "Top right"));
     d->placementPositionComboBox->insertItem(Private::BottomLeft,   i18nc("@item: placement position", "Bottom left"));
@@ -395,30 +403,34 @@ void WaterMark::registerSettingsWidget()
 
     label4->setText(i18n("Placement Position:"));
 
-    QLabel* const labelRotation  = new QLabel(vbox);
-    d->rotationComboBox          = new QComboBox(vbox);
+    DHBox* const placementRotationHBox = new DHBox(vbox);
+    QLabel* const labelRotation  = new QLabel(placementRotationHBox);
+    d->rotationComboBox          = new QComboBox(placementRotationHBox);
     d->rotationComboBox->insertItem(0, i18n("0 degrees"));
     d->rotationComboBox->insertItem(1, i18n("90 degrees CW"));
     d->rotationComboBox->insertItem(2, i18n("180 degrees"));
     d->rotationComboBox->insertItem(3, i18n("270 degrees CW"));
     labelRotation->setText(i18n("Rotation:"));
 
-    QLabel* const label5    = new QLabel(vbox);
-    d->waterMarkSizePercent = new DIntNumInput(vbox);
+    DHBox* const placementSizeHBox = new DHBox(vbox);
+    QLabel* const label5    = new QLabel(placementSizeHBox);
+    d->waterMarkSizePercent = new DIntNumInput(placementSizeHBox);
     d->waterMarkSizePercent->setRange(0, 100, 1);
     d->waterMarkSizePercent->setDefaultValue(30);
     d->waterMarkSizePercent->setWhatsThis(i18n("Size of watermark, as a percentage of the marked image."));
     label5->setText(i18n("Size (%):"));
 
-    QLabel* const label6 = new QLabel(vbox);
-    d->xMarginInput      = new DIntNumInput(vbox);
+    DHBox* const placementXMarginHBox = new DHBox(vbox);
+    QLabel* const label6 = new QLabel(placementXMarginHBox);
+    d->xMarginInput      = new DIntNumInput(placementXMarginHBox);
     d->xMarginInput->setRange(0, 100, 1);
     d->xMarginInput->setDefaultValue(2);
     d->xMarginInput->setWhatsThis(i18n("Margin from edge in X direction, as a percentage of the marked image."));
     label6->setText(i18n("X margin (%):"));
 
-    QLabel* const label7 = new QLabel(vbox);
-    d->yMarginInput      = new DIntNumInput(vbox);
+    DHBox* const placementYMarginHBox = new DHBox(vbox);
+    QLabel* const label7 = new QLabel(placementYMarginHBox);
+    d->yMarginInput      = new DIntNumInput(placementYMarginHBox);
     d->yMarginInput->setRange(0, 100, 1);
     d->yMarginInput->setDefaultValue(2);
     d->yMarginInput->setWhatsThis(i18n("Margin from edge in Y direction, as a percentage of the marked image."));
