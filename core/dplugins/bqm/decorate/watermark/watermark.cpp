@@ -287,23 +287,23 @@ void WaterMark::registerSettingsWidget()
     d->extendedFontChooserWidget->setWhatsThis(i18n("Choose the font type and style. Size is auto calculated."));
     textSettingsGroupBoxLayout->addWidget(d->extendedFontChooserWidget);
 
-    QLabel* const label3 = new QLabel();
-    d->fontColorButton   = new DColorSelector();
+    DHBox* const fontColorBox = new DHBox();
+    QLabel* const label3 = new QLabel(fontColorBox);
+    d->fontColorButton   = new DColorSelector(fontColorBox);
     d->fontColorButton->setColor(Qt::black);
     d->fontColorButton->setWhatsThis(i18n("Set the font color to use here."));
     label3->setText(i18n("Font color:"));
-    textSettingsGroupBoxLayout->addWidget(label3);
-    textSettingsGroupBoxLayout->addWidget(d->fontColorButton);
+    textSettingsGroupBoxLayout->addWidget(fontColorBox);
 
-    QLabel* const textOpacityLabel = new QLabel();
+    DHBox* const fontOpacityBox    = new DHBox();
+    QLabel* const textOpacityLabel = new QLabel(fontOpacityBox);
     textOpacityLabel->setText(i18n("Text opacity:"));
-    d->textOpacity                 = new DIntNumInput();
+    d->textOpacity                 = new DIntNumInput(fontOpacityBox);
     d->textOpacity->setRange(0, 100, 1);
     d->textOpacity->setDefaultValue(100);
     d->textOpacity->setWhatsThis(i18n("Set the opacity of the watermark text. "
                                       "100 is fully opaque, 0 is fully transparent."));
-    textSettingsGroupBoxLayout->addWidget(textOpacityLabel);
-    textSettingsGroupBoxLayout->addWidget(d->textOpacity);
+    textSettingsGroupBoxLayout->addWidget(fontOpacityBox);
 
     DHBox* const useBackgroundHBox   = new DHBox();
     useBackgroundHBox->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
