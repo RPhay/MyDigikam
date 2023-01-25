@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-22 00:54+0000\n"
-"PO-Revision-Date: 2023-01-03 15:42+0100\n"
+"POT-Creation-Date: 2023-01-25 00:55+0000\n"
+"PO-Revision-Date: 2023-01-24 15:18+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #: core/app/date/ddateedit.cpp:499
 #, kde-format
@@ -944,7 +944,7 @@ msgstr "%1 %2"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Target Folder"
-msgstr ""
+msgstr "Vyberte cílovou složku"
 
 #: core/app/items/utils/itemviewutilities.cpp:229
 #, kde-format
@@ -1511,13 +1511,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Folder to Parse"
-msgstr ""
+msgstr "Zvolte složku pro prohledání"
 
 #: core/app/main/digikamapp_import.cpp:101
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Folders to Import into Album"
-msgstr ""
+msgstr "Vyberte složky pro import do alba"
 
 #: core/app/main/digikamapp_import.cpp:143
 #, kde-format
@@ -4187,14 +4187,14 @@ msgstr "Podporovaná rozšíření"
 #, kde-format
 msgctxt "@title:window"
 msgid "Open a Video"
-msgstr ""
+msgstr "Otevřít video"
 
 #: core/avplayer/filters/EventFilter.cpp:83
 #: core/avplayer/main/MainWindow_io.cpp:510
 #, kde-format
 msgctxt "@title:window"
 msgid "Open an Url"
-msgstr ""
+msgstr "Otevřít URL"
 
 #: core/avplayer/filters/EventFilter.cpp:84
 #: core/avplayer/main/MainWindow_io.cpp:511
@@ -4321,7 +4321,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Help"
-msgstr ""
+msgstr "Nápověda"
 
 #: core/avplayer/filters/EventFilter.cpp:528
 #, kde-format
@@ -4360,7 +4360,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Open a Media File"
-msgstr ""
+msgstr "Otevřít soubor média"
 
 #: core/avplayer/main/MainWindow_io.cpp:568
 #: core/avplayer/main/MainWindow_setup.cpp:529
@@ -4373,7 +4373,7 @@ msgstr "Poměr stran"
 #, kde-format
 msgctxt "@title:window"
 msgid "Player Error"
-msgstr ""
+msgstr "Chyba přehrávače"
 
 #: core/avplayer/main/MainWindow_io.cpp:724
 #, kde-format
@@ -4421,7 +4421,7 @@ msgstr "Stojící"
 #, kde-format
 msgctxt "@title:window, media loading state"
 msgid "Buffering... %1% @%2 %3"
-msgstr ""
+msgstr "Ukládání do mezipaměti... %1% @%2 %3"
 
 #: core/avplayer/main/MainWindow_io.cpp:905
 #, kde-format
@@ -4439,7 +4439,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Open a Subtitle File"
-msgstr ""
+msgstr "Otevřít soubor s titulky"
 
 #: core/avplayer/main/MainWindow_setup.cpp:30
 #, kde-format
@@ -4783,7 +4783,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Files"
-msgstr ""
+msgstr "Vybrat soubory"
 
 #: core/avplayer/utils/ConfigDialog.cpp:61
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:263
@@ -4962,7 +4962,7 @@ msgstr "Velikost snímku"
 #, kde-format
 msgctxt "@title:window"
 msgid "Media Info"
-msgstr ""
+msgstr "Informace o médiu"
 
 #: core/avplayer/utils/StatisticsView.cpp:147
 #, kde-format
@@ -5697,10 +5697,9 @@ msgid "User Script: No script."
 msgstr "Uživatelský skript: Žádný skript."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:262
-#, fuzzy, kde-format
-#| msgid "File open error."
+#, kde-format
 msgid "User Script: File open error."
-msgstr "Chyba otevírání souboru."
+msgstr ""
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:279
 #, kde-format
@@ -5811,8 +5810,9 @@ msgid "Use Absolute Size"
 msgstr "Použít absolutní velikost"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:197
-#, kde-format
-msgid "Watermark type:"
+#, fuzzy, kde-format
+#| msgid "Watermark type:"
+msgid "Watermark type: "
 msgstr "Typ vodoznaku:"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
@@ -5826,22 +5826,23 @@ msgstr "Obrázek"
 msgid "Text"
 msgstr "Text"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:215
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:217
 #, kde-format
 msgid "Image settings"
 msgstr "Nastavení obrázku"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:223
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:226
 #, kde-format
 msgid "Click to select watermark image."
 msgstr "Klikněte pro výběr obrázku vodoznaku."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:224
-#, kde-format
-msgid "Watermark image:"
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:227
+#, fuzzy, kde-format
+#| msgid "Watermark image:"
+msgid "Watermark image: "
 msgstr "Obrázek vodoznaku:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:233
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:235
 #, kde-format
 msgid ""
 "Check this if you want the watermark to ignore its own aspect ratio and use "
@@ -5850,70 +5851,71 @@ msgstr ""
 "Zvolte, pokud chcete, aby se poměr stran vodoznaku přizpůsobil poměru stran "
 "obrázku."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:237
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:239
 #, kde-format
 msgid "Ignore Watermark aspect Ratio"
 msgstr "Ignorovat poměr stran vodoznaku"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:247
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:249
 #, kde-format
 msgid "Check this if you want watermark to be transparent."
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:251
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:253
 #, kde-format
 msgid "Add transparency to watermark image"
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:262
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:264
 #, kde-format
 msgid "Opacity of watermark"
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:263
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:206
-#, kde-format
-msgid "Opacity (%):"
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:265
+#, fuzzy, kde-format
+#| msgid "Opacity (%):"
+msgid "Opacity (%): "
 msgstr "Krytí (%):"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:267
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:271
 #, kde-format
 msgid "Text settings"
 msgstr "Nastavení textu"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:275
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:279
 #, kde-format
 msgid "Enter your watermark string here."
 msgstr "Sem zapište svůj text vodoznaku."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:276
-#, kde-format
-msgid "Watermark text:"
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:280
+#, fuzzy, kde-format
+#| msgid "Watermark text:"
+msgid "Watermark text: "
 msgstr "Text vodoznaku:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:283
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:287
 #, kde-format
 msgid "Choose the font type and style. Size is auto calculated."
 msgstr "Zvolte typ písma a styl. Velikost je spočítána automaticky."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:289
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:294
 #, kde-format
 msgid "Set the font color to use here."
 msgstr "Zde vyberte barvu písma."
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:290
-#: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:147
-#, kde-format
-msgid "Font color:"
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:295
+#, fuzzy, kde-format
+#| msgid "Font color:"
+msgid "Font color: "
 msgstr "Barva písma:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:295
-#, kde-format
-msgid "Text opacity:"
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:300
+#, fuzzy, kde-format
+#| msgid "Text opacity:"
+msgid "Text opacity: "
 msgstr "Krytí textu:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:299
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:304
 #, kde-format
 msgid ""
 "Set the opacity of the watermark text. 100 is fully opaque, 0 is fully "
@@ -5921,37 +5923,34 @@ msgid ""
 msgstr ""
 "Nastavení krytí textu vodoznaku. 100 znamená plně syté a 0 průhledné barvy."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:309
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:313
 #, kde-format
 msgid "Check this if you want a background fill behind the text."
 msgstr "Zvolte, pokud si přejete vyplnit pozadí za textem."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:311
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:315
 #, kde-format
 msgid "Use background"
 msgstr "Použít pozadí"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:317
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:322
 #, kde-format
 msgid "Choose the color of the watermark background."
 msgstr "Zvolte barvu pozadí vodoznaku."
 
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:318
-#: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:154
-#: core/libs/dimg/filters/transform/freerotationsettings.cpp:118
-#, kde-format
-msgid "Background color:"
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:323
+#, fuzzy, kde-format
+#| msgid "Background color:"
+msgid "Background color: "
 msgstr "Barva pozadí:"
 
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:323
-#: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:140
-#, kde-format
-msgid "Background opacity:"
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:328
+#, fuzzy, kde-format
+#| msgid "Background opacity:"
+msgid "Background opacity: "
 msgstr "Krytí pozadí:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:327
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:332
 #, kde-format
 msgid ""
 "Set the opacity of the watermark background. 100 is fully opaque, 0 is fully "
@@ -5959,27 +5958,28 @@ msgid ""
 msgstr ""
 "Nastavení krytí pozadí vodoznaku  100 znamená plně syté a 0 průhledné barvy."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:337
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:344
 #, kde-format
 msgid "Specific Location"
 msgstr "Specifické umístění"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:338
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:345
 #, kde-format
 msgid "Systematic Repetition"
 msgstr "Systematické opakování"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:339
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:346
 #, kde-format
 msgid "Random Repetition"
 msgstr "Náhodné opakování"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:340
-#, kde-format
-msgid "Placement Type:"
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:347
+#, fuzzy, kde-format
+#| msgid "Placement Type:"
+msgid "Placement Type: "
 msgstr "Typ umístění:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:348
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:355
 #, kde-format
 msgid ""
 "When you choose to have the watermark repeated many times in the placement "
@@ -5988,14 +5988,14 @@ msgstr ""
 "Pokud si v nastavení umístění zvolíte opakování vodoznaku, zde si můžete "
 "upravit opakování."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:354
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:361
 #, kde-format
 msgid ""
 "Density of watermark repetition (Disabled in \"Specific Location\" mode)"
 msgstr ""
 "Hustota opakování vodoznaku (Nedostupné pro režim \"Specifické umístění\")"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:362
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:369
 #, kde-format
 msgid ""
 "When you choose to have the watermark repeated randomly in the placement "
@@ -6006,14 +6006,14 @@ msgstr ""
 "při umístění, můžete zadat náhodné natočení vodoznaku (0, 90, 180, 270 "
 "stupňů)."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:369
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:376
 #, kde-format
 msgid ""
 "Randomize watermark orientation (Enabled in \"Random Repetition\" mode only)"
 msgstr ""
 "Náhodná orientace vodoznaku (Dostupné pouze v režimu \"Náhodné opakování\")"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:380
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:387
 #, kde-format
 msgid ""
 "Use this to get more control over the sparsity of watermark repetition. The "
@@ -6021,112 +6021,117 @@ msgid ""
 "typically between 1.0 and 3.0. It can also be less than 1.0"
 msgstr ""
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:384
-#, kde-format
-msgid "Sparsity Factor:"
-msgstr ""
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:391
+#, fuzzy, kde-format
+#| msgid "Separator:"
+msgid "Sparsity Factor: "
+msgstr "Oddělovač:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:388
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:396
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Top left"
 msgstr "Vlevo nahoře"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:389
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:397
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Top right"
 msgstr "Vpravo nahoře"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:390
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:398
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Bottom left"
 msgstr "Vlevo dole"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:391
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:399
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Bottom right"
 msgstr "Vpravo dole"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:392
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:400
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Center"
 msgstr "Ve středu"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:393
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:401
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Top center"
-msgstr ""
+msgstr "Nahoře uprostřed"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:394
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:402
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Bottom center"
-msgstr ""
+msgstr "Dole uprostřed"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:396
-#, kde-format
-msgid "Placement Position:"
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:404
+#, fuzzy, kde-format
+#| msgid "Placement Position:"
+msgid "Placement Position: "
 msgstr "Umístění:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:400
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:409
 #, kde-format
 msgid "0 degrees"
 msgstr "0 stupňů"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:401
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:410
 #, kde-format
 msgid "90 degrees CW"
 msgstr "90 stupňů po směru hodinových ručiček"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:402
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:411
 #, kde-format
 msgid "180 degrees"
 msgstr "180 stupňů"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:403
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:412
 #, kde-format
 msgid "270 degrees CW"
 msgstr "270 stupňů po směru hodinových ručiček"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:404
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:195
-#, kde-format
-msgid "Rotation:"
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:413
+#, fuzzy, kde-format
+#| msgid "Rotation:"
+msgid "Rotation: "
 msgstr "Otočení:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:410
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:420
 #, kde-format
 msgid "Size of watermark, as a percentage of the marked image."
 msgstr "Velikost vodoznaku v procentech označeného obrázku."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:411
-#, kde-format
-msgid "Size (%):"
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:421
+#, fuzzy, kde-format
+#| msgid "Size (%):"
+msgid "Size (%): "
 msgstr "Velikost (%):"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:417
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:428
 #, kde-format
 msgid "Margin from edge in X direction, as a percentage of the marked image."
 msgstr "Okraj od hrany v ose X v procentech velikosti označeného obrázku."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:418
-#, kde-format
-msgid "X margin (%):"
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:429
+#, fuzzy, kde-format
+#| msgid "X margin (%):"
+msgid "X margin (%): "
 msgstr "Okraj X (%):"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:424
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:436
 #, kde-format
 msgid "Margin from edge in Y direction, as a percentage of the marked image."
 msgstr "Okraj od hrany v ose Y v procentech velikosti označeného obrázku."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:425
-#, kde-format
-msgid "Y margin (%):"
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:437
+#, fuzzy, kde-format
+#| msgid "Y margin (%):"
+msgid "Y margin (%): "
 msgstr "Okraj Y (%):"
 
 #: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:46
@@ -6462,7 +6467,7 @@ msgstr ""
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
 #, kde-format
 msgid "Titles:"
-msgstr ""
+msgstr "Tituly:"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:99
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:289
@@ -6536,7 +6541,7 @@ msgstr "Hodnocení:"
 #, kde-format
 msgctxt "@title"
 msgid "Assign Labels"
-msgstr ""
+msgstr "Přiřadit značky"
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:61
 #, kde-format
@@ -6556,7 +6561,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Assign Tags"
-msgstr ""
+msgstr "Přiřadit značky"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:61
 #, kde-format
@@ -6596,7 +6601,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Image Quality Sort"
-msgstr ""
+msgstr "Řazení podle kvality obrázků"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:61
 #, kde-format
@@ -6785,13 +6790,13 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Title"
-msgstr ""
+msgstr "Název"
 
 #: core/dplugins/bqm/metadata/translate/translate.cpp:108
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Caption"
-msgstr ""
+msgstr "Titulek"
 
 #: core/dplugins/bqm/metadata/translate/translate.cpp:109
 #, kde-format
@@ -6803,13 +6808,13 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check metadata entry"
 msgid "Usage Terms"
-msgstr ""
+msgstr "Podmínky použití"
 
 #: core/dplugins/bqm/metadata/translate/translate.cpp:113
 #, kde-format
 msgctxt "@label"
 msgid "Translate to:"
-msgstr ""
+msgstr "Přeložit do:"
 
 #: core/dplugins/bqm/metadata/translate/translate.cpp:151
 #, kde-format
@@ -7166,7 +7171,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "High efficiency image coding"
-msgstr ""
+msgstr "High efficiency image coding"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:133
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:143
@@ -7956,7 +7961,7 @@ msgstr "Úprava úrovní"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Levels File to Load"
-msgstr ""
+msgstr "Vyberte soubor s nastavením úrovní programu Gimp, který se má otevřít"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:902
 #, kde-format
@@ -7967,7 +7972,7 @@ msgstr "Nelze načíst soubor s nastavením úrovní programu Gimp."
 #, kde-format
 msgctxt "@title:window"
 msgid "Gimp Levels File to Save"
-msgstr ""
+msgstr "Soubor s nastavením úrovní programu Gimp, který se má uložit"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:929
 #, kde-format
@@ -8498,6 +8503,11 @@ msgstr "Zarovnat text na střed"
 #, kde-format
 msgid "Align text to a block"
 msgstr "Zarovnat text do bloku"
+
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:195
+#, kde-format
+msgid "Rotation:"
+msgstr "Otočení:"
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:197
 #, kde-format
@@ -9064,7 +9074,7 @@ msgstr "Restaurování"
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Restoration Settings File to Load"
-msgstr ""
+msgstr "Soubor s nastavením restaurování fotografií"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:360
 #, kde-format
@@ -9080,7 +9090,7 @@ msgstr "Nelze otevřít soubor s nastavením restaurování fotografií."
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Restoration Settings File to Save"
-msgstr ""
+msgstr "Soubor s nastavením restaurování fotografií, který se má uložit"
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:401
 #, kde-format
@@ -11042,7 +11052,7 @@ msgstr "Změnit velikost"
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Resizing Settings File to Load"
-msgstr ""
+msgstr "Soubor s nastavením změny velikosti k načtení"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:934
 #, kde-format
@@ -11058,7 +11068,7 @@ msgstr "Nelze otevřít soubor s nastavením změny velikosti."
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Resizing Settings File to Save"
-msgstr ""
+msgstr "Soubor s nastavením změny velikosti k uložení"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:969
 #, kde-format
@@ -11237,7 +11247,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Scan Image"
-msgstr ""
+msgstr "Naskenovat obrázek"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:72
 #, kde-format
@@ -11249,13 +11259,13 @@ msgstr "Naskenovat obrázky"
 #, kde-format
 msgctxt "@title:window"
 msgid "New Image File Name"
-msgstr ""
+msgstr "Nový název souboru obrázku"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:215
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsupported Format"
-msgstr ""
+msgstr "Nepodporovaný formát"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:216
 #, kde-format
@@ -11266,7 +11276,7 @@ msgstr "Cílový formát obrázku \"%1\" není podporován."
 #, kde-format
 msgctxt "@title:window"
 msgid "Cannot Save File"
-msgstr ""
+msgstr "Nelze uložit soubor"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:229
 #, kde-format
@@ -11302,7 +11312,7 @@ msgstr "Ukládám soubor %1 -"
 #, kde-format
 msgctxt "@title:window"
 msgid "File Not Saved"
-msgstr ""
+msgstr "Soubor neuložen"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:304
 #, kde-format
@@ -11314,7 +11324,7 @@ msgstr "Nelze uložit soubor \"%1\""
 #, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
-msgstr ""
+msgstr "Editor geolokace"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:297
 #, kde-format
@@ -11760,7 +11770,7 @@ msgstr "Cílový adresář:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select a Directory in Which to Save the KML File and Pictures"
-msgstr ""
+msgstr "Vyberte adresář pro uložení souboru KML a obrázků"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:107
 #, kde-format
@@ -11974,6 +11984,11 @@ msgstr "Šířka stopy:"
 msgid "Track Color:"
 msgstr "Barva stopy:"
 
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:206
+#, kde-format
+msgid "Opacity (%):"
+msgstr "Krytí (%):"
+
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:212
 #, kde-format
 msgid "Track Altitude:"
@@ -12073,7 +12088,7 @@ msgstr "Záložky"
 #, kde-format
 msgctxt "@title:window"
 msgid "Search Failed"
-msgstr ""
+msgstr "Vyhledávání selhalo"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:274
 #, kde-format
@@ -12096,7 +12111,7 @@ msgstr[2] "%1 obrázků přesunuto na  '%2'"
 #, kde-format
 msgctxt "@title:window"
 msgid "Metadata Editor"
-msgstr ""
+msgstr "Editor metadat"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:113
 #, kde-format
@@ -12132,7 +12147,7 @@ msgstr "Upravit XMP"
 #, kde-format
 msgctxt "@title:window"
 msgid "%1 (%2/%3) - Edit Metadata"
-msgstr ""
+msgstr "%1 (%2/%3) - Upravit metadata"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:85
 #: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:83
@@ -13208,7 +13223,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Date and Time Information"
-msgstr ""
+msgstr "Informace o datu a čase"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:189
 #, kde-format
@@ -13956,7 +13971,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Subject Information"
-msgstr ""
+msgstr "Informace o subjektu"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:231
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:229
@@ -13998,7 +14013,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Status Information"
-msgstr ""
+msgstr "Informace o stavu"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:246
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:244
@@ -14242,7 +14257,7 @@ msgstr "U.N.O ID:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:185
 #, kde-format
 msgid "Set here the Unique Name of Object identifier"
-msgstr ""
+msgstr "Zadejte jedinečný název identifikátoru objektu"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:186
 #, kde-format
@@ -14261,7 +14276,7 @@ msgstr "ID produktu:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:195
 #, kde-format
 msgid "Set here the product identifier"
-msgstr ""
+msgstr "Zadejte identifikátor produktu"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:196
 #, kde-format
@@ -14277,7 +14292,7 @@ msgstr "ID služby:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:205
 #, kde-format
 msgid "Set here the service identifier"
-msgstr ""
+msgstr "Zadejte identifikátor služby"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:206
 #, kde-format
@@ -14293,7 +14308,7 @@ msgstr "ID obálky:"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:215
 #, kde-format
 msgid "Set here the envelope identifier"
-msgstr ""
+msgstr "Zadejte identifikátor obálky"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:216
 #, kde-format
@@ -14914,7 +14929,7 @@ msgstr ""
 #, kde-format
 msgctxt "content description"
 msgid "Captions:"
-msgstr ""
+msgstr "Popisky:"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:89
 #, kde-format
@@ -14934,7 +14949,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:111
 #, kde-format
 msgid "Set here the necessary copyright notice."
-msgstr ""
+msgstr "Zadejte potřebný odkaz na autorské právo."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:113
 #, kde-format
@@ -15061,37 +15076,37 @@ msgstr "Obsah"
 #, kde-format
 msgctxt "@item"
 msgid "Origin"
-msgstr ""
+msgstr "Původ"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:122
 #, kde-format
 msgctxt "@item"
 msgid "Credits"
-msgstr ""
+msgstr "Zásluhy"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:126
 #, kde-format
 msgctxt "@item"
 msgid "Subjects"
-msgstr ""
+msgstr "Témata"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:130
 #, kde-format
 msgctxt "@item"
 msgid "Keywords"
-msgstr ""
+msgstr "Klíčová slova"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:134
 #, kde-format
 msgctxt "@item"
 msgid "Categories"
-msgstr ""
+msgstr "Kategorie"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:138
 #, kde-format
 msgctxt "@item"
 msgid "Status"
-msgstr ""
+msgstr "Stav"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:142
 #: core/libs/dialogs/solidhardwaredlg.cpp:294
@@ -15445,7 +15460,7 @@ msgstr "Atributy:"
 #, kde-format
 msgctxt "@info"
 msgid "Set here the editorial attribute description"
-msgstr ""
+msgstr "Zadejte popis redakčních atributů"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:211
 #, kde-format
@@ -15720,7 +15735,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Adjust Time & Date"
-msgstr ""
+msgstr "Upravit datum a čas"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:110
 #, kde-format
@@ -16097,7 +16112,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Calendar"
-msgstr ""
+msgstr "Vytvořit kalendář"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:114
 #, kde-format
@@ -16131,7 +16146,7 @@ msgstr "Soubor kalendáře (*.ics)"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Calendar Data File"
-msgstr ""
+msgstr "Vyberte soubor kalendáře"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:220
 #, kde-format
@@ -16161,7 +16176,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Calendar"
-msgstr ""
+msgstr "Vytisknout kalendář"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:297
 #, kde-format
@@ -16188,7 +16203,7 @@ msgstr "Tisk dokončen"
 #, kde-format
 msgctxt "@title:window"
 msgid "DNG Converter"
-msgstr ""
+msgstr "DNG převaděč"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:106
 #, kde-format
@@ -16590,7 +16605,7 @@ msgstr "Vyprázdnit vše"
 #, kde-format
 msgctxt "@title:window"
 msgid "Exposure Blending"
-msgstr ""
+msgstr "Mísení expozice"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:136
 #, kde-format
@@ -16602,7 +16617,7 @@ msgstr "&Uložit"
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Process and save selected items."
-msgstr ""
+msgstr "Zpracování a uložení vybraných položek."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:142
 #, kde-format
@@ -16614,7 +16629,7 @@ msgstr "Ná&hled"
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Process a preview of bracketed images stack with current settings."
-msgstr ""
+msgstr "Zpracování náhledů sekvence obrázků s aktuálním nastavením."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:148
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:135
@@ -17391,7 +17406,7 @@ msgstr "Název galerie:"
 #, kde-format
 msgctxt "@label"
 msgid "Destination folder:"
-msgstr ""
+msgstr "Cílová složka:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:85
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:108
@@ -17400,7 +17415,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Destination Folder"
-msgstr ""
+msgstr "Cílová složka"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:94
 #, kde-format
@@ -17460,7 +17475,7 @@ msgstr "Autor: %1<br/><br/>"
 #, kde-format
 msgctxt "@title:window"
 msgid "Create HTML Gallery"
-msgstr ""
+msgstr "Vytvořit galerii HTML"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:90
 #, kde-format
@@ -17630,7 +17645,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Share Files With DLNA Media Server"
-msgstr ""
+msgstr "Sdílet soubory pomocí serveru médií DLNA"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:150
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:68
@@ -17667,7 +17682,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Media Server Contents"
-msgstr ""
+msgstr "Obsah serveru médií"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:227
 #, kde-format
@@ -17814,13 +17829,13 @@ msgstr "Server MJPEG nelze spustit."
 #, kde-format
 msgctxt "@title:window"
 msgid "Share Files With MJPEG Stream Server"
-msgstr ""
+msgstr "Sdílet soubory pomocí serveru proudů MJPEG"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg.cpp:97
 #, kde-format
 msgctxt "@title:window"
 msgid "MJPEG Server Contents"
-msgstr ""
+msgstr "Obsah serveru MJPEG"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg.cpp:98
 #, kde-format
@@ -18333,7 +18348,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "&Start OCR"
-msgstr ""
+msgstr "&Spustit OCR"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:164
 #, kde-format
@@ -18348,7 +18363,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Text Recognition"
-msgstr ""
+msgstr "Rozpoznávání textu"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:218
 #, kde-format
@@ -18405,7 +18420,7 @@ msgstr "Úspěch"
 #, kde-format
 msgctxt "@title:window"
 msgid "Text Converter"
-msgstr ""
+msgstr "Převod textu"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:586
 #, kde-format
@@ -18464,7 +18479,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Process Selected Items"
-msgstr ""
+msgstr "Zpracovat vybrané položky"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:91
 #, kde-format
@@ -19798,7 +19813,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Creator"
-msgstr ""
+msgstr "Tvůrce výtisku"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:76
 #, kde-format
@@ -19878,7 +19893,7 @@ msgstr "Odstranit"
 #, kde-format
 msgctxt "@title:window"
 msgid "Custom Layout"
-msgstr ""
+msgstr "Vlastní rozvržení"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1102
 #, kde-format
@@ -20053,7 +20068,7 @@ msgstr "Soubor s vlastnostmi obrázku byl vytvořen"
 #, kde-format
 msgctxt "@title:window"
 msgid "Processing Failed"
-msgstr ""
+msgstr "Zpracování selhalo"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:335
 #, kde-format
@@ -20370,7 +20385,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Send by Email"
-msgstr ""
+msgstr "Poslat e-mailem"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailwizard.cpp:84
 #, kde-format
@@ -20540,7 +20555,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Create a Video Slideshow"
-msgstr ""
+msgstr "Vytvořit video promítání"
 
 #: core/dplugins/generic/tools/videoslideshow/wizard/vidslidewizard.cpp:87
 #, kde-format
@@ -20647,7 +20662,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "WallPaper Settings"
-msgstr ""
+msgstr "Nastavení tapet"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:77
 #, kde-format
@@ -20720,7 +20735,7 @@ msgstr ""
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:180
 #, kde-format
 msgid "OpenGL Error"
-msgstr ""
+msgstr "Chyba OpenGL"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:173
 #, kde-format
@@ -20736,7 +20751,7 @@ msgstr "Nenalezen OpenGL kontext"
 #, kde-format
 msgctxt "@title:window"
 msgid "Soundtrack Preview"
-msgstr ""
+msgstr "Vyzkoušet hudbu"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:104
 #, kde-format
@@ -20803,7 +20818,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Sound Files"
-msgstr ""
+msgstr "Výběr zvukových souborů"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:430
 #, kde-format
@@ -20819,7 +20834,7 @@ msgstr "Dolů lze posunovat vždy pouze jeden obrázek."
 #, kde-format
 msgctxt "@title:window"
 msgid "Load Playlist"
-msgstr ""
+msgstr "Načíst seznam skladeb"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:490
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:549
@@ -20831,7 +20846,7 @@ msgstr "Seznam skladeb (*.m3u)"
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Playlist"
-msgstr ""
+msgstr "Uložit seznam skladeb"
 
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.cpp:609
 #, kde-format
@@ -21113,6 +21128,25 @@ msgstr "Barvy"
 msgid "Outlined Text"
 msgstr "Obtažený text"
 
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:140
+#, kde-format
+msgid "Background opacity:"
+msgstr "Krytí pozadí:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:147
+#, kde-format
+msgid "Font color:"
+msgstr "Barva písma:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:154
+#: core/libs/dimg/filters/transform/freerotationsettings.cpp:118
+#, kde-format
+msgid "Background color:"
+msgstr "Barva pozadí:"
+
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:274
 #, kde-format
 msgid "%1 image [%2]"
@@ -21248,7 +21282,7 @@ msgstr "Použít přechody Open&GL"
 #, kde-format
 msgctxt "@title:window"
 msgid "Presentation"
-msgstr ""
+msgstr "Prezentace"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentationdlg.cpp:82
 #, kde-format
@@ -21424,7 +21458,7 @@ msgstr "Prodleva:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Image"
-msgstr ""
+msgstr "Smazat obrázek"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:254
 #: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:430
@@ -21508,7 +21542,7 @@ msgstr "Skvrny"
 #, kde-format
 msgctxt "@title:window"
 msgid "Slideshow"
-msgstr ""
+msgstr "Promítání"
 
 #: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:665
 #, kde-format
@@ -21522,7 +21556,7 @@ msgstr "Spuštěna prezentace"
 #, kde-format
 msgctxt "@title:window"
 msgid "Slideshow Settings"
-msgstr ""
+msgstr "Nastavení promítání"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:120
 #, kde-format
@@ -21906,7 +21940,7 @@ msgstr "Chyba při získávání seznamu složek"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Box"
-msgstr ""
+msgstr "Exportovat do Boxu"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:82
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:80
@@ -21923,13 +21957,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Start Upload"
-msgstr ""
+msgstr "Spustit odesílání"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:83
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Box"
-msgstr ""
+msgstr "Spustit odesílání do Boxu"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:245
 #: core/dplugins/generic/webservices/google/gswindow.cpp:491
@@ -22032,7 +22066,7 @@ msgstr "Export do Boxu"
 #, kde-format
 msgctxt "@title:window"
 msgid "Uploading Failed"
-msgstr ""
+msgstr "Odeslání selhalo"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:326
 #, kde-format
@@ -22056,7 +22090,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Login Failed"
-msgstr ""
+msgstr "Přihlášení selhalo"
 
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:385
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:385
@@ -22107,13 +22141,13 @@ msgstr "Exportovat do &Dropboxu..."
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Dropbox"
-msgstr ""
+msgstr "Exportovat do Dropboxu"
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:81
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Dropbox"
-msgstr ""
+msgstr "Spustit odesílání do Dropboxu"
 
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:245
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:248
@@ -22220,7 +22254,7 @@ msgstr "Export do &Facebooku..."
 #, kde-format
 msgctxt "@title:window"
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: core/dplugins/generic/webservices/facebook/fbplugin.cpp:121
 #, kde-format
@@ -22292,13 +22326,13 @@ msgstr "Potvrzení předchozího zadání..."
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Facebook Web Service"
-msgstr ""
+msgstr "Export do Facebook Web Service"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:118
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Facebook web service"
-msgstr ""
+msgstr "Spustit odesílání do Facebook web Service"
 
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:125
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:314
@@ -22352,7 +22386,7 @@ msgstr "Umístění cíle:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Target Folder"
-msgstr ""
+msgstr "Cílová složka"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:113
 #, kde-format
@@ -22362,7 +22396,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:115
 #, kde-format
 msgid "Target file behavior:"
-msgstr ""
+msgstr "Chování cílového souboru:"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:117
 #, kde-format
@@ -22419,14 +22453,14 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Start Export"
-msgstr ""
+msgstr "Spustit export"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:95
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:75
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start export to the specified target"
-msgstr ""
+msgstr "Spustit export do zadaného cíle"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwindow.cpp:217
 #, kde-format
@@ -22489,7 +22523,7 @@ msgstr "Seznam obrázků pro odeslání do zadaného cíle."
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Target..."
-msgstr ""
+msgstr "Vyberte cíl..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:163
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:101
@@ -22506,13 +22540,13 @@ msgstr "<i>nevybráno</i>"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Remote Storage"
-msgstr ""
+msgstr "Exportovat do vzdáleného úložiště"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:186
 #, kde-format
 msgctxt "@title:window"
 msgid "Upload not Completed"
-msgstr ""
+msgstr "Odesílání nebylo dokončeno"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwindow.cpp:187
 #, kde-format
@@ -22543,25 +22577,25 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Import from Remote Storage"
-msgstr ""
+msgstr "Importovat ze vzdáleného úložiště"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Start Import"
-msgstr ""
+msgstr "Spustit import"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:68
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start importing the specified images into the currently selected album."
-msgstr ""
+msgstr "Spustit import zadaných obrázků do aktuálně vybraného alba."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:138
 #, kde-format
 msgctxt "@title:window"
 msgid "Import not Completed"
-msgstr ""
+msgstr "Import nebyl dokončen"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwindow.cpp:139
 #, kde-format
@@ -23028,14 +23062,14 @@ msgstr "Méně možností značek"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to %1 Web Service"
-msgstr ""
+msgstr "Exportovat do webové služby %1"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:187
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:240
 #, kde-format
 msgctxt "@action:button"
 msgid "Start Uploading"
-msgstr ""
+msgstr "Spustit odesílání"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:614
 #, kde-format
@@ -23294,38 +23328,38 @@ msgstr "Sestaví řetězec sloučených značek"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Google Drive"
-msgstr ""
+msgstr "Exportovat do Google Drive"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:143
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Google Drive"
-msgstr ""
+msgstr "Spustit odesílání do Google Drive"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:187
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Google Photos Service"
-msgstr ""
+msgstr "Exportovat do služby Google Photos"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:190
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Google Photos service"
-msgstr ""
+msgstr "Spustit odesílání do služby Google Photos"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:196
 #, kde-format
 msgctxt "@title:window"
 msgid "Import from Google Photos Service"
-msgstr ""
+msgstr "Importovat ze služby Google Photos"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:198
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:123
 #, kde-format
 msgctxt "@action:button"
 msgid "Start Download"
-msgstr ""
+msgstr "Spustit stahování"
 
 #: core/dplugins/generic/webservices/google/gswindow.cpp:199
 #, kde-format
@@ -23518,7 +23552,7 @@ msgstr "Vytvořit novou galerii"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to ImageShack"
-msgstr ""
+msgstr "Export do ImageShacku"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:112
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:156
@@ -23526,13 +23560,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Upload"
-msgstr ""
+msgstr "Odeslat"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:113
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to ImageShack web service"
-msgstr ""
+msgstr "Spustit odeslání do webové služby ImageShack"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:241
 #, kde-format
@@ -23649,13 +23683,13 @@ msgstr "Odeslat anonymně"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to imgur.com"
-msgstr ""
+msgstr "Exportovat do Imgur.com"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:157
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Imgur"
-msgstr ""
+msgstr "Spustit odesílání do Imgur"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:243
 #, kde-format
@@ -23666,7 +23700,7 @@ msgstr "<i>Nepřihlášen</i>"
 #, kde-format
 msgctxt "@title:window"
 msgid "Authorization Failed"
-msgstr ""
+msgstr "Ověření selhalo"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:251
 #, kde-format
@@ -23763,20 +23797,20 @@ msgstr "Přihlášení"
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Creating Observation"
-msgstr ""
+msgstr "Chyba při vytváření pozorování"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1585
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1703
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Uploading Photo"
-msgstr ""
+msgstr "Chyba při odesílání fotografie"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1815
 #, kde-format
 msgctxt "@title:window"
 msgid "ERROR While Deleting Observation"
-msgstr ""
+msgstr "Chyba při mazání pozorování"
 
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1919
 #, kde-format
@@ -24720,13 +24754,13 @@ msgstr "Nastavení odeslání"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to MediaWiki"
-msgstr ""
+msgstr "Exportovat do MediaWiki"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:104
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to MediaWiki"
-msgstr ""
+msgstr "Spustit odesílání do MediaWiki"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:302
 #, kde-format
@@ -24737,7 +24771,7 @@ msgstr "Export MediaWiki"
 #, kde-format
 msgctxt "@title:window"
 msgid "Login Error"
-msgstr ""
+msgstr "Chyba při přihlašování"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwindow.cpp:338
 #, kde-format
@@ -24781,13 +24815,13 @@ msgstr "Exportovat do &Onedrive..."
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Onedrive"
-msgstr ""
+msgstr "Exportovat do Onedrive"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:83
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Onedrive"
-msgstr ""
+msgstr "Spustit odesílání do Onedrive"
 
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:288
 #, kde-format
@@ -24859,13 +24893,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Pinterest"
-msgstr ""
+msgstr "Exportovat do Pinterestu"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:83
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Pinterest"
-msgstr ""
+msgstr "Spustit odesílání na Pinterest"
 
 #: core/dplugins/generic/webservices/pinterest/pwindow.cpp:256
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:257
@@ -25046,7 +25080,7 @@ msgstr "Kvalita obrázku JPEG se změněnou velikostí:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Piwigo Export"
-msgstr ""
+msgstr "Export Piwigo"
 
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:260
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:378
@@ -25253,13 +25287,13 @@ msgstr "Přidávám fotografie %v%"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Rajce.net"
-msgstr ""
+msgstr "Exportovat do &Rajce.net"
 
 #: core/dplugins/generic/webservices/rajce/rajcewindow.cpp:46
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Rajce.net"
-msgstr ""
+msgstr "Spustit odesílání na Rajce.net"
 
 #: core/dplugins/generic/webservices/smugmug/smugnewalbumdlg.cpp:84
 #, kde-format
@@ -25547,25 +25581,25 @@ msgstr "Maximální velikost:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Import from SmugMug Web Service"
-msgstr ""
+msgstr "Import z webové služby SmugMug"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:124
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start download from SmugMug web service"
-msgstr ""
+msgstr "Spustit stahování z webové služby SmugMug"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:130
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to SmugMug Web Service"
-msgstr ""
+msgstr "Export do webové služby SmugMug"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:133
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to SmugMug web service"
-msgstr ""
+msgstr "Spustit odesílání do webové služby SmugMug"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:442
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:451
@@ -25574,7 +25608,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:1018
 #, kde-format
 msgid "SmugMug call failed: %1\n"
-msgstr ""
+msgstr "Volání SmugMug selhalo: %1\n"
 
 #: core/dplugins/generic/webservices/smugmug/smugwindow.cpp:522
 #, kde-format
@@ -25682,7 +25716,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to Twitter"
-msgstr ""
+msgstr "Exportovat do Twitteru"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:84
 #, kde-format
@@ -26128,7 +26162,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Album (%1)"
-msgstr ""
+msgstr "Přejmenovat album (%1)"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:284
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:146
@@ -26286,13 +26320,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Collection not Found"
-msgstr ""
+msgstr "Sbírka nenalezena"
 
 #: core/libs/album/manager/albummanager_database.cpp:459
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Folder"
-msgstr ""
+msgstr "Složka databáze"
 
 #: core/libs/album/manager/albummanager_database.cpp:460
 #, kde-format
@@ -26315,7 +26349,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Upgrade Database"
-msgstr ""
+msgstr "Aktualizovat databázi"
 
 #: core/libs/album/manager/albummanager_database.cpp:472
 #: core/libs/album/manager/albummanager_database.cpp:540
@@ -26324,7 +26358,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Create New Database"
-msgstr ""
+msgstr "Vytvořit novou databázi"
 
 #: core/libs/album/manager/albummanager_database.cpp:529
 #: core/libs/album/manager/albummanager_database.cpp:552
@@ -26333,7 +26367,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "New Database Folder"
-msgstr ""
+msgstr "Nová složka databáze"
 
 #: core/libs/album/manager/albummanager_database.cpp:530
 #, kde-format
@@ -26355,7 +26389,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Copy Current Database"
-msgstr ""
+msgstr "Zkopírovat současnou databázi"
 
 #: core/libs/album/manager/albummanager_database.cpp:553
 #, kde-format
@@ -26406,7 +26440,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Use Existing File"
-msgstr ""
+msgstr "Použít existující soubor"
 
 #: core/libs/album/manager/albummanager_database.cpp:700
 #, kde-format
@@ -26430,7 +26464,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "New database"
-msgstr ""
+msgstr "Nová databáze"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:344
 #, kde-format
@@ -26827,7 +26861,7 @@ msgstr "Obnovit"
 #, kde-format
 msgctxt "@title:window"
 msgid "Scan for Faces"
-msgstr ""
+msgstr "Vyhledat obličeje"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:306
 #, kde-format
@@ -26952,13 +26986,13 @@ msgstr "Bílá"
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "New Album"
-msgstr ""
+msgstr "Nové album"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:117
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
-msgstr ""
+msgstr "Upravit album"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:138
 #, kde-format
@@ -27089,7 +27123,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
-msgstr ""
+msgstr "Nelze spočítat průměr"
 
 #: core/libs/album/widgets/albumpropsedit.cpp:480
 #, kde-format
@@ -27144,7 +27178,7 @@ msgstr[2] "Vyřazeno %1 alb"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Album"
-msgstr ""
+msgstr "Vybrat album"
 
 #: core/libs/album/widgets/albumselectors.cpp:136
 #: core/libs/album/widgets/albumselectors.cpp:492
@@ -28002,7 +28036,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
-msgstr ""
+msgstr "Konflikt souborů"
 
 #: core/libs/database/utils/ifaces/dio.cpp:327
 #, kde-format
@@ -28021,19 +28055,19 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
-msgstr ""
+msgstr "Přejmenovat automaticky"
 
 #: core/libs/database/utils/ifaces/dio.cpp:338
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
-msgstr ""
+msgstr "Automaticky přepsat"
 
 #: core/libs/database/utils/ifaces/dio.cpp:340
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
-msgstr ""
+msgstr "Automaticky přeskočit"
 
 #: core/libs/database/utils/ifaces/dio.cpp:766
 #, kde-format
@@ -28238,6 +28272,15 @@ msgid ""
 "such as NFS, cannot be used here. For performance reasons, it is also "
 "recommended not to use removable media.</p><p></p>"
 msgstr ""
+"<p>Zvolte si umístění, kde budou uloženy soubory databáze. Budou celkem "
+"čtyři databáze: jedna pro uložení všech vlastností sbírek, jedna pro uložení "
+"komprimovaných náhledů a jedna pro uložení metadat rozpoznávání obličejů a "
+"jedna pro uložení otisků podobnosti.<br/>Aby bylo možné upravovat vlastnosti "
+"obrázků, je vyžadováno právo zápisu.</p><p>Databáze jsou nejdůležitější "
+"soubory digiKamu. Zvolte umístění na rychlém disku (například SSD) s "
+"dostatkem místa - obzvláště pro databázi náhledů.</p><p>Poznámka: Nelze "
+"použít vzdálený systém souborů (například NFS). Zároveň z výkonových důvodů "
+"není vhodné používat výměnná média.</p><p></p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:113
 #, kde-format
@@ -28583,7 +28626,7 @@ msgstr "Složka databáze náhledů:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Connection Test"
-msgstr ""
+msgstr "Test připojení databáze"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:595
 #, kde-format
@@ -28634,7 +28677,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Configuration"
-msgstr ""
+msgstr "Nastavení databáze"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:844
 #, kde-format
@@ -28667,7 +28710,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder?"
-msgstr ""
+msgstr "Vytvořit složku pro databázi?"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:882
 #, kde-format
@@ -28682,7 +28725,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Database Folder Failed"
-msgstr ""
+msgstr "Nelze vytvořit složku pro databázi"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:894
 #, kde-format
@@ -28697,7 +28740,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "No Database Write Access"
-msgstr ""
+msgstr "Chybí oprávnění k zápisu do databáze"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:920
 #, kde-format
@@ -28712,7 +28755,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Database Statistics"
-msgstr ""
+msgstr "Statistika databáze"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:47
 #, kde-format
@@ -28982,13 +29025,13 @@ msgstr "&Přesunout do koše"
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
-msgstr ""
+msgstr "Smazat vybrané položky"
 
 #: core/libs/dialogs/deletedialog.cpp:667
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"
-msgstr ""
+msgstr "Mazání vybraného alba"
 
 #: core/libs/dialogs/dmessagebox.cpp:109
 #, kde-format
@@ -29009,13 +29052,13 @@ msgstr "Znovu se nedotazovat"
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings for Saving Image File"
-msgstr ""
+msgstr "Nastavení uložení souboru s obrázkem"
 
 #: core/libs/dialogs/iccprofileinfodlg.cpp:39
 #, kde-format
 msgctxt "@title:window"
 msgid "Color Profile Info - %1"
-msgstr ""
+msgstr "Info o barevném profilu - %1"
 
 #: core/libs/dialogs/imagedialog.cpp:233
 #, kde-format
@@ -29106,7 +29149,7 @@ msgstr "<i>Video kodek:</i>"
 #, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
-msgstr ""
+msgstr "Sdílené knihovny a informace o komponentách"
 
 #: core/libs/dialogs/infodlg.cpp:74
 #: core/libs/progressmanager/dhistoryview.cpp:149
@@ -29190,7 +29233,7 @@ msgstr "Neznámý"
 #, kde-format
 msgctxt "@title:window"
 msgid "List of Supported RAW Cameras"
-msgstr ""
+msgstr "Seznam podporovaných fotoaparátů RAW"
 
 #: core/libs/dialogs/rawcameradlg.cpp:129
 #, kde-format
@@ -29212,7 +29255,7 @@ msgstr[2] ""
 #, kde-format
 msgctxt "@title:window"
 msgid "List of Detected Hardware"
-msgstr ""
+msgstr "Seznam detekovaného hardwaru"
 
 #: core/libs/dialogs/solidhardwaredlg.cpp:86
 #, kde-format
@@ -29933,7 +29976,7 @@ msgstr "Jas"
 #, kde-format
 msgctxt "@title:window"
 msgid "Black & White Settings File to Load"
-msgstr ""
+msgstr "Soubor s nastavením převodu na černobílou k načtení"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:547
 #, kde-format
@@ -29949,7 +29992,7 @@ msgstr "Nelze otevřít soubor s nastavením převodu na černobílou."
 #, kde-format
 msgctxt "@title:window"
 msgid "Black & White Settings File to Save"
-msgstr ""
+msgstr "Soubor s nastavením převodu na černobílou k uložení"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:639
 #, kde-format
@@ -30084,7 +30127,7 @@ msgstr "Celkem: %1 (%)"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Gains Mixer File to Load"
-msgstr ""
+msgstr "Vyberte soubor zesvětlovacího směšovače GIMPu, který se má otevřít"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:625
 #, kde-format
@@ -30096,7 +30139,7 @@ msgstr "Nelze načíst nastavení zesvětlovacího směšovače GIMPu ze souboru
 #, kde-format
 msgctxt "@title:window"
 msgid "Gimp Gains Mixer File to Save"
-msgstr ""
+msgstr "Soubor zesvětlovacího směšovače GIMPu k uložení"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:714
 #, kde-format
@@ -30254,7 +30297,7 @@ msgstr "Úprava křivek"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Curves File to Load"
-msgstr ""
+msgstr "Vyberte soubor křivek programu GIMP k načtení"
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:254
 #, kde-format
@@ -30265,7 +30308,7 @@ msgstr "Nelze načíst z textového souboru křivek programu GIMP."
 #, kde-format
 msgctxt "@title:window"
 msgid "Gimp Curves File to Save"
-msgstr ""
+msgstr "Soubor křivek programu GIMP k uložení"
 
 #: core/libs/dimg/filters/curves/curvessettings.cpp:275
 #, kde-format
@@ -31542,7 +31585,7 @@ msgstr "Etapa 4"
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Local Contrast Settings File to Load"
-msgstr ""
+msgstr "Soubor pro nastavení lokálního kontrastu k načtení"
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:655
 #, kde-format
@@ -31558,7 +31601,7 @@ msgstr "Nelze načíst nastavení z textového souboru pro lokální kontrast."
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Local Contrast Settings File to Save"
-msgstr ""
+msgstr "Soubor pro nastavení lokálního kontrastu k uložení"
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:727
 #, kde-format
@@ -32187,7 +32230,7 @@ msgstr "Červená chrominance"
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Noise Reduction Settings File to Load"
-msgstr ""
+msgstr "Soubor obsahující nastavení redukce šumu fotografie"
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:390
 #, kde-format
@@ -32203,7 +32246,7 @@ msgstr "Nelze načíst nastavení redukce šumu fotografie z textového souboru.
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Noise Reduction Settings File to Save"
-msgstr ""
+msgstr "Soubor nastavení redukce šumu fotografie k uložení"
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:443
 #, kde-format
@@ -32397,7 +32440,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Load"
-msgstr ""
+msgstr "Soubor k načtení nastavení doostření"
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:533
 #, kde-format
@@ -32413,7 +32456,7 @@ msgstr "Nelze otevřít soubor s nastavením doostření."
 #, kde-format
 msgctxt "@title:window"
 msgid "Photograph Refocus Settings File to Save"
-msgstr ""
+msgstr "Soubor, do nějž se má uložit nastavení doostření fotografie"
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:594
 #, kde-format
@@ -32834,7 +32877,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "White Color Balance Settings File to Load"
-msgstr ""
+msgstr "Soubor pro načtení nastavení vyvážení bílé"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:540
 #, kde-format
@@ -32852,7 +32895,7 @@ msgstr "Nelze načíst nastavení z textového souboru vyvážení bílé."
 #, kde-format
 msgctxt "@title:window"
 msgid "White Color Balance Settings File to Save"
-msgstr ""
+msgstr "Soubor nastavení vyvážení bílé k uložení"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:596
 #, kde-format
@@ -33012,7 +33055,7 @@ msgstr "MIME-typy"
 #, kde-format
 msgctxt "@title:window"
 msgid "About %1 Plugin"
-msgstr ""
+msgstr "O modulu %1"
 
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:81
 #, kde-format
@@ -33267,7 +33310,7 @@ msgstr "Umístění nově vytvářeného alba (nepovinné)."
 #, kde-format
 msgctxt "@title:window"
 msgid "Account Selector"
-msgstr ""
+msgstr "Výběr účtu"
 
 #: core/libs/dplugins/webservices/wsselectuserdlg.cpp:65
 #, kde-format
@@ -33514,7 +33557,7 @@ msgstr "Uložit seznam."
 #, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Load"
-msgstr ""
+msgstr "Vyberte seznam souborů s obrázky pro načtení"
 
 #: core/libs/dplugins/widgets/ditemslist.cpp:581
 #: core/libs/dplugins/widgets/ditemslist.cpp:663
@@ -33527,7 +33570,7 @@ msgstr "Všechny soubory (*)"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select the Image File List to Save"
-msgstr ""
+msgstr "Vyberte seznam souborů s obrázky pro uložení"
 
 #: core/libs/dplugins/widgets/ditemslist_view.cpp:40
 #, kde-format
@@ -33582,7 +33625,7 @@ msgstr "Uživatel6"
 #, kde-format
 msgctxt "@action: button"
 msgid "Help"
-msgstr ""
+msgstr "Nápověda"
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:69
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:66
@@ -33672,7 +33715,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Help"
-msgstr ""
+msgstr "Nápověda"
 
 #: core/libs/dtrash/dtrashitemmodel.cpp:259
 #, kde-format
@@ -36183,7 +36226,7 @@ msgstr "Vždy provádět změny bez potvrzení"
 #, kde-format
 msgctxt "@title:window"
 msgid "Apply Changes?"
-msgstr ""
+msgstr "Provést změny?"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:369
 #, kde-format
@@ -38203,7 +38246,7 @@ msgstr "Smazat značku '%1'?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Tag"
-msgstr ""
+msgstr "Odstranit značku"
 
 #: core/libs/tags/engine/tagmodificationhelper.cpp:381
 #, kde-format
@@ -38439,7 +38482,7 @@ msgstr "Předchozí značky byly změněny. Uložit změny? "
 #, kde-format
 msgctxt "@title:window"
 msgid "Tags Manager"
-msgstr ""
+msgstr "Správce značek"
 
 #: core/libs/tags/manager/tagsmanager.cpp:338
 #, kde-format
@@ -38487,9 +38530,9 @@ msgstr[2] "Smazat značky %2?"
 msgctxt "@title:window"
 msgid "Delete tag"
 msgid_plural "Delete tags"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Smazat značku"
+msgstr[1] "Smazat značky"
+msgstr[2] "Smazat značky"
 
 #: core/libs/tags/manager/tagsmanager.cpp:500
 #, kde-format
@@ -38688,13 +38731,13 @@ msgstr "Obojí"
 #, kde-format
 msgctxt "@title:window"
 msgid "New Tag"
-msgstr ""
+msgstr "Nová značka"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:117
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Tag"
-msgstr ""
+msgstr "Upravit značku"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:141
 #, kde-format
@@ -38756,7 +38799,7 @@ msgstr "<b>Vlastnosti značky<br/>\"%1\"</b>"
 #, kde-format
 msgctxt "@title:window"
 msgid "Tag Creation Error"
-msgstr ""
+msgstr "Chyba při vytváření značky"
 
 #: core/libs/tags/widgets/tageditdlg.cpp:544
 #, kde-format
@@ -39346,7 +39389,7 @@ msgstr "Nelze vytvořit náhled %1"
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to Initialize Thumbnails Database"
-msgstr ""
+msgstr "Selhala inicializace databáze náhledů"
 
 #: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:154
 #, kde-format
@@ -39357,7 +39400,7 @@ msgstr "Chybové hlášení: %1"
 #, kde-format
 msgctxt "@title:window"
 msgid "Determine Time Difference With Clock Photo"
-msgstr ""
+msgstr "Určit rozdíl z času pořízení obrázku"
 
 #: core/libs/timeadjust/clockphotodialog.cpp:90
 #, kde-format
@@ -40611,7 +40654,7 @@ msgstr ""
 #: core/libs/video/qtav/config/MiscPage.cpp:99
 #, kde-format
 msgid "Windows only"
-msgstr ""
+msgstr "Pouze Windows"
 
 #: core/libs/video/qtav/config/MiscPage.cpp:100
 #, kde-format
@@ -40866,13 +40909,13 @@ msgstr "O Qt"
 #, kde-format
 msgctxt "@title:window"
 msgid "About QtAV"
-msgstr ""
+msgstr "O QtAV"
 
 #: core/libs/video/qtav/widgets/QtAVWidgets_Global.cpp:232
 #, kde-format
 msgctxt "@title:window"
 msgid "About FFmpeg"
-msgstr ""
+msgstr "O FFmpeg"
 
 #: core/libs/widgets/combo/dcombobox.cpp:61
 #: core/libs/widgets/range/dnuminput.cpp:71
@@ -40886,7 +40929,7 @@ msgstr "Obnovit výchozí hodnotu"
 #, kde-format
 msgctxt "@title:window"
 msgid "Navigate to %1"
-msgstr ""
+msgstr "Přejít na %1"
 
 #: core/libs/widgets/files/dbinarysearch.cpp:62
 #, kde-format
@@ -41745,7 +41788,7 @@ msgstr ""
 #: core/libs/widgets/mainview/daboutdata.cpp:68
 #, kde-format
 msgid "(c) 2001-2023, digiKam developers team"
-msgstr ""
+msgstr "(c) 2001-2023, team vývojářů digiKam"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:80
 #, kde-format
@@ -43568,7 +43611,7 @@ msgstr "Arabsky (Irák)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Arabic (Israel)"
-msgstr ""
+msgstr "Arabština (Izrael)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:52
 #, kde-format
@@ -43604,7 +43647,7 @@ msgstr "Arabsky (Maroko)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Arabic (Mauritania)"
-msgstr ""
+msgstr "Arabština (Mauretánie)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:58
 #, kde-format
@@ -43634,13 +43677,13 @@ msgstr "Arabsky (Saudská Arábie)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Arabic (Sudan)"
-msgstr ""
+msgstr "Arabština (Súdán)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:63
 #, kde-format
 msgctxt "@info: country code"
 msgid "Arabic (Somalia)"
-msgstr ""
+msgstr "Arabština (Somálsko)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:64
 #, kde-format
@@ -43652,7 +43695,7 @@ msgstr "Arabsky (Sýrie)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Arabic (Chad)"
-msgstr ""
+msgstr "Arabština (Čad)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:66
 #, kde-format
@@ -43688,7 +43731,7 @@ msgstr "Baškirský (Rusko)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Bengali (Bangladesh)"
-msgstr ""
+msgstr "Bengálština (Bangladéš)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:72
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:76
@@ -43701,7 +43744,7 @@ msgstr "Bengálsky (Indie)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Bengali (Singapore)"
-msgstr ""
+msgstr "Bengálština (Singapur)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:74
 #, kde-format
@@ -43762,19 +43805,20 @@ msgstr "Katalánsky (Francie)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Cebuano (Philippines)"
-msgstr ""
+msgstr "Cebujština (Filipíny)"
 
+# KM
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:86
 #, kde-format
 msgctxt "@info: country code"
 msgid "Chamorro (Guam)"
-msgstr ""
+msgstr "Čamorština (Guam)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:87
 #, kde-format
 msgctxt "@info: country code"
 msgid "Chamorro (Northern Mariana Islands)"
-msgstr ""
+msgstr "Čamorština (Společenství Severních Marian)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:88
 #, kde-format
@@ -48126,11 +48170,12 @@ msgctxt "@title: translator language code"
 msgid "Code (Language-Country)"
 msgstr ""
 
+# Tohle vypadá na název vlastnosti. Jméno bycvh nechal pro lidi a zvířata.
 #: core/libs/widgets/text/localizeconfig.cpp:59
 #, kde-format
 msgctxt "@title: translator language name"
 msgid "Name"
-msgstr ""
+msgstr "Název"
 
 #: core/libs/widgets/text/localizeconfig.cpp:112
 #, kde-format
@@ -48191,7 +48236,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Translate to %1"
-msgstr ""
+msgstr "Přeložit do %1"
 
 #: core/libs/widgets/text/localizeselector.cpp:163
 #, kde-format
@@ -48203,7 +48248,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Remove this entry"
-msgstr ""
+msgstr "Odstranit tuto položku"
 
 #: core/libs/widgets/text/localizeselector.cpp:263
 #, kde-format
@@ -48252,25 +48297,26 @@ msgstr ""
 #, kde-format
 msgctxt "@title: dictionary language code"
 msgid "Code"
-msgstr ""
+msgstr "Kód"
 
+# Tohle vypadá na název vlastnosti. Jméno bycvh nechal pro lidi a zvířata.
 #: core/libs/widgets/text/spellcheckconfig.cpp:122
 #, kde-format
 msgctxt "@title: dictionary language name"
 msgid "Name"
-msgstr ""
+msgstr "Název"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:129
 #, kde-format
 msgctxt "@title"
 msgid "Available Backends"
-msgstr ""
+msgstr "Dostupné podpůrné vrstvy"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:148
 #, kde-format
 msgctxt "@title"
 msgid "Ignored Words"
-msgstr ""
+msgstr "Ignorovaná slova"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:154
 #, kde-format
@@ -48300,7 +48346,7 @@ msgstr "Odeb&rat"
 #, kde-format
 msgctxt "@action"
 msgid "&Replace"
-msgstr ""
+msgstr "Nah&radit"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:106
 #, kde-format
@@ -48552,13 +48598,13 @@ msgstr "Velikost ikony: %1"
 #, kde-format
 msgctxt "@title:window"
 msgid "New Bookmark"
-msgstr ""
+msgstr "Nová záložka"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:103
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Bookmark"
-msgstr ""
+msgstr "Upravit záložku"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:119
 #, kde-format
@@ -48670,7 +48716,7 @@ msgstr "Upravit současnou záložku v seznamu"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add New Bookmark"
-msgstr ""
+msgstr "Přidat záložku"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:246
 #, kde-format
@@ -48789,7 +48835,7 @@ msgstr "Smazat soubor"
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Saving File"
-msgstr ""
+msgstr "Chyba při ukládání souboru"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:79
 #, kde-format
@@ -48826,7 +48872,7 @@ msgstr "Nelze smazat \"%1\""
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Images from Folder"
-msgstr ""
+msgstr "Otevřít obrázky ze složky"
 
 #: core/showfoto/main/showfoto_open.cpp:299
 #, kde-format
@@ -48837,7 +48883,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Loading File"
-msgstr ""
+msgstr "Chyba při načítání souboru"
 
 #: core/showfoto/main/showfoto_open.cpp:322
 #, kde-format
@@ -49877,7 +49923,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
-msgstr ""
+msgstr "Nelze spočítat průměr"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:765
 #, kde-format
@@ -50147,7 +50193,7 @@ msgstr "Zpracovávám..."
 #, kde-format
 msgctxt "@title:window"
 msgid "Renaming Images"
-msgstr ""
+msgstr "Přejmenování obrázků"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:161
 #, kde-format
@@ -50166,7 +50212,7 @@ msgstr[2] ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Again"
-msgstr ""
+msgstr "Přejmenovat znovu"
 
 #: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:172
 #, kde-format
@@ -51026,7 +51072,7 @@ msgstr "Pořadové číslo (vlastní začátek)"
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:66
 #, kde-format
 msgid "Sequence number (custom step)"
-msgstr ""
+msgstr "Pořadové číslo (vlastní krok)"
 
 #: core/utilities/advancedrename/parser/options/sequencenumberoption.cpp:67
 #, kde-format
@@ -51369,7 +51415,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Root Album Folder?"
-msgstr ""
+msgstr "Vytvořit složku pro kořenové album?"
 
 #: core/utilities/firstrun/collectionpage.cpp:180
 #, kde-format
@@ -51384,7 +51430,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Root Album Folder Failed"
-msgstr ""
+msgstr "Nelze vytvořit složku pro kořenové album"
 
 #: core/utilities/firstrun/collectionpage.cpp:193
 #, kde-format
@@ -52206,7 +52252,7 @@ msgstr "Přidat komentář do záložek"
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Geolocation Bookmarks"
-msgstr ""
+msgstr "Upravit záložky pro geolokaci"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:228
 #: core/utilities/setup/album/setupcategory.cpp:99
@@ -52275,7 +52321,7 @@ msgstr "Komentář"
 #, kde-format
 msgctxt "@title:window"
 msgid "Loading Bookmark"
-msgstr ""
+msgstr "Načítání záložky"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:810
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:945
@@ -52319,12 +52365,12 @@ msgstr "%1 Záložky.xbel"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export error"
-msgstr ""
+msgstr "Chyba exportu"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:970
 #, kde-format
 msgid "Error saving bookmarks"
-msgstr ""
+msgstr "chyba při ukládání záložek"
 
 #: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkowner.cpp:145
 #, kde-format
@@ -52478,9 +52524,9 @@ msgstr[2] "Následujících %1 souborů GPX nemůže být načteno:"
 msgctxt "@title:window"
 msgid "Error Loading GPX File"
 msgid_plural "Error Loading GPX Files"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Chyba při načítání souboru GPX"
+msgstr[1] "Chyba při načítání souborů GPX"
+msgstr[2] "Chyba při načítání souborů GPX"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:435
 #, kde-format
@@ -52491,7 +52537,7 @@ msgstr "Korelace obrázků - "
 #, kde-format
 msgctxt "@title:window"
 msgid "Correlation Failed"
-msgstr ""
+msgstr "Korelace selhala"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:518
 #, kde-format
@@ -52504,7 +52550,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Correlation Succeeded"
-msgstr ""
+msgstr "Korelace byla úspěšná"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:524
 #, kde-format
@@ -52520,7 +52566,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Correlation Finished"
-msgstr ""
+msgstr "Korelace byla dokončena"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:534
 #, kde-format
@@ -52663,7 +52709,7 @@ msgstr "Vyhledat chybějící hodnoty nadmořské výšky"
 #, kde-format
 msgctxt "@title:window"
 msgid "GPS Sync"
-msgstr ""
+msgstr "GPS Sync"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:440
 #, kde-format
@@ -52961,7 +53007,7 @@ msgstr "Získávání informací RG -"
 #, kde-format
 msgctxt "@title:window"
 msgid "Add New Tag"
-msgstr ""
+msgstr "Přidat novou značku"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:846
 #, kde-format
@@ -53178,7 +53224,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Name Exists"
-msgstr ""
+msgstr "Název existuje"
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:660
 #, kde-format
@@ -53394,7 +53440,7 @@ msgstr "<b>Žádný profil</b>:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Soft Proofing Options"
-msgstr ""
+msgstr "Volby softwarového náhledu tisku"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:85
 #, kde-format
@@ -53467,7 +53513,7 @@ msgstr "Barva zvýraznění:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Profile Error"
-msgstr ""
+msgstr "Chyba v profilu"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:229
 #: core/utilities/setup/setupicc.cpp:868
@@ -53944,7 +53990,7 @@ msgstr "Informace o velikosti obrázku"
 #, kde-format
 msgctxt "@title:window"
 msgid "Saving Image..."
-msgstr ""
+msgstr "Ukládání obrázku..."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1086
 #, kde-format
@@ -53966,7 +54012,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window, warning while saving progress"
 msgid "Warning"
-msgstr ""
+msgstr "Varování"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1222
 #, kde-format
@@ -54198,7 +54244,7 @@ msgstr "%1x%2 (%3Mpx)"
 #, kde-format
 msgctxt "@title:window"
 msgid "No Image in Current Album"
-msgstr ""
+msgstr "V aktuálním albu nejsou obrázky"
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:928
 #, kde-format
@@ -54213,7 +54259,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "File Not Available"
-msgstr ""
+msgstr "Soubor není dostupný"
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:1200
 #, kde-format
@@ -55283,7 +55329,7 @@ msgstr "Nezdařilo se posunutí souboru Sidecar pro <filename>%1</filename>"
 #: core/utilities/import/main/importui.cpp:1455
 #, kde-kuit-format
 msgid "Failed to move file for <filename>%1</filename>"
-msgstr ""
+msgstr "Nezdařilo se přesunutí souboru pro <filename>%1</filename>"
 
 #: core/utilities/import/main/importui.cpp:1882
 #, kde-format
@@ -55631,6 +55677,22 @@ msgid ""
 "p><p><b>ddd MMMM d yy</b> : Sun July 20 69</p><p><b>'Photo shot on ' dddd</"
 "b> : Photo shot on Sunday</p>"
 msgstr ""
+"<p>Tyto výrazy mohou být použity pro vlastní formát data:</p><p><b>d</b>: "
+"Den, jako číslo bez počáteční nuly (1 až 31)</p><p><b>dd</b>: Den, jako "
+"číslo s počáteční nulou (01 až 31)</p><p><b>ddd</b>: Lokalizovaná zkratka "
+"názvu dne (např. 'Po.' až 'Ne.')</p><p><b>dddd</b>: Celý lokalizovaný název "
+"dne (např. 'Pondělí' až 'Neděle').</p><p><b>M</b>: Měsíc jako číslo bez "
+"počáteční nuly (1 až 12)</p><p><b>MM</b>: Měsíc, jako číslo s počáteční "
+"nulou (01 až 12)</p><p><b>MMM</b>: Lokalizovaná zkratka názvu měsíce (např. "
+"'Led' až 'Pro')</p><p><b>MMMM</b>: Celý lokalizovaný název měsíce (např. "
+"'Leden' až 'Prosinec')</p><p><b>yy</b>: Rok, jako dvojciferné číslo (např. "
+"00 až 99)</p><p><b>yyyy</b>: Rok, jako čtyřciferné číslo (např. 2012)</"
+"p><p>Všechny ostatní vstupní znaky budou zpracovány jako text. Jakákoliv "
+"posloupnost znaků, uzavřených mezi apostrofy, bude zpracována jako text, "
+"nikoliv použita jako výraz. Příklad, pokud datum je 20 leden 1969:"
+"<p><p><b>dd.MM.yyyy</b> : 20.07.1969</p><p><b>ddd MMMM d yy</b> : Ne. Leden "
+"20 69</p><p><b>'Fotografie byla pořízena v ' dddd</b> : Fotografie byla "
+"pořízena v neděli</p>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:107
 #, kde-format
@@ -56276,7 +56338,7 @@ msgstr "Otisky"
 #, kde-format
 msgctxt "@title:window"
 msgid "Maintenance"
-msgstr ""
+msgstr "Správa"
 
 #: core/utilities/maintenance/maintenancedlg.cpp:211
 #, kde-format
@@ -56644,7 +56706,7 @@ msgstr "Připraven"
 #, kde-format
 msgctxt "@title:window"
 msgid "Processing Under Progress"
-msgstr ""
+msgstr "Probíhá zpracování"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:524
 #, kde-format
@@ -56686,7 +56748,7 @@ msgstr "Ve frontě pro zpracování nejsou žádné položky."
 #, kde-format
 msgctxt "@title:window"
 msgid "Processed Items Album Settings"
-msgstr ""
+msgstr "Nastavení zpracování položek alba"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:842
 #, kde-format
@@ -57075,13 +57137,13 @@ msgstr "Historie"
 #, kde-format
 msgctxt "@title:window"
 msgid "New Workflow"
-msgstr ""
+msgstr "Nový proces"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:68
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Workflow"
-msgstr ""
+msgstr "Upravit proces"
 
 #: core/utilities/queuemanager/views/workflowdlg.cpp:81
 #, kde-format
@@ -57131,7 +57193,7 @@ msgstr "Popis"
 #, kde-format
 msgctxt "@title:window"
 msgid "Batch Queue Manager"
-msgstr ""
+msgstr "Správce dávkového zpracování"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:116
 #, kde-format
@@ -57169,7 +57231,7 @@ msgstr "Smazat proces"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Workflow?"
-msgstr ""
+msgstr "Odstranit proces?"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:314
 #, kde-format
@@ -58067,7 +58129,7 @@ msgstr "Skrýt možnosti"
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Search?"
-msgstr ""
+msgstr "Smazat hledání?"
 
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:76
 #, kde-format
@@ -58161,7 +58223,7 @@ msgstr "Vyzkoušet"
 #, kde-format
 msgctxt "@title:window"
 msgid "Advanced Search"
-msgstr ""
+msgstr "Pokročilé vyhledávání"
 
 #: core/utilities/setup/album/setupalbumview.cpp:149
 #: core/utilities/setup/camera/setupcamera.cpp:469
@@ -58790,7 +58852,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Camera Configuration"
-msgstr ""
+msgstr "Nastavení fotoaparátu"
 
 #. i18n!
 #: core/utilities/setup/camera/cameraselection.cpp:114
@@ -58954,7 +59016,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Import Filters"
-msgstr ""
+msgstr "Upravit importní filtry"
 
 #: core/utilities/setup/camera/importfilterdlg.cpp:102
 #, kde-format
@@ -59355,176 +59417,176 @@ msgstr ""
 "<p>Adresáře se jmény začínajícími tečkou jsou automaticky ignorovány.<br/> "
 "<code>%1</code></p>"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:106
+#: core/utilities/setup/collections/setupcollectionview.cpp:107
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Append a path to the collection."
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:114
+#: core/utilities/setup/collections/setupcollectionview.cpp:115
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Updates the path of the collection."
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:122
+#: core/utilities/setup/collections/setupcollectionview.cpp:123
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Removes the collection from digiKam."
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:629
+#: core/utilities/setup/collections/setupcollectionview.cpp:630
 #, kde-format
 msgid "It was not possible to add a collection for the following paths:"
 msgstr "Nebylo možno přidat sbírku z následujících cest:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:657
-#: core/utilities/setup/collections/setupcollectionview.cpp:1487
+#: core/utilities/setup/collections/setupcollectionview.cpp:658
+#: core/utilities/setup/collections/setupcollectionview.cpp:1488
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose the Folder Containing your Collection"
-msgstr ""
+msgstr "Vyberte složku obsahující sbírku"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:694
+#: core/utilities/setup/collections/setupcollectionview.cpp:695
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem Appending Collection"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:695
+#: core/utilities/setup/collections/setupcollectionview.cpp:696
 #, kde-format
 msgid "A collection with the path \"%1\" already exists."
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:854
+#: core/utilities/setup/collections/setupcollectionview.cpp:855
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Path from the Collection?"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:855
+#: core/utilities/setup/collections/setupcollectionview.cpp:856
 #, kde-format
 msgid ""
 "Do you want to remove the appended path \"%1\" from the collection \"%2\"?"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:862
+#: core/utilities/setup/collections/setupcollectionview.cpp:863
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Collection?"
-msgstr ""
+msgstr "Odstranit sbírku?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:863
+#: core/utilities/setup/collections/setupcollectionview.cpp:864
 #, kde-format
 msgid ""
 "Do you want to remove the collection \"%1\" from your list of collections?"
 msgstr "Přejete si odstranit sbírku \"%1\" ze seznamu sbírek?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:928
-#: core/utilities/setup/collections/setupcollectionview.cpp:1661
+#: core/utilities/setup/collections/setupcollectionview.cpp:929
+#: core/utilities/setup/collections/setupcollectionview.cpp:1668
 #, kde-format
 msgid "Local Collections"
 msgstr "Místní sbírky"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:933
-#: core/utilities/setup/collections/setupcollectionview.cpp:1662
+#: core/utilities/setup/collections/setupcollectionview.cpp:934
+#: core/utilities/setup/collections/setupcollectionview.cpp:1669
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr "Sbírky na vyjmutelných zařízeních"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:938
-#: core/utilities/setup/collections/setupcollectionview.cpp:1663
+#: core/utilities/setup/collections/setupcollectionview.cpp:939
+#: core/utilities/setup/collections/setupcollectionview.cpp:1670
 #, kde-format
 msgid "Collections on Network Shares"
 msgstr "Sbírky na síťových discích"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:975
+#: core/utilities/setup/collections/setupcollectionview.cpp:976
 #, kde-format
 msgid "Add Collection"
 msgstr "Přidat sbírku"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1025
+#: core/utilities/setup/collections/setupcollectionview.cpp:1026
 #, kde-format
 msgid "Col. %1"
 msgstr "Sloupec %1 "
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1121
+#: core/utilities/setup/collections/setupcollectionview.cpp:1122
 #, kde-format
 msgid "This collection is currently not available."
 msgstr "Tato sbírka není momentálně dostupná."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1126
+#: core/utilities/setup/collections/setupcollectionview.cpp:1127
 #, kde-format
 msgid "No problems found, enjoy this collection."
 msgstr "Žádné problémy se nevyskytly, užije si sbírku."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1131
+#: core/utilities/setup/collections/setupcollectionview.cpp:1132
 #, kde-format
 msgid "This collection is hidden."
 msgstr "Tato sbírka je skrytá."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1150
+#: core/utilities/setup/collections/setupcollectionview.cpp:1151
 #, kde-format
 msgid "Append network path"
 msgstr ""
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1178
+#: core/utilities/setup/collections/setupcollectionview.cpp:1179
 #, kde-format
 msgid "Update collection"
 msgstr "Aktualizovat sbírku"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1206
+#: core/utilities/setup/collections/setupcollectionview.cpp:1207
 #, kde-format
 msgid "Remove collection"
 msgstr "Odstranit sbírku"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1241
+#: core/utilities/setup/collections/setupcollectionview.cpp:1242
 #, kde-format
 msgctxt "#title: collection name"
 msgid "Name"
 msgstr "Název"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1246
+#: core/utilities/setup/collections/setupcollectionview.cpp:1247
 #, kde-format
 msgctxt "#title: collection mount path"
 msgid "Path"
 msgstr "Cesta"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1251
+#: core/utilities/setup/collections/setupcollectionview.cpp:1252
 #, kde-format
 msgctxt "#title: collection status"
 msgid "Status"
 msgstr "Stav"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1533
+#: core/utilities/setup/collections/setupcollectionview.cpp:1534
 #, kde-format
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "Už jste přidali sbírku obsahující cestu \"%1\" dříve."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1563
+#: core/utilities/setup/collections/setupcollectionview.cpp:1564
 #, kde-format
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
-msgstr ""
+msgstr "Potíže při přidávání sbírky"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1572
+#: core/utilities/setup/collections/setupcollectionview.cpp:1573
 #, kde-format
 msgctxt "@title:window"
 msgid "Adding Collection"
-msgstr ""
+msgstr "Přidání sbírky"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1576
+#: core/utilities/setup/collections/setupcollectionview.cpp:1577
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr "Nová sbírka bude vytvořena s následujícím názvem:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1651
+#: core/utilities/setup/collections/setupcollectionview.cpp:1658
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Category"
-msgstr ""
+msgstr "Vyberte kategorii"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1655
+#: core/utilities/setup/collections/setupcollectionview.cpp:1662
 #, kde-format
 msgid "Your collection will use this category:"
 msgstr ""
@@ -59533,7 +59595,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Required Files"
-msgstr ""
+msgstr "Stáhnout požadované soubory"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:203
 #, kde-format
@@ -59562,7 +59624,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Download Error"
-msgstr ""
+msgstr "Chyba stahování"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:275
 #, kde-format
@@ -59580,7 +59642,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Try Again"
-msgstr ""
+msgstr "Zkusit znovu"
 
 #: core/utilities/setup/downloader/filesdownloader.cpp:416
 #, kde-format
@@ -60071,7 +60133,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window, reset to default warning dialog"
 msgid "Warning"
-msgstr ""
+msgstr "Varování"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:136
 #, kde-format
@@ -60145,13 +60207,13 @@ msgstr "Obnovit výchozí"
 #, kde-format
 msgctxt "@title:window"
 msgid "New XMP Namespace"
-msgstr ""
+msgstr "Nový jmenný prostor XMP"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:148
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit XMP Namespace"
-msgstr ""
+msgstr "Upravit jmenný prostor XMP"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:238
 #, kde-format
@@ -60331,7 +60393,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Yes I Understand"
-msgstr ""
+msgstr "Ano, rozumím"
 
 #: core/utilities/setup/metadata/setupmetadata.cpp:281
 #, kde-format
@@ -60681,7 +60743,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "ExifTool backend"
-msgstr ""
+msgstr "Podpůrná vrstva ExifTool"
 
 #: core/utilities/setup/metadata/setupmetadata_display.cpp:28
 #, kde-format
@@ -61340,6 +61402,8 @@ msgid ""
 "Embedded Image Information Management\n"
 "Setup relations between images and metadata"
 msgstr ""
+"Správa informací ukládaných do obrázku\n"
+"Nastavení vztahů mezi obrázky a metadaty"
 
 #: core/utilities/setup/setup.cpp:187
 #, kde-format
@@ -61382,6 +61446,8 @@ msgid ""
 "Settings for Color Management\n"
 "Customize the color management settings"
 msgstr ""
+"Nastavení správy barev\n"
+"Přizpůsobení nastavení správy barev"
 
 #: core/utilities/setup/setup.cpp:202
 #, kde-format
@@ -61396,6 +61462,8 @@ msgid ""
 "Light Table Settings\n"
 "Customize tool used to compare images"
 msgstr ""
+"Nastavení prohlížecího stolku\n"
+"Přizpůsobení nástroje k porovnávání fotografií"
 
 #: core/utilities/setup/setup.cpp:207
 #, kde-format
@@ -61452,6 +61520,8 @@ msgid ""
 "Miscellaneous Settings\n"
 "Customize behavior of the other parts of digiKam"
 msgstr ""
+"Různá nastavení\n"
+"Upravit chování ostatních součástí digiKamu"
 
 #: core/utilities/setup/setupdatabase.cpp:174
 #, kde-format
@@ -61856,6 +61926,10 @@ msgid ""
 "Windows/Color/</li></ul>On your system, currently these paths exist and are "
 "scanned:<ul><li>%3</li></ul>"
 msgstr ""
+"Výchozí cesty pro hledání ve Windows obsahují <ul><li>%1/Windows/System32/"
+"spool/drivers/color/</li><li>%1/Windows/Spool/Drivers/Color/</li><li>%2/"
+"Windows/Color/</li></ul>Na vašem systému existují a jsou prohledávány tyto "
+"cesty:<ul><li>%3</li></ul>"
 
 #: core/utilities/setup/setupicc.cpp:918
 #, kde-format
@@ -61867,6 +61941,12 @@ msgid ""
 "icc/</li><li>~/.color/icc/</li></ul>On your system, currently these paths "
 "exist and are scanned:<ul><li>%2</li></ul>"
 msgstr ""
+"Na Mac OS X výchozí cesty pro vyhledávání zahrnuje <ul><li>/System/Library/"
+"ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/"
+"ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/Contents/"
+"Resources/digikam/profiles/</li><li>~/.local/share/color/icc/</li><li>~/."
+"local/share/icc/</li><li>~/.color/icc/</li></ul>Na vašem systému existují a "
+"budou zahrnuty následující cesty:<ul><li>%2</li></ul>"
 
 #: core/utilities/setup/setupicc.cpp:937
 #, kde-format

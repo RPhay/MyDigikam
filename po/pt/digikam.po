@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-22 00:54+0000\n"
+"POT-Creation-Date: 2023-01-25 00:55+0000\n"
 "PO-Revision-Date: 2023-01-19 09:57+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -6144,8 +6144,9 @@ msgid "Use Absolute Size"
 msgstr "Usar um Tamanho Absoluto"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:197
-#, kde-format
-msgid "Watermark type:"
+#, fuzzy, kde-format
+#| msgid "Watermark type:"
+msgid "Watermark type: "
 msgstr "Tipo de marca-de-água:"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
@@ -6159,22 +6160,23 @@ msgstr "Imagem"
 msgid "Text"
 msgstr "Texto"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:215
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:217
 #, kde-format
 msgid "Image settings"
 msgstr "Configuração da imagem"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:223
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:226
 #, kde-format
 msgid "Click to select watermark image."
 msgstr "Carregue para seleccionar a imagem de marca-de-água."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:224
-#, kde-format
-msgid "Watermark image:"
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:227
+#, fuzzy, kde-format
+#| msgid "Watermark image:"
+msgid "Watermark image: "
 msgstr "Imagem da marca-de-água:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:233
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:235
 #, kde-format
 msgid ""
 "Check this if you want the watermark to ignore its own aspect ratio and use "
@@ -6183,71 +6185,72 @@ msgstr ""
 "Assinale isto se quiser que a marca-de-água ignore as suas próprias "
 "proporções, usando as da imagem como alternativa."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:237
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:239
 #, kde-format
 msgid "Ignore Watermark aspect Ratio"
 msgstr "Ignorar as Proporções da Marca-de-Água"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:247
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:249
 #, kde-format
 msgid "Check this if you want watermark to be transparent."
 msgstr "Assinale isto se quiser que a marca-de-água seja transparente."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:251
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:253
 #, kde-format
 msgid "Add transparency to watermark image"
 msgstr "Adicionar transparência à imagem de marca-de-água."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:262
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:264
 #, kde-format
 msgid "Opacity of watermark"
 msgstr "Opacidade da marca-de-água"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:263
-#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:206
-#, kde-format
-msgid "Opacity (%):"
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:265
+#, fuzzy, kde-format
+#| msgid "Opacity (%):"
+msgid "Opacity (%): "
 msgstr "Opacidade (%):"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:267
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:271
 #, kde-format
 msgid "Text settings"
 msgstr "Configuração do texto"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:275
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:279
 #, kde-format
 msgid "Enter your watermark string here."
 msgstr "Indique aqui o seu texto de marca-de-água."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:276
-#, kde-format
-msgid "Watermark text:"
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:280
+#, fuzzy, kde-format
+#| msgid "Watermark text:"
+msgid "Watermark text: "
 msgstr "Texto da marca-de-água:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:283
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:287
 #, kde-format
 msgid "Choose the font type and style. Size is auto calculated."
 msgstr ""
 "escolher o tipo e estilo do texto, sendo o tamanho calculado automaticamente."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:289
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:294
 #, kde-format
 msgid "Set the font color to use here."
 msgstr "Indique aqui a cor da letra a usar."
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:290
-#: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:147
-#, kde-format
-msgid "Font color:"
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:295
+#, fuzzy, kde-format
+#| msgid "Font color:"
+msgid "Font color: "
 msgstr "Cor do tipo de letra:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:295
-#, kde-format
-msgid "Text opacity:"
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:300
+#, fuzzy, kde-format
+#| msgid "Text opacity:"
+msgid "Text opacity: "
 msgstr "Opacidade do texto:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:299
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:304
 #, kde-format
 msgid ""
 "Set the opacity of the watermark text. 100 is fully opaque, 0 is fully "
@@ -6256,37 +6259,34 @@ msgstr ""
 "Define a opacidade do texto da marca-de-água. 100 corresponde a um opaco "
 "completo, enquanto o 0 é completamente transparente."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:309
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:313
 #, kde-format
 msgid "Check this if you want a background fill behind the text."
 msgstr "Assinale isto se quiser um fundo preenchido por detrás do texto."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:311
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:315
 #, kde-format
 msgid "Use background"
 msgstr "Usar um fundo"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:317
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:322
 #, kde-format
 msgid "Choose the color of the watermark background."
 msgstr "Indique aqui a cor do fundo da marca-de-água."
 
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:318
-#: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:154
-#: core/libs/dimg/filters/transform/freerotationsettings.cpp:118
-#, kde-format
-msgid "Background color:"
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:323
+#, fuzzy, kde-format
+#| msgid "Background color:"
+msgid "Background color: "
 msgstr "Cor de fundo:"
 
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:323
-#: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:140
-#, kde-format
-msgid "Background opacity:"
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:328
+#, fuzzy, kde-format
+#| msgid "Background opacity:"
+msgid "Background opacity: "
 msgstr "Opacidade do fundo:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:327
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:332
 #, kde-format
 msgid ""
 "Set the opacity of the watermark background. 100 is fully opaque, 0 is fully "
@@ -6295,27 +6295,28 @@ msgstr ""
 "Define a opacidade do fundo da marca-de-água. O 100 é completamente opaco, "
 "enquanto o 0 é completamente transparente."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:337
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:344
 #, kde-format
 msgid "Specific Location"
 msgstr "Localização Específica"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:338
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:345
 #, kde-format
 msgid "Systematic Repetition"
 msgstr "Repetição Sistemática"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:339
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:346
 #, kde-format
 msgid "Random Repetition"
 msgstr "Repetição Aleatória"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:340
-#, kde-format
-msgid "Placement Type:"
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:347
+#, fuzzy, kde-format
+#| msgid "Placement Type:"
+msgid "Placement Type: "
 msgstr "Tipo de Colocação:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:348
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:355
 #, kde-format
 msgid ""
 "When you choose to have the watermark repeated many times in the placement "
@@ -6324,7 +6325,7 @@ msgstr ""
 "Quando optar por ter a marca-de-água repetida várias vezes no campo de "
 "colocação, poderá indicar aqui a repetição."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:354
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:361
 #, kde-format
 msgid ""
 "Density of watermark repetition (Disabled in \"Specific Location\" mode)"
@@ -6332,7 +6333,7 @@ msgstr ""
 "Densidade da repetição da marca-de-água (Desactivado no modo de "
 "\"Localização Específica\")"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:362
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:369
 #, kde-format
 msgid ""
 "When you choose to have the watermark repeated randomly in the placement "
@@ -6343,7 +6344,7 @@ msgstr ""
 "colocação, poderá indicar aqui para rodar aleatoriamente a marca de água (0, "
 "90, 180, 270 graus)."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:369
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:376
 #, kde-format
 msgid ""
 "Randomize watermark orientation (Enabled in \"Random Repetition\" mode only)"
@@ -6351,7 +6352,7 @@ msgstr ""
 "Orientação aleatória da marca-de-água (Activa apenas no modo de \"Repetição "
 "Aleatória\")"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:380
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:387
 #, kde-format
 msgid ""
 "Use this to get more control over the sparsity of watermark repetition. The "
@@ -6363,117 +6364,122 @@ msgstr ""
 "valores de vírgula flutuante, tipicamente entre 1,0 e 3,0. Também poderá ser "
 "inferior a 1,0"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:384
-#, kde-format
-msgid "Sparsity Factor:"
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:391
+#, fuzzy, kde-format
+#| msgid "Sparsity Factor:"
+msgid "Sparsity Factor: "
 msgstr "Factor de Dispersão:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:388
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:396
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Top left"
 msgstr "Superior esquerda"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:389
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:397
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Top right"
 msgstr "Superior direita"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:390
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:398
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Bottom left"
 msgstr "Inferior esquerda"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:391
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:399
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Bottom right"
 msgstr "Inferior direita"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:392
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:400
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Center"
 msgstr "Centro"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:393
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:401
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Top center"
 msgstr "Superior ao centro"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:394
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:402
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Bottom center"
 msgstr "Inferior ao centro"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:396
-#, kde-format
-msgid "Placement Position:"
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:404
+#, fuzzy, kde-format
+#| msgid "Placement Position:"
+msgid "Placement Position: "
 msgstr "Posição da Colocação:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:400
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:409
 #, kde-format
 msgid "0 degrees"
 msgstr "0 graus"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:401
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:410
 #, kde-format
 msgid "90 degrees CW"
 msgstr "90 graus à dir"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:402
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:411
 #, kde-format
 msgid "180 degrees"
 msgstr "180 graus"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:403
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:412
 #, kde-format
 msgid "270 degrees CW"
 msgstr "270 graus à dir"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:404
-#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:195
-#, kde-format
-msgid "Rotation:"
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:413
+#, fuzzy, kde-format
+#| msgid "Rotation:"
+msgid "Rotation: "
 msgstr "Rotação:"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:410
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:420
 #, kde-format
 msgid "Size of watermark, as a percentage of the marked image."
 msgstr ""
 "Tamanho da marca-de-água, como uma percentagem do tamanho da imagem marcada."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:411
-#, kde-format
-msgid "Size (%):"
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:421
+#, fuzzy, kde-format
+#| msgid "Size (%):"
+msgid "Size (%): "
 msgstr "Tamanho (%):"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:417
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:428
 #, kde-format
 msgid "Margin from edge in X direction, as a percentage of the marked image."
 msgstr ""
 "Margem, em relação ao extremo na direcção X, como uma percentagem da imagem "
 "marcada."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:418
-#, kde-format
-msgid "X margin (%):"
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:429
+#, fuzzy, kde-format
+#| msgid "X margin (%):"
+msgid "X margin (%): "
 msgstr "Margem em X (%):"
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:424
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:436
 #, kde-format
 msgid "Margin from edge in Y direction, as a percentage of the marked image."
 msgstr ""
 "Margem, em relação ao extremo na direcção Y, como uma percentagem da imagem "
 "marcada."
 
-#: core/dplugins/bqm/decorate/watermark/watermark.cpp:425
-#, kde-format
-msgid "Y margin (%):"
+#: core/dplugins/bqm/decorate/watermark/watermark.cpp:437
+#, fuzzy, kde-format
+#| msgid "Y margin (%):"
+msgid "Y margin (%): "
 msgstr "Margem em Y (%):"
 
 #: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:46
@@ -9046,6 +9052,11 @@ msgstr "Alinhar o texto ao centro"
 #, kde-format
 msgid "Align text to a block"
 msgstr "Alinhar o texto a um bloco"
+
+#: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:195
+#, kde-format
+msgid "Rotation:"
+msgstr "Rotação:"
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:197
 #, kde-format
@@ -12689,6 +12700,11 @@ msgstr "Largura do Trajecto:"
 #, kde-format
 msgid "Track Color:"
 msgstr "Cor do Trajecto:"
+
+#: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:206
+#, kde-format
+msgid "Opacity (%):"
+msgstr "Opacidade (%):"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:212
 #, kde-format
@@ -22275,6 +22291,25 @@ msgstr "Cores"
 #, kde-format
 msgid "Outlined Text"
 msgstr "Texto com Contorno"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:140
+#, kde-format
+msgid "Background opacity:"
+msgstr "Opacidade do fundo:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:147
+#, kde-format
+msgid "Font color:"
+msgstr "Cor do tipo de letra:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:154
+#: core/libs/dimg/filters/transform/freerotationsettings.cpp:118
+#, kde-format
+msgid "Background color:"
+msgstr "Cor de fundo:"
 
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:274
 #, kde-format
@@ -61639,183 +61674,183 @@ msgstr ""
 "<p>As pastas que começam com um ponto são ignoradas por omissão.<br/> <code>"
 "%1</code></p>"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:106
+#: core/utilities/setup/collections/setupcollectionview.cpp:107
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Append a path to the collection."
 msgstr "Adicionar uma localização à colecção."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:114
+#: core/utilities/setup/collections/setupcollectionview.cpp:115
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Updates the path of the collection."
 msgstr "Actualiza a localização da colecção."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:122
+#: core/utilities/setup/collections/setupcollectionview.cpp:123
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Removes the collection from digiKam."
 msgstr "Remover a colecção do digiKam."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:629
+#: core/utilities/setup/collections/setupcollectionview.cpp:630
 #, kde-format
 msgid "It was not possible to add a collection for the following paths:"
 msgstr "Não foi possível adicionar uma colecção para os seguintes locais:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:657
-#: core/utilities/setup/collections/setupcollectionview.cpp:1487
+#: core/utilities/setup/collections/setupcollectionview.cpp:658
+#: core/utilities/setup/collections/setupcollectionview.cpp:1488
 #, fuzzy, kde-format
 #| msgid "Choose the folder containing your collection"
 msgctxt "@title:window"
 msgid "Choose the Folder Containing your Collection"
 msgstr "Escolha a pasta que contém a sua colecção"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:694
+#: core/utilities/setup/collections/setupcollectionview.cpp:695
 #, fuzzy, kde-format
 #| msgid "Problem Appending Collection"
 msgctxt "@title:window"
 msgid "Problem Appending Collection"
 msgstr "Problemas ao Adicionar a Colecção"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:695
+#: core/utilities/setup/collections/setupcollectionview.cpp:696
 #, kde-format
 msgid "A collection with the path \"%1\" already exists."
 msgstr "Já existe uma colecção com a localização \"%1\"."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:854
+#: core/utilities/setup/collections/setupcollectionview.cpp:855
 #, fuzzy, kde-format
 #| msgid "Remove Path from the Collection?"
 msgctxt "@title:window"
 msgid "Remove Path from the Collection?"
 msgstr "Remover a Localização da Colecção?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:855
+#: core/utilities/setup/collections/setupcollectionview.cpp:856
 #, kde-format
 msgid ""
 "Do you want to remove the appended path \"%1\" from the collection \"%2\"?"
 msgstr "Deseja remover a ligação adicionada \"%1\" da colecção \"%2\"?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:862
+#: core/utilities/setup/collections/setupcollectionview.cpp:863
 #, fuzzy, kde-format
 #| msgid "Remove Collection?"
 msgctxt "@title:window"
 msgid "Remove Collection?"
 msgstr "Remover a Colecção?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:863
+#: core/utilities/setup/collections/setupcollectionview.cpp:864
 #, kde-format
 msgid ""
 "Do you want to remove the collection \"%1\" from your list of collections?"
 msgstr "Deseja remover a colecção \"%1\" da sua lista de colecções?"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:928
-#: core/utilities/setup/collections/setupcollectionview.cpp:1661
+#: core/utilities/setup/collections/setupcollectionview.cpp:929
+#: core/utilities/setup/collections/setupcollectionview.cpp:1668
 #, kde-format
 msgid "Local Collections"
 msgstr "Colecções Locais"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:933
-#: core/utilities/setup/collections/setupcollectionview.cpp:1662
+#: core/utilities/setup/collections/setupcollectionview.cpp:934
+#: core/utilities/setup/collections/setupcollectionview.cpp:1669
 #, kde-format
 msgid "Collections on Removable Media"
 msgstr "Colecções nos Dispositivos Removíveis"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:938
-#: core/utilities/setup/collections/setupcollectionview.cpp:1663
+#: core/utilities/setup/collections/setupcollectionview.cpp:939
+#: core/utilities/setup/collections/setupcollectionview.cpp:1670
 #, kde-format
 msgid "Collections on Network Shares"
 msgstr "Colecções nas Partilhas de Rede"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:975
+#: core/utilities/setup/collections/setupcollectionview.cpp:976
 #, kde-format
 msgid "Add Collection"
 msgstr "Adicionar uma Colecção"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1025
+#: core/utilities/setup/collections/setupcollectionview.cpp:1026
 #, kde-format
 msgid "Col. %1"
 msgstr "Col. %1"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1121
+#: core/utilities/setup/collections/setupcollectionview.cpp:1122
 #, kde-format
 msgid "This collection is currently not available."
 msgstr "Esta colecção está indisponível de momento."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1126
+#: core/utilities/setup/collections/setupcollectionview.cpp:1127
 #, kde-format
 msgid "No problems found, enjoy this collection."
 msgstr "Não foram encontrados problemas: Desfrute desta colecção."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1131
+#: core/utilities/setup/collections/setupcollectionview.cpp:1132
 #, kde-format
 msgid "This collection is hidden."
 msgstr "Esta colecção está escondida."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1150
+#: core/utilities/setup/collections/setupcollectionview.cpp:1151
 #, kde-format
 msgid "Append network path"
 msgstr "Adicionar a localização na rede"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1178
+#: core/utilities/setup/collections/setupcollectionview.cpp:1179
 #, kde-format
 msgid "Update collection"
 msgstr "Actualizar a colecção"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1206
+#: core/utilities/setup/collections/setupcollectionview.cpp:1207
 #, kde-format
 msgid "Remove collection"
 msgstr "Remover a colecção"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1241
+#: core/utilities/setup/collections/setupcollectionview.cpp:1242
 #, kde-format
 msgctxt "#title: collection name"
 msgid "Name"
 msgstr "Nome"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1246
+#: core/utilities/setup/collections/setupcollectionview.cpp:1247
 #, kde-format
 msgctxt "#title: collection mount path"
 msgid "Path"
 msgstr "Localização"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1251
+#: core/utilities/setup/collections/setupcollectionview.cpp:1252
 #, kde-format
 msgctxt "#title: collection status"
 msgid "Status"
 msgstr "Estado"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1533
+#: core/utilities/setup/collections/setupcollectionview.cpp:1534
 #, kde-format
 msgid "You have previously added a collection that contains the path \"%1\"."
 msgstr "Acabou de adicionar uma colecção que já contém a localização \"%1\"."
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1563
+#: core/utilities/setup/collections/setupcollectionview.cpp:1564
 #, fuzzy, kde-format
 #| msgid "Problem Adding Collection"
 msgctxt "@title:window"
 msgid "Problem Adding Collection"
 msgstr "Problemas ao Adicionar a Colecção"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1572
+#: core/utilities/setup/collections/setupcollectionview.cpp:1573
 #, fuzzy, kde-format
 #| msgid "Adding Collection"
 msgctxt "@title:window"
 msgid "Adding Collection"
 msgstr "A Adicionar a Colecção"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1576
+#: core/utilities/setup/collections/setupcollectionview.cpp:1577
 #, kde-format
 msgid "Your new collection will be created with this name:"
 msgstr "A sua nova colecção será criada com este nome:"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1651
+#: core/utilities/setup/collections/setupcollectionview.cpp:1658
 #, fuzzy, kde-format
 #| msgid "Select Category"
 msgctxt "@title:window"
 msgid "Select Category"
 msgstr "Seleccionar a Categoria"
 
-#: core/utilities/setup/collections/setupcollectionview.cpp:1655
+#: core/utilities/setup/collections/setupcollectionview.cpp:1662
 #, kde-format
 msgid "Your collection will use this category:"
 msgstr "A sua colecção irá usar esta categoria:"
