@@ -148,13 +148,15 @@
             "config-opts": [
                 "-DJAS_ENABLE_SHARED=ON",
                 "-DJAS_ENABLE_LIBJPEG=ON",
+                "-DJAS_ENABLE_LIBHEIFG=OFF",
                 "-DJAS_ENABLE_OPENGL=OFF",
                 "-DJAS_LOCAL=OFF",
                 "-DJAS_ENABLE_DOC=OFF",
+                "-DJAS_ENABLE_LATEX=OFF",
                 "-DJAS_ENABLE_PROGRAMS=OFF"
             ],
             "builddir": true,
-            "sources": [ { "type": "git", "url": "https://github.com/mdadams/jasper.git", "tag": "version-2.0.24" } ]
+            "sources": [ { "type": "git", "url": "https://github.com/mdadams/jasper.git", "tag": "version-4.0.0" } ]
         },
         {
             "name": "exiv2",
