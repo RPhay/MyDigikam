@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-25 00:55+0000\n"
-"PO-Revision-Date: 2023-01-22 10:31+0100\n"
+"PO-Revision-Date: 2023-01-25 09:18+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -6003,10 +6003,9 @@ msgid "Use Absolute Size"
 msgstr "Usa una mida absoluta"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:197
-#, fuzzy, kde-format
-#| msgid "Watermark type:"
+#, kde-format
 msgid "Watermark type: "
-msgstr "Tipus de marca d'aigua:"
+msgstr "Tipus de marca d'aigua: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:486
@@ -6030,10 +6029,9 @@ msgid "Click to select watermark image."
 msgstr "Cliqueu per a seleccionar una imatge de marca d'aigua."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:227
-#, fuzzy, kde-format
-#| msgid "Watermark image:"
+#, kde-format
 msgid "Watermark image: "
-msgstr "Imatge de marca d'aigua:"
+msgstr "Imatge de marca d'aigua: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:235
 #, kde-format
@@ -6065,10 +6063,9 @@ msgid "Opacity of watermark"
 msgstr "Opacitat de la marca d'aigua"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:265
-#, fuzzy, kde-format
-#| msgid "Opacity (%):"
+#, kde-format
 msgid "Opacity (%): "
-msgstr "Opacitat (%):"
+msgstr "Opacitat (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:271
 #, kde-format
@@ -6081,10 +6078,9 @@ msgid "Enter your watermark string here."
 msgstr "Introduïu aquí el vostre text de la marca d'aigua."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:280
-#, fuzzy, kde-format
-#| msgid "Watermark text:"
+#, kde-format
 msgid "Watermark text: "
-msgstr "Text de la marca d'aigua:"
+msgstr "Text de la marca d'aigua: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:287
 #, kde-format
@@ -6099,16 +6095,14 @@ msgid "Set the font color to use here."
 msgstr "Establiu aquí el color del tipus de lletra a emprar."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:295
-#, fuzzy, kde-format
-#| msgid "Font color:"
+#, kde-format
 msgid "Font color: "
-msgstr "Color del tipus de lletra:"
+msgstr "Color del tipus de lletra: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:300
-#, fuzzy, kde-format
-#| msgid "Text opacity:"
+#, kde-format
 msgid "Text opacity: "
-msgstr "Opacitat del text:"
+msgstr "Opacitat del text: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:304
 #, kde-format
@@ -6135,16 +6129,14 @@ msgid "Choose the color of the watermark background."
 msgstr "Trieu el color del fons de la marca d'aigua."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:323
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgid "Background color: "
-msgstr "Color de fons:"
+msgstr "Color de fons: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:328
-#, fuzzy, kde-format
-#| msgid "Background opacity:"
+#, kde-format
 msgid "Background opacity: "
-msgstr "Opacitat del fons:"
+msgstr "Opacitat del fons: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:332
 #, kde-format
@@ -6171,10 +6163,9 @@ msgid "Random Repetition"
 msgstr "Repetició aleatòria"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:347
-#, fuzzy, kde-format
-#| msgid "Placement Type:"
+#, kde-format
 msgid "Placement Type: "
-msgstr "Tipus d'emplaçament:"
+msgstr "Tipus d'emplaçament: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:355
 #, kde-format
@@ -6225,10 +6216,9 @@ msgstr ""
 "a 1,0"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:391
-#, fuzzy, kde-format
-#| msgid "Sparsity Factor:"
+#, kde-format
 msgid "Sparsity Factor: "
-msgstr "Factor de dispersió:"
+msgstr "Factor de dispersió: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:396
 #, kde-format
@@ -6273,10 +6263,9 @@ msgid "Bottom center"
 msgstr "Inferior centre"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:404
-#, fuzzy, kde-format
-#| msgid "Placement Position:"
+#, kde-format
 msgid "Placement Position: "
-msgstr "Posició d'emplaçament:"
+msgstr "Posició d'emplaçament: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:409
 #, kde-format
@@ -6299,10 +6288,9 @@ msgid "270 degrees CW"
 msgstr "270 graus en sentit antihorari"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:413
-#, fuzzy, kde-format
-#| msgid "Rotation:"
+#, kde-format
 msgid "Rotation: "
-msgstr "Gir:"
+msgstr "Gir: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:420
 #, kde-format
@@ -6310,10 +6298,9 @@ msgid "Size of watermark, as a percentage of the marked image."
 msgstr "Mida de la marca d'aigua, com a percentatge de la imatge marcada."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:421
-#, fuzzy, kde-format
-#| msgid "Size (%):"
+#, kde-format
 msgid "Size (%): "
-msgstr "Mida (%):"
+msgstr "Mida (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:428
 #, kde-format
@@ -6323,10 +6310,9 @@ msgstr ""
 "marcada."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:429
-#, fuzzy, kde-format
-#| msgid "X margin (%):"
+#, kde-format
 msgid "X margin (%): "
-msgstr "Marge X (%):"
+msgstr "Marge X (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:436
 #, kde-format
@@ -6336,10 +6322,9 @@ msgstr ""
 "marcada."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:437
-#, fuzzy, kde-format
-#| msgid "Y margin (%):"
+#, kde-format
 msgid "Y margin (%): "
-msgstr "Marge Y (%):"
+msgstr "Marge Y (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:46
 #, kde-format
@@ -64748,120 +64733,3 @@ msgstr ""
 msgctxt "@info"
 msgid "Do you want to reset all video settings to the default value?"
 msgstr "Voleu restablir tota la configuració als seus valors predeterminats?"
-
-#~ msgctxt "@title"
-#~ msgid "Geolocation Editor"
-#~ msgstr "Editor de la geolocalització"
-
-#~ msgctxt "@title"
-#~ msgid "Error"
-#~ msgstr "Error"
-
-#~ msgid "Select GPX File to Load"
-#~ msgstr "Seleccioneu el fitxer GPX a carregar"
-
-#~ msgctxt "@title"
-#~ msgid "Exposure Blending"
-#~ msgstr "Barreja de l'exposició"
-
-#~ msgctxt "@action: button"
-#~ msgid "Details..."
-#~ msgstr "Detalls..."
-
-#~ msgctxt "@title"
-#~ msgid "Destination Folder"
-#~ msgstr "Carpeta de destinació"
-
-#~ msgctxt "@title: window"
-#~ msgid "Error while to set image as wallpaper"
-#~ msgstr "Error en establir la imatge com a fons de pantalla"
-
-#~ msgctxt "@action"
-#~ msgid "Start Upload"
-#~ msgstr "Comença la pujada"
-
-#~ msgctxt "@title: window"
-#~ msgid "Error"
-#~ msgstr "Error"
-
-#~ msgctxt "@action: button"
-#~ msgid "Continue"
-#~ msgstr "Continua"
-
-#~ msgctxt "@action: button"
-#~ msgid "Cancel"
-#~ msgstr "Cancel·la"
-
-#~ msgctxt "@title"
-#~ msgid "Uploading Failed"
-#~ msgstr "Ha fallat la pujada"
-
-#~ msgctxt "@title"
-#~ msgid "Login Failed"
-#~ msgstr "Ha fallat l'inici de la sessió"
-
-#~ msgctxt "@action"
-#~ msgid "Start Download"
-#~ msgstr "Comença la baixada"
-
-#~ msgctxt "@title: window"
-#~ msgid "Warning"
-#~ msgstr "Avís"
-
-#~ msgctxt "@action"
-#~ msgid "Continue"
-#~ msgstr "Continua"
-
-#~ msgctxt "@title: album properties"
-#~ msgid "New Album"
-#~ msgstr "Àlbum nou"
-
-#~ msgid "Database connection test"
-#~ msgstr "Prova de connexió amb la base de dades"
-
-#~ msgctxt "@title"
-#~ msgid "Shared Libraries and Components Information"
-#~ msgstr "Informació de les biblioteques compartides i components"
-
-#~ msgctxt "@title"
-#~ msgid "List of detected hardware"
-#~ msgstr "Llista del maquinari detectat"
-
-#~ msgctxt "@title: favorite item properties"
-#~ msgid "Could Not Calculate Average"
-#~ msgstr "No s'ha pogut calcular la mitjana"
-
-#~ msgid "Add Bookmark"
-#~ msgstr "Afegeix un punt"
-
-#~ msgctxt "@title:window"
-#~ msgid "Add new tag:"
-#~ msgstr "Afegeix una etiqueta nova:"
-
-#~ msgctxt "@title; warning while saving progress"
-#~ msgid "Warning"
-#~ msgstr "Avís"
-
-#~ msgctxt "@title"
-#~ msgid "New Image File Name"
-#~ msgstr "Nom nou del fitxer d'imatge"
-
-#~ msgctxt "@title"
-#~ msgid "Overwrite File?"
-#~ msgstr "Sobreescric el fitxer?"
-
-#~ msgctxt "@title"
-#~ msgid "Error Saving File"
-#~ msgstr "Hi ha hagut un error en desar el fitxer"
-
-#~ msgctxt "@title"
-#~ msgid "Batch Queue Manager"
-#~ msgstr "Gestor de la cua de lots"
-
-#~ msgctxt "@title: reset to default warning dialog"
-#~ msgid "Warning"
-#~ msgstr "Avís"
-
-#~ msgctxt "@title"
-#~ msgid "Configure"
-#~ msgstr "Configura"

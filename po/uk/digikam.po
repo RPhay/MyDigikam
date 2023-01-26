@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-25 00:55+0000\n"
-"PO-Revision-Date: 2023-01-24 19:20+0200\n"
-"Last-Translator: Fracture dept <yurchor@ukr.net>\n"
+"PO-Revision-Date: 2023-01-25 10:35+0200\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
@@ -6058,10 +6058,9 @@ msgid "Use Absolute Size"
 msgstr "Використовувати абсолютний розмір"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:197
-#, fuzzy, kde-format
-#| msgid "Watermark type:"
+#, kde-format
 msgid "Watermark type: "
-msgstr "Тип накладки:"
+msgstr "Тип накладки: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:486
@@ -6085,10 +6084,9 @@ msgid "Click to select watermark image."
 msgstr "Натисніть, щоб вибрати зображення накладки."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:227
-#, fuzzy, kde-format
-#| msgid "Watermark image:"
+#, kde-format
 msgid "Watermark image: "
-msgstr "Зображення накладки:"
+msgstr "Зображення накладки: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:235
 #, kde-format
@@ -6112,18 +6110,17 @@ msgstr "Позначте цей пункт, якщо хочете, щоб «во
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:253
 #, kde-format
 msgid "Add transparency to watermark image"
-msgstr "Додати прозорість до зображення «водяного» знаку"
+msgstr "Додати прозорість до зображення накладки"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:264
 #, kde-format
 msgid "Opacity of watermark"
-msgstr "Непрозорість «водяного» знаку"
+msgstr "Непрозорість накладки"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:265
-#, fuzzy, kde-format
-#| msgid "Opacity (%):"
+#, kde-format
 msgid "Opacity (%): "
-msgstr "Непрозорість (у %):"
+msgstr "Непрозорість (у %): "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:271
 #, kde-format
@@ -6136,10 +6133,9 @@ msgid "Enter your watermark string here."
 msgstr "Введіть тут рядок «водяного знаку»."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:280
-#, fuzzy, kde-format
-#| msgid "Watermark text:"
+#, kde-format
 msgid "Watermark text: "
-msgstr "Текст накладки:"
+msgstr "Текст накладки: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:287
 #, kde-format
@@ -6152,16 +6148,14 @@ msgid "Set the font color to use here."
 msgstr "Тут ви можете вказати колір шрифту."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:295
-#, fuzzy, kde-format
-#| msgid "Font color:"
+#, kde-format
 msgid "Font color: "
-msgstr "Колір тексту:"
+msgstr "Колір тексту: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:300
-#, fuzzy, kde-format
-#| msgid "Text opacity:"
+#, kde-format
 msgid "Text opacity: "
-msgstr "Непрозорість тексту:"
+msgstr "Непрозорість тексту: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:304
 #, kde-format
@@ -6188,16 +6182,14 @@ msgid "Choose the color of the watermark background."
 msgstr "Тут ви можете вказати колір тла накладки"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:323
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgid "Background color: "
-msgstr "Колір тла:"
+msgstr "Колір тла: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:328
-#, fuzzy, kde-format
-#| msgid "Background opacity:"
+#, kde-format
 msgid "Background opacity: "
-msgstr "Непрозорість тла:"
+msgstr "Непрозорість тла: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:332
 #, kde-format
@@ -6224,10 +6216,9 @@ msgid "Random Repetition"
 msgstr "Випадкове повторення"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:347
-#, fuzzy, kde-format
-#| msgid "Placement Type:"
+#, kde-format
 msgid "Placement Type: "
-msgstr "Тип розташування:"
+msgstr "Тип розташування: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:355
 #, kde-format
@@ -6242,8 +6233,7 @@ msgstr ""
 #, kde-format
 msgid ""
 "Density of watermark repetition (Disabled in \"Specific Location\" mode)"
-msgstr ""
-"Щільність повторення «водяного знаку» (у режимі «певне місце» вимикається)"
+msgstr "Щільність повторення накладки (у режимі «певне місце» вимикається)"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:369
 #, kde-format
@@ -6261,7 +6251,7 @@ msgstr ""
 msgid ""
 "Randomize watermark orientation (Enabled in \"Random Repetition\" mode only)"
 msgstr ""
-"Випадкова орієнтація «водяного знаку» (вмикається лише у режимі «випадкове "
+"Випадкова орієнтація накладки (вмикається лише у режимі «випадкове "
 "повторення»)"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:387
@@ -6277,10 +6267,9 @@ msgstr ""
 "типово, між 1.0 і 3.0. Значення може бути і меншим за 1.0."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:391
-#, fuzzy, kde-format
-#| msgid "Sparsity Factor:"
+#, kde-format
 msgid "Sparsity Factor: "
-msgstr "Коефіцієнт роздільності:"
+msgstr "Коефіцієнт роздільності: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:396
 #, kde-format
@@ -6310,7 +6299,7 @@ msgstr "Внизу праворуч"
 #, kde-format
 msgctxt "@item: placement position"
 msgid "Center"
-msgstr "По центру"
+msgstr "За центром"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:401
 #, kde-format
@@ -6325,10 +6314,9 @@ msgid "Bottom center"
 msgstr "Внизу за центром"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:404
-#, fuzzy, kde-format
-#| msgid "Placement Position:"
+#, kde-format
 msgid "Placement Position: "
-msgstr "Місце:"
+msgstr "Місце: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:409
 #, kde-format
@@ -6351,10 +6339,9 @@ msgid "270 degrees CW"
 msgstr "270° за год. стрілкою"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:413
-#, fuzzy, kde-format
-#| msgid "Rotation:"
+#, kde-format
 msgid "Rotation: "
-msgstr "Поворот:"
+msgstr "Обертання: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:420
 #, kde-format
@@ -6363,10 +6350,9 @@ msgstr ""
 "Тут ви можете вказати розмір накладки у відсотках до розміру зображення."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:421
-#, fuzzy, kde-format
-#| msgid "Size (%):"
+#, kde-format
 msgid "Size (%): "
-msgstr "Розмір (у %):"
+msgstr "Розмір (у %): "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:428
 #, kde-format
@@ -6375,10 +6361,9 @@ msgstr ""
 "Відступ від краю за горизонтальною віссю у відсотках від ширини зображення."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:429
-#, fuzzy, kde-format
-#| msgid "X margin (%):"
+#, kde-format
 msgid "X margin (%): "
-msgstr "Відступ за X (у %):"
+msgstr "Відступ за X (у %): "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:436
 #, kde-format
@@ -6387,10 +6372,9 @@ msgstr ""
 "Відступ від краю за вертикальною віссю у відсотках від ширини зображення."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:437
-#, fuzzy, kde-format
-#| msgid "Y margin (%):"
+#, kde-format
 msgid "Y margin (%): "
-msgstr "Відступ за Y (у %):"
+msgstr "Відступ за Y (у %): "
 
 #: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:46
 #, kde-format

@@ -60,7 +60,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-25 00:55+0000\n"
-"PO-Revision-Date: 2023-01-22 05:26+0100\n"
+"PO-Revision-Date: 2023-01-26 00:53+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -6069,10 +6069,9 @@ msgid "Use Absolute Size"
 msgstr "Usar tamaño absoluto"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:197
-#, fuzzy, kde-format
-#| msgid "Watermark type:"
+#, kde-format
 msgid "Watermark type: "
-msgstr "Tipo de marca de agua:"
+msgstr "Tipo de marca de agua: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:486
@@ -6096,10 +6095,9 @@ msgid "Click to select watermark image."
 msgstr "Pulse para seleccionar la imagen de marca de agua."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:227
-#, fuzzy, kde-format
-#| msgid "Watermark image:"
+#, kde-format
 msgid "Watermark image: "
-msgstr "Imagen de marca de agua:"
+msgstr "Imagen de marca de agua: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:235
 #, kde-format
@@ -6131,10 +6129,9 @@ msgid "Opacity of watermark"
 msgstr "Opacidad de la marca de agua"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:265
-#, fuzzy, kde-format
-#| msgid "Opacity (%):"
+#, kde-format
 msgid "Opacity (%): "
-msgstr "Opacidad (%):"
+msgstr "Opacidad (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:271
 #, kde-format
@@ -6147,10 +6144,9 @@ msgid "Enter your watermark string here."
 msgstr "Introduzca el texto de la marca de agua."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:280
-#, fuzzy, kde-format
-#| msgid "Watermark text:"
+#, kde-format
 msgid "Watermark text: "
-msgstr "Texto de la marca de agua:"
+msgstr "Texto de la marca de agua: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:287
 #, kde-format
@@ -6164,16 +6160,14 @@ msgid "Set the font color to use here."
 msgstr "Indique el color del texto a usar."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:295
-#, fuzzy, kde-format
-#| msgid "Font color:"
+#, kde-format
 msgid "Font color: "
-msgstr "Color de letra:"
+msgstr "Color de letra: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:300
-#, fuzzy, kde-format
-#| msgid "Text opacity:"
+#, kde-format
 msgid "Text opacity: "
-msgstr "Opacidad del texto:"
+msgstr "Opacidad del texto: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:304
 #, kde-format
@@ -6200,16 +6194,14 @@ msgid "Choose the color of the watermark background."
 msgstr "Indique aquí el color del fondo de la marca de agua."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:323
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgid "Background color: "
-msgstr "Color de fondo:"
+msgstr "Color del fondo: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:328
-#, fuzzy, kde-format
-#| msgid "Background opacity:"
+#, kde-format
 msgid "Background opacity: "
-msgstr "Opacidad de fondo:"
+msgstr "Opacidad del fondo: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:332
 #, kde-format
@@ -6236,10 +6228,9 @@ msgid "Random Repetition"
 msgstr "Repetición aleatoria"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:347
-#, fuzzy, kde-format
-#| msgid "Placement Type:"
+#, kde-format
 msgid "Placement Type: "
-msgstr "Tipo de emplazamiento:"
+msgstr "Tipo de emplazamiento: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:355
 #, kde-format
@@ -6290,10 +6281,9 @@ msgstr ""
 "puede ser inferior a 1,0."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:391
-#, fuzzy, kde-format
-#| msgid "Sparsity Factor:"
+#, kde-format
 msgid "Sparsity Factor: "
-msgstr "Factor de escasez:"
+msgstr "Factor de escasez: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:396
 #, kde-format
@@ -6338,10 +6328,9 @@ msgid "Bottom center"
 msgstr "Abajo en el centro"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:404
-#, fuzzy, kde-format
-#| msgid "Placement Position:"
+#, kde-format
 msgid "Placement Position: "
-msgstr "Posición del emplazamiento:"
+msgstr "Posición del emplazamiento: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:409
 #, kde-format
@@ -6364,10 +6353,9 @@ msgid "270 degrees CW"
 msgstr "270 grados en sentido horario"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:413
-#, fuzzy, kde-format
-#| msgid "Rotation:"
+#, kde-format
 msgid "Rotation: "
-msgstr "Rotación:"
+msgstr "Rotación: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:420
 #, kde-format
@@ -6375,10 +6363,9 @@ msgid "Size of watermark, as a percentage of the marked image."
 msgstr "Tamaño de la marca de agua como un porcentaje de la imagen marcada."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:421
-#, fuzzy, kde-format
-#| msgid "Size (%):"
+#, kde-format
 msgid "Size (%): "
-msgstr "Tamaño (%):"
+msgstr "Tamaño (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:428
 #, kde-format
@@ -6388,10 +6375,9 @@ msgstr ""
 "imagen marcada."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:429
-#, fuzzy, kde-format
-#| msgid "X margin (%):"
+#, kde-format
 msgid "X margin (%): "
-msgstr "Margen en X (%):"
+msgstr "Margen en X (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:436
 #, kde-format
@@ -6401,10 +6387,9 @@ msgstr ""
 "imagen marcada."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:437
-#, fuzzy, kde-format
-#| msgid "Y margin (%):"
+#, kde-format
 msgid "Y margin (%): "
-msgstr "Margen en Y (%):"
+msgstr "Margen en Y (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:46
 #, kde-format

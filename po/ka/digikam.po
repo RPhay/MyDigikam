@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-25 00:55+0000\n"
-"PO-Revision-Date: 2023-01-23 06:06+0100\n"
+"PO-Revision-Date: 2023-01-25 06:44+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -5717,10 +5717,9 @@ msgid "Use Absolute Size"
 msgstr "აბსოლუტური ზომების გამოყენება"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:197
-#, fuzzy, kde-format
-#| msgid "Watermark type:"
+#, kde-format
 msgid "Watermark type: "
-msgstr "ჭვირნიშანი:"
+msgstr "ჭვირნიშანი: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:486
@@ -5744,10 +5743,9 @@ msgid "Click to select watermark image."
 msgstr "აირჩიეთ ჭვირნიშნის სურათი."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:227
-#, fuzzy, kde-format
-#| msgid "Watermark image:"
+#, kde-format
 msgid "Watermark image: "
-msgstr "ჭვირნიშნის სურათი:"
+msgstr "ჭვირნიშნის სურათი: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:235
 #, kde-format
@@ -5777,10 +5775,9 @@ msgid "Opacity of watermark"
 msgstr "ჭვირნიშნის გაუმჭვირვალობა"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:265
-#, fuzzy, kde-format
-#| msgid "Opacity (%):"
+#, kde-format
 msgid "Opacity (%): "
-msgstr "გაუმჭვირვალობა (%):"
+msgstr "გაუმჭვირვალობა (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:271
 #, kde-format
@@ -5793,10 +5790,9 @@ msgid "Enter your watermark string here."
 msgstr "შეიყვანეთ ჭვირნიშნის სტრიქონი."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:280
-#, fuzzy, kde-format
-#| msgid "Watermark text:"
+#, kde-format
 msgid "Watermark text: "
-msgstr "ჭვირნიშნის ტექსტი:"
+msgstr "ჭვირნიშნის ტექსტი: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:287
 #, kde-format
@@ -5809,16 +5805,14 @@ msgid "Set the font color to use here."
 msgstr ""
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:295
-#, fuzzy, kde-format
-#| msgid "Font color:"
+#, kde-format
 msgid "Font color: "
-msgstr "ფონტის ფერი:"
+msgstr "ფონტის ფერი: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:300
-#, fuzzy, kde-format
-#| msgid "Text opacity:"
+#, kde-format
 msgid "Text opacity: "
-msgstr "ტექსტის გაუმჭვირვალობა:"
+msgstr "ტექსტის გაუმჭვირვალობა: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:304
 #, kde-format
@@ -5843,16 +5837,14 @@ msgid "Choose the color of the watermark background."
 msgstr ""
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:323
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgid "Background color: "
-msgstr "ფონის ფერი:"
+msgstr "ფონის ფერი: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:328
-#, fuzzy, kde-format
-#| msgid "Background opacity:"
+#, kde-format
 msgid "Background opacity: "
-msgstr "ფონის გაუმჭვირვალობა:"
+msgstr "ფონის გაუმჭვირვალობა: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:332
 #, kde-format
@@ -5877,10 +5869,9 @@ msgid "Random Repetition"
 msgstr "შემთხვევითი გამეორება"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:347
-#, fuzzy, kde-format
-#| msgid "Placement Type:"
+#, kde-format
 msgid "Placement Type: "
-msgstr "განლაგების ტიპი:"
+msgstr "განლაგების ტიპი: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:355
 #, kde-format
@@ -5918,10 +5909,9 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:391
-#, fuzzy, kde-format
-#| msgid "Separator:"
+#, kde-format
 msgid "Sparsity Factor: "
-msgstr "გამყოფი:"
+msgstr "იშვიათობის ფაქტორი: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:396
 #, kde-format
@@ -5966,10 +5956,9 @@ msgid "Bottom center"
 msgstr "ქვედა ცენტრი"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:404
-#, fuzzy, kde-format
-#| msgid "Image Position"
+#, kde-format
 msgid "Placement Position: "
-msgstr "გამოსახულების პოზიცია"
+msgstr "მოთავსების მდებარეობა: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:409
 #, kde-format
@@ -5992,10 +5981,9 @@ msgid "270 degrees CW"
 msgstr "270 გრადუსით CW"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:413
-#, fuzzy, kde-format
-#| msgid "Rotation:"
+#, kde-format
 msgid "Rotation: "
-msgstr "შემობრუნება:"
+msgstr "შემობრუნება: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:420
 #, kde-format
@@ -6003,10 +5991,9 @@ msgid "Size of watermark, as a percentage of the marked image."
 msgstr ""
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:421
-#, fuzzy, kde-format
-#| msgid "Size (%):"
+#, kde-format
 msgid "Size (%): "
-msgstr "ზომა (%):"
+msgstr "ზომა (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:428
 #, kde-format
@@ -6014,10 +6001,9 @@ msgid "Margin from edge in X direction, as a percentage of the marked image."
 msgstr ""
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:429
-#, fuzzy, kde-format
-#| msgid "X margin (%):"
+#, kde-format
 msgid "X margin (%): "
-msgstr "X ზღვარი (%):"
+msgstr "X ზღვარი (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:436
 #, kde-format
@@ -6025,10 +6011,9 @@ msgid "Margin from edge in Y direction, as a percentage of the marked image."
 msgstr ""
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:437
-#, fuzzy, kde-format
-#| msgid "Y margin (%):"
+#, kde-format
 msgid "Y margin (%): "
-msgstr "Y ზღვარი (%):"
+msgstr "Y ზღვარი (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:46
 #, kde-format
@@ -54653,7 +54638,7 @@ msgstr ""
 #: core/utilities/maintenance/maintenancedlg.cpp:334
 #, kde-format
 msgid "Scan Mode: "
-msgstr ""
+msgstr "სკანირების რეჟიმი: "
 
 #: core/utilities/maintenance/maintenancedlg.cpp:339
 #, kde-format
@@ -54839,7 +54824,7 @@ msgstr[1] "%1 ამოცანა"
 #, kde-format
 msgctxt "#info: total number of items to process"
 msgid "Total: "
-msgstr ""
+msgstr "სულ: "
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:485
 #, kde-format
@@ -54935,7 +54920,7 @@ msgstr ""
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:6
 #, kde-format
 msgid "&Queues"
-msgstr ""
+msgstr "&რიგები"
 
 #: core/utilities/queuemanager/manager/batchtool.cpp:184
 #, kde-format
@@ -55387,31 +55372,31 @@ msgstr ""
 #, kde-format
 msgctxt "@item"
 msgid "Any Album"
-msgstr ""
+msgstr "ნებისმიერი ალბომი"
 
 #: core/utilities/searchwindow/searchfields_album.cpp:53
 #, kde-format
 msgctxt "@label:listbox"
 msgid "In All"
-msgstr ""
+msgstr "ყველაში"
 
 #: core/utilities/searchwindow/searchfields_album.cpp:54
 #, kde-format
 msgctxt "@label:listbox"
 msgid "In One of"
-msgstr ""
+msgstr "ერთში"
 
 #: core/utilities/searchwindow/searchfields_album.cpp:55
 #, kde-format
 msgctxt "@label:listbox"
 msgid "In Tree"
-msgstr ""
+msgstr "ხეში"
 
 #: core/utilities/searchwindow/searchfields_album.cpp:59
 #, kde-format
 msgctxt "@item"
 msgid "Any Tag"
-msgstr ""
+msgstr "ნებისმიერი ჭდე"
 
 #: core/utilities/searchwindow/searchfields_choice.cpp:31
 #, kde-format
@@ -55423,7 +55408,7 @@ msgstr "ნებისმიერი"
 #, kde-format
 msgctxt "@label: search field choice combo-box description"
 msgid "Any of: %1"
-msgstr ""
+msgstr "ნებისმიერი სიიდან: %1"
 
 #: core/utilities/searchwindow/searchfields_colordepth.cpp:29
 #, kde-format
@@ -55493,7 +55478,7 @@ msgstr ""
 #: core/utilities/searchwindow/searchfields_createfield.cpp:112
 #, kde-format
 msgid "Modification"
-msgstr ""
+msgstr "ცვლილება"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:112
 #, kde-format
@@ -55520,7 +55505,7 @@ msgstr ""
 #, kde-format
 msgctxt "Size of the file ...-..."
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:133
 #, kde-format
@@ -55719,13 +55704,13 @@ msgstr ""
 #: core/utilities/searchwindow/searchfields_createfield.cpp:402
 #, kde-format
 msgid "Lens aperture as f-number"
-msgstr ""
+msgstr "Lens aperture as f-number"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:403
 #, kde-format
 msgctxt "Lens aperture as f-number ...-..."
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:422
 #, kde-format
@@ -55736,7 +55721,7 @@ msgstr ""
 #, kde-format
 msgctxt "Focal length of the lens ...-..."
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:441
 #, kde-format
@@ -55747,13 +55732,13 @@ msgstr ""
 #, kde-format
 msgctxt "35mm equivalent focal length ...-..."
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:461
 #, kde-format
 msgctxt "Exposure time ...-..."
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:481
 #, kde-format
@@ -55774,7 +55759,7 @@ msgstr ""
 #, kde-format
 msgctxt "ISO film speed (linear scale, ASA) ...-..."
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:528
 #, kde-format
@@ -55802,7 +55787,7 @@ msgstr ""
 #, kde-format
 msgctxt "Color temperature used for white balance ...-..."
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:564
 #, kde-format
@@ -55829,7 +55814,7 @@ msgstr ""
 #, kde-format
 msgctxt "Distance of the subject from the lens ...-..."
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:589
 #, kde-format
@@ -55851,7 +55836,7 @@ msgstr ""
 #, kde-format
 msgctxt "Altitude range ...-..."
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:629
 #, kde-format
