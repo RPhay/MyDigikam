@@ -125,11 +125,17 @@ bool DXmlGuiWindow::eventFilter(QObject* obj, QEvent* ev)
 
                     if (mev)
                     {
+
 #if (QT_VERSION > QT_VERSION_CHECK(5, 99, 0))
+
                         QPoint pos(mev->position().toPoint());
+
 #else
+
                         QPoint pos(mev->pos());
+
 #endif
+
                         QRect  desktopRect = windowHandle()->screen()->geometry();
 
                         QRect sizeRect(QPoint(0, 0), d->fullScreenBtn->size());
@@ -204,7 +210,14 @@ void DXmlGuiWindow::openHandbook(const QString& section, const QString& chapter,
 
     if (section.isEmpty())
     {
-        url = QUrl(QString::fromUtf8("https://docs.digikam.org/en/index.html"));
+        if (QApplication::applicationName() == QLatin1String("showfoto"))
+        {
+            url = QUrl(QString::fromUtf8("https://docs.digikam.org/en/showfoto_editor.html"));
+        }
+        else
+        {
+            url = QUrl(QString::fromUtf8("https://docs.digikam.org/en/index.html"));
+        }
     }
     else
     {

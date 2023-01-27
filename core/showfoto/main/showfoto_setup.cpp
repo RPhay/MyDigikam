@@ -44,7 +44,7 @@ void Showfoto::setupActions()
 
     // -- Standard 'Help' menu actions ---------------------------------------------
 
-    createHelpActions(QLatin1String("image_editor"), false);
+    createHelpActions(QLatin1String("showfoto_editor"), false);
 }
 
 void Showfoto::setupConnections()
