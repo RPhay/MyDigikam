@@ -486,11 +486,10 @@ void setupKSycocaDatabaseFile()
             if (ksycoca.isEmpty())
             {
                 ksycoca = cachePath + QLatin1String("/ksycoca5_appimage");
+                qputenv("KDESYCOCA", ksycoca.toUtf8());
             }
 
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Set KSycoca to file:" << ksycoca;
-
-            qputenv("KDESYCOCA", ksycoca.toUtf8());
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Current KSycoca file:" << ksycoca;
         }
     }
 }
