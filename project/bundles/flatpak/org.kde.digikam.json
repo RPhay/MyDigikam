@@ -314,18 +314,6 @@
                     "url": "https://github.com/scheckmedia/ImageMosaicWall.git"
                 }
             ]
-        },
-        {
-            "name": "flowview",
-            "buildsystem": "cmake-ninja",
-            "builddir": true,
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/cathaysia/digikamflowplugin.git",
-                    "disable-submodules": false
-                }
-            ]
         }
     ]
 }
