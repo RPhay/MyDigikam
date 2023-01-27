@@ -10,6 +10,7 @@ Bundle is deployed automatically on KDE Applications Flatpak testing repository.
                    ./org.kde.digikam.json                                                                       (target)
 - Repository:      https://distribute.kde.org/kdeapps.flatpakrepo
 
+NOTE: FlowView plugin from github cannot be compiled with KDE binary factory.
 
 FlatHub Repository
 ------------------
