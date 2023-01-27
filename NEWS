@@ -261,4 +261,5 @@ BUGFIXES:
 221 ==> 464567 - Freeze on thumbnail creation (git 8.0 version).
 222 ==> 464721 - Set multiple root album paths for network albums using the GUI.
 223 ==> 464731 - JPEG XL (.jxl) support.
-224 ==> 
+224 ==> 330274 - Showfoto documentation section is missing from the new online manual based on Sphinx/ReStructuredText.
+225 ==> 
