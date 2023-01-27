@@ -42,6 +42,7 @@
 #include "dfileselector.h"
 #include "dlayoutbox.h"
 #include "dtextedit.h"
+#include "dxmlguiwindow.h"
 #include "showfotofolderviewbookmarklist.h"
 
 using namespace Digikam;
@@ -91,7 +92,7 @@ ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewB
 
     d->create  = create;
     d->list    = parent;
-    d->buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    d->buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::Help, this);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
 
     if (d->create)
@@ -195,6 +196,9 @@ ShowfotoFolderViewBookmarkDlg::ShowfotoFolderViewBookmarkDlg(ShowfotoFolderViewB
 
     connect(d->buttons->button(QDialogButtonBox::Cancel), SIGNAL(clicked()),
             this, SLOT(reject()));
+
+    connect(d->buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
+            this, SLOT(slotHelp()));
 
     // --------------------------------------------------------
 
@@ -322,6 +326,13 @@ bool ShowfotoFolderViewBookmarkDlg::bookmarkDialog(ShowfotoFolderViewBookmarkLis
     delete dlg;
 
     return valRet;
+}
+
+void ShowfotoFolderViewBookmarkDlg::slotHelp()
+{
+    Digikam::DXmlGuiWindow::openHandbook(QLatin1String("showfoto_editor"),
+                                         QLatin1String("showfoto_leftsidebar"),
+                                         QLatin1String("showfoto-folderstab"));
 }
 
 } // namespace ShowFoto

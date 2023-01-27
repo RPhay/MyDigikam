@@ -105,6 +105,7 @@ private Q_SLOTS:
     void slotDateLowButtonClicked();
     void slotDateAverageButtonClicked();
     void slotDateHighButtonClicked();
+    void slotHelp();
 
 private:
 

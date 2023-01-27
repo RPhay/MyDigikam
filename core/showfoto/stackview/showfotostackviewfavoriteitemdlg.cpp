@@ -134,7 +134,7 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
 
     d->create               = create;
     d->list                 = list;
-    d->buttons              = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    d->buttons              = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::Help, this);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
 
 
@@ -320,6 +320,9 @@ ShowfotoStackViewFavoriteItemDlg::ShowfotoStackViewFavoriteItemDlg(ShowfotoStack
 
     connect(d->buttons->button(QDialogButtonBox::Cancel), SIGNAL(clicked()),
             this, SLOT(reject()));
+
+    connect(d->buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
+            this, SLOT(slotHelp()));
 
     connect(d->dateLowButton, SIGNAL(clicked()),
             this, SLOT(slotDateLowButtonClicked()));
@@ -808,6 +811,13 @@ bool ShowfotoStackViewFavoriteItemDlg::itemIsLessThanHandler(const QTreeWidgetIt
     }
 
     return (result < 0);
+}
+
+void ShowfotoStackViewFavoriteItemDlg::slotHelp()
+{
+    Digikam::DXmlGuiWindow::openHandbook(QLatin1String("showfoto_editor"),
+                                         QLatin1String("showfoto_leftsidebar"),
+                                         QLatin1String("showfoto-stacktab"));
 }
 
 } // namespace ShowFoto
