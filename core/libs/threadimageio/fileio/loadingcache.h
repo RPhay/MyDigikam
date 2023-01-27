@@ -81,6 +81,7 @@ public:
     ~LoadingCacheFileWatch() override;
 
     void addedImage(const QString& filePath);
+    void removeImage(const QString& filePath);
     void checkFileWatch(const QString& filePath);
 
 protected:
@@ -97,8 +98,8 @@ protected:
 
     friend class LoadingCache;
 
-    QMap<QString, QPair<qint64, QDateTime> > m_watchMap;
-    class LoadingCache*                      m_cache;
+    QHash<QString, QPair<qint64, QDateTime> > m_watchHash;
+    class LoadingCache*                       m_cache;
 
 private:
 
@@ -252,12 +253,6 @@ public:
      * Ownership of this object is transferred to the cache.
      */
     void setFileWatch(LoadingCacheFileWatch* const watch);
-
-    /**
-     * Returns a list of all possible file paths in cache.
-     */
-    QStringList imageFilePathsInCache()     const;
-    QStringList thumbnailFilePathsInCache() const;
 
     /**
      * Remove all entries from cache that were loaded from filePath.

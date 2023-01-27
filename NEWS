@@ -262,4 +262,5 @@ BUGFIXES:
 222 ==> 464721 - Set multiple root album paths for network albums using the GUI.
 223 ==> 464731 - JPEG XL (.jxl) support.
 224 ==> 330274 - Showfoto documentation section is missing from the new online manual based on Sphinx/ReStructuredText.
-225 ==> 
+225 ==> 464769 - Rebuild Finger-Prints Process Slow.
+226 ==> 
