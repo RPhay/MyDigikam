@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-25 00:55+0000\n"
+"POT-Creation-Date: 2023-01-28 00:56+0000\n"
 "PO-Revision-Date: 2023-01-26 00:53+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -38602,7 +38602,7 @@ msgid "Map"
 msgstr "Mapa"
 
 #: core/libs/properties/itempropertiessidebar.cpp:245
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:606
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:609
 #: core/showfoto/stackview/showfotostackviewitem.cpp:71
 #, kde-format
 msgctxt "@info: item properties"
@@ -50435,57 +50435,57 @@ msgctxt "@info"
 msgid "Icon Size: %1"
 msgstr "Tamaño de los iconos: %1"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:99
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:100
 #, kde-format
 msgctxt "@title:window"
 msgid "New Bookmark"
 msgstr "Nuevo marcador"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:103
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:104
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Bookmark"
 msgstr "Editar marcador"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:119
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:120
 #, kde-format
 msgctxt "@label: bookmark properties"
 msgid "&Title:"
 msgstr "&Título:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:123
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:124
 #, kde-format
 msgctxt "@info"
 msgid "Enter bookmark title here..."
 msgstr "Introduzca el título del marcador..."
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:124
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:125
 #, kde-format
 msgctxt "@info"
 msgid "The bookmark title which must be unique and not empty"
 msgstr "El título del marcador, que debe ser único y no estar vacío"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:130
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:131
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:211
 #, kde-format
 msgctxt "@label"
 msgid "&Icon:"
 msgstr "&Icono:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:138
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:139
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:220
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
 msgstr "Reiniciar"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:151
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:152
 #, kde-format
 msgctxt "@label: bookmark properties"
 msgid "&Path:"
 msgstr "&Ruta:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:156
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:157
 #, kde-format
 msgctxt "@info"
 msgid "Enter bookmark path here..."
@@ -51768,37 +51768,37 @@ msgstr ""
 "se abra el favorito. Si no se selecciona ninguno, se mostrará el primero de "
 "la lista."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:375
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:378
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name cannot be empty!"
 msgstr "Nota: El nombre del elemento favorito no puede estar vacío."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:379
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:382
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item files list cannot be empty!"
 msgstr "Nota: La lista de archivos del elemento favorito no puede estar vacía."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:383
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:386
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name already exists in hierarchy!"
 msgstr "Nota: El nombre del elemento favorito ya existe en la jerarquía."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:413
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:416
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name cannot be empty!"
 msgstr "Nota: El nombre de la carpeta de favoritos no puede estar vacío."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:417
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:420
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name already exists in hierarchy!"
 msgstr "Nota: El nombre de la carpeta de favoritos ya existe en la jerarquía."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:433
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:436
 #, kde-format
 msgctxt "@info"
 msgid "%1 file"
@@ -51806,37 +51806,37 @@ msgid_plural "%1 files"
 msgstr[0] "%1 archivo"
 msgstr[1] "%1 archivos"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:692
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:695
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Item"
 msgstr "Nuevo elemento favorito"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:696
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:699
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Item"
 msgstr "Editar elemento favorito"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:703
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:706
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Folder"
 msgstr "Nuevo carpeta de favoritos"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:707
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:710
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Folder"
 msgstr "Editar carpeta de favoritos"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:764
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:767
 #, kde-format
 msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
 msgstr "No ha sido posible calcular la media"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:765
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:768
 #, kde-format
 msgctxt "@info: favorite item properties"
 msgid "Could not calculate date average for this favorite item."

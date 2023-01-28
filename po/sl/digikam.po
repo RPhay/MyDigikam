@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-25 00:55+0000\n"
+"POT-Creation-Date: 2023-01-28 00:56+0000\n"
 "PO-Revision-Date: 2023-01-26 10:26+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -45,8 +45,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
-"%100<=4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
 "Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "X-Generator: Lokalize 22.12.1\n"
 
@@ -38212,7 +38212,7 @@ msgid "Map"
 msgstr "Zemljevid"
 
 #: core/libs/properties/itempropertiessidebar.cpp:245
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:606
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:609
 #: core/showfoto/stackview/showfotostackviewitem.cpp:71
 #, kde-format
 msgctxt "@info: item properties"
@@ -50012,57 +50012,57 @@ msgctxt "@info"
 msgid "Icon Size: %1"
 msgstr "Velikost ikone: %1"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:99
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:100
 #, kde-format
 msgctxt "@title:window"
 msgid "New Bookmark"
 msgstr "Nov zaznamek"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:103
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:104
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Bookmark"
 msgstr "Uredi zaznamek"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:119
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:120
 #, kde-format
 msgctxt "@label: bookmark properties"
 msgid "&Title:"
 msgstr "Naslov:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:123
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:124
 #, kde-format
 msgctxt "@info"
 msgid "Enter bookmark title here..."
 msgstr "Sem vnesite naslov zaznamka..."
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:124
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:125
 #, kde-format
 msgctxt "@info"
 msgid "The bookmark title which must be unique and not empty"
 msgstr "Naslov zaznamka, ki mora biti unikaten in neprazen"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:130
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:131
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:211
 #, kde-format
 msgctxt "@label"
 msgid "&Icon:"
 msgstr "&Ikona:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:138
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:139
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:220
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
 msgstr "Ponastavi"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:151
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:152
 #, kde-format
 msgctxt "@label: bookmark properties"
 msgid "&Path:"
 msgstr "&Pot:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:156
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:157
 #, kde-format
 msgctxt "@info"
 msgid "Enter bookmark path here..."
@@ -51321,37 +51321,37 @@ msgstr ""
 "izbrana datoteka iz tega seznama bo samodejno prikazana v urejevalniku, ko "
 "je priljubljena odprta. Če ni nobene izbrane, bo prikazana prva na seznamu."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:375
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:378
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name cannot be empty!"
 msgstr "Opomba: ime priljubljene ne sme biti prazno!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:379
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:382
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item files list cannot be empty!"
 msgstr "Opomba: seznam datotek priljubljene postavke ne sme biti prazen!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:383
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:386
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name already exists in hierarchy!"
 msgstr "Opomba: ime priljubljene postavke že obstaja v hierarhiji!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:413
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:416
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name cannot be empty!"
 msgstr "Opomba: ime priljubljene mape ne sme biti prazno!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:417
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:420
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name already exists in hierarchy!"
 msgstr "Opomba: ime priljubljene mape že obstaja v hierarhiji!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:433
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:436
 #, kde-format
 msgctxt "@info"
 msgid "%1 file"
@@ -51361,37 +51361,37 @@ msgstr[1] "%1 datoteki"
 msgstr[2] "%1 datoteke"
 msgstr[3] "%1 datotek"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:692
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:695
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Item"
 msgstr "Nova priljubljena postavka"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:696
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:699
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Item"
 msgstr "Uredi priljubljeno postavko"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:703
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:706
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Folder"
 msgstr "Nova priljubljena mapa"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:707
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:710
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Folder"
 msgstr "Uredi priljubljeno mapo"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:764
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:767
 #, kde-format
 msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
 msgstr "Povprečja ni bilo mogoče izračunati"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:765
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:768
 #, kde-format
 msgctxt "@info: favorite item properties"
 msgid "Could not calculate date average for this favorite item."

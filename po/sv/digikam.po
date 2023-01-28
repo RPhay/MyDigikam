@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-25 00:55+0000\n"
+"POT-Creation-Date: 2023-01-28 00:56+0000\n"
 "PO-Revision-Date: 2022-10-03 20:07+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -38600,7 +38600,7 @@ msgid "Map"
 msgstr "Karta"
 
 #: core/libs/properties/itempropertiessidebar.cpp:245
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:606
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:609
 #: core/showfoto/stackview/showfotostackviewitem.cpp:71
 #, kde-format
 msgctxt "@info: item properties"
@@ -50958,7 +50958,7 @@ msgctxt "@info"
 msgid "Icon Size: %1"
 msgstr "Ikonstorlek: %1"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:99
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:100
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "New Bookmark"
@@ -50966,7 +50966,7 @@ msgctxt "@title:window"
 msgid "New Bookmark"
 msgstr "Nytt Bokmärke"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:103
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:104
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Edit Bookmark"
@@ -50974,45 +50974,45 @@ msgctxt "@title:window"
 msgid "Edit Bookmark"
 msgstr "Redigera bokmärke"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:119
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:120
 #, kde-format
 msgctxt "@label: bookmark properties"
 msgid "&Title:"
 msgstr "&Titel:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:123
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:124
 #, kde-format
 msgctxt "@info"
 msgid "Enter bookmark title here..."
 msgstr "Skriv in bokmärkestitel här..."
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:124
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:125
 #, kde-format
 msgctxt "@info"
 msgid "The bookmark title which must be unique and not empty"
 msgstr "Bokmärkestiteln som måste vara unik och inte tom"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:130
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:131
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:211
 #, kde-format
 msgctxt "@label"
 msgid "&Icon:"
 msgstr "&Ikon:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:138
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:139
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:220
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
 msgstr "Återställ"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:151
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:152
 #, kde-format
 msgctxt "@label: bookmark properties"
 msgid "&Path:"
 msgstr "&Sökväg:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:156
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:157
 #, kde-format
 msgctxt "@info"
 msgid "Enter bookmark path here..."
@@ -52276,37 +52276,37 @@ msgstr ""
 "närvarande är markerad i listan visas automatiskt i editorn när favoriten är "
 "öppen. Om ingen är markerad, visas den första i listan."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:375
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:378
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name cannot be empty!"
 msgstr "Observera: Namnet på favoritobjekt kan inte vara tomt."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:379
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:382
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item files list cannot be empty!"
 msgstr "Observera: Fillistan för favoritobjekt kan inte vara tom."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:383
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:386
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name already exists in hierarchy!"
 msgstr "Observera: Namnet på favoritobjektet finns redan i hierarkin."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:413
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:416
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name cannot be empty!"
 msgstr "Observera: Namnet på favoritkatalogen kan inte vara tomt."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:417
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:420
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name already exists in hierarchy!"
 msgstr "Observera: Namnet på favoritkatalogen finns redan i hierarkin."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:433
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:436
 #, kde-format
 msgctxt "@info"
 msgid "%1 file"
@@ -52314,7 +52314,7 @@ msgid_plural "%1 files"
 msgstr[0] "%1 fil"
 msgstr[1] "%1 filer"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:692
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:695
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "New Favorite Item"
@@ -52322,7 +52322,7 @@ msgctxt "@title:window"
 msgid "New Favorite Item"
 msgstr "Nytt favoritobjekt"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:696
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:699
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Edit Favorite Item"
@@ -52330,7 +52330,7 @@ msgctxt "@title:window"
 msgid "Edit Favorite Item"
 msgstr "Redigera favoritobjekt"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:703
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:706
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "New Favorite Folder"
@@ -52338,7 +52338,7 @@ msgctxt "@title:window"
 msgid "New Favorite Folder"
 msgstr "Ny favoritkatalog"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:707
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:710
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Edit Favorite Folder"
@@ -52346,7 +52346,7 @@ msgctxt "@title:window"
 msgid "Edit Favorite Folder"
 msgstr "Redigera favoritkatalog"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:764
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:767
 #, fuzzy, kde-format
 #| msgctxt "@title: album properties"
 #| msgid "Could Not Calculate Average"
@@ -52354,7 +52354,7 @@ msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
 msgstr "Kunde inte beräkna medelvärde"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:765
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:768
 #, kde-format
 msgctxt "@info: favorite item properties"
 msgid "Could not calculate date average for this favorite item."

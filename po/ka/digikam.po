@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-25 00:55+0000\n"
-"PO-Revision-Date: 2023-01-25 06:44+0100\n"
+"POT-Creation-Date: 2023-01-28 00:56+0000\n"
+"PO-Revision-Date: 2023-01-27 12:15+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -7431,7 +7431,7 @@ msgstr ""
 #: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:77
 #, kde-format
 msgid "JPEG XL quality:"
-msgstr ""
+msgstr "JPEG XL ხარისხი:"
 
 #: core/dplugins/dimg/qimage/dimgjxlexportsettings.cpp:79
 #, kde-format
@@ -11657,7 +11657,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchbackend.cpp:309
 #, kde-format
 msgid "OSM"
-msgstr ""
+msgstr "OSM"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchresultmodelhelper.cpp:152
 #: core/utilities/geolocation/geoiface/bookmark/gpsbookmarkmodelhelper.cpp:243
@@ -11692,7 +11692,7 @@ msgstr ""
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:102
 #, kde-format
 msgid "Copy coordinates"
-msgstr ""
+msgstr "კოორდინატების კოპირება"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchwidget.cpp:191
 #, kde-format
@@ -11757,19 +11757,19 @@ msgstr "წინა"
 #, kde-format
 msgctxt "@item"
 msgid "Edit EXIF"
-msgstr ""
+msgstr "EXIF-ის ჩასწორება"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:129
 #, kde-format
 msgctxt "@item"
 msgid "Edit IPTC"
-msgstr ""
+msgstr "IPTC-ის ჩასწორება"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:130
 #, kde-format
 msgctxt "@item"
 msgid "Edit XMP"
-msgstr ""
+msgstr "XMP-ის ჩასწორება"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/metadataeditdialog.cpp:311
 #, kde-format
@@ -11807,8 +11807,8 @@ msgstr ""
 #, kde-format
 msgid "<p>1 character.</p>"
 msgid_plural "<p>%1 characters.</p>"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "<p>1 სიმბოლო.</p>"
+msgstr[1] "<p>%1 სიმბოლო.</p>"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:291
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:346
@@ -12164,7 +12164,7 @@ msgstr ""
 #, kde-format
 msgctxt "name of the document this image has been scanned from"
 msgid "Name (*):"
-msgstr ""
+msgstr "სახელი (*):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:101
 #, kde-format
@@ -12182,7 +12182,7 @@ msgstr ""
 #, kde-format
 msgctxt "image description"
 msgid "Description (*):"
-msgstr ""
+msgstr "აღწერა (*):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:111
 #, kde-format
@@ -12197,7 +12197,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:117
 #, kde-format
 msgid "Artist (*):"
-msgstr ""
+msgstr "შემსრულებელი (*):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:120
 #, kde-format
@@ -12214,7 +12214,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:126
 #, kde-format
 msgid "Copyright (*):"
-msgstr ""
+msgstr "საავტორო უფლებები (*):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:129
 #, kde-format
@@ -35818,7 +35818,7 @@ msgid "Map"
 msgstr "რუკა"
 
 #: core/libs/properties/itempropertiessidebar.cpp:245
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:606
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:609
 #: core/showfoto/stackview/showfotostackviewitem.cpp:71
 #, kde-format
 msgctxt "@info: item properties"
@@ -40077,7 +40077,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item: icc profile properties"
 msgid "Profile Version"
-msgstr ""
+msgstr "პროფილის ვერსია"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:151
 #, kde-format
@@ -40089,7 +40089,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item: icc profile properties"
 msgid "CMM Flags"
-msgstr ""
+msgstr "CMM ალმები"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:153
 #, kde-format
@@ -41175,6 +41175,8 @@ msgstr ""
 msgid ""
 "<b>Title: </b><p>%1</p><b>Value: </b><p>%2</p><b>Description: </b><p>%3</p>"
 msgstr ""
+"<b>სათაური: </b><p>%1</p><b>მნიშვნელობა: </b><p>%2</p><b>აღწერა: </b><p>%3</"
+"p>"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:47
 #, kde-format
@@ -41284,7 +41286,7 @@ msgstr ""
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:131
 #, kde-format
 msgid "Digital Video"
-msgstr ""
+msgstr "ციფრული ვიდეო"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:135
 #, kde-format
@@ -41760,7 +41762,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Save in file"
-msgstr ""
+msgstr "ფაილში შენახვა"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:190
 #: core/libs/widgets/metadata/exiv2/metadatawidget.cpp:159
@@ -41791,7 +41793,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info: metadata to text"
 msgid "File name: %1 (%2)"
-msgstr ""
+msgstr "ფაილი სახელი: %1 (%2)"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolwidget.cpp:398
 #, kde-format
@@ -41827,7 +41829,7 @@ msgstr ""
 #: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:63
 #, kde-format
 msgid "IPTC Records"
-msgstr ""
+msgstr "IPTC ჩანაწერები"
 
 #: core/libs/widgets/metadata/exiv2/iptcwidget.cpp:163
 #, kde-format
@@ -41940,7 +41942,7 @@ msgstr ""
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:125
 #, kde-format
 msgid "TIFF Properties"
-msgstr ""
+msgstr "TIFF თვისებები"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:129
 #, kde-format
@@ -42026,12 +42028,12 @@ msgstr ""
 #, kde-format
 msgctxt "@info: metadata clipboard"
 msgid "File name: %1 (%2)"
-msgstr ""
+msgstr "ფაილი სახელი: %1 (%2)"
 
 #: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:89
 #, kde-format
 msgid "XMP Schema"
-msgstr ""
+msgstr "XMP სქემა"
 
 #: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:189
 #, kde-format
@@ -42041,7 +42043,7 @@ msgstr ""
 #: core/libs/widgets/metadata/exiv2/xmpwidget.cpp:190
 #, kde-format
 msgid "XMP text Files (*.xmp)"
-msgstr ""
+msgstr "XMP ტექსტური ფაილები (*.xmp)"
 
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:494
 #, kde-format
@@ -42053,7 +42055,7 @@ msgstr "არცერთი"
 #, kde-format
 msgctxt "@info: color label selector"
 msgid "Color Label: %1"
-msgstr ""
+msgstr "ფერის ჭდე: %1"
 
 #: core/libs/widgets/metadata/labels/colorlabelwidget.cpp:576
 #, kde-format
@@ -42071,7 +42073,7 @@ msgstr "არცერთი"
 #, kde-format
 msgctxt "@info: pick lablel selector"
 msgid "Pick Label: %1"
-msgstr ""
+msgstr "აირჩიეთ ჭდე: %1"
 
 #: core/libs/widgets/metadata/labels/picklabelwidget.cpp:417
 #, kde-format
@@ -42089,13 +42091,13 @@ msgstr "შეფასება"
 #, kde-format
 msgctxt "@info: language edit widget"
 msgid "Remove entry for this language"
-msgstr ""
+msgstr "ენის ჩანაწერის წაშლა"
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:36
 #, kde-format
 msgctxt "@info: language edit widget"
 msgid "Select item language here."
-msgstr ""
+msgstr "აირჩიეთ ჩანაწერის ენა."
 
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:237
 #: core/libs/widgets/metadata/utils/altlangstredit.cpp:253
@@ -42126,13 +42128,13 @@ msgstr "ნაგულისხმები ენა"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Afrikaans (South Africa)"
-msgstr ""
+msgstr "აფრიკაანსი (სამხრეთ აფრიკა)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:44
 #, kde-format
 msgctxt "@info: country code"
 msgid "Amharic (Ethiopia)"
-msgstr ""
+msgstr "ამჰარული (ეთიოპია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:45
 #, kde-format
@@ -42144,31 +42146,31 @@ msgstr ""
 #, kde-format
 msgctxt "@info: country code"
 msgid "Arabic (UAE)"
-msgstr ""
+msgstr "არაბული (UAE)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:47
 #, kde-format
 msgctxt "@info: country code"
 msgid "Arabic (Bahrain)"
-msgstr ""
+msgstr "არაბული (ბაჰრეინი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:48
 #, kde-format
 msgctxt "@info: country code"
 msgid "Arabic (Algeria)"
-msgstr ""
+msgstr "არაბული (ალჟირი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:49
 #, kde-format
 msgctxt "@info: country code"
 msgid "Arabic (Egypt)"
-msgstr ""
+msgstr "არაბული (ეგვიპტე)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:50
 #, kde-format
 msgctxt "@info: country code"
 msgid "Arabic (Iraq)"
-msgstr ""
+msgstr "არაბული (ერაყი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:51
 #, kde-format
@@ -42180,31 +42182,31 @@ msgstr "არაბული (ისრაელი)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Arabic (Jordan)"
-msgstr ""
+msgstr "არაბული (იორდანია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:53
 #, kde-format
 msgctxt "@info: country code"
 msgid "Arabic (Kuwait)"
-msgstr ""
+msgstr "არაბული (კუვეიტი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:54
 #, kde-format
 msgctxt "@info: country code"
 msgid "Arabic (Lebanon)"
-msgstr ""
+msgstr "არაბული (ლებანი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:55
 #, kde-format
 msgctxt "@info: country code"
 msgid "Arabic (Libya)"
-msgstr ""
+msgstr "არაბული (ლიბია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:56
 #, kde-format
 msgctxt "@info: country code"
 msgid "Arabic (Morocco)"
-msgstr ""
+msgstr "არაბული (მოროკო)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:57
 #, kde-format
@@ -42216,25 +42218,25 @@ msgstr "არაბული (მავრიტანია)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Arabic (Palestinian West Bank and Gaza)"
-msgstr ""
+msgstr "არაბული (პალესტინური დასავლეთი ნაწილი და ღაზა)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:59
 #, kde-format
 msgctxt "@info: country code"
 msgid "Arabic (Oman)"
-msgstr ""
+msgstr "არაბული (ომანი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:60
 #, kde-format
 msgctxt "@info: country code"
 msgid "Arabic (Qatar)"
-msgstr ""
+msgstr "არაბული (ყატარი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:61
 #, kde-format
 msgctxt "@info: country code"
 msgid "Arabic (Saudi Arabia)"
-msgstr ""
+msgstr "არაბული (საუდის არაბეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:62
 #, kde-format
@@ -42264,31 +42266,31 @@ msgstr "არაბული (ჩადი)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Arabic (Tunisia)"
-msgstr ""
+msgstr "არაბული (ტუნისი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:67
 #, kde-format
 msgctxt "@info: country code"
 msgid "Arabic (Yemen)"
-msgstr ""
+msgstr "არაბული (იემენი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:68
 #, kde-format
 msgctxt "@info: country code"
 msgid "Assamese (India)"
-msgstr ""
+msgstr "ასამური (ინდოეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:69
 #, kde-format
 msgctxt "@info: country code"
 msgid "Azerbaijani (Republic of Azerbaijan)"
-msgstr ""
+msgstr "აზერბაიჯანული (აზერბაიჯანის რესპუბლიკა)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:70
 #, kde-format
 msgctxt "@info: country code"
 msgid "Bashkir (Russia)"
-msgstr ""
+msgstr "ბაშკირული (რუსეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:71
 #, kde-format
@@ -42313,32 +42315,32 @@ msgstr "ბენგალური (სინგაპური)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Belarusian (Belarus)"
-msgstr ""
+msgstr "ბელარუსული (ბელარუსი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:75
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:81
 #, kde-format
 msgctxt "@info: country code"
 msgid "Bulgarian (Bulgaria)"
-msgstr ""
+msgstr "ბულგარული (ბულგარეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:77
 #, kde-format
 msgctxt "@info: country code"
 msgid "Tibetan (Bhutan)"
-msgstr ""
+msgstr "ტიბეტური (ბუტანი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:78
 #, kde-format
 msgctxt "@info: country code"
 msgid "Tibetan (People's Republic of China)"
-msgstr ""
+msgstr "ტიბეტური (ჩინეთის სახალხო რესპუბლიკა)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:79
 #, kde-format
 msgctxt "@info: country code"
 msgid "Breton (France)"
-msgstr ""
+msgstr "ბრეტონი (საფრანგეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:80
 #, kde-format
@@ -42350,19 +42352,19 @@ msgstr "ბოსნიური (ბოსნია და ჰერცოგ�
 #, kde-format
 msgctxt "@info: country code"
 msgid "Catalan (Andorra)"
-msgstr ""
+msgstr "კატალანური (ანდორა)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:83
 #, kde-format
 msgctxt "@info: country code"
 msgid "Catalan (Spain)"
-msgstr ""
+msgstr "კატალანური (ესპანეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:84
 #, kde-format
 msgctxt "@info: country code"
 msgid "Catalan (France)"
-msgstr ""
+msgstr "კატალანური (საფრანგეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:85
 #, kde-format
@@ -42374,7 +42376,7 @@ msgstr "ტაგალოგი (ფილიპინები)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Chamorro (Guam)"
-msgstr ""
+msgstr "ჩამორო (გუამი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:87
 #, kde-format
@@ -42386,25 +42388,25 @@ msgstr "ჩამორო (ჩრდილოეთ მარიანას �
 #, kde-format
 msgctxt "@info: country code"
 msgid "Corsican (France)"
-msgstr ""
+msgstr "კორსიკული (საფრანგეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:89
 #, kde-format
 msgctxt "@info: country code"
 msgid "Czech (Czechia)"
-msgstr ""
+msgstr "ჩეხური (ჩეხეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:90
 #, kde-format
 msgctxt "@info: country code"
 msgid "Welsh (United Kingdom)"
-msgstr ""
+msgstr "უელსური (გაერთიანებული სამეფო)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:91
 #, kde-format
 msgctxt "@info: country code"
 msgid "Danish (Denmark)"
-msgstr ""
+msgstr "დანიური (დანია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:92
 #, kde-format
@@ -42416,7 +42418,7 @@ msgstr "დანიური (გრენლანდია)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "German (Austria)"
-msgstr ""
+msgstr "გერმანული (ავსტრია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:94
 #, kde-format
@@ -42428,7 +42430,7 @@ msgstr "გერმანული (შვეიცარია)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "German (Germany)"
-msgstr ""
+msgstr "გერმანული (გერმანია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:96
 #, kde-format
@@ -42440,13 +42442,13 @@ msgstr "გერმანული (დანია)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "German (Liechtenstein)"
-msgstr ""
+msgstr "გერმანული (ლიხტენშტეინი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:98
 #, kde-format
 msgctxt "@info: country code"
 msgid "German (Luxembourg)"
-msgstr ""
+msgstr "გერმანული (ლუქსემბურგი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:99
 #, kde-format
@@ -42458,7 +42460,7 @@ msgstr "ბერძნული (კვიპროსი)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Greek (Greece)"
-msgstr ""
+msgstr "ბერძნული (საბერძნეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:101
 #, kde-format
@@ -42482,7 +42484,7 @@ msgstr "ინგლისური (ამერიკული სამოა
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Australia)"
-msgstr ""
+msgstr "ინგლისური (ავსტრალია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:105
 #, kde-format
@@ -42518,19 +42520,19 @@ msgstr "ინგლისური (ბოტსვანა)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Belize)"
-msgstr ""
+msgstr "ინგლისური (ბელიზი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:111
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Canada)"
-msgstr ""
+msgstr "ინგლისური (კანადა)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:112
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Caribbean)"
-msgstr ""
+msgstr "ინგლისური (კარიბი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:113
 #, kde-format
@@ -42584,7 +42586,7 @@ msgstr "ინგლისური (მიკრონეზია)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (United Kingdom)"
-msgstr ""
+msgstr "ინგლისური (გაერთიანებული სამეფო)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:122
 #, kde-format
@@ -42626,7 +42628,7 @@ msgstr "ინგლისური (გაიანა)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Ireland)"
-msgstr ""
+msgstr "ინგლისური (ირლანდია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:129
 #, kde-format
@@ -42638,7 +42640,7 @@ msgstr "ინგლისური (ისრაელი)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (India)"
-msgstr ""
+msgstr "ინგლისური (ინდოეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:131
 #, kde-format
@@ -42650,7 +42652,7 @@ msgstr "ინგლისური (ბრიტანეთის ინდო
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Jamaica)"
-msgstr ""
+msgstr "ინგლისური (იამაიკა)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:133
 #, kde-format
@@ -42728,7 +42730,7 @@ msgstr "ინგლისური (მალავი)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Malaysia)"
-msgstr ""
+msgstr "ინგლისური (მალაიზია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:146
 #, kde-format
@@ -42764,7 +42766,7 @@ msgstr "ინგლისური (ნიუე)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (New Zealand)"
-msgstr ""
+msgstr "ინგლისური (ახალი ზელანდია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:152
 #, kde-format
@@ -42776,7 +42778,7 @@ msgstr "ინგლისური (პაპუა ახალი გვი�
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Philippines)"
-msgstr ""
+msgstr "ინგლისური (ფილიპინები)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:154
 #, kde-format
@@ -42824,7 +42826,7 @@ msgstr "ინგლისური (სეიშელის კუნძულ
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Singapore)"
-msgstr ""
+msgstr "ინგლისური (სინგაპური)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:162
 #, kde-format
@@ -42872,7 +42874,7 @@ msgstr "ინგლისური (ტონგა)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Trinidad)"
-msgstr ""
+msgstr "ინგლისური (ტრინიდადი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:170
 #, kde-format
@@ -42884,7 +42886,7 @@ msgstr "ინგლისური (უგანდა)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (United States)"
-msgstr ""
+msgstr "ინგლისური (აშშ)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:172
 #, kde-format
@@ -42914,7 +42916,7 @@ msgstr "ინგლისური (ვანუატუ)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Western Samoa)"
-msgstr ""
+msgstr "ინგლისური (დასავლეთ-სამოა)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:177
 #, kde-format
@@ -42932,7 +42934,7 @@ msgstr "ინგლისური (ზამბია)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "English (Zimbabwe)"
-msgstr ""
+msgstr "ინგლისური (ზიმბაბვე)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:180
 #, kde-format
@@ -42944,31 +42946,31 @@ msgstr "ესპერანტო (საფრანგეთი)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Spanish (Argentina)"
-msgstr ""
+msgstr "ესპანური (არგენტიკა)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:182
 #, kde-format
 msgctxt "@info: country code"
 msgid "Spanish (Bolivia)"
-msgstr ""
+msgstr "ესპანური (ბოლივია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:183
 #, kde-format
 msgctxt "@info: country code"
 msgid "Spanish (Chile)"
-msgstr ""
+msgstr "ესპანური (ჩილე)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:184
 #, kde-format
 msgctxt "@info: country code"
 msgid "Spanish (Colombia)"
-msgstr ""
+msgstr "ესპანური (კოლუმბია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:185
 #, kde-format
 msgctxt "@info: country code"
 msgid "Spanish (Costa Rica)"
-msgstr ""
+msgstr "ესპანური (კოსტა რიკა)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:186
 #, kde-format
@@ -42980,19 +42982,19 @@ msgstr "ესპანური (კუბა)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Spanish (Dominican Republic)"
-msgstr ""
+msgstr "ესპანური (დომინიკის რესპუბლიკა)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:188
 #, kde-format
 msgctxt "@info: country code"
 msgid "Spanish (Ecuador)"
-msgstr ""
+msgstr "ესპანური (ეკვადორი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:189
 #, kde-format
 msgctxt "@info: country code"
 msgid "Spanish (Spain)"
-msgstr ""
+msgstr "ესპანური (ესპანეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:190
 #, kde-format
@@ -43004,97 +43006,97 @@ msgstr "ესპანური (ეკვატორული გვინე
 #, kde-format
 msgctxt "@info: country code"
 msgid "Spanish (Guatemala)"
-msgstr ""
+msgstr "ესპანური (გვატემალა)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:192
 #, kde-format
 msgctxt "@info: country code"
 msgid "Spanish (Honduras)"
-msgstr ""
+msgstr "ესპანური (ჰონდურასი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:193
 #, kde-format
 msgctxt "@info: country code"
 msgid "Spanish (Mexico)"
-msgstr ""
+msgstr "ესპანური (მექსიკა)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:194
 #, kde-format
 msgctxt "@info: country code"
 msgid "Spanish (Nicaragua)"
-msgstr ""
+msgstr "ესპანური (ნიკარაგუა)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:195
 #, kde-format
 msgctxt "@info: country code"
 msgid "Spanish (Panama)"
-msgstr ""
+msgstr "ესპანური (პანამა)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:196
 #, kde-format
 msgctxt "@info: country code"
 msgid "Spanish (Peru)"
-msgstr ""
+msgstr "ესპანური (პერუ)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:197
 #, kde-format
 msgctxt "@info: country code"
 msgid "Spanish (Puerto Rico)"
-msgstr ""
+msgstr "ესპანური (პუერტო რიკო)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:198
 #, kde-format
 msgctxt "@info: country code"
 msgid "Spanish (Paraguay)"
-msgstr ""
+msgstr "ესპანური (პარაგვაი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:199
 #, kde-format
 msgctxt "@info: country code"
 msgid "Spanish (El Salvador)"
-msgstr ""
+msgstr "ესპანური (ელ სალვადორი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:200
 #, kde-format
 msgctxt "@info: country code"
 msgid "Spanish (United States)"
-msgstr ""
+msgstr "ესპანური (აშშ)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:201
 #, kde-format
 msgctxt "@info: country code"
 msgid "Spanish (Uruguay)"
-msgstr ""
+msgstr "ესპანური (ურუგვაი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:202
 #, kde-format
 msgctxt "@info: country code"
 msgid "Spanish (Venezuela)"
-msgstr ""
+msgstr "ესპანური (ვენესუელა)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:203
 #, kde-format
 msgctxt "@info: country code"
 msgid "Estonian (Estonia)"
-msgstr ""
+msgstr "ესტონური (ესტონური)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:204
 #, kde-format
 msgctxt "@info: country code"
 msgid "Basque (Basque Country)"
-msgstr ""
+msgstr "ბასკური (ბასკეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:205
 #, kde-format
 msgctxt "@info: country code"
 msgid "Persian (Iran)"
-msgstr ""
+msgstr "სპარსული (ირანი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:206
 #, kde-format
 msgctxt "@info: country code"
 msgid "Finnish (Finland)"
-msgstr ""
+msgstr "ფინური (ფინეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:207
 #, kde-format
@@ -43112,7 +43114,7 @@ msgstr "ფიჯიური (ფიჯი)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Faeroese (Faero Islands)"
-msgstr ""
+msgstr "ფაროული (ფაროს კუნძულები)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:210
 #, kde-format
@@ -43124,7 +43126,7 @@ msgstr "ფრანგული (ანდორა)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Belgium)"
-msgstr ""
+msgstr "ფრანგული (ბელგია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:212
 #, kde-format
@@ -43154,7 +43156,7 @@ msgstr "ფრანგული (კანადა)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Democratic Republic of Congo)"
-msgstr ""
+msgstr "ფრანგული (კონგოს დემოკრატიული რესპუბლიკა)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:217
 #, kde-format
@@ -43178,7 +43180,7 @@ msgstr "ფრანგული (შვეიცარია)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Cote d'Ivoire)"
-msgstr ""
+msgstr "ფრანგული (კოტ-დ’ივუარი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:221
 #, kde-format
@@ -43196,7 +43198,7 @@ msgstr "ფრანგული (ჯიბუტი)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (France)"
-msgstr ""
+msgstr "ფრანგული (საფრანგეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:224
 #, kde-format
@@ -43256,13 +43258,13 @@ msgstr "ფრანგული (ლიბანი)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Luxembourg)"
-msgstr ""
+msgstr "ფრანგული (ლუქსემბურგი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:234
 #, kde-format
 msgctxt "@info: country code"
 msgid "French (Monaco)"
-msgstr ""
+msgstr "საფრანგეთი (მონაკო)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:235
 #, kde-format
@@ -43352,7 +43354,7 @@ msgstr "ფრანგული (მაიოტი)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Frisian (Netherlands)"
-msgstr ""
+msgstr "ფრისული (ნიდერლანდები)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:250
 #, kde-format
@@ -43364,7 +43366,7 @@ msgstr "ირლანდიური (გაერთიანებული 
 #, kde-format
 msgctxt "@info: country code"
 msgid "Irish (Ireland)"
-msgstr ""
+msgstr "ირლანდიური (ირლანდიელები)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:252
 #, kde-format
@@ -43376,13 +43378,13 @@ msgstr "გალური (გაერთიანებული სამე
 #, kde-format
 msgctxt "@info: country code"
 msgid "Galician (Galicia)"
-msgstr ""
+msgstr "გალისიური (გალისია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:254
 #, kde-format
 msgctxt "@info: country code"
 msgid "Gujarati (India)"
-msgstr ""
+msgstr "გუჯარათული (ინდოეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:255
 #, kde-format
@@ -43394,43 +43396,43 @@ msgstr "მანქსი (გაერთიანებული სამე
 #, kde-format
 msgctxt "@info: country code"
 msgid "Hausa (Chad)"
-msgstr ""
+msgstr "ჰაუსა (ჩადი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:257
 #, kde-format
 msgctxt "@info: country code"
 msgid "Hawaiian (US state of Hawaii)"
-msgstr ""
+msgstr "ჰავაიური (აშშ-ის ჰავაის შტატი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:258
 #, kde-format
 msgctxt "@info: country code"
 msgid "Modern Hebrew (Israel)"
-msgstr ""
+msgstr "თანამედროვე ივრითი (ისრაელი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:259
 #, kde-format
 msgctxt "@info: country code"
 msgid "Hindi (India)"
-msgstr ""
+msgstr "ჰინდი (ინდოეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:260
 #, kde-format
 msgctxt "@info: country code"
 msgid "Hmong (Laos)"
-msgstr ""
+msgstr "ჰმონგური (ლაოსი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:261
 #, kde-format
 msgctxt "@info: country code"
 msgid "Croatian (Bosnia and Herzegovina, Latin)"
-msgstr ""
+msgstr "ხორვატული (ბოსნია და ჰერცოგოვინა)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:262
 #, kde-format
 msgctxt "@info: country code"
 msgid "Croatian (Croatia)"
-msgstr ""
+msgstr "ხორვატული (ხორვატია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:263
 #, kde-format
@@ -43442,7 +43444,7 @@ msgstr "ჰაიტის კრეოლურიი (საფრანგე
 #, kde-format
 msgctxt "@info: country code"
 msgid "Hungarian (Hungary)"
-msgstr ""
+msgstr "უნგრული (უნგრეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:265
 #, kde-format
@@ -43454,13 +43456,13 @@ msgstr "უნგრული (სლოვენია)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Armenian (Armenia)"
-msgstr ""
+msgstr "სომხური (სომხეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:267
 #, kde-format
 msgctxt "@info: country code"
 msgid "Indonesian (Bahasa Indonesia)"
-msgstr ""
+msgstr "ინდონეზიური (ბაჰასა ინდონეზია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:268
 #, kde-format
@@ -43472,31 +43474,31 @@ msgstr "იგბო (ნიგერია)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Sichuan Yi (People's Republic of China)"
-msgstr ""
+msgstr "სიჩუან ი (ჩინეთის სახალხო რესპუბლიკა)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:270
 #, kde-format
 msgctxt "@info: country code"
 msgid "Icelandic (Iceland)"
-msgstr ""
+msgstr "ისლანდიური (ისლანდია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:271
 #, kde-format
 msgctxt "@info: country code"
 msgid "Italian (Switzerland)"
-msgstr ""
+msgstr "იტალიური (შვეიცარია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:272
 #, kde-format
 msgctxt "@info: country code"
 msgid "Italian (Croatia)"
-msgstr ""
+msgstr "იტალიური (ხორვატია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:273
 #, kde-format
 msgctxt "@info: country code"
 msgid "Italian (Italy)"
-msgstr ""
+msgstr "იტალიური (იტალია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:274
 #, kde-format
@@ -43514,19 +43516,19 @@ msgstr "იტალიური (სან მარინო)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Hebrew (Israel)"
-msgstr ""
+msgstr "ივრითი (ისრაელი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:277
 #, kde-format
 msgctxt "@info: country code"
 msgid "Japanese (Japan)"
-msgstr ""
+msgstr "იაპონური (იაპონია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:278
 #, kde-format
 msgctxt "@info: country code"
 msgid "Modern Javanese (Indonesia)"
-msgstr ""
+msgstr "თანამედროვე იავური (ინდონეზია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:279
 #, kde-format
@@ -43538,19 +43540,19 @@ msgstr "იავური (ინდონეზია)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Georgian (Georgia)"
-msgstr ""
+msgstr "ქართული (საქართველო)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:281
 #, kde-format
 msgctxt "@info: country code"
 msgid "Kazakh (Kazakhstan)"
-msgstr ""
+msgstr "ყაზახური (ყაზახეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:282
 #, kde-format
 msgctxt "@info: country code"
 msgid "Greenlandic (Greenland)"
-msgstr ""
+msgstr "გრინლანდიური (გრინლანდია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:283
 #, kde-format
@@ -43562,25 +43564,25 @@ msgstr "ხმერული (კამბოჯა)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Kannada (India)"
-msgstr ""
+msgstr "კანადა (ინდოეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:285
 #, kde-format
 msgctxt "@info: country code"
 msgid "Korean (South Korea)"
-msgstr ""
+msgstr "კორეული (სამხრეთ კორეა)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:286
 #, kde-format
 msgctxt "@info: country code"
 msgid "Korean (North Korea)"
-msgstr ""
+msgstr "კორეული (ჩრდილოეთ კორეა)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:287
 #, kde-format
 msgctxt "@info: country code"
 msgid "Kyrgyz (Kyrgyzstan)"
-msgstr ""
+msgstr "ყირგიზული (ყირგიზეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:288
 #, kde-format
@@ -43598,19 +43600,19 @@ msgstr "ქურთული (ირანი)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Latin (Italy)"
-msgstr ""
+msgstr "ლათინური (იტალია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:291
 #, kde-format
 msgctxt "@info: country code"
 msgid "Luxembourgish (Luxembourg)"
-msgstr ""
+msgstr "ლუმბურგული (ლუმბურგული)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:292
 #, kde-format
 msgctxt "@info: country code"
 msgid "Lingala (Democratic Republic of Congo)"
-msgstr ""
+msgstr "ლინგალა (კონგოს დემოკრატიული რესპუბლიკა)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:293
 #, kde-format
@@ -43622,19 +43624,19 @@ msgstr "ლინგალა (კონგო)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Lao (Lao PDR)"
-msgstr ""
+msgstr "ლაოსური (ლაოსი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:295
 #, kde-format
 msgctxt "@info: country code"
 msgid "Lithuanian (Lithuania)"
-msgstr ""
+msgstr "ლიეტუვური (ლიეტუვა)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:296
 #, kde-format
 msgctxt "@info: country code"
 msgid "Latvian (Latvia)"
-msgstr ""
+msgstr "ლატვიური (ლატვიური)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:297
 #, kde-format
@@ -43652,43 +43654,43 @@ msgstr ""
 #, kde-format
 msgctxt "@info: country code"
 msgid "Maori (New Zealand)"
-msgstr ""
+msgstr "მაორი (ახალი ზელანდია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:300
 #, kde-format
 msgctxt "@info: country code"
 msgid "Macedonian (Macedonia)"
-msgstr ""
+msgstr "მაკედონიური (მაკედონია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:301
 #, kde-format
 msgctxt "@info: country code"
 msgid "Malayalam (India)"
-msgstr ""
+msgstr "მალაიალამური (ინდოეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:302
 #, kde-format
 msgctxt "@info: country code"
 msgid "Mongolian (People's Republic of China)"
-msgstr ""
+msgstr "მონღოლური (ჩინეთის სახალხო რესპუბლიკა)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:303
 #, kde-format
 msgctxt "@info: country code"
 msgid "Mongolian (Mongolia)"
-msgstr ""
+msgstr "მონღოლური (მონღოლეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:304
 #, kde-format
 msgctxt "@info: country code"
 msgid "Marathi (India)"
-msgstr ""
+msgstr "მარათი (ინდური)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:305
 #, kde-format
 msgctxt "@info: country code"
 msgid "Hill Mari (Russia)"
-msgstr ""
+msgstr "ჰილ მარი (რუსეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:306
 #, kde-format
@@ -43700,7 +43702,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info: country code"
 msgid "Malay (Malaysia)"
-msgstr ""
+msgstr "მალაიური (მალაიზია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:308
 #, kde-format
@@ -43712,25 +43714,25 @@ msgstr "მალაიური (სინგაპური)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Maltese (Malta)"
-msgstr ""
+msgstr "მალტური (მალტა)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:310
 #, kde-format
 msgctxt "@info: country code"
 msgid "Burmese (Myanmar)"
-msgstr ""
+msgstr "ბურმული (მიანმარი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:311
 #, kde-format
 msgctxt "@info: country code"
 msgid "Norwegian Bokmål (Norway)"
-msgstr ""
+msgstr "ნორვეგიული ბოქმალი (ნორვეგია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:312
 #, kde-format
 msgctxt "@info: country code"
 msgid "Nepali (Nepal)"
-msgstr ""
+msgstr "ნეპალური (ნეპალი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:313
 #, kde-format
@@ -43742,19 +43744,19 @@ msgstr "ჰოლანდიური (ნიდერლანდების 
 #, kde-format
 msgctxt "@info: country code"
 msgid "Dutch (Aruba)"
-msgstr ""
+msgstr "ჰოლანდიური (არუბა)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:315
 #, kde-format
 msgctxt "@info: country code"
 msgid "Dutch (Belgium)"
-msgstr ""
+msgstr "ჰოლანდიური (ბელგია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:316
 #, kde-format
 msgctxt "@info: country code"
 msgid "Dutch (Netherlands)"
-msgstr ""
+msgstr "ჰოლანდიური (ნიდერლანდები)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:317
 #, kde-format
@@ -43772,7 +43774,7 @@ msgstr "ნორვეგიული (ნორვეგია)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Norwegian Nynorsk (Norway)"
-msgstr ""
+msgstr "ნორვეგიული ნიუნორსკი (ნორვეგია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:320
 #, kde-format
@@ -43790,19 +43792,19 @@ msgstr "ჩევა (ზამბია)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Occitan (France)"
-msgstr ""
+msgstr "ოციტანი (საფრანგეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:323
 #, kde-format
 msgctxt "@info: country code"
 msgid "Oriya (India)"
-msgstr ""
+msgstr "ორია (ინდოეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:324
 #, kde-format
 msgctxt "@info: country code"
 msgid "Punjabi (India)"
-msgstr ""
+msgstr "პუნჯაბი (ინდოეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:325
 #, kde-format
@@ -43820,7 +43822,7 @@ msgstr "პოლონური (პოლონეთი)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Pashto (Afghanistan)"
-msgstr ""
+msgstr "პაშტო (ავღანეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:328
 #, kde-format
@@ -43838,7 +43840,7 @@ msgstr "ბრაზილიური პორტუგალიური"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Portuguese (Cape Verde Islands)"
-msgstr ""
+msgstr "პორტუგალიური (კაპე ვერდეს კუნძულები)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:331
 #, kde-format
@@ -43856,7 +43858,7 @@ msgstr "პორტუგალიური (მოზამბიკი)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Portuguese (Portugal)"
-msgstr ""
+msgstr "პორტუგალიური (პორტუგალია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:334
 #, kde-format
@@ -43874,19 +43876,19 @@ msgstr ""
 #, kde-format
 msgctxt "@info: country code"
 msgid "Romansh (Switzerland)"
-msgstr ""
+msgstr "რომანში (შვეიცარია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:337
 #, kde-format
 msgctxt "@info: country code"
 msgid "Romanian (Romania)"
-msgstr ""
+msgstr "რუმინული (რუმინეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:338
 #, kde-format
 msgctxt "@info: country code"
 msgid "Russian (Russia)"
-msgstr ""
+msgstr "რუსული (რუსეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:339
 #, kde-format
@@ -43898,7 +43900,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info: country code"
 msgid "Sanskrit (India)"
-msgstr ""
+msgstr "სანსკრიტი (ინდოეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:341
 #, kde-format
@@ -43916,37 +43918,37 @@ msgstr "სინდი (პაკისტანი)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Sami (Northern, Finland)"
-msgstr ""
+msgstr "სამი (ჩრდილოეთი, ფინეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:344
 #, kde-format
 msgctxt "@info: country code"
 msgid "Sami (Northern, Norway)"
-msgstr ""
+msgstr "სამი (ჩარდილოეთი, ნორვეგია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:345
 #, kde-format
 msgctxt "@info: country code"
 msgid "Sami (Northern, Sweden)"
-msgstr ""
+msgstr "სამი (ჩრდილოეთი, შვედეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:346
 #, kde-format
 msgctxt "@info: country code"
 msgid "Sinhala (Sri Lanka)"
-msgstr ""
+msgstr "სინჰალა (შრი ლანკა)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:347
 #, kde-format
 msgctxt "@info: country code"
 msgid "Slovak (Slovakia)"
-msgstr ""
+msgstr "სლოვაკური (სლოვაკეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:348
 #, kde-format
 msgctxt "@info: country code"
 msgid "Slovenian (Slovenia)"
-msgstr ""
+msgstr "სლოვენური (სლოვაკეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:349
 #, kde-format
@@ -43964,13 +43966,13 @@ msgstr "შონა (ზიმბაბვე)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Somali  (Somalia)"
-msgstr ""
+msgstr "სომალი (სომალი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:352
 #, kde-format
 msgctxt "@info: country code"
 msgid "Albanian (Albania)"
-msgstr ""
+msgstr "ალბანური (ალბანეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:353
 #, kde-format
@@ -44024,19 +44026,19 @@ msgstr "სუნდური (ინდონეზია)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Swedish (Finland)"
-msgstr ""
+msgstr "შვედური (ფინეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:362
 #, kde-format
 msgctxt "@info: country code"
 msgid "Swedish (Sweden)"
-msgstr ""
+msgstr "შვედური (შვედეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:363
 #, kde-format
 msgctxt "@info: country code"
 msgid "Swahili (Kenya)"
-msgstr ""
+msgstr "სუაჰილი (კენია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:364
 #, kde-format
@@ -44048,7 +44050,7 @@ msgstr "სუაჰილი (ტანზანია)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Tamil (India)"
-msgstr ""
+msgstr "თამილი (ინდური)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:366
 #, kde-format
@@ -44060,7 +44062,7 @@ msgstr "თამილური (სინგაპური)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Telugu (India)"
-msgstr ""
+msgstr "ტელუგუ (ინდოეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:368
 #, kde-format
@@ -44072,13 +44074,13 @@ msgstr "ტაჯიკური (ტაჯიკეთი)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Thai (Thailand)"
-msgstr ""
+msgstr "თაი (ტაილანდი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:370
 #, kde-format
 msgctxt "@info: country code"
 msgid "Turkmen (Turkmenistan)"
-msgstr ""
+msgstr "თურქმენული (თურქმენეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:371
 #, kde-format
@@ -44126,13 +44128,13 @@ msgstr "თურქული (კვიპროსი)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Turkish (Turkey)"
-msgstr ""
+msgstr "თურქული (თურქეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:379
 #, kde-format
 msgctxt "@info: country code"
 msgid "Tatar (Russia)"
-msgstr ""
+msgstr "თათრული (რუსეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:380
 #, kde-format
@@ -44144,25 +44146,25 @@ msgstr "ტაჰიტური (ფრანგული პოლინეზ
 #, kde-format
 msgctxt "@info: country code"
 msgid "Udmurt (Russia)"
-msgstr ""
+msgstr "უდმურტული (რუსეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:382
 #, kde-format
 msgctxt "@info: country code"
 msgid "Uighur (People's Republic of China)"
-msgstr ""
+msgstr "უიღურული (ჩინეთის სახალხო რესპუბლიკა)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:383
 #, kde-format
 msgctxt "@info: country code"
 msgid "Ukrainian (Ukraine)"
-msgstr ""
+msgstr "უკრაინული (უკრაინა)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:384
 #, kde-format
 msgctxt "@info: country code"
 msgid "Urdu (India)"
-msgstr ""
+msgstr "ურდუ (ინდოეთი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:385
 #, kde-format
@@ -44180,13 +44182,13 @@ msgstr "უზბეკურიი (უზბეკეთი)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Vietnamese (Vietnam)"
-msgstr ""
+msgstr "ვიეტნამური (ვიეტნამი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:388
 #, kde-format
 msgctxt "@info: country code"
 msgid "Wolof (Senegal)"
-msgstr ""
+msgstr "ვოლოფი (სენეგალი)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:389
 #, kde-format
@@ -44198,13 +44200,13 @@ msgstr "კოსა (სამხრეთ აფრიკა)"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Yiddish (Germany)"
-msgstr ""
+msgstr "იდიში (გერმანია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:391
 #, kde-format
 msgctxt "@info: country code"
 msgid "Yoruba (Nigeria)"
-msgstr ""
+msgstr "იორუბა (ნიგერია)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:392
 #, kde-format
@@ -44931,13 +44933,13 @@ msgstr "კირიბატი"
 #, kde-format
 msgctxt "@info: country code"
 msgid "North-Korea"
-msgstr ""
+msgstr "ჩრდილო-კორეა"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:160
 #, kde-format
 msgctxt "@info: country code"
 msgid "South-Korea"
-msgstr ""
+msgstr "სამხრეთ-კორეა"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:161
 #, kde-format
@@ -44949,7 +44951,7 @@ msgstr "ქუვეიტი"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Kyrgyz Republic"
-msgstr ""
+msgstr "ყირგიზეთის რესპუბლიკა"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:163
 #, kde-format
@@ -45579,7 +45581,7 @@ msgstr "ტუვალუ"
 #, kde-format
 msgctxt "@info: country code"
 msgid "US Virgin Islands"
-msgstr ""
+msgstr "აშშ ვირჯინიის კუნძულები"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:270
 #, kde-format
@@ -45621,7 +45623,7 @@ msgstr "ამერიკის შეერთებული შტატე�
 #, kde-format
 msgctxt "@info: country code"
 msgid "Uruguay, Eastern Republic of"
-msgstr ""
+msgstr "ურუგვაის აღმოსავლეთ რესპუბლიკა"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:277
 #, kde-format
@@ -45651,7 +45653,7 @@ msgstr "ვიეტნამი"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Wallis and Futuna Islands "
-msgstr ""
+msgstr "ვალისი და ფუტუნას კუნძულები "
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:282
 #, kde-format
@@ -45699,13 +45701,13 @@ msgstr "გამოტოვება"
 #, kde-format
 msgctxt "@info: country code"
 msgid "At Sea"
-msgstr ""
+msgstr "ზღვაზე"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:291
 #, kde-format
 msgctxt "@info: country code"
 msgid "In Flight"
-msgstr ""
+msgstr "ფრენისას"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:292
 #, kde-format
@@ -45747,7 +45749,7 @@ msgstr "ღაზა"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Jericho"
-msgstr ""
+msgstr "იერიქონი"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:319
 #, kde-format
@@ -45765,7 +45767,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label: subject widget"
 msgid "Use standard"
-msgstr ""
+msgstr "სტანდარტულის გამოყენება"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:144
 #, kde-format
@@ -45839,7 +45841,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label: subject properties"
 msgid "Detail:"
-msgstr ""
+msgstr "დეტალები:"
 
 #: core/libs/widgets/metadata/utils/subjectwidget.cpp:237
 #, kde-format
@@ -45880,7 +45882,7 @@ msgstr ""
 #: core/libs/widgets/text/donlinetranslator.cpp:232
 #, kde-format
 msgid "%1 URL can't be empty."
-msgstr ""
+msgstr "%1 URL ცარიელი ვერ იქნება."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:48
 #, kde-format
@@ -46611,7 +46613,7 @@ msgstr "თურქმენული"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Udmurt"
-msgstr ""
+msgstr "უდმურტული"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:448
 #, kde-format
@@ -46759,7 +46761,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Online Translator:"
-msgstr ""
+msgstr "ონლაინ მთარგმნელი:"
 
 #: core/libs/widgets/text/localizeconfig.cpp:235
 #, kde-format
@@ -46911,7 +46913,7 @@ msgstr "&ჩანაცვლება"
 #, kde-format
 msgctxt "@action"
 msgid "Go to Previous"
-msgstr ""
+msgstr "წინაზე გადასვლა"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:107
 #, kde-format
@@ -46923,7 +46925,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Go to Next"
-msgstr ""
+msgstr "შემდეგზე გადასვლა"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:124
 #, kde-format
@@ -47007,7 +47009,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "More Settings..."
-msgstr ""
+msgstr "მეტი პარამეტრები..."
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:225
 #, kde-format
@@ -47031,13 +47033,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Load Contents"
-msgstr ""
+msgstr "შემცველობის ჩატვირთვა"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:247
 #, kde-format
 msgctxt "@action"
 msgid "Load Contents"
-msgstr ""
+msgstr "შემცველობის ჩატვირთვა"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:248
 #, kde-format
@@ -47049,13 +47051,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Append Contents"
-msgstr ""
+msgstr "შემცველობის ბოლოში მიწერა"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:258
 #, kde-format
 msgctxt "@action"
 msgid "Append Contents"
-msgstr ""
+msgstr "შემცველობის ბოლოში მიწერა"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:259
 #, kde-format
@@ -47079,61 +47081,61 @@ msgstr ""
 #, kde-format
 msgctxt "@item: filter type mime"
 msgid "JPEG images"
-msgstr ""
+msgstr "JPEG გამოსახულებები"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:287
 #, kde-format
 msgctxt "@item: filter type mime"
 msgid "TIFF images"
-msgstr ""
+msgstr "TIFF გამოსახულებები"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:288
 #, kde-format
 msgctxt "@item: filter type mime"
 msgid "PNG images"
-msgstr ""
+msgstr "PNG გამოსახულებები"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:289
 #, kde-format
 msgctxt "@item: filter type mime"
 msgid "PGF images"
-msgstr ""
+msgstr "PGF გამოსახულებები"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:290
 #, kde-format
 msgctxt "@item: filter type mime"
 msgid "HEIF images"
-msgstr ""
+msgstr "HEIF გამოსახულებები"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:291
 #, kde-format
 msgctxt "@item: filter type mime"
 msgid "AVIF images"
-msgstr ""
+msgstr "AVIF გამოსახულებები"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:292
 #, kde-format
 msgctxt "@item: filter type mime"
 msgid "JPEG-XL images"
-msgstr ""
+msgstr "JPEG-XL გამოსახულებები"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:293
 #, kde-format
 msgctxt "@item: filter type mime"
 msgid "WEBP images"
-msgstr ""
+msgstr "WEBP გამოსახულებები"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:294
 #, kde-format
 msgctxt "@item: filter type mime"
 msgid "DNG images"
-msgstr ""
+msgstr "DNG გამოსახულებები"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:295
 #, kde-format
 msgctxt "@item: filter type mime"
 msgid "RAW images"
-msgstr ""
+msgstr "RAW გამოსახულებები"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:304
 #, kde-format
@@ -47151,59 +47153,59 @@ msgstr "ყველა მხარდაჭერილი ფაილი"
 #, kde-format
 msgctxt "@info"
 msgid "Icon Size: %1"
-msgstr ""
+msgstr "ხატულის ზომა: %1"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:99
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:100
 #, kde-format
 msgctxt "@title:window"
 msgid "New Bookmark"
 msgstr "ახალი სანიშნე"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:103
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:104
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Bookmark"
 msgstr "სანიშნის ჩასწორება"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:119
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:120
 #, kde-format
 msgctxt "@label: bookmark properties"
 msgid "&Title:"
 msgstr "&სათაური:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:123
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:124
 #, kde-format
 msgctxt "@info"
 msgid "Enter bookmark title here..."
 msgstr ""
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:124
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:125
 #, kde-format
 msgctxt "@info"
 msgid "The bookmark title which must be unique and not empty"
 msgstr ""
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:130
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:131
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:211
 #, kde-format
 msgctxt "@label"
 msgid "&Icon:"
 msgstr "&ხატულა:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:138
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:139
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:220
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
 msgstr "განულება"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:151
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:152
 #, kde-format
 msgctxt "@label: bookmark properties"
 msgid "&Path:"
 msgstr "&ბილიკი:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:156
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:157
 #, kde-format
 msgctxt "@info"
 msgid "Enter bookmark path here..."
@@ -47226,7 +47228,7 @@ msgstr "სანიშნები"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Load Contents"
-msgstr ""
+msgstr "შემცველობის ჩატვირთვა"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:96
 #, kde-format
@@ -48375,37 +48377,37 @@ msgid ""
 "open. If none is selected, first one from the list will be displayed."
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:375
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:378
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name cannot be empty!"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:379
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:382
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item files list cannot be empty!"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:383
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:386
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name already exists in hierarchy!"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:413
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:416
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name cannot be empty!"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:417
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:420
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name already exists in hierarchy!"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:433
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:436
 #, kde-format
 msgctxt "@info"
 msgid "%1 file"
@@ -48413,37 +48415,37 @@ msgid_plural "%1 files"
 msgstr[0] "%1 ფაილი"
 msgstr[1] "%1 ფაილი"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:692
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:695
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Item"
 msgstr "ახალი რჩეული ჩანაწერი"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:696
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:699
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Item"
 msgstr "რჩეულის ჩანაწერის ჩასწორება"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:703
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:706
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Folder"
 msgstr "ახალი რჩეული საქაღალდე"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:707
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:710
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Folder"
 msgstr "რჩეული საქაღალდის ჩასწორება"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:764
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:767
 #, kde-format
 msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
 msgstr "საშუალოს გამოთვლის შეცდომა"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:765
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:768
 #, kde-format
 msgctxt "@info: favorite item properties"
 msgid "Could not calculate date average for this favorite item."

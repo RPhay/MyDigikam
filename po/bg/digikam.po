@@ -33,8 +33,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-25 00:55+0000\n"
-"PO-Revision-Date: 2023-01-22 20:16+0100\n"
+"POT-Creation-Date: 2023-01-28 00:56+0000\n"
+"PO-Revision-Date: 2023-01-27 19:12+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -3261,8 +3261,8 @@ msgid ""
 "Optional write metadata operations to DNG and RAW files are now always "
 "delegated to ExifTool Backend."
 msgstr ""
-"Операциите по избор за запис на метаданни към DNG и RAW файлове вече "
-"саделегирани на бекенда ExifTool."
+"Операциите по избор за запис на метаданни към DNG и RAW файлове вече са "
+"делегирани на бекенда ExifTool."
 
 #: core/app/views/stack/welcomepageview.cpp:149
 #, kde-format
@@ -6021,8 +6021,7 @@ msgid "Use Absolute Size"
 msgstr "Използване на абсолютния размер"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:197
-#, fuzzy, kde-format
-#| msgid "Watermark type:"
+#, kde-format
 msgid "Watermark type: "
 msgstr "Вид воден знак:"
 
@@ -6048,8 +6047,7 @@ msgid "Click to select watermark image."
 msgstr "Кликнете, за да изберете изображение на воден знак."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:227
-#, fuzzy, kde-format
-#| msgid "Watermark image:"
+#, kde-format
 msgid "Watermark image: "
 msgstr "Изображение на воден знак:"
 
@@ -6084,8 +6082,7 @@ msgid "Opacity of watermark"
 msgstr "Прозрачност на водния знак"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:265
-#, fuzzy, kde-format
-#| msgid "Opacity (%):"
+#, kde-format
 msgid "Opacity (%): "
 msgstr "Непрозрачност (%):"
 
@@ -6100,8 +6097,7 @@ msgid "Enter your watermark string here."
 msgstr "Въведете низ на водния знак тук."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:280
-#, fuzzy, kde-format
-#| msgid "Watermark text:"
+#, kde-format
 msgid "Watermark text: "
 msgstr "Текст на водния знак:"
 
@@ -6116,14 +6112,12 @@ msgid "Set the font color to use here."
 msgstr "Задайте цвета на шрифта, който да използвате тук."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:295
-#, fuzzy, kde-format
-#| msgid "Font color:"
+#, kde-format
 msgid "Font color: "
 msgstr "Цвят на шрифта:"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:300
-#, fuzzy, kde-format
-#| msgid "Text opacity:"
+#, kde-format
 msgid "Text opacity: "
 msgstr "Прозрачност на текст:"
 
@@ -6152,14 +6146,12 @@ msgid "Choose the color of the watermark background."
 msgstr "Изберете цвета на фона на водния знак."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:323
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgid "Background color: "
 msgstr "Фонов цвят:"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:328
-#, fuzzy, kde-format
-#| msgid "Background opacity:"
+#, kde-format
 msgid "Background opacity: "
 msgstr "Непрозрачност на фона:"
 
@@ -6188,8 +6180,7 @@ msgid "Random Repetition"
 msgstr "Случайно повторение"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:347
-#, fuzzy, kde-format
-#| msgid "Placement Type:"
+#, kde-format
 msgid "Placement Type: "
 msgstr "Тип на разположението:"
 
@@ -6242,8 +6233,7 @@ msgstr ""
 "обикновено между 1,0 и 3,0. Може да бъде и по-малка от 1,0"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:391
-#, fuzzy, kde-format
-#| msgid "Sparsity Factor:"
+#, kde-format
 msgid "Sparsity Factor: "
 msgstr "Коефициент на рядкост:"
 
@@ -6290,8 +6280,7 @@ msgid "Bottom center"
 msgstr "Долу, центрирано"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:404
-#, fuzzy, kde-format
-#| msgid "Placement Position:"
+#, kde-format
 msgid "Placement Position: "
 msgstr "Позиция на поставяне:"
 
@@ -6316,8 +6305,7 @@ msgid "270 degrees CW"
 msgstr "270 градуса по часовниковата стрелка"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:413
-#, fuzzy, kde-format
-#| msgid "Rotation:"
+#, kde-format
 msgid "Rotation: "
 msgstr "Завъртане:"
 
@@ -6327,8 +6315,7 @@ msgid "Size of watermark, as a percentage of the marked image."
 msgstr "Размер на водния знак като процент от маркираното изображение."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:421
-#, fuzzy, kde-format
-#| msgid "Size (%):"
+#, kde-format
 msgid "Size (%): "
 msgstr "Размер (%):"
 
@@ -6338,8 +6325,7 @@ msgid "Margin from edge in X direction, as a percentage of the marked image."
 msgstr "Отстояние от ръба в посока X, като процент от маркираното изображение."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:429
-#, fuzzy, kde-format
-#| msgid "X margin (%):"
+#, kde-format
 msgid "X margin (%): "
 msgstr "Отстояние по X (%):"
 
@@ -6349,8 +6335,7 @@ msgid "Margin from edge in Y direction, as a percentage of the marked image."
 msgstr "Отстояние от ръба в посока Y, като процент от маркираното изображение."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:437
-#, fuzzy, kde-format
-#| msgid "Y margin (%):"
+#, kde-format
 msgid "Y margin (%): "
 msgstr "Отстояние по Y (%):"
 
@@ -38578,7 +38563,7 @@ msgid "Map"
 msgstr "Карта"
 
 #: core/libs/properties/itempropertiessidebar.cpp:245
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:606
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:609
 #: core/showfoto/stackview/showfotostackviewitem.cpp:71
 #, kde-format
 msgctxt "@info: item properties"
@@ -50393,57 +50378,57 @@ msgctxt "@info"
 msgid "Icon Size: %1"
 msgstr "Размер на икона: %1"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:99
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:100
 #, kde-format
 msgctxt "@title:window"
 msgid "New Bookmark"
 msgstr "Нова отметка"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:103
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:104
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Bookmark"
 msgstr "Редактиране на отметки"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:119
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:120
 #, kde-format
 msgctxt "@label: bookmark properties"
 msgid "&Title:"
 msgstr "&Заглавие:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:123
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:124
 #, kde-format
 msgctxt "@info"
 msgid "Enter bookmark title here..."
 msgstr "Въведете заглавието на отметките тук..."
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:124
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:125
 #, kde-format
 msgctxt "@info"
 msgid "The bookmark title which must be unique and not empty"
 msgstr "Заглавието на отметката, което трябва да е уникално и да не е празно"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:130
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:131
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:211
 #, kde-format
 msgctxt "@label"
 msgid "&Icon:"
 msgstr "&Икона:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:138
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:139
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:220
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
 msgstr "Възстановяване на мащаба"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:151
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:152
 #, kde-format
 msgctxt "@label: bookmark properties"
 msgid "&Path:"
 msgstr "&Път:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:156
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:157
 #, kde-format
 msgctxt "@info"
 msgid "Enter bookmark path here..."
@@ -51725,13 +51710,13 @@ msgstr ""
 "когато предпочитаната папка е отворена. Ако не е избран нито един, ще се "
 "покаже първият от списъка."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:375
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:378
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name cannot be empty!"
 msgstr "Забележка: името на предпочитания елемент не може да бъде празно!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:379
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:382
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item files list cannot be empty!"
@@ -51739,25 +51724,25 @@ msgstr ""
 "Забележка: списъкът с предпочитания на любимия елемент не може да бъде "
 "празен!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:383
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:386
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name already exists in hierarchy!"
 msgstr "Забележка: името на любимия елемент вече съществува в йерархията!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:413
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:416
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name cannot be empty!"
 msgstr "Забележка: името на любимата папка не може да бъде празно!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:417
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:420
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name already exists in hierarchy!"
 msgstr "Забележка: името на любимата папка вече съществува в йерархията!"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:433
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:436
 #, kde-format
 msgctxt "@info"
 msgid "%1 file"
@@ -51765,37 +51750,37 @@ msgid_plural "%1 files"
 msgstr[0] "%1 файл"
 msgstr[1] "%1 файлa"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:692
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:695
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Item"
 msgstr "Нов предпочитан елемент"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:696
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:699
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Item"
 msgstr "Редактиране на Предпочитани елементи"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:703
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:706
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Folder"
 msgstr "Нова папка Предпочитани"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:707
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:710
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Folder"
 msgstr "Редактиране на папка Предпочитани"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:764
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:767
 #, kde-format
 msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
 msgstr "Не може да се изчисли средната стойност"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:765
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:768
 #, kde-format
 msgctxt "@info: favorite item properties"
 msgid "Could not calculate date average for this favorite item."
@@ -64779,504 +64764,3 @@ msgid "Do you want to reset all video settings to the default value?"
 msgstr ""
 "Искате ли да възстановите всички настройки на видеото до стойността по "
 "подразбиране?"
-
-#~ msgctxt "@title"
-#~ msgid "Geolocation Editor"
-#~ msgstr "Редактор на геолокация"
-
-#~ msgctxt "@title"
-#~ msgid "Error"
-#~ msgstr "Грешка"
-
-#~ msgid "Select GPX File to Load"
-#~ msgstr "Изберете GPX файл за зареждане"
-
-#~ msgctxt "@title"
-#~ msgid "Exposure Blending"
-#~ msgstr "Смесване на експозиция"
-
-#~ msgctxt "@action: button"
-#~ msgid "Details..."
-#~ msgstr "Подробности..."
-
-#~ msgctxt "@title"
-#~ msgid "Destination Folder"
-#~ msgstr "Местоназначение"
-
-#~ msgctxt "@title: window"
-#~ msgid "Error while to set image as wallpaper"
-#~ msgstr "Грешка при задаване на изображение като тапет"
-
-#~ msgctxt "@action"
-#~ msgid "Start Upload"
-#~ msgstr "Стартиране на качване"
-
-#~ msgctxt "@title: window"
-#~ msgid "Error"
-#~ msgstr "Грешка"
-
-#~ msgctxt "@action: button"
-#~ msgid "Continue"
-#~ msgstr "Продължаване"
-
-#~ msgctxt "@action: button"
-#~ msgid "Cancel"
-#~ msgstr "Прекъсване"
-
-#~ msgctxt "@title"
-#~ msgid "Uploading Failed"
-#~ msgstr "Качването не бе успешно"
-
-#~ msgctxt "@title"
-#~ msgid "Login Failed"
-#~ msgstr "Неуспешно влизане"
-
-#~ msgctxt "@action"
-#~ msgid "Start Download"
-#~ msgstr "Стартиране на изтеглянето"
-
-#~ msgctxt "@title: window"
-#~ msgid "Warning"
-#~ msgstr "Предупреждение"
-
-#~ msgctxt "@action"
-#~ msgid "Continue"
-#~ msgstr "Продължаване"
-
-#~ msgctxt "@title: album properties"
-#~ msgid "New Album"
-#~ msgstr "Нов албум"
-
-#~ msgid "Database connection test"
-#~ msgstr "Тест на връзката с базата данни"
-
-#~ msgctxt "@title"
-#~ msgid "Shared Libraries and Components Information"
-#~ msgstr "Информация за споделени библиотеки и компоненти"
-
-#~ msgctxt "@title"
-#~ msgid "List of detected hardware"
-#~ msgstr "Списък на открития хардуер"
-
-#~ msgctxt "@title: favorite item properties"
-#~ msgid "Could Not Calculate Average"
-#~ msgstr "Не може да се изчисли средната стойност"
-
-#~ msgid "Add Bookmark"
-#~ msgstr "Добавяне на отметка"
-
-#~ msgctxt "@title:window"
-#~ msgid "Add new tag:"
-#~ msgstr "Добавяне на нов таг:"
-
-#~ msgctxt "@title; warning while saving progress"
-#~ msgid "Warning"
-#~ msgstr "Предупреждение"
-
-#~ msgctxt "@title"
-#~ msgid "New Image File Name"
-#~ msgstr "Име на файл за нова снимка"
-
-#~ msgctxt "@title"
-#~ msgid "Overwrite File?"
-#~ msgstr "Да се презапише ли файлът?"
-
-#~ msgctxt "@title"
-#~ msgid "Error Saving File"
-#~ msgstr "Грешка при записване на файла"
-
-#~ msgctxt "@title"
-#~ msgid "Batch Queue Manager"
-#~ msgstr "Пакетно обработване"
-
-#~ msgctxt "@title: reset to default warning dialog"
-#~ msgid "Warning"
-#~ msgstr "Предупреждение"
-
-#~ msgctxt "@title"
-#~ msgid "Configure"
-#~ msgstr "Настройки"
-
-#~ msgid ""
-#~ "New Neural Network engine based on OpenCV Deep Learning module to detect "
-#~ "and recognize faces."
-#~ msgstr ""
-#~ "Нов енджин на невронна мрежа, базиран на модула OpenCV Deep Learning, за "
-#~ "откриване и разпознаване на лица."
-
-#~ msgid "Update Slideshow to plugin with new shuffle mode."
-#~ msgstr "Актуализиране на плъгина Прожекция с нов режим на разбъркване."
-
-#~ msgid "Add new theme Html5Responsive for HtmlGallery plugin."
-#~ msgstr "Добавяне на нова тема Html5Responsive за плъгин HtmlGallery."
-
-#~ msgid ""
-#~ "New plugin ImageMosaicWall to create an image based on a bunch of other "
-#~ "photos."
-#~ msgstr ""
-#~ "Нова приставка ImageMosaicWall за създаване на изображение въз основа на "
-#~ "куп други снимки."
-
-#~ msgid "add new batch queue manager tool to fix hot pixels from images."
-#~ msgstr ""
-#~ "добавяне на нов инструмент за управление на пакетни опашки за поправяне "
-#~ "на горещи пиксели от изображения."
-
-#~ msgid "add new batch queue manager tool to apply texture over images."
-#~ msgstr ""
-#~ "добавяне на нов инструмент за управление на пакетни опашки за нанасяне на "
-#~ "текстура върху изображения."
-
-#~ msgid ""
-#~ "Face Scan dialog contents is now simplified and embedded into left "
-#~ "sidebar."
-#~ msgstr ""
-#~ "Съдържанието на диалоговия прозорец за сканиране на лица вече е опростено "
-#~ "и вградено в лявата странична лента."
-
-#~ msgid "Add support for Gimp XCF files >= 2.10."
-#~ msgstr "Добавяне на поддръжка за Gimp XCF файлове >= 2.10."
-
-#~ msgid "Add Flatpak bundle support for Linux platforms."
-#~ msgstr "Добавяне на поддръжка на пакет FlatPak за Linux платформи."
-
-#~ msgid "Table-view is now able to show digiKam Tag-Paths properties."
-#~ msgstr ""
-#~ "Изгледът на таблицата вече може да показва свойствата на таговите пътища "
-#~ "на digiKam."
-
-#~ msgid "Add option to write geolocation information in file metadata."
-#~ msgstr ""
-#~ "Добавяне на опция за записване на информация за геолокацията в "
-#~ "метаданните на файла."
-
-#~ msgid "Add color label support for advanced metadata settings."
-#~ msgstr ""
-#~ "Добавяне на поддръжка на цветни етикети за разширени настройки на "
-#~ "метаданните."
-
-#~ msgid "Add Exif, Iptc, and Xmp read support for HEIF images."
-#~ msgstr ""
-#~ "Добавяне на поддръжка за четене на Exif, Iptc и Xmp за изображения на "
-#~ "Heif."
-
-#~ msgid "Improved support for UNC network paths under Windows."
-#~ msgstr "Подобрена поддръжка на UNC мрежови пътища под Windows."
-
-#~ msgid "Improved support for Unicode paths under Windows."
-#~ msgstr "Подобрена поддръжка за Unicode пътища под Windows."
-
-#~ msgid "Apple bundle is now relocatable and compatible with macOS BigSur."
-#~ msgstr ""
-#~ "Пакетът на Apple вече може да се премества и е съвместим с macOS BigSur."
-
-#~ msgid ""
-#~ "New online version checker and downloader to automate upgrade under "
-#~ "Windows and macOS."
-#~ msgstr ""
-#~ "Нова онлайн програма за проверка на версии и изтегляне за автоматизиране "
-#~ "на обновяването под Windows и macOS."
-
-#~ msgid ""
-#~ "Better support of astro FITS image format including metadata extraction "
-#~ "support to populate the database."
-#~ msgstr ""
-#~ "По-добра поддръжка на астро FITS формат на изображенията, включително "
-#~ "поддръжка на извличане на метаданни за попълване на базата данни."
-
-#~ msgid ""
-#~ "Use last Exiv2 0.27.5 in all bundles with Base Media File metadata read "
-#~ "and write support (HEIF, AVIF)."
-#~ msgstr ""
-#~ "Използване на последния Exiv2 0.27.5 във всички пакети с поддръжка за "
-#~ "четене и запис на метаданни на базови медийни файлове (HEIF, AVIF)."
-
-#~ msgid "Find duplicates items is now process in parallel using multi-cores."
-#~ msgstr ""
-#~ "Намирането на дублиращи се елементи вече се обработва паралелно, като се "
-#~ "използват няколко ядра."
-
-#~ msgid "New tool to export items to iNaturalist web service."
-#~ msgstr ""
-#~ "Нов инструмент за експортиране на елементи към уеб услугата iNaturalist."
-
-#~ msgid "New metadata viewer based on ExifTool."
-#~ msgstr "Нова програма за преглед на метаданни, базирана на ExifTool."
-
-#~ msgid ""
-#~ "MacOS package, Windows installer, and AppImage bundle use KF5 5.89 and "
-#~ "KAPPS 21.12.0 frameworks."
-#~ msgstr ""
-#~ "Пакетът за MacOS, инсталаторът за Windows и пакетът AppImage използват "
-#~ "рамки KF5 5.89 и KAPPS 21.12.0."
-
-#~ msgid ""
-#~ "AppImage Linux bundle now support <a href=\"https://fcitx-im.org/wiki/"
-#~ "Fcitx_5\">Platform Input Context FCITX</a>."
-#~ msgstr ""
-#~ "Пакетът AppImage за Linux  поддържа сега  <a href=\"https://fcitx-im.org/"
-#~ "wiki/Fcitx_5\">Platform Input Context FCITX</a>."
-
-#~ msgid "Improve RTL translations support."
-#~ msgstr "Подобряване на поддръжката на RTL преводи."
-
-#~ msgid ""
-#~ "GUI internationalization and localization updates with more than 50 "
-#~ "languages available."
-#~ msgstr ""
-#~ "Интернационализация на графичния потребителски интерфейс и актуализации "
-#~ "на локализацията с повече от 50 налични езика."
-
-#~ msgid "Add OpenWith contextual menu support under MacOS."
-#~ msgstr "Добавяне на поддръжка на контекстното меню OpenWith под MacOS."
-
-#~ msgid ""
-#~ "New tool to share items on the network with a Motion JPEG stream server."
-#~ msgstr ""
-#~ "Нов инструмент за споделяне на елементи в мрежата със стрийм сървър "
-#~ "Motion JPEG."
-
-#~ msgid ""
-#~ "Showfoto has a new left sidebar hosting a folder-view to quickly explore "
-#~ "images from local file system."
-#~ msgstr ""
-#~ "Showfoto има нова лява странична лента, в която се помещава изглед на "
-#~ "папки за бързо разглеждане на изображения от локалната файлова система."
-
-#~ msgid ""
-#~ "Update internal RAW engine to last Libraw 0.20.2 (snapshot 20210827) "
-#~ "including Canon CR3 and Sony A7R4 support."
-#~ msgstr ""
-#~ "Актуализиране на вътрешния RAW енджин до последната версия на Libraw "
-#~ "0.20.2 (моментна  snapshot 20210827), включително поддръжка на Canon CR3 "
-#~ "и Sony A7R4."
-
-#~ msgid ""
-#~ "New camera supported: Canon CR3, PowerShot G5 X Mark II, G7 X Mark III, "
-#~ "SX70 HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS M50, EOS "
-#~ "M200, EOS 1DX Mark III (lossless files only) DJI Mavic Air, Air2, Osmo "
-#~ "Action, FujiFilm Fujifilm compressed/16bit, GFX 100, X-A7, X-Pro3, X100V, "
-#~ "X-T4, X-T200, GoPro Fusion, HERO5, HERO6, HERO7, HERO8, Hasselblad "
-#~ "L1D-20c, X1D II 50C, Leica D-LUX7, Q-P, Q2, V-LUX5, C-Lux / CAM-DC25, "
-#~ "SL2, M10 Monochrom, Nikon D780, Z50, P950, Olympus TG-6, E-M5 Mark III, E-"
-#~ "PL10, E-M1 Mark III, Panasonic Panasonic 14-bit, DC-FZ1000 II, DC-G90, DC-"
-#~ "S1, DC-S1R, DC-S1H, DC-TZ95, PhaseOne IQ4 150MP, Rapsberry Pi RAW+JPEG "
-#~ "format, Ricoh GR III, Sony A7R IV, A9 II, ILCE-6100, ILCE-6600, RX0 II, "
-#~ "RX100 VII, Zenit M, also multiple modern smartphones."
-#~ msgstr ""
-#~ "Поддържат се нови фотоапарати: Canon CR3, PowerShot G5 X Mark II, G7 X "
-#~ "Mark III, SX70 HS, EOS R, EOS RP, EOS 90D, EOS 250D, EOS M6 Mark II, EOS "
-#~ "M50, EOS M200, EOS 1DX Mark III (само файлове без загуба) DJI Mavic Air, "
-#~ "Air2, Osmo Action, FujiFilm Fujifilm compressed/16bit, GFX 100, X-A7, X-"
-#~ "Pro3, X100V, X-T4, X-T200, GoPro Fusion, HERO5, HERO6, HERO7, HERO8, "
-#~ "Hasselblad L1D-20c, X1D II 50C, Leica D-LUX7, Q-P, Q2, V-LUX5, C-Lux / "
-#~ "CAM-DC25, SL2, M10 Monochrom, Nikon D780, Z50, P950, Olympus TG-6, E-M5 "
-#~ "Mark III, E-PL10, E-M1 Mark III, Panasonic Panasonic 14-bit, DC-FZ1000 "
-#~ "II, DC-G90, DC-S1, DC-S1R, DC-S1H, DC-TZ95, PhaseOne IQ4 150MP, Rapsberry "
-#~ "Pi RAW+JPEG формат, Ricoh GR III, Sony A7R IV, A9 II, ILCE-6100, "
-#~ "ILCE-6600, RX0 II, RX100 VII, Zenit M, също така и множество съвременни "
-#~ "смартфони."
-
-#~ msgid "Face Management in digiKam"
-#~ msgstr "Управление на лица в digiKam"
-
-#~ msgid ""
-#~ "The Face Workflow allows you to Detect and Recognize people in your "
-#~ "photographs."
-#~ msgstr ""
-#~ "Работният процес на лицето ви позволява да откривате и разпознавате "
-#~ "хората във вашите снимки."
-
-#~ msgid "<b>Face Detection</b>"
-#~ msgstr "<b>Лицево разпознаване</b>"
-
-#~ msgid ""
-#~ "Face Detection allows digiKam to detect faces in your images. This step "
-#~ "is required before being able to recognize faces."
-#~ msgstr ""
-#~ "Откриване на лица позволява на digiKam да открива лица във вашите "
-#~ "изображения. Тази стъпка е необходима, преди да може да се разпознават "
-#~ "лица."
-
-#~ msgid "<b>Face Recognition</b>"
-#~ msgstr "<b>Лицево разпознаване</b>"
-
-#~ msgid "Face Recognition will automatically recognize people in your images."
-#~ msgstr ""
-#~ "Разпознаването на лица ще разпознава автоматично хората във вашите "
-#~ "изображения."
-
-#~ msgid ""
-#~ "https://docs.kde.org/?application=digikam&branch=trunk5&path=using-"
-#~ "digikam.html#using-mainwindow-peopleview"
-#~ msgstr ""
-#~ "https://docs.kde.org/?application=digikam&branch=trunk5&path=using-"
-#~ "digikam.html#using-mainwindow-peopleview"
-
-#~ msgid ""
-#~ "For additional information, read the %1 \n"
-#~ "To ask questions, use our mailing list: digikam-users@kde.org \n"
-#~ msgstr ""
-#~ "За допълнителна информация прочетете %1 \n"
-#~ "За да зададете въпроси, използвайте нашия пощенски списък: digikam-"
-#~ "users@kde.org \n"
-
-#~ msgid ""
-#~ "To run face detection, select the <u>Detect Faces</u> option in the Face "
-#~ "Scan panel and then click on <u>Scan Collection for Faces</u>"
-#~ msgstr ""
-#~ "За да стартирате откриване на лице, изберете опцията <u>Откриване на "
-#~ "лица</u> в панела за сканиране на лица и след това щракнете върху "
-#~ "<u>Сканиране на колекцията за лица</u>"
-
-#~ msgid ""
-#~ "<b>Caution:</b> Running Face Detection for the first time can be fairly "
-#~ "time consuming. Make sure you use the <u>Search In</u> tab to restrict "
-#~ "the target of the scan."
-#~ msgstr ""
-#~ "<b>Внимание:</b> Стартирането на функцията за откриване на лица за първи "
-#~ "път може да отнеме доста време. Уверете се, че използвате раздела "
-#~ "<u>Търсене в</u>, за да ограничите целта на сканирането."
-
-#~ msgid "digiKam offers two kinds of face detection scans: "
-#~ msgstr "digiKam предлага два вида сканирания за откриване на лица: "
-
-#~ msgid "<b>Skip Images Already Scanned</b>"
-#~ msgstr "<b>Пропускане на вече сканирани изображения</b>"
-
-#~ msgid ""
-#~ "Choose this option if you haven't scanned yet or if the last scan yielded "
-#~ "good results but you would like to scan new images."
-#~ msgstr ""
-#~ "Изберете тази опция, ако все още не сте сканирали или ако последното "
-#~ "сканиране е дало добри резултати, но искате да сканирате нови изображения."
-
-#~ msgid "<b>Scan Again and Merge</b>"
-#~ msgstr "<b>Повторно сканиране и сливане</b>"
-
-#~ msgid ""
-#~ "Choose this option if the results of the previous scan weren't accurate. "
-#~ "This would rescan all images again, and is time consuming."
-#~ msgstr ""
-#~ "Изберете тази опция, ако резултатите от предишното сканиране не са били "
-#~ "точни. Това ще доведе до повторно сканиране на всички изображения и "
-#~ "отнема много време."
-
-#~ msgid ""
-#~ "After the Face Scan is complete, you should see a new tag <u>Unknown</u> "
-#~ "where the results of the face scan will appear. You may now manually "
-#~ "identify a few of these faces and then proceed for face recognition."
-#~ msgstr ""
-#~ "След като сканирането на лицето приключи, трябва да видите нов таг <u> "
-#~ "Неизвестено</u>, когато ще се появят резултатите от сканирането на "
-#~ "лицето. Тогава може ръчно да идентифицирате няколко от тези лица и след "
-#~ "това да продължите с разпознаването на лицата."
-
-#~ msgid ""
-#~ "To manually identify a face, hover on any Unknown face and use the text "
-#~ "box to give it a name. This will lead to the creation of a face tag in "
-#~ "case a person of that name doesn't exist already. For best results "
-#~ "identify 4-5 faces for each person you want the scan to recognize."
-#~ msgstr ""
-#~ "За да идентифицирате ръчно лице, задръжте курсора на мишката върху което "
-#~ "и да е неизвестно лице и използвайте текстовото поле, за да му дадете "
-#~ "име. Това ще доведе до създаване на таг на лице, в случай че лице с това "
-#~ "име все още не съществува. За най-добри резултати идентифицирайте по 4-5 "
-#~ "лица за всяко лице, което искате сканирането да разпознае."
-
-#~ msgid ""
-#~ "Running face recognition is similar to detection, just select "
-#~ "<u>Recognize Faces</u> from the Face Scan panel this time.\n"
-#~ "Face recognition will work on all Unknown faces. In case there's a face "
-#~ "you don't wish to be recognized, you can mark it as ignored.\n"
-#~ "This leads to the creation of a new <u>Ignored</u> tag, you can later "
-#~ "unmark the face if needed."
-#~ msgstr ""
-#~ "Разпознаването на лица е подобно на откриването. В този случай изберете "
-#~ "<u>Разпознаване на лица</u> от панела Сканиране на лица.\n"
-#~ "Разпознаването на лица ще работи за всички непознати лица. В случай че "
-#~ "има лице, което не желаете да бъде разпознато, можете да го маркирате "
-#~ "като игнорирано.\n"
-#~ "Това води до създаването на нов таг <u>Игнорирано</u>. Ако е необходимо, "
-#~ "по-късно можете да отмените маркирането на лицето."
-
-#~ msgid ""
-#~ "You may select <u>Work on all processor cores</u>in order to increase the "
-#~ "speed of Face Recognition \n"
-#~ "The Face Accuracy slider allows you to control the accuracy of the "
-#~ "recognition algorithm. A higher specificity implies higher accuracy, "
-#~ "however this results in a smaller set of results."
-#~ msgstr ""
-#~ "Можете да изберете <u> работа върху всички процесорни ядра </u>, за да "
-#~ "увеличите скоростта на разпознаване на лица\n"
-#~ "Плъзгачът за точност на лицето ви позволява да контролирате точността на "
-#~ "алгоритъма за разпознаване. По -високата специфичност предполага по -"
-#~ "висока точност, но това води до по -малък набор от резултати."
-
-#~ msgid ""
-#~ "The results of facial recognition appear in the form of Unconfirmed "
-#~ "results. These results will show up in the Unconfirmed tag, as well as in "
-#~ "the tag of the person suggested for each face.\n"
-#~ "Hovering over Unconfirmed faces will display a few options:\n"
-#~ msgstr ""
-#~ "Резултатите от разпознаването на лица се появяват под формата на "
-#~ "Непотвърдени резултати. Тези резултати ще се появят в етикета Unconfirmed "
-#~ "(Непотвърдени), както и в етикета на лицето, предложено за всяко лице.\n"
-#~ "Преминаването с мишката върху непотвърдени лица ще покаже няколко опции:\n"
-
-#~ msgid ""
-#~ "The Confirm button allows you to confirm the suggestion. This would "
-#~ "assign the suggested name to the face"
-#~ msgstr ""
-#~ "Бутонът \"Потвърди\" ви позволява да потвърдите предложението. Това ще "
-#~ "присвои предложеното име за лицето"
-
-#~ msgid ""
-#~ "Use the Reject button, if the suggestion is incorrect. This would move "
-#~ "the face back to Unknown."
-#~ msgstr ""
-#~ "Използвайте бутона Отхвърляне, ако предложението е неправилно. Това ще "
-#~ "премести лицето обратно в Неизвестно."
-
-#~ msgid ""
-#~ "Use the Delete button, if the suggestion is not a face. This will delete "
-#~ "the face region from the database."
-#~ msgstr ""
-#~ "Използвайте бутона Изтриване, ако предложението не е лице. Това ще изтрие "
-#~ "региона на лицето от базата данни."
-
-#~ msgid ""
-#~ "<b>Face Categorization and Sorting</b>\n"
-#~ "By default, faces will appear categorized based on their name. You may "
-#~ "change this behaviour, by going to <u>View -> Separate Items</u>.\n"
-#~ "Note that using a different categorization order will lead to Confirmed "
-#~ "and Unconfirmed faces appearing mixed with one another. To change this "
-#~ "behaviour you may modify the sorting order within each category by going "
-#~ "to <u>View -> Sort Items -> By Face Type</u>."
-#~ msgstr ""
-#~ "<b>Категоризиране и сортиране на лица</b>\n"
-#~ "По подразбиране лицата ще се появят категоризирани въз основа на тяхното "
-#~ "име. Можете да промените това поведение, като отидете на <u>Изглед -> "
-#~ "Разделяне на елементите.</u>.\n"
-#~ "Имайте предвид, че използването на различен ред на категоризиране ще "
-#~ "доведе до това, че потвърдените и непотвърдените лица ще се появят "
-#~ "смесени едно с друго. За да промените това поведение, можете да промените "
-#~ "реда на сортиране в рамките на всяка категория, като отидете на <u>Изглед "
-#~ "-> Сортиране на елементите -> По лица.</u>."
-
-#~ msgid ""
-#~ "<b>Improving Results of Face Recognition</b>\n"
-#~ "Apart from using the settings mentioned in the last page, face results "
-#~ "may also be improved by rebuilding the training data. This may be done "
-#~ "through Tools -> Maintenance -> Detect and Recognize Faces -> Clear and "
-#~ "rebuild all training data."
-#~ msgstr ""
-#~ "<b>Подобряване на резултатите от разпознаването на лица</b>\n"
-#~ "Освен чрез използване на настройките, посочени в последната страница, "
-#~ "резултатите за лицата могат да бъдат подобрени и чрез възстановяване на "
-#~ "данните за обучение. Това може да се направи чрез Инструменти -> "
-#~ "Поддръжка -> Откриване и разпознаване на лица)-> Изчистване и "
-#~ "възстановяване на всички данни за обучение."
-
-#~ msgid "Confirm Faces"
-#~ msgstr "Потвърждаване на лицата"

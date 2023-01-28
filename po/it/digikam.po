@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-25 00:55+0000\n"
-"PO-Revision-Date: 2023-01-17 12:56+0100\n"
+"POT-Creation-Date: 2023-01-28 00:56+0000\n"
+"PO-Revision-Date: 2023-01-26 19:52+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -5900,10 +5900,9 @@ msgid "User Script: No script."
 msgstr "Script utente: nessuno script."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:262
-#, fuzzy, kde-format
-#| msgid "User Script: No script."
+#, kde-format
 msgid "User Script: File open error."
-msgstr "Script utente: nessuno script."
+msgstr "Script utente: errore di apertura del file."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:279
 #, kde-format
@@ -5911,10 +5910,9 @@ msgid "User Script: Timeout from script."
 msgstr "Script utente: timeout dallo script."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:287
-#, fuzzy, kde-format
-#| msgid "User Script: No script."
+#, kde-format
 msgid "User Script: No error."
-msgstr "Script utente: nessuno script."
+msgstr "Script utente: nessun errore."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:291
 #, kde-format
@@ -5932,10 +5930,9 @@ msgid "User Script: Command not found."
 msgstr "Script utente: comando non trovato."
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:309
-#, fuzzy, kde-format
-#| msgid "User Script: No script."
+#, kde-format
 msgid "User Script: Error code returned %1."
-msgstr "Script utente: nessuno script."
+msgstr "Script utente: il codice di errore restituito è %1."
 
 #: core/dplugins/bqm/custom/userscript/userscriptplugin.cpp:46
 #, kde-format
@@ -6028,10 +6025,9 @@ msgid "Use Absolute Size"
 msgstr "Usa dimensione assoluta"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:197
-#, fuzzy, kde-format
-#| msgid "Watermark type:"
+#, kde-format
 msgid "Watermark type: "
-msgstr "Tipo di filigrana:"
+msgstr "Tipo di filigrana: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:207
 #: core/dplugins/generic/webservices/piwigo/piwigowindow.cpp:486
@@ -6055,10 +6051,9 @@ msgid "Click to select watermark image."
 msgstr "Fai clic per selezionare l'immagine di filigrana."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:227
-#, fuzzy, kde-format
-#| msgid "Watermark image:"
+#, kde-format
 msgid "Watermark image: "
-msgstr "Immagine della filigrana:"
+msgstr "Immagine della filigrana: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:235
 #, kde-format
@@ -6090,10 +6085,9 @@ msgid "Opacity of watermark"
 msgstr "Opacità della filigrana"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:265
-#, fuzzy, kde-format
-#| msgid "Opacity (%):"
+#, kde-format
 msgid "Opacity (%): "
-msgstr "Opacità (%):"
+msgstr "Opacità (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:271
 #, kde-format
@@ -6106,10 +6100,9 @@ msgid "Enter your watermark string here."
 msgstr "Inserisci qui il tuo messaggio per la filigrana."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:280
-#, fuzzy, kde-format
-#| msgid "Watermark text:"
+#, kde-format
 msgid "Watermark text: "
-msgstr "Testo della filigrana:"
+msgstr "Testo della filigrana: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:287
 #, kde-format
@@ -6124,16 +6117,14 @@ msgid "Set the font color to use here."
 msgstr "Seleziona il colore del carattere da usare qui."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:295
-#, fuzzy, kde-format
-#| msgid "Font color:"
+#, kde-format
 msgid "Font color: "
-msgstr "Colore del carattere: "
+msgstr "Colore del carattere:  "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:300
-#, fuzzy, kde-format
-#| msgid "Text opacity:"
+#, kde-format
 msgid "Text opacity: "
-msgstr "Opacità del testo:"
+msgstr "Opacità del testo: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:304
 #, kde-format
@@ -6160,16 +6151,14 @@ msgid "Choose the color of the watermark background."
 msgstr "Scegli il colore dello sfondo della filigrana."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:323
-#, fuzzy, kde-format
-#| msgid "Background color:"
+#, kde-format
 msgid "Background color: "
-msgstr "Colore di sfondo:"
+msgstr "Colore di sfondo: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:328
-#, fuzzy, kde-format
-#| msgid "Background opacity:"
+#, kde-format
 msgid "Background opacity: "
-msgstr "Opacità dello sfondo:"
+msgstr "Opacità dello sfondo: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:332
 #, kde-format
@@ -6196,10 +6185,9 @@ msgid "Random Repetition"
 msgstr "Ripetizione casuale"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:347
-#, fuzzy, kde-format
-#| msgid "Placement Type:"
+#, kde-format
 msgid "Placement Type: "
-msgstr "Tipo di ubicazione:"
+msgstr "Tipo di ubicazione: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:355
 #, kde-format
@@ -6250,10 +6238,9 @@ msgstr ""
 "1,0"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:391
-#, fuzzy, kde-format
-#| msgid "Sparsity Factor:"
+#, kde-format
 msgid "Sparsity Factor: "
-msgstr "Fattore di scarsità:"
+msgstr "Fattore di scarsità: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:396
 #, kde-format
@@ -6298,10 +6285,9 @@ msgid "Bottom center"
 msgstr "In basso al centro"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:404
-#, fuzzy, kde-format
-#| msgid "Placement Position:"
+#, kde-format
 msgid "Placement Position: "
-msgstr "Posizione ubicazione:"
+msgstr "Posizione ubicazione: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:409
 #, kde-format
@@ -6324,10 +6310,9 @@ msgid "270 degrees CW"
 msgstr "270 gradi in senso orario"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:413
-#, fuzzy, kde-format
-#| msgid "Rotation:"
+#, kde-format
 msgid "Rotation: "
-msgstr "Rotazione:"
+msgstr "Rotazione: "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:420
 #, kde-format
@@ -6335,10 +6320,9 @@ msgid "Size of watermark, as a percentage of the marked image."
 msgstr "Dimensione della filigrana come percentuale dell'immagine selezionata."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:421
-#, fuzzy, kde-format
-#| msgid "Size (%):"
+#, kde-format
 msgid "Size (%): "
-msgstr "Dimensione (%):"
+msgstr "Dimensione (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:428
 #, kde-format
@@ -6348,10 +6332,9 @@ msgstr ""
 "selezionata."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:429
-#, fuzzy, kde-format
-#| msgid "X margin (%):"
+#, kde-format
 msgid "X margin (%): "
-msgstr "Margine X (%):"
+msgstr "Margine X (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:436
 #, kde-format
@@ -6361,10 +6344,9 @@ msgstr ""
 "selezionata."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:437
-#, fuzzy, kde-format
-#| msgid "Y margin (%):"
+#, kde-format
 msgid "Y margin (%): "
-msgstr "Margine Y (%):"
+msgstr "Margine Y (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:46
 #, kde-format
@@ -38624,7 +38606,7 @@ msgid "Map"
 msgstr "Mappa"
 
 #: core/libs/properties/itempropertiessidebar.cpp:245
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:606
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:609
 #: core/showfoto/stackview/showfotostackviewitem.cpp:71
 #, kde-format
 msgctxt "@info: item properties"
@@ -50431,57 +50413,57 @@ msgctxt "@info"
 msgid "Icon Size: %1"
 msgstr "Dimensione icona: %1"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:99
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:100
 #, kde-format
 msgctxt "@title:window"
 msgid "New Bookmark"
 msgstr "Nuovo segnalibro"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:103
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:104
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Bookmark"
 msgstr "Modifica segnalibro"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:119
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:120
 #, kde-format
 msgctxt "@label: bookmark properties"
 msgid "&Title:"
 msgstr "&Titolo:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:123
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:124
 #, kde-format
 msgctxt "@info"
 msgid "Enter bookmark title here..."
 msgstr "Inserisci qui il nome del segnalibro..."
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:124
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:125
 #, kde-format
 msgctxt "@info"
 msgid "The bookmark title which must be unique and not empty"
 msgstr "Il titolo del segnalibro deve essere univoco e non vuoto"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:130
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:131
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:211
 #, kde-format
 msgctxt "@label"
 msgid "&Icon:"
 msgstr "&Icona:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:138
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:139
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:220
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
 msgstr "Reimposta"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:151
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:152
 #, kde-format
 msgctxt "@label: bookmark properties"
 msgid "&Path:"
 msgstr "&Percorso:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:156
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:157
 #, kde-format
 msgctxt "@info"
 msgid "Enter bookmark path here..."
@@ -51771,37 +51753,37 @@ msgstr ""
 "quando il preferito viene aperto. Se nessuno è selezionato, sarà "
 "visualizzato il primo dell'elenco."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:375
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:378
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name cannot be empty!"
 msgstr "Nota: il nome dell'elemento preferito non può essere vuoto."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:379
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:382
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item files list cannot be empty!"
 msgstr "Nota: l'elenco dei file degli elementi preferiti non può essere vuoto."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:383
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:386
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name already exists in hierarchy!"
 msgstr "Nota: il nome dell'elemento preferito esiste già nella gerarchia."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:413
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:416
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name cannot be empty!"
 msgstr "Nota: il nome della cartella preferita non può essere vuoto."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:417
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:420
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name already exists in hierarchy!"
 msgstr "Nota: il nome della cartella preferita esiste già nella gerarchia."
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:433
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:436
 #, kde-format
 msgctxt "@info"
 msgid "%1 file"
@@ -51809,37 +51791,37 @@ msgid_plural "%1 files"
 msgstr[0] "Un file"
 msgstr[1] "%1 file"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:692
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:695
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Item"
 msgstr "Nuovo elemento preferito"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:696
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:699
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Item"
 msgstr "Modifica elemento preferito"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:703
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:706
 #, kde-format
 msgctxt "@title:window"
 msgid "New Favorite Folder"
 msgstr "Nuova cartella Preferiti"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:707
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:710
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Favorite Folder"
 msgstr "Modifica cartella Preferiti"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:764
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:767
 #, kde-format
 msgctxt "@title:window, favorite item properties"
 msgid "Could not Calculate Average"
 msgstr "Impossibile calcolare la media"
 
-#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:765
+#: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:768
 #, kde-format
 msgctxt "@info: favorite item properties"
 msgid "Could not calculate date average for this favorite item."
@@ -57671,26 +57653,7 @@ msgstr ""
 "un contenitore senza perdita di dati con supporto dei metadati.</para>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "These expressions may be used to customize date format:\n"
-#| "\"d\": The day as a number without a leading zero (1 to 31)\n"
-#| "\"dd\": The day as a number with a leading zero (01 to 31)\n"
-#| "\"ddd\": The abbreviated localized day name (e.g. 'Mon' to 'Sun')\n"
-#| "\"dddd\": The long localized day name (e.g. 'Monday' to 'Sunday').\n"
-#| "\"M\": The month as a number without a leading zero (1 to 12)\n"
-#| "\"MM\": The month as a number with a leading zero (01 to 12)\n"
-#| "\"MMM\": The abbreviated localized month name (e.g. 'Jan' to 'Dec')\n"
-#| "\"MMMM\": The long localized month name (e.g. 'January' to 'December')\n"
-#| "\"yy\": The year as two digit number (eg. 00 to 99)\n"
-#| "\"yyyy\": The year as four digit number (eg. 2012)\n"
-#| "All other input characters will be treated as text. Any sequence of "
-#| "characters that are enclosed in singlequotes will be treated as text and "
-#| "not be used as an expression. Examples, if date is 20 July 1969:\n"
-#| "\"dd.MM.yyyy\" : 20.07.1969\n"
-#| "\"ddd MMMM d yy\" : Sun July 20 69\n"
-#| "\"'Photo shot on ' dddd\" : Photo shot on Sunday\n"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<p>These expressions may be used to customize date format:</p><p><b>d</b>: "
@@ -57710,25 +57673,23 @@ msgid ""
 "p><p><b>ddd MMMM d yy</b> : Sun July 20 69</p><p><b>'Photo shot on ' dddd</"
 "b> : Photo shot on Sunday</p>"
 msgstr ""
-"Queste espressioni possono essere usate per personalizzare il formato della "
-"data:\n"
-"«d»: il giorno come un numero senza uno zero precedente (da 1 a 31)\n"
-"«dd»: il giorno come un numero con uno zero precedente (da 01 a 31)\n"
-"«ddd»: l'abbreviazione del nome del giorno tradotto (es.: da «lun» a «dom»)\n"
-"«dddd»: la versione lunga del nome del giorno tradotto (es: da «lunedì» a "
-"«domenica»).\n"
-"«M»: il mese come un numero senza uno zero precedente (da 1 a 12)\n"
-"«MM»: il mese come un numero con uno zero precedente (da 01 a 12)\n"
-"«MMM»: l'abbreviazione del nome del mese tradotto (es.: da «gen» a «dic»)\n"
-"«MMMM»: il nome lungo del mese tradotto (es.: da «gennaio» a «dicembre»)\n"
-"«yy»: l'anno come un numero a due cifre (es.: da 00 a 99)\n"
-"«yyyy»: l'anno come un numero a 4 cifre (es. 2012)\n"
-"Tutti gli altri caratteri saranno trattati come testo. Qualsiasi sequenza di "
-"caratteri racchiusa tra virgolette singole sarà trattata come testo e non "
-"usata nell'espressione. Esempi, se la data è il 20 luglio 1969:\n"
-"«dd.MM.yyyy»: 20.07.1969\n"
-"«ddd MMMM d yy»: dom luglio 20 69\n"
-"«Foto scattata» 'dddd'»: Foto scattata domenica\n"
+"<p>Queste espressioni possono essere usate per personalizzare il formato "
+"della data:</p><p><b>d</b>: il giorno come un numero senza uno zero "
+"precedente (da 1 a 31)</p><p><b>dd</b>: il giorno come un numero con uno "
+"zero precedente (da 01 a 31)</p><p><b>ddd</b>: l'abbreviazione del nome del "
+"giorno tradotto (es.: da «lun» a «dom»)</p><p><b>dddd</b>: la versione lunga "
+"del nome del giorno tradotto (es: da «lunedì» a «domenica»).</p><p><b>M</b>: "
+"il mese come un numero senza uno zero precedente (da 1 a 12)</p><p><b>MM</"
+"b>: il mese come un numero con uno zero precedente (da 01 a 12)</"
+"p><p><b>MMM</b>: l'abbreviazione del nome del mese tradotto (es.: da «gen» a "
+"«dic»)</p><p><b>MMMM</b>: il nome lungo del mese tradotto (es.: da «gennaio» "
+"a «dicembre»)</p><p><b>yy</b>: l'anno come un numero a due cifre (es.: da 00 "
+"a 99)</p><p><b>yyyy</b>: l'anno come un numero a 4 cifre (es. 2012)</"
+"p><p>Tutti gli altri caratteri saranno trattati come testo. Qualsiasi "
+"sequenza di caratteri racchiusa tra virgolette singole sarà trattata come "
+"testo e non usata nell'espressione. Esempi, se la data è il 20 luglio 1969:</"
+"p><p><b>dd.MM.yyyy</b>: 20.07.1969</p><p><b>ddd MMMM d yy</b>: dom luglio 20 "
+"69</p><p><b>'Foto scattata domenica' dddd</b>: Foto scattata domenica</p>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:107
 #, kde-format
@@ -64249,18 +64210,11 @@ msgid ""
 msgstr ""
 "In Windows, il percorso predefinito di ricerca include <ul><li>%1/Windows/"
 "System32/spool/drivers/color/</li><li>%1/Windows/Spool/Drivers/Color/</"
-"li><li>%2/Windows/Color/</li></ul>Nel tuo sistema, al momento questi "
-"percorsi esistono e sono analizzati:<ul><li>%3</li></ul>"
+"li><li>%2/Windows/Color/</li></ul>Nel tuo sistema, al momento esistono e "
+"sono analizzati questi percorsi:<ul><li>%3</li></ul>"
 
 #: core/utilities/setup/setupicc.cpp:918
-#, fuzzy, kde-format
-#| msgid ""
-#| "On Mac OS X, the default search paths include <ul><li>/System/Library/"
-#| "ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/"
-#| "ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/share/"
-#| "color/icc</li><li>~/.local/share/color/icc/</li><li>~/.local/share/icc/</"
-#| "li><li>~/.color/icc/</li></ul>On your system, currently these paths exist "
-#| "and are scanned:<ul><li>%2</li></ul>"
+#, kde-format
 msgid ""
 "On macOS, the default search paths include <ul><li>/System/Library/ColorSync/"
 "Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/ColorSync/"
@@ -64269,12 +64223,12 @@ msgid ""
 "icc/</li><li>~/.color/icc/</li></ul>On your system, currently these paths "
 "exist and are scanned:<ul><li>%2</li></ul>"
 msgstr ""
-"In Mac OS X, il percorso predefinito di ricerca include <ul><li>/System/"
-"Library/ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/"
-"Library/ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/"
-"share/color/icc</li><li>~/.local/share/color/icc/</li><li>~/.local/share/icc/"
-"</li><li>~/.color/icc/</li></ul>Nel tuo sistema, al momento esistono e sono "
-"analizzati questi percorsi:<ul><li>%2</li></ul>"
+"In macOS, il percorso predefinito di ricerca include <ul><li>/System/Library/"
+"ColorSync/Profiles</li><li>/Library/ColorSync/Profiles</li><li>~/Library/"
+"ColorSync/Profiles</li><li>/opt/local/share/color/icc</li><li>%1/Contents/"
+"Resources/digikam/profiles/</li><li>~/.local/share/color/icc/</li><li>~/."
+"local/share/icc/</li><li>~/.color/icc/</li></ul>Nel tuo sistema, al momento "
+"esistono e sono analizzati questi percorsi:<ul><li>%2</li></ul>"
 
 #: core/utilities/setup/setupicc.cpp:937
 #, kde-format
@@ -64287,7 +64241,7 @@ msgstr ""
 "In Linux, il percorso predefinito di ricerca include <ul><li>/usr/share/"
 "color/icc</li><li>/usr/local/share/color/icc</li><li>~/.local/share/color/"
 "icc/</li><li>~/.local/share/icc/</li><li>~/.color/icc/</li></ul>Nel tuo "
-"sistema, al momento questi percorsi esistono e sono analizzati:<ul><li>%1</"
+"sistema, al momento esistono e sono analizzati questi percorsi:<ul><li>%1</"
 "li></ul>"
 
 #: core/utilities/setup/setupimagequalitysorter.cpp:54
