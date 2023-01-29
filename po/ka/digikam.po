@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-28 00:56+0000\n"
-"PO-Revision-Date: 2023-01-27 12:15+0100\n"
+"PO-Revision-Date: 2023-01-28 08:21+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -34542,7 +34542,7 @@ msgstr ""
 #, kde-format
 msgctxt "Focus point type description"
 msgid "In Focus"
-msgstr ""
+msgstr "ფოკუსში"
 
 #: core/libs/metadataengine/focuspoint/focuspoint.cpp:124
 #, kde-format
@@ -34554,7 +34554,7 @@ msgstr "მონიშნული"
 #, kde-format
 msgctxt "Focus point type description"
 msgid "Selected In Focus"
-msgstr ""
+msgstr "არჩეულია ფოკუსში"
 
 #: core/libs/metadataengine/focuspoint/focuspoint.cpp:134
 #, kde-format
@@ -34574,8 +34574,8 @@ msgstr "ჭდეები"
 msgctxt "@info: unconfirmed faces in album"
 msgid " (%1 new)"
 msgid_plural " (%1 new)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] " (%1 ახალი)"
+msgstr[1] " (%1 ახალი)"
 
 #: core/libs/notificationmanager/dnotificationwidget_p.cpp:92
 #, kde-format
@@ -34641,7 +34641,7 @@ msgstr "შეაფასეთ:"
 #, kde-format
 msgctxt "@info: download status"
 msgid "ETA:"
-msgstr ""
+msgstr "დარჩენილი დრო:"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:185
 #, kde-format
@@ -34874,22 +34874,22 @@ msgstr ""
 #: core/libs/onlineversion/onlineversiondwnl.cpp:249
 #, kde-format
 msgid "Checksum is invalid."
-msgstr ""
+msgstr "საკონტროლო ჯამი არასწორია."
 
 #: core/libs/onlineversion/onlineversiondwnl.cpp:270
 #, kde-format
 msgid "Downloaded file is empty."
-msgstr ""
+msgstr "გადმოწერილი ფაილი ცარიელია."
 
 #: core/libs/onlineversion/onlineversiondwnl.cpp:302
 #, kde-format
 msgid "Checksums error."
-msgstr ""
+msgstr "საკონტროლო ჯამის შეცდომა."
 
 #: core/libs/onlineversion/onlineversiondwnl.cpp:329
 #, kde-format
 msgid "Cannot open target file."
-msgstr ""
+msgstr "სამიზნე ფაილის გახსნის შეცდომა."
 
 #: core/libs/progressmanager/dlogoaction.cpp:144
 #, kde-format
@@ -34929,7 +34929,7 @@ msgstr "მიმდინარეობის დეტალების ფ�
 #: core/libs/properties/captions/captionedit.cpp:54
 #, kde-format
 msgid "Captions: "
-msgstr ""
+msgstr "წარწერები: "
 
 #: core/libs/properties/captions/captionedit.cpp:58
 #, kde-format
@@ -35070,7 +35070,7 @@ msgstr "გადავატარო ცვლილებები?"
 #, kde-format
 msgctxt "@info"
 msgid "Apply changes?"
-msgstr ""
+msgstr "გადავატარო ცვლილებები?"
 
 #: core/libs/properties/captions/itemdescedittab.cpp:428
 #, kde-format
@@ -35250,22 +35250,22 @@ msgstr ""
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:156
 #, kde-format
 msgid "<b>Altitude</b>:"
-msgstr ""
+msgstr "<b>სიმაღლე ზღვის დონიდან</b>:"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:157
 #, kde-format
 msgid "<b>Latitude</b>:"
-msgstr ""
+msgstr "<b>განედი</b>:"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:158
 #, kde-format
 msgid "<b>Longitude</b>:"
-msgstr ""
+msgstr "<b>გრძედი</b>:"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:159
 #, kde-format
 msgid "<b>Date</b>:"
-msgstr ""
+msgstr "<b>თარიღი</b>:"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:182
 #, kde-format
@@ -35282,7 +35282,7 @@ msgstr "გაურკვეველი"
 #: core/libs/widgets/history/filtershistorywidget.cpp:91
 #, kde-format
 msgid "Used filters"
-msgstr ""
+msgstr "გამოყენებული ფილტრები"
 
 #: core/libs/properties/history/itempropertieshistorytab.cpp:128
 #: core/libs/widgets/history/filtershistorywidget.cpp:128
@@ -35300,7 +35300,7 @@ msgstr "ვერსიები"
 #, kde-format
 msgctxt "@title"
 msgid "Used Filters"
-msgstr ""
+msgstr "გამოყენებული ფილტრები"
 
 #: core/libs/properties/history/itempropertiesversionstab.cpp:156
 #, kde-format
@@ -35318,7 +35318,7 @@ msgstr "ფაილის გახსნა"
 #, kde-format
 msgctxt "@action: go to album"
 msgid "Go To Albums"
-msgstr ""
+msgstr "ალბომებზე გადასვლა"
 
 #: core/libs/properties/history/itempropertiesversionstab.cpp:167
 #, kde-format
@@ -35360,14 +35360,14 @@ msgstr "გეოლოკაცია"
 #, kde-format
 msgctxt "@label: item properties"
 msgid "File: "
-msgstr ""
+msgstr "ფაილი: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:188
 #: core/libs/properties/itempropertiestab.cpp:172
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Folder: "
-msgstr ""
+msgstr "საქაღალდე: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:189
 #: core/libs/properties/itempropertiestab.cpp:174
@@ -35387,13 +35387,13 @@ msgstr "ზომა: "
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Readable: "
-msgstr ""
+msgstr "კითხვადი: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:192
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Writable: "
-msgstr ""
+msgstr "ჩაწერადი: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:193
 #: core/libs/properties/itempropertiestab.cpp:215
@@ -35416,32 +35416,32 @@ msgstr "ზომები: "
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Aspect Ratio: "
-msgstr ""
+msgstr "თანაფარდობა: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:196
 #, kde-format
 msgctxt "@label: item properties"
 msgid "New Name: "
-msgstr ""
+msgstr "ახალი სახელი: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:197
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Downloaded: "
-msgstr ""
+msgstr "გადმოწერილია: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:238
 #, kde-format
 msgctxt "@title"
 msgid "Camera File Properties"
-msgstr ""
+msgstr "კამერის ფაილის თვისებები"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:245
 #: core/libs/properties/itempropertiestab.cpp:255
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Make: "
-msgstr ""
+msgstr "მწარმოებელი: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:246
 #: core/libs/properties/itempropertiestab.cpp:256
@@ -35455,63 +35455,63 @@ msgstr "მოდელი: "
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Created: "
-msgstr ""
+msgstr "შექმნის დრო: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:248
 #: core/libs/properties/itempropertiestab.cpp:258
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Lens: "
-msgstr ""
+msgstr "ლინზა: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:249
 #: core/libs/properties/itempropertiestab.cpp:259
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Aperture: "
-msgstr ""
+msgstr "დიაფრაგმა: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:250
 #: core/libs/properties/itempropertiestab.cpp:260
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Focal: "
-msgstr ""
+msgstr "ფოკალი: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:251
 #: core/libs/properties/itempropertiestab.cpp:261
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Exposure: "
-msgstr ""
+msgstr "ექსპოზიცია: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:252
 #: core/libs/properties/itempropertiestab.cpp:262
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Sensitivity: "
-msgstr ""
+msgstr "მგრძნობელობა: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:253
 #: core/libs/properties/itempropertiestab.cpp:263
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Mode/Program: "
-msgstr ""
+msgstr "რეჟიმი/პროგრამა: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:254
 #: core/libs/properties/itempropertiestab.cpp:264
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Flash: "
-msgstr ""
+msgstr "განათება: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:255
 #: core/libs/properties/itempropertiestab.cpp:265
 #, kde-format
 msgctxt "@label: item properties"
 msgid "White balance: "
-msgstr ""
+msgstr "თეთრის ბალანსი: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:296
 #, kde-format
@@ -35524,21 +35524,21 @@ msgstr "ფოტოგრაფის ფუნქციები"
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Bit Rate: "
-msgstr ""
+msgstr "აუდიოს ბიტური სიჩქარე: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:305
 #: core/libs/properties/itempropertiestab.cpp:320
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Channel Type: "
-msgstr ""
+msgstr "აუდიო არხის ტიპი: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:306
 #: core/libs/properties/itempropertiestab.cpp:321
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Audio Codec: "
-msgstr ""
+msgstr "აუდიო კოდეკი: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:307
 #: core/libs/properties/itempropertiestab.cpp:316
@@ -35552,14 +35552,14 @@ msgstr "ხანგრძლივობა: "
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Frame Rate: "
-msgstr ""
+msgstr "კადრების სიხშირე: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:309
 #: core/libs/properties/itempropertiestab.cpp:318
 #, kde-format
 msgctxt "@label: item properties"
 msgid "Video Codec: "
-msgstr ""
+msgstr "ვიდეო კოდეკი: "
 
 #: core/libs/properties/import/importitempropertiestab.cpp:338
 #, kde-format
@@ -35674,7 +35674,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Pixels: "
-msgstr ""
+msgstr "პიქსელი: "
 
 #: core/libs/properties/itempropertiescolorstab.cpp:182
 #, kde-format
@@ -35698,31 +35698,31 @@ msgstr ""
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Median: "
-msgstr ""
+msgstr "საშუალო: "
 
 #: core/libs/properties/itempropertiescolorstab.cpp:194
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Percentile: "
-msgstr ""
+msgstr "პროცენტული: "
 
 #: core/libs/properties/itempropertiescolorstab.cpp:197
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Color depth: "
-msgstr ""
+msgstr "ფერის სიღრმე: "
 
 #: core/libs/properties/itempropertiescolorstab.cpp:200
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Alpha Channel: "
-msgstr ""
+msgstr "ალფა არხი: "
 
 #: core/libs/properties/itempropertiescolorstab.cpp:203
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Source: "
-msgstr ""
+msgstr "წყარო: "
 
 #: core/libs/properties/itempropertiescolorstab.cpp:258
 #, kde-format
@@ -35734,19 +35734,19 @@ msgstr "ჰისტოგრამა"
 #, kde-format
 msgctxt "@title: color properties"
 msgid "ICC profile"
-msgstr ""
+msgstr "ICC პროფილი"
 
 #: core/libs/properties/itempropertiescolorstab.cpp:687
 #, kde-format
 msgctxt "@label: color properties"
 msgid "16 bits"
-msgstr ""
+msgstr "16 ბიტიანი"
 
 #: core/libs/properties/itempropertiescolorstab.cpp:688
 #, kde-format
 msgctxt "@label: color properties"
 msgid "8 bits"
-msgstr ""
+msgstr "8 ბიტიანი"
 
 #: core/libs/properties/itempropertiescolorstab.cpp:689
 #, kde-format
@@ -35764,18 +35764,18 @@ msgstr "არა"
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Full Image"
-msgstr ""
+msgstr "სრული გამოსახულება"
 
 #: core/libs/properties/itempropertiescolorstab.cpp:732
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Image Region"
-msgstr ""
+msgstr "გამოსახულების რეგიონი"
 
 #: core/libs/properties/itempropertiesmetadatatab.cpp:82
 #, kde-format
 msgid "EXIF"
-msgstr ""
+msgstr "EXIF"
 
 #: core/libs/properties/itempropertiesmetadatatab.cpp:87
 #, kde-format
@@ -35991,7 +35991,7 @@ msgstr " კადრი/წმ"
 #, kde-format
 msgctxt "@info: width : height (Aspect Ratio)"
 msgid "%1:%2 (%3)"
-msgstr ""
+msgstr "%1:%2 (%3)"
 
 #: core/libs/properties/itempropertiestab.cpp:977
 #, kde-format
@@ -36012,7 +36012,7 @@ msgstr "ზომა: "
 #: core/libs/properties/itemselectionpropertiestab.cpp:78
 #, kde-format
 msgid "Total Count: "
-msgstr ""
+msgstr "სრული რაოდენობა: "
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:79
 #, kde-format
@@ -36022,7 +36022,7 @@ msgstr "ჯამური ზომა: "
 #: core/libs/properties/itemselectionpropertiestab.cpp:104
 #, kde-format
 msgid "Selection Properties"
-msgstr ""
+msgstr "მონიშნულის თვისებები"
 
 #: core/libs/rawengine/drawdecoderwidget.cpp:223
 #, kde-format
