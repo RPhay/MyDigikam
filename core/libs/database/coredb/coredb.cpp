@@ -2011,7 +2011,8 @@ QStringList CoreDB::getAllImagePropertiesByName(const QString& property) const
     QStringList     imageProperties;
 
     d->db->execSql(QString::fromUtf8("SELECT DISTINCT value FROM ImageProperties "
-                                     " WHERE property=?;"),
+                                     "LEFT JOIN Images ON Images.id=ImageProperties.imageid "
+                                     " WHERE Images.status=1 AND property=?;"),
                    property, &values);
 
     for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; ++it)

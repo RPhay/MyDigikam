@@ -263,4 +263,5 @@ BUGFIXES:
 223 ==> 464731 - JPEG XL (.jxl) support.
 224 ==> 330274 - Showfoto documentation section is missing from the new online manual based on Sphinx/ReStructuredText.
 225 ==> 464769 - Rebuild Finger-Prints Process Slow.
-226 ==> 
+226 ==> 433391 - Request to add ImageProperties fields (location, city, state, country) to Advanced Search.
+227 ==> 

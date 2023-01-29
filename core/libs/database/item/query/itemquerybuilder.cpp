@@ -810,9 +810,40 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
     {
         sql += QString::fromUtf8(" (ImagePositions.latitudeNumber IS NULL AND ImagePositions.longitudeNumber IS NULL) ");
     }
-    else if (name == QLatin1String("country"))
+    else if ((name == QLatin1String("provinceState")) ||
+             (name == QLatin1String("location"))      ||
+             (name == QLatin1String("country"))       ||
+             (name == QLatin1String("city")))
     {
-        fieldQuery.addChoiceStringField(QLatin1String("ImageProperties.value"));
+        if (relation == SearchXml::OneOf)
+        {
+            QStringList values = reader.valueToStringList();
+
+            if (values.isEmpty())
+            {
+                qCDebug(DIGIKAM_DATABASE_LOG) << "List for OneOf is empty";
+                return false;
+            }
+
+            sql += QLatin1String(" (Images.id IN (SELECT imageid FROM ImageProperties ");
+            sql += QLatin1String("WHERE ImageProperties.property = ? AND ImageProperties.value IN (");
+            CoreDB::addBoundValuePlaceholders(sql, values.size());
+            *boundValues << name;
+
+            Q_FOREACH (const QString& value, values)
+            {
+                *boundValues << value;
+            }
+
+            sql += QLatin1String(") ) ) ");
+        }
+        else
+        {
+            QString value = reader.value();
+            sql          += QLatin1String(" (Images.id IN (SELECT imageid FROM ImageProperties ");
+            sql          += QLatin1String("WHERE ImageProperties.property = ? AND ImageProperties.value = ?) ) ");
+            *boundValues << name << value;
+        }
     }
     else if (name == QLatin1String("creator"))
     {
