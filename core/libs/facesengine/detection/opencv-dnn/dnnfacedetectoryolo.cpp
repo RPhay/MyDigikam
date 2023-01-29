@@ -80,6 +80,13 @@ bool DNNFaceDetectorYOLO::loadModels()
 
             net.setPreferableBackend(cv::dnn::DNN_BACKEND_DEFAULT);
             net.setPreferableTarget(cv::dnn::DNN_TARGET_CPU);
+
+#if (OPENCV_VERSION == QT_VERSION_CHECK(4, 7, 0))
+
+            net.enableWinograd(false);
+
+#endif
+
         }
         catch (cv::Exception& e)
         {

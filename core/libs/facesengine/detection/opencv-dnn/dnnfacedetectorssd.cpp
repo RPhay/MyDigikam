@@ -71,6 +71,12 @@ bool DNNFaceDetectorSSD::loadModels()
 
 #endif
 
+#if (OPENCV_VERSION == QT_VERSION_CHECK(4, 7, 0))
+
+            net.enableWinograd(false);
+
+#endif
+
         }
         catch (cv::Exception& e)
         {

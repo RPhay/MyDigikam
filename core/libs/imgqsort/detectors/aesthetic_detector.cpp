@@ -141,6 +141,13 @@ bool AestheticDetector::s_loadModel()
 #endif
             s_model.setPreferableBackend(cv::dnn::DNN_TARGET_CPU);
             s_model.setPreferableTarget(cv::dnn::DNN_TARGET_CPU);
+
+#if (OPENCV_VERSION == QT_VERSION_CHECK(4, 7, 0))
+
+            s_model.enableWinograd(false);
+
+#endif
+
         }
         catch (cv::Exception& e)
         {
