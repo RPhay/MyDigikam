@@ -31,6 +31,15 @@ namespace Digikam
 
 class DIGIKAM_EXPORT DFileOperations
 {
+
+public:
+
+    enum SidecarAction
+    {
+        Rename = 0,
+        Copy
+    };
+
 public:
 
     /**
@@ -117,9 +126,9 @@ public:
      * Rename/move or copy all possible sidecar files
      * and keep the source file modification time.
      */
-    static bool renameOrCopySidecar(const QString& srcFile,
-                                    const QString& dstFile,
-                                    bool copy = false);
+    static bool sidecarFiles(const QString& srcFile,
+                             const QString& dstFile,
+                             SidecarAction action);
 };
 
 } // namespace Digikam

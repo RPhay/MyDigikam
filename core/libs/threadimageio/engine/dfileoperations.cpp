@@ -742,9 +742,9 @@ QString DFileOperations::findExecutable(const QString& name)
     return path;
 }
 
-bool DFileOperations::renameOrCopySidecar(const QString& srcFile,
-                                          const QString& dstFile,
-                                          bool copy)
+bool DFileOperations::sidecarFiles(const QString& srcFile,
+                                   const QString& dstFile,
+                                   SidecarAction action)
 {
     QStringList sidecarExtensions;
     sidecarExtensions << QLatin1String("xmp");
@@ -771,16 +771,16 @@ bool DFileOperations::renameOrCopySidecar(const QString& srcFile,
                 QFile::remove(destination);
             }
 
-            if (copy)
+            if      (action == Rename)
             {
-                if (!copyFile(extInfo.filePath(), destination))
+                if (!renameFile(extInfo.filePath(), destination))
                 {
                     return false;
                 }
             }
-            else
+            else if (action == Copy)
             {
-                if (!renameFile(extInfo.filePath(), destination))
+                if (!copyFile(extInfo.filePath(), destination))
                 {
                     return false;
                 }
@@ -801,16 +801,16 @@ bool DFileOperations::renameOrCopySidecar(const QString& srcFile,
                 QFile::remove(destination);
             }
 
-            if (copy)
+            if      (action == Rename)
             {
-                if (!copyFile(basInfo.filePath(), destination))
+                if (!renameFile(basInfo.filePath(), destination))
                 {
                     return false;
                 }
             }
-            else
+            else if (action == Copy)
             {
-                if (!renameFile(basInfo.filePath(), destination))
+                if (!copyFile(basInfo.filePath(), destination))
                 {
                     return false;
                 }
