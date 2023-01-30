@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-28 00:56+0000\n"
+"POT-Creation-Date: 2023-01-30 00:55+0000\n"
 "PO-Revision-Date: 2011-12-01 13:09+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -1822,7 +1822,7 @@ msgid "Thumbnails"
 msgstr "Vöransichten"
 
 #: core/app/main/digikamapp_setup.cpp:316
-#: core/app/views/stack/itemiconview_views.cpp:277
+#: core/app/views/stack/itemiconview_views.cpp:278
 #, fuzzy, kde-format
 #| msgid "Preview"
 msgctxt "@action: View the selected image"
@@ -3302,7 +3302,7 @@ msgid ""
 "a time. Please wait until it is finished."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_views.cpp:117
+#: core/app/views/stack/itemiconview_views.cpp:118
 #, fuzzy, kde-format
 msgctxt "@info: item icon view"
 msgid ""
@@ -3310,7 +3310,7 @@ msgid ""
 "is currently not available"
 msgstr "De Sammeln ehr angeven Steed is leeg oder opstunns nich verföögbor."
 
-#: core/app/views/stack/itemiconview_views.cpp:222
+#: core/app/views/stack/itemiconview_views.cpp:223
 #, fuzzy, kde-format
 msgctxt "@title: item icon view"
 msgid "Tools"
@@ -3719,7 +3719,7 @@ msgstr "Alpha-Kanaal: "
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:72
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:96
-#: core/utilities/searchwindow/searchfields_createfield.cpp:894
+#: core/utilities/searchwindow/searchfields_createfield.cpp:942
 #: core/utilities/setup/setuptooltip.cpp:319
 #, fuzzy, kde-format
 msgid "Audio Codec"
@@ -3727,7 +3727,7 @@ msgstr "Klangdateien"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:73
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:101
-#: core/utilities/searchwindow/searchfields_createfield.cpp:754
+#: core/utilities/searchwindow/searchfields_createfield.cpp:802
 #, fuzzy, kde-format
 msgid "Duration"
 msgstr "Duer: %1"
@@ -20812,7 +20812,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:84
-#: core/utilities/searchwindow/searchfields_createfield.cpp:670
+#: core/utilities/searchwindow/searchfields_createfield.cpp:718
 #, kde-format
 msgid "Author"
 msgstr "Maker"
@@ -54146,14 +54146,14 @@ msgid "Display Aspect Ratio"
 msgstr "Bildproportschoon wohren"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:78
-#: core/utilities/searchwindow/searchfields_createfield.cpp:857
+#: core/utilities/searchwindow/searchfields_createfield.cpp:905
 #: core/utilities/setup/setuptooltip.cpp:313
 #, fuzzy, kde-format
 msgid "Audio Bit Rate"
 msgstr "Klangdateien"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:79
-#: core/utilities/searchwindow/searchfields_createfield.cpp:875
+#: core/utilities/searchwindow/searchfields_createfield.cpp:923
 #: core/utilities/setup/setuptooltip.cpp:316
 #, fuzzy, kde-format
 msgid "Audio Channel Type"
@@ -61296,202 +61296,236 @@ msgstr "Land:"
 msgid "Country of the location shown in the item"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#: core/utilities/searchwindow/searchfields_createfield.cpp:656
+#, fuzzy, kde-format
+#| msgid "Province:"
+msgid "Province"
+msgstr "Rebeet:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:656
+#, kde-format
+msgid "Province of the location shown in the item"
+msgstr ""
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:672
+#, fuzzy, kde-format
+#| msgid "Country:"
+msgid "County"
+msgstr "Land:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:672
+#, kde-format
+msgid "County of the location shown in the item"
+msgstr ""
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#, fuzzy, kde-format
+#| msgid "City:"
+msgid "City"
+msgstr "Oort:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#, fuzzy, kde-format
+#| msgid "Set here the content's location within the city."
+msgid "City of the location shown in the item"
+msgstr "Hier kannst Du den Inholt sien Steed binnen de Stadt angeven."
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "Kalenner"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, fuzzy, kde-format
 #| msgid "Return pictures commented by"
 msgid "Return items created by"
 msgstr "Biller söken, de ehr Kommentar is vun "
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:662
+#: core/utilities/searchwindow/searchfields_createfield.cpp:710
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "Titel"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:662
+#: core/utilities/searchwindow/searchfields_createfield.cpp:710
 #, fuzzy, kde-format
 #| msgid "Return pictures whose comment contains"
 msgid "Return items whose comment contains"
 msgstr "Biller söken, de ehr Kommentar bargt"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:670
+#: core/utilities/searchwindow/searchfields_createfield.cpp:718
 #, fuzzy, kde-format
 #| msgid "Return pictures commented by"
 msgid "Return items commented by"
 msgstr "Biller söken, de ehr Kommentar is vun "
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:678
+#: core/utilities/searchwindow/searchfields_createfield.cpp:726
 #, kde-format
 msgid "Headline"
 msgstr "Överschrift"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:678
+#: core/utilities/searchwindow/searchfields_createfield.cpp:726
 #, fuzzy, kde-format
 #| msgid "Return pictures with the IPTC headline"
 msgid "Return items with the IPTC headline"
 msgstr "Biller söken mit de IPTC-Överschrift"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:686
+#: core/utilities/searchwindow/searchfields_createfield.cpp:734
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "Titel"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:686
+#: core/utilities/searchwindow/searchfields_createfield.cpp:734
 #, fuzzy, kde-format
 #| msgid "Return pictures with the IPTC title"
 msgid "Return items with the IPTC title"
 msgstr "Biller söken mit den IPTC-Titel"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:694
+#: core/utilities/searchwindow/searchfields_createfield.cpp:742
 #, fuzzy, kde-format
 #| msgid "Find pictures that have associated all these words:"
 msgid "Find items that have associated all these words:"
 msgstr "Biller söken, de all disse Wöör toornt hebbt:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:702
+#: core/utilities/searchwindow/searchfields_createfield.cpp:750
 #, fuzzy, kde-format
 #| msgid "Apply Texture"
 msgid "Empty Text"
 msgstr "Textuur anwennen"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:702
+#: core/utilities/searchwindow/searchfields_createfield.cpp:750
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
 msgid "Return items without text in:"
 msgstr "Biller söken mit dat Slötelwoort"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:704
+#: core/utilities/searchwindow/searchfields_createfield.cpp:752
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "Kalenner"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:705
+#: core/utilities/searchwindow/searchfields_createfield.cpp:753
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "Titel"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:706
+#: core/utilities/searchwindow/searchfields_createfield.cpp:754
 #, fuzzy, kde-format
 #| msgid "Author"
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "Maker"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:707
+#: core/utilities/searchwindow/searchfields_createfield.cpp:755
 #, fuzzy, kde-format
 #| msgid "Headline"
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "Överschrift"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:708
+#: core/utilities/searchwindow/searchfields_createfield.cpp:756
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "Titel"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:718
-#: core/utilities/searchwindow/searchfields_createfield.cpp:737
+#: core/utilities/searchwindow/searchfields_createfield.cpp:766
+#: core/utilities/searchwindow/searchfields_createfield.cpp:785
 #, fuzzy, kde-format
 msgid "Aspect Ratio"
 msgstr "Bildproportschoon:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:718
+#: core/utilities/searchwindow/searchfields_createfield.cpp:766
 #, fuzzy, kde-format
 msgid "Return items with the aspect ratio"
 msgstr "Biller söken mit dat Formaat"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:726
+#: core/utilities/searchwindow/searchfields_createfield.cpp:774
 #, fuzzy, kde-format
 msgid "Pixel Size"
 msgstr "Dateigrött"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:726
+#: core/utilities/searchwindow/searchfields_createfield.cpp:774
 #, fuzzy, kde-format
 msgid "Value of (Width * Height) between"
 msgstr "Biller söken mit en Hööchd twischen"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:727
+#: core/utilities/searchwindow/searchfields_createfield.cpp:775
 #, fuzzy, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "un"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:737
+#: core/utilities/searchwindow/searchfields_createfield.cpp:785
 #, fuzzy, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "Biller söken mit dat Formaat"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:754
+#: core/utilities/searchwindow/searchfields_createfield.cpp:802
 #, fuzzy, kde-format
 msgid "Length of the video"
 msgstr "Hööchd vun de Mediendatei"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:755
+#: core/utilities/searchwindow/searchfields_createfield.cpp:803
 #, fuzzy, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "un"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:756
+#: core/utilities/searchwindow/searchfields_createfield.cpp:804
 #, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:772
+#: core/utilities/searchwindow/searchfields_createfield.cpp:820
 #, fuzzy, kde-format
 msgid "Frame Rate"
 msgstr "<i>Opstellt</i>:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:772
+#: core/utilities/searchwindow/searchfields_createfield.cpp:820
 #, fuzzy, kde-format
 msgid "Return video with the frame rate"
 msgstr "Biller söken mit dat Formaat"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:773
+#: core/utilities/searchwindow/searchfields_createfield.cpp:821
 #, fuzzy, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "un"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:774
+#: core/utilities/searchwindow/searchfields_createfield.cpp:822
 #, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:789
+#: core/utilities/searchwindow/searchfields_createfield.cpp:837
 #, fuzzy, kde-format
 msgid "Codec"
 msgstr "Klangdateien"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:789
+#: core/utilities/searchwindow/searchfields_createfield.cpp:837
 #, fuzzy, kde-format
 msgid "Return video codec"
 msgstr "Klangdateien"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:857
+#: core/utilities/searchwindow/searchfields_createfield.cpp:905
 #, fuzzy, kde-format
 msgid "Return Audio Bits Rate"
 msgstr "Klangdateien"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:858
+#: core/utilities/searchwindow/searchfields_createfield.cpp:906
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -61499,71 +61533,71 @@ msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "un"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:859
+#: core/utilities/searchwindow/searchfields_createfield.cpp:907
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:875
+#: core/utilities/searchwindow/searchfields_createfield.cpp:923
 #, fuzzy, kde-format
 msgid "Return Audio Channel Type"
 msgstr "Bildtyp wiesen"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:877
+#: core/utilities/searchwindow/searchfields_createfield.cpp:925
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:878
+#: core/utilities/searchwindow/searchfields_createfield.cpp:926
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:879
+#: core/utilities/searchwindow/searchfields_createfield.cpp:927
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:880
+#: core/utilities/searchwindow/searchfields_createfield.cpp:928
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:881
+#: core/utilities/searchwindow/searchfields_createfield.cpp:929
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:882
+#: core/utilities/searchwindow/searchfields_createfield.cpp:930
 #, fuzzy, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "Alpha-Kanaal: "
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:894
+#: core/utilities/searchwindow/searchfields_createfield.cpp:942
 #, fuzzy, kde-format
 msgid "Return Audio Codec"
 msgstr "Klangdateien"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:992
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1002
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1040
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1050
 #, fuzzy, kde-format
 msgid "Faces"
 msgstr "Köör torüchnehmen"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:992
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1040
 #, fuzzy, kde-format
 #| msgid "Return pictures whose file name contains"
 msgid "Return items by number of face regions"
 msgstr "Bilddateien söken, de ehr Naams bargt"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:993
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1041
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -61571,13 +61605,13 @@ msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "un"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1002
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1050
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
 msgid "Return items without face regions"
 msgstr "Biller söken mit dat Slötelwoort"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1003
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1051
 #, fuzzy, kde-format
 msgid "No Face Regions"
 msgstr "Reeg ümdreihen"
@@ -61645,7 +61679,7 @@ msgstr "Titel, Kommentar, Naam"
 msgid "Geographic position"
 msgstr "Foto-Wedderherstellen"
 
-#: core/utilities/searchwindow/searchgroup.cpp:205
+#: core/utilities/searchwindow/searchgroup.cpp:208
 #, fuzzy, kde-format
 msgid "Face regions"
 msgstr "Reeg ümdreihen"

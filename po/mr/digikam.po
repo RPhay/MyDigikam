@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-28 00:56+0000\n"
+"POT-Creation-Date: 2023-01-30 00:55+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -1756,7 +1756,7 @@ msgid "Thumbnails"
 msgstr "लघुप्रतिमा"
 
 #: core/app/main/digikamapp_setup.cpp:316
-#: core/app/views/stack/itemiconview_views.cpp:277
+#: core/app/views/stack/itemiconview_views.cpp:278
 #, fuzzy, kde-format
 #| msgid "Preview"
 msgctxt "@action: View the selected image"
@@ -3145,7 +3145,7 @@ msgid ""
 "a time. Please wait until it is finished."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_views.cpp:117
+#: core/app/views/stack/itemiconview_views.cpp:118
 #, kde-format
 msgctxt "@info: item icon view"
 msgid ""
@@ -3153,7 +3153,7 @@ msgid ""
 "is currently not available"
 msgstr ""
 
-#: core/app/views/stack/itemiconview_views.cpp:222
+#: core/app/views/stack/itemiconview_views.cpp:223
 #, fuzzy, kde-format
 #| msgid "Tools"
 msgctxt "@title: item icon view"
@@ -3548,7 +3548,7 @@ msgstr ""
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:72
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:96
-#: core/utilities/searchwindow/searchfields_createfield.cpp:894
+#: core/utilities/searchwindow/searchfields_createfield.cpp:942
 #: core/utilities/setup/setuptooltip.cpp:319
 #, fuzzy, kde-format
 #| msgid "Audio Files"
@@ -3557,7 +3557,7 @@ msgstr "ऑडिओ फाईल्स"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:73
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:101
-#: core/utilities/searchwindow/searchfields_createfield.cpp:754
+#: core/utilities/searchwindow/searchfields_createfield.cpp:802
 #, fuzzy, kde-format
 msgid "Duration"
 msgstr "कालावधी :"
@@ -19386,7 +19386,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:84
-#: core/utilities/searchwindow/searchfields_createfield.cpp:670
+#: core/utilities/searchwindow/searchfields_createfield.cpp:718
 #, kde-format
 msgid "Author"
 msgstr "लेखक"
@@ -51064,14 +51064,14 @@ msgid "Display Aspect Ratio"
 msgstr ""
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:78
-#: core/utilities/searchwindow/searchfields_createfield.cpp:857
+#: core/utilities/searchwindow/searchfields_createfield.cpp:905
 #: core/utilities/setup/setuptooltip.cpp:313
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr ""
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:79
-#: core/utilities/searchwindow/searchfields_createfield.cpp:875
+#: core/utilities/searchwindow/searchfields_createfield.cpp:923
 #: core/utilities/setup/setuptooltip.cpp:316
 #, kde-format
 msgid "Audio Channel Type"
@@ -57828,193 +57828,225 @@ msgstr "देश :"
 msgid "Country of the location shown in the item"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#: core/utilities/searchwindow/searchfields_createfield.cpp:656
+#, kde-format
+msgid "Province"
+msgstr ""
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:656
+#, kde-format
+msgid "Province of the location shown in the item"
+msgstr ""
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:672
+#, fuzzy, kde-format
+#| msgid "Country:"
+msgid "County"
+msgstr "देश :"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:672
+#, kde-format
+msgid "County of the location shown in the item"
+msgstr ""
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#, fuzzy, kde-format
+#| msgid "City:"
+msgid "City"
+msgstr "शहर :"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#, kde-format
+msgid "City of the location shown in the item"
+msgstr ""
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "दिनदर्शिका"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, fuzzy, kde-format
 msgid "Return items created by"
 msgstr "ऑडिओ फाईल्स"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:662
+#: core/utilities/searchwindow/searchfields_createfield.cpp:710
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "कॅप्शन"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:662
+#: core/utilities/searchwindow/searchfields_createfield.cpp:710
 #, kde-format
 msgid "Return items whose comment contains"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:670
+#: core/utilities/searchwindow/searchfields_createfield.cpp:718
 #, kde-format
 msgid "Return items commented by"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:678
+#: core/utilities/searchwindow/searchfields_createfield.cpp:726
 #, kde-format
 msgid "Headline"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:678
+#: core/utilities/searchwindow/searchfields_createfield.cpp:726
 #, kde-format
 msgid "Return items with the IPTC headline"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:686
+#: core/utilities/searchwindow/searchfields_createfield.cpp:734
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "शिर्षक"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:686
+#: core/utilities/searchwindow/searchfields_createfield.cpp:734
 #, kde-format
 msgid "Return items with the IPTC title"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:694
+#: core/utilities/searchwindow/searchfields_createfield.cpp:742
 #, kde-format
 msgid "Find items that have associated all these words:"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:702
+#: core/utilities/searchwindow/searchfields_createfield.cpp:750
 #, kde-format
 msgid "Empty Text"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:702
+#: core/utilities/searchwindow/searchfields_createfield.cpp:750
 #, fuzzy, kde-format
 msgid "Return items without text in:"
 msgstr "ऑडिओ फाईल्स"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:704
+#: core/utilities/searchwindow/searchfields_createfield.cpp:752
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "दिनदर्शिका"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:705
+#: core/utilities/searchwindow/searchfields_createfield.cpp:753
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "कॅप्शन"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:706
+#: core/utilities/searchwindow/searchfields_createfield.cpp:754
 #, fuzzy, kde-format
 #| msgid "Author"
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "लेखक"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:707
+#: core/utilities/searchwindow/searchfields_createfield.cpp:755
 #, kde-format
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:708
+#: core/utilities/searchwindow/searchfields_createfield.cpp:756
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "शिर्षक"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:718
-#: core/utilities/searchwindow/searchfields_createfield.cpp:737
+#: core/utilities/searchwindow/searchfields_createfield.cpp:766
+#: core/utilities/searchwindow/searchfields_createfield.cpp:785
 #, fuzzy, kde-format
 msgid "Aspect Ratio"
 msgstr "क्रियाप्राप्तीचे गुणोत्तर (&R)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:718
+#: core/utilities/searchwindow/searchfields_createfield.cpp:766
 #, kde-format
 msgid "Return items with the aspect ratio"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:726
+#: core/utilities/searchwindow/searchfields_createfield.cpp:774
 #, fuzzy, kde-format
 msgid "Pixel Size"
 msgstr "फाईलचा आकार"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:726
+#: core/utilities/searchwindow/searchfields_createfield.cpp:774
 #, kde-format
 msgid "Value of (Width * Height) between"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:727
+#: core/utilities/searchwindow/searchfields_createfield.cpp:775
 #, fuzzy, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "व"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:737
+#: core/utilities/searchwindow/searchfields_createfield.cpp:785
 #, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:754
+#: core/utilities/searchwindow/searchfields_createfield.cpp:802
 #, kde-format
 msgid "Length of the video"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:755
+#: core/utilities/searchwindow/searchfields_createfield.cpp:803
 #, fuzzy, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "व"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:756
+#: core/utilities/searchwindow/searchfields_createfield.cpp:804
 #, fuzzy, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr "s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:772
+#: core/utilities/searchwindow/searchfields_createfield.cpp:820
 #, kde-format
 msgid "Frame Rate"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:772
+#: core/utilities/searchwindow/searchfields_createfield.cpp:820
 #, kde-format
 msgid "Return video with the frame rate"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:773
+#: core/utilities/searchwindow/searchfields_createfield.cpp:821
 #, fuzzy, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "व"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:774
+#: core/utilities/searchwindow/searchfields_createfield.cpp:822
 #, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:789
+#: core/utilities/searchwindow/searchfields_createfield.cpp:837
 #, kde-format
 msgid "Codec"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:789
+#: core/utilities/searchwindow/searchfields_createfield.cpp:837
 #, kde-format
 msgid "Return video codec"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:857
+#: core/utilities/searchwindow/searchfields_createfield.cpp:905
 #, fuzzy, kde-format
 msgid "Return Audio Bits Rate"
 msgstr "ऑडिओ फाईल्स"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:858
+#: core/utilities/searchwindow/searchfields_createfield.cpp:906
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -58022,71 +58054,71 @@ msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "व"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:859
+#: core/utilities/searchwindow/searchfields_createfield.cpp:907
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:875
+#: core/utilities/searchwindow/searchfields_createfield.cpp:923
 #, kde-format
 msgid "Return Audio Channel Type"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:877
+#: core/utilities/searchwindow/searchfields_createfield.cpp:925
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:878
+#: core/utilities/searchwindow/searchfields_createfield.cpp:926
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:879
+#: core/utilities/searchwindow/searchfields_createfield.cpp:927
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:880
+#: core/utilities/searchwindow/searchfields_createfield.cpp:928
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:881
+#: core/utilities/searchwindow/searchfields_createfield.cpp:929
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:882
+#: core/utilities/searchwindow/searchfields_createfield.cpp:930
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:894
+#: core/utilities/searchwindow/searchfields_createfield.cpp:942
 #, kde-format
 msgid "Return Audio Codec"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:992
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1002
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1040
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1050
 #, fuzzy, kde-format
 #| msgid "Select images"
 msgid "Faces"
 msgstr "प्रतिमा निवडा"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:992
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1040
 #, kde-format
 msgid "Return items by number of face regions"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:993
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1041
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -58094,12 +58126,12 @@ msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "व"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1002
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1050
 #, fuzzy, kde-format
 msgid "Return items without face regions"
 msgstr "ऑडिओ फाईल्स"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1003
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1051
 #, fuzzy, kde-format
 msgid "No Face Regions"
 msgstr "प्रतिमेचे स्थान"
@@ -58167,7 +58199,7 @@ msgstr ""
 msgid "Geographic position"
 msgstr ""
 
-#: core/utilities/searchwindow/searchgroup.cpp:205
+#: core/utilities/searchwindow/searchgroup.cpp:208
 #, fuzzy, kde-format
 msgid "Face regions"
 msgstr "प्रतिमेचे स्थान"

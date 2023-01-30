@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-28 00:56+0000\n"
+"POT-Creation-Date: 2023-01-30 00:55+0000\n"
 "PO-Revision-Date: 2023-01-27 20:00+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -1738,7 +1738,7 @@ msgid "Thumbnails"
 msgstr "Küçük Görseller"
 
 #: core/app/main/digikamapp_setup.cpp:316
-#: core/app/views/stack/itemiconview_views.cpp:277
+#: core/app/views/stack/itemiconview_views.cpp:278
 #, kde-format
 msgctxt "@action: View the selected image"
 msgid "Preview"
@@ -3138,7 +3138,7 @@ msgid ""
 "a time. Please wait until it is finished."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_views.cpp:117
+#: core/app/views/stack/itemiconview_views.cpp:118
 #, kde-format
 msgctxt "@info: item icon view"
 msgid ""
@@ -3148,7 +3148,7 @@ msgstr ""
 "Bu görüntünün saklanma yeri\n"
 " şu anda mevcut değil"
 
-#: core/app/views/stack/itemiconview_views.cpp:222
+#: core/app/views/stack/itemiconview_views.cpp:223
 #, kde-format
 msgctxt "@title: item icon view"
 msgid "Tools"
@@ -3590,7 +3590,7 @@ msgstr "Ses kanalı tipi"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:72
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:96
-#: core/utilities/searchwindow/searchfields_createfield.cpp:894
+#: core/utilities/searchwindow/searchfields_createfield.cpp:942
 #: core/utilities/setup/setuptooltip.cpp:319
 #, fuzzy, kde-format
 #| msgid "Video Codec"
@@ -3599,7 +3599,7 @@ msgstr "Video Kodlayıcısı"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:73
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:101
-#: core/utilities/searchwindow/searchfields_createfield.cpp:754
+#: core/utilities/searchwindow/searchfields_createfield.cpp:802
 #, kde-format
 msgid "Duration"
 msgstr "Süre"
@@ -20975,7 +20975,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:84
-#: core/utilities/searchwindow/searchfields_createfield.cpp:670
+#: core/utilities/searchwindow/searchfields_createfield.cpp:718
 #, kde-format
 msgid "Author"
 msgstr "Yazar"
@@ -54479,14 +54479,14 @@ msgid "Display Aspect Ratio"
 msgstr "Görünüm En Boy Oranı"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:78
-#: core/utilities/searchwindow/searchfields_createfield.cpp:857
+#: core/utilities/searchwindow/searchfields_createfield.cpp:905
 #: core/utilities/setup/setuptooltip.cpp:313
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "Ses Bit Hızı"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:79
-#: core/utilities/searchwindow/searchfields_createfield.cpp:875
+#: core/utilities/searchwindow/searchfields_createfield.cpp:923
 #: core/utilities/setup/setuptooltip.cpp:316
 #, kde-format
 msgid "Audio Channel Type"
@@ -61948,276 +61948,310 @@ msgstr "Ülke:"
 msgid "Country of the location shown in the item"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#: core/utilities/searchwindow/searchfields_createfield.cpp:656
+#, fuzzy, kde-format
+#| msgid "Province:"
+msgid "Province"
+msgstr "Vilayet:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:656
+#, kde-format
+msgid "Province of the location shown in the item"
+msgstr ""
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:672
+#, fuzzy, kde-format
+#| msgid "Country:"
+msgid "County"
+msgstr "Ülke:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:672
+#, kde-format
+msgid "County of the location shown in the item"
+msgstr ""
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#, fuzzy, kde-format
+#| msgid "City:"
+msgid "City"
+msgstr "Şehir:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#, fuzzy, kde-format
+#| msgid "Set here the content's location within the city."
+msgid "City of the location shown in the item"
+msgstr "İçeriğin ait olduğu şehirdeki konumunu buradan belirleyin."
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, fuzzy, kde-format
 #| msgid "Print Creator"
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "Yazdırma Oluşturucu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, fuzzy, kde-format
 #| msgid "Return pictures commented by"
 msgid "Return items created by"
 msgstr "Resimleri açıklama yapanıyla getir"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:662
+#: core/utilities/searchwindow/searchfields_createfield.cpp:710
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "Başlık"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:662
+#: core/utilities/searchwindow/searchfields_createfield.cpp:710
 #, fuzzy, kde-format
 #| msgid "Return pictures whose comment contains"
 msgid "Return items whose comment contains"
 msgstr "Açıklamalarında olan resimleri getir"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:670
+#: core/utilities/searchwindow/searchfields_createfield.cpp:718
 #, fuzzy, kde-format
 #| msgid "Return pictures commented by"
 msgid "Return items commented by"
 msgstr "Resimleri açıklama yapanıyla getir"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:678
+#: core/utilities/searchwindow/searchfields_createfield.cpp:726
 #, kde-format
 msgid "Headline"
 msgstr "Başlık"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:678
+#: core/utilities/searchwindow/searchfields_createfield.cpp:726
 #, fuzzy, kde-format
 #| msgid "Return pictures with the IPTC headline"
 msgid "Return items with the IPTC headline"
 msgstr "IPTC başlığı ile resimleri getir"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:686
+#: core/utilities/searchwindow/searchfields_createfield.cpp:734
 #, kde-format
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "Başlık"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:686
+#: core/utilities/searchwindow/searchfields_createfield.cpp:734
 #, fuzzy, kde-format
 #| msgid "Return pictures with the IPTC title"
 msgid "Return items with the IPTC title"
 msgstr "IPTC ünvanı ile resimleri getir"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:694
+#: core/utilities/searchwindow/searchfields_createfield.cpp:742
 #, fuzzy, kde-format
 #| msgid "Find pictures that have associated all these words:"
 msgid "Find items that have associated all these words:"
 msgstr "Bu kelimeler ile ilişkili resimleri bul:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:702
+#: core/utilities/searchwindow/searchfields_createfield.cpp:750
 #, fuzzy, kde-format
 #| msgid "Trash"
 msgid "Empty Text"
 msgstr "Çöp"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:702
+#: core/utilities/searchwindow/searchfields_createfield.cpp:750
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
 msgid "Return items without text in:"
 msgstr "Etiketli resimleri getir"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:704
+#: core/utilities/searchwindow/searchfields_createfield.cpp:752
 #, fuzzy, kde-format
 #| msgid "Print Creator"
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "Yazdırma Oluşturucu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:705
+#: core/utilities/searchwindow/searchfields_createfield.cpp:753
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "Başlık"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:706
+#: core/utilities/searchwindow/searchfields_createfield.cpp:754
 #, kde-format
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "Yazar"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:707
+#: core/utilities/searchwindow/searchfields_createfield.cpp:755
 #, fuzzy, kde-format
 #| msgid "Headline"
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "Başlık"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:708
+#: core/utilities/searchwindow/searchfields_createfield.cpp:756
 #, kde-format
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "Başlık"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:718
-#: core/utilities/searchwindow/searchfields_createfield.cpp:737
+#: core/utilities/searchwindow/searchfields_createfield.cpp:766
+#: core/utilities/searchwindow/searchfields_createfield.cpp:785
 #, kde-format
 msgid "Aspect Ratio"
 msgstr "Görüntü Oranı"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:718
+#: core/utilities/searchwindow/searchfields_createfield.cpp:766
 #, fuzzy, kde-format
 #| msgid "Return pictures with the aspect ratio"
 msgid "Return items with the aspect ratio"
 msgstr "Resimleri en-boy oranı ile getir"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:726
+#: core/utilities/searchwindow/searchfields_createfield.cpp:774
 #, kde-format
 msgid "Pixel Size"
 msgstr "Piksel Boyutu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:726
+#: core/utilities/searchwindow/searchfields_createfield.cpp:774
 #, kde-format
 msgid "Value of (Width * Height) between"
 msgstr "(En * Boy) aralığının değeri"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:727
+#: core/utilities/searchwindow/searchfields_createfield.cpp:775
 #, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "ve"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:737
+#: core/utilities/searchwindow/searchfields_createfield.cpp:785
 #, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "Videoyu çerçeve en boy oranı ile getir"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:754
+#: core/utilities/searchwindow/searchfields_createfield.cpp:802
 #, kde-format
 msgid "Length of the video"
 msgstr "Videonun uzunluğu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:755
+#: core/utilities/searchwindow/searchfields_createfield.cpp:803
 #, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "ve"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:756
+#: core/utilities/searchwindow/searchfields_createfield.cpp:804
 #, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr "s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:772
+#: core/utilities/searchwindow/searchfields_createfield.cpp:820
 #, kde-format
 msgid "Frame Rate"
 msgstr "Kare Hızı"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:772
+#: core/utilities/searchwindow/searchfields_createfield.cpp:820
 #, kde-format
 msgid "Return video with the frame rate"
 msgstr "Videoyu kare oranı ile getir"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:773
+#: core/utilities/searchwindow/searchfields_createfield.cpp:821
 #, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "ve"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:774
+#: core/utilities/searchwindow/searchfields_createfield.cpp:822
 #, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr "fps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:789
+#: core/utilities/searchwindow/searchfields_createfield.cpp:837
 #, kde-format
 msgid "Codec"
 msgstr "Kodlayıcı"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:789
+#: core/utilities/searchwindow/searchfields_createfield.cpp:837
 #, kde-format
 msgid "Return video codec"
 msgstr "Video kodlayıcısını getir"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:857
+#: core/utilities/searchwindow/searchfields_createfield.cpp:905
 #, fuzzy, kde-format
 #| msgid "Audio Bit Rate"
 msgid "Return Audio Bits Rate"
 msgstr "Ses Bit Hızı"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:858
+#: core/utilities/searchwindow/searchfields_createfield.cpp:906
 #, kde-format
 msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "ve"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:859
+#: core/utilities/searchwindow/searchfields_createfield.cpp:907
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr "bps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:875
+#: core/utilities/searchwindow/searchfields_createfield.cpp:923
 #, fuzzy, kde-format
 #| msgid "Return video audio Channel Type"
 msgid "Return Audio Channel Type"
 msgstr "video ses Kanal Tipini getir"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:877
+#: core/utilities/searchwindow/searchfields_createfield.cpp:925
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr "Mono"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:878
+#: core/utilities/searchwindow/searchfields_createfield.cpp:926
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr "Stereo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:879
+#: core/utilities/searchwindow/searchfields_createfield.cpp:927
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr "5.1 Surround Sound"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:880
+#: core/utilities/searchwindow/searchfields_createfield.cpp:928
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr "7.1 Surround Sound"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:881
+#: core/utilities/searchwindow/searchfields_createfield.cpp:929
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:882
+#: core/utilities/searchwindow/searchfields_createfield.cpp:930
 #, fuzzy, kde-format
 #| msgid "Audio Channel Type"
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "Ses Kanal Tipi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:894
+#: core/utilities/searchwindow/searchfields_createfield.cpp:942
 #, fuzzy, kde-format
 #| msgid "Return video codec"
 msgid "Return Audio Codec"
 msgstr "Video kodlayıcısını getir"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:992
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1002
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1040
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1050
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "By Faces"
 msgid "Faces"
 msgstr "Yüzlere göre"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:992
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1040
 #, fuzzy, kde-format
 #| msgid "Return pictures whose file name contains"
 msgid "Return items by number of face regions"
 msgstr "Dosya adı içeren resimleri getir"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:993
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1041
 #, fuzzy, kde-format
 #| msgctxt "'Return items modified between...and..."
 #| msgid "and"
@@ -62225,13 +62259,13 @@ msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "ve"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1002
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1050
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
 msgid "Return items without face regions"
 msgstr "Etiketli resimleri getir"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1003
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1051
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
 msgid "No Face Regions"
@@ -62300,7 +62334,7 @@ msgstr "Başlık, Not, Ünvan"
 msgid "Geographic position"
 msgstr "Coğrafi konum"
 
-#: core/utilities/searchwindow/searchgroup.cpp:205
+#: core/utilities/searchwindow/searchgroup.cpp:208
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
 msgid "Face regions"

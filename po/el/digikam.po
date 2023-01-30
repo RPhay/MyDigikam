@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-28 00:56+0000\n"
+"POT-Creation-Date: 2023-01-30 00:55+0000\n"
 "PO-Revision-Date: 2017-10-16 18:16+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1887,7 +1887,7 @@ msgid "Thumbnails"
 msgstr "Εικόνες επισκόπησης"
 
 #: core/app/main/digikamapp_setup.cpp:316
-#: core/app/views/stack/itemiconview_views.cpp:277
+#: core/app/views/stack/itemiconview_views.cpp:278
 #, fuzzy, kde-format
 #| msgid "Preview"
 msgctxt "@action: View the selected image"
@@ -3450,7 +3450,7 @@ msgid ""
 "a time. Please wait until it is finished."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_views.cpp:117
+#: core/app/views/stack/itemiconview_views.cpp:118
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -3463,7 +3463,7 @@ msgstr ""
 "<i>Η θέση αποθήκευσης αυτής της εικόνας<br/> δεν είναι διαθέσιμη αυτήν τη "
 "στιγμή</i>"
 
-#: core/app/views/stack/itemiconview_views.cpp:222
+#: core/app/views/stack/itemiconview_views.cpp:223
 #, fuzzy, kde-format
 #| msgid "Tools"
 msgctxt "@title: item icon view"
@@ -3906,7 +3906,7 @@ msgstr "Τύπος καναλιού ήχου"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:72
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:96
-#: core/utilities/searchwindow/searchfields_createfield.cpp:894
+#: core/utilities/searchwindow/searchfields_createfield.cpp:942
 #: core/utilities/setup/setuptooltip.cpp:319
 #, fuzzy, kde-format
 #| msgid "Video Codec"
@@ -3915,7 +3915,7 @@ msgstr "Τύπος συμπίεσης βίντεο"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:73
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:101
-#: core/utilities/searchwindow/searchfields_createfield.cpp:754
+#: core/utilities/searchwindow/searchfields_createfield.cpp:802
 #, kde-format
 msgid "Duration"
 msgstr "Διάρκεια"
@@ -21619,7 +21619,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:84
-#: core/utilities/searchwindow/searchfields_createfield.cpp:670
+#: core/utilities/searchwindow/searchfields_createfield.cpp:718
 #, kde-format
 msgid "Author"
 msgstr "Συγγραφέας"
@@ -56014,14 +56014,14 @@ msgid "Display Aspect Ratio"
 msgstr "Εμφάνιση αναλογίας διαστάσεων"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:78
-#: core/utilities/searchwindow/searchfields_createfield.cpp:857
+#: core/utilities/searchwindow/searchfields_createfield.cpp:905
 #: core/utilities/setup/setuptooltip.cpp:313
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "Ρυθμός bit ήχου"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:79
-#: core/utilities/searchwindow/searchfields_createfield.cpp:875
+#: core/utilities/searchwindow/searchfields_createfield.cpp:923
 #: core/utilities/setup/setuptooltip.cpp:316
 #, kde-format
 msgid "Audio Channel Type"
@@ -63580,204 +63580,238 @@ msgstr "Χώρα:"
 msgid "Country of the location shown in the item"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#: core/utilities/searchwindow/searchfields_createfield.cpp:656
+#, fuzzy, kde-format
+#| msgid "Province:"
+msgid "Province"
+msgstr "Περιφέρεια:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:656
+#, kde-format
+msgid "Province of the location shown in the item"
+msgstr ""
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:672
+#, fuzzy, kde-format
+#| msgid "Country:"
+msgid "County"
+msgstr "Χώρα:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:672
+#, kde-format
+msgid "County of the location shown in the item"
+msgstr ""
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#, fuzzy, kde-format
+#| msgid "City:"
+msgid "City"
+msgstr "Πόλη:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#, fuzzy, kde-format
+#| msgid "Set here the content's location within the city."
+msgid "City of the location shown in the item"
+msgstr "Ορίστε εδώ τη θέση του περιεχομένου μέσα στην πόλη."
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "Ημερολόγιο"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, fuzzy, kde-format
 #| msgid "Return pictures commented by"
 msgid "Return items created by"
 msgstr "Επιστροφή φωτογραφιών με σχολιασμό από"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:662
+#: core/utilities/searchwindow/searchfields_createfield.cpp:710
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "Τίτλος"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:662
+#: core/utilities/searchwindow/searchfields_createfield.cpp:710
 #, fuzzy, kde-format
 #| msgid "Return pictures whose comment contains"
 msgid "Return items whose comment contains"
 msgstr "Επιστροφή φωτογραφιών με σχόλιο που περιέχει"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:670
+#: core/utilities/searchwindow/searchfields_createfield.cpp:718
 #, fuzzy, kde-format
 #| msgid "Return pictures commented by"
 msgid "Return items commented by"
 msgstr "Επιστροφή φωτογραφιών με σχολιασμό από"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:678
+#: core/utilities/searchwindow/searchfields_createfield.cpp:726
 #, kde-format
 msgid "Headline"
 msgstr "Επικεφαλίδα"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:678
+#: core/utilities/searchwindow/searchfields_createfield.cpp:726
 #, fuzzy, kde-format
 #| msgid "Return pictures with the IPTC headline"
 msgid "Return items with the IPTC headline"
 msgstr "Επιστροφή φωτογραφιών με επικεφαλίδα IPTC"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:686
+#: core/utilities/searchwindow/searchfields_createfield.cpp:734
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "Τίτλος"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:686
+#: core/utilities/searchwindow/searchfields_createfield.cpp:734
 #, fuzzy, kde-format
 #| msgid "Return pictures with the IPTC title"
 msgid "Return items with the IPTC title"
 msgstr "Επιστροφή φωτογραφιών με τίτλο IPTC"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:694
+#: core/utilities/searchwindow/searchfields_createfield.cpp:742
 #, fuzzy, kde-format
 #| msgid "Find pictures that have associated all these words:"
 msgid "Find items that have associated all these words:"
 msgstr "Αναζήτηση φωτογραφιών με συσχετισμένες όλες τις λέξεις:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:702
+#: core/utilities/searchwindow/searchfields_createfield.cpp:750
 #, fuzzy, kde-format
 #| msgid "Trash"
 msgid "Empty Text"
 msgstr "Απορρίμματα"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:702
+#: core/utilities/searchwindow/searchfields_createfield.cpp:750
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
 msgid "Return items without text in:"
 msgstr "Επιστροφή φωτογραφιών με ετικέτα"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:704
+#: core/utilities/searchwindow/searchfields_createfield.cpp:752
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "Ημερολόγιο"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:705
+#: core/utilities/searchwindow/searchfields_createfield.cpp:753
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "Τίτλος"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:706
+#: core/utilities/searchwindow/searchfields_createfield.cpp:754
 #, fuzzy, kde-format
 #| msgid "Author"
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "Συγγραφέας"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:707
+#: core/utilities/searchwindow/searchfields_createfield.cpp:755
 #, fuzzy, kde-format
 #| msgid "Headline"
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "Επικεφαλίδα"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:708
+#: core/utilities/searchwindow/searchfields_createfield.cpp:756
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "Τίτλος"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:718
-#: core/utilities/searchwindow/searchfields_createfield.cpp:737
+#: core/utilities/searchwindow/searchfields_createfield.cpp:766
+#: core/utilities/searchwindow/searchfields_createfield.cpp:785
 #, kde-format
 msgid "Aspect Ratio"
 msgstr "Αναλογία διαστάσεων"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:718
+#: core/utilities/searchwindow/searchfields_createfield.cpp:766
 #, fuzzy, kde-format
 #| msgid "Return pictures with the aspect ratio"
 msgid "Return items with the aspect ratio"
 msgstr "Επιστροφή φωτογραφιών με την αναλογία διαστάσεων"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:726
+#: core/utilities/searchwindow/searchfields_createfield.cpp:774
 #, kde-format
 msgid "Pixel Size"
 msgstr "Μέγεθος εικονοστοιχείου"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:726
+#: core/utilities/searchwindow/searchfields_createfield.cpp:774
 #, kde-format
 msgid "Value of (Width * Height) between"
 msgstr "Τιμή του (πλάτος * ύψος) μεταξύ"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:727
+#: core/utilities/searchwindow/searchfields_createfield.cpp:775
 #, fuzzy, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "και"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:737
+#: core/utilities/searchwindow/searchfields_createfield.cpp:785
 #, fuzzy, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "Επιστροφή φωτογραφιών με την αναλογία διαστάσεων"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:754
+#: core/utilities/searchwindow/searchfields_createfield.cpp:802
 #, fuzzy, kde-format
 msgid "Length of the video"
 msgstr "Ύψος του αρχείου πολυμέσων"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:755
+#: core/utilities/searchwindow/searchfields_createfield.cpp:803
 #, fuzzy, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "και"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:756
+#: core/utilities/searchwindow/searchfields_createfield.cpp:804
 #, fuzzy, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr "s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:772
+#: core/utilities/searchwindow/searchfields_createfield.cpp:820
 #, fuzzy, kde-format
 msgid "Frame Rate"
 msgstr "Ρυθμός καρέ:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:772
+#: core/utilities/searchwindow/searchfields_createfield.cpp:820
 #, fuzzy, kde-format
 msgid "Return video with the frame rate"
 msgstr "Επιστροφή φωτογραφιών με την αναλογία διαστάσεων"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:773
+#: core/utilities/searchwindow/searchfields_createfield.cpp:821
 #, fuzzy, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "και"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:774
+#: core/utilities/searchwindow/searchfields_createfield.cpp:822
 #, fuzzy, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr "fps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:789
+#: core/utilities/searchwindow/searchfields_createfield.cpp:837
 #, fuzzy, kde-format
 msgid "Codec"
 msgstr "Τύπος συμπίεσης βίντεο"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:789
+#: core/utilities/searchwindow/searchfields_createfield.cpp:837
 #, fuzzy, kde-format
 msgid "Return video codec"
 msgstr "Τύπος συμπίεσης βίντεο"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:857
+#: core/utilities/searchwindow/searchfields_createfield.cpp:905
 #, fuzzy, kde-format
 #| msgid "Audio Bit Rate"
 msgid "Return Audio Bits Rate"
 msgstr "Ρυθμός bit ήχου"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:858
+#: core/utilities/searchwindow/searchfields_createfield.cpp:906
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -63785,72 +63819,72 @@ msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "και"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:859
+#: core/utilities/searchwindow/searchfields_createfield.cpp:907
 #, fuzzy, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr "fps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:875
+#: core/utilities/searchwindow/searchfields_createfield.cpp:923
 #, fuzzy, kde-format
 msgid "Return Audio Channel Type"
 msgstr "Εμφάνιση τύπου καναλιού ήχου"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:877
+#: core/utilities/searchwindow/searchfields_createfield.cpp:925
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:878
+#: core/utilities/searchwindow/searchfields_createfield.cpp:926
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:879
+#: core/utilities/searchwindow/searchfields_createfield.cpp:927
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:880
+#: core/utilities/searchwindow/searchfields_createfield.cpp:928
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:881
+#: core/utilities/searchwindow/searchfields_createfield.cpp:929
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:882
+#: core/utilities/searchwindow/searchfields_createfield.cpp:930
 #, fuzzy, kde-format
 #| msgid "Audio Channel Type"
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "Τύπος καναλιού ήχου"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:894
+#: core/utilities/searchwindow/searchfields_createfield.cpp:942
 #, fuzzy, kde-format
 msgid "Return Audio Codec"
 msgstr "Τύπος συμπίεσης βίντεο"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:992
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1002
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1040
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1050
 #, fuzzy, kde-format
 msgid "Faces"
 msgstr "Χωρίς επιλογή"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:992
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1040
 #, fuzzy, kde-format
 #| msgid "Return pictures whose file name contains"
 msgid "Return items by number of face regions"
 msgstr "Επιστροφή φωτογραφιών με όνομα αρχείου που περιέχει"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:993
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1041
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -63858,13 +63892,13 @@ msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "και"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1002
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1050
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
 msgid "Return items without face regions"
 msgstr "Επιστροφή φωτογραφιών με ετικέτα"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1003
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1051
 #, fuzzy, kde-format
 msgid "No Face Regions"
 msgstr "Ανίχνευση χαρακτηριστικών προσώπου"
@@ -63932,7 +63966,7 @@ msgstr "Υπότιτλος, σχόλιο, τίτλος"
 msgid "Geographic position"
 msgstr "Φωτογραφική κατανομή"
 
-#: core/utilities/searchwindow/searchgroup.cpp:205
+#: core/utilities/searchwindow/searchgroup.cpp:208
 #, fuzzy, kde-format
 msgid "Face regions"
 msgstr "Ανίχνευση χαρακτηριστικών προσώπου"

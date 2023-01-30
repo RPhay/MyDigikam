@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-28 00:56+0000\n"
+"POT-Creation-Date: 2023-01-30 00:55+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -1902,7 +1902,7 @@ msgid "Thumbnails"
 msgstr "Umanjeni prikazi"
 
 #: core/app/main/digikamapp_setup.cpp:316
-#: core/app/views/stack/itemiconview_views.cpp:277
+#: core/app/views/stack/itemiconview_views.cpp:278
 #, fuzzy, kde-format
 #| msgid "Preview"
 msgctxt "@action: View the selected image"
@@ -3444,7 +3444,7 @@ msgid ""
 "a time. Please wait until it is finished."
 msgstr ""
 
-#: core/app/views/stack/itemiconview_views.cpp:117
+#: core/app/views/stack/itemiconview_views.cpp:118
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -3455,7 +3455,7 @@ msgid ""
 "is currently not available"
 msgstr "<i>Lokacija smiještanja za ovu sliku <br/>nije trenutno dostupna</i>"
 
-#: core/app/views/stack/itemiconview_views.cpp:222
+#: core/app/views/stack/itemiconview_views.cpp:223
 #, fuzzy, kde-format
 #| msgid "Tools"
 msgctxt "@title: item icon view"
@@ -3884,7 +3884,7 @@ msgstr "Vrsta audio kanala"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:72
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:96
-#: core/utilities/searchwindow/searchfields_createfield.cpp:894
+#: core/utilities/searchwindow/searchfields_createfield.cpp:942
 #: core/utilities/setup/setuptooltip.cpp:319
 #, fuzzy, kde-format
 #| msgid "Video Codec"
@@ -3893,7 +3893,7 @@ msgstr "Video kodek"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:73
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:101
-#: core/utilities/searchwindow/searchfields_createfield.cpp:754
+#: core/utilities/searchwindow/searchfields_createfield.cpp:802
 #, kde-format
 msgid "Duration"
 msgstr "Trajanje"
@@ -21474,7 +21474,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:84
-#: core/utilities/searchwindow/searchfields_createfield.cpp:670
+#: core/utilities/searchwindow/searchfields_createfield.cpp:718
 #, kde-format
 msgid "Author"
 msgstr "Autor"
@@ -55916,14 +55916,14 @@ msgid "Display Aspect Ratio"
 msgstr "Odnos razmjere prikaza"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:78
-#: core/utilities/searchwindow/searchfields_createfield.cpp:857
+#: core/utilities/searchwindow/searchfields_createfield.cpp:905
 #: core/utilities/setup/setuptooltip.cpp:313
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "Audio Frekvencija"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:79
-#: core/utilities/searchwindow/searchfields_createfield.cpp:875
+#: core/utilities/searchwindow/searchfields_createfield.cpp:923
 #: core/utilities/setup/setuptooltip.cpp:316
 #, kde-format
 msgid "Audio Channel Type"
@@ -63519,203 +63519,237 @@ msgstr "Država:"
 msgid "Country of the location shown in the item"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#: core/utilities/searchwindow/searchfields_createfield.cpp:656
+#, fuzzy, kde-format
+#| msgid "Province:"
+msgid "Province"
+msgstr "Pokrajina:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:656
+#, kde-format
+msgid "Province of the location shown in the item"
+msgstr ""
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:672
+#, fuzzy, kde-format
+#| msgid "Country:"
+msgid "County"
+msgstr "Država:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:672
+#, kde-format
+msgid "County of the location shown in the item"
+msgstr ""
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#, fuzzy, kde-format
+#| msgid "City:"
+msgid "City"
+msgstr "Grad:"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:688
+#, fuzzy, kde-format
+#| msgid "Set here the content's location within the city."
+msgid "City of the location shown in the item"
+msgstr "Postavite ovdje lokaciju iz grada odakle je sadržaj."
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, fuzzy, kde-format
 #| msgid "Print Image"
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "Štampaj sliku"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:654
+#: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, fuzzy, kde-format
 #| msgid "Return pictures commented by"
 msgid "Return items created by"
 msgstr "Vratite slike komentarisane od"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:662
+#: core/utilities/searchwindow/searchfields_createfield.cpp:710
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "Naslov"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:662
+#: core/utilities/searchwindow/searchfields_createfield.cpp:710
 #, fuzzy, kde-format
 #| msgid "Return pictures whose comment contains"
 msgid "Return items whose comment contains"
 msgstr "Vratite fotografije čiji komentar sadrži"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:670
+#: core/utilities/searchwindow/searchfields_createfield.cpp:718
 #, fuzzy, kde-format
 #| msgid "Return pictures commented by"
 msgid "Return items commented by"
 msgstr "Vratite slike komentarisane od"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:678
+#: core/utilities/searchwindow/searchfields_createfield.cpp:726
 #, kde-format
 msgid "Headline"
 msgstr "Naslov"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:678
+#: core/utilities/searchwindow/searchfields_createfield.cpp:726
 #, fuzzy, kde-format
 #| msgid "Return pictures with the IPTC headline"
 msgid "Return items with the IPTC headline"
 msgstr "Vratite slike sa IPTC naslovom"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:686
+#: core/utilities/searchwindow/searchfields_createfield.cpp:734
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "Naslov"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:686
+#: core/utilities/searchwindow/searchfields_createfield.cpp:734
 #, fuzzy, kde-format
 #| msgid "Return pictures with the IPTC title"
 msgid "Return items with the IPTC title"
 msgstr "Vratite fotografije sa IPTC naslovom"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:694
+#: core/utilities/searchwindow/searchfields_createfield.cpp:742
 #, fuzzy, kde-format
 #| msgid "Find pictures that have associated all these words:"
 msgid "Find items that have associated all these words:"
 msgstr "Pronađite slike koje imaju povezane sve ove riječi:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:702
+#: core/utilities/searchwindow/searchfields_createfield.cpp:750
 #, kde-format
 msgid "Empty Text"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:702
+#: core/utilities/searchwindow/searchfields_createfield.cpp:750
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
 msgid "Return items without text in:"
 msgstr "Vratite slike s oznakom"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:704
+#: core/utilities/searchwindow/searchfields_createfield.cpp:752
 #, fuzzy, kde-format
 #| msgid "Print Image"
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "Štampaj sliku"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:705
+#: core/utilities/searchwindow/searchfields_createfield.cpp:753
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "Naslov"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:706
+#: core/utilities/searchwindow/searchfields_createfield.cpp:754
 #, fuzzy, kde-format
 #| msgid "Author"
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "Autor"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:707
+#: core/utilities/searchwindow/searchfields_createfield.cpp:755
 #, fuzzy, kde-format
 #| msgid "Headline"
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "Naslov"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:708
+#: core/utilities/searchwindow/searchfields_createfield.cpp:756
 #, fuzzy, kde-format
 #| msgid "Title"
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "Naslov"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:718
-#: core/utilities/searchwindow/searchfields_createfield.cpp:737
+#: core/utilities/searchwindow/searchfields_createfield.cpp:766
+#: core/utilities/searchwindow/searchfields_createfield.cpp:785
 #, kde-format
 msgid "Aspect Ratio"
 msgstr "Omjer"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:718
+#: core/utilities/searchwindow/searchfields_createfield.cpp:766
 #, fuzzy, kde-format
 #| msgid "Return pictures with the aspect ratio"
 msgid "Return items with the aspect ratio"
 msgstr "Vrati slike sa omjerom"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:726
+#: core/utilities/searchwindow/searchfields_createfield.cpp:774
 #, kde-format
 msgid "Pixel Size"
 msgstr "Veličina piksela"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:726
+#: core/utilities/searchwindow/searchfields_createfield.cpp:774
 #, kde-format
 msgid "Value of (Width * Height) between"
 msgstr "Vrijednost između (širina * visina) vrijednosti"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:727
+#: core/utilities/searchwindow/searchfields_createfield.cpp:775
 #, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "i"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:737
+#: core/utilities/searchwindow/searchfields_createfield.cpp:785
 #, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "Vrati videozapis sa omjerom veličine"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:754
+#: core/utilities/searchwindow/searchfields_createfield.cpp:802
 #, kde-format
 msgid "Length of the video"
 msgstr "Dužina videozapisa"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:755
+#: core/utilities/searchwindow/searchfields_createfield.cpp:803
 #, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "i"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:756
+#: core/utilities/searchwindow/searchfields_createfield.cpp:804
 #, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr "s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:772
+#: core/utilities/searchwindow/searchfields_createfield.cpp:820
 #, kde-format
 msgid "Frame Rate"
 msgstr "Protok kadrova"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:772
+#: core/utilities/searchwindow/searchfields_createfield.cpp:820
 #, kde-format
 msgid "Return video with the frame rate"
 msgstr "Vrati videozapis sa omjerom veličine"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:773
+#: core/utilities/searchwindow/searchfields_createfield.cpp:821
 #, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "i"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:774
+#: core/utilities/searchwindow/searchfields_createfield.cpp:822
 #, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr "kadar/s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:789
+#: core/utilities/searchwindow/searchfields_createfield.cpp:837
 #, kde-format
 msgid "Codec"
 msgstr "Kodek"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:789
+#: core/utilities/searchwindow/searchfields_createfield.cpp:837
 #, kde-format
 msgid "Return video codec"
 msgstr "Vrati video kodek"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:857
+#: core/utilities/searchwindow/searchfields_createfield.cpp:905
 #, fuzzy, kde-format
 #| msgid "Audio Bit Rate"
 msgid "Return Audio Bits Rate"
 msgstr "Audio Frekvencija"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:858
+#: core/utilities/searchwindow/searchfields_createfield.cpp:906
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -63723,78 +63757,78 @@ msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "i"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:859
+#: core/utilities/searchwindow/searchfields_createfield.cpp:907
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr "bit/s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:875
+#: core/utilities/searchwindow/searchfields_createfield.cpp:923
 #, fuzzy, kde-format
 #| msgid "Return video audio Channel Type"
 msgid "Return Audio Channel Type"
 msgstr "Vrati audio i video tip kanala"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:877
+#: core/utilities/searchwindow/searchfields_createfield.cpp:925
 #, fuzzy, kde-format
 #| msgid "Mono"
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr "Jednokanalno"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:878
+#: core/utilities/searchwindow/searchfields_createfield.cpp:926
 #, fuzzy, kde-format
 #| msgid "Stereo"
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr "Stereo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:879
+#: core/utilities/searchwindow/searchfields_createfield.cpp:927
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:880
+#: core/utilities/searchwindow/searchfields_createfield.cpp:928
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:881
+#: core/utilities/searchwindow/searchfields_createfield.cpp:929
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:882
+#: core/utilities/searchwindow/searchfields_createfield.cpp:930
 #, fuzzy, kde-format
 #| msgid "Audio Channel Type"
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "Tip Audio Kanala"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:894
+#: core/utilities/searchwindow/searchfields_createfield.cpp:942
 #, fuzzy, kde-format
 #| msgid "Return video codec"
 msgid "Return Audio Codec"
 msgstr "Vrati video kodek"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:992
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1002
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1040
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1050
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Detect faces"
 msgid "Faces"
 msgstr "Otkrij lica"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:992
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1040
 #, fuzzy, kde-format
 #| msgid "Return pictures whose file name contains"
 msgid "Return items by number of face regions"
 msgstr "Vratite slike čije ime datoteke sadrži"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:993
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1041
 #, fuzzy, kde-format
 #| msgctxt "'Return pictures modified between...and..."
 #| msgid "and"
@@ -63802,13 +63836,13 @@ msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "i"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1002
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1050
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
 msgid "Return items without face regions"
 msgstr "Vratite slike s oznakom"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1003
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1051
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
 msgid "No Face Regions"
@@ -63877,7 +63911,7 @@ msgstr "Naslov, Komentar, Naziv"
 msgid "Geographic position"
 msgstr "Geografski položaj"
 
-#: core/utilities/searchwindow/searchgroup.cpp:205
+#: core/utilities/searchwindow/searchgroup.cpp:208
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
 msgid "Face regions"
