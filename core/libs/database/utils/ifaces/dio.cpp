@@ -262,14 +262,17 @@ void DIO::processJob(IOJobData* const data)
     else if ((operation == IOJobData::Trash) ||
              (operation == IOJobData::Delete))
     {
+        SidecarFinder finder(data->sourceUrls());
+        data->setSourceUrls(finder.localFiles);
+
         qCDebug(DIGIKAM_DATABASE_LOG) << "Number of files to be deleted:" << data->sourceUrls().count();
     }
 
-    SidecarFinder finder(data->sourceUrls());
-    data->setSourceUrls(finder.localFiles);
-
     if (operation == IOJobData::Rename)
     {
+        SidecarFinder finder(data->sourceUrls());
+        data->setSourceUrls(finder.localFiles);
+
         for (int i = 0 ; i < finder.localFiles.size() ; ++i)
         {
             if (finder.localFileModes.at(i))

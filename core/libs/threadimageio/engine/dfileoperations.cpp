@@ -742,4 +742,85 @@ QString DFileOperations::findExecutable(const QString& name)
     return path;
 }
 
+bool DFileOperations::renameOrCopySidecar(const QString& srcFile,
+                                          const QString& dstFile,
+                                          bool copy)
+{
+    QStringList sidecarExtensions;
+    sidecarExtensions << QLatin1String("xmp");
+    sidecarExtensions << MetaEngineSettings::instance()->settings().sidecarExtensions;
+
+    QFileInfo srcInfo(srcFile);
+
+    Q_FOREACH (const QString& ext, sidecarExtensions)
+    {
+        QString suffix(QLatin1Char('.') + ext);
+
+        QFileInfo extInfo(srcInfo.filePath() + suffix);
+        QFileInfo basInfo(srcInfo.path()             +
+                          QLatin1Char('/')           +
+                          srcInfo.completeBaseName() + suffix);
+
+        if (extInfo.exists())
+        {
+            QFileInfo dstInfo(dstFile);
+            QString destination = dstInfo.filePath() + suffix;
+
+            if (QFile::exists(destination))
+            {
+                QFile::remove(destination);
+            }
+
+            if (copy)
+            {
+                if (!copyFile(extInfo.filePath(), destination))
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                if (!renameFile(extInfo.filePath(), destination))
+                {
+                    return false;
+                }
+            }
+
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Detected a sidecar" << extInfo.filePath();
+        }
+
+        if (basInfo.exists())
+        {
+            QFileInfo dstInfo(dstFile);
+            QString destination = dstInfo.path()             +
+                                  QLatin1Char('/')           +
+                                  dstInfo.completeBaseName() + suffix;
+
+            if (QFile::exists(destination))
+            {
+                QFile::remove(destination);
+            }
+
+            if (copy)
+            {
+                if (!copyFile(basInfo.filePath(), destination))
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                if (!renameFile(basInfo.filePath(), destination))
+                {
+                    return false;
+                }
+            }
+
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Detected a sidecar" << basInfo.filePath();
+        }
+    }
+
+    return true;
+}
+
 } // namespace Digikam

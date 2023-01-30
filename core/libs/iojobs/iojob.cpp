@@ -180,6 +180,14 @@ void CopyOrMoveJob::run()
             }
             else
             {
+                // move the possible sidecar files first
+
+                if (!DFileOperations::renameOrCopySidecar(srcInfo.filePath(), destenation, false))
+                {
+                    Q_EMIT signalError(i18n("Could not move sidecar from file %1 to album %2",
+                                            srcName, QDir::toNativeSeparators(dstDir.path())));
+                }
+
                 if (!DFileOperations::renameFile(srcInfo.filePath(), destenation))
                 {
                     Q_EMIT signalError(i18n("Could not move file %1 to album %2",
@@ -213,6 +221,14 @@ void CopyOrMoveJob::run()
             }
             else
             {
+                // copy the possible sidecar files first
+
+                if (!DFileOperations::renameOrCopySidecar(srcInfo.filePath(), destenation, true))
+                {
+                    Q_EMIT signalError(i18n("Could not copy sidecar from file %1 to folder %2",
+                                            srcName, QDir::toNativeSeparators(dstDir.path())));
+                }
+
                 if (!DFileOperations::copyFile(srcInfo.filePath(), destenation))
                 {
                     if (m_data->operation() == IOJobData::CopyToExt)

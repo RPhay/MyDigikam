@@ -264,4 +264,5 @@ BUGFIXES:
 224 ==> 330274 - Showfoto documentation section is missing from the new online manual based on Sphinx/ReStructuredText.
 225 ==> 464769 - Rebuild Finger-Prints Process Slow.
 226 ==> 433391 - Request to add ImageProperties fields (location, city, state, country) to Advanced Search.
-227 ==> 
+227 ==> 465015 - Moving a video with a colour tag to a directory containing a video with the same name removes tag during rename.
+228 ==> 

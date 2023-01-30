@@ -112,6 +112,14 @@ public:
      * is used as under Linux and macOS.
      */
     static QString findExecutable(const QString& name);
+
+    /**
+     * Rename/move or copy all possible sidecar files
+     * and keep the source file modification time.
+     */
+    static bool renameOrCopySidecar(const QString& srcFile,
+                                    const QString& dstFile,
+                                    bool copy = false);
 };
 
 } // namespace Digikam
