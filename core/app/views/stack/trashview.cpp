@@ -114,16 +114,21 @@ TrashView::TrashView(QWidget* const parent)
     // Action Buttons
 
     d->undoButton      = new QPushButton(i18n("Undo"),                   this);
+    d->undoButton->setToolTip(i18n("Restore only the last entry in the trash-bin."));
+    d->undoButton->setIcon(QIcon::fromTheme(QLatin1String("edit-undo")));
+
     d->restoreButton   = new QPushButton(i18n("Restore"),                this);
+    d->restoreButton->setToolTip(i18n("Restore selection of files from the trash-bin."));
+    d->restoreButton->setIcon(QIcon::fromTheme(QLatin1String("edit-copy")));
+
     d->deleteButton    = new QPushButton(i18n("Delete..."),              this);
+    d->deleteButton->setToolTip(i18n("Remove permanently the items selection or all items from the trash-bin."));
+    d->deleteButton->setIcon(QIcon::fromTheme(QLatin1String("edit-delete")));
 
     d->deleteAction    = new QAction(i18n("Selected Items Permanently"), this);
-    d->deleteAllAction = new QAction(i18n("All Items Permanently"),      this);
-
-    d->undoButton->setIcon(QIcon::fromTheme(QLatin1String("edit-undo")));
-    d->restoreButton->setIcon(QIcon::fromTheme(QLatin1String("edit-copy")));
-    d->deleteButton->setIcon(QIcon::fromTheme(QLatin1String("edit-delete")));
     d->deleteAction->setIcon(QIcon::fromTheme(QLatin1String("edit-delete")));
+
+    d->deleteAllAction = new QAction(i18n("All Items Permanently"),      this);
     d->deleteAllAction->setIcon(QIcon::fromTheme(QLatin1String("edit-delete")));
 
     QMenu* const menu  = new QMenu(this);
