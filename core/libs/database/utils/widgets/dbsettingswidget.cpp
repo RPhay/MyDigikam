@@ -99,9 +99,9 @@ void DatabaseSettingsWidget::setupMainArea()
                                      "and one to store similarity fingerprints.<br/>"
                                      "Write access is required to be able to edit image properties.</p>"
                                      "<p>Databases are digiKam core engines. Take care to use a place hosted by fast "
-                                     "hardware (as SSD) with enough free space especially for thumbnails database.</p>"
+                                     "hardware (eg. SSD or NVMe) with enough free space especially for thumbnails database.</p>"
                                      "<p>Note: a remote file system such as NFS, cannot be used here. "
-                                     "For performance reasons, it is also recommended not to use removable media.</p>"
+                                     "For performance reasons, it is also recommended not to use network storage media.</p>"
                                      "<p></p>"), dbConfigBox);
     d->dbPathLabel->setWordWrap(true);
     d->dbPathEdit  = new DFileSelector(dbConfigBox);
