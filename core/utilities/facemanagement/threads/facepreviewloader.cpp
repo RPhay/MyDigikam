@@ -99,6 +99,8 @@ void FacePreviewLoader::slotImageLoaded(const LoadingDescription& loadingDescrip
     package->processFlags |= FacePipelinePackage::PreviewImageLoaded;
 
     Q_EMIT processed(package);
+
+    qApp->processEvents();
 }
 
 bool FacePreviewLoader::sentOutLimitReached()

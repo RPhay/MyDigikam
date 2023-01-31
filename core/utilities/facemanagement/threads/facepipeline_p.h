@@ -21,6 +21,7 @@
 // Qt includes
 
 #include <QExplicitlySharedDataPointer>
+#include <QApplication>
 #include <QMetaMethod>
 #include <QMutex>
 #include <QSharedData>
