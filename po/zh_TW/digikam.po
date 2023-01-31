@@ -32,7 +32,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-30 00:55+0000\n"
+"POT-Creation-Date: 2023-01-31 00:56+0000\n"
 "PO-Revision-Date: 2020-02-15 19:57+0800\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
@@ -1430,7 +1430,7 @@ msgstr ""
 "<p>此 ICC 描述檔資料夾似乎無效。</p><p>如果您想要再設定一次，在這裡點選"
 "「是」，反之請選「否」，而「色彩管理」功能會停用，直到您解決這個問題。</p>"
 
-#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:428
+#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:433
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -3361,64 +3361,80 @@ msgid "Undo"
 msgstr "復原"
 
 #: core/app/views/stack/trashview.cpp:117
+#, kde-format
+msgid "Restore only the last entry in the trash-bin."
+msgstr ""
+
+#: core/app/views/stack/trashview.cpp:120
 #, fuzzy, kde-format
 msgid "Restore"
 msgstr "修復"
 
-#: core/app/views/stack/trashview.cpp:118
+#: core/app/views/stack/trashview.cpp:121
+#, fuzzy, kde-format
+#| msgid "Remove the current selected value from the list"
+msgid "Restore selection of files from the trash-bin."
+msgstr "從清單中移除目前選擇的數值"
+
+#: core/app/views/stack/trashview.cpp:124
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgid "Delete..."
 msgstr "刪除"
 
-#: core/app/views/stack/trashview.cpp:120
+#: core/app/views/stack/trashview.cpp:125
+#, kde-format
+msgid "Remove permanently the items selection or all items from the trash-bin."
+msgstr ""
+
+#: core/app/views/stack/trashview.cpp:128
 #, fuzzy, kde-format
 #| msgid "Delete File Permanently"
 msgid "Selected Items Permanently"
 msgstr "永久刪除檔案"
 
-#: core/app/views/stack/trashview.cpp:121
+#: core/app/views/stack/trashview.cpp:131
 #, fuzzy, kde-format
 #| msgid "Delete Permanently"
 msgid "All Items Permanently"
 msgstr "永久刪除"
 
-#: core/app/views/stack/trashview.cpp:241
+#: core/app/views/stack/trashview.cpp:246
 #, fuzzy, kde-format
 #| msgid "Confirm"
 msgid "Confirm Undo"
 msgstr "確認"
 
-#: core/app/views/stack/trashview.cpp:242
-#: core/app/views/stack/trashview.cpp:267
+#: core/app/views/stack/trashview.cpp:247
+#: core/app/views/stack/trashview.cpp:272
 #, fuzzy, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
 msgstr[0] "您確定要刪除選擇的工作流「%1」？"
 
-#: core/app/views/stack/trashview.cpp:266
+#: core/app/views/stack/trashview.cpp:271
 #, fuzzy, kde-format
 msgid "Confirm Restore"
 msgstr "關聯性："
 
-#: core/app/views/stack/trashview.cpp:295
-#: core/app/views/stack/trashview.cpp:345
+#: core/app/views/stack/trashview.cpp:300
+#: core/app/views/stack/trashview.cpp:350
 #, fuzzy, kde-format
 msgid "Confirm Deletion"
 msgstr "關聯性："
 
-#: core/app/views/stack/trashview.cpp:296
+#: core/app/views/stack/trashview.cpp:301
 #, fuzzy, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
 msgstr[0] "您確定要刪除選擇的工作流「%1」？"
 
-#: core/app/views/stack/trashview.cpp:346
+#: core/app/views/stack/trashview.cpp:351
 #, fuzzy, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "您確定要刪除選擇的工作流「%1」？"
 
-#: core/app/views/stack/trashview.cpp:435
+#: core/app/views/stack/trashview.cpp:440
 #, fuzzy, kde-format
 #| msgid "%2/%1 item selected"
 #| msgid_plural "%2/%1 items selected"
@@ -28195,7 +28211,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "Raw 轉換"
 
 #: core/libs/album/engine/album.cpp:421
-#: core/libs/database/utils/ifaces/dio.cpp:802
+#: core/libs/database/utils/ifaces/dio.cpp:805
 #, kde-format
 msgid "Trash"
 msgstr ""
@@ -30273,14 +30289,14 @@ msgstr ""
 "此資料庫無效：此 \"DBThumbnailsVersion\" 設定值不存在。無法校驗目前的資料庫網"
 "要版本。試著以空白資料庫啟動。"
 
-#: core/libs/database/utils/ifaces/dio.cpp:326
+#: core/libs/database/utils/ifaces/dio.cpp:329
 #, fuzzy, kde-format
 #| msgid "File name filter:"
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "檔名過濾："
 
-#: core/libs/database/utils/ifaces/dio.cpp:327
+#: core/libs/database/utils/ifaces/dio.cpp:330
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -30293,76 +30309,76 @@ msgid ""
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:336
+#: core/libs/database/utils/ifaces/dio.cpp:339
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "自動覆寫"
 
-#: core/libs/database/utils/ifaces/dio.cpp:338
+#: core/libs/database/utils/ifaces/dio.cpp:341
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "自動覆寫"
 
-#: core/libs/database/utils/ifaces/dio.cpp:340
+#: core/libs/database/utils/ifaces/dio.cpp:343
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "自動覆寫"
 
-#: core/libs/database/utils/ifaces/dio.cpp:766
+#: core/libs/database/utils/ifaces/dio.cpp:769
 #, fuzzy, kde-format
 #| msgid "Copy Albums..."
 msgid "Copy Album"
 msgstr "複製相簿..."
 
-#: core/libs/database/utils/ifaces/dio.cpp:771
+#: core/libs/database/utils/ifaces/dio.cpp:774
 #, fuzzy, kde-format
 #| msgid "Copy Images..."
 msgid "Copy Images"
 msgstr "複製影像..."
 
-#: core/libs/database/utils/ifaces/dio.cpp:777
+#: core/libs/database/utils/ifaces/dio.cpp:780
 #, fuzzy, kde-format
 #| msgid "no preset value"
 msgid "Copy Files"
 msgstr "無預設值"
 
-#: core/libs/database/utils/ifaces/dio.cpp:782
+#: core/libs/database/utils/ifaces/dio.cpp:785
 #, fuzzy, kde-format
 #| msgid "&Move to Album..."
 msgid "Move Album"
 msgstr "移至相簿(&M)..."
 
-#: core/libs/database/utils/ifaces/dio.cpp:787
+#: core/libs/database/utils/ifaces/dio.cpp:790
 #, fuzzy, kde-format
 #| msgid "Save Images"
 msgid "Move Images"
 msgstr "儲存影像"
 
-#: core/libs/database/utils/ifaces/dio.cpp:792
+#: core/libs/database/utils/ifaces/dio.cpp:795
 #, fuzzy, kde-format
 #| msgid "Movie Files"
 msgid "Move Files"
 msgstr "影片檔案"
 
-#: core/libs/database/utils/ifaces/dio.cpp:797
+#: core/libs/database/utils/ifaces/dio.cpp:800
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:362
 #, kde-format
 msgid "Delete"
 msgstr "刪除"
 
-#: core/libs/database/utils/ifaces/dio.cpp:807
+#: core/libs/database/utils/ifaces/dio.cpp:810
 #, fuzzy, kde-format
 msgid "Restore Trash"
 msgstr "修復"
 
-#: core/libs/database/utils/ifaces/dio.cpp:812
+#: core/libs/database/utils/ifaces/dio.cpp:815
 #, kde-format
 msgid "Empty Trash"
 msgstr ""
@@ -30530,10 +30546,10 @@ msgid ""
 "store compressed thumbnails, one to store faces recognition metadata, and "
 "one to store similarity fingerprints.<br/>Write access is required to be "
 "able to edit image properties.</p><p>Databases are digiKam core engines. "
-"Take care to use a place hosted by fast hardware (as SSD) with enough free "
-"space especially for thumbnails database.</p><p>Note: a remote file system "
-"such as NFS, cannot be used here. For performance reasons, it is also "
-"recommended not to use removable media.</p><p></p>"
+"Take care to use a place hosted by fast hardware (eg. SSD or NVMe) with "
+"enough free space especially for thumbnails database.</p><p>Note: a remote "
+"file system such as NFS, cannot be used here. For performance reasons, it is "
+"also recommended not to use network storage media.</p><p></p>"
 msgstr ""
 "<p>資料庫用來儲存在系統上的位置。有一個給所有根相簿的共同資料庫檔案。<br/>為"
 "了能編輯影像屬性需要有寫入權限。</p><p>備註：這裡不能使用遠端檔案系統，如 "
@@ -37003,32 +37019,42 @@ msgid ""
 "album %2"
 msgstr "無法儲存影像「%1」到「%2」"
 
-#: core/libs/iojobs/iojob.cpp:185
+#: core/libs/iojobs/iojob.cpp:187
+#, fuzzy, kde-format
+msgid "Could not move sidecar from file %1 to album %2"
+msgstr "無法儲存影像「%1」到「%2」"
+
+#: core/libs/iojobs/iojob.cpp:193
 #, fuzzy, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "無法儲存影像「%1」到「%2」"
 
-#: core/libs/iojobs/iojob.cpp:208
+#: core/libs/iojobs/iojob.cpp:216
 #, fuzzy, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "無法儲存影像「%1」的圖示到「%2」"
 
-#: core/libs/iojobs/iojob.cpp:220
+#: core/libs/iojobs/iojob.cpp:228
+#, fuzzy, kde-format
+msgid "Could not copy sidecar from file %1 to folder %2"
+msgstr "無法儲存影像「%1」的圖示到「%2」"
+
+#: core/libs/iojobs/iojob.cpp:236
 #, fuzzy, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "無法儲存影像「%1」的圖示到「%2」"
 
-#: core/libs/iojobs/iojob.cpp:225
+#: core/libs/iojobs/iojob.cpp:241
 #, fuzzy, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "無法儲存影像「%1」的圖示到「%2」"
 
-#: core/libs/iojobs/iojob.cpp:267
+#: core/libs/iojobs/iojob.cpp:283
 #, fuzzy, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "檔案不存在"
 
-#: core/libs/iojobs/iojob.cpp:279
+#: core/libs/iojobs/iojob.cpp:295
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -37036,7 +37062,7 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:291
+#: core/libs/iojobs/iojob.cpp:307
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -37044,34 +37070,34 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:308
+#: core/libs/iojobs/iojob.cpp:324
 #, fuzzy, kde-format
 msgid "Album %1 could not be removed"
 msgstr "相簿名稱不可為空。"
 
-#: core/libs/iojobs/iojob.cpp:320
+#: core/libs/iojobs/iojob.cpp:336
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:366
+#: core/libs/iojobs/iojob.cpp:382
 #, fuzzy, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "無法儲存影像「%1」到「%2」"
 
-#: core/libs/iojobs/iojob.cpp:376
+#: core/libs/iojobs/iojob.cpp:392
 #, fuzzy, kde-format
 msgid "Image with the same name %1 already there"
 msgstr ""
 "另一個相同名稱的標籤已經存在。\n"
 "請另選一個名稱。"
 
-#: core/libs/iojobs/iojob.cpp:391
+#: core/libs/iojobs/iojob.cpp:407
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:463
+#: core/libs/iojobs/iojob.cpp:479
 #, fuzzy, kde-format
 #| msgid "Failed to open file for writing"
 msgid "Could not restore file %1 from trash"

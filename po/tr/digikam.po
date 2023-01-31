@@ -53,8 +53,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-30 00:55+0000\n"
-"PO-Revision-Date: 2023-01-27 20:00+0300\n"
+"POT-Creation-Date: 2023-01-31 00:56+0000\n"
+"PO-Revision-Date: 2023-01-31 00:40+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1374,7 +1374,7 @@ msgstr ""
 "seçerseniz \"Renk Yönetimi\" desteği siz bu sorunu çözene dek etkisiz hale "
 "gelecektir.</p>"
 
-#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:428
+#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:433
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -3161,61 +3161,77 @@ msgstr "Geri Al"
 
 #: core/app/views/stack/trashview.cpp:117
 #, kde-format
+msgid "Restore only the last entry in the trash-bin."
+msgstr ""
+
+#: core/app/views/stack/trashview.cpp:120
+#, kde-format
 msgid "Restore"
 msgstr "Geri Yükle"
 
-#: core/app/views/stack/trashview.cpp:118
+#: core/app/views/stack/trashview.cpp:121
+#, fuzzy, kde-format
+#| msgid "Remove selected images from the list"
+msgid "Restore selection of files from the trash-bin."
+msgstr "Seçilen resimleri listeden kaldır"
+
+#: core/app/views/stack/trashview.cpp:124
 #, kde-format
 msgid "Delete..."
 msgstr "Sil..."
 
-#: core/app/views/stack/trashview.cpp:120
+#: core/app/views/stack/trashview.cpp:125
+#, kde-format
+msgid "Remove permanently the items selection or all items from the trash-bin."
+msgstr ""
+
+#: core/app/views/stack/trashview.cpp:128
 #, kde-format
 msgid "Selected Items Permanently"
 msgstr "Seçili Ögeler Kalıcı Olarak"
 
-#: core/app/views/stack/trashview.cpp:121
+#: core/app/views/stack/trashview.cpp:131
 #, kde-format
 msgid "All Items Permanently"
 msgstr "Tüm Ögeler Kalıcı Olarak"
 
-#: core/app/views/stack/trashview.cpp:241
+#: core/app/views/stack/trashview.cpp:246
 #, kde-format
 msgid "Confirm Undo"
 msgstr "Geri Almayı Onayla"
 
-#: core/app/views/stack/trashview.cpp:242
-#: core/app/views/stack/trashview.cpp:267
+#: core/app/views/stack/trashview.cpp:247
+#: core/app/views/stack/trashview.cpp:272
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
 msgstr[0] "%1 ögeyi geri yüklemek istediğinizden emin misiniz?"
 msgstr[1] "%1 ögeyi geri yüklemek istediğinizden emin misiniz?"
 
-#: core/app/views/stack/trashview.cpp:266
+#: core/app/views/stack/trashview.cpp:271
 #, kde-format
 msgid "Confirm Restore"
 msgstr "Geri Yüklemeyi Onayla"
 
-#: core/app/views/stack/trashview.cpp:295
-#: core/app/views/stack/trashview.cpp:345
+#: core/app/views/stack/trashview.cpp:300
+#: core/app/views/stack/trashview.cpp:350
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "Silmeyi Onayla"
 
-#: core/app/views/stack/trashview.cpp:296
+#: core/app/views/stack/trashview.cpp:301
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
 msgstr[0] "%1 ögeyi kalıcı olarak silmek istediğinizden emin misiniz?"
 msgstr[1] "%1 ögeyi kalıcı olarak silmek istediğinizden emin misiniz?"
 
-#: core/app/views/stack/trashview.cpp:346
+#: core/app/views/stack/trashview.cpp:351
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "TÜM kalemleri kalıcı olarak silmek istediğinizden emin misiniz?"
 
-#: core/app/views/stack/trashview.cpp:435
+#: core/app/views/stack/trashview.cpp:440
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "%1/%2 öge seçildi"
@@ -28294,7 +28310,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "Ham Dönüştürme"
 
 #: core/libs/album/engine/album.cpp:421
-#: core/libs/database/utils/ifaces/dio.cpp:802
+#: core/libs/database/utils/ifaces/dio.cpp:805
 #, kde-format
 msgid "Trash"
 msgstr "Çöp"
@@ -30374,14 +30390,14 @@ msgstr ""
 "Geçerli veritabanı şeması sürümü doğrulanamıyor. Boş bir veritabanıyla "
 "başlamayı deneyin. "
 
-#: core/libs/database/utils/ifaces/dio.cpp:326
+#: core/libs/database/utils/ifaces/dio.cpp:329
 #, fuzzy, kde-format
 #| msgid "File name filter:"
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Dosya adı filtresi:"
 
-#: core/libs/database/utils/ifaces/dio.cpp:327
+#: core/libs/database/utils/ifaces/dio.cpp:330
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -30394,78 +30410,78 @@ msgid ""
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:336
+#: core/libs/database/utils/ifaces/dio.cpp:339
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Otomatik olarak üzerine yaz"
 
-#: core/libs/database/utils/ifaces/dio.cpp:338
+#: core/libs/database/utils/ifaces/dio.cpp:341
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Otomatik olarak üzerine yaz"
 
-#: core/libs/database/utils/ifaces/dio.cpp:340
+#: core/libs/database/utils/ifaces/dio.cpp:343
 #, fuzzy, kde-format
 #| msgid "Skip automatically"
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Otomatik olarak atla"
 
-#: core/libs/database/utils/ifaces/dio.cpp:766
+#: core/libs/database/utils/ifaces/dio.cpp:769
 #, fuzzy, kde-format
 #| msgid "By Album"
 msgid "Copy Album"
 msgstr "Albüme Göre"
 
-#: core/libs/database/utils/ifaces/dio.cpp:771
+#: core/libs/database/utils/ifaces/dio.cpp:774
 #, fuzzy, kde-format
 #| msgid "&Group Images"
 msgid "Copy Images"
 msgstr "Resimleri &Gruplandır"
 
-#: core/libs/database/utils/ifaces/dio.cpp:777
+#: core/libs/database/utils/ifaces/dio.cpp:780
 #, fuzzy, kde-format
 #| msgctxt "copy timestamp as well"
 #| msgid "Copy value"
 msgid "Copy Files"
 msgstr "Değeri kopyala"
 
-#: core/libs/database/utils/ifaces/dio.cpp:782
+#: core/libs/database/utils/ifaces/dio.cpp:785
 #, fuzzy, kde-format
 #| msgid "&Move to Album..."
 msgid "Move Album"
 msgstr "Albüme &Taşı..."
 
-#: core/libs/database/utils/ifaces/dio.cpp:787
+#: core/libs/database/utils/ifaces/dio.cpp:790
 #, fuzzy, kde-format
 #| msgid "Save Images"
 msgid "Move Images"
 msgstr "Resimler Kaydet"
 
-#: core/libs/database/utils/ifaces/dio.cpp:792
+#: core/libs/database/utils/ifaces/dio.cpp:795
 #, fuzzy, kde-format
 #| msgid "Movie Files"
 msgid "Move Files"
 msgstr "Film Dosyaları"
 
-#: core/libs/database/utils/ifaces/dio.cpp:797
+#: core/libs/database/utils/ifaces/dio.cpp:800
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:362
 #, kde-format
 msgid "Delete"
 msgstr "Sil"
 
-#: core/libs/database/utils/ifaces/dio.cpp:807
+#: core/libs/database/utils/ifaces/dio.cpp:810
 #, fuzzy, kde-format
 #| msgid "Restore"
 msgid "Restore Trash"
 msgstr "Geri Yükle"
 
-#: core/libs/database/utils/ifaces/dio.cpp:812
+#: core/libs/database/utils/ifaces/dio.cpp:815
 #, fuzzy, kde-format
 #| msgid "Trash"
 msgid "Empty Trash"
@@ -30642,10 +30658,10 @@ msgid ""
 "store compressed thumbnails, one to store faces recognition metadata, and "
 "one to store similarity fingerprints.<br/>Write access is required to be "
 "able to edit image properties.</p><p>Databases are digiKam core engines. "
-"Take care to use a place hosted by fast hardware (as SSD) with enough free "
-"space especially for thumbnails database.</p><p>Note: a remote file system "
-"such as NFS, cannot be used here. For performance reasons, it is also "
-"recommended not to use removable media.</p><p></p>"
+"Take care to use a place hosted by fast hardware (eg. SSD or NVMe) with "
+"enough free space especially for thumbnails database.</p><p>Note: a remote "
+"file system such as NFS, cannot be used here. For performance reasons, it is "
+"also recommended not to use network storage media.</p><p></p>"
 msgstr ""
 "<p>Burada veritabanı dosyalarının sisteminizde depolanacağı konumu "
 "ayarlayın. Üç veri tabanı vardır: biri tüm derleme özellikleri, diğeri "
@@ -37136,33 +37152,45 @@ msgid ""
 msgstr ""
 "%1 klasörü %2 albümüne taşınamadı. %1 klasörü de %2 albümüne kopyalanmış"
 
-#: core/libs/iojobs/iojob.cpp:185
+#: core/libs/iojobs/iojob.cpp:187
+#, fuzzy, kde-format
+#| msgid "Could not move file %1 to album %2"
+msgid "Could not move sidecar from file %1 to album %2"
+msgstr "%1 dosyası %2 albümüne taşınamadı"
+
+#: core/libs/iojobs/iojob.cpp:193
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "%1 dosyası %2 albümüne taşınamadı"
 
-#: core/libs/iojobs/iojob.cpp:208
+#: core/libs/iojobs/iojob.cpp:216
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "%1 klasörü %2 albümüne kopyalanamadı"
 
-#: core/libs/iojobs/iojob.cpp:220
+#: core/libs/iojobs/iojob.cpp:228
+#, fuzzy, kde-format
+#| msgid "Could not copy file %1 to album %2"
+msgid "Could not copy sidecar from file %1 to folder %2"
+msgstr "%1 dosyası %2 albümüne kopyalanamadı"
+
+#: core/libs/iojobs/iojob.cpp:236
 #, fuzzy, kde-format
 #| msgid "Could not copy file %1 to album %2"
 msgid "Could not copy file %1 to folder %2"
 msgstr "%1 dosyası %2 albümüne kopyalanamadı"
 
-#: core/libs/iojobs/iojob.cpp:225
+#: core/libs/iojobs/iojob.cpp:241
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "%1 dosyası %2 albümüne kopyalanamadı"
 
-#: core/libs/iojobs/iojob.cpp:267
+#: core/libs/iojobs/iojob.cpp:283
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "Dosya/Klasör %1 yok"
 
-#: core/libs/iojobs/iojob.cpp:279
+#: core/libs/iojobs/iojob.cpp:295
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -37170,7 +37198,7 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:291
+#: core/libs/iojobs/iojob.cpp:307
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -37178,33 +37206,33 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:308
+#: core/libs/iojobs/iojob.cpp:324
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "%1 albümü kaldırılamaz"
 
-#: core/libs/iojobs/iojob.cpp:320
+#: core/libs/iojobs/iojob.cpp:336
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "%1 resmi kaldırılamaz"
 
-#: core/libs/iojobs/iojob.cpp:366
+#: core/libs/iojobs/iojob.cpp:382
 #, fuzzy, kde-format
 #| msgid "Couldn't move image %1 to collection trash"
 msgid "Could not move image %1 to collection trash"
 msgstr "%1 resmi koleksiyon çöpüne taşınamadı"
 
-#: core/libs/iojobs/iojob.cpp:376
+#: core/libs/iojobs/iojob.cpp:392
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Aynı isimli %1 resmi zaten var"
 
-#: core/libs/iojobs/iojob.cpp:391
+#: core/libs/iojobs/iojob.cpp:407
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "%1 resmi yeniden adlandırılamaz"
 
-#: core/libs/iojobs/iojob.cpp:463
+#: core/libs/iojobs/iojob.cpp:479
 #, fuzzy, kde-format
 #| msgid "Could not open file '%1' for writing"
 msgid "Could not restore file %1 from trash"
@@ -51717,15 +51745,13 @@ msgid "Select language to translate with %1"
 msgstr "İçeriğin dilini buradan seçin."
 
 #: core/libs/widgets/text/localizeselector.cpp:262
-#, fuzzy, kde-format
-#| msgid "Remove this Tag"
+#, kde-format
 msgctxt "@action"
 msgid "Remove this entry"
-msgstr "Bu Etiketi Kaldır"
+msgstr "Bu girdiyi kaldır"
 
 #: core/libs/widgets/text/localizeselector.cpp:263
-#, fuzzy, kde-format
-#| msgid "Clear List"
+#, kde-format
 msgctxt "@action"
 msgid "Clear List"
 msgstr "Listeyi Temizle"
@@ -51740,13 +51766,13 @@ msgstr "Ara..."
 #, kde-format
 msgctxt "@info: search text bar"
 msgid "Case sensitive"
-msgstr "Büyük küçük harf duyarlı"
+msgstr "BÜYÜK/küçük harf duyarlı"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:94
 #, kde-format
 msgctxt "@option:check"
 msgid "Activate spellcheck in background when entering text"
-msgstr ""
+msgstr "Metin girerken arka planda yazım denetimini etkinleştir"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:96
 #, kde-kuit-format
@@ -51760,108 +51786,103 @@ msgid ""
 "depends of open-source backends, including necessary dictionaries, to "
 "operate sentence analysis in desired languages.</para>"
 msgstr ""
+"<para>Altyazılar, başlıklar ve diğer metin düzenleme araç takımlarında arka "
+"planda yazım denetimi özelliğini etkinleştirmek için bu seçeneği açın. Yazım "
+"denetimi, metinde kullanılan geçerli dili otomatik olarak algılayabilir ve "
+"yanlış yazılmış sözcüklere alternatifler önerebilir.</para><para>Alternatif "
+"dilin belirlenebildiği girişlerde, metni ayrıştırmak için bağlamsal dil "
+"kullanılacaktır. Yazım denetimi, istenen dillerde tümce çözümlemesi yapmak "
+"için gerekli sözlükler de dahil olmak üzere açık kaynaklı arka uçlara "
+"bağlıdır.</para>"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:108
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "Wiktionary"
+#, kde-format
 msgctxt "@title"
 msgid "Available Language Dictionaries"
-msgstr "VikiSözlük"
+msgstr "Kullanılabilir Dil Sözlükleri"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:121
-#, fuzzy, kde-format
-#| msgid "Codec"
+#, kde-format
 msgctxt "@title: dictionary language code"
 msgid "Code"
-msgstr "Kodlayıcı"
+msgstr "Kod"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:122
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "@title: dictionary language name"
 msgid "Name"
-msgstr "İsim"
+msgstr "Ad"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:129
-#, fuzzy, kde-format
-#| msgctxt "@info Storage"
-#| msgid "Available:"
+#, kde-format
 msgctxt "@title"
 msgid "Available Backends"
-msgstr "Kullanılabilir:"
+msgstr "Kullanılabilir Arka Uçlar"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:148
-#, fuzzy, kde-format
-#| msgid "Monitor profile:"
+#, kde-format
 msgctxt "@title"
 msgid "Ignored Words"
-msgstr "Monitör profili:"
+msgstr "Yok Sayılan Sözcükler"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:154
-#, fuzzy, kde-format
-#| msgid "Set here the number of items to find using sketch."
+#, kde-format
 msgctxt "@info"
 msgid "Set here a new word to ignore during spellcheck"
-msgstr "Çizim kullanılarak bulunacak öge sayısını buradan belirtin."
+msgstr "Yazım denetimi sırasında yok sayılacak bir sözcüğü buradan ayarla"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:157
 #, kde-format
 msgctxt "@info"
 msgid "You can add or remove words to ignore while spell-checking operations."
 msgstr ""
+"Yazım denetimi işlemleri sırasında yok sayılacak sözcükleri ekleyebilir veya "
+"kaldırabilirsiniz."
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:162
-#, fuzzy, kde-format
-#| msgid "&Add..."
+#, kde-format
 msgctxt "@action"
 msgid "&Add..."
 msgstr "&Ekle..."
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:163
-#, fuzzy, kde-format
-#| msgid "&Remove"
+#, kde-format
 msgctxt "@action"
 msgid "&Remove"
 msgstr "&Kaldır"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:164
-#, fuzzy, kde-format
-#| msgid "&Replace"
+#, kde-format
 msgctxt "@action"
 msgid "&Replace"
 msgstr "&Değiştir"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "Previous"
+#, kde-format
 msgctxt "@action"
 msgid "Go to Previous"
-msgstr "Önceki"
+msgstr "Öncekine Git"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:107
 #, kde-format
 msgctxt "@info"
 msgid "Go to previous place in folder-view hierarchy"
-msgstr ""
+msgstr "Klasör görünümü hiyerarşisindeki önceki yere git"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:123
 #, kde-format
 msgctxt "@action"
 msgid "Go to Next"
-msgstr ""
+msgstr "Sonrakine Git"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:124
 #, kde-format
 msgctxt "@info"
 msgid "Go to next place in folder-view hierarchy"
-msgstr ""
+msgstr "Klasör görünümü hiyerarşisindeki sonraki yere git"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:140
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Go Up"
+#, kde-format
 msgctxt "@action"
 msgid "Go Up"
 msgstr "Yukarı Git"
@@ -51870,40 +51891,37 @@ msgstr "Yukarı Git"
 #, kde-format
 msgctxt "@info"
 msgid "Go up in folder-view hierarchy"
-msgstr ""
+msgstr "Klasör görünümü hiyerarşisinde yukarı çık"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:157
-#, fuzzy, kde-format
-#| msgid "Home"
+#, kde-format
 msgctxt "@action"
 msgid "Go Home"
-msgstr "Başlangıç"
+msgstr "Ana Klasöre Git"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:158
-#, fuzzy, kde-format
-#| msgid "Add the directory name"
+#, kde-format
 msgctxt "@info"
 msgid "Go to home directory"
-msgstr "Dizin adını ekleyin"
+msgstr "Ana klasöre git"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:186
-#, fuzzy, kde-format
-#| msgid "Hide Options <<"
+#, kde-format
 msgctxt "@info: folder-view"
 msgid "View Options"
-msgstr "Seçenekleri Gizle <<"
+msgstr "Görünüm Seçenekleri"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:189
 #, kde-format
 msgctxt "@info: folder-view"
 msgid "Selection options to render folder-view."
-msgstr ""
+msgstr "Klasör görünümünü sunmak için seçim seçenekleri"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:194
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Short View"
-msgstr ""
+msgstr "Kısa Görünüm"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:197
 #, kde-format

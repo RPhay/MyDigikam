@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-30 00:55+0000\n"
+"POT-Creation-Date: 2023-01-31 00:56+0000\n"
 "PO-Revision-Date: 2023-01-22 10:31+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1334,7 +1334,7 @@ msgstr ""
 "característica de «Gestió del color» quedarà inactivada fins que resoleu "
 "esta qüestió.</p>"
 
-#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:428
+#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:433
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -3125,61 +3125,78 @@ msgstr "Desfés"
 
 #: core/app/views/stack/trashview.cpp:117
 #, kde-format
+msgid "Restore only the last entry in the trash-bin."
+msgstr ""
+
+#: core/app/views/stack/trashview.cpp:120
+#, kde-format
 msgid "Restore"
 msgstr "Restaura"
 
-#: core/app/views/stack/trashview.cpp:118
+#: core/app/views/stack/trashview.cpp:121
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Remove selected images from the list"
+msgid "Restore selection of files from the trash-bin."
+msgstr "Elimina les imatges seleccionades de la llista"
+
+#: core/app/views/stack/trashview.cpp:124
 #, kde-format
 msgid "Delete..."
 msgstr "Suprimix..."
 
-#: core/app/views/stack/trashview.cpp:120
+#: core/app/views/stack/trashview.cpp:125
+#, kde-format
+msgid "Remove permanently the items selection or all items from the trash-bin."
+msgstr ""
+
+#: core/app/views/stack/trashview.cpp:128
 #, kde-format
 msgid "Selected Items Permanently"
 msgstr "Definitivament els elements seleccionats"
 
-#: core/app/views/stack/trashview.cpp:121
+#: core/app/views/stack/trashview.cpp:131
 #, kde-format
 msgid "All Items Permanently"
 msgstr "Definitivament tots els elements"
 
-#: core/app/views/stack/trashview.cpp:241
+#: core/app/views/stack/trashview.cpp:246
 #, kde-format
 msgid "Confirm Undo"
 msgstr "Confirmació de desfer"
 
-#: core/app/views/stack/trashview.cpp:242
-#: core/app/views/stack/trashview.cpp:267
+#: core/app/views/stack/trashview.cpp:247
+#: core/app/views/stack/trashview.cpp:272
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
 msgstr[0] "Segur que voleu restaurar %1 element?"
 msgstr[1] "Segur que voleu restaurar %1 elements?"
 
-#: core/app/views/stack/trashview.cpp:266
+#: core/app/views/stack/trashview.cpp:271
 #, kde-format
 msgid "Confirm Restore"
 msgstr "Confirmació de la restauració"
 
-#: core/app/views/stack/trashview.cpp:295
-#: core/app/views/stack/trashview.cpp:345
+#: core/app/views/stack/trashview.cpp:300
+#: core/app/views/stack/trashview.cpp:350
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "Confirmeu la supressió"
 
-#: core/app/views/stack/trashview.cpp:296
+#: core/app/views/stack/trashview.cpp:301
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
 msgstr[0] "Segur que voleu suprimir %1 element permanentment?"
 msgstr[1] "Segur que voleu suprimir %1 elements permanentment?"
 
-#: core/app/views/stack/trashview.cpp:346
+#: core/app/views/stack/trashview.cpp:351
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Segur que voleu suprimir TOTS els elements permanentment?"
 
-#: core/app/views/stack/trashview.cpp:435
+#: core/app/views/stack/trashview.cpp:440
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "%1/%2 elements seleccionats"
@@ -27333,7 +27350,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "Conversió RAW d'UFRaw"
 
 #: core/libs/album/engine/album.cpp:421
-#: core/libs/database/utils/ifaces/dio.cpp:802
+#: core/libs/database/utils/ifaces/dio.cpp:805
 #, kde-format
 msgid "Trash"
 msgstr "Paperera"
@@ -29342,13 +29359,13 @@ msgstr ""
 "existix. No es pot verificar la versió de l'esquema de la base de dades "
 "actual. Proveu d'iniciar amb una base de dades buida. "
 
-#: core/libs/database/utils/ifaces/dio.cpp:326
+#: core/libs/database/utils/ifaces/dio.cpp:329
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Conflicte de fitxers"
 
-#: core/libs/database/utils/ifaces/dio.cpp:327
+#: core/libs/database/utils/ifaces/dio.cpp:330
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -29369,67 +29386,67 @@ msgstr ""
 "Sobreescriu automàticament: se sobreescriuran els fitxers en conflicte.\n"
 "Omet automàticament: s'ometran els fitxers en conflicte."
 
-#: core/libs/database/utils/ifaces/dio.cpp:336
+#: core/libs/database/utils/ifaces/dio.cpp:339
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Canvia el nom automàticament"
 
-#: core/libs/database/utils/ifaces/dio.cpp:338
+#: core/libs/database/utils/ifaces/dio.cpp:341
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Sobreescriu automàticament"
 
-#: core/libs/database/utils/ifaces/dio.cpp:340
+#: core/libs/database/utils/ifaces/dio.cpp:343
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Omet automàticament"
 
-#: core/libs/database/utils/ifaces/dio.cpp:766
+#: core/libs/database/utils/ifaces/dio.cpp:769
 #, kde-format
 msgid "Copy Album"
 msgstr "Copia àlbum"
 
-#: core/libs/database/utils/ifaces/dio.cpp:771
+#: core/libs/database/utils/ifaces/dio.cpp:774
 #, kde-format
 msgid "Copy Images"
 msgstr "Copia imatges"
 
-#: core/libs/database/utils/ifaces/dio.cpp:777
+#: core/libs/database/utils/ifaces/dio.cpp:780
 #, kde-format
 msgid "Copy Files"
 msgstr "Copia fitxers"
 
-#: core/libs/database/utils/ifaces/dio.cpp:782
+#: core/libs/database/utils/ifaces/dio.cpp:785
 #, kde-format
 msgid "Move Album"
 msgstr "Mou àlbum"
 
-#: core/libs/database/utils/ifaces/dio.cpp:787
+#: core/libs/database/utils/ifaces/dio.cpp:790
 #, kde-format
 msgid "Move Images"
 msgstr "Mou imatges"
 
-#: core/libs/database/utils/ifaces/dio.cpp:792
+#: core/libs/database/utils/ifaces/dio.cpp:795
 #, kde-format
 msgid "Move Files"
 msgstr "Mou fitxers"
 
-#: core/libs/database/utils/ifaces/dio.cpp:797
+#: core/libs/database/utils/ifaces/dio.cpp:800
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:362
 #, kde-format
 msgid "Delete"
 msgstr "Suprimix"
 
-#: core/libs/database/utils/ifaces/dio.cpp:807
+#: core/libs/database/utils/ifaces/dio.cpp:810
 #, kde-format
 msgid "Restore Trash"
 msgstr "Restaura la paperera"
 
-#: core/libs/database/utils/ifaces/dio.cpp:812
+#: core/libs/database/utils/ifaces/dio.cpp:815
 #, kde-format
 msgid "Empty Trash"
 msgstr "Buida la paperera"
@@ -29593,17 +29610,27 @@ msgstr ""
 "de 100.000 elements.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:94
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Set here the location where the database files will be stored on your "
+#| "system. There are four databases: one for all collections properties, one "
+#| "to store compressed thumbnails, one to store faces recognition metadata, "
+#| "and one to store similarity fingerprints.<br/>Write access is required to "
+#| "be able to edit image properties.</p><p>Databases are digiKam core "
+#| "engines. Take care to use a place hosted by fast hardware (as SSD) with "
+#| "enough free space especially for thumbnails database.</p><p>Note: a "
+#| "remote file system such as NFS, cannot be used here. For performance "
+#| "reasons, it is also recommended not to use removable media.</p><p></p>"
 msgid ""
 "<p>Set here the location where the database files will be stored on your "
 "system. There are four databases: one for all collections properties, one to "
 "store compressed thumbnails, one to store faces recognition metadata, and "
 "one to store similarity fingerprints.<br/>Write access is required to be "
 "able to edit image properties.</p><p>Databases are digiKam core engines. "
-"Take care to use a place hosted by fast hardware (as SSD) with enough free "
-"space especially for thumbnails database.</p><p>Note: a remote file system "
-"such as NFS, cannot be used here. For performance reasons, it is also "
-"recommended not to use removable media.</p><p></p>"
+"Take care to use a place hosted by fast hardware (eg. SSD or NVMe) with "
+"enough free space especially for thumbnails database.</p><p>Note: a remote "
+"file system such as NFS, cannot be used here. For performance reasons, it is "
+"also recommended not to use network storage media.</p><p></p>"
 msgstr ""
 "<p>Establiu ací la ubicació del sistema on s'emmagatzemaran els fitxers de "
 "la base de dades. Hi ha quatre bases de dades: una per a les propietats de "
@@ -35988,32 +36015,44 @@ msgstr ""
 "No s'ha pogut moure la carpeta %1 a l'àlbum %2. La carpeta %1 també s'ha "
 "copiat a l'àlbum %2."
 
-#: core/libs/iojobs/iojob.cpp:185
+#: core/libs/iojobs/iojob.cpp:187
+#, fuzzy, kde-format
+#| msgid "Could not move file %1 to album %2"
+msgid "Could not move sidecar from file %1 to album %2"
+msgstr "No s'ha pogut moure el fitxer %1 a l'àlbum %2"
+
+#: core/libs/iojobs/iojob.cpp:193
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "No s'ha pogut moure el fitxer %1 a l'àlbum %2"
 
-#: core/libs/iojobs/iojob.cpp:208
+#: core/libs/iojobs/iojob.cpp:216
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "No s'ha pogut copiar la carpeta %1 a l'àlbum %2"
 
-#: core/libs/iojobs/iojob.cpp:220
+#: core/libs/iojobs/iojob.cpp:228
+#, fuzzy, kde-format
+#| msgid "Could not copy file %1 to folder %2"
+msgid "Could not copy sidecar from file %1 to folder %2"
+msgstr "No s'ha pogut copiar el fitxer %1 a la carpeta %2"
+
+#: core/libs/iojobs/iojob.cpp:236
 #, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "No s'ha pogut copiar el fitxer %1 a la carpeta %2"
 
-#: core/libs/iojobs/iojob.cpp:225
+#: core/libs/iojobs/iojob.cpp:241
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "No s'ha pogut copiar el fitxer %1 a l'àlbum %2"
 
-#: core/libs/iojobs/iojob.cpp:267
+#: core/libs/iojobs/iojob.cpp:283
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "El fitxer o carpeta %1 no existix"
 
-#: core/libs/iojobs/iojob.cpp:279
+#: core/libs/iojobs/iojob.cpp:295
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -36024,7 +36063,7 @@ msgstr ""
 "Verifiqueu els permisos del fitxer en la carpeta de paperera «.dtrash» en la "
 "col·lecció d'imatges."
 
-#: core/libs/iojobs/iojob.cpp:291
+#: core/libs/iojobs/iojob.cpp:307
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -36035,32 +36074,32 @@ msgstr ""
 "Verifiqueu els permisos del fitxer en la carpeta de paperera «.dtrash» en la "
 "col·lecció d'imatges."
 
-#: core/libs/iojobs/iojob.cpp:308
+#: core/libs/iojobs/iojob.cpp:324
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "No s'ha pogut eliminar l'àlbum %1"
 
-#: core/libs/iojobs/iojob.cpp:320
+#: core/libs/iojobs/iojob.cpp:336
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "No s'ha pogut eliminar la imatge %1"
 
-#: core/libs/iojobs/iojob.cpp:366
+#: core/libs/iojobs/iojob.cpp:382
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "No s'ha pogut moure la imatge %1 a la paperera de col·leccions"
 
-#: core/libs/iojobs/iojob.cpp:376
+#: core/libs/iojobs/iojob.cpp:392
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Ja hi ha una imatge amb el mateix nom %1"
 
-#: core/libs/iojobs/iojob.cpp:391
+#: core/libs/iojobs/iojob.cpp:407
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "No s'ha pogut canviar de nom la imatge %1"
 
-#: core/libs/iojobs/iojob.cpp:463
+#: core/libs/iojobs/iojob.cpp:479
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "No s'ha pogut restaurar el fitxer %1 des de la paperera"

@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-30 00:55+0000\n"
+"POT-Creation-Date: 2023-01-31 00:56+0000\n"
 "PO-Revision-Date: 2022-11-24 05:00+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1364,7 +1364,7 @@ msgstr ""
 "nahi baduzu, hautatu \"Bai\" hemen, bestela hautatu \"Ez\", eta \"Kolore "
 "kudeaketa\" eginbidea desgaitu egingo da arazo hau ebazten duzun arte.</p>"
 
-#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:428
+#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:433
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -3157,61 +3157,77 @@ msgstr "Desegin"
 
 #: core/app/views/stack/trashview.cpp:117
 #, kde-format
+msgid "Restore only the last entry in the trash-bin."
+msgstr ""
+
+#: core/app/views/stack/trashview.cpp:120
+#, kde-format
 msgid "Restore"
 msgstr "Leheneratu"
 
-#: core/app/views/stack/trashview.cpp:118
+#: core/app/views/stack/trashview.cpp:121
+#, fuzzy, kde-format
+#| msgid "Remove the current selected value from the list"
+msgid "Restore selection of files from the trash-bin."
+msgstr "Kendu hautatutako irudiak zerrendatik"
+
+#: core/app/views/stack/trashview.cpp:124
 #, kde-format
 msgid "Delete..."
 msgstr "Ezabatu..."
 
-#: core/app/views/stack/trashview.cpp:120
+#: core/app/views/stack/trashview.cpp:125
+#, kde-format
+msgid "Remove permanently the items selection or all items from the trash-bin."
+msgstr ""
+
+#: core/app/views/stack/trashview.cpp:128
 #, kde-format
 msgid "Selected Items Permanently"
 msgstr "Hautatutako elementuak betiko"
 
-#: core/app/views/stack/trashview.cpp:121
+#: core/app/views/stack/trashview.cpp:131
 #, kde-format
 msgid "All Items Permanently"
 msgstr "Elementu denak betiko"
 
-#: core/app/views/stack/trashview.cpp:241
+#: core/app/views/stack/trashview.cpp:246
 #, kde-format
 msgid "Confirm Undo"
 msgstr "Berretsi desegitea"
 
-#: core/app/views/stack/trashview.cpp:242
-#: core/app/views/stack/trashview.cpp:267
+#: core/app/views/stack/trashview.cpp:247
+#: core/app/views/stack/trashview.cpp:272
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
 msgstr[0] "Ziur zaude elementu %1 lehengoratu nahi duzula?"
 msgstr[1] "Ziur zaude %1 elementu lehengoratu nahi dituzula?"
 
-#: core/app/views/stack/trashview.cpp:266
+#: core/app/views/stack/trashview.cpp:271
 #, kde-format
 msgid "Confirm Restore"
 msgstr "Berretsi leheneratzea"
 
-#: core/app/views/stack/trashview.cpp:295
-#: core/app/views/stack/trashview.cpp:345
+#: core/app/views/stack/trashview.cpp:300
+#: core/app/views/stack/trashview.cpp:350
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "Berretsi ezabatzea"
 
-#: core/app/views/stack/trashview.cpp:296
+#: core/app/views/stack/trashview.cpp:301
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
 msgstr[0] "Ziur zaude elementu %1 betiko ezabatu nahi duzula?"
 msgstr[1] "Ziur zaude %1 elementu betiko ezabatu nahi dituzula?"
 
-#: core/app/views/stack/trashview.cpp:346
+#: core/app/views/stack/trashview.cpp:351
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Ziur zaude elementu GUZTIAK behin betiko ezabatu nahi dituzula?"
 
-#: core/app/views/stack/trashview.cpp:435
+#: core/app/views/stack/trashview.cpp:440
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "%1/%2 elementu hautatuta"
@@ -27724,7 +27740,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "Kolore-espazioaren bihurketa"
 
 #: core/libs/album/engine/album.cpp:421
-#: core/libs/database/utils/ifaces/dio.cpp:802
+#: core/libs/database/utils/ifaces/dio.cpp:805
 #, kde-format
 msgid "Trash"
 msgstr "Zakarrontzia"
@@ -29831,13 +29847,13 @@ msgstr ""
 "existitzen. Uneko datu-basearen eskemaren bertsioa ezin da egiaztatu. Saiatu "
 "datu-base huts batekin."
 
-#: core/libs/database/utils/ifaces/dio.cpp:326
+#: core/libs/database/utils/ifaces/dio.cpp:329
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Irudi berriaren fitxategi-izena"
 
-#: core/libs/database/utils/ifaces/dio.cpp:327
+#: core/libs/database/utils/ifaces/dio.cpp:330
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -29850,71 +29866,71 @@ msgid ""
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
 
-#: core/libs/database/utils/ifaces/dio.cpp:336
+#: core/libs/database/utils/ifaces/dio.cpp:339
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Gainidatzi automatikoki"
 
-#: core/libs/database/utils/ifaces/dio.cpp:338
+#: core/libs/database/utils/ifaces/dio.cpp:341
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Gainidatzi automatikoki"
 
-#: core/libs/database/utils/ifaces/dio.cpp:340
+#: core/libs/database/utils/ifaces/dio.cpp:343
 #, fuzzy, kde-format
 #| msgid "Overwrite automatically"
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Gainidatzi automatikoki"
 
-#: core/libs/database/utils/ifaces/dio.cpp:766
+#: core/libs/database/utils/ifaces/dio.cpp:769
 #, kde-format
 msgid "Copy Album"
 msgstr "Kopiatu albuma"
 
-#: core/libs/database/utils/ifaces/dio.cpp:771
+#: core/libs/database/utils/ifaces/dio.cpp:774
 #, kde-format
 msgid "Copy Images"
 msgstr "Kopiatu irudiak"
 
-#: core/libs/database/utils/ifaces/dio.cpp:777
+#: core/libs/database/utils/ifaces/dio.cpp:780
 #, kde-format
 msgid "Copy Files"
 msgstr "Kopiatu fitxategiak"
 
-#: core/libs/database/utils/ifaces/dio.cpp:782
+#: core/libs/database/utils/ifaces/dio.cpp:785
 #, kde-format
 msgid "Move Album"
 msgstr "Mugitu albuma"
 
-#: core/libs/database/utils/ifaces/dio.cpp:787
+#: core/libs/database/utils/ifaces/dio.cpp:790
 #, kde-format
 msgid "Move Images"
 msgstr "Mugitu irudiak"
 
-#: core/libs/database/utils/ifaces/dio.cpp:792
+#: core/libs/database/utils/ifaces/dio.cpp:795
 #, kde-format
 msgid "Move Files"
 msgstr "Mugitu fitxategiak"
 
-#: core/libs/database/utils/ifaces/dio.cpp:797
+#: core/libs/database/utils/ifaces/dio.cpp:800
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:362
 #, kde-format
 msgid "Delete"
 msgstr "Ezabatu"
 
-#: core/libs/database/utils/ifaces/dio.cpp:807
+#: core/libs/database/utils/ifaces/dio.cpp:810
 #, fuzzy, kde-format
 #| msgid "Restore"
 msgid "Restore Trash"
 msgstr "Leheneratu"
 
-#: core/libs/database/utils/ifaces/dio.cpp:812
+#: core/libs/database/utils/ifaces/dio.cpp:815
 #, fuzzy, kde-format
 #| msgid "Trash"
 msgid "Empty Trash"
@@ -30088,10 +30104,10 @@ msgid ""
 "store compressed thumbnails, one to store faces recognition metadata, and "
 "one to store similarity fingerprints.<br/>Write access is required to be "
 "able to edit image properties.</p><p>Databases are digiKam core engines. "
-"Take care to use a place hosted by fast hardware (as SSD) with enough free "
-"space especially for thumbnails database.</p><p>Note: a remote file system "
-"such as NFS, cannot be used here. For performance reasons, it is also "
-"recommended not to use removable media.</p><p></p>"
+"Take care to use a place hosted by fast hardware (eg. SSD or NVMe) with "
+"enough free space especially for thumbnails database.</p><p>Note: a remote "
+"file system such as NFS, cannot be used here. For performance reasons, it is "
+"also recommended not to use network storage media.</p><p></p>"
 msgstr ""
 "<p>Ezarri hemen datu-baseen fitxategiak zure sisteman biltegiratuko diren "
 "kokalekua. Hiru datu-base daude: bilduma guztien propietateetarako bat, "
@@ -36727,32 +36743,42 @@ msgid ""
 "album %2"
 msgstr "Ezin izan da '%1' irudia hemen gorde: '%2'"
 
-#: core/libs/iojobs/iojob.cpp:185
+#: core/libs/iojobs/iojob.cpp:187
+#, fuzzy, kde-format
+msgid "Could not move sidecar from file %1 to album %2"
+msgstr "Ezin izan da '%1' irudia hemen gorde: '%2'"
+
+#: core/libs/iojobs/iojob.cpp:193
 #, fuzzy, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "Ezin izan da '%1' irudia hemen gorde: '%2'"
 
-#: core/libs/iojobs/iojob.cpp:208
+#: core/libs/iojobs/iojob.cpp:216
 #, fuzzy, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "Ezin izan da '%1' irudiaren ikonoa hemen gorde: %2"
 
-#: core/libs/iojobs/iojob.cpp:220
+#: core/libs/iojobs/iojob.cpp:228
+#, fuzzy, kde-format
+msgid "Could not copy sidecar from file %1 to folder %2"
+msgstr "Ezin izan da '%1' irudiaren ikonoa hemen gorde: %2"
+
+#: core/libs/iojobs/iojob.cpp:236
 #, fuzzy, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "Ezin izan da '%1' irudiaren ikonoa hemen gorde: %2"
 
-#: core/libs/iojobs/iojob.cpp:225
+#: core/libs/iojobs/iojob.cpp:241
 #, fuzzy, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "Ezin izan da '%1' irudiaren ikonoa hemen gorde: %2"
 
-#: core/libs/iojobs/iojob.cpp:267
+#: core/libs/iojobs/iojob.cpp:283
 #, fuzzy, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "Fitxategia ez da existitzen"
 
-#: core/libs/iojobs/iojob.cpp:279
+#: core/libs/iojobs/iojob.cpp:295
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -36760,7 +36786,7 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:291
+#: core/libs/iojobs/iojob.cpp:307
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -36768,34 +36794,34 @@ msgid ""
 "collection."
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:308
+#: core/libs/iojobs/iojob.cpp:324
 #, fuzzy, kde-format
 msgid "Album %1 could not be removed"
 msgstr "Ezin da albumaren izena hutsik utzi."
 
-#: core/libs/iojobs/iojob.cpp:320
+#: core/libs/iojobs/iojob.cpp:336
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:366
+#: core/libs/iojobs/iojob.cpp:382
 #, fuzzy, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "Ezin izan da '%1' irudia hemen gorde: '%2'"
 
-#: core/libs/iojobs/iojob.cpp:376
+#: core/libs/iojobs/iojob.cpp:392
 #, fuzzy, kde-format
 msgid "Image with the same name %1 already there"
 msgstr ""
 "Izen bereko beste album bat badago lehendik ere.\n"
 "Hautatu beste izen bat."
 
-#: core/libs/iojobs/iojob.cpp:391
+#: core/libs/iojobs/iojob.cpp:407
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr ""
 
-#: core/libs/iojobs/iojob.cpp:463
+#: core/libs/iojobs/iojob.cpp:479
 #, fuzzy, kde-format
 #| msgid "Failed to open file for writing"
 msgid "Could not restore file %1 from trash"

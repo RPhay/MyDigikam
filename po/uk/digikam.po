@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-30 00:55+0000\n"
-"PO-Revision-Date: 2023-01-25 10:35+0200\n"
+"POT-Creation-Date: 2023-01-31 00:56+0000\n"
+"PO-Revision-Date: 2023-01-30 09:01+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -1352,7 +1352,7 @@ msgstr ""
 "цьому випадку, «Керування кольорами» буде вимкнено до того часу, коли ви "
 "розв'яжете цю проблему.</p>"
 
-#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:428
+#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:433
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -3165,31 +3165,48 @@ msgstr "Вернути"
 
 #: core/app/views/stack/trashview.cpp:117
 #, kde-format
+msgid "Restore only the last entry in the trash-bin."
+msgstr ""
+
+#: core/app/views/stack/trashview.cpp:120
+#, kde-format
 msgid "Restore"
 msgstr "Відновити"
 
-#: core/app/views/stack/trashview.cpp:118
+#: core/app/views/stack/trashview.cpp:121
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Remove selected images from the list"
+msgid "Restore selection of files from the trash-bin."
+msgstr "Вилучити позначені зображення зі списку"
+
+#: core/app/views/stack/trashview.cpp:124
 #, kde-format
 msgid "Delete..."
 msgstr "Вилучити…"
 
-#: core/app/views/stack/trashview.cpp:120
+#: core/app/views/stack/trashview.cpp:125
+#, kde-format
+msgid "Remove permanently the items selection or all items from the trash-bin."
+msgstr ""
+
+#: core/app/views/stack/trashview.cpp:128
 #, kde-format
 msgid "Selected Items Permanently"
 msgstr "Позначені записи остаточно"
 
-#: core/app/views/stack/trashview.cpp:121
+#: core/app/views/stack/trashview.cpp:131
 #, kde-format
 msgid "All Items Permanently"
 msgstr "Усі записи остаточно"
 
-#: core/app/views/stack/trashview.cpp:241
+#: core/app/views/stack/trashview.cpp:246
 #, kde-format
 msgid "Confirm Undo"
 msgstr "Підтвердження скасування"
 
-#: core/app/views/stack/trashview.cpp:242
-#: core/app/views/stack/trashview.cpp:267
+#: core/app/views/stack/trashview.cpp:247
+#: core/app/views/stack/trashview.cpp:272
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
@@ -3198,18 +3215,18 @@ msgstr[1] "Ви справді хочете відновити %1 записи?"
 msgstr[2] "Ви справді хочете відновити %1 записів?"
 msgstr[3] "Ви справді хочете відновити запис?"
 
-#: core/app/views/stack/trashview.cpp:266
+#: core/app/views/stack/trashview.cpp:271
 #, kde-format
 msgid "Confirm Restore"
 msgstr "Підтвердження відновлення"
 
-#: core/app/views/stack/trashview.cpp:295
-#: core/app/views/stack/trashview.cpp:345
+#: core/app/views/stack/trashview.cpp:300
+#: core/app/views/stack/trashview.cpp:350
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "Підтвердити вилучення"
 
-#: core/app/views/stack/trashview.cpp:296
+#: core/app/views/stack/trashview.cpp:301
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
@@ -3218,12 +3235,12 @@ msgstr[1] "Ви справді хочете вилучити %1 записи о�
 msgstr[2] "Ви справді хочете вилучити %1 записів остаточно?"
 msgstr[3] "Ви справді хочете вилучити запис остаточно?"
 
-#: core/app/views/stack/trashview.cpp:346
+#: core/app/views/stack/trashview.cpp:351
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Ви справді хочете вилучити усе це остаточно?"
 
-#: core/app/views/stack/trashview.cpp:435
+#: core/app/views/stack/trashview.cpp:440
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "Позначено %1 з %2 записів"
@@ -27467,7 +27484,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "Перетворення цифрових негативів UFRaw"
 
 #: core/libs/album/engine/album.cpp:421
-#: core/libs/database/utils/ifaces/dio.cpp:802
+#: core/libs/database/utils/ifaces/dio.cpp:805
 #, kde-format
 msgid "Trash"
 msgstr "Смітник"
@@ -29466,13 +29483,13 @@ msgstr ""
 "Версію схеми поточної бази даних неможливо перевірити. Спробуйте почати з "
 "порожньої бази даних. "
 
-#: core/libs/database/utils/ifaces/dio.cpp:326
+#: core/libs/database/utils/ifaces/dio.cpp:329
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Конфлікт файлів"
 
-#: core/libs/database/utils/ifaces/dio.cpp:327
+#: core/libs/database/utils/ifaces/dio.cpp:330
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -29493,67 +29510,67 @@ msgstr ""
 "Автоматично перезаписати: конфліктні файли буде перезаписано.\n"
 "Автоматично пропустити: конфліктні файли буде перезаписано."
 
-#: core/libs/database/utils/ifaces/dio.cpp:336
+#: core/libs/database/utils/ifaces/dio.cpp:339
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Автоматично перейменувати"
 
-#: core/libs/database/utils/ifaces/dio.cpp:338
+#: core/libs/database/utils/ifaces/dio.cpp:341
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Автоматично перезаписати"
 
-#: core/libs/database/utils/ifaces/dio.cpp:340
+#: core/libs/database/utils/ifaces/dio.cpp:343
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Автоматично пропустити"
 
-#: core/libs/database/utils/ifaces/dio.cpp:766
+#: core/libs/database/utils/ifaces/dio.cpp:769
 #, kde-format
 msgid "Copy Album"
 msgstr "Копіювати альбом"
 
-#: core/libs/database/utils/ifaces/dio.cpp:771
+#: core/libs/database/utils/ifaces/dio.cpp:774
 #, kde-format
 msgid "Copy Images"
 msgstr "Копіювати зображення"
 
-#: core/libs/database/utils/ifaces/dio.cpp:777
+#: core/libs/database/utils/ifaces/dio.cpp:780
 #, kde-format
 msgid "Copy Files"
 msgstr "Копіювати файли"
 
-#: core/libs/database/utils/ifaces/dio.cpp:782
+#: core/libs/database/utils/ifaces/dio.cpp:785
 #, kde-format
 msgid "Move Album"
 msgstr "Пересунути альбом"
 
-#: core/libs/database/utils/ifaces/dio.cpp:787
+#: core/libs/database/utils/ifaces/dio.cpp:790
 #, kde-format
 msgid "Move Images"
 msgstr "Пересунути зображення"
 
-#: core/libs/database/utils/ifaces/dio.cpp:792
+#: core/libs/database/utils/ifaces/dio.cpp:795
 #, kde-format
 msgid "Move Files"
 msgstr "Пересунути файли"
 
-#: core/libs/database/utils/ifaces/dio.cpp:797
+#: core/libs/database/utils/ifaces/dio.cpp:800
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:362
 #, kde-format
 msgid "Delete"
 msgstr "Вилучити"
 
-#: core/libs/database/utils/ifaces/dio.cpp:807
+#: core/libs/database/utils/ifaces/dio.cpp:810
 #, kde-format
 msgid "Restore Trash"
 msgstr "Відновити зі смітника"
 
-#: core/libs/database/utils/ifaces/dio.cpp:812
+#: core/libs/database/utils/ifaces/dio.cpp:815
 #, kde-format
 msgid "Empty Trash"
 msgstr "Спорожнити смітник"
@@ -29717,17 +29734,27 @@ msgstr ""
 "записів.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:94
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Set here the location where the database files will be stored on your "
+#| "system. There are four databases: one for all collections properties, one "
+#| "to store compressed thumbnails, one to store faces recognition metadata, "
+#| "and one to store similarity fingerprints.<br/>Write access is required to "
+#| "be able to edit image properties.</p><p>Databases are digiKam core "
+#| "engines. Take care to use a place hosted by fast hardware (as SSD) with "
+#| "enough free space especially for thumbnails database.</p><p>Note: a "
+#| "remote file system such as NFS, cannot be used here. For performance "
+#| "reasons, it is also recommended not to use removable media.</p><p></p>"
 msgid ""
 "<p>Set here the location where the database files will be stored on your "
 "system. There are four databases: one for all collections properties, one to "
 "store compressed thumbnails, one to store faces recognition metadata, and "
 "one to store similarity fingerprints.<br/>Write access is required to be "
 "able to edit image properties.</p><p>Databases are digiKam core engines. "
-"Take care to use a place hosted by fast hardware (as SSD) with enough free "
-"space especially for thumbnails database.</p><p>Note: a remote file system "
-"such as NFS, cannot be used here. For performance reasons, it is also "
-"recommended not to use removable media.</p><p></p>"
+"Take care to use a place hosted by fast hardware (eg. SSD or NVMe) with "
+"enough free space especially for thumbnails database.</p><p>Note: a remote "
+"file system such as NFS, cannot be used here. For performance reasons, it is "
+"also recommended not to use network storage media.</p><p></p>"
 msgstr ""
 "<p>Тут ви можете ввести місця на вашому комп'ютері, де будуть зберігатися "
 "файли баз даних digiKam. Передбачено чотири бази даних: одну для усіх "
@@ -36119,32 +36146,44 @@ msgstr ""
 "Не вдалося пересунути теку %1 до альбому %2. Теку %1 також було скопійовано "
 "до альбому %2."
 
-#: core/libs/iojobs/iojob.cpp:185
+#: core/libs/iojobs/iojob.cpp:187
+#, fuzzy, kde-format
+#| msgid "Could not move file %1 to album %2"
+msgid "Could not move sidecar from file %1 to album %2"
+msgstr "Не вдалося пересунути файл %1 до альбому %2"
+
+#: core/libs/iojobs/iojob.cpp:193
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "Не вдалося пересунути файл %1 до альбому %2"
 
-#: core/libs/iojobs/iojob.cpp:208
+#: core/libs/iojobs/iojob.cpp:216
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "Не вдалося скопіювати теку %1 до альбому %2"
 
-#: core/libs/iojobs/iojob.cpp:220
+#: core/libs/iojobs/iojob.cpp:228
+#, fuzzy, kde-format
+#| msgid "Could not copy file %1 to folder %2"
+msgid "Could not copy sidecar from file %1 to folder %2"
+msgstr "Не вдалося виконати копіювання файла %1 до теки %2"
+
+#: core/libs/iojobs/iojob.cpp:236
 #, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "Не вдалося виконати копіювання файла %1 до теки %2"
 
-#: core/libs/iojobs/iojob.cpp:225
+#: core/libs/iojobs/iojob.cpp:241
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "Не вдалося скопіювати файл %1 до альбому %2"
 
-#: core/libs/iojobs/iojob.cpp:267
+#: core/libs/iojobs/iojob.cpp:283
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "Файла або теки %1 не існує"
 
-#: core/libs/iojobs/iojob.cpp:279
+#: core/libs/iojobs/iojob.cpp:295
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -36154,7 +36193,7 @@ msgstr ""
 "Не вдалося пересунути теку %1 до смітника збірки.\n"
 "Перевірте права доступу до теки смітника «.dtrash» у збірці зображень."
 
-#: core/libs/iojobs/iojob.cpp:291
+#: core/libs/iojobs/iojob.cpp:307
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -36164,32 +36203,32 @@ msgstr ""
 "Не вдалося пересунути зображення %1 до смітника збірки.\n"
 "Перевірте права доступу до теки смітника «.dtrash» у збірці зображень."
 
-#: core/libs/iojobs/iojob.cpp:308
+#: core/libs/iojobs/iojob.cpp:324
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "Не вдалося вилучити альбом %1"
 
-#: core/libs/iojobs/iojob.cpp:320
+#: core/libs/iojobs/iojob.cpp:336
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "Не вдалося вилучити зображення %1"
 
-#: core/libs/iojobs/iojob.cpp:366
+#: core/libs/iojobs/iojob.cpp:382
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr "Не вдалося пересунути зображення %1 до смітника збірки"
 
-#: core/libs/iojobs/iojob.cpp:376
+#: core/libs/iojobs/iojob.cpp:392
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Там уже є зображення із назвою %1"
 
-#: core/libs/iojobs/iojob.cpp:391
+#: core/libs/iojobs/iojob.cpp:407
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "Не вдалося перейменувати зображення %1"
 
-#: core/libs/iojobs/iojob.cpp:463
+#: core/libs/iojobs/iojob.cpp:479
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Не вдалося відновити файл %1 зі смітника"
@@ -59963,40 +60002,34 @@ msgid "Country of the location shown in the item"
 msgstr "Країна місця, яку буде показано для запису"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, fuzzy, kde-format
-#| msgid "Province:"
+#, kde-format
 msgid "Province"
-msgstr "Область:"
+msgstr "Область"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, fuzzy, kde-format
-#| msgid "Country of the location shown in the item"
+#, kde-format
 msgid "Province of the location shown in the item"
-msgstr "Країна місця, яку буде показано для запису"
+msgstr "Область місця, яку буде показано для запису"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "Country"
+#, kde-format
 msgid "County"
-msgstr "Країна"
+msgstr "Район"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "Country of the location shown in the item"
+#, kde-format
 msgid "County of the location shown in the item"
-msgstr "Країна місця, яку буде показано для запису"
+msgstr "Район місця, який буде показано для запису"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
-#| msgid "City:"
+#, kde-format
 msgid "City"
-msgstr "Місто:"
+msgstr "Місто"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
-#| msgid "Country of the location shown in the item"
+#, kde-format
 msgid "City of the location shown in the item"
-msgstr "Країна місця, яку буде показано для запису"
+msgstr "Місто місця, яке буде показано для запису"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, kde-format

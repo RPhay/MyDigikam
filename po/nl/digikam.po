@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-30 00:55+0000\n"
-"PO-Revision-Date: 2023-01-27 13:11+0100\n"
+"POT-Creation-Date: 2023-01-31 00:56+0000\n"
+"PO-Revision-Date: 2023-01-30 10:27+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -1382,7 +1382,7 @@ msgstr ""
 "kies \"Ja\", anders \"Nee\". Bij \"Nee\", zal \"Kleurbeheer\" uitgezet "
 "worden totdat dit is opgelost.</p>"
 
-#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:428
+#: core/app/main/digikamapp.cpp:617 core/app/views/stack/trashview.cpp:433
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -3174,61 +3174,78 @@ msgstr "Ongedaan maken"
 
 #: core/app/views/stack/trashview.cpp:117
 #, kde-format
+msgid "Restore only the last entry in the trash-bin."
+msgstr ""
+
+#: core/app/views/stack/trashview.cpp:120
+#, kde-format
 msgid "Restore"
 msgstr "Herstellen"
 
-#: core/app/views/stack/trashview.cpp:118
+#: core/app/views/stack/trashview.cpp:121
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "Remove selected images from the list"
+msgid "Restore selection of files from the trash-bin."
+msgstr "Geselecteerde afbeeldingen uit de lijst verwijderen"
+
+#: core/app/views/stack/trashview.cpp:124
 #, kde-format
 msgid "Delete..."
 msgstr "Verwijderen..."
 
-#: core/app/views/stack/trashview.cpp:120
+#: core/app/views/stack/trashview.cpp:125
+#, kde-format
+msgid "Remove permanently the items selection or all items from the trash-bin."
+msgstr ""
+
+#: core/app/views/stack/trashview.cpp:128
 #, kde-format
 msgid "Selected Items Permanently"
 msgstr "Geselecteerde items permanent"
 
-#: core/app/views/stack/trashview.cpp:121
+#: core/app/views/stack/trashview.cpp:131
 #, kde-format
 msgid "All Items Permanently"
 msgstr "Alle items permanent"
 
-#: core/app/views/stack/trashview.cpp:241
+#: core/app/views/stack/trashview.cpp:246
 #, kde-format
 msgid "Confirm Undo"
 msgstr "Ongedaan maken bevestigen"
 
-#: core/app/views/stack/trashview.cpp:242
-#: core/app/views/stack/trashview.cpp:267
+#: core/app/views/stack/trashview.cpp:247
+#: core/app/views/stack/trashview.cpp:272
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
 msgstr[0] "Wilt u echt %1 item herstellen?"
 msgstr[1] "Wilt u echt %1 items herstellen?"
 
-#: core/app/views/stack/trashview.cpp:266
+#: core/app/views/stack/trashview.cpp:271
 #, kde-format
 msgid "Confirm Restore"
 msgstr "Herstellen bevestigen"
 
-#: core/app/views/stack/trashview.cpp:295
-#: core/app/views/stack/trashview.cpp:345
+#: core/app/views/stack/trashview.cpp:300
+#: core/app/views/stack/trashview.cpp:350
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "Verwijderen bevestigen"
 
-#: core/app/views/stack/trashview.cpp:296
+#: core/app/views/stack/trashview.cpp:301
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
 msgstr[0] "Wilt u echt %1 item permanent verwijderen?"
 msgstr[1] "Wilt u echt %1 items permanent verwijderen?"
 
-#: core/app/views/stack/trashview.cpp:346
+#: core/app/views/stack/trashview.cpp:351
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Wilt u ALLE items permanent verwijderen?"
 
-#: core/app/views/stack/trashview.cpp:435
+#: core/app/views/stack/trashview.cpp:440
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "%1/%2 items geselecteerd"
@@ -8768,7 +8785,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Hue/Saturation/Lightness..."
-msgstr "Tint/verzadiging/helderheid..."
+msgstr "Tint/verzadiging/lichtheid..."
 
 #: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:64
 #, kde-format
@@ -27342,7 +27359,7 @@ msgid "UFRaw Raw Conversion"
 msgstr "Rawconversie UFRaw"
 
 #: core/libs/album/engine/album.cpp:421
-#: core/libs/database/utils/ifaces/dio.cpp:802
+#: core/libs/database/utils/ifaces/dio.cpp:805
 #, kde-format
 msgid "Trash"
 msgstr "Prullenbak"
@@ -29344,13 +29361,13 @@ msgstr ""
 "niet. De huidige versie van het databaseschema kan niet worden geverifieerd. "
 "Probeer te beginnen met een lege database. "
 
-#: core/libs/database/utils/ifaces/dio.cpp:326
+#: core/libs/database/utils/ifaces/dio.cpp:329
 #, kde-format
 msgctxt "@title:window"
 msgid "File Conflict"
 msgstr "Bestandsconflict"
 
-#: core/libs/database/utils/ifaces/dio.cpp:327
+#: core/libs/database/utils/ifaces/dio.cpp:330
 #, kde-format
 msgid ""
 "Files or folders with the same name already exist in the target folder.\n"
@@ -29372,67 +29389,67 @@ msgstr ""
 "worden.\n"
 "Automatisch overslaan: conflicterende bestanden zullen overgeslagen worden."
 
-#: core/libs/database/utils/ifaces/dio.cpp:336
+#: core/libs/database/utils/ifaces/dio.cpp:339
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Automatically"
 msgstr "Automatisch hernoemen"
 
-#: core/libs/database/utils/ifaces/dio.cpp:338
+#: core/libs/database/utils/ifaces/dio.cpp:341
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite Automatically"
 msgstr "Automatisch overschrijven"
 
-#: core/libs/database/utils/ifaces/dio.cpp:340
+#: core/libs/database/utils/ifaces/dio.cpp:343
 #, kde-format
 msgctxt "@action:button"
 msgid "Skip Automatically"
 msgstr "Automatisch overslaan"
 
-#: core/libs/database/utils/ifaces/dio.cpp:766
+#: core/libs/database/utils/ifaces/dio.cpp:769
 #, kde-format
 msgid "Copy Album"
 msgstr "Album kopiëren"
 
-#: core/libs/database/utils/ifaces/dio.cpp:771
+#: core/libs/database/utils/ifaces/dio.cpp:774
 #, kde-format
 msgid "Copy Images"
 msgstr "Afbeeldingen kopiëren"
 
-#: core/libs/database/utils/ifaces/dio.cpp:777
+#: core/libs/database/utils/ifaces/dio.cpp:780
 #, kde-format
 msgid "Copy Files"
 msgstr "Bestanden kopiëren"
 
-#: core/libs/database/utils/ifaces/dio.cpp:782
+#: core/libs/database/utils/ifaces/dio.cpp:785
 #, kde-format
 msgid "Move Album"
 msgstr "Album verplaatsen"
 
-#: core/libs/database/utils/ifaces/dio.cpp:787
+#: core/libs/database/utils/ifaces/dio.cpp:790
 #, kde-format
 msgid "Move Images"
 msgstr "Afbeeldingen verplaatsen"
 
-#: core/libs/database/utils/ifaces/dio.cpp:792
+#: core/libs/database/utils/ifaces/dio.cpp:795
 #, kde-format
 msgid "Move Files"
 msgstr "Bestanden verplaatsen"
 
-#: core/libs/database/utils/ifaces/dio.cpp:797
+#: core/libs/database/utils/ifaces/dio.cpp:800
 #: core/utilities/searchwindow/editablesearchtreeview.cpp:63
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:362
 #, kde-format
 msgid "Delete"
 msgstr "Verwijderen"
 
-#: core/libs/database/utils/ifaces/dio.cpp:807
+#: core/libs/database/utils/ifaces/dio.cpp:810
 #, kde-format
 msgid "Restore Trash"
 msgstr "Prullenbak herstellen"
 
-#: core/libs/database/utils/ifaces/dio.cpp:812
+#: core/libs/database/utils/ifaces/dio.cpp:815
 #, kde-format
 msgid "Empty Trash"
 msgstr "Prullenbak legen"
@@ -29595,17 +29612,27 @@ msgstr ""
 "van enorme groottes van verzamelingen met meer dan 100K items.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:94
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>Set here the location where the database files will be stored on your "
+#| "system. There are four databases: one for all collections properties, one "
+#| "to store compressed thumbnails, one to store faces recognition metadata, "
+#| "and one to store similarity fingerprints.<br/>Write access is required to "
+#| "be able to edit image properties.</p><p>Databases are digiKam core "
+#| "engines. Take care to use a place hosted by fast hardware (as SSD) with "
+#| "enough free space especially for thumbnails database.</p><p>Note: a "
+#| "remote file system such as NFS, cannot be used here. For performance "
+#| "reasons, it is also recommended not to use removable media.</p><p></p>"
 msgid ""
 "<p>Set here the location where the database files will be stored on your "
 "system. There are four databases: one for all collections properties, one to "
 "store compressed thumbnails, one to store faces recognition metadata, and "
 "one to store similarity fingerprints.<br/>Write access is required to be "
 "able to edit image properties.</p><p>Databases are digiKam core engines. "
-"Take care to use a place hosted by fast hardware (as SSD) with enough free "
-"space especially for thumbnails database.</p><p>Note: a remote file system "
-"such as NFS, cannot be used here. For performance reasons, it is also "
-"recommended not to use removable media.</p><p></p>"
+"Take care to use a place hosted by fast hardware (eg. SSD or NVMe) with "
+"enough free space especially for thumbnails database.</p><p>Note: a remote "
+"file system such as NFS, cannot be used here. For performance reasons, it is "
+"also recommended not to use network storage media.</p><p></p>"
 msgstr ""
 "<p>Stel hier de locatie in waar de databasebestanden zullen worden "
 "opgeslagen op uw systeem. Er zijn vier databases: één voor alle "
@@ -35950,32 +35977,44 @@ msgstr ""
 "Kon map %1 niet verplaatsen naar album %2. De map %1 is wel gekopieerd naar "
 "album %2"
 
-#: core/libs/iojobs/iojob.cpp:185
+#: core/libs/iojobs/iojob.cpp:187
+#, fuzzy, kde-format
+#| msgid "Could not move file %1 to album %2"
+msgid "Could not move sidecar from file %1 to album %2"
+msgstr "Kon bestand %1 niet verplaatsen naar album %2"
+
+#: core/libs/iojobs/iojob.cpp:193
 #, kde-format
 msgid "Could not move file %1 to album %2"
 msgstr "Kon bestand %1 niet verplaatsen naar album %2"
 
-#: core/libs/iojobs/iojob.cpp:208
+#: core/libs/iojobs/iojob.cpp:216
 #, kde-format
 msgid "Could not copy folder %1 to album %2"
 msgstr "Kon map %1 niet kopiëren naar album %2"
 
-#: core/libs/iojobs/iojob.cpp:220
+#: core/libs/iojobs/iojob.cpp:228
+#, fuzzy, kde-format
+#| msgid "Could not copy file %1 to folder %2"
+msgid "Could not copy sidecar from file %1 to folder %2"
+msgstr "Kon bestand %1 niet kopiëren naar map %2"
+
+#: core/libs/iojobs/iojob.cpp:236
 #, kde-format
 msgid "Could not copy file %1 to folder %2"
 msgstr "Kon bestand %1 niet kopiëren naar map %2"
 
-#: core/libs/iojobs/iojob.cpp:225
+#: core/libs/iojobs/iojob.cpp:241
 #, kde-format
 msgid "Could not copy file %1 to album %2"
 msgstr "Kon bestand %1 niet kopiëren naar album %2"
 
-#: core/libs/iojobs/iojob.cpp:267
+#: core/libs/iojobs/iojob.cpp:283
 #, kde-format
 msgid "File/Folder %1 does not exist"
 msgstr "Bestand/map %1 bestaat niet"
 
-#: core/libs/iojobs/iojob.cpp:279
+#: core/libs/iojobs/iojob.cpp:295
 #, kde-format
 msgid ""
 "Could not move folder %1 to collection trash.\n"
@@ -35986,7 +36025,7 @@ msgstr ""
 "Controleer de bestandsrechten op de prullenbakmap \".dtrash\" in de "
 "afbeeldingenverzameling."
 
-#: core/libs/iojobs/iojob.cpp:291
+#: core/libs/iojobs/iojob.cpp:307
 #, kde-format
 msgid ""
 "Could not move image %1 to collection trash.\n"
@@ -35997,33 +36036,33 @@ msgstr ""
 "Controleer de bestandsrechten op de prullenbakmap \".dtrash\" in de "
 "afbeeldingenverzameling."
 
-#: core/libs/iojobs/iojob.cpp:308
+#: core/libs/iojobs/iojob.cpp:324
 #, kde-format
 msgid "Album %1 could not be removed"
 msgstr "Album %1 kon niet verwijderd worden"
 
-#: core/libs/iojobs/iojob.cpp:320
+#: core/libs/iojobs/iojob.cpp:336
 #, kde-format
 msgid "Image %1 could not be removed"
 msgstr "Afbeelding %1 kon niet verwijderd worden"
 
-#: core/libs/iojobs/iojob.cpp:366
+#: core/libs/iojobs/iojob.cpp:382
 #, kde-format
 msgid "Could not move image %1 to collection trash"
 msgstr ""
 "Kon afbeelding '%1' niet verplaatsen naar prullenbak voor verzamelingen"
 
-#: core/libs/iojobs/iojob.cpp:376
+#: core/libs/iojobs/iojob.cpp:392
 #, kde-format
 msgid "Image with the same name %1 already there"
 msgstr "Afbeelding met dezelfde naam %1 is daar al"
 
-#: core/libs/iojobs/iojob.cpp:391
+#: core/libs/iojobs/iojob.cpp:407
 #, kde-format
 msgid "Image %1 could not be renamed"
 msgstr "Afbeelding %1 kon niet hernoemd worden"
 
-#: core/libs/iojobs/iojob.cpp:463
+#: core/libs/iojobs/iojob.cpp:479
 #, kde-format
 msgid "Could not restore file %1 from trash"
 msgstr "Kon bestand %1 niet herstellen uit de prullenbak"
@@ -59646,40 +59685,34 @@ msgid "Country of the location shown in the item"
 msgstr "Land op de locatie getoond in het item"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, fuzzy, kde-format
-#| msgid "Province:"
+#, kde-format
 msgid "Province"
-msgstr "Provincie:"
+msgstr "Provincie"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:656
-#, fuzzy, kde-format
-#| msgid "Country of the location shown in the item"
+#, kde-format
 msgid "Province of the location shown in the item"
-msgstr "Land op de locatie getoond in het item"
+msgstr "Provincie op de locatie getoond in het item"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "Country"
+#, kde-format
 msgid "County"
 msgstr "Land"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:672
-#, fuzzy, kde-format
-#| msgid "Country of the location shown in the item"
+#, kde-format
 msgid "County of the location shown in the item"
-msgstr "Land op de locatie getoond in het item"
+msgstr "Plaats op de locatie getoond in het item"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
-#| msgid "City:"
+#, kde-format
 msgid "City"
-msgstr "Woonplaats:"
+msgstr "Stad"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:688
-#, fuzzy, kde-format
-#| msgid "Country of the location shown in the item"
+#, kde-format
 msgid "City of the location shown in the item"
-msgstr "Land op de locatie getoond in het item"
+msgstr "Stad op de locatie getoond in het item"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:702
 #, kde-format
